@@ -471,6 +471,10 @@ The repository defines an optimized configuration for code editing. This is opti
 
 Defining a `.vscode` configuration like this also aides browser-only development using [GitHub's Codespaces feature](https://github.com/features/codespaces). The web-based GUI will read these same configuration files and setup the remote development environment the same way every time.
 
+### Why we have an `.npmrc` file
+
+The npm ecosystem resolution and installation of `peerDependencies` installation [changed in recent versions](https://nodejs.org/en/blog/npm/peer-dependencies#using-peer-dependencies). The project documents what version of `Node.js` and `npm` to use via the []`.nvmrc` file](https://github.com/nodejs/nodejs.org/blob/main/.nvmrc). Not all contributors have tooling to automatically read this file and adhere to the correct version, however. To ensure all contributors install dependencies the same way, a local `.npmrc` file directly configures peerDependency installation behavior.
+
 ## Seeking additional clarification
 
 A lot of the current structure is due to retro-compatibility, keeping a simple and familiar file structure and keeping files that have historical reasons or needs.
