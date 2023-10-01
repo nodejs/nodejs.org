@@ -1,0 +1,89 @@
+.select {
+  @apply flex
+    w-fit
+    flex-col
+    gap-[0.375rem];
+
+  .label {
+    @apply text-sm
+      font-medium
+      text-neutral-800
+      dark:text-neutral-200;
+  }
+
+  .trigger {
+    @apply inline-flex
+      min-w-[17rem]
+      items-center
+      justify-between
+      gap-2
+      rounded
+      border
+      border-neutral-300
+      bg-white
+      px-[0.875rem]
+      py-[0.625rem]
+      text-left
+      text-base
+      font-medium
+      text-neutral-900
+      shadow-xs
+      outline-none
+      data-[placeholder]:text-neutral-800
+      dark:border-neutral-800
+      dark:bg-neutral-950
+      dark:text-white
+      dark:data-[placeholder]:text-neutral-200;
+  }
+}
+
+.dropdown {
+  @apply max-w-xs
+    overflow-hidden
+    rounded-md
+    border
+    border-neutral-200
+    bg-white
+    shadow-lg
+    dark:border-neutral-800
+    dark:bg-neutral-950;
+
+  .button {
+    @apply flex
+      h-6
+      cursor-default
+      items-center
+      justify-center
+      bg-white
+      dark:bg-neutral-950;
+  }
+
+  .item {
+    @apply truncate
+      px-[0.625rem]
+      py-[0.375rem]
+      text-sm
+      font-medium;
+  }
+
+  .text {
+    @apply text-neutral-800
+      data-[highlighted]:bg-green-500
+      data-[highlighted]:text-white
+      data-[highlighted]:outline-none
+      dark:text-neutral-200
+      dark:data-[highlighted]:bg-green-600;
+  }
+
+  .label {
+    @apply text-neutral-600
+    dark:text-neutral-400;
+  }
+}
+
+.icon {
+  @apply h-5
+    w-5
+    text-neutral-600
+    dark:text-neutral-400;
+}
