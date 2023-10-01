@@ -1,4 +1,5 @@
 import { renderHook, waitFor } from '@testing-library/react';
+
 import { useDetectOS } from '../useDetectOS';
 
 const windowsUserAgent =
