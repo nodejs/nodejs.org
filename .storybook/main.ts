@@ -9,18 +9,31 @@ const config: StorybookConfig = {
     '@storybook/addon-themes',
     '@storybook/addon-viewport',
   ],
-  framework: { name: '@storybook/nextjs', options: {} },
-  features: { storyStoreV7: true },
-  docs: { autodocs: 'tag' },
-  staticDirs: ['../public'],
   logLevel: 'error',
-  core: { disableTelemetry: true },
+  staticDirs: ['../public'],
+  core: {
+    disableTelemetry: true,
+    builder: {
+      name: '@storybook/builder-webpack5',
+      options: { lazyCompilation: true },
+    },
+  },
+  framework: { name: '@storybook/nextjs', options: {} },
   webpackFinal: async config => {
+    // This allows us to resolve node_modules and everything from the Application source
     config.resolve!.modules = [resolve(__dirname, '..'), 'node_modules'];
 
     config.resolve!.alias = {
       ...config.resolve!.alias,
+      // Allows us to use `@` imports with TypeScript
       '@': resolve(__dirname, '../'),
+    };
+
+    // We want to disable the annoying performance hints
+    // as we know that Storybook has big bundles
+    config.performance = {
+      ...config.performance,
+      hints: false,
     };
 
     return config;

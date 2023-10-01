@@ -32,7 +32,3 @@ layout: docs.hbs
 - [Postmortem 中的主要模块](/zh-cn/docs/guides/domain-postmortem/)
 - [如何发布 N-API 包](/zh-cn/docs/guides/publishing-napi-modules/)
 - [ABI 的稳定性](/zh-cn/docs/guides/abi-stability/)
-
-## 已知的问题
-
-- [macOS Catalina (v10.15) 的原生依赖](https://github.com/nodejs/node-gyp/blob/master/macOS_Catalina.md)

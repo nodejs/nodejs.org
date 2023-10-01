@@ -1,12 +1,14 @@
-import { allPaths } from '@/next.dynamic.mjs';
-import { defaultLocale } from '@/next.locales.mjs';
+import type { MetadataRoute } from 'next';
+
 import {
   STATIC_ROUTES_IGNORES,
   DYNAMIC_GENERATED_ROUTES,
   BASE_PATH,
   BASE_URL,
+  EXTERNAL_LINKS_SITEMAP,
 } from '@/next.constants.mjs';
-import type { MetadataRoute } from 'next';
+import { allPaths } from '@/next.dynamic.mjs';
+import { defaultLocale } from '@/next.locales.mjs';
 
 // This is the combination of the Application Base URL and Base PATH
 const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
@@ -27,9 +29,12 @@ const sitemap = (): MetadataRoute.Sitemap => {
   // The current date of this request
   const currentDate = new Date().toISOString();
 
-  // This maps the URL routes into Sitemap entries
-  return [...dynamicRoutes, ...staticPaths].sort().map(route => ({
-    url: `${baseUrlAndPath}/${route}`,
+  const appRoutes = [...dynamicRoutes, ...staticPaths]
+    .sort()
+    .map(route => `${baseUrlAndPath}/${route}`);
+
+  return [...appRoutes, ...EXTERNAL_LINKS_SITEMAP].map(route => ({
+    url: route,
     lastModified: currentDate,
     changeFrequency: 'always',
   }));

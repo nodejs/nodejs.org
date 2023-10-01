@@ -33,7 +33,7 @@ Where this is unclear, the issue should be left open for several days for additi
 Where this does not yield input from Node.js Collaborators or additional evidence that the issue has relevance, then the issue may be closed.
 Remember that issues can always be re-opened if necessary.
 
-> [!IMPORTANT]\
+> \[!IMPORTANT]\
 > We recommend Collaborators to avoid Updating/Rebasing PRs unnecessarily, since we use [GitHub Merge Queues](https://github.blog/2023-07-12-github-merge-queue-is-generally-available/)
 > to merge Pull Requests, which automatically rebases and runs CI-checks against the latest base branch.
 
@@ -70,8 +70,13 @@ The Node.js Website is built upon [React][] and [Next.js][] respectively, the UI
 
 The Website also uses several other Open Source libraries (not limited to) listed below:
 
-- Styling is done with [SCSS][] and CSS Modules
-- [TailwindCSS](https://tailwindcss.com/) is used as our CSS Framework and the Foundation of our Design System
+- Styling is done with [PostCSS][] and CSS Modules
+  - We use a combination of PostCSS plugins to create a [Sass](https://sass-lang.com/) alike environment
+  - We recommend reading the documentation of our plugins in case of doubt
+    - [PostCSS Mixins](https://github.com/postcss/postcss-mixins)
+    - [PostCSS Import](https://github.com/postcss/postcss-import)
+    - [PostCSS Simple Vars](https://github.com/postcss/postcss-simple-vars)
+- [Tailwind][] is used as our CSS Framework and the Foundation of our Design System
 - [Hero Icons](https://heroicons.com/) is an SVG Icon Library used within our Codebase
 - [Shiki][] is a Syntax Highlighter used for our Codeboxes
   - A [Rehype Plugin](https://rehype-pretty-code.netlify.app/) is used here for transforming `pre` and `code` tags into Syntax Highlighted Codeboxes
@@ -79,6 +84,8 @@ The Website also uses several other Open Source libraries (not limited to) liste
 - [`react-intl`][] is the i18n Library adopted within the Website
 - [`next-sitemap`](https://www.npmjs.com/package/next-sitemap) is used for Sitemap and `robots.txt` Generation
 - We use [Rehype](https://github.com/rehypejs/rehype) and [Remark](https://github.com/remarkjs/remark) to extend MDX functionality
+- We use [Storybook](https://storybook.js.org/) for Manual Testing and Visual Regression Tests of our React Components
+  - Storybook also provides a sandboxed environment, which is very useful whilst for crafting React Components
 
 ## Code Editing
 
@@ -87,7 +94,7 @@ The Website also uses several other Open Source libraries (not limited to) liste
 - React Components are defined on `/components`
 - React Templates are defined on `/layouts`
 - Global Stylesheets are declared on `/styles`
-  - Styles are done with [SCSS][]
+  - Styles are done with [PostCSS][]
 - Public files are stored on `/public`
   - Static Images, JavaScript files, and others are stored within `/public/static`
 - Internationalisation is done on `/i18n`
@@ -108,8 +115,10 @@ The Website also uses several other Open Source libraries (not limited to) liste
   - Generation of build-time indexes such as blog data
 - Multi-Purpose Scripts are stored within `/scripts`
   - Such as Node.js Release Blog Post generation
+- Storybook Configuration is done within `/.storybook`
+  - We use an almost out-of-the-box Storybook Experience with a few extra customisations
 
-### Adding new pages
+### Adding new Pages
 
 1. Create new page content including the layout, title and copy.
 2. Update the relevant `/layout` to add a link to the new page.
@@ -118,39 +127,43 @@ The Website also uses several other Open Source libraries (not limited to) liste
 
 Create a new markdown file in `/pages/en`.
 
-At the top of the markdown file, set a page the title and layout.
+At the top of the markdown file, within the Markdown Frontmatter, set a page the title and layout.
 
 ```markdown
 ---
-title: Events
-layout: contribute.hbs
+title: Title of the Page
+layout: layout-name.hbs
 ---
 
-[Event copy goes here]
+[Content of the Page]
 ```
 
-### Translating pages
+> \[!NOTE]\
+> A list of currently available Layouts is provided within `providers/layoutProvider` on the `getLegacyProviders` map.\
+> This is a temporary map and this map might change its location and be defined in a different way in the future.
+
+### Translating Pages
 
 See the [Translation Guidelines](./TRANSLATION.md) for the website translation policy.
 
-## Creating Components
+## Creating React Components
 
 The Node.js Website uses [React][] as a Frontend Library to develop the Website.
 React allows us to create user interfaces with a modern take on Web Development.
 
 If you're unfamiliar with React or Web Development in general, we encourage a read before taking on complex issues and tasks as this repository is **not for educational purposes** and we expect you to have a basic understanding of the technologies used.
 
-We also recommend getting familiar with technologies such as [Next.js][], [MDX][], [SCSS][], and "concepts" such as "CSS Modules" and "CSS-in-JS".
+We also recommend getting familiar with technologies such as [Next.js][], [MDX][], [PostCSS][], and "concepts" such as "CSS Modules" and "CSS-in-JS".
 
 ### Styling a Component
 
-As mentioned, we write all Component-styles in a separate `.module.scss` files. This is like writing any CSS in a separate file (besides the fact that we use [SCSS][]).
+As mentioned, we write all Component-styles in separate `.module.css` files. This is like writing any CSS in a separate file (besides the fact that we use [PostCSS][]).
 
 This concept of writing styles on dedicated CSS files and importing them within JavaScript (or React) is a pattern named **[CSS Module](https://github.com/css-modules/css-modules)**.
-These allow us to write SCSS (or regular CSS, or any flavor of CSS if you have a way of interpreting it) within a `.module.scss` and import the class names directly to our React Components.
+These allow us to write PostCSS (or regular CSS, or any flavor of CSS if you have a way of interpreting it) within a `.module.css` and import the class names directly to our React Components.
 We recommend reading guides on "Styling React Components with CSS Modules", which there are many available on the web.
 
-It's important to mention that we use [TailwindCSS](https://tailwindcss.com/) as a CSS Framework. Hence, margins, paddings, font sizes, font weights, colors, and other sorts of styles are all provided with Tailwind.
+It's important to mention that we use [Tailwind][] as a CSS Framework. Hence, margins, paddings, font sizes, font weights, colors, and other sorts of styles are all provided with Tailwind.
 We recommend reading [Tailwind Docs](https://tailwindcss.com/docs/preflight) to get familiar with Tailwind's styles.
 We also recommend reading [this guide for setting up Tailwind on your IDE](https://tailwindcss.com/docs/editor-setup).
 
@@ -158,7 +171,7 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 
 #### Example of a CSS Module
 
-```scss
+```css
 .myComponent {
   @apply some
     tailwind
@@ -166,18 +179,24 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 }
 ```
 
-- We use Camel Case for defining Class Names
-- We use Tailwind's `@apply` selector to apply Tailwind Styles
-  - Note that we should have one tailwind token per line as shown in the example above; This improves readability
+#### Guidelines when writing CSS
 
-> [!NOTE]\
-> Tailwind is already configured for this repository. You don't need to import any Tailwind module within your CSS modules.
-> You can apply Tailwind classes by regularly using CSS variables or SCSS's `@apply` statement, for example. If you have questions, please raise them on Pull Requests or Issues.
+- We use camelCase for defining CSS classes
+- We use Tailwind's `@apply` selector to apply Tailwind Tokens
+  - We discourage the usage of any plain CSS styles and tokens, when in doubt ask for help
+  - We require that you define one Tailwind Token per line, just as shown on the example above, since this improves readability
+- Only write CSS within CSS Modules, avoid writing CSS within JavaScript files
+- We recommend creating mixins for reusable animations, effects and more
+  - You can create Mixins within the `styles/mixins` folder
 
-> [!IMPORTANT]\
-> For styling Components, only using Tailwind variables for defining paddings, margins, spacing, flexboxes, and all sorts of CSS classes is mandatory.
-> There are times when manual values are allowed, but we recommend setting them in reusable variables. Within the `styles` folder.
-> If unsure how to proceed, ask for help within Issues or Pull Requests.
+> \[!NOTE]\
+> Tailwind is already configured for this repository. You don't need to import any Tailwind module within your CSS module.\
+> You can apply Tailwind Tokens with Tailwind's `@apply` CSS rule. [Read more about applying Tailwind classes with `@apply`](https://tailwindcss.com/docs/functions-and-directives#apply).
+
+> \[!IMPORTANT]\
+> When using IDEs such as Visual Studio Code, we recommend installing the official [Stylelint](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+> and [Tailwind](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) Extensions.\
+> These are recommended Extensions for IntelliSense, Syntax Highlighting and Error Checking when styling your Component.
 
 ### Best practices when creating a Component
 
@@ -191,7 +210,7 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
   ```text
   - ComponentName
     - index.tsx // the component itself
-    - index.module.scss // all styles of the component are placed there
+    - index.module.css // all styles of the component are placed there
     - index.stories.tsx // component Storybook stories
     - __tests__ // component tests (such as unit tests, etc)
       - index.test.mjs // unit tests should be done in ESM and not TypeScript
@@ -207,7 +226,7 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 ```tsx
 import type { FC } from 'react';
 
-import styles from './index.module.scss';
+import styles from './index.module.css';
 
 type MyComponentProps = {}; // The types of the Props of your Component
 
@@ -352,12 +371,12 @@ The `redirects.json` file specifies two types of operations: rewrites and redire
 
 This file contains a simple template engine that supports `/:locale` to indicate that this path should also be available under all available locales as prefix.
 
-#### Our Next.js Middleware
+#### Why do we use Next.js Middlewares?
 
 We have a simple Next.js Middleware that is responsible for handling initial Locale detection and redirection.
 It detects browser locales and redirects to the most suitable locale for the user. And it fallbacks to `/en` if no suitable locale is found.
 
-#### How do layouts work?
+#### What are Layouts?
 
 Layouts Wrap the content of the Markdown files.
 They are responsible for adding additional styling and structure surrounding the content of the Markdown files.
@@ -365,7 +384,49 @@ They are responsible for adding additional styling and structure surrounding the
 Layouts are defined within the `layouts` folder.
 They are React Components that receive the `children` prop, which is the transformed MDX content of the Markdown file.
 
-Each Page layout is decided within their Markdown's Frontmatter as `layout: name-of-layout.hbs`.
+Each Page layout is configured within their Markdown's Frontmatter as `layout: name-of-layout.hbs`.
+
+### How we style the Website?
+
+We use [PostCSS][] to style the Node.js Website; PostCSS is a CSS Preprocessor, like Sass and Less.
+
+#### How exactly do we style Components?
+
+We style each individual React Component with a dedicated CSS file (A CSS Module) that uses CSS syntax (with the extra powerups of PostCSS).
+
+The [Styling a Component](#styling-a-component) section contains a more detailed guide on how we style our Components.
+
+#### Why we use PostCSS over Sass or Less?
+
+The main advantage of PostCSS is its minimal pluggable API that allows us to extend the native CSS-syntax with custom plugins.
+
+Next.js natively supports PostCSS and always uses PostCSS as part of the bundling and building process.
+By not using Sass or Less we remove another dependency from our build process and remove one layer of preprocessing our styles (CSS).
+
+We currently use a set of PostCSS plugins that create a SCSS-a-like environment.
+
+#### What PostCSS Plugins we use?
+
+- `postcss-mixins`: Allows us to use Sass-like Mixins
+- `postcss-import`: Allows us to use Sass-like Imports
+- `postcss-simple-vars`: Allows us to use Sass-like Variables
+- `postcss-nested`: Allows us to use Sass-like Nesting
+- `postcss-calc`: Strips `calc` expressions and replaces them with the result
+
+It is important to mention that even though we use SCSS-like syntax, we do not use SCSS, and some of these plugins
+are not 100% compatible with the SCSS syntax.
+For example, `postcss-mixins` does not support `@include` and `@extend` directives (and it uses `@define-mixin` for defining Mixins and `@mixin` for including Mixins).
+
+#### Do we use a CSS Framework?
+
+The Node.js Website uses Tailwind as a CSS Framework for crafting our React Components and style the Website.
+
+[Tailwind][] is an utility-first CSS Framework. It allows us to create a Design System that is easy to maintain and extend. It also allows us to create a consistent Design Language across the Website.
+
+#### Font Families on the Website
+
+We use `next/fonts` Open Sans as the default font for the Node.js Website.
+The font is configured as a CSS variable and then configured on `tailwind.config.js` as the default font for the Website.
 
 ### Why MDX?
 
@@ -381,33 +442,12 @@ Some of the plugins that we use include:
 - `rehype-slug`: Allows us to add IDs to Markdown Headings
 - `rehype-pretty-code`: Allows us to transform `pre` and `code` tags into Syntax Highlighted Codeboxes by using [Shiki][]
 
-#### Shiki and Vercel
+#### Syntax Highlighting (Shiki) and Vercel
 
 Since we use Incremental Static Rendering and Serverless Functions, Vercel attempts to simplify the bundled Node.js runtime by removing all unnecessary dependencies.
 This means that Shiki's Themes and Languages are not bundled by default.
 
 Hence the `shiki.config.mjs` file, where we define our custom set of supported Languages and we bundle them directly by using [Shiki's Grammar Property](https://github.com/shikijs/shiki/blob/main/docs/languages.md#supporting-your-own-languages-with-shiki) which allows us to embed the languages directly.
-
-### Tailwind
-
-Tailwind is a great CSS Framework. It allows us to create a Design System that is easy to maintain and extend. It also allows us to create a consistent Design Language across the Website.
-
-For example, it automatically integrates with PostCSS and Next.js, which allows us to use Tailwind's utilities within our Components and Pages.
-
-It also integrates with Sass allowing to use Tailwind classes directly within our SCSS Modules.
-
-**Note:** On that remark, we use CSS Modules as a way to define our Styles.
-This allows us to scope our styles to a specific Component or Page, without having to worry about CSS Class Name Collisions.
-This also means that we don't use CSS-in-JS solutions such as Styled Components or Emotion.
-
-#### Next Fonts and Tailwind
-
-We use `next/fonts` Open Sans as the default font for the Node.js Website.
-The font is configured as a CSS variable and then configured on `tailwind.config.js` as the default font for the Website.
-
-#### Sass Support / IDE Support
-
-We recommend the usage of [Tailwind's Official VS Code Extension](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) for IntelliSense Support. You might need to set `.scss` files to use Tailwind as the Interpreter.
 
 ### Vercel
 
@@ -433,6 +473,7 @@ If you're unfamiliar or curious about something, we recommend opening a Discussi
 [`react-intl`]: https://formatjs.io/docs/react-intl/
 [Next.js]: https://nextjs.org/
 [MDX]: https://mdxjs.com/
-[SCSS]: https://sass-lang.com/
+[PostCSS]: https://postcss.org/
 [React]: https://react.dev/
 [Shiki]: https://github.com/shikijs/shiki
+[Tailwind]: https://tailwindcss.com/

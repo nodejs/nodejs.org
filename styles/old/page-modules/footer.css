@@ -1,0 +1,20 @@
+footer {
+  background-color: $node-gray;
+  margin-top: 2em;
+  padding: 0;
+
+  a,
+  a:link,
+  a:active {
+    color: rgb(173 216 230);
+  }
+
+  a:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  &.no-margin-top {
+    margin-top: 0;
+  }
+}

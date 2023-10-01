@@ -1,8 +1,9 @@
 import { memo } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+
+import HtmlHead from './components/HtmlHead';
 import { LayoutProvider } from './providers/layoutProvider';
 import { MDXProvider } from './providers/mdxProvider';
-import HtmlHead from './components/HtmlHead';
-import type { FC, PropsWithChildren } from 'react';
 import type { DynamicStaticProps } from './types';
 
 type ThemeProps = PropsWithChildren<DynamicStaticProps>;

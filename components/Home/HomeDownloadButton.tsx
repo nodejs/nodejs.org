@@ -1,11 +1,12 @@
+import type { FC } from 'react';
+
 import LocalizedLink from '@/components/LocalizedLink';
 import { useDetectOS } from '@/hooks/useDetectOS';
 import { useLayoutContext } from '@/hooks/useLayoutContext';
+import { DIST_URL } from '@/next.constants.mjs';
+import type { NodeRelease } from '@/types';
 import { downloadUrlByOS } from '@/util/downloadUrlByOS';
 import { getNodejsChangelog } from '@/util/getNodeJsChangelog';
-import { DIST_URL } from '@/next.constants.mjs';
-import type { FC } from 'react';
-import type { NodeRelease } from '@/types';
 
 const HomeDownloadButton: FC<NodeRelease> = ({
   major,

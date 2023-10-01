@@ -1,7 +1,9 @@
-import LocalizedLink from '@/components/LocalizedLink';
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
-import styles from './index.module.scss';
 import type { FC } from 'react';
+
+import LocalizedLink from '@/components/LocalizedLink';
+
+import styles from './index.module.css';
 
 type BannerProps = {
   type: 'default' | 'error' | 'warning';

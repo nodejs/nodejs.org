@@ -34,6 +34,12 @@
   "components.header.buttons.toggleDarkMode": "Basculer le mode sombre/clair",
   "components.pagination.next": "Plus récent ",
   "components.pagination.previous": "Plus anciens",
+  "components.common.crossLink.previous": "Précédent",
+  "components.common.crossLink.next": "Suivant",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {Par {author}, }}",
-  "layouts.blogIndex.currentYear": "Actualités de {year}"
+  "layouts.blogIndex.currentYear": "Actualités de {year}",
+  "components.api.jsonLink.title": "Afficher en JSON",
+  "components.api.sourceLink": "Code Source :",
+  "pages.404.title": "404 : Page introuvable",
+  "pages.404.description": "ENOENT : fichier ou répertoire introuvable"
 }

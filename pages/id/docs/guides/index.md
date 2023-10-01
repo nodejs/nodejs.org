@@ -32,7 +32,3 @@ layout: docs.hbs
 - [Postmortem Modul Domain](/en/docs/guides/domain-postmortem/)
 - [Cara mempublikasikan paket N-API](/en/docs/guides/publishing-napi-modules/)
 - [Stabilitas ABI](/en/docs/guides/abi-stability/)
-
-## Masalah yang diketahui
-
-- [Ketergantungan asli pada macOS Catalina (v10.15)](https://github.com/nodejs/node-gyp/blob/master/macOS_Catalina.md)

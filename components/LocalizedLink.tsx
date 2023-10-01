@@ -1,8 +1,9 @@
-import { useMemo } from 'react';
 import Link from 'next/link';
+import { useMemo } from 'react';
+import type { FC, ComponentProps, HTMLAttributes } from 'react';
+
 import { useLocale } from '@/hooks/useLocale';
 import { linkWithLocale } from '@/util/linkWithLocale';
-import type { FC, ComponentProps, HTMLAttributes } from 'react';
 
 // This is a wrapper on HTML's `a` tag
 const HtmlLink: FC<HTMLAttributes<HTMLAnchorElement>> = ({

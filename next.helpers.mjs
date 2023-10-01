@@ -1,6 +1,7 @@
 'use strict';
 
 import { fileURLToPath } from 'node:url';
+
 import { glob } from 'glob';
 
 /**

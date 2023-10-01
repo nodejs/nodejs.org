@@ -1,9 +1,10 @@
 import ArrowRightIcon from '@heroicons/react/24/solid/ArrowRightIcon';
-import LocalizedLink from '@/components/LocalizedLink';
-import type { ComponentProps, FC, PropsWithChildren } from 'react';
 import type Link from 'next/link';
+import type { ComponentProps, FC, PropsWithChildren } from 'react';
 
-import styles from './index.module.scss';
+import LocalizedLink from '@/components/LocalizedLink';
+
+import styles from './index.module.css';
 
 type BadgeProps = {
   kind?: 'default' | 'warning' | 'error';

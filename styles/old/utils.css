@@ -1,0 +1,39 @@
+.bg-white {
+  background-color: $white !important;
+}
+
+.bg-node-gray {
+  background-color: $node-gray !important;
+}
+
+.table-no-border-no-padding {
+  border-spacing: 0;
+
+  td {
+    padding: 0;
+  }
+}
+
+.sr-only {
+  border: none;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.hidden {
+  display: none;
+}
+
+.full-width {
+  width: 100%;
+}
+
+small,
+.small {
+  font-size: 0.7rem;
+}

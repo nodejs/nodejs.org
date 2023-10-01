@@ -1,0 +1,32 @@
+.banner {
+  @apply flex
+    w-full
+    flex-row
+    items-center
+    justify-center
+    gap-2
+    py-3
+    text-sm
+    text-white;
+
+  a {
+    @apply underline;
+  }
+
+  svg {
+    @apply h-4 
+      w-4;
+  }
+}
+
+.default {
+  @apply bg-green-600;
+}
+
+.error {
+  @apply bg-danger-600;
+}
+
+.warning {
+  @apply bg-warning-600;
+}

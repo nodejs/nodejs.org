@@ -1,4 +1,5 @@
 import { FormattedMessage } from 'react-intl';
+
 import { siteNavigation } from '@/next.json.mjs';
 import type { NavigationEntry, NavigationKeys } from '@/types';
 

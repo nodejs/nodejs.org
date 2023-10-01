@@ -1,6 +1,7 @@
 import { createContext } from 'react';
-import { siteConfig } from '@/next.json.mjs';
 import type { FC, PropsWithChildren } from 'react';
+
+import { siteConfig } from '@/next.json.mjs';
 import type { SiteConfig } from '@/types';
 
 export const SiteContext = createContext<SiteConfig>(siteConfig);
