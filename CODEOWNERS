@@ -1,8 +1,22 @@
-# Default rules
+# Website Development
+* @nodejs/nodejs-website
 
-* @nodejs/website
+# Infrastructure
+.github @nodejs/web-infra
+.husky @nodejs/web-infra
+
+# Framework
+next.config.mjs @nodejs/web-infra
+next.dynamic.mjs @nodejs/web-infra
 
 # Node.js Release Blog Posts
-
 /pages/en/blog/release @nodejs/releasers
 /pages/en/blog/announcements @nodejs/releasers
+
+# Node.js Core Guides
+/pages/en/guides @nodejs/collaborators
+
+# Governance
+GOVERNANCE.md @nodejs/web
+CONTRIBUTING.md @nodejs/web
+COLLABORATOR_GUIDE.md @nodejs/web

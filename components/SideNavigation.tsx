@@ -1,9 +1,11 @@
 import classNames from 'classnames';
-import LocalizedLink from './LocalizedLink';
+import type { FC } from 'react';
+
 import { useLocale } from '@/hooks/useLocale';
 import { useNavigation } from '@/hooks/useNavigation';
 import type { NavigationKeys } from '@/types';
-import type { FC } from 'react';
+
+import LocalizedLink from './LocalizedLink';
 
 type SideNavigationProps = {
   navigationKey: NavigationKeys;

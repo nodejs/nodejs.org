@@ -1,8 +1,9 @@
-import { FormattedMessage } from 'react-intl';
-import { getNodejsChangelog } from '@/util/getNodeJsChangelog';
-import { getNodeApiLink } from '@/util/getNodeApiLink';
-import { useNodeReleases } from '@/hooks/useNodeReleases';
 import type { FC } from 'react';
+import { FormattedMessage } from 'react-intl';
+
+import { useNodeReleases } from '@/hooks/useNodeReleases';
+import { getNodeApiLink } from '@/util/getNodeApiLink';
+import { getNodejsChangelog } from '@/util/getNodeJsChangelog';
 
 const DownloadReleasesTable: FC = () => {
   const { releases } = useNodeReleases();

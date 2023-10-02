@@ -2,8 +2,8 @@
 
 .button {
   @apply relative
-   px-[18px]
-   py-[10px]
+   px-4.5
+   py-2.5
    font-semibold;
 
   &.primary {
@@ -81,7 +81,7 @@
       @apply absolute
        right-0
        top-[-1px]
-       h-[1px]
+       h-px
        w-[40%] bg-gradient-to-r from-green-600/0 via-green-600
        to-green-600/0;
 

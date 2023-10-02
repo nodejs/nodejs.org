@@ -1,9 +1,11 @@
 import { useMemo } from 'react';
-import BaseLayout from './BaseLayout';
-import { useLayoutContext } from '@/hooks/useLayoutContext';
-import DownloadReleasesTable from '@/components/Downloads/DownloadReleasesTable';
 import type { FC, PropsWithChildren } from 'react';
+
+import DownloadReleasesTable from '@/components/Downloads/DownloadReleasesTable';
+import { useLayoutContext } from '@/hooks/useLayoutContext';
 import type { LegacyDownloadsReleasesFrontMatter } from '@/types';
+
+import BaseLayout from './BaseLayout';
 
 const DownloadReleasesLayout: FC<PropsWithChildren> = ({ children }) => {
   const { frontMatter } = useLayoutContext();

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
-import { availableLocales } from './next.locales.mjs';
 import type { NextRequest } from 'next/server';
+
+import { availableLocales } from './next.locales.mjs';
 
 // This Middleware is responsible for handling automatic language detection from a user's Browser
 // This middleware should only run on "/" requests coming to the Website

@@ -1,11 +1,12 @@
-import { Source_Sans_3 } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
-import { SiteProvider } from '@/providers/siteProvider';
-import { LocaleProvider } from '@/providers/localeProvider';
-import { BlogDataProvider } from '@/providers/blogDataProvider';
-import { NodeReleasesProvider } from '@/providers/nodeReleasesProvider';
-import { VERCEL_ENV } from '@/next.constants.mjs';
 import type { AppProps } from 'next/app';
+import { Source_Sans_3 } from 'next/font/google';
+
+import { VERCEL_ENV } from '@/next.constants.mjs';
+import { BlogDataProvider } from '@/providers/blogDataProvider';
+import { LocaleProvider } from '@/providers/localeProvider';
+import { NodeReleasesProvider } from '@/providers/nodeReleasesProvider';
+import { SiteProvider } from '@/providers/siteProvider';
 
 import '@/styles/old/index.css';
 

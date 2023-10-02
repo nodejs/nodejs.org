@@ -1,4 +1,6 @@
 import { createContext, useMemo } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+
 import AboutLayout from '@/layouts/AboutLayout';
 import BlogIndexLayout from '@/layouts/BlogIndexLayout';
 import BlogPostLayout from '@/layouts/BlogPostLayout';
@@ -6,11 +8,10 @@ import CategoryIndexLayout from '@/layouts/CategoryIndexLayout';
 import ContributeLayout from '@/layouts/ContributeLayout';
 import DefaultLayout from '@/layouts/DefaultLayout';
 import DocsLayout from '@/layouts/DocsLayout';
-import DownloadLayout from '@/layouts/DownloadLayout';
 import DownloadCurrentLayout from '@/layouts/DownloadCurrentLayout';
+import DownloadLayout from '@/layouts/DownloadLayout';
 import DownloadReleasesLayout from '@/layouts/DownloadReleasesLayout';
 import IndexLayout from '@/layouts/IndexLayout';
-import type { FC, PropsWithChildren } from 'react';
 import type { LegacyFrontMatter, LegacyLayouts } from '@/types';
 
 type LayoutContextProps = {

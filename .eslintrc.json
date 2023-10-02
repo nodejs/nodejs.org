@@ -3,7 +3,7 @@
   "overrides": [
     {
       "files": ["public/**/*.js"],
-      "env": { "es6": true, "browser": true }
+      "env": { "browser": true }
     },
     {
       "files": ["components/**/*.stories.tsx"],
@@ -11,17 +11,42 @@
     },
     {
       "files": ["**/__tests__/*.mjs"],
-      "env": { "jest": true, "es6": true, "node": true }
+      "env": { "jest": true }
     },
     {
       "files": ["**/*.{js,mjs,ts,tsx,mdx}"],
       "env": { "es6": true, "node": true },
-      "extends": ["eslint:recommended", "next", "next/core-web-vitals"]
+      "plugins": ["import"],
+      "extends": ["eslint:recommended", "next", "next/core-web-vitals"],
+      "rules": {
+        "import/order": [
+          "error",
+          {
+            "groups": [
+              "builtin",
+              "external",
+              "internal",
+              ["sibling", "parent"],
+              "index",
+              "unknown"
+            ],
+            "newlines-between": "always",
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
+        ]
+      }
     },
     {
       "files": ["**/*.ts?(x)"],
       "plugins": ["@typescript-eslint", "no-relative-import-paths"],
-      "extends": "plugin:@typescript-eslint/recommended",
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript"
+      ],
       "parser": "@typescript-eslint/parser",
       "rules": {
         "@typescript-eslint/consistent-type-imports": "error",
@@ -39,6 +64,7 @@
     {
       "files": ["**/*.{mdx,tsx}"],
       "rules": {
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"],
         "react/function-component-definition": [
           "error",
           {
@@ -56,8 +82,7 @@
             "selector": "ImportDeclaration[source.value='react'] :matches(ImportNamespaceSpecifier)",
             "message": "Named * React import is not allowed. Please import what you need from React with Named Imports"
           }
-        ],
-        "@typescript-eslint/consistent-type-definitions": ["error", "type"]
+        ]
       }
     }
   ]
