@@ -20,7 +20,7 @@ type BreadcrumbsProps = {
 };
 
 const Breadcrumbs: FC<BreadcrumbsProps> = ({
-  links,
+  links = [],
   maxLength = 3,
   hideHome = false,
 }) => {
