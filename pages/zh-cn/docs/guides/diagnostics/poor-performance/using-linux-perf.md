@@ -11,7 +11,7 @@ layout: docs.hbs
 
 ## 我该怎么做？
 
-Linux Perf 工具通常随着 `linux-tools-common` 工具包一起发布。借助 `--perf-basic-prof` 或 `--perf-basic-prof-only-functions` 命令，我们可以启动一个带有支持 _perf_events_ 的 Node.js 程序。
+Linux Perf 工具通常随着 `linux-tools-common` 工具包一起发布。借助 `--perf-basic-prof` 或 `--perf-basic-prof-only-functions` 命令，我们可以启动一个带有支持 _perf\_events_ 的 Node.js 程序。
 
 `--perf-basic-prof` ：总是把结果写入一个文件（通常是 /tmp/perf-PID.map），这样做的结果便是该文件的大小会 不停地增长。如果你对此感到担心的话，可以使用 [linux-perf](https://www.npmjs.com/package/linux-perf) 或 `--perf-basic-prof-only-functions`。
 
