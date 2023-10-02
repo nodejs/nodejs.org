@@ -43,6 +43,7 @@
     "@heroicons/react": "~2.0.18",
     "@mdx-js/react": "^2.3.0",
     "@nodevu/core": "~0.1.0",
+    "@radix-ui/react-select": "^2.0.0",
     "@types/node": "18.17.17",
     "@vcarl/remark-headings": "~0.1.0",
     "@vercel/analytics": "^1.0.2",
