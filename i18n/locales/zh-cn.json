@@ -34,6 +34,8 @@
   "components.header.buttons.toggleDarkMode": "明亮/暗黑模式切换",
   "components.pagination.next": "较新的新闻事件 | ",
   "components.pagination.previous": "更早的新闻事件",
+  "components.common.crossLink.previous": "上一页",
+  "components.common.crossLink.next": "下一页",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {由 {author} }}",
   "layouts.blogIndex.currentYear": "{year} 年的所有新闻事件",
   "components.api.jsonLink.title": "以 JSON 格式查看",
