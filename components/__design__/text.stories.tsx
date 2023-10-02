@@ -1,5 +1,4 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
-import '/styles/new/base.css'; // eslint-disable-line
 
 export const Text: StoryObj = {
   render: () => (
