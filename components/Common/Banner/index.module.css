@@ -5,12 +5,15 @@
     items-center
     justify-center
     gap-2
+    px-8
     py-3
     text-sm
     text-white;
 
   a {
-    @apply underline;
+    @apply w-fit
+      text-white
+      underline;
   }
 
   svg {
