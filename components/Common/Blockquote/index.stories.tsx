@@ -17,7 +17,7 @@ export const Default: Story = {
   },
 };
 
-export const Without_Attribution: Story = {
+export const WithoutAttribution: Story = {
   args: {
     children:
       '“Commander Keen soared through the stars, leaving behind a galaxy of memories, adventure, and boundless imagination. In the realm of gaming, his farewell echoes as a timeless voyage into the hearts of those who dare to dream and explore the unknown.”',

@@ -13,14 +13,14 @@ export const Default: Story = {
   },
 };
 
-export const Withouth_Label: Story = {
+export const WithoutLabel: Story = {
   args: {
     values: ['v20.8.0', 'v19.9.0', 'v18.18.0', 'v17.9.1', 'v16.20.2'],
     defaultValue: 'v16.20.2',
   },
 };
 
-export const Dropdown_Label: Story = {
+export const DropdownLabel: Story = {
   args: {
     values: [
       {
