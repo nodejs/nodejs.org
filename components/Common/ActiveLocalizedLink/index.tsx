@@ -1,9 +1,10 @@
-import { useRouter } from 'next/router';
-import { useState, useEffect, type FC } from 'react';
 import classNames from 'classnames';
-import LocalizedLink from '@/components/LocalizedLink';
 import type Link from 'next/link';
-import type { ComponentProps } from 'react';
+import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
+import type { ComponentProps, FC } from 'react';
+
+import LocalizedLink from '@/components/LocalizedLink';
 
 type ActiveLocalizedLinkProps = ComponentProps<typeof Link> & {
   activeClassName: string;

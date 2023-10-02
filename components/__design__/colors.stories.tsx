@@ -1,8 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import type { CSSProperties } from 'react';
 
-export const Default: StoryObj = {};
-
 const containerStyle = {
   display: 'flex',
   flexDirection: 'row',
@@ -24,9 +22,8 @@ const gridEntryStyle = {
   gap: '1rem',
 } satisfies CSSProperties;
 
-export default {
-  title: 'Design System/Colors',
-  component: () => (
+export const Colors: StoryObj = {
+  render: () => (
     <div style={containerStyle}>
       <div style={containerColorsStyle}>
         <div style={gridEntryStyle}>
@@ -102,4 +99,6 @@ export default {
       </div>
     </div>
   ),
-} as MetaObj;
+};
+
+export default { title: 'Design System' } as MetaObj;

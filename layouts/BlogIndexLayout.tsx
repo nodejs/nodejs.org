@@ -1,12 +1,14 @@
 import { useMemo } from 'react';
-import { FormattedMessage } from 'react-intl';
-import BaseLayout from './BaseLayout';
-import { Time } from '@/components/Common/Time';
-import Pagination from '@/components/Pagination';
-import LocalizedLink from '@/components/LocalizedLink';
-import { useBlogData } from '@/hooks/useBlogData';
 import type { FC, PropsWithChildren } from 'react';
+import { FormattedMessage } from 'react-intl';
+
+import { Time } from '@/components/Common/Time';
+import LocalizedLink from '@/components/LocalizedLink';
+import Pagination from '@/components/Pagination';
+import { useBlogData } from '@/hooks/useBlogData';
 import type { BlogPost } from '@/types';
+
+import BaseLayout from './BaseLayout';
 
 const BlogIndexLayout: FC<PropsWithChildren> = ({ children }) => {
   const { getPagination, getPostsByYear, currentCategory } = useBlogData();

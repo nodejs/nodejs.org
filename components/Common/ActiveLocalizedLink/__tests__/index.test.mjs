@@ -1,5 +1,6 @@
-import { IntlProvider } from 'react-intl';
 import { render, screen } from '@testing-library/react';
+import { IntlProvider } from 'react-intl';
+
 import ActiveLocalizedLink from '..';
 
 jest.mock('next/router', () => ({

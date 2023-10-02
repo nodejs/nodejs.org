@@ -1,6 +1,7 @@
-import { FormattedMessage } from 'react-intl';
-import Theme from '@/theme';
 import type { GetStaticProps } from 'next';
+import { FormattedMessage } from 'react-intl';
+
+import Theme from '@/theme';
 
 const NotFound = () => (
   <Theme>

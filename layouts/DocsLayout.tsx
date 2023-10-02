@@ -1,8 +1,10 @@
 import { useMemo } from 'react';
-import BaseLayout from './BaseLayout';
+import type { FC, PropsWithChildren } from 'react';
+
 import SideNavigation from '@/components/SideNavigation';
 import { useNodeReleases } from '@/hooks/useNodeReleases';
-import type { FC, PropsWithChildren } from 'react';
+
+import BaseLayout from './BaseLayout';
 
 const DocsLayout: FC<PropsWithChildren> = ({ children }) => {
   const { getReleaseByStatus } = useNodeReleases();

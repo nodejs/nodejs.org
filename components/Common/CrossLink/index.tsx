@@ -1,9 +1,11 @@
-import styles from './index.module.css';
 import classNames from 'classnames';
-import LocalizedLink from '@/components/LocalizedLink';
-import PrevNextArrow from '@/components/Common/PrevNextArrow';
-import { FormattedMessage } from 'react-intl';
 import type { FC } from 'react';
+import { FormattedMessage } from 'react-intl';
+
+import PrevNextArrow from '@/components/Common/PrevNextArrow';
+import LocalizedLink from '@/components/LocalizedLink';
+
+import styles from './index.module.css';
 
 type CrossLinkProps = {
   type: 'previous' | 'next';

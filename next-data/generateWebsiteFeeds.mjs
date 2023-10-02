@@ -1,8 +1,9 @@
 'use strict';
 
 import { Feed } from 'feed';
-import { siteConfig } from '../next.json.mjs';
+
 import { BASE_URL, BASE_PATH } from '../next.constants.mjs';
+import { siteConfig } from '../next.json.mjs';
 
 /**
  * This method generates RSS website feeds based on the current website configuration
