@@ -215,26 +215,26 @@ sys          8.79
 
 .write()`方法的<a href="https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239" fo="25">返回值</a>，我们得到以下结果：</p>
 
-<pre><code>Without respecting the return value of .write():
-==================================================
-real        54.48
-user        53.15
-sys          7.43
-1524965376  maximum resident set size
-         0  average shared memory size
-         0  average unshared data size
-         0  average unshared stack size
-    373617  page reclaims
-      3139  page faults
-         0  swaps
-        18  block input operations
-       199  block output operations
-         0  messages sent
-         0  messages received
-         1  signals received
-        25  voluntary context switches
-    629566  involuntary context switches
-`</pre> 
+# <pre><code>Without respecting the return value of .write():
+
+real 54.48
+user 53.15
+sys 7.43
+1524965376 maximum resident set size
+0 average shared memory size
+0 average unshared data size
+0 average unshared stack size
+373617 page reclaims
+3139 page faults
+0 swaps
+18 block input operations
+199 block output operations
+0 messages sent
+0 messages received
+1 signals received
+25 voluntary context switches
+629566 involuntary context switches
+`</pre>
 
 虚拟内存占用的最大的字节块达到了 1.52 gb。
 
@@ -242,11 +242,9 @@ sys          7.43
 
 这个实验展示了如何精简以对你的计算系统进行精简，以及有效的资源消耗。现在，我们故意弄出一个故障看看它又是怎么工作的。
 
-
-
 ## 积压是怎么处理这些问题的？
 
-我们有不同的函数将数据从一个进程传入另外一个进程。在 Node.js 中，有一个内置函数称为[`.pipe()`][]，同样地，你们也可以使用[其它工具包][]。最终，在这个进程的基本层面上我们有二个互不相关的组件：数据的_源头_和_消费者_。
+我们有不同的函数将数据从一个进程传入另外一个进程。在 Node.js 中，有一个内置函数称为[`.pipe()`][]，同样地，你们也可以使用[其它工具包][]。最终，在这个进程的基本层面上我们有二个互不相关的组件：数据的*源头*和*消费者*。
 
 当 [`.pipe()`][]被源调用之后，它通知消费者有数据需要传输。管道函数为事件触发建立了合适的积压封装。
 
@@ -266,17 +264,11 @@ sys          7.43
 
 这太好了！不过当我们试图去理解如何实现我们自己的积压流，这却并不太好。
 
-
-
 > 对于大部分机器而言，一个字节的大小就足以决定一个缓存是否已经满了（不同机器此值有变化）。Node.js 将允许你设置你自己的[`highWaterMark`][]。但是通常来说，默认是设置为 16kb（16384，对于对象模型流而言是 16）。在某些实例中你或许想提高那个值，尽管去提高吧，但是也要小心使用！
-
-
 
 ## `.pipe()` 的生命周期
 
 为了对积压有一个更好的理解，这里有一[`Readable`][]流正通过 [piped管道][]进入[`Writable`][]的整个生命周期图：
-
-
 
 ```
                                                      +===================+
@@ -322,31 +314,21 @@ sys          7.43
                                        +============+
 ```
 
-
-
-
 > 注意：如果你创建一些管道准备把一些流串联起来从而操纵数据，你应该实现 [`Transform`][]流。
 
 在这种情况下，从[`Readable`][]流中的输出进[`Transform`][]，并且会被管道输送进入[`Writable`][]。
-
-
 
 ```javascript
 Readable.pipe(Transformable).pipe(Writable);
 ```
 
-
 积压将被自动应用，但是同时请注意输入、输出[传输的][]`highWaterMark` 可以手动控制，并且会影响到积压系统。
-
-
 
 ## 积压行为的准则
 
 从[Node.js v0.10][]开始， [`Stream`][]类借助带有下划线一些相关函数[`.read()`][]和[`.write()`][]，并提供了访问他们的能力。
 
 这里有一些准则文档可供参考：[实现可读的流][]和[实现可写的流][]。我们假设你可以把这些文章已经读过了，下个章节将做稍许的深入讲解。
-
-
 
 ## 实现用户自定义流须知
 
@@ -358,11 +340,7 @@ Readable.pipe(Transformable).pipe(Writable);
 2. 在流返回 `false` 后不要调用 `.write()` 方法，而是等待 'drain'。
 3. 流在不同的 Node.js 版本和库中是有变化的。小心你的测试。
 
-
-
 > 关于第三点，构建浏览器流的一个难以置信的方法是使用 [`readable-stream`][]。Rodd Vagg 曾经写过一篇[大作][]来详细描述如何使用这个工具库。简而言之，它为 [`Readable`][]流提供了自动可销毁降解的类型，并且支持旧版的 Node.js 和浏览器。
-
-
 
 ## 对于可读流的规则
 
@@ -373,8 +351,6 @@ Readable.pipe(Transformable).pipe(Writable);
 所以，除了谨慎对待[`.write()`][] [方法，我们同样要小心在 <3>`._read()`][]使用 [`.push()`][] 方法的返回值。如果[`.push()`][] 方法返回一个`false` ，流就会停止从源读数据。否则，它就不会停止而继续读下去。
 
 这里有个糟糕的使用 [`.push()`][]的例子：
-
-
 
 ```javascript
 // This is problematic as it completely ignores return value from push
@@ -389,10 +365,7 @@ class MyReadable extends Readable {
 }
 ```
 
-
 从定制流之外忽略积压简直可笑至极。在以下反例中，代码仅关注数据是否到达（通过[`'data'` event][]订阅）：
-
-
 
 ```javascript
 // This ignores the backpressure mechanisms Node.js has set in place,
@@ -401,10 +374,7 @@ class MyReadable extends Readable {
 readable.on('data', data => writable.write(data));
 ```
 
-
 下面是一个使用 [`.push()`][]带有Readable的例子。
-
-
 
 ```javascript
 const { Readable } = require('stream');
@@ -428,12 +398,9 @@ myReadableStream.on('data', chunk => {
 // { message: 'Hello, world!' }
 ```
 
-
 在这个示例中，我们创建了一个自定义的可读流，通过 [`.push()`][]方法将单个对象 推到流中。 [`._read()`][] 方法在流准备好消费数据时被调用，在这种情况下， 我们立即将一些数据推送到流中，并通过推送空标志流的结束。
 
 然后我们通过监听“数据”事件、记录每块推送到流的数据量。 在这种情况下，我们只把一块数据推到流中，所以我们只看到一个日志消息。
-
-
 
 ## 关于可写流的规则
 
@@ -464,10 +431,7 @@ if (chunk.contains('b')) return callback();
 callback();
 ```
 
-
 在实现[`._writev()`][]方法时还有其它一些东西值得考虑。此函数与[`.cork()`][] 耦合，但是编写代码的时有一个容易犯的错误：
-
-
 
 ```javascript
 // Using .uncork() twice here makes two calls on the C++ layer, rendering the
@@ -500,10 +464,7 @@ function doUncork(stream) {
 }
 ```
 
-
 [`.cork()`][]方法可以调用任意多次，但同时也要记得调用 [`.uncork()`][]方法同样的次数，使得它可以正常流入。
-
-
 
 ## 总结
 

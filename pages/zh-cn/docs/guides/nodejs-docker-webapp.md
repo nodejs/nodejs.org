@@ -228,7 +228,7 @@ Hello world
 
 ## 关闭镜像
 
-我们可以通过使用  `kill` 命令来关闭我们已经开启的镜像。这里使用到了容器的 ID， 在本示例代码中是 `ecce33b30ebf`。
+我们可以通过使用 `kill` 命令来关闭我们已经开启的镜像。这里使用到了容器的 ID， 在本示例代码中是 `ecce33b30ebf`。
 
 ```bash
 # Kill our running container
