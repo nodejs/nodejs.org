@@ -44,7 +44,7 @@
     "@mdx-js/react": "^2.3.0",
     "@nodevu/core": "~0.1.0",
     "@radix-ui/react-select": "^2.0.0",
-    "@types/node": "18.17.17",
+    "@types/node": "18.18.1",
     "@vcarl/remark-headings": "~0.1.0",
     "@vercel/analytics": "^1.0.2",
     "autoprefixer": "~10.4.15",
