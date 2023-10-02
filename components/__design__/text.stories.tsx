@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-export const Text: StoryObj = {
+export const Anchor: StoryObj = {
   render: () => (
     <div>
       <p>
