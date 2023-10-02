@@ -4,3 +4,12 @@ a:visited {
   @apply text-green-600
    dark:text-green-400;
 }
+
+code {
+  color: $neutral-900;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
