@@ -38,8 +38,8 @@ export const SocialMediaLogos: StoryObj = {
       </div>
       <div>
         <Image
-          src="/static/images/logos/social-x.svg"
-          alt="X Logo"
+          src="/static/images/logos/social-twitter.svg"
+          alt="Twitter Logo"
           width={64}
           height={64}
         />
