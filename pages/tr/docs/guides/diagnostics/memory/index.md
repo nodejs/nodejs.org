@@ -18,11 +18,11 @@ Bu dokümanda bellek ile ilgili hataların nasıl çözüleceğini öğrenebilir
 
 ## Bellek yetersizliği
 
-Node.js*(JavaScript)* çöp toplayıcı bir dildir, yani saklayıcılar aracılığıyla bellek sızıntıları olması mümkündür. Node.js uygulamaları genellikle çok kiracılı, uzun süreli çalışan ve kritik işlerdir. Dolayısıyla bellek sızıntılarını bulmak için erişilebilir ve verimli bir yol sunmak önemlidir.
+Node.js_(JavaScript)_ çöp toplayıcı bir dildir, yani saklayıcılar aracılığıyla bellek sızıntıları olması mümkündür. Node.js uygulamaları genellikle çok kiracılı, uzun süreli çalışan ve kritik işlerdir. Dolayısıyla bellek sızıntılarını bulmak için erişilebilir ve verimli bir yol sunmak önemlidir.
 
 ### Belirtiler
 
-Kullanıcı, sürekli artan bellek kullanımını _(hızlı veya yavaş, günler hatta haftalar boyunca)_ gözlemliyor, ardından işlem yöneticisi tarafından işlemin çöküp yeniden başlatıldığını görüyorsa. Belki de işlem önceki haline göre daha yavaş çalışıyor ve yeniden başlatmalar bazı isteklerin başarısız olmasına sebep oluyorsa*(yük dengeleyici 502 koduyla cevap veriyorsa)*.
+Kullanıcı, sürekli artan bellek kullanımını _(hızlı veya yavaş, günler hatta haftalar boyunca)_ gözlemliyor, ardından işlem yöneticisi tarafından işlemin çöküp yeniden başlatıldığını görüyorsa. Belki de işlem önceki haline göre daha yavaş çalışıyor ve yeniden başlatmalar bazı isteklerin başarısız olmasına sebep oluyorsa_(yük dengeleyici 502 koduyla cevap veriyorsa)_.
 
 ### Yan Etkiler
 
