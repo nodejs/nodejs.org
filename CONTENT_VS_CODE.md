@@ -1,6 +1,6 @@
 ## Content vs. Code
 
-The **Website Team** (@nodejs/website) is primarily concerned with the code and overall structure of the website.
+The **Website Team** (@nodejs/nodejs-website) is primarily concerned with the code and overall structure of the website.
 
 The content of the website comes from Node.js core collaborators, in particular, from a variety of teams and [working groups](https://github.com/nodejs/TSC/blob/main/WORKING_GROUPS.md#current-working-groups).
 
