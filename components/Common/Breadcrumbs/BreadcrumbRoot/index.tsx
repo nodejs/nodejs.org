@@ -15,11 +15,24 @@ const BreadcrumbRoot: FC<PropsWithChildren<BreadcrumbRootProps>> = ({
   children,
 }) => (
   <nav aria-label="breadcrumb">
-    <ol className={styles.list}>
+    <ol
+      itemScope
+      itemType="https://schema.org/BreadcrumbList"
+      className={styles.list}
+    >
       {!hideHome && (
         <BreadcrumbItem>
-          <LocalizedLink href="/">
-            <HomeIcon aria-label="Home" className={styles.icon} />
+          <LocalizedLink
+            itemScope
+            itemType="http://schema.org/Thing"
+            itemProp="item"
+            itemID="/"
+            href="/"
+          >
+            <span itemProp="name">
+              <HomeIcon aria-label="Home" className={styles.icon} />
+            </span>
+            <meta itemProp="position" content="1" />
           </LocalizedLink>
         </BreadcrumbItem>
       )}

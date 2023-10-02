@@ -31,22 +31,34 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
 
     return itemsToRender.map((link, index, items) => {
       const isLastItem = index === items.length - 1;
+      let position = index + 1;
+      if (!hideHome) {
+        position += 1;
+      }
+      if (links.length > maxLength) {
+        position += 1;
+      }
 
       return (
         <BreadcrumbItem key={link.href.toString()} hideSeparator={isLastItem}>
           <LocalizedLink
+            itemScope
+            itemType="http://schema.org/Thing"
+            itemProp="item"
+            itemID="/"
             href={link.href}
             className={classNames({
               [styles.active]: isLastItem,
             })}
             aria-current={isLastItem ? 'page' : undefined}
           >
-            {link.label}
+            <span itemProp="name">{link.label}</span>
+            <meta itemProp="position" content={`${position}`} />
           </LocalizedLink>
         </BreadcrumbItem>
       );
     });
-  }, [links, maxLength]);
+  }, [links, maxLength, hideHome]);
 
   return (
     <BreadcrumbRoot hideHome={hideHome}>

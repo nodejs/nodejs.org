@@ -11,7 +11,12 @@ const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
   children,
   hideSeparator = false,
 }) => (
-  <li className={styles.item}>
+  <li
+    itemProp="itemListElement"
+    itemScope
+    itemType="https://schema.org/ListItem"
+    className={styles.item}
+  >
     {children}
     {!hideSeparator && (
       <ChevronRightIcon aria-hidden="true" className={styles.separator} />
