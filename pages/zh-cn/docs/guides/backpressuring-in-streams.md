@@ -213,10 +213,8 @@ sys          8.79
 
 现在改变
 
-.write()`方法的<a href="https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239" fo="25">返回值</a>，我们得到以下结果：</p>
-
 ```
-    Without respecting the return value of .write():
+Without respecting the return value of .write():
     ==================================================
     real        54.48
     user        53.15
@@ -237,13 +235,15 @@ sys          8.79
         629566  involuntary context switches
 ```
 
+.write()`方法的<a href="https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239" fo="25">返回值</a>，我们得到以下结果：
+
 虚拟内存占用的最大的字节块达到了 1.52 gb。
 
 没有合适的流来处理积压，就会产生一个内存占用的震级顺序——与同样的进程处理有着天壤之别！
 
-这个实验展示了如何精简以对你的计算系统进行精简，以及有效的资源消耗。现在，我们故意弄出一个故障看看它又是怎么工作的。
-
 ## 积压是怎么处理这些问题的？
+
+这个实验展示了如何精简以对你的计算系统进行精简，以及有效的资源消耗。现在，我们故意弄出一个故障看看它又是怎么工作的。
 
 我们有不同的函数将数据从一个进程传入另外一个进程。在 Node.js 中，有一个内置函数称为[`.pipe()`][]，同样地，你们也可以使用[其它工具包][]。最终，在这个进程的基本层面上我们有二个互不相关的组件：数据的*源头*和*消费者*。
 
@@ -263,13 +263,11 @@ sys          8.79
 
 所以，积压既然如此重要，为什么还有理由说你没有听说过呢？显然答案很明显：Node.js 为你做了一切。
 
-这太好了！不过当我们试图去理解如何实现我们自己的积压流，这却并不太好。
-
 > 对于大部分机器而言，一个字节的大小就足以决定一个缓存是否已经满了（不同机器此值有变化）。Node.js 将允许你设置你自己的[`highWaterMark`][]。但是通常来说，默认是设置为 16kb（16384，对于对象模型流而言是 16）。在某些实例中你或许想提高那个值，尽管去提高吧，但是也要小心使用！
 
 ## `.pipe()` 的生命周期
 
-为了对积压有一个更好的理解，这里有一[`Readable`][]流正通过 [piped管道][]进入[`Writable`][]的整个生命周期图：
+这太好了！不过当我们试图去理解如何实现我们自己的积压流，这却并不太好。
 
 ```
                                                      +===================+
@@ -317,25 +315,25 @@ sys          8.79
 
 > 注意：如果你创建一些管道准备把一些流串联起来从而操纵数据，你应该实现 [`Transform`][]流。
 
-在这种情况下，从[`Readable`][]流中的输出进[`Transform`][]，并且会被管道输送进入[`Writable`][]。
+为了对积压有一个更好的理解，这里有一[`Readable`][]流正通过 [piped管道][]进入[`Writable`][]的整个生命周期图：
 
 ```javascript
 Readable.pipe(Transformable).pipe(Writable);
 ```
 
-积压将被自动应用，但是同时请注意输入、输出[传输的][]`highWaterMark` 可以手动控制，并且会影响到积压系统。
+在这种情况下，从[`Readable`][]流中的输出进[`Transform`][]，并且会被管道输送进入[`Writable`][]。
 
 ## 积压行为的准则
 
-从[Node.js v0.10][]开始， [`Stream`][]类借助带有下划线一些相关函数[`.read()`][]和[`.write()`][]，并提供了访问他们的能力。
+积压将被自动应用，但是同时请注意输入、输出[传输的][]`highWaterMark` 可以手动控制，并且会影响到积压系统。
 
-这里有一些准则文档可供参考：[实现可读的流][]和[实现可写的流][]。我们假设你可以把这些文章已经读过了，下个章节将做稍许的深入讲解。
+从[Node.js v0.10][]开始， [`Stream`][]类借助带有下划线一些相关函数[`.read()`][]和[`.write()`][]，并提供了访问他们的能力。
 
 ## 实现用户自定义流须知
 
-积压将被自动应用，但是同时请注意输入和输出 [`Transform`][] 的 `水准值` 可以手动控制，并且会影响到积压系统。
+这里有一些准则文档可供参考：[实现可读的流][]和[实现可写的流][]。我们假设你可以把这些文章已经读过了，下个章节将做稍许的深入讲解。
 
-可以理解为：
+积压将被自动应用，但是同时请注意输入和输出 [`Transform`][] 的 `水准值` 可以手动控制，并且会影响到积压系统。
 
 1. 没有特殊要求下，绝对不要用 `.push()`。
 2. 在流返回 `false` 后不要调用 `.write()` 方法，而是等待 'drain'。
@@ -345,13 +343,13 @@ Readable.pipe(Transformable).pipe(Writable);
 
 ## 对于可读流的规则
 
+可以理解为：
+
 迄今为止，我们已经看了[`.write()`][] 方法对于积压的影响，并且过多关注在[`Writable`][]流上，因为 Node.js 的功能，数据从[`Readable`][]流到[`Writable`][]。但是正如我们在数据流传输过程中我们观察到的一样：源和目标一样重要，[`Readable`][]流对于积压是如何处理的至关重要。
 
 这两个过程相互依赖地进行有效沟通，如果 [`Readable`][]流在[`Writable`][]流需要它停止发送数据的时候忽略了，那么当[`.write()`][]方法返回时，会产生问题。
 
 所以，除了谨慎对待[`.write()`][] [方法，我们同样要小心在 <3>`._read()`][]使用 [`.push()`][] 方法的返回值。如果[`.push()`][] 方法返回一个`false` ，流就会停止从源读数据。否则，它就不会停止而继续读下去。
-
-这里有个糟糕的使用 [`.push()`][]的例子：
 
 ```javascript
 // This is problematic as it completely ignores return value from push
@@ -366,7 +364,7 @@ class MyReadable extends Readable {
 }
 ```
 
-从定制流之外忽略积压简直可笑至极。在以下反例中，代码仅关注数据是否到达（通过[`'data'` event][]订阅）：
+这里有个糟糕的使用 [`.push()`][]的例子：
 
 ```javascript
 // This ignores the backpressure mechanisms Node.js has set in place,
@@ -375,7 +373,7 @@ class MyReadable extends Readable {
 readable.on('data', data => writable.write(data));
 ```
 
-下面是一个使用 [`.push()`][]带有Readable的例子。
+从定制流之外忽略积压简直可笑至极。在以下反例中，代码仅关注数据是否到达（通过[`'data'` event][]订阅）：
 
 ```javascript
 const { Readable } = require('stream');
@@ -399,15 +397,15 @@ myReadableStream.on('data', chunk => {
 // { message: 'Hello, world!' }
 ```
 
-在这个示例中，我们创建了一个自定义的可读流，通过 [`.push()`][]方法将单个对象 推到流中。 [`._read()`][] 方法在流准备好消费数据时被调用，在这种情况下， 我们立即将一些数据推送到流中，并通过推送空标志流的结束。
+下面是一个使用 [`.push()`][]带有Readable的例子。
 
-然后我们通过监听“数据”事件、记录每块推送到流的数据量。 在这种情况下，我们只把一块数据推到流中，所以我们只看到一个日志消息。
+在这个示例中，我们创建了一个自定义的可读流，通过 [`.push()`][]方法将单个对象 推到流中。 [`._read()`][] 方法在流准备好消费数据时被调用，在这种情况下， 我们立即将一些数据推送到流中，并通过推送空标志流的结束。
 
 ## 关于可写流的规则
 
-重新调用[`.write()`][]方法根据一些条件可能返回 true 或者 false。幸运地是，当我们构建属于自己的 [`Writable`][]流的时候，[`数据流状态机`][]会处理我们的回调，并且决定什么时候处理积压并且为我们简化数据流。
+然后我们通过监听“数据”事件、记录每块推送到流的数据量。 在这种情况下，我们只把一块数据推到流中，所以我们只看到一个日志消息。
 
-但是当我们需要直接使用[`Writable`][]流时，我们必须考虑 [`.write()`][] 方法返回的值，并且注意到以下一些情况：
+重新调用[`.write()`][]方法根据一些条件可能返回 true 或者 false。幸运地是，当我们构建属于自己的 [`Writable`][]流的时候，[`数据流状态机`][]会处理我们的回调，并且决定什么时候处理积压并且为我们简化数据流。
 
 - 如果写队列确实繁忙，[`.write()`][] 方法将返回 false。
 - 如果数据块太大， [`.write()`][] 方法将返回 false（限定通过 [`highWaterMark`][] 决定）。
@@ -432,7 +430,7 @@ if (chunk.contains('b')) return callback();
 callback();
 ```
 
-在实现[`._writev()`][]方法时还有其它一些东西值得考虑。此函数与[`.cork()`][] 耦合，但是编写代码的时有一个容易犯的错误：
+但是当我们需要直接使用[`Writable`][]流时，我们必须考虑 [`.write()`][] 方法返回的值，并且注意到以下一些情况：
 
 ```javascript
 // Using .uncork() twice here makes two calls on the C++ layer, rendering the
@@ -465,25 +463,24 @@ function doUncork(stream) {
 }
 ```
 
-[`.cork()`][]方法可以调用任意多次，但同时也要记得调用 [`.uncork()`][]方法同样的次数，使得它可以正常流入。
+在实现[`._writev()`][]方法时还有其它一些东西值得考虑。此函数与[`.cork()`][] 耦合，但是编写代码的时有一个容易犯的错误：
 
 ## 总结
+
+[`.cork()`][]方法可以调用任意多次，但同时也要记得调用 [`.uncork()`][]方法同样的次数，使得它可以正常流入。
 
 流经常作为一个模块用于 Node.js 中，对于内部的系统结构而言非常重要。对于开发者而言，可以通过 Node.js 扩展连接应答系统。
 
 现在我们希望你有能力进行故障排除，记住了是如何为你的 [`Writable`][]和[`Readable`][]流编写积压处理的。并且你还可以把这些知识分享给你的同事和朋友们。
 
-在此之后请仔细阅读更多的有关[`Stream`][]其它 API 函数，这样有助于当你在构建 Node.js 的应用程序之时更好地理解关于流的能力。
-
 [`Stream`]: https://nodejs.org/api/stream.html
 [`Buffer`]: https://nodejs.org/api/buffer.html
 [`EventEmitter`]: https://nodejs.org/api/events.html
-[`Writable`]: https://nodejs.org/api/stream.html#stream_writable_streams
+[`Writable`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
 [Writable`的`.write()]: https://nodejs.org/api/stream.html#stream_writable_streams
 [`Readable`]: https://nodejs.org/api/stream.html#stream_readable_streams
 [`Duplex`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`Transform`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
-[`Writable`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [传输的]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`zlib`]: https://nodejs.org/api/zlib.html
 [`'drain'`]: https://nodejs.org/api/stream.html#stream_event_drain
@@ -511,7 +508,6 @@ function doUncork(stream) {
 [`数据流状态机`]: https://en.wikipedia.org/wiki/Finite-state_machine
 [`.pipe()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
 [piped管道]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
-[`Writable`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
 [`pump`]: https://github.com/mafintosh/pump
 [`pipeline`]: https://nodejs.org/api/stream.html#stream_stream_pipeline_streams_callback
 [`promisify`]: https://nodejs.org/api/util.html#util_util_promisify_original
