@@ -1,17 +1,16 @@
-import type { FC } from 'react';
 import * as RadixAvatar from '@radix-ui/react-avatar';
+import type { FC } from 'react';
+
+import type { AvatarType } from '@/components/Common/AvatarGroup';
+
 import styles from './index.module.css';
 
-type AvatarProps = {
-  src?: string;
-  alt?: string;
+type AvatarProps = AvatarType & {
   extraClass?: string;
   onClick?: () => void;
 };
 
-const usrnameToFallbackText = (name?: string) => {
-  // sanitize name before using it
-  if (!name) return;
+const usrnameToFallbackText = (name = '') => {
   const sanitizeName = name.toLowerCase().replace(' ', '-');
   const words = sanitizeName.split('-');
   return words.length > 1 ? words[0][0] + words[1][0] : name.slice(0, 2);
