@@ -1,3 +1,10 @@
+a,
+a:link,
+a:visited {
+  @apply text-green-600
+   dark:text-green-400;
+}
+
 ul {
   @apply list-disc
     font-regular

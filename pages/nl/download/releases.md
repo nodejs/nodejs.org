@@ -6,7 +6,6 @@ modules: '<code>NODE_MODULE_VERSION</code> verwijst naar het ABI (application bi
 
 ### io.js & Node.js
 
-Releases van 1.x tot en met 3.x werden "io.js" genoemd, omdat ze deel uitmaakten van de io.js-fork.
-Vanaf Node.js 4.0.0 zijn de vormalige releases van io.js geconvergeerd met Node.js 0.12.x in uniforme Node.js-releases.
+Releases van 1.x tot en met 3.x werden "io.js" genoemd, omdat ze deel uitmaakten van de io.js-fork. Vanaf Node.js 4.0.0 zijn de vormalige releases van io.js geconvergeerd met Node.js 0.12.x in uniforme Node.js-releases.
 
 ### Op zoek naar de laatste release van een version branch?
