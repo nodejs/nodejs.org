@@ -44,5 +44,6 @@ export const OPEN_SANS_FONT = Open_Sans({
 // within Tailwind (tailwind.config.ts) and Storybook (preview.js)
 export const IBM_PLEX_MONO_FONT = IBM_Plex_Mono({
   weight: ['600'],
+  subsets: ['latin'],
   variable: '--font-ibm-plex-mono',
 });

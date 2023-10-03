@@ -13,6 +13,6 @@ code {
     text-base 
     font-semibold
     text-neutral-900
-   dark:bg-neutral-900
-   dark:text-white;
+    dark:bg-neutral-900
+    dark:text-white;
 }
