@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ul {
+  @apply list-disc font-open-sans font-regular text-neutral-900
+    dark:text-white;
+}
+
+ol {
+  @apply list-decimal font-open-sans font-regular text-neutral-900
+    dark:text-white;
+}
