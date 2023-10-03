@@ -47,7 +47,7 @@ If you're an active contributor seeking to become a member, we recommend you con
 - The nomination must have at least three existing members of the Website Team agree with the nomination.
   - This can be done through commenting with "agreement" (showing support) or reacting to the Issue with a :+1: (Thumbs-up Emoji)
 - The Issue must be open for at least 72 hours without an objection from an existing member of the Website Team
-  - The nomination cannot pass until all open discordances/objections are resolved.
+  - The nomination cannot pass until all open objections are resolved.
   - Objections from the TSC or Core Collaborators are also counted as valid objections.
 
 </details>
@@ -122,7 +122,7 @@ for getting things done and landing your contribution.
     > By default if you run the Website (either via `npm run serve` or `npm run build`) two files on the `public` folder will be generated.
     >
     > You don't need to reset/discard these files, as by default we use Git Hooks that simply ignore these files during commit.
-    > Note that these files are generated and should **not** be commited. (`public/node-release-data.json` and `public/blog-posts-data.json`)
+    > Note that these files are generated and should **not** be committed. (`public/node-release-data.json` and `public/blog-posts-data.json`)
 
     > [!IMPORTANT]\
     > Before committing and opening a Pull Request, please go first through our [Commit](#commit-guidelines) and [Pull Request](#pull-request-policy) guidelines outlined below.
@@ -134,7 +134,7 @@ for getting things done and landing your contribution.
 > We use [GitHub Merge Queues](https://github.blog/2023-07-12-github-merge-queue-is-generally-available/)
 > which means that before merge the PRs get automatically updated and checked against the latest changes on the base branch.
 >
-> This also reduces the amount of times we need to run our CI checks, as every new push requires frehsly new CI-checks.
+> This also reduces the amount of times we need to run our CI checks, as every new push requires freshly new CI-checks.
 
 ### CLI Commands
 
@@ -207,7 +207,7 @@ The list below describes some merging and approval rules adopted in this reposit
     - Fast-tracking is only allowed for small bug fixes, small feature changes, localization changes, or other non-critical/highly-impacting changes not covered by the previous rule that allows PRs to be merged immediately.
     - Fast-tracking cannot be used for updates on the `COLLABORATOR_GUIDE.md`, `CONTRIBUTING.md` guide, `CODEOWNERS`, GitHub Actions, or any security-impacting file or document that changes the governing policies of this repository.
 - There must be no objections after forty-eight (48) hours (Or seventy-two (72) hours if the PR was authored on the weekend).
-  - If there are disagrements consensus should be sought. Lack of consensus might require escalation to the Website Team Maintainers.
+  - If there are disagreements consensus should be sought. Lack of consensus might require escalation to the Website Team Maintainers.
 - At least one approval is required for any PR to be merged.
 - Tests must be included in Pull Requests for new features or bug fixes. You are responsible for fixing any test(s) that fail.
 
