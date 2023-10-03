@@ -21,23 +21,7 @@ export default {
         </div>
 
         <div style={listContainer}>
-          <ul style={{ color: 'white' }}>
-            <li>Unordered lists</li>
-            <li>those without</li>
-            <li>numbers</li>
-          </ul>
-        </div>
-
-        <div style={listContainer}>
           <ol>
-            <li>Ordered lists</li>
-            <li>Like this</li>
-            <li>with numbers</li>
-          </ol>
-        </div>
-
-        <div style={listContainer}>
-          <ol style={{ color: 'white' }}>
             <li>Ordered lists</li>
             <li>Like this</li>
             <li>with numbers</li>
