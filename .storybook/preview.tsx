@@ -2,7 +2,12 @@ import NextImage from 'next/image';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { SiteProvider } from '../providers/siteProvider';
 import { LocaleProvider } from '../providers/localeProvider';
-import { OPEN_SANS_FONT, STORYBOOK_MODES, STORYBOOK_SIZES } from './constants';
+import {
+  OPEN_SANS_FONT,
+  IBM_PLEX_MONO_FONT,
+  STORYBOOK_MODES,
+  STORYBOOK_SIZES,
+} from './constants';
 import type { Preview, ReactRenderer } from '@storybook/react';
 
 import '../styles/new/index.css';
@@ -20,7 +25,9 @@ const preview: Preview = {
     Story => (
       <SiteProvider>
         <LocaleProvider>
-          <div className={`${OPEN_SANS_FONT.variable}`}>
+          <div
+            className={`${OPEN_SANS_FONT.variable} ${IBM_PLEX_MONO_FONT.variable}`}
+          >
             <Story />
           </div>
         </LocaleProvider>

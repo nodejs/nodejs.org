@@ -6,10 +6,8 @@ a:visited {
 }
 
 code {
-  color: $neutral-900;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 24px;
+  @apply font-mono 
+  text-base 
+  font-semibold 
+  text-neutral-900;
 }
