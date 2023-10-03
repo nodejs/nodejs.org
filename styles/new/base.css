@@ -3,8 +3,8 @@ ul {
     font-regular
     not-italic
     leading-6
-  text-neutral-900
-  dark:text-white;
+    text-neutral-900
+    dark:text-white;
 }
 
 ol {
@@ -12,6 +12,6 @@ ol {
     font-regular
     not-italic
     leading-6
-  text-neutral-900
-  dark:text-white;
+    text-neutral-900
+    dark:text-white;
 }
