@@ -77,7 +77,7 @@ setInterval(intervalFunc, 1500);
 
 ## 清除定时器
 
-如果 `Timeout` 或 `Immediate `需要被取消，我们该怎么办？ `setTimeout()`， `setImmediate() `和 `setInterval() `返回一个定时器对象，它可以被用来引用设置过的 `Timeout `或 `Immediate `对象。通过把该对象传入 `clear`函数中，那个对象就会被终止执行。这些可接受的函数是 `clearTimeout()`， `clearImmediate() `和 `learInterval()`。看下面例子：
+如果 `Timeout` 或 `Immediate`需要被取消，我们该怎么办？ `setTimeout()`， `setImmediate()`和 `setInterval()`返回一个定时器对象，它可以被用来引用设置过的 `Timeout`或 `Immediate`对象。通过把该对象传入 `clear`函数中，那个对象就会被终止执行。这些可接受的函数是 `clearTimeout()`， `clearImmediate()`和 `learInterval()`。看下面例子：
 
 ```js
 const timeoutObj = setTimeout(() => {
