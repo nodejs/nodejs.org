@@ -1,14 +1,17 @@
 'use client';
 import type { FC } from 'react';
 import { useState, useMemo } from 'react';
+
 import Avatar from './Avatar';
 import styles from './index.module.css';
 
+export type AvatarType = {
+  src: string;
+  alt?: string;
+};
+
 type AvatarGroupProps = {
-  avatars: {
-    src: string;
-    alt?: string;
-  }[];
+  avatars: AvatarType[];
   limit?: number;
 };
 
@@ -37,6 +40,8 @@ const AvatarGroup: FC<AvatarGroupProps> = ({ avatars, limit = 10 }) => {
       {avatars.length > limit && (
         <Avatar
           extraClass={styles.avatarRoot}
+          // force fallback text to be '+' or '-'
+          src=""
           alt={showMore ? '-' : `+${avatars.length - limit}`}
           onClick={toggleShowMore}
         />

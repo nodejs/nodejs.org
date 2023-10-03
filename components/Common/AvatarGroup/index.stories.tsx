@@ -1,5 +1,7 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
+
 import { userNameToAvatarUrl } from '@/util/github';
+
 import AvatarGroup from './';
 
 type Story = StoryObj<typeof AvatarGroup>;

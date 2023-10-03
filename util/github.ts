@@ -1,3 +1,2 @@
-export const userNameToAvatarUrl = (userName: string): string => {
-  return `https://avatars.githubusercontent.com/${userName}`;
-};
+export const githubProfileAvatarUrl = (username: string): string =>
+  `https://avatars.githubusercontent.com/${username}`;

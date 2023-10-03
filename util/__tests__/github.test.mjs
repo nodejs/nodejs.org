@@ -1,8 +1,8 @@
-import { userNameToAvatarUrl } from '@/util/github';
+import { githubProfileAvatarUrl } from '@/util/github';
 
-describe('userNameToAvatarUrl', () => {
+describe('githubProfileAvatarUrl', () => {
   it('returns the correct URL', () => {
-    expect(userNameToAvatarUrl('octocat')).toBe(
+    expect(githubProfileAvatarUrl('octocat')).toBe(
       'https://avatars.githubusercontent.com/octocat'
     );
   });
