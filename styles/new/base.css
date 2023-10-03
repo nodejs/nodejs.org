@@ -5,9 +5,15 @@
 ul {
   @apply list-disc font-open-sans font-regular text-neutral-900
     dark:text-white;
+
+  font-style: normal;
+  line-height: 24px;
 }
 
 ol {
   @apply list-decimal font-open-sans font-regular text-neutral-900
     dark:text-white;
+
+  font-style: normal;
+  line-height: 24px;
 }
