@@ -12,14 +12,13 @@ downloads:
   intro: >
     Завантажте початковий код Node.js або інсталятор для вашої платформи та почніть розробку сьогодні.
   currentVersion: Поточна версія
-  includes: Містить
-  buildInstructions: Building Node.js from source on supported platforms
-  WindowsInstaller: Windows Installer
-  WindowsBinary: Windows Binary
-  MacOSInstaller: macOS Installer
-  MacOSBinary: macOS Binary
-  LinuxBinaries: Linux Binaries
-  SourceCode: Source Code
+  buildInstructions: Містить
+  WindowsInstaller: Building Node.js from source on supported platforms
+  WindowsBinary: Windows Installer
+  MacOSInstaller: Windows Binary
+  MacOSBinary: macOS Installer
+  LinuxBinaries: macOS Binary
+  SourceCode: Linux Binaries
 additional:
   headline: Додаткові платформи
   intro: >
@@ -33,3 +32,4 @@ additional:
   LinuxSystemZ: Linux on System z
   AIXPowerSystems: AIX on Power Systems
 ---
+
