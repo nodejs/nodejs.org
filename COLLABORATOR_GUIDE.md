@@ -57,7 +57,7 @@ We recommend collaborators follow the guidelines on the [Contributing Guide](./C
 
 ### Involving the Website Team
 
-Collaborators may opt to elevate pull requests or issues to the group for discussion by mentioning `@nodejs/website`. This should be done where a pull request:
+Collaborators may opt to elevate pull requests or issues to the group for discussion by mentioning `@nodejs/nodejs-website`. This should be done where a pull request:
 
 - has a significant impact on the codebase,
 - is inherently controversial; or
