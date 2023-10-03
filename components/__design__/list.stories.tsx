@@ -36,17 +36,17 @@ export default {
 
         <div style={listContainer}>
           <ol>
-            <li>Unordered lists</li>
-            <li>those without</li>
-            <li>numbers</li>
+            <li>Ordered lists</li>
+            <li>Like this</li>
+            <li>with numbers</li>
           </ol>
         </div>
 
         <div style={listDarkContainer}>
           <ol style={{ color: 'white' }}>
-            <li>Unordered lists</li>
-            <li>those without</li>
-            <li>numbers</li>
+            <li>Ordered lists</li>
+            <li>Like this</li>
+            <li>with numbers</li>
           </ol>
         </div>
       </>
