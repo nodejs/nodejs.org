@@ -7,17 +7,21 @@
     gap-2
     px-8
     py-3
-    text-sm
-    text-white;
+    text-sm;
+
+  &,
+  a {
+    @apply text-white
+      dark:text-white;
+  }
 
   a {
     @apply w-fit
-      text-white
       underline;
   }
 
   svg {
-    @apply h-4 
+    @apply h-4
       w-4;
   }
 }
