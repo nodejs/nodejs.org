@@ -21,4 +21,12 @@ export const Anchor: StoryObj = {
   ),
 };
 
+export const Code: StoryObj = {
+  render: () => (
+    <div>
+      This is an example of <code>inline code block</code>
+    </div>
+  ),
+};
+
 export default { title: 'Design System' } as MetaObj;

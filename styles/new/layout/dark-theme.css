@@ -1,8 +1,0 @@
-html[data-theme='dark'] {
-  code {
-    @apply font-mono 
-    text-base 
-    font-semibold 
-    text-white;
-  }
-}
