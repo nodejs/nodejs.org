@@ -7,12 +7,6 @@ const listContainer = {
   padding: '1.5rem',
 } as CSSProperties;
 
-const listDarkContainer = {
-  padding: '1.5rem',
-  background: '#0d121c',
-  color: 'white',
-} as CSSProperties;
-
 export default {
   title: 'Design System/Lists',
   component: () => {
@@ -26,7 +20,7 @@ export default {
           </ul>
         </div>
 
-        <div style={listDarkContainer}>
+        <div style={listContainer}>
           <ul style={{ color: 'white' }}>
             <li>Unordered lists</li>
             <li>those without</li>
@@ -42,7 +36,7 @@ export default {
           </ol>
         </div>
 
-        <div style={listDarkContainer}>
+        <div style={listContainer}>
           <ol style={{ color: 'white' }}>
             <li>Ordered lists</li>
             <li>Like this</li>

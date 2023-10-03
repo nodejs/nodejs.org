@@ -8,3 +8,7 @@
 
 @import './mixins';
 @import './base';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
