@@ -22,9 +22,7 @@ downloads:
 additional:
   headline: Weitere Plattformen
   intro: >
-    Mitglieder der Node.js Community pflegen inoffizielle, gebaute Versionen von Node.js für weitere Plattformen. Beachte, dass
-    solche Versionen nicht vom Node.js-Kernteam unterstützt werden und daher eventuell noch nicht auf dem selben Level wie die
-    aktuelle Node.js-Version sind.
+    Mitglieder der Node.js Community pflegen inoffizielle, gebaute Versionen von Node.js für weitere Plattformen. Beachte, dass solche Versionen nicht vom Node.js-Kernteam unterstützt werden und daher eventuell noch nicht auf dem selben Level wie die aktuelle Node.js-Version sind.
   platform: Plattform
   provider: Anbieter
   SmartOSBinaries: SmartOS Binaries

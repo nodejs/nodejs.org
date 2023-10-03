@@ -12,14 +12,13 @@ downloads:
   intro: >
     Загрузите исходный код Node.js или готовый установщик для вашей платформы и начните разработку уже сегодня.
   currentVersion: Последняя текущая версия
-  includes: Содержит
-  buildInstructions: Сборка Node.js из исходного кода на поддерживаемых платформах
-  WindowsInstaller: Установщик Windows
-  WindowsBinary: Бинарный Windows
-  MacOSInstaller: Установщик macOS
-  MacOSBinary: Бинарный macOS
-  LinuxBinaries: Бинарный Linux
-  SourceCode: Исходный код
+  buildInstructions: Содержит
+  WindowsInstaller: Сборка Node.js из исходного кода на поддерживаемых платформах
+  WindowsBinary: Установщик Windows
+  MacOSInstaller: Бинарный Windows
+  MacOSBinary: Установщик macOS
+  LinuxBinaries: Бинарный macOS
+  SourceCode: Бинарный Linux
 additional:
   headline: Дополнительные платформы
   intro: >

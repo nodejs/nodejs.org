@@ -15,5 +15,4 @@ labels:
   version-schedule-prompt-link-text: Programa de soporte a largo plazo (LTS)
 ---
 
-Node.js® es un entorno de ejecución para JavaScript construido con [V8, motor
-de JavaScript de Chrome](https://v8.dev/).
+Node.js® es un entorno de ejecución para JavaScript construido con [V8, motor de JavaScript de Chrome](https://v8.dev/).

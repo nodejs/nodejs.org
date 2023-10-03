@@ -37,7 +37,9 @@ Contoh yang bagus tentang mengapa mekanisme backpressure yang diimplementasikan 
 
 Dalam satu skenario, kami akan mengambil file besar (sekitar \~9gb) dan memampatkannya menggunakan alat yang sudah dikenal [`zip(1)`][].
 
-    zip The.Matrix.1080p.mkv
+```
+zip The.Matrix.1080p.mkv
+```
 
 Meskipun itu akan memakan beberapa menit untuk menyelesaikannya, di shell lain kita dapat menjalankan skrip yang menggunakan modul Node.js [`zlib`][], yang membungkus alat kompresi lainnya, [`gzip(1)`][].
 
@@ -135,37 +137,41 @@ Pada contoh-contoh berikut kita akan menghapus [return value][] dari fungsi `.wr
 
 Mari kita lihat benchmark singkat. Menggunakan contoh yang sama seperti di atas, kami melakukan beberapa percobaan waktu untuk mendapatkan waktu median untuk kedua binary.
 
-       trial (#)  | `node` binary (ms) | modified `node` binary (ms)
-    =================================================================
-          1       |      56924         |           55011
-          2       |      52686         |           55869
-          3       |      59479         |           54043
-          4       |      54473         |           55229
-          5       |      52933         |           59723
-    =================================================================
-    average time: |      55299         |           55975
+```
+   trial (#)  | `node` binary (ms) | modified `node` binary (ms)
+=================================================================
+      1       |      56924         |           55011
+      2       |      52686         |           55869
+      3       |      59479         |           54043
+      4       |      54473         |           55229
+      5       |      52933         |           59723
+=================================================================
+average time: |      55299         |           55975
+```
 
 Kedua proses tersebut memakan waktu sekitar satu menit untuk dijalankan, sehingga tidak terlalu banyak perbedaan antara keduanya, tetapi mari kita perhatikan lebih dekat untuk mengonfirmasi apakah kecurigaan kita benar. Kami menggunakan alat Linux [`dtrace`][] untuk mengevaluasi apa yang terjadi dengan pengumpul sampah V8.
 
 Waktu pengukuran GC (pengumpul sampah) menunjukkan interval dari siklus lengkap dari satu kali sapuan yang dilakukan oleh pengumpul sampah:
 
-    approx. time (ms) | GC (ms) | modified GC (ms)
-    =================================================
-              0       |    0    |      0
-              1       |    0    |      0
-             40       |    0    |      2
-            170       |    3    |      1
-            300       |    3    |      1
+```
+approx. time (ms) | GC (ms) | modified GC (ms)
+=================================================
+          0       |    0    |      0
+          1       |    0    |      0
+         40       |    0    |      2
+        170       |    3    |      1
+        300       |    3    |      1
 
-             *             *           *
-             *             *           *
-             *             *           *
+         *             *           *
+         *             *           *
+         *             *           *
 
-          39000       |    6    |     26
-          42000       |    6    |     21
-          47000       |    5    |     32
-          50000       |    8    |     28
-          54000       |    6    |     35
+      39000       |    6    |     26
+      42000       |    6    |     21
+      47000       |    5    |     32
+      50000       |    8    |     28
+      54000       |    6    |     35
+```
 
 Ketika kedua proses dimulai dengan sama dan tampaknya bekerja dengan GC pada tingkat yang sama, menjadi jelas bahwa setelah beberapa detik dengan sistem backpressure yang berfungsi dengan baik, beban GC disebar di selang waktu yang konsisten antara 4-8 milidetik hingga akhir transfer data.
 
@@ -181,49 +187,53 @@ Untuk menentukan konsumsi memori dari setiap binary, kami menggunakan `/usr/bin/
 
 Berikut adalah output dari binary normal:
 
-    Respecting the return value of .write()
-    =============================================
-    real        58.88
-    user        56.79
-    sys          8.79
-      87810048  maximum resident set size
-             0  average shared memory size
-             0  average unshared data size
-             0  average unshared stack size
-         19427  page reclaims
-          3134  page faults
-             0  swaps
-             5  block input operations
-           194  block output operations
-             0  messages sent
-             0  messages received
-             1  signals received
-            12  voluntary context switches
-        666037  involuntary context switches
+```
+Respecting the return value of .write()
+=============================================
+real        58.88
+user        56.79
+sys          8.79
+  87810048  maximum resident set size
+         0  average shared memory size
+         0  average unshared data size
+         0  average unshared stack size
+     19427  page reclaims
+      3134  page faults
+         0  swaps
+         5  block input operations
+       194  block output operations
+         0  messages sent
+         0  messages received
+         1  signals received
+        12  voluntary context switches
+    666037  involuntary context switches
+```
 
 Ukuran byte maksimum yang ditempati oleh memori virtual ternyata sekitar 87,81 mb.
 
 Dan sekarang dengan mengubah [nilai kembali][] dari fungsi [`.write()`][], kami mendapatkan:
 
-    Without respecting the return value of .write():
-    ==================================================
-    real        54.48
-    user        53.15
-    sys          7.43
-    1524965376  maximum resident set size
-             0  average shared memory size
-             0  average unshared data size
-             0  average unshared stack size
-        373617  page reclaims
-          3139  page faults
-             0  swaps
-            18  block input operations
-           199  block output operations
-             0  messages sent
-             0  messages received
-             1  signals received
-            25  voluntary context switches
-        629566  involuntary context switches
+```
+Without respecting the return value of .write():
+==================================================
+real        54.48
+user        53.15
+sys          7.43
+1524965376  maximum resident set size
+         0  average shared memory size
+         0  average unshared data size
+         0  average unshared stack size
+    373617  page reclaims
+      3139  page faults
+         0  swaps
+        18  block input operations
+       199  block output operations
+         0  messages sent
+         0  messages received
+         1  signals received
+        25  voluntary context switches
+    629566  involuntary context switches
+```
 
 Ukuran byte maksimum yang ditempati oleh memori virtual ternyata sekitar 1,52 gb.
 
@@ -259,47 +269,49 @@ Itu sangat bagus! Tetapi juga tidak begitu bagus ketika kita mencoba memahami ca
 
 Untuk mencapai pemahaman yang lebih baik tentang backpressure, berikut adalah diagram alir tentang siklus aliran [`Readable`][] yang di-[pipe][] ke dalam aliran [`Writable`][]:
 
-                                                         +===================+
-                             x-->  Piping functions   +-->   src.pipe(dest)  |
-                             x     are set up during     |===================|
-                             x     the .pipe method.     |  Event callbacks  |
-      +===============+      x                           |-------------------|
-      |   Your Data   |      x     They exist outside    | .on('close', cb)  |
-      +=======+=======+      x     the data flow, but    | .on('data', cb)   |
-              |              x     importantly attach    | .on('drain', cb)  |
-              |              x     events, and their     | .on('unpipe', cb) |
-    +---------v---------+    x     respective callbacks. | .on('error', cb)  |
-    |  Readable Stream  +----+                           | .on('finish', cb) |
-    +-^-------^-------^-+    |                           | .on('end', cb)    |
-      ^       |       ^      |                           +-------------------+
-      |       |       |      |
-      |       ^       |      |
-      ^       ^       ^      |    +-------------------+         +=================+
-      ^       |       ^      +---->  Writable Stream  +--------->  .write(chunk)  |
-      |       |       |           +-------------------+         +=======+=========+
-      |       |       |                                                 |
-      |       ^       |                              +------------------v---------+
-      ^       |       +-> if (!chunk)                |    Is this chunk too big?  |
-      ^       |       |     emit .end();             |    Is the queue busy?      |
-      |       |       +-> else                       +-------+----------------+---+
-      |       ^       |     emit .write();                   |                |
-      |       ^       ^                                   +--v---+        +---v---+
-      |       |       ^-----------------------------------<  No  |        |  Yes  |
-      ^       |                                           +------+        +---v---+
-      ^       |                                                               |
-      |       ^               emit .pause();          +=================+     |
-      |       ^---------------^-----------------------+  return false;  <-----+---+
-      |                                               +=================+         |
-      |                                                                           |
-      ^            when queue is empty     +============+                         |
-      ^------------^-----------------------<  Buffering |                         |
-                   |                       |============|                         |
-                   +> emit .drain();       |  ^Buffer^  |                         |
-                   +> emit .resume();      +------------+                         |
-                                           |  ^Buffer^  |                         |
-                                           +------------+   add chunk to queue    |
-                                           |            <---^---------------------<
-                                           +============+
+```
+                                                     +===================+
+                         x-->  Piping functions   +-->   src.pipe(dest)  |
+                         x     are set up during     |===================|
+                         x     the .pipe method.     |  Event callbacks  |
+  +===============+      x                           |-------------------|
+  |   Your Data   |      x     They exist outside    | .on('close', cb)  |
+  +=======+=======+      x     the data flow, but    | .on('data', cb)   |
+          |              x     importantly attach    | .on('drain', cb)  |
+          |              x     events, and their     | .on('unpipe', cb) |
++---------v---------+    x     respective callbacks. | .on('error', cb)  |
+|  Readable Stream  +----+                           | .on('finish', cb) |
++-^-------^-------^-+    |                           | .on('end', cb)    |
+  ^       |       ^      |                           +-------------------+
+  |       |       |      |
+  |       ^       |      |
+  ^       ^       ^      |    +-------------------+         +=================+
+  ^       |       ^      +---->  Writable Stream  +--------->  .write(chunk)  |
+  |       |       |           +-------------------+         +=======+=========+
+  |       |       |                                                 |
+  |       ^       |                              +------------------v---------+
+  ^       |       +-> if (!chunk)                |    Is this chunk too big?  |
+  ^       |       |     emit .end();             |    Is the queue busy?      |
+  |       |       +-> else                       +-------+----------------+---+
+  |       ^       |     emit .write();                   |                |
+  |       ^       ^                                   +--v---+        +---v---+
+  |       |       ^-----------------------------------<  No  |        |  Yes  |
+  ^       |                                           +------+        +---v---+
+  ^       |                                                               |
+  |       ^               emit .pause();          +=================+     |
+  |       ^---------------^-----------------------+  return false;  <-----+---+
+  |                                               +=================+         |
+  |                                                                           |
+  ^            when queue is empty     +============+                         |
+  ^------------^-----------------------<  Buffering |                         |
+               |                       |============|                         |
+               +> emit .drain();       |  ^Buffer^  |                         |
+               +> emit .resume();      +------------+                         |
+                                       |  ^Buffer^  |                         |
+                                       +------------+   add chunk to queue    |
+                                       |            <---^---------------------<
+                                       +============+
+```
 
 > Jika Anda mengatur pipeline untuk menggabungkan beberapa stream untuk memanipulasi data Anda, kemungkinan besar Anda akan mengimplementasikan [`Transform`][] stream.
 
@@ -466,6 +478,7 @@ Pastikan untuk membaca lebih lanjut tentang [`Stream`][] untuk fungsi API lainny
 [`EventEmitters`]: https://nodejs.org/api/events.html
 [`Writable`]: https://nodejs.org/api/stream.html#stream_writable_streams
 [`Readable`]: https://nodejs.org/api/stream.html#stream_readable_streams
+[`readable`]: https://nodejs.org/api/stream.html#stream_readable_streams
 [`Duplex`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`Transform`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`zlib`]: https://nodejs.org/api/zlib.html
