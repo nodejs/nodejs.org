@@ -175,7 +175,7 @@ _Perhatikan bahwa hal yang sama berlaku untuk penggunaan `new Buffer()` tanpa pe
 
 Konstruktor `Buffer` dapat digunakan untuk membuat buffer dengan berbagai cara:
 
-- `New Buffer(42)` membuat `Buffer` sebesar 42 byte. Sebelum Node.js 8, buffer ini berisi *memori sewenang-wenang* untuk alasan kinerja, yang dapat mencakup apa saja mulai dari kode sumber program untuk kata sandi dan kunci enkripsi.
+- `New Buffer(42)` membuat `Buffer` sebesar 42 byte. Sebelum Node.js 8, buffer ini berisi _memori sewenang-wenang_ untuk alasan kinerja, yang dapat mencakup apa saja mulai dari kode sumber program untuk kata sandi dan kunci enkripsi.
 - `new Buffer('abc')` membuat `Buffer` yang berisi versi UTF-8-encoded string '`'abc'`. Argumen kedua dapat menentukan pengkodean lain: misalnya,`new Buffer(string, 'base64')` dapat digunakan untuk mengonversi string Base64 menjadi yang asli urutan byte yang diwakilinya.
 - Ada beberapa kombinasi argumen lainnya.
 

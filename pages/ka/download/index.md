@@ -32,4 +32,3 @@ additional:
   LinuxSystemZ: Linux — System z-ზე
   AIXPowerSystems: AIX — Power Systems-ზე
 ---
-
