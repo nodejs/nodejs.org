@@ -33,6 +33,22 @@ export default {
             <li>numbers</li>
           </ul>
         </div>
+
+        <div style={listContainer}>
+          <ol>
+            <li>Unordered lists</li>
+            <li>those without</li>
+            <li>numbers</li>
+          </ol>
+        </div>
+
+        <div style={listDarkContainer}>
+          <ol style={{ color: 'white' }}>
+            <li>Unordered lists</li>
+            <li>those without</li>
+            <li>numbers</li>
+          </ol>
+        </div>
       </>
     );
   },
