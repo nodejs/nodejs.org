@@ -37,11 +37,7 @@ Node.js 的設計上受到 Ruby [Event Machine][] 和 Python [Twisted][] 的啟�
 
 HTTP 是 Node.js 世界中的一等公民，設計之初就考量到了 stream 及低延遲，這使的 Node.js 相當適合作為網頁函式庫或框架的基礎。
 
-Node.js 雖非多線程設計，但這不代表你不能使用多核心，你可以透過 [`child_process.fork()`][] 來產生子行程，其被設計為易於相互溝通。而 [`cluster`][] 模組也是建立在同樣的介面上，它可以讓你在行程間共享 socket 以實現核心的附載平衡。
-
 [阻塞 vs. 非阻塞]: /en/docs/guides/blocking-vs-non-blocking/
-[`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
-[`cluster`]: https://nodejs.org/api/cluster.html
 [事件迴圈]: /en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: https://twistedmatrix.com/trac/
