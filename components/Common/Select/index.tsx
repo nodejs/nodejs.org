@@ -33,25 +33,15 @@ const Select: FC<SelectProps> = ({
   onChange,
 }) => {
   const id = useId();
-  const mappedValues: SelectValue[] = useMemo(() => {
-    if (!values.length) {
-      return [];
-    }
+  const mappedValues = useMemo(() => {
+    const [firstItem] = values;
 
-    const [firstItem, ...items] = values;
+    const items =
+      typeof firstItem === 'string'
+        ? values.map(value => ({ value, label: value }))
+        : values;
 
-    if (typeof firstItem === 'string') {
-      return [firstItem, ...(items as string[])].map(value => ({
-        value,
-        label: value,
-      }));
-    }
-
-    if (typeof firstItem === 'object') {
-      return [firstItem, ...(items as SelectValue[])];
-    }
-
-    return [];
+    return items as SelectValue[];
   }, [values]);
 
   return (
