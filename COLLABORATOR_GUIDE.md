@@ -498,3 +498,4 @@ If you're unfamiliar or curious about something, we recommend opening a Discussi
 [React]: https://react.dev/
 [Shiki]: https://github.com/shikijs/shiki
 [Tailwind]: https://tailwindcss.com/
+[Radix]: https://www.radix-ui.com/
