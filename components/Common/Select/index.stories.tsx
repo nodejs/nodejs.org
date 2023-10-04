@@ -62,4 +62,38 @@ export const DropdownLabel: Story = {
   },
 };
 
+export const InlineSelect: Story = {
+  args: {
+    values: [
+      {
+        value: 'ubuntu',
+        label: 'Ubuntu',
+        iconImageUrl: '/static/images/logos/platform-linux.svg',
+      },
+      {
+        value: 'apple',
+        label: 'Apple',
+        iconImageUrl: '/static/images/logos/platform-apple.svg',
+      },
+      {
+        value: 'microsoft',
+        label: 'Microsoft',
+        iconImageUrl: '/static/images/logos/platform-microsoft.svg',
+      },
+      {
+        value: 'homebrew',
+        label: 'Homebrew',
+        iconImageUrl: '/static/images/logos/platform-homebrew.svg',
+      },
+      {
+        value: 'placeholder',
+        label: 'Placeholder',
+        iconImageUrl: '/static/images/logos/platform-placeholder.svg',
+      },
+    ],
+    dropdownLabel: 'Platform',
+    placeholder: 'Select a platform',
+  },
+};
+
 export default { component: Select } as Meta;

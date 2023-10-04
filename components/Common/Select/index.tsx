@@ -1,12 +1,13 @@
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import * as Primitive from '@radix-ui/react-select';
+import Image from 'next/image';
 import { useId } from 'react';
 import type { FC } from 'react';
 
 import styles from './index.module.css';
 
 type SelectProps = {
-  values: ({ label: string; value: string } | string)[];
+  values: ({ label: string; value: string; iconImageUrl?: string } | string)[];
   defaultValue?: string;
   placeholder?: string;
   dropdownLabel?: string;
@@ -34,7 +35,7 @@ const Select: FC<SelectProps> = ({
       <Primitive.Root defaultValue={defaultValue} onValueChange={onChange}>
         <Primitive.Trigger
           className={styles.trigger}
-          aria-label={label}
+          aria-label={label || dropdownLabel}
           id={id}
         >
           <Primitive.Value placeholder={placeholder} />
@@ -59,7 +60,17 @@ const Select: FC<SelectProps> = ({
                       value={value}
                       className={`${styles.item} ${styles.text}`}
                     >
-                      <Primitive.ItemText>{label}</Primitive.ItemText>
+                      <Primitive.ItemText>
+                        {typeof item !== 'string' && item?.iconImageUrl && (
+                          <Image
+                            src={item.iconImageUrl}
+                            alt={label}
+                            width={16}
+                            height={16}
+                          />
+                        )}
+                        {label}
+                      </Primitive.ItemText>
                     </Primitive.Item>
                   );
                 })}
