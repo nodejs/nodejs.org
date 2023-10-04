@@ -1,27 +1,40 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import type { ElementRef, ComponentPropsWithoutRef } from 'react';
-import { forwardRef } from 'react';
+import type { FC } from 'react';
 
 import styles from './index.module.css';
 
-export const Tabs = TabsPrimitive.Root;
+type Tab = {
+  name: string;
+  label: React.ReactNode;
+  content: React.ReactNode;
+};
 
-export const TabsList = forwardRef<
-  ElementRef<typeof TabsPrimitive.List>,
-  ComponentPropsWithoutRef<typeof TabsPrimitive.List>
->((props, ref) => (
-  <TabsPrimitive.List ref={ref} className={styles.tabsList} {...props} />
-));
+type TabsProps = {
+  defaultValue?: string;
+  tabs: Tab[];
+} & TabsPrimitive.TabsProps;
 
-TabsList.displayName = TabsPrimitive.List.displayName;
+const Tabs: FC<TabsProps> = ({ tabs, ...props }) => {
+  return (
+    <TabsPrimitive.Root {...props}>
+      <TabsPrimitive.List className={styles.tabsList}>
+        {tabs.map(tab => (
+          <TabsPrimitive.Trigger
+            key={tab.name}
+            value={tab.name}
+            className={styles.tabsTrigger}
+          >
+            {tab.label}
+          </TabsPrimitive.Trigger>
+        ))}
+      </TabsPrimitive.List>
+      {tabs.map(tab => (
+        <TabsPrimitive.Content key={tab.name} value={tab.name}>
+          {tab.content}
+        </TabsPrimitive.Content>
+      ))}
+    </TabsPrimitive.Root>
+  );
+};
 
-export const TabsTrigger = forwardRef<
-  ElementRef<typeof TabsPrimitive.Trigger>,
-  ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
->((props, ref) => (
-  <TabsPrimitive.Trigger ref={ref} className={styles.tabsTrigger} {...props} />
-));
-
-TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
-
-export const TabsContent = TabsPrimitive.Content;
+export default Tabs;
