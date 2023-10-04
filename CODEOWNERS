@@ -17,7 +17,7 @@ next.dynamic.mjs @nodejs/web-infra
 /pages/en/guides @nodejs/collaborators
 
 # Package Ecosystem
-package.json @nodejs/nodejs-website @nodejs/web-infra
+package.json @nodejs/nodejs-website
 turbo.json @nodejs/nodejs-website @nodejs/web-infra
 
 # Web Infrastructure
