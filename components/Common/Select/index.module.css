@@ -42,8 +42,8 @@
 
     & span {
       @apply flex
-          items-center
-          gap-2;
+        items-center
+        gap-2;
     }
   }
 
@@ -84,8 +84,8 @@
 
     & span {
       @apply flex
-          items-center
-          gap-2;
+        items-center
+        gap-2;
     }
   }
 
