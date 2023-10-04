@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import { userNameToAvatarUrl } from '@/util/github';
+import { githubProfileAvatarUrl } from '@/util/github';
 
 import AvatarGroup from './';
 
@@ -28,7 +28,7 @@ const names = [
 // an link to other image can also be used
 const defaultProps = {
   avatars: names.map(name => ({
-    src: userNameToAvatarUrl(name),
+    src: githubProfileAvatarUrl(name),
     alt: name,
   })),
 };
