@@ -52,7 +52,7 @@
     "cross-env": "7.0.3",
     "cssnano": "6.0.1",
     "feed": "~4.2.2",
-    "glob": "~10.3.4",
+    "glob": "~10.3.10",
     "gray-matter": "~4.0.3",
     "husky": "8.0.3",
     "lint-staged": "14.0.1",
