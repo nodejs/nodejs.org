@@ -10,7 +10,7 @@ export const Default: Story = {};
 export default {
   component: Tabs,
   args: {
-    defaultValue: 'package',
+    defaultValue: 'prebuilt',
     tabs: [
       {
         name: 'package',
