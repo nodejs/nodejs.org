@@ -111,6 +111,7 @@ export default {
     },
     fontFamily: {
       'open-sans': ['var(--font-open-sans)'],
+      'ibm-plex-mono': ['var(--font-ibm-plex-mono)'],
     },
     extend: {
       boxShadow: {

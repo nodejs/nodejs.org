@@ -1,4 +1,4 @@
-import { Open_Sans } from 'next/font/google';
+import { Open_Sans, IBM_Plex_Mono } from 'next/font/google';
 
 // This defines "execution" modes that Chromatic will run on the each Storybook Story
 // This allows us to test each Story with different parameters
@@ -37,4 +37,13 @@ export const OPEN_SANS_FONT = Open_Sans({
   display: 'fallback',
   subsets: ['latin'],
   variable: '--font-open-sans',
+});
+
+// This configures the Next.js Font for IBM Plex Mono
+// We then export a variable and class name to be used
+// within Tailwind (tailwind.config.ts) and Storybook (preview.js)
+export const IBM_PLEX_MONO_FONT = IBM_Plex_Mono({
+  weight: ['600'],
+  subsets: ['latin'],
+  variable: '--font-ibm-plex-mono',
 });
