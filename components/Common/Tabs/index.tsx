@@ -10,7 +10,6 @@ type Tab = {
 };
 
 type TabsProps = {
-  defaultValue?: string;
   tabs: Tab[];
 } & TabsPrimitive.TabsProps;
 
