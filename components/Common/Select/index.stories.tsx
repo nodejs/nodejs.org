@@ -66,33 +66,24 @@ export const InlineSelect: Story = {
   args: {
     values: [
       {
-        value: 'ubuntu',
-        label: 'Ubuntu',
+        value: 'linux',
+        label: 'Linux',
         iconImageUrl: '/static/images/logos/platform-linux.svg',
       },
       {
-        value: 'apple',
-        label: 'Apple',
+        value: 'macos',
+        label: 'MacOS',
         iconImageUrl: '/static/images/logos/platform-apple.svg',
       },
       {
-        value: 'microsoft',
-        label: 'Microsoft',
+        value: 'windows',
+        label: 'Windows',
         iconImageUrl: '/static/images/logos/platform-microsoft.svg',
-      },
-      {
-        value: 'homebrew',
-        label: 'Homebrew',
-        iconImageUrl: '/static/images/logos/platform-homebrew.svg',
-      },
-      {
-        value: 'placeholder',
-        label: 'Placeholder',
-        iconImageUrl: '/static/images/logos/platform-placeholder.svg',
       },
     ],
     dropdownLabel: 'Platform',
-    placeholder: 'Select a platform',
+    defaultValue: 'macos',
+    inline: true,
   },
 };
 

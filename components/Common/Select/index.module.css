@@ -39,12 +39,12 @@
       dark:focus:border-neutral-600
       dark:focus:ring-neutral-600
       dark:data-[placeholder]:text-neutral-200;
+  }
 
-    & span {
-      @apply flex
-        items-center
-        gap-2;
-    }
+  .trigger span {
+    @apply flex
+      items-center
+      gap-2;
   }
 
   .icon {
@@ -81,16 +81,44 @@
       data-[highlighted]:outline-none
       dark:text-neutral-200
       dark:data-[highlighted]:bg-green-600;
+  }
 
-    & span {
-      @apply flex
-        items-center
-        gap-2;
-    }
+  .text span {
+    @apply flex
+      items-center
+      gap-2;
   }
 
   .label {
     @apply text-neutral-600
       dark:text-neutral-400;
+  }
+}
+
+.inline {
+  .trigger {
+    @apply min-w-fit
+      px-2.5
+      py-2
+      text-sm
+      font-medium;
+  }
+
+  .icon {
+    @apply h-4
+      w-4;
+  }
+
+  .text {
+    @apply text-neutral-900
+      data-[highlighted]:bg-neutral-100
+      data-[highlighted]:text-neutral-900
+      dark:text-white
+      dark:data-[highlighted]:bg-neutral-900;
+  }
+
+  &.dropdown {
+    @apply mt-1
+      w-[calc(100%+1.5rem)];
   }
 }
