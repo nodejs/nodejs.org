@@ -60,7 +60,7 @@ jobs:
         run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
 
       - name: Git Checkout
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
         with:
           # Since we checkout the HEAD of the current Branch, if the Pull Request comes from a Fork
           # we want to clone the fork's repository instead of the base repository
