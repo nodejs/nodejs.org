@@ -22,6 +22,14 @@ export const PlatformLogos: StoryObj = {
       </div>
       <div>
         <Image
+          src="/static/images/logos/platform-nvm.svg"
+          alt="NVM Logo"
+          width={64}
+          height={64}
+        />
+      </div>
+      <div>
+        <Image
           src="/static/images/logos/platform-microsoft.svg"
           alt="Microsoft Logo"
           width={64}
