@@ -195,8 +195,8 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 > You can apply Tailwind Tokens with Tailwind's `@apply` CSS rule. [Read more about applying Tailwind classes with `@apply`](https://tailwindcss.com/docs/functions-and-directives#apply).
 
 > \[!IMPORTANT]\
-> When using IDEs such as Visual Studio Code, we recommend installing the official [Stylelint](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
-> and [Tailwind](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) Extensions.\
+> When using IDEs such as Visual Studio Code, we recommend installing the official [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+> and [Tailwind](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) Extensions.\
 > These are recommended Extensions for IntelliSense, Syntax Highlighting and Error Checking when styling your Component.
 
 ### Best practices when creating a Component
