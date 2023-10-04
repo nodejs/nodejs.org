@@ -61,7 +61,7 @@ const Select: FC<SelectProps> = ({
                       className={`${styles.item} ${styles.text}`}
                     >
                       <Primitive.ItemText>
-                        {typeof item !== 'string' && item?.iconImageUrl && (
+                        {typeof item !== 'string' && item.iconImageUrl && (
                           <Image
                             src={item.iconImageUrl}
                             alt={label}
