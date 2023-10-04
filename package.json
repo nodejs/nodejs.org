@@ -47,7 +47,7 @@
     "@types/node": "18.17.17",
     "@vcarl/remark-headings": "~0.1.0",
     "@vercel/analytics": "^1.0.2",
-    "autoprefixer": "~10.4.15",
+    "autoprefixer": "~10.4.16",
     "classnames": "~2.3.2",
     "cross-env": "7.0.3",
     "cssnano": "6.0.1",
