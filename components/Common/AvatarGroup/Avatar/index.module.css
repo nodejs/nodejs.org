@@ -14,3 +14,8 @@
   dark:bg-neutral-900
   dark:text-neutral-300;
 }
+
+.avatarRoot {
+  @apply -ml-2
+  first:ml-0;
+}

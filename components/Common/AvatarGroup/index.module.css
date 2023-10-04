@@ -2,9 +2,4 @@
   @apply flex
   items-center
   overflow-x-auto;
-
-  .avatarRoot {
-    @apply -ml-2
-    first:ml-0;
-  }
 }

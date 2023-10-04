@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { useState, useMemo } from 'react';
 
 import Avatar from './Avatar';
+import avatarstyles from './Avatar/index.module.css';
 import styles from './index.module.css';
 
 export type AvatarType = {
@@ -18,10 +19,6 @@ type AvatarGroupProps = {
 const AvatarGroup: FC<AvatarGroupProps> = ({ avatars, limit = 10 }) => {
   const [showMore, setShowMore] = useState(false);
 
-  const toggleShowMore = () => {
-    setShowMore(!showMore);
-  };
-
   const renderAvatars = useMemo(
     () => (showMore ? avatars : avatars.slice(0, limit)),
     [showMore, avatars, limit]
@@ -30,21 +27,19 @@ const AvatarGroup: FC<AvatarGroupProps> = ({ avatars, limit = 10 }) => {
   return (
     <div className={styles.avatarGroup}>
       {renderAvatars.map((avatar, index) => (
-        <Avatar
-          src={avatar.src}
-          alt={avatar.alt}
-          extraClass={styles.avatarRoot}
-          key={index}
-        />
+        <Avatar src={avatar.src} alt={avatar.alt} key={index} />
       ))}
       {avatars.length > limit && (
-        <Avatar
-          extraClass={styles.avatarRoot}
-          // force fallback text to be '+' or '-'
-          src=""
-          alt={showMore ? '-' : `+${avatars.length - limit}`}
-          onClick={toggleShowMore}
-        />
+        // this is simulating Radix Avatar.root and Avatar.fallback
+        // it's why the styles are different
+        <span
+          onClick={() => setShowMore(!showMore)}
+          className={avatarstyles.avatarRoot}
+        >
+          <span className={avatarstyles.avatar}>
+            {showMore ? '-' : `+${avatars.length - limit}`}
+          </span>
+        </span>
       )}
     </div>
   );
