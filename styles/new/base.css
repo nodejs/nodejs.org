@@ -7,8 +7,7 @@ a:visited {
 
 ul {
   @apply list-disc
-    font-regular
-    not-italic
+    px-5
     leading-6
     text-neutral-900
     dark:text-white;
@@ -16,8 +15,7 @@ ul {
 
 ol {
   @apply list-decimal
-    font-regular
-    not-italic
+    px-5
     leading-6
     text-neutral-900
     dark:text-white;
