@@ -3,9 +3,9 @@
 }
 
 code {
-  @apply rounded-[4px]
+  @apply rounded
     bg-neutral-100
-    px-[4px]
+    px-1
     font-ibm-plex-mono
     text-base
     font-semibold

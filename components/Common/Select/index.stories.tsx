@@ -62,4 +62,29 @@ export const DropdownLabel: Story = {
   },
 };
 
+export const InlineSelect: Story = {
+  args: {
+    values: [
+      {
+        value: 'linux',
+        label: 'Linux',
+        iconImageUrl: '/static/images/logos/platform-linux.svg',
+      },
+      {
+        value: 'macos',
+        label: 'MacOS',
+        iconImageUrl: '/static/images/logos/platform-apple.svg',
+      },
+      {
+        value: 'windows',
+        label: 'Windows',
+        iconImageUrl: '/static/images/logos/platform-microsoft.svg',
+      },
+    ],
+    dropdownLabel: 'Platform',
+    defaultValue: 'macos',
+    inline: true,
+  },
+};
+
 export default { component: Select } as Meta;
