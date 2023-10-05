@@ -11,9 +11,6 @@ ul {
     leading-6
     text-neutral-900
     dark:text-white;
-
-  font-style: normal;
-  line-height: 24px;
 }
 
 ol {
@@ -22,7 +19,4 @@ ol {
     leading-6
     text-neutral-900
     dark:text-white;
-
-  font-style: normal;
-  line-height: 24px;
 }
