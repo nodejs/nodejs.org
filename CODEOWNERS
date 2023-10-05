@@ -16,7 +16,11 @@ next.dynamic.mjs @nodejs/web-infra
 # Node.js Core Guides
 /pages/en/guides @nodejs/collaborators
 
-# Governance
-GOVERNANCE.md @nodejs/web
-CONTRIBUTING.md @nodejs/web
-COLLABORATOR_GUIDE.md @nodejs/web
+# Package Ecosystem
+package.json @nodejs/nodejs-website
+turbo.json @nodejs/nodejs-website @nodejs/web-infra
+
+# Web Infrastructure
+crowdin.yml @nodejs/web-infra
+redirects.json @nodejs/web-infra
+site.json @nodejs/web-infra

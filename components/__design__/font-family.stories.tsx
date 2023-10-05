@@ -1,20 +1,8 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
-import type { CSSProperties } from 'react';
-
-const textStyles = {
-  alignItems: 'center',
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-  gap: '1rem',
-  height: '100%',
-  justifyContent: 'flex-start',
-  width: '100%',
-} satisfies CSSProperties;
 
 export const FontFamily: StoryObj = {
   render: () => (
-    <div style={textStyles}>
+    <div className="align-center ga-1 w-100 flex h-full flex-row flex-wrap justify-start">
       <div>
         <p className="text-xs font-regular">Text XS/Regular</p>
         <p className="text-xs font-medium">Text XS/Medium</p>

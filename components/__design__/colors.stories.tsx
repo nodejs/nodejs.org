@@ -1,32 +1,10 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
-import type { CSSProperties } from 'react';
-
-const containerStyle = {
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-} satisfies CSSProperties;
-
-const containerColorsStyle = {
-  alignItems: 'center',
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '2rem',
-  justifyContent: 'space-between',
-  width: '100%',
-} satisfies CSSProperties;
-
-const gridEntryStyle = {
-  display: 'flex',
-  flexDirection: 'row',
-  gap: '1rem',
-} satisfies CSSProperties;
 
 export const Colors: StoryObj = {
   render: () => (
-    <div style={containerStyle}>
-      <div style={containerColorsStyle}>
-        <div style={gridEntryStyle}>
+    <div className="flex flex-row justify-between">
+      <div className="flex w-full flex-col items-center justify-between gap-1">
+        <div className="flex flex-row gap-1">
           <div className="h-20 w-20 bg-green-100" />
           <div className="h-20 w-20 bg-green-200" />
           <div className="h-20 w-20 bg-green-300" />
@@ -36,7 +14,7 @@ export const Colors: StoryObj = {
           <div className="h-20 w-20 bg-green-800" />
           <div className="h-20 w-20 bg-green-900" />
         </div>
-        <div style={gridEntryStyle}>
+        <div className="flex flex-row gap-1">
           <div className="h-20 w-20 bg-neutral-100" />
           <div className="h-20 w-20 bg-neutral-200" />
           <div className="h-20 w-20 bg-neutral-300" />
@@ -46,7 +24,7 @@ export const Colors: StoryObj = {
           <div className="h-20 w-20 bg-neutral-800" />
           <div className="h-20 w-20 bg-neutral-900" />
         </div>
-        <div style={gridEntryStyle}>
+        <div className="flex flex-row gap-1">
           <div className="h-20 w-20 bg-danger-100" />
           <div className="h-20 w-20 bg-danger-200" />
           <div className="h-20 w-20 bg-danger-300" />
@@ -56,7 +34,7 @@ export const Colors: StoryObj = {
           <div className="h-20 w-20 bg-danger-800" />
           <div className="h-20 w-20 bg-danger-900" />
         </div>
-        <div style={gridEntryStyle}>
+        <div className="flex flex-row gap-1">
           <div className="h-20 w-20 bg-warning-100" />
           <div className="h-20 w-20 bg-warning-200" />
           <div className="h-20 w-20 bg-warning-300" />
@@ -66,7 +44,7 @@ export const Colors: StoryObj = {
           <div className="h-20 w-20 bg-warning-800" />
           <div className="h-20 w-20 bg-warning-900" />
         </div>
-        <div style={gridEntryStyle}>
+        <div className="flex flex-row gap-1">
           <div className="h-20 w-20 bg-info-100" />
           <div className="h-20 w-20 bg-info-200" />
           <div className="h-20 w-20 bg-info-300" />
@@ -76,7 +54,7 @@ export const Colors: StoryObj = {
           <div className="h-20 w-20 bg-info-800" />
           <div className="h-20 w-20 bg-info-900" />
         </div>
-        <div style={gridEntryStyle}>
+        <div className="flex flex-row gap-1">
           <div className="h-20 w-20 bg-accent1-100" />
           <div className="h-20 w-20 bg-accent1-200" />
           <div className="h-20 w-20 bg-accent1-300" />
@@ -86,7 +64,7 @@ export const Colors: StoryObj = {
           <div className="h-20 w-20 bg-accent1-800" />
           <div className="h-20 w-20 bg-accent1-900" />
         </div>
-        <div style={gridEntryStyle}>
+        <div className="flex flex-row gap-1">
           <div className="h-20 w-20 bg-accent2-100" />
           <div className="h-20 w-20 bg-accent2-200" />
           <div className="h-20 w-20 bg-accent2-300" />
