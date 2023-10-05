@@ -25,3 +25,19 @@ a:visited {
       dark:text-green-300;
   }
 }
+
+ul {
+  @apply list-disc
+    px-5
+    leading-6
+    text-neutral-900
+    dark:text-white;
+}
+
+ol {
+  @apply list-decimal
+    px-5
+    leading-6
+    text-neutral-900
+    dark:text-white;
+}
