@@ -4,6 +4,7 @@ export default {
   content: [
     './pages/**/*.{tsx,mdx}',
     './components/**/*.tsx',
+    './providers/**/*.tsx',
     './layouts/**/*.tsx',
     './.storybook/preview.tsx',
     './.storybook/preview-body.html',
