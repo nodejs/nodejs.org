@@ -1,12 +1,12 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import styles from './index.module.css';
 
 type Tab = {
   name: string;
-  label: React.ReactNode;
-  content: React.ReactNode;
+  label: ReactNode;
+  content: ReactNode;
 };
 
 type TabsProps = {
