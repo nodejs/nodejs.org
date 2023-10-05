@@ -5,10 +5,7 @@ import Tabs from './index';
 type Story = StoryObj<typeof Tabs>;
 type Meta = MetaObj<typeof Tabs>;
 
-export const Default: Story = {};
-
-export default {
-  component: Tabs,
+export const Default: Story = {
   args: {
     defaultValue: 'prebuilt',
     tabs: [
@@ -29,4 +26,6 @@ export default {
       },
     ],
   },
-} as Meta;
+};
+
+export default { component: Tabs } as Meta;

@@ -79,7 +79,7 @@ The Website also uses several other Open Source libraries (not limited to) liste
     - [PostCSS Simple Vars](https://github.com/postcss/postcss-simple-vars)
 - [Tailwind][] is used as our CSS Framework and the Foundation of our Design System
 - [Hero Icons](https://heroicons.com/) is an SVG Icon Library used within our Codebase
-- [Radix UI](https://www.radix-ui.com/) is a collection of customizable UI components
+- [Radix UI][] is a collection of customizable UI components
 - [Shiki][] is a Syntax Highlighter used for our Codeboxes
   - A [Rehype Plugin](https://rehype-pretty-code.netlify.app/) is used here for transforming `pre` and `code` tags into Syntax Highlighted Codeboxes
 - [MDX][] and Markdown are used for structuring the Content of the Website
@@ -498,4 +498,4 @@ If you're unfamiliar or curious about something, we recommend opening a Discussi
 [React]: https://react.dev/
 [Shiki]: https://github.com/shikijs/shiki
 [Tailwind]: https://tailwindcss.com/
-[Radix]: https://www.radix-ui.com/
+[Radix UI]: https://www.radix-ui.com/
