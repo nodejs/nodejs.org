@@ -119,6 +119,7 @@
 
   &.dropdown {
     @apply mt-1
-      w-[calc(100%+1.5rem)];
+      w-[calc(100%+1.5rem)]
+      rounded-xs;
   }
 }
