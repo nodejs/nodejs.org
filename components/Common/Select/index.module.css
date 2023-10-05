@@ -98,7 +98,6 @@
 .inline {
   .trigger {
     @apply min-w-fit
-      rounded-xs
       px-2.5
       py-2
       text-sm
@@ -121,6 +120,6 @@
   &.dropdown {
     @apply mt-1
       w-[calc(100%+1.5rem)]
-      rounded-xs;
+      rounded;
   }
 }

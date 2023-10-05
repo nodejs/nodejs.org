@@ -3,7 +3,7 @@
 }
 
 code {
-  @apply rounded-xs
+  @apply rounded
     bg-neutral-100
     px-1
     font-ibm-plex-mono

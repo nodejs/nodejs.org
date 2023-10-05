@@ -122,10 +122,6 @@ export default {
       spacing: {
         '4.5': '1.125rem',
       },
-      borderRadius: {
-        xs: '0.25rem',
-        md: '0.375rem',
-      },
     },
   },
   darkMode: ['class', '[data-theme="dark"]'],
