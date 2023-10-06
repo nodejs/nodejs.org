@@ -30,11 +30,19 @@ const Pagination: FC<PaginationProps> = ({ currentPage, pages }) => {
 
   return (
     <nav>
-      <button type="button" aria-label={'Previous page'}>
+      <button
+        type="button"
+        aria-label={'Previous page'}
+        disabled={currentPage === 1}
+      >
         Previous
       </button>
       <ol>{pageItems}</ol>
-      <button type="button" aria-label={'Next page'}>
+      <button
+        type="button"
+        aria-label={'Next page'}
+        disabled={currentPage === pages.length}
+      >
         Next
       </button>
     </nav>

@@ -47,4 +47,40 @@ describe('Pagination', () => {
       });
     });
   });
+
+  describe('Logic', () => {
+    it('Disables "Previous" button when the currentPage is equal to the first page', () => {
+      const currentPage = 1;
+
+      const pages = [
+        {
+          url: '1',
+        },
+        {
+          url: '2',
+        },
+      ];
+
+      render(<Pagination currentPage={currentPage} pages={pages} />);
+
+      expect(screen.getByRole('button', { name: /previous/i })).toBeDisabled();
+    });
+
+    it('Disables "Next" button when the currentPage is equal to the last page', () => {
+      const currentPage = 2;
+
+      const pages = [
+        {
+          url: '1',
+        },
+        {
+          url: '2',
+        },
+      ];
+
+      render(<Pagination currentPage={currentPage} pages={pages} />);
+
+      expect(screen.getByRole('button', { name: /next/i })).toBeDisabled();
+    });
+  });
 });
