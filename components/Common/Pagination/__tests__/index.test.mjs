@@ -46,6 +46,51 @@ describe('Pagination', () => {
         expect(page).toBeVisible();
       });
     });
+
+    it('Renders only six pages at the same time', () => {
+      const currentPage = 1;
+
+      const pages = [
+        {
+          url: '1',
+        },
+        {
+          url: '2',
+        },
+        {
+          url: '3',
+        },
+        {
+          url: '4',
+        },
+        {
+          url: '5',
+        },
+        {
+          url: '6',
+        },
+        {
+          url: '7',
+        },
+      ];
+
+      render(<Pagination currentPage={currentPage} pages={pages} />);
+
+      expect(screen.getByRole('navigation')).toBeVisible();
+
+      const pageElements = screen.getAllByRole('link');
+
+      expect(pageElements).toHaveLength(6);
+
+      expect(pageElements.map(element => element.innerHTML)).toEqual([
+        '1',
+        '2',
+        '3',
+        '5',
+        '6',
+        '7',
+      ]);
+    });
   });
 
   describe('Logic', () => {
