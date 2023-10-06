@@ -2,10 +2,21 @@ import { render, screen } from '@testing-library/react';
 
 import Pagination from '@/components/Common/Pagination';
 
+function setUpTest({ currentPage = 1, pageCount }) {
+  const pages = new Array(pageCount).fill({ url: 'page' });
+
+  render(<Pagination currentPage={currentPage} pages={pages} />);
+
+  return {
+    currentPage,
+    pages,
+  };
+}
+
 describe('Pagination', () => {
   describe('Rendering', () => {
     it('Renders the navigation buttons even if no pages are passed to it', () => {
-      render(<Pagination currentPage={0} pages={[]} />);
+      setUpTest({ currentPage: 0, pageCount: 0 });
 
       expect(screen.getByRole('navigation')).toBeVisible();
 
@@ -15,24 +26,9 @@ describe('Pagination', () => {
     });
 
     it('Renders the passed pages and current page', () => {
-      const currentPage = 1;
-
-      const pages = [
-        {
-          url: '1',
-        },
-        {
-          url: '2',
-        },
-        {
-          url: '3',
-        },
-        {
-          url: '4',
-        },
-      ];
-
-      render(<Pagination currentPage={currentPage} pages={pages} />);
+      const { currentPage, pages } = setUpTest({
+        pageCount: 4,
+      });
 
       const pageElements = screen.getAllByRole('link');
 
@@ -48,33 +44,9 @@ describe('Pagination', () => {
     });
 
     it('Renders only six pages at the same time', () => {
-      const currentPage = 1;
-
-      const pages = [
-        {
-          url: '1',
-        },
-        {
-          url: '2',
-        },
-        {
-          url: '3',
-        },
-        {
-          url: '4',
-        },
-        {
-          url: '5',
-        },
-        {
-          url: '6',
-        },
-        {
-          url: '7',
-        },
-      ];
-
-      render(<Pagination currentPage={currentPage} pages={pages} />);
+      setUpTest({
+        pageCount: 7,
+      });
 
       const pageElements = screen.getAllByRole('link');
 
@@ -91,33 +63,9 @@ describe('Pagination', () => {
     });
 
     it('Shows an ellipsis when there are more than 6 pages', () => {
-      const currentPage = 1;
-
-      const pages = [
-        {
-          url: '1',
-        },
-        {
-          url: '2',
-        },
-        {
-          url: '3',
-        },
-        {
-          url: '4',
-        },
-        {
-          url: '5',
-        },
-        {
-          url: '6',
-        },
-        {
-          url: '7',
-        },
-      ];
-
-      render(<Pagination currentPage={currentPage} pages={pages} />);
+      setUpTest({
+        pageCount: 7,
+      });
 
       expect(screen.getByText('...')).toBeVisible();
     });
@@ -125,35 +73,18 @@ describe('Pagination', () => {
 
   describe('Logic', () => {
     it('Disables "Previous" button when the currentPage is equal to the first page', () => {
-      const currentPage = 1;
-
-      const pages = [
-        {
-          url: '1',
-        },
-        {
-          url: '2',
-        },
-      ];
-
-      render(<Pagination currentPage={currentPage} pages={pages} />);
+      setUpTest({
+        pageCount: 2,
+      });
 
       expect(screen.getByRole('button', { name: /previous/i })).toBeDisabled();
     });
 
     it('Disables "Next" button when the currentPage is equal to the last page', () => {
-      const currentPage = 2;
-
-      const pages = [
-        {
-          url: '1',
-        },
-        {
-          url: '2',
-        },
-      ];
-
-      render(<Pagination currentPage={currentPage} pages={pages} />);
+      setUpTest({
+        currentPage: 2,
+        pageCount: 2,
+      });
 
       expect(screen.getByRole('button', { name: /next/i })).toBeDisabled();
     });
