@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { useGetParsedPages } from './useGetParsedPages';
+import { useGetPageElements } from './useGetPageElements';
 
 type Page = {
   url: string;
@@ -15,25 +15,7 @@ export type PaginationProps = {
 };
 
 const Pagination: FC<PaginationProps> = ({ currentPage, pages }) => {
-  const parsedPages = useGetParsedPages(pages);
-
-  const pageItems = parsedPages.map(({ url, pageNumber }) => {
-    return (
-      <li
-        key={pageNumber}
-        aria-setsize={pages.length}
-        aria-posinset={pageNumber}
-      >
-        <a
-          href={url}
-          aria-label={`Go to page ${pageNumber}`}
-          {...(pageNumber === currentPage && { 'aria-current': 'page' })}
-        >
-          {pageNumber}
-        </a>
-      </li>
-    );
-  });
+  const parsedPages = useGetPageElements(currentPage, pages);
 
   return (
     <nav aria-label="Pagination">
@@ -44,7 +26,7 @@ const Pagination: FC<PaginationProps> = ({ currentPage, pages }) => {
       >
         Previous
       </button>
-      <ol>{pageItems}</ol>
+      <ol>{parsedPages}</ol>
       <button
         type="button"
         aria-label={'Next page'}

@@ -76,8 +76,6 @@ describe('Pagination', () => {
 
       render(<Pagination currentPage={currentPage} pages={pages} />);
 
-      expect(screen.getByRole('navigation')).toBeVisible();
-
       const pageElements = screen.getAllByRole('link');
 
       expect(pageElements).toHaveLength(6);
@@ -90,6 +88,38 @@ describe('Pagination', () => {
         '6',
         '7',
       ]);
+    });
+
+    it('Shows an ellipsis when there are more than 6 pages', () => {
+      const currentPage = 1;
+
+      const pages = [
+        {
+          url: '1',
+        },
+        {
+          url: '2',
+        },
+        {
+          url: '3',
+        },
+        {
+          url: '4',
+        },
+        {
+          url: '5',
+        },
+        {
+          url: '6',
+        },
+        {
+          url: '7',
+        },
+      ];
+
+      render(<Pagination currentPage={currentPage} pages={pages} />);
+
+      expect(screen.getByText('...')).toBeVisible();
     });
   });
 
