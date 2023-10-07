@@ -1,16 +1,27 @@
 import type { PaginationProps } from '.';
 
-export const useGetPageElements = (
-  currentPage: PaginationProps['currentPage'],
-  pages: PaginationProps['pages']
-) => {
-  const parsedPages = pages.map(({ url }, index) => {
-    const pageNumber = index + 1;
+type ParsedPage = PaginationProps['pages'][number] & {
+  pageNumber: number;
+};
 
+function parsePages(pages: PaginationProps['pages']): ParsedPage[] {
+  return pages.map(({ url }, index) => ({
+    url,
+    pageNumber: index + 1,
+  }));
+}
+
+const ellipsis = <span aria-hidden="true">...</span>;
+
+function createPageElements({
+  parsedPages,
+  currentPage,
+}: Pick<PaginationProps, 'currentPage'> & { parsedPages: ParsedPage[] }) {
+  return parsedPages.map(({ url, pageNumber }) => {
     return (
       <li
         key={pageNumber}
-        aria-setsize={pages.length}
+        aria-setsize={parsedPages.length}
         aria-posinset={pageNumber}
       >
         <a
@@ -23,21 +34,84 @@ export const useGetPageElements = (
       </li>
     );
   });
+}
 
-  const firstThreeItems = parsedPages.slice(0, 3);
+export const useGetPageElements = (
+  currentPage: PaginationProps['currentPage'],
+  pages: PaginationProps['pages'],
+  currentPageSiblingsCount: number
+) => {
+  const parsedPages = parsePages(pages);
+  const totalPages = parsedPages.length;
+  /**
+   * The combination of firstElement + currentElement + lastElement + 2 ellipses
+   */
+  const minimumElements = 5;
 
-  const availableLastItems = Math.min(parsedPages.length - 3, 3);
+  const minimumAmountOfPages = currentPageSiblingsCount + minimumElements;
 
-  const lastThreeItems =
-    availableLastItems > 0 ? parsedPages.slice(-availableLastItems) : [];
+  if (totalPages <= minimumAmountOfPages) {
+    return createPageElements({ parsedPages, currentPage });
+  }
 
-  const ellipsis = <span aria-hidden="true">...</span>;
+  const leftSiblingIndex = Math.max(
+    currentPage - currentPageSiblingsCount - 1,
+    1
+  );
+  const rightSiblingIndex = Math.min(
+    currentPage + currentPageSiblingsCount,
+    totalPages
+  );
 
-  const hasEllipsis = pages.length > 6;
+  const shouldShowLeftDots = leftSiblingIndex > 2;
+  const shouldShowRightDots = rightSiblingIndex < totalPages - 2;
 
-  return [
-    ...firstThreeItems,
-    ...(hasEllipsis ? [ellipsis] : []),
-    ...lastThreeItems,
-  ];
+  const firstPageIndex = 0;
+  const lastPageIndex = totalPages - 1;
+
+  if (!shouldShowLeftDots && shouldShowRightDots) {
+    const leftItemCount = 3 + 2 * currentPageSiblingsCount;
+    const leftRange = parsedPages.slice(firstPageIndex, leftItemCount);
+
+    return [
+      ...createPageElements({ parsedPages: leftRange, currentPage }),
+      ellipsis,
+      ...createPageElements({
+        parsedPages: parsedPages.slice(lastPageIndex),
+        currentPage,
+      }),
+    ];
+  }
+
+  if (shouldShowLeftDots && !shouldShowRightDots) {
+    const rightItemCount = 3 + 2 * currentPageSiblingsCount;
+    const rightRange = parsedPages.slice(totalPages - rightItemCount);
+
+    return [
+      ...createPageElements({
+        parsedPages: parsedPages.slice(firstPageIndex, firstPageIndex + 1),
+        currentPage,
+      }),
+      ellipsis,
+      ...createPageElements({ parsedPages: rightRange, currentPage }),
+    ];
+  }
+
+  if (shouldShowLeftDots && shouldShowRightDots) {
+    const middleRange = parsedPages.slice(leftSiblingIndex, rightSiblingIndex);
+
+    return [
+      ...createPageElements({
+        parsedPages: parsedPages.slice(firstPageIndex, firstPageIndex + 1),
+        currentPage,
+      }),
+      ellipsis,
+      ...createPageElements({ parsedPages: middleRange, currentPage }),
+      ellipsis,
+      ...createPageElements({
+        parsedPages: parsedPages.slice(lastPageIndex),
+        currentPage,
+      }),
+    ];
+  }
 };

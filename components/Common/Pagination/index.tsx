@@ -12,10 +12,23 @@ export type PaginationProps = {
    */
   currentPage: number;
   pages: Page[];
+  /**
+   * The number of page buttons on each side of the current page button
+   * Defaults to 1
+   */
+  currentPageSiblingsCount?: number;
 };
 
-const Pagination: FC<PaginationProps> = ({ currentPage, pages }) => {
-  const parsedPages = useGetPageElements(currentPage, pages);
+const Pagination: FC<PaginationProps> = ({
+  currentPage,
+  pages,
+  currentPageSiblingsCount = 1,
+}) => {
+  const parsedPages = useGetPageElements(
+    currentPage,
+    pages,
+    currentPageSiblingsCount
+  );
 
   return (
     <nav aria-label="Pagination">
