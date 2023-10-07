@@ -1,3 +1,5 @@
+import { useIntl } from 'react-intl';
+
 import styles from './index.module.css';
 
 import type { PaginationProps } from '.';
@@ -22,7 +24,11 @@ const ellipsis = (
 function createPageElements({
   parsedPages,
   currentPage,
-}: Pick<PaginationProps, 'currentPage'> & { parsedPages: ParsedPage[] }) {
+  intl,
+}: Pick<PaginationProps, 'currentPage'> & {
+  parsedPages: ParsedPage[];
+  intl: ReturnType<typeof useIntl>;
+}) {
   return parsedPages.map(({ url, pageNumber }) => {
     return (
       <li
@@ -32,7 +38,14 @@ function createPageElements({
       >
         <a
           href={url}
-          aria-label={`Go to page ${pageNumber}`}
+          aria-label={intl.formatMessage(
+            {
+              id: 'components.common.pagination.pageLabel',
+            },
+            {
+              pageNumber,
+            }
+          )}
           className={styles.listItem}
           {...(pageNumber === currentPage && { 'aria-current': 'page' })}
         >
@@ -48,6 +61,8 @@ export const useGetPageElements = (
   pages: PaginationProps['pages'],
   currentPageSiblingsCount: number
 ) => {
+  const intl = useIntl();
+
   const parsedPages = parsePages(pages);
   const totalPages = parsedPages.length;
   /**
@@ -58,7 +73,7 @@ export const useGetPageElements = (
   const minimumAmountOfPages = currentPageSiblingsCount + minimumElements;
 
   if (totalPages <= minimumAmountOfPages) {
-    return createPageElements({ parsedPages, currentPage });
+    return createPageElements({ parsedPages, currentPage, intl });
   }
 
   const leftSiblingIndex = Math.max(
@@ -81,11 +96,12 @@ export const useGetPageElements = (
     const leftRange = parsedPages.slice(firstPageIndex, leftItemCount);
 
     return [
-      ...createPageElements({ parsedPages: leftRange, currentPage }),
+      ...createPageElements({ parsedPages: leftRange, currentPage, intl }),
       ellipsis,
       ...createPageElements({
         parsedPages: parsedPages.slice(lastPageIndex),
         currentPage,
+        intl,
       }),
     ];
   }
@@ -98,9 +114,10 @@ export const useGetPageElements = (
       ...createPageElements({
         parsedPages: parsedPages.slice(firstPageIndex, firstPageIndex + 1),
         currentPage,
+        intl,
       }),
       ellipsis,
-      ...createPageElements({ parsedPages: rightRange, currentPage }),
+      ...createPageElements({ parsedPages: rightRange, currentPage, intl }),
     ];
   }
 
@@ -111,13 +128,15 @@ export const useGetPageElements = (
       ...createPageElements({
         parsedPages: parsedPages.slice(firstPageIndex, firstPageIndex + 1),
         currentPage,
+        intl,
       }),
       ellipsis,
-      ...createPageElements({ parsedPages: middleRange, currentPage }),
+      ...createPageElements({ parsedPages: middleRange, currentPage, intl }),
       ellipsis,
       ...createPageElements({
         parsedPages: parsedPages.slice(lastPageIndex),
         currentPage,
+        intl,
       }),
     ];
   }

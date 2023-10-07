@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { IntlProvider } from 'react-intl';
 
 import Pagination from '@/components/Common/Pagination';
 
@@ -6,11 +7,13 @@ function setUpTest({ currentPage = 1, pages, currentPageSiblingsCount }) {
   const parsedPages = new Array(pages).fill({ url: 'page' });
 
   render(
-    <Pagination
-      currentPage={currentPage}
-      pages={parsedPages}
-      currentPageSiblingsCount={currentPageSiblingsCount}
-    />
+    <IntlProvider>
+      <Pagination
+        currentPage={currentPage}
+        pages={parsedPages}
+        currentPageSiblingsCount={currentPageSiblingsCount}
+      />
+    </IntlProvider>
   );
 
   return {
@@ -26,7 +29,7 @@ describe('Pagination', () => {
 
       expect(screen.getByRole('navigation')).toBeVisible();
 
-      expect(screen.getByRole('button', { name: /previous/i })).toBeVisible();
+      expect(screen.getByRole('button', { name: /prev/i })).toBeVisible();
 
       expect(screen.getByRole('button', { name: /next/i })).toBeVisible();
     });
@@ -144,7 +147,7 @@ describe('Pagination', () => {
         pages: 2,
       });
 
-      expect(screen.getByRole('button', { name: /previous/i })).toBeDisabled();
+      expect(screen.getByRole('button', { name: /prev/i })).toBeDisabled();
     });
 
     it('Disables "Next" button when the currentPage is equal to the last page', () => {

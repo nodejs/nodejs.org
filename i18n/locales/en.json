@@ -41,5 +41,11 @@
   "components.api.jsonLink.title": "View as JSON",
   "components.api.sourceLink": "Source Code:",
   "pages.404.title": "404: Page could not be found",
-  "pages.404.description": "ENOENT: no such file or directory"
+  "pages.404.description": "ENOENT: no such file or directory",
+  "components.common.pagination.prev": "Previous",
+  "components.common.pagination.prevAriaLabel": "Previous page",
+  "components.common.pagination.next": "Next",
+  "components.common.pagination.nextAriaLabel": "Next page",
+  "components.common.pagination.defaultLabel": "Pagination",
+  "components.common.pagination.pageLabel": "Go to page {pageNumber}"
 }
