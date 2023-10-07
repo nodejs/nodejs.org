@@ -1,4 +1,7 @@
+import { ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/20/solid';
 import type { FC } from 'react';
+
+import Button from '@/components/Common/Button';
 
 import { useGetPageElements } from './useGetPageElements';
 
@@ -31,22 +34,33 @@ const Pagination: FC<PaginationProps> = ({
   );
 
   return (
-    <nav aria-label="Pagination">
-      <button
+    <nav
+      aria-label="Pagination"
+      className="grid items-center justify-between [grid-template-areas:'page-buttons_page-buttons_page-buttons''previous-button_._next-button'] md:[grid-template-areas:'previous-button_page-buttons_next-button']"
+    >
+      <Button
         type="button"
         aria-label={'Previous page'}
         disabled={currentPage === 1}
+        variant="secondary"
+        className="flex items-center gap-2 text-sm [grid-area:previous-button]"
       >
-        Previous
-      </button>
-      <ol>{parsedPages}</ol>
-      <button
+        <ArrowLeftIcon className="h-5 shrink-0 text-neutral-600 dark:text-neutral-400" />
+        <span>Previous</span>
+      </Button>
+      <ol className="flex list-none justify-center gap-0.5 [grid-area:page-buttons]">
+        {parsedPages}
+      </ol>
+      <Button
         type="button"
         aria-label={'Next page'}
         disabled={currentPage === pages.length}
+        variant="secondary"
+        className="flex items-center gap-2 text-sm [grid-area:next-button]"
       >
-        Next
-      </button>
+        <span>Next</span>
+        <ArrowRightIcon className="h-5 shrink-0 text-neutral-600 dark:text-neutral-400" />
+      </Button>
     </nav>
   );
 };

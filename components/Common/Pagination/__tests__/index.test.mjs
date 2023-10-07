@@ -62,7 +62,7 @@ describe('Pagination', () => {
 
       expect(pageElements).toHaveLength(6);
 
-      expect(pageElements.map(element => element.innerHTML)).toEqual([
+      expect(pageElements.map(element => element.textContent)).toEqual([
         '1',
         '2',
         '3',
@@ -84,7 +84,7 @@ describe('Pagination', () => {
 
       expect(pageElements).toHaveLength(6);
 
-      expect(pageElements.map(element => element.innerHTML)).toEqual([
+      expect(pageElements.map(element => element.textContent)).toEqual([
         '1',
         '3',
         '4',
@@ -106,7 +106,7 @@ describe('Pagination', () => {
 
       expect(pageElements).toHaveLength(6);
 
-      expect(pageElements.map(element => element.innerHTML)).toEqual([
+      expect(pageElements.map(element => element.textContent)).toEqual([
         '1',
         '2',
         '3',
@@ -128,7 +128,7 @@ describe('Pagination', () => {
 
       expect(pageElements).toHaveLength(5);
 
-      expect(pageElements.map(element => element.innerHTML)).toEqual([
+      expect(pageElements.map(element => element.textContent)).toEqual([
         '1',
         '4',
         '5',

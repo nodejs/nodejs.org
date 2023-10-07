@@ -11,7 +11,14 @@ function parsePages(pages: PaginationProps['pages']): ParsedPage[] {
   }));
 }
 
-const ellipsis = <span aria-hidden="true">...</span>;
+const ellipsis = (
+  <span
+    aria-hidden="true"
+    className="w-10 px-3 py-2.5 text-neutral-800 dark:text-neutral-200"
+  >
+    ...
+  </span>
+);
 
 function createPageElements({
   parsedPages,
@@ -27,9 +34,10 @@ function createPageElements({
         <a
           href={url}
           aria-label={`Go to page ${pageNumber}`}
+          className="flex h-10 w-10 items-center justify-center rounded px-3 py-2.5 !text-neutral-800 hover:bg-neutral-100 aria-current:bg-green-600 aria-current:!text-white dark:!text-neutral-200 hover:dark:bg-neutral-900"
           {...(pageNumber === currentPage && { 'aria-current': 'page' })}
         >
-          {pageNumber}
+          <span>{pageNumber}</span>
         </a>
       </li>
     );
