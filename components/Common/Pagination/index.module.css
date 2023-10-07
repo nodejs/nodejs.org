@@ -1,0 +1,63 @@
+.pagination {
+  @apply grid
+    items-center
+    justify-between
+    [grid-template-areas:'page-buttons_page-buttons_page-buttons''previous-button_._next-button']
+    md:[grid-template-areas:'previous-button_page-buttons_next-button'];
+}
+
+.previousButton,
+.nextButton {
+  @apply flex
+    items-center
+    gap-2
+    text-sm;
+}
+
+.previousButton {
+  @apply [grid-area:previous-button];
+}
+
+.nextButton {
+  @apply [grid-area:next-button];
+}
+
+.arrowIcon {
+  @apply h-5
+    shrink-0
+    text-neutral-600
+    dark:text-neutral-400;
+}
+
+.list {
+  @apply flex
+    list-none
+    justify-center
+    gap-0.5
+    [grid-area:page-buttons];
+}
+
+.listItem {
+  @apply flex
+  h-10
+    w-10
+    items-center
+    justify-center
+    rounded
+    px-3
+    py-2.5
+    !text-neutral-800
+    hover:bg-neutral-100
+    aria-current:bg-green-600
+    aria-current:!text-white
+    dark:!text-neutral-200
+    hover:dark:bg-neutral-900;
+}
+
+.ellipsis {
+  @apply w-10
+    px-3
+    py-2.5
+    text-neutral-800
+    dark:text-neutral-200;
+}

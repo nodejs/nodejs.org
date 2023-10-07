@@ -1,3 +1,5 @@
+import styles from './index.module.css';
+
 import type { PaginationProps } from '.';
 
 type ParsedPage = PaginationProps['pages'][number] & {
@@ -12,10 +14,7 @@ function parsePages(pages: PaginationProps['pages']): ParsedPage[] {
 }
 
 const ellipsis = (
-  <span
-    aria-hidden="true"
-    className="w-10 px-3 py-2.5 text-neutral-800 dark:text-neutral-200"
-  >
+  <span aria-hidden="true" className={styles.ellipsis}>
     ...
   </span>
 );
@@ -34,7 +33,7 @@ function createPageElements({
         <a
           href={url}
           aria-label={`Go to page ${pageNumber}`}
-          className="flex h-10 w-10 items-center justify-center rounded px-3 py-2.5 !text-neutral-800 hover:bg-neutral-100 aria-current:bg-green-600 aria-current:!text-white dark:!text-neutral-200 hover:dark:bg-neutral-900"
+          className={styles.listItem}
           {...(pageNumber === currentPage && { 'aria-current': 'page' })}
         >
           <span>{pageNumber}</span>

@@ -3,6 +3,7 @@ import type { FC } from 'react';
 
 import Button from '@/components/Common/Button';
 
+import styles from './index.module.css';
 import { useGetPageElements } from './useGetPageElements';
 
 type Page = {
@@ -34,32 +35,27 @@ const Pagination: FC<PaginationProps> = ({
   );
 
   return (
-    <nav
-      aria-label="Pagination"
-      className="grid items-center justify-between [grid-template-areas:'page-buttons_page-buttons_page-buttons''previous-button_._next-button'] md:[grid-template-areas:'previous-button_page-buttons_next-button']"
-    >
+    <nav aria-label="Pagination" className={styles.pagination}>
       <Button
         type="button"
         aria-label={'Previous page'}
         disabled={currentPage === 1}
         variant="secondary"
-        className="flex items-center gap-2 text-sm [grid-area:previous-button]"
+        className={styles.previousButton}
       >
-        <ArrowLeftIcon className="h-5 shrink-0 text-neutral-600 dark:text-neutral-400" />
+        <ArrowLeftIcon className={styles.arrowIcon} />
         <span>Previous</span>
       </Button>
-      <ol className="flex list-none justify-center gap-0.5 [grid-area:page-buttons]">
-        {parsedPages}
-      </ol>
+      <ol className={styles.list}>{parsedPages}</ol>
       <Button
         type="button"
         aria-label={'Next page'}
         disabled={currentPage === pages.length}
         variant="secondary"
-        className="flex items-center gap-2 text-sm [grid-area:next-button]"
+        className={styles.nextButton}
       >
         <span>Next</span>
-        <ArrowRightIcon className="h-5 shrink-0 text-neutral-600 dark:text-neutral-400" />
+        <ArrowRightIcon className={styles.arrowIcon} />
       </Button>
     </nav>
   );
