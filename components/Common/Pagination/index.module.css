@@ -2,7 +2,9 @@
   @apply grid
     items-center
     justify-between
+    gap-y-5
     [grid-template-areas:'page-buttons_page-buttons_page-buttons''previous-button_._next-button']
+    md:gap-y-0
     md:[grid-template-areas:'previous-button_page-buttons_next-button'];
 }
 
