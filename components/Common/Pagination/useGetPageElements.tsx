@@ -1,3 +1,5 @@
+'use client';
+import Link from 'next/link';
 import { useIntl } from 'react-intl';
 
 import styles from './index.module.css';
@@ -36,7 +38,8 @@ function createPageElements({
         aria-setsize={parsedPages.length}
         aria-posinset={pageNumber}
       >
-        <a
+        <Link
+          prefetch={false}
           href={url}
           aria-label={intl.formatMessage(
             {
@@ -50,7 +53,7 @@ function createPageElements({
           {...(pageNumber === currentPage && { 'aria-current': 'page' })}
         >
           <span>{pageNumber}</span>
-        </a>
+        </Link>
       </li>
     );
   });

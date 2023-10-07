@@ -1,3 +1,4 @@
+'use client';
 import { ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/20/solid';
 import type { FC } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
@@ -38,7 +39,12 @@ const Pagination: FC<PaginationProps> = ({
   );
 
   return (
-    <nav aria-label="Pagination" className={styles.pagination}>
+    <nav
+      aria-label={intl.formatMessage({
+        id: 'components.common.pagination.defaultLabel',
+      })}
+      className={styles.pagination}
+    >
       <Button
         type="button"
         aria-label={intl.formatMessage({
