@@ -122,6 +122,9 @@ export default {
       spacing: {
         '4.5': '1.125rem',
       },
+      aria: {
+        current: 'current="page"',
+      },
     },
   },
   darkMode: ['class', '[data-theme="dark"]'],
