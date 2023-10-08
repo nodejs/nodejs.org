@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import { githubProfileAvatarUrl } from '@/util/github';
+import { githubProfileAvatarUrl } from '@/util/avatars';
 
 import Avatar from './';
 
