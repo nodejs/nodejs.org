@@ -3,15 +3,6 @@ import { IntlProvider } from 'react-intl';
 
 import Pagination from '@/components/Common/Pagination';
 
-jest.mock('next/router', () => ({
-  useRouter() {
-    return {
-      isReady: true,
-      asPath: '/link',
-    };
-  },
-}));
-
 function renderPagination({
   currentPage = 1,
   pages,
