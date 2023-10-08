@@ -1,14 +1,14 @@
 .avatar {
   @apply flex
-  h-8
-  w-8
-  items-center
-  justify-center
-  rounded-full
-  border-2
+    h-8
+    w-8
+    items-center
+    justify-center
+    rounded-full
+    border-2
   border-white
   bg-neutral-100
-  text-xs
+    text-xs
   text-neutral-800
   dark:border-neutral-950
   dark:bg-neutral-900
@@ -17,5 +17,5 @@
 
 .avatarRoot {
   @apply -ml-2
-  first:ml-0;
+    first:ml-0;
 }

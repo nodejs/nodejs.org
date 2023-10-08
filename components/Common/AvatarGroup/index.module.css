@@ -1,5 +1,5 @@
 .avatarGroup {
   @apply flex
   items-center
-  overflow-x-auto;
+  overflow-x-scroll;
 }
