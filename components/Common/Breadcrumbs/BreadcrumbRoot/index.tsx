@@ -1,5 +1,5 @@
 import HomeIcon from '@heroicons/react/24/outline/HomeIcon';
-import type { FC, PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren, ComponentProps } from 'react';
 import { useIntl } from 'react-intl';
 
 import BreadcrumbItem from '@/components/Common/Breadcrumbs/BreadcrumbItem';
@@ -37,13 +37,12 @@ const BreadcrumbRoot: FC<PropsWithChildren<BreadcrumbRootProps>> = ({
               itemID="/"
               href="/"
             >
-              <span itemProp="name">
-                <HomeIcon
-                  title={navigateToHome}
-                  aria-label={navigateToHome}
-                  className={styles.icon}
-                />
-              </span>
+              <HomeIcon
+                {...{ itemProp: 'name' as ComponentProps<'svg'> }}
+                title={navigateToHome}
+                aria-label={navigateToHome}
+                className={styles.icon}
+              />
               <meta itemProp="position" content="1" />
             </LocalizedLink>
           </BreadcrumbItem>
