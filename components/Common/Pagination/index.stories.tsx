@@ -9,17 +9,7 @@ export const Default: Story = {
   args: {
     currentPage: 1,
     currentPageSiblingsCount: 1,
-    pages: [
-      {
-        url: '1',
-      },
-      {
-        url: '2',
-      },
-      {
-        url: '3',
-      },
-    ],
+    pages: [{ url: '1' }, { url: '2' }, { url: '3' }],
   },
 };
 
@@ -28,27 +18,14 @@ export const LeftEllipsis: Story = {
     ...Default.args,
     currentPage: 5,
     pages: [
-      {
-        url: '1',
-      },
-      {
-        url: '2',
-      },
-      {
-        url: '3',
-      },
-      {
-        url: '4',
-      },
-      {
-        url: '5',
-      },
-      {
-        url: '6',
-      },
-      {
-        url: '7',
-      },
+      { url: '1' },
+      { url: '2' },
+      { url: '3' },
+      { url: '4' },
+      { url: '5' },
+      { url: '6' },
+      { url: '7' },
+      { url: '8' },
     ],
   },
 };
@@ -65,33 +42,16 @@ export const TwoEllipses: Story = {
     ...Default.args,
     currentPage: 5,
     pages: [
-      {
-        url: '1',
-      },
-      {
-        url: '2',
-      },
-      {
-        url: '3',
-      },
-      {
-        url: '4',
-      },
-      {
-        url: '5',
-      },
-      {
-        url: '6',
-      },
-      {
-        url: '7',
-      },
-      {
-        url: '8',
-      },
-      {
-        url: '9',
-      },
+      { url: '1' },
+      { url: '2' },
+      { url: '3' },
+      { url: '4' },
+      { url: '5' },
+      { url: '6' },
+      { url: '7' },
+      { url: '8' },
+      { url: '9' },
+      { url: '10' },
     ],
   },
 };

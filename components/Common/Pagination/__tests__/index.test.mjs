@@ -3,7 +3,20 @@ import { IntlProvider } from 'react-intl';
 
 import Pagination from '@/components/Common/Pagination';
 
-function setUpTest({ currentPage = 1, pages, currentPageSiblingsCount }) {
+jest.mock('next/router', () => ({
+  useRouter() {
+    return {
+      isReady: true,
+      asPath: '/link',
+    };
+  },
+}));
+
+function renderPagination({
+  currentPage = 1,
+  pages,
+  currentPageSiblingsCount,
+}) {
   const parsedPages = new Array(pages).fill({ url: 'page' });
 
   render(
@@ -25,7 +38,7 @@ function setUpTest({ currentPage = 1, pages, currentPageSiblingsCount }) {
 describe('Pagination', () => {
   describe('Rendering', () => {
     it('Renders the navigation buttons even if no pages are passed to it', () => {
-      setUpTest({ currentPage: 0, pages: 0 });
+      renderPagination({ currentPage: 0, pages: 0 });
 
       expect(screen.getByRole('navigation')).toBeVisible();
 
@@ -35,7 +48,7 @@ describe('Pagination', () => {
     });
 
     it('Renders the passed pages and current page', () => {
-      const { currentPage, parsedPages } = setUpTest({
+      const { currentPage, parsedPages } = renderPagination({
         pages: 4,
       });
 
@@ -55,7 +68,7 @@ describe('Pagination', () => {
 
   describe('Ellipsis behavior', () => {
     it('When the pages size is equal or smaller than currentPageSiblingsCount + 5, all pages are shown', () => {
-      setUpTest({
+      renderPagination({
         pages: 6,
       });
 
@@ -76,9 +89,9 @@ describe('Pagination', () => {
     });
 
     it('Shows left ellipsis when the left sibling of the current page is at least two pages away from the first page', () => {
-      setUpTest({
+      renderPagination({
         currentPage: 5,
-        pages: 7,
+        pages: 8,
       });
 
       expect(screen.getByText('...')).toBeVisible();
@@ -89,18 +102,18 @@ describe('Pagination', () => {
 
       expect(pageElements.map(element => element.textContent)).toEqual([
         '1',
-        '3',
         '4',
         '5',
         '6',
         '7',
+        '8',
       ]);
     });
 
     it('Shows right ellipsis when the right sibling of the current page is at least two pages away from the last page', () => {
-      setUpTest({
+      renderPagination({
         currentPage: 3,
-        pages: 7,
+        pages: 8,
       });
 
       expect(screen.getByText('...')).toBeVisible();
@@ -115,14 +128,14 @@ describe('Pagination', () => {
         '3',
         '4',
         '5',
-        '7',
+        '8',
       ]);
     });
 
     it('Shows right and left ellipses when the current page siblings are both at least two pages away from the first and last pages', () => {
-      setUpTest({
+      renderPagination({
         currentPage: 5,
-        pages: 9,
+        pages: 10,
       });
 
       expect(screen.getAllByText('...')).toHaveLength(2);
@@ -136,14 +149,14 @@ describe('Pagination', () => {
         '4',
         '5',
         '6',
-        '9',
+        '10',
       ]);
     });
   });
 
   describe('Navigation buttons', () => {
     it('Disables "Previous" button when the currentPage is equal to the first page', () => {
-      setUpTest({
+      renderPagination({
         pages: 2,
       });
 
@@ -151,7 +164,7 @@ describe('Pagination', () => {
     });
 
     it('Disables "Next" button when the currentPage is equal to the last page', () => {
-      setUpTest({
+      renderPagination({
         currentPage: 2,
         pages: 2,
       });

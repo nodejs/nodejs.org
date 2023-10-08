@@ -3,9 +3,9 @@
     items-center
     justify-between
     gap-y-5
-    [grid-template-areas:'page-buttons_page-buttons_page-buttons''previous-button_._next-button']
+    [grid-template-areas:'pages_pages_pages''prev_._next']
     md:gap-y-0
-    md:[grid-template-areas:'previous-button_page-buttons_next-button'];
+    md:[grid-template-areas:'prev_pages_next'];
 }
 
 .previousButton,
@@ -17,11 +17,11 @@
 }
 
 .previousButton {
-  @apply [grid-area:previous-button];
+  @apply [grid-area:prev];
 }
 
 .nextButton {
-  @apply [grid-area:next-button];
+  @apply [grid-area:next];
 }
 
 .arrowIcon {
@@ -36,30 +36,5 @@
     list-none
     justify-center
     gap-0.5
-    [grid-area:page-buttons];
-}
-
-.listItem {
-  @apply flex
-  h-10
-    w-10
-    items-center
-    justify-center
-    rounded
-    px-3
-    py-2.5
-    !text-neutral-800
-    hover:bg-neutral-100
-    aria-current:bg-green-600
-    aria-current:!text-white
-    dark:!text-neutral-200
-    hover:dark:bg-neutral-900;
-}
-
-.ellipsis {
-  @apply w-10
-    px-3
-    py-2.5
-    text-neutral-800
-    dark:text-neutral-200;
+    [grid-area:pages];
 }

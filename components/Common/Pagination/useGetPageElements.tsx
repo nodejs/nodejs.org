@@ -1,146 +1,124 @@
-'use client';
-import Link from 'next/link';
-import { useIntl } from 'react-intl';
-
-import styles from './index.module.css';
+import Ellipsis from './Ellipsis';
+import type { PaginationListItemProps } from './PaginationListItem/index';
+import PaginationListItem from './PaginationListItem/index';
 
 import type { PaginationProps } from '.';
 
-type ParsedPage = PaginationProps['pages'][number] & {
-  pageNumber: number;
-};
-
-function parsePages(pages: PaginationProps['pages']): ParsedPage[] {
+function parsePages(
+  pages: PaginationProps['pages'],
+  currentPage: number,
+  totalPages: number
+): PaginationListItemProps[] {
   return pages.map(({ url }, index) => ({
     url,
     pageNumber: index + 1,
+    currentPage,
+    totalPages,
   }));
 }
 
-const ellipsis = (
-  <span aria-hidden="true" className={styles.ellipsis}>
-    ...
-  </span>
-);
-
-function createPageElements({
-  parsedPages,
-  currentPage,
-  intl,
-}: Pick<PaginationProps, 'currentPage'> & {
-  parsedPages: ParsedPage[];
-  intl: ReturnType<typeof useIntl>;
-}) {
-  return parsedPages.map(({ url, pageNumber }) => {
-    return (
-      <li
-        key={pageNumber}
-        aria-setsize={parsedPages.length}
-        aria-posinset={pageNumber}
-      >
-        <Link
-          prefetch={false}
-          href={url}
-          aria-label={intl.formatMessage(
-            {
-              id: 'components.common.pagination.pageLabel',
-            },
-            {
-              pageNumber,
-            }
-          )}
-          className={styles.listItem}
-          {...(pageNumber === currentPage && { 'aria-current': 'page' })}
-        >
-          <span>{pageNumber}</span>
-        </Link>
-      </li>
-    );
-  });
+function createPaginationListItems(parsedPages: PaginationListItemProps[]) {
+  return parsedPages.map(page => (
+    <PaginationListItem key={page.url} {...page} />
+  ));
 }
+
+// The minimum amount of elements are first page, current page, and last page
+const MINIMUM_AMOUNT_OF_ELEMENTS = 3;
+
+// Not more than two ellipses will be shown at the same time
+const MAXIMUM_AMOUNT_OF_ELLIPSES = 2;
 
 export const useGetPageElements = (
   currentPage: PaginationProps['currentPage'],
   pages: PaginationProps['pages'],
   currentPageSiblingsCount: number
 ) => {
-  const intl = useIntl();
+  const totalPages = pages.length;
+  const parsedPages = parsePages(pages, currentPage, totalPages);
+  const currentPageIndex = currentPage - 1;
 
-  const parsedPages = parsePages(pages);
-  const totalPages = parsedPages.length;
-  /**
-   * The combination of firstElement + currentElement + lastElement + 2 ellipses
-   */
-  const minimumElements = 5;
+  // We multiply it by two (2) as siblings are located on both left and right sides
+  // of the current page
+  const totalSiblingsCount = 2 * currentPageSiblingsCount;
 
-  const minimumAmountOfPages = currentPageSiblingsCount + minimumElements;
+  const visiblePages =
+    totalSiblingsCount +
+    MINIMUM_AMOUNT_OF_ELEMENTS +
+    MAXIMUM_AMOUNT_OF_ELLIPSES;
 
-  if (totalPages <= minimumAmountOfPages) {
-    return createPageElements({ parsedPages, currentPage, intl });
+  // When there are more pages than the visible pages to be shown
+  // we do not need to perform any calculations
+  if (totalPages <= visiblePages) {
+    return createPaginationListItems(parsedPages);
   }
 
-  const leftSiblingIndex = Math.max(
-    currentPage - currentPageSiblingsCount - 1,
+  // The index of the far-left sibling of the current page
+  const leftSiblingsFirstIndex = Math.max(
+    currentPageIndex - currentPageSiblingsCount,
     1
   );
-  const rightSiblingIndex = Math.min(
-    currentPage + currentPageSiblingsCount,
+
+  // The index of the far-right sibling of the current page
+  const rightSiblingsLastIndex = Math.min(
+    currentPageIndex + currentPageSiblingsCount + 1,
     totalPages
   );
-
-  const shouldShowLeftDots = leftSiblingIndex > 2;
-  const shouldShowRightDots = rightSiblingIndex < totalPages - 2;
 
   const firstPageIndex = 0;
   const lastPageIndex = totalPages - 1;
 
-  if (!shouldShowLeftDots && shouldShowRightDots) {
-    const leftItemCount = 3 + 2 * currentPageSiblingsCount;
-    const leftRange = parsedPages.slice(firstPageIndex, leftItemCount);
+  // If there are at least two (2) elements between the far-left sibling of
+  // the current page, and the first page, we should show left ellipsis
+  // between them
+  const hasLeftEllipsis = leftSiblingsFirstIndex > firstPageIndex + 2;
+
+  // If there are at least two (2) elements between the far-right sibling of
+  // the current page, and the last page, we should show right ellipsis
+  // between them
+  const hasRightEllipsis = rightSiblingsLastIndex < lastPageIndex - 1;
+
+  if (!hasLeftEllipsis && hasRightEllipsis) {
+    const leftPagesLastIndex = MINIMUM_AMOUNT_OF_ELEMENTS + totalSiblingsCount;
+
+    const leftPages = parsedPages.slice(firstPageIndex, leftPagesLastIndex);
 
     return [
-      ...createPageElements({ parsedPages: leftRange, currentPage, intl }),
-      ellipsis,
-      ...createPageElements({
-        parsedPages: parsedPages.slice(lastPageIndex),
-        currentPage,
-        intl,
-      }),
+      ...createPaginationListItems(leftPages),
+      Ellipsis(),
+      ...createPaginationListItems(parsedPages.slice(lastPageIndex)),
     ];
   }
 
-  if (shouldShowLeftDots && !shouldShowRightDots) {
-    const rightItemCount = 3 + 2 * currentPageSiblingsCount;
-    const rightRange = parsedPages.slice(totalPages - rightItemCount);
+  if (hasLeftEllipsis && !hasRightEllipsis) {
+    const rightPagesFirstIndex =
+      MINIMUM_AMOUNT_OF_ELEMENTS + totalSiblingsCount;
+
+    const rightPages = parsedPages.slice(totalPages - rightPagesFirstIndex);
 
     return [
-      ...createPageElements({
-        parsedPages: parsedPages.slice(firstPageIndex, firstPageIndex + 1),
-        currentPage,
-        intl,
-      }),
-      ellipsis,
-      ...createPageElements({ parsedPages: rightRange, currentPage, intl }),
+      ...createPaginationListItems(
+        parsedPages.slice(firstPageIndex, firstPageIndex + 1)
+      ),
+      Ellipsis(),
+      ...createPaginationListItems(rightPages),
     ];
   }
 
-  if (shouldShowLeftDots && shouldShowRightDots) {
-    const middleRange = parsedPages.slice(leftSiblingIndex, rightSiblingIndex);
+  if (hasLeftEllipsis && hasRightEllipsis) {
+    const middlePages = parsedPages.slice(
+      leftSiblingsFirstIndex,
+      rightSiblingsLastIndex
+    );
 
     return [
-      ...createPageElements({
-        parsedPages: parsedPages.slice(firstPageIndex, firstPageIndex + 1),
-        currentPage,
-        intl,
-      }),
-      ellipsis,
-      ...createPageElements({ parsedPages: middleRange, currentPage, intl }),
-      ellipsis,
-      ...createPageElements({
-        parsedPages: parsedPages.slice(lastPageIndex),
-        currentPage,
-        intl,
-      }),
+      ...createPaginationListItems(
+        parsedPages.slice(firstPageIndex, firstPageIndex + 1)
+      ),
+      Ellipsis(),
+      ...createPaginationListItems(middlePages),
+      Ellipsis(),
+      ...createPaginationListItems(parsedPages.slice(lastPageIndex)),
     ];
   }
 };

@@ -1,4 +1,3 @@
-'use client';
 import { ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/20/solid';
 import type { FC } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
@@ -55,9 +54,10 @@ const Pagination: FC<PaginationProps> = ({
         className={styles.previousButton}
       >
         <ArrowLeftIcon className={styles.arrowIcon} />
-        <span>
-          <FormattedMessage id={'components.common.pagination.prev'} />
-        </span>
+        <FormattedMessage
+          id="components.common.pagination.prev"
+          tagName="span"
+        />
       </Button>
       <ol className={styles.list}>{parsedPages}</ol>
       <Button
@@ -69,9 +69,10 @@ const Pagination: FC<PaginationProps> = ({
         variant="secondary"
         className={styles.nextButton}
       >
-        <span>
-          <FormattedMessage id={'components.common.pagination.next'} />
-        </span>
+        <FormattedMessage
+          id="components.common.pagination.next"
+          tagName="span"
+        />
         <ArrowRightIcon className={styles.arrowIcon} />
       </Button>
     </nav>
