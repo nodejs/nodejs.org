@@ -29,6 +29,9 @@ const MINIMUM_AMOUNT_OF_ELEMENTS = 3;
 // Not more than two ellipses will be shown at the same time
 const MAXIMUM_AMOUNT_OF_ELLIPSES = 2;
 
+// The logic of this custom hook has taken the internal logic of
+// React MUI's Pagination component as reference. More info here:
+// https://github.com/mui/material-ui/blob/master/packages/mui-material/src/usePagination/usePagination.js
 export const useGetPageElements = (
   currentPage: PaginationProps['currentPage'],
   pages: PaginationProps['pages'],

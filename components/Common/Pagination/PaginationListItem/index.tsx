@@ -8,9 +8,7 @@ import styles from './index.module.css';
 export type PaginationListItemProps = {
   url: string;
   pageNumber: number;
-  /**
-   * One-based number of the current page
-   */
+  // One-based number of the current page
   currentPage: number;
   totalPages: number;
 };
@@ -29,12 +27,8 @@ const PaginationListItem: FC<PaginationListItemProps> = ({
         prefetch={false}
         href={url}
         aria-label={intl.formatMessage(
-          {
-            id: 'components.common.pagination.pageLabel',
-          },
-          {
-            pageNumber,
-          }
+          { id: 'components.common.pagination.pageLabel' },
+          { pageNumber }
         )}
         className={styles.listItem}
         {...(pageNumber === currentPage && { 'aria-current': 'page' })}

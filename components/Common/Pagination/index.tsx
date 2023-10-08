@@ -3,24 +3,18 @@ import type { FC } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 
 import Button from '@/components/Common/Button';
+import { useGetPageElements } from '@/components/Common/Pagination/useGetPageElements';
 
 import styles from './index.module.css';
-import { useGetPageElements } from './useGetPageElements';
 
-type Page = {
-  url: string;
-};
+type Page = { url: string };
 
 export type PaginationProps = {
-  /**
-   * One-based number of the current page
-   */
+  // One-based number of the current page
   currentPage: number;
   pages: Page[];
-  /**
-   * The number of page buttons on each side of the current page button
-   * @default 1
-   */
+  // The number of page buttons on each side of the current page button
+  // @default 1
   currentPageSiblingsCount?: number;
 };
 
