@@ -10,7 +10,7 @@
       "extends": "plugin:storybook/recommended"
     },
     {
-      "files": ["**/__tests__/*.mjs"],
+      "files": ["**/__tests__/*.mjs", "__mocks__/*.mjs"],
       "env": { "jest": true }
     },
     {

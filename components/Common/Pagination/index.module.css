@@ -1,0 +1,40 @@
+.pagination {
+  @apply grid
+    items-center
+    justify-between
+    gap-y-5
+    [grid-template-areas:'pages_pages_pages''prev_._next']
+    md:gap-y-0
+    md:[grid-template-areas:'prev_pages_next'];
+}
+
+.previousButton,
+.nextButton {
+  @apply flex
+    items-center
+    gap-2
+    text-sm;
+}
+
+.previousButton {
+  @apply [grid-area:prev];
+}
+
+.nextButton {
+  @apply [grid-area:next];
+}
+
+.arrowIcon {
+  @apply h-5
+    shrink-0
+    text-neutral-600
+    dark:text-neutral-400;
+}
+
+.list {
+  @apply flex
+    list-none
+    justify-center
+    gap-0.5
+    [grid-area:pages];
+}
