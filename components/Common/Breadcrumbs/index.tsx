@@ -1,12 +1,11 @@
-import classNames from 'classnames';
 import { type LinkProps } from 'next/link';
 import { useMemo, type FC } from 'react';
 
-import LocalizedLink from '@/components/LocalizedLink';
-
+import BreadcrumbHomeLink from './BreadcrumbHomeLink';
 import BreadcrumbItem from './BreadcrumbItem';
+import BreadcrumbLink from './BreadcrumbLink';
 import BreadcrumbRoot from './BreadcrumbRoot';
-import styles from './index.module.css';
+import BreadcrumbTruncatedItem from './BreadcrumbTruncatedItem';
 
 type BreadcrumbLink = {
   label: string;
@@ -21,52 +20,46 @@ type BreadcrumbsProps = {
 
 const Breadcrumbs: FC<BreadcrumbsProps> = ({
   links = [],
-  maxLength = 3,
+  maxLength = 5,
   hideHome = false,
 }) => {
-  const items = useMemo(() => {
-    const itemsToRender = links.slice(
-      links.length > maxLength ? -maxLength : 0
-    );
+  const totalLength = links.length + +!hideHome;
+  const lengthOffset = maxLength - totalLength;
+  const isOverflow = lengthOffset < 0;
 
-    return itemsToRender.map((link, index, items) => {
-      const isLastItem = index === items.length - 1;
-      let position = index + 1;
-      if (!hideHome) {
-        position += 1;
-      }
-      if (links.length > maxLength) {
-        position += 1;
-      }
+  const items = useMemo(
+    () =>
+      links.map((link, index, items) => {
+        const position = index + 1;
+        const isLastItem = index === items.length - 1;
+        const hidden =
+          // We add 1 here to take into account of the truncated breadcrumb.
+          position <= Math.abs(lengthOffset) + 1 && isOverflow && !isLastItem;
 
-      return (
-        <BreadcrumbItem key={link.href.toString()} hideSeparator={isLastItem}>
-          <LocalizedLink
-            itemScope
-            itemType="http://schema.org/Thing"
-            itemProp="item"
-            itemID="/"
-            href={link.href}
-            className={classNames({
-              [styles.active]: isLastItem,
-            })}
-            aria-current={isLastItem ? 'page' : undefined}
+        return (
+          <BreadcrumbItem
+            key={link.href.toString()}
+            hidden={hidden}
+            hideSeparator={isLastItem}
+            position={position + +!hideHome}
           >
-            <span itemProp="name">{link.label}</span>
-            <meta itemProp="position" content={`${position}`} />
-          </LocalizedLink>
-        </BreadcrumbItem>
-      );
-    });
-  }, [links, maxLength, hideHome]);
+            <BreadcrumbLink href={link.href} active={isLastItem}>
+              {link.label}
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+        );
+      }),
+    [hideHome, isOverflow, lengthOffset, links]
+  );
 
   return (
-    <BreadcrumbRoot hideHome={hideHome}>
-      {links.length > maxLength && (
-        <BreadcrumbItem>
-          <button disabled>...</button>
+    <BreadcrumbRoot>
+      {!hideHome && (
+        <BreadcrumbItem position={1}>
+          <BreadcrumbHomeLink />
         </BreadcrumbItem>
       )}
+      {isOverflow && <BreadcrumbTruncatedItem />}
       {items}
     </BreadcrumbRoot>
   );

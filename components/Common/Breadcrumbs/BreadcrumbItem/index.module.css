@@ -7,6 +7,10 @@
     text-neutral-800
     dark:text-neutral-200;
 
+  &.visuallyHidden {
+    @apply hidden;
+  }
+
   .separator {
     @apply h-4
       w-4

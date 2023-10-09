@@ -1,56 +1,20 @@
-import HomeIcon from '@heroicons/react/24/outline/HomeIcon';
 import type { FC, PropsWithChildren, ComponentProps } from 'react';
-import { useIntl } from 'react-intl';
-
-import BreadcrumbItem from '@/components/Common/Breadcrumbs/BreadcrumbItem';
-import LocalizedLink from '@/components/LocalizedLink';
 
 import styles from './index.module.css';
 
-type BreadcrumbRootProps = {
-  hideHome?: boolean;
-};
-
-const BreadcrumbRoot: FC<PropsWithChildren<BreadcrumbRootProps>> = ({
-  hideHome = false,
+const BreadcrumbRoot: FC<PropsWithChildren<ComponentProps<'nav'>>> = ({
   children,
-}) => {
-  const { formatMessage } = useIntl();
-
-  const navigateToHome = formatMessage({
-    id: 'components.common.breadcrumbs.navigateToHome',
-  });
-
-  return (
-    <nav aria-label="breadcrumb">
-      <ol
-        itemScope
-        itemType="https://schema.org/BreadcrumbList"
-        className={styles.list}
-      >
-        {!hideHome && (
-          <BreadcrumbItem>
-            <LocalizedLink
-              itemScope
-              itemType="http://schema.org/Thing"
-              itemProp="item"
-              itemID="/"
-              href="/"
-            >
-              <HomeIcon
-                {...{ itemProp: 'name' as ComponentProps<'svg'> }}
-                title={navigateToHome}
-                aria-label={navigateToHome}
-                className={styles.icon}
-              />
-              <meta itemProp="position" content="1" />
-            </LocalizedLink>
-          </BreadcrumbItem>
-        )}
-        {children}
-      </ol>
-    </nav>
-  );
-};
+  ...other
+}) => (
+  <nav aria-label="breadcrumb" {...other}>
+    <ol
+      itemScope
+      itemType="https://schema.org/BreadcrumbList"
+      className={styles.list}
+    >
+      {children}
+    </ol>
+  </nav>
+);
 
 export default BreadcrumbRoot;
