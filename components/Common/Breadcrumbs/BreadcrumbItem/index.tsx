@@ -5,12 +5,14 @@ import type { ComponentProps, FC, PropsWithChildren } from 'react';
 import styles from './index.module.css';
 
 type BreadcrumbItemProps = {
+  disableMicrodata?: boolean;
   hidden?: boolean;
   hideSeparator?: boolean;
   position?: number;
 } & ComponentProps<'li'>;
 
 const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
+  disableMicrodata,
   children,
   hidden = false,
   hideSeparator = false,
@@ -19,9 +21,9 @@ const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
 }) => (
   <li
     {...props}
-    itemProp="itemListElement"
-    itemScope
-    itemType="https://schema.org/ListItem"
+    itemProp={!disableMicrodata ? 'itemListElement' : undefined}
+    itemScope={!disableMicrodata ? true : undefined}
+    itemType={!disableMicrodata ? 'https://schema.org/ListItem' : undefined}
     className={classNames(
       styles.item,
       { [styles.visuallyHidden]: hidden },
