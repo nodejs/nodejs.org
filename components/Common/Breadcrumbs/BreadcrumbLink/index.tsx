@@ -23,7 +23,9 @@ const BreadcrumbLink: FC<BreadcrumbLinkProps> = ({
     className={classNames({ [styles.active]: active }, props.className)}
     aria-current={active ? 'page' : undefined}
     {...props}
-  />
+  >
+    <span itemProp="name">{props.children}</span>
+  </LocalizedLink>
 );
 
 export default BreadcrumbLink;

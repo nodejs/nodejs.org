@@ -7,7 +7,6 @@ import styles from './index.module.css';
 type BreadcrumbItemProps = {
   hidden?: boolean;
   hideSeparator?: boolean;
-  name?: string;
   position?: number;
 } & ComponentProps<'li'>;
 
@@ -15,7 +14,6 @@ const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
   children,
   hidden = false,
   hideSeparator = false,
-  name,
   position,
   ...props
 }) => (
@@ -32,7 +30,6 @@ const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
     aria-hidden={hidden ? 'true' : undefined}
   >
     {children}
-    {name && <span itemProp="name">{name}</span>}
     {position && <meta itemProp="position" content={`${position}`} />}
     {!hideSeparator && (
       <ChevronRightIcon aria-hidden="true" className={styles.separator} />
