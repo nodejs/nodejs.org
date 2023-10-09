@@ -4,9 +4,9 @@ import styles from './index.module.css';
 
 const BreadcrumbRoot: FC<PropsWithChildren<ComponentProps<'nav'>>> = ({
   children,
-  ...other
+  ...props
 }) => (
-  <nav aria-label="breadcrumb" {...other}>
+  <nav aria-label="breadcrumb" {...props}>
     <ol
       itemScope
       itemType="https://schema.org/BreadcrumbList"

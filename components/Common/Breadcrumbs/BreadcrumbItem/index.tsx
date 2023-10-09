@@ -17,17 +17,17 @@ const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
   hideSeparator = false,
   name,
   position,
-  ...other
+  ...props
 }) => (
   <li
-    {...other}
+    {...props}
     itemProp="itemListElement"
     itemScope
     itemType="https://schema.org/ListItem"
     className={classNames(
       styles.item,
       { [styles.visuallyHidden]: hidden },
-      other.className
+      props.className
     )}
     aria-hidden={hidden ? 'true' : undefined}
   >
