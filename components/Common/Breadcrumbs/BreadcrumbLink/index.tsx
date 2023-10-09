@@ -20,7 +20,11 @@ const BreadcrumbLink: FC<BreadcrumbLinkProps> = ({
     itemProp="item"
     itemID={href.toString()}
     href={href}
-    className={classNames({ [styles.active]: active }, props.className)}
+    className={classNames(
+      styles.link,
+      { [styles.active]: active },
+      props.className
+    )}
     aria-current={active ? 'page' : undefined}
     {...props}
   >

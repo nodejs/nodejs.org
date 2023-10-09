@@ -3,9 +3,14 @@
     items-center
     gap-5
     text-sm
-    font-medium
-    text-neutral-800
-    dark:text-neutral-200;
+    font-medium;
+
+  &,
+  > a,
+  > a:hover {
+    @apply text-neutral-800
+      dark:text-neutral-200;
+  }
 
   &.visuallyHidden {
     @apply hidden;
