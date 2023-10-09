@@ -1,0 +1,8 @@
+.active {
+  @apply rounded
+    bg-green-600
+    px-2
+    py-1
+    font-semibold
+    text-white;
+}
