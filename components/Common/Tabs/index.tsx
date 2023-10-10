@@ -1,36 +1,40 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import type { FC, ReactNode } from 'react';
+import classNames from 'classnames';
+import type { FC, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';
 
 type Tab = {
-  name: string;
-  label: ReactNode;
-  content: ReactNode;
+  key: string;
+  label: string;
 };
 
 type TabsProps = {
   tabs: Tab[];
+  headerClassName?: string;
 } & TabsPrimitive.TabsProps;
 
-const Tabs: FC<TabsProps> = ({ tabs, ...props }) => (
+const Tabs: FC<PropsWithChildren<TabsProps>> = ({
+  tabs,
+  headerClassName,
+  children,
+  ...props
+}) => (
   <TabsPrimitive.Root {...props}>
-    <TabsPrimitive.List className={styles.tabsList}>
+    <TabsPrimitive.List
+      className={classNames(styles.tabsList, headerClassName)}
+    >
       {tabs.map(tab => (
         <TabsPrimitive.Trigger
-          key={tab.name}
-          value={tab.name}
+          key={tab.key}
+          value={tab.label}
           className={styles.tabsTrigger}
         >
           {tab.label}
         </TabsPrimitive.Trigger>
       ))}
     </TabsPrimitive.List>
-    {tabs.map(tab => (
-      <TabsPrimitive.Content key={tab.name} value={tab.name}>
-        {tab.content}
-      </TabsPrimitive.Content>
-    ))}
+    {children}
   </TabsPrimitive.Root>
 );
 
