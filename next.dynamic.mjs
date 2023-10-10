@@ -8,6 +8,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
+import remarkGfm from 'remark-gfm';
 import { getHighlighter } from 'shiki';
 import shikiNordTheme from 'shiki/themes/nord.json';
 import { VFile } from 'vfile';
@@ -177,7 +178,7 @@ export const generateStaticProps = async (source = '', filename = '') => {
             },
           ],
         ],
-        remarkPlugins: [remarkHeadings],
+        remarkPlugins: [remarkHeadings, remarkGfm],
         format: filename.includes('.mdx') ? 'mdx' : 'md',
       },
     });
