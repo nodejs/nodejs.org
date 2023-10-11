@@ -54,5 +54,6 @@
   "components.common.pagination.next": "Next",
   "components.common.pagination.nextAriaLabel": "Next page",
   "components.common.pagination.defaultLabel": "Pagination",
-  "components.common.pagination.pageLabel": "Go to page {pageNumber}"
+  "components.common.pagination.pageLabel": "Go to page {pageNumber}",
+  "components.common.languageDropdown.label": "Choose Language"
 }
