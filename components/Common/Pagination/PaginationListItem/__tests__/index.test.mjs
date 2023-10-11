@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import { IntlProvider } from 'react-intl';
 
 import PaginationListItem from '@/components/Common/Pagination/PaginationListItem';
+import { LocaleProvider } from '@/providers/localeProvider';
 
 function renderPaginationListItem({
   url,
@@ -10,14 +10,14 @@ function renderPaginationListItem({
   totalPages,
 }) {
   render(
-    <IntlProvider>
+    <LocaleProvider>
       <PaginationListItem
         url={url}
         pageNumber={pageNumber}
         currentPage={currentPage}
         totalPages={totalPages}
       />
-    </IntlProvider>
+    </LocaleProvider>
   );
 }
 

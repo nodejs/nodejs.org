@@ -68,28 +68,28 @@ export const useGetPageElements = (
     totalPages
   );
 
-  const firstPageIndex = 0;
-  const lastPageIndex = totalPages - 1;
+  const firstIndex = 0;
+  const lastIndex = totalPages - 1;
 
   // If there are at least two (2) elements between the far-left sibling of
   // the current page, and the first page, we should show left ellipsis
   // between them
-  const hasLeftEllipsis = leftSiblingsFirstIndex > firstPageIndex + 2;
+  const hasLeftEllipsis = leftSiblingsFirstIndex > firstIndex + 2;
 
   // If there are at least two (2) elements between the far-right sibling of
   // the current page, and the last page, we should show right ellipsis
   // between them
-  const hasRightEllipsis = rightSiblingsLastIndex < lastPageIndex - 1;
+  const hasRightEllipsis = rightSiblingsLastIndex < lastIndex - 1;
 
   if (!hasLeftEllipsis && hasRightEllipsis) {
     const leftPagesLastIndex = MINIMUM_AMOUNT_OF_ELEMENTS + totalSiblingsCount;
 
-    const leftPages = parsedPages.slice(firstPageIndex, leftPagesLastIndex);
+    const leftPages = parsedPages.slice(firstIndex, leftPagesLastIndex);
 
     return [
       ...createPaginationListItems(leftPages),
-      Ellipsis(),
-      ...createPaginationListItems(parsedPages.slice(lastPageIndex)),
+      <Ellipsis key="elipsis" />,
+      ...createPaginationListItems(parsedPages.slice(lastIndex)),
     ];
   }
 
@@ -101,9 +101,9 @@ export const useGetPageElements = (
 
     return [
       ...createPaginationListItems(
-        parsedPages.slice(firstPageIndex, firstPageIndex + 1)
+        parsedPages.slice(firstIndex, firstIndex + 1)
       ),
-      Ellipsis(),
+      <Ellipsis key="elipsis" />,
       ...createPaginationListItems(rightPages),
     ];
   }
@@ -116,12 +116,12 @@ export const useGetPageElements = (
 
     return [
       ...createPaginationListItems(
-        parsedPages.slice(firstPageIndex, firstPageIndex + 1)
+        parsedPages.slice(firstIndex, firstIndex + 1)
       ),
-      Ellipsis(),
+      <Ellipsis key="elipsis-1" />,
       ...createPaginationListItems(middlePages),
-      Ellipsis(),
-      ...createPaginationListItems(parsedPages.slice(lastPageIndex)),
+      <Ellipsis key="elipsis-2" />,
+      ...createPaginationListItems(parsedPages.slice(lastIndex)),
     ];
   }
 };

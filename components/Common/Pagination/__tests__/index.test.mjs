@@ -1,23 +1,25 @@
 import { render, screen } from '@testing-library/react';
-import { IntlProvider } from 'react-intl';
 
 import Pagination from '@/components/Common/Pagination';
+import { LocaleProvider } from '@/providers/localeProvider';
 
 function renderPagination({
   currentPage = 1,
   pages,
   currentPageSiblingsCount,
 }) {
-  const parsedPages = new Array(pages).fill({ url: 'page' });
+  const parsedPages = new Array(pages)
+    .fill({ url: 'page' })
+    .map(item => ({ url: `${item.url}-${Math.random()}` }));
 
   render(
-    <IntlProvider>
+    <LocaleProvider>
       <Pagination
         currentPage={currentPage}
         pages={parsedPages}
         currentPageSiblingsCount={currentPageSiblingsCount}
       />
-    </IntlProvider>
+    </LocaleProvider>
   );
 
   return {

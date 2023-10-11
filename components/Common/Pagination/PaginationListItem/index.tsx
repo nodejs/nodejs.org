@@ -24,7 +24,6 @@ const PaginationListItem: FC<PaginationListItemProps> = ({
   return (
     <li key={pageNumber} aria-setsize={totalPages} aria-posinset={pageNumber}>
       <LocalizedLink
-        prefetch={false}
         href={url}
         aria-label={intl.formatMessage(
           { id: 'components.common.pagination.pageLabel' },
