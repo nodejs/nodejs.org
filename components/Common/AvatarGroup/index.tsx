@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { useState, useMemo } from 'react';
 
-import { getAcronymFromString } from '@/util/avatars';
+import { getAcronymFromString } from '@/util/stringutils';
 
 import Avatar from './Avatar';
 import avatarstyles from './Avatar/index.module.css';
