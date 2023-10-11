@@ -6,13 +6,13 @@
     justify-center
     rounded-full
     border-2
-  border-white
-  bg-neutral-100
+    border-white
+    bg-neutral-100
     text-xs
-  text-neutral-800
-  dark:border-neutral-950
-  dark:bg-neutral-900
-  dark:text-neutral-300;
+    text-neutral-800
+    dark:border-neutral-950
+    dark:bg-neutral-900
+    dark:text-neutral-300;
 }
 
 .avatarRoot {
