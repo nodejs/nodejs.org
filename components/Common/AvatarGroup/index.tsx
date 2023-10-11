@@ -1,4 +1,5 @@
-import type { FC } from 'react';
+import classNames from 'classnames';
+import type { ComponentProps, FC } from 'react';
 import { useState, useMemo } from 'react';
 
 import { getAcronymFromString } from '@/util/stringutils';
@@ -8,10 +9,7 @@ import avatarstyles from './Avatar/index.module.css';
 import styles from './index.module.css';
 
 type AvatarGroupProps = {
-  avatars: {
-    src: string;
-    alt?: string;
-  }[];
+  avatars: ComponentProps<typeof Avatar>[];
   limit?: number;
 };
 
@@ -19,7 +17,7 @@ const AvatarGroup: FC<AvatarGroupProps> = ({ avatars, limit = 10 }) => {
   const [showMore, setShowMore] = useState(false);
 
   const renderAvatars = useMemo(
-    () => (showMore ? avatars : avatars.slice(0, limit)),
+    () => avatars.slice(0, showMore ? avatars.length : limit),
     [showMore, avatars, limit]
   );
 
@@ -28,7 +26,7 @@ const AvatarGroup: FC<AvatarGroupProps> = ({ avatars, limit = 10 }) => {
       {renderAvatars.map((avatar, index) => (
         <Avatar
           src={avatar.src}
-          alt={getAcronymFromString(avatar.alt || '')}
+          alt={getAcronymFromString(avatar.alt)}
           key={index}
         />
       ))}
@@ -36,10 +34,10 @@ const AvatarGroup: FC<AvatarGroupProps> = ({ avatars, limit = 10 }) => {
       {avatars.length > limit && (
         <span
           onClick={() => setShowMore(!showMore)}
-          className={avatarstyles.avatarRoot}
+          className={classNames(avatarstyles.avatarRoot, 'cursor-pointer')}
         >
           <span className={avatarstyles.avatar}>
-            {showMore ? '-' : `+${avatars.length - limit}`}
+            {`${showMore ? '-' : '+'}${avatars.length - limit}`}
           </span>
         </span>
       )}

@@ -17,14 +17,14 @@ export const Default: Story = {
 export const NoSquare: Story = {
   args: {
     src: '/static/images/logos/stacked-dark.svg',
-    alt: 'stacked-dark',
+    alt: 'SD',
   },
 };
 
 export const FallBack: Story = {
   args: {
     src: 'https://avatars.githubusercontent.com/u/',
-    alt: 'unknown-avatar',
+    alt: 'UA',
   },
 };
 

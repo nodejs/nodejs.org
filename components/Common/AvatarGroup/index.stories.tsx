@@ -23,6 +23,7 @@ const names = [
   'manishprivet',
   'araujogui',
 ];
+
 const unknownAvatar = {
   src: 'https://avatars.githubusercontent.com/u/',
   alt: 'unknown-avatar',
@@ -49,15 +50,12 @@ export const WithCustomLimit: Story = {
 export const InSmallContainer: Story = {
   decorators: [
     Story => (
-      <div style={{ width: '150px' }}>
+      <div className="w-[150px]">
         <Story />
       </div>
     ),
   ],
-  args: {
-    ...defaultProps,
-    limit: 5,
-  },
+  args: { ...defaultProps, limit: 5 },
 };
 
 export default { component: AvatarGroup } as Meta;
