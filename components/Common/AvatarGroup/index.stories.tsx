@@ -23,21 +23,17 @@ const names = [
   'manishprivet',
   'araujogui',
 ];
-
-// we are using github avatars for this story
-// an link to other image can also be used
-const defaultProps = {
-  avatars: names.map(name => ({
-    src: githubProfileAvatarUrl(name),
-    alt: name,
-  })),
-};
-
-// add falback text to avatars we are hardcoding link because github api add image for 404 user avatar
-defaultProps.avatars.push({
+const unknownAvatar = {
   src: 'https://avatars.githubusercontent.com/u/',
   alt: 'unknown-avatar',
-});
+};
+
+const defaultProps = {
+  avatars: [
+    unknownAvatar,
+    ...names.map(name => ({ src: githubProfileAvatarUrl(name), alt: name })),
+  ],
+};
 
 export const Default: Story = {
   args: { ...defaultProps },
@@ -60,19 +56,6 @@ export const InSmallContainer: Story = {
   ],
   args: {
     ...defaultProps,
-    limit: 5,
-  },
-};
-
-// normally it's support by radix-ui
-export const NoSquareAvatars: Story = {
-  args: {
-    avatars: [
-      {
-        src: '/static/images/logos/stacked-dark.svg',
-        alt: 'stacked-dark',
-      },
-    ],
     limit: 5,
   },
 };
