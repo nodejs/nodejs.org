@@ -75,4 +75,4 @@ export const JSSymbols: StoryObj = {
   ),
 };
 
-export default { title: 'Design System/Node.js Logos' } as MetaObj;
+export default { title: 'Design System' } as MetaObj;
