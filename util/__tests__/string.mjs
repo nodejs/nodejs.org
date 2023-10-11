@@ -1,12 +1,6 @@
-import { githubProfileAvatarUrl, getAcronymFromString } from '@/util/avatars';
+import { getAcronymFromString } from '@/util/stringUtils';
 
-describe('Avatar', () => {
-  it('githubProfileAvatarUrl returns the correct URL', () => {
-    expect(githubProfileAvatarUrl('octocat')).toBe(
-      'https://avatars.githubusercontent.com/octocat'
-    );
-  });
-
+describe('String utils', () => {
   it('getAcronymFromString returns the correct acronym', () => {
     expect(getAcronymFromString('John Doe')).toBe('JD');
   });
