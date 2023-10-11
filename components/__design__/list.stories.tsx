@@ -24,4 +24,4 @@ export const UnorderedLists: StoryObj = {
   ),
 };
 
-export default { title: 'Design System/Lists' } as MetaObj;
+export default { title: 'Design System' } as MetaObj;
