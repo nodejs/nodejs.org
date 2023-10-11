@@ -1,3 +1,4 @@
+import * as TabsPrimitive from '@radix-ui/react-tabs';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 import Tabs from './index';
@@ -10,21 +11,31 @@ export const Default: Story = {
     defaultValue: 'prebuilt',
     tabs: [
       {
-        name: 'package',
+        key: 'package',
         label: 'Package Manager',
-        content: 'Package Manager',
       },
       {
-        name: 'prebuilt',
+        key: 'prebuilt',
         label: 'Prebuilt Installer',
-        content: 'Prebuilt Installer',
       },
       {
-        name: 'source',
+        key: 'source',
         label: 'Source Code',
-        content: 'Source Code',
       },
     ],
+    children: (
+      <>
+        <TabsPrimitive.Content value="package">
+          Package Manager
+        </TabsPrimitive.Content>
+        <TabsPrimitive.Content value="prebuilt">
+          Prebuilt Installer
+        </TabsPrimitive.Content>
+        <TabsPrimitive.Content value="source">
+          Source Code
+        </TabsPrimitive.Content>
+      </>
+    ),
   },
 };
 

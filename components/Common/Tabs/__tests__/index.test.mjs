@@ -1,3 +1,4 @@
+import * as TabsPrimitive from '@radix-ui/react-tabs';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -5,13 +6,25 @@ import Tabs from '../index';
 
 describe('Tabs', () => {
   const tabs = [
-    { name: 'tab-1', label: 'Tab 1', content: 'Content 1' },
-    { name: 'tab-2', label: 'Tab 2', content: 'Content 2' },
-    { name: 'tab-3', label: 'Tab 3', content: 'Content 3' },
+    { key: 'tab-1', label: 'Tab 1' },
+    { key: 'tab-2', label: 'Tab 2' },
+    { key: 'tab-3', label: 'Tab 3' },
   ];
 
   beforeEach(() => {
-    render(<Tabs tabs={tabs} />);
+    render(
+      <Tabs tabs={tabs}>
+        <TabsPrimitive.Content value="package">
+          Package Manager
+        </TabsPrimitive.Content>
+        <TabsPrimitive.Content value="prebuilt">
+          Prebuilt Installer
+        </TabsPrimitive.Content>
+        <TabsPrimitive.Content value="source">
+          Source Code
+        </TabsPrimitive.Content>
+      </Tabs>
+    );
   });
 
   it('renders the correct number of tabs', () => {

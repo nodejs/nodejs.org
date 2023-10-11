@@ -27,7 +27,7 @@ const Tabs: FC<PropsWithChildren<TabsProps>> = ({
       {tabs.map(tab => (
         <TabsPrimitive.Trigger
           key={tab.key}
-          value={tab.label}
+          value={tab.key}
           className={styles.tabsTrigger}
         >
           {tab.label}
