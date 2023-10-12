@@ -7,7 +7,7 @@ export default {
     './providers/**/*.tsx',
     './layouts/**/*.tsx',
     './.storybook/preview.tsx',
-    './.storybook/preview-body.html',
+    './.storybook/main.ts',
   ],
   theme: {
     colors: {
