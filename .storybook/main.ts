@@ -18,10 +18,7 @@ const config: StorybookConfig = {
     // This adds the base styling for dark/light themes within Storybook. This is a Storybook-only style
     '<body class="bg-white text-neutral-950 dark:bg-neutral-950 dark:text-white"></body>',
   core: { disableTelemetry: true, disableWhatsNewNotifications: true },
-  framework: {
-    name: '@storybook/nextjs',
-    options: { builder: { lazyCompilation: true } },
-  },
+  framework: { name: '@storybook/nextjs', options: {} },
   webpack: async config => ({ ...config, performance: { hints: false } }),
 };
 
