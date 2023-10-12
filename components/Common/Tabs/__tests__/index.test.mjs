@@ -6,14 +6,14 @@ import Tabs from '../index';
 
 describe('Tabs', () => {
   const tabs = [
-    { key: 'tab-1', label: 'Tab 1' },
-    { key: 'tab-2', label: 'Tab 2' },
-    { key: 'tab-3', label: 'Tab 3' },
+    { key: 'package', label: 'Package Manager' },
+    { key: 'prebuilt', label: 'Prebuilt Installer' },
+    { key: 'source', label: 'Source Code' },
   ];
 
   beforeEach(() => {
     render(
-      <Tabs tabs={tabs}>
+      <Tabs tabs={tabs} defaultValue="package">
         <TabsPrimitive.Content value="package">
           Package Manager
         </TabsPrimitive.Content>
@@ -35,13 +35,11 @@ describe('Tabs', () => {
   it('renders the correct tab content when clicked', async () => {
     const user = userEvent.setup();
 
-    render(<Tabs tabs={tabs} defaultValue="tab-1" />);
-
     const beforeActiveTabPanel = screen.getAllByRole('tabpanel');
 
     expect(beforeActiveTabPanel).toHaveLength(1);
 
-    expect(beforeActiveTabPanel.at(0)).toHaveTextContent('Content 1');
+    expect(beforeActiveTabPanel.at(0)).toHaveTextContent('Package Manager');
 
     const tabElements = screen.getAllByRole('tab');
     await user.click(tabElements.at(-1));
@@ -50,6 +48,6 @@ describe('Tabs', () => {
 
     expect(afterActiveTabPanel).toHaveLength(1);
 
-    expect(afterActiveTabPanel.at(0)).toHaveTextContent('Content 3');
+    expect(afterActiveTabPanel.at(0)).toHaveTextContent('Source Code');
   });
 });
