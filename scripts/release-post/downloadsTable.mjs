@@ -2,7 +2,7 @@
 
 import semVer from 'semver';
 
-const allDownloads = [
+const downloadOptions = [
   {
     title: 'Windows 32-bit Installer',
     templateUrl: 'https://nodejs.org/dist/v%version%/node-v%version%-x86.msi',
@@ -42,11 +42,6 @@ const allDownloads = [
       'https://nodejs.org/dist/v%version%/node-v%version%-darwin-x64.tar.gz',
   },
   {
-    title: 'Linux 32-bit Binary',
-    templateUrl:
-      'https://nodejs.org/dist/v%version%/node-v%version%-linux-x86.tar.xz',
-  },
-  {
     title: 'Linux 64-bit Binary',
     templateUrl:
       'https://nodejs.org/dist/v%version%/node-v%version%-linux-x64.tar.xz',
@@ -57,11 +52,6 @@ const allDownloads = [
       'https://nodejs.org/dist/v%version%/node-v%version%-linux-ppc64le.tar.xz',
   },
   {
-    title: 'Linux PPC BE 64-bit Binary',
-    templateUrl:
-      'https://nodejs.org/dist/v%version%/node-v%version%-linux-ppc64.tar.xz',
-  },
-  {
     title: 'Linux s390x 64-bit Binary',
     templateUrl:
       'https://nodejs.org/dist/v%version%/node-v%version%-linux-s390x.tar.xz',
@@ -70,21 +60,6 @@ const allDownloads = [
     title: 'AIX 64-bit Binary',
     templateUrl:
       'https://nodejs.org/dist/v%version%/node-v%version%-aix-ppc64.tar.gz',
-  },
-  {
-    title: 'SmartOS 32-bit Binary',
-    templateUrl:
-      'https://nodejs.org/dist/v%version%/node-v%version%-sunos-x86.tar.xz',
-  },
-  {
-    title: 'SmartOS 64-bit Binary',
-    templateUrl:
-      'https://nodejs.org/dist/v%version%/node-v%version%-sunos-x64.tar.xz',
-  },
-  {
-    title: 'ARMv6 32-bit Binary',
-    templateUrl:
-      'https://nodejs.org/dist/v%version%/node-v%version%-linux-armv6l.tar.xz',
   },
   {
     title: 'ARMv7 32-bit Binary',
@@ -102,98 +77,13 @@ const allDownloads = [
   },
 ];
 
-// v0.x of Node.js
-const legacyDownloads = [
-  {
-    title: 'Windows 32-bit Installer',
-    templateUrl: 'https://nodejs.org/dist/v%version%/node-v%version%-x86.msi',
-  },
-  {
-    title: 'Windows 64-bit Installer',
-    templateUrl:
-      'https://nodejs.org/dist/v%version%/x64/node-v%version%-x64.msi',
-  },
-  {
-    title: 'Windows 32-bit Binary',
-    templateUrl: 'https://nodejs.org/dist/v%version%/node.exe',
-  },
-  {
-    title: 'Windows 64-bit Binary',
-    templateUrl: 'https://nodejs.org/dist/v%version%/x64/node.exe',
-  },
-  {
-    title: 'macOS Universal Installer',
-    templateUrl: 'https://nodejs.org/dist/v%version%/node-v%version%.pkg',
-  },
-  {
-    title: 'macOS 64-bit Binary',
-    templateUrl:
-      'https://nodejs.org/dist/v%version%/node-v%version%-darwin-x64.tar.gz',
-  },
-  {
-    title: 'macOS 32-bit Binary',
-    templateUrl:
-      'https://nodejs.org/dist/v%version%/node-v%version%-darwin-x86.tar.gz',
-  },
-  {
-    title: 'Linux 32-bit Binary',
-    templateUrl:
-      'https://nodejs.org/dist/v%version%/node-v%version%-linux-x86.tar.gz',
-  },
-  {
-    title: 'Linux 64-bit Binary',
-    templateUrl:
-      'https://nodejs.org/dist/v%version%/node-v%version%-linux-x64.tar.gz',
-  },
-  {
-    title: 'SmartOS 32-bit Binary',
-    templateUrl:
-      'https://nodejs.org/dist/v%version%/node-v%version%-sunos-x86.tar.gz',
-  },
-  {
-    title: 'SmartOS 64-bit Binary',
-    templateUrl:
-      'https://nodejs.org/dist/v%version%/node-v%version%-sunos-x64.tar.gz',
-  },
-  {
-    title: 'Source Code',
-    templateUrl: 'https://nodejs.org/dist/v%version%/node-v%version%.tar.gz',
-  },
-];
-
 const resolveUrl = (item, version) => {
   const url = item.templateUrl.replace(/%version%/g, version);
   return Object.assign({ url }, item);
 };
 
 const resolveDownloads = version => {
-  let downloads = allDownloads;
-
-  if (semVer.satisfies(version, '< 1.0.0')) {
-    return legacyDownloads;
-  }
-
-  if (semVer.satisfies(version, '>= 8.0.0')) {
-    downloads = downloads.filter(
-      ver => ver.title !== 'Linux PPC BE 64-bit Binary'
-    );
-  }
-
-  if (semVer.satisfies(version, '>= 10.0.0')) {
-    downloads = downloads.filter(
-      ver =>
-        ver.title !== 'Linux 32-bit Binary' &&
-        ver.title !== 'SmartOS 32-bit Binary'
-    );
-  }
-
-  if (semVer.satisfies(version, '>= 12.0.0')) {
-    downloads = downloads.filter(ver => ver.title !== 'ARMv6 32-bit Binary');
-  }
-
-  if (semVer.satisfies(version, '>= 14.0.0')) {
-    downloads = downloads.filter(ver => ver.title !== 'SmartOS 64-bit Binary');
-  }
+  let downloads = downloadOptions;
 
   if (semVer.satisfies(version, '< 16.0.0')) {
     downloads = downloads.filter(
