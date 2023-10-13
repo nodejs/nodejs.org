@@ -102,7 +102,5 @@ const resolveDownloads = version => {
   return downloads;
 };
 
-const downloadsTable = version =>
+export const downloadsTable = version =>
   resolveDownloads(version).map(item => resolveUrl(item, version));
-
-export default downloadsTable;
