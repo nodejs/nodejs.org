@@ -50,9 +50,9 @@ const ERRORS = {
   NO_CHANGELOG_FOUND: version =>
     new Error(`Couldn't find matching changelog for ${version}`),
   INVALID_STATUS_CODE: (url, status) =>
-    new Error(
-      `Invalid status code (!= 200) while retrieving ${url}: ${status}`
-    ),
+    new Error(`Invalid status (!= 200) while retrieving ${url}: ${status}`),
+  FAILED_FILE_CREATION: reason =>
+    new Error(`Failed to write Release post: Reason: ${reason}`),
 };
 
 const ARGS = {
@@ -235,7 +235,7 @@ const writeToFile = results => {
 
     writeFile(blogPostPath, results.content)
       .then(() => resolve(blogPostPath))
-      .catch(reject);
+      .catch(error => reject(ERRORS.FAILED_FILE_CREATION(error.message)));
   });
 };
 
