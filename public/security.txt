@@ -1,2 +1,2 @@
 Contact: https://hackerone.com/nodejs
-Policy: https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security
+Policy: https://github.com/nodejs/node/security/policy#security

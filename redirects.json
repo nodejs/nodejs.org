@@ -22,7 +22,7 @@
     },
     {
       "source": "/:locale/security",
-      "destination": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security"
+      "destination": "https://github.com/nodejs/node/security/policy#security"
     },
     {
       "source": "/:locale/contribute/accepting_contributions.html",
@@ -34,7 +34,7 @@
     },
     {
       "source": "/:locale/about/security",
-      "destination": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security"
+      "destination": "https://github.com/nodejs/node/security/policy#security"
     },
     {
       "source": "/:locale/advisory-board",

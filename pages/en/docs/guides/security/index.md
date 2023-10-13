@@ -419,7 +419,7 @@ The [OpenSSF][] is leading several initiatives that can be very useful, especial
 - [OpenSSF Scorecard][] Scorecard evaluates open source projects using a series of automated security risk checks. You can use it to proactively assess vulnerabilities and dependencies in your code base and make informed decisions about accepting vulnerabilities.
 - [OpenSSF Best Practices Badge Program][] Projects can voluntarily self-certify by describing how they comply with each best practice. This will generate a badge that can be added to the project.
 
-[threat model]: https://github.com/nodejs/node/blob/main/SECURITY.md#the-nodejs-threat-model
+[threat model]: https://github.com/nodejs/node/security/policy#the-nodejs-threat-model
 [security guidance issue]: https://github.com/nodejs/security-wg/issues/488
 [nodejs guideline]: https://github.com/goldbergyoni/nodebestpractices
 [OSSF Best Practices]: https://github.com/ossf/wg-best-practices-os-developers
