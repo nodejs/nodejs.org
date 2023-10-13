@@ -39,6 +39,7 @@ const URLS = {
 };
 
 const ERRORS = {
+  NO_VERSION_PROVIDED: new Error('No version provided'),
   RELEASE_EXISTS: version =>
     new Error(`Release post for ${version} already exists!`),
   NO_AUTHOR_FOUND: version =>
@@ -78,7 +79,7 @@ const explicitVersion = version =>
   new Promise((resolve, reject) =>
     version && version.length > 0
       ? resolve(version)
-      : reject('No version provided')
+      : reject(ERRORS.NO_VERSION_PROVIDED)
   );
 
 const findLatestVersion = () =>
