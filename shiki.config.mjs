@@ -17,6 +17,8 @@ import cppLanguage from 'shiki/languages/cpp.tmLanguage.json' assert { type: 'js
 import javaScriptLanguage from 'shiki/languages/javascript.tmLanguage.json' assert { type: 'json' };
 import jsonLanguage from 'shiki/languages/json.tmLanguage.json' assert { type: 'json' };
 import jsxLanguage from 'shiki/languages/jsx.tmLanguage.json' assert { type: 'json' };
+import shellScriptLanguage from 'shiki/languages/shellscript.tmLanguage.json' assert { type: 'json' };
+import shellSessionLanguage from 'shiki/languages/shellsession.tmLanguage.json' assert { type: 'json' };
 import typeScriptLanguage from 'shiki/languages/typescript.tmLanguage.json' assert { type: 'json' };
 import xmlLanguage from 'shiki/languages/xml.tmLanguage.json' assert { type: 'json' };
 import yamlLanguage from 'shiki/languages/yaml.tmLanguage.json' assert { type: 'json' };
@@ -36,8 +38,8 @@ export const SUPPORTED_LANGUAGES = [
   {
     id: 'javascript',
     scopeName: 'source.js',
-    aliases: ['js'],
     grammar: javaScriptLanguage,
+    aliases: ['js'],
   },
   {
     id: 'json',
@@ -52,8 +54,8 @@ export const SUPPORTED_LANGUAGES = [
   {
     id: 'typescript',
     scopeName: 'source.ts',
-    aliases: ['ts'],
     grammar: typeScriptLanguage,
+    aliases: ['ts'],
   },
   {
     id: 'xml',
@@ -64,5 +66,19 @@ export const SUPPORTED_LANGUAGES = [
     id: 'yaml',
     scopeName: 'source.yaml',
     grammar: yamlLanguage,
+    aliases: ['yml'],
+  },
+  {
+    id: 'shellscript',
+    scopeName: 'source.shell',
+    grammar: shellScriptLanguage,
+    aliases: ['bash', 'sh', 'shell', 'zsh'],
+  },
+  {
+    id: 'shellsession',
+    scopeName: 'text.shell-session',
+    grammar: shellSessionLanguage,
+    aliases: ['console'],
+    embeddedLangs: ['shellscript'],
   },
 ];
