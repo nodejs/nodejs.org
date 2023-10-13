@@ -289,7 +289,7 @@ SyntaxError [ERR_SRI_PARSE]: Subresource Integrity string "sha256-iuGZ6SFVFpMuHU
 - [OpenSSF 计分卡][] 计分卡使用一系列自动安全风险检查来评估开源项目。 你可以使用它来主动评估你的代码基础中的脆弱性和依赖性，并就接受脆弱性做出明智的决定。
 - [OpenSSF 最佳做法徽章方案][] 项目可以通过描述它们如何遵守每个最佳做法而自愿自我认证。 这将生成一个可以添加到项目的徽章。
 
-[威胁示例]: https://github.com/nodejs/node/blob/main/SECURITY.md#the-nodejs-threat-model
+[威胁示例]: https://github.com/nodejs/node/security/policy#the-nodejs-threat-model
 [安全指南讨论议题]: https://github.com/nodejs/security-wg/issues/488
 [nodejs 使用指南]: https://github.com/goldbergyoni/nodebestpractices
 [OSSF 最佳实践做法]: https://github.com/ossf/wg-best-practices-os-developers

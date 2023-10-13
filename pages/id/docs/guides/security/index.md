@@ -289,7 +289,7 @@ Penggunaan fitur eksperimental dalam produksi tidak disarankan. Fitur eksperimen
 - [OpenSSF Scorecard][] Scorecard mengevaluasi project open source menggunakan serangkaian pemeriksaan risiko keamanan otomatis. Anda dapat menggunakannya untuk secara proaktif menilai kerentanan dan ketergantungan dalam basis kode Anda dan membuat keputusan yang matang tentang menerima kerentanan.
 - [Program Badge Praktik Terbaik OpenSSF][] Project dapat secara sukarela melakukan sertifikasi mandiri dengan menjelaskan cara mereka mematuhi setiap praktik terbaik. Ini akan menghasilkan lencana yang dapat ditambahkan ke proyek.
 
-[model ancaman]: https://github.com/nodejs/node/blob/main/SECURITY.md#the-nodejs-threat-model
+[model ancaman]: https://github.com/nodejs/node/security/policy#the-nodejs-threat-model
 [security guidance issue]: https://github.com/nodejs/security-wg/issues/488
 [nodejs guideline]: https://github.com/goldbergyoni/nodebestpractices
 [Praktik Terbaik OSSF]: https://github.com/ossf/wg-best-practices-os-developers

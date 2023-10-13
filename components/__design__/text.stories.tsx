@@ -5,8 +5,8 @@ export const Anchor: StoryObj = {
     <div>
       <p>
         The current Node.js security policy can be found at{' '}
-        <a href="https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security">
-          https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security
+        <a href="https://github.com/nodejs/node/security/policy#security">
+          https://github.com/nodejs/node/security/policy#security
         </a>
         , including information on how to report a vulnerability in Node.js.
         Subscribe to the low-volume announcement-only nodejs-sec mailing list at{' '}

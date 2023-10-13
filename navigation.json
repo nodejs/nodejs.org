@@ -101,7 +101,7 @@
     }
   },
   "security": {
-    "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
+    "link": "https://github.com/nodejs/node/security/policy#security",
     "translationId": "components.header.links.security",
     "items": {}
   },
