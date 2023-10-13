@@ -1,4 +1,3 @@
-import { resolve } from 'node:path';
 import type { StorybookConfig } from '@storybook/nextjs';
 
 const config: StorybookConfig = {
@@ -11,33 +10,16 @@ const config: StorybookConfig = {
   ],
   logLevel: 'error',
   staticDirs: ['../public'],
-  core: {
-    disableTelemetry: true,
-    builder: {
-      name: '@storybook/builder-webpack5',
-      options: { lazyCompilation: true },
-    },
-  },
+  previewBody:
+    // This `<style>` is necessary to simulate what `next-themes` (ThemeProvider) does on real applications
+    // `next-theme` automatically injects the color-scheme based on the system preference or the current applied theme
+    // on Storybook we don't use `next-theme` as we want to simulate themes
+    '<style>:root { color-scheme: light; } html[data-theme="dark"] { color-scheme: dark; }</style>' +
+    // This adds the base styling for dark/light themes within Storybook. This is a Storybook-only style
+    '<body class="bg-white text-neutral-950 dark:bg-neutral-950 dark:text-white"></body>',
+  core: { disableTelemetry: true, disableWhatsNewNotifications: true },
   framework: { name: '@storybook/nextjs', options: {} },
-  webpackFinal: async config => {
-    // This allows us to resolve node_modules and everything from the Application source
-    config.resolve!.modules = [resolve(__dirname, '..'), 'node_modules'];
-
-    config.resolve!.alias = {
-      ...config.resolve!.alias,
-      // Allows us to use `@` imports with TypeScript
-      '@': resolve(__dirname, '../'),
-    };
-
-    // We want to disable the annoying performance hints
-    // as we know that Storybook has big bundles
-    config.performance = {
-      ...config.performance,
-      hints: false,
-    };
-
-    return config;
-  },
+  webpack: async config => ({ ...config, performance: { hints: false } }),
 };
 
 export default config;
