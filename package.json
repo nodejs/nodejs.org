@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": "v20"
+    "node": ">=v18"
   },
   "scripts": {
     "scripts:release-post": "cross-env NODE_NO_WARNINGS=1 node scripts/release-post/index.mjs",
