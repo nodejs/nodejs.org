@@ -1,0 +1,4 @@
+.avatarGroup {
+  @apply flex
+    items-center;
+}
