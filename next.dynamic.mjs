@@ -8,7 +8,6 @@ import { serialize } from 'next-mdx-remote/serialize';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
-import remarkGfm from 'remark-gfm';
 import { getHighlighter } from 'shiki';
 import shikiNordTheme from 'shiki/themes/nord.json';
 import { VFile } from 'vfile';
@@ -16,6 +15,7 @@ import { VFile } from 'vfile';
 import { DEFAULT_LOCALE_CODE, MD_EXTENSION_REGEX } from './next.constants.mjs';
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { availableLocales } from './next.locales.mjs';
+import { remarkAutoLinkLiteral } from './next.mdast.mjs';
 import { SUPPORTED_LANGUAGES } from './shiki.config.mjs';
 
 // allows us to run a glob to get markdown files based on a language folder
@@ -178,7 +178,7 @@ export const generateStaticProps = async (source = '', filename = '') => {
             },
           ],
         ],
-        remarkPlugins: [remarkHeadings, remarkGfm],
+        remarkPlugins: [remarkHeadings, remarkAutoLinkLiteral],
         format: filename.includes('.mdx') ? 'mdx' : 'md',
       },
     });
