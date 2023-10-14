@@ -40,7 +40,7 @@ describe('AvatarGroup component', () => {
     const showMoreButton = getByText('+12');
     fireEvent.click(showMoreButton);
 
-    const hideMoreButton = getByText('-');
+    const hideMoreButton = getByText('-12');
     expect(hideMoreButton).toBeInTheDocument();
   });
 });
