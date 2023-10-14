@@ -173,7 +173,7 @@ Saat dimulai dengan sakelar **--debug** atau **--debug-brk** di versi 7 dan sebe
 
 Protokol Debugging V8 tidak lagi dipertahankan atau didokumentasikan.
 
-### [Debugger Bawaan](https://nodejs.org/dist/{#var currentVersion}/docs/api/debugger.html)
+### [Debugger Bawaan](https://nodejs.org/dist/latest/docs/api/debugger.html)
 
 Mulai `node debug script_name.js` untuk memulai skrip Anda di bawah bawaan debugger baris perintah. Skrip Anda dimulai dalam proses Node.js lain yang dimulai dengan opsi `--debug-brk`, dan proses Node.js awal menjalankan `_debugger.js` script dan menghubungkan ke target Anda.
 
