@@ -1,0 +1,43 @@
+* {
+  @apply subpixel-antialiased;
+}
+
+code {
+  @apply rounded
+    bg-neutral-100
+    px-1
+    font-ibm-plex-mono
+    text-base
+    font-semibold
+    text-neutral-900
+    dark:bg-neutral-900
+    dark:text-white;
+}
+
+a,
+a:link,
+a:visited {
+  @apply text-green-600
+   dark:text-green-400;
+
+  &:hover {
+    @apply text-green-900
+      dark:text-green-300;
+  }
+}
+
+ul {
+  @apply list-disc
+    px-5
+    leading-6
+    text-neutral-900
+    dark:text-white;
+}
+
+ol {
+  @apply list-decimal
+    px-5
+    leading-6
+    text-neutral-900
+    dark:text-white;
+}

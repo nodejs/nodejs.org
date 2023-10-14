@@ -4,6 +4,7 @@ export default {
   content: [
     './pages/**/*.{tsx,mdx}',
     './components/**/*.tsx',
+    './providers/**/*.tsx',
     './layouts/**/*.tsx',
     './.storybook/preview.tsx',
     './.storybook/preview-body.html',
@@ -111,6 +112,7 @@ export default {
     },
     fontFamily: {
       'open-sans': ['var(--font-open-sans)'],
+      'ibm-plex-mono': ['var(--font-ibm-plex-mono)'],
     },
     extend: {
       boxShadow: {
@@ -119,6 +121,9 @@ export default {
       },
       spacing: {
         '4.5': '1.125rem',
+      },
+      aria: {
+        current: 'current="page"',
       },
     },
   },

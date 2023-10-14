@@ -3,15 +3,6 @@ import { IntlProvider } from 'react-intl';
 
 import ActiveLocalizedLink from '..';
 
-jest.mock('next/router', () => ({
-  useRouter() {
-    return {
-      isReady: true,
-      asPath: '/link',
-    };
-  },
-}));
-
 describe('ActiveLocalizedLink', () => {
   it('renders as localized link', () => {
     render(

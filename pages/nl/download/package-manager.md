@@ -77,8 +77,7 @@ Node.js is beschikbaar als een module genaamd `nodejs` in CentOS/RHEL 8 en Fedor
 dnf module install nodejs:<stream>
 ```
 
-waar `<stream>` overeenkomt met de hoofdversie van Node.js.
-Voor een lijst met beschikbare streams:
+waar `<stream>` overeenkomt met de hoofdversie van Node.js. Voor een lijst met beschikbare streams:
 
 ```bash
 dnf module list nodejs
@@ -107,11 +106,9 @@ Packages die compatibel zijn met op Debian en Ubuntu gebaseerde Linux-distributi
 
 ## fnm
 
-Snelle en eenvoudige Node.js versiebeheerder geschreven in Rust, wordt gebruikt om meerdere uitgebrachte Node.js versies te beheren. Hiermee kunt u bewerkingen uitvoeren zoals: install, uninstall, switch Node versions, enz.
-Om fnm te installeren, kunt u dit [script](https://github.com/Schniz/fnm#using-a-script-macoslinux) gebruiken.
+Snelle en eenvoudige Node.js versiebeheerder geschreven in Rust, wordt gebruikt om meerdere uitgebrachte Node.js versies te beheren. Hiermee kunt u bewerkingen uitvoeren zoals: install, uninstall, switch Node versions, enz. Om fnm te installeren, kunt u dit [script](https://github.com/Schniz/fnm#using-a-script-macoslinux) gebruiken.
 
-fnm heeft cross-platform ondersteuning (macOS, Windows, Linux) & wordt ook ondersteund door alle populaire shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
-fnm is gebouwd met snelheid in het achterhoofd en met compatibiliteit voor `.node-version` en `.nvmrc` bestanden.
+fnm heeft cross-platform ondersteuning (macOS, Windows, Linux) & wordt ook ondersteund door alle populaire shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt). fnm is gebouwd met snelheid in het achterhoofd en met compatibiliteit voor `.node-version` en `.nvmrc` bestanden.
 
 ## FreeBSD
 
@@ -192,9 +189,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## n
 
-`n` is een eenvoudig te gebruiken Node.js versiebeheerder voor Mac en Linux. Met `n` kunt u een doelversie specifieren (met gebruik van een rich-syntax) om te downloaden,
-of kiezen uit een lijst van eerder gedownloade versies. De versies worden system-wide of user-wide geïnstalleerd, en voor meer
-gericht gebruik kunt u een versie direct vanuit de cached-downloads uitvoeren.
+`n` is een eenvoudig te gebruiken Node.js versiebeheerder voor Mac en Linux. Met `n` kunt u een doelversie specifieren (met gebruik van een rich-syntax) om te downloaden, of kiezen uit een lijst van eerder gedownloade versies. De versies worden system-wide of user-wide geïnstalleerd, en voor meer gericht gebruik kunt u een versie direct vanuit de cached-downloads uitvoeren.
 
 Bezoek de [homepage](https://github.com/tj/n) voor installatiemethoden (bootstrap, npm, Homebrew, third-party), en alle gebruiksdetails.
 
@@ -227,19 +222,15 @@ Nodenv installatie-instructies zijn beschikbaar op [Github](https://github.com/n
 
 ## nvm
 
-Node Version Manager is een bash script dat gebruikt wordt om verschillende Node.js versies te beheren.
-Het laat u handelingen uitvoeren zoals: install, uninstall, switch version, enz.
-Gebruik dit [installatiescript](https://github.com/nvm-sh/nvm#install--update-script) om nvm te installeren.
+Node Version Manager is een bash script dat gebruikt wordt om verschillende Node.js versies te beheren. Het laat u handelingen uitvoeren zoals: install, uninstall, switch version, enz. Gebruik dit [installatiescript](https://github.com/nvm-sh/nvm#install--update-script) om nvm te installeren.
 
-Op Unix / OS X systemen kan Node.js (vanuit broncode) geïnstalleerd worden met behulp van
-[nvm](https://github.com/creationix/nvm) door het te installeren op de locatie waar nvm dit verwacht:
+Op Unix / OS X systemen kan Node.js (vanuit broncode) geïnstalleerd worden met behulp van [nvm](https://github.com/creationix/nvm) door het te installeren op de locatie waar nvm dit verwacht:
 
 ```bash
 env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
-Hierna kan `nvm` gebruikt worden om te schakelen tussen uitgebrachte versies en versies gebouwd vanuit broncode.
-Bijvoorbeeld, als de versie van Node.js v8.0.0-pre is:
+Hierna kan `nvm` gebruikt worden om te schakelen tussen uitgebrachte versies en versies gebouwd vanuit broncode. Bijvoorbeeld, als de versie van Node.js v8.0.0-pre is:
 
 ```bash
 nvm use 8
@@ -319,10 +310,8 @@ Node.js is beschikbaar in de main-repositories onder de volgende packages:
 
 - **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
 - **openSUSE Tumbleweed**: `nodejs16`
-- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, and `nodejs14`
-  (De module "Web and Scripting" moet [ingeschakeld](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated) zijn.)
-- **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, and `nodejs14`
-  (De module "Web and Scripting" moet [ingeschakeld](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module) zijn.)
+- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, and `nodejs14` (De module "Web and Scripting" moet [ingeschakeld](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated) zijn.)
+- **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, and `nodejs14` (De module "Web and Scripting" moet [ingeschakeld](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module) zijn.)
 
 Om bijvoorbeeld Node.js 14.x op openSUSE Leap 15.2 te installeren, voert u het volgende commando uit als root:
 
@@ -380,8 +369,7 @@ winget install OpenJS.NodeJS
 winget install OpenJS.NodeJS.LTS
 ```
 
-Na het uitvoeren van een van de bovenstaande commando's kan het nodig zijn om uw
-terminal-emulator te herstarten voordat het `node` CLI commando beschikbaar wordt.
+Na het uitvoeren van een van de bovenstaande commando's kan het nodig zijn om uw terminal-emulator te herstarten voordat het `node` CLI commando beschikbaar wordt.
 
 Met **[Chocolatey](https://chocolatey.org/)**:
 
@@ -401,8 +389,7 @@ scoop install nodejs-lts
 
 ## z/OS
 
-IBM&reg; SDK voor Node.js - z/OS&reg; is beschikbaar in twee installatieformaten,
-SMP/E en PAX. Selecteer het installatieformaat dat voor u van toepassing is:
+IBM&reg; SDK voor Node.js - z/OS&reg; is beschikbaar in twee installatieformaten, SMP/E en PAX. Selecteer het installatieformaat dat voor u van toepassing is:
 
 - [Installatie en configuratie van de SMP/E-editie van Node.js op z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
 - [Installatie en configuratie van de PAX-editie van Node.js op z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)

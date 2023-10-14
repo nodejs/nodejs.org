@@ -1,17 +1,28 @@
 import NextImage from 'next/image';
+import classNames from 'classnames';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { SiteProvider } from '../providers/siteProvider';
 import { LocaleProvider } from '../providers/localeProvider';
-import { OPEN_SANS_FONT, STORYBOOK_MODES, STORYBOOK_SIZES } from './constants';
+import { NotificationProvider } from '../providers/notificationProvider';
+import * as constants from './constants';
 import type { Preview, ReactRenderer } from '@storybook/react';
 
 import '../styles/new/index.css';
 
+const rootClasses = classNames(
+  constants.OPEN_SANS_FONT.variable,
+  constants.IBM_PLEX_MONO_FONT.variable,
+  'font-open-sans'
+);
+
 const preview: Preview = {
   parameters: {
     nextjs: { router: { basePath: '' } },
-    chromatic: { modes: STORYBOOK_MODES },
-    viewport: { defaultViewport: 'large', viewports: STORYBOOK_SIZES },
+    chromatic: { modes: constants.STORYBOOK_MODES },
+    viewport: {
+      defaultViewport: 'large',
+      viewports: constants.STORYBOOK_SIZES,
+    },
   },
   // These are extra Storybook Decorators applied to all stories
   // that introduce extra functionality such as Theme Switching
@@ -20,9 +31,11 @@ const preview: Preview = {
     Story => (
       <SiteProvider>
         <LocaleProvider>
-          <div className={`${OPEN_SANS_FONT.variable}`}>
-            <Story />
-          </div>
+          <NotificationProvider viewportClassName="absolute top-0 left-0 list-none">
+            <div className={rootClasses}>
+              <Story />
+            </div>
+          </NotificationProvider>
         </LocaleProvider>
       </SiteProvider>
     ),
@@ -36,12 +49,5 @@ const preview: Preview = {
     }),
   ],
 };
-
-// This forces the Next.js image system to use unoptimized images
-// for all the Next.js Images (next/image) Components
-Object.defineProperty(NextImage, 'default', {
-  configurable: true,
-  value: (props: any) => <NextImage {...props} unoptimized />,
-});
 
 export default preview;
