@@ -1,12 +1,20 @@
 import { LanguageIcon } from '@heroicons/react/24/outline';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import classNames from 'classnames';
+import type { FC } from 'react';
 import { useIntl } from 'react-intl';
 
 import { useLocale } from '@/hooks/useLocale';
 
 import styles from './index.module.css';
 
-const DropdownMenuDemo = () => {
+export type LanguageDropDownProps = {
+  onClick?: () => void;
+};
+
+const LanguageDropdown: FC<LanguageDropDownProps> = ({
+  onClick = () => {},
+}) => {
   const { availableLocales, currentLocale } = useLocale();
   const intl = useIntl();
 
@@ -30,14 +38,13 @@ const DropdownMenuDemo = () => {
         >
           {availableLocales.map(({ name, code }) => (
             <DropdownMenu.Item
-              key={name + code}
-              onClick={() => {}}
-              className={[
-                styles.dropDownItem,
-                code === currentLocale.code && styles.currentDropDown,
-              ].join(' ')}
+              key={code}
+              onClick={onClick}
+              className={classNames(styles.dropDownItem, {
+                [styles.currentDropDown]: code === currentLocale.code,
+              })}
             >
-              <span className="text-sm">{name}</span>
+              {name}
             </DropdownMenu.Item>
           ))}
         </DropdownMenu.Content>
@@ -46,4 +53,4 @@ const DropdownMenuDemo = () => {
   );
 };
 
-export default DropdownMenuDemo;
+export default LanguageDropdown;
