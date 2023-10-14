@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import type { ComponentProps, FC } from 'react';
 import { useState, useMemo } from 'react';
 
-import { getAcronymFromString } from '@/util/stringutils';
+import { getAcronymFromString } from '@/util/stringUtils';
 
 import Avatar from './Avatar';
 import avatarstyles from './Avatar/index.module.css';

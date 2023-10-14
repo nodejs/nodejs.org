@@ -1,6 +1,6 @@
 import { render, fireEvent } from '@testing-library/react';
 
-import { githubProfileAvatarUrl } from '@/util/github';
+import { githubProfileAvatarUrl } from '@/util/gitHubUtils';
 
 import AvatarGroup from '../index';
 
