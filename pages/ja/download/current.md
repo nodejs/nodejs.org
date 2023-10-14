@@ -12,13 +12,13 @@ downloads:
   intro: >
     Node.js のソースコードをダウンロードするか、事前にビルドされたインストーラーを利用して、今日から開発を始めましょう。
   currentVersion: 最新のバージョン
-  buildInstructions: 同梱
-  WindowsInstaller: Building Node.js from source on supported platforms
-  WindowsBinary: Windows Installer
-  MacOSInstaller: Windows Binary
-  MacOSBinary: macOS Installer
-  LinuxBinaries: macOS Binary
-  SourceCode: Linux Binaries
+  buildInstructions: Node.jsをソースからビルドします
+  WindowsInstaller: Windows Installer
+  WindowsBinary: Windows Binary
+  MacOSInstaller: macOS Intaller
+  MacOSBinary: macOS Binary
+  LinuxBinaries: Linux Binaries
+  SourceCode: Source Code
 additional:
   headline: その他のプラットフォーム
   intro: >
