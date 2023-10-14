@@ -79,6 +79,5 @@ export const SUPPORTED_LANGUAGES = [
     scopeName: 'text.shell-session',
     grammar: shellSessionLanguage,
     aliases: ['console'],
-    embeddedLangs: ['shellscript'],
   },
 ];
