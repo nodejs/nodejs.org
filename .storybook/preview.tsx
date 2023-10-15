@@ -4,7 +4,6 @@ import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { SiteProvider } from '../providers/siteProvider';
 import { LocaleProvider } from '../providers/localeProvider';
 import { NotificationProvider } from '../providers/notificationProvider';
-import { ThemeProvider } from '../providers/themeProvider';
 import * as constants from './constants';
 import type { Preview, ReactRenderer } from '@storybook/react';
 
@@ -32,13 +31,11 @@ const preview: Preview = {
     Story => (
       <SiteProvider>
         <LocaleProvider>
-          <ThemeProvider>
-            <NotificationProvider viewportClassName="absolute top-0 left-0 list-none">
-              <div className={rootClasses}>
-                <Story />
-              </div>
-            </NotificationProvider>
-          </ThemeProvider>
+          <NotificationProvider viewportClassName="absolute top-0 left-0 list-none">
+            <div className={rootClasses}>
+              <Story />
+            </div>
+          </NotificationProvider>
         </LocaleProvider>
       </SiteProvider>
     ),
