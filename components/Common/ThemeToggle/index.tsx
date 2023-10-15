@@ -15,17 +15,21 @@ const ThemeToggle: FC = () => {
   const toggleTheme = () => setTheme(isDark ? 'light' : 'dark');
 
   return (
-    <button type="button" onClick={toggleTheme} onKeyDown={toggleTheme}>
+    <button
+      type="button"
+      onClick={toggleTheme}
+      onKeyDown={toggleTheme}
+      className={styles.themeToggle}
+    >
       <AccessibleIcon
         label={intl.formatMessage({
           id: 'components.header.buttons.toggleDarkMode',
         })}
       >
-        {isDark ? (
-          <SunIcon className={styles.icon} />
-        ) : (
-          <MoonIcon className={styles.icon} />
-        )}
+        <>
+          <SunIcon className="block dark:hidden" />
+          <MoonIcon className="hidden dark:block" />
+        </>
       </AccessibleIcon>
     </button>
   );
