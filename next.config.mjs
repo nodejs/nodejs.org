@@ -39,6 +39,14 @@ const nextConfig = {
     // since we pass the fully-compiled MDX page from `MDXRemote` through
     // a page's static props.
     largePageDataBytes: 128 * 100000,
+    // A list of packages that Next.js should automatically evaluate and optimise the imports for.
+    // @see https://vercel.com/blog/how-we-optimized-package-imports-in-next-js
+    optimizePackageImports: [
+      '@radix-ui/react-avatar',
+      '@radix-ui/react-select',
+      '@radix-ui/react-toast',
+      'tailwindcss',
+    ],
   },
 };
 

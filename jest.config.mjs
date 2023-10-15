@@ -12,6 +12,9 @@ const customJestConfig = {
   testMatch: ['**/__tests__/*.test.mjs'],
   coverageReporters: ['json', 'json-summary'],
   reporters: ['default', 'jest-junit'],
+  moduleNameMapper: {
+    'next/router': '<rootDir>/components/__mocks__/next-router.mjs',
+  },
 };
 
 export default createJestConfig(customJestConfig);

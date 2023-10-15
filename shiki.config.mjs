@@ -12,8 +12,6 @@
  * Shiki to load the ones we provide instead of the ones from `BUNDLED_LANGUAGES`.
  */
 
-import cLanguage from 'shiki/languages/c.tmLanguage.json' assert { type: 'json' };
-import cppLanguage from 'shiki/languages/cpp.tmLanguage.json' assert { type: 'json' };
 import javaScriptLanguage from 'shiki/languages/javascript.tmLanguage.json' assert { type: 'json' };
 import jsonLanguage from 'shiki/languages/json.tmLanguage.json' assert { type: 'json' };
 import jsxLanguage from 'shiki/languages/jsx.tmLanguage.json' assert { type: 'json' };
@@ -25,16 +23,6 @@ import yamlLanguage from 'shiki/languages/yaml.tmLanguage.json' assert { type: '
 
 /** @type {import('shiki').ILanguageRegistration[]} */
 export const SUPPORTED_LANGUAGES = [
-  {
-    id: 'c',
-    scopeName: 'source.c',
-    grammar: cLanguage,
-  },
-  {
-    id: 'cpp',
-    scopeName: 'source.cpp',
-    grammar: cppLanguage,
-  },
   {
     id: 'javascript',
     scopeName: 'source.js',
