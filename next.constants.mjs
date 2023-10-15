@@ -153,3 +153,8 @@ export const EXTERNAL_LINKS_SITEMAP = [
   'https://trademark-list.openjsf.org/',
   'https://www.linuxfoundation.org/cookies',
 ];
+
+/**
+ * The `localStorage` key to store the theme choice of `next-themes`
+ */
+export const THEME_LOCAL_STORAGE_KEY = 'theme';

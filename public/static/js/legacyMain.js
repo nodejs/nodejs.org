@@ -1,14 +1,3 @@
-const themeAttr = 'data-theme';
-
-const setTheme = theme => {
-  document.querySelector('html').setAttribute(themeAttr, theme);
-  window.localStorage.setItem('theme', theme);
-};
-
-const preferredColorScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-const getTheme = () => window.localStorage.getItem('theme');
-
 const listenLanguagePickerButton = () => {
   const langPickerTogglerElement = document.querySelector(
     '.lang-picker-toggler'
@@ -26,25 +15,6 @@ const listenLanguagePickerButton = () => {
   };
 
   langPickerTogglerElement.addEventListener('click', toggleFunction);
-};
-
-const watchThemeChanges = () =>
-  preferredColorScheme.addEventListener(
-    'change',
-    event => getTheme() || setTheme(event.matches ? 'dark' : 'light')
-  );
-
-const listenThemeToggleButton = () => {
-  const darkThemeSwitcherElement = document.querySelector(
-    '.dark-theme-switcher'
-  );
-
-  darkThemeSwitcherElement.addEventListener('click', () => {
-    const currentTheme =
-      getTheme() || (preferredColorScheme.matches ? 'dark' : 'light');
-
-    setTheme(currentTheme === 'light' ? 'dark' : 'light');
-  });
 };
 
 const listenScrollToTopButton = () => {
@@ -67,19 +37,9 @@ const listenScrollToTopButton = () => {
   });
 };
 
-const setCurrentTheme = () =>
-  setTheme(getTheme() || (preferredColorScheme.matches ? 'dark' : 'light'));
-
 const startLegacyApp = () => {
-  setCurrentTheme();
-
-  watchThemeChanges();
-
   listenLanguagePickerButton();
-  listenThemeToggleButton();
   listenScrollToTopButton();
 };
-
-setCurrentTheme();
 
 window.startLegacyApp = startLegacyApp;
