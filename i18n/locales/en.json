@@ -54,5 +54,15 @@
   "components.common.pagination.next": "Next",
   "components.common.pagination.nextAriaLabel": "Next page",
   "components.common.pagination.defaultLabel": "Pagination",
-  "components.common.pagination.pageLabel": "Go to page {pageNumber}"
+  "components.common.pagination.pageLabel": "Go to page {pageNumber}",
+  "components.metabar.lastUpdated": "Last Updated",
+  "components.metabar.readingTime": "Reading Time",
+  "components.metabar.addedInVersion": "Added In",
+  "components.metabar.contributeTitle": "Contribute",
+  "components.metabar.contribute": "Edit this page",
+  "components.metabar.author": "Author",
+  "components.metabar.viewAsTitle": "View as",
+  "components.metabar.viewAs": "View as JSON",
+  "components.metabar.tableOfContents": "Table of Contents",
+  "components.metabar.authors": "Authors"
 }

@@ -1,0 +1,50 @@
+.metaBar {
+  @apply fixed
+  flex
+    h-full
+    w-full
+    overflow-scroll
+    overscroll-x-contain
+    bg-transparent;
+
+  .metaBarContentWrap {
+    @apply flex
+      min-w-full
+      flex-col
+      gap-8
+      p-6;
+  }
+
+  li {
+    @apply list-none;
+  }
+
+  .metaBarEntry {
+    @apply flex
+    flex-col
+    gap-2;
+
+    h4,
+    .icon {
+      @apply font-medium
+       text-neutral-700
+        dark:text-neutral-500;
+    }
+  }
+
+  .hideOnDark {
+    @apply hidden
+      dark:block;
+  }
+
+  .hideOnLight {
+    @apply block
+      dark:hidden;
+  }
+
+  .contributeUrl,
+  .viewAsUrl {
+    @apply flex
+    gap-2;
+  }
+}
