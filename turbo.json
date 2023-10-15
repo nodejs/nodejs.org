@@ -68,42 +68,34 @@
     },
     "lint:js": {
       "cache": false,
-      "persistent": true,
       "outputs": [".eslintjscache"]
     },
     "lint:md": {
       "cache": false,
-      "persistent": true,
       "outputs": [".eslintmdcache"]
     },
     "lint:css": {
       "cache": false,
-      "persistent": true,
       "outputs": [".stylelintcache"]
     },
     "lint": {
       "cache": false,
-      "persistent": true,
       "outputs": [".eslintjscache", ".eslintmdcache", ".stylelintcache"]
     },
     "lint:fix": {
       "cache": false,
-      "persistent": true,
       "outputs": [".eslintjscache", ".eslintmdcache", ".stylelintcache"]
     },
     "prettier": {
       "cache": false,
-      "persistent": true,
       "outputs": [".prettiercache"]
     },
     "prettier:fix": {
       "cache": false,
-      "persistent": true,
       "outputs": [".prettiercache"]
     },
     "format": {
       "cache": false,
-      "persistent": true,
       "outputs": [
         ".eslintjscache",
         ".eslintmdcache",
