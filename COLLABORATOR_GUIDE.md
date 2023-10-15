@@ -480,7 +480,7 @@ The npm ecosystem resolution and installation of `peerDependencies` installation
 The Node.js GitHub organisation owns an in-house remark preset (set of rules and plugins) that standardises the contents of Markdown files across the GitHub organisation.
 This package uses `remark` plugins such as `remark-gfm`, and it has rules such as forbidden words, maximum line-length of Markdown content, and many very specific rules.
 
-This preset is used within Node.js Development tooling itself (within `make`) and it used as an one-of script to lint the Markdown files within the `nodejs/node` repository.
+This preset is used within Node.js Development tooling itself (within `make`) and it used as a one-off script to lint the Markdown files within the `nodejs/node` repository.
 (The same preset is also used within `nodejs/node` CI).
 
 Whilst that preset has a lot of value, it is not suitable for the Node.js Website. One of the main reasons are that it inheritedly conflicts with `prettier` and with `mdx-js`,
@@ -492,10 +492,10 @@ linting and formatting rules, plus the formatting rules enforced by prettier.
 We also decided to not use `remark-gfm` as we want to support the basic CommonMark standard for Markdown files, and the default MDX standard for MDX files.
 Having that said, there's one exception, as we use [`autolink-literal`](mdast-util-gfm-autolink-literal) for transforming literal links (text) into anchor elements, which is part of the GitHub Flavoured Markdown specification.
 
-Finally, as the Node.js Website grows, we have over thousands of Markdown files, meaning the more rules we add, the more time it takes to lint and format the Markdown files. And the greater the chance is
+Finally, as the Node.js Website grows, we have thousands of Markdown files, meaning the more rules we add, the more time it takes to lint and format the Markdown files. And the greater the chance is
 for the standard adopted on the `nodejs/node` repository to deviate from standard spec-compliant CommonMark. The Node.js Website uses a default recommended configuration that enforces our Markdown files to be spec-compliant.
 
-It's important to mention that this repository is compatible with Markdown files from `nodejs/node` as our formatting is way less stricter.
+It's important to mention that this repository is compatible with Markdown files from `nodejs/node` as our formatting is way less strict.
 We also have rules in-place (for example in the release blog post generation) that ensure that Markdown files that are "loaded" from `nodejs/node` are compatible when created.
 
 Also note that our goal is to fully support any Markdown file incoming from `nodejs/node` and that originates from the `remark-preset-lint-node`. Our goal is to support our fellow collaborators and to ensure that the Node.js Website is fully compatible with the Node.js project.
