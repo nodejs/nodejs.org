@@ -33,7 +33,7 @@
         dark:!text-white;
     }
 
-    ul {
+    ol {
       @apply flex
         list-none
         flex-col

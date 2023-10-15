@@ -1,7 +1,12 @@
 import { CodeBracketIcon } from '@heroicons/react/24/outline';
 import { type Heading } from '@vcarl/remark-headings';
 import Image from 'next/image';
-import type { ComponentProps, FC, PropsWithChildren } from 'react';
+import {
+  useMemo,
+  type ComponentProps,
+  type FC,
+  type PropsWithChildren,
+} from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import AvatarGroup from '@/components/Common/AvatarGroup';
@@ -17,7 +22,10 @@ type MetaBarProps = {
   authors: ComponentProps<typeof AvatarGroup>['avatars'];
   sourceURL: string;
   viewAsURL: string;
-  headings: Heading[];
+  heading?: {
+    items: Heading[];
+    depth: number;
+  };
 };
 
 const MetaBar: FC<MetaBarProps> = ({
@@ -28,59 +36,71 @@ const MetaBar: FC<MetaBarProps> = ({
   authors = [],
   sourceURL,
   viewAsURL,
-  headings = [],
-}) => (
-  <div className={styles.wrapper}>
-    <dl>
-      <MetaBarPair
-        id="components.metabar.lastUpdated"
-        value={date.toLocaleDateString()}
-      />
-      <MetaBarPair id="components.metabar.readingTime" value={readingTime} />
-      <MetaBarPair id="components.metabar.addedIn" value={addedInVersion} />
-      <MetaBarPair id="components.metabar.author" value={author} />
-      <MetaBarPair id="components.metabar.authors">
-        <AvatarGroup avatars={authors} />
-      </MetaBarPair>
-      <MetaBarPair id="components.metabar.contribute">
-        <Image
-          src="/static/images/logos/social-github-dark.svg"
-          alt="GitHub Logo"
-          width={16}
-          height={16}
-          className={styles.onLight}
+  heading = {
+    items: [],
+    depth: 2,
+  },
+}) => {
+  const headings = useMemo(
+    () => heading.items.filter(({ depth }) => depth === heading.depth),
+    [heading.depth, heading.items]
+  );
+
+  return (
+    <div className={styles.wrapper}>
+      <dl>
+        <MetaBarPair
+          id="components.metabar.lastUpdated"
+          value={date.toLocaleDateString()}
         />
-        <Image
-          src="/static/images/logos/social-github.svg"
-          alt="GitHub Logo"
-          width={16}
-          height={16}
-          className={styles.onDark}
-        />
-        <LocalizedLink href={sourceURL}>
-          <FormattedMessage id={'components.metabar.contributeText'} />
-        </LocalizedLink>
-      </MetaBarPair>
-      <MetaBarPair id="components.metabar.viewAs">
-        <CodeBracketIcon className={styles.icon} />
-        <LocalizedLink href={viewAsURL}>JSON</LocalizedLink>
-      </MetaBarPair>
-      {headings.length > 0 && (
-        <MetaBarPair id="components.metabar.tableOfContents">
-          <ol>
-            {headings.map(heading => (
-              <li key={heading.value}>
-                <LocalizedLink href={`#${heading?.data?.id || heading.value}`}>
-                  {heading.value}
-                </LocalizedLink>
-              </li>
-            ))}
-          </ol>
+        <MetaBarPair id="components.metabar.readingTime" value={readingTime} />
+        <MetaBarPair id="components.metabar.addedIn" value={addedInVersion} />
+        <MetaBarPair id="components.metabar.author" value={author} />
+        <MetaBarPair id="components.metabar.authors">
+          <AvatarGroup avatars={authors} />
         </MetaBarPair>
-      )}
-    </dl>
-  </div>
-);
+        <MetaBarPair id="components.metabar.contribute">
+          <Image
+            src="/static/images/logos/social-github-dark.svg"
+            alt="GitHub Logo"
+            width={16}
+            height={16}
+            className={styles.onLight}
+          />
+          <Image
+            src="/static/images/logos/social-github.svg"
+            alt="GitHub Logo"
+            width={16}
+            height={16}
+            className={styles.onDark}
+          />
+          <LocalizedLink href={sourceURL}>
+            <FormattedMessage id={'components.metabar.contributeText'} />
+          </LocalizedLink>
+        </MetaBarPair>
+        <MetaBarPair id="components.metabar.viewAs">
+          <CodeBracketIcon className={styles.icon} />
+          <LocalizedLink href={viewAsURL}>JSON</LocalizedLink>
+        </MetaBarPair>
+        {headings.length > 0 && (
+          <MetaBarPair id="components.metabar.tableOfContents">
+            <ol>
+              {headings.map(heading => (
+                <li key={heading.value}>
+                  <LocalizedLink
+                    href={`#${heading?.data?.id || heading.value}`}
+                  >
+                    {heading.value}
+                  </LocalizedLink>
+                </li>
+              ))}
+            </ol>
+          </MetaBarPair>
+        )}
+      </dl>
+    </div>
+  );
+};
 
 type MetaBarPairProps = PropsWithChildren<{ id: string; value?: string }>;
 

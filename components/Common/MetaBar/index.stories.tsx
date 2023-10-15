@@ -27,18 +27,36 @@ export const Default: Story = {
     ],
     sourceURL: 'https://github.com/nodejs/nodejs.org/issues',
     viewAsURL: 'https://github.com/nodejs/nodejs.org',
-    headings: [
-      {
-        value: 'Heading 1',
-        depth: 1,
-        data: { id: 'heading-1' },
-      },
-      {
-        value: 'Heading 2',
-        depth: 2,
-        data: { id: 'heading-2' },
-      },
-    ],
+    heading: {
+      items: [
+        {
+          value: 'OpenSSL update assessment, and Node.js project plans',
+          depth: 1,
+          data: { id: 'heading-1' },
+        },
+        {
+          value: 'Summary',
+          depth: 2,
+          data: { id: 'summary' },
+        },
+        {
+          value: 'Analysis',
+          depth: 2,
+          data: { id: 'analysis' },
+        },
+        {
+          value: 'The c_rehash script allows command injection (CVE-2022-2068)',
+          depth: 3,
+          data: { id: 'the_c_rehash' },
+        },
+        {
+          value: 'Contact and future updates',
+          depth: 3,
+          data: { id: 'contact_and_future_updates' },
+        },
+      ],
+      depth: 2,
+    },
   },
 };
 
