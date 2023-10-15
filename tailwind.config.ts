@@ -90,6 +90,7 @@ export default {
         900: '#411526',
       },
       white: '#FFFFFF',
+      transparent: 'transparent',
     },
     fontSize: {
       xs: ['0.75rem', '1rem'],

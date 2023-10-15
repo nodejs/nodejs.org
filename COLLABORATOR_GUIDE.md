@@ -79,6 +79,7 @@ The Website also uses several other Open Source libraries (not limited to) liste
     - [PostCSS Simple Vars](https://github.com/postcss/postcss-simple-vars)
 - [Tailwind][] is used as our CSS Framework and the Foundation of our Design System
 - [Hero Icons](https://heroicons.com/) is an SVG Icon Library used within our Codebase
+- [Radix UI][] is a collection of customizable UI components
 - [Shiki][] is a Syntax Highlighter used for our Codeboxes
   - A [Rehype Plugin](https://rehype-pretty-code.netlify.app/) is used here for transforming `pre` and `code` tags into Syntax Highlighted Codeboxes
 - [MDX][] and Markdown are used for structuring the Content of the Website
@@ -195,8 +196,8 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 > You can apply Tailwind Tokens with Tailwind's `@apply` CSS rule. [Read more about applying Tailwind classes with `@apply`](https://tailwindcss.com/docs/functions-and-directives#apply).
 
 > \[!IMPORTANT]\
-> When using IDEs such as Visual Studio Code, we recommend installing the official [Stylelint](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
-> and [Tailwind](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) Extensions.\
+> When using IDEs such as Visual Studio Code, we recommend installing the official [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+> and [Tailwind](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) Extensions.\
 > These are recommended Extensions for IntelliSense, Syntax Highlighting and Error Checking when styling your Component.
 
 ### Best practices when creating a Component
@@ -475,6 +476,12 @@ Defining a `.vscode` configuration like this also aides browser-only development
 
 The npm ecosystem resolution and installation of `peerDependencies` installation [changed in recent versions](https://nodejs.org/en/blog/npm/peer-dependencies#using-peer-dependencies). The project documents what version of `Node.js` and `npm` to use via the [`.nvmrc` file](https://github.com/nodejs/nodejs.org/blob/main/.nvmrc). Not all contributors have tooling to automatically read this file and adhere to the correct version, however. To ensure all contributors install dependencies the same way, a local `.npmrc` file directly configures peerDependency installation behavior.
 
+### Why we use RadixUI?
+
+- It is a minimalistic component library broken down in individual packages for each Component
+- It already handles all WAI-ARIA and Accessibility shortcuts/bindings needed for Interactive Elements
+- It allows us to focus on designing interactive Components without the effort of adding all the surrounding sugar and code needed to make the Component accessibility-friendly.
+
 ## Seeking additional clarification
 
 A lot of the current structure is due to retro-compatibility, keeping a simple and familiar file structure and keeping files that have historical reasons or needs.
@@ -491,3 +498,4 @@ If you're unfamiliar or curious about something, we recommend opening a Discussi
 [React]: https://react.dev/
 [Shiki]: https://github.com/shikijs/shiki
 [Tailwind]: https://tailwindcss.com/
+[Radix UI]: https://www.radix-ui.com/
