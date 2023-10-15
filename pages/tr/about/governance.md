@@ -7,7 +7,7 @@ layout: about.hbs
 
 ## Uzlaşma Arama Süreci
 
-Node.js projesi, [ fikir birliği arayışı][] karar verme modelini uygular.
+Node.js projesi, [fikir birliği arayışı][] karar verme modelini uygular.
 
 ## Destekleyenler
 
@@ -17,7 +17,7 @@ Node.js projesi, [ fikir birliği arayışı][] karar verme modelini uygular.
 
 Destekleyen ekibin mevcut üye listesi için projenin [README.md][] dosyasına göz atın.
 
-Destekleyen ekip kılavuzu için [ collaborator-guide.md][] dosyasına göz atın.
+Destekleyen ekip kılavuzu için [collaborator-guide.md][] dosyasına göz atın.
 
 ## Üst Düzey Komiteler
 

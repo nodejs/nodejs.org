@@ -82,6 +82,7 @@ jobs:
             node_modules/.cache
             .eslintmdcache
             .eslintjscache
+            .stylelintcache
             .prettiercache
           # We want to restore Turborepo Cache and ESlint and Prettier Cache
           # The ESLint and Prettier cache's are useful to reduce the overall runtime of ESLint and Prettier
@@ -146,6 +147,7 @@ jobs:
             node_modules/.cache
             .eslintmdcache
             .eslintjscache
+            .stylelintcache
             .prettiercache
           key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.turbo/cache/**') }}
 

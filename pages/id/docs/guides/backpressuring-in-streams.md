@@ -478,7 +478,6 @@ Pastikan untuk membaca lebih lanjut tentang [`Stream`][] untuk fungsi API lainny
 [`EventEmitters`]: https://nodejs.org/api/events.html
 [`Writable`]: https://nodejs.org/api/stream.html#stream_writable_streams
 [`Readable`]: https://nodejs.org/api/stream.html#stream_readable_streams
-[`readable`]: https://nodejs.org/api/stream.html#stream_readable_streams
 [`Duplex`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`Transform`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`zlib`]: https://nodejs.org/api/zlib.html
