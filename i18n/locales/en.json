@@ -43,6 +43,7 @@
   "components.common.crossLink.previous": "Prev",
   "components.common.crossLink.next": "Next",
   "components.common.codebox.copied": "Copied to clipboard!",
+  "components.common.codebox.copy": "Copy to clipboard",
   "components.metabar.lastUpdated": "Last Updated",
   "components.metabar.readingTime": "Reading Time",
   "components.metabar.addedIn": "Added In",
