@@ -65,7 +65,7 @@ const MetaBar: FC<MetaBarProps> = ({
         <CodeBracketIcon className={styles.icon} />
         <LocalizedLink href={viewAsURL}>JSON</LocalizedLink>
       </MetaBarPair>
-      {headings && headings.length > 0 && (
+      {headings.length > 0 && (
         <MetaBarPair id="components.metabar.tableOfContents">
           <ol>
             {headings.map(heading => (
