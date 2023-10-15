@@ -82,65 +82,72 @@ layout: docs.hbs
 
 WebStorm在线帮助/a>。
 
-<table class="table-no-border-no-padding">
-  <tr><th>标示符</th><th>含义</th></tr>
-  <tr>
-    <td>--inspect</td>
-    <td>
-      <ul>
-        <li>启用监视器代理</li>
-        <li>在默认地址和端口上监听（127.0.0.1:9229）</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>--inspect=<em>[host:port]</em></td>
-    <td>
-      <ul>
-        <li>启用监视器代理</li>
-        <li>绑定地址或主机名<em>宿主</em> （默认：127.0.0.1）</li>
-        <li>监听<em>端口</em> （默认：9229）</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>--inspect-brk</td>
-    <td>
-      <ul>
-        <li>启用监视器代理</li>
-        <li>监听默认地址和端口（127.0.0.1:9229）</li>
-        <li>在用户代码启动前终止</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>--inspect-brk=<em>[host:port]</em></td>
-    <td>
-      <ul>
-        <li>启用监视器代理</li>
-        <li>绑定地址和主机名<em>宿主</em>（默认：127.0.0.1）</li>
-        <li>监听<em>端口</em>（默认：9229）</li>
-        <li>在用户代码启动前终止</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td><code>Node 监视<em>script.js</em></code></td>
-    <td>
-      <ul>
-        <li>通过 --inspect 标志生成一个新的子进程，使用主进程运行 CLI 调试器。</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td><code>node inspect --port=xxxx <em>script.js</em></code></td>
-    <td>
-      <ul>
-        <li>通过 --inspect 标志生成一个新的子进程，使用主进程运行 CLI 调试器。</li>
-        <li>监听<em>端口</em>（默认：9229）</li>
-      </ul>
-    </td>
-  </tr>
+<table className="table-no-border-no-padding">
+  <thead>
+    <tr>
+      <th>标示符</th>
+      <th>含义</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>--inspect</td>
+      <td>
+        <ul>
+          <li>启用监视器代理</li>
+          <li>在默认地址和端口上监听（127.0.0.1:9229）</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>--inspect=<em>[host:port]</em></td>
+      <td>
+        <ul>
+          <li>启用监视器代理</li>
+          <li>绑定地址或主机名<em>宿主</em> （默认：127.0.0.1）</li>
+          <li>监听<em>端口</em> （默认：9229）</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>--inspect-brk</td>
+      <td>
+        <ul>
+          <li>启用监视器代理</li>
+          <li>监听默认地址和端口（127.0.0.1:9229）</li>
+          <li>在用户代码启动前终止</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>--inspect-brk=<em>[host:port]</em></td>
+      <td>
+        <ul>
+          <li>启用监视器代理</li>
+          <li>绑定地址和主机名<em>宿主</em>（默认：127.0.0.1）</li>
+          <li>监听<em>端口</em>（默认：9229）</li>
+          <li>在用户代码启动前终止</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><code>Node 监视<em>script.js</em></code></td>
+      <td>
+        <ul>
+          <li>通过 --inspect 标志生成一个新的子进程，使用主进程运行 CLI 调试器。</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><code>node inspect --port=xxxx <em>script.js</em></code></td>
+      <td>
+        <ul>
+          <li>通过 --inspect 标志生成一个新的子进程，使用主进程运行 CLI 调试器。</li>
+          <li>监听<em>端口</em>（默认：9229）</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 ---
@@ -181,7 +188,7 @@ V8 调试协议再也不维护或是归档了。
 
 在 Node.js 内置命令行调试器中用 `node debug script_name.js` 启动你的脚本。你的脚本就在 Node 另外一个进程中随着 `--debug-brk` 启动了起来，并且初始化的 Node 进程运行 `_debugger.js` 脚本连接上你的目标。
 
-<!-- refs -->
+{/* refs */}
 
 [检查器协议终端]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
 [UUID]: https://tools.ietf.org/html/rfc4122

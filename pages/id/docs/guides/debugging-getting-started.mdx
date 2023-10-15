@@ -82,65 +82,72 @@ Debugger CLI minimal tersedia dengan `node inspect myscript.js`. Beberapa alat k
 
 Tabel berikut mencantumkan dampak dari berbagai flag runtime pada debugging:
 
-<table class="table-no-border-no-padding">
-  <tr><th>Penanda</th><th>Arti</th></tr>
-  <tr>
-    <td>--inspect</td>
-    <td>
-      <ul>
-        <li>Mengaktifkan agen inspeksi</li>
-        <li>Mendengarkan di alamat dan port default (127.0.0.1:9229)</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>--inspect=<em>[host:port]</em></td>
-    <td>
-      <ul>
-        <li>Mengaktifkan agen inspeksi</li>
-        <li>Mengikat ke alamat atau nama host <em>host</em> (default: 127.0.0.1)</li>
-        <li>Mendengarkan pada port <em>port</em> (default: 9229)</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>--inspect-brk</td>
-    <td>
-      <ul>
-        <li>Mengaktifkan agen inspeksi</li>
-        <li>Mendengarkan di alamat dan port default (127.0.0.1:9229)</li>
-        <li>Berhenti sebelum kode pengguna dimulai</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>--inspect-brk=<em>[host:port]</em></td>
-    <td>
-      <ul>
-        <li>Mengaktifkan agen inspeksi</li>
-        <li>Mengikat ke alamat atau nama host <em>host</em> (default: 127.0.0.1)</li>
-        <li>Mendengarkan pada port <em>port</em> (default: 9229)</li>
-        <li>Berhenti sebelum kode pengguna dimulai</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td><code>node inspect <em>script.js</em></code></td>
-    <td>
-      <ul>
-        <li>Menjalankan proses anak untuk menjalankan skrip pengguna dengan flag --inspect;                         dan menggunakan proses utama untuk menjalankan debugger CLI.</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td><code>node inspect --port=xxxx <em>script.js</em></code></td>
-    <td>
-      <ul>
-        <li>Menjalankan proses anak untuk menjalankan skrip pengguna dengan flag --inspect;                         dan menggunakan proses utama untuk menjalankan debugger CLI.</li>
-        <li>Mendengarkan pada port <em>port</em> (default: 9229)</li>
-      </ul>
-    </td>
-  </tr>
+<table className="table-no-border-no-padding">
+  <thead>
+    <tr>
+      <th>Penanda</th>
+      <th>Arti</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>--inspect</td>
+      <td>
+        <ul>
+          <li>Mengaktifkan agen inspeksi</li>
+          <li>Mendengarkan di alamat dan port default (127.0.0.1:9229)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>--inspect=<em>[host:port]</em></td>
+      <td>
+        <ul>
+          <li>Mengaktifkan agen inspeksi</li>
+          <li>Mengikat ke alamat atau nama host <em>host</em> (default: 127.0.0.1)</li>
+          <li>Mendengarkan pada port <em>port</em> (default: 9229)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>--inspect-brk</td>
+      <td>
+        <ul>
+          <li>Mengaktifkan agen inspeksi</li>
+          <li>Mendengarkan di alamat dan port default (127.0.0.1:9229)</li>
+          <li>Berhenti sebelum kode pengguna dimulai</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>--inspect-brk=<em>[host:port]</em></td>
+      <td>
+        <ul>
+          <li>Mengaktifkan agen inspeksi</li>
+          <li>Mengikat ke alamat atau nama host <em>host</em> (default: 127.0.0.1)</li>
+          <li>Mendengarkan pada port <em>port</em> (default: 9229)</li>
+          <li>Berhenti sebelum kode pengguna dimulai</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><code>node inspect <em>script.js</em></code></td>
+      <td>
+        <ul>
+          <li>Menjalankan proses anak untuk menjalankan skrip pengguna dengan flag --inspect;                         dan menggunakan proses utama untuk menjalankan debugger CLI.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><code>node inspect --port=xxxx <em>script.js</em></code></td>
+      <td>
+        <ul>
+          <li>Menjalankan proses anak untuk menjalankan skrip pengguna dengan flag --inspect;                         dan menggunakan proses utama untuk menjalankan debugger CLI.</li>
+          <li>Mendengarkan pada port <em>port</em> (default: 9229)</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 ---
@@ -181,7 +188,7 @@ Mulai `node debug script_name.js` untuk memulai skrip Anda di bawah bawaan debug
 
 Debug aplikasi Node.js Anda dengan Chrome DevTools menggunakan proses perantara yang menerjemahkan [Protokol Inspektur][] yang digunakan di Chromium ke V8 Debugger protokol yang digunakan di Node.js.
 
-<!-- refs -->
+{/* refs */}
 
 [Protokol Inspektur]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
 [UUID]: https://tools.ietf.org/html/rfc4122

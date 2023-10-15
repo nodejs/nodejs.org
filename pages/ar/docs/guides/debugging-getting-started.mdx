@@ -106,65 +106,72 @@ layout: docs.hbs
 
 يبين الجدول الآتي تأثير كل تخصيص خاص بوقت التشغيل على تصحيح الأخطاء:
 
-<table class="table-no-border-no-padding" dir="rtl">
-  <tr><th>التخصيص</th><th>المعنى</th></tr>
-  <tr>
-    <td><span dir="ltr">--inspect</span></td>
-    <td>
-      <ul>
-        <li>يقوم بتمكين عميل التدقيق</li>
-        <li>يشتغل إفتراضيا على العنوان و المنفذ (127.0.0.1:9229)</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td><span dir="ltr">--inspect=<em>[host:port]</em></span></td>
-    <td>
-      <ul>
-        <li>يقوم بتمكين عميل التدقيق</li>
-        <li>يحدد عنوانا أو إسم مضيف <em>host</em> (افتراضيا: 127.0.0.1)</li>
-        <li>يشتغل على المنفذ <em>port</em> (افتراضيا: 9229)</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td><span dir="ltr">--inspect-brk</span></td>
-    <td>
-      <ul>
-        <li>يقوم بتمكين عميل التدقيق</li>
-        <li>يشتغل على العنوان و المنفذ الافتراضيين (127.0.0.1:9229)</li>
-        <li>يتوقف قبل بدء تنفيذ شيفرة المستخدم</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td><span dir="ltr">--inspect-brk=<em>[host:port]</em></span></td>
-    <td>
-      <ul>
-        <li>يقوم بتمكين عميل التدقيق</li>
-        <li>يحدد عنوانا قيمته <em>host</em> (افتراضيا: 127.0.0.1)</li>
-        <li>يشتغل على المنفذ <em>port</em> (افتراضيا: 9229)</li>
-        <li>يتوقف قبل بدء تنفيذ شيفرة المستخدم</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td><span dir="ltr"><code>node inspect <em>script.js</em></code></span></td>
-    <td>
-      <ul>
-        <li>يخبر العمليات الفرعية بتنفيذ السكربت الخاص بالمستخدم تحت علم <span dir="ltr">--inspect</span> مع استعمال العملية الرئيسية لتشغيل مصحح الأخطاء من سطر الأوامر.</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td><span dir="ltr"><code>node inspect --port=xxxx <em>script.js</em></code></span></td>
-    <td>
-      <ul>
-        <li>يخبر العمليات الفرعية بتنفيذ السكربت الخاص بالمستخدم تحت علم <span dir="ltr">--inspect</span> مع استعمال العملية الرئيسية لتشغيل مصحح الأخطاء من سطر الأوامر.</li>
-        <li>يشتغل عبر المنفذ <em>port</em> (افتراضيا: 9229)</li>
-      </ul>
-    </td>
-  </tr>
+<table className="table-no-border-no-padding" dir="rtl">
+  <thead>
+    <tr>
+      <th>التخصيص</th>
+      <th>المعنى</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span dir="ltr">--inspect</span></td>
+      <td>
+        <ul>
+          <li>يقوم بتمكين عميل التدقيق</li>
+          <li>يشتغل إفتراضيا على العنوان و المنفذ (127.0.0.1:9229)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><span dir="ltr">--inspect=<em>[host:port]</em></span></td>
+      <td>
+        <ul>
+          <li>يقوم بتمكين عميل التدقيق</li>
+          <li>يحدد عنوانا أو إسم مضيف <em>host</em> (افتراضيا: 127.0.0.1)</li>
+          <li>يشتغل على المنفذ <em>port</em> (افتراضيا: 9229)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><span dir="ltr">--inspect-brk</span></td>
+      <td>
+        <ul>
+          <li>يقوم بتمكين عميل التدقيق</li>
+          <li>يشتغل على العنوان و المنفذ الافتراضيين (127.0.0.1:9229)</li>
+          <li>يتوقف قبل بدء تنفيذ شيفرة المستخدم</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><span dir="ltr">--inspect-brk=<em>[host:port]</em></span></td>
+      <td>
+        <ul>
+          <li>يقوم بتمكين عميل التدقيق</li>
+          <li>يحدد عنوانا قيمته <em>host</em> (افتراضيا: 127.0.0.1)</li>
+          <li>يشتغل على المنفذ <em>port</em> (افتراضيا: 9229)</li>
+          <li>يتوقف قبل بدء تنفيذ شيفرة المستخدم</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><span dir="ltr"><code>node inspect <em>script.js</em></code></span></td>
+      <td>
+        <ul>
+          <li>يخبر العمليات الفرعية بتنفيذ السكربت الخاص بالمستخدم تحت علم <span dir="ltr">--inspect</span> مع استعمال العملية الرئيسية لتشغيل مصحح الأخطاء من سطر الأوامر.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><span dir="ltr"><code>node inspect --port=xxxx <em>script.js</em></code></span></td>
+      <td>
+        <ul>
+          <li>يخبر العمليات الفرعية بتنفيذ السكربت الخاص بالمستخدم تحت علم <span dir="ltr">--inspect</span> مع استعمال العملية الرئيسية لتشغيل مصحح الأخطاء من سطر الأوامر.</li>
+          <li>يشتغل عبر المنفذ <em>port</em> (افتراضيا: 9229)</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 ---
@@ -215,7 +222,7 @@ ssh -L 9221:localhost:9229 user@remote.example.com
 قم بتصحيح الأخطاء في تطبيق Node.js الخاص بواسطة الـ <span dir="ltr">Chrome DevTools</span> و ذلك باستعمال عملية وسيطة تقوم بتحويل
 بروتوكول المدقق المستعمل في Chromium إلى بروتوكول تصحيح الأخطاء في الـ V8 المستعمل في الـ Node.js
 
-<!-- refs -->
+{/* refs */}
 
 [Inspector Protocol]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
 [UUID]: https://tools.ietf.org/html/rfc4122
