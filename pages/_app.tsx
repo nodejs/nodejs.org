@@ -7,6 +7,7 @@ import { BlogDataProvider } from '@/providers/blogDataProvider';
 import { LocaleProvider } from '@/providers/localeProvider';
 import { NodeReleasesProvider } from '@/providers/nodeReleasesProvider';
 import { SiteProvider } from '@/providers/siteProvider';
+import { ThemeProvider } from '@/providers/themeProvider';
 
 import '@/styles/old/index.css';
 
@@ -17,7 +18,7 @@ const sourceSans = Source_Sans_3({
 });
 
 const App = ({ Component, pageProps }: AppProps) => (
-  <>
+  <ThemeProvider>
     <LocaleProvider>
       <SiteProvider>
         <NodeReleasesProvider>
@@ -37,7 +38,7 @@ const App = ({ Component, pageProps }: AppProps) => (
         }
       `}
     </style>
-  </>
+  </ThemeProvider>
 );
 
 export default App;
