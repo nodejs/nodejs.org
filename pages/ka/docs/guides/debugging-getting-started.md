@@ -175,7 +175,7 @@ ssh -L 9221:localhost:9229 user@remote.example.com
 
 V8 გამართვის პროტოკოლი აღარ არის მხარდაჭერილი და მისი დოკუმენტირებაც აღარ ხორციელდება.
 
-### [ჩაშენებული გამმართველი](https://nodejs.org/dist/{#var currentVersion}/docs/api/debugger.html)
+### [ჩაშენებული გამმართველი](https://nodejs.org/dist/latest/docs/api/debugger.html)
 
 იმისათვის, რომ თქვენი სკრიპტი გაუშვათ ჩაშენებულ CLI-გამმართველთან ერთად, შეიყვანეთ ბრძანება `node debug script_name.js`. ამით, თქვენი სკრიპტი გაეშვება `--debug-brk` პარამეტრით სხვა Node-პროცესში, ხოლო საწყისი Node-პროცესი გაუშვებს `_debugger.js` სკრიპტს და დაუკავშირდება თქვენს სამიზნეს (_თქვენს სამიზნე სკრიპტს_).
 
