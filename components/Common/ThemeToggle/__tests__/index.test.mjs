@@ -5,26 +5,19 @@ import { LocaleProvider } from '@/providers/localeProvider';
 
 import ThemeToggle from '../';
 
+let mockCurrentTheme = 'light';
+
+const toggleTheme = () => {
+  mockCurrentTheme = mockCurrentTheme === 'light' ? 'dark' : 'light';
+};
+
 function renderThemeToggle() {
   return render(
     <LocaleProvider>
-      <ThemeToggle />
+      <ThemeToggle toggleTheme={toggleTheme} />
     </LocaleProvider>
   );
 }
-
-let mockCurrentTheme = 'light';
-
-const mockToggleTheme = jest.fn().mockImplementation(() => {
-  mockCurrentTheme = mockCurrentTheme === 'dark' ? 'light' : 'dark';
-});
-
-// Mock dark mode module for controlling dark mode HOC behaviour
-jest.mock('next-themes', () => ({
-  useTheme: () => {
-    return { theme: mockCurrentTheme, setTheme: mockToggleTheme };
-  },
-}));
 
 describe('ThemeToggle component', () => {
   it('switches dark theme to light theme', async () => {
