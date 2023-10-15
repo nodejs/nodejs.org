@@ -1,15 +1,12 @@
 import { CodeBracketIcon } from '@heroicons/react/24/outline';
-import { type Heading } from '@vcarl/remark-headings';
+import type { Heading } from '@vcarl/remark-headings';
 import Image from 'next/image';
-import {
-  useMemo,
-  type ComponentProps,
-  type FC,
-  type PropsWithChildren,
-} from 'react';
+import { useMemo } from 'react';
+import type { ComponentProps, FC, PropsWithChildren } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import AvatarGroup from '@/components/Common/AvatarGroup';
+import type Avatar from '@/components/Common/AvatarGroup/Avatar';
 import LocalizedLink from '@/components/LocalizedLink';
 
 import styles from './index.module.css';
@@ -19,7 +16,7 @@ type MetaBarProps = {
   readingTime: string;
   addedInVersion: string;
   author: string;
-  authors: ComponentProps<typeof AvatarGroup>['avatars'];
+  authors: ComponentProps<typeof Avatar>[];
   sourceURL: string;
   viewAsURL: string;
   heading?: {
