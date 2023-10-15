@@ -42,4 +42,12 @@ describe('ThemeToggle component', () => {
     await userEvent.click(toggle);
     expect(mockCurrentTheme).toBe('dark');
   });
+
+  it('switch when press enter', async () => {
+    mockCurrentTheme = 'light';
+    renderThemeToggle();
+    const toggle = screen.getByRole('button');
+    await userEvent.type(toggle, '{enter}');
+    expect(mockCurrentTheme).toBe('dark');
+  });
 });

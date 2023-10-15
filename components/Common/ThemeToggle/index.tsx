@@ -12,20 +12,10 @@ const ThemeToggle: FC = () => {
 
   const isDark = theme === 'dark';
 
-  const toggleTheme = (isKeyPress?: boolean) => {
-    if (isKeyPress) {
-      return;
-    }
-
-    setTheme(isDark ? 'light' : 'dark');
-  };
+  const toggleTheme = () => setTheme(isDark ? 'light' : 'dark');
 
   return (
-    <button
-      type="button"
-      onClick={() => toggleTheme()}
-      onKeyDown={() => toggleTheme(true)}
-    >
+    <button type="button" onClick={toggleTheme} onKeyDown={toggleTheme}>
       <AccessibleIcon
         label={intl.formatMessage({
           id: 'components.header.buttons.toggleDarkMode',
