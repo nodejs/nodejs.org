@@ -231,7 +231,7 @@ Node.js прослушивает команды отладки, определе
 
 Протокол отладки V8 более не поддерживается и не документируется.
 
-### [Встроенный отладчик](https://nodejs.org/dist/{#var currentVersion}/docs/api/debugger.html)
+### [Встроенный отладчик](https://nodejs.org/dist/latest/docs/api/debugger.html)
 
 Введите `node debug script_name.js` для запуска скрипта со встроенным CLI отладчиком.
 Сам скрипт будет запущен с флагом `--debug-brk` в другом процессе Node, а первоначальный
