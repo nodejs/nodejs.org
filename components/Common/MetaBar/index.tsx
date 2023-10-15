@@ -67,7 +67,7 @@ const MetaBar: FC<MetaBarProps> = ({
       </MetaBarPair>
       {headings && headings.length > 0 && (
         <MetaBarPair id="components.metabar.tableOfContents">
-          <ul>
+          <ol>
             {headings.map(heading => (
               <li key={heading.value}>
                 <LocalizedLink href={`#${heading?.data?.id || heading.value}`}>
@@ -75,7 +75,7 @@ const MetaBar: FC<MetaBarProps> = ({
                 </LocalizedLink>
               </li>
             ))}
-          </ul>
+          </ol>
         </MetaBarPair>
       )}
     </dl>
