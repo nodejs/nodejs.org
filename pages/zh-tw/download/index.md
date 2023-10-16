@@ -12,13 +12,13 @@ downloads:
   intro: >
     下載適合您平台的 Node.js 原始碼或安裝套件。立刻開始使用 Node.js。
   currentVersion: 最新版
-  buildInstructions: 包含
-  WindowsInstaller: 在支援的平台上，使用原始碼建構 Node.js
-  WindowsBinary: Windows 安裝程式
-  MacOSInstaller: Windows 二進位檔案
-  MacOSBinary: macOS 安裝程式
-  LinuxBinaries: macOS 二進位檔案
-  SourceCode: Linux 二進位檔案
+  buildInstructions: 在支援的平台上，使用原始碼建構 Node.js
+  WindowsInstaller: Windows 安裝程式
+  WindowsBinary: Windows 二進位檔案
+  MacOSInstaller: macOS 安裝程式
+  MacOSBinary: macOS 二進位檔案
+  LinuxBinaries: Linux 二進位檔案
+  SourceCode: 原始碼
 additional:
   headline: 其它平台
   intro: >
