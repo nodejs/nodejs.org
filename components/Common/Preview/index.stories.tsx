@@ -7,6 +7,13 @@ type Meta = MetaObj<typeof Preview>;
 
 export const Default: Story = {
   args: {
+    title:
+      'Changing the End-of-Life Date for Node.js 16 to September 11th, 2023',
+  },
+};
+
+export const Announcement: Story = {
+  args: {
     type: 'announcement',
     title:
       'Changing the End-of-Life Date for Node.js 16 to September 11th, 2023',
@@ -24,6 +31,15 @@ export const Vulnerability: Story = {
   args: {
     type: 'vulnerability',
     title: 'OpenSSL update assessment, and Node.js project plans',
+  },
+};
+
+export const CustomSize: Story = {
+  args: {
+    title:
+      'Changing the End-of-Life Date for Node.js 16 to September 11th, 2023',
+    width: 600,
+    height: 315,
   },
 };
 
