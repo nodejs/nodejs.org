@@ -1,8 +1,6 @@
 .root {
   @apply relative
     flex
-    h-[630px]
-    w-[1200px]
     items-center
     bg-neutral-950
     bg-[url('/static/images/patterns/hexagon-grid.svg')]
@@ -12,20 +10,21 @@
     after:inset-0
     after:m-auto
     after:aspect-square
-    after:w-72
+    after:w-1/3
     after:rounded-full
+    after:bg-gradient-radial
     after:blur-3xl;
 
   &.announcement {
-    @apply after:bg-green-700/60;
+    @apply after:from-green-700;
   }
 
   &.release {
-    @apply after:bg-info-600/60;
+    @apply after:from-info-600;
   }
 
   &.vulnerability {
-    @apply after:bg-warning-600/60;
+    @apply after:from-warning-600;
   }
 
   & > .container {
