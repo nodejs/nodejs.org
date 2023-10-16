@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import Image from 'next/image';
-import type { FC } from 'react';
+import type { CSSProperties, ComponentProps, FC, ReactNode } from 'react';
 
 import { useRouter } from '@/hooks/useRouter';
 
@@ -8,14 +8,26 @@ import styles from './index.module.css';
 
 type PreviewProps = {
   type?: 'announcement' | 'release' | 'vulnerability';
-  title: string;
-};
+  title: ReactNode;
+  height?: CSSProperties['height'];
+  width?: CSSProperties['width'];
+} & Omit<ComponentProps<'div'>, 'children'>;
 
-const Preview: FC<PreviewProps> = ({ type = 'announcement', title }) => {
+const Preview: FC<PreviewProps> = ({
+  type = 'announcement',
+  title,
+  height = 630,
+  width = 1200,
+  ...props
+}) => {
   const { basePath } = useRouter();
 
   return (
-    <div className={classNames(styles.root, styles[type])}>
+    <div
+      {...props}
+      style={{ width, height, ...props.style }}
+      className={classNames(styles.root, styles[type], props.className)}
+    >
       <div className={styles.container}>
         <Image
           className={styles.logo}
