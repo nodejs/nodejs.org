@@ -7,10 +7,6 @@ npm-debug.log
 .next
 build
 
-# Next.js Generated Files
-public/sitemap.xml
-public/en/feed/*.xml
-
 # Jest
 coverage
 .swc

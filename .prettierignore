@@ -9,8 +9,8 @@ build
 
 # Next.js Generated Files
 public/static/documents
-public/sitemap.xml
-public/en/feed/*.xml
+public/node-releases-data.json
+public/blog-posts-data.json
 
 # Jest
 coverage
