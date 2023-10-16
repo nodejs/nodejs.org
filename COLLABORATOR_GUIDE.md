@@ -482,31 +482,6 @@ Defining a `.vscode` configuration like this also aides browser-only development
 
 The npm ecosystem resolution and installation of `peerDependencies` installation [changed in recent versions](https://nodejs.org/en/blog/npm/peer-dependencies#using-peer-dependencies). The project documents what version of `Node.js` and `npm` to use via the [`.nvmrc` file](https://github.com/nodejs/nodejs.org/blob/main/.nvmrc). Not all contributors have tooling to automatically read this file and adhere to the correct version, however. To ensure all contributors install dependencies the same way, a local `.npmrc` file directly configures peerDependency installation behavior.
 
-### Why we don't use [`remark-preset-lint-node`](https://github.com/nodejs/remark-preset-lint-node)?
-
-The Node.js GitHub organisation owns an in-house remark preset (set of rules and plugins) that standardises the contents of Markdown files across the GitHub organisation.
-This package uses `remark` plugins such as `remark-gfm`, and it has rules such as forbidden words, maximum line-length of Markdown content, and many very specific rules.
-
-This preset is used within Node.js Development tooling itself (within `make`) and it used as a one-off script to lint the Markdown files within the `nodejs/node` repository.
-(The same preset is also used within `nodejs/node` CI).
-
-Whilst that preset has a lot of value, it is not suitable for the Node.js Website. One of the main reasons are that it inheritedly conflicts with `prettier` and with `mdx-js`,
-which causes issues from ensuring that Markdown and MDX files are correctly linted, formatted and parsed. Not to mention that these amount of rules, greatly increase the running time of ESLint.
-
-Hence, we decided to not use this preset and instead use a more minimalistic approach to linting Markdown files. Which means that we follow the default recommended `remark-lint`, `mdx-js` and `commonmark`
-linting and formatting rules, plus the formatting rules enforced by prettier.
-
-We also decided to not use `remark-gfm` as we want to support the basic CommonMark standard for Markdown files, and the default MDX standard for MDX files.
-Having that said, there's one exception, as we use [`autolink-literal`](mdast-util-gfm-autolink-literal) for transforming literal links (text) into anchor elements, which is part of the GitHub Flavoured Markdown specification.
-
-Finally, as the Node.js Website grows, we have thousands of Markdown files, meaning the more rules we add, the more time it takes to lint and format the Markdown files. And the greater the chance is
-for the standard adopted on the `nodejs/node` repository to deviate from standard spec-compliant CommonMark. The Node.js Website uses a default recommended configuration that enforces our Markdown files to be spec-compliant.
-
-It's important to mention that this repository is compatible with Markdown files from `nodejs/node` as our formatting is way less strict.
-We also have rules in-place (for example in the release blog post generation) that ensure that Markdown files that are "loaded" from `nodejs/node` are compatible when created.
-
-Also note that our goal is to fully support any Markdown file incoming from `nodejs/node` and that originates from the `remark-preset-lint-node`. Our goal is to support our fellow collaborators and to ensure that the Node.js Website is fully compatible with the Node.js project.
-
 ## Seeking additional clarification
 
 A lot of the current structure is due to retro-compatibility, keeping a simple and familiar file structure and keeping files that have historical reasons or needs.
