@@ -1,0 +1,47 @@
+.root {
+  @apply relative
+    flex
+    h-[630px]
+    w-[1200px]
+    items-center
+    bg-neutral-950
+    bg-[url('/static/images/patterns/hexagon-grid.svg')]
+    bg-contain
+    bg-center
+    after:absolute
+    after:inset-0
+    after:m-auto
+    after:aspect-square
+    after:w-72
+    after:rounded-full
+    after:blur-3xl;
+
+  &.announcement {
+    @apply after:bg-green-700/60;
+  }
+
+  &.release {
+    @apply after:bg-info-600/60;
+  }
+
+  &.vulnerability {
+    @apply after:bg-warning-600/60;
+  }
+
+  & > .container {
+    @apply z-10
+      mx-auto
+      flex
+      max-w-xl
+      flex-col
+      gap-12
+      text-center
+      text-3xl
+      font-semibold
+      text-white;
+
+    & > .logo {
+      @apply mx-auto;
+    }
+  }
+}
