@@ -16,20 +16,14 @@ type MetaBarProps = {
 };
 
 // The default depth of headings to display in the table of contents.
-const DEFAULT_HEADING_DEPTH: number = 2;
+const HEADING_DEPTH: number = 2;
 
-const MetaBar: FC<MetaBarProps> = ({
-  items,
-  headings = {
-    items: [],
-  },
-}) => {
+const MetaBar: FC<MetaBarProps> = ({ items, headings }) => {
+  const { depth = HEADING_DEPTH, items: headingItems = [] } = headings || {};
+
   const heading = useMemo(
-    () =>
-      headings.items.filter(
-        ({ depth }) => depth === (headings.depth ?? DEFAULT_HEADING_DEPTH)
-      ),
-    [headings.depth, headings.items]
+    () => headingItems.filter(head => head.depth === depth),
+    [depth, headingItems]
   );
 
   return (
