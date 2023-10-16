@@ -16,15 +16,15 @@
     after:blur-3xl;
 
   &.announcement {
-    @apply after:from-green-700;
+    @apply after:from-green-700/90;
   }
 
   &.release {
-    @apply after:from-info-600;
+    @apply after:from-info-600/90;
   }
 
   &.vulnerability {
-    @apply after:from-warning-600;
+    @apply after:from-warning-600/90;
   }
 
   & > .container {
