@@ -28,9 +28,11 @@
 
     a {
       @apply font-semibold
-        !text-neutral-900
+        text-neutral-900
         underline
-        dark:!text-white;
+        hover:text-neutral-800
+        dark:text-white
+        dark:hover:text-neutral-200;
     }
 
     ol {
