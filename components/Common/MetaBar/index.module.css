@@ -41,25 +41,25 @@
         p-0;
     }
 
+    svg {
+      @apply h-4
+        w-4
+        text-neutral-600
+        dark:text-neutral-400;
+    }
+
     &:last-child {
       @apply mb-0;
     }
   }
 
-  .onDark {
+  [data-on-dark] {
     @apply hidden
       dark:block;
   }
 
-  .onLight {
+  [data-on-light] {
     @apply block
       dark:hidden;
-  }
-
-  .icon {
-    @apply h-4
-      w-4
-      text-neutral-600
-      dark:text-neutral-400;
   }
 }

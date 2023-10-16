@@ -1,113 +1,69 @@
-import { CodeBracketIcon } from '@heroicons/react/24/outline';
 import type { Heading } from '@vcarl/remark-headings';
-import Image from 'next/image';
-import { useMemo } from 'react';
-import type { ComponentProps, FC, PropsWithChildren } from 'react';
+import { Fragment, useMemo } from 'react';
+import type { FC } from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import AvatarGroup from '@/components/Common/AvatarGroup';
-import type Avatar from '@/components/Common/AvatarGroup/Avatar';
 import LocalizedLink from '@/components/LocalizedLink';
 
 import styles from './index.module.css';
 
 type MetaBarProps = {
-  date: Date;
-  readingTime: string;
-  addedInVersion: string;
-  author: string;
-  authors: ComponentProps<typeof Avatar>[];
-  sourceURL: string;
-  viewAsURL: string;
-  heading?: {
+  items: Record<string, React.ReactNode>;
+  headings?: {
     items: Heading[];
-    depth: number;
+    depth?: number;
   };
 };
 
+// The default depth of headings to display in the table of contents.
+const DEFAULT_DEPTH: number = 2;
+
 const MetaBar: FC<MetaBarProps> = ({
-  date,
-  readingTime,
-  addedInVersion,
-  author,
-  authors = [],
-  sourceURL,
-  viewAsURL,
-  heading = {
+  items,
+  headings = {
     items: [],
-    depth: 2,
   },
 }) => {
-  const headings = useMemo(
-    () => heading.items.filter(({ depth }) => depth === heading.depth),
-    [heading.depth, heading.items]
+  const heading = useMemo(
+    () =>
+      headings.items.filter(
+        ({ depth }) => depth === (headings.depth ?? DEFAULT_DEPTH)
+      ),
+    [headings.depth, headings.items]
   );
 
   return (
     <div className={styles.wrapper}>
       <dl>
-        <MetaBarPair
-          id="components.metabar.lastUpdated"
-          value={date.toLocaleDateString()}
-        />
-        <MetaBarPair id="components.metabar.readingTime" value={readingTime} />
-        <MetaBarPair id="components.metabar.addedIn" value={addedInVersion} />
-        <MetaBarPair id="components.metabar.author" value={author} />
-        <MetaBarPair id="components.metabar.authors">
-          <AvatarGroup avatars={authors} />
-        </MetaBarPair>
-        <MetaBarPair id="components.metabar.contribute">
-          <Image
-            src="/static/images/logos/social-github-dark.svg"
-            alt="GitHub Logo"
-            width={16}
-            height={16}
-            className={styles.onLight}
-          />
-          <Image
-            src="/static/images/logos/social-github.svg"
-            alt="GitHub Logo"
-            width={16}
-            height={16}
-            className={styles.onDark}
-          />
-          <LocalizedLink href={sourceURL}>
-            <FormattedMessage id={'components.metabar.contributeText'} />
-          </LocalizedLink>
-        </MetaBarPair>
-        <MetaBarPair id="components.metabar.viewAs">
-          <CodeBracketIcon className={styles.icon} />
-          <LocalizedLink href={viewAsURL}>JSON</LocalizedLink>
-        </MetaBarPair>
-        {headings.length > 0 && (
-          <MetaBarPair id="components.metabar.tableOfContents">
-            <ol>
-              {headings.map(heading => (
-                <li key={heading.value}>
-                  <LocalizedLink
-                    href={`#${heading?.data?.id || heading.value}`}
-                  >
-                    {heading.value}
-                  </LocalizedLink>
-                </li>
-              ))}
-            </ol>
-          </MetaBarPair>
+        {Object.entries(items).map(([key, value]) => (
+          <Fragment key={key}>
+            <dt>
+              <FormattedMessage id={key} />
+            </dt>
+            <dd>{value}</dd>
+          </Fragment>
+        ))}
+        {heading.length > 0 && (
+          <Fragment key="tableOfContents">
+            <dt>
+              <FormattedMessage id="components.metabar.tableOfContents" />
+            </dt>
+            <dd>
+              <ol>
+                {heading.map(head => (
+                  <li key={head.value}>
+                    <LocalizedLink href={`#${head?.data?.id || head.value}`}>
+                      {head.value}
+                    </LocalizedLink>
+                  </li>
+                ))}
+              </ol>
+            </dd>
+          </Fragment>
         )}
       </dl>
     </div>
   );
 };
-
-type MetaBarPairProps = PropsWithChildren<{ id: string; value?: string }>;
-
-const MetaBarPair: FC<MetaBarPairProps> = ({ id, value, children }) => (
-  <>
-    <dt>
-      <FormattedMessage id={id} />
-    </dt>
-    <dd>{value || children}</dd>
-  </>
-);
 
 export default MetaBar;
