@@ -46,8 +46,6 @@ const ERRORS = {
     new Error(`Couldn't find @author of ${version} release :(`),
   NO_VERSION_POLICY: version =>
     new Error(`Could not find version policy of ${version} in its changelog`),
-  NO_CHANGELOG_BODY: version =>
-    new Error(`Could not find changelog body of ${version} release`),
   NO_CHANGELOG_FOUND: version =>
     new Error(`Couldn't find matching changelog for ${version}`),
   INVALID_STATUS_CODE: (url, status) =>
@@ -128,7 +126,7 @@ const fetchChangelog = version => {
     const matches = rxSection.exec(data);
 
     return new Promise((resolve, reject) =>
-      matches.length && matches[1]
+      matches && matches.length && matches[1]
         ? resolve(matches[1].trim())
         : reject(ERRORS.NO_CHANGELOG_FOUND(version))
     );
@@ -137,22 +135,11 @@ const fetchChangelog = version => {
 
 const fetchChangelogBody = version => {
   return fetchChangelog(version).then(section => {
-    const rxSectionBody = /(### Notable [\s\S]*)/;
-    const rxFallbackSectionBody = /(### Commit[\s\S]*)/;
-
-    // In case there's not a notable changes section for that release, nothing
-    // will have matched so we fallback to reading the commits section instead
-    const matches = rxSectionBody.test(section)
-      ? rxSectionBody.exec(section)
-      : rxFallbackSectionBody.exec(section);
-
     const replaceAsteriskLists = str =>
       str.replace(/^([ ]{0,4})(\* )/gm, '$1- ');
 
-    return new Promise((resolve, reject) =>
-      matches.length && matches[1]
-        ? resolve(replaceAsteriskLists(matches[1].trim()))
-        : reject(ERRORS.NO_CHANGELOG_BODY(version))
+    return new Promise(resolve =>
+      resolve(replaceAsteriskLists(section.trim()))
     );
   });
 };
@@ -166,7 +153,7 @@ const fetchVersionPolicy = version => {
     const matches = rxPolicy.exec(section);
 
     return new Promise((resolve, reject) =>
-      matches.length && matches[1]
+      matches && matches.length && matches[1]
         ? resolve(matches[1])
         : reject(ERRORS.NO_VERSION_POLICY(version))
     );
@@ -191,7 +178,7 @@ const findAuthorLogin = (version, section) => {
   const matches = rxReleaseAuthor.exec(section);
 
   return new Promise((resolve, reject) =>
-    matches.length && matches[1]
+    matches && matches.length && matches[1]
       ? resolve(matches[1])
       : reject(ERRORS.RELEASE_EXISTS(version))
   );
