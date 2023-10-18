@@ -1,0 +1,93 @@
+.root {
+  @apply rounded
+      border-[1px]
+      border-neutral-900
+      bg-neutral-950;
+
+  .content {
+    @apply m-0
+      bg-transparent
+      p-0
+      px-4
+      py-4
+      text-sm
+      font-regular
+      leading-snug;
+
+    & > code {
+      @apply m-0
+        grid
+        bg-transparent
+        p-0
+        text-sm
+        font-regular
+        leading-snug
+        text-neutral-400
+        [counter-reset:line];
+
+      & > [class='line'] {
+        @apply relative
+          min-w-0
+          pl-8;
+
+        & > span {
+          @apply whitespace-break-spaces
+            break-words;
+        }
+
+        &:not(:empty:last-child)::before {
+          @apply inline-block [content:""];
+        }
+
+        &:not(:empty:last-child)::after {
+          @apply absolute
+            left-0
+            top-0
+            w-4.5
+            text-right
+            font-regular
+            leading-snug
+            text-neutral-600
+            [content:counter(line)]
+            [counter-increment:line];
+        }
+      }
+    }
+  }
+
+  & > .footer {
+    @apply flex
+      items-center
+      justify-between
+      border-t-[1px]
+      border-t-neutral-900
+      px-4
+      py-3
+      text-sm
+      font-medium
+      leading-5;
+
+    & > .language {
+      @apply text-neutral-400;
+    }
+
+    & > .action {
+      @apply flex
+        cursor-pointer
+        items-center
+        gap-2
+        px-3
+        py-1.5;
+    }
+  }
+}
+
+.notification {
+  @apply flex
+    items-center
+    gap-3;
+}
+
+.icon {
+  @apply h-4 w-4;
+}

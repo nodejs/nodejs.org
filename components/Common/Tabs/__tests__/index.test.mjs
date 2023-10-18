@@ -5,15 +5,15 @@ import userEvent from '@testing-library/user-event';
 import Tabs from '../index';
 
 describe('Tabs', () => {
-  const tabs = [
-    { key: 'package', label: 'Package Manager' },
-    { key: 'prebuilt', label: 'Prebuilt Installer' },
-    { key: 'source', label: 'Source Code' },
-  ];
+  const Sut = ({ addons }) => {
+    const tabs = [
+      { key: 'package', label: 'Package Manager' },
+      { key: 'prebuilt', label: 'Prebuilt Installer' },
+      { key: 'source', label: 'Source Code' },
+    ];
 
-  beforeEach(() => {
-    render(
-      <Tabs tabs={tabs} defaultValue="package">
+    return (
+      <Tabs tabs={tabs} defaultValue="package" addons={addons}>
         <TabsPrimitive.Content value="package">
           Package Manager
         </TabsPrimitive.Content>
@@ -25,29 +25,27 @@ describe('Tabs', () => {
         </TabsPrimitive.Content>
       </Tabs>
     );
+  };
+
+  it('should render the correct number of tabs', () => {
+    render(<Sut />);
+
+    expect(screen.getAllByRole('tab')).toHaveLength(3);
   });
 
-  it('renders the correct number of tabs', () => {
-    const tabElements = screen.getAllByRole('tab');
-    expect(tabElements).toHaveLength(3);
+  it('should render the correct tab content when clicked', async () => {
+    render(<Sut />);
+
+    expect(screen.getByRole('tabpanel')).toHaveTextContent('Package Manager');
+
+    await userEvent.click(screen.getByRole('tab', { name: 'Source Code' }));
+
+    expect(screen.getByRole('tabpanel')).toHaveTextContent('Source Code');
   });
 
-  it('renders the correct tab content when clicked', async () => {
-    const user = userEvent.setup();
+  it('should render the given addons', async () => {
+    render(<Sut addons={<a href="/">addon</a>} />);
 
-    const beforeActiveTabPanel = screen.getAllByRole('tabpanel');
-
-    expect(beforeActiveTabPanel).toHaveLength(1);
-
-    expect(beforeActiveTabPanel.at(0)).toHaveTextContent('Package Manager');
-
-    const tabElements = screen.getAllByRole('tab');
-    await user.click(tabElements.at(-1));
-
-    const afterActiveTabPanel = screen.getAllByRole('tabpanel');
-
-    expect(afterActiveTabPanel).toHaveLength(1);
-
-    expect(afterActiveTabPanel.at(0)).toHaveTextContent('Source Code');
+    expect(screen.getByRole('link', { name: 'addon' })).toBeInTheDocument();
   });
 });

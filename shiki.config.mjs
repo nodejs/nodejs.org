@@ -20,34 +20,41 @@ export const LANGUAGES = [
     ...javaScriptLanguage[0],
     scopeName: 'source.js',
     aliases: ['mjs', 'cjs', 'js'],
+    displayName: 'JavaScript',
   },
   {
     ...jsonLanguage[0],
     scopeName: 'source.json',
+    displayName: 'JSON',
   },
   {
     ...typeScriptLanguage[0],
     scopeName: 'source.ts',
     aliases: ['ts'],
+    displayName: 'TypeScript',
   },
   {
     ...shellScriptLanguage[0],
     scopeName: 'source.shell',
     aliases: ['bash', 'sh', 'shell', 'zsh'],
+    displayName: 'Bash',
   },
   {
     ...shellSessionLanguage[0],
     scopeName: 'text.shell-session',
     aliases: ['console'],
+    displayName: 'Bash',
   },
   {
     ...dockerLanguage[0],
     scopeName: 'source.dockerfile',
     aliases: ['dockerfile'],
+    displayName: 'Dockerfile',
   },
   {
     ...diffLanguage[0],
     scopeName: 'source.diff',
+    displayName: 'Diff',
   },
 ];
 
