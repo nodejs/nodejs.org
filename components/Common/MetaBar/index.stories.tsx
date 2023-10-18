@@ -14,7 +14,9 @@ type Meta = MetaObj<typeof MetaBar>;
 export const Default: Story = {
   args: {
     items: {
-      'components.metabar.lastUpdated': new Date().toLocaleDateString(),
+      'components.metabar.lastUpdated': new Date(
+        '17 October 2023'
+      ).toLocaleDateString(),
       'components.metabar.readingTime': '15 minutes',
       'components.metabar.addedIn': 'v1.0.0',
       'components.metabar.author': 'The Node.js Project',
