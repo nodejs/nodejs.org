@@ -1,7 +1,7 @@
 import { createContext, useMemo } from 'react';
 import type { FC, PropsWithChildren } from 'react';
 
-import nodeReleasesData from '@/public/node-releases-data.json';
+import { releaseData } from '@/next.json.mjs';
 import type { NodeReleaseSource, NodeRelease } from '@/types';
 import { getNodeReleaseStatus } from '@/util/nodeRelease';
 
@@ -11,7 +11,7 @@ export const NodeReleasesProvider: FC<PropsWithChildren> = ({ children }) => {
   const releases = useMemo(() => {
     const now = new Date();
 
-    return nodeReleasesData.map((raw: NodeReleaseSource) => {
+    return releaseData.map((raw: NodeReleaseSource) => {
       const support = {
         currentStart: raw.currentStart,
         ltsStart: raw.ltsStart,

@@ -12,5 +12,10 @@ export const useNodeReleases = () => {
     [releases]
   );
 
-  return { releases, getReleaseByStatus };
+  const getLatestIsLtsRelease = useCallback(
+    () => releases.find(release => release.isLts),
+    [releases]
+  );
+
+  return { releases, getReleaseByStatus, getLatestIsLtsRelease };
 };

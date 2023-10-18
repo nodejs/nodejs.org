@@ -7,11 +7,11 @@ import { useNodeReleases } from '@/hooks/useNodeReleases';
 import BaseLayout from './BaseLayout';
 
 const DocsLayout: FC<PropsWithChildren> = ({ children }) => {
-  const { getReleaseByStatus } = useNodeReleases();
+  const { getReleaseByStatus, getLatestIsLtsRelease } = useNodeReleases();
 
   const [lts, current] = useMemo(
-    () => [getReleaseByStatus('Active LTS'), getReleaseByStatus('Current')],
-    [getReleaseByStatus]
+    () => [getLatestIsLtsRelease(), getReleaseByStatus('Current')],
+    [getLatestIsLtsRelease, getReleaseByStatus]
   );
 
   const translationContext = {
