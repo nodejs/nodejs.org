@@ -23,7 +23,7 @@ const DownloadLayout: FC<PropsWithChildren> = ({ children }) => {
 
           {children}
 
-          <WithNodeRelease status="Active LTS">
+          <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
             {({ release }) => (
               <>
                 <PrimaryDownloadMatrix {...release} />
