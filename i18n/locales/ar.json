@@ -1,7 +1,6 @@
 {
   "components.footer.scrollToTop.button": "Scroll to top",
-  "components.header.links.about": "About",
-  "components.header.links.about.full": "About Node.js®",
+  "components.header.links.about": "About Node.js®",
   "components.header.links.download": "Download",
   "components.header.links.docs": "Docs",
   "components.header.links.getInvolved": "Get Involved",

@@ -1,7 +1,7 @@
 {
   "about": {
     "link": "/about",
-    "translationId": "components.header.links.about.full",
+    "translationId": "components.header.links.about",
     "items": {
       "governance": {
         "link": "/about/governance",
