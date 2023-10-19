@@ -7,6 +7,7 @@ import remarkHeadings from '@vcarl/remark-headings';
 import { serialize } from 'next-mdx-remote/serialize';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
+import rehypeRaw from 'rehype-raw';
 import rehypeSlug from 'rehype-slug';
 import { getHighlighter } from 'shiki';
 import shikiNordTheme from 'shiki/themes/nord.json';
@@ -177,6 +178,7 @@ export const generateStaticProps = async (source = '', filename = '') => {
                 getHighlighter({ ...options, langs: SUPPORTED_LANGUAGES }),
             },
           ],
+          rehypeRaw,
         ],
         remarkPlugins: [remarkHeadings, remarkAutoLinkLiteral],
         format: filename.includes('.mdx') ? 'mdx' : 'md',
