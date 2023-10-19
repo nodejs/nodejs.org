@@ -11,6 +11,10 @@ After six months, odd-numbered releases (9, 11, etc.) become unsupported, and ev
 _LTS_ release status is "long-term support", which typically guarantees that critical bugs will be fixed for a total of 30 months.
 Production applications should only use _Active LTS_ or _Maintenance LTS_ releases.
 
+### Release Schedule
+
 ![Releases](https://raw.githubusercontent.com/nodejs/Release/main/schedule.svg?sanitize=true)
+
+Full details regarding Node.js release schedule are available [on GitHub](https://github.com/nodejs/release#release-schedule).
 
 ### Looking for latest release of a version branch?

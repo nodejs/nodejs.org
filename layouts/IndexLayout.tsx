@@ -2,6 +2,7 @@ import type { FC, PropsWithChildren } from 'react';
 
 import Banner from '@/components/Home/Banner';
 import HomeDownloadButton from '@/components/Home/HomeDownloadButton';
+import LocalizedLink from '@/components/LocalizedLink';
 import { useDetectOS } from '@/hooks/useDetectOS';
 import { useLayoutContext } from '@/hooks/useLayoutContext';
 import { WithNodeRelease } from '@/providers/withNodeRelease';
@@ -57,9 +58,9 @@ const IndexLayout: FC<PropsWithChildren> = ({ children }) => {
 
           <p>
             {labels?.['version-schedule-prompt']}{' '}
-            <a href="https://github.com/nodejs/release#release-schedule">
+            <LocalizedLink href="/about/previous-releases">
               {labels?.['version-schedule-prompt-link-text']}
-            </a>
+            </LocalizedLink>
             .
           </p>
         </div>
