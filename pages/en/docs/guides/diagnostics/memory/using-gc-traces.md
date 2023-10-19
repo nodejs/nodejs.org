@@ -189,7 +189,7 @@ But how could we spot the context?
 
 ### How to get the context of bad allocations
 
-1. Suppose we observe that the old space is continously increasing.
+1. Suppose we observe that the old space is continuously increasing.
 2. Reduce [`--max-old-space-size`][] such that the total heap is closer to the limit
 3. Run the program until you hit the out of memory.
 4. The produced log shows the failing context.
@@ -226,7 +226,7 @@ should be that the last GC trace will contain a bigger heap size.
 [40977:0x128008000]     2066 ms: Mark-sweep (reduce) 99.6 (102.5) -> 99.6 (102.5) MB, 46.7 / 0.0 ms  (+ 0.0 ms in 0 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 47 ms) (average mu = 0.154, current mu = 0.155) allocati[40977:0x128008000]     2123 ms: Mark-sweep (reduce) 99.6 (102.5) -> 99.6 (102.5) MB, 47.7 / 0.0 ms  (+ 0.0 ms in 0 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 48 ms) (average mu = 0.165, current mu = 0.175) allocati
 ```
 
-> Note: In the context of real application, it could be cumbersome to find the leaked object in the code. Heap snpashot could help you to find it. Visit the [guide dedicated to heap snapshot][]
+> Note: In the context of real application, it could be cumbersome to find the leaked object in the code. Heap snapshot could help you to find it. Visit the [guide dedicated to heap snapshot][]
 
 ### Slowness
 
@@ -393,7 +393,7 @@ For more information, you can refer to
 [`--max-old-space-size`]: https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes
 [performance hooks]: https://nodejs.org/api/perf_hooks.html
 [exercise]: https://github.com/nodejs/diagnostics/tree/main/documentation/memory/step3/exercise
-[guide dedicated to heap snapshot]: https://github.com/nodejs/nodejs.org/blob/main/locale/en/docs/guides/diagnostics/memory/using-heap-snapshot.md#how-to-find-a-memory-leak-with-heap-snapshots
+[guide dedicated to heap snapshot]: https://github.com/nodejs/nodejs.org/blob/main/pages/en/docs/guides/diagnostics/memory/using-heap-snapshot.md#how-to-find-a-memory-leak-with-heap-snapshots
 [document]: https://github.com/thlorenz/v8-perf/blob/master/gc.md#marking-state
 [Scavenge scenario]: https://github.com/thlorenz/v8-perf/blob/master/gc.md#sample-scavenge-scenario
 [talk of Peter Marshall]: https://v8.dev/blog/trash-talk
