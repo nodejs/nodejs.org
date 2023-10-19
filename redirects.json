@@ -29,14 +29,6 @@
       "destination": "https://github.com/nodejs/dev-policy"
     },
     {
-      "source": "/:locale/about/releases",
-      "destination": "https://github.com/nodejs/release#release-schedule"
-    },
-    {
-      "source": "/:locale/about/security",
-      "destination": "https://github.com/nodejs/node/security/policy#security"
-    },
-    {
       "source": "/:locale/advisory-board",
       "destination": "https://github.com/nodejs/TSC"
     },
@@ -161,6 +153,14 @@
     {
       "source": "/logos/:path*",
       "destination": "/static/images/logos/:path*"
+    },
+    {
+      "source": "/:locale/download/releases",
+      "destination": "/:locale/about/previous-releases"
+    },
+    {
+      "source": "/:locale/about/security",
+      "destination": "/:locale/about/node-security"
     }
   ]
 }

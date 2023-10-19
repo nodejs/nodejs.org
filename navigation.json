@@ -1,16 +1,19 @@
 {
-  "home": {
-    "link": "/",
-    "translationId": "components.header.links.home",
-    "items": {}
-  },
   "about": {
     "link": "/about",
-    "translationId": "components.header.links.about",
+    "translationId": "components.header.links.about.full",
     "items": {
       "governance": {
         "link": "/about/governance",
         "translationId": "components.navigation.about.links.governance"
+      },
+      "releases": {
+        "link": "/about/previous-releases",
+        "translationId": "components.navigation.about.links.releases"
+      },
+      "security": {
+        "link": "/about/node-security",
+        "translationId": "components.navigation.about.links.security"
       }
     }
   },
@@ -29,10 +32,6 @@
       "packageManager": {
         "link": "/download/package-manager",
         "translationId": "components.downloadList.links.packageManager"
-      },
-      "previousReleases": {
-        "link": "/download/releases",
-        "translationId": "components.downloadList.links.previousReleases"
       },
       "nightlyReleases": {
         "link": "https://nodejs.org/download/nightly/",
@@ -99,11 +98,6 @@
         "translationId": "components.navigation.getInvolved.links.codeOfConduct"
       }
     }
-  },
-  "security": {
-    "link": "https://github.com/nodejs/node/security/policy#security",
-    "translationId": "components.header.links.security",
-    "items": {}
   },
   "certification": {
     "link": "https://openjsf.org/certification",

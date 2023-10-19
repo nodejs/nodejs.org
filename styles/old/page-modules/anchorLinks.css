@@ -2,6 +2,7 @@
   background: none;
   color: $light-gray2;
   padding: 0 0.25em;
+  float: right;
 
   &:link,
   &:active,
