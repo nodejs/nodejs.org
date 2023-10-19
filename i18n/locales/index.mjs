@@ -11,12 +11,14 @@ import fr from './fr.json' assert { type: 'json' };
 import id from './id.json' assert { type: 'json' };
 import it from './it.json' assert { type: 'json' };
 import ja from './ja.json' assert { type: 'json' };
+import ka from './ka.json' assert { type: 'json' };
 import ko from './ko.json' assert { type: 'json' };
 import ptBr from './pt-br.json' assert { type: 'json' };
 import ru from './ru.json' assert { type: 'json' };
 import tr from './tr.json' assert { type: 'json' };
 import uk from './uk.json' assert { type: 'json' };
 import zhCn from './zh-cn.json' assert { type: 'json' };
+import zhTw from './zh-tw.json' assert { type: 'json' };
 
 // This is the default export of the React Intl Locales and contains all the current locales
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -29,10 +31,12 @@ export default {
   id,
   it,
   ja,
+  ka,
   ko,
   'pt-br': ptBr,
   ru,
   tr,
   uk,
   'zh-cn': zhCn,
+  'zh-tw': zhTw,
 };

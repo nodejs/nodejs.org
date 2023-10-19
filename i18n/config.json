@@ -80,6 +80,16 @@
     "default": false
   },
   {
+    "code": "ka",
+    "localName": "ქართული",
+    "name": "Georgian",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "ka",
+    "enabled": false,
+    "default": false
+  },
+  {
     "code": "ko",
     "localName": "한국어",
     "name": "Korean",
@@ -136,6 +146,16 @@
     "langDir": "ltr",
     "dateFormat": "YYYY/MM/DD",
     "hrefLang": "zh-Hans",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "zh-tw",
+    "localName": "繁體中文",
+    "name": "Traditional Chinese",
+    "langDir": "ltr",
+    "dateFormat": "YYYY/MM/DD",
+    "hrefLang": "zh-Hant",
     "enabled": false,
     "default": false
   }
