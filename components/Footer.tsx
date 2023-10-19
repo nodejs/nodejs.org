@@ -46,6 +46,18 @@ const Footer: FC<FooterProps> = ({ className }) => (
             &nbsp;|&nbsp;
             <a href="https://www.linuxfoundation.org/cookies">Cookie Policy</a>
           </p>
+          <p>
+            <a
+              href="https://bestpractices.coreinfrastructure.org/projects/29"
+              style={{ display: 'inline-block' }}
+            >
+              {/*eslint-disable-next-line @next/next/no-img-element*/}
+              <img
+                src="https://bestpractices.coreinfrastructure.org/projects/29/badge"
+                alt="A badge showing the OpenSSF best practices level for the nodejs/node project."
+              />
+            </a>
+          </p>
           <div className="openjsfoundation-footer-edit"></div>
         </div>
       </div>
