@@ -41,3 +41,24 @@ ol {
     text-neutral-900
     dark:text-white;
 }
+
+th {
+  @apply border 
+  border-neutral-200 
+  px-4 
+  py-2 
+  text-left 
+  text-neutral-900
+  dark:border-neutral-800 
+  dark:text-white;
+}
+
+td {
+  @apply border 
+  border-neutral-200 
+  px-4 
+  py-2
+  text-neutral-900 
+  dark:border-neutral-800
+  dark:text-white;
+}
