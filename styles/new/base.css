@@ -42,23 +42,49 @@ ol {
     dark:text-white;
 }
 
-th {
-  @apply border 
+table {
+  @apply w-full 
+  border-separate 
+  border-spacing-0 
+  rounded
+  border
   border-neutral-200 
-  px-4 
-  py-2 
   text-left 
-  text-neutral-900
-  dark:border-neutral-800 
-  dark:text-white;
-}
+  dark:border-neutral-800;
 
-td {
-  @apply border 
-  border-neutral-200 
-  px-4 
-  py-2
-  text-neutral-900 
-  dark:border-neutral-800
-  dark:text-white;
+  th {
+    @apply border 
+    border-r-0 
+    border-t-0 
+    border-neutral-200
+    px-4
+    py-2 
+    font-semibold
+    text-neutral-900 
+    dark:border-neutral-800 
+    dark:text-white;
+  }
+
+  td {
+    @apply border 
+    border-r-0 
+    border-t-0 
+    border-neutral-200 
+    px-4 
+    py-2
+    text-neutral-900 
+    dark:border-neutral-800 
+    dark:text-white;
+  }
+
+  tr:last-child {
+    td {
+      @apply border-b-0;
+    }
+  }
+
+  td:first-child,
+  th:first-child {
+    @apply border-l-0;
+  }
 }
