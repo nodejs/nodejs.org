@@ -173,11 +173,11 @@ ssh -L 9221:localhost:9229 user@remote.example.com
 
 在版本 7 以及更早的版本使用 **--debug** 或 **--debug-brk** 开关启动调试时，Node.js 侦听由中断定义的调试命令，TCP 端口上的 V8 调试协议，默认为 `5858`。任何遵守此协议的调试客户端都可以连接并调试运行这个进程，下面有一些热门的说明。
 
-### [内置调试器](https://nodejs.org/dist/{#var currentVersion}/docs/api/debugger.html)
+### [内置调试器](https://nodejs.org/dist/latest/docs/api/debugger.html)
 
 V8 调试协议再也不维护或是归档了。
 
-### [node 监视器](https://nodejs.org/dist/{#var currentVersion}/docs/api/debugger.html)
+### [node 监视器](https://nodejs.org/dist/latest/docs/api/debugger.html)
 
 在 Node.js 内置命令行调试器中用 `node debug script_name.js` 启动你的脚本。你的脚本就在 Node 另外一个进程中随着 `--debug-brk` 启动了起来，并且初始化的 Node 进程运行 `_debugger.js` 脚本连接上你的目标。
 

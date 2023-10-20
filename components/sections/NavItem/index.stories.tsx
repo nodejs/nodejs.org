@@ -8,21 +8,28 @@ type Meta = MetaObj<typeof NavItem>;
 export const Default: Story = {
   args: {
     href: '/learn',
-    label: 'Learn',
+    children: 'Learn',
   },
 };
 
 export const WithExternalLink: Story = {
   args: {
     href: 'https://nodejs.org/en',
-    label: 'Learn',
+    children: 'Learn',
+  },
+};
+
+export const WithChildren: Story = {
+  args: {
+    href: 'https://nodejs.org/en',
+    children: <b>Learn</b>,
   },
 };
 
 export const FooterItem: Story = {
   args: {
     href: '/about',
-    label: 'Trademark Policy',
+    children: 'Trademark Policy',
     type: 'footer',
   },
 };

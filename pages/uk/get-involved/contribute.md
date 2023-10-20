@@ -44,4 +44,4 @@ layout: contribute.hbs
 - участь у робочих групах
 - інша участь у більшій спільноті Node.js
 
-Якщо особи, які роблять цінні внески, не вважають, що їх розглядали для отримання доступу до коміту, вони можуть [зареєструвати проблему](https://github.com/nodejs/TSC/issues) або [ звернутися безпосередньо до члена TSC](https://github.com/nodejs/node#tsc-technical-steering-committee).
+Якщо особи, які роблять цінні внески, не вважають, що їх розглядали для отримання доступу до коміту, вони можуть [зареєструвати проблему](https://github.com/nodejs/TSC/issues) або [звернутися безпосередньо до члена TSC](https://github.com/nodejs/node#tsc-technical-steering-committee).

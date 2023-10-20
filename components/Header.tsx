@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import Image from 'next/image';
+import { useTheme } from 'next-themes';
 import { useIntl } from 'react-intl';
 
 import { useLocale } from '@/hooks/useLocale';
@@ -13,6 +14,7 @@ const Header = () => {
   const { navigationItems } = useNavigation();
   const { formatMessage } = useIntl();
   const { asPath, basePath } = useRouter();
+  const { theme, setTheme } = useTheme();
 
   const getLinkClassName = (href: string) =>
     classNames({ active: isCurrentLocaleRoute(href, href !== '/') });
@@ -57,6 +59,7 @@ const Header = () => {
             type="button"
             title={toggleDarkMode}
             aria-label={toggleDarkMode}
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           >
             <Image
               priority
@@ -66,6 +69,7 @@ const Header = () => {
               src={`${basePath}/static/images/light-mode.svg`}
               alt="Dark Theme Switcher"
             />
+
             <Image
               priority
               width="28"

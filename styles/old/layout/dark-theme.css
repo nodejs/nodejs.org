@@ -1,7 +1,6 @@
 html[data-theme='dark'] {
   background-color: $dark-black;
   color: $white;
-  color-scheme: dark;
 
   .dark-theme-switcher {
     img.light-image {
