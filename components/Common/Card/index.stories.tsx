@@ -12,11 +12,13 @@ export const Default: Story = {
     subtitle: 'Vulnerabilities',
     description:
       'Starting on March 15th and going through to March 17th (with much of the issue being mitigated on the 16th), users were receiving intermittent 404 responses when trying to download Node.js from nodejs.org, or even accessing parts of the website.',
-    author: {
-      firstName: 'Hayden',
-      lastName: 'Bleasel',
-      src: 'https://avatars.githubusercontent.com/u/',
-    },
+    authors: [
+      {
+        firstName: 'Hayden',
+        lastName: 'Bleasel',
+        src: 'https://avatars.githubusercontent.com/u/',
+      },
+    ],
     date: new Date(),
   },
   decorators: [
@@ -26,6 +28,21 @@ export const Default: Story = {
       </div>
     ),
   ],
+};
+
+export const MoreThanOneAuthor: Story = {
+  ...Default,
+  args: {
+    ...Default.args,
+    authors: [
+      ...(Default.args?.authors ?? []),
+      {
+        firstName: 'Jane',
+        lastName: 'Doe',
+        src: 'https://avatars.githubusercontent.com/u/',
+      },
+    ],
+  },
 };
 
 export default { component: Card } as Meta;

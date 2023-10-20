@@ -7,16 +7,18 @@ import { shortHumanReadableDate } from '@/util/shortHumanReadableDate';
 
 import styles from './index.module.css';
 
+type Author = {
+  firstName: string;
+  lastName: string;
+  src: ComponentProps<typeof AvatarGroup>['avatars'][number]['src'];
+};
+
 export type CardProps = {
   title: ComponentProps<typeof Preview>['title'];
   type: ComponentProps<typeof Preview>['type'];
   subtitle: string;
   description: string;
-  author: {
-    firstName: string;
-    lastName: string;
-    src: string;
-  };
+  authors: Author[];
   date: Date;
 };
 
@@ -25,19 +27,22 @@ const Card: FC<CardProps> = ({
   type,
   subtitle,
   description,
-  author,
+  authors,
   date,
 }) => {
   const avatars = useMemo(() => {
-    const avatars = [
-      {
-        alt: `${author.firstName} ${author.lastName}`,
-        src: author.src,
+    const parsedAvatars = authors.map(({ firstName, lastName, src }) => ({
+      alt: `${firstName} ${lastName}`,
+      src,
+      toString() {
+        return `${firstName} ${lastName}`;
       },
-    ];
+    }));
 
-    return avatars;
-  }, [author.firstName, author.lastName, author.src]);
+    return parsedAvatars;
+  }, [authors]);
+
+  const authorNames = avatars.join(', ');
 
   return (
     <article className={styles.container}>
@@ -53,9 +58,7 @@ const Card: FC<CardProps> = ({
       <footer className={styles.footer}>
         <AvatarGroup avatars={avatars} />
         <div>
-          <p className={styles.author}>
-            {author.firstName} {author.lastName}
-          </p>
+          <p className={styles.author}>{authorNames}</p>
           <time className={styles.date} dateTime={date.toISOString()}>
             {shortHumanReadableDate(date)}
           </time>
