@@ -24,10 +24,14 @@ const ThemeToggle: FC<ThemeToggleProps> = ({ onChange }) => {
           id: 'components.header.buttons.toggleDarkMode',
         })}
       >
-        <>
-          <SunIcon className="block dark:hidden" />
-          <MoonIcon className="hidden dark:block" />
-        </>
+        <MoonIcon className="hidden dark:block" />
+      </AccessibleIcon>
+      <AccessibleIcon
+        label={intl.formatMessage({
+          id: 'components.header.buttons.toggleLightMode',
+        })}
+      >
+        <SunIcon className="block dark:hidden" />
       </AccessibleIcon>
     </button>
   );
