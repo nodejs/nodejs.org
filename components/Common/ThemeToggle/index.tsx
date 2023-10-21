@@ -6,17 +6,17 @@ import { useIntl } from 'react-intl';
 import styles from './index.module.css';
 
 type ThemeToggleProps = {
-  toggleTheme: () => void;
+  onChange: () => void;
 };
 
-const ThemeToggle: FC<ThemeToggleProps> = ({ toggleTheme }) => {
+const ThemeToggle: FC<ThemeToggleProps> = ({ onChange }) => {
   const intl = useIntl();
 
   return (
     <button
       type="button"
-      onClick={toggleTheme}
-      onKeyDown={toggleTheme}
+      onClick={onChange}
+      onKeyDown={onChange}
       className={styles.themeToggle}
     >
       <AccessibleIcon
