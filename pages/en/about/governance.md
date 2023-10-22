@@ -22,7 +22,7 @@ For the current list of Collaborators, see the project's [README.md][].
 
 A guide for Collaborators is maintained at [collaborator-guide.md][].
 
-## Top Level Committees
+## Technical Steering Committee
 
 The project is governed by the [Technical Steering Committee (TSC)][]
 which is responsible for high-level guidance of the project.
