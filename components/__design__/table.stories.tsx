@@ -31,4 +31,28 @@ export const Table: StoryObj = {
   ),
 };
 
+export const HeadlessTable: StoryObj = {
+  render: () => (
+    <table>
+      <tbody>
+        <tr>
+          <td>Data 1</td>
+          <td>Data 2</td>
+          <td>Data 3</td>
+        </tr>
+        <tr>
+          <td>Data 1</td>
+          <td>Data 2</td>
+          <td>Data 3</td>
+        </tr>
+        <tr>
+          <td>Data 1</td>
+          <td>Data 2</td>
+          <td>Data 3</td>
+        </tr>
+      </tbody>
+    </table>
+  ),
+};
+
 export default { title: 'Design System' } as MetaObj;
