@@ -39,7 +39,7 @@ jobs:
             > [!NOTE]\
             > Your Pull Request seems to be updating **Translations** of the Node.js Website.
             >
-            > Whilst we appreciate your intent; Any Translation update should be done through our [Crowdin Project](https://crowdin.com/project/nodejs-website).
+            > Whilst we appreciate your intent; Any Translation update should be done through our [Crowdin Project](https://crowdin.com/project/nodejs-web).
             > We recommend giving a read on our [Translation Guidelines](https://github.com/nodejs/nodejs.org/blob/main/TRANSLATION.md).
             >
             > Thank you!
