@@ -20,7 +20,6 @@ const comment = [
     result['best-practices']
   } |`,
   `| ${score(result.seo)} SEO | ${result.seo} |`,
-  `| ${score(result.pwa)} PWA | ${result.pwa} |`,
   ' ',
   `*Lighthouse ran on [${Object.keys(links)}](${Object.keys(links)[0]})*`,
 ].join('\n');
