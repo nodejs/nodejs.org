@@ -19,13 +19,13 @@ const PaginationListItem: FC<PaginationListItemProps> = ({
   currentPage,
   totalPages,
 }) => {
-  const intl = useIntl();
+  const { formatMessage } = useIntl();
 
   return (
     <li key={pageNumber} aria-setsize={totalPages} aria-posinset={pageNumber}>
       <LocalizedLink
         href={url}
-        aria-label={intl.formatMessage(
+        aria-label={formatMessage(
           { id: 'components.common.pagination.pageLabel' },
           { pageNumber }
         )}
