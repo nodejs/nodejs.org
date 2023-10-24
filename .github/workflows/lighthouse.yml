@@ -84,6 +84,7 @@ jobs:
           configPath: './.lighthouserc.json'
           urls: |
             ${{ steps.vercel_preview_url.outputs.url }}
+            ${{ steps.vercel_preview_url.outputs.url }}/download
           uploadArtifacts: true
 
       - name: Format lighthouse score
@@ -91,7 +92,7 @@ jobs:
         id: format_lighthouse_score
         uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6.4.1
         env:
-          LIGHTHOUSE_RESULT: ${{ steps.lighthouse_audit.outputs.manifest }}[0].summary
+          LIGHTHOUSE_RESULT: ${{ steps.lighthouse_audit.outputs.manifest[0].summary }}
           LIGHTHOUSE_LINKS: ${{ steps.lighthouse_audit.outputs.links }}
         with:
           # this is commonjs for now. ESM/MJS syntax might work but I don't want to set type:module globally yet
