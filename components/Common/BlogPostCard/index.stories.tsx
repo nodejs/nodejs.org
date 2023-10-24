@@ -1,21 +1,19 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import Card from './index';
+import BlogPostCard from './index';
 
-type Story = StoryObj<typeof Card>;
-type Meta = MetaObj<typeof Card>;
+type Story = StoryObj<typeof BlogPostCard>;
+type Meta = MetaObj<typeof BlogPostCard>;
 
 export const Default: Story = {
   args: {
     title: 'Node.js March 17th Infrastructure Incident Post-mortem',
     type: 'vulnerability',
-    subtitle: 'Vulnerabilities',
     description:
       'Starting on March 15th and going through to March 17th (with much of the issue being mitigated on the 16th), users were receiving intermittent 404 responses when trying to download Node.js from nodejs.org, or even accessing parts of the website.',
     authors: [
       {
-        firstName: 'Hayden',
-        lastName: 'Bleasel',
+        fullName: 'Hayden Bleasel',
         src: 'https://avatars.githubusercontent.com/u/',
       },
     ],
@@ -37,12 +35,11 @@ export const MoreThanOneAuthor: Story = {
     authors: [
       ...(Default.args?.authors ?? []),
       {
-        firstName: 'Jane',
-        lastName: 'Doe',
+        fullName: 'Jane Doe',
         src: 'https://avatars.githubusercontent.com/u/',
       },
     ],
   },
 };
 
-export default { component: Card } as Meta;
+export default { component: BlogPostCard } as Meta;

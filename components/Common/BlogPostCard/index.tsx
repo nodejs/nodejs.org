@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import type { ComponentProps, FC } from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import AvatarGroup from '@/components/Common/AvatarGroup';
 import Preview from '@/components/Common/Preview';
@@ -8,34 +9,31 @@ import { shortHumanReadableDate } from '@/util/shortHumanReadableDate';
 import styles from './index.module.css';
 
 type Author = {
-  firstName: string;
-  lastName: string;
+  fullName: string;
   src: ComponentProps<typeof AvatarGroup>['avatars'][number]['src'];
 };
 
-export type CardProps = {
+export type BlogPostCardProps = {
   title: ComponentProps<typeof Preview>['title'];
-  type: ComponentProps<typeof Preview>['type'];
-  subtitle: string;
+  type: Required<ComponentProps<typeof Preview>>['type'];
   description: string;
   authors: Author[];
   date: Date;
 };
 
-const Card: FC<CardProps> = ({
+const BlogPostCard: FC<BlogPostCardProps> = ({
   title,
   type,
-  subtitle,
   description,
   authors,
   date,
 }) => {
   const avatars = useMemo(() => {
-    const parsedAvatars = authors.map(({ firstName, lastName, src }) => ({
-      alt: `${firstName} ${lastName}`,
+    const parsedAvatars = authors.map(({ fullName, src }) => ({
+      alt: fullName,
       src,
       toString() {
-        return `${firstName} ${lastName}`;
+        return fullName;
       },
     }));
 
@@ -52,7 +50,9 @@ const Card: FC<CardProps> = ({
         height="auto"
         className={styles.preview}
       />
-      <p className={styles.subtitle}>{subtitle}</p>
+      <p className={styles.subtitle}>
+        <FormattedMessage id={`components.common.card.${type}`} />
+      </p>
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
       <footer className={styles.footer}>
@@ -68,4 +68,4 @@ const Card: FC<CardProps> = ({
   );
 };
 
-export default Card;
+export default BlogPostCard;
