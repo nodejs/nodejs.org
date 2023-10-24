@@ -53,7 +53,7 @@ jobs:
           # or the merge_group `ref`
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
 
-      - name: Add comment to PR
+      - name: Add Comment to PR
         # Signal that a lighthouse run is about to start
         uses: thollander/actions-comment-pull-request@d61db783da9abefc3437960d0cce08552c7c004f # v2.4.2
         with:
@@ -76,7 +76,7 @@ jobs:
           # the actual branch of the Pull Request.
           ref: ${{ github.event.pull_request.head.ref }}
 
-      - name: Audit preview URL with Lighthouse
+      - name: Audit Preview URL with Lighthouse
         # Conduct the lighthouse audit
         id: lighthouse_audit
         uses: treosh/lighthouse-ci-action@03becbfc543944dd6e7534f7ff768abb8a296826 # v10.1.0
@@ -87,7 +87,7 @@ jobs:
             ${{ steps.vercel_preview_url.outputs.url }}/en/download
           uploadArtifacts: true
 
-      - name: Format lighthouse score
+      - name: Format Lighthouse Score
         # Transform the audit results into a single, friendlier output
         id: format_lighthouse_score
         uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6.4.1
@@ -99,10 +99,10 @@ jobs:
             const script = require('./scripts/lighthouse/index.js')
             script({core})
 
-      - name: Add comment to PR
+      - name: Add Comment to PR
         # Replace the previous message with our formatted lighthouse results
         uses: thollander/actions-comment-pull-request@d61db783da9abefc3437960d0cce08552c7c004f # v2.4.2
         with:
-          comment_tag: 'LH Audit'
+          comment_tag: 'lighthouse_audit'
           message: |
             > ${{ steps.format_lighthouse_score.outputs.comment }}
