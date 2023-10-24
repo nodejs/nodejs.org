@@ -58,8 +58,8 @@ jobs:
         uses: thollander/actions-comment-pull-request@d61db783da9abefc3437960d0cce08552c7c004f # v2.4.2
         with:
           message: |
-            > Running Lighthouse audit...
-          comment_tag: 'LH Audit'
+            Running Lighthouse audit...
+          comment_tag: 'lighthouse_audit'
 
       - name: Capture Vercel Preview
         uses: patrickedqvist/wait-for-vercel-preview@dca4940010f36d2d44caa487087a09b57939b24a # v1.3.1
