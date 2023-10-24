@@ -3,20 +3,13 @@
 import { readFileSync } from 'node:fs';
 import { join, normalize, sep } from 'node:path';
 
-import remarkHeadings from '@vcarl/remark-headings';
 import { serialize } from 'next-mdx-remote/serialize';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypePrettyCode from 'rehype-pretty-code';
-import rehypeSlug from 'rehype-slug';
-import { getHighlighter } from 'shiki';
-import shikiNordTheme from 'shiki/themes/nord.json';
 import { VFile } from 'vfile';
 
 import { DEFAULT_LOCALE_CODE, MD_EXTENSION_REGEX } from './next.constants.mjs';
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { availableLocales } from './next.locales.mjs';
-import { remarkAutoLinkLiteral } from './next.mdast.mjs';
-import { SUPPORTED_LANGUAGES } from './shiki.config.mjs';
+import { nextRehypePlugins, nextRemarkPlugins } from './next.mdx.mjs';
 
 // allows us to run a glob to get markdown files based on a language folder
 const getPathsByLanguage = async (locale = DEFAULT_LOCALE_CODE, ignored = []) =>
@@ -152,6 +145,9 @@ export const generateStaticProps = async (source = '', filename = '') => {
     // data post serialization (compilation) of the source Markdown into MDX
     const sourceAsVirtualFile = new VFile(source);
 
+    // Gets the file extension of the file, to determine which parser and plugins to use
+    const fileExtension = filename.endsWith('.mdx') ? 'mdx' : 'md';
+
     // This act as a MDX "compiler" but, lightweight. It parses the Markdown
     // string source into a React Component tree, and then it serializes it
     // it also supports Remark plugins, and MDX components
@@ -159,27 +155,9 @@ export const generateStaticProps = async (source = '', filename = '') => {
     const { compiledSource } = await serialize(sourceAsVirtualFile, {
       parseFrontmatter: true,
       mdxOptions: {
-        rehypePlugins: [
-          rehypeSlug,
-          [
-            rehypeAutolinkHeadings,
-            {
-              behaviour: 'append',
-              properties: { ariaHidden: true, tabIndex: -1, class: 'anchor' },
-            },
-          ],
-          [
-            rehypePrettyCode,
-            {
-              theme: shikiNordTheme,
-              defaultLang: 'plaintext',
-              getHighlighter: options =>
-                getHighlighter({ ...options, langs: SUPPORTED_LANGUAGES }),
-            },
-          ],
-        ],
-        remarkPlugins: [remarkHeadings, remarkAutoLinkLiteral],
-        format: filename.includes('.mdx') ? 'mdx' : 'md',
+        rehypePlugins: nextRehypePlugins(fileExtension),
+        remarkPlugins: nextRemarkPlugins(fileExtension),
+        format: fileExtension,
       },
     });
 
