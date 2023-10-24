@@ -94,10 +94,9 @@ jobs:
         env:
           LIGHTHOUSE_RESULT: ${{ steps.lighthouse_audit.outputs.manifest }}
         with:
-          # todo: this is commonjs for now. ESM/MJS syntax might work but I don't want to set type:module globally yet. Maybe Claudio will know if there are side-effects to doing that.
           script: |
-            const script = require('./scripts/lighthouse/index.js')
-            script({core})
+            const { format } = await import('./scripts/lighthouse/index.mjs')
+            await format({core})
 
       - name: Add Comment to PR
         # Replace the previous message with our formatted lighthouse results
