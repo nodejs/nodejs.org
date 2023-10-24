@@ -84,6 +84,7 @@ jobs:
           configPath: './.lighthouserc.json'
           urls: |
             ${{ steps.vercel_preview_url.outputs.url }}
+            ${{ steps.vercel_preview_url.outputs.url }}/download
           uploadArtifacts: true
 
       - name: Format lighthouse score
