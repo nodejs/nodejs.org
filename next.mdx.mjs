@@ -76,7 +76,8 @@ export function nextRehypePlugins(fileExtension) {
   ];
 
   if (fileExtension === 'md') {
-    // We add the rehype-raw at the too (first plugin) as it should parse raw HTML
+    // We add this plugin at the top of the array as it is supposed to parse raw HTML
+    // before any other plugins (such as adding headings, etc)
     // before any of the other plugins being applied
     rehypePlugins.unshift(rehypeRaw.default);
   }
