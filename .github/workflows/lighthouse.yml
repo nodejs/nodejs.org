@@ -66,7 +66,7 @@ jobs:
         id: vercel_preview_url
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          max_timeout: 90
+          max_timeout: 60
 
       - name: Git Checkout
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
@@ -105,4 +105,4 @@ jobs:
         with:
           comment_tag: 'lighthouse_audit'
           message: |
-            > ${{ steps.format_lighthouse_score.outputs.comment }}
+            ${{ steps.format_lighthouse_score.outputs.comment }}
