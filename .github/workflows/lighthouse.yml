@@ -8,7 +8,7 @@
 # The main purpose of this Workflow is to decorate the Pull Request with important information for a Pull Request
 # On a merge queue the Pull Request already got approved!
 
-name: Lighthoouse
+name: Lighthouse
 
 on:
   push:
@@ -69,13 +69,12 @@ jobs:
             > Running Lighthouse audit...
           comment_tag: 'LH Audit'
 
-      - name: Capture Vercel preview URL
-        # Get the vercel preview url
+      - name: Capture Vercel Preview
+        uses: patrickedqvist/wait-for-vercel-preview@dca4940010f36d2d44caa487087a09b57939b24a # v1.3.1
         id: vercel_preview_url
-        uses: aaimio/vercel-preview-url-action@b82a318e4c1eac7ef38ed1b241677a81db08494b # v2.2.0
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 #v 3.5.3
+          token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 60
 
       - name: Audit preview URL with Lighthouse
         # Conduct the lighthouse audit
@@ -84,7 +83,7 @@ jobs:
         with:
           configPath: './lighthouserc.json'
           urls: |
-            ${{ steps.vercel_preview_url.outputs.vercel_preview_url }}
+            ${{ steps.vercel_preview_url.outputs.url }}
           uploadArtifacts: true
 
       - name: Format lighthouse score
