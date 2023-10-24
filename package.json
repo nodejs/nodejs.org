@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "description": "Nodejs.org Website",
   "homepage": "https://nodejs.org",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nodejs/nodejs.org.git"
