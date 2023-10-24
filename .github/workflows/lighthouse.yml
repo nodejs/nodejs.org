@@ -5,8 +5,6 @@
 # REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
 # AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
 # MERGE QUEUE NOTE: This Workflow does not run on `merge_group` trigger, as this Workflow is not required for Merge Queue's
-# The main purpose of this Workflow is to decorate the Pull Request with important information for a Pull Request
-# On a merge queue the Pull Request already got approved!
 
 name: Lighthouse
 
@@ -55,9 +53,6 @@ jobs:
           # If the Workflow is running on `merge_group` or `push` events it fallsback to `github.ref` which will often be `main`
           # or the merge_group `ref`
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
-          # The Chromatic (@chromaui/action) Action requires a full history of the current branch in order to be able to compare
-          # previous changes and previous commits and determine which Storybooks should be tested against and what should be built
-          fetch-depth: 0
 
       - name: Add comment to PR
         # Signal that a lighthouse run is about to start
@@ -72,7 +67,7 @@ jobs:
         id: vercel_preview_url
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          max_timeout: 60
+          max_timeout: 90
 
       - name: Git Checkout
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
@@ -87,7 +82,7 @@ jobs:
         id: lighthouse_audit
         uses: treosh/lighthouse-ci-action@03becbfc543944dd6e7534f7ff768abb8a296826 # v10.1.0
         with:
-          configPath: './lighthouserc.json'
+          configPath: './.lighthouserc.json'
           urls: |
             ${{ steps.vercel_preview_url.outputs.url }}
           uploadArtifacts: true
