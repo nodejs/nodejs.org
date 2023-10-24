@@ -20,8 +20,6 @@ on:
     types:
       - labeled
   merge_group:
-  # testing
-  workflow_dispatch:
 
 defaults:
   run:
