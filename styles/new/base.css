@@ -70,10 +70,8 @@ table {
     @apply font-semibold;
   }
 
-  tr:last-child {
-    td {
-      @apply border-b-0;
-    }
+  tr:last-child td {
+    @apply border-b-0;
   }
 
   td:first-child,
