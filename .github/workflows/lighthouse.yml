@@ -85,6 +85,7 @@ jobs:
           urls: |
             ${{ steps.vercel_preview_url.outputs.url }}/en
             ${{ steps.vercel_preview_url.outputs.url }}/en/download
+            ${{ steps.vercel_preview_url.outputs.url }}/en/about
           uploadArtifacts: true
 
       - name: Format Lighthouse Score
