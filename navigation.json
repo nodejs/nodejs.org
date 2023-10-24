@@ -12,7 +12,7 @@
         "translationId": "components.navigation.about.links.releases"
       },
       "security": {
-        "link": "/about/node-security",
+        "link": "/about/security-reporting",
         "translationId": "components.navigation.about.links.security"
       }
     }

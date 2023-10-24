@@ -160,7 +160,7 @@
     },
     {
       "source": "/:locale/about/security",
-      "destination": "/:locale/about/node-security"
+      "destination": "/:locale/about/security-reporting"
     }
   ]
 }

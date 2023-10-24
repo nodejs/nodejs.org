@@ -1,6 +1,8 @@
 import type { FC } from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import LocalizedLink from './LocalizedLink';
+
 type FooterProps = { className?: string };
 
 // Note.: We don't expect to translate these items as we're going to replace with `nodejs/nodejs.dev` footer
@@ -33,18 +35,15 @@ const Footer: FC<FooterProps> = ({ className }) => (
           <p className="openjsfoundation-footer-links">
             <a href="https://openjsf.org">The OpenJS Foundation</a>
             &nbsp;|&nbsp;
-            <a href="https://terms-of-use.openjsf.org">Terms of Use</a>
+            <a href="https://trademark-policy.openjsf.org">Trademark Policy</a>
             &nbsp;|&nbsp;
             <a href="https://privacy-policy.openjsf.org">Privacy Policy</a>
             &nbsp;|&nbsp;
-            <a href="https://bylaws.openjsf.org">Bylaws</a>&nbsp;|&nbsp;
             <a href="https://code-of-conduct.openjsf.org">Code of Conduct</a>
             &nbsp;|&nbsp;
-            <a href="https://trademark-policy.openjsf.org">Trademark Policy</a>
-            &nbsp;|&nbsp;
-            <a href="https://trademark-list.openjsf.org">Trademark List</a>
-            &nbsp;|&nbsp;
-            <a href="https://www.linuxfoundation.org/cookies">Cookie Policy</a>
+            <LocalizedLink href="/about/security-reporting">
+              Security Reporting
+            </LocalizedLink>
           </p>
           <div className="openjsfoundation-footer-edit"></div>
         </div>
