@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import LanguageDropDown from './index';
+import LanguageDropDown from '@/components/Common/LanguageDropDown';
 
 type Story = StoryObj<typeof LanguageDropDown>;
 type Meta = MetaObj<typeof LanguageDropDown>;

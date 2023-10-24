@@ -1,11 +1,11 @@
 import { type LinkProps } from 'next/link';
 import { useMemo, type FC } from 'react';
 
-import BreadcrumbHomeLink from './BreadcrumbHomeLink';
-import BreadcrumbItem from './BreadcrumbItem';
-import BreadcrumbLink from './BreadcrumbLink';
-import BreadcrumbRoot from './BreadcrumbRoot';
-import BreadcrumbTruncatedItem from './BreadcrumbTruncatedItem';
+import BreadcrumbHomeLink from '@/components/Common/Breadcrumbs/BreadcrumbHomeLink';
+import BreadcrumbItem from '@/components/Common/Breadcrumbs/BreadcrumbItem';
+import BreadcrumbLink from '@/components/Common/Breadcrumbs/BreadcrumbLink';
+import BreadcrumbRoot from '@/components/Common/Breadcrumbs/BreadcrumbRoot';
+import BreadcrumbTruncatedItem from '@/components/Common/Breadcrumbs/BreadcrumbTruncatedItem';
 
 type BreadcrumbLink = {
   label: string;

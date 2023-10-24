@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import Breadcrumbs from './';
+import Breadcrumbs from '@/components/Common/Breadcrumbs';
 
 type Story = StoryObj<typeof Breadcrumbs>;
 type Meta = MetaObj<typeof Breadcrumbs>;

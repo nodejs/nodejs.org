@@ -9,7 +9,7 @@ import styles from './index.module.css';
 
 type Page = { url: string };
 
-export type PaginationProps = {
+type PaginationProps = {
   // One-based number of the current page
   currentPage: number;
   pages: Page[];
