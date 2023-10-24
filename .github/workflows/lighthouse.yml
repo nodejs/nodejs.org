@@ -8,7 +8,7 @@
 # The main purpose of this Workflow is to decorate the Pull Request with important information for a Pull Request
 # On a merge queue the Pull Request already got approved!
 
-name: Lighthoouse
+name: Lighthouse
 
 on:
   push:
@@ -75,7 +75,6 @@ jobs:
         uses: aaimio/vercel-preview-url-action@b82a318e4c1eac7ef38ed1b241677a81db08494b # v2.2.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 #v 3.5.3
 
       - name: Audit preview URL with Lighthouse
         # Conduct the lighthouse audit
