@@ -105,4 +105,4 @@ jobs:
         with:
           comment_tag: 'lighthouse_audit'
           message: |
-            > ${{ steps.format_lighthouse_score.outputs.comment }}
+            ${{ steps.format_lighthouse_score.outputs.comment }}
