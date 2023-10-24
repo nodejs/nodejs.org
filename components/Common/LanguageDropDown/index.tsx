@@ -4,21 +4,26 @@ import classNames from 'classnames';
 import type { FC } from 'react';
 import { useIntl } from 'react-intl';
 
-import { useLocale } from '@/hooks/useLocale';
+import type { LocaleConfig } from '@/types';
 
 import styles from './index.module.css';
 
-export type LanguageDropDownProps = {
-  onClick?: () => void;
+type SimpleLocaleConfig = Pick<LocaleConfig, 'name' | 'code'>;
+
+type LanguageDropDownProps = {
+  onChange?: (newLocale: SimpleLocaleConfig) => void;
+  currentLanguage: SimpleLocaleConfig;
+  availableLanguages: SimpleLocaleConfig[];
 };
 
 const LanguageDropdown: FC<LanguageDropDownProps> = ({
-  onClick = () => {},
+  onChange = () => {},
+  currentLanguage,
+  availableLanguages,
 }) => {
-  const { availableLocales, currentLocale } = useLocale();
-  const intl = useIntl();
+  const { formatMessage } = useIntl();
 
-  const ariaLabel = intl.formatMessage({
+  const ariaLabel = formatMessage({
     id: 'components.common.languageDropdown.label',
   });
 
@@ -36,17 +41,19 @@ const LanguageDropdown: FC<LanguageDropDownProps> = ({
           className={styles.dropDownContent}
           sideOffset={5}
         >
-          {availableLocales.map(({ name, code }) => (
-            <DropdownMenu.Item
-              key={code}
-              onClick={onClick}
-              className={classNames(styles.dropDownItem, {
-                [styles.currentDropDown]: code === currentLocale.code,
-              })}
-            >
-              {name}
-            </DropdownMenu.Item>
-          ))}
+          <div>
+            {availableLanguages.map(({ name, code }) => (
+              <DropdownMenu.Item
+                key={code}
+                onClick={() => onChange({ name, code })}
+                className={classNames(styles.dropDownItem, {
+                  [styles.currentDropDown]: code === currentLanguage.code,
+                })}
+              >
+                {name}
+              </DropdownMenu.Item>
+            ))}
+          </div>
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
