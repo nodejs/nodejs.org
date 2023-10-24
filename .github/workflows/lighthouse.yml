@@ -27,8 +27,7 @@ defaults:
 permissions:
   contents: read
   actions: read
-  # This permission is required by `thollander/actions-comment-pull-request`
-  # This permission is required by `MishaKav/jest-coverage-comment`
+  # todo document
   pull-requests: write
 
 jobs:
