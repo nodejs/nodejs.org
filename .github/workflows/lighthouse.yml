@@ -20,8 +20,6 @@ on:
     types:
       - labeled
   merge_group:
-  # testing
-  workflow_dispatch:
 
 defaults:
   run:
@@ -75,6 +73,14 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 60
+
+      - name: Git Checkout
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
+        with:
+          # By default Git Checkout on `pull-request-target` will checkout
+          # the `default` branch of the Pull Request. We want to checkout
+          # the actual branch of the Pull Request.
+          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Audit preview URL with Lighthouse
         # Conduct the lighthouse audit
