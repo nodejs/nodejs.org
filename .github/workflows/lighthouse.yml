@@ -48,7 +48,7 @@ jobs:
           # If the Workflow is running on `merge_group` or `push` events it fallsback to the base repository
           repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
           # We checkout the branch itself instead of a specific SHA (Commit) as we want to ensure that this Workflow
-          # is always running with the latest `ref` (changes) of the Pull Request's branh
+          # is always running with the latest `ref` (changes) of the Pull Request's branch
           # If the Workflow is running on `merge_group` or `push` events it fallsback to `github.ref` which will often be `main`
           # or the merge_group `ref`
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
