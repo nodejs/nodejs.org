@@ -1,27 +1,21 @@
 /* global core */
 
-const result = process.env.LIGHTHOUSE_RESULT;
-const links = process.env.LIGHTHOUSE_LINKS[0];
+const formatScore = res => Math.round(res * 100);
 
-const formatResult = res => Math.round(res * 100);
-Object.keys(result).forEach(key => (result[key] = formatResult(result[key])));
+// this will be the shape of https://github.com/treosh/lighthouse-ci-action#manifest
+const results = JSON.parse(process.env.LIGHTHOUSE_RESULT);
 
-const score = res => (res >= 90 ? '🟢' : res >= 50 ? '🟠' : '🔴');
+const formattedResults = results
+  .map(({ url, summary }) => {
+    return `Lighthouse results for ${url}
+  Category | Score
+  --- | ---
+  Performance | ${formatScore(summary.performance)}
+  Accessibility | ${formatScore(summary.accessibility)}
+  Best practices | ${formatScore(summary['best-practices'])}
+  SEO | ${formatScore(summary.seo)}
+  `;
+  })
+  .join('\n\n');
 
-const comment = [
-  `⚡️ [Lighthouse report](${Object.values(
-    links
-  )}) for the changes in this PR:`,
-  '| Category | Score |',
-  '| --- | --- |',
-  `| ${score(result.performance)} Performance | ${result.performance} |`,
-  `| ${score(result.accessibility)} Accessibility | ${result.accessibility} |`,
-  `| ${score(result['best-practices'])} Best practices | ${
-    result['best-practices']
-  } |`,
-  `| ${score(result.seo)} SEO | ${result.seo} |`,
-  ' ',
-  `*Lighthouse ran on [${Object.keys(links)}](${Object.keys(links)[0]})*`,
-].join('\n');
-
-core.setOutput('comment', comment);
+core.setOutput('comment', formattedResults);
