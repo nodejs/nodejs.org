@@ -5,12 +5,12 @@ import DownloadReleasesTable from '@/components/Downloads/DownloadReleasesTable'
 import { useLayoutContext } from '@/hooks/useLayoutContext';
 import type { LegacyDownloadsReleasesFrontMatter } from '@/types';
 
-import BaseLayout from './BaseLayout';
+import AboutLayout from './AboutLayout';
 
 const DownloadReleasesLayout: FC<PropsWithChildren> = ({ children }) => {
   const { frontMatter } = useLayoutContext();
 
-  const { modules, title } = frontMatter as LegacyDownloadsReleasesFrontMatter;
+  const { modules } = frontMatter as LegacyDownloadsReleasesFrontMatter;
 
   // @TODO: Remove this once we migrate to `nodejs/nodejs.dev` codebase as this is unsafe
   // And completely not recommended
@@ -20,25 +20,19 @@ const DownloadReleasesLayout: FC<PropsWithChildren> = ({ children }) => {
   );
 
   return (
-    <BaseLayout>
-      <div className="container">
-        <article dir="auto">
-          <h1>{title}</h1>
+    <AboutLayout>
+      {children}
 
-          <section>{children}</section>
-
-          <section>
-            <DownloadReleasesTable />
-            <p>
-              <small
-                id="ref-1"
-                dangerouslySetInnerHTML={{ __html: extraModulesContent }}
-              />
-            </p>
-          </section>
-        </article>
-      </div>
-    </BaseLayout>
+      <section>
+        <DownloadReleasesTable />
+        <p>
+          <small
+            id="ref-1"
+            dangerouslySetInnerHTML={{ __html: extraModulesContent }}
+          />
+        </p>
+      </section>
+    </AboutLayout>
   );
 };
 

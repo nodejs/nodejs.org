@@ -27,9 +27,9 @@ A guide for Collaborators is maintained at [collaborator-guide.md][].
 The project is governed by the [Technical Steering Committee (TSC)][]
 which is responsible for high-level guidance of the project.
 
+[consensus seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
+[readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
+[tsc]: https://github.com/nodejs/TSC
+[technical steering committee (tsc)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
-[Consensus Seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
-[README.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
-[Technical Steering Committee (TSC)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
-[TSC]: https://github.com/nodejs/TSC
 [nodejs/node]: https://github.com/nodejs/node

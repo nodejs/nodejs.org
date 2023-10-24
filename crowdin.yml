@@ -8,28 +8,30 @@ files:
     content_segmentation: 0
     ignore:
       - /pages/en/blog/**/*.md
+      - /pages/en/docs/**/*.md
     languages_mapping:
       two_letters_code:
+        es-ES: es
         pt-BR: pt-br
         zh-CN: zh-cn
         zh-TW: zh-tw
-        es-ES: es
   - source: /pages/en/**/*.mdx
     translation: /pages/%two_letters_code%/**/%original_file_name%
     content_segmentation: 0
     ignore:
       - /pages/en/blog/**/*.mdx
+      - /pages/en/docs/**/*.mdx
     languages_mapping:
       two_letters_code:
+        es-ES: es
         pt-BR: pt-br
         zh-CN: zh-cn
         zh-TW: zh-tw
-        es-ES: es
   - source: /i18n/locales/en.json
     translation: /i18n/locales/%two_letters_code%.json
     languages_mapping:
       two_letters_code:
+        es-ES: es
         pt-BR: pt-br
         zh-CN: zh-cn
         zh-TW: zh-tw
-        es-ES: es
