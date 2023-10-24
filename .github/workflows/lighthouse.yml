@@ -94,7 +94,7 @@ jobs:
         env:
           LIGHTHOUSE_RESULT: ${{ steps.lighthouse_audit.outputs.manifest }}
         with:
-          # this is commonjs for now. ESM/MJS syntax might work but I don't want to set type:module globally yet
+          # todo: this is commonjs for now. ESM/MJS syntax might work but I don't want to set type:module globally yet
           script: |
             const script = require('./scripts/lighthouse/index.js')
             script({core})
