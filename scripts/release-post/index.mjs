@@ -215,9 +215,7 @@ const renderPost = results => {
 const formatPost = results => {
   return new Promise((resolve, reject) => {
     format(results.content, { ...prettierConfig, parser: 'markdown' })
-      .then(formattedContent =>
-        resolve({ ...results, content: formattedContent })
-      )
+      .then(content => resolve({ ...results, content }))
       .catch(error => reject(ERRORS.FAILED_FILE_FORMATTING(error.message)));
   });
 };
