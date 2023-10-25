@@ -28,6 +28,7 @@ import handlebars from 'handlebars';
 import { format } from 'prettier';
 
 import { downloadsTable } from './downloadsTable.mjs';
+import prettierConfig from '../../.prettierrc.json' assert { type: 'json' };
 import { getRelativePath } from '../../next.helpers.mjs';
 
 const URLS = {
@@ -213,7 +214,7 @@ const renderPost = results => {
 
 const formatPost = results => {
   return new Promise((resolve, reject) => {
-    format(results.content, { parser: 'markdown' })
+    format(results.content, { ...prettierConfig, parser: 'markdown' })
       .then(formattedContent =>
         resolve({ ...results, content: formattedContent })
       )
