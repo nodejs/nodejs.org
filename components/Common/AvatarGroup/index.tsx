@@ -2,10 +2,10 @@ import classNames from 'classnames';
 import type { ComponentProps, FC } from 'react';
 import { useState, useMemo } from 'react';
 
+import Avatar from '@/components/Common/AvatarGroup/Avatar';
+import avatarstyles from '@/components/Common/AvatarGroup/Avatar/index.module.css';
 import { getAcronymFromString } from '@/util/stringUtils';
 
-import Avatar from './Avatar';
-import avatarstyles from './Avatar/index.module.css';
 import styles from './index.module.css';
 
 type AvatarGroupProps = {

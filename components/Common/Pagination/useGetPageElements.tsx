@@ -1,27 +1,24 @@
-import Ellipsis from './Ellipsis';
-import type { PaginationListItemProps } from './PaginationListItem/index';
-import PaginationListItem from './PaginationListItem/index';
+import type { ComponentProps } from 'react';
 
-import type { PaginationProps } from '.';
+import type Pagination from '@/components/Common/Pagination';
+import Ellipsis from '@/components/Common/Pagination/Ellipsis';
+import type { PaginationListItemProps } from '@/components/Common/Pagination/PaginationListItem/index';
+import PaginationListItem from '@/components/Common/Pagination/PaginationListItem/index';
 
-function parsePages(
-  pages: PaginationProps['pages'],
+const parsePages = (
+  pages: ComponentProps<typeof Pagination>['pages'],
   currentPage: number,
   totalPages: number
-): PaginationListItemProps[] {
-  return pages.map(({ url }, index) => ({
+): PaginationListItemProps[] =>
+  pages.map(({ url }, index) => ({
     url,
     pageNumber: index + 1,
     currentPage,
     totalPages,
   }));
-}
 
-function createPaginationListItems(parsedPages: PaginationListItemProps[]) {
-  return parsedPages.map(page => (
-    <PaginationListItem key={page.url} {...page} />
-  ));
-}
+const createPaginationListItems = (parsedPages: PaginationListItemProps[]) =>
+  parsedPages.map(page => <PaginationListItem key={page.url} {...page} />);
 
 // The minimum amount of elements are first page, current page, and last page
 const MINIMUM_AMOUNT_OF_ELEMENTS = 3;
@@ -33,8 +30,8 @@ const MAXIMUM_AMOUNT_OF_ELLIPSES = 2;
 // React MUI's Pagination component as reference. More info here:
 // https://github.com/mui/material-ui/blob/master/packages/mui-material/src/usePagination/usePagination.js
 export const useGetPageElements = (
-  currentPage: PaginationProps['currentPage'],
-  pages: PaginationProps['pages'],
+  currentPage: ComponentProps<typeof Pagination>['currentPage'],
+  pages: ComponentProps<typeof Pagination>['pages'],
   currentPageSiblingsCount: number
 ) => {
   const totalPages = pages.length;

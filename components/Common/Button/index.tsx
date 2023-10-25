@@ -12,14 +12,13 @@ const Button: FC<ButtonProps> = ({
   children,
   className,
   ...props
-}) => {
-  const buttonStyles = classNames(styles.button, styles[variant], className);
-
-  return (
-    <button className={buttonStyles} {...props}>
-      {children}
-    </button>
-  );
-};
+}) => (
+  <button
+    className={classNames(styles.button, styles[variant], className)}
+    {...props}
+  >
+    {children}
+  </button>
+);
 
 export default Button;
