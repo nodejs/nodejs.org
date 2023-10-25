@@ -23,7 +23,7 @@ export const Announcement: Story = {
 export const Release: Story = {
   args: {
     type: 'release',
-    title: 'Node v20.5.0 (Current)',
+    title: <h1>Node v20.5.0 (Current)</h1>,
   },
 };
 
@@ -38,8 +38,7 @@ export const CustomSize: Story = {
   args: {
     title:
       'Changing the End-of-Life Date for Node.js 16 to September 11th, 2023',
-    width: 600,
-    height: 315,
+    className: 'w-80 rounded-md',
   },
 };
 

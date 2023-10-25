@@ -1,33 +1,38 @@
 .root {
   @apply relative
     flex
+    aspect-video
     items-center
     bg-neutral-950
     bg-[url('/static/images/patterns/hexagon-grid.svg')]
     bg-contain
     bg-center
-    after:absolute
-    after:inset-0
-    after:m-auto
-    after:aspect-square
-    after:w-1/3
-    after:rounded-full
-    after:bg-gradient-radial
-    after:blur-3xl;
+    [container-type:inline-size];
 
-  &.announcement {
-    @apply after:from-green-700/90;
+  .overlay {
+    @apply absolute
+      inset-0
+      m-auto
+      aspect-square
+      w-1/4
+      rounded-full
+      bg-gradient-radial
+      blur-4xl;
+
+    &.announcement {
+      @apply bg-green-700;
+    }
+
+    &.release {
+      @apply bg-info-600;
+    }
+
+    &.vulnerability {
+      @apply bg-warning-600;
+    }
   }
 
-  &.release {
-    @apply after:from-info-600/90;
-  }
-
-  &.vulnerability {
-    @apply after:from-warning-600/90;
-  }
-
-  & > .container {
+  .container {
     @apply z-10
       mx-auto
       flex
@@ -39,8 +44,49 @@
       font-semibold
       text-white;
 
-    & > .logo {
-      @apply mx-auto;
+    .logo {
+      @apply relative
+        mx-auto
+        h-20
+        w-16;
+
+      .image {
+        @apply mx-auto;
+      }
+    }
+  }
+
+  @container (max-width: 40rem) {
+    .overlay {
+      @apply blur-3xl;
+    }
+
+    .container {
+      @apply max-w-xs
+        gap-7
+        text-lg;
+
+      .logo {
+        @apply h-11
+          w-10;
+      }
+    }
+  }
+
+  @container (max-width: 24rem) {
+    .overlay {
+      @apply blur-2xl;
+    }
+
+    .container {
+      @apply max-w-[12rem]
+        gap-4
+        text-xs;
+
+      .logo {
+        @apply h-6
+          w-5;
+      }
     }
   }
 }
