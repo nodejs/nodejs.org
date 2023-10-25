@@ -80,7 +80,7 @@ jobs:
         with:
           # Defines the settings and assertions to audit
           configPath: './.lighthouserc.json'
-          # These URLS capture homepage metrics, and critical pages / site functionality.
+          # These URLS capture critical pages / site functionality.
           urls: |
             ${{ steps.vercel_preview_url.outputs.url }}/en
             ${{ steps.vercel_preview_url.outputs.url }}/en/about
