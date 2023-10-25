@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import BlogPostCard from './index';
+import BlogPostCard from '@/components/Common/BlogPostCard';
 
 type Story = StoryObj<typeof BlogPostCard>;
 type Meta = MetaObj<typeof BlogPostCard>;

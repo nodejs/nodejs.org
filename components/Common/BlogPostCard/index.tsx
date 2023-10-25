@@ -4,16 +4,21 @@ import { FormattedMessage } from 'react-intl';
 
 import AvatarGroup from '@/components/Common/AvatarGroup';
 import Preview from '@/components/Common/Preview';
-import { shortHumanReadableDate } from '@/util/shortHumanReadableDate';
 
 import styles from './index.module.css';
 
+const dateTimeFormat = new Intl.DateTimeFormat(navigator.language, {
+  day: 'numeric',
+  month: 'short',
+  year: 'numeric',
+});
+
 type Author = {
   fullName: string;
-  src: ComponentProps<typeof AvatarGroup>['avatars'][number]['src'];
+  src: string;
 };
 
-export type BlogPostCardProps = {
+type BlogPostCardProps = {
   title: ComponentProps<typeof Preview>['title'];
   type: Required<ComponentProps<typeof Preview>>['type'];
   description: string;
@@ -28,19 +33,23 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
   authors,
   date,
 }) => {
-  const avatars = useMemo(() => {
-    const parsedAvatars = authors.map(({ fullName, src }) => ({
-      alt: fullName,
-      src,
-      toString() {
-        return fullName;
-      },
-    }));
+  const avatars = useMemo(
+    () =>
+      authors.map(({ fullName, src }) => ({
+        alt: fullName,
+        src,
+        toString: () => fullName,
+      })),
+    [authors]
+  );
 
-    return parsedAvatars;
-  }, [authors]);
-
-  const authorNames = avatars.join(', ');
+  const formattedDate = useMemo(
+    () => ({
+      ISOString: date.toISOString(),
+      short: dateTimeFormat.format(date),
+    }),
+    [date]
+  );
 
   return (
     <article className={styles.container}>
@@ -53,14 +62,16 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
       <p className={styles.subtitle}>
         <FormattedMessage id={`components.common.card.${type}`} />
       </p>
-      <h3 className={styles.title}>{title}</h3>
+      <p aria-hidden="true" className={styles.title}>
+        {title}
+      </p>
       <p className={styles.description}>{description}</p>
       <footer className={styles.footer}>
         <AvatarGroup avatars={avatars} />
         <div>
-          <p className={styles.author}>{authorNames}</p>
-          <time className={styles.date} dateTime={date.toISOString()}>
-            {shortHumanReadableDate(date)}
+          <p className={styles.author}>{avatars.join(', ')}</p>
+          <time className={styles.date} dateTime={formattedDate.ISOString}>
+            {formattedDate.short}
           </time>
         </div>
       </footer>
