@@ -287,7 +287,7 @@ They also allow Developers to preview Components and be able to test them manual
 
 ```tsx
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
-import NameOfComponent from './index';
+import NameOfComponent from '@components/PathTo/YourComponent';
 
 type Story = StoryObj<typeof NameOfComponent>;
 type Meta = MetaObj<typeof NameOfComponent>;
