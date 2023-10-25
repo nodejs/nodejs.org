@@ -87,7 +87,8 @@ jobs:
             ${{ steps.vercel_preview_url.outputs.url }}/en/about/previous-releases
             ${{ steps.vercel_preview_url.outputs.url }}/en/download
             ${{ steps.vercel_preview_url.outputs.url }}/en/blog
-          uploadArtifacts: true
+          uploadArtifacts: true # save results as a action artifacts
+          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
 
       - name: Format Lighthouse Score
         # Transform the audit results into a single, friendlier output
