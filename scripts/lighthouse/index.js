@@ -6,7 +6,7 @@ const formatScore = res => {
 };
 
 /**
- * core is in scope from https://github.com/actions/github-script
+ * `core` is in scope from https://github.com/actions/github-script
  * This is a CJS formatted file because using ESM here requires setting `type: module` in the package.json and that broke out site capabilities
  */
 module.exports = ({ core }) => {
