@@ -76,7 +76,6 @@ header {
     list-style-type: none;
     margin: 0;
     max-height: 400px;
-    min-height: 200px;
     overflow: auto;
     padding: 0;
     position: absolute;
