@@ -17,7 +17,6 @@ on:
       - main
     types:
       - labeled
-  merge_group:
 
 defaults:
   run:
@@ -27,7 +26,7 @@ defaults:
 permissions:
   contents: read
   actions: read
-  # todo document
+  # This permission is required by `thollander/actions-comment-pull-request`
   pull-requests: write
 
 jobs:
@@ -59,6 +58,7 @@ jobs:
         with:
           message: |
             Running Lighthouse audit...
+          # Used later to edit the existing comment
           comment_tag: 'lighthouse_audit'
 
       - name: Capture Vercel Preview
@@ -81,12 +81,15 @@ jobs:
         id: lighthouse_audit
         uses: treosh/lighthouse-ci-action@03becbfc543944dd6e7534f7ff768abb8a296826 # v10.1.0
         with:
+          # Defines the settings and assertions to audit
           configPath: './.lighthouserc.json'
+          # These URLS capture homepage metrics, and critical pages / site functionality.
           urls: |
             ${{ steps.vercel_preview_url.outputs.url }}/en
             ${{ steps.vercel_preview_url.outputs.url }}/en/about
             ${{ steps.vercel_preview_url.outputs.url }}/en/about/previous-releases
             ${{ steps.vercel_preview_url.outputs.url }}/en/download
+            ${{ steps.vercel_preview_url.outputs.url }}/en/blog
           uploadArtifacts: true
 
       - name: Format Lighthouse Score
@@ -94,10 +97,14 @@ jobs:
         id: format_lighthouse_score
         uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6.4.1
         env:
+          # using env as input to our script
+          # see https://github.com/actions/github-script#use-env-as-input
           LIGHTHOUSE_RESULT: ${{ steps.lighthouse_audit.outputs.manifest }}
           LIGHTHOUSE_LINKS: ${{ steps.lighthouse_audit.outputs.links }}
           VERCEL_PREVIEW_URL: ${{ steps.vercel_preview_url.outputs.url }}
         with:
+          # Run as a separate file so we do not have to inline all of our formatting logic.
+          # See https://github.com/actions/github-script#run-a-separate-file for more info.
           script: |
             const script = require('./scripts/lighthouse/index.js')
             script({core})
@@ -106,6 +113,7 @@ jobs:
         # Replace the previous message with our formatted lighthouse results
         uses: thollander/actions-comment-pull-request@d61db783da9abefc3437960d0cce08552c7c004f # v2.4.2
         with:
+          # Reference the previously created comment
           comment_tag: 'lighthouse_audit'
           message: |
             ${{ steps.format_lighthouse_score.outputs.comment }}
