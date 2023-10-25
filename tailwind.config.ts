@@ -129,6 +129,9 @@ export default {
       aria: {
         current: 'current="page"',
       },
+      blur: {
+        '4xl': '128px',
+      },
     },
   },
   darkMode: ['class', '[data-theme="dark"]'],
