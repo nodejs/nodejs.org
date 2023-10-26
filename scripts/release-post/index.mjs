@@ -25,8 +25,10 @@ import { writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 import handlebars from 'handlebars';
+import { format } from 'prettier';
 
 import { downloadsTable } from './downloadsTable.mjs';
+import prettierConfig from '../../.prettierrc.json' assert { type: 'json' };
 import { getRelativePath } from '../../next.helpers.mjs';
 
 const URLS = {
@@ -50,6 +52,8 @@ const ERRORS = {
     new Error(`Couldn't find matching changelog for ${version}`),
   INVALID_STATUS_CODE: (url, status) =>
     new Error(`Invalid status (!= 200) while retrieving ${url}: ${status}`),
+  FAILED_FILE_FORMATTING: reason =>
+    new Error(`Failed to format Release post: Reason: ${reason}`),
   FAILED_FILE_CREATION: reason =>
     new Error(`Failed to write Release post: Reason: ${reason}`),
 };
@@ -208,6 +212,14 @@ const renderPost = results => {
   return { content: template(templateParameters), ...results };
 };
 
+const formatPost = results => {
+  return new Promise((resolve, reject) => {
+    format(results.content, { ...prettierConfig, parser: 'markdown' })
+      .then(content => resolve({ ...results, content }))
+      .catch(error => reject(ERRORS.FAILED_FILE_FORMATTING(error.message)));
+  });
+};
+
 const writeToFile = results => {
   const blogPostPath = resolve(
     __dirname,
@@ -248,6 +260,7 @@ if (import.meta.url.startsWith('file:')) {
       .then(null, findLatestVersion)
       .then(fetchDocs)
       .then(renderPost)
+      .then(formatPost)
       .then(writeToFile)
       .then(
         filepath => console.log('Release post created:', filepath),
