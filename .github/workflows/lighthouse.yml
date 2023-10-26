@@ -104,8 +104,8 @@ jobs:
           # Run as a separate file so we do not have to inline all of our formatting logic.
           # See https://github.com/actions/github-script#run-a-separate-file for more info.
           script: |
-            const script = require('./scripts/lighthouse/index.js')
-            script({core})
+            const { formatResults } = await import('${{github.workspace}}/scripts/lighthouse/index.mjs')
+            await formatResults({core})
 
       - name: Add Comment to PR
         # Replace the previous message with our formatted lighthouse results
