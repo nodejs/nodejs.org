@@ -25,8 +25,9 @@ const Preview: FC<PreviewProps> = ({
           alt="Node.js"
           layout="fill"
         />
+        <h2>{title}</h2>
       </div>
-      {title}
+      <h2>{title}</h2>
     </div>
   </div>
 );
