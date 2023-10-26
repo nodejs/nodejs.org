@@ -1,3 +1,5 @@
+'use strict';
+
 const stoplight = res => (res >= 90 ? '🟢' : res >= 75 ? '🟠' : '🔴');
 const normalizeScore = res => Math.round(res * 100);
 const formatScore = res => {
@@ -7,9 +9,8 @@ const formatScore = res => {
 
 /**
  * `core` is in scope from https://github.com/actions/github-script
- * This is a CJS formatted file because using ESM here requires setting `type: module` in the package.json and that broke out site capabilities
  */
-module.exports = ({ core }) => {
+export const formatLighthouseResults = ({ core }) => {
   // this will be the shape of https://github.com/treosh/lighthouse-ci-action#manifest
   const results = JSON.parse(process.env.LIGHTHOUSE_RESULT);
 
@@ -25,16 +26,25 @@ module.exports = ({ core }) => {
 
   // map over each url result, formatting and linking to the output
   const urlResults = results.map(({ url, summary }) => {
-    return `[${url.replace(
+    // make the tested link as a markdown link, without the long-generated host
+    const shortPreviewLink = `[${url.replace(
       process.env.VERCEL_PREVIEW_URL,
       ''
-    )}](${url}) | ${formatScore(summary.performance)} | ${formatScore(
-      summary.accessibility
-    )} | ${formatScore(summary['best-practices'])} | ${formatScore(
-      summary.seo
-    )} | [🔗](${links[url]})`;
+    )}](${url})`;
+
+    // make each formatted score from our lighthouse properties
+    const performanceScore = formatScore(summary.performance);
+    const accessibilityScore = formatScore(summary.accessibility);
+    const bestPracticesScore = formatScore(summary['best-practices']);
+    const seoScore = formatScore(summary.seo);
+
+    // create the markdown table row
+    return `${shortPreviewLink} | ${performanceScore} | ${accessibilityScore} | ${bestPracticesScore} | ${seoScore} | [🔗](${links[url]})`;
   });
 
+  // join the header and  the rows together
   const finalResults = [...header, ...urlResults].join('\n');
+
+  // return our output to the github action
   core.setOutput('comment', finalResults);
 };
