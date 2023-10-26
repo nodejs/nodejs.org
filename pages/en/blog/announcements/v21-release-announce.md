@@ -139,7 +139,7 @@ Resulting in a response stream:
     7\r\n
     Mozilla\r\n
     18\r\n
-     Developer Network\r\n
+    Developer Network\r\n
     0\r\n
     \r\n
 
@@ -188,3 +188,7 @@ Try out the new Node.js 21 release! We’re always happy to hear your feedback. 
 Also of note is that Node.js 16 (LTS) is End-of-Life, so we strongly advise you to start planning to upgrade to Node.js 18 (LTS) or Node.js 20 (LTS).
 
 [CHANGELOG]: https://github.com/nodejs/node/releases/tag/v21.0.0
+
+```
+
+```
