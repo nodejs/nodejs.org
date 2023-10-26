@@ -1,71 +1,72 @@
 'use strict';
 
 /**
- * READ: Vercel's NFT is unable to by default understand that a dependent package (`shiki`) loads any of the files
- * mentioned within `BUNDLED_LANGUAGES` as they're loaded on-demand. We circumvent this issue by manually declaring these languages
- *
- * NOTE: Shiki attempts to load matching Languages from their `BUNDLED_LANGUAGES` by the built-in provided paths, even if we provide
- * languages with a custom `path`. This would cause issues with Vercel's NFT as it doesn't recognise the need of these files.
- *
- * This is easily fixable by using `require.resolve` on the languages below which makes Vercel NFT aware of these files.
- * Yet instead we adopted the `grammar` property approach instead of `path`, since if a `grammar` field is provided, it allows
- * Shiki to load the ones we provide instead of the ones from `BUNDLED_LANGUAGES`.
+ * READ: This file allows us to configure a subset of languages that we want to support on the Node.js Website
+ * we use `shikiji-compat` (translation layer that exposes the same API of `shiki` with `shikiji`)
+ * we use `shikiji` instead of `shiki` as it is native ESM and we can use it in Node.js without transpiling
  */
 
-import javaScriptLanguage from 'shiki/languages/javascript.tmLanguage.json' assert { type: 'json' };
-import jsonLanguage from 'shiki/languages/json.tmLanguage.json' assert { type: 'json' };
-import jsxLanguage from 'shiki/languages/jsx.tmLanguage.json' assert { type: 'json' };
-import shellScriptLanguage from 'shiki/languages/shellscript.tmLanguage.json' assert { type: 'json' };
-import shellSessionLanguage from 'shiki/languages/shellsession.tmLanguage.json' assert { type: 'json' };
-import typeScriptLanguage from 'shiki/languages/typescript.tmLanguage.json' assert { type: 'json' };
-import xmlLanguage from 'shiki/languages/xml.tmLanguage.json' assert { type: 'json' };
-import yamlLanguage from 'shiki/languages/yaml.tmLanguage.json' assert { type: 'json' };
+import javaScriptLanguage from 'shikiji/langs/javascript.mjs';
+import jsonLanguage from 'shikiji/langs/json.mjs';
+import jsxLanguage from 'shikiji/langs/jsx.mjs';
+import shellScriptLanguage from 'shikiji/langs/shellscript.mjs';
+import shellSessionLanguage from 'shikiji/langs/shellsession.mjs';
+import typeScriptLanguage from 'shikiji/langs/typescript.mjs';
+import xmlLanguage from 'shikiji/langs/xml.mjs';
+import yamlLanguage from 'shikiji/langs/yaml.mjs';
+import shikiNordTheme from 'shikiji/themes/nord.mjs';
 
 /** @type {import('shiki').ILanguageRegistration[]} */
-export const SUPPORTED_LANGUAGES = [
+export const LANGUAGES = [
   {
+    ...javaScriptLanguage[0],
     id: 'javascript',
     scopeName: 'source.js',
-    grammar: javaScriptLanguage,
     aliases: ['js'],
   },
   {
+    ...jsonLanguage[0],
     id: 'json',
     scopeName: 'source.json',
-    grammar: jsonLanguage,
   },
   {
+    ...jsxLanguage[0],
     id: 'jsx',
     scopeName: 'source.js.jsx',
-    grammar: jsxLanguage,
   },
   {
+    ...typeScriptLanguage[0],
     id: 'typescript',
     scopeName: 'source.ts',
-    grammar: typeScriptLanguage,
     aliases: ['ts'],
   },
   {
+    ...xmlLanguage[0],
     id: 'xml',
     scopeName: 'text.xml',
-    grammar: xmlLanguage,
   },
   {
+    ...yamlLanguage[0],
     id: 'yaml',
     scopeName: 'source.yaml',
-    grammar: yamlLanguage,
     aliases: ['yml'],
   },
   {
+    ...shellScriptLanguage[0],
     id: 'shellscript',
     scopeName: 'source.shell',
-    grammar: shellScriptLanguage,
     aliases: ['bash', 'sh', 'shell', 'zsh'],
   },
   {
+    ...shellSessionLanguage[0],
     id: 'shellsession',
     scopeName: 'text.shell-session',
-    grammar: shellSessionLanguage,
     aliases: ['console'],
   },
 ];
+
+// This is the default theme we use for our Shiki Syntax Highlighter
+export const DEFAULT_THEME = shikiNordTheme;
+
+// This is the default language we use for our Shiki Syntax Highlighter
+export const DEFAULT_LANG = 'plaintext';

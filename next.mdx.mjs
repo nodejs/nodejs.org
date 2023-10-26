@@ -16,9 +16,8 @@ import * as rehypePrettyCode from 'rehype-pretty-code';
 import * as rehypeRaw from 'rehype-raw';
 import * as rehypeSlug from 'rehype-slug';
 import { getHighlighter } from 'shiki';
-import shikiNordTheme from 'shiki/themes/nord.json';
 
-import { SUPPORTED_LANGUAGES } from './shiki.config.mjs';
+import { LANGUAGES, DEFAULT_THEME, DEFAULT_LANG } from './shiki.config.mjs';
 
 /**
  * This function is used to add individual `mdast` plugins to the unified/mdx
@@ -67,10 +66,10 @@ export function nextRehypePlugins(fileExtension) {
       // Syntax Highlighter for Code Blocks
       rehypePrettyCode.default,
       {
-        theme: shikiNordTheme,
-        defaultLang: 'plaintext',
+        theme: DEFAULT_THEME,
+        defaultLang: DEFAULT_LANG,
         getHighlighter: options =>
-          getHighlighter({ ...options, langs: SUPPORTED_LANGUAGES }),
+          getHighlighter({ ...options, langs: LANGUAGES }),
       },
     ],
   ];
