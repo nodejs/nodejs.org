@@ -1,4 +1,6 @@
-module.exports = {
+'use strict';
+
+const postCSSConfig = {
   plugins: {
     'postcss-mixins': {},
     'postcss-simple-vars': {},
@@ -9,3 +11,5 @@ module.exports = {
     autoprefixer: {},
   },
 };
+
+export default postCSSConfig;
