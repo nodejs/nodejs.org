@@ -1,7 +1,7 @@
 .root {
   @apply relative
     flex
-    aspect-video
+    aspect-[75/39.375]
     items-center
     bg-neutral-950
     bg-[url('/static/images/patterns/hexagon-grid.svg')]
