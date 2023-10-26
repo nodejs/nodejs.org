@@ -132,28 +132,32 @@ res.uncork();
 
 Resulting in a response stream:
 
-    HTTP/1.1 200 OK
-    Content-Type: text/plain
-    Transfer-Encoding: chunked
+```
+HTTP/1.1 200 OK
+Content-Type: text/plain
+Transfer-Encoding: chunked
 
-    7\r\n
-    Mozilla\r\n
-    18\r\n
-    Developer Network\r\n
-    0\r\n
-    \r\n
+7\r\n
+Mozilla\r\n
+18\r\n
+Developer Network\r\n
+0\r\n
+\r\n
+```
 
 After this PR everything is combined into a single chunk when uncorking the response bypassing a
 lot of unnecessary overhead.
 
-    HTTP/1.1 200 OK
-    Content-Type: text/plain
-    Transfer-Encoding: chunked
+```
+HTTP/1.1 200 OK
+Content-Type: text/plain
+Transfer-Encoding: chunked
 
-    25\r\n
-    Mozilla Developer Network\r\n
-    0\r\n
-    \r\n
+25\r\n
+Mozilla Developer Network\r\n
+0\r\n
+\r\n
+```
 
 Contributed by Robert Nagy in [#50167](https://github.com/nodejs/node/pull/50167).
 
@@ -188,7 +192,3 @@ Try out the new Node.js 21 release! We’re always happy to hear your feedback. 
 Also of note is that Node.js 16 (LTS) is End-of-Life, so we strongly advise you to start planning to upgrade to Node.js 18 (LTS) or Node.js 20 (LTS).
 
 [CHANGELOG]: https://github.com/nodejs/node/releases/tag/v21.0.0
-
-```
-
-```
