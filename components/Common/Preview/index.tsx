@@ -37,7 +37,7 @@ const Preview: FC<PreviewProps> = ({
           src={`${basePath}/static/images/logos/js-white.svg`}
           alt="Node.js"
         />
-        <h1>{title}</h1>
+        <h2>{title}</h2>
       </div>
     </div>
   );
