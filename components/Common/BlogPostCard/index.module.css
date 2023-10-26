@@ -1,0 +1,54 @@
+.container {
+  @apply max-w-full
+    bg-white
+    dark:bg-neutral-950;
+}
+
+.preview {
+  @apply mb-6
+    max-w-full
+    rounded
+    p-4;
+}
+
+.subtitle {
+  @apply mb-2
+    text-xs
+    font-semibold
+    text-green-600
+    dark:text-green-400;
+}
+
+.title {
+  @apply mb-2
+    text-xl
+    font-semibold
+    text-neutral-900
+    dark:text-white;
+}
+
+.description {
+  @apply mb-6
+    line-clamp-3
+    text-sm
+    text-neutral-800
+    dark:text-neutral-200;
+}
+
+.footer {
+  @apply flex
+    gap-x-3;
+}
+
+.author {
+  @apply text-sm
+    font-semibold
+    text-neutral-900
+    dark:text-white;
+}
+
+.date {
+  @apply text-sm
+    text-neutral-800
+    dark:text-neutral-200;
+}

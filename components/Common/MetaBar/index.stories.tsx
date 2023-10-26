@@ -4,9 +4,8 @@ import Image from 'next/image';
 import { FormattedMessage } from 'react-intl';
 
 import AvatarGroup from '@/components/Common/AvatarGroup';
+import MetaBar from '@/components/Common/MetaBar';
 import LocalizedLink from '@/components/LocalizedLink';
-
-import MetaBar from './index';
 
 type Story = StoryObj<typeof MetaBar>;
 type Meta = MetaObj<typeof MetaBar>;

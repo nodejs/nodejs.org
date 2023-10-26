@@ -18,5 +18,8 @@
 
 .avatarRoot {
   @apply -ml-2
+    h-8
+    w-8
+    flex-shrink-0
     first:ml-0;
 }

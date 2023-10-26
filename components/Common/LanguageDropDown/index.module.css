@@ -1,9 +1,9 @@
 .iconWrapper {
   @apply h-9
     w-9
-    rounded-md 
-    bg-neutral-100 
-    p-2 
+    rounded-md
+    bg-neutral-100
+    p-2
     text-neutral-700
     dark:bg-neutral-900
     dark:text-neutral-300;
@@ -12,23 +12,27 @@
 .dropDownContent {
   @apply max-h-80
     w-48
-    overflow-y-scroll
+    overflow-hidden
     rounded
-    border 
-    border-neutral-200 
-    py-[1px]
+    border
+    border-neutral-200
     shadow-lg
     dark:border-neutral-900;
+
+  > div {
+    @apply max-h-80
+      w-48 overflow-y-auto;
+  }
 }
 
 .dropDownItem {
-  @apply cursor-default 
+  @apply cursor-pointer
     px-2.5
-    py-1.5 
-    text-sm 
+    py-1.5
+    text-sm
     font-medium
-    text-neutral-800 
-    outline-none 
+    text-neutral-800
+    outline-none
     data-[highlighted]:bg-green-600
     data-[highlighted]:text-white
     dark:text-white;

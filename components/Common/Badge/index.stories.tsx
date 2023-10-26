@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import Badge from './index';
+import Badge from '@/components/Common/Badge';
 
 type Story = StoryObj<typeof Badge>;
 type Meta = MetaObj<typeof Badge>;

@@ -9,7 +9,7 @@ import styles from './index.module.css';
 
 type Page = { url: string };
 
-export type PaginationProps = {
+type PaginationProps = {
   // One-based number of the current page
   currentPage: number;
   pages: Page[];
@@ -23,7 +23,7 @@ const Pagination: FC<PaginationProps> = ({
   pages,
   currentPageSiblingsCount = 1,
 }) => {
-  const intl = useIntl();
+  const { formatMessage } = useIntl();
 
   const parsedPages = useGetPageElements(
     currentPage,
@@ -33,14 +33,14 @@ const Pagination: FC<PaginationProps> = ({
 
   return (
     <nav
-      aria-label={intl.formatMessage({
+      aria-label={formatMessage({
         id: 'components.common.pagination.defaultLabel',
       })}
       className={styles.pagination}
     >
       <Button
         type="button"
-        aria-label={intl.formatMessage({
+        aria-label={formatMessage({
           id: 'components.common.pagination.prevAriaLabel',
         })}
         disabled={currentPage === 1}
@@ -56,7 +56,7 @@ const Pagination: FC<PaginationProps> = ({
       <ol className={styles.list}>{parsedPages}</ol>
       <Button
         type="button"
-        aria-label={intl.formatMessage({
+        aria-label={formatMessage({
           id: 'components.common.pagination.nextAriaLabel',
         })}
         disabled={currentPage === pages.length}
