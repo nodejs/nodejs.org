@@ -23,7 +23,7 @@ export const Announcement: Story = {
 export const Release: Story = {
   args: {
     type: 'release',
-    title: <h1>Node v20.5.0 (Current)</h1>,
+    title: 'Node v20.5.0 (Current)',
   },
 };
 

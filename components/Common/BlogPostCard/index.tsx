@@ -53,12 +53,7 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
 
   return (
     <article className={styles.container}>
-      <Preview
-        title={title}
-        type={type}
-        height="auto"
-        className={styles.preview}
-      />
+      <Preview title={title} type={type} className={styles.preview} />
       <p className={styles.subtitle}>
         <FormattedMessage id={`components.common.card.${type}`} />
       </p>
