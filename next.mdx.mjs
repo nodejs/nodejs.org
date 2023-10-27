@@ -12,12 +12,11 @@ import * as remarkHeadings from '@vcarl/remark-headings';
 import * as mdastAutoLink from 'mdast-util-gfm-autolink-literal';
 import * as mdastTable from 'mdast-util-gfm-table';
 import * as rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import * as rehypePrettyCode from 'rehype-pretty-code';
 import * as rehypeRaw from 'rehype-raw';
+import * as rehypeShikiji from 'rehype-shikiji';
 import * as rehypeSlug from 'rehype-slug';
-import { getHighlighter } from 'shiki';
 
-import { LANGUAGES, DEFAULT_THEME, DEFAULT_LANG } from './shiki.config.mjs';
+import { LANGUAGES, DEFAULT_THEME } from './shiki.config.mjs';
 
 /**
  * This function is used to add individual `mdast` plugins to the unified/mdx
@@ -64,13 +63,8 @@ export function nextRehypePlugins(fileExtension) {
     ],
     [
       // Syntax Highlighter for Code Blocks
-      rehypePrettyCode.default,
-      {
-        theme: DEFAULT_THEME,
-        defaultLang: DEFAULT_LANG,
-        getHighlighter: options =>
-          getHighlighter({ ...options, langs: LANGUAGES }),
-      },
+      rehypeShikiji.default,
+      { theme: DEFAULT_THEME, langs: LANGUAGES },
     ],
   ];
 
