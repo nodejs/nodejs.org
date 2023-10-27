@@ -1,9 +1,8 @@
 ---
+date: '2014-01-16T23:00:00.000Z'
 title: Node.js and the Road Ahead
-date: 2014-01-16T23:00:00.000Z
-author: Timothy J Fontaine
-slug: nodejs-road-ahead
 layout: blog-post.hbs
+author: Timothy J Fontaine
 ---
 
 As the new project lead for Node.js I am excited for our future, and want to

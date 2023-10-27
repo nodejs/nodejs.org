@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Sep 4th, 2015
-author: Yosuke Furukawa (@yosuke-furukawa)
-date: 2015-09-04T12:00:00.000Z
-status: publish
+date: '2015-09-04T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-09-04
+title: 'Weekly Update - Sep 4th, 2015'
 layout: blog-post.hbs
+author: 'Yosuke Furukawa (@yosuke-furukawa)'
 ---
 
 ### Node.js News — September 4th

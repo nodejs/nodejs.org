@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Apr 10th, 2015
-author: Giovanny Gioyik (@Gioyik) & Julian Duque (@julianduque)
-date: 2015-04-10T12:00:00.000Z
-status: publish
+date: '2015-04-10T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-04-10
+title: 'Weekly Update - Apr 10th, 2015'
 layout: blog-post.hbs
+author: 'Giovanny Gioyik (@Gioyik) & Julian Duque (@julianduque)'
 ---
 
 # io.js 1.6.4 release

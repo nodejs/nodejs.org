@@ -1,10 +1,9 @@
 ---
-title: World’s Fastest Growing Open Source Platform Pushes Out New Release
-date: 2016-04-26T12:00:00.000Z
-status: publish
+date: '2016-04-26T12:00:00.000Z'
 category: announcements
-slug: v6-release
+title: 'World’s Fastest Growing Open Source Platform Pushes Out New Release'
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 > New “Current” version line focuses on performance improvements, increased reliability and

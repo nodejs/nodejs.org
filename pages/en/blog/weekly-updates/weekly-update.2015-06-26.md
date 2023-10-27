@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Jun 26th, 2015
-author: Giovanny Gioyik (@Gioyik)
-date: 2015-06-26T12:00:00.000Z
-status: publish
+date: '2015-06-26T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-06-26
+title: 'Weekly Update - Jun 26th, 2015'
 layout: blog-post.hbs
+author: 'Giovanny Gioyik (@Gioyik)'
 ---
 
 # io.js and Node.js News

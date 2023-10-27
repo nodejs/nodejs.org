@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Apr 17th, 2016
-author: Minwoo Jung (github.com/JungMinu)
-date: 2016-04-17T12:00:00.000Z
-status: publish
+date: '2016-04-17T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-04-17
+title: 'Weekly Update - Apr 17th, 2016'
 layout: blog-post.hbs
+author: 'Minwoo Jung (github.com/JungMinu)'
 ---
 
 ### Node.js News

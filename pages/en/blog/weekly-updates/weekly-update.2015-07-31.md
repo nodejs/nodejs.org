@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Jul 31st, 2015
-author: Steven Sinatra (@diagramatics)
-date: 2015-07-31T12:00:00.000Z
-status: publish
+date: '2015-07-31T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-07-31
+title: 'Weekly Update - Jul 31st, 2015'
 layout: blog-post.hbs
+author: 'Steven Sinatra (@diagramatics)'
 ---
 
 ### io.js and Node.js News — July 31st

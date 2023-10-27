@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - May 15th, 2015
-author: Giovanny Gioyik (@Gioyik) & Takashi Fujita (@tgfjt)
-date: 2015-05-15T12:00:00.000Z
-status: publish
+date: '2015-05-15T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-05-15
+title: 'Weekly Update - May 15th, 2015'
 layout: blog-post.hbs
+author: 'Giovanny Gioyik (@Gioyik) & Takashi Fujita (@tgfjt)'
 ---
 
 # io.js News

@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Mar 6th, 2015
-author: Ross Kukulinski (@rosskukulinksi)
-date: 2015-03-06T12:00:00.000Z
-status: publish
+date: '2015-03-06T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-03-06
+title: 'Weekly Update - Mar 6th, 2015'
 layout: blog-post.hbs
+author: 'Ross Kukulinski (@rosskukulinksi)'
 ---
 
 # io.js 1.5.0 Release

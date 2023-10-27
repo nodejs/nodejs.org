@@ -1,11 +1,9 @@
 ---
-title: Service logging in JSON with Bunyan
-author: trentmick
-date: 2012-03-28T19:25:26.000Z
-status: publish
+date: '2012-03-28T19:25:26.000Z'
 category: module
-slug: service-logging-in-json-with-bunyan
+title: Service logging in JSON with Bunyan
 layout: blog-post.hbs
+author: trentmick
 ---
 
 <div style="float:right;margin:0 0 15px 15px;">

@@ -1,9 +1,7 @@
 ---
-title: Node.js 21 is now available!
-date: 2023-10-17T15:45:00.000Z
-status: publish
+date: '2023-10-17T15:45:00.000Z'
 category: announcements
-slug: nodejs-21-release-announcement
+title: 'Node.js 21 is now available!'
 layout: blog-post.hbs
 author: The Node.js Project
 ---

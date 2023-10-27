@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - June 16th, 2016
-author: Minwoo Jung (github.com/JungMinu)
-date: 2016-06-16T12:00:00.000Z
-status: publish
+date: '2016-06-16T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-06-16
+title: 'Weekly Update - June 16th, 2016'
 layout: blog-post.hbs
+author: 'Minwoo Jung (github.com/JungMinu)'
 ---
 
 ### Node v6.2.1 (Current) Release

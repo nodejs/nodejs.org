@@ -1,9 +1,8 @@
 ---
+date: '2014-12-03T18:00:00.000Z'
 title: Advisory Board Update
-date: 2014-12-03T18:00:00.000Z
-author: Timothy J Fontaine
-slug: advisory-board-update
 layout: blog-post.hbs
+author: Timothy J Fontaine
 ---
 
 A lot has been happening in Node.js, so I wanted to bring everyone up to date on

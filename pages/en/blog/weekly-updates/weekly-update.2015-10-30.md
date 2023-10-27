@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Oct 30th, 2015
-author: Minwoo Jung (@jmwsoft)
-date: 2015-10-30T12:00:00.000Z
-status: publish
+date: '2015-10-30T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-10-30
+title: 'Weekly Update - Oct 30th, 2015'
 layout: blog-post.hbs
+author: 'Minwoo Jung (@jmwsoft)'
 ---
 
 ### Node.js News — October 30th

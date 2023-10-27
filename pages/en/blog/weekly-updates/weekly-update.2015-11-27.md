@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Nov 27th, 2015
-author: Minwoo Jung (@jmwsoft)
-date: 2015-11-27T12:00:00.000Z
-status: publish
+date: '2015-11-27T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-11-27
+title: 'Weekly Update - Nov 27th, 2015'
 layout: blog-post.hbs
+author: 'Minwoo Jung (@jmwsoft)'
 ---
 
 ### Node.js News — November 27th

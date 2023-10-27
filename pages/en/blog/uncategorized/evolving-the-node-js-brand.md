@@ -1,11 +1,9 @@
 ---
-title: Evolving the Node.js Brand
-author: Emily Tanaka-Delgado
-date: 2011-07-11T19:02:45.000Z
-status: publish
+date: '2011-07-11T19:02:45.000Z'
 category: uncategorized
-slug: evolving-the-node-js-brand
+title: Evolving the Node.js Brand
 layout: blog-post.hbs
+author: Emily Tanaka-Delgado
 ---
 
 To echo [Node](https://nodejs.org/)’s evolutionary nature, we have refreshed the identity to help mark an exciting time for developers, businesses and users who benefit from the pioneering technology.

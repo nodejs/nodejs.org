@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - November 11th, 2016
-author: Minwoo Jung (github.com/JungMinu)
-date: 2016-11-11T12:00:00.000Z
-status: publish
+date: '2016-11-11T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-11-11
+title: 'Weekly Update - November 11th, 2016'
 layout: blog-post.hbs
+author: 'Minwoo Jung (github.com/JungMinu)'
 ---
 
 ### Node v7.1.0 (Current)

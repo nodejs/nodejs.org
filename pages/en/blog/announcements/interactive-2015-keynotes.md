@@ -1,10 +1,9 @@
 ---
-title: Keynotes for Node.js Interactive 2015 Announced
-date: 2015-11-20T09:00:00.000Z
-status: publish
+date: '2015-11-20T09:00:00.000Z'
 category: announcements
-slug: interactive-2015-programming
+title: Keynotes for Node.js Interactive 2015 Announced
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 > Keynotes from GoDaddy, IBM, NodeSource, Uber and More Featured At Inaugural Node.js Foundation Event December 8-9, 2015, in Portland, Ore.

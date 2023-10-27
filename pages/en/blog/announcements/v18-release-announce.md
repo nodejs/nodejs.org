@@ -1,9 +1,7 @@
 ---
-title: Node.js 18 is now available!
-date: 2022-04-19T15:45:00.000Z
-status: publish
+date: '2022-04-19T15:45:00.000Z'
 category: announcements
-slug: nodejs-18-release-announcement
+title: 'Node.js 18 is now available!'
 layout: blog-post.hbs
 author: The Node.js Project
 ---

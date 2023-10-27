@@ -1,10 +1,9 @@
 ---
-date: 2013-11-26T15:14:59.000Z
-author: Charlie Robbins
-title: Keeping The npm Registry Awesome
-slug: npm-post-mortem
+date: '2013-11-26T15:14:59.000Z'
 category: npm
+title: Keeping The npm Registry Awesome
 layout: blog-post.hbs
+author: Charlie Robbins
 ---
 
 We know the availability and overall health of The npm Registry is paramount to everyone using Node.js as well as the larger JavaScript community and those of your using it for [some][browserify] [awesome][dotc] [projects][npm-rubygems] [and ideas][npm-python]. Between November 4th and November 15th 2013 The npm Registry had several hours of downtime over three distinct time periods:

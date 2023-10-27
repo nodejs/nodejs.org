@@ -1,11 +1,9 @@
 ---
-title: Trademark
-author: ryandahl
-date: 2011-04-29T08:54:18.000Z
-status: publish
+date: '2011-04-29T08:54:18.000Z'
 category: uncategorized
-slug: trademark
+title: Trademark
 layout: blog-post.hbs
+author: ryandahl
 ---
 
 One of the things Joyent accepted when we took on the Node project was to provide resources to help the community grow. The Node project is amazing because of the expertise, dedication and hard work of the community. However in all communities there is the possibility of people acting inappropriately. We decided to introduce trademarks on the “Node.js” and the “Node logo” in order to ensure that people or organizations who are not investing in the Node community misrepresent, or create confusion about the role of themselves or their products with Node.

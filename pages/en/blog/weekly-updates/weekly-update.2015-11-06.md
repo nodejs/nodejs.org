@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Nov 6th, 2015
-author: Minwoo Jung (@jmwsoft)
-date: 2015-11-06T12:00:00.000Z
-status: publish
+date: '2015-11-06T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-11-06
+title: 'Weekly Update - Nov 6th, 2015'
 layout: blog-post.hbs
+author: 'Minwoo Jung (@jmwsoft)'
 ---
 
 ### Node.js News — November 6th

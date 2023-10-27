@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - February 10th, 2017
-author: Minwoo Jung (github.com/JungMinu)
-date: 2017-02-10T12:00:00.000Z
-status: publish
+date: '2017-02-10T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2017-02-10
+title: 'Weekly Update - February 10th, 2017'
 layout: blog-post.hbs
+author: 'Minwoo Jung (github.com/JungMinu)'
 ---
 
 ### Node v7.5.0 (Current)

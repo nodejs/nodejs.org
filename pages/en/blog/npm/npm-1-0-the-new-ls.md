@@ -1,11 +1,9 @@
 ---
-title: "npm 1.0: The New 'ls'"
-author: Isaac Schlueter
-date: 2011-03-18T06:22:17.000Z
-status: publish
+date: '2011-03-18T06:22:17.000Z'
 category: npm
-slug: npm-1-0-the-new-ls
+title: "npm 1.0: The New 'ls'"
 layout: blog-post.hbs
+author: Isaac Schlueter
 ---
 
 _This is the first in a series of hopefully more than 1 posts, each detailing some aspect of npm 1.0._

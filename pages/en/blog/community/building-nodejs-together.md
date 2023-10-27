@@ -1,11 +1,9 @@
 ---
-title: Building Node.js Together
-author: tjfontaine
-date: 2014-07-29T21:00:00.000Z
-status: publish
+date: '2014-07-29T21:00:00.000Z'
 category: community
-slug: building-nodejs-together
+title: Building Node.js Together
 layout: blog-post.hbs
+author: tjfontaine
 ---
 
 Node.js is reaching more people than ever, it's attracting new and interesting

@@ -1,9 +1,9 @@
 ---
-title: Node.js Foundation to Add Express to its Incubator Program
-date: 2016-02-10T21:00:00.000Z
+date: '2016-02-10T21:00:00.000Z'
 category: announcements
-slug: Express as Incubator Project
+title: Node.js Foundation to Add Express to its Incubator Program
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 > Node.js Foundation to Add Express to its Incubator Program

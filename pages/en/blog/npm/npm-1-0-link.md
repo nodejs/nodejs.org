@@ -1,11 +1,9 @@
 ---
-title: 'npm 1.0: link'
-author: Isaac Schlueter
-date: 2011-04-07T00:40:33.000Z
-status: publish
+date: '2011-04-07T00:40:33.000Z'
 category: npm
-slug: npm-1-0-link
+title: 'npm 1.0: link'
 layout: blog-post.hbs
+author: Isaac Schlueter
 ---
 
 _npm 1.0 is in release candidate mode. [Go get it!](http://groups.google.com/group/npm-/browse_thread/thread/43d3e76d71d1f141)_

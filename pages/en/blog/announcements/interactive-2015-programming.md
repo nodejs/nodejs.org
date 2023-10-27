@@ -1,10 +1,9 @@
 ---
-title: Node.js Foundation Announces Programming For Node.js Interactive
-date: 2015-10-20T17:00:00.000Z
-status: publish
+date: '2015-10-20T17:00:00.000Z'
 category: announcements
-slug: interactive-2015-programming
+title: Node.js Foundation Announces Programming For Node.js Interactive
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 > Inaugural Conference to Advance the Use of Node.js Within Backend, Frontend, IoT Applications

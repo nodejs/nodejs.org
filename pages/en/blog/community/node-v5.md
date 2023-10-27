@@ -1,10 +1,9 @@
 ---
-title: What You Should Know about Node.js v5 and More
-date: 2015-10-30T12:00:00.000Z
-status: publish
+date: '2015-10-30T12:00:00.000Z'
 category: community
-slug: node-v5
+title: What You Should Know about Node.js v5 and More
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 ## There’s Something New with Node.js Releases

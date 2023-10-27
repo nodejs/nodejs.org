@@ -1,9 +1,9 @@
 ---
-title: The Node.js Platform and Node.js Foundation Continue to Grow
-date: 2016-11-30T12:00:00.000Z
+date: '2016-11-30T12:00:00.000Z'
 category: announcements
-slug: node.js-foundation-momentum-release
+title: The Node.js Platform and Node.js Foundation Continue to Grow
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 > With 5.7 million users; increased community participation and a solid Foundation backing: 2016 was a good year for the platform.

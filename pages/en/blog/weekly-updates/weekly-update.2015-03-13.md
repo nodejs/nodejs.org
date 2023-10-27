@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Mar 13th, 2015
-author: Julian Duque (julianduque) & Yosuke Furukawa (yosuke-furukawa)
-date: 2015-03-13T12:00:00.000Z
-status: publish
+date: '2015-03-13T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-03-13
+title: 'Weekly Update - Mar 13th, 2015'
 layout: blog-post.hbs
+author: 'Julian Duque (julianduque) & Yosuke Furukawa (yosuke-furukawa)'
 ---
 
 # io.js 1.5.1 Release

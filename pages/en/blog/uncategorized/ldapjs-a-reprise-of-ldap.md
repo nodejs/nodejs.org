@@ -1,11 +1,9 @@
 ---
-title: 'ldapjs: A reprise of LDAP'
-author: mcavage
-date: 2011-09-08T21:25:43.000Z
-status: publish
+date: '2011-09-08T21:25:43.000Z'
 category: uncategorized
-slug: ldapjs-a-reprise-of-ldap
+title: 'ldapjs: A reprise of LDAP'
 layout: blog-post.hbs
+author: mcavage
 ---
 
 This post has been about 10 years in the making. My first job out of college was at IBM working on the [Tivoli Directory Server](http://www-01.ibm.com/software/tivoli/products/directory-server/), and at the time I had a preconceived notion that working on anything related to Internet RFCs was about as hot as you could get. I spent a lot of time back then getting "down and dirty" with everything about LDAP: the protocol, performance, storage engines, indexing and querying, caching, customer use cases and patterns, general network server patterns, etc. Basically, I soaked up as much as I possibly could while I was there. On top of that, I listened to all the "gray beards" tell me about the history of LDAP, which was a bizarre marriage of telecommunications conglomerates and graduate students. The point of this blog post is to give you a crash course in LDAP, and explain what makes [ldapjs](http://ldapjs.org) different. Allow me to be the gray beard for a bit...

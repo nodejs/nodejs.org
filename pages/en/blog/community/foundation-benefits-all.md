@@ -1,11 +1,9 @@
 ---
-title: The Node.js Foundation benefits all
-author: Scott Hammond
-date: 2015-05-15T22:50:46.000Z
-status: publish
+date: '2015-05-15T22:50:46.000Z'
 category: community
-slug: the-nodejs-foundation-benefits-all
+title: The Node.js Foundation benefits all
 layout: blog-post.hbs
+author: Scott Hammond
 ---
 
 When I joined Joyent last summer I quickly realized that, despite the huge

@@ -1,10 +1,9 @@
 ---
-title: “Convince Your Boss” Letter
-date: 2015-10-22T17:00:00.000Z
-status: publish
+date: '2015-10-22T17:00:00.000Z'
 category: uncategorized
-slug: node-interactive-convince-boss
+title: '“Convince Your Boss” Letter'
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 Want to attend Node.js Interactive happening in Portland from December 8-9, 2015, but don’t know how to bring it up to your boss (the person with the money)? We laid out a simple letter explaining why it is important. Use it in full or use snippets of it, whatever it takes to get you in Portland, OR!

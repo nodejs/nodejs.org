@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Jan 22th, 2016
-author: Minwoo Jung (@jmwsoft)
-date: 2016-01-22T12:00:00.000Z
-status: publish
+date: '2016-01-22T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-01-22
+title: 'Weekly Update - Jan 22th, 2016'
 layout: blog-post.hbs
+author: 'Minwoo Jung (@jmwsoft)'
 ---
 
 ### Node.js News
