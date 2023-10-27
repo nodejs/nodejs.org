@@ -127,6 +127,10 @@ a:hover .color-lightgray {
   }
 }
 
+.shiki .line {
+  min-height: 1rem;
+}
+
 html[dir='rtl'] {
   .has-side-nav {
     nav {
