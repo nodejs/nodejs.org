@@ -3,7 +3,7 @@ date: '2016-12-03T14:41:04.442Z'
 category: announcements
 title: Node.js v7 has updated V8 to 5.4
 layout: blog-post.hbs
-author: 'Michaël Zasso'
+author: Michaël Zasso
 ---
 
 With the release of Node.js 7.0.0, the V8 JavaScript engine has been upgraded from 5.1
