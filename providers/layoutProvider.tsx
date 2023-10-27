@@ -10,7 +10,6 @@ import DefaultLayout from '@/layouts/DefaultLayout';
 import DocsLayout from '@/layouts/DocsLayout';
 import DownloadCurrentLayout from '@/layouts/DownloadCurrentLayout';
 import DownloadLayout from '@/layouts/DownloadLayout';
-import DownloadReleasesLayout from '@/layouts/DownloadReleasesLayout';
 import IndexLayout from '@/layouts/IndexLayout';
 import type { LegacyFrontMatter, LegacyLayouts } from '@/types';
 
@@ -40,8 +39,6 @@ const getLegacyLayout = (layout: LegacyLayouts) => {
       return DownloadLayout;
     case 'download-current.hbs':
       return DownloadCurrentLayout;
-    case 'download-releases.hbs':
-      return DownloadReleasesLayout;
     case 'index.hbs':
       return IndexLayout;
     default:

@@ -1,72 +1,13 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import Banner from '@/components/Home/Banner';
-import HomeDownloadButton from '@/components/Home/HomeDownloadButton';
-import LocalizedLink from '@/components/LocalizedLink';
-import { useDetectOS } from '@/hooks/useDetectOS';
-import { useLayoutContext } from '@/hooks/useLayoutContext';
-import { WithNodeRelease } from '@/providers/withNodeRelease';
-import type { UserOS } from '@/types/userOS';
+import BaseLayout from '@/layouts/BaseLayout';
 
-import BaseLayout from './BaseLayout';
-
-const getDownloadHeadTextOS = (os: UserOS, bitness: number) => {
-  switch (os) {
-    case 'MAC':
-      return ' macOS';
-    case 'WIN':
-      return ` Windows (x${bitness})`;
-    case 'LINUX':
-      return ` Linux (x64)`;
-    case 'OTHER':
-      return '';
-  }
-};
-
-const IndexLayout: FC<PropsWithChildren> = ({ children }) => {
-  const {
-    frontMatter: { labels },
-  } = useLayoutContext();
-
-  const { os, bitness } = useDetectOS();
-
-  const downloadHeadTextPrefix =
-    os === 'OTHER' ? labels?.['download'] : labels?.['download-for'];
-
-  const downloadHeadText = `${downloadHeadTextPrefix}${getDownloadHeadTextOS(
-    os,
-    bitness
-  )}`;
-
-  return (
-    <BaseLayout>
-      <div className="container">
-        <div id="home-intro">
-          {children}
-
-          <Banner />
-
-          <h2>{downloadHeadText}</h2>
-
-          <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
-            {({ release }) => <HomeDownloadButton {...release} />}
-          </WithNodeRelease>
-
-          <WithNodeRelease status="Current">
-            {({ release }) => <HomeDownloadButton {...release} />}
-          </WithNodeRelease>
-
-          <p>
-            {labels?.['version-schedule-prompt']}{' '}
-            <LocalizedLink href="/about/previous-releases">
-              {labels?.['version-schedule-prompt-link-text']}
-            </LocalizedLink>
-            .
-          </p>
-        </div>
-      </div>
-    </BaseLayout>
-  );
-};
+const IndexLayout: FC<PropsWithChildren> = ({ children }) => (
+  <BaseLayout>
+    <div className="container">
+      <div id="home-intro">{children}</div>
+    </div>
+  </BaseLayout>
+);
 
 export default IndexLayout;
