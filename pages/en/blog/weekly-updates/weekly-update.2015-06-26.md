@@ -1,7 +1,7 @@
 ---
 date: '2015-06-26T12:00:00.000Z'
 category: weekly
-title: 'Weekly Update - Jun 26th, 2015'
+title: Weekly Update - Jun 26th, 2015
 layout: blog-post.hbs
 author: 'Giovanny Gioyik (@Gioyik)'
 ---

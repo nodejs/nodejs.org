@@ -1,7 +1,7 @@
 ---
 date: '2016-09-06T23:36:16.645Z'
 category: announcements
-title: 'Farewell to Node.js v5, Preparing for v7'
+title: Farewell to Node.js v5, Preparing for v7
 layout: blog-post.hbs
 author: Rod Vagg
 ---

@@ -1,7 +1,7 @@
 ---
 date: '2015-04-10T12:00:00.000Z'
 category: weekly
-title: 'Weekly Update - Apr 10th, 2015'
+title: Weekly Update - Apr 10th, 2015
 layout: blog-post.hbs
 author: 'Giovanny Gioyik (@Gioyik) & Julian Duque (@julianduque)'
 ---

@@ -1,7 +1,7 @@
 ---
 date: '2017-02-28T08:00:00.000Z'
 category: wg
-title: 'Diag WG Update - Many new tools, phasing out some old ones'
+title: Diag WG Update - Many new tools, phasing out some old ones
 layout: blog-post.hbs
 author: 'Josh Gavant (@joshgav)'
 ---

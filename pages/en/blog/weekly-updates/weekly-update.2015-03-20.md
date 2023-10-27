@@ -1,7 +1,7 @@
 ---
 date: '2015-03-20T12:00:00.000Z'
 category: weekly
-title: 'Weekly Update - Mar 20th, 2015'
+title: Weekly Update - Mar 20th, 2015
 layout: blog-post.hbs
 author: Julian Duque (julianduque)
 ---

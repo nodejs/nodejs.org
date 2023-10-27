@@ -1,7 +1,7 @@
 ---
 date: '2016-02-15T12:00:00.000Z'
 category: weekly
-title: 'Weekly Update - Feb 15th, 2016'
+title: Weekly Update - Feb 15th, 2016
 layout: blog-post.hbs
 author: 'Minwoo Jung (@jmwsoft)'
 ---

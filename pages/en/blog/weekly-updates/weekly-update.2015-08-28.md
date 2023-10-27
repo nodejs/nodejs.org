@@ -1,7 +1,7 @@
 ---
 date: '2015-08-28T12:00:00.000Z'
 category: weekly
-title: 'Weekly Update - Aug 28th, 2015'
+title: Weekly Update - Aug 28th, 2015
 layout: blog-post.hbs
 author: 'Yosuke Furukawa (@yosuke-furukawa)'
 ---

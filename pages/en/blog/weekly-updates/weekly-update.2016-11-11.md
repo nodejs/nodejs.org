@@ -1,7 +1,7 @@
 ---
 date: '2016-11-11T12:00:00.000Z'
 category: weekly
-title: 'Weekly Update - November 11th, 2016'
+title: Weekly Update - November 11th, 2016
 layout: blog-post.hbs
 author: 'Minwoo Jung (github.com/JungMinu)'
 ---

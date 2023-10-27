@@ -1,7 +1,7 @@
 ---
 date: '2015-02-27T12:00:00.000Z'
 category: weekly
-title: 'Weekly Update - Feb 27th, 2015'
+title: Weekly Update - Feb 27th, 2015
 layout: blog-post.hbs
 author: 'Emily Rose (@emilyrose)'
 ---

@@ -1,7 +1,7 @@
 ---
 date: '2016-04-23T12:00:00.000Z'
 category: weekly
-title: 'Weekly Update - Apr 23rd, 2016'
+title: Weekly Update - Apr 23rd, 2016
 layout: blog-post.hbs
 author: 'Minwoo Jung (github.com/JungMinu)'
 ---
