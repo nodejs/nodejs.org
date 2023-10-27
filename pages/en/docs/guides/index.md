@@ -18,7 +18,6 @@ layout: docs.hbs
 
 ## Node.js core concepts
 
-- [Introduction to Node.js](https://nodejs.dev/en/learn/)
 - [Overview of Blocking vs Non-Blocking](/en/docs/guides/blocking-vs-non-blocking/)
 - [The Node.js Event Loop, Timers, and `process.nextTick()`](/en/docs/guides/event-loop-timers-and-nexttick/)
 - [Don't Block the Event Loop (or the Worker Pool)](/en/docs/guides/dont-block-the-event-loop/)

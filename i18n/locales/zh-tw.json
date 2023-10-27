@@ -23,6 +23,7 @@
   "components.navigation.getInvolved.links.collabSummit": "Collab Summit",
   "components.navigation.getInvolved.links.contribute": "Contribute",
   "components.navigation.getInvolved.links.codeOfConduct": "Code of Conduct",
+  "components.downloadList.links.previousReleases": "Previous Releases",
   "components.downloadList.links.packageManager": "Installing Node.js via package manager",
   "components.downloadList.links.shaSums": "Signed SHASUMS for release files",
   "components.downloadList.links.shaSums.howToVerify": " (How to verify)",
