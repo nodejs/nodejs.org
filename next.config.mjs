@@ -34,6 +34,17 @@ const nextConfig = {
   // as we already check it on the CI within each Pull Request
   // we also configure ESLint to run its lint checking on all files (next lint)
   eslint: { dirs: ['.'], ignoreDuringBuilds: true },
+  // Next.js WebPack Bundler does not know how to handle `.mjs` files on `node_modules`
+  // This is not an issue when using TurboPack as it uses SWC and it is ESM-only
+  // Once we migrate to Next.js 14 we might be able to remove this
+  webpack: function (config) {
+    config.module.rules.push({
+      test: /\.m?js$/,
+      type: 'javascript/auto',
+      resolve: { fullySpecified: false },
+    });
+    return config;
+  },
   experimental: {
     // Some of our static pages from `getStaticProps` have a lot of data
     // since we pass the fully-compiled MDX page from `MDXRemote` through
