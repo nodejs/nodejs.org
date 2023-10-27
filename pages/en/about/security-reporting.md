@@ -72,3 +72,9 @@ Security notifications will be distributed via the following methods.
 If you have suggestions on how this process could be improved please submit a
 [pull request](https://github.com/nodejs/nodejs.org) or
 [file an issue](https://github.com/nodejs/security-wg/issues/new) to discuss.
+
+## OpenSSF Best Practices
+
+[![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/29/badge)](https://bestpractices.coreinfrastructure.org/projects/29)
+
+The Open Source Security Foundation (OpenSSF) [Best Practices badge](https://github.com/coreinfrastructure/best-practices-badge) is a way for Free/Libre and Open Source Software (FLOSS) projects to show that they follow best practices. Projects can voluntarily self-certify how they follow each best practice. Consumers of the badge can quickly assess which FLOSS projects are following best practices and as a result are more likely to produce higher-quality secure software.
