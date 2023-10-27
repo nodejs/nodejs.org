@@ -127,6 +127,14 @@ a:hover .color-lightgray {
   }
 }
 
+.shiki .line {
+  min-height: 1rem;
+
+  &:last-child {
+    min-height: initial;
+  }
+}
+
 html[dir='rtl'] {
   .has-side-nav {
     nav {
