@@ -17,7 +17,7 @@ export const Default: Story = {
         src: 'https://avatars.githubusercontent.com/u/',
       },
     ],
-    date: new Date(),
+    date: new Date('17 October 2023'),
   },
   decorators: [
     Story => (
