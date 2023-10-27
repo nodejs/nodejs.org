@@ -5,6 +5,7 @@
  * we use `shikiji` which is an ESM-only rewrite of Shiki
  */
 
+import dockerLanguage from 'shikiji/langs/docker.mjs';
 import javaScriptLanguage from 'shikiji/langs/javascript.mjs';
 import jsonLanguage from 'shikiji/langs/json.mjs';
 import jsxLanguage from 'shikiji/langs/jsx.mjs';
@@ -20,7 +21,7 @@ export const LANGUAGES = [
   {
     ...javaScriptLanguage[0],
     scopeName: 'source.js',
-    aliases: ['js'],
+    aliases: ['mjs', 'cjs', 'js'],
   },
   {
     ...jsonLanguage[0],
@@ -53,6 +54,11 @@ export const LANGUAGES = [
     ...shellSessionLanguage[0],
     scopeName: 'text.shell-session',
     aliases: ['console'],
+  },
+  {
+    ...dockerLanguage[0],
+    scopeName: 'source.dockerfile',
+    aliases: ['dockerfile'],
   },
 ];
 
