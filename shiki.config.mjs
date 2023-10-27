@@ -5,6 +5,7 @@
  * we use `shikiji` which is an ESM-only rewrite of Shiki
  */
 
+import diffLanguage from 'shikiji/langs/diff.mjs';
 import dockerLanguage from 'shikiji/langs/docker.mjs';
 import javaScriptLanguage from 'shikiji/langs/javascript.mjs';
 import jsonLanguage from 'shikiji/langs/json.mjs';
@@ -59,6 +60,10 @@ export const LANGUAGES = [
     ...dockerLanguage[0],
     scopeName: 'source.dockerfile',
     aliases: ['dockerfile'],
+  },
+  {
+    ...diffLanguage[0],
+    scopeName: 'source.diff',
   },
 ];
 
