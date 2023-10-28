@@ -65,7 +65,7 @@ Here is the security disclosure policy for Node.js
 Security notifications will be distributed via the following methods.
 
 - [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog/](https://nodejs.org/en/blog/)
+- [/blog/](/blog/)
 
 ## Comments on this policy
 

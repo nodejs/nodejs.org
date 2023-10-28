@@ -1,5 +1,5 @@
 ---
-layout: blog-index.hbs
 title: News from
-paginate: blog
+layout: blog-index.hbs
+author: The Node.js Project
 ---

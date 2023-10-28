@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - July 16th, 2016
-author: Minwoo Jung (github.com/JungMinu)
-date: 2016-07-16T12:00:00.000Z
-status: publish
+date: '2016-07-16T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-07-16
+title: Weekly Update - July 16th, 2016
 layout: blog-post.hbs
+author: 'Minwoo Jung (github.com/JungMinu)'
 ---
 
 ### Node v4.5.0 proposal
@@ -16,7 +14,7 @@ layout: blog-post.hbs
 
 Event will showcase workshops, community and technical talks, and use cases that will inform the future development of Node.js and JavaScript.
 
-See https://nodejs.org/en/blog/announcements/interactive-2016-ams/ for more information.
+See /blog/announcements/interactive-2016-ams/ for more information.
 
 ### Community Updates
 

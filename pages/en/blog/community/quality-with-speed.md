@@ -1,9 +1,7 @@
 ---
-title: Node.js - Quality with Speed
-date: 2017-02-22T14:41:04.442Z
-status: publish
+date: '2017-02-22T14:41:04.442Z'
 category: community
-slug: quality-with-speed
+title: Node.js - Quality with Speed
 layout: blog-post.hbs
 author: Michael Dawson and Myles Borins
 ---

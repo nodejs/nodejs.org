@@ -58,6 +58,6 @@ type of objects take and what variables are preventing them from being garbage
 collected. It can also help to know the allocation pattern of our program over
 time.
 
-- [Using Heap Profiler](/en/docs/guides/diagnostics/memory/using-heap-profiler/)
-- [Using Heap Snapshot](/en/docs/guides/diagnostics/memory/using-heap-snapshot/)
-- [GC Traces](/en/docs/guides/diagnostics/memory/using-gc-traces)
+- [Using Heap Profiler](/docs/guides/diagnostics/memory/using-heap-profiler/)
+- [Using Heap Snapshot](/docs/guides/diagnostics/memory/using-heap-snapshot/)
+- [GC Traces](/docs/guides/diagnostics/memory/using-gc-traces)

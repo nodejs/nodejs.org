@@ -1,5 +1,4 @@
 ---
-layout: blog-index.hbs
 title: News
-paginate: blog
+layout: blog-index.hbs
 ---

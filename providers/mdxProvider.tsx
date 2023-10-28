@@ -4,18 +4,19 @@ import { MDXRemote } from 'next-mdx-remote';
 import { useEffect } from 'react';
 import type { FC } from 'react';
 
-import NodeApiVersionLinks from '@/components/Docs/NodeApiVersionLinks';
+import { htmlComponents, mdxComponents } from '@/next.mdx.use.mjs';
 
-const mdxComponents: MDXComponents = {
-  NodeApiVersionLinks: NodeApiVersionLinks,
-  blockquote: ({ children }) => <div className="highlight-box">{children}</div>,
+// Combine all MDX Components to be used
+const combinedComponents: MDXComponents = {
+  ...htmlComponents,
+  ...mdxComponents,
 };
 
 export const MDXProvider: FC<{ content: string }> = ({ content }) => {
   useEffect(() => window.startLegacyApp(), []);
 
   return (
-    <BaseMDXProvider components={mdxComponents} disableParentContext>
+    <BaseMDXProvider components={combinedComponents} disableParentContext>
       <MDXRemote compiledSource={content} frontmatter={null} scope={null} />
     </BaseMDXProvider>
   );

@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Jul 17th, 2015
-author: Yosuke Furukawa (@yosuke-furukawa)
-date: 2015-07-17T12:00:00.000Z
-status: publish
+date: '2015-07-17T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-07-17
+title: Weekly Update - Jul 17th, 2015
 layout: blog-post.hbs
+author: 'Yosuke Furukawa (@yosuke-furukawa)'
 ---
 
 ### io.js and Node.js News — July 17th

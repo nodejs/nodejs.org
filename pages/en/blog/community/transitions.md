@@ -1,11 +1,9 @@
 ---
-title: Transitions
-author: Scott Hammond
-date: 2015-05-08T18:00:00.000Z
-status: publish
+date: '2015-05-08T18:00:00.000Z'
 category: community
-slug: transitions
+title: Transitions
 layout: blog-post.hbs
+author: Scott Hammond
 ---
 
 In February, we announced the [Node.js

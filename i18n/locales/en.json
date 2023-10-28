@@ -1,6 +1,6 @@
 {
   "components.footer.scrollToTop.button": "Scroll to top",
-  "components.header.links.about": "About Node.js®",
+  "components.header.links.about": "About",
   "components.header.links.download": "Download",
   "components.header.links.docs": "Docs",
   "components.header.links.getInvolved": "Get Involved",
@@ -13,7 +13,7 @@
   "components.footer.links.security": "Security Policy",
   "components.footer.links.openJS": "OpenJS Foundation",
   "components.navigation.about.links.governance": "Project Governance",
-  "components.navigation.about.links.releases": "Releases",
+  "components.navigation.about.links.releases": "Previous Releases",
   "components.navigation.about.links.security": "Security Reporting",
   "components.navigation.docs.links.es6": "ES6 and beyond",
   "components.navigation.docs.links.apiLts": "{fullLtsNodeVersion} API {spanLts}",
@@ -23,6 +23,7 @@
   "components.navigation.getInvolved.links.collabSummit": "Collab Summit",
   "components.navigation.getInvolved.links.contribute": "Contribute",
   "components.navigation.getInvolved.links.codeOfConduct": "Code of Conduct",
+  "components.downloadList.links.previousReleases": "Previous Releases",
   "components.downloadList.links.packageManager": "Installing Node.js via package manager",
   "components.downloadList.links.shaSums": "Signed SHASUMS for release files",
   "components.downloadList.links.shaSums.howToVerify": " (How to verify)",
@@ -67,5 +68,10 @@
   "components.common.languageDropdown.label": "Choose Language",
   "components.common.card.announcement": "Announcements",
   "components.common.card.release": "Releases",
-  "components.common.card.vulnerability": "Vulnerabilities"
+  "components.common.card.vulnerability": "Vulnerabilities",
+  "components.home.homeDownloadButton.download": "Download {version} {isLts, select, true {lts} other {current}}",
+  "components.home.homeDownloadButton.tagline": "{isLts, select, true {Recommended For Most Users} other {Latest Features}}",
+  "components.home.homeDownloadButton.changelog": "Changelog",
+  "components.home.homeDownloadButton.otherDownloads": "Other Downloads",
+  "components.home.homeDownloadButton.apiDocs": "API Docs"
 }

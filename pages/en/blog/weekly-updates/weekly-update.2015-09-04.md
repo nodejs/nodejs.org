@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Sep 4th, 2015
-author: Yosuke Furukawa (@yosuke-furukawa)
-date: 2015-09-04T12:00:00.000Z
-status: publish
+date: '2015-09-04T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-09-04
+title: Weekly Update - Sep 4th, 2015
 layout: blog-post.hbs
+author: 'Yosuke Furukawa (@yosuke-furukawa)'
 ---
 
 ### Node.js News — September 4th
@@ -46,7 +44,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 
 ### Node.js v4.0.0(stable) entry is posted
 
-- We have posted [Node v4.0.0](https://nodejs.org/en/blog/release/v4.0.0/) entry. This entry has more details about Node.js v4.0.0.
+- We have posted [Node v4.0.0](/blog/release/v4.0.0/) entry. This entry has more details about Node.js v4.0.0.
 
 ### We are creating the list of modules that currently do not work with Node.js v4.0.0
 

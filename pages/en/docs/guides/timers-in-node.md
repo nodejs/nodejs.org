@@ -10,7 +10,7 @@ period of time. Timers do not need to be imported via `require()`, since
 all the methods are available globally to emulate the browser JavaScript API.
 To fully understand when timer functions will be executed, it's a good idea to
 read up on the Node.js
-[Event Loop](/en/docs/guides/event-loop-timers-and-nexttick/).
+[Event Loop](/docs/guides/event-loop-timers-and-nexttick/).
 
 ## Controlling the Time Continuum with Node.js
 
@@ -96,7 +96,7 @@ the scheduled immediate (see `clearImmediate()` below).
 > _before_ any `Immediate`s that are set as well as before any scheduled I/O.
 > The second is that `process.nextTick()` is non-clearable, meaning once
 > code has been scheduled to execute with `process.nextTick()`, the execution
-> cannot be stopped, just like with a normal function. Refer to [this guide](/en/docs/guides/event-loop-timers-and-nexttick/#process-nexttick)
+> cannot be stopped, just like with a normal function. Refer to [this guide](/docs/guides/event-loop-timers-and-nexttick/#process-nexttick)
 > to better understand the operation of `process.nextTick()`.
 
 ### "Infinite Loop" Execution ~ _`setInterval()`_
@@ -191,4 +191,4 @@ There's much more to the Event Loop and Timers than this guide
 has covered. To learn more about the internals of the Node.js
 Event Loop and how Timers operate during execution, check out
 this Node.js guide: [The Node.js Event Loop, Timers, and
-process.nextTick()](/en/docs/guides/event-loop-timers-and-nexttick/).
+process.nextTick()](/docs/guides/event-loop-timers-and-nexttick/).

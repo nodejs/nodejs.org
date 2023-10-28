@@ -1,11 +1,9 @@
 ---
-title: Building Node.js Together
-author: tjfontaine
-date: 2014-07-29T21:00:00.000Z
-status: publish
+date: '2014-07-29T21:00:00.000Z'
 category: community
-slug: building-nodejs-together
+title: Building Node.js Together
 layout: blog-post.hbs
+author: tjfontaine
 ---
 
 Node.js is reaching more people than ever, it's attracting new and interesting
@@ -28,17 +26,17 @@ living breathing website whose content is created by our end users and team.
 The website should be the canonical location for documentation on how to use
 Node.js, how Node.js works, and how to find out what's going on in the Node
 community. We have seeded the initial documentation with [how to
-contribute](https://nodejs.org/en/get-involved/contribute/), [who the core team
-is](https://nodejs.org/en/about/organization/#index_md_technical_steering_committee),
+contribute](/get-involved/contribute/), [who the core team
+is](/about/organization/#index_md_technical_steering_committee),
 and some basic documentation of the [project
-itself](https://nodejs.org/en/about/organization). From there we're looking to
+itself](/about/organization). From there we're looking to
 enable the community to come in and build out the rest of the framework for
 documentation.
 
 One of the key changes here is that we're extending the tools that generate API
 documentation to work for the website in general. That means the website is now
 written in markdown. Contributions work with the same
-[pull-request](https://nodejs.org/en/get-involved/contribute/#code-contributions)
+[pull-request](/get-involved/contribute/#code-contributions)
 way as contributions to Node itself. The intent here is to be able to quickly
 generate new documentation and improve it with feedback from the community.
 
@@ -58,7 +56,7 @@ Road](http://blog.nodejs.org/2014/06/11/notes-from-the-road/) events there are
 often questions about what does and doesn't go into core. How the team
 identifies what those features are and when you decide to integrate them. I've
 spent a lot of time talking about that but I've also
-[added](https://nodejs.org/en/about/organization) it to the new documentation on
+[added](/about/organization) it to the new documentation on
 the site.
 
 It's pretty straight forward, but in short if Node.js needs an interface to
@@ -146,7 +144,7 @@ responsible for the entirety of that subsystem, but they guide its progress by
 communicating with end users, reviewing bugs and pull requests, and identifying
 test cases and consumers of new features. People come and go from the core
 team, and recently we've added [some
-documentation](https://nodejs.org/en/about/organization) that describes how you
+documentation](/about/organization) that describes how you
 find your way onto that team. It's based largely around our contribution
 process. It's not about who you work for, or about who you know, it's about
 your ability to provide technical improvement to the project itself.

@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Dec 11st, 2015
-author: Minwoo Jung (@jmwsoft)
-date: 2015-12-11T12:00:00.000Z
-status: publish
+date: '2015-12-11T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-12-11
+title: Weekly Update - Dec 11st, 2015
 layout: blog-post.hbs
+author: 'Minwoo Jung (@jmwsoft)'
 ---
 
 ### Node.js News — December 11st
@@ -14,7 +12,7 @@ Node v5.2.0 (Current) is released
 
 ### Node.js v5.2.0 (Current) Releases
 
-This week we have one release: [Node.js v5.2.0 (Current)](https://nodejs.org/en/blog/release/v5.2.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+This week we have one release: [Node.js v5.2.0 (Current)](/blog/release/v5.2.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Notable changes
 
@@ -32,9 +30,9 @@ This week we have one release: [Node.js v5.2.0 (Current)](https://nodejs.org/en/
 - [The Node.js Foundation](https://foundation.nodejs.org/), a community-led and industry-backed consortium to advance the development of the Node.js platform, announced Apigee, RisingStack and Yahoo are joining the Foundation as Silver Members to build and support the Node.js platform.
 - With over 2 million downloads per month, Node.js is the runtime of choice for developers building everything from enterprise applications to Industrial IoT.
 - The Node.js Foundation members work together alongside the community to help grow this diverse technology for large financial services, web-scale, cloud computing companies, and more.
-- The newly added [Long-Term Support](https://nodejs.org/en/blog/release/v4.2.0/) release version 4.0 is just one of the many initiatives from the Foundation, which addresses the needs of enterprises that are using Node.js in more complex production environments, and signals the growing maturity of the technology.
+- The newly added [Long-Term Support](/blog/release/v4.2.0/) release version 4.0 is just one of the many initiatives from the Foundation, which addresses the needs of enterprises that are using Node.js in more complex production environments, and signals the growing maturity of the technology.
 
-See https://nodejs.org/en/blog/announcements/apigee-rising-stack-yahoo/ for more information.
+See /blog/announcements/apigee-rising-stack-yahoo/ for more information.
 
 ### Node.js Foundation Advances Platform with More Than Three Million Users
 
@@ -46,7 +44,7 @@ See https://nodejs.org/en/blog/announcements/apigee-rising-stack-yahoo/ for more
 - The project is both critical to Node.js and already widely used, making it a natural fit for the Foundation.
 - Under the Foundation's umbrella, it will receive additional support and mentorship.
 
-See https://nodejs.org/en/blog/announcements/foundation-advances-growth/ for more information.
+See /blog/announcements/foundation-advances-growth/ for more information.
 
 ### Community Updates
 

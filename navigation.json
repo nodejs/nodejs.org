@@ -33,6 +33,10 @@
         "link": "/download/package-manager",
         "translationId": "components.downloadList.links.packageManager"
       },
+      "previousReleases": {
+        "link": "/about/previous-releases",
+        "translationId": "components.downloadList.links.previousReleases"
+      },
       "nightlyReleases": {
         "link": "https://nodejs.org/download/nightly/",
         "translationId": "components.downloadList.links.nightlyReleases"

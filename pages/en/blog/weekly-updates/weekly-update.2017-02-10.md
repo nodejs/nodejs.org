@@ -1,24 +1,22 @@
 ---
-title: Weekly Update - February 10th, 2017
-author: Minwoo Jung (github.com/JungMinu)
-date: 2017-02-10T12:00:00.000Z
-status: publish
+date: '2017-02-10T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2017-02-10
+title: Weekly Update - February 10th, 2017
 layout: blog-post.hbs
+author: 'Minwoo Jung (github.com/JungMinu)'
 ---
 
 ### Node v7.5.0 (Current)
 
-- [Node v7.5.0 (Current)](https://nodejs.org/en/blog/release/v7.5.0/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V7.md#7.5.0).
+- [Node v7.5.0 (Current)](/blog/release/v7.5.0/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V7.md#7.5.0).
 
 ### Node v4.7.3 (LTS)
 
-- [Node v4.7.3 (LTS)](https://nodejs.org/en/blog/release/v4.7.3/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V4.md#4.7.3).
+- [Node v4.7.3 (LTS)](/blog/release/v4.7.3/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V4.md#4.7.3).
 
 ### Node v6.9.5 (LTS)
 
-- [Node v6.9.5 (LTS)](https://nodejs.org/en/blog/release/v6.9.5/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V6.md#6.9.5).
+- [Node v6.9.5 (LTS)](/blog/release/v6.9.5/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V6.md#6.9.5).
 
 ### Notable Updates
 

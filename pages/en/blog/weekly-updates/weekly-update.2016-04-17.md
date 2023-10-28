@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Apr 17th, 2016
-author: Minwoo Jung (github.com/JungMinu)
-date: 2016-04-17T12:00:00.000Z
-status: publish
+date: '2016-04-17T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-04-17
+title: Weekly Update - Apr 17th, 2016
 layout: blog-post.hbs
+author: 'Minwoo Jung (github.com/JungMinu)'
 ---
 
 ### Node.js News
@@ -14,13 +12,13 @@ Node v4.4.3 (LTS) is released.
 
 ### Node v4.4.3 (LTS) Release
 
-We have one release: [Node v4.4.3 (LTS)](https://nodejs.org/en/blog/release/v4.4.3/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+We have one release: [Node v4.4.3 (LTS)](/blog/release/v4.4.3/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### New Node.js Foundation Survey Reports New “Full Stack” In Demand Among Enterprise Developers
 
 The Node.js User Survey report features insights on emerging trends happening in this massive community that serves as a leading indicator on trends like microservices architectures, real-time web applications, Internet of Things (IoT). The report paints a detailed picture of the technologies that are being used, in particular, with Node.js in production and language preferences (current and future) for front end, back end and IoT developers.
 
-See https://nodejs.org/en/blog/announcements/nodejs-foundation-survey/ for more information.
+See /blog/announcements/nodejs-foundation-survey/ for more information.
 
 ### Community Updates
 

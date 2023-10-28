@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - May 22nd, 2015
-author: Giovanny Gioyik (@Gioyik) & Yosuke Furukawa (@yosuke-furukawa)
-date: 2015-05-22T12:00:00.000Z
-status: publish
+date: '2015-05-22T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-05-22
+title: Weekly Update - May 22nd, 2015
 layout: blog-post.hbs
+author: 'Giovanny Gioyik (@Gioyik) & Yosuke Furukawa (@yosuke-furukawa)'
 ---
 
 # io.js 1.8, 2.0 and 2.1 releases

@@ -1,8 +1,8 @@
 ---
-title: Ben Noordhuis's Departure
-date: 2013-12-03T22:13:57.000Z
-slug: bnoordhuis-departure
+date: '2013-12-03T22:13:57.000Z'
+title: "Ben Noordhuis's Departure"
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 As of this past weekend, Ben Noordhuis has decided to step away from

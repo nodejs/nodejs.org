@@ -1,11 +1,9 @@
 ---
-title: Node.js and io.js leaders are building an open, neutral Node.js Foundation to support the future of the platform
-author: Mike Dolan
-date: 2015-05-15T23:50:46.000Z
-status: publish
+date: '2015-05-15T23:50:46.000Z'
 category: community
-slug: node-leaders-are-building-an-open-foundation
+title: Node.js and io.js leaders are building an open, neutral Node.js Foundation to support the future of the platform
 layout: blog-post.hbs
+author: Mike Dolan
 ---
 
 Just a couple months ago a variety of members of the Node.js and io.js

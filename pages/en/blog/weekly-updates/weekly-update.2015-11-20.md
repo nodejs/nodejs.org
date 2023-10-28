@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Nov 20th, 2015
-author: Minwoo Jung (@jmwsoft)
-date: 2015-11-20T12:00:00.000Z
-status: publish
+date: '2015-11-20T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-11-20
+title: Weekly Update - Nov 20th, 2015
 layout: blog-post.hbs
+author: 'Minwoo Jung (@jmwsoft)'
 ---
 
 ### Node.js News — November 20th
@@ -14,7 +12,7 @@ Node.js v5.1.0 (Current) is released
 
 ### Node.js v5.1.0 (Current) Releases
 
-This week we have one release: [Node.js v5.1.0 (Current)](https://nodejs.org/en/blog/release/v5.1.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+This week we have one release: [Node.js v5.1.0 (Current)](/blog/release/v5.1.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Notable changes
 

@@ -1,11 +1,9 @@
 ---
-title: 'Bryan Cantrill: Instrumenting the Real Time Web'
-author: Isaac Schlueter
-date: 2012-05-08T17:00:34.000Z
-status: publish
+date: '2012-05-08T17:00:34.000Z'
 category: video
-slug: bryan-cantrill-instrumenting-the-real-time-web
+title: 'Bryan Cantrill: Instrumenting the Real Time Web'
 layout: blog-post.hbs
+author: Isaac Schlueter
 ---
 
 Bryan Cantrill, VP of Engineering at Joyent, describes the challenges of instrumenting a distributed, dynamic, highly virtualized system -- and what their experiences taught them about the problem, the technologies used to tackle it, and promising approaches.

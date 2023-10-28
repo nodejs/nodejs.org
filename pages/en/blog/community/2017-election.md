@@ -1,9 +1,7 @@
 ---
-title: Node.js Foundation Individual Membership Director election opens Friday, January 20
-date: 2017-01-20T09:00:00.000Z
-status: publish
+date: '2017-01-20T09:00:00.000Z'
 category: community
-slug: 2017-election-nodejs-foundation
+title: Node.js Foundation Individual Membership Director election opens Friday, January 20
 layout: blog-post.hbs
 author: Tracy Hinds
 ---

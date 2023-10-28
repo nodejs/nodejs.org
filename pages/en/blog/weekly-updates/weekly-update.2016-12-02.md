@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - December 2nd, 2016
-author: Minwoo Jung (github.com/JungMinu)
-date: 2016-12-02T12:00:00.000Z
-status: publish
+date: '2016-12-02T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-12-02
+title: Weekly Update - December 2nd, 2016
 layout: blog-post.hbs
+author: 'Minwoo Jung (github.com/JungMinu)'
 ---
 
 ### Continued Growth of The Node.js Platform and Node.js Foundation

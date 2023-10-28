@@ -1,16 +1,14 @@
 ---
-title: Weekly Update - May 30th, 2016
-author: Minwoo Jung (github.com/JungMinu)
-date: 2016-05-30T12:00:00.000Z
-status: publish
+date: '2016-05-30T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-05-30
+title: Weekly Update - May 30th, 2016
 layout: blog-post.hbs
+author: 'Minwoo Jung (github.com/JungMinu)'
 ---
 
 ### Node v4.4.5 (LTS) Release
 
-[Node v4.4.5 (LTS)](https://nodejs.org/en/blog/release/v4.4.5/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+[Node v4.4.5 (LTS)](/blog/release/v4.4.5/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Community Updates
 

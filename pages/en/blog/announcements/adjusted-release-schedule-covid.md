@@ -1,8 +1,7 @@
 ---
-date: 2020-04-03T20:26:28Z
+date: '2020-04-03T20:26:28.000Z'
 category: announcements
 title: Changes to Release Schedule
-slug: adjusted-release-schedule-covid
 layout: blog-post.hbs
 author: Shelley Vohr
 ---

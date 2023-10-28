@@ -1,17 +1,16 @@
 ---
-title: Keynotes for Node.js Interactive 2015 Announced
-date: 2015-11-20T09:00:00.000Z
-status: publish
+date: '2015-11-20T09:00:00.000Z'
 category: announcements
-slug: interactive-2015-programming
+title: Keynotes for Node.js Interactive 2015 Announced
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 > Keynotes from GoDaddy, IBM, NodeSource, Uber and More Featured At Inaugural Node.js Foundation Event December 8-9, 2015, in Portland, Ore.
 
 **SAN FRANCISCO, Nov. 20, 2015** – The [Node.js Foundation](https://foundation.nodejs.org/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced the final keynotes and programming for [Node.js Interactive](http://events.linuxfoundation.org/events/node-interactive). The event will feature conversations and presentations on everything from the future of Node.js in IoT to collaborations between the community and the enterprise.
 
-Node.js is the runtime of choice for building mobile, web and cloud applications. The diversity of the technology and its capabilities are making it ubiquitous in almost every ecosystem from personal finance to robotics. To highlight changes with the platform and what’s to come, Node.js Interactive will focus on three tracks: Frontend, Backend and the Internet of Things (IoT). Highlights of these tracks available [here](https://nodejs.org/en/blog/announcements/interactive-2015-programming/); full track sessions [here](http://events.linuxfoundation.org/events/node-interactive/program/schedule).
+Node.js is the runtime of choice for building mobile, web and cloud applications. The diversity of the technology and its capabilities are making it ubiquitous in almost every ecosystem from personal finance to robotics. To highlight changes with the platform and what’s to come, Node.js Interactive will focus on three tracks: Frontend, Backend and the Internet of Things (IoT). Highlights of these tracks available [here](/blog/announcements/interactive-2015-programming/); full track sessions [here](http://events.linuxfoundation.org/events/node-interactive/program/schedule).
 
 Node.js Interactive brings together a broad range of speakers to help experienced and novice Node.js users alike learn tips, best practices, new skills, as well as gain insight into future developments for the technology.
 
@@ -53,7 +52,7 @@ Node.js Interactive is made possible by Platinum sponsor IBM; Gold sponsors: Joy
 
 ### Additional Resources
 
-- Learn more about the [Node.js Foundation](https://foundation.nodejs.org/), and get involved with the [project](https://nodejs.org/en/get-involved/).
+- Learn more about the [Node.js Foundation](https://foundation.nodejs.org/), and get involved with the [project](/get-involved/).
 - Want to keep abreast of Node.js Foundation news? Sign up for our newsletter at the bottom of the [Node.js Foundation page](https://foundation.nodejs.org/).
 - Follow on [Twitter](https://twitter.com/nodejs?ref_src=twsrc^google|twcamp^serp|twgr^author) and [Google+](https://plus.google.com/u/1/100598160817214911030/posts).
 

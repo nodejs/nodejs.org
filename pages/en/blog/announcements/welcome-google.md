@@ -1,10 +1,9 @@
 ---
-title: Welcome Google Cloud Platform!
-date: 2016-03-29T13:00:00.000Z
-status: publish
+date: '2016-03-29T13:00:00.000Z'
 category: announcements
-slug: welcome-google
+title: 'Welcome Google Cloud Platform!'
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 Google Cloud Platform joined the Node.js Foundation today. This news comes on the heels of the Node.js runtime going into beta on [Google App Engine](https://cloudplatform.googleblog.com/2016/03/Node.js-on-Google-App-Engine-goes-beta.html), a platform that makes it easy to build scalable web applications and mobile backends across a variety of programming languages.

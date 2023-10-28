@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Oct 9th, 2015
-author: Minwoo Jung (@jmwsoft)
-date: 2015-10-09T12:00:00.000Z
-status: publish
+date: '2015-10-09T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-10-09
+title: Weekly Update - Oct 9th, 2015
 layout: blog-post.hbs
+author: 'Minwoo Jung (@jmwsoft)'
 ---
 
 ### Node.js News — October 9th
@@ -14,7 +12,7 @@ Node.js v4.1.2 is released
 
 ### Node.js v4.1.2 Releases
 
-This week we have one release: [Node.js v4.1.2](https://nodejs.org/en/blog/release/v4.1.2/). complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+This week we have one release: [Node.js v4.1.2](/blog/release/v4.1.2/). complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Notable changes
 

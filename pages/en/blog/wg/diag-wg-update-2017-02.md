@@ -1,11 +1,9 @@
 ---
-title: Diag WG Update - Many new tools, phasing out some old ones
-author: Josh Gavant (@joshgav)
-date: 2017-02-28T08:00:00.000Z
+date: '2017-02-28T08:00:00.000Z'
 category: wg
-status: publish
-slug: diag-wg-update-2017-02
+title: Diag WG Update - Many new tools, phasing out some old ones
 layout: blog-post.hbs
+author: 'Josh Gavant (@joshgav)'
 ---
 
 In surveys and discussions with Node.js users we consistently hear of your need
@@ -68,7 +66,7 @@ Thank you!
 
 [async_hooks]: https://github.com/nodejs/node/pull/8531
 [CLI debugger]: https://nodejs.org/docs/v7.6.0/api/debugger.html
-[Debugging - Getting Started]: https://nodejs.org/en/docs/guides/debugging-getting-started/
+[Debugging - Getting Started]: /docs/guides/debugging-getting-started/
 [diag-agenda]: https://github.com/search?q=org%3Anodejs+label%3A%22diag-agenda%22&type=Issues
 [Diagnostics WG]: https://github.com/nodejs/diagnostics/issues
 [Inspector API]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/

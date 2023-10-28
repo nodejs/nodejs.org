@@ -1,10 +1,9 @@
 ---
-title: Node.js Foundation Announces Schedule for Second Annual Node.js Interactive North America
-date: 2016-09-12T16:00:00.000Z
-status: publish
+date: '2016-09-12T16:00:00.000Z'
 category: announcements
-slug: interactive-2016-north-america-schedule
+title: Node.js Foundation Announces Schedule for Second Annual Node.js Interactive North America
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 > IBM, Netflix, Microsoft, and leading community experts to showcase the current and future of Node.js

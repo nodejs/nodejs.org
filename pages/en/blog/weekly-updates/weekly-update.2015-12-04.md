@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Dec 4th, 2015
-author: Minwoo Jung (@jmwsoft)
-date: 2015-12-04T12:00:00.000Z
-status: publish
+date: '2015-12-04T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-12-04
+title: Weekly Update - Dec 4th, 2015
 layout: blog-post.hbs
+author: 'Minwoo Jung (@jmwsoft)'
 ---
 
 ### Node.js News — December 4th
@@ -15,10 +13,10 @@ Node v5.1.1 (Current), v4.2.3 "Argon" (LTS), v0.12.9 (LTS) and v0.10.41 (Mainten
 ### December Security Release Summary
 
 - This is an important security release. Please update your Node.js installation.
-- We have released Node.js [v0.10.41 (Maintenance)](/en/blog/release/v0.10.41/), [v0.12.9 (LTS)](/en/blog/release/v0.12.9/), [v4.2.3 "Argon" (LTS)](/en/blog/release/v4.2.3/) and [v5.1.1 (Current)](/en/blog/release/v5.1.1/) with fixes for the announced vulnerabilities and updates to OpenSSL.
+- We have released Node.js [v0.10.41 (Maintenance)](/blog/release/v0.10.41/), [v0.12.9 (LTS)](/blog/release/v0.12.9/), [v4.2.3 "Argon" (LTS)](/blog/release/v4.2.3/) and [v5.1.1 (Current)](/blog/release/v5.1.1/) with fixes for the announced vulnerabilities and updates to OpenSSL.
 - All Node.js users should consult our December Security Release Summary for details on patched vulnerabilities.
-
-See https://nodejs.org/en/blog/vulnerability/december-2015-security-releases/ for more information.
+  (/(/(/(/
+  See /blog/vulnerability/december-2015-security-releases/ for more information.
 
 ### Community Updates
 

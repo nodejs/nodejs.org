@@ -1,10 +1,9 @@
 ---
-title: Node.js Foundation Elects Board of Directors
-date: 2015-09-04T21:00:00.000Z
-status: publish
+date: '2015-09-04T21:00:00.000Z'
 category: announcements
-slug: foundation-elects-board
+title: Node.js Foundation Elects Board of Directors
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 > New Foundation Committed to Accelerating Growth of the Node.js Platform Also Adds Marketing Chair and Community Manager

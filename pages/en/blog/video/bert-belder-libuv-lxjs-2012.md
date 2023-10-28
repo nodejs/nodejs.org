@@ -1,9 +1,9 @@
 ---
-title: Bert Belder - libuv at LXJS 2012
-slug: bert-belder-libuv-lxjs-2012
+date: '2012-09-30T17:28:45.000Z'
 category: video
-date: 2012-09-30T17:28:45.000Z
+title: Bert Belder - libuv at LXJS 2012
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 Node core committer Bert Belder gave a talk at

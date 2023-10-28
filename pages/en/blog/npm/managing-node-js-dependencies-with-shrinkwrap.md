@@ -1,11 +1,9 @@
 ---
-title: Managing Node.js Dependencies with Shrinkwrap
-author: Dave Pacheco
-date: 2012-02-27T18:51:59.000Z
-status: publish
+date: '2012-02-27T18:51:59.000Z'
 category: npm
-slug: managing-node-js-dependencies-with-shrinkwrap
+title: Managing Node.js Dependencies with Shrinkwrap
 layout: blog-post.hbs
+author: Dave Pacheco
 ---
 
 <p style="float:right;text-align:center;margin:5px;">

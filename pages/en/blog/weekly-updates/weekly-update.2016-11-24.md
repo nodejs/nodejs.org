@@ -1,16 +1,14 @@
 ---
-title: Weekly Update - November 24th, 2016
-author: Minwoo Jung (github.com/JungMinu)
-date: 2016-11-24T12:00:00.000Z
-status: publish
+date: '2016-11-24T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-11-24
+title: Weekly Update - November 24th, 2016
 layout: blog-post.hbs
+author: 'Minwoo Jung (github.com/JungMinu)'
 ---
 
 ### Node v7.2.0 (Current)
 
-- [Node v7.2.0 (Current)](https://nodejs.org/en/blog/release/v7.2.0/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+- [Node v7.2.0 (Current)](/blog/release/v7.2.0/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Node.js Benchmarks Results for v7.x
 

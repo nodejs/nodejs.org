@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Jun 5th, 2015
-author: Giovanny Gioyik (@Gioyik)
-date: 2015-06-05T12:00:00.000Z
-status: publish
+date: '2015-06-05T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-06-05
+title: Weekly Update - Jun 5th, 2015
 layout: blog-post.hbs
+author: 'Giovanny Gioyik (@Gioyik)'
 ---
 
 # io.js News

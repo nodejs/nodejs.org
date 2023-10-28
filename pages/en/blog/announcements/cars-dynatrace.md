@@ -1,10 +1,9 @@
 ---
-title: Cars.com and Dynatrace join the Foundation to support the stability and success of the Node.js platform
-date: 2016-08-17T12:00:00.000Z
-status: publish
+date: '2016-08-17T12:00:00.000Z'
 category: announcements
-slug: cars-dynatrace
+title: Cars.com and Dynatrace join the Foundation to support the stability and success of the Node.js platform
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 > New Node.js Foundation Members Drive Enterprise Growth

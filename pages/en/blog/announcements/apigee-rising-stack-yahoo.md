@@ -1,17 +1,16 @@
 ---
-title: Apigee, RisingStack and Yahoo Join the Node.js Foundation
-date: 2015-12-08T12:00:00.000Z
-status: publish
+date: '2015-12-08T12:00:00.000Z'
 category: announcements
-slug: apigee-rising-stack-yahoo
+title: Apigee, RisingStack and Yahoo Join the Node.js Foundation
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 > New Silver Members to Advance Node.js Growth and Enterprise Adoption
 
 **NODE.JS INTERACTIVE 2015, PORTLAND, OR.** — [The Node.js Foundation](https://foundation.nodejs.org/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced Apigee, RisingStack and Yahoo are joining the Foundation as Silver Members to build and support the Node.js platform. With over 2 million downloads per month, Node.js is the runtime of choice for developers building everything from enterprise applications to Industrial IoT.
 
-The Node.js Foundation members work together alongside the community to help grow this diverse technology for large financial services, web-scale, cloud computing companies, and more. The newly added [Long-Term Support](https://nodejs.org/en/blog/release/v4.2.0/) release version 4.0 is just one of the many initiatives from the Foundation, which addresses the needs of enterprises that are using Node.js in more complex production environments, and signals the growing maturity of the technology.
+The Node.js Foundation members work together alongside the community to help grow this diverse technology for large financial services, web-scale, cloud computing companies, and more. The newly added [Long-Term Support](/blog/release/v4.2.0/) release version 4.0 is just one of the many initiatives from the Foundation, which addresses the needs of enterprises that are using Node.js in more complex production environments, and signals the growing maturity of the technology.
 
 “We continue to welcome new Node.js Foundation members that are committed to providing the financial and technical resources needed to ensure the technology continues to evolve, while nurturing the community and ecosystem at the same time,” said Danese Cooper, Chairperson of the Node.js Foundation Board. “We are excited to have Apigee, RisingStack, and Yahoo on board to help grow the diversity of the platform and the community.”
 
@@ -33,7 +32,7 @@ Yahoo is a guide focused on informing, connecting and entertaining its users. By
 
 Additional Resources
 
-- Learn more about the [Node.js Foundation](https://foundation.nodejs.org/) and get involved with [the project](https://nodejs.org/en/get-involved/).
+- Learn more about the [Node.js Foundation](https://foundation.nodejs.org/) and get involved with [the project](/get-involved/).
 
 About Node.js Foundation
-Node.js Foundation is a collaborative open source project dedicated to building and supporting the Node.js platform and other related modules. Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 2 million downloads per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites. The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, RisingStack, Sauce Labs, SAP, StrongLoop (an IBM company), YLD!, and Yahoo. Get involved here: [https://nodejs.org](https://nodejs.org/en/).
+Node.js Foundation is a collaborative open source project dedicated to building and supporting the Node.js platform and other related modules. Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 2 million downloads per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites. The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, RisingStack, Sauce Labs, SAP, StrongLoop (an IBM company), YLD!, and Yahoo. Get involved here: [https://nodejs.org](/).

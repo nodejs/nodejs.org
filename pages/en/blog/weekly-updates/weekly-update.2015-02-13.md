@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Feb 13th, 2015
-author: Tierney Coren (@bnb)
-date: 2015-02-13T12:00:00.000Z
-status: publish
+date: '2015-02-13T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-02-13
+title: Weekly Update - Feb 13th, 2015
 layout: blog-post.hbs
+author: 'Tierney Coren (@bnb)'
 ---
 
 ## io.js support added by...

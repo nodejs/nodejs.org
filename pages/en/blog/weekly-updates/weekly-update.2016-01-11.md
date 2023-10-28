@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Jan 11th, 2016
-author: Minwoo Jung (@jmwsoft)
-date: 2016-01-11T12:00:00.000Z
-status: publish
+date: '2016-01-11T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-01-11
+title: Weekly Update - Jan 11th, 2016
 layout: blog-post.hbs
+author: 'Minwoo Jung (@jmwsoft)'
 ---
 
 ### Node.js News
@@ -14,7 +12,7 @@ Node v5.4.0 (Current) is released
 
 ### Node v5.4.0 (Current) Releases
 
-Last week we had one release: [Node v5.4.0 (Current)](https://nodejs.org/en/blog/release/v5.4.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+Last week we had one release: [Node v5.4.0 (Current)](/blog/release/v5.4.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Notable changes
 

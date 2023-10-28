@@ -1,10 +1,9 @@
 ---
-title: New Node.js Foundation Survey Reports New “Full Stack” In Demand Among Enterprise Developers
-date: 2016-04-12T13:00:00.000Z
-status: publish
+date: '2016-04-12T13:00:00.000Z'
 category: announcements
-slug: nodejs-foundation-survey
+title: 'New Node.js Foundation Survey Reports New “Full Stack” In Demand Among Enterprise Developers'
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 > Nearly 50 percent of Node.js developers surveyed using container technology, strong growth emerges in cloud, front end, mobile and devices

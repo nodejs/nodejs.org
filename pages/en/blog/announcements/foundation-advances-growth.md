@@ -1,10 +1,9 @@
 ---
-title: Node.js Foundation Advances Platform with More Than Three Million Users
-date: 2015-12-08T12:00:00.000Z
-status: publish
+date: '2015-12-08T12:00:00.000Z'
 category: announcements
-slug: foundation-advances-growth
+title: Node.js Foundation Advances Platform with More Than Three Million Users
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 > Node.js Platform Stronger Than Ever with New Node.js Foundation Members,
