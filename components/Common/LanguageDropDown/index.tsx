@@ -30,7 +30,7 @@ const LanguageDropdown: FC<LanguageDropDownProps> = ({
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <button className={styles.iconWrapper} aria-label={ariaLabel}>
+        <button className={styles.languageDropdown} aria-label={ariaLabel}>
           <LanguageIcon height="20" />
         </button>
       </DropdownMenu.Trigger>

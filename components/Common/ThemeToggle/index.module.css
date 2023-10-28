@@ -1,0 +1,13 @@
+.themeToggle {
+  @apply h-9
+    w-9
+    rounded-md
+    p-2
+    text-neutral-700
+    dark:text-neutral-300;
+
+  &:hover {
+    @apply bg-neutral-100
+      dark:bg-neutral-900;
+  }
+}

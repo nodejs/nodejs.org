@@ -26,7 +26,7 @@ const avatars = names.map(name => ({
   alt: name,
 }));
 
-describe('AvatarGroup component', () => {
+describe('AvatarGroup', () => {
   it('renders the AvatarGroup component properly', () => {
     const { getByText } = render(<AvatarGroup avatars={avatars} limit={2} />);
 
