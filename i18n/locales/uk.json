@@ -1,6 +1,6 @@
 {
   "components.footer.scrollToTop.button": "Scroll to top",
-  "components.header.links.about": "About Node.js®",
+  "components.header.links.about": "About",
   "components.header.links.download": "Download",
   "components.header.links.docs": "Docs",
   "components.header.links.getInvolved": "Get Involved",
@@ -13,7 +13,7 @@
   "components.footer.links.security": "Security Policy",
   "components.footer.links.openJS": "OpenJS Foundation",
   "components.navigation.about.links.governance": "Project Governance",
-  "components.navigation.about.links.releases": "Node.js® Releases",
+  "components.navigation.about.links.releases": "Previous Releases",
   "components.navigation.about.links.security": "Security Reporting",
   "components.navigation.docs.links.es6": "ES6 and beyond",
   "components.navigation.docs.links.apiLts": "{fullLtsNodeVersion} API {spanLts}",
