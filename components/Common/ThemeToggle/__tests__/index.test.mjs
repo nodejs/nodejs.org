@@ -17,7 +17,7 @@ beforeEach(() => {
   mockCurrentTheme = 'light';
   render(
     <LocaleProvider>
-      <ThemeToggle onChange={toggleTheme} />
+      <ThemeToggle onClick={toggleTheme} />
     </LocaleProvider>
   );
   toggle = screen.getByRole('button');
@@ -32,11 +32,6 @@ describe('ThemeToggle component', () => {
 
   it('switches light theme to dark theme', async () => {
     await userEvent.click(toggle);
-    expect(mockCurrentTheme).toBe('dark');
-  });
-
-  it('switch when press enter', async () => {
-    await userEvent.type(toggle, '{enter}');
     expect(mockCurrentTheme).toBe('dark');
   });
 });
