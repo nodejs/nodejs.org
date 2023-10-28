@@ -1,5 +1,4 @@
 {
-  "name": "nodejs.org",
   "type": "module",
   "private": true,
   "description": "Nodejs.org Website",
