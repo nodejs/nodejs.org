@@ -49,9 +49,7 @@ article a {
 
 .has-side-nav {
   nav {
-    float: left;
     margin-top: 1.5em;
-    width: 200px;
 
     ul {
       list-style-type: none;
@@ -81,7 +79,7 @@ article a {
   }
 
   article {
-    margin-left: 220px;
+    margin: 0 20px;
   }
 }
 
@@ -93,13 +91,8 @@ article a {
 
 @media screen and (max-width: 480px) {
   .has-side-nav {
-    nav {
-      float: none;
-      width: 100%;
-    }
-
     article {
-      margin-left: 0;
+      margin: 0;
     }
   }
 }
@@ -132,22 +125,5 @@ a:hover .color-lightgray {
 
   &:last-child {
     min-height: initial;
-  }
-}
-
-html[dir='rtl'] {
-  .has-side-nav {
-    nav {
-      float: right;
-    }
-
-    article {
-      margin-left: 0;
-      margin-right: 220px;
-
-      @media screen and (max-width: 480px) {
-        margin-right: 0;
-      }
-    }
   }
 }

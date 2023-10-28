@@ -1,19 +1,33 @@
 #main {
   .container {
-    padding: 0 20px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .has-side-nav.container {
+    display: grid;
+    grid-template-columns: fit-content(300px) 1fr;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1002px) {
   #main {
     .container {
-      padding: 1em 20px;
+      margin: 1em 20px;
     }
 
     article {
       ul:not(.no-padding) {
-        padding: 0 20px;
+        margin: 0 20px;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #main {
+    .container {
+      display: block;
     }
   }
 }
