@@ -24,6 +24,9 @@ const DocsLayout: FC<PropsWithChildren> = ({ children }) => {
       fullCurrentNodeVersion: current ? current.versionWithPrefix : undefined,
       currentNodeVersion: current ? `v${current.major}.x` : undefined,
     },
+    guides: {
+      spanGuides: <span className="small color-lightgray">ARCHIVE</span>,
+    },
   };
 
   return (
