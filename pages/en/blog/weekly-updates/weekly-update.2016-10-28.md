@@ -8,7 +8,7 @@ author: 'Minwoo Jung (github.com/JungMinu)'
 
 ### Node v7.0.0 (Current)
 
-- [Node v7.0.0 (Current)](https://nodejs.org/en/blog/release/v7.0.0/). The complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+- [Node v7.0.0 (Current)](/blog/release/v7.0.0/). The complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Community Updates
 

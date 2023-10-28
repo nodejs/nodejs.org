@@ -12,7 +12,7 @@ SAN FRANCISCO, Sept. 14, 2015 – The [Node.js Foundation](https://foundation.no
 
 Currently, Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 2 million downloads per month. With major stability and security updates, a new test cluster, support for ARM processors and long-term support, Node.js v4 represents the latest framework innovation for enterprise users leveraging it to run JavaScript programs.
 
-Named version 4.0.0 because it includes major updates from io.js version 3.0.0, the new release also contains V8 v4.5, the same version of V8 shipping with the Chrome web browser today. This brings with it many bonuses for Node.js users, most notably a raft of new [ES6](https://nodejs.org/en/docs/es6/) features that are enabled by default including block scoping, classes, typed arrays (Node's Buffer is now backed by Uint8Array), generators, Promises, Symbols, template strings, collections (Map, Set, etc.) and new to V8 v4.5, arrow functions.
+Named version 4.0.0 because it includes major updates from io.js version 3.0.0, the new release also contains V8 v4.5, the same version of V8 shipping with the Chrome web browser today. This brings with it many bonuses for Node.js users, most notably a raft of new [ES6](/docs/es6/) features that are enabled by default including block scoping, classes, typed arrays (Node's Buffer is now backed by Uint8Array), generators, Promises, Symbols, template strings, collections (Map, Set, etc.) and new to V8 v4.5, arrow functions.
 
 Node.js v4 also brings a plan for [long-term support (LTS)](https://github.com/nodejs/LTS/) and a regular release cycle. Release versioning now follows the Semantic Versioning Specification, a specification for version numbers of software libraries and similar dependencies, so expect increments of both minor and patch version over the coming weeks as bugs are fixed and features are added. The LTS will support enterprise users that need more long-term requirements and continue the innovation and work with the V8 team to ensure that Node.js continues to evolve.
 
@@ -29,7 +29,7 @@ The technical steering committee for the Node.js Foundation is now 15 members st
 
 Additional Resources
 
-- Technical Blog - [Node v4.0.0 (Stable)](https://nodejs.org/en/blog/release/v4.0.0/)
+- Technical Blog - [Node v4.0.0 (Stable)](/blog/release/v4.0.0/)
 - New GitHub [home](https://github.com/nodejs/node)
 
 About Node.js Foundation

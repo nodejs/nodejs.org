@@ -63,8 +63,8 @@ into LTS.
 Additional Resources
 
 - [Download version 6](https://nodejs.org/download/release/v6.0.0/)
-- [Download version 4](https://nodejs.org/en/download/)
-- [Technical blog with additional new features and updates](https://nodejs.org/en/blog/)
+- [Download version 4](/download/)
+- [Technical blog with additional new features and updates](/blog/)
 
 About Node.js Foundation
 Node.js is used by tens of thousands of organizations in more than 200 countries and amasses

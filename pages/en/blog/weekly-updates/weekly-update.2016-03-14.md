@@ -12,7 +12,7 @@ Node.js Node v4.4.0 (LTS), Node v5.8.0 (Current) and Node v0.12.12 (LTS) are rel
 
 ### Node.js Node v4.4.0 (LTS), Node v5.8.0 (Current) and Node v0.12.12 (LTS) Releases
 
-We have three releases: [Node v4.4.0 (LTS)](https://nodejs.org/en/blog/release/v4.4.0/), [Node v5.8.0 (Current)](https://nodejs.org/en/blog/release/v5.8.0/) and [Node v0.12.12 (LTS)](https://nodejs.org/en/blog/release/v0.12.12/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+We have three releases: [Node v4.4.0 (LTS)](/blog/release/v4.4.0/), [Node v5.8.0 (Current)](/blog/release/v5.8.0/) and [Node v0.12.12 (LTS)](/blog/release/v0.12.12/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### AppDynamics, New Relic, Opbeat and Sphinx Join the Node.js Foundation as Silver Members
 
@@ -20,7 +20,7 @@ The Node.js Foundation, a community-led and industry-backed consortium to advanc
 
 Many of the new members are within the application performance management industry, both established and up-and-coming vendors. Application performance management is an essential part of any infrastructure and there is a need across public, private and hybrid clouds to ensure that current and future products offer next-generation application performance with Node.js as a core component to the stability and potential of these offerings.
 
-See https://nodejs.org/en/blog/announcements/appdynamics-newrelic-opbeat-sphinx/ for more information.
+See /blog/announcements/appdynamics-newrelic-opbeat-sphinx/ for more information.
 
 ### Initial benchmark data
 

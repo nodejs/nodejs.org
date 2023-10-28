@@ -12,7 +12,7 @@ Node v0.12.8 (LTS) is released
 
 ### Node v0.12.8 (LTS) Releases
 
-This week we have one release: [Node v0.12.8 (LTS)](https://nodejs.org/en/blog/release/v0.12.8/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+This week we have one release: [Node v0.12.8 (LTS)](/blog/release/v0.12.8/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Notable changes
 
@@ -26,7 +26,7 @@ This week we have one release: [Node v0.12.8 (LTS)](https://nodejs.org/en/blog/r
 - New releases of v0.12.x, v4.x and v5.x will be made available with appropriate fixes for CVE-2015-8027 and CVE-2015-6764 (for v4.x and v5.x only)
 - Please contact security@nodejs.org if you wish to report a vulnerability in Node.js.
 
-See https://nodejs.org/en/blog/vulnerability/cve-2015-8027_cve-2015-6764/ for more information.
+See /blog/vulnerability/cve-2015-8027_cve-2015-6764/ for more information.
 
 ### NodeUp
 

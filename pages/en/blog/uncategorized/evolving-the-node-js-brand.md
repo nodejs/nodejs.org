@@ -30,6 +30,6 @@ We look forward to exploring this visual language as the technology charges into
 
 We hope you'll have fun using it.
 
-To download the new logo, visit [nodejs.org/en/about/resources/](https://nodejs.org/en/about/resources/).
+To download the new logo, visit [nodejs.org/en/about/resources/](/about/resources/).
 
 ![Tri-color Node](/static/images/blog/uncategorized/evolving-the-node-js-brand/tri-color-node.png)

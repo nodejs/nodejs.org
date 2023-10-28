@@ -8,13 +8,13 @@ author: 'Minwoo Jung (github.com/JungMinu)'
 
 ### Node v6.3.1 (Current)
 
-- [Node v6.3.1 (Current)](https://nodejs.org/en/blog/release/v6.3.1/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+- [Node v6.3.1 (Current)](/blog/release/v6.3.1/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Node.js Foundation Announces Keynotes and Programming for Node.js Interactive Europe
 
 Event will showcase workshops, community and technical talks, and use cases that will inform the future development of Node.js and JavaScript.
 
-See https://nodejs.org/en/blog/announcements/interactive-2016-ams/ for more information.
+See /blog/announcements/interactive-2016-ams/ for more information.
 
 ### Community Updates
 

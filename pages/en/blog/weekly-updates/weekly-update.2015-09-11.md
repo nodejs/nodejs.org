@@ -52,7 +52,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 
 ### Node.js Foundation Combines Node.js and io.js Into Single Codebase in New Release
 
-Node.js Foundation posts an entry about Node.js new release and introduction of Node Foundation. [The details are here](https://nodejs.org/en/blog/announcements/foundation-v4-announce/)
+Node.js Foundation posts an entry about Node.js new release and introduction of Node Foundation. [The details are here](/blog/announcements/foundation-v4-announce/)
 
 ### Node.js Interactive
 

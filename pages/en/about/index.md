@@ -1,7 +1,6 @@
 ---
+title: About Node.js®
 layout: about.hbs
-title: About
-trademark: Trademark
 ---
 
 # About Node.js®

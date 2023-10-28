@@ -8,19 +8,19 @@ author: 'Minwoo Jung (github.com/JungMinu)'
 
 ### Node v6.2.1 (Current) Release
 
-[Node v6.2.1 (Current)](https://nodejs.org/en/blog/release/v6.2.1/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+[Node v6.2.1 (Current)](/blog/release/v6.2.1/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Binaries for Linux on Power Systems
 
 Community downloads now include binaries for Linux on Power Systems with big endian in addition to the existing little endian binaries.
 
-See https://nodejs.org/en/download/.
+See /download/.
 
 ### Security updates for all active release lines, June 2016
 
 We now intend to make releases available on or soon after **Thursday, the 23rd of June, 2016, UTC**.
 
-See https://nodejs.org/en/blog/vulnerability/june-2016-security-releases/ for more information.
+See /blog/vulnerability/june-2016-security-releases/ for more information.
 
 ### Community Updates
 

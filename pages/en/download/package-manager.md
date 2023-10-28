@@ -151,7 +151,7 @@ Node.js can also be installed with the IBM i Access Client Solutions product. Se
 
 ## macOS
 
-Download the [macOS Installer](https://nodejs.org/en/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
+Download the [macOS Installer](/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
 
 _If you want to download the package with bash:_
 
@@ -370,7 +370,7 @@ xbps-install -Sy nodejs
 
 ## Windows
 
-Download the [Windows Installer](https://nodejs.org/en/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
+Download the [Windows Installer](/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
 
 ### Alternatives
 

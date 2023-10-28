@@ -10,7 +10,7 @@ author: 'Minwoo Jung (@jmwsoft)'
 
 The Node.js project will be releasing new versions across all of its active release lines early next week (possibly sooner, pending full impact assessment) to incorporate upstream patches from OpenSSL and some additional low-severity fixes relating to HTTP handling. Please read on for full details.
 
-See https://nodejs.org/en/blog/vulnerability/openssl-and-low-severity-fixes-jan-2016/ for more information.
+See /blog/vulnerability/openssl-and-low-severity-fixes-jan-2016/ for more information.
 
 ### OpenSSL Impact Assessment
 
@@ -38,7 +38,7 @@ Our team has made an assessment of the impact of the disclosed defects and concl
 
 A ballot was distributed to individual members on January 20th, with the election completed by January 30th.
 
-To be eligible to vote, you must be signed up as an individual member of the Node.js Foundation, more information can be found here: https://nodejs.org/en/blog/community/individual-membership/
+To be eligible to vote, you must be signed up as an individual member of the Node.js Foundation, more information can be found here: /blog/community/individual-membership/
 
 ### Community Updates
 

@@ -12,7 +12,7 @@ Node v5.4.0 (Current) is released
 
 ### Node v5.4.0 (Current) Releases
 
-Last week we had one release: [Node v5.4.0 (Current)](https://nodejs.org/en/blog/release/v5.4.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+Last week we had one release: [Node v5.4.0 (Current)](/blog/release/v5.4.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Notable changes
 

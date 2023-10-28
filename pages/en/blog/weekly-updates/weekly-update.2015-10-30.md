@@ -12,7 +12,7 @@ Node.js v5.0.0 (Current) is released
 
 ### Node.js v5.0.0 (Current) Releases
 
-This week we have one release: [Node.js v5.0.0 (Current)](https://nodejs.org/en/blog/release/v5.0.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+This week we have one release: [Node.js v5.0.0 (Current)](/blog/release/v5.0.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Notable changes : v5.0.0 (Current)
 

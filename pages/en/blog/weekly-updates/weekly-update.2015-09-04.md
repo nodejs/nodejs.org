@@ -44,7 +44,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 
 ### Node.js v4.0.0(stable) entry is posted
 
-- We have posted [Node v4.0.0](https://nodejs.org/en/blog/release/v4.0.0/) entry. This entry has more details about Node.js v4.0.0.
+- We have posted [Node v4.0.0](/blog/release/v4.0.0/) entry. This entry has more details about Node.js v4.0.0.
 
 ### We are creating the list of modules that currently do not work with Node.js v4.0.0
 

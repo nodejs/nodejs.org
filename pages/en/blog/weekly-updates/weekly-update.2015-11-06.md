@@ -12,7 +12,7 @@ Node.js v4.2.2 (LTS) is released
 
 ### Node.js v4.2.2 (LTS) Releases
 
-This week we have one release: [Node.js v4.2.2 (LTS)](https://nodejs.org/en/blog/release/v4.2.2/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+This week we have one release: [Node.js v4.2.2 (LTS)](/blog/release/v4.2.2/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Notable changes
 

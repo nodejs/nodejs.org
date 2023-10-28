@@ -12,7 +12,7 @@ Node v4.3.1 (LTS), Node v4.4.0 (RC) and Node v5.7.0 (Current) are released.
 
 ### Node v4.3.1 (LTS), Node v4.4.0 (RC) and Node v5.7.0 (Current) Releases
 
-We have three releases: [Node v4.3.1 (LTS)](https://nodejs.org/en/blog/release/v4.3.1/), [Node v4.4.0 (RC)](https://github.com/nodejs/node/pull/5301) and [Node v5.7.0 (Current)](https://nodejs.org/en/blog/release/v5.7.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+We have three releases: [Node v4.3.1 (LTS)](/blog/release/v4.3.1/), [Node v4.4.0 (RC)](https://github.com/nodejs/node/pull/5301) and [Node v5.7.0 (Current)](/blog/release/v5.7.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### New official Node.js logo
 

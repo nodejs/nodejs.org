@@ -12,7 +12,7 @@ Node.js v4.2.1 (LTS), v4.2.0 (LTS) are released
 
 ### Node.js v4.2.1 (LTS) and v4.2.0 (LTS) Releases
 
-This week we have two releases: [Node.js v4.2.1 (LTS)](https://nodejs.org/en/blog/release/v4.2.1/) and [Node.js v4.2.0 (LTS)](https://nodejs.org/en/blog/release/v4.2.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+This week we have two releases: [Node.js v4.2.1 (LTS)](/blog/release/v4.2.1/) and [Node.js v4.2.0 (LTS)](/blog/release/v4.2.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Notable changes : v4.2.1 (LTS)
 

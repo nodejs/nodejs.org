@@ -14,7 +14,7 @@ author: 'Minwoo Jung (github.com/JungMinu)'
 
 Event will showcase workshops, community and technical talks, and use cases that will inform the future development of Node.js and JavaScript.
 
-See https://nodejs.org/en/blog/announcements/interactive-2016-ams/ for more information.
+See /blog/announcements/interactive-2016-ams/ for more information.
 
 ### Community Updates
 

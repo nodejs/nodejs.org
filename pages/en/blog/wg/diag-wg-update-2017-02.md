@@ -66,7 +66,7 @@ Thank you!
 
 [async_hooks]: https://github.com/nodejs/node/pull/8531
 [CLI debugger]: https://nodejs.org/docs/v7.6.0/api/debugger.html
-[Debugging - Getting Started]: https://nodejs.org/en/docs/guides/debugging-getting-started/
+[Debugging - Getting Started]: /docs/guides/debugging-getting-started/
 [diag-agenda]: https://github.com/search?q=org%3Anodejs+label%3A%22diag-agenda%22&type=Issues
 [Diagnostics WG]: https://github.com/nodejs/diagnostics/issues
 [Inspector API]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
