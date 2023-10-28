@@ -10,19 +10,19 @@ type ThemeToggleProps = {
 };
 
 const ThemeToggle: FC<ThemeToggleProps> = ({ onClick }) => {
-  const intl = useIntl();
+  const { formatMessage } = useIntl();
 
   return (
     <button type="button" onClick={onClick} className={styles.themeToggle}>
       <AccessibleIcon
-        label={intl.formatMessage({
+        label={formatMessage({
           id: 'components.header.buttons.toggleDarkMode',
         })}
       >
         <MoonIcon className="hidden dark:block" />
       </AccessibleIcon>
       <AccessibleIcon
-        label={intl.formatMessage({
+        label={formatMessage({
           id: 'components.header.buttons.toggleLightMode',
         })}
       >

@@ -11,19 +11,20 @@ const toggleTheme = () => {
   mockCurrentTheme = mockCurrentTheme === 'light' ? 'dark' : 'light';
 };
 
-let toggle;
+describe('ThemeToggle', () => {
+  let toggle;
 
-beforeEach(() => {
-  mockCurrentTheme = 'light';
-  render(
-    <LocaleProvider>
-      <ThemeToggle onClick={toggleTheme} />
-    </LocaleProvider>
-  );
-  toggle = screen.getByRole('button');
-});
+  beforeEach(() => {
+    mockCurrentTheme = 'light';
 
-describe('ThemeToggle component', () => {
+    render(
+      <LocaleProvider>
+        <ThemeToggle onClick={toggleTheme} />
+      </LocaleProvider>
+    );
+    toggle = screen.getByRole('button');
+  });
+
   it('switches dark theme to light theme', async () => {
     mockCurrentTheme = 'dark';
     await userEvent.click(toggle);
