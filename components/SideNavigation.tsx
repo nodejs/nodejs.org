@@ -21,15 +21,25 @@ const SideNavigation: FC<SideNavigationProps> = ({
 
   const sideNavigationItems = getSideNavigation(navigationKey, context);
 
-  const getLinkClassName = (href: string) =>
-    classNames({ active: isCurrentLocaleRoute(href) });
+  const getLinkClasses = (href: string, level: number) =>
+    classNames({ active: isCurrentLocaleRoute(href), level });
 
   return (
     <nav aria-label="secondary">
       <ul>
         {sideNavigationItems.map((item, key) => (
-          <li key={key} className={getLinkClassName(item.link)}>
+          <li key={key} className={getLinkClasses(item.link, item.level)}>
             <LocalizedLink href={item.link}>{item.text}</LocalizedLink>
+
+            {item.items.length > 0 && (
+              <ul>
+                {item.items.map(({ link, level, text }, sKey) => (
+                  <li key={sKey} className={getLinkClasses(link, level)}>
+                    <LocalizedLink href={link}>{text}</LocalizedLink>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
         ))}
       </ul>
