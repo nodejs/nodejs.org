@@ -1,22 +1,3 @@
-const listenLanguagePickerButton = () => {
-  const langPickerTogglerElement = document.querySelector(
-    '.lang-picker-toggler'
-  );
-
-  const langPickerElement = document.querySelector('.lang-picker');
-
-  const toggleFunction = function () {
-    langPickerElement.classList.toggle('hidden');
-
-    const isAriaExpanded =
-      langPickerTogglerElement.getAttribute('aria-expanded') === 'true';
-
-    langPickerTogglerElement.setAttribute('aria-expanded', !isAriaExpanded);
-  };
-
-  langPickerTogglerElement.addEventListener('click', toggleFunction);
-};
-
 const listenScrollToTopButton = () => {
   const scrollToTop = document.querySelector('#scroll-to-top');
 
@@ -38,7 +19,6 @@ const listenScrollToTopButton = () => {
 };
 
 const startLegacyApp = () => {
-  listenLanguagePickerButton();
   listenScrollToTopButton();
 };
 

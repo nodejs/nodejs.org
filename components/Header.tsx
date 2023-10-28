@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
+import { useState } from 'react';
 import { useIntl } from 'react-intl';
 
 import { useLocale } from '@/hooks/useLocale';
@@ -15,6 +16,8 @@ const Header = () => {
   const { formatMessage } = useIntl();
   const { asPath, basePath } = useRouter();
   const { theme, setTheme } = useTheme();
+
+  const [showLangPicker, setShowLangPicker] = useState(false);
 
   const getLinkClassName = (href: string) =>
     classNames({ active: isCurrentLocaleRoute(href, href !== '/') });
@@ -85,6 +88,7 @@ const Header = () => {
             type="button"
             title={toggleLanguage}
             aria-label={toggleLanguage}
+            onClick={() => setShowLangPicker(!showLangPicker)}
             aria-controls="lang-picker"
             aria-expanded="false"
           >
@@ -98,19 +102,20 @@ const Header = () => {
           </button>
         </div>
 
-        <ul id="lang-picker" className="lang-picker hidden">
-          {availableLocales.map(locale => (
-            <li key={locale.code}>
-              <a
-                data-lang={locale.code}
-                title={locale.name}
-                href={currentRouteLocalized(locale.code)}
-              >
-                {locale.localName}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {showLangPicker && (
+          <ul className="lang-picker">
+            {availableLocales.map(locale => (
+              <li key={locale.code}>
+                <a
+                  title={locale.name}
+                  href={currentRouteLocalized(locale.code)}
+                >
+                  {locale.localName}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </header>
   );
