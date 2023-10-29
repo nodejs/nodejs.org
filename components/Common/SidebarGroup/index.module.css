@@ -1,0 +1,21 @@
+.group {
+  @apply w-full;
+}
+
+.groupName {
+  @apply mb-2
+    px-2
+    text-sm
+    font-semibold
+  text-neutral-800
+  dark:text-neutral-200;
+}
+
+.itemList {
+  @apply m-0
+  flex
+  flex-col
+  items-start
+  gap-0.5
+  p-0;
+}

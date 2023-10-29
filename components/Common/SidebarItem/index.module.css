@@ -1,0 +1,20 @@
+.sideBarItem {
+  @apply w-full
+  list-none
+  p-2;
+
+  a {
+    @apply text-sm
+    font-regular
+    text-neutral-800
+    dark:text-neutral-200;
+  }
+}
+
+.active {
+  @apply bg-green-600;
+
+  a {
+    @apply text-white;
+  }
+}

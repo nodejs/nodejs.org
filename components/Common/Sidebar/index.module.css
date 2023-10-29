@@ -1,0 +1,14 @@
+.sideBar {
+  @apply flex
+    flex-col
+    items-start
+    gap-8
+    overflow-auto
+    border-r
+    border-r-neutral-200
+    bg-white
+    px-4
+    py-6
+    dark:border-r-neutral-900
+    dark:bg-neutral-950;
+}
