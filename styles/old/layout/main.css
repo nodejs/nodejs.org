@@ -1,12 +1,11 @@
 #main {
   .container {
-    margin: 0 auto;
     display: block;
   }
 
   .has-side-nav.container {
-    display: grid;
-    grid-template-columns: 300px 1fr;
+    display: flex;
+    flex-direction: row;
   }
 }
 
@@ -15,18 +14,13 @@
     .container {
       margin: 1em 20px;
     }
-
-    article {
-      ul:not(.no-padding) {
-        margin: 0 20px;
-      }
-    }
   }
 }
 
 @media screen and (max-width: 480px) {
   #main {
-    .container, .has-side-nav.container {
+    .container,
+    .has-side-nav.container {
       display: block;
     }
   }

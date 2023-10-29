@@ -47,39 +47,46 @@ article a {
   }
 }
 
-.has-side-nav {
-  nav {
-    margin-top: 1.5em;
+#main {
+  .has-side-nav {
+    nav {
+      margin-top: 1.5em;
+      min-width: 200px;
+      max-width: 250px;
+      flex: 1 0;
 
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
 
-    li {
-      padding: 0.1em 0.5em;
-    }
+      li {
+        padding: 0.1em 0.5em;
+      }
 
-    a {
-      display: block;
-      line-height: 1;
-      margin-left: -10px;
-      margin-right: -10px;
-      padding: 5px 10px;
-    }
+      a {
+        display: block;
+        line-height: 1;
+        margin-left: -10px;
+        margin-right: -10px;
+        padding: 5px 10px;
+      }
 
-    .active {
-      > a,
-      > a:hover {
-        background-color: $active-green;
-        color: $white;
+      .active {
+        > a,
+        > a:hover {
+          background-color: $active-green;
+          color: $white;
+        }
       }
     }
-  }
 
-  article {
-    margin: 0 20px;
+    article {
+      margin: 0 20px;
+      overflow: hidden;
+      flex: 1 1;
+    }
   }
 }
 
@@ -87,14 +94,6 @@ article a {
   float: right;
   font-size: 0.9em;
   margin: 0.5em 0;
-}
-
-@media screen and (max-width: 480px) {
-  .has-side-nav {
-    article {
-      margin: 0;
-    }
-  }
 }
 
 .color-lightgray {
@@ -125,5 +124,30 @@ a:hover .color-lightgray {
 
   &:last-child {
     min-height: initial;
+  }
+}
+
+@media screen and (max-width: 1002px) {
+  #main {
+    article {
+      ul:not(.no-padding) {
+        margin: 0 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #main {
+    .has-side-nav {
+      nav {
+        max-width: 100%;
+      }
+
+      article {
+        margin: 0;
+        width: 100%;
+      }
+    }
   }
 }
