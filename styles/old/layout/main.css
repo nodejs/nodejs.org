@@ -6,7 +6,7 @@
 
   .has-side-nav.container {
     display: grid;
-    grid-template-columns: fit-content(300px) 1fr;
+    grid-template-columns: 300px 1fr;
   }
 }
 
@@ -26,7 +26,7 @@
 
 @media screen and (max-width: 480px) {
   #main {
-    .container {
+    .container, .has-side-nav.container {
       display: block;
     }
   }

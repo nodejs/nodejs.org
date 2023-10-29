@@ -33,8 +33,8 @@ const SideNavigation: FC<SideNavigationProps> = ({
 
             {item.items.length > 0 && (
               <ul>
-                {item.items.map(({ link, level, text }, sKey) => (
-                  <li key={sKey} className={getLinkClasses(link, level)}>
+                {item.items.map(({ link, level, text }) => (
+                  <li key={link} className={getLinkClasses(link, level)}>
                     <LocalizedLink href={link}>{text}</LocalizedLink>
                   </li>
                 ))}
