@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { useState, type FC } from 'react';
 
 import type { ActiveItem, SidebarGroupType } from '@/types/sidebar';
-import SideBarGroup from 'components/Common/SidebarGroup';
+import SideBarGroup from '@/components/Common/SidebarGroup';
 
 import styles from './index.module.css';
 
