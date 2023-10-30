@@ -13,7 +13,7 @@ const SideBar: FC<SideBarGroupProps> = ({ groups }) => {
 
   return (
     <aside
-      className={classNames(styles.sideBar)}
+      className={styles.sideBar}
       onClick={e => console.log(e.target)}
     >
       {groups.map(group => (
