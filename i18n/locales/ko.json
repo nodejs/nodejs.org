@@ -69,7 +69,7 @@
   "components.common.card.announcement": "Announcements",
   "components.common.card.release": "Releases",
   "components.common.card.vulnerability": "Vulnerabilities",
-  "components.home.homeDownloadButton.download": "Download {version} {isLts, select, true {lts} other {current}}",
+  "components.home.homeDownloadButton.download": "{version} {isLts, select, true {LTS} other {Current}}",
   "components.home.homeDownloadButton.tagline": "{isLts, select, true {Recommended For Most Users} other {Latest Features}}",
   "components.home.homeDownloadButton.changelog": "Changelog",
   "components.home.homeDownloadButton.otherDownloads": "Other Downloads",

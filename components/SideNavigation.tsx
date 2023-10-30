@@ -27,14 +27,14 @@ const SideNavigation: FC<SideNavigationProps> = ({
   return (
     <nav aria-label="secondary">
       <ul>
-        {sideNavigationItems.map((item, key) => (
-          <li key={key} className={getLinkClasses(item.link, item.level)}>
+        {sideNavigationItems.map(item => (
+          <li key={item.key} className={getLinkClasses(item.link, item.level)}>
             <LocalizedLink href={item.link}>{item.text}</LocalizedLink>
 
             {item.items.length > 0 && (
               <ul>
-                {item.items.map(({ link, level, text }) => (
-                  <li key={link} className={getLinkClasses(link, level)}>
+                {item.items.map(({ link, level, text, key }) => (
+                  <li key={key} className={getLinkClasses(link, level)}>
                     <LocalizedLink href={link}>{text}</LocalizedLink>
                   </li>
                 ))}
