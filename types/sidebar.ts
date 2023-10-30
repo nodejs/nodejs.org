@@ -7,7 +7,7 @@ export interface SidebarItemType {
 
 export interface SidebarGroupType {
   groupName: string;
-  items: Array<SidebarItemType>;
+  items: SidebarItemType[];
 }
 
 export type ActiveItem = Pick<SidebarGroupType, 'groupName'> &
