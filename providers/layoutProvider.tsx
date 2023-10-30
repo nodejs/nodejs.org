@@ -11,6 +11,7 @@ import DocsLayout from '@/layouts/DocsLayout';
 import DownloadCurrentLayout from '@/layouts/DownloadCurrentLayout';
 import DownloadLayout from '@/layouts/DownloadLayout';
 import IndexLayout from '@/layouts/IndexLayout';
+import LearnLayout from '@/layouts/LearnLayout';
 import type { LegacyFrontMatter, LegacyLayouts } from '@/types';
 
 type LayoutContextProps = {
@@ -25,6 +26,8 @@ const getLegacyLayout = (layout: LegacyLayouts) => {
   switch (layout) {
     case 'about.hbs':
       return AboutLayout;
+    case 'learn.hbs':
+      return LearnLayout;
     case 'blog-index.hbs':
       return BlogIndexLayout;
     case 'blog-post.hbs':

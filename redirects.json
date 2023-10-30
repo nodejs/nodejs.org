@@ -161,6 +161,18 @@
     {
       "source": "/:locale/about/security",
       "destination": "/:locale/about/security-reporting"
+    },
+    {
+      "source": "/:locale/docs/guides/getting-started-guide",
+      "destination": "/:locale/learn/getting-started/introduction-to-nodejs"
+    },
+    {
+      "source": "/:locale/docs/guides/blocking-vs-non-blocking",
+      "destination": "/:locale/learn/asynchronous-work/overview-of-blocking-vs-non-blocking"
+    },
+    {
+      "source": "/:locale/docs/guides/timers-in-node/",
+      "destination": "/:locale/learn/asynchronous-work/discover-javascript-timers"
     }
   ]
 }

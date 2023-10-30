@@ -1,6 +1,7 @@
 // @TODO: These are legacy layouts that are going to be replaced with the `nodejs/nodejs.dev` Layouts in the future
 export type LegacyLayouts =
   | 'about.hbs'
+  | 'learn.hbs'
   | 'blog-index.hbs'
   | 'blog-post.hbs'
   | 'category-index.hbs'
@@ -9,5 +10,4 @@ export type LegacyLayouts =
   | 'docs.hbs'
   | 'download.hbs'
   | 'download-current.hbs'
-  | 'download-releases.hbs'
   | 'page.hbs';
