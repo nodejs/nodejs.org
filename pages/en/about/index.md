@@ -61,7 +61,7 @@ communicate with. Built upon that same interface is the [`cluster`][] module,
 which allows you to share sockets between processes to enable load balancing
 over your cores.
 
-[blocking vs. non-blocking]: /learn/overview-of-blocking-vs-non-blocking/
+[blocking vs. non-blocking]: /docs/guides/blocking-vs-non-blocking
 [`child_process.fork()`]: /api/child_process/
 [`cluster`]: https://nodejs.org/api/cluster.html
 [event machine]: https://github.com/eventmachine/eventmachine
