@@ -1,13 +1,13 @@
 .sideBarItem {
   @apply w-full
-  list-none
-  p-2;
+    list-none
+    p-2;
 
   a {
     @apply text-sm
-    font-regular
-    text-neutral-800
-    dark:text-neutral-200;
+      font-regular
+      text-neutral-800
+      dark:text-neutral-200;
   }
 }
 
