@@ -16,8 +16,7 @@ const SidebarItem: FC<SideBarItemProps> = ({
   title,
   handleSideBarItemClick,
   isActive,
-}) => {
-  return (
+}) => (
     <li
       className={classNames(styles.sideBarItem, {
         [styles.active]: isActive,
@@ -27,6 +26,5 @@ const SidebarItem: FC<SideBarItemProps> = ({
       <LocalizedLink href={url}>{title}</LocalizedLink>
     </li>
   );
-};
 
 export default SidebarItem;
