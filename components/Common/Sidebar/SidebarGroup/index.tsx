@@ -1,10 +1,10 @@
 import classNames from 'classnames';
 import type { FC } from 'react';
 
-import SidebarItem from '@/components/Common/SidebarItem';
-import type { ActiveItem, SidebarGroupType } from '@/types/sidebar';
+import SidebarItem from '@/components/Common/Sidebar/SidebarItem';
 
 import styles from './index.module.css';
+import type { ActiveItem, SidebarGroupType } from '..';
 
 type SideBarGroupProps = SidebarGroupType & {
   activeItem?: ActiveItem;
@@ -33,7 +33,7 @@ const SidebarGroup: FC<SideBarGroupProps> = ({
               activeItem?.groupName === groupName &&
               activeItem?.title === item.title
             }
-            handleSideBarItemClick={handleSideBarItemClick}
+            onClick={handleSideBarItemClick}
           />
         ))}
       </ul>

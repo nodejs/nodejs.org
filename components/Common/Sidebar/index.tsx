@@ -1,23 +1,35 @@
-import classNames from 'classnames';
-import { useState, type FC } from 'react';
+import type { Url } from 'url';
 
-import type { ActiveItem, SidebarGroupType } from '@/types/sidebar';
-import SideBarGroup from '@/components/Common/SidebarGroup';
+import { useState } from 'react';
+import type { FC } from 'react';
 
 import styles from './index.module.css';
+import SidebarGroup from './SidebarGroup';
 
-type SideBarGroupProps = { groups: SidebarGroupType[] };
+export type SidebarItemType = {
+  url: string | Url;
+  title: string;
+};
 
-const SideBar: FC<SideBarGroupProps> = ({ groups }) => {
+export type SidebarGroupType = {
+  groupName: string;
+  items: SidebarItemType[];
+};
+
+export type ActiveItem = Pick<SidebarGroupType, 'groupName'> &
+  Pick<SidebarItemType, 'title'>;
+
+type SidebarProps = {
+  groups: SidebarGroupType[];
+};
+
+const SideBar: FC<SidebarProps> = ({ groups }) => {
   const [activeItem, setActiveItem] = useState<ActiveItem>();
 
   return (
-    <aside
-      className={styles.sideBar}
-      onClick={e => console.log(e.target)}
-    >
+    <aside className={styles.sideBar} onClick={e => console.log(e.target)}>
       {groups.map(group => (
-        <SideBarGroup
+        <SidebarGroup
           {...group}
           key={group.groupName}
           activeItem={activeItem}
