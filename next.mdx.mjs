@@ -8,9 +8,8 @@ import remarkGfm from 'remark-gfm';
 
 import { LANGUAGES, DEFAULT_THEME } from './shiki.config.mjs';
 
-// Provides a somewhat memoized version of Shikiji
-// Note: this applies only for client-side usage as SSR requests
-// have a lifecycle
+// This memoizes Shikiji Syntax Highlighter as `getStaticProps` from within Next.js context
+// are called independently for each page, which recreates the Shikiji promise for each call
 const memoizedShikiji = rehypeShikiji({
   theme: DEFAULT_THEME,
   langs: LANGUAGES,
@@ -24,15 +23,12 @@ const memoizedShikiji = rehypeShikiji({
 export const NEXT_REHYPE_PLUGINS = [
   // Generates `id` attributes for headings (H1, ...)
   rehypeSlug,
-  [
-    // Automatically add anchor links to headings (H1, ...)
-    rehypeAutolinkHeadings,
-    {
-      behaviour: 'append',
-      properties: { ariaHidden: true, tabIndex: -1, class: 'anchor' },
-    },
-  ],
-  memoizedShikiji,
+  // Automatically add anchor links to headings (H1, ...)
+  [rehypeAutolinkHeadings, { properties: { tabIndex: -1, class: 'anchor' } }],
+  // Adds our syntax highlighter (Shikiji) to Codeboxes
+  function rehypeShikiji() {
+    return memoizedShikiji;
+  },
 ];
 
 /**

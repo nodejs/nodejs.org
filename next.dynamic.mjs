@@ -137,13 +137,9 @@ export const generateStaticProps = async (source = '', filename = '') => {
   // by default a page is not found if there's no source or filename
   const staticProps = { notFound: true, props: {}, revalidate: false };
 
-  console.log(filename);
-
   // We only attempt to serialize data if the `source` has content and `filename` has content
   // otherwise we return a 404 since this means that it is not a valid file or a file we should care about
   if (source.length && filename.length) {
-    console.time('createVFile');
-
     // We create a VFile (Virtual File) to be able to access some contextual
     // data post serialization (compilation) of the source Markdown into MDX
     const sourceAsVirtualFile = new VFile(source);
@@ -151,18 +147,12 @@ export const generateStaticProps = async (source = '', filename = '') => {
     // Gets the file extension of the file, to determine which parser and plugins to use
     const fileExtension = filename.endsWith('.mdx') ? 'mdx' : 'md';
 
-    console.timeEnd('createVFile');
-
-    console.time('compileMDX');
-
     // This compiles our MDX source (VFile) into a final MDX-parsed VFile
     // that then is passed as a string to the MDXProvider which will run the MDX Code
     const { content, headings, frontmatter } = await compileMDX(
       sourceAsVirtualFile,
       fileExtension
     );
-
-    console.timeEnd('compileMDX');
 
     // Passes the compiled MDX Source to the MDX Provider and some extra data
     staticProps.props = { content: String(content), headings, frontmatter };
