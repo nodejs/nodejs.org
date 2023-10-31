@@ -4,7 +4,7 @@ import { compile, runSync } from '@mdx-js/mdx';
 import * as runtime from 'react/jsx-runtime';
 import { matter } from 'vfile-matter';
 
-import { nextRehypePlugins, nextRemarkPlugins } from './next.mdx.mjs';
+import { NEXT_REHYPE_PLUGINS, NEXT_REMARK_PLUGINS } from './next.mdx.mjs';
 
 /**
  * This is our custom simple MDX Compiler that is used to compile Markdown and MDX
@@ -21,8 +21,8 @@ export async function compileMDX(source, fileExtension) {
 
   // This is a minimal MDX Compiler that is lightweight and only parses the MDX
   const compiledSource = await compile(source, {
-    rehypePlugins: nextRehypePlugins(fileExtension),
-    remarkPlugins: nextRemarkPlugins(fileExtension),
+    rehypePlugins: NEXT_REHYPE_PLUGINS,
+    remarkPlugins: NEXT_REMARK_PLUGINS,
     format: fileExtension,
     // This results on the minimal possible MDX parsed, and delegates
     // another parser to actualy evaluate the MDX into JSX
