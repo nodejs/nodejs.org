@@ -4,6 +4,7 @@ export type NavigationKeys =
   | 'docs'
   | 'getInvolved'
   | 'certification'
+  | 'learn'
   | 'blog';
 
 export interface NavigationEntry {

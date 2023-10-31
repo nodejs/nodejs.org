@@ -1,6 +1,7 @@
 ---
 title: Overview of Blocking vs Non-Blocking
-layout: docs.hbs
+layout: learn.hbs
+authors: ovflowd, HassanBahati
 ---
 
 # Overview of Blocking vs Non-Blocking
@@ -8,7 +9,7 @@ layout: docs.hbs
 This overview covers the difference between **blocking** and **non-blocking**
 calls in Node.js. This overview will refer to the event loop and libuv but no
 prior knowledge of those topics is required. Readers are assumed to have a
-basic understanding of the JavaScript language and Node.js callback pattern.
+basic understanding of the JavaScript language and Node.js [callback pattern](/learn/javascript-asynchronous-programming-and-callbacks/).
 
 > "I/O" refers primarily to interaction with the system's disk and
 > network supported by [libuv](https://libuv.org/).
@@ -40,6 +41,7 @@ Using the File System module as an example, this is a **synchronous** file read:
 
 ```js
 const fs = require('fs');
+
 const data = fs.readFileSync('/file.md'); // blocks here until file is read
 ```
 
@@ -47,6 +49,7 @@ And here is an equivalent **asynchronous** example:
 
 ```js
 const fs = require('fs');
+
 fs.readFile('/file.md', (err, data) => {
   if (err) throw err;
 });
@@ -63,6 +66,7 @@ Let's expand our example a little bit:
 
 ```js
 const fs = require('fs');
+
 const data = fs.readFileSync('/file.md'); // blocks here until file is read
 console.log(data);
 moreWork(); // will run after console.log
@@ -72,6 +76,7 @@ And here is a similar, but not equivalent asynchronous example:
 
 ```js
 const fs = require('fs');
+
 fs.readFile('/file.md', (err, data) => {
   if (err) throw err;
   console.log(data);
@@ -110,6 +115,7 @@ at an example:
 
 ```js
 const fs = require('fs');
+
 fs.readFile('/file.md', (err, data) => {
   if (err) throw err;
   console.log(data);
@@ -124,6 +130,7 @@ execute in the correct order is:
 
 ```js
 const fs = require('fs');
+
 fs.readFile('/file.md', (readFileErr, data) => {
   if (readFileErr) throw readFileErr;
   console.log(data);

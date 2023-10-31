@@ -1,7 +1,6 @@
 .container {
   margin: 0 auto;
   max-width: $body-max-width;
-  overflow: hidden;
   width: 100%;
 }
 

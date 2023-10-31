@@ -8,6 +8,7 @@ files:
     content_segmentation: 0
     ignore:
       - /pages/en/blog/**/*.md
+      - /pages/en/learn/**/*.md
       - /pages/en/docs/guides/**/*.md
       - /pages/en/download/index.md
       - /pages/en/download/current.md
@@ -22,6 +23,7 @@ files:
     content_segmentation: 0
     ignore:
       - /pages/en/blog/**/*.mdx
+      - /pages/en/learn/**/*.mdx
       - /pages/en/docs/guides/**/*.mdx
     languages_mapping:
       two_letters_code:
