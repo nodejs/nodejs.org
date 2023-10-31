@@ -27,11 +27,12 @@ const SideBar: FC<SidebarProps> = ({ groups }) => {
   const [activeItem, setActiveItem] = useState<ActiveItem>();
 
   return (
-    <aside className={styles.sideBar} onClick={e => console.log(e.target)}>
-      {groups.map(group => (
+    <aside className={styles.sideBar}>
+      {groups.map(({ groupName, items }) => (
         <SidebarGroup
-          {...group}
-          key={group.groupName}
+          key={groupName}
+          groupName={groupName}
+          items={items}
           activeItem={activeItem}
           setActiveItem={setActiveItem}
         />
