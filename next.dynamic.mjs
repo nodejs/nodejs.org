@@ -3,13 +3,13 @@
 import { readFileSync } from 'node:fs';
 import { join, normalize, sep } from 'node:path';
 
-import { serialize } from 'next-mdx-remote/serialize';
+import { minify } from 'terser';
 import { VFile } from 'vfile';
 
 import { DEFAULT_LOCALE_CODE, MD_EXTENSION_REGEX } from './next.constants.mjs';
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { availableLocales } from './next.locales.mjs';
-import { nextRehypePlugins, nextRemarkPlugins } from './next.mdx.mjs';
+import { compileMDX } from './next.mdx.compiler.mjs';
 
 // allows us to run a glob to get markdown files based on a language folder
 const getPathsByLanguage = async (locale = DEFAULT_LOCALE_CODE, ignored = []) =>
@@ -148,31 +148,27 @@ export const generateStaticProps = async (source = '', filename = '') => {
     // Gets the file extension of the file, to determine which parser and plugins to use
     const fileExtension = filename.endsWith('.mdx') ? 'mdx' : 'md';
 
-    // This act as a MDX "compiler" but, lightweight. It parses the Markdown
-    // string source into a React Component tree, and then it serializes it
-    // it also supports Remark plugins, and MDX components
-    // Note.: We use the filename extension to define the mode of execution
-    const { compiledSource } = await serialize(sourceAsVirtualFile, {
-      parseFrontmatter: true,
-      mdxOptions: {
-        rehypePlugins: nextRehypePlugins(fileExtension),
-        remarkPlugins: nextRemarkPlugins(fileExtension),
-        format: fileExtension,
-      },
+    // This compiles our MDX source (VFile) into a final MDX-parsed VFile
+    // that then is passed as a string to the MDXProvider which will run the MDX Code
+    const { content, headings, frontmatter } = await compileMDX(
+      sourceAsVirtualFile,
+      fileExtension
+    );
+
+    // This minifies the JSX string that is then stored by Next.js and passed through
+    // the static props to the MDX Provider.
+    // This increases build time but drastically reduces the bundle footprint / size of network requests
+    const minifiedContent = await minify(String(content), {
+      mangle: false,
+      parse: { bare_returns: true },
     });
 
-    // After the MDX gets processed with the remarkPlugins, some extra `data` that might come along
-    // the `frontmatter` comes from `serialize` built-in support to `remark-frontmatter`
-    const { headings, matter: rawFrontmatter } = sourceAsVirtualFile.data;
-
-    // This serialises the Frontmatter into a JSON object that is compatible with the
-    // `getStaticProps` supported data type for props. (No prop value can be an object or not a primitive)
-    const frontmatter = JSON.parse(JSON.stringify(rawFrontmatter));
-
-    // this defines the basic props that should be passed back to the `DynamicPage` component
-    // We only want the `compiledSource` as we use `MDXProvider` for custom components along the journey
-    // And then we want the frontmatter and heading information from the VFile `data`
-    staticProps.props = { content: compiledSource, headings, frontmatter };
+    // Passes the compiled MDX Source to the MDX Provider and some extra data
+    staticProps.props = {
+      content: minifiedContent.code,
+      headings,
+      frontmatter,
+    };
     staticProps.notFound = false;
   }
 

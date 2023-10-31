@@ -58,6 +58,8 @@ const nextConfig = {
       '@radix-ui/react-toast',
       'tailwindcss',
     ],
+    // Enable concurrent WebPack builds
+    webpackBuildWorker: true,
   },
 };
 
