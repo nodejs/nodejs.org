@@ -14,6 +14,7 @@ import type { Preview, ReactRenderer } from '@storybook/react';
 import englishLocale from '@/i18n/locales/en.json';
 
 import '../styles/new/index.css';
+import { ThemeProvider } from '@/providers/themeProvider';
 
 const rootClasses = classNames(
   OPEN_SANS_FONT.variable,
