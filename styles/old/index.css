@@ -53,7 +53,6 @@ article a {
       margin-top: 1.5em;
       min-width: 200px;
       max-width: 250px;
-      flex: 1 0;
 
       ul {
         list-style-type: none;
