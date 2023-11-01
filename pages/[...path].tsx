@@ -95,7 +95,7 @@ export const getStaticPaths: GetStaticPaths<DynamicStaticPaths> = async () => {
       .filter(route => STATIC_ROUTES_IGNORES.every(e => !e(route)))
       .map(route => mapPathnameToRoute(route.routeWithLocale));
 
-    paths = [...staticPaths, ...dynamicRoutes];
+    paths = staticPaths.concat(dynamicRoutes);
   }
 
   return { paths: paths.sort(), fallback: 'blocking' };

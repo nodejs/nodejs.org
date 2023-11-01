@@ -24,8 +24,8 @@ export async function compileMDX(source, fileExtension) {
     rehypePlugins: NEXT_REHYPE_PLUGINS,
     remarkPlugins: NEXT_REMARK_PLUGINS,
     format: fileExtension,
-    // This results on the minimal possible MDX parsed, and delegates
-    // another parser to actualy evaluate the MDX into JSX
+    // This instructs the MDX compiler to generate a minimal JSX-body
+    // to be consumed within MDX's `run` method, instead of a standalone React Application
     outputFormat: 'function-body',
   });
 
