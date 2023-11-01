@@ -83,15 +83,6 @@ export const MD_EXTENSION_REGEX = /((\/)?(index))?\.mdx?$/i;
 export const DEFAULT_LOCALE_CODE = defaultLocale.code;
 
 /**
- * This indicates the path to the Legacy JavaScript File that is used
- * on the legacy Website.
- *
- * @deprecated The Legacy Website is due to be removed soon and this file
- * and its usages should be removed
- */
-export const LEGACY_JAVASCRIPT_FILE = `${BASE_PATH}/static/js/legacyMain.js`;
-
-/**
  * This is a list of all static routes or pages from the Website that we do not
  * want to allow to be statically built on our Static Export Build.
  *
