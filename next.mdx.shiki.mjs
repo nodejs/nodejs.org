@@ -66,10 +66,10 @@ export default function rehypeShikiji() {
       const languageId = codeLanguage.slice(languagePrefix.length);
 
       // Parses the <pre> contents and returns a HAST tree with the highlighted code
-      const { children = [{}] } = memoizedShikiji.codeToHast(
-        preElementContents,
-        { theme: DEFAULT_THEME, lang: languageId }
-      );
+      const { children } = memoizedShikiji.codeToHast(preElementContents, {
+        theme: DEFAULT_THEME,
+        lang: languageId,
+      });
 
       // Adds the original language back to the <pre> element
       children[0].properties.class = classNames(
