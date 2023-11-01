@@ -9,6 +9,8 @@ import NavItem from '@/components/sections/NavItem';
 import { useLocale } from '@/hooks/useLocale';
 import { useNavigation } from '@/hooks/useNavigation';
 
+import style from './index.module.css';
+
 const Navbar: React.FC = () => {
   const { newNavigationItems } = useNavigation();
   const { availableLocales, currentLocale } = useLocale();
@@ -40,10 +42,10 @@ const Navbar: React.FC = () => {
   );
 
   return (
-    <nav className="flex h-16 justify-between border-b-2 border-neutral-200 px-8 dark:border-0">
-      <div className="flex flex-1 items-center gap-8">
-        <Image height={30} width={80} src={NodeLogoSrc} alt="Node.js" />
-        <div className="flex items-center">
+    <nav className={style.container}>
+      <div className={style.leftItems}>
+        <Image height={24} width={80} src={NodeLogoSrc} alt="Node.js" />
+        <div className={style.navItems}>
           {newNavigationItems.map(({ text, link, key }) => (
             <NavItem key={key} href={link}>
               {text}
@@ -51,7 +53,7 @@ const Navbar: React.FC = () => {
           ))}
         </div>
       </div>
-      <div className="flex items-center gap-6">
+      <div className={style.rightItems}>
         <ThemeToggle
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
         />
@@ -60,9 +62,11 @@ const Navbar: React.FC = () => {
           currentLanguage={currentLanguage}
         />
         <AccessibleIcon.Root label={'Nodejs.org Github'}>
-          <a href="https://github.com/nodejs/node">
-            <Image alt="Github Icon" width={20} height={20} src={GHLogoSrc} />
-          </a>
+          <button className={style.iconWrapper}>
+            <a href="https://github.com/nodejs/node">
+              <Image alt="Github Icon" width={20} height={20} src={GHLogoSrc} />
+            </a>
+          </button>
         </AccessibleIcon.Root>
       </div>
     </nav>
