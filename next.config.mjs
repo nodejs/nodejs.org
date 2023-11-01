@@ -36,7 +36,7 @@ const nextConfig = {
   eslint: { dirs: ['.'], ignoreDuringBuilds: true },
   // Next.js WebPack Bundler does not know how to handle `.mjs` files on `node_modules`
   // This is not an issue when using TurboPack as it uses SWC and it is ESM-only
-  // Once we migrate to Next.js 14 we might be able to remove this
+  // Once Next.js uses Turbopack for their build process we can remove this
   webpack: function (config) {
     config.module.rules.push({
       test: /\.m?js$/,
@@ -58,8 +58,8 @@ const nextConfig = {
       '@radix-ui/react-toast',
       'tailwindcss',
     ],
-    // Enable concurrent WebPack builds
-    webpackBuildWorker: true,
+    // Removes the warning regarding the WebPack Build Worker
+    webpackBuildWorker: false,
   },
 };
 
