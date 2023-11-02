@@ -9,12 +9,9 @@ import diffLanguage from 'shikiji/langs/diff.mjs';
 import dockerLanguage from 'shikiji/langs/docker.mjs';
 import javaScriptLanguage from 'shikiji/langs/javascript.mjs';
 import jsonLanguage from 'shikiji/langs/json.mjs';
-import jsxLanguage from 'shikiji/langs/jsx.mjs';
 import shellScriptLanguage from 'shikiji/langs/shellscript.mjs';
 import shellSessionLanguage from 'shikiji/langs/shellsession.mjs';
 import typeScriptLanguage from 'shikiji/langs/typescript.mjs';
-import xmlLanguage from 'shikiji/langs/xml.mjs';
-import yamlLanguage from 'shikiji/langs/yaml.mjs';
 import shikiNordTheme from 'shikiji/themes/nord.mjs';
 
 /** @type {import('shikiji').LanguageRegistration[]} */
@@ -29,22 +26,9 @@ export const LANGUAGES = [
     scopeName: 'source.json',
   },
   {
-    ...jsxLanguage[0],
-    scopeName: 'source.js.jsx',
-  },
-  {
     ...typeScriptLanguage[0],
     scopeName: 'source.ts',
     aliases: ['ts'],
-  },
-  {
-    ...xmlLanguage[0],
-    scopeName: 'text.xml',
-  },
-  {
-    ...yamlLanguage[0],
-    scopeName: 'source.yaml',
-    aliases: ['yml'],
   },
   {
     ...shellScriptLanguage[0],

@@ -36,7 +36,7 @@ jobs:
 
     steps:
       - name: Git Checkout
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           # Since we checkout the HEAD of the current Branch, if the Pull Request comes from a Fork
           # we want to clone the fork's repository instead of the base repository
@@ -51,7 +51,7 @@ jobs:
 
       - name: Add Comment to PR
         # Signal that a lighthouse run is about to start
-        uses: thollander/actions-comment-pull-request@d61db783da9abefc3437960d0cce08552c7c004f # v2.4.2
+        uses: thollander/actions-comment-pull-request@1d3973dc4b8e1399c0620d3f2b1aa5e795465308 # v2.4.3
         with:
           message: |
             Running Lighthouse audit...
@@ -64,14 +64,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 90
-
-      - name: Git Checkout
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
-        with:
-          # By default Git Checkout on `pull-request-target` will checkout
-          # the `default` branch of the Pull Request. We want to checkout
-          # the actual branch of the Pull Request.
-          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Audit Preview URL with Lighthouse
         # Conduct the lighthouse audit
@@ -109,7 +101,7 @@ jobs:
 
       - name: Add Comment to PR
         # Replace the previous message with our formatted lighthouse results
-        uses: thollander/actions-comment-pull-request@d61db783da9abefc3437960d0cce08552c7c004f # v2.4.2
+        uses: thollander/actions-comment-pull-request@1d3973dc4b8e1399c0620d3f2b1aa5e795465308 # v2.4.3
         with:
           # Reference the previously created comment
           comment_tag: 'lighthouse_audit'

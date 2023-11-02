@@ -1,11 +1,11 @@
 #main {
   .container {
-    display: flex;
-    flex-direction: column;
+    display: block;
   }
 
   .has-side-nav.container {
     flex-direction: row;
+    display: flex;
   }
 }
 
