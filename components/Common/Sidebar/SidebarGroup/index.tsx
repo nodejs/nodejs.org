@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import type { FC } from 'react';
 
 import SidebarItem from '@/components/Common/Sidebar/SidebarItem';
@@ -28,6 +27,7 @@ const SidebarGroup: FC<SideBarGroupProps> = ({
         {items.map(item => (
           <SidebarItem
             key={item.title}
+            {...item}
             isActive={
               activeItem?.groupName === groupName &&
               activeItem?.title === item.title
