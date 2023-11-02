@@ -11,9 +11,6 @@
     "name": "Node.js Website Working Group"
   },
   "license": "MIT",
-  "engines": {
-    "node": ">=v18"
-  },
   "scripts": {
     "scripts:release-post": "cross-env NODE_NO_WARNINGS=1 node scripts/release-post/index.mjs",
     "scripts:generate-next-data": "cross-env NODE_NO_WARNINGS=1 node scripts/generate-next-data/index.mjs",
