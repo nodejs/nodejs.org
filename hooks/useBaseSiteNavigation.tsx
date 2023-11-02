@@ -75,11 +75,6 @@ const useBaseSiteNavigation = () => {
         context
       );
     },
-    newNavigationItems: (() => {
-      // eslint-disable-next-line
-      const { getInvolved, ...newNavItems } = siteNavigation;
-      return mapNavigationEntries(newNavItems);
-    })(),
   };
 };
 
