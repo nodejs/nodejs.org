@@ -1,41 +1,37 @@
-import { useMemo } from 'react';
+'use client';
+
+import type { RichTranslationValues } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
 
 import SideNavigation from '@/components/SideNavigation';
-import { useNodeReleases } from '@/hooks/useNodeReleases';
-
-import BaseLayout from './BaseLayout';
+import { releaseData } from '@/next.json.mjs';
 
 const DocsLayout: FC<PropsWithChildren> = ({ children }) => {
-  const { getReleaseByStatus, getLatestIsLtsRelease } = useNodeReleases();
+  const [lts, current] = [
+    releaseData.find(({ isLts }) => isLts),
+    releaseData.find(({ status }) => status === 'Current'),
+  ];
 
-  const [lts, current] = useMemo(
-    () => [getLatestIsLtsRelease(), getReleaseByStatus('Current')],
-    [getLatestIsLtsRelease, getReleaseByStatus]
-  );
-
-  const translationContext = {
+  const translationContext: Record<string, RichTranslationValues> = {
     apiLts: {
       ltsNodeVersion: lts ? `v${lts.major}.x` : undefined,
       fullLtsNodeVersion: lts ? lts.versionWithPrefix : undefined,
-      spanLts: <span className="small color-lightgray">LTS</span>,
+      graySpan: c => <span className="small color-lightgray">{c}</span>,
     },
     apiCurrent: {
       fullCurrentNodeVersion: current ? current.versionWithPrefix : undefined,
       currentNodeVersion: current ? `v${current.major}.x` : undefined,
     },
     guides: {
-      spanGuides: <span className="small color-lightgray">ARCHIVE</span>,
+      graySpan: c => <span className="small color-lightgray">{c}</span>,
     },
   };
 
   return (
-    <BaseLayout>
-      <div className="has-side-nav container">
-        <SideNavigation navigationKey="docs" context={translationContext} />
-        <article dir="auto">{children}</article>
-      </div>
-    </BaseLayout>
+    <div className="has-side-nav container">
+      <SideNavigation navigationKey="docs" context={translationContext} />
+      <article dir="auto">{children}</article>
+    </div>
   );
 };
 

@@ -2,27 +2,38 @@ import type { FC, PropsWithChildren } from 'react';
 
 import PrimaryDownloadMatrix from '@/components/Downloads/PrimaryDownloadMatrix';
 import SecondaryDownloadMatrix from '@/components/Downloads/SecondaryDownloadMatrix';
-import { useLayoutContext } from '@/hooks/useLayoutContext';
-import { WithNodeRelease } from '@/providers/withNodeRelease';
-import type { LegacyDownloadsFrontMatter } from '@/types';
-
-import BaseLayout from './BaseLayout';
+import { WithNodeRelease } from '@/components/withNodeRelease';
+import { useClientContext } from '@/hooks/server';
 
 const DownloadLayout: FC<PropsWithChildren> = ({ children }) => {
-  const { frontMatter } = useLayoutContext();
+  const {
+    frontmatter: { downloads },
+    pathname,
+  } = useClientContext();
 
-  const { downloads } = frontMatter as LegacyDownloadsFrontMatter;
+  const isCurrentReleasePage = pathname.includes('/current');
 
   return (
-    <BaseLayout>
-      <div className="container">
-        <article dir="auto">
-          <div className="download-header">
-            <h1>{downloads.headline}</h1>
-          </div>
+    <div className="container">
+      <article dir="auto">
+        <div className="download-header">
+          <h1>{downloads.headline}</h1>
+        </div>
 
-          {children}
+        {children}
 
+        {isCurrentReleasePage && (
+          <WithNodeRelease status="Current">
+            {({ release }) => (
+              <>
+                <PrimaryDownloadMatrix {...release} />
+                <SecondaryDownloadMatrix {...release} />
+              </>
+            )}
+          </WithNodeRelease>
+        )}
+
+        {isCurrentReleasePage || (
           <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
             {({ release }) => (
               <>
@@ -31,9 +42,9 @@ const DownloadLayout: FC<PropsWithChildren> = ({ children }) => {
               </>
             )}
           </WithNodeRelease>
-        </article>
-      </div>
-    </BaseLayout>
+        )}
+      </article>
+    </div>
   );
 };
 

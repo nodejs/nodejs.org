@@ -1,8 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { LocaleProvider } from '@/providers/localeProvider';
-
 import ThemeToggle from '../';
 
 let mockCurrentTheme = 'light';
@@ -17,11 +15,7 @@ describe('ThemeToggle', () => {
   beforeEach(() => {
     mockCurrentTheme = 'light';
 
-    render(
-      <LocaleProvider>
-        <ThemeToggle onClick={toggleTheme} />
-      </LocaleProvider>
-    );
+    render(<ThemeToggle onClick={toggleTheme} />);
     toggle = screen.getByRole('button');
   });
 

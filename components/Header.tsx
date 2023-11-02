@@ -1,56 +1,49 @@
+'use client';
+
 import classNames from 'classnames';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { useState } from 'react';
-import { useIntl } from 'react-intl';
 
-import { useLocale } from '@/hooks/useLocale';
-import { useNavigation } from '@/hooks/useNavigation';
-import { useRouter } from '@/hooks/useRouter';
-
-import LocalizedLink from './LocalizedLink';
+import { useIsCurrentPathname, useSiteNavigation } from '@/hooks';
+import { Link, usePathname } from '@/navigation.mjs';
+import { BASE_PATH } from '@/next.constants.mjs';
+import { availableLocales } from '@/next.locales.mjs';
 
 const Header = () => {
-  const { availableLocales, isCurrentLocaleRoute } = useLocale();
-  const { navigationItems } = useNavigation();
-  const { formatMessage } = useIntl();
-  const { asPath, basePath } = useRouter();
+  const { navigationItems } = useSiteNavigation();
+  const { isCurrentLocaleRoute } = useIsCurrentPathname();
+  const [showLangPicker, setShowLangPicker] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  const [showLangPicker, setShowLangPicker] = useState(false);
+  const pathname = usePathname();
+  const t = useTranslations();
 
   const getLinkClassName = (href: string) =>
     classNames({ active: isCurrentLocaleRoute(href, href !== '/') });
 
-  const toggleLanguage = formatMessage({
-    id: 'components.header.buttons.toggleLanguage',
-  });
-
-  const toggleDarkMode = formatMessage({
-    id: 'components.header.buttons.toggleDarkMode',
-  });
-
-  const currentRouteLocalized = (locale: string) =>
-    asPath.replace(/^\/[a-zA-Z-]+/, `/${locale}`);
+  const toggleLanguage = t('components.header.buttons.toggleLanguage');
+  const toggleDarkMode = t('components.header.buttons.toggleDarkMode');
 
   return (
     <header aria-label="Primary">
       <div className="container">
-        <LocalizedLink href="/" className="logo">
+        <Link href="/" className="logo">
           <Image
             priority
             width="111"
             height="33"
-            src={`${basePath}/static/images/logo.svg`}
+            src={`${BASE_PATH}/static/images/logo.svg`}
             alt="Node.js"
           />
-        </LocalizedLink>
+        </Link>
 
         <nav aria-label="primary">
           <ul className="list-divider-pipe">
             {navigationItems.map((item, key) => (
               <li key={key} className={getLinkClassName(item.link)}>
-                <LocalizedLink href={item.link}>{item.text}</LocalizedLink>
+                <Link href={item.link}>{item.text}</Link>
               </li>
             ))}
           </ul>
@@ -69,7 +62,7 @@ const Header = () => {
               width="28"
               height="28"
               className="dark-image"
-              src={`${basePath}/static/images/light-mode.svg`}
+              src={`${BASE_PATH}/static/images/light-mode.svg`}
               alt="Dark Theme Switcher"
             />
 
@@ -78,7 +71,7 @@ const Header = () => {
               width="28"
               height="28"
               className="light-image"
-              src={`${basePath}/static/images/dark-mode.svg`}
+              src={`${BASE_PATH}/static/images/dark-mode.svg`}
               alt="Dark Theme Switcher"
             />
           </button>
@@ -96,7 +89,7 @@ const Header = () => {
               priority
               width="25"
               height="28"
-              src={`${basePath}/static/images/language-picker.svg`}
+              src={`${BASE_PATH}/static/images/language-picker.svg`}
               alt="Language Switcher"
             />
           </button>
@@ -106,12 +99,14 @@ const Header = () => {
           <ul className="lang-picker">
             {availableLocales.map(locale => (
               <li key={locale.code}>
-                <a
+                <Link
                   title={locale.name}
-                  href={currentRouteLocalized(locale.code)}
+                  locale={locale.code}
+                  href={pathname}
+                  onClick={() => setShowLangPicker(false)}
                 >
                   {locale.localName}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

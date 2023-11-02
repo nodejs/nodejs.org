@@ -1,11 +1,10 @@
 import { CodeBracketIcon } from '@heroicons/react/24/outline';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import Image from 'next/image';
-import { FormattedMessage } from 'react-intl';
 
 import AvatarGroup from '@/components/Common/AvatarGroup';
 import MetaBar from '@/components/Common/MetaBar';
-import LocalizedLink from '@/components/LocalizedLink';
+import { Link } from '@/navigation.mjs';
 
 type Story = StoryObj<typeof MetaBar>;
 type Meta = MetaObj<typeof MetaBar>;
@@ -53,15 +52,13 @@ export const Default: Story = {
             height={16}
             data-on-dark
           />
-          <LocalizedLink href="/contribute">
-            <FormattedMessage id="components.metabar.contributeText" />
-          </LocalizedLink>
+          <Link href="/contribute">Edit this page</Link>
         </>
       ),
       'components.metabar.viewAs': (
         <>
           <CodeBracketIcon />
-          <LocalizedLink href="/json">JSON</LocalizedLink>
+          <Link href="/json">JSON</Link>
         </>
       ),
     },

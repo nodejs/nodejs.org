@@ -1,23 +1,24 @@
+'use client';
+
 import classNames from 'classnames';
+import type { RichTranslationValues } from 'next-intl';
 import type { FC } from 'react';
 
-import { useLocale } from '@/hooks/useLocale';
-import { useNavigation } from '@/hooks/useNavigation';
+import { useIsCurrentPathname, useSiteNavigation } from '@/hooks';
+import { Link } from '@/navigation.mjs';
 import type { NavigationKeys } from '@/types';
-
-import LocalizedLink from './LocalizedLink';
 
 type SideNavigationProps = {
   navigationKey: NavigationKeys;
-  context?: Record<string, Record<string, string | JSX.Element | undefined>>;
+  context?: Record<string, RichTranslationValues>;
 };
 
 const SideNavigation: FC<SideNavigationProps> = ({
   navigationKey,
   context,
 }) => {
-  const { getSideNavigation } = useNavigation();
-  const { isCurrentLocaleRoute } = useLocale();
+  const { getSideNavigation } = useSiteNavigation();
+  const { isCurrentLocaleRoute } = useIsCurrentPathname();
 
   const sideNavigationItems = getSideNavigation(navigationKey, context);
 
@@ -29,13 +30,13 @@ const SideNavigation: FC<SideNavigationProps> = ({
       <ul>
         {sideNavigationItems.map(item => (
           <li key={item.key} className={getLinkClasses(item.link, item.level)}>
-            <LocalizedLink href={item.link}>{item.text}</LocalizedLink>
+            <Link href={item.link}>{item.text}</Link>
 
             {item.items.length > 0 && (
               <ul>
                 {item.items.map(({ link, level, text, key }) => (
                   <li key={key} className={getLinkClasses(link, level)}>
-                    <LocalizedLink href={link}>{text}</LocalizedLink>
+                    <Link href={link}>{text}</Link>
                   </li>
                 ))}
               </ul>

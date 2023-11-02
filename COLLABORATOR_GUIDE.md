@@ -80,8 +80,8 @@ The Website also uses several other Open Source libraries (not limited to) liste
 - [Tailwind][] is used as our CSS Framework and the Foundation of our Design System
 - [Hero Icons](https://heroicons.com/) is an SVG Icon Library used within our Codebase
 - [Radix UI][] is a collection of customizable UI components
-- [Shiki][] is a Syntax Highlighter used for our Codeboxes
-  - A [Rehype Plugin](https://rehype-pretty-code.netlify.app/) is used here for transforming `pre` and `code` tags into Syntax Highlighted Codeboxes
+- [Shikiji][] is a Syntax Highlighter used for our Codeboxes
+  - The syntax highlighting is done within the processing of the Markdown files with the MDX compiler as a Rehype plugin.
 - [MDX][] and Markdown are used for structuring the Content of the Website
 - [`react-intl`][] is the i18n Library adopted within the Website
 - [`next-sitemap`](https://www.npmjs.com/package/next-sitemap) is used for Sitemap and `robots.txt` Generation
@@ -442,20 +442,19 @@ MDX is an extension on Markdown that allows us to add JSX Components within Mark
 Besides that, MDX is also a pluggable parser built on top of `unified` which supports Rehype and Remark Plugins.
 MDX is becoming the standard for parsing human-content on React/Next.js-based Applications.
 
-Some of the plugins that we use include:
+**Some of the plugins that we use include:**
 
+- `remark-gfm`: Allows us to bring GitHub Flavoured Markdown within MDX
 - `remark-headings`: Generates Metadata for Markdown Headings
   - This allows us to build the Table of Contents for each Page, for example.
 - `rehype-autolink-headings`: Allows us to add Anchor Links to Markdown Headings
 - `rehype-slug`: Allows us to add IDs to Markdown Headings
-- `rehype-pretty-code`: Allows us to transform `pre` and `code` tags into Syntax Highlighted Codeboxes by using [Shiki][]
 
-#### Syntax Highlighting (Shiki) and Vercel
+#### Syntax Highlighting (Shikiji) and Vercel
 
-Since we use Incremental Static Rendering and Serverless Functions, Vercel attempts to simplify the bundled Node.js runtime by removing all unnecessary dependencies.
-This means that Shiki's Themes and Languages are not bundled by default.
+We use [Shikiji][] which is a refactor of the famous [Shiki](https://github.com/shikijs/shiki) syntax highlighter in ESM. We use it to support our native ESM-nature, and since Shiki is incompatible on serverless environments and Edge functions due of the need of Node's `fs`. Shikiji is definitely a nice port/rewrite of Shiki which supports our needs.
 
-Hence the `shiki.config.mjs` file, where we define our custom set of supported Languages and we bundle them directly by using [Shiki's Grammar Property](https://github.com/shikijs/shiki/blob/main/docs/languages.md#supporting-your-own-languages-with-shiki) which allows us to embed the languages directly.
+Shikiji is integrated on our workflow as a Reype Plugin, see the `next.mdx.shiki.mjs` file. We also use the `nord` theme for Shikiji and a subset of the supported languages as defined on the `shiki.config.mjs` file.
 
 ### Vercel
 
@@ -496,6 +495,6 @@ If you're unfamiliar or curious about something, we recommend opening a Discussi
 [MDX]: https://mdxjs.com/
 [PostCSS]: https://postcss.org/
 [React]: https://react.dev/
-[Shiki]: https://github.com/shikijs/shiki
+[Shikiji]: https://github.com/antfu/shikiji
 [Tailwind]: https://tailwindcss.com/
 [Radix UI]: https://www.radix-ui.com/

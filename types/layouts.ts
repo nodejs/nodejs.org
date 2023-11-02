@@ -2,12 +2,10 @@
 export type LegacyLayouts =
   | 'about.hbs'
   | 'learn.hbs'
-  | 'blog-index.hbs'
+  | 'blog-categpry.hbs'
   | 'blog-post.hbs'
-  | 'category-index.hbs'
   | 'contribute.hbs'
   | 'index.hbs'
   | 'docs.hbs'
   | 'download.hbs'
-  | 'download-current.hbs'
   | 'page.hbs';

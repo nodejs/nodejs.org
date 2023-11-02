@@ -1,8 +1,10 @@
-import type { FC } from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
+'use client';
 
-import LocalizedLink from '@/components/LocalizedLink';
-import { useDetectOS } from '@/hooks/useDetectOS';
+import { useTranslations } from 'next-intl';
+import type { FC } from 'react';
+
+import { useDetectOS } from '@/hooks';
+import { Link } from '@/navigation.mjs';
 import { DIST_URL } from '@/next.constants.mjs';
 import type { NodeRelease } from '@/types';
 import { downloadUrlByOS } from '@/util/downloadUrlByOS';
@@ -15,16 +17,16 @@ const HomeDownloadButton: FC<NodeRelease> = ({
   isLts,
 }) => {
   const { os, bitness } = useDetectOS();
-  const { formatMessage } = useIntl();
+  const t = useTranslations();
 
   const nodeDownloadLink = downloadUrlByOS(versionWithPrefix, os, bitness);
   const nodeApiLink = `${DIST_URL}latest-v${major}.x/docs/api/`;
   const nodeAllDownloadsLink = `/download${isLts ? '/' : '/current'}`;
 
-  const downloadFile = formatMessage(
-    { id: 'components.home.homeDownloadButton.download' },
-    { version, isLts }
-  );
+  const downloadFile = t('components.home.homeDownloadButton.download', {
+    version,
+    isLts,
+  });
 
   return (
     <div className="home-downloadblock">
@@ -36,29 +38,27 @@ const HomeDownloadButton: FC<NodeRelease> = ({
       >
         {downloadFile}
 
-        <FormattedMessage
-          id="components.home.homeDownloadButton.tagline"
-          tagName="small"
-          values={{ isLts }}
-        />
+        <small>
+          {t('components.home.homeDownloadButton.tagline', { isLts })}
+        </small>
       </a>
 
       <ul className="list-divider-pipe home-secondary-links">
         <li>
-          <LocalizedLink href={nodeAllDownloadsLink}>
-            <FormattedMessage id="components.home.homeDownloadButton.otherDownloads" />
-          </LocalizedLink>
+          <Link href={nodeAllDownloadsLink}>
+            {t('components.home.homeDownloadButton.otherDownloads')}
+          </Link>
         </li>
 
         <li>
           <a href={getNodejsChangelog(versionWithPrefix)}>
-            <FormattedMessage id="components.home.homeDownloadButton.changelog" />
+            {t('components.home.homeDownloadButton.changelog')}
           </a>
         </li>
 
         <li>
           <a href={nodeApiLink}>
-            <FormattedMessage id="components.home.homeDownloadButton.apiDocs" />
+            {t('components.home.homeDownloadButton.apiDocs')}
           </a>
         </li>
       </ul>

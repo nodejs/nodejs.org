@@ -1,10 +1,7 @@
-import { useSiteConfig } from '@/hooks/useSiteConfig';
+import { siteConfig } from '@/next.json.mjs';
 import { dateIsBetween } from '@/util/dateIsBetween';
 
 const Banner = () => {
-  const siteConfig = useSiteConfig();
-
-  // Note.: This is hardcoded and going to be replaced by the `nodejs/nodejs.dev` codebase
   if (siteConfig.websiteBanners && siteConfig.websiteBanners['index']) {
     const indexBanner = siteConfig.websiteBanners['index'];
 

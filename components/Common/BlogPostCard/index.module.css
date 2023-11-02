@@ -41,14 +41,16 @@
 }
 
 .author {
-  @apply text-sm
-    font-semibold
-    text-neutral-900
-    dark:text-white;
-}
+  p {
+    @apply text-sm
+      font-semibold
+      text-neutral-900
+      dark:text-white;
+  }
 
-.date {
-  @apply text-sm
-    text-neutral-800
-    dark:text-neutral-200;
+  time {
+    @apply text-sm
+      text-neutral-800
+      dark:text-neutral-200;
+  }
 }

@@ -1,27 +1,21 @@
 import type { LegacyLayouts } from './layouts';
 
-// @TODO: This is the legacy frontmatter configuration going to be replaced in the future with the `ndoejs/nodejs.dev` one
-// this is going to be done via a script that replaces layouts
-// Note.: The current legacy pages have other frontmatter entries but they're irrelevant
-export interface LegacyFrontMatter {
+// @TODO: Extra data from Frontmatter should not be a thing in the future
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export interface LegacyFrontMatter extends Record<string, any> {
   layout?: LegacyLayouts;
   title?: string;
-  robots?: string;
   labels?: Record<string, string>;
 }
 
-// @TODO: This is the legacy frontmatter configuration going to be replaced in the future with the `ndoejs/nodejs.dev` one
-// this is going to be done via a script that replaces layouts
+// @TODO: Extra data from Frontmatter should not be a thing in the future
 export interface LegacyBlogFrontMatter extends LegacyFrontMatter {
   author: string;
   date: string;
 }
 
+// @TODO: Extra data from Frontmatter should not be a thing in the future
 export interface LegacyDownloadsFrontMatter extends LegacyFrontMatter {
   downloads: Record<string, string>;
   additional: Record<string, string>;
-}
-
-export interface LegacyDownloadsReleasesFrontMatter extends LegacyFrontMatter {
-  modules: string;
 }

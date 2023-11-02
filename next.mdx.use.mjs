@@ -1,11 +1,11 @@
 'use strict';
 
-import NodeApiVersionLinks from '@/components/Docs/NodeApiVersionLinks';
-import DownloadReleasesTable from '@/components/Downloads/DownloadReleasesTable';
-import Banner from '@/components/Home/Banner';
-import HomeDownloadButton from '@/components/Home/HomeDownloadButton';
-import LocalizedLink from '@/components/LocalizedLink';
-import { WithNodeRelease } from '@/providers/withNodeRelease';
+import NodeApiVersionLinks from './components/Docs/NodeApiVersionLinks';
+import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
+import Banner from './components/Home/Banner';
+import HomeDownloadButton from './components/Home/HomeDownloadButton';
+import { WithNodeRelease } from './components/withNodeRelease';
+import { Link } from './navigation.mjs';
 
 /**
  * A full list of React Components that we want to passthrough to MDX
@@ -26,6 +26,6 @@ export const mdxComponents = {
  * @type {import('mdx/types').MDXComponents}
  */
 export const htmlComponents = {
-  a: LocalizedLink,
+  a: Link,
   blockquote: ({ children }) => <div className="highlight-box">{children}</div>,
 };

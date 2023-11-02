@@ -1,10 +1,9 @@
+'use client';
+
 import classNames from 'classnames';
-import type Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
 import type { ComponentProps, FC } from 'react';
 
-import LocalizedLink from '@/components/LocalizedLink';
+import { Link, usePathname } from '@/navigation.mjs';
 
 type ActiveLocalizedLinkProps = ComponentProps<typeof Link> & {
   activeClassName: string;
@@ -14,46 +13,21 @@ const ActiveLocalizedLink: FC<ActiveLocalizedLinkProps> = ({
   children,
   activeClassName,
   className,
+  href = '',
   ...props
 }) => {
-  const { asPath, isReady } = useRouter();
+  const pathname = usePathname();
 
-  const [computedClassName, setComputedClassName] = useState(className);
+  const linkURL = new URL(href.toString(), location.href);
 
-  useEffect(() => {
-    // Check if the router fields are updated client-side
-    if (isReady) {
-      const currentHref = (props.as || props.href).toString();
-
-      // Dynamic route will be matched via props.as
-      // Static route will be matched via props.href
-      const linkURL = new URL(currentHref, location.href);
-
-      // Using URL().pathname to get rid of query and hash
-      const currentPathName = new URL(asPath, location.href).pathname;
-
-      const newClassName = classNames(className, {
-        [activeClassName]: linkURL.pathname === currentPathName,
-      });
-
-      if (newClassName !== computedClassName) {
-        setComputedClassName(newClassName);
-      }
-    }
-  }, [
-    asPath,
-    isReady,
-    props.as,
-    props.href,
-    activeClassName,
-    className,
-    computedClassName,
-  ]);
+  const finalClassName = classNames(className, {
+    [activeClassName]: linkURL.pathname === pathname,
+  });
 
   return (
-    <LocalizedLink className={computedClassName} {...props}>
+    <Link className={finalClassName} href={href} {...props}>
       {children}
-    </LocalizedLink>
+    </Link>
   );
 };
 
