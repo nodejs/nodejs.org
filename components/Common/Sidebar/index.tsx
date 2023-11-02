@@ -1,31 +1,16 @@
-import type { Url } from 'url';
+import type { ComponentProps, FC } from 'react';
 
-import { useState } from 'react';
-import type { FC } from 'react';
+import SidebarGroup from '@/components/Common/Sidebar/SidebarGroup';
+import type SidebarItem from '@/components/Common/Sidebar/SidebarItem';
 
 import styles from './index.module.css';
-import SidebarGroup from './SidebarGroup';
-
-export type SidebarItemType = {
-  url: string | Url;
-  title: string;
-};
-
-export type SidebarGroupType = {
-  groupName: string;
-  items: SidebarItemType[];
-};
-
-export type ActiveItem = Pick<SidebarGroupType, 'groupName'> &
-  Pick<SidebarItemType, 'title'>;
 
 type SidebarProps = {
-  groups: SidebarGroupType[];
+  groups: ComponentProps<typeof SidebarGroup>[];
+  activeItem?: ComponentProps<typeof SidebarItem>;
 };
 
-const SideBar: FC<SidebarProps> = ({ groups }) => {
-  const [activeItem, setActiveItem] = useState<ActiveItem>();
-
+const SideBar: FC<SidebarProps> = ({ groups, activeItem }) => {
   return (
     <aside className={styles.sideBar}>
       {groups.map(({ groupName, items }) => (
@@ -34,7 +19,6 @@ const SideBar: FC<SidebarProps> = ({ groups }) => {
           groupName={groupName}
           items={items}
           activeItem={activeItem}
-          setActiveItem={setActiveItem}
         />
       ))}
     </aside>

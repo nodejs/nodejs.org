@@ -1,38 +1,33 @@
-import type { FC } from 'react';
+import type { ComponentProps, FC } from 'react';
 
 import SidebarItem from '@/components/Common/Sidebar/SidebarItem';
 
 import styles from './index.module.css';
-import type { ActiveItem, SidebarGroupType } from '..';
 
-type SideBarGroupProps = SidebarGroupType & {
-  activeItem?: ActiveItem;
-  setActiveItem: (item: ActiveItem) => void;
+type SidebarGroupProps = {
+  groupName: string;
+  items: ComponentProps<typeof SidebarItem>[];
+  activeItem?: ComponentProps<typeof SidebarItem>;
 };
 
-const SidebarGroup: FC<SideBarGroupProps> = ({
+const SidebarGroup: FC<SidebarGroupProps> = ({
   groupName,
   items,
   activeItem,
-  setActiveItem,
 }) => {
-  const handleSideBarItemClick = (title: string) => {
-    setActiveItem({ groupName, title });
-  };
-
   return (
     <section className={styles.group}>
       <label className={styles.groupName}>{groupName}</label>
       <ul className={styles.itemList}>
-        {items.map(item => (
+        {items.map(({ title, url, isActive }) => (
           <SidebarItem
-            key={item.title}
-            {...item}
+            key={title}
+            title={title}
+            url={url}
             isActive={
-              activeItem?.groupName === groupName &&
-              activeItem?.title === item.title
+              isActive ||
+              (activeItem?.title === title && activeItem.url === activeItem.url)
             }
-            onClick={handleSideBarItemClick}
           />
         ))}
       </ul>

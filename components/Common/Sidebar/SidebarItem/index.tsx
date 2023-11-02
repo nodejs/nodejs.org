@@ -4,24 +4,22 @@ import type { FC } from 'react';
 import LocalizedLink from '@/components/LocalizedLink';
 
 import styles from './index.module.css';
-import type { SidebarItemType } from '..';
 
-type SideBarItemProps = SidebarItemType & {
+type SidebarItemProps = {
+  title: string;
+  url: string;
   isActive?: boolean;
-  onClick: (title: string) => void;
 };
 
-const SidebarItem: FC<SideBarItemProps> = ({
+const SidebarItem: FC<SidebarItemProps> = ({
   url,
   title,
-  onClick,
-  isActive,
+  isActive = false,
 }) => (
   <li
     className={classNames(styles.sideBarItem, {
       [styles.active]: isActive,
     })}
-    onClick={() => onClick(title)}
   >
     <LocalizedLink href={url}>{title}</LocalizedLink>
   </li>
