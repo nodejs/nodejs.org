@@ -1,8 +1,8 @@
 .group {
   @apply flex
-  w-full
-  flex-col
-  gap-2;
+    w-full
+    flex-col
+    gap-2;
 }
 
 .groupName {
