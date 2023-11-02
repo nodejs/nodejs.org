@@ -16,9 +16,9 @@
 
 .itemList {
   @apply m-0
-  flex
-  flex-col
-  items-start
-  gap-0.5
-  p-0;
+    flex
+    flex-col
+    items-start
+    gap-0.5
+    p-0;
 }
