@@ -27,7 +27,6 @@ const SidebarGroup: FC<SideBarGroupProps> = ({
       <ul className={styles.itemList}>
         {items.map(item => (
           <SidebarItem
-            {...item}
             key={item.title}
             isActive={
               activeItem?.groupName === groupName &&
