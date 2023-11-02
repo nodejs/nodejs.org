@@ -102,7 +102,7 @@ jobs:
         run: npx prettier "{pages,i18n}/**/*.{json,md,mdx}" --check --write --cache --cache-strategy=metadata --cache-location=.prettiercache
 
       - name: Push Changes back to Pull Request
-        uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a
+        uses: stefanzweifel/git-auto-commit-action@8756aa072ef5b4a080af5dc8fef36c5d586e521d
         with:
           commit_options: '--no-verify --signoff'
           commit_message: 'chore: automated format of translated files'
