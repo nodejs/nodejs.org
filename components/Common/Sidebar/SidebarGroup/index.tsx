@@ -19,14 +19,13 @@ const SidebarGroup: FC<SidebarGroupProps> = ({
     <section className={styles.group}>
       <label className={styles.groupName}>{groupName}</label>
       <ul className={styles.itemList}>
-        {items.map(({ title, url, isActive }) => (
+        {items.map(({ title, url }) => (
           <SidebarItem
             key={title}
             title={title}
             url={url}
             isActive={
-              isActive ||
-              (activeItem?.title === title && activeItem.url === activeItem.url)
+              activeItem?.title === title && activeItem.url === activeItem.url
             }
           />
         ))}

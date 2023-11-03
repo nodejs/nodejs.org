@@ -1,10 +1,11 @@
 .sideBarItem {
-  @apply w-full
-    list-none
-    p-2;
+  @apply flex
+    w-full
+    list-none;
 
   a {
-    @apply text-sm
+    @apply p-2
+      text-sm
       font-regular
       text-neutral-800
       dark:text-neutral-200;
@@ -12,9 +13,11 @@
 }
 
 .active {
-  @apply bg-green-600;
+  @apply rounded
+    bg-green-600;
 
-  a {
+  a,
+  a:hover {
     @apply text-white;
   }
 }
