@@ -9,26 +9,35 @@ export const Default: Story = {
   args: {
     navItems: [
       {
-        key: 'about',
-        link: '/about',
+        text: 'about',
+        href: '/about',
       },
       {
-        key: 'learn',
-        link: '/learn',
+        text: 'learn',
+        href: '/learn',
       },
       {
-        key: 'docs',
-        link: '/docs',
+        text: 'docs',
+        href: '/docs',
       },
       {
-        key: 'blog',
-        link: '/blog',
+        text: 'blog',
+        href: '/blog',
       },
       {
-        key: 'certification',
-        link: 'https://openjsf.org/certification',
+        text: 'certification',
+        href: 'https://openjsf.org/certification',
       },
     ],
+    languages: {
+      availableLanguages: [
+        { name: 'English', code: 'en' },
+        { name: 'French', code: 'fr' },
+        { name: 'Spanish', code: 'es' },
+      ],
+      currentLanguage: { name: 'English', code: 'en' },
+    },
+    onThemeTogglerClick: () => {},
   },
 };
 

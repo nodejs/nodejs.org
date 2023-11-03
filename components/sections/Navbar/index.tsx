@@ -1,39 +1,25 @@
 import Image from 'next/image';
-import { useTheme } from 'next-themes';
-import type { FC } from 'react';
-import { useMemo } from 'react';
+import type { FC, ComponentProps } from 'react';
 
 import LanguageDropdown from '@/components/Common/LanguageDropDown';
 import ThemeToggle from '@/components/Common/ThemeToggle';
 import NavItem from '@/components/sections/NavItem';
-import { useLocale } from '@/hooks/useLocale';
 
 import style from './index.module.css';
 
-type NavItem = { key: string; link: string };
-type NavbarProps = { navItems: NavItem[] };
+type NavItem = { text: string; href: string };
 
-const Navbar: FC<NavbarProps> = ({ navItems }) => {
-  const { availableLocales, currentLocale } = useLocale();
-  const { theme, setTheme } = useTheme();
+type NavbarProps = {
+  navItems: NavItem[];
+  languages: ComponentProps<typeof LanguageDropdown>;
+  onThemeTogglerClick: () => void;
+};
 
-  const availableLanguages = useMemo(
-    () =>
-      availableLocales.map(locale => ({
-        name: locale.name,
-        code: locale.code,
-      })),
-    [availableLocales]
-  );
-
-  const currentLanguage = useMemo(
-    () => ({
-      name: currentLocale.name,
-      code: currentLocale.code,
-    }),
-    [currentLocale]
-  );
-
+const Navbar: FC<NavbarProps> = ({
+  navItems,
+  languages,
+  onThemeTogglerClick,
+}) => {
   return (
     <nav className={style.container}>
       <div className={style.leftItems}>
@@ -52,20 +38,18 @@ const Navbar: FC<NavbarProps> = ({ navItems }) => {
           alt="Node.js"
         />
         <div className={style.navItems}>
-          {navItems.map(({ key, link }) => (
-            <NavItem key={key} href={link}>
-              {key}
+          {navItems.map(({ text, href }) => (
+            <NavItem key={text} href={href}>
+              {text}
             </NavItem>
           ))}
         </div>
       </div>
       <div className={style.rightItems}>
-        <ThemeToggle
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-        />
+        <ThemeToggle onClick={onThemeTogglerClick} />
         <LanguageDropdown
-          availableLanguages={availableLanguages}
-          currentLanguage={currentLanguage}
+          availableLanguages={languages.availableLanguages}
+          currentLanguage={languages.currentLanguage}
         />
         <button className={style.iconWrapper} aria-label="Node.js Github">
           <a href="https://github.com/nodejs/node">
