@@ -29,7 +29,9 @@ permissions:
 jobs:
   lighthouse-ci:
     # We want to skip our lighthouse analysis on Dependabot PRs
-    if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
+    if: |
+      startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
+      github.event.label.name == 'github_actions:pull-request'
 
     name: Lighthouse Report
     runs-on: ubuntu-latest
