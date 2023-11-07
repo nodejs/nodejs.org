@@ -1,6 +1,5 @@
 import { CodeBracketIcon } from '@heroicons/react/24/solid';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
-import { FormattedMessage } from 'react-intl';
 
 import Notification from '@/components/Common/Notification';
 
@@ -28,7 +27,7 @@ export const WithJSX: Story = {
     children: (
       <div className="flex items-center gap-3">
         <CodeBracketIcon className="h-4 w-4" />
-        <FormattedMessage id="components.common.codebox.copied" />
+        Copied to clipboard!
       </div>
     ),
   },

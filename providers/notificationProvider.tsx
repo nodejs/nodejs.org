@@ -15,9 +15,7 @@ type NotificationContextType = {
   duration: number;
 } | null;
 
-type NotificationProps = {
-  viewportClassName?: string;
-};
+type NotificationProps = { viewportClassName?: string };
 
 const NotificationContext = createContext<NotificationContextType>(null);
 

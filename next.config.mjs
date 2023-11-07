@@ -1,5 +1,7 @@
 'use strict';
 
+import withNextIntl from 'next-intl/plugin';
+
 import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 
@@ -13,6 +15,8 @@ const nextConfig = {
   swcMinify: true,
   // We don't use trailing slashes on URLs from the Node.js Website
   trailingSlash: false,
+  // We don't want to redirect with trailing slashes
+  skipTrailingSlashRedirect: true,
   // We allow the BASE_PATH to be overridden in case that the Website
   // is being built on a subdirectory (e.g. /nodejs-website)
   basePath: BASE_PATH,
@@ -63,4 +67,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl()(nextConfig);

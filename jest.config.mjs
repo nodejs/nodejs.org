@@ -14,6 +14,7 @@ const customJestConfig = {
   reporters: ['default', 'jest-junit'],
   moduleNameMapper: {
     'next/router': '<rootDir>/components/__mocks__/next-router.mjs',
+    'next-intl': '<rootDir>/components/__mocks__/next-intl.mjs',
   },
 };
 

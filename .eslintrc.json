@@ -59,7 +59,10 @@
     {
       "files": ["**/*.md?(x)"],
       "extends": "plugin:mdx/recommended",
-      "rules": { "react/jsx-no-undef": "off" }
+      "rules": {
+        "react/jsx-no-undef": "off",
+        "@next/next/no-img-element": "off"
+      }
     },
     {
       "files": ["**/*.{mdx,tsx}"],

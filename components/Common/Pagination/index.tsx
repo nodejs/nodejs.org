@@ -1,6 +1,6 @@
 import { ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/20/solid';
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
 
 import Button from '@/components/Common/Button';
 import { useGetPageElements } from '@/components/Common/Pagination/useGetPageElements';
@@ -23,7 +23,7 @@ const Pagination: FC<PaginationProps> = ({
   pages,
   currentPageSiblingsCount = 1,
 }) => {
-  const { formatMessage } = useIntl();
+  const t = useTranslations();
 
   const parsedPages = useGetPageElements(
     currentPage,
@@ -33,40 +33,28 @@ const Pagination: FC<PaginationProps> = ({
 
   return (
     <nav
-      aria-label={formatMessage({
-        id: 'components.common.pagination.defaultLabel',
-      })}
+      aria-label={t('components.common.pagination.defaultLabel')}
       className={styles.pagination}
     >
       <Button
         type="button"
-        aria-label={formatMessage({
-          id: 'components.common.pagination.prevAriaLabel',
-        })}
+        aria-label={t('components.common.pagination.prevAriaLabel')}
         disabled={currentPage === 1}
         variant="secondary"
         className={styles.previousButton}
       >
         <ArrowLeftIcon className={styles.arrowIcon} />
-        <FormattedMessage
-          id="components.common.pagination.prev"
-          tagName="span"
-        />
+        <span>{t('components.common.pagination.prev')}</span>
       </Button>
       <ol className={styles.list}>{parsedPages}</ol>
       <Button
         type="button"
-        aria-label={formatMessage({
-          id: 'components.common.pagination.nextAriaLabel',
-        })}
+        aria-label={t('components.common.pagination.nextAriaLabel')}
         disabled={currentPage === pages.length}
         variant="secondary"
         className={styles.nextButton}
       >
-        <FormattedMessage
-          id="components.common.pagination.next"
-          tagName="span"
-        />
+        <span>{t('components.common.pagination.next')}</span>
         <ArrowRightIcon className={styles.arrowIcon} />
       </Button>
     </nav>

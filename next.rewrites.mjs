@@ -1,10 +1,7 @@
 'use strict';
 
 import { siteRedirects } from './next.json.mjs';
-import { availableLocales } from './next.locales.mjs';
-
-// We only need Locale Codes for our URL redirects and rewrties
-const localeCodes = availableLocales.map(locale => locale.code);
+import { availableLocaleCodes } from './next.locales.mjs';
 
 // This allows us to prefix redirects with all available locale codes so that redirects are not bound to a single locale
 // This also transforms the locale itself as a matching group that can be used for rewrites
@@ -12,7 +9,7 @@ const localeCodes = availableLocales.map(locale => locale.code);
 // Example: /:locale(ar/|ca/|de/|en/|es/|fa/|fr/|)about/security
 // Would match /ar/about/security, /ar/about/security/ for every language code (replace "ar") and
 // it would also match /about/security (without any language prefix)
-const localesMatch = `/:locale(${localeCodes.join('|')}|)?/`;
+const localesMatch = `/:locale(${availableLocaleCodes.join('|')}|)?/`;
 
 /**
  * These are external redirects that happen before we check dynamic routes and rewrites

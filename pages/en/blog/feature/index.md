@@ -1,4 +1,4 @@
 ---
 title: Features
-layout: category-index.hbs
+layout: blog-categpry.hbs
 ---

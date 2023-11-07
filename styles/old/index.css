@@ -19,10 +19,6 @@
 @import 'page-modules/anchorLinks';
 @import 'page-modules/prev-next-navigation';
 
-* {
-  transition: background-color $dark-transition-time ease;
-}
-
 article a {
   word-break: break-word;
 }

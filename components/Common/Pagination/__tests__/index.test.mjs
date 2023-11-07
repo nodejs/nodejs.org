@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
 import Pagination from '@/components/Common/Pagination';
-import { LocaleProvider } from '@/providers/localeProvider';
 
 function renderPagination({
   currentPage = 1,
@@ -13,13 +12,11 @@ function renderPagination({
     .map(item => ({ url: `${item.url}-${Math.random()}` }));
 
   render(
-    <LocaleProvider>
-      <Pagination
-        currentPage={currentPage}
-        pages={parsedPages}
-        currentPageSiblingsCount={currentPageSiblingsCount}
-      />
-    </LocaleProvider>
+    <Pagination
+      currentPage={currentPage}
+      pages={parsedPages}
+      currentPageSiblingsCount={currentPageSiblingsCount}
+    />
   );
 
   return {
@@ -35,9 +32,17 @@ describe('Pagination', () => {
 
       expect(screen.getByRole('navigation')).toBeVisible();
 
-      expect(screen.getByRole('button', { name: /prev/i })).toBeVisible();
+      expect(
+        screen.getByRole('button', {
+          name: 'components.common.pagination.prevAriaLabel',
+        })
+      ).toBeVisible();
 
-      expect(screen.getByRole('button', { name: /next/i })).toBeVisible();
+      expect(
+        screen.getByRole('button', {
+          name: 'components.common.pagination.nextAriaLabel',
+        })
+      ).toBeVisible();
     });
 
     it('Renders the passed pages and current page', () => {
@@ -153,7 +158,11 @@ describe('Pagination', () => {
         pages: 2,
       });
 
-      expect(screen.getByRole('button', { name: /prev/i })).toBeDisabled();
+      expect(
+        screen.getByRole('button', {
+          name: 'components.common.pagination.prevAriaLabel',
+        })
+      ).toBeDisabled();
     });
 
     it('Disables "Next" button when the currentPage is equal to the last page', () => {
@@ -162,7 +171,11 @@ describe('Pagination', () => {
         pages: 2,
       });
 
-      expect(screen.getByRole('button', { name: /next/i })).toBeDisabled();
+      expect(
+        screen.getByRole('button', {
+          name: 'components.common.pagination.nextAriaLabel',
+        })
+      ).toBeDisabled();
     });
   });
 });

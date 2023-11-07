@@ -1,4 +1,4 @@
 ---
 title: News
-layout: blog-index.hbs
+layout: blog-categpry.hbs
 ---
