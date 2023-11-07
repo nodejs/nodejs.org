@@ -58,7 +58,7 @@
     "glob": "~10.3.10",
     "gray-matter": "~4.0.3",
     "husky": "8.0.3",
-    "lint-staged": "14.0.1",
+    "lint-staged": "15.0.2",
     "next": "~14.0.0",
     "next-intl": "^3.0.0-rc.7",
     "next-themes": "~0.2.1",
