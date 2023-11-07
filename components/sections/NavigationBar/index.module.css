@@ -1,0 +1,81 @@
+.container {
+  @apply border-neutral-200
+  	dark:border-neutral-900
+    md:flex
+    md:h-16
+    md:flex-row
+    md:items-center
+    md:gap-8
+    md:border-b
+    md:px-8;
+}
+
+.leftItems {
+  @apply flex
+    h-16
+    shrink-0
+    items-center
+    border-b
+    border-neutral-200
+    px-4
+    dark:border-neutral-900
+    md:flex
+    md:h-full
+    md:items-center
+    md:border-0
+    md:px-0;
+}
+
+.nodeIconWrapper {
+  @apply h-[30px]
+    flex-1;
+}
+
+.sidebarItemTogglerLabel {
+  @apply block md:hidden;
+}
+
+.main {
+  @apply hidden
+    flex-1
+    md:flex
+    md:flex-row;
+}
+
+.navItems {
+  @apply flex
+    flex-col
+    gap-1
+    border-b
+    border-neutral-200
+    p-4
+    dark:border-neutral-900
+    md:flex-1
+    md:flex-row
+    md:border-0
+    md:p-0;
+}
+
+.rightItems {
+  @apply flex
+    gap-2
+    border-b
+    border-neutral-200
+    px-4
+    py-4
+    dark:border-neutral-900
+    md:border-0
+    md:py-0;
+}
+
+.ghIconWrapper {
+  @apply h-9
+    w-9
+    rounded-md
+    p-2;
+
+  &:hover {
+    @apply bg-neutral-100
+      dark:bg-neutral-900;
+  }
+}

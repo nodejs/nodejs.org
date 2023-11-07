@@ -1,44 +1,49 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import Navbar from './index';
+import NavigationBar from './index';
 
-type Story = StoryObj<typeof Navbar>;
-type Meta = MetaObj<typeof Navbar>;
+type Story = StoryObj<typeof NavigationBar>;
+type Meta = MetaObj<typeof NavigationBar>;
 
 export const Default: Story = {
   args: {
     navItems: [
       {
-        text: 'about',
-        href: '/about',
-      },
-      {
-        text: 'learn',
+        text: 'Learn',
         href: '/learn',
       },
       {
-        text: 'docs',
+        text: 'About',
+        href: '/about',
+      },
+      {
+        text: 'Docs',
         href: '/docs',
       },
       {
-        text: 'blog',
+        text: 'Download',
+        href: '/download',
+      },
+      {
+        text: 'Blog',
         href: '/blog',
       },
       {
-        text: 'certification',
+        text: 'Certification',
         href: 'https://openjsf.org/certification',
       },
     ],
+    currentNavItem: 'Learn',
     languages: {
       availableLanguages: [
         { name: 'English', code: 'en' },
         { name: 'French', code: 'fr' },
         { name: 'Spanish', code: 'es' },
       ],
-      currentLanguage: { name: 'English', code: 'en' },
+      currentLanguage: 'en',
     },
     onThemeTogglerClick: () => {},
   },
 };
 
-export default { component: Navbar } as Meta;
+export default { component: NavigationBar } as Meta;
