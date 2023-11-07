@@ -3,13 +3,8 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-<<<<<<<< HEAD:components/Sections/Footer/index.tsx
-import NavItem from '@/components/Sections/NavItem';
-import { useSiteConfig } from '@/hooks/useSiteConfig';
-========
 import NavItem from '@/components/Containers/NavItem';
 import { siteConfig } from '@/next.json.mjs';
->>>>>>>> a6671e99 (meta: adopt next-intl and app router):components/Containers/Footer/index.tsx
 
 import styles from './index.module.css';
 

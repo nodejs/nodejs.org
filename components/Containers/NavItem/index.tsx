@@ -3,11 +3,7 @@ import classNames from 'classnames';
 import type { FC, PropsWithChildren } from 'react';
 import { useMemo } from 'react';
 
-<<<<<<<< HEAD:components/Sections/NavItem/index.tsx
 import ActiveLocalizedLink from '@/components/Common/ActiveLocalizedLink';
-========
-import { Link } from '@/navigation.mjs';
->>>>>>>> a6671e99 (meta: adopt next-intl and app router):components/Containers/NavItem/index.tsx
 
 import styles from './index.module.css';
 
@@ -31,22 +27,14 @@ const NavItem: FC<PropsWithChildren<NavItemProps>> = ({
   );
 
   return (
-<<<<<<<< HEAD:components/Sections/NavItem/index.tsx
     <ActiveLocalizedLink
-========
-    <Link
->>>>>>>> a6671e99 (meta: adopt next-intl and app router):components/Containers/NavItem/index.tsx
       href={href}
       className={classNames(styles.navItem, styles[type], className)}
       activeClassName={styles.active}
     >
       <span className={styles.label}>{children}</span>
       {showIcon && <ArrowUpRightIcon className={styles.icon} />}
-<<<<<<<< HEAD:components/Sections/NavItem/index.tsx
     </ActiveLocalizedLink>
-========
-    </Link>
->>>>>>>> a6671e99 (meta: adopt next-intl and app router):components/Containers/NavItem/index.tsx
   );
 };
 
