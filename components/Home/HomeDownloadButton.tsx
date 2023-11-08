@@ -1,11 +1,14 @@
-import LocalizedLink from '@/components/LocalizedLink';
-import { useDetectOS } from '@/hooks/useDetectOS';
-import { useLayoutContext } from '@/hooks/useLayoutContext';
+'use client';
+
+import { useTranslations } from 'next-intl';
+import type { FC } from 'react';
+
+import { useDetectOS } from '@/hooks';
+import { Link } from '@/navigation.mjs';
+import { DIST_URL } from '@/next.constants.mjs';
+import type { NodeRelease } from '@/types';
 import { downloadUrlByOS } from '@/util/downloadUrlByOS';
 import { getNodejsChangelog } from '@/util/getNodeJsChangelog';
-import { DIST_URL } from '@/next.constants.mjs';
-import type { FC } from 'react';
-import type { NodeRelease } from '@/types';
 
 const HomeDownloadButton: FC<NodeRelease> = ({
   major,
@@ -13,45 +16,50 @@ const HomeDownloadButton: FC<NodeRelease> = ({
   versionWithPrefix,
   isLts,
 }) => {
-  const {
-    frontMatter: { labels },
-  } = useLayoutContext();
-
   const { os, bitness } = useDetectOS();
+  const t = useTranslations();
 
   const nodeDownloadLink = downloadUrlByOS(versionWithPrefix, os, bitness);
   const nodeApiLink = `${DIST_URL}latest-v${major}.x/docs/api/`;
   const nodeAllDownloadsLink = `/download${isLts ? '/' : '/current'}`;
 
-  const nodeDownloadTitle = `${labels?.download} ${version} ${labels?.[
-    isLts ? 'lts' : 'current'
-  ]}`;
+  const downloadFile = t('components.home.homeDownloadButton.download', {
+    version,
+    isLts,
+  });
 
   return (
     <div className="home-downloadblock">
       <a
         href={nodeDownloadLink}
         className="home-downloadbutton"
-        title={nodeDownloadTitle}
+        title={downloadFile}
         data-version={versionWithPrefix}
       >
-        {version} {labels?.[isLts ? 'lts' : 'current']}
-        <small>{labels?.[`tagline-${isLts ? 'lts' : 'current'}`]}</small>
+        {downloadFile}
+
+        <small>
+          {t('components.home.homeDownloadButton.tagline', { isLts })}
+        </small>
       </a>
 
       <ul className="list-divider-pipe home-secondary-links">
         <li>
-          <LocalizedLink href={nodeAllDownloadsLink}>
-            {labels?.['other-downloads']}
-          </LocalizedLink>
+          <Link href={nodeAllDownloadsLink}>
+            {t('components.home.homeDownloadButton.otherDownloads')}
+          </Link>
         </li>
+
         <li>
           <a href={getNodejsChangelog(versionWithPrefix)}>
-            {labels?.changelog}
+            {t('components.home.homeDownloadButton.changelog')}
           </a>
         </li>
+
         <li>
-          <a href={nodeApiLink}>{labels?.api}</a>
+          <a href={nodeApiLink}>
+            {t('components.home.homeDownloadButton.apiDocs')}
+          </a>
         </li>
       </ul>
     </div>

@@ -6,16 +6,8 @@
     "langDir": "rtl",
     "dateFormat": "YYYY.MM.DD",
     "hrefLang": "ar",
-    "enabled": true
-  },
-  {
-    "code": "ca",
-    "localName": "Catalan",
-    "name": "Catalan",
-    "langDir": "ltr",
-    "dateFormat": "DD.MM.YYYY",
-    "hrefLang": "ca",
-    "enabled": true
+    "enabled": false,
+    "default": false
   },
   {
     "code": "de",
@@ -24,7 +16,8 @@
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "de",
-    "enabled": true
+    "enabled": false,
+    "default": false
   },
   {
     "code": "en",
@@ -43,16 +36,8 @@
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "es-ES",
-    "enabled": true
-  },
-  {
-    "code": "fa",
-    "localName": "زبان فارسی",
-    "name": "Persian",
-    "langDir": "rtl",
-    "dateFormat": "YYYY.MM.DD",
-    "hrefLang": "fa",
-    "enabled": true
+    "enabled": false,
+    "default": false
   },
   {
     "code": "fr",
@@ -61,7 +46,8 @@
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "fr",
-    "enabled": true
+    "enabled": false,
+    "default": false
   },
   {
     "code": "id",
@@ -70,7 +56,8 @@
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "id",
-    "enabled": true
+    "enabled": false,
+    "default": false
   },
   {
     "code": "it",
@@ -79,7 +66,8 @@
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "it",
-    "enabled": true
+    "enabled": false,
+    "default": false
   },
   {
     "code": "ja",
@@ -88,7 +76,8 @@
     "langDir": "ltr",
     "dateFormat": "YYYY.MM.DD",
     "hrefLang": "ja",
-    "enabled": true
+    "enabled": false,
+    "default": false
   },
   {
     "code": "ka",
@@ -97,7 +86,8 @@
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "ka",
-    "enabled": true
+    "enabled": false,
+    "default": false
   },
   {
     "code": "ko",
@@ -106,7 +96,8 @@
     "langDir": "ltr",
     "dateFormat": "YYYY.MM.DD",
     "hrefLang": "ko",
-    "enabled": true
+    "enabled": false,
+    "default": false
   },
   {
     "code": "pt-br",
@@ -115,16 +106,8 @@
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "",
-    "enabled": true
-  },
-  {
-    "code": "ro",
-    "localName": "limba română",
-    "name": "Romanian",
-    "langDir": "ltr",
-    "dateFormat": "DD.MM.YYYY",
-    "hrefLang": "ro",
-    "enabled": true
+    "enabled": false,
+    "default": false
   },
   {
     "code": "ru",
@@ -133,7 +116,8 @@
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "ru",
-    "enabled": true
+    "enabled": false,
+    "default": false
   },
   {
     "code": "tr",
@@ -142,7 +126,8 @@
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "tr",
-    "enabled": true
+    "enabled": false,
+    "default": false
   },
   {
     "code": "uk",
@@ -151,7 +136,8 @@
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "uk",
-    "enabled": true
+    "enabled": false,
+    "default": false
   },
   {
     "code": "zh-cn",
@@ -160,7 +146,8 @@
     "langDir": "ltr",
     "dateFormat": "YYYY/MM/DD",
     "hrefLang": "zh-Hans",
-    "enabled": true
+    "enabled": false,
+    "default": false
   },
   {
     "code": "zh-tw",
@@ -169,6 +156,7 @@
     "langDir": "ltr",
     "dateFormat": "YYYY/MM/DD",
     "hrefLang": "zh-Hant",
-    "enabled": true
+    "enabled": false,
+    "default": false
   }
 ]

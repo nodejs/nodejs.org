@@ -1,11 +1,9 @@
 ---
-title: Version 0.6 Coming Soon
-author: ryandahl
-date: 2011-10-25T22:26:23.000Z
-status: publish
+date: '2011-10-25T22:26:23.000Z'
 category: uncategorized
-slug: version-0-6
+title: Version 0.6 Coming Soon
 layout: blog-post.hbs
+author: ryandahl
 ---
 
 Version 0.6.0 will be released next week. Please spend some time this week upgrading your code to v0.5.10. Report any API differences at <https://github.com/joyent/node/wiki/API-changes-between-v0.4-and-v0.6> or report a bug to us at <http://github.com/joyent/node/issues> if you hit problems.

@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Aug 7th, 2015
-author: Steven Sinatra (@diagramatics)
-date: 2015-08-07T12:00:00.000Z
-status: publish
+date: '2015-08-07T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-08-07
+title: Weekly Update - Aug 7th, 2015
 layout: blog-post.hbs
+author: 'Steven Sinatra (@diagramatics)'
 ---
 
 ### io.js and Node.js News — August 7th

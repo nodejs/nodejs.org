@@ -1,11 +1,9 @@
 ---
-title: jobs.nodejs.org
-author: ryandahl
-date: 2011-03-25T06:05:22.000Z
-status: publish
+date: '2011-03-25T06:05:22.000Z'
 category: uncategorized
-slug: jobs-nodejs-org
+title: jobs.nodejs.org
 layout: blog-post.hbs
+author: ryandahl
 ---
 
 We are starting an official jobs board for Node. There are two goals for this

@@ -1,19 +1,19 @@
-import DownloadList from './DownloadList';
-import { useLayoutContext } from '@/hooks/useLayoutContext';
-import { WithNodeRelease } from '@/providers/withNodeRelease';
-import { DIST_URL } from '@/next.constants.mjs';
-import type { LegacyDownloadsFrontMatter, NodeRelease } from '@/types';
 import type { FC } from 'react';
 
-// @TODO: Instead of using a static list it should be created dynamically. This is done on `nodejs.dev`
-// since this is a temporary solution and going to be fixed in the future.
+import DownloadList from '@/components/Downloads/DownloadList';
+import { WithNodeRelease } from '@/components/withNodeRelease';
+import { useClientContext } from '@/hooks/server';
+import { DIST_URL } from '@/next.constants.mjs';
+import type { NodeRelease } from '@/types';
+
+// @TODO: Legacy Component to be removed in the Website Redesign
 const SecondaryDownloadMatrix: FC<NodeRelease> = ({
   versionWithPrefix,
   status,
 }) => {
-  const { frontMatter } = useLayoutContext();
-
-  const { additional } = frontMatter as LegacyDownloadsFrontMatter;
+  const {
+    frontmatter: { additional },
+  } = useClientContext();
 
   return (
     <section>

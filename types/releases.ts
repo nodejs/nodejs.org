@@ -35,8 +35,3 @@ export interface NodeRelease extends NodeReleaseSource {
   isLts: boolean;
   status: NodeReleaseStatus;
 }
-
-export type NodeReleaseSupport = Pick<
-  NodeRelease,
-  'currentStart' | 'ltsStart' | 'maintenanceStart' | 'endOfLife'
->;

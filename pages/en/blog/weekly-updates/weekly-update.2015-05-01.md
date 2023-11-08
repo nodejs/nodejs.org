@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - May 1st, 2015
-author: Giovanny Gioyik (@Gioyik)
-date: 2015-05-01T12:00:00.000Z
-status: publish
+date: '2015-05-01T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-05-01
+title: Weekly Update - May 1st, 2015
 layout: blog-post.hbs
+author: 'Giovanny Gioyik (@Gioyik)'
 ---
 
 # io.js 2.0 release candidate

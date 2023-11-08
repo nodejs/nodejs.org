@@ -33,13 +33,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: thollander/actions-comment-pull-request@d61db783da9abefc3437960d0cce08552c7c004f
+      - uses: thollander/actions-comment-pull-request@1d3973dc4b8e1399c0620d3f2b1aa5e795465308 # v2.4.3
         with:
           message: |
             > [!NOTE]\
             > Your Pull Request seems to be updating **Translations** of the Node.js Website.
             >
-            > Whilst we appreciate your intent; Any Translation update should be done through our [Crowdin Project](https://crowdin.com/project/nodejs-website).
+            > Whilst we appreciate your intent; Any Translation update should be done through our [Crowdin Project](https://crowdin.com/project/nodejs-web).
             > We recommend giving a read on our [Translation Guidelines](https://github.com/nodejs/nodejs.org/blob/main/TRANSLATION.md).
             >
             > Thank you!
@@ -56,7 +56,7 @@ jobs:
 
     steps:
       - name: Git Checkout
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           # By default Git Checkout on `pull-request-target` will checkout
           # the `default` branch of the Pull Request. We want to checkout
@@ -64,7 +64,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Restore Lint Cache
-        uses: actions/cache/restore@704facf57e6136b1bc63b828d79edcd491f0ee84
+        uses: actions/cache/restore@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
         with:
           path: |
             .eslintmdcache
@@ -80,7 +80,7 @@ jobs:
             cache-lint-
 
       - name: Set up Node.js
-        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d
+        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4.0.0
         with:
           # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
@@ -102,13 +102,13 @@ jobs:
         run: npx prettier "{pages,i18n}/**/*.{json,md,mdx}" --check --write --cache --cache-strategy=metadata --cache-location=.prettiercache
 
       - name: Push Changes back to Pull Request
-        uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a
+        uses: stefanzweifel/git-auto-commit-action@8756aa072ef5b4a080af5dc8fef36c5d586e521d # v5.0.0
         with:
           commit_options: '--no-verify --signoff'
           commit_message: 'chore: automated format of translated files'
 
       - name: Save Lint Cache
-        uses: actions/cache/save@704facf57e6136b1bc63b828d79edcd491f0ee84
+        uses: actions/cache/save@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
         with:
           path: |
             .eslintmdcache

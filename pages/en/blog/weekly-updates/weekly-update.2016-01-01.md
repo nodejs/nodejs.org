@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Jan 1st, 2016
-author: Minwoo Jung (@jmwsoft)
-date: 2016-01-01T12:00:00.000Z
-status: publish
+date: '2016-01-01T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-01-01
+title: Weekly Update - Jan 1st, 2016
 layout: blog-post.hbs
+author: 'Minwoo Jung (@jmwsoft)'
 ---
 
 ### Node.js News — January 1st
@@ -14,7 +12,7 @@ Node.js Node v4.2.4 (LTS) is released
 
 ### Node.js Node v4.2.4 (LTS) Releases
 
-This week we have one release: [Node.js Node v4.2.4 (LTS)](https://nodejs.org/en/blog/release/v4.2.4/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+This week we have one release: [Node.js Node v4.2.4 (LTS)](/blog/release/v4.2.4/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Notable changes
 

@@ -1,10 +1,9 @@
 ---
-title: Node.js Foundation Welcomes Red Hat as Newest Platinum Member
-date: 2015-10-06T12:30:00.000Z
-status: publish
+date: '2015-10-06T12:30:00.000Z'
 category: announcements
-slug: welcome-redhat
+title: Node.js Foundation Welcomes Red Hat as Newest Platinum Member
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 # Node.js Foundation Welcomes Red Hat as Newest Platinum Member
@@ -23,7 +22,7 @@ Often used for building fast, scalable network applications, Node.js supports Re
 
 Additional Resources
 
-- Learn more about the [Node.js Foundation](https://foundation.nodejs.org/) and get involved with [the project](https://nodejs.org/en/get-involved/).
+- Learn more about the [Node.js Foundation](https://foundation.nodejs.org/) and get involved with [the project](/get-involved/).
 
 ## About Node.js Foundation
 

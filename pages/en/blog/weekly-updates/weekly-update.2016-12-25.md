@@ -1,20 +1,18 @@
 ---
-title: Weekly Update - December 25th, 2016
-author: Minwoo Jung (github.com/JungMinu)
-date: 2016-12-25T12:00:00.000Z
-status: publish
+date: '2016-12-25T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-12-25
+title: Weekly Update - December 25th, 2016
 layout: blog-post.hbs
+author: 'Minwoo Jung (github.com/JungMinu)'
 ---
 
 ### Node v0.12.18 (Maintenance)
 
-- [Node v0.12.18 (Maintenance)](https://nodejs.org/en/blog/release/v0.12.18/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+- [Node v0.12.18 (Maintenance)](/blog/release/v0.12.18/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Node v7.3.0 (Current)
 
-- [Node v7.3.0 (Current)](https://nodejs.org/en/blog/release/v7.3.0/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+- [Node v7.3.0 (Current)](/blog/release/v7.3.0/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Help in Promoting our Node.js Foundation survey
 

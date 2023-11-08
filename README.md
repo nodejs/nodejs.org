@@ -19,8 +19,8 @@
   <a title="MIT License" href="LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License" />
   </a>
-  <a title="Localised" href="https://crowdin.com/project/nodejs-website">
-    <img src="https://badges.crowdin.net/nodejs-website/localized.svg" alt="Crowdin Badge" />
+  <a title="Localised" href="https://crowdin.com/project/nodejs-web">
+    <img src="https://badges.crowdin.net/nodejs-web/localized.svg" alt="Crowdin Badge" />
   </a>
   <a title="Vercel" href="https://vercel.com">
     <picture>

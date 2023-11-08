@@ -1,15 +1,9 @@
 import { render, fireEvent, screen, act } from '@testing-library/react';
-import { FormattedMessage } from 'react-intl';
-import { IntlProvider } from 'react-intl';
-import { useCopyToClipboard } from '../useCopyToClipboard';
+
+import { useCopyToClipboard } from '..';
 
 const mockWriteText = jest.fn();
 const originalNavigator = { ...window.navigator };
-
-const testMessages = {
-  'components.common.shellBox.copy':
-    '{copied, select, true {copied}other {copy}}',
-};
 
 describe('useCopyToClipboard', () => {
   beforeEach(() => {
@@ -46,14 +40,9 @@ describe('useCopyToClipboard', () => {
       const [copied, copyText] = useCopyToClipboard();
 
       return (
-        <IntlProvider locale="en" messages={testMessages} onError={() => {}}>
-          <button onClick={() => copyText(textToCopy)} type="button">
-            <FormattedMessage
-              id="components.common.shellBox.copy"
-              values={{ copied }}
-            />
-          </button>
-        </IntlProvider>
+        <button onClick={() => copyText(textToCopy)} type="button">
+          {copied ? 'copied' : 'copy'}
+        </button>
       );
     };
 

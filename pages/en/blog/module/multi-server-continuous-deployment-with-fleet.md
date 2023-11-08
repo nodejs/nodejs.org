@@ -1,11 +1,9 @@
 ---
-title: multi-server continuous deployment with fleet
-author: Isaac Schlueter
-date: 2012-05-02T18:00:00.000Z
-status: publish
+date: '2012-05-02T18:00:00.000Z'
 category: module
-slug: multi-server-continuous-deployment-with-fleet
+title: multi-server continuous deployment with fleet
 layout: blog-post.hbs
+author: Isaac Schlueter
 ---
 
 _This is a guest post by James "SubStack" Halliday, originally posted [on his blog](http://substack.net/posts/16a9d8/multi-server-continuous-deployment-with-fleet), and reposted here with permission._

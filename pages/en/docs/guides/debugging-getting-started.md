@@ -117,68 +117,14 @@ Several commercial and open source tools can also connect to the Node.js Inspect
 
 The following table lists the impact of various runtime flags on debugging:
 
-<table class="table-no-border-no-padding">
-  <tr><th>Flag</th><th>Meaning</th></tr>
-  <tr>
-    <td>--inspect</td>
-    <td>
-      <ul>
-        <li>Enable inspector agent</li>
-        <li>Listen on default address and port (127.0.0.1:9229)</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>--inspect=<em>[host:port]</em></td>
-    <td>
-      <ul>
-        <li>Enable inspector agent</li>
-        <li>Bind to address or hostname <em>host</em> (default: 127.0.0.1)</li>
-        <li>Listen on port <em>port</em> (default: 9229)</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>--inspect-brk</td>
-    <td>
-      <ul>
-        <li>Enable inspector agent</li>
-        <li>Listen on default address and port (127.0.0.1:9229)</li>
-        <li>Break before user code starts</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>--inspect-brk=<em>[host:port]</em></td>
-    <td>
-      <ul>
-        <li>Enable inspector agent</li>
-        <li>Bind to address or hostname <em>host</em> (default: 127.0.0.1)</li>
-        <li>Listen on port <em>port</em> (default: 9229)</li>
-        <li>Break before user code starts</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td><code>node inspect <em>script.js</em></code></td>
-    <td>
-      <ul>
-        <li>Spawn child process to run user's script under --inspect flag;
-            and use main process to run CLI debugger.</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td><code>node inspect --port=xxxx <em>script.js</em></code></td>
-    <td>
-      <ul>
-        <li>Spawn child process to run user's script under --inspect flag;
-            and use main process to run CLI debugger.</li>
-        <li>Listen on port <em>port</em> (default: 9229)</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+| Flag                               | Meaning                                                                                                                                           |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --inspect                          | Enable inspector agent; Listen on default address and port (127.0.0.1:9229)                                                                       |
+| --inspect=[host:port]              | Enable inspector agent; Bind to address or hostname host (default: 127.0.0.1); Listen on port port (default: 9229)                                |
+| --inspect-brk                      | Enable inspector agent; Listen on default address and port (127.0.0.1:9229); Break before user code starts                                        |
+| --inspect-brk=[host:port]          | Enable inspector agent; Bind to address or hostname host (default: 127.0.0.1); Listen on port port (default: 9229); Break before user code starts |
+| node inspect script.js             | Spawn child process to run user's script under --inspect flag; and use main process to run CLI debugger.                                          |
+| node inspect --port=xxxx script.js | Spawn child process to run user's script under --inspect flag; and use main process to run CLI debugger. Listen on port port (default: 9229)      |
 
 ---
 
@@ -225,7 +171,7 @@ couple popular ones are listed below.
 
 The V8 Debugging Protocol is no longer maintained or documented.
 
-### [Built-in Debugger](https://nodejs.org/dist/{#var currentVersion}/docs/api/debugger.html)
+### [Built-in Debugger](https://nodejs.org/dist/latest/docs/api/debugger.html)
 
 Start `node debug script_name.js` to start your script under the builtin
 command-line debugger. Your script starts in another Node.js process started with
@@ -237,8 +183,6 @@ script and connects to your target.
 Debug your Node.js app with Chrome DevTools by using an intermediary process
 which translates the [Inspector Protocol][] used in Chromium to the V8 Debugger
 protocol used in Node.js.
-
-<!-- refs -->
 
 [Inspector Protocol]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
 [UUID]: https://tools.ietf.org/html/rfc4122

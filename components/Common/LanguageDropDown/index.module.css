@@ -1,0 +1,46 @@
+.languageDropdown {
+  @apply h-9
+    w-9
+    rounded-md
+    p-2
+    text-neutral-700
+    dark:text-neutral-300;
+
+  &:hover {
+    @apply bg-neutral-100
+      dark:bg-neutral-900;
+  }
+}
+
+.dropDownContent {
+  @apply max-h-80
+    w-48
+    overflow-hidden
+    rounded
+    border
+    border-neutral-200
+    shadow-lg
+    dark:border-neutral-900;
+
+  > div {
+    @apply max-h-80
+      w-48 overflow-y-auto;
+  }
+}
+
+.dropDownItem {
+  @apply cursor-pointer
+    px-2.5
+    py-1.5
+    text-sm
+    font-medium
+    text-neutral-800
+    outline-none
+    data-[highlighted]:bg-green-600
+    data-[highlighted]:text-white
+    dark:text-white;
+}
+
+.currentDropDown {
+  @apply bg-green-600 text-white;
+}

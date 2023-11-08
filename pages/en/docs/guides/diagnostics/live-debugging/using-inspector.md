@@ -14,4 +14,4 @@ of the application as it handles a business-critical workload.
 
 ## How To
 
-https://nodejs.org/en/docs/guides/debugging-getting-started/
+/docs/guides/debugging-getting-started/

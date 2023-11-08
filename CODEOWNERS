@@ -1,8 +1,26 @@
-# Default rules
+# Website Development
+* @nodejs/nodejs-website
 
-* @nodejs/website
+# Infrastructure
+.github @nodejs/web-infra
+.husky @nodejs/web-infra
+
+# Framework
+next.config.mjs @nodejs/web-infra
+next.dynamic.mjs @nodejs/web-infra
 
 # Node.js Release Blog Posts
-
 /pages/en/blog/release @nodejs/releasers
 /pages/en/blog/announcements @nodejs/releasers
+
+# Node.js Core Guides
+/pages/en/guides @nodejs/collaborators
+
+# Package Ecosystem
+package.json @nodejs/nodejs-website
+turbo.json @nodejs/nodejs-website @nodejs/web-infra
+
+# Web Infrastructure
+crowdin.yml @nodejs/web-infra
+redirects.json @nodejs/web-infra
+site.json @nodejs/web-infra

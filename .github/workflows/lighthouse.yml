@@ -1,0 +1,111 @@
+# Security Notes
+# This workflow uses `pull_request_target`, so will run against all PRs automatically (without approval), be careful with allowing any user-provided code to be run here
+# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
+# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
+# REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
+# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+# MERGE QUEUE NOTE: This Workflow does not run on `merge_group` trigger, as this Workflow is not required for Merge Queue's
+
+name: Lighthouse
+
+on:
+  pull_request_target:
+    branches:
+      - main
+    types:
+      - labeled
+
+defaults:
+  run:
+    # This ensures that the working directory is the root of the repository
+    working-directory: ./
+
+permissions:
+  contents: read
+  actions: read
+  # This permission is required by `thollander/actions-comment-pull-request`
+  pull-requests: write
+
+jobs:
+  lighthouse-ci:
+    # We want to skip our lighthouse analysis on Dependabot PRs
+    if: |
+      startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
+      github.event.label.name == 'github_actions:pull-request'
+
+    name: Lighthouse Report
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          # Since we checkout the HEAD of the current Branch, if the Pull Request comes from a Fork
+          # we want to clone the fork's repository instead of the base repository
+          # this allows us to have the correct history tree of the perspective of the Pull Request's branch
+          # If the Workflow is running on `merge_group` or `push` events it fallsback to the base repository
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          # We checkout the branch itself instead of a specific SHA (Commit) as we want to ensure that this Workflow
+          # is always running with the latest `ref` (changes) of the Pull Request's branch
+          # If the Workflow is running on `merge_group` or `push` events it fallsback to `github.ref` which will often be `main`
+          # or the merge_group `ref`
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+
+      - name: Add Comment to PR
+        # Signal that a lighthouse run is about to start
+        uses: thollander/actions-comment-pull-request@1d3973dc4b8e1399c0620d3f2b1aa5e795465308 # v2.4.3
+        with:
+          message: |
+            Running Lighthouse audit...
+          # Used later to edit the existing comment
+          comment_tag: 'lighthouse_audit'
+
+      - name: Capture Vercel Preview
+        uses: patrickedqvist/wait-for-vercel-preview@dca4940010f36d2d44caa487087a09b57939b24a # v1.3.1
+        id: vercel_preview_url
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 90
+
+      - name: Audit Preview URL with Lighthouse
+        # Conduct the lighthouse audit
+        id: lighthouse_audit
+        uses: treosh/lighthouse-ci-action@03becbfc543944dd6e7534f7ff768abb8a296826 # v10.1.0
+        with:
+          # Defines the settings and assertions to audit
+          configPath: './.lighthouserc.json'
+          # These URLS capture critical pages / site functionality.
+          urls: |
+            ${{ steps.vercel_preview_url.outputs.url }}/en
+            ${{ steps.vercel_preview_url.outputs.url }}/en/about
+            ${{ steps.vercel_preview_url.outputs.url }}/en/about/previous-releases
+            ${{ steps.vercel_preview_url.outputs.url }}/en/download
+            ${{ steps.vercel_preview_url.outputs.url }}/en/blog
+          uploadArtifacts: true # save results as a action artifacts
+          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+
+      - name: Format Lighthouse Score
+        # Transform the audit results into a single, friendlier output
+        id: format_lighthouse_score
+        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6.4.1
+        env:
+          # using env as input to our script
+          # see https://github.com/actions/github-script#use-env-as-input
+          LIGHTHOUSE_RESULT: ${{ steps.lighthouse_audit.outputs.manifest }}
+          LIGHTHOUSE_LINKS: ${{ steps.lighthouse_audit.outputs.links }}
+          VERCEL_PREVIEW_URL: ${{ steps.vercel_preview_url.outputs.url }}
+        with:
+          # Run as a separate file so we do not have to inline all of our formatting logic.
+          # See https://github.com/actions/github-script#run-a-separate-file for more info.
+          script: |
+            const { formatLighthouseResults } = await import('${{github.workspace}}/scripts/lighthouse/index.mjs')
+            await formatLighthouseResults({core})
+
+      - name: Add Comment to PR
+        # Replace the previous message with our formatted lighthouse results
+        uses: thollander/actions-comment-pull-request@1d3973dc4b8e1399c0620d3f2b1aa5e795465308 # v2.4.3
+        with:
+          # Reference the previously created comment
+          comment_tag: 'lighthouse_audit'
+          message: |
+            ${{ steps.format_lighthouse_score.outputs.comment }}

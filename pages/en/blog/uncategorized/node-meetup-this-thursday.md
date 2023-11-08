@@ -1,11 +1,9 @@
 ---
-title: Node Meetup this Thursday
-author: ryandahl
-date: 2011-08-03T04:37:02.000Z
-status: publish
+date: '2011-08-03T04:37:02.000Z'
 category: uncategorized
-slug: node-meetup-this-thursday
+title: Node Meetup this Thursday
 layout: blog-post.hbs
+author: ryandahl
 ---
 
 [https://nodejs.org/meetup/](https://nodejs.org/meetup/)

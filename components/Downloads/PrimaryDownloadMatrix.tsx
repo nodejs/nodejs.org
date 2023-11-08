@@ -1,25 +1,26 @@
-import classNames from 'classnames';
-import semVer from 'semver';
-import LocalizedLink from '@/components/LocalizedLink';
-import { useDetectOS } from '@/hooks/useDetectOS';
-import { useLayoutContext } from '@/hooks/useLayoutContext';
-import { DIST_URL } from '@/next.constants.mjs';
-import type { LegacyDownloadsFrontMatter, NodeRelease } from '@/types';
-import type { FC } from 'react';
+'use client';
 
-// @TODO: Instead of using a static list it should be created dynamically. This is done on `nodejs.dev`
-// since this is a temporary solution and going to be fixed in the future.
+import classNames from 'classnames';
+import type { FC } from 'react';
+import semVer from 'semver';
+
+import { WithCurrentOS } from '@/components/withCurrentOS';
+import { useClientContext } from '@/hooks';
+import { Link } from '@/navigation.mjs';
+import { DIST_URL } from '@/next.constants.mjs';
+import type { NodeRelease } from '@/types';
+
+// @TODO: Legacy Component to be removed in the Website Redesign
 const PrimaryDownloadMatrix: FC<NodeRelease> = ({
   version,
   versionWithPrefix,
   isLts,
   npm,
 }) => {
-  const { frontMatter } = useLayoutContext();
+  const {
+    frontmatter: { downloads },
+  } = useClientContext();
 
-  const { bitness } = useDetectOS();
-
-  const { downloads } = frontMatter as LegacyDownloadsFrontMatter;
   const hasWindowsArm64 = semVer.satisfies(version, '>= 19.9.0');
 
   const getIsVersionClassName = (isCurrent: boolean) =>
@@ -36,46 +37,50 @@ const PrimaryDownloadMatrix: FC<NodeRelease> = ({
       <div className="download-hero full-width">
         <ul className="no-padding download-version-toggle">
           <li>
-            <LocalizedLink
+            <Link
               className={getIsVersionClassName(isLts)}
               href="/download/"
               title={`${downloads['display-hint']} ${downloads.lts}`}
             >
               <div className="title">{downloads.lts}</div>
               <div className="tag">{downloads['tagline-lts']}</div>
-            </LocalizedLink>
+            </Link>
           </li>
           <li>
-            <LocalizedLink
+            <Link
               className={getIsVersionClassName(!isLts)}
-              href="/download/current/"
+              href="/download/current"
               title={`${downloads['display-hint']} ${downloads.current}`}
             >
               <div className="title">{downloads.current}</div>
               <div className="tag">{downloads['tagline-current']}</div>
-            </LocalizedLink>
+            </Link>
           </li>
         </ul>
         <ul className="no-padding download-platform">
           <li>
-            <a
-              href={`${DIST_URL}${versionWithPrefix}/node-${versionWithPrefix}-x${bitness}.msi`}
-              data-version={versionWithPrefix}
-            >
-              <svg
-                className="download-logo"
-                width="50"
-                height="50"
-                viewBox="0 0 50 50"
-                focusable="false"
-              >
-                <path d="M1.589 23.55L1.572 8.24l18.839-2.558V23.55zM23.55 5.225l25.112-3.654V23.55H23.55zM48.669 26.69l-.006 21.979-25.112-3.533V26.69zM20.41 44.736l-18.824-2.58-.001-15.466H20.41z" />
-              </svg>
-              {downloads.WindowsInstaller}
-              <p className="small color-lightgray">
-                node-{versionWithPrefix}-x{bitness}.msi
-              </p>
-            </a>
+            <WithCurrentOS>
+              {({ os }) => (
+                <a
+                  href={`${DIST_URL}${versionWithPrefix}/node-${versionWithPrefix}-x${os.bitness}.msi`}
+                  data-version={versionWithPrefix}
+                >
+                  <svg
+                    className="download-logo"
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    focusable="false"
+                  >
+                    <path d="M1.589 23.55L1.572 8.24l18.839-2.558V23.55zM23.55 5.225l25.112-3.654V23.55H23.55zM48.669 26.69l-.006 21.979-25.112-3.533V26.69zM20.41 44.736l-18.824-2.58-.001-15.466H20.41z" />
+                  </svg>
+                  {downloads.WindowsInstaller}
+                  <p className="small color-lightgray">
+                    node-{versionWithPrefix}-x{os.bitness}.msi
+                  </p>
+                </a>
+              )}
+            </WithCurrentOS>
           </li>
           <li>
             <a

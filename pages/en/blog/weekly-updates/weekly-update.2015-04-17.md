@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Apr 17th, 2015
-author: Giovanny Gioyik (@Gioyik)
-date: 2015-04-17T12:00:00.000Z
-status: publish
+date: '2015-04-17T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-04-17
+title: Weekly Update - Apr 17th, 2015
 layout: blog-post.hbs
+author: 'Giovanny Gioyik (@Gioyik)'
 ---
 
 # io.js 1.7 releases

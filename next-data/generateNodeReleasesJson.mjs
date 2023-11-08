@@ -1,36 +1,69 @@
 import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+
 import nodevu from '@nodevu/core';
 
 // this is the destination path for where the JSON file will be written
 const jsonFilePath = join(process.cwd(), 'public/node-releases-data.json');
+
+// Gets the appropriate release status for each major release
+const getNodeReleaseStatus = (now, support) => {
+  const { endOfLife, maintenanceStart, ltsStart, currentStart } = support;
+
+  if (endOfLife && now > new Date(endOfLife)) {
+    return 'End-of-life';
+  }
+
+  if (maintenanceStart && now > new Date(maintenanceStart)) {
+    return 'Maintenance LTS';
+  }
+
+  if (ltsStart && now > new Date(ltsStart)) {
+    return 'Active LTS';
+  }
+
+  if (currentStart && now >= new Date(currentStart)) {
+    return 'Current';
+  }
+
+  return 'Pending';
+};
 
 const generateNodeReleasesJson = async () => {
   const nodevuOutput = await nodevu({ fetch: fetch });
 
   // Filter out those without documented support
   // Basically those not in schedule.json
-  const majors = Object.values(nodevuOutput).filter(
-    major => major?.support?.phases?.dates?.start
-  );
+  const majors = Object.values(nodevuOutput).filter(major => !!major.support);
 
   const nodeReleases = majors.map(major => {
     const [latestVersion] = Object.values(major.releases);
 
-    return {
-      major: latestVersion.semver.major,
-      version: latestVersion.semver.raw,
-      codename: major.support.codename,
+    const support = {
       currentStart: major.support.phases.dates.start,
       ltsStart: major.support.phases.dates.lts,
       maintenanceStart: major.support.phases.dates.maintenance,
       endOfLife: major.support.phases.dates.end,
-      npm: latestVersion.dependencies.npm,
-      v8: latestVersion.dependencies.v8,
-      releaseDate: latestVersion.releaseDate,
-      modules: latestVersion.modules.version,
+    };
+
+    const status = getNodeReleaseStatus(new Date(), support);
+
+    return {
+      ...support,
+      status,
+      major: latestVersion.semver.major,
+      version: latestVersion.semver.raw,
+      versionWithPrefix: `v${latestVersion.semver.raw}`,
+      codename: major.codename || '',
+      isLts: status === 'Active LTS' || status === 'Maintenance LTS',
+      npm: latestVersion.dependencies.npm || '',
+      v8: latestVersion.dependencies.v8 || '',
+      releaseDate: latestVersion.releaseDate || '',
+      modules: latestVersion.modules.version || '',
     };
   });
+
+  console.timeEnd('g');
 
   return writeFile(
     jsonFilePath,

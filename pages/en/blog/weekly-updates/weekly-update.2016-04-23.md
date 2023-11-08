@@ -1,16 +1,14 @@
 ---
-title: Weekly Update - Apr 23rd, 2016
-author: Minwoo Jung (github.com/JungMinu)
-date: 2016-04-23T12:00:00.000Z
-status: publish
+date: '2016-04-23T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-04-23
+title: Weekly Update - Apr 23rd, 2016
 layout: blog-post.hbs
+author: 'Minwoo Jung (github.com/JungMinu)'
 ---
 
 ### Node v5.11.0 (Stable) Release
 
-[Node v5.11.0 (Stable)](https://nodejs.org/en/blog/release/v5.11.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+[Node v5.11.0 (Stable)](/blog/release/v5.11.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Community Updates
 

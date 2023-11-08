@@ -1,27 +1,29 @@
-import BaseLayout from './BaseLayout';
+import type { FC, PropsWithChildren } from 'react';
+
 import PrimaryDownloadMatrix from '@/components/Downloads/PrimaryDownloadMatrix';
 import SecondaryDownloadMatrix from '@/components/Downloads/SecondaryDownloadMatrix';
-import { useLayoutContext } from '@/hooks/useLayoutContext';
-import { WithNodeRelease } from '@/providers/withNodeRelease';
-import type { FC, PropsWithChildren } from 'react';
-import type { LegacyDownloadsFrontMatter } from '@/types';
+import { WithNodeRelease } from '@/components/withNodeRelease';
+import { useClientContext } from '@/hooks/server';
 
 const DownloadLayout: FC<PropsWithChildren> = ({ children }) => {
-  const { frontMatter } = useLayoutContext();
+  const {
+    frontmatter: { downloads },
+    pathname,
+  } = useClientContext();
 
-  const { downloads } = frontMatter as LegacyDownloadsFrontMatter;
+  const isCurrentReleasePage = pathname.includes('/current');
 
   return (
-    <BaseLayout>
-      <div className="container">
-        <article dir="auto">
-          <div className="download-header">
-            <h1>{downloads.headline}</h1>
-          </div>
+    <div className="container">
+      <article dir="auto">
+        <div className="download-header">
+          <h1>{downloads.headline}</h1>
+        </div>
 
-          {children}
+        {children}
 
-          <WithNodeRelease status="Active LTS">
+        {isCurrentReleasePage && (
+          <WithNodeRelease status="Current">
             {({ release }) => (
               <>
                 <PrimaryDownloadMatrix {...release} />
@@ -29,9 +31,20 @@ const DownloadLayout: FC<PropsWithChildren> = ({ children }) => {
               </>
             )}
           </WithNodeRelease>
-        </article>
-      </div>
-    </BaseLayout>
+        )}
+
+        {isCurrentReleasePage || (
+          <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
+            {({ release }) => (
+              <>
+                <PrimaryDownloadMatrix {...release} />
+                <SecondaryDownloadMatrix {...release} />
+              </>
+            )}
+          </WithNodeRelease>
+        )}
+      </article>
+    </div>
   );
 };
 

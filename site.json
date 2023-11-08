@@ -1,14 +1,8 @@
 {
   "title": "Node.js",
   "description": "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
-  "featuredImage": "/static/images/logo-hexagon-card.png",
   "favicon": "/static/images/favicons/favicon.png",
   "accentColor": "#333",
-  "og": {
-    "imgType": "image/png",
-    "imgWidth": "224",
-    "imgHeight": "256"
-  },
   "twitter": {
     "username": "@nodejs",
     "card": "summary",
@@ -33,10 +27,71 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2023-07-31T14:30:00.000Z",
-      "endDate": "2023-08-16:00:00.000Z",
+      "startDate": "2023-10-13T13:30:00.000Z",
+      "endDate": "2023-10-19T13:30:00.000Z",
       "text": "Security releases now available",
-      "link": "https://nodejs.org/en/blog/vulnerability/august-2023-security-releases/"
+      "link": "https://nodejs.org/en/blog/vulnerability/october-2023-security-releases/",
+      "html": null
     }
-  }
+  },
+  "footerLinks": [
+    {
+      "link": "https://openjsf.org/wp-content/uploads/sites/84/2021/01/OpenJS-Foundation-Trademark-Policy-2021-01-12.docx.pdf",
+      "text": "components.footer.links.trademarkPolicy"
+    },
+    {
+      "link": "https://openjsf.org/wp-content/uploads/sites/84/2021/04/OpenJS-Foundation-Privacy-Policy-2019-11-15.pdf",
+      "text": "components.footer.links.privacyPolicy"
+    },
+    {
+      "link": "https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md",
+      "text": "components.footer.links.codeOfConduct"
+    },
+    {
+      "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
+      "text": "components.footer.links.security"
+    },
+    {
+      "link": "https://openjsf.org/",
+      "text": "components.footer.links.openJS"
+    }
+  ],
+  "socialLinks": [
+    {
+      "icon": "/static/images/logos/social-github.svg",
+      "link": "https://github.com/nodejs/node",
+      "kind": "dark",
+      "alt": "GitHub"
+    },
+    {
+      "icon": "/static/images/logos/social-github-dark.svg",
+      "link": "https://github.com/nodejs/node",
+      "kind": "light",
+      "alt": "GitHub"
+    },
+    {
+      "icon": "/static/images/logos/social-mastodon.svg",
+      "link": "https://social.lfx.dev/@nodejs",
+      "kind": "neutral",
+      "alt": "Mastodon"
+    },
+    {
+      "icon": "/static/images/logos/social-twitter.svg",
+      "link": "https://twitter.com/nodejs",
+      "kind": "neutral",
+      "alt": "Twitter"
+    },
+    {
+      "icon": "/static/images/logos/social-slack.svg",
+      "link": "https://openjs-foundation.slack.com/join/shared_invite/zt-238w9sb83-Qk9NcsrEMomq94Y~3gW8EQ#/shared-invite/email",
+      "kind": "neutral",
+      "alt": "Slack"
+    },
+    {
+      "icon": "/static/images/logos/social-linkedin.svg",
+      "link": "https://www.linkedin.com/company/node-js",
+      "kind": "neutral",
+      "alt": "LinkedIn"
+    }
+  ]
 }

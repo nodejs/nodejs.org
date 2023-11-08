@@ -1,8 +1,7 @@
 ---
-date: 2022-06-08T16:00:00Z
+date: '2022-06-08T16:00:00.000Z'
 category: announcements
 title: Bringing forward the End-of-Life Date for Node.js 16
-slug: nodejs16-eol
 layout: blog-post.hbs
 author: Richard Lau
 ---

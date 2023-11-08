@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Jan 22th, 2016
-author: Minwoo Jung (@jmwsoft)
-date: 2016-01-22T12:00:00.000Z
-status: publish
+date: '2016-01-22T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-01-22
+title: Weekly Update - Jan 22th, 2016
 layout: blog-post.hbs
+author: 'Minwoo Jung (@jmwsoft)'
 ---
 
 ### Node.js News
@@ -31,7 +29,7 @@ Node v4.2.6 (LTS), Node v5.5.0 (Current), Node v4.2.5 (LTS) are released
 
 A ballot will be distributed to individual members on January 20th, with the election completed by January 30th.
 
-To be eligible to vote, you must be signed up as an individual member of the Node.js Foundation, more information can be found here: https://nodejs.org/en/blog/community/individual-membership/
+To be eligible to vote, you must be signed up as an individual member of the Node.js Foundation, more information can be found here: /blog/community/individual-membership/
 
 ### Community Updates
 

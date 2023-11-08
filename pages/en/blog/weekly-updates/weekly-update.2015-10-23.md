@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Oct 23rd, 2015
-author: Minwoo Jung (@jmwsoft)
-date: 2015-10-23T12:00:00.000Z
-status: publish
+date: '2015-10-23T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-10-23
+title: Weekly Update - Oct 23rd, 2015
 layout: blog-post.hbs
+author: 'Minwoo Jung (@jmwsoft)'
 ---
 
 ### Node.js News — October 23rd
@@ -35,7 +33,7 @@ This week we have one release proposal: [Node.js v5.0.0](https://github.com/node
 - This inaugural event, which is being led by the newly formed Node.js Foundation in cooperation with the Linux Foundation, will be held December 8-9, 2015, in Portland, Ore.
 - Node.js Interactive will also focus on three tracks: Frontend, Backend and the Internet of Things (IoT).
 
-See https://nodejs.org/en/blog/announcements/interactive-2015-programming for more information.
+See /blog/announcements/interactive-2015-programming for more information.
 
 ### NodeUp Podcast
 

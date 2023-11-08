@@ -1,18 +1,16 @@
 ---
-title: Weekly Update - Jan 29th, 2016
-author: Minwoo Jung (@jmwsoft)
-date: 2016-01-29T12:00:00.000Z
-status: publish
+date: '2016-01-29T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-01-29
+title: Weekly Update - Jan 29th, 2016
 layout: blog-post.hbs
+author: 'Minwoo Jung (@jmwsoft)'
 ---
 
 ### Node.js News
 
 The Node.js project will be releasing new versions across all of its active release lines early next week (possibly sooner, pending full impact assessment) to incorporate upstream patches from OpenSSL and some additional low-severity fixes relating to HTTP handling. Please read on for full details.
 
-See https://nodejs.org/en/blog/vulnerability/openssl-and-low-severity-fixes-jan-2016/ for more information.
+See /blog/vulnerability/openssl-and-low-severity-fixes-jan-2016/ for more information.
 
 ### OpenSSL Impact Assessment
 
@@ -40,7 +38,7 @@ Our team has made an assessment of the impact of the disclosed defects and concl
 
 A ballot was distributed to individual members on January 20th, with the election completed by January 30th.
 
-To be eligible to vote, you must be signed up as an individual member of the Node.js Foundation, more information can be found here: https://nodejs.org/en/blog/community/individual-membership/
+To be eligible to vote, you must be signed up as an individual member of the Node.js Foundation, more information can be found here: /blog/community/individual-membership/
 
 ### Community Updates
 

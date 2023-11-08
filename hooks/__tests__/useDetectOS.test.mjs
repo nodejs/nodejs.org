@@ -1,5 +1,6 @@
 import { renderHook, waitFor } from '@testing-library/react';
-import { useDetectOS } from '../useDetectOS';
+
+import { useDetectOS } from '..';
 
 const windowsUserAgent =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36';

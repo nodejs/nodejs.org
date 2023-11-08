@@ -1,11 +1,10 @@
 export type NavigationKeys =
-  | 'home'
   | 'about'
   | 'download'
   | 'docs'
   | 'getInvolved'
-  | 'security'
   | 'certification'
+  | 'learn'
   | 'blog';
 
 export interface NavigationEntry {

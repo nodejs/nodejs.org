@@ -1,5 +1,5 @@
 ---
-date: 2023-03-23T20:10:01.466Z
+date: '2023-03-23T20:10:01.466Z'
 category: announcements
 title: Node.js March 17th Infrastructure Incident Post-mortem
 layout: blog-post.hbs

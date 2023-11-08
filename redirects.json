@@ -22,19 +22,11 @@
     },
     {
       "source": "/:locale/security",
-      "destination": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security"
+      "destination": "https://github.com/nodejs/node/security/policy#security"
     },
     {
       "source": "/:locale/contribute/accepting_contributions.html",
       "destination": "https://github.com/nodejs/dev-policy"
-    },
-    {
-      "source": "/:locale/about/releases",
-      "destination": "https://github.com/nodejs/release#release-schedule"
-    },
-    {
-      "source": "/:locale/about/security",
-      "destination": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security"
     },
     {
       "source": "/:locale/advisory-board",
@@ -161,6 +153,26 @@
     {
       "source": "/logos/:path*",
       "destination": "/static/images/logos/:path*"
+    },
+    {
+      "source": "/:locale/download/releases",
+      "destination": "/:locale/about/previous-releases"
+    },
+    {
+      "source": "/:locale/about/security",
+      "destination": "/:locale/about/security-reporting"
+    },
+    {
+      "source": "/:locale/docs/guides/getting-started-guide",
+      "destination": "/:locale/learn/getting-started/introduction-to-nodejs"
+    },
+    {
+      "source": "/:locale/docs/guides/blocking-vs-non-blocking",
+      "destination": "/:locale/learn/asynchronous-work/overview-of-blocking-vs-non-blocking"
+    },
+    {
+      "source": "/:locale/docs/guides/timers-in-node/",
+      "destination": "/:locale/learn/asynchronous-work/discover-javascript-timers"
     }
   ]
 }

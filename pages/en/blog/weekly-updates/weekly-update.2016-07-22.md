@@ -1,22 +1,20 @@
 ---
-title: Weekly Update - July 22nd, 2016
-author: Minwoo Jung (github.com/JungMinu)
-date: 2016-07-22T12:00:00.000Z
-status: publish
+date: '2016-07-22T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-07-22
+title: Weekly Update - July 22nd, 2016
 layout: blog-post.hbs
+author: 'Minwoo Jung (github.com/JungMinu)'
 ---
 
 ### Node v6.3.1 (Current)
 
-- [Node v6.3.1 (Current)](https://nodejs.org/en/blog/release/v6.3.1/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+- [Node v6.3.1 (Current)](/blog/release/v6.3.1/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Node.js Foundation Announces Keynotes and Programming for Node.js Interactive Europe
 
 Event will showcase workshops, community and technical talks, and use cases that will inform the future development of Node.js and JavaScript.
 
-See https://nodejs.org/en/blog/announcements/interactive-2016-ams/ for more information.
+See /blog/announcements/interactive-2016-ams/ for more information.
 
 ### Community Updates
 

@@ -1,10 +1,9 @@
 ---
-title: World’s Fastest Growing Open Source Platform Pushes Out New Release
-date: 2016-04-26T12:00:00.000Z
-status: publish
+date: '2016-04-26T12:00:00.000Z'
 category: announcements
-slug: v6-release
+title: 'World’s Fastest Growing Open Source Platform Pushes Out New Release'
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 > New “Current” version line focuses on performance improvements, increased reliability and
@@ -64,8 +63,8 @@ into LTS.
 Additional Resources
 
 - [Download version 6](https://nodejs.org/download/release/v6.0.0/)
-- [Download version 4](https://nodejs.org/en/download/)
-- [Technical blog with additional new features and updates](https://nodejs.org/en/blog/)
+- [Download version 4](/download/)
+- [Technical blog with additional new features and updates](/blog/)
 
 About Node.js Foundation
 Node.js is used by tens of thousands of organizations in more than 200 countries and amasses

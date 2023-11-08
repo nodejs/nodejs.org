@@ -1,11 +1,9 @@
 ---
-title: An Easy Way to Build Scalable Network Programs
-author: ryandahl
-date: 2011-10-04T22:39:56.000Z
-status: publish
+date: '2011-10-04T22:39:56.000Z'
 category: uncategorized
-slug: an-easy-way-to-build-scalable-network-programs
+title: An Easy Way to Build Scalable Network Programs
 layout: blog-post.hbs
+author: ryandahl
 ---
 
 Suppose you're writing a web server which does video encoding on each file upload. Video encoding is very much compute bound. Some recent blog posts suggest that Node.js would fail miserably at this.

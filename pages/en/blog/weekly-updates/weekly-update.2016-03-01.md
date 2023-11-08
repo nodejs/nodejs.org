@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Mar 1st, 2016
-author: Minwoo Jung (@jmwsoft)
-date: 2016-03-01T12:00:00.000Z
-status: publish
+date: '2016-03-01T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-03-01
+title: Weekly Update - Mar 1st, 2016
 layout: blog-post.hbs
+author: 'Minwoo Jung (@jmwsoft)'
 ---
 
 ### Node.js News
@@ -20,7 +18,7 @@ As part of that impact assessment we will announce our release plans for each of
 - Expect releases of Node.js v0.10, v0.12 and v5 this week, possibly containing important security releases
 - Expect a Node.js v4.4.0 release next with the possibility of a v4.3.2 security update this week
 
-See https://nodejs.org/en/blog/vulnerability/openssl-march-2016/ for more information.
+See /blog/vulnerability/openssl-march-2016/ for more information.
 
 Please monitor the **nodejs-sec** Google Group for updates, including an impact assessment and updated details on release timing within approximately 24 hours after the OpenSSL release: https://groups.google.com/forum/#!forum/nodejs-sec
 

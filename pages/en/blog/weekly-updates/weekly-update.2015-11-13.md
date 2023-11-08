@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Nov 13th, 2015
-author: Minwoo Jung (@jmwsoft)
-date: 2015-11-13T12:00:00.000Z
-status: publish
+date: '2015-11-13T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-11-13
+title: Weekly Update - Nov 13th, 2015
 layout: blog-post.hbs
+author: 'Minwoo Jung (@jmwsoft)'
 ---
 
 ### Node.js News — November 13th
@@ -15,7 +13,7 @@ layout: blog-post.hbs
 - With the support of the Linux Foundation we are now able to launch an Individual Membership program.
 - These members will be electing two representatives to the Board of Directors this January who will be responsible for representing the diverse needs of the Node.js community in the administration of the Node.js Foundation.
 
-See https://nodejs.org/en/blog/community/individual-membership/ for more information.
+See /blog/community/individual-membership/ for more information.
 
 ### SF Node Meetup
 

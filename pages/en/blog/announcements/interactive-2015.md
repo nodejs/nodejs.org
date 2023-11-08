@@ -1,10 +1,9 @@
 ---
-title: Node.js Interactive
-date: 2015-09-10T17:00:00.000Z
-status: publish
+date: '2015-09-10T17:00:00.000Z'
 category: announcements
-slug: interactive-2015
+title: Node.js Interactive
 layout: blog-post.hbs
+author: The Node.js Project
 ---
 
 Are You Ready for Node.js Interactive?

@@ -1,23 +1,28 @@
-import { FormattedMessage } from 'react-intl';
-import LocalizedLink from './LocalizedLink';
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-type PaginationProps = { prevSlug?: number; nextSlug?: number };
+import { Link } from '@/navigation.mjs';
 
-const Pagination: FC<PaginationProps> = ({ nextSlug, prevSlug }) => (
-  <nav aria-label="pagination" className="pagination">
-    {nextSlug && (
-      <LocalizedLink href={`/blog/year-${nextSlug}`}>
-        &lt; <FormattedMessage id="components.pagination.next" />
-      </LocalizedLink>
-    )}
+type PaginationProps = { prev?: number; next?: number };
 
-    {prevSlug && (
-      <LocalizedLink href={`/blog/year-${prevSlug}`}>
-        <FormattedMessage id="components.pagination.previous" /> &gt;
-      </LocalizedLink>
-    )}
-  </nav>
-);
+const Pagination: FC<PaginationProps> = ({ next, prev }) => {
+  const t = useTranslations();
+
+  return (
+    <nav aria-label="pagination" className="pagination">
+      {next && (
+        <Link href={`/blog/year-${next}`}>
+          &lt; {t('components.pagination.next')}
+        </Link>
+      )}
+
+      {prev && (
+        <Link href={`/blog/year-${prev}`}>
+          {t('components.pagination.previous')} &gt;
+        </Link>
+      )}
+    </nav>
+  );
+};
 
 export default Pagination;

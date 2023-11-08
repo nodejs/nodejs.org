@@ -1,9 +1,7 @@
 ---
-title: Node.js 19 is now available!
-date: 2022-10-18T15:45:00.000Z
-status: publish
+date: '2022-10-18T15:45:00.000Z'
 category: announcements
-slug: nodejs-19-release-announcement
+title: 'Node.js 19 is now available!'
 layout: blog-post.hbs
 author: The Node.js Project
 ---
@@ -15,7 +13,7 @@ As per the release schedule, Node.js 19 will be the ‘Current' release for the 
 
 You can read more about our release policy at https://github.com/nodejs/release.
 
-To download Node.js 19.0.0, visit: https://nodejs.org/en/download/current/. You can find the release post at https://nodejs.org/en/blog/release/v19.0.0, which contains the full list of commits included in this release.
+To download Node.js 19.0.0, visit: /download/current/. You can find the release post at /blog/release/v19.0.0, which contains the full list of commits included in this release.
 
 ## node --watch (experimental)
 
@@ -98,6 +96,6 @@ Try out the new Node.js 19 release! We’re always happy to hear your feedback. 
 
 Also of note is that Node.js 14 will go End-of-Life in April 2023, so we advise you to start planning to upgrade to Node.js 16 (LTS) or Node.js 18 (soon to be LTS).
 
-Please, consider that Node.js 16 (LTS) will go End-of-Life in September 2023, which was brought forward from April 2024 to coincide with the end of support of OpenSSL 1.1.1. You can read more details about that decision at https://nodejs.org/en/blog/announcements/nodejs16-eol/.
+Please, consider that Node.js 16 (LTS) will go End-of-Life in September 2023, which was brought forward from April 2024 to coincide with the end of support of OpenSSL 1.1.1. You can read more details about that decision at /blog/announcements/nodejs16-eol/.
 
 For the timeline of Node.js releases, check out the [Node.js Release Schedule](https://github.com/nodejs/release#release-schedule).

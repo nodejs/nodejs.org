@@ -1,26 +1,44 @@
+# Commonly ignored Node.js files
 node_modules
+npm-debug.log
+.npm
 
-# Next.js & Vercel Directories
+# Next.js Build Output
 .next
-.turbo
-.swc
 build
 
-# Files that should not be parsed
-CODEOWNERS
-
-# Public Files
+# Next.js Generated Files
 public/static/documents
 public/node-releases-data.json
 public/blog-posts-data.json
 
-# We don't want to lint/prettify the Coverage Results
+# Jest
 coverage
+.swc
 junit.xml
+
+# Storybook
+storybook-static
+build-storybook.log
+.nyc_output
+
+# Vercel Files
+.vercel
+.turbo
+cache
+
+# Cache Files
+.eslintjscache
+.eslintmdcache
+.stylelintcache
+.prettiercache
+
+# TypeScript
+tsconfig.tsbuildinfo
+
+# Metadata Files
+CODEOWNERS
 
 # Prettier's Handlebar parser is limited and chokes on some syntax features
 # https://github.com/prettier/prettier/issues/11834
 scripts/release-post/template.hbs
-
-# We shouldn't lint statically generated Storybook files
-storybook-static

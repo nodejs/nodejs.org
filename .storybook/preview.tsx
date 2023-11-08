@@ -1,11 +1,25 @@
-import NextImage from 'next/image';
+import classNames from 'classnames';
+import { NextIntlClientProvider } from 'next-intl';
+
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
-import { SiteProvider } from '../providers/siteProvider';
-import { LocaleProvider } from '../providers/localeProvider';
-import { OPEN_SANS_FONT, STORYBOOK_MODES, STORYBOOK_SIZES } from './constants';
+import { NotificationProvider } from '@/providers/notificationProvider';
+import {
+  OPEN_SANS_FONT,
+  IBM_PLEX_MONO_FONT,
+  STORYBOOK_MODES,
+  STORYBOOK_SIZES,
+} from '@/.storybook/constants';
 import type { Preview, ReactRenderer } from '@storybook/react';
 
+import englishLocale from '@/i18n/locales/en.json';
+
 import '../styles/new/index.css';
+
+const rootClasses = classNames(
+  OPEN_SANS_FONT.variable,
+  IBM_PLEX_MONO_FONT.variable,
+  'font-open-sans'
+);
 
 const preview: Preview = {
   parameters: {
@@ -18,13 +32,13 @@ const preview: Preview = {
   // and all the App's Providers (Site, Theme, Locale)
   decorators: [
     Story => (
-      <SiteProvider>
-        <LocaleProvider>
-          <div className={`${OPEN_SANS_FONT.variable}`}>
+      <NextIntlClientProvider locale="en" messages={englishLocale}>
+        <NotificationProvider viewportClassName="absolute top-0 left-0 list-none">
+          <div className={rootClasses}>
             <Story />
           </div>
-        </LocaleProvider>
-      </SiteProvider>
+        </NotificationProvider>
+      </NextIntlClientProvider>
     ),
     withThemeByDataAttribute<ReactRenderer>({
       themes: {
@@ -36,12 +50,5 @@ const preview: Preview = {
     }),
   ],
 };
-
-// This forces the Next.js image system to use unoptimized images
-// for all the Next.js Images (next/image) Components
-Object.defineProperty(NextImage, 'default', {
-  configurable: true,
-  value: (props: any) => <NextImage {...props} unoptimized />,
-});
 
 export default preview;

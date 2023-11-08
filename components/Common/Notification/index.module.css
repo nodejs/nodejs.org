@@ -1,0 +1,18 @@
+.root {
+  @apply m-6
+    rounded
+    border
+    border-neutral-200
+    bg-white
+    px-4
+    py-3
+    shadow-lg
+    dark:border-neutral-800
+    dark:bg-neutral-900;
+}
+
+.message {
+  @apply font-medium
+    text-green-600
+    dark:text-white;
+}

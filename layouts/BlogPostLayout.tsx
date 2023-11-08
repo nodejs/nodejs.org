@@ -1,38 +1,34 @@
-import { FormattedMessage } from 'react-intl';
-import BaseLayout from './BaseLayout';
-import { Time } from '@/components/Common/Time';
-import { useLayoutContext } from '@/hooks/useLayoutContext';
+import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
-import type { LegacyBlogFrontMatter } from '@/types';
+
+import { Time } from '@/components/Common/Time';
+import { useClientContext } from '@/hooks/server';
 
 const BlogPostLayout: FC<PropsWithChildren> = ({ children }) => {
-  const { frontMatter } = useLayoutContext();
+  const t = useTranslations();
 
-  const { title, author, date } = frontMatter as LegacyBlogFrontMatter;
+  const {
+    frontmatter: { title, author, date },
+  } = useClientContext();
 
   return (
-    <BaseLayout>
-      <div className="container">
-        <article dir="auto">
-          <div className="blogpost-header">
-            <h1>{title}</h1>
-            <span className="blogpost-meta">
-              <FormattedMessage
-                id="layouts.blogPost.author.byLine"
-                values={{ author: author || null }}
-              />
+    <div className="container">
+      <article dir="auto">
+        <div className="blogpost-header">
+          <h1>{title}</h1>
+          <span className="blogpost-meta">
+            {t('layouts.blogPost.author.byLine', { author: author || null })}
 
-              <Time
-                date={date}
-                format={{ month: 'short', day: '2-digit', year: 'numeric' }}
-              />
-            </span>
-          </div>
+            <Time
+              date={date}
+              format={{ month: 'short', day: '2-digit', year: 'numeric' }}
+            />
+          </span>
+        </div>
 
-          {children}
-        </article>
-      </div>
-    </BaseLayout>
+        {children}
+      </article>
+    </div>
   );
 };
 

@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Sep 11th, 2015
-author: Yosuke Furukawa (@yosuke-furukawa)
-date: 2015-09-11T12:00:00.000Z
-status: publish
+date: '2015-09-11T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-09-11
+title: Weekly Update - Sep 11th, 2015
 layout: blog-post.hbs
+author: 'Yosuke Furukawa (@yosuke-furukawa)'
 ---
 
 ### Node.js News — September 11th
@@ -54,7 +52,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 
 ### Node.js Foundation Combines Node.js and io.js Into Single Codebase in New Release
 
-Node.js Foundation posts an entry about Node.js new release and introduction of Node Foundation. [The details are here](https://nodejs.org/en/blog/announcements/foundation-v4-announce/)
+Node.js Foundation posts an entry about Node.js new release and introduction of Node Foundation. [The details are here](/blog/announcements/foundation-v4-announce/)
 
 ### Node.js Interactive
 

@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Jan 18th, 2016
-author: Minwoo Jung (@jmwsoft)
-date: 2016-01-18T12:00:00.000Z
-status: publish
+date: '2016-01-18T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-01-18
+title: Weekly Update - Jan 18th, 2016
 layout: blog-post.hbs
+author: 'Minwoo Jung (@jmwsoft)'
 ---
 
 ### Node.js News
@@ -14,7 +12,7 @@ Node v5.4.1 (Current) is released
 
 ### Node v5.4.1 (Current) Releases
 
-Last week we had one release: [Node v5.4.1 (Current)](https://nodejs.org/en/blog/release/v5.4.1/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+Last week we had one release: [Node v5.4.1 (Current)](/blog/release/v5.4.1/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Notable Changes
 
@@ -49,7 +47,7 @@ Last week we had one release: [Node v5.4.1 (Current)](https://nodejs.org/en/blog
 
 A ballot will be distributed to individual members on January 20th, with the election completed by January 30th.
 
-To be eligible to vote, you must be signed up as an individual member of the Node.js Foundation, more information can be found here: https://nodejs.org/en/blog/community/individual-membership/
+To be eligible to vote, you must be signed up as an individual member of the Node.js Foundation, more information can be found here: /blog/community/individual-membership/
 
 ### Nodeup Updates
 

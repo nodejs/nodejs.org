@@ -1,11 +1,9 @@
 ---
-title: Profiling Node.js
-author: Dave Pacheco
-date: 2012-04-25T20:48:58.000Z
-status: publish
+date: '2012-04-25T20:48:58.000Z'
 category: uncategorized
-slug: profiling-node-js
+title: Profiling Node.js
 layout: blog-post.hbs
+author: Dave Pacheco
 ---
 
 It's incredibly easy to visualize where your Node program spends its time using DTrace and [node-stackvis](https://github.com/davepacheco/node-stackvis) (a Node port of Brendan Gregg's [FlameGraph](https://github.com/brendangregg/FlameGraph/) tool):

@@ -1,11 +1,9 @@
 ---
-title: 'npm 1.0: Released'
-author: Isaac Schlueter
-date: 2011-05-01T15:09:45.000Z
-status: publish
+date: '2011-05-01T15:09:45.000Z'
 category: npm
-slug: npm-1-0-released
+title: 'npm 1.0: Released'
 layout: blog-post.hbs
+author: Isaac Schlueter
 ---
 
 npm 1.0 has been released. Here are the highlights:

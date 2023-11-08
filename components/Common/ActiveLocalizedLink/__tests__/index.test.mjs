@@ -1,28 +1,17 @@
-import { IntlProvider } from 'react-intl';
 import { render, screen } from '@testing-library/react';
-import ActiveLocalizedLink from '..';
 
-jest.mock('next/router', () => ({
-  useRouter() {
-    return {
-      isReady: true,
-      asPath: '/link',
-    };
-  },
-}));
+import ActiveLocalizedLink from '..';
 
 describe('ActiveLocalizedLink', () => {
   it('renders as localized link', () => {
     render(
-      <IntlProvider locale="en" onError={() => {}}>
-        <ActiveLocalizedLink
-          className="link"
-          activeClassName="active"
-          href="/link"
-        >
-          Link
-        </ActiveLocalizedLink>
-      </IntlProvider>
+      <ActiveLocalizedLink
+        className="link"
+        activeClassName="active"
+        href="/link"
+      >
+        Link
+      </ActiveLocalizedLink>
     );
 
     expect(screen.findByText('Link')).resolves.toHaveAttribute(
@@ -33,15 +22,13 @@ describe('ActiveLocalizedLink', () => {
 
   it('ignores active class when href not matches location.href', () => {
     render(
-      <IntlProvider locale="en" onError={() => {}}>
-        <ActiveLocalizedLink
-          className="link"
-          activeClassName="active"
-          href="/not-link"
-        >
-          Link
-        </ActiveLocalizedLink>
-      </IntlProvider>
+      <ActiveLocalizedLink
+        className="link"
+        activeClassName="active"
+        href="/not-link"
+      >
+        Link
+      </ActiveLocalizedLink>
     );
 
     expect(screen.findByText('Link')).resolves.toHaveAttribute('class', 'link');
@@ -49,15 +36,13 @@ describe('ActiveLocalizedLink', () => {
 
   it('sets active class when href matches location.href', () => {
     render(
-      <IntlProvider locale="en" onError={() => {}}>
-        <ActiveLocalizedLink
-          className="link"
-          activeClassName="active"
-          href="/link"
-        >
-          Link
-        </ActiveLocalizedLink>
-      </IntlProvider>
+      <ActiveLocalizedLink
+        className="link"
+        activeClassName="active"
+        href="/link"
+      >
+        Link
+      </ActiveLocalizedLink>
     );
 
     expect(screen.findByText('Link')).resolves.toHaveAttribute(

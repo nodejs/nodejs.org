@@ -60,7 +60,7 @@ jobs:
         run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
 
       - name: Git Checkout
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           # Since we checkout the HEAD of the current Branch, if the Pull Request comes from a Fork
           # we want to clone the fork's repository instead of the base repository
@@ -68,7 +68,7 @@ jobs:
           # If the Workflow is running on `merge_group` or `push` events it fallsback to the base repository
           repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
           # We checkout the branch itself instead of a specific SHA (Commit) as we want to ensure that this Workflow
-          # is always running with the latest `ref` (changes) of the Pull Request's branh
+          # is always running with the latest `ref` (changes) of the Pull Request's branch
           # If the Workflow is running on `merge_group` or `push` events it fallsback to `github.ref` which will often be `main`
           # or the merge_group `ref`
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
@@ -80,7 +80,7 @@ jobs:
           fetch-depth: 1
 
       - name: Restore Build Cache
-        uses: actions/cache/restore@704facf57e6136b1bc63b828d79edcd491f0ee84
+        uses: actions/cache/restore@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
         with:
           path: |
             .turbo/cache
@@ -94,7 +94,7 @@ jobs:
             cache-build-
 
       - name: Set up Node.js
-        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d
+        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4.0.0
         with:
           # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
@@ -138,7 +138,7 @@ jobs:
         # since caches created on the `main` (default) branch can be reused on Pull Requests and PRs coming from forks
         if: |
           github.event_name == 'push' || github.event_name == 'pull_request_target'
-        uses: actions/cache/save@704facf57e6136b1bc63b828d79edcd491f0ee84
+        uses: actions/cache/save@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
         with:
           path: |
             .turbo/cache

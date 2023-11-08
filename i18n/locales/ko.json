@@ -1,39 +1,194 @@
 {
-  "components.footer.scrollToTop.button": "맨 위로",
-  "components.header.links.home": "홈",
-  "components.header.links.about": "About",
-  "components.header.links.download": "다운로드",
-  "components.header.links.docs": "문서",
-  "components.header.links.getInvolved": "참여하기",
-  "components.header.links.security": "보안",
-  "components.header.links.certification": "Certification",
-  "components.header.links.blog": "뉴스",
-  "components.navigation.about.links.governance": "거버넌스",
-  "components.navigation.docs.links.es6": "ES6와 그 이후",
-  "components.navigation.docs.links.apiLts": "{fullLtsNodeVersion} API {spanLts}",
-  "components.navigation.docs.links.apiCurrent": "{fullCurrentNodeVersion} API",
-  "components.navigation.docs.links.guides": "안내",
-  "components.navigation.docs.links.dependencies": "의존성",
-  "components.navigation.getInvolved.links.collabSummit": "협업자 서밋",
-  "components.navigation.getInvolved.links.contribute": "기여하기",
-  "components.navigation.getInvolved.links.codeOfConduct": "행동강령",
-  "components.downloadList.links.previousReleases": "이전 릴리스",
-  "components.downloadList.links.packageManager": "패키지 관리자를 통한 Node.js 설치",
-  "components.downloadList.links.shaSums": "릴리스 파일에 서명된 SHASUMS",
-  "components.downloadList.links.shaSums.howToVerify": " (검증 방법)",
-  "components.downloadList.links.allDownloads": "모든 다운로드 보기",
-  "components.downloadList.links.nightlyReleases": "나이틀리 빌드",
-  "components.downloadList.links.unofficialBuilds": "비공식 빌드",
-  "components.downloadList.links.buildingFromSource": "Building Node.js from source on supported platforms",
-  "components.downloadList.links.installingOnLinux": "Linux에서 바이너리 아카이브를 통해 Node.js 설치하기",
-  "components.downloadList.links.installingOnWsl": "Install on Windows Subsystem for Linux (WSL)",
-  "components.downloadReleasesTable.changelog": "변경사항",
-  "components.downloadReleasesTable.releases": "Releases",
-  "components.downloadReleasesTable.docs": "문서",
-  "components.header.buttons.toggleLanguage": "Toggle Language",
-  "components.header.buttons.toggleDarkMode": "Toggle dark/light mode",
-  "components.pagination.next": "다음 | ",
-  "components.pagination.previous": "이전",
-  "layouts.blogPost.author.byLine": "{author, select, null {} other {By {author}, }}",
-  "layouts.blogIndex.currentYear": "News from {year}"
+  "components": {
+    "footer": {
+      "scrollToTop": {
+        "button": "Scroll to top"
+      },
+      "links": {
+        "trademarkPolicy": "Trademark Policy",
+        "privacyPolicy": "Privacy Policy",
+        "codeOfConduct": "Code of Conduct",
+        "security": "Security Policy",
+        "openJS": "OpenJS Foundation"
+      }
+    },
+    "header": {
+      "links": {
+        "about": "About",
+        "download": "Download",
+        "docs": "Docs",
+        "getInvolved": "Get Involved",
+        "security": "Security",
+        "certification": "Certification",
+        "blog": "News",
+        "learn": {
+          "title": "Learn",
+          "gettingStarted": {
+            "title": "Getting Started",
+            "introductionToNodejs": "Introduction to Node.js",
+            "howToInstallNodejs": "How to install Node.js",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "How much JavaScript do you need to know to use Node.js?",
+            "differencesBetweenNodejsAndTheBrowser": "Differences between Node.js and the Browser",
+            "theV8JavascriptEngine": "The V8 JavaScript Engine",
+            "anIntroductionToTheNpmPackageManager": "An introduction to the NPM package manager",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) and beyond",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
+            "nodejsWithTypescript": "Node.js with TypeScript",
+            "nodejsWithWebassembly": "Node.js with WebAssembly"
+          },
+          "asynchronousWork": {
+            "title": "Asynchronous Work",
+            "asynchronousFlowControl": "Asynchronous flow control",
+            "overviewOfBlockingVsNonBlocking": "Overview of Blocking vs Non-Blocking",
+            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asynchronous Programming and Callbacks",
+            "discoverJavaScriptTimers": "Discover JavaScript Timers",
+            "understandingProcessnexttick": "Understanding process.nextTick()",
+            "understandingSetimmediate": "Understanding setImmediate()",
+            "theNodejsEventEmitter": "The Node.js Event emitter"
+          },
+          "manipulatingFiles": {
+            "title": "Manipulating Files",
+            "nodejsFileStats": "Node.js file stats",
+            "nodejsFilePaths": "Node.js File Paths",
+            "workingWithFileDescriptorsInNodejs": "Working with file descriptors in Node.js",
+            "readingFilesWithNodejs": "Reading files with Node.js",
+            "writingFilesWithNodejs": "Writing files with Node.js",
+            "workingWithFoldersInNodejs": "Working with folders in Node.js"
+          },
+          "commandLine": {
+            "title": "Command Line",
+            "runNodejsScriptsFromTheCommandLine": "Run Node.js scripts from the command line",
+            "howToReadEnvironmentVariablesFromNodejs": "How to read environment variables from Node.js",
+            "howToUseTheNodejsRepl": "How to use the Node.js REPL",
+            "outputToTheCommandLineUsingNodejs": "Output to the command line using Node.js",
+            "acceptInputFromTheCommandLineInNodejs": "Accept input from the command line in Node.js"
+          }
+        }
+      },
+      "buttons": {
+        "toggleLanguage": "Toggle Language",
+        "toggleDarkMode": "Toggle dark/light mode"
+      }
+    },
+    "navigation": {
+      "about": {
+        "links": {
+          "governance": "Project Governance",
+          "releases": "Previous Releases",
+          "security": "Security Reporting"
+        }
+      },
+      "docs": {
+        "links": {
+          "es6": "ES6 and beyond",
+          "apiLts": "{fullLtsNodeVersion} API <graySpan>LTS</graySpan>",
+          "apiCurrent": "{fullCurrentNodeVersion} API",
+          "guides": "Guides <graySpan>ARCHIVED</graySpan>",
+          "dependencies": "Dependencies"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "collabSummit": "Collab Summit",
+          "contribute": "Contribute",
+          "codeOfConduct": "Code of Conduct"
+        }
+      }
+    },
+    "downloadList": {
+      "links": {
+        "previousReleases": "Previous Releases",
+        "packageManager": "Installing Node.js via package manager",
+        "shaSums": {
+          "title": "Signed SHASUMS for release files",
+          "howToVerify": " (How to verify)"
+        },
+        "allDownloads": "All download options",
+        "nightlyReleases": "Nightly builds",
+        "unofficialBuilds": "Unofficial builds",
+        "buildingFromSource": "Building Node.js from source on supported platforms",
+        "installingOnLinux": "Installing Node.js via binary archive",
+        "installingOnWsl": "Install on Windows Subsystem for Linux (WSL)"
+      }
+    },
+    "downloadReleasesTable": {
+      "changelog": "Changelog",
+      "releases": "Releases",
+      "docs": "Docs"
+    },
+    "pagination": {
+      "next": "Newer | ",
+      "previous": "Older"
+    },
+    "common": {
+      "breadcrumbs": {
+        "navigateToHome": "Navigate to Home"
+      },
+      "crossLink": {
+        "previous": "Prev",
+        "next": "Next"
+      },
+      "codebox": {
+        "copied": "Copied to clipboard!"
+      },
+      "pagination": {
+        "prev": "Previous",
+        "prevAriaLabel": "Previous page",
+        "next": "Next",
+        "nextAriaLabel": "Next page",
+        "defaultLabel": "Pagination",
+        "pageLabel": "Go to page {pageNumber}"
+      },
+      "languageDropdown": {
+        "label": "Choose Language"
+      },
+      "card": {
+        "announcement": "Announcements",
+        "release": "Releases",
+        "vulnerability": "Vulnerabilities"
+      }
+    },
+    "metabar": {
+      "lastUpdated": "Last Updated",
+      "readingTime": "Reading Time",
+      "addedIn": "Added In",
+      "author": "Author",
+      "authors": "Authors",
+      "contribute": "Contribute",
+      "contributeText": "Edit this page",
+      "viewAs": "View as",
+      "tableOfContents": "Table of Contents"
+    },
+    "api": {
+      "jsonLink": {
+        "title": "View as JSON"
+      },
+      "sourceLink": "Source Code:"
+    },
+    "home": {
+      "homeDownloadButton": {
+        "download": "{version} {isLts, select, true {LTS} other {Current}}",
+        "tagline": "{isLts, select, true {Recommended For Most Users} other {Latest Features}}",
+        "changelog": "Changelog",
+        "otherDownloads": "Other Downloads",
+        "apiDocs": "API Docs"
+      }
+    }
+  },
+  "layouts": {
+    "blogPost": {
+      "author": {
+        "byLine": "{author, select, null {} other {By {author}, }}"
+      }
+    },
+    "blogIndex": {
+      "currentYear": "News from {year}"
+    }
+  },
+  "pages": {
+    "404": {
+      "title": "404: Page could not be found",
+      "description": "ENOENT: no such file or directory"
+    }
+  }
 }

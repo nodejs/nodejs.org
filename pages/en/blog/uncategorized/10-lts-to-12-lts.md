@@ -1,8 +1,7 @@
 ---
-date: 2019-10-20T12:00:00.000Z
+date: '2019-10-20T12:00:00.000Z'
 category: uncategorized
 title: The Difference Between Node.js 10 LTS and Node.js 12 LTS
-slug: the-difference-between-node-js-10-lts-and-node-js-12-lts
 layout: blog-post.hbs
 author: Tierney Cyren
 ---

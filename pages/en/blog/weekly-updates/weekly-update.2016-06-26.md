@@ -1,27 +1,25 @@
 ---
-title: Weekly Update - June 26th, 2016
-author: Minwoo Jung (github.com/JungMinu)
-date: 2016-06-26T12:00:00.000Z
-status: publish
+date: '2016-06-26T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-06-26
+title: Weekly Update - June 26th, 2016
 layout: blog-post.hbs
+author: 'Minwoo Jung (github.com/JungMinu)'
 ---
 
 ### Important security releases
 
-These are security releases. All Node.js users should consult the security release summary at https://nodejs.org/en/blog/vulnerability/june-2016-security-releases for details on patched vulnerabilities.
+These are security releases. All Node.js users should consult the security release summary at /blog/vulnerability/june-2016-security-releases for details on patched vulnerabilities.
 
-- [Node v5.12.0 (Stable)](https://nodejs.org/en/blog/release/v5.12.0/)
-- [Node v4.4.6 (LTS)](https://nodejs.org/en/blog/release/v4.4.6/)
-- [Node v0.12.15 (Maintenance)](https://nodejs.org/en/blog/release/v0.12.15/)
-- [Node v0.10.46 (Maintenance)](https://nodejs.org/en/blog/release/v0.10.46/)
+- [Node v5.12.0 (Stable)](/blog/release/v5.12.0/)
+- [Node v4.4.6 (LTS)](/blog/release/v4.4.6/)
+- [Node v0.12.15 (Maintenance)](/blog/release/v0.12.15/)
+- [Node v0.10.46 (Maintenance)](/blog/release/v0.10.46/)
 
 ### Binaries for Linux on Power Systems
 
 Community downloads now include binaries for Linux on Power Systems with big endian in addition to the existing little endian binaries.
 
-See https://nodejs.org/en/download/.
+See /download/.
 
 ### Community Updates
 

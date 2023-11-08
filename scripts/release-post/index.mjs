@@ -20,74 +20,100 @@
 
 'use strict';
 
-import fs from 'node:fs';
-import path from 'node:path';
-import url from 'node:url';
-import handlebars from 'handlebars';
+import { existsSync, readFileSync } from 'node:fs';
+import { writeFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
 
-import downloadsTable from './downloadsTable.mjs';
+import handlebars from 'handlebars';
+import { format } from 'prettier';
+
+import { downloadsTable } from './downloadsTable.mjs';
+import prettierConfig from '../../.prettierrc.json' assert { type: 'json' };
 import { getRelativePath } from '../../next.helpers.mjs';
+
+const URLS = {
+  NODE_DIST_JSON: 'https://nodejs.org/dist/index.json',
+  GITHUB_PROFILE: author => `https://api.github.com/users/${author}`,
+  NODE_CHANGELOG_MD: releaseLine =>
+    `https://raw.githubusercontent.com/nodejs/node/main/doc/changelogs/CHANGELOG_V${releaseLine}.md`,
+  NODE_SHASUM: version =>
+    `https://nodejs.org/dist/v${version}/SHASUMS256.txt.asc`,
+};
+
+const ERRORS = {
+  NO_VERSION_PROVIDED: new Error('No version provided'),
+  RELEASE_EXISTS: version =>
+    new Error(`Release post for ${version} already exists!`),
+  NO_AUTHOR_FOUND: version =>
+    new Error(`Couldn't find @author of ${version} release :(`),
+  NO_VERSION_POLICY: version =>
+    new Error(`Could not find version policy of ${version} in its changelog`),
+  NO_CHANGELOG_FOUND: version =>
+    new Error(`Couldn't find matching changelog for ${version}`),
+  INVALID_STATUS_CODE: (url, status) =>
+    new Error(`Invalid status (!= 200) while retrieving ${url}: ${status}`),
+  FAILED_FILE_FORMATTING: reason =>
+    new Error(`Failed to format Release post: Reason: ${reason}`),
+  FAILED_FILE_CREATION: reason =>
+    new Error(`Failed to write Release post: Reason: ${reason}`),
+};
+
+const ARGS = {
+  CURRENT_PATH: process.argv[1],
+  SPECIFIC_VERSION: process.argv[2] && process.argv[2].replace('--force', ''),
+  SHOULD_FORCE: (process.argv[3] || process.argv[2]) === '--force',
+};
 
 // this allows us to get the current module working directory
 const __dirname = getRelativePath(import.meta.url);
 
-const sendRequest = opts => {
-  const options = {
-    headers: { 'User-Agent': 'nodejs.org release blog post script' },
-    ...opts,
-  };
-
+const request = options => {
   return fetch(options.url, options).then(resp => {
     if (resp.status !== 200) {
-      throw new Error(
-        `Invalid status code (!= 200) while retrieving ${options.url}: ${resp.status}`
-      );
+      throw ERRORS.INVALID_STATUS_CODE(options.url, resp.status);
     }
 
     return options.json ? resp.json() : resp.text();
   });
 };
 
-const explicitVersion = version => {
-  return version
-    ? Promise.resolve(version)
-    : Promise.reject(new Error('Invalid "version" argument'));
-};
+const explicitVersion = version =>
+  new Promise((resolve, reject) =>
+    version && version.length > 0
+      ? resolve(version)
+      : reject(ERRORS.NO_VERSION_PROVIDED)
+  );
 
-const findLatestVersion = () => {
-  return sendRequest({
-    url: 'https://nodejs.org/dist/index.json',
-    json: true,
-  }).then(versions => versions[0].version.substr(1));
-};
+const findLatestVersion = () =>
+  request({ url: URLS.NODE_DIST_JSON, json: true })
+    .then(versions => versions.length && versions[0])
+    .then(({ version }) => version.substr(1));
 
 const fetchDocs = version => {
-  return Promise.all([
+  const blogPostPieces = [
     fetchChangelogBody(version),
     fetchAuthor(version),
     fetchVersionPolicy(version),
     fetchShasums(version),
     verifyDownloads(version),
-  ]).then(results => {
-    const [changelog, author, versionPolicy, shasums, files] = results;
+  ];
 
-    return {
+  return Promise.all(blogPostPieces).then(
+    ([changelog, author, versionPolicy, shasums, files]) => ({
       version,
       changelog,
       author,
       versionPolicy,
       shasums,
       files,
-    };
-  });
+    })
+  );
 };
 
 const fetchAuthor = version => {
   return fetchChangelog(version)
     .then(section => findAuthorLogin(version, section))
-    .then(author =>
-      sendRequest({ url: `https://api.github.com/users/${author}`, json: true })
-    )
+    .then(author => request({ url: URLS.GITHUB_PROFILE(author), json: true }))
     .then(githubRes => githubRes.name);
 };
 
@@ -95,9 +121,7 @@ const fetchChangelog = version => {
   const parts = version.split('.');
   const releaseLine = parts[0] === '0' ? parts.slice(0, 2).join('') : parts[0];
 
-  return sendRequest({
-    url: `https://raw.githubusercontent.com/nodejs/node/main/doc/changelogs/CHANGELOG_V${releaseLine}.md`,
-  }).then(data => {
+  return request({ url: URLS.NODE_CHANGELOG_MD(releaseLine) }).then(data => {
     // matches a complete release section
     const rxSection = new RegExp(
       `<a id="${version}"></a>\\n([\\s\\S]+?)(?:\\n<a id="|$)`
@@ -105,35 +129,22 @@ const fetchChangelog = version => {
 
     const matches = rxSection.exec(data);
 
-    return matches
-      ? matches[1].trim()
-      : Promise.reject(
-          new Error(`Couldn't find matching changelog for ${version}`)
-        );
+    return new Promise((resolve, reject) =>
+      matches && matches.length && matches[1]
+        ? resolve(matches[1].trim())
+        : reject(ERRORS.NO_CHANGELOG_FOUND(version))
+    );
   });
 };
 
 const fetchChangelogBody = version => {
   return fetchChangelog(version).then(section => {
-    const rxSectionBody = /(### Notable [\s\S]*)/;
-    const rxFallbackSectionBody = /(### Commit[\s\S]*)/;
+    const replaceAsteriskLists = str =>
+      str.replace(/^([ ]{0,4})(\* )/gm, '$1- ');
 
-    // Make sure that all the console has been replaced
-    // by "```shell-session" for metalsmith-prism's check to pass
-    const rxSectionConsole = /```console/gim;
-    let matches = rxSectionBody.exec(section);
-
-    // In case there's not a notable changes section for that release, nothing
-    // will have matched so we fallback to reading the commits section instead
-    if (!matches) {
-      matches = rxFallbackSectionBody.exec(section);
-    }
-
-    return matches
-      ? matches[1].trim().replace(rxSectionConsole, '```shell-session')
-      : Promise.reject(
-          new Error(`Could not find changelog body of ${version} release`)
-        );
+    return new Promise(resolve =>
+      resolve(replaceAsteriskLists(section.trim()))
+    );
   });
 };
 
@@ -144,28 +155,23 @@ const fetchVersionPolicy = version => {
     // ## 2015-12-04, Version 0.12.9 (LTS), @rvagg
     const rxPolicy = /^## ?\d{4}-\d{2}-\d{2}, Version [^(].*\(([^)]+)\)/;
     const matches = rxPolicy.exec(section);
-    return matches
-      ? matches[1]
-      : Promise.reject(
-          new Error(
-            `Could not find version policy of ${version} in its changelog`
-          )
-        );
+
+    return new Promise((resolve, reject) =>
+      matches && matches.length && matches[1]
+        ? resolve(matches[1])
+        : reject(ERRORS.NO_VERSION_POLICY(version))
+    );
   });
 };
 
-const fetchShasums = version => {
-  return sendRequest({
-    url: `https://nodejs.org/dist/v${version}/SHASUMS256.txt.asc`,
-  }).then(null, () => '[INSERT SHASUMS HERE]');
-};
+const fetchShasums = version =>
+  request({ url: URLS.NODE_SHASUM(version) }).then(
+    result => result.trim(),
+    () => '[INSERT SHASUMS HERE]'
+  );
 
-const verifyDownloads = version => {
-  const allDownloads = downloadsTable(version);
-  const reqs = allDownloads.map(urlOrComingSoon);
-
-  return Promise.all(reqs);
-};
+const verifyDownloads = version =>
+  Promise.all(downloadsTable(version).map(urlOrComingSoon));
 
 const findAuthorLogin = (version, section) => {
   // looking for the @author part of the release header, eg:
@@ -175,82 +181,65 @@ const findAuthorLogin = (version, section) => {
   const rxReleaseAuthor = /^## .*? \([^)]+\)[,.] @(\S+)/;
   const matches = rxReleaseAuthor.exec(section);
 
-  return matches
-    ? matches[1]
-    : Promise.reject(
-        new Error(`Couldn't find @author of ${version} release :(`)
-      );
+  return new Promise((resolve, reject) =>
+    matches && matches.length && matches[1]
+      ? resolve(matches[1])
+      : reject(ERRORS.RELEASE_EXISTS(version))
+  );
 };
 
 const urlOrComingSoon = binary => {
-  const url = binary.url.replace('nodejs.org', 'direct.nodejs.org');
-
-  return sendRequest({ url, method: 'HEAD' }).then(
+  return request({ url: binary.url, method: 'HEAD' }).then(
     () => `${binary.title}: ${binary.url}`,
-    () => {
-      console.log(`\x1B[32m "${binary.title}" is Coming soon...\x1B[39m`);
-      return `${binary.title}: *Coming soon*`;
-    }
+    () => `${binary.title}: *Coming soon*`
   );
 };
 
 const renderPost = results => {
-  const templateStr = fs
-    .readFileSync(path.resolve(__dirname, 'template.hbs'))
-    .toString('utf8');
-
-  const template = handlebars.compile(templateStr, { noEscape: true });
-
-  const view = Object.assign(
-    {
-      date: new Date().toISOString(),
-      versionSlug: slugify(results.version),
-    },
-    results
+  const blogTemplateSource = readFileSync(
+    resolve(__dirname, 'template.hbs'),
+    'utf8'
   );
 
-  return Object.assign(
-    {
-      content: template(view),
-    },
-    results
-  );
+  const template = handlebars.compile(blogTemplateSource, { noEscape: true });
+
+  const templateParameters = {
+    date: new Date().toISOString(),
+    versionSlug: slugify(results.version),
+    ...results,
+  };
+
+  return { content: template(templateParameters), ...results };
+};
+
+const formatPost = results => {
+  return new Promise((resolve, reject) => {
+    format(results.content, { ...prettierConfig, parser: 'markdown' })
+      .then(content => resolve({ ...results, content }))
+      .catch(error => reject(ERRORS.FAILED_FILE_FORMATTING(error.message)));
+  });
 };
 
 const writeToFile = results => {
-  const filepath = path.resolve(
+  const blogPostPath = resolve(
     __dirname,
-    '..',
-    '..',
-    'pages',
-    'en',
-    'blog',
-    'release',
+    '../../pages/en/blog/release',
     `v${results.version}.md`
   );
 
   return new Promise((resolve, reject) => {
-    if (fs.existsSync(filepath) && process.argv[3] !== '--force') {
-      return reject(
-        new Error(`Release post for ${results.version} already exists!`)
-      );
+    if (existsSync(blogPostPath) && !ARGS.SHOULD_FORCE) {
+      reject(ERRORS.RELEASE_EXISTS(results.version));
+      return;
     }
 
-    try {
-      fs.writeFileSync(filepath, results.content);
-    } catch (error) {
-      return reject(
-        new Error(`Failed to write Release post: Reason: ${error.message}`)
-      );
-    }
-
-    resolve(filepath);
+    writeFile(blogPostPath, results.content)
+      .then(() => resolve(blogPostPath))
+      .catch(error => reject(ERRORS.FAILED_FILE_CREATION(error.message)));
   });
 };
 
-const slugify = str => {
-  return str.replace(/\./g, '-');
-};
+const slugify = str => str.replace(/\./g, '-');
 
 export {
   explicitVersion,
@@ -266,22 +255,16 @@ export {
 
 // This allows us to verify that the script is being run directly from node.js/cli
 if (import.meta.url.startsWith('file:')) {
-  const modulePath = url.fileURLToPath(import.meta.url);
-
-  if (process.argv[1] === modulePath) {
-    explicitVersion(process.argv[2])
+  if (ARGS.CURRENT_PATH === `${__dirname}index.mjs`) {
+    explicitVersion(ARGS.SPECIFIC_VERSION)
       .then(null, findLatestVersion)
       .then(fetchDocs)
       .then(renderPost)
+      .then(formatPost)
       .then(writeToFile)
       .then(
-        filepath => {
-          console.log('Release post created:', filepath);
-        },
-        err => {
-          console.error('Some error occurred here!', err.stack);
-          process.exit(1);
-        }
+        filepath => console.log('Release post created:', filepath),
+        error => console.error('Some error occurred here!', error.stack)
       );
   }
 }

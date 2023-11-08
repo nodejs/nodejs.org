@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Mar 20th, 2015
-author: Julian Duque (julianduque)
-date: 2015-03-20T12:00:00.000Z
-status: publish
+date: '2015-03-20T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-03-20
+title: Weekly Update - Mar 20th, 2015
 layout: blog-post.hbs
+author: Julian Duque (julianduque)
 ---
 
 # io.js 1.6 release

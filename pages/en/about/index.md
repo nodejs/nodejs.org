@@ -1,7 +1,6 @@
 ---
+title: About Node.js®
 layout: about.hbs
-title: About
-trademark: Trademark
 ---
 
 # About Node.js®
@@ -11,7 +10,7 @@ scalable network applications. In the following "hello world" example, many
 connections can be handled concurrently. Upon each connection, the callback is
 fired, but if there is no work to be done, Node.js will sleep.
 
-```javascript
+```js
 const http = require('http');
 
 const hostname = '127.0.0.1';
@@ -43,7 +42,7 @@ If some of this language is unfamiliar, there is a full article on
 
 Node.js is similar in design to, and influenced by, systems like Ruby's
 [Event Machine][] and Python's [Twisted][]. Node.js takes the event model a bit
-further. It presents an [event loop][] as a runtime construct instead of as a library. In other systems,
+further. It presents an event loop as a runtime construct instead of as a library. In other systems,
 there is always a blocking call to start the event-loop.
 Typically, behavior is defined through callbacks at the beginning of a script, and
 at the end a server is started through a blocking call like `EventMachine::run()`.
@@ -62,9 +61,8 @@ communicate with. Built upon that same interface is the [`cluster`][] module,
 which allows you to share sockets between processes to enable load balancing
 over your cores.
 
-[Blocking vs. Non-Blocking]: /en/docs/guides/blocking-vs-non-blocking/
-[`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
+[blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+[`child_process.fork()`]: /api/child_process/
 [`cluster`]: https://nodejs.org/api/cluster.html
-[event loop]: /en/docs/guides/event-loop-timers-and-nexttick/
-[Event Machine]: https://github.com/eventmachine/eventmachine
-[Twisted]: https://twistedmatrix.com/trac/
+[event machine]: https://github.com/eventmachine/eventmachine
+[twisted]: https://twistedmatrix.com/trac/

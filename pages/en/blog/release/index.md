@@ -1,6 +1,4 @@
 ---
 title: Releases
-layout: category-index.hbs
-listing: true
-robots: noindex, follow
+layout: blog-categpry.hbs
 ---

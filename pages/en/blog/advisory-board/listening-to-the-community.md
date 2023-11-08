@@ -1,9 +1,8 @@
 ---
+date: '2014-12-05T21:30:00.000Z'
 title: Listening to the Community
-date: 2014-12-05T21:30:00.000Z
-author: Advisory Board
-slug: listening-to-the-community
 layout: blog-post.hbs
+author: Advisory Board
 ---
 
 We assembled the Node.js Advisory Board (AB) to listen to the community and

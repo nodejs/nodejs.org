@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Mar 7th, 2016
-author: Minwoo Jung (github.com/JungMinu)
-date: 2016-03-07T12:00:00.000Z
-status: publish
+date: '2016-03-07T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2016-03-07
+title: Weekly Update - Mar 7th, 2016
 layout: blog-post.hbs
+author: 'Minwoo Jung (github.com/JungMinu)'
 ---
 
 ### Node.js News
@@ -14,7 +12,7 @@ Node v0.10.43 (Maintenance), Node v0.12.11 (LTS), Node v5.7.1 (Current) and Node
 
 ### Node v0.10.43 (Maintenance), Node v0.12.11 (LTS), Node v5.7.1 (Current) and Node v4.3.2 (LTS) Releases
 
-We have four releases: [Node v0.10.43 (Maintenance)](https://nodejs.org/en/blog/release/v0.10.43/), [Node v0.12.11 (LTS)](https://nodejs.org/en/blog/release/v0.12.11/), [Node v5.7.1 (Current)](https://nodejs.org/en/blog/release/v5.7.1/) and [Node v4.3.2 (LTS)](https://nodejs.org/en/blog/release/v4.3.2/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+We have four releases: [Node v0.10.43 (Maintenance)](/blog/release/v0.10.43/), [Node v0.12.11 (LTS)](/blog/release/v0.12.11/), [Node v5.7.1 (Current)](/blog/release/v5.7.1/) and [Node v4.3.2 (LTS)](/blog/release/v4.3.2/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Initial benchmark data
 

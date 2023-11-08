@@ -1,33 +1,46 @@
+'use client';
+
 import classNames from 'classnames';
-import LocalizedLink from './LocalizedLink';
-import { useLocale } from '@/hooks/useLocale';
-import { useNavigation } from '@/hooks/useNavigation';
-import type { NavigationKeys } from '@/types';
+import type { RichTranslationValues } from 'next-intl';
 import type { FC } from 'react';
+
+import { useIsCurrentPathname, useSiteNavigation } from '@/hooks';
+import { Link } from '@/navigation.mjs';
+import type { NavigationKeys } from '@/types';
 
 type SideNavigationProps = {
   navigationKey: NavigationKeys;
-  context?: Record<string, Record<string, string | JSX.Element | undefined>>;
+  context?: Record<string, RichTranslationValues>;
 };
 
 const SideNavigation: FC<SideNavigationProps> = ({
   navigationKey,
   context,
 }) => {
-  const { getSideNavigation } = useNavigation();
-  const { isCurrentLocaleRoute } = useLocale();
+  const { getSideNavigation } = useSiteNavigation();
+  const { isCurrentLocaleRoute } = useIsCurrentPathname();
 
   const sideNavigationItems = getSideNavigation(navigationKey, context);
 
-  const getLinkClassName = (href: string) =>
-    classNames({ active: isCurrentLocaleRoute(href) });
+  const getLinkClasses = (href: string, level: number) =>
+    classNames({ active: isCurrentLocaleRoute(href), level });
 
   return (
     <nav aria-label="secondary">
       <ul>
-        {sideNavigationItems.map((item, key) => (
-          <li key={key} className={getLinkClassName(item.link)}>
-            <LocalizedLink href={item.link}>{item.text}</LocalizedLink>
+        {sideNavigationItems.map(item => (
+          <li key={item.key} className={getLinkClasses(item.link, item.level)}>
+            <Link href={item.link}>{item.text}</Link>
+
+            {item.items.length > 0 && (
+              <ul>
+                {item.items.map(({ link, level, text, key }) => (
+                  <li key={key} className={getLinkClasses(link, level)}>
+                    <Link href={link}>{text}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
         ))}
       </ul>

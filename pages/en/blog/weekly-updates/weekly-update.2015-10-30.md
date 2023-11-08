@@ -1,11 +1,9 @@
 ---
-title: Weekly Update - Oct 30th, 2015
-author: Minwoo Jung (@jmwsoft)
-date: 2015-10-30T12:00:00.000Z
-status: publish
+date: '2015-10-30T12:00:00.000Z'
 category: weekly
-slug: weekly-update-2015-10-30
+title: Weekly Update - Oct 30th, 2015
 layout: blog-post.hbs
+author: 'Minwoo Jung (@jmwsoft)'
 ---
 
 ### Node.js News — October 30th
@@ -14,7 +12,7 @@ Node.js v5.0.0 (Current) is released
 
 ### Node.js v5.0.0 (Current) Releases
 
-This week we have one release: [Node.js v5.0.0 (Current)](https://nodejs.org/en/blog/release/v5.0.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
+This week we have one release: [Node.js v5.0.0 (Current)](/blog/release/v5.0.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Notable changes : v5.0.0 (Current)
 

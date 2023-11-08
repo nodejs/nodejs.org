@@ -1,11 +1,9 @@
 ---
-title: Next Chapter
-author: tjfontaine
-date: 2015-05-08T19:00:00.000Z
-status: publish
+date: '2015-05-08T19:00:00.000Z'
 category: community
-slug: next-chapter
+title: Next Chapter
 layout: blog-post.hbs
+author: tjfontaine
 ---
 
 Open source projects are about the software, the users, and the community. Since

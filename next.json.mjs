@@ -1,18 +1,26 @@
 'use strict';
 
-// This is the static Site Configuration
-import siteConfig from './site.json' assert { type: 'json' };
+import _localeConfig from './i18n/config.json' assert { type: 'json' };
+import _siteNavigation from './navigation.json' assert { type: 'json' };
+import _blogData from './public/blog-posts-data.json' assert { type: 'json' };
+import _releaseData from './public/node-releases-data.json' assert { type: 'json' };
+import _siteRedirects from './redirects.json' assert { type: 'json' };
+import _siteConfig from './site.json' assert { type: 'json' };
 
-// This is the static Site Navigation (legacy website)
-import siteNavigation from './navigation.json' assert { type: 'json' };
+/** @type {import('./types').LocaleConfig[]} */
+export const localeConfig = _localeConfig;
 
-// This is the static Site External and Internal Redirects Metadata
-import siteRedirects from './redirects.json' assert { type: 'json' };
+/** @type {Record<string, import('./types').NavigationEntry>} */
+export const siteNavigation = _siteNavigation;
 
-// This is the Website i18n Configuration
-import localeConfig from './i18n/config.json' assert { type: 'json' };
+/** @type {import('./types').BlogData} */
+export const blogData = _blogData;
 
-// This is the generated blog data for the Node.js Website
-import blogData from './public/blog-posts-data.json' assert { type: 'json' };
+/** @type {import('./types').NodeRelease[]} */
+export const releaseData = _releaseData;
 
-export { siteConfig, siteNavigation, siteRedirects, localeConfig, blogData };
+/** @type {Record<string, import('./types').Redirect[]>} */
+export const siteRedirects = _siteRedirects;
+
+/** @type {import('./types').SiteConfig} */
+export const siteConfig = _siteConfig;

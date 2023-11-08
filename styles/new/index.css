@@ -6,8 +6,8 @@
  * @see https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
 */
 
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 @import './mixins';
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import './base';
