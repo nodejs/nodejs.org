@@ -11,5 +11,9 @@ init({
   replaysOnErrorSampleRate: 1.0,
   // percentage of sessionsto sample (10%)
   replaysSessionSampleRate: 0.1,
+  // support replaying client sessions to capture unhappy paths
   integrations: [new Replay()],
+  // we only want to capture errors from _next folder on production
+  // we don't want to capture errors from preview branches here
+  allowUrls: ['https://nodejs.org/_next'],
 });

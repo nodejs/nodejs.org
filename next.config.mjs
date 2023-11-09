@@ -81,7 +81,7 @@ export default withSentryConfig(
     // transpile the Sentry code too since we target older browsers in our .browserslistrc
     transpileClientSDK: true,
     // attempt to circumvent ad blockers
-    tunnelRoute: '/monitoring',
+    tunnelRoute: ENABLE_STATIC_EXPORT ? undefined : '/monitoring',
     // prevent source map comments in built files
     hideSourceMaps: false,
     disableLogger: true,
