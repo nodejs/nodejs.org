@@ -14,24 +14,22 @@ const SidebarGroup: FC<SidebarGroupProps> = ({
   groupName,
   items,
   activeItem,
-}) => {
-  return (
-    <section className={styles.group}>
-      <label className={styles.groupName}>{groupName}</label>
-      <ul className={styles.itemList}>
-        {items.map(({ title, url }) => (
-          <SidebarItem
-            key={title}
-            title={title}
-            url={url}
-            isActive={
-              activeItem?.title === title && activeItem.url === activeItem.url
-            }
-          />
-        ))}
-      </ul>
-    </section>
-  );
-};
+}) => (
+  <section className={styles.group}>
+    <label className={styles.groupName}>{groupName}</label>
+    <ul className={styles.itemList}>
+      {items.map(({ title, url }) => (
+        <SidebarItem
+          key={title}
+          title={title}
+          url={url}
+          isActive={
+            activeItem?.title === title && activeItem.url === activeItem.url
+          }
+        />
+      ))}
+    </ul>
+  </section>
+);
 
 export default SidebarGroup;

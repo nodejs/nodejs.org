@@ -10,19 +10,17 @@ type SidebarProps = {
   activeItem?: ComponentProps<typeof SidebarItem>;
 };
 
-const SideBar: FC<SidebarProps> = ({ groups, activeItem }) => {
-  return (
-    <aside className={styles.sideBar}>
-      {groups.map(({ groupName, items }) => (
-        <SidebarGroup
-          key={groupName}
-          groupName={groupName}
-          items={items}
-          activeItem={activeItem}
-        />
-      ))}
-    </aside>
-  );
-};
+const SideBar: FC<SidebarProps> = ({ groups, activeItem }) => (
+  <aside className={styles.sideBar}>
+    {groups.map(({ groupName, items }) => (
+      <SidebarGroup
+        key={groupName}
+        groupName={groupName}
+        items={items}
+        activeItem={activeItem}
+      />
+    ))}
+  </aside>
+);
 
 export default SideBar;

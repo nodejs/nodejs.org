@@ -9,28 +9,69 @@ export const Default: Story = {
   args: {
     groups: [
       {
-        groupName: 'group1',
+        groupName: 'About Node.js',
         items: [
           {
             url: '/item1',
-            title: 'item1',
+            title: 'About Node.js',
           },
           {
             url: '/item2',
-            title: 'item2',
+            title: 'Project Governance',
+          },
+          {
+            url: '/item3',
+            title: 'Releases',
+          },
+          {
+            url: '/item4',
+            title: 'Branding',
+          },
+          {
+            url: '/item5',
+            title: 'Privacy Policy',
+          },
+          {
+            url: '/item6',
+            title: 'Security Reporting',
           },
         ],
       },
       {
-        groupName: 'group2',
+        groupName: 'Get Involved',
         items: [
           {
-            url: '/item1',
-            title: 'item1',
+            url: '/item7',
+            title: 'Get Involved',
           },
           {
-            url: '/item2',
-            title: 'item2',
+            url: '/item8',
+            title: 'Collab Summit',
+          },
+          {
+            url: '/item9',
+            title: 'Contribute',
+          },
+          {
+            url: '/item10',
+            title: 'Code of Conduct',
+          },
+        ],
+      },
+      {
+        groupName: 'Download',
+        items: [
+          {
+            url: '/item11',
+            title: 'Download',
+          },
+          {
+            url: '/item12',
+            title: 'Package Manager',
+          },
+          {
+            url: '/item13',
+            title: 'Previous Releases',
           },
         ],
       },
@@ -42,35 +83,76 @@ export const ActiveItem: Story = {
   args: {
     groups: [
       {
-        groupName: 'group1',
+        groupName: 'About Node.js',
         items: [
           {
             url: '/item1',
-            title: 'item1',
+            title: 'About Node.js',
           },
           {
             url: '/item2',
-            title: 'item2',
+            title: 'Project Governance',
+          },
+          {
+            url: '/item3',
+            title: 'Releases',
+          },
+          {
+            url: '/item4',
+            title: 'Branding',
+          },
+          {
+            url: '/item5',
+            title: 'Privacy Policy',
+          },
+          {
+            url: '/item6',
+            title: 'Security Reporting',
           },
         ],
       },
       {
-        groupName: 'group2',
+        groupName: 'Get Involved',
         items: [
           {
-            url: '/item3',
-            title: 'item3',
+            url: '/item7',
+            title: 'Get Involved',
           },
           {
-            url: '/item4',
-            title: 'item4',
+            url: '/item8',
+            title: 'Collab Summit',
+          },
+          {
+            url: '/item9',
+            title: 'Contribute',
+          },
+          {
+            url: '/item10',
+            title: 'Code of Conduct',
+          },
+        ],
+      },
+      {
+        groupName: 'Download',
+        items: [
+          {
+            url: '/item11',
+            title: 'Download',
+          },
+          {
+            url: '/item12',
+            title: 'Package Manager',
+          },
+          {
+            url: '/item13',
+            title: 'Previous Releases',
           },
         ],
       },
     ],
     activeItem: {
-      url: '/item2',
-      title: 'item2',
+      url: '/item1',
+      title: 'About Node.js',
     },
   },
 };
