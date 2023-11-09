@@ -1,0 +1,11 @@
+.icon {
+  @apply fill-neutral-200
+    stroke-white
+    stroke-[4]
+    dark:fill-neutral-800
+    dark:stroke-neutral-950;
+
+  &.active {
+    @apply fill-green-500;
+  }
+}
