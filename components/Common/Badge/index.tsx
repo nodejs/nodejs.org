@@ -1,7 +1,7 @@
 import ArrowRightIcon from '@heroicons/react/24/solid/ArrowRightIcon';
 import type { ComponentProps, FC, PropsWithChildren } from 'react';
 
-import { Link } from '@/navigation.mjs';
+import Link from '@/components/Link';
 
 import styles from './index.module.css';
 

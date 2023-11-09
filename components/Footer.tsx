@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { Link } from '@/navigation.mjs';
+import Link from '@/components/Link';
 
 type FooterProps = { className?: string };
 
