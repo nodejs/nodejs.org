@@ -1,17 +1,12 @@
+import { useTranslations } from 'next-intl';
 import { useMemo } from 'react';
 import type { ComponentProps, FC } from 'react';
-import { FormattedMessage } from 'react-intl';
 
 import AvatarGroup from '@/components/Common/AvatarGroup';
 import Preview from '@/components/Common/Preview';
+import { Time } from '@/components/Common/Time';
 
 import styles from './index.module.css';
-
-const dateTimeFormat = new Intl.DateTimeFormat(navigator.language, {
-  day: 'numeric',
-  month: 'short',
-  year: 'numeric',
-});
 
 type Author = {
   fullName: string;
@@ -33,6 +28,8 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
   authors,
   date,
 }) => {
+  const t = useTranslations();
+
   const avatars = useMemo(
     () =>
       authors.map(({ fullName, src }) => ({
@@ -43,14 +40,6 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
     [authors]
   );
 
-  const formattedDate = useMemo(
-    () => ({
-      ISOString: date.toISOString(),
-      short: dateTimeFormat.format(date),
-    }),
-    [date]
-  );
-
   return (
     <article className={styles.container}>
       <Preview
@@ -59,20 +48,20 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
         height="auto"
         className={styles.preview}
       />
-      <p className={styles.subtitle}>
-        <FormattedMessage id={`components.common.card.${type}`} />
-      </p>
+      <p className={styles.subtitle}>{t(`components.common.card.${type}`)}</p>
       <p aria-hidden="true" className={styles.title}>
         {title}
       </p>
       <p className={styles.description}>{description}</p>
       <footer className={styles.footer}>
         <AvatarGroup avatars={avatars} />
-        <div>
-          <p className={styles.author}>{avatars.join(', ')}</p>
-          <time className={styles.date} dateTime={formattedDate.ISOString}>
-            {formattedDate.short}
-          </time>
+        <div className={styles.author}>
+          <p>{avatars.join(', ')}</p>
+
+          <Time
+            date={date}
+            format={{ day: 'numeric', month: 'short', year: 'numeric' }}
+          />
         </div>
       </footer>
     </article>

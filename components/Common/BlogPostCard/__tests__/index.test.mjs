@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
 import BlogPostCard from '@/components/Common/BlogPostCard';
-import { LocaleProvider } from '@/providers/localeProvider';
 
 function renderBlogPostCard({
   title = 'Blog post title',
@@ -11,15 +10,13 @@ function renderBlogPostCard({
   date = new Date(),
 }) {
   render(
-    <LocaleProvider>
-      <BlogPostCard
-        title={title}
-        type={type}
-        description={description}
-        authors={authors}
-        date={date}
-      />
-    </LocaleProvider>
+    <BlogPostCard
+      title={title}
+      type={type}
+      description={description}
+      authors={authors}
+      date={date}
+    />
   );
 
   return { title, type, description, authors, date };
@@ -56,9 +53,9 @@ describe('BlogPostCard', () => {
     });
 
     it.each([
-      { label: 'Vulnerabilities', type: 'vulnerability' },
-      { label: 'Announcements', type: 'announcement' },
-      { label: 'Releases', type: 'release' },
+      { label: 'components.common.card.vulnerability', type: 'vulnerability' },
+      { label: 'components.common.card.announcement', type: 'announcement' },
+      { label: 'components.common.card.release', type: 'release' },
     ])(
       'Renders "%label" text when passing it the type "%type"',
       ({ label, type }) => {
@@ -111,7 +108,7 @@ describe('BlogPostCard', () => {
 
       renderBlogPostCard({ date });
 
-      const dateTimeFormat = new Intl.DateTimeFormat(navigator.language, {
+      const dateTimeFormat = new Intl.DateTimeFormat('en-US', {
         day: 'numeric',
         month: 'short',
         year: 'numeric',

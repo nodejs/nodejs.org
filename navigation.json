@@ -19,11 +19,11 @@
   },
   "learn": {
     "link": "/learn",
-    "translationId": "components.header.links.learn",
+    "translationId": "components.header.links.learn.title",
     "items": {
       "gettingStarted": {
         "link": "/learn/getting-started/introduction-to-nodejs",
-        "translationId": "components.header.links.learn.gettingStarted",
+        "translationId": "components.header.links.learn.gettingStarted.title",
         "items": {
           "introductionToNodejs": {
             "link": "/learn/getting-started/introduction-to-nodejs",
@@ -69,7 +69,7 @@
       },
       "asynchronousWork": {
         "link": "/learn/asynchronous-work/asynchronous-flow-control",
-        "translationId": "components.header.links.learn.asynchronousWork",
+        "translationId": "components.header.links.learn.asynchronousWork.title",
         "items": {
           "asynchronousFlowControl": {
             "link": "/learn/asynchronous-work/asynchronous-flow-control",
@@ -103,7 +103,7 @@
       },
       "manipulatingFiles": {
         "link": "/learn/manipulating-files/nodejs-file-stats",
-        "translationId": "components.header.links.learn.manipulatingFiles",
+        "translationId": "components.header.links.learn.manipulatingFiles.title",
         "items": {
           "nodejsFileStats": {
             "link": "/learn/manipulating-files/nodejs-file-stats",
@@ -133,7 +133,7 @@
       },
       "commandLine": {
         "link": "/learn/command-line/run-nodejs-scripts-from-the-command-line",
-        "translationId": "components.header.links.learn.commandLine",
+        "translationId": "components.header.links.learn.commandLine.title",
         "items": {
           "runNodejsScriptsFromTheCommandLine": {
             "link": "/learn/command-line/run-nodejs-scripts-from-the-command-line",
@@ -165,7 +165,7 @@
     "items": {
       "shaSums": {
         "link": "https://nodejs.org/dist/{nodeVersion}/SHASUMS256.txt.asc",
-        "translationId": "components.downloadList.links.shaSums"
+        "translationId": "components.downloadList.links.shaSums.title"
       },
       "allDownloads": {
         "link": "https://nodejs.org/dist/{nodeVersion}/",

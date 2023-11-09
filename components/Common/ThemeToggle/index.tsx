@@ -1,6 +1,6 @@
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
+import { useTranslations } from 'next-intl';
 import type { FC, MouseEvent } from 'react';
-import { useIntl } from 'react-intl';
 
 import styles from './index.module.css';
 
@@ -9,11 +9,9 @@ type ThemeToggleProps = {
 };
 
 const ThemeToggle: FC<ThemeToggleProps> = ({ onClick = () => {} }) => {
-  const { formatMessage } = useIntl();
+  const t = useTranslations();
 
-  const ariaLabel = formatMessage({
-    id: 'components.header.buttons.toggleDarkMode',
-  });
+  const ariaLabel = t('components.header.buttons.toggleDarkMode');
 
   return (
     <button

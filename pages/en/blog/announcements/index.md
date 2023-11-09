@@ -1,4 +1,4 @@
 ---
 title: Announcements
-layout: category-index.hbs
+layout: blog-categpry.hbs
 ---

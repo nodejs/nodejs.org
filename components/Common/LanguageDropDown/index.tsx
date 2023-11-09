@@ -1,8 +1,8 @@
 import { LanguageIcon } from '@heroicons/react/24/outline';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import classNames from 'classnames';
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
-import { useIntl } from 'react-intl';
 
 import type { LocaleConfig } from '@/types';
 
@@ -21,11 +21,9 @@ const LanguageDropdown: FC<LanguageDropDownProps> = ({
   currentLanguage,
   availableLanguages,
 }) => {
-  const { formatMessage } = useIntl();
+  const t = useTranslations();
 
-  const ariaLabel = formatMessage({
-    id: 'components.common.languageDropdown.label',
-  });
+  const ariaLabel = t('components.common.languageDropdown.label');
 
   return (
     <DropdownMenu.Root>

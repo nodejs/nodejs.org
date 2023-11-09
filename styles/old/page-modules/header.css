@@ -36,7 +36,6 @@ header {
 
   .header-background-fill {
     fill: $node-gray;
-    transition: fill $dark-transition-time ease;
   }
 
   .switchers {

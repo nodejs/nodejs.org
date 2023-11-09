@@ -1,4 +1,4 @@
 ---
 title: NPM
-layout: category-index.hbs
+layout: blog-categpry.hbs
 ---

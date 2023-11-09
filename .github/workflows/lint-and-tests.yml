@@ -69,13 +69,13 @@ jobs:
           # If the Workflow is running on `merge_group` or `push` events it fallsback to the base repository
           repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
           # We checkout the branch itself instead of a specific SHA (Commit) as we want to ensure that this Workflow
-          # is always running with the latest `ref` (changes) of the Pull Request's branh
+          # is always running with the latest `ref` (changes) of the Pull Request's branch
           # If the Workflow is running on `merge_group` or `push` events it fallsback to `github.ref` which will often be `main`
           # or the merge_group `ref`
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
 
       - name: Restore Lint Cache
-        uses: actions/cache/restore@704facf57e6136b1bc63b828d79edcd491f0ee84
+        uses: actions/cache/restore@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
         with:
           path: |
             .turbo/cache
@@ -95,7 +95,7 @@ jobs:
             cache-lint-
 
       - name: Set up Node.js
-        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
+        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4.0.0
         with:
           # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
@@ -140,7 +140,7 @@ jobs:
           (github.event_name == 'pull_request_target' &&
             startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
             github.event.pull_request.head.ref != 'chore/crowdin')
-        uses: actions/cache/save@704facf57e6136b1bc63b828d79edcd491f0ee84
+        uses: actions/cache/save@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
         with:
           path: |
             .turbo/cache
@@ -179,7 +179,7 @@ jobs:
           # If the Workflow is running on `merge_group` or `push` events it fallsback to the base repository
           repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
           # We checkout the branch itself instead of a specific SHA (Commit) as we want to ensure that this Workflow
-          # is always running with the latest `ref` (changes) of the Pull Request's branh
+          # is always running with the latest `ref` (changes) of the Pull Request's branch
           # If the Workflow is running on `merge_group` or `push` events it fallsback to `github.ref` which will often be `main`
           # or the merge_group `ref`
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
@@ -188,7 +188,7 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Node.js
-        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
+        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4.0.0
         with:
           # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
@@ -216,6 +216,7 @@ jobs:
           (github.event_name == 'pull_request_target' &&
             startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
             github.event.pull_request.head.ref != 'chore/crowdin')
+        # sha reference has no stable git tag reference or URL. see https://github.com/chromaui/chromatic-cli/issues/797
         uses: chromaui/action@807600692d28833b717c155e15ed20905cdc865c
         with:
           buildScriptName: storybook:build
@@ -230,7 +231,7 @@ jobs:
         if: steps.chromatic-deploy.outcome == 'success'
         # This comments the current Jest Coverage Report containing JUnit XML reports
         # and a Code Coverage Summary
-        uses: MishaKav/jest-coverage-comment@41b5ca01d1250de84537448d248b8d18152cb277
+        uses: MishaKav/jest-coverage-comment@41b5ca01d1250de84537448d248b8d18152cb277 # v1.0.23
         with:
           title: 'Unit Test Coverage Report'
           junitxml-path: ./junit.xml

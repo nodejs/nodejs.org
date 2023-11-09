@@ -1,5 +1,8 @@
 'use strict';
 
+import { withSentryConfig } from '@sentry/nextjs';
+import withNextIntl from 'next-intl/plugin';
+
 import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 
@@ -13,6 +16,8 @@ const nextConfig = {
   swcMinify: true,
   // We don't use trailing slashes on URLs from the Node.js Website
   trailingSlash: false,
+  // We don't want to redirect with trailing slashes
+  skipTrailingSlashRedirect: true,
   // We allow the BASE_PATH to be overridden in case that the Website
   // is being built on a subdirectory (e.g. /nodejs-website)
   basePath: BASE_PATH,
@@ -63,4 +68,22 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+// Next.js Config with i18n Configuration
+const withIntlConfig = withNextIntl()(nextConfig);
+
+// Next.js Config with Sentry configuration
+export default withSentryConfig(
+  withIntlConfig,
+  { silent: true, org: 'nodejs-org', project: 'nodejs-org' },
+  {
+    // upload Next.js or third-party code in addition to our code
+    widenClientFileUpload: true,
+    // transpile the Sentry code too since we target older browsers in our .browserslistrc
+    transpileClientSDK: true,
+    // attempt to circumvent ad blockers
+    tunnelRoute: ENABLE_STATIC_EXPORT ? undefined : '/monitoring',
+    // prevent source map comments in built files
+    hideSourceMaps: false,
+    disableLogger: true,
+  }
+);

@@ -1,12 +1,12 @@
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
-import { FormattedMessage } from 'react-intl';
 
-import { useNodeReleases } from '@/hooks/useNodeReleases';
+import { releaseData } from '@/next.json.mjs';
 import { getNodeApiLink } from '@/util/getNodeApiLink';
 import { getNodejsChangelog } from '@/util/getNodeJsChangelog';
 
 const DownloadReleasesTable: FC = () => {
-  const { releases } = useNodeReleases();
+  const t = useTranslations();
 
   return (
     <table id="tbVersions" className="download-table full-width">
@@ -25,7 +25,7 @@ const DownloadReleasesTable: FC = () => {
         </tr>
       </thead>
       <tbody>
-        {releases.map(release => (
+        {releaseData.map(release => (
           <tr key={release.major}>
             <td data-label="Version">Node.js {release.version}</td>
             <td data-label="LTS">{release.codename}</td>
@@ -39,13 +39,13 @@ const DownloadReleasesTable: FC = () => {
               <a
                 href={`https://nodejs.org/download/release/${release.versionWithPrefix}`}
               >
-                <FormattedMessage id="components.downloadReleasesTable.releases" />
+                {t('components.downloadReleasesTable.releases')}
               </a>
               <a href={getNodejsChangelog(release.versionWithPrefix)}>
-                <FormattedMessage id="components.downloadReleasesTable.changelog" />
+                {t('components.downloadReleasesTable.changelog')}
               </a>
               <a href={getNodeApiLink(release.versionWithPrefix)}>
-                <FormattedMessage id="components.downloadReleasesTable.docs" />
+                {t('components.downloadReleasesTable.docs')}
               </a>
             </td>
           </tr>
