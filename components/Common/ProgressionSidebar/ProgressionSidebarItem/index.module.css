@@ -18,7 +18,7 @@
   }
 
   svg {
-    @apply min-w-fit;
+    @apply flex-shrink-0;
   }
 }
 
