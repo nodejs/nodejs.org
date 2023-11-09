@@ -1,5 +1,6 @@
 import Hamburger from '@heroicons/react/24/solid/Bars3Icon';
 import XMark from '@heroicons/react/24/solid/XMarkIcon';
+import * as Label from '@radix-ui/react-label';
 import classNames from 'classnames';
 import Image from 'next/image';
 import { type FC, type ComponentProps, useState } from 'react';
@@ -19,13 +20,18 @@ type NavbarProps = {
   onThemeTogglerClick: () => void;
 };
 
+const navInteractionIcons = {
+  show: <Hamburger className="h-6 w-6" />,
+  close: <XMark className="h-6 w-6" />,
+};
+
 const NavigationBar: FC<NavbarProps> = ({
   navItems,
   currentNavItem,
   languages,
   onThemeTogglerClick,
 }) => {
-  const [showHamIcon, setShowHamIcon] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <nav className={style.container}>
       <div className={style.leftItems}>
@@ -45,17 +51,13 @@ const NavigationBar: FC<NavbarProps> = ({
             alt="Node.js"
           />
         </div>
-        <label
-          onClick={() => setShowHamIcon(prev => !prev)}
+        <Label.Root
+          onClick={() => setIsMenuOpen(prev => !prev)}
           className={style.sidebarItemTogglerLabel}
           htmlFor="sidebarItemToggler"
         >
-          {showHamIcon ? (
-            <Hamburger className="h-6 w-6" />
-          ) : (
-            <XMark className="h-6 w-6" />
-          )}
-        </label>
+          {navInteractionIcons[isMenuOpen ? 'close' : 'show']}
+        </Label.Root>
       </div>
       <input className="peer hidden" id="sidebarItemToggler" type="checkbox" />
       <div className={`${style.main} peer-checked:block`}>
