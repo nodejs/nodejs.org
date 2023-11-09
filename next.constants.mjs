@@ -184,3 +184,9 @@ export const DEFAULT_VIEWPORT = {
   width: 'device-width',
   initialScale: 1,
 };
+
+/**
+ * This is the Sentry DSN for the Node.js Website Project
+ */
+export const SENTRY_DSN =
+  'https://02884d0745aecaadf5f780278fe5fe70@o4506191161786368.ingest.sentry.io/4506191307735040';

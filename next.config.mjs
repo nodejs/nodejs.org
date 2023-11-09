@@ -1,5 +1,6 @@
 'use strict';
 
+import { withSentryConfig } from '@sentry/nextjs';
 import withNextIntl from 'next-intl/plugin';
 
 import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
@@ -67,4 +68,22 @@ const nextConfig = {
   },
 };
 
-export default withNextIntl()(nextConfig);
+// Next.js Config with i18n Configuration
+const withIntlConfig = withNextIntl()(nextConfig);
+
+// Next.js Config with Sentry configuration
+export default withSentryConfig(
+  withIntlConfig,
+  { silent: true, org: 'nodejs-org', project: 'nodejs-org' },
+  {
+    // upload Next.js or third-party code in addition to our code
+    widenClientFileUpload: true,
+    // transpile the Sentry code too since we target older browsers in our .browserslistrc
+    transpileClientSDK: true,
+    // attempt to circumvent ad blockers
+    tunnelRoute: '/monitoring',
+    // prevent source map comments in built files
+    hideSourceMaps: false,
+    disableLogger: true,
+  }
+);
