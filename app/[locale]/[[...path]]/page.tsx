@@ -19,8 +19,8 @@ export const viewport = DEFAULT_VIEWPORT;
 
 // This generates each page's HTML Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-metadata
-export const generateMetadata = async (c: DynamicParams) => {
-  const { path = [], locale = defaultLocale.code } = c.params;
+export const generateMetadata = async ({ params }: DynamicParams) => {
+  const { path = [], locale = defaultLocale.code } = params;
 
   const pathname = dynamicRouter.getPathname(path);
 

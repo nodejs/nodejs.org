@@ -19,15 +19,14 @@ const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
 
   for (const locale of availableLocaleCodes) {
     const routesForLanguage = await dynamicRouter.getRoutesByLanguage(locale);
-
-    paths.push(...routesForLanguage.map(route => `${locale}/${route}`));
+    paths.push(
+      ...routesForLanguage.map(route => `${baseUrlAndPath}/${locale}/${route}`)
+    );
   }
 
   const currentDate = new Date().toISOString();
 
-  const appRoutes = paths.sort().map(route => `${baseUrlAndPath}/${route}`);
-
-  return [...appRoutes, ...EXTERNAL_LINKS_SITEMAP].map(route => ({
+  return [...paths, ...EXTERNAL_LINKS_SITEMAP].map(route => ({
     url: route,
     lastModified: currentDate,
     changeFrequency: 'always',

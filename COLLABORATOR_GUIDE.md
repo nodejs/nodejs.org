@@ -8,7 +8,7 @@
   - [Adding new pages](#adding-new-pages)
     - [Create the page content](#create-the-page-content)
   - [Translating pages](#translating-pages)
-- [Creating Components](#creating-components)
+- [Creating Components](#creating-react-components)
   - [Styling a Component](#styling-a-component)
   - [Best practices when creating a Component](#best-practices-when-creating-a-component)
     - [How a new Component should look like when freshly created](#how-a-new-component-should-look-like-when-freshly-created)
@@ -141,7 +141,7 @@ layout: layout-name.hbs
 ```
 
 > \[!NOTE]\
-> A list of currently available Layouts is provided within `providers/layoutProvider` on the `getLegacyProviders` map.\
+> A list of currently available Layouts is provided within `components/withLayout` on the `layoutComponents` map.\
 > This is a temporary map and this map might change its location and be defined in a different way in the future.
 
 ### Translating Pages
