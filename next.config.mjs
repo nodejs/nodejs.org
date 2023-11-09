@@ -76,9 +76,13 @@ export default withSentryConfig(
   withIntlConfig,
   { silent: true, org: 'nodejs-org', project: 'nodejs-org' },
   {
+    // upload Next.js or third-party code in addition to our code
     widenClientFileUpload: true,
+    // transpile the Sentry code too since we target older browsers in our .browserslistrc
     transpileClientSDK: true,
+    // attempt to circumvent ad blockers
     tunnelRoute: '/monitoring',
+    // prevent source map comments in built files
     hideSourceMaps: false,
     disableLogger: true,
   }
