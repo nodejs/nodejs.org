@@ -27,27 +27,23 @@ ul {
 
   .items li {
     &:first-child {
-      &::before {
-        @apply absolute
-          bottom-[calc(50%+0.25rem)]
-          left-0
-          h-20
-          w-4
-          bg-white
-          dark:bg-neutral-950;
-      }
+      @apply before:absolute
+        before:bottom-[calc(50%+0.25rem)]
+        before:left-0
+        before:h-20
+        before:w-4
+        before:bg-white
+        dark:before:bg-neutral-950;
     }
 
     &:last-child {
-      &::after {
-        @apply absolute
-          left-0
-          top-[calc(50%+0.25rem)]
-          h-20
-          w-4
-          bg-white
-          after:bg-neutral-950;
-      }
+      @apply after:absolute
+        after:left-0
+        after:top-[calc(50%+0.25rem)]
+        after:h-20
+        after:w-4
+        after:bg-white
+        dark:after:bg-neutral-950;
     }
   }
 }
