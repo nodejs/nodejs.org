@@ -1,5 +1,6 @@
 .item {
   @apply relative
+    z-20
     list-none
     overflow-hidden
     p-0;
@@ -25,15 +26,15 @@
       dark:fill-neutral-800
       dark:stroke-neutral-950;
   }
-}
 
-.active {
-  a {
-    @apply text-neutral-900
-      dark:text-white;
-  }
+  &.active {
+    a {
+      @apply text-neutral-900
+        dark:text-white;
+    }
 
-  svg {
-    @apply fill-green-500;
+    svg {
+      @apply fill-green-500;
+    }
   }
 }

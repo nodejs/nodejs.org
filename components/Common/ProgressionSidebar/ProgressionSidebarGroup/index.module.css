@@ -20,32 +20,42 @@ ul {
   .items {
     @apply relative
       -left-1
-      gap-2
-      shadow-progression
-      dark:shadow-progressionDark;
-  }
+      gap-2;
 
-  .items li {
-    &:first-child::before {
+    &::after {
       @apply absolute
-        bottom-[calc(50%+0.25rem)]
-        left-0
-        h-20
-        w-4
-        bg-white
+        left-[calc(0.5rem-0.5px)]
+        top-0
+        z-10
+        h-full
+        w-px
+        bg-neutral-200
         content-['']
-        dark:bg-neutral-950;
+        dark:bg-neutral-800;
     }
 
-    &:last-child::after {
-      @apply absolute
-        left-0
-        top-[calc(50%+0.25rem)]
-        h-20
-        w-4
-        bg-white
-        content-['']
-        dark:bg-neutral-950;
+    li {
+      &:first-child::before {
+        @apply absolute
+          bottom-[calc(50%+0.25rem)]
+          left-0
+          h-20
+          w-4
+          bg-white
+          content-['']
+          dark:bg-neutral-950;
+      }
+
+      &:last-child::after {
+        @apply absolute
+          left-0
+          top-[calc(50%+0.25rem)]
+          h-20
+          w-4
+          bg-white
+          content-['']
+          dark:bg-neutral-950;
+      }
     }
   }
 }
