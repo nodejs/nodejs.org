@@ -122,6 +122,10 @@ export default {
       boxShadow: {
         xs: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)',
         lg: '0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08)',
+        progression:
+          'inset 7px 0 0 theme(colors.white), inset 8px 0 0 theme(colors.neutral[200])',
+        progressionDark:
+          'inset 7px 0 0 theme(colors.neutral[950]), inset 8px 0 0 theme(colors.neutral[800])',
       },
       spacing: {
         '4.5': '1.125rem',

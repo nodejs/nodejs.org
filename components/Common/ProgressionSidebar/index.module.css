@@ -1,6 +1,5 @@
 .wrapper {
   @apply flex
-    h-[calc(100vh-var(--header-height,2rem))]
     flex-col
     gap-8
     overflow-auto

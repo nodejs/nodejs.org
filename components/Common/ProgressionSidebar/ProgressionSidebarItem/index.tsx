@@ -23,7 +23,7 @@ const ProgressionSidebarItem: FC<ProgressionSidebarItemProps> = ({
     })}
   >
     <Link href={url}>
-      <ProgressionSidebarIcon isActive={isActive} />
+      <ProgressionSidebarIcon />
       {title}
     </Link>
   </li>
