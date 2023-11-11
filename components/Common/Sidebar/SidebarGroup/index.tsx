@@ -10,6 +10,7 @@ export type SidebarGroupProps = {
   groupName: string;
   items: SidebarItemProps[];
 };
+
 const SidebarGroup: FC<SidebarGroupProps> = ({ groupName, items }) => {
   return (
     <div className={classNames(styles.group)}>
