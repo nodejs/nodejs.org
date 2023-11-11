@@ -11,17 +11,15 @@ export type SidebarGroupProps = {
   items: SidebarItemProps[];
 };
 
-const SidebarGroup: FC<SidebarGroupProps> = ({ groupName, items }) => {
-  return (
-    <li className={classNames(styles.group)}>
-      <span className={classNames(styles.groupName)}>{groupName}</span>
-      <ul className={classNames(styles.items)}>
-        {items.map((item, key) => (
-          <SidebarItem key={key} {...item} />
-        ))}
-      </ul>
-    </li>
-  );
-};
+const SidebarGroup: FC<SidebarGroupProps> = ({ groupName, items }) => (
+  <li className={classNames(styles.group)}>
+    <span className={classNames(styles.groupName)}>{groupName}</span>
+    <ul className={classNames(styles.items)}>
+      {items.map((item, key) => (
+        <SidebarItem key={key} {...item} />
+      ))}
+    </ul>
+  </li>
+);
 
 export default SidebarGroup;

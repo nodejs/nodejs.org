@@ -10,14 +10,12 @@ type SidebarProps = {
   items: SidebarGroupProps[];
 };
 
-const Sidebar: FC<SidebarProps> = ({ items }) => {
-  return (
-    <ul className={classNames(styles.sidebar)}>
-      {items.map((item, key) => (
-        <SidebarGroup key={key} {...item} />
-      ))}
-    </ul>
-  );
-};
+const Sidebar: FC<SidebarProps> = ({ items }) => (
+  <ul className={classNames(styles.sidebar)}>
+    {items.map((item, key) => (
+      <SidebarGroup key={key} {...item} />
+    ))}
+  </ul>
+);
 
 export default Sidebar;

@@ -11,14 +11,10 @@ export type SidebarItemProps = {
   active?: boolean;
 };
 
-const SidebarItem: FC<SidebarItemProps> = ({ url, title, active = false }) => {
-  return (
-    <li className={classNames(styles.item, { [styles.active]: active })}>
-      <Link href={url}>
-        <span>{title}</span>
-      </Link>
-    </li>
-  );
-};
+const SidebarItem: FC<SidebarItemProps> = ({ url, title, active = false }) => (
+  <li className={classNames(styles.item, { [styles.active]: active })}>
+    <Link href={url}>{title}</Link>
+  </li>
+);
 
 export default SidebarItem;
