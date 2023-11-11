@@ -2,6 +2,7 @@
   @apply box-border
     flex
     w-full
+    list-none
     flex-col
     gap-8
     px-4

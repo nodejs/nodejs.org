@@ -12,11 +12,11 @@ type SidebarProps = {
 
 const Sidebar: FC<SidebarProps> = ({ items }) => {
   return (
-    <div className={classNames(styles.sidebar)}>
+    <ul className={classNames(styles.sidebar)}>
       {items.map((item, key) => (
         <SidebarGroup key={key} {...item} />
       ))}
-    </div>
+    </ul>
   );
 };
 

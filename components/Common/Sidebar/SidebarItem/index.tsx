@@ -13,11 +13,11 @@ export type SidebarItemProps = {
 
 const SidebarItem: FC<SidebarItemProps> = ({ url, title, active = false }) => {
   return (
-    <div className={classNames(styles.item, { [styles.active]: active })}>
+    <li className={classNames(styles.item, { [styles.active]: active })}>
       <Link href={url}>
-        <div>{title}</div>
+        <span>{title}</span>
       </Link>
-    </div>
+    </li>
   );
 };
 

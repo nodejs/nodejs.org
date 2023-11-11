@@ -17,5 +17,7 @@
 .items {
   @apply flex
     w-full
-    flex-col;
+    list-none
+    flex-col
+    p-0;
 }
