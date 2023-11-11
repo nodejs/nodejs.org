@@ -1,0 +1,29 @@
+.item {
+  @apply box-border
+    w-full
+    rounded
+    p-2
+    leading-5;
+
+  & > a,
+  &:hover > a {
+    @apply text-neutral-800
+      dark:text-neutral-200;
+  }
+
+  &.active {
+    @apply bg-green-600;
+
+    & > a {
+      @apply text-white;
+    }
+
+    &:hover {
+      @apply bg-green-700;
+
+      & > a {
+        @apply text-white;
+      }
+    }
+  }
+}
