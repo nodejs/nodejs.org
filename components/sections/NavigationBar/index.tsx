@@ -7,6 +7,7 @@ import { type FC, type ComponentProps, useState } from 'react';
 
 import LanguageDropdown from '@/components/Common/LanguageDropDown';
 import ThemeToggle from '@/components/Common/ThemeToggle';
+import Github from '@/components/Icons/Github';
 import NavItem from '@/components/sections/NavItem';
 import { BASE_PATH } from '@/next.constants.mjs';
 
@@ -80,24 +81,11 @@ const NavigationBar: FC<NavbarProps> = ({
             availableLanguages={languages.availableLanguages}
             currentLanguage={languages.currentLanguage}
           />
-          <button className={style.ghIconWrapper} aria-label="Node.js Github">
-            <a href="https://github.com/nodejs/node">
-              <Image
-                className="dark:hidden"
-                alt="Github Icon"
-                width={20}
-                height={20}
-                src={`${BASE_PATH}/static/images/logos/social-github-dark.svg`}
-              />
-              <Image
-                className="hidden dark:block"
-                alt="Github Icon"
-                width={20}
-                height={20}
-                src={`${BASE_PATH}/static/images/logos/social-github.svg`}
-              />
-            </a>
-          </button>
+          <a href="https://github.com/nodejs/node">
+            <button className={style.ghIconWrapper} aria-label="Node.js Github">
+              <Github size={20} />
+            </button>
+          </a>
         </div>
       </div>
     </nav>
