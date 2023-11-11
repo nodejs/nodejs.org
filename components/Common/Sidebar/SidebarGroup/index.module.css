@@ -7,7 +7,7 @@
 }
 
 .groupName {
-  @apply text-sm
+  @apply text-xs
     font-semibold
     leading-4
     text-neutral-800
