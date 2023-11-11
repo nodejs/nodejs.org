@@ -37,7 +37,7 @@ const DownloadReleasesTable: FC = () => {
             <td data-label="NODE_MODULE_VERSION">{release.modules}</td>
             <td className="download-table-last">
               <a
-                href={`https://nodejs.org/download/release/${release.versionWithPrefix}`}
+                href={`https://nodejs.org/download/release/${release.versionWithPrefix}/`}
               >
                 {t('components.downloadReleasesTable.releases')}
               </a>
