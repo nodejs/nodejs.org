@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { Fragment, useMemo } from 'react';
 import type { FC } from 'react';
 
-import { Link } from '@/navigation.mjs';
+import Link from '@/components/Link';
 
 import styles from './index.module.css';
 

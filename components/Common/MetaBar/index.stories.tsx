@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import AvatarGroup from '@/components/Common/AvatarGroup';
 import MetaBar from '@/components/Common/MetaBar';
-import { Link } from '@/navigation.mjs';
+import Link from '@/components/Link';
 
 type Story = StoryObj<typeof MetaBar>;
 type Meta = MetaObj<typeof MetaBar>;

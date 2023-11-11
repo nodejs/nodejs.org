@@ -3,8 +3,8 @@
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
+import Link from '@/components/Link';
 import { useDetectOS } from '@/hooks';
-import { Link } from '@/navigation.mjs';
 import { DIST_URL } from '@/next.constants.mjs';
 import type { NodeRelease } from '@/types';
 import { downloadUrlByOS } from '@/util/downloadUrlByOS';

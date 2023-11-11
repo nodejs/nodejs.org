@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import { Link } from '@/navigation.mjs';
+import Link from '@/components/Link';
 
 type PaginationProps = { prev?: number; next?: number };
 

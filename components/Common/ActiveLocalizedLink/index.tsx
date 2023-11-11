@@ -3,7 +3,8 @@
 import classNames from 'classnames';
 import type { ComponentProps, FC } from 'react';
 
-import { Link, usePathname } from '@/navigation.mjs';
+import Link from '@/components/Link';
+import { usePathname } from '@/navigation.mjs';
 
 type ActiveLocalizedLinkProps = ComponentProps<typeof Link> & {
   activeClassName: string;

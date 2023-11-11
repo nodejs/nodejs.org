@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import type { ComponentProps, FC } from 'react';
 
-import { Link } from '@/navigation.mjs';
+import Link from '@/components/Link';
 
 import styles from './index.module.css';
 
