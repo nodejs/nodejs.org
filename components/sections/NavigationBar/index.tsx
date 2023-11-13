@@ -83,7 +83,7 @@ const NavigationBar: FC<NavbarProps> = ({
           />
           <a href="https://github.com/nodejs/node">
             <button className={style.ghIconWrapper} aria-label="Node.js Github">
-              <Github size={20} />
+              <Github />
             </button>
           </a>
         </div>

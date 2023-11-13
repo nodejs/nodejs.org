@@ -72,9 +72,12 @@
   @apply h-9
     w-9
     rounded-md
-    p-2
-    text-neutral-700
-    dark:text-neutral-300;
+    p-2;
+
+  svg {
+    @apply fill-neutral-700
+    dark:fill-neutral-300;
+  }
 
   &:hover {
     @apply bg-neutral-100
