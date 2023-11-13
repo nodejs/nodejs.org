@@ -1,6 +1,7 @@
 import classNames from 'classnames';
-import Link from 'next/link';
 import type { FC } from 'react';
+
+import Link from '@/components/Link';
 
 import styles from './index.module.css';
 
