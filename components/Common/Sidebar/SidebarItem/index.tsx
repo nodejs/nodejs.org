@@ -1,7 +1,6 @@
 import classNames from 'classnames';
+import Link from 'next/link';
 import type { FC } from 'react';
-
-import LocalizedLink from '@/components/LocalizedLink';
 
 import styles from './index.module.css';
 
@@ -21,7 +20,7 @@ const SidebarItem: FC<SidebarItemProps> = ({
       [styles.active]: isActive,
     })}
   >
-    <LocalizedLink href={url}>{title}</LocalizedLink>
+    <Link href={url}>{title}</Link>
   </li>
 );
 
