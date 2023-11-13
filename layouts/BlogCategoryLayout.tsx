@@ -3,9 +3,9 @@ import { useMemo } from 'react';
 import type { FC } from 'react';
 
 import { Time } from '@/components/Common/Time';
+import Link from '@/components/Link';
 import Pagination from '@/components/Pagination';
 import { useClientContext, useBlogData } from '@/hooks/server';
-import { Link } from '@/navigation.mjs';
 import type { BlogPost } from '@/types';
 
 const BlogCategoryLayout: FC = () => {

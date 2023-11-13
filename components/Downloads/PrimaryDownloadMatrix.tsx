@@ -4,9 +4,9 @@ import classNames from 'classnames';
 import type { FC } from 'react';
 import semVer from 'semver';
 
+import Link from '@/components/Link';
 import { WithCurrentOS } from '@/components/withCurrentOS';
 import { useClientContext } from '@/hooks';
-import { Link } from '@/navigation.mjs';
 import { DIST_URL } from '@/next.constants.mjs';
 import type { NodeRelease } from '@/types';
 

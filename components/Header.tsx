@@ -6,8 +6,9 @@ import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { useState } from 'react';
 
+import Link from '@/components/Link';
 import { useIsCurrentPathname, useSiteNavigation } from '@/hooks';
-import { Link, usePathname } from '@/navigation.mjs';
+import { usePathname } from '@/navigation.mjs';
 import { BASE_PATH } from '@/next.constants.mjs';
 import { availableLocales } from '@/next.locales.mjs';
 
