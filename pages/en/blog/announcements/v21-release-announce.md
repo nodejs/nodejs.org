@@ -19,7 +19,7 @@ work since the last major release. This blog post will add some additional conte
 
 You can read more about our release policy at <https://github.com/nodejs/release>.
 
-To download Node.js 21.0.0, visit: </download/current/>. You can find the release post at </blog/release/v21.0.0>,
+To download Node.js 21.0.0, visit: <https://nodejs.org/en/download/current/>. You can find the release post at <https://nodejs.org/en/blog/release/v21.0.0>,
 which contains the full list of commits included in this release.
 
 ## Notable Changes

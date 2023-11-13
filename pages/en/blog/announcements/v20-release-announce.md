@@ -13,7 +13,7 @@ The project continues to make progress across a number of areas, with many new f
 
 You can read more about our release policy at <https://github.com/nodejs/release>.
 
-To download Node.js 20.0.0, visit: </download/current/>. You can find the release post at </blog/release/v20.0.0>, which contains the full list of commits included in this release.
+To download Node.js 20.0.0, visit: <https://nodejs.org/en/download/current/>. You can find the release post at <https://nodejs.org/en/blog/release/v20.0.0>, which contains the full list of commits included in this release.
 
 As a reminder, Node.js 20 will enter long-term support (LTS) in October, but until then, it will be the "Current" release for the next six months.
 We encourage you to explore the new features and benefits offered by this latest release and evaluate their potential impact on your applications.
@@ -188,7 +188,7 @@ Try out the new Node.js 20 release! We’re always happy to hear your feedback. 
 
 Also of note is that Node.js 14 will go End-of-Life in April 2023, so we advise you to start planning to upgrade to Node.js 18 (LTS) or Node.js 20 (soon to be LTS).
 
-Please, consider that Node.js 16 (LTS) will go End-of-Life in September 2023, which was brought forward from April 2024 to coincide with the end of support of OpenSSL 1.1.1. You can read more details about that decision at </blog/announcements/nodejs16-eol/>.
+Please, consider that Node.js 16 (LTS) will go End-of-Life in September 2023, which was brought forward from April 2024 to coincide with the end of support of OpenSSL 1.1.1. You can read more details about that decision at <https://nodejs.org/en/blog/announcements/nodejs16-eol/>.
 
 Looking to the future, the [Next-10](https://github.com/nodejs/next-10) team is running a survey to gather info from the ecosystem. Help shape the future of Node.js by participating. Submit your feedback [here](https://linuxfoundation.surveymonkey.com/r/XJ35LYF).
 
