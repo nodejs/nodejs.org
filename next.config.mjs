@@ -84,6 +84,7 @@ export default withSentryConfig(
     tunnelRoute: ENABLE_STATIC_EXPORT ? undefined : '/monitoring',
     // prevent source map comments in built files
     hideSourceMaps: false,
+    // tree shake sentry stuff from the bundle
     disableLogger: true,
   }
 );

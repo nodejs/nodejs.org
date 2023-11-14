@@ -5,9 +5,14 @@ export const getBitness = async () => {
   // [MDN](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/getHighEntropyValues)
   // [MSFT](https://learn.microsoft.com/en-us/microsoft-edge/web-platform/how-to-detect-win11)
   if (typeof navigator?.userAgentData?.getHighEntropyValues === 'function') {
-    return navigator.userAgentData
-      .getHighEntropyValues(['bitness'])
-      .then(ua => ua.bitness);
+    const entropyValues = navigator.userAgentData.getHighEntropyValues([
+      'bitness',
+    ]);
+
+    // Apparently in some cases this is not a Promise, then we should ignore
+    if (entropyValues instanceof Promise) {
+      return entropyValues.then(ua => ua.bitness);
+    }
   }
 
   return undefined;

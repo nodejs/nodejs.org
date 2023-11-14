@@ -5,7 +5,7 @@ import { SENTRY_DSN } from '@/next.constants.mjs';
 init({
   // tell Sentry where to send events
   dsn: SENTRY_DSN,
-  // percentage of events to send to Sentry (all of them)
+  // percentage of events to send to Sentry (all of them) (for performance metrics)
   tracesSampleRate: 1,
   // percentage of errors to sample (all of them)
   replaysOnErrorSampleRate: 1.0,
