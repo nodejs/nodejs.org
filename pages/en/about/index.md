@@ -62,7 +62,7 @@ which allows you to share sockets between processes to enable load balancing
 over your cores.
 
 [blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
-[`child_process.fork()`]: /api/child_process/
+[`child_process.fork()`]: https://nodejs.org/api/child_process.html
 [`cluster`]: https://nodejs.org/api/cluster.html
 [event machine]: https://github.com/eventmachine/eventmachine
 [twisted]: https://twistedmatrix.com/trac/
