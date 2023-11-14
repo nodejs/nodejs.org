@@ -1,4 +1,4 @@
 ---
 title: Releases
-layout: blog-categpry.hbs
+layout: blog-category.hbs
 ---
