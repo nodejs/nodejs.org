@@ -32,7 +32,8 @@
 }
 
 .sidebarItemTogglerLabel {
-  @apply block md:hidden;
+  @apply block
+    md:hidden;
 }
 
 .main {
@@ -61,11 +62,10 @@
     gap-2
     border-b
     border-neutral-200
-    px-4
-    py-4
+    p-4
     dark:border-neutral-900
     md:border-0
-    md:py-0;
+    md:p-0;
 }
 
 .ghIconWrapper {
