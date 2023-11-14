@@ -7,10 +7,10 @@ import type { FC, ComponentProps } from 'react';
 
 import LanguageDropdown from '@/components/Common/LanguageDropDown';
 import ThemeToggle from '@/components/Common/ThemeToggle';
+import NavItem from '@/components/Containers/NavItem';
 import GithubLogo from '@/components/Icons/GitHubLogo';
 import NodejsLogoDark from '@/components/Icons/NodejsLogoDark';
 import NodejsLogoLight from '@/components/Icons/NodejsLogoLight';
-import NavItem from '@/components/sections/NavItem';
 
 import style from './index.module.css';
 
