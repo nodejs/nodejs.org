@@ -16,4 +16,20 @@ init({
   // we only want to capture errors from _next folder on production
   // we don't want to capture errors from preview branches here
   allowUrls: ['https://nodejs.org/_next'],
+  // Filter-out Events/Errors that are invalid for us
+  beforeSend: (event, hint) => {
+    const originalException = hint.originalException as Error;
+
+    // All the Events we send must have a message and stack trace
+    if (originalException?.message && originalException?.stack) {
+      // All our Events come eventually from code that originates on node_modules
+      // so everything else should be discarded
+      // Even React Errors or other errors will eventually have node_modules in the code
+      if (String(originalException.stack).includes('node_modules')) {
+        return event;
+      }
+    }
+
+    return null;
+  },
 });
