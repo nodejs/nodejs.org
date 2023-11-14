@@ -2,7 +2,8 @@ import Hamburger from '@heroicons/react/24/solid/Bars3Icon';
 import XMark from '@heroicons/react/24/solid/XMarkIcon';
 import * as Label from '@radix-ui/react-label';
 import classNames from 'classnames';
-import { type FC, type ComponentProps, useState } from 'react';
+import { useState } from 'react';
+import type { FC, ComponentProps } from 'react';
 
 import LanguageDropdown from '@/components/Common/LanguageDropDown';
 import ThemeToggle from '@/components/Common/ThemeToggle';
@@ -38,8 +39,8 @@ const NavigationBar: FC<NavbarProps> = ({
     <nav className={style.container}>
       <div className={style.nodeIconAndMobileItemsToggler}>
         <div className={style.nodeIconWrapper}>
-          <NodejsLogoDark className="h-6 w-20 dark:hidden" />
-          <NodejsLogoLight className="hidden h-6 w-20 dark:block" />
+          <NodejsLogoDark className={style.nodejsLogoDark} />
+          <NodejsLogoLight className={style.nodejsLogoLight} />
         </div>
         <Label.Root
           onClick={() => setIsMenuOpen(prev => !prev)}
@@ -70,10 +71,11 @@ const NavigationBar: FC<NavbarProps> = ({
             availableLanguages={languages.availableLanguages}
             currentLanguage={languages.currentLanguage}
           />
-          <a href="https://github.com/nodejs/node">
-            <button className={style.ghIconWrapper} aria-label="Node.js Github">
-              <GithubLogo />
-            </button>
+          <a
+            className={style.ghIconWrapper}
+            href="https://github.com/nodejs/node"
+          >
+            <GithubLogo />
           </a>
         </div>
       </div>

@@ -31,6 +31,19 @@
     flex-1;
 }
 
+.nodejsLogoDark {
+  @apply h-6
+    w-20
+    dark:hidden;
+}
+
+.nodejsLogoLight {
+  @apply hidden
+    h-6
+    w-20
+    dark:block;
+}
+
 .navInteractionIcon {
   @apply h-6
     w-6;
@@ -74,14 +87,12 @@
 }
 
 .ghIconWrapper {
-  @apply h-9
-    w-9
-    rounded-md
+  @apply rounded-md
     p-2;
 
   svg {
     @apply fill-neutral-700
-    dark:fill-neutral-300;
+      dark:fill-neutral-300;
   }
 
   &:hover {
