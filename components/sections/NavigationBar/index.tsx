@@ -23,8 +23,8 @@ type NavbarProps = {
 };
 
 const navInteractionIcons = {
-  show: <Hamburger className="h-6 w-6" />,
-  close: <XMark className="h-6 w-6" />,
+  show: <Hamburger className={style.navInteractionIcon} />,
+  close: <XMark className={style.navInteractionIcon} />,
 };
 
 const NavigationBar: FC<NavbarProps> = ({
@@ -36,7 +36,7 @@ const NavigationBar: FC<NavbarProps> = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <nav className={style.container}>
-      <div className={style.leftItems}>
+      <div className={style.nodeIconAndMobileItemsToggler}>
         <div className={style.nodeIconWrapper}>
           <NodejsLogoDark className="h-6 w-20 dark:hidden" />
           <NodejsLogoLight className="hidden h-6 w-20 dark:block" />
@@ -55,7 +55,7 @@ const NavigationBar: FC<NavbarProps> = ({
           {navItems.map(({ text, href }) => (
             <NavItem
               className={classNames('md:bg-transparent', {
-                'bg-green-600 !text-white': currentNavItem === text,
+                'bg-green-600': currentNavItem === text,
               })}
               key={text}
               href={href}
@@ -64,7 +64,7 @@ const NavigationBar: FC<NavbarProps> = ({
             </NavItem>
           ))}
         </div>
-        <div className={style.rightItems}>
+        <div className={style.actionsWrapper}>
           <ThemeToggle onClick={onThemeTogglerClick} />
           <LanguageDropdown
             availableLanguages={languages.availableLanguages}

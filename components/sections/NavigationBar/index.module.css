@@ -10,7 +10,7 @@
     md:px-8;
 }
 
-.leftItems {
+.nodeIconAndMobileItemsToggler {
   @apply flex
     h-16
     shrink-0
@@ -29,6 +29,11 @@
 .nodeIconWrapper {
   @apply h-[30px]
     flex-1;
+}
+
+.navInteractionIcon {
+  @apply h-6
+    w-6;
 }
 
 .sidebarItemTogglerLabel {
@@ -57,7 +62,7 @@
     md:p-0;
 }
 
-.rightItems {
+.actionsWrapper {
   @apply flex
     gap-2
     border-b
