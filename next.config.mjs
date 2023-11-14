@@ -65,6 +65,8 @@ const nextConfig = {
     ],
     // Removes the warning regarding the WebPack Build Worker
     webpackBuildWorker: false,
+    // Otherwise Build fails due to unrecognizable character
+    serverComponentsExternalPackages: ['@sentry/profiling-node'],
   },
 };
 
