@@ -1,6 +1,6 @@
 .container {
   @apply border-neutral-200
-  	dark:border-neutral-900
+    dark:border-neutral-900
     md:flex
     md:h-16
     md:flex-row
