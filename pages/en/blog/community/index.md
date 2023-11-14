@@ -1,4 +1,4 @@
 ---
 title: Community
-layout: blog-categpry.hbs
+layout: blog-category.hbs
 ---

@@ -14,7 +14,7 @@ import type { LegacyLayouts } from '@/types';
 const layoutComponents = {
   'docs.hbs': DocsLayout,
   'about.hbs': AboutLayout,
-  'blog-categpry.hbs': BlogCategoryLayout,
+  'blog-category.hbs': BlogCategoryLayout,
   'blog-post.hbs': BlogPostLayout,
   'contribute.hbs': ContributeLayout,
   'download.hbs': DownloadLayout,
