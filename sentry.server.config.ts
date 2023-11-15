@@ -1,15 +1,17 @@
 import { init } from '@sentry/nextjs';
 import { ProfilingIntegration } from '@sentry/profiling-node';
 
-import { SENTRY_DSN } from '@/next.constants.mjs';
+import { SENTRY_DSN, VERCEL_ENV } from '@/next.constants.mjs';
 
 init({
-  // tell Sentry where to send events
+  // Only run Sentry on Vercel Environment
+  enabled: !!VERCEL_ENV,
+  // Tell Sentry where to send events
   dsn: SENTRY_DSN,
-  // percentage of events to send to Sentry (all of them) (for performance metrics)
+  // Percentage of events to send to Sentry (all of them) (for performance metrics)
   tracesSampleRate: 1,
-  // percentage of events to send to Sentry (all of them) (for profiling metrics)
+  // Percentage of events to send to Sentry (all of them) (for profiling metrics)
   profilesSampleRate: 1.0,
-  // add profiling integration to capture performance metrics
+  // Add profiling integration to capture performance metrics
   integrations: [new ProfilingIntegration()],
 });

@@ -1,20 +1,22 @@
 import { init, Replay } from '@sentry/nextjs';
 
-import { SENTRY_DSN } from '@/next.constants.mjs';
+import { SENTRY_DSN, VERCEL_ENV } from '@/next.constants.mjs';
 
 init({
-  // tell Sentry where to send events
+  // Only run Sentry on Vercel Environment
+  enabled: !!VERCEL_ENV,
+  // Tell Sentry where to send events
   dsn: SENTRY_DSN,
-  // percentage of events to send to Sentry (all of them) (for performance metrics)
+  // Percentage of events to send to Sentry (all of them) (for performance metrics)
   tracesSampleRate: 1,
-  // percentage of errors to sample (all of them)
+  // Percentage of errors to sample (all of them)
   replaysOnErrorSampleRate: 1.0,
-  // percentage of sessionsto sample (10%)
+  // Percentage of sessionsto sample (10%)
   replaysSessionSampleRate: 0.1,
-  // support replaying client sessions to capture unhappy paths
+  // Support replaying client sessions to capture unhappy paths
   integrations: [new Replay()],
-  // we only want to capture errors from _next folder on production
-  // we don't want to capture errors from preview branches here
+  // We only want to capture errors from _next folder on production
+  // We don't want to capture errors from preview branches here
   allowUrls: ['https://nodejs.org/_next'],
   // Filter-out Events/Errors that are invalid for us
   beforeSend: (event, hint) => {
