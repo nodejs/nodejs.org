@@ -58,6 +58,7 @@
 .main {
   @apply hidden
     flex-1
+    flex-col
     md:flex
     md:flex-row
     md:items-center;

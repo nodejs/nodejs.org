@@ -50,7 +50,7 @@ const NavigationBar: FC<NavbarProps> = ({
         </Label.Root>
       </div>
       <input className="peer hidden" id="sidebarItemToggler" type="checkbox" />
-      <div className={`${style.main} peer-checked:block`}>
+      <div className={`${style.main} peer-checked:flex`}>
         <div className={style.navItems}>
           {navItems.map(({ text, href }) => (
             <NavItem key={text} href={href}>
