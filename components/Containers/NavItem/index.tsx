@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import type { FC, PropsWithChildren } from 'react';
 import { useMemo } from 'react';
 
-import ActiveLocalizedLink from '@/components/Common/ActiveLocalizedLink';
+import ActiveLink from '@/components/Common/ActiveLink';
 
 import styles from './index.module.css';
 
@@ -22,19 +22,19 @@ const NavItem: FC<PropsWithChildren<NavItemProps>> = ({
   className,
 }) => {
   const showIcon = useMemo(
-    () => type === 'nav' && !href.toString().startsWith('/'),
+    () => type === 'nav' && href.toString().startsWith('http'),
     [href, type]
   );
 
   return (
-    <ActiveLocalizedLink
+    <ActiveLink
       href={href}
       className={classNames(styles.navItem, styles[type], className)}
       activeClassName={styles.active}
     >
       <span className={styles.label}>{children}</span>
       {showIcon && <ArrowUpRightIcon className={styles.icon} />}
-    </ActiveLocalizedLink>
+    </ActiveLink>
   );
 };
 

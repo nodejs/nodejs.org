@@ -1,28 +1,24 @@
 'use client';
 
-import classNames from 'classnames';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { useState } from 'react';
 
+import ActiveLink from '@/components/Common/ActiveLink';
 import Link from '@/components/Link';
-import { useIsCurrentPathname, useSiteNavigation } from '@/hooks';
+import { useSiteNavigation } from '@/hooks';
 import { usePathname } from '@/navigation.mjs';
 import { BASE_PATH } from '@/next.constants.mjs';
 import { availableLocales } from '@/next.locales.mjs';
 
 const Header = () => {
   const { navigationItems } = useSiteNavigation();
-  const { isCurrentLocaleRoute } = useIsCurrentPathname();
   const [showLangPicker, setShowLangPicker] = useState(false);
   const { theme, setTheme } = useTheme();
 
   const pathname = usePathname();
   const t = useTranslations();
-
-  const getLinkClassName = (href: string) =>
-    classNames({ active: isCurrentLocaleRoute(href, href !== '/') });
 
   const toggleLanguage = t('components.header.buttons.toggleLanguage');
   const toggleDarkMode = t('components.header.buttons.toggleDarkMode');
@@ -43,8 +39,10 @@ const Header = () => {
         <nav aria-label="primary">
           <ul className="list-divider-pipe">
             {navigationItems.map((item, key) => (
-              <li key={key} className={getLinkClassName(item.link)}>
-                <Link href={item.link}>{item.text}</Link>
+              <li key={key}>
+                <ActiveLink href={item.link} allowSubPath>
+                  {item.text}
+                </ActiveLink>
               </li>
             ))}
           </ul>

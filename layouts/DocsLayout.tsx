@@ -1,5 +1,3 @@
-'use client';
-
 import type { RichTranslationValues } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
 
