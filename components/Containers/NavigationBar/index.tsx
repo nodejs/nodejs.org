@@ -3,7 +3,6 @@
 import Hamburger from '@heroicons/react/24/solid/Bars3Icon';
 import XMark from '@heroicons/react/24/solid/XMarkIcon';
 import * as Label from '@radix-ui/react-label';
-import classNames from 'classnames';
 import { useState } from 'react';
 import type { FC, ComponentProps } from 'react';
 
@@ -20,7 +19,6 @@ type NavItem = { text: string; href: string };
 
 type NavbarProps = {
   navItems: NavItem[];
-  currentNavItem: string;
   languages: ComponentProps<typeof LanguageDropdown>;
   onThemeTogglerClick: () => void;
 };
@@ -32,13 +30,12 @@ const navInteractionIcons = {
 
 const NavigationBar: FC<NavbarProps> = ({
   navItems,
-  currentNavItem,
   languages,
   onThemeTogglerClick,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <nav className={style.container}>
+    <nav className={`${style.container}`}>
       <div className={style.nodeIconAndMobileItemsToggler}>
         <div className={style.nodeIconWrapper}>
           <NodejsLogoDark className={style.nodejsLogoDark} />
@@ -56,13 +53,7 @@ const NavigationBar: FC<NavbarProps> = ({
       <div className={`${style.main} peer-checked:block`}>
         <div className={style.navItems}>
           {navItems.map(({ text, href }) => (
-            <NavItem
-              className={classNames('md:bg-transparent', {
-                'bg-green-600': currentNavItem === text,
-              })}
-              key={text}
-              href={href}
-            >
+            <NavItem key={text} href={href}>
               {text}
             </NavItem>
           ))}

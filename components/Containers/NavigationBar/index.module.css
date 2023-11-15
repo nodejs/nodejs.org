@@ -51,6 +51,7 @@
 
 .sidebarItemTogglerLabel {
   @apply block
+    cursor-pointer
     md:hidden;
 }
 
@@ -58,7 +59,8 @@
   @apply hidden
     flex-1
     md:flex
-    md:flex-row;
+    md:flex-row
+    md:items-center;
 }
 
 .navItems {
@@ -77,6 +79,7 @@
 
 .actionsWrapper {
   @apply flex
+    items-center
     gap-2
     border-b
     border-neutral-200
@@ -87,7 +90,9 @@
 }
 
 .ghIconWrapper {
-  @apply rounded-md
+  @apply h-9
+    w-9
+    rounded-md
     p-2;
 
   svg {
