@@ -4,8 +4,8 @@ import classNames from 'classnames';
 import type { RichTranslationValues } from 'next-intl';
 import type { FC } from 'react';
 
+import Link from '@/components/Link';
 import { useIsCurrentPathname, useSiteNavigation } from '@/hooks';
-import { Link } from '@/navigation.mjs';
 import type { NavigationKeys } from '@/types';
 
 type SideNavigationProps = {

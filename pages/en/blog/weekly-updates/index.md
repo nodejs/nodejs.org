@@ -1,4 +1,4 @@
 ---
 title: Weekly Updates
-layout: blog-categpry.hbs
+layout: blog-category.hbs
 ---

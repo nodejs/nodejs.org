@@ -1,8 +1,8 @@
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
+import Link from '@/components/Link';
 import { useSiteNavigation } from '@/hooks/server';
-import { Link } from '@/navigation.mjs';
 import type { NodeRelease } from '@/types';
 
 const DownloadList: FC<NodeRelease> = ({ versionWithPrefix }) => {

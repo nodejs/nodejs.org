@@ -12,7 +12,7 @@ export const Default: Story = {
       { name: 'French', code: 'fr' },
       { name: 'Spanish', code: 'es' },
     ],
-    currentLanguage: { name: 'English', code: 'en' },
+    currentLanguage: 'en',
   },
 };
 

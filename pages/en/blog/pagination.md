@@ -1,5 +1,5 @@
 ---
 title: News from
-layout: blog-categpry.hbs
+layout: blog-category.hbs
 author: The Node.js Project
 ---

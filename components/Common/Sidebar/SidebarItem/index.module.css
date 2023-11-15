@@ -1,0 +1,25 @@
+.sideBarItem {
+  @apply flex
+    w-full
+    list-none;
+
+  a {
+    @apply w-full
+      p-2
+      text-sm
+      font-regular
+      text-neutral-800
+      dark:text-neutral-200;
+  }
+}
+
+.active {
+  @apply rounded
+    bg-green-600;
+
+  a,
+  a:hover {
+    @apply text-white
+    dark:text-white;
+  }
+}

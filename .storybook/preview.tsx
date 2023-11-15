@@ -23,7 +23,7 @@ const rootClasses = classNames(
 
 const preview: Preview = {
   parameters: {
-    nextjs: { router: { basePath: '' } },
+    nextjs: { router: { basePath: '' }, appDirectory: true },
     chromatic: { modes: STORYBOOK_MODES },
     viewport: { defaultViewport: 'large', viewports: STORYBOOK_SIZES },
   },

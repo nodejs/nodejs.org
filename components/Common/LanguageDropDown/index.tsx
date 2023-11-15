@@ -12,7 +12,7 @@ type SimpleLocaleConfig = Pick<LocaleConfig, 'name' | 'code'>;
 
 type LanguageDropDownProps = {
   onChange?: (newLocale: SimpleLocaleConfig) => void;
-  currentLanguage: SimpleLocaleConfig;
+  currentLanguage: string;
   availableLanguages: SimpleLocaleConfig[];
 };
 
@@ -45,7 +45,7 @@ const LanguageDropdown: FC<LanguageDropDownProps> = ({
                 key={code}
                 onClick={() => onChange({ name, code })}
                 className={classNames(styles.dropDownItem, {
-                  [styles.currentDropDown]: code === currentLanguage.code,
+                  [styles.currentDropDown]: code === currentLanguage,
                 })}
               >
                 {name}

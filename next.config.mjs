@@ -65,25 +65,41 @@ const nextConfig = {
     ],
     // Removes the warning regarding the WebPack Build Worker
     webpackBuildWorker: false,
+    // Sentry Profiling Module should be treated as an external symbol
+    serverComponentsExternalPackages: ['@sentry/profiling-node'],
   },
 };
 
-// Next.js Config with i18n Configuration
-const withIntlConfig = withNextIntl()(nextConfig);
+/** @type {import('@sentry/cli').SentryCliOptions} */
+const sentrySettings = {
+  // We don't want Sentry to emit logs
+  silent: true,
+  // Define the Sentry Organisation
+  org: 'nodejs-org',
+  // Define the Sentry Project on our Sentry Organisation
+  project: 'nodejs-org',
+};
 
-// Next.js Config with Sentry configuration
+/** @type {import('@sentry/nextjs/types/config/types').UserSentryOptions} */
+const sentryConfig = {
+  // Upload Next.js or third-party code in addition to our code
+  widenClientFileUpload: true,
+  // Transpile the Sentry code too since we target older browsers in our .browserslistrc
+  transpileClientSDK: true,
+  // Attempt to circumvent ad blockers
+  tunnelRoute: ENABLE_STATIC_EXPORT ? undefined : '/monitoring',
+  // Prevent source map comments in built files
+  hideSourceMaps: false,
+  // Tree shake Sentry stuff from the bundle
+  disableLogger: true,
+};
+
+// Next.js Config with Sentry Configuration
 export default withSentryConfig(
-  withIntlConfig,
-  { silent: true, org: 'nodejs-org', project: 'nodejs-org' },
-  {
-    // upload Next.js or third-party code in addition to our code
-    widenClientFileUpload: true,
-    // transpile the Sentry code too since we target older browsers in our .browserslistrc
-    transpileClientSDK: true,
-    // attempt to circumvent ad blockers
-    tunnelRoute: ENABLE_STATIC_EXPORT ? undefined : '/monitoring',
-    // prevent source map comments in built files
-    hideSourceMaps: false,
-    disableLogger: true,
-  }
+  // Next.js Config with i18n Configuration
+  withNextIntl()(nextConfig),
+  // Default Sentry Settings
+  sentrySettings,
+  // Default Sentry Extension Configuration
+  sentryConfig
 );
