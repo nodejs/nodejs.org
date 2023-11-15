@@ -10,7 +10,9 @@ export const getBitness = async () => {
     ]);
 
     // Apparently in some cases this is not a Promise, we can Promisify it.
-    return Promise.resolve(entropyValues).then(ua => ua.bitness);
+    return Promise.resolve(entropyValues)
+      .then(({ bitness }) => bitness)
+      .catch(() => undefined);
   }
 
   return undefined;
