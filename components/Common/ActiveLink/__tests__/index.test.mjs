@@ -1,17 +1,13 @@
 import { render, screen } from '@testing-library/react';
 
-import ActiveLocalizedLink from '..';
+import ActiveLink from '..';
 
-describe('ActiveLocalizedLink', () => {
+describe('ActiveLink', () => {
   it('renders as localized link', () => {
     render(
-      <ActiveLocalizedLink
-        className="link"
-        activeClassName="active"
-        href="/link"
-      >
+      <ActiveLink className="link" activeClassName="active" href="/link">
         Link
-      </ActiveLocalizedLink>
+      </ActiveLink>
     );
 
     expect(screen.findByText('Link')).resolves.toHaveAttribute(
@@ -22,13 +18,9 @@ describe('ActiveLocalizedLink', () => {
 
   it('ignores active class when href not matches location.href', () => {
     render(
-      <ActiveLocalizedLink
-        className="link"
-        activeClassName="active"
-        href="/not-link"
-      >
+      <ActiveLink className="link" activeClassName="active" href="/not-link">
         Link
-      </ActiveLocalizedLink>
+      </ActiveLink>
     );
 
     expect(screen.findByText('Link')).resolves.toHaveAttribute('class', 'link');
@@ -36,13 +28,9 @@ describe('ActiveLocalizedLink', () => {
 
   it('sets active class when href matches location.href', () => {
     render(
-      <ActiveLocalizedLink
-        className="link"
-        activeClassName="active"
-        href="/link"
-      >
+      <ActiveLink className="link" activeClassName="active" href="/link">
         Link
-      </ActiveLocalizedLink>
+      </ActiveLink>
     );
 
     expect(screen.findByText('Link')).resolves.toHaveAttribute(

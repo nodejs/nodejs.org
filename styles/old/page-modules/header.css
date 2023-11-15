@@ -142,7 +142,7 @@ header {
 
         $border-width: 14px;
 
-        &.active::after {
+        &:has(a.active)::after {
           border: solid transparent;
           border-top-color: $node-gray;
           border-width: $border-width;
@@ -156,7 +156,7 @@ header {
           width: 0;
         }
 
-        &.active:first-child::after {
+        &:has(a.active):first-child::after {
           margin-left: -$border-width;
         }
       }

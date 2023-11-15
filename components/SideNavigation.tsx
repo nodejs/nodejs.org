@@ -1,11 +1,8 @@
-'use client';
-
-import classNames from 'classnames';
 import type { RichTranslationValues } from 'next-intl';
 import type { FC } from 'react';
 
-import Link from '@/components/Link';
-import { useIsCurrentPathname, useSiteNavigation } from '@/hooks';
+import ActiveLink from '@/components/Common/ActiveLink';
+import { useSiteNavigation } from '@/hooks/server';
 import type { NavigationKeys } from '@/types';
 
 type SideNavigationProps = {
@@ -18,25 +15,21 @@ const SideNavigation: FC<SideNavigationProps> = ({
   context,
 }) => {
   const { getSideNavigation } = useSiteNavigation();
-  const { isCurrentLocaleRoute } = useIsCurrentPathname();
 
   const sideNavigationItems = getSideNavigation(navigationKey, context);
-
-  const getLinkClasses = (href: string, level: number) =>
-    classNames({ active: isCurrentLocaleRoute(href), level });
 
   return (
     <nav aria-label="secondary">
       <ul>
         {sideNavigationItems.map(item => (
-          <li key={item.key} className={getLinkClasses(item.link, item.level)}>
-            <Link href={item.link}>{item.text}</Link>
+          <li key={item.key}>
+            <ActiveLink href={item.link}>{item.text}</ActiveLink>
 
             {item.items.length > 0 && (
               <ul>
-                {item.items.map(({ link, level, text, key }) => (
-                  <li key={key} className={getLinkClasses(link, level)}>
-                    <Link href={link}>{text}</Link>
+                {item.items.map(({ link, text, key }) => (
+                  <li key={key}>
+                    <ActiveLink href={link}>{text}</ActiveLink>
                   </li>
                 ))}
               </ul>

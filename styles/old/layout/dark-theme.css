@@ -30,11 +30,12 @@ html[data-theme='dark'] {
       &:hover {
         color: $white;
       }
-    }
 
-    .active > a {
-      background-color: $active-green;
-      color: $white;
+      &.active,
+      &.active:hover {
+        background-color: $active-green;
+        color: $white;
+      }
     }
   }
 
