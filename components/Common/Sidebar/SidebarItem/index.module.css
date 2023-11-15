@@ -4,7 +4,8 @@
     list-none;
 
   a {
-    @apply p-2
+    @apply w-full
+      p-2
       text-sm
       font-regular
       text-neutral-800
@@ -18,6 +19,7 @@
 
   a,
   a:hover {
-    @apply text-white;
+    @apply text-white
+    dark:text-white;
   }
 }
