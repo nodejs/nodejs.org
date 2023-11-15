@@ -33,7 +33,6 @@ export const Default: Story = {
         href: 'https://openjsf.org/certification',
       },
     ],
-    currentNavItem: 'Learn',
     languages: {
       availableLanguages: [
         { name: 'English', code: 'en' },
