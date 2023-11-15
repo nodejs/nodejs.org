@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import ProgressionSidebar from '@/components/Common/ProgressionSidebar';
+import ProgressionSidebar from '@/components/Containers/ProgressionSidebar';
 
 type Story = StoryObj<typeof ProgressionSidebar>;
 type Meta = MetaObj<typeof ProgressionSidebar>;
@@ -13,7 +13,7 @@ export const Default: Story = {
         items: [
           {
             title: 'Introduction to Node.js',
-            url: '/introduction-to-nodejs',
+            url: '/',
           },
           {
             title: 'How to install Node.js',
@@ -72,11 +72,6 @@ export const Default: Story = {
           },
         ],
       },
-    ],
-    activeUrls: [
-      '/introduction-to-nodejs',
-      '/how-to-install-nodejs',
-      '/an-introduction-to-the-npm-package-manager',
     ],
   },
 };
