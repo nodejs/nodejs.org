@@ -9,10 +9,10 @@ export const getBitness = async () => {
       'bitness',
     ]);
 
-    // Apparently in some cases this is not a Promise, then we should ignore
-    if (entropyValues instanceof Promise) {
-      return entropyValues.then(ua => ua.bitness);
-    }
+    // Apparently in some cases this is not a Promise, we can Promisify it.
+    return Promise.resolve(entropyValues)
+      .then(({ bitness }) => bitness)
+      .catch(() => undefined);
   }
 
   return undefined;

@@ -66,11 +66,9 @@ article a {
         margin-left: -10px;
         margin-right: -10px;
         padding: 5px 10px;
-      }
 
-      .active {
-        > a,
-        > a:hover {
+        &.active,
+        &.active:hover {
           background-color: $active-green;
           color: $white;
         }

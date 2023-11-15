@@ -7,22 +7,24 @@ import Link from '@/components/Link';
 import { usePathname } from '@/navigation.mjs';
 
 type ActiveLocalizedLinkProps = ComponentProps<typeof Link> & {
-  activeClassName: string;
+  activeClassName?: string;
+  allowSubPath?: boolean;
 };
 
-const ActiveLocalizedLink: FC<ActiveLocalizedLinkProps> = ({
+const ActiveLink: FC<ActiveLocalizedLinkProps> = ({
   children,
-  activeClassName,
+  activeClassName = 'active',
+  allowSubPath = false,
   className,
   href = '',
   ...props
 }) => {
   const pathname = usePathname();
 
-  const linkURL = new URL(href.toString(), location.href);
-
   const finalClassName = classNames(className, {
-    [activeClassName]: linkURL.pathname === pathname,
+    [activeClassName]: allowSubPath
+      ? pathname.startsWith(href.toString())
+      : href.toString() === pathname,
   });
 
   return (
@@ -32,4 +34,4 @@ const ActiveLocalizedLink: FC<ActiveLocalizedLinkProps> = ({
   );
 };
 
-export default ActiveLocalizedLink;
+export default ActiveLink;
