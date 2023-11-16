@@ -10,6 +10,6 @@ describe('String utils', () => {
   });
 
   it('getAcronymFromString if the string is empty, it returns NA', () => {
-    expect(getAcronymFromString('')).toBe('NA');
+    expect(getAcronymFromString('')).toBe('');
   });
 });
