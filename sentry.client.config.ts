@@ -7,12 +7,12 @@ init({
   enabled: !!VERCEL_ENV,
   // Tell Sentry where to send events
   dsn: SENTRY_DSN,
-  // Percentage of events to send to Sentry (all of them) (for performance metrics)
-  tracesSampleRate: 1,
+  // Percentage of events to send to Sentry (1% of them) (for performance metrics)
+  tracesSampleRate: 0.01,
+  // Percentage of sessions to sample (1%)
+  replaysSessionSampleRate: 0.01,
   // Percentage of errors to sample (all of them)
   replaysOnErrorSampleRate: 1.0,
-  // Percentage of sessionsto sample (10%)
-  replaysSessionSampleRate: 0.1,
   // Support replaying client sessions to capture unhappy paths
   integrations: [new Replay()],
   // We only want to capture errors from _next folder on production
