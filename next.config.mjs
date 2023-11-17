@@ -3,7 +3,12 @@
 import { withSentryConfig } from '@sentry/nextjs';
 import withNextIntl from 'next-intl/plugin';
 
-import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
+import {
+  BASE_PATH,
+  ENABLE_STATIC_EXPORT,
+  SENTRY_DSN,
+  SENTRY_ENABLE,
+} from './next.constants.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 
 /** @type {import('next').NextConfig} */
@@ -78,28 +83,35 @@ const sentrySettings = {
   org: 'nodejs-org',
   // Define the Sentry Project on our Sentry Organisation
   project: 'nodejs-org',
+  // Sentry DSN for the Node.js Website
+  dsn: SENTRY_DSN,
 };
 
 /** @type {import('@sentry/nextjs/types/config/types').UserSentryOptions} */
 const sentryConfig = {
   // Upload Next.js or third-party code in addition to our code
   widenClientFileUpload: true,
-  // Transpile the Sentry code too since we target older browsers in our .browserslistrc
-  transpileClientSDK: true,
   // Attempt to circumvent ad blockers
-  tunnelRoute: ENABLE_STATIC_EXPORT ? undefined : '/monitoring',
+  tunnelRoute: !ENABLE_STATIC_EXPORT && '/monitoring',
   // Prevent source map comments in built files
   hideSourceMaps: false,
   // Tree shake Sentry stuff from the bundle
   disableLogger: true,
 };
 
-// Next.js Config with Sentry Configuration
-export default withSentryConfig(
+// Next.js Configuration with `next.intl` enabled
+const nextWithIntl = withNextIntl()(nextConfig);
+
+// Next.js Configuration with `sentry` enabled
+const nextWithSentry = withSentryConfig(
   // Next.js Config with i18n Configuration
-  withNextIntl()(nextConfig),
+  nextWithIntl,
   // Default Sentry Settings
   sentrySettings,
   // Default Sentry Extension Configuration
   sentryConfig
 );
+
+// Decides wheter enabling Sentry or not
+// By default we only want to enable Sentry within a Vercel Environment
+export default SENTRY_ENABLE ? nextWithSentry : nextWithIntl;
