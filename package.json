@@ -34,6 +34,8 @@
     "storybook": "cross-env NODE_NO_WARNINGS=1 storybook dev -p 6006 --quiet --no-open",
     "storybook:build": "cross-env NODE_NO_WARNINGS=1 storybook build --quiet --webpack-stats-json",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 node --import=tsx --test **/__tests__/*.test.mjs",
+    "test:watch": "cross-env NODE_NO_WARNINGS=1 node --import=tsx --test --watch **/__tests__/*.test.mjs",
+    "test:coverage": "cross-env NODE_NO_WARNINGS=1 node --import=tsx --test --experimental-test-coverage --test-reporter=junit --test-reporter-destination=junit.xml",
     "test": "npm run test:unit",
     "prepare": "husky install"
   },
