@@ -10,10 +10,6 @@
       "extends": "plugin:storybook/recommended"
     },
     {
-      "files": ["**/{__tests__,__mocks__}/*.mjs"],
-      "env": { "jest": true }
-    },
-    {
       "files": ["**/*.{js,mjs,ts,tsx,mdx}"],
       "env": { "es6": true, "node": true },
       "plugins": ["import"],

@@ -1,3 +1,6 @@
+import { strictEqual } from 'node:assert';
+import { describe, it } from 'node:test';
+
 import { getNodejsChangelog } from '../getNodeJsChangelog';
 
 describe('getNodejsChangelog', () => {
@@ -8,7 +11,7 @@ describe('getNodejsChangelog', () => {
 
     const result = getNodejsChangelog(version);
 
-    expect(result).toBe(expectedUrl);
+    strictEqual(result, expectedUrl);
   });
 
   it('returns the correct changelog URL for major version >= 1', () => {
@@ -18,7 +21,7 @@ describe('getNodejsChangelog', () => {
 
     const result = getNodejsChangelog(version);
 
-    expect(result).toBe(expectedUrl);
+    strictEqual(result, expectedUrl);
   });
 
   it('returns the correct changelog URL for minor version 12 or 10', () => {
@@ -28,7 +31,7 @@ describe('getNodejsChangelog', () => {
 
     const result1 = getNodejsChangelog(version1);
 
-    expect(result1).toBe(expectedUrl1);
+    strictEqual(result1, expectedUrl1);
 
     const version2 = '8.10.0';
     const expectedUrl2 =
@@ -36,7 +39,7 @@ describe('getNodejsChangelog', () => {
 
     const result2 = getNodejsChangelog(version2);
 
-    expect(result2).toBe(expectedUrl2);
+    strictEqual(result2, expectedUrl2);
   });
 
   it('returns the correct changelog URL for other versions', () => {
@@ -46,6 +49,6 @@ describe('getNodejsChangelog', () => {
 
     const result = getNodejsChangelog(version);
 
-    expect(result).toBe(expectedUrl);
+    strictEqual(result, expectedUrl);
   });
 });
