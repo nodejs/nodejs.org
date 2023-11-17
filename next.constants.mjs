@@ -190,3 +190,9 @@ export const DEFAULT_VIEWPORT = {
  */
 export const SENTRY_DSN =
   'https://02884d0745aecaadf5f780278fe5fe70@o4506191161786368.ingest.sentry.io/4506191307735040';
+
+/**
+ * This states if Sentry should be enabled and bundled within our App
+ */
+export const SENTRY_ENABLE =
+  process.env.NODE_ENV === 'development' || !!VERCEL_ENV;
