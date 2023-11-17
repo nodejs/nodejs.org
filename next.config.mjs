@@ -97,10 +97,12 @@ const sentryConfig = {
   hideSourceMaps: false,
   // Tree shake Sentry stuff from the bundle
   disableLogger: true,
+  // Applies same WebPack Transpilation as Next.js
+  transpileClientSDK: true,
 };
 
 // Next.js Configuration with `next.intl` enabled
-const nextWithIntl = withNextIntl()(nextConfig);
+const nextWithIntl = withNextIntl('./i18n.tsx')(nextConfig);
 
 // Next.js Configuration with `sentry` enabled
 const nextWithSentry = withSentryConfig(
