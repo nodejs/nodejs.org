@@ -14,14 +14,10 @@ const DocsLayout: FC<PropsWithChildren> = ({ children }) => {
     apiLts: {
       ltsNodeVersion: lts ? `v${lts.major}.x` : undefined,
       fullLtsNodeVersion: lts ? lts.versionWithPrefix : undefined,
-      graySpan: c => <span className="small color-lightgray">{c}</span>,
     },
     apiCurrent: {
       fullCurrentNodeVersion: current ? current.versionWithPrefix : undefined,
       currentNodeVersion: current ? `v${current.major}.x` : undefined,
-    },
-    guides: {
-      graySpan: c => <span className="small color-lightgray">{c}</span>,
     },
   };
 
