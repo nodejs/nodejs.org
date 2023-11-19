@@ -6,7 +6,7 @@ import { availableLocaleCodes } from './next.locales.mjs';
 // Loads the Application Locales/Translations Dynamically
 const loadLocaleDictionary = async (locale: string) => {
   if (locale === 'en') {
-    // This enables HMR on the English Locale, so that instante refresh
+    // This enables HMR on the English Locale, so that instant refresh
     // happens while we add/change texts on the source locale
     return import('./i18n/locales/en.json').then(f => f.default);
   }
