@@ -33,9 +33,7 @@ const ChangelogModal: FC<PropsWithChildren<ChangelogModalProps>> = ({
           </Dialog.Description>
           <div className={styles.authorsContainer}>
             <AvatarGroup avatars={avatars} />
-            <Link href="/get-involved" className={styles.contributorLink}>
-              Start Contributing
-            </Link>
+            <Link href="/get-involved">Start Contributing</Link>
             <ArrowUpRightIcon />
           </div>
           {children}

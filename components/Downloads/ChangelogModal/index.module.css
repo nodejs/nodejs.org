@@ -12,10 +12,9 @@ svg {
     backdrop-blur-lg
     dark:bg-neutral-900
     dark:bg-opacity-80;
-}
 
-.dialogContent {
-  @apply fixed
+  .dialogContent {
+    @apply fixed
     left-[50%]
     top-[40%]
     inline-flex
@@ -32,36 +31,37 @@ svg {
     p-12
     focus:outline-none
     dark:bg-neutral-900;
-}
+  }
 
-.dialogTitle {
-  @apply mb-2
+  .dialogTitle {
+    @apply mb-2
     text-3xl
     font-semibold
     leading-9
     text-neutral-900
     dark:text-white;
-}
+  }
 
-.dialogDescription {
-  @apply mb-2
+  .dialogDescription {
+    @apply mb-2
     font-open-sans
     text-lg
     font-regular
     leading-normal
     text-neutral-800
     dark:text-neutral-200;
-}
+  }
 
-.authorsContainer {
-  @apply flex
+  .authorsContainer {
+    @apply flex
     items-center;
-}
 
-.contributorLink {
-  @apply ml-2
-    text-xs
-    text-neutral-600
-    underline
-    visited:text-neutral-600;
+    a {
+      @apply ml-2
+      text-xs
+      text-neutral-600
+      underline
+      visited:text-neutral-600;
+    }
+  }
 }
