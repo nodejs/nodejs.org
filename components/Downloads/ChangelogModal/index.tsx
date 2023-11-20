@@ -1,4 +1,4 @@
-import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
+import { ArrowUpRightIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import * as Dialog from '@radix-ui/react-dialog';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren, ReactNode, ComponentProps } from 'react';
@@ -24,26 +24,28 @@ const ChangelogModal: FC<PropsWithChildren<ChangelogModalProps>> = ({
   children,
 }) => {
   const t = useTranslations();
+
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>{trigger}</Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className={styles.dialogOverlay}>
-          <Dialog.Content className={styles.dialogContent}>
-            <Dialog.Title className={styles.dialogTitle}>
-              {heading}
-            </Dialog.Title>
-            <Dialog.Description className={styles.dialogDescription}>
+        <Dialog.Overlay className={styles.overlay}>
+          <Dialog.Content className={styles.content}>
+            <Dialog.Trigger className={styles.trigger}>
+              <XMarkIcon />
+            </Dialog.Trigger>
+            <Dialog.Title className={styles.title}>{heading}</Dialog.Title>
+            <Dialog.Description className={styles.description}>
               {subheading}
             </Dialog.Description>
-            <div className={styles.authorsContainer}>
+            <div className={styles.authors}>
               <AvatarGroup avatars={avatars} />
               <Link href="/get-involved">
                 {t('components.downloads.changelogModal.startContributing')}
+                <ArrowUpRightIcon />
               </Link>
-              <ArrowUpRightIcon />
             </div>
-            {children}
+            <div className={styles.wrapper}>{children}</div>
             <Dialog.Close />
           </Dialog.Content>
         </Dialog.Overlay>
