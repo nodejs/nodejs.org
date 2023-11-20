@@ -2,7 +2,9 @@
 
 Node.js is a global platform and so this site has many translations. We use [Crowdin](https://crowdin.com) to translate the Node.js Website
 
-The translation of the site into languages other than English is handled by [Crowdin translators](https://support.crowdin.com/translation-process-overview/).
+The site's translation into languages other than English is handled by [Crowdin translators](https://support.crowdin.com/translation-process-overview/).
+
+We use [`next-intl`](https://next-intl-docs.vercel.app/) as our Internationalization Library. We recommend reading its documentation for API usage.
 
 ## How to translate
 
@@ -55,11 +57,29 @@ If you're making a new Component and adding Translation Keys for your Component,
   - The values of each Translation Key should follow the [ICU Message Syntax](https://formatjs.io/docs/core-concepts/icu-syntax/)
 - All new Translation keys should be added at the bottom of the `i18n/locales/en.json` file. Since this makes it easier for Translators to notice that there are new Translation keys to be translated.
 
+#### Notes about Translation Keys
+
+It's important to mention that we use nested translation keys within the Locale files. This means that if your translation key is `components.common.myComponent.something`, you should actually define the key and value within:
+
+```json
+{
+  "components": {
+    ...,
+    "common": {
+      ...,
+      "myComponent": {
+        "something": "value of translation key"
+      }
+    }
+  }
+}
+```
+
 ### Translations and Unit Testing
 
-Translation Keys should not be translated during Unit Testing. If your Component uses, for example `FormattedMessage`, you should provide the `<IntlProvider>` surrounding your `testing-library` render logic, or you can create a wrapper for your test. Note that you should not import the English messages to your Unit Test as:
+Translation Keys should not be translated during Unit Testing. If your Component uses, for example `usTranslations`, you should provide the `<NextIntlProvider>` surrounding your `testing-library` render logic, or you can create a wrapper for your test. Note that you should not import the English messages to your Unit Test as:
 
 - Unit Testing should test a Component functionality.
 - Unit Tests should not rely on text, titles, or string bags, as these texts will change arbitrarily and make the test suite fail.
   - In this case, you should test your component by aria-text, or other `aria-*` attributes or even by class names or other artifacts.
-- If you want to test how different languages and text appear within a Component, Visual Regression Testing is recommended.
+- Visual Regression Testing is recommended to test how different languages and text appear within a Component.
