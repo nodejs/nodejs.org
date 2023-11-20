@@ -1,12 +1,7 @@
-/* What color should the svg be? */
 svg {
   @apply h-4
-    w-4;
-}
-
-a {
-  @apply w-fit
-    underline;
+    w-4
+    text-neutral-600;
 }
 
 .dialogOverlay {
@@ -39,11 +34,7 @@ a {
 }
 
 .dialogTitle {
-  @apply /*
-    Had trouble figuring out how other components were just inheriting fontfamily from
-    somewhere. Feel free to correct my explicit declaration */
-    mb-2
-    font-open-sans
+  @apply mb-2
     text-3xl
     font-semibold
     leading-9
@@ -54,7 +45,7 @@ a {
 .dialogDescription {
   @apply mb-2
     font-open-sans
-    text-xl
+    text-lg
     font-regular
     leading-normal
     text-neutral-800
@@ -67,5 +58,9 @@ a {
 }
 
 .contributorLink {
-  @apply ml-2;
+  @apply ml-2
+    text-xs
+    text-neutral-600
+    underline
+    visited:text-neutral-600;
 }

@@ -1,9 +1,8 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 import Button from '@/components/Common/Button';
+import ChangelogModal from '@/components/Downloads/ChangelogModal';
 import { githubProfileAvatarUrl } from '@/util/gitHubUtils';
-
-import ChangelogModal from '.';
 
 type Story = StoryObj<typeof ChangelogModal>;
 type Meta = MetaObj<typeof ChangelogModal>;
