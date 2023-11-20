@@ -24,6 +24,7 @@ svg {
     translate-x-[-50%]
     translate-y-[-50%]
     flex-col
+    overflow-scroll
     rounded
     border
     border-neutral-200
