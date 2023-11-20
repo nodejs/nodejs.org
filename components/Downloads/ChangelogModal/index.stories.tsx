@@ -34,6 +34,7 @@ export const Default: Story = {
     avatars: [
       ...names.map(name => ({ src: githubProfileAvatarUrl(name), alt: name })),
     ],
+    // children: <></>, TODO: Add linked filler html
   },
 };
 

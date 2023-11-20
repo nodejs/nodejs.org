@@ -1,3 +1,4 @@
+import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import * as Dialog from '@radix-ui/react-dialog';
 import type { FC, PropsWithChildren, ReactNode, ComponentProps } from 'react';
 
@@ -35,6 +36,7 @@ const ChangelogModal: FC<PropsWithChildren<ChangelogModalProps>> = ({
             <Link href="/get-involved" className={styles.contributorLink}>
               Start Contributing
             </Link>
+            <ArrowUpRightIcon />
           </div>
           {children}
           <Dialog.Close />
