@@ -43,26 +43,26 @@ ol {
 }
 
 table {
-  @apply w-full 
-    border-separate 
-    border-spacing-0 
+  @apply w-full
+    border-separate
+    border-spacing-0
     rounded
     border
-    border-neutral-200 
+    border-neutral-200
     text-left
-    text-sm 
+    text-sm
     dark:border-neutral-800;
 
   th,
   td {
-    @apply border 
-      border-r-0 
-      border-t-0 
+    @apply border
+      border-r-0
+      border-t-0
       border-neutral-200
       px-4
-      py-2 
-      text-neutral-900 
-      dark:border-neutral-800 
+      py-2
+      text-neutral-900
+      dark:border-neutral-800
       dark:text-white;
   }
 
@@ -78,4 +78,39 @@ table {
   th:first-child {
     @apply border-l-0;
   }
+}
+
+h1 {
+  @apply text-4xl
+    font-semibold;
+}
+
+h2 {
+  @apply text-3xl
+    font-semibold;
+}
+
+h3 {
+  @apply text-2xl
+    font-semibold;
+}
+
+h4 {
+  @apply text-xl
+    font-semibold;
+}
+
+h5 {
+  @apply text-lg
+    font-semibold;
+}
+
+h6 {
+  @apply text-base
+    font-semibold;
+}
+
+strong {
+  @apply text-base
+    font-semibold;
 }
