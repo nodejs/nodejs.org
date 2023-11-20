@@ -27,17 +27,17 @@
       sm:mt-20
       sm:w-1/2
       sm:p-12;
+  }
 
-    .trigger {
-      @apply absolute
-        right-3
-        top-3
-        block
-        h-6
-        w-6
-        cursor-pointer
-        sm:hidden;
-    }
+  .trigger {
+    @apply absolute
+      right-3
+      top-3
+      block
+      h-6
+      w-6
+      cursor-pointer
+      sm:hidden;
   }
 
   .title {
