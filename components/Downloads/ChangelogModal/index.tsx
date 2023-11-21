@@ -31,7 +31,7 @@ const ChangelogModal: FC<PropsWithChildren<ChangelogModalProps>> = ({
       <Dialog.Portal>
         <Dialog.Overlay className={styles.overlay}>
           <Dialog.Content className={styles.content}>
-            <Dialog.Trigger className={styles.trigger}>
+            <Dialog.Trigger className={styles.close}>
               <XMarkIcon />
             </Dialog.Trigger>
             <Dialog.Title className={styles.title}>{heading}</Dialog.Title>

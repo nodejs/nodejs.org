@@ -29,7 +29,7 @@
       sm:p-12;
   }
 
-  .trigger {
+  .close {
     @apply absolute
       right-3
       top-3
