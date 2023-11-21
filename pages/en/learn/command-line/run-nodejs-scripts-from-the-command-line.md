@@ -1,10 +1,10 @@
 ---
-title: Run Node.js scripts from the command line
+title: Run javascript code with Node.js from the command line
 layout: learn.hbs
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, akazyti
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, akazyti, AugustinMauroy
 ---
 
-# Run Node.js scripts from the command line
+# Run javascript code with Node.js from the command line
 
 The usual way to run a Node.js program is to run the globally available `node` command (once you install Node.js) and pass the name of the file you want to execute.
 
@@ -48,26 +48,12 @@ node -e "console.log(123)"
 
 ## Restart the application automatically
 
-The `node` command has to be re-executed in bash whenever there is a change in the application. To restart the application automatically, use the `nodemon` module.
-
-Install the nodemon module globally to system path:
-
-```bash
-npm i -g nodemon
-```
-
-You can also install nodemon as a development dependency:
+As of nodejs V16, there is a built-in option to automatically restart the application when a file changes. This is useful for development purposes.
+To use this feature, you need to pass the `--watch' flag to nodejs.
 
 ```bash
-npm i --save-dev nodemon
+node --watch app.js
 ```
 
-This local installation of nodemon can be run by calling it from within npm script such as npm start or using npx nodemon.
-
-Run the application using the `nodemon` command followed by the application's file name:
-
-```bash
-nodemon app.js
-```
-
-> Note: nodejs 16 and above has an **exerimental** watch mode. You can use `node --watch app.js` to run the application in watch mode. You can read about this in the [api docs](https://nodejs.org/docs/latest-v18.x/api/cli.html#--watch).
+So when you change the file, the application will restart automatically.
+If you want to deep dive into this feature, you can read the [official documentation](https://nodejs.org/docs/latest-v20.x/api/cli.html#--watch).
