@@ -196,3 +196,16 @@ export const SENTRY_DSN =
  */
 export const SENTRY_ENABLE =
   process.env.NODE_ENV === 'development' || !!VERCEL_ENV;
+
+/**
+ * This configures which Sentry features to tree-shake/remove from the Sentry bundle
+ *
+ * @see https://docs.sentry.io/platforms/javascript/guides/nextjs/configuration/tree-shaking/
+ */
+export const SENTRY_EXTENSIONS = {
+  __SENTRY_DEBUG__: false,
+  __SENTRY_TRACING__: true,
+  __RRWEB_EXCLUDE_IFRAME__: true,
+  __RRWEB_EXCLUDE_SHADOW_DOM__: true,
+  __SENTRY_EXCLUDE_REPLAY_WORKER__: false,
+};

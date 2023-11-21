@@ -2,12 +2,15 @@
 
 import { withSentryConfig } from '@sentry/nextjs';
 import withNextIntl from 'next-intl/plugin';
+import webpack from 'webpack';
 
 import {
   BASE_PATH,
   ENABLE_STATIC_EXPORT,
   SENTRY_DSN,
   SENTRY_ENABLE,
+  SENTRY_EXTENSIONS,
+  VERCEL_ENV,
 } from './next.constants.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 
@@ -44,15 +47,20 @@ const nextConfig = {
   // as we already check it on the CI within each Pull Request
   // we also configure ESLint to run its lint checking on all files (next lint)
   eslint: { dirs: ['.'], ignoreDuringBuilds: true },
-  // Next.js WebPack Bundler does not know how to handle `.mjs` files on `node_modules`
-  // This is not an issue when using TurboPack as it uses SWC and it is ESM-only
-  // Once Next.js uses Turbopack for their build process we can remove this
+  // Adds custom WebPack configuration to our Next.hs setup
   webpack: function (config) {
+    // Next.js WebPack Bundler does not know how to handle `.mjs` files on `node_modules`
+    // This is not an issue when using TurboPack as it uses SWC and it is ESM-only
+    // Once Next.js uses Turbopack for their build process we can remove this
     config.module.rules.push({
       test: /\.m?js$/,
       type: 'javascript/auto',
       resolve: { fullySpecified: false },
     });
+
+    // Tree-shakes modules from Sentry Bundle
+    config.plugins.push(new webpack.DefinePlugin(SENTRY_EXTENSIONS));
+
     return config;
   },
   experimental: {
@@ -92,7 +100,7 @@ const sentryConfig = {
   // Upload Next.js or third-party code in addition to our code
   widenClientFileUpload: true,
   // Attempt to circumvent ad blockers
-  tunnelRoute: !ENABLE_STATIC_EXPORT && '/monitoring',
+  tunnelRoute: VERCEL_ENV ? '/monitoring' : undefined,
   // Prevent source map comments in built files
   hideSourceMaps: false,
   // Tree shake Sentry stuff from the bundle
