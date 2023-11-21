@@ -35,6 +35,12 @@ export const sentryClient = new BrowserClient({
   allowUrls: ['https://nodejs.org/_next'],
   // Enables Sentry Tracing Feature
   enableTracing: true,
+  // Percentage of events to send to Sentry (1% of them) (for performance metrics)
+  tracesSampleRate: 0.01,
+  // Percentage of events to send to Sentry (1% of them) (for session replays)
+  replaysSessionSampleRate: 0.01,
+  // Percentage of events to send to Sentry (1% of them) (for session replays when error happens)
+  replaysOnErrorSampleRate: 1.0,
   // Adds custom filtering before sending an Event to Sentry
   beforeSend: (event, hint) => {
     // Attempts to grab the original Exception before any "magic" happens
