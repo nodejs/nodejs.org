@@ -79,20 +79,6 @@ jobs:
           # regardless of having code changes or not
           fetch-depth: 1
 
-      - name: Restore Build Cache
-        uses: actions/cache/restore@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
-        with:
-          path: |
-            .turbo/cache
-            .next/cache
-            node_modules/.cache
-          # We want to restore cache from local .npm caches, .next/cache and node_modules/.cache
-          # As this should reduce build times, and the overall time for installing packages or running operations
-          key: cache-build-${{ hashFiles('package-lock.json') }}-
-          restore-keys: |
-            cache-build-${{ hashFiles('package-lock.json') }}-
-            cache-build-
-
       - name: Set up Node.js
         uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4.0.0
         with:
@@ -132,20 +118,3 @@ jobs:
           # this should be a last resort in case by any chances the build memory gets too high
           # but in general this should never happen
           NODE_OPTIONS: '--max_old_space_size=4096'
-
-      - name: Save Build Cache
-        # We want to store the Build Cache within Pull Requests or during pushes against the `main` branch
-        # since caches created on the `main` (default) branch can be reused on Pull Requests and PRs coming from forks
-        if: |
-          github.event_name == 'push' || github.event_name == 'pull_request_target'
-        uses: actions/cache/save@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
-        with:
-          path: |
-            .turbo/cache
-            .next/cache
-            node_modules/.cache
-          # Most of sibling Pull Requests will use the cache key based on the package-lock.json
-          # We do also add a hashFiles for `.next/cache` as GitHub Actions only allows
-          # One cache with same key to exist, so to ensure we always have a cache from the latest build
-          # We add the hashFiles of `.next/cache` to the cache key of the Cache Entry
-          key: cache-build-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.next/cache/**') }}
