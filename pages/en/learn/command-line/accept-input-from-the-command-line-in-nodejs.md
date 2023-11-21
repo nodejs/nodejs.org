@@ -11,7 +11,7 @@ How to make a Node.js CLI program interactive?
 Node.js since version 7 provides the [`readline` module](https://nodejs.org/api/readline.html) to perform exactly this: get input from a readable stream such as the `process.stdin` stream, which during the execution of a Node.js program is the terminal input, one line at a time.
 
 ```js
-const readline = require('readline').createInterface({
+const readline = require('node:readline').createInterface({
   input: process.stdin,
   output: process.stdout,
 });

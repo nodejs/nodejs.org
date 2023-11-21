@@ -25,7 +25,7 @@ In Node.js the new ECMAScript standards can be used without problems, as you don
 The most common example Hello World of Node.js is a web server:
 
 ```js
-const http = require('http');
+const http = require('node:http');
 
 const hostname = '127.0.0.1';
 const port = 3000;

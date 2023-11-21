@@ -113,7 +113,7 @@ If you type `.break` at the end of a line, the multiline mode will stop and the 
 We can import the REPL in a JavaScript file using `repl`.
 
 ```js
-const repl = require('repl');
+const repl = require('node:repl');
 ```
 
 Using the repl variable we can perform various operations.

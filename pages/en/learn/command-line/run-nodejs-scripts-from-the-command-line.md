@@ -69,3 +69,5 @@ Run the application using the `nodemon` command followed by the application's fi
 ```bash
 nodemon app.js
 ```
+
+> Note: nodejs 16 and above have an **exerimental** watch mode. You can use `node --watch app.js` to run the application in watch mode. You can read in the [api docs](https://nodejs.org/docs/latest-v18.x/api/cli.html#--watch).

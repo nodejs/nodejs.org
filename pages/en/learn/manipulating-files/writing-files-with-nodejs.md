@@ -11,7 +11,7 @@ authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, ovf
 The easiest way to write to files in Node.js is to use the `fs.writeFile()` API.
 
 ```js
-const fs = require('fs');
+const fs = require('node:fs');
 
 const content = 'Some content!';
 
@@ -28,7 +28,7 @@ fs.writeFile('/Users/joe/test.txt', content, err => {
 Alternatively, you can use the synchronous version `fs.writeFileSync()`:
 
 ```js
-const fs = require('fs');
+const fs = require('node:fs');
 
 const content = 'Some content!';
 
@@ -43,7 +43,7 @@ try {
 You can also use the promise-based `fsPromises.writeFile()` method offered by the `fs/promises` module:
 
 ```js
-const fs = require('fs/promises');
+const fs = require('node:fs/promises');
 
 async function example() {
   try {
@@ -84,7 +84,7 @@ Appending to files is handy when you don't want to overwrite a file with new con
 A handy method to append content to the end of a file is `fs.appendFile()` (and its `fs.appendFileSync()` counterpart):
 
 ```js
-const fs = require('fs');
+const fs = require('node:fs');
 
 const content = 'Some content!';
 
@@ -101,7 +101,7 @@ fs.appendFile('file.log', content, err => {
 Here is a `fsPromises.appendFile()` example:
 
 ```js
-const fs = require('fs/promises');
+const fs = require('node:fs/promises');
 
 async function example() {
   try {

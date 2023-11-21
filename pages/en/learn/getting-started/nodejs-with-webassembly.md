@@ -47,7 +47,7 @@ Once you have a WebAssembly module, you can use the Node.js `WebAssembly` object
 
 ```js
 // Assume add.wasm file exists that contains a single function adding 2 provided arguments
-const fs = require('fs');
+const fs = require('node:fs');
 
 const wasmBuffer = fs.readFileSync('/path/to/add.wasm');
 WebAssembly.instantiate(wasmBuffer).then(wasmModule => {

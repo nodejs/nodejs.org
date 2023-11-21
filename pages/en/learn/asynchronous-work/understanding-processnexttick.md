@@ -47,6 +47,6 @@ process.nextTick(() => {
 ```bash
 Hello => number 1
 Running at next tick => number 2
-Running before the timeout => number 3
 The timeout running last => number 4
+Running before the timeout => number 3
 ```
