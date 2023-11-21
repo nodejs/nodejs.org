@@ -181,9 +181,10 @@ export const Default: Story = {
     trigger: <Button>Trigger</Button>,
     heading: 'Node v18.17.0',
     subheading: "2023-07-18, Version 18.17.0 'Hydrogen' (LTS), @danielleadams",
-    avatars: [
-      ...names.map(name => ({ src: githubProfileAvatarUrl(name), alt: name })),
-    ],
+    avatars: names.map(name => ({
+      src: githubProfileAvatarUrl(name),
+      alt: name,
+    })),
     children,
   },
   render: (_, { loaded: { Content } }) => Content,
