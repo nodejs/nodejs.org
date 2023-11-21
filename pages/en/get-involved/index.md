@@ -18,7 +18,8 @@ layout: contribute.hbs
 
 ## Learning
 
-- [Official API reference documentation](https://nodejs.org/api/) details the Node.js API.
+- [Official Learn section](/learn)
+- [Official API reference documentation](/api/) details the Node.js API.
 - [NodeSchool.io](https://nodeschool.io/) will teach you Node.js concepts via interactive command-line games.
 - [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) collects new information every day.
 - [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
