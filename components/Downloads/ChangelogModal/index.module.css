@@ -94,5 +94,9 @@
       @apply text-neutral-900
         dark:text-white;
     }
+
+    pre {
+      @apply overflow-auto;
+    }
   }
 }
