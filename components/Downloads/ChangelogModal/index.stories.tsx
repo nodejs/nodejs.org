@@ -101,22 +101,22 @@ Contributed by Filip Skokan in [#46067](https://github.com/nodejs/node/pull/4606
 - [[\`394c61caf9\`](https://github.com/nodejs/node/commit/394c61caf9)] - **bootstrap**: support namespaced builtins in snapshot scripts (Joyee Cheung) [#47467](https://github.com/nodejs/node/pull/47467)
 - [[\`78972d4696\`](https://github.com/nodejs/node/commit/78972d4696)] - **worker**: support more cases when (de)serializing errors (Moshe Atlow) [#47925](https://github.com/nodejs/node/pull/47925)
 
-Windows 32-bit Installer: https://nodejs.org/dist/v18.17.0/node-v18.17.0-x86.msi
-Windows 64-bit Installer: https://nodejs.org/dist/v18.17.0/node-v18.17.0-x64.msi
-Windows 32-bit Binary: https://nodejs.org/dist/v18.17.0/win-x86/node.exe
-Windows 64-bit Binary: https://nodejs.org/dist/v18.17.0/win-x64/node.exe
-macOS 64-bit Installer: https://nodejs.org/dist/v18.17.0/node-v18.17.0.pkg
-macOS Apple Silicon 64-bit Binary: https://nodejs.org/dist/v18.17.0/node-v18.17.0-darwin-arm64.tar.gz
-macOS Intel 64-bit Binary: https://nodejs.org/dist/v18.17.0/node-v18.17.0-darwin-x64.tar.gz
-Linux 64-bit Binary: https://nodejs.org/dist/v18.17.0/node-v18.17.0-linux-x64.tar.xz
-Linux PPC LE 64-bit Binary: https://nodejs.org/dist/v18.17.0/node-v18.17.0-linux-ppc64le.tar.xz
-Linux s390x 64-bit Binary: _Coming soon_
-AIX 64-bit Binary: https://nodejs.org/dist/v18.17.0/node-v18.17.0-aix-ppc64.tar.gz
-ARMv7 32-bit Binary: https://nodejs.org/dist/v18.17.0/node-v18.17.0-linux-armv7l.tar.xz
-ARMv8 64-bit Binary: https://nodejs.org/dist/v18.17.0/node-v18.17.0-linux-arm64.tar.xz
-Source Code: https://nodejs.org/dist/v18.17.0/node-v18.17.0.tar.gz
-Other release files: https://nodejs.org/dist/v18.17.0/
-Documentation: https://nodejs.org/docs/v18.17.0/api/
+Windows 32-bit Installer: https://nodejs.org/dist/v18.17.0/node-v18.17.0-x86.msi \
+Windows 64-bit Installer: https://nodejs.org/dist/v18.17.0/node-v18.17.0-x64.msi \
+Windows 32-bit Binary: https://nodejs.org/dist/v18.17.0/win-x86/node.exe \
+Windows 64-bit Binary: https://nodejs.org/dist/v18.17.0/win-x64/node.exe \
+macOS 64-bit Installer: https://nodejs.org/dist/v18.17.0/node-v18.17.0.pkg \
+macOS Apple Silicon 64-bit Binary: https://nodejs.org/dist/v18.17.0/node-v18.17.0-darwin-arm64.tar.gz \
+macOS Intel 64-bit Binary: https://nodejs.org/dist/v18.17.0/node-v18.17.0-darwin-x64.tar.gz \
+Linux 64-bit Binary: https://nodejs.org/dist/v18.17.0/node-v18.17.0-linux-x64.tar.xz \
+Linux PPC LE 64-bit Binary: https://nodejs.org/dist/v18.17.0/node-v18.17.0-linux-ppc64le.tar.xz \
+Linux s390x 64-bit Binary: _Coming soon_ \
+AIX 64-bit Binary: https://nodejs.org/dist/v18.17.0/node-v18.17.0-aix-ppc64.tar.gz \
+ARMv7 32-bit Binary: https://nodejs.org/dist/v18.17.0/node-v18.17.0-linux-armv7l.tar.xz \
+ARMv8 64-bit Binary: https://nodejs.org/dist/v18.17.0/node-v18.17.0-linux-arm64.tar.xz \
+Source Code: https://nodejs.org/dist/v18.17.0/node-v18.17.0.tar.gz \
+Other release files: https://nodejs.org/dist/v18.17.0/ \
+Documentation: https://nodejs.org/docs/v18.17.0/api/ \
 
 ### SHASUMS
 
