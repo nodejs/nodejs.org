@@ -287,4 +287,4 @@ You may also find [how to create a flame graph][diagnostics flamegraph] helpful.
 
 [profiler inside V8]: https://v8.dev/docs/profile
 [benefits of asynchronous programming]: https://nodesource.com/blog/why-asynchronous
-[diagnostics flamegraph]: /en/docs/guides/diagnostics-flamegraph/
+[diagnostics flamegraph]: /docs/guides/diagnostics-flamegraph/

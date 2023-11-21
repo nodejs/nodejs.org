@@ -23,7 +23,7 @@ As a beginner, it's hard to get to a point where you are confident enough in you
 - [Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 - [Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 - [Strict Mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
-- [ECMAScript 2015 (ES6) and beyond](/learn/ecmascript-2015-es6-and-beyond/)
+- [ECMAScript 2015 (ES6) and beyond](/learn/getting-started/ecmascript-2015-es6-and-beyond)
 
 With those concepts in mind, you are well on your road to become a proficient JavaScript developer, in both the browser and in Node.js.
 
