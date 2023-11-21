@@ -41,7 +41,7 @@ export const sentryClient = new BrowserClient({
     const exception = hint.originalException as Error;
 
     // We only want to capture Errors that have a Stack Trace and that are not Anonymous Errors
-    if (exception?.stack && !exception.stack.includes('anonymous')) {
+    if (exception?.stack && !exception.stack.includes('<anonymous>')) {
       return event;
     }
 
