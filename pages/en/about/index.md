@@ -11,7 +11,7 @@ connections can be handled concurrently. Upon each connection, the callback is
 fired, but if there is no work to be done, Node.js will sleep.
 
 ```js
-const http = require('http');
+const http = require('node:http');
 
 const hostname = '127.0.0.1';
 const port = 3000;
