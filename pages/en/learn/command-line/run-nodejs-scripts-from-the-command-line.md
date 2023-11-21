@@ -70,4 +70,4 @@ Run the application using the `nodemon` command followed by the application's fi
 nodemon app.js
 ```
 
-> Note: nodejs 16 and above have an **exerimental** watch mode. You can use `node --watch app.js` to run the application in watch mode. You can read in the [api docs](https://nodejs.org/docs/latest-v18.x/api/cli.html#--watch).
+> Note: nodejs 16 and above has an **exerimental** watch mode. You can use `node --watch app.js` to run the application in watch mode. You can read about this in the [api docs](https://nodejs.org/docs/latest-v18.x/api/cli.html#--watch).
