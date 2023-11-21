@@ -35,6 +35,18 @@ export const sentryClient = new BrowserClient({
   allowUrls: ['https://nodejs.org/_next'],
   // Enables Sentry Tracing Feature
   enableTracing: true,
+  // Adds custom filtering before sending an Event to Sentry
+  beforeSend: (event, hint) => {
+    // Attempts to grab the original Exception before any "magic" happens
+    const exception = hint.originalException as Error;
+
+    // We only want to capture Errors that have a Stack Trace and that are not Anonymous Errors
+    if (exception?.stack && !exception.stack.includes('anonymous')) {
+      return event;
+    }
+
+    return null;
+  },
 });
 
 // Attaches this Browser Client to Sentry

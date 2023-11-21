@@ -1,3 +1,4 @@
+import { withErrorBoundary } from '@sentry/nextjs';
 import { Analytics } from '@vercel/analytics/react';
 import { Source_Sans_3 } from 'next/font/google';
 import { useLocale } from 'next-intl';
@@ -39,4 +40,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   );
 };
 
-export default RootLayout;
+// Exports the Default Layout with an Error Boundary
+export default withErrorBoundary(RootLayout, {
+  fallback: <p>An Internal Error has occured.</p>,
+});
