@@ -11,7 +11,11 @@ import {
   makeFetchTransport,
 } from '@sentry/nextjs';
 
-import { SENTRY_DSN, SENTRY_ENABLE } from '@/next.constants.mjs';
+import {
+  SENTRY_DSN,
+  SENTRY_ENABLE,
+  SENTRY_CAPTURE_RATE,
+} from '@/next.constants.mjs';
 
 // This creates a custom Sentry Client with minimal integrations
 export const sentryClient = new BrowserClient({
@@ -34,13 +38,13 @@ export const sentryClient = new BrowserClient({
   ],
   // We only want to capture errors from _next folder on production
   // We don't want to capture errors from preview branches here
-  allowUrls: ['https://nodejs.org/_next'],
+  allowUrls: ['https://nodejs.org/', /^https:\/\/.+\.vercel\.app/],
   // Enables Sentry Tracing Feature
   enableTracing: true,
   // Percentage of events to send to Sentry (1% of them) (for performance metrics)
-  tracesSampleRate: 0.01,
+  tracesSampleRate: SENTRY_CAPTURE_RATE,
   // Percentage of events to send to Sentry (1% of them) (for session replays)
-  replaysSessionSampleRate: 0.01,
+  replaysSessionSampleRate: SENTRY_CAPTURE_RATE,
   // Percentage of events to send to Sentry (1% of them) (for session replays when error happens)
   replaysOnErrorSampleRate: 1.0,
   // Adds custom filtering before sending an Event to Sentry
