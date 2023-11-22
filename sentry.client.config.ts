@@ -15,6 +15,7 @@ import {
   SENTRY_DSN,
   SENTRY_ENABLE,
   SENTRY_CAPTURE_RATE,
+  SENTRY_TUNNEL,
 } from '@/next.constants.mjs';
 
 // This creates a custom Sentry Client with minimal integrations
@@ -47,6 +48,10 @@ export const sentryClient = new BrowserClient({
   replaysSessionSampleRate: SENTRY_CAPTURE_RATE,
   // Percentage of events to send to Sentry (1% of them) (for session replays when error happens)
   replaysOnErrorSampleRate: 1.0,
+  // Provides a custom Sentry Tunnel Router
+  // @note these are components of the Sentry DSN string
+  // @see @sentry/nextjs/esm/client/tunnelRoute.js
+  tunnel: SENTRY_TUNNEL(`?o=4506191161786368&p=4506191307735040`),
   // Adds custom filtering before sending an Event to Sentry
   beforeSend: (event, hint) => {
     // Attempts to grab the original Exception before any "magic" happens

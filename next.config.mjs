@@ -10,7 +10,7 @@ import {
   SENTRY_DSN,
   SENTRY_ENABLE,
   SENTRY_EXTENSIONS,
-  VERCEL_ENV,
+  SENTRY_TUNNEL,
 } from './next.constants.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 
@@ -100,7 +100,7 @@ const sentryConfig = {
   // Upload Next.js or third-party code in addition to our code
   widenClientFileUpload: true,
   // Attempt to circumvent ad blockers
-  tunnelRoute: VERCEL_ENV ? '/monitoring' : undefined,
+  tunnelRoute: SENTRY_TUNNEL(),
   // Prevent source map comments in built files
   hideSourceMaps: false,
   // Tree shake Sentry stuff from the bundle

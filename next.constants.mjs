@@ -206,6 +206,12 @@ export const SENTRY_CAPTURE_RATE =
   SENTRY_ENABLE && BASE_URL !== 'https://nodejs.org' ? 1.0 : 0.01;
 
 /**
+ * Provides the Route for Sentry's Server-Side Tunnel
+ */
+export const SENTRY_TUNNEL = (components = '') =>
+  SENTRY_ENABLE ? `/monitoring${components}` : undefined;
+
+/**
  * This configures which Sentry features to tree-shake/remove from the Sentry bundle
  *
  * @see https://docs.sentry.io/platforms/javascript/guides/nextjs/configuration/tree-shaking/
