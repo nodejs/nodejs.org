@@ -1,13 +1,11 @@
 import {
-  BrowserClient,
   Dedupe,
-  Replay,
   Breadcrumbs,
   HttpContext,
   LinkedErrors,
-  BrowserTracing,
-  defaultStackParser,
+  BrowserClient,
   getCurrentHub,
+  defaultStackParser,
   makeFetchTransport,
 } from '@sentry/nextjs';
 
@@ -30,18 +28,14 @@ export const sentryClient = new BrowserClient({
   stackParser: defaultStackParser,
   // All supported Integrations by us
   integrations: [
-    new Replay(),
     new Dedupe(),
     new HttpContext(),
     new Breadcrumbs(),
     new LinkedErrors(),
-    new BrowserTracing(),
   ],
   // We only want to capture errors from _next folder on production
   // We don't want to capture errors from preview branches here
   allowUrls: ['https://nodejs.org/', /^https:\/\/.+\.vercel\.app/],
-  // Enables Sentry Tracing Feature
-  enableTracing: true,
   // Percentage of events to send to Sentry (1% of them) (for performance metrics)
   tracesSampleRate: SENTRY_CAPTURE_RATE,
   // Percentage of events to send to Sentry (1% of them) (for session replays)
@@ -58,13 +52,17 @@ export const sentryClient = new BrowserClient({
     const exception = hint.originalException as Error;
 
     // We only want to capture Errors that have a Stack Trace and that are not Anonymous Errors
-    if (exception?.stack && !exception.stack.includes('<anonymous>')) {
-      return event;
-    }
-
-    return null;
+    return exception?.stack && !exception.stack.includes('<anonymous>')
+      ? event
+      : null;
   },
 });
 
 // Attaches this Browser Client to Sentry
 getCurrentHub().bindClient(sentryClient);
+
+// Loads this Dynamically to avoid adding this to the main bundle (initial load)
+import('@sentry/nextjs').then(({ Replay, BrowserTracing }) => {
+  sentryClient.addIntegration(new Replay({ maskAllText: false }));
+  sentryClient.addIntegration(new BrowserTracing());
+});

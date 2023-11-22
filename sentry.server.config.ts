@@ -12,8 +12,6 @@ init({
   enabled: SENTRY_ENABLE,
   // Provide Sentry's Secret Key
   dsn: SENTRY_DSN,
-  // Enables Sentry Tracing Feature
-  enableTracing: true,
   // Percentage of events to send to Sentry (1% of them) (for performance metrics)
   tracesSampleRate: SENTRY_CAPTURE_RATE,
   // Percentage of events to send to Sentry (all of them) (for profiling metrics)
