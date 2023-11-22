@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 import Link from '@/components/Link';
 
-type PaginationProps = { prev?: number; next?: number };
+type PaginationProps = { prev?: number | null; next?: number | null };
 
 const Pagination: FC<PaginationProps> = ({ next, prev }) => {
   const t = useTranslations();

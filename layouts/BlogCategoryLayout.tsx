@@ -1,53 +1,50 @@
-import { useTranslations } from 'next-intl';
-import { useMemo } from 'react';
+import { getTranslations } from 'next-intl/server';
 import type { FC } from 'react';
 
+import { getClientContext } from '@/client-context';
 import { Time } from '@/components/Common/Time';
 import Link from '@/components/Link';
 import Pagination from '@/components/Pagination';
-import { useClientContext, useBlogData } from '@/hooks/server';
-import type { BlogPost } from '@/types';
+import getBlogData from '@/next-data/blogData';
 
-const BlogCategoryLayout: FC = () => {
-  const t = useTranslations();
-  const { getPagination, getPostsByYear, getPostsByCategory, currentCategory } =
-    useBlogData();
+const getCurrentCategory = (pathname: string) => {
+  // We split the pathname to retrieve the blog category from it since the
+  // URL is usually blog/{category} the second path piece is usually the
+  // category name
+  const [_pathname, category] = pathname.split('/');
 
-  const { frontmatter } = useClientContext();
+  if (_pathname === 'blog' && category && category.length) {
+    return category;
+  }
 
-  const { posts, pagination, title } = useMemo(() => {
-    if (currentCategory.startsWith('year-')) {
-      const categoryWithoutPrefix = currentCategory.replace('year-', '');
+  // if either the pathname does not match to a blog page
+  // which should not happen (as this hook should only be used in blog pages)
+  // or if there is no category in the URL we return the current year as category name
+  // which is always the default category (for example, the blog index)
+  return `year-${new Date().getFullYear()}`;
+};
 
-      return {
-        posts: getPostsByYear(categoryWithoutPrefix),
-        pagination: getPagination(categoryWithoutPrefix),
-        title: t('layouts.blogIndex.currentYear', {
-          year: categoryWithoutPrefix,
-        }),
-      };
-    }
+const BlogCategoryLayout: FC = async () => {
+  const { frontmatter, pathname } = getClientContext();
+  const category = getCurrentCategory(pathname);
 
-    return {
-      posts: getPostsByCategory(currentCategory),
-      pagination: undefined,
-      title: frontmatter.title,
-    };
-  }, [
-    currentCategory,
-    frontmatter.title,
-    getPagination,
-    getPostsByCategory,
-    getPostsByYear,
-    t,
-  ]);
+  const t = await getTranslations();
+
+  const { posts, pagination } = await getBlogData(category);
+
+  // this only applies if current category is a year category
+  const year = category.replace('year-', '');
+
+  const title = category.startsWith('year-')
+    ? t('layouts.blogIndex.currentYear', { year })
+    : frontmatter.title;
 
   return (
     <div className="container" dir="auto">
       <h2>{title}</h2>
 
       <ul className="blog-index">
-        {posts.map((post: BlogPost) => (
+        {posts.map(post => (
           <li key={post.slug}>
             <Time
               date={post.date}

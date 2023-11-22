@@ -6,7 +6,7 @@ import readline from 'node:readline';
 
 import graymatter from 'gray-matter';
 
-import * as nextHelpers from '../next.helpers.mjs';
+import * as nextHelpers from '../../next.helpers.mjs';
 
 // gets the current blog path based on local module path
 const blogPath = join(process.cwd(), 'pages/en/blog');
@@ -47,11 +47,12 @@ const getFrontMatter = (filename, source) => {
 };
 
 /**
- * This method is used to generate the JSON file
+ * This method is used to generate the Node.js Website Blog Data
+ * for self-consumption during RSC and Static Builds
  *
- * @return {import('../types').BlogData}
+ * @return {Promise<import('../../types').BlogData>}
  */
-const generateBlogPostsData = async () => {
+const generateBlogData = async () => {
   // we retrieve all the filenames of all blog posts
   const filenames = await nextHelpers.getMarkdownFiles(
     process.cwd(),
@@ -107,4 +108,4 @@ const generateBlogPostsData = async () => {
   });
 };
 
-export default generateBlogPostsData;
+export default generateBlogData;

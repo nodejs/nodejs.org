@@ -2,14 +2,14 @@
 
 import { Feed } from 'feed';
 
-import { BASE_URL, BASE_PATH } from '../next.constants.mjs';
-import { siteConfig } from '../next.json.mjs';
+import { BASE_URL, BASE_PATH } from '../../next.constants.mjs';
+import { siteConfig } from '../../next.json.mjs';
 
 /**
  * This method generates RSS website feeds based on the current website configuration
  * and the current blog data that is available
  *
- * @param {Promise<import('../types').BlogData>} blogData
+ * @param {Promise<import('../../types').BlogDataRSC>} blogData
  */
 const generateWebsiteFeeds = async blogData => {
   const canonicalUrl = `${BASE_URL}${BASE_PATH}/en`;

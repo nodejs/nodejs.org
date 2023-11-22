@@ -1,6 +1,18 @@
 'use strict';
 
 /**
+ * This is used for the current Legacy Website Blog Pagination Generation
+ *
+ * @deperecated remove with website redesign
+ */
+export const CURRENT_YEAR = new Date().getFullYear();
+
+/**
+ * This is used to verify if the current Website is running on a Development Environment
+ */
+export const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
+
+/**
  * This is used for telling Next.js if the Website is deployed on Vercel
  *
  * Can be used for conditionally enabling features that we know are Vercel only
@@ -62,6 +74,16 @@ export const DOCS_URL =
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 /**
+ * This is used for fetching static next-data through the /en/next-data/ endpoint
+ *
+ * @note this is assumes that the Node.js Website is either running within Vercel Environment
+ * or running locally (either production or development) mode
+ */
+export const NEXT_DATA_URL = VERCEL_ENV
+  ? `${BASE_URL}${BASE_PATH}/en/next-data/`
+  : `http://localhost:3000/en/next-data/`;
+
+/**
  * This ReGeX is used to remove the `index.md(x)` suffix of a name and to remove
  * the `.md(x)` extensions of a filename.
  *
@@ -98,8 +120,7 @@ export const SENTRY_DSN =
 /**
  * This states if Sentry should be enabled and bundled within our App
  */
-export const SENTRY_ENABLE =
-  process.env.NODE_ENV === 'development' || !!VERCEL_ENV;
+export const SENTRY_ENABLE = IS_DEVELOPMENT || !!VERCEL_ENV;
 
 /**
  * This configures the sampling rate for Sentry

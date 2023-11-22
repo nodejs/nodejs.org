@@ -23,7 +23,13 @@ const getNodeReleaseStatus = (now, support) => {
   return 'Pending';
 };
 
-const generateNodeReleasesJson = async () => {
+/**
+ * This method is used to generate the Node.js Release Data
+ * for self-consumption during RSC and Static Builds
+ *
+ * @returns {Promise<import('../../types').NodeRelease[]>}
+ */
+const generateReleaseData = async () => {
   const nodevuOutput = await nodevu({ fetch: fetch });
 
   // Filter out those without documented support
@@ -70,4 +76,4 @@ const generateNodeReleasesJson = async () => {
   );
 };
 
-export default generateNodeReleasesJson;
+export default generateReleaseData;
