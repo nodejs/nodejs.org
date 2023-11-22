@@ -4,6 +4,7 @@ import {
   Replay,
   Breadcrumbs,
   HttpContext,
+  LinkedErrors,
   BrowserTracing,
   defaultStackParser,
   getCurrentHub,
@@ -28,6 +29,7 @@ export const sentryClient = new BrowserClient({
     new Dedupe(),
     new HttpContext(),
     new Breadcrumbs(),
+    new LinkedErrors(),
     new BrowserTracing(),
   ],
   // We only want to capture errors from _next folder on production
