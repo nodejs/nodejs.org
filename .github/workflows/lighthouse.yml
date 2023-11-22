@@ -65,7 +65,10 @@ jobs:
         id: vercel_preview_url
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          max_timeout: 90
+          # timeout after 5 minutes
+          max_timeout: 300
+          # check every 10 seconds
+          check_interval: 10
 
       - name: Audit Preview URL with Lighthouse
         # Conduct the lighthouse audit
