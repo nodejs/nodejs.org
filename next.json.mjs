@@ -1,12 +1,14 @@
 'use strict';
 
-import { readFileSync } from 'node:fs';
+import _siteNavigation from './navigation.json' assert { type: 'json' };
+import _siteRedirects from './redirects.json' assert { type: 'json' };
+import _siteConfig from './site.json' assert { type: 'json' };
 
 /** @type {Record<string, import('./types').NavigationEntry>} */
-export const siteNavigation = JSON.parse(readFileSync('./navigation.json'));
+export const siteNavigation = _siteNavigation;
 
 /** @type {Record<string, import('./types').Redirect[]>} */
-export const siteRedirects = JSON.parse(readFileSync('./redirects.json'));
+export const siteRedirects = _siteRedirects;
 
 /** @type {import('./types').SiteConfig} */
-export const siteConfig = JSON.parse(readFileSync('./site.json'));
+export const siteConfig = _siteConfig;
