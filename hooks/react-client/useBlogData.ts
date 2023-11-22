@@ -1,13 +1,7 @@
 'use client';
 
-import useClientContext from '@/hooks/react-client/useClientContext';
-import { useBaseBlogData } from '@/hooks/useBaseBlogData';
-
 const useBlogData = () => {
-  const { pathname } = useClientContext();
-  const data = useBaseBlogData(pathname);
-
-  return data;
+  throw new Error('Attempted to call useBlogData from RCC');
 };
 
 export default useBlogData;

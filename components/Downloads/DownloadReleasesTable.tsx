@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import { releaseData } from '@/next.json.mjs';
+import { releaseData } from '@/next.data.mjs';
 import { getNodeApiLink } from '@/util/getNodeApiLink';
 import { getNodejsChangelog } from '@/util/getNodeJsChangelog';
 

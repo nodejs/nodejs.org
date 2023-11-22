@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { releaseData } from '@/next.json.mjs';
+import { releaseData } from '@/next.data.mjs';
 import type { NodeRelease, NodeReleaseStatus } from '@/types';
 
 type WithNodeReleaseProps = {

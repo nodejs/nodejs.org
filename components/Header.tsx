@@ -3,17 +3,15 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
+import type { FC, PropsWithChildren } from 'react';
 import { useState } from 'react';
 
-import ActiveLink from '@/components/Common/ActiveLink';
 import Link from '@/components/Link';
-import { useSiteNavigation } from '@/hooks';
 import { usePathname } from '@/navigation.mjs';
 import { BASE_PATH } from '@/next.constants.mjs';
 import { availableLocales } from '@/next.locales.mjs';
 
-const Header = () => {
-  const { navigationItems } = useSiteNavigation();
+const Header: FC<PropsWithChildren> = ({ children }) => {
   const [showLangPicker, setShowLangPicker] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
@@ -36,17 +34,7 @@ const Header = () => {
           />
         </Link>
 
-        <nav aria-label="primary">
-          <ul className="list-divider-pipe">
-            {navigationItems.map((item, key) => (
-              <li key={key}>
-                <ActiveLink href={item.link} allowSubPath>
-                  {item.text}
-                </ActiveLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        {children}
 
         <div className="switchers">
           <button

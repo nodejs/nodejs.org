@@ -1,11 +1,7 @@
 import { NextResponse } from 'next/server';
 
-import { generateWebsiteFeeds } from '@/next.data.mjs';
-import { blogData } from '@/next.json.mjs';
+import { websiteFeeds } from '@/next.data.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
-
-// loads all the data from the blog-posts-data.json file
-const websiteFeeds = generateWebsiteFeeds(blogData);
 
 type StaticParams = { params: { feed: string } };
 

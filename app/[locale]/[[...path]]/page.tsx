@@ -5,7 +5,8 @@ import type { FC } from 'react';
 import { setClientContext } from '@/client-context';
 import { MDXRenderer } from '@/components/mdxRenderer';
 import { WithLayout } from '@/components/withLayout';
-import { DEFAULT_VIEWPORT, ENABLE_STATIC_EXPORT } from '@/next.constants.mjs';
+import { ENABLE_STATIC_EXPORT } from '@/next.constants.mjs';
+import { DEFAULT_VIEWPORT } from '@/next.dynamic.constants.mjs';
 import { dynamicRouter } from '@/next.dynamic.mjs';
 import { availableLocaleCodes, defaultLocale } from '@/next.locales.mjs';
 import { MatterProvider } from '@/providers/matterProvider';
@@ -15,7 +16,7 @@ type DynamicParams = { params: DynamicStaticPaths };
 
 // This is the default Viewport Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-export const viewport = DEFAULT_VIEWPORT;
+export const generateViewport = async () => ({ ...DEFAULT_VIEWPORT });
 
 // This generates each page's HTML Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-metadata

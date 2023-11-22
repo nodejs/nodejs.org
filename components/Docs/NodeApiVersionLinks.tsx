@@ -1,5 +1,5 @@
 import { DOCS_URL } from '@/next.constants.mjs';
-import { releaseData } from '@/next.json.mjs';
+import { releaseData } from '@/next.data.mjs';
 
 const NodeApiVersionLinks = () => {
   // Gets all major releases without the 0x release as those are divided on 0.12x and 0.10x

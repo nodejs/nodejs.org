@@ -8,16 +8,14 @@ import matter from 'gray-matter';
 import { cache } from 'react';
 import { VFile } from 'vfile';
 
+import { MD_EXTENSION_REGEX, BASE_URL, BASE_PATH } from './next.constants.mjs';
 import {
-  DYNAMIC_GENERATED_ROUTES,
   DYNAMIC_ROUTES_IGNORES,
   DYNAMIC_ROUTES_REWRITES,
-  MD_EXTENSION_REGEX,
   STATIC_ROUTES_IGNORES,
+  DYNAMIC_GENERATED_ROUTES,
   DEFAULT_METADATA,
-  BASE_URL,
-  BASE_PATH,
-} from './next.constants.mjs';
+} from './next.dynamic.constants.mjs';
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { siteConfig } from './next.json.mjs';
 import { availableLocaleCodes, defaultLocale } from './next.locales.mjs';

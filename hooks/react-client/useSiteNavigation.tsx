@@ -1,5 +1,7 @@
 'use client';
 
-import useBaseSiteNavigation from '@/hooks/useBaseSiteNavigation';
+const useSiteNavigation = () => {
+  throw new Error('Attempted to call useSiteNavigation from RCC');
+};
 
-export default useBaseSiteNavigation;
+export default useSiteNavigation;

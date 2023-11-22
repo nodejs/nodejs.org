@@ -1,7 +1,6 @@
 'use strict';
 
 import { createReadStream } from 'node:fs';
-import { writeFile } from 'node:fs/promises';
 import { basename, extname, join } from 'node:path';
 import readline from 'node:readline';
 
@@ -11,9 +10,6 @@ import * as nextHelpers from '../next.helpers.mjs';
 
 // gets the current blog path based on local module path
 const blogPath = join(process.cwd(), 'pages/en/blog');
-
-// this is the destination path for where the JSON file will be written
-const jsonFilePath = join(process.cwd(), 'public/blog-posts-data.json');
 
 /**
  * This contains the metadata of all available blog categories and
@@ -52,6 +48,8 @@ const getFrontMatter = (filename, source) => {
 
 /**
  * This method is used to generate the JSON file
+ *
+ * @return {import('../types').BlogData}
  */
 const generateBlogPostsData = async () => {
   // we retrieve all the filenames of all blog posts
@@ -60,18 +58,6 @@ const generateBlogPostsData = async () => {
     'pages/en/blog',
     ['**/index.md', '**/pagination.md']
   );
-
-  // Writes the Blog Posts to the JSON file
-  const writeResult = blogPosts => {
-    return writeFile(
-      jsonFilePath,
-      JSON.stringify({
-        pagination: [...blogMetadata.pagination].sort(),
-        categories: [...blogMetadata.categories].sort(),
-        posts: blogPosts.sort((a, b) => b.date - a.date),
-      })
-    );
-  };
 
   return new Promise(resolve => {
     const blogPosts = [];
@@ -110,7 +96,11 @@ const generateBlogPostsData = async () => {
 
         // Once we finish reading all fles
         if (blogPosts.length === filenames.length) {
-          resolve(writeResult(blogPosts));
+          resolve({
+            pagination: [...blogMetadata.pagination].sort(),
+            categories: [...blogMetadata.categories].sort(),
+            posts: blogPosts.sort((a, b) => b.date - a.date),
+          });
         }
       });
     }

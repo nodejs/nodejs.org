@@ -2,7 +2,7 @@ import type { RichTranslationValues } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
 
 import SideNavigation from '@/components/SideNavigation';
-import { releaseData } from '@/next.json.mjs';
+import { releaseData } from '@/next.data.mjs';
 
 const DocsLayout: FC<PropsWithChildren> = ({ children }) => {
   const [lts, current] = [

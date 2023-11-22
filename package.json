@@ -16,10 +16,7 @@
   },
   "scripts": {
     "scripts:release-post": "cross-env NODE_NO_WARNINGS=1 node scripts/release-post/index.mjs",
-    "scripts:generate-next-data": "cross-env NODE_NO_WARNINGS=1 node scripts/generate-next-data/index.mjs",
-    "preserve": "npm run scripts:generate-next-data",
     "serve": "cross-env NODE_NO_WARNINGS=1 next dev --turbo",
-    "prebuild": "npm run scripts:generate-next-data",
     "build": "cross-env NODE_NO_WARNINGS=1 next build",
     "start": "cross-env NODE_NO_WARNINGS=1 next start",
     "deploy": "cross-env NEXT_STATIC_EXPORT=true npm run build",

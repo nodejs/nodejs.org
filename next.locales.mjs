@@ -1,6 +1,6 @@
 'use strict';
 
-import { localeConfig } from './next.json.mjs';
+import localeConfig from './i18n/config.json' assert { type: 'json' };
 
 // As set of available and enabled locales for the website
 // This is used for allowing us to redirect the user to any
