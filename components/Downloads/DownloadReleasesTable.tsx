@@ -5,6 +5,9 @@ import getReleaseData from '@/next-data/releaseData';
 import { getNodeApiLink } from '@/util/getNodeApiLink';
 import { getNodejsChangelog } from '@/util/getNodeJsChangelog';
 
+// This is a React Async Server Component
+// Note that Hooks cannot be used in a RSC async component
+// Async Components do not get re-rendered at all.
 const DownloadReleasesTable: FC = async () => {
   const releaseData = await getReleaseData();
 

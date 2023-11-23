@@ -7,7 +7,8 @@ const locale = defaultLocale.code;
 type StaticParams = { params: { category: string; locale: string } };
 
 // This is the Route Handler for the `GET` method which handles the request
-// for generating our static data for the Node.js Website
+// for providing Blog Posts, Pagination for every supported Blog Category
+// this includes the `year-XXXX` categories for yearly archives (pagination)
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 export const GET = async (_: Request, { params }: StaticParams) => {
   const { posts, pagination } = await provideBlogData(params.category);
@@ -19,21 +20,23 @@ export const GET = async (_: Request, { params }: StaticParams) => {
 };
 
 // This function generates the static paths that come from the dynamic segments
-// `en/next-data/[type]` and returns an array of all available static paths
-// this is useful for static exports, for example.
-// Note that differently from the App Router these don't get built at the build time
-// only if the export is already set for static export
+// `[locale]/next-data/blog-data/[category]` and returns an array of all available static paths
+// This is used for ISR static validation and generation
 export const generateStaticParams = async () => {
-  const {
-    meta: { categories, pagination },
-  } = await provideBlogData();
+  // This metadata is the original list of all available categories and all available years
+  // within the Node.js Website Blog Posts (2011, 2012...)
+  const { meta } = await provideBlogData();
 
   return [
-    ...categories.map(category => ({ category, locale })),
-    ...pagination.map(year => ({ category: `year-${year}`, locale })),
+    ...meta.categories.map(category => ({ category, locale })),
+    ...meta.pagination.map(year => ({ category: `year-${year}`, locale })),
   ];
 };
 
-// Enforces that this route is used as static rendering
+// Forces that only the paths from `generateStaticParams` are allowed, giving 404 on the contrary
+// @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
+export const dynamicParams = false;
+
+// Enforces that this route is cached and static as much as possible
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
 export const dynamic = 'error';

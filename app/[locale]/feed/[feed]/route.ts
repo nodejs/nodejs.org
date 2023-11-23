@@ -10,9 +10,10 @@ const locale = defaultLocale.code;
 type StaticParams = { params: { feed: string; locale: string } };
 
 // This is the Route Handler for the `GET` method which handles the request
-// for Blog Feeds within the Node.js Website
+// for the Node.js Website Blog Feeds (RSS)
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 export const GET = async (_: Request, { params }: StaticParams) => {
+  // Generate the Feed for the given feed type (blog, releases, etc)
   const websiteFeed = await provideWebsiteFeeds(params.feed);
 
   return new NextResponse(websiteFeed, {
@@ -22,13 +23,15 @@ export const GET = async (_: Request, { params }: StaticParams) => {
 };
 
 // This function generates the static paths that come from the dynamic segments
-// `en/feeds/[feed]` and returns an array of all available static paths
-// this is useful for static exports, for example.
-// Note that differently from the App Router these don't get built at the build time
-// only if the export is already set for static export
+// `[locale]/feeds/[feed]` and returns an array of all available static paths
+// This is used for ISR static validation and generation
 export const generateStaticParams = async () =>
   siteConfig.rssFeeds.map(feed => ({ feed: feed.file, locale }));
 
-// Enforces that this route is used as static rendering
+// Forces that only the paths from `generateStaticParams` are allowed, giving 404 on the contrary
+// @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
+export const dynamicParams = false;
+
+// Enforces that this route is cached and static as much as possible
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
 export const dynamic = 'error';

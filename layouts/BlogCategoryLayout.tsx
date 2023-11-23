@@ -24,6 +24,9 @@ const getCurrentCategory = (pathname: string) => {
   return `year-${new Date().getFullYear()}`;
 };
 
+// This is a React Async Server Component
+// Note that Hooks cannot be used in a RSC async component
+// Async Components do not get re-rendered at all.
 const BlogCategoryLayout: FC = async () => {
   const { frontmatter, pathname } = getClientContext();
   const category = getCurrentCategory(pathname);
@@ -44,14 +47,10 @@ const BlogCategoryLayout: FC = async () => {
       <h2>{title}</h2>
 
       <ul className="blog-index">
-        {posts.map(post => (
-          <li key={post.slug}>
-            <Time
-              date={post.date}
-              format={{ month: 'short', day: '2-digit' }}
-            />
-
-            <Link href={post.slug}>{post.title}</Link>
+        {posts.map(({ slug, date, title }) => (
+          <li key={slug}>
+            <Time date={date} format={{ month: 'short', day: '2-digit' }} />
+            <Link href={slug}>{title}</Link>
           </li>
         ))}
       </ul>

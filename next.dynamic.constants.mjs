@@ -88,7 +88,7 @@ export const DEFAULT_METADATA = {
     canonical: '',
     languages: { 'x-default': '' },
     types: {
-      'application/rss+xml': 'https://nodejs.org/en/feed/blog.xml',
+      'application/rss+xml': `${BASE_URL}${BASE_PATH}/en/feed/blog.xml`,
     },
   },
   icons: { icon: siteConfig.favicon },

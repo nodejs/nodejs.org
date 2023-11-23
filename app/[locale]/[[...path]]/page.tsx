@@ -114,7 +114,13 @@ const getPage: FC<DynamicParams> = async ({ params }) => {
   return notFound();
 };
 
-// Enforce that all these routes are compatible with SSR
+// In this case we want to catch-all possible pages even to this page. This ensures that we use our 404
+// and that all pages including existing ones are handled here and provide `next-intl` locale also
+// @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
+export const dynamicParams = true;
+
+// Enforces that this route is used as static rendering
+// @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
 export const dynamic = 'error';
 
 export default getPage;

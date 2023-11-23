@@ -76,10 +76,14 @@ export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
 /**
  * This is used for fetching static next-data through the /en/next-data/ endpoint
  *
- * @note this is assumes that the Node.js Website is either running within Vercel Environment
+ * Note this is assumes that the Node.js Website is either running within Vercel Environment
  * or running locally (either production or development) mode
+ *
+ * Note this variable can be overrided via a manual Environment Variable defined by us if necessary.
  */
-export const NEXT_DATA_URL = VERCEL_ENV
+export const NEXT_DATA_URL = process.env.NEXT_PUBLIC_DATA_URL
+  ? process.env.NEXT_PUBLIC_DATA_URL
+  : VERCEL_ENV
   ? `${BASE_URL}${BASE_PATH}/en/next-data/`
   : `http://localhost:3000/en/next-data/`;
 
