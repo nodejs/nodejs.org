@@ -9,10 +9,10 @@ const TopNavigation: FC = () => {
   return (
     <nav aria-label="primary">
       <ul className="list-divider-pipe">
-        {navigationItems.map((item, key) => (
-          <li key={key}>
-            <ActiveLink href={item.link} allowSubPath>
-              {item.text}
+        {navigationItems.map(({ link, text }) => (
+          <li key={link}>
+            <ActiveLink href={link} allowSubPath>
+              {text}
             </ActiveLink>
           </li>
         ))}
