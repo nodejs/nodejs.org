@@ -38,7 +38,7 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
 
       {avatars.length > limit && (
         <span
-          onClick={() => isExpandable && setShowMore(!showMore)}
+          onClick={isExpandable ? () => setShowMore(prev => !prev) : undefined}
           className={classNames(avatarstyles.avatarRoot, 'cursor-pointer')}
         >
           <span className={avatarstyles.avatar}>
