@@ -33,8 +33,8 @@ export const sentryClient = new BrowserClient({
     new Breadcrumbs(),
     new LinkedErrors(),
   ],
-  // We only want to capture errors from _next folder on production
-  // We don't want to capture errors from preview branches here
+  // We only want to allow ingestion from these pre-selected allowed URLs
+  // Note that the vercel.app prefix is for our Pull Request Branch Previews
   allowUrls: ['https://nodejs.org/', /^https:\/\/.+\.vercel\.app/],
   // Percentage of events to send to Sentry (1% of them) (for performance metrics)
   tracesSampleRate: SENTRY_CAPTURE_RATE,
