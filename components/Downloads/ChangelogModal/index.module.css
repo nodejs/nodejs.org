@@ -90,9 +90,14 @@
     h3,
     h4,
     h5,
-    p {
+    p,
+    a {
       @apply text-neutral-900
         dark:text-white;
+    }
+
+    a {
+      @apply underline;
     }
 
     pre {
