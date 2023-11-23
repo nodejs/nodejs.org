@@ -15,13 +15,13 @@ import { availableLocales } from '@/next.locales.mjs';
 const Header = () => {
   const { navigationItems } = useSiteNavigation();
   const [showLangPicker, setShowLangPicker] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   const pathname = usePathname();
   const t = useTranslations();
 
   const toggleLanguage = t('components.header.buttons.toggleLanguage');
-  const toggleDarkMode = t('components.header.buttons.toggleDarkMode');
+  const toggleTheme = t('components.header.buttons.toggleTheme');
 
   return (
     <header aria-label="Primary">
@@ -50,11 +50,13 @@ const Header = () => {
 
         <div className="switchers">
           <button
-            className="dark-theme-switcher"
+            className="theme-switcher"
             type="button"
-            title={toggleDarkMode}
-            aria-label={toggleDarkMode}
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            title={toggleTheme}
+            aria-label={toggleTheme}
+            onClick={() =>
+              setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+            }
           >
             <Image
               priority
@@ -62,7 +64,7 @@ const Header = () => {
               height="28"
               className="dark-image"
               src={`${BASE_PATH}/static/images/light-mode.svg`}
-              alt="Dark Theme Switcher"
+              alt="Theme Switcher"
             />
 
             <Image
@@ -71,7 +73,7 @@ const Header = () => {
               height="28"
               className="light-image"
               src={`${BASE_PATH}/static/images/dark-mode.svg`}
-              alt="Dark Theme Switcher"
+              alt="Theme Switcher"
             />
           </button>
 

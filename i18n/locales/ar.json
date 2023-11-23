@@ -67,7 +67,7 @@
       },
       "buttons": {
         "toggleLanguage": "Toggle Language",
-        "toggleDarkMode": "Toggle dark/light mode"
+        "toggleTheme": "Toggle dark/light mode"
       }
     },
     "navigation": {

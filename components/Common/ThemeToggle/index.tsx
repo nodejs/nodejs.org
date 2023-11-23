@@ -11,7 +11,7 @@ type ThemeToggleProps = {
 const ThemeToggle: FC<ThemeToggleProps> = ({ onClick = () => {} }) => {
   const t = useTranslations();
 
-  const ariaLabel = t('components.header.buttons.toggleDarkMode');
+  const ariaLabel = t('components.header.buttons.toggleTheme');
 
   return (
     <button
