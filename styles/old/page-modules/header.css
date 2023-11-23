@@ -1,5 +1,5 @@
 header,
-.dark-theme-switcher img,
+.theme-switcher img,
 .lang-picker-toggler img {
   background-color: $node-gray;
 }
@@ -47,7 +47,7 @@ header {
     top: 0;
   }
 
-  .dark-theme-switcher {
+  .theme-switcher {
     border: none;
     cursor: pointer;
     margin: 0 8px 0 0;
