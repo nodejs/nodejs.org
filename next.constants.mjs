@@ -196,3 +196,30 @@ export const SENTRY_DSN =
  */
 export const SENTRY_ENABLE =
   process.env.NODE_ENV === 'development' || !!VERCEL_ENV;
+
+/**
+ * This configures the sampling rate for Sentry
+ *
+ * @note we always want to capture 100% on preview branches and development mode
+ */
+export const SENTRY_CAPTURE_RATE =
+  SENTRY_ENABLE && BASE_URL !== 'https://nodejs.org' ? 1.0 : 0.01;
+
+/**
+ * Provides the Route for Sentry's Server-Side Tunnel
+ */
+export const SENTRY_TUNNEL = (components = '') =>
+  SENTRY_ENABLE ? `/monitoring${components}` : undefined;
+
+/**
+ * This configures which Sentry features to tree-shake/remove from the Sentry bundle
+ *
+ * @see https://docs.sentry.io/platforms/javascript/guides/nextjs/configuration/tree-shaking/
+ */
+export const SENTRY_EXTENSIONS = {
+  __SENTRY_DEBUG__: false,
+  __SENTRY_TRACING__: false,
+  __RRWEB_EXCLUDE_IFRAME__: true,
+  __RRWEB_EXCLUDE_SHADOW_DOM__: true,
+  __SENTRY_EXCLUDE_REPLAY_WORKER__: true,
+};

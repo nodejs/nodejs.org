@@ -16,5 +16,9 @@ export const WithNodeRelease: FC<WithNodeReleaseProps> = ({
     [status].flat().includes(release.status)
   );
 
-  return <Component release={matchingRelease!} />;
+  if (matchingRelease !== undefined) {
+    return <Component release={matchingRelease!} />;
+  }
+
+  return null;
 };

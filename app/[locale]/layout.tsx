@@ -24,7 +24,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <html className={sourceSans.className} dir={langDir} lang={hrefLang}>
-      <body>
+      <body suppressHydrationWarning>
         <LocaleProvider>
           <ThemeProvider>
             <BaseLayout>{children}</BaseLayout>

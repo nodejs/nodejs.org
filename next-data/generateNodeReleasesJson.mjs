@@ -63,8 +63,6 @@ const generateNodeReleasesJson = async () => {
     };
   });
 
-  console.timeEnd('g');
-
   return writeFile(
     jsonFilePath,
     JSON.stringify(
