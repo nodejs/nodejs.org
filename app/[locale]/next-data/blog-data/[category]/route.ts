@@ -1,32 +1,37 @@
-import { NextResponse } from 'next/server';
-
-import provideWebsiteFeeds from '@/next-data/providers/websiteFeeds';
-import { siteConfig } from '@/next.json.mjs';
+import provideBlogData from '@/next-data/providers/blogData';
 import { defaultLocale } from '@/next.locales.mjs';
 
 // We only support fetching these pages from the /en/ locale code
 const locale = defaultLocale.code;
 
-type StaticParams = { params: { feed: string; locale: string } };
+type StaticParams = { params: { category: string; locale: string } };
 
 // This is the Route Handler for the `GET` method which handles the request
-// for the Node.js Website Blog Feeds (RSS)
+// for providing Blog Posts, Pagination for every supported Blog Category
+// this includes the `year-XXXX` categories for yearly archives (pagination)
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 export const GET = async (_: Request, { params }: StaticParams) => {
-  // Generate the Feed for the given feed type (blog, releases, etc)
-  const websiteFeed = await provideWebsiteFeeds(params.feed);
+  const { posts, pagination } = await provideBlogData(params.category);
 
-  return new NextResponse(websiteFeed, {
-    headers: { 'Content-Type': 'application/xml' },
-    status: websiteFeed ? 200 : 404,
-  });
+  return Response.json(
+    { posts, pagination },
+    { status: posts.length ? 200 : 404 }
+  );
 };
 
 // This function generates the static paths that come from the dynamic segments
-// `[locale]/feeds/[feed]` and returns an array of all available static paths
+// `[locale]/next-data/blog-data/[category]` and returns an array of all available static paths
 // This is used for ISR static validation and generation
-export const generateStaticParams = async () =>
-  siteConfig.rssFeeds.map(feed => ({ feed: feed.file, locale }));
+export const generateStaticParams = async () => {
+  // This metadata is the original list of all available categories and all available years
+  // within the Node.js Website Blog Posts (2011, 2012...)
+  const { meta } = await provideBlogData();
+
+  return [
+    ...meta.categories.map(category => ({ category, locale })),
+    ...meta.pagination.map(year => ({ category: `year-${year}`, locale })),
+  ];
+};
 
 // Forces that only the paths from `generateStaticParams` are allowed, giving 404 on the contrary
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams

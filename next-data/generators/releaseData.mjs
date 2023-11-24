@@ -1,10 +1,4 @@
-import { writeFile } from 'node:fs/promises';
-import { join } from 'node:path';
-
 import nodevu from '@nodevu/core';
-
-// this is the destination path for where the JSON file will be written
-const jsonFilePath = join(process.cwd(), 'public/node-releases-data.json');
 
 // Gets the appropriate release status for each major release
 const getNodeReleaseStatus = (now, support) => {
@@ -29,7 +23,13 @@ const getNodeReleaseStatus = (now, support) => {
   return 'Pending';
 };
 
-const generateNodeReleasesJson = async () => {
+/**
+ * This method is used to generate the Node.js Release Data
+ * for self-consumption during RSC and Static Builds
+ *
+ * @returns {Promise<import('../../types').NodeRelease[]>}
+ */
+const generateReleaseData = async () => {
   const nodevuOutput = await nodevu({ fetch: fetch });
 
   // Filter out those without documented support
@@ -63,20 +63,17 @@ const generateNodeReleasesJson = async () => {
     };
   });
 
-  return writeFile(
-    jsonFilePath,
-    JSON.stringify(
-      // nodevu returns duplicated v0.x versions (v0.12, v0.10, ...).
-      // This behavior seems intentional as the case is hardcoded in nodevu,
-      // see https://github.com/cutenode/nodevu/blob/0c8538c70195fb7181e0a4d1eeb6a28e8ed95698/core/index.js#L24.
-      // This line ignores those duplicated versions and takes the latest
-      // v0.x version (v0.12.18). It is also consistent with the legacy
-      // nodejs.org implementation.
-      nodeReleases.filter(
-        release => release.major !== 0 || release.version === '0.12.18'
-      )
+  return Promise.resolve(
+    // nodevu returns duplicated v0.x versions (v0.12, v0.10, ...).
+    // This behavior seems intentional as the case is hardcoded in nodevu,
+    // see https://github.com/cutenode/nodevu/blob/0c8538c70195fb7181e0a4d1eeb6a28e8ed95698/core/index.js#L24.
+    // This line ignores those duplicated versions and takes the latest
+    // v0.x version (v0.12.18). It is also consistent with the legacy
+    // nodejs.org implementation.
+    nodeReleases.filter(
+      release => release.major !== 0 || release.version === '0.12.18'
     )
   );
 };
 
-export default generateNodeReleasesJson;
+export default generateReleaseData;

@@ -16,7 +16,7 @@ const localesMatch = `/:locale(${availableLocaleCodes.join('|')}|)?/`;
  * These are sourced originally from https://github.com/nodejs/build/blob/main/ansible/www-standalone/resources/config/nodejs.org?plain=1
  * and were then converted to Next.js rewrites. Note that only relevant rewrites were added, and some were modified to match Next.js's syntax
  *
- * @type {import('next').NextConfig['redirects']}
+ * @return {Promise<import('next').NextConfig['redirects']>}
  */
 const redirects = async () => {
   return siteRedirects.external.map(({ source, destination }) => ({
@@ -32,13 +32,15 @@ const redirects = async () => {
  * These are sourced originally from https://github.com/nodejs/build/blob/main/ansible/www-standalone/resources/config/nodejs.org?plain=1
  * and were then converted to Next.js rewrites. Note that only relevant rewrites were added, and some were modified to match Next.js's syntax
  *
- * @type {import('next').NextConfig['rewrites']}
+ * @return {Promise<import('next').NextConfig['rewrites']>}
  */
-const rewrites = async () => ({
-  afterFiles: siteRedirects.internal.map(({ source, destination }) => ({
-    source: source.replace('/:locale/', localesMatch),
-    destination,
-  })),
-});
+const rewrites = async () => {
+  return {
+    afterFiles: siteRedirects.internal.map(({ source, destination }) => ({
+      source: source.replace('/:locale/', localesMatch),
+      destination,
+    })),
+  };
+};
 
 export { rewrites, redirects };

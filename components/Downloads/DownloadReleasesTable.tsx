@@ -1,12 +1,17 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import type { FC } from 'react';
 
-import { releaseData } from '@/next.json.mjs';
+import getReleaseData from '@/next-data/releaseData';
 import { getNodeApiLink } from '@/util/getNodeApiLink';
 import { getNodejsChangelog } from '@/util/getNodeJsChangelog';
 
-const DownloadReleasesTable: FC = () => {
-  const t = useTranslations();
+// This is a React Async Server Component
+// Note that Hooks cannot be used in a RSC async component
+// Async Components do not get re-rendered at all.
+const DownloadReleasesTable: FC = async () => {
+  const releaseData = await getReleaseData();
+
+  const t = await getTranslations();
 
   return (
     <table id="tbVersions" className="download-table full-width">

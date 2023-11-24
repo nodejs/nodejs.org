@@ -11,3 +11,15 @@ export interface BlogData {
   pagination: number[];
   categories: string[];
 }
+
+export interface BlogDataRSC {
+  posts: BlogPost[];
+  pagination: {
+    next: number | null;
+    prev: number | null;
+  };
+  meta: {
+    categories: string[];
+    pagination: number[];
+  };
+}

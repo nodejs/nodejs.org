@@ -1,7 +1,14 @@
-import { DOCS_URL } from '@/next.constants.mjs';
-import { releaseData } from '@/next.json.mjs';
+import type { FC } from 'react';
 
-const NodeApiVersionLinks = () => {
+import getReleaseData from '@/next-data/releaseData';
+import { DOCS_URL } from '@/next.constants.mjs';
+
+// This is a React Async Server Component
+// Note that Hooks cannot be used in a RSC async component
+// Async Components do not get re-rendered at all.
+const NodeApiVersionLinks: FC = async () => {
+  const releaseData = await getReleaseData();
+
   // Gets all major releases without the 0x release as those are divided on 0.12x and 0.10x
   const mappedReleases = releaseData.slice(0, -1).map(({ major }) => (
     <li key={major}>
