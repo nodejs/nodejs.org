@@ -1,10 +1,10 @@
 ---
-title: Run javascript code with Node.js from the command line
+title: Run Node.js scripts from the command line
 layout: learn.hbs
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, akazyti, AugustinMauroy
 ---
 
-# Run javascript code with Node.js from the command line
+# Run Node.js scripts from the command line
 
 The usual way to run a Node.js program is to run the globally available `node` command (once you install Node.js) and pass the name of the file you want to execute.
 
@@ -25,7 +25,7 @@ Above, we are explicitly giving the absolute path of interpreter. Not all operat
 ```js
 #!/usr/bin/env node
 
-// your code
+// your javascript code
 ```
 
 To use a shebang, your file should have executable permission. You can give `app.js` the executable permission by running:
