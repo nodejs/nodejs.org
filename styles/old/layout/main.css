@@ -13,6 +13,7 @@
   #main {
     .container {
       margin: 1em 20px;
+      width: calc(100% - 40px);
     }
   }
 }
