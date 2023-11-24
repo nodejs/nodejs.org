@@ -9,7 +9,7 @@ authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99
 The simplest way to read a file in Node.js is to use the `fs.readFile()` method, passing it the file path, encoding and a callback function that will be called with the file data (and the error):
 
 ```js
-const fs = require('fs');
+const fs = require('node:fs');
 
 fs.readFile('/Users/joe/test.txt', 'utf8', (err, data) => {
   if (err) {
@@ -23,7 +23,7 @@ fs.readFile('/Users/joe/test.txt', 'utf8', (err, data) => {
 Alternatively, you can use the synchronous version `fs.readFileSync()`:
 
 ```js
-const fs = require('fs');
+const fs = require('node:fs');
 
 try {
   const data = fs.readFileSync('/Users/joe/test.txt', 'utf8');
@@ -36,7 +36,7 @@ try {
 You can also use the promise-based `fsPromises.readFile()` method offered by the `fs/promises` module:
 
 ```js
-const fs = require('fs/promises');
+const fs = require('node:fs/promises');
 
 async function example() {
   try {

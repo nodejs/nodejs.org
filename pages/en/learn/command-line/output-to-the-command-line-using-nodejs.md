@@ -80,6 +80,7 @@ You can just count apples and oranges:
 ```js
 const oranges = ['orange', 'orange'];
 const apples = ['just one apple'];
+
 oranges.forEach(fruit => {
   console.count(fruit);
 });
@@ -97,6 +98,7 @@ We will use the apples and orange example to demonstrate this.
 ```js
 const oranges = ['orange', 'orange'];
 const apples = ['just one apple'];
+
 oranges.forEach(fruit => {
   console.count(fruit);
 });
@@ -178,7 +180,7 @@ You can try that in the Node.js REPL, and it will print `hi!` in yellow.
 
 However, this is the low-level way to do this. The simplest way to go about coloring the console output is by using a library. [Chalk](https://github.com/chalk/chalk) is such a library, and in addition to coloring it also helps with other styling facilities, like making text bold, italic or underlined.
 
-You install it with `npm install chalk@4`, then you can use it:
+You install it with `npm install chalk`, then you can use it:
 
 ```js
 const chalk = require('chalk');

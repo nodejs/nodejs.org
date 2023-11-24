@@ -17,7 +17,7 @@ Use `fs.access()` (and its promise-based `fsPromises.access()` counterpart) to c
 Use `fs.mkdir()` or `fs.mkdirSync()` or `fsPromises.mkdir()` to create a new folder.
 
 ```js
-const fs = require('fs');
+const fs = require('node:fs');
 
 const folderName = '/Users/joe/test';
 
@@ -37,7 +37,7 @@ Use `fs.readdir()` or `fs.readdirSync()` or `fsPromises.readdir()` to read the c
 This piece of code reads the content of a folder, both files and subfolders, and returns their relative path:
 
 ```js
-const fs = require('fs');
+const fs = require('node:fs');
 
 const folderPath = '/Users/joe';
 
@@ -55,6 +55,8 @@ fs.readdirSync(folderPath).map(fileName => {
 You can also filter the results to only return the files, and exclude the folders:
 
 ```js
+const fs = require('node:fs');
+
 const isFile = fileName => {
   return fs.lstatSync(fileName).isFile();
 };
@@ -71,7 +73,7 @@ fs.readdirSync(folderPath)
 Use `fs.rename()` or `fs.renameSync()` or `fsPromises.rename()` to rename folder. The first parameter is the current path, the second the new path:
 
 ```js
-const fs = require('fs');
+const fs = require('node:fs');
 
 fs.rename('/Users/joe', '/Users/roger', err => {
   if (err) {
@@ -84,7 +86,7 @@ fs.rename('/Users/joe', '/Users/roger', err => {
 `fs.renameSync()` is the synchronous version:
 
 ```js
-const fs = require('fs');
+const fs = require('node:fs');
 
 try {
   fs.renameSync('/Users/joe', '/Users/roger');
@@ -96,7 +98,7 @@ try {
 `fsPromises.rename()` is the promise-based version:
 
 ```js
-const fs = require('fs/promises');
+const fs = require('node:fs/promises');
 
 async function example() {
   try {
@@ -113,7 +115,7 @@ example();
 Use `fs.rmdir()` or `fs.rmdirSync()` or `fsPromises.rmdir()` to remove a folder.
 
 ```js
-const fs = require('fs');
+const fs = require('node:fs');
 
 fs.rmdir(dir, err => {
   if (err) {
@@ -129,7 +131,7 @@ To remove a folder that has contents use `fs.rm()` with the option `{ recursive:
 `{ recursive: true, force: true }` makes it so that exceptions will be ignored if the folder does not exist.
 
 ```js
-const fs = require('fs');
+const fs = require('node:fs');
 
 fs.rm(dir, { recursive: true, force: true }, err => {
   if (err) {

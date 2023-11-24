@@ -10,7 +10,7 @@ Every file in the system has a path. On Linux and macOS, a path might look like:
 
 You need to pay attention when using paths in your applications, as this difference must be taken into account.
 
-You include this module in your files using `const path = require('path');` and you can start using its methods.
+You include this module in your files using `const path = require('node:path');` and you can start using its methods.
 
 ## Getting information out of a path
 
@@ -23,6 +23,8 @@ Given a path, you can extract information out of it using those methods:
 ### Example
 
 ```js
+const path = require('node:path');
+
 const notes = '/users/joe/notes.txt';
 
 path.dirname(notes); // /users/joe

@@ -15,7 +15,7 @@ This module, in particular, offers the `EventEmitter` class, which we'll use to 
 You initialize that using
 
 ```js
-const EventEmitter = require('events');
+const EventEmitter = require('node:events');
 
 const eventEmitter = new EventEmitter();
 ```

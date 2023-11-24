@@ -1,7 +1,7 @@
 ---
 title: Run Node.js scripts from the command line
 layout: learn.hbs
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, akazyti
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, akazyti, AugustinMauroy
 ---
 
 # Run Node.js scripts from the command line
@@ -25,7 +25,7 @@ Above, we are explicitly giving the absolute path of interpreter. Not all operat
 ```js
 #!/usr/bin/env node
 
-// your code
+// your javascript code
 ```
 
 To use a shebang, your file should have executable permission. You can give `app.js` the executable permission by running:
@@ -48,24 +48,12 @@ node -e "console.log(123)"
 
 ## Restart the application automatically
 
-The `node` command has to be re-executed in bash whenever there is a change in the application. To restart the application automatically, use the `nodemon` module.
-
-Install the nodemon module globally to system path:
-
-```bash
-npm i -g nodemon
-```
-
-You can also install nodemon as a development dependency:
+As of nodejs V16, there is a built-in option to automatically restart the application when a file changes. This is useful for development purposes.
+To use this feature, you need to pass the `--watch' flag to nodejs.
 
 ```bash
-npm i --save-dev nodemon
+node --watch app.js
 ```
 
-This local installation of nodemon can be run by calling it from within npm script such as npm start or using npx nodemon.
-
-Run the application using the `nodemon` command followed by the application's file name:
-
-```bash
-nodemon app.js
-```
+So when you change the file, the application will restart automatically.
+Read the [`--watch` flag documentation](https://nodejs.org/docs/latest/api/cli.html#--watch).
