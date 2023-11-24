@@ -58,6 +58,6 @@ type of objects take and what variables are preventing them from being garbage
 collected. It can also help to know the allocation pattern of our program over
 time.
 
-- [Using Heap Profiler](/docs/guides/diagnostics/memory/using-heap-profiler/)
-- [Using Heap Snapshot](/docs/guides/diagnostics/memory/using-heap-snapshot/)
-- [GC Traces](/docs/guides/diagnostics/memory/using-gc-traces)
+- [Using Heap Profiler](https://nodejs.org/docs/guides/diagnostics/memory/using-heap-profiler/)
+- [Using Heap Snapshot](https://nodejs.org/docs/guides/diagnostics/memory/using-heap-snapshot/)
+- [GC Traces](https://nodejs.org/docs/guides/diagnostics/memory/using-gc-traces)
