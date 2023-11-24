@@ -48,4 +48,4 @@ process.env.NODE_ENV; // "development"
 
 > You can also run your js file with `node -r dotenv/config index.js` command if you don't want to import the package in your code.
 
-> Note:Since Nodejs 20 and above have **experimental** support for the .env file. You can read more about it [here](https://nodejs.org/dist/latest-v20.x/docs/api/cli.html#--env-fileconfig).
+> Note: Node.js 20 introduced **experimental** [support for .env files](https://nodejs.org/dist/latest-v20.x/docs/api/cli.html#--env-fileconfig).
