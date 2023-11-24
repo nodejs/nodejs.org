@@ -6,7 +6,7 @@ authors: flaviocopes, ZYSzys, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clea
 
 # Node.js file stats
 
-Every file comes with a set of details that we can inspect using Node.js. In particular, using the `stat()` method provided by the [`fs` module](https://nodejs.org/api/fs/).
+Every file comes with a set of details that we can inspect using Node.js. In particular, using the `stat()` method provided by the [`fs` module](https://nodejs.org/api/fs.html).
 
 You call it passing a file path, and once Node.js gets the file details it will call the callback function you pass, with 2 parameters: an error message, and the file stats:
 
@@ -78,4 +78,4 @@ async function example() {
 example();
 ```
 
-You can read more about the `fs` module in the [official documentation](https://nodejs.org/api/fs/).
+You can read more about the `fs` module in the [official documentation](https://nodejs.org/api/fs.html).

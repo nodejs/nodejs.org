@@ -8,7 +8,7 @@ authors: flaviocopes, potch, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmad
 
 ### Basic output using the console module
 
-Node.js provides a [`console` module](https://nodejs.org/api/console/) which provides tons of very useful ways to interact with the command line.
+Node.js provides a [`console` module](https://nodejs.org/api/console.html) which provides tons of very useful ways to interact with the command line.
 
 It is basically the same as the `console` object you find in the browser.
 

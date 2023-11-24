@@ -78,4 +78,4 @@ async function example() {
 example();
 ```
 
-To see more details about the `fs/promises` module, please check [fs/promises API](https://nodejs.org/api/fs/#promise-example).
+To see more details about the `fs/promises` module, please check [fs/promises API](https://nodejs.org/api/fs.html#promise-example).

@@ -73,7 +73,7 @@ fs.writeFile('/Users/joe/test.txt', content, { flag: 'a+' }, err => {});
 | `a`  | This flag opens the file for **writing** and it also positions the stream at the **end** of the file                       |                  ✅                   |
 | `a+` | This flag opens the file for **reading** and **writing** and it also positions the stream at the **end** of the file       |                  ✅                   |
 
-- You can find more information about the flags in the [fs documentation](https://nodejs.org/api/fs/#file-system-flags).
+- You can find more information about the flags in the [fs documentation](https://nodejs.org/api/fs.html#file-system-flags).
 
 ## Appending content to a file
 
