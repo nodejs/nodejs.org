@@ -32,7 +32,12 @@ const config: StorybookConfig = {
     `<body class="${rootClasses}"></body>`,
   core: { disableTelemetry: true, disableWhatsNewNotifications: true },
   framework: { name: '@storybook/nextjs', options: {} },
-  webpack: async config => ({ ...config, performance: { hints: false } }),
+  webpack: async config => ({
+    ...config,
+    target: 'browserslist',
+    performance: { hints: false },
+    resolve: { ...config.resolve, alias: { '@nodevu/core': false } },
+  }),
 };
 
 export default config;
