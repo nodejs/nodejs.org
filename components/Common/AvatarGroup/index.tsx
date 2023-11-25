@@ -11,9 +11,14 @@ import styles from './index.module.css';
 type AvatarGroupProps = {
   avatars: ComponentProps<typeof Avatar>[];
   limit?: number;
+  isExpandable?: boolean;
 };
 
-const AvatarGroup: FC<AvatarGroupProps> = ({ avatars, limit = 10 }) => {
+const AvatarGroup: FC<AvatarGroupProps> = ({
+  avatars,
+  limit = 10,
+  isExpandable = true,
+}) => {
   const [showMore, setShowMore] = useState(false);
 
   const renderAvatars = useMemo(
@@ -33,7 +38,7 @@ const AvatarGroup: FC<AvatarGroupProps> = ({ avatars, limit = 10 }) => {
 
       {avatars.length > limit && (
         <span
-          onClick={() => setShowMore(!showMore)}
+          onClick={isExpandable ? () => setShowMore(prev => !prev) : undefined}
           className={classNames(avatarstyles.avatarRoot, 'cursor-pointer')}
         >
           <span className={avatarstyles.avatar}>

@@ -173,6 +173,11 @@
         "otherDownloads": "Other Downloads",
         "apiDocs": "API Docs"
       }
+    },
+    "downloads": {
+      "changelogModal": {
+        "startContributing": "Start Contributing"
+      }
     }
   },
   "layouts": {
