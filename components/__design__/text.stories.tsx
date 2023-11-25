@@ -31,14 +31,14 @@ export const InlineCode: StoryObj = {
 
 export const Headings: StoryObj = {
   render: () => (
-    <>
+    <div className="mdxContent">
       <h1>HTML Section Heading 1</h1>
       <h2>HTML Section Heading 2</h2>
       <h3>HTML Section Heading 3</h3>
       <h4>HTML Section Heading 4</h4>
       <h5>HTML Section Heading 5</h5>
       <h6>HTML Section Heading 6</h6>
-    </>
+    </div>
   ),
 };
 

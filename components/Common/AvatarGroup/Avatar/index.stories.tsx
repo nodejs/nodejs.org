@@ -15,7 +15,7 @@ export const Default: Story = {
 
 export const NoSquare: Story = {
   args: {
-    src: '/static/images/logos/stacked-dark.svg',
+    src: '/static/images/logos/nodejs.png',
     alt: 'SD',
   },
 };
