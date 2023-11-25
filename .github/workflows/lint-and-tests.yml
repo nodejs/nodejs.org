@@ -36,6 +36,11 @@ jobs:
       turbo_args: ${{ steps.turborepo_arguments.outputs.turbo_args }}
 
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
       - name: Provide Turborepo Arguments
         # This step is responsible for providing a reusable string that can be used within other steps and jobs
         # that use the `turbo` cli command as a way of easily providing shared arguments to the `turbo` command
@@ -60,6 +65,11 @@ jobs:
     needs: [base]
 
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
       - name: Git Checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
@@ -170,6 +180,11 @@ jobs:
       url: ${{ steps.chromatic-deploy.outputs.storybookUrl }}
 
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
       - name: Git Checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:

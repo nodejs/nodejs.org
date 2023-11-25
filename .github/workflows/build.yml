@@ -45,6 +45,11 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
       - name: Provide Turborepo Arguments
         # This step is responsible for providing a reusable string that can be used within other steps and jobs
         # that use the `turbo` cli command as a way of easily providing shared arguments to the `turbo` command
