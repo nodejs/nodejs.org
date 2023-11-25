@@ -9,7 +9,9 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import './typography';
 @import './mixins';
-@import './base';
 @import './markdown.css';
+
+* {
+  @apply subpixel-antialiased;
+}

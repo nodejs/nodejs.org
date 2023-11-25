@@ -16,7 +16,7 @@
       inline-flex
       w-full
       flex-col
-      overflow-scroll
+      overflow-y-scroll
       rounded
       border
       border-neutral-200
@@ -82,27 +82,18 @@
   }
 
   .wrapper {
-    @apply flex
-      flex-col
-      gap-4;
+    :global(.mdxContent) {
+      @apply flex
+        flex-col
+        gap-4;
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    p,
-    a {
-      @apply text-neutral-900
-        dark:text-white;
-    }
+      a {
+        @apply underline;
+      }
 
-    a {
-      @apply underline;
-    }
-
-    pre {
-      @apply overflow-auto;
+      pre {
+        @apply overflow-auto;
+      }
     }
   }
 }

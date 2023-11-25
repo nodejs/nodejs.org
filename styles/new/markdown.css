@@ -1,4 +1,41 @@
 .mdxContent {
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  h5 {
+    @apply text-lg;
+  }
+
+  h6,
+  strong {
+    @apply text-base;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong {
+    @apply font-semibold
+      text-neutral-900
+      dark:text-white;
+  }
+
   code {
     @apply rounded
       bg-neutral-100
@@ -15,7 +52,7 @@
   a:link,
   a:visited {
     @apply text-green-600
-     dark:text-green-400;
+      dark:text-green-400;
 
     &:hover {
       @apply text-green-900
