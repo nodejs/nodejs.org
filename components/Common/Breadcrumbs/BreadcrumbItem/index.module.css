@@ -6,7 +6,8 @@
     font-medium;
 
   a {
-    @apply flex-1;
+    @apply flex-shrink
+      flex-grow;
   }
 
   &,
@@ -23,7 +24,8 @@
   .separator {
     @apply h-4
       w-4
-      flex-1
+      flex-shrink-0
+      flex-grow
       text-neutral-600
       dark:text-neutral-400;
   }
