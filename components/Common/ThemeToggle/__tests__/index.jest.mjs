@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import ThemeToggle from '../';
+import ThemeToggle from '..';
 
 let mockCurrentTheme = 'light';
 

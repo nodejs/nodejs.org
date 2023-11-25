@@ -1,6 +1,11 @@
 {
   "extends": "prettier",
   "overrides": [
+    // @TODO: Remove this old support
+    {
+      "files": ["**/*.jest.*"],
+      "env": { "jest": true }
+    },
     {
       "files": ["public/**/*.js"],
       "env": { "browser": true }
