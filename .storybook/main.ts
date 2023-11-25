@@ -34,9 +34,15 @@ const config: StorybookConfig = {
   framework: { name: '@storybook/nextjs', options: {} },
   webpack: async config => ({
     ...config,
+    // We want to conform as much as possible with our target settings
     target: 'browserslist',
+    // Performance Hints do not make sense on Storybook as it is bloated by design
     performance: { hints: false },
+    // `nodevu` is a Node.js-specific package that requires Node.js modules
+    // this is incompatible with Storybook. So we just mock the module
     resolve: { ...config.resolve, alias: { '@nodevu/core': false } },
+    // Removes Pesky Critical Dependency Warnings due to `next/font`
+    ignoreWarnings: [e => e.message.includes('Critical dep')],
   }),
 };
 
