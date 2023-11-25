@@ -21,7 +21,6 @@ export interface FooterConfig {
 export interface SocialConfig {
   icon: string;
   link: string;
-  kind: 'dark' | 'light' | 'neutral';
   alt?: string;
 }
 

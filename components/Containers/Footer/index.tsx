@@ -1,12 +1,23 @@
-import classNames from 'classnames';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import type { FC, SVGProps } from 'react';
 
 import NavItem from '@/components/Containers/NavItem';
+import GitHub from '@/components/Icons/Social/GitHub';
+import LinkedIn from '@/components/Icons/Social/LinkedIn';
+import Mastodon from '@/components/Icons/Social/Mastodon';
+import Slack from '@/components/Icons/Social/Slack';
+import Twitter from '@/components/Icons/Social/Twitter';
 import { siteConfig } from '@/next.json.mjs';
 
 import styles from './index.module.css';
+
+const footerSocialIcons: Record<string, React.FC<SVGProps<SVGSVGElement>>> = {
+  github: GitHub,
+  mastodon: Mastodon,
+  twitter: Twitter,
+  slack: Slack,
+  linkedin: LinkedIn,
+};
 
 const Footer: FC = () => {
   const t = useTranslations();
@@ -22,30 +33,19 @@ const Footer: FC = () => {
           </NavItem>
         ))}
       </div>
+
       <div className={styles.sectionSecondary}>
         <NavItem type="footer" href={openJSlink.link}>
           &copy; {t(openJSlink.text)}
         </NavItem>
+
         <div className={styles.social}>
           {siteConfig.socialLinks.map(link => {
-            const navClass = classNames({
-              [styles.darkImage]: link.kind === 'dark',
-              [styles.lightImage]: link.kind === 'light',
-            });
+            const SocialIcon = footerSocialIcons[link.icon];
 
             return (
-              <NavItem
-                className={navClass}
-                key={link.icon}
-                href={link.link}
-                type="footer"
-              >
-                <Image
-                  src={link.icon}
-                  alt={link.alt || 'social'}
-                  width={20}
-                  height={20}
-                />
+              <NavItem key={link.icon} href={link.link} type="footer">
+                <SocialIcon width={20} height={20} />
               </NavItem>
             );
           })}

@@ -2,7 +2,7 @@ import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 export const Anchor: StoryObj = {
   render: () => (
-    <div>
+    <div className="mdxContent">
       <p>
         The current Node.js security policy can be found at{' '}
         <a href="https://github.com/nodejs/node/security/policy#security">
@@ -23,7 +23,7 @@ export const Anchor: StoryObj = {
 
 export const InlineCode: StoryObj = {
   render: () => (
-    <div>
+    <div className="mdxContent">
       This is an example of <code>inline code block</code>
     </div>
   ),

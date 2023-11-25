@@ -7,7 +7,7 @@ type Meta = MetaObj<typeof Banner>;
 
 export const Default: Story = {
   args: {
-    text: 'Nodejs collaborator summitNode.js Collaborator Summit 2023 - Bilbao, Spain (OpenJS World EU) 2023',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'default',
     url: 'https://github.com/openjs-foundation/summit/issues/360',
   },
@@ -15,7 +15,7 @@ export const Default: Story = {
 
 export const Error: Story = {
   args: {
-    text: 'STOP creating issue for error 500 on download',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'error',
     url: 'https://github.com/nodejs/nodejs.org/issues/4495',
   },
@@ -23,7 +23,7 @@ export const Error: Story = {
 
 export const Warning: Story = {
   args: {
-    text: 'STOP creating issue for error 500 on download',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'warning',
     url: 'https://github.com/nodejs/nodejs.org/issues/4495',
   },
@@ -31,15 +31,8 @@ export const Warning: Story = {
 
 export const NoLink: Story = {
   args: {
-    text: 'Claudio is the best maintainer',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'default',
-  },
-};
-
-export const NoType: Story = {
-  args: {
-    text: 'Claudio is the best maintainer',
-    url: 'https://github.com/ovflowd',
   },
 };
 

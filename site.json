@@ -58,39 +58,28 @@
   ],
   "socialLinks": [
     {
-      "icon": "/static/images/logos/social-github.svg",
+      "icon": "github",
       "link": "https://github.com/nodejs/node",
-      "kind": "dark",
       "alt": "GitHub"
     },
     {
-      "icon": "/static/images/logos/social-github-dark.svg",
-      "link": "https://github.com/nodejs/node",
-      "kind": "light",
-      "alt": "GitHub"
-    },
-    {
-      "icon": "/static/images/logos/social-mastodon.svg",
+      "icon": "mastodon",
       "link": "https://social.lfx.dev/@nodejs",
-      "kind": "neutral",
       "alt": "Mastodon"
     },
     {
-      "icon": "/static/images/logos/social-twitter.svg",
+      "icon": "twitter",
       "link": "https://twitter.com/nodejs",
-      "kind": "neutral",
       "alt": "Twitter"
     },
     {
-      "icon": "/static/images/logos/social-slack.svg",
+      "icon": "slack",
       "link": "https://openjs-foundation.slack.com/join/shared_invite/zt-238w9sb83-Qk9NcsrEMomq94Y~3gW8EQ#/shared-invite/email",
-      "kind": "neutral",
       "alt": "Slack"
     },
     {
-      "icon": "/static/images/logos/social-linkedin.svg",
+      "icon": "linkedin",
       "link": "https://www.linkedin.com/company/node-js",
-      "kind": "neutral",
       "alt": "LinkedIn"
     }
   ]

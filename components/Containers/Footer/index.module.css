@@ -36,14 +36,4 @@
         gap-1;
     }
   }
-
-  .darkImage {
-    @apply hidden
-      dark:block;
-  }
-
-  .lightImage {
-    @apply block
-      dark:hidden;
-  }
 }

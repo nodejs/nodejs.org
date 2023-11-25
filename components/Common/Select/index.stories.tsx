@@ -1,6 +1,9 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 import Select from '@/components/Common/Select';
+import Apple from '@/components/Icons/Platform/Apple';
+import Linux from '@/components/Icons/Platform/Linux';
+import Microsoft from '@/components/Icons/Platform/Microsoft';
 
 type Story = StoryObj<typeof Select>;
 type Meta = MetaObj<typeof Select>;
@@ -68,17 +71,17 @@ export const InlineSelect: Story = {
       {
         value: 'linux',
         label: 'Linux',
-        iconImageUrl: '/static/images/logos/platform-linux.svg',
+        iconImage: <Linux width={16} height={16} />,
       },
       {
         value: 'macos',
         label: 'MacOS',
-        iconImageUrl: '/static/images/logos/platform-apple.svg',
+        iconImage: <Apple width={16} height={16} />,
       },
       {
         value: 'windows',
         label: 'Windows',
-        iconImageUrl: '/static/images/logos/platform-microsoft.svg',
+        iconImage: <Microsoft width={16} height={16} />,
       },
     ],
     dropdownLabel: 'Platform',

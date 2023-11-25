@@ -10,5 +10,7 @@ const combinedComponents: MDXComponents = {
 };
 
 export const MDXRenderer: FC<{ Component: MDXContent }> = ({ Component }) => (
-  <Component components={combinedComponents} />
+  <div className="mdxContent">
+    <Component components={combinedComponents} />
+  </div>
 );

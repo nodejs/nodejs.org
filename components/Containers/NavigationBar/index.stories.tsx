@@ -10,7 +10,7 @@ export const Default: Story = {
     navItems: [
       {
         text: 'Learn',
-        href: '/learn',
+        href: '/',
       },
       {
         text: 'About',

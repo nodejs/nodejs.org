@@ -2,6 +2,7 @@
   @apply w-10
     px-3
     py-2.5
+    leading-none
     text-neutral-800
     dark:text-neutral-200;
 }

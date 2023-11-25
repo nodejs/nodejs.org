@@ -16,7 +16,7 @@
 
     &::after {
       @apply absolute
-        left-[calc(0.5rem-0.5px)]
+        left-[0.45rem]
         top-0
         z-10
         h-full
