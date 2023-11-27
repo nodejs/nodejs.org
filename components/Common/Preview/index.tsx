@@ -1,8 +1,7 @@
 import classNames from 'classnames';
-import Image from 'next/image';
 import type { CSSProperties, ComponentProps, FC, ReactNode } from 'react';
 
-import { BASE_PATH } from '@/next.constants.mjs';
+import JsIconWhite from '@/components/Icons/Logos/JsIconWhite';
 
 import styles from './index.module.css';
 
@@ -26,14 +25,7 @@ const Preview: FC<PreviewProps> = ({
     className={classNames(styles.root, styles[type], props.className)}
   >
     <div className={styles.container}>
-      <Image
-        className={styles.logo}
-        priority
-        width="71"
-        height="80"
-        src={`${BASE_PATH}/static/images/logos/js-white.svg`}
-        alt="Node.js"
-      />
+      <JsIconWhite className={styles.logo} width={71} height={80} />
       <h2>{title}</h2>
     </div>
   </div>

@@ -1,22 +1,19 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
-import Image from 'next/image';
+
+import JsIconGreen from '@/components/Icons/Logos/JsIconGreen';
+import JsIconWhite from '@/components/Icons/Logos/JsIconWhite';
+import NodejsLogoDark from '@/components/Icons/Logos/NodejsDark';
+import NodejsLogoLight from '@/components/Icons/Logos/NodejsLight';
+import NodejsStackedBlack from '@/components/Icons/Logos/NodejsStackedBlack';
+import NodejsStackedDark from '@/components/Icons/Logos/NodejsStackedDark';
+import NodejsStackedLight from '@/components/Icons/Logos/NodejsStackedLight';
+import NodejsStackedWhite from '@/components/Icons/Logos/NodejsStackedWhite';
 
 export const HorizontalLogos: StoryObj = {
   render: () => (
     <div className="flex flex-row gap-4">
-      <Image
-        src={`/static/images/logos/horizontal-light.svg`}
-        className="bg-black"
-        alt="Node.js"
-        width={267}
-        height={80}
-      />
-      <Image
-        src={`/static/images/logos/horizontal-dark.svg`}
-        alt="Node.js"
-        width={267}
-        height={80}
-      />
+      <NodejsLogoLight width={267} height={80} className="hidden dark:block" />
+      <NodejsLogoDark width={267} height={80} className="block dark:hidden" />
     </div>
   ),
 };
@@ -25,31 +22,28 @@ export const StackedLogos: StoryObj = {
   render: () => (
     <div className="flex flex-row gap-4">
       <div className="flex flex-col gap-2">
-        <Image
-          src={`/static/images/logos/stacked-dark.svg`}
-          alt="Node.js"
+        <NodejsStackedDark
+          className="block dark:hidden"
           width={267}
-          height={80}
+          height={164}
         />
-        <Image
-          src={`/static/images/logos/stacked-black.svg`}
-          alt="Node.js"
+
+        <NodejsStackedBlack
+          className="block dark:hidden"
           width={267}
-          height={80}
+          height={164}
         />
-      </div>
-      <div className="flex flex-col gap-2">
-        <Image
-          src={`/static/images/logos/stacked-white.svg`}
-          alt="Node.js"
+
+        <NodejsStackedLight
+          className="hidden dark:block"
           width={267}
-          height={80}
+          height={164}
         />
-        <Image
-          src={`/static/images/logos/stacked-light.svg`}
-          alt="Node.js"
+
+        <NodejsStackedWhite
+          className="hidden dark:block"
           width={267}
-          height={80}
+          height={164}
         />
       </div>
     </div>
@@ -59,18 +53,8 @@ export const StackedLogos: StoryObj = {
 export const JSSymbols: StoryObj = {
   render: () => (
     <div className="flex flex-row gap-4">
-      <Image
-        src={`/static/images/logos/js-white.svg`}
-        alt="Node.js"
-        width={30}
-        height={30}
-      />
-      <Image
-        src={`/static/images/logos/js-green.svg`}
-        alt="Node.js"
-        width={30}
-        height={30}
-      />
+      <JsIconWhite className="hidden dark:block" width={30} height={30} />
+      <JsIconGreen className="block dark:hidden" width={30} height={30} />
     </div>
   ),
 };

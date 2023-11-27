@@ -9,9 +9,9 @@ import type { FC, ComponentProps } from 'react';
 import LanguageDropdown from '@/components/Common/LanguageDropDown';
 import ThemeToggle from '@/components/Common/ThemeToggle';
 import NavItem from '@/components/Containers/NavItem';
-import GithubLogo from '@/components/Icons/GitHubLogo';
-import NodejsLogoDark from '@/components/Icons/NodejsLogoDark';
-import NodejsLogoLight from '@/components/Icons/NodejsLogoLight';
+import NodejsDark from '@/components/Icons/Logos/NodejsDark';
+import NodejsLight from '@/components/Icons/Logos/NodejsLight';
+import GitHub from '@/components/Icons/Social/GitHub';
 
 import style from './index.module.css';
 
@@ -38,8 +38,8 @@ const NavigationBar: FC<NavbarProps> = ({
     <nav className={`${style.container}`}>
       <div className={style.nodeIconAndMobileItemsToggler}>
         <div className={style.nodeIconWrapper}>
-          <NodejsLogoDark className={style.nodejsLogoDark} />
-          <NodejsLogoLight className={style.nodejsLogoLight} />
+          <NodejsDark className={style.nodejsLogoDark} />
+          <NodejsLight className={style.nodejsLogoLight} />
         </div>
         <Label.Root
           onClick={() => setIsMenuOpen(prev => !prev)}
@@ -69,7 +69,7 @@ const NavigationBar: FC<NavbarProps> = ({
             href="https://github.com/nodejs/node"
             aria-label="Node.js Github"
           >
-            <GithubLogo />
+            <GitHub />
           </a>
         </div>
       </div>

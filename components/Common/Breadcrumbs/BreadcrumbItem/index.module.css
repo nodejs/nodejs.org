@@ -5,6 +5,11 @@
     text-sm
     font-medium;
 
+  a {
+    @apply flex-shrink
+      flex-grow;
+  }
+
   &,
   > a,
   > a:hover {
@@ -19,6 +24,8 @@
   .separator {
     @apply h-4
       w-4
+      flex-shrink-0
+      flex-grow
       text-neutral-600
       dark:text-neutral-400;
   }

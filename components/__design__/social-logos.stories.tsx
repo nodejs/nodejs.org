@@ -1,42 +1,22 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
-import Image from 'next/image';
+
+import GitHub from '@/components/Icons/Social/GitHub';
+import LinkedIn from '@/components/Icons/Social/LinkedIn';
+import Mastodon from '@/components/Icons/Social/Mastodon';
+import Slack from '@/components/Icons/Social/Slack';
+import Twitter from '@/components/Icons/Social/Twitter';
 
 export const SocialMediaLogos: StoryObj = {
   render: () => (
     <div className="flex flex-row gap-4">
       <div className="flex flex-col items-center gap-4">
-        <Image
-          src="/static/images/logos/social-github.svg"
-          alt="GitHub Logo"
-          width={64}
-          height={64}
-        />
-        <Image
-          src="/static/images/logos/social-mastodon.svg"
-          alt="Mastodon Logo"
-          width={64}
-          height={64}
-        />
-        <Image
-          src="/static/images/logos/social-linkedin.svg"
-          alt="LinkedIn Logo"
-          width={64}
-          height={64}
-        />
+        <GitHub width={64} height={64} />
+        <Mastodon width={64} height={64} />
+        <LinkedIn width={64} height={64} />
       </div>
       <div className="flex flex-col items-center gap-4">
-        <Image
-          src="/static/images/logos/social-slack.svg"
-          alt="Slack Logo"
-          width={64}
-          height={64}
-        />
-        <Image
-          src="/static/images/logos/social-twitter.svg"
-          alt="Twitter Logo"
-          width={64}
-          height={64}
-        />
+        <Slack width={64} height={64} />
+        <Twitter width={64} height={64} />
       </div>
     </div>
   ),

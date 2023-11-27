@@ -1,7 +1,6 @@
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import * as Primitive from '@radix-ui/react-select';
 import classNames from 'classnames';
-import Image from 'next/image';
 import { useId, useMemo } from 'react';
 import type { FC } from 'react';
 
@@ -10,7 +9,7 @@ import styles from './index.module.css';
 type SelectValue = {
   label: string;
   value: string;
-  iconImageUrl?: string;
+  iconImage?: React.ReactNode;
 };
 
 type SelectProps = {
@@ -72,21 +71,14 @@ const Select: FC<SelectProps> = ({
                     {dropdownLabel}
                   </Primitive.Label>
                 )}
-                {mappedValues.map(({ value, label, iconImageUrl }) => (
+                {mappedValues.map(({ value, label, iconImage }) => (
                   <Primitive.Item
                     key={value}
                     value={value}
                     className={`${styles.item} ${styles.text}`}
                   >
                     <Primitive.ItemText>
-                      {iconImageUrl && (
-                        <Image
-                          src={iconImageUrl}
-                          alt={label}
-                          width={16}
-                          height={16}
-                        />
-                      )}
+                      {iconImage}
                       {label}
                     </Primitive.ItemText>
                   </Primitive.Item>

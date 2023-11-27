@@ -1,9 +1,9 @@
 import { CodeBracketIcon } from '@heroicons/react/24/outline';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
-import Image from 'next/image';
 
 import AvatarGroup from '@/components/Common/AvatarGroup';
 import MetaBar from '@/components/Common/MetaBar';
+import GitHub from '@/components/Icons/Social/GitHub';
 import Link from '@/components/Link';
 
 type Story = StoryObj<typeof MetaBar>;
@@ -38,20 +38,7 @@ export const Default: Story = {
       ),
       'components.metabar.contribute': (
         <>
-          <Image
-            src="/static/images/logos/social-github-dark.svg"
-            alt="GitHub Logo"
-            width={16}
-            height={16}
-            data-on-light
-          />
-          <Image
-            src="/static/images/logos/social-github.svg"
-            alt="GitHub Logo"
-            width={16}
-            height={16}
-            data-on-dark
-          />
+          <GitHub className="fill-neutral-700 dark:fill-neutral-100" />
           <Link href="/contribute">Edit this page</Link>
         </>
       ),
