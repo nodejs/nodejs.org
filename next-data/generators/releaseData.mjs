@@ -1,3 +1,5 @@
+'use strict';
+
 // Gets the appropriate release status for each major release
 const getNodeReleaseStatus = (now, support) => {
   const { endOfLife, maintenanceStart, ltsStart, currentStart } = support;
