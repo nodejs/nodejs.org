@@ -27,11 +27,10 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2023-10-13T13:30:00.000Z",
-      "endDate": "2023-10-19T13:30:00.000Z",
-      "text": "Security releases now available",
-      "link": "https://nodejs.org/en/blog/vulnerability/october-2023-security-releases/",
-      "html": null
+      "startDate": "2023-11-26T00:00:00.000Z",
+      "endDate": "2023-12-05T00:00:00.000Z",
+      "link": "https://training.linuxfoundation.org/cyber-monday-js-2023/",
+      "html": "<img src='https://i.imgur.com/aftCmrq.png' alt='Node.js Training Banner' style='margin:0 auto;border-radius:4px;' />"
     }
   },
   "footerLinks": [
