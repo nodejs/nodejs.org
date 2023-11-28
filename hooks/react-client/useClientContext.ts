@@ -7,10 +7,18 @@ import { MatterContext } from '@/providers/matterProvider';
 import type { ClientSharedServerContext } from '@/types';
 
 const useClientContext = (): ClientSharedServerContext => {
-  const { matter: frontmatter, headings } = useContext(MatterContext);
+  const { frontmatter, headings, readingTime, filename } =
+    useContext(MatterContext);
+
   const pathname = usePathname();
 
-  return { pathname: pathname || '', frontmatter, headings };
+  return {
+    pathname: pathname || '',
+    frontmatter,
+    headings,
+    readingTime,
+    filename,
+  };
 };
 
 export default useClientContext;
