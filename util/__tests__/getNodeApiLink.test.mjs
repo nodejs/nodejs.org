@@ -1,3 +1,6 @@
+import { strictEqual } from 'node:assert';
+import { describe, it } from 'node:test';
+
 import { getNodeApiLink } from '../getNodeApiLink';
 
 describe('getNodeApiLink', () => {
@@ -7,7 +10,7 @@ describe('getNodeApiLink', () => {
 
     const result = getNodeApiLink(version);
 
-    expect(result).toBe(expectedLink);
+    strictEqual(result, expectedLink);
   });
 
   it('returns the correct API link for versions >=0.1.14 and <0.3.1', () => {
@@ -16,7 +19,7 @@ describe('getNodeApiLink', () => {
 
     const result = getNodeApiLink(version);
 
-    expect(result).toBe(expectedLink);
+    strictEqual(result, expectedLink);
   });
 
   it('returns the correct API link for versions >=1.0.0 and <4.0.0', () => {
@@ -25,7 +28,7 @@ describe('getNodeApiLink', () => {
 
     const result = getNodeApiLink(version);
 
-    expect(result).toBe(expectedLink);
+    strictEqual(result, expectedLink);
   });
 
   it('returns the correct API link for other versions', () => {
@@ -34,6 +37,6 @@ describe('getNodeApiLink', () => {
 
     const result = getNodeApiLink(version);
 
-    expect(result).toBe(expectedLink);
+    strictEqual(result, expectedLink);
   });
 });

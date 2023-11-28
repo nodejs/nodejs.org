@@ -1,6 +1,11 @@
 {
   "extends": "prettier",
   "overrides": [
+    // @TODO: Remove this old support
+    {
+      "files": ["**/*.jest.*"],
+      "env": { "jest": true }
+    },
     {
       "files": ["public/**/*.js"],
       "env": { "browser": true }
@@ -8,10 +13,6 @@
     {
       "files": ["components/**/*.stories.tsx"],
       "extends": "plugin:storybook/recommended"
-    },
-    {
-      "files": ["**/{__tests__,__mocks__}/*.mjs"],
-      "env": { "jest": true }
     },
     {
       "files": ["**/*.{js,mjs,ts,tsx,mdx}"],

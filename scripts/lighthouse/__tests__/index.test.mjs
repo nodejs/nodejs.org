@@ -1,6 +1,10 @@
-import { formatLighthouseResults } from '..';
+import { strictEqual, ok } from 'node:assert';
+import { describe, it, beforeEach, afterEach, mock } from 'node:test';
+
+import { formatLighthouseResults } from '../index.mjs';
 
 describe('formatLighthouseResults', () => {
+  // WARNING: if you change this value, you must also change the value in regex below
   const MOCK_VERCEL_PREVIEW_URL = `https://some.vercel.preview.url`;
 
   const MOCK_LIGHTHOUSE_RESULT = `[
@@ -21,10 +25,10 @@ describe('formatLighthouseResults', () => {
     "${MOCK_VERCEL_PREVIEW_URL}/en/download" : "fake.url/to/result/2"
   }`;
 
-  let mockCore, originalEnv;
+  const mockCore = { setOutput: mock.fn() };
+  let originalEnv;
 
   beforeEach(() => {
-    mockCore = { setOutput: jest.fn() };
     originalEnv = process.env;
     process.env = {
       ...process.env,
@@ -41,29 +45,27 @@ describe('formatLighthouseResults', () => {
   it('formats preview urls correctly', () => {
     formatLighthouseResults({ core: mockCore });
 
-    const expectations = [
-      expect.stringContaining(`[/en](${MOCK_VERCEL_PREVIEW_URL}/en)`),
-      expect.stringContaining(
-        `[/en/download](${MOCK_VERCEL_PREVIEW_URL}/en/download)`
-      ),
+    const call = mockCore.setOutput.mock.calls[0];
+    const expectedOutput = [
+      /\/en\]\(https:\/\/some.vercel.preview.url\/en\)/,
+      /\/en\/download\]\(https:\/\/some.vercel.preview.url\/en\/download\)/,
     ];
 
-    expectations.forEach(expectation => {
-      expect(mockCore.setOutput).toBeCalledWith('comment', expectation);
+    strictEqual(call.arguments[0], 'comment');
+    expectedOutput.forEach(expected => {
+      ok(call.arguments[1].match(expected));
     });
   });
 
   it('formats stoplight colors correctly', () => {
     formatLighthouseResults({ core: mockCore });
 
-    const expectations = [
-      expect.stringContaining(`🟢 90`),
-      expect.stringContaining(`🟠 75`),
-      expect.stringContaining(`🔴 49`),
-    ];
+    const call = mockCore.setOutput.mock.calls[0];
+    const expectedOutput = [/🟢 99/, /🟠 75/, /🔴 49/];
 
-    expectations.forEach(expectation => {
-      expect(mockCore.setOutput).toBeCalledWith('comment', expectation);
+    strictEqual(call.arguments[0], 'comment');
+    expectedOutput.forEach(expected => {
+      ok(call.arguments[1].match(expected));
     });
   });
 });

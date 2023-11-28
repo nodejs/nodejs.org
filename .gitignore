@@ -7,9 +7,7 @@ npm-debug.log
 .next
 build
 
-# Jest
-coverage
-.swc
+# Testing
 junit.xml
 
 # Storybook
