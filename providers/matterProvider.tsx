@@ -3,27 +3,36 @@
 import type { Heading } from '@vcarl/remark-headings';
 import { createContext } from 'react';
 import type { FC, PropsWithChildren } from 'react';
+import type { ReadTimeResults } from 'reading-time';
 
 import type { LegacyFrontMatter } from '@/types';
 
-type MatterContext = { matter: LegacyFrontMatter; headings: Heading[] };
+type MatterContext = {
+  frontmatter: LegacyFrontMatter;
+  headings: Heading[];
+  readingTime: ReadTimeResults;
+  filename: string;
+};
 
 export const MatterContext = createContext<MatterContext>({
-  matter: {},
+  frontmatter: {},
   headings: [],
+  readingTime: { text: '', minutes: 0, time: 0, words: 0 },
+  filename: '',
 });
 
-type MatterProviderProps = PropsWithChildren<{
-  matter: LegacyFrontMatter;
-  headings: Heading[];
-}>;
+type MatterProviderProps = PropsWithChildren<MatterContext>;
 
 export const MatterProvider: FC<MatterProviderProps> = ({
-  matter,
+  frontmatter,
   headings,
+  readingTime,
+  filename,
   children,
 }) => (
-  <MatterContext.Provider value={{ matter, headings }}>
+  <MatterContext.Provider
+    value={{ frontmatter, headings, readingTime, filename }}
+  >
     {children}
   </MatterContext.Provider>
 );

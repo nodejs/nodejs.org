@@ -40,8 +40,17 @@ export const VERCEL_REVALIDATE = Number(
  * Note that this is a manual Environment Variable defined by us during `npm run deploy`
  */
 export const ENABLE_STATIC_EXPORT =
-  process.env.NEXT_STATIC_EXPORT === 'true' ||
-  process.env.NEXT_STATIC_EXPORT === true;
+  process.env.NEXT_PUBLIC_STATIC_EXPORT === 'true' ||
+  process.env.NEXT_PUBLIC_STATIC_EXPORT === true;
+
+/**
+ * This is used for enabling the New Website Redesign Layouts
+ *
+ * Note that this is a manual Environment Variable defined by us if necessary.
+ */
+export const ENABLE_WEBSITE_REDESIGN =
+  process.env.NEXT_PUBLIC_ENABLE_REDESIGN === 'true' ||
+  process.env.NEXT_PUBLIC_ENABLE_REDESIGN === true;
 
 /**
  * This is used for any place that requires the full canonical URL path for the Node.js Website (and its deployment), such as for example, the Node.js RSS Feed.

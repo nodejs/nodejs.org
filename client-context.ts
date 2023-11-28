@@ -10,6 +10,8 @@ export const getClientContext = cache(() => {
     frontmatter: {},
     pathname: '',
     headings: [],
+    readingTime: { text: '', minutes: 0, time: 0, words: 0 },
+    filename: '',
   };
 
   return serverSharedContext;
@@ -21,4 +23,6 @@ export const setClientContext = (data: ClientSharedServerContext) => {
   getClientContext().frontmatter = data.frontmatter;
   getClientContext().pathname = data.pathname;
   getClientContext().headings = data.headings;
+  getClientContext().readingTime = data.readingTime;
+  getClientContext().filename = data.filename;
 };

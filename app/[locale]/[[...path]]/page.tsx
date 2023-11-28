@@ -95,15 +95,27 @@ const getPage: FC<DynamicParams> = async ({ params }) => {
   if (source.length && filename.length) {
     // This parses the source Markdown content and returns a React Component and
     // relevant context from the Markdown File
-    const { MDXContent, frontmatter, headings } =
+    const { MDXContent, frontmatter, headings, readingTime } =
       await dynamicRouter.getMDXContent(source, filename);
+
+    // Metadata and shared Context to be available through the lifecycle of the page
+    const sharedContext = {
+      frontmatter,
+      headings,
+      pathname,
+      readingTime,
+      filename,
+    };
 
     // Defines a shared Server Context for the Client-Side
     // That is shared for all pages under the dynamic router
-    setClientContext({ frontmatter, headings, pathname });
+    setClientContext(sharedContext);
 
+    // The Matter Provider allows Client-Side injection of the data
+    // to a shared React Client Provider even though the page is rendered
+    // within a server-side context
     return (
-      <MatterProvider matter={frontmatter} headings={headings}>
+      <MatterProvider {...sharedContext}>
         <WithLayout layout={frontmatter.layout}>
           <MDXRenderer Component={MDXContent} />
         </WithLayout>
