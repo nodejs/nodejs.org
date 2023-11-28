@@ -1,0 +1,64 @@
+.baseLayout {
+  @apply grid
+    h-screen
+    w-screen
+    grid-cols-[1fr]
+    grid-rows-[auto_1fr_auto];
+}
+
+.articleLayout {
+  @apply grid
+    min-h-full
+    min-w-full
+    grid-rows-[1fr]
+    overflow-hidden
+    grid-areas-[sidebar_main_metabar,sidebar_footer_metabar]
+    sm:grid-cols-[auto_1fr_auto]
+    xl:grid-cols-[320px_1fr_320px]
+    xs:block
+    xs:overflow-auto;
+
+  > *:nth-child(1) {
+    @apply grid-in-[sidebar];
+  }
+
+  > *:nth-child(2) {
+    @apply flex
+      w-full
+      flex-col
+      items-start
+      gap-8
+      self-stretch
+      overflow-y-auto
+      overflow-x-hidden
+      bg-gradient-subtle
+      px-12
+      py-12
+      grid-in-[main]
+      dark:bg-gradient-subtle-dark
+      xs:!bg-none
+      xs:px-4
+      xs:py-4;
+  }
+
+  > *:nth-child(3) {
+    @apply grid-in-[metabar];
+  }
+
+  > *:nth-child(4) {
+    @apply sticky
+      bottom-0
+      flex
+      w-full
+      flex-col
+      items-center
+      self-stretch
+      border-t
+      border-t-neutral-200
+      bg-white
+      py-4
+      grid-in-[footer]
+      dark:border-t-neutral-900
+      dark:bg-neutral-950;
+  }
+}
