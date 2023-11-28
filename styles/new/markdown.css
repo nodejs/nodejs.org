@@ -1,24 +1,30 @@
 .mdxContent {
-  h1 {
-    @apply text-4xl;
+  hr {
+    @apply w-full
+      border-t
+      border-t-neutral-200
+      bg-white
+      dark:border-t-neutral-900
+      dark:bg-neutral-950;
   }
 
-  h2 {
+  h1 {
     @apply text-3xl;
   }
 
-  h3 {
+  h2 {
     @apply text-2xl;
   }
 
-  h4 {
+  h3 {
     @apply text-xl;
   }
 
-  h5 {
+  h4 {
     @apply text-lg;
   }
 
+  h5,
   h6,
   strong {
     @apply text-base;
@@ -77,7 +83,8 @@
   }
 
   table {
-    @apply w-full
+    @apply mb-1
+      w-full
       border-separate
       border-spacing-0
       rounded
@@ -98,6 +105,10 @@
         text-neutral-900
         dark:border-neutral-800
         dark:text-white;
+
+      > a {
+        @apply pr-2;
+      }
     }
 
     th {
