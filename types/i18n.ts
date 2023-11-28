@@ -1,3 +1,5 @@
+import type { JSXElementConstructor, ReactElement, ReactNode } from 'react';
+
 export interface LocaleConfig {
   code: string;
   localName: string;
@@ -7,3 +9,8 @@ export interface LocaleConfig {
   hrefLang: string;
   enabled: boolean;
 }
+
+export type FormattedMessage =
+  | string
+  | ReactElement<HTMLElement, string | JSXElementConstructor<HTMLElement>>
+  | readonly ReactNode[];
