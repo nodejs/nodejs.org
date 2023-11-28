@@ -1,258 +1,281 @@
 {
-  "about": {
-    "link": "/about",
-    "translationId": "components.header.links.about",
-    "items": {
-      "governance": {
-        "link": "/about/governance",
-        "translationId": "components.navigation.about.links.governance"
-      },
-      "releases": {
-        "link": "/about/previous-releases",
-        "translationId": "components.navigation.about.links.releases"
-      },
-      "security": {
-        "link": "/about/security-reporting",
-        "translationId": "components.navigation.about.links.security"
-      }
+  "topNavigation": {
+    "learn": {
+      "link": "/learn",
+      "label": "components.header.links.learn"
+    },
+    "about": {
+      "link": "/about",
+      "label": "components.header.links.about"
+    },
+    "getInvolved": {
+      "link": "/get-involved",
+      "label": "components.header.links.getInvolved"
+    },
+    "docs": {
+      "link": "/docs",
+      "label": "components.header.links.docs"
+    },
+    "download": {
+      "link": "/download",
+      "label": "components.header.links.download"
+    },
+    "blog": {
+      "link": "/blog",
+      "label": "components.header.links.blog"
+    },
+    "certification": {
+      "link": "https://openjsf.org/certification",
+      "label": "components.header.links.certification"
     }
   },
-  "learn": {
-    "link": "/learn",
-    "translationId": "components.header.links.learn.title",
-    "items": {
-      "gettingStarted": {
-        "link": "/learn/getting-started/introduction-to-nodejs",
-        "translationId": "components.header.links.learn.gettingStarted.title",
-        "items": {
-          "introductionToNodejs": {
-            "link": "/learn/getting-started/introduction-to-nodejs",
-            "translationId": "components.header.links.learn.gettingStarted.introductionToNodejs"
-          },
-          "howToInstallNodejs": {
-            "link": "/learn/getting-started/how-to-install-nodejs",
-            "translationId": "components.header.links.learn.gettingStarted.howToInstallNodejs"
-          },
-          "howMuchJavascriptDoYouNeedToKnowToUseNodejs": {
-            "link": "/learn/getting-started/how-much-javascript-do-you-need-to-know-to-use-nodejs",
-            "translationId": "components.header.links.learn.gettingStarted.howMuchJavascriptDoYouNeedToKnowToUseNodejs"
-          },
-          "differencesBetweenNodejsAndTheBrowser": {
-            "link": "/learn/getting-started/differences-between-nodejs-and-the-browser",
-            "translationId": "components.header.links.learn.gettingStarted.differencesBetweenNodejsAndTheBrowser"
-          },
-          "theV8JavascriptEngine": {
-            "link": "/learn/getting-started/the-v8-javascript-engine",
-            "translationId": "components.header.links.learn.gettingStarted.theV8JavascriptEngine"
-          },
-          "anIntroductionToTheNpmPackageManager": {
-            "link": "/learn/getting-started/an-introduction-to-the-npm-package-manager",
-            "translationId": "components.header.links.learn.gettingStarted.anIntroductionToTheNpmPackageManager"
-          },
-          "ecmascript2015Es6AndBeyond": {
-            "link": "/learn/getting-started/ecmascript-2015-es6-and-beyond",
-            "translationId": "components.header.links.learn.gettingStarted.ecmascript2015Es6AndBeyond"
-          },
-          "nodejsTheDifferenceBetweenDevelopmentAndProduction": {
-            "link": "/learn/getting-started/nodejs-the-difference-between-development-and-production",
-            "translationId": "components.header.links.learn.gettingStarted.nodejsTheDifferenceBetweenDevelopmentAndProduction"
-          },
-          "nodejsWithTypescript": {
-            "link": "/learn/getting-started/nodejs-with-typescript",
-            "translationId": "components.header.links.learn.gettingStarted.nodejsWithTypescript"
-          },
-          "nodejsWithWebassembly": {
-            "link": "/learn/getting-started/nodejs-with-webassembly",
-            "translationId": "components.header.links.learn.gettingStarted.nodejsWithWebassembly"
-          }
-        }
-      },
-      "asynchronousWork": {
-        "link": "/learn/asynchronous-work/asynchronous-flow-control",
-        "translationId": "components.header.links.learn.asynchronousWork.title",
-        "items": {
-          "asynchronousFlowControl": {
-            "link": "/learn/asynchronous-work/asynchronous-flow-control",
-            "translationId": "components.header.links.learn.asynchronousWork.asynchronousFlowControl"
-          },
-          "overviewOfBlockingVsNonBlocking": {
-            "link": "/learn/asynchronous-work/overview-of-blocking-vs-non-blocking",
-            "translationId": "components.header.links.learn.asynchronousWork.overviewOfBlockingVsNonBlocking"
-          },
-          "javascriptAsynchronousProgrammingAndCallbacks": {
-            "link": "/learn/asynchronous-work/javascript-asynchronous-programming-and-callbacks",
-            "translationId": "components.header.links.learn.asynchronousWork.javascriptAsynchronousProgrammingAndCallbacks"
-          },
-          "discoverJavaScriptTimers": {
-            "link": "/learn/asynchronous-work/discover-javascript-timers",
-            "translationId": "components.header.links.learn.asynchronousWork.discoverJavaScriptTimers"
-          },
-          "understandingProcessnexttick": {
-            "link": "/learn/asynchronous-work/understanding-processnexttick",
-            "translationId": "components.header.links.learn.asynchronousWork.understandingProcessnexttick"
-          },
-          "understandingSetimmediate": {
-            "link": "/learn/asynchronous-work/understanding-setimmediate",
-            "translationId": "components.header.links.learn.asynchronousWork.understandingSetimmediate"
-          },
-          "theNodejsEventEmitter": {
-            "link": "/learn/asynchronous-work/the-nodejs-event-emitter",
-            "translationId": "components.header.links.learn.asynchronousWork.theNodejsEventEmitter"
-          }
-        }
-      },
-      "manipulatingFiles": {
-        "link": "/learn/manipulating-files/nodejs-file-stats",
-        "translationId": "components.header.links.learn.manipulatingFiles.title",
-        "items": {
-          "nodejsFileStats": {
-            "link": "/learn/manipulating-files/nodejs-file-stats",
-            "translationId": "components.header.links.learn.manipulatingFiles.nodejsFileStats"
-          },
-          "nodejsFilePaths": {
-            "link": "/learn/manipulating-files/nodejs-file-paths",
-            "translationId": "components.header.links.learn.manipulatingFiles.nodejsFilePaths"
-          },
-          "workingWithFileDescriptorsInNodejs": {
-            "link": "/learn/manipulating-files/working-with-file-descriptors-in-nodejs",
-            "translationId": "components.header.links.learn.manipulatingFiles.workingWithFileDescriptorsInNodejs"
-          },
-          "readingFilesWithNodejs": {
-            "link": "/learn/manipulating-files/reading-files-with-nodejs",
-            "translationId": "components.header.links.learn.manipulatingFiles.readingFilesWithNodejs"
-          },
-          "writingFilesWithNodejs": {
-            "link": "/learn/manipulating-files/writing-files-with-nodejs",
-            "translationId": "components.header.links.learn.manipulatingFiles.writingFilesWithNodejs"
-          },
-          "workingWithFoldersInNodejs": {
-            "link": "/learn/manipulating-files/working-with-folders-in-nodejs",
-            "translationId": "components.header.links.learn.manipulatingFiles.workingWithFoldersInNodejs"
-          }
-        }
-      },
-      "commandLine": {
-        "link": "/learn/command-line/run-nodejs-scripts-from-the-command-line",
-        "translationId": "components.header.links.learn.commandLine.title",
-        "items": {
-          "runNodejsScriptsFromTheCommandLine": {
-            "link": "/learn/command-line/run-nodejs-scripts-from-the-command-line",
-            "translationId": "components.header.links.learn.commandLine.runNodejsScriptsFromTheCommandLine"
-          },
-          "howToReadEnvironmentVariablesFromNodejs": {
-            "link": "/learn/command-line/how-to-read-environment-variables-from-nodejs",
-            "translationId": "components.header.links.learn.commandLine.howToReadEnvironmentVariablesFromNodejs"
-          },
-          "howToUseTheNodejsRepl": {
-            "link": "/learn/command-line/how-to-use-the-nodejs-repl",
-            "translationId": "components.header.links.learn.commandLine.howToUseTheNodejsRepl"
-          },
-          "outputToTheCommandLineUsingNodejs": {
-            "link": "/learn/command-line/output-to-the-command-line-using-nodejs",
-            "translationId": "components.header.links.learn.commandLine.outputToTheCommandLineUsingNodejs"
-          },
-          "acceptInputFromTheCommandLineInNodejs": {
-            "link": "/learn/command-line/accept-input-from-the-command-line-in-nodejs",
-            "translationId": "components.header.links.learn.commandLine.acceptInputFromTheCommandLineInNodejs"
-          }
+  "sideNavigation": {
+    "about": {
+      "label": "components.navigation.about.links.about",
+      "items": {
+        "about": {
+          "link": "/about",
+          "label": "components.navigation.about.links.about"
+        },
+        "governance": {
+          "link": "/about/governance",
+          "label": "components.navigation.about.links.governance"
+        },
+        "releases": {
+          "link": "/about/previous-releases",
+          "label": "components.navigation.about.links.releases"
+        },
+        "security": {
+          "link": "/about/security-reporting",
+          "label": "components.navigation.about.links.security"
         }
       }
-    }
-  },
-  "download": {
-    "link": "/download",
-    "translationId": "components.header.links.download",
-    "items": {
-      "shaSums": {
-        "link": "https://nodejs.org/dist/{nodeVersion}/SHASUMS256.txt.asc",
-        "translationId": "components.downloadList.links.shaSums.title"
-      },
-      "allDownloads": {
-        "link": "https://nodejs.org/dist/{nodeVersion}/",
-        "translationId": "components.downloadList.links.allDownloads"
-      },
-      "packageManager": {
-        "link": "/download/package-manager",
-        "translationId": "components.downloadList.links.packageManager"
-      },
-      "previousReleases": {
-        "link": "/about/previous-releases",
-        "translationId": "components.downloadList.links.previousReleases"
-      },
-      "nightlyReleases": {
-        "link": "https://nodejs.org/download/nightly/",
-        "translationId": "components.downloadList.links.nightlyReleases"
-      },
-      "unofficialBuilds": {
-        "link": "https://unofficial-builds.nodejs.org/download/",
-        "translationId": "components.downloadList.links.unofficialBuilds"
-      },
-      "buildingFromSource": {
-        "link": "https://github.com/nodejs/node/blob/main/BUILDING.md#building-nodejs-on-supported-platforms",
-        "translationId": "components.downloadList.links.buildingFromSource"
-      },
-      "installingOnLinux": {
-        "link": "https://github.com/nodejs/help/wiki/Installation",
-        "translationId": "components.downloadList.links.installingOnLinux"
-      },
-      "installingOnWsl": {
-        "link": "https://github.com/nodejs/node/blob/main/BUILDING.md#building-nodejs-on-supported-platforms",
-        "translationId": "components.downloadList.links.installingOnWsl"
+    },
+    "getInvolved": {
+      "label": "components.navigation.getInvolved.links.getInvolved",
+      "items": {
+        "getInvolved": {
+          "link": "/get-involved",
+          "label": "components.navigation.getInvolved.links.getInvolved"
+        },
+        "collabSummit": {
+          "link": "/get-involved/collab-summit",
+          "label": "components.navigation.getInvolved.links.collabSummit"
+        },
+        "contribute": {
+          "link": "/get-involved/contribute",
+          "label": "components.navigation.getInvolved.links.contribute"
+        },
+        "codeOfConduct": {
+          "link": "https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md",
+          "label": "components.navigation.getInvolved.links.codeOfConduct"
+        }
+      }
+    },
+    "docs": {
+      "label": "components.navigation.docs.links.docs",
+      "items": {
+        "docs": {
+          "link": "/docs",
+          "label": "components.navigation.docs.links.docs"
+        },
+        "apiLts": {
+          "link": "https://nodejs.org/dist/latest-{ltsNodeVersion}/docs/api",
+          "label": "components.navigation.docs.links.apiLts"
+        },
+        "apiCurrent": {
+          "link": "https://nodejs.org/dist/latest-{currentNodeVersion}/docs/api",
+          "label": "components.navigation.docs.links.apiCurrent"
+        },
+        "es6": {
+          "link": "/docs/es6",
+          "label": "components.navigation.docs.links.es6"
+        },
+        "guides": {
+          "link": "/docs/guides",
+          "label": "components.navigation.docs.links.guides"
+        },
+        "dependencies": {
+          "link": "https://github.com/nodejs/node/blob/main/doc/contributing/maintaining/maintaining-dependencies.md",
+          "label": "components.navigation.docs.links.dependencies"
+        }
+      }
+    },
+    "learn": {
+      "items": {
+        "gettingStarted": {
+          "label": "components.navigation.learn.gettingStarted.links.gettingStarted",
+          "items": {
+            "introductionToNodejs": {
+              "link": "/learn/getting-started/introduction-to-nodejs",
+              "label": "components.navigation.learn.gettingStarted.links.introductionToNodejs"
+            },
+            "howToInstallNodejs": {
+              "link": "/learn/getting-started/how-to-install-nodejs",
+              "label": "components.navigation.learn.gettingStarted.links.howToInstallNodejs"
+            },
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": {
+              "link": "/learn/getting-started/how-much-javascript-do-you-need-to-know-to-use-nodejs",
+              "label": "components.navigation.learn.gettingStarted.links.howMuchJavascriptDoYouNeedToKnowToUseNodejs"
+            },
+            "differencesBetweenNodejsAndTheBrowser": {
+              "link": "/learn/getting-started/differences-between-nodejs-and-the-browser",
+              "label": "components.navigation.learn.gettingStarted.links.differencesBetweenNodejsAndTheBrowser"
+            },
+            "theV8JavascriptEngine": {
+              "link": "/learn/getting-started/the-v8-javascript-engine",
+              "label": "components.navigation.learn.gettingStarted.links.theV8JavascriptEngine"
+            },
+            "anIntroductionToTheNpmPackageManager": {
+              "link": "/learn/getting-started/an-introduction-to-the-npm-package-manager",
+              "label": "components.navigation.learn.gettingStarted.links.anIntroductionToTheNpmPackageManager"
+            },
+            "ecmascript2015Es6AndBeyond": {
+              "link": "/learn/getting-started/ecmascript-2015-es6-and-beyond",
+              "label": "components.navigation.learn.gettingStarted.links.ecmascript2015Es6AndBeyond"
+            },
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": {
+              "link": "/learn/getting-started/nodejs-the-difference-between-development-and-production",
+              "label": "components.navigation.learn.gettingStarted.links.nodejsTheDifferenceBetweenDevelopmentAndProduction"
+            },
+            "nodejsWithTypescript": {
+              "link": "/learn/getting-started/nodejs-with-typescript",
+              "label": "components.navigation.learn.gettingStarted.links.nodejsWithTypescript"
+            },
+            "nodejsWithWebassembly": {
+              "link": "/learn/getting-started/nodejs-with-webassembly",
+              "label": "components.navigation.learn.gettingStarted.links.nodejsWithWebassembly"
+            }
+          }
+        },
+        "asynchronousWork": {
+          "label": "components.navigation.learn.asynchronousWork.links.asynchronousWork",
+          "items": {
+            "asynchronousFlowControl": {
+              "link": "/learn/asynchronous-work/asynchronous-flow-control",
+              "label": "components.navigation.learn.asynchronousWork.links.asynchronousFlowControl"
+            },
+            "overviewOfBlockingVsNonBlocking": {
+              "link": "/learn/asynchronous-work/overview-of-blocking-vs-non-blocking",
+              "label": "components.navigation.learn.asynchronousWork.links.overviewOfBlockingVsNonBlocking"
+            },
+            "javascriptAsynchronousProgrammingAndCallbacks": {
+              "link": "/learn/asynchronous-work/javascript-asynchronous-programming-and-callbacks",
+              "label": "components.navigation.learn.asynchronousWork.links.javascriptAsynchronousProgrammingAndCallbacks"
+            },
+            "discoverJavaScriptTimers": {
+              "link": "/learn/asynchronous-work/discover-javascript-timers",
+              "label": "components.navigation.learn.asynchronousWork.links.discoverJavaScriptTimers"
+            },
+            "understandingProcessnexttick": {
+              "link": "/learn/asynchronous-work/understanding-processnexttick",
+              "label": "components.navigation.learn.asynchronousWork.links.understandingProcessnexttick"
+            },
+            "understandingSetimmediate": {
+              "link": "/learn/asynchronous-work/understanding-setimmediate",
+              "label": "components.navigation.learn.asynchronousWork.links.understandingSetimmediate"
+            },
+            "theNodejsEventEmitter": {
+              "link": "/learn/asynchronous-work/the-nodejs-event-emitter",
+              "label": "components.navigation.learn.asynchronousWork.links.theNodejsEventEmitter"
+            }
+          }
+        },
+        "manipulatingFiles": {
+          "label": "components.navigation.learn.manipulatingFiles.links.manipulatingFiles",
+          "items": {
+            "nodejsFileStats": {
+              "link": "/learn/manipulating-files/nodejs-file-stats",
+              "label": "components.navigation.learn.manipulatingFiles.links.nodejsFileStats"
+            },
+            "nodejsFilePaths": {
+              "link": "/learn/manipulating-files/nodejs-file-paths",
+              "label": "components.navigation.learn.manipulatingFiles.links.nodejsFilePaths"
+            },
+            "workingWithFileDescriptorsInNodejs": {
+              "link": "/learn/manipulating-files/working-with-file-descriptors-in-nodejs",
+              "label": "components.navigation.learn.manipulatingFiles.links.workingWithFileDescriptorsInNodejs"
+            },
+            "readingFilesWithNodejs": {
+              "link": "/learn/manipulating-files/reading-files-with-nodejs",
+              "label": "components.navigation.learn.manipulatingFiles.links.readingFilesWithNodejs"
+            },
+            "writingFilesWithNodejs": {
+              "link": "/learn/manipulating-files/writing-files-with-nodejs",
+              "label": "components.navigation.learn.manipulatingFiles.links.writingFilesWithNodejs"
+            },
+            "workingWithFoldersInNodejs": {
+              "link": "/learn/manipulating-files/working-with-folders-in-nodejs",
+              "label": "components.navigation.learn.manipulatingFiles.links.workingWithFoldersInNodejs"
+            }
+          }
+        },
+        "commandLine": {
+          "label": "components.navigation.learn.commandLine.links.commandLine",
+          "items": {
+            "runNodejsScriptsFromTheCommandLine": {
+              "link": "/learn/command-line/run-nodejs-scripts-from-the-command-line",
+              "label": "components.navigation.learn.commandLine.links.runNodejsScriptsFromTheCommandLine"
+            },
+            "howToReadEnvironmentVariablesFromNodejs": {
+              "link": "/learn/command-line/how-to-read-environment-variables-from-nodejs",
+              "label": "components.navigation.learn.commandLine.links.howToReadEnvironmentVariablesFromNodejs"
+            },
+            "howToUseTheNodejsRepl": {
+              "link": "/learn/command-line/how-to-use-the-nodejs-repl",
+              "label": "components.navigation.learn.commandLine.links.howToUseTheNodejsRepl"
+            },
+            "outputToTheCommandLineUsingNodejs": {
+              "link": "/learn/command-line/output-to-the-command-line-using-nodejs",
+              "label": "components.navigation.learn.commandLine.links.outputToTheCommandLineUsingNodejs"
+            },
+            "acceptInputFromTheCommandLineInNodejs": {
+              "link": "/learn/command-line/accept-input-from-the-command-line-in-nodejs",
+              "label": "components.navigation.learn.commandLine.links.acceptInputFromTheCommandLineInNodejs"
+            }
+          }
+        }
+      }
+    },
+    "download": {
+      "items": {
+        "shaSums": {
+          "link": "https://nodejs.org/dist/{nodeVersion}/SHASUMS256.txt.asc",
+          "label": "components.downloadList.links.shaSums.title"
+        },
+        "allDownloads": {
+          "link": "https://nodejs.org/dist/{nodeVersion}/",
+          "label": "components.downloadList.links.allDownloads"
+        },
+        "packageManager": {
+          "link": "/download/package-manager",
+          "label": "components.downloadList.links.packageManager"
+        },
+        "previousReleases": {
+          "link": "/about/previous-releases",
+          "label": "components.downloadList.links.previousReleases"
+        },
+        "nightlyReleases": {
+          "link": "https://nodejs.org/download/nightly/",
+          "label": "components.downloadList.links.nightlyReleases"
+        },
+        "unofficialBuilds": {
+          "link": "https://unofficial-builds.nodejs.org/download/",
+          "label": "components.downloadList.links.unofficialBuilds"
+        },
+        "buildingFromSource": {
+          "link": "https://github.com/nodejs/node/blob/main/BUILDING.md#building-nodejs-on-supported-platforms",
+          "label": "components.downloadList.links.buildingFromSource"
+        },
+        "installingOnLinux": {
+          "link": "https://github.com/nodejs/help/wiki/Installation",
+          "label": "components.downloadList.links.installingOnLinux"
+        },
+        "installingOnWsl": {
+          "link": "https://github.com/nodejs/node/blob/main/BUILDING.md#building-nodejs-on-supported-platforms",
+          "label": "components.downloadList.links.installingOnWsl"
+        }
       }
     }
-  },
-  "docs": {
-    "link": "/docs",
-    "translationId": "components.header.links.docs",
-    "items": {
-      "apiLts": {
-        "link": "https://nodejs.org/dist/latest-{ltsNodeVersion}/docs/api",
-        "translationId": "components.navigation.docs.links.apiLts"
-      },
-      "apiCurrent": {
-        "link": "https://nodejs.org/dist/latest-{currentNodeVersion}/docs/api",
-        "translationId": "components.navigation.docs.links.apiCurrent"
-      },
-      "es6": {
-        "link": "/docs/es6",
-        "translationId": "components.navigation.docs.links.es6"
-      },
-      "guides": {
-        "link": "/docs/guides",
-        "translationId": "components.navigation.docs.links.guides"
-      },
-      "dependencies": {
-        "link": "https://github.com/nodejs/node/blob/main/doc/contributing/maintaining/maintaining-dependencies.md",
-        "translationId": "components.navigation.docs.links.dependencies"
-      }
-    }
-  },
-  "getInvolved": {
-    "link": "/get-involved",
-    "translationId": "components.header.links.getInvolved",
-    "items": {
-      "collabSummit": {
-        "link": "/get-involved/collab-summit",
-        "translationId": "components.navigation.getInvolved.links.collabSummit"
-      },
-      "contribute": {
-        "link": "/get-involved/contribute",
-        "translationId": "components.navigation.getInvolved.links.contribute"
-      },
-      "codeOfConduct": {
-        "link": "https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md",
-        "translationId": "components.navigation.getInvolved.links.codeOfConduct"
-      }
-    }
-  },
-  "certification": {
-    "link": "https://openjsf.org/certification",
-    "translationId": "components.header.links.certification",
-    "items": {}
-  },
-  "blog": {
-    "link": "/blog",
-    "translationId": "components.header.links.blog",
-    "items": {}
   }
 }

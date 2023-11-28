@@ -117,11 +117,22 @@ export default {
       'ibm-plex-mono': ['var(--font-ibm-plex-mono)'],
     },
     extend: {
+      screens: {
+        xs: { max: '639px' },
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-subtle':
+          // @todo: replace colors for proper tailwind vars (?)
+          'linear-gradient(180deg, rgba(246, 247, 249, 0.50) 0%, rgba(246, 247, 249, 0.00) 48.32%)',
+        'gradient-subtle-dark':
+          // @todo: replace colors for proper tailwind vars (?)
+          'linear-gradient(180deg, rgba(44, 52, 55, 0.50) 0%, rgba(44, 52, 55, 0.00) 48.32%)',
       },
       boxShadow: {
+        // @todo: replace colors for proper tailwind vars (?)
         xs: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)',
+        // @todo: replace colors for proper tailwind vars (?)
         lg: '0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08)',
       },
       spacing: {
@@ -133,4 +144,5 @@ export default {
     },
   },
   darkMode: ['class', '[data-theme="dark"]'],
+  plugins: [require('@savvywombat/tailwindcss-grid-areas')],
 } satisfies Config;

@@ -7,7 +7,7 @@
       "persistent": true,
       "env": [
         "NEXT_PUBLIC_VERCEL_ENV",
-        "NEXT_STATIC_EXPORT",
+        "NEXT_PUBLIC_STATIC_EXPORT",
         "NEXT_PUBLIC_BASE_URL",
         "NEXT_PUBLIC_VERCEL_URL",
         "NEXT_PUBLIC_DIST_URL",
@@ -26,7 +26,7 @@
       "outputs": [".next/**", "!.next/cache/**"],
       "env": [
         "NEXT_PUBLIC_VERCEL_ENV",
-        "NEXT_STATIC_EXPORT",
+        "NEXT_PUBLIC_STATIC_EXPORT",
         "NEXT_PUBLIC_BASE_URL",
         "NEXT_PUBLIC_VERCEL_URL",
         "NEXT_PUBLIC_DIST_URL",
@@ -39,7 +39,7 @@
       "persistent": true,
       "env": [
         "NEXT_PUBLIC_VERCEL_ENV",
-        "NEXT_STATIC_EXPORT",
+        "NEXT_PUBLIC_STATIC_EXPORT",
         "NEXT_PUBLIC_BASE_URL",
         "NEXT_PUBLIC_VERCEL_URL",
         "NEXT_PUBLIC_DIST_URL",
@@ -58,7 +58,7 @@
       "outputs": [".next/**", "!.next/cache/**"],
       "env": [
         "NEXT_PUBLIC_VERCEL_ENV",
-        "NEXT_STATIC_EXPORT",
+        "NEXT_PUBLIC_STATIC_EXPORT",
         "NEXT_PUBLIC_BASE_URL",
         "NEXT_PUBLIC_VERCEL_URL",
         "NEXT_PUBLIC_DIST_URL",
