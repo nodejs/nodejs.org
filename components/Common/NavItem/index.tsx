@@ -31,6 +31,7 @@ const NavItem: FC<PropsWithChildren<NavItemProps>> = ({
       href={href}
       className={classNames(styles.navItem, styles[type], className)}
       activeClassName={styles.active}
+      allowSubPath
     >
       <span className={styles.label}>{children}</span>
       {showIcon && <ArrowUpRightIcon className={styles.icon} />}

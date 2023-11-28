@@ -1,22 +1,36 @@
+'use client';
+
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import * as Primitive from '@radix-ui/react-select';
 import classNames from 'classnames';
 import { useId, useMemo } from 'react';
 import type { FC } from 'react';
 
+import type { FormattedMessage } from '@/types';
+
 import styles from './index.module.css';
 
 type SelectValue = {
-  label: string;
+  label: FormattedMessage;
   value: string;
   iconImage?: React.ReactNode;
 };
 
+type SelectGroup = {
+  label?: FormattedMessage;
+  items: SelectValue[];
+};
+
+const isStringArray = (values: unknown[]): values is string[] =>
+  Boolean(values[0] && typeof values[0] === 'string');
+
+const isValuesArray = (values: unknown[]): values is SelectValue[] =>
+  Boolean(values[0] && typeof values[0] === 'object' && 'value' in values[0]);
+
 type SelectProps = {
-  values: SelectValue[] | string[];
+  values: SelectGroup[] | SelectValue[] | string[];
   defaultValue?: string;
   placeholder?: string;
-  dropdownLabel?: string;
   label?: string;
   inline?: boolean;
   onChange?: (value: string) => void;
@@ -27,20 +41,23 @@ const Select: FC<SelectProps> = ({
   defaultValue,
   placeholder,
   label,
-  dropdownLabel,
   inline,
   onChange,
 }) => {
   const id = useId();
+
   const mappedValues = useMemo(() => {
-    const [firstItem] = values;
+    let mappedValues = values;
 
-    const items =
-      typeof firstItem === 'string'
-        ? values.map(value => ({ value, label: value }))
-        : values;
+    if (isStringArray(mappedValues)) {
+      mappedValues = mappedValues.map(value => ({ label: value, value }));
+    }
 
-    return items as SelectValue[];
+    if (isValuesArray(mappedValues)) {
+      return [{ items: mappedValues }];
+    }
+
+    return mappedValues;
   }, [values]);
 
   return (
@@ -53,7 +70,7 @@ const Select: FC<SelectProps> = ({
       <Primitive.Root defaultValue={defaultValue} onValueChange={onChange}>
         <Primitive.Trigger
           className={styles.trigger}
-          aria-label={label || dropdownLabel}
+          aria-label={label}
           id={id}
         >
           <Primitive.Value placeholder={placeholder} />
@@ -65,25 +82,30 @@ const Select: FC<SelectProps> = ({
             className={classNames(styles.dropdown, { [styles.inline]: inline })}
           >
             <Primitive.Viewport>
-              <Primitive.Group>
-                {dropdownLabel && (
-                  <Primitive.Label className={`${styles.item} ${styles.label}`}>
-                    {dropdownLabel}
-                  </Primitive.Label>
-                )}
-                {mappedValues.map(({ value, label, iconImage }) => (
-                  <Primitive.Item
-                    key={value}
-                    value={value}
-                    className={`${styles.item} ${styles.text}`}
-                  >
-                    <Primitive.ItemText>
-                      {iconImage}
+              {mappedValues.map(({ label, items }, key) => (
+                <Primitive.Group key={label?.toString() || key}>
+                  {label && (
+                    <Primitive.Label
+                      className={classNames(styles.item, styles.label)}
+                    >
                       {label}
-                    </Primitive.ItemText>
-                  </Primitive.Item>
-                ))}
-              </Primitive.Group>
+                    </Primitive.Label>
+                  )}
+
+                  {items.map(({ value, label, iconImage }) => (
+                    <Primitive.Item
+                      key={value}
+                      value={value}
+                      className={classNames(styles.item, styles.text)}
+                    >
+                      <Primitive.ItemText>
+                        {iconImage}
+                        {label}
+                      </Primitive.ItemText>
+                    </Primitive.Item>
+                  ))}
+                </Primitive.Group>
+              ))}
             </Primitive.Viewport>
           </Primitive.Content>
         </Primitive.Portal>

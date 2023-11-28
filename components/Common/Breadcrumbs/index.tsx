@@ -6,9 +6,10 @@ import BreadcrumbItem from '@/components/Common/Breadcrumbs/BreadcrumbItem';
 import BreadcrumbLink from '@/components/Common/Breadcrumbs/BreadcrumbLink';
 import BreadcrumbRoot from '@/components/Common/Breadcrumbs/BreadcrumbRoot';
 import BreadcrumbTruncatedItem from '@/components/Common/Breadcrumbs/BreadcrumbTruncatedItem';
+import type { FormattedMessage } from '@/types';
 
 type BreadcrumbLink = {
-  label: string;
+  label: FormattedMessage;
   href: LinkProps['href'];
 };
 
@@ -38,7 +39,7 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
 
         return (
           <BreadcrumbItem
-            key={link.href.toString()}
+            key={link.label.toString()}
             hidden={hidden}
             hideSeparator={isLastItem}
             position={position + +!hideHome}

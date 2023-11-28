@@ -16,20 +16,20 @@ const SideNavigation: FC<SideNavigationProps> = ({
 }) => {
   const { getSideNavigation } = useSiteNavigation();
 
-  const sideNavigationItems = getSideNavigation(navigationKey, context);
+  const [[, sideNavigationItems]] = getSideNavigation([navigationKey], context);
 
   return (
     <nav aria-label="secondary">
       <ul>
-        {sideNavigationItems.map(item => (
-          <li key={item.key}>
-            <ActiveLink href={item.link}>{item.text}</ActiveLink>
+        {sideNavigationItems.items!.map(([key, { link, label, items }]) => (
+          <li key={key}>
+            {link ? <ActiveLink href={link}>{label}</ActiveLink> : label}
 
-            {item.items.length > 0 && (
+            {items && items.length > 0 && (
               <ul>
-                {item.items.map(({ link, text, key }) => (
+                {items.map(([key, { link, label }]) => (
                   <li key={key}>
-                    <ActiveLink href={link}>{text}</ActiveLink>
+                    <ActiveLink href={link}>{label}</ActiveLink>
                   </li>
                 ))}
               </ul>

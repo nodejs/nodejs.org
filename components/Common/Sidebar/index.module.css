@@ -11,5 +11,18 @@
     py-6
     dark:border-r-neutral-900
     dark:bg-neutral-950
-    md:max-w-xs;
+    md:max-w-xs
+    xs:w-full
+    xs:border-r-0;
+
+  > section {
+    @apply block
+      xs:hidden;
+  }
+
+  > div {
+    @apply hidden
+      w-full
+      xs:block;
+  }
 }
