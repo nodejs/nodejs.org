@@ -20,7 +20,7 @@ const DownloadReleasesTable: FC = async () => {
           <th>Node.js Version</th>
           <th>Codename</th>
           <th>Release Date</th>
-          <th>npm</th>
+          <th colSpan={2}>npm</th>
         </tr>
       </thead>
       <tbody>
