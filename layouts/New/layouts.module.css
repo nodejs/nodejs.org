@@ -30,13 +30,11 @@
       overflow-y-auto
       overflow-x-hidden
       bg-gradient-subtle
-      px-12
-      py-12
+      p-12
       grid-in-[main]
       dark:bg-gradient-subtle-dark
       xs:bg-none
-      xs:px-4
-      xs:py-4
+      xs:p-4
       xs:dark:bg-none;
   }
 
