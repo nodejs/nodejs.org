@@ -5,7 +5,8 @@
       px-2
       py-1
       font-semibold
-      text-white;
+      text-white
+      dark:text-white;
 
     &:hover {
       @apply bg-green-700
