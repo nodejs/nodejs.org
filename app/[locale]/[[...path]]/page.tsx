@@ -102,7 +102,7 @@ const getPage: FC<DynamicParams> = async ({ params }) => {
     const sharedContext = {
       frontmatter,
       headings,
-      pathname,
+      pathname: `/${pathname}`,
       readingTime,
       filename,
     };

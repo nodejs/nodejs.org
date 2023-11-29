@@ -9,6 +9,7 @@ import type { LegacyFrontMatter } from '@/types';
 
 type MatterContext = {
   frontmatter: LegacyFrontMatter;
+  pathname: string;
   headings: Heading[];
   readingTime: ReadTimeResults;
   filename: string;
@@ -16,6 +17,7 @@ type MatterContext = {
 
 export const MatterContext = createContext<MatterContext>({
   frontmatter: {},
+  pathname: '',
   headings: [],
   readingTime: { text: '', minutes: 0, time: 0, words: 0 },
   filename: '',
@@ -24,15 +26,6 @@ export const MatterContext = createContext<MatterContext>({
 type MatterProviderProps = PropsWithChildren<MatterContext>;
 
 export const MatterProvider: FC<MatterProviderProps> = ({
-  frontmatter,
-  headings,
-  readingTime,
-  filename,
   children,
-}) => (
-  <MatterContext.Provider
-    value={{ frontmatter, headings, readingTime, filename }}
-  >
-    {children}
-  </MatterContext.Provider>
-);
+  ...data
+}) => <MatterContext.Provider value={data}>{children}</MatterContext.Provider>;

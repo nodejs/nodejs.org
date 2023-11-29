@@ -11,7 +11,7 @@
     grid-rows-[1fr]
     overflow-hidden
     grid-areas-[sidebar_main_metabar,sidebar_footer_metabar]
-    sm:grid-cols-[auto_1fr_auto]
+    sm:grid-cols-[200px_1fr_200px]
     xl:grid-cols-[320px_1fr_320px]
     xs:block
     xs:overflow-auto;
@@ -25,7 +25,7 @@
       w-full
       flex-col
       items-start
-      gap-8
+      gap-6
       self-stretch
       overflow-y-auto
       overflow-x-hidden
@@ -34,9 +34,10 @@
       py-12
       grid-in-[main]
       dark:bg-gradient-subtle-dark
-      xs:!bg-none
+      xs:bg-none
       xs:px-4
-      xs:py-4;
+      xs:py-4
+      xs:dark:bg-none;
   }
 
   > *:nth-child(3) {

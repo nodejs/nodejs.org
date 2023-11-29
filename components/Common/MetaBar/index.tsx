@@ -35,8 +35,9 @@ const MetaBar: FC<MetaBarProps> = ({ items, headings }) => {
             <dd>{value}</dd>
           </Fragment>
         ))}
+
         {heading.length > 0 && (
-          <Fragment key="tableOfContents">
+          <>
             <dt>{t('components.metabar.tableOfContents')}</dt>
             <dd>
               <ol>
@@ -47,7 +48,7 @@ const MetaBar: FC<MetaBarProps> = ({ items, headings }) => {
                 ))}
               </ol>
             </dd>
-          </Fragment>
+          </>
         )}
       </dl>
     </div>

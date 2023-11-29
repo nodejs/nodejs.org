@@ -15,6 +15,7 @@
 
   .trigger {
     @apply inline-flex
+      h-12
       w-full
       min-w-[17rem]
       items-center

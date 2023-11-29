@@ -57,7 +57,8 @@
   a,
   a:link,
   a:visited {
-    @apply text-green-600
+    @apply inline-block
+      text-green-600
       dark:text-green-400;
 
     &:hover {
@@ -68,7 +69,8 @@
 
   ul {
     @apply list-disc
-      px-5
+      pl-9
+      pr-5
       leading-6
       text-neutral-900
       dark:text-white;
@@ -104,7 +106,9 @@
         py-2
         text-neutral-900
         dark:border-neutral-800
-        dark:text-white;
+        dark:text-white
+        xs:block
+        xs:border-l-0;
 
       > a {
         @apply pr-2;
@@ -116,12 +120,16 @@
     }
 
     tr:last-child td {
-      @apply border-b-0;
+      @apply sm:border-b-0;
+
+      &:last-child {
+        @apply xs:border-b-0;
+      }
     }
 
     td:first-child,
     th:first-child {
-      @apply border-l-0;
+      @apply sm:border-l-0;
     }
   }
 }
