@@ -3,8 +3,11 @@
     flex-col
     items-center
     gap-6
+    border-t
+    border-neutral-200
     px-8
     py-4
+    dark:border-neutral-900
     md:flex-row
     md:justify-between
     md:py-5;
