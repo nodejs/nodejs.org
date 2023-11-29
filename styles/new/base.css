@@ -6,7 +6,11 @@ html,
 body {
   @apply h-full
     w-full
-    overflow-hidden
+    overflow-hidden;
+}
+
+body {
+  @apply scroll-smooth
     bg-white
     font-open-sans
     text-neutral-950

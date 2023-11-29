@@ -21,8 +21,7 @@
   }
 
   > div {
-    @apply hidden
-      w-full
-      xs:block;
+    @apply w-full
+      sm:hidden;
   }
 }

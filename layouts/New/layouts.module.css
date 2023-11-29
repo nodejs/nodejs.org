@@ -8,8 +8,6 @@
 
 .articleLayout {
   @apply grid
-    min-h-full
-    min-w-full
     grid-rows-[1fr]
     overflow-hidden
     grid-areas-[sidebar_main_metabar,sidebar_footer_metabar]

@@ -7,7 +7,6 @@
   .label {
     @apply block
       w-full
-      pb-2
       text-sm
       font-medium
       text-neutral-800
