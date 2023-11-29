@@ -15,7 +15,7 @@
 
   .trigger {
     @apply inline-flex
-      h-12
+      h-11
       w-full
       min-w-[17rem]
       items-center
@@ -101,7 +101,8 @@
 
 .inline {
   .trigger {
-    @apply min-w-fit
+    @apply h-auto
+      min-w-fit
       px-2.5
       py-2
       text-sm
