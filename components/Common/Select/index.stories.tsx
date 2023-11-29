@@ -65,6 +65,7 @@ export const DropdownLabel: Story = {
       },
     ],
     placeholder: 'Select a guide',
+    label: 'Getting Started',
   },
 };
 
