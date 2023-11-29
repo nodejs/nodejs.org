@@ -1,16 +1,5 @@
 import { init } from '@sentry/nextjs';
 
-import {
-  SENTRY_DSN,
-  SENTRY_ENABLE,
-  SENTRY_CAPTURE_RATE,
-} from '@/next.constants.mjs';
+import { SENTRY_DSN, SENTRY_ENABLE } from '@/next.constants.mjs';
 
-init({
-  // Only run Sentry on Vercel Environment
-  enabled: SENTRY_ENABLE,
-  // Provide Sentry's Secret Key
-  dsn: SENTRY_DSN,
-  // Percentage of events to send to Sentry (1% of them) (for performance metrics)
-  tracesSampleRate: SENTRY_CAPTURE_RATE,
-});
+init({ enabled: SENTRY_ENABLE, dsn: SENTRY_DSN });
