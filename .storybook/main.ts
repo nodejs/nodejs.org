@@ -15,15 +15,10 @@ const rootClasses = classNames(
 
 const config: StorybookConfig = {
   stories: ['../components/**/*.stories.tsx'],
-  addons: [
-    '@storybook/addon-controls',
-    '@storybook/addon-interactions',
-    '@storybook/addon-themes',
-    '@storybook/addon-viewport',
-  ],
   logLevel: 'error',
   staticDirs: ['../public'],
   typescript: { reactDocgen: false, check: false },
+  framework: { name: '@storybook/nextjs', options: {} },
   previewBody:
     // This `<style>` is necessary to simulate what `next-themes` (ThemeProvider) does on real applications
     // `next-theme` automatically injects the color-scheme based on the system preference or the current applied theme
@@ -31,11 +26,17 @@ const config: StorybookConfig = {
     '<style>:root { color-scheme: light; } html[data-theme="dark"] { color-scheme: dark; }</style>' +
     // This adds the base styling for dark/light themes within Storybook. This is a Storybook-only style
     `<body class="${rootClasses}"></body>`,
-  core: { disableTelemetry: true, disableWhatsNewNotifications: true },
-  framework: {
-    name: '@storybook/nextjs',
-    options: { builder: { useSWC: true } },
+  core: {
+    disableTelemetry: true,
+    disableWhatsNewNotifications: true,
+    builder: { name: '@storybook/builder-webpack5', options: { useSWC: true } },
   },
+  addons: [
+    '@storybook/addon-controls',
+    '@storybook/addon-interactions',
+    '@storybook/addon-themes',
+    '@storybook/addon-viewport',
+  ],
   webpack: async config => ({
     ...config,
     // We want to conform as much as possible with our target settings
