@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/react';
 import { Source_Sans_3 } from 'next/font/google';
-import { getLocale } from 'next-intl/server';
+import { useLocale } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
 
 import BaseLayout from '@/layouts/BaseLayout';
@@ -17,8 +17,8 @@ const sourceSans = Source_Sans_3({
   subsets: ['latin'],
 });
 
-const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
-  const locale = await getLocale();
+const RootLayout: FC<PropsWithChildren> = ({ children }) => {
+  const locale = useLocale();
 
   const { langDir, hrefLang } = availableLocalesMap[locale] || defaultLocale;
 
