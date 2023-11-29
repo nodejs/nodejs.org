@@ -78,8 +78,6 @@ const nextConfig = {
     ],
     // Removes the warning regarding the WebPack Build Worker
     webpackBuildWorker: false,
-    // Sentry Profiling Module should be treated as an external symbol
-    serverComponentsExternalPackages: ['@sentry/profiling-node'],
   },
 };
 
