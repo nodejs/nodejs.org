@@ -38,7 +38,7 @@ const NavBar: FC<NavbarProps> = ({
   return (
     <nav className={`${style.container}`}>
       <div className={style.nodeIconAndMobileItemsToggler}>
-        <Link className={style.nodeIconWrapper} href="/">
+        <Link className={style.nodeIconWrapper} href="/" aria-label="Home">
           <NodejsDark className={style.nodejsLogoDark} />
           <NodejsLight className={style.nodejsLogoLight} />
         </Link>
