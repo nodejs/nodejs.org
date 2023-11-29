@@ -38,10 +38,10 @@ const NavBar: FC<NavbarProps> = ({
   return (
     <nav className={`${style.container}`}>
       <div className={style.nodeIconAndMobileItemsToggler}>
-        <div className={style.nodeIconWrapper}>
+        <Link className={style.nodeIconWrapper} href="/">
           <NodejsDark className={style.nodejsLogoDark} />
           <NodejsLight className={style.nodejsLogoLight} />
-        </div>
+        </Link>
 
         <Label.Root
           onClick={() => setIsMenuOpen(prev => !prev)}
