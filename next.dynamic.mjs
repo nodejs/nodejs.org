@@ -218,16 +218,22 @@ const getDynamicRouter = async () => {
       : siteConfig.title;
 
     pageMetadata.twitter.title = pageMetadata.title;
-    pageMetadata.alternates.canonical = `${baseUrlAndPath}/${locale}/${path}`;
 
-    pageMetadata.alternates.languages[
-      'x-default'
-    ] = `${baseUrlAndPath}/${defaultLocale.code}/${path}`;
+    const getUrlForPathname = (l, p) =>
+      `${baseUrlAndPath}/${l}${p ? `/${p}` : ''}`;
+
+    pageMetadata.alternates.canonical = getUrlForPathname(locale, path);
+
+    pageMetadata.alternates.languages['x-default'] = getUrlForPathname(
+      defaultLocale.code,
+      path
+    );
 
     availableLocaleCodes.forEach(currentLocale => {
-      pageMetadata.alternates.languages[
-        currentLocale
-      ] = `${baseUrlAndPath}/${currentLocale}/${path}`;
+      pageMetadata.alternates.languages[currentLocale] = getUrlForPathname(
+        currentLocale,
+        path
+      );
     });
 
     return pageMetadata;

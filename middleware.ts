@@ -8,10 +8,15 @@ export default createMiddleware({
 
   // Used when no locale matches
   defaultLocale: defaultLocale.code,
+
+  // Always use a Locale as a prefix for routing
+  localePrefix: 'always',
+
+  // We already have our own way of providing alternate links
+  // generated on `next.dynamic.mjs`
+  alternateLinks: false,
 });
 
-export const config = {
-  // Note.: This needs to be updated when activating more locales
-  // Format: '/(locale1|locale2|locale3|...)/:path*'
-  matcher: ['/', '/(en)/:path*'],
-};
+// We only want the middleware to run on the `/` route
+// to redirect users to their preferred locale
+export const config = { matcher: ['/'] };
