@@ -5,7 +5,7 @@ import type { FC } from 'react';
 import { setClientContext } from '@/client-context';
 import { MDXRenderer } from '@/components/mdxRenderer';
 import { WithLayout } from '@/components/withLayout';
-import { ENABLE_STATIC_EXPORT } from '@/next.constants.mjs';
+import { ENABLE_STATIC_EXPORT, IS_DEVELOPMENT } from '@/next.constants.mjs';
 import { DEFAULT_VIEWPORT } from '@/next.dynamic.constants.mjs';
 import { dynamicRouter } from '@/next.dynamic.mjs';
 import { availableLocaleCodes, defaultLocale } from '@/next.locales.mjs';
@@ -120,7 +120,8 @@ const getPage: FC<DynamicParams> = async ({ params }) => {
 export const dynamicParams = true;
 
 // Enforces that this route is used as static rendering
+// Except whenever on the Development mode as we want instant-refresh when making changes
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
-export const dynamic = 'error';
+export const dynamic = IS_DEVELOPMENT ? 'force-dynamic' : 'error';
 
 export default getPage;

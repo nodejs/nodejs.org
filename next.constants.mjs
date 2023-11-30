@@ -22,6 +22,16 @@ export const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 export const VERCEL_ENV = process.env.NEXT_PUBLIC_VERCEL_ENV || undefined;
 
 /**
+ * This is used for defining a default time of when `next-data` and other dynamically generated
+ * but static-enabled pages should be regenerated.
+ *
+ * Note that this is a custom Environment Variable that can be defined by us when necessary
+ */
+export const VERCEL_EVALIDATE_TIME = Number(
+  process.env.NEXT_PUBLIC_VERCEL_REVALIDATE_TIME || 300
+);
+
+/**
  * This is used for telling Next.js to to a Static Export Build of the Website
  *
  * This is used for static/without a Node.js server hosting, such as on our
@@ -50,7 +60,7 @@ export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
 /**
  * This is used for any place that requires the Node.js distribution URL (which by default is nodejs.org/dist)
  *
- * Note that this is a manual Environment Variable defined by us if necessary.
+ * Note that this is a custom Environment Variable that can be defined by us when necessary
  */
 export const DIST_URL =
   process.env.NEXT_PUBLIC_DIST_URL || 'https://nodejs.org/dist/';
@@ -58,7 +68,7 @@ export const DIST_URL =
 /**
  * This is used for any place that requires the Node.js API Docs URL (which by default is nodejs.org/docs)
  *
- * Note that this is a manual Environment Variable defined by us if necessary.
+ * Note that this is a custom Environment Variable that can be defined by us when necessary
  */
 export const DOCS_URL =
   process.env.NEXT_PUBLIC_DOCS_URL || 'https://nodejs.org/docs/';
@@ -69,7 +79,7 @@ export const DOCS_URL =
  * This is useful when running the deployment on a subdirectory
  * of a domain, such as when hosted on GitHub Pages.
  *
- * Note that this is a manual Environment Variable defined by us if necessary.
+ * Note that this is a custom Environment Variable that can be defined by us when necessary
  */
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
@@ -112,6 +122,8 @@ export const EXTERNAL_LINKS_SITEMAP = [
 
 /**
  * The `localStorage` key to store the theme choice of `next-themes`
+ *
+ * This is what allows us to store user preference for theming
  */
 export const THEME_STORAGE_KEY = 'theme';
 
@@ -123,19 +135,25 @@ export const SENTRY_DSN =
 
 /**
  * This states if Sentry should be enabled and bundled within our App
+ *
+ * We enable sentry by default if we're om development mode or deployed
+ * on Vercel (either production or preview branches)
  */
 export const SENTRY_ENABLE = IS_DEVELOPMENT || !!VERCEL_ENV;
 
 /**
  * This configures the sampling rate for Sentry
  *
- * @note we always want to capture 100% on preview branches and development mode
+ * We always want to capture 100% on Vercel Preview Branches
+ * and not when it's on Production Mode (nodejs.org)
  */
 export const SENTRY_CAPTURE_RATE =
-  SENTRY_ENABLE && BASE_URL !== 'https://nodejs.org' ? 1.0 : 0.01;
+  SENTRY_ENABLE && VERCEL_ENV && BASE_URL !== 'https://nodejs.org' ? 1.0 : 0.01;
 
 /**
  * Provides the Route for Sentry's Server-Side Tunnel
+ *
+ * This is a `@sentry/nextjs` specific feature
  */
 export const SENTRY_TUNNEL = (components = '') =>
   SENTRY_ENABLE ? `/monitoring${components}` : undefined;

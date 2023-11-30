@@ -1,4 +1,5 @@
 import provideReleaseData from '@/next-data/providers/releaseData';
+import { VERCEL_EVALIDATE_TIME } from '@/next.constants.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 
 // We only support fetching these pages from the /en/ locale code
@@ -18,10 +19,15 @@ export const GET = async () => {
 // This is used for ISR static validation and generation
 export const generateStaticParams = async () => [{ locale }];
 
-// Forces that only the paths from `generateStaticParams` are allowed, giving 404 on the contrary
+// Enforces that only the paths from `generateStaticParams` are allowed, giving 404 on the contrary
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
 export const dynamicParams = false;
 
 // Enforces that this route is used as static rendering
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
 export const dynamic = 'error';
+
+// Ensures that this endpoint is invalidated and re-executed every X minutes
+// so that when new deployments happen, the data is refreshed
+// @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
+export const revalidate = VERCEL_EVALIDATE_TIME;
