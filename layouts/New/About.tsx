@@ -1,10 +1,10 @@
 import type { FC, PropsWithChildren } from 'react';
 
+import WithBreadcrumbs from '@/components/withBreadcrumbs';
+import WithMetaBar from '@/components/withMetaBar';
+import WithNavBar from '@/components/withNavBar';
+import WithSideBar from '@/components/withSideBar';
 import ArticleLayout from '@/layouts/New/Article';
-import WithBreadcrumbs from '@/layouts/New/withBreadcrumbs';
-import WithMetaBar from '@/layouts/New/withMetaBar';
-import WithNavBar from '@/layouts/New/withNavBar';
-import WithSideBar from '@/layouts/New/withSideBar';
 
 const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
