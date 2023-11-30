@@ -2,7 +2,6 @@
 
 import { withSentryConfig } from '@sentry/nextjs';
 import withNextIntl from 'next-intl/plugin';
-import webpack from 'webpack';
 
 import {
   BASE_PATH,
@@ -48,7 +47,7 @@ const nextConfig = {
   // we also configure ESLint to run its lint checking on all files (next lint)
   eslint: { dirs: ['.'], ignoreDuringBuilds: true },
   // Adds custom WebPack configuration to our Next.hs setup
-  webpack: function (config) {
+  webpack: function (config, { webpack }) {
     // Next.js WebPack Bundler does not know how to handle `.mjs` files on `node_modules`
     // This is not an issue when using TurboPack as it uses SWC and it is ESM-only
     // Once Next.js uses Turbopack for their build process we can remove this
