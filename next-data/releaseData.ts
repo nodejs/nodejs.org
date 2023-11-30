@@ -1,4 +1,9 @@
-import { ENABLE_STATIC_EXPORT, NEXT_DATA_URL } from '@/next.constants.mjs';
+import {
+  ENABLE_STATIC_EXPORT,
+  IS_DEVELOPMENT,
+  NEXT_DATA_URL,
+  VERCEL_ENV,
+} from '@/next.constants.mjs';
 import type { NodeRelease } from '@/types';
 
 const getReleaseData = (): Promise<NodeRelease[]> => {
@@ -6,7 +11,7 @@ const getReleaseData = (): Promise<NodeRelease[]> => {
   // hence the self-ingestion APIs will not be available. In this case we want to load
   // the data directly within the current thread, which will anyways be loaded only once
   // We use lazy-imports to prevent `provideBlogData` from executing on import
-  if (ENABLE_STATIC_EXPORT) {
+  if (ENABLE_STATIC_EXPORT || (!IS_DEVELOPMENT && !VERCEL_ENV)) {
     return import('@/next-data/providers/releaseData').then(
       ({ default: provideReleaseData }) => provideReleaseData()
     );

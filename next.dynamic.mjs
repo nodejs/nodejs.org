@@ -8,7 +8,12 @@ import matter from 'gray-matter';
 import { cache } from 'react';
 import { VFile } from 'vfile';
 
-import { MD_EXTENSION_REGEX, BASE_URL, BASE_PATH } from './next.constants.mjs';
+import {
+  MD_EXTENSION_REGEX,
+  BASE_URL,
+  BASE_PATH,
+  IS_DEVELOPMENT,
+} from './next.constants.mjs';
 import {
   DYNAMIC_ROUTES_IGNORES,
   DYNAMIC_ROUTES_REWRITES,
@@ -47,8 +52,25 @@ const mapPathToRoute = (locale = defaultLocale.code, path = '') => ({
   path: path.split(sep),
 });
 
+// Provides an in-memory Map that lasts the whole build process
+// and disabled when on development mode (stubbed)
+const createCachedMarkdownCache = () => {
+  if (IS_DEVELOPMENT) {
+    return {
+      has: () => false,
+      set: () => {},
+      get: () => null,
+    };
+  }
+
+  return new Map();
+};
+
 const getDynamicRouter = async () => {
-  const cachedMarkdownFiles = new Map();
+  // Creates a Cache System that is disabled during development mode
+  const cachedMarkdownFiles = createCachedMarkdownCache();
+
+  // Keeps the map of pathnames to filenames
   const pathnameToFilename = new Map();
 
   const websitePages = await getMarkdownFiles(
@@ -131,7 +153,7 @@ const getDynamicRouter = async () => {
 
       // We then attempt to retrieve the source version of the file as there is no localised version
       // of the file and we set it on the cache to prevent future checks of the same locale for this file
-      const { source: fileContent } = getMarkdownFile(
+      const { source: fileContent } = _getMarkdownFile(
         defaultLocale.code,
         pathname
       );
@@ -217,13 +239,13 @@ const getDynamicRouter = async () => {
   });
 
   return {
-    getRoutesByLanguage,
-    getMarkdownFile,
-    getMDXContent,
-    getPathname,
-    shouldIgnoreRoute,
-    getRouteRewrite,
     mapPathToRoute,
+    shouldIgnoreRoute,
+    getPathname,
+    getRouteRewrite,
+    getRoutesByLanguage,
+    getMDXContent,
+    getMarkdownFile,
     getPageMetadata,
   };
 };
