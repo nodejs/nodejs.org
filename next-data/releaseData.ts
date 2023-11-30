@@ -15,7 +15,9 @@ const getReleaseData = (): Promise<NodeRelease[]> => {
   // When we're on RSC with Server capabilities we prefer using Next.js Data Fetching
   // as this will load cached data from the server instead of generating data on the fly
   // this is extremely useful for ISR and SSG as it will not generate this data on every request
-  return fetch(`${NEXT_DATA_URL}release-data`).then(r => r.json());
+  return fetch(`${NEXT_DATA_URL}release-data`, { cache: 'no-cache' }).then(r =>
+    r.json()
+  );
 };
 
 export default getReleaseData;
