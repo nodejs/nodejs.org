@@ -5,7 +5,7 @@ import type { FC } from 'react';
 import { setClientContext } from '@/client-context';
 import { MDXRenderer } from '@/components/mdxRenderer';
 import { WithLayout } from '@/components/withLayout';
-import { ENABLE_STATIC_EXPORT } from '@/next.constants.mjs';
+import { ENABLE_STATIC_EXPORT, VERCEL_REVALIDATE } from '@/next.constants.mjs';
 import { DEFAULT_VIEWPORT } from '@/next.dynamic.constants.mjs';
 import { dynamicRouter } from '@/next.dynamic.mjs';
 import { availableLocaleCodes, defaultLocale } from '@/next.locales.mjs';
@@ -123,5 +123,10 @@ export const dynamicParams = true;
 // Except whenever on the Development mode as we want instant-refresh when making changes
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
 export const dynamic = 'error';
+
+// Ensures that this endpoint is invalidated and re-executed every X minutes
+// so that when new deployments happen, the data is refreshed
+// @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
+export const revalidate = VERCEL_REVALIDATE;
 
 export default getPage;

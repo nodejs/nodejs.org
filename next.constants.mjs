@@ -27,7 +27,7 @@ export const VERCEL_ENV = process.env.NEXT_PUBLIC_VERCEL_ENV || undefined;
  *
  * Note that this is a custom Environment Variable that can be defined by us when necessary
  */
-export const VERCEL_EVALIDATE_TIME = Number(
+export const VERCEL_REVALIDATE = Number(
   process.env.NEXT_PUBLIC_VERCEL_REVALIDATE_TIME || 300
 );
 
