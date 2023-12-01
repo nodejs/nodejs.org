@@ -22,7 +22,7 @@
   }
 
   > div {
-    @apply w-full
-      sm:hidden;
+    @apply hidden
+      w-full xs:flex;
   }
 }
