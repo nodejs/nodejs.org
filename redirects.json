@@ -178,7 +178,7 @@
     },
     {
       "source": "/:locale/docs",
-      "destination": "/:locale/guides"
+      "destination": "https://nodejs.org/docs/latest/api/"
     },
     {
       "source": "/:locale/docs/guides",

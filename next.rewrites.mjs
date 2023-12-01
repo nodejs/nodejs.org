@@ -21,7 +21,9 @@ const localesMatch = `/:locale(${availableLocaleCodes.join('|')}|)?/`;
 const redirects = async () => {
   return siteRedirects.external.map(({ source, destination }) => ({
     source: source.replace('/:locale/', localesMatch),
-    permanent: true,
+    // We prevent permanent redirects as in general the redirects are safeguards
+    // of legacy or old pages or pages that moved, and in general we don't want permanent redirects
+    permanent: false,
     destination,
   }));
 };
