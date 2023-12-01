@@ -9,7 +9,7 @@ files:
     ignore:
       - /pages/en/blog/**/*.md
       - /pages/en/learn/**/*.md
-      - /pages/en/docs/guides/**/*.md
+      - /pages/en/guides/**/*.md
       - /pages/en/download/index.md
       - /pages/en/download/current.md
     languages_mapping:
@@ -24,7 +24,7 @@ files:
     ignore:
       - /pages/en/blog/**/*.mdx
       - /pages/en/learn/**/*.mdx
-      - /pages/en/docs/guides/**/*.mdx
+      - /pages/en/guides/**/*.mdx
     languages_mapping:
       two_letters_code:
         es-ES: es

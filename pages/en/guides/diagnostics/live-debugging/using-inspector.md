@@ -14,4 +14,4 @@ of the application as it handles a business-critical workload.
 
 ## How To
 
-/docs/guides/debugging-getting-started/
+/guides/debugging-getting-started/

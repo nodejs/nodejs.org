@@ -83,9 +83,7 @@
     {
       "source": "/:locale/foundation/education",
       "destination": "https://openjsf.org/certification"
-    }
-  ],
-  "internal": [
+    },
     {
       "source": "/about",
       "destination": "/en/about"
@@ -173,6 +171,31 @@
     {
       "source": "/:locale/docs/guides/timers-in-node/",
       "destination": "/:locale/learn/asynchronous-work/discover-javascript-timers"
+    },
+    {
+      "source": "/:locale/docs/es6",
+      "destination": "/:locale/learn/getting-started/ecmascript-2015-es6-and-beyond"
+    },
+    {
+      "source": "/:locale/docs",
+      "destination": "/:locale/guides"
+    },
+    {
+      "source": "/:locale/docs/guides",
+      "destination": "/:locale/guides"
+    },
+    {
+      "source": "/:locale/docs/guides/:path*",
+      "destination": "/:locale/guides/:path*"
+    },
+    {
+      "source": "/:locale/get-involved",
+      "destination": "/:locale/about/get-involved"
+    },
+    {
+      "source": "/:locale/get-involved/:path*",
+      "destination": "/:locale/about/get-involved/:path*"
     }
-  ]
+  ],
+  "internal": []
 }

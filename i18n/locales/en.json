@@ -17,11 +17,11 @@
         "about": "About",
         "download": "Download",
         "docs": "Docs",
-        "getInvolved": "Get Involved",
+        "guides": "Guides",
         "learn": "Learn",
         "security": "Security",
         "certification": "Certification",
-        "blog": "News"
+        "blog": "Blog"
       },
       "buttons": {
         "toggleLanguage": "Toggle Language",
@@ -85,16 +85,6 @@
           "governance": "Project Governance",
           "releases": "Previous Releases",
           "security": "Security Reporting"
-        }
-      },
-      "docs": {
-        "links": {
-          "docs": "Docs",
-          "es6": "ES6 and beyond",
-          "apiLts": "{fullLtsNodeVersion} API <graySpan>LTS</graySpan>",
-          "apiCurrent": "{fullCurrentNodeVersion} API",
-          "guides": "Guides <graySpan>ARCHIVE</graySpan>",
-          "dependencies": "Dependencies"
         }
       },
       "getInvolved": {

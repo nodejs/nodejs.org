@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import DownloadList from '@/components/Downloads/DownloadList';
-import { WithNodeRelease } from '@/components/withNodeRelease';
+import WithNodeRelease from '@/components/withNodeRelease';
 import { useClientContext } from '@/hooks/server';
 import { DIST_URL } from '@/next.constants.mjs';
 import type { NodeRelease } from '@/types';

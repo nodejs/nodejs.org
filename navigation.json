@@ -8,21 +8,21 @@
       "link": "/about",
       "label": "components.header.links.about"
     },
-    "getInvolved": {
-      "link": "/get-involved",
-      "label": "components.header.links.getInvolved"
-    },
-    "docs": {
-      "link": "/docs",
-      "label": "components.header.links.docs"
-    },
     "download": {
       "link": "/download",
       "label": "components.header.links.download"
     },
+    "guides": {
+      "link": "/guides",
+      "label": "components.header.links.guides"
+    },
     "blog": {
       "link": "/blog",
       "label": "components.header.links.blog"
+    },
+    "docs": {
+      "link": "https://nodejs.org/docs/latest/api/",
+      "label": "components.header.links.docs"
     },
     "certification": {
       "link": "https://openjsf.org/certification",
@@ -55,49 +55,20 @@
       "label": "components.navigation.getInvolved.links.getInvolved",
       "items": {
         "getInvolved": {
-          "link": "/get-involved",
+          "link": "/about/get-involved",
           "label": "components.navigation.getInvolved.links.getInvolved"
         },
         "collabSummit": {
-          "link": "/get-involved/collab-summit",
+          "link": "/about/get-involved/collab-summit",
           "label": "components.navigation.getInvolved.links.collabSummit"
         },
         "contribute": {
-          "link": "/get-involved/contribute",
+          "link": "/about/get-involved/contribute",
           "label": "components.navigation.getInvolved.links.contribute"
         },
         "codeOfConduct": {
-          "link": "https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md",
+          "link": "https://github.com/nodejs/admin/blob/HEAD/CODE_OF_CONDUCT.md",
           "label": "components.navigation.getInvolved.links.codeOfConduct"
-        }
-      }
-    },
-    "docs": {
-      "label": "components.navigation.docs.links.docs",
-      "items": {
-        "docs": {
-          "link": "/docs",
-          "label": "components.navigation.docs.links.docs"
-        },
-        "apiLts": {
-          "link": "https://nodejs.org/dist/latest-{ltsNodeVersion}/docs/api",
-          "label": "components.navigation.docs.links.apiLts"
-        },
-        "apiCurrent": {
-          "link": "https://nodejs.org/dist/latest-{currentNodeVersion}/docs/api",
-          "label": "components.navigation.docs.links.apiCurrent"
-        },
-        "es6": {
-          "link": "/docs/es6",
-          "label": "components.navigation.docs.links.es6"
-        },
-        "guides": {
-          "link": "/docs/guides",
-          "label": "components.navigation.docs.links.guides"
-        },
-        "dependencies": {
-          "link": "https://github.com/nodejs/node/blob/main/doc/contributing/maintaining/maintaining-dependencies.md",
-          "label": "components.navigation.docs.links.dependencies"
         }
       }
     },

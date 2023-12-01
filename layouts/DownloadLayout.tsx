@@ -2,7 +2,7 @@ import type { FC, PropsWithChildren } from 'react';
 
 import PrimaryDownloadMatrix from '@/components/Downloads/PrimaryDownloadMatrix';
 import SecondaryDownloadMatrix from '@/components/Downloads/SecondaryDownloadMatrix';
-import { WithNodeRelease } from '@/components/withNodeRelease';
+import WithNodeRelease from '@/components/withNodeRelease';
 import { useClientContext } from '@/hooks/server';
 
 const DownloadLayout: FC<PropsWithChildren> = ({ children }) => {

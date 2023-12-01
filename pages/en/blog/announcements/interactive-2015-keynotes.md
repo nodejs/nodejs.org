@@ -52,7 +52,7 @@ Node.js Interactive is made possible by Platinum sponsor IBM; Gold sponsors: Joy
 
 ### Additional Resources
 
-- Learn more about the [Node.js Foundation](https://foundation.nodejs.org/), and get involved with the [project](/get-involved/).
+- Learn more about the [Node.js Foundation](https://foundation.nodejs.org/), and get involved with the [project](/about/get-involved/).
 - Want to keep abreast of Node.js Foundation news? Sign up for our newsletter at the bottom of the [Node.js Foundation page](https://foundation.nodejs.org/).
 - Follow on [Twitter](https://twitter.com/nodejs?ref_src=twsrc^google|twcamp^serp|twgr^author) and [Google+](https://plus.google.com/u/1/100598160817214911030/posts).
 

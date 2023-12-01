@@ -11,7 +11,7 @@ type WithNodeReleaseProps = {
 // This is a React Async Server Component
 // Note that Hooks cannot be used in a RSC async component
 // Async Components do not get re-rendered at all.
-export const WithNodeRelease: FC<WithNodeReleaseProps> = async ({
+const WithNodeRelease: FC<WithNodeReleaseProps> = async ({
   status,
   children: Component,
 }) => {
@@ -27,3 +27,5 @@ export const WithNodeRelease: FC<WithNodeReleaseProps> = async ({
 
   return null;
 };
+
+export default WithNodeRelease;

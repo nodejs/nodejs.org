@@ -11,6 +11,7 @@ import LegacyIndexLayout from '@/layouts/IndexLayout';
 import LegacyLearnLayout from '@/layouts/LearnLayout';
 import AboutLayout from '@/layouts/New/About';
 import DefaultLayout from '@/layouts/New/Default';
+import DocsLayout from '@/layouts/New/Docs';
 import { ENABLE_WEBSITE_REDESIGN } from '@/next.constants.mjs';
 import type { LegacyLayouts } from '@/types';
 
@@ -29,7 +30,7 @@ const legacyLayouts = {
 
 /** all the currently available layouts from website redesign */
 const redesignLayouts = {
-  'docs.hbs': DefaultLayout,
+  'docs.hbs': DocsLayout,
   'about.hbs': AboutLayout,
   'blog-category.hbs': DefaultLayout,
   'blog-post.hbs': DefaultLayout,

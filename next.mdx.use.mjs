@@ -1,11 +1,12 @@
 'use strict';
 
-import NodeApiVersionLinks from './components/Docs/NodeApiVersionLinks';
+import Blockquote from './components/Common/Blockquote';
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
 import Banner from './components/Home/Banner';
 import HomeDownloadButton from './components/Home/HomeDownloadButton';
 import Link from './components/Link';
-import { WithNodeRelease } from './components/withNodeRelease';
+import WithNodeRelease from './components/withNodeRelease';
+import { ENABLE_WEBSITE_REDESIGN } from './next.constants.mjs';
 
 /**
  * A full list of React Components that we want to passthrough to MDX
@@ -13,7 +14,6 @@ import { WithNodeRelease } from './components/withNodeRelease';
  * @type {import('mdx/types').MDXComponents}
  */
 export const mdxComponents = {
-  NodeApiVersionLinks,
   WithNodeRelease,
   HomeDownloadButton,
   DownloadReleasesTable,
@@ -27,5 +27,9 @@ export const mdxComponents = {
  */
 export const htmlComponents = {
   a: Link,
-  blockquote: ({ children }) => <div className="highlight-box">{children}</div>,
+  // @deprecated once the website redesign happens
+  // switch to only use the Blockquote Component
+  blockquote: ENABLE_WEBSITE_REDESIGN
+    ? Blockquote
+    : ({ children }) => <div className="highlight-box">{children}</div>,
 };
