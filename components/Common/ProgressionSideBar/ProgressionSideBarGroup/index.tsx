@@ -1,20 +1,21 @@
 import type { ComponentProps, FC } from 'react';
 
-import ProgressionSidebarItem from '@/components/Containers/ProgressionSidebar/ProgressionSidebarItem';
+import ProgressionSidebarItem from '@/components/Common/ProgressionSideBar/ProgressionSideBarItem';
+import type { FormattedMessage } from '@/types';
 
 import styles from './index.module.css';
 
-type ProgressionSidebarGroupProps = {
-  name: string;
+type ProgressionSideBarGroupProps = {
+  groupName: FormattedMessage;
   items: ComponentProps<typeof ProgressionSidebarItem>[];
 };
 
-const ProgressionSidebarGroup: FC<ProgressionSidebarGroupProps> = ({
-  name,
+const ProgressionSideBarGroup: FC<ProgressionSideBarGroupProps> = ({
+  groupName,
   items,
 }) => (
   <div className={styles.group}>
-    {name}
+    {groupName}
     <div className={styles.items}>
       {items.map(({ url, title }) => (
         <ProgressionSidebarItem key={url} url={url} title={title} />
@@ -23,4 +24,4 @@ const ProgressionSidebarGroup: FC<ProgressionSidebarGroupProps> = ({
   </div>
 );
 
-export default ProgressionSidebarGroup;
+export default ProgressionSideBarGroup;

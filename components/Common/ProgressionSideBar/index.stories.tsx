@@ -1,9 +1,9 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import ProgressionSidebar from '@/components/Containers/ProgressionSidebar';
+import ProgressionSideBar from '@/components/Common/ProgressionSideBar';
 
-type Story = StoryObj<typeof ProgressionSidebar>;
-type Meta = MetaObj<typeof ProgressionSidebar>;
+type Story = StoryObj<typeof ProgressionSideBar>;
+type Meta = MetaObj<typeof ProgressionSideBar>;
 
 export const Default: Story = {
   args: {
@@ -76,4 +76,4 @@ export const Default: Story = {
   },
 };
 
-export default { component: ProgressionSidebar } as Meta;
+export default { component: ProgressionSideBar } as Meta;

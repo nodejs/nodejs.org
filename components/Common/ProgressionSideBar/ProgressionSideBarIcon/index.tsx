@@ -1,6 +1,6 @@
 import type { FC, SVGAttributes } from 'react';
 
-const ProgressionSidebarIcon: FC<SVGAttributes<SVGSVGElement>> = props => (
+const ProgressionSideBarIcon: FC<SVGAttributes<SVGSVGElement>> = props => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"
@@ -13,4 +13,4 @@ const ProgressionSidebarIcon: FC<SVGAttributes<SVGSVGElement>> = props => (
   </svg>
 );
 
-export default ProgressionSidebarIcon;
+export default ProgressionSideBarIcon;

@@ -11,6 +11,7 @@ import LegacyLearnLayout from '@/layouts/LearnLayout';
 import AboutLayout from '@/layouts/New/About';
 import DefaultLayout from '@/layouts/New/Default';
 import DocsLayout from '@/layouts/New/Docs';
+import LearnLayout from '@/layouts/New/Learn';
 import { ENABLE_WEBSITE_REDESIGN } from '@/next.constants.mjs';
 import type { LegacyLayouts } from '@/types';
 
@@ -36,7 +37,7 @@ const redesignLayouts = {
   'contribute.hbs': AboutLayout,
   'download.hbs': DefaultLayout,
   'index.hbs': DefaultLayout,
-  'learn.hbs': DefaultLayout,
+  'learn.hbs': LearnLayout,
   'page.hbs': DefaultLayout,
 } satisfies Record<string, FC>;
 

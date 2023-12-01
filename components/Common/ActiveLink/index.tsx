@@ -23,7 +23,10 @@ const ActiveLink: FC<ActiveLocalizedLinkProps> = ({
 
   const finalClassName = classNames(className, {
     [activeClassName]: allowSubPath
-      ? pathname.startsWith(href.toString())
+      ? // When using allowSubPath we want only to check if
+        // the current pathname starts with the utmost upper level
+        // of an href (e.g. /docs/...)
+        pathname.startsWith(`/${href.toString().split('/')[1]}`)
       : href.toString() === pathname,
   });
 
