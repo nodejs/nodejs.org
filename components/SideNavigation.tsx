@@ -6,37 +6,31 @@ import { useSiteNavigation } from '@/hooks/server';
 import type { NavigationKeys } from '@/types';
 
 type SideNavigationProps = {
-  navigationKey: NavigationKeys;
+  navigationKeys: NavigationKeys[];
   context?: Record<string, RichTranslationValues>;
 };
 
 const SideNavigation: FC<SideNavigationProps> = ({
-  navigationKey,
+  navigationKeys,
   context,
 }) => {
   const { getSideNavigation } = useSiteNavigation();
 
-  const [[, sideNavigationItems]] = getSideNavigation([navigationKey], context);
+  const sideNavigation = getSideNavigation(navigationKeys, context);
+
+  const mapItems = (items: ReturnType<typeof getSideNavigation>) => {
+    return items.map(([, { link, label, items }]) => (
+      <li key={link}>
+        {link ? <ActiveLink href={link}>{label}</ActiveLink> : label}
+
+        {items && items.length > 0 && <ul>{mapItems(items)}</ul>}
+      </li>
+    ));
+  };
 
   return (
     <nav aria-label="secondary">
-      <ul>
-        {sideNavigationItems.items!.map(([key, { link, label, items }]) => (
-          <li key={key}>
-            {link ? <ActiveLink href={link}>{label}</ActiveLink> : label}
-
-            {items && items.length > 0 && (
-              <ul>
-                {items.map(([key, { link, label }]) => (
-                  <li key={key}>
-                    <ActiveLink href={link}>{label}</ActiveLink>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
-      </ul>
+      <ul>{mapItems(sideNavigation)}</ul>
     </nav>
   );
 };

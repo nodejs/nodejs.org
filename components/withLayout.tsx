@@ -3,7 +3,6 @@ import type { FC, PropsWithChildren } from 'react';
 import LegacyAboutLayout from '@/layouts/AboutLayout';
 import LegacyBlogCategoryLayout from '@/layouts/BlogCategoryLayout';
 import LegacyBlogPostLayout from '@/layouts/BlogPostLayout';
-import LegacyContributeLayout from '@/layouts/ContributeLayout';
 import LegacyDefaultLayout from '@/layouts/DefaultLayout';
 import LegacyDocsLayout from '@/layouts/DocsLayout';
 import LegacyDownloadLayout from '@/layouts/DownloadLayout';
@@ -21,7 +20,7 @@ const legacyLayouts = {
   'about.hbs': LegacyAboutLayout,
   'blog-category.hbs': LegacyBlogCategoryLayout,
   'blog-post.hbs': LegacyBlogPostLayout,
-  'contribute.hbs': LegacyContributeLayout,
+  'contribute.hbs': LegacyAboutLayout,
   'download.hbs': LegacyDownloadLayout,
   'index.hbs': LegacyIndexLayout,
   'learn.hbs': LegacyLearnLayout,
