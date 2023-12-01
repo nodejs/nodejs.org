@@ -2,15 +2,14 @@
 
 import { useContext } from 'react';
 
-import { usePathname } from '@/navigation.mjs';
 import { MatterContext } from '@/providers/matterProvider';
 import type { ClientSharedServerContext } from '@/types';
 
 const useClientContext = (): ClientSharedServerContext => {
-  const { matter: frontmatter, headings } = useContext(MatterContext);
-  const pathname = usePathname();
+  const { frontmatter, pathname, headings, readingTime, filename } =
+    useContext(MatterContext);
 
-  return { pathname: pathname || '', frontmatter, headings };
+  return { pathname, frontmatter, headings, readingTime, filename };
 };
 
 export default useClientContext;

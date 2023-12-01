@@ -160,6 +160,11 @@ h5.download-table-previous-releases-header {
 
   > thead {
     font-weight: 600;
+
+    th:last-child {
+      text-align: left;
+      padding-left: 1.5rem;
+    }
   }
 
   > tbody {

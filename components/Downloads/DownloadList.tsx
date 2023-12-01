@@ -10,7 +10,7 @@ const DownloadList: FC<NodeRelease> = ({ versionWithPrefix }) => {
 
   const { getSideNavigation } = useSiteNavigation();
 
-  const [, ...downloadNavigation] = getSideNavigation('download', {
+  const [[, downloadNavigationItems]] = getSideNavigation(['download'], {
     shaSums: { nodeVersion: versionWithPrefix },
     allDownloads: { nodeVersion: versionWithPrefix },
   });
@@ -18,10 +18,10 @@ const DownloadList: FC<NodeRelease> = ({ versionWithPrefix }) => {
   return (
     <section>
       <ul>
-        {downloadNavigation.map((item, key) => (
+        {downloadNavigationItems.items.map(([key, { label, link }]) => (
           <li key={key}>
-            <Link href={item.link}>{item.text}</Link>
-            {item.key === 'shaSums' && (
+            <Link href={link}>{label}</Link>
+            {key === 'shaSums' && (
               <a href="https://github.com/nodejs/node#verifying-binaries">
                 {t('components.downloadList.links.shaSums.howToVerify')}
               </a>

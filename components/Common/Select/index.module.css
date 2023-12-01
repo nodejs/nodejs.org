@@ -5,7 +5,9 @@
     gap-1.5;
 
   .label {
-    @apply text-sm
+    @apply block
+      w-full
+      text-sm
       font-medium
       text-neutral-800
       dark:text-neutral-200;
@@ -13,6 +15,8 @@
 
   .trigger {
     @apply inline-flex
+      h-11
+      w-full
       min-w-[17rem]
       items-center
       justify-between
@@ -97,7 +101,8 @@
 
 .inline {
   .trigger {
-    @apply min-w-fit
+    @apply h-auto
+      min-w-fit
       px-2.5
       py-2
       text-sm

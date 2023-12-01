@@ -1,24 +1,30 @@
 .mdxContent {
-  h1 {
-    @apply text-4xl;
+  hr {
+    @apply w-full
+      border-t
+      border-t-neutral-200
+      bg-white
+      dark:border-t-neutral-900
+      dark:bg-neutral-950;
   }
 
-  h2 {
+  h1 {
     @apply text-3xl;
   }
 
-  h3 {
+  h2 {
     @apply text-2xl;
   }
 
-  h4 {
+  h3 {
     @apply text-xl;
   }
 
-  h5 {
+  h4 {
     @apply text-lg;
   }
 
+  h5,
   h6,
   strong {
     @apply text-base;
@@ -51,7 +57,8 @@
   a,
   a:link,
   a:visited {
-    @apply text-green-600
+    @apply inline-block
+      text-green-600
       dark:text-green-400;
 
     &:hover {
@@ -62,7 +69,8 @@
 
   ul {
     @apply list-disc
-      px-5
+      pl-9
+      pr-5
       leading-6
       text-neutral-900
       dark:text-white;
@@ -77,7 +85,8 @@
   }
 
   table {
-    @apply w-full
+    @apply mb-1
+      w-full
       border-separate
       border-spacing-0
       rounded
@@ -97,7 +106,13 @@
         py-2
         text-neutral-900
         dark:border-neutral-800
-        dark:text-white;
+        dark:text-white
+        xs:block
+        xs:border-l-0;
+
+      > a {
+        @apply pr-2;
+      }
     }
 
     th {
@@ -105,12 +120,16 @@
     }
 
     tr:last-child td {
-      @apply border-b-0;
+      @apply sm:border-b-0;
+
+      &:last-child {
+        @apply xs:border-b-0;
+      }
     }
 
     td:first-child,
     th:first-child {
-      @apply border-l-0;
+      @apply sm:border-l-0;
     }
   }
 }

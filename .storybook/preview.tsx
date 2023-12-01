@@ -7,6 +7,7 @@ import type { Preview, ReactRenderer } from '@storybook/react';
 
 import englishLocale from '@/i18n/locales/en.json';
 
+import '../next.fonts';
 import '../styles/new/index.css';
 
 const preview: Preview = {

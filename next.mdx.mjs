@@ -4,6 +4,7 @@ import remarkHeadings from '@vcarl/remark-headings';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
+import readingTime from 'remark-reading-time';
 
 import rehypeShikiji from './next.mdx.shiki.mjs';
 
@@ -26,4 +27,4 @@ export const NEXT_REHYPE_PLUGINS = [
  *
  * @type {import('unified').Plugin[]}
  */
-export const NEXT_REMARK_PLUGINS = [remarkGfm, remarkHeadings];
+export const NEXT_REMARK_PLUGINS = [remarkGfm, remarkHeadings, readingTime];

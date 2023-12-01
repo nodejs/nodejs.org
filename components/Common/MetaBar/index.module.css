@@ -1,13 +1,21 @@
 .wrapper {
   @apply flex
-    w-80
     flex-col
     items-start
     gap-8
     border-l
-    border-neutral-200
-    p-6
-    dark:border-neutral-900;
+    border-l-neutral-200
+    px-4
+    py-6
+    dark:border-l-neutral-900
+    md:max-w-xs
+    lg:px-6
+    xs:mt-8
+    xs:w-full
+    xs:border-l-0
+    xs:border-t
+    xs:border-t-neutral-200
+    xs:dark:border-t-neutral-900;
 
   dt {
     @apply mb-2

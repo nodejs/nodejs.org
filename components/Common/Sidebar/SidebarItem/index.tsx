@@ -1,27 +1,20 @@
-import classNames from 'classnames';
 import type { FC } from 'react';
 
-import Link from '@/components/Link';
+import ActiveLink from '@/components/Common/ActiveLink';
+import type { FormattedMessage } from '@/types';
 
 import styles from './index.module.css';
 
 type SidebarItemProps = {
-  title: string;
+  title: FormattedMessage;
   url: string;
-  isActive?: boolean;
 };
 
-const SidebarItem: FC<SidebarItemProps> = ({
-  url,
-  title,
-  isActive = false,
-}) => (
-  <li
-    className={classNames(styles.sideBarItem, {
-      [styles.active]: isActive,
-    })}
-  >
-    <Link href={url}>{title}</Link>
+const SidebarItem: FC<SidebarItemProps> = ({ url, title }) => (
+  <li className={styles.sideBarItem}>
+    <ActiveLink href={url} activeClassName={styles.active}>
+      {title}
+    </ActiveLink>
   </li>
 );
 

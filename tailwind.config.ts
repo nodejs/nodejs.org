@@ -92,6 +92,7 @@ export default {
       white: '#FFFFFF',
       'white-opaque': 'rgba(255, 255, 255, 0.5)',
       transparent: 'transparent',
+      shadow: '#101828',
     },
     fontSize: {
       xs: ['0.75rem', '1rem'],
@@ -117,20 +118,22 @@ export default {
       'ibm-plex-mono': ['var(--font-ibm-plex-mono)'],
     },
     extend: {
+      screens: { xs: { max: '639px' } },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-subtle':
+          'linear-gradient(180deg, theme(colors.neutral.100 / 50%) 0%, theme(colors.neutral.100 / 0%) 48.32%)',
+        'gradient-subtle-dark':
+          'linear-gradient(180deg, theme(colors.neutral.900 / 50%) 0%, theme(colors.neutral.900 / 0%) 48.32%)',
       },
       boxShadow: {
-        xs: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)',
-        lg: '0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08)',
+        xs: '0px 1px 2px 0px theme(colors.shadow / 5%)',
+        lg: '0px 4px 6px -2px theme(colors.shadow / 3%), 0px 12px 16px -4px theme(colors.shadow / 8%)',
       },
-      spacing: {
-        '4.5': '1.125rem',
-      },
-      aria: {
-        current: 'current="page"',
-      },
+      spacing: { '4.5': '1.125rem' },
+      aria: { current: 'current="page"' },
     },
   },
   darkMode: ['class', '[data-theme="dark"]'],
+  plugins: [require('@savvywombat/tailwindcss-grid-areas')],
 } satisfies Config;

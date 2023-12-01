@@ -11,7 +11,7 @@ type MetaBarProps = {
   items: Record<string, React.ReactNode>;
   headings?: {
     items: Heading[];
-    depth?: number;
+    minDepth?: number;
   };
 };
 
@@ -19,11 +19,11 @@ const MetaBar: FC<MetaBarProps> = ({ items, headings }) => {
   const t = useTranslations();
 
   // The default depth of headings to display in the table of contents.
-  const { depth = 2, items: headingItems = [] } = headings || {};
+  const { minDepth = 2, items: headingItems = [] } = headings || {};
 
   const heading = useMemo(
-    () => headingItems.filter(head => head.depth === depth),
-    [depth, headingItems]
+    () => headingItems.filter(({ depth }) => depth >= minDepth && depth <= 4),
+    [minDepth, headingItems]
   );
 
   return (
@@ -35,21 +35,20 @@ const MetaBar: FC<MetaBarProps> = ({ items, headings }) => {
             <dd>{value}</dd>
           </Fragment>
         ))}
+
         {heading.length > 0 && (
-          <Fragment key="tableOfContents">
+          <>
             <dt>{t('components.metabar.tableOfContents')}</dt>
             <dd>
               <ol>
                 {heading.map(head => (
                   <li key={head.value}>
-                    <Link href={`#${head?.data?.id || head.value}`}>
-                      {head.value}
-                    </Link>
+                    <Link href={`#${head?.data?.id}`}>{head.value}</Link>
                   </li>
                 ))}
               </ol>
             </dd>
-          </Fragment>
+          </>
         )}
       </dl>
     </div>

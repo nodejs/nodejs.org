@@ -18,13 +18,21 @@
         "download": "Download",
         "docs": "Docs",
         "getInvolved": "Get Involved",
+        "learn": "Learn",
         "security": "Security",
         "certification": "Certification",
-        "blog": "News",
-        "learn": {
-          "title": "Learn",
-          "gettingStarted": {
-            "title": "Getting Started",
+        "blog": "News"
+      },
+      "buttons": {
+        "toggleLanguage": "Toggle Language",
+        "toggleTheme": "Toggle dark/light mode"
+      }
+    },
+    "navigation": {
+      "learn": {
+        "gettingStarted": {
+          "links": {
+            "gettingStarted": "Getting Started",
             "introductionToNodejs": "Introduction to Node.js",
             "howToInstallNodejs": "How to install Node.js",
             "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "How much JavaScript do you need to know to use Node.js?",
@@ -35,9 +43,11 @@
             "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
             "nodejsWithTypescript": "Node.js with TypeScript",
             "nodejsWithWebassembly": "Node.js with WebAssembly"
-          },
-          "asynchronousWork": {
-            "title": "Asynchronous Work",
+          }
+        },
+        "asynchronousWork": {
+          "links": {
+            "asynchronousWork": "Asynchronous Work",
             "asynchronousFlowControl": "Asynchronous flow control",
             "overviewOfBlockingVsNonBlocking": "Overview of Blocking vs Non-Blocking",
             "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asynchronous Programming and Callbacks",
@@ -45,18 +55,22 @@
             "understandingProcessnexttick": "Understanding process.nextTick()",
             "understandingSetimmediate": "Understanding setImmediate()",
             "theNodejsEventEmitter": "The Node.js Event emitter"
-          },
-          "manipulatingFiles": {
-            "title": "Manipulating Files",
+          }
+        },
+        "manipulatingFiles": {
+          "links": {
+            "manipulatingFiles": "Manipulating Files",
             "nodejsFileStats": "Node.js file stats",
             "nodejsFilePaths": "Node.js File Paths",
             "workingWithFileDescriptorsInNodejs": "Working with file descriptors in Node.js",
             "readingFilesWithNodejs": "Reading files with Node.js",
             "writingFilesWithNodejs": "Writing files with Node.js",
             "workingWithFoldersInNodejs": "Working with folders in Node.js"
-          },
-          "commandLine": {
-            "title": "Command Line",
+          }
+        },
+        "commandLine": {
+          "links": {
+            "commandLine": "Command Line",
             "runNodejsScriptsFromTheCommandLine": "Run Node.js scripts from the command line",
             "howToReadEnvironmentVariablesFromNodejs": "How to read environment variables from Node.js",
             "howToUseTheNodejsRepl": "How to use the Node.js REPL",
@@ -65,14 +79,9 @@
           }
         }
       },
-      "buttons": {
-        "toggleLanguage": "Toggle Language",
-        "toggleTheme": "Toggle dark/light mode"
-      }
-    },
-    "navigation": {
       "about": {
         "links": {
+          "about": "About Node.js",
           "governance": "Project Governance",
           "releases": "Previous Releases",
           "security": "Security Reporting"
@@ -80,15 +89,17 @@
       },
       "docs": {
         "links": {
+          "docs": "Docs",
           "es6": "ES6 and beyond",
           "apiLts": "{fullLtsNodeVersion} API <graySpan>LTS</graySpan>",
           "apiCurrent": "{fullCurrentNodeVersion} API",
-          "guides": "Guides <graySpan>ARCHIVED</graySpan>",
+          "guides": "Guides <graySpan>ARCHIVE</graySpan>",
           "dependencies": "Dependencies"
         }
       },
       "getInvolved": {
         "links": {
+          "getInvolved": "Get Involved",
           "collabSummit": "Collab Summit",
           "contribute": "Contribute",
           "codeOfConduct": "Code of Conduct"
@@ -138,6 +149,9 @@
         "nextAriaLabel": "Next page",
         "defaultLabel": "Pagination",
         "pageLabel": "Go to page {pageNumber}"
+      },
+      "sidebar": {
+        "title": "Change page"
       },
       "languageDropdown": {
         "label": "Choose Language"

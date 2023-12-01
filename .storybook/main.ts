@@ -5,12 +5,7 @@ const rootClasses = classNames(
   // note: this is hard-coded sadly as next/font can only be loaded within next.js context
   '__variable_open-sans-normal',
   // note: this is hard-coded sadly as next/font can only be loaded within next.js context
-  '__variable_ibm-plex-mono-normal-600',
-  'font-open-sans',
-  'bg-white',
-  'text-neutral-950',
-  'dark:bg-neutral-950',
-  'dark:text-white'
+  '__variable_ibm-plex-mono-normal-600'
 );
 
 const config: StorybookConfig = {
