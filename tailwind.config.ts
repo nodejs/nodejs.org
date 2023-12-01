@@ -122,13 +122,13 @@ export default {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-subtle':
-          'linear-gradient(180deg, theme(colors.neutral.100)80 0%, theme(colors.neutral.100)00 48.32%)',
+          'linear-gradient(180deg, theme(colors.neutral.100 / 50%) 0%, theme(colors.neutral.100 / 0%) 48.32%)',
         'gradient-subtle-dark':
-          'linear-gradient(180deg, theme(colors.neutral.900)80 0%, theme(colors.neutral.900)00 48.32%)',
+          'linear-gradient(180deg, theme(colors.neutral.900 / 50%) 0%, theme(colors.neutral.900 / 0%) 48.32%)',
       },
       boxShadow: {
-        xs: '0px 1px 2px 0px theme(colors.shadow)0d',
-        lg: '0px 4px 6px -2px theme(colors.shadow)08, 0px 12px 16px -4px theme(colors.shadow)14',
+        xs: '0px 1px 2px 0px theme(colors.shadow / 5%)',
+        lg: '0px 4px 6px -2px theme(colors.shadow / 3%), 0px 12px 16px -4px theme(colors.shadow / 8%)',
       },
       spacing: { '4.5': '1.125rem' },
       aria: { current: 'current="page"' },
