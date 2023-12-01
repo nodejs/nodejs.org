@@ -195,6 +195,10 @@
     {
       "source": "/:locale/get-involved/:path*",
       "destination": "/:locale/about/get-involved/:path*"
+    },
+    {
+      "source": "/:locale/learn",
+      "destination": "/:locale/learn/getting-started/introduction-to-nodejs"
     }
   ],
   "internal": []
