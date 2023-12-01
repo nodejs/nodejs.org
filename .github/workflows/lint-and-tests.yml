@@ -246,7 +246,7 @@ jobs:
         if: steps.chromatic-deploy.outcome == 'success'
         # This comments the current Jest Coverage Report containing JUnit XML reports
         # and a Code Coverage Summary
-        uses: MishaKav/jest-coverage-comment@41b5ca01d1250de84537448d248b8d18152cb277 # v1.0.23
+        uses: MishaKav/jest-coverage-comment@f2e8b560403c4fd8234a2b268af3c28ca91e5cc7 # v1.0.24
         with:
           title: 'Unit Test Coverage Report'
           junitxml-path: ./junit.xml
