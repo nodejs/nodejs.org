@@ -63,8 +63,8 @@ export const ENABLE_WEBSITE_REDESIGN =
 export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
   ? process.env.NEXT_PUBLIC_BASE_URL
   : process.env.NEXT_PUBLIC_VERCEL_URL
-  ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-  : 'https://nodejs.org';
+    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+    : 'https://nodejs.org';
 
 /**
  * This is used for any place that requires the Node.js distribution URL (which by default is nodejs.org/dist)
@@ -103,8 +103,8 @@ export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
 export const NEXT_DATA_URL = process.env.NEXT_PUBLIC_DATA_URL
   ? process.env.NEXT_PUBLIC_DATA_URL
   : VERCEL_ENV
-  ? `${BASE_URL}${BASE_PATH}/en/next-data/`
-  : `http://localhost:3000/en/next-data/`;
+    ? `${BASE_URL}${BASE_PATH}/en/next-data/`
+    : `http://localhost:3000/en/next-data/`;
 
 /**
  * This ReGeX is used to remove the `index.md(x)` suffix of a name and to remove
