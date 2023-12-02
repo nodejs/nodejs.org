@@ -112,7 +112,7 @@
     "jest-environment-jsdom": "29.7.0",
     "jest-junit": "16.0.0",
     "prettier": "3.1.0",
-    "prettier-plugin-tailwindcss": "0.5.6",
+    "prettier-plugin-tailwindcss": "0.5.7",
     "remark-frontmatter": "5.0.0",
     "remark-preset-lint-node": "5.0.0",
     "remark-preset-prettier": "2.0.1",
