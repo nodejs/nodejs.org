@@ -9,7 +9,7 @@ export const Default: Story = {
   args: {
     groups: [
       {
-        name: 'Getting Started',
+        groupName: 'Getting Started',
         items: [
           {
             title: 'Introduction to Node.js',
@@ -38,7 +38,7 @@ export const Default: Story = {
         ],
       },
       {
-        name: 'Asynchronous Work',
+        groupName: 'Asynchronous Work',
         items: [
           {
             title: 'Asynchronous flow control',
@@ -51,7 +51,7 @@ export const Default: Story = {
         ],
       },
       {
-        name: 'Manipulating Files',
+        groupName: 'Manipulating Files',
         items: [
           {
             title: 'Node.js file stats',
@@ -64,7 +64,7 @@ export const Default: Story = {
         ],
       },
       {
-        name: 'Single item',
+        groupName: 'Single item',
         items: [
           {
             title: 'Item',
