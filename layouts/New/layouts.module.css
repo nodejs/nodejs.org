@@ -7,13 +7,15 @@
 }
 
 .articleLayout {
-  @apply m-[0_auto]
+  @apply mx-auto
     grid
+    w-full
+    max-w-8xl
     grid-rows-[1fr]
     overflow-hidden
     grid-areas-[sidebar_main_metabar,sidebar_footer_metabar]
-    sm:grid-cols-[200px_1fr_200px]
-    xl:grid-cols-[320px_1fr_320px]
+    sm:grid-cols-[theme(spacing.52)_1fr_theme(spacing.52)]
+    xl:grid-cols-[theme(spacing.80)_1fr_theme(spacing.80)]
     xs:m-0
     xs:block
     xs:overflow-auto;
@@ -25,7 +27,6 @@
   > *:nth-child(2) {
     @apply flex
       w-full
-      max-w-5xl
       flex-col
       items-start
       gap-6
@@ -36,7 +37,7 @@
       p-12
       grid-in-[main]
       dark:bg-gradient-subtle-dark
-      xl:px-[4.5rem]
+      xl:px-18
       xs:bg-none
       xs:p-4
       xs:dark:bg-none;
