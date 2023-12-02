@@ -95,7 +95,7 @@ jobs:
       - name: Format Lighthouse Score
         # Transform the audit results into a single, friendlier output
         id: format_lighthouse_score
-        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6.4.1
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
         env:
           # using env as input to our script
           # see https://github.com/actions/github-script#use-env-as-input
