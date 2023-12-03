@@ -17,8 +17,8 @@ const ProgressionSidebarGroup: FC<ProgressionSidebarGroupProps> = ({
   <div className={styles.group}>
     {groupName}
     <div className={styles.items}>
-      {items.map(({ url, title }) => (
-        <ProgressionSidebarItem key={url} url={url} title={title} />
+      {items.map(({ label, link }) => (
+        <ProgressionSidebarItem key={link} label={label} link={link} />
       ))}
     </div>
   </div>

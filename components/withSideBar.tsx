@@ -5,22 +5,22 @@ import SideBar from '@/components/Common/Sidebar';
 import { useSiteNavigation } from '@/hooks/server';
 import type { NavigationKeys } from '@/types';
 
-type WithSideBarProps = {
-  keys: NavigationKeys[];
+type WithSidebarProps = {
+  navKeys: NavigationKeys[];
   context?: Record<string, RichTranslationValues>;
 };
 
-const WithSideBar: FC<WithSideBarProps> = ({ keys, context }) => {
+const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context }) => {
   const { getSideNavigation } = useSiteNavigation();
 
-  const mappedSidebarItems = getSideNavigation(keys, context).map(
+  const mappedSidebarItems = getSideNavigation(navKeys, context).map(
     ([, { label, items }]) => ({
       groupName: label,
-      items: items.map(([, { label, link }]) => ({ title: label, url: link })),
+      items: items.map(([, item]) => item),
     })
   );
 
   return <SideBar groups={mappedSidebarItems} />;
 };
 
-export default WithSideBar;
+export default WithSidebar;

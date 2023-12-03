@@ -6,14 +6,14 @@ import type { FormattedMessage } from '@/types';
 import styles from './index.module.css';
 
 type SidebarItemProps = {
-  title: FormattedMessage;
-  url: string;
+  label: FormattedMessage;
+  link: string;
 };
 
-const SidebarItem: FC<SidebarItemProps> = ({ url, title }) => (
+const SidebarItem: FC<SidebarItemProps> = ({ label, link }) => (
   <li className={styles.sideBarItem}>
-    <ActiveLink href={url} activeClassName={styles.active}>
-      {title}
+    <ActiveLink href={link} activeClassName={styles.active}>
+      {label}
     </ActiveLink>
   </li>
 );

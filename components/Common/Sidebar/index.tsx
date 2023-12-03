@@ -21,7 +21,7 @@ const SideBar: FC<SidebarProps> = ({ groups }) => {
 
   const selectItems = groups.map(({ items, groupName }) => ({
     label: groupName,
-    items: items.map(item => ({ value: item.url, label: item.title })),
+    items: items.map(({ label, link }) => ({ value: link, label })),
   }));
 
   const currentItem = selectItems

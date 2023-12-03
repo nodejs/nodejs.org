@@ -3,7 +3,7 @@ import type { FC, PropsWithChildren } from 'react';
 import WithBreadcrumbs from '@/components/withBreadcrumbs';
 import WithMetaBar from '@/components/withMetaBar';
 import WithNavBar from '@/components/withNavBar';
-import WithProgressionSideBar from '@/components/withProgressionSidebar';
+import WithProgressionSidebar from '@/components/withProgressionSidebar';
 import ArticleLayout from '@/layouts/New/Article';
 
 const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
@@ -11,7 +11,7 @@ const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
     <WithNavBar />
 
     <ArticleLayout>
-      <WithProgressionSideBar navKey="learn" />
+      <WithProgressionSidebar navKey="learn" />
 
       {children}
 

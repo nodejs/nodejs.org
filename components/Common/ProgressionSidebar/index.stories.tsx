@@ -12,28 +12,28 @@ export const Default: Story = {
         groupName: 'Getting Started',
         items: [
           {
-            title: 'Introduction to Node.js',
-            url: '/',
+            label: 'Introduction to Node.js',
+            link: '/',
           },
           {
-            title: 'How to install Node.js',
-            url: '/how-to-install-nodejs',
+            label: 'How to install Node.js',
+            link: '/how-to-install-nodejs',
           },
           {
-            title: 'How much JavaScript do you need to know to use Node.js?',
-            url: '/how-much-javascript-do-you-need-to-know-to-use-nodejs',
+            label: 'How much JavaScript do you need to know to use Node.js?',
+            link: '/how-much-javascript-do-you-need-to-know-to-use-nodejs',
           },
           {
-            title: 'Differences between Node.js and the Browser',
-            url: '/differences-between-nodejs-and-the-browser',
+            label: 'Differences between Node.js and the Browser',
+            link: '/differences-between-nodejs-and-the-browser',
           },
           {
-            title: 'The V8 JavaScript Engine',
-            url: '/the-v8-javascript-engine',
+            label: 'The V8 JavaScript Engine',
+            link: '/the-v8-javascript-engine',
           },
           {
-            title: 'An introduction to the NPM package manager',
-            url: '/an-introduction-to-the-npm-package-manager',
+            label: 'An introduction to the NPM package manager',
+            link: '/an-introduction-to-the-npm-package-manager',
           },
         ],
       },
@@ -41,12 +41,12 @@ export const Default: Story = {
         groupName: 'Asynchronous Work',
         items: [
           {
-            title: 'Asynchronous flow control',
-            url: '/asynchronous-flow-control',
+            label: 'Asynchronous flow control',
+            link: '/asynchronous-flow-control',
           },
           {
-            title: 'Overview of Blocking vs Non-Blocking',
-            url: '/overview-of-blocking-vs-non-blocking',
+            label: 'Overview of Blocking vs Non-Blocking',
+            link: '/overview-of-blocking-vs-non-blocking',
           },
         ],
       },
@@ -54,12 +54,12 @@ export const Default: Story = {
         groupName: 'Manipulating Files',
         items: [
           {
-            title: 'Node.js file stats',
-            url: '/nodejs-file-stats',
+            label: 'Node.js file stats',
+            link: '/nodejs-file-stats',
           },
           {
-            title: 'Node.js File Paths',
-            url: '/nodejs-file-paths',
+            label: 'Node.js File Paths',
+            link: '/nodejs-file-paths',
           },
         ],
       },
@@ -67,8 +67,8 @@ export const Default: Story = {
         groupName: 'Single item',
         items: [
           {
-            title: 'Item',
-            url: '/item',
+            label: 'Item',
+            link: '/item',
           },
         ],
       },

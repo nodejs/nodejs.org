@@ -7,21 +7,21 @@ import type { FormattedMessage } from '@/types';
 import styles from './index.module.css';
 
 type ProgressionSidebarItemProps = {
-  url: string;
-  title: FormattedMessage;
+  label: FormattedMessage;
+  link: string;
 };
 
 const ProgressionSidebarItem: FC<ProgressionSidebarItemProps> = ({
-  url,
-  title,
+  label,
+  link,
 }) => (
   <ActiveLink
     className={styles.item}
     activeClassName={styles.active}
-    href={url}
+    href={link}
   >
     <ProgressionSidebarIcon />
-    {title}
+    {label}
   </ActiveLink>
 );
 
