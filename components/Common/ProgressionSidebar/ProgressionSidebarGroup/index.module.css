@@ -1,0 +1,53 @@
+.group {
+  @apply flex
+    flex-col
+    gap-4
+    text-sm
+    font-medium
+    text-neutral-800
+    dark:text-neutral-200;
+
+  .items {
+    @apply relative
+      -left-1
+      flex
+      flex-col
+      gap-2;
+
+    &::after {
+      @apply absolute
+        left-[0.45rem]
+        top-0
+        z-10
+        h-full
+        w-px
+        bg-neutral-200
+        content-['']
+        dark:bg-neutral-800;
+    }
+
+    a {
+      &:first-child::before {
+        @apply absolute
+          bottom-[calc(50%+0.25rem)]
+          left-0
+          h-20
+          w-4
+          bg-white
+          content-['']
+          dark:bg-neutral-950;
+      }
+
+      &:last-child::after {
+        @apply absolute
+          left-0
+          top-[calc(50%+0.25rem)]
+          h-20
+          w-4
+          bg-white
+          content-['']
+          dark:bg-neutral-950;
+      }
+    }
+  }
+}
