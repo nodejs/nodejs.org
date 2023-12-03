@@ -81,7 +81,7 @@
     "shikiji": "~0.7.3",
     "tailwindcss": "^3.3.5",
     "turbo": "1.10.16",
-    "typescript": "~5.2.2",
+    "typescript": "~5.3.2",
     "unist-util-visit": "~5.0.0",
     "vfile": "~6.0.1",
     "vfile-matter": "~5.0.0"
