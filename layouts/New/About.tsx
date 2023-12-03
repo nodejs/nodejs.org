@@ -6,6 +6,8 @@ import WithNavBar from '@/components/withNavBar';
 import WithSidebar from '@/components/withSidebar';
 import ArticleLayout from '@/layouts/New/Article';
 
+import styles from './layouts.module.css';
+
 const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <WithNavBar />
@@ -13,7 +15,7 @@ const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
     <ArticleLayout>
       <WithSidebar navKeys={['about', 'getInvolved']} />
 
-      {children}
+      <div className={styles.mdxContent}>{children}</div>
 
       <WithMetaBar />
 

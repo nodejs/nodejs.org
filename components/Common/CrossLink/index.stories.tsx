@@ -9,7 +9,7 @@ export const Prev: Story = {
   args: {
     type: 'previous',
     text: 'How to install Node.js',
-    url: 'https://nodejs.dev/en/learn/how-to-install-nodejs/',
+    link: 'https://nodejs.dev/en/learn/how-to-install-nodejs/',
   },
   decorators: [
     Story => (
@@ -24,7 +24,7 @@ export const Next: Story = {
   args: {
     type: 'next',
     text: 'How much JavaScript do you need to know to use Node.js?',
-    url: 'https://nodejs.dev/en/learn/how-much-javascript-do-you-need-to-know-to-use-nodejs/',
+    link: 'https://nodejs.dev/en/learn/how-much-javascript-do-you-need-to-know-to-use-nodejs/',
   },
   decorators: [
     Story => (

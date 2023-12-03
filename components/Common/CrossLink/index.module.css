@@ -3,6 +3,7 @@
     flex-col
     items-start
     gap-2
+    truncate
     rounded
     border
     border-solid
@@ -36,7 +37,7 @@
 
   .content {
     @apply self-stretch
-      truncate
+
       text-sm
       text-neutral-900
       dark:text-white;
