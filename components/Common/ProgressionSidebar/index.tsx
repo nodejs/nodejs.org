@@ -1,6 +1,7 @@
 import type { ComponentProps, FC } from 'react';
 
 import ProgressionSidebarGroup from '@/components/Common/ProgressionSidebar/ProgressionSidebarGroup';
+import WithSidebarSelect from '@/components/withSidebarSelect';
 
 import styles from './index.module.css';
 
@@ -17,6 +18,8 @@ const ProgressionSidebar: FC<ProgressionSidebarProps> = ({ groups }) => (
         items={items}
       />
     ))}
+
+    <WithSidebarSelect groups={groups} />
   </nav>
 );
 

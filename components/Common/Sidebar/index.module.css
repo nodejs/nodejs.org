@@ -1,4 +1,4 @@
-.sideBar {
+.wrapper {
   @apply flex
     flex-col
     items-start
@@ -17,7 +17,7 @@
     xs:border-r-0;
 
   > section {
-    @apply block
+    @apply flex
       xs:hidden;
   }
 

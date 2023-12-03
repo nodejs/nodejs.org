@@ -14,14 +14,14 @@ const ProgressionSidebarGroup: FC<ProgressionSidebarGroupProps> = ({
   groupName,
   items,
 }) => (
-  <div className={styles.group}>
+  <section className={styles.group}>
     {groupName}
     <div className={styles.items}>
       {items.map(({ label, link }) => (
         <ProgressionSidebarItem key={link} label={label} link={link} />
       ))}
     </div>
-  </div>
+  </section>
 );
 
 export default ProgressionSidebarGroup;

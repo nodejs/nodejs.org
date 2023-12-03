@@ -10,4 +10,14 @@
     dark:border-neutral-900
     dark:bg-neutral-950
     md:max-w-xs;
+
+  > section {
+    @apply flex
+        xs:hidden;
+  }
+
+  > div {
+    @apply hidden
+        w-full xs:flex;
+  }
 }

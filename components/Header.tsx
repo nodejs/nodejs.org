@@ -7,7 +7,7 @@ import type { FC, PropsWithChildren } from 'react';
 import { useState } from 'react';
 
 import Link from '@/components/Link';
-import { usePathname } from '@/navigation.mjs';
+import { useClientContext } from '@/hooks';
 import { BASE_PATH } from '@/next.constants.mjs';
 import { availableLocales } from '@/next.locales.mjs';
 
@@ -15,7 +15,7 @@ const Header: FC<PropsWithChildren> = ({ children }) => {
   const [showLangPicker, setShowLangPicker] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
-  const pathname = usePathname();
+  const { pathname } = useClientContext();
   const t = useTranslations();
 
   const toggleLanguage = t('components.header.buttons.toggleLanguage');
