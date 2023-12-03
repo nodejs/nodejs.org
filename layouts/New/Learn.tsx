@@ -7,8 +7,6 @@ import WithNavBar from '@/components/withNavBar';
 import WithProgressionSidebar from '@/components/withProgressionSidebar';
 import ArticleLayout from '@/layouts/New/Article';
 
-import styles from './layouts.module.css';
-
 const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <WithNavBar />
@@ -16,7 +14,7 @@ const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
     <ArticleLayout>
       <WithProgressionSidebar navKey="learn" />
 
-      <div className={styles.mdxContent}>
+      <div className="mdxContent">
         {children}
 
         <WithCrossLinks navKey="learn" />
