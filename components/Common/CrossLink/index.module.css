@@ -37,7 +37,7 @@
 
   .content {
     @apply self-stretch
-
+      truncate
       text-sm
       text-neutral-900
       dark:text-white;

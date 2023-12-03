@@ -11,16 +11,17 @@
     dark:border-neutral-900
     dark:bg-neutral-950
     md:max-w-xs
+    lg:px-6
     xs:w-full
     xs:border-r-0;
 
   > section {
     @apply flex
-        xs:hidden;
+      xs:hidden;
   }
 
   > div {
     @apply hidden
-        w-full xs:flex;
+      w-full xs:flex;
   }
 }

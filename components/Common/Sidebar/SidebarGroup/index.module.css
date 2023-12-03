@@ -15,7 +15,6 @@
 
 .itemList {
   @apply m-0
-    mt-1
     flex
     flex-col
     items-start
