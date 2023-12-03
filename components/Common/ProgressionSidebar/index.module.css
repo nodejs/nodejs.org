@@ -22,6 +22,7 @@
 
   > div {
     @apply hidden
-      w-full xs:flex;
+      w-full
+      xs:flex;
   }
 }
