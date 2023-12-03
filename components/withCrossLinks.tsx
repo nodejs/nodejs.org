@@ -33,7 +33,7 @@ const WithCrossLinks: FC<WithCrossLinksProps> = ({ navKey }) => {
           text={previousCrossLink.label}
           link={previousCrossLink.link}
         />
-      )) || <div></div>}
+      )) || <div />}
 
       {nextCrossLink && (
         <CrossLink
