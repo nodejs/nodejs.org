@@ -29,7 +29,7 @@ const generateWebsiteFeeds = blogData => {
           title: title,
           language: 'en',
           link: `${canonicalUrl}/feed/${file}`,
-          description: description || description,
+          description: description,
         });
 
         const blogFeedEntries = posts
