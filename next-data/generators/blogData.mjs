@@ -6,7 +6,7 @@ import readline from 'node:readline';
 
 import graymatter from 'gray-matter';
 
-import * as nextHelpers from '../../next.helpers.mjs';
+import { getMarkdownFiles } from '../../next.helpers.mjs';
 
 // gets the current blog path based on local module path
 const blogPath = join(process.cwd(), 'pages/en/blog');
@@ -54,36 +54,38 @@ const getFrontMatter = (filename, source) => {
  */
 const generateBlogData = async () => {
   // we retrieve all the filenames of all blog posts
-  const filenames = await nextHelpers.getMarkdownFiles(
-    process.cwd(),
-    'pages/en/blog',
-    ['**/index.md', '**/pagination.md']
-  );
+  const filenames = await getMarkdownFiles(process.cwd(), 'pages/en/blog', [
+    '**/index.md',
+    '**/pagination.md',
+  ]);
 
   return new Promise(resolve => {
     const blogPosts = [];
+    const rawFrontmatter = [];
 
-    for (const filename of filenames) {
-      let rawFrontmatter = '';
-      let countOfSeparators = 0;
-
+    filenames.forEach(filename => {
       // We create a stream for reading a file instead of reading the files
       const _stream = createReadStream(join(blogPath, filename));
 
       // We create a readline interface to read the file line-by-line
       const _readLine = readline.createInterface({ input: _stream });
 
+      // Creates an array of the metadata based on the filename
+      // This prevents concurrency issues since the for-loop is synchronous
+      // and these event listeners are not
+      rawFrontmatter[filename] = [0, ''];
+
       // We read line by line
       _readLine.on('line', line => {
-        rawFrontmatter += `${line}\n`;
+        rawFrontmatter[filename][1] += `${line}\n`;
 
         // We observe the frontmatter separators
         if (line === '---') {
-          countOfSeparators += 1;
+          rawFrontmatter[filename][0] += 1;
         }
 
         // Once we have two separators we close the readLine and the stream
-        if (countOfSeparators === 2) {
+        if (rawFrontmatter[filename][0] === 2) {
           _readLine.close();
           _stream.close();
         }
@@ -93,7 +95,12 @@ const generateBlogData = async () => {
       // This allows us to only read the frontmatter part of each file
       // and optimise the read-process as we have thousands of markdown files
       _readLine.on('close', () => {
-        blogPosts.push(getFrontMatter(filename, rawFrontmatter));
+        const frontmatter = getFrontMatter(
+          filename,
+          rawFrontmatter[filename][1]
+        );
+
+        blogPosts.push(frontmatter);
 
         // Once we finish reading all fles
         if (blogPosts.length === filenames.length) {
@@ -104,7 +111,7 @@ const generateBlogData = async () => {
           });
         }
       });
-    }
+    });
   });
 };
 
