@@ -12,28 +12,28 @@ export const Default: Story = {
         groupName: 'About Node.js',
         items: [
           {
-            url: '/item1',
-            title: 'About Node.js',
+            link: '/item1',
+            label: 'About Node.js',
           },
           {
-            url: '/item2',
-            title: 'Project Governance',
+            link: '/item2',
+            label: 'Project Governance',
           },
           {
-            url: '/item3',
-            title: 'Releases',
+            link: '/item3',
+            label: 'Releases',
           },
           {
-            url: '/item4',
-            title: 'Branding',
+            link: '/item4',
+            label: 'Branding',
           },
           {
-            url: '/item5',
-            title: 'Privacy Policy',
+            link: '/item5',
+            label: 'Privacy Policy',
           },
           {
-            url: '/item6',
-            title: 'Security Reporting',
+            link: '/item6',
+            label: 'Security Reporting',
           },
         ],
       },
@@ -41,20 +41,20 @@ export const Default: Story = {
         groupName: 'Get Involved',
         items: [
           {
-            url: '/item7',
-            title: 'Get Involved',
+            link: '/item7',
+            label: 'Get Involved',
           },
           {
-            url: '/item8',
-            title: 'Collab Summit',
+            link: '/item8',
+            label: 'Collab Summit',
           },
           {
-            url: '/item9',
-            title: 'Contribute',
+            link: '/item9',
+            label: 'Contribute',
           },
           {
-            url: '/item10',
-            title: 'Code of Conduct',
+            link: '/item10',
+            label: 'Code of Conduct',
           },
         ],
       },
@@ -62,16 +62,16 @@ export const Default: Story = {
         groupName: 'Download',
         items: [
           {
-            url: '/item11',
-            title: 'Download',
+            link: '/item11',
+            label: 'Download',
           },
           {
-            url: '/item12',
-            title: 'Package Manager',
+            link: '/item12',
+            label: 'Package Manager',
           },
           {
-            url: '/item13',
-            title: 'Previous Releases',
+            link: '/item13',
+            label: 'Previous Releases',
           },
         ],
       },

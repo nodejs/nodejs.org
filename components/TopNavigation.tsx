@@ -11,7 +11,7 @@ const TopNavigation: FC = () => {
       <ul className="list-divider-pipe">
         {navigationItems.map(([key, { link, label }]) => (
           <li key={key}>
-            <ActiveLink href={link!} allowSubPath>
+            <ActiveLink href={link} allowSubPath={link.startsWith('/')}>
               {label}
             </ActiveLink>
           </li>

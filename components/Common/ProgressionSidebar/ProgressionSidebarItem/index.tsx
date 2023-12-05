@@ -1,26 +1,27 @@
 import type { FC } from 'react';
 
 import ActiveLink from '@/components/Common/ActiveLink';
-import ProgressionSidebarIcon from '@/components/Containers/ProgressionSidebar/ProgressionSidebarIcon';
+import ProgressionSidebarIcon from '@/components/Common/ProgressionSidebar/ProgressionSidebarIcon';
+import type { FormattedMessage } from '@/types';
 
 import styles from './index.module.css';
 
 type ProgressionSidebarItemProps = {
-  url: string;
-  title: string;
+  label: FormattedMessage;
+  link: string;
 };
 
 const ProgressionSidebarItem: FC<ProgressionSidebarItemProps> = ({
-  url,
-  title,
+  label,
+  link,
 }) => (
   <ActiveLink
     className={styles.item}
     activeClassName={styles.active}
-    href={url}
+    href={link}
   >
     <ProgressionSidebarIcon />
-    {title}
+    {label}
   </ActiveLink>
 );
 

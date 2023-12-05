@@ -7,7 +7,7 @@ const DefaultLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <WithNavBar />
 
-    {children}
+    <div className="mdxContent">{children}</div>
 
     <WithFooter />
   </>

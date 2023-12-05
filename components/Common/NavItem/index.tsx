@@ -1,7 +1,6 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import classNames from 'classnames';
 import type { FC, PropsWithChildren } from 'react';
-import { useMemo } from 'react';
 
 import ActiveLink from '@/components/Common/ActiveLink';
 
@@ -20,23 +19,18 @@ const NavItem: FC<PropsWithChildren<NavItemProps>> = ({
   type = 'nav',
   children,
   className,
-}) => {
-  const showIcon = useMemo(
-    () => type === 'nav' && href.toString().startsWith('http'),
-    [href, type]
-  );
-
-  return (
-    <ActiveLink
-      href={href}
-      className={classNames(styles.navItem, styles[type], className)}
-      activeClassName={styles.active}
-      allowSubPath
-    >
-      <span className={styles.label}>{children}</span>
-      {showIcon && <ArrowUpRightIcon className={styles.icon} />}
-    </ActiveLink>
-  );
-};
+}) => (
+  <ActiveLink
+    href={href}
+    className={classNames(styles.navItem, styles[type], className)}
+    activeClassName={styles.active}
+    allowSubPath={href.startsWith('/')}
+  >
+    <span className={styles.label}>{children}</span>
+    {type === 'nav' && href.startsWith('http') && (
+      <ArrowUpRightIcon className={styles.icon} />
+    )}
+  </ActiveLink>
+);
 
 export default NavItem;

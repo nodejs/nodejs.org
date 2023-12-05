@@ -1,19 +1,24 @@
 import type { FC, PropsWithChildren } from 'react';
 
 import WithBreadcrumbs from '@/components/withBreadcrumbs';
+import WithCrossLinks from '@/components/withCrossLinks';
 import WithMetaBar from '@/components/withMetaBar';
 import WithNavBar from '@/components/withNavBar';
-import WithSidebar from '@/components/withSidebar';
+import WithProgressionSidebar from '@/components/withProgressionSidebar';
 import ArticleLayout from '@/layouts/New/Article';
 
-const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
+const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <WithNavBar />
 
     <ArticleLayout>
-      <WithSidebar navKeys={['about', 'getInvolved']} />
+      <WithProgressionSidebar navKey="learn" />
 
-      <div className="mdxContent">{children}</div>
+      <div className="mdxContent">
+        {children}
+
+        <WithCrossLinks navKey="learn" />
+      </div>
 
       <WithMetaBar />
 
@@ -22,4 +27,4 @@ const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
   </>
 );
 
-export default AboutLayout;
+export default LearnLayout;

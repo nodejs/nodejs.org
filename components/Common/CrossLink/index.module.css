@@ -3,6 +3,7 @@
     flex-col
     items-start
     gap-2
+    truncate
     rounded
     border
     border-solid

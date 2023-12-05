@@ -132,7 +132,7 @@ export default {
       },
       spacing: { '4.5': '1.125rem', '18': '4.5rem' },
       aria: { current: 'current="page"' },
-      maxWidth: { '8xl': '90rem' },
+      maxWidth: { '8xl': '95rem' },
     },
   },
   darkMode: ['class', '[data-theme="dark"]'],
