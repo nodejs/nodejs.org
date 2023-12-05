@@ -4,7 +4,7 @@ import SideNavigation from '@/components/SideNavigation';
 
 const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
   <div className="has-side-nav container">
-    <SideNavigation navigationKey="learn" />
+    <SideNavigation navigationKeys={['learn']} />
     <article dir="auto">{children}</article>
   </div>
 );

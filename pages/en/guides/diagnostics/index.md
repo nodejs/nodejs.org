@@ -15,8 +15,8 @@ root-cause their issues.
 
 This is the available set of diagnostics guides:
 
-- [Memory](/docs/guides/diagnostics/memory)
-- [Live Debugging](/docs/guides/diagnostics/live-debugging)
-- [Poor Performance](/docs/guides/diagnostics/poor-performance)
+- [Memory](/guides/diagnostics/memory)
+- [Live Debugging](/guides/diagnostics/live-debugging)
+- [Poor Performance](/guides/diagnostics/poor-performance)
 
 [Diagnostics Working Group]: https://github.com/nodejs/diagnostics

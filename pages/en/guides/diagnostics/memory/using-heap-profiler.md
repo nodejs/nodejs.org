@@ -100,7 +100,7 @@ heap allocations, see the example below:
 - https://github.com/v8/sampling-heap-profiler
 - https://developer.chrome.com/docs/devtools/memory-problems/allocation-profiler/
 
-[Using Heap Snapshot]: /en/docs/guides/diagnostics/memory/using-heap-snapshot/
+[Using Heap Snapshot]: /guides/diagnostics/memory/using-heap-snapshot/
 [@mmarchini/observe]: https://www.npmjs.com/package/@mmarchini/observe
 [`heap-profiler`]: https://www.npmjs.com/package/heap-profile
 [heap profiler tutorial 1]: /static/images/docs/guides/diagnostics/heap-profiler-tutorial-1.png

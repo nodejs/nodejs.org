@@ -28,4 +28,4 @@ application executes for a certain trigger like an incoming HTTP request. They
 may also want to step through the code and control the execution as well as
 inspect what values variables hold in memory.
 
-- [Using Inspector](/docs/guides/diagnostics/live-debugging/using-inspector)
+- [Using Inspector](/guides/diagnostics/live-debugging/using-inspector)

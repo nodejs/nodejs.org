@@ -26,7 +26,7 @@ living breathing website whose content is created by our end users and team.
 The website should be the canonical location for documentation on how to use
 Node.js, how Node.js works, and how to find out what's going on in the Node
 community. We have seeded the initial documentation with [how to
-contribute](/get-involved/contribute/), [who the core team
+contribute](/about/get-involved/contribute/), [who the core team
 is](/about/organization/#index_md_technical_steering_committee),
 and some basic documentation of the [project
 itself](/about/organization). From there we're looking to
@@ -36,7 +36,7 @@ documentation.
 One of the key changes here is that we're extending the tools that generate API
 documentation to work for the website in general. That means the website is now
 written in markdown. Contributions work with the same
-[pull-request](/get-involved/contribute/#code-contributions)
+[pull-request](/about/get-involved/contribute/#code-contributions)
 way as contributions to Node itself. The intent here is to be able to quickly
 generate new documentation and improve it with feedback from the community.
 

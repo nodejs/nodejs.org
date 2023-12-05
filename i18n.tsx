@@ -1,7 +1,6 @@
-import type { RichTranslationValues } from 'next-intl';
 import { getRequestConfig } from 'next-intl/server';
 
-import { availableLocaleCodes } from './next.locales.mjs';
+import { availableLocaleCodes } from '@/next.locales.mjs';
 
 // Loads the Application Locales/Translations Dynamically
 const loadLocaleDictionary = async (locale: string) => {
@@ -20,17 +19,10 @@ const loadLocaleDictionary = async (locale: string) => {
   throw new Error(`Unsupported locale: ${locale}`);
 };
 
-// Defines default Rich Text Components
-const defaultRichTextValues: RichTranslationValues = {
-  graySpan: c => <span className="small color-lightgray">{c}</span>,
-};
-
 // Provides `next-intl` configuration for RSC/SSR
 export default getRequestConfig(async ({ locale }) => ({
   // This is the dictionary of messages to be loaded
   messages: await loadLocaleDictionary(locale),
-  // Default Rich Text Translations
-  defaultTranslationValues: defaultRichTextValues,
   // We always define the App timezone as UTC
   timeZone: 'Etc/UTC',
 }));

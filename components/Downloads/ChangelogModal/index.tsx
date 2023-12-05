@@ -40,7 +40,7 @@ const ChangelogModal: FC<PropsWithChildren<ChangelogModalProps>> = ({
             </Dialog.Description>
             <div className={styles.authors}>
               <AvatarGroup avatars={avatars} isExpandable={false} />
-              <Link href="/get-involved">
+              <Link href="/about/get-involved">
                 {t('components.downloads.changelogModal.startContributing')}
                 <ArrowUpRightIcon />
               </Link>
