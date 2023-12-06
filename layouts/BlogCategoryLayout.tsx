@@ -9,9 +9,9 @@ import getBlogData from '@/next-data/blogData';
 
 const getCurrentCategory = (pathname: string) => {
   // We split the pathname to retrieve the blog category from it since the
-  // URL is usually blog/{category} the second path piece is usually the
-  // category name
-  const [_pathname, category] = pathname.split('/');
+  // URL is usually /blog/{category} the second path piece is usually the
+  // category name, which usually year-YYYY
+  const [, _pathname, category] = pathname.split('/');
 
   if (_pathname === 'blog' && category && category.length) {
     return category;
