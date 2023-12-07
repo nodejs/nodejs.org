@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import type { FC } from 'react';
 
@@ -35,12 +36,18 @@ const BlogCategoryLayout: FC = async () => {
 
   const { posts, pagination } = await getBlogData(category);
 
-  // this only applies if current category is a year category
+  // This only applies if current category is a year category
   const year = category.replace('year-', '');
 
   const title = category.startsWith('year-')
     ? t('layouts.blogIndex.currentYear', { year })
     : frontmatter.title;
+
+  // This ensures that whenever we're running on dynamic generation (SSG)
+  // that invalid categories or categories/pages without posts will redirect to the 404 page
+  if (posts.length === 0) {
+    return notFound();
+  }
 
   return (
     <div className="container" dir="auto">
