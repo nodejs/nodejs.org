@@ -36,7 +36,7 @@ export const generateStaticParams = async () => {
 
 // Forces that only the paths from `generateStaticParams` are allowed, giving 404 on the contrary
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 // Enforces that this route is cached and static as much as possible
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
