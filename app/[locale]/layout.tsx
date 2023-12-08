@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import classNames from 'classnames';
 import { getLocale } from 'next-intl/server';
 import type { FC, PropsWithChildren } from 'react';
@@ -41,9 +42,14 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
           </ThemeProvider>
         </LocaleProvider>
 
-        {VERCEL_ENV && <Analytics />}
-
         <a rel="me" href="https://social.lfx.dev/@nodejs" />
+
+        {VERCEL_ENV && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
       </body>
     </html>
   );
