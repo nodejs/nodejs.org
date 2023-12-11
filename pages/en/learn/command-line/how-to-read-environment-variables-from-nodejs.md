@@ -1,7 +1,7 @@
 ---
 title: How to read environment variables from Node.js
 layout: learn.hbs
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, manishprivet
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, manishprivet, nikhilbhatt
 ---
 
 # How to read environment variables from Node.js
@@ -48,4 +48,33 @@ process.env.NODE_ENV; // "development"
 
 > You can also run your js file with `node -r dotenv/config index.js` command if you don't want to import the package in your code.
 
-> Note: Node.js 20 introduced **experimental** [support for .env files](https://nodejs.org/dist/latest-v20.x/docs/api/cli.html#--env-fileconfig).
+Node.js 20 introduced **experimental** [support for .env files](https://nodejs.org/dist/latest-v20.x/docs/api/cli.html#--env-fileconfig).
+
+Now, you can use the `--env-file` flag to specify an environment file when running your Node.js application. Here's an example `.env` file and how to access its variables using `process.env`.
+
+```bash
+# .env file
+PORT=3000
+```
+
+In your js file
+
+```js
+process.env.PORT; // "3000"
+```
+
+Run `app.js` file with environment variables set in `.env` file.
+
+```bash
+node --env-file=.env app.js
+```
+
+This command loads all the environment variables from `.env` file, making them available to application on `process.env`
+
+Also, You can pass multiple `--env-file` arguments. Subsequent files override pre-existing variables defined in previous files.
+
+```bash
+node --env-file=.env --env-file=.development.env app.js
+```
+
+> Note: if the same variable is defined in the environment and in the file, the value from the environment takes precedence.
