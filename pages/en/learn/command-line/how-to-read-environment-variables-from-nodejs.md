@@ -1,7 +1,7 @@
 ---
 title: How to read environment variables from Node.js
 layout: learn.hbs
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, manishprivet
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, manishprivet, nikhilbhatt
 ---
 
 # How to read environment variables from Node.js
@@ -27,25 +27,33 @@ process.env.USER_KEY; // "foobar"
 
 In the same way you can access any custom environment variable you set.
 
-If you have multiple environment variables in your node project, you can also create an `.env` file in the root directory of your project, and then use the [dotenv](https://www.npmjs.com/package/dotenv) package to load them during runtime.
+Node.js 20 introduced **experimental** [support for .env files](https://nodejs.org/dist/latest-v20.x/docs/api/cli.html#--env-fileconfig).
+
+Now, you can use the `--env-file` flag to specify an environment file when running your Node.js application. Here's an example `.env` file and how to access its variables using `process.env`.
 
 ```bash
 # .env file
-USER_ID="239482"
-USER_KEY="foobar"
-NODE_ENV="development"
+PORT=3000
 ```
 
 In your js file
 
 ```js
-require('dotenv').config();
-
-process.env.USER_ID; // "239482"
-process.env.USER_KEY; // "foobar"
-process.env.NODE_ENV; // "development"
+process.env.PORT; // "3000"
 ```
 
-> You can also run your js file with `node -r dotenv/config index.js` command if you don't want to import the package in your code.
+Run `app.js` file with environment variables set in `.env` file.
 
-> Note: Node.js 20 introduced **experimental** [support for .env files](https://nodejs.org/dist/latest-v20.x/docs/api/cli.html#--env-fileconfig).
+```bash
+node --env-file=.env app.js
+```
+
+This command loads all the environment variables from the `.env` file, making them available to the application on `process.env`
+
+Also, you can pass multiple `--env-file` arguments. Subsequent files override pre-existing variables defined in previous files.
+
+```bash
+node --env-file=.env --env-file=.development.env app.js
+```
+
+> Note: if the same variable is defined in the environment and in the file, the value from the environment takes precedence.
