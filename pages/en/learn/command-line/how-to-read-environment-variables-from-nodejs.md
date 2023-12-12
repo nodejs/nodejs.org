@@ -48,9 +48,9 @@ Run `app.js` file with environment variables set in `.env` file.
 node --env-file=.env app.js
 ```
 
-This command loads all the environment variables from `.env` file, making them available to application on `process.env`
+This command loads all the environment variables from the `.env` file, making them available to the application on `process.env`
 
-Also, You can pass multiple `--env-file` arguments. Subsequent files override pre-existing variables defined in previous files.
+Also, you can pass multiple `--env-file` arguments. Subsequent files override pre-existing variables defined in previous files.
 
 ```bash
 node --env-file=.env --env-file=.development.env app.js
