@@ -1,4 +1,4 @@
 ---
-title: News
+title: Blog
 layout: blog-category.hbs
 ---
