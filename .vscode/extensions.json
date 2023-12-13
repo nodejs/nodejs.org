@@ -5,6 +5,7 @@
     "stylelint.vscode-stylelint",
     "unifiedjs.vscode-mdx",
     "dbaeumer.vscode-eslint",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "inlang.vs-code-extension"
   ]
 }

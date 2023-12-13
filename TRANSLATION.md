@@ -75,6 +75,15 @@ It's important to mention that we use nested translation keys within the Locale 
 }
 ```
 
+### Translations in the IDE-extension
+
+For extracting, accessing, translating or updating Translations in the IDE you can use [IDE Extension for i18n](https://inlang.com/m/r7kp499g/app-inlang-ideExtension). 
+
+- [Extract Translations](https://inlang.com/m/r7kp499g/app-inlang-ideExtension#extract-messages-translations)
+- [Inline Annotations](https://inlang.com/m/r7kp499g/app-inlang-ideExtension#inline-annotations)
+- [Update Translations](https://inlang.com/m/r7kp499g/app-inlang-ideExtension#update-translations)
+
+
 ### Translations and Unit Testing
 
 Translation Keys should not be translated during Unit Testing. If your Component uses, for example `usTranslations`, you should provide the `<NextIntlProvider>` surrounding your `testing-library` render logic, or you can create a wrapper for your test. Note that you should not import the English messages to your Unit Test as:
