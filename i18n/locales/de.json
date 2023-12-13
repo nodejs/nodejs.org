@@ -1,0 +1,203 @@
+{
+  "components": {
+    "footer": {
+      "scrollToTop": {
+        "button": "Nach oben scrollen"
+      },
+      "links": {
+        "trademarkPolicy": "Markenrichtlinie",
+        "privacyPolicy": "Datenschutzrichtlinie",
+        "codeOfConduct": "Verhaltenskodex",
+        "security": "Sicherheitsrichtlinie",
+        "openJS": "OpenJS Foundation"
+      }
+    },
+    "header": {
+      "links": {
+        "about": "Um",
+        "download": "Herunterladen",
+        "docs": "Dokumente",
+        "guides": "Führer",
+        "learn": "Lernen",
+        "security": "Sicherheit",
+        "certification": "Zertifizierung",
+        "blog": "Blog"
+      },
+      "buttons": {
+        "toggleLanguage": "Sprache umschalten",
+        "toggleTheme": "Schalten Sie den Dunkel-/Hellmodus um"
+      }
+    },
+    "navigation": {
+      "learn": {
+        "gettingStarted": {
+          "links": {
+            "gettingStarted": "Erste Schritte",
+            "introductionToNodejs": "Einführung in Node.js",
+            "howToInstallNodejs": "So installieren Sie Node.js",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Wie viel JavaScript müssen Sie beherrschen, um Node.js verwenden zu können?",
+            "differencesBetweenNodejsAndTheBrowser": "Unterschiede zwischen Node.js und dem Browser",
+            "theV8JavascriptEngine": "Die V8-JavaScript-Engine",
+            "anIntroductionToTheNpmPackageManager": "Eine Einführung in den NPM-Paketmanager",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) und höher",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, der Unterschied zwischen Entwicklung und Produktion",
+            "nodejsWithTypescript": "Node.js mit TypeScript",
+            "nodejsWithWebassembly": "Node.js mit WebAssembly"
+          }
+        },
+        "asynchronousWork": {
+          "links": {
+            "asynchronousWork": "Asynchrone Arbeit",
+            "asynchronousFlowControl": "Asynchrone Flusskontrolle",
+            "overviewOfBlockingVsNonBlocking": "Übersicht über Blockieren und Nicht-Blockieren",
+            "javascriptAsynchronousProgrammingAndCallbacks": "Asynchrone JavaScript-Programmierung und Rückrufe",
+            "discoverJavaScriptTimers": "Entdecken Sie JavaScript-Timer",
+            "understandingProcessnexttick": "Process.nextTick() verstehen",
+            "understandingSetimmediate": "setImmediate() verstehen",
+            "theNodejsEventEmitter": "Der Node.js-Ereignissemitter"
+          }
+        },
+        "manipulatingFiles": {
+          "links": {
+            "manipulatingFiles": "Bearbeiten von Dateien",
+            "nodejsFileStats": "Node.js-Dateistatistiken",
+            "nodejsFilePaths": "Node.js-Dateipfade",
+            "workingWithFileDescriptorsInNodejs": "Arbeiten mit Dateideskriptoren in Node.js",
+            "readingFilesWithNodejs": "Dateien mit Node.js lesen",
+            "writingFilesWithNodejs": "Dateien mit Node.js schreiben",
+            "workingWithFoldersInNodejs": "Arbeiten mit Ordnern in Node.js"
+          }
+        },
+        "commandLine": {
+          "links": {
+            "commandLine": "Befehlszeile",
+            "runNodejsScriptsFromTheCommandLine": "Führen Sie Node.js-Skripts über die Befehlszeile aus",
+            "howToReadEnvironmentVariablesFromNodejs": "So lesen Sie Umgebungsvariablen aus Node.js",
+            "howToUseTheNodejsRepl": "So verwenden Sie die Node.js REPL",
+            "outputToTheCommandLineUsingNodejs": "Ausgabe an die Befehlszeile mit Node.js",
+            "acceptInputFromTheCommandLineInNodejs": "Akzeptieren Sie Eingaben über die Befehlszeile in Node.js"
+          }
+        }
+      },
+      "about": {
+        "links": {
+          "about": "Über Node.js",
+          "governance": "Projektsteuerung",
+          "releases": "Vorherige Versionen",
+          "security": "Sicherheitsberichte"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "getInvolved": "Machen Sie mit",
+          "collabSummit": "Collab-Gipfel",
+          "contribute": "Beitragen",
+          "codeOfConduct": "Verhaltenskodex"
+        }
+      }
+    },
+    "downloadList": {
+      "links": {
+        "previousReleases": "Vorherige Versionen",
+        "packageManager": "Node.js über den Paketmanager installieren",
+        "shaSums": {
+          "title": "Signierte SHASUMS für Veröffentlichungsdateien",
+          "howToVerify": "(So überprüfen Sie)"
+        },
+        "allDownloads": "Alle Download-Optionen",
+        "nightlyReleases": "Nächtliche Builds",
+        "unofficialBuilds": "Inoffizielle Builds",
+        "buildingFromSource": "Erstellen von Node.js aus dem Quellcode auf unterstützten Plattformen",
+        "installingOnLinux": "Node.js über Binärarchiv installieren",
+        "installingOnWsl": "Installation auf dem Windows-Subsystem für Linux (WSL)"
+      }
+    },
+    "downloadReleasesTable": {
+      "changelog": "Änderungsprotokoll",
+      "releases": "Veröffentlichungen",
+      "docs": "Dokumente"
+    },
+    "pagination": {
+      "next": "Neuer |",
+      "previous": "Älter"
+    },
+    "common": {
+      "breadcrumbs": {
+        "navigateToHome": "Navigieren Sie zu Startseite"
+      },
+      "crossLink": {
+        "previous": "Vorher",
+        "next": "Nächste"
+      },
+      "codebox": {
+        "copied": "In die Zwischenablage kopiert!"
+      },
+      "pagination": {
+        "prev": "Vorherige",
+        "prevAriaLabel": "Vorherige Seite",
+        "next": "Nächste",
+        "nextAriaLabel": "Nächste Seite",
+        "defaultLabel": "Seitennummerierung",
+        "pageLabel": "Gehen Sie zur Seite {pageNumber}"
+      },
+      "sidebar": {
+        "title": "Seite wechseln"
+      },
+      "languageDropdown": {
+        "label": "Sprache wählen"
+      },
+      "card": {
+        "announcement": "Ankündigungen",
+        "release": "Veröffentlichungen",
+        "vulnerability": "Schwachstellen"
+      }
+    },
+    "metabar": {
+      "lastUpdated": "Letzte Aktualisierung",
+      "readingTime": "Lesezeit",
+      "addedIn": "Hinzugefügt",
+      "author": "Autor",
+      "authors": "Autoren",
+      "contribute": "Beitragen",
+      "contributeText": "Bearbeite diese Seite",
+      "viewAs": "Ansicht als",
+      "tableOfContents": "Inhaltsverzeichnis"
+    },
+    "api": {
+      "jsonLink": {
+        "title": "Als JSON anzeigen"
+      },
+      "sourceLink": "Quellcode:"
+    },
+    "home": {
+      "homeDownloadButton": {
+        "download": "{version} {isLts, select, true {LTS} other {Current} }",
+        "tagline": "{isLts, select, true {Recommended For Most Users} other {Latest Features}",
+        "changelog": "Änderungsprotokoll",
+        "otherDownloads": "Andere Downloads",
+        "apiDocs": "API-Dokumente"
+      }
+    },
+    "downloads": {
+      "changelogModal": {
+        "startContributing": "Beginnen Sie mit dem Beitragen"
+      }
+    }
+  },
+  "layouts": {
+    "blogPost": {
+      "author": {
+        "byLine": "{author, select, null {} other {By {author} , }}"
+      }
+    },
+    "blogIndex": {
+      "currentYear": "Neuigkeiten von {year}"
+    }
+  },
+  "pages": {
+    "404": {
+      "title": "404: Seite konnte nicht gefunden werden",
+      "description": "ENOENT: Keine solche Datei oder kein solches Verzeichnis"
+    }
+  }
+}
