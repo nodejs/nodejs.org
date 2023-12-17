@@ -191,7 +191,7 @@
       }
     },
     "blogIndex": {
-      "currentYear": "News from {year}"
+      "currentYear": "Blog from {year}"
     }
   },
   "pages": {
