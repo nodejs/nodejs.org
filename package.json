@@ -123,5 +123,16 @@
     "stylelint-order": "6.0.3",
     "stylelint-selector-bem-pattern": "3.0.1",
     "user-agent-data-types": "0.4.2"
+  },
+  "overrides": {
+    "stylelint-selector-bem-pattern": {
+      "stylelint": "16.1.0"
+    },
+    "stylelint-config-standard": {
+      "stylelint": "16.1.0"
+    },
+    "stylelint-order": {
+      "stylelint": "16.1.0"
+    }
   }
 }
