@@ -7,7 +7,6 @@
     border-l-neutral-200
     px-4
     py-6
-    dark:border-l-neutral-900
     md:max-w-xs
     lg:px-6
     xs:mt-8
@@ -15,6 +14,7 @@
     xs:border-l-0
     xs:border-t
     xs:border-t-neutral-200
+    dark:border-l-neutral-900
     xs:dark:border-t-neutral-900;
 
   dt {

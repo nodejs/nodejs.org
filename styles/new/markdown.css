@@ -104,10 +104,10 @@
         px-4
         py-2
         text-neutral-900
-        dark:border-neutral-800
-        dark:text-white
         xs:block
-        xs:border-l-0;
+        xs:border-l-0
+        dark:border-neutral-800
+        dark:text-white;
 
       > a {
         @apply pr-2;

@@ -8,12 +8,12 @@
     bg-white
     px-4
     py-6
-    dark:border-neutral-900
-    dark:bg-neutral-950
     md:max-w-xs
     lg:px-6
     xs:w-full
-    xs:border-r-0;
+    xs:border-r-0
+    dark:border-neutral-900
+    dark:bg-neutral-950;
 
   > section {
     @apply flex
