@@ -20,9 +20,10 @@ const getCurrentCategory = (pathname: string) => {
 
   // if either the pathname does not match to a blog page
   // which should not happen (as this hook should only be used in blog pages)
-  // or if there is no category in the URL we return the current year as category name
+  // or if there is no category in the URL we return the previous year as category name
   // which is always the default category (for example, the blog index)
-  return `year-${new Date().getFullYear()}`;
+  // see https://github.com/nodejs/nodejs.org/issues/6205 for a permanent solution
+  return `year-${new Date().getFullYear() - 1}`;
 };
 
 // This is a React Async Server Component
