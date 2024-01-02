@@ -36,10 +36,10 @@
       bg-gradient-subtle
       p-12
       grid-in-[main]
-      dark:bg-gradient-subtle-dark
       xl:px-18
       xs:bg-none
       xs:p-4
+      dark:bg-gradient-subtle-dark
       xs:dark:bg-none;
   }
 

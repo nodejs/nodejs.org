@@ -23,11 +23,11 @@
       bg-white
       p-8
       focus:outline-none
-      dark:bg-neutral-950
       sm:mt-20
       sm:p-12
       lg:w-2/3
-      xl:w-1/2;
+      xl:w-1/2
+      dark:bg-neutral-950;
   }
 
   .close {
