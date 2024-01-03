@@ -15,10 +15,7 @@ const getCategoryData = async (pathname: string) => {
   const [, _pathname, category] = pathname.split('/');
   if (_pathname === 'blog' && category && category.length) {
     const data = await getBlogData(category);
-    return {
-      ...data,
-      category,
-    };
+    return { ...data, category };
   }
 
   // If the pathname does not match to a blog page,
@@ -32,10 +29,7 @@ const getCategoryData = async (pathname: string) => {
     year = Math.max(...data.meta.pagination);
     data = await getBlogData(`year-${year}`);
   }
-  return {
-    ...data,
-    category: `year-${year}`,
-  };
+  return { ...data, category: `year-${year}` };
 };
 
 // This is a React Async Server Component
