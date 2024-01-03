@@ -124,14 +124,11 @@ export default function rehypeShikiji() {
           );
 
           // We should get the language name from the class name
-          if (codeElement.properties.className?.includes('language-')) {
+          if (codeElement.properties.className?.length) {
             const className = codeElement.properties.className.join(' ');
-
             const matches = className.match(/language-(?<language>.*)/);
 
-            if (matches.groups.language) {
-              languages.push(matches.groups.language);
-            }
+            languages.push(matches?.groups.language ?? 'text');
           }
 
           // Map the display names of each variant for the CodeTab

@@ -54,7 +54,8 @@
       font-medium;
 
     & > .language {
-      @apply text-neutral-400;
+      @apply leading-9
+        text-neutral-400;
     }
 
     & > .action {
