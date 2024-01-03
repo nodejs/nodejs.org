@@ -1,3 +1,5 @@
+'use client';
+
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 import type { FC, ReactElement } from 'react';
 
