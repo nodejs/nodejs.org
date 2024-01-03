@@ -1,8 +1,5 @@
-'use client';
-
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 import type { FC, ReactElement } from 'react';
-import { useState } from 'react';
 
 import CodeTabs from '@/components/Common/CodeTabs';
 
@@ -17,8 +14,6 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
   displayNames: rawDisplayNames,
   children: codes,
 }) => {
-  const [active, setActive] = useState(0);
-
   const languages = rawLanguages.split('|');
   const displayNames = rawDisplayNames?.split('|') ?? [];
 
@@ -31,19 +26,11 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
     };
   });
 
-  const languagesMap = Object.fromEntries(
-    languages.map((language, index) => [language, index])
-  );
-
   return (
-    <CodeTabs
-      tabs={tabs}
-      defaultValue={languages[0]}
-      onValueChange={selected => setActive(languagesMap[selected])}
-    >
-      {languages.map(language => (
+    <CodeTabs tabs={tabs} defaultValue={languages[0]}>
+      {languages.map((language, index) => (
         <TabsPrimitive.Content key={language} value={language}>
-          {codes[active]}
+          {codes[index]}
         </TabsPrimitive.Content>
       ))}
     </CodeTabs>

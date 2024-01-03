@@ -77,12 +77,7 @@ function getCodeTabsRange(tree) {
     // Adding 2 since there is one text node between every element
     const next = index + 2;
 
-    if (
-      isCodeBlock(node) &&
-      'children' in parent &&
-      parent.children !== undefined &&
-      isCodeBlock(parent.children[next])
-    ) {
+    if (isCodeBlock(node) && isCodeBlock(parent?.children[next])) {
       start ??= index;
       rangeMap[start] = next;
 
@@ -127,10 +122,14 @@ export default function rehypeShikiji() {
             codeElement.data?.meta,
             'displayName'
           );
-          const className = codeElement.properties.className.join(' ');
+
+          const className =
+            codeElement.properties.className?.join(' ') ?? 'language-text';
+
           const matches = className.match(/language-(?<language>.*)/);
 
           languages.push(matches.groups.language);
+
           displayNames.push(displayName?.replaceAll('|', '') ?? '');
           codeTabsChildren.push(node);
 
@@ -145,6 +144,7 @@ export default function rehypeShikiji() {
           start: range.start - lengthOffset,
           end: range.end - lengthOffset,
         };
+
         const deleteCount = compensatedRange.end - compensatedRange.start + 1;
 
         // Replace the sequential code boxes with a code tabs element
