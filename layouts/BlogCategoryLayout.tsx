@@ -22,14 +22,19 @@ const getCategoryData = async (pathname: string) => {
   //   which should not happen (as this hook should only be used in blog pages),
   // or, if there is no category in the URL,
   //   which happens when we're on the blog overview page (index),
-  // then we return the most recent year with blog posts
+  // then we attempt to get the posts for the current year
   // @TODO: Year-based pagination is deprecated and going away soon
   let year = `year-${new Date().getFullYear()}`;
   let data = await getBlogData(year);
+
+  // If there are no posts in the current year,
+  //   and there is at least one year in the pagination array,
+  // we'll get the posts for the most recent year
   if (!data.posts.length && data.meta.pagination.length) {
     year = `year-${Math.max(...data.meta.pagination)}`;
     data = await getBlogData(year);
   }
+
   return { ...data, category: year };
 };
 
