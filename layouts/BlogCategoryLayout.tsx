@@ -23,13 +23,13 @@ const getCategoryData = async (pathname: string) => {
   // or, if there is no category in the URL,
   //   which happens when we're on the blog overview page (index),
   // then we return the most recent year with blog posts
-  let year = new Date().getFullYear();
-  let data = await getBlogData(`year-${year}`);
+  let year = `year-${new Date().getFullYear()}`;
+  let data = await getBlogData(year);
   if (!data.posts.length && data.meta.pagination.length) {
-    year = Math.max(...data.meta.pagination);
-    data = await getBlogData(`year-${year}`);
+    year = `year-${Math.max(...data.meta.pagination)}`;
+    data = await getBlogData(year);
   }
-  return { ...data, category: `year-${year}` };
+  return { ...data, category: year };
 };
 
 // This is a React Async Server Component
