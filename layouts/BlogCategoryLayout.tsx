@@ -23,6 +23,7 @@ const getCategoryData = async (pathname: string) => {
   // or, if there is no category in the URL,
   //   which happens when we're on the blog overview page (index),
   // then we return the most recent year with blog posts
+  // @TODO: Year-based pagination is deprecated and going away soon
   let year = `year-${new Date().getFullYear()}`;
   let data = await getBlogData(year);
   if (!data.posts.length && data.meta.pagination.length) {
