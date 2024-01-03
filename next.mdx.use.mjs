@@ -1,12 +1,12 @@
 'use strict';
 
 import Blockquote from './components/Common/Blockquote';
-import { MDXCodeBox } from './components/Common/CodeBox';
-import { MDXCodeTabs } from './components/Common/CodeBox/CodeTabs';
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
 import Banner from './components/Home/Banner';
 import HomeDownloadButton from './components/Home/HomeDownloadButton';
 import Link from './components/Link';
+import MDXCodeBox from './components/MDX/CodeBox';
+import MDXCodeTabs from './components/MDX/CodeTabs';
 import WithNodeRelease from './components/withNodeRelease';
 import { ENABLE_WEBSITE_REDESIGN } from './next.constants.mjs';
 
@@ -19,8 +19,8 @@ export const mdxComponents = {
   WithNodeRelease,
   HomeDownloadButton,
   DownloadReleasesTable,
-  Banner,
   CodeTabs: MDXCodeTabs,
+  Banner,
 };
 
 /**

@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import { CodeBox } from '@/components/Common/CodeBox';
+import CodeBox from '@/components/Common/CodeBox';
 
 type Story = StoryObj<typeof CodeBox>;
 type Meta = MetaObj<typeof CodeBox>;

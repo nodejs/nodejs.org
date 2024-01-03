@@ -4,9 +4,7 @@ import { VFile } from 'vfile';
 import { MDXRenderer } from '@/components/mdxRenderer';
 import { compileMDX } from '@/next.mdx.compiler.mjs';
 
-type Props = {
-  children: string;
-};
+type Props = { children: string };
 
 type Story = StoryObj<Props>;
 type Meta = MetaObj<Props>;
@@ -62,7 +60,7 @@ console.log(hash);
 };
 
 export default {
-  title: 'Common/CodeBox/MDX',
+  title: 'MDX/CodeBox',
   render: (_, { loaded: { Content } }) => Content,
   loaders: [
     async ({ args }) => {

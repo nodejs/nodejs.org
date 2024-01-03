@@ -1,22 +1,63 @@
+'use client';
+
 import {
   DocumentDuplicateIcon,
   CodeBracketIcon,
 } from '@heroicons/react/24/outline';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
-import { Fragment, isValidElement, useMemo, useRef } from 'react';
+import { isValidElement, useMemo, useRef } from 'react';
 
 import Button from '@/components/Common/Button';
 import { useCopyToClipboard, useNotification } from '@/hooks';
-import { getCodeLanguageDisplayName } from '@/util/getCodeLanguageDisplayName';
 
 import styles from './index.module.css';
 
-type CodeBoxProps = {
-  language: string;
+// Transforms a code element with plain text content into a more structured
+// format for rendering with line numbers
+const transformCode = (code: ReactNode): ReactNode => {
+  if (!isValidElement(code)) {
+    // Early return when the `CodeBox` child is not a valid element since the
+    // type is a ReactNode, and can assume any value
+    return code;
+  }
+
+  const content = code.props?.children;
+
+  if (code.type !== 'code' || typeof content !== 'string') {
+    // There is no need to transform an element that is not a code element or
+    // a content that is not a string
+    return code;
+  }
+
+  const lines = content.split('\n');
+
+  return (
+    <code>
+      {lines.flatMap((line, lineIndex) => {
+        const columns = line.split(' ');
+
+        return [
+          <span key={lineIndex} className="line">
+            {columns.map((column, columnIndex) => (
+              <>
+                <span>{column}</span>
+                {columnIndex < columns.length - 1 && <span> </span>}
+              </>
+            ))}
+          </span>,
+          // Add a break line so the text content is formatted correctly
+          // when copying to clipboard
+          '\n',
+        ];
+      })}
+    </code>
+  );
 };
 
-export const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
+type CodeBoxProps = { language: string };
+
+const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   children,
   language,
 }) => {
@@ -60,60 +101,4 @@ export const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   );
 };
 
-type MDXCodeBoxProps = {
-  className?: string;
-};
-
-export const MDXCodeBox: FC<PropsWithChildren<MDXCodeBoxProps>> = ({
-  children: code,
-  className,
-}) => {
-  const matches = className?.match(/language-(?<language>.*)/);
-  const language = matches?.groups?.language ?? '';
-
-  return (
-    <CodeBox language={getCodeLanguageDisplayName(language)}>{code}</CodeBox>
-  );
-};
-
-// Transforms a code element with plain text content into a more structured
-// format for rendering with line numbers
-const transformCode = (code: ReactNode): ReactNode => {
-  if (!isValidElement(code)) {
-    // Early return when the `CodeBox` child is not a valid element since the
-    // type is a ReactNode, and can assume any value
-    return code;
-  }
-
-  const content = code.props?.children;
-
-  if (code.type !== 'code' || typeof content !== 'string') {
-    // There is no need to transform an element that is not a code element or
-    // a content that is not a string
-    return code;
-  }
-
-  const lines = content.split('\n');
-
-  return (
-    <code>
-      {lines.flatMap((line, lineIndex) => {
-        const columns = line.split(' ');
-
-        return [
-          <span key={lineIndex} className="line">
-            {columns.map((column, columnIndex) => (
-              <Fragment key={columnIndex}>
-                <span>{column}</span>
-                {columnIndex < columns.length - 1 && <span> </span>}
-              </Fragment>
-            ))}
-          </span>,
-          // Add a break line so the text content is formatted correctly
-          // when copying to clipboard
-          '\n',
-        ];
-      })}
-    </code>
-  );
-};
+export default CodeBox;

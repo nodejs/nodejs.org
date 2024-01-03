@@ -2,8 +2,8 @@ import * as TabsPrimitive from '@radix-ui/react-tabs';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import type { FC } from 'react';
 
-import { CodeBox } from '@/components/Common/CodeBox';
-import { CodeTabs } from '@/components/Common/CodeBox/CodeTabs';
+import CodeBox from '@/components/Common/CodeBox';
+import CodeTabs from '@/components/Common/CodeTabs';
 
 type Story = StoryObj<typeof CodeTabs>;
 type Meta = MetaObj<typeof CodeTabs>;

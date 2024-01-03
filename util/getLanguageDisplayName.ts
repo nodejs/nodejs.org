@@ -1,6 +1,6 @@
 import { LANGUAGES } from '@/shiki.config.mjs';
 
-export const getCodeLanguageDisplayName = (language: string): string => {
+export const getLanguageDisplayName = (language: string): string => {
   const languageByIdOrAlias = LANGUAGES.find(
     ({ name, aliases }) =>
       name.toLowerCase() === language.toLowerCase() ||
