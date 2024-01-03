@@ -7,7 +7,6 @@ import { Time } from '@/components/Common/Time';
 import Link from '@/components/Link';
 import Pagination from '@/components/Pagination';
 import getBlogData from '@/next-data/blogData';
-import type { BlogDataRSC } from '@/types';
 
 const getCategoryData = async (pathname: string) => {
   // We split the pathname to retrieve the blog category from it since the
@@ -27,10 +26,10 @@ const getCategoryData = async (pathname: string) => {
   // or, if there is no category in the URL,
   //   which happens when we're on the blog overview page (index),
   // then we return the most recent year with blog posts
-  let year = new Date().getFullYear() + 1;
-  let data: BlogDataRSC | undefined;
-  while (!data || (data.posts.length === 0 && year)) {
-    year -= 1;
+  let year = new Date().getFullYear();
+  let data = await getBlogData(`year-${year}`);
+  if (!data.posts.length && data.meta.pagination.length) {
+    year = Math.max(...data.meta.pagination);
     data = await getBlogData(`year-${year}`);
   }
   return {

@@ -12,12 +12,9 @@ type StaticParams = { params: { category: string; locale: string } };
 // this includes the `year-XXXX` categories for yearly archives (pagination)
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 export const GET = async (_: Request, { params }: StaticParams) => {
-  const { posts, pagination } = await provideBlogData(params.category);
+  const data = await provideBlogData(params.category);
 
-  return Response.json(
-    { posts, pagination },
-    { status: posts.length ? 200 : 404 }
-  );
+  return Response.json(data, { status: data.posts.length ? 200 : 404 });
 };
 
 // This function generates the static paths that come from the dynamic segments
