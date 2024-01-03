@@ -112,14 +112,6 @@ a:hover .color-lightgray {
   }
 }
 
-.shiki .line {
-  min-height: 1rem;
-
-  &:last-child {
-    min-height: initial;
-  }
-}
-
 @media screen and (max-width: 1002px) {
   #main {
     article {

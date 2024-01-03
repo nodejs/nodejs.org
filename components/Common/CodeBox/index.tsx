@@ -6,7 +6,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
-import { isValidElement, useRef } from 'react';
+import { Fragment, isValidElement, useRef } from 'react';
 
 import Button from '@/components/Common/Button';
 import { useCopyToClipboard, useNotification } from '@/hooks';
@@ -40,10 +40,10 @@ const transformCode = (code: ReactNode): ReactNode => {
         return [
           <span key={lineIndex} className="line">
             {columns.map((column, columnIndex) => (
-              <>
+              <Fragment key={columnIndex}>
                 <span>{column}</span>
                 {columnIndex < columns.length - 1 && <span> </span>}
-              </>
+              </Fragment>
             ))}
           </span>,
           // Add a break line so the text content is formatted correctly
