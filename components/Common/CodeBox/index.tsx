@@ -6,7 +6,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
-import { isValidElement, useMemo, useRef } from 'react';
+import { isValidElement, useRef } from 'react';
 
 import Button from '@/components/Common/Button';
 import { useCopyToClipboard, useNotification } from '@/hooks';
@@ -83,12 +83,10 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
     }
   };
 
-  const code = useMemo(() => transformCode(children), [children]);
-
   return (
     <div className={styles.root}>
       <pre ref={ref} className={styles.content} tabIndex={0}>
-        {code}
+        {transformCode(children)}
       </pre>
       <div className={styles.footer}>
         <span className={styles.language}>{language}</span>
