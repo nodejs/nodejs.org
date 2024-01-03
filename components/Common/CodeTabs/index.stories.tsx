@@ -41,12 +41,12 @@ server.listen(port, hostname, () => {
 const TabsContent: FC = () => (
   <>
     <TabsPrimitive.Content key="mjs" value="mjs">
-      <CodeBox language="JavaScript (MJS)">
+      <CodeBox language="JavaScript (MJS)" showCopyButton>
         <code>{mjsContent}</code>
       </CodeBox>
     </TabsPrimitive.Content>
     <TabsPrimitive.Content key="cjs" value="cjs">
-      <CodeBox language="JavaScript (CJS)">
+      <CodeBox language="JavaScript (CJS)" showCopyButton>
         <code>{cjsContent}</code>
       </CodeBox>
     </TabsPrimitive.Content>

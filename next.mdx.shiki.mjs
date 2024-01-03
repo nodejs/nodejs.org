@@ -219,6 +219,14 @@ export default function rehypeShikiji() {
         codeLanguage
       );
 
+      const showCopyButton = getMetaParameter(
+        preElement.data?.meta,
+        'showCopyButton'
+      );
+
+      // Adds a Copy Button to the CodeBox if requested as an additional parameter
+      children[0].properties.showCopyButton = showCopyButton === 'true';
+
       // Replaces the <pre> element with the updated one
       parent.children.splice(index, 1, ...children);
     });

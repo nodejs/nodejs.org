@@ -55,11 +55,12 @@ const transformCode = (code: ReactNode): ReactNode => {
   );
 };
 
-type CodeBoxProps = { language: string };
+type CodeBoxProps = { language: string; showCopyButton?: boolean };
 
 const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   children,
   language,
+  showCopyButton = false,
 }) => {
   const ref = useRef<HTMLPreElement>(null);
 
@@ -88,13 +89,19 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
       <pre ref={ref} className={styles.content} tabIndex={0}>
         {transformCode(children)}
       </pre>
-      <div className={styles.footer}>
-        <span className={styles.language}>{language}</span>
-        <Button type="button" className={styles.action} onClick={onCopy}>
-          <DocumentDuplicateIcon className={styles.icon} />
-          {t('components.common.codebox.copy')}
-        </Button>
-      </div>
+
+      {language && (
+        <div className={styles.footer}>
+          <span className={styles.language}>{language}</span>
+
+          {showCopyButton && (
+            <Button type="button" className={styles.action} onClick={onCopy}>
+              <DocumentDuplicateIcon className={styles.icon} />
+              {t('components.common.codebox.copy')}
+            </Button>
+          )}
+        </div>
+      )}
     </div>
   );
 };

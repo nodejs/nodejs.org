@@ -27,4 +27,12 @@ export const Default: Story = {
   },
 };
 
+export const WithCopyButton: Story = {
+  args: {
+    language: 'JavaScript (CJS)',
+    showCopyButton: true,
+    children: <code>{content}</code>,
+  },
+};
+
 export default { component: CodeBox } as Meta;
