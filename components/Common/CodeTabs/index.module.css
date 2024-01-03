@@ -3,9 +3,10 @@
 }
 
 .header {
-  @apply rounded-t
-    border-x-[1px]
-    border-t-[1px]
+  @apply flex
+    rounded-t
+    border-x
+    border-t
     border-neutral-900
     bg-neutral-950
     px-4
@@ -13,7 +14,10 @@
     pt-3;
 
   & [role='tab'] {
-    @apply text-neutral-200;
+    @apply border-b
+      border-b-transparent
+      px-1
+      text-neutral-200;
 
     &[aria-selected='true'] {
       @apply border-b-green-400
@@ -27,27 +31,20 @@
     items-center
     gap-2
     text-center
-    text-neutral-200
-    dark:text-neutral-200;
+    text-neutral-200;
 
   & > .icon {
     @apply h-4
       w-4
-      text-neutral-600
-      dark:text-neutral-600;
+      text-neutral-300;
   }
 
   &:is(:link, :visited) {
-    @apply text-neutral-200
-      dark:text-neutral-200;
-
     &:hover {
-      @apply text-neutral-400
-        dark:text-neutral-400;
+      @apply text-neutral-400;
 
       & > .icon {
-        @apply text-neutral-700
-          dark:text-neutral-700;
+        @apply text-neutral-600;
       }
     }
   }
