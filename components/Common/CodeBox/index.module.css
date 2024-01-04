@@ -11,17 +11,19 @@
 
     & > code {
       @apply grid
-        overflow-x-auto
         bg-transparent
         p-0
         font-ibm-plex-mono
         text-sm
         font-regular
+        leading-snug
         text-neutral-400
         [counter-reset:line];
 
       & > [class='line'] {
-        @apply w-max;
+        @apply relative
+          min-w-0
+          pl-8;
 
         & > span {
           @apply whitespace-break-spaces
@@ -29,8 +31,15 @@
         }
 
         &:not(:empty:last-child)::before {
-          @apply mr-4
-            inline-block
+          @apply inline-block
+            content-[''];
+        }
+
+        &:not(:empty:last-child)::after {
+          @apply absolute
+            left-0
+            top-0
+            mr-4
             w-4.5
             text-right
             text-neutral-600
