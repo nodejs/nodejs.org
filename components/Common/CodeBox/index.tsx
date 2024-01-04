@@ -10,6 +10,7 @@ import { Fragment, isValidElement, useRef } from 'react';
 
 import Button from '@/components/Common/Button';
 import { useCopyToClipboard, useNotification } from '@/hooks';
+import { ENABLE_WEBSITE_REDESIGN } from '@/next.constants.mjs';
 
 import styles from './index.module.css';
 
@@ -60,7 +61,9 @@ type CodeBoxProps = { language: string; showCopyButton?: boolean };
 const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   children,
   language,
-  showCopyButton = true,
+  // For now we only want to render the Copy Button by default
+  // if the Website Redesign is Enabled
+  showCopyButton = ENABLE_WEBSITE_REDESIGN,
 }) => {
   const ref = useRef<HTMLPreElement>(null);
 

@@ -52,7 +52,6 @@
 
   & > .footer {
     @apply flex
-      min-h-14
       items-center
       justify-between
       border-t
@@ -63,8 +62,7 @@
       font-medium;
 
     & > .language {
-      @apply leading-9
-        text-neutral-400;
+      @apply text-neutral-400;
     }
 
     & > .action {
