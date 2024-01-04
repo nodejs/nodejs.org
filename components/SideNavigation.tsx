@@ -20,7 +20,7 @@ const SideNavigation: FC<SideNavigationProps> = ({
 
   const mapItems = (items: ReturnType<typeof getSideNavigation>) => {
     return items.map(([, { link, label, items }]) => (
-      <li key={link}>
+      <li key={`${link}-${label}`}>
         {link ? <ActiveLink href={link}>{label}</ActiveLink> : label}
 
         {items && items.length > 0 && <ul>{mapItems(items)}</ul>}

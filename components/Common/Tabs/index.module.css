@@ -18,3 +18,17 @@
       dark:data-[state=active]:text-green-400;
   }
 }
+
+.tabsWithAddons {
+  @apply flex
+    justify-between;
+
+  & > .addons {
+    @apply border-b-2
+      border-b-transparent
+      px-1
+      pb-[11px]
+      text-sm
+      font-semibold;
+  }
+}

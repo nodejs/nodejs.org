@@ -130,6 +130,7 @@
         "next": "Next"
       },
       "codebox": {
+        "copy": "Copy to clipboard",
         "copied": "Copied to clipboard!"
       },
       "pagination": {

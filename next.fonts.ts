@@ -23,7 +23,7 @@ export const OPEN_SANS = Open_Sans({
 // We then export a variable and class name to be used
 // within Tailwind (tailwind.config.ts) and Storybook (preview.js)
 export const IBM_PLEX_MONO = IBM_Plex_Mono({
-  weight: ['600'],
+  weight: ['400', '600'],
   subsets: ['latin'],
   variable: '--font-ibm-plex-mono',
 });

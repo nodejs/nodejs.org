@@ -24,9 +24,10 @@
       p-8
       focus:outline-none
       sm:mt-20
-      sm:p-12
       lg:w-2/3
-      xl:w-1/2
+      xl:w-3/5
+      xl:p-12
+      xs:p-6
       dark:bg-neutral-950;
   }
 

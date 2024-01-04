@@ -18,7 +18,8 @@ export const NEXT_REHYPE_PLUGINS = [
   rehypeSlug,
   // Automatically add anchor links to headings (H1, ...)
   [rehypeAutolinkHeadings, { properties: { tabIndex: -1, class: 'anchor' } }],
-  // Adds our syntax highlighter (Shikiji) to Codeboxes
+  // Transforms sequential code elements into code tabs and
+  // adds our syntax highlighter (Shikiji) to Codeboxes
   rehypeShikiji,
 ];
 
