@@ -42,6 +42,7 @@ export const NotificationProvider: FC<PropsWithChildren<NotificationProps>> = ({
           {children}
 
           <Toast.Viewport className={viewportClassName} />
+
           {notification && (
             <Notification duration={notification.duration}>
               {notification.message}

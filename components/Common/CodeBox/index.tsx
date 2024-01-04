@@ -60,7 +60,7 @@ type CodeBoxProps = { language: string; showCopyButton?: boolean };
 const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   children,
   language,
-  showCopyButton = false,
+  showCopyButton = true,
 }) => {
   const ref = useRef<HTMLPreElement>(null);
 
@@ -68,7 +68,7 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   const [, copyToClipboard] = useCopyToClipboard();
   const t = useTranslations();
 
-  const onCopy = () => {
+  const onCopy = async () => {
     if (ref.current?.textContent) {
       copyToClipboard(ref.current.textContent);
 
