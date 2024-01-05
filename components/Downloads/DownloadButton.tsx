@@ -27,7 +27,7 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
       <Button
         variant="special"
         onClick={onDownloadNode}
-        className="hidden flex-row items-center gap-2 dark:flex"
+        className="hidden flex-row items-center justify-center gap-2 dark:flex"
       >
         {children}
 
@@ -37,7 +37,7 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
       <Button
         variant="primary"
         onClick={onDownloadNode}
-        className="flex flex-row items-center gap-2 dark:hidden"
+        className="flex flex-row items-center justify-center gap-2 dark:hidden"
       >
         {children}
 

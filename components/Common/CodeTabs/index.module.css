@@ -10,8 +10,8 @@
     border-neutral-900
     bg-neutral-950
     px-4
-    pr-5
-    pt-3;
+    pt-3
+    xs:px-2;
 
   & [role='tab'] {
     @apply border-b
@@ -27,11 +27,12 @@
 }
 
 .link {
-  @apply flex
+  @apply hidden
     items-center
     gap-2
     text-center
-    !text-neutral-200;
+    !text-neutral-200
+    lg:flex;
 
   & > .icon {
     @apply h-4

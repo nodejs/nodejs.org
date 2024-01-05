@@ -73,7 +73,7 @@
     items-center
     gap-8
     self-stretch
-    px-6
+    px-4
     py-14
     md:w-auto
     md:flex-row
@@ -91,7 +91,9 @@
       w-full
       bg-[url('/static/images/patterns/hexagon-grid.svg')]
       bg-center
-      bg-no-repeat;
+      bg-no-repeat
+      opacity-50
+      md:opacity-100;
 
     &::after {
       @apply absolute
