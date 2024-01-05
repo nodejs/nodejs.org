@@ -8,7 +8,8 @@ import HomeDownloadButton from './components/Home/HomeDownloadButton';
 import Link from './components/Link';
 import MDXCodeBox from './components/MDX/CodeBox';
 import MDXCodeTabs from './components/MDX/CodeTabs';
-import WithCurrentOS from './components/withCurrentOS';
+import WithBadge from './components/withBadge';
+import WithBanner from './components/withBanner';
 import WithNodeRelease from './components/withNodeRelease';
 import { ENABLE_WEBSITE_REDESIGN } from './next.constants.mjs';
 
@@ -24,8 +25,10 @@ export const mdxComponents = {
   DownloadReleasesTable: DownloadReleasesTable,
   // HOC for getting Node.js Release Metadata
   WithNodeRelease: WithNodeRelease,
-  // HOC for getting current user's OS
-  WithCurrentOS: WithCurrentOS,
+  // HOC for providing Banner Data
+  WithBanner: WithBanner,
+  // HOC for providing Badge Data
+  WithBadge: WithBadge,
   // Renders MDX CodeTabs
   CodeTabs: MDXCodeTabs,
   // Renders a Download Button
