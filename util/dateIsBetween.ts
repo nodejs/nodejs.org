@@ -4,7 +4,7 @@ export const dateIsBetween = (startDate: string, endDate: string): boolean => {
   const end = new Date(endDate);
 
   if ([start.toString(), end.toString()].includes(invalidDateStr)) {
-    return false;
+    throw new Error('dateIsBetween got called with invalid dates');
   }
 
   const now = new Date();

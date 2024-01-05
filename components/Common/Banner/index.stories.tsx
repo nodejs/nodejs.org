@@ -7,31 +7,31 @@ type Meta = MetaObj<typeof Banner>;
 
 export const Default: Story = {
   args: {
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'default',
-    url: 'https://github.com/openjs-foundation/summit/issues/360',
+    link: 'https://github.com/openjs-foundation/summit/issues/360',
   },
 };
 
 export const Error: Story = {
   args: {
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'error',
-    url: 'https://github.com/nodejs/nodejs.org/issues/4495',
+    link: 'https://github.com/nodejs/nodejs.org/issues/4495',
   },
 };
 
 export const Warning: Story = {
   args: {
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'warning',
-    url: 'https://github.com/nodejs/nodejs.org/issues/4495',
+    link: 'https://github.com/nodejs/nodejs.org/issues/4495',
   },
 };
 
 export const NoLink: Story = {
   args: {
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'default',
   },
 };

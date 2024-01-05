@@ -1,20 +1,23 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
-import type { FC } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import Link from '@/components/Link';
 
 import styles from './index.module.css';
 
 type BannerProps = {
-  type: 'default' | 'error' | 'warning';
-  text: string;
-  url?: string;
+  link?: string;
+  type?: 'default' | 'warning' | 'error';
 };
 
-const Banner: FC<BannerProps> = ({ type, text, url = '' }) => (
+const Banner: FC<PropsWithChildren<BannerProps>> = ({
+  type = 'default',
+  link,
+  children,
+}) => (
   <div className={`${styles.banner} ${styles[type] || styles.default}`}>
-    {(url.length > 0 && <Link href={url}>{text}</Link>) || text}
-    {url.length > 0 && <ArrowUpRightIcon />}
+    {link ? <Link href={link}>{children}</Link> : children}
+    {link && <ArrowUpRightIcon />}
   </div>
 );
 
