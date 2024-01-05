@@ -3,7 +3,7 @@ import type { FC, PropsWithChildren } from 'react';
 import CodeBox from '@/components/Common/CodeBox';
 import { getLanguageDisplayName } from '@/util/getLanguageDisplayName';
 
-type CodeBoxProps = { className?: string; showCopyButton?: boolean };
+type CodeBoxProps = { className?: string; showCopyButton?: string };
 
 const MDXCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   children: code,
@@ -16,7 +16,7 @@ const MDXCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   return (
     <CodeBox
       language={getLanguageDisplayName(language)}
-      showCopyButton={showCopyButton}
+      showCopyButton={showCopyButton === 'true'}
     >
       {code}
     </CodeBox>
