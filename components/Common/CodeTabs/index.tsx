@@ -6,13 +6,16 @@ import { Link } from '@/navigation.mjs';
 
 import styles from './index.module.css';
 
-type CodeTabsProps = Pick<
-  ComponentProps<typeof Tabs>,
-  'tabs' | 'onValueChange' | 'defaultValue'
-> & {
+export type CodeTabsExternaLink = {
   linkUrl?: string;
   linkText?: string;
 };
+
+type CodeTabsProps = Pick<
+  ComponentProps<typeof Tabs>,
+  'tabs' | 'onValueChange' | 'defaultValue'
+> &
+  CodeTabsExternaLink;
 
 const CodeTabs: FC<PropsWithChildren<CodeTabsProps>> = ({
   children,
