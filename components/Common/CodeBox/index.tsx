@@ -56,14 +56,15 @@ const transformCode = (code: ReactNode): ReactNode => {
   );
 };
 
-type CodeBoxProps = { language: string; showCopyButton?: boolean };
+type CodeBoxProps = { language: string; showCopyButton?: string };
 
 const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   children,
   language,
   // For now we only want to render the Copy Button by default
   // if the Website Redesign is Enabled
-  showCopyButton = ENABLE_WEBSITE_REDESIGN,
+  // @todo remove this check once we migrate to website redesign
+  showCopyButton = ENABLE_WEBSITE_REDESIGN ? 'true' : 'false',
 }) => {
   const ref = useRef<HTMLPreElement>(null);
 
@@ -97,7 +98,7 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
         <div className={styles.footer}>
           <span className={styles.language}>{language}</span>
 
-          {showCopyButton && (
+          {showCopyButton === 'true' && (
             <Button type="button" className={styles.action} onClick={onCopy}>
               <DocumentDuplicateIcon className={styles.icon} />
               {t('components.common.codebox.copy')}

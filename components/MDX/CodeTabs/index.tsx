@@ -9,12 +9,14 @@ type MDXCodeTabsProps = {
   children: Array<ReactElement>;
   languages: string;
   displayNames?: string;
+  defaultTab?: string;
 };
 
 const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
   languages: rawLanguages,
   displayNames: rawDisplayNames,
   children: codes,
+  defaultTab = '0',
 }) => {
   const languages = rawLanguages.split('|');
   const displayNames = rawDisplayNames?.split('|') ?? [];
@@ -23,15 +25,15 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
     const displayName = displayNames[index];
 
     return {
-      key: language,
+      key: `${language}-${index}`,
       label: displayName?.length ? displayName : language.toUpperCase(),
     };
   });
 
   return (
-    <CodeTabs tabs={tabs} defaultValue={languages[0]}>
-      {languages.map((language, index) => (
-        <TabsPrimitive.Content key={language} value={language}>
+    <CodeTabs tabs={tabs} defaultValue={tabs[Number(defaultTab)].key}>
+      {languages.map((_, index) => (
+        <TabsPrimitive.Content key={tabs[index].key} value={tabs[index].key}>
           {codes[index]}
         </TabsPrimitive.Content>
       ))}

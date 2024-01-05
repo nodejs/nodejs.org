@@ -9,7 +9,7 @@ import { SKIP, visit } from 'unist-util-visit';
 import { LANGUAGES, DEFAULT_THEME } from './shiki.config.mjs';
 
 // This creates a memoized minimal Shikiji Syntax Highlighter
-const memoizedShikiji = await getHighlighterCore({
+export const memoizedShikiji = await getHighlighterCore({
   themes: [DEFAULT_THEME],
   langs: LANGUAGES,
   loadWasm: getWasmInlined,
@@ -115,6 +115,8 @@ export default function rehypeShikiji() {
         const displayNames = [];
         const codeTabsChildren = [];
 
+        let defaultTab = '0';
+
         visit(slicedTree, 'element', node => {
           const codeElement = node.children[0];
 
@@ -134,6 +136,17 @@ export default function rehypeShikiji() {
           // Map the display names of each variant for the CodeTab
           displayNames.push(displayName?.replaceAll('|', '') ?? '');
           codeTabsChildren.push(node);
+
+          // If `active="true"` is provided in a CodeBox
+          // then the default selected entry of the CodeTabs will be the desired entry
+          const specificActive = getMetaParameter(
+            codeElement.data?.meta,
+            'active'
+          );
+
+          if (specificActive === 'true') {
+            defaultTab = String(codeTabsChildren.length - 1);
+          }
 
           // Prevent visiting the code block children
           return SKIP;
@@ -157,6 +170,7 @@ export default function rehypeShikiji() {
           properties: {
             languages: languages.join('|'),
             displayNames: displayNames.join('|'),
+            defaultTab,
           },
         });
       }
@@ -227,7 +241,10 @@ export default function rehypeShikiji() {
       );
 
       // Adds a Copy Button to the CodeBox if requested as an additional parameter
-      children[0].properties.showCopyButton = showCopyButton === 'true';
+      // And avoids setting the property (overriding) if undefined or invalid value
+      if (showCopyButton && ['true', 'false'].includes(showCopyButton)) {
+        children[0].properties.showCopyButton = showCopyButton;
+      }
 
       // Replaces the <pre> element with the updated one
       parent.children.splice(index, 1, ...children);
