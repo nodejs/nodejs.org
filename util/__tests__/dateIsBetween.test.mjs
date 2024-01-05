@@ -19,12 +19,12 @@ describe('dateIsBetween', () => {
     expect(result).toBe(false);
   });
 
-  it('returns false when either start or end date is invalid', () => {
+  it('throws when either start or end date is invalid', () => {
     const invalidStartDate = 'Invalid Start Date';
     const validEndDate = '2024-01-01T00:00:00.000Z';
 
-    const result = dateIsBetween(invalidStartDate, validEndDate);
-
-    expect(result).toBe(false);
+    expect(() => dateIsBetween(invalidStartDate, validEndDate)).toThrow(
+      'dateIsBetween got called with invalid dates'
+    );
   });
 });
