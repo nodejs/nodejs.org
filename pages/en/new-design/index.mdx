@@ -1,0 +1,67 @@
+---
+layout: home.hbs
+---
+
+<section>
+
+# Run JavaScript Everywhere
+
+Node.js is a free, open-sourced, cross-platform JavaScript run-time
+environment that lets developers write command line tools and server-side
+scripts outside of a browser.
+
+<div className="flex flex-col md:flex-row gap-2 w-full">
+  <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
+    {({ release }) => (
+      <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+    )}
+  </WithNodeRelease>
+
+[Get Started](/learn)
+
+</div>
+
+</section>
+
+<section>
+
+<CodeTabs
+  languages="bash|bash"
+  displayNames="macOS / Linux (nvm)|Windows (Chocolatey)"
+  linkUrl="/download/package-manager"
+  linkText="More Options"
+>
+
+```bash
+# Install Node Version Manager (NVM)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+
+# Install Node.js
+nvm install --lts
+
+# Check that Node is installed
+node -v
+
+# Check your NPM version
+npm -v
+```
+
+```bash
+# Install Chocolatey
+iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+# Install Node.js
+choco install nodejs-lts
+
+# Check that Node is installed
+node -v
+
+# Check your NPM version
+npm -v
+```
+
+</CodeTabs>
+
+Copy and paste this snippet to install Node.js LTS via NVM
+
+</section>
