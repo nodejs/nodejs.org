@@ -27,10 +27,10 @@
 }
 
 .link {
-  @apply !flex
-    !items-center
-    !gap-2
-    !text-center
+  @apply flex
+    items-center
+    gap-2
+    text-center
     !text-neutral-200;
 
   & > .icon {
