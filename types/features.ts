@@ -5,20 +5,22 @@ export interface RSSFeed {
   blogCategory?: string;
 }
 
-export interface WithRange {
+interface WithRange {
   startDate: string;
   endDate: string;
 }
 
 export interface WebsiteBanner extends WithRange {
-  text?: string;
+  text: string;
+  link?: string;
+  /** @deprecated the html field is unsupported on the website redesign */
   html?: string;
-  link: string;
+  type?: 'default' | 'warning' | 'error';
 }
 
 export interface WebsiteBadge extends WithRange {
-  title?: string;
   text: string;
   link: string;
-  kind: 'default' | 'warning' | 'error';
+  title?: string;
+  kind?: 'default' | 'warning' | 'error';
 }

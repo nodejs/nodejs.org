@@ -5,6 +5,7 @@ import { useTheme } from 'next-themes';
 import type { FC } from 'react';
 
 import NavBar from '@/components/Containers/NavBar';
+import WithBanner from '@/components/withBanner';
 import { useClientContext, useSiteNavigation } from '@/hooks';
 import { useRouter } from '@/navigation.mjs';
 import { availableLocales } from '@/next.locales.mjs';
@@ -21,18 +22,22 @@ const WithNavBar: FC = () => {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
 
   return (
-    <NavBar
-      onThemeTogglerClick={toggleCurrnetTheme}
-      languages={{
-        currentLanguage: locale,
-        availableLanguages: availableLocales,
-        onChange: locale => replace(pathname!, { locale: locale.code }),
-      }}
-      navItems={navigationItems.map(([, { label, link }]) => ({
-        link,
-        text: label,
-      }))}
-    />
+    <>
+      <WithBanner section="index" />
+
+      <NavBar
+        onThemeTogglerClick={toggleCurrnetTheme}
+        languages={{
+          currentLanguage: locale,
+          availableLanguages: availableLocales,
+          onChange: locale => replace(pathname!, { locale: locale.code }),
+        }}
+        navItems={navigationItems.map(([, { label, link }]) => ({
+          link,
+          text: label,
+        }))}
+      />
+    </>
   );
 };
 

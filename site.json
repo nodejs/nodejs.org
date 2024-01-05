@@ -25,14 +25,7 @@
       "category": "vulnerability"
     }
   ],
-  "websiteBanners": {
-    "index": {
-      "startDate": "2023-11-26T00:00:00.000Z",
-      "endDate": "2023-12-05T00:00:00.000Z",
-      "link": "https://training.linuxfoundation.org/cyber-monday-js-2023/?utm_source=openjsf&utm_medium=homepage-ticker&utm_campaign=cybermonday23",
-      "html": "<img src='https://i.imgur.com/8FgdVOy.png' alt='Node.js Training Banner' style='margin:0 auto;border-radius:4px;' />"
-    }
-  },
+  "websiteBanners": {},
   "websiteBadges": {},
   "footerLinks": [
     {
