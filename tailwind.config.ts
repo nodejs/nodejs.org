@@ -90,7 +90,6 @@ export default {
         900: '#411526',
       },
       white: '#FFFFFF',
-      'white-opaque': 'rgba(255, 255, 255, 0.5)',
       transparent: 'transparent',
       shadow: '#101828',
     },
@@ -125,6 +124,10 @@ export default {
           'linear-gradient(180deg, theme(colors.neutral.100 / 50%) 0%, theme(colors.neutral.100 / 0%) 48.32%)',
         'gradient-subtle-dark':
           'linear-gradient(180deg, theme(colors.neutral.900 / 50%) 0%, theme(colors.neutral.900 / 0%) 48.32%)',
+        'gradient-subtle-gray':
+          'linear-gradient(180deg, theme(colors.neutral.900) 0%, theme(colors.neutral.900 / 80%) 100%)',
+        'gradient-subtle-white':
+          'linear-gradient(180deg, theme(colors.white) 0%, theme(colors.white / 80%) 100%)',
       },
       boxShadow: {
         xs: '0px 1px 2px 0px theme(colors.shadow / 5%)',
