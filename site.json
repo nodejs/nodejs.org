@@ -26,7 +26,15 @@
     }
   ],
   "websiteBanners": {},
-  "websiteBadges": {},
+  "websiteBadges": {
+    "index": {
+      "startDate": "2024-01-05T19:31:34.865Z",
+      "endDate": "2024-01-07T19:31:34.865Z",
+      "title": "New",
+      "text": "Node.js 20 LTS",
+      "link": "https://nodejs.org"
+    }
+  },
   "footerLinks": [
     {
       "link": "https://openjsf.org/wp-content/uploads/sites/84/2021/01/OpenJS-Foundation-Trademark-Policy-2021-01-12.docx.pdf",

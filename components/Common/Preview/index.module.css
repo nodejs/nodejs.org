@@ -5,26 +5,30 @@
     bg-neutral-950
     bg-[url('/static/images/patterns/hexagon-grid.svg')]
     bg-contain
-    bg-center
-    after:absolute
-    after:inset-0
-    after:m-auto
-    after:aspect-square
-    after:w-1/3
-    after:rounded-full
-    after:bg-gradient-radial
-    after:blur-3xl;
+    bg-center;
 
-  &.announcement {
-    @apply after:from-green-700/90;
-  }
+  &::after {
+    @apply absolute
+      inset-0
+      m-auto
+      aspect-square
+      w-1/3
+      rounded-full
+      bg-gradient-radial
+      blur-3xl
+      content-[''];
 
-  &.release {
-    @apply after:from-info-600/90;
-  }
+    &.announcement {
+      @apply from-green-700/90;
+    }
 
-  &.vulnerability {
-    @apply after:from-warning-600/90;
+    &.release {
+      @apply from-info-600/90;
+    }
+
+    &.vulnerability {
+      @apply from-warning-600/90;
+    }
   }
 
   & > .container {

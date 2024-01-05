@@ -73,8 +73,7 @@
     items-center
     gap-8
     self-stretch
-    bg-[url('/static/images/white-backdrop.svg')]
-    bg-center
+
     px-6
     py-14
     md:w-auto
@@ -83,8 +82,32 @@
     md:px-14
     md:py-0
     lg:gap-28
-    lg:px-28
-    dark:bg-[url('/static/images/dark-backdrop.svg')];
+    lg:px-28;
+
+  .hexagonBackdrop {
+    @apply absolute
+      left-0
+      z-[-1]
+      h-full
+      w-full
+      bg-[url('/static/images/patterns/hexagon-grid.svg')]
+      bg-center
+      bg-no-repeat;
+
+    &::after {
+      @apply absolute
+      inset-0
+      m-auto
+      aspect-square
+      w-[300px]
+      rounded-full
+      bg-gradient-radial
+      from-green-300/90
+      blur-[120px]
+      content-['']
+      dark:from-green-700/90;
+    }
+  }
 
   section {
     &:nth-of-type(1) {
@@ -122,6 +145,7 @@
           rounded-lg
           p-[10px_18px]
           text-base
+          font-semibold
           leading-7
           text-neutral-800
           dark:text-neutral-200/100;

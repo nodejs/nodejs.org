@@ -1,5 +1,3 @@
-@import '../../../styles/new/mixins';
-
 .button {
   @apply relative
    px-4.5
@@ -70,11 +68,9 @@
        z-[-1]
        h-full
        w-full
-       opacity-30;
-
-      @mixin glow-backdrop 8em, theme(colors.green.500);
-
-      content: '';
+       bg-gradient-glow-backdrop
+       opacity-30
+       content-[''];
     }
 
     &::after {
@@ -83,9 +79,8 @@
        top-[-1px]
        h-px
        w-[40%] bg-gradient-to-r from-green-600/0 via-green-600
-       to-green-600/0;
-
-      content: '';
+       to-green-600/0
+       content-[''];
     }
 
     &:disabled {
