@@ -18,7 +18,7 @@ const WithNavBar: FC = () => {
 
   const locale = useLocale();
 
-  const toggleCurrnetTheme = () =>
+  const toggleCurrentTheme = () =>
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
 
   return (
@@ -26,7 +26,7 @@ const WithNavBar: FC = () => {
       <WithBanner section="index" />
 
       <NavBar
-        onThemeTogglerClick={toggleCurrnetTheme}
+        onThemeTogglerClick={toggleCurrentTheme}
         languages={{
           currentLanguage: locale,
           availableLanguages: availableLocales,

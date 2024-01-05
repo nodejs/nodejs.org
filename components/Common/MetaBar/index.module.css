@@ -38,9 +38,12 @@
       @apply font-semibold
         text-neutral-900
         underline
-        hover:text-neutral-800
-        dark:text-white
-        dark:hover:text-neutral-200;
+        dark:text-white;
+
+      &:hover {
+        @apply text-neutral-800
+          dark:text-neutral-200;
+      }
     }
 
     ol {

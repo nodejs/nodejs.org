@@ -18,13 +18,13 @@
   a {
     @apply w-fit
       underline
-      decoration-white-opaque;
+      decoration-white/50;
   }
 
   svg {
     @apply h-4
       w-4
-      text-white-opaque;
+      text-white/50;
   }
 }
 

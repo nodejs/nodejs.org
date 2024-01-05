@@ -1,7 +1,7 @@
 {
   "topNavigation": {
     "learn": {
-      "link": "/learn/getting-started/introduction-to-nodejs",
+      "link": "/learn",
       "label": "components.header.links.learn"
     },
     "about": {

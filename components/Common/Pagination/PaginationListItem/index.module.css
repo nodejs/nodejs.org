@@ -10,9 +10,12 @@
     px-3
     py-2.5
     text-neutral-800
-    hover:bg-neutral-100
     aria-current:bg-green-600
     aria-current:text-white
-    dark:text-neutral-200
-    hover:dark:bg-neutral-900;
+    dark:text-neutral-200;
+
+  &:hover {
+    @apply bg-neutral-100
+      dark:bg-neutral-900;
+  }
 }

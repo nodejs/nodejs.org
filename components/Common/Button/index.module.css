@@ -33,7 +33,6 @@
   &.secondary {
     @apply rounded-lg
      text-neutral-800
-     disabled:opacity-50
      dark:text-neutral-200/100;
 
     &:hover {
@@ -44,7 +43,8 @@
     }
 
     &:disabled {
-      @apply bg-neutral-100/0;
+      @apply bg-neutral-100/0
+        opacity-50;
     }
 
     &:focus {
