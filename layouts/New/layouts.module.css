@@ -73,7 +73,6 @@
     items-center
     gap-8
     self-stretch
-
     px-6
     py-14
     md:w-auto
@@ -101,11 +100,10 @@
       aspect-square
       w-[300px]
       rounded-full
-      bg-gradient-radial
-      from-green-300/90
+      bg-green-300
       blur-[120px]
       content-['']
-      dark:from-green-700/90;
+      dark:bg-green-700;
     }
   }
 

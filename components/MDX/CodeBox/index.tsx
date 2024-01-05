@@ -16,7 +16,7 @@ const MDXCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   return (
     <CodeBox
       language={getLanguageDisplayName(language)}
-      showCopyButton={showCopyButton === 'true'}
+      showCopyButton={showCopyButton ? showCopyButton === 'true' : undefined}
     >
       {code}
     </CodeBox>

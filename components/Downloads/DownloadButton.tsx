@@ -1,5 +1,6 @@
 'use client';
 
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import type { FC, PropsWithChildren } from 'react';
 
 import Button from '@/components/Common/Button';
@@ -26,17 +27,21 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
       <Button
         variant="special"
         onClick={onDownloadNode}
-        className="hidden dark:block"
+        className="hidden flex-row items-center gap-2 dark:flex"
       >
         {children}
+
+        <ArrowRightIcon className="h-[20px] w-[20px] dark:opacity-50" />
       </Button>
 
       <Button
         variant="primary"
         onClick={onDownloadNode}
-        className="block dark:hidden"
+        className="flex flex-row items-center gap-2 dark:hidden"
       >
         {children}
+
+        <ArrowRightIcon className="h-[20px] w-[20px] dark:opacity-50" />
       </Button>
     </>
   );
