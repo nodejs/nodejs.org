@@ -1,4 +1,4 @@
-import type { RSSFeed, WebsiteBanner } from './features';
+import type { RSSFeed, WebsiteBadge, WebsiteBanner } from './features';
 
 export interface TwitterConfig {
   username: string;
@@ -34,6 +34,7 @@ export interface SiteConfig {
   twitter: TwitterConfig;
   rssFeeds: Array<RSSFeed>;
   websiteBanners: Record<string, WebsiteBanner>;
+  websiteBadges: Record<string, WebsiteBadge>;
   footerLinks: Array<FooterConfig>;
   socialLinks: Array<SocialConfig>;
 }
