@@ -2,18 +2,9 @@
 
 import classNames from 'classnames';
 import { toString } from 'hast-util-to-string';
-import { getHighlighterCore } from 'shikiji/core';
-import { getWasmInlined } from 'shikiji/wasm';
 import { SKIP, visit } from 'unist-util-visit';
 
-import { LANGUAGES, DEFAULT_THEME } from './shiki.config.mjs';
-
-// This creates a memoized minimal Shikiji Syntax Highlighter
-export const memoizedShikiji = await getHighlighterCore({
-  themes: [DEFAULT_THEME],
-  langs: LANGUAGES,
-  loadWasm: getWasmInlined,
-});
+import { highlightToHast } from './util/getHighlighter';
 
 // This is what Remark will use as prefix within a <pre> className
 // to attribute the current language of the <pre> element
@@ -224,10 +215,7 @@ export default function rehypeShikiji() {
       const languageId = codeLanguage.slice(languagePrefix.length);
 
       // Parses the <pre> contents and returns a HAST tree with the highlighted code
-      const { children } = memoizedShikiji.codeToHast(preElementContents, {
-        theme: DEFAULT_THEME,
-        lang: languageId,
-      });
+      const { children } = highlightToHast(preElementContents, languageId);
 
       // Adds the original language back to the <pre> element
       children[0].properties.class = classNames(
