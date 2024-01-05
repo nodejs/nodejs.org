@@ -5,8 +5,7 @@
 html,
 body {
   @apply h-full
-    w-full
-    overflow-hidden;
+    w-full;
 }
 
 body {
