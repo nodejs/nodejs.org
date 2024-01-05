@@ -5,7 +5,7 @@ import type { FC } from 'react';
 
 import { setClientContext } from '@/client-context';
 import { MDXRenderer } from '@/components/mdxRenderer';
-import { WithLayout } from '@/components/withLayout';
+import WithLayout from '@/components/withLayout';
 import { ENABLE_STATIC_EXPORT, VERCEL_REVALIDATE } from '@/next.constants.mjs';
 import { DEFAULT_VIEWPORT } from '@/next.dynamic.constants.mjs';
 import { dynamicRouter } from '@/next.dynamic.mjs';

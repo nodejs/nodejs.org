@@ -1,6 +1,6 @@
 ---
 title: Collab Summit
-layout: contribute.hbs
+layout: about.hbs
 ---
 
 # Collab Summit

@@ -1,6 +1,6 @@
 ---
 title: Contributing
-layout: contribute.hbs
+layout: about.hbs
 ---
 
 # Contributing
