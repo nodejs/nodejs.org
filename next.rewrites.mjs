@@ -1,5 +1,6 @@
 'use strict';
 
+import { ENABLE_WEBSITE_REDESIGN } from './next.constants.mjs';
 import { siteRedirects } from './next.json.mjs';
 import { availableLocaleCodes } from './next.locales.mjs';
 
@@ -37,12 +38,22 @@ const redirects = async () => {
  * @return {Promise<import('next').NextConfig['rewrites']>}
  */
 const rewrites = async () => {
-  return {
-    afterFiles: siteRedirects.internal.map(({ source, destination }) => ({
+  const mappedRewrites = siteRedirects.internal.map(
+    ({ source, destination }) => ({
       source: source.replace('/:locale/', localesMatch),
       destination,
-    })),
-  };
+    })
+  );
+
+  // @todo: remove this once website redesign is donw
+  if (ENABLE_WEBSITE_REDESIGN) {
+    mappedRewrites.push({
+      source: `${localesMatch}`,
+      destination: '/:locale/new-design',
+    });
+  }
+
+  return { afterFiles: mappedRewrites };
 };
 
 export { rewrites, redirects };
