@@ -1,11 +1,14 @@
 'use strict';
 
 import { evaluate } from '@mdx-js/mdx';
-import * as jsxRuntime from 'react/jsx-runtime';
+import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
 import { matter } from 'vfile-matter';
 
 import { NEXT_REHYPE_PLUGINS, NEXT_REMARK_PLUGINS } from './next.mdx.mjs';
 import { createGitHubSlug } from './util/gitHubUtils';
+
+// Defines the React Runtime Components
+const reactRuntime = { Fragment, jsx, jsxs };
 
 /**
  * This is our custom simple MDX Compiler that is used to compile Markdown and MDX
@@ -31,8 +34,9 @@ export async function compileMDX(source, fileExtension) {
     rehypePlugins: NEXT_REHYPE_PLUGINS,
     remarkPlugins: NEXT_REMARK_PLUGINS,
     format: fileExtension,
-    // Provide the JSX Runtime to the MDX Compiler
-    ...jsxRuntime,
+    baseUrl: import.meta.url,
+    jsxRuntime: 'automatic',
+    ...reactRuntime,
   });
 
   // Retrieve some parsed data from the VFile metadata

@@ -3,67 +3,63 @@ layout: home.hbs
 ---
 
 <section>
+  <WithBadge section="index" />
 
-<WithBadge section="index" />
+  <div className="flex flex-col gap-4">
+    # Run JavaScript Everywhere
 
-# Run JavaScript Everywhere
+    Node.js is a free, open-sourced, cross-platform JavaScript run-time
+    environment that lets developers write command line tools and server-side
+    scripts outside of a browser.
 
-Node.js is a free, open-sourced, cross-platform JavaScript run-time
-environment that lets developers write command line tools and server-side
-scripts outside of a browser.
+  </div>
+  <div className="flex flex-col md:flex-row gap-2 w-full">
+    <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
+      {({ release }) => (
+        <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+      )}
+    </WithNodeRelease>
 
-<div className="flex flex-col md:flex-row gap-2 w-full">
-  <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
-    {({ release }) => (
-      <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
-    )}
-  </WithNodeRelease>
+    [Get Started](/learn)
 
-[Get Started](/learn)
-
-</div>
-
+  </div>
 </section>
 
 <section>
+  <CodeTabs
+    languages="bash|bash"
+    displayNames="macOS / Linux (nvm)|Windows (Chocolatey)"
+    linkUrl="/download/package-manager"
+    linkText="More Options"
+  >
+    ```bash
+    # Install Node Version Manager (NVM)
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 
-<CodeTabs
-  languages="bash|bash"
-  displayNames="macOS / Linux (nvm)|Windows (Chocolatey)"
-  linkUrl="/download/package-manager"
-  linkText="More Options"
->
+    # Install Node.js
+    nvm install --lts
 
-```bash
-# Install Node Version Manager (NVM)
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+    # Check that Node is installed
+    node -v
 
-# Install Node.js
-nvm install --lts
+    # Check your NPM version
+    npm -v
+    ```
 
-# Check that Node is installed
-node -v
+    ```bash
+    # Install Chocolatey
+    iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
-# Check your NPM version
-npm -v
-```
+    # Install Node.js
+    choco install nodejs-lts
 
-```bash
-# Install Chocolatey
-iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+    # Check that Node is installed
+    node -v
 
-# Install Node.js
-choco install nodejs-lts
+    # Check your NPM version
+    npm -v
+    ```
 
-# Check that Node is installed
-node -v
-
-# Check your NPM version
-npm -v
-```
-
-</CodeTabs>
-
-Copy and paste this snippet to install Node.js LTS via a Package Manager
-
+  </CodeTabs>
+  Copy and paste this snippet to install Node.js LTS via a Package Manager
 </section>
