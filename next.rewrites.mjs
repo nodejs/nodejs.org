@@ -45,7 +45,7 @@ const rewrites = async () => {
     })
   );
 
-  // This allows us to remape legacy website URLs to the temporary redesign ones
+  // This allows us to remap legacy website URLs to the temporary redesign ones
   // @todo: remove this once website redesign is done
   if (ENABLE_WEBSITE_REDESIGN) {
     mappedRewrites.push({
