@@ -86,7 +86,7 @@
   .hexagonBackdrop {
     @apply absolute
       left-0
-      z-[-1]
+      -z-[1]
       h-full
       w-full
       bg-[url('/static/images/patterns/hexagon-grid.svg')]
@@ -112,43 +112,43 @@
   section {
     &:nth-of-type(1) {
       @apply flex
-          max-w-[490px]
-          flex-[1_0_0]
-          flex-col
-          items-start
-          gap-6
-          md:gap-8;
+        max-w-md
+        flex-[1_0_0]
+        flex-col
+        items-start
+        gap-8;
 
       h1 {
         @apply bg-gradient-subtle-gray
           bg-clip-text
           text-4xl
+          -tracking-[0.045rem]
+          [-webkit-text-fill-color:transparent]
           md:text-5xl
+          md:-tracking-[0.06rem]
           dark:bg-gradient-subtle-white;
-
-        -webkit-text-fill-color: transparent;
       }
 
       p {
         @apply text-base
-          leading-7
           text-neutral-900
           md:text-lg
           dark:text-white;
       }
 
-      > div a {
+      > div p a {
         @apply flex
           items-center
           justify-center
           gap-2
           rounded-lg
-          p-[10px_18px]
+          px-4.5
+          py-2.5
           text-base
           font-semibold
           leading-7
           text-neutral-800
-          dark:text-neutral-200/100;
+          dark:text-neutral-200;
 
         &:hover {
           @apply bg-neutral-100
@@ -161,13 +161,12 @@
 
     &:nth-of-type(2) {
       @apply flex
-          max-w-[490px]
-          flex-[1_0_0]
-          flex-col
-          content-center
-          items-center
-          gap-4
-          md:max-w-[630px];
+        max-w-md
+        flex-col
+        content-center
+        items-center
+        gap-4
+        md:max-w-2xl;
 
       p {
         @apply text-center

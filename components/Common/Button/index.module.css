@@ -1,86 +1,89 @@
 .button {
   @apply relative
-   px-4.5
-   py-2.5
-   font-semibold;
+    px-4.5
+    py-2.5
+    font-semibold;
 
   &.primary {
     @apply rounded
-     border
-     border-green-600
-     bg-green-600
-     text-white
-     shadow-sm;
+      border
+      border-green-600
+      bg-green-600
+      text-white
+      shadow-sm;
 
     &:hover {
       @apply border-green-700
-       bg-green-700;
+        bg-green-700;
     }
 
     &:focus {
       @apply border-green-700
-       bg-green-700;
+        bg-green-700;
     }
 
     &:disabled {
       @apply bg-green-600
-       opacity-50;
+        opacity-50;
     }
   }
 
   &.secondary {
     @apply rounded-lg
-     text-neutral-800
-     dark:text-neutral-200/100;
+      text-neutral-800
+      dark:text-neutral-200;
 
     &:hover {
       @apply bg-neutral-100
-       text-neutral-800
-       dark:bg-neutral-900
-       dark:text-neutral-200;
+        text-neutral-800
+        dark:bg-neutral-900
+        dark:text-neutral-200;
     }
 
     &:disabled {
-      @apply bg-neutral-100/0
+      @apply bg-transparent
         opacity-50;
     }
 
     &:focus {
       @apply bg-neutral-100
-       text-neutral-800
-       dark:bg-neutral-900
-       dark:text-neutral-200;
+        text-neutral-800
+        dark:bg-neutral-900
+        dark:text-neutral-200;
     }
   }
 
   &.special {
     @apply rounded-lg
-     border
-     border-green-600/30
-     bg-green-600/10
-     text-white
-     shadow-sm;
+      border
+      border-green-600/30
+      bg-green-600/10
+      text-white
+      shadow-sm;
 
     &::before {
       @apply absolute
-       right-0
-       top-0
-       z-[-1]
-       h-full
-       w-full
-       bg-gradient-glow-backdrop
-       opacity-30
-       content-[''];
+        right-0
+        top-0
+        -z-[1]
+        h-full
+        w-full
+        bg-gradient-glow-backdrop
+        opacity-30
+        content-[''];
     }
 
     &::after {
       @apply absolute
-       right-0
-       top-[-1px]
-       h-px
-       w-[40%] bg-gradient-to-r from-green-600/0 via-green-600
-       to-green-600/0
-       content-[''];
+        -top-px
+        right-0
+        h-px
+        w-2/5
+        bg-gradient-to-r
+        from-green-600/0
+        via-green-600
+        to-green-600/0
+        content-[''];
     }
 
     &:disabled {
