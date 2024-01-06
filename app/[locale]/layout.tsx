@@ -42,7 +42,12 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
           </ThemeProvider>
         </LocaleProvider>
 
-        <a rel="me" href="https://social.lfx.dev/@nodejs" />
+        <a
+          rel="me"
+          aria-hidden="true"
+          className="hidden"
+          href="https://social.lfx.dev/@nodejs"
+        />
 
         {VERCEL_ENV && (
           <>

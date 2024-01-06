@@ -21,7 +21,7 @@ const BreadcrumbHomeLink: FC<BreadcrumbHomeLinkProps> = ({
   const navigateToHome = t('components.common.breadcrumbs.navigateToHome');
 
   return (
-    <BreadcrumbLink href={href} {...props}>
+    <BreadcrumbLink href={href} aria-label={navigateToHome} {...props}>
       <HomeIcon
         title={navigateToHome}
         aria-label={navigateToHome}
