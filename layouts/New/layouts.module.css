@@ -86,7 +86,7 @@
   .hexagonBackdrop {
     @apply absolute
       left-0
-      -z-[1]
+      -z-10
       h-full
       w-full
       bg-[url('/static/images/patterns/hexagon-grid.svg')]

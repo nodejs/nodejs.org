@@ -5,8 +5,7 @@
     gap-2;
 
   svg {
-    @apply h-5
-      w-5
+    @apply size-5
       dark:opacity-50;
   }
 }

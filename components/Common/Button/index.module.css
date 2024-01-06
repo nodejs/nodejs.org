@@ -65,7 +65,7 @@
       @apply absolute
         right-0
         top-0
-        -z-[1]
+        -z-10
         h-full
         w-full
         bg-gradient-glow-backdrop
