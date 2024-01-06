@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import classNames from 'classnames';
 import type { FC, PropsWithChildren } from 'react';
 
 import Button from '@/components/Common/Button';
@@ -8,6 +9,8 @@ import { useDetectOS } from '@/hooks';
 import { useRouter } from '@/navigation.mjs';
 import type { NodeRelease } from '@/types';
 import { downloadUrlByOS } from '@/util/downloadUrlByOS';
+
+import styles from './index.module.css';
 
 type DownloadButtonProps = { release: NodeRelease };
 
@@ -27,21 +30,21 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
       <Button
         variant="special"
         onClick={onDownloadNode}
-        className="hidden flex-row items-center justify-center gap-2 dark:flex"
+        className={classNames(styles.downloadButton, 'hidden dark:flex')}
       >
         {children}
 
-        <ArrowRightIcon className="h-[20px] w-[20px] dark:opacity-50" />
+        <ArrowRightIcon />
       </Button>
 
       <Button
         variant="primary"
         onClick={onDownloadNode}
-        className="flex flex-row items-center justify-center gap-2 dark:hidden"
+        className={classNames(styles.downloadButton, 'flex dark:hidden')}
       >
         {children}
 
-        <ArrowRightIcon className="h-[20px] w-[20px] dark:opacity-50" />
+        <ArrowRightIcon />
       </Button>
     </>
   );
