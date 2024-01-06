@@ -60,6 +60,9 @@ export const LANGUAGES = [
 
 // This is the default theme we use for our Shiki Syntax Highlighter
 export const DEFAULT_THEME = {
+  // We updating this color because the background color and comment text color
+  // in the Codebox component do not comply with accessibility standards
+  // @see https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html
   colorReplacements: { '#616e88': '#707e99' },
   ...shikiNordTheme,
 };
