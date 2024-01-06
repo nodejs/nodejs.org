@@ -4,8 +4,7 @@
 
 html,
 body {
-  @apply h-full
-    w-full;
+  @apply size-full;
 }
 
 body {
