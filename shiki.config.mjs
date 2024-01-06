@@ -59,4 +59,7 @@ export const LANGUAGES = [
 ];
 
 // This is the default theme we use for our Shiki Syntax Highlighter
-export const DEFAULT_THEME = shikiNordTheme;
+export const DEFAULT_THEME = {
+  colorReplacements: { '#616e88': '#707e99' },
+  ...shikiNordTheme,
+};
