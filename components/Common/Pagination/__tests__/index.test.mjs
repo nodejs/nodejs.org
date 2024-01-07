@@ -162,7 +162,7 @@ describe('Pagination', () => {
         screen.getByRole('button', {
           name: 'components.common.pagination.prevAriaLabel',
         })
-      ).toBeDisabled();
+      ).toHaveAttribute('aria-disabled');
     });
 
     it('Disables "Next" button when the currentPage is equal to the last page', () => {
@@ -175,7 +175,7 @@ describe('Pagination', () => {
         screen.getByRole('button', {
           name: 'components.common.pagination.nextAriaLabel',
         })
-      ).toBeDisabled();
+      ).toHaveAttribute('aria-disabled');
     });
   });
 });
