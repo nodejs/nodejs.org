@@ -130,7 +130,8 @@
       }
 
       p {
-        @apply text-base
+        @apply max-w-[400px]
+          text-base
           text-neutral-900
           md:text-lg
           dark:text-white;
@@ -148,7 +149,7 @@
             w-full
             flex-col
             gap-2
-            lg:flex-row;
+            xl:flex-row;
         }
       }
     }

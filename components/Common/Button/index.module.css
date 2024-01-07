@@ -5,6 +5,10 @@
     text-center
     font-semibold;
 
+  &[aria-disabled='true'] {
+    @apply cursor-not-allowed;
+  }
+
   &.primary {
     @apply rounded
       border
