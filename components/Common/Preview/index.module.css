@@ -5,7 +5,8 @@
     bg-neutral-950
     bg-[url('/static/images/patterns/hexagon-grid.svg')]
     bg-contain
-    bg-center;
+    bg-center
+    @container/preview;
 
   &::after {
     @apply absolute
@@ -31,20 +32,37 @@
     }
   }
 
-  & > .container {
+  .container {
     @apply z-10
       mx-auto
       flex
       max-w-xl
       flex-col
-      gap-12
+      gap-2
       text-center
-      text-3xl
       font-semibold
-      text-white;
+      @sm/preview:gap-4
+      @md/preview:gap-6
+      @lg/preview:gap-8
+      @xl/preview:gap-12;
 
-    & > .logo {
-      @apply mx-auto;
+    h2 {
+      @apply text-xs
+        text-white
+        @sm/preview:text-base
+        @md/preview:text-lg
+        @lg/preview:text-xl
+        @xl/preview:text-2xl
+        @2xl/preview:text-3xl;
+    }
+
+    .logo {
+      @apply mx-auto
+        size-6
+        @sm/preview:size-10
+        @md/preview:size-14
+        @lg/preview:size-16
+        @xl/preview:size-20;
     }
   }
 }

@@ -16,7 +16,7 @@ type Author = {
 type BlogPostCardProps = {
   title: ComponentProps<typeof Preview>['title'];
   type: Required<ComponentProps<typeof Preview>>['type'];
-  description: string;
+  description?: string;
   authors: Array<Author>;
   date: Date;
 };
@@ -45,16 +45,22 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
       <Preview
         title={title}
         type={type}
-        height="auto"
         className={styles.preview}
+        width="auto"
+        height="auto"
       />
+
       <p className={styles.subtitle}>{t(`components.common.card.${type}`)}</p>
+
       <p aria-hidden="true" className={styles.title}>
         {title}
       </p>
-      <p className={styles.description}>{description}</p>
+
+      {description && <p className={styles.description}>{description}</p>}
+
       <footer className={styles.footer}>
         <AvatarGroup avatars={avatars} />
+
         <div className={styles.author}>
           <p>{avatars.join(', ')}</p>
 

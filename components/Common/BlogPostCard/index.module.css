@@ -1,14 +1,15 @@
 .container {
-  @apply max-w-full
-    bg-white
-    dark:bg-neutral-950;
+  @apply max-w-full;
 }
 
 .preview {
   @apply mb-6
-    max-w-full
+    h-auto
+    min-h-52
+    w-full
     rounded
-    p-4;
+    border
+    border-neutral-900 p-4;
 }
 
 .subtitle {
