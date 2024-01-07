@@ -1,31 +1,25 @@
-import { useMemo } from 'react';
-import type { FC, ComponentProps, HTMLAttributes as Attributes } from 'react';
+import type { FC, ComponentProps } from 'react';
 
 import { Link as LocalizedLink } from '@/navigation.mjs';
 
-// This is a wrapper on HTML's `a` tag
-const Html: FC<Attributes<HTMLAnchorElement>> = ({ children, ...p }) => (
-  <a {...p}>{children}</a>
-);
+type LinkProps = Omit<ComponentProps<typeof LocalizedLink>, 'href'> & {
+  href: string | undefined;
+};
 
-// This is Next.js's Link Component but with pre-fetch disabled
-const Next: FC<ComponentProps<typeof Link>> = ({ children, ...p }) => (
-  <LocalizedLink {...p}>{children}</LocalizedLink>
-);
+const Link: FC<LinkProps> = ({ children, href, ...props }) => {
+  if (!href || href.toString().startsWith('http')) {
+    return (
+      <a href={href} {...props}>
+        {children}
+      </a>
+    );
+  }
 
-const Link: FC<ComponentProps<typeof LocalizedLink>> = ({
-  children,
-  ...props
-}) => {
-  const Component = useMemo(
-    // Uses a different Link element/tag based on the nature of the Link
-    // as we don't want prefetch/rsc or etc for external links
-    () =>
-      !props.href || props.href.toString().startsWith('http') ? Html : Next,
-    [props.href]
+  return (
+    <LocalizedLink href={href?.toString()} {...props}>
+      {children}
+    </LocalizedLink>
   );
-
-  return <Component {...props}>{children}</Component>;
 };
 
 export default Link;
