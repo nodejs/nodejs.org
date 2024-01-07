@@ -6,7 +6,7 @@ import WithSidebarSelect from '@/components/withSidebarSelect';
 import styles from './index.module.css';
 
 type ProgressionSidebarProps = {
-  groups: ComponentProps<typeof ProgressionSidebarGroup>[];
+  groups: Array<ComponentProps<typeof ProgressionSidebarGroup>>;
 };
 
 const ProgressionSidebar: FC<ProgressionSidebarProps> = ({ groups }) => (

@@ -7,7 +7,7 @@ import styles from './index.module.css';
 
 type ProgressionSidebarGroupProps = {
   groupName: FormattedMessage;
-  items: ComponentProps<typeof ProgressionSidebarItem>[];
+  items: Array<ComponentProps<typeof ProgressionSidebarItem>>;
 };
 
 const ProgressionSidebarGroup: FC<ProgressionSidebarGroupProps> = ({

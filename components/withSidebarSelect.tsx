@@ -14,7 +14,7 @@ type SelectItem = {
 };
 
 type WithSidebarSelectProps = {
-  groups: { groupName: FormattedMessage; items: SelectItem[] }[];
+  groups: Array<{ groupName: FormattedMessage; items: Array<SelectItem> }>;
 };
 
 const WithSidebarSelect: FC<WithSidebarSelectProps> = ({ groups }) => {

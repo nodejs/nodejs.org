@@ -1,12 +1,12 @@
 import type { RichTranslationValues } from 'next-intl';
 import type { FC } from 'react';
 
-import Sidebar from '@/components/Common/Sidebar';
+import Sidebar from '@/components/Containers/Sidebar';
 import { useSiteNavigation } from '@/hooks/server';
 import type { NavigationKeys } from '@/types';
 
 type WithSidebarProps = {
-  navKeys: NavigationKeys[];
+  navKeys: Array<NavigationKeys>;
   context?: Record<string, RichTranslationValues>;
 };
 

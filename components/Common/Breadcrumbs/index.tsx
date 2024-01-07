@@ -13,7 +13,7 @@ type BreadcrumbLink = {
 };
 
 type BreadcrumbsProps = {
-  links: BreadcrumbLink[];
+  links: Array<BreadcrumbLink>;
   maxLength?: number;
   hideHome?: boolean;
 };

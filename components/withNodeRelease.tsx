@@ -4,7 +4,7 @@ import getReleaseData from '@/next-data/releaseData';
 import type { NodeRelease, NodeReleaseStatus } from '@/types';
 
 type WithNodeReleaseProps = {
-  status: NodeReleaseStatus[] | NodeReleaseStatus;
+  status: Array<NodeReleaseStatus> | NodeReleaseStatus;
   children: FC<{ release: NodeRelease }>;
 };
 

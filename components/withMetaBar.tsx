@@ -1,7 +1,7 @@
 import { useFormatter } from 'next-intl';
 import type { FC } from 'react';
 
-import MetaBar from '@/components/Common/MetaBar';
+import MetaBar from '@/components/Containers/MetaBar';
 import GitHub from '@/components/Icons/Social/GitHub';
 import Link from '@/components/Link';
 import { useClientContext } from '@/hooks/server';

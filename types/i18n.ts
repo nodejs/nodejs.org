@@ -13,4 +13,4 @@ export interface LocaleConfig {
 export type FormattedMessage =
   | string
   | ReactElement<HTMLElement, string | JSXElementConstructor<HTMLElement>>
-  | readonly ReactNode[];
+  | ReadonlyArray<ReactNode>;

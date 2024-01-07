@@ -10,7 +10,7 @@ type Tab = {
 };
 
 type TabsProps = {
-  tabs: Tab[];
+  tabs: Array<Tab>;
   addons?: ReactNode;
   headerClassName?: string;
 } & TabsPrimitive.TabsProps;

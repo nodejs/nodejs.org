@@ -50,6 +50,7 @@
       "parser": "@typescript-eslint/parser",
       "rules": {
         "@typescript-eslint/consistent-type-imports": "error",
+        "@typescript-eslint/array-type": ["error", { "default": "generic" }],
         "no-relative-import-paths/no-relative-import-paths": [
           "warn",
           { "allowSameFolder": true, "prefix": "@" }

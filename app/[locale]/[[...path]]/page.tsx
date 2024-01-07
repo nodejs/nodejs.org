@@ -12,7 +12,7 @@ import { dynamicRouter } from '@/next.dynamic.mjs';
 import { availableLocaleCodes, defaultLocale } from '@/next.locales.mjs';
 import { MatterProvider } from '@/providers/matterProvider';
 
-type DynamicStaticPaths = { path: string[]; locale: string };
+type DynamicStaticPaths = { path: Array<string>; locale: string };
 type DynamicParams = { params: DynamicStaticPaths };
 
 // This is the default Viewport Metadata
@@ -38,7 +38,7 @@ export const generateMetadata = async ({ params }: DynamicParams) => {
 // This provides all the possible paths that can be generated statically
 // + provides all the paths that we support on the Node.js Website
 export const generateStaticParams = async () => {
-  const paths: DynamicStaticPaths[] = [];
+  const paths: Array<DynamicStaticPaths> = [];
 
   // We don't need to compute all possible paths on regular builds
   // as we benefit from Next.js's ISR (Incremental Static Regeneration)

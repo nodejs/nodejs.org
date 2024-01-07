@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import type { FC, SVGProps } from 'react';
 
-import NavItem from '@/components/Common/NavItem';
+import NavItem from '@/components/Containers/NavBar/NavItem';
 import GitHub from '@/components/Icons/Social/GitHub';
 import LinkedIn from '@/components/Icons/Social/LinkedIn';
 import Mastodon from '@/components/Icons/Social/Mastodon';

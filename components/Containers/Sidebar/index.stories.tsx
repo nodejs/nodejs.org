@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import Sidebar from '@/components/Common/Sidebar';
+import Sidebar from '@/components/Containers/Sidebar';
 
 type Story = StoryObj<typeof Sidebar>;
 type Meta = MetaObj<typeof Sidebar>;

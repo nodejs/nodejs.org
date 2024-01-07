@@ -10,7 +10,7 @@ import styles from './index.module.css';
 type MetaBarProps = {
   items: Record<string, React.ReactNode>;
   headings?: {
-    items: Heading[];
+    items: Array<Heading>;
     minDepth?: number;
   };
 };

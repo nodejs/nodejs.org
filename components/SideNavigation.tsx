@@ -6,7 +6,7 @@ import { useSiteNavigation } from '@/hooks/server';
 import type { NavigationKeys } from '@/types';
 
 type SideNavigationProps = {
-  navigationKeys: NavigationKeys[];
+  navigationKeys: Array<NavigationKeys>;
   context?: Record<string, RichTranslationValues>;
 };
 

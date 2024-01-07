@@ -9,7 +9,7 @@ const parsePages = (
   pages: ComponentProps<typeof Pagination>['pages'],
   currentPage: number,
   totalPages: number
-): PaginationListItemProps[] =>
+): Array<PaginationListItemProps> =>
   pages.map(({ url }, index) => ({
     url,
     pageNumber: index + 1,
@@ -17,8 +17,9 @@ const parsePages = (
     totalPages,
   }));
 
-const createPaginationListItems = (parsedPages: PaginationListItemProps[]) =>
-  parsedPages.map(page => <PaginationListItem key={page.url} {...page} />);
+const createPaginationListItems = (
+  parsedPages: Array<PaginationListItemProps>
+) => parsedPages.map(page => <PaginationListItem key={page.url} {...page} />);
 
 // The minimum amount of elements are first page, current page, and last page
 const MINIMUM_AMOUNT_OF_ELEMENTS = 3;

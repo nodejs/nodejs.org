@@ -15,7 +15,7 @@ const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
 // Next.js Sitemap Generation doesn't support `alternate` refs yet
 // @see https://github.com/vercel/next.js/discussions/55646
 const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
-  const paths: string[] = [];
+  const paths: Array<string> = [];
 
   for (const locale of availableLocaleCodes) {
     const routes = await dynamicRouter.getRoutesByLanguage(locale);

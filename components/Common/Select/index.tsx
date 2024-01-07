@@ -18,17 +18,17 @@ type SelectValue = {
 
 type SelectGroup = {
   label?: FormattedMessage;
-  items: SelectValue[];
+  items: Array<SelectValue>;
 };
 
-const isStringArray = (values: unknown[]): values is string[] =>
+const isStringArray = (values: Array<unknown>): values is Array<string> =>
   Boolean(values[0] && typeof values[0] === 'string');
 
-const isValuesArray = (values: unknown[]): values is SelectValue[] =>
+const isValuesArray = (values: Array<unknown>): values is Array<SelectValue> =>
   Boolean(values[0] && typeof values[0] === 'object' && 'value' in values[0]);
 
 type SelectProps = {
-  values: SelectGroup[] | SelectValue[] | string[];
+  values: Array<SelectGroup> | Array<SelectValue> | Array<string>;
   defaultValue?: string;
   placeholder?: string;
   label?: string;

@@ -10,7 +10,7 @@ import type { LegacyFrontMatter } from '@/types';
 type MatterContext = {
   frontmatter: LegacyFrontMatter;
   pathname: string;
-  headings: Heading[];
+  headings: Array<Heading>;
   readingTime: ReadTimeResults;
   filename: string;
 };

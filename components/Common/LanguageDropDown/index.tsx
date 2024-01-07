@@ -13,7 +13,7 @@ type SimpleLocaleConfig = Pick<LocaleConfig, 'name' | 'code'>;
 type LanguageDropDownProps = {
   onChange?: (newLocale: SimpleLocaleConfig) => void;
   currentLanguage: string;
-  availableLanguages: SimpleLocaleConfig[];
+  availableLanguages: Array<SimpleLocaleConfig>;
 };
 
 const LanguageDropdown: FC<LanguageDropDownProps> = ({

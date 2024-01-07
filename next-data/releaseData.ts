@@ -6,7 +6,7 @@ import {
 } from '@/next.constants.mjs';
 import type { NodeRelease } from '@/types';
 
-const getReleaseData = (): Promise<NodeRelease[]> => {
+const getReleaseData = (): Promise<Array<NodeRelease>> => {
   // When we're using Static Exports the Next.js Server is not running (during build-time)
   // hence the self-ingestion APIs will not be available. In this case we want to load
   // the data directly within the current thread, which will anyways be loaded only once

@@ -2,7 +2,7 @@ import { CodeBracketIcon } from '@heroicons/react/24/outline';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 import AvatarGroup from '@/components/Common/AvatarGroup';
-import MetaBar from '@/components/Common/MetaBar';
+import MetaBar from '@/components/Containers/MetaBar';
 import GitHub from '@/components/Icons/Social/GitHub';
 import Link from '@/components/Link';
 

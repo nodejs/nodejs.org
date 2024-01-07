@@ -9,7 +9,7 @@ import { getAcronymFromString } from '@/util/stringUtils';
 import styles from './index.module.css';
 
 type AvatarGroupProps = {
-  avatars: ComponentProps<typeof Avatar>[];
+  avatars: Array<ComponentProps<typeof Avatar>>;
   limit?: number;
   isExpandable?: boolean;
 };

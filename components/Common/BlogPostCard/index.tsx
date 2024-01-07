@@ -17,7 +17,7 @@ type BlogPostCardProps = {
   title: ComponentProps<typeof Preview>['title'];
   type: Required<ComponentProps<typeof Preview>>['type'];
   description: string;
-  authors: Author[];
+  authors: Array<Author>;
   date: Date;
 };
 

@@ -12,7 +12,7 @@ type Context = Record<string, RichTranslationValues>;
 type Navigation = Record<string, NavigationEntry>;
 
 interface MappedNavigationEntry {
-  items: [string, MappedNavigationEntry][];
+  items: Array<[string, MappedNavigationEntry]>;
   label: FormattedMessage;
   link: string;
 }
@@ -51,7 +51,10 @@ const useSiteNavigation = () => {
     );
   };
 
-  const getSideNavigation = (keys: NavigationKeys[], context: Context = {}) => {
+  const getSideNavigation = (
+    keys: Array<NavigationKeys>,
+    context: Context = {}
+  ) => {
     const navigationEntries: Navigation = keys.reduce(
       (acc, key) => ({ ...acc, [key]: siteNavigation.sideNavigation[key] }),
       {}
