@@ -4,30 +4,21 @@ import type { FC, PropsWithChildren, ReactNode } from 'react';
 
 import styles from './index.module.css';
 
-type Tab = {
-  key: string;
-  label: string;
-};
+type Tab = { key: string; label: string };
 
-type TabsProps = {
+type TabsProps = TabsPrimitive.TabsProps & {
   tabs: Array<Tab>;
   addons?: ReactNode;
-  headerClassName?: string;
-} & TabsPrimitive.TabsProps;
+};
 
 const Tabs: FC<PropsWithChildren<TabsProps>> = ({
   tabs,
   addons,
-  headerClassName,
   children,
   ...props
 }) => (
   <TabsPrimitive.Root {...props}>
-    <div
-      className={classNames(headerClassName, {
-        [styles.tabsWithAddons]: addons != null,
-      })}
-    >
+    <div className={classNames({ [styles.tabsWithAddons]: !!addons })}>
       <TabsPrimitive.List className={classNames(styles.tabsList)}>
         {tabs.map(tab => (
           <TabsPrimitive.Trigger

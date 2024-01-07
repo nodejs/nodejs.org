@@ -1,50 +1,52 @@
-.root > [role='tabpanel'] > :first-child {
-  @apply rounded-t-none;
-}
-
-.header {
-  @apply flex
-    rounded-t
-    border-x
-    border-t
-    border-neutral-900
-    bg-neutral-950
-    px-4
-    pt-3
-    xs:px-2;
-
-  & [role='tablist'] > button {
-    @apply border-b
-      border-b-transparent
-      px-1
-      text-neutral-200;
-
-    &[aria-selected='true'] {
-      @apply border-b-green-400
-        text-green-400;
-    }
+.root {
+  > [role='tabpanel'] > :first-child {
+    @apply rounded-t-none;
   }
 
-  .link {
-    @apply hidden
-      items-center
-      gap-2
-      text-center
-      text-neutral-200
-      lg:flex;
+  > div {
+    @apply flex
+      rounded-t
+      border-x
+      border-t
+      border-neutral-900
+      bg-neutral-950
+      px-4
+      pt-3
+      xs:px-2;
 
-    & > .icon {
-      @apply h-4
-        w-4
-        text-neutral-300;
+    & [role='tablist'] > button {
+      @apply border-b
+        border-b-transparent
+        px-1
+        text-neutral-200;
+
+      &[aria-selected='true'] {
+        @apply border-b-green-400
+          text-green-400;
+      }
     }
 
-    &:is(:link, :visited) {
-      &:hover {
-        @apply text-neutral-400;
+    .link {
+      @apply hidden
+        items-center
+        gap-2
+        text-center
+        text-neutral-200
+        lg:flex;
 
-        & > .icon {
-          @apply text-neutral-600;
+      & > .icon {
+        @apply h-4
+          w-4
+          text-neutral-300;
+      }
+
+      &:is(:link, :visited) {
+        &:hover {
+          @apply text-neutral-400;
+
+          & > .icon {
+            @apply text-neutral-600;
+          }
         }
       }
     }

@@ -1,0 +1,25 @@
+.tabsList {
+  @apply mb-12
+    mt-8
+    flex
+    gap-2
+    border-b
+    border-b-neutral-200
+    font-open-sans
+    dark:border-b-neutral-800;
+
+  .tabsTrigger {
+    @apply border-b-2
+      border-b-transparent
+      px-1
+      pb-[11px]
+      text-sm
+      font-semibold
+      text-neutral-800
+      data-[state=active]:border-b-green-600
+      data-[state=active]:text-green-600
+      dark:text-neutral-200
+      dark:data-[state=active]:border-b-green-400
+      dark:data-[state=active]:text-green-400;
+  }
+}

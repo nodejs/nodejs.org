@@ -6,16 +6,10 @@ import { Link } from '@/navigation.mjs';
 
 import styles from './index.module.css';
 
-export type CodeTabsExternaLink = {
+type CodeTabsProps = Pick<ComponentProps<typeof Tabs>, 'tabs'> & {
   linkUrl?: string;
   linkText?: string;
 };
-
-type CodeTabsProps = Pick<
-  ComponentProps<typeof Tabs>,
-  'tabs' | 'onValueChange' | 'defaultValue'
-> &
-  CodeTabsExternaLink;
 
 const CodeTabs: FC<PropsWithChildren<CodeTabsProps>> = ({
   children,
@@ -26,7 +20,6 @@ const CodeTabs: FC<PropsWithChildren<CodeTabsProps>> = ({
   <Tabs
     {...props}
     className={styles.root}
-    headerClassName={styles.header}
     addons={
       linkUrl &&
       linkText && (

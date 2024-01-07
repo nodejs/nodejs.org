@@ -26,24 +26,12 @@ const BlogLayout: FC = async () => {
   const { pathname } = getClientContext();
   const t = await getTranslations();
 
-  const predefinedBlogCategories = [
-    {
-      key: 'all',
-      label: t('layouts.blog.categories.all'),
-    },
-    {
-      key: 'announcements',
-      label: t('layouts.blog.categories.announcements'),
-    },
-    {
-      key: 'release',
-      label: t('layouts.blog.categories.release'),
-    },
-    {
-      key: 'vulnerability',
-      label: t('layouts.blog.categories.vulnerability'),
-    },
-  ];
+  const mapCategoriesToTabs = (categories: Array<string>) =>
+    categories.map(category => ({
+      key: category,
+      label: t(`layouts.blog.categories.${category}`),
+      link: `/blog/${category}`,
+    }));
 
   const blogData = await getBlogCategory(pathname);
 
@@ -57,8 +45,13 @@ const BlogLayout: FC = async () => {
         <h4>{t('layouts.blog.subtitle')}</h4>
 
         <WithBlogCategories
-          categories={predefinedBlogCategories}
           blogData={blogData}
+          categories={mapCategoriesToTabs([
+            'all',
+            'announcements',
+            'release',
+            'vulnerability',
+          ])}
         />
       </main>
 
