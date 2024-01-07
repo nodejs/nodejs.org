@@ -2,25 +2,25 @@ import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 export const OrderedLists: StoryObj = {
   render: () => (
-    <div className="mdxContent">
+    <main>
       <ol>
         <li>Ordered lists</li>
         <li>Like this</li>
         <li>with numbers</li>
       </ol>
-    </div>
+    </main>
   ),
 };
 
 export const UnorderedLists: StoryObj = {
   render: () => (
-    <div className="mdxContent">
+    <main>
       <ul>
         <li>Unordered lists</li>
         <li>those without</li>
         <li>numbers</li>
       </ul>
-    </div>
+    </main>
   ),
 };
 

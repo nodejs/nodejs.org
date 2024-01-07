@@ -198,9 +198,9 @@ export const Default: Story = {
       return {
         Content: (
           <ChangelogModal {...args}>
-            <div className="mdxContent">
+            <main>
               <MDXRenderer Component={MDXContent} />
-            </div>
+            </main>
           </ChangelogModal>
         ),
       };

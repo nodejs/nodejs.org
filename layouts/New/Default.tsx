@@ -12,7 +12,7 @@ const DefaultLayout: FC<PropsWithChildren> = ({ children }) => (
     <ArticleLayout>
       <WithSidebar navKeys={[]} />
 
-      <div className="mdxContent">{children}</div>
+      <main>{children}</main>
     </ArticleLayout>
 
     <WithFooter />

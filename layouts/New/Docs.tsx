@@ -16,7 +16,7 @@ const DocsLayout: FC<PropsWithChildren> = ({ children }) => (
     <ArticleLayout>
       <WithSideBar navKeys={[]} />
 
-      <div className="mdxContent">{children}</div>
+      <main>{children}</main>
 
       <WithMetaBar />
     </ArticleLayout>

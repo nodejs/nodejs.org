@@ -13,7 +13,7 @@ const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
     <ArticleLayout>
       <WithSidebar navKeys={['about', 'getInvolved']} />
 
-      <div className="mdxContent">{children}</div>
+      <main>{children}</main>
 
       <WithMetaBar />
 

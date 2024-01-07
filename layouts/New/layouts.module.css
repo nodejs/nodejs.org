@@ -149,28 +149,6 @@
             flex-col
             gap-2
             lg:flex-row;
-
-          p a {
-            @apply flex
-              items-center
-              justify-center
-              gap-2
-              rounded-lg
-              px-4.5
-              py-2.5
-              text-base
-              font-semibold
-              leading-7
-              text-neutral-800
-              dark:text-neutral-200;
-
-            &:hover {
-              @apply bg-neutral-100
-                text-neutral-800
-                dark:bg-neutral-900
-                dark:text-neutral-200;
-            }
-          }
         }
       }
     }

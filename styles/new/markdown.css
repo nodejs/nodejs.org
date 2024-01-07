@@ -1,4 +1,4 @@
-.mdxContent {
+main {
   hr {
     @apply w-full
       border-t
@@ -53,9 +53,7 @@
       dark:text-white;
   }
 
-  a,
-  a:link,
-  a:visited {
+  a {
     @apply text-green-600
       dark:text-green-400;
 
