@@ -31,12 +31,7 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
   const t = useTranslations();
 
   const avatars = useMemo(
-    () =>
-      authors.map(({ fullName, src }) => ({
-        alt: fullName,
-        src,
-        toString: () => fullName,
-      })),
+    () => authors.map(({ fullName, src }) => ({ alt: fullName, src })),
     [authors]
   );
 
@@ -62,7 +57,7 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
         <AvatarGroup avatars={avatars} />
 
         <div className={styles.author}>
-          <p>{avatars.join(', ')}</p>
+          <p>{avatars.map(avatar => avatar.alt).join(', ')}</p>
 
           <Time
             date={date}

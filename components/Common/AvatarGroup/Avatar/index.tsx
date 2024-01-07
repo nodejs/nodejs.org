@@ -1,3 +1,5 @@
+'use client';
+
 import * as RadixAvatar from '@radix-ui/react-avatar';
 import type { FC } from 'react';
 

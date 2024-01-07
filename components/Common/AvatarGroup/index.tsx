@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import type { ComponentProps, FC } from 'react';
 import { useState, useMemo } from 'react';
