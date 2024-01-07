@@ -99,7 +99,7 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
           <span className={styles.language}>{language}</span>
 
           {showCopyButton && (
-            <Button type="button" className={styles.action} onClick={onCopy}>
+            <Button className={styles.action} onClick={onCopy}>
               <DocumentDuplicateIcon className={styles.icon} />
               {t('components.common.codebox.copy')}
             </Button>

@@ -7,7 +7,7 @@ type Meta = MetaObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    variant: 'primary',
+    kind: 'primary',
     children: 'Download Node (LTS)',
     disabled: false,
   },
@@ -15,7 +15,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    variant: 'secondary',
+    kind: 'secondary',
     children: 'Download Node (LTS)',
     disabled: false,
   },
@@ -23,7 +23,7 @@ export const Secondary: Story = {
 
 export const Special: Story = {
   args: {
-    variant: 'special',
+    kind: 'special',
     children: 'Download Node (LTS)',
     disabled: false,
   },

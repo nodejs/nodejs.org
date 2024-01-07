@@ -1,24 +1,33 @@
 import classNames from 'classnames';
-import type { FC, ButtonHTMLAttributes } from 'react';
+import type { FC, AnchorHTMLAttributes } from 'react';
+
+import Link from '@/components/Link';
 
 import styles from './index.module.css';
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: 'primary' | 'secondary' | 'special';
+type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+  kind?: 'primary' | 'secondary' | 'special';
+  // We have an extra `disabled` prop as we simulate a button
+  disabled?: boolean;
 };
 
 const Button: FC<ButtonProps> = ({
-  variant = 'primary',
+  kind = 'primary',
+  disabled = false,
+  href = undefined,
   children,
   className,
   ...props
 }) => (
-  <button
-    className={classNames(styles.button, styles[variant], className)}
+  <Link
+    role="button"
+    href={disabled ? undefined : href}
+    aria-disabled={disabled}
+    className={classNames(styles.button, styles[kind], className)}
     {...props}
   >
     {children}
-  </button>
+  </Link>
 );
 
 export default Button;

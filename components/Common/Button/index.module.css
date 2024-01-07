@@ -14,7 +14,8 @@
 
     &:hover {
       @apply border-green-700
-        bg-green-700;
+        bg-green-700
+        text-white;
     }
 
     &:focus {
@@ -22,7 +23,7 @@
         bg-green-700;
     }
 
-    &:disabled {
+    &[aria-disabled='true'] {
       @apply bg-green-600
         opacity-50;
     }
@@ -40,7 +41,7 @@
         dark:text-neutral-200;
     }
 
-    &:disabled {
+    &[aria-disabled='true'] {
       @apply bg-transparent
         opacity-50;
     }
@@ -86,7 +87,7 @@
         content-[''];
     }
 
-    &:disabled {
+    &[aria-disabled='true'] {
       @apply opacity-50;
     }
 

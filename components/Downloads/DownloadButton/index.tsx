@@ -6,7 +6,6 @@ import type { FC, PropsWithChildren } from 'react';
 
 import Button from '@/components/Common/Button';
 import { useDetectOS } from '@/hooks';
-import { useRouter } from '@/navigation.mjs';
 import type { NodeRelease } from '@/types';
 import { downloadUrlByOS } from '@/util/downloadUrlByOS';
 
@@ -19,17 +18,12 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
   children,
 }) => {
   const { os, bitness } = useDetectOS();
-  const { push } = useRouter();
-
-  const nodeDownloadLink = downloadUrlByOS(versionWithPrefix, os, bitness);
-
-  const onDownloadNode = () => push(nodeDownloadLink);
 
   return (
     <>
       <Button
-        variant="special"
-        onClick={onDownloadNode}
+        kind="special"
+        href={downloadUrlByOS(versionWithPrefix, os, bitness)}
         className={classNames(styles.downloadButton, 'hidden dark:flex')}
       >
         {children}
@@ -38,8 +32,8 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
       </Button>
 
       <Button
-        variant="primary"
-        onClick={onDownloadNode}
+        kind="primary"
+        href={downloadUrlByOS(versionWithPrefix, os, bitness)}
         className={classNames(styles.downloadButton, 'flex dark:hidden')}
       >
         {children}
