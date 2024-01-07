@@ -37,10 +37,9 @@ const Pagination: FC<PaginationProps> = ({
       className={styles.pagination}
     >
       <Button
-        type="button"
         aria-label={t('components.common.pagination.prevAriaLabel')}
         disabled={currentPage === 1}
-        variant="secondary"
+        kind="secondary"
         className={styles.previousButton}
       >
         <ArrowLeftIcon className={styles.arrowIcon} />
@@ -48,10 +47,9 @@ const Pagination: FC<PaginationProps> = ({
       </Button>
       <ol className={styles.list}>{parsedPages}</ol>
       <Button
-        type="button"
         aria-label={t('components.common.pagination.nextAriaLabel')}
         disabled={currentPage === pages.length}
-        variant="secondary"
+        kind="secondary"
         className={styles.nextButton}
       >
         <span>{t('components.common.pagination.next')}</span>

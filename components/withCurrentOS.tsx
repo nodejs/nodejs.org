@@ -5,11 +5,13 @@ import type { FC } from 'react';
 import { useDetectOS } from '@/hooks';
 
 type WithCurrentOS = {
-  children: FC<{ os: ReturnType<typeof useDetectOS> }>;
+  children: FC<{ currentOS: ReturnType<typeof useDetectOS> }>;
 };
 
-export const WithCurrentOS: FC<WithCurrentOS> = ({ children: Component }) => {
+const WithCurrentOS: FC<WithCurrentOS> = ({ children: Component }) => {
   const osData = useDetectOS();
 
-  return <Component os={osData} />;
+  return <Component currentOS={osData} />;
 };
+
+export default WithCurrentOS;

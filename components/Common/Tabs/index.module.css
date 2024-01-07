@@ -1,6 +1,6 @@
 .tabsList {
   @apply flex
-    gap-1
+    gap-2
     font-open-sans;
 
   .tabsTrigger {

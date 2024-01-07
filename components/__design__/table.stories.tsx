@@ -2,7 +2,7 @@ import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 export const Table: StoryObj = {
   render: () => (
-    <div className="mdxContent">
+    <main>
       <table>
         <thead>
           <tr>
@@ -29,13 +29,13 @@ export const Table: StoryObj = {
           </tr>
         </tbody>
       </table>
-    </div>
+    </main>
   ),
 };
 
 export const HeadlessTable: StoryObj = {
   render: () => (
-    <div className="mdxContent">
+    <main>
       <table>
         <tbody>
           <tr>
@@ -55,7 +55,7 @@ export const HeadlessTable: StoryObj = {
           </tr>
         </tbody>
       </table>
-    </div>
+    </main>
   ),
 };
 

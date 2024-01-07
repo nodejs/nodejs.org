@@ -45,7 +45,7 @@ const Footer: FC = () => {
 
             return (
               <NavItem key={link.icon} href={link.link} type="footer">
-                <SocialIcon width={20} height={20} />
+                <SocialIcon width={20} height={20} aria-label={link.link} />
               </NavItem>
             );
           })}

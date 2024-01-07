@@ -1,5 +1,6 @@
 'use strict';
 
+import { ENABLE_WEBSITE_REDESIGN } from './next.constants.mjs';
 import { siteRedirects } from './next.json.mjs';
 import { availableLocaleCodes } from './next.locales.mjs';
 
@@ -9,7 +10,7 @@ import { availableLocaleCodes } from './next.locales.mjs';
 // Example: /:locale(ar/|ca/|de/|en/|es/|fa/|fr/|)about/security
 // Would match /ar/about/security, /ar/about/security/ for every language code (replace "ar") and
 // it would also match /about/security (without any language prefix)
-const localesMatch = `/:locale(${availableLocaleCodes.join('|')}|)?/`;
+const localesMatch = `/:locale(${availableLocaleCodes.join('|')}|)?`;
 
 /**
  * These are external redirects that happen before we check dynamic routes and rewrites
@@ -20,7 +21,7 @@ const localesMatch = `/:locale(${availableLocaleCodes.join('|')}|)?/`;
  */
 const redirects = async () => {
   return siteRedirects.external.map(({ source, destination }) => ({
-    source: source.replace('/:locale/', localesMatch),
+    source: source.replace('/:locale', localesMatch),
     // We prevent permanent redirects as in general the redirects are safeguards
     // of legacy or old pages or pages that moved, and in general we don't want permanent redirects
     permanent: false,
@@ -37,12 +38,23 @@ const redirects = async () => {
  * @return {Promise<import('next').NextConfig['rewrites']>}
  */
 const rewrites = async () => {
-  return {
-    afterFiles: siteRedirects.internal.map(({ source, destination }) => ({
-      source: source.replace('/:locale/', localesMatch),
+  const mappedRewrites = siteRedirects.internal.map(
+    ({ source, destination }) => ({
+      source: source.replace('/:locale', localesMatch),
       destination,
-    })),
-  };
+    })
+  );
+
+  // This allows us to remap legacy website URLs to the temporary redesign ones
+  // @todo: remove this once website redesign is done
+  if (ENABLE_WEBSITE_REDESIGN) {
+    mappedRewrites.push({
+      source: localesMatch,
+      destination: '/:locale/new-design',
+    });
+  }
+
+  return { afterFiles: mappedRewrites };
 };
 
 export { rewrites, redirects };

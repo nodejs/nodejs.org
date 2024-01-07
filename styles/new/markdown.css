@@ -1,4 +1,4 @@
-.mdxContent {
+main {
   hr {
     @apply w-full
       border-t
@@ -53,11 +53,8 @@
       dark:text-white;
   }
 
-  a,
-  a:link,
-  a:visited {
-    @apply inline-block
-      text-green-600
+  a {
+    @apply text-green-600
       dark:text-green-400;
 
     &:hover {

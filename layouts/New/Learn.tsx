@@ -14,11 +14,11 @@ const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
     <ArticleLayout>
       <WithProgressionSidebar navKey="learn" />
 
-      <div className="mdxContent">
+      <main>
         {children}
 
         <WithCrossLinks navKey="learn" />
-      </div>
+      </main>
 
       <WithMetaBar />
 

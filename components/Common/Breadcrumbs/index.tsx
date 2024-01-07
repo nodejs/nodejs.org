@@ -1,4 +1,3 @@
-import { type LinkProps } from 'next/link';
 import { useMemo, type FC } from 'react';
 
 import BreadcrumbHomeLink from '@/components/Common/Breadcrumbs/BreadcrumbHomeLink';
@@ -10,7 +9,7 @@ import type { FormattedMessage } from '@/types';
 
 type BreadcrumbLink = {
   label: FormattedMessage;
-  href: LinkProps['href'];
+  href: string | undefined;
 };
 
 type BreadcrumbsProps = {

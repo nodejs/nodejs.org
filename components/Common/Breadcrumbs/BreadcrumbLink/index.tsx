@@ -18,7 +18,7 @@ const BreadcrumbLink: FC<BreadcrumbLinkProps> = ({
     itemScope
     itemType="http://schema.org/Thing"
     itemProp="item"
-    itemID={href.toString()}
+    itemID={href?.toString()}
     href={href}
     className={classNames(
       styles.link,

@@ -11,9 +11,10 @@ import LegacyLearnLayout from '@/layouts/LearnLayout';
 import AboutLayout from '@/layouts/New/About';
 import DefaultLayout from '@/layouts/New/Default';
 import DocsLayout from '@/layouts/New/Docs';
+import HomeLayout from '@/layouts/New/Home';
 import LearnLayout from '@/layouts/New/Learn';
 import { ENABLE_WEBSITE_REDESIGN } from '@/next.constants.mjs';
-import type { LegacyLayouts } from '@/types';
+import type { Layouts, LegacyLayouts } from '@/types';
 
 /** @deprecated these should be removed with the website redesin */
 const legacyLayouts = {
@@ -21,35 +22,36 @@ const legacyLayouts = {
   'about.hbs': LegacyAboutLayout,
   'blog-category.hbs': LegacyBlogCategoryLayout,
   'blog-post.hbs': LegacyBlogPostLayout,
-  'contribute.hbs': LegacyAboutLayout,
   'download.hbs': LegacyDownloadLayout,
   'index.hbs': LegacyIndexLayout,
   'learn.hbs': LegacyLearnLayout,
   'page.hbs': LegacyDefaultLayout,
-} satisfies Record<string, FC>;
+} satisfies Record<LegacyLayouts, FC>;
 
 /** all the currently available layouts from website redesign */
 const redesignLayouts = {
-  'docs.hbs': DocsLayout,
   'about.hbs': AboutLayout,
-  'blog-category.hbs': DefaultLayout,
-  'blog-post.hbs': DefaultLayout,
-  'contribute.hbs': AboutLayout,
-  'download.hbs': DefaultLayout,
-  'index.hbs': DefaultLayout,
+  'docs.hbs': DocsLayout,
+  'home.hbs': HomeLayout,
   'learn.hbs': LearnLayout,
   'page.hbs': DefaultLayout,
-} satisfies Record<string, FC>;
+} satisfies Record<Layouts, FC>;
 
-/** @deprecated this should be removed once we sunset the legacy layouts */
-const availableLayouts = ENABLE_WEBSITE_REDESIGN
-  ? redesignLayouts
-  : legacyLayouts;
+type WithLayout<L = Layouts | LegacyLayouts> = PropsWithChildren<{ layout: L }>;
 
-type WithLayoutProps = PropsWithChildren<{ layout: LegacyLayouts }>;
-
-export const WithLayout: FC<WithLayoutProps> = ({ layout, children }) => {
-  const LayoutComponent = availableLayouts[layout];
+const WithRedesign: FC<WithLayout<Layouts>> = ({ layout, children }) => {
+  const LayoutComponent = redesignLayouts[layout] ?? DefaultLayout;
 
   return <LayoutComponent>{children}</LayoutComponent>;
 };
+
+/** @deprecated method to be removed once website redesign is finished */
+const WithLegacy: FC<WithLayout<LegacyLayouts>> = ({ layout, children }) => {
+  const LayoutComponent = legacyLayouts[layout] ?? LegacyDefaultLayout;
+
+  return <LayoutComponent>{children}</LayoutComponent>;
+};
+
+// Decides which Layout Connector to use based on the Environment
+// @todo: This should be removed once we switch to Redesign
+export default ENABLE_WEBSITE_REDESIGN ? WithRedesign : WithLegacy;

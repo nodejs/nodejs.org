@@ -5,7 +5,7 @@ import type { FC } from 'react';
 import semVer from 'semver';
 
 import Link from '@/components/Link';
-import { WithCurrentOS } from '@/components/withCurrentOS';
+import WithCurrentOS from '@/components/withCurrentOS';
 import { useClientContext } from '@/hooks';
 import { DIST_URL } from '@/next.constants.mjs';
 import type { NodeRelease } from '@/types';
@@ -60,9 +60,9 @@ const PrimaryDownloadMatrix: FC<NodeRelease> = ({
         <ul className="no-padding download-platform">
           <li>
             <WithCurrentOS>
-              {({ os }) => (
+              {({ currentOS }) => (
                 <a
-                  href={`${DIST_URL}${versionWithPrefix}/node-${versionWithPrefix}-x${os.bitness}.msi`}
+                  href={`${DIST_URL}${versionWithPrefix}/node-${versionWithPrefix}-x${currentOS.bitness}.msi`}
                   data-version={versionWithPrefix}
                 >
                   <svg
@@ -76,7 +76,7 @@ const PrimaryDownloadMatrix: FC<NodeRelease> = ({
                   </svg>
                   {downloads.WindowsInstaller}
                   <p className="small color-lightgray">
-                    node-{versionWithPrefix}-x{os.bitness}.msi
+                    node-{versionWithPrefix}-x{currentOS.bitness}.msi
                   </p>
                 </a>
               )}

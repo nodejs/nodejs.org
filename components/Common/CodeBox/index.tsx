@@ -63,6 +63,7 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   language,
   // For now we only want to render the Copy Button by default
   // if the Website Redesign is Enabled
+  // @todo remove this check once we migrate to website redesign
   showCopyButton = ENABLE_WEBSITE_REDESIGN,
 }) => {
   const ref = useRef<HTMLPreElement>(null);
@@ -98,7 +99,7 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
           <span className={styles.language}>{language}</span>
 
           {showCopyButton && (
-            <Button type="button" className={styles.action} onClick={onCopy}>
+            <Button className={styles.action} onClick={onCopy}>
               <DocumentDuplicateIcon className={styles.icon} />
               {t('components.common.codebox.copy')}
             </Button>

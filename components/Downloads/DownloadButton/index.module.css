@@ -1,0 +1,11 @@
+.downloadButton {
+  @apply flex-row
+    items-center
+    justify-center
+    gap-2;
+
+  svg {
+    @apply size-5
+      dark:opacity-50;
+  }
+}

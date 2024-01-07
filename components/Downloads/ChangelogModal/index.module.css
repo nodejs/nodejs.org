@@ -82,19 +82,17 @@
     }
   }
 
-  .wrapper {
-    :global(.mdxContent) {
-      @apply flex
-        flex-col
-        gap-4;
+  .wrapper main {
+    @apply flex
+      flex-col
+      gap-4;
 
-      a {
-        @apply underline;
-      }
+    a {
+      @apply underline;
+    }
 
-      pre {
-        @apply overflow-auto;
-      }
+    pre {
+      @apply overflow-auto;
     }
   }
 }

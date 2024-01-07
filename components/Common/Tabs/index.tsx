@@ -23,12 +23,12 @@ const Tabs: FC<PropsWithChildren<TabsProps>> = ({
   ...props
 }) => (
   <TabsPrimitive.Root {...props}>
-    <TabsPrimitive.List
+    <div
       className={classNames(headerClassName, {
         [styles.tabsWithAddons]: addons != null,
       })}
     >
-      <div className={classNames(styles.tabsList)}>
+      <TabsPrimitive.List className={classNames(styles.tabsList)}>
         {tabs.map(tab => (
           <TabsPrimitive.Trigger
             key={tab.key}
@@ -38,9 +38,11 @@ const Tabs: FC<PropsWithChildren<TabsProps>> = ({
             {tab.label}
           </TabsPrimitive.Trigger>
         ))}
-      </div>
-      {addons != null && <div className={styles.addons}>{addons}</div>}
-    </TabsPrimitive.List>
+      </TabsPrimitive.List>
+
+      {addons && <div className={styles.addons}>{addons}</div>}
+    </div>
+
     {children}
   </TabsPrimitive.Root>
 );

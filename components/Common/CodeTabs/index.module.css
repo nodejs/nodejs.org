@@ -10,10 +10,10 @@
     border-neutral-900
     bg-neutral-950
     px-4
-    pr-5
-    pt-3;
+    pt-3
+    xs:px-2;
 
-  & [role='tab'] {
+  & [role='tablist'] > button {
     @apply border-b
       border-b-transparent
       px-1
@@ -24,27 +24,28 @@
         text-green-400;
     }
   }
-}
 
-.link {
-  @apply flex
-    items-center
-    gap-2
-    text-center
-    text-neutral-200;
+  .link {
+    @apply hidden
+      items-center
+      gap-2
+      text-center
+      text-neutral-200
+      lg:flex;
 
-  & > .icon {
-    @apply h-4
-      w-4
-      text-neutral-300;
-  }
+    & > .icon {
+      @apply h-4
+        w-4
+        text-neutral-300;
+    }
 
-  &:is(:link, :visited) {
-    &:hover {
-      @apply text-neutral-400;
+    &:is(:link, :visited) {
+      &:hover {
+        @apply text-neutral-400;
 
-      & > .icon {
-        @apply text-neutral-600;
+        & > .icon {
+          @apply text-neutral-600;
+        }
       }
     }
   }

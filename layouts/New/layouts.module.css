@@ -64,3 +64,110 @@
       dark:bg-neutral-950;
   }
 }
+
+.homeLayout {
+  @apply mx-auto
+    flex
+    w-full
+    flex-col
+    items-center
+    gap-8
+    self-stretch
+    px-4
+    py-14
+    md:w-auto
+    md:flex-row
+    md:gap-14
+    md:px-14
+    md:py-0
+    lg:gap-28
+    lg:px-28;
+
+  .hexagonBackdrop {
+    @apply absolute
+      left-0
+      -z-10
+      h-full
+      w-full
+      bg-[url('/static/images/patterns/hexagon-grid.svg')]
+      bg-center
+      bg-no-repeat
+      opacity-50
+      md:opacity-100;
+
+    &::after {
+      @apply absolute
+      inset-0
+      m-auto
+      aspect-square
+      w-[300px]
+      rounded-full
+      bg-green-300
+      blur-[120px]
+      content-['']
+      dark:bg-green-700;
+    }
+  }
+
+  section {
+    &:nth-of-type(1) {
+      @apply flex
+        max-w-md
+        flex-[1_0_0]
+        flex-col
+        items-start
+        gap-8;
+
+      h1 {
+        @apply bg-gradient-subtle-gray
+          bg-clip-text
+          text-4xl
+          -tracking-[0.045rem]
+          [-webkit-text-fill-color:transparent]
+          md:text-5xl
+          md:-tracking-[0.06rem]
+          dark:bg-gradient-subtle-white;
+      }
+
+      p {
+        @apply text-base
+          text-neutral-900
+          md:text-lg
+          dark:text-white;
+      }
+
+      > div {
+        &:nth-of-type(1) {
+          @apply flex
+            flex-col
+            gap-4;
+        }
+
+        &:nth-of-type(2) {
+          @apply flex
+            w-full
+            flex-col
+            gap-2
+            lg:flex-row;
+        }
+      }
+    }
+
+    &:nth-of-type(2) {
+      @apply flex
+        max-w-md
+        flex-col
+        content-center
+        items-center
+        gap-4
+        md:max-w-2xl;
+
+      p {
+        @apply text-center
+          text-sm
+          text-neutral-800
+          dark:text-neutral-200;
+      }
+    }
+  }
+}
