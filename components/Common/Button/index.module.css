@@ -2,6 +2,7 @@
   @apply relative
     px-4.5
     py-2.5
+    text-center
     font-semibold;
 
   &.primary {
