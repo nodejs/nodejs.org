@@ -34,7 +34,6 @@ const Tabs: FC<PropsWithChildren<TabsProps>> = ({
             key={tab.key}
             value={tab.key}
             className={styles.tabsTrigger}
-            role="tab"
           >
             {tab.label}
           </TabsPrimitive.Trigger>
