@@ -193,6 +193,25 @@
     },
     "blogIndex": {
       "categoryName": "{category, select, all {Blog} other {{category} Blog Posts}}"
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "The latest Node.js news, case studies, tutorials, and resources.",
+      "categories": {
+        "all": "Everything",
+        "announcements": "Announcements",
+        "release": "Releases",
+        "vulnerability": "Vulnerabilities",
+        "advisory-board": "Advisory Board",
+        "community": "Community",
+        "feature": "Feature",
+        "module": "Module",
+        "npm": "NPM",
+        "uncategorized": "Uncategorized",
+        "video": "Video",
+        "weekly-updates": "Weekly Updates",
+        "wg": "Working Groups"
+      }
     }
   },
   "pages": {

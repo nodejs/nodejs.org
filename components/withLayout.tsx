@@ -9,6 +9,7 @@ import LegacyDownloadLayout from '@/layouts/DownloadLayout';
 import LegacyIndexLayout from '@/layouts/IndexLayout';
 import LegacyLearnLayout from '@/layouts/LearnLayout';
 import AboutLayout from '@/layouts/New/About';
+import BlogLayout from '@/layouts/New/Blog';
 import DefaultLayout from '@/layouts/New/Default';
 import DocsLayout from '@/layouts/New/Docs';
 import HomeLayout from '@/layouts/New/Home';
@@ -35,7 +36,7 @@ const redesignLayouts = {
   'home.hbs': HomeLayout,
   'learn.hbs': LearnLayout,
   'page.hbs': DefaultLayout,
-  'blog-category.hbs': DefaultLayout,
+  'blog-category.hbs': BlogLayout,
 } satisfies Record<Layouts, FC>;
 
 type WithLayout<L = Layouts | LegacyLayouts> = PropsWithChildren<{ layout: L }>;

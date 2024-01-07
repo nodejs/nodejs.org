@@ -1,7 +1,6 @@
 .baseLayout {
   @apply grid
-    h-screen
-    w-screen
+    size-full
     grid-cols-[1fr]
     grid-rows-[auto_1fr_auto];
 }
@@ -65,23 +64,26 @@
   }
 }
 
-.homeLayout {
+.homeLayout,
+.blogLayout {
   @apply mx-auto
     flex
     w-full
-    flex-col
-    items-center
-    gap-8
     self-stretch
     px-4
     py-14
+    md:px-14
+    lg:px-28;
+}
+
+.homeLayout {
+  @apply flex-col
+    items-center
+    gap-8
     md:w-auto
     md:flex-row
     md:gap-14
-    md:px-14
-    md:py-0
-    lg:gap-28
-    lg:px-28;
+    lg:gap-28;
 
   .hexagonBackdrop {
     @apply absolute
@@ -170,5 +172,16 @@
           dark:text-neutral-200;
       }
     }
+  }
+}
+
+.blogLayout {
+  @apply flex-col
+    gap-4
+    md:bg-gradient-subtle
+    md:dark:bg-gradient-subtle-dark;
+
+  h4 {
+    @apply font-medium text-neutral-800 dark:text-white;
   }
 }
