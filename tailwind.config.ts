@@ -117,7 +117,7 @@ export default {
       'ibm-plex-mono': ['var(--font-ibm-plex-mono)'],
     },
     extend: {
-      screens: { xs: { max: '670px' } },
+      screens: { xs: { max: '670px', min: '0px' } },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-subtle':
@@ -141,5 +141,8 @@ export default {
     },
   },
   darkMode: ['class', '[data-theme="dark"]'],
-  plugins: [require('@savvywombat/tailwindcss-grid-areas')],
+  plugins: [
+    require('@savvywombat/tailwindcss-grid-areas'),
+    require('@tailwindcss/container-queries'),
+  ],
 } satisfies Config;
