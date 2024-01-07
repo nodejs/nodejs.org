@@ -1,13 +1,6 @@
 'use strict';
 
 /**
- * This is used for the current Legacy Website Blog Pagination Generation
- *
- * @deperecated remove with website redesign
- */
-export const CURRENT_YEAR = new Date().getFullYear();
-
-/**
  * This is used to verify if the current Website is running on a Development Environment
  */
 export const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
@@ -115,6 +108,20 @@ export const NEXT_DATA_URL = process.env.NEXT_PUBLIC_DATA_URL
  */
 export const MD_EXTENSION_REGEX = /((\/)?(index))?\.mdx?$/i;
 
+/**
+ * This defines how many blog posts each pagination page should have
+ *
+ * @todo: update the value when moving to website redesign
+ */
+export const BLOG_POSTS_PER_PAGE = ENABLE_WEBSITE_REDESIGN ? 6 : 20;
+
+/**
+ * The `localStorage` key to store the theme choice of `next-themes`
+ *
+ * This is what allows us to store user preference for theming
+ */
+export const THEME_STORAGE_KEY = 'theme';
+
 /***
  * This is a list of all external links that are used on website sitemap.
  * @see https://github.com/nodejs/nodejs.org/issues/5813 for more context
@@ -128,54 +135,3 @@ export const EXTERNAL_LINKS_SITEMAP = [
   'https://trademark-list.openjsf.org/',
   'https://www.linuxfoundation.org/cookies',
 ];
-
-/**
- * The `localStorage` key to store the theme choice of `next-themes`
- *
- * This is what allows us to store user preference for theming
- */
-export const THEME_STORAGE_KEY = 'theme';
-
-/**
- * This is the Sentry DSN for the Node.js Website Project
- */
-export const SENTRY_DSN =
-  'https://02884d0745aecaadf5f780278fe5fe70@o4506191161786368.ingest.sentry.io/4506191307735040';
-
-/**
- * This states if Sentry should be enabled and bundled within our App
- *
- * We enable sentry by default if we're om development mode or deployed
- * on Vercel (either production or preview branches)
- */
-export const SENTRY_ENABLE = IS_DEVELOPMENT || !!VERCEL_ENV;
-
-/**
- * This configures the sampling rate for Sentry
- *
- * We always want to capture 100% on Vercel Preview Branches
- * and not when it's on Production Mode (nodejs.org)
- */
-export const SENTRY_CAPTURE_RATE =
-  SENTRY_ENABLE && VERCEL_ENV && BASE_URL !== 'https://nodejs.org' ? 1.0 : 0.01;
-
-/**
- * Provides the Route for Sentry's Server-Side Tunnel
- *
- * This is a `@sentry/nextjs` specific feature
- */
-export const SENTRY_TUNNEL = (components = '') =>
-  SENTRY_ENABLE ? `/monitoring${components}` : undefined;
-
-/**
- * This configures which Sentry features to tree-shake/remove from the Sentry bundle
- *
- * @see https://docs.sentry.io/platforms/javascript/guides/nextjs/configuration/tree-shaking/
- */
-export const SENTRY_EXTENSIONS = {
-  __SENTRY_DEBUG__: false,
-  __SENTRY_TRACING__: false,
-  __RRWEB_EXCLUDE_IFRAME__: true,
-  __RRWEB_EXCLUDE_SHADOW_DOM__: true,
-  __SENTRY_EXCLUDE_REPLAY_WORKER__: true,
-};

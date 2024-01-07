@@ -1,18 +1,20 @@
-import provideBlogData from '@/next-data/providers/blogData';
+import {
+  provideBlogCategories,
+  provideBlogPosts,
+  providePaginatedBlogPosts,
+} from '@/next-data/providers/blogData';
 import { VERCEL_REVALIDATE } from '@/next.constants.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 
-// We only support fetching these pages from the /en/ locale code
-const locale = defaultLocale.code;
-
-type StaticParams = { params: { category: string; locale: string } };
+type StaticParams = {
+  params: { locale: string; category: string; page: string };
+};
 
 // This is the Route Handler for the `GET` method which handles the request
-// for providing Blog Posts, Pagination for every supported Blog Category
-// this includes the `year-XXXX` categories for yearly archives (pagination)
+// for providing Blog Posts for Blog Categories and Pagination Metadata
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 export const GET = async (_: Request, { params }: StaticParams) => {
-  const data = await provideBlogData(params.category);
+  const data = providePaginatedBlogPosts(params.category, Number(params.page));
 
   return Response.json(data, { status: data.posts.length ? 200 : 404 });
 };
@@ -23,17 +25,29 @@ export const GET = async (_: Request, { params }: StaticParams) => {
 export const generateStaticParams = async () => {
   // This metadata is the original list of all available categories and all available years
   // within the Node.js Website Blog Posts (2011, 2012...)
-  const { meta } = await provideBlogData();
+  const categories = provideBlogCategories();
 
-  return [
-    ...meta.categories.map(category => ({ category, locale })),
-    ...meta.pagination.map(year => ({ category: `year-${year}`, locale })),
-  ];
+  const mappedCategories = categories.map(category => {
+    // gets the current pagination meta for a given category
+    const { pagination } = provideBlogPosts(category);
+
+    // creates a sequential array containing each page number
+    const pages = [...Array(pagination.pages).keys()].map((_, key) => key + 1);
+
+    // maps the data into valid Next.js Route Engine routes with all required params
+    return pages.map(page => ({
+      locale: defaultLocale.code,
+      page: String(page),
+      category,
+    }));
+  });
+
+  return mappedCategories.flat();
 };
 
-// Forces that only the paths from `generateStaticParams` are allowed, giving 404 on the contrary
+// Enforces that only the paths from `generateStaticParams` are allowed, giving 404 on the contrary
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 // Enforces that this route is cached and static as much as possible
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic

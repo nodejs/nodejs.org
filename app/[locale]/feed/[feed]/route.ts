@@ -15,7 +15,7 @@ type StaticParams = { params: { feed: string; locale: string } };
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 export const GET = async (_: Request, { params }: StaticParams) => {
   // Generate the Feed for the given feed type (blog, releases, etc)
-  const websiteFeed = await provideWebsiteFeeds(params.feed);
+  const websiteFeed = provideWebsiteFeeds(params.feed);
 
   return new NextResponse(websiteFeed, {
     headers: { 'Content-Type': 'application/xml' },

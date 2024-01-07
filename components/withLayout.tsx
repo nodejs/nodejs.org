@@ -35,6 +35,7 @@ const redesignLayouts = {
   'home.hbs': HomeLayout,
   'learn.hbs': LearnLayout,
   'page.hbs': DefaultLayout,
+  'blog-category.hbs': DefaultLayout,
 } satisfies Record<Layouts, FC>;
 
 type WithLayout<L = Layouts | LegacyLayouts> = PropsWithChildren<{ layout: L }>;

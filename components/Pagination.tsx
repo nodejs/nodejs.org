@@ -2,23 +2,26 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import Link from '@/components/Link';
+import type { BlogPagination } from '@/types';
 
-type PaginationProps = { prev?: number | null; next?: number | null };
+type PaginationProps = BlogPagination & { category: string };
 
-const Pagination: FC<PaginationProps> = ({ next, prev }) => {
+const Pagination: FC<PaginationProps> = ({ category, next, prev }) => {
   const t = useTranslations();
 
   return (
     <nav aria-label="pagination" className="pagination">
-      {next && (
-        <Link href={`/blog/year-${next}`}>
-          &lt; {t('components.pagination.next')}
+      {prev && (
+        <Link href={`/blog/${category}/page/${prev}`}>
+          &lt; {t('components.pagination.previous')}
         </Link>
       )}
 
-      {prev && (
-        <Link href={`/blog/year-${prev}`}>
-          {t('components.pagination.previous')} &gt;
+      {prev && next && ' | '}
+
+      {next && (
+        <Link href={`/blog/${category}/page/${next}`}>
+          {t('components.pagination.next')} &gt;
         </Link>
       )}
     </nav>

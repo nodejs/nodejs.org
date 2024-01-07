@@ -14,7 +14,7 @@ import {
   SENTRY_ENABLE,
   SENTRY_CAPTURE_RATE,
   SENTRY_TUNNEL,
-} from '@/next.constants.mjs';
+} from '@/sentry.constants.mjs';
 
 // This creates a custom Sentry Client with minimal integrations
 export const sentryClient = new BrowserClient({

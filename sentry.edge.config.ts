@@ -4,7 +4,7 @@ import {
   SENTRY_CAPTURE_RATE,
   SENTRY_DSN,
   SENTRY_ENABLE,
-} from '@/next.constants.mjs';
+} from '@/sentry.constants.mjs';
 
 init({
   // Only run Sentry on Vercel Environment

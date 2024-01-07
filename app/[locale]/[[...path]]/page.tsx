@@ -7,7 +7,7 @@ import { setClientContext } from '@/client-context';
 import { MDXRenderer } from '@/components/mdxRenderer';
 import WithLayout from '@/components/withLayout';
 import { ENABLE_STATIC_EXPORT, VERCEL_REVALIDATE } from '@/next.constants.mjs';
-import { DEFAULT_VIEWPORT } from '@/next.dynamic.constants.mjs';
+import { PAGE_VIEWPORT, DYNAMIC_ROUTES } from '@/next.dynamic.constants.mjs';
 import { dynamicRouter } from '@/next.dynamic.mjs';
 import { availableLocaleCodes, defaultLocale } from '@/next.locales.mjs';
 import { MatterProvider } from '@/providers/matterProvider';
@@ -17,7 +17,7 @@ type DynamicParams = { params: DynamicStaticPaths };
 
 // This is the default Viewport Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-viewport#generateviewport-function
-export const generateViewport = async () => ({ ...DEFAULT_VIEWPORT });
+export const generateViewport = async () => ({ ...PAGE_VIEWPORT });
 
 // This generates each page's HTML Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-metadata
@@ -26,12 +26,15 @@ export const generateMetadata = async ({ params }: DynamicParams) => {
 
   const pathname = dynamicRouter.getPathname(path);
 
-  // Retrieves and rewriting rule if the pathname matches any rule
-  const [, rewriteRule] = dynamicRouter.getRouteRewrite(pathname);
+  return dynamicRouter.getPageMetadata(locale, pathname);
+};
 
-  return dynamicRouter.getPageMetadata(
-    locale,
-    rewriteRule ? rewriteRule(pathname) : pathname
+// Gets all mapped routes to the Next.js Routing Engine by Locale
+const mapRoutesForLocale = async (locale: string) => {
+  const routesForLanguage = await dynamicRouter.getRoutesByLanguage(locale);
+
+  return routesForLanguage.map(pathname =>
+    dynamicRouter.mapPathToRoute(locale, pathname)
   );
 };
 
@@ -40,20 +43,14 @@ export const generateMetadata = async ({ params }: DynamicParams) => {
 export const generateStaticParams = async () => {
   const paths: Array<DynamicStaticPaths> = [];
 
-  // We don't need to compute all possible paths on regular builds
-  // as we benefit from Next.js's ISR (Incremental Static Regeneration)
-  if (!ENABLE_STATIC_EXPORT) {
-    return [];
-  }
-
-  for (const locale of availableLocaleCodes) {
-    const routesForLanguage = await dynamicRouter.getRoutesByLanguage(locale);
-
-    const mappedRoutesWithLocale = routesForLanguage.map(pathname =>
-      dynamicRouter.mapPathToRoute(locale, pathname)
+  // If static exports are enabled we need to compute all available routes
+  // And then append them to Next.js's Route Engine
+  if (ENABLE_STATIC_EXPORT) {
+    const allAvailableRoutes = await Promise.all(
+      availableLocaleCodes.map(mapRoutesForLocale)
     );
 
-    paths.push(...mappedRoutesWithLocale);
+    paths.push(...allAvailableRoutes.flat());
   }
 
   return paths.sort();
@@ -76,21 +73,43 @@ const getPage: FC<DynamicParams> = async ({ params }) => {
   // Configures the current Locale to be the given Locale of the Request
   unstable_setRequestLocale(locale);
 
+  // Gets the current full pathname for a given path
   const pathname = dynamicRouter.getPathname(path);
 
-  if (dynamicRouter.shouldIgnoreRoute(pathname)) {
-    return notFound();
-  }
+  // @todo: once removed the legacy layouts remove the any casting
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const staticGeneratedLayout = DYNAMIC_ROUTES.get(pathname) as any;
 
-  // Retrieves and rewriting rule if the pathname matches any rule
-  const [, rewriteRule] = dynamicRouter.getRouteRewrite(pathname);
+  // If the current patname is a statically generated route
+  // it means it does not have a Markdown file nor exists under the filesystem
+  // but it is a valid route with an assigned layout that should be rendered
+  if (staticGeneratedLayout !== undefined) {
+    // Decorate the Locale and current Pathname to Sentry
+    setTags({ pathname, locale });
+
+    // Metadata and shared Context to be available through the lifecycle of the page
+    const sharedContext = { pathname: `/${pathname}` };
+
+    // Defines a shared Server Context for the Client-Side
+    // That is shared for all pages under the dynamic router
+    setClientContext(sharedContext);
+
+    // The Matter Provider allows Client-Side injection of the data
+    // to a shared React Client Provider even though the page is rendered
+    // within a server-side context
+    return (
+      <MatterProvider {...sharedContext}>
+        <WithLayout layout={staticGeneratedLayout} />
+      </MatterProvider>
+    );
+  }
 
   // We retrieve the source of the Markdown file by doing an educated guess
   // of what possible files could be the source of the page, since the extension
   // context is lost from `getStaticProps` as a limitation of Next.js itself
   const { source, filename } = await dynamicRouter.getMarkdownFile(
     locale,
-    rewriteRule ? rewriteRule(pathname) : pathname
+    pathname
   );
 
   // Decorate the Locale and current Pathname to Sentry

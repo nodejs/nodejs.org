@@ -118,8 +118,8 @@
       "docs": "Docs"
     },
     "pagination": {
-      "next": "Newer | ",
-      "previous": "Older"
+      "next": "Next",
+      "previous": "Previous"
     },
     "common": {
       "breadcrumbs": {
@@ -192,7 +192,7 @@
       }
     },
     "blogIndex": {
-      "currentYear": "Blog from {year}"
+      "categoryName": "{category, select, all {Blog} other {{category} Blog Posts}}"
     }
   },
   "pages": {
