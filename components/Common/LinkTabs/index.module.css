@@ -26,7 +26,8 @@
 }
 
 .tabsSelect > div {
-  @apply hidden
+  @apply my-6
+    hidden
     w-full
     xs:flex;
 }

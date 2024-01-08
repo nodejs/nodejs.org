@@ -17,6 +17,8 @@ export const Default: Story = {
         src: 'https://avatars.githubusercontent.com/u/',
       },
     ],
+    category: 'vulnerability',
+    slug: '/blog/vulnerability/something',
     date: new Date('17 October 2023'),
   },
   decorators: [

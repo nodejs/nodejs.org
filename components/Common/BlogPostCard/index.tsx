@@ -5,6 +5,7 @@ import type { ComponentProps, FC } from 'react';
 import AvatarGroup from '@/components/Common/AvatarGroup';
 import Preview from '@/components/Common/Preview';
 import { Time } from '@/components/Common/Time';
+import Link from '@/components/Link';
 
 import styles from './index.module.css';
 
@@ -16,14 +17,18 @@ type Author = {
 type BlogPostCardProps = {
   title: ComponentProps<typeof Preview>['title'];
   type: Required<ComponentProps<typeof Preview>>['type'];
+  category: string;
   description?: string;
   authors: Array<Author>;
   date: Date;
+  slug: string;
 };
 
 const BlogPostCard: FC<BlogPostCardProps> = ({
   title,
   type,
+  slug,
+  category,
   description,
   authors,
   date,
@@ -37,19 +42,23 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
 
   return (
     <article className={styles.container}>
-      <Preview
-        title={title}
-        type={type}
-        className={styles.preview}
-        width="auto"
-        height="auto"
-      />
+      <Link href={slug} aria-label={title}>
+        <Preview
+          title={title}
+          type={type}
+          className={styles.preview}
+          width="100%"
+          height="auto"
+        />
+      </Link>
 
-      <p className={styles.subtitle}>{t(`components.common.card.${type}`)}</p>
+      <Link href={`/blog/${category}`} className={styles.subtitle}>
+        {t(`components.common.card.${type}`)}
+      </Link>
 
-      <p aria-hidden="true" className={styles.title}>
+      <Link href={slug} aria-hidden="true" className={styles.title}>
         {title}
-      </p>
+      </Link>
 
       {description && <p className={styles.description}>{description}</p>}
 

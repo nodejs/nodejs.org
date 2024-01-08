@@ -11,11 +11,10 @@ const WithMetaBar: FC = () => {
   const { headings, readingTime, frontmatter, filename } = useClientContext();
   const formatter = useFormatter();
 
-  const lastUpdated = formatter.dateTime(frontmatter.date ?? new Date(), {
-    month: 'short',
-    day: '2-digit',
-    year: 'numeric',
-  });
+  const lastUpdated = formatter.dateTime(
+    frontmatter.date ? new Date(frontmatter.date) : new Date(),
+    { month: 'short', day: '2-digit', year: 'numeric' }
+  );
 
   return (
     <MetaBar

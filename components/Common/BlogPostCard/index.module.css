@@ -6,14 +6,15 @@
   @apply mb-6
     h-auto
     min-h-52
-    w-full
     rounded
     border
-    border-neutral-900 p-4;
+    border-neutral-900
+    p-4;
 }
 
 .subtitle {
   @apply mb-2
+    inline-block
     text-xs
     font-semibold
     text-green-600
@@ -22,6 +23,7 @@
 
 .title {
   @apply mb-2
+    block
     text-xl
     font-semibold
     text-neutral-900

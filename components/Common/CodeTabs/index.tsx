@@ -6,7 +6,10 @@ import { Link } from '@/navigation.mjs';
 
 import styles from './index.module.css';
 
-type CodeTabsProps = Pick<ComponentProps<typeof Tabs>, 'tabs'> & {
+type CodeTabsProps = Pick<
+  ComponentProps<typeof Tabs>,
+  'tabs' | 'defaultValue'
+> & {
   linkUrl?: string;
   linkText?: string;
 };

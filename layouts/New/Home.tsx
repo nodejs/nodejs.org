@@ -9,11 +9,11 @@ const HomeLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <WithNavBar />
 
-    <main className={styles.homeLayout}>
-      <div className={styles.hexagonBackdrop} />
+    <div className={styles.homeLayout}>
+      <div />
 
-      {children}
-    </main>
+      <main>{children}</main>
+    </div>
 
     <WithFooter />
   </>
