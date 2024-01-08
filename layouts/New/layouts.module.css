@@ -138,8 +138,22 @@
             @apply flex
               w-full
               flex-col
+              items-start
               gap-2
               xl:flex-row;
+
+            > div {
+              @apply flex
+                flex-col
+                gap-1;
+
+              small {
+                @apply text-center
+                  text-xs
+                  text-neutral-800
+                  dark:text-neutral-400;
+              }
+            }
           }
         }
       }

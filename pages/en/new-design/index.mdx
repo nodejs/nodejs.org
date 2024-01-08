@@ -16,7 +16,10 @@ layout: home.hbs
   <div>
     <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
       {({ release }) => (
-        <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+        <div>
+          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+          <small>Includes Node.js {release.version} and NPM {release.npm}</small>
+        </div>
       )}
     </WithNodeRelease>
 
