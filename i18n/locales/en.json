@@ -197,6 +197,7 @@
     "blog": {
       "title": "Blog",
       "subtitle": "The latest Node.js news, case studies, tutorials, and resources.",
+      "selectCategory": "Categories",
       "categories": {
         "all": "Everything",
         "announcements": "Announcements",

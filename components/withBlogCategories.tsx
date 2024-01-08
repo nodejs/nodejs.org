@@ -21,7 +21,7 @@ const mapAuthorToCardAuthors = (author: string) => {
 
   return authors.map(fullName => ({
     fullName,
-    src: 'https://avatars.githubusercontent.com/u/',
+    src: `https://ui-avatars.com/api/?name=${fullName}`,
   }));
 };
 
@@ -49,7 +49,7 @@ const WithBlogCategories: FC<WithBlogCategoriesProps> = ({
       </div>
     </LinkTabs>
 
-    <div className="mt-12 border-t border-t-neutral-200 pt-5 dark:border-t-neutral-900">
+    <div className="mt-8 border-t border-t-neutral-200 pt-5 dark:border-t-neutral-900">
       <Pagination
         currentPage={blogData.page}
         pages={mapPaginationPages(blogData.category, blogData.pagination.pages)}

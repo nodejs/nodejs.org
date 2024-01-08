@@ -1,11 +1,12 @@
 .tabsList {
-  @apply mb-12
-    mt-8
+  @apply mb-6
+    mt-10
     flex
     gap-2
     border-b
     border-b-neutral-200
     font-open-sans
+    xs:hidden
     dark:border-b-neutral-800;
 
   .tabsTrigger {
@@ -22,4 +23,10 @@
       dark:data-[state=active]:border-b-green-400
       dark:data-[state=active]:text-green-400;
   }
+}
+
+.tabsSelect > div {
+  @apply hidden
+    w-full
+    xs:flex;
 }
