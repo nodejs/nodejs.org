@@ -35,14 +35,11 @@ describe('BlogPostCard', () => {
     it('Renders the title prop correctly', () => {
       const { title } = renderBlogPostCard({});
 
-      // Title from Preview component
-      expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent(
-        title
-      );
+      expect(screen.getAllByText(title).length).toBe(2);
 
-      // The second title should be hidden for screen-readers
-      // to prevent them from reading it twice
-      expect(screen.getAllByText(title)[1]).toHaveAttribute(
+      // title from preview should be ignored as the one from Links
+      // and blog card/post are what matter
+      expect(screen.getAllByText(title)[0]).toHaveAttribute(
         'aria-hidden',
         'true'
       );

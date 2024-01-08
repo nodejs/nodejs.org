@@ -13,7 +13,7 @@ type PreviewProps = {
 
 const Preview: FC<PreviewProps> = ({ type = 'announcements', title }) => (
   <div className={classNames(styles.root, styles[type])}>
-    <div className={styles.container}>
+    <div className={styles.container} aria-hidden={true}>
       <JsIconWhite className={styles.logo} />
       {title}
     </div>
