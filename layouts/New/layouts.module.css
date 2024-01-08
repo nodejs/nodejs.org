@@ -189,14 +189,15 @@
     @apply max-w-8xl
       gap-4
       px-4
-      py-14
+      py-12
       md:px-14
       lg:px-28;
 
-    h4 {
-      @apply font-medium
+    p {
+      @apply text-lg
+        font-medium
         text-neutral-800
-        dark:text-white;
+        dark:text-neutral-200;
     }
   }
 }
@@ -243,15 +244,7 @@
 
     > div:nth-of-type(1) {
       @apply mb-4
-        mt-2
-        h-auto
-        min-h-96
-        w-full
-        rounded
-        border
-        border-neutral-900
-        md:min-h-80
-        xs:min-h-52;
+        mt-2;
     }
   }
 }

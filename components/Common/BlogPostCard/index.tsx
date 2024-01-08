@@ -38,20 +38,14 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
   return (
     <article className={styles.container}>
       <Link href={slug} aria-label={title}>
-        <Preview
-          title={title}
-          type={type}
-          className={styles.preview}
-          width="100%"
-          height="auto"
-        />
+        <Preview title={title} type={type} />
       </Link>
 
       <Link href={`/blog/${category}`} className={styles.subtitle}>
         {t(`layouts.blog.categories.${category}`)}
       </Link>
 
-      <Link href={slug} aria-hidden="true" className={styles.title}>
+      <Link href={slug} className={styles.title}>
         {title}
       </Link>
 

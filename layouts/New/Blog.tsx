@@ -43,7 +43,7 @@ const BlogLayout: FC = async () => {
         <main>
           <h1>{t('layouts.blog.title')}</h1>
 
-          <h4>{t('layouts.blog.subtitle')}</h4>
+          <p>{t('layouts.blog.subtitle')}</p>
 
           <WithBlogCategories
             blogData={blogData}

@@ -1,7 +1,11 @@
 .root {
   @apply relative
     flex
+    aspect-[1.90/1]
     items-center
+    rounded
+    border
+    border-neutral-900
     bg-neutral-950
     bg-[url('/static/images/patterns/hexagon-grid.svg')]
     bg-contain
@@ -16,8 +20,9 @@
       w-1/3
       rounded-full
       bg-gradient-radial
-      blur-3xl
-      content-[''];
+      blur-2xl
+      content-['']
+      @md/preview:blur-3xl;
 
     &.announcements {
       @apply from-green-700/90;
@@ -36,30 +41,25 @@
     @apply z-10
       mx-auto
       flex
+      w-2/3
       max-w-xl
       flex-col
-      gap-2
+      gap-4
       text-center
+      text-xs
       font-semibold
-      @sm/preview:gap-4
+      text-white
       @md/preview:gap-6
+      @md/preview:text-sm
       @lg/preview:gap-8
-      @xl/preview:gap-12;
-
-    h2 {
-      @apply text-xs
-        text-white
-        @sm/preview:text-base
-        @md/preview:text-lg
-        @lg/preview:text-xl
-        @xl/preview:text-2xl
-        @2xl/preview:text-3xl;
-    }
+      @lg/preview:text-base
+      @xl/preview:gap-12
+      @xl/preview:text-lg
+      @2xl/preview:text-xl;
 
     .logo {
       @apply mx-auto
         size-6
-        @sm/preview:size-10
         @md/preview:size-14
         @lg/preview:size-16
         @xl/preview:size-20;

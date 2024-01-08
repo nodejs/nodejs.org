@@ -41,12 +41,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
               <p>{authors.map(author => author.fullName).join(', ')}</p>
             </section>
 
-            <Preview
-              title={frontmatter.title!}
-              type={type}
-              width="100%"
-              height="auto"
-            />
+            <Preview title={frontmatter.title!} type={type} />
 
             {children}
 

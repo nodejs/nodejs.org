@@ -2,18 +2,9 @@
   @apply max-w-full;
 }
 
-.preview {
-  @apply mb-6
-    h-auto
-    min-h-52
-    rounded
-    border
-    border-neutral-900
-    p-4;
-}
-
 .subtitle {
   @apply mb-2
+    mt-6
     inline-block
     text-xs
     font-semibold
