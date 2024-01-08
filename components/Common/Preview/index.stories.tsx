@@ -14,7 +14,7 @@ export const Default: Story = {
 
 export const Announcement: Story = {
   args: {
-    type: 'announcement',
+    type: 'announcements',
     title:
       'Changing the End-of-Life Date for Node.js 16 to September 11th, 2023',
   },

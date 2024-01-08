@@ -5,23 +5,11 @@ import BlogPostCard from '@/components/Common/BlogPostCard';
 import LinkTabs from '@/components/Common/LinkTabs';
 import Pagination from '@/components/Common/Pagination';
 import type { BlogPostsRSC } from '@/types';
+import { mapAuthorToCardAuthors } from '@/util/blogUtils';
 
 type WithBlogCategoriesProps = {
   categories: ComponentProps<typeof LinkTabs>['tabs'];
   blogData: BlogPostsRSC & { category: string; page: number };
-};
-
-// @todo: there might be a better place to export this and
-// we should check about the future of GitHub avatars
-// and mapping them to the respective users
-// @see https://github.com/nodejs/nodejs.dev/blob/main/src/data/blog/authors.yaml
-export const mapAuthorToCardAuthors = (author: string) => {
-  const authors = author.split(/, | and |;| by /i);
-
-  return authors.map(fullName => ({
-    fullName,
-    src: `https://ui-avatars.com/api/?name=${fullName}`,
-  }));
 };
 
 const mapPaginationPages = (category: string, pages: number) =>

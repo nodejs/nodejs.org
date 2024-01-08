@@ -1,3 +1,5 @@
+export type BlogPreviewType = 'announcements' | 'release' | 'vulnerability';
+
 export interface BlogPost {
   title: string;
   author: string;

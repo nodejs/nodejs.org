@@ -2,14 +2,13 @@ import classNames from 'classnames';
 import type { CSSProperties, ComponentProps, FC } from 'react';
 
 import JsIconWhite from '@/components/Icons/Logos/JsIconWhite';
+import type { BlogPreviewType } from '@/types';
 
 import styles from './index.module.css';
 
-type PreviewType = 'announcement' | 'release' | 'vulnerability';
-
 type PreviewProps = {
   title: string;
-  type?: PreviewType;
+  type?: BlogPreviewType;
   height: CSSProperties['height'];
   width: CSSProperties['width'];
 } & Omit<ComponentProps<'div'>, 'children'>;

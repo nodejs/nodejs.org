@@ -1,17 +1,13 @@
 import { useTranslations } from 'next-intl';
-import type { ComponentProps, FC } from 'react';
+import type { FC } from 'react';
 
 import AvatarGroup from '@/components/Common/AvatarGroup';
 import Preview from '@/components/Common/Preview';
 import { Time } from '@/components/Common/Time';
 import Link from '@/components/Link';
+import { mapBlogCategoryToPreviewType } from '@/util/blogUtils';
 
 import styles from './index.module.css';
-
-const fallbackToSupportedTypes = (type: string) =>
-  ['announcement', 'release', 'vulnerability'].includes(type)
-    ? (type as ComponentProps<typeof Preview>['type'])
-    : 'announcement';
 
 // @todo: this should probably be a global type?
 type Author = { fullName: string; src: string };
@@ -37,7 +33,7 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
 
   const avatars = authors.map(({ fullName, src }) => ({ alt: fullName, src }));
 
-  const type = fallbackToSupportedTypes(category);
+  const type = mapBlogCategoryToPreviewType(category);
 
   return (
     <article className={styles.container}>

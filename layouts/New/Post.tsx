@@ -2,13 +2,16 @@ import type { FC, PropsWithChildren } from 'react';
 
 import AvatarGroup from '@/components/Common/AvatarGroup';
 import Preview from '@/components/Common/Preview';
-import { mapAuthorToCardAuthors } from '@/components/withBlogCategories';
 import WithBlogCrossLinks from '@/components/withBlogCrossLinks';
 import WithFooter from '@/components/withFooter';
 import WithMetaBar from '@/components/withMetaBar';
 import WithNavBar from '@/components/withNavBar';
 import { useClientContext } from '@/hooks/react-server';
 import ContentLayout from '@/layouts/New/Content';
+import {
+  mapAuthorToCardAuthors,
+  mapBlogCategoryToPreviewType,
+} from '@/util/blogUtils';
 
 import styles from './layouts.module.css';
 
@@ -16,6 +19,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
   const { frontmatter } = useClientContext();
 
   const authors = mapAuthorToCardAuthors(frontmatter.author);
+  const type = mapBlogCategoryToPreviewType(frontmatter.category);
 
   return (
     <>
@@ -38,8 +42,8 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
             </section>
 
             <Preview
-              title={frontmatter.title}
-              type={frontmatter.category}
+              title={frontmatter.title!}
+              type={type}
               width="100%"
               height="auto"
             />

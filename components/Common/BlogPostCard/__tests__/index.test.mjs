@@ -56,7 +56,7 @@ describe('BlogPostCard', () => {
 
     it.each([
       { label: 'layouts.blog.categories.vulnerability', type: 'vulnerability' },
-      { label: 'layouts.blog.categories.announcement', type: 'announcement' },
+      { label: 'layouts.blog.categories.announcements', type: 'announcements' },
       { label: 'layouts.blog.categories.release', type: 'release' },
     ])(
       'Renders "%label" text when passing it the type "%type"',

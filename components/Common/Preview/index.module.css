@@ -19,7 +19,7 @@
       blur-3xl
       content-[''];
 
-    &.announcement {
+    &.announcements {
       @apply from-green-700/90;
     }
 
