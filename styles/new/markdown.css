@@ -53,6 +53,11 @@ main {
       dark:text-white;
   }
 
+  p {
+    @apply text-neutral-900
+      dark:text-white;
+  }
+
   a {
     @apply text-green-600
       dark:text-green-400;

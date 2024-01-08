@@ -35,6 +35,6 @@
   @apply flex
     list-none
     justify-center
-    gap-0.5
+    gap-1
     [grid-area:pages];
 }

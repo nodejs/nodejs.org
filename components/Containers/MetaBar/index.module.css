@@ -3,6 +3,7 @@
     flex-col
     items-start
     gap-8
+    overflow-y-auto
     border-l
     border-l-neutral-200
     px-4

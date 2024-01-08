@@ -134,9 +134,7 @@
       p {
         @apply max-w-[400px]
           text-base
-          text-neutral-900
-          md:text-lg
-          dark:text-white;
+          md:text-lg;
       }
 
       > div {
