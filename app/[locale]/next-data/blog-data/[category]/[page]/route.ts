@@ -14,7 +14,14 @@ type StaticParams = {
 // for providing Blog Posts for Blog Categories and Pagination Metadata
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 export const GET = async (_: Request, { params }: StaticParams) => {
-  const data = providePaginatedBlogPosts(params.category, Number(params.page));
+  const requestedPage = Number(params.page);
+
+  const data =
+    requestedPage >= 1
+      ? // This allows us to blindly get all blog posts from a given category
+        // if the page number is 0 or something smaller than 1
+        providePaginatedBlogPosts(params.category, requestedPage)
+      : provideBlogPosts(params.category);
 
   return Response.json(data, { status: data.posts.length ? 200 : 404 });
 };
@@ -35,7 +42,8 @@ export const generateStaticParams = async () => {
     const pages = [...Array(pagination.pages).keys()].map((_, key) => key + 1);
 
     // maps the data into valid Next.js Route Engine routes with all required params
-    return pages.map(page => ({
+    // notice that we add an extra 0 in the beginning in case we want a non-paginated route
+    return [0, ...pages].map(page => ({
       locale: defaultLocale.code,
       page: String(page),
       category,

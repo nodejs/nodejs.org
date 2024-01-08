@@ -1,10 +1,10 @@
 import type { FC, PropsWithChildren } from 'react';
 
 import WithBreadcrumbs from '@/components/withBreadcrumbs';
-import WithCrossLinks from '@/components/withCrossLinks';
 import WithMetaBar from '@/components/withMetaBar';
 import WithNavBar from '@/components/withNavBar';
 import WithProgressionSidebar from '@/components/withProgressionSidebar';
+import WithSidebarCrossLinks from '@/components/withSidebarCrossLinks';
 import ArticleLayout from '@/layouts/New/Article';
 
 const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
@@ -17,7 +17,7 @@ const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
       <main>
         {children}
 
-        <WithCrossLinks navKey="learn" />
+        <WithSidebarCrossLinks navKey="learn" />
       </main>
 
       <WithMetaBar />

@@ -4,11 +4,9 @@ import CrossLink from '@/components/Common/CrossLink';
 import { useClientContext, useSiteNavigation } from '@/hooks/server';
 import type { NavigationKeys } from '@/types';
 
-type WithCrossLinksProps = {
-  navKey: NavigationKeys;
-};
+type WithCrossLinksProps = { navKey: NavigationKeys };
 
-const WithCrossLinks: FC<WithCrossLinksProps> = ({ navKey }) => {
+const WithSidebarCrossLinks: FC<WithCrossLinksProps> = ({ navKey }) => {
   const { getSideNavigation } = useSiteNavigation();
   const { pathname } = useClientContext();
 
@@ -46,4 +44,4 @@ const WithCrossLinks: FC<WithCrossLinksProps> = ({ navKey }) => {
   );
 };
 
-export default WithCrossLinks;
+export default WithSidebarCrossLinks;

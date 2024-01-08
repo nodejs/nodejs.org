@@ -6,6 +6,7 @@ import {
   mapAuthorToCardAuthors,
   mapCategoryType,
 } from '@/components/withBlogCategories';
+import WithBlogCrossLinks from '@/components/withBlogCrossLinks';
 import WithFooter from '@/components/withFooter';
 import WithMetaBar from '@/components/withMetaBar';
 import WithNavBar from '@/components/withNavBar';
@@ -47,6 +48,8 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
             />
 
             {children}
+
+            <WithBlogCrossLinks />
           </main>
         </div>
 
