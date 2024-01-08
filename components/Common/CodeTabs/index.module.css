@@ -3,7 +3,7 @@
     @apply rounded-t-none;
   }
 
-  > div {
+  > div:nth-of-type(1) {
     @apply flex
       rounded-t
       border-x
