@@ -24,13 +24,7 @@
   }
 
   > *:nth-child(2) {
-    @apply flex
-      w-full
-      flex-col
-      items-start
-      gap-6
-      self-stretch
-      overflow-y-auto
+    @apply overflow-y-auto
       overflow-x-hidden
       bg-gradient-subtle
       p-12
@@ -65,16 +59,12 @@
 }
 
 .homeLayout {
-  @apply mx-auto
-    flex
+  @apply flex
     w-full
-    flex-col
     items-center
-    self-stretch
+    justify-center
     px-4
     py-14
-    md:w-auto
-    md:flex-row
     md:px-14
     lg:px-28;
 
@@ -105,9 +95,8 @@
   }
 
   main {
-    @apply flex
-      flex-col
-      items-center
+    @apply items-center
+      justify-center
       gap-8
       md:flex-row
       md:gap-14
@@ -119,57 +108,54 @@
         max-w-md
         flex-[1_0_0]
         flex-col
-        items-start
         gap-8;
 
         h1 {
           @apply bg-gradient-subtle-gray
-          bg-clip-text
-          text-4xl
-          -tracking-[0.045rem]
-          [-webkit-text-fill-color:transparent]
-          md:text-5xl
-          md:-tracking-[0.06rem]
-          dark:bg-gradient-subtle-white;
+            bg-clip-text
+            text-4xl
+            -tracking-[0.045rem]
+            [-webkit-text-fill-color:transparent]
+            md:text-5xl
+            md:-tracking-[0.06rem]
+            dark:bg-gradient-subtle-white;
         }
 
         p {
           @apply max-w-[400px]
-          text-base
-          md:text-lg;
+            text-base
+            md:text-lg;
         }
 
         > div {
           &:nth-of-type(1) {
             @apply flex
-            flex-col
-            gap-4;
+              flex-col
+              gap-4;
           }
 
           &:nth-of-type(2) {
             @apply flex
-            w-full
-            flex-col
-            gap-2
-            xl:flex-row;
+              w-full
+              flex-col
+              gap-2
+              xl:flex-row;
           }
         }
       }
 
       &:nth-of-type(2) {
         @apply flex
-        max-w-md
-        flex-col
-        content-center
-        items-center
-        gap-4
-        md:max-w-2xl;
+          max-w-md
+          flex-col
+          gap-4
+          md:max-w-2xl;
 
         p {
           @apply text-center
-          text-sm
-          text-neutral-800
-          dark:text-neutral-200;
+            text-sm
+            text-neutral-800
+            dark:text-neutral-200;
         }
       }
     }
@@ -177,18 +163,16 @@
 }
 
 .blogLayout {
-  @apply w-full
+  @apply flex
+    w-full
+    justify-center
     bg-gradient-subtle
     xs:bg-none
     dark:bg-gradient-subtle-dark
     xs:dark:bg-none;
 
   main {
-    @apply mx-auto
-      flex
-      w-full
-      max-w-8xl
-      flex-col
+    @apply max-w-8xl
       gap-4
       px-4
       py-14
@@ -214,24 +198,22 @@
     xs:block;
 
   > *:nth-child(1) {
-    @apply w-full
+    @apply flex
+      w-full
+      justify-center
       bg-gradient-subtle
       px-4
-      py-12
-      md:px-12
+      py-14
+      md:px-14
+      lg:px-28
       xs:bg-none
       xs:pb-4
       dark:bg-gradient-subtle-dark
       xs:dark:bg-none;
 
     main {
-      @apply mx-auto
-        flex
-        w-full
-        max-w-[660px]
-        flex-col
-        items-start
-        gap-6;
+      @apply max-w-[660px]
+        gap-4;
     }
   }
 }

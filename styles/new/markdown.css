@@ -1,4 +1,9 @@
 main {
+  @apply flex
+    w-full
+    flex-col
+    gap-6;
+
   hr {
     @apply w-full
       border-t
