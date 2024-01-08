@@ -146,11 +146,6 @@
       },
       "languageDropdown": {
         "label": "Choose Language"
-      },
-      "card": {
-        "announcement": "Announcements",
-        "release": "Releases",
-        "vulnerability": "Vulnerabilities"
       }
     },
     "metabar": {

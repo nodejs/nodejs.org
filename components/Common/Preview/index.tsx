@@ -1,13 +1,15 @@
 import classNames from 'classnames';
-import type { CSSProperties, ComponentProps, FC, ReactNode } from 'react';
+import type { CSSProperties, ComponentProps, FC } from 'react';
 
 import JsIconWhite from '@/components/Icons/Logos/JsIconWhite';
 
 import styles from './index.module.css';
 
+type PreviewType = 'announcement' | 'release' | 'vulnerability';
+
 type PreviewProps = {
-  type?: 'announcement' | 'release' | 'vulnerability';
-  title: ReactNode;
+  title: string;
+  type?: PreviewType;
   height: CSSProperties['height'];
   width: CSSProperties['width'];
 } & Omit<ComponentProps<'div'>, 'children'>;

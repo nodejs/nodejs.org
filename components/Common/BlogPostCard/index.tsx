@@ -1,5 +1,4 @@
 import { useTranslations } from 'next-intl';
-import { useMemo } from 'react';
 import type { ComponentProps, FC } from 'react';
 
 import AvatarGroup from '@/components/Common/AvatarGroup';
@@ -9,14 +8,16 @@ import Link from '@/components/Link';
 
 import styles from './index.module.css';
 
-type Author = {
-  fullName: string;
-  src: string;
-};
+const fallbackToSupportedTypes = (type: string) =>
+  ['announcement', 'release', 'vulnerability'].includes(type)
+    ? (type as ComponentProps<typeof Preview>['type'])
+    : 'announcement';
+
+// @todo: this should probably be a global type?
+type Author = { fullName: string; src: string };
 
 type BlogPostCardProps = {
-  title: ComponentProps<typeof Preview>['title'];
-  type: Required<ComponentProps<typeof Preview>>['type'];
+  title: string;
   category: string;
   description?: string;
   authors: Array<Author>;
@@ -26,7 +27,6 @@ type BlogPostCardProps = {
 
 const BlogPostCard: FC<BlogPostCardProps> = ({
   title,
-  type,
   slug,
   category,
   description,
@@ -35,10 +35,9 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
 }) => {
   const t = useTranslations();
 
-  const avatars = useMemo(
-    () => authors.map(({ fullName, src }) => ({ alt: fullName, src })),
-    [authors]
-  );
+  const avatars = authors.map(({ fullName, src }) => ({ alt: fullName, src }));
+
+  const type = fallbackToSupportedTypes(category);
 
   return (
     <article className={styles.container}>
@@ -53,7 +52,7 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
       </Link>
 
       <Link href={`/blog/${category}`} className={styles.subtitle}>
-        {t(`components.common.card.${type}`)}
+        {t(`layouts.blog.categories.${category}`)}
       </Link>
 
       <Link href={slug} aria-hidden="true" className={styles.title}>

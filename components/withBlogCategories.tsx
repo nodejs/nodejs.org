@@ -11,11 +11,10 @@ type WithBlogCategoriesProps = {
   blogData: BlogPostsRSC & { category: string; page: number };
 };
 
-export const mapCategoryType = (category: string) =>
-  ['announcement', 'release', 'vulnerability'].includes(category)
-    ? (category as 'announcement' | 'release' | 'vulnerability')
-    : 'announcement';
-
+// @todo: there might be a better place to export this and
+// we should check about the future of GitHub avatars
+// and mapping them to the respective users
+// @see https://github.com/nodejs/nodejs.dev/blob/main/src/data/blog/authors.yaml
 export const mapAuthorToCardAuthors = (author: string) => {
   const authors = author.split(/, | and |;| by /i);
 
@@ -49,7 +48,6 @@ const WithBlogCategories: FC<WithBlogCategoriesProps> = ({
               key={post.slug}
               title={post.title}
               category={post.categories[0]}
-              type={mapCategoryType(post.categories[0])}
               authors={mapAuthorToCardAuthors(post.author)}
               date={post.date}
               slug={post.slug}

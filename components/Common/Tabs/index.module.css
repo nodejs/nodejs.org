@@ -11,11 +11,14 @@
       text-sm
       font-semibold
       text-neutral-800
-      data-[state=active]:border-b-green-600
-      data-[state=active]:text-green-600
-      dark:text-neutral-200
-      dark:data-[state=active]:border-b-green-400
-      dark:data-[state=active]:text-green-400;
+      dark:text-neutral-200;
+
+    &[data-state='active'] {
+      @apply border-b-green-600
+        text-green-600
+        dark:border-b-green-400
+        dark:text-green-400;
+    }
   }
 }
 

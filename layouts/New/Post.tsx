@@ -2,10 +2,7 @@ import type { FC, PropsWithChildren } from 'react';
 
 import AvatarGroup from '@/components/Common/AvatarGroup';
 import Preview from '@/components/Common/Preview';
-import {
-  mapAuthorToCardAuthors,
-  mapCategoryType,
-} from '@/components/withBlogCategories';
+import { mapAuthorToCardAuthors } from '@/components/withBlogCategories';
 import WithBlogCrossLinks from '@/components/withBlogCrossLinks';
 import WithFooter from '@/components/withFooter';
 import WithMetaBar from '@/components/withMetaBar';
@@ -42,7 +39,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
 
             <Preview
               title={frontmatter.title}
-              type={mapCategoryType(frontmatter.category)}
+              type={frontmatter.category}
               width="100%"
               height="auto"
             />

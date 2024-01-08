@@ -8,14 +8,16 @@ function renderBlogPostCard({
   description = 'Blog post description',
   authors = [],
   date = new Date(),
+  slug = '',
 }) {
   render(
     <BlogPostCard
       title={title}
-      type={type}
+      category={type}
       description={description}
       authors={authors}
       date={date}
+      slug={slug}
     />
   );
 
@@ -53,9 +55,9 @@ describe('BlogPostCard', () => {
     });
 
     it.each([
-      { label: 'components.common.card.vulnerability', type: 'vulnerability' },
-      { label: 'components.common.card.announcement', type: 'announcement' },
-      { label: 'components.common.card.release', type: 'release' },
+      { label: 'layouts.blog.categories.vulnerability', type: 'vulnerability' },
+      { label: 'layouts.blog.categories.announcement', type: 'announcement' },
+      { label: 'layouts.blog.categories.release', type: 'release' },
     ])(
       'Renders "%label" text when passing it the type "%type"',
       ({ label, type }) => {

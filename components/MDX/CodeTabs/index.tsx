@@ -5,12 +5,15 @@ import type { ComponentProps, FC, ReactElement } from 'react';
 
 import CodeTabs from '@/components/Common/CodeTabs';
 
-type MDXCodeTabsProps = {
+type MDXCodeTabsProps = Pick<
+  ComponentProps<typeof CodeTabs>,
+  'linkText' | 'linkUrl'
+> & {
   children: Array<ReactElement>;
   languages: string;
   displayNames?: string;
   defaultTab?: string;
-} & Pick<ComponentProps<typeof CodeTabs>, 'linkText' | 'linkUrl'>;
+};
 
 const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
   languages: rawLanguages,
