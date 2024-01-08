@@ -5,13 +5,6 @@ import Preview from '@/components/Common/Preview';
 type Story = StoryObj<typeof Preview>;
 type Meta = MetaObj<typeof Preview>;
 
-export const Default: Story = {
-  args: {
-    title:
-      'Changing the End-of-Life Date for Node.js 16 to September 11th, 2023',
-  },
-};
-
 export const Announcement: Story = {
   args: {
     type: 'announcements',

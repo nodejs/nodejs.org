@@ -24,7 +24,9 @@ export const Anchor: StoryObj = {
 export const InlineCode: StoryObj = {
   render: () => (
     <main>
-      This is an example of <code>inline code block</code>
+      <p>
+        This is an example of <code>inline code block</code>
+      </p>
     </main>
   ),
 };

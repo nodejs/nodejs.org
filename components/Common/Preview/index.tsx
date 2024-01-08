@@ -14,7 +14,7 @@ type PreviewProps = {
 } & Omit<ComponentProps<'div'>, 'children'>;
 
 const Preview: FC<PreviewProps> = ({
-  type = 'announcement',
+  type = 'announcements',
   title,
   height = 400,
   width = 800,
