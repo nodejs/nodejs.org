@@ -82,15 +82,15 @@
 
     &::after {
       @apply absolute
-      inset-0
-      m-auto
-      aspect-square
-      w-[300px]
-      rounded-full
-      bg-green-300
-      blur-[120px]
-      content-['']
-      dark:bg-green-700;
+        inset-0
+        m-auto
+        aspect-square
+        w-[300px]
+        rounded-full
+        bg-green-300
+        blur-[120px]
+        content-['']
+        dark:bg-green-700;
     }
   }
 
@@ -105,10 +105,11 @@
     section {
       &:nth-of-type(1) {
         @apply flex
-        max-w-md
-        flex-[1_0_0]
-        flex-col
-        gap-8;
+          max-w-[500px]
+          flex-[1_0]
+          flex-col
+          items-center
+          gap-8;
 
         h1 {
           @apply bg-gradient-subtle-gray
@@ -137,13 +138,16 @@
           &:nth-of-type(2) {
             @apply flex
               w-full
-              flex-col
+              flex-row
               items-start
-              gap-2
-              xl:flex-row;
+              gap-4
+              xs:flex-col
+              xs:items-center
+              xs:gap-3;
 
             > div {
               @apply flex
+                w-full
                 flex-col
                 gap-1;
 
@@ -161,6 +165,7 @@
       &:nth-of-type(2) {
         @apply flex
           max-w-md
+          flex-[1_1]
           flex-col
           gap-4
           md:max-w-2xl;

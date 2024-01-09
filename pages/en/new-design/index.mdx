@@ -17,52 +17,78 @@ layout: home.hbs
     <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
       {({ release }) => (
         <div>
-          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
-          <small>Includes Node.js {release.version} and NPM {release.npm}</small>
+          <DownloadButton release={release}>Get Node.js (LTS)</DownloadButton>
+          <small>Node.js {release.version} with long-term stability and NPM {release.npm}</small>
         </div>
       )}
     </WithNodeRelease>
 
-    <Button kind="secondary" href="/learn">Get Started</Button>
+    <WithNodeRelease status={['Current']}>
+      {({ release }) => (
+        <div>
+          <DownloadButton release={release}>Get Node.js (Current)</DownloadButton>
+          <small>Node.js {release.version} with latest features and NPM {release.npm}</small>
+        </div>
+      )}
+    </WithNodeRelease>
 
   </div>
 </section>
 
 <section>
-  <CodeTabs
-    languages="bash|bash"
-    displayNames="macOS / Linux (nvm)|Windows (Chocolatey)"
-    linkUrl="/download/package-manager"
-    linkText="More Options"
-  >
-    ```bash
-    # Install Node Version Manager (NVM)
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+  <div>
+    ```js displayName="Create an HTTP Server"
+    import { createServer } from 'node:http'
 
-    # Install Node.js
-    nvm install --lts
+    const server = createServer((req, res) => {
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'text/plain');
+      res.end('Hello World!\n');
+    });
 
-    # Check that Node is installed
-    node -v
-
-    # Check your NPM version
-    npm -v
+    server.listen(3000, '127.0.0.1', () =>
+      console.log(`Listening on 127.0.0.1:3000`));
     ```
 
-    ```bash
-    # Install Chocolatey
-    iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+    ```js displayName="Read and Write Files"
+    import { readFile, writeFile } from 'node:fs/promises';
 
-    # Install Node.js
-    choco install nodejs-lts
+    // By default text is read and written in utf-8 charset!
+    await writeFile('./file.text', 'Hello World!\n');
 
-    # Check that Node is installed
-    node -v
+    console.log('We updated the contents of the file!');
 
-    # Check your NPM version
-    npm -v
+    const file = await readFile('./file.text');
+
+    console.log(`Reading the contents of the file: ${file}`);
     ```
 
-  </CodeTabs>
-  Copy and paste this snippet to install Node.js LTS via a Package Manager
+    ```js displayName="Write Unit Tests"
+    import test from 'node:test';
+    import assert from 'node:assert';
+
+    test('synchronous passing test', () => {
+      assert.strictEqual(1, 1);
+    });
+
+    test('synchronous failing test', () => {
+      assert.strictEqual(1, 2);
+    });
+    ```
+
+    ```js displayName="Read a Stream"
+    import { get } from 'node:https';
+
+    const streamContent = [];
+
+    // `get` itself is a stream (Readable Web Stream)
+    get('https://nodejs.org', response => {
+      response.on('data', chunk => streamContent.push(chunk));
+    });
+
+    console.log(streamContent.join());
+    ```
+
+  </div>
+  Get started and learn about the fundamentals of Node.js [here](/learn).
 </section>
