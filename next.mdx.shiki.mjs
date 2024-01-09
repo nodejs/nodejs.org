@@ -48,113 +48,62 @@ function getMetaParameter(meta, key) {
  * @return {boolean} - True when it is a valid code element, false otherwise.
  */
 function isCodeBlock(node) {
-  return node?.tagName === 'pre' && node?.children[0].tagName === 'code';
-}
-
-/**
- * Retrieves a list indicating the starting, and ending indexes of sequential
- * code elements.
- *
- * @param {Node} tree - The current MDX resolved content.
- *
- * @return {{start: number, end: number}[]} - The list containing every range of
- * sequential code elements.
- */
-function getCodeTabsRange(tree) {
-  const rangeMap = {};
-  let start = null;
-
-  visit(tree, 'element', (node, index, parent) => {
-    // Adding 2 since there is one text node between every element
-    const next = index + 2;
-
-    if (isCodeBlock(node) && isCodeBlock(parent?.children[next])) {
-      start ??= index;
-      rangeMap[start] = next;
-
-      // Prevent visiting the code block children
-      return SKIP;
-    }
-
-    // End of sequential code elements, reset the start for the next range
-    start = null;
-  });
-
-  return Object.entries(rangeMap).map(([start, end]) => ({
-    start: Number(start),
-    end: Number(end),
-  }));
+  return Boolean(
+    node?.tagName === 'pre' && node?.children[0].tagName === 'code'
+  );
 }
 
 export default function rehypeShikiji() {
   return async function (tree) {
-    // Retrieve all sequential code boxes to transform
-    const ranges = getCodeTabsRange(tree);
+    visit(tree, 'element', (_, index, parent) => {
+      const languages = [];
+      const displayNames = [];
+      const codeTabsChildren = [];
 
-    if (ranges.length > 0) {
-      // Make a mutable clone without reference
-      const children = [...tree.children];
+      let defaultTab = '0';
+      let currentIndex = index;
 
-      for (const range of ranges) {
-        // Simple tree containing the sequential code boxes among text nodes
-        const slicedTree = {
-          type: 'root',
-          children: tree.children.slice(range.start, range.end + 1),
-        };
+      while (isCodeBlock(parent?.children[currentIndex])) {
+        const codeElement = parent?.children[currentIndex].children[0];
 
-        const languages = [];
-        const displayNames = [];
-        const codeTabsChildren = [];
+        const displayName = getMetaParameter(
+          codeElement.data?.meta,
+          'displayName'
+        );
 
-        let defaultTab = '0';
+        // We should get the language name from the class name
+        if (codeElement.properties.className?.length) {
+          const className = codeElement.properties.className.join(' ');
+          const matches = className.match(/language-(?<language>.*)/);
 
-        visit(slicedTree, 'element', node => {
-          const codeElement = node.children[0];
+          languages.push(matches?.groups.language ?? 'text');
+        }
 
-          const displayName = getMetaParameter(
-            codeElement.data?.meta,
-            'displayName'
-          );
+        // Map the display names of each variant for the CodeTab
+        displayNames.push(displayName?.replaceAll('|', '') ?? '');
 
-          // We should get the language name from the class name
-          if (codeElement.properties.className?.length) {
-            const className = codeElement.properties.className.join(' ');
-            const matches = className.match(/language-(?<language>.*)/);
+        codeTabsChildren.push(parent?.children[currentIndex]);
 
-            languages.push(matches?.groups.language ?? 'text');
-          }
+        // If `active="true"` is provided in a CodeBox
+        // then the default selected entry of the CodeTabs will be the desired entry
+        const specificActive = getMetaParameter(
+          codeElement.data?.meta,
+          'active'
+        );
 
-          // Map the display names of each variant for the CodeTab
-          displayNames.push(displayName?.replaceAll('|', '') ?? '');
-          codeTabsChildren.push(node);
+        if (specificActive === 'true') {
+          defaultTab = String(codeTabsChildren.length - 1);
+        }
 
-          // If `active="true"` is provided in a CodeBox
-          // then the default selected entry of the CodeTabs will be the desired entry
-          const specificActive = getMetaParameter(
-            codeElement.data?.meta,
-            'active'
-          );
+        const nextNode = parent?.children[currentIndex + 1];
 
-          if (specificActive === 'true') {
-            defaultTab = String(codeTabsChildren.length - 1);
-          }
+        // If the CodeBoxes are on the root tree the next Element will be
+        // an empty text element so we should skip it
+        currentIndex += nextNode && nextNode?.type === 'text' ? 2 : 1;
+      }
 
-          // Prevent visiting the code block children
-          return SKIP;
-        });
-
-        // Each iteration reduces the `children` length, so it needs to be
-        // accounted in the following operations
-        const lengthOffset = tree.children.length - children.length;
-        const compensatedRange = {
-          start: range.start - lengthOffset,
-          end: range.end - lengthOffset,
-        };
-
-        const deleteCount = compensatedRange.end - compensatedRange.start + 1;
-
-        // Replace the sequential code boxes with a code tabs element
-        children.splice(compensatedRange.start, deleteCount, {
+      if (codeTabsChildren.length >= 2) {
+        const codeTabElement = {
           type: 'element',
           tagName: 'CodeTabs',
           children: codeTabsChildren,
@@ -163,12 +112,17 @@ export default function rehypeShikiji() {
             displayNames: displayNames.join('|'),
             defaultTab,
           },
-        });
-      }
+        };
 
-      // Update the tree with the transformed children
-      Object.assign(tree, { children: children });
-    }
+        // This removes all the original Code Elements and adds a new CodeTab Element
+        // at the original start of the first Code Element
+        parent.children.splice(index, currentIndex, codeTabElement);
+
+        // Prevent visiting the code block children and for the next N Elements
+        // since all of them belong to this CodeTabs Element
+        return [SKIP, currentIndex];
+      }
+    });
 
     visit(tree, 'element', (node, index, parent) => {
       // We only want to process <pre>...</pre> elements
