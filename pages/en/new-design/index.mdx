@@ -8,7 +8,7 @@ layout: home.hbs
   <div>
     <h1 className="special">Run JavaScript Everywhere</h1>
 
-    Node.js is a free, open-sourced, cross-platform JavaScript run-time
+    Node.js is a free, open-source, cross-platform JavaScript runtime
     environment that lets developers write command line tools and server-side
     scripts outside of a browser.
 
@@ -39,7 +39,7 @@ layout: home.hbs
 <section>
   <div>
     ```js displayName="Create an HTTP Server" showCopyButton="false"
-    const { createServer } = require('node:http');
+    import { createServer } from 'node:http';
 
     const server = createServer((req, res) => {
       res.statusCode = 200;
@@ -52,8 +52,8 @@ layout: home.hbs
     });
     ```
 
-    ```js displayName="File System" showCopyButton="false"
-    const { readFile, writeFile } = require('node:fs/promises');
+    ```js displayName="Read and Write Files" showCopyButton="false"
+    import { readFile, writeFile } from 'node:fs/promises';
 
     const content = { hello: { world: true } };
 
@@ -67,8 +67,8 @@ layout: home.hbs
     ```
 
     ```js displayName="Write Tests" showCopyButton="false"
-    const test = require('node:test');
-    const assert = require('node:assert');
+    import test from 'node:test';
+    import assert from 'node:assert';
 
     test('synchronous passing test', () => {
       assert.strictEqual(1, 1);
@@ -81,8 +81,8 @@ layout: home.hbs
     ```
 
     ```js displayName="Hash a File" showCopyButton="false"
-    const { createHash } = require('node:crypto');
-    const { readFile } = require('node:fs/promises');
+    import { createHash } from 'node:crypto';
+    import { readFile } from 'node:fs/promises';
 
     const file = await readFile('./package.json');
     const hash = createHash('sha1');
@@ -95,31 +95,17 @@ layout: home.hbs
     ```
 
     ```js displayName="Read a Stream" showCopyButton="false"
-    const res = await fetch('https://nodejs.org');
-
-    const text = await res.text();
-
-    console.log(`Node.js has this many chars! ${text.length}`);
-
     const res = await fetch('https://nodejs.org/dist/index.json');
 
     const json = await res.json();
 
     console.log(`Node.js so far had ${json.length} releases!`);
-    ```
 
-    ```bash displayName="And more!" showCopyButton="false"
-    # Read .env files directly from Node.js
-    node --env-file=.env index.js
+    const res = await fetch('https://nodejs.org');
 
-    # Native TypeScript and React support on Node.js
-    # (requires custom loaders such as `tsx` or `ts-node/loader`)
-    # @see https://nodejs.org/api/esm.html#modules-ecmascript-modules
-    node --import=tsx index.ts
+    const text = await res.text();
 
-    # Watch for file-system changes with Node.js
-    # and automatically restart your App
-    node --watch index.js
+    console.log(`Node.js has this many chars! ${text.length}`);
     ```
 
   </div>

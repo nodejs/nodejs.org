@@ -129,7 +129,7 @@ export default {
         'gradient-subtle-white':
           'linear-gradient(180deg, theme(colors.white) 0%, theme(colors.white / 80%) 100%)',
         'gradient-glow-backdrop':
-          'radial-gradient(8em circle at calc(100% - 40px) 10px, theme(colors.green.500), transparent 30%)',
+          'radial-gradient(8em circle at calc(50%) 10px, theme(colors.green.500), transparent 30%)',
       },
       boxShadow: {
         xs: '0px 1px 2px 0px theme(colors.shadow / 5%)',
