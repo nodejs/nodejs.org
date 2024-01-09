@@ -49,13 +49,14 @@
       text-xs
       font-semibold
       text-white
+      @sm/preview:text-base
       @md/preview:gap-6
-      @md/preview:text-sm
+      @md/preview:text-lg
       @lg/preview:gap-8
-      @lg/preview:text-base
+      @lg/preview:text-xl
       @xl/preview:gap-12
-      @xl/preview:text-lg
-      @2xl/preview:text-xl;
+      @xl/preview:text-2xl
+      @2xl/preview:text-3xl;
 
     .logo {
       @apply mx-auto
