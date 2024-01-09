@@ -14,13 +14,13 @@
       pt-3
       xs:px-2;
 
-    & [role='tablist'] > button {
+    > button {
       @apply border-b
         border-b-transparent
         px-1
         text-neutral-200;
 
-      &[aria-selected='true'] {
+      &[data-state='active'] {
         @apply border-b-green-400
           text-green-400;
       }

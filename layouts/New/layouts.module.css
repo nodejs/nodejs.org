@@ -170,7 +170,11 @@
           gap-4
           md:max-w-2xl;
 
-        p {
+        > div {
+          @apply w-fit;
+        }
+
+        > p {
           @apply text-center
             text-sm
             text-neutral-800

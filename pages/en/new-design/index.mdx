@@ -37,8 +37,8 @@ layout: home.hbs
 
 <section>
   <div>
-    ```js displayName="Create an HTTP Server"
-    import { createServer } from 'node:http'
+    ```js displayName="Create an HTTP Server" showCopyButton="false"
+    const { createServer } = require('node:http');
 
     const server = createServer((req, res) => {
       res.statusCode = 200;
@@ -50,8 +50,8 @@ layout: home.hbs
       console.log(`Listening on 127.0.0.1:3000`));
     ```
 
-    ```js displayName="Read and Write Files"
-    import { readFile, writeFile } from 'node:fs/promises';
+    ```js displayName="Read and Write Files" showCopyButton="false"
+    const { readFile, writeFile } = require('node:fs/promises');
 
     // By default text is read and written in utf-8 charset!
     await writeFile('./file.text', 'Hello World!\n');
@@ -63,9 +63,9 @@ layout: home.hbs
     console.log(`Reading the contents of the file: ${file}`);
     ```
 
-    ```js displayName="Write Unit Tests"
-    import test from 'node:test';
-    import assert from 'node:assert';
+    ```js displayName="Write Unit Tests" showCopyButton="false"
+    const test = require('node:test');
+    const assert = require('node:assert');
 
     test('synchronous passing test', () => {
       assert.strictEqual(1, 1);
@@ -76,17 +76,17 @@ layout: home.hbs
     });
     ```
 
-    ```js displayName="Read a Stream"
-    import { get } from 'node:https';
+    ```js displayName="Hash a Password" showCopyButton="false"
+    const { randomBytes, pbkdf2Sync } = require('node:crypto');
 
-    const streamContent = [];
+    const salt = randomBytes(16).toString('hex');
 
-    // `get` itself is a stream (Readable Web Stream)
-    get('https://nodejs.org', response => {
-      response.on('data', chunk => streamContent.push(chunk));
-    });
+    const password = 'super-secure-password';
 
-    console.log(streamContent.join());
+    const hash = pbkdf2Sync(password, salt, 1000, 32, 'sha512')
+      .toString(`hex`);
+
+    console.log(`Your hashed password is: ${hash}`);
     ```
 
   </div>
