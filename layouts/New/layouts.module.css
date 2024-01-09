@@ -68,32 +68,6 @@
     md:px-14
     lg:px-28;
 
-  > div:nth-of-type(1) {
-    @apply absolute
-      left-0
-      -z-10
-      h-full
-      w-full
-      bg-[url('/static/images/patterns/hexagon-grid.svg')]
-      bg-center
-      bg-no-repeat
-      opacity-50
-      md:opacity-100;
-
-    &::after {
-      @apply absolute
-        inset-0
-        m-auto
-        aspect-square
-        w-[300px]
-        rounded-full
-        bg-green-300
-        blur-[120px]
-        content-['']
-        dark:bg-green-700;
-    }
-  }
-
   main {
     @apply items-center
       justify-center
@@ -109,55 +83,24 @@
           max-w-[500px]
           flex-[1_0]
           flex-col
-          items-center
           gap-8;
 
-        h1 {
-          @apply bg-gradient-subtle-gray
-            bg-clip-text
-            text-4xl
-            -tracking-[0.045rem]
-            [-webkit-text-fill-color:transparent]
-            md:text-5xl
-            md:-tracking-[0.06rem]
-            dark:bg-gradient-subtle-white;
-        }
-
-        p {
-          @apply text-base
-            md:text-lg;
-        }
-
         > div {
-          &:nth-of-type(1) {
-            @apply flex
-              flex-col
-              gap-4;
+          @apply flex
+            max-w-[400px]
+            flex-col
+            gap-4;
+
+          p {
+            @apply text-base
+              md:text-lg;
           }
 
-          &:nth-of-type(2) {
-            @apply flex
-              w-full
-              flex-row
-              items-start
-              gap-4
-              xs:flex-col
-              xs:items-center
-              xs:gap-3;
-
-            > div {
-              @apply flex
-                w-full
-                flex-col
-                gap-1;
-
-              small {
-                @apply text-center
-                  text-xs
-                  text-neutral-800
-                  dark:text-neutral-400;
-              }
-            }
+          small {
+            @apply text-center
+              text-xs
+              text-neutral-800
+              dark:text-neutral-400;
           }
         }
       }
@@ -167,8 +110,10 @@
           max-w-md
           flex-[1_1]
           flex-col
+          items-center
           gap-4
-          md:max-w-2xl;
+          md:max-w-2xl
+          lg:max-w-3xl;
 
         > div {
           @apply w-fit;

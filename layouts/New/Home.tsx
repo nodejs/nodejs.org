@@ -10,7 +10,7 @@ const HomeLayout: FC<PropsWithChildren> = ({ children }) => (
     <WithNavBar />
 
     <div className={styles.homeLayout}>
-      <div />
+      <div className="glowingBackdrop" />
 
       <main>{children}</main>
     </div>

@@ -6,32 +6,33 @@ layout: home.hbs
   <WithBadge section="index" />
 
   <div>
-    # Run JavaScript Everywhere
+    <h1 className="special">Run JavaScript Everywhere</h1>
 
     Node.js is a free, open-sourced, cross-platform JavaScript run-time
     environment that lets developers write command line tools and server-side
     scripts outside of a browser.
 
   </div>
+
   <div>
     <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
       {({ release }) => (
-        <div>
-          <DownloadButton release={release}>Get Node.js (LTS)</DownloadButton>
-          <small>Node.js {release.version} with long-term support and npm {release.npm}</small>
-        </div>
+        <>
+          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+          <small>
+            Downloads Node.js <b>{release.versionWithPrefix}</b> with long-term support.
+            Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
+          </small>
+        </>
       )}
     </WithNodeRelease>
-
-    <WithNodeRelease status={['Current']}>
+    <WithNodeRelease status="Current">
       {({ release }) => (
-        <div>
-          <DownloadButton release={release}>Get Node.js (Current)</DownloadButton>
-          <small>Node.js {release.version} with latest features and npm {release.npm}</small>
-        </div>
+        <small>
+          Want new features sooner? Get <b>Node.js <a>{release.versionWithPrefix}</a></b> instead.
+        </small>
       )}
     </WithNodeRelease>
-
   </div>
 </section>
 
@@ -46,15 +47,17 @@ layout: home.hbs
       res.end('Hello World!\n');
     });
 
-    server.listen(3000, '127.0.0.1', () =>
-      console.log(`Listening on 127.0.0.1:3000`));
+    server.listen(3000, '127.0.0.1', () => {
+      console.log(`Listening on 127.0.0.1:3000`);
+    });
     ```
 
-    ```js displayName="Read and Write Files" showCopyButton="false"
+    ```js displayName="File System" showCopyButton="false"
     const { readFile, writeFile } = require('node:fs/promises');
 
-    // By default text is read and written in utf-8 charset!
-    await writeFile('./file.text', 'Hello World!\n');
+    const content = { hello: { world: true } };
+
+    await writeFile('./file.text', JSON.stringify(content));
 
     console.log('We updated the contents of the file!');
 
@@ -63,7 +66,7 @@ layout: home.hbs
     console.log(`Reading the contents of the file: ${file}`);
     ```
 
-    ```js displayName="Write Unit Tests" showCopyButton="false"
+    ```js displayName="Write Tests" showCopyButton="false"
     const test = require('node:test');
     const assert = require('node:assert');
 
@@ -72,21 +75,51 @@ layout: home.hbs
     });
 
     test('synchronous failing test', () => {
+      // throws an exception because 1!=2
       assert.strictEqual(1, 2);
     });
     ```
 
-    ```js displayName="Hash a Password" showCopyButton="false"
-    const { randomBytes, pbkdf2Sync } = require('node:crypto');
+    ```js displayName="Hash a File" showCopyButton="false"
+    const { createHash } = require('node:crypto');
+    const { readFile } = require('node:fs/promises');
 
-    const salt = randomBytes(16).toString('hex');
+    const file = await readFile('./package.json');
+    const hash = createHash('sha1');
 
-    const password = 'super-secure-password';
+    hash.setEncoding('hex');
+    hash.write(file);
+    hash.end();
 
-    const hash = pbkdf2Sync(password, salt, 1000, 32, 'sha512')
-      .toString(`hex`);
+    console.log(`Your hashed package.json is: ${hash.read()}`);
+    ```
 
-    console.log(`Your hashed password is: ${hash}`);
+    ```js displayName="Read a Stream" showCopyButton="false"
+    const res = await fetch('https://nodejs.org');
+
+    const text = await res.text();
+
+    console.log(`Node.js has this many chars! ${text.length}`);
+
+    const res = await fetch('https://nodejs.org/dist/index.json');
+
+    const json = await res.json();
+
+    console.log(`Node.js so far had ${json.length} releases!`);
+    ```
+
+    ```bash displayName="And more!" showCopyButton="false"
+    # Read .env files directly from Node.js
+    node --env-file=.env index.js
+
+    # Native TypeScript and React support on Node.js
+    # (requires custom loaders such as `tsx` or `ts-node/loader`)
+    # @see https://nodejs.org/api/esm.html#modules-ecmascript-modules
+    node --import=tsx index.ts
+
+    # Watch for file-system changes with Node.js
+    # and automatically restart your App
+    node --watch index.js
     ```
 
   </div>
