@@ -76,17 +76,9 @@ layout: home.hbs
     });
     ```
 
-    ```js displayName="Read a Stream"
-    import { get } from 'node:https';
-
-    const streamContent = [];
-
-    // `get` itself is a stream (Readable Web Stream)
-    get('https://nodejs.org', response => {
-      response.on('data', chunk => streamContent.push(chunk));
-    });
-
-    console.log(streamContent.join());
+    ```js displayName="Fetch a website"
+    const res = await fetch('https://nodejs.org');
+    console.log(awat res.text());
     ```
 
   </div>
