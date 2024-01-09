@@ -100,7 +100,8 @@
       gap-8
       md:flex-row
       md:gap-14
-      lg:gap-28;
+      xl:gap-28
+      2xl:gap-32;
 
     section {
       &:nth-of-type(1) {
@@ -123,8 +124,7 @@
         }
 
         p {
-          @apply max-w-[400px]
-            text-base
+          @apply text-base
             md:text-lg;
         }
 
