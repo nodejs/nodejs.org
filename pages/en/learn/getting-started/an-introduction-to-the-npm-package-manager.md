@@ -1,10 +1,10 @@
 ---
-title: An introduction to the NPM package manager
+title: An introduction to the npm package manager
 layout: learn.hbs
 authors: flaviocopes, MylesBorins, LaRuaNa, jgb-solutions, amiller-gh, ahmadawais
 ---
 
-# An introduction to the NPM package manager
+# An introduction to the npm package manager
 
 ## Introduction to npm
 

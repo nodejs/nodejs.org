@@ -18,7 +18,7 @@ layout: home.hbs
       {({ release }) => (
         <div>
           <DownloadButton release={release}>Get Node.js (LTS)</DownloadButton>
-          <small>Node.js {release.version} with long-term stability and NPM {release.npm}</small>
+          <small>Node.js {release.version} with long-term support and npm {release.npm}</small>
         </div>
       )}
     </WithNodeRelease>
@@ -27,7 +27,7 @@ layout: home.hbs
       {({ release }) => (
         <div>
           <DownloadButton release={release}>Get Node.js (Current)</DownloadButton>
-          <small>Node.js {release.version} with latest features and NPM {release.npm}</small>
+          <small>Node.js {release.version} with latest features and npm {release.npm}</small>
         </div>
       )}
     </WithNodeRelease>

@@ -91,8 +91,8 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
 
-      - name: Install NPM packages
-        # We want to avoid NPM from running the Audit Step and Funding messages on a CI environment
+      - name: Install npm packages
+        # We want to avoid npm from running the Audit Step and Funding messages on a CI environment
         # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
         # We also use `--omit=dev` to avoid installing devDependencies as we don't need them during the build step
         run: npm i --no-audit --no-fund --userconfig=/dev/null --omit=dev
