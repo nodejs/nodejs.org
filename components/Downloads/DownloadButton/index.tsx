@@ -18,12 +18,13 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
   children,
 }) => {
   const { os, bitness } = useDetectOS();
+  const downloadLink = downloadUrlByOS(versionWithPrefix, os, bitness);
 
   return (
     <>
       <Button
         kind="special"
-        href={downloadUrlByOS(versionWithPrefix, os, bitness)}
+        href={downloadLink}
         className={classNames(styles.downloadButton, 'hidden dark:flex')}
       >
         {children}
@@ -33,7 +34,7 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
 
       <Button
         kind="primary"
-        href={downloadUrlByOS(versionWithPrefix, os, bitness)}
+        href={downloadLink}
         className={classNames(styles.downloadButton, 'flex dark:hidden')}
       >
         {children}

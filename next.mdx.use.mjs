@@ -3,6 +3,7 @@
 import Blockquote from './components/Common/Blockquote';
 import Button from './components/Common/Button';
 import DownloadButton from './components/Downloads/DownloadButton';
+import DownloadLink from './components/Downloads/DownloadLink';
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
 import HomeDownloadButton from './components/Home/HomeDownloadButton';
 import Link from './components/Link';
@@ -33,6 +34,8 @@ export const mdxComponents = {
   CodeTabs: MDXCodeTabs,
   // Renders a Download Button
   DownloadButton: DownloadButton,
+  // Renders a Download Link
+  DownloadLink: DownloadLink,
   // Renders a Button Component for `button` tags
   Button: Button,
 };
@@ -51,7 +54,5 @@ export const htmlComponents = {
     ? Blockquote
     : ({ children }) => <div className="highlight-box">{children}</div>,
   // Renders a CodeBox Component for `pre` tags
-  pre: ({ children, ...props }) => (
-    <MDXCodeBox {...props}>{children}</MDXCodeBox>
-  ),
+  pre: MDXCodeBox,
 };

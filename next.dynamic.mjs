@@ -197,7 +197,7 @@ const getDynamicRouter = async () => {
     const { data } = matter(source);
 
     pageMetadata.title = data.title
-      ? `${data.title} | ${siteConfig.title}`
+      ? `${siteConfig.title} — ${data.title}`
       : siteConfig.title;
 
     pageMetadata.twitter.title = pageMetadata.title;

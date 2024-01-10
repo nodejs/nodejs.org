@@ -1,4 +1,5 @@
 ---
+title: Run JavaScript Everywhere
 layout: home.hbs
 ---
 
@@ -29,7 +30,8 @@ layout: home.hbs
     <WithNodeRelease status="Current">
       {({ release }) => (
         <small>
-          Want new features sooner? Get <b>Node.js <a>{release.versionWithPrefix}</a></b> instead.
+          Want new features sooner?
+          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b> instead.
         </small>
       )}
     </WithNodeRelease>
