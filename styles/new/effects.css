@@ -15,8 +15,7 @@ div.glowingBackdrop {
   @apply absolute
     left-0
     -z-10
-    h-full
-    w-full
+    size-full
     bg-[url('/static/images/patterns/hexagon-grid.svg')]
     bg-center
     bg-no-repeat

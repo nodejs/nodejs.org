@@ -96,7 +96,7 @@ layout: home.hbs
     import { createReadStream, createWriteStream } from 'node:fs';
 
     const res = await fetch('https://nodejs.org/dist/index.json');
-    const json = await res.json(); // Parsed JavaScript object (JSON)
+    const json = await res.json();
 
     const readableStream = createReadStream('file.txt');
     const writableStream = createWriteStream('file2.txt');
