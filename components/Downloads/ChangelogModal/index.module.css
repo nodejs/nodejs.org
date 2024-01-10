@@ -36,8 +36,7 @@
       right-3
       top-3
       block
-      h-6
-      w-6
+      size-6
       cursor-pointer
       sm:hidden;
   }
@@ -76,8 +75,7 @@
     }
 
     svg {
-      @apply h-3
-        w-3
+      @apply size-3
         text-neutral-600;
     }
   }
