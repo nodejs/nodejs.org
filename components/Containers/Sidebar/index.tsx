@@ -35,11 +35,13 @@ const SideBar: FC<SidebarProps> = ({ groups }) => {
         />
       ))}
 
-      <WithRouterSelect
-        label={t('components.common.sidebar.title')}
-        values={selectItems}
-        defaultValue={currentItem?.value}
-      />
+      {selectItems.length > 0 && (
+        <WithRouterSelect
+          label={t('components.common.sidebar.title')}
+          values={selectItems}
+          defaultValue={currentItem?.value}
+        />
+      )}
     </aside>
   );
 };

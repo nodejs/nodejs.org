@@ -98,8 +98,9 @@
 
           small {
             @apply text-center
-              text-xs
+              text-sm
               text-neutral-800
+              xs:text-xs
               dark:text-neutral-400;
           }
         }
@@ -117,6 +118,19 @@
 
         > div {
           @apply w-fit;
+
+          div[data-state='active'] a {
+            @apply border-none
+              bg-neutral-900
+              px-3
+              py-1.5
+              text-sm
+              font-medium;
+
+            &:hover {
+              @apply bg-neutral-800;
+            }
+          }
         }
 
         > p {

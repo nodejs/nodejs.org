@@ -40,7 +40,7 @@ layout: home.hbs
 
 <section>
   <div>
-    ```js displayName="Create an HTTP Server" showCopyButton="false"
+    ```js displayName="Create an HTTP Server"
     import { createServer } from 'node:http';
 
     const server = createServer((req, res) => {
@@ -53,7 +53,7 @@ layout: home.hbs
     });
     ```
 
-    ```js displayName="Read and Write Files" showCopyButton="false"
+    ```js displayName="Read and Write Files"
     import { readFile, writeFile } from 'node:fs/promises';
 
     const content = {
@@ -66,7 +66,7 @@ layout: home.hbs
     const file = await readFile('file.txt', 'utf8');
     ```
 
-    ```js displayName="Write Tests" showCopyButton="false"
+    ```js displayName="Write Tests"
     import assert from 'node:assert';
     import test from 'node:test';
 
@@ -79,7 +79,7 @@ layout: home.hbs
     });
     ```
 
-    ```js displayName="Hash a File" showCopyButton="false"
+    ```js displayName="Hash a File"
     import { createHash } from 'node:crypto';
     import { readFile } from 'node:fs/promises';
 
@@ -92,7 +92,7 @@ layout: home.hbs
     const fileHash = hasher.read();
     ```
 
-    ```js displayName="Read a Stream" showCopyButton="false"
+    ```js displayName="Read a Stream"
     import { createReadStream, createWriteStream } from 'node:fs';
 
     const res = await fetch('https://nodejs.org/dist/index.json');
@@ -106,5 +106,5 @@ layout: home.hbs
     ```
 
   </div>
-  Get started and learn about the fundamentals of Node.js [here](/learn).
+  Learn more what Node.js is able to offer with our [Learning materials](/learn).
 </section>
