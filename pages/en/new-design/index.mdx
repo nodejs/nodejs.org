@@ -44,39 +44,36 @@ layout: home.hbs
     import { createServer } from 'node:http';
 
     const server = createServer((req, res) => {
-      res.statusCode = 200;
-      res.setHeader('Content-Type', 'text/plain');
-      res.end('Hello World!\n');
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end('Hello World!');
     });
 
     server.listen(3000, '127.0.0.1', () => {
-      console.log(`Listening on 127.0.0.1:3000`);
+      console.log('Listening on 127.0.0.1:3000');
     });
     ```
 
     ```js displayName="Read and Write Files" showCopyButton="false"
     import { readFile, writeFile } from 'node:fs/promises';
 
-    const content = { hello: { world: true } };
+    const content = {
+      hello: { world: true },
+    };
 
-    await writeFile('./file.text', JSON.stringify(content));
+    await writeFile('file.txt', JSON.stringify(content));
 
-    console.log('We updated the contents of the file!');
-
-    const file = await readFile('./file.text');
-
-    console.log(`Reading the contents of the file: ${file}`);
+    // yields {"hello":{"world":true}}
+    const file = await readFile('file.txt', 'utf8');
     ```
 
     ```js displayName="Write Tests" showCopyButton="false"
-    import test from 'node:test';
     import assert from 'node:assert';
+    import test from 'node:test';
 
-    test('synchronous passing test', () => {
-      assert.strictEqual(1, 1);
-    });
+    test('that 1 is equal 1', () =>
+      assert.strictEqual(1, 1));
 
-    test('synchronous failing test', () => {
+    test('that throws as 1 is not equal 2', () => {
       // throws an exception because 1!=2
       assert.strictEqual(1, 2);
     });
@@ -86,28 +83,26 @@ layout: home.hbs
     import { createHash } from 'node:crypto';
     import { readFile } from 'node:fs/promises';
 
-    const file = await readFile('./package.json');
-    const hash = createHash('sha1');
+    const hasher = createHash('sha1');
 
-    hash.setEncoding('hex');
-    hash.write(file);
-    hash.end();
+    hasher.setEncoding('hex');
+    hasher.write(await readFile('package.json'));
+    hasher.end();
 
-    console.log(`Your hashed package.json is: ${hash.read()}`);
+    const fileHash = hasher.read();
     ```
 
     ```js displayName="Read a Stream" showCopyButton="false"
+    import { createReadStream, createWriteStream } from 'node:fs';
+
     const res = await fetch('https://nodejs.org/dist/index.json');
+    const json = await res.json(); // Parsed JavaScript object (JSON)
 
-    const json = await res.json();
+    const readableStream = createReadStream('file.txt');
+    const writableStream = createWriteStream('file2.txt');
 
-    console.log(`Node.js so far had ${json.length} releases!`);
-
-    const res = await fetch('https://nodejs.org');
-
-    const text = await res.text();
-
-    console.log(`Node.js has this many chars! ${text.length}`);
+    readableStream.setEncoding('utf8');
+    readableStream.on('data', chunk => writableStream.write(chunk));
     ```
 
   </div>
