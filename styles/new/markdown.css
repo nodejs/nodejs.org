@@ -65,11 +65,17 @@ main {
 
   a {
     @apply text-green-600
+      xs:underline
       dark:text-green-400;
 
     &:hover {
       @apply text-green-900
         dark:text-green-300;
+    }
+
+    &:has(code) {
+      @apply xs:decoration-neutral-800
+        dark:xs:decoration-neutral-200;
     }
   }
 

@@ -39,6 +39,8 @@
       @apply font-semibold
         text-neutral-900
         underline
+        xs:inline-block
+        xs:py-1
         dark:text-white;
 
       &:hover {
