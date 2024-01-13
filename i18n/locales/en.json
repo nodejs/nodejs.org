@@ -77,6 +77,12 @@
             "outputToTheCommandLineUsingNodejs": "Output to the command line using Node.js",
             "acceptInputFromTheCommandLineInNodejs": "Accept input from the command line in Node.js"
           }
+        },
+        "modules": {
+          "links": {
+            "modules": "Modules",
+            "publishingNodeApiModules": "How to publish Node-API package"
+          }
         }
       },
       "about": {

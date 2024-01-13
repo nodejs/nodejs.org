@@ -25,5 +25,4 @@ layout: docs.hbs
 - [Anatomy of an HTTP Transaction](/guides/anatomy-of-an-http-transaction/)
 - [Working with Different Filesystems](/guides/working-with-different-filesystems/)
 - [Backpressuring in Streams](/guides/backpressuring-in-streams/)
-- [How to publish N-API package](/guides/publishing-napi-modules/)
 - [ABI Stability](/guides/abi-stability/)
