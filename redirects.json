@@ -199,6 +199,10 @@
     {
       "source": "/:locale/learn",
       "destination": "/:locale/learn/getting-started/introduction-to-nodejs"
+    },
+    {
+      "source": "/:locale/about/releases",
+      "destination": "/:locale/about/previous-releases"
     }
   ],
   "internal": []
