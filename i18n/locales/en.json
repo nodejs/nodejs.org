@@ -1,9 +1,6 @@
 {
   "components": {
     "footer": {
-      "scrollToTop": {
-        "button": "Scroll to top"
-      },
       "links": {
         "trademarkPolicy": "Trademark Policy",
         "privacyPolicy": "Privacy Policy",
@@ -163,12 +160,6 @@
       "contributeText": "Edit this page",
       "viewAs": "View as",
       "tableOfContents": "Table of Contents"
-    },
-    "api": {
-      "jsonLink": {
-        "title": "View as JSON"
-      },
-      "sourceLink": "Source Code:"
     },
     "home": {
       "homeDownloadButton": {
