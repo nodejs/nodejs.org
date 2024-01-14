@@ -216,3 +216,52 @@
     }
   }
 }
+
+.notFoundLayout {
+  @apply flex
+    items-center
+    justify-center
+    xs:px-4
+    xs:py-8;
+
+  main {
+    @apply flex
+      max-w-xl
+      flex-col
+      items-center
+      gap-0
+      text-center;
+
+    h1 {
+      @apply bg-gradient-to-b
+        from-neutral-900
+        to-neutral-900/80
+        bg-clip-text
+        py-4
+        text-5xl
+        font-semibold
+        [-webkit-text-fill-color:transparent]
+        xs:text-3xl
+        dark:from-white
+        dark:to-white/80;
+    }
+
+    h2 {
+      @apply max-w-sm
+        text-lg
+        font-regular
+        xs:text-base;
+    }
+
+    a {
+      @apply mt-8
+        flex
+        items-center
+        gap-2;
+
+      svg {
+        @apply w-5;
+      }
+    }
+  }
+}

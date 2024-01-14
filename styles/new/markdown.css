@@ -73,6 +73,10 @@ main {
         dark:text-green-300;
     }
 
+    &[role='button'] {
+      @apply xs:no-underline;
+    }
+
     &:has(code) {
       @apply xs:decoration-neutral-800
         dark:xs:decoration-neutral-200;

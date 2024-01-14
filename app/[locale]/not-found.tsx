@@ -3,6 +3,10 @@
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
+import NotFoundLayout from '@/layouts/New/NotFound';
+import { ENABLE_WEBSITE_REDESIGN } from '@/next.constants.mjs';
+
+/** @deprecated remove when website redesign is done */
 const LocalizedNotFound: FC = () => {
   const t = useTranslations();
 
@@ -14,4 +18,4 @@ const LocalizedNotFound: FC = () => {
   );
 };
 
-export default LocalizedNotFound;
+export default ENABLE_WEBSITE_REDESIGN ? NotFoundLayout : LocalizedNotFound;
