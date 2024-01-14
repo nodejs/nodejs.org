@@ -1,32 +1,21 @@
 import classNames from 'classnames';
-import type { CSSProperties, ComponentProps, FC, ReactNode } from 'react';
+import type { FC } from 'react';
 
 import JsIconWhite from '@/components/Icons/Logos/JsIconWhite';
+import type { BlogPreviewType } from '@/types';
 
 import styles from './index.module.css';
 
 type PreviewProps = {
-  type?: 'announcement' | 'release' | 'vulnerability';
-  title: ReactNode;
-  height?: CSSProperties['height'];
-  width?: CSSProperties['width'];
-} & Omit<ComponentProps<'div'>, 'children'>;
+  title: string;
+  type?: BlogPreviewType;
+};
 
-const Preview: FC<PreviewProps> = ({
-  type = 'announcement',
-  title,
-  height = 630,
-  width = 1200,
-  ...props
-}) => (
-  <div
-    {...props}
-    style={{ width, height, ...props.style }}
-    className={classNames(styles.root, styles[type], props.className)}
-  >
-    <div className={styles.container}>
-      <JsIconWhite className={styles.logo} width={71} height={80} />
-      <h2>{title}</h2>
+const Preview: FC<PreviewProps> = ({ type = 'announcements', title }) => (
+  <div className={classNames(styles.root, styles[type])}>
+    <div className={styles.container} aria-hidden={true}>
+      <JsIconWhite className={styles.logo} />
+      {title}
     </div>
   </div>
 );

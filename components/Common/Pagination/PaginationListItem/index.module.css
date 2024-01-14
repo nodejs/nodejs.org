@@ -2,8 +2,7 @@
 .listItem:link,
 .listItem:active {
   @apply flex
-    h-10
-    w-10
+    size-10
     items-center
     justify-center
     rounded
@@ -16,6 +15,8 @@
 
   &:hover {
     @apply bg-neutral-100
-      dark:bg-neutral-900;
+      text-neutral-800
+      dark:bg-neutral-900
+      dark:text-neutral-200;
   }
 }

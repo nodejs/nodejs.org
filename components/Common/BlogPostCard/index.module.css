@@ -1,18 +1,11 @@
 .container {
-  @apply max-w-full
-    bg-white
-    dark:bg-neutral-950;
-}
-
-.preview {
-  @apply mb-6
-    max-w-full
-    rounded
-    p-4;
+  @apply max-w-full;
 }
 
 .subtitle {
   @apply mb-2
+    mt-6
+    inline-block
     text-xs
     font-semibold
     text-green-600
@@ -21,6 +14,7 @@
 
 .title {
   @apply mb-2
+    block
     text-xl
     font-semibold
     text-neutral-900

@@ -8,18 +8,11 @@ import matter from 'gray-matter';
 import { cache } from 'react';
 import { VFile } from 'vfile';
 
+import { BASE_URL, BASE_PATH, IS_DEVELOPMENT } from './next.constants.mjs';
 import {
-  MD_EXTENSION_REGEX,
-  BASE_URL,
-  BASE_PATH,
-  IS_DEVELOPMENT,
-} from './next.constants.mjs';
-import {
-  DYNAMIC_ROUTES_IGNORES,
-  DYNAMIC_ROUTES_REWRITES,
-  STATIC_ROUTES_IGNORES,
-  DYNAMIC_GENERATED_ROUTES,
-  DEFAULT_METADATA,
+  IGNORED_ROUTES,
+  DYNAMIC_ROUTES,
+  PAGE_METADATA,
 } from './next.dynamic.constants.mjs';
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { siteConfig } from './next.json.mjs';
@@ -31,18 +24,6 @@ const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
 
 // This is a small utility that allows us to quickly separate locale from the remaning pathname
 const getPathname = (path = []) => path.join('/');
-
-// This tests if the current pathname matches any expression that belongs
-// to the list of ignored routes and if it does we return `true` to indicate that
-const shouldIgnoreRoute = pathname =>
-  pathname.length > 0 && DYNAMIC_ROUTES_IGNORES.some(e => e.test(pathname));
-
-// This tests if the current pathname matches any sort of rewrite rule
-// and if it does we return a the replacement expression for the pathname
-const getRouteRewrite = pathname =>
-  (pathname.length > 0 &&
-    DYNAMIC_ROUTES_REWRITES.find(([e]) => e.test(pathname))) ||
-  [];
 
 // This maps a pathname into an actual route object that can be used
 // we use a platform-specific separator to split the pathname
@@ -79,7 +60,9 @@ const getDynamicRouter = async () => {
   );
 
   websitePages.forEach(filename => {
-    let pathname = filename.replace(MD_EXTENSION_REGEX, '');
+    // This Regular Expression is used to remove the `index.md(x)` suffix
+    // of a name and to remove the `.md(x)` extensions of a filename.
+    let pathname = filename.replace(/((\/)?(index))?\.mdx?$/i, '');
 
     if (pathname.length > 1 && pathname.endsWith(sep)) {
       pathname = pathname.substring(0, pathname.length - 1);
@@ -100,11 +83,11 @@ const getDynamicRouter = async () => {
    */
   const getRoutesByLanguage = async (locale = defaultLocale.code) => {
     const shouldIgnoreStaticRoute = pathname =>
-      STATIC_ROUTES_IGNORES.every(e => !e({ pathname, locale }));
+      IGNORED_ROUTES.every(e => !e({ pathname, locale }));
 
     return [...pathnameToFilename.keys()]
       .filter(shouldIgnoreStaticRoute)
-      .concat(DYNAMIC_GENERATED_ROUTES);
+      .concat([...DYNAMIC_ROUTES.keys()]);
   };
 
   /**
@@ -207,14 +190,14 @@ const getDynamicRouter = async () => {
    * @returns {import('next').Metadata}
    */
   const _getPageMetadata = async (locale = defaultLocale.code, path = '') => {
-    const pageMetadata = { ...DEFAULT_METADATA };
+    const pageMetadata = { ...PAGE_METADATA };
 
     const { source = '' } = await getMarkdownFile(locale, path);
 
     const { data } = matter(source);
 
     pageMetadata.title = data.title
-      ? `${data.title} | ${siteConfig.title}`
+      ? `${siteConfig.title} — ${data.title}`
       : siteConfig.title;
 
     pageMetadata.twitter.title = pageMetadata.title;
@@ -246,9 +229,7 @@ const getDynamicRouter = async () => {
 
   return {
     mapPathToRoute,
-    shouldIgnoreRoute,
     getPathname,
-    getRouteRewrite,
     getRoutesByLanguage,
     getMDXContent,
     getMarkdownFile,

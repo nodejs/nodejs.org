@@ -1,18 +1,16 @@
 import { cache } from 'react';
 
 import generateWebsiteFeeds from '@/next-data/generators/websiteFeeds.mjs';
-import provideBlogData from '@/next-data/providers/blogData';
+import { provideBlogPosts } from '@/next-data/providers/blogData';
 
-const websiteFeeds = generateWebsiteFeeds(provideBlogData());
+const websiteFeeds = await generateWebsiteFeeds(provideBlogPosts('all'));
 
-const provideWebsiteFeeds = cache(async (feed: string) => {
-  return websiteFeeds.then(feeds => {
-    if (feed.includes('.xml') && feeds.has(feed)) {
-      return feeds.get(feed)?.rss2();
-    }
+const provideWebsiteFeeds = cache((feed: string) => {
+  if (feed.includes('.xml') && websiteFeeds.has(feed)) {
+    return websiteFeeds.get(feed)?.rss2();
+  }
 
-    return undefined;
-  });
+  return undefined;
 });
 
 export default provideWebsiteFeeds;

@@ -28,8 +28,7 @@
     }
 
     .icon {
-      @apply h-4
-        w-4
+      @apply size-4
         text-neutral-600
         dark:text-neutral-400;
     }

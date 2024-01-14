@@ -41,16 +41,20 @@ const Pagination: FC<PaginationProps> = ({
         disabled={currentPage === 1}
         kind="secondary"
         className={styles.previousButton}
+        href={pages[currentPage - 2]?.url}
       >
         <ArrowLeftIcon className={styles.arrowIcon} />
         <span>{t('components.common.pagination.prev')}</span>
       </Button>
+
       <ol className={styles.list}>{parsedPages}</ol>
+
       <Button
         aria-label={t('components.common.pagination.nextAriaLabel')}
         disabled={currentPage === pages.length}
         kind="secondary"
         className={styles.nextButton}
+        href={pages[currentPage]?.url}
       >
         <span>{t('components.common.pagination.next')}</span>
         <ArrowRightIcon className={styles.arrowIcon} />

@@ -1,62 +1,61 @@
 import { useTranslations } from 'next-intl';
-import { useMemo } from 'react';
-import type { ComponentProps, FC } from 'react';
+import type { FC } from 'react';
 
 import AvatarGroup from '@/components/Common/AvatarGroup';
 import Preview from '@/components/Common/Preview';
 import { Time } from '@/components/Common/Time';
+import Link from '@/components/Link';
+import { mapBlogCategoryToPreviewType } from '@/util/blogUtils';
 
 import styles from './index.module.css';
 
-type Author = {
-  fullName: string;
-  src: string;
-};
+// @todo: this should probably be a global type?
+type Author = { fullName: string; src: string };
 
 type BlogPostCardProps = {
-  title: ComponentProps<typeof Preview>['title'];
-  type: Required<ComponentProps<typeof Preview>>['type'];
-  description: string;
+  title: string;
+  category: string;
+  description?: string;
   authors: Array<Author>;
   date: Date;
+  slug: string;
 };
 
 const BlogPostCard: FC<BlogPostCardProps> = ({
   title,
-  type,
+  slug,
+  category,
   description,
   authors,
   date,
 }) => {
   const t = useTranslations();
 
-  const avatars = useMemo(
-    () =>
-      authors.map(({ fullName, src }) => ({
-        alt: fullName,
-        src,
-        toString: () => fullName,
-      })),
-    [authors]
-  );
+  const avatars = authors.map(({ fullName, src }) => ({ alt: fullName, src }));
+
+  const type = mapBlogCategoryToPreviewType(category);
 
   return (
     <article className={styles.container}>
-      <Preview
-        title={title}
-        type={type}
-        height="auto"
-        className={styles.preview}
-      />
-      <p className={styles.subtitle}>{t(`components.common.card.${type}`)}</p>
-      <p aria-hidden="true" className={styles.title}>
+      <Link href={slug} aria-label={title}>
+        <Preview title={title} type={type} />
+      </Link>
+
+      <Link href={`/blog/${category}`} className={styles.subtitle}>
+        {t(`layouts.blog.categories.${category}`)}
+      </Link>
+
+      <Link href={slug} className={styles.title}>
         {title}
-      </p>
-      <p className={styles.description}>{description}</p>
+      </Link>
+
+      {description && <p className={styles.description}>{description}</p>}
+
       <footer className={styles.footer}>
         <AvatarGroup avatars={avatars} />
+
         <div className={styles.author}>
-          <p>{avatars.join(', ')}</p>
+          <p>{avatars.map(avatar => avatar.alt).join(', ')}</p>
 
           <Time
             date={date}

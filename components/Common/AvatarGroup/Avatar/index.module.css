@@ -1,7 +1,6 @@
 .avatar {
   @apply flex
-    h-8
-    w-8
+    size-8
     items-center
     justify-center
     rounded-full
@@ -18,8 +17,7 @@
 
 .avatarRoot {
   @apply -ml-2
-    h-8
-    w-8
+    size-8
     flex-shrink-0
     first:ml-0;
 }

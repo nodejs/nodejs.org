@@ -29,12 +29,14 @@ const MetaBar: FC<MetaBarProps> = ({ items, headings }) => {
   return (
     <div className={styles.wrapper}>
       <dl>
-        {Object.entries(items).map(([key, value]) => (
-          <Fragment key={key}>
-            <dt>{t(key)}</dt>
-            <dd>{value}</dd>
-          </Fragment>
-        ))}
+        {Object.entries(items)
+          .filter(([, value]) => !!value)
+          .map(([key, value]) => (
+            <Fragment key={key}>
+              <dt>{t(key)}</dt>
+              <dd>{value}</dd>
+            </Fragment>
+          ))}
 
         {heading.length > 0 && (
           <>

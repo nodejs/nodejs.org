@@ -12,7 +12,8 @@
   "rssFeeds": [
     {
       "title": "Node.js Blog",
-      "file": "blog.xml"
+      "file": "blog.xml",
+      "category": "all"
     },
     {
       "title": "Node.js Blog: Releases",

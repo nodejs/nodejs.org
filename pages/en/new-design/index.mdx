@@ -1,4 +1,5 @@
 ---
+title: Run JavaScript Everywhere
 layout: home.hbs
 ---
 
@@ -6,60 +7,109 @@ layout: home.hbs
   <WithBadge section="index" />
 
   <div>
-    # Run JavaScript Everywhere
+    <h1 className="special">Run JavaScript Everywhere</h1>
 
-    Node.js is a free, open-sourced, cross-platform JavaScript run-time
+    Node.js is a free, open-source, cross-platform JavaScript runtime
     environment that lets developers write command line tools and server-side
     scripts outside of a browser.
 
   </div>
+
   <div>
     <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
       {({ release }) => (
-        <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+        <>
+          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+          <small>
+            Downloads Node.js <b>{release.versionWithPrefix}</b> with long-term support.
+            Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
+          </small>
+        </>
       )}
     </WithNodeRelease>
-
-    <Button kind="secondary" href="/learn">Get Started</Button>
-
+    <WithNodeRelease status="Current">
+      {({ release }) => (
+        <small>
+          Want new features sooner?
+          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b> instead.
+        </small>
+      )}
+    </WithNodeRelease>
   </div>
 </section>
 
 <section>
-  <CodeTabs
-    languages="bash|bash"
-    displayNames="macOS / Linux (nvm)|Windows (Chocolatey)"
-    linkUrl="/download/package-manager"
-    linkText="More Options"
-  >
-    ```bash
-    # Install Node Version Manager (NVM)
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+  <div>
+    ```js displayName="Create an HTTP Server"
+    import { createServer } from 'node:http';
 
-    # Install Node.js
-    nvm install --lts
+    const server = createServer((req, res) => {
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end('Hello World!\n');
+    });
 
-    # Check that Node is installed
-    node -v
-
-    # Check your NPM version
-    npm -v
+    // starts a simple http server locally on port 3000
+    server.listen(3000, '127.0.0.1', () => {
+      console.log('Listening on 127.0.0.1:3000');
+    });
     ```
 
-    ```bash
-    # Install Chocolatey
-    iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+    ```js displayName="Write Tests"
+    import assert from 'node:assert';
+    import test from 'node:test';
 
-    # Install Node.js
-    choco install nodejs-lts
+    test('that 1 is equal 1', () => {
+      assert.strictEqual(1, 1);
+    });
 
-    # Check that Node is installed
-    node -v
-
-    # Check your NPM version
-    npm -v
+    test('that throws as 1 is not equal 2', () => {
+      // throws an exception because 1!=2
+      assert.strictEqual(1, 2);
+    });
     ```
 
-  </CodeTabs>
-  Copy and paste this snippet to install Node.js LTS via a Package Manager
+    ```js displayName="Read and Hash a File"
+    import { createHash } from 'node:crypto';
+    import { readFile } from 'node:fs/promises';
+
+    const hasher = createHash('sha1');
+    const fileContent = await readFile('./package.json');
+
+    hasher.setEncoding('hex');
+    hasher.write(fileContent);
+    hasher.end();
+
+    const fileHash = hasher.read();
+    ```
+
+    ```js displayName="Read Streams"
+    import { createReadStream, createWriteStream } from 'node:fs';
+
+    const res = await fetch('https://nodejs.org/dist/index.json');
+    const json = await res.json(); // yields a json object
+
+    const readableStream = createReadStream('./package.json');
+    const writableStream = createWriteStream('./package2.json');
+
+    readableStream.setEncoding('utf8');
+
+    readableStream.on('data', chunk => writableStream.write(chunk));
+    ```
+
+    ```js displayName="Work with Workers"
+    // file containing main thread (main.mjs)
+    import { Worker } from 'node:worker_threads';
+
+    const w = new Worker('./worker.mjs', { workerData: 'hello!' });
+    w.on('message', data => console.log('processed data:', data));
+
+    // file containing worker (worker.mjs)
+    import { parentPort, workerData } from 'node:worker_threads';
+
+    // do some complex computational workload
+    parentPort.postMessage(btoa(workerData));
+    ```
+
+  </div>
+  Learn more what Node.js is able to offer with our [Learning materials](/learn).
 </section>

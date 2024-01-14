@@ -32,7 +32,7 @@ export const Default: Story = {
             link: '/the-v8-javascript-engine',
           },
           {
-            label: 'An introduction to the NPM package manager',
+            label: 'An introduction to the npm package manager',
             link: '/an-introduction-to-the-npm-package-manager',
           },
         ],

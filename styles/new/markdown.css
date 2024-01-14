@@ -1,4 +1,9 @@
 main {
+  @apply flex
+    w-full
+    flex-col
+    gap-6;
+
   hr {
     @apply w-full
       border-t
@@ -53,13 +58,24 @@ main {
       dark:text-white;
   }
 
+  p {
+    @apply text-neutral-900
+      dark:text-white;
+  }
+
   a {
     @apply text-green-600
+      xs:underline
       dark:text-green-400;
 
     &:hover {
       @apply text-green-900
         dark:text-green-300;
+    }
+
+    &:has(code) {
+      @apply xs:decoration-neutral-800
+        dark:xs:decoration-neutral-200;
     }
   }
 

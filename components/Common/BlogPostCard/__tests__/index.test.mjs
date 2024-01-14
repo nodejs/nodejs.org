@@ -8,14 +8,16 @@ function renderBlogPostCard({
   description = 'Blog post description',
   authors = [],
   date = new Date(),
+  slug = '',
 }) {
   render(
     <BlogPostCard
       title={title}
-      type={type}
+      category={type}
       description={description}
       authors={authors}
       date={date}
+      slug={slug}
     />
   );
 
@@ -33,14 +35,11 @@ describe('BlogPostCard', () => {
     it('Renders the title prop correctly', () => {
       const { title } = renderBlogPostCard({});
 
-      // Title from Preview component
-      expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent(
-        title
-      );
+      expect(screen.getAllByText(title).length).toBe(2);
 
-      // The second title should be hidden for screen-readers
-      // to prevent them from reading it twice
-      expect(screen.getAllByText(title)[1]).toHaveAttribute(
+      // title from preview should be ignored as the one from Links
+      // and blog card/post are what matter
+      expect(screen.getAllByText(title)[0]).toHaveAttribute(
         'aria-hidden',
         'true'
       );
@@ -53,9 +52,9 @@ describe('BlogPostCard', () => {
     });
 
     it.each([
-      { label: 'components.common.card.vulnerability', type: 'vulnerability' },
-      { label: 'components.common.card.announcement', type: 'announcement' },
-      { label: 'components.common.card.release', type: 'release' },
+      { label: 'layouts.blog.categories.vulnerability', type: 'vulnerability' },
+      { label: 'layouts.blog.categories.announcements', type: 'announcements' },
+      { label: 'layouts.blog.categories.release', type: 'release' },
     ])(
       'Renders "%label" text when passing it the type "%type"',
       ({ label, type }) => {

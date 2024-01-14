@@ -45,8 +45,7 @@
 }
 
 .navInteractionIcon {
-  @apply h-6
-    w-6;
+  @apply size-6;
 }
 
 .sidebarItemTogglerLabel {
@@ -91,8 +90,7 @@
 }
 
 .ghIconWrapper {
-  @apply h-9
-    w-9
+  @apply size-9
     rounded-md
     p-2;
 

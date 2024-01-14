@@ -51,7 +51,7 @@ export const DropdownLabel: Story = {
           },
           {
             value: 'section-6',
-            label: 'An introduction to the NPM package manager',
+            label: 'An introduction to the npm package manager',
           },
           {
             value: 'section-7',

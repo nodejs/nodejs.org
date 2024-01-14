@@ -31,7 +31,7 @@ This week we had two io.js releases [v1.7.0](https://iojs.org/dist/v1.7.0/) and 
 ## Community Updates
 
 - Difference between io.js and The Node Foundation [iojs/io.js#1416](https://github.com/nodejs/node/issues/1416).
-- NPM launches private modules and npm inc [raises](http://techcrunch.com/2015/04/14/popular-javascript-package-manager-npm-raises-8m-launches-private-modules/).
+- npm launches private modules and npm inc [raises](http://techcrunch.com/2015/04/14/popular-javascript-package-manager-npm-raises-8m-launches-private-modules/).
 - Thoughts of Node.js Foundation on [Medium](https://medium.com/@programmer/thoughts-on-node-foundation-abcf86c72786).
 - io.js v1.8.0 crypto performance on [io.js wiki](https://github.com/nodejs/node/wiki/Crypto-Performance-Notes-for-OpenSSL-1.0.2a-on-iojs-v1.8.0).
 - io.js mention on [Oracle's blog](https://blogs.oracle.com/java-platform-group/entry/node_js_and_io_js).

@@ -19,7 +19,8 @@ const reactRuntime = { Fragment, jsx, jsxs };
  * @returns {Promise<{
  *   MDXContent: import('mdx/types').MDXContent;
  *   headings: import('@vcarl/remark-headings').Heading[];
- *   frontmatter: Record<string, any>, readingTime: import('reading-time').ReadTimeResults
+ *   frontmatter: Record<string, any>;
+ *   readingTime: import('reading-time').ReadTimeResults;
  * }>}
  */
 export async function compileMDX(source, fileExtension) {

@@ -1,8 +1,8 @@
 export interface RSSFeed {
   file: string;
   title: string;
+  blogCategory: string;
   description?: string;
-  blogCategory?: string;
 }
 
 interface WithRange {

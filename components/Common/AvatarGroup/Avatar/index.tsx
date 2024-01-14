@@ -10,7 +10,12 @@ type AvatarProps = {
 
 const Avatar: FC<AvatarProps> = ({ src, alt }) => (
   <RadixAvatar.Root className={styles.avatarRoot}>
-    <RadixAvatar.Image src={src} alt={alt} className={styles.avatar} />
+    <RadixAvatar.Image
+      loading="lazy"
+      src={src}
+      alt={alt}
+      className={styles.avatar}
+    />
     <RadixAvatar.Fallback delayMs={500} className={styles.avatar}>
       {alt}
     </RadixAvatar.Fallback>

@@ -11,8 +11,7 @@
     font-medium;
 
   .icon {
-    @apply h-4
-      w-4;
+    @apply size-4;
   }
 
   .badge {

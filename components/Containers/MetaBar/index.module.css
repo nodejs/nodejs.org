@@ -3,6 +3,7 @@
     flex-col
     items-start
     gap-8
+    overflow-y-auto
     border-l
     border-l-neutral-200
     px-4
@@ -38,6 +39,8 @@
       @apply font-semibold
         text-neutral-900
         underline
+        xs:inline-block
+        xs:py-1
         dark:text-white;
 
       &:hover {
@@ -55,8 +58,7 @@
     }
 
     svg {
-      @apply h-4
-        w-4
+      @apply size-4
         text-neutral-600
         dark:text-neutral-400;
     }

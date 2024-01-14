@@ -9,10 +9,12 @@ import LegacyDownloadLayout from '@/layouts/DownloadLayout';
 import LegacyIndexLayout from '@/layouts/IndexLayout';
 import LegacyLearnLayout from '@/layouts/LearnLayout';
 import AboutLayout from '@/layouts/New/About';
+import BlogLayout from '@/layouts/New/Blog';
 import DefaultLayout from '@/layouts/New/Default';
 import DocsLayout from '@/layouts/New/Docs';
 import HomeLayout from '@/layouts/New/Home';
 import LearnLayout from '@/layouts/New/Learn';
+import PostLayout from '@/layouts/New/Post';
 import { ENABLE_WEBSITE_REDESIGN } from '@/next.constants.mjs';
 import type { Layouts, LegacyLayouts } from '@/types';
 
@@ -35,6 +37,8 @@ const redesignLayouts = {
   'home.hbs': HomeLayout,
   'learn.hbs': LearnLayout,
   'page.hbs': DefaultLayout,
+  'blog-post.hbs': PostLayout,
+  'blog-category.hbs': BlogLayout,
 } satisfies Record<Layouts, FC>;
 
 type WithLayout<L = Layouts | LegacyLayouts> = PropsWithChildren<{ layout: L }>;

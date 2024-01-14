@@ -50,6 +50,7 @@
     "@radix-ui/react-toast": "^1.1.5",
     "@savvywombat/tailwindcss-grid-areas": "~3.1.0",
     "@sentry/nextjs": "~7.86.0",
+    "@tailwindcss/container-queries": "~0.1.1",
     "@types/node": "20.10.6",
     "@vcarl/remark-headings": "~0.1.0",
     "@vercel/analytics": "~1.1.1",
@@ -123,10 +124,5 @@
     "stylelint-order": "6.0.4",
     "stylelint-selector-bem-pattern": "3.0.1",
     "user-agent-data-types": "0.4.2"
-  },
-  "overrides": {
-    "stylelint-selector-bem-pattern": {
-      "stylelint": "16.1.0"
-    }
   }
 }

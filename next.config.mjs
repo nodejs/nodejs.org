@@ -9,12 +9,14 @@ import {
   BASE_PATH,
   ENABLE_STATIC_EXPORT,
   ENABLE_WEBSITE_REDESIGN,
+} from './next.constants.mjs';
+import { redirects, rewrites } from './next.rewrites.mjs';
+import {
   SENTRY_DSN,
   SENTRY_ENABLE,
   SENTRY_EXTENSIONS,
   SENTRY_TUNNEL,
-} from './next.constants.mjs';
-import { redirects, rewrites } from './next.rewrites.mjs';
+} from './sentry.constants.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

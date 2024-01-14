@@ -12,12 +12,9 @@ import { getMarkdownFiles } from '../../next.helpers.mjs';
 const blogPath = join(process.cwd(), 'pages/en/blog');
 
 /**
- * This contains the metadata of all available blog categories and
- * available pagination entries (years)
- *
- * @type {{ pagination: Set<number>; categories: Set<string>}}
+ * This contains the metadata of all available blog categories
  */
-const blogMetadata = { pagination: new Set(), categories: new Set() };
+const blogCategories = new Set(['all']);
 
 /**
  * This method parses the source (raw) Markdown content into Frontmatter
@@ -34,16 +31,23 @@ const getFrontMatter = (filename, source) => {
     category = 'uncategorized',
   } = graymatter(source).data;
 
-  // we add the year to the pagination set
-  blogMetadata.pagination.add(new Date(date).getUTCFullYear());
+  // We also use publishing years as categories for the blog
+  const publishYear = new Date(date).getUTCFullYear();
+
+  // Provides a full list of categories for the Blog Post which consists of
+  // all = (all blog posts), publish year and the actual blog category
+  const categories = [category, `year-${publishYear}`, 'all'];
+
+  // we add the year to the categories set
+  blogCategories.add(`year-${publishYear}`);
 
   // we add the category to the categories set
-  blogMetadata.categories.add(category);
+  blogCategories.add(category);
 
   // this is the url used for the blog post it based on the category and filename
   const slug = `/blog/${category}/${basename(filename, extname(filename))}`;
 
-  return { title, author, date: new Date(date), category, slug };
+  return { title, author, date: new Date(date), categories, slug };
 };
 
 /**
@@ -53,14 +57,13 @@ const getFrontMatter = (filename, source) => {
  * @return {Promise<import('../../types').BlogData>}
  */
 const generateBlogData = async () => {
-  // we retrieve all the filenames of all blog posts
+  // We retrieve the full pathnames of all Blog Posts to read each file individually
   const filenames = await getMarkdownFiles(process.cwd(), 'pages/en/blog', [
     '**/index.md',
-    '**/pagination.md',
   ]);
 
   return new Promise(resolve => {
-    const blogPosts = [];
+    const posts = [];
     const rawFrontmatter = [];
 
     filenames.forEach(filename => {
@@ -95,20 +98,10 @@ const generateBlogData = async () => {
       // This allows us to only read the frontmatter part of each file
       // and optimise the read-process as we have thousands of markdown files
       _readLine.on('close', () => {
-        const frontmatter = getFrontMatter(
-          filename,
-          rawFrontmatter[filename][1]
-        );
+        posts.push(getFrontMatter(filename, rawFrontmatter[filename][1]));
 
-        blogPosts.push(frontmatter);
-
-        // Once we finish reading all fles
-        if (blogPosts.length === filenames.length) {
-          resolve({
-            pagination: [...blogMetadata.pagination].sort(),
-            categories: [...blogMetadata.categories].sort(),
-            posts: blogPosts.sort((a, b) => b.date - a.date),
-          });
+        if (posts.length === filenames.length) {
+          resolve({ categories: [...blogCategories], posts });
         }
       });
     });

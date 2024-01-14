@@ -37,7 +37,7 @@ This week we had one io.js release [v1.8.1](https://iojs.org/dist/v1.8.1/), comp
 
 - Fedor Indutny opened discussion about removing TLS `newSession` and `resumeSession` event. [iojs/io.js#1462](https://github.com/nodejs/node/issues/1462)
 - Proposal to change the C HTTP parser JS HTTP parser [here](https://github.com/nodejs/node/pull/1457)
-- NPM founder talks about io.js at [InfoWorld](http://www.infoworld.com/article/2910594/node-js/npm-founder-foresees-merger-node-js-io-js.html)
+- npm founder talks about io.js at [InfoWorld](http://www.infoworld.com/article/2910594/node-js/npm-founder-foresees-merger-node-js-io-js.html)
 - Proposal to add mikeal, mscdex, shigeki as new TC members. [iojs/io.js#1483](https://github.com/nodejs/node/issues/1483#issuecomment-95128140)
 
 ## Upcoming Events
