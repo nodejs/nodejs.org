@@ -29,10 +29,10 @@
       bg-gradient-subtle
       p-12
       grid-in-[main]
-      dark:bg-gradient-subtle-dark
       xl:px-18
       xs:bg-none
       xs:p-4
+      dark:bg-gradient-subtle-dark
       xs:dark:bg-none;
   }
 
@@ -104,44 +104,31 @@
           @apply text-center
             text-sm
             text-neutral-800
-            dark:text-neutral-400
-            xs:text-xs;
+            xs:text-xs
+            dark:text-neutral-400;
         }
       }
     }
 
     &:nth-of-type(2) {
       @apply flex
-        max-w-md
-        flex-[1_1]
-        flex-col
-        items-center
-        gap-4
-        md:max-w-2xl
-        lg:max-w-3xl;
+          max-w-md
+          flex-[1_1]
+          flex-col
+          items-center
+          gap-4
+          md:max-w-2xl
+          lg:max-w-3xl;
 
       > div {
         @apply w-fit;
-
-        div[data-state='active'] a {
-          @apply border-none
-            bg-neutral-900
-            px-3
-            py-1.5
-            text-sm
-            font-medium;
-
-          &:hover {
-            @apply bg-neutral-800;
-          }
-        }
       }
 
       > p {
         @apply text-center
-          text-sm
-          text-neutral-800
-          dark:text-neutral-200;
+            text-sm
+            text-neutral-800
+            dark:text-neutral-200;
       }
     }
   }
@@ -152,8 +139,8 @@
     w-full
     justify-center
     bg-gradient-subtle
-    dark:bg-gradient-subtle-dark
     xs:bg-none
+    dark:bg-gradient-subtle-dark
     xs:dark:bg-none;
 
   main {
@@ -190,11 +177,11 @@
       bg-gradient-subtle
       px-4
       py-14
-      dark:bg-gradient-subtle-dark
       md:px-14
       lg:px-28
       xs:bg-none
       xs:pb-4
+      dark:bg-gradient-subtle-dark
       xs:dark:bg-none;
 
     main {
