@@ -2,11 +2,12 @@
 export type Layouts =
   | 'about.hbs'
   | 'docs.hbs'
-  | 'centered.hbs'
+  | 'home.hbs'
   | 'learn.hbs'
   | 'page.hbs'
   | 'blog-category.hbs'
-  | 'blog-post.hbs';
+  | 'blog-post.hbs'
+  | 'centered.hbs';
 
 // @TODO: These are legacy layouts that are going to be replaced with the `nodejs/nodejs.dev` Layouts in the future
 export type LegacyLayouts =
@@ -18,4 +19,5 @@ export type LegacyLayouts =
   | 'docs.hbs'
   | 'download.hbs'
   | 'page.hbs'
+  | 'home.hbs'
   | 'centered.hbs';

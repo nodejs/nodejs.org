@@ -13,6 +13,7 @@ import BlogLayout from '@/layouts/New/Blog';
 import CenteredLayout from '@/layouts/New/Centered';
 import DefaultLayout from '@/layouts/New/Default';
 import DocsLayout from '@/layouts/New/Docs';
+import HomeLayout from '@/layouts/New/Home';
 import LearnLayout from '@/layouts/New/Learn';
 import PostLayout from '@/layouts/New/Post';
 import { ENABLE_WEBSITE_REDESIGN } from '@/next.constants.mjs';
@@ -28,6 +29,7 @@ const legacyLayouts = {
   'index.hbs': LegacyIndexLayout,
   'learn.hbs': LegacyLearnLayout,
   'page.hbs': LegacyDefaultLayout,
+  'home.hbs': LegacyDefaultLayout,
   'centered.hbs': LegacyDefaultLayout,
 } satisfies Record<LegacyLayouts, FC>;
 
@@ -35,11 +37,12 @@ const legacyLayouts = {
 const redesignLayouts = {
   'about.hbs': AboutLayout,
   'docs.hbs': DocsLayout,
-  'centered.hbs': CenteredLayout,
+  'home.hbs': HomeLayout,
   'learn.hbs': LearnLayout,
   'page.hbs': DefaultLayout,
   'blog-post.hbs': PostLayout,
   'blog-category.hbs': BlogLayout,
+  'centered.hbs': CenteredLayout,
 } satisfies Record<Layouts, FC>;
 
 type WithLayout<L = Layouts | LegacyLayouts> = PropsWithChildren<{ layout: L }>;
