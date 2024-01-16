@@ -10,7 +10,6 @@ import LegacyIndexLayout from '@/layouts/IndexLayout';
 import LegacyLearnLayout from '@/layouts/LearnLayout';
 import AboutLayout from '@/layouts/New/About';
 import BlogLayout from '@/layouts/New/Blog';
-import CenteredLayout from '@/layouts/New/Centered';
 import DefaultLayout from '@/layouts/New/Default';
 import DocsLayout from '@/layouts/New/Docs';
 import HomeLayout from '@/layouts/New/Home';
@@ -29,7 +28,6 @@ const legacyLayouts = {
   'index.hbs': LegacyIndexLayout,
   'learn.hbs': LegacyLearnLayout,
   'page.hbs': LegacyDefaultLayout,
-  'centered.hbs': LegacyDefaultLayout,
 } satisfies Record<LegacyLayouts, FC>;
 
 /** all the currently available layouts from website redesign */
@@ -41,7 +39,6 @@ const redesignLayouts = {
   'page.hbs': DefaultLayout,
   'blog-post.hbs': PostLayout,
   'blog-category.hbs': BlogLayout,
-  'centered.hbs': CenteredLayout,
 } satisfies Record<Layouts, FC>;
 
 type WithLayout<L = Layouts | LegacyLayouts> = PropsWithChildren<{ layout: L }>;
