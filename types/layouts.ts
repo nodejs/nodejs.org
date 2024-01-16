@@ -19,5 +19,4 @@ export type LegacyLayouts =
   | 'docs.hbs'
   | 'download.hbs'
   | 'page.hbs'
-  | 'home.hbs'
   | 'centered.hbs';

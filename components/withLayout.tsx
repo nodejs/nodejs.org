@@ -29,7 +29,6 @@ const legacyLayouts = {
   'index.hbs': LegacyIndexLayout,
   'learn.hbs': LegacyLearnLayout,
   'page.hbs': LegacyDefaultLayout,
-  'home.hbs': LegacyDefaultLayout,
   'centered.hbs': LegacyDefaultLayout,
 } satisfies Record<LegacyLayouts, FC>;
 
