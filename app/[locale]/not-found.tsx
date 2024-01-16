@@ -8,7 +8,7 @@ import CenteredLayout from '@/layouts/New/Centered';
 import { ENABLE_WEBSITE_REDESIGN } from '@/next.constants.mjs';
 
 /** @deprecated remove legacy component when website redesign is done */
-const LegacyNotFound: FC = () => {
+const LegacyNotFoundPage: FC = () => {
   const t = useTranslations();
 
   return (
@@ -19,7 +19,7 @@ const LegacyNotFound: FC = () => {
   );
 };
 
-const NotFound: FC = () => {
+const NotFoundPage: FC = () => {
   const t = useTranslations();
 
   return (
@@ -38,4 +38,4 @@ const NotFound: FC = () => {
   );
 };
 
-export default ENABLE_WEBSITE_REDESIGN ? NotFound : LegacyNotFound;
+export default ENABLE_WEBSITE_REDESIGN ? NotFoundPage : LegacyNotFoundPage;
