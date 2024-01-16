@@ -208,6 +208,11 @@
         "weekly-updates": "Weekly Updates",
         "wg": "Working Groups"
       }
+    },
+    "notFound": {
+      "title": "Page could not be found",
+      "description": "Sorry, we couldn’t find the page you’re after! Try starting again from the homepage.",
+      "backToHome": "Back to Home"
     }
   },
   "pages": {
