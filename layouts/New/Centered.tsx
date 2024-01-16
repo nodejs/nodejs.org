@@ -9,11 +9,7 @@ const CenteredLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <WithNavBar />
 
-    <div className={styles.centeredLayout}>
-      <div className="glowingBackdrop" />
-
-      <main>{children}</main>
-    </div>
+    <div className={styles.centeredLayout}>{children}</div>
 
     <WithFooter />
   </>

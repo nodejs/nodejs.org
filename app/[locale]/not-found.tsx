@@ -23,7 +23,11 @@ const LocalizedNotFound: FC = async () => {
 
   return (
     <WithLayout layout="centered.hbs">
-      <MDXRenderer Component={MDXContent} />
+      <div className="glowingBackdrop" />
+
+      <main>
+        <MDXRenderer Component={MDXContent} />
+      </main>
     </WithLayout>
   );
 };
