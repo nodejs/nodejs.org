@@ -2,7 +2,7 @@
 export type Layouts =
   | 'about.hbs'
   | 'docs.hbs'
-  | 'home.hbs'
+  | 'centered.hbs'
   | 'learn.hbs'
   | 'page.hbs'
   | 'blog-category.hbs'
@@ -17,4 +17,5 @@ export type LegacyLayouts =
   | 'index.hbs'
   | 'docs.hbs'
   | 'download.hbs'
-  | 'page.hbs';
+  | 'page.hbs'
+  | 'centered.hbs';

@@ -5,11 +5,11 @@ import WithNavBar from '@/components/withNavBar';
 
 import styles from './layouts.module.css';
 
-const HomeLayout: FC<PropsWithChildren> = ({ children }) => (
+const CenteredLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <WithNavBar />
 
-    <div className={styles.homeLayout}>
+    <div className={styles.centeredLayout}>
       <div className="glowingBackdrop" />
 
       <main>{children}</main>
@@ -19,4 +19,4 @@ const HomeLayout: FC<PropsWithChildren> = ({ children }) => (
   </>
 );
 
-export default HomeLayout;
+export default CenteredLayout;

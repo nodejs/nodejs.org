@@ -10,9 +10,9 @@ import LegacyIndexLayout from '@/layouts/IndexLayout';
 import LegacyLearnLayout from '@/layouts/LearnLayout';
 import AboutLayout from '@/layouts/New/About';
 import BlogLayout from '@/layouts/New/Blog';
+import CenteredLayout from '@/layouts/New/Centered';
 import DefaultLayout from '@/layouts/New/Default';
 import DocsLayout from '@/layouts/New/Docs';
-import HomeLayout from '@/layouts/New/Home';
 import LearnLayout from '@/layouts/New/Learn';
 import PostLayout from '@/layouts/New/Post';
 import { ENABLE_WEBSITE_REDESIGN } from '@/next.constants.mjs';
@@ -28,13 +28,14 @@ const legacyLayouts = {
   'index.hbs': LegacyIndexLayout,
   'learn.hbs': LegacyLearnLayout,
   'page.hbs': LegacyDefaultLayout,
+  'centered.hbs': LegacyDefaultLayout,
 } satisfies Record<LegacyLayouts, FC>;
 
 /** all the currently available layouts from website redesign */
 const redesignLayouts = {
   'about.hbs': AboutLayout,
   'docs.hbs': DocsLayout,
-  'home.hbs': HomeLayout,
+  'centered.hbs': CenteredLayout,
   'learn.hbs': LearnLayout,
   'page.hbs': DefaultLayout,
   'blog-post.hbs': PostLayout,
