@@ -5,6 +5,7 @@ import matter from 'gray-matter';
 import { VERCEL_REVALIDATE } from '@/next.constants.mjs';
 import { dynamicRouter } from '@/next.dynamic.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
+import { parseRichTextIntoPlainText } from '@/util/stringUtils';
 
 // This is the Route Handler for the `GET` method which handles the request
 // for a digest and metadata of all existing pages on Node.js Website
@@ -30,10 +31,7 @@ export const GET = async () => {
     // grabs the markdown content and cleanses it by removing HTML/JSX tags
     // removing empty/blank lines or lines just with spaces and trims each line
     // from leading and trailing paddings/spaces
-    const cleanedContent = matter(source)
-      .content.replace(/<[^>]+>/gm, '')
-      .replace(/^\s*\n/gm, '')
-      .replace(/^[ ]+|[ ]+$/gm, '');
+    const cleanedContent = parseRichTextIntoPlainText(matter(source).content);
 
     // Deflates a String into a base64 string-encoded (zlib compressed)
     const deflatedSource = deflateSync(cleanedContent).toString('base64');
