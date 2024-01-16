@@ -1,6 +1,7 @@
 export const getAcronymFromString = (str: string) =>
   [...(str.trim().match(/\b(\w)/g) || '')].join('').toUpperCase();
 
+// Note: We don't remove Markdown Headers delimiters as they're useful for delimiting sections
 export const parseRichTextIntoPlainText = (richText: string) =>
   richText
     // replaces JSX and HTML and their properties with an empty string
@@ -10,8 +11,6 @@ export const parseRichTextIntoPlainText = (richText: string) =>
     .replace(/\[([^\]]+)\]\([^)]+\)/gm, '$1')
     // replaces Markdown lists with their content
     .replace(/^[*-] (.*)$/gm, '$1')
-    // replaces Markdown headings with their content
-    .replace(/^#+ (.*)$/gm, '$1')
     // replaces Markdown underscore, bold and italic with their content
     .replace(/[_*]{1,2}(.*)[_*]{1,2}/gm, '$1')
     // replaces Markdown multiline codeblocks with their content
