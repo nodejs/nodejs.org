@@ -19,7 +19,7 @@ const LegacyNotFound: FC = () => {
   );
 };
 
-const NotFound: FC = async () => {
+const NotFound: FC = () => {
   const t = useTranslations();
 
   return (
