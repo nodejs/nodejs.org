@@ -1,6 +1,7 @@
 'use client';
 
 import { captureException } from '@sentry/nextjs';
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useMemo } from 'react';
 
@@ -21,7 +22,8 @@ const LegacyErrorPage: FC<{ error: Error }> = ({ error }) => {
 };
 
 const ErrorPage: FC<{ error: Error }> = ({ error }) => {
-  useMemo(() => captureException(error), [error]);
+  captureException(error);
+  const t = useTranslations();
 
   return (
     <CenteredLayout>
@@ -29,11 +31,13 @@ const ErrorPage: FC<{ error: Error }> = ({ error }) => {
 
       <main>
         500
-        <h1 className="special -mt-4">Internal Server Error</h1>
+        <h1 className="special -mt-4">
+          {t('layouts.error.internalServerError.title')}
+        </h1>
         <p className="-mt-4 max-w-sm text-center text-lg">
-          This page has thrown a non-recoverable error.
+          {t('layouts.error.internalServerError.description')}
         </p>
-        <Button href="/">Back to Home</Button>
+        <Button href="/">{t('layouts.error.backToHome')}</Button>
       </main>
     </CenteredLayout>
   );

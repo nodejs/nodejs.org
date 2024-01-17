@@ -28,11 +28,11 @@ const NotFoundPage: FC = () => {
 
       <main>
         404
-        <h1 className="special -mt-4">{t('layouts.notFound.title')}</h1>
+        <h1 className="special -mt-4">{t('layouts.error.notFound.title')}</h1>
         <p className="-mt-4 max-w-sm text-center text-lg">
-          {t('layouts.notFound.description')}
+          {t('layouts.error.notFound.description')}
         </p>
-        <Button href="/">{t('layouts.notFound.backToHome')}</Button>
+        <Button href="/">{t('layouts.error.backToHome')}</Button>
       </main>
     </CenteredLayout>
   );

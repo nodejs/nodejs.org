@@ -209,9 +209,15 @@
         "wg": "Working Groups"
       }
     },
-    "notFound": {
-      "title": "Page could not be found",
-      "description": "Sorry, we couldn’t find the page you’re after! Try starting again from the homepage.",
+    "error": {
+      "notFound": {
+        "title": "Page could not be found",
+        "description": "Sorry, we couldn’t find the page you’re after! Try starting again from the homepage."
+      },
+      "internalServerError": {
+        "title": "Internal Server Error",
+        "description": "This page has thrown a non-recoverable error."
+      },
       "backToHome": "Back to Home"
     }
   },
