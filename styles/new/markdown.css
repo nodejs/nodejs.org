@@ -65,8 +65,8 @@ main {
 
   a {
     @apply text-green-600
-      xs:underline
-      dark:text-green-400;
+      dark:text-green-400
+      xs:underline;
 
     &:hover {
       @apply text-green-900
@@ -121,10 +121,10 @@ main {
         px-4
         py-2
         text-neutral-900
-        xs:block
-        xs:border-l-0
         dark:border-neutral-800
-        dark:text-white;
+        dark:text-white
+        xs:block
+        xs:border-l-0;
 
       > a {
         @apply pr-2;

@@ -6,8 +6,8 @@
     border-b
     border-b-neutral-200
     font-open-sans
-    xs:hidden
-    dark:border-b-neutral-800;
+    dark:border-b-neutral-800
+    xs:hidden;
 
   .tabsTrigger {
     @apply border-b-2

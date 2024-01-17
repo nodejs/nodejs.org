@@ -5,10 +5,10 @@ h1.special {
     leading-[3rem]
     -tracking-[0.045rem]
     [-webkit-text-fill-color:transparent]
+    dark:bg-gradient-subtle-white
     md:text-5xl
     md:leading-[4rem]
-    md:-tracking-[0.06rem]
-    dark:bg-gradient-subtle-white;
+    md:-tracking-[0.06rem];
 }
 
 div.glowingBackdrop {
