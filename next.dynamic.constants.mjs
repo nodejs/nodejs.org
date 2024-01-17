@@ -15,8 +15,6 @@ import { defaultLocale } from './next.locales.mjs';
  * @type {((route: import('./types').RouteSegment) => boolean)[]} A list of Ignored Routes by Regular Expressions
  */
 export const IGNORED_ROUTES = [
-  // This is used to ignore the 404 route for the static generation (/404)
-  ({ pathname }) => pathname === '404',
   // This is used to ignore all blog routes except for the English language
   ({ locale, pathname }) =>
     locale !== defaultLocale.code && /^blog\//.test(pathname),

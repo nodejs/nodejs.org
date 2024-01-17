@@ -8,6 +8,7 @@ export default {
     './layouts/**/*.tsx',
     './.storybook/preview.tsx',
     './.storybook/main.ts',
+    './app/**/*.tsx',
   ],
   theme: {
     colors: {
