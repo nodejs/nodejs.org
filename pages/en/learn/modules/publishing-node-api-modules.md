@@ -1,9 +1,9 @@
 ---
-title: How to publish Node-API package
+title: How to publish a Node-API package
 layout: learn.hbs
 ---
 
-# How to publish Node-API version of a package alongside a non-Node-API version
+# How to publish a Node-API version of a package alongside a non-Node-API version
 
 The following steps are illustrated using the package `iotivity-node`:
 
