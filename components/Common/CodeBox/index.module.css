@@ -67,18 +67,11 @@
 
     & > .action {
       @apply flex
-        cursor-pointer
         items-center
         gap-2
-        border-none
-        bg-neutral-900
         px-3
         py-1.5
         font-medium;
-
-      &:hover {
-        @apply bg-neutral-800;
-      }
     }
   }
 }
