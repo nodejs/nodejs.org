@@ -13,6 +13,7 @@ import NodejsDark from '@/components/Icons/Logos/NodejsDark';
 import NodejsLight from '@/components/Icons/Logos/NodejsLight';
 import GitHub from '@/components/Icons/Social/GitHub';
 import Link from '@/components/Link';
+import { SearchButton } from '@/components/SearchBox';
 import type { FormattedMessage } from '@/types';
 
 import style from './index.module.css';
@@ -64,6 +65,8 @@ const NavBar: FC<NavbarProps> = ({
         </div>
 
         <div className={style.actionsWrapper}>
+          <SearchButton />
+
           <ThemeToggle onClick={onThemeTogglerClick} />
 
           <LanguageDropdown

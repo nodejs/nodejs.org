@@ -21,7 +21,7 @@ function splitIntoSections(markdownContent) {
   for (const line of lines) {
     if (line.match(/^#{1,6}\s/)) {
       section = {
-        pageSectionTitle: stripMarkdownTags(line.replace(/^#{1,6}\s*/, '')),
+        pageSectionTitle: line.replace(/^#{1,6}\s*/, ''),
         pageSectionContent: [],
       };
       sections.push(section);
@@ -32,24 +32,8 @@ function splitIntoSections(markdownContent) {
 
   return sections.map(section => ({
     ...section,
-    pageSectionContent: stripMarkdownTags(
-      section.pageSectionContent.join('\n')
-    ),
+    pageSectionContent: section.pageSectionContent.join('\n'),
   }));
-}
-
-function stripMarkdownTags(markdownContent) {
-  return (
-    markdownContent
-      // Remove links, but keep the text
-      .replace(/\[([^\]]+)\]\([^)]+\)/gm, '$1')
-      // Remove self-closing links
-      .replace(/\[([^\]]+)\]\[\]/g, '$1')
-      // Remove lists
-      .replace(/^-\s/gm, '')
-      // Remove bold elements
-      .replace(/\*\*(.*?)\*\*/g, '$1')
-  );
 }
 
 export const siteContent = pageData
@@ -60,11 +44,7 @@ export const siteContent = pageData
     const subSections = splitIntoSections(markdownContent);
 
     return subSections.map(section => {
-      const id = crypto
-        .createHash('sha256')
-        .update(`${pathname}:${title}:${section.pageSectionTitle}`)
-        .digest('hex')
-        .substring(0, 24);
+      const id = crypto.randomUUID();
       return {
         id,
         path: pathname + '#' + slug(section.pageSectionTitle),
