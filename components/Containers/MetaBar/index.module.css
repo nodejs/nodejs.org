@@ -8,6 +8,7 @@
     border-l-neutral-200
     px-4
     py-6
+    dark:border-l-neutral-900
     md:max-w-xs
     lg:px-6
     xs:mt-8
@@ -15,7 +16,6 @@
     xs:border-l-0
     xs:border-t
     xs:border-t-neutral-200
-    dark:border-l-neutral-900
     xs:dark:border-t-neutral-900;
 
   dt {
@@ -39,9 +39,9 @@
       @apply font-semibold
         text-neutral-900
         underline
+        dark:text-white
         xs:inline-block
-        xs:py-1
-        dark:text-white;
+        xs:py-1;
 
       &:hover {
         @apply text-neutral-800

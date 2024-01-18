@@ -44,7 +44,7 @@ const WithBlogCategories: FC<WithBlogCategoriesProps> = ({
         </div>
       </LinkTabs>
 
-      <div className="mt-4 border-t border-t-neutral-200 pt-5 md:mt-8 dark:border-t-neutral-900">
+      <div className="mt-4 border-t border-t-neutral-200 pt-5 dark:border-t-neutral-900 md:mt-8">
         <Pagination
           currentPage={blogData.page}
           pages={mapPaginationPages(
