@@ -14,6 +14,10 @@ type SeeAllProps = {
 };
 
 export const SeeAll: FC<SeeAllProps> = props => {
+  if (!props.searchTerm) {
+    return null;
+  }
+
   return (
     <div className={styles.seeAllFulltextSearchResults}>
       <a

@@ -8,7 +8,7 @@ import styles from '@/components/SearchBox/components/index.module.css';
 import { PoweredBy } from '@/components/SearchBox/components/PoweredBy';
 import { SearchResult } from '@/components/SearchBox/components/SearchResult';
 import { SeeAll } from '@/components/SearchBox/components/SeeAll';
-import { orama } from '@/components/SearchBox/lib/orama';
+import { orama, getInitialFacets } from '@/components/SearchBox/lib/orama';
 import { useClickOutside } from '@/components/SearchBox/lib/useClickOutside';
 
 import { EmptyState } from './EmptyState';
@@ -46,6 +46,8 @@ export const SearchBox: FC<SearchBoxProps> = props => {
 
   useEffect(() => {
     searchInputRef.current?.focus();
+    getInitialFacets().then(setSearchResults).catch(setSearchError);
+
     return () => {
       reset();
     };

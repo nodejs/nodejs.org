@@ -12,3 +12,12 @@ export const highlighter = new Highlight({
   CSSClass: 'font-bold dark:text-neutral-800',
   HTMLTag: 'span',
 });
+
+export async function getInitialFacets() {
+  return await orama.search({
+    term: 'a e i o u',
+    facets: {
+      siteSection: {},
+    },
+  });
+}
