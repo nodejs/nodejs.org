@@ -1,6 +1,6 @@
 ---
 title: Anatomy of an HTTP Transaction
-layout: docs.hbs
+layout: learn.hbs
 ---
 
 # Anatomy of an HTTP Transaction

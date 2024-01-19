@@ -209,6 +209,10 @@
         "modules": {
           "label": "components.navigation.learn.modules.links.modules",
           "items": {
+            "anatomyOfAnHttpTransaction": {
+              "link": "/learn/modules/anatomy-of-an-http-transaction",
+              "label": "components.navigation.learn.modules.links.anatomyOfAnHttpTransaction"
+            },
             "publishingNodeApiModules": {
               "link": "/learn/modules/publishing-node-api-modules",
               "label": "components.navigation.learn.modules.links.publishingNodeApiModules"

@@ -36,10 +36,10 @@
       bg-gradient-subtle
       p-12
       grid-in-[main]
+      dark:bg-gradient-subtle-dark
       xl:px-18
       xs:bg-none
       xs:p-4
-      dark:bg-gradient-subtle-dark
       xs:dark:bg-none;
   }
 
@@ -124,17 +124,17 @@
           text-4xl
           -tracking-[0.045rem]
           [-webkit-text-fill-color:transparent]
+          dark:bg-gradient-subtle-white
           md:text-5xl
-          md:-tracking-[0.06rem]
-          dark:bg-gradient-subtle-white;
+          md:-tracking-[0.06rem];
       }
 
       p {
         @apply max-w-[400px]
           text-base
           text-neutral-900
-          md:text-lg
-          dark:text-white;
+          dark:text-white
+          md:text-lg;
       }
 
       > div {
