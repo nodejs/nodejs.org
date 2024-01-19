@@ -1,4 +1,7 @@
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import {
+  MagnifyingGlassIcon,
+  ChevronLeftIcon,
+} from '@heroicons/react/24/outline';
 import type { Results, Nullable } from '@orama/orama';
 import clx from 'classnames';
 import { useRouter } from 'next/navigation';
@@ -118,6 +121,12 @@ export const SearchBox: FC<SearchBoxProps> = props => {
       <div className={styles.searchBoxModalPanel} ref={searchBoxRef}>
         <div className={styles.searchBoxInnerPanel}>
           <div className={styles.searchBoxInputContainer}>
+            <button
+              onClick={props.onClose}
+              className={styles.searchBoxBackIconContainer}
+            >
+              <ChevronLeftIcon className={styles.searchBoxBackIcon} />
+            </button>
             <MagnifyingGlassIcon
               className={styles.searchBoxMagnifyingGlassIcon}
             />
