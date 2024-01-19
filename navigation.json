@@ -212,6 +212,10 @@
             "publishingNodeApiModules": {
               "link": "/learn/modules/publishing-node-api-modules",
               "label": "components.navigation.learn.modules.links.publishingNodeApiModules"
+            },
+            "anatomyOfAnHttpTransaction": {
+              "link": "/learn/modules/anatomy-of-an-http-transaction",
+              "label": "components.navigation.learn.modules.links.anatomyOfAnHttpTransaction"
             }
           }
         }
