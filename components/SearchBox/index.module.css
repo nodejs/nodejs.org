@@ -54,7 +54,9 @@
 }
 
 .searchBoxInnerPanel {
-  @apply rounded-lg bg-neutral-200 p-2 text-neutral-800 dark:bg-neutral-900 dark:text-neutral-400;
+  @apply p-2
+  text-neutral-800
+  dark:text-neutral-400;
 }
 
 .searchBoxMagnifyingGlassIcon {
@@ -68,13 +70,13 @@
 .searchBoxInput {
   @apply w-full
     border-b
-    border-neutral-200
+    border-neutral-300
     bg-transparent
     py-2
     pl-8
     pr-4
     focus:outline-none
-  dark:border-neutral-700
+  dark:border-neutral-900
   dark:text-neutral-300
   dark:placeholder-neutral-300;
 }
@@ -85,13 +87,13 @@
 
 .fulltextSearchResult {
   @apply flex
-  flex-col
+    flex-col
     rounded-md
     p-2
     text-left
     text-sm
     hover:bg-neutral-300
-    dark:hover:bg-neutral-800;
+    dark:hover:bg-neutral-900;
 }
 
 .fulltextSearchResultTitle {
@@ -105,7 +107,8 @@
 }
 
 .fulltextSearchSections {
-  @apply mt-2
+  @apply mb-1
+    mt-2
     flex
     gap-2
     p-2
@@ -116,15 +119,24 @@
 }
 
 .fulltextSearchSection {
-  @apply border-b border-neutral-200 p-2 capitalize dark:border-neutral-900;
+  @apply rounded-lg
+    border-b
+    border-transparent
+    px-2
+    py-1
+    capitalize
+    hover:bg-neutral-200
+    dark:border-neutral-900
+    dark:border-b-transparent
+    dark:hover:bg-neutral-900;
 }
 
 .fulltextSearchSectionSelected {
-  @apply border-neutral-700 text-neutral-900 dark:border-neutral-700 dark:text-neutral-300;
+  @apply rounded-b-none border-neutral-700 text-neutral-900 dark:border-neutral-700 dark:text-neutral-300;
 }
 
 .fulltextSearchSectionCount {
-  @apply ml-1 dark:text-neutral-800;
+  @apply ml-1 text-neutral-500 dark:text-neutral-800;
 }
 
 .seeAllFulltextSearchResults {
