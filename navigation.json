@@ -205,6 +205,15 @@
               "label": "components.navigation.learn.commandLine.links.acceptInputFromTheCommandLineInNodejs"
             }
           }
+        },
+        "modules": {
+          "label": "components.navigation.learn.modules.links.modules",
+          "items": {
+            "publishingNodeApiModules": {
+              "link": "/learn/modules/publishing-node-api-modules",
+              "label": "components.navigation.learn.modules.links.publishingNodeApiModules"
+            }
+          }
         }
       }
     },
