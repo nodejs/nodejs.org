@@ -29,10 +29,10 @@
       bg-gradient-subtle
       p-12
       grid-in-[main]
+      dark:bg-gradient-subtle-dark
       xl:px-18
       xs:bg-none
       xs:p-4
-      dark:bg-gradient-subtle-dark
       xs:dark:bg-none;
   }
 
@@ -104,8 +104,8 @@
           @apply text-center
             text-sm
             text-neutral-800
-            xs:text-xs
-            dark:text-neutral-400;
+            dark:text-neutral-400
+            xs:text-xs;
         }
       }
     }
@@ -139,8 +139,8 @@
     w-full
     justify-center
     bg-gradient-subtle
-    xs:bg-none
     dark:bg-gradient-subtle-dark
+    xs:bg-none
     xs:dark:bg-none;
 
   main {
@@ -177,11 +177,11 @@
       bg-gradient-subtle
       px-4
       py-14
+      dark:bg-gradient-subtle-dark
       md:px-14
       lg:px-28
       xs:bg-none
       xs:pb-4
-      dark:bg-gradient-subtle-dark
       xs:dark:bg-none;
 
     main {
