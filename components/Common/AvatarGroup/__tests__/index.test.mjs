@@ -1,6 +1,6 @@
 import { render, fireEvent } from '@testing-library/react';
 
-import { githubProfileAvatarUrl } from '@/util/gitHubUtils';
+import { getGitHubAvatarUrl } from '@/util/gitHubUtils';
 
 import AvatarGroup from '../index';
 
@@ -22,7 +22,7 @@ const names = [
 ];
 
 const avatars = names.map(name => ({
-  src: githubProfileAvatarUrl(name),
+  src: getGitHubAvatarUrl(name),
   alt: name,
 }));
 
