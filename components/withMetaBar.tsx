@@ -5,7 +5,7 @@ import MetaBar from '@/components/Containers/MetaBar';
 import GitHub from '@/components/Icons/Social/GitHub';
 import Link from '@/components/Link';
 import { useClientContext } from '@/hooks/server';
-import { getGitHubEditPageUrl } from '@/util/gitHubUtils';
+import { getGitHubBlobUrl } from '@/util/gitHubUtils';
 
 const DATE_FORMAT = {
   month: 'short',
@@ -29,7 +29,7 @@ const WithMetaBar: FC = () => {
         'components.metabar.contribute': (
           <>
             <GitHub className="fill-neutral-700 dark:fill-neutral-100" />
-            <Link href={getGitHubEditPageUrl(filename)}>Edit this page</Link>
+            <Link href={getGitHubBlobUrl(filename)}>Edit this page</Link>
           </>
         ),
       }}

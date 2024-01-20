@@ -5,7 +5,7 @@ import Button from '@/components/Common/Button';
 import ChangelogModal from '@/components/Downloads/ChangelogModal';
 import { MDXRenderer } from '@/components/mdxRenderer';
 import { compileMDX } from '@/next.mdx.compiler.mjs';
-import { githubProfileAvatarUrl } from '@/util/gitHubUtils';
+import { getGitHubAvatarUrl } from '@/util/gitHubUtils';
 
 type Story = StoryObj<typeof ChangelogModal>;
 type Meta = MetaObj<typeof ChangelogModal>;
@@ -182,7 +182,7 @@ export const Default: Story = {
     heading: 'Node v18.17.0',
     subheading: "2023-07-18, Version 18.17.0 'Hydrogen' (LTS), @danielleadams",
     avatars: names.map(name => ({
-      src: githubProfileAvatarUrl(name),
+      src: getGitHubAvatarUrl(name),
       alt: name,
     })),
     children,

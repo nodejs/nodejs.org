@@ -1,14 +1,14 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 import Avatar from '@/components/Common/AvatarGroup/Avatar';
-import { githubProfileAvatarUrl } from '@/util/gitHubUtils';
+import { getGitHubAvatarUrl } from '@/util/gitHubUtils';
 
 type Story = StoryObj<typeof Avatar>;
 type Meta = MetaObj<typeof Avatar>;
 
 export const Default: Story = {
   args: {
-    src: githubProfileAvatarUrl('ovflowd'),
+    src: getGitHubAvatarUrl('ovflowd'),
     alt: 'ovflowd',
   },
 };
