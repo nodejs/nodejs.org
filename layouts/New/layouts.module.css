@@ -112,36 +112,23 @@
 
     &:nth-of-type(2) {
       @apply flex
-        max-w-md
-        flex-[1_1]
-        flex-col
-        items-center
-        gap-4
-        md:max-w-2xl
-        lg:max-w-3xl;
+          max-w-md
+          flex-[1_1]
+          flex-col
+          items-center
+          gap-4
+          md:max-w-2xl
+          lg:max-w-3xl;
 
       > div {
         @apply w-fit;
-
-        div[data-state='active'] a {
-          @apply border-none
-            bg-neutral-900
-            px-3
-            py-1.5
-            text-sm
-            font-medium;
-
-          &:hover {
-            @apply bg-neutral-800;
-          }
-        }
       }
 
       > p {
         @apply text-center
-          text-sm
-          text-neutral-800
-          dark:text-neutral-200;
+            text-sm
+            text-neutral-800
+            dark:text-neutral-200;
       }
     }
   }
