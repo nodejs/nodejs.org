@@ -1,3 +1,5 @@
+'use client';
+
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { useState, type FC, useEffect } from 'react';
 

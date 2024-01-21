@@ -15,6 +15,7 @@ import DocsLayout from '@/layouts/New/Docs';
 import HomeLayout from '@/layouts/New/Home';
 import LearnLayout from '@/layouts/New/Learn';
 import PostLayout from '@/layouts/New/Post';
+import SearchLayout from '@/layouts/New/Search';
 import { ENABLE_WEBSITE_REDESIGN } from '@/next.constants.mjs';
 import type { Layouts, LegacyLayouts } from '@/types';
 
@@ -39,6 +40,7 @@ const redesignLayouts = {
   'page.hbs': DefaultLayout,
   'blog-post.hbs': PostLayout,
   'blog-category.hbs': BlogLayout,
+  'search.hbs': SearchLayout,
 } satisfies Record<Layouts, FC>;
 
 type WithLayout<L = Layouts | LegacyLayouts> = PropsWithChildren<{ layout: L }>;

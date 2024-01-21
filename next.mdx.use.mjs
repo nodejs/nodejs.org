@@ -9,6 +9,7 @@ import HomeDownloadButton from './components/Home/HomeDownloadButton';
 import Link from './components/Link';
 import MDXCodeBox from './components/MDX/CodeBox';
 import MDXCodeTabs from './components/MDX/CodeTabs';
+import SearchPage from './components/SearchPage';
 import WithBadge from './components/withBadge';
 import WithBanner from './components/withBanner';
 import WithNodeRelease from './components/withNodeRelease';
@@ -38,6 +39,8 @@ export const mdxComponents = {
   DownloadLink: DownloadLink,
   // Renders a Button Component for `button` tags
   Button: Button,
+  // Renders a Search Page
+  SearchPage: SearchPage,
 };
 
 /**

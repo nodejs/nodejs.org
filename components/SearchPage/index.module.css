@@ -1,0 +1,19 @@
+.searchPageContainer {
+  @apply mx-auto w-full px-4 py-14 md:max-w-screen-xl;
+}
+
+.searchTermContainer {
+  @apply w-full text-left capitalize;
+}
+
+.searchResultsColumns {
+  @apply mt-12 grid gap-4 md:grid-cols-[15%_1fr_40%];
+}
+
+.facetsColumn {
+  @apply flex flex-col gap-4 capitalize;
+}
+
+.facetCount {
+  @apply ml-2 text-sm text-neutral-500 dark:text-neutral-800;
+}
