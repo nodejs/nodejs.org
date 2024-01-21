@@ -37,14 +37,14 @@ export const GET = async () => {
     const deflatedSource = deflateSync(cleanedContent).toString('base64');
 
     // Returns metadata of each page available on the Website
-    return { pathname, filename, title, description, content: deflatedSource };
+    return { filename, pathname, title, description, content: deflatedSource };
   });
 
   return Response.json(await Promise.all(availablePagesMetadata));
 };
 
 // This function generates the static paths that come from the dynamic segments
-// `[locale]/next-data/release-data/` and returns an array of all available static paths
+// `[locale]/next-data/page-data/` and returns an array of all available static paths
 // This is used for ISR static validation and generation
 export const generateStaticParams = async () => [
   { locale: defaultLocale.code },

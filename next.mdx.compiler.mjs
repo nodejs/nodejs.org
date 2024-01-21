@@ -5,7 +5,7 @@ import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
 import { matter } from 'vfile-matter';
 
 import { NEXT_REHYPE_PLUGINS, NEXT_REMARK_PLUGINS } from './next.mdx.mjs';
-import { createGitHubSlug } from './util/gitHubUtils';
+import { createGitHubSlugger } from './util/gitHubUtils';
 
 // Defines the React Runtime Components
 const reactRuntime = { Fragment, jsx, jsxs };
@@ -28,7 +28,7 @@ export async function compileMDX(source, fileExtension) {
   // cleaning the frontmatter to the source that is going to be parsed by the MDX Compiler
   matter(source, { strip: true });
 
-  const slugger = createGitHubSlug();
+  const slugger = createGitHubSlugger();
 
   // This is a minimal MDX Compiler that is lightweight and only parses the MDX
   const { default: MDXContent } = await evaluate(source, {

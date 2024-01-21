@@ -6,7 +6,7 @@ import Link from '@/components/Link';
 import styles from './index.module.css';
 
 type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
-  kind?: 'primary' | 'secondary' | 'special';
+  kind?: 'neutral' | 'primary' | 'secondary' | 'special';
   // We have an extra `disabled` prop as we simulate a button
   disabled?: boolean;
 };

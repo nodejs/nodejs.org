@@ -18,8 +18,9 @@ const content = 'Some content!';
 fs.writeFile('/Users/joe/test.txt', content, err => {
   if (err) {
     console.error(err);
+  } else {
+    // file written successfully
   }
-  // file written successfully
 });
 ```
 
@@ -53,6 +54,7 @@ async function example() {
     console.log(err);
   }
 }
+
 example();
 ```
 
@@ -91,8 +93,9 @@ const content = 'Some content!';
 fs.appendFile('file.log', content, err => {
   if (err) {
     console.error(err);
+  } else {
+    // done!
   }
-  // done!
 });
 ```
 
@@ -111,5 +114,6 @@ async function example() {
     console.log(err);
   }
 }
+
 example();
 ```

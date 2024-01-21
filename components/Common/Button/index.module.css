@@ -9,6 +9,26 @@
     @apply cursor-not-allowed;
   }
 
+  &.neutral {
+    @apply rounded
+      bg-neutral-900
+      text-white
+      dark:text-neutral-200;
+
+    &:hover {
+      @apply bg-neutral-800;
+    }
+
+    &[aria-disabled='true'] {
+      @apply bg-neutral-900
+        opacity-50;
+    }
+
+    &:focus {
+      @apply bg-neutral-800;
+    }
+  }
+
   &.primary {
     @apply rounded
       border

@@ -5,6 +5,14 @@ import Button from '@/components/Common/Button';
 type Story = StoryObj<typeof Button>;
 type Meta = MetaObj<typeof Button>;
 
+export const Neutral: Story = {
+  args: {
+    kind: 'neutral',
+    children: 'Download Node (LTS)',
+    disabled: false,
+  },
+};
+
 export const Primary: Story = {
   args: {
     kind: 'primary',
