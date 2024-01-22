@@ -11,7 +11,7 @@ import styles from '@/components/SearchBox/components/index.module.css';
 import { PoweredBy } from '@/components/SearchBox/components/PoweredBy';
 import { SearchResult } from '@/components/SearchBox/components/SearchResult';
 import { SeeAll } from '@/components/SearchBox/components/SeeAll';
-import { useClickOutside } from '@/hooks/react-client/useClickOutside';
+import { useClickOutside } from '@/hooks/react-client';
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '@/next.constants.mjs';
 import { orama, getInitialFacets } from '@/next.orama.mjs';
 

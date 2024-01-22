@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 type CallbackFunction = () => void;
 
-export const useBottomScrollListener = (
+const useBottomScrollListener = (
   callback: CallbackFunction,
   debounceTime = 300
 ) => {
@@ -42,3 +42,5 @@ export const useBottomScrollListener = (
 
   return bottomReached;
 };
+
+export default useBottomScrollListener;

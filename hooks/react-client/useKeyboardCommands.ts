@@ -4,7 +4,7 @@ type KeyboardCommand = 'cmd-k' | 'escape' | 'down' | 'up' | 'enter';
 
 type KeyboardCommandCallback = (key: KeyboardCommand) => void;
 
-export const useKeyboardCommands = (fn: KeyboardCommandCallback) => {
+const useKeyboardCommands = (fn: KeyboardCommandCallback) => {
   useEffect(() => {
     document.addEventListener('keydown', event => {
       // Detect ⌘ + k on Mac, Ctrl + k on Windows
@@ -35,3 +35,5 @@ export const useKeyboardCommands = (fn: KeyboardCommandCallback) => {
     };
   }, []);
 };
+
+export default useKeyboardCommands;
