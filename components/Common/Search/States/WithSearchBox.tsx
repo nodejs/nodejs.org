@@ -154,7 +154,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
           <div className={styles.fulltextResultsContainer}>
             {searchError ? <WithError /> : null}
 
-            {(searchTerm ? (
+            {searchTerm ? (
               searchResults?.count ? (
                 searchResults?.hits.map(hit => (
                   <WithSearchResult
@@ -168,18 +168,15 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
               )
             ) : (
               <WithEmptyState />
-            )) ?? null}
+            )}
 
-            {searchResults?.count
-              ? searchResults?.count > 8 &&
-                searchTerm && (
-                  <WithAllResults
-                    searchResults={searchResults}
-                    searchTerm={searchTerm}
-                    selectedFacetName={selectedFacetName}
-                  />
-                )
-              : null}
+            {searchResults?.count && searchResults?.count > 8 && searchTerm ? (
+              <WithAllResults
+                searchResults={searchResults}
+                searchTerm={searchTerm}
+                selectedFacetName={selectedFacetName}
+              />
+            ) : null}
           </div>
           <WithPoweredBy />
         </div>
