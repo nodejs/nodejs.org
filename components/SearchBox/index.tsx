@@ -1,32 +1,27 @@
 'use client';
 
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
-import { useState, type FC, useEffect } from 'react';
+import { useState, type FC } from 'react';
 
 import { SearchBox } from '@/components/SearchBox/components/SearchBox';
+import { useKeyboardCommands } from '@/components/SearchBox/lib/useKeyboardCommands';
 
 import styles from './index.module.css';
 
 export const SearchButton: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    document.addEventListener('keydown', event => {
-      // Detect ⌘ + k on Mac, Ctrl + k on Windows
-      if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
-        event.preventDefault();
+  useKeyboardCommands(cmd => {
+    switch (cmd) {
+      case 'cmd-k':
         openSearchBox();
-      }
-
-      if (event.key === 'Escape') {
-        setIsOpen(false);
-      }
-    });
-
-    return () => {
-      document.removeEventListener('keydown', () => {});
-    };
-  }, []);
+        break;
+      case 'escape':
+        closeSearchBox();
+        break;
+      default:
+    }
+  });
 
   function openSearchBox() {
     setIsOpen(true);

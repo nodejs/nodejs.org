@@ -15,7 +15,7 @@ export const highlighter = new Highlight({
 
 export async function getInitialFacets() {
   return await orama.search({
-    term: 'a e i o u',
+    term: '',
     facets: {
       siteSection: {},
     },
