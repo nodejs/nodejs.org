@@ -12,7 +12,10 @@
         "NEXT_PUBLIC_VERCEL_URL",
         "NEXT_PUBLIC_DIST_URL",
         "NEXT_PUBLIC_DOCS_URL",
-        "NEXT_PUBLIC_BASE_PATH"
+        "NEXT_PUBLIC_BASE_PATH",
+        "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
+        "NEXT_PUBLIC_ENABLE_REDESIGN",
+        "NEXT_PUBLIC_DATA_URL"
       ]
     },
     "build": {
@@ -31,7 +34,10 @@
         "NEXT_PUBLIC_VERCEL_URL",
         "NEXT_PUBLIC_DIST_URL",
         "NEXT_PUBLIC_DOCS_URL",
-        "NEXT_PUBLIC_BASE_PATH"
+        "NEXT_PUBLIC_BASE_PATH",
+        "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
+        "NEXT_PUBLIC_ENABLE_REDESIGN",
+        "NEXT_PUBLIC_DATA_URL"
       ]
     },
     "start": {
@@ -44,7 +50,10 @@
         "NEXT_PUBLIC_VERCEL_URL",
         "NEXT_PUBLIC_DIST_URL",
         "NEXT_PUBLIC_DOCS_URL",
-        "NEXT_PUBLIC_BASE_PATH"
+        "NEXT_PUBLIC_BASE_PATH",
+        "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
+        "NEXT_PUBLIC_ENABLE_REDESIGN",
+        "NEXT_PUBLIC_DATA_URL"
       ]
     },
     "deploy": {
@@ -63,7 +72,10 @@
         "NEXT_PUBLIC_VERCEL_URL",
         "NEXT_PUBLIC_DIST_URL",
         "NEXT_PUBLIC_DOCS_URL",
-        "NEXT_PUBLIC_BASE_PATH"
+        "NEXT_PUBLIC_BASE_PATH",
+        "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
+        "NEXT_PUBLIC_ENABLE_REDESIGN",
+        "NEXT_PUBLIC_DATA_URL"
       ]
     },
     "lint:js": {
