@@ -29,9 +29,7 @@ const useKeyboardCommands = (fn: KeyboardCommandCallback) => {
       }
     });
 
-    return () => {
-      document.removeEventListener('keydown', () => {});
-    };
+    return () => document.removeEventListener('keydown', () => {});
   }, []);
 };
 

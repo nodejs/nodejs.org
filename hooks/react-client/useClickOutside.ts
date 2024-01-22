@@ -8,7 +8,7 @@ const useClickOutside = <T extends HTMLElement>(
   useEffect(() => {
     const element = ref?.current;
     const handleClickOutside = (event: Event) => {
-      if (element && !element.contains(event.target as Node | null)) {
+      if (element && !element.contains(event.currentTarget as Node)) {
         fn();
       }
     };
