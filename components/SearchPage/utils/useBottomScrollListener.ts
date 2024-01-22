@@ -2,8 +2,12 @@ import { useState, useEffect } from 'react';
 
 type CallbackFunction = () => void;
 
-export const useBottomScrollListener = (callback: CallbackFunction) => {
+export const useBottomScrollListener = (
+  callback: CallbackFunction,
+  debounceTime = 300
+) => {
   const [bottomReached, setBottomReached] = useState(false);
+  let timeoutId: NodeJS.Timeout | null = null;
 
   const handleScroll = () => {
     const scrollTop = document.documentElement.scrollTop;
@@ -14,15 +18,26 @@ export const useBottomScrollListener = (callback: CallbackFunction) => {
 
     if (bottomOfWindow) {
       setBottomReached(true);
-      callback();
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      timeoutId = setTimeout(() => {
+        callback();
+      }, debounceTime);
     } else {
       setBottomReached(false);
     }
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Add the event listener with the passive option set to true
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
   }, []);
 
   return bottomReached;
