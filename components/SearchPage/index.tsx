@@ -37,7 +37,7 @@ const SearchPage: FC = () => {
     search(0);
   }, [searchSection, searchTerm]);
 
-  function search(resultsOffset = 0) {
+  const search = (resultsOffset = 0) => {
     console.log({ resultsOffset });
     orama
       .search({
@@ -54,14 +54,14 @@ const SearchPage: FC = () => {
         setHits(hits => [...hits, ...results.hits]);
       })
       .catch(console.log);
-  }
+  };
 
   const facets = {
     all: searchResults?.count ?? 0,
     ...(searchResults?.facets?.siteSection?.values ?? {}),
   };
 
-  function filterBySection() {
+  const filterBySection = () => {
     if (!searchSection || searchSection === 'all') {
       return {};
     }
@@ -73,7 +73,7 @@ const SearchPage: FC = () => {
         },
       },
     };
-  }
+  };
 
   return (
     <div className={styles.searchPageContainer}>

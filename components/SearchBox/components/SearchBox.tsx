@@ -3,7 +3,7 @@ import {
   ChevronLeftIcon,
 } from '@heroicons/react/24/outline';
 import type { Results, Nullable } from '@orama/orama';
-import clx from 'classnames';
+import classNames from 'classnames';
 import { useRouter } from 'next/navigation';
 import { useState, useRef, type FC, useEffect } from 'react';
 
@@ -28,11 +28,9 @@ export type SearchDoc = {
 
 type SearchResults = Nullable<Results<SearchDoc>>;
 
-type SearchBoxProps = {
-  onClose: () => void;
-};
+type SearchBoxProps = { onClose: () => void };
 
-export const SearchBox: FC<SearchBoxProps> = props => {
+export const SearchBox: FC<SearchBoxProps> = ({ onClose }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState<SearchResults>(null);
   const [selectedFacet, setSelectedFacet] = useState<number>(0);
@@ -44,23 +42,21 @@ export const SearchBox: FC<SearchBoxProps> = props => {
 
   useClickOutside(searchBoxRef, () => {
     reset();
-    props.onClose();
+    onClose();
   });
 
   useEffect(() => {
     searchInputRef.current?.focus();
     getInitialFacets().then(setSearchResults).catch(setSearchError);
 
-    return () => {
-      reset();
-    };
+    return () => reset();
   }, []);
 
   useEffect(() => {
     search(searchTerm);
   }, [searchTerm, selectedFacet]);
 
-  function search(term: string) {
+  const search = (term: string) => {
     orama
       .search({
         term,
@@ -78,25 +74,25 @@ export const SearchBox: FC<SearchBoxProps> = props => {
       })
       .then(setSearchResults)
       .catch(setSearchError);
-  }
+  };
 
-  function reset() {
+  const reset = () => {
     setSearchTerm('');
     setSearchResults(null);
     setSelectedFacet(0);
-  }
+  };
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push(`/en/search?q=${searchTerm}&section=${selectedFacetName}`);
-    props.onClose();
-  }
+    onClose();
+  };
 
-  function changeFacet(idx: number) {
+  const changeFacet = (idx: number) => {
     setSelectedFacet(idx);
-  }
+  };
 
-  function filterBySection() {
+  const filterBySection = () => {
     if (selectedFacet === 0) {
       return {};
     }
@@ -108,7 +104,7 @@ export const SearchBox: FC<SearchBoxProps> = props => {
         },
       },
     };
-  }
+  };
 
   const facets = {
     all: searchResults?.count ?? 0,
@@ -123,7 +119,7 @@ export const SearchBox: FC<SearchBoxProps> = props => {
         <div className={styles.searchBoxInnerPanel}>
           <div className={styles.searchBoxInputContainer}>
             <button
-              onClick={props.onClose}
+              onClick={onClose}
               className={styles.searchBoxBackIconContainer}
             >
               <ChevronLeftIcon className={styles.searchBoxBackIcon} />
@@ -146,7 +142,7 @@ export const SearchBox: FC<SearchBoxProps> = props => {
             {Object.keys(facets).map((facetName, idx) => (
               <button
                 key={facetName}
-                className={clx(styles.fulltextSearchSection, {
+                className={classNames(styles.fulltextSearchSection, {
                   [styles.fulltextSearchSectionSelected]: selectedFacet === idx,
                 })}
                 onClick={() => changeFacet(idx)}
