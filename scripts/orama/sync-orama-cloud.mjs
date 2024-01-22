@@ -2,14 +2,14 @@ import { siteContent } from './get-documents.mjs';
 
 const INDEX_ID = process.env.ORAMA_INDEX_ID;
 const API_KEY = process.env.ORAMA_SECRET_KEY;
-const oramaAPIBaseURL = `https://api.oramasearch.com/api/v1/webhooks/${INDEX_ID}`;
+const ORAMA_API_BASE_URL = `https://api.oramasearch.com/api/v1/webhooks/${INDEX_ID}`;
 
 const oramaHeaders = {
   'Content-Type': 'application/json',
   Authorization: `Bearer ${API_KEY}`,
 };
 
-async function runUpdate() {
+const runUpdate = async () => {
   const batchSize = 50;
   const batches = [];
 
@@ -22,36 +22,36 @@ async function runUpdate() {
   );
   await Promise.all(batches.map(insertBatch));
   console.log(`Done inserting batches. ${siteContent.length} documents total.`);
-}
+};
 
-async function insertBatch(batch) {
-  await fetch(`${oramaAPIBaseURL}/notify`, {
+const insertBatch = async batch => {
+  await fetch(`${ORAMA_API_BASE_URL}/notify`, {
     method: 'POST',
     headers: oramaHeaders,
     body: JSON.stringify({
       upsert: batch,
     }),
   });
-}
+};
 
-async function triggerDeployment() {
+const triggerDeployment = async () => {
   console.log('Triggering deployment');
-  await fetch(`${oramaAPIBaseURL}/deploy`, {
+  await fetch(`${ORAMA_API_BASE_URL}/deploy`, {
     method: 'POST',
     headers: oramaHeaders,
   });
   console.log('Done triggering deployment');
-}
+};
 
-async function emptyOramaIndex() {
+const emptyOramaIndex = async () => {
   console.log('Emptying index');
-  await fetch(`${oramaAPIBaseURL}/snapshot`, {
+  await fetch(`${ORAMA_API_BASE_URL}/snapshot`, {
     method: 'POST',
     headers: oramaHeaders,
     body: JSON.stringify([]),
   });
   console.log('Done emptying index');
-}
+};
 
 await emptyOramaIndex();
 await runUpdate();

@@ -10,11 +10,7 @@ const nextAPIPageData = await fetch(`${NEXT_DATA_URL}/api-data`);
 const pageData = await nextPageData.json();
 const apiData = await nextAPIPageData.json();
 
-function inflate(data) {
-  return zlib.inflateSync(Buffer.from(data, 'base64')).toString('utf-8');
-}
-
-function splitIntoSections(markdownContent) {
+const splitIntoSections = markdownContent => {
   const lines = markdownContent.split(/\n/gm);
   const sections = [];
 
@@ -36,9 +32,9 @@ function splitIntoSections(markdownContent) {
     ...section,
     pageSectionContent: section.pageSectionContent.join('\n'),
   }));
-}
+};
 
-function getPageTitle(data) {
+const getPageTitle = data => {
   const { title } = data;
 
   if (title) {
@@ -50,12 +46,14 @@ function getPageTitle(data) {
   const lastPart = parts[parts.length - 1].replace(/\.html$/, '');
 
   return lastPart.replace(/-/g, ' ');
-}
+};
 
 export const siteContent = [...pageData, ...apiData]
   .map(data => {
     const { pathname, title = getPageTitle(data), content } = data;
-    const markdownContent = inflate(content);
+    const markdownContent = zlib
+      .inflateSync(Buffer.from(content, 'base64'))
+      .toString('utf-8');
     const siteSection = pathname.split('/').shift();
     const subSections = splitIntoSections(markdownContent);
 
