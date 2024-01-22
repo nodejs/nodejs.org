@@ -23,13 +23,13 @@ export const SearchButton: FC = () => {
     }
   });
 
-  function openSearchBox() {
+  const openSearchBox = () => {
     setIsOpen(true);
-  }
+  };
 
-  function closeSearchBox() {
+  const closeSearchBox = () => {
     setIsOpen(false);
-  }
+  };
 
   return (
     <>
