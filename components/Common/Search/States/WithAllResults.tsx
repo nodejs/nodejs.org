@@ -3,9 +3,9 @@ import NextLink from 'next/link';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import styles from './index.module.css';
+import type { SearchDoc } from '@/components/Common/Search/States/WithSearchBox';
 
-import type { SearchDoc } from '@/components/Common/Search/States/SearchBox';
+import styles from './index.module.css';
 
 type SearchResults = Results<SearchDoc>;
 

@@ -12,6 +12,8 @@ import styles from './index.module.css';
 export const SearchButton: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations();
+  const openSearchBox = () => setIsOpen(true);
+  const closeSearchBox = () => setIsOpen(false);
 
   useKeyboardCommands(cmd => {
     switch (cmd) {
@@ -24,14 +26,6 @@ export const SearchButton: FC = () => {
       default:
     }
   });
-
-  const openSearchBox = () => {
-    setIsOpen(true);
-  };
-
-  const closeSearchBox = () => {
-    setIsOpen(false);
-  };
 
   return (
     <>
