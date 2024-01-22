@@ -13,9 +13,6 @@ next.dynamic.mjs @nodejs/web-infra
 /pages/en/blog/release @nodejs/releasers
 /pages/en/blog/announcements @nodejs/releasers
 
-# Node.js Core Guides
-/pages/en/guides @nodejs/collaborators
-
 # Package Ecosystem
 package.json @nodejs/nodejs-website
 turbo.json @nodejs/nodejs-website @nodejs/web-infra
