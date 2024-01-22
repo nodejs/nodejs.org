@@ -12,8 +12,8 @@ const useClickOutside = <T extends HTMLElement>(
         fn();
       }
     };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
   }, [ref, fn]);
 };
 

@@ -9,7 +9,7 @@ import HomeDownloadButton from './components/Home/HomeDownloadButton';
 import Link from './components/Link';
 import MDXCodeBox from './components/MDX/CodeBox';
 import MDXCodeTabs from './components/MDX/CodeTabs';
-import SearchPage from './components/SearchPage';
+import SearchPage from './components/MDX/SearchPage';
 import WithBadge from './components/withBadge';
 import WithBanner from './components/withBanner';
 import WithNodeRelease from './components/withNodeRelease';

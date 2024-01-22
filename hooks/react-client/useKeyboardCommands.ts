@@ -13,20 +13,19 @@ const useKeyboardCommands = (fn: KeyboardCommandCallback) => {
         fn('cmd-k');
       }
 
-      if (event.key === 'Escape') {
-        fn('escape');
-      }
-
-      if (event.key === 'Enter') {
-        fn('enter');
-      }
-
-      if (event.key === 'ArrowDown') {
-        fn('down');
-      }
-
-      if (event.key === 'ArrowUp') {
-        fn('up');
+      switch (event.key) {
+        case 'Escape':
+          fn('escape');
+          break;
+        case 'Enter':
+          fn('enter');
+          break;
+        case 'ArrowDown':
+          fn('down');
+          break;
+        case 'ArrowUp':
+          fn('up');
+          break;
       }
     });
 
