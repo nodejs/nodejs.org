@@ -1,45 +1,65 @@
 'use client';
 
+import type { Nullable, Results, Result } from '@orama/orama';
 import Link from 'next/link';
-import type { Nullable, Results } from '@orama/orama';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState, type FC } from 'react';
 
 import type { SearchDoc } from '@/components/SearchBox/components/SearchBox';
-import { orama } from '@/components/SearchBox/lib/orama';
+import { orama, highlighter } from '@/components/SearchBox/lib/orama';
+import { pathToBreadcrumbs } from '@/components/SearchBox/lib/utils';
+import { useBottomScrollListener } from '@/components/SearchPage/utils/useBottomScrollListener';
 
 import styles from './index.module.css';
 
 type SearchResults = Nullable<Results<SearchDoc>>;
+type Hit = Result<SearchDoc>;
 
 const SearchPage: FC = () => {
   const searchParams = useSearchParams();
   const [searchResults, setSearchResults] = useState<SearchResults>(null);
-  const [selectedFacet, setSelectedFacet] = useState<number>(0);
+  const [hits, setHits] = useState<Array<Hit>>([]);
+  const [offset, setOffset] = useState<number>(0);
 
   const searchTerm = searchParams?.get('q');
   const searchSection = searchParams?.get('section');
 
+  useBottomScrollListener(() => {
+    setOffset(offset => offset + 10);
+  });
+
   useEffect(() => {
+    search(offset);
+  }, [offset]);
+
+  useEffect(() => {
+    setHits([]);
+    search(0);
+  }, [searchSection, searchTerm]);
+
+  function search(resultsOffset = 0) {
+    console.log({ resultsOffset });
     orama
       .search({
         term: searchTerm || '',
-        mode: 'hybrid',
+        limit: 10,
+        offset: resultsOffset,
         facets: {
           siteSection: {},
         },
         ...filterBySection(),
       })
-      .then(setSearchResults)
+      .then(results => {
+        setSearchResults(results);
+        setHits(hits => [...hits, ...results.hits]);
+      })
       .catch(console.log);
-  }, []);
+  }
 
   const facets = {
     all: searchResults?.count ?? 0,
     ...(searchResults?.facets?.siteSection?.values ?? {}),
   };
-
-  const selectedFacetName = Object.keys(facets)[selectedFacet];
 
   function filterBySection() {
     if (!searchSection || searchSection === 'all') {
@@ -53,10 +73,6 @@ const SearchPage: FC = () => {
         },
       },
     };
-  }
-
-  function changeFacet(idx: number) {
-    setSelectedFacet(idx);
   }
 
   return (
@@ -78,6 +94,33 @@ const SearchPage: FC = () => {
                 ({facets[facetName as keyof typeof facets].toLocaleString('en')}
                 )
               </span>
+            </Link>
+          ))}
+        </div>
+
+        <div className={styles.resultsColumn}>
+          {hits?.map(hit => (
+            <Link
+              key={hit.id}
+              href={hit.document.path}
+              className={styles.searchResult}
+            >
+              <div>
+                <h2 className={styles.searchResultTitle}>
+                  {hit.document.pageSectionTitle}
+                </h2>
+                <p
+                  className={styles.searchResultSnippet}
+                  dangerouslySetInnerHTML={{
+                    __html: highlighter
+                      .highlight(hit.document.pageSectionContent, searchTerm!)
+                      .trim(180),
+                  }}
+                />
+                <div className={styles.searchResultPageTitle}>
+                  Home {'>'} {pathToBreadcrumbs(hit.document.path).join(' > ')}
+                </div>
+              </div>
             </Link>
           ))}
         </div>

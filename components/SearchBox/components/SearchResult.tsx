@@ -1,4 +1,5 @@
 import type { Result } from '@orama/orama';
+import NextLink from 'next/link';
 import type { FC } from 'react';
 
 import type { SearchDoc } from '@/components/SearchBox/components/SearchBox';
@@ -13,11 +14,17 @@ type SearchResultProps = {
 };
 
 export const SearchResult: FC<SearchResultProps> = props => {
+  const isAPIResult = props.hit.document.siteSection.toLowerCase() === 'api';
+  const basePath = isAPIResult ? 'https://nodejs.org/docs/latest' : '/en';
+  const path = `${basePath}/${props.hit.document.path}`;
+
   return (
-    <a
+    <NextLink
       key={props.hit.id}
-      href={`/en/${props.hit.document.path}`}
+      href={path}
       className={styles.fulltextSearchResult}
+      target={isAPIResult ? '_blank' : undefined}
+      rel={isAPIResult ? 'noopener noreferrer' : undefined}
     >
       <div
         className={styles.fulltextSearchResultTitle}
@@ -32,6 +39,6 @@ export const SearchResult: FC<SearchResultProps> = props => {
         {' > '}
         {props.hit.document.pageTitle}
       </div>
-    </a>
+    </NextLink>
   );
 };

@@ -69,7 +69,7 @@ export const SearchBox: FC<SearchBoxProps> = props => {
         boost: {
           pageSectionTitle: 4,
           pageSectionContent: 2.5,
-          pageTitle: 1,
+          pageTitle: 1.5,
         },
         facets: {
           siteSection: {},
@@ -89,6 +89,7 @@ export const SearchBox: FC<SearchBoxProps> = props => {
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     router.push(`/en/search?q=${searchTerm}&section=${selectedFacetName}`);
+    props.onClose();
   }
 
   function changeFacet(idx: number) {

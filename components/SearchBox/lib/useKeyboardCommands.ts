@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-type KeyboardCommand = 'cmd-k' | 'escape' | 'down' | 'up';
+type KeyboardCommand = 'cmd-k' | 'escape' | 'down' | 'up' | 'enter';
 
 type KeyboardCommandCallback = (key: KeyboardCommand) => void;
 
@@ -15,6 +15,10 @@ export const useKeyboardCommands = (fn: KeyboardCommandCallback) => {
 
       if (event.key === 'Escape') {
         fn('escape');
+      }
+
+      if (event.key === 'Enter') {
+        fn('enter');
       }
 
       if (event.key === 'ArrowDown') {

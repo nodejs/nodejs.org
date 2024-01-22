@@ -9,7 +9,7 @@ export const orama = new OramaClient({
 orama.startHeartBeat({ frequency: 3500 });
 
 export const highlighter = new Highlight({
-  CSSClass: 'font-bold dark:text-neutral-800',
+  CSSClass: 'font-bold',
   HTMLTag: 'span',
 });
 

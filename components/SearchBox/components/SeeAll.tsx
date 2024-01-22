@@ -1,4 +1,5 @@
 import type { Results } from '@orama/orama';
+import NextLink from 'next/link';
 import type { FC } from 'react';
 
 import type { SearchDoc } from '@/components/SearchBox/components/SearchBox';
@@ -20,11 +21,11 @@ export const SeeAll: FC<SeeAllProps> = props => {
 
   return (
     <div className={styles.seeAllFulltextSearchResults}>
-      <a
+      <NextLink
         href={`/en/search?q=${props.searchTerm}&section=${props.selectedFacetName}`}
       >
         See all {props.searchResults?.count.toLocaleString('en')} results
-      </a>
+      </NextLink>
     </div>
   );
 };

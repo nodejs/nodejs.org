@@ -41,7 +41,7 @@ export const SearchButton: FC = () => {
         <MagnifyingGlassIcon className={styles.magnifyingGlassIcon} />
         Start typing...
       </button>
-      {isOpen && <SearchBox onClose={closeSearchBox} />}
+      {isOpen ? <SearchBox onClose={closeSearchBox} /> : null}
     </>
   );
 };
