@@ -61,17 +61,17 @@ const SearchPage: FC = () => {
   };
 
   const filterBySection = () => {
-    if (!searchSection || searchSection === 'all') {
-      return {};
+    if (searchSection && searchSection !== 'all') {
+      return {
+        where: {
+          siteSection: {
+            eq: searchSection,
+          },
+        },
+      };
     }
 
-    return {
-      where: {
-        siteSection: {
-          eq: searchSection,
-        },
-      },
-    };
+    return {};
   };
 
   return (

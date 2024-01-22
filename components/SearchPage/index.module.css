@@ -71,7 +71,8 @@
 }
 
 .searchResultSnippet {
-  @apply my-2 text-sm
+  @apply my-2
+  text-sm
   text-neutral-500
   dark:text-neutral-400;
 }
