@@ -3,8 +3,8 @@ import NextLink from 'next/link';
 import type { FC } from 'react';
 
 import type { SearchDoc } from '@/components/SearchBox/components/SearchBox';
-import { highlighter } from '@/components/SearchBox/lib/orama';
 import { pathToBreadcrumbs } from '@/components/SearchBox/utils';
+import { highlighter } from '@/next.orama.mjs';
 
 import styles from './index.module.css';
 

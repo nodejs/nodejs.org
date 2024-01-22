@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useState, type FC } from 'react';
 
 import { SearchBox } from '@/components/SearchBox/components/SearchBox';
-import { useKeyboardCommands } from '@/components/SearchBox/lib/useKeyboardCommands';
+import { useKeyboardCommands } from '@/hooks/react-client/useKeyboardCommands';
 
 import styles from './index.module.css';
 
