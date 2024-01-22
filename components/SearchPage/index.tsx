@@ -9,6 +9,7 @@ import type { SearchDoc } from '@/components/SearchBox/components/SearchBox';
 import { orama, highlighter } from '@/components/SearchBox/lib/orama';
 import { pathToBreadcrumbs } from '@/components/SearchBox/lib/utils';
 import { useBottomScrollListener } from '@/components/SearchPage/utils/useBottomScrollListener';
+import { DEFAULT_ORAMA_QUERY_PARAMS } from '@/next.constants.mjs';
 
 import styles from './index.module.css';
 
@@ -40,12 +41,10 @@ const SearchPage: FC = () => {
   const search = (resultsOffset = 0) => {
     orama
       .search({
+        ...DEFAULT_ORAMA_QUERY_PARAMS,
         term: searchTerm || '',
         limit: 10,
         offset: resultsOffset,
-        facets: {
-          siteSection: {},
-        },
         ...filterBySection(),
       })
       .then(results => {

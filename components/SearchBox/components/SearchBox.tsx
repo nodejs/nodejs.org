@@ -13,6 +13,7 @@ import { SearchResult } from '@/components/SearchBox/components/SearchResult';
 import { SeeAll } from '@/components/SearchBox/components/SeeAll';
 import { orama, getInitialFacets } from '@/components/SearchBox/lib/orama';
 import { useClickOutside } from '@/components/SearchBox/lib/useClickOutside';
+import { DEFAULT_ORAMA_QUERY_PARAMS } from '@/next.constants.mjs';
 
 import { EmptyState } from './EmptyState';
 import { NoResults } from './NoResults';
@@ -60,16 +61,7 @@ export const SearchBox: FC<SearchBoxProps> = ({ onClose }) => {
     orama
       .search({
         term,
-        limit: 8,
-        threshold: 0,
-        boost: {
-          pageSectionTitle: 4,
-          pageSectionContent: 2.5,
-          pageTitle: 1.5,
-        },
-        facets: {
-          siteSection: {},
-        },
+        ...DEFAULT_ORAMA_QUERY_PARAMS,
         ...filterBySection(),
       })
       .then(setSearchResults)

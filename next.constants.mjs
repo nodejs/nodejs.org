@@ -122,7 +122,7 @@ export const BLOG_POSTS_PER_PAGE = ENABLE_WEBSITE_REDESIGN ? 6 : 20;
  */
 export const THEME_STORAGE_KEY = 'theme';
 
-/***
+/**
  * This is a list of all external links that are used on website sitemap.
  * @see https://github.com/nodejs/nodejs.org/issues/5813 for more context
  */
@@ -135,3 +135,20 @@ export const EXTERNAL_LINKS_SITEMAP = [
   'https://trademark-list.openjsf.org/',
   'https://www.linuxfoundation.org/cookies',
 ];
+
+/**
+ * These are the default Orama Query Parameters that are used by the Website
+ * @see https://docs.oramasearch.com/open-source/usage/search/introduction
+ */
+export const DEFAULT_ORAMA_QUERY_PARAMS = {
+  limit: 8,
+  threshold: 0,
+  boost: {
+    pageSectionTitle: 4,
+    pageSectionContent: 2.5,
+    pageTitle: 1.5,
+  },
+  facets: {
+    siteSection: {},
+  },
+};
