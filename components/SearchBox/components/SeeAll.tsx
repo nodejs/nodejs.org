@@ -23,11 +23,13 @@ export const SeeAll: FC<SeeAllProps> = props => {
     return null;
   }
 
+  const sanitizedSearchTerm = encodeURIComponent(props.searchTerm);
+  const sanitizedFacetName = encodeURIComponent(props.selectedFacetName);
+  const allResultsURL = `/en/search?q=${sanitizedSearchTerm}&section=${sanitizedFacetName}`;
+
   return (
     <div className={styles.seeAllFulltextSearchResults}>
-      <NextLink
-        href={`/en/search?q=${props.searchTerm}&section=${props.selectedFacetName}`}
-      >
+      <NextLink href={allResultsURL}>
         {t('components.search.seeAll.text', { count: resultsCount })}
       </NextLink>
     </div>
