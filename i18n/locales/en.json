@@ -175,6 +175,26 @@
       "changelogModal": {
         "startContributing": "Start Contributing"
       }
+    },
+    "search": {
+      "searchBox": {
+        "placeholder": "Start typing..."
+      },
+      "seeAll": {
+        "text": "See all {count} results"
+      },
+      "searchError": {
+        "text": "An error occurred while searching. Please try again later."
+      },
+      "poweredBy": {
+        "text": "Powered by"
+      },
+      "noResults": {
+        "text": "No results found for \"{query}\"."
+      },
+      "emptyState": {
+        "text": "Search something..."
+      }
     }
   },
   "layouts": {

@@ -1,6 +1,7 @@
 'use client';
 
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { useTranslations } from 'next-intl';
 import { useState, type FC } from 'react';
 
 import { SearchBox } from '@/components/SearchBox/components/SearchBox';
@@ -10,6 +11,7 @@ import styles from './index.module.css';
 
 export const SearchButton: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const t = useTranslations();
 
   useKeyboardCommands(cmd => {
     switch (cmd) {
@@ -39,7 +41,7 @@ export const SearchButton: FC = () => {
         className={styles.searchButton}
       >
         <MagnifyingGlassIcon className={styles.magnifyingGlassIcon} />
-        Start typing...
+        {t('components.search.searchBox.placeholder')}
       </button>
       {isOpen ? <SearchBox onClose={closeSearchBox} /> : null}
     </>

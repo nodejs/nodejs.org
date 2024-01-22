@@ -38,7 +38,6 @@ const SearchPage: FC = () => {
   }, [searchSection, searchTerm]);
 
   const search = (resultsOffset = 0) => {
-    console.log({ resultsOffset });
     orama
       .search({
         term: searchTerm || '',

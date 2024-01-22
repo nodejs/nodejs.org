@@ -12,7 +12,9 @@
         "NEXT_PUBLIC_VERCEL_URL",
         "NEXT_PUBLIC_DIST_URL",
         "NEXT_PUBLIC_DOCS_URL",
-        "NEXT_PUBLIC_BASE_PATH"
+        "NEXT_PUBLIC_BASE_PATH",
+        "NEXT_PUBLIC_ORAMA_API_KEY",
+        "NEXT_PUBLIC_ORAMA_ENDPOINT"
       ]
     },
     "build": {
@@ -31,7 +33,9 @@
         "NEXT_PUBLIC_VERCEL_URL",
         "NEXT_PUBLIC_DIST_URL",
         "NEXT_PUBLIC_DOCS_URL",
-        "NEXT_PUBLIC_BASE_PATH"
+        "NEXT_PUBLIC_BASE_PATH",
+        "NEXT_PUBLIC_ORAMA_API_KEY",
+        "NEXT_PUBLIC_ORAMA_ENDPOINT"
       ]
     },
     "start": {
@@ -44,7 +48,9 @@
         "NEXT_PUBLIC_VERCEL_URL",
         "NEXT_PUBLIC_DIST_URL",
         "NEXT_PUBLIC_DOCS_URL",
-        "NEXT_PUBLIC_BASE_PATH"
+        "NEXT_PUBLIC_BASE_PATH",
+        "NEXT_PUBLIC_ORAMA_API_KEY",
+        "NEXT_PUBLIC_ORAMA_ENDPOINT"
       ]
     },
     "deploy": {
@@ -63,7 +69,9 @@
         "NEXT_PUBLIC_VERCEL_URL",
         "NEXT_PUBLIC_DIST_URL",
         "NEXT_PUBLIC_DOCS_URL",
-        "NEXT_PUBLIC_BASE_PATH"
+        "NEXT_PUBLIC_BASE_PATH",
+        "NEXT_PUBLIC_ORAMA_API_KEY",
+        "NEXT_PUBLIC_ORAMA_ENDPOINT"
       ]
     },
     "lint:js": {

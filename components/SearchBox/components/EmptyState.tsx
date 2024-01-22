@@ -1,7 +1,14 @@
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import styles from './index.module.css';
 
-export const EmptyState: FC = () => (
-  <div className={styles.emptyStateContainer}>Search something...</div>
-);
+export const EmptyState: FC = () => {
+  const t = useTranslations();
+
+  return (
+    <div className={styles.emptyStateContainer}>
+      {t('components.search.emptyState.text')}
+    </div>
+  );
+};

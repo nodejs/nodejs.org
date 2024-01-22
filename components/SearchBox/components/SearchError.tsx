@@ -1,9 +1,14 @@
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import styles from './index.module.css';
 
-export const SearchError: FC = () => (
-  <div className={styles.searchErrorContainer}>
-    An error occurred while searching. Please try again later.
-  </div>
-);
+export const SearchError: FC = () => {
+  const t = useTranslations();
+
+  return (
+    <div className={styles.searchErrorContainer}>
+      {t('components.search.searchError.text')}
+    </div>
+  );
+};
