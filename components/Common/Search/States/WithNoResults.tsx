@@ -5,7 +5,7 @@ import styles from './index.module.css';
 
 type NoResultsProps = { searchTerm: string };
 
-export const NoResults: FC<NoResultsProps> = props => {
+export const WithNoResults: FC<NoResultsProps> = props => {
   const t = useTranslations();
 
   return (

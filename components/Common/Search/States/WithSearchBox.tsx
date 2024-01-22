@@ -7,16 +7,16 @@ import classNames from 'classnames';
 import { useRouter } from 'next/navigation';
 import { useState, useRef, type FC, useEffect } from 'react';
 
-import styles from '@/components/SearchBox/components/index.module.css';
-import { PoweredBy } from '@/components/SearchBox/components/PoweredBy';
-import { SearchResult } from '@/components/SearchBox/components/SearchResult';
-import { SeeAll } from '@/components/SearchBox/components/SeeAll';
+import styles from '@/components/Common/Search/States/index.module.css';
+import { WithAllResults } from '@/components/Common/Search/States/WithAllResults';
+import { WithEmptyState } from '@/components/Common/Search/States/WithEmptyState';
+import { WithError } from '@/components/Common/Search/States/WithError';
+import { WithNoResults } from '@/components/Common/Search/States/WithNoResults';
+import { WithPoweredBy } from '@/components/Common/Search/States/WithPoweredBy';
+import { WithSearchResult } from '@/components/Common/Search/States/WithSearchResult';
 import { useClickOutside } from '@/hooks/react-client';
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '@/next.constants.mjs';
 import { orama, getInitialFacets } from '@/next.orama.mjs';
-
-import { EmptyState } from './EmptyState';
-import { NoResults } from './NoResults';
 
 export type SearchDoc = {
   id: string;
@@ -31,7 +31,7 @@ type SearchResults = Nullable<Results<SearchDoc>>;
 
 type SearchBoxProps = { onClose: () => void };
 
-export const SearchBox: FC<SearchBoxProps> = ({ onClose }) => {
+export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState<SearchResults>(null);
   const [selectedFacet, setSelectedFacet] = useState<number>(0);
@@ -152,34 +152,34 @@ export const SearchBox: FC<SearchBoxProps> = ({ onClose }) => {
           </div>
 
           <div className={styles.fulltextResultsContainer}>
-            {searchError ? <></> : null}
+            {searchError ? <WithError /> : null}
 
             {(searchTerm ? (
               searchResults?.count ? (
                 searchResults?.hits.map(hit => (
-                  <SearchResult
+                  <WithSearchResult
                     key={hit.id}
                     hit={hit}
                     searchTerm={searchTerm}
                   />
                 ))
               ) : (
-                <NoResults searchTerm={searchTerm} />
+                <WithNoResults searchTerm={searchTerm} />
               )
             ) : (
-              <EmptyState />
+              <WithEmptyState />
             )) ?? null}
 
             {searchResults?.count
               ? searchResults?.count > 8 &&
                 searchTerm && (
-                  <SeeAll
+                  <WithAllResults
                     {...{ searchResults, searchTerm, selectedFacetName }}
                   />
                 )
               : null}
           </div>
-          <PoweredBy />
+          <WithPoweredBy />
         </div>
       </div>
     </div>

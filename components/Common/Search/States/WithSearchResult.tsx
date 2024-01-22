@@ -2,8 +2,8 @@ import type { Result } from '@orama/orama';
 import NextLink from 'next/link';
 import type { FC } from 'react';
 
-import type { SearchDoc } from '@/components/SearchBox/components/SearchBox';
-import { pathToBreadcrumbs } from '@/components/SearchBox/utils';
+import type { SearchDoc } from '@/components/Common/Search/States/WithSearchBox';
+import { pathToBreadcrumbs } from '@/components/Common/Search/utils';
 import { highlighter } from '@/next.orama.mjs';
 
 import styles from './index.module.css';
@@ -13,7 +13,7 @@ type SearchResultProps = {
   searchTerm: string;
 };
 
-export const SearchResult: FC<SearchResultProps> = props => {
+export const WithSearchResult: FC<SearchResultProps> = props => {
   const isAPIResult = props.hit.document.siteSection.toLowerCase() === 'api';
   const basePath = isAPIResult ? 'https://nodejs.org/docs/latest' : '/en';
   const path = `${basePath}/${props.hit.document.path}`;

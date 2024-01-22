@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 
 import styles from './index.module.css';
 
-export const PoweredBy = () => {
+export const WithPoweredBy = () => {
   const t = useTranslations();
 
   return (

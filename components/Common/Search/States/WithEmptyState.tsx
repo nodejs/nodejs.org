@@ -3,12 +3,12 @@ import type { FC } from 'react';
 
 import styles from './index.module.css';
 
-export const SearchError: FC = () => {
+export const WithEmptyState: FC = () => {
   const t = useTranslations();
 
   return (
-    <div className={styles.searchErrorContainer}>
-      {t('components.search.searchError.text')}
+    <div className={styles.emptyStateContainer}>
+      {t('components.search.emptyState.text')}
     </div>
   );
 };

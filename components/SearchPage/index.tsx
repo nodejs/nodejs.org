@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState, type FC } from 'react';
 
-import type { SearchDoc } from '@/components/SearchBox/components/SearchBox';
-import { pathToBreadcrumbs } from '@/components/SearchBox/utils';
+import type { SearchDoc } from '@/components/Common/Search/States/WithSearchBox';
+import { pathToBreadcrumbs } from '@/components/Common/Search/utils';
 import { useBottomScrollListener } from '@/hooks/react-client';
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '@/next.constants.mjs';
 import { orama, highlighter } from '@/next.orama.mjs';

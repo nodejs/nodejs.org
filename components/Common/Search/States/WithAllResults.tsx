@@ -3,9 +3,9 @@ import NextLink from 'next/link';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import type { SearchDoc } from '@/components/SearchBox/components/SearchBox';
-
 import styles from './index.module.css';
+
+import type { SearchDoc } from '@/components/Common/Search/States/SearchBox';
 
 type SearchResults = Results<SearchDoc>;
 
@@ -15,7 +15,7 @@ type SeeAllProps = {
   selectedFacetName: string;
 };
 
-export const SeeAll: FC<SeeAllProps> = props => {
+export const WithAllResults: FC<SeeAllProps> = props => {
   const t = useTranslations();
   const resultsCount = props.searchResults?.count?.toLocaleString('en') ?? 0;
 

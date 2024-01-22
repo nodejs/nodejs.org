@@ -7,13 +7,13 @@ import { useState } from 'react';
 import type { FC, ComponentProps } from 'react';
 
 import LanguageDropdown from '@/components/Common/LanguageDropDown';
+import { SearchButton } from '@/components/Common/Search';
 import ThemeToggle from '@/components/Common/ThemeToggle';
 import NavItem from '@/components/Containers/NavBar/NavItem';
 import NodejsDark from '@/components/Icons/Logos/NodejsDark';
 import NodejsLight from '@/components/Icons/Logos/NodejsLight';
 import GitHub from '@/components/Icons/Social/GitHub';
 import Link from '@/components/Link';
-import { SearchButton } from '@/components/SearchBox';
 import type { FormattedMessage } from '@/types';
 
 import style from './index.module.css';
