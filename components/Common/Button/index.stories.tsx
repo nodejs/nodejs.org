@@ -1,4 +1,4 @@
-import { ClipboardDocumentCheckIcon } from '@heroicons/react/24/solid';
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 import Button from '@/components/Common/Button';
@@ -17,12 +17,7 @@ export const Neutral: Story = {
 export const Primary: Story = {
   args: {
     kind: 'primary',
-    children: (
-      <>
-        Download Node (LTS)
-        <ClipboardDocumentCheckIcon />
-      </>
-    ),
+    children: 'Download Node (LTS)',
     disabled: false,
   },
 };
@@ -48,8 +43,8 @@ export const WithIcon: Story = {
     kind: 'primary',
     children: (
       <>
-        Copy to clipboard
-        <ClipboardDocumentCheckIcon />
+        Back to Home
+        <ArrowRightIcon />
       </>
     ),
     disabled: false,
