@@ -91,7 +91,7 @@
     "vfile-matter": "~5.0.0"
   },
   "devDependencies": {
-    "@orama/orama": "^2.0.1",
+    "@orama/orama": "~2.0.1",
     "@storybook/addon-controls": "~7.6.8",
     "@storybook/addon-interactions": "~7.6.8",
     "@storybook/addon-themes": "~7.6.8",

@@ -29,6 +29,8 @@ export type SearchDoc = {
   pageSectionContent: string;
 };
 
+type Facets = { [key: string]: number };
+
 type SearchResults = Nullable<Results<SearchDoc>>;
 
 type SearchBoxProps = { onClose: () => void };
@@ -100,7 +102,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
     };
   };
 
-  const facets = {
+  const facets: Facets = {
     all: searchResults?.count ?? 0,
     ...(searchResults?.facets?.siteSection?.values ?? {}),
   };
@@ -143,11 +145,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
               >
                 {facetName}
                 <span className={styles.fulltextSearchSectionCount}>
-                  (
-                  {facets[facetName as keyof typeof facets].toLocaleString(
-                    'en'
-                  )}
-                  )
+                  ({facets[facetName].toLocaleString('en')})
                 </span>
               </button>
             ))}
@@ -176,7 +174,9 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
               ? searchResults?.count > 8 &&
                 searchTerm && (
                   <WithAllResults
-                    {...{ searchResults, searchTerm, selectedFacetName }}
+                    searchResults={searchResults}
+                    searchTerm={searchTerm}
+                    selectedFacetName={selectedFacetName}
                   />
                 )
               : null}

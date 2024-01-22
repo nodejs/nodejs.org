@@ -1,9 +1,9 @@
 import type { Result } from '@orama/orama';
-import NextLink from 'next/link';
 import type { FC } from 'react';
 
 import type { SearchDoc } from '@/components/Common/Search/States/WithSearchBox';
 import { pathToBreadcrumbs } from '@/components/Common/Search/utils';
+import Link from '@/components/Link';
 import { highlighter } from '@/next.orama.mjs';
 
 import styles from './index.module.css';
@@ -15,16 +15,14 @@ type SearchResultProps = {
 
 export const WithSearchResult: FC<SearchResultProps> = props => {
   const isAPIResult = props.hit.document.siteSection.toLowerCase() === 'api';
-  const basePath = isAPIResult ? 'https://nodejs.org/docs/latest' : '/en';
+  const basePath = isAPIResult ? 'https://nodejs.org' : '';
   const path = `${basePath}/${props.hit.document.path}`;
 
   return (
-    <NextLink
+    <Link
       key={props.hit.id}
       href={path}
       className={styles.fulltextSearchResult}
-      target={isAPIResult ? '_blank' : undefined}
-      rel={isAPIResult ? 'noopener noreferrer' : undefined}
     >
       <div
         className={styles.fulltextSearchResultTitle}
@@ -39,6 +37,6 @@ export const WithSearchResult: FC<SearchResultProps> = props => {
         {' > '}
         {props.hit.document.pageTitle}
       </div>
-    </NextLink>
+    </Link>
   );
 };

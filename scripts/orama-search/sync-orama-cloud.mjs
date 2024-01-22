@@ -21,50 +21,37 @@ const runUpdate = async () => {
     batches.push(siteContent.slice(i, i + batchSize));
   }
 
-  console.log(
-    `Inserting ${batches.length} batches of ${batchSize} documents each.`
-  );
   await Promise.all(batches.map(insertBatch));
-  console.log(`Done inserting batches. ${siteContent.length} documents total.`);
 };
 
 // We call the "notify" API to upsert the documents in the index.
 // Orama will keep a queue of all the documents we send, and will process them once we call the "deploy" API.
 // Full docs on the "notify" API: https://docs.oramasearch.com/cloud/data-sources/custom-integrations/webhooks#updating-removing-inserting-elements-in-a-live-index
-const insertBatch = async batch => {
+const insertBatch = async batch =>
   await fetch(`${ORAMA_API_BASE_URL}/notify`, {
     method: 'POST',
     headers: oramaHeaders,
-    body: JSON.stringify({
-      upsert: batch,
-    }),
+    body: JSON.stringify({ upsert: batch }),
   });
-};
 
 // We call the "deploy" API to trigger a deployment of the index, which will process all the documents in the queue.
 // Full docs on the "deploy" API: https://docs.oramasearch.com/cloud/data-sources/custom-integrations/webhooks#deploying-the-index
-const triggerDeployment = async () => {
-  console.log('Triggering deployment');
+const triggerDeployment = async () =>
   await fetch(`${ORAMA_API_BASE_URL}/deploy`, {
     method: 'POST',
     headers: oramaHeaders,
   });
-  console.log('Done triggering deployment');
-};
 
 // We call the "snapshot" API to empty the index before inserting the new documents.
 // The "snapshot" API is tipically used to replace the entire index with a fresh set of documents, but we use it here to empty the index.
 // This operation gets queued, so the live index will still be available until we call the "deploy" API and redeploy the index.
 // Full docs on the "snapshot" API: https://docs.oramasearch.com/cloud/data-sources/custom-integrations/webhooks#inserting-a-snapshot
-const emptyOramaIndex = async () => {
-  console.log('Emptying index');
+const emptyOramaIndex = async () =>
   await fetch(`${ORAMA_API_BASE_URL}/snapshot`, {
     method: 'POST',
     headers: oramaHeaders,
     body: JSON.stringify([]),
   });
-  console.log('Done emptying index');
-};
 
 // Now we proceed to call the APIs in order:
 // 1. Empty the index

@@ -34,19 +34,13 @@ const splitIntoSections = markdownContent => {
   }));
 };
 
-const getPageTitle = data => {
-  const { title } = data;
-
-  if (title) {
-    return title;
-  }
-
-  const { pathname } = data;
-  const parts = pathname.split('/');
-  const lastPart = parts[parts.length - 1].replace(/\.html$/, '');
-
-  return lastPart.replace(/-/g, ' ');
-};
+const getPageTitle = data =>
+  data.title ||
+  data.pathname
+    .split('/')
+    .pop()
+    .replace(/\.html$/, '')
+    .replace(/-/g, ' ');
 
 export const siteContent = [...pageData, ...apiData]
   .map(data => {
