@@ -171,11 +171,10 @@ export const SearchBox: FC<SearchBoxProps> = ({ onClose }) => {
             )) ?? null}
 
             {searchResults?.count
-              ? searchResults?.count > 8 && (
+              ? searchResults?.count > 8 &&
+                searchTerm && (
                   <SeeAll
-                    searchResults={searchResults}
-                    searchTerm={searchTerm}
-                    selectedFacetName={selectedFacetName}
+                    {...{ searchResults, searchTerm, selectedFacetName }}
                   />
                 )
               : null}

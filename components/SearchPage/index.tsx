@@ -7,7 +7,7 @@ import { useEffect, useState, type FC } from 'react';
 
 import type { SearchDoc } from '@/components/SearchBox/components/SearchBox';
 import { orama, highlighter } from '@/components/SearchBox/lib/orama';
-import { pathToBreadcrumbs } from '@/components/SearchBox/lib/utils';
+import { pathToBreadcrumbs } from '@/components/SearchBox/utils';
 import { useBottomScrollListener } from '@/components/SearchPage/utils/useBottomScrollListener';
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '@/next.constants.mjs';
 

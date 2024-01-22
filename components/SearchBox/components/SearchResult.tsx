@@ -4,7 +4,7 @@ import type { FC } from 'react';
 
 import type { SearchDoc } from '@/components/SearchBox/components/SearchBox';
 import { highlighter } from '@/components/SearchBox/lib/orama';
-import { pathToBreadcrumbs } from '@/components/SearchBox/lib/utils';
+import { pathToBreadcrumbs } from '@/components/SearchBox/utils';
 
 import styles from './index.module.css';
 
