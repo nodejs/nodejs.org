@@ -86,7 +86,7 @@ export const useGetPageElements = (
 
     return [
       ...createPaginationListItems(leftPages),
-      <Ellipsis key="elipsis" />,
+      <Ellipsis key="ellipsis" />,
       ...createPaginationListItems(parsedPages.slice(lastIndex)),
     ];
   }
@@ -101,7 +101,7 @@ export const useGetPageElements = (
       ...createPaginationListItems(
         parsedPages.slice(firstIndex, firstIndex + 1)
       ),
-      <Ellipsis key="elipsis" />,
+      <Ellipsis key="ellipsis" />,
       ...createPaginationListItems(rightPages),
     ];
   }
@@ -116,9 +116,9 @@ export const useGetPageElements = (
       ...createPaginationListItems(
         parsedPages.slice(firstIndex, firstIndex + 1)
       ),
-      <Ellipsis key="elipsis-1" />,
+      <Ellipsis key="ellipsis-1" />,
       ...createPaginationListItems(middlePages),
-      <Ellipsis key="elipsis-2" />,
+      <Ellipsis key="ellipsis-2" />,
       ...createPaginationListItems(parsedPages.slice(lastIndex)),
     ];
   }
