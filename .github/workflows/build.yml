@@ -123,3 +123,8 @@ jobs:
           # this should be a last resort in case by any chances the build memory gets too high
           # but in general this should never happen
           NODE_OPTIONS: '--max_old_space_size=4096'
+
+      - name: Sync Orama Cloud
+        if: github.ref == 'refs/heads/main'
+        run: |
+          npm run sync-orama

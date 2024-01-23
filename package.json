@@ -29,6 +29,7 @@
     "prettier": "prettier \"**/*.{js,mjs,ts,tsx,md,mdx,json,yml,css}\" --check --cache --cache-strategy=content --cache-location=.prettiercache",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run lint:fix && npm run prettier:fix",
+    "sync-orama": "node ./scripts/orama-search/sync-orama-cloud.mjs",
     "storybook": "cross-env NODE_NO_WARNINGS=1 storybook dev -p 6006 --quiet --no-open",
     "storybook:build": "cross-env NODE_NO_WARNINGS=1 storybook build --quiet --webpack-stats-json",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 jest",

@@ -1,14 +1,20 @@
+import { readFileSync } from 'node:fs';
 import zlib from 'node:zlib';
 
 import { slug } from 'github-slugger';
 
-import { NEXT_DATA_URL } from '../../next.constants.mjs';
+const dataBasePath = new URL(
+  '../../.next/server/app/en/next-data',
+  import.meta.url
+).pathname;
 
-const nextPageData = await fetch(`${NEXT_DATA_URL}/page-data`);
-const nextAPIPageData = await fetch(`${NEXT_DATA_URL}/api-data`);
+const nextPageData = readFileSync(`${dataBasePath}/page-data.body`, 'utf-8');
+const nextAPIPageData = readFileSync(`${dataBasePath}/api-data.body`, 'utf-8');
 
-const pageData = await nextPageData.json();
-const apiData = await nextAPIPageData.json();
+const pageData = JSON.parse(nextPageData);
+const apiData = JSON.parse(nextAPIPageData);
+
+console.log('apiData', apiData);
 
 const splitIntoSections = markdownContent => {
   const lines = markdownContent.split(/\n/gm);
