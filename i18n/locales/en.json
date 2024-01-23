@@ -80,6 +80,12 @@
             "modules": "Modules",
             "publishingNodeApiModules": "How to publish a Node-API package"
           }
+        },
+        "backpressuring": {
+          "links": {
+            "backpressuring": "Backpressuring",
+            "backpressuringInStreams": "Backpressuring In Streams"
+          }
         }
       },
       "about": {

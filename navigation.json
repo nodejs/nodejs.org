@@ -214,6 +214,15 @@
               "label": "components.navigation.learn.modules.links.publishingNodeApiModules"
             }
           }
+        },
+        "backpressuring": {
+          "label": "components.navigation.learn.backpressuring.links.backpressuring",
+          "items": {
+            "backpressuringInStreams": {
+              "link": "/learn/backpressuring/backpressuring-in-streams",
+              "label": "components.navigation.learn.backpressuring.links.backpressuringInStreams"
+            }
+          }
         }
       }
     },
