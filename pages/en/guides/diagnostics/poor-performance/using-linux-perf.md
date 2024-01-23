@@ -77,7 +77,7 @@ from step 6.
 
 Because `perf` output is not a Node.js specific tool, it might have issues with how JavaScript code is optimized in
 Node.js. See [perf output issues](/guides/diagnostics-flamegraph/#perf-output-issues) for a
-futher reference.
+further reference.
 
 ## Useful Links
 

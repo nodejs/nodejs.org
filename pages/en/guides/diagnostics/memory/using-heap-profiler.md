@@ -58,7 +58,7 @@ Finally, look at the snapshot data:
 
 ![heap profiler tutorial step 3][heap profiler tutorial 3]
 
-Check the [useful links](#useful-links) section for futher information
+Check the [useful links](#useful-links) section for further information
 about memory terminology.
 
 ## Sampling Heap Profiler
@@ -68,7 +68,7 @@ over time. Since it is sampling based its overhead is low enough to use in
 production systems.
 
 > You can use the module [`heap-profiler`][] to start and stop the heap
-> profiler programatically.
+> profiler programmatically.
 
 ### How To
 
