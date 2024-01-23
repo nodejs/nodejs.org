@@ -1,5 +1,6 @@
 'use client';
 
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import { captureException } from '@sentry/nextjs';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
@@ -37,7 +38,10 @@ const ErrorPage: FC<{ error: Error }> = ({ error }) => {
         <p className="-mt-4 max-w-sm text-center text-lg">
           {t('layouts.error.internalServerError.description')}
         </p>
-        <Button href="/">{t('layouts.error.backToHome')}</Button>
+        <Button href="/">
+          {t('layouts.error.backToHome')}
+          <ArrowRightIcon />
+        </Button>
       </main>
     </CenteredLayout>
   );

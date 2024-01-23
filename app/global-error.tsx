@@ -1,5 +1,6 @@
 'use client';
 
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import { captureException } from '@sentry/nextjs';
 import ErrorComponent from 'next/error';
 import type { FC } from 'react';
@@ -39,7 +40,10 @@ const GlobalErrorPage: FC<{ error: Error }> = ({ error }) => {
               <p className="-mt-4 max-w-sm text-center text-lg">
                 This page has thrown a non-recoverable error.
               </p>
-              <Button href="/">Back to Home</Button>
+              <Button href="/">
+                Back to Home
+                <ArrowRightIcon />
+              </Button>
             </main>
           </CenteredLayout>
         </BaseLayout>

@@ -1,11 +1,17 @@
 .downloadButton {
-  @apply flex-row
-    items-center
-    justify-center
-    gap-2;
+  @apply justify-center;
+
+  &.primary {
+    @apply inline-flex
+      dark:hidden;
+  }
+
+  &.special {
+    @apply hidden
+      dark:inline-flex;
+  }
 
   svg {
-    @apply size-5
-      dark:opacity-50;
+    @apply dark:opacity-50;
   }
 }

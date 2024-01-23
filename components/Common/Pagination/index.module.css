@@ -10,10 +10,7 @@
 
 .previousButton,
 .nextButton {
-  @apply flex
-    items-center
-    gap-2
-    text-sm;
+  @apply text-sm;
 }
 
 .previousButton {
