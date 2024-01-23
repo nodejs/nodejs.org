@@ -14,8 +14,6 @@ const nextAPIPageData = readFileSync(`${dataBasePath}/api-data.body`, 'utf-8');
 const pageData = JSON.parse(nextPageData);
 const apiData = JSON.parse(nextAPIPageData);
 
-console.log('apiData', apiData);
-
 const splitIntoSections = markdownContent => {
   const lines = markdownContent.split(/\n/gm);
   const sections = [];
