@@ -42,6 +42,7 @@ const SearchPage: FC = () => {
     orama
       .search({
         ...DEFAULT_ORAMA_QUERY_PARAMS,
+        mode: 'fulltext',
         term: searchTerm || '',
         limit: 10,
         offset: resultsOffset,

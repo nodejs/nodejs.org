@@ -66,6 +66,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
       .search({
         term,
         ...DEFAULT_ORAMA_QUERY_PARAMS,
+        mode: 'fulltext',
         ...filterBySection(),
       })
       .then(setSearchResults)

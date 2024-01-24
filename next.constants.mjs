@@ -141,6 +141,7 @@ export const EXTERNAL_LINKS_SITEMAP = [
  * @see https://docs.oramasearch.com/open-source/usage/search/introduction
  */
 export const DEFAULT_ORAMA_QUERY_PARAMS = {
+  mode: 'fulltext',
   limit: 8,
   threshold: 0,
   boost: {
