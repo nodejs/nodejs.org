@@ -1,3 +1,4 @@
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 import Button from '@/components/Common/Button';
@@ -33,6 +34,19 @@ export const Special: Story = {
   args: {
     kind: 'special',
     children: 'Download Node (LTS)',
+    disabled: false,
+  },
+};
+
+export const WithIcon: Story = {
+  args: {
+    kind: 'primary',
+    children: (
+      <>
+        Back to Home
+        <ArrowRightIcon />
+      </>
+    ),
     disabled: false,
   },
 };

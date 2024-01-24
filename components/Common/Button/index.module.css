@@ -1,9 +1,16 @@
 .button {
   @apply relative
+    inline-flex
+    items-center
+    gap-2
     px-4.5
     py-2.5
     text-center
     font-semibold;
+
+  svg {
+    @apply size-5;
+  }
 
   &[aria-disabled='true'] {
     @apply cursor-not-allowed;

@@ -146,6 +146,6 @@ const nextWithSentry = withSentryConfig(
   sentryConfig
 );
 
-// Decides wheter enabling Sentry or not
+// Decides whether enabling Sentry or not
 // By default we only want to enable Sentry within a Vercel Environment
 export default SENTRY_ENABLE ? nextWithSentry : nextWithIntl;

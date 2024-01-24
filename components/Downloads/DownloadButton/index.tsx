@@ -25,7 +25,7 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
       <Button
         kind="special"
         href={downloadLink}
-        className={classNames(styles.downloadButton, 'hidden dark:flex')}
+        className={classNames(styles.downloadButton, styles.special)}
       >
         {children}
 
@@ -35,7 +35,7 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
       <Button
         kind="primary"
         href={downloadLink}
-        className={classNames(styles.downloadButton, 'flex dark:hidden')}
+        className={classNames(styles.downloadButton, styles.primary)}
       >
         {children}
 
