@@ -178,7 +178,9 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
               />
             ) : null}
           </div>
-          <WithPoweredBy />
+          <div className={styles.fulltextSearchFooter}>
+            <WithPoweredBy />
+          </div>
         </div>
       </div>
     </div>

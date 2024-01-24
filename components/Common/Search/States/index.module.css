@@ -16,7 +16,6 @@
     h-screen
     w-full
     bg-neutral-100
-    p-2
     dark:bg-neutral-950
     md:top-60
     md:h-[450px]
@@ -29,7 +28,7 @@
   @apply pt-12
     text-neutral-800
     dark:text-neutral-400
-    md:p-2;
+    md:pt-2;
 }
 
 .searchBoxMagnifyingGlassIcon {
@@ -55,7 +54,8 @@
 
 .searchBoxInputContainer {
   @apply relative
-  px-2;
+  px-2
+  md:px-4;
 }
 
 .searchBoxInput {
@@ -75,13 +75,14 @@
 
 .fulltextResultsContainer {
   @apply h-80
-    overflow-scroll;
+    overflow-scroll
+    md:px-4;
 }
 
 .fulltextSearchResult {
   @apply flex
     flex-col
-    rounded-md
+    rounded-t-md
     p-2
     text-left
     text-sm
@@ -112,7 +113,8 @@
     text-xs
     font-semibold
     text-neutral-700
-    dark:text-neutral-600;
+    dark:text-neutral-600
+    md:px-4;
 }
 
 .fulltextSearchSection {
@@ -155,13 +157,10 @@
 }
 
 .poweredBy {
-  @apply absolute
-    -bottom-8
-    left-0
-    flex
+  @apply flex
     w-full
     items-center
-    justify-center
+    justify-end
     text-xs
     text-neutral-200;
 }
@@ -210,4 +209,14 @@
     text-sm
     text-neutral-600
     dark:text-neutral-500;
+}
+
+.fulltextSearchFooter {
+  @apply relative
+    w-full
+    rounded-b-xl
+    border-t
+    border-neutral-900
+    bg-neutral-950
+    p-4;
 }
