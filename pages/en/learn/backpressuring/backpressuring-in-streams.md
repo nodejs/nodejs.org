@@ -1,6 +1,6 @@
 ---
 title: Backpressuring in Streams
-layout: docs.hbs
+layout: learn.hbs
 ---
 
 # Backpressuring in Streams
