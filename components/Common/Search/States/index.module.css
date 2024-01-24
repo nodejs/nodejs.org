@@ -27,32 +27,30 @@
 
 .searchBoxInnerPanel {
   @apply pt-12
-  text-neutral-800
-  dark:text-neutral-400
+    text-neutral-800
+    dark:text-neutral-400
     md:p-2;
 }
 
 .searchBoxMagnifyingGlassIcon {
   @apply absolute
-  top-[10px]
-  hidden
-  h-6
-  w-6
-  md:block;
+    top-[10px]
+    hidden
+    size-6
+    md:block;
 }
 
 .searchBoxBackIconContainer {
   @apply block
-  md:hidden;
+    md:hidden;
 }
 
 .searchBoxBackIcon {
   @apply absolute
-  top-[7px]
-  block
-  h-6
-  w-6
-  md:hidden;
+    top-[7px]
+    block
+    size-6
+    md:hidden;
 }
 
 .searchBoxInputContainer {
@@ -70,14 +68,14 @@
     pl-8
     pr-4
     focus:outline-none
-  dark:border-neutral-900
-  dark:text-neutral-300
-  dark:placeholder-neutral-300;
+    dark:border-neutral-900
+    dark:text-neutral-300
+    dark:placeholder-neutral-300;
 }
 
 .fulltextResultsContainer {
   @apply h-80
-  overflow-scroll;
+    overflow-scroll;
 }
 
 .fulltextSearchResult {
@@ -132,16 +130,16 @@
 
 .fulltextSearchSectionSelected {
   @apply rounded-b-none
-  border-neutral-700
-  text-neutral-900
-  dark:border-neutral-700
-  dark:text-neutral-300;
+    border-neutral-700
+    text-neutral-900
+    dark:border-neutral-700
+    dark:text-neutral-300;
 }
 
 .fulltextSearchSectionCount {
   @apply ml-1
-  text-neutral-500
-  dark:text-neutral-800;
+    text-neutral-500
+    dark:text-neutral-800;
 }
 
 .seeAllFulltextSearchResults {
@@ -170,7 +168,7 @@
 
 .poweredByLogo {
   @apply ml-2
-  w-16;
+    w-16;
 }
 
 .emptyStateContainer {

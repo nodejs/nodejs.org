@@ -24,6 +24,5 @@
   @apply absolute
     left-2
     top-[8px]
-    h-5
-    w-5;
+    size-5;
 }

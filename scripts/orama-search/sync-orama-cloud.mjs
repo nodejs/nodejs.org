@@ -1,4 +1,5 @@
 import { siteContent } from './get-documents.mjs';
+import { ORAMA_SYNC_BATCH_SIZE } from '../../next.constants.mjs';
 
 // The following follows the instructions at https://docs.oramasearch.com/cloud/data-sources/custom-integrations/webhooks
 
@@ -14,7 +15,7 @@ const oramaHeaders = {
 // Orama allows to send several documents at once, so we batch them in groups of 50.
 // This is not strictly necessary, but it makes the process faster.
 const runUpdate = async () => {
-  const batchSize = 50;
+  const batchSize = ORAMA_SYNC_BATCH_SIZE;
   const batches = [];
 
   for (let i = 0; i < siteContent.length; i += batchSize) {
@@ -43,7 +44,7 @@ const triggerDeployment = async () =>
   });
 
 // We call the "snapshot" API to empty the index before inserting the new documents.
-// The "snapshot" API is tipically used to replace the entire index with a fresh set of documents, but we use it here to empty the index.
+// The "snapshot" API is typically used to replace the entire index with a fresh set of documents, but we use it here to empty the index.
 // This operation gets queued, so the live index will still be available until we call the "deploy" API and redeploy the index.
 // Full docs on the "snapshot" API: https://docs.oramasearch.com/cloud/data-sources/custom-integrations/webhooks#inserting-a-snapshot
 const emptyOramaIndex = async () =>

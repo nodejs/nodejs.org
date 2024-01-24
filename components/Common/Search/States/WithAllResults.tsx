@@ -1,5 +1,6 @@
 import type { Results } from '@orama/orama';
 import NextLink from 'next/link';
+import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
@@ -17,11 +18,16 @@ type SeeAllProps = {
 
 export const WithAllResults: FC<SeeAllProps> = props => {
   const t = useTranslations();
-  const resultsCount = props.searchResults?.count?.toLocaleString('en') ?? 0;
+  const params = useParams();
 
-  const sanitizedSearchTerm = encodeURIComponent(props.searchTerm);
-  const sanitizedFacetName = encodeURIComponent(props.selectedFacetName);
-  const allResultsURL = `/en/search?q=${sanitizedSearchTerm}&section=${sanitizedFacetName}`;
+  const locale = params?.locale ?? 'en';
+  const resultsCount = props.searchResults?.count?.toLocaleString('en') ?? 0;
+  const searchParams = new URLSearchParams();
+
+  searchParams.set('q', props.searchTerm);
+  searchParams.set('section', props.selectedFacetName);
+
+  const allResultsURL = `/${locale}/search?${searchParams.toString()}`;
 
   return (
     <div className={styles.seeAllFulltextSearchResults}>
