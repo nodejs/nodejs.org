@@ -91,7 +91,7 @@
 }
 
 .fulltextSearchResultTitle {
-  @apply text-neutral-700
+  @apply text-neutral-800
     dark:text-neutral-300;
 }
 
@@ -162,7 +162,8 @@
     items-center
     justify-end
     text-xs
-    text-neutral-200;
+    text-neutral-950
+    dark:text-neutral-200;
 }
 
 .poweredByLogo {
@@ -216,7 +217,9 @@
     w-full
     rounded-b-xl
     border-t
-    border-neutral-900
-    bg-neutral-950
-    p-4;
+    border-neutral-300
+    bg-neutral-100
+    p-4
+    dark:border-neutral-900
+    dark:bg-neutral-950;
 }

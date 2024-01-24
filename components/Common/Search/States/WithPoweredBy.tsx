@@ -1,10 +1,13 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { useTheme } from 'next-themes';
 
 import styles from './index.module.css';
 
 export const WithPoweredBy = () => {
   const t = useTranslations();
+  const { theme } = useTheme();
+  const logoURL = `https://website-assets.oramasearch.com/orama-when-${theme}.svg`;
 
   return (
     <div className={styles.poweredBy}>
@@ -15,7 +18,7 @@ export const WithPoweredBy = () => {
         rel="noreferer"
       >
         <Image
-          src="https://website-assets.oramasearch.com/light-orama-logo.svg"
+          src={logoURL}
           alt="Powered by OramaSearch"
           className={styles.poweredByLogo}
           width={80}
