@@ -116,6 +116,10 @@
             "nodejsWithWebassembly": {
               "link": "/learn/getting-started/nodejs-with-webassembly",
               "label": "components.navigation.learn.gettingStarted.links.nodejsWithWebassembly"
+            },
+            "debugging": {
+              "link": "/learn/getting-started/debugging",
+              "label": "components.navigation.learn.gettingStarted.links.debugging"
             }
           }
         },

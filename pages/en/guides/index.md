@@ -9,7 +9,6 @@ layout: docs.hbs
 
 ## General
 
-- [Debugging - Getting Started](/guides/debugging-getting-started/)
 - [Easy profiling for Node.js Applications](/guides/simple-profiling/)
 - [Diagnostics - Flame Graphs](/guides/diagnostics-flamegraph/)
 - [Diagnostics - User Journey](/guides/diagnostics/)

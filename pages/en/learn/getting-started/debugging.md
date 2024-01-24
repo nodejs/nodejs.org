@@ -1,9 +1,9 @@
 ---
 title: Debugging - Getting Started
-layout: docs.hbs
+layout: learn.hbs
 ---
 
-# Debugging Guide
+# Debugging
 
 This guide will help you get started debugging your Node.js apps and scripts.
 
