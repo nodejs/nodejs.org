@@ -12,6 +12,8 @@ export const BASE_CALENDAR_URL =
 /**
  * This is a shared (public) Google Calendar Key (accessible on the Web) for accessing Google's Public Calendar API
  *
+ * This is a PUBLIC available API Key and not a Secret; It's exposed by Google on their Calendar API Docs
+ *
  * Note that this is a custom Environment Variable that can be defined by us when necessary
  */
 export const SHARED_CALENDAR_KEY =
