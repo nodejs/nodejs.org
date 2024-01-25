@@ -1,3 +1,5 @@
+'use strict';
+
 import {
   BASE_CALENDAR_URL,
   SHARED_CALENDAR_KEY,

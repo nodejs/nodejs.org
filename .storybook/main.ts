@@ -34,7 +34,7 @@ const config: StorybookConfig = {
   webpack: async config => ({
     ...config,
     // We want to conform as much as possible with our target settings
-    target: 'browserslist',
+    target: 'node',
     // Performance Hints do not make sense on Storybook as it is bloated by design
     performance: { hints: false },
     // `nodevu` is a Node.js-specific package that requires Node.js modules

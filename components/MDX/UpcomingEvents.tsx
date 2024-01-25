@@ -1,9 +1,10 @@
 import { getTranslations } from 'next-intl/server';
+import type { FC } from 'react';
 
 import BlogPostCard from '@/components/Common/BlogPostCard';
 import getBlogData from '@/next-data/blogData';
 
-const UpcomingEvents = async () => {
+const UpcomingEvents: FC = async () => {
   const t = await getTranslations();
   const { posts } = await getBlogData('events', 0);
 
