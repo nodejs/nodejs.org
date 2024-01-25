@@ -57,7 +57,7 @@ const UpcomingCalendar: FC = async () => {
                 format={{ hour: 'numeric', minute: 'numeric' }}
               />
             </span>
-            (UTC)
+            <small>(UTC)</small>
           </div>
 
           <Link href={getZoomLink({ description, location })}>
