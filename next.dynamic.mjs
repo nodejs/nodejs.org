@@ -79,7 +79,7 @@ const getDynamicRouter = async () => {
    * This method returns a list of all routes that exist for a given locale
    *
    * @param {string} locale
-   * @returns {string[]}
+   * @returns {Array<string>}
    */
   const getRoutesByLanguage = async (locale = defaultLocale.code) => {
     const shouldIgnoreStaticRoute = pathname =>

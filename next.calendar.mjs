@@ -3,6 +3,12 @@ import {
   SHARED_CALENDAR_KEY,
 } from './next.calendar.constants.mjs';
 
+/**
+ *
+ * @param {string} calendarId
+ * @param {number} maxResults
+ * @returns {Promise<Array<import('./types').CalendarEvent>>}
+ */
 export const getCalendarEvents = async (calendarId = '', maxResults = 20) => {
   const currentDate = new Date();
   const nextWeekDate = new Date();

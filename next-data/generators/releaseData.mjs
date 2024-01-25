@@ -29,7 +29,7 @@ const getNodeReleaseStatus = (now, support) => {
  * This method is used to generate the Node.js Release Data
  * for self-consumption during RSC and Static Builds
  *
- * @returns {Promise<import('../../types').NodeRelease[]>}
+ * @returns {Promise<Array<import('../../types').NodeRelease>>}
  */
 const generateReleaseData = () => {
   return nodevu({ fetch: fetch }).then(nodevuOutput => {
