@@ -202,14 +202,15 @@
         "npm": "npm",
         "uncategorized": "Uncategorized",
         "video": "Video",
-        "weekly-updates": "Weekly Updates",
-        "wg": "Working Groups"
+        "weekly": "Weekly Updates",
+        "wg": "Working Groups",
+        "events": "Events"
       }
     },
     "error": {
       "notFound": {
         "title": "Page could not be found",
-        "description": "Sorry, we couldn’t find the page you’re after! Try starting again from the homepage."
+        "description": "Sorry, we couldn't find the page you're after! Try starting again from the homepage."
       },
       "internalServerError": {
         "title": "Internal Server Error",
