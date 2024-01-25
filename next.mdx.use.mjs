@@ -9,6 +9,8 @@ import HomeDownloadButton from './components/Home/HomeDownloadButton';
 import Link from './components/Link';
 import MDXCodeBox from './components/MDX/CodeBox';
 import MDXCodeTabs from './components/MDX/CodeTabs';
+import UpcomingCalendar from './components/MDX/UpcomingCalendar';
+import UpcomingEvents from './components/MDX/UpcomingEvents';
 import WithBadge from './components/withBadge';
 import WithBanner from './components/withBanner';
 import WithNodeRelease from './components/withNodeRelease';
@@ -38,6 +40,10 @@ export const mdxComponents = {
   DownloadLink: DownloadLink,
   // Renders a Button Component for `button` tags
   Button: Button,
+  // Renders an container for Upcoming Node.js Events
+  UpcomingEvents: UpcomingEvents,
+  // Renders an container for Upcoming Node.js Events
+  UpcomingCalendar: UpcomingCalendar,
 };
 
 /**

@@ -36,7 +36,6 @@ export async function compileMDX(source, fileExtension) {
     remarkPlugins: NEXT_REMARK_PLUGINS,
     format: fileExtension,
     baseUrl: import.meta.url,
-    jsxRuntime: 'automatic',
     ...reactRuntime,
   });
 
