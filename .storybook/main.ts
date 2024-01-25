@@ -33,15 +33,27 @@ const config: StorybookConfig = {
   ],
   webpack: async config => ({
     ...config,
-    // Ensures that Node imports work fine with Storybook
-    target: 'node',
+    // We want to conform as much as possible with our target settings
+    target: 'browserslist',
     // Performance Hints do not make sense on Storybook as it is bloated by design
     performance: { hints: false },
     // `nodevu` is a Node.js-specific package that requires Node.js modules
     // this is incompatible with Storybook. So we just mock the module
     resolve: { ...config.resolve, alias: { '@nodevu/core': false } },
+    // We need to configure `node:` APIs as Externals to WebPack
+    // since essentially they're not supported on the browser
+    externals: {
+      'node:fs': 'commonjs fs',
+      'node:url': 'commonjs url',
+      'node:path': 'commonjs path',
+      'node:readline': 'commonjs readline',
+    },
     // Removes Pesky Critical Dependency Warnings due to `next/font`
-    ignoreWarnings: [e => e.message.includes('Critical dep')],
+    ignoreWarnings: [
+      e =>
+        e.message.includes('Critical dep') ||
+        e.message.includes('was not found in'),
+    ],
   }),
 };
 

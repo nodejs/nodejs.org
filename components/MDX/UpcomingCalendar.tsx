@@ -44,21 +44,20 @@ const UpcomingCalendar: FC = async () => {
       {entries.map(({ id, start, end, summary, location, description }) => (
         <div key={id} className="flex w-fit flex-col gap-1">
           <div className="flex flex-row gap-2">
-            <div className="text-sm font-bold">
+            <span className="text-sm font-bold">
               <Time
                 date={isZoned(start) ? start.dateTime : start.date}
                 format={{ hour: 'numeric', minute: 'numeric' }}
               />
-            </div>
-
-            <div className="text-sm font-bold">-</div>
-
-            <div className="text-sm font-bold">
+            </span>
+            <span className="text-sm font-bold">-</span>
+            <span className="text-sm font-bold">
               <Time
                 date={isZoned(end) ? end.dateTime : end.date}
                 format={{ hour: 'numeric', minute: 'numeric' }}
               />
-            </div>
+            </span>
+            (UTC)
           </div>
 
           <Link href={getZoomLink({ description, location })}>
