@@ -106,6 +106,10 @@
             text-neutral-800
             dark:text-neutral-400
             xs:text-xs;
+
+          sup {
+            @apply cursor-help;
+          }
         }
       }
     }
