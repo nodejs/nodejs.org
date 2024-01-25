@@ -212,6 +212,10 @@
             "publishingNodeApiModules": {
               "link": "/learn/modules/publishing-node-api-modules",
               "label": "components.navigation.learn.modules.links.publishingNodeApiModules"
+            },
+            "workingWithFileSystems": {
+              "link": "/learn/modules/working-with-different-filesystems",
+              "label": "components.navigation.learn.modules.links.workingWithFileSystems"
             }
           }
         }

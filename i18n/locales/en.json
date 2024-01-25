@@ -78,7 +78,8 @@
         "modules": {
           "links": {
             "modules": "Modules",
-            "publishingNodeApiModules": "How to publish a Node-API package"
+            "publishingNodeApiModules": "How to publish a Node-API package",
+            "workingWithFileSystems": "Working with Different Filesystems"
           }
         }
       },
