@@ -1,14 +1,15 @@
 import type { DateTimeFormatOptions } from 'next-intl';
 import { useFormatter } from 'next-intl';
 import type { FC } from 'react';
-import { useMemo } from 'react';
 
-type TimeProps = { date: string | Date; format: DateTimeFormatOptions };
+import { DEFAULT_DATE_FORMAT } from '@/next.calendar.constants.mjs';
 
-export const Time: FC<TimeProps> = ({ date, format }) => {
+type TimeProps = { date: string | Date; format?: DateTimeFormatOptions };
+
+const Time: FC<TimeProps> = ({ date, format = DEFAULT_DATE_FORMAT }) => {
   const formatter = useFormatter();
 
-  const dateObject = useMemo(() => new Date(date), [date]);
+  const dateObject = new Date(date);
 
   return (
     <time dateTime={dateObject.toISOString()}>
@@ -16,3 +17,5 @@ export const Time: FC<TimeProps> = ({ date, format }) => {
     </time>
   );
 };
+
+export default Time;

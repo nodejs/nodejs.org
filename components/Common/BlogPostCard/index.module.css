@@ -1,5 +1,6 @@
 .container {
-  @apply max-w-full;
+  @apply max-w-full
+    flex-1;
 }
 
 .subtitle {
