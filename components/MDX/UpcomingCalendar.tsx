@@ -2,23 +2,22 @@ import type { FC } from 'react';
 
 import Time from '@/components/Common/Time';
 import Link from '@/components/Link';
-import type {
-  CalendarEvent,
-  SimpleCalendarTime,
-  ZonedCalendarTime,
-} from '@/types';
+import { CALENDAR_NODEJS_ID } from '@/next.calendar.constants.mjs';
+import { getCalendarEvents } from '@/next.calendar.mjs';
+import type { CalendarEvent, ZonedCalendarTime } from '@/types';
 
 type GrouppedEntries = Record<string, Array<CalendarEvent>>;
 
-const isZoned = (
-  d: ZonedCalendarTime | SimpleCalendarTime
-): d is ZonedCalendarTime => 'dateTime' in d && 'timeZone' in d;
+const isZoned = (d: object): d is ZonedCalendarTime =>
+  'dateTime' in d && 'timeZone' in d;
 
 const getZoomLink = (event: Pick<CalendarEvent, 'description' | 'location'>) =>
   event.description?.match(/https:\/\/zoom.us\/j\/\d+/)?.[0] ||
   event.location?.match(/https:\/\/zoom.us\/j\/\d+/)?.[0];
 
-const UpcomingCalendar: FC<{ events: Array<CalendarEvent> }> = ({ events }) => {
+const UpcomingCalendar: FC = async () => {
+  const events = await getCalendarEvents(CALENDAR_NODEJS_ID);
+
   const groupedEntries = events.filter(getZoomLink).reduce((acc, event) => {
     const startDate = new Date(
       isZoned(event.start) ? event.start.dateTime : event.start.date

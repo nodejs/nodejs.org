@@ -3,9 +3,6 @@ title: Upcoming Events
 layout: about.hbs
 ---
 
-import { CALENDAR_NODEJS_ID } from './next.calendar.constants.mjs';
-import { getCalendarEvents } from './next.calendar.mjs';
-
 # Upcoming Node.js® Summits
 
 Interested in joining a [Collaborator Summit](/about/get-involved/collab-summit) hosted by the Node.js project?
@@ -24,4 +21,4 @@ These meetings are open and available to the public. Anyone is welcome to join a
 
 The following Events are next upcoming events for the Node.js project for the next 7 days.
 
-{await getCalendarEvents(CALENDAR_NODEJS_ID).then(events => <UpcomingCalendar events={events} />)}
+<UpcomingCalendar />
