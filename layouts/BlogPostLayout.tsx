@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
 
-import { Time } from '@/components/Common/Time';
+import Time from '@/components/Common/Time';
 import { useClientContext } from '@/hooks/server';
 
 const BlogPostLayout: FC<PropsWithChildren> = ({ children }) => {
@@ -19,10 +19,7 @@ const BlogPostLayout: FC<PropsWithChildren> = ({ children }) => {
           <span className="blogpost-meta">
             {t('layouts.blogPost.author.byLine', { author: author || null })}
 
-            <Time
-              date={date}
-              format={{ month: 'short', day: '2-digit', year: 'numeric' }}
-            />
+            <Time date={date} />
           </span>
         </div>
 
