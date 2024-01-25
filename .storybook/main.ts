@@ -33,7 +33,7 @@ const config: StorybookConfig = {
   ],
   webpack: async config => ({
     ...config,
-    // We want to conform as much as possible with our target settings
+    // Ensures that Node imports work fine with Storybook
     target: 'node',
     // Performance Hints do not make sense on Storybook as it is bloated by design
     performance: { hints: false },
