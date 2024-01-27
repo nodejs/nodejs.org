@@ -19,7 +19,7 @@ const generateWebsiteFeeds = ({ posts }) => {
   /**
    * This generates all the Website RSS Feeds that are used for the website
    *
-   * @type {[string, Feed][]}
+   * @type {Array<[string, Feed]>}
    */
   const websiteFeeds = siteConfig.rssFeeds.map(
     ({ category, title, description, file }) => {

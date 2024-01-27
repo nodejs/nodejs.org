@@ -18,7 +18,11 @@ const preview: Preview = {
   },
   decorators: [
     Story => (
-      <NextIntlClientProvider locale="en" messages={englishLocale}>
+      <NextIntlClientProvider
+        locale="en"
+        timeZone="Etc/UTC"
+        messages={englishLocale}
+      >
         <NotificationProvider viewportClassName="absolute top-0 left-0 list-none">
           <Story />
         </NotificationProvider>

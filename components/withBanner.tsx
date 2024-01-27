@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import Banner from '@/components/Common/Banner';
 import { siteConfig } from '@/next.json.mjs';
-import { dateIsBetween } from '@/util/dateIsBetween';
+import { dateIsBetween } from '@/util/dateUtils';
 
 const WithBanner: FC<{ section: string }> = ({ section }) => {
   const banner = siteConfig.websiteBanners[section];

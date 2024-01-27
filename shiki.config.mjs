@@ -14,7 +14,7 @@ import shellSessionLanguage from 'shikiji/langs/shellsession.mjs';
 import typeScriptLanguage from 'shikiji/langs/typescript.mjs';
 import shikiNordTheme from 'shikiji/themes/nord.mjs';
 
-/** @type {import('shikiji').LanguageRegistration[]} */
+/** @type {Array<import('shikiji').LanguageRegistration>} */
 export const LANGUAGES = [
   {
     ...javaScriptLanguage[0],
