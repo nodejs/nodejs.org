@@ -165,7 +165,8 @@
 }
 
 .contentLayout {
-  @apply grid
+  @apply mx-auto
+    grid
     w-full
     max-w-8xl
     grid-rows-[1fr]
@@ -178,12 +179,16 @@
     @apply flex
       w-full
       justify-center
+      border-l
+      border-l-neutral-200
       bg-gradient-subtle
       px-4
       py-14
+      dark:border-l-neutral-900
       dark:bg-gradient-subtle-dark
       md:px-14
       lg:px-28
+      xs:border-l-0
       xs:bg-none
       xs:pb-4
       xs:dark:bg-none;
