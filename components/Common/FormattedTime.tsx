@@ -4,18 +4,21 @@ import type { FC } from 'react';
 
 import { DEFAULT_DATE_FORMAT } from '@/next.calendar.constants.mjs';
 
-type TimeProps = { date: string | Date; format?: DateTimeFormatOptions };
+type FormattedTimeProps = {
+  date: string | Date;
+  format?: DateTimeFormatOptions;
+};
 
-const Time: FC<TimeProps> = ({ date, format = DEFAULT_DATE_FORMAT }) => {
+const FormattedTime: FC<FormattedTimeProps> = ({ date, format }) => {
   const formatter = useFormatter();
 
   const dateObject = new Date(date);
 
   return (
     <time dateTime={dateObject.toISOString()}>
-      {formatter.dateTime(dateObject, format)}
+      {formatter.dateTime(dateObject, format ?? DEFAULT_DATE_FORMAT)}
     </time>
   );
 };
 
-export default Time;
+export default FormattedTime;

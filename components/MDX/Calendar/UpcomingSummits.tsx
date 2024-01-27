@@ -4,12 +4,14 @@ import type { FC } from 'react';
 import BlogPostCard from '@/components/Common/BlogPostCard';
 import getBlogData from '@/next-data/blogData';
 
-const UpcomingEvents: FC = async () => {
+import styles from './calendar.module.css';
+
+const UpcomingSummits: FC = async () => {
   const t = await getTranslations();
   const { posts } = await getBlogData('events', 0);
 
   const currentDate = new Date();
-  const filteredPosts = posts.filter(post => post.date > currentDate);
+  const filteredPosts = posts.filter(post => post.date >= currentDate);
 
   const fallbackPosts = Array(2).fill({
     title: t('components.mdx.upcomingEvents.defaultTitle'),
@@ -30,7 +32,7 @@ const UpcomingEvents: FC = async () => {
     );
   });
 
-  return <div className="flex flex-row gap-3 xs:flex-col">{mappedPosts}</div>;
+  return <div className={styles.summits}>{mappedPosts}</div>;
 };
 
-export default UpcomingEvents;
+export default UpcomingSummits;

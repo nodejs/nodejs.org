@@ -2,8 +2,8 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import AvatarGroup from '@/components/Common/AvatarGroup';
+import FormattedTime from '@/components/Common/FormattedTime';
 import Preview from '@/components/Common/Preview';
-import Time from '@/components/Common/Time';
 import Link from '@/components/Link';
 import { mapBlogCategoryToPreviewType } from '@/util/blogUtils';
 
@@ -57,7 +57,7 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
         <div className={styles.author}>
           {avatars && <p>{avatars.map(({ alt }) => alt).join(', ')}</p>}
 
-          {date && <Time date={date} />}
+          {date && <FormattedTime date={date} />}
         </div>
       </footer>
     </article>
