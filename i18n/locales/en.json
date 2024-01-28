@@ -62,7 +62,8 @@
             "workingWithFileDescriptorsInNodejs": "Working with file descriptors in Node.js",
             "readingFilesWithNodejs": "Reading files with Node.js",
             "writingFilesWithNodejs": "Writing files with Node.js",
-            "workingWithFoldersInNodejs": "Working with folders in Node.js"
+            "workingWithFoldersInNodejs": "Working with folders in Node.js",
+            "workingWithFileSystems": "Working with Different Filesystems"
           }
         },
         "commandLine": {
@@ -78,8 +79,7 @@
         "modules": {
           "links": {
             "modules": "Modules",
-            "publishingNodeApiModules": "How to publish a Node-API package",
-            "workingWithFileSystems": "Working with Different Filesystems"
+            "publishingNodeApiModules": "How to publish a Node-API package"
           }
         }
       },

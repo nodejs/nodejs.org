@@ -178,6 +178,10 @@
             "workingWithFoldersInNodejs": {
               "link": "/learn/manipulating-files/working-with-folders-in-nodejs",
               "label": "components.navigation.learn.manipulatingFiles.links.workingWithFoldersInNodejs"
+            },
+            "workingWithFileSystems": {
+              "link": "/learn/manipulating-files/working-with-different-filesystems",
+              "label": "components.navigation.learn.manipulatingFiles.links.workingWithFileSystems"
             }
           }
         },
@@ -212,10 +216,6 @@
             "publishingNodeApiModules": {
               "link": "/learn/modules/publishing-node-api-modules",
               "label": "components.navigation.learn.modules.links.publishingNodeApiModules"
-            },
-            "workingWithFileSystems": {
-              "link": "/learn/modules/working-with-different-filesystems",
-              "label": "components.navigation.learn.modules.links.workingWithFileSystems"
             }
           }
         }
