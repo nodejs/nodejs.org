@@ -16,7 +16,7 @@
     "incremental": true,
     "paths": { "@/*": ["./*"] },
     "plugins": [{ "name": "next" }],
-    "baseUrl": "."
+    "baseUrl": ".",
   },
   "include": [
     "next-env.d.ts",
@@ -24,7 +24,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".storybook/**/*.ts",
-    ".storybook/**/*.tsx"
+    ".storybook/**/*.tsx",
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }
