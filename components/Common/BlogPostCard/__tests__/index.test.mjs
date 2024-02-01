@@ -108,7 +108,7 @@ describe('BlogPostCard', () => {
       renderBlogPostCard({ date });
 
       const dateTimeFormat = new Intl.DateTimeFormat('en-US', {
-        day: 'numeric',
+        day: '2-digit',
         month: 'short',
         year: 'numeric',
       });
