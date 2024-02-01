@@ -26,7 +26,14 @@
       "category": "vulnerability"
     }
   ],
-  "websiteBanners": {},
+  "websiteBanners": {
+    "index": {
+      "startDate": "2024-01-30T17:30:00.000Z",
+      "endDate": "2024-02-13T17:30:00.000Z",
+      "text": "New security releases to be made available February 6th, 2024",
+      "link": "https://nodejs.org/en/blog/vulnerability/february-2024-security-releases/"
+    }
+  },
   "websiteBadges": {},
   "footerLinks": [
     {
