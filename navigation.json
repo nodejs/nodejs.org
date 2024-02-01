@@ -179,9 +179,9 @@
               "link": "/learn/manipulating-files/working-with-folders-in-nodejs",
               "label": "components.navigation.learn.manipulatingFiles.links.workingWithFoldersInNodejs"
             },
-            "workingWithFileSystems": {
+            "howToWorkWithFileSystems": {
               "link": "/learn/manipulating-files/working-with-different-filesystems",
-              "label": "components.navigation.learn.manipulatingFiles.links.workingWithFileSystems"
+              "label": "components.navigation.learn.manipulatingFiles.links.howToWorkWithFileSystems"
             }
           }
         },

@@ -63,7 +63,7 @@
             "readingFilesWithNodejs": "Reading files with Node.js",
             "writingFilesWithNodejs": "Writing files with Node.js",
             "workingWithFoldersInNodejs": "Working with folders in Node.js",
-            "workingWithFileSystems": "Working with Different Filesystems"
+            "howToWorkWithFileSystems": "How to work with Different Filesystems"
           }
         },
         "commandLine": {
