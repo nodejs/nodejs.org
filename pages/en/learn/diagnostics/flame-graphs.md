@@ -1,6 +1,6 @@
 ---
-title: Diagnostics - Flame Graphs
-layout: docs.hbs
+title: Flame Graphs
+layout: learn.hbs
 ---
 
 # Flame Graphs
@@ -24,7 +24,7 @@ For diagnosing production deployments, read these notes: [0x production servers]
 
 ### Create a flame graph with system perf tools
 
-The purpose of this guide is to show steps involved in creating a flame graph and keep you in control of each step.
+The purpose of this guide is to show the steps involved in creating a flame graph and keep you in control of each step.
 
 If you want to understand each step better, take a look at the sections that follow where we go into more detail.
 
@@ -42,10 +42,9 @@ Now let's get to work.
 5. Run `perf script > perfs.out` to generate the data file you'll visualize in a moment. It's useful to [apply some cleanup](#filtering-out-node-js-internal-functions) for a more readable graph
 6. install stackvis if not yet installed `npm i -g stackvis`
 7. run `stackvis perf < perfs.out > flamegraph.htm`
+   Now open the flame graph file in your favorite browser and watch it burn. It's color-coded so you can focus on the most saturated orange bars first. They're likely to represent CPU heavy functions.
 
-Now open the flame graph file in your favorite browser and watch it burn. It's color-coded so you can focus on the most saturated orange bars first. They're likely to represent CPU heavy functions.
-
-Worth mentioning - if you click an element of a flame graph a zoom-in of its surroundings will get displayed above the graph.
+Worth mentioning - if you click an element of a flame graph a zoom-in of its surroundings will be displayed above the graph.
 
 ### Using `perf` to sample a running process
 
@@ -59,13 +58,13 @@ Wait, what is that `sleep 3` for? It's there to keep the perf running - despite 
 perf runs for the life of the command you pass to it, whether or not you're actually profiling that command. `sleep 3` ensures that perf runs for 3 seconds.
 
 Why is `-F` (profiling frequency) set to 99? It's a reasonable default. You can adjust if you want.
-`-F99` tells perf to take 99 samples per second, for more precision increase the value. Lower values should produce less output with less precise results. Precision you need depends on how long your CPU intensive functions really run. If you're looking for the reason of a noticeable slowdown, 99 frames per second should be more than enough.
+`-F99` tells perf to take 99 samples per second, for more precision increase the value. Lower values should produce less output with less precise results. The precision you need depends on how long your CPU intensive functions really run. If you're looking for the reason for a noticeable slowdown, 99 frames per second should be more than enough.
 
 After you get that 3 second perf record, proceed with generating the flame graph with the last two steps from above.
 
 ### Filtering out Node.js internal functions
 
-Usually you just want to look at the performance of your own calls, so filtering out Node.js and V8 internal functions can make the graph much easier to read. You can clean up your perf file with:
+Usually, you just want to look at the performance of your calls, so filtering out Node.js and V8 internal functions can make the graph much easier to read. You can clean up your perf file with:
 
 ```bash
 sed -i -r \
@@ -80,17 +79,17 @@ If you read your flame graph and it seems odd, as if something is missing in the
 
 `--perf-basic-prof-only-functions` and `--perf-basic-prof` are the two that are useful for debugging your JavaScript code. Other options are used for profiling Node.js itself, which is outside the scope of this guide.
 
-`--perf-basic-prof-only-functions` produces less output, so it's the option with least overhead.
+`--perf-basic-prof-only-functions` produces less output, so it's the option with the least overhead.
 
 ### Why do I need them at all?
 
-Well, without these options you'll still get a flame graph, but with most bars labeled `v8::Function::Call`.
+Well, without these options, you'll still get a flame graph, but with most bars labeled `v8::Function::Call`.
 
 ## `perf` output issues
 
 ### Node.js 8.x V8 pipeline changes
 
-Node.js 8.x and above ships with new optimizations to JavaScript compilation pipeline in V8 engine which makes function names/references unreachable for perf sometimes. (It's called Turbofan)
+Node.js 8.x and above ships with new optimizations to the JavaScript compilation pipeline in the V8 engine which makes function names/references unreachable for perf sometimes. (It's called Turbofan)
 
 The result is you might not get your function names right in the flame graph.
 

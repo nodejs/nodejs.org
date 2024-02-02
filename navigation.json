@@ -222,6 +222,15 @@
               "label": "components.navigation.learn.modules.links.anatomyOfAnHttpTransaction"
             }
           }
+        },
+        "diagnostics": {
+          "label": "components.navigation.learn.diagnostics.links.diagnostics",
+          "items": {
+            "flameGraphs": {
+              "link": "/learn/diagnostics/flame-graphs",
+              "label": "components.navigation.learn.diagnostics.links.flameGraphs"
+            }
+          }
         }
       }
     },
