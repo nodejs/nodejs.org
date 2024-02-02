@@ -1,0 +1,21 @@
+.event {
+  @apply flex
+    w-fit
+    flex-col
+    gap-1;
+
+  .title {
+    @apply flex
+      flex-row
+      gap-2;
+
+    span {
+      @apply text-sm
+        font-bold;
+    }
+  }
+
+  a {
+    @apply text-sm;
+  }
+}

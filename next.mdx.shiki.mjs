@@ -37,13 +37,13 @@ function getMetaParameter(meta, key) {
 /**
  * @typedef {import('unist').Node} Node
  * @property {string} tagName
- * @property {Node[]} children
+ * @property {Array<import('unist').Node>} children
  */
 
 /**
  * Checks if the given node is a valid code element.
  *
- * @param {Node} node - The node to be verified.
+ * @param {import('unist').Node} node - The node to be verified.
  *
  * @return {boolean} - True when it is a valid code element, false otherwise.
  */

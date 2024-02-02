@@ -3,9 +3,9 @@ title: Collab Summit
 layout: about.hbs
 ---
 
-# Collab Summit
+# Collaborator Summit
 
-Collaboration Summit is an un-conference for bringing current and
+Node.js's Collaborator Summit is an un-conference for bringing current and
 potential contributors together to discuss Node.js with lively collaboration,
 education, and knowledge sharing. Committees and working groups come together
 twice per year to make important decisions while also being able to work on some

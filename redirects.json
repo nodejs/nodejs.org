@@ -203,6 +203,10 @@
     {
       "source": "/:locale/about/releases",
       "destination": "/:locale/about/previous-releases"
+    },
+    {
+      "source": "/:locale/blog/weekly-updates/:path*",
+      "destination": "/:locale/blog/weekly/:path*"
     }
   ],
   "internal": []

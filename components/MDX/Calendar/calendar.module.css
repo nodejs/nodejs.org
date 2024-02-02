@@ -1,0 +1,17 @@
+.events {
+  @apply flex
+    flex-col
+    gap-2;
+
+  h4 {
+    @apply text-xl
+      font-bold;
+  }
+}
+
+.summits {
+  @apply flex
+    flex-col
+    gap-3
+    md:flex-row;
+}

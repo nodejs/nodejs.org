@@ -22,7 +22,6 @@ layout: docs.hbs
 
 ## Module-related guides
 
-- [Anatomy of an HTTP Transaction](/guides/anatomy-of-an-http-transaction/)
 - [Working with Different Filesystems](/guides/working-with-different-filesystems/)
 - [Backpressuring in Streams](/guides/backpressuring-in-streams/)
 - [ABI Stability](/guides/abi-stability/)

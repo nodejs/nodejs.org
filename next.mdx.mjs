@@ -11,7 +11,7 @@ import rehypeShikiji from './next.mdx.shiki.mjs';
 /**
  * Provides all our Rehype Plugins that are used within MDX
  *
- * @type {import('unified').Plugin[]}
+ * @type {Array<import('unified').Plugin>}
  */
 export const NEXT_REHYPE_PLUGINS = [
   // Generates `id` attributes for headings (H1, ...)
@@ -29,6 +29,6 @@ export const NEXT_REHYPE_PLUGINS = [
 /**
  * Provides all our Remark Plugins that are used within MDX
  *
- * @type {import('unified').Plugin[]}
+ * @type {Array<import('unified').Plugin>}
  */
 export const NEXT_REMARK_PLUGINS = [remarkGfm, remarkHeadings, readingTime];

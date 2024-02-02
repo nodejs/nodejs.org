@@ -18,7 +18,7 @@ const reactRuntime = { Fragment, jsx, jsxs };
  * @param {'md' | 'mdx'} fileExtension
  * @returns {Promise<{
  *   MDXContent: import('mdx/types').MDXContent;
- *   headings: import('@vcarl/remark-headings').Heading[];
+ *   headings: Array<import('@vcarl/remark-headings').Heading>;
  *   frontmatter: Record<string, any>;
  *   readingTime: import('reading-time').ReadTimeResults;
  * }>}
@@ -36,7 +36,6 @@ export async function compileMDX(source, fileExtension) {
     remarkPlugins: NEXT_REMARK_PLUGINS,
     format: fileExtension,
     baseUrl: import.meta.url,
-    jsxRuntime: 'automatic',
     ...reactRuntime,
   });
 
