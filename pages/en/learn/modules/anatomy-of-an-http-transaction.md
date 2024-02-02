@@ -1,6 +1,6 @@
 ---
 title: Anatomy of an HTTP Transaction
-layout: docs.hbs
+layout: learn.hbs
 ---
 
 # Anatomy of an HTTP Transaction
@@ -17,8 +17,8 @@ the API docs for each of those.
 Any node web server application will at some point have to create a web server
 object. This is done by using [`createServer`][].
 
-```javascript
-const http = require('http');
+```js
+const http = require('node:http');
 
 const server = http.createServer((request, response) => {
   // magic happens here!
@@ -31,7 +31,7 @@ handler. In fact, the [`Server`][] object returned by [`createServer`][] is an
 [`EventEmitter`][], and what we have here is just shorthand for creating a
 `server` object and then adding the listener later.
 
-```javascript
+```js
 const server = http.createServer();
 server.on('request', (request, response) => {
   // the same kind of magic happens here!
@@ -53,7 +53,7 @@ When handling a request, the first thing you'll probably want to do is look at
 the method and URL, so that appropriate actions can be taken. Node.js makes this
 relatively painless by putting handy properties onto the `request` object.
 
-```javascript
+```js
 const { method, url } = request;
 ```
 
@@ -66,7 +66,7 @@ everything after and including the third forward slash.
 Headers are also not far away. They're in their own object on `request` called
 `headers`.
 
-```javascript
+```js
 const { headers } = request;
 const userAgent = headers['user-agent'];
 ```
@@ -92,7 +92,7 @@ The chunk emitted in each `'data'` event is a [`Buffer`][]. If you know it's
 going to be string data, the best thing to do is collect the data in an array,
 then at the `'end'`, concatenate and stringify it.
 
-```javascript
+```js
 let body = [];
 request
   .on('data', chunk => {
@@ -121,7 +121,7 @@ _thrown_, which could crash your Node.js program.** You should therefore add an
 continue on your way. (Though it's probably best to send some kind of HTTP error
 response. More on that later.)
 
-```javascript
+```js
 request.on('error', err => {
   // This prints the error message and stack trace to `stderr`.
   console.error(err.stack);
@@ -138,8 +138,8 @@ At this point, we've covered creating a server, and grabbing the method, URL,
 headers and body out of requests. When we put that all together, it might look
 something like this:
 
-```javascript
-const http = require('http');
+```js
+const http = require('node:http');
 
 http
   .createServer((request, response) => {
@@ -176,7 +176,7 @@ be 200. Of course, not every HTTP response warrants this, and at some point
 you'll definitely want to send a different status code. To do that, you can set
 the `statusCode` property.
 
-```javascript
+```js
 response.statusCode = 404; // Tell the client that the resource wasn't found.
 ```
 
@@ -186,7 +186,7 @@ There are some other shortcuts to this, as we'll see soon.
 
 Headers are set through a convenient method called [`setHeader`][].
 
-```javascript
+```js
 response.setHeader('Content-Type', 'application/json');
 response.setHeader('X-Powered-By', 'bacon');
 ```
@@ -206,7 +206,7 @@ If you want, you can _explicitly_ write the headers to the response stream.
 To do this, there's a method called [`writeHead`][], which writes the status
 code and the headers to the stream.
 
-```javascript
+```js
 response.writeHead(200, {
   'Content-Type': 'application/json',
   'X-Powered-By': 'bacon',
@@ -221,7 +221,7 @@ start sending response data.
 Since the `response` object is a [`WritableStream`][], writing a response body
 out to the client is just a matter of using the usual stream methods.
 
-```javascript
+```js
 response.write('<html>');
 response.write('<body>');
 response.write('<h1>Hello, World!</h1>');
@@ -233,7 +233,7 @@ response.end();
 The `end` function on streams can also take in some optional data to send as the
 last bit of data on the stream, so we can simplify the example above as follows.
 
-```javascript
+```js
 response.end('<html><body><h1>Hello, World!</h1></body></html>');
 ```
 
@@ -254,8 +254,8 @@ Building on the earlier example, we're going to make a server that sends back
 all of the data that was sent to us by the user. We'll format that data as JSON
 using `JSON.stringify`.
 
-```javascript
-const http = require('http');
+```js
+const http = require('node:http');
 
 http
   .createServer((request, response) => {
@@ -301,8 +301,8 @@ sends whatever data is received in the request right back in the response. All
 we need to do is grab the data from the request stream and write that data to
 the response stream, similar to what we did previously.
 
-```javascript
-const http = require('http');
+```js
+const http = require('node:http');
 
 http
   .createServer((request, response) => {
@@ -327,8 +327,8 @@ conditions:
 
 In any other case, we want to simply respond with a 404.
 
-```javascript
-const http = require('http');
+```js
+const http = require('node:http');
 
 http
   .createServer((request, response) => {
@@ -360,8 +360,8 @@ is a [`ReadableStream`][] and the `response` object is a [`WritableStream`][].
 That means we can use [`pipe`][] to direct data from one to the other. That's
 exactly what we want for an echo server!
 
-```javascript
-const http = require('http');
+```js
+const http = require('node:http');
 
 http
   .createServer((request, response) => {
@@ -388,8 +388,8 @@ and message would be. As usual with errors, you should consult the
 
 On the response, we'll just log the error to `stderr`.
 
-```javascript
-const http = require('http');
+```js
+const http = require('node:http');
 
 http
   .createServer((request, response) => {
