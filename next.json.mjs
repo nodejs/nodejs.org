@@ -7,7 +7,7 @@ import _siteConfig from './site.json' assert { type: 'json' };
 /** @type {import('./types').SiteNavigation} */
 export const siteNavigation = _siteNavigation;
 
-/** @type {Record<string, import('./types').Redirect[]>} */
+/** @type {Record<string, Array<import('./types').Redirect>>} */
 export const siteRedirects = _siteRedirects;
 
 /** @type {import('./types').SiteConfig} */

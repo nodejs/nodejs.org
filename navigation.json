@@ -35,7 +35,7 @@
       "items": {
         "about": {
           "link": "/about",
-          "label": "components.navigation.about.links.about"
+          "label": "components.navigation.about.links.aboutSide"
         },
         "governance": {
           "link": "/about/governance",
@@ -61,6 +61,10 @@
         "collabSummit": {
           "link": "/about/get-involved/collab-summit",
           "label": "components.navigation.getInvolved.links.collabSummit"
+        },
+        "upcomingEvents": {
+          "link": "/about/get-involved/events",
+          "label": "components.navigation.getInvolved.links.upcomingEvents"
         },
         "contribute": {
           "link": "/about/get-involved/contribute",
@@ -216,6 +220,10 @@
             "publishingNodeApiModules": {
               "link": "/learn/modules/publishing-node-api-modules",
               "label": "components.navigation.learn.modules.links.publishingNodeApiModules"
+            },
+            "anatomyOfAnHttpTransaction": {
+              "link": "/learn/modules/anatomy-of-an-http-transaction",
+              "label": "components.navigation.learn.modules.links.anatomyOfAnHttpTransaction"
             }
           }
         }

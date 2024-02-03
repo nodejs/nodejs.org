@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import type { FC } from 'react';
 
 import { getClientContext } from '@/client-context';
-import { Time } from '@/components/Common/Time';
+import FormattedTime from '@/components/Common/FormattedTime';
 import Link from '@/components/Link';
 import Pagination from '@/components/Pagination';
 import getBlogData from '@/next-data/blogData';
@@ -41,10 +41,8 @@ const BlogCategoryLayout: FC = async () => {
       <ul className="blog-index">
         {posts.map(({ slug, date, title }) => (
           <li key={slug}>
-            <Time
-              date={date}
-              format={{ year: 'numeric', month: 'short', day: '2-digit' }}
-            />
+            <FormattedTime date={date} />
+
             <Link href={slug}>{title}</Link>
           </li>
         ))}

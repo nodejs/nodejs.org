@@ -79,13 +79,15 @@
         "modules": {
           "links": {
             "modules": "Modules",
-            "publishingNodeApiModules": "How to publish a Node-API package"
+            "publishingNodeApiModules": "How to publish a Node-API package",
+            "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction"
           }
         }
       },
       "about": {
         "links": {
           "about": "About Node.js",
+          "aboutSide": "About Node.js®",
           "governance": "Project Governance",
           "releases": "Previous Releases",
           "security": "Security Reporting"
@@ -94,8 +96,9 @@
       "getInvolved": {
         "links": {
           "getInvolved": "Get Involved",
-          "collabSummit": "Collab Summit",
-          "contribute": "Contribute",
+          "collabSummit": "Collaborator Summit",
+          "upcomingEvents": "Upcoming Events",
+          "contribute": "Contribute to Node.js",
           "codeOfConduct": "Code of Conduct"
         }
       }
@@ -150,6 +153,11 @@
       },
       "languageDropdown": {
         "label": "Choose Language"
+      }
+    },
+    "mdx": {
+      "upcomingEvents": {
+        "defaultTitle": "No Upcoming Event"
       }
     },
     "metabar": {

@@ -21,7 +21,7 @@ export const getMatchingRoutes = (route = '', matches = []) =>
  *
  * @param {string} root the root directory to search from
  * @param {string} cwd the current working directory
- * @returns {Promise<string[]>} a promise containing an array of directories
+ * @returns {Promise<Array<string>>} a promise containing an array of directories
  */
 export const getDirectories = async (root, cwd) => {
   return glob('*', { root, cwd, withFileTypes: true })
@@ -46,8 +46,8 @@ export const getRelativePath = path => fileURLToPath(new URL('.', path));
  *
  * @param {string} root the root directory to search from
  * @param {string} cwd the given locale code
- * @param {string[]} ignore an array of glob patterns to ignore
- * @returns {Promise<string[]>} a promise containing an array of paths
+ * @param {Array<string>} ignore an array of glob patterns to ignore
+ * @returns {Promise<Array<string>>} a promise containing an array of paths
  */
 export const getMarkdownFiles = async (root, cwd, ignore = []) => {
   const cacheKey = `${root}${cwd}${ignore.join('')}`;

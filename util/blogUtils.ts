@@ -6,6 +6,8 @@ export const mapBlogCategoryToPreviewType = (type: string): BlogPreviewType => {
     case 'release':
     case 'vulnerability':
       return type;
+    case 'events':
+      return 'announcements';
     default:
       return 'announcements';
   }

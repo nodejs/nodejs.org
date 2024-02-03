@@ -12,7 +12,7 @@ import { defaultLocale } from './next.locales.mjs';
  * This is a list of all static routes or pages from the Website that we do not
  * want to allow to be statically built on our Static Export Build.
  *
- * @type {((route: import('./types').RouteSegment) => boolean)[]} A list of Ignored Routes by Regular Expressions
+ * @type {Array<((route: import('./types').RouteSegment) => boolean)>} A list of Ignored Routes by Regular Expressions
  */
 export const IGNORED_ROUTES = [
   // This is used to ignore all blog routes except for the English language

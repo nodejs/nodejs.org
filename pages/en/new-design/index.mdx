@@ -9,7 +9,7 @@ layout: home.hbs
   <div>
     <h1 className="special">Run JavaScript Everywhere</h1>
 
-    Node.js is a free, open-source, cross-platform JavaScript runtime
+    Node.js® is a free, open-source, cross-platform JavaScript runtime
     environment that lets developers write command line tools and server-side
     scripts outside of a browser.
 
@@ -21,7 +21,8 @@ layout: home.hbs
         <>
           <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
           <small>
-            Downloads Node.js <b>{release.versionWithPrefix}</b> with long-term support.
+            Downloads Node.js <b>{release.versionWithPrefix}</b>
+            <sup title="Downloads Node.js binary for your current platform">1</sup> with long-term support.
             Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
           </small>
         </>
@@ -31,7 +32,8 @@ layout: home.hbs
       {({ release }) => (
         <small>
           Want new features sooner?
-          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b> instead.
+          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="Downloads Node.js binary for your current platform">1</sup> instead.
         </small>
       )}
     </WithNodeRelease>
@@ -96,18 +98,18 @@ layout: home.hbs
     readableStream.on('data', chunk => writableStream.write(chunk));
     ```
 
-    ```js displayName="Work with Workers"
-    // file containing main thread (main.mjs)
-    import { Worker } from 'node:worker_threads';
+    ```js displayName="Work with Threads"
+    import { Worker, isMainThread } from 'node:worker_threads';
+    import { workerData, parentPort } from 'node:worker_threads';
 
-    const w = new Worker('./worker.mjs', { workerData: 'hello!' });
-    w.on('message', data => console.log('processed data:', data));
-
-    // file containing worker (worker.mjs)
-    import { parentPort, workerData } from 'node:worker_threads';
-
-    // do some complex computational workload
-    parentPort.postMessage(btoa(workerData));
+    if (isMainThread) {
+      const data = 'some data';
+      const worker = new Worker(import.meta.filename, { workerData: data });
+      worker.on('message', m => console.log('Reply from Thread:', m));
+    } else {
+      const source = workerData;
+      parentPort.postMessage(btoa(source.toUpperCase()));
+    }
     ```
 
   </div>
