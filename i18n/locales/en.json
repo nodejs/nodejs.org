@@ -62,7 +62,8 @@
             "workingWithFileDescriptorsInNodejs": "Working with file descriptors in Node.js",
             "readingFilesWithNodejs": "Reading files with Node.js",
             "writingFilesWithNodejs": "Writing files with Node.js",
-            "workingWithFoldersInNodejs": "Working with folders in Node.js"
+            "workingWithFoldersInNodejs": "Working with folders in Node.js",
+            "howToWorkWithFileSystems": "How to work with Different Filesystems"
           }
         },
         "commandLine": {
