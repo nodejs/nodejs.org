@@ -14,6 +14,7 @@ h1.special {
 div.glowingBackdrop {
   @apply absolute
     left-0
+    top-0
     -z-10
     size-full
     bg-[url('/static/images/patterns/hexagon-grid.svg')]
