@@ -1,9 +1,9 @@
 ---
-title: Debugging - Getting Started
-layout: docs.hbs
+title: Debugging Node.js
+layout: learn.hbs
 ---
 
-# Debugging Guide
+# Debugging Node.js
 
 This guide will help you get started debugging your Node.js apps and scripts.
 
@@ -21,8 +21,6 @@ Node.js will also start listening for debugging messages if it receives a
 `SIGUSR1` signal. (`SIGUSR1` is not available on Windows.) In Node.js 7 and
 earlier, this activates the legacy Debugger API. In Node.js 8 and later, it will
 activate the Inspector API.
-
----
 
 ## Security Implications
 
@@ -111,8 +109,6 @@ Several commercial and open source tools can also connect to the Node.js Inspect
 - From a .js file, choose "Debug As... > Node program", or
 - Create a Debug Configuration to attach debugger to running Node.js application (already started with `--inspect`).
 
----
-
 ## Command-line options
 
 The following table lists the impact of various runtime flags on debugging:
@@ -125,8 +121,6 @@ The following table lists the impact of various runtime flags on debugging:
 | --inspect-brk=[host:port]          | Enable inspector agent; Bind to address or hostname host (default: 127.0.0.1); Listen on port port (default: 9229); Break before user code starts |
 | node inspect script.js             | Spawn child process to run user's script under --inspect flag; and use main process to run CLI debugger.                                          |
 | node inspect --port=xxxx script.js | Spawn child process to run user's script under --inspect flag; and use main process to run CLI debugger. Listen on port port (default: 9229)      |
-
----
 
 ## Enabling remote debugging scenarios
 
@@ -155,8 +149,6 @@ This starts a ssh tunnel session where a connection to port 9221 on your local
 machine will be forwarded to port 9229 on remote.example.com. You can now attach
 a debugger such as Chrome DevTools or Visual Studio Code to localhost:9221,
 which should be able to debug as if the Node.js application was running locally.
-
----
 
 ## Legacy Debugger
 
