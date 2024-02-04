@@ -31,18 +31,19 @@ If you want to understand each step better, take a look at the sections that fol
 Now let's get to work.
 
 1. Install `perf` (usually available through the linux-tools-common package if not already installed)
-2. try running `perf` - it might complain about missing kernel modules, install them too
-3. run node with perf enabled (see [perf output issues](#perf-output-issues) for tips specific to Node.js versions)
+2. Try running `perf` - it might complain about missing kernel modules, install them too
+3. Run node with perf enabled (see [perf output issues](#perf-output-issues) for tips specific to Node.js versions)
 
    ```bash
    perf record -e cycles:u -g -- node --perf-basic-prof app.js
    ```
 
-4. disregard warnings unless they're saying you can't run perf due to missing packages; you may get some warnings about not being able to access kernel module samples which you're not after anyway.
+4. Disregard warnings unless they're saying you can't run perf due to missing packages; you may get some warnings about not being able to access kernel module samples which you're not after anyway.
 5. Run `perf script > perfs.out` to generate the data file you'll visualize in a moment. It's useful to [apply some cleanup](#filtering-out-node-js-internal-functions) for a more readable graph
-6. install stackvis if not yet installed `npm i -g stackvis`
-7. run `stackvis perf < perfs.out > flamegraph.htm`
-   Now open the flame graph file in your favorite browser and watch it burn. It's color-coded so you can focus on the most saturated orange bars first. They're likely to represent CPU heavy functions.
+6. Install stackvis if not yet installed `npm i -g stackvis`
+7. Run `stackvis perf < perfs.out > flamegraph.htm`
+
+Now open the flame graph file in your favorite browser and watch it burn. It's color-coded so you can focus on the most saturated orange bars first. They're likely to represent CPU heavy functions.
 
 Worth mentioning - if you click an element of a flame graph a zoom-in of its surroundings will be displayed above the graph.
 
