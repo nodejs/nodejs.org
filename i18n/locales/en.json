@@ -83,6 +83,12 @@
             "publishingNodeApiModules": "How to publish a Node-API package",
             "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction"
           }
+        },
+        "diagnostics": {
+          "links": {
+            "diagnostics": "Diagnostics",
+            "flameGraphs": "Flame Graphs"
+          }
         }
       },
       "about": {
