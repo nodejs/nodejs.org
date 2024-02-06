@@ -113,6 +113,10 @@
       "destination": "/:locale/learn/getting-started/debugging"
     },
     {
+      "source": "/:locale/docs/guides/debugging-getting-started",
+      "destination": "/:locale/learn/getting-started/debugging"
+    },
+    {
       "source": "/:locale/contribute/:path*",
       "destination": "/:locale/get-involved"
     },
