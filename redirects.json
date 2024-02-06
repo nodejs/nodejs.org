@@ -110,7 +110,7 @@
     },
     {
       "source": "/:locale/docs/inspector",
-      "destination": "/:locale/docs/guides/debugging-getting-started"
+      "destination": "/:locale/learn/getting-started/debugging"
     },
     {
       "source": "/:locale/contribute/:path*",
