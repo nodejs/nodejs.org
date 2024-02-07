@@ -190,7 +190,7 @@
     },
     {
       "source": "/:locale/docs/guides/diagnostics/:path*",
-      "destination": "/:locale/learn/diagnostics/user-journey/:path*"
+      "destination": "/:locale/learn/diagnostics/:path*"
     },
     {
       "source": "/:locale/docs",
