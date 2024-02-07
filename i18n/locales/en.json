@@ -87,6 +87,7 @@
         "diagnostics": {
           "links": {
             "diagnostics": "Diagnostics",
+            "userJourney": "User Journey",
             "flameGraphs": "Flame Graphs"
           }
         }

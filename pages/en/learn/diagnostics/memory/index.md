@@ -1,6 +1,6 @@
 ---
-title: Memory Diagnostics
-layout: docs.hbs
+title: Memory
+layout: learn.hbs
 ---
 
 # Memory
@@ -58,6 +58,6 @@ type of objects take and what variables are preventing them from being garbage
 collected. It can also help to know the allocation pattern of our program over
 time.
 
-- [Using Heap Profiler](/guides/diagnostics/memory/using-heap-profiler/)
-- [Using Heap Snapshot](/guides/diagnostics/memory/using-heap-snapshot/)
-- [GC Traces](/guides/diagnostics/memory/using-gc-traces)
+- [Using Heap Profiler](/learn/diagnostics/memory/using-heap-profiler/)
+- [Using Heap Snapshot](/learn/diagnostics/memory/using-heap-snapshot/)
+- [GC Traces](/learn/diagnostics/memory/using-gc-traces)

@@ -234,6 +234,10 @@
         "diagnostics": {
           "label": "components.navigation.learn.diagnostics.links.diagnostics",
           "items": {
+            "userJourney": {
+              "link": "/learn/diagnostics/user-journey",
+              "label": "components.navigation.learn.diagnostics.links.userJourney"
+            },
             "flameGraphs": {
               "link": "/learn/diagnostics/flame-graphs",
               "label": "components.navigation.learn.diagnostics.links.flameGraphs"
