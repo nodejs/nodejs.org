@@ -181,6 +181,18 @@
       "destination": "/:locale/learn/getting-started/ecmascript-2015-es6-and-beyond"
     },
     {
+      "source": "/:locale/docs/guides/diagnostics-flamegraph",
+      "destination": "/:locale/learn/diagnostics/flame-graphs"
+    },
+    {
+      "source": "/:locale/docs/guides/diagnostics",
+      "destination": "/:locale/learn/diagnostics/user-journey"
+    },
+    {
+      "source": "/:locale/docs/guides/diagnostics/:path*",
+      "destination": "/:locale/learn/diagnostics/user-journey/:path*"
+    },
+    {
       "source": "/:locale/docs",
       "destination": "https://nodejs.org/docs/latest/api/"
     },
