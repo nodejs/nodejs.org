@@ -85,6 +85,10 @@
       "destination": "https://openjsf.org/certification"
     },
     {
+      "source": "/guides",
+      "destination": "/en/guides"
+    },
+    {
       "source": "/about",
       "destination": "/en/about"
     },

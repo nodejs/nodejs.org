@@ -5,11 +5,6 @@ layout: learn.hbs
 
 # Live Debugging
 
-- [Live Debugging](#live-debugging)
-  - [My application doesn’t behave as expected](#my-application-doesnt-behave-as-expected)
-    - [Symptoms](#symptoms)
-    - [Debugging](#debugging)
-
 In this document you can learn about how to live debug a Node.js process.
 
 ## My application doesn’t behave as expected
