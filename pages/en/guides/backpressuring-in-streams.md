@@ -36,7 +36,7 @@ pipes, sockets, and signals. In Node.js, we find a similar mechanism called
 part of the internal codebase utilizes that module. As a developer, you
 are more than encouraged to use them too!
 
-```javascript
+```js
 const readline = require('readline');
 
 // process.stdin and process.stdout are both instances of Streams.
@@ -67,7 +67,7 @@ While that will take a few minutes to complete, in another shell we may run
 a script that takes Node.js' module [`zlib`][], that wraps around another
 compression tool, [`gzip(1)`][].
 
-```javascript
+```js
 const gzip = require('zlib').createGzip();
 const fs = require('fs');
 
@@ -95,7 +95,7 @@ cleaning up and provide a callback when the pipeline is complete.
 
 Here is an example of using pipeline:
 
-```javascript
+```js
 const { pipeline } = require('stream');
 const fs = require('fs');
 const zlib = require('zlib');
@@ -120,7 +120,7 @@ pipeline(
 
 You can also call [`promisify`][] on pipeline to use it with `async` / `await`:
 
-```javascript
+```js
 const stream = require('stream');
 const fs = require('fs');
 const zlib = require('zlib');
@@ -156,7 +156,7 @@ trying to compress a file and write it to our hard disk, backpressure will
 occur because the write disk will not be able to keep up with the speed from
 the read.
 
-```javascript
+```js
 // Secretly the stream is saying: "whoa, whoa! hang on, this is way too much!"
 // Data will begin to build up on the read-side of the data buffer as
 // `write` tries to keep up with the incoming data flow.
@@ -417,7 +417,7 @@ stream:
 In this case, your output from your [`Readable`][] stream will enter in the
 [`Transform`][] and will pipe into the [`Writable`][].
 
-```javascript
+```js
 Readable.pipe(Transformable).pipe(Writable);
 ```
 
@@ -477,7 +477,7 @@ source. Otherwise, it will continue without pause.
 
 Here is an example of bad practice using [`.push()`][]:
 
-```javascript
+```js
 // This is problematic as it completely ignores return value from push
 // which may be a signal for backpressure from the destination stream!
 class MyReadable extends Readable {
@@ -495,7 +495,7 @@ backpressure. In this counter-example of good practice, the application's code
 forces data through whenever it is available (signaled by the
 [`'data'` event][]):
 
-```javascript
+```js
 // This ignores the backpressure mechanisms Node.js has set in place,
 // and unconditionally pushes through data, regardless if the
 // destination stream is ready for it or not.
@@ -504,7 +504,7 @@ readable.on('data', data => writable.write(data));
 
 Here's an example of using [`.push()`][] with a Readable stream.
 
-```javascript
+```js
 const { Readable } = require('stream');
 
 // Create a custom Readable stream
@@ -551,7 +551,7 @@ However, when we want to use a [`Writable`][] directly, we must respect the
 
 <!-- eslint-disable indent -->
 
-```javascript
+```js
 // This writable is invalid because of the async nature of JavaScript callbacks.
 // Without a return statement for each callback prior to the last,
 // there is a great chance multiple callbacks will be called.
@@ -573,7 +573,7 @@ There are also some things to look out for when implementing [`._writev()`][].
 The function is coupled with [`.cork()`][], but there is a common mistake when
 writing:
 
-```javascript
+```js
 // Using .uncork() twice here makes two calls on the C++ layer, rendering the
 // cork/uncork technique useless.
 ws.cork();

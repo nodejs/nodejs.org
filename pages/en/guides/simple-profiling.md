@@ -30,7 +30,7 @@ To illustrate the use of the tick profiler, we will work with a simple Express
 application. Our application will have two handlers, one for adding new users to
 our system:
 
-```javascript
+```js
 app.get('/newUser', (req, res) => {
   let username = req.query.username || '';
   const password = req.query.password || '';
@@ -52,7 +52,7 @@ app.get('/newUser', (req, res) => {
 
 and another for validating user authentication attempts:
 
-```javascript
+```js
 app.get('/auth', (req, res) => {
   let username = req.query.username || '';
   const password = req.query.password || '';
@@ -217,7 +217,7 @@ requests while computing a hash.
 To remedy this issue, you make a small modification to the above handlers to use
 the asynchronous version of the pbkdf2 function:
 
-```javascript
+```js
 app.get('/auth', (req, res) => {
   let username = req.query.username || '';
   const password = req.query.password || '';
