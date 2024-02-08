@@ -7,11 +7,6 @@ layout: learn.hbs
 
 In this document you can learn about how to profile a Node.js process.
 
-- [Poor Performance](#poor-performance)
-  - [My application has a poor performance](#my-application-has-a-poor-performance)
-    - [Symptoms](#symptoms)
-    - [Debugging](#debugging)
-
 ## My application has a poor performance
 
 ### Symptoms

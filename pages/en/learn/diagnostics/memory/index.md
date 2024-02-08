@@ -7,15 +7,6 @@ layout: learn.hbs
 
 In this document you can learn about how to debug memory related issues.
 
-- [Memory](#memory)
-  - [My process runs out of memory](#my-process-runs-out-of-memory)
-    - [Symptoms](#symptoms)
-    - [Side Effects](#side-effects)
-  - [My process utilizes memory inefficiently](#my-process-utilizes-memory-inefficiently)
-    - [Symptoms](#symptoms-1)
-    - [Side Effects](#side-effects-1)
-  - [Debugging](#debugging)
-
 ## My process runs out of memory
 
 Node.js _(JavaScript)_ is a garbage collected language, so having memory
