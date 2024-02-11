@@ -1,6 +1,6 @@
 ---
 title: Easy profiling for Node.js Applications
-layout: docs.hbs
+layout: learn.hbs
 ---
 
 # Easy profiling for Node.js Applications

@@ -9,7 +9,6 @@ layout: docs.hbs
 
 ## General
 
-- [Easy profiling for Node.js Applications](/guides/simple-profiling/)
 - [Diagnostics - User Journey](/guides/diagnostics/)
 - [Security Best Practices](/guides/security/)
 
