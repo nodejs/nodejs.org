@@ -1,6 +1,6 @@
 ---
 title: ABI Stability
-layout: docs.hbs
+layout: learn.hbs
 ---
 
 # ABI Stability
