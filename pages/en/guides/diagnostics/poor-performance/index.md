@@ -32,5 +32,5 @@ the others. When we do this locally, we usually try to optimize our code.
 
 This document provides two simple ways to profile a Node.js application:
 
-- [Using V8 Sampling Profiler](/learn/getting-started/simple-profiling/)
+- [Using V8 Sampling Profiler](/learn/getting-started/profiling/)
 - [Using Linux Perf](/guides/diagnostics/poor-performance/using-linux-perf)
