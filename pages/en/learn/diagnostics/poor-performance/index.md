@@ -1,16 +1,11 @@
 ---
-title: Poor Performance - Diagnostics
-layout: docs.hbs
+title: Poor Performance
+layout: learn.hbs
 ---
 
 # Poor Performance
 
 In this document you can learn about how to profile a Node.js process.
-
-- [Poor Performance](#poor-performance)
-  - [My application has a poor performance](#my-application-has-a-poor-performance)
-    - [Symptoms](#symptoms)
-    - [Debugging](#debugging)
 
 ## My application has a poor performance
 
@@ -33,4 +28,4 @@ the others. When we do this locally, we usually try to optimize our code.
 This document provides two simple ways to profile a Node.js application:
 
 - [Using V8 Sampling Profiler](/guides/simple-profiling/)
-- [Using Linux Perf](/guides/diagnostics/poor-performance/using-linux-perf)
+- [Using Linux Perf](/learn/diagnostics/poor-performance/using-linux-perf)

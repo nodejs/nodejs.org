@@ -1,6 +1,6 @@
 ---
 title: Using Inspector
-layout: docs.hbs
+layout: learn.hbs
 ---
 
 # Using Inspector
@@ -14,4 +14,4 @@ of the application as it handles a business-critical workload.
 
 ## How To
 
-/guides/debugging-getting-started/
+[Debugging Node.js](/learn/getting-started/debugging)
