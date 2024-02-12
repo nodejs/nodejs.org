@@ -181,6 +181,22 @@
       "destination": "/:locale/learn/asynchronous-work/discover-javascript-timers"
     },
     {
+      "source": "/:locale/docs/guides/debugging-getting-started/",
+      "destination": "/:locale/learn/getting-started/debugging"
+    },
+    {
+      "source": "/:locale/docs/guides/working-with-different-filesystems/",
+      "destination": "/:locale/learn/manipulating-files/working-with-different-filesystems"
+    },
+    {
+      "source": "/:locale/docs/guides/anatomy-of-an-http-transaction/",
+      "destination": "/:locale/learn/modules/anatomy-of-an-http-transaction"
+    },
+    {
+      "source": "/:locale/docs/guides/publishing-napi-modules/",
+      "destination": "/:locale/learn/modules/publishing-node-api-modulesion"
+    },
+    {
       "source": "/:locale/docs/es6",
       "destination": "/:locale/learn/getting-started/ecmascript-2015-es6-and-beyond"
     },
