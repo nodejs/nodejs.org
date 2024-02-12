@@ -40,7 +40,8 @@
             "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
             "nodejsWithTypescript": "Node.js with TypeScript",
             "nodejsWithWebassembly": "Node.js with WebAssembly",
-            "debugging": "Debugging Node.js"
+            "debugging": "Debugging Node.js",
+            "profiling": "Profiling Node.js Applications"
           }
         },
         "asynchronousWork": {

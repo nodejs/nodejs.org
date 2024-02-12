@@ -177,6 +177,10 @@
       "destination": "/:locale/learn/asynchronous-work/discover-javascript-timers"
     },
     {
+      "source": "/:locale/docs/guides/simple-profiling",
+      "destination": "/:locale/learn/getting-started/profiling"
+    },
+    {
       "source": "/:locale/docs/es6",
       "destination": "/:locale/learn/getting-started/ecmascript-2015-es6-and-beyond"
     },

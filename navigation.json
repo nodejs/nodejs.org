@@ -126,8 +126,8 @@
               "label": "components.navigation.learn.gettingStarted.links.debugging"
             },
             "profiling": {
-              "link": "/learn/getting-started/simple-profiling",
-              "label": "components.navigation.learn.gettingStarted.links.simpleProfiling"
+              "link": "/learn/getting-started/profiling",
+              "label": "components.navigation.learn.gettingStarted.links.profiling"
             }
           }
         },
