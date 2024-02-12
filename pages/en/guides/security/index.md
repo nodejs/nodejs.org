@@ -426,7 +426,7 @@ The [OpenSSF][] is leading several initiatives that can be very useful, especial
 [Slowloris]: https://en.wikipedia.org/wiki/Slowloris_(computer_security)
 [`http.Server`]: https://nodejs.org/api/http.html#class-httpserver
 [http docs]: https://nodejs.org/api/http.html
-[--inspect switch]: /guides/debugging-getting-started/
+[--inspect switch]: /learn/debugging-getting-started/
 [same-origin policy]: /guides/debugging-getting-started/
 [DNS Rebinding wiki]: https://en.wikipedia.org/wiki/DNS_rebinding
 [files property]: https://docs.npmjs.com/cli/v8/configuring-npm/package-json#files

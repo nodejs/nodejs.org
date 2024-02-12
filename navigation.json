@@ -238,6 +238,22 @@
         "diagnostics": {
           "label": "components.navigation.learn.diagnostics.links.diagnostics",
           "items": {
+            "userJourney": {
+              "link": "/learn/diagnostics/user-journey",
+              "label": "components.navigation.learn.diagnostics.links.userJourney"
+            },
+            "memory": {
+              "link": "/learn/diagnostics/memory",
+              "label": "components.navigation.learn.diagnostics.links.memory"
+            },
+            "liveDebugging": {
+              "link": "/learn/diagnostics/live-debugging",
+              "label": "components.navigation.learn.diagnostics.links.liveDebugging"
+            },
+            "poorPerformance": {
+              "link": "/learn/diagnostics/poor-performance",
+              "label": "components.navigation.learn.diagnostics.links.poorPerformance"
+            },
             "flameGraphs": {
               "link": "/learn/diagnostics/flame-graphs",
               "label": "components.navigation.learn.diagnostics.links.flameGraphs"

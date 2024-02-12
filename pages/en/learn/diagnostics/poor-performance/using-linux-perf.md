@@ -1,6 +1,6 @@
 ---
-title: Poor Performance - Using Linux Perf
-layout: docs.hbs
+title: Using Linux Perf
+layout: learn.hbs
 ---
 
 # Using Linux Perf

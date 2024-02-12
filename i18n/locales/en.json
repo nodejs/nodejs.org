@@ -88,6 +88,10 @@
         "diagnostics": {
           "links": {
             "diagnostics": "Diagnostics",
+            "userJourney": "User Journey",
+            "memory": "Memory",
+            "liveDebugging": "Live Debugging",
+            "poorPerformance": "Poor Performance",
             "flameGraphs": "Flame Graphs"
           }
         }
