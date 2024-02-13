@@ -116,11 +116,11 @@ export default function rehypeShikiji() {
 
         // This removes all the original Code Elements and adds a new CodeTab Element
         // at the original start of the first Code Element
-        parent.children.splice(index, currentIndex, codeTabElement);
+        parent.children.splice(index, currentIndex - index, codeTabElement);
 
         // Prevent visiting the code block children and for the next N Elements
         // since all of them belong to this CodeTabs Element
-        return [SKIP, currentIndex];
+        return [SKIP];
       }
     });
 
