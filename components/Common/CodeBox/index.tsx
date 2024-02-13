@@ -34,7 +34,7 @@ const transformCode = (code: ReactNode): ReactNode => {
   const lines = content.split('\n');
 
   return (
-    <code>
+    <code style={{ fontFamily: 'monospace' }}>
       {lines.flatMap((line, lineIndex) => {
         const columns = line.split(' ');
 
