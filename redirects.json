@@ -221,6 +221,10 @@
       "destination": "/:locale/learn/diagnostics/:path*"
     },
     {
+      "source": "/:locale/guides/abi-stability/",
+      "destination": "/:locale/learn/modules/abi-stability"
+    },
+    {
       "source": "/:locale/get-involved",
       "destination": "/:locale/about/get-involved"
     },

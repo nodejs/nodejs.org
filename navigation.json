@@ -228,6 +228,10 @@
             "anatomyOfAnHttpTransaction": {
               "link": "/learn/modules/anatomy-of-an-http-transaction",
               "label": "components.navigation.learn.modules.links.anatomyOfAnHttpTransaction"
+            },
+            "abiStability": {
+              "link": "/learn/modules/abi-stability",
+              "label": "components.navigation.learn.modules.links.abiStability"
             }
           }
         },
