@@ -9,7 +9,6 @@ layout: docs.hbs
 
 ## General
 
-- [Diagnostics - User Journey](/guides/diagnostics/)
 - [Security Best Practices](/guides/security/)
 
 ## Node.js core concepts
