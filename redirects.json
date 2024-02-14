@@ -85,6 +85,10 @@
       "destination": "https://openjsf.org/certification"
     },
     {
+      "source": "/guides",
+      "destination": "/en/guides"
+    },
+    {
       "source": "/about",
       "destination": "/en/about"
     },
@@ -169,22 +173,6 @@
       "destination": "/:locale/about/security-reporting"
     },
     {
-      "source": "/:locale/docs/guides/getting-started-guide",
-      "destination": "/:locale/learn/getting-started/introduction-to-nodejs"
-    },
-    {
-      "source": "/:locale/docs/guides/blocking-vs-non-blocking",
-      "destination": "/:locale/learn/asynchronous-work/overview-of-blocking-vs-non-blocking"
-    },
-    {
-      "source": "/:locale/docs/guides/timers-in-node/",
-      "destination": "/:locale/learn/asynchronous-work/discover-javascript-timers"
-    },
-    {
-      "source": "/:locale/docs/es6",
-      "destination": "/:locale/learn/getting-started/ecmascript-2015-es6-and-beyond"
-    },
-    {
       "source": "/:locale/docs",
       "destination": "https://nodejs.org/docs/latest/api/"
     },
@@ -195,6 +183,50 @@
     {
       "source": "/:locale/docs/guides/:path*",
       "destination": "/:locale/guides/:path*"
+    },
+    {
+      "source": "/:locale/guides/getting-started-guide",
+      "destination": "/:locale/learn/getting-started/introduction-to-nodejs"
+    },
+    {
+      "source": "/:locale/guides/blocking-vs-non-blocking",
+      "destination": "/:locale/learn/asynchronous-work/overview-of-blocking-vs-non-blocking"
+    },
+    {
+      "source": "/:locale/guides/timers-in-node",
+      "destination": "/:locale/learn/asynchronous-work/discover-javascript-timers"
+    },
+    {
+      "source": "/:locale/guides/working-with-different-filesystems",
+      "destination": "/:locale/learn/manipulating-files/working-with-different-filesystems"
+    },
+    {
+      "source": "/:locale/guides/anatomy-of-an-http-transaction",
+      "destination": "/:locale/learn/modules/anatomy-of-an-http-transaction"
+    },
+    {
+      "source": "/:locale/guides/publishing-napi-modules",
+      "destination": "/:locale/learn/modules/publishing-node-api-modules"
+    },
+    {
+      "source": "/:locale/docs/es6",
+      "destination": "/:locale/learn/getting-started/ecmascript-2015-es6-and-beyond"
+    },
+    {
+      "source": "/:locale/guides/diagnostics-flamegraph",
+      "destination": "/:locale/learn/diagnostics/flame-graphs"
+    },
+    {
+      "source": "/:locale/guides/diagnostics",
+      "destination": "/:locale/learn/diagnostics/user-journey"
+    },
+    {
+      "source": "/:locale/guides/debugging-getting-started",
+      "destination": "/:locale/learn/getting-started/debugging"
+    },
+    {
+      "source": "/:locale/guides/diagnostics/:path*",
+      "destination": "/:locale/learn/diagnostics/:path*"
     },
     {
       "source": "/:locale/get-involved",

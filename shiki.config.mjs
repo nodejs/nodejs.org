@@ -1,20 +1,15 @@
 'use strict';
 
-/**
- * READ: This file allows us to configure a subset of languages that we want to support on the Node.js Website
- * we use `shikiji` which is an ESM-only rewrite of Shiki
- */
+import diffLanguage from 'shiki/langs/diff.mjs';
+import dockerLanguage from 'shiki/langs/docker.mjs';
+import javaScriptLanguage from 'shiki/langs/javascript.mjs';
+import jsonLanguage from 'shiki/langs/json.mjs';
+import shellScriptLanguage from 'shiki/langs/shellscript.mjs';
+import shellSessionLanguage from 'shiki/langs/shellsession.mjs';
+import typeScriptLanguage from 'shiki/langs/typescript.mjs';
+import shikiNordTheme from 'shiki/themes/nord.mjs';
 
-import diffLanguage from 'shikiji/langs/diff.mjs';
-import dockerLanguage from 'shikiji/langs/docker.mjs';
-import javaScriptLanguage from 'shikiji/langs/javascript.mjs';
-import jsonLanguage from 'shikiji/langs/json.mjs';
-import shellScriptLanguage from 'shikiji/langs/shellscript.mjs';
-import shellSessionLanguage from 'shikiji/langs/shellsession.mjs';
-import typeScriptLanguage from 'shikiji/langs/typescript.mjs';
-import shikiNordTheme from 'shikiji/themes/nord.mjs';
-
-/** @type {Array<import('shikiji').LanguageRegistration>} */
+/** @type {Array<import('shiki').LanguageRegistration>} */
 export const LANGUAGES = [
   {
     ...javaScriptLanguage[0],

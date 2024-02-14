@@ -1,14 +1,9 @@
 ---
 title: Live Debugging
-layout: docs.hbs
+layout: learn.hbs
 ---
 
 # Live Debugging
-
-- [Live Debugging](#live-debugging)
-  - [My application doesn’t behave as expected](#my-application-doesnt-behave-as-expected)
-    - [Symptoms](#symptoms)
-    - [Debugging](#debugging)
 
 In this document you can learn about how to live debug a Node.js process.
 
@@ -28,4 +23,4 @@ application executes for a certain trigger like an incoming HTTP request. They
 may also want to step through the code and control the execution as well as
 inspect what values variables hold in memory.
 
-- [Using Inspector](/guides/diagnostics/live-debugging/using-inspector)
+- [Using Inspector](/learn/diagnostics/live-debugging/using-inspector)

@@ -1,20 +1,11 @@
 ---
-title: Memory Diagnostics
-layout: docs.hbs
+title: Memory
+layout: learn.hbs
 ---
 
 # Memory
 
 In this document you can learn about how to debug memory related issues.
-
-- [Memory](#memory)
-  - [My process runs out of memory](#my-process-runs-out-of-memory)
-    - [Symptoms](#symptoms)
-    - [Side Effects](#side-effects)
-  - [My process utilizes memory inefficiently](#my-process-utilizes-memory-inefficiently)
-    - [Symptoms](#symptoms-1)
-    - [Side Effects](#side-effects-1)
-  - [Debugging](#debugging)
 
 ## My process runs out of memory
 
@@ -58,6 +49,6 @@ type of objects take and what variables are preventing them from being garbage
 collected. It can also help to know the allocation pattern of our program over
 time.
 
-- [Using Heap Profiler](/guides/diagnostics/memory/using-heap-profiler/)
-- [Using Heap Snapshot](/guides/diagnostics/memory/using-heap-snapshot/)
-- [GC Traces](/guides/diagnostics/memory/using-gc-traces)
+- [Using Heap Profiler](/learn/diagnostics/memory/using-heap-profiler/)
+- [Using Heap Snapshot](/learn/diagnostics/memory/using-heap-snapshot/)
+- [GC Traces](/learn/diagnostics/memory/using-gc-traces)
