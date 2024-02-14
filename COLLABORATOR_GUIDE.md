@@ -455,7 +455,7 @@ MDX is becoming the standard for parsing human-content on React/Next.js-based Ap
 
 #### Syntax Highlighting (Shiki) and Vercel
 
-Shiki is integrated on our workflow as a Reype Plugin, see the `next.mdx.shiki.mjs` file. We also use the `nord` theme for Shiki and a subset of the supported languages as defined on the `shiki.config.mjs` file.
+Shiki is integrated on our workflow as a Rehype Plugin, see the `next.mdx.shiki.mjs` file. We also use the `nord` theme for Shiki and a subset of the supported languages as defined on the `shiki.config.mjs` file.
 
 ### Vercel
 
