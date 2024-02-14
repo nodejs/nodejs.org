@@ -197,6 +197,10 @@
       "destination": "/:locale/learn/diagnostics/:path*"
     },
     {
+      "source": "/:locale/guides/simple-profiling",
+      "destination": "/:locale/learn/getting-started/profiling"
+    },
+    {
       "source": "/:locale/docs",
       "destination": "https://nodejs.org/docs/latest/api/"
     },
@@ -207,10 +211,6 @@
     {
       "source": "/:locale/docs/guides/:path*",
       "destination": "/:locale/guides/:path*"
-    },
-    {
-      "source": "/:locale/guides/simple-profiling",
-      "destination": "/:locale/learn/getting-started/profiling"
     },
     {
       "source": "/:locale/get-involved",
