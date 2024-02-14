@@ -124,6 +124,10 @@
             "debugging": {
               "link": "/learn/getting-started/debugging",
               "label": "components.navigation.learn.gettingStarted.links.debugging"
+            },
+            "profiling": {
+              "link": "/learn/getting-started/profiling",
+              "label": "components.navigation.learn.gettingStarted.links.profiling"
             }
           }
         },

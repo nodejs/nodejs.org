@@ -1,9 +1,9 @@
 ---
-title: Easy profiling for Node.js Applications
-layout: docs.hbs
+title: Profiling Node.js Applications
+layout: learn.hbs
 ---
 
-# Easy profiling for Node.js Applications
+# Profiling Node.js Applications
 
 There are many third party tools available for profiling Node.js applications
 but, in many cases, the easiest option is to use the Node.js built-in profiler.
