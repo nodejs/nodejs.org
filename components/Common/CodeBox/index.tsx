@@ -31,27 +31,33 @@ const transformCode = (code: ReactNode): ReactNode => {
     return code;
   }
 
+  // Note that since we use `.split` we will have an extra entry
+  // being an empty string, so we need to remove it
   const lines = content.split('\n');
 
   return (
-    <code>
-      {lines.flatMap((line, lineIndex) => {
-        const columns = line.split(' ');
+    <code style={{ fontFamily: 'monospace' }}>
+      {lines
+        .flatMap((line, lineIndex) => {
+          const columns = line.split(' ');
 
-        return [
-          <span key={lineIndex} className="line">
-            {columns.map((column, columnIndex) => (
-              <Fragment key={columnIndex}>
-                <span>{column}</span>
-                {columnIndex < columns.length - 1 && <span> </span>}
-              </Fragment>
-            ))}
-          </span>,
-          // Add a break line so the text content is formatted correctly
-          // when copying to clipboard
-          '\n',
-        ];
-      })}
+          return [
+            <span key={lineIndex} className="line">
+              {columns.map((column, columnIndex) => (
+                <Fragment key={columnIndex}>
+                  <span>{column}</span>
+                  {columnIndex < columns.length - 1 && <span> </span>}
+                </Fragment>
+              ))}
+            </span>,
+            // Add a break line so the text content is formatted correctly
+            // when copying to clipboard
+            '\n',
+          ];
+        })
+        // Here we remove that empty line from before and
+        // the last flatMap entry which is an `\n`
+        .slice(0, -2)}
     </code>
   );
 };

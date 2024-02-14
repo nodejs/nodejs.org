@@ -42,6 +42,7 @@
             mr-4
             w-4.5
             text-right
+            font-ibm-plex-mono
             text-neutral-600
             [content:counter(line)]
             [counter-increment:line];

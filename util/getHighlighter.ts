@@ -1,5 +1,5 @@
-import { getHighlighterCore } from 'shikiji/core';
-import { getWasmInlined } from 'shikiji/wasm';
+import { getHighlighterCore } from 'shiki/core';
+import getWasm from 'shiki/wasm';
 
 import { LANGUAGES, DEFAULT_THEME } from '@/shiki.config.mjs';
 
@@ -7,7 +7,7 @@ import { LANGUAGES, DEFAULT_THEME } from '@/shiki.config.mjs';
 const memoizedShikiji = await getHighlighterCore({
   themes: [DEFAULT_THEME],
   langs: LANGUAGES,
-  loadWasm: getWasmInlined,
+  loadWasm: getWasm,
 });
 
 export const highlightToHtml = (code: string, language: string) =>
