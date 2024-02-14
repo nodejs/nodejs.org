@@ -117,7 +117,7 @@
       "destination": "/:locale/learn/getting-started/debugging"
     },
     {
-      "source": "/:locale/docs/guides/abi-stability/",
+      "source": "/:locale/guides/abi-stability/",
       "destination": "/:locale/learn/modules/abi-stability"
     },
     {
