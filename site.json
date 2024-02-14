@@ -28,9 +28,9 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2024-02-13T17:30:00.000Z",
-      "endDate": "2024-02-20T17:30:00.000Z",
-      "text": "New security releases to be made available February 14th, 2024",
+      "startDate": "2024-02-14T15:30:00.000Z",
+      "endDate": "2024-02-21T17:30:00.000Z",
+      "text": "New security releases available",
       "link": "https://nodejs.org/en/blog/vulnerability/february-2024-security-releases/"
     }
   },
