@@ -44,7 +44,7 @@ Ensure that the WebServer handles socket errors properly, for instance, when a
 server is created without an error handler, it will be vulnerable to DoS
 
 ```js
-const net = require('net');
+const net = require('node:net');
 
 const server = net.createServer(function (socket) {
   // socket.on('error', console.error) // this prevents the server to crash
