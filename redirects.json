@@ -229,6 +229,10 @@
       "destination": "/:locale/learn/modules/abi-stability"
     },
     {
+      "source": "/:locale/guides/security",
+      "destination": "/:locale/learn/getting-started/security-best-practices"
+    },
+    {
       "source": "/:locale/get-involved",
       "destination": "/:locale/about/get-involved"
     },
