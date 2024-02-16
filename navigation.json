@@ -128,6 +128,10 @@
             "profiling": {
               "link": "/learn/getting-started/profiling",
               "label": "components.navigation.learn.gettingStarted.links.profiling"
+            },
+            "securityBestPractices": {
+              "link": "/learn/getting-started/security-best-practices",
+              "label": "components.navigation.learn.gettingStarted.links.securityBestPractices"
             }
           }
         },

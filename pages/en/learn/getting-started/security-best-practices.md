@@ -1,9 +1,9 @@
 ---
-title: Node.js Security Best Practices
-layout: docs.hbs
+title: Security Best Practices
+layout: learn.hbs
 ---
 
-# Node.js Security Best Practices
+# Security Best Practices
 
 ## Intent
 
@@ -18,7 +18,7 @@ guidelines on how to secure a Node.js application.
   to Node.js, if you are looking for something broad, consider
   [OSSF Best Practices][].
 - Attacks explained: illustrate and document in plain English with some code
-  example (if possible) the attacks that we are mentioning in the threat model.
+  examples (if possible) of the attacks that we are mentioning in the threat model.
 - Third-Party Libraries: define threats
   (typosquatting attacks, malicious packages...) and best practices regarding
   node modules dependencies, etc...
@@ -40,11 +40,11 @@ body after they are handed over to the request handler is not a vulnerability in
 Node.js itself, since it's the responsibility of the application code to handle
 it correctly.
 
-Ensure that the WebServer handle socket errors properly, for instance, when a
-server is created without a error handling, it will be vulnerable to DoS
+Ensure that the WebServer handles socket errors properly, for instance, when a
+server is created without an error handler, it will be vulnerable to DoS
 
 ```js
-const net = require('net');
+const net = require('node:net');
 
 const server = net.createServer(function (socket) {
   // socket.on('error', console.error) // this prevents the server to crash
@@ -63,7 +63,7 @@ one fragment at a time. Until the full request is delivered, the server will
 keep resources dedicated to the ongoing request. If enough of these requests
 are sent at the same time, the amount of concurrent connections will soon reach
 its maximum resulting in a denial of service. This is how the attack depends
-not on the request's contents, but on the timing and pattern of the requests
+not on the request's contents but on the timing and pattern of the requests
 being sent to the server.
 
 **Mitigations**
@@ -106,12 +106,12 @@ its IP address. See [DNS Rebinding wiki][] for more details.
 All the files and folders included in the current directory are pushed to the
 npm registry during the package publication.
 
-There are some mechanism to control this behavior by defining a blocklist with
+There are some mechanisms to control this behavior by defining a blocklist with
 `.npmignore` and `.gitignore` or by defining an allowlist in the `package.json`
 
 **Mitigations**
 
-- Using `npm publish --dry-run` list all the files to publish. Ensure to review the
+- Using `npm publish --dry-run` to list all the files to publish. Ensure to review the
   content before publishing the package.
 - It’s also important to create and maintain ignore files such as `.gitignore` and
   `.npmignore`.
@@ -132,7 +132,7 @@ it past the proxy server.
 
 See the [CWE-444][] for a more detailed description and examples.
 
-Due to the fact that this attack depends on Node.js interpreting HTTP requests
+Since this attack depends on Node.js interpreting HTTP requests
 differently from an (arbitrary) HTTP server, a successful attack can be due to
 a vulnerability in Node.js, the front-end server, or both.
 If the way the request is interpreted by Node.js is consistent with the
@@ -152,15 +152,15 @@ in Node.js.
 This is an attack that allows the attacker to learn potentially sensitive information by, for example, measuring how long
 it takes for the application to respond to a request. This attack is not specific to Node.js and can target almost all runtimes.
 
-The attack is possible whenever the application uses a secret in a timing-sensitive operation (e.g., branch). Consider handling authentication in typical application. Here, a basic authentication method includes email and password as credentials.
-User information is retrieved from the input user has supplied from ideally a
+The attack is possible whenever the application uses a secret in a timing-sensitive operation (e.g., branch). Consider handling authentication in a typical application. Here, a basic authentication method includes email and password as credentials.
+User information is retrieved from the input the user has supplied from ideally a
 DBMS.
-Upon retrieving user information, the password is compared within the user
+Upon retrieving user information, the password is compared with the user
 information retrieved from the database. Using the built-in string comparison takes a longer
-time for the same length values.
+time for the same-length values.
 This comparison, when run for an acceptable amount unwillingly increases the
 response time of the request. By comparing the request response times, an
-attacker can guess the length and the value of the password in large quantity
+attacker can guess the length and the value of the password in a large quantity
 of requests.
 
 **Mitigations**
@@ -177,12 +177,12 @@ of requests.
 Currently, in Node.js, any package can access powerful resources such as
 network access.
 Furthermore, because they also have access to the file system, they can send
-any data to anywhere.
+any data anywhere.
 
 All code running into a node process has the ability to load and run additional
 arbitrary code by using `eval()`(or its equivalents).
 All code with file system write access may achieve the same thing by writing to
-new or existing files which are loaded.
+new or existing files that are loaded.
 
 Node.js has an experimental[¹][experimental-features]
 [policy mechanism][] to declare the loaded resource as untrusted or trusted.
@@ -190,19 +190,19 @@ However, this policy is not enabled by default.
 Be sure to pin dependency versions and run automatic checks for vulnerabilities
 using common workflows or npm scripts.
 Before installing a package make sure that this package is maintained and
-includes all the content you expected in.
-Be careful, the Github source code is not always the same as the published one,
+includes all the content you expected.
+Be careful, the GitHub source code is not always the same as the published one,
 validate it in the _node_modules_.
 
 #### Supply chain attacks
 
 A supply chain attack on a Node.js application happens when one of its
-dependencies (either direct or transitive) is compromised.
+dependencies (either direct or transitive) are compromised.
 This can happen either due to the application being too lax on the specification
 of the dependencies (allowing for unwanted updates) and/or common typos in the
 specification (vulnerable to [typosquatting][]).
 
-An attacker that takes control of an upstream package can publish a new version
+An attacker who takes control of an upstream package can publish a new version
 with malicious code in it. If a Node.js application depends on that package
 without being strict on which version is safe to use, the package can be
 automatically updated to the latest malicious version, compromising the application.
@@ -233,28 +233,28 @@ Possible attack vectors:
     to find risky behaviors such as network or filesystem access.
 - Use [`npm ci`][] instead of `npm install`.
   This enforces the lockfile so that inconsistencies between it and the
-  _package.json_ file cause an error (instead of silently ignoring the lockfile
+  _package.json_ file causes an error (instead of silently ignoring the lockfile
   in favor of _package.json_).
 - Carefully check the _package.json_ file for errors/typos in the names of the
   dependencies.
 
 ### Memory Access Violation (CWE-284)
 
-Memory-based or heap-based attacks depends on a combination of memory management
+Memory-based or heap-based attacks depend on a combination of memory management
 errors and an exploitable memory allocator.
-Like all runtimes, Node.js is vulnerable to these attacks if your projects runs
+Like all runtimes, Node.js is vulnerable to these attacks if your projects run
 on a shared machine.
 Using a secure heap is useful for preventing sensitive information from leaking
 due to pointer overruns and underruns.
 
-Unfortunately, secure heap is not available on Windows.
+Unfortunately, a secure heap is not available on Windows.
 More information can be found on Node.js [secure-heap documentation][].
 
 **Mitigations**
 
 - Use `--secure-heap=n` depending on your application where _n_ is the allocated
   maximum byte size.
-- Do not run your production app in a shared machine.
+- Do not run your production app on a shared machine.
 
 ### Monkey Patching (CWE-349)
 
@@ -302,7 +302,7 @@ be replaced.
 
 ### Prototype Pollution Attacks (CWE-1321)
 
-Prototype pollution refers to the possibility to modify or inject properties
+Prototype pollution refers to the possibility of modifying or injecting properties
 into Javascript language items by abusing the usage of \_\_proto\__,
 \_constructor_, _prototype_, and other properties inherited from built-in
 prototypes.
@@ -426,8 +426,8 @@ The [OpenSSF][] is leading several initiatives that can be very useful, especial
 [Slowloris]: https://en.wikipedia.org/wiki/Slowloris_(computer_security)
 [`http.Server`]: https://nodejs.org/api/http.html#class-httpserver
 [http docs]: https://nodejs.org/api/http.html
-[--inspect switch]: /learn/debugging-getting-started/
-[same-origin policy]: /guides/debugging-getting-started/
+[--inspect switch]: /learn/getting-started/debugging
+[same-origin policy]: /learn/getting-started/debugging
 [DNS Rebinding wiki]: https://en.wikipedia.org/wiki/DNS_rebinding
 [files property]: https://docs.npmjs.com/cli/v8/configuring-npm/package-json#files
 [unpublish the package]: https://docs.npmjs.com/unpublishing-packages-from-the-registry

@@ -41,7 +41,8 @@
             "nodejsWithTypescript": "Node.js with TypeScript",
             "nodejsWithWebassembly": "Node.js with WebAssembly",
             "debugging": "Debugging Node.js",
-            "profiling": "Profiling Node.js Applications"
+            "profiling": "Profiling Node.js Applications",
+            "securityBestPractices": "Security Best Practices"
           }
         },
         "asynchronousWork": {
