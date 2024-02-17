@@ -165,6 +165,10 @@
             "theNodejsEventEmitter": {
               "link": "/learn/asynchronous-work/the-nodejs-event-emitter",
               "label": "components.navigation.learn.asynchronousWork.links.theNodejsEventEmitter"
+            },
+            "eventLoopTimersAndProcessnexttick": {
+              "link": "/learn/asynchronous-work/event-loop-timers-and-nexttick",
+              "label": "components.navigation.learn.asynchronousWork.links.eventLoopTimersAndProcessnexttick"
             }
           }
         },
