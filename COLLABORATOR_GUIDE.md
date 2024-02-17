@@ -83,7 +83,7 @@ The Website also uses several other Open Source libraries (not limited to) liste
 - [Shiki][] is a Syntax Highlighter used for our Codeboxes
   - The syntax highlighting is done within the processing of the Markdown files with the MDX compiler as a Rehype plugin.
 - [MDX][] and Markdown are used for structuring the Content of the Website
-- [`next-intl`][] is the i18n Library adopted within the Website
+- \[`next-intl`]\[] is the i18n Library adopted within the Website
   - It provides an excellent integration with Next.js, But it also supports standalone support for i18n if it eventually migrates from Next.js to something else.
   - Supports React Server Components and Next.js Middlewares
 - [`next-sitemap`](https://www.npmjs.com/package/next-sitemap) is used for Sitemap and `robots.txt` Generation
@@ -277,7 +277,7 @@ Unit Tests are fundamental to ensure that code changes do not disrupt the functi
 - We also recommend mocking external dependencies, if unsure about how to mock a particular dependency, raise the question on your Pull Request.
   - We recommend using [Jest's Mock Functions](https://jestjs.io/docs/en/mock-functions) for mocking dependencies.
   - We recommend using [Jest's Mock Modules](https://jestjs.io/docs/en/manual-mocks) for mocking dependencies unavailable on the Node.js runtime.
-  - Common Providers and Contexts from the lifecycle of our App, such as [`react-intl`][] should not be mocked but given an empty or fake context whenever possible.
+  - Common Providers and Contexts from the lifecycle of our App, such as \[`next-intl`]\[] should not be mocked but given an empty or fake context whenever possible.
 - We recommend reading previous unit tests from the codebase for inspiration and code guidelines.
 
 ### General Guidelines for Storybooks
@@ -340,7 +340,7 @@ This custom render uses `getStaticPaths` and [Incremental Static Generation](htt
 For example, this allows us to generate Localized Pages for every page that is not translated, by telling Next.js to create a localised path.
 `next.dynamic.mjs` is responsible for getting a full list of the source pages (`pages/en`) and identifying which pages have been translated.
 
-Non-translated pages will have their Localized contexts and translated React message-bags (`react-intl`) but the content will be the same as the source page (English).
+Non-translated pages will have their Localized contexts and translated React message-bags (`next-intl`) but the content will be the same as the source page (English).
 Whereas localized pages will have localized context and content.
 
 This custom solution is also able to decide what paths should be compiled during runtime.
@@ -491,7 +491,7 @@ If you're unfamiliar or curious about something, we recommend opening a Discussi
 [Jest]: https://jestjs.io/
 [React Testing Library]: https://testing-library.com/docs/react-testing-library/intro/
 [Storybook]: https://storybook.js.org/
-[`react-intl`]: https://formatjs.io/docs/react-intl/
+[`nex-intl`]: https://next-intl-docs.vercel.app
 [Next.js]: https://nextjs.org/
 [MDX]: https://mdxjs.com/
 [PostCSS]: https://postcss.org/

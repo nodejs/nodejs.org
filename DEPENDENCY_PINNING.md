@@ -21,7 +21,7 @@ When adding dependencies, you should consider if that dependency should be saved
 
 - A dependency, in general, should be pinned to its exact dependency if it's either a tooling or a CLI dependency. Examples include `husky`, `prettier`, `jest` and others.
 - A dependency should generally use `~` if we're interested in patch updates (such as hot-fixes and bug-fixes) and the package is part of the Development or Testing Environment. (Such as `storybook`, for example)
-- A dependency should generally use `^` if they're part of the Website Application itself, such as `react`, `react-intl` etc. This is done because we intentionally want to get these dependencies' latest features and bug-fixes.
+- A dependency should generally use `^` if they're part of the Website Application itself, such as `react`, `next-intl` etc. This is done because we intentionally want to get these dependencies' latest features and bug-fixes.
   - If we're not interested in getting the latest features and bug fixes, we should consider using `~` instead.
 - Node. js-only dependencies used in scripts or during the build process of the Website (not used within actual Application code) should use `~` instead. Examples include `glob`, `@nodevu/core`
 - TypeScript type packages of corresponding packages should follow the same `semver` of their respective packages
