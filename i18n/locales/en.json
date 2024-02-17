@@ -143,6 +143,9 @@
       "previous": "Previous"
     },
     "common": {
+      "banner": {
+        "hide": "Hide this banner"
+      },
       "breadcrumbs": {
         "navigateToHome": "Navigate to Home"
       },
