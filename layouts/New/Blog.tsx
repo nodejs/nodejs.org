@@ -8,6 +8,7 @@ import WithFooter from '@/components/withFooter';
 import WithNavBar from '@/components/withNavBar';
 import { Link } from '@/navigation.mjs';
 import getBlogData from '@/next-data/blogData';
+import { siteConfig } from '@/next.json.mjs';
 
 import styles from './layouts.module.css';
 
@@ -36,12 +37,6 @@ const BlogLayout: FC = async () => {
     }));
 
   const blogData = await getBlogCategory(pathname);
-  // haky way to determine the rss feed
-  const rssFeed = () => {
-    if (blogData.category === 'vulnerability') return 'vulnerability';
-    if (blogData.category === 'release') return 'releases';
-    return 'blog';
-  };
 
   return (
     <>
@@ -52,7 +47,9 @@ const BlogLayout: FC = async () => {
           <header>
             <h1>
               {t('layouts.blog.title')}
-              <Link href={`/feed/${rssFeed()}.xml`}>
+              <Link
+                href={`/feed/${siteConfig.rssFeeds.find(item => item.blogCategory === blogData.category)?.file ?? 'blog.xml'}`}
+              >
                 <RssIcon className="size-6 text-neutral-500" />
               </Link>
             </h1>
