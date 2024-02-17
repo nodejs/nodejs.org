@@ -3,10 +3,10 @@ import { getTranslations } from 'next-intl/server';
 import type { FC } from 'react';
 
 import { getClientContext } from '@/client-context';
+import Link from '@/components/Link';
 import WithBlogCategories from '@/components/withBlogCategories';
 import WithFooter from '@/components/withFooter';
 import WithNavBar from '@/components/withNavBar';
-import Link from '@/components/Link';
 import getBlogData from '@/next-data/blogData';
 import { siteConfig } from '@/next.json.mjs';
 
@@ -48,7 +48,7 @@ const BlogLayout: FC = async () => {
             <h1>
               {t('layouts.blog.title')}
               <Link
-                href={`/feed/${siteConfig.rssFeeds.find(item => item.blogCategory === blogData.category)?.file ?? 'blog.xml'}`}
+                href={`/feed/${siteConfig.rssFeeds.find(item => item.category === blogData.category)?.file ?? ''}`}
               >
                 <RssIcon className="size-6 text-neutral-500" />
               </Link>
