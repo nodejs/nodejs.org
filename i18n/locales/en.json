@@ -39,7 +39,10 @@
             "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) and beyond",
             "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
             "nodejsWithTypescript": "Node.js with TypeScript",
-            "nodejsWithWebassembly": "Node.js with WebAssembly"
+            "nodejsWithWebassembly": "Node.js with WebAssembly",
+            "debugging": "Debugging Node.js",
+            "profiling": "Profiling Node.js Applications",
+            "securityBestPractices": "Security Best Practices"
           }
         },
         "asynchronousWork": {
@@ -62,7 +65,8 @@
             "workingWithFileDescriptorsInNodejs": "Working with file descriptors in Node.js",
             "readingFilesWithNodejs": "Reading files with Node.js",
             "writingFilesWithNodejs": "Writing files with Node.js",
-            "workingWithFoldersInNodejs": "Working with folders in Node.js"
+            "workingWithFoldersInNodejs": "Working with folders in Node.js",
+            "howToWorkWithFileSystems": "How to work with Different Filesystems"
           }
         },
         "commandLine": {
@@ -78,7 +82,19 @@
         "modules": {
           "links": {
             "modules": "Modules",
-            "publishingNodeApiModules": "How to publish a Node-API package"
+            "publishingNodeApiModules": "How to publish a Node-API package",
+            "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction",
+            "abiStability": "ABI Stability"
+          }
+        },
+        "diagnostics": {
+          "links": {
+            "diagnostics": "Diagnostics",
+            "userJourney": "User Journey",
+            "memory": "Memory",
+            "liveDebugging": "Live Debugging",
+            "poorPerformance": "Poor Performance",
+            "flameGraphs": "Flame Graphs"
           }
         }
       },

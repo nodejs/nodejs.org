@@ -242,7 +242,7 @@ setImmediate(() => {
 });
 ```
 
-```
+```bash
 $ node timeout_vs_immediate.js
 timeout
 immediate
@@ -269,7 +269,7 @@ fs.readFile(__filename, () => {
 });
 ```
 
-```
+```bash
 $ node timeout_vs_immediate.js
 immediate
 timeout

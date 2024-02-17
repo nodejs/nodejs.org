@@ -1,6 +1,6 @@
 ---
-title: Memory Diagnostics - Using GC Trace
-layout: docs.hbs
+title: Tracing garbage collection
+layout: learn.hbs
 ---
 
 # Tracing garbage collection
@@ -393,7 +393,7 @@ For more information, you can refer to
 [`--max-old-space-size`]: https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes
 [performance hooks]: https://nodejs.org/api/perf_hooks.html
 [exercise]: https://github.com/nodejs/diagnostics/tree/main/documentation/memory/step3/exercise
-[guide dedicated to heap snapshot]: /guides/diagnostics/memory/using-heap-snapshot#how-to-find-a-memory-leak-with-heap-snapshots
+[guide dedicated to heap snapshot]: /learn/diagnostics/memory/using-heap-snapshot#how-to-find-a-memory-leak-with-heap-snapshots
 [document]: https://github.com/thlorenz/v8-perf/blob/master/gc.md#marking-state
 [Scavenge scenario]: https://github.com/thlorenz/v8-perf/blob/master/gc.md#sample-scavenge-scenario
 [talk of Peter Marshall]: https://v8.dev/blog/trash-talk

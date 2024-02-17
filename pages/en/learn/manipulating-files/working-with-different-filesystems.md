@@ -1,9 +1,9 @@
 ---
-title: Working with Different Filesystems
-layout: docs.hbs
+title: How to work with Different Filesystems
+layout: learn.hbs
 ---
 
-# Working with Different Filesystems
+# How to Work with Different Filesystems
 
 Node.js exposes many features of the filesystem. But not all filesystems are alike.
 The following are suggested best practices to keep your code simple and safe

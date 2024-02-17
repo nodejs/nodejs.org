@@ -1,6 +1,6 @@
 ---
-title: Memory Diagnostics - Using Heap Snapshot
-layout: docs.hbs
+title: Using Heap Snapshot
+layout: learn.hbs
 ---
 
 # Using Heap Snapshot
