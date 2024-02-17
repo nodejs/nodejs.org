@@ -1,4 +1,4 @@
-import { mapAuthorToCardAuthors } from '../blogUtils';
+import { mapAuthorToCardAuthors } from '@/util/blogUtils';
 
 describe('mapAuthorToCardAuthors', () => {
   it('should map authors to card authors with default avatar source', () => {

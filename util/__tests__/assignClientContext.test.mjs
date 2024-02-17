@@ -1,4 +1,4 @@
-import { assignClientContext } from '../assignClientContext';
+import { assignClientContext } from '@/util/assignClientContext';
 
 const mockContext = {
   frontmatter: { title: 'Sample Title' },

@@ -1,4 +1,4 @@
-import { getNodejsChangelog } from '../getNodeJsChangelog';
+import { getNodejsChangelog } from '@/util/getNodeJsChangelog';
 
 describe('getNodejsChangelog', () => {
   it('returns the correct changelog URL for major version >= 4', () => {

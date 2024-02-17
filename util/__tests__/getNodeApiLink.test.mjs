@@ -1,4 +1,4 @@
-import { getNodeApiLink } from '../getNodeApiLink';
+import { getNodeApiLink } from '@/util/getNodeApiLink';
 
 describe('getNodeApiLink', () => {
   it('returns the correct API link for versions >=0.3.1 and <0.5.1', () => {
