@@ -147,6 +147,13 @@
     xs:bg-none
     xs:dark:bg-none;
 
+  header > h1 {
+    @apply inline-flex
+      w-full
+      items-center
+      justify-between;
+  }
+
   main {
     @apply max-w-8xl
       gap-4
