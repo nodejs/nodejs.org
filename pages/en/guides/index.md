@@ -9,7 +9,6 @@ layout: docs.hbs
 
 ## Node.js core concepts
 
-- [The Node.js Event Loop, Timers, and `process.nextTick()`](/guides/event-loop-timers-and-nexttick/)
 - [Don't Block the Event Loop (or the Worker Pool)](/guides/dont-block-the-event-loop/)
 
 ## Module-related guides
