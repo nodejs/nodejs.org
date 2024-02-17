@@ -6,7 +6,7 @@ import { getClientContext } from '@/client-context';
 import WithBlogCategories from '@/components/withBlogCategories';
 import WithFooter from '@/components/withFooter';
 import WithNavBar from '@/components/withNavBar';
-import { Link } from '@/navigation.mjs';
+import Link from '@/components/Link';
 import getBlogData from '@/next-data/blogData';
 import { siteConfig } from '@/next.json.mjs';
 
