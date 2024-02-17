@@ -36,4 +36,13 @@ export const NoLink: Story = {
   },
 };
 
+export const Hideable: Story = {
+  args: {
+    children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    type: 'default',
+    link: '/',
+    onHiding: () => {},
+  },
+};
+
 export default { component: Banner } as Meta;

@@ -10,11 +10,13 @@ import styles from './index.module.css';
 type BannerProps = {
   link?: string;
   type?: 'default' | 'warning' | 'error';
+  onHiding?: () => void;
 };
 
 const Banner: FC<PropsWithChildren<BannerProps>> = ({
   type = 'default',
   link,
+  onHiding,
   children,
 }) => {
   const t = useTranslations('components.common.banner');
@@ -25,13 +27,16 @@ const Banner: FC<PropsWithChildren<BannerProps>> = ({
         {link ? <Link href={link}>{children}</Link> : children}
         {link && <ArrowUpRightIcon />}
       </span>
-      <button
-        arria-label={t('hide')}
-        className={styles.close}
-        title={t('hide')}
-      >
-        <XMarkIcon />
-      </button>
+      {onHiding && (
+        <button
+          arria-label={t('hide')}
+          className={styles.close}
+          title={t('hide')}
+          onClick={onHiding}
+        >
+          <XMarkIcon />
+        </button>
+      )}
     </div>
   );
 };

@@ -19,3 +19,10 @@ export const parseRichTextIntoPlainText = (richText: string) =>
     .replace(/^\s*\n/gm, '')
     // replaces leading and trailing spaces from each line with an empty string
     .replace(/^[ ]+|[ ]+$/gm, '');
+
+export const twoDateToUIID = (date1: string, date2: string): string => {
+  const date1String = date1.split('T')[0];
+  const date2String = date2.split('T')[0];
+
+  return `${date1String}-${date2String}`;
+};

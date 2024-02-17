@@ -3,3 +3,4 @@ export { default as useDetectOS } from './useDetectOS';
 export { default as useMediaQuery } from './useMediaQuery';
 export { default as useNotification } from './useNotification';
 export { default as useClientContext } from './useClientContext';
+export { default as useLocaleStorage } from './useLocaleStorage';
