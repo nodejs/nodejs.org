@@ -106,7 +106,7 @@ threshold, then your script starts asynchronously reading a file which
 takes 95 ms:
 
 ```js
-const fs = require('fs');
+const fs = require('node:fs');
 
 function someAsyncOperation(callback) {
   // Assume this takes 95ms to complete
@@ -257,7 +257,7 @@ callback is always executed first:
 
 ```js
 // timeout_vs_immediate.js
-const fs = require('fs');
+const fs = require('node:fs');
 
 fs.readFile(__filename, () => {
   setTimeout(() => {
