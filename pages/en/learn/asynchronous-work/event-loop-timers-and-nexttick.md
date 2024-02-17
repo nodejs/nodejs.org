@@ -449,7 +449,7 @@ Another example is extending an `EventEmitter` and emitting an
 event from within the constructor:
 
 ```js
-const EventEmitter = require('events');
+const EventEmitter = require('node:events');
 
 class MyEmitter extends EventEmitter {
   constructor() {
@@ -471,7 +471,7 @@ you can use `process.nextTick()` to set a callback to emit the event
 after the constructor has finished, which provides the expected results:
 
 ```js
-const EventEmitter = require('events');
+const EventEmitter = require('node:events');
 
 class MyEmitter extends EventEmitter {
   constructor() {
