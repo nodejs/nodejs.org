@@ -50,7 +50,7 @@ const BlogLayout: FC = async () => {
               <Link
                 href={`/feed/${siteConfig.rssFeeds.find(item => item.category === blogData.category)?.file ?? 'blog.xml'}`}
               >
-                <RssIcon className="size-6 text-neutral-500" />
+                <RssIcon />
               </Link>
             </h1>
             <p>{t('layouts.blog.subtitle')}</p>
