@@ -138,7 +138,8 @@
   }
 }
 
-.blogLayout {
+.blogLayout,
+.downloadLayout {
   @apply flex
     w-full
     justify-center
@@ -154,6 +155,16 @@
       py-12
       md:px-14
       lg:px-28;
+  }
+}
+
+.downloadLayout {
+  section > p {
+    @apply flex
+      flex-row
+      flex-wrap
+      items-center
+      gap-2;
   }
 }
 

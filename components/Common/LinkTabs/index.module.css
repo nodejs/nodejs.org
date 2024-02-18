@@ -28,7 +28,7 @@
   }
 }
 
-.tabsSelect > div {
+.tabsSelect > span {
   @apply my-6
     hidden
     w-full
