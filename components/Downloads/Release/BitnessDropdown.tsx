@@ -7,7 +7,7 @@ import semVer from 'semver';
 import Select from '@/components/Common/Select';
 import { useDetectOS } from '@/hooks/react-client';
 import { useReleaseContext } from '@/providers/releaseProvider';
-import { installerBitnessMap } from '@/util/downloadUtils';
+import { getBitnessItems } from '@/util/downloadUtils';
 
 const BitnessDropdown: FC = () => {
   const { bitness: userBitness } = useDetectOS();
@@ -26,7 +26,7 @@ const BitnessDropdown: FC = () => {
     <Select
       values={[
         {
-          items: installerBitnessMap(os, hasWindowsArm64),
+          items: getBitnessItems(os, hasWindowsArm64),
         },
       ]}
       defaultValue={String(bitness)}

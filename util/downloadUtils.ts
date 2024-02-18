@@ -1,6 +1,7 @@
 import { ENABLE_WEBSITE_REDESIGN } from '@/next.constants.mjs';
 import type { UserOS } from '@/types/userOS';
 
+// A utility enum to help convert `userOs` data type to user-readable format
 export enum OperatingSystem {
   WIN = 'Windows',
   MAC = 'MacOs',
@@ -8,7 +9,11 @@ export enum OperatingSystem {
   OTHER = 'Other',
 }
 
-export const installerBitnessMap = (os: UserOS, hasWindowsArm64: boolean) => {
+// A utility for creating and filtering bitness items updates the diabled status
+// based on `hasWindowsArm64` status.
+// @todo In case this method needs more than one filter, an exclude method can
+// be written
+export const getBitnessItems = (os: UserOS, hasWindowsArm64: boolean) => {
   const bitnessMap = {
     WIN: [
       {
@@ -38,6 +43,8 @@ export const installerBitnessMap = (os: UserOS, hasWindowsArm64: boolean) => {
   return bitnessMap[os];
 };
 
+// Returns the page, category and subCategoy information to be used in the page
+// from the pathname information on the download pages.
 export const getDownloadCategory = (pathname: string) => {
   /**
    * @deprecated once the website redesign happens remove this code block
@@ -58,15 +65,18 @@ export const getDownloadCategory = (pathname: string) => {
   return { page, category, subCategory };
 };
 
+type CategoryTabMappingParams = {
+  page: string;
+  categories: Array<{ category: string; label: string }>;
+  subCategory: string;
+};
+
+// Utility method used to create URLs and labels to be used in Tabs
 export const mapCategoriesToTabs = ({
   page,
   categories,
   subCategory,
-}: {
-  page: string;
-  categories: Array<{ category: string; label: string }>;
-  subCategory: string;
-}) =>
+}: CategoryTabMappingParams) =>
   categories.map(({ category, label }) => ({
     key: category,
     label: label,
