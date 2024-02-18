@@ -1,3 +1,4 @@
+import { ENABLE_WEBSITE_REDESIGN } from '@/next.constants.mjs';
 import type { UserOS } from '@/types/userOS';
 
 export enum OperatingSystem {
@@ -38,10 +39,14 @@ export const installerBitnessMap = (os: UserOS, hasWindowsArm64: boolean) => {
 };
 
 export const getDownloadCategory = (pathname: string) => {
-  const segments = pathname
-    .replace('/new-design', '')
-    .split('/')
-    .filter(Boolean);
+  /**
+   * @deprecated once the website redesign happens remove this code block
+   */
+  if (ENABLE_WEBSITE_REDESIGN) {
+    pathname = pathname.replace('/new-design', '');
+  }
+
+  const segments = pathname.split('/').filter(Boolean);
   const [, c] = segments;
 
   if (c === 'current' || typeof c === 'undefined') {
