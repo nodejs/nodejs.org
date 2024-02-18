@@ -82,6 +82,6 @@ export const mapCategoriesToTabs = ({
     label: label,
     link:
       category === 'download'
-        ? `/${[page, subCategory].join('/')}`
-        : `/${[page, category, subCategory].join('/')}`,
+        ? `/${[page, subCategory].filter(Boolean).join('/')}`
+        : `/${[page, category, subCategory].filter(Boolean).join('/')}`,
   }));
