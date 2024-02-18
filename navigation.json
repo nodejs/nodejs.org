@@ -169,6 +169,10 @@
             "eventLoopTimersAndProcessnexttick": {
               "link": "/learn/asynchronous-work/event-loop-timers-and-nexttick",
               "label": "components.navigation.learn.asynchronousWork.links.eventLoopTimersAndProcessnexttick"
+            },
+            "dontBlockTheEventLoop": {
+              "link": "/learn/asynchronous-work/dont-block-the-event-loop",
+              "label": "components.navigation.learn.asynchronousWork.links.dontBlockTheEventLoop"
             }
           }
         },

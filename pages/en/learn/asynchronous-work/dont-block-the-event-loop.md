@@ -1,6 +1,6 @@
 ---
 title: Don't Block the Event Loop (or the Worker Pool)
-layout: docs.hbs
+layout: learn.hbs
 ---
 
 # Don't Block the Event Loop (or the Worker Pool)
