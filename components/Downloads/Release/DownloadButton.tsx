@@ -6,8 +6,7 @@ import type { FC } from 'react';
 import Button from '@/components/Common/Button';
 import { useReleaseContext } from '@/providers/releaseProvider';
 import { downloadUrlByOS } from '@/util/downloadUrlByOS';
-
-import { OperatingSystem } from './OperatingSystemDropdown';
+import { OperatingSystem } from '@/util/downloadUtils';
 
 const DownloadButton: FC = () => {
   const t = useTranslations();

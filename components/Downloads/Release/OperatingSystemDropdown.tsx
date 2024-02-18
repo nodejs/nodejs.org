@@ -7,13 +7,7 @@ import Select from '@/components/Common/Select';
 import { useDetectOS } from '@/hooks/react-client';
 import { useReleaseContext } from '@/providers/releaseProvider';
 import type { UserOS } from '@/types/userOS';
-
-export enum OperatingSystem {
-  WIN = 'Windows',
-  MAC = 'MacOs',
-  LINUX = 'Linux',
-  OTHER = 'Other',
-}
+import { OperatingSystem } from '@/util/downloadUtils';
 
 const OperatingSystemDropdown: FC = () => {
   const { os: userOS } = useDetectOS();
