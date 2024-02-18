@@ -141,55 +141,17 @@
 .blogLayout {
   @apply flex
     w-full
+    max-w-8xl
     justify-center
+    gap-4
     bg-gradient-subtle
+    px-4
+    py-12
     dark:bg-gradient-subtle-dark
+    md:px-14
+    lg:px-28
     xs:bg-none
     xs:dark:bg-none;
-
-  header {
-    h1 {
-      @apply inline-flex
-        w-full
-        items-center
-        justify-between;
-
-      a {
-        @apply inline-flex
-          size-9
-          items-center
-          justify-center
-          rounded-md
-          p-2;
-
-        &:hover {
-          @apply bg-neutral-100
-            dark:bg-neutral-900;
-        }
-      }
-
-      svg {
-        @apply size-6
-          text-neutral-500;
-      }
-    }
-  }
-
-  main {
-    @apply max-w-8xl
-      gap-4
-      px-4
-      py-12
-      md:px-14
-      lg:px-28;
-
-    p {
-      @apply text-lg
-        font-medium
-        text-neutral-800
-        dark:text-neutral-200;
-    }
-  }
 }
 
 .contentLayout {

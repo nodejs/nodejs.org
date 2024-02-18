@@ -1,14 +1,12 @@
-import { RssIcon } from '@heroicons/react/24/solid';
 import { getTranslations } from 'next-intl/server';
 import type { FC } from 'react';
 
 import { getClientContext } from '@/client-context';
-import Link from '@/components/Link';
+import BlogHeader from '@/components/Common/BlogHeader';
 import WithBlogCategories from '@/components/withBlogCategories';
 import WithFooter from '@/components/withFooter';
 import WithNavBar from '@/components/withNavBar';
 import getBlogData from '@/next-data/blogData';
-import { siteConfig } from '@/next.json.mjs';
 
 import styles from './layouts.module.css';
 
@@ -41,34 +39,19 @@ const BlogLayout: FC = async () => {
   return (
     <>
       <WithNavBar />
-
-      <div className={styles.blogLayout}>
-        <main>
-          <header>
-            <h1>
-              {t('layouts.blog.title')}
-              <Link
-                href={`/feed/${siteConfig.rssFeeds.find(item => item.category === blogData.category)?.file ?? 'blog.xml'}`}
-              >
-                <RssIcon />
-              </Link>
-            </h1>
-            <p>{t('layouts.blog.subtitle')}</p>
-          </header>
-
-          <WithBlogCategories
-            blogData={blogData}
-            categories={mapCategoriesToTabs([
-              'all',
-              'announcements',
-              'release',
-              'vulnerability',
-              'events',
-            ])}
-          />
-        </main>
-      </div>
-
+      <main className={styles.blogLayout}>
+        <BlogHeader category={blogData.category} />
+        <WithBlogCategories
+          blogData={blogData}
+          categories={mapCategoriesToTabs([
+            'all',
+            'announcements',
+            'release',
+            'vulnerability',
+            'events',
+          ])}
+        />
+      </main>
       <WithFooter />
     </>
   );
