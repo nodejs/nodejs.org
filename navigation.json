@@ -154,6 +154,14 @@
               "link": "/learn/asynchronous-work/discover-javascript-timers",
               "label": "components.navigation.learn.asynchronousWork.links.discoverJavaScriptTimers"
             },
+            "theNodejsEventLoop": {
+              "link": "/learn/asynchronous-work/event-loop-timers-and-nexttick",
+              "label": "components.navigation.learn.asynchronousWork.links.theNodejsEventLoop"
+            },
+            "theNodejsEventEmitter": {
+              "link": "/learn/asynchronous-work/the-nodejs-event-emitter",
+              "label": "components.navigation.learn.asynchronousWork.links.theNodejsEventEmitter"
+            },
             "understandingProcessnexttick": {
               "link": "/learn/asynchronous-work/understanding-processnexttick",
               "label": "components.navigation.learn.asynchronousWork.links.understandingProcessnexttick"
@@ -161,14 +169,6 @@
             "understandingSetimmediate": {
               "link": "/learn/asynchronous-work/understanding-setimmediate",
               "label": "components.navigation.learn.asynchronousWork.links.understandingSetimmediate"
-            },
-            "theNodejsEventEmitter": {
-              "link": "/learn/asynchronous-work/the-nodejs-event-emitter",
-              "label": "components.navigation.learn.asynchronousWork.links.theNodejsEventEmitter"
-            },
-            "eventLoopTimersAndProcessnexttick": {
-              "link": "/learn/asynchronous-work/event-loop-timers-and-nexttick",
-              "label": "components.navigation.learn.asynchronousWork.links.eventLoopTimersAndProcessnexttick"
             }
           }
         },
