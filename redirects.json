@@ -233,7 +233,7 @@
       "destination": "/:locale/learn/getting-started/security-best-practices"
     },
     {
-      "source": "/:locale/guides/event-loop-timers-and-nexttick/",
+      "source": "/:locale/guides/event-loop-timers-and-nexttick",
       "destination": "/:locale/learn/asynchronous-work/event-loop-timers-and-nexttick"
     },
     {
