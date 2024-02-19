@@ -17,21 +17,18 @@ describe('assignClientContext', () => {
   it('should assign properties to the client context', () => {
     const result = assignClientContext(mockContext);
 
-    // Check each property individually
     expect(result.frontmatter).toEqual(mockContext.frontmatter);
     expect(result.pathname).toEqual(mockContext.pathname);
     expect(result.headings).toEqual(mockContext.headings);
     expect(result.readingTime).toEqual(mockContext.readingTime);
     expect(result.filename).toEqual(mockContext.filename);
 
-    // Alternatively, you can check the entire object at once
     expect(result).toEqual(mockContext);
   });
 
   it('should use default values for missing properties', () => {
     const result = assignClientContext({});
 
-    // Check default values for each property
     expect(result.frontmatter).toEqual({});
     expect(result.pathname).toEqual('');
     expect(result.headings).toEqual([]);
