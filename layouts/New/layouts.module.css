@@ -142,15 +142,19 @@
   @apply flex
     w-full
     justify-center
-    gap-4
     bg-gradient-subtle
-    px-4
-    py-12
     dark:bg-gradient-subtle-dark
-    md:px-14
-    lg:px-28
     xs:bg-none
     xs:dark:bg-none;
+
+  main {
+    @apply max-w-8xl
+      gap-4
+      px-4
+      py-12
+      md:px-14
+      lg:px-28;
+  }
 }
 
 .contentLayout {
