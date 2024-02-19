@@ -39,9 +39,11 @@ const BlogLayout: FC = async () => {
   return (
     <>
       <WithNavBar />
+
       <div className={styles.blogLayout}>
         <main>
           <BlogHeader category={blogData.category} />
+
           <WithBlogCategories
             blogData={blogData}
             categories={mapCategoriesToTabs([
@@ -54,6 +56,7 @@ const BlogLayout: FC = async () => {
           />
         </main>
       </div>
+
       <WithFooter />
     </>
   );
