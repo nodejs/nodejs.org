@@ -141,7 +141,6 @@
 .blogLayout {
   @apply flex
     w-full
-    max-w-8xl
     justify-center
     gap-4
     bg-gradient-subtle
