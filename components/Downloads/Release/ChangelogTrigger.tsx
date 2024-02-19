@@ -3,9 +3,8 @@
 import type { FC, PropsWithChildren } from 'react';
 
 import ChangelogModal from '@/components/Downloads/ChangelogModal';
+import LinkWithArrow from '@/components/Downloads/Release/LinkWithArrow';
 import { useReleaseContext } from '@/providers/releaseProvider';
-
-import LinkWithArrow from './LinkWithArrow';
 
 const ChangelogTrigger: FC<PropsWithChildren> = ({ children }) => {
   const {

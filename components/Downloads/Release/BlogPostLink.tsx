@@ -2,9 +2,8 @@
 
 import type { FC, PropsWithChildren } from 'react';
 
+import LinkWithArrow from '@/components/Downloads/Release/LinkWithArrow';
 import { useReleaseContext } from '@/providers/releaseProvider';
-
-import LinkWithArrow from './LinkWithArrow';
 
 const BlogPostLink: FC<PropsWithChildren> = ({ children }) => {
   const {
