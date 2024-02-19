@@ -84,7 +84,7 @@ export const mdxComponents = {
     VerifyingBinariesLink: VerifyingBinariesLink,
     // Renders a Download Button for the selected release
     DownloadButton: ReleaseDownloadButton,
-    // Renders a Source Button for the selected release
+    // Renders a Source Download Button for the selected release
     SourceButton: SourceButton,
   },
 };
