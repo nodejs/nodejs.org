@@ -645,6 +645,7 @@ Node.js.
 [`highWaterMark`]: https://nodejs.org/api/stream.html#stream_buffering
 [return value]: https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239
 [`readable-stream`]: https://github.com/nodejs/readable-stream
+[great blog post]: https://r.va.gg/2014/06/why-i-dont-use-nodes-core-stream-module.html
 [`dtrace`]: https://dtrace.org/about/
 [`zip(1)`]: https://linux.die.net/man/1/zip
 [`gzip(1)`]: https://linux.die.net/man/1/gzip
