@@ -270,12 +270,12 @@ If your server manipulates JSON objects, particularly those from a client, you s
 Example: JSON blocking. We create an object `obj` of size 2^21 and `JSON.stringify` it, run `indexOf` on the string, and then JSON.parse it. The `JSON.stringify`'d string is 50MB. It takes 0.7 seconds to stringify the object, 0.03 seconds to indexOf on the 50MB string, and 1.3 seconds to parse the string.
 
 ```js
-var obj = { a: 1 };
-var niter = 20;
+let obj = { a: 1 };
+let niter = 20;
 
-var before, str, pos, res, took;
+let before, str, pos, res, took;
 
-for (var i = 0; i < niter; i++) {
+for (let i = 0; i < niter; i++) {
   obj = { obj1: obj, obj2: obj }; // Doubles in size each iter
 }
 
@@ -325,7 +325,7 @@ Example 2: Partitioned average, each of the `n` asynchronous steps costs `O(1)`.
 ```js
 function asyncAvg(n, avgCB) {
   // Save ongoing sum in JS closure.
-  var sum = 0;
+  let sum = 0;
   function help(i, cb) {
     sum += i;
     if (i == n) {
@@ -340,7 +340,7 @@ function asyncAvg(n, avgCB) {
 
   // Start the helper, with CB to call avgCB.
   help(1, function (sum) {
-    var avg = sum / n;
+    let avg = sum / n;
     avgCB(avg);
   });
 }
