@@ -54,7 +54,8 @@
             "discoverJavaScriptTimers": "Discover JavaScript Timers",
             "understandingProcessnexttick": "Understanding process.nextTick()",
             "understandingSetimmediate": "Understanding setImmediate()",
-            "theNodejsEventEmitter": "The Node.js Event emitter"
+            "theNodejsEventEmitter": "The Node.js Event emitter",
+            "eventLoopTimersAndProcessnexttick": "Event Loop, Timers, and process.nextTick()"
           }
         },
         "manipulatingFiles": {
