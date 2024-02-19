@@ -277,7 +277,7 @@ Unit Tests are fundamental to ensure that code changes do not disrupt the functi
 - We also recommend mocking external dependencies, if unsure about how to mock a particular dependency, raise the question on your Pull Request.
   - We recommend using [Jest's Mock Functions](https://jestjs.io/docs/en/mock-functions) for mocking dependencies.
   - We recommend using [Jest's Mock Modules](https://jestjs.io/docs/en/manual-mocks) for mocking dependencies unavailable on the Node.js runtime.
-  - Common Providers and Contexts from the lifecycle of our App, such as \[`next-intl`]\[] should not be mocked but given an empty or fake context whenever possible.
+  - Common Providers and Contexts from the lifecycle of our App, such as [`next-intl`][] should not be mocked but given an empty or fake context whenever possible.
 - We recommend reading previous unit tests from the codebase for inspiration and code guidelines.
 
 ### General Guidelines for Storybooks
@@ -491,7 +491,7 @@ If you're unfamiliar or curious about something, we recommend opening a Discussi
 [Jest]: https://jestjs.io/
 [React Testing Library]: https://testing-library.com/docs/react-testing-library/intro/
 [Storybook]: https://storybook.js.org/
-[`nex-intl`]: https://next-intl-docs.vercel.app
+[`next-intl`]: https://next-intl-docs.vercel.app
 [Next.js]: https://nextjs.org/
 [MDX]: https://mdxjs.com/
 [PostCSS]: https://postcss.org/
