@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import BlogHeader from '@/components/Common/BlogHeader';
+import BlogHeader from '@/components/Blog/BlogHeader';
 
 type Story = StoryObj<typeof BlogHeader>;
 type Meta = MetaObj<typeof BlogHeader>;

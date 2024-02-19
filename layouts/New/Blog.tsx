@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import type { FC } from 'react';
 
 import { getClientContext } from '@/client-context';
-import BlogHeader from '@/components/Common/BlogHeader';
+import BlogHeader from '@/components/Blog/BlogHeader';
 import WithBlogCategories from '@/components/withBlogCategories';
 import WithFooter from '@/components/withFooter';
 import WithNavBar from '@/components/withNavBar';
