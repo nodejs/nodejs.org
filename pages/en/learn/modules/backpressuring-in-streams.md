@@ -611,7 +611,7 @@ Streams are an often-used module in Node.js. They are important to the internal
 structure, and for developers, to expand and connect across the Node.js modules
 ecosystem.
 
-Hopefully, you will now be able to troubleshoot, and safely code your own
+Hopefully, you will now be able to troubleshoot and safely code your own
 [`Writable`][] and [`Readable`][] streams with backpressure in mind, and share
 your knowledge with colleagues and friends.
 
