@@ -6,26 +6,30 @@ describe('getBitness', () => {
       .fn()
       .mockResolvedValue({ bitness: 64 });
 
-    Object.defineProperty(navigator, 'userAgentData', {
-      value: { getHighEntropyValues: mockGetHighEntropyValues },
-      configurable: true,
-    });
+    const mockNavigator = {
+      userAgentData: { getHighEntropyValues: mockGetHighEntropyValues },
+    };
+
+    jest.spyOn(global, 'navigator', 'get').mockReturnValue(mockNavigator);
 
     const result = await getBitness();
 
     expect(result).toBe(64);
     expect(mockGetHighEntropyValues).toHaveBeenCalledWith(['bitness']);
+
+    jest.restoreAllMocks();
   });
 
   it('returns undefined when navigator.userAgentData or getHighEntropyValues is not available', async () => {
-    Object.defineProperty(navigator, 'userAgentData', {
-      value: undefined,
-      configurable: true,
-    });
+    const mockNavigator = {};
+
+    jest.spyOn(global, 'navigator', 'get').mockReturnValue(mockNavigator);
 
     const result = await getBitness();
 
     expect(result).toBeUndefined();
+
+    jest.restoreAllMocks();
   });
 
   it('returns undefined when getHighEntropyValues fails', async () => {
@@ -33,14 +37,17 @@ describe('getBitness', () => {
       .fn()
       .mockRejectedValue(new Error('Some error'));
 
-    Object.defineProperty(navigator, 'userAgentData', {
-      value: { getHighEntropyValues: mockGetHighEntropyValues },
-      configurable: true,
-    });
+    const mockNavigator = {
+      userAgentData: { getHighEntropyValues: mockGetHighEntropyValues },
+    };
+
+    jest.spyOn(global, 'navigator', 'get').mockReturnValue(mockNavigator);
 
     const result = await getBitness();
 
     expect(result).toBeUndefined();
     expect(mockGetHighEntropyValues).toHaveBeenCalledWith(['bitness']);
+
+    jest.restoreAllMocks();
   });
 });
