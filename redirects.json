@@ -237,8 +237,8 @@
       "destination": "/:locale/learn/asynchronous-work/event-loop-timers-and-nexttick"
     },
     {
-      "source": "/:locale/guides/dont-block-the-event-loop/",
-      "destination": "/:locale/learn/asynchronous-work/dont-block-the-event-loop/"
+      "source": "/:locale/guides/dont-block-the-event-loop",
+      "destination": "/:locale/learn/asynchronous-work/dont-block-the-event-loop"
     },
     {
       "source": "/:locale/get-involved",
