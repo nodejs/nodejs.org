@@ -17,7 +17,7 @@ const DownloadButton: FC = () => {
   const url = downloadUrlByOS(version, os, bitness);
 
   return (
-    <div className="my-6 flex items-center gap-2">
+    <div className="mb-2 mt-6 flex items-center gap-2">
       <Button href={url} disabled={!version}>
         {t('layouts.download.buttons.prebuilt', {
           version,

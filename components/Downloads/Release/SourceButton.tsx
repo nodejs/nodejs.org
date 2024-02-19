@@ -13,7 +13,7 @@ const SourceButton: FC = () => {
   const t = useTranslations();
 
   return (
-    <div className="my-6 flex items-center gap-2">
+    <div className="mb-2 mt-6 flex items-center gap-2">
       <Button
         href={`https://nodejs.org/dist/${version}/node-${version}.tar.gz`}
         disabled={!version}
