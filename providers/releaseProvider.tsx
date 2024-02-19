@@ -1,6 +1,6 @@
 'use client';
 
-import type { ReactNode, Dispatch } from 'react';
+import type { Dispatch, PropsWithChildren, FC } from 'react';
 import {
   createContext,
   useContext,
@@ -9,26 +9,20 @@ import {
   useReducer,
 } from 'react';
 
+import type {
+  ReleaseDispatchActions,
+  ReleaseAction,
+  ReleaseContextType,
+  ReleaseProviderProps,
+  ReleaseState,
+} from '@/types/release';
 import type { NodeRelease } from '@/types/releases';
 import type { UserOS } from '@/types/userOS';
 
-type ReleaseState = {
-  releases: Array<NodeRelease>;
-  version: string;
-  os: UserOS;
-  bitness: string;
-  platform: string;
-  release: NodeRelease;
-};
-
-type Action =
-  | { type: 'SET_VERSION'; payload: string }
-  | { type: 'SET_OS'; payload: UserOS }
-  | { type: 'SET_BITNESS'; payload: string }
-  | { type: 'SET_PLATFORM'; payload: string }
-  | { type: 'SET_RELEASES'; payload: Array<NodeRelease> };
-
-const releaseReducer = (state: ReleaseState, action: Action): ReleaseState => {
+const releaseReducer = (
+  state: ReleaseState,
+  action: ReleaseAction
+): ReleaseState => {
   switch (action.type) {
     case 'SET_VERSION':
       return {
@@ -61,17 +55,9 @@ const initialState: ReleaseState = {
   release: {} as NodeRelease,
 };
 
-type DispatchActions = {
-  setVersion: (version: string) => void;
-  setOs: (os: UserOS) => void;
-  setBitness: (bitness: string) => void;
-  setPlatform: (platform: string) => void;
-  setReleases: (releases: Array<NodeRelease>) => void;
-};
-
 const createDispatchActions = (
-  dispatch: Dispatch<Action>
-): DispatchActions => ({
+  dispatch: Dispatch<ReleaseAction>
+): ReleaseDispatchActions => ({
   setVersion: version => dispatch({ type: 'SET_VERSION', payload: version }),
   setOs: (os: UserOS) => dispatch({ type: 'SET_OS', payload: os }),
   setBitness: bitness => dispatch({ type: 'SET_BITNESS', payload: bitness }),
@@ -81,22 +67,16 @@ const createDispatchActions = (
     dispatch({ type: 'SET_RELEASES', payload: releases }),
 });
 
-const ReleaseContext = createContext<{
-  state: ReleaseState;
-  dispatch: DispatchActions;
-}>({
+const ReleaseContext = createContext<ReleaseContextType>({
   state: initialState,
   dispatch: createDispatchActions(() => {}),
 });
 
 export const useReleaseContext = () => useContext(ReleaseContext);
 
-const ReleaseProvider = ({
+const ReleaseProvider: FC<PropsWithChildren<ReleaseProviderProps>> = ({
   children,
   releases,
-}: {
-  children: ReactNode;
-  releases: Array<NodeRelease>;
 }) => {
   const [state, dispatch] = useReducer(releaseReducer, initialState);
   const { version } = state;
