@@ -1,7 +1,7 @@
 export interface RSSFeed {
   file: string;
   title: string;
-  blogCategory: string;
+  category: string;
   description?: string;
 }
 

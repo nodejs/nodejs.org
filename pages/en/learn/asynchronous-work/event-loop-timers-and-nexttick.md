@@ -1,9 +1,9 @@
 ---
-title: Event Loop, Timers, and process.nextTick()
+title: The Node.js Event Loop
 layout: learn.hbs
 ---
 
-# Event Loop, Timers, and `process.nextTick()`
+# The Node.js Event Loop
 
 ## What is the Event Loop?
 

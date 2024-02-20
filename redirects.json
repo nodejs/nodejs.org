@@ -225,7 +225,7 @@
       "destination": "/:locale/learn/diagnostics/:path*"
     },
     {
-      "source": "/:locale/guides/abi-stability/",
+      "source": "/:locale/guides/abi-stability",
       "destination": "/:locale/learn/modules/abi-stability"
     },
     {
