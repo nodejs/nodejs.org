@@ -27,14 +27,6 @@ const SideBar: FC<SidebarProps> = ({ groups }) => {
 
   return (
     <aside className={styles.wrapper}>
-      {groups.map(({ groupName, items }) => (
-        <SidebarGroup
-          key={groupName.toString()}
-          groupName={groupName}
-          items={items}
-        />
-      ))}
-
       {selectItems.length > 0 && (
         <WithRouterSelect
           label={t('components.common.sidebar.title')}
@@ -42,6 +34,14 @@ const SideBar: FC<SidebarProps> = ({ groups }) => {
           defaultValue={currentItem?.value}
         />
       )}
+
+      {groups.map(({ groupName, items }) => (
+        <SidebarGroup
+          key={groupName.toString()}
+          groupName={groupName}
+          items={items}
+        />
+      ))}
     </aside>
   );
 };
