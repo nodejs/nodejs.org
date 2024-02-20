@@ -56,10 +56,7 @@
             "theNodejsEventEmitter": "The Node.js Event Emitter",
             "understandingProcessnexttick": "Understanding process.nextTick()",
             "understandingSetimmediate": "Understanding setImmediate()",
-            "theNodejsEventEmitter": "The Node.js Event emitter",
-            "eventLoopTimersAndProcessnexttick": "Event Loop, Timers, and process.nextTick()",
-            "understandingSetimmediate": "Understanding setImmediate()",
-            "dontBlockTheEventLoop": "Don't Block the Event Loop (or the Worker Pool)"
+            "dontBlockTheEventLoop": "Don't Block the Event Loop"
 
           }
         },
