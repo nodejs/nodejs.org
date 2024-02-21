@@ -39,7 +39,10 @@
             "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) and beyond",
             "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
             "nodejsWithTypescript": "Node.js with TypeScript",
-            "nodejsWithWebassembly": "Node.js with WebAssembly"
+            "nodejsWithWebassembly": "Node.js with WebAssembly",
+            "debugging": "Debugging Node.js",
+            "profiling": "Profiling Node.js Applications",
+            "securityBestPractices": "Security Best Practices"
           }
         },
         "asynchronousWork": {
@@ -49,9 +52,10 @@
             "overviewOfBlockingVsNonBlocking": "Overview of Blocking vs Non-Blocking",
             "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asynchronous Programming and Callbacks",
             "discoverJavaScriptTimers": "Discover JavaScript Timers",
+            "theNodejsEventLoop": "The Node.js Event Loop",
+            "theNodejsEventEmitter": "The Node.js Event Emitter",
             "understandingProcessnexttick": "Understanding process.nextTick()",
-            "understandingSetimmediate": "Understanding setImmediate()",
-            "theNodejsEventEmitter": "The Node.js Event emitter"
+            "understandingSetimmediate": "Understanding setImmediate()"
           }
         },
         "manipulatingFiles": {
@@ -62,7 +66,8 @@
             "workingWithFileDescriptorsInNodejs": "Working with file descriptors in Node.js",
             "readingFilesWithNodejs": "Reading files with Node.js",
             "writingFilesWithNodejs": "Writing files with Node.js",
-            "workingWithFoldersInNodejs": "Working with folders in Node.js"
+            "workingWithFoldersInNodejs": "Working with folders in Node.js",
+            "howToWorkWithFileSystems": "How to work with Different Filesystems"
           }
         },
         "commandLine": {
@@ -79,7 +84,19 @@
           "links": {
             "modules": "Modules",
             "publishingNodeApiModules": "How to publish a Node-API package",
-            "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction"
+            "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction",
+            "abiStability": "ABI Stability",
+            "backpressuringInStreams": "Backpressuring in Streams"
+          }
+        },
+        "diagnostics": {
+          "links": {
+            "diagnostics": "Diagnostics",
+            "userJourney": "User Journey",
+            "memory": "Memory",
+            "liveDebugging": "Live Debugging",
+            "poorPerformance": "Poor Performance",
+            "flameGraphs": "Flame Graphs"
           }
         }
       },

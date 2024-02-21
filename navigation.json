@@ -120,6 +120,18 @@
             "nodejsWithWebassembly": {
               "link": "/learn/getting-started/nodejs-with-webassembly",
               "label": "components.navigation.learn.gettingStarted.links.nodejsWithWebassembly"
+            },
+            "debugging": {
+              "link": "/learn/getting-started/debugging",
+              "label": "components.navigation.learn.gettingStarted.links.debugging"
+            },
+            "profiling": {
+              "link": "/learn/getting-started/profiling",
+              "label": "components.navigation.learn.gettingStarted.links.profiling"
+            },
+            "securityBestPractices": {
+              "link": "/learn/getting-started/security-best-practices",
+              "label": "components.navigation.learn.gettingStarted.links.securityBestPractices"
             }
           }
         },
@@ -142,6 +154,14 @@
               "link": "/learn/asynchronous-work/discover-javascript-timers",
               "label": "components.navigation.learn.asynchronousWork.links.discoverJavaScriptTimers"
             },
+            "theNodejsEventLoop": {
+              "link": "/learn/asynchronous-work/event-loop-timers-and-nexttick",
+              "label": "components.navigation.learn.asynchronousWork.links.theNodejsEventLoop"
+            },
+            "theNodejsEventEmitter": {
+              "link": "/learn/asynchronous-work/the-nodejs-event-emitter",
+              "label": "components.navigation.learn.asynchronousWork.links.theNodejsEventEmitter"
+            },
             "understandingProcessnexttick": {
               "link": "/learn/asynchronous-work/understanding-processnexttick",
               "label": "components.navigation.learn.asynchronousWork.links.understandingProcessnexttick"
@@ -149,10 +169,6 @@
             "understandingSetimmediate": {
               "link": "/learn/asynchronous-work/understanding-setimmediate",
               "label": "components.navigation.learn.asynchronousWork.links.understandingSetimmediate"
-            },
-            "theNodejsEventEmitter": {
-              "link": "/learn/asynchronous-work/the-nodejs-event-emitter",
-              "label": "components.navigation.learn.asynchronousWork.links.theNodejsEventEmitter"
             }
           }
         },
@@ -182,6 +198,10 @@
             "workingWithFoldersInNodejs": {
               "link": "/learn/manipulating-files/working-with-folders-in-nodejs",
               "label": "components.navigation.learn.manipulatingFiles.links.workingWithFoldersInNodejs"
+            },
+            "howToWorkWithFileSystems": {
+              "link": "/learn/manipulating-files/working-with-different-filesystems",
+              "label": "components.navigation.learn.manipulatingFiles.links.howToWorkWithFileSystems"
             }
           }
         },
@@ -220,6 +240,39 @@
             "anatomyOfAnHttpTransaction": {
               "link": "/learn/modules/anatomy-of-an-http-transaction",
               "label": "components.navigation.learn.modules.links.anatomyOfAnHttpTransaction"
+            },
+            "abiStability": {
+              "link": "/learn/modules/abi-stability",
+              "label": "components.navigation.learn.modules.links.abiStability"
+            },
+            "backpressuringInStreams": {
+              "link": "/learn/modules/backpressuring-in-streams",
+              "label": "components.navigation.learn.modules.links.backpressuringInStreams"
+            }
+          }
+        },
+        "diagnostics": {
+          "label": "components.navigation.learn.diagnostics.links.diagnostics",
+          "items": {
+            "userJourney": {
+              "link": "/learn/diagnostics/user-journey",
+              "label": "components.navigation.learn.diagnostics.links.userJourney"
+            },
+            "memory": {
+              "link": "/learn/diagnostics/memory",
+              "label": "components.navigation.learn.diagnostics.links.memory"
+            },
+            "liveDebugging": {
+              "link": "/learn/diagnostics/live-debugging",
+              "label": "components.navigation.learn.diagnostics.links.liveDebugging"
+            },
+            "poorPerformance": {
+              "link": "/learn/diagnostics/poor-performance",
+              "label": "components.navigation.learn.diagnostics.links.poorPerformance"
+            },
+            "flameGraphs": {
+              "link": "/learn/diagnostics/flame-graphs",
+              "label": "components.navigation.learn.diagnostics.links.flameGraphs"
             }
           }
         }

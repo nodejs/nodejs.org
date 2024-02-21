@@ -154,13 +154,6 @@
       py-12
       md:px-14
       lg:px-28;
-
-    p {
-      @apply text-lg
-        font-medium
-        text-neutral-800
-        dark:text-neutral-200;
-    }
   }
 }
 

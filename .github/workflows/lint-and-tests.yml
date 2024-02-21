@@ -37,7 +37,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
           egress-policy: audit
 
@@ -66,7 +66,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
           egress-policy: audit
 
@@ -85,7 +85,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
 
       - name: Restore Lint Cache
-        uses: actions/cache/restore@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
+        uses: actions/cache/restore@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
         with:
           path: |
             .turbo/cache
@@ -150,7 +150,7 @@ jobs:
           (github.event_name == 'pull_request_target' &&
             startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
             github.event.pull_request.head.ref != 'chore/crowdin')
-        uses: actions/cache/save@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
+        uses: actions/cache/save@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
         with:
           path: |
             .turbo/cache
@@ -181,7 +181,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
           egress-policy: audit
 
@@ -246,7 +246,7 @@ jobs:
         if: steps.chromatic-deploy.outcome == 'success'
         # This comments the current Jest Coverage Report containing JUnit XML reports
         # and a Code Coverage Summary
-        uses: MishaKav/jest-coverage-comment@f2e8b560403c4fd8234a2b268af3c28ca91e5cc7 # v1.0.24
+        uses: MishaKav/jest-coverage-comment@c2d5cfd6c32e8799c6deb0fd76a8e2d9ad8b35c2 # v1.0.25
         with:
           title: 'Unit Test Coverage Report'
           junitxml-path: ./junit.xml

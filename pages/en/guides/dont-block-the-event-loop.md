@@ -116,7 +116,7 @@ If your callback takes a different number of steps depending on its arguments, t
 
 Example 1: A constant-time callback.
 
-```javascript
+```js
 app.get('/constant-time', (req, res) => {
   res.sendStatus(200);
 });
@@ -124,7 +124,7 @@ app.get('/constant-time', (req, res) => {
 
 Example 2: An `O(n)` callback. This callback will run quickly for small `n` and more slowly for large `n`.
 
-```javascript
+```js
 app.get('/countToN', (req, res) => {
   let n = req.query.n;
 
@@ -139,7 +139,7 @@ app.get('/countToN', (req, res) => {
 
 Example 3: An `O(n^2)` callback. This callback will still run quickly for small `n`, but for large `n` it will run much more slowly than the previous `O(n)` example.
 
-```javascript
+```js
 app.get('/countToN2', (req, res) => {
   let n = req.query.n;
 
@@ -191,7 +191,7 @@ The exponential behavior is triggered when there is a mismatch but Node.js can't
 
 Here is an example vulnerable regexp exposing its server to REDOS:
 
-```javascript
+```js
 app.get('/redos-me', (req, res) => {
   let filePath = req.query.filePath;
 
@@ -269,7 +269,7 @@ If your server manipulates JSON objects, particularly those from a client, you s
 
 Example: JSON blocking. We create an object `obj` of size 2^21 and `JSON.stringify` it, run `indexOf` on the string, and then JSON.parse it. The `JSON.stringify`'d string is 50MB. It takes 0.7 seconds to stringify the object, 0.03 seconds to indexOf on the 50MB string, and 1.3 seconds to parse the string.
 
-```javascript
+```js
 var obj = { a: 1 };
 var niter = 20;
 
@@ -314,7 +314,7 @@ For a simple example, suppose you want to compute the average of the numbers `1`
 
 Example 1: Un-partitioned average, costs `O(n)`
 
-```javascript
+```js
 for (let i = 0; i < n; i++) sum += i;
 let avg = sum / n;
 console.log('avg: ' + avg);
@@ -322,7 +322,7 @@ console.log('avg: ' + avg);
 
 Example 2: Partitioned average, each of the `n` asynchronous steps costs `O(1)`.
 
-```javascript
+```js
 function asyncAvg(n, avgCB) {
   // Save ongoing sum in JS closure.
   var sum = 0;

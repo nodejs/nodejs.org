@@ -22,7 +22,7 @@ const WithNavBar: FC = () => {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
 
   return (
-    <>
+    <div>
       <WithBanner section="index" />
 
       <NavBar
@@ -37,7 +37,7 @@ const WithNavBar: FC = () => {
           text: label,
         }))}
       />
-    </>
+    </div>
   );
 };
 
