@@ -248,6 +248,10 @@
             "abiStability": {
               "link": "/learn/modules/abi-stability",
               "label": "components.navigation.learn.modules.links.abiStability"
+            },
+            "backpressuringInStreams": {
+              "link": "/learn/modules/backpressuring-in-streams",
+              "label": "components.navigation.learn.modules.links.backpressuringInStreams"
             }
           }
         },
