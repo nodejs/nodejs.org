@@ -4,7 +4,7 @@ import type { FC } from 'react';
 
 import { useReleaseContext } from '@/providers/releaseProvider';
 
-const ReleaseNpm: FC = () => {
+const NpmVersion: FC = () => {
   const {
     state: {
       release: { npm },
@@ -14,4 +14,4 @@ const ReleaseNpm: FC = () => {
   return <>{npm}</>;
 };
 
-export default ReleaseNpm;
+export default NpmVersion;

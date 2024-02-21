@@ -1,39 +1,67 @@
 import {
-  getBitnessItems,
   getDownloadCategory,
   mapCategoriesToTabs,
+  formatDropdownItems,
 } from '@/util/downloadUtils';
 
-describe('getBitnessItems', () => {
-  it('should return correct bitness items for Windows with ARM64', () => {
-    const result = getBitnessItems('WIN', true);
+describe('formatDropdownItems', () => {
+  it('should format dropdown items correctly', () => {
+    const items = [
+      { value: 'item1', label: 'Item 1' },
+      { value: 'item2', label: 'Item 2' },
+    ];
+    const disabledItems = ['item2'];
+    const icons = { item1: 'icon' };
+    const defaultIcon = 'defaultIcon';
+
+    const result = formatDropdownItems({
+      items: items,
+      disabledItems: disabledItems,
+      icons: icons,
+      defaultIcon: defaultIcon,
+    });
 
     expect(result).toEqual([
-      { label: '32-bit', value: '86' },
-      { label: '64-bit', value: '64' },
-      { label: 'ARM64', value: 'arm64', disabled: false },
+      { value: 'item1', label: 'Item 1', disabled: false, iconImage: 'icon' },
+      {
+        value: 'item2',
+        label: 'Item 2',
+        disabled: true,
+        iconImage: 'defaultIcon',
+      },
     ]);
   });
 
-  it('should return correct bitness items for Windows without ARM64', () => {
-    const result = getBitnessItems('WIN', false);
+  it('should mark all items as disabled when all items are in the disabledItems list', () => {
+    const items = [
+      { value: 'item1', label: 'Item 1' },
+      { value: 'item2', label: 'Item 2' },
+    ];
+    const disabledItems = ['item1', 'item2'];
+
+    const result = formatDropdownItems({
+      items: items,
+      disabledItems: disabledItems,
+    });
 
     expect(result).toEqual([
-      { label: '32-bit', value: '86' },
-      { label: '64-bit', value: '64' },
-      { label: 'ARM64', value: 'arm64', disabled: true },
+      { value: 'item1', label: 'Item 1', disabled: true },
+      { value: 'item2', label: 'Item 2', disabled: true },
     ]);
   });
 
-  it('should return correct bitness items for MacOs', () => {
-    const result = getBitnessItems('MAC', false);
+  it('should not mark any items as disabled when disabledItems list is empty', () => {
+    const items = [
+      { value: 'item1', label: 'Item 1' },
+      { value: 'item2', label: 'Item 2' },
+    ];
 
-    expect(result).toEqual([{ label: '64-bit / ARM64', value: '64' }]);
-  });
+    const result = formatDropdownItems({ items: items });
 
-  it('should return empty array for Linux and Other', () => {
-    expect(getBitnessItems('LINUX', false)).toEqual([]);
-    expect(getBitnessItems('OTHER', false)).toEqual([]);
+    expect(result).toEqual([
+      { value: 'item1', label: 'Item 1', disabled: false },
+      { value: 'item2', label: 'Item 2', disabled: false },
+    ]);
   });
 });
 

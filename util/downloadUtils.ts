@@ -4,44 +4,86 @@ import type { UserOS } from '@/types/userOS';
 // A utility enum to help convert `userOs` data type to user-readable format
 export enum OperatingSystem {
   WIN = 'Windows',
-  MAC = 'MacOs',
+  MAC = 'MacOS',
   LINUX = 'Linux',
   OTHER = 'Other',
 }
 
-// A utility for creating and filtering bitness items updates the diabled status
-// based on `hasWindowsArm64` status.
-// @todo In case this method needs more than one filter, an exclude method can
-// be written
-export const getBitnessItems = (os: UserOS, hasWindowsArm64: boolean) => {
-  const bitnessMap = {
-    WIN: [
-      {
-        label: '32-bit',
-        value: '86',
-      },
-      {
-        label: '64-bit',
-        value: '64',
-      },
-      {
-        label: 'ARM64',
-        value: 'arm64',
-        disabled: !hasWindowsArm64,
-      },
-    ],
-    MAC: [
-      {
-        label: '64-bit / ARM64',
-        value: '64',
-      },
-    ],
-    LINUX: [],
-    OTHER: [],
-  };
+export const operatingSystemItems = [
+  {
+    label: OperatingSystem.WIN,
+    value: 'WIN' as UserOS,
+  },
+  {
+    label: OperatingSystem.MAC,
+    value: 'MAC' as UserOS,
+  },
+  {
+    label: OperatingSystem.LINUX,
+    value: 'LINUX' as UserOS,
+  },
+];
 
-  return bitnessMap[os];
+export const platformItems = [
+  {
+    label: 'NVM',
+    value: 'NVM',
+  },
+  {
+    label: 'Brew',
+    value: 'BREW',
+  },
+  {
+    label: 'fvm',
+    value: 'FWM',
+  },
+];
+
+export const bitnessItems = {
+  WIN: [
+    {
+      label: '32-bit',
+      value: '86',
+    },
+    {
+      label: '64-bit',
+      value: '64',
+    },
+    {
+      label: 'ARM64',
+      value: 'arm64',
+    },
+  ],
+  MAC: [
+    {
+      label: '64-bit / ARM64',
+      value: '64',
+    },
+  ],
+  LINUX: [],
+  OTHER: [],
 };
+
+type formatDropdownItemsType = {
+  items: Array<{ label: string; value: string }>;
+  disabledItems?: Array<string>;
+  icons?: Record<string, JSX.Element>;
+  defaultIcon?: JSX.Element;
+};
+
+// Formats the dropdown items to be used in the `Select` component in the
+// download page and adds the icons, and disabled status to the dropdown items.
+export const formatDropdownItems = ({
+  items,
+  disabledItems = [],
+  icons = {},
+  defaultIcon,
+}: formatDropdownItemsType) =>
+  items.map(item => ({
+    ...item,
+    disabled: disabledItems.includes(item.value),
+    iconImage: icons[item.value] || defaultIcon,
+  }));
 
 // Returns the page, category and subCategoy information to be used in the page
 // from the pathname information on the download pages.

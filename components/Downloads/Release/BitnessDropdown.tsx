@@ -7,7 +7,7 @@ import semVer from 'semver';
 import Select from '@/components/Common/Select';
 import { useDetectOS } from '@/hooks/react-client';
 import { useReleaseContext } from '@/providers/releaseProvider';
-import { getBitnessItems } from '@/util/downloadUtils';
+import { bitnessItems, formatDropdownItems } from '@/util/downloadUtils';
 
 const BitnessDropdown: FC = () => {
   const { bitness: userBitness } = useDetectOS();
@@ -24,14 +24,13 @@ const BitnessDropdown: FC = () => {
 
   return (
     <Select
-      values={[
-        {
-          items: getBitnessItems(os, hasWindowsArm64),
-        },
-      ]}
+      values={formatDropdownItems({
+        items: bitnessItems[os],
+        disabledItems: !hasWindowsArm64 && os === 'WIN' ? ['arm64'] : [],
+      })}
       defaultValue={String(bitness)}
       onChange={setBitness}
-      inline
+      inline={true}
       className="min-w-20"
     />
   );
