@@ -201,6 +201,10 @@
       "destination": "/:locale/learn/modules/anatomy-of-an-http-transaction"
     },
     {
+      "source": "/:locale/guides/backpressuring-in-streams/",
+      "destination": "/:locale/learn/modules/backpressuring-in-streams/"
+    },
+    {
       "source": "/:locale/guides/publishing-napi-modules",
       "destination": "/:locale/learn/modules/publishing-node-api-modules"
     },
