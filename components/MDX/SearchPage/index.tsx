@@ -50,7 +50,7 @@ const SearchPage: FC = () => {
       })
       .then(results => {
         setSearchResults(results);
-        setHits(hits => [...hits, ...results.hits]);
+        setHits(hits => [...hits, ...(results?.hits ?? [])]);
       })
       .catch(console.log);
   };
