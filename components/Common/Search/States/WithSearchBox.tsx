@@ -119,11 +119,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
 
   return (
     <div className={styles.searchBoxModalContainer}>
-      <div
-        className={styles.searchBoxModalPanel}
-        ref={searchBoxRef}
-        data-test="1"
-      >
+      <div className={styles.searchBoxModalPanel} ref={searchBoxRef}>
         <div className={styles.searchBoxInnerPanel}>
           <div className={styles.searchBoxInputContainer}>
             <button
