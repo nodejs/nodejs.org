@@ -187,6 +187,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
                 searchResults={searchResults}
                 searchTerm={searchTerm}
                 selectedFacetName={selectedFacetName}
+                onSeeAllClick={onClose}
               />
             ) : null}
           </div>

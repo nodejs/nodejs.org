@@ -14,6 +14,7 @@ type SeeAllProps = {
   searchResults: SearchResults;
   searchTerm: string;
   selectedFacetName: string;
+  onSeeAllClick: () => void;
 };
 
 export const WithAllResults: FC<SeeAllProps> = props => {
@@ -31,7 +32,7 @@ export const WithAllResults: FC<SeeAllProps> = props => {
 
   return (
     <div className={styles.seeAllFulltextSearchResults}>
-      <NextLink href={allResultsURL}>
+      <NextLink href={allResultsURL} onClick={props.onSeeAllClick}>
         {t('components.search.seeAll.text', { count: resultsCount })}
       </NextLink>
     </div>

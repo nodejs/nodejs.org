@@ -3,8 +3,10 @@
 import type { Nullable, Results, Result } from '@orama/orama';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { useEffect, useState, type FC } from 'react';
 
+import { WithPoweredBy } from '@/components/Common/Search/States/WithPoweredBy';
 import type { SearchDoc } from '@/components/Common/Search/States/WithSearchBox';
 import { pathToBreadcrumbs } from '@/components/Common/Search/utils';
 import { useBottomScrollListener } from '@/hooks/react-client';
@@ -17,6 +19,7 @@ type SearchResults = Nullable<Results<SearchDoc>>;
 type Hit = Result<SearchDoc>;
 
 const SearchPage: FC = () => {
+  const t = useTranslations();
   const searchParams = useSearchParams();
   const [searchResults, setSearchResults] = useState<SearchResults>(null);
   const [hits, setHits] = useState<Array<Hit>>([]);
@@ -77,7 +80,10 @@ const SearchPage: FC = () => {
   return (
     <div className={styles.searchPageContainer}>
       <div className={styles.searchTermContainer}>
-        <h1> {searchTerm} </h1>
+        <h1>
+          {t('components.search.searchPage.title', { query: searchTerm })}
+        </h1>
+        <WithPoweredBy />
       </div>
 
       <div className={styles.searchResultsColumns}>

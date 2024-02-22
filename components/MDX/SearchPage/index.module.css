@@ -8,7 +8,11 @@
 
 .searchTermContainer {
   @apply relative
+    flex
     w-full
+    flex-col
+    justify-start
+    gap-1
     px-6
     text-left
     capitalize

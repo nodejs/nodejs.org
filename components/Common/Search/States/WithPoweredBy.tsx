@@ -6,8 +6,14 @@ import styles from './index.module.css';
 
 export const WithPoweredBy = () => {
   const t = useTranslations();
-  const { theme } = useTheme();
-  const logoURL = `https://website-assets.oramasearch.com/orama-when-${theme}.svg`;
+  const { resolvedTheme } = useTheme();
+  const logoURL = `https://website-assets.oramasearch.com/orama-when-${resolvedTheme}.svg`;
+
+  // If the theme is not resolved, we don't want to render the component.
+  // React will re-render this on the client when the theme is resolved.
+  if (typeof resolvedTheme === 'undefined') {
+    return null;
+  }
 
   return (
     <div className={styles.poweredBy}>

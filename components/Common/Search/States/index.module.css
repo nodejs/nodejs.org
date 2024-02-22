@@ -158,9 +158,6 @@
 
 .poweredBy {
   @apply flex
-    w-full
-    items-center
-    justify-end
     text-xs
     text-neutral-950
     dark:text-neutral-200;
@@ -213,8 +210,9 @@
 }
 
 .fulltextSearchFooter {
-  @apply relative
+  @apply flex
     w-full
+    justify-end
     rounded-b-xl
     border-t
     border-neutral-300

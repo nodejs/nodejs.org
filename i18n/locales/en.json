@@ -219,6 +219,9 @@
       },
       "emptyState": {
         "text": "Search something..."
+      },
+      "searchPage": {
+        "title": "Search results for: {query}"
       }
     }
   },
