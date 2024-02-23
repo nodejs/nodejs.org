@@ -11,7 +11,6 @@ import LegacyLearnLayout from '@/layouts/LearnLayout';
 import AboutLayout from '@/layouts/New/About';
 import BlogLayout from '@/layouts/New/Blog';
 import DefaultLayout from '@/layouts/New/Default';
-import DocsLayout from '@/layouts/New/Docs';
 import HomeLayout from '@/layouts/New/Home';
 import LearnLayout from '@/layouts/New/Learn';
 import PostLayout from '@/layouts/New/Post';
@@ -33,7 +32,6 @@ const legacyLayouts = {
 /** all the currently available layouts from website redesign */
 const redesignLayouts = {
   'about.hbs': AboutLayout,
-  'docs.hbs': DocsLayout,
   'home.hbs': HomeLayout,
   'learn.hbs': LearnLayout,
   'page.hbs': DefaultLayout,

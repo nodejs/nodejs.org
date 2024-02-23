@@ -1,7 +1,6 @@
 // @TODO: These are the Website Redesign Layouts
 export type Layouts =
   | 'about.hbs'
-  | 'docs.hbs'
   | 'home.hbs'
   | 'learn.hbs'
   | 'page.hbs'

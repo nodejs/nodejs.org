@@ -12,10 +12,6 @@
       "link": "/download",
       "label": "components.header.links.download"
     },
-    "guides": {
-      "link": "/guides",
-      "label": "components.header.links.guides"
-    },
     "blog": {
       "link": "/blog",
       "label": "components.header.links.blog"
