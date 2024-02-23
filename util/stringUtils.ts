@@ -12,10 +12,12 @@ export const parseRichTextIntoPlainText = (richText: string) =>
     // replaces Markdown lists with their content
     .replace(/^[*-] (.*)$/gm, '$1')
     // replaces Markdown underscore, bold and italic with their content
-    .replace(/[_*]{1,2}(.*)[_*]{1,2}/gm, '$1')
+    .replace(/(\*\*|\*|__|_)(.*?)\1/gm, '$2')
     // replaces Markdown multiline codeblocks with their content
     .replace(/```.+?```/gms, '')
-    // replaces emppty lines or lines just with spaces with an empty string
+    // replaces empty lines or lines just with spaces with an empty string
     .replace(/^\s*\n/gm, '')
     // replaces leading and trailing spaces from each line with an empty string
-    .replace(/^[ ]+|[ ]+$/gm, '');
+    .replace(/^[ ]+|[ ]+$/gm, '')
+    // replaces leading numbers and dots from each line with an empty string
+    .replace(/^\d+\.\s/gm, '');

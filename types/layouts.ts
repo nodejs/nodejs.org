@@ -5,7 +5,8 @@ export type Layouts =
   | 'learn.hbs'
   | 'page.hbs'
   | 'blog-category.hbs'
-  | 'blog-post.hbs';
+  | 'blog-post.hbs'
+  | 'search.hbs';
 
 // @TODO: These are legacy layouts that are going to be replaced with the `nodejs/nodejs.dev` Layouts in the future
 export type LegacyLayouts =

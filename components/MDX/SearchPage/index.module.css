@@ -1,0 +1,82 @@
+.searchPageContainer {
+  @apply mx-auto
+    w-full
+    px-4
+    py-14
+    md:max-w-screen-xl;
+}
+
+.searchTermContainer {
+  @apply relative
+    flex
+    w-full
+    flex-col
+    justify-start
+    gap-1
+    px-6
+    text-left
+    md:px-0;
+}
+
+.searchResultsColumns {
+  @apply relative
+    mt-12
+    grid
+    gap-4
+    md:grid-cols-[15%_1fr];
+}
+
+.facetsColumn {
+  @apply sticky
+    top-0
+    flex
+    gap-4
+    overflow-x-auto
+    px-6
+    capitalize
+    md:flex-col
+    md:px-0;
+}
+
+.facetCount {
+  @apply ml-2
+    text-sm
+    text-neutral-500
+    dark:text-neutral-800;
+}
+
+.resultsColumn {
+  @apply flex
+    flex-col
+    gap-4
+    px-2;
+}
+
+.searchResult {
+  @apply flex
+    w-full
+    flex-col
+    rounded-lg
+    px-4
+    py-2
+    hover:bg-neutral-100
+    dark:hover:bg-neutral-900;
+}
+
+.searchResultTitle {
+  @apply text-lg;
+}
+
+.searchResultPageTitle {
+  @apply text-sm
+    capitalize
+    text-neutral-500
+    dark:text-neutral-600;
+}
+
+.searchResultSnippet {
+  @apply my-2
+    text-sm
+    text-neutral-500
+    dark:text-neutral-400;
+}
