@@ -221,7 +221,7 @@
         "text": "Search something..."
       },
       "searchPage": {
-        "title": "Search results for: {query}"
+        "title": "You're searching: {query}"
       }
     }
   },
