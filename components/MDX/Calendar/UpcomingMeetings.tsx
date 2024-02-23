@@ -11,7 +11,7 @@ import styles from './calendar.module.css';
 
 type GroupedEntries = Record<string, Array<CalendarEvent>>;
 
-const UpcomingEvents: FC = async () => {
+const UpcomingMeetings: FC = async () => {
   const events = await getCalendarEvents(CALENDAR_NODEJS_ID);
 
   const groupedEntries = events.filter(getZoomLink).reduce((acc, event) => {
@@ -51,4 +51,4 @@ const UpcomingEvents: FC = async () => {
   ));
 };
 
-export default UpcomingEvents;
+export default UpcomingMeetings;

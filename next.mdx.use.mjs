@@ -7,8 +7,8 @@ import DownloadLink from './components/Downloads/DownloadLink';
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
 import HomeDownloadButton from './components/Home/HomeDownloadButton';
 import Link from './components/Link';
-import UpcomingEvents from './components/MDX/Calendar/UpcomingEvents';
-import UpcomingSummits from './components/MDX/Calendar/UpcomingSummits';
+import RecentEventPosts from './components/MDX/Calendar/RecentEventPosts';
+import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
 import MDXCodeBox from './components/MDX/CodeBox';
 import MDXCodeTabs from './components/MDX/CodeTabs';
 import WithBadge from './components/withBadge';
@@ -40,10 +40,10 @@ export const mdxComponents = {
   DownloadLink: DownloadLink,
   // Renders a Button Component for `button` tags
   Button: Button,
-  // Renders an container for Upcoming Node.js Summits
-  UpcomingSummits: UpcomingSummits,
-  // Renders an container for Upcoming Node.js Events
-  UpcomingEvents: UpcomingEvents,
+  // Renders an container for Recent Event Posts
+  RecentEventPosts: RecentEventPosts,
+  // Renders an container for Upcoming Node.js Meetings
+  UpcomingMeetings: UpcomingMeetings,
 };
 
 /**
