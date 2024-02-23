@@ -39,6 +39,11 @@ const SearchPage: FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchSection, searchTerm]);
 
+  const uniqueHits = (newHits: Array<Hit>) =>
+    newHits.filter(
+      (obj, index) => newHits.findIndex(item => item.id === obj.id) === index
+    );
+
   const search = (resultsOffset = 0) => {
     oramaSearch({
       ...DEFAULT_ORAMA_QUERY_PARAMS,
@@ -50,7 +55,7 @@ const SearchPage: FC = () => {
     })
       .then(results => {
         setSearchResults(results);
-        setHits(() => results?.hits ?? []);
+        setHits(hits => uniqueHits([...hits, ...(results?.hits ?? [])]));
       })
       .catch();
   };
