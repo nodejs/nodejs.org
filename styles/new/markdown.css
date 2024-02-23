@@ -90,6 +90,10 @@ main {
       leading-6
       text-neutral-900
       dark:text-white;
+
+    li div:has(> pre) {
+      @apply !my-1;
+    }
   }
 
   ol {
@@ -98,6 +102,10 @@ main {
       leading-6
       text-neutral-900
       dark:text-white;
+
+    li div:has(> pre) {
+      @apply !my-1;
+    }
   }
 
   table {
