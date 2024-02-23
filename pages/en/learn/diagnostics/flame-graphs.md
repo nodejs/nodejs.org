@@ -34,7 +34,7 @@ Now let's get to work.
 2. Try running `perf` - it might complain about missing kernel modules, install them too
 3. Run node with perf enabled (see [perf output issues](#perf-output-issues) for tips specific to Node.js versions)
 
-   ```bash
+   ```
    perf record -e cycles:u -g -- node --perf-basic-prof app.js
    ```
 

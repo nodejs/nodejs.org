@@ -11,6 +11,7 @@ import RecentEventPosts from './components/MDX/Calendar/RecentEventPosts';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
 import MDXCodeBox from './components/MDX/CodeBox';
 import MDXCodeTabs from './components/MDX/CodeTabs';
+import SearchPage from './components/MDX/SearchPage';
 import WithBadge from './components/withBadge';
 import WithBanner from './components/withBanner';
 import WithNodeRelease from './components/withNodeRelease';
@@ -40,6 +41,8 @@ export const mdxComponents = {
   DownloadLink: DownloadLink,
   // Renders a Button Component for `button` tags
   Button: Button,
+  // Renders a Search Page
+  SearchPage: SearchPage,  
   // Renders an container for Recent Event Posts
   RecentEventPosts: RecentEventPosts,
   // Renders an container for Upcoming Node.js Meetings

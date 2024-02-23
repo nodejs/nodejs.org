@@ -86,7 +86,7 @@
     },
     {
       "source": "/guides",
-      "destination": "/en/guides"
+      "destination": "/en/learn"
     },
     {
       "source": "/about",
@@ -173,12 +173,16 @@
       "destination": "/:locale/learn/getting-started/ecmascript-2015-es6-and-beyond"
     },
     {
+      "source": "/:locale/guides",
+      "destination": "/:locale/learn"
+    },
+    {
       "source": "/:locale/docs/guides",
-      "destination": "/:locale/guides"
+      "destination": "/:locale/learn"
     },
     {
       "source": "/:locale/docs/guides/:path*",
-      "destination": "/:locale/guides/:path*"
+      "destination": "/:locale/learn/:path*"
     },
     {
       "source": "/:locale/guides/getting-started-guide",
@@ -239,6 +243,10 @@
     {
       "source": "/:locale/guides/event-loop-timers-and-nexttick",
       "destination": "/:locale/learn/asynchronous-work/event-loop-timers-and-nexttick"
+    },
+    {
+      "source": "/:locale/guides/dont-block-the-event-loop",
+      "destination": "/:locale/learn/asynchronous-work/dont-block-the-event-loop"
     },
     {
       "source": "/:locale/get-involved",

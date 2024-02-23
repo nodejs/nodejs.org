@@ -12,10 +12,6 @@
       "link": "/download",
       "label": "components.header.links.download"
     },
-    "guides": {
-      "link": "/guides",
-      "label": "components.header.links.guides"
-    },
     "blog": {
       "link": "/blog",
       "label": "components.header.links.blog"
@@ -169,6 +165,10 @@
             "understandingSetimmediate": {
               "link": "/learn/asynchronous-work/understanding-setimmediate",
               "label": "components.navigation.learn.asynchronousWork.links.understandingSetimmediate"
+            },
+            "dontBlockTheEventLoop": {
+              "link": "/learn/asynchronous-work/dont-block-the-event-loop",
+              "label": "components.navigation.learn.asynchronousWork.links.dontBlockTheEventLoop"
             }
           }
         },

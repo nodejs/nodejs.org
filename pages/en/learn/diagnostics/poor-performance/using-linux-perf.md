@@ -72,16 +72,16 @@ visualization.
 
 ![Example nodejs flamegraph](https://user-images.githubusercontent.com/26234614/129488674-8fc80fd5-549e-4a80-8ce2-2ba6be20f8e8.png)
 
-To generate a flamegraph from this result, follow [this tutorial](/guides/diagnostics-flamegraph/#create-a-flame-graph-with-system-perf-tools)
+To generate a flamegraph from this result, follow [this tutorial](/learn/diagnostics/flame-graphs#create-a-flame-graph-with-system-perf-tools)
 from step 6.
 
 Because `perf` output is not a Node.js specific tool, it might have issues with how JavaScript code is optimized in
-Node.js. See [perf output issues](/guides/diagnostics-flamegraph/#perf-output-issues) for a
+Node.js. See [perf output issues](/learn/diagnostics/flame-graphs#perf-output-issues) for a
 further reference.
 
 ## Useful Links
 
-- /guides/diagnostics-flamegraph/
+- /learn/diagnostics/flame-graphs
 - https://www.brendangregg.com/blog/2014-09-17/node-flame-graphs-on-linux.html
 - https://perf.wiki.kernel.org/index.php/Main_Page
 - https://blog.rafaelgss.com.br/node-cpu-profiler
