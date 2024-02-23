@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import type { SearchDoc } from '@/components/Common/Search/States/WithSearchBox';
+import type { SearchDoc } from '@/types';
 
 import styles from './index.module.css';
 

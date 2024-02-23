@@ -32,7 +32,7 @@
     top-0
     flex
     gap-4
-    overflow-x-scroll
+    overflow-x-auto
     px-6
     capitalize
     md:flex-col
@@ -70,6 +70,7 @@
 
 .searchResultPageTitle {
   @apply text-sm
+    capitalize
     text-neutral-500
     dark:text-neutral-600;
 }

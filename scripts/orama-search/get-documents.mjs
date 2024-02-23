@@ -1,12 +1,19 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import zlib from 'node:zlib';
 
 import { slug } from 'github-slugger';
 
-const dataBasePath = new URL(
-  '../../.next/server/app/en/next-data',
-  import.meta.url
-).pathname;
+import { getRelativePath } from '../../next.helpers.mjs';
+
+const currentRoot = getRelativePath(import.meta.url);
+const dataBasePath = join(currentRoot, '../../.next/server/app/en/next-data');
+
+if (!existsSync(dataBasePath)) {
+  throw new Error(
+    'The data directory does not exist. Please run `npm run build` first.'
+  );
+}
 
 const nextPageData = readFileSync(`${dataBasePath}/page-data.body`, 'utf-8');
 const nextAPIPageData = readFileSync(`${dataBasePath}/api-data.body`, 'utf-8');
@@ -26,6 +33,7 @@ const splitIntoSections = markdownContent => {
         pageSectionTitle: line.replace(/^#{1,6}\s*/, ''),
         pageSectionContent: [],
       };
+
       sections.push(section);
     } else if (section) {
       section.pageSectionContent.push(line);
@@ -52,6 +60,7 @@ export const siteContent = [...pageData, ...apiData]
     const markdownContent = zlib
       .inflateSync(Buffer.from(content, 'base64'))
       .toString('utf-8');
+
     const siteSection = pathname.split('/').shift();
     const subSections = splitIntoSections(markdownContent);
 

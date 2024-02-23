@@ -75,14 +75,14 @@
 
 .fulltextResultsContainer {
   @apply h-80
-    overflow-scroll
+    overflow-auto
     md:px-4;
 }
 
 .fulltextSearchResult {
   @apply flex
     flex-col
-    rounded-t-md
+    rounded-md
     p-2
     text-left
     text-sm
@@ -108,7 +108,7 @@
     mt-2
     flex
     gap-2
-    overflow-x-scroll
+    overflow-x-auto
     p-2
     text-xs
     font-semibold

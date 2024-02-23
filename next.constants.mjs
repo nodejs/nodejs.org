@@ -168,10 +168,12 @@ export const ORAMA_CLOUD_HEARTBEAT_INTERVAL = 3500;
 /**
  * The default Orama Cloud endpoint to use when searching with Orama Cloud.
  */
-export const ORAMA_CLOUD_ENDPOINT = process.env.NEXT_PUBLIC_ORAMA_ENDPOINT;
+export const ORAMA_CLOUD_ENDPOINT =
+  process.env.NEXT_PUBLIC_ORAMA_ENDPOINT ||
+  'https://cloud.orama.run/v1/indexes/nodejs-org-dev-hhqrzv';
 
 /**
  * The default Orama Cloud API Key to use when searching with Orama Cloud.
  * This is a public API key and can be shared publicly on the frontend.
  */
-export const ORAMA_CLOUD_API_KEY = process.env.NEXT_PUBLIC_ORAMA_API_KEY;
+export const ORAMA_CLOUD_API_KEY = process.env.NEXT_PUBLIC_ORAMA_API_KEY || '';

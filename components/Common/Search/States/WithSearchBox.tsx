@@ -6,8 +6,8 @@ import {
 } from '@heroicons/react/24/outline';
 import type { Results, Nullable } from '@orama/orama';
 import classNames from 'classnames';
-import { useRouter } from 'next/navigation';
-import { useState, useRef, type FC, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import type { FC } from 'react';
 
 import styles from '@/components/Common/Search/States/index.module.css';
 import { WithAllResults } from '@/components/Common/Search/States/WithAllResults';
@@ -17,17 +17,11 @@ import { WithNoResults } from '@/components/Common/Search/States/WithNoResults';
 import { WithPoweredBy } from '@/components/Common/Search/States/WithPoweredBy';
 import { WithSearchResult } from '@/components/Common/Search/States/WithSearchResult';
 import { useClickOutside } from '@/hooks/react-client';
+import { useRouter } from '@/navigation.mjs';
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '@/next.constants.mjs';
-import { orama, getInitialFacets } from '@/next.orama.mjs';
-
-export type SearchDoc = {
-  id: string;
-  path: string;
-  pageTitle: string;
-  siteSection: string;
-  pageSectionTitle: string;
-  pageSectionContent: string;
-};
+import { search as oramaSearch, getInitialFacets } from '@/next.orama.mjs';
+import type { SearchDoc } from '@/types';
+import { debounce } from '@/util/debounce';
 
 type Facets = { [key: string]: number };
 
@@ -45,6 +39,24 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
   const searchInputRef = useRef<HTMLInputElement>(null);
   const searchBoxRef = useRef<HTMLDivElement>(null);
 
+  const search = (term: string) => {
+    oramaSearch({
+      term,
+      ...DEFAULT_ORAMA_QUERY_PARAMS,
+      mode: 'fulltext',
+      returning: [
+        'path',
+        'pageSectionTitle',
+        'pageTitle',
+        'path',
+        'siteSection',
+      ],
+      ...filterBySection(),
+    })
+      .then(setSearchResults)
+      .catch(setSearchError);
+  };
+
   useClickOutside(searchBoxRef, () => {
     reset();
     onClose();
@@ -52,33 +64,18 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
 
   useEffect(() => {
     searchInputRef.current?.focus();
+
     getInitialFacets().then(setSearchResults).catch(setSearchError);
 
-    return () => reset();
+    return reset;
   }, []);
 
-  useEffect(() => {
-    search(searchTerm);
-  }, [searchTerm, selectedFacet]);
-
-  const search = (term: string) => {
-    orama
-      .search({
-        term,
-        ...DEFAULT_ORAMA_QUERY_PARAMS,
-        mode: 'fulltext',
-        returning: [
-          'path',
-          'pageSectionTitle',
-          'pageTitle',
-          'path',
-          'siteSection',
-        ],
-        ...filterBySection(),
-      })
-      .then(setSearchResults)
-      .catch(setSearchError);
-  };
+  useEffect(
+    () => debounce(() => search(searchTerm), 1000),
+    // we don't need to care about memoization of search function
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [searchTerm, selectedFacet]
+  );
 
   const reset = () => {
     setSearchTerm('');
@@ -88,26 +85,18 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push(`/en/search?q=${searchTerm}&section=${selectedFacetName}`);
+    router.push(`/search?q=${searchTerm}&section=${selectedFacetName}`);
     onClose();
   };
 
-  const changeFacet = (idx: number) => {
-    setSelectedFacet(idx);
-  };
+  const changeFacet = (idx: number) => setSelectedFacet(idx);
 
   const filterBySection = () => {
     if (selectedFacet === 0) {
       return {};
     }
 
-    return {
-      where: {
-        siteSection: {
-          eq: selectedFacetName,
-        },
-      },
-    };
+    return { where: { siteSection: { eq: selectedFacetName } } };
   };
 
   const facets: Facets = {
@@ -128,9 +117,11 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
             >
               <ChevronLeftIcon className={styles.searchBoxBackIcon} />
             </button>
+
             <MagnifyingGlassIcon
               className={styles.searchBoxMagnifyingGlassIcon}
             />
+
             <form onSubmit={onSubmit}>
               <input
                 ref={searchInputRef}
@@ -160,33 +151,38 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
           </div>
 
           <div className={styles.fulltextResultsContainer}>
-            {searchError ? <WithError /> : null}
+            {searchError && <WithError />}
 
-            {searchTerm ? (
-              searchResults?.count ? (
-                searchResults?.hits.map(hit => (
-                  <WithSearchResult
-                    key={hit.id}
-                    hit={hit}
+            {!searchError && !searchTerm && <WithEmptyState />}
+
+            {!searchError && searchTerm && (
+              <>
+                {searchResults &&
+                  searchResults.count > 0 &&
+                  searchResults.hits.map(hit => (
+                    <WithSearchResult
+                      key={hit.id}
+                      hit={hit}
+                      searchTerm={searchTerm}
+                    />
+                  ))}
+
+                {searchResults && searchResults.count === 0 && (
+                  <WithNoResults searchTerm={searchTerm} />
+                )}
+
+                {searchResults && searchResults.count > 8 && (
+                  <WithAllResults
+                    searchResults={searchResults}
                     searchTerm={searchTerm}
+                    selectedFacetName={selectedFacetName}
+                    onSeeAllClick={onClose}
                   />
-                ))
-              ) : (
-                <WithNoResults searchTerm={searchTerm} />
-              )
-            ) : (
-              <WithEmptyState />
+                )}
+              </>
             )}
-
-            {searchResults?.count && searchResults?.count > 8 && searchTerm ? (
-              <WithAllResults
-                searchResults={searchResults}
-                searchTerm={searchTerm}
-                selectedFacetName={selectedFacetName}
-                onSeeAllClick={onClose}
-              />
-            ) : null}
           </div>
+
           <div className={styles.fulltextSearchFooter}>
             <WithPoweredBy />
           </div>

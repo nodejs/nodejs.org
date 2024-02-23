@@ -1,17 +1,17 @@
 'use client';
 
 import type { Nullable, Results, Result } from '@orama/orama';
-import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState, type FC } from 'react';
 
 import { WithPoweredBy } from '@/components/Common/Search/States/WithPoweredBy';
-import type { SearchDoc } from '@/components/Common/Search/States/WithSearchBox';
 import { pathToBreadcrumbs } from '@/components/Common/Search/utils';
+import Link from '@/components/Link';
 import { useBottomScrollListener } from '@/hooks/react-client';
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '@/next.constants.mjs';
-import { orama, highlighter } from '@/next.orama.mjs';
+import { search as oramaSearch, highlighter } from '@/next.orama.mjs';
+import type { SearchDoc } from '@/types';
 
 import styles from './index.module.css';
 
@@ -28,34 +28,31 @@ const SearchPage: FC = () => {
   const searchTerm = searchParams?.get('q');
   const searchSection = searchParams?.get('section');
 
-  useBottomScrollListener(() => {
-    setOffset(offset => offset + 10);
-  });
+  useBottomScrollListener(() => setOffset(offset => offset + 10));
 
-  useEffect(() => {
-    search(offset);
-  }, [offset]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => search(offset), [offset]);
 
   useEffect(() => {
     setHits([]);
     search(0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchSection, searchTerm]);
 
   const search = (resultsOffset = 0) => {
-    orama
-      .search({
-        ...DEFAULT_ORAMA_QUERY_PARAMS,
-        mode: 'fulltext',
-        term: searchTerm || '',
-        limit: 10,
-        offset: resultsOffset,
-        ...filterBySection(),
-      })
+    oramaSearch({
+      ...DEFAULT_ORAMA_QUERY_PARAMS,
+      mode: 'fulltext',
+      term: searchTerm || '',
+      limit: 10,
+      offset: resultsOffset,
+      ...filterBySection(),
+    })
       .then(results => {
         setSearchResults(results);
-        setHits(hits => [...hits, ...(results?.hits ?? [])]);
+        setHits(() => results?.hits ?? []);
       })
-      .catch(console.log);
+      .catch();
   };
 
   const facets = {
@@ -63,19 +60,13 @@ const SearchPage: FC = () => {
     ...(searchResults?.facets?.siteSection?.values ?? {}),
   };
 
-  const filterBySection = () => {
-    if (searchSection && searchSection !== 'all') {
-      return {
-        where: {
-          siteSection: {
-            eq: searchSection,
-          },
-        },
-      };
-    }
+  const filterBySection = () =>
+    searchSection && searchSection !== 'all'
+      ? { where: { siteSection: { eq: searchSection } } }
+      : {};
 
-    return {};
-  };
+  const getDocumentURL = (path: string) =>
+    path.startsWith('api/') ? `https://nodejs.org/${path}` : path;
 
   return (
     <div className={styles.searchPageContainer}>
@@ -83,6 +74,7 @@ const SearchPage: FC = () => {
         <h1>
           {t('components.search.searchPage.title', { query: searchTerm })}
         </h1>
+
         <WithPoweredBy />
       </div>
 
@@ -92,12 +84,11 @@ const SearchPage: FC = () => {
             <Link
               key={facetName}
               className={styles.searchResultsFacet}
-              href={`/en/search?q=${searchTerm}&section=${facetName}`}
+              href={`/search?q=${searchTerm}&section=${facetName}`}
             >
               {facetName}
               <span className={styles.facetCount}>
-                ({facets[facetName as keyof typeof facets].toLocaleString('en')}
-                )
+                ({facets[facetName as keyof typeof facets]})
               </span>
             </Link>
           ))}
@@ -107,13 +98,14 @@ const SearchPage: FC = () => {
           {hits?.map(hit => (
             <Link
               key={hit.id}
-              href={hit.document.path}
+              href={getDocumentURL(hit.document.path)}
               className={styles.searchResult}
             >
               <div>
                 <h2 className={styles.searchResultTitle}>
                   {hit.document.pageSectionTitle}
                 </h2>
+
                 <p
                   className={styles.searchResultSnippet}
                   dangerouslySetInnerHTML={{
@@ -122,6 +114,7 @@ const SearchPage: FC = () => {
                       .trim(180),
                   }}
                 />
+
                 <div className={styles.searchResultPageTitle}>
                   Home {'>'} {pathToBreadcrumbs(hit.document.path).join(' > ')}
                 </div>

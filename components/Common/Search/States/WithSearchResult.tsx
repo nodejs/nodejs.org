@@ -1,10 +1,10 @@
 import type { Result } from '@orama/orama';
 import type { FC } from 'react';
 
-import type { SearchDoc } from '@/components/Common/Search/States/WithSearchBox';
 import { pathToBreadcrumbs } from '@/components/Common/Search/utils';
 import Link from '@/components/Link';
 import { highlighter } from '@/next.orama.mjs';
+import type { SearchDoc } from '@/types';
 
 import styles from './index.module.css';
 
