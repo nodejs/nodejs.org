@@ -9,7 +9,7 @@ import type { CalendarEvent } from '@/types';
 
 import styles from './calendar.module.css';
 
-type GrouppedEntries = Record<string, Array<CalendarEvent>>;
+type GroupedEntries = Record<string, Array<CalendarEvent>>;
 
 const UpcomingEvents: FC = async () => {
   const events = await getCalendarEvents(CALENDAR_NODEJS_ID);
@@ -25,7 +25,7 @@ const UpcomingEvents: FC = async () => {
     acc[datePerDay].push(event);
 
     return acc;
-  }, {} as GrouppedEntries);
+  }, {} as GroupedEntries);
 
   const sortedGroupedEntries = Object.entries(groupedEntries).sort(
     ([dateA], [dateB]) => new Date(dateA).getTime() - new Date(dateB).getTime()
