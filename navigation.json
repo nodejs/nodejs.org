@@ -169,6 +169,10 @@
             "understandingSetimmediate": {
               "link": "/learn/asynchronous-work/understanding-setimmediate",
               "label": "components.navigation.learn.asynchronousWork.links.understandingSetimmediate"
+            },
+            "dontBlockTheEventLoop": {
+              "link": "/learn/asynchronous-work/dont-block-the-event-loop",
+              "label": "components.navigation.learn.asynchronousWork.links.dontBlockTheEventLoop"
             }
           }
         },
