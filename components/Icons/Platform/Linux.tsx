@@ -11,104 +11,104 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
     <defs id="tux_fx">
       <linearGradient id="gradient_belly_shadow">
         <stop offset="0" />
-        <stop offset="1" stop-opacity=".25" />
+        <stop offset="1" stopOpacity=".25" />
       </linearGradient>
       <linearGradient id="gradient_wing_tip_right_shadow">
-        <stop offset="0" stop-color="#110800" />
-        <stop offset=".59" stop-color="#a65a00" stop-opacity=".8" />
-        <stop offset="1" stop-color="#ff921e" stop-opacity="0" />
+        <stop offset="0" stopColor="#110800" />
+        <stop offset=".59" stopColor="#a65a00" stopOpacity=".8" />
+        <stop offset="1" stopColor="#ff921e" stopOpacity="0" />
       </linearGradient>
       <linearGradient id="gradient_wing_tip_right_glare_1">
-        <stop offset="0" stop-color="#7c7c7c" />
-        <stop offset="1" stop-color="#7c7c7c" stop-opacity=".33" />
+        <stop offset="0" stopColor="#7c7c7c" />
+        <stop offset="1" stopColor="#7c7c7c" stopOpacity=".33" />
       </linearGradient>
       <linearGradient id="gradient_wing_tip_right_glare_2">
-        <stop offset="0" stop-color="#7c7c7c" />
-        <stop offset="1" stop-color="#7c7c7c" stop-opacity=".33" />
+        <stop offset="0" stopColor="#7c7c7c" />
+        <stop offset="1" stopColor="#7c7c7c" stopOpacity=".33" />
       </linearGradient>
       <linearGradient id="gradient_foot_left_layer_1">
-        <stop offset="0" stop-color="#b98309" />
-        <stop offset="1" stop-color="#382605" />
+        <stop offset="0" stopColor="#b98309" />
+        <stop offset="1" stopColor="#382605" />
       </linearGradient>
       <linearGradient id="gradient_foot_left_glare">
-        <stop offset="0" stop-color="#ebc40c" />
-        <stop offset="1" stop-color="#ebc40c" stop-opacity="0" />
+        <stop offset="0" stopColor="#ebc40c" />
+        <stop offset="1" stopColor="#ebc40c" stopOpacity="0" />
       </linearGradient>
       <linearGradient id="gradient_foot_right_shadow">
         <stop offset="0" />
-        <stop offset="1" stop-opacity="0" />
+        <stop offset="1" stopOpacity="0" />
       </linearGradient>
       <linearGradient id="gradient_foot_right_layer_1">
-        <stop offset="0" stop-color="#3e2a06" />
-        <stop offset="1" stop-color="#ad780a" />
+        <stop offset="0" stopColor="#3e2a06" />
+        <stop offset="1" stopColor="#ad780a" />
       </linearGradient>
       <linearGradient id="gradient_foot_right_glare">
-        <stop offset="0" stop-color="#f3cd0c" />
-        <stop offset="1" stop-color="#f3cd0c" stop-opacity="0" />
+        <stop offset="0" stopColor="#f3cd0c" />
+        <stop offset="1" stopColor="#f3cd0c" stopOpacity="0" />
       </linearGradient>
       <linearGradient id="gradient_eyeball">
-        <stop offset="0" stop-color="#fefefc" />
-        <stop offset=".75" stop-color="#fefefc" />
-        <stop offset="1" stop-color="#d4d4d4" />
+        <stop offset="0" stopColor="#fefefc" />
+        <stop offset=".75" stopColor="#fefefc" />
+        <stop offset="1" stopColor="#d4d4d4" />
       </linearGradient>
       <linearGradient id="gradient_pupil_left_glare">
-        <stop offset="0" stop-color="#757574" stop-opacity="0" />
-        <stop offset=".25" stop-color="#757574" />
-        <stop offset=".5" stop-color="#757574" />
-        <stop offset="1" stop-color="#757574" stop-opacity="0" />
+        <stop offset="0" stopColor="#757574" stopOpacity="0" />
+        <stop offset=".25" stopColor="#757574" />
+        <stop offset=".5" stopColor="#757574" />
+        <stop offset="1" stopColor="#757574" stopOpacity="0" />
       </linearGradient>
       <linearGradient id="gradient_pupil_right_glare_2">
-        <stop offset="0" stop-color="#949494" stop-opacity=".39" />
-        <stop offset=".5" stop-color="#949494" />
-        <stop offset="1" stop-color="#949494" stop-opacity=".39" />
+        <stop offset="0" stopColor="#949494" stopOpacity=".39" />
+        <stop offset=".5" stopColor="#949494" />
+        <stop offset="1" stopColor="#949494" stopOpacity=".39" />
       </linearGradient>
       <linearGradient id="gradient_eyelid_left">
-        <stop offset="0" stop-color="#c8c8c8" />
-        <stop offset="1" stop-color="#797978" />
+        <stop offset="0" stopColor="#c8c8c8" />
+        <stop offset="1" stopColor="#797978" />
       </linearGradient>
       <linearGradient id="gradient_eyelid_right">
-        <stop offset="0" stop-color="#747474" />
-        <stop offset=".13" stop-color="#8c8c8c" />
-        <stop offset=".25" stop-color="#a4a4a4" />
-        <stop offset=".5" stop-color="#d4d4d4" />
-        <stop offset=".62" stop-color="#d4d4d4" />
-        <stop offset="1" stop-color="#7c7c7c" />
+        <stop offset="0" stopColor="#747474" />
+        <stop offset=".13" stopColor="#8c8c8c" />
+        <stop offset=".25" stopColor="#a4a4a4" />
+        <stop offset=".5" stopColor="#d4d4d4" />
+        <stop offset=".62" stopColor="#d4d4d4" />
+        <stop offset="1" stopColor="#7c7c7c" />
       </linearGradient>
       <linearGradient id="gradient_eyebrow">
-        <stop offset="0" stop-color="#646464" stop-opacity="0" />
-        <stop offset=".31" stop-color="#646464" stop-opacity=".58" />
-        <stop offset=".47" stop-color="#646464" />
-        <stop offset=".73" stop-color="#646464" stop-opacity=".26" />
-        <stop offset="1" stop-color="#646464" stop-opacity="0" />
+        <stop offset="0" stopColor="#646464" stopOpacity="0" />
+        <stop offset=".31" stopColor="#646464" stopOpacity=".58" />
+        <stop offset=".47" stopColor="#646464" />
+        <stop offset=".73" stopColor="#646464" stopOpacity=".26" />
+        <stop offset="1" stopColor="#646464" stopOpacity="0" />
       </linearGradient>
       <linearGradient id="gradient_beak_base">
-        <stop offset="0" stop-color="#020204" />
-        <stop offset=".73" stop-color="#020204" />
-        <stop offset="1" stop-color="#5c5c5c" />
+        <stop offset="0" stopColor="#020204" />
+        <stop offset=".73" stopColor="#020204" />
+        <stop offset="1" stopColor="#5c5c5c" />
       </linearGradient>
       <linearGradient id="gradient_mandible_lower">
-        <stop offset="0" stop-color="#d2940a" />
-        <stop offset=".75" stop-color="#d89c08" />
-        <stop offset=".87" stop-color="#b67e07" />
-        <stop offset="1" stop-color="#946106" />
+        <stop offset="0" stopColor="#d2940a" />
+        <stop offset=".75" stopColor="#d89c08" />
+        <stop offset=".87" stopColor="#b67e07" />
+        <stop offset="1" stopColor="#946106" />
       </linearGradient>
       <linearGradient id="gradient_mandible_upper">
-        <stop offset="0" stop-color="#ad780a" />
-        <stop offset=".12" stop-color="#d89e08" />
-        <stop offset=".25" stop-color="#edb80b" />
-        <stop offset=".39" stop-color="#ebc80d" />
-        <stop offset=".53" stop-color="#f5d838" />
-        <stop offset=".77" stop-color="#f6d811" />
-        <stop offset="1" stop-color="#f5cd31" />
+        <stop offset="0" stopColor="#ad780a" />
+        <stop offset=".12" stopColor="#d89e08" />
+        <stop offset=".25" stopColor="#edb80b" />
+        <stop offset=".39" stopColor="#ebc80d" />
+        <stop offset=".53" stopColor="#f5d838" />
+        <stop offset=".77" stopColor="#f6d811" />
+        <stop offset="1" stopColor="#f5cd31" />
       </linearGradient>
       <linearGradient id="gradient_nares">
-        <stop offset="0" stop-color="#3a2903" />
-        <stop offset=".55" stop-color="#735208" />
-        <stop offset="1" stop-color="#ac8c04" />
+        <stop offset="0" stopColor="#3a2903" />
+        <stop offset=".55" stopColor="#735208" />
+        <stop offset="1" stopColor="#ac8c04" />
       </linearGradient>
       <linearGradient id="gradient_beak_corner">
-        <stop offset="0" stop-color="#f5ce2d" />
-        <stop offset="1" stop-color="#d79b08" />
+        <stop offset="0" stopColor="#f5ce2d" />
+        <stop offset="1" stopColor="#d79b08" />
       </linearGradient>
       <linearGradient
         id="fill_foot_left_base"
@@ -612,7 +612,7 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
             opacity=".25"
             fill="url(#fill_belly_shadow_left)"
             filter="url(#blur_belly_shadow_left)"
-            clip-path="url(#clip_body)"
+            clipPath="url(#clip_body)"
             d="M68.67 115.18c.87 1.31-.55 5.84 19.86 2.94 0 0-3.59.39-7.12 1.21-5.49 1.84-10.27 3.89-13.97 6.61-3.65 2.7-6.33 6.21-9.68 9.22 0 0 5.43-9.92 6.78-12.91 1.36-2.99-.22-2.85.85-7.25s3.69-8.63 3.69-8.63-2.14 6.22-.41 8.81z"
           />
           <path
@@ -620,7 +620,7 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
             opacity=".42"
             fill="url(#fill_belly_shadow_right)"
             filter="url(#blur_belly_shadow_right)"
-            clip-path="url(#clip_body)"
+            clipPath="url(#clip_body)"
             d="M134.28 113.99c-4.16 2.9-6.6 2.56-11.64 3.12-5.05.57-18.7.36-18.7.36s1.97-.03 6.36.78c4.38.82 13.31 1.6 18.34 3.51 5.04 1.92 6.87 2.47 9.93 4.4 4.35 2.75 7.55 7.06 11.71 10.08 0 0 .2-4-1.48-6.99s-6.2-7.7-7.53-12.1c-1.32-4.4-1.96-13.04-1.96-13.04s-.88 6.99-5.03 9.88z"
           />
           <path
@@ -628,7 +628,7 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
             opacity=".2"
             fill="url(#fill_belly_shadow_middle)"
             filter="url(#blur_belly_shadow_middle)"
-            clip-path="url(#clip_body)"
+            clipPath="url(#clip_body)"
             d="M95.17 107.81c-.16 1.25-.36 2.5-.6 3.74-.12.61-.26 1.22-.48 1.8-.23.58-.56 1.14-1.02 1.55-.41.37-.9.62-1.4.85-1.94.88-4.01 1.47-6.12 1.74.84.06 1.68.14 2.53.23.53.06 1.06.12 1.57.25.52.14 1.03.34 1.46.65.47.35.84.82 1.12 1.34.55 1.02.73 2.2.83 3.37.13 1.48.14 2.98.03 4.46.1-.99.31-1.98.62-2.92.57-1.72 1.47-3.32 2.69-4.65.49-.52 1.02-1.01 1.6-1.42a8.858 8.858 0 0 1 6.24-1.51c-2.21.09-4.44-.6-6.2-1.93-.9-.68-1.68-1.52-2.22-2.5a6.991 6.991 0 0 1-.65-5.05z"
           />
           <path
@@ -636,7 +636,7 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
             opacity=".11"
             fill="#000"
             filter="url(#blur_belly_shadow_lower)"
-            clip-path="url(#clip_body)"
+            clipPath="url(#clip_body)"
             d="M89.85 137.14a75.366 75.366 0 0 0-2.17 12.31c-.55 5.87-.42 11.78-.74 17.67-.26 4.99-.85 10.04.02 14.97a25.27 25.27 0 0 0 2.2 6.78c.16-.82.29-1.64.36-2.47.37-4-.3-8.01-.53-12.01-.4-7.02.57-14.04.97-21.06.3-5.39.27-10.8-.11-16.19z"
           />
         </g>
@@ -646,21 +646,21 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
             opacity=".75"
             fill="#7c7c7c"
             filter="url(#blur_belly_glare)"
-            clip-path="url(#clip_body)"
+            clipPath="url(#clip_body)"
             d="M160.08 131.23c1.03-.16 7.34 5.21 6.48 7.21-.86 1.99-2.49.79-3.65.8-1.16.02-4.33 1.46-4.86.55-.54-.91 1.4-3.03 2.41-4.81.82-1.43-1.4-3.59-.38-3.75z"
           />
           <path
             id="head_glare"
             fill="#7c7c7c"
             filter="url(#blur_head_glare)"
-            clip-path="url(#clip_body)"
+            clipPath="url(#clip_body)"
             d="M121.52 11.12c-2.21 1.56-1.25 3.51-.3 5.46.95 1.96-2.09 7.59-2.12 7.83-.03.24 5.98-2.85 7.62-4.87 1.94-2.37 6.83 3.22 6.56 2.37.01-1.52-9.55-12.34-11.76-10.79z"
           />
           <path
             id="neck_glare"
             fill="#838384"
             filter="url(#blur_neck_glare)"
-            clip-path="url(#clip_body)"
+            clipPath="url(#clip_body)"
             d="M138.27 76.63c-1.86 1.7.88 4.25 2.17 7.24.81 1.86 3.04 4.49 5.2 4.07 1.63-.32 2.63-2.66 2.48-4.3-.3-3.18-2.98-3.93-4.93-5.02-1.54-.86-3.61-3.18-4.92-1.99z"
           />
         </g>
@@ -677,7 +677,7 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
             opacity=".95"
             fill="#7c7c7c"
             filter="url(#blur_wing_left_glare)"
-            clip-path="url(#clip_wing_left)"
+            clipPath="url(#clip_wing_left)"
             d="M56.96 126.1c-2 1.84-3.73 3.97-5.13 6.31-2.3 3.84-3.65 8.16-5.33 12.31-1.24 3.09-2.69 6.2-2.86 9.53-.09 1.71.16 3.42.22 5.13s-.1 3.49-.94 4.98a6.048 6.048 0 0 1-3.22 2.71c1.83.61 3.45 1.79 4.6 3.33.96 1.3 1.58 2.81 2.41 4.18.68 1.12 1.51 2.16 2.54 2.97 1.02.82 2.25 1.4 3.54 1.56 1.79.23 3.65-.36 4.97-1.58-1.66-15.55-.14-31.42 4.44-46.37.29-.94.59-1.89.67-2.87.07-.99-.12-2.03-.72-2.81a2.989 2.989 0 0 0-2.77-1.17c-.52.06-1.03.26-1.45.57-.42.32-.76.74-.97 1.22z"
           />
         </g>
@@ -691,7 +691,7 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
             id="wing_right_glare"
             fill="#838384"
             filter="url(#blur_wing_right_glare)"
-            clip-path="url(#clip_wing_right)"
+            clipPath="url(#clip_wing_right)"
             d="M150.42 118.99c.42.4.86.81 1.31 1.19 3.22 2.63 4.93 5.58 8.2 8.16 5.34 4.22 10.75 11.5 11.8 18.15.82 5.19-.26 8.01-1.58 14.12-1.32 6.12-5.06 14.78-7.09 20.68-.8 2.35 1.64 1.38 1.32 3.86-.16 1.22-.18 2.45-.03 3.67.02-.23.03-.48.06-.71.39-3.38 1.42-6.63 2.55-9.82 2.17-6.13 4.66-12.15 6.38-18.45 1.72-6.29 1.53-10.82.63-16.23-1.13-6.81-5.09-13.09-10.69-17.24-3.97-2.93-8.64-4.81-12.86-7.38z"
           />
         </g>
@@ -707,21 +707,21 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
             id="foot_left_layer_1"
             fill="#d99a03"
             filter="url(#blur_foot_left_layer_1)"
-            clip-path="url(#clip_foot_left)"
+            clipPath="url(#clip_foot_left)"
             d="M37.16 177.7c1.25-.5 2.67-.56 3.98-.26 1.32.3 2.55.94 3.61 1.77 2.14 1.65 3.62 3.97 5.05 6.26 3.42 5.54 6.76 11.15 9.92 16.86 2.4 4.31 4.68 8.7 7.62 12.65 1.95 2.62 4.18 5.03 6.17 7.62 1.99 2.59 3.76 5.41 4.64 8.56 1.14 4.05.68 8.54-1.28 12.26-1.42 2.68-3.58 4.96-6.2 6.48a15.935 15.935 0 0 1-8.69 2.14c-4.82-.22-9.23-2.63-13.77-4.26-8.71-3.16-18.14-3.59-27.08-6.05-3.2-.87-6.32-2.03-9.53-2.84-1.43-.36-2.88-.66-4.23-1.23-1.35-.57-2.62-1.45-3.36-2.72-.54-.95-.76-2.06-.73-3.15.04-1.09.31-2.17.7-3.19.78-2.04 2-3.88 2.78-5.92 1.19-3.08 1.34-6.47 1.12-9.76-.22-3.29-.8-6.56-1-9.85-.08-1.48-.1-2.97.2-4.41.3-1.45.93-2.85 1.98-3.89 1.14-1.13 2.7-1.74 4.29-1.99 1.58-.24 3.19-.13 4.78.01 1.6.14 3.2.32 4.8.23 1.6-.1 3.22-.49 4.54-1.39 1.2-.81 2.1-2 2.79-3.27s1.18-2.64 1.71-3.98c.52-1.35 1.09-2.69 1.91-3.89.82-1.19 1.93-2.24 3.28-2.79z"
           />
           <path
             id="foot_left_layer_2"
             fill="#f5bd0c"
             filter="url(#blur_foot_left_layer_2)"
-            clip-path="url(#clip_foot_left)"
+            clipPath="url(#clip_foot_left)"
             d="M35.99 174.57c1.22-.6 2.65-.72 3.98-.45 1.33.27 2.57.92 3.62 1.77 2.09 1.7 3.43 4.13 4.67 6.51 2.84 5.46 5.5 11.04 8.9 16.19 2.48 3.73 5.33 7.2 7.83 10.92 3.39 5.03 6.15 10.57 7.29 16.5.76 4 .74 8.31-1.18 11.9-1.27 2.37-3.32 4.31-5.75 5.52-2.42 1.22-5.21 1.71-7.92 1.47-4.27-.37-8.14-2.47-12.16-3.94-7.13-2.59-14.84-3.22-22.18-5.18-3.09-.82-6.13-1.89-9.26-2.54-1.39-.29-2.8-.5-4.12-1-1.32-.5-2.57-1.33-3.25-2.55-.47-.86-.63-1.86-.56-2.84.07-.97.36-1.92.74-2.83.77-1.8 1.9-3.46 2.49-5.32.88-2.75.52-5.72-.14-8.53-.65-2.8-1.6-5.55-1.89-8.41-.13-1.27-.13-2.57.17-3.82.29-1.25.88-2.45 1.81-3.34 1.2-1.15 2.88-1.73 4.56-1.89 1.67-.16 3.35.06 5.01.3 1.66.24 3.34.5 5.01.42 1.68-.07 3.39-.51 4.7-1.54 1.3-1.02 2.12-2.53 2.59-4.09.47-1.57.62-3.2.81-4.82.19-1.62.43-3.26 1.06-4.77.63-1.51 1.69-2.9 3.17-3.64z"
           />
           <path
             id="foot_left_glare"
             fill="url(#fill_foot_left_glare)"
             filter="url(#blur_foot_left_glare)"
-            clip-path="url(#clip_foot_left)"
+            clipPath="url(#clip_foot_left)"
             d="M51.2 188.21c2.25 4.06 3.62 8.72 5.85 12.82 2.05 3.77 4.38 7.65 6.46 11.12.93 1.55 3.09 3.93 5.27 7.62 1.98 3.34 3.98 8.01 5.1 9.58-.64-1.84-1.96-6.77-3.54-10.28-1.47-3.28-3.19-5.15-4.24-6.92-2.08-3.47-4.33-6.6-6.47-9.91-2.95-4.57-5.2-9.68-8.43-14.03z"
           />
         </g>
@@ -731,7 +731,7 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
             opacity=".2"
             fill="url(#fill_foot_right_shadow)"
             filter="url(#blur_foot_right_shadow)"
-            clip-path="url(#clip_body)"
+            clipPath="url(#clip_body)"
             d="M198.7 215.61c-.4 1.33-1.02 2.62-1.81 3.8-1.75 2.59-4.3 4.55-6.84 6.35-4.33 3.07-8.85 5.89-12.89 9.38-2.7 2.34-5.17 4.97-7.45 7.73-1.95 2.36-3.79 4.84-6.02 6.94-2.25 2.12-4.89 3.84-7.74 4.77-3.47 1.13-7.13 1.08-10.47.22-2.34-.6-4.63-1.64-6.08-3.53-1.45-1.89-1.92-4.44-2.09-6.94-.3-4.42.23-8.93.71-13.42.4-3.73.77-7.46.92-11.18.27-6.77-.18-13.47-1.09-20.05-.16-1.11-.32-2.22-.23-3.35.09-1.14.47-2.32 1.27-3.2.74-.81 1.77-1.29 2.79-1.52 1.02-.24 2.06-.25 3.09-.28 2.43-.06 4.86-.21 7.25.01 1.51.13 2.99.41 4.49.55 2.51.24 5.12.12 7.64-.62 2.71-.8 5.29-2.29 8.05-2.7 1.13-.17 2.26-.15 3.36.01 1.12.15 2.24.46 3.1 1.15.66.52 1.14 1.23 1.51 1.99.56 1.14.9 2.39 1.1 3.68.17 1.14.24 2.31.53 3.41.48 1.81 1.58 3.35 2.89 4.6 1.32 1.25 2.85 2.24 4.39 3.22 1.53.97 3.07 1.93 4.7 2.73.77.38 1.56.72 2.29 1.15.74.44 1.42.97 1.91 1.67.66.95.92 2.2.72 3.43z"
           />
           <path
@@ -743,21 +743,21 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
             id="foot_right_layer_1"
             fill="#cd8907"
             filter="url(#blur_foot_right_layer_1)"
-            clip-path="url(#clip_foot_right)"
+            clipPath="url(#clip_foot_right)"
             d="M213.21 216.12c-.53 1.33-1.28 2.58-2.22 3.67-2.07 2.42-4.93 4.01-7.78 5.44-4.88 2.44-9.92 4.58-14.5 7.52-3.06 1.97-5.9 4.28-8.55 6.78-2.26 2.13-4.41 4.41-6.95 6.21-2.57 1.83-5.53 3.14-8.65 3.6-3.8.56-7.72-.16-11.25-1.67-2.46-1.06-4.84-2.56-6.27-4.83-1.42-2.26-1.75-5.02-1.75-7.69-.02-4.71.87-9.37 1.71-14 .7-3.85 1.36-7.71 1.78-11.6.76-7.08.73-14.22.25-21.32-.08-1.19-.17-2.39.01-3.57.18-1.18.67-2.35 1.57-3.13.85-.73 1.99-1.05 3.11-1.1 1.11-.06 2.22.12 3.33.28 2.61.38 5.23.67 7.78 1.33 1.61.42 3.18.98 4.78 1.4 2.68.72 5.49 1.06 8.24.74 2.97-.34 5.85-1.44 8.83-1.37 1.23.03 2.44.26 3.61.62 1.19.37 2.37.9 3.25 1.78.66.67 1.11 1.51 1.48 2.38.53 1.29.89 2.67.91 4.07.03 1.46-.28 2.92-.09 4.37.16 1.17.66 2.28 1.3 3.28.63 1 1.4 1.91 2.17 2.81 1.48 1.75 2.96 3.53 4.82 4.87 2.11 1.53 4.62 2.43 6.8 3.85.65.43 1.28.91 1.74 1.54.78 1.06.98 2.5.54 3.74z"
           />
           <path
             id="foot_right_layer_2"
             fill="#f5c021"
             filter="url(#blur_foot_right_layer_2)"
-            clip-path="url(#clip_foot_right)"
+            clipPath="url(#clip_foot_right)"
             d="M212.91 214.61c-.6 1.35-1.37 2.6-2.28 3.71-2.12 2.58-4.99 4.35-8 5.49-4.97 1.88-10.39 2.13-15.26 4.27-2.97 1.3-5.65 3.26-8.36 5.12-2.18 1.49-4.42 2.94-6.82 3.98-2.72 1.19-5.6 1.85-8.5 2.32-1.84.29-3.71.51-5.57.41-1.86-.1-3.72-.54-5.37-1.49-1.24-.72-2.36-1.75-3.03-3.1-.73-1.49-.86-3.24-.85-4.94.05-4.5 1.02-8.96.99-13.47-.03-3.93-.81-7.8-1.03-11.72-.43-7.54 1.19-15.2-.24-22.59-.22-1.19-.53-2.37-.52-3.58.01-.6.1-1.21.31-1.77.22-.55.56-1.06 1.01-1.42.39-.29.84-.47 1.31-.56.46-.08.94-.06 1.41.01.93.15 1.82.51 2.73.78 2.6.78 5.35.76 8 1.35 1.66.36 3.26.97 4.91 1.41 2.75.76 5.63 1.08 8.46.75 3.04-.36 6.01-1.46 9.07-1.38 1.26.03 2.5.26 3.71.62s2.42.87 3.34 1.8c.65.67 1.13 1.52 1.51 2.4.57 1.29.96 2.69.95 4.11-.01.74-.12 1.47-.19 2.21-.06.74-.08 1.49.09 2.2.18.72.55 1.37.97 1.96.42.59.9 1.12 1.34 1.7 1.22 1.61 2.1 3.49 3.05 5.3.95 1.81 2.02 3.6 3.53 4.91 2.05 1.77 4.7 2.48 6.99 3.89.67.41 1.31.89 1.78 1.55.38.52.63 1.15.73 1.81.09.65.03 1.34-.17 1.96z"
           />
           <path
             id="foot_right_glare"
             fill="url(#fill_foot_right_glare)"
             filter="url(#blur_foot_right_glare)"
-            clip-path="url(#clip_foot_right)"
+            clipPath="url(#clip_foot_right)"
             d="M148.08 181.58c2.82-.76 5.22 1.38 7.27 2.99 1.32 1.13 3.24.85 4.86.9 2.69-.09 5.36.45 8.05.12 5.3-.45 10.49-1.75 15.81-1.97 2.54-.16 5.4-.31 7.59 1.17.89.62 2.2 3.23 3.07 2.25-.36-2.74-2.39-5.39-5.11-6.12-2.14-.34-4.3.25-6.46.06-6.39-.15-12.75-1.34-19.16-1-4.46.04-8.91-.17-13.37-.34-1.75-.36-2.37 1.19-3.32 1.79.25.19.34.25.77.15z"
           />
         </g>
@@ -769,7 +769,7 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
             opacity=".35"
             fill="url(#fill_wing_tip_right_shadow_lower)"
             filter="url(#blur_wing_tip_right_shadow_lower)"
-            clip-path="url(#clip_foot_right)"
+            clipPath="url(#clip_foot_right)"
             d="M185.49 187.61c-.48-.95-1.36-1.66-2.35-2.07-.98-.41-2.06-.55-3.13-.54-2.13.02-4.25.57-6.38.39-1.79-.16-3.49-.83-5.24-1.26-1.81-.44-3.73-.61-5.52-.12-1.92.52-3.61 1.81-4.67 3.49-.94 1.48-1.38 3.23-1.52 4.98-.14 1.75.01 3.5.19 5.25.12 1.26.27 2.52.57 3.75.31 1.23.78 2.43 1.52 3.46 1.07 1.48 2.66 2.54 4.37 3.17 2.8 1.03 5.98.98 8.73-.15 4.88-2.12 9.01-5.92 11.52-10.6.91-1.68 1.61-3.47 2.06-5.31.18-.74.32-1.49.32-2.25.01-.75-.12-1.52-.47-2.19z"
           />
           <path
@@ -777,7 +777,7 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
             opacity=".35"
             fill="url(#fill_wing_tip_right_shadow_upper)"
             filter="url(#blur_wing_tip_right_shadow_upper)"
-            clip-path="url(#clip_foot_right)"
+            clipPath="url(#clip_foot_right)"
             d="M185.49 184.89c-.48-.69-1.36-1.2-2.35-1.5-.98-.3-2.06-.39-3.13-.39-2.13.02-4.25.42-6.38.28-1.79-.11-3.49-.6-5.24-.9-1.81-.32-3.73-.45-5.52-.09-1.92.37-3.61 1.3-4.67 2.52-.94 1.07-1.38 2.34-1.52 3.6-.14 1.26.01 2.53.19 3.79.12.91.27 1.83.57 2.72.31.89.78 1.76 1.52 2.5 1.07 1.07 2.66 1.83 4.37 2.29 2.8.75 5.98.71 8.73-.11 4.88-1.53 9.01-4.28 11.52-7.66.91-1.22 1.61-2.51 2.06-3.84.18-.54.32-1.08.32-1.62.01-.55-.12-1.11-.47-1.59z"
           />
         </g>
@@ -799,7 +799,7 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
             xlinkHref="#path_wing_tip_right_glare"
             fill="url(#fill_wing_tip_right_glare_1)"
             filter="url(#blur_wing_tip_right_glare)"
-            clip-path="url(#clip_wing_tip_right)"
+            clipPath="url(#clip_wing_tip_right)"
           />
           <use
             id="wing_tip_right_glare_2"
@@ -807,7 +807,7 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
             xlinkHref="#path_wing_tip_right_glare"
             fill="url(#fill_wing_tip_right_glare_2)"
             filter="url(#blur_wing_tip_right_glare)"
-            clip-path="url(#clip_wing_tip_right)"
+            clipPath="url(#clip_wing_tip_right)"
           />
         </g>
       </g>
@@ -829,14 +829,14 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
                 id="pupil_left_glare"
                 fill="url(#fill_pupil_left_glare)"
                 filter="url(#blur_pupil_left_glare)"
-                clip-path="url(#clip_pupil_left)"
+                clipPath="url(#clip_pupil_left)"
                 d="M84.84 49.59c.21.55.91.75 1.3 1.19.37.42.76.87.97 1.4.39 1.01-.39 2.51.43 3.23.25.22.77.23 1.02 0 .99-.9.77-2.71.38-3.99-.36-1.15-1.23-2.25-2.31-2.8-.5-.26-1.25-.47-1.68-.11-.27.24-.24.74-.11 1.08z"
               />
             </g>
             <path
               id="eyelid_left"
               fill="url(#fill_eyelid_left)"
-              clip-path="url(#clip_eye_left)"
+              clipPath="url(#clip_eye_left)"
               d="M81.14 44.46c2.32-1.38 5.13-1.7 7.82-1.45 2.68.26 5.27 1.04 7.87 1.75 1.91.52 3.84 1 5.63 1.84 1.78.84 3.44 2.08 4.43 3.8.16.27.29.56.46.83.17.27.37.52.62.71.25.19.57.32.88.3.16-.01.32-.05.45-.13.14-.08.26-.2.33-.34.08-.16.11-.35.1-.53-.01-.18-.05-.36-.1-.54-.65-2.37-2.19-4.38-3.35-6.55-.7-1.3-1.28-2.66-1.98-3.96-2.43-4.45-6.42-7.94-10.95-10.21-4.53-2.27-9.59-3.36-14.65-3.65-5.86-.35-11.73.35-17.51 1.37-2.51.44-5.06.96-7.27 2.21-1.11.62-2.13 1.42-2.92 2.42-.8.99-1.36 2.18-1.55 3.44-.17 1.22.01 2.47.44 3.62.42 1.15 1.08 2.2 1.86 3.15 1.54 1.91 3.53 3.39 5.36 5.03 1.83 1.63 3.52 3.44 5.57 4.79 1.02.68 2.13 1.24 3.31 1.57 1.18.33 2.44.42 3.64.17 1.24-.25 2.4-.86 3.41-1.64 1.01-.77 1.88-1.7 2.71-2.66 1.66-1.93 3.21-4.04 5.39-5.34z"
             />
             <path
@@ -862,14 +862,14 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
                 id="pupil_right_glare"
                 fill="url(#fill_pupil_right_glare)"
                 filter="url(#blur_pupil_right_glare)"
-                clip-path="url(#clip_pupil_right)"
+                clipPath="url(#clip_pupil_right)"
                 d="M122.71 53.36c1-1-.71-3.65-2.05-4.74-.97-.78-3.78-1.61-3.66-.75.12.85 1.39 1.95 2.23 2.79 1.05 1.03 3 3.18 3.48 2.7z"
               />
             </g>
             <path
               id="eyelid_right"
               fill="url(#fill_eyelid_right)"
-              clip-path="url(#clip_eye_right)"
+              clipPath="url(#clip_eye_right)"
               d="M102.56 47.01c2.06-1.71 4.45-3.01 7-3.8 5.25-1.62 11.2-.98 15.84 1.97 1.6 1.01 3.03 2.27 4.52 3.45 1.48 1.17 3.06 2.27 4.85 2.9.97.34 2 .54 3.02.43.92-.09 1.81-.44 2.57-.96.76-.53 1.4-1.23 1.88-2.02.96-1.58 1.27-3.5 1.1-5.34-.33-3.69-2.41-6.94-4.15-10.21-.55-1.02-1.07-2.06-1.73-3.01-2.01-2.93-5.23-4.86-8.6-5.99-3.37-1.13-6.93-1.54-10.46-1.98-1.58-.2-3.17-.41-4.74-.22-1.81.22-3.51.95-5.28 1.4-.84.22-1.69.37-2.52.61-.83.24-1.65.57-2.33 1.11-.98.79-1.6 1.98-1.87 3.21-.27 1.24-.21 2.52-.01 3.77.39 2.5 1.33 4.93 1.24 7.46-.06 1.73-.61 3.44-.54 5.17.02.51.12 1.55.21 2.05z"
             />
             <path
@@ -885,9 +885,9 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
             <path
               id="beak_shadow_lower"
               fill="#000"
-              fill-opacity=".259"
+              fillOpacity=".259"
               filter="url(#blur_beak_shadow_lower)"
-              clip-path="url(#clip_body)"
+              clipPath="url(#clip_body)"
               d="M81.12 89.33c1.47 4.26 4.42 7.89 7.92 10.72 1.16.95 2.39 1.82 3.76 2.43 1.36.62 2.87.97 4.36.84 1.46-.12 2.85-.7 4.13-1.42 1.28-.72 2.46-1.59 3.7-2.37 2.12-1.35 4.39-2.44 6.6-3.64 2.65-1.45 5.23-3.1 7.46-5.14 1.03-.93 1.98-1.95 3.11-2.75 1.13-.81 2.49-1.39 3.87-1.29 1.04.07 2.01.51 3.03.73.51.11 1.03.16 1.55.08.51-.08 1.01-.29 1.37-.67.44-.46.64-1.12.61-1.76-.02-.63-.24-1.25-.54-1.81-.59-1.13-1.49-2.1-1.89-3.31-.36-1.08-.29-2.24-.26-3.37.03-1.14.01-2.32-.51-3.33-.4-.76-1.07-1.37-1.83-1.77-.76-.41-1.62-.62-2.48-.7-1.72-.16-3.44.18-5.17.27-2.28.13-4.58-.15-6.87-.02-2.85.18-5.65 1-8.51 1.01-3.26.01-6.52-1.06-9.74-.55-1.39.22-2.71.72-4.03 1.16-1.33.45-2.7.84-4.1.82-1.59-.03-3.13-.58-4.72-.69-.79-.06-1.6 0-2.35.28-.74.28-1.41.79-1.78 1.5-.21.4-.31.86-.33 1.31-.02.46.04.91.15 1.36.22.88.63 1.71.96 2.55 1.2 3.07 1.46 6.42 2.53 9.53z"
             />
             <path
@@ -895,7 +895,7 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
               opacity=".3"
               fill="#000"
               filter="url(#blur_beak_shadow_upper)"
-              clip-path="url(#clip_body)"
+              clipPath="url(#clip_body)"
               d="M77.03 77.2c2.85 1.76 5.41 3.93 7.56 6.39 1.99 2.29 3.68 4.89 6.29 6.58 1.83 1.2 4.04 1.87 6.28 2.08 2.63.24 5.29-.15 7.83-.84 2.35-.63 4.62-1.53 6.7-2.71 3.97-2.25 7.28-5.55 11.65-7.03.95-.33 1.94-.56 2.86-.96.92-.39 1.79-.99 2.23-1.83.42-.82.4-1.75.54-2.64.15-.96.48-1.88.66-2.83.18-.95.2-1.96-.24-2.83-.37-.72-1.04-1.29-1.81-1.66-.77-.36-1.64-.52-2.51-.56-1.72-.08-3.43.33-5.16.47-2.28.19-4.58-.08-6.87-.01-2.85.08-5.66.67-8.51.8-3.25.14-6.49-.34-9.74-.44-1.41-.05-2.83-.03-4.21.2-1.39.22-2.75.65-3.92 1.37-1.14.69-2.07 1.64-3.11 2.45-.52.41-1.08.78-1.68 1.07-.61.28-1.28.48-1.96.51-.35.01-.71-.01-1.05.04-.59.08-1.13.39-1.47.83-.34.45-.47 1.02-.36 1.55z"
             />
           </g>
@@ -914,7 +914,7 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
               id="mandible_lower_glare"
               fill="#d9b30d"
               filter="url(#blur_mandible_lower_glare)"
-              clip-path="url(#clip_mandible_lower)"
+              clipPath="url(#clip_mandible_lower)"
               d="M89.9 78.56a5.77 5.77 0 0 0 .56 4.11c.68 1.24 1.84 2.2 3.19 2.65 1.7.57 3.62.29 5.21-.54.93-.48 1.77-1.16 2.3-2.06.27-.44.46-.94.53-1.46.06-.51.02-1.05-.16-1.54-.2-.53-.56-1-.99-1.37a4.48 4.48 0 0 0-1.5-.82c-1.08-.36-2.77-.66-3.91-.68-2.02-.04-4.9.34-5.23 1.71z"
             />
           </g>
@@ -923,7 +923,7 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
               id="mandible_upper_shadow"
               fill="#604405"
               filter="url(#blur_mandible_upper_shadow)"
-              clip-path="url(#clip_mandible_lower)"
+              clipPath="url(#clip_mandible_lower)"
               d="M84.31 67.86c-1.16.68-2.27 1.43-3.36 2.2-.57.41-1.15.84-1.45 1.47-.21.44-.26.94-.27 1.43 0 .5.03.99-.04 1.48-.04.33-.13.66-.14.99-.01.17 0 .34.04.5.05.16.13.32.24.44.15.16.35.26.56.32.21.06.42.09.64.14 1.01.24 1.89.86 2.66 1.56.77.69 1.47 1.48 2.28 2.13 2.18 1.78 5.07 2.52 7.89 2.56 2.82.05 5.61-.54 8.36-1.16 2.16-.49 4.32-.99 6.39-1.76 3.2-1.18 6.16-2.96 8.72-5.19 1.17-1.01 2.26-2.12 3.57-2.94 1.15-.73 2.44-1.21 3.62-1.9.11-.06.21-.13.3-.2.1-.08.18-.18.24-.28.09-.19.09-.42.03-.62s-.18-.38-.31-.55c-.15-.18-.31-.34-.49-.5-1.23-1.05-2.89-1.43-4.51-1.56-1.61-.12-3.24-.03-4.83-.3-1.5-.25-2.92-.81-4.37-1.27-1.52-.49-3.07-.87-4.64-1.13-3.71-.61-7.52-.49-11.19.27-3.49.73-6.87 2.05-9.94 3.87z"
             />
             <path
@@ -935,7 +935,7 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
               id="mandible_upper_glare"
               fill="#f6da4a"
               filter="url(#blur_mandible_upper_glare)"
-              clip-path="url(#clip_mandible_upper)"
+              clipPath="url(#clip_mandible_upper)"
               d="M109.45 64.75c-.2-.24-.48-.42-.78-.51-.3-.09-.62-.09-.93-.04-.62.11-1.18.44-1.7.8-1.47 1.01-2.77 2.26-3.91 3.64-1.5 1.83-2.74 3.94-3.16 6.27-.07.39-.11.8-.07 1.19.05.4.2.79.49 1.07.24.25.58.4.92.45.35.05.71 0 1.04-.11.66-.22 1.21-.69 1.74-1.15 2.87-2.58 5.47-5.66 6.51-9.38.1-.37.19-.75.19-1.14 0-.39-.1-.78-.34-1.09z"
             />
             <path
@@ -957,7 +957,7 @@ const Linux: FC<SVGProps<SVGSVGElement>> = props => (
             id="beak_corner"
             fill="url(#fill_beak_corner)"
             filter="url(#blur_beak_corner)"
-            clip-path="url(#clip_beak)"
+            clipPath="url(#clip_beak)"
             d="M129.27 69.15a2.42 3.1 16.94 0 1-2.81 3.04 2.42 3.1 16.94 0 1-2.12-3.04 2.42 3.1 16.94 0 1 2.81-3.05 2.42 3.1 16.94 0 1 2.12 3.05z"
           />
         </g>
