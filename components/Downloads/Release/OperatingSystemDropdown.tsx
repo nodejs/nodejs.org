@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { useContext, useEffect, useMemo } from 'react';
 import type { FC } from 'react';
 
@@ -22,6 +23,7 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
 }) => {
   const { os: userOS } = useDetectOS();
   const { platform, os, setOS } = useContext(ReleaseContext);
+  const t = useTranslations();
 
   // we shouldn't react when "actions" change
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -74,6 +76,7 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
       onChange={value => setOS(value as UserOS)}
       inline={true}
       className="min-w-28"
+      label={t('layouts.download.dropdown.os')}
     />
   );
 };

@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { useContext, useEffect, useMemo } from 'react';
 import type { FC } from 'react';
 
@@ -16,6 +17,7 @@ const supportedHomebrewVersions = ['Active LTS', 'Maintenance LTS', 'Current'];
 
 const PlatformDropdown: FC = () => {
   const { release, os, platform, setPlatform } = useContext(ReleaseContext);
+  const t = useTranslations();
 
   // @TOOD: We should have a proper utility that gives
   // disabled OSs, Platforms, based on specific criteria
@@ -79,6 +81,7 @@ const PlatformDropdown: FC = () => {
       onChange={platform => setPlatform(platform as PackageManager)}
       inline={true}
       className="min-w-24"
+      label={t('layouts.download.dropdown.platform')}
     />
   );
 };

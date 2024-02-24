@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useEffect, useContext, useMemo } from 'react';
 import semVer from 'semver';
@@ -15,6 +16,7 @@ const parseNumericBitness = (bitness: string) =>
 const BitnessDropdown: FC = () => {
   const { bitness: userBitness } = useDetectOS();
   const { bitness, os, release, setBitness } = useContext(ReleaseContext);
+  const t = useTranslations();
 
   // we also reset the bitness when the OS changes, because different OSs have
   // different bitnesses available
@@ -56,6 +58,7 @@ const BitnessDropdown: FC = () => {
       onChange={bitness => setBitness(parseNumericBitness(bitness))}
       inline={true}
       className="min-w-20"
+      label={t('layouts.download.dropdown.bitness')}
     />
   );
 };

@@ -27,7 +27,7 @@ const ReleaseCodeBox: FC = () => {
   }, [major, os, platform]);
 
   return (
-    <div className="mb-2 mt-6 flex flex-col gap-2">
+    <div className="mb-2 mt-6 flex min-h-80 flex-col gap-2">
       <CodeBox language="Bash">
         <code dangerouslySetInnerHTML={{ __html: code }} />
       </CodeBox>

@@ -278,6 +278,12 @@
       "buttons": {
         "prebuilt": "Download {version} Node.js for {os}",
         "source": "Download {version} source code"
+      },
+      "dropdown": {
+        "bitness": "Bitness",
+        "os": "Operating System",
+        "version": "Version",
+        "platform": "Platform"
       }
     }
   },

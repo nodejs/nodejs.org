@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useContext, useEffect } from 'react';
 
@@ -21,6 +22,7 @@ const getDropDownStatus = (version: string, status: string) => {
 
 const VersionDropdown: FC<NodeRelease> = ({ versionWithPrefix }) => {
   const { releases, release, setVersion } = useContext(ReleaseContext);
+  const t = useTranslations();
   // we shouldn't react when "actions" change
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => setVersion(versionWithPrefix), []);
@@ -35,6 +37,7 @@ const VersionDropdown: FC<NodeRelease> = ({ versionWithPrefix }) => {
       onChange={setVersion}
       className="min-w-28"
       inline
+      label={t('layouts.download.dropdown.version')}
     />
   );
 };

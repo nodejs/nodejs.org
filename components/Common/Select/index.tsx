@@ -71,7 +71,7 @@ const Select: FC<SelectProps> = ({
         className
       )}
     >
-      {label && (
+      {label && !inline && (
         <label className={styles.label} htmlFor={id}>
           {label}
         </label>
