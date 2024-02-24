@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from 'next/og';
 
 import JsIconWhite from '@/components/Icons/Logos/JsIconWhite';
@@ -62,9 +63,8 @@ export async function GET(request: Request) {
         </div>
       )
     );
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (e) {
-    console.log(e.message);
+    console.log((e as Error).message);
     return new Response(`Failed to generate the image`, {
       status: 500,
     });
