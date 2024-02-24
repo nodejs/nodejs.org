@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import type { ComponentProps, FC } from 'react';
 
 import Link from '@/components/Link';
-import { useClientContext } from '@/hooks';
+import { usePathname } from '@/navigation.mjs';
 
 type ActiveLocalizedLinkProps = ComponentProps<typeof Link> & {
   activeClassName?: string;
@@ -19,7 +19,7 @@ const ActiveLink: FC<ActiveLocalizedLinkProps> = ({
   href = '',
   ...props
 }) => {
-  const { pathname } = useClientContext();
+  const pathname = usePathname();
 
   const finalClassName = classNames(className, {
     [activeClassName]: allowSubPath
