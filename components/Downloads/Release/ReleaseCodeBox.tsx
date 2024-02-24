@@ -1,53 +1,41 @@
 'use client';
 
-import dedent from 'dedent';
-import { useContext, type FC } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import type { FC } from 'react';
 
 import CodeBox from '@/components/Common/CodeBox';
 import { ReleaseContext } from '@/providers/releaseProvider';
-
-const codeBoxSnippets = (version: string | number) => ({
-  NVM: dedent`
-    # Installs NVM (Node Version Manager)
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-
-    # Installs Node.js
-    nvm install ${version}
-
-    # Checks that Node is installed
-    node -v
-
-    # Checks your NPM version
-    npm -v`,
-  BREW: dedent`
-    # Installs Brew (Homebrew Package Manager)
-    curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
-
-    # Installs Node.js
-    brew install node@${version}
-
-    # Checks that Node is installed
-    node -v
-
-    # Checks your NPM version
-    npm -v`,
-});
+import { getNodeDownloadSnippet } from '@/util/getNodeDownloadSnippet';
 
 const ReleaseCodeBox: FC = () => {
   const {
     platform,
-    release: { versionWithPrefix, major },
+    os,
+    release: { major },
   } = useContext(ReleaseContext);
 
-  const code = codeBoxSnippets(platform === 'BREW' ? major : versionWithPrefix)[
-    platform
-  ];
+  const [code, setCode] = useState('');
+
+  useEffect(() => {
+    // Docker and NVM support downloading tags/versions by their full release number
+    // but usually we should recommend users to download "major" versions
+    // since our Downlooad Buttons get the latest minor of a major, it does make sense
+    // to request installation of a major via a package manager
+    getNodeDownloadSnippet(major, os).then(platforms =>
+      setCode(platforms[platform])
+    );
+  }, [major, os, platform]);
 
   return (
-    <div className="mb-2 mt-6">
+    <div className="mb-2 mt-6 flex flex-col gap-2">
       <CodeBox language="Bash">
-        <code>{`${code}\n`}</code>
+        <code dangerouslySetInnerHTML={{ __html: code }} />
       </CodeBox>
+
+      <span className="text-center text-xs text-neutral-800 dark:text-neutral-200">
+        Package Managers and their installation scripts are not maintained by
+        the Node.js project.
+      </span>
     </div>
   );
 };

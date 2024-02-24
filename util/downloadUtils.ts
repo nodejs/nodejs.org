@@ -1,4 +1,5 @@
 import { ENABLE_WEBSITE_REDESIGN } from '@/next.constants.mjs';
+import type { PackageManager } from '@/types/release';
 import type { UserOS } from '@/types/userOS';
 
 // A utility enum to help convert `userOs` data type to user-readable format
@@ -27,11 +28,15 @@ export const operatingSystemItems = [
 export const platformItems = [
   {
     label: 'NVM',
-    value: 'NVM',
+    value: 'NVM' as PackageManager,
   },
   {
     label: 'Brew',
-    value: 'BREW',
+    value: 'BREW' as PackageManager,
+  },
+  {
+    label: 'Docker',
+    value: 'DOCKER' as PackageManager,
   },
 ];
 
@@ -72,6 +77,14 @@ export const bitnessItems = {
     {
       label: 'ARMv8',
       value: 'arm64',
+    },
+    {
+      label: 'Power LE',
+      value: 'ppc64le',
+    },
+    {
+      label: 'System Z',
+      value: 's390x',
     },
   ],
   OTHER: [],

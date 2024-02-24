@@ -11,7 +11,12 @@ const memoizedShikiji = await getHighlighterCore({
 });
 
 export const highlightToHtml = (code: string, language: string) =>
-  memoizedShikiji.codeToHtml(code, { lang: language, theme: DEFAULT_THEME });
+  memoizedShikiji
+    // Shiki will always return the Highlighted code encapsulated in a <pre> and <code> tag
+    // since our own CodeBox component handles the <code> tag, we just want to extract
+    // the inner highlighted code to the CodeBox
+    .codeToHtml(code, { lang: language, theme: DEFAULT_THEME })
+    .match(/<code>(.+?)<\/code>/s)![1];
 
 export const highlightToHast = (code: string, language: string) =>
   memoizedShikiji.codeToHast(code, { lang: language, theme: DEFAULT_THEME });

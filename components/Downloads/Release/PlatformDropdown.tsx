@@ -1,9 +1,10 @@
 'use client';
 
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useMemo } from 'react';
 import type { FC } from 'react';
 
 import Select from '@/components/Common/Select';
+import Docker from '@/components/Icons/Platform/Docker';
 import Generic from '@/components/Icons/Platform/Generic';
 import Homebrew from '@/components/Icons/Platform/Homebrew';
 import NVM from '@/components/Icons/Platform/NVM';
@@ -11,22 +12,54 @@ import { ReleaseContext } from '@/providers/releaseProvider';
 import type { PackageManager } from '@/types/release';
 import { formatDropdownItems, platformItems } from '@/util/downloadUtils';
 
+const supportedHomebrewVersions = ['Active LTS', 'Maintenance LTS', 'Current'];
+
 const PlatformDropdown: FC = () => {
-  const { release, platform, setPlatform } = useContext(ReleaseContext);
+  const { release, os, platform, setPlatform } = useContext(ReleaseContext);
 
-  const homebrewSupportsVersion = [
-    'Active LTS',
-    'Maintenance LTS',
-    'Current',
-  ].includes(release.status);
+  // @TOOD: We should have a proper utility that gives
+  // disabled OSs, Platforms, based on specific criteria
+  // this can be an optimisation for the future
+  // to remove this logic from this component
+  const disabledItems = useMemo(() => {
+    const disabledItems = [];
 
-  useEffect(() => {
-    if (platform === 'BREW' && !homebrewSupportsVersion) {
-      setPlatform('NVM');
+    if (os === 'WIN') {
+      disabledItems.push('BREW');
     }
-    //
+
+    if (os === 'LINUX') {
+      disabledItems.push('DOCKER');
+    }
+
+    const releaseSupportsHomebrew = supportedHomebrewVersions.includes(
+      release.status
+    );
+
+    if (!releaseSupportsHomebrew) {
+      disabledItems.push('BREW');
+    }
+
+    return disabledItems;
+  }, [os, release.status]);
+
+  // @TOOD: We should have a proper utility that gives
+  // disabled OSs, Platforms, based on specific criteria
+  // this can be an optimisation for the future
+  // to remove this logic from this component
+  useEffect(() => {
+    const currentPlatformExcluded = disabledItems.includes(platform);
+
+    const nonExcludedPlatform = platformItems
+      .map(({ value }) => value)
+      .find(platform => !disabledItems.includes(platform));
+
+    if (currentPlatformExcluded && nonExcludedPlatform) {
+      setPlatform(nonExcludedPlatform);
+    }
+    // we shouldn't react when "actions" change
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [homebrewSupportsVersion, platform]);
+  }, [release.status, disabledItems, platform]);
 
   return (
     <Select
@@ -35,11 +68,12 @@ const PlatformDropdown: FC = () => {
         icons: {
           NVM: <NVM width={16} height={16} />,
           BREW: <Homebrew width={16} height={16} />,
+          DOCKER: <Docker width={16} height={16} />,
         },
         defaultIcon: (
           <Generic className="dark:stroke-neutral-600" width={16} height={16} />
         ),
-        disabledItems: homebrewSupportsVersion ? [] : ['BREW'],
+        disabledItems,
       })}
       defaultValue={platform}
       onChange={platform => setPlatform(platform as PackageManager)}

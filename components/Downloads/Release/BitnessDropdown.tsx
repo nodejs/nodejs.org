@@ -20,6 +20,10 @@ const BitnessDropdown: FC = () => {
   // different bitnesses available
   useEffect(() => setBitness(userBitness), [setBitness, os, userBitness]);
 
+  // @TOOD: We should have a proper utility that gives
+  // disabled OSs, Platforms, based on specific criteria
+  // this can be an optimisation for the future
+  // to remove this logic from this component
   const disabledItems = useMemo(() => {
     const disabledItems = [];
 
@@ -29,6 +33,14 @@ const BitnessDropdown: FC = () => {
 
     if (os === 'LINUX' && semVer.satisfies(release.version, '< 4.0.0')) {
       disabledItems.push('arm64', 'armv7l');
+    }
+
+    if (os === 'LINUX' && semVer.satisfies(release.version, '< 4.4.0')) {
+      disabledItems.push('ppc64le');
+    }
+
+    if (os === 'LINUX' && semVer.satisfies(release.version, '< 6.6.0')) {
+      disabledItems.push('s390x');
     }
 
     return disabledItems;

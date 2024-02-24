@@ -1,6 +1,6 @@
 'use client';
 
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useMemo } from 'react';
 import type { FC } from 'react';
 
 import Select from '@/components/Common/Select';
@@ -21,31 +21,49 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
   exclude = [],
 }) => {
   const { os: userOS } = useDetectOS();
-  const { os, setOS } = useContext(ReleaseContext);
+  const { platform, os, setOS } = useContext(ReleaseContext);
 
   // we shouldn't react when "actions" change
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => setOS(userOS), [userOS]);
 
+  // @TOOD: We should have a proper utility that gives
+  // disabled OSs, Platforms, based on specific criteria
+  // this can be an optimisation for the future
+  // to remove this logic from this component
+  const disabledItems = useMemo(() => {
+    const disabledItems = exclude;
+
+    if (platform === 'BREW') {
+      disabledItems.push('WIN');
+    }
+
+    if (platform === 'DOCKER') {
+      disabledItems.push('LINUX');
+    }
+
+    return disabledItems;
+  }, [exclude, platform]);
+
   useEffect(() => {
-    const currentOSExcluded = exclude.includes(os);
+    const currentOSExcluded = disabledItems.includes(os);
 
     const nonExcludedOS = operatingSystemItems
-      .map(os => os.value)
-      .find(os => !exclude.includes(os));
+      .map(({ value }) => value)
+      .find(os => !disabledItems.includes(os));
 
     if (currentOSExcluded && nonExcludedOS) {
       setOS(nonExcludedOS);
     }
     // we shouldn't react when "actions" change
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [os]);
+  }, [os, disabledItems]);
 
   return (
     <Select
       values={formatDropdownItems({
         items: operatingSystemItems,
-        disabledItems: exclude,
+        disabledItems,
         icons: {
           WIN: <Microsoft width={16} height={16} />,
           MAC: <Apple width={16} height={16} />,

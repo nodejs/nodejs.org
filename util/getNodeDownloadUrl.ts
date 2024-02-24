@@ -1,7 +1,7 @@
 import { DIST_URL } from '@/next.constants.mjs';
 import type { UserOS } from '@/types/userOS';
 
-export const downloadUrlByOS = (
+export const getNodeDownloadUrl = (
   versionWithPrefix: string,
   os: UserOS,
   bitness: string | number,

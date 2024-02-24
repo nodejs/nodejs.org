@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import type { NodeRelease } from '@/types/releases';
 import type { UserOS } from '@/types/userOS';
 
-export type PackageManager = 'NVM' | 'BREW';
+export type PackageManager = 'NVM' | 'BREW' | 'DOCKER';
 
 export interface ReleaseState {
   os: UserOS;
