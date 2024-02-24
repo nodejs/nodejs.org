@@ -19,7 +19,11 @@ export const downloadUrlByOS = (
         return `${baseURL}/node-${versionWithPrefix}.pkg`;
       }
 
-      return `${baseURL}/node-${versionWithPrefix}-darwin-${bitness}.tar.gz`;
+      if (typeof bitness === 'string') {
+        return `${baseURL}/node-${versionWithPrefix}-darwin-${bitness}.tar.gz`;
+      }
+
+      return `${baseURL}/node-${versionWithPrefix}-darwin-x${bitness}.tar.gz`;
     case 'WIN': {
       if (kind === 'installer') {
         if (typeof bitness === 'string') {

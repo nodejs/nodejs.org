@@ -52,8 +52,12 @@ export const bitnessItems = {
   ],
   MAC: [
     {
-      label: '64-bit / ARM64',
+      label: '64-bit',
       value: '64',
+    },
+    {
+      label: 'ARM64',
+      value: 'arm64',
     },
   ],
   LINUX: [
