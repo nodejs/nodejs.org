@@ -5,9 +5,9 @@ subtitle: Download Node.js the way you want.
 ---
 
 <section>
-  I want the <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>{({ release }) => <Release.VersionDropdown {...release} />}</WithNodeRelease> version of the Node.js source code.
+  I want the <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>{({ release }) => <Release.VersionDropdown {...release} />}</WithNodeRelease> version of Node for <Release.OperatingSystemDropdown /> running <Release.BitnessDropdown />
 
-  <Release.SourceButton kind="source" />
+  <Release.DownloadButton kind="binary" />
 </section>
 
 <section>

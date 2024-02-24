@@ -9,20 +9,20 @@ export interface ReleaseState {
   os: UserOS;
   release: NodeRelease;
   releases: Array<NodeRelease>;
-  bitness: string;
+  bitness: string | number;
   platform: PackageManager;
 }
 
 export type ReleaseAction =
   | { type: 'SET_OS'; payload: UserOS }
   | { type: 'SET_VERSION'; payload: string }
-  | { type: 'SET_BITNESS'; payload: string }
+  | { type: 'SET_BITNESS'; payload: string | number }
   | { type: 'SET_PLATFORM'; payload: PackageManager };
 
 export interface ReleaseDispatchActions {
   setVersion: (version: string) => void;
   setOS: (os: UserOS) => void;
-  setBitness: (bitness: string) => void;
+  setBitness: (bitness: string | number) => void;
   setPlatform: (platform: PackageManager) => void;
 }
 

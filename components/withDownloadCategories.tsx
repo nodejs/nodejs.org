@@ -27,6 +27,10 @@ const WithDownloadCategories: FC<PropsWithChildren> = async ({ children }) => {
             label: t('layouts.download.categories.download'),
           },
           {
+            category: 'prebuilt-binaries',
+            label: t('layouts.download.categories.prebuilt-binaries'),
+          },
+          {
             category: 'package-manager',
             label: t('layouts.download.categories.package-manager'),
           },

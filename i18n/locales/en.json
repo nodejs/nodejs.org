@@ -271,6 +271,7 @@
       "selectCategory": "Categories",
       "categories": {
         "download": "Prebuilt Installer",
+        "prebuilt-binaries": "Prebuilt Binaries",
         "package-manager": "Package Manager",
         "source-code": "Source Code"
       },

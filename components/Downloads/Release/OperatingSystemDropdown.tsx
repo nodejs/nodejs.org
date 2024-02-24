@@ -27,17 +27,19 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => setOS(userOS), [userOS]);
 
-  const nonExcludedOS = operatingSystemItems
-    .map(os => os.value)
-    .find(os => !exclude.includes(os));
-
   useEffect(() => {
-    if (nonExcludedOS && os && nonExcludedOS !== os) {
+    const currentOSExcluded = exclude.includes(os);
+
+    const nonExcludedOS = operatingSystemItems
+      .map(os => os.value)
+      .find(os => !exclude.includes(os));
+
+    if (currentOSExcluded && nonExcludedOS) {
       setOS(nonExcludedOS);
     }
     // we shouldn't react when "actions" change
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [nonExcludedOS, os]);
+  }, [os]);
 
   return (
     <Select
