@@ -1,16 +1,19 @@
-'use server';
-
 import dedent from 'dedent';
 
 import type { UserOS } from '@/types/userOS';
-import { highlightToHtml } from '@/util/getHighlighter';
+import { getShiki, highlightToHtml } from '@/util/getHighlighter';
 
-const highlightToBash = (code: string) => highlightToHtml(code, 'bash');
+// We cannot do top-level awaits on utilities or code that is imported by client-only components
+// hence we only declare a Promise and let it be fulfilled by the first call to the function
+const memoizedShiki = getShiki();
+
+const highlightToBash = async (code: string) =>
+  memoizedShiki.then(shiki => highlightToHtml(shiki)(code, 'bash'));
 
 export const getNodeDownloadSnippet = async (major: number, os: UserOS) => {
   if (os === 'LINUX' || os === 'MAC') {
     const platformSnippets = {
-      NVM: highlightToBash(
+      NVM: await highlightToBash(
         dedent`
         # Installs NVM (Node Version Manager)
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -24,7 +27,7 @@ export const getNodeDownloadSnippet = async (major: number, os: UserOS) => {
         # Checks your NPM version
         npm -v`
       ),
-      BREW: highlightToBash(
+      BREW: await highlightToBash(
         dedent`
         # Installs Brew (macOS/Linux Package Manager)
         curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
@@ -42,7 +45,7 @@ export const getNodeDownloadSnippet = async (major: number, os: UserOS) => {
     };
 
     if (os === 'MAC') {
-      platformSnippets.DOCKER = highlightToBash(dedent`
+      platformSnippets.DOCKER = await highlightToBash(dedent`
         # Installs Brew (macOS Package Manager)
         curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
@@ -59,7 +62,7 @@ export const getNodeDownloadSnippet = async (major: number, os: UserOS) => {
 
   if (os === 'WIN') {
     return {
-      NVM: highlightToBash(dedent`
+      NVM: await highlightToBash(dedent`
         # Installs Chocolatey (Windows Package Manager)
         Set-ExecutionPolicy Bypass -Scope Process -Force;
         [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
@@ -76,7 +79,7 @@ export const getNodeDownloadSnippet = async (major: number, os: UserOS) => {
 
         # Checks your NPM version
         npm -v`),
-      DOCKER: highlightToBash(dedent`
+      DOCKER: await highlightToBash(dedent`
         # Installs Chocolatey (Windows Package Manager)
         Set-ExecutionPolicy Bypass -Scope Process -Force;
         [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
