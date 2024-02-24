@@ -75,7 +75,7 @@ export const bitnessItems = {
       value: 'armv7l',
     },
     {
-      label: 'ARMv8',
+      label: 'ARM64',
       value: 'arm64',
     },
     {
