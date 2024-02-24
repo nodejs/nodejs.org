@@ -47,7 +47,7 @@ export const GET = async (request: Request) => {
           }}
         >
           <img
-            tw="absolute  blur-3xl object-cover block"
+            tw="absolute blur-3xl object-cover block"
             src={`${protocol}//${host}/static/images/patterns/hexagon-grid.svg`}
             alt="hexagon grid"
             style={{
