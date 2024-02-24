@@ -218,7 +218,7 @@ const getDynamicRouter = async () => {
         path
       );
       pageMetadata.openGraph.images = [
-        `${currentLocale}/next-data/og?title=${pageMetadata.title}&type=${data.category}`,
+        `${currentLocale}/next-data/og?title=${data.title}&type=${data.category}`,
       ];
     });
 
