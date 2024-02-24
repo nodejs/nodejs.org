@@ -16,32 +16,30 @@ const WithDownloadCategories: FC<PropsWithChildren> = async ({ children }) => {
   const { page, category, subCategory } = getDownloadCategory(pathname);
 
   return (
-    <ReleaseProvider releases={releases}>
-      <LinkTabs
-        activeTab={category}
-        label={t('layouts.download.selectCategory')}
-        tabs={mapCategoriesToTabs({
-          page: page,
-          categories: [
-            {
-              category: 'download',
-              label: t('layouts.download.categories.download'),
-            },
-            {
-              category: 'package-manager',
-              label: t('layouts.download.categories.package-manager'),
-            },
-            {
-              category: 'source-code',
-              label: t('layouts.download.categories.source-code'),
-            },
-          ],
-          subCategory: subCategory,
-        })}
-      >
-        {children}
-      </LinkTabs>
-    </ReleaseProvider>
+    <LinkTabs
+      activeTab={category}
+      label={t('layouts.download.selectCategory')}
+      tabs={mapCategoriesToTabs({
+        page: page,
+        categories: [
+          {
+            category: 'download',
+            label: t('layouts.download.categories.download'),
+          },
+          {
+            category: 'package-manager',
+            label: t('layouts.download.categories.package-manager'),
+          },
+          {
+            category: 'source-code',
+            label: t('layouts.download.categories.source-code'),
+          },
+        ],
+        subCategory: subCategory,
+      })}
+    >
+      <ReleaseProvider releases={releases}>{children}</ReleaseProvider>
+    </LinkTabs>
   );
 };
 
