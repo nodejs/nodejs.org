@@ -27,6 +27,12 @@ const ProgressionSidebar: FC<ProgressionSidebarProps> = ({ groups }) => {
 
   return (
     <nav className={styles.wrapper}>
+      <WithRouterSelect
+        label={t('components.common.sidebar.title')}
+        values={selectItems}
+        defaultValue={currentItem?.value}
+      />
+
       {groups.map(({ groupName, items }) => (
         <ProgressionSidebarGroup
           key={groupName.toString()}
@@ -34,12 +40,6 @@ const ProgressionSidebar: FC<ProgressionSidebarProps> = ({ groups }) => {
           items={items}
         />
       ))}
-
-      <WithRouterSelect
-        label={t('components.common.sidebar.title')}
-        values={selectItems}
-        defaultValue={currentItem?.value}
-      />
     </nav>
   );
 };
