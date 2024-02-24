@@ -25,6 +25,10 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
 
   useEffect(() => setOs(userOS), [setOs, userOS]);
 
+  const nonExcludedOS = operatingSystemItems
+    .map(os => os.value)
+    .find(os => !exclude.includes(os));
+
   return (
     <Select
       values={formatDropdownItems({
@@ -36,7 +40,7 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
           LINUX: <Linux width={16} height={16} />,
         },
       })}
-      defaultValue={os}
+      defaultValue={exclude.includes(os) ? nonExcludedOS : os}
       onChange={(value: string) => setOs(value as UserOS)}
       inline={true}
       className="min-w-28"

@@ -5,9 +5,9 @@ subtitle: Download Node.js the way you want.
 ---
 
 <section>
-  Install Node version <WithNodeRelease status={['Current']}>{({ release }) => <Release.VersionDropdown {...release} />}</WithNodeRelease> on  <Release.OperatingSystemDropdown /> using <Release.PlatformDropdown />
+  Install Node version <WithNodeRelease status={['Current']}>{({ release }) => <Release.VersionDropdown {...release} />}</WithNodeRelease> on  <Release.OperatingSystemDropdown exclude={["WIN"]} /> using <Release.PlatformDropdown />
 
-  <Release.DownloadButton />
+  <Release.ReleaseCodeBox />
 </section>
 
 <section>

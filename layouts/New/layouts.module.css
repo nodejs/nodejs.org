@@ -149,7 +149,7 @@
     xs:dark:bg-none;
 
   main {
-    @apply max-w-8xl
+    @apply max-w-5xl
       gap-4
       px-4
       py-12

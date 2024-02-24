@@ -11,6 +11,7 @@ import ReleaseDownloadButton from './components/Downloads/Release/DownloadButton
 import NpmVersion from './components/Downloads/Release/NpmVersion';
 import OperatingSystemDropdown from './components/Downloads/Release/OperatingSystemDropdown';
 import PlatformDropdown from './components/Downloads/Release/PlatformDropdown';
+import ReleaseCodeBox from './components/Downloads/Release/ReleaseCodeBox';
 import ReleaseStatus from './components/Downloads/Release/ReleaseStatus';
 import ReleaseVersion from './components/Downloads/Release/ReleaseVersion';
 import SourceButton from './components/Downloads/Release/SourceButton';
@@ -83,6 +84,8 @@ export const mdxComponents = {
     DownloadButton: ReleaseDownloadButton,
     // Renders a Source Download Button for the selected release
     SourceButton: SourceButton,
+    // Renders a Release CodeBox
+    ReleaseCodeBox: ReleaseCodeBox,
   },
 };
 
