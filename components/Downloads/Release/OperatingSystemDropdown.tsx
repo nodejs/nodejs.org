@@ -21,13 +21,23 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
   exclude = [],
 }) => {
   const { os: userOS } = useDetectOS();
-  const { os, setOs } = useContext(ReleaseContext);
+  const { os, setOS } = useContext(ReleaseContext);
 
-  useEffect(() => setOs(userOS), [setOs, userOS]);
+  // we shouldn't react when "actions" change
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => setOS(userOS), [userOS]);
 
   const nonExcludedOS = operatingSystemItems
     .map(os => os.value)
     .find(os => !exclude.includes(os));
+
+  useEffect(() => {
+    if (nonExcludedOS && os && nonExcludedOS !== os) {
+      setOS(nonExcludedOS);
+    }
+    // we shouldn't react when "actions" change
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [nonExcludedOS, os]);
 
   return (
     <Select
@@ -40,8 +50,8 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
           LINUX: <Linux width={16} height={16} />,
         },
       })}
-      defaultValue={exclude.includes(os) ? nonExcludedOS : os}
-      onChange={(value: string) => setOs(value as UserOS)}
+      defaultValue={os}
+      onChange={value => setOS(value as UserOS)}
       inline={true}
       className="min-w-28"
     />

@@ -76,6 +76,7 @@ const Select: FC<SelectProps> = ({
           {label}
         </label>
       )}
+
       <Primitive.Root value={defaultValue} onValueChange={onChange}>
         <Primitive.Trigger
           className={styles.trigger}

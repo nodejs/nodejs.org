@@ -21,7 +21,7 @@ export type ReleaseAction =
 
 export interface ReleaseDispatchActions {
   setVersion: (version: string) => void;
-  setOs: (os: UserOS) => void;
+  setOS: (os: UserOS) => void;
   setBitness: (bitness: string) => void;
   setPlatform: (platform: PackageManager) => void;
 }

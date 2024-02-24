@@ -12,7 +12,7 @@ import { bitnessItems, formatDropdownItems } from '@/util/downloadUtils';
 const BitnessDropdown: FC = () => {
   const { bitness: userBitness } = useDetectOS();
   const { bitness, os, release, setBitness } = useContext(ReleaseContext);
-  const hasWindowsArm64 = semVer.satisfies(release?.version, '>= 19.9.0');
+  const hasWindowsArm64 = semVer.satisfies(release.version, '>= 19.9.0');
 
   useEffect(() => setBitness(String(userBitness)), [setBitness, userBitness]);
 

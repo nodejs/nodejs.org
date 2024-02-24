@@ -14,7 +14,7 @@ const DownloadButton: FC = () => {
   const t = useTranslations();
   const { release, os, bitness } = useContext(ReleaseContext);
 
-  const version = release?.versionWithPrefix;
+  const version = release.versionWithPrefix;
   const url = downloadUrlByOS(version, os, bitness);
 
   return (

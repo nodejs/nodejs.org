@@ -8,7 +8,7 @@ import { ReleaseContext } from '@/providers/releaseProvider';
 
 const BlogPostLink: FC<PropsWithChildren> = ({ children }) => {
   const { release } = useContext(ReleaseContext);
-  const version = release?.versionWithPrefix;
+  const version = release.versionWithPrefix;
 
   return (
     <LinkWithArrow url={`/blog/release/${version}`}>{children}</LinkWithArrow>

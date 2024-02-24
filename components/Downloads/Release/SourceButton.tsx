@@ -12,7 +12,7 @@ const SourceButton: FC = () => {
   const t = useTranslations();
   const { release } = useContext(ReleaseContext);
 
-  const version = release?.versionWithPrefix;
+  const version = release.versionWithPrefix;
   const url = `https://nodejs.org/dist/${version}/node-${version}.tar.gz`;
 
   return (

@@ -1,8 +1,7 @@
 'use client';
 
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import type { FC } from 'react';
-import semVer from 'semver';
 
 import Select from '@/components/Common/Select';
 import Generic from '@/components/Icons/Platform/Generic';
@@ -15,9 +14,19 @@ import { formatDropdownItems, platformItems } from '@/util/downloadUtils';
 const PlatformDropdown: FC = () => {
   const { release, platform, setPlatform } = useContext(ReleaseContext);
 
-  const homebrewSupportsVersion =
-    semVer.satisfies(release.version, '>= 14.0.0') &&
-    ['Active LTS', 'Maintenance LTS'].includes(release.status);
+  const homebrewSupportsVersion = [
+    'Active LTS',
+    'Maintenance LTS',
+    'Current',
+  ].includes(release.status);
+
+  useEffect(() => {
+    if (platform === 'BREW' && !homebrewSupportsVersion) {
+      setPlatform('NVM');
+    }
+    //
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [homebrewSupportsVersion, platform]);
 
   return (
     <Select

@@ -24,7 +24,7 @@ const createDispatchActions = (
   dispatch: Dispatch<ReleaseAction>
 ): ReleaseDispatchActions => ({
   setVersion: payload => dispatch({ type: 'SET_VERSION', payload }),
-  setOs: payload => dispatch({ type: 'SET_OS', payload }),
+  setOS: payload => dispatch({ type: 'SET_OS', payload }),
   setBitness: payload => dispatch({ type: 'SET_BITNESS', payload }),
   setPlatform: payload => dispatch({ type: 'SET_PLATFORM', payload }),
 });
