@@ -19,7 +19,7 @@ export const getNodeDownloadSnippet = async (major: number, os: UserOS) => {
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
         # Installs Node.js
-        nvm install ${major}
+        nvm install v${major}
 
         # Checks that Node is installed
         node -v
@@ -72,7 +72,7 @@ export const getNodeDownloadSnippet = async (major: number, os: UserOS) => {
         choco install nvm
 
         # Installs Node.js
-        nvm install ${major}
+        nvm install v${major}
 
         # Checks that Node is installed
         node -v
