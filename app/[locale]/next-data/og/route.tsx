@@ -6,7 +6,7 @@ import tailwindConfig from '@/tailwind.config';
 
 export const runtime = process.env.NEXT_PUBLIC_VERCEL_URL ? 'edge' : false;
 
-function hexToRgba(hex: string, alpha = 0.9) {
+const hexToRgba = (hex: string, alpha = 0.9) => {
   hex = hex.replace(/^#/, '');
 
   const bigint = parseInt(hex, 16);
@@ -15,9 +15,9 @@ function hexToRgba(hex: string, alpha = 0.9) {
   const b = bigint & 255;
 
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-}
+};
 
-export async function GET(request: Request) {
+export const GET = async (request: Request) => {
   try {
     const { searchParams, host, protocol } = new URL(request.url);
 
@@ -69,4 +69,4 @@ export async function GET(request: Request) {
       status: 500,
     });
   }
-}
+};
