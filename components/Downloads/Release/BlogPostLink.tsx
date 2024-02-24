@@ -11,7 +11,7 @@ const BlogPostLink: FC<PropsWithChildren> = ({ children }) => {
   const version = release.versionWithPrefix;
 
   return (
-    <LinkWithArrow url={`/blog/release/${version}`}>{children}</LinkWithArrow>
+    <LinkWithArrow href={`/blog/release/${version}`}>{children}</LinkWithArrow>
   );
 };
 

@@ -8,6 +8,7 @@ import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable'
 import BitnessDropdown from './components/Downloads/Release/BitnessDropdown';
 import BlogPostLink from './components/Downloads/Release/BlogPostLink';
 import ReleaseDownloadButton from './components/Downloads/Release/DownloadButton';
+import LinkWithArrow from './components/Downloads/Release/LinkWithArrow';
 import NpmVersion from './components/Downloads/Release/NpmVersion';
 import OperatingSystemDropdown from './components/Downloads/Release/OperatingSystemDropdown';
 import PlatformDropdown from './components/Downloads/Release/PlatformDropdown';
@@ -59,6 +60,8 @@ export const mdxComponents = {
   UpcomingSummits: UpcomingSummits,
   // Renders an container for Upcoming Node.js Events
   UpcomingEvents: UpcomingEvents,
+  // Links with External Arrow
+  LinkWithArrow: LinkWithArrow,
   // Group of components that enable you to select versions for Node.js
   // releases and download selected versions. Uses `releaseProvider` as a provider
   Release: {

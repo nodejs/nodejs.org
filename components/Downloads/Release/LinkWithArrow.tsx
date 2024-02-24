@@ -3,7 +3,7 @@ import type { FC, PropsWithChildren } from 'react';
 
 import Link from '@/components/Link';
 
-type AccessibleAnchorProps = { url?: string };
+type AccessibleAnchorProps = { href?: string };
 
 const LinkWithArrow: FC<PropsWithChildren<AccessibleAnchorProps>> = ({
   children,
