@@ -3,7 +3,7 @@ import type { FC, PropsWithChildren } from 'react';
 
 import { useClientContext } from '@/hooks/react-server';
 import getReleaseData from '@/next-data/releaseData';
-import ReleaseProvider from '@/providers/releaseProvider';
+import { ReleaseProvider } from '@/providers/releaseProvider';
 import { getDownloadCategory, mapCategoriesToTabs } from '@/util/downloadUtils';
 
 import LinkTabs from './Common/LinkTabs';
@@ -11,12 +11,14 @@ import LinkTabs from './Common/LinkTabs';
 const WithDownloadCategories: FC<PropsWithChildren> = async ({ children }) => {
   const t = await getTranslations();
   const releases = await getReleaseData();
+
   const { pathname } = useClientContext();
   const { page, category, subCategory } = getDownloadCategory(pathname);
 
   return (
     <ReleaseProvider releases={releases}>
       <LinkTabs
+        activeTab={category}
         label={t('layouts.download.selectCategory')}
         tabs={mapCategoriesToTabs({
           page: page,
@@ -36,7 +38,6 @@ const WithDownloadCategories: FC<PropsWithChildren> = async ({ children }) => {
           ],
           subCategory: subCategory,
         })}
-        activeTab={category}
       >
         {children}
       </LinkTabs>

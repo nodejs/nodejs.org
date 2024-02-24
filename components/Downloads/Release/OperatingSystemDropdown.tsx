@@ -1,14 +1,14 @@
 'use client';
 
+import { useContext, useEffect } from 'react';
 import type { FC } from 'react';
-import { useEffect } from 'react';
 
 import Select from '@/components/Common/Select';
 import Apple from '@/components/Icons/Platform/Apple';
 import Linux from '@/components/Icons/Platform/Linux';
 import Microsoft from '@/components/Icons/Platform/Microsoft';
 import { useDetectOS } from '@/hooks/react-client';
-import { useReleaseContext } from '@/providers/releaseProvider';
+import { ReleaseContext } from '@/providers/releaseProvider';
 import type { UserOS } from '@/types/userOS';
 import {
   formatDropdownItems,
@@ -21,14 +21,9 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
   exclude = [],
 }) => {
   const { os: userOS } = useDetectOS();
-  const {
-    state: { os },
-    dispatch: { setOs },
-  } = useReleaseContext();
+  const { os, setOs } = useContext(ReleaseContext);
 
-  useEffect(() => {
-    setOs(userOS);
-  }, [setOs, userOS]);
+  useEffect(() => setOs(userOS), [setOs, userOS]);
 
   return (
     <Select

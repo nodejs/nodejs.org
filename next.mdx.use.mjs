@@ -7,7 +7,6 @@ import DownloadLink from './components/Downloads/DownloadLink';
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
 import BitnessDropdown from './components/Downloads/Release/BitnessDropdown';
 import BlogPostLink from './components/Downloads/Release/BlogPostLink';
-import ChangelogTrigger from './components/Downloads/Release/ChangelogTrigger';
 import ReleaseDownloadButton from './components/Downloads/Release/DownloadButton';
 import NpmVersion from './components/Downloads/Release/NpmVersion';
 import OperatingSystemDropdown from './components/Downloads/Release/OperatingSystemDropdown';
@@ -76,8 +75,6 @@ export const mdxComponents = {
     Version: ReleaseVersion,
     // Renders a release status of the selected release
     Status: ReleaseStatus,
-    // Renders a Changelog / Changelog Trigger  for the selected release
-    ChangelogTrigger: ChangelogTrigger,
     // Renders a Blog Post Link for the selected release
     BlogPostLink: BlogPostLink,
     // Renders a Verifying Binaries Link

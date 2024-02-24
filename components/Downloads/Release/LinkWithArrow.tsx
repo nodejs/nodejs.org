@@ -1,22 +1,17 @@
-import type { UrlObject } from 'url';
-
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import type { FC, PropsWithChildren } from 'react';
 
-import { Link } from '@/navigation.mjs';
+import Link from '@/components/Link';
 
-type AccessibleAnchorProps = {
-  url: string | UrlObject;
-};
+type AccessibleAnchorProps = { url?: string };
 
 const LinkWithArrow: FC<PropsWithChildren<AccessibleAnchorProps>> = ({
   children,
-  url,
+  ...props
 }) => (
-  <Link href={url}>
+  <Link {...props}>
     {children}
     <ArrowUpRightIcon className="ml-1 inline w-3 fill-white" />
   </Link>
 );
-
 export default LinkWithArrow;

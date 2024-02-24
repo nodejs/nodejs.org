@@ -33,10 +33,6 @@ export const platformItems = [
     label: 'Brew',
     value: 'BREW',
   },
-  {
-    label: 'fvm',
-    value: 'FWM',
-  },
 ];
 
 export const bitnessItems = {
@@ -88,9 +84,7 @@ export const formatDropdownItems = ({
 // Returns the page, category and subCategoy information to be used in the page
 // from the pathname information on the download pages.
 export const getDownloadCategory = (pathname: string) => {
-  /**
-   * @deprecated once the website redesign happens remove this code block
-   */
+  /** @deprecated once the website redesign happens remove this code block  */
   if (ENABLE_WEBSITE_REDESIGN) {
     pathname = pathname.replace('/new-design', '');
   }

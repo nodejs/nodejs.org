@@ -1,19 +1,17 @@
 ---
 layout: download.hbs
-title: Download
-subtitle: Download the Node.js the way you want.
+title: Download Node.js®
+subtitle: Download Node.js the way you want.
 ---
 
 <section>
-I want the <Release.VersionDropdown status="Current" /> version of Node for <Release.OperatingSystemDropdown exclude={["LINUX"]} /> running <Release.BitnessDropdown />
+  I want the <WithNodeRelease status={['Current']}>{({ release }) => <Release.VersionDropdown {...release} />}</WithNodeRelease> version of Node for <Release.OperatingSystemDropdown exclude={["LINUX"]} /> running <Release.BitnessDropdown />
 
-<Release.DownloadButton />
+  <Release.DownloadButton />
 </section>
 
 <section>
-<Release.Status /> Version: <Release.Version /> (includes npm <Release.NpmVersion />).
-
-Read the release notes for <Release.ChangelogTrigger>this version</Release.ChangelogTrigger>
+  <Release.Status /> Version: <Release.Version /> (includes npm and corepack).
 
 Read the blog post for <Release.BlogPostLink>this version</Release.BlogPostLink>
 

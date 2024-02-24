@@ -1,15 +1,14 @@
 'use client';
 
+import { useContext } from 'react';
 import type { FC } from 'react';
 
-import { useReleaseContext } from '@/providers/releaseProvider';
+import { ReleaseContext } from '@/providers/releaseProvider';
 
 const ReleaseVersion: FC = () => {
   const {
-    state: {
-      release: { version },
-    },
-  } = useReleaseContext();
+    release: { version },
+  } = useContext(ReleaseContext);
 
   return <>{version}</>;
 };

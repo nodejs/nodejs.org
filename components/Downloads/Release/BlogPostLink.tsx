@@ -1,14 +1,14 @@
 'use client';
 
 import type { FC, PropsWithChildren } from 'react';
+import { useContext } from 'react';
 
 import LinkWithArrow from '@/components/Downloads/Release/LinkWithArrow';
-import { useReleaseContext } from '@/providers/releaseProvider';
+import { ReleaseContext } from '@/providers/releaseProvider';
 
 const BlogPostLink: FC<PropsWithChildren> = ({ children }) => {
-  const {
-    state: { version },
-  } = useReleaseContext();
+  const { release } = useContext(ReleaseContext);
+  const version = release?.versionWithPrefix;
 
   return (
     <LinkWithArrow url={`/blog/release/${version}`}>{children}</LinkWithArrow>

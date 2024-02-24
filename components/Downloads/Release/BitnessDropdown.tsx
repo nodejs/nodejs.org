@@ -1,26 +1,20 @@
 'use client';
 
 import type { FC } from 'react';
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import semVer from 'semver';
 
 import Select from '@/components/Common/Select';
 import { useDetectOS } from '@/hooks/react-client';
-import { useReleaseContext } from '@/providers/releaseProvider';
+import { ReleaseContext } from '@/providers/releaseProvider';
 import { bitnessItems, formatDropdownItems } from '@/util/downloadUtils';
 
 const BitnessDropdown: FC = () => {
   const { bitness: userBitness } = useDetectOS();
-  const {
-    state: { bitness, os, release },
-    dispatch: { setBitness },
-  } = useReleaseContext();
+  const { bitness, os, release, setBitness } = useContext(ReleaseContext);
+  const hasWindowsArm64 = semVer.satisfies(release?.version, '>= 19.9.0');
 
-  const hasWindowsArm64 = semVer.satisfies(release.version, '>= 19.9.0');
-
-  useEffect(() => {
-    setBitness(String(userBitness));
-  }, [setBitness, userBitness]);
+  useEffect(() => setBitness(String(userBitness)), [setBitness, userBitness]);
 
   return (
     <Select
