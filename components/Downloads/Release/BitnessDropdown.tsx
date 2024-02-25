@@ -22,7 +22,7 @@ const BitnessDropdown: FC = () => {
   // different bitnesses available
   useEffect(() => setBitness(userBitness), [setBitness, os, userBitness]);
 
-  // @TOOD: We should have a proper utility that gives
+  // @TODO: We should have a proper utility that gives
   // disabled OSs, Platforms, based on specific criteria
   // this can be an optimisation for the future
   // to remove this logic from this component

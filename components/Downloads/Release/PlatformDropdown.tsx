@@ -18,7 +18,7 @@ const PlatformDropdown: FC = () => {
   const { release, os, platform, setPlatform } = useContext(ReleaseContext);
   const t = useTranslations();
 
-  // @TOOD: We should have a proper utility that gives
+  // @TODO: We should have a proper utility that gives
   // disabled OSs, Platforms, based on specific criteria
   // this can be an optimisation for the future
   // to remove this logic from this component
@@ -44,7 +44,7 @@ const PlatformDropdown: FC = () => {
     return disabledItems;
   }, [os, release.status]);
 
-  // @TOOD: We should have a proper utility that gives
+  // @TODO: We should have a proper utility that gives
   // disabled OSs, Platforms, based on specific criteria
   // this can be an optimisation for the future
   // to remove this logic from this component
