@@ -14,6 +14,7 @@ type SelectValue = {
   label: FormattedMessage;
   value: string;
   iconImage?: React.ReactNode;
+  disabled?: boolean;
 };
 
 type SelectGroup = {
@@ -34,6 +35,7 @@ type SelectProps = {
   label?: string;
   inline?: boolean;
   onChange?: (value: string) => void;
+  className?: string;
 };
 
 const Select: FC<SelectProps> = ({
@@ -43,6 +45,7 @@ const Select: FC<SelectProps> = ({
   label,
   inline,
   onChange,
+  className,
 }) => {
   const id = useId();
 
@@ -61,12 +64,19 @@ const Select: FC<SelectProps> = ({
   }, [values]);
 
   return (
-    <div className={classNames(styles.select, { [styles.inline]: inline })}>
-      {label && (
+    <span
+      className={classNames(
+        styles.select,
+        { [styles.inline]: inline },
+        className
+      )}
+    >
+      {label && !inline && (
         <label className={styles.label} htmlFor={id}>
           {label}
         </label>
       )}
+
       <Primitive.Root value={defaultValue} onValueChange={onChange}>
         <Primitive.Trigger
           className={styles.trigger}
@@ -92,10 +102,11 @@ const Select: FC<SelectProps> = ({
                     </Primitive.Label>
                   )}
 
-                  {items.map(({ value, label, iconImage }) => (
+                  {items.map(({ value, label, iconImage, disabled }) => (
                     <Primitive.Item
                       key={value}
                       value={value}
+                      disabled={disabled}
                       className={classNames(styles.item, styles.text)}
                     >
                       <Primitive.ItemText>
@@ -110,7 +121,7 @@ const Select: FC<SelectProps> = ({
           </Primitive.Content>
         </Primitive.Portal>
       </Primitive.Root>
-    </div>
+    </span>
   );
 };
 

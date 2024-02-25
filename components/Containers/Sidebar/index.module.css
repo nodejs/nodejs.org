@@ -22,7 +22,7 @@
       xs:hidden;
   }
 
-  > div {
+  > span {
     @apply hidden
       w-full
       xs:flex;

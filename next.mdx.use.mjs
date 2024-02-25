@@ -5,6 +5,19 @@ import Button from './components/Common/Button';
 import DownloadButton from './components/Downloads/DownloadButton';
 import DownloadLink from './components/Downloads/DownloadLink';
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
+import BitnessDropdown from './components/Downloads/Release/BitnessDropdown';
+import BlogPostLink from './components/Downloads/Release/BlogPostLink';
+import ReleaseDownloadButton from './components/Downloads/Release/DownloadButton';
+import LinkWithArrow from './components/Downloads/Release/LinkWithArrow';
+import NpmVersion from './components/Downloads/Release/NpmVersion';
+import OperatingSystemDropdown from './components/Downloads/Release/OperatingSystemDropdown';
+import PlatformDropdown from './components/Downloads/Release/PlatformDropdown';
+import ReleaseCodeBox from './components/Downloads/Release/ReleaseCodeBox';
+import ReleaseStatus from './components/Downloads/Release/ReleaseStatus';
+import ReleaseVersion from './components/Downloads/Release/ReleaseVersion';
+import SourceButton from './components/Downloads/Release/SourceButton';
+import VerifyingBinariesLink from './components/Downloads/Release/VerifyingBinariesLink';
+import VersionDropdown from './components/Downloads/Release/VersionDropdown';
 import HomeDownloadButton from './components/Home/HomeDownloadButton';
 import Link from './components/Link';
 import UpcomingEvents from './components/MDX/Calendar/UpcomingEvents';
@@ -47,6 +60,36 @@ export const mdxComponents = {
   UpcomingSummits: UpcomingSummits,
   // Renders an container for Upcoming Node.js Events
   UpcomingEvents: UpcomingEvents,
+  // Links with External Arrow
+  LinkWithArrow: LinkWithArrow,
+  // Group of components that enable you to select versions for Node.js
+  // releases and download selected versions. Uses `releaseProvider` as a provider
+  Release: {
+    // Renders a drop-down menu from which the version can select
+    VersionDropdown: VersionDropdown,
+    // Renders a drop-down menu from which the platform can select
+    PlatformDropdown: PlatformDropdown,
+    // Renders a drop-down menu from which the bitness can select
+    BitnessDropdown: BitnessDropdown,
+    // Renders a drop-down menu from which the operating system can select
+    OperatingSystemDropdown: OperatingSystemDropdown,
+    // Renders a npm version of the selected release
+    NpmVersion: NpmVersion,
+    // Renders a release version of the selected release
+    Version: ReleaseVersion,
+    // Renders a release status of the selected release
+    Status: ReleaseStatus,
+    // Renders a Blog Post Link for the selected release
+    BlogPostLink: BlogPostLink,
+    // Renders a Verifying Binaries Link
+    VerifyingBinariesLink: VerifyingBinariesLink,
+    // Renders a Download Button for the selected release
+    DownloadButton: ReleaseDownloadButton,
+    // Renders a Source Download Button for the selected release
+    SourceButton: SourceButton,
+    // Renders a Release CodeBox
+    ReleaseCodeBox: ReleaseCodeBox,
+  },
 };
 
 /**

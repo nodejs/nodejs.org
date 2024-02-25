@@ -1,6 +1,5 @@
 .select {
-  @apply flex
-    w-fit
+  @apply inline-flex
     flex-col
     gap-1.5;
 
@@ -47,6 +46,7 @@
 
   .trigger span {
     @apply flex
+      h-5
       items-center
       gap-2;
   }
@@ -115,9 +115,11 @@
   .text {
     @apply text-neutral-900
       data-[highlighted]:bg-neutral-100
+      data-[disabled]:text-neutral-600
       data-[highlighted]:text-neutral-900
       dark:text-white
-      dark:data-[highlighted]:bg-neutral-900;
+      dark:data-[highlighted]:bg-neutral-900
+      dark:data-[disabled]:text-neutral-700;
   }
 
   &.dropdown {

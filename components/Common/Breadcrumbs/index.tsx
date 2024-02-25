@@ -1,4 +1,5 @@
-import { useMemo, type FC } from 'react';
+import type { FC } from 'react';
+import { useMemo } from 'react';
 
 import BreadcrumbHomeLink from '@/components/Common/Breadcrumbs/BreadcrumbHomeLink';
 import BreadcrumbItem from '@/components/Common/Breadcrumbs/BreadcrumbItem';
