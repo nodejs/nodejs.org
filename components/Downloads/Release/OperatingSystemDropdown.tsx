@@ -47,6 +47,10 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
     return disabledItems;
   }, [exclude, platform]);
 
+  // @TODO: We should have a proper utility that gives
+  // disabled OSs, Platforms, based on specific criteria
+  // this can be an optimisation for the future
+  // to remove this logic from this component
   useEffect(() => {
     const currentOSExcluded = disabledItems.includes(os);
 

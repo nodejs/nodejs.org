@@ -48,6 +48,24 @@ const BitnessDropdown: FC = () => {
     return disabledItems;
   }, [os, release.version]);
 
+  // @TODO: We should have a proper utility that gives
+  // disabled OSs, Platforms, based on specific criteria
+  // this can be an optimisation for the future
+  // to remove this logic from this component
+  useEffect(() => {
+    const currentBittnessExcluded = disabledItems.includes(String(bitness));
+
+    const nonExcludedBitness = bitnessItems[os]
+      .map(({ value }) => value)
+      .find(bittness => !disabledItems.includes(bittness));
+
+    if (currentBittnessExcluded && nonExcludedBitness) {
+      setBitness(nonExcludedBitness);
+    }
+    // we shouldn't react when "actions" change
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [os, disabledItems]);
+
   return (
     <Select
       label={t('layouts.download.dropdown.bitness')}

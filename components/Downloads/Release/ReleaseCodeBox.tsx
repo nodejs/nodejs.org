@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { useContext, useEffect, useState } from 'react';
 import type { FC } from 'react';
 
@@ -20,6 +21,7 @@ const ReleaseCodeBox: FC = () => {
   } = useContext(ReleaseContext);
 
   const [code, setCode] = useState('');
+  const t = useTranslations();
 
   useEffect(() => {
     const updatedCode = getNodeDownloadSnippet(major, os)[platform];
@@ -41,8 +43,7 @@ const ReleaseCodeBox: FC = () => {
       )}
 
       <span className="text-center text-xs text-neutral-800 dark:text-neutral-200">
-        Package Managers and their installation scripts are not maintained by
-        the Node.js project.
+        {t('layouts.download.codeBox.communityWarning')}
       </span>
     </div>
   );

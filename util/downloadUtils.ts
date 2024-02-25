@@ -43,12 +43,12 @@ export const platformItems = [
 export const bitnessItems = {
   WIN: [
     {
-      label: '32-bit',
-      value: '86',
-    },
-    {
       label: '64-bit',
       value: '64',
+    },
+    {
+      label: '32-bit',
+      value: '86',
     },
     {
       label: 'ARM64',
