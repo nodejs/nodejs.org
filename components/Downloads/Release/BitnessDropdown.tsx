@@ -20,7 +20,7 @@ const BitnessDropdown: FC = () => {
 
   // we also reset the bitness when the OS changes, because different OSs have
   // different bitnesses available
-  useEffect(() => setBitness(userBitness), [setBitness, os, userBitness]);
+  useEffect(() => setBitness(userBitness), [setBitness, userBitness]);
 
   // @TODO: We should have a proper utility that gives
   // disabled OSs, Platforms, based on specific criteria
@@ -53,11 +53,18 @@ const BitnessDropdown: FC = () => {
   // this can be an optimisation for the future
   // to remove this logic from this component
   useEffect(() => {
-    const currentBittnessExcluded = disabledItems.includes(String(bitness));
+    const mappedBittnessesValues = bitnessItems[os].map(({ value }) => value);
 
-    const nonExcludedBitness = bitnessItems[os]
-      .map(({ value }) => value)
-      .find(bittness => !disabledItems.includes(bittness));
+    const currentBittnessExcluded =
+      // Different OSs support different Bitnessess, hence we should also check
+      // if besides the current bitness not being supported for a given release version
+      // we also should check if it is not supported by the OS
+      disabledItems.includes(String(bitness)) ||
+      !mappedBittnessesValues.includes(String(bitness));
+
+    const nonExcludedBitness = mappedBittnessesValues.find(
+      bittness => !disabledItems.includes(bittness)
+    );
 
     if (currentBittnessExcluded && nonExcludedBitness) {
       setBitness(nonExcludedBitness);
