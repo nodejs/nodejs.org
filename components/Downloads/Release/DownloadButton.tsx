@@ -7,7 +7,6 @@ import type { FC } from 'react';
 
 import Button from '@/components/Common/Button';
 import { ReleaseContext } from '@/providers/releaseProvider';
-import { OperatingSystem } from '@/util/downloadUtils';
 import { getNodeDownloadUrl } from '@/util/getNodeDownloadUrl';
 
 type DownloadButtonProps = { kind: 'installer' | 'binary' | 'source' };
@@ -24,10 +23,7 @@ const DownloadButton: FC<DownloadButtonProps> = ({ kind = 'installer' }) => {
       <Button href={url} disabled={!version}>
         <CloudArrowDownIcon />
 
-        {t('layouts.download.buttons.prebuilt', {
-          version,
-          os: OperatingSystem[os],
-        })}
+        {t('layouts.download.buttons.prebuilt', { version })}
       </Button>
     </div>
   );

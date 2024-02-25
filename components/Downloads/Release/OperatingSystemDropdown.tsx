@@ -63,6 +63,7 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
 
   return (
     <Select
+      label={t('layouts.download.dropdown.os')}
       values={formatDropdownItems({
         items: operatingSystemItems,
         disabledItems,
@@ -74,9 +75,8 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
       })}
       defaultValue={os}
       onChange={value => setOS(value as UserOS)}
+      className="w-[8.5rem]"
       inline={true}
-      className="min-w-28"
-      label={t('layouts.download.dropdown.os')}
     />
   );
 };

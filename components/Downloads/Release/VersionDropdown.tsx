@@ -2,11 +2,10 @@
 
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 
 import Select from '@/components/Common/Select';
 import { ReleaseContext } from '@/providers/releaseProvider';
-import type { NodeRelease } from '@/types';
 
 const getDropDownStatus = (version: string, status: string) => {
   if (status === 'Active LTS') {
@@ -20,24 +19,21 @@ const getDropDownStatus = (version: string, status: string) => {
   return version;
 };
 
-const VersionDropdown: FC<NodeRelease> = ({ versionWithPrefix }) => {
+const VersionDropdown: FC = () => {
   const { releases, release, setVersion } = useContext(ReleaseContext);
   const t = useTranslations();
-  // we shouldn't react when "actions" change
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => setVersion(versionWithPrefix), []);
 
   return (
     <Select
+      label={t('layouts.download.dropdown.version')}
       values={releases.map(({ status, versionWithPrefix }) => ({
         value: versionWithPrefix,
         label: getDropDownStatus(versionWithPrefix, status),
       }))}
       defaultValue={release.versionWithPrefix}
       onChange={setVersion}
-      className="min-w-28"
-      inline
-      label={t('layouts.download.dropdown.version')}
+      className="w-40"
+      inline={true}
     />
   );
 };

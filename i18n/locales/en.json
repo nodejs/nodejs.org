@@ -276,8 +276,8 @@
         "source-code": "Source Code"
       },
       "buttons": {
-        "prebuilt": "Download {version} Node.js for {os}",
-        "source": "Download {version} source code"
+        "prebuilt": "Download Node.js {version}",
+        "source": "Download Node.js {version} source"
       },
       "dropdown": {
         "bitness": "Bitness",

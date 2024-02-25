@@ -37,6 +37,7 @@ export const ReleaseContext = createContext<ReleaseContextType>({
 export const ReleaseProvider: FC<PropsWithChildren<ReleaseProviderProps>> = ({
   children,
   releases,
+  initialRelease,
 }) => {
   const getReleaseFromVersion = (version: string) =>
     releases.find(({ versionWithPrefix }) => versionWithPrefix === version) ??
@@ -60,6 +61,7 @@ export const ReleaseProvider: FC<PropsWithChildren<ReleaseProviderProps>> = ({
   const [state, dispatch] = useReducer(releaseReducer, {
     ...initialState,
     releases: releases,
+    release: initialRelease,
   });
 
   const actions = useMemo(() => createDispatchActions(dispatch), [dispatch]);

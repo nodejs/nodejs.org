@@ -33,4 +33,5 @@ export interface ReleaseContextType
 export interface ReleaseProviderProps {
   children: ReactNode;
   releases: Array<NodeRelease>;
+  initialRelease: NodeRelease;
 }

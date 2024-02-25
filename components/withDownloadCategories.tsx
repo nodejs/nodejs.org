@@ -4,9 +4,11 @@ import type { FC, PropsWithChildren } from 'react';
 import { useClientContext } from '@/hooks/react-server';
 import getReleaseData from '@/next-data/releaseData';
 import { ReleaseProvider } from '@/providers/releaseProvider';
+import type { NodeReleaseStatus } from '@/types';
 import { getDownloadCategory, mapCategoriesToTabs } from '@/util/downloadUtils';
 
 import LinkTabs from './Common/LinkTabs';
+import WithNodeRelease from './withNodeRelease';
 
 const WithDownloadCategories: FC<PropsWithChildren> = async ({ children }) => {
   const t = await getTranslations();
@@ -14,6 +16,10 @@ const WithDownloadCategories: FC<PropsWithChildren> = async ({ children }) => {
 
   const { pathname } = useClientContext();
   const { page, category, subCategory } = getDownloadCategory(pathname);
+
+  const initialRelease: Array<NodeReleaseStatus> = pathname.includes('current')
+    ? ['Current']
+    : ['Active LTS', 'Maintenance LTS'];
 
   return (
     <LinkTabs
@@ -42,7 +48,13 @@ const WithDownloadCategories: FC<PropsWithChildren> = async ({ children }) => {
         subCategory: subCategory,
       })}
     >
-      <ReleaseProvider releases={releases}>{children}</ReleaseProvider>
+      <WithNodeRelease status={initialRelease}>
+        {({ release }) => (
+          <ReleaseProvider initialRelease={release} releases={releases}>
+            {children}
+          </ReleaseProvider>
+        )}
+      </WithNodeRelease>
     </LinkTabs>
   );
 };

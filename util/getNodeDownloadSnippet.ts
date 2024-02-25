@@ -1,20 +1,11 @@
 import dedent from 'dedent';
 
 import type { UserOS } from '@/types/userOS';
-import { getShiki, highlightToHtml } from '@/util/getHighlighter';
 
-// We cannot do top-level awaits on utilities or code that is imported by client-only components
-// hence we only declare a Promise and let it be fulfilled by the first call to the function
-const memoizedShiki = getShiki();
-
-const highlightToBash = async (code: string) =>
-  memoizedShiki.then(shiki => highlightToHtml(shiki)(code, 'bash'));
-
-export const getNodeDownloadSnippet = async (major: number, os: UserOS) => {
+export const getNodeDownloadSnippet = (major: number, os: UserOS) => {
   if (os === 'LINUX' || os === 'MAC') {
     const platformSnippets = {
-      NVM: await highlightToBash(
-        dedent`
+      NVM: dedent`
         # Installs NVM (Node Version Manager)
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
@@ -25,10 +16,8 @@ export const getNodeDownloadSnippet = async (major: number, os: UserOS) => {
         node -v
 
         # Checks your NPM version
-        npm -v`
-      ),
-      BREW: await highlightToBash(
-        dedent`
+        npm -v`,
+      BREW: dedent`
         # Installs Brew (macOS/Linux Package Manager)
         curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
@@ -39,13 +28,12 @@ export const getNodeDownloadSnippet = async (major: number, os: UserOS) => {
         node -v
 
         # Checks your NPM version
-        npm -v`
-      ),
+        npm -v`,
       DOCKER: '',
     };
 
     if (os === 'MAC') {
-      platformSnippets.DOCKER = await highlightToBash(dedent`
+      platformSnippets.DOCKER = dedent`
         # Installs Brew (macOS Package Manager)
         curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
@@ -54,7 +42,7 @@ export const getNodeDownloadSnippet = async (major: number, os: UserOS) => {
 
         # Pull Node.js Docker Image
         docker pull node:${major}-${major >= 4 ? 'alpine' : 'slim'}
-      `);
+      `;
     }
 
     return platformSnippets;
@@ -62,7 +50,7 @@ export const getNodeDownloadSnippet = async (major: number, os: UserOS) => {
 
   if (os === 'WIN') {
     return {
-      NVM: await highlightToBash(dedent`
+      NVM: dedent`
         # Installs Chocolatey (Windows Package Manager)
         Set-ExecutionPolicy Bypass -Scope Process -Force;
         [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
@@ -78,8 +66,8 @@ export const getNodeDownloadSnippet = async (major: number, os: UserOS) => {
         node -v
 
         # Checks your NPM version
-        npm -v`),
-      DOCKER: await highlightToBash(dedent`
+        npm -v`,
+      DOCKER: dedent`
         # Installs Chocolatey (Windows Package Manager)
         Set-ExecutionPolicy Bypass -Scope Process -Force;
         [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
@@ -90,7 +78,7 @@ export const getNodeDownloadSnippet = async (major: number, os: UserOS) => {
 
         # Pull Node.js Docker Image
         docker pull node:${major}-${major >= 4 ? 'alpine' : 'slim'}
-      `),
+      `,
       BREW: '',
     };
   }

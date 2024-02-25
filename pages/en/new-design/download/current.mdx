@@ -5,13 +5,13 @@ subtitle: Download Node.js the way you want.
 ---
 
 <section>
-  I want the <WithNodeRelease status={['Current']}>{({ release }) => <Release.VersionDropdown {...release} />}</WithNodeRelease> version of Node for <Release.OperatingSystemDropdown exclude={["LINUX"]} /> running <Release.BitnessDropdown />
+  I want the <Release.VersionDropdown /> version of Node.js for <Release.OperatingSystemDropdown exclude={["LINUX"]} /> running <Release.BitnessDropdown />
 
   <Release.DownloadButton kind="installer" />
 </section>
 
 <section>
-  <Release.Status /> Version: <Release.Version /> (includes npm and corepack).
+Node.js includes <LinkWithArrow href="https://npmjs.com">npm</LinkWithArrow> (<Release.NpmVersion />) and corepack.
 
 Read the blog post for <Release.BlogPostLink>this version</Release.BlogPostLink>
 

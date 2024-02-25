@@ -50,15 +50,15 @@ const BitnessDropdown: FC = () => {
 
   return (
     <Select
+      label={t('layouts.download.dropdown.bitness')}
       values={formatDropdownItems({
         items: bitnessItems[os],
         disabledItems,
       })}
       defaultValue={String(bitness)}
       onChange={bitness => setBitness(parseNumericBitness(bitness))}
+      className="w-28"
       inline={true}
-      className="min-w-20"
-      label={t('layouts.download.dropdown.bitness')}
     />
   );
 };

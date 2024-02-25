@@ -5,12 +5,14 @@ subtitle: Download Node.js the way you want.
 ---
 
 <section>
-  Install Node version <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>{({ release }) => <Release.VersionDropdown {...release} />}</WithNodeRelease> on <Release.OperatingSystemDropdown /> using <Release.PlatformDropdown />
+  Install Node.js <Release.VersionDropdown /> on <Release.OperatingSystemDropdown /> using <Release.PlatformDropdown />
 
   <Release.ReleaseCodeBox />
 </section>
 
 <section>
+Node.js includes <LinkWithArrow href="https://npmjs.com">npm</LinkWithArrow> (<Release.NpmVersion />) and corepack.
+
 Read the blog post for <Release.BlogPostLink>this version</Release.BlogPostLink>
 
 Learn how to <Release.VerifyingBinariesLink>verify signed SHASUMS</Release.VerifyingBinariesLink>
