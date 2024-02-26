@@ -20,7 +20,6 @@ import VerifyingBinariesLink from './components/Downloads/Release/VerifyingBinar
 import VersionDropdown from './components/Downloads/Release/VersionDropdown';
 import HomeDownloadButton from './components/Home/HomeDownloadButton';
 import Link from './components/Link';
-import RecentEventPosts from './components/MDX/Calendar/RecentEventPosts';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
 import MDXCodeBox from './components/MDX/CodeBox';
 import MDXCodeTabs from './components/MDX/CodeTabs';
@@ -55,9 +54,7 @@ export const mdxComponents = {
   // Renders a Button Component for `button` tags
   Button: Button,
   // Renders a Search Page
-  SearchPage: SearchPage,  
-  // Renders an container for Recent Event Posts
-  RecentEventPosts: RecentEventPosts,
+  SearchPage: SearchPage,
   // Renders an container for Upcoming Node.js Meetings
   UpcomingMeetings: UpcomingMeetings,
   // Links with External Arrow
