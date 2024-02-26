@@ -169,20 +169,20 @@
       "destination": "https://nodejs.org/docs/latest/api/"
     },
     {
+      "source": "/:locale/docs/guides",
+      "destination": "/:locale/guides"
+    },
+    {
       "source": "/:locale/docs/es6",
       "destination": "/:locale/learn/getting-started/ecmascript-2015-es6-and-beyond"
     },
     {
+      "source": "/:locale/docs/guides/:path*",
+      "destination": "/:locale/guides/:path*"
+    },
+    {
       "source": "/:locale/guides",
       "destination": "/:locale/learn"
-    },
-    {
-      "source": "/:locale/docs/guides",
-      "destination": "/:locale/learn"
-    },
-    {
-      "source": "/:locale/docs/guides/:path*",
-      "destination": "/:locale/learn/:path*"
     },
     {
       "source": "/:locale/guides/getting-started-guide",
