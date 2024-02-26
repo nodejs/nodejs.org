@@ -266,6 +266,28 @@
         "description": "This page has thrown a non-recoverable error."
       },
       "backToHome": "Back to Home"
+    },
+    "download": {
+      "selectCategory": "Categories",
+      "categories": {
+        "download": "Prebuilt Installer",
+        "prebuilt-binaries": "Prebuilt Binaries",
+        "package-manager": "Package Manager",
+        "source-code": "Source Code"
+      },
+      "buttons": {
+        "prebuilt": "Download Node.js {version}",
+        "source": "Download Node.js {version} source"
+      },
+      "dropdown": {
+        "bitness": "Bitness",
+        "os": "Operating System",
+        "version": "Version",
+        "platform": "Platform"
+      },
+      "codeBox": {
+        "communityWarning": "Package Managers and their installation scripts are not maintained by the Node.js project.s"
+      }
     }
   },
   "pages": {

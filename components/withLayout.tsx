@@ -11,6 +11,7 @@ import LegacyLearnLayout from '@/layouts/LearnLayout';
 import AboutLayout from '@/layouts/New/About';
 import BlogLayout from '@/layouts/New/Blog';
 import DefaultLayout from '@/layouts/New/Default';
+import DownloadLayout from '@/layouts/New/Download';
 import HomeLayout from '@/layouts/New/Home';
 import LearnLayout from '@/layouts/New/Learn';
 import PostLayout from '@/layouts/New/Post';
@@ -39,6 +40,7 @@ const redesignLayouts = {
   'blog-post.hbs': PostLayout,
   'blog-category.hbs': BlogLayout,
   'search.hbs': SearchLayout,
+  'download.hbs': DownloadLayout,
 } satisfies Record<Layouts, FC>;
 
 type WithLayout<L = Layouts | LegacyLayouts> = PropsWithChildren<{ layout: L }>;
