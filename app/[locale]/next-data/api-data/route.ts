@@ -1,5 +1,6 @@
 import { deflateSync } from 'node:zlib';
 
+import getReleaseData from '@/next-data/releaseData';
 import { VERCEL_REVALIDATE } from '@/next.constants.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 import type { GitHubApiFile } from '@/types';
@@ -13,7 +14,15 @@ const getPathnameForApiFile = (name: string) =>
 // for a digest and metadata of all API pages from the Node.js Website
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 export const GET = async () => {
-  const gitHubApiResponse = await fetch(getGitHubApiDocsUrl('main'));
+  const releases = await getReleaseData();
+
+  const latestLTSRelease = releases.find(release =>
+    ['Active LTS', 'Maintenance LTS'].includes(release.status)
+  );
+
+  const gitHubApiResponse = await fetch(
+    getGitHubApiDocsUrl(latestLTSRelease!.versionWithPrefix)
+  );
 
   return gitHubApiResponse.json().then((apiDocsFiles: Array<GitHubApiFile>) => {
     // maps over each api file and get the download_url, fetch the content and deflates it

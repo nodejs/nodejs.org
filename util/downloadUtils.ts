@@ -43,11 +43,11 @@ export const platformItems = [
 export const bitnessItems = {
   WIN: [
     {
-      label: '64-bit',
+      label: 'x64',
       value: '64',
     },
     {
-      label: '32-bit',
+      label: 'x86',
       value: '86',
     },
     {
@@ -57,7 +57,7 @@ export const bitnessItems = {
   ],
   MAC: [
     {
-      label: '64-bit',
+      label: 'x64',
       value: '64',
     },
     {
@@ -67,7 +67,7 @@ export const bitnessItems = {
   ],
   LINUX: [
     {
-      label: '64-bit',
+      label: 'x64',
       value: '64',
     },
     {
