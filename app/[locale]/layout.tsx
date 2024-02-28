@@ -13,7 +13,6 @@ import { ThemeProvider } from '@/providers/themeProvider';
 
 import '@/styles/index.css';
 
-// Defines the App Fonts based on being on Website Redesign or not
 const fontClasses = classNames(IBM_PLEX_MONO.variable, OPEN_SANS.variable);
 
 const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
