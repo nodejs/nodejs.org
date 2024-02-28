@@ -7,8 +7,8 @@ import type { GitHubApiFile } from '@/types';
 import { getGitHubApiDocsUrl } from '@/util/gitHubUtils';
 import { parseRichTextIntoPlainText } from '@/util/stringUtils';
 
-const getPathnameForApiFile = (name: string) =>
-  `api/${name.replace('.md', '.html')}`;
+const getPathnameForApiFile = (name: string, version: string) =>
+  `docs/${version}/api/${name.replace('.md', '.html')}`;
 
 // This is the Route Handler for the `GET` method which handles the request
 // for a digest and metadata of all API pages from the Node.js Website
@@ -16,13 +16,11 @@ const getPathnameForApiFile = (name: string) =>
 export const GET = async () => {
   const releases = await getReleaseData();
 
-  const latestLTSRelease = releases.find(release =>
+  const { versionWithPrefix } = releases.find(release =>
     ['Active LTS', 'Maintenance LTS'].includes(release.status)
-  );
+  )!;
 
-  const gitHubApiResponse = await fetch(
-    getGitHubApiDocsUrl(latestLTSRelease!.versionWithPrefix)
-  );
+  const gitHubApiResponse = await fetch(getGitHubApiDocsUrl(versionWithPrefix));
 
   return gitHubApiResponse.json().then((apiDocsFiles: Array<GitHubApiFile>) => {
     // maps over each api file and get the download_url, fetch the content and deflates it
@@ -41,7 +39,7 @@ export const GET = async () => {
 
         return {
           filename,
-          pathname: getPathnameForApiFile(name),
+          pathname: getPathnameForApiFile(name, versionWithPrefix),
           content: deflatedSource,
         };
       }

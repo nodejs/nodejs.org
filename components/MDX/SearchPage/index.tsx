@@ -9,7 +9,7 @@ import { WithPoweredBy } from '@/components/Common/Search/States/WithPoweredBy';
 import { pathToBreadcrumbs } from '@/components/Common/Search/utils';
 import Link from '@/components/Link';
 import { useBottomScrollListener } from '@/hooks/react-client';
-import { DEFAULT_ORAMA_QUERY_PARAMS } from '@/next.constants.mjs';
+import { BASE_URL, DEFAULT_ORAMA_QUERY_PARAMS } from '@/next.constants.mjs';
 import { search as oramaSearch, highlighter } from '@/next.orama.mjs';
 import type { SearchDoc } from '@/types';
 
@@ -70,8 +70,11 @@ const SearchPage: FC = () => {
       ? { where: { siteSection: { eq: searchSection } } }
       : {};
 
-  const getDocumentURL = (path: string) =>
-    path.startsWith('api/') ? `https://nodejs.org/${path}` : path;
+  const getDocumentURL = (siteSection: string, path: string) => {
+    const isAPIResult = siteSection.toLowerCase() === 'api';
+    const basePath = isAPIResult ? BASE_URL : '';
+    return `${basePath}/${path}`;
+  };
 
   return (
     <div className={styles.searchPageContainer}>
@@ -103,8 +106,11 @@ const SearchPage: FC = () => {
           {hits?.map(hit => (
             <Link
               key={hit.id}
-              href={getDocumentURL(hit.document.path)}
               className={styles.searchResult}
+              href={getDocumentURL(
+                hit.document.siteSection.toLowerCase(),
+                hit.document.path
+              )}
             >
               <div>
                 <h2 className={styles.searchResultTitle}>

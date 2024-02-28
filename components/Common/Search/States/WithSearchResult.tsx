@@ -3,6 +3,7 @@ import type { FC } from 'react';
 
 import { pathToBreadcrumbs } from '@/components/Common/Search/utils';
 import Link from '@/components/Link';
+import { BASE_URL } from '@/next.constants.mjs';
 import { highlighter } from '@/next.orama.mjs';
 import type { SearchDoc } from '@/types';
 
@@ -15,7 +16,7 @@ type SearchResultProps = {
 
 export const WithSearchResult: FC<SearchResultProps> = props => {
   const isAPIResult = props.hit.document.siteSection.toLowerCase() === 'api';
-  const basePath = isAPIResult ? 'https://nodejs.org' : '';
+  const basePath = isAPIResult ? BASE_URL : '';
   const path = `${basePath}/${props.hit.document.path}`;
 
   return (
