@@ -101,8 +101,6 @@ export const MD_EXTENSION_REGEX = /((\/)?(index))?\.mdx?$/i;
 
 /**
  * This defines how many blog posts each pagination page should have
- *
- * @todo: update the value when moving to website redesign
  */
 export const BLOG_POSTS_PER_PAGE = 6;
 
