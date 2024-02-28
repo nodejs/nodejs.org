@@ -35,8 +35,10 @@ export const SearchButton: FC = () => {
         className={styles.searchButton}
       >
         <MagnifyingGlassIcon className={styles.magnifyingGlassIcon} />
+
         {t('components.search.searchBox.placeholder')}
       </button>
+
       {isOpen ? <WithSearchBox onClose={closeSearchBox} /> : null}
     </>
   );

@@ -286,7 +286,7 @@
         "platform": "Platform"
       },
       "codeBox": {
-        "communityWarning": "Package Managers and their installation scripts are not maintained by the Node.js project.s"
+        "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project."
       }
     }
   },
