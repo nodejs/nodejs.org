@@ -7,7 +7,7 @@ import WithFooter from '@/components/withFooter';
 import WithMetaBar from '@/components/withMetaBar';
 import WithNavBar from '@/components/withNavBar';
 import { useClientContext } from '@/hooks/react-server';
-import ContentLayout from '@/layouts/New/Content';
+import ContentLayout from '@/layouts/Content';
 import {
   mapAuthorToCardAuthors,
   mapBlogCategoryToPreviewType,

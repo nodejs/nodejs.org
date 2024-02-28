@@ -4,7 +4,7 @@ import WithBreadcrumbs from '@/components/withBreadcrumbs';
 import WithMetaBar from '@/components/withMetaBar';
 import WithNavBar from '@/components/withNavBar';
 import WithSidebar from '@/components/withSidebar';
-import ArticleLayout from '@/layouts/New/Article';
+import ArticleLayout from '@/layouts/Article';
 
 const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
   <>

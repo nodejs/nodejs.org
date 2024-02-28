@@ -37,15 +37,6 @@ export const ENABLE_STATIC_EXPORT =
   process.env.NEXT_PUBLIC_STATIC_EXPORT === true;
 
 /**
- * This is used for enabling the New Website Redesign Layouts
- *
- * Note that this is a manual Environment Variable defined by us if necessary.
- */
-export const ENABLE_WEBSITE_REDESIGN =
-  process.env.NEXT_PUBLIC_ENABLE_REDESIGN === 'true' ||
-  process.env.NEXT_PUBLIC_ENABLE_REDESIGN === true;
-
-/**
  * This is used for any place that requires the full canonical URL path for the Node.js Website (and its deployment), such as for example, the Node.js RSS Feed.
  *
  * This variable can either come from the Vercel Deployment as `NEXT_PUBLIC_VERCEL_URL` or from the `NEXT_PUBLIC_BASE_URL` Environment Variable that is manually defined
@@ -113,7 +104,7 @@ export const MD_EXTENSION_REGEX = /((\/)?(index))?\.mdx?$/i;
  *
  * @todo: update the value when moving to website redesign
  */
-export const BLOG_POSTS_PER_PAGE = ENABLE_WEBSITE_REDESIGN ? 6 : 20;
+export const BLOG_POSTS_PER_PAGE = 6;
 
 /**
  * The `localStorage` key to store the theme choice of `next-themes`

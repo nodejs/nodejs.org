@@ -1,15 +1,9 @@
 'use strict';
 
-import { resolve } from 'node:path';
-
 import { withSentryConfig } from '@sentry/nextjs';
 import withNextIntl from 'next-intl/plugin';
 
-import {
-  BASE_PATH,
-  ENABLE_STATIC_EXPORT,
-  ENABLE_WEBSITE_REDESIGN,
-} from './next.constants.mjs';
+import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 import {
   SENTRY_DSN,
@@ -65,31 +59,9 @@ const nextConfig = {
     // Tree-shakes modules from Sentry Bundle
     config.plugins.push(new webpack.DefinePlugin(SENTRY_EXTENSIONS));
 
-    // This allows us to customise our global styles on build-tim,e
-    // based on if we're running the Website Redesign or not
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      // @deprecated remove when website redesign is done
-      globalStyles$: resolve(
-        ENABLE_WEBSITE_REDESIGN
-          ? './styles/new/index.css'
-          : './styles/old/index.css'
-      ),
-    };
-
     return config;
   },
   experimental: {
-    turbo: {
-      resolveAlias: {
-        // This allows us to customise our global styles on build-tim,e
-        // based on if we're running the Website Redesign or not
-        // @deprecated remove when website redesign is done
-        globalStyles: ENABLE_WEBSITE_REDESIGN
-          ? './styles/new/index.css'
-          : './styles/old/index.css',
-      },
-    },
     // Some of our static pages from `getStaticProps` have a lot of data
     // since we pass the fully-compiled MDX page from `MDXRemote` through
     // a page's static props.

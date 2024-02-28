@@ -13,8 +13,6 @@ interface WithRange {
 export interface WebsiteBanner extends WithRange {
   text: string;
   link?: string;
-  /** @deprecated the html field is unsupported on the website redesign */
-  html?: string;
   type?: 'default' | 'warning' | 'error';
 }
 

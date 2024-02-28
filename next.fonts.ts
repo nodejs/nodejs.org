@@ -1,13 +1,4 @@
-import { Source_Sans_3, Open_Sans, IBM_Plex_Mono } from 'next/font/google';
-
-// This configures the Next.js Font for Source Sans
-// We then export a variable and class name to be used
-// within Tailwind (tailwind.config.ts) and Storybook (preview.js)
-export const SOURCE_SANS = Source_Sans_3({
-  weight: ['400', '600'],
-  display: 'fallback',
-  subsets: ['latin'],
-});
+import { Open_Sans, IBM_Plex_Mono } from 'next/font/google';
 
 // This configures the Next.js Font for Open Sans
 // We then export a variable and class name to be used
