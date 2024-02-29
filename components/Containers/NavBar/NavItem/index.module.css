@@ -5,10 +5,10 @@
     rounded
     px-3
     py-2
-    duration-150;
+    duration-75;
 
   &:hover {
-    @apply bg-green-200/50 dark:bg-green-600/30;
+    @apply bg-green-600/30;
   }
 
   .label {
