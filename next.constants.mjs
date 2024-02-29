@@ -160,12 +160,6 @@ export const DEFAULT_ORAMA_QUERY_PARAMS = {
 export const ORAMA_SYNC_BATCH_SIZE = 50;
 
 /**
- * The default heartbeat interval to use when communicating with Orama Cloud.
- * Default should be 3500ms (3.5 seconds).
- */
-export const ORAMA_CLOUD_HEARTBEAT_INTERVAL = 3500;
-
-/**
  * The default Orama Cloud endpoint to use when searching with Orama Cloud.
  */
 export const ORAMA_CLOUD_ENDPOINT =

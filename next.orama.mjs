@@ -3,7 +3,6 @@ import { OramaClient } from '@oramacloud/client';
 
 import {
   DEFAULT_ORAMA_QUERY_PARAMS,
-  ORAMA_CLOUD_HEARTBEAT_INTERVAL,
   ORAMA_CLOUD_ENDPOINT,
   ORAMA_CLOUD_API_KEY,
 } from './next.constants.mjs';
@@ -16,8 +15,6 @@ const { search, getInitialFacets } = (() => {
       endpoint: ORAMA_CLOUD_ENDPOINT,
       api_key: ORAMA_CLOUD_API_KEY,
     });
-
-    orama.startHeartBeat({ frequency: ORAMA_CLOUD_HEARTBEAT_INTERVAL });
 
     return {
       search: orama.search.bind(orama),
