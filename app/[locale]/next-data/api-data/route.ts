@@ -1,6 +1,6 @@
 import { deflateSync } from 'node:zlib';
 
-import getReleaseData from '@/next-data/releaseData';
+import provideReleaseData from '@/next-data/providers/releaseData';
 import { VERCEL_REVALIDATE } from '@/next.constants.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 import type { GitHubApiFile } from '@/types';
@@ -14,7 +14,7 @@ const getPathnameForApiFile = (name: string, version: string) =>
 // for a digest and metadata of all API pages from the Node.js Website
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 export const GET = async () => {
-  const releases = await getReleaseData();
+  const releases = provideReleaseData();
 
   const { versionWithPrefix } = releases.find(release =>
     ['Active LTS', 'Maintenance LTS'].includes(release.status)
