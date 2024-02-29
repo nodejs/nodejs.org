@@ -65,7 +65,7 @@ layout: home.hbs
     });
 
     test('that throws as 1 is not equal 2', () => {
-      // throws an exception because 1!=2
+      // throws an exception because 1 != 2
       assert.strictEqual(1, 2);
     });
     ```
@@ -99,13 +99,13 @@ layout: home.hbs
     ```
 
     ```js displayName="Work with Threads"
-    import { Worker, isMainThread } from 'node:worker_threads';
-    import { workerData, parentPort } from 'node:worker_threads';
+    import { Worker, isMainThread,
+      workerData, parentPort } from 'node:worker_threads';
 
     if (isMainThread) {
       const data = 'some data';
       const worker = new Worker(import.meta.filename, { workerData: data });
-      worker.on('message', m => console.log('Reply from Thread:', m));
+      worker.on('message', msg => console.log('Reply from Thread:', msg));
     } else {
       const source = workerData;
       parentPort.postMessage(btoa(source.toUpperCase()));
