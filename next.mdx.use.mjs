@@ -20,8 +20,7 @@ import VerifyingBinariesLink from './components/Downloads/Release/VerifyingBinar
 import VersionDropdown from './components/Downloads/Release/VersionDropdown';
 import HomeDownloadButton from './components/Home/HomeDownloadButton';
 import Link from './components/Link';
-import UpcomingEvents from './components/MDX/Calendar/UpcomingEvents';
-import UpcomingSummits from './components/MDX/Calendar/UpcomingSummits';
+import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
 import MDXCodeBox from './components/MDX/CodeBox';
 import MDXCodeTabs from './components/MDX/CodeTabs';
 import SearchPage from './components/MDX/SearchPage';
@@ -56,10 +55,8 @@ export const mdxComponents = {
   Button: Button,
   // Renders a Search Page
   SearchPage: SearchPage,
-  // Renders an container for Upcoming Node.js Summits
-  UpcomingSummits: UpcomingSummits,
-  // Renders an container for Upcoming Node.js Events
-  UpcomingEvents: UpcomingEvents,
+  // Renders an container for Upcoming Node.js Meetings
+  UpcomingMeetings: UpcomingMeetings,
   // Links with External Arrow
   LinkWithArrow: LinkWithArrow,
   // Group of components that enable you to select versions for Node.js
