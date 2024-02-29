@@ -71,7 +71,7 @@ const SearchPage: FC = () => {
       : {};
 
   const getDocumentURL = (siteSection: string, path: string) => {
-    const isAPIResult = siteSection.toLowerCase() === 'api';
+    const isAPIResult = siteSection.toLowerCase() === 'docs';
     const basePath = isAPIResult ? BASE_URL : '';
     return `${basePath}/${path}`;
   };
