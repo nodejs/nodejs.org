@@ -83,7 +83,7 @@ The Website also uses several other Open Source libraries (not limited to) liste
 - [Shiki][] is a Syntax Highlighter used for our Codeboxes
   - The syntax highlighting is done within the processing of the Markdown files with the MDX compiler as a Rehype plugin.
 - [MDX][] and Markdown are used for structuring the Content of the Website
-- \[`next-intl`]\[] is the i18n Library adopted within the Website
+- [`next-intl`][] is the i18n Library adopted within the Website
   - It provides an excellent integration with Next.js, But it also supports standalone support for i18n if it eventually migrates from Next.js to something else.
   - Supports React Server Components and Next.js Middlewares
 - [`next-sitemap`](https://www.npmjs.com/package/next-sitemap) is used for Sitemap and `robots.txt` Generation
