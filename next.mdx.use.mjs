@@ -32,7 +32,7 @@ import { ENABLE_WEBSITE_REDESIGN } from './next.constants.mjs';
 /**
  * A full list of React Components that we want to pass through to MDX
  *
- * @type {import('mdx/types').MDXComponents}
+ * @satisfies {import('mdx/types').MDXComponents}
  */
 export const mdxComponents = {
   // Legacy Component
