@@ -58,7 +58,7 @@ jobs:
 
       - name: Add Comment to PR
         # Signal that a lighthouse run is about to start
-        uses: thollander/actions-comment-pull-request@1d3973dc4b8e1399c0620d3f2b1aa5e795465308 # v2.4.3
+        uses: thollander/actions-comment-pull-request@fabd468d3a1a0b97feee5f6b9e499eab0dd903f6 # v2.5.0
         with:
           message: |
             Running Lighthouse audit...
@@ -111,7 +111,7 @@ jobs:
 
       - name: Add Comment to PR
         # Replace the previous message with our formatted lighthouse results
-        uses: thollander/actions-comment-pull-request@1d3973dc4b8e1399c0620d3f2b1aa5e795465308 # v2.4.3
+        uses: thollander/actions-comment-pull-request@fabd468d3a1a0b97feee5f6b9e499eab0dd903f6 # v2.5.0
         with:
           # Reference the previously created comment
           comment_tag: 'lighthouse_audit'
