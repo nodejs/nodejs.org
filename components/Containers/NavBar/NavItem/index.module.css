@@ -5,7 +5,7 @@
     rounded
     px-3
     py-2
-    duration-75;
+    motion-safe:duration-75;
 
   &:hover {
     @apply bg-green-600/30;
