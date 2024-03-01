@@ -1,4 +1,4 @@
-export const hexToRGBA = (hex: string, alpha = 0.9) => {
+export const hexToRGBA = (hex: string = '', alpha = 0.9) => {
   hex = hex.replace(/^#/, '');
 
   const bigint = parseInt(hex, 16);

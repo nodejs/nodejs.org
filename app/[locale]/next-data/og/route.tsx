@@ -17,8 +17,8 @@ export const GET = async (request: Request) => {
   const hasTitle = searchParams.has('title');
   const title = hasTitle ? searchParams.get('title')?.slice(0, 100) : undefined;
 
-  //?type=<type>
-  const type = searchParams.get('type') ?? 'announcement';
+  //?type=<type> - if undefined default to announcement
+  const typeParam = searchParams.get('type') ?? 'announcement';
 
   const typeAttributes: { [key: string]: string } = {
     announcement: tailwindConfig.theme.colors.green['700'],
@@ -26,7 +26,11 @@ export const GET = async (request: Request) => {
     vulnerability: tailwindConfig.theme.colors.warning['600'],
   };
 
-  const gridBackground = `radial-gradient(circle, ${hexToRGBA(typeAttributes[type])}, transparent)`;
+  // use the mapped value, or if not found use announcement
+  const type =
+    typeAttributes[typeParam] ?? tailwindConfig.theme.colors.green['700'];
+
+  const gridBackground = `radial-gradient(circle, ${hexToRGBA(type)}, transparent)`;
 
   return new ImageResponse(
     (
