@@ -18,7 +18,7 @@ export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
       curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
       # Installs Node.js
-      nvm install ${release.versionWithPrefix}
+      nvm install ${release.major}
 
       # Checks that Node is installed
       node -v
