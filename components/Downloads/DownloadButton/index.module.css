@@ -1,6 +1,6 @@
 .downloadButton {
   @apply justify-center
-    duration-300;
+    motion-safe:duration-300;
 
   &.primary {
     @apply inline-flex
