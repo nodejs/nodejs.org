@@ -18,8 +18,12 @@
     "plugins": [{ "name": "next" }],
     "baseUrl": "."
   },
+  "mdx": {
+    "checkMdx": true
+  },
   "include": [
     "next-env.d.ts",
+    "**/*.mdx",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
