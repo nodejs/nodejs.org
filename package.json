@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@heroicons/react": "~2.1.1",
-    "@mdx-js/mdx": "^3.0.0",
+    "@mdx-js/mdx": "^3.0.1",
     "@nodevu/core": "~0.1.0",
     "@orama/highlight": "^0.1.3",
     "@oramacloud/client": "^1.0.9",
