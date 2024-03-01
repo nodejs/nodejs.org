@@ -52,9 +52,11 @@
             "overviewOfBlockingVsNonBlocking": "Overview of Blocking vs Non-Blocking",
             "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asynchronous Programming and Callbacks",
             "discoverJavaScriptTimers": "Discover JavaScript Timers",
+            "theNodejsEventLoop": "The Node.js Event Loop",
+            "theNodejsEventEmitter": "The Node.js Event Emitter",
             "understandingProcessnexttick": "Understanding process.nextTick()",
             "understandingSetimmediate": "Understanding setImmediate()",
-            "theNodejsEventEmitter": "The Node.js Event emitter"
+            "dontBlockTheEventLoop": "Don't Block the Event Loop"
           }
         },
         "manipulatingFiles": {
@@ -84,7 +86,8 @@
             "modules": "Modules",
             "publishingNodeApiModules": "How to publish a Node-API package",
             "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction",
-            "abiStability": "ABI Stability"
+            "abiStability": "ABI Stability",
+            "backpressuringInStreams": "Backpressuring in Streams"
           }
         },
         "diagnostics": {
@@ -198,6 +201,29 @@
       "changelogModal": {
         "startContributing": "Start Contributing"
       }
+    },
+    "search": {
+      "searchBox": {
+        "placeholder": "Start typing..."
+      },
+      "seeAll": {
+        "text": "See all {count} results"
+      },
+      "searchError": {
+        "text": "An error occurred while searching. Please try again later."
+      },
+      "poweredBy": {
+        "text": "Powered by"
+      },
+      "noResults": {
+        "text": "No results found for \"{query}\"."
+      },
+      "emptyState": {
+        "text": "Search something..."
+      },
+      "searchPage": {
+        "title": "You're searching: {query}"
+      }
     }
   },
   "layouts": {
@@ -240,6 +266,28 @@
         "description": "This page has thrown a non-recoverable error."
       },
       "backToHome": "Back to Home"
+    },
+    "download": {
+      "selectCategory": "Categories",
+      "categories": {
+        "download": "Prebuilt Installer",
+        "prebuilt-binaries": "Prebuilt Binaries",
+        "package-manager": "Package Manager",
+        "source-code": "Source Code"
+      },
+      "buttons": {
+        "prebuilt": "Download Node.js {version}",
+        "source": "Download Node.js {version} source"
+      },
+      "dropdown": {
+        "bitness": "Bitness",
+        "os": "Operating System",
+        "version": "Version",
+        "platform": "Platform"
+      },
+      "codeBox": {
+        "communityWarning": "Package Managers and their installation scripts are not maintained by the Node.js project.s"
+      }
     }
   },
   "pages": {

@@ -4,6 +4,7 @@
     items-start
     gap-8
     overflow-auto
+    overflow-x-hidden
     border-r
     border-r-neutral-200
     bg-white
@@ -21,7 +22,7 @@
       xs:hidden;
   }
 
-  > div {
+  > span {
     @apply hidden
       w-full
       xs:flex;

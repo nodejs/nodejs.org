@@ -10,8 +10,8 @@ layout: home.hbs
     <h1 className="special">Run JavaScript Everywhere</h1>
 
     Node.js® is a free, open-source, cross-platform JavaScript runtime
-    environment that lets developers write command line tools and server-side
-    scripts outside of a browser.
+    environment that lets developers create servers, web apps,
+    command line tools and scripts.
 
   </div>
 
@@ -22,7 +22,7 @@ layout: home.hbs
           <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
           <small>
             Downloads Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads Node.js binary for your current platform">1</sup> with long-term support.
+            <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
             Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
           </small>
         </>
@@ -33,7 +33,7 @@ layout: home.hbs
         <small>
           Want new features sooner?
           Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Downloads Node.js binary for your current platform">1</sup> instead.
+          <sup title="Downloads a Node.js installer for your current platform">1</sup> instead.
         </small>
       )}
     </WithNodeRelease>
@@ -65,7 +65,7 @@ layout: home.hbs
     });
 
     test('that throws as 1 is not equal 2', () => {
-      // throws an exception because 1!=2
+      // throws an exception because 1 != 2
       assert.strictEqual(1, 2);
     });
     ```
@@ -99,13 +99,13 @@ layout: home.hbs
     ```
 
     ```js displayName="Work with Threads"
-    import { Worker, isMainThread } from 'node:worker_threads';
-    import { workerData, parentPort } from 'node:worker_threads';
+    import { Worker, isMainThread,
+      workerData, parentPort } from 'node:worker_threads';
 
     if (isMainThread) {
       const data = 'some data';
       const worker = new Worker(import.meta.filename, { workerData: data });
-      worker.on('message', m => console.log('Reply from Thread:', m));
+      worker.on('message', msg => console.log('Reply from Thread:', msg));
     } else {
       const source = workerData;
       parentPort.postMessage(btoa(source.toUpperCase()));

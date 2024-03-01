@@ -12,10 +12,6 @@
       "link": "/download",
       "label": "components.header.links.download"
     },
-    "guides": {
-      "link": "/guides",
-      "label": "components.header.links.guides"
-    },
     "blog": {
       "link": "/blog",
       "label": "components.header.links.blog"
@@ -154,6 +150,14 @@
               "link": "/learn/asynchronous-work/discover-javascript-timers",
               "label": "components.navigation.learn.asynchronousWork.links.discoverJavaScriptTimers"
             },
+            "theNodejsEventLoop": {
+              "link": "/learn/asynchronous-work/event-loop-timers-and-nexttick",
+              "label": "components.navigation.learn.asynchronousWork.links.theNodejsEventLoop"
+            },
+            "theNodejsEventEmitter": {
+              "link": "/learn/asynchronous-work/the-nodejs-event-emitter",
+              "label": "components.navigation.learn.asynchronousWork.links.theNodejsEventEmitter"
+            },
             "understandingProcessnexttick": {
               "link": "/learn/asynchronous-work/understanding-processnexttick",
               "label": "components.navigation.learn.asynchronousWork.links.understandingProcessnexttick"
@@ -162,9 +166,9 @@
               "link": "/learn/asynchronous-work/understanding-setimmediate",
               "label": "components.navigation.learn.asynchronousWork.links.understandingSetimmediate"
             },
-            "theNodejsEventEmitter": {
-              "link": "/learn/asynchronous-work/the-nodejs-event-emitter",
-              "label": "components.navigation.learn.asynchronousWork.links.theNodejsEventEmitter"
+            "dontBlockTheEventLoop": {
+              "link": "/learn/asynchronous-work/dont-block-the-event-loop",
+              "label": "components.navigation.learn.asynchronousWork.links.dontBlockTheEventLoop"
             }
           }
         },
@@ -240,6 +244,10 @@
             "abiStability": {
               "link": "/learn/modules/abi-stability",
               "label": "components.navigation.learn.modules.links.abiStability"
+            },
+            "backpressuringInStreams": {
+              "link": "/learn/modules/backpressuring-in-streams",
+              "label": "components.navigation.learn.modules.links.backpressuringInStreams"
             }
           }
         },

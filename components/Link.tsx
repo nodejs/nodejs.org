@@ -3,7 +3,7 @@ import type { FC, ComponentProps } from 'react';
 import { Link as LocalizedLink } from '@/navigation.mjs';
 
 type LinkProps = Omit<ComponentProps<typeof LocalizedLink>, 'href'> & {
-  href: string | undefined;
+  href?: string;
 };
 
 const Link: FC<LinkProps> = ({ children, href, ...props }) => {

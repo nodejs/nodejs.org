@@ -28,9 +28,14 @@
   }
 }
 
-.tabsSelect > div {
-  @apply my-6
-    hidden
-    w-full
-    xs:flex;
+.tabsSelect {
+  @apply sm:visible
+    md:hidden;
+
+  > span {
+    @apply my-6
+      hidden
+      w-full
+      xs:flex;
+  }
 }

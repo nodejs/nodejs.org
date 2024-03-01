@@ -1,9 +1,9 @@
 ---
-title: The Node.js Event Loop, Timers, and process.nextTick()
-layout: docs.hbs
+title: The Node.js Event Loop
+layout: learn.hbs
 ---
 
-# The Node.js Event Loop, Timers, and `process.nextTick()`
+# The Node.js Event Loop
 
 ## What is the Event Loop?
 
@@ -106,7 +106,7 @@ threshold, then your script starts asynchronously reading a file which
 takes 95 ms:
 
 ```js
-const fs = require('fs');
+const fs = require('node:fs');
 
 function someAsyncOperation(callback) {
   // Assume this takes 95ms to complete
@@ -257,7 +257,7 @@ callback is always executed first:
 
 ```js
 // timeout_vs_immediate.js
-const fs = require('fs');
+const fs = require('node:fs');
 
 fs.readFile(__filename, () => {
   setTimeout(() => {
@@ -449,7 +449,7 @@ Another example is extending an `EventEmitter` and emitting an
 event from within the constructor:
 
 ```js
-const EventEmitter = require('events');
+const EventEmitter = require('node:events');
 
 class MyEmitter extends EventEmitter {
   constructor() {
@@ -471,7 +471,7 @@ you can use `process.nextTick()` to set a callback to emit the event
 after the constructor has finished, which provides the expected results:
 
 ```js
-const EventEmitter = require('events');
+const EventEmitter = require('node:events');
 
 class MyEmitter extends EventEmitter {
   constructor() {

@@ -7,6 +7,7 @@ import { useState } from 'react';
 import type { FC, ComponentProps } from 'react';
 
 import LanguageDropdown from '@/components/Common/LanguageDropDown';
+import { SearchButton } from '@/components/Common/Search';
 import ThemeToggle from '@/components/Common/ThemeToggle';
 import NavItem from '@/components/Containers/NavBar/NavItem';
 import NodejsDark from '@/components/Icons/Logos/NodejsDark';
@@ -64,6 +65,8 @@ const NavBar: FC<NavbarProps> = ({
         </div>
 
         <div className={style.actionsWrapper}>
+          <SearchButton />
+
           <ThemeToggle onClick={onThemeTogglerClick} />
 
           <LanguageDropdown

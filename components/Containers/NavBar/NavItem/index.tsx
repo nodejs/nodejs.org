@@ -27,6 +27,7 @@ const NavItem: FC<PropsWithChildren<NavItemProps>> = ({
     allowSubPath={href.startsWith('/')}
   >
     <span className={styles.label}>{children}</span>
+
     {type === 'nav' && href.startsWith('http') && (
       <ArrowUpRightIcon className={styles.icon} />
     )}

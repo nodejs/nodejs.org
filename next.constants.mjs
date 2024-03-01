@@ -122,7 +122,7 @@ export const BLOG_POSTS_PER_PAGE = ENABLE_WEBSITE_REDESIGN ? 6 : 20;
  */
 export const THEME_STORAGE_KEY = 'theme';
 
-/***
+/**
  * This is a list of all external links that are used on website sitemap.
  * @see https://github.com/nodejs/nodejs.org/issues/5813 for more context
  */
@@ -135,3 +135,39 @@ export const EXTERNAL_LINKS_SITEMAP = [
   'https://trademark-list.openjsf.org/',
   'https://www.linuxfoundation.org/cookies',
 ];
+
+/**
+ * These are the default Orama Query Parameters that are used by the Website
+ * @see https://docs.oramasearch.com/open-source/usage/search/introduction
+ */
+export const DEFAULT_ORAMA_QUERY_PARAMS = {
+  mode: 'fulltext',
+  limit: 8,
+  threshold: 0,
+  boost: {
+    pageSectionTitle: 4,
+    pageSectionContent: 2.5,
+    pageTitle: 1.5,
+  },
+  facets: {
+    siteSection: {},
+  },
+};
+
+/**
+ * The default batch size to use when syncing Orama Cloud
+ */
+export const ORAMA_SYNC_BATCH_SIZE = 50;
+
+/**
+ * The default Orama Cloud endpoint to use when searching with Orama Cloud.
+ */
+export const ORAMA_CLOUD_ENDPOINT =
+  process.env.NEXT_PUBLIC_ORAMA_ENDPOINT ||
+  'https://cloud.orama.run/v1/indexes/nodejs-org-dev-hhqrzv';
+
+/**
+ * The default Orama Cloud API Key to use when searching with Orama Cloud.
+ * This is a public API key and can be shared publicly on the frontend.
+ */
+export const ORAMA_CLOUD_API_KEY = process.env.NEXT_PUBLIC_ORAMA_API_KEY || '';

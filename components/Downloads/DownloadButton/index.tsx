@@ -7,7 +7,7 @@ import type { FC, PropsWithChildren } from 'react';
 import Button from '@/components/Common/Button';
 import { useDetectOS } from '@/hooks';
 import type { NodeRelease } from '@/types';
-import { downloadUrlByOS } from '@/util/downloadUrlByOS';
+import { getNodeDownloadUrl } from '@/util/getNodeDownloadUrl';
 
 import styles from './index.module.css';
 
@@ -18,7 +18,7 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
   children,
 }) => {
   const { os, bitness } = useDetectOS();
-  const downloadLink = downloadUrlByOS(versionWithPrefix, os, bitness);
+  const downloadLink = getNodeDownloadUrl(versionWithPrefix, os, bitness);
 
   return (
     <>

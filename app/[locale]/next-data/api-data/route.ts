@@ -1,19 +1,26 @@
 import { deflateSync } from 'node:zlib';
 
+import provideReleaseData from '@/next-data/providers/releaseData';
 import { VERCEL_REVALIDATE } from '@/next.constants.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 import type { GitHubApiFile } from '@/types';
 import { getGitHubApiDocsUrl } from '@/util/gitHubUtils';
 import { parseRichTextIntoPlainText } from '@/util/stringUtils';
 
-const getPathnameForApiFile = (name: string) =>
-  `api/${name.replace('.md', '.html')}`;
+const getPathnameForApiFile = (name: string, version: string) =>
+  `docs/${version}/api/${name.replace('.md', '.html')}`;
 
 // This is the Route Handler for the `GET` method which handles the request
 // for a digest and metadata of all API pages from the Node.js Website
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 export const GET = async () => {
-  const gitHubApiResponse = await fetch(getGitHubApiDocsUrl('main'));
+  const releases = provideReleaseData();
+
+  const { versionWithPrefix } = releases.find(release =>
+    ['Active LTS', 'Maintenance LTS'].includes(release.status)
+  )!;
+
+  const gitHubApiResponse = await fetch(getGitHubApiDocsUrl(versionWithPrefix));
 
   return gitHubApiResponse.json().then((apiDocsFiles: Array<GitHubApiFile>) => {
     // maps over each api file and get the download_url, fetch the content and deflates it
@@ -32,7 +39,7 @@ export const GET = async () => {
 
         return {
           filename,
-          pathname: getPathnameForApiFile(name),
+          pathname: getPathnameForApiFile(name, versionWithPrefix),
           content: deflatedSource,
         };
       }
@@ -55,7 +62,7 @@ export const dynamicParams = false;
 
 // Enforces that this route is used as static rendering
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
-export const dynamic = 'force-static';
+export const dynamic = 'error';
 
 // Ensures that this endpoint is invalidated and re-executed every X minutes
 // so that when new deployments happen, the data is refreshed

@@ -86,7 +86,7 @@
     },
     {
       "source": "/guides",
-      "destination": "/en/guides"
+      "destination": "/en/learn"
     },
     {
       "source": "/about",
@@ -169,16 +169,20 @@
       "destination": "https://nodejs.org/docs/latest/api/"
     },
     {
-      "source": "/:locale/docs/es6",
-      "destination": "/:locale/learn/getting-started/ecmascript-2015-es6-and-beyond"
-    },
-    {
       "source": "/:locale/docs/guides",
       "destination": "/:locale/guides"
     },
     {
+      "source": "/:locale/docs/es6",
+      "destination": "/:locale/learn/getting-started/ecmascript-2015-es6-and-beyond"
+    },
+    {
       "source": "/:locale/docs/guides/:path*",
       "destination": "/:locale/guides/:path*"
+    },
+    {
+      "source": "/:locale/guides",
+      "destination": "/:locale/learn"
     },
     {
       "source": "/:locale/guides/getting-started-guide",
@@ -199,6 +203,10 @@
     {
       "source": "/:locale/guides/anatomy-of-an-http-transaction",
       "destination": "/:locale/learn/modules/anatomy-of-an-http-transaction"
+    },
+    {
+      "source": "/:locale/guides/backpressuring-in-streams/",
+      "destination": "/:locale/learn/modules/backpressuring-in-streams/"
     },
     {
       "source": "/:locale/guides/publishing-napi-modules",
@@ -225,12 +233,20 @@
       "destination": "/:locale/learn/diagnostics/:path*"
     },
     {
-      "source": "/:locale/guides/abi-stability/",
+      "source": "/:locale/guides/abi-stability",
       "destination": "/:locale/learn/modules/abi-stability"
     },
     {
       "source": "/:locale/guides/security",
       "destination": "/:locale/learn/getting-started/security-best-practices"
+    },
+    {
+      "source": "/:locale/guides/event-loop-timers-and-nexttick",
+      "destination": "/:locale/learn/asynchronous-work/event-loop-timers-and-nexttick"
+    },
+    {
+      "source": "/:locale/guides/dont-block-the-event-loop",
+      "destination": "/:locale/learn/asynchronous-work/dont-block-the-event-loop"
     },
     {
       "source": "/:locale/get-involved",

@@ -138,7 +138,8 @@
   }
 }
 
-.blogLayout {
+.blogLayout,
+.downloadLayout {
   @apply flex
     w-full
     justify-center
@@ -148,19 +149,33 @@
     xs:dark:bg-none;
 
   main {
-    @apply max-w-8xl
+    @apply max-w-5xl
       gap-4
       px-4
       py-12
       md:px-14
       lg:px-28;
+  }
+}
+
+.downloadLayout {
+  section:nth-last-child(1) {
+    @apply flex
+      flex-col
+      gap-2;
 
     p {
-      @apply text-lg
-        font-medium
-        text-neutral-800
-        dark:text-neutral-200;
+      @apply text-sm;
     }
+  }
+
+  section:nth-last-child(2) p {
+    @apply flex
+      flex-row
+      flex-wrap
+      items-center
+      gap-2
+      text-base;
   }
 }
 

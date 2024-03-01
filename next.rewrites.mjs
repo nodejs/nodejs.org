@@ -48,10 +48,24 @@ const rewrites = async () => {
   // This allows us to remap legacy website URLs to the temporary redesign ones
   // @todo: remove this once website redesign is done
   if (ENABLE_WEBSITE_REDESIGN) {
-    mappedRewrites.push({
-      source: localesMatch,
-      destination: '/:locale/new-design',
-    });
+    mappedRewrites.push(
+      {
+        source: localesMatch,
+        destination: '/:locale/new-design',
+      },
+      {
+        source: '/:locale/download',
+        destination: '/:locale/new-design/download',
+      },
+      {
+        source: '/:locale/download/:path',
+        destination: '/:locale/new-design/download/:path',
+      },
+      {
+        source: '/:locale/download/:path/:version',
+        destination: '/:locale/new-design/download/:path/:version',
+      }
+    );
   }
 
   return { afterFiles: mappedRewrites };

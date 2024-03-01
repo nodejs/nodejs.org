@@ -7,7 +7,7 @@ import Link from '@/components/Link';
 import { useDetectOS } from '@/hooks';
 import { DIST_URL } from '@/next.constants.mjs';
 import type { NodeRelease } from '@/types';
-import { downloadUrlByOS } from '@/util/downloadUrlByOS';
+import { getNodeDownloadUrl } from '@/util/getNodeDownloadUrl';
 import { getNodejsChangelog } from '@/util/getNodeJsChangelog';
 
 const HomeDownloadButton: FC<NodeRelease> = ({
@@ -19,7 +19,7 @@ const HomeDownloadButton: FC<NodeRelease> = ({
   const { os, bitness } = useDetectOS();
   const t = useTranslations();
 
-  const nodeDownloadLink = downloadUrlByOS(versionWithPrefix, os, bitness);
+  const nodeDownloadLink = getNodeDownloadUrl(versionWithPrefix, os, bitness);
   const nodeApiLink = `${DIST_URL}latest-v${major}.x/docs/api/`;
   const nodeAllDownloadsLink = `/download${isLts ? '/' : '/current'}`;
 

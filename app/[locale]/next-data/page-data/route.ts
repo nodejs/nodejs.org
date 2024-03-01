@@ -15,30 +15,38 @@ export const GET = async () => {
     defaultLocale.code
   );
 
-  const availablePagesMetadata = allAvailbleRoutes.map(async pathname => {
-    const { source, filename } = await dynamicRouter.getMarkdownFile(
-      defaultLocale.code,
-      pathname
-    );
+  const availablePagesMetadata = allAvailbleRoutes
+    .filter(route => !route.startsWith('blog'))
+    .map(async pathname => {
+      const { source, filename } = await dynamicRouter.getMarkdownFile(
+        defaultLocale.code,
+        pathname
+      );
 
-    // Gets the title and the Description from the Page Metadata
-    const { title, description } = await dynamicRouter.getPageMetadata(
-      defaultLocale.code,
-      pathname
-    );
+      // Gets the title and the Description from the Page Metadata
+      const { title, description } = await dynamicRouter.getPageMetadata(
+        defaultLocale.code,
+        pathname
+      );
 
-    // Parser the Markdown source with `gray-matter` and then only
-    // grabs the markdown content and cleanses it by removing HTML/JSX tags
-    // removing empty/blank lines or lines just with spaces and trims each line
-    // from leading and trailing paddings/spaces
-    const cleanedContent = parseRichTextIntoPlainText(matter(source).content);
+      // Parser the Markdown source with `gray-matter` and then only
+      // grabs the markdown content and cleanses it by removing HTML/JSX tags
+      // removing empty/blank lines or lines just with spaces and trims each line
+      // from leading and trailing paddings/spaces
+      const cleanedContent = parseRichTextIntoPlainText(matter(source).content);
 
-    // Deflates a String into a base64 string-encoded (zlib compressed)
-    const deflatedSource = deflateSync(cleanedContent).toString('base64');
+      // Deflates a String into a base64 string-encoded (zlib compressed)
+      const deflatedSource = deflateSync(cleanedContent).toString('base64');
 
-    // Returns metadata of each page available on the Website
-    return { filename, pathname, title, description, content: deflatedSource };
-  });
+      // Returns metadata of each page available on the Website
+      return {
+        filename,
+        pathname,
+        title,
+        description,
+        content: deflatedSource,
+      };
+    });
 
   return Response.json(await Promise.all(availablePagesMetadata));
 };
@@ -56,7 +64,7 @@ export const dynamicParams = false;
 
 // Enforces that this route is used as static rendering
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
-export const dynamic = 'force-static';
+export const dynamic = 'error';
 
 // Ensures that this endpoint is invalidated and re-executed every X minutes
 // so that when new deployments happen, the data is refreshed

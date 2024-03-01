@@ -4,11 +4,16 @@ import classNames from 'classnames';
 import { toString } from 'hast-util-to-string';
 import { SKIP, visit } from 'unist-util-visit';
 
-import { highlightToHast } from './util/getHighlighter';
+import { getShiki, highlightToHast } from './util/getHighlighter';
 
 // This is what Remark will use as prefix within a <pre> className
 // to attribute the current language of the <pre> element
 const languagePrefix = 'language-';
+
+// We do a top-level await, since the Unist-tree visitor
+// is synchronous, and it makes more sense to do a top-level
+// await, rather than an await inside the visitor function
+const memoizedShiki = await getShiki();
 
 /**
  * Retrieve the value for the given meta key.
@@ -169,7 +174,10 @@ export default function rehypeShikiji() {
       const languageId = codeLanguage.slice(languagePrefix.length);
 
       // Parses the <pre> contents and returns a HAST tree with the highlighted code
-      const { children } = highlightToHast(preElementContents, languageId);
+      const { children } = highlightToHast(memoizedShiki)(
+        preElementContents,
+        languageId
+      );
 
       // Adds the original language back to the <pre> element
       children[0].properties.class = classNames(

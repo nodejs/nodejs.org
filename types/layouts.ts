@@ -1,12 +1,13 @@
 // @TODO: These are the Website Redesign Layouts
 export type Layouts =
   | 'about.hbs'
-  | 'docs.hbs'
   | 'home.hbs'
   | 'learn.hbs'
   | 'page.hbs'
   | 'blog-category.hbs'
-  | 'blog-post.hbs';
+  | 'blog-post.hbs'
+  | 'search.hbs'
+  | 'download.hbs';
 
 // @TODO: These are legacy layouts that are going to be replaced with the `nodejs/nodejs.dev` Layouts in the future
 export type LegacyLayouts =
