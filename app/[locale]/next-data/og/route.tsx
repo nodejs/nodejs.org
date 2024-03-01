@@ -2,10 +2,17 @@ import { ImageResponse } from 'next/og';
 
 import HexagonGrid from '@/components/Icons/HexagonGrid';
 import JsIconWhite from '@/components/Icons/Logos/JsIconWhite';
-import { ENABLE_STATIC_EXPORT, VERCEL_REVALIDATE } from '@/next.constants.mjs';
+import {
+  ENABLE_STATIC_EXPORT,
+  VERCEL_ENV,
+  VERCEL_REVALIDATE,
+} from '@/next.constants.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 import tailwindConfig from '@/tailwind.config';
 import { hexToRGBA } from '@/util/hexToRGBA';
+
+// This is the default type of blog post type that we use for OG
+const defaultTypeParam = 'announcement';
 
 // This is the Route Handler for the `GET` method which handles the request
 // for generating OpenGrapgh images for Blog Posts and Pages
@@ -17,8 +24,8 @@ export const GET = async (request: Request) => {
   const hasTitle = searchParams.has('title');
   const title = hasTitle ? searchParams.get('title')?.slice(0, 100) : undefined;
 
-  //?type=<type>
-  const type = searchParams.get('type') ?? 'announcement';
+  // ?type=<type> - if undefined default to announcement
+  const typeParam = searchParams.get('type') ?? defaultTypeParam;
 
   const typeAttributes: { [key: string]: string } = {
     announcement: tailwindConfig.theme.colors.green['700'],
@@ -26,7 +33,10 @@ export const GET = async (request: Request) => {
     vulnerability: tailwindConfig.theme.colors.warning['600'],
   };
 
-  const gridBackground = `radial-gradient(circle, ${hexToRGBA(typeAttributes[type])}, transparent)`;
+  // use the mapped value, or if not found use announcement
+  const type = typeAttributes[typeParam] ?? typeAttributes[defaultTypeParam];
+
+  const gridBackground = `radial-gradient(circle, ${hexToRGBA(type)}, transparent)`;
 
   return new ImageResponse(
     (
@@ -51,7 +61,8 @@ export const generateStaticParams = async () => [
 ];
 
 // We want to use `edge` runtime when using Vercel
-export const runtime = process.env.NEXT_PUBLIC_VERCEL_URL ? 'edge' : false;
+// @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#runtime
+export const runtime = VERCEL_ENV ? 'edge' : 'nodejs';
 
 // Enforces that only the paths from `generateStaticParams` are allowed, giving 404 on the contrary
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
