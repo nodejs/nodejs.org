@@ -1,6 +1,8 @@
-import type { FC, SVGProps } from 'react';
+import type { FC } from 'react';
 
-const JsIconWhite: FC<SVGProps<SVGSVGElement>> = props => (
+import type { TailwindSVG } from '@/types/og';
+
+const JsIconWhite: FC<TailwindSVG> = props => (
   <svg
     width="71"
     height="80"
