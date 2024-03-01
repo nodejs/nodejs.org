@@ -14,72 +14,83 @@ export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
 
   if (os === 'LINUX' || os === 'MAC') {
     snippets.NVM = dedent`
-      # Installs NVM (Node Version Manager)
+      # installs NVM (Node Version Manager)
       curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
-      # Installs Node.js
+      # download and install Node.js
       nvm install ${release.major}
 
-      # Checks that Node is installed
-      node -v
+      # verifies the right Node.js version is in the environment
+      node -v # should print \`${release.versionWithPrefix}\`
 
-      # Checks your NPM version
-      npm -v`;
+      # verifies the right NPM version is in the environment
+      npm -v # should print \`${release.npm}\``;
 
     snippets.BREW = dedent`
-      # Installs Brew (macOS/Linux Package Manager)
+      # download and installs Homebrew (macOS/Linux Package Manager)
       curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
-      # Installs Node.js
+      # download and install Node.js
       brew install node@${release.major}
 
-      # Checks that Node is installed
-      node -v
+      # verifies the right Node.js version is in the environment
+      node -v # should print \`${release.versionWithPrefix}\`
 
-      # Checks your NPM version
-      npm -v`;
+      # verifies the right NPM version is in the environment
+      npm -v # should print \`${release.npm}\``;
   }
 
   if (os === 'MAC') {
     snippets.DOCKER = dedent`
-      # Installs Brew (macOS Package Manager)
+      # installs Homebrew (macOS/Linux Package Manager)
       curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
-      # Installs Docker Desktop
+      # installs Docker Desktop
       brew install docker --cask
 
-      # Pull Node.js Docker Image
-      docker pull node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'}`;
+      # pulls the Node.js Docker image
+      docker pull node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'}
+
+      # verifies the right Node.js version is in the environment
+      docker run node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'} node -v # should print \`${release.versionWithPrefix}\`
+
+      # verifies the right NPM version is in the environment
+      docker run node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'} npm -v # should print \`${release.npm}\``;
   }
 
   if (os === 'WIN') {
     snippets.CHOCO = dedent`
-      # Installs Chocolatey (Windows Package Manager)
+      # installs Chocolatey (Windows Package Manager)
       Set-ExecutionPolicy Bypass -Scope Process -Force;
       [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
-      iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));
+      iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'));
 
-      # Installs Node.js
+      # download and install Node.js
       choco install nodejs --version="${release.version}"
 
-      # Checks that Node is installed
-      node -v
+      # verifies the right Node.js version is in the environment
+      node -v # should print \`${release.versionWithPrefix}\`
 
-      # Checks your NPM version
-      npm -v
-    `;
+      # verifies the right NPM version is in the environment
+      npm -v # should print \`${release.npm}\``;
 
     snippets.DOCKER = dedent`
-      # Installs Chocolatey (Windows Package Manager)
+      # installs Chocolatey (Windows Package Manager)
       Set-ExecutionPolicy Bypass -Scope Process -Force;
       [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
-      iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));
+      iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'));
 
-      # Installs Docker Desktop
+      # installs Docker Desktop
       choco install docker-desktop
 
-      # Pull Node.js Docker Image
-      docker pull node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'}`;
+      # pulls the Node.js Docker image
+      docker pull node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'}
+
+      # verifies the right Node.js version is in the environment
+      docker run node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'} node -v # should print \`${release.versionWithPrefix}\`
+
+      # verifies the right NPM version is in the environment
+      docker run node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'} npm -v # should print \`${release.npm}\``;
   }
 
   return snippets;
