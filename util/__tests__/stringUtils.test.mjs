@@ -38,7 +38,7 @@ describe('String utils', () => {
   it('parseRichTextIntoPlainText replaces Markdown underscore, bold, and italic with their content', () => {
     const richText = 'This is _underscore_, **bold**, and *italic*.';
     const result = parseRichTextIntoPlainText(richText);
-    expect(result).toBe('This is underscore_, **bold**, and *italic.');
+    expect(result).toBe('This is underscore, bold, and italic.');
   });
 
   it('parseRichTextIntoPlainText replaces Markdown multiline code blocks with an empty string', () => {
