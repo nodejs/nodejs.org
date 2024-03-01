@@ -34,6 +34,10 @@ export const platformItems = [
     value: 'BREW' as PackageManager,
   },
   {
+    label: 'Chocolatey',
+    value: 'CHOCO' as PackageManager,
+  },
+  {
     label: 'Docker',
     value: 'DOCKER' as PackageManager,
   },

@@ -1,87 +1,86 @@
 import dedent from 'dedent';
 
+import type { NodeRelease } from '@/types';
+import type { PackageManager } from '@/types/release';
 import type { UserOS } from '@/types/userOS';
 
-export const getNodeDownloadSnippet = (major: number, os: UserOS) => {
+export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
+  const snippets: Record<PackageManager, string> = {
+    NVM: '',
+    BREW: '',
+    DOCKER: '',
+    CHOCO: '',
+  };
+
   if (os === 'LINUX' || os === 'MAC') {
-    const platformSnippets = {
-      NVM: dedent`
-        # Installs NVM (Node Version Manager)
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+    snippets.NVM = dedent`
+      # Installs NVM (Node Version Manager)
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
-        # Installs Node.js
-        nvm install v${major}
+      # Installs Node.js
+      nvm install ${release.versionWithPrefix}
 
-        # Checks that Node is installed
-        node -v
+      # Checks that Node is installed
+      node -v
 
-        # Checks your NPM version
-        npm -v`,
-      BREW: dedent`
-        # Installs Brew (macOS/Linux Package Manager)
-        curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+      # Checks your NPM version
+      npm -v`;
 
-        # Installs Node.js
-        brew install node@${major}
+    snippets.BREW = dedent`
+      # Installs Brew (macOS/Linux Package Manager)
+      curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
-        # Checks that Node is installed
-        node -v
+      # Installs Node.js
+      brew install node@${release.major}
 
-        # Checks your NPM version
-        npm -v`,
-      DOCKER: '',
-    };
+      # Checks that Node is installed
+      node -v
 
-    if (os === 'MAC') {
-      platformSnippets.DOCKER = dedent`
-        # Installs Brew (macOS Package Manager)
-        curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+      # Checks your NPM version
+      npm -v`;
+  }
 
-        # Installs Docker Desktop
-        brew install docker --cask
+  if (os === 'MAC') {
+    snippets.DOCKER = dedent`
+      # Installs Brew (macOS Package Manager)
+      curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
-        # Pull Node.js Docker Image
-        docker pull node:${major}-${major >= 4 ? 'alpine' : 'slim'}
-      `;
-    }
+      # Installs Docker Desktop
+      brew install docker --cask
 
-    return platformSnippets;
+      # Pull Node.js Docker Image
+      docker pull node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'}`;
   }
 
   if (os === 'WIN') {
-    return {
-      NVM: dedent`
-        # Installs Chocolatey (Windows Package Manager)
-        Set-ExecutionPolicy Bypass -Scope Process -Force;
-        [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
-        iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));
+    snippets.CHOCO = dedent`
+      # Installs Chocolatey (Windows Package Manager)
+      Set-ExecutionPolicy Bypass -Scope Process -Force;
+      [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
+      iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));
 
-        # Installs NVM (Node Version Manager)
-        choco install nvm
+      # Installs Node.js
+      choco install nodejs --version="${release.version}"
 
-        # Installs Node.js
-        nvm install v${major}
+      # Checks that Node is installed
+      node -v
 
-        # Checks that Node is installed
-        node -v
+      # Checks your NPM version
+      npm -v
+    `;
 
-        # Checks your NPM version
-        npm -v`,
-      DOCKER: dedent`
-        # Installs Chocolatey (Windows Package Manager)
-        Set-ExecutionPolicy Bypass -Scope Process -Force;
-        [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
-        iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));
+    snippets.DOCKER = dedent`
+      # Installs Chocolatey (Windows Package Manager)
+      Set-ExecutionPolicy Bypass -Scope Process -Force;
+      [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
+      iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));
 
-        # Installs Docker Desktop
-        choco install docker-desktop
+      # Installs Docker Desktop
+      choco install docker-desktop
 
-        # Pull Node.js Docker Image
-        docker pull node:${major}-${major >= 4 ? 'alpine' : 'slim'}
-      `,
-      BREW: '',
-    };
+      # Pull Node.js Docker Image
+      docker pull node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'}`;
   }
 
-  return { NVM: '', BREW: '', DOCKER: '' };
+  return snippets;
 };
