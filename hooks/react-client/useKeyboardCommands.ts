@@ -30,7 +30,7 @@ const useKeyboardCommands = (fn: KeyboardCommandCallback) => {
     });
 
     return () => document.removeEventListener('keydown', () => {});
-  }, []);
+  }, [fn]);
 };
 
 export default useKeyboardCommands;

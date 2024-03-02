@@ -14,17 +14,13 @@ import { getNodeDownloadSnippet } from '@/util/getNodeDownloadSnippet';
 const memoizedShiki = getShiki();
 
 const ReleaseCodeBox: FC = () => {
-  const {
-    platform,
-    os,
-    release: { major },
-  } = useContext(ReleaseContext);
+  const { platform, os, release } = useContext(ReleaseContext);
 
   const [code, setCode] = useState('');
   const t = useTranslations();
 
   useEffect(() => {
-    const updatedCode = getNodeDownloadSnippet(major, os)[platform];
+    const updatedCode = getNodeDownloadSnippet(release, os)[platform];
     // Docker and NVM support downloading tags/versions by their full release number
     // but usually we should recommend users to download "major" versions
     // since our Downlooad Buttons get the latest minor of a major, it does make sense
@@ -32,7 +28,9 @@ const ReleaseCodeBox: FC = () => {
     memoizedShiki
       .then(shiki => highlightToHtml(shiki)(updatedCode, 'bash'))
       .then(setCode);
-  }, [major, os, platform]);
+    // Only react when the specific release number changed
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [release.versionWithPrefix, os, platform]);
 
   return (
     <div className="mb-2 mt-6 flex min-h-80 flex-col gap-2">

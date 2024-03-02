@@ -1,6 +1,3 @@
-> \[!IMPORTANT]\
-> The **Node.js** Website is currently being redesigned; Read more [here](https://github.com/nodejs/nodejs.org/discussions/5131) to get involved!
-
 <p align="center">
   <br />
   <a href="https://nodejs.org">

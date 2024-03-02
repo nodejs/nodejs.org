@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import CenteredLayout from '@/layouts/New/Centered';
+import CenteredLayout from '@/layouts/Centered';
 
 import styles from './layouts.module.css';
 

@@ -18,9 +18,6 @@ export const IGNORED_ROUTES = [
   // This is used to ignore all blog routes except for the English language
   ({ locale, pathname }) =>
     locale !== defaultLocale.code && /^blog/.test(pathname),
-  // Do not statically build the redesign pages on the static export
-  // @deprecated this should be removed once we remove the legacy website
-  ({ pathname }) => /^new-design/.test(pathname),
 ];
 
 /**

@@ -1,4 +1,3 @@
-import { ENABLE_WEBSITE_REDESIGN } from '@/next.constants.mjs';
 import type { PackageManager } from '@/types/release';
 import type { UserOS } from '@/types/userOS';
 
@@ -33,6 +32,10 @@ export const platformItems = [
   {
     label: 'Brew',
     value: 'BREW' as PackageManager,
+  },
+  {
+    label: 'Chocolatey',
+    value: 'CHOCO' as PackageManager,
   },
   {
     label: 'Docker',
@@ -114,11 +117,6 @@ export const formatDropdownItems = ({
 // Returns the page, category and subCategoy information to be used in the page
 // from the pathname information on the download pages.
 export const getDownloadCategory = (pathname: string) => {
-  /** @deprecated once the website redesign happens remove this code block  */
-  if (ENABLE_WEBSITE_REDESIGN) {
-    pathname = pathname.replace('/new-design', '');
-  }
-
   const segments = pathname.split('/').filter(Boolean);
   const [, c] = segments;
 

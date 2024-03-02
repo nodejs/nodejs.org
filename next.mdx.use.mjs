@@ -18,7 +18,6 @@ import ReleaseVersion from './components/Downloads/Release/ReleaseVersion';
 import SourceButton from './components/Downloads/Release/SourceButton';
 import VerifyingBinariesLink from './components/Downloads/Release/VerifyingBinariesLink';
 import VersionDropdown from './components/Downloads/Release/VersionDropdown';
-import HomeDownloadButton from './components/Home/HomeDownloadButton';
 import Link from './components/Link';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
 import MDXCodeBox from './components/MDX/CodeBox';
@@ -27,7 +26,6 @@ import SearchPage from './components/MDX/SearchPage';
 import WithBadge from './components/withBadge';
 import WithBanner from './components/withBanner';
 import WithNodeRelease from './components/withNodeRelease';
-import { ENABLE_WEBSITE_REDESIGN } from './next.constants.mjs';
 
 /**
  * A full list of React Components that we want to pass through to MDX
@@ -35,9 +33,6 @@ import { ENABLE_WEBSITE_REDESIGN } from './next.constants.mjs';
  * @satisfies {import('mdx/types').MDXComponents}
  */
 export const mdxComponents = {
-  // Legacy Component
-  HomeDownloadButton: HomeDownloadButton,
-  // Legacy Component
   DownloadReleasesTable: DownloadReleasesTable,
   // HOC for getting Node.js Release Metadata
   WithNodeRelease: WithNodeRelease,
@@ -97,11 +92,8 @@ export const mdxComponents = {
 export const htmlComponents = {
   // Renders a Link Component for `a` tags
   a: Link,
-  // @deprecated once the website redesign happens
-  // switch to only use the Blockquote Component
-  blockquote: ENABLE_WEBSITE_REDESIGN
-    ? Blockquote
-    : ({ children }) => <div className="highlight-box">{children}</div>,
+  // Renders a Blockquote Component for `blockquote` tags
+  blockquote: Blockquote,
   // Renders a CodeBox Component for `pre` tags
   pre: MDXCodeBox,
 };
