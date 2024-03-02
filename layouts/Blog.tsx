@@ -51,7 +51,7 @@ const BlogLayout: FC = async () => {
               'announcements',
               'release',
               'vulnerability',
-              'events',
+              // 'events',
             ])}
           />
         </main>
