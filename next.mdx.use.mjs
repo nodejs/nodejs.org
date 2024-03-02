@@ -1,14 +1,12 @@
 'use strict';
 
-import Blockquote from './components/Common/Blockquote';
-import Button from './components/Common/Button';
 import DownloadButton from './components/Downloads/DownloadButton';
 import DownloadLink from './components/Downloads/DownloadLink';
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
 import BitnessDropdown from './components/Downloads/Release/BitnessDropdown';
 import BlogPostLink from './components/Downloads/Release/BlogPostLink';
+import ChangelogLink from './components/Downloads/Release/ChangelogLink';
 import ReleaseDownloadButton from './components/Downloads/Release/DownloadButton';
-import LinkWithArrow from './components/Downloads/Release/LinkWithArrow';
 import NpmVersion from './components/Downloads/Release/NpmVersion';
 import OperatingSystemDropdown from './components/Downloads/Release/OperatingSystemDropdown';
 import PlatformDropdown from './components/Downloads/Release/PlatformDropdown';
@@ -18,10 +16,7 @@ import ReleaseVersion from './components/Downloads/Release/ReleaseVersion';
 import SourceButton from './components/Downloads/Release/SourceButton';
 import VerifyingBinariesLink from './components/Downloads/Release/VerifyingBinariesLink';
 import VersionDropdown from './components/Downloads/Release/VersionDropdown';
-import Link from './components/Link';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
-import MDXCodeBox from './components/MDX/CodeBox';
-import MDXCodeTabs from './components/MDX/CodeTabs';
 import SearchPage from './components/MDX/SearchPage';
 import WithBadge from './components/withBadge';
 import WithBanner from './components/withBanner';
@@ -40,20 +35,14 @@ export const mdxComponents = {
   WithBanner: WithBanner,
   // HOC for providing Badge Data
   WithBadge: WithBadge,
-  // Renders MDX CodeTabs
-  CodeTabs: MDXCodeTabs,
   // Renders a Download Button
   DownloadButton: DownloadButton,
   // Renders a Download Link
   DownloadLink: DownloadLink,
-  // Renders a Button Component for `button` tags
-  Button: Button,
   // Renders a Search Page
   SearchPage: SearchPage,
   // Renders an container for Upcoming Node.js Meetings
   UpcomingMeetings: UpcomingMeetings,
-  // Links with External Arrow
-  LinkWithArrow: LinkWithArrow,
   // Group of components that enable you to select versions for Node.js
   // releases and download selected versions. Uses `releaseProvider` as a provider
   Release: {
@@ -81,19 +70,7 @@ export const mdxComponents = {
     SourceButton: SourceButton,
     // Renders a Release CodeBox
     ReleaseCodeBox: ReleaseCodeBox,
+    // Renders a Changelog Modal Link Button
+    ChangelogLink: ChangelogLink,
   },
-};
-
-/**
- * A full list of wired HTML elements into custom React Components
- *
- * @type {import('mdx/types').MDXComponents}
- */
-export const htmlComponents = {
-  // Renders a Link Component for `a` tags
-  a: Link,
-  // Renders a Blockquote Component for `blockquote` tags
-  blockquote: Blockquote,
-  // Renders a CodeBox Component for `pre` tags
-  pre: MDXCodeBox,
 };

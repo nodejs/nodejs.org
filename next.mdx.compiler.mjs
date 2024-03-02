@@ -35,7 +35,6 @@ export async function compileMDX(source, fileExtension) {
     rehypePlugins: NEXT_REHYPE_PLUGINS,
     remarkPlugins: NEXT_REMARK_PLUGINS,
     format: fileExtension,
-    baseUrl: import.meta.url,
     ...reactRuntime,
   });
 
