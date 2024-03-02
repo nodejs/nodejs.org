@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import { ArrowDownIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import type { FC, PropsWithChildren } from 'react';
 
@@ -29,7 +29,7 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
       >
         {children}
 
-        <ArrowRightIcon />
+        <ArrowDownIcon />
       </Button>
 
       <Button
@@ -39,7 +39,7 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
       >
         {children}
 
-        <ArrowRightIcon />
+        <ArrowDownIcon />
       </Button>
     </>
   );
