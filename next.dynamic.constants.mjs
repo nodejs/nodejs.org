@@ -52,6 +52,16 @@ export const PAGE_METADATA = {
   metadataBase: new URL(`${BASE_URL}${BASE_PATH}`),
   title: siteConfig.title,
   description: siteConfig.description,
+  themeColor: [
+    {
+      color: siteConfig.lightAccentColor,
+      media: '(prefers-color-scheme: light)',
+    },
+    {
+      color: siteConfig.darkAccentColor,
+      media: '(prefers-color-scheme: dark)',
+    },
+  ],
   robots: { index: true, follow: true },
   twitter: {
     card: siteConfig.twitter.card,
