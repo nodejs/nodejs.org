@@ -29,7 +29,8 @@ export interface SiteConfig {
   description: string;
   featuredImage: string;
   favicon: string;
-  accentColor: string;
+  lightAccentColor: string;
+  darkAccentColor: string;
   og: OGConfig;
   twitter: TwitterConfig;
   rssFeeds: Array<RSSFeed>;
