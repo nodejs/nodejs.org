@@ -6,7 +6,7 @@ import semVer from 'semver';
  * @param version The version of Node.js to get the changelog for.
  * @returns The URL of the Node.js changelog for the specified version.
  */
-export const getNodejsChangelog = (version: string): string => {
+export const getNodeJsChangelog = (version: string): string => {
   const changelogsUrl =
     'https://github.com/nodejs/node/blob/main/doc/changelogs';
 
@@ -29,4 +29,15 @@ export const getNodejsChangelog = (version: string): string => {
   }
 
   return `https://github.com/nodejs/node-v0.x-archive/blob/${version}/ChangeLog`;
+};
+
+export const getNodeJsChangelogAuthor = (changelog: string) => {
+  // looking for the @author part of the release header, eg:
+  // ## 2016-03-08, Version 5.8.0 (Stable). @Fishrock123
+  // ## 2015-10-13, Version 4.2.1 'Argon' (LTS), @jasnell
+  // ## 2015-09-08, Version 4.0.0 (Stable), @rvagg
+  const rxReleaseAuthor = /^## .*? \([^)]+\)[,.] @(\S+)/m;
+  const [, changelogAuthor] = rxReleaseAuthor.exec(changelog) || [];
+
+  return changelogAuthor || 'The Node.js Project';
 };
