@@ -16,7 +16,7 @@
       inline-flex
       w-full
       flex-col
-      overflow-y-scroll
+      overflow-y-auto
       rounded
       border
       border-neutral-200
@@ -24,9 +24,8 @@
       p-8
       focus:outline-none
       dark:bg-neutral-950
-      sm:mt-20
-      lg:w-2/3
-      xl:w-3/5
+      sm:my-20
+      lg:max-w-[900px]
       xl:p-12
       xs:p-6;
   }
@@ -84,10 +83,6 @@
     @apply flex
       flex-col
       gap-4;
-
-    a {
-      @apply underline;
-    }
 
     pre {
       @apply overflow-auto;

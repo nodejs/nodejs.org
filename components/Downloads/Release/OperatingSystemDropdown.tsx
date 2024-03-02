@@ -16,7 +16,7 @@ import {
   operatingSystemItems,
 } from '@/util/downloadUtils';
 
-type OperatingSystemDropdownProps = { exclude: Array<UserOS> };
+type OperatingSystemDropdownProps = { exclude?: Array<UserOS> };
 
 const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
   exclude = [],

@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 import getReleaseData from '@/next-data/releaseData';
 import { getNodeApiLink } from '@/util/getNodeApiLink';
-import { getNodejsChangelog } from '@/util/getNodeJsChangelog';
+import { getNodeJsChangelog } from '@/util/getNodeJsChangelog';
 
 // This is a React Async Server Component
 // Note that Hooks cannot be used in a RSC async component
@@ -38,7 +38,7 @@ const DownloadReleasesTable: FC = async () => {
               >
                 {t('components.downloadReleasesTable.releases')}
               </a>
-              <a href={getNodejsChangelog(release.versionWithPrefix)}>
+              <a href={getNodeJsChangelog(release.versionWithPrefix)}>
                 {t('components.downloadReleasesTable.changelog')}
               </a>
               <a href={getNodeApiLink(release.versionWithPrefix)}>

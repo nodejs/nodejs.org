@@ -1,11 +1,9 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
-import type { FC, PropsWithChildren } from 'react';
+import type { ComponentProps, FC } from 'react';
 
 import Link from '@/components/Link';
 
-type AccessibleAnchorProps = { href?: string };
-
-const LinkWithArrow: FC<PropsWithChildren<AccessibleAnchorProps>> = ({
+const LinkWithArrow: FC<ComponentProps<typeof Link>> = ({
   children,
   ...props
 }) => (
@@ -14,4 +12,5 @@ const LinkWithArrow: FC<PropsWithChildren<AccessibleAnchorProps>> = ({
     <ArrowUpRightIcon className="ml-1 inline w-3 fill-white" />
   </Link>
 );
+
 export default LinkWithArrow;

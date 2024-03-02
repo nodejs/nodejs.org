@@ -1,7 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import { VFile } from 'vfile';
 
-import Button from '@/components/Common/Button';
 import ChangelogModal from '@/components/Downloads/ChangelogModal';
 import { MDXRenderer } from '@/components/mdxRenderer';
 import { compileMDX } from '@/next.mdx.compiler.mjs';
@@ -178,7 +177,7 @@ ZCVKLyezajjko28SugXGjegEjcY4o7v23XghhW6RAbEB6R8TZDo=
 
 export const Default: Story = {
   args: {
-    trigger: <Button>Trigger</Button>,
+    open: false,
     heading: 'Node v18.17.0',
     subheading: "2023-07-18, Version 18.17.0 'Hydrogen' (LTS), @danielleadams",
     avatars: names.map(name => ({
@@ -189,15 +188,15 @@ export const Default: Story = {
   },
   render: (_, { loaded: { Content } }) => Content,
   loaders: [
-    async ({ args }) => {
+    async ({ args: { children, ...props } }) => {
       const { MDXContent } = await compileMDX(
-        new VFile(args.children?.toString()),
+        new VFile(children?.toString()),
         'md'
       );
 
       return {
         Content: (
-          <ChangelogModal {...args}>
+          <ChangelogModal {...props}>
             <main>
               <MDXRenderer Component={MDXContent} />
             </main>

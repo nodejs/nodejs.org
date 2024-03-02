@@ -36,8 +36,16 @@ export const getNodeJsChangelogAuthor = (changelog: string) => {
   // ## 2016-03-08, Version 5.8.0 (Stable). @Fishrock123
   // ## 2015-10-13, Version 4.2.1 'Argon' (LTS), @jasnell
   // ## 2015-09-08, Version 4.0.0 (Stable), @rvagg
-  const rxReleaseAuthor = /^## .*? \([^)]+\)[,.] @(\S+)/m;
-  const [, changelogAuthor] = rxReleaseAuthor.exec(changelog) || [];
+  const [, changelogAuthor] =
+    changelog.match(/^## .*? \([^)]+\)[,.] @(\S+)/m) || [];
 
   return changelogAuthor || 'The Node.js Project';
+};
+
+export const getNodeJsChangelogSlug = (changelog: string) => {
+  // looking for the release header eg:
+  // ## 2016-03-08, Version 5.8.0 (Stable)
+  const [, changelogHeadinjg] = changelog.match(/^## (.*)$/m) || [];
+
+  return changelogHeadinjg || '';
 };
