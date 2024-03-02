@@ -38,11 +38,11 @@
   "websiteBadges": {},
   "footerLinks": [
     {
-      "link": "https://openjsf.org/wp-content/uploads/sites/84/2021/01/OpenJS-Foundation-Trademark-Policy-2021-01-12.docx.pdf",
+      "link": "https://trademark-policy.openjsf.org/",
       "text": "components.footer.links.trademarkPolicy"
     },
     {
-      "link": "https://openjsf.org/wp-content/uploads/sites/84/2021/04/OpenJS-Foundation-Privacy-Policy-2019-11-15.pdf",
+      "link": "https://privacy-policy.openjsf.org/",
       "text": "components.footer.links.privacyPolicy"
     },
     {
