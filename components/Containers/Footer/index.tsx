@@ -7,7 +7,7 @@ import LinkedIn from '@/components/Icons/Social/LinkedIn';
 import Mastodon from '@/components/Icons/Social/Mastodon';
 import Slack from '@/components/Icons/Social/Slack';
 import Twitter from '@/components/Icons/Social/Twitter';
-import { siteConfig } from '@/next.json.mjs';
+import { siteNavigation } from '@/next.json.mjs';
 
 import styles from './index.module.css';
 
@@ -22,12 +22,12 @@ const footerSocialIcons: Record<string, React.FC<SVGProps<SVGSVGElement>>> = {
 const Footer: FC = () => {
   const t = useTranslations();
 
-  const openJSlink = siteConfig.footerLinks.at(-1)!;
+  const openJSlink = siteNavigation.footerLinks.at(-1)!;
 
   return (
     <footer className={styles.footer}>
       <div className={styles.sectionPrimary}>
-        {siteConfig.footerLinks.slice(0, -1).map(item => (
+        {siteNavigation.footerLinks.slice(0, -1).map(item => (
           <NavItem type="footer" href={item.link} key={item.link}>
             {t(item.text)}
           </NavItem>
@@ -40,7 +40,7 @@ const Footer: FC = () => {
         </NavItem>
 
         <div className={styles.social}>
-          {siteConfig.socialLinks.map(link => {
+          {siteNavigation.socialLinks.map(link => {
             const SocialIcon = footerSocialIcons[link.icon];
 
             return (

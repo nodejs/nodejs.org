@@ -1,28 +1,26 @@
 {
   "components": {
-    "footer": {
-      "links": {
-        "trademarkPolicy": "Trademark Policy",
-        "privacyPolicy": "Privacy Policy",
-        "codeOfConduct": "Code of Conduct",
-        "security": "Security Policy",
-        "openJS": "OpenJS Foundation"
-      }
-    },
-    "header": {
-      "links": {
-        "about": "About",
-        "download": "Download",
-        "docs": "Docs",
-        "guides": "Guides",
-        "learn": "Learn",
-        "security": "Security",
-        "certification": "Certification",
-        "blog": "Blog"
+    "containers": {
+      "footer": {
+        "links": {
+          "trademarkPolicy": "Trademark Policy",
+          "privacyPolicy": "Privacy Policy",
+          "codeOfConduct": "Code of Conduct",
+          "security": "Security Policy",
+          "openJS": "OpenJS Foundation"
+        }
       },
-      "buttons": {
-        "toggleLanguage": "Toggle Language",
-        "toggleTheme": "Toggle dark/light mode"
+      "navBar": {
+        "links": {
+          "about": "About",
+          "download": "Download",
+          "docs": "Docs",
+          "guides": "Guides",
+          "learn": "Learn",
+          "security": "Security",
+          "certification": "Certification",
+          "blog": "Blog"
+        }
       }
     },
     "navigation": {
@@ -170,6 +168,9 @@
       },
       "languageDropdown": {
         "label": "Choose Language"
+      },
+      "themeToggle": {
+        "label": "Toggle Dark Mode"
       }
     },
     "mdx": {
@@ -187,15 +188,6 @@
       "contributeText": "Edit this page",
       "viewAs": "View as",
       "tableOfContents": "Table of Contents"
-    },
-    "home": {
-      "homeDownloadButton": {
-        "download": "{version} {isLts, select, true {LTS} other {Current}}",
-        "tagline": "{isLts, select, true {Recommended For Most Users} other {Latest Features}}",
-        "changelog": "Changelog",
-        "otherDownloads": "Other Downloads",
-        "apiDocs": "API Docs"
-      }
     },
     "downloads": {
       "changelogModal": {
@@ -288,12 +280,6 @@
       "codeBox": {
         "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project."
       }
-    }
-  },
-  "pages": {
-    "404": {
-      "title": "404: Page could not be found",
-      "description": "ENOENT: no such file or directory"
     }
   }
 }

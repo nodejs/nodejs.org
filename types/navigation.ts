@@ -1,3 +1,14 @@
+export interface FooterConfig {
+  text: string;
+  link: string;
+}
+
+export interface SocialConfig {
+  icon: string;
+  link: string;
+  alt?: string;
+}
+
 export type NavigationKeys =
   | 'about'
   | 'download'
@@ -15,5 +26,7 @@ export interface NavigationEntry {
 
 export interface SiteNavigation {
   topNavigation: Record<NavigationKeys, NavigationEntry>;
+  footerLinks: Array<FooterConfig>;
+  socialLinks: Array<SocialConfig>;
   sideNavigation: Record<NavigationKeys, NavigationEntry>;
 }

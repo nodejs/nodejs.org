@@ -2,29 +2,78 @@
   "topNavigation": {
     "learn": {
       "link": "/learn",
-      "label": "components.header.links.learn"
+      "label": "components.containers.navBar.links.learn"
     },
     "about": {
       "link": "/about",
-      "label": "components.header.links.about"
+      "label": "components.containers.navBar.links.about"
     },
     "download": {
       "link": "/download",
-      "label": "components.header.links.download"
+      "label": "components.containers.navBar.links.download"
     },
     "blog": {
       "link": "/blog",
-      "label": "components.header.links.blog"
+      "label": "components.containers.navBar.links.blog"
     },
     "docs": {
       "link": "https://nodejs.org/docs/latest/api/",
-      "label": "components.header.links.docs"
+      "label": "components.containers.navBar.links.docs"
     },
     "certification": {
       "link": "https://openjsf.org/certification",
-      "label": "components.header.links.certification"
+      "label": "components.containers.navBar.links.certification"
     }
   },
+  "footerLinks": [
+    {
+      "link": "https://openjsf.org/wp-content/uploads/sites/84/2021/01/OpenJS-Foundation-Trademark-Policy-2021-01-12.docx.pdf",
+      "text": "components.containers.footer.links.trademarkPolicy"
+    },
+    {
+      "link": "https://openjsf.org/wp-content/uploads/sites/84/2021/04/OpenJS-Foundation-Privacy-Policy-2019-11-15.pdf",
+      "text": "components.containers.footer.links.privacyPolicy"
+    },
+    {
+      "link": "https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md",
+      "text": "components.containers.footer.links.codeOfConduct"
+    },
+    {
+      "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
+      "text": "components.containers.footer.links.security"
+    },
+    {
+      "link": "https://openjsf.org/",
+      "text": "components.containers.footer.links.openJS"
+    }
+  ],
+  "socialLinks": [
+    {
+      "icon": "github",
+      "link": "https://github.com/nodejs/node",
+      "alt": "GitHub"
+    },
+    {
+      "icon": "mastodon",
+      "link": "https://social.lfx.dev/@nodejs",
+      "alt": "Mastodon"
+    },
+    {
+      "icon": "twitter",
+      "link": "https://twitter.com/nodejs",
+      "alt": "Twitter"
+    },
+    {
+      "icon": "slack",
+      "link": "https://openjs-foundation.slack.com/join/shared_invite/zt-238w9sb83-Qk9NcsrEMomq94Y~3gW8EQ#/shared-invite/email",
+      "alt": "Slack"
+    },
+    {
+      "icon": "linkedin",
+      "link": "https://www.linkedin.com/company/node-js",
+      "alt": "LinkedIn"
+    }
+  ],
   "sideNavigation": {
     "about": {
       "label": "components.navigation.about.links.about",
