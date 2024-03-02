@@ -2,8 +2,8 @@
   "title": "Node.js",
   "description": "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
   "favicon": "/static/images/favicons/favicon.png",
-  "lightAccentColor": "#C5E5B4",
-  "darkAccentColor": "#1A3F1D",
+  "lightAccentColor": "#FFFFFF",
+  "darkAccentColor": "#0D121C",
   "twitter": {
     "username": "@nodejs",
     "card": "summary",
