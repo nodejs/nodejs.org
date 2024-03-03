@@ -5,9 +5,11 @@
     gap-6
     border-t
     border-neutral-200
+    bg-white
     px-8
     py-4
     dark:border-neutral-900
+    dark:bg-neutral-950
     md:flex-row
     md:justify-between
     md:py-5;
