@@ -59,6 +59,8 @@
 }
 
 .dropdown {
+  @apply max-h-48
+    overflow-y-auto;
   @apply max-w-xs
     overflow-hidden
     rounded-md
