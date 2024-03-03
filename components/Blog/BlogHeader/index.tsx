@@ -18,13 +18,15 @@ const BlogHeader: FC<BlogHeaderProps> = ({ category }) => {
   const currentFile =
     siteConfig.rssFeeds.find(item => item.category === category)?.file ??
     'blog.xml';
-  const ariaLabel = t('layouts.blog.blogHeader.RSS');
 
   return (
     <header className={styles.blogHeader}>
       <h1>
         {t('layouts.blog.title')}
-        <Link href={`/feed/${currentFile}`} aria-label={ariaLabel}>
+        <Link
+          href={`/feed/${currentFile}`}
+          aria-label={t('layouts.blog.blogHeader.RSS')}
+        >
           <RssIcon />
         </Link>
       </h1>
