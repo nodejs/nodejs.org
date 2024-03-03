@@ -254,6 +254,9 @@
         "weekly": "Weekly Updates",
         "wg": "Working Groups",
         "events": "Events"
+      },
+      "blogHeader": {
+        "RSS": "RSS feed"
       }
     },
     "error": {
