@@ -111,7 +111,7 @@ const Select: FC<SelectProps> = ({
                     >
                       <Primitive.ItemText>
                         {iconImage}
-                        {label}
+                        <span>{label}</span>
                       </Primitive.ItemText>
                     </Primitive.Item>
                   ))}
