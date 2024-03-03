@@ -87,9 +87,7 @@
   }
 
   .text span {
-    @apply flex
-      items-center
-      gap-2;
+    @apply pl-4;
   }
 
   .label {
