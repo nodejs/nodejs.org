@@ -90,6 +90,7 @@ const Select: FC<SelectProps> = ({
           <Primitive.Content
             position={inline ? 'popper' : 'item-aligned'}
             className={classNames(styles.dropdown, { [styles.inline]: inline })}
+            style={{ maxHeight: '200px', overflowY: 'auto' }}
           >
             <Primitive.Viewport>
               {mappedValues.map(({ label, items }, key) => (
