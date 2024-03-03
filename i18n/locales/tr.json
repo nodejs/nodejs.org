@@ -1,0 +1,299 @@
+{
+  "components": {
+    "footer": {
+      "links": {
+        "trademarkPolicy": "Trademark Policy",
+        "privacyPolicy": "Privacy Policy",
+        "codeOfConduct": "Code of Conduct",
+        "security": "Security Policy",
+        "openJS": "OpenJS Foundation"
+      }
+    },
+    "header": {
+      "links": {
+        "about": "About",
+        "download": "Download",
+        "docs": "Docs",
+        "guides": "Guides",
+        "learn": "Learn",
+        "security": "Security",
+        "certification": "Certification",
+        "blog": "Blog"
+      },
+      "buttons": {
+        "toggleLanguage": "Toggle Language",
+        "toggleTheme": "Toggle dark/light mode"
+      }
+    },
+    "navigation": {
+      "learn": {
+        "gettingStarted": {
+          "links": {
+            "gettingStarted": "Getting Started",
+            "introductionToNodejs": "Introduction to Node.js",
+            "howToInstallNodejs": "How to install Node.js",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "How much JavaScript do you need to know to use Node.js?",
+            "differencesBetweenNodejsAndTheBrowser": "Differences between Node.js and the Browser",
+            "theV8JavascriptEngine": "The V8 JavaScript Engine",
+            "anIntroductionToTheNpmPackageManager": "An introduction to the npm package manager",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) and beyond",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
+            "nodejsWithTypescript": "Node.js with TypeScript",
+            "nodejsWithWebassembly": "Node.js with WebAssembly",
+            "debugging": "Debugging Node.js",
+            "profiling": "Profiling Node.js Applications",
+            "securityBestPractices": "Security Best Practices"
+          }
+        },
+        "asynchronousWork": {
+          "links": {
+            "asynchronousWork": "Asynchronous Work",
+            "asynchronousFlowControl": "Asynchronous flow control",
+            "overviewOfBlockingVsNonBlocking": "Overview of Blocking vs Non-Blocking",
+            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asynchronous Programming and Callbacks",
+            "discoverJavaScriptTimers": "Discover JavaScript Timers",
+            "theNodejsEventLoop": "The Node.js Event Loop",
+            "theNodejsEventEmitter": "The Node.js Event Emitter",
+            "understandingProcessnexttick": "Understanding process.nextTick()",
+            "understandingSetimmediate": "Understanding setImmediate()",
+            "dontBlockTheEventLoop": "Don't Block the Event Loop"
+          }
+        },
+        "manipulatingFiles": {
+          "links": {
+            "manipulatingFiles": "Manipulating Files",
+            "nodejsFileStats": "Node.js file stats",
+            "nodejsFilePaths": "Node.js File Paths",
+            "workingWithFileDescriptorsInNodejs": "Working with file descriptors in Node.js",
+            "readingFilesWithNodejs": "Reading files with Node.js",
+            "writingFilesWithNodejs": "Writing files with Node.js",
+            "workingWithFoldersInNodejs": "Working with folders in Node.js",
+            "howToWorkWithFileSystems": "How to work with Different Filesystems"
+          }
+        },
+        "commandLine": {
+          "links": {
+            "commandLine": "Command Line",
+            "runNodejsScriptsFromTheCommandLine": "Run Node.js scripts from the command line",
+            "howToReadEnvironmentVariablesFromNodejs": "How to read environment variables from Node.js",
+            "howToUseTheNodejsRepl": "How to use the Node.js REPL",
+            "outputToTheCommandLineUsingNodejs": "Output to the command line using Node.js",
+            "acceptInputFromTheCommandLineInNodejs": "Accept input from the command line in Node.js"
+          }
+        },
+        "modules": {
+          "links": {
+            "modules": "Modules",
+            "publishingNodeApiModules": "How to publish a Node-API package",
+            "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction",
+            "abiStability": "ABI Stability",
+            "backpressuringInStreams": "Backpressuring in Streams"
+          }
+        },
+        "diagnostics": {
+          "links": {
+            "diagnostics": "Diagnostics",
+            "userJourney": "User Journey",
+            "memory": "Memory",
+            "liveDebugging": "Live Debugging",
+            "poorPerformance": "Poor Performance",
+            "flameGraphs": "Flame Graphs"
+          }
+        }
+      },
+      "about": {
+        "links": {
+          "about": "About Node.js",
+          "aboutSide": "About Node.js®",
+          "governance": "Project Governance",
+          "releases": "Previous Releases",
+          "security": "Security Reporting"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "getInvolved": "Get Involved",
+          "collabSummit": "Collaborator Summit",
+          "upcomingEvents": "Upcoming Events",
+          "contribute": "Contribute to Node.js",
+          "codeOfConduct": "Code of Conduct"
+        }
+      }
+    },
+    "downloadList": {
+      "links": {
+        "previousReleases": "Previous Releases",
+        "packageManager": "Installing Node.js via package manager",
+        "shaSums": {
+          "title": "Signed SHASUMS for release files",
+          "howToVerify": " (How to verify)"
+        },
+        "allDownloads": "All download options",
+        "nightlyReleases": "Nightly builds",
+        "unofficialBuilds": "Unofficial builds",
+        "buildingFromSource": "Building Node.js from source on supported platforms",
+        "installingOnLinux": "Installing Node.js via binary archive",
+        "installingOnWsl": "Install on Windows Subsystem for Linux (WSL)"
+      }
+    },
+    "downloadReleasesTable": {
+      "changelog": "Changelog",
+      "releases": "Releases",
+      "docs": "Docs"
+    },
+    "pagination": {
+      "next": "Next",
+      "previous": "Previous"
+    },
+    "common": {
+      "breadcrumbs": {
+        "navigateToHome": "Navigate to Home"
+      },
+      "crossLink": {
+        "previous": "Prev",
+        "next": "Next"
+      },
+      "codebox": {
+        "copy": "Copy to clipboard",
+        "copied": "Copied to clipboard!"
+      },
+      "pagination": {
+        "prev": "Previous",
+        "prevAriaLabel": "Previous page",
+        "next": "Next",
+        "nextAriaLabel": "Next page",
+        "defaultLabel": "Pagination",
+        "pageLabel": "Go to page {pageNumber}"
+      },
+      "sidebar": {
+        "title": "Change page"
+      },
+      "languageDropdown": {
+        "label": "Choose Language"
+      }
+    },
+    "mdx": {
+      "upcomingEvents": {
+        "defaultTitle": "No Upcoming Event"
+      }
+    },
+    "metabar": {
+      "lastUpdated": "Last Updated",
+      "readingTime": "Reading Time",
+      "addedIn": "Added In",
+      "author": "Author",
+      "authors": "Authors",
+      "contribute": "Contribute",
+      "contributeText": "Edit this page",
+      "viewAs": "View as",
+      "tableOfContents": "Table of Contents"
+    },
+    "home": {
+      "homeDownloadButton": {
+        "download": "{version} {isLts, select, true {LTS} other {Current}}",
+        "tagline": "{isLts, select, true {Recommended For Most Users} other {Latest Features}}",
+        "changelog": "Changelog",
+        "otherDownloads": "Other Downloads",
+        "apiDocs": "API Docs"
+      }
+    },
+    "downloads": {
+      "changelogModal": {
+        "startContributing": "Start Contributing"
+      }
+    },
+    "search": {
+      "searchBox": {
+        "placeholder": "Start typing..."
+      },
+      "seeAll": {
+        "text": "See all {count} results"
+      },
+      "searchError": {
+        "text": "An error occurred while searching. Please try again later."
+      },
+      "poweredBy": {
+        "text": "Powered by"
+      },
+      "noResults": {
+        "text": "No results found for \"{query}\"."
+      },
+      "emptyState": {
+        "text": "Search something..."
+      },
+      "searchPage": {
+        "title": "You're searching: {query}"
+      }
+    }
+  },
+  "layouts": {
+    "blogPost": {
+      "author": {
+        "byLine": "{author, select, null {} other {By {author}, }}"
+      }
+    },
+    "blogIndex": {
+      "categoryName": "{category, select, all {Blog} other {{category} Blog Posts}}"
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "The latest Node.js news, case studies, tutorials, and resources.",
+      "selectCategory": "Categories",
+      "categories": {
+        "all": "Everything",
+        "announcements": "Announcements",
+        "release": "Releases",
+        "vulnerability": "Vulnerabilities",
+        "advisory-board": "Advisory Board",
+        "community": "Community",
+        "feature": "Feature",
+        "module": "Module",
+        "npm": "npm",
+        "uncategorized": "Uncategorized",
+        "video": "Video",
+        "weekly": "Weekly Updates",
+        "wg": "Working Groups",
+        "events": "Events"
+      }
+    },
+    "error": {
+      "notFound": {
+        "title": "Page could not be found",
+        "description": "Sorry, we couldn't find the page you're after! Try starting again from the homepage."
+      },
+      "internalServerError": {
+        "title": "Internal Server Error",
+        "description": "This page has thrown a non-recoverable error."
+      },
+      "backToHome": "Back to Home"
+    },
+    "download": {
+      "selectCategory": "Categories",
+      "categories": {
+        "download": "Prebuilt Installer",
+        "prebuilt-binaries": "Prebuilt Binaries",
+        "package-manager": "Package Manager",
+        "source-code": "Source Code"
+      },
+      "buttons": {
+        "prebuilt": "Download Node.js {version}",
+        "source": "Download Node.js {version} source"
+      },
+      "dropdown": {
+        "bitness": "Bitness",
+        "os": "Operating System",
+        "version": "Version",
+        "platform": "Platform"
+      },
+      "codeBox": {
+        "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project."
+      }
+    }
+  },
+  "pages": {
+    "404": {
+      "title": "404: Page could not be found",
+      "description": "ENOENT: no such file or directory"
+    }
+  }
+}
