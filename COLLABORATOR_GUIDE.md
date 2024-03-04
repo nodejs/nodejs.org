@@ -77,12 +77,12 @@ The Website also uses several other Open Source libraries (not limited to) liste
     - [PostCSS Mixins](https://github.com/postcss/postcss-mixins)
     - [PostCSS Import](https://github.com/postcss/postcss-import)
     - [PostCSS Simple Vars](https://github.com/postcss/postcss-simple-vars)
-- [Tailwind][] is used as our CSS Framework and the Foundation of our Design System
+- [Tailwind](https://tailwindcss.com/) is used as our CSS Framework and the Foundation of our Design System
 - [Hero Icons](https://heroicons.com/) is an SVG Icon Library used within our Codebase
-- [Radix UI][] is a collection of customizable UI components
-- [Shiki][] is a Syntax Highlighter used for our Codeboxes
+- [Radix UI](https://www.radix-ui.com/) is a collection of customizable UI components
+- [Shiki](https://shiki.matsu.io/) is a Syntax Highlighter used for our Codeboxes
   - The syntax highlighting is done within the processing of the Markdown files with the MDX compiler as a Rehype plugin.
-- [MDX][] and Markdown are used for structuring the Content of the Website
+- [MDX](https://mdxjs.com/) and Markdown are used for structuring the Content of the Website
 - [`next-intl`](https://www.npmjs.com/package/next-intl) is the i18n Library adopted within the Website
   - It provides an excellent integration with Next.js, But it also supports standalone support for i18n if it eventually migrates from Next.js to something else.
   - Supports React Server Components and Next.js Middlewares
