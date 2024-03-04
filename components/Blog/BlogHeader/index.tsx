@@ -25,12 +25,12 @@ const BlogHeader: FC<BlogHeaderProps> = ({ category }) => {
         {t('layouts.blog.title')}
         <Link
           href={`/feed/${currentFile}`}
-          aria-label={t('layouts.blog.blogHeader.RSS')}
+          aria-label={t('components.blog.blogHeader.rssLink')}
         >
           <RssIcon />
         </Link>
       </h1>
-      <p>{t('layouts.blog.subtitle')}</p>
+      <p>{t('components.blog.blogHeader.subtitle')}</p>
     </header>
   );
 };

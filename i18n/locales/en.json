@@ -224,6 +224,12 @@
       "searchPage": {
         "title": "You're searching: {query}"
       }
+    },
+    "blog": {
+      "blogHeader": {
+        "subtitle": "The latest Node.js news, case studies, tutorials, and resources.",
+        "rssLink": "RSS feed"
+      }
     }
   },
   "layouts": {
@@ -237,7 +243,6 @@
     },
     "blog": {
       "title": "Blog",
-      "subtitle": "The latest Node.js news, case studies, tutorials, and resources.",
       "selectCategory": "Categories",
       "categories": {
         "all": "Everything",
@@ -254,9 +259,6 @@
         "weekly": "Weekly Updates",
         "wg": "Working Groups",
         "events": "Events"
-      },
-      "blogHeader": {
-        "RSS": "RSS feed"
       }
     },
     "error": {
