@@ -45,7 +45,7 @@ export const getNodeJsChangelogAuthor = (changelog: string) => {
 export const getNodeJsChangelogSlug = (changelog: string) => {
   // looking for the release header eg:
   // ## 2016-03-08, Version 5.8.0 (Stable)
-  const [, changelogHeadinjg] = changelog.match(/^## (.*)$/m) || [];
+  const [, changelogHeading] = changelog.match(/^## (.*)$/m) || [];
 
-  return changelogHeadinjg || '';
+  return changelogHeading || '';
 };
