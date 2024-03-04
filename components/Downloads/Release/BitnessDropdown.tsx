@@ -14,13 +14,21 @@ const parseNumericBitness = (bitness: string) =>
   /^\d+$/.test(bitness) ? Number(bitness) : bitness;
 
 const BitnessDropdown: FC = () => {
-  const { bitness: userBitness } = useDetectOS();
+  const { bitness: userBitness, architecture: userArchitecture } =
+    useDetectOS();
   const { bitness, os, release, setBitness } = useContext(ReleaseContext);
   const t = useTranslations();
 
   // we also reset the bitness when the OS changes, because different OSs have
   // different bitnesses available
-  useEffect(() => setBitness(userBitness), [setBitness, userBitness]);
+
+  useEffect(() => {
+    if (userArchitecture == 'arm' && userBitness == 64) {
+      setBitness('arm64');
+    } else {
+      setBitness(userBitness);
+    }
+  }, [setBitness, userBitness, userArchitecture]);
 
   // @TODO: We should have a proper utility that gives
   // disabled OSs, Platforms, based on specific criteria
