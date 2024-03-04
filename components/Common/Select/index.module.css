@@ -86,16 +86,24 @@
       dark:data-[highlighted]:bg-green-600;
   }
 
-  .text span {
+  .text > span {
     @apply flex
       items-center
       gap-2;
+  }
+
+  .text > span > span {
+    @apply truncate;
   }
 
   .label {
     @apply text-neutral-600
       dark:text-neutral-400;
   }
+}
+
+.dropdown:has(.label) .text > span > span {
+  @apply pl-3;
 }
 
 .inline {

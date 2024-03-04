@@ -79,7 +79,16 @@ export const PAGE_METADATA = {
  * @return {import('next').Viewport}
  */
 export const PAGE_VIEWPORT = {
-  themeColor: siteConfig.accentColor,
+  themeColor: [
+    {
+      color: siteConfig.lightAccentColor,
+      media: '(prefers-color-scheme: light)',
+    },
+    {
+      color: siteConfig.darkAccentColor,
+      media: '(prefers-color-scheme: dark)',
+    },
+  ],
   width: 'device-width',
   initialScale: 1,
 };
