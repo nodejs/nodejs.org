@@ -23,11 +23,14 @@ const BlogHeader: FC<BlogHeaderProps> = ({ category }) => {
     <header className={styles.blogHeader}>
       <h1>
         {t('layouts.blog.title')}
-        <Link href={`/feed/${currentFile}`}>
+        <Link
+          href={`/feed/${currentFile}`}
+          aria-label={t('components.blog.blogHeader.rssLink')}
+        >
           <RssIcon />
         </Link>
       </h1>
-      <p>{t('layouts.blog.subtitle')}</p>
+      <p>{t('components.blog.blogHeader.subtitle')}</p>
     </header>
   );
 };
