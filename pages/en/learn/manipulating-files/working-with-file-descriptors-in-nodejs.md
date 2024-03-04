@@ -1,6 +1,6 @@
 ---
 title: Working with file descriptors in Node.js
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, vaishnav-mk
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Project Governance
-layout: about.hbs
+layout: about
 ---
 
 # Project Governance

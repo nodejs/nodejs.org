@@ -2,7 +2,7 @@
 date: '2011-09-08T21:25:43.000Z'
 category: uncategorized
 title: 'ldapjs: A reprise of LDAP'
-layout: blog-post.hbs
+layout: blog-post
 author: mcavage
 ---
 

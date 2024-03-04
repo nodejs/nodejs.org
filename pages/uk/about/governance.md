@@ -1,6 +1,6 @@
 ---
 title: Управління проєктом
-layout: about.hbs
+layout: about
 ---
 
 # Управління проєктом

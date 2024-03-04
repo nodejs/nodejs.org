@@ -2,7 +2,7 @@
 date: '2012-05-02T18:00:00.000Z'
 category: module
 title: multi-server continuous deployment with fleet
-layout: blog-post.hbs
+layout: blog-post
 author: Isaac Schlueter
 ---
 

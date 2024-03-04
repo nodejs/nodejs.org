@@ -2,7 +2,7 @@
 date: '2013-11-26T15:14:59.000Z'
 category: npm
 title: Keeping The npm Registry Awesome
-layout: blog-post.hbs
+layout: blog-post
 author: Charlie Robbins
 ---
 

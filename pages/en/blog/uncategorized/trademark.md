@@ -2,7 +2,7 @@
 date: '2011-04-29T08:54:18.000Z'
 category: uncategorized
 title: Trademark
-layout: blog-post.hbs
+layout: blog-post
 author: ryandahl
 ---
 

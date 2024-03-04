@@ -1,7 +1,7 @@
 ---
 date: '2013-12-03T22:13:57.000Z'
 title: "Ben Noordhuis's Departure"
-layout: blog-post.hbs
+layout: blog-post
 author: The Node.js Project
 ---
 

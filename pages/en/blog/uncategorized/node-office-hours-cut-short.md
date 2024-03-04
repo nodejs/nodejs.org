@@ -2,7 +2,7 @@
 date: '2011-04-28T16:04:35.000Z'
 category: uncategorized
 title: Node Office Hours Cut Short
-layout: blog-post.hbs
+layout: blog-post
 author: ryandahl
 ---
 

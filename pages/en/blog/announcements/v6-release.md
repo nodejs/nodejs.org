@@ -2,7 +2,7 @@
 date: '2016-04-26T12:00:00.000Z'
 category: announcements
 title: 'World’s Fastest Growing Open Source Platform Pushes Out New Release'
-layout: blog-post.hbs
+layout: blog-post
 author: The Node.js Project
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Working with folders in Node.js
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, liangpeili, LaRuaNa, ahmadawais, clean99
 ---
 

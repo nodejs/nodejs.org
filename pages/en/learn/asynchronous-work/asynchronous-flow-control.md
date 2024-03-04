@@ -1,6 +1,6 @@
 ---
 title: Asynchronous flow control
-layout: learn.hbs
+layout: learn
 authors: aug2uag, ovflowd
 ---
 

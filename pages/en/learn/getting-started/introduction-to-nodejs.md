@@ -1,6 +1,6 @@
 ---
 title: Introduction to Node.js
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, potch, MylesBorins, RomainLanz, virkt25, Trott, onel0p3z, ollelauribostrom, MarkPieszak, fhemberger, LaRuaNa, FrozenPandaz, mcollina, amiller-gh, ahmadawais, saqibameen, dangen-effy, aymen94, benhalverson
 ---
 

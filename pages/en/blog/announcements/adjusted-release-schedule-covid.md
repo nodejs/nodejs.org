@@ -2,7 +2,7 @@
 date: '2020-04-03T20:26:28.000Z'
 category: announcements
 title: Changes to Release Schedule
-layout: blog-post.hbs
+layout: blog-post
 author: Shelley Vohr
 ---
 

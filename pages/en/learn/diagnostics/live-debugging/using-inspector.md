@@ -1,6 +1,6 @@
 ---
 title: Using Inspector
-layout: learn.hbs
+layout: learn
 ---
 
 # Using Inspector

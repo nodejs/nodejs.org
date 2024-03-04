@@ -1,6 +1,6 @@
 ---
 title: Profiling Node.js Applications
-layout: learn.hbs
+layout: learn
 ---
 
 # Profiling Node.js Applications

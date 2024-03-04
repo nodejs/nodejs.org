@@ -1,6 +1,6 @@
 ---
 title: Flame Graphs
-layout: learn.hbs
+layout: learn
 ---
 
 # Flame Graphs

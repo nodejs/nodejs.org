@@ -1,6 +1,6 @@
 ---
 title: Node.js with WebAssembly
-layout: learn.hbs
+layout: learn
 authors: lancemccluskey, ovflowd
 ---
 

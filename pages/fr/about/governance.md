@@ -1,6 +1,6 @@
 ---
 title: Gouvernance du Projet
-layout: about.hbs
+layout: about
 ---
 
 # Gouvernance du Projet

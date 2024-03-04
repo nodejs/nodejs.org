@@ -2,7 +2,7 @@
 date: '2012-02-27T18:51:59.000Z'
 category: npm
 title: Managing Node.js Dependencies with Shrinkwrap
-layout: blog-post.hbs
+layout: blog-post
 author: Dave Pacheco
 ---
 

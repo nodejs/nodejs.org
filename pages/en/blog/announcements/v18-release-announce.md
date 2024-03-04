@@ -2,7 +2,7 @@
 date: '2022-04-19T15:45:00.000Z'
 category: announcements
 title: 'Node.js 18 is now available!'
-layout: blog-post.hbs
+layout: blog-post
 author: The Node.js Project
 ---
 

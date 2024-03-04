@@ -1,6 +1,6 @@
 ---
 title: Live Debugging
-layout: learn.hbs
+layout: learn
 ---
 
 # Live Debugging

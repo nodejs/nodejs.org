@@ -1,7 +1,7 @@
 ---
 date: '2014-01-15T17:00:00.000Z'
 title: The Next Phase of Node.js
-layout: blog-post.hbs
+layout: blog-post
 author: Isaac Z. Schlueter
 ---
 

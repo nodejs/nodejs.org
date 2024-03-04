@@ -1,6 +1,6 @@
 ---
 title: Differences between Node.js and the Browser
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmadawais, karlhorky
 ---
 

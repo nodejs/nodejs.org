@@ -2,7 +2,7 @@
 date: '2011-12-15T19:59:15.000Z'
 category: uncategorized
 title: Growing up
-layout: blog-post.hbs
+layout: blog-post
 author: ryandahl
 ---
 

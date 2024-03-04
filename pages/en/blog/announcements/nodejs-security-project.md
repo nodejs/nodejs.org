@@ -2,7 +2,7 @@
 date: '2016-11-30T12:00:00.000Z'
 category: announcements
 title: Node.js Foundation To Oversee Node.js Security Project To Further Improve Stability for Enterprises
-layout: blog-post.hbs
+layout: blog-post
 author: The Node.js Project
 ---
 
