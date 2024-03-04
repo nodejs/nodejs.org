@@ -1,82 +1,80 @@
 {
   "components": {
-    "footer": {
-      "links": {
-        "trademarkPolicy": "Trademark Policy",
-        "privacyPolicy": "Privacy Policy",
-        "codeOfConduct": "Code of Conduct",
-        "security": "Security Policy",
-        "openJS": "OpenJS Foundation"
-      }
-    },
-    "header": {
-      "links": {
-        "about": "About",
-        "download": "Download",
-        "docs": "Docs",
-        "guides": "Guides",
-        "learn": "Learn",
-        "security": "Security",
-        "certification": "Certification",
-        "blog": "Blog"
+    "containers": {
+      "footer": {
+        "links": {
+          "trademarkPolicy": "商标政策",
+          "privacyPolicy": "隐私政策",
+          "codeOfConduct": "行为准则",
+          "security": "安全政策",
+          "openJS": "OpenJS 基金会"
+        }
       },
-      "buttons": {
-        "toggleLanguage": "Toggle Language",
-        "toggleTheme": "Toggle dark/light mode"
+      "navBar": {
+        "links": {
+          "about": "关于",
+          "download": "下载",
+          "docs": "文档",
+          "guides": "指南",
+          "learn": "学习",
+          "security": "安全",
+          "certification": "取得认证",
+          "blog": "博客"
+        }
       }
     },
     "navigation": {
       "learn": {
         "gettingStarted": {
           "links": {
-            "gettingStarted": "Getting Started",
-            "introductionToNodejs": "Introduction to Node.js",
-            "howToInstallNodejs": "How to install Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "How much JavaScript do you need to know to use Node.js?",
-            "differencesBetweenNodejsAndTheBrowser": "Differences between Node.js and the Browser",
-            "theV8JavascriptEngine": "The V8 JavaScript Engine",
-            "anIntroductionToTheNpmPackageManager": "An introduction to the npm package manager",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) and beyond",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
-            "nodejsWithTypescript": "Node.js with TypeScript",
-            "nodejsWithWebassembly": "Node.js with WebAssembly",
-            "debugging": "Debugging Node.js",
-            "profiling": "Profiling Node.js Applications",
-            "securityBestPractices": "Security Best Practices"
+            "gettingStarted": "快速上手",
+            "introductionToNodejs": "Node.js 介绍",
+            "howToInstallNodejs": "如何安装 Node.js",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "使用 Node.js 需要掌握几成 JavaScript？",
+            "differencesBetweenNodejsAndTheBrowser": "Node.js 与浏览器的区别",
+            "theV8JavascriptEngine": "JavaScript V8 引擎",
+            "anIntroductionToTheNpmPackageManager": "Npm 包管理器简介",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) 及以后",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js 在开发与生产环境中的区别",
+            "nodejsWithTypescript": "Node.js 与 TypeScript",
+            "nodejsWithWebassembly": "Node.js 与 WebAssembly",
+            "debugging": "调试 Node.js",
+            "profiling": "分析 Node.js 应用程序",
+            "securityBestPractices": "最佳安全实践"
           }
         },
         "asynchronousWork": {
           "links": {
-            "asynchronousWork": "Asynchronous Work",
-            "asynchronousFlowControl": "Asynchronous flow control",
-            "overviewOfBlockingVsNonBlocking": "Overview of Blocking vs Non-Blocking",
-            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asynchronous Programming and Callbacks",
-            "discoverJavaScriptTimers": "Discover JavaScript Timers",
-            "theNodejsEventLoop": "The Node.js Event Loop",
-            "theNodejsEventEmitter": "The Node.js Event Emitter",
-            "understandingProcessnexttick": "Understanding process.nextTick()",
-            "understandingSetimmediate": "Understanding setImmediate()",
-            "dontBlockTheEventLoop": "Don't Block the Event Loop"
+            "asynchronousWork": "异步模式",
+            "asynchronousFlowControl": "异步流控制",
+            "overviewOfBlockingVsNonBlocking": "概述：阻塞与非阻塞",
+            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript 中的异步编程与回调",
+            "discoverJavaScriptTimers": "了解 JavaScript 定时器",
+            "theNodejsEventLoop": "Node.js 事件循环",
+            "theNodejsEventEmitter": "Node.js 事件发射器",
+            "understandingProcessnexttick": "掌握 process.nextTick()",
+            "understandingSetimmediate": "掌握 setImmediate()",
+            "dontBlockTheEventLoop": "请勿阻塞事件循环"
           }
         },
         "manipulatingFiles": {
           "links": {
-            "manipulatingFiles": "Manipulating Files",
-            "nodejsFileStats": "Node.js file stats",
-            "nodejsFilePaths": "Node.js File Paths",
-            "workingWithFileDescriptorsInNodejs": "Working with file descriptors in Node.js",
-            "readingFilesWithNodejs": "Reading files with Node.js",
-            "writingFilesWithNodejs": "Writing files with Node.js",
-            "workingWithFoldersInNodejs": "Working with folders in Node.js",
-            "howToWorkWithFileSystems": "How to work with Different Filesystems"
+            "manipulatingFiles": "文件操作",
+            "nodejsFileStats": "Node.js 中的文件状态",
+            "nodejsFilePaths": "Node.js 中的文件路径",
+            "workingWithFileDescriptorsInNodejs": "在 Node.js 中使用文件描述符",
+            "readingFilesWithNodejs": "使用 Node.js 读取文件",
+            "writingFilesWithNodejs": "使用 Node.js 写入文件",
+            "workingWithFoldersInNodejs": "在 Node.js 中处理文件夹",
+            "howToWorkWithFileSystems": "如何使用不同的文件系统"
           }
         },
         "commandLine": {
           "links": {
-            "commandLine": "Command Line",
-            "runNodejsScriptsFromTheCommandLine": "Run Node.js scripts from the command line",
-            "howToReadEnvironmentVariablesFromNodejs": "How to read environment variables from Node.js",
-            "howToUseTheNodejsRepl": "How to use the Node.js REPL",
+            "commandLine": "命令行",
+            "runNodejsScriptsFromTheCommandLine": "从命令行运行 Node.js 脚本",
+            "howToReadEnvironmentVariablesFromNodejs": "如何从 Node.js 中读取环境变量",
+            "howToUseTheNodejsRepl": "如何使用 Node.js REPL",
             "outputToTheCommandLineUsingNodejs": "Output to the command line using Node.js",
             "acceptInputFromTheCommandLineInNodejs": "Accept input from the command line in Node.js"
           }
@@ -170,6 +168,9 @@
       },
       "languageDropdown": {
         "label": "Choose Language"
+      },
+      "themeToggle": {
+        "label": "Toggle Dark Mode"
       }
     },
     "mdx": {
@@ -187,15 +188,6 @@
       "contributeText": "Edit this page",
       "viewAs": "View as",
       "tableOfContents": "Table of Contents"
-    },
-    "home": {
-      "homeDownloadButton": {
-        "download": "{version} {isLts, select, true {LTS} other {Current}}",
-        "tagline": "{isLts, select, true {Recommended For Most Users} other {Latest Features}}",
-        "changelog": "Changelog",
-        "otherDownloads": "Other Downloads",
-        "apiDocs": "API Docs"
-      }
     },
     "downloads": {
       "changelogModal": {
@@ -224,6 +216,12 @@
       "searchPage": {
         "title": "You're searching: {query}"
       }
+    },
+    "blog": {
+      "blogHeader": {
+        "subtitle": "The latest Node.js news, case studies, tutorials, and resources.",
+        "rssLink": "RSS feed"
+      }
     }
   },
   "layouts": {
@@ -237,7 +235,6 @@
     },
     "blog": {
       "title": "Blog",
-      "subtitle": "The latest Node.js news, case studies, tutorials, and resources.",
       "selectCategory": "Categories",
       "categories": {
         "all": "Everything",
@@ -288,12 +285,6 @@
       "codeBox": {
         "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project."
       }
-    }
-  },
-  "pages": {
-    "404": {
-      "title": "404: Page could not be found",
-      "description": "ENOENT: no such file or directory"
     }
   }
 }
