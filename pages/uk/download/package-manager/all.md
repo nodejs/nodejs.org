@@ -7,13 +7,13 @@ title: Installing Node.js via package manager
 
 > The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
 
----
+***
 
 - [Alpine Linux](#alpine-linux)
 - [Android](#android)
 - [Arch Linux](#arch-linux)
-- [CentOS, Fedora and Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
-- [Debian and Ubuntu based Linux distributions](#debian-and-ubuntu-based-linux-distributions)
+- [CentOS, Fedora та Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
+- [Дистрибутиви Linux, які базуються на Debian та Ubuntu](#debian-and-ubuntu-based-linux-distributions)
 - [fnm](#fnm)
 - [FreeBSD](#freebsd)
 - [Gentoo](#gentoo)
@@ -25,15 +25,15 @@ title: Installing Node.js via package manager
 - [nvm](#nvm)
 - [nvs](#nvs)
 - [OpenBSD](#openbsd)
-- [openSUSE and SLE](#opensuse-and-sle)
-- [SmartOS and illumos](#smartos-and-illumos)
+- [openSUSE та SLE](#opensuse-and-sle)
+- [SmartOS та illumos](#smartos-and-illumos)
 - [Snap](#snap)
 - [Solus](#solus)
 - [Void Linux](#void-linux)
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
----
+***
 
 ## Alpine Linux
 
@@ -51,9 +51,9 @@ apk add nodejs-current
 
 ## Android
 
-Android support is still experimental in Node.js, so precompiled binaries are not yet provided by Node.js developers.
+Підтримка Android досі є експериментальною в Node.js, тому попередньо скомпільовані бінарні файли ще не надаються розробниками Node.js.
 
-However, there are some third-party solutions. For example, [Termux](https://termux.com/) community provides terminal emulator and Linux environment for Android, as well as own package manager and [extensive collection](https://github.com/termux/termux-packages) of many precompiled applications. This command in Termux app will install the last available Node.js version:
+Однак, є сторонні рішення. Наприклад, спільнота [Termux](https://termux.com/) надає емулятор термінала та середовище Linux для Android, а також власний менеджер пакетів та [великий набір](https://github.com/termux/termux-packages) багатьох попередньо скомпільованих застосунків. Ця команда в застосунку Termux установить останню доступну версію Node.js:
 
 ```bash
 pkg install nodejs
@@ -69,7 +69,7 @@ Node.js and npm packages are available in the Community Repository.
 pacman -S nodejs npm
 ```
 
-## CentOS, Fedora and Red Hat Enterprise Linux
+## CentOS, Fedora та Red Hat Enterprise Linux
 
 Node.js is available as a module called `nodejs` in CentOS/RHEL 8 and Fedora.
 
@@ -84,24 +84,24 @@ To see a list of available streams:
 dnf module list nodejs
 ```
 
-For example, to install Node.js 18:
+Наприклад, щоб установити Node.js 18:
 
 ```bash
 dnf module install nodejs:18/common
 ```
 
-### Alternatives
+### Альтернативи
 
 These resources provide packages compatible with CentOS, Fedora, and RHEL.
 
 - [Node.js snaps](#snap) maintained and supported at https\://github.com/nodejs/snap
 - [Node.js binary distributions](#debian-and-ubuntu-based-linux-distributions) maintained and supported by [NodeSource](https://github.com/nodesource/distributions)
 
-## Debian and Ubuntu based Linux distributions
+## Дистрибутиви Linux, які базуються на Debian та Ubuntu
 
 [Node.js binary distributions](https://github.com/nodesource/distributions) are available from NodeSource.
 
-### Alternatives
+### Альтернативи
 
 Packages compatible with Debian and Ubuntu based Linux distributions are available via [Node.js snaps](#snap).
 
