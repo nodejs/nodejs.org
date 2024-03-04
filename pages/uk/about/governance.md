@@ -1,9 +1,9 @@
 ---
-title: Project Governance
+title: Управління проєктом
 layout: about.hbs
 ---
 
-# Project Governance
+# Управління проєктом
 
 ## Consensus Seeking Process
 

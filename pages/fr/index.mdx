@@ -1,5 +1,5 @@
 ---
-title: Run JavaScript Everywhere
+title: Exécuter du JavaScript partout
 layout: home.hbs
 ---
 
@@ -7,36 +7,35 @@ layout: home.hbs
   <WithBadge section="index" />
 
   <div>
-    <h1 className="special">Run JavaScript Everywhere</h1>
+    <h1 className="special">Exécuter du JavaScript partout</h1>
 
-    Node.js® is a free, open-source, cross-platform JavaScript runtime
-    environment that lets developers create servers, web apps,
-    command line tools and scripts.
+    Node.js® est un environnement d'exécution JavaScript gratuit, open-source et multiplateforme qui permet aux développeurs de créer des serveurs, des applications web et des applications de gestion de contenu.
+    qui permet aux développeurs de créer des serveurs, des applications web, des outils en ligne de commande et des scripts.
 
   </div>
 
   <div>
     <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
       {({ release }) => (
-        <>
-          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
-          <small>
-            Downloads Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
-            Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
-          </small>
-        </>
-      )}
+                                                                    <>
+                                                                      <DownloadButton release={release}>Télécharger Node.js (LTS)</DownloadButton>
+                                                                      <small>
+                                                                        Télécharger Node.js  <b>{release.versionWithPrefix}</b>
+                                                                        <sup title="Downloads a Node.js installer for your current platform">1</sup> avec un support à long terme.
+                                                                          Node.js peut également être installé via <a href="/download/package-manager">gestionnaires de paquets</a>.
+                                                                      </small>
+                                                                    </>
+                                                                  )}
     </WithNodeRelease>
 
     <WithNodeRelease status="Current">
       {({ release }) => (
-        <small>
-          Want new features sooner?
-          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> instead.
-        </small>
-      )}
+                                                                    <small>
+                                                                      Vous voulez de nouvelles fonctionnalités plus tôt ?
+                                                                      Obtenez <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+                                                                      <sup title="Downloads a Node.js installer for your current platform">1</sup> à la place.
+                                                                    </small>
+                                                                  )}
     </WithNodeRelease>
 
   </div>
@@ -116,6 +115,6 @@ layout: home.hbs
 
   </div>
 
-Learn more what Node.js is able to offer with our [Learning materials](/learn).
+Apprenez-en plus sur ce que Node.js est capable d'offrir avec notre [Matériel d'apprentissage](/learn).
 
 </section>
