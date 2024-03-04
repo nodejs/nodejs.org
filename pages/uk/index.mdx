@@ -1,5 +1,5 @@
 ---
-title: Run JavaScript Everywhere
+title: Запускайте JavaScript будь-де
 layout: home.hbs
 ---
 
@@ -7,23 +7,22 @@ layout: home.hbs
   <WithBadge section="index" />
 
   <div>
-    <h1 className="special">Run JavaScript Everywhere</h1>
+    <h1 className="special">Запускайте JavaScript будь-де</h1>
 
     Node.js® is a free, open-source, cross-platform JavaScript runtime
     environment that lets developers create servers, web apps,
     command line tools and scripts.
-
   </div>
 
   <div>
     <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
       {({ release }) => (
         <>
-          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+          <DownloadButton release={release}>Завантажити Node.js (ДПС (LTS))</DownloadButton>
           <small>
-            Downloads Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
-            Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
+            Завантажує Node.js <b>{release.versionWithPrefix}</b>
+            <sup title="Downloads a Node.js installer for your current platform">1</sup> із довгостроковою підтримкою.
+            Node.js також можна встановити за допомогою <a href="/download/package-manager">менеджерів пакетів</a>.
           </small>
         </>
       )}
@@ -32,13 +31,12 @@ layout: home.hbs
     <WithNodeRelease status="Current">
       {({ release }) => (
         <small>
-          Want new features sooner?
-          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> instead.
+          Бажаєте отримати нові функції швидше?
+          Завантажте <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="Downloads a Node.js installer for your current platform">1</sup>.
         </small>
       )}
     </WithNodeRelease>
-
   </div>
 </section>
 
@@ -113,9 +111,7 @@ layout: home.hbs
       parentPort.postMessage(btoa(source.toUpperCase()));
     }
     ```
-
   </div>
 
-Learn more what Node.js is able to offer with our [Learning materials](/learn).
-
+  Learn more what Node.js is able to offer with our [Learning materials](/learn).
 </section>
