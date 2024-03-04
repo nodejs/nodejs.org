@@ -499,3 +499,4 @@ If you're unfamiliar or curious about something, we recommend opening a Discussi
 [Shiki]: https://github.com/shikijs/shiki
 [Tailwind]: https://tailwindcss.com/
 [Radix UI]: https://www.radix-ui.com/
+[`next-intl`]: https://www.npmjs.com/package/next-intl
