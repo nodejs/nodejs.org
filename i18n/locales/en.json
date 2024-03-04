@@ -103,6 +103,7 @@
         "links": {
           "about": "About Node.js",
           "aboutSide": "About Node.js®",
+          "branding": "Branding of Node.js",
           "governance": "Project Governance",
           "releases": "Previous Releases",
           "security": "Security Reporting"

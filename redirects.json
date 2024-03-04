@@ -153,6 +153,10 @@
       "destination": "/static/images/favicons/favicon.png"
     },
     {
+      "source": "/(static/)images/logo.svg",
+      "destination": "/static/logos/nodejsLight.svg"
+    },
+    {
       "source": "/logos/:path*",
       "destination": "/static/images/logos/:path*"
     },
