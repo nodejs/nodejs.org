@@ -1,28 +1,26 @@
 {
   "components": {
-    "footer": {
-      "links": {
-        "trademarkPolicy": "Trademark Policy",
-        "privacyPolicy": "Privacy Policy",
-        "codeOfConduct": "Code of Conduct",
-        "security": "Security Policy",
-        "openJS": "OpenJS Foundation"
-      }
-    },
-    "header": {
-      "links": {
-        "about": "About",
-        "download": "Download",
-        "docs": "Docs",
-        "guides": "Guides",
-        "learn": "Learn",
-        "security": "Security",
-        "certification": "Certification",
-        "blog": "Blog"
+    "containers": {
+      "footer": {
+        "links": {
+          "trademarkPolicy": "Trademark Policy",
+          "privacyPolicy": "Privacy Policy",
+          "codeOfConduct": "Code of Conduct",
+          "security": "Security Policy",
+          "openJS": "OpenJS Foundation"
+        }
       },
-      "buttons": {
-        "toggleLanguage": "Toggle Language",
-        "toggleTheme": "Toggle dark/light mode"
+      "navBar": {
+        "links": {
+          "about": "About",
+          "download": "Download",
+          "docs": "Docs",
+          "guides": "Guides",
+          "learn": "Learn",
+          "security": "Security",
+          "certification": "Certification",
+          "blog": "Blog"
+        }
       }
     },
     "navigation": {
@@ -30,18 +28,18 @@
         "gettingStarted": {
           "links": {
             "gettingStarted": "Getting Started",
-            "introductionToNodejs": "Introduction to Node.js",
-            "howToInstallNodejs": "How to install Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "How much JavaScript do you need to know to use Node.js?",
+            "introductionToNodejs": "Вступ до Node.js",
+            "howToInstallNodejs": "Як установити Node.js",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Як добре треба знати JavaScript, щоб використовувати Node.js?",
             "differencesBetweenNodejsAndTheBrowser": "Differences between Node.js and the Browser",
-            "theV8JavascriptEngine": "The V8 JavaScript Engine",
-            "anIntroductionToTheNpmPackageManager": "An introduction to the npm package manager",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) and beyond",
+            "theV8JavascriptEngine": "Рушій JavaScript V8",
+            "anIntroductionToTheNpmPackageManager": "Вступ до менеджера пакетів npm",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) та вище",
             "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
-            "nodejsWithTypescript": "Node.js with TypeScript",
+            "nodejsWithTypescript": "Node.js із TypeScript",
             "nodejsWithWebassembly": "Node.js with WebAssembly",
             "debugging": "Debugging Node.js",
-            "profiling": "Profiling Node.js Applications",
+            "profiling": "Профілювання застосунків Node.js",
             "securityBestPractices": "Security Best Practices"
           }
         },
@@ -65,81 +63,81 @@
             "nodejsFileStats": "Node.js file stats",
             "nodejsFilePaths": "Node.js File Paths",
             "workingWithFileDescriptorsInNodejs": "Working with file descriptors in Node.js",
-            "readingFilesWithNodejs": "Reading files with Node.js",
-            "writingFilesWithNodejs": "Writing files with Node.js",
-            "workingWithFoldersInNodejs": "Working with folders in Node.js",
-            "howToWorkWithFileSystems": "How to work with Different Filesystems"
+            "readingFilesWithNodejs": "Читання файлів із Node.js",
+            "writingFilesWithNodejs": "Запис у файл із Node.js",
+            "workingWithFoldersInNodejs": "Робота з папками в Node.js",
+            "howToWorkWithFileSystems": "Як працювати з різними файловими системами"
           }
         },
         "commandLine": {
           "links": {
-            "commandLine": "Command Line",
-            "runNodejsScriptsFromTheCommandLine": "Run Node.js scripts from the command line",
-            "howToReadEnvironmentVariablesFromNodejs": "How to read environment variables from Node.js",
+            "commandLine": "Командний рядок",
+            "runNodejsScriptsFromTheCommandLine": "Запуск скриптів Node.js із командного рядка",
+            "howToReadEnvironmentVariablesFromNodejs": "Як зчитувати змінні оточення з Node.js",
             "howToUseTheNodejsRepl": "How to use the Node.js REPL",
-            "outputToTheCommandLineUsingNodejs": "Output to the command line using Node.js",
+            "outputToTheCommandLineUsingNodejs": "Вивід у командний рядок з Node.js",
             "acceptInputFromTheCommandLineInNodejs": "Accept input from the command line in Node.js"
           }
         },
         "modules": {
           "links": {
-            "modules": "Modules",
+            "modules": "Модулі",
             "publishingNodeApiModules": "How to publish a Node-API package",
-            "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction",
+            "anatomyOfAnHttpTransaction": "Анатомія HTTP-транзакції",
             "abiStability": "ABI Stability",
             "backpressuringInStreams": "Backpressuring in Streams"
           }
         },
         "diagnostics": {
           "links": {
-            "diagnostics": "Diagnostics",
+            "diagnostics": "Діагностика",
             "userJourney": "User Journey",
-            "memory": "Memory",
+            "memory": "Пам’ять",
             "liveDebugging": "Live Debugging",
-            "poorPerformance": "Poor Performance",
+            "poorPerformance": "Низька продуктивність",
             "flameGraphs": "Flame Graphs"
           }
         }
       },
       "about": {
         "links": {
-          "about": "About Node.js",
-          "aboutSide": "About Node.js®",
-          "governance": "Project Governance",
-          "releases": "Previous Releases",
+          "about": "Про Node.js",
+          "aboutSide": "Про Node.js®",
+          "governance": "Управління проєктом",
+          "releases": "Попередні випуски",
           "security": "Security Reporting"
         }
       },
       "getInvolved": {
         "links": {
-          "getInvolved": "Get Involved",
+          "getInvolved": "Долучитися",
           "collabSummit": "Collaborator Summit",
           "upcomingEvents": "Upcoming Events",
           "contribute": "Contribute to Node.js",
-          "codeOfConduct": "Code of Conduct"
+          "codeOfConduct": "Кодекс поведінки"
         }
       }
     },
     "downloadList": {
       "links": {
-        "previousReleases": "Previous Releases",
+        "previousReleases": "Попередні випуски",
         "packageManager": "Installing Node.js via package manager",
         "shaSums": {
           "title": "Signed SHASUMS for release files",
           "howToVerify": " (How to verify)"
         },
-        "allDownloads": "All download options",
+        "allDownloads": "Усі завантаження",
         "nightlyReleases": "Nightly builds",
-        "unofficialBuilds": "Unofficial builds",
+        "unofficialBuilds": "Неофіційні збірки",
         "buildingFromSource": "Building Node.js from source on supported platforms",
         "installingOnLinux": "Installing Node.js via binary archive",
-        "installingOnWsl": "Install on Windows Subsystem for Linux (WSL)"
+        "installingOnWsl": "Встановити на підсистему Windows для Linux (WSL)"
       }
     },
     "downloadReleasesTable": {
-      "changelog": "Changelog",
-      "releases": "Releases",
-      "docs": "Docs"
+      "changelog": "Список змін",
+      "releases": "Випуски",
+      "docs": "Документація"
     },
     "pagination": {
       "next": "Next",
@@ -154,8 +152,8 @@
         "next": "Next"
       },
       "codebox": {
-        "copy": "Copy to clipboard",
-        "copied": "Copied to clipboard!"
+        "copy": "Скопіювати в буфер обміну",
+        "copied": "Скопійовано в буфер обміну!"
       },
       "pagination": {
         "prev": "Previous",
@@ -163,13 +161,16 @@
         "next": "Next",
         "nextAriaLabel": "Next page",
         "defaultLabel": "Pagination",
-        "pageLabel": "Go to page {pageNumber}"
+        "pageLabel": "Перейти до {pageNumber} сторінки"
       },
       "sidebar": {
-        "title": "Change page"
+        "title": "Змінити сторінку"
       },
       "languageDropdown": {
-        "label": "Choose Language"
+        "label": "Обрати мову"
+      },
+      "themeToggle": {
+        "label": "Toggle Dark Mode"
       }
     },
     "mdx": {
@@ -178,24 +179,15 @@
       }
     },
     "metabar": {
-      "lastUpdated": "Last Updated",
+      "lastUpdated": "Востаннє оновлено",
       "readingTime": "Reading Time",
       "addedIn": "Added In",
-      "author": "Author",
-      "authors": "Authors",
+      "author": "Автор",
+      "authors": "Автори",
       "contribute": "Contribute",
-      "contributeText": "Edit this page",
+      "contributeText": "Редагувати цю сторінку",
       "viewAs": "View as",
       "tableOfContents": "Table of Contents"
-    },
-    "home": {
-      "homeDownloadButton": {
-        "download": "{version} {isLts, select, true {LTS} other {Current}}",
-        "tagline": "{isLts, select, true {Recommended For Most Users} other {Latest Features}}",
-        "changelog": "Changelog",
-        "otherDownloads": "Other Downloads",
-        "apiDocs": "API Docs"
-      }
     },
     "downloads": {
       "changelogModal": {
@@ -207,7 +199,7 @@
         "placeholder": "Start typing..."
       },
       "seeAll": {
-        "text": "See all {count} results"
+        "text": "Переглянути всі {count} результатів"
       },
       "searchError": {
         "text": "An error occurred while searching. Please try again later."
@@ -222,38 +214,38 @@
         "text": "Search something..."
       },
       "searchPage": {
-        "title": "You're searching: {query}"
+        "title": "Ви шукаєте: {query}"
       }
     }
   },
   "layouts": {
     "blogPost": {
       "author": {
-        "byLine": "{author, select, null {} other {By {author}, }}"
+        "byLine": "{author, select, null {} other {Від {author}, }}"
       }
     },
     "blogIndex": {
-      "categoryName": "{category, select, all {Blog} other {{category} Blog Posts}}"
+      "categoryName": "{category, select, all {Блог} other {{category} Пости блога}}"
     },
     "blog": {
-      "title": "Blog",
+      "title": "Блог",
       "subtitle": "The latest Node.js news, case studies, tutorials, and resources.",
       "selectCategory": "Categories",
       "categories": {
         "all": "Everything",
-        "announcements": "Announcements",
-        "release": "Releases",
-        "vulnerability": "Vulnerabilities",
+        "announcements": "Оголошення",
+        "release": "Випуски",
+        "vulnerability": "Уразливості",
         "advisory-board": "Advisory Board",
-        "community": "Community",
+        "community": "Спільнота",
         "feature": "Feature",
-        "module": "Module",
+        "module": "Модуль",
         "npm": "npm",
         "uncategorized": "Uncategorized",
-        "video": "Video",
-        "weekly": "Weekly Updates",
+        "video": "Відео",
+        "weekly": "Щотижневі оновлення",
         "wg": "Working Groups",
-        "events": "Events"
+        "events": "Події"
       }
     },
     "error": {
@@ -273,27 +265,21 @@
         "download": "Prebuilt Installer",
         "prebuilt-binaries": "Prebuilt Binaries",
         "package-manager": "Package Manager",
-        "source-code": "Source Code"
+        "source-code": "Вихідний код"
       },
       "buttons": {
-        "prebuilt": "Download Node.js {version}",
+        "prebuilt": "Завантажити Node.js {version}",
         "source": "Download Node.js {version} source"
       },
       "dropdown": {
         "bitness": "Bitness",
-        "os": "Operating System",
-        "version": "Version",
-        "platform": "Platform"
+        "os": "Операційна система",
+        "version": "Версія",
+        "platform": "Платформа"
       },
       "codeBox": {
         "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project."
       }
-    }
-  },
-  "pages": {
-    "404": {
-      "title": "404: Page could not be found",
-      "description": "ENOENT: no such file or directory"
     }
   }
 }
