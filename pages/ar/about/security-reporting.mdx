@@ -15,10 +15,8 @@ layout: about
 استجابة مفصلة لتقريرك في غضون 10 أيام تشير إلى الخطوات التالية في
 للتعامل مع الإرسال الخاص بك.
 
-After the initial reply to your report, the security team will endeavor to keep
-you informed of the progress being made towards a fix and full announcement,
-and may ask for additional information or guidance surrounding the reported
-issue.
+بعد الرد الأولي على تقريرك، سيسعى فريق الأمان لإبقائك على اطلاع
+بالتقدم المحرز نحو إصلاح وإعلان كامل، وقد يطلب معلومات إضافية أو توجيهات حول المشكلة المُبلغ عنها.
 
 ### برنامج مكافأة الأخطاء Node.js
 
@@ -35,37 +33,25 @@ issue.
 
 إليك سياسة الإفصاح الأمني لـ Node.js
 
-- The security report is received and is assigned a primary handler. This
-  person will coordinate the fix and release process. The problem is confirmed
-  and a list of all affected versions is determined. Code is audited to find
-  any potential similar problems. Fixes are prepared for all releases which are
-  still under maintenance. These fixes are not committed to the public
-  repository but rather held locally pending the announcement.
+* يتم استلام تقرير الأمان وتعيين معالج أساسي له. سيقوم هذا الشخص بتنسيق عملية الإصلاح والإصدار. يتم تأكيد المشكلة وتحديد قائمة بجميع الإصدارات المتأثرة. يتم فحص الشيفرة للعثور على أي مشاكل مماثلة محتملة. يتم إعداد الإصلاحات لجميع الإصدارات التي لا تزال تحت الصيانة. هذه الإصلاحات لم تُرتبط بمستودع الشيفرة العام وإنما تُحتفظ بها محليًا في انتظار الإعلان.
 
-- A suggested embargo date for this vulnerability is chosen and a CVE (Common
-  Vulnerabilities and Exposures (CVE®)) is requested for the vulnerability.
+* يتم اختيار تاريخ اقتراحي لهذا الثغرة ويُطلب CVE (الثغرات والتعرضات المشتركة (CVE®)) للثغرة.
 
-- وفي تاريخ الحظر، ترسل القائمة البريدية الأمنية Node.js نسخة من الإعلان
+* وفي تاريخ الحظر، ترسل القائمة البريدية الأمنية Node.js نسخة من الإعلان
   . يتم دفع التغييرات إلى المستودع العام ويتم نشر المباني الجديدة
   إلى العقد. (ص ص) في غضون 6 ساعات من إخطار القائمة البريدية
   ستنشر نسخة من هذه الاستشارة في مدونة Node.js.
 
-- Typically the embargo date will be set 72 hours from the time the CVE is
-  issued. However, this may vary depending on the severity of the bug or
-  difficulty in applying a fix.
+* عادة ما يتم تحديد تاريخ الحظر بعد 72 ساعة من وقت إصدار CVE. ومع ذلك، قد تختلف هذه الفترة اعتمادًا على خطورة الخطأ أو صعوبة تطبيق الإصلاح.
 
-- This process can take some time, especially when coordination is required
-  with maintainers of other projects. Every effort will be made to handle the
-  bug in as timely a manner as possible; however, it's important that we follow
-  the release process above to ensure that the disclosure is handled in a
-  consistent manner.
+* يمكن أن يستغرق هذا العملية بعض الوقت، خاصة عندما يكون هناك حاجة للتنسيق مع مُحافظي مشاريع أخرى. سيتم بذل كل جهد ممكن للتعامل مع الخطأ بأسرع وقت ممكن؛ ومع ذلك، من المهم أن نتبع العملية الخاصة بالإصدار أعلاه لضمان أن يتم التعامل مع الإفشاء بطريقة متسقة.
 
 ## تلقي تحديثات الأمان
 
 سيتم توزيع إشعارات الأمان عبر الطرق التالية.
 
-- [مجموعة جوجل](https://groups.google.com/group/nodejs-sec)
-- [Node.js Bog](/blog)
+* [مجموعة جوجل](https://groups.google.com/group/nodejs-sec)
+* [Node.js Bog](/blog)
 
 ## تعليقات على هذه السياسة
 
@@ -75,15 +61,8 @@ issue.
 
 ## أفضل ممارسات OpenSSF
 
-<a
-  href="https://bestpractices.coreinfrastructure.org/projects/29"
-  style={{ display: 'inline-flex' }}
->
-  <img
-    alt="شارة OpenSSF"
-    src="https://bestpractices.coreinfrastructure.org/projects/29/badge"
-    style={{ display: 'inline' }}
-  />
+<a href="https://bestpractices.coreinfrastructure.org/projects/29" style={{ display: 'inline-flex' }}>
+  <img alt="شارة OpenSSF" src="https://bestpractices.coreinfrastructure.org/projects/29/badge" style={{ display: 'inline' }} />
 </a>
 
 مؤسسة أمن المصادر المفتوحة (OpenSSF) \[شارة أفضل الممارسات]\(https://github. وتعد شارات البرمجيات الحرة والمفتوحة المصدر طريقة تسمح لمشاريع البرمجيات الحرة والمفتوحة المصدر بتبيان أنها تتبع أفضل الممارسات. ويمكن للمشاريع أن تصادق بصورة طوعية على الطريقة التي تتبع بها كل ممارسة من أفضل الممارسات. وبوسع مستهلكي الشارات أن يقيِّموا بسرعة مشاريع FLOSS التي تتبع أفضل الممارسات، ونتيجة لذلك فمن الأرجح أن تنتج برامج حاسوبية مأمونة عالية الجودة.
