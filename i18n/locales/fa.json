@@ -3,23 +3,23 @@
     "containers": {
       "footer": {
         "links": {
-          "trademarkPolicy": "Trademark Policy",
-          "privacyPolicy": "Privacy Policy",
-          "codeOfConduct": "Code of Conduct",
-          "security": "Security Policy",
-          "openJS": "OpenJS Foundation"
+          "trademarkPolicy": "سیاست علامت تجاری",
+          "privacyPolicy": "سیاست حفظ حریم شخصی",
+          "codeOfConduct": "مدرک رفتار",
+          "security": "سیاست امنیتی",
+          "openJS": "بنیاد OpenJS"
         }
       },
       "navBar": {
         "links": {
-          "about": "About",
-          "download": "Download",
-          "docs": "Docs",
-          "guides": "Guides",
-          "learn": "Learn",
-          "security": "Security",
-          "certification": "Certification",
-          "blog": "Blog"
+          "about": "درباره",
+          "download": "دانلود",
+          "docs": "اسناد",
+          "guides": "راهنماها",
+          "learn": "آموزش",
+          "security": "امنیت",
+          "certification": "گواهی نامه",
+          "blog": "وبلاگ"
         }
       }
     },
@@ -27,263 +27,263 @@
       "learn": {
         "gettingStarted": {
           "links": {
-            "gettingStarted": "Getting Started",
-            "introductionToNodejs": "Introduction to Node.js",
-            "howToInstallNodejs": "How to install Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "How much JavaScript do you need to know to use Node.js?",
-            "differencesBetweenNodejsAndTheBrowser": "Differences between Node.js and the Browser",
-            "theV8JavascriptEngine": "The V8 JavaScript Engine",
-            "anIntroductionToTheNpmPackageManager": "An introduction to the npm package manager",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) and beyond",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
-            "nodejsWithTypescript": "Node.js with TypeScript",
-            "nodejsWithWebassembly": "Node.js with WebAssembly",
-            "debugging": "Debugging Node.js",
-            "profiling": "Profiling Node.js Applications",
-            "securityBestPractices": "Security Best Practices"
+            "gettingStarted": "شروع کار",
+            "introductionToNodejs": "معرفی به Node.js",
+            "howToInstallNodejs": "چگونه Node.js را نصب کنیم",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "چقدر جاوااسکریپت باید بدانید تا از Node.js استفاده کنید؟",
+            "differencesBetweenNodejsAndTheBrowser": "تفاوت‌ها بین Node.js و مرورگر",
+            "theV8JavascriptEngine": "موتور جاوااسکریپت V8",
+            "anIntroductionToTheNpmPackageManager": "معرفی به مدیر بسته npm",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) و بیشتر",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js، تفاوت بین توسعه و تولید",
+            "nodejsWithTypescript": "Node.js با TypeScript",
+            "nodejsWithWebassembly": "Node.js با WebAssembly",
+            "debugging": "اشکال زدایی Node.js",
+            "profiling": "پروفایل‌گیری برنامه‌های Node.js",
+            "securityBestPractices": "بهترین روش‌های امنیتی"
           }
         },
         "asynchronousWork": {
           "links": {
-            "asynchronousWork": "Asynchronous Work",
-            "asynchronousFlowControl": "Asynchronous flow control",
-            "overviewOfBlockingVsNonBlocking": "Overview of Blocking vs Non-Blocking",
-            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asynchronous Programming and Callbacks",
-            "discoverJavaScriptTimers": "Discover JavaScript Timers",
-            "theNodejsEventLoop": "The Node.js Event Loop",
-            "theNodejsEventEmitter": "The Node.js Event Emitter",
-            "understandingProcessnexttick": "Understanding process.nextTick()",
-            "understandingSetimmediate": "Understanding setImmediate()",
-            "dontBlockTheEventLoop": "Don't Block the Event Loop"
+            "asynchronousWork": "کارهای ناهمزمان",
+            "asynchronousFlowControl": "کنترل جریان ناهمزمان",
+            "overviewOfBlockingVsNonBlocking": "بررسی مقایسه‌ای بلاک‌کردن و غیر بلاک‌کردن",
+            "javascriptAsynchronousProgrammingAndCallbacks": "برنامه‌نویسی ناهمزمان JavaScript و بازخوانی‌ها",
+            "discoverJavaScriptTimers": "کشف تایمرهای JavaScript",
+            "theNodejsEventLoop": "حلقه رویداد Node.js",
+            "theNodejsEventEmitter": "Node.js رویداد Emitter",
+            "understandingProcessnexttick": "فهم process.nextTick()",
+            "understandingSetimmediate": "فهم setImmediate()",
+            "dontBlockTheEventLoop": "Event Loop را مسدود نکنید"
           }
         },
         "manipulatingFiles": {
           "links": {
-            "manipulatingFiles": "Manipulating Files",
-            "nodejsFileStats": "Node.js file stats",
-            "nodejsFilePaths": "Node.js File Paths",
-            "workingWithFileDescriptorsInNodejs": "Working with file descriptors in Node.js",
-            "readingFilesWithNodejs": "Reading files with Node.js",
-            "writingFilesWithNodejs": "Writing files with Node.js",
-            "workingWithFoldersInNodejs": "Working with folders in Node.js",
-            "howToWorkWithFileSystems": "How to work with Different Filesystems"
+            "manipulatingFiles": "تلاش برای فایل ها",
+            "nodejsFileStats": "آمار فایل Node.js",
+            "nodejsFilePaths": "مسیرهای فایل Node.js",
+            "workingWithFileDescriptorsInNodejs": "کار با شناسه های فایل در Node.js",
+            "readingFilesWithNodejs": "خواندن فایل ها با Node.js",
+            "writingFilesWithNodejs": "نوشتن فایل ها با Node.js",
+            "workingWithFoldersInNodejs": "کار با پوشه‌ها در Node.js",
+            "howToWorkWithFileSystems": "چگونگی کار با فایل‌سیستم‌های مختلف"
           }
         },
         "commandLine": {
           "links": {
-            "commandLine": "Command Line",
-            "runNodejsScriptsFromTheCommandLine": "Run Node.js scripts from the command line",
-            "howToReadEnvironmentVariablesFromNodejs": "How to read environment variables from Node.js",
-            "howToUseTheNodejsRepl": "How to use the Node.js REPL",
-            "outputToTheCommandLineUsingNodejs": "Output to the command line using Node.js",
-            "acceptInputFromTheCommandLineInNodejs": "Accept input from the command line in Node.js"
+            "commandLine": "خط فرمان",
+            "runNodejsScriptsFromTheCommandLine": "اجرای اسکریپت‌های Node.js از خط فرمان",
+            "howToReadEnvironmentVariablesFromNodejs": "چگونگی خواندن متغیرهای محیطی از Node.js",
+            "howToUseTheNodejsRepl": "چگونگی استفاده از REPL Node.js",
+            "outputToTheCommandLineUsingNodejs": "خروجی به خط فرمان با استفاده از Node.js",
+            "acceptInputFromTheCommandLineInNodejs": "پذیرش ورودی از خط فرمان در Node.js"
           }
         },
         "modules": {
           "links": {
-            "modules": "Modules",
-            "publishingNodeApiModules": "How to publish a Node-API package",
-            "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction",
-            "abiStability": "ABI Stability",
-            "backpressuringInStreams": "Backpressuring in Streams"
+            "modules": "ماژول‌ها",
+            "publishingNodeApiModules": "چگونگی انتشار یک بسته Node-API",
+            "anatomyOfAnHttpTransaction": "ساختار یک تراکنش HTTP",
+            "abiStability": "پایداری ABI",
+            "backpressuringInStreams": "بازگشت فشار در جریان‌ها"
           }
         },
         "diagnostics": {
           "links": {
-            "diagnostics": "Diagnostics",
-            "userJourney": "User Journey",
-            "memory": "Memory",
-            "liveDebugging": "Live Debugging",
-            "poorPerformance": "Poor Performance",
-            "flameGraphs": "Flame Graphs"
+            "diagnostics": "تشخیصی",
+            "userJourney": "سفر کاربر",
+            "memory": "حافظه",
+            "liveDebugging": "اشکال زنده",
+            "poorPerformance": "عملکرد ضعیف",
+            "flameGraphs": "نمودارهای شعله"
           }
         }
       },
       "about": {
         "links": {
-          "about": "About Node.js",
-          "aboutSide": "About Node.js®",
-          "governance": "Project Governance",
-          "releases": "Previous Releases",
-          "security": "Security Reporting"
+          "about": "درباره Node.js",
+          "aboutSide": "درباره Node.js®",
+          "governance": "حکومت پروژه",
+          "releases": "نسخه‌های قبلی",
+          "security": "گزارش امنیتی"
         }
       },
       "getInvolved": {
         "links": {
-          "getInvolved": "Get Involved",
+          "getInvolved": "درگیر شوید",
           "collabSummit": "Collaborator Summit",
-          "upcomingEvents": "Upcoming Events",
-          "contribute": "Contribute to Node.js",
-          "codeOfConduct": "Code of Conduct"
+          "upcomingEvents": "رویدادهای آینده",
+          "contribute": "مشارکت در Node.js",
+          "codeOfConduct": "کد اخلاقی"
         }
       }
     },
     "downloadList": {
       "links": {
-        "previousReleases": "Previous Releases",
-        "packageManager": "Installing Node.js via package manager",
+        "previousReleases": "نسخه‌های قبلی",
+        "packageManager": "نصب Node.js از طریق مدیر بسته",
         "shaSums": {
-          "title": "Signed SHASUMS for release files",
-          "howToVerify": " (How to verify)"
+          "title": "SHASUMS امضا شده برای فایل‌های انتشار",
+          "howToVerify": " (نحوه تأیید)"
         },
-        "allDownloads": "All download options",
-        "nightlyReleases": "Nightly builds",
-        "unofficialBuilds": "Unofficial builds",
-        "buildingFromSource": "Building Node.js from source on supported platforms",
-        "installingOnLinux": "Installing Node.js via binary archive",
-        "installingOnWsl": "Install on Windows Subsystem for Linux (WSL)"
+        "allDownloads": "تمام گزینه‌های دانلود",
+        "nightlyReleases": "نسخه‌های Nightly",
+        "unofficialBuilds": "نسخه‌های غیررسمی",
+        "buildingFromSource": "ساخت Node.js از منبع بر روی پلتفرم‌های پشتیبانی شده",
+        "installingOnLinux": "نصب Node.js از آرشیو دودویی",
+        "installingOnWsl": "نصب در زیرسیستم ویندوز برای لینوکس (WSL)"
       }
     },
     "downloadReleasesTable": {
-      "changelog": "Changelog",
-      "releases": "Releases",
-      "docs": "Docs"
+      "changelog": "تغییرات",
+      "releases": "انتشارات",
+      "docs": "اسناد"
     },
     "pagination": {
-      "next": "Next",
-      "previous": "Previous"
+      "next": "بعدی",
+      "previous": "قبلی"
     },
     "common": {
       "breadcrumbs": {
-        "navigateToHome": "Navigate to Home"
+        "navigateToHome": "رفتن به خانه"
       },
       "crossLink": {
-        "previous": "Prev",
-        "next": "Next"
+        "previous": "قبلی",
+        "next": "بعدی"
       },
       "codebox": {
-        "copy": "Copy to clipboard",
-        "copied": "Copied to clipboard!"
+        "copy": "کپی به کلیپ‌بورد",
+        "copied": "کپی شده به کلیپبورد!"
       },
       "pagination": {
-        "prev": "Previous",
-        "prevAriaLabel": "Previous page",
-        "next": "Next",
-        "nextAriaLabel": "Next page",
-        "defaultLabel": "Pagination",
-        "pageLabel": "Go to page {pageNumber}"
+        "prev": "قبلی",
+        "prevAriaLabel": "صفحه قبلی",
+        "next": "بعدی",
+        "nextAriaLabel": "صفحه بعدی",
+        "defaultLabel": "صفحه بندی",
+        "pageLabel": "برو به صفحه {pageNumber}"
       },
       "sidebar": {
-        "title": "Change page"
+        "title": "تغییر صفحه"
       },
       "languageDropdown": {
-        "label": "Choose Language"
+        "label": "انتخاب زبان"
       },
       "themeToggle": {
-        "label": "Toggle Dark Mode"
+        "label": "تغییر حالت تاریک"
       }
     },
     "mdx": {
       "upcomingEvents": {
-        "defaultTitle": "No Upcoming Event"
+        "defaultTitle": "هیچ رویداد آینده ای وجود ندارد"
       }
     },
     "metabar": {
-      "lastUpdated": "Last Updated",
-      "readingTime": "Reading Time",
-      "addedIn": "Added In",
-      "author": "Author",
-      "authors": "Authors",
-      "contribute": "Contribute",
-      "contributeText": "Edit this page",
-      "viewAs": "View as",
-      "tableOfContents": "Table of Contents"
+      "lastUpdated": "آخرین بروزرسانی",
+      "readingTime": "زمان خواندن",
+      "addedIn": "افزوده شده در",
+      "author": "نویسنده",
+      "authors": "نویسندگان",
+      "contribute": "مشارکت کنید",
+      "contributeText": "ویرایش این صفحه",
+      "viewAs": "نمایش به عنوان",
+      "tableOfContents": "فهرست مطالب"
     },
     "downloads": {
       "changelogModal": {
-        "startContributing": "Start Contributing"
+        "startContributing": "شروع به مشارکت"
       }
     },
     "search": {
       "searchBox": {
-        "placeholder": "Start typing..."
+        "placeholder": "شروع کنید تایپ کردن..."
       },
       "seeAll": {
-        "text": "See all {count} results"
+        "text": "مشاهده همه {count} نتیجه"
       },
       "searchError": {
-        "text": "An error occurred while searching. Please try again later."
+        "text": "خطایی رخ داده است هنگام جستجو. لطفا بعدا دوباره امتحان کنید."
       },
       "poweredBy": {
-        "text": "Powered by"
+        "text": "قدرت گرفته از"
       },
       "noResults": {
-        "text": "No results found for \"{query}\"."
+        "text": "نتیجه‌ای برای \"{query}\" یافت نشد."
       },
       "emptyState": {
-        "text": "Search something..."
+        "text": "چیزی را جستجو کنید..."
       },
       "searchPage": {
-        "title": "You're searching: {query}"
+        "title": "شما در حال جستجو هستید: {query}"
       }
     },
     "blog": {
       "blogHeader": {
-        "subtitle": "The latest Node.js news, case studies, tutorials, and resources.",
-        "rssLink": "RSS feed"
+        "subtitle": "آخرین اخبار Node.js، مطالعات موردی، آموزش‌ها و منابع.",
+        "rssLink": "خوراک RSS"
       }
     }
   },
   "layouts": {
     "blogPost": {
       "author": {
-        "byLine": "{author, select, null {} other {By {author}, }}"
+        "byLine": "{author, select, null {} other {توسط {author}, }}"
       }
     },
     "blogIndex": {
-      "categoryName": "{category, select, all {Blog} other {{category} Blog Posts}}"
+      "categoryName": "{category, select, all {وبلاگ} other {{category} مطالب وبلاگ}}"
     },
     "blog": {
-      "title": "Blog",
-      "selectCategory": "Categories",
+      "title": "وبلاگ",
+      "selectCategory": "دسته بندی ها",
       "categories": {
-        "all": "Everything",
-        "announcements": "Announcements",
-        "release": "Releases",
-        "vulnerability": "Vulnerabilities",
-        "advisory-board": "Advisory Board",
-        "community": "Community",
-        "feature": "Feature",
-        "module": "Module",
+        "all": "همه چیز",
+        "announcements": "اعلانات",
+        "release": "انتشارات",
+        "vulnerability": "آسیب پذیری ها",
+        "advisory-board": "شورای مشاوران",
+        "community": "جامعه",
+        "feature": "ویژگی",
+        "module": "ماژول",
         "npm": "npm",
-        "uncategorized": "Uncategorized",
-        "video": "Video",
-        "weekly": "Weekly Updates",
-        "wg": "Working Groups",
-        "events": "Events"
+        "uncategorized": "بدون دسته‌بندی",
+        "video": "ویدیو",
+        "weekly": "به‌روزرسانی هفتگی",
+        "wg": "گروه‌های کاری",
+        "events": "رویدادها"
       }
     },
     "error": {
       "notFound": {
-        "title": "Page could not be found",
-        "description": "Sorry, we couldn't find the page you're after! Try starting again from the homepage."
+        "title": "صفحه پیدا نشد",
+        "description": "متاسفیم، صفحه‌ای که به دنبال آن هستید پیدا نشد! از صفحه اصلی دوباره شروع کنید."
       },
       "internalServerError": {
-        "title": "Internal Server Error",
-        "description": "This page has thrown a non-recoverable error."
+        "title": "خطای سرور داخلی",
+        "description": "این صفحه خطای غیرقابل بازیابی ایجاد کرده است."
       },
-      "backToHome": "Back to Home"
+      "backToHome": "بازگشت به خانه"
     },
     "download": {
-      "selectCategory": "Categories",
+      "selectCategory": "دسته بندی ها",
       "categories": {
-        "download": "Prebuilt Installer",
-        "prebuilt-binaries": "Prebuilt Binaries",
-        "package-manager": "Package Manager",
-        "source-code": "Source Code"
+        "download": "نصب کننده پیش ساخته",
+        "prebuilt-binaries": "فایل های اجرایی پیش ساخته",
+        "package-manager": "مدیر بسته",
+        "source-code": "کد منبع"
       },
       "buttons": {
-        "prebuilt": "Download Node.js {version}",
-        "source": "Download Node.js {version} source"
+        "prebuilt": "دانلود Node.js {version}",
+        "source": "دانلود Node.js {version} منبع"
       },
       "dropdown": {
-        "bitness": "Bitness",
-        "os": "Operating System",
-        "version": "Version",
-        "platform": "Platform"
+        "bitness": "بیت",
+        "os": "سیستم عامل",
+        "version": "نسخه",
+        "platform": "پلتفرم"
       },
       "codeBox": {
-        "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project."
+        "communityWarning": "مدیریت‌کننده‌های بسته و اسکریپت‌های نصب آن‌ها توسط پروژه Node.js حفظ نمی‌شوند."
       }
     }
   }
