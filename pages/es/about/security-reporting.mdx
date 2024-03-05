@@ -35,26 +35,26 @@ Los errores de seguridad en módulos de terceros deben ser reportados a sus resp
 
 Aquí está la política de divulgación de seguridad para Node.js
 
-* The security report is received and is assigned a primary handler. This
+- The security report is received and is assigned a primary handler. This
   person will coordinate the fix and release process. The problem is confirmed
   and a list of all affected versions is determined. Code is audited to find
   any potential similar problems. Fixes are prepared for all releases which are
   still under maintenance. These fixes are not committed to the public
   repository but rather held locally pending the announcement.
 
-* Se ha elegido una fecha de embargo sugerida para esta vulnerabilidad y se solicita una CVE (Common
+- Se ha elegido una fecha de embargo sugerida para esta vulnerabilidad y se solicita una CVE (Common
   Vulnerabilities and Exposures (CVE®️)) para la vulnerabilidad.
 
-* En la fecha del embargo, la lista de correo de seguridad de Node.js se envía una copia del anuncio
+- En la fecha del embargo, la lista de correo de seguridad de Node.js se envía una copia del anuncio
   . Los cambios se colocan en el repositorio público y las nuevas compilaciones
   se implementan en nodejs. rg. Dentro de las 6 horas posteriores a que la lista de correo sea
   notificada, se publicará una copia del aviso en el blog de Node.js.
 
-* Normalmente la fecha del embargo se establecerá 72 horas a partir de la hora en que el CVE sea
+- Normalmente la fecha del embargo se establecerá 72 horas a partir de la hora en que el CVE sea
   emitido. Sin embargo, esto puede variar dependiendo de la gravedad del error o de la dificultad
   en la aplicación de una solución.
 
-* Este proceso puede tardar algún tiempo, especialmente cuando se requiere coordinación
+- Este proceso puede tardar algún tiempo, especialmente cuando se requiere coordinación
   con los mantenedores de otros proyectos. Se harán todos los esfuerzos para manejar el
   bug de la manera más oportuna posible; sin embargo, es importante que sigamos
   el proceso de liberación anterior para asegurar que la divulgación se maneje de una manera
@@ -64,8 +64,8 @@ Aquí está la política de divulgación de seguridad para Node.js
 
 Las notificaciones de seguridad se distribuirán a través de los siguientes métodos.
 
-* [Grupo de Google](https://groups.google.com/group/nodejs-sec)
-* [Blog de Node.js](/blog)
+- [Grupo de Google](https://groups.google.com/group/nodejs-sec)
+- [Blog de Node.js](/blog)
 
 ## Comentarios sobre esta política
 
@@ -75,8 +75,15 @@ Si tienes sugerencias sobre cómo mejorar este proceso, por favor envía un
 
 ## Mejores prácticas OpenSSF
 
-<a href="https://bestpractices.coreinfrastructure.org/projects/29" style={{ display: 'inline-flex' }}>
-  <img alt="Insignia OpenSSF" src="https://bestpractices.coreinfrastructure.org/projects/29/badge" style={{ display: 'inline' }} />
+<a
+  href="https://bestpractices.coreinfrastructure.org/projects/29"
+  style={{ display: 'inline-flex' }}
+>
+  <img
+    alt="Insignia OpenSSF"
+    src="https://bestpractices.coreinfrastructure.org/projects/29/badge"
+    style={{ display: 'inline' }}
+  />
 </a>
 
 The Open Source Security Foundation (OpenSSF) \[La insignia de mejores prácticas]\(https://github. om/coreinfrastructure / best practices-badge) es una manera para los proyectos de Software Libre y Libre (FLOSS) de mostrar que siguen las mejores prácticas. Los proyectos pueden certificar voluntariamente cómo siguen cada una de las mejores prácticas. Los consumidores del distintivo pueden evaluar rápidamente qué proyectos FLOSS están siguiendo las mejores prácticas y, como resultado, tienen más probabilidades de producir software seguro de mayor calidad.

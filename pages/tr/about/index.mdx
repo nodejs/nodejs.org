@@ -4,10 +4,14 @@ layout: about
 ---
 
 <div className="my-4 flex items-center justify-center">
-  <img alt="Node.js maskotu" src="/static/images/node-mascot.svg" className="w-[100px]" />
+  <img
+    alt="Node.js maskotu"
+    src="/static/images/node-mascot.svg"
+    className="w-[100px]"
+  />
 </div>
 
-***
+---
 
 # Node.js® Hakkında
 
@@ -38,7 +42,7 @@ Bu, bugünün daha yaygın olan eşzamanlılık modeline karşıt bir durum olu�
 Bu dilin bir kısmı size yabancı geliyorsa, şu adreste tam bir makale bulunmaktadır
 \[Engelleme vs. Engellememe]\[].
 
-***
+---
 
 Node.js tasarım olarak Ruby's gibi sistemlere benzer ve onlardan etkilenmiştir
 \[Event Machine]\[] ve Python'un \[Twisted]\[]. Node.js olay modelini biraz
@@ -54,14 +58,10 @@ HTTP, Node.js'de birinci sınıf bir vatandaştır, akış ve düşük
 gecikme süresi göz önünde bulundurulur. Bu, Node.js'yi bir web sitesinin temeli için çok uygun hale getirir
 kütüphane veya çerçeve.
 
-Node.js'in thread olmadan tasarlanmış olması, ortamınızdaki birden fazla çekirdekten faydalanamayacağınız anlamına gelmez. Çocuk işlemleri, child\_process.fork() API'sini kullanarak başlatılabilir ve iletişim kurmak için kolayca tasarlanmıştır. Aynı arayüz üzerine inşa edilmiş olan cluster modülü, çekirdekleriniz üzerinde yük dengelemesi sağlamak için işlemler arasında soketleri paylaşmanıza olanak tanır.
+Node.js'in thread olmadan tasarlanmış olması, ortamınızdaki birden fazla çekirdekten faydalanamayacağınız anlamına gelmez. Çocuk işlemleri, child_process.fork() API'sini kullanarak başlatılabilir ve iletişim kurmak için kolayca tasarlanmıştır. Aynı arayüz üzerine inşa edilmiş olan cluster modülü, çekirdekleriniz üzerinde yük dengelemesi sağlamak için işlemler arasında soketleri paylaşmanıza olanak tanır.
 
 [engelleyici vs. engellemeyen]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
-
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
-
 [`cluster`]: https://nodejs.org/api/cluster.html
-
 [event machine]: https://github.com/eventmachine/eventmachine
-
 [twisted]: https://twistedmatrix.com/trac/

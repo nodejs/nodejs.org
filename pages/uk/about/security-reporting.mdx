@@ -35,26 +35,26 @@ maintainers.
 
 Ось політика розкриття безпеки для Node.js
 
-* The security report is received and is assigned a primary handler. This
+- The security report is received and is assigned a primary handler. This
   person will coordinate the fix and release process. The problem is confirmed
   and a list of all affected versions is determined. Code is audited to find
   any potential similar problems. Fixes are prepared for all releases which are
   still under maintenance. These fixes are not committed to the public
   repository but rather held locally pending the announcement.
 
-* Пропонована дата ембарго на цю вразливість обрана, а також дата CVE (Common
+- Пропонована дата ембарго на цю вразливість обрана, а також дата CVE (Common
   Vulnerabilities and Exposures (CVE®️)) запитується про вразливість.
 
-* On the embargo date, the Node.js security mailing list is sent a copy of the
+- On the embargo date, the Node.js security mailing list is sent a copy of the
   announcement. The changes are pushed to the public repository and new builds
   are deployed to nodejs.org. Within 6 hours of the mailing list being
   notified, a copy of the advisory will be published on the Node.js blog.
 
-* Зазвичай дата ембарго буде встановлена 72 години, відколи заявляється CVE
+- Зазвичай дата ембарго буде встановлена 72 години, відколи заявляється CVE
   . Однак це може відрізнятися в залежності від серйозності проблеми помилки чи
   у застосуванні виправлень.
 
-* This process can take some time, especially when coordination is required
+- This process can take some time, especially when coordination is required
   with maintainers of other projects. Every effort will be made to handle the
   bug in as timely a manner as possible; however, it's important that we follow
   the release process above to ensure that the disclosure is handled in a
@@ -64,8 +64,8 @@ maintainers.
 
 Оповіщення про безпеку будуть поширюватися серед наступних методів.
 
-* [Google Група](https://groups.google.com/group/nodejs-sec)
-* [Блог Node.js](/blog)
+- [Google Група](https://groups.google.com/group/nodejs-sec)
+- [Блог Node.js](/blog)
 
 ## Коментарі до цієї політики
 
@@ -75,8 +75,15 @@ maintainers.
 
 ## Дослідження OpenSSF
 
-<a href="https://bestpractices.coreure.org/projects/29" style={{ display: 'inline-flex' }}>
-  <img alt="Значок OpenSSF" src="https://bestpractices.coreure.org/projects/29/badge" style={{ display: 'inline' }} />
+<a
+  href="https://bestpractices.coreure.org/projects/29"
+  style={{ display: 'inline-flex' }}
+>
+  <img
+    alt="Значок OpenSSF"
+    src="https://bestpractices.coreure.org/projects/29/badge"
+    style={{ display: 'inline' }}
+  />
 </a>
 
 Фонд безпеки з відкритим вихідним кодом (OpenSSF) \[Найкращий спосіб практики]\(https://github. om/coreinfrastruct/best-practes-badge) - це спосіб для проектів вільного / Libre та Open Source Software (FLOSS), щоб показати, що вони слідують найкращій практиці. Проекти можуть добровільно самооцінювати, як вони слідують за кожною найкращою практикою. Споживачі значка можуть швидко оцінити, який проект FLOSS дотримуються найкращих практик і в результаті швидше за все, створюють безпечне програмне забезпечення більш високої якості.
