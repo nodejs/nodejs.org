@@ -4,7 +4,7 @@ layout: home
 ---
 
 <section>
-  <WithBadge section="index" />
+ <WithBadge section="index" />
 
   <div>
     <h1 className="special">Exécuter du JavaScript partout</h1>
@@ -17,25 +17,25 @@ layout: home
   <div>
     <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
       {({ release }) => (
-                                                                    <>
-                                                                      <DownloadButton release={release}>Télécharger Node.js (LTS)</DownloadButton>
-                                                                      <small>
-                                                                        Télécharger Node.js  <b>{release.versionWithPrefix}</b>
-                                                                        <sup title="Downloads a Node.js installer for your current platform">1</sup> avec un support à long terme.
-                                                                          Node.js peut également être installé via <a href="/download/package-manager">gestionnaires de paquets</a>.
-                                                                      </small>
-                                                                    </>
-                                                                  )}
+        <>
+          <DownloadButton release={release}>Télécharger Node.js (LTS)</DownloadButton>
+          <small>
+            Télécharger Node.js  <b>{release.versionWithPrefix}</b>
+            <sup title="Downloads a Node.js installer for your current platform">1</sup> avec un support à long terme.
+              Node.js peut également être installé via <a href="/download/package-manager">gestionnaires de paquets</a>.
+          </small>
+        </>
+      )}
     </WithNodeRelease>
 
-    <WithNodeRelease status="Current">
+    <WithNodeRelease status={"Current"}>
       {({ release }) => (
-                                                                    <small>
-                                                                      Vous voulez de nouvelles fonctionnalités plus tôt ?
-                                                                      Obtenez <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-                                                                      <sup title="Downloads a Node.js installer for your current platform">1</sup> à la place.
-                                                                    </small>
-                                                                  )}
+        <small>
+          Vous voulez de nouvelles fonctionnalités plus tôt ?
+          Obtenez <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="Downloads a Node.js installer for your current platform">1</sup> à la place.
+        </small>
+      )}
     </WithNodeRelease>
 
   </div>
