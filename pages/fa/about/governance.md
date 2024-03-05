@@ -1,35 +1,36 @@
 ---
-title: Project Governance
+title: حکومت پروژه
 layout: about
 ---
 
-# Project Governance
+# حکومت پروژه
 
-## Consensus Seeking Process
+## فرآیند جستجوی توافق
 
-The Node.js project follows a [Consensus Seeking][] decision making model.
+پروژه Node.js از یک مدل تصمیم‌گیری \[جستجوی توافق]\[] پیروی می‌کند.
 
-## Collaborators
+## همکاران
 
-The [nodejs/node][] core GitHub repository is maintained by the Collaborators
-who are added by the Technical Steering Committee ([TSC][]) on an ongoing basis.
+مخزن اصلی GitHub [nodejs/node][] توسط همکاران حفظ می‌شود که توسط کمیته رهبری فنی ([TSC][]) به طور مداوم افزوده می‌شوند.
 
-Individuals making significant and valuable contributions are made Collaborators
-and given commit-access to the project. These individuals are identified by the
-TSC and their nomination is discussed with the existing Collaborators.
+افرادی که به طور معنادار و ارزشمند به پروژه کمک می‌کنند به عنوان همکاران انتخاب می‌شوند و دسترسی به commit به پروژه داده می‌شود. این افراد توسط TSC شناسایی می‌شوند و نامزدی آن‌ها با همکاران موجود بحث می‌شود.
 
-For the current list of Collaborators, see the project's [README.md][].
+برای لیست فعلی همکاران، به [README.md][] پروژه مراجعه کنید.
 
-A guide for Collaborators is maintained at [collaborator-guide.md][].
+یک راهنمای برای همکاران در \[راهنمای همکاران.md]\[].
 
-## Technical Steering Committee
+## کمیته رهبری فنی
 
-The project is governed by the [Technical Steering Committee (TSC)][]
-which is responsible for high-level guidance of the project.
+پروژه توسط \[کمیته رهبری فنی (TSC)]\[] کنترل می‌شود که مسئول هدایت سطح بالای پروژه است.
 
 [consensus seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
+
 [readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
+
 [tsc]: https://github.com/nodejs/TSC
+
 [technical steering committee (tsc)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
+
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
+
 [nodejs/node]: https://github.com/nodejs/node
