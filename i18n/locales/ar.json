@@ -3,23 +3,23 @@
     "containers": {
       "footer": {
         "links": {
-          "trademarkPolicy": "Trademark Policy",
-          "privacyPolicy": "Privacy Policy",
-          "codeOfConduct": "Code of Conduct",
-          "security": "Security Policy",
-          "openJS": "OpenJS Foundation"
+          "trademarkPolicy": "سياسة العلامات التجارية",
+          "privacyPolicy": "سياسة الخصوصية",
+          "codeOfConduct": "مدونة قواعد السلوك",
+          "security": "السياسة الأمنية",
+          "openJS": "مؤسسة OpenJS"
         }
       },
       "navBar": {
         "links": {
-          "about": "About",
-          "download": "Download",
-          "docs": "Docs",
-          "guides": "Guides",
-          "learn": "Learn",
-          "security": "Security",
-          "certification": "Certification",
-          "blog": "Blog"
+          "about": "حول",
+          "download": "تنزيل",
+          "docs": "الوثائق",
+          "guides": "أدلة",
+          "learn": "تعلم",
+          "security": "أمان",
+          "certification": "شهادة",
+          "blog": "المدونة"
         }
       }
     },
@@ -27,263 +27,263 @@
       "learn": {
         "gettingStarted": {
           "links": {
-            "gettingStarted": "Getting Started",
-            "introductionToNodejs": "Introduction to Node.js",
-            "howToInstallNodejs": "How to install Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "How much JavaScript do you need to know to use Node.js?",
-            "differencesBetweenNodejsAndTheBrowser": "Differences between Node.js and the Browser",
-            "theV8JavascriptEngine": "The V8 JavaScript Engine",
-            "anIntroductionToTheNpmPackageManager": "An introduction to the npm package manager",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) and beyond",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
-            "nodejsWithTypescript": "Node.js with TypeScript",
-            "nodejsWithWebassembly": "Node.js with WebAssembly",
-            "debugging": "Debugging Node.js",
-            "profiling": "Profiling Node.js Applications",
-            "securityBestPractices": "Security Best Practices"
+            "gettingStarted": "بدء العمل",
+            "introductionToNodejs": "مقدمة إلى Node.js",
+            "howToInstallNodejs": "كيفية تثبيت Node.js",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "كم تحتاج إلى معرفة جافا سكريبت لاستخدام Node.j؟",
+            "differencesBetweenNodejsAndTheBrowser": "الاختلافات بين Node.js والمستعرض",
+            "theV8JavascriptEngine": "محرك جافا سكريبت V8",
+            "anIntroductionToTheNpmPackageManager": "مقدمة لمدير الحزمة npm",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) وما بعده",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js، الفرق بين التنمية والإنتاج",
+            "nodejsWithTypescript": "Node.js مع TypeScript",
+            "nodejsWithWebassembly": "Node.js مع WebAssembly",
+            "debugging": "تصحيح أخطاء Node.js",
+            "profiling": "تطبيقات توسيم Node.js",
+            "securityBestPractices": "أفضل الممارسات الأمنية"
           }
         },
         "asynchronousWork": {
           "links": {
-            "asynchronousWork": "Asynchronous Work",
-            "asynchronousFlowControl": "Asynchronous flow control",
-            "overviewOfBlockingVsNonBlocking": "Overview of Blocking vs Non-Blocking",
-            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asynchronous Programming and Callbacks",
-            "discoverJavaScriptTimers": "Discover JavaScript Timers",
-            "theNodejsEventLoop": "The Node.js Event Loop",
-            "theNodejsEventEmitter": "The Node.js Event Emitter",
-            "understandingProcessnexttick": "Understanding process.nextTick()",
+            "asynchronousWork": "العمل المتزامن",
+            "asynchronousFlowControl": "التحكم المتزامن في التدفق",
+            "overviewOfBlockingVsNonBlocking": "نظرة عامة على حظر ضد عدم حظر",
+            "javascriptAsynchronousProgrammingAndCallbacks": "برمجة جافا سكريبت وتزامن المكالمات",
+            "discoverJavaScriptTimers": "اكتشف أوقات جافا سكريبت",
+            "theNodejsEventLoop": "حلقة حدث Node.js",
+            "theNodejsEventEmitter": "إمتار حدث Node.js",
+            "understandingProcessnexttick": "فهم العملية.nextTick()",
             "understandingSetimmediate": "Understanding setImmediate()",
-            "dontBlockTheEventLoop": "Don't Block the Event Loop"
+            "dontBlockTheEventLoop": "لا تقم بحظر حلقة الحدث"
           }
         },
         "manipulatingFiles": {
           "links": {
-            "manipulatingFiles": "Manipulating Files",
-            "nodejsFileStats": "Node.js file stats",
-            "nodejsFilePaths": "Node.js File Paths",
-            "workingWithFileDescriptorsInNodejs": "Working with file descriptors in Node.js",
-            "readingFilesWithNodejs": "Reading files with Node.js",
-            "writingFilesWithNodejs": "Writing files with Node.js",
-            "workingWithFoldersInNodejs": "Working with folders in Node.js",
-            "howToWorkWithFileSystems": "How to work with Different Filesystems"
+            "manipulatingFiles": "معالجة الملفات",
+            "nodejsFileStats": "إحصائيات ملف Node.js",
+            "nodejsFilePaths": "مسار ملف Node.js",
+            "workingWithFileDescriptorsInNodejs": "العمل مع أوصاف الملفات في Node.js",
+            "readingFilesWithNodejs": "قراءة الملفات باستخدام Node.js",
+            "writingFilesWithNodejs": "كتابة الملفات باستخدام Node.js",
+            "workingWithFoldersInNodejs": "العمل مع المجلدات في Node.js",
+            "howToWorkWithFileSystems": "كيفية العمل مع نظم الملفات المختلفة"
           }
         },
         "commandLine": {
           "links": {
-            "commandLine": "Command Line",
-            "runNodejsScriptsFromTheCommandLine": "Run Node.js scripts from the command line",
-            "howToReadEnvironmentVariablesFromNodejs": "How to read environment variables from Node.js",
-            "howToUseTheNodejsRepl": "How to use the Node.js REPL",
-            "outputToTheCommandLineUsingNodejs": "Output to the command line using Node.js",
-            "acceptInputFromTheCommandLineInNodejs": "Accept input from the command line in Node.js"
+            "commandLine": "سطر الأوامر",
+            "runNodejsScriptsFromTheCommandLine": "تشغيل البرامج النصية Node.js من سطر الأوامر",
+            "howToReadEnvironmentVariablesFromNodejs": "كيفية قراءة متغيرات البيئة من Node.js",
+            "howToUseTheNodejsRepl": "كيفية استخدام Node.js REPL",
+            "outputToTheCommandLineUsingNodejs": "المخرجات إلى سطر الأوامر باستخدام Node.js",
+            "acceptInputFromTheCommandLineInNodejs": "قبول الإدخال من سطر الأوامر في Node.js"
           }
         },
         "modules": {
           "links": {
-            "modules": "Modules",
-            "publishingNodeApiModules": "How to publish a Node-API package",
-            "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction",
-            "abiStability": "ABI Stability",
-            "backpressuringInStreams": "Backpressuring in Streams"
+            "modules": "وحدات",
+            "publishingNodeApiModules": "كيفية نشر حزمة عقد API",
+            "anatomyOfAnHttpTransaction": "تشريح معاملة HTTP",
+            "abiStability": "إستقرار ABI",
+            "backpressuringInStreams": "الضغط الخلفي في البث"
           }
         },
         "diagnostics": {
           "links": {
-            "diagnostics": "Diagnostics",
-            "userJourney": "User Journey",
-            "memory": "Memory",
-            "liveDebugging": "Live Debugging",
-            "poorPerformance": "Poor Performance",
-            "flameGraphs": "Flame Graphs"
+            "diagnostics": "التشخيص",
+            "userJourney": "رحلة المستخدم",
+            "memory": "الذاكرة",
+            "liveDebugging": "تصحيح أخطاء مباشر",
+            "poorPerformance": "الأداء الضعيف",
+            "flameGraphs": "رسوم اللعب"
           }
         }
       },
       "about": {
         "links": {
-          "about": "About Node.js",
-          "aboutSide": "About Node.js®",
-          "governance": "Project Governance",
-          "releases": "Previous Releases",
-          "security": "Security Reporting"
+          "about": "حول Node.js",
+          "aboutSide": "حول Node.js®️",
+          "governance": "إدارة المشروع",
+          "releases": "الإصدارات السابقة",
+          "security": "الإبلاغ الأمني"
         }
       },
       "getInvolved": {
         "links": {
-          "getInvolved": "Get Involved",
-          "collabSummit": "Collaborator Summit",
-          "upcomingEvents": "Upcoming Events",
-          "contribute": "Contribute to Node.js",
-          "codeOfConduct": "Code of Conduct"
+          "getInvolved": "اشترك",
+          "collabSummit": "قمة المتعاونين",
+          "upcomingEvents": "الأحداث القادمة",
+          "contribute": "المساهمة في Node.js",
+          "codeOfConduct": "مدونة قواعد السلوك"
         }
       }
     },
     "downloadList": {
       "links": {
-        "previousReleases": "Previous Releases",
-        "packageManager": "Installing Node.js via package manager",
+        "previousReleases": "الإصدارات السابقة",
+        "packageManager": "تثبيت Node.js عبر مدير الحزمة",
         "shaSums": {
-          "title": "Signed SHASUMS for release files",
-          "howToVerify": " (How to verify)"
+          "title": "توقيع SHASUMS لملفات الإصدار",
+          "howToVerify": " (كيفية التحقق)"
         },
-        "allDownloads": "All download options",
-        "nightlyReleases": "Nightly builds",
-        "unofficialBuilds": "Unofficial builds",
-        "buildingFromSource": "Building Node.js from source on supported platforms",
-        "installingOnLinux": "Installing Node.js via binary archive",
-        "installingOnWsl": "Install on Windows Subsystem for Linux (WSL)"
+        "allDownloads": "جميع خيارات التحميل",
+        "nightlyReleases": "البناء الليلي",
+        "unofficialBuilds": "بنايات غير رسمية",
+        "buildingFromSource": "بناء Node.js من المصدر على المنصات المدعومة",
+        "installingOnLinux": "تثبيت Node.js عبر أرشيف ثنائي",
+        "installingOnWsl": "تثبيت على نظام Windows الفرعي لـ Linux (WSL)"
       }
     },
     "downloadReleasesTable": {
-      "changelog": "Changelog",
-      "releases": "Releases",
-      "docs": "Docs"
+      "changelog": "تغيير",
+      "releases": "الإصدارات",
+      "docs": "الوثائق"
     },
     "pagination": {
-      "next": "Next",
-      "previous": "Previous"
+      "next": "التالي",
+      "previous": "السابق"
     },
     "common": {
       "breadcrumbs": {
-        "navigateToHome": "Navigate to Home"
+        "navigateToHome": "الانتقال إلى الصفحة الرئيسية"
       },
       "crossLink": {
-        "previous": "Prev",
-        "next": "Next"
+        "previous": "المسبق",
+        "next": "التالي"
       },
       "codebox": {
-        "copy": "Copy to clipboard",
-        "copied": "Copied to clipboard!"
+        "copy": "نسخ إلى الحافظة",
+        "copied": "تم النسخ إلى الحافظة!"
       },
       "pagination": {
-        "prev": "Previous",
-        "prevAriaLabel": "Previous page",
-        "next": "Next",
-        "nextAriaLabel": "Next page",
-        "defaultLabel": "Pagination",
-        "pageLabel": "Go to page {pageNumber}"
+        "prev": "السابق",
+        "prevAriaLabel": "الصفحة السابقة",
+        "next": "التالي",
+        "nextAriaLabel": "الصفحة التالية",
+        "defaultLabel": "ترقيم الصفحات",
+        "pageLabel": "انتقل إلى الصفحة {pageNumber}"
       },
       "sidebar": {
-        "title": "Change page"
+        "title": "تغيير الصفحة"
       },
       "languageDropdown": {
-        "label": "Choose Language"
+        "label": "اختر اللغة"
       },
       "themeToggle": {
-        "label": "Toggle Dark Mode"
+        "label": "تبديل الوضع المظلم"
       }
     },
     "mdx": {
       "upcomingEvents": {
-        "defaultTitle": "No Upcoming Event"
+        "defaultTitle": "لا يوجد حدث قادم"
       }
     },
     "metabar": {
-      "lastUpdated": "Last Updated",
-      "readingTime": "Reading Time",
-      "addedIn": "Added In",
-      "author": "Author",
-      "authors": "Authors",
-      "contribute": "Contribute",
-      "contributeText": "Edit this page",
-      "viewAs": "View as",
-      "tableOfContents": "Table of Contents"
+      "lastUpdated": "آخر تحديث",
+      "readingTime": "وقت القراءة",
+      "addedIn": "إضافة في",
+      "author": "المؤلف",
+      "authors": "المؤلفون",
+      "contribute": "المساهمة",
+      "contributeText": "تحرير هذه الصفحة",
+      "viewAs": "عرض كـ",
+      "tableOfContents": "جدول المحتويات"
     },
     "downloads": {
       "changelogModal": {
-        "startContributing": "Start Contributing"
+        "startContributing": "ابدأ المساهمة"
       }
     },
     "search": {
       "searchBox": {
-        "placeholder": "Start typing..."
+        "placeholder": "ابدأ الكتابة..."
       },
       "seeAll": {
-        "text": "See all {count} results"
+        "text": "شاهد جميع نتائج {count}"
       },
       "searchError": {
-        "text": "An error occurred while searching. Please try again later."
+        "text": "حدث خطأ أثناء البحث. الرجاء المحاولة مرة أخرى لاحقاً."
       },
       "poweredBy": {
-        "text": "Powered by"
+        "text": "مدعوم من قبل"
       },
       "noResults": {
-        "text": "No results found for \"{query}\"."
+        "text": "لم يتم العثور على نتائج ل \"{query}\"."
       },
       "emptyState": {
-        "text": "Search something..."
+        "text": "ابحث عن شيء..."
       },
       "searchPage": {
-        "title": "You're searching: {query}"
+        "title": "أنت تبحث عن: {query}"
       }
     },
     "blog": {
       "blogHeader": {
-        "subtitle": "The latest Node.js news, case studies, tutorials, and resources.",
-        "rssLink": "RSS feed"
+        "subtitle": "أحدث أخبار Node.js، ودراسات الحالة، ودروس التعليمات، والموارد.",
+        "rssLink": "تغذية RSS"
       }
     }
   },
   "layouts": {
     "blogPost": {
       "author": {
-        "byLine": "{author, select, null {} other {By {author}, }}"
+        "byLine": "{author, select, null {} other {بواسطة {author} }}"
       }
     },
     "blogIndex": {
-      "categoryName": "{category, select, all {Blog} other {{category} Blog Posts}}"
+      "categoryName": "{category, select, all {مدونة} other {{category} مشاركات المدونة}}"
     },
     "blog": {
-      "title": "Blog",
-      "selectCategory": "Categories",
+      "title": "المدونة",
+      "selectCategory": "الفئات",
       "categories": {
-        "all": "Everything",
-        "announcements": "Announcements",
-        "release": "Releases",
-        "vulnerability": "Vulnerabilities",
-        "advisory-board": "Advisory Board",
-        "community": "Community",
-        "feature": "Feature",
-        "module": "Module",
+        "all": "كل شيء",
+        "announcements": "اعلانات",
+        "release": "الإصدارات",
+        "vulnerability": "نقاط الضعف",
+        "advisory-board": "المجلس الاستشاري",
+        "community": "المجتمع",
+        "feature": "الميزة",
+        "module": "الوحدة",
         "npm": "npm",
-        "uncategorized": "Uncategorized",
-        "video": "Video",
-        "weekly": "Weekly Updates",
-        "wg": "Working Groups",
-        "events": "Events"
+        "uncategorized": "غير مصنف",
+        "video": "فيديو",
+        "weekly": "التحديثات الأسبوعية",
+        "wg": "الأفرقة العاملة",
+        "events": "الأحداث"
       }
     },
     "error": {
       "notFound": {
-        "title": "Page could not be found",
-        "description": "Sorry, we couldn't find the page you're after! Try starting again from the homepage."
+        "title": "تعذر العثور على الصفحة",
+        "description": "عذراً، لم نتمكن من العثور على الصفحة التي كنت بعدها! حاول البدء مرة أخرى من الصفحة الرئيسية."
       },
       "internalServerError": {
-        "title": "Internal Server Error",
-        "description": "This page has thrown a non-recoverable error."
+        "title": "خطأ خادم داخلي",
+        "description": "لقد ألقت هذه الصفحة خطأ غير قابل للاسترداد."
       },
-      "backToHome": "Back to Home"
+      "backToHome": "العودة إلى الصفحة الرئيسية"
     },
     "download": {
-      "selectCategory": "Categories",
+      "selectCategory": "الفئات",
       "categories": {
-        "download": "Prebuilt Installer",
-        "prebuilt-binaries": "Prebuilt Binaries",
-        "package-manager": "Package Manager",
-        "source-code": "Source Code"
+        "download": "مثبت مبني مسبقاً",
+        "prebuilt-binaries": "ثنائيات مبنية مسبقاً",
+        "package-manager": "مدير الحزمة",
+        "source-code": "الكود المصدري"
       },
       "buttons": {
-        "prebuilt": "Download Node.js {version}",
-        "source": "Download Node.js {version} source"
+        "prebuilt": "تحميل Node.js {version}",
+        "source": "تحميل مصدر Node.js {version}"
       },
       "dropdown": {
-        "bitness": "Bitness",
-        "os": "Operating System",
-        "version": "Version",
-        "platform": "Platform"
+        "bitness": "البيتانس",
+        "os": "نظام التشغيل",
+        "version": "الإصدار",
+        "platform": "المنصة"
       },
       "codeBox": {
-        "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project."
+        "communityWarning": "لا يقوم مشروع Node.js بصيانة مديري الحزم ونصوص التثبيت الخاصة بهم."
       }
     }
   }
