@@ -161,7 +161,7 @@
         "next": "Suivant",
         "nextAriaLabel": "Page suivante",
         "defaultLabel": "Pagination",
-        "pageLabel": "Aller à la page {pagenumber}"
+        "pageLabel": "Aller à la page {pageNumber}"
       },
       "sidebar": {
         "title": "Changer de page"

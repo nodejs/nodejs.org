@@ -136,7 +136,7 @@ const getDynamicRouter = async () => {
 
       // We then attempt to retrieve the source version of the file as there is no localised version
       // of the file and we set it on the cache to prevent future checks of the same locale for this file
-      const { source: fileContent } = _getMarkdownFile(
+      const { source: fileContent } = await _getMarkdownFile(
         defaultLocale.code,
         pathname
       );
