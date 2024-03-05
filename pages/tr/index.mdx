@@ -1,0 +1,121 @@
+---
+title: JavaScript'i Her Yerde Çalıştırın
+layout: home
+---
+
+<section>
+  <WithBadge section="indeks" />
+
+  <div>
+    <h1 className="special">Her Yerde JavaScript Çalıştırın</h1>
+
+    Node.js®, ücretsiz, açık kaynaklı, çapraz platform JavaScript çalıştırma ortamıdır. Geliştiricilere sunucular, web uygulamaları, komut satırı araçları ve betikler oluşturma imkanı sağlar.
+  </div>
+
+  <div>
+    <WithNodeRelease status={['Aktif LTS', 'Bakım LTS']}>
+      {({ release }) => (
+        <>
+          <DownloadButton release={release}>Node.js'i İndir (LTS)</DownloadButton>
+          <small>
+            Node.js'i <b>{release.versionWithPrefix}</b>
+            <sup title="Geçerli platformunuz için bir Node.js yükleyicisi indirir">1</sup> uzun vadeli destek ile indirin.
+            Node.js ayrıca <a href="/download/package-manager">paket yöneticileri</a> aracılığıyla da kurulabilir.
+          </small>
+        </>
+      )}
+    </WithNodeRelease>
+
+    <WithNodeRelease status={"Güncel"}>
+      {({ release }) => (
+        <small>
+          Daha yeni özelliklere mi ihtiyacınız var?{" "}
+          <b>
+            Node.js{" "}
+            <DownloadLink release={release}>
+              {release.versionWithPrefix}
+            </DownloadLink>
+          </b>{" "}
+          <sup title="Geçerli platformunuz için bir Node.js yükleyicisi indirir">1</sup>{" "}
+          alabilirsiniz.
+        </small>
+      )}
+    </WithNodeRelease>
+  </div>
+</section>
+
+<section>
+  <div>
+    ```js displayName="Create an HTTP Server"
+    import { createServer } from 'node:http';
+
+    const server = createServer((req, res) => {
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end('Hello World!\n');
+    });
+
+    // starts a simple http server locally on port 3000
+    server.listen(3000, '127.0.0.1', () => {
+      console.log('Listening on 127.0.0.1:3000');
+    });
+    ```
+
+    ```js displayName="Write Tests"
+    import assert from 'node:assert';
+    import test from 'node:test';
+
+    test('that 1 is equal 1', () => {
+      assert.strictEqual(1, 1);
+    });
+
+    test('that throws as 1 is not equal 2', () => {
+      // throws an exception because 1 != 2
+      assert.strictEqual(1, 2);
+    });
+    ```
+
+    ```js displayName="Read and Hash a File"
+    import { createHash } from 'node:crypto';
+    import { readFile } from 'node:fs/promises';
+
+    const hasher = createHash('sha1');
+    const fileContent = await readFile('./package.json');
+
+    hasher.setEncoding('hex');
+    hasher.write(fileContent);
+    hasher.end();
+
+    const fileHash = hasher.read();
+    ```
+
+    ```js displayName="Read Streams"
+    import { createReadStream, createWriteStream } from 'node:fs';
+
+    const res = await fetch('https://nodejs.org/dist/index.json');
+    const json = await res.json(); // yields a json object
+
+    const readableStream = createReadStream('./package.json');
+    const writableStream = createWriteStream('./package2.json');
+
+    readableStream.setEncoding('utf8');
+
+    readableStream.on('data', chunk => writableStream.write(chunk));
+    ```
+
+    ```js displayName="Work with Threads"
+    import { Worker, isMainThread,
+      workerData, parentPort } from 'node:worker_threads';
+
+    if (isMainThread) {
+      const data = 'some data';
+      const worker = new Worker(import.meta.filename, { workerData: data });
+      worker.on('message', msg => console.log('Reply from Thread:', msg));
+    } else {
+      const source = workerData;
+      parentPort.postMessage(btoa(source.toUpperCase()));
+    }
+    ```
+  </div>
+
+  Node.js'in sunabileceklerini daha yakından keşfetmek için [Öğrenme materyallerimize](/learn) göz atın.
+</section>
