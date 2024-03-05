@@ -1,0 +1,73 @@
+---
+title: Sicherheitsberichterstattung
+layout: about
+---
+
+# Sicherheitsberichterstattung
+
+Für weitere Details zu aktiven Sicherheitsrichtlinien, checke [diese Seite](https://github.com/nodejs/node/security/policy).
+
+## Fehler in Node.js melden
+
+Melde Sicherheitsfehler in Node.js über [HackerOne](https://hackerone.com/nodejs).
+
+Ihr Bericht wird innerhalb von 5 Tagen bestätigt und Sie erhalten innerhalb von 10 Tagen eine detailliertere Antwort auf Ihren Bericht
+, die die nächsten Schritte in
+anzeigt, wie Ihre Einreichung behandelt wird.
+
+Nach der ersten Antwort auf Ihren Bericht das Sicherheitsteam wird versuchen,
+über die Fortschritte auf dem Weg zu einer fixen und vollständigen Ankündigung auf dem Laufenden zu halten
+und können weitere Informationen oder Hinweise zu dem gemeldeten
+Problem anfordern.
+
+### Node.js Bug Bounty Programm
+
+Das Node.js Projekt beschäftigt sich mit einem offiziellen Bug Bounty Programm für
+Forscher und verantwortliche öffentliche Enthüllungen. Das Programm wird über
+die HackerOne Plattform verwaltet. Weitere Details findest du unter [https://hackerone.com/nodejs](https://hackerone.com/nodejs).
+
+## Fehler in einem Drittanbieter-Modul melden
+
+Sicherheitsfehler in Modulen von Drittanbietern sollten ihren jeweiligen
+Betreuern gemeldet werden.
+
+## Offenlegungsrichtlinie
+
+Hier ist die Sicherheits-Offenlegungsrichtlinie für Node.js
+
+* Der Sicherheitsbericht wird empfangen und einem Hauptverantwortlichen zugewiesen. Diese Person wird den Fix- und Freigabeprozess koordinieren. Das Problem wird bestätigt und eine Liste aller betroffenen Versionen wird erstellt. Der Code wird überprüft, um mögliche ähnliche Probleme zu finden. Fixes werden für alle Versionen vorbereitet, die noch gewartet werden. Diese Fixes werden nicht im öffentlichen Repository festgelegt, sondern lokal gehalten, bis die Ankündigung erfolgt.
+
+* Ein empfohlenes Embargodatum für diese Verwundbarkeit wird gewählt und ein CVE (Common
+  Schwachstellen und Exposures (CVE®️)) wird für die Verwundbarkeit angefordert.
+
+* Am Embargo-Datum wird der Sicherheits-Mailingliste von Node.js eine Kopie der
+  Ankündigung gesendet. Die Änderungen werden in das öffentliche Repository gepresst und neue Builds
+  werden in nodejs eingesetzt. Innerhalb von 6 Stunden nachdem die Mailingliste
+  benachrichtigt wurde, wird eine Kopie der Ankündigungen im Node.js Blog veröffentlicht.
+
+* Normalerweise wird das Embargodatum 72 Stunden seit der Ausstellung des Lebenslauf
+  festgelegt. Dies kann jedoch abhängig von der Schwere des Fehlers oder von
+  Schwierigkeiten bei der Anwendung eines Fehlers variieren.
+
+* Dieser Prozess kann einige Zeit in Anspruch nehmen, insbesondere wenn eine Koordination mit den Verantwortlichen anderer Projekte erforderlich ist. Es wird alles daran gesetzt, den Fehler so zeitnah wie möglich zu beheben; es ist jedoch wichtig, dass wir den oben genannten Freigabeprozess einhalten, um sicherzustellen, dass die Offenlegung einheitlich behandelt wird.
+
+## Empfange Sicherheitsaktualisierungen
+
+Sicherheitsbenachrichtigungen werden über die folgenden Methoden verteilt.
+
+* [Google Group](https://groups.google.com/group/nodejs-sec)
+* [Node.js Blog](/blog)
+
+## Kommentare zu dieser Richtlinie
+
+Wenn du Vorschläge dazu hast, wie dieser Prozess verbessert werden könnte, schicke bitte eine
+[Pull-Request](https://github.com/nodejs/nodejs.org) oder
+[ein Problem einreichen](https://github.com/nodejs/security-wg/issues/new) zu diskutieren.
+
+## OpenSSF Best Practices
+
+<a href="https://bestpractices.coreinfrastructure.org/projects/29" style={{ display: 'inline-flex' }}>
+  <img alt="OpenSSF-Abzeichen" src="https://bestpractices.coreinfrastructure.org/projects/29/badge" style={{ display: 'inline' }} />
+</a>
+
+Die Open Source Security Foundation (OpenSSF) \[Best Practices badge]\(https://github. om/coreinfrastructure/best-practices-badge) ist ein Weg für Projekte von Free/Libre und Open Source Software (FLOSS) zu zeigen, dass sie den besten Praktiken folgen. Projekte können sich freiwillig selbst bescheinigen, wie sie jeder bewährten Praxis folgen. Die Verbraucher des Ausweises können schnell beurteilen, welche FLOSS-Projekte den besten Praktiken folgen und als Folge davon eher sichere Software von höherer Qualität produzieren.
