@@ -3,23 +3,23 @@
     "containers": {
       "footer": {
         "links": {
-          "trademarkPolicy": "Trademark Policy",
-          "privacyPolicy": "Privacy Policy",
-          "codeOfConduct": "Code of Conduct",
-          "security": "Security Policy",
+          "trademarkPolicy": "商標ポリシー",
+          "privacyPolicy": "プライバシーポリシー",
+          "codeOfConduct": "行動基準",
+          "security": "セキュリティポリシー",
           "openJS": "OpenJS Foundation"
         }
       },
       "navBar": {
         "links": {
           "about": "About",
-          "download": "Download",
-          "docs": "Docs",
-          "guides": "Guides",
-          "learn": "Learn",
-          "security": "Security",
-          "certification": "Certification",
-          "blog": "Blog"
+          "download": "ダウンロード",
+          "docs": "ドキュメント",
+          "guides": "補助線",
+          "learn": "詳細情報",
+          "security": "セキュリティ",
+          "certification": "証明書",
+          "blog": "ブログ"
         }
       }
     },
@@ -27,263 +27,263 @@
       "learn": {
         "gettingStarted": {
           "links": {
-            "gettingStarted": "Getting Started",
-            "introductionToNodejs": "Introduction to Node.js",
-            "howToInstallNodejs": "How to install Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "How much JavaScript do you need to know to use Node.js?",
-            "differencesBetweenNodejsAndTheBrowser": "Differences between Node.js and the Browser",
-            "theV8JavascriptEngine": "The V8 JavaScript Engine",
-            "anIntroductionToTheNpmPackageManager": "An introduction to the npm package manager",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) and beyond",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
-            "nodejsWithTypescript": "Node.js with TypeScript",
-            "nodejsWithWebassembly": "Node.js with WebAssembly",
-            "debugging": "Debugging Node.js",
-            "profiling": "Profiling Node.js Applications",
-            "securityBestPractices": "Security Best Practices"
+            "gettingStarted": "はじめに",
+            "introductionToNodejs": "Node.js 入門",
+            "howToInstallNodejs": "Node.js のインストール方法",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Node.js を使用するには、どれくらいの JavaScript が必要ですか?",
+            "differencesBetweenNodejsAndTheBrowser": "Node.js と Browser の違い",
+            "theV8JavascriptEngine": "V8 JavaScriptエンジン",
+            "anIntroductionToTheNpmPackageManager": "npm パッケージマネージャーの紹介",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) 以降。",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js 開発と本番環境の違い",
+            "nodejsWithTypescript": "TypeScript付きNode.js",
+            "nodejsWithWebassembly": "WebAssembly を使用した Node.js",
+            "debugging": "Node.js のデバッグ",
+            "profiling": "Node.js アプリケーションのプロファイリング",
+            "securityBestPractices": "セキュリティのベストプラクティス"
           }
         },
         "asynchronousWork": {
           "links": {
-            "asynchronousWork": "Asynchronous Work",
-            "asynchronousFlowControl": "Asynchronous flow control",
-            "overviewOfBlockingVsNonBlocking": "Overview of Blocking vs Non-Blocking",
-            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asynchronous Programming and Callbacks",
-            "discoverJavaScriptTimers": "Discover JavaScript Timers",
-            "theNodejsEventLoop": "The Node.js Event Loop",
-            "theNodejsEventEmitter": "The Node.js Event Emitter",
-            "understandingProcessnexttick": "Understanding process.nextTick()",
+            "asynchronousWork": "非同期作業",
+            "asynchronousFlowControl": "非同期フロー制御",
+            "overviewOfBlockingVsNonBlocking": "ブロックと非ブロックの概要",
+            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript非同期プログラミングとコールバック",
+            "discoverJavaScriptTimers": "JavaScriptタイマーを発見",
+            "theNodejsEventLoop": "Node.js イベントループ",
+            "theNodejsEventEmitter": "Node.js イベントエミッター",
+            "understandingProcessnexttick": "process.nextTick() を理解する",
             "understandingSetimmediate": "Understanding setImmediate()",
-            "dontBlockTheEventLoop": "Don't Block the Event Loop"
+            "dontBlockTheEventLoop": "イベントループをブロックしない"
           }
         },
         "manipulatingFiles": {
           "links": {
-            "manipulatingFiles": "Manipulating Files",
-            "nodejsFileStats": "Node.js file stats",
-            "nodejsFilePaths": "Node.js File Paths",
-            "workingWithFileDescriptorsInNodejs": "Working with file descriptors in Node.js",
-            "readingFilesWithNodejs": "Reading files with Node.js",
-            "writingFilesWithNodejs": "Writing files with Node.js",
-            "workingWithFoldersInNodejs": "Working with folders in Node.js",
-            "howToWorkWithFileSystems": "How to work with Different Filesystems"
+            "manipulatingFiles": "ファイルの操作",
+            "nodejsFileStats": "Node.js ファイル統計情報",
+            "nodejsFilePaths": "Node.js ファイルパス",
+            "workingWithFileDescriptorsInNodejs": "Node.js でのファイル記述子の操作",
+            "readingFilesWithNodejs": "Node.js でファイルを読み込み中",
+            "writingFilesWithNodejs": "Node.js でファイルを書く",
+            "workingWithFoldersInNodejs": "Node.js でのフォルダの操作",
+            "howToWorkWithFileSystems": "異なるファイルシステムで作業する方法"
           }
         },
         "commandLine": {
           "links": {
             "commandLine": "Command Line",
-            "runNodejsScriptsFromTheCommandLine": "Run Node.js scripts from the command line",
-            "howToReadEnvironmentVariablesFromNodejs": "How to read environment variables from Node.js",
-            "howToUseTheNodejsRepl": "How to use the Node.js REPL",
-            "outputToTheCommandLineUsingNodejs": "Output to the command line using Node.js",
-            "acceptInputFromTheCommandLineInNodejs": "Accept input from the command line in Node.js"
+            "runNodejsScriptsFromTheCommandLine": "コマンドラインから Node.js スクリプトを実行します",
+            "howToReadEnvironmentVariablesFromNodejs": "Node.js から環境変数を読み取る方法",
+            "howToUseTheNodejsRepl": "Node.js REPL の使い方",
+            "outputToTheCommandLineUsingNodejs": "Node.js を使用してコマンドラインに出力",
+            "acceptInputFromTheCommandLineInNodejs": "Node.js のコマンドラインからの入力を受け入れます"
           }
         },
         "modules": {
           "links": {
-            "modules": "Modules",
-            "publishingNodeApiModules": "How to publish a Node-API package",
-            "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction",
-            "abiStability": "ABI Stability",
-            "backpressuringInStreams": "Backpressuring in Streams"
+            "modules": "モジュール",
+            "publishingNodeApiModules": "Node-APIパッケージを公開する方法",
+            "anatomyOfAnHttpTransaction": "HTTP トランザクションの解剖学",
+            "abiStability": "ABI の安定性",
+            "backpressuringInStreams": "ストリームでの<unk>"
           }
         },
         "diagnostics": {
           "links": {
-            "diagnostics": "Diagnostics",
-            "userJourney": "User Journey",
-            "memory": "Memory",
-            "liveDebugging": "Live Debugging",
-            "poorPerformance": "Poor Performance",
-            "flameGraphs": "Flame Graphs"
+            "diagnostics": "診断",
+            "userJourney": "ユーザーの旅",
+            "memory": "メモリ",
+            "liveDebugging": "ライブデバッグ",
+            "poorPerformance": "パフォーマンスが悪い",
+            "flameGraphs": "フレームグラフ"
           }
         }
       },
       "about": {
         "links": {
-          "about": "About Node.js",
-          "aboutSide": "About Node.js®",
-          "governance": "Project Governance",
-          "releases": "Previous Releases",
-          "security": "Security Reporting"
+          "about": "Node.js について",
+          "aboutSide": "Node.js について",
+          "governance": "プロジェクトのガバナンス",
+          "releases": "以前のリリース",
+          "security": "セキュリティレポート"
         }
       },
       "getInvolved": {
         "links": {
-          "getInvolved": "Get Involved",
-          "collabSummit": "Collaborator Summit",
-          "upcomingEvents": "Upcoming Events",
-          "contribute": "Contribute to Node.js",
-          "codeOfConduct": "Code of Conduct"
+          "getInvolved": "参加する",
+          "collabSummit": "協力者サミットformat@@0",
+          "upcomingEvents": "今後のイベント",
+          "contribute": "Node.js への貢献",
+          "codeOfConduct": "行動基準"
         }
       }
     },
     "downloadList": {
       "links": {
-        "previousReleases": "Previous Releases",
-        "packageManager": "Installing Node.js via package manager",
+        "previousReleases": "以前のリリース",
+        "packageManager": "パッケージマネージャを介した Node.js のインストール",
         "shaSums": {
-          "title": "Signed SHASUMS for release files",
-          "howToVerify": " (How to verify)"
+          "title": "リリースファイル用の署名済みSHASUMS",
+          "howToVerify": " (確認方法)"
         },
-        "allDownloads": "All download options",
+        "allDownloads": "すべてのダウンロードオプション",
         "nightlyReleases": "Nightly builds",
-        "unofficialBuilds": "Unofficial builds",
-        "buildingFromSource": "Building Node.js from source on supported platforms",
-        "installingOnLinux": "Installing Node.js via binary archive",
-        "installingOnWsl": "Install on Windows Subsystem for Linux (WSL)"
+        "unofficialBuilds": "非公式ビルド",
+        "buildingFromSource": "サポートされているプラットフォーム上でソースから Node.js を構築する",
+        "installingOnLinux": "バイナリアーカイブを介した Node.js のインストール",
+        "installingOnWsl": "Windows Subsystem for Linux (WSL) にインストールする"
       }
     },
     "downloadReleasesTable": {
-      "changelog": "Changelog",
-      "releases": "Releases",
-      "docs": "Docs"
+      "changelog": "更新履歴",
+      "releases": "リリース",
+      "docs": "ドキュメント"
     },
     "pagination": {
-      "next": "Next",
-      "previous": "Previous"
+      "next": "次へ",
+      "previous": "前"
     },
     "common": {
       "breadcrumbs": {
-        "navigateToHome": "Navigate to Home"
+        "navigateToHome": "ホームへ移動"
       },
       "crossLink": {
-        "previous": "Prev",
-        "next": "Next"
+        "previous": "前",
+        "next": "次へ"
       },
       "codebox": {
-        "copy": "Copy to clipboard",
-        "copied": "Copied to clipboard!"
+        "copy": "クリップボードにコピー",
+        "copied": "クリップボードにコピーしました！"
       },
       "pagination": {
-        "prev": "Previous",
-        "prevAriaLabel": "Previous page",
-        "next": "Next",
-        "nextAriaLabel": "Next page",
-        "defaultLabel": "Pagination",
-        "pageLabel": "Go to page {pageNumber}"
+        "prev": "前",
+        "prevAriaLabel": "前のページ",
+        "next": "次へ",
+        "nextAriaLabel": "次のページ",
+        "defaultLabel": "改ページ",
+        "pageLabel": "{pageNumber} ページに移動"
       },
       "sidebar": {
-        "title": "Change page"
+        "title": "ページの変更"
       },
       "languageDropdown": {
-        "label": "Choose Language"
+        "label": "言語の選択"
       },
       "themeToggle": {
-        "label": "Toggle Dark Mode"
+        "label": "ダークモードの切り替え"
       }
     },
     "mdx": {
       "upcomingEvents": {
-        "defaultTitle": "No Upcoming Event"
+        "defaultTitle": "今後のイベントはありません"
       }
     },
     "metabar": {
-      "lastUpdated": "Last Updated",
-      "readingTime": "Reading Time",
-      "addedIn": "Added In",
-      "author": "Author",
-      "authors": "Authors",
-      "contribute": "Contribute",
-      "contributeText": "Edit this page",
-      "viewAs": "View as",
-      "tableOfContents": "Table of Contents"
+      "lastUpdated": "最終更新",
+      "readingTime": "読書時間",
+      "addedIn": "追加された",
+      "author": "作成者",
+      "authors": "著者",
+      "contribute": "貢献",
+      "contributeText": "このページを編集",
+      "viewAs": "表示:",
+      "tableOfContents": "目次"
     },
     "downloads": {
       "changelogModal": {
-        "startContributing": "Start Contributing"
+        "startContributing": "貢献を開始"
       }
     },
     "search": {
       "searchBox": {
-        "placeholder": "Start typing..."
+        "placeholder": "入力を開始..."
       },
       "seeAll": {
-        "text": "See all {count} results"
+        "text": "すべての {count} の結果を表示"
       },
       "searchError": {
-        "text": "An error occurred while searching. Please try again later."
+        "text": "検索中にエラーが発生しました。後でもう一度お試しください。"
       },
       "poweredBy": {
         "text": "Powered by"
       },
       "noResults": {
-        "text": "No results found for \"{query}\"."
+        "text": "\"{query}\" の結果は見つかりませんでした。"
       },
       "emptyState": {
-        "text": "Search something..."
+        "text": "何かを検索中..."
       },
       "searchPage": {
-        "title": "You're searching: {query}"
+        "title": "検索中: {query}"
       }
     },
     "blog": {
       "blogHeader": {
-        "subtitle": "The latest Node.js news, case studies, tutorials, and resources.",
-        "rssLink": "RSS feed"
+        "subtitle": "最新の Node.js ニュース、ケーススタディ、チュートリアル、リソース。",
+        "rssLink": "RSS フィード"
       }
     }
   },
   "layouts": {
     "blogPost": {
       "author": {
-        "byLine": "{author, select, null {} other {By {author}, }}"
+        "byLine": "{author, select, null {} other {によって {author}, }}"
       }
     },
     "blogIndex": {
-      "categoryName": "{category, select, all {Blog} other {{category} Blog Posts}}"
+      "categoryName": "{category, select, all {ブログ} other {ブログ{category} 投稿}}"
     },
     "blog": {
-      "title": "Blog",
-      "selectCategory": "Categories",
+      "title": "ブログ",
+      "selectCategory": "カテゴリ",
       "categories": {
-        "all": "Everything",
-        "announcements": "Announcements",
-        "release": "Releases",
-        "vulnerability": "Vulnerabilities",
-        "advisory-board": "Advisory Board",
-        "community": "Community",
-        "feature": "Feature",
-        "module": "Module",
+        "all": "すべて",
+        "announcements": "お知らせ",
+        "release": "リリース",
+        "vulnerability": "脆弱性",
+        "advisory-board": "アドバイザリーボード",
+        "community": "コミュニティ",
+        "feature": "機能",
+        "module": "モジュール",
         "npm": "npm",
-        "uncategorized": "Uncategorized",
-        "video": "Video",
-        "weekly": "Weekly Updates",
-        "wg": "Working Groups",
-        "events": "Events"
+        "uncategorized": "未分類",
+        "video": "ビデオ",
+        "weekly": "今週のアップデート",
+        "wg": "ワーキンググループ",
+        "events": "イベント"
       }
     },
     "error": {
       "notFound": {
-        "title": "Page could not be found",
-        "description": "Sorry, we couldn't find the page you're after! Try starting again from the homepage."
+        "title": "ページが見つかりませんでした",
+        "description": "申し訳ありませんが、あなたが作成したページが見つかりませんでした！ホームページからもう一度やり直してください。"
       },
       "internalServerError": {
-        "title": "Internal Server Error",
-        "description": "This page has thrown a non-recoverable error."
+        "title": "内部サーバーエラー",
+        "description": "このページは回復不可能なエラーが発生しました。"
       },
-      "backToHome": "Back to Home"
+      "backToHome": "ホームに戻る"
     },
     "download": {
-      "selectCategory": "Categories",
+      "selectCategory": "カテゴリ",
       "categories": {
-        "download": "Prebuilt Installer",
-        "prebuilt-binaries": "Prebuilt Binaries",
-        "package-manager": "Package Manager",
-        "source-code": "Source Code"
+        "download": "事前ビルドされたインストーラー",
+        "prebuilt-binaries": "構築済みのバイナリ",
+        "package-manager": "パッケージマネージャー",
+        "source-code": "ソースコード："
       },
       "buttons": {
-        "prebuilt": "Download Node.js {version}",
-        "source": "Download Node.js {version} source"
+        "prebuilt": "Node.js {version} をダウンロード",
+        "source": "Node.js {version} ソースをダウンロード"
       },
       "dropdown": {
-        "bitness": "Bitness",
-        "os": "Operating System",
-        "version": "Version",
-        "platform": "Platform"
+        "bitness": "<unk>",
+        "os": "オペレーティング システム",
+        "version": "バージョン",
+        "platform": "プラットフォーム"
       },
       "codeBox": {
-        "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project."
+        "communityWarning": "パッケージマネージャとインストールスクリプトは、Node.js プロジェクトによって管理されません。"
       }
     }
   }
