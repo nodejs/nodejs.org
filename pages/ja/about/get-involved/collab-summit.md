@@ -5,26 +5,15 @@ layout: about
 
 # 協力者サミットformat@@0
 
-Node.js's Collaborator Summit is an un-conference for bringing current and
-potential contributors together to discuss Node.js with lively collaboration,
-education, and knowledge sharing. Committees and working groups come together
-twice per year to make important decisions while also being able to work on some
-exciting efforts they want to push forward in-person.
+Node.jsのコラボレーターサミットは、現在のおよび潜在的な貢献者を一堂に集め、Node.jsについて活発な協力、教育、知識共有を行うアンカンファレンスです。委員会や作業グループは、重要な決定を行うために年に2回集まり、同時にいくつかの興奮を持って前進させたい取り組みに取り組むことができます。
 
 ## 誰が出席しますか？
 
-Anyone is welcome to attend Collab Summit. During the
-summit, leaders will help onboard new contributors to groups they'd love to help
-prior to integrating them into the working sessions.
+Collab Summitには誰でも参加できます。サミット中、リーダーたちは、新しい貢献者をグループにオンボードし、作業セッションに統合する前に手助けをすることで、歓迎します。
 
 これは、コミュニティ内で何が起きているかを学び、
 あなたが持っているスキルを身につけたいと思うスキルを身につける機会です。
 
-Working groups will put together a schedule so that people can
-familiarize themselves before folks get onsite, having the general collaborator
-discussions, and then dive into breakout sessions.
+ワーキンググループは、人々が現地に到着する前に自分自身を慣れさせるためのスケジュールを立て、一般的な共同作業者の議論を行い、その後、ブレイクアウトセッションに入ります。
 
-We'd love to see you at Collab Summit! Check out the [Summit repo](https://github.com/nodejs/summit)
-for upcoming and past Collab Summits and have a look at the
-[issues filed](https://github.com/nodejs/summit/issues) that share what
-individual working groups and committees are looking to discuss in-person.
+Collab Summitであなたにお会いできることを楽しみにしています！[Summit repo](https://github.com/nodejs/summit)をチェックして、今後のCollab Summitや過去のCollab Summitをご覧いただき、[issues filed](https://github.com/nodejs/summit/issues)を見て、個々のワーキンググループや委員会が対面で議論する内容を共有しています。
