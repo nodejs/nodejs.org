@@ -1,89 +1,75 @@
 ---
-title: Security Reporting
+title: Pelaporan Keamanan
 layout: about
 ---
 
-# Security Reporting
+# Pelaporan Keamanan
 
-For more details on active Security Policies, checkout [this page](https://github.com/nodejs/node/security/policy).
+Untuk lebih detail tentang Kebijakan Keamanan aktif, cek [halaman ini](https://github.com/nodejs/node/security/policy).
 
-## Reporting a bug in Node.js
+## Melaporkan bug di Node.js
 
-Report security bugs in Node.js via [HackerOne](https://hackerone.com/nodejs).
+Laporkan bug keamanan di Node.js melalui [HackerOne](https://hackerone.com/nodejs).
 
-Your report will be acknowledged within 5 days, and you'll receive a more
-detailed response to your report within 10 days indicating the next steps in
-handling your submission.
+Laporan Anda akan diakui dalam waktu 5 hari, dan Anda akan menerima tanggapan yang lebih detail terkait laporan Anda dalam waktu 10 hari yang menunjukkan langkah-langkah selanjutnya dalam penanganan pengajuan Anda.
 
-After the initial reply to your report, the security team will endeavor to keep
-you informed of the progress being made towards a fix and full announcement,
-and may ask for additional information or guidance surrounding the reported
-issue.
+Setelah balasan awal terhadap laporan Anda, tim keamanan akan berusaha untuk menjaga Anda tetap diinformasikan tentang kemajuan yang dilakukan menuju perbaikan dan pengumuman penuh, serta mungkin meminta informasi tambahan atau panduan seputar isu yang dilaporkan.
 
-### Node.js bug bounty program
+### Program hadiah bug Node.js
 
-The Node.js project engages in an official bug bounty program for security
-researchers and responsible public disclosures. The program is managed through
-the HackerOne platform. See [https://hackerone.com/nodejs](https://hackerone.com/nodejs) for further details.
+Proyek Node.js terlibat dalam program hadiah bug resmi untuk para peneliti keamanan dan pengungkapan publik yang bertanggung jawab. Program ini dikelola melalui platform HackerOne. Lihat [https://hackerone.com/nodejs](https://hackerone.com/nodejs) untuk detail lebih lanjut.
 
-## Reporting a bug in a third party module
+## Melaporkan bug di modul pihak ketiga
 
-Security bugs in third party modules should be reported to their respective
-maintainers.
+Bug keamanan dalam modul pihak ketiga harus dilaporkan kepada pemelihara
+mereka masing-masing.
 
-## Disclosure policy
+## Kebijakan pengungkapan
 
-Here is the security disclosure policy for Node.js
+Berikut adalah kebijakan pengungkapan keamanan untuk Node.js
 
-- The security report is received and is assigned a primary handler. This
-  person will coordinate the fix and release process. The problem is confirmed
-  and a list of all affected versions is determined. Code is audited to find
-  any potential similar problems. Fixes are prepared for all releases which are
-  still under maintenance. These fixes are not committed to the public
-  repository but rather held locally pending the announcement.
+* Laporan keamanan diterima dan ditugaskan ke penangan utama. Orang ini akan
+  mengkoordinasikan proses perbaikan dan rilis. Masalah dikonfirmasi
+  dan daftar semua versi yang terpengaruh ditentukan. Kode diaudit untuk
+  mencari masalah serupa yang potensial. Perbaikan disiapkan untuk semua rilis
+  yang masih dalam pemeliharaan. Perbaikan ini tidak di-commit ke repositori
+  publik tetapi disimpan secara lokal menunggu pengumuman.
 
-- A suggested embargo date for this vulnerability is chosen and a CVE (Common
-  Vulnerabilities and Exposures (CVE®)) is requested for the vulnerability.
+* Tanggal embargo yang disarankan untuk kerentanan ini dipilih dan CVE
+  (Common Vulnerabilities and Exposures (CVE®)) diminta untuk kerentanan tersebut.
 
-- On the embargo date, the Node.js security mailing list is sent a copy of the
-  announcement. The changes are pushed to the public repository and new builds
-  are deployed to nodejs.org. Within 6 hours of the mailing list being
-  notified, a copy of the advisory will be published on the Node.js blog.
+* Pada tanggal embargo, milis keamanan Node.js dikirim salinan dari
+  pengumuman. Perubahan-perubahan di-push ke repositori publik dan
+  build baru diimplementasikan ke nodejs.org. Dalam waktu 6 jam setelah
+  milis diberitahu, salinan dari pengumuman akan dipublikasikan di blog Node.js.
 
-- Typically the embargo date will be set 72 hours from the time the CVE is
-  issued. However, this may vary depending on the severity of the bug or
-  difficulty in applying a fix.
+* Umumnya tanggal embargo akan ditetapkan 72 jam dari saat CVE diterbitkan.
+  Namun, ini dapat bervariasi tergantung pada tingkat keparahan bug atau
+  kesulitan dalam menerapkan perbaikan.
 
-- This process can take some time, especially when coordination is required
-  with maintainers of other projects. Every effort will be made to handle the
-  bug in as timely a manner as possible; however, it's important that we follow
-  the release process above to ensure that the disclosure is handled in a
-  consistent manner.
+* Proses ini dapat memakan waktu, terutama ketika koordinasi diperlukan
+  dengan pemelihara proyek lain. Segala upaya akan dilakukan untuk menangani
+  bug secepat mungkin; namun, penting bagi kita untuk mengikuti
+  proses rilis di atas untuk memastikan bahwa pengungkapan ditangani
+  dengan cara yang konsisten.
 
-## Receiving security updates
+## Menerima pembaruan keamanan
 
-Security notifications will be distributed via the following methods.
+Notifikasi keamanan akan didistribusikan melalui metode-metode berikut.
 
-- [Google Group](https://groups.google.com/group/nodejs-sec)
-- [Node.js Blog](/blog)
+* [Google Group](https://groups.google.com/group/nodejs-sec)
+* [Node.js Blog](/blog)
 
-## Comments on this policy
+## Komentar tentang kebijakan ini
 
-If you have suggestions on how this process could be improved please submit a
-[pull request](https://github.com/nodejs/nodejs.org) or
-[file an issue](https://github.com/nodejs/security-wg/issues/new) to discuss.
+Jika Anda memiliki saran tentang bagaimana proses ini bisa ditingkatkan, silakan kirim
+[pull request](https://github.com/nodejs/nodejs.org) atau
+[membuat isu](https://github.com/nodejs/security-wg/issues/new) untuk mendiskusikannya.
 
-## OpenSSF Best Practices
+## Praktik Terbaik OpenSSF
 
-<a
-  href="https://bestpractices.coreinfrastructure.org/projects/29"
-  style={{ display: 'inline-flex' }}
->
-  <img
-    alt="OpenSSF Badge"
-    src="https://bestpractices.coreinfrastructure.org/projects/29/badge"
-    style={{ display: 'inline' }}
-  />
+<a href="https://bestpractices.coreinfrastructure.org/projects/29" style={{ display: 'inline-flex' }}>
+  <img alt="Lencana OpenSSF" src="https://bestpractices.coreinfrastructure.org/projects/29/badge" style={{ display: 'inline' }} />
 </a>
 
-The Open Source Security Foundation (OpenSSF) [Best Practices badge](https://github.com/coreinfrastructure/best-practices-badge) is a way for Free/Libre and Open Source Software (FLOSS) projects to show that they follow best practices. Projects can voluntarily self-certify how they follow each best practice. Consumers of the badge can quickly assess which FLOSS projects are following best practices and as a result are more likely to produce higher-quality secure software.
+Open Source Security Foundation (OpenSSF) [Best Practices badge](https://github.com/coreinfrastructure/best-practices-badge) adalah cara bagi proyek Perangkat Lunak Sumber Terbuka (FLOSS) untuk menunjukkan bahwa mereka mengikuti praktik terbaik. Proyek dapat secara sukarela melakukan sertifikasi sendiri tentang bagaimana mereka mengikuti setiap praktik terbaik. Konsumen dari lencana tersebut dapat dengan cepat menilai proyek FLOSS mana yang mengikuti praktik terbaik dan sebagai hasilnya lebih mungkin menghasilkan perangkat lunak yang aman berkualitas tinggi.
