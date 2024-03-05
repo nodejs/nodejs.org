@@ -5,26 +5,14 @@ layout: about
 
 # Collaborator Summit
 
-Node.js's Collaborator Summit is an un-conference for bringing current and
-potential contributors together to discuss Node.js with lively collaboration,
-education, and knowledge sharing. Committees and working groups come together
-twice per year to make important decisions while also being able to work on some
-exciting efforts they want to push forward in-person.
+Node.js-ის თანამშრომლების საზყარო საკრებულო არის უკონფერენცია, რომელშიც აქტუალური და პოტენციური მონაწილეები შეითანხმდებიან Node.js-ს შესახებ სიცოცხლეს შეურებელ კოლაბორაციაში, განათლებაში და ცოდნის გაზრდაში. კომიტები და სამუშაო ჯგუფები შეთანხმდებიან ორჯერ წელიწადში მნიშვნელოვნად მნიშვნლებები აღისრულებად, ერთად გამოტანს რეალურად განსაკუთრებულ საკმარისი საზრიანო პროექტებს.
 
 ## Who attends?
 
-Anyone is welcome to attend Collab Summit. During the
-summit, leaders will help onboard new contributors to groups they'd love to help
-prior to integrating them into the working sessions.
+ყველას სიახლეები გააცნობეს Collab Summit-ზე. საკრებულოში, წარმოადგენენს წარმოების ახალ მონაწილეებს ჯგუფებში, რომელიც გსურს დახმარებას უკავში უბრალოდ გამოტანენ სამუშაო სესიებში.
 
-This is your opportunity to learn what is happening within the community to jump
-in and contribute with the skills you have and would like to hone.
+ეს არის თქვენი შესაძლებლობა გაიგოთ, რისთვის ხდება თანამშრომელთა საქმე დასამანისათვის შესვლა და მონაწილეობა თქვენი უნარებით და როგორც გსურთ გააფიქროთ.
 
-Working groups will put together a schedule so that people can
-familiarize themselves before folks get onsite, having the general collaborator
-discussions, and then dive into breakout sessions.
+სამუშაო ჯგუფები გამოაქვეყნენენ გრაფიკს, რათა ხალხი შეიცავდეს თავი, სადაც ხალხები წამოიყვანენ, შემდეგი კოლაბორატორული განხილვები და შემდეგ ჩამოყალიბებებში შემოუდგებელი სესიებში ჩამოიტანენ.
 
-We'd love to see you at Collab Summit! Check out the [Summit repo](https://github.com/nodejs/summit)
-for upcoming and past Collab Summits and have a look at the
-[issues filed](https://github.com/nodejs/summit/issues) that share what
-individual working groups and committees are looking to discuss in-person.
+გვიყვარხართ, თქვენ ხართ Collab Summit-ზე! შეამოწმეთ [Summit repo](https://github.com/nodejs/summit) შემდეგი და წინა Collab Summits-ის და წინაადგენი დასაფასური შემოწმებების საქმეებს და კომიტეტებს, რასაც ინახებენ იმაში, რას გსურს დისკუსიაში პირობების შესაფასურებლად.
