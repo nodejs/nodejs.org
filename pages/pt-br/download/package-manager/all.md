@@ -7,7 +7,7 @@ title: Instalando Node.js através do gerenciador de pacotes
 
 > Os pacotes nesta página são mantidos e suportados por seus respectivos pacotes, **não** à equipe central do Node.js. Por favor relate qualquer problema que você encontrar ao mantenedor do pacote. Se acontecer que seu problema seja um bug no Node.js em si, o mantenedor informará a questão a montante.
 
----
+***
 
 - [Linux](#alpine-linux)
 - [Android](#android)
@@ -33,7 +33,7 @@ title: Instalando Node.js através do gerenciador de pacotes
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
----
+***
 
 ## Linux alpino
 
@@ -227,9 +227,7 @@ Instruções de instalação do Nodenv são mantidas [na sua página do Github](
 
 ## nvm
 
-Node Version Manager is a bash script used to manage multiple released Node.js versions. It allows
-you to perform operations like install, uninstall, switch version, etc.
-To install nvm, use this [install script](https://github.com/nvm-sh/nvm#install--update-script).
+Node Version Manager é um script bash usado para gerenciar várias versões lançadas do Node.js. Ele permite que você execute operações como instalar, desinstalar, trocar de versão, etc. Para instalar o nvm, use este [script de instalação](https://github.com/nvm-sh/nvm#install--update-script).
 
 Em Unix / OS X systems Node.js construídos a partir da fonte pode ser instalado usando
 [nvm](https://github.com/creationix/nvm) instalando no local que o nvm espera:
