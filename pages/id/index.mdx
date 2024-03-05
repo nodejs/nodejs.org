@@ -1,44 +1,40 @@
 ---
-title: Run JavaScript Everywhere
+title: Jalankan JavaScript Di Mana Saja
 layout: home
 ---
 
 <section>
- <WithBadge section="index" />
+  <WithBadge section="indeks" />
 
   <div>
-    <h1 className="special">Run JavaScript Everywhere</h1>
+    <h1 className="special">Jalankan JavaScript Di Mana Saja</h1>
 
-    Node.js® is a free, open-source, cross-platform JavaScript runtime
-    environment that lets developers create servers, web apps,
-    command line tools and scripts.
-
+    Node.js® adalah lingkungan runtime JavaScript sumber terbuka, gratis, lintas platform yang memungkinkan pengembang membuat server, aplikasi web, alat baris perintah, dan skrip.
   </div>
 
   <div>
-    <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
+    <WithNodeRelease status={['Aktif LTS', 'Pemeliharaan LTS']}>
       {({ release }) => (
         <>
-          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+          <DownloadButton release={release}>Unduh Node.js (LTS)</DownloadButton>
           <small>
-            Downloads Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
-            Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
+            Unduh Node.js <b>{release.versionWithPrefix}</b>
+            <sup title="Mengunduh pemasang Node.js untuk platform Anda saat ini">1</sup> dengan dukungan jangka panjang.
+            Node.js juga dapat diinstal melalui <a href="/download/package-manager">manajer paket</a>.
           </small>
         </>
       )}
     </WithNodeRelease>
 
-    <WithNodeRelease status={"Current"}>
+    <WithNodeRelease status={"Saat Ini"}>
       {({ release }) => (
         <small>
-          Want new features sooner?
-          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> instead.
+          Ingin fitur baru lebih cepat?
+          Dapatkan <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="Mengunduh pemasang Node.js untuk platform Anda saat ini">1</sup> sebagai gantinya.
         </small>
       )}
     </WithNodeRelease>
-
   </div>
 </section>
 
@@ -113,9 +109,7 @@ layout: home
       parentPort.postMessage(btoa(source.toUpperCase()));
     }
     ```
-
   </div>
 
-Learn more what Node.js is able to offer with our [Learning materials](/learn).
-
+  Pelajari lebih lanjut apa yang bisa ditawarkan Node.js dengan [Bahan Pembelajaran](/learn).
 </section>
