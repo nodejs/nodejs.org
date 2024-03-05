@@ -34,15 +34,7 @@ const WithBreadcrumbs: FC = () => {
       if (foundNode) {
         const [, { label, link = '', items = [] }] = foundNode;
         currentNode = items;
-        return label
-          ? [
-              ...breadcrumbs,
-              {
-                label,
-                href: link,
-              },
-            ]
-          : breadcrumbs;
+        return label ? [...breadcrumbs, { label, href: link }] : breadcrumbs;
       }
       return breadcrumbs;
     }, [] as Array<BreadcrumbLink>);
