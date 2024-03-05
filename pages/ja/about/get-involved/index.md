@@ -1,26 +1,26 @@
 ---
-title: Get involved
+title: 参加する
 layout: about
 ---
 
-# Get Involved
+# 参加する
 
-## Community Discussion
+## コミュニティディスカッション
 
-- The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
-- For real-time chat about Node.js development use one of the platforms below
-  - For IRC, go to `irc.libera.chat` in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [a web client](https://kiwiirc.com/nextclient/)
-  - For Slack, there are two options:
-    - The [OpenJSF Slack](https://slack-invite.openjsf.org/) is a Foundation run Slack with several Node.js channels (channels prefixed by `#nodejs-` are related to the project).
-    - [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
-- The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
-- The [Node.js project calendar](https://nodejs.org/calendar) with all public team meetings.
+- format@@0(https\://github.com/nodejs/node/issues)はNode.jsのコア機能について議論する場所です。
+- Node.js 開発についてリアルタイムでチャットするには、以下のいずれかのプラットフォームを使用してください。
+  - IRC の場合は、`#node.js` チャンネルの `irc.libera.chat` に移動し、format@@0(https\://en.wikipedia) を使用します。 rg/wiki/Comparison_of_Internet_Relay_Chat_clients) またはformat@@0(https\://kiwiirc.com/nextclient/) を使用してウェブブラウザでチャンネルに接続します。
+  - Slack では、以下の 2 つのオプションがあります。
+    - [OpenJSF Slack](https://slack-invite.openjsf.org/)は、いくつかのNode.jsチャンネルを持つFoundationの実行Slackです(`#nodejs-`の前にあるチャンネルはプロジェクトに関連しています)。
+    - [Node Slackers](https://www.nodeslackers.com/) は Node.js 中心の Slack コミュニティです。
+- 公式の Node.js Twitter アカウントは [nodejs](https://twitter.com/nodejs) です。
+- format@@0(https\://nodejs.org/カレンダー)format@@1(https\://nodejs.org/カレンダー)を公開チームのミーティングと一緒にします。
 
-## Learning
+## 学習中
 
-- [Official Learn section](https://nodejs.org/en/learn/) of the Node.js website.
-- [Official API reference documentation](https://nodejs.org/api/).
-- [NodeSchool.io](https://nodeschool.io/) will teach you Node.js concepts via interactive command-line games.
-- [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) collects new information every day.
-- [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
-- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
+- Node.jsウェブサイトのformat@@0(https\://nodejs.org/en/learn/)
+- format@@0(https\://nodejs.org/api/)
+- [NodeSchool.io](https://nodeschool.io/) は、インタラクティブなコマンドラインゲームを使用して Node.js の概念を教えます。
+- [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) は毎日新しい情報を収集します。
+- format@@0(https\://dev.to/t/node) は Node を共有する場所です。 プロジェクト、記事、チュートリアルだけでなく、議論を開始し、Node上でフィードバックを求めます。 s-related topics. すべてのスキルレベルの開発者が参加することを歓迎します.
+- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) は、Node.js バックエンド開発者のフレンドリーなコミュニティです。
