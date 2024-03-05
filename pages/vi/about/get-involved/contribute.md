@@ -1,47 +1,47 @@
 ---
-title: Contributing
+title: Đóng góp
 layout: about
 ---
 
-# Contributing
+# Đóng góp
 
-Thank you for your interest in contributing to Node.js! There are multiple ways and places you can contribute, and we're here to help facilitate that.
+Cảm ơn bạn vì sự quan tâm của bạn trong việc đóng góp vào Node.js! Có nhiều cách và nơi bạn có thể đóng góp, và chúng tôi ở đây để hỗ trợ việc đó đó.
 
-## Asking for General Help
+## Yêu cầu Trợ giúp Chung
 
-Because the level of activity in the `nodejs/node` repository is so high, questions or requests for general help using Node.js should be directed at the [Node.js help repository](https://github.com/nodejs/help/issues).
+Bởi mức độ hoạt động trong kho lưu trữ `nodejs/node` rất cao, các câu hỏi hoặc yêu cầu trợ giúp chung về việc sử dụng Node.js nên được định hướng đến [Kho lưu trữ trợ giúp Node.js](https://github.com/nodejs/help/issues).
 
-## Reporting an Issue
+## Báo cáo Vấn đề
 
-If you have found what you believe to be an issue with Node.js please do not hesitate to file an issue on the GitHub project. When filing your issue please make sure you can express the issue with a reproducible test case, and that test case should not include any external dependencies. That is to say, the test case can be executed without anything more than Node.js itself.
+Nếu bạn đã tìm thấy điều mà bạn tin là một vấn đề với Node.js, xin đừng ngần ngại gửi một vấn đề trên dự án GitHub. Khi gửi vấn đề của bạn, hãy chắc chắn rằng bạn có thể diễn đạt vấn đề bằng một trường hợp thử nghiệm có thể tái tạo, và trường hợp thử nghiệm đó không nên bao gồm bất kỳ phụ thuộc ngoài nào. Đó là nói, trường hợp thử nghiệm có thể được thực thi mà không cần gì ngoài Node.js chính nó.
 
-When reporting an issue we also need as much information about your environment that you can include. We never know what information will be pertinent when trying to narrow down the issue. Please include at least the following information:
+Khi báo cáo một vấn đề, chúng tôi cũng cần càng nhiều thông tin về môi trường của bạn mà bạn có thể bao gồm. Chúng tôi không bao giờ biết thông tin nào sẽ quan trọng khi cố gắng hạn chế vấn đề. Vui lòng bao gồm ít nhất các thông tin sau:
 
-- Version of Node.js
-- Platform you're running on (macOS, SmartOS, Linux, Windows)
-- Architecture you're running on (32bit or 64bit and x86 or ARM)
+- Phiên bản của Node.js
+- Nền tảng bạn đang sử dụng (macOS, SmartOS, Linux, Windows)
+- Kiến trúc bạn đang chạy trên (32bit hoặc 64bit và x86 hoặc ARM)
 
-The Node.js project is currently managed across a number of separate GitHub repositories, each with their own separate issues database. If possible, please direct any issues you are reporting to the appropriate repository but don't worry if things happen to get put in the wrong place, the community of contributors will be more than happy to help get you pointed in the right direction.
+Dự án Node.js hiện đang được quản lý qua một số kho lưu trữ GitHub riêng biệt, mỗi kho có cơ sở dữ liệu vấn đề riêng. Nếu có thể, hãy định hướng bất kỳ vấn đề nào bạn đang báo cáo đến kho lưu trữ phù hợp nhưng đừng lo nếu điều gì đó xảy ra ở nơi sai, cộng đồng các đóng góp viên sẽ rất vui lòng giúp bạn đi theo hướng đúng đắn.
 
-- To report issues specific to Node.js, please use [nodejs/node](https://github.com/nodejs/node)
-- To report issues specific to this website, please use [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
+- Để báo cáo các vấn đề cụ thể với Node.js, vui lòng sử dụng [nodejs/node](https://github.com/nodejs/node)
+- Để báo cáo các vấn đề cụ thể với trang web này, vui lòng sử dụng [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
 
-## Code contributions
+## Đóng góp mã nguồn
 
-If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Contribution Guidelines](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). The review process by existing collaborators for all contributions to the project is explained there as well.
+Nếu bạn muốn sửa lỗi hoặc thêm tính năng mới vào Node.js, hãy đảm bảo rằng bạn tham khảo [Hướng dẫn Đóng góp Node.js](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). Quy trình xem xét bởi các cộng tác viên hiện tại đối với tất cả các đóng góp vào dự án được giải thích ở đó.
 
-If you are wondering how to start, you can check [Node Todo](https://www.nodetodo.org/) which may guide you towards your first contribution.
+Nếu bạn đang tự hỏi bắt đầu từ đâu, bạn có thể kiểm tra [Node Todo](https://www.nodetodo.org/) có thể hướng dẫn bạn đến đóng góp đầu tiên của bạn.
 
-## Becoming a collaborator
+## Trở thành cộng tác viên
 
-By becoming a collaborator, contributors can have even more impact on the project. They can help other contributors by reviewing their contributions, triage issues and take an even bigger part in shaping the project's future. Individuals identified by the TSC as making significant and valuable contributions across any Node.js repository may be made Collaborators and given commit access to the project. Activities taken into consideration include (but are not limited to) the quality of:
+Bằng cách trở thành cộng tác viên, các đóng góp viên có thể có ảnh hưởng lớn hơn đến dự án. Họ có thể giúp các đóng góp viên khác bằng cách xem xét đóng góp của họ, sàng lọc vấn đề và tham gia một phần lớn hơn vào việc hình thành tương lai của dự án. Cá nhân được xác định bởi TSC là đã đóng góp đáng kể và có giá trị trên bất kỳ kho lưu trữ Node.js nào có thể trở thành Cộng tác viên và được cấp quyền truy cập vào dự án. Các hoạt động được xem xét bao gồm (nhưng không giới hạn vào) chất lượng của:
 
-- code commits and pull requests
-- documentation commits and pull requests
-- comments on issues and pull requests
-- contributions to the Node.js website
-- assistance provided to end users and novice contributors
-- participation in working groups
-- other participation in the wider Node.js community
+- các commit mã nguồn và pull requests
+- các cam kết về tài liệu và pull requests
+- bình luận về vấn đề và pull requests
+- đóng góp vào trang web Node.js
+- hỗ trợ cung cấp cho người dùng cuối và người đóng góp mới
+- tham gia vào các nhóm làm việc
+- sự tham gia khác trong cộng đồng Node.js rộng lớn
 
-If individuals making valuable contributions do not believe they have been considered for commit access, they may [log an issue](https://github.com/nodejs/TSC/issues) or [contact a TSC member](https://github.com/nodejs/node#tsc-technical-steering-committee) directly.
+Nếu những cá nhân đóng góp có giá trị không tin rằng họ đã được xem xét để truy cập commit, họ có thể [ghi một vấn đề](https://github.com/nodejs/TSC/issues) hoặc [liên hệ trực tiếp với một thành viên TSC](https://github.com/nodejs/node#tsc-technical-steering-committee).
