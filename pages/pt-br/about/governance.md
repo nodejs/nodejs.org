@@ -27,13 +27,8 @@ O projeto é regido pelo \[Comité Técnico de Direção (TSC)]\[]
 que é responsável pela orientação de alto nível do projeto.
 
 [consensus seeking]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
-
 [readme.md]: https://github.com/nodejs/TSC
-
 [tsc]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
-
 [technical steering committee (tsc)]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
-
 [collaborator-guide.md]: https://github.com/nodejs/node
-
 [nodejs/node]: https://github.com/nodejs/node

@@ -7,7 +7,7 @@ title: Paket yöneticisi aracılığıyla Node.js'in yüklenmesi
 
 > Bu sayfadaki paketler, kendi paketleyicileri tarafından bakımı ve desteklenmektedir, **Node.js çekirdek ekibi değil**. Karşılaştığınız herhangi bir sorunu paketin bakımını yapan kişiye bildirin. Eğer sorununuz Node.js'in kendisinde bir hata olduğu ortaya çıkarsa, bakım yapan kişi bu sorunu yukarıya rapor edecektir.
 
-***
+---
 
 - [Alpine Linux](#alpine-linux)
 - [Android](#android)
@@ -33,7 +33,7 @@ title: Paket yöneticisi aracılığıyla Node.js'in yüklenmesi
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
-***
+---
 
 ## Alpine Linux
 

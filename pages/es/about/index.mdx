@@ -4,10 +4,14 @@ layout: about
 ---
 
 <div className="centro de justificación artículos my-4 flex">
-  <img alt="Mascota Node.js" src="/static/images/node-mascot.svg" className="w-[100px]" />
+  <img
+    alt="Mascota Node.js"
+    src="/static/images/node-mascot.svg"
+    className="w-[100px]"
+  />
 </div>
 
-***
+---
 
 # Acerca de Node.js®️
 
@@ -35,7 +39,7 @@ Esto contrasta con el modelo de concurrencia más común hoy en día, en el cual
 Si alguno de estos idiomas no es conocido, hay un artículo completo en
 \[Bloqueo vs. No Bloqueo]\[].
 
-***
+---
 
 Node.js es similar en diseño a, e influenciado por, sistemas como \[Event Machine]\[] de Ruby y \[Twisted]\[] de Python. Node.js lleva el modelo de eventos un poco más allá. Presenta un bucle de eventos como una construcción de tiempo de ejecución en lugar de como una biblioteca. En otros sistemas, siempre hay una llamada de bloqueo para iniciar el bucle de eventos. Típicamente, el comportamiento se define a través de devoluciones de llamada al principio de un script, y al final se inicia un servidor a través de una llamada de bloqueo como `EventMachine::run()`. En Node.js, no hay tal llamada para iniciar el bucle de eventos. Node.js simplemente entra en el bucle de eventos después de ejecutar el script de entrada. Node.js sale del bucle de eventos cuando no hay más devoluciones de llamada que realizar. Este comportamiento es similar al JavaScript del navegador: el bucle de eventos está oculto para el usuario.
 
@@ -46,11 +50,7 @@ HTTP es un ciudadano de primera clase en Node.js, diseñado pensando en el strea
 El hecho de que Node.js esté diseñado sin hilos no significa que no puedas aprovechar múltiples núcleos en tu entorno. Los procesos secundarios pueden ser generados utilizando nuestra API \[`child_process.fork()`], y están diseñados para ser fáciles de comunicarse. Sobre esa misma interfaz se construye el módulo \[`cluster`], que te permite compartir sockets entre procesos para habilitar el equilibrio de carga sobre tus núcleos.
 
 [bloqueando vs. no bloqueo]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
-
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
-
 [`cluster`]: https://nodejs.org/api/cluster.html
-
 [máquina de eventos]: https://github.com/eventmachine/eventmachine
-
 [retorcido]: https://twistedmatrix.com/trac/

@@ -26,13 +26,8 @@ layout: about
 який відповідає за керівництво проекту високого рівня.
 
 [consensus seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
-
 [readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
-
 [tsc]: https://github.com/nodejs/TSC
-
 [technical steering committee (tsc)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
-
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
-
 [nodejs/node]: https://github.com/nodejs/node

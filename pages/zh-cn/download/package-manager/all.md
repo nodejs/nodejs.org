@@ -7,7 +7,7 @@ title: 通过软件包管理器安装 Node.js
 
 > 此页面上的软件包是由各自的软件包维护者管理并支持的，**而不是** Node.js 核心团队。 请将您遇到的任何问题报告给软件包维护者。如果你的问题在 Node.js 本身是一个错误，维护者将向上报告这个问题。
 
-***
+---
 
 - [Alpine Linux](#alpine-linux)
 - [Android](#android)
@@ -33,7 +33,7 @@ title: 通过软件包管理器安装 Node.js
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
-***
+---
 
 ## Alpine Linux
 

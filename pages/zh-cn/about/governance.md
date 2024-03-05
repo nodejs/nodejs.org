@@ -28,13 +28,8 @@ Node.js项目遵循\[寻求共识]\[]决策模式。
 管理。
 
 [consensus seeking]: https://en.wikipedia.org/wiki/Consensus-searing_decision-making
-
 [readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
-
 [tsc]: https://github.com/nodejs/TSC
-
 [technical steering committee (tsc)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
-
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
-
 [nodejs/node]: https://github.com/nodejs/node

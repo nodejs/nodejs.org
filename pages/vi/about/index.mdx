@@ -4,10 +4,14 @@ layout: about
 ---
 
 <div className="my-4 flex items-center justify-center">
-  <img alt="Nhân vật biểu tượng của Node.js" src="/static/images/node-mascot.svg" className="w-[100px]" />
+  <img
+    alt="Nhân vật biểu tượng của Node.js"
+    src="/static/images/node-mascot.svg"
+    className="w-[100px]"
+  />
 </div>
 
-***
+---
 
 # Về Node.js®
 
@@ -44,7 +48,7 @@ hợp lý trong Node.js.
 Nếu một số ngôn ngữ này không quen thuộc, có một bài viết đầy đủ về
 \[Blocking vs. Non-Blocking]\[].
 
-***
+---
 
 Node.js tương tự trong thiết kế với các hệ thống như
 \[Event Machine]\[] của Ruby và \[Twisted]\[] của Python. Node.js đưa mô hình sự kiện một chút
@@ -61,11 +65,7 @@ HTTP là một công dân ưu tú trong Node.js, được thiết kế với lu�
 Node.js được thiết kế mà không sử dụng luồng không có nghĩa là bạn không thể tận dụng nhiều nhân trong môi trường của bạn. Quá trình con có thể được tạo ra bằng cách sử dụng API \[`child_process.fork()`]\[] của chúng tôi, và được thiết kế để dễ dàng giao tiếp. Dựa trên giao diện đó là mô-đun \[`cluster`]\[], cho phép bạn chia sẻ sockets giữa các quá trình để kích hoạt cân bằng tải trên các nhân của bạn.
 
 [chặn vs. không chặn]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
-
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
-
 [`cluster`]: https://nodejs.org/api/cluster.html
-
 [máy sự kiện]: https://github.com/eventmachine/eventmachine
-
 [qu twisted]: https://twistedmatrix.com/trac/

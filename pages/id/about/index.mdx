@@ -4,10 +4,14 @@ layout: about
 ---
 
 <div className="my-4 flex items-center justify-center">
-  <img alt="Maskot Node.js" src="/static/images/node-mascot.svg" className="w-[100px]" />
+  <img
+    alt="Maskot Node.js"
+    src="/static/images/node-mascot.svg"
+    className="w-[100px]"
+  />
 </div>
 
-***
+---
 
 # Tentang Node.js®
 
@@ -34,7 +38,7 @@ Hal ini berbeda dengan model konkurensi yang lebih umum saat ini, di mana benang
 
 Jika beberapa bahasa ini tidak familiar, ada artikel lengkap tentang \[Blocking vs. Non-Blocking]\[].
 
-***
+---
 
 Node.js mirip dalam desain dengan, dan dipengaruhi oleh, sistem seperti \[Event Machine]\[] milik Ruby dan \[Twisted]\[] milik Python. Node.js mengambil model peristiwa sedikit lebih jauh. Ini menyajikan loop peristiwa sebagai konstruk run-time daripada sebagai pustaka. Di sistem lain, selalu ada pemanggilan blokir untuk memulai loop peristiwa. Biasanya, perilaku didefinisikan melalui pemanggilan balik di awal skrip, dan di akhir server dimulai melalui pemanggilan blokir seperti `EventMachine::run()`. Di Node.js, tidak ada pemanggilan memulai loop peristiwa seperti itu. Node.js hanya memasuki loop peristiwa setelah menjalankan skrip masukan. Node.js keluar dari loop peristiwa ketika tidak ada lagi pemanggilan balik yang harus dilakukan. Perilaku ini mirip dengan JavaScript browser — loop peristiwa tersembunyi dari pengguna.
 
@@ -50,11 +54,7 @@ yang memungkinkan Anda untuk berbagi soket antara proses untuk memungkinkan peny
 atas inti Anda.
 
 [blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
-
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
-
 [`cluster`]: https://nodejs.org/api/cluster.html
-
 [mesin acara]: https://github.com/eventmachine/eventmachine
-
 [berbelit-belit]: https://twistedmatrix.com/trac/

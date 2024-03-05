@@ -25,13 +25,8 @@ Node.js プロジェクトは、[Consensus Seeking][] 意思決定モデルに�
 プロジェクトは、プロジェクトの高レベルのガイダンスを担当する[Technical Steering Committee (TSC)]によって管理されています。
 
 [consensus seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decisitismaking
-
 [readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
-
 [tsc]: https://github.com/nodejs/TSC
-
 [technical steering committee (tsc)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
-
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributor-guide.md
-
 [nodejs/node]: https://github.com/nodejs/node

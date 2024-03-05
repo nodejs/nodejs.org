@@ -7,7 +7,7 @@ title: Cài đặt Node.js qua trình quản lý gói
 
 > Các gói trên trang này được duy trì và hỗ trợ bởi người quản lý gói tương ứng, **không phải** là nhóm nhân viên cốt lõi của Node.js. Vui lòng báo cáo bất kỳ vấn đề nào bạn gặp phải cho người duy trì gói. Nếu vấn đề của bạn cuối cùng là một lỗi trong Node.js chính nó, người duy trì sẽ báo cáo vấn đề lên trên.
 
-***
+---
 
 - [Alpine Linux](#alpine-linux)
 - [Android](#android)
@@ -33,7 +33,7 @@ title: Cài đặt Node.js qua trình quản lý gói
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
-***
+---
 
 ## Alpine Linux
 

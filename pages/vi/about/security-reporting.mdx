@@ -27,22 +27,22 @@ Các lỗi bảo mật trong các module bên thứ ba nên được báo cáo c
 
 Dưới đây là chính sách tiết lộ bảo mật cho Node.js
 
-* Báo cáo bảo mật được nhận và được giao cho một người xử lý chính. Người này sẽ phối hợp quá trình sửa lỗi và phát hành. Vấn đề được xác nhận và một danh sách của tất cả các phiên bản bị ảnh hưởng được xác định. Mã được kiểm tra để tìm ra bất kỳ vấn đề tương tự nào. Các sửa lỗi được chuẩn bị cho tất cả các phiên bản vẫn đang được bảo trì. Những sửa lỗi này không được commit vào kho lưu trữ công khai mà được giữ cục bộ đợi thông báo.
+- Báo cáo bảo mật được nhận và được giao cho một người xử lý chính. Người này sẽ phối hợp quá trình sửa lỗi và phát hành. Vấn đề được xác nhận và một danh sách của tất cả các phiên bản bị ảnh hưởng được xác định. Mã được kiểm tra để tìm ra bất kỳ vấn đề tương tự nào. Các sửa lỗi được chuẩn bị cho tất cả các phiên bản vẫn đang được bảo trì. Những sửa lỗi này không được commit vào kho lưu trữ công khai mà được giữ cục bộ đợi thông báo.
 
-* Một ngày embargo đề xuất cho lỗ hổng này được chọn và một CVE (Các Lỗ Hổng và Mối Nguy Hiểm Phổ Biến (CVE®)) được yêu cầu cho lỗ hổng này.
+- Một ngày embargo đề xuất cho lỗ hổng này được chọn và một CVE (Các Lỗ Hổng và Mối Nguy Hiểm Phổ Biến (CVE®)) được yêu cầu cho lỗ hổng này.
 
-* Vào ngày embargo, danh sách gửi thư bảo mật Node.js được gửi một bản sao của thông báo. Các thay đổi được đẩy lên kho lưu trữ công khai và các bản build mới được triển khai trên nodejs.org. Trong vòng 6 giờ kể từ khi danh sách gửi thư được thông báo, một bản sao của thông báo sẽ được xuất bản trên blog Node.js.
+- Vào ngày embargo, danh sách gửi thư bảo mật Node.js được gửi một bản sao của thông báo. Các thay đổi được đẩy lên kho lưu trữ công khai và các bản build mới được triển khai trên nodejs.org. Trong vòng 6 giờ kể từ khi danh sách gửi thư được thông báo, một bản sao của thông báo sẽ được xuất bản trên blog Node.js.
 
-* Thường thì ngày embargo sẽ được đặt 72 giờ kể từ khi CVE được phát hành. Tuy nhiên, điều này có thể thay đổi tùy thuộc vào mức độ nghiêm trọng của lỗi hoặc độ khó trong việc áp dụng sửa lỗi.
+- Thường thì ngày embargo sẽ được đặt 72 giờ kể từ khi CVE được phát hành. Tuy nhiên, điều này có thể thay đổi tùy thuộc vào mức độ nghiêm trọng của lỗi hoặc độ khó trong việc áp dụng sửa lỗi.
 
-* Quá trình này có thể mất một thời gian, đặc biệt khi cần phối hợp với các nhà quản trị của các dự án khác. Mọi nỗ lực sẽ được thực hiện để xử lý lỗi một cách kịp thời nhất có thể; tuy nhiên, quan trọng là chúng ta phải tuân thủ quy trình phát hành ở trên để đảm bảo rằng việc tiết lộ được xử lý một cách nhất quán.
+- Quá trình này có thể mất một thời gian, đặc biệt khi cần phối hợp với các nhà quản trị của các dự án khác. Mọi nỗ lực sẽ được thực hiện để xử lý lỗi một cách kịp thời nhất có thể; tuy nhiên, quan trọng là chúng ta phải tuân thủ quy trình phát hành ở trên để đảm bảo rằng việc tiết lộ được xử lý một cách nhất quán.
 
 ## Nhận cập nhật bảo mật
 
 Thông báo bảo mật sẽ được phân phối qua các phương pháp sau.
 
-* [Google Group](https://groups.google.com/group/nodejs-sec)
-* [Node.js Blog](/blog)
+- [Google Group](https://groups.google.com/group/nodejs-sec)
+- [Node.js Blog](/blog)
 
 ## Comments on this policy
 
@@ -52,8 +52,15 @@ If you have suggestions on how this process could be improved please submit a
 
 ## OpenSSF Best Practices
 
-<a href="https://bestpractices.coreinfrastructure.org/projects/29" style={{ display: 'inline-flex' }}>
-  <img alt="OpenSSF Badge" src="https://bestpractices.coreinfrastructure.org/projects/29/badge" style={{ display: 'inline' }} />
+<a
+  href="https://bestpractices.coreinfrastructure.org/projects/29"
+  style={{ display: 'inline-flex' }}
+>
+  <img
+    alt="OpenSSF Badge"
+    src="https://bestpractices.coreinfrastructure.org/projects/29/badge"
+    style={{ display: 'inline' }}
+  />
 </a>
 
 Tổ chức Bảo mật Mã nguồn Mở (OpenSSF) [Huy hiệu Thực hành Tốt nhất](https://github.com/coreinfrastructure/best-practices-badge) là một cách để các dự án Phần mềm Tự do/Mã nguồn Mở (FLOSS) thể hiện rằng họ tuân thủ các phương pháp tốt nhất. Các dự án có thể tự chứng nhận theo cách họ tuân thủ từng phương pháp tốt nhất. Người tiêu dùng của huy hiệu có thể nhanh chóng đánh giá xem dự án FLOSS nào đang tuân thủ các phương pháp tốt nhất và do đó có khả năng tạo ra phần mềm an toàn chất lượng cao hơn.

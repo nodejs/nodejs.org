@@ -28,13 +28,8 @@ El proyecto está gobernado por el \[Comité Directivo Tecnológico (TSC)]\[]
 el cual es responsable de la orientación de alto nivel del proyecto.
 
 [consensus seeking]: <https://es.wikipedia.org/wiki/Consenso seeking_decision>
-
 [readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
-
 [tsc]: https://github.com/nodejs/TSC
-
 [technical steering committee (tsc)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
-
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
-
 [nodejs/node]: https://github.com/nodejs/node

@@ -7,7 +7,7 @@ title: Menginstal Node.js melalui package manager
 
 > Paket-paket di halaman ini dikelola dan didukung oleh para pengemas masing-masing, **bukan** tim inti Node.js. Harap laporkan masalah yang Anda temui kepada pengelola paket. Jika ternyata masalah Anda adalah bug dalam Node.js itu sendiri, pengelola akan melaporkan masalah tersebut ke hulu.
 
-***
+---
 
 - [Alpine Linux](#alpine-linux)
 - [Android](#android)
@@ -33,7 +33,7 @@ title: Menginstal Node.js melalui package manager
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
-***
+---
 
 ## Alpine Linux
 

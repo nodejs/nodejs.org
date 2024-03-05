@@ -31,22 +31,22 @@ HackerOne platformu. Daha fazla ayrıntı için [https://hackerone.com/nodejs](h
 
 İşte Node.js için güvenlik açıklama politikası
 
-* Güvenlik raporu alınır ve birincil bir işleyiciye atanır. Bu kişi, düzeltme ve yayınlama sürecini koordine edecektir. Sorun doğrulanır ve etkilenen tüm sürümlerin bir listesi belirlenir. Potansiyel benzer sorunları bulmak için kod denetlenir. Bakım altındaki tüm sürümler için düzeltmeler hazırlanır. Bu düzeltmeler, kamu depolarına taahhüt edilmez, ancak duyuru yapılmak üzere yerel olarak tutulur.
+- Güvenlik raporu alınır ve birincil bir işleyiciye atanır. Bu kişi, düzeltme ve yayınlama sürecini koordine edecektir. Sorun doğrulanır ve etkilenen tüm sürümlerin bir listesi belirlenir. Potansiyel benzer sorunları bulmak için kod denetlenir. Bakım altındaki tüm sürümler için düzeltmeler hazırlanır. Bu düzeltmeler, kamu depolarına taahhüt edilmez, ancak duyuru yapılmak üzere yerel olarak tutulur.
 
-* Bu güvenlik açığı için önerilen bir yayın tarihi belirlenir ve güvenlik açığı için bir CVE (Common Vulnerabilities and Exposures - Ortak Güvenlik Açıkları ve Tehlikeler) talep edilir.
+- Bu güvenlik açığı için önerilen bir yayın tarihi belirlenir ve güvenlik açığı için bir CVE (Common Vulnerabilities and Exposures - Ortak Güvenlik Açıkları ve Tehlikeler) talep edilir.
 
-* Embargo tarihinde, Node.js güvenlik posta listesine duyurunun bir kopyası gönderilir. Değişiklikler kamuya açık depoya taşınır ve yeni derlemeler nodejs.org'a dağıtılır. Posta listesinin bilgilendirilmesinden sonra 6 saat içinde, duyuru Node.js blogunda yayımlanır.
+- Embargo tarihinde, Node.js güvenlik posta listesine duyurunun bir kopyası gönderilir. Değişiklikler kamuya açık depoya taşınır ve yeni derlemeler nodejs.org'a dağıtılır. Posta listesinin bilgilendirilmesinden sonra 6 saat içinde, duyuru Node.js blogunda yayımlanır.
 
-* Genellikle, CVE'nin verilme zamanından itibaren 72 saat sonra embargo tarihi belirlenir. Ancak, bu, hatanın ciddiyetine veya düzeltmenin uygulanmasındaki zorluğa bağlı olarak değişebilir.
+- Genellikle, CVE'nin verilme zamanından itibaren 72 saat sonra embargo tarihi belirlenir. Ancak, bu, hatanın ciddiyetine veya düzeltmenin uygulanmasındaki zorluğa bağlı olarak değişebilir.
 
-* Bu süreç, özellikle diğer projelerin bakımcılarıyla koordinasyon gerektiğinde biraz zaman alabilir. Olabildiğince hızlı bir şekilde hatayla ilgilenmek için her çaba gösterilecektir; ancak, açıklamanın tutarlı bir şekilde ele alınmasını sağlamak için yukarıdaki yayınlama sürecini takip etmemiz önemlidir.
+- Bu süreç, özellikle diğer projelerin bakımcılarıyla koordinasyon gerektiğinde biraz zaman alabilir. Olabildiğince hızlı bir şekilde hatayla ilgilenmek için her çaba gösterilecektir; ancak, açıklamanın tutarlı bir şekilde ele alınmasını sağlamak için yukarıdaki yayınlama sürecini takip etmemiz önemlidir.
 
 ## Güvenlik güncellemeleri alınması
 
 Güvenlik bildirimleri aşağıdaki yöntemler aracılığıyla dağıtılacaktır.
 
-* [Google Grubu](https://groups.google.com/group/nodejs-sec)
-* [Node.js Blog](/blog)
+- [Google Grubu](https://groups.google.com/group/nodejs-sec)
+- [Node.js Blog](/blog)
 
 ## Bu politika hakkındaki yorumlar
 
@@ -54,8 +54,15 @@ Bu sürecin nasıl iyileştirilebileceğine dair önerileriniz varsa lütfen bir
 
 ## OpenSSF En İyi Uygulamaları
 
-<a href="https://bestpractices.coreinfrastructure.org/projects/29" style={{ display: 'inline-flex' }}>
-  <img alt="OpenSSF Rozeti" src="https://bestpractices.coreinfrastructure.org/projects/29/badge" style={{ display: 'inline' }} />
+<a
+  href="https://bestpractices.coreinfrastructure.org/projects/29"
+  style={{ display: 'inline-flex' }}
+>
+  <img
+    alt="OpenSSF Rozeti"
+    src="https://bestpractices.coreinfrastructure.org/projects/29/badge"
+    style={{ display: 'inline' }}
+  />
 </a>
 
 Açık Kaynak Güvenlik Vakfı (OpenSSF) [En İyi Uygulamalar rozeti](https://github.com/coreinfrastructure/best-practices-badge), Özgür/Açık Kaynak Yazılım (FLOSS) projelerinin en iyi uygulamaları takip ettiklerini göstermenin bir yoludur. Projeler her bir en iyi uygulamayı nasıl takip ettiklerini isteğe bağlı olarak kendileri sertifikalandırabilirler. Rozeti kullananlar, hangi FLOSS projelerinin en iyi uygulamaları takip ettiklerini hızlı bir şekilde değerlendirebilir ve sonuç olarak daha yüksek kaliteli güvenli yazılım üretme olasılığı daha yüksektir.

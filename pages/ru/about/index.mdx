@@ -4,10 +4,14 @@ layout: about
 ---
 
 <div className="центр элементов оправдывающий центр my-4 flex">
-  <img alt="талисман Node.js" src="/static/images/node-mascot.svg" className="w-[100px]" />
+  <img
+    alt="талисман Node.js"
+    src="/static/images/node-mascot.svg"
+    className="w-[100px]"
+  />
 </div>
 
-***
+---
 
 # О Node.js®️
 
@@ -38,7 +42,7 @@ server.listen(port, hostname, () => {
 Если некоторые из этих языков незнакомы, существует полная статья об
 \[Блокировка против блокировки]\[].
 
-***
+---
 
 Node.js разрабатывает такие системы, как
 \[Event Machine]\[] и \[Twisted]\[]. Node.js дальше принимает модель события немного
@@ -55,11 +59,7 @@ HTTP в Node.js считается объектом первого класса,
 Тот факт, что Node.js разработан без потоков, не означает, что вы не можете использовать несколько ядер в вашей среде. Дочерние процессы могут быть запущены с использованием нашего API `child_process.fork()`, и предназначены для удобной связи. На основе этого же интерфейса построен модуль `cluster`, который позволяет вам обмениваться сокетами между процессами для обеспечения балансировки нагрузки по ядрам.
 
 [блокировка или неблокировка]: /learn/asynchronous-work/overviews-blocking-vs-non-blockking
-
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
-
 [«кластер»]: https://nodejs.org/api/cluster.html
-
 [машина событий]: https://github.com/eventmachine/eventmachine
-
 [закрученный]: https://twistedmatrix.com/trac/
