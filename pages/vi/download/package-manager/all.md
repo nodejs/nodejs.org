@@ -1,19 +1,19 @@
 ---
 layout: docs
-title: Installing Node.js via package manager
+title: Cài đặt Node.js qua trình quản lý gói
 ---
 
-# Installing Node.js via Package Managers
+# Cài đặt Node.js qua Trình quản lý Gói
 
-> The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
+> Các gói trên trang này được duy trì và hỗ trợ bởi người quản lý gói tương ứng, **không phải** là nhóm nhân viên cốt lõi của Node.js. Vui lòng báo cáo bất kỳ vấn đề nào bạn gặp phải cho người duy trì gói. Nếu vấn đề của bạn cuối cùng là một lỗi trong Node.js chính nó, người duy trì sẽ báo cáo vấn đề lên trên.
 
----
+***
 
 - [Alpine Linux](#alpine-linux)
 - [Android](#android)
 - [Arch Linux](#arch-linux)
-- [CentOS, Fedora and Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
-- [Debian and Ubuntu based Linux distributions](#debian-and-ubuntu-based-linux-distributions)
+- [CentOS, Fedora và Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
+- [Debian và các bản phân phối Linux dựa trên Ubuntu](#debian-and-ubuntu-based-linux-distributions)
 - [fnm](#fnm)
 - [FreeBSD](#freebsd)
 - [Gentoo](#gentoo)
@@ -26,24 +26,24 @@ title: Installing Node.js via package manager
 - [nvs](#nvs)
 - [OpenBSD](#openbsd)
 - [openSUSE and SLE](#opensuse-and-sle)
-- [SmartOS and illumos](#smartos-and-illumos)
+- [SmartOS và illumos](#smartos-and-illumos)
 - [Snap](#snap)
 - [Solus](#solus)
 - [Void Linux](#void-linux)
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
----
+***
 
 ## Alpine Linux
 
-Node.js LTS and npm packages are available in the Main Repository.
+Node.js LTS và các gói npm có sẵn trong Kho chính.
 
 ```bash
 apk add nodejs npm
 ```
 
-Node.js Current can be installed from the Community Repository.
+Node.js Current có thể được cài đặt từ Kho cộng đồng.
 
 ```bash
 apk add nodejs-current
@@ -51,79 +51,79 @@ apk add nodejs-current
 
 ## Android
 
-Android support is still experimental in Node.js, so precompiled binaries are not yet provided by Node.js developers.
+Hỗ trợ Android vẫn đang thử nghiệm trong Node.js, vì vậy các tệp nhị phân đã được biên soạn trước vẫn chưa được cung cấp bởi các nhà phát triển Node.js.
 
-However, there are some third-party solutions. For example, [Termux](https://termux.com/) community provides terminal emulator and Linux environment for Android, as well as own package manager and [extensive collection](https://github.com/termux/termux-packages) of many precompiled applications. This command in Termux app will install the last available Node.js version:
+Tuy nhiên, có một số giải pháp của bên thứ ba. Ví dụ, cộng đồng [Termux](https://termux.com/) cung cấp trình giả lập terminal và môi trường Linux cho Android, cũng như trình quản lý gói riêng và [bộ sưu tập đa dạng](https://github.com/termux/termux-packages) của nhiều ứng dụng đã được biên soạn sẵn. Lệnh này trong ứng dụng Termux sẽ cài đặt phiên bản Node.js cuối cùng có sẵn:
 
 ```bash
 pkg install nodejs
 ```
 
-Currently, Termux Node.js binaries are linked against `system-icu` (depending on `libicu` package).
+Hiện tại, các tệp nhị phân Node.js của Termux được liên kết với `system-icu` (tùy thuộc vào gói `libicu`).
 
 ## Arch Linux
 
-Node.js and npm packages are available in the Community Repository.
+Gói Node.js và npm có sẵn trong Kho cộng đồng.
 
 ```bash
 pacman -S nodejs npm
 ```
 
-## CentOS, Fedora and Red Hat Enterprise Linux
+## CentOS, Fedora và Red Hat Enterprise Linux
 
-Node.js is available as a module called `nodejs` in CentOS/RHEL 8 and Fedora.
+Node.js có sẵn dưới dạng một module có tên là `nodejs` trong CentOS/RHEL 8 và Fedora.
 
 ```bash
 dnf module install nodejs:<stream>
 ```
 
-where `<stream>` corresponds to the major version of Node.js.
-To see a list of available streams:
+nơi `<stream>` tương ứng với phiên bản chính của Node.js.
+Để xem danh sách các luồng có sẵn:
 
 ```bash
 dnf module list nodejs
 ```
 
-For example, to install Node.js 18:
+Ví dụ, để cài đặt Node.js 18:
 
 ```bash
 dnf module install nodejs:18/common
 ```
 
-### Alternatives
+### Các lựa chọn
 
-These resources provide packages compatible with CentOS, Fedora, and RHEL.
+Những tài nguyên này cung cấp các gói tương thích với CentOS, Fedora và RHEL.
 
-- [Node.js snaps](#snap) maintained and supported at https\://github.com/nodejs/snap
-- [Node.js binary distributions](#debian-and-ubuntu-based-linux-distributions) maintained and supported by [NodeSource](https://github.com/nodesource/distributions)
+- [Node.js snaps](#snap) được duy trì và hỗ trợ tại https\://github.com/nodejs/snap
+- [Node.js binary distributions](#debian-and-ubuntu-based-linux-distributions) được duy trì và hỗ trợ bởi [NodeSource](https://github.com/nodesource/distributions)
 
-## Debian and Ubuntu based Linux distributions
+## Các bản phân phối nhị phân Node.js dành cho Debian và Ubuntu
 
-[Node.js binary distributions](https://github.com/nodesource/distributions) are available from NodeSource.
+[Node.js binary distributions](https://github.com/nodesource/distributions) có sẵn từ NodeSource.
 
-### Alternatives
+### Các lựa chọn
 
-Packages compatible with Debian and Ubuntu based Linux distributions are available via [Node.js snaps](#snap).
+Các gói tương thích với Debian và Ubuntu dựa trên các bản phân phối Linux có sẵn thông qua [Node.js snaps](#snap).
 
 ## fnm
 
-Fast and simple Node.js version manager built in Rust used to manage multiple released Node.js versions. It allows you to perform operations like install, uninstall, switch Node versions automatically based on the current directory, etc.
-To install fnm, use this [install script](https://github.com/Schniz/fnm#using-a-script-macoslinux).
+Trình quản lý phiên bản Node.js nhanh chóng và đơn giản được xây dựng bằng Rust để quản lý nhiều phiên bản Node.js đã phát hành. Nó cho phép bạn thực hiện các thao tác như cài đặt, gỡ cài đặt, chuyển đổi phiên bản Node tự động dựa trên thư mục hiện tại, v.v.
+Để cài đặt fnm, sử dụng [kịch bản cài đặt này](https://github.com/Schniz/fnm#using-a-script-macoslinux).
 
-fnm has cross-platform support (macOS, Windows, Linux) & all popular shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
-fnm is built with speed in mind and compatibility support for `.node-version` and `.nvmrc` files.
+fnm hỗ trợ đa nền tảng (macOS, Windows, Linux) và tất cả các shell phổ biến (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
+fnm được xây dựng với tốc độ và hỗ trợ tương thích cho các tệp `.node-version` và `.nvmrc`.
 
 ## FreeBSD
 
-The most recent release of Node.js is available via the [www/node](https://www.freshports.org/www/node) port.
+Phiên bản mới nhất của Node.js có sẵn thông qua cổng [www/node](https://www.freshports.org/www/node).
 
-Install a binary package via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
+Cài đặt một gói nhị phân thông qua [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
 ```bash
 pkg install node
 ```
 
-Or compile it on your own using [ports](https://www.freebsd.org/cgi/man.cgi?ports):
+Hoặc biên dịch nó trên máy của bạn bằng cách sử dụng [ports](https://www.freebsd.org/cgi/man.cgi?ports):
 
 ```bash
 cd /usr/ports/www/node && make install
@@ -131,7 +131,7 @@ cd /usr/ports/www/node && make install
 
 ## Gentoo
 
-Node.js is available in the portage tree.
+Node.js có sẵn trong cây portage.
 
 ```bash
 emerge nodejs
@@ -139,35 +139,35 @@ emerge nodejs
 
 ## IBM i
 
-LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](https://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs18`, `nodejs20` etc)
+Phiên bản LTS của Node.js có sẵn từ IBM, và có sẵn thông qua [trình quản lý gói 'yum'](https://ibm.biz/ibmi-rpms). Tên gói là `nodejs` theo sau là số phiên bản chính (ví dụ, `nodejs18`, `nodejs20` v.v.)
 
-To install Node.js 20.x from the command line, run the following as a user with \*ALLOBJ special authority:
+Để cài đặt Node.js 20.x từ dòng lệnh, chạy lệnh sau với quyền đặc biệt \*ALLOBJ:
 
 ```bash
 yum install nodejs20
 ```
 
-Node.js can also be installed with the IBM i Access Client Solutions product. See [this support document](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) for more details
+Node.js cũng có thể được cài đặt bằng sản phẩm IBM i Access Client Solutions. Xem [tài liệu hỗ trợ này](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) để biết thêm chi tiết
 
 ## macOS
 
-Download the [macOS Installer](/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
+Tải về [macOS Installer](/#home-downloadhead) trực tiếp từ trang web [nodejs.org](https://nodejs.org/).
 
-_If you want to download the package with bash:_
+_Nếu bạn muốn tải gói cài đặt bằng bash:_
 
 ```bash
 curl "https://nodejs.org/dist/latest/$(curl -s https://nodejs.org/dist/latest/ | grep "pkg" | cut -d'"' -f 2)" -o "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
 ```
 
-### Alternatives
+### Tùy chọn
 
-Using **[Homebrew](https://brew.sh/)**:
+Sử dụng **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-Using **[MacPorts](https://www.macports.org/)**:
+Sử dụng **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -176,15 +176,15 @@ port install nodejs<major version>
 port install nodejs7
 ```
 
-Using **[pkgsrc](https://pkgsrc.joyent.com/install-on-macos/)**:
+Sử dụng **[pkgsrc](https://pkgsrc.joyent.com/install-on-macos/)**:
 
-Install the binary package:
+Cài đặt gói nhị phân:
 
 ```bash
 pkgin -y install nodejs
 ```
 
-Or build manually from pkgsrc:
+Hoặc xây dựng thủ công từ pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
@@ -192,13 +192,13 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## n
 
-`n` is a simple to use Node.js version manager for Mac and Linux. Specify the target version to install using a rich syntax,
-or select from a menu of previously downloaded versions. The versions are installed system-wide or user-wide, and for more
-targeted use you can run a version directly from the cached downloads.
+`n` là một trình quản lý phiên bản Node.js dễ sử dụng cho Mac và Linux. Chỉ định phiên bản mục tiêu để cài đặt bằng cú pháp phong phú,
+hoặc chọn từ menu các phiên bản đã tải trước đó. Các phiên bản được cài đặt trên toàn hệ thống hoặc trên người dùng, và để sử dụng mục tiêu hơn
+bạn có thể chạy một phiên bản trực tiếp từ các tải về đã lưu trữ.
 
-See the [homepage](https://github.com/tj/n) for install methods (bootstrap, npm, Homebrew, third-party), and all the usage details.
+Xem trang chủ](https\://github.com/tj/n) để biết các phương pháp cài đặt (bootstrap, npm, Homebrew, bên thứ ba), và tất cả các chi tiết sử dụng.
 
-If you already have `npm` then installing `n` and then the newest LTS `node` version is as simple as:
+Nếu bạn đã có `npm` thì việc cài đặt `n` và sau đó là phiên bản LTS mới nhất của `node` là rất đơn giản:
 
 ```
 npm install -g n
@@ -207,13 +207,13 @@ n lts
 
 ## NetBSD
 
-Node.js is available in the pkgsrc tree:
+Node.js có sẵn trong cây pkgsrc:
 
 ```bash
 cd /usr/pkgsrc/lang/nodejs && make install
 ```
 
-Or install a binary package (if available for your platform) using pkgin:
+Hoặc cài đặt một gói nhị phân (nếu có sẵn cho nền tảng của bạn) bằng pkgin:
 
 ```bash
 pkgin -y install nodejs
@@ -221,33 +221,27 @@ pkgin -y install nodejs
 
 ## Nodenv
 
-`nodenv` is a lightweight node version manager, similar to `nvm`. It's simple and predictable. A rich plugin ecosystem lets you tailor it to suit your needs. Use `nodenv` to pick a Node version for your application and guarantee that your development environment matches production.
+`nodenv` là một trình quản lý phiên bản node nhẹ, tương tự như `nvm`. Nó đơn giản và dễ dự đoán. Một hệ sinh thái plugin phong phú cho phép bạn tinh chỉnh nó để phù hợp với nhu cầu của bạn. Sử dụng `nodenv` để chọn một phiên bản Node cho ứng dụng của bạn và đảm bảo rằng môi trường phát triển của bạn khớp với môi trường sản xuất.
 
-Nodenv installation instructions are maintained [on its Github page](https://github.com/nodenv/nodenv#installation). Please visit that page to ensure you're following the latest version of the installation steps.
+Hướng dẫn cài đặt Nodenv được duy trì [trên trang Github của nó](https://github.com/nodenv/nodenv#installation). Vui lòng truy cập trang đó để đảm bảo bạn đang tuân thủ phiên bản mới nhất của các bước cài đặt.
 
 ## nvm
 
-Node Version Manager is a bash script used to manage multiple released Node.js versions. It allows
-you to perform operations like install, uninstall, switch version, etc.
-To install nvm, use this [install script](https://github.com/nvm-sh/nvm#install--update-script).
+Node Version Manager là một tập lệnh bash được sử dụng để quản lý nhiều phiên bản Node.js đã phát hành. Nó cho phép bạn thực hiện các hoạt động như cài đặt, gỡ cài đặt, chuyển đổi phiên bản, v.v. Để cài đặt nvm, sử dụng [tập lệnh cài đặt](https://github.com/nvm-sh/nvm#install--update-script) này.
 
-On Unix / OS X systems Node.js built from source can be installed using
-[nvm](https://github.com/creationix/nvm) by installing into the location that nvm expects:
+Trên hệ thống Unix / OS X, Node.js được xây dựng từ mã nguồn có thể được cài đặt bằng cách sử dụng [nvm](https://github.com/creationix/nvm) bằng cách cài đặt vào vị trí mà nvm mong đợi:
 
 ```bash
 env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
-After this you can use `nvm` to switch between released versions and versions
-built from source.
-For example, if the version of Node.js is v8.0.0-pre:
+Sau đó, bạn có thể sử dụng `nvm` để chuyển đổi giữa các phiên bản đã phát hành và các phiên bản được xây dựng từ mã nguồn. Ví dụ, nếu phiên bản của Node.js là v8.0.0-pre:
 
 ```bash
 nvm use 8
 ```
 
-Once the official release is out you will want to uninstall the version built
-from source:
+Khi phiên bản chính thức được phát hành, bạn sẽ muốn gỡ cài đặt phiên bản được xây dựng từ mã nguồn:
 
 ```bash
 nvm uninstall 8
@@ -257,11 +251,11 @@ nvm uninstall 8
 
 #### Windows
 
-The `nvs` version manager is cross-platform and can be used on Windows, macOS, and Unix-like systems
+Trình quản lý phiên bản `nvs` là đa nền tảng và có thể được sử dụng trên Windows, macOS và các hệ thống giống Unix
 
-To install `nvs` on Windows go to the [release page](https://github.com/jasongin/nvs/releases) here and download the MSI installer file of the latest release.
+Để cài đặt `nvs` trên Windows, hãy truy cập trang [phát hành](https://github.com/jasongin/nvs/releases) ở đây và tải xuống tệp cài đặt MSI của phiên bản mới nhất.
 
-You can also use `chocolatey` to install it:
+Bạn cũng có thể sử dụng `chocolatey` để cài đặt nó:
 
 ```bash
 choco install nvs
@@ -269,25 +263,25 @@ choco install nvs
 
 #### macOS,UnixLike
 
-You can find the documentation regarding the installation steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
+Bạn có thể tìm tài liệu về các bước cài đặt `nvs` trên các hệ thống macOS/Unix-like [tại đây](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
 
-#### Usage
+#### Sử dụng
 
-After this you can use `nvs` to switch between different versions of node.
+Sau đó, bạn có thể sử dụng `nvs` để chuyển đổi giữa các phiên bản khác nhau của Node.js.
 
-To add the latest version of node:
+Để thêm phiên bản mới nhất của Node.js:
 
 ```bash
 nvs add latest
 ```
 
-Or to add the latest LTS version of node:
+Hoặc để thêm phiên bản LTS mới nhất của Node.js:
 
 ```bash
 nvs add lts
 ```
 
-Then run the `nvs use` command to add a version of node to your `PATH` for the current shell:
+Sau đó chạy lệnh `nvs use` để thêm một phiên bản của Node.js vào `PATH` cho shell hiện tại của bạn:
 
 ```bash
 $ nvs use lts
@@ -295,7 +289,7 @@ PATH -= %LOCALAPPDATA%\nvs\default
 PATH += %LOCALAPPDATA%\nvs\node\14.17.0\x64
 ```
 
-To add it to `PATH` permanently, use `nvs link`:
+Để thêm nó vào `PATH` vĩnh viễn, sử dụng `nvs link`:
 
 ```bash
 nvs link lts
@@ -303,46 +297,46 @@ nvs link lts
 
 ## OpenBSD
 
-Node.js is available through the ports system.
+Node.js có sẵn thông qua hệ thống cổng.
 
 ```bash
 /usr/ports/lang/node
 ```
 
-Using [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
+Sử dụng [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) trên OpenBSD:
 
 ```bash
 pkg_add node
 ```
 
-## openSUSE and SLE
+## openSUSE và SLE
 
-Node.js is available in the main repositories under the following packages:
+Node.js có sẵn trong các kho chính dưới các gói sau:
 
 - **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
 - **openSUSE Tumbleweed**: `nodejs20`
-- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, and `nodejs14`
-  (The "Web and Scripting Module" must be [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
-- **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, and `nodejs14`
-  (The "Web and Scripting Module" must be [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
+- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, và `nodejs14`
+  (Mô-đun "Web and Scripting" phải được [kích hoạt](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
+- **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, và `nodejs14`
+  (Mô-đun "Web and Scripting" phải được [kích hoạt](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
 
-For example, to install Node.js 14.x on openSUSE Leap 15.2, run the following as root:
+Ví dụ, để cài đặt Node.js 14.x trên openSUSE Leap 15.2, chạy lệnh sau với quyền root:
 
 ```bash
 zypper install nodejs14
 ```
 
-Different major versions of Node can be installed and used concurrently.
+Các phiên bản chính khác nhau của Node có thể được cài đặt và sử dụng đồng thời.
 
-## SmartOS and illumos
+## SmartOS và illumos
 
-SmartOS images come with pkgsrc pre-installed. On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal:
+Hình ảnh SmartOS đi kèm với pkgsrc đã được cài đặt sẵn. Trên các bản phân phối illumos khác, trước tiên cài đặt **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, sau đó bạn có thể cài đặt gói nhị phân như bình thường:
 
 ```bash
 pkgin -y install nodejs
 ```
 
-Or build manually from pkgsrc:
+Hoặc xây dựng thủ công từ pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
@@ -350,11 +344,11 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## Snap
 
-[Node.js snaps](https://github.com/nodejs/snap) are available as [`node`](https://snapcraft.io/node) on the Snap store.
+[Node.js snaps](https://github.com/nodejs/snap) có sẵn dưới dạng [`node`](https://snapcraft.io/node) trên cửa hàng Snap.
 
 ## Solus
 
-Solus provides Node.js in its main repository.
+Solus cung cấp Node.js trong kho chính của mình.
 
 ```bash
 sudo eopkg install nodejs
@@ -362,7 +356,7 @@ sudo eopkg install nodejs
 
 ## Void Linux
 
-Void Linux ships Node.js stable in the main repository.
+Void Linux cung cấp Node.js ổn định trong kho chính.
 
 ```bash
 xbps-install -Sy nodejs
@@ -370,11 +364,11 @@ xbps-install -Sy nodejs
 
 ## Windows
 
-Download the [Windows Installer](/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
+Tải xuống [Windows Installer](/#home-downloadhead) trực tiếp từ trang web [nodejs.org](https://nodejs.org/).
 
-### Alternatives
+### Các lựa chọn
 
-Using **[Winget](https://aka.ms/winget-cli)**:
+Sử dụng **[Winget](https://aka.ms/winget-cli)**:
 
 ```bash
 winget install OpenJS.NodeJS
@@ -382,10 +376,9 @@ winget install OpenJS.NodeJS
 winget install OpenJS.NodeJS.LTS
 ```
 
-After running one of the two commands above, it may be necessary to restart the
-terminal emulator before the `node` CLI command becomes available.
+Sau khi chạy một trong hai lệnh trên, có thể cần khởi động lại bộ mô phỏng terminal trước khi lệnh CLI `node` trở nên khả dụng.
 
-Using **[Chocolatey](https://chocolatey.org/)**:
+Sử dụng **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -393,7 +386,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-Using **[Scoop](https://scoop.sh/)**:
+Sử dụng **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs
@@ -403,8 +396,7 @@ scoop install nodejs-lts
 
 ## z/OS
 
-IBM&reg; SDK for Node.js - z/OS&reg; is available in two installation formats,
-SMP/E and PAX. Select the installation format that applies to you:
+IBM® SDK cho Node.js - z/OS® có sẵn trong hai định dạng cài đặt, SMP/E và PAX. Chọn định dạng cài đặt phù hợp với bạn:
 
-- [Installing and configuring SMP/E edition of Node.js on z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
-- [Installing and configuring PAX edition of Node.js on z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)
+- [Cài đặt và cấu hình phiên bản SMP/E của Node.js trên z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
+- [Cài đặt và cấu hình phiên bản PAX của Node.js trên z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)
