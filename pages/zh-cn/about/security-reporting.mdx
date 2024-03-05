@@ -1,89 +1,82 @@
 ---
-title: Security Reporting
+title: 安全报告
 layout: about
 ---
 
-# Security Reporting
+# 安全报告
 
-For more details on active Security Policies, checkout [this page](https://github.com/nodejs/node/security/policy).
+欲了解更多关于主动安全政策的详情，请签出[本页](https://github.com/nodejs/node/security/policy)。
 
-## Reporting a bug in Node.js
+## 在 Node.js 中报告一个错误
 
-Report security bugs in Node.js via [HackerOne](https://hackerone.com/nodejs).
+通过 \[HackerOne]报告Node.js 中的安全漏洞(https://hackerone.com/nodejs)。
 
-Your report will be acknowledged within 5 days, and you'll receive a more
-detailed response to your report within 10 days indicating the next steps in
-handling your submission.
+您的报告将在5天内被确认。 您将在10天内收到更多的
+对您的报告的详细回复，显示您在处理您提交的
+中的下一个步骤。
 
-After the initial reply to your report, the security team will endeavor to keep
-you informed of the progress being made towards a fix and full announcement,
-and may ask for additional information or guidance surrounding the reported
-issue.
+在对您的报告做出初步答复之后。 安全团队将努力随时向
+你通报正在进行的修复和完整通知，
+并可能要求就所报告的
+问题提供更多的信息或指导。
 
-### Node.js bug bounty program
+### Node.js bug bounty 程序
 
-The Node.js project engages in an official bug bounty program for security
-researchers and responsible public disclosures. The program is managed through
-the HackerOne platform. See [https://hackerone.com/nodejs](https://hackerone.com/nodejs) for further details.
+Node.js项目参与了一个官方的 bug bounty 方案，用于安全的
+研究人员和负责任的公开披露。 程序通过
+HackerOne 平台进行管理。详情请参阅[https://hackerone.com/nodejs](https://hackerone.com/nodejs)
 
-## Reporting a bug in a third party module
+## 在第三方模块中报告一个错误
 
-Security bugs in third party modules should be reported to their respective
-maintainers.
+第三方模块中的安全漏洞应该报告给他们各自的
+维护者。
 
-## Disclosure policy
+## 披露政策
 
-Here is the security disclosure policy for Node.js
+下面是 Node.js 的安全披露政策
 
-- The security report is received and is assigned a primary handler. This
+* The security report is received and is assigned a primary handler. This
   person will coordinate the fix and release process. The problem is confirmed
   and a list of all affected versions is determined. Code is audited to find
   any potential similar problems. Fixes are prepared for all releases which are
   still under maintenance. These fixes are not committed to the public
   repository but rather held locally pending the announcement.
 
-- A suggested embargo date for this vulnerability is chosen and a CVE (Common
+* A suggested embargo date for this vulnerability is chosen and a CVE (Common
   Vulnerabilities and Exposures (CVE®)) is requested for the vulnerability.
 
-- On the embargo date, the Node.js security mailing list is sent a copy of the
-  announcement. The changes are pushed to the public repository and new builds
-  are deployed to nodejs.org. Within 6 hours of the mailing list being
-  notified, a copy of the advisory will be published on the Node.js blog.
+* 在禁运日，Node.js安全邮寄名单将发送一份
+  通知。 更改被推送到公共仓库，新版本
+  被部署到节点。 rg. 在
+  发出邮件列表后的6小时内，咨询的副本将在Node.js 博客上发表。
 
-- Typically the embargo date will be set 72 hours from the time the CVE is
+* Typically the embargo date will be set 72 hours from the time the CVE is
   issued. However, this may vary depending on the severity of the bug or
   difficulty in applying a fix.
 
-- This process can take some time, especially when coordination is required
+* This process can take some time, especially when coordination is required
   with maintainers of other projects. Every effort will be made to handle the
   bug in as timely a manner as possible; however, it's important that we follow
   the release process above to ensure that the disclosure is handled in a
   consistent manner.
 
-## Receiving security updates
+## 接收安全更新
 
-Security notifications will be distributed via the following methods.
+安全通知将通过以下方法分发。
 
-- [Google Group](https://groups.google.com/group/nodejs-sec)
-- [Node.js Blog](/blog)
+* [Google 群组](https://groups.google.com/group/nodejs-sec)
+* [Node.js Blog](/blog)
 
-## Comments on this policy
+## 对此政策的评论
 
 If you have suggestions on how this process could be improved please submit a
 [pull request](https://github.com/nodejs/nodejs.org) or
 [file an issue](https://github.com/nodejs/security-wg/issues/new) to discuss.
 
-## OpenSSF Best Practices
+## OpenSSF 最佳做法
 
-<a
-  href="https://bestpractices.coreinfrastructure.org/projects/29"
-  style={{ display: 'inline-flex' }}
->
-  <img
-    alt="OpenSSF Badge"
-    src="https://bestpractices.coreinfrastructure.org/projects/29/badge"
-    style={{ display: 'inline' }}
-  />
+<a href="https://bestpractices.coreinfrastructure.org/projects/29" style={{ display: 'inline-flex' }}>
+  <img alt="OpenSSF 徽章" src="https://bestpractices.coreinfrastructure.org/projects/29/badge" style={{ display: 'inline' }} />
 </a>
 
-The Open Source Security Foundation (OpenSSF) [Best Practices badge](https://github.com/coreinfrastructure/best-practices-badge) is a way for Free/Libre and Open Source Software (FLOSS) projects to show that they follow best practices. Projects can voluntarily self-certify how they follow each best practice. Consumers of the badge can quickly assess which FLOSS projects are following best practices and as a result are more likely to produce higher-quality secure software.
+开放源码安全基金会 [最佳做法徽章](https://github)。 自由/自由/开放源码软件(FLOSS)项目显示它们遵循最佳做法。 项目可以自愿自我证明它们如何遵循每一最佳做法。 徽章的消费者可以迅速评估哪些自由和开放源码软件项目遵循了最佳做法，因此更有可能生产质量更高的安全软件。
