@@ -25,8 +25,13 @@ Node.js 프로젝트는 [Consensus Seeking][] 의사 결정 모델을 따릅니�
 이 위원회는 프로젝트의 고수준 지침을 책임지고 있습니다.
 
 [consensus seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
+
 [readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
+
 [tsc]: https://github.com/nodejs/TSC
+
 [technical steering committee (tsc)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
+
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
+
 [nodejs/node]: https://github.com/nodejs/node
