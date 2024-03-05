@@ -10,7 +10,7 @@ const loadLocaleDictionary = async (locale: string) => {
     return import('./i18n/locales/en.json').then(f => f.default);
   }
 
-  if (locale in availableLocaleCodes) {
+  if (availableLocaleCodes.includes(locale)) {
     // Other languages don't really require HMR as they will never be development languages
     // so we can load them dynamically
     return import(`./i18n/locales/${locale}.json`).then(f => f.default);
