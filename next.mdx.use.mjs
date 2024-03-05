@@ -84,8 +84,6 @@ export const mdxComponents = {
     // Renders a Release CodeBox
     ReleaseCodeBox: ReleaseCodeBox,
   },
-  // Renders a Next.js Image Component for rendering images
-  Image: Image,
 };
 
 /**
@@ -100,4 +98,6 @@ export const htmlComponents = {
   blockquote: Blockquote,
   // Renders a CodeBox Component for `pre` tags
   pre: MDXCodeBox,
+  // Renders a Next.js Image Component for `img` tags
+  img: Image,
 };
