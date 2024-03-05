@@ -1,0 +1,59 @@
+---
+title: 보안 보고서 작성
+layout: about
+---
+
+# 보안 보고서 작성
+
+활성 보안 정책에 대한 자세한 내용은 [이 페이지](https://github.com/nodejs/node/security/policy)를 확인하십시오.
+
+## Node.js에서 버그 보고
+
+[HackerOne](https://hackerone.com/nodejs)을 통해 Node.js의 보안 버그를 신고하십시오.
+
+귀하의 보고서는 5일 이내에 확인되며, 제출한 문제에 대한 다음 단계를 나타내는 보다 자세한 응답은 10일 이내에 받게 됩니다.
+
+귀하의 보고서에 대한 초기 응답 이후, 보안 팀은 문제 해결을 위한 진행 상황을 알려주기 위해 노력하며 완전한 해결책과 공지를 위해 추가 정보나 지침을 요청할 수도 있습니다.
+
+### Node.js 버그 바운티 프로그램
+
+Node.js 프로젝트는 보안 연구원과 책임 있는 공개 공개를 위한 공식 버그 바운티 프로그램에 참여합니다. 이 프로그램은 HackerOne 플랫폼을 통해 관리됩니다. 자세한 내용은 [https://hackerone.com/nodejs](https://hackerone.com/nodejs)를 참조하십시오.
+
+## 제 3자 모듈의 버그 신고
+
+타사 모듈의 보안 버그는 해당 유지보수자에게 보고되어야 합니다.
+
+## 공개 정책
+
+Node.js의 보안 공개 정책은 여기에 있습니다.
+
+* 보안 보고서가 접수되어 주요 담당자에게 할당됩니다. 이 사람은 수정 및 릴리스 프로세스를 조정할 것입니다. 문제가 확인되고 영향을 받는 모든 버전의 목록이 결정됩니다. 잠재적으로 유사한 문제를 찾기 위해 코드를 감사합니다. 여전히 유지되는 모든 릴리스에 대해 수정이 준비됩니다. 이러한 수정은 공개 저장소에 커밋되지 않고 공지가 발표될 때까지 로컬로 보관됩니다.
+
+* 이 취약성에 대한 제안된 비밀 유지 날짜가 선택되고 CVE(Common Vulnerabilities and Exposures (CVE®))가 취약성을 위해 요청됩니다.
+
+* 비밀 유지 날짜에 Node.js 보안 메일링 리스트에 공지 사본이 전송됩니다. 변경 사항이 공개 저장소로 푸시되고 새로운 빌드가 nodejs.org에 배포됩니다. 메일링 리스트가 통보된 후 6시간 이내에 공지 사항의 사본이 Node.js 블로그에 게시됩니다.
+
+* 일반적으로 CVE가 발행된 시간으로부터 72시간 후에 비밀 유지 날짜가 설정됩니다. 그러나 버그의 심각성이나 수정의 어려움에 따라 다를 수 있습니다.
+
+* 이 프로세스는 다른 프로젝트의 유지보수자와의 협조가 필요한 경우에 특히 시간이 소요될 수 있습니다. 가능한 한 신속하게 버그를 처리하기 위해 모든 노력이 기울여질 것이지만, 공개가 일관된 방식으로 처리되도록 위의 릴리스 프로세스를 따르는 것이 중요합니다.
+
+## 보안 업데이트 수신
+
+보안 알림은 다음 방법으로 배포됩니다.
+
+* [Google Group](https://groups.google.com/group/nodejs-sec)
+* [Node.js Blog](/blog)
+
+## Comments on this policy
+
+If you have suggestions on how this process could be improved please submit a
+[pull request](https://github.com/nodejs/nodejs.org) or
+[file an issue](https://github.com/nodejs/security-wg/issues/new) to discuss.
+
+## OpenSSF Best Practices
+
+<a href="https://bestpractices.coreinfrastructure.org/projects/29" style={{ display: 'inline-flex' }}>
+  <img alt="OpenSSF Badge" src="https://bestpractices.coreinfrastructure.org/projects/29/badge" style={{ display: 'inline' }} />
+</a>
+
+오픈 소스 보안 재단(OpenSSF) [Best Practices badge](https://github.com/coreinfrastructure/best-practices-badge)는 자유/리브레 및 오픈 소스 소프트웨어(FLOSS) 프로젝트가 최고의 실천 방법을 준수하는 방법을 보여주는 방법입니다. 프로젝트는 각 최고의 실천 방법을 어떻게 따르는지 자발적으로 자격을 인증할 수 있습니다. 뱃지의 소비자는 빠르게 어떤 FLOSS 프로젝트가 최고의 실천 방법을 따르고 있는지를 평가할 수 있으며, 그 결과로 더 높은 품질의 안전한 소프트웨어를 생산할 가능성이 더 높습니다.
