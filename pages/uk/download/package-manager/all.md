@@ -5,9 +5,9 @@ title: Установка Node.js через менеджер пакетів
 
 # Установка Node.js через менеджер пакетів
 
-> The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
+> Пакети на цій сторінці підтримуються та підтримуються їх відповідними пакетами, \*\*не є основною командою Node.js. Будь ласка, повідомте про будь-які проблеми, що виникли з технічним обслуговуванням пакету. Якщо виявиться, що ваша проблема — це помилка в самому Node.js, супроводжуючий користувач буде повідомляти про проблему з upstream.
 
----
+***
 
 - [Alpine Linux](#alpine-linux)
 - [Android](#android)
@@ -33,7 +33,7 @@ title: Установка Node.js через менеджер пакетів
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
----
+***
 
 ## Alpine Linux
 
@@ -43,7 +43,7 @@ Node.js ДПС (LTS) та пакети npm доступні в головном�
 apk add nodejs npm
 ```
 
-Node.js Current can be installed from the Community Repository.
+Node.js поточний може бути встановлений з репозиторію спільноти.
 
 ```bash
 apk add nodejs-current
@@ -59,7 +59,7 @@ apk add nodejs-current
 pkg install nodejs
 ```
 
-Currently, Termux Node.js binaries are linked against `system-icu` (depending on `libicu` package).
+В даний час двійкові файли Node.js пов'язані з `system-icu` (в залежності від пакета `libicu`).
 
 ## Arch Linux
 
@@ -77,8 +77,8 @@ Node.js доступний як модуль із назвою `nodejs` у CentO
 dnf module install nodejs:<stream>
 ```
 
-where `<stream>` corresponds to the major version of Node.js.
-To see a list of available streams:
+де `<stream>` відповідає основній версії Node.js.
+Щоб побачити список доступних потоків:
 
 ```bash
 dnf module list nodejs
@@ -94,36 +94,36 @@ dnf module install nodejs:18/common
 
 Ці ресурси надають пакети, які сумісні з CentOS, Fedora та RHEL.
 
-- [Node.js snaps](#snap) maintained and supported at https\://github.com/nodejs/snap
+- [Node.js знімки](#snap) підтримується та підтримується в https\://github.com/nodejs/snap
 - [Node.js binary distributions](#debian-and-ubuntu-based-linux-distributions) maintained and supported by [NodeSource](https://github.com/nodesource/distributions)
 
 ## Дистрибутиви Linux, які базуються на Debian та Ubuntu
 
-[Node.js binary distributions](https://github.com/nodesource/distributions) are available from NodeSource.
+[Двійкові розподіли Node.js](https://github.com/nodesource/distributions) доступні з NodeSource.
 
 ### Альтернативи
 
-Packages compatible with Debian and Ubuntu based Linux distributions are available via [Node.js snaps](#snap).
+Пакети, сумісні з Debian та Ubuntu на основі Linux розділів доступні через [Node.js snaps](#snap).
 
 ## fnm
 
 Швидкий і простий менеджер версій Node.js, створений на Rust, використовується для керування багатьох випущених версій Node.js. Він дозволяє виконувати такі операції, як установка, видалення, автоматична зміна версій Node залежно від поточної директорії тощо.
 Щоб установити fnm, [перейдіть сюди](https://github.com/Schniz/fnm#using-a-script-macoslinux).
 
-fnm has cross-platform support (macOS, Windows, Linux) & all popular shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
-fnm is built with speed in mind and compatibility support for `.node-version` and `.nvmrc` files.
+fnm має крос-платформну підтримку (macOS, Windows, Linux) і всі популярні оболонки (Bash, Zsh, Fish, PowerShell, командний рядок Windows).
+fnm побудований зі швидкістю мозку і сумісністю для файлів `.node-version` і `.nvmrc`.
 
 ## FreeBSD
 
 Останній випуск Node.js доступний на порті [www/node](https://www.freshports.org/www/node).
 
-Install a binary package via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
+Встановіть двійковий пакет через [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
 ```bash
 pkg install node
 ```
 
-Or compile it on your own using [ports](https://www.freebsd.org/cgi/man.cgi?ports):
+Або компілюйте їх самостійно за допомогою [ports](https://www.freebsd.org/cgi/man.cgi?ports):
 
 ```bash
 cd /usr/ports/www/node && make install
@@ -131,7 +131,7 @@ cd /usr/ports/www/node && make install
 
 ## Gentoo
 
-Node.js is available in the portage tree.
+Node.js доступний в портатному дереві.
 
 ```bash
 emerge nodejs
@@ -139,15 +139,15 @@ emerge nodejs
 
 ## IBM i
 
-LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](https://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs18`, `nodejs20` etc)
+LTS версії Node.js доступні з IBM, і доступні через [yum' менеджера пакетів](https://ibm.biz/ibmi-rpms). Пакетна назва є `nodejs`, за яким йде основний номер версії (наприклад, `nodejs18`, `nodejs20` тощо)
 
-To install Node.js 20.x from the command line, run the following as a user with \*ALLOBJ special authority:
+Щоб встановити Node.js 20.x з командного рядка, запустіть наступне як користувач з спеціальними органами \*ALLOBJ:
 
 ```bash
 yum install nodejs20
 ```
 
-Node.js can also be installed with the IBM i Access Client Solutions product. See [this support document](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) for more details
+Node.js також може бути встановлений за допомогою продуктів IBM для доступу до клієнтських солей. Див. [цей документ підтримки](http://www-01.ibm.com/support/docview.ws?uid=nas8N1022619) для деталей
 
 ## macOS
 
@@ -178,13 +178,13 @@ port install nodejs7
 
 Через **[pkgsrc](https://pkgsrc.joyent.com/install-on-macos/)**:
 
-Install the binary package:
+Встановіть двійковий пакет:
 
 ```bash
 pkgin -y install nodejs
 ```
 
-Or build manually from pkgsrc:
+Або побудувати вручну з pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
@@ -196,9 +196,9 @@ cd pkgsrc/lang/nodejs && bmake install
 or select from a menu of previously downloaded versions. The versions are installed system-wide or user-wide, and for more
 targeted use you can run a version directly from the cached downloads.
 
-See the [homepage](https://github.com/tj/n) for install methods (bootstrap, npm, Homebrew, third-party), and all the usage details.
+Дивіться [homepage](https://github.com/tj/n) для встановлення методів (bootstrap, npm, Homebrew, третьої сторони), і всі деталі використання.
 
-If you already have `npm` then installing `n` and then the newest LTS `node` version is as simple as:
+Якщо у вас вже є `npm`, то встановіть `n` а потім найновіша версія `node` є такою ж простою:
 
 ```
 npm install -g n
@@ -207,13 +207,13 @@ n lts
 
 ## NetBSD
 
-Node.js is available in the pkgsrc tree:
+Node.js доступний в дереві pkgsrc:
 
 ```bash
 cd /usr/pkgsrc/lang/nodejs && make install
 ```
 
-Or install a binary package (if available for your platform) using pkgin:
+Або встановити бінарний пакет (якщо він доступний для вашої платформи) за допомогою pkgin:
 
 ```bash
 pkgin -y install nodejs
@@ -221,9 +221,9 @@ pkgin -y install nodejs
 
 ## Nodenv
 
-`nodenv` is a lightweight node version manager, similar to `nvm`. It's simple and predictable. A rich plugin ecosystem lets you tailor it to suit your needs. Use `nodenv` to pick a Node version for your application and guarantee that your development environment matches production.
+`nodenv` є легкою версією диспетчера вузлів, подібно до `nvm`. Це просто і передбачуване. Багата екосистема дозволяє адаптувати її до ваших потреб. Використовуйте `nodenv`, щоб вибрати версію вузла для вашої програми і гарантувати, що середовище розробки відповідає виробництву.
 
-Nodenv installation instructions are maintained [on its Github page](https://github.com/nodenv/nodenv#installation). Please visit that page to ensure you're following the latest version of the installation steps.
+Інструкції для установки вузла підтримуються [на своїй сторінці Github (https\://github.com/nodenv/nodenv#installation). Будь ласка, відвідайте цю сторінку, щоб переконатися, що ви дотримуєтесь останньої версії кроків встановлення.
 
 ## nvm
 
@@ -257,11 +257,11 @@ nvm uninstall 8
 
 #### Windows
 
-The `nvs` version manager is cross-platform and can be used on Windows, macOS, and Unix-like systems
+Менеджер версій `nvs` користується крос-платформою і може бути використаний на Windows, macOS та в схожих на Unix-системи
 
-To install `nvs` on Windows go to the [release page](https://github.com/jasongin/nvs/releases) here and download the MSI installer file of the latest release.
+Щоб встановити `nvs` на Windows, перейдіть на [сторінку релізу](https://github.com/jasongin/nvs/releases) і завантажте файл інсталятора MSI останнього релізу.
 
-You can also use `chocolatey` to install it:
+Ви також можете використати `chocolatey` для встановлення:
 
 ```bash
 choco install nvs
@@ -271,23 +271,23 @@ choco install nvs
 
 You can find the documentation regarding the installation steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
 
-#### Usage
+#### Використання
 
-After this you can use `nvs` to switch between different versions of node.
+Після цього ви зможете використовувати `nvs` для перемикання між різними версіями вузла.
 
-To add the latest version of node:
+Щоб додати останню версію вузла:
 
 ```bash
 nvs add latest
 ```
 
-Or to add the latest LTS version of node:
+Або додати останню версію LTS вузла:
 
 ```bash
 nvs add lts
 ```
 
-Then run the `nvs use` command to add a version of node to your `PATH` for the current shell:
+Потім запустіть команду `nvs use`, щоб додати версію вузла до вашого `PATH` для поточного шару:
 
 ```bash
 $ nvs use lts
@@ -295,7 +295,7 @@ PATH -= %LOCALAPPDATA%\nvs\default
 PATH += %LOCALAPPDATA%\nvs\node\14.17.0\x64
 ```
 
-To add it to `PATH` permanently, use `nvs link`:
+Щоб додати його до `PATH` безповоротно, використовуйте `nvs посилання`:
 
 ```bash
 nvs link lts
@@ -303,7 +303,7 @@ nvs link lts
 
 ## OpenBSD
 
-Node.js is available through the ports system.
+Node.js доступний через портову систему.
 
 ```bash
 /usr/ports/lang/node
@@ -317,32 +317,32 @@ pkg_add node
 
 ## openSUSE та SLE
 
-Node.js is available in the main repositories under the following packages:
+Node.js доступний в основних репозиторіях під такими пакетами:
 
 - **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
 - **openSUSE Tumbleweed**: `nodejs20`
 - **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, and `nodejs14`
   (The "Web and Scripting Module" must be [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
 - **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, and `nodejs14`
-  (The "Web and Scripting Module" must be [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
+  (Значення "Web and Scripting Module" має бути [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
 
-For example, to install Node.js 14.x on openSUSE Leap 15.2, run the following as root:
+Наприклад, для встановлення Node.js 14.x на openSUSE позиціонування 15.2 запустіть наступне як root:
 
 ```bash
 zypper install nodejs14
 ```
 
-Different major versions of Node can be installed and used concurrently.
+Різні основні версії вузла можуть бути встановлені та використані в даний час.
 
 ## SmartOS та illumos
 
-SmartOS images come with pkgsrc pre-installed. On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal:
+SmartOS зображення надходять з попередньо встановленим pkgsrc. У інших illumos розподілах спочатку встановіть **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, а потім ви можете встановити двійковий пакет як нормально:
 
 ```bash
 pkgin -y install nodejs
 ```
 
-Or build manually from pkgsrc:
+Або побудувати вручну з pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
@@ -350,11 +350,11 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## Snap
 
-[Node.js snaps](https://github.com/nodejs/snap) are available as [`node`](https://snapcraft.io/node) on the Snap store.
+[Node.js знімки](https://github.com/nodejs/snap) доступні як [`node`](https://snapcraft.io/node) в магазині знімків.
 
 ## Solus
 
-Solus provides Node.js in its main repository.
+Сол надає Node.js у своєму головному репозиторії.
 
 ```bash
 sudo eopkg install nodejs
@@ -362,7 +362,7 @@ sudo eopkg install nodejs
 
 ## Void Linux
 
-Void Linux ships Node.js stable in the main repository.
+Void Linux кораблі Node.js стабільні в головному репозиторії.
 
 ```bash
 xbps-install -Sy nodejs
@@ -370,11 +370,11 @@ xbps-install -Sy nodejs
 
 ## Windows
 
-Download the [Windows Installer](/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
+Завантажте [Windows Installer](/#home-downloadhead) безпосередньо з веб-сайту [nodejs.org](https://nodejs.org/).
 
 ### Альтернативи
 
-Using **[Winget](https://aka.ms/winget-cli)**:
+Використання **[Winget](https://aka.ms/winget-cli)**:
 
 ```bash
 winget install OpenJS.NodeJS
@@ -382,8 +382,8 @@ winget install OpenJS.NodeJS
 winget install OpenJS.NodeJS.LTS
 ```
 
-After running one of the two commands above, it may be necessary to restart the
-terminal emulator before the `node` CLI command becomes available.
+Після запуску однієї з двох команд вище, необхідно перезапустити емулятор
+терміналу до команди `node` CLI стає доступним.
 
 Через **[Chocolatey](https://chocolatey.org/)**:
 
@@ -403,8 +403,8 @@ scoop install nodejs-lts
 
 ## z/OS
 
-IBM&reg; SDK for Node.js - z/OS&reg; is available in two installation formats,
-SMP/E and PAX. Select the installation format that applies to you:
+IBM&reg; SDK для Node.js - z/OS&reg; доступний у двох форматах встановлення,
+SMP/E і PAX. Виберіть формат встановлення, який вам слід застосувати:
 
-- [Installing and configuring SMP/E edition of Node.js on z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
-- [Installing and configuring PAX edition of Node.js on z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)
+- [Встановлення та налаштування SMP/E видання Node.js на z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-smpe-edition)
+- [Встановлення та налаштування PAX видання Node.js на z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)
