@@ -1,28 +1,28 @@
 ---
-title: Collab Summit
+title: Vertice Collab
 layout: about
 ---
 
-# Collaborator Summit
+# Vertice Collaboratore
 
-Node.js's Collaborator Summit is an un-conference for bringing current and
-potential contributors together to discuss Node.js with lively collaboration,
-education, and knowledge sharing. Committees and working groups come together
-twice per year to make important decisions while also being able to work on some
-exciting efforts they want to push forward in-person.
+Node.js's Collaborator Summit è una un-conferenza per riunire i potenziali contributori attuali e
+per discutere Node.js con una vivace collaborazione, istruzione
+e condivisione delle conoscenze. Comitati e gruppi di lavoro si riuniscono
+due volte all'anno per prendere decisioni importanti e al tempo stesso poter lavorare su alcuni
+entusiasmanti sforzi che vogliono portare avanti di persona.
 
-## Who attends?
+## Chi partecipa?
 
-Anyone is welcome to attend Collab Summit. During the
-summit, leaders will help onboard new contributors to groups they'd love to help
-prior to integrating them into the working sessions.
+Chiunque è invitato a partecipare al Vertice di Collab. Durante il vertice
+, i leader aiuteranno a bordo di nuovi collaboratori per i gruppi che vorrebbero aiutare
+prima di integrarli nelle sessioni di lavoro.
 
-This is your opportunity to learn what is happening within the community to jump
-in and contribute with the skills you have and would like to hone.
+Questa è la tua opportunità di imparare ciò che sta accadendo all'interno della comunità per saltare
+dentro e contribuire con le abilità che hai e vorresti affinare.
 
-Working groups will put together a schedule so that people can
-familiarize themselves before folks get onsite, having the general collaborator
-discussions, and then dive into breakout sessions.
+Gruppi di lavoro metteranno insieme un programma in modo che le persone possono
+familiarizzare prima che le persone ottengono sul posto, avere il collaboratore generale
+discussioni, e poi tuffarsi in sessioni di breakout.
 
 We'd love to see you at Collab Summit! Check out the [Summit repo](https://github.com/nodejs/summit)
 for upcoming and past Collab Summits and have a look at the
