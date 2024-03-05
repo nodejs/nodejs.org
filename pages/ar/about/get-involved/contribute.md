@@ -1,47 +1,47 @@
 ---
-title: Contributing
+title: المساهمة
 layout: about
 ---
 
-# Contributing
+# المساهمة
 
-Thank you for your interest in contributing to Node.js! There are multiple ways and places you can contribute, and we're here to help facilitate that.
+شكرًا لك على اهتمامك بالمساهمة في Node.js! هناك طرق وأماكن متعددة يمكنك المساهمة بها، ونحن هنا للمساعدة في تيسير ذلك.
 
-## Asking for General Help
+## طلب مساعدة عامة
 
-Because the level of activity in the `nodejs/node` repository is so high, questions or requests for general help using Node.js should be directed at the [Node.js help repository](https://github.com/nodejs/help/issues).
+لأن مستوى النشاط في مستودع "العقدات/العقدة" مرتفع جداً، فإن أسئلة أو طلبات مساعدة عامة باستخدام العقدة. يجب أن تكون موجهة إلى [Node.js help repository](https://github.com/nodejs/help/issues).
 
-## Reporting an Issue
+## الإبلاغ عن مشكلة
 
-If you have found what you believe to be an issue with Node.js please do not hesitate to file an issue on the GitHub project. When filing your issue please make sure you can express the issue with a reproducible test case, and that test case should not include any external dependencies. That is to say, the test case can be executed without anything more than Node.js itself.
+إذا كنت قد وجدت ما تعتقد أنه مشكلة مع Node.js الرجاء عدم التردد في تسجيل مشكلة في مشروع GitHub . عند تقديم مشكلتك الرجاء التأكد من أنك تستطيع التعبير عن المشكلة مع حالة اختبار قابلة للتكرار، وينبغي ألا تشمل هذه الحالة الاختبارية أي تبعية خارجية. وهذا يعني أنه يمكن تنفيذ حالة الاختبار بدون أي شيء أكثر من Node.js نفسها.
 
-When reporting an issue we also need as much information about your environment that you can include. We never know what information will be pertinent when trying to narrow down the issue. Please include at least the following information:
+عندما نبلّغ عن مشكلة نحتاج أيضًا إلى ما يمكنك إدراجه من معلومات عن بيئتك. نحن لا نعرف أبدا ما هي المعلومات التي ستكون ذات صلة عند محاولة تضييق نطاق المشكلة. يرجى تضمين المعلومات التالية على الأقل:
 
-- Version of Node.js
-- Platform you're running on (macOS, SmartOS, Linux, Windows)
-- Architecture you're running on (32bit or 64bit and x86 or ARM)
+- إصدار Node.js
+- المنصة التي تشغلها (macOS, SmartOS, Linux, Windows)
+- الهندسة المعمارية التي تعمل عليها (32bit أو 64bit و x86 أو ARM)
 
-The Node.js project is currently managed across a number of separate GitHub repositories, each with their own separate issues database. If possible, please direct any issues you are reporting to the appropriate repository but don't worry if things happen to get put in the wrong place, the community of contributors will be more than happy to help get you pointed in the right direction.
+ويدار مشروع Node.js حاليا عبر عدد من مستودعات GitHub المنفصلة، لكل منها قاعدة بيانات مستقلة خاصة بها. إن أمكن، يرجى توجيه أي مشكلات تقوم بالإبلاغ عنها إلى المستودع المناسب ولكن لا تقلق إذا حدثت أشياء لوضعها في المكان الخاطئ. مجتمع المساهمين سيكون أكثر سعادته لمساعدتك على الوصول إليك في الاتجاه الصحيح.
 
-- To report issues specific to Node.js, please use [nodejs/node](https://github.com/nodejs/node)
-- To report issues specific to this website, please use [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
+- للإبلاغ عن المشكلات الخاصة بـ Node.js، يرجى استخدام [nodejs/node](https://github.com/nodejs/node)
+- للإبلاغ عن المشاكل الخاصة بهذا الموقع، يرجى استخدام [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
 
-## Code contributions
+## مساهمات البرمجة
 
-If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Contribution Guidelines](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). The review process by existing collaborators for all contributions to the project is explained there as well.
+إذا كنت ترغب في إصلاح الأخطاء أو إضافة ميزة جديدة إلى Node.js، الرجاء التأكد من الرجوع إلى [Node.js Contribution Guidelines](https\://github. وهناك أيضا شرح لعملية الاستعراض التي يقوم بها المتعاونون الحاليون بالنسبة لجميع المساهمات في المشروع.
 
-If you are wondering how to start, you can check [Node Todo](https://www.nodetodo.org/) which may guide you towards your first contribution.
+إذا كنت تتساءل عن كيفية البدء، يمكنك التحقق من [Dode Todo](https://www.nodetodo.org/) التي قد توجهك نحو مساهمتك الأولى.
 
-## Becoming a collaborator
+## أن تصبح متعاونا
 
-By becoming a collaborator, contributors can have even more impact on the project. They can help other contributors by reviewing their contributions, triage issues and take an even bigger part in shaping the project's future. Individuals identified by the TSC as making significant and valuable contributions across any Node.js repository may be made Collaborators and given commit access to the project. Activities taken into consideration include (but are not limited to) the quality of:
+ويمكن للمساهمين أن يكون لهم تأثير أكبر على المشروع من خلال مشاركتهم فيه. ويمكنها أن تساعد المساهمين الآخرين عن طريق استعراض مساهماتهم، والمسائل المتعلقة بالفرز والمشاركة بقدر أكبر في تشكيل مستقبل المشروع. الأفراد الذين حددتهم لجنة الخدمات التقنية على أنهم يقدمون مساهمات كبيرة وقيِّمة عبر أي عقدة. يمكن جعل المستودع متعاونين و منح الدخول الملتزم للمشروع. وتشمل الأنشطة التي تؤخذ في الاعتبار (ولكنها لا تقتصر على) نوعية ما يلي:
 
-- code commits and pull requests
-- documentation commits and pull requests
-- comments on issues and pull requests
-- contributions to the Node.js website
-- assistance provided to end users and novice contributors
-- participation in working groups
-- other participation in the wider Node.js community
+- أوامر التعليمات البرمجية و طلبات السحب
+- المستندات التزامات وطلبات السحب
+- تعليقات على المشكلات وطلبات السحب
+- المساهمات في موقع Node.js الإلكتروني
+- المساعدة المقدمة للمستخدمين النهائيين والمساهمين المبتدئين
+- المشاركة في الأفرقة العاملة
+- مشاركة أخرى في مجتمع Node.js الأوسع نطاقاً
 
-If individuals making valuable contributions do not believe they have been considered for commit access, they may [log an issue](https://github.com/nodejs/TSC/issues) or [contact a TSC member](https://github.com/nodejs/node#tsc-technical-steering-committee) directly.
+وإذا كان الأفراد الذين يقدمون مساهمات قيّمة لا يعتقدون أنهم اعتبروا ملزمين بالوصول، فيمكن لهم [تسجيل مشكلة] (https\://github. om/nodejs/TSC/issues) أو [اتصل بعضو TSC](https://github.com/nodejs/node#tsc-technical-steering-committee) مباشرة.

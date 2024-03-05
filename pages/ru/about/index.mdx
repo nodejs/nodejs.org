@@ -1,24 +1,20 @@
 ---
-title: About Node.js®
+title: О Node.js®️
 layout: about
 ---
 
-<div className="my-4 flex items-center justify-center">
-  <img
-    alt="Node.js mascot"
-    src="/static/images/node-mascot.svg"
-    className="w-[100px]"
-  />
+<div className="my-4 flex центр элементов оправдывающий центр">
+  <img alt="талисман Node.js" src="/static/images/node-mascot.svg" className="w-[100px]" />
 </div>
 
----
+***
 
-# About Node.js®
+# О Node.js®️
 
-As an asynchronous event-driven JavaScript runtime, Node.js is designed to build
-scalable network applications. In the following "hello world" example, many
-connections can be handled concurrently. Upon each connection, the callback is
-fired, but if there is no work to be done, Node.js will sleep.
+Являясь асинхронной программой выполнения JavaScript, Node.js разработан для сборки
+масштабируемых сетевых приложений. В следующем примере "hello world" множество соединений
+могут обрабатываться одновременно. При каждом соединении вызывается
+вызов, но если работа не будет выполнена, Node.js будет спать.
 
 ```js
 const http = require('node:http');
@@ -45,20 +41,20 @@ Node.js directly performs I/O, so the process never blocks except when the I/O i
 synchronous methods of Node.js standard library. Because nothing blocks, scalable systems are very
 reasonable to develop in Node.js.
 
-If some of this language is unfamiliar, there is a full article on
-\[Blocking vs. Non-Blocking]\[].
+Если некоторые из этих языков незнакомы, существует полная статья об
+\[Блокировка против блокировки]\[].
 
----
+***
 
-Node.js is similar in design to, and influenced by, systems like Ruby's
-\[Event Machine]\[] and Python's \[Twisted]\[]. Node.js takes the event model a bit
-further. It presents an event loop as a runtime construct instead of as a library. In other systems,
-there is always a blocking call to start the event-loop.
-Typically, behavior is defined through callbacks at the beginning of a script, and
-at the end a server is started through a blocking call like `EventMachine::run()`.
-In Node.js, there is no such start-the-event-loop call. Node.js simply enters the event loop after executing the input script. Node.js
-exits the event loop when there are no more callbacks to perform. This behavior
-is like browser JavaScript — the event loop is hidden from the user.
+Node.js разрабатывает такие системы, как
+\[Event Machine]\[] и \[Twisted]\[]. Node.js дальше принимает модель события немного
+. Он представляет цикл событий как конструкцию рабочего времени, а не как библиотеку. В других системах,
+всегда блокирует вызов, чтобы запустить цикл событий.
+Обычно поведение определяется через обратные вызовы в начале скрипта, и
+в конце сервера запускается через блокирующий вызов типа `EventMachine::run()`.
+В Node.js, нет такого запуска-циклического вызова event-cycle. Node.js просто входит в цикл событий после выполнения входного скрипта. Node.js
+завершает цикл события, когда больше нет обратных вызовов. Это поведение
+подобно браузеру JavaScript — цикл событий скрыт от пользователя.
 
 HTTP is a first-class citizen in Node.js, designed with streaming and low
 latency in mind. This makes Node.js well suited for the foundation of a web
@@ -71,8 +67,12 @@ communicate with. Built upon that same interface is the \[`cluster`]\[] module,
 which allows you to share sockets between processes to enable load balancing
 over your cores.
 
-[blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+[блокировка или неблокировка]: /learn/asynchronous-work/overviews-blocking-vs-non-blockking
+
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
-[`cluster`]: https://nodejs.org/api/cluster.html
-[event machine]: https://github.com/eventmachine/eventmachine
-[twisted]: https://twistedmatrix.com/trac/
+
+[«кластер»]: https://nodejs.org/api/cluster.html
+
+[машина событий]: https://github.com/eventmachine/eventmachine
+
+[закрученный]: https://twistedmatrix.com/trac/

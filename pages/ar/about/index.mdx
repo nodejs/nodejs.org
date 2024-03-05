@@ -1,24 +1,20 @@
 ---
-title: About Node.js®
+title: حول Node.js®️
 layout: about
 ---
 
-<div className="my-4 flex items-center justify-center">
-  <img
-    alt="Node.js mascot"
-    src="/static/images/node-mascot.svg"
-    className="w-[100px]"
-  />
+<div className="مركز المبررات للأصناف المرنة My-4">
+  <img alt="سماعة Node.js" src="/static/images/node-mascot.svg" className="w-[100px]" />
 </div>
 
----
+***
 
-# About Node.js®
+# حول Node.js®️
 
-As an asynchronous event-driven JavaScript runtime, Node.js is designed to build
-scalable network applications. In the following "hello world" example, many
-connections can be handled concurrently. Upon each connection, the callback is
-fired, but if there is no work to be done, Node.js will sleep.
+كفترة تشغيل جافا سكريبت مدفوعة بالحدث، تم تصميم Node.js لبناء
+تطبيقات الشبكة القابلة للتوسع. في المثال التالي "مرحبا بالعالم"، يمكن التعامل مع العديد من الاتصالات
+بشكل متزامن. عند كل اتصال، يتم إطلاق الرد على المكالمة
+ولكن إذا لم يكن هناك عمل يجب القيام به، فستنوم Node.js.
 
 ```js
 const http = require('node:http');
@@ -45,24 +41,24 @@ Node.js directly performs I/O, so the process never blocks except when the I/O i
 synchronous methods of Node.js standard library. Because nothing blocks, scalable systems are very
 reasonable to develop in Node.js.
 
-If some of this language is unfamiliar, there is a full article on
-\[Blocking vs. Non-Blocking]\[].
+إذا كانت بعض هذه اللغة غير مألوفة، هناك مقالة كاملة على
+\[حظر ضد غير حظر]\[].
 
----
+***
 
-Node.js is similar in design to, and influenced by, systems like Ruby's
-\[Event Machine]\[] and Python's \[Twisted]\[]. Node.js takes the event model a bit
-further. It presents an event loop as a runtime construct instead of as a library. In other systems,
-there is always a blocking call to start the event-loop.
-Typically, behavior is defined through callbacks at the beginning of a script, and
-at the end a server is started through a blocking call like `EventMachine::run()`.
-In Node.js, there is no such start-the-event-loop call. Node.js simply enters the event loop after executing the input script. Node.js
-exits the event loop when there are no more callbacks to perform. This behavior
-is like browser JavaScript — the event loop is hidden from the user.
+إن Node.js مشابهة في التصميم لنظم مثل روبي
+\[آلة الحدث] \[] و Python \[Twisted]\[]. Node.js تأخذ نموذج الحدث بقليل من
+أبعد من ذلك. وهي تقدم حلقة حدث كبناء لوقت التشغيل بدلا من أن تكون مكتبة. في أنظمة أخرى،
+هناك دائماً مكالمة حجب لبدء حلقة الحدث.
+عادة ما يتم تعريف السلوك من خلال ردود المكالمات في بداية البرنامج النصي, و
+في النهاية يتم تشغيل خادم من خلال منع المكالمة مثل `EventMachine::run()`.
+في Node.js، لا يوجد مثل هذا المكالمة الدائرة. node.js يدخل ببساطة حلقة الحدث بعد تنفيذ النص الإدخالي. يخرج Node.js
+حلقة الحدث عندما لا يكون هناك المزيد من ردود المكالمات لتنفيذها. هذا السلوك
+يشبه جافا سكريبت المتصفح - حلقة الحدث مخفية عن المستخدم.
 
-HTTP is a first-class citizen in Node.js, designed with streaming and low
-latency in mind. This makes Node.js well suited for the foundation of a web
-library or framework.
+HTTP هو مواطن من الدرجة الأولى في Node.js، مصمم مع الذاكرة في البث و الوقت المنخفض
+. وهذا يجعل Node.js مناسبة بشكل جيد لإنشاء مكتبة أو إطار ويب
+.
 
 Node.js being designed without threads doesn't mean you can't take
 advantage of multiple cores in your environment. Child processes can be spawned
@@ -71,8 +67,12 @@ communicate with. Built upon that same interface is the \[`cluster`]\[] module,
 which allows you to share sockets between processes to enable load balancing
 over your cores.
 
-[blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+[حظر ضد عدم حظر]: </learn/asynchronous-work/Overview of blocking-vs-non-block>
+
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
-[`cluster`]: https://nodejs.org/api/cluster.html
-[event machine]: https://github.com/eventmachine/eventmachine
-[twisted]: https://twistedmatrix.com/trac/
+
+[`مجموعة`]: https://nodejs.org/api/cluster.html
+
+[آلة الحدث]: https://github.com/eventmachine/eventmachine
+
+[التلاعب]: https://twistedmatrix.com/trac/

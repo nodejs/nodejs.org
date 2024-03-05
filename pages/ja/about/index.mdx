@@ -1,19 +1,15 @@
 ---
-title: About Node.js®
+title: Node.js について
 layout: about
 ---
 
-<div className="my-4 flex items-center justify-center">
-  <img
-    alt="Node.js mascot"
-    src="/static/images/node-mascot.svg"
-    className="w-[100px]"
-  />
+<div className="my-4 Flex items-center justify-center">
+  <img alt="Node.js のマスク" src="/static/images/node-maskot.svg" className="w-[100px]" />
 </div>
 
----
+***
 
-# About Node.js®
+# Node.js について
 
 As an asynchronous event-driven JavaScript runtime, Node.js is designed to build
 scalable network applications. In the following "hello world" example, many
@@ -45,10 +41,10 @@ Node.js directly performs I/O, so the process never blocks except when the I/O i
 synchronous methods of Node.js standard library. Because nothing blocks, scalable systems are very
 reasonable to develop in Node.js.
 
-If some of this language is unfamiliar, there is a full article on
-\[Blocking vs. Non-Blocking]\[].
+この言語のいくつかがよく知られていない場合は、
+\[Blocking vs. Non-Blocking]の記事があります。
 
----
+***
 
 Node.js is similar in design to, and influenced by, systems like Ruby's
 \[Event Machine]\[] and Python's \[Twisted]\[]. Node.js takes the event model a bit
@@ -71,8 +67,12 @@ communicate with. Built upon that same interface is the \[`cluster`]\[] module,
 which allows you to share sockets between processes to enable load balancing
 over your cores.
 
-[blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+[ブロッキング対ノンブロッキング]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
+
 [`cluster`]: https://nodejs.org/api/cluster.html
-[event machine]: https://github.com/eventmachine/eventmachine
-[twisted]: https://twistedmatrix.com/trac/
+
+[イベントマシン]: https://github.com/eventmachine/eventmachine
+
+[ツイスト]: https://wisteredmatrix.com/trac/

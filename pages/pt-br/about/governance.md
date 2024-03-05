@@ -1,35 +1,39 @@
 ---
-title: Project Governance
+title: Governança do projeto
 layout: about
 ---
 
-# Project Governance
+# Governança do Projeto
 
-## Consensus Seeking Process
+## Processo de Busca por Consenso
 
-The Node.js project follows a [Consensus Seeking][] decision making model.
+O projeto Node.js segue um modelo de tomada de decisão \[Consenso Seeking]\[].
 
-## Collaborators
+## Colaboradores
 
-The [nodejs/node][] core GitHub repository is maintained by the Collaborators
-who are added by the Technical Steering Committee ([TSC][]) on an ongoing basis.
 
-Individuals making significant and valuable contributions are made Collaborators
-and given commit-access to the project. These individuals are identified by the
-TSC and their nomination is discussed with the existing Collaborators.
+
+Indivíduos que fazem contribuições significativas e valiosas são feitos Colaboradores
+e dados o commit-access ao projeto. Essas pessoas são identificadas pelo TSC
+e sua nomeação é discutida com os colaboradores existentes.
 
 For the current list of Collaborators, see the project's [README.md][].
 
-A guide for Collaborators is maintained at [collaborator-guide.md][].
+Um guia para colaboradores é mantido em [collaborator-guide.md][].
 
-## Technical Steering Committee
+## Comitê Técnico Diretor
 
-The project is governed by the [Technical Steering Committee (TSC)][]
-which is responsible for high-level guidance of the project.
+O projeto é regido pelo \[Comité Técnico de Direção (TSC)]\[]
+que é responsável pela orientação de alto nível do projeto.
 
-[consensus seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
+[consensus seeking]: https://pt.wikipedia.org/wiki/Consense-seeking_decision-making
+
 [readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
+
 [tsc]: https://github.com/nodejs/TSC
+
 [technical steering committee (tsc)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
+
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
+
 [nodejs/node]: https://github.com/nodejs/node

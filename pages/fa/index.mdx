@@ -1,5 +1,5 @@
 ---
-title: Run JavaScript Everywhere
+title: اجرا جاوااسکریپت در همه جا
 layout: home
 ---
 
@@ -7,11 +7,11 @@ layout: home
   <WithBadge section="index" />
 
   <div>
-    <h1 className="special">Run JavaScript Everywhere</h1>
+    <h1 className="special">اجرا جاوااسکریپت در همه جا</h1>
 
-    Node.js® is a free, open-source, cross-platform JavaScript runtime
-    environment that lets developers create servers, web apps,
-    command line tools and scripts.
+    Node.js یک محیط اجرای جاوااسکریپت متن‌باز، رایگان و چندسکویی است
+    که به توسعه دهندگان اجازه می‌دهد تا سرورها، وب اپلیکیشن‌ها
+    ابزارهای خط فرمان و اسکریپت‌ها را ایجاد کنند.
 
   </div>
 
@@ -19,11 +19,11 @@ layout: home
     <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
       {({ release }) => (
         <>
-          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+          <DownloadButton release={release}>دانلود Node.js (نسخه پایدار)</DownloadButton>
           <small>
-            Downloads Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
-            Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
+            دانلود Node.js <b>{release.versionWithPrefix}</b>
+            <sup title="دانلود نصب‌کننده Node.js برای پلتفرم فعلی شما">1</sup> با پشتیبانی بلندمدت.
+            Node.js همچنین از طریق <a href="/download/package-manager">package managers</a> نیز قابل نصب است.
           </small>
         </>
       )}

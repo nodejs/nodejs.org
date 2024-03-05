@@ -1,89 +1,82 @@
 ---
-title: Security Reporting
+title: Segnalazione Di Sicurezza
 layout: about
 ---
 
-# Security Reporting
+# Segnalazione Di Sicurezza
 
-For more details on active Security Policies, checkout [this page](https://github.com/nodejs/node/security/policy).
+Per maggiori dettagli sulle Politiche di Sicurezza attive, controlla [questa pagina](https://github.com/nodejs/node/security/policy).
 
-## Reporting a bug in Node.js
+## Segnalare un bug in Node.js
 
-Report security bugs in Node.js via [HackerOne](https://hackerone.com/nodejs).
+Segnala bug di sicurezza in Node.js via [HackerOne](https://hackerone.com/nodejs).
 
-Your report will be acknowledged within 5 days, and you'll receive a more
-detailed response to your report within 10 days indicating the next steps in
-handling your submission.
+Il tuo rapporto sarà riconosciuto entro 5 giorni, e riceverai una risposta più dettagliata
+al tuo report entro 10 giorni indicando i prossimi passi in
+per gestire la tua presentazione.
 
-After the initial reply to your report, the security team will endeavor to keep
-you informed of the progress being made towards a fix and full announcement,
-and may ask for additional information or guidance surrounding the reported
-issue.
+Dopo la prima risposta al tuo rapporto, il team di sicurezza si impegnerà a tenere
+informati dei progressi compiuti verso una correzione e un annuncio completo,
+e può chiedere ulteriori informazioni o indicazioni sul problema
+riportato.
 
-### Node.js bug bounty program
+### Programma bounty bug Node.js
 
-The Node.js project engages in an official bug bounty program for security
-researchers and responsible public disclosures. The program is managed through
-the HackerOne platform. See [https://hackerone.com/nodejs](https://hackerone.com/nodejs) for further details.
+Il progetto Node.js si impegna in un programma ufficiale bug bounty per i ricercatori di sicurezza
+e la divulgazione pubblica responsabile. Il programma è gestito tramite
+la piattaforma HackerOne. Vedi [https://hackerone.com/nodejs](https://hackerone.com/nodejs) per ulteriori dettagli.
 
-## Reporting a bug in a third party module
+## Segnalare un bug in un modulo di terze parti
 
-Security bugs in third party modules should be reported to their respective
-maintainers.
+I bug di sicurezza nei moduli di terze parti devono essere segnalati ai rispettivi manutentori
+.
 
-## Disclosure policy
+## Politica di divulgazione
 
-Here is the security disclosure policy for Node.js
+Ecco la politica di divulgazione di sicurezza per Node.js
 
-- The security report is received and is assigned a primary handler. This
-  person will coordinate the fix and release process. The problem is confirmed
-  and a list of all affected versions is determined. Code is audited to find
-  any potential similar problems. Fixes are prepared for all releases which are
-  still under maintenance. These fixes are not committed to the public
-  repository but rather held locally pending the announcement.
+* Il report di sicurezza viene ricevuto e viene assegnato un gestore primario. Questa persona
+  coordinerà il processo di correzione e rilascio. Il problema è confermato
+  e viene determinato un elenco di tutte le versioni interessate. Il codice è controllato per trovare
+  eventuali problemi simili. Correzioni sono preparate per tutte le versioni che sono
+  ancora in manutenzione. Queste correzioni non sono impegnate nel repository pubblico
+  ma sono detenute localmente in attesa dell'annuncio.
 
-- A suggested embargo date for this vulnerability is chosen and a CVE (Common
-  Vulnerabilities and Exposures (CVE®)) is requested for the vulnerability.
+* Per questa vulnerabilità è stata scelta una data di embargo suggerita e per la vulnerabilità è richiesto un CVE (Common
+  Vulnerabilities and Exposures (CVE®️)).
 
-- On the embargo date, the Node.js security mailing list is sent a copy of the
-  announcement. The changes are pushed to the public repository and new builds
-  are deployed to nodejs.org. Within 6 hours of the mailing list being
-  notified, a copy of the advisory will be published on the Node.js blog.
+* Alla data dell'embargo, alla mailing list di sicurezza Node.js viene inviata una copia dell'annuncio
+  . Le modifiche vengono inviate al repository pubblico e le nuove build
+  vengono distribuite ai nodej. rg. Entro 6 ore dalla notifica della mailing list
+  , una copia del consulente sarà pubblicata sul blog Node.js.
 
-- Typically the embargo date will be set 72 hours from the time the CVE is
+* Typically the embargo date will be set 72 hours from the time the CVE is
   issued. However, this may vary depending on the severity of the bug or
   difficulty in applying a fix.
 
-- This process can take some time, especially when coordination is required
-  with maintainers of other projects. Every effort will be made to handle the
-  bug in as timely a manner as possible; however, it's important that we follow
-  the release process above to ensure that the disclosure is handled in a
-  consistent manner.
+* Questo processo può richiedere un certo tempo, soprattutto quando è richiesta la coordinazione
+  con i manutentori di altri progetti. Ogni sforzo sarà fatto per gestire il bug
+  nel modo più tempestivo possibile; tuttavia, è importante seguire
+  il processo di rilascio di cui sopra per garantire che la divulgazione sia gestita in modo coerente
+  .
 
-## Receiving security updates
+## Ricezione aggiornamenti di sicurezza
 
-Security notifications will be distributed via the following methods.
+Le notifiche di sicurezza saranno distribuite tramite i seguenti metodi.
 
-- [Google Group](https://groups.google.com/group/nodejs-sec)
-- [Node.js Blog](/blog)
+* [Google Group](https://groups.google.com/group/nodejs-sec)
+* [Node.js Blog](/blog)
 
-## Comments on this policy
+## Osservazioni su questa politica
 
 If you have suggestions on how this process could be improved please submit a
 [pull request](https://github.com/nodejs/nodejs.org) or
 [file an issue](https://github.com/nodejs/security-wg/issues/new) to discuss.
 
-## OpenSSF Best Practices
+## Migliori Pratiche OpenSSF
 
-<a
-  href="https://bestpractices.coreinfrastructure.org/projects/29"
-  style={{ display: 'inline-flex' }}
->
-  <img
-    alt="OpenSSF Badge"
-    src="https://bestpractices.coreinfrastructure.org/projects/29/badge"
-    style={{ display: 'inline' }}
-  />
+<a href="https://bestpractices.coreinfrastructure.org/projects/29" style={{ display: 'inline-flex' }}>
+  <img alt="Distintivo OpenSSF" src="https://bestpractices.coreinfrastructure.org/projects/29/badge" style={{ display: 'inline' }} />
 </a>
 
-The Open Source Security Foundation (OpenSSF) [Best Practices badge](https://github.com/coreinfrastructure/best-practices-badge) is a way for Free/Libre and Open Source Software (FLOSS) projects to show that they follow best practices. Projects can voluntarily self-certify how they follow each best practice. Consumers of the badge can quickly assess which FLOSS projects are following best practices and as a result are more likely to produce higher-quality secure software.
+La Open Source Security Foundation (OpenSSF) \[badge per le migliori pratiche]\(https://github. om/coreinfrastructure/best practices-badge) è un modo per i progetti Free/Libre e Open Source Software (FLOSS) per dimostrare che seguono le migliori pratiche. I progetti possono autocertificare volontariamente come seguono ogni migliore prassi. I consumatori del badge possono valutare rapidamente quali progetti FLOSS stanno seguendo le migliori pratiche e di conseguenza sono più propensi a produrre software sicuro di alta qualità.
