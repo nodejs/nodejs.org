@@ -7,7 +7,7 @@ title: Установка Node.js через менеджер пакетів
 
 > Пакети на цій сторінці підтримуються та підтримуються їх відповідними пакетами, \*\*не є основною командою Node.js. Будь ласка, повідомте про будь-які проблеми, що виникли з технічним обслуговуванням пакету. Якщо виявиться, що ваша проблема — це помилка в самому Node.js, супроводжуючий користувач буде повідомляти про проблему з upstream.
 
----
+***
 
 - [Alpine Linux](#alpine-linux)
 - [Android](#android)
@@ -33,7 +33,7 @@ title: Установка Node.js через менеджер пакетів
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
----
+***
 
 ## Alpine Linux
 
@@ -95,7 +95,7 @@ dnf module install nodejs:18/common
 Ці ресурси надають пакети, які сумісні з CentOS, Fedora та RHEL.
 
 - [Node.js знімки](#snap) підтримується та підтримується в https\://github.com/nodejs/snap
-- [Node.js binary distributions](#debian-and-ubuntu-based-linux-distributions) maintained and supported by [NodeSource](https://github.com/nodesource/distributions)
+- [Дистрибутиви бінарних файлів Node.js](#debian-and-ubuntu-based-linux-distributions) підтримуються та підтримуються [NodeSource](https://github.com/nodesource/distributions)
 
 ## Дистрибутиви Linux, які базуються на Debian та Ubuntu
 
@@ -192,9 +192,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## n
 
-`n` is a simple to use Node.js version manager for Mac and Linux. Specify the target version to install using a rich syntax,
-or select from a menu of previously downloaded versions. The versions are installed system-wide or user-wide, and for more
-targeted use you can run a version directly from the cached downloads.
+`n` - простий у використанні менеджер версій Node.js для Mac і Linux. Вкажіть цільову версію для встановлення за допомогою багатофункціонального синтаксису, або виберіть з меню раніше завантажених версій. Версії встановлюються системно або для користувача, і для більш точного використання ви можете запустити версію безпосередньо з кешованих завантажень.
 
 Дивіться [homepage](https://github.com/tj/n) для встановлення методів (bootstrap, npm, Homebrew, третьої сторони), і всі деталі використання.
 
@@ -227,27 +225,21 @@ pkgin -y install nodejs
 
 ## nvm
 
-Node Version Manager is a bash script used to manage multiple released Node.js versions. It allows
-you to perform operations like install, uninstall, switch version, etc.
-To install nvm, use this [install script](https://github.com/nvm-sh/nvm#install--update-script).
+Менеджер версій Node - це сценарій bash, який використовується для управління багатьма випущеними версіями Node.js. Він дозволяє виконувати операції, такі як встановлення, видалення, зміна версії тощо. Для установки nvm використовуйте цей [сценарій встановлення](https://github.com/nvm-sh/nvm#install--update-script).
 
-On Unix / OS X systems Node.js built from source can be installed using
-[nvm](https://github.com/creationix/nvm) by installing into the location that nvm expects:
+На системах Unix / OS X Node.js, зібраний з вихідних текстів, можна встановити, використовуючи [nvm](https://github.com/creationix/nvm), встановивши в те місце, яке очікує nvm:
 
 ```bash
 env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
-After this you can use `nvm` to switch between released versions and versions
-built from source.
-For example, if the version of Node.js is v8.0.0-pre:
+Після цього ви можете використовувати `nvm` для перемикання між випущеними версіями та версіями, зібраними з вихідних текстів. Наприклад, якщо версія Node.js - v8.0.0-pre:
 
 ```bash
 nvm use 8
 ```
 
-Once the official release is out you will want to uninstall the version built
-from source:
+Після того, як буде офіційний реліз, ви захочете деінсталювати версію, зібрану з вихідних текстів:
 
 ```bash
 nvm uninstall 8
@@ -269,7 +261,7 @@ choco install nvs
 
 #### macOS,UnixLike
 
-You can find the documentation regarding the installation steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
+Документацію щодо кроків установки `nvs` в macOS/подібних до Unix-систем можна знайти [тут](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
 
 #### Використання
 
@@ -309,7 +301,7 @@ Node.js доступний через портову систему.
 /usr/ports/lang/node
 ```
 
-Using [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
+Використання [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) на OpenBSD:
 
 ```bash
 pkg_add node
@@ -321,8 +313,7 @@ Node.js доступний в основних репозиторіях під �
 
 - **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
 - **openSUSE Tumbleweed**: `nodejs20`
-- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, and `nodejs14`
-  (The "Web and Scripting Module" must be [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
+- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12` та `nodejs14` (Модуль "Web and Scripting Module" повинен бути [увімкнений](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
 - **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, and `nodejs14`
   (Значення "Web and Scripting Module" має бути [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
 
