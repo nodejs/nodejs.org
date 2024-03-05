@@ -5,15 +5,15 @@ title: 通过软件包管理器安装 Node.js
 
 # 通过软件包管理器安装 Node.js
 
-> 此页面上的软件包是由各自的软件包软件包管理和支持的，**不是** Node.js核心团队。 请将您遇到的任何问题报告给软件包维护者。 如果你的问题在Node.js本身是一个错误，维护者将向上报告这个问题。
+> 此页面上的软件包是由各自的软件包维护者管理并支持的，**而不是** Node.js 核心团队。 请将您遇到的任何问题报告给软件包维护者。如果你的问题在 Node.js 本身是一个错误，维护者将向上报告这个问题。
 
----
+***
 
 - [Alpine Linux](#alpine-linux)
 - [Android](#android)
 - [Arch Linux](#arch-linux)
 - [CentOS, Fedora and Red Hat Enterprise Linux](#centos-fedora-and-hat-enterprise-linux)
-- [基于 Debian 和 Ubuntu 的 Linux 发行版](#debian-andubuntu-based-linux-distribution)
+- [基于 Debian 与 Ubuntu 的 Linux 发行版](#debian-andubuntu-based-linux-distribution)
 - [fnm](#fnm)
 - [FreeBSD](#freebsd)
 - [Gentoo](#gentoo)
@@ -25,15 +25,15 @@ title: 通过软件包管理器安装 Node.js
 - [nvm](#nvm)
 - [nvs](#nvs)
 - [OpenBSD](#openbsd)
-- [openSUSE 和 SLE](#opensused-sle)
-- [SmartOS and illumos](#smartos-andillumos)
+- [openSUSE 与 SLE](#opensused-sle)
+- [SmartOS 与 illumos](#smartos-andillumos)
 - [Snap](#snap)
 - [Solus](#solus)
 - [无效线性](#void-linux)
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
----
+***
 
 ## Alpine Linux
 
@@ -43,7 +43,7 @@ Node.js LTS 和 npm 软件包可在主仓库中获得。
 apk add nodejs npm
 ```
 
-Node.js Current 可以从社区仓库安装。
+Node.js Current 可从社区仓库安装。
 
 ```bash
 apk add nodejs-current
@@ -95,7 +95,7 @@ dnf module install nodejs:18/common
 这些资源提供了与CentOS、Fedora和RHEL兼容的包。
 
 - [Node.js snaps](#snap) 维护和支持 https\://github.com/nodejs/snap
-- [Node.js binary distributions](#debian-and-ubuntu-based-linux-distributions) maintained and supported by [NodeSource](https://github.com/nodesource/distributions)
+- [Node.js 二进制发行版](#debian-and-ubuntu-based-linux-distributions) 由 [NodeSource](https://github.com/nodesource/distributions) 维护和支持
 
 ## 基于 Debian 和 Ubuntu 的 Linux 分布
 
@@ -269,7 +269,7 @@ choco install nvs
 
 #### macOS,UnixLike
 
-You can find the documentation regarding the installation steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
+您可以在 macOS/类Unix 系统中找到有关安装 `nvs` 步骤的文档 [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
 
 #### 用法
 
