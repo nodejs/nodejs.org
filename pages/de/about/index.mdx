@@ -1,24 +1,20 @@
 ---
-title: About Node.js®
+title: "Über Node.js:registriert:"
 layout: about
 ---
 
 <div className="my-4 flex items-center justify-center">
-  <img
-    alt="Node.js mascot"
-    src="/static/images/node-mascot.svg"
-    className="w-[100px]"
-  />
+  <img alt="Node.js Maskottchen" src="/static/images/node-mascot.svg" className="w-[100px]" />
 </div>
 
----
+***
 
-# About Node.js®
+# Über Node.js:registriert:
 
-As an asynchronous event-driven JavaScript runtime, Node.js is designed to build
-scalable network applications. In the following "hello world" example, many
-connections can be handled concurrently. Upon each connection, the callback is
-fired, but if there is no work to be done, Node.js will sleep.
+Als asynchrone ereignisgesteuerte JavaScript-Laufzeit ist Node.js so konzipiert, dass sie
+skalierbare Netzwerk-Anwendungen erstellen. Im folgenden Beispiel "Hallo Welt" können viele
+Verbindungen gleichzeitig gehandhabt werden. Bei jeder Verbindung wird der Callback
+feuert, aber wenn keine Arbeit zu erledigen ist, wird Node.js schlafen.
 
 ```js
 const http = require('node:http');
@@ -37,42 +33,46 @@ server.listen(port, hostname, () => {
 });
 ```
 
-This is in contrast to today's more common concurrency model, in which OS threads
-are employed. Thread-based networking is relatively inefficient and very
-difficult to use. Furthermore, users of Node.js are free from worries of
-dead-locking the process, since there are no locks. Almost no function in
-Node.js directly performs I/O, so the process never blocks except when the I/O is performed using
-synchronous methods of Node.js standard library. Because nothing blocks, scalable systems are very
-reasonable to develop in Node.js.
+Dies steht im Gegensatz zu dem heute verbreiteten, gemeinsamen Modell, in dem Betriebssystem-Threads
+verwendet werden. Thread-basierte Netzwerke sind relativ ineffizient und sehr
+schwer zu bedienen. Außerdem sind Benutzer von Node.js frei von Sorgen, dass
+den Prozess blockiert, da es keine Sperren gibt. Fast keine Funktion in
+Knoten. s führt direkt I/O aus, so dass der Prozess nur blockiert, wenn die I/O mit
+synchronen Methoden des Knotens ausgeführt wird. s Standard-Bibliothek. Da nichts blockiert, sind skalierbare Systeme sehr
+vernünftig, um sich in Node.js zu entwickeln.
 
-If some of this language is unfamiliar, there is a full article on
-\[Blocking vs. Non-Blocking]\[].
+Wenn ein Teil dieser Sprache nicht bekannt ist, gibt es einen vollständigen Artikel über
+\[Blockieren vs. Non-Blocking]\[].
 
----
+***
 
-Node.js is similar in design to, and influenced by, systems like Ruby's
-\[Event Machine]\[] and Python's \[Twisted]\[]. Node.js takes the event model a bit
-further. It presents an event loop as a runtime construct instead of as a library. In other systems,
-there is always a blocking call to start the event-loop.
-Typically, behavior is defined through callbacks at the beginning of a script, and
-at the end a server is started through a blocking call like `EventMachine::run()`.
-In Node.js, there is no such start-the-event-loop call. Node.js simply enters the event loop after executing the input script. Node.js
-exits the event loop when there are no more callbacks to perform. This behavior
-is like browser JavaScript — the event loop is hidden from the user.
+Node.js ist ähnlich wie Systeme wie Ruby's
+\[Event Machine]\[] und Pythons \[Twisted]\[]. Node.js nimmt das Eventmodell ein bisschen
+weiter. Es stellt eine Ereignis-Schleife als Laufzeitkonstruktion statt als Bibliothek dar. In anderen Systemen gibt es
+immer einen blockierenden Anruf, um die Eventschleife zu starten.
+Normalerweise wird Verhalten durch Callbacks am Anfang eines Skripts definiert, und
+am Ende wird ein Server durch einen blockierenden Aufruf wie `EventMachine::run()` gestartet.
+In Node.js gibt es keinen solchen Aufruf der Ereignisschleife. Node.js tritt einfach in die Ereignis-Schleife ein, nachdem das Eingabeskript ausgeführt wurde. Node.js
+beendet die Ereignis-Schleife, wenn es keine Callbacks mehr gibt. Dieses Verhalten
+ist wie JavaScript des Browsers – die Ereignis-Schleife wird vor dem Benutzer versteckt.
 
 HTTP is a first-class citizen in Node.js, designed with streaming and low
 latency in mind. This makes Node.js well suited for the foundation of a web
 library or framework.
 
-Node.js being designed without threads doesn't mean you can't take
-advantage of multiple cores in your environment. Child processes can be spawned
-by using our \[`child_process.fork()`]\[] API, and are designed to be easy to
-communicate with. Built upon that same interface is the \[`cluster`]\[] module,
-which allows you to share sockets between processes to enable load balancing
-over your cores.
+Node.js ohne Threads entworfen werden, bedeutet nicht, dass Sie nicht
+von mehreren Kernen in Ihrer Umgebung profitieren können. Kinderprozesse können
+mit unserem \[`child_process generiert werden. ork()`]\[] API und sind so konzipiert, dass es einfach zu
+kommunizieren kann. Auf derselben Schnittstelle aufbauend ist das Modul \[`cluster`]\[]
+, mit dem Sie Sockel zwischen den Prozessen teilen können, um den Lastausgleich
+über Ihre Kerne zu aktivieren.
 
-[blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+[blockieren vs. nicht blockieren]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
-[`cluster`]: https://nodejs.org/api/cluster.html
-[event machine]: https://github.com/eventmachine/eventmachine
-[twisted]: https://twistedmatrix.com/trac/
+
+["Cluster"]: https://nodejs.org/api/cluster.html
+
+[Ereignis-Maschine]: https://github.com/eventmachine/eventmachine
+
+[verdreht]: https://twistedmatrix.com/trac/
