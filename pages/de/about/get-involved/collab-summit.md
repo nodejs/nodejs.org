@@ -1,30 +1,30 @@
 ---
-title: Collab Summit
+title: Kollab Gipfel
 layout: about
 ---
 
-# Collaborator Summit
+# Kollaboratorgipfel
 
-Node.js's Collaborator Summit is an un-conference for bringing current and
-potential contributors together to discuss Node.js with lively collaboration,
-education, and knowledge sharing. Committees and working groups come together
-twice per year to make important decisions while also being able to work on some
-exciting efforts they want to push forward in-person.
+Node.js's Collaborator Summit ist eine Un-Konferenz, um aktuelle und
+potenzielle Mitwirkende zusammenzubringen, um Node.js mit lebhafter Zusammenarbeit,
+Bildung und Wissensaustausch zu diskutieren. Ausschüsse und Arbeitsgruppen treffen sich zweimal im Jahr
+zusammen, um wichtige Entscheidungen zu treffen und gleichzeitig an einigen
+spannenden Bemühungen arbeiten zu können, die sie persönlich vorantreiben wollen.
 
-## Who attends?
+## Wer teilnimmt?
 
-Anyone is welcome to attend Collab Summit. During the
-summit, leaders will help onboard new contributors to groups they'd love to help
-prior to integrating them into the working sessions.
+Jeder ist herzlich eingeladen, an dem Gipfel von Collab teilzunehmen. Während des
+-Gipfels werden Führungskräfte an Bord von neuen Mitwirkenden zu Gruppen helfen, die sie gerne
+helfen würden, bevor sie sie in die Arbeitssitzungen integrieren.
 
-This is your opportunity to learn what is happening within the community to jump
-in and contribute with the skills you have and would like to hone.
+Dies ist deine Gelegenheit, um zu erfahren, was in der Community vor sich geht, um
+hereinzuspringen und mit den Fähigkeiten, die du hast und gerne honieren möchtest.
 
-Working groups will put together a schedule so that people can
-familiarize themselves before folks get onsite, having the general collaborator
-discussions, and then dive into breakout sessions.
+Arbeitsgruppen werden einen Zeitplan aufstellen, so dass die Leute
+sich vor Ort kennen lernen können die allgemeine Mitarbeiterin
+Diskussionen führen und dann in Breakout-Sitzungen eintauchen.
 
-We'd love to see you at Collab Summit! Check out the [Summit repo](https://github.com/nodejs/summit)
-for upcoming and past Collab Summits and have a look at the
-[issues filed](https://github.com/nodejs/summit/issues) that share what
-individual working groups and committees are looking to discuss in-person.
+Wir würden uns freuen, dich bei Collab Summit! Schau dir das [Summit repo](https\://github. om/nodejs/summit)
+für bevorstehende und vergangene Kollab Gipfel und werfen Sie einen Blick auf die
+[Issues-Datei](https\://github. om/nodejs/summit/issues), die das teilen, was
+einzelne Arbeitsgruppen und Ausschüsse persönlich besprechen.
