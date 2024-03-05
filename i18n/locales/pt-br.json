@@ -1,0 +1,290 @@
+{
+  "components": {
+    "containers": {
+      "footer": {
+        "links": {
+          "trademarkPolicy": "Políticas Marcas",
+          "privacyPolicy": "Política de Privacidade",
+          "codeOfConduct": "Código de Conduta",
+          "security": "Política de Segurança",
+          "openJS": "Fundação OpenJS"
+        }
+      },
+      "navBar": {
+        "links": {
+          "about": "SOBRE",
+          "download": "BAIXAR",
+          "docs": "Documentação",
+          "guides": "Guias",
+          "learn": "Aprender",
+          "security": "Segurança",
+          "certification": "Certificação",
+          "blog": "Blogue"
+        }
+      }
+    },
+    "navigation": {
+      "learn": {
+        "gettingStarted": {
+          "links": {
+            "gettingStarted": "Primeiros passos",
+            "introductionToNodejs": "Introdução ao Node.js",
+            "howToInstallNodejs": "Como instalar o Node.js",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Quanto JavaScript você precisa saber para usar o Node.js?",
+            "differencesBetweenNodejsAndTheBrowser": "Diferenças entre o Node.js e o navegador",
+            "theV8JavascriptEngine": "Motor JavaScript V8",
+            "anIntroductionToTheNpmPackageManager": "Uma introdução ao gerenciador de pacotes npm",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) e mais além",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, a diferença entre desenvolvimento e produção",
+            "nodejsWithTypescript": "Node.js com TypeScript",
+            "nodejsWithWebassembly": "Node.js com WebAssembly",
+            "debugging": "Depurando Node.js",
+            "profiling": "Perfil de Aplicações Node.js",
+            "securityBestPractices": "Melhores Práticas de Segurança"
+          }
+        },
+        "asynchronousWork": {
+          "links": {
+            "asynchronousWork": "Trabalho assíncrono",
+            "asynchronousFlowControl": "Controle de fluxo assíncrono",
+            "overviewOfBlockingVsNonBlocking": "Visão geral do Bloqueio contra Não Bloqueados",
+            "javascriptAsynchronousProgrammingAndCallbacks": "Programação assíncrona de JavaScript e Callbacks",
+            "discoverJavaScriptTimers": "Descubra Timers em JavaScript",
+            "theNodejsEventLoop": "O laço do evento Node.js",
+            "theNodejsEventEmitter": "Emissor de Eventos Node.js",
+            "understandingProcessnexttick": "Entendendo processo.nextTick()",
+            "understandingSetimmediate": "Understanding setImmediate()",
+            "dontBlockTheEventLoop": "Não bloquear o laço do evento"
+          }
+        },
+        "manipulatingFiles": {
+          "links": {
+            "manipulatingFiles": "Manipulando Arquivos",
+            "nodejsFileStats": "Estatísticas do arquivo Node.js",
+            "nodejsFilePaths": "Caminhos de arquivo Node.js",
+            "workingWithFileDescriptorsInNodejs": "Trabalhando com descritores de arquivos no Node.js",
+            "readingFilesWithNodejs": "Lendo arquivos com Node.js",
+            "writingFilesWithNodejs": "Escrevendo arquivos com Node.js",
+            "workingWithFoldersInNodejs": "Trabalhando com pastas no Node.js",
+            "howToWorkWithFileSystems": "Como trabalhar com diferentes sistemas de arquivos"
+          }
+        },
+        "commandLine": {
+          "links": {
+            "commandLine": "Linha de comando",
+            "runNodejsScriptsFromTheCommandLine": "Executar scripts do Node.js na linha de comando",
+            "howToReadEnvironmentVariablesFromNodejs": "Como ler variáveis de ambiente do Node.js",
+            "howToUseTheNodejsRepl": "Como usar o REPL do Node.js",
+            "outputToTheCommandLineUsingNodejs": "Saída para linha de comando usando Node.js",
+            "acceptInputFromTheCommandLineInNodejs": "Aceite a entrada da linha de comando no Node.js"
+          }
+        },
+        "modules": {
+          "links": {
+            "modules": "módulos",
+            "publishingNodeApiModules": "Como publicar um pacote Node-API",
+            "anatomyOfAnHttpTransaction": "Anatomia de uma transação HTTP",
+            "abiStability": "ABI Estabilidade",
+            "backpressuringInStreams": "Backpressuring em Streams"
+          }
+        },
+        "diagnostics": {
+          "links": {
+            "diagnostics": "Diagnóstico",
+            "userJourney": "Jornada do usuário",
+            "memory": "Memória",
+            "liveDebugging": "Depuração ao vivo",
+            "poorPerformance": "Desempenho ruim",
+            "flameGraphs": "Gráficos de Chamas"
+          }
+        }
+      },
+      "about": {
+        "links": {
+          "about": "Sobre o Node.js",
+          "aboutSide": "Sobre o Node.js®️",
+          "governance": "Governança do projeto",
+          "releases": "Versões anteriores",
+          "security": "Relatório de Segurança"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "getInvolved": "Envolva-se",
+          "collabSummit": "Cimeira do Colaborador",
+          "upcomingEvents": "Próximos Eventos",
+          "contribute": "Contribua para Node.js",
+          "codeOfConduct": "Código de Conduta"
+        }
+      }
+    },
+    "downloadList": {
+      "links": {
+        "previousReleases": "Versões anteriores",
+        "packageManager": "Instalando Node.js através do gerenciador de pacotes",
+        "shaSums": {
+          "title": "SHASUMS assinados para arquivos de lançamento",
+          "howToVerify": " (Como verificar)"
+        },
+        "allDownloads": "Todas opções de download",
+        "nightlyReleases": "Compilações noturnas",
+        "unofficialBuilds": "Compilações não oficiais",
+        "buildingFromSource": "Construindo Node.js da fonte em plataformas suportadas",
+        "installingOnLinux": "Instalando Node.js via arquivo binário",
+        "installingOnWsl": "Instalar no Subsistema Windows para Linux (WSL)"
+      }
+    },
+    "downloadReleasesTable": {
+      "changelog": "Mudanças",
+      "releases": "Versões",
+      "docs": "Documentação"
+    },
+    "pagination": {
+      "next": "Próximo",
+      "previous": "Anterior"
+    },
+    "common": {
+      "breadcrumbs": {
+        "navigateToHome": "Navegar para o Início"
+      },
+      "crossLink": {
+        "previous": "Anterior",
+        "next": "Próximo"
+      },
+      "codebox": {
+        "copy": "Copiar para área de transferência",
+        "copied": "Copiado para o clipboard!"
+      },
+      "pagination": {
+        "prev": "Anterior",
+        "prevAriaLabel": "Página anterior",
+        "next": "Próximo",
+        "nextAriaLabel": "Página seguinte",
+        "defaultLabel": "Paginação",
+        "pageLabel": "Ir para a página {pageNumber}"
+      },
+      "sidebar": {
+        "title": "Alterar página"
+      },
+      "languageDropdown": {
+        "label": "Escolher Idioma"
+      },
+      "themeToggle": {
+        "label": "Alternar Modo Escuro"
+      }
+    },
+    "mdx": {
+      "upcomingEvents": {
+        "defaultTitle": "Nenhum próximo evento"
+      }
+    },
+    "metabar": {
+      "lastUpdated": "Última atualização",
+      "readingTime": "Tempo de leitura",
+      "addedIn": "Adicionado em",
+      "author": "Autor",
+      "authors": "Autores",
+      "contribute": "Contribuir",
+      "contributeText": "Editar esta página",
+      "viewAs": "Visualizar como",
+      "tableOfContents": "Tabela de Conteúdos"
+    },
+    "downloads": {
+      "changelogModal": {
+        "startContributing": "Comece a contribuir"
+      }
+    },
+    "search": {
+      "searchBox": {
+        "placeholder": "Comece a digitar..."
+      },
+      "seeAll": {
+        "text": "Ver todos os resultados {count}"
+      },
+      "searchError": {
+        "text": "Ocorreu um erro ao procurar. Tente novamente mais tarde."
+      },
+      "poweredBy": {
+        "text": "Desenvolvido por"
+      },
+      "noResults": {
+        "text": "Nenhum resultado encontrado para \"{query}\"."
+      },
+      "emptyState": {
+        "text": "Procure algo..."
+      },
+      "searchPage": {
+        "title": "Você está procurando: {query}"
+      }
+    },
+    "blog": {
+      "blogHeader": {
+        "subtitle": "As últimas notícias, estudos de caso, tutoriais e recursos do Node.js.",
+        "rssLink": "Feed RSS"
+      }
+    }
+  },
+  "layouts": {
+    "blogPost": {
+      "author": {
+        "byLine": "{author, select, null {} other {Por {author}, }}"
+      }
+    },
+    "blogIndex": {
+      "categoryName": "{category, select, all {Blog} other {{category} Posts}}"
+    },
+    "blog": {
+      "title": "Blogue",
+      "selectCategory": "categorias",
+      "categories": {
+        "all": "Tudo",
+        "announcements": "Avisos",
+        "release": "Versões",
+        "vulnerability": "Vulnerabilidades",
+        "advisory-board": "Conselho Consultivo",
+        "community": "Comunidade",
+        "feature": "Funcionalidade",
+        "module": "Módulo",
+        "npm": "npm",
+        "uncategorized": "Descategorizado",
+        "video": "Vídeo",
+        "weekly": "Atualizações semanais",
+        "wg": "Grupos de Trabalho",
+        "events": "Eventos"
+      }
+    },
+    "error": {
+      "notFound": {
+        "title": "A página não pôde ser encontrada",
+        "description": "Desculpe, não conseguimos encontrar a página que você está após! Tente começar novamente na página inicial."
+      },
+      "internalServerError": {
+        "title": "Erro interno do servidor",
+        "description": "Esta página lançou um erro não recuperável."
+      },
+      "backToHome": "Voltar ao início"
+    },
+    "download": {
+      "selectCategory": "categorias",
+      "categories": {
+        "download": "Instalador Pré-construído",
+        "prebuilt-binaries": "Binários Pré-construídos",
+        "package-manager": "Gerenciador de Pacotes",
+        "source-code": "Código fonte"
+      },
+      "buttons": {
+        "prebuilt": "Baixar Node.js {version}",
+        "source": "Baixar fonte {version} do Node.js"
+      },
+      "dropdown": {
+        "bitness": "Mordida",
+        "os": "Sistema operacional",
+        "version": "Versão",
+        "platform": "Plataforma"
+      },
+      "codeBox": {
+        "communityWarning": "Gerentes de pacotes e seus scripts de instalação não são mantidos pelo projeto Node.js."
+      }
+    }
+  }
+}
