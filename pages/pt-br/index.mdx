@@ -1,44 +1,42 @@
 ---
-title: Run JavaScript Everywhere
+title: Executar JavaScript em todos os lugares
 layout: home
 ---
 
 <section>
- <WithBadge section="index" />
+  <WithBadge section="Índice" />
 
   <div>
-    <h1 className="special">Run JavaScript Everywhere</h1>
+    <h1 className="special">Executar JavaScript Em Todo Lugar</h1>
 
-    Node.js® is a free, open-source, cross-platform JavaScript runtime
-    environment that lets developers create servers, web apps,
-    command line tools and scripts.
-
+    Node.js®️ é um ambiente livre e de código aberto e multi-plataforma JavaScript em tempo de execução
+    que permite que desenvolvedores criem servidores, aplicativos web,
+    ferramentas e scripts de linha de comando.
   </div>
 
   <div>
-    <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
+    <WithNodeRelease status={['Ativos LTS', 'Manutenção LTS']}>
       {({ release }) => (
         <>
-          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+          <DownloadButton release={release}>Download Node. s (LTS)</DownloadButton>
           <small>
-            Downloads Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
-            Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
+            Ponto de Downloads. s <b>{release.versionWithPrefix}</b>
+            <sup title="Downloads a Node.js installer for your current platform">1</sup> com suporte a longo prazo.
+            Node.js também podem ser instalados via <a href="/download/package-manager">gerenciadores de pacotes</a>.
           </small>
         </>
       )}
     </WithNodeRelease>
 
-    <WithNodeRelease status={"Current"}>
+    <WithNodeRelease status={"Atual"}>
       {({ release }) => (
         <small>
-          Want new features sooner?
-          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> instead.
+          Quer novas funcionalidades mais cedo?
+          Obtenha <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="Baixa um instalador Node.js para sua plataforma atual">1</sup> ao invés disso.
         </small>
       )}
     </WithNodeRelease>
-
   </div>
 </section>
 
@@ -113,9 +111,7 @@ layout: home
       parentPort.postMessage(btoa(source.toUpperCase()));
     }
     ```
-
   </div>
 
-Learn more what Node.js is able to offer with our [Learning materials](/learn).
-
+  Saiba mais sobre o que Node.js é capaz de oferecer com nossos [materiais de aprendizado](/learn).
 </section>
