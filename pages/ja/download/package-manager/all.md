@@ -1,23 +1,23 @@
 ---
 layout: docs
-title: Installing Node.js via package manager
+title: パッケージマネージャを介した Node.js のインストール
 ---
 
-# Installing Node.js via Package Managers
+# パッケージマネージャーを介した Node.js のインストール
 
-> The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
+> このページのパッケージは、それぞれのパッケージによってメンテナンスされ、サポートされています。Node.js のコアチームではありません。 発生した問題については、パッケージメンテナに報告してください。 Node.js 自体のバグが問題であることが判明した場合、メンテナは問題を上流に報告します。
 
----
+***
 
-- [Alpine Linux](#alpine-linux)
+- format@@0(#alpine-linux)
 - [Android](#android)
-- [Arch Linux](#arch-linux)
-- [CentOS, Fedora and Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
-- [Debian and Ubuntu based Linux distributions](#debian-and-ubuntu-based-linux-distributions)
+- format@@0(#arch-linux)
+- [CentOS, Fedora と Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
+- format@@0(#debian-and-ubuntu-based-linux-distributions)
 - [fnm](#fnm)
 - [FreeBSD](#freebsd)
 - [Gentoo](#gentoo)
-- [IBM i](#ibm-i)
+- format@@0(#ibm-i)
 - [macOS](#macos)
 - [n](#n)
 - [NetBSD](#netbsd)
@@ -25,25 +25,25 @@ title: Installing Node.js via package manager
 - [nvm](#nvm)
 - [nvs](#nvs)
 - [OpenBSD](#openbsd)
-- [openSUSE and SLE](#opensuse-and-sle)
-- [SmartOS and illumos](#smartos-and-illumos)
+- format@@0(#opensuse-and-sle)
+- format@@0(#smartos-and-illumos)
 - [Snap](#snap)
 - [Solus](#solus)
-- [Void Linux](#void-linux)
+- format@@0(#void-linux)
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
----
+***
 
 ## Alpine Linux
 
-Node.js LTS and npm packages are available in the Main Repository.
+Node.js LTS および npm パッケージはメインリポジトリで使用できます。
 
 ```bash
 apk add nodejs npm
 ```
 
-Node.js Current can be installed from the Community Repository.
+Node.js Current はコミュニティリポジトリからインストールできます。
 
 ```bash
 apk add nodejs-current
@@ -51,79 +51,79 @@ apk add nodejs-current
 
 ## Android
 
-Android support is still experimental in Node.js, so precompiled binaries are not yet provided by Node.js developers.
+Node.jsではAndroidのサポートはまだ実験的なので、コンパイル済みのバイナリはまだNode.jsの開発者によって提供されていません。
 
-However, there are some third-party solutions. For example, [Termux](https://termux.com/) community provides terminal emulator and Linux environment for Android, as well as own package manager and [extensive collection](https://github.com/termux/termux-packages) of many precompiled applications. This command in Termux app will install the last available Node.js version:
+ただし、いくつかのサードパーティの解決策があります。例えば、 [Termux](https://termux) om/) コミュニティは、Android向けのターミナルエミュレータとLinux環境、および独自のパッケージマネージャとformat@@0(https\://github) を提供します。 多くのプリコンパイル済みアプリケーションの om/termux/termux-packages) 。Termux アプリケーションのこのコマンドは、最後に使用可能な Node.js バージョンをインストールします。
 
 ```bash
 pkg install nodejs
 ```
 
-Currently, Termux Node.js binaries are linked against `system-icu` (depending on `libicu` package).
+現在、Termux Node.js のバイナリは `system-icu` にリンクされています(`libicu`パッケージに依存します)。
 
 ## Arch Linux
 
-Node.js and npm packages are available in the Community Repository.
+Node.js と npm パッケージはコミュニティリポジトリで使用できます。
 
 ```bash
 pacman -S nodejs npm
 ```
 
-## CentOS, Fedora and Red Hat Enterprise Linux
+## CentOS、Fedora および Red Hat Enterprise Linux
 
-Node.js is available as a module called `nodejs` in CentOS/RHEL 8 and Fedora.
+Node.jsはCentOS/RHEL 8とFedoraに`nodejs`と呼ばれるモジュールとして利用できます。
 
 ```bash
 dnf module install nodejs:<stream>
 ```
 
-where `<stream>` corresponds to the major version of Node.js.
-To see a list of available streams:
+`<stream>`は、Node.jsのメジャーバージョンに対応しています。
+利用可能なストリームのリストを表示するには、次のようにします。
 
 ```bash
 dnf module list nodejs
 ```
 
-For example, to install Node.js 18:
+例えば、Node.js 18をインストールします。
 
 ```bash
 dnf module install nodejs:18/common
 ```
 
-### Alternatives
+### 代替
 
-These resources provide packages compatible with CentOS, Fedora, and RHEL.
+これらのリソースは CentOS、Fedora、および RHELと互換性のあるパッケージを提供します。
 
-- [Node.js snaps](#snap) maintained and supported at https\://github.com/nodejs/snap
+- [Node.js snaps](#snap) が維持され、https\://github.com/nodejs/snap でサポートされています
 - [Node.js binary distributions](#debian-and-ubuntu-based-linux-distributions) maintained and supported by [NodeSource](https://github.com/nodesource/distributions)
 
-## Debian and Ubuntu based Linux distributions
+## Debian および Ubuntu ベースの Linux ディストリビューションです
 
-[Node.js binary distributions](https://github.com/nodesource/distributions) are available from NodeSource.
+NodeSourceからは[Node.jsバイナリディストリビューション](https://github.com/nodesource/distributions)が利用できます。
 
-### Alternatives
+### 代替
 
-Packages compatible with Debian and Ubuntu based Linux distributions are available via [Node.js snaps](#snap).
+Debian および Ubuntu ベースの Linux ディストリビューションと互換性のあるパッケージは [Node.js snaps](#snap) から入手できます。
 
 ## fnm
 
-Fast and simple Node.js version manager built in Rust used to manage multiple released Node.js versions. It allows you to perform operations like install, uninstall, switch Node versions automatically based on the current directory, etc.
-To install fnm, use this [install script](https://github.com/Schniz/fnm#using-a-script-macoslinux).
+Rustで構築された高速でシンプルなNode.jsのバージョン管理は、複数のリリースされたNode.jsのバージョン管理に使用されます。 インストール、アンインストール、ノードのバージョンを現在のディレクトリに基づいて自動的に切り替えるなどの操作を実行できます。
+fnmをインストールするには、以下の[install script](https://github.com/Schniz/fnm#using-a-script-macoslinux)を使用してください。
 
-fnm has cross-platform support (macOS, Windows, Linux) & all popular shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
-fnm is built with speed in mind and compatibility support for `.node-version` and `.nvmrc` files.
+fnmはクロスプラットフォームサポート(macOS、Windows、Linux)と人気のあるすべてのシェル(Bash、Zsh、Fish、PowerShell、Windowsコマンドラインプロンプト)をサポートしています。
+fnmは、 `.node-version` と `.nvmrc` ファイルの互換性と速度を念頭に置いて構築されています。
 
 ## FreeBSD
 
-The most recent release of Node.js is available via the [www/node](https://www.freshports.org/www/node) port.
+Node.js の最新リリースは、[www/node](https://www.freshports.org/www/node) ポートから入手できます。
 
-Install a binary package via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
+[pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
 ```bash
 pkg install node
 ```
 
-Or compile it on your own using [ports](https://www.freebsd.org/cgi/man.cgi?ports):
+または、 [ports](https://www.freebsd.org/cgi/man.cgi?ports)を使用して独自にコンパイルしてください。
 
 ```bash
 cd /usr/ports/www/node && make install
@@ -131,7 +131,7 @@ cd /usr/ports/www/node && make install
 
 ## Gentoo
 
-Node.js is available in the portage tree.
+Node.js は、portage ツリーで使用できます。
 
 ```bash
 emerge nodejs
@@ -139,35 +139,35 @@ emerge nodejs
 
 ## IBM i
 
-LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](https://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs18`, `nodejs20` etc)
+LTSバージョンのNode.jsはIBMから利用可能で、format@@0(https\://ibm.biz/ibmi-rpms)から利用できます。 パッケージ名は `nodejs` で、メジャーバージョン番号が続きます(例えば、 `nodejs18` 、 `nodejs20` など)。
 
-To install Node.js 20.x from the command line, run the following as a user with \*ALLOBJ special authority:
+Node.js 20.x をコマンドラインからインストールするには、\*ALLOBJ 特別な権限を持つユーザとして以下を実行します。
 
 ```bash
 yum install nodejs20
 ```
 
-Node.js can also be installed with the IBM i Access Client Solutions product. See [this support document](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) for more details
+Node.js は、IBM i Access Client Solutions 製品でもインストールできます。詳細については、format@@0(http\://www-01.ibm.com/support/docview\.wss?uid=nas8N1022619) を参照してください。
 
 ## macOS
 
 Download the [macOS Installer](/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
 
-_If you want to download the package with bash:_
+_もし bash でパッケージをダウンロードしたい場合:_
 
 ```bash
 curl "https://nodejs.org/dist/latest/$(curl -s https://nodejs.org/dist/latest/ | grep "pkg" | cut -d'"' -f 2)" -o "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
 ```
 
-### Alternatives
+### 代替
 
-Using **[Homebrew](https://brew.sh/)**:
+\*\*[Homebrew](https://brew.sh/)\*\*を使用します。
 
 ```bash
 brew install node
 ```
 
-Using **[MacPorts](https://www.macports.org/)**:
+使用\*\*[MacPorts](https://www.macports.org/)\*\*:
 
 ```bash
 port install nodejs<major version>
@@ -178,13 +178,13 @@ port install nodejs7
 
 Using **[pkgsrc](https://pkgsrc.joyent.com/install-on-macos/)**:
 
-Install the binary package:
+バイナリパッケージをインストールします。
 
 ```bash
 pkgin -y install nodejs
 ```
 
-Or build manually from pkgsrc:
+または、pkgsrcから手動でビルドします。
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
@@ -196,9 +196,9 @@ cd pkgsrc/lang/nodejs && bmake install
 or select from a menu of previously downloaded versions. The versions are installed system-wide or user-wide, and for more
 targeted use you can run a version directly from the cached downloads.
 
-See the [homepage](https://github.com/tj/n) for install methods (bootstrap, npm, Homebrew, third-party), and all the usage details.
+installメソッド(bootstrap, npm, Homebrew, third-party)については、 [homepage](https://github.com/tj/n)と全ての使い方の詳細を参照してください。
 
-If you already have `npm` then installing `n` and then the newest LTS `node` version is as simple as:
+すでに`npm`がある場合、`n`をインストールし、最新のLTSの`node`バージョンは以下のように簡単です。
 
 ```
 npm install -g n
@@ -207,13 +207,13 @@ n lts
 
 ## NetBSD
 
-Node.js is available in the pkgsrc tree:
+Node.js は pkgsrc ツリーで使用できます。
 
 ```bash
 cd /usr/pkgsrc/lang/nodejs && make install
 ```
 
-Or install a binary package (if available for your platform) using pkgin:
+または、pkginを使用してバイナリパッケージをインストールします(プラットフォームで利用可能な場合)。
 
 ```bash
 pkgin -y install nodejs
@@ -221,9 +221,9 @@ pkgin -y install nodejs
 
 ## Nodenv
 
-`nodenv` is a lightweight node version manager, similar to `nvm`. It's simple and predictable. A rich plugin ecosystem lets you tailor it to suit your needs. Use `nodenv` to pick a Node version for your application and guarantee that your development environment matches production.
+`nodenv`は、`nvm`に似た軽量なノードバージョンマネージャです。 シンプルで予測可能です。豊富なプラグインエコシステムを使用すると、ニーズに合わせてカスタマイズできます。 アプリケーションの Node バージョンを選択するには、`nodenv` を使用し、開発環境が本番環境と一致することを保証します。
 
-Nodenv installation instructions are maintained [on its Github page](https://github.com/nodenv/nodenv#installation). Please visit that page to ensure you're following the latest version of the installation steps.
+Nodenvのインストール手順はformat@@0(https\://github.com/nodenv/nodenv#installation)に維持されています。インストール手順の最新バージョンを確認するには、そのページをご覧ください。
 
 ## nvm
 
@@ -246,8 +246,8 @@ For example, if the version of Node.js is v8.0.0-pre:
 nvm use 8
 ```
 
-Once the official release is out you will want to uninstall the version built
-from source:
+公式リリースが終わったら、ソースから
+ビルドされたバージョンをアンインストールします。
 
 ```bash
 nvm uninstall 8
@@ -257,11 +257,11 @@ nvm uninstall 8
 
 #### Windows
 
-The `nvs` version manager is cross-platform and can be used on Windows, macOS, and Unix-like systems
+`nvs`バージョンマネージャはクロスプラットフォームで、Windows、macOS、Unixライクなシステムで使用できます。
 
-To install `nvs` on Windows go to the [release page](https://github.com/jasongin/nvs/releases) here and download the MSI installer file of the latest release.
+Windowsに`nvs`をインストールするには、format@@0(https\://github.com/jasongin/nvs/releases)からMSIインストーラをダウンロードしてください。
 
-You can also use `chocolatey` to install it:
+`chocolatey`を使ってインストールすることもできます。
 
 ```bash
 choco install nvs
@@ -269,25 +269,25 @@ choco install nvs
 
 #### macOS,UnixLike
 
-You can find the documentation regarding the installation steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
+`nvs` のインストール手順については、macOS/Unix ライクなシステム [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP/SETUP.md#mac-linux) に記載されています。
 
-#### Usage
+#### 使用法
 
-After this you can use `nvs` to switch between different versions of node.
+この後、 `nvs` を使って異なるバージョンのノードを切り替えることができます。
 
-To add the latest version of node:
+最新バージョンのノードを追加するには:
 
 ```bash
 nvs add latest
 ```
 
-Or to add the latest LTS version of node:
+または、最新のLTSバージョンのノードを追加するには:
 
 ```bash
 nvs add lts
 ```
 
-Then run the `nvs use` command to add a version of node to your `PATH` for the current shell:
+`nvs use`を実行して、現在のシェルの`PATH`にノードのバージョンを追加します。
 
 ```bash
 $ nvs use lts
@@ -295,7 +295,7 @@ PATH -= %LOCALAPPDATA%\nvs\default
 PATH += %LOCALAPPDATA%\nvs\node\14.17.0\x64
 ```
 
-To add it to `PATH` permanently, use `nvs link`:
+`PATH`に恒久的に追加するには、`nvsリンク`を使用します。
 
 ```bash
 nvs link lts
@@ -303,58 +303,58 @@ nvs link lts
 
 ## OpenBSD
 
-Node.js is available through the ports system.
+Node.js はポートシステムを通じて利用できます。
 
 ```bash
 /usr/ports/lang/node
 ```
 
-Using [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
+OpenBSD で [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) を使用:
 
 ```bash
 pkg_add node
 ```
 
-## openSUSE and SLE
+## openSUSE と SLE
 
-Node.js is available in the main repositories under the following packages:
+Node.js は、以下のパッケージのメインリポジトリで利用できます。
 
 - **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
 - **openSUSE Tumbleweed**: `nodejs20`
 - **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, and `nodejs14`
-  (The "Web and Scripting Module" must be [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
+  (The "Web and Scripting Module" must be [enabled](https://www.suse.com/releasenotes/x86_64/SSEE-SLES/12-SP5/#intro-modulesExtensionsRelated)
 - **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, and `nodejs14`
   (The "Web and Scripting Module" must be [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
 
-For example, to install Node.js 14.x on openSUSE Leap 15.2, run the following as root:
+例えば、openSUSE Leap 15.2 に Node.js 14.x をインストールするには、root として以下を実行します。
 
 ```bash
 zypper install nodejs14
 ```
 
-Different major versions of Node can be installed and used concurrently.
+異なるメジャーバージョンの Node を同時にインストールして使用できます。
 
-## SmartOS and illumos
+## SmartOSとillumos
 
-SmartOS images come with pkgsrc pre-installed. On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal:
+SmartOSイメージにはpkgsrcがプリインストールされています。他のillumosディストリビューションでは、まず\*\*[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)\*\*をインストールしてください。バイナリパッケージは通常のものとしてインストールできます。
 
 ```bash
 pkgin -y install nodejs
 ```
 
-Or build manually from pkgsrc:
+または、pkgsrcから手動でビルドします。
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-## Snap
+## スナップ
 
-[Node.js snaps](https://github.com/nodejs/snap) are available as [`node`](https://snapcraft.io/node) on the Snap store.
+format@@0(https\://github.com/nodejs/snap) は Snap ストアの [`node`](https://snapcraft.io/node) として利用できます。
 
 ## Solus
 
-Solus provides Node.js in its main repository.
+Solus はメインリポジトリに Node.js を提供します。
 
 ```bash
 sudo eopkg install nodejs
@@ -362,7 +362,7 @@ sudo eopkg install nodejs
 
 ## Void Linux
 
-Void Linux ships Node.js stable in the main repository.
+Void Linux はメイン リポジトリで Node.js を安定して出荷します。
 
 ```bash
 xbps-install -Sy nodejs
@@ -372,9 +372,9 @@ xbps-install -Sy nodejs
 
 Download the [Windows Installer](/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
 
-### Alternatives
+### 代替
 
-Using **[Winget](https://aka.ms/winget-cli)**:
+\*\*[Winget](https://aka.ms/winget-cli)\*\*を使用:
 
 ```bash
 winget install OpenJS.NodeJS
@@ -382,10 +382,10 @@ winget install OpenJS.NodeJS
 winget install OpenJS.NodeJS.LTS
 ```
 
-After running one of the two commands above, it may be necessary to restart the
-terminal emulator before the `node` CLI command becomes available.
+上記の2つのコマンドのいずれかを実行した後、`node` CLI コマンドが利用可能になる前に、
+ターミナルエミュレータを再起動する必要があるかもしれません。
 
-Using **[Chocolatey](https://chocolatey.org/)**:
+\*\*[Chocolatey](https://chocolatey.org/)\*\*を使用:
 
 ```bash
 cinst nodejs
@@ -393,7 +393,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-Using **[Scoop](https://scoop.sh/)**:
+\*\*[Scoop](https://scoop.sh/)\*\*を使用します。
 
 ```bash
 scoop install nodejs
@@ -403,8 +403,8 @@ scoop install nodejs-lts
 
 ## z/OS
 
-IBM&reg; SDK for Node.js - z/OS&reg; is available in two installation formats,
-SMP/E and PAX. Select the installation format that applies to you:
+IBM&reg; SDK for Node.js - z/OS&reg; は
+SMP/E と PAX の2つのインストール形式で利用できます。 あなたに適用されるインストール形式を選択してください:
 
-- [Installing and configuring SMP/E edition of Node.js on z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
-- [Installing and configuring PAX edition of Node.js on z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)
+- format@@0(https\://www\.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
+- format@@0(https\://www\.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)
