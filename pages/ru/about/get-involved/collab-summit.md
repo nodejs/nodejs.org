@@ -5,26 +5,14 @@ layout: about
 
 # Встреча на высшем уровне соавторов
 
-Node.js's Collaborator Summit is an un-conference for bringing current and
-potential contributors together to discuss Node.js with lively collaboration,
-education, and knowledge sharing. Committees and working groups come together
-twice per year to make important decisions while also being able to work on some
-exciting efforts they want to push forward in-person.
+Саммит сотрудников Node.js - это неконференция, на которой текущие и потенциальные участники собираются, чтобы обсудить Node.js с оживленным сотрудничеством, обучением и обменом знаниями. Комитеты и рабочие группы собираются дважды в год, чтобы принимать важные решения, а также иметь возможность работать над некоторыми захватывающими усилиями, которые они хотели бы продвинуть лично.
 
 ## Кто присутствует?
 
-Anyone is welcome to attend Collab Summit. During the
-summit, leaders will help onboard new contributors to groups they'd love to help
-prior to integrating them into the working sessions.
+Любой желающий может посетить Collab Summit. Во время саммита лидеры помогут интегрировать новых участников в группы, которые они хотели бы помочь, прежде чем включить их в рабочие сессии.
 
-This is your opportunity to learn what is happening within the community to jump
-in and contribute with the skills you have and would like to hone.
+Это ваш шанс узнать, что происходит в сообществе, чтобы вступить и внести свой вклад с теми навыками, которыми вы обладаете и которые хотели бы совершенствовать.
 
-Working groups will put together a schedule so that people can
-familiarize themselves before folks get onsite, having the general collaborator
-discussions, and then dive into breakout sessions.
+Рабочие группы составят расписание, чтобы люди могли ознакомиться до прибытия на место, провести общие обсуждения с соавторами, а затем приступить к сессиям по разделению на группы.
 
-We'd love to see you at Collab Summit! Check out the [Summit repo](https://github.com/nodejs/summit)
-for upcoming and past Collab Summits and have a look at the
-[issues filed](https://github.com/nodejs/summit/issues) that share what
-individual working groups and committees are looking to discuss in-person.
+Мы будем рады видеть вас на Саммите Collab! Посмотрите [репозиторий Саммита](https://github.com/nodejs/summit) для получения информации о предстоящих и прошедших Саммитах Collab и ознакомьтесь с [заявленными проблемами](https://github.com/nodejs/summit/issues), которые делятся на то, что индивидуальные рабочие группы и комитеты собираются обсудить лично.
