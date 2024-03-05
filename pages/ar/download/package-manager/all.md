@@ -7,7 +7,7 @@ title: تثبيت Node.js عبر مدير الحزمة
 
 > يتم صيانة الحزم في هذه الصفحة ودعمها من قبل حزم كل منها، **لا** الفريق الأساسي Node.js. يرجى الإبلاغ عن أي مشاكل واجهتها إلى مشرف الحزمة. إذا تبين أن مشكلتك هي خطأ في Node.js نفسه، سيقوم المشرف بالإبلاغ عن المشكلة في واجهة التدفق.
 
----
+***
 
 - [Alpine Linux](#alpine-linux)
 - [Android](#android)
@@ -33,7 +33,7 @@ title: تثبيت Node.js عبر مدير الحزمة
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
----
+***
 
 ## جبال الألب لينكس
 
@@ -227,9 +227,9 @@ pkgin -y install nodejs
 
 ## nvm
 
-Node Version Manager is a bash script used to manage multiple released Node.js versions. It allows
-you to perform operations like install, uninstall, switch version, etc.
-To install nvm, use this [install script](https://github.com/nvm-sh/nvm#install--update-script).
+إدارة إصدار Node هو سكريبت باش يُستخدم لإدارة عدة إصدارات مُنشأة من Node.js. يسمح لك
+بأداء عمليات مثل التثبيت، إلغاء التثبيت، تبديل الإصدار، إلخ.
+لتثبيت nvm، استخدم هذا [سكريبت التثبيت](https://github.com/nvm-sh/nvm#install--update-script).
 
 على Unix / OS X أنظمة Node.js المبنية من المصدر يمكن تثبيتها باستخدام
 [nvm](https://github.com/creationix/nvm) عن طريق تثبيتها في الموقع الذي يتوقع nvm أنه:
