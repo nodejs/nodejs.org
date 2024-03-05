@@ -27,17 +27,17 @@
       "learn": {
         "gettingStarted": {
           "links": {
-            "gettingStarted": "Getting Started",
-            "introductionToNodejs": "Introduction to Node.js",
-            "howToInstallNodejs": "How to install Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "How much JavaScript do you need to know to use Node.js?",
-            "differencesBetweenNodejsAndTheBrowser": "Differences between Node.js and the Browser",
-            "theV8JavascriptEngine": "The V8 JavaScript Engine",
-            "anIntroductionToTheNpmPackageManager": "An introduction to the npm package manager",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) and beyond",
+            "gettingStarted": "Başlarken",
+            "introductionToNodejs": "Node.js'e Giriş",
+            "howToInstallNodejs": "Node.js nasıl kurulur",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Node.js kullanabilmek için ne kadar JavaScript bilmelisiniz?",
+            "differencesBetweenNodejsAndTheBrowser": "Node.js ile Tarayıcı Arasındaki Farklar",
+            "theV8JavascriptEngine": "V8 JavaScript Motoru",
+            "anIntroductionToTheNpmPackageManager": "Npm paket yöneticisine bir giriş",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) ve sonrası",
             "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
-            "nodejsWithTypescript": "Node.js with TypeScript",
-            "nodejsWithWebassembly": "Node.js with WebAssembly",
+            "nodejsWithTypescript": "TypeScript ile Node.js",
+            "nodejsWithWebassembly": "WebAssembly ile Node.js",
             "debugging": "Debugging Node.js",
             "profiling": "Profiling Node.js Applications",
             "securityBestPractices": "Security Best Practices"
