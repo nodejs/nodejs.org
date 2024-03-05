@@ -5,11 +5,7 @@ layout: about
 
 # Collaborator Summit
 
-Node.js's Collaborator Summit is an un-conference for bringing current and
-potential contributors together to discuss Node.js with lively collaboration,
-education, and knowledge sharing. Committees and working groups come together
-twice per year to make important decisions while also being able to work on some
-exciting efforts they want to push forward in-person.
+Collaborator Summit Node.js یک کنفرانس غیر رسمی برای جمع آوری همکاران فعلی و پتانسیلی برای بحث در مورد Node.js با همکاری زنده، آموزش و به اشتراک گذاری دانش است. کمیته‌ها و گروه‌های کاری دو بار در سال برای انجام تصمیمات مهم به هم می‌آیند و همچنین قادرند روی تلاش‌های جذابی که می‌خواهند در حضور افراد به جلو ببرند، کار کنند.
 
 ## Who attends?
 
