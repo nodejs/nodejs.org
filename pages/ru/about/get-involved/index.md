@@ -1,26 +1,26 @@
 ---
-title: Get involved
+title: Принять участие
 layout: about
 ---
 
-# Get Involved
+# Принять участие
 
-## Community Discussion
+## Обсуждение сообщества
 
-- The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
-- For real-time chat about Node.js development use one of the platforms below
-  - For IRC, go to `irc.libera.chat` in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [a web client](https://kiwiirc.com/nextclient/)
-  - For Slack, there are two options:
-    - The [OpenJSF Slack](https://slack-invite.openjsf.org/) is a Foundation run Slack with several Node.js channels (channels prefixed by `#nodejs-` are related to the project).
-    - [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
-- The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
-- The [Node.js project calendar](https://nodejs.org/calendar) with all public team meetings.
+- [Список замечаний на GitHub](https://github.com/nodejs/node/issues) — место для обсуждения основных функций Node.js.
+- Для реального времени в чате о разработке Node.js используйте одну из платформ ниже
+  - Для IRC перейдите в `irc.libera.chat` на канале `#node.js` с [IRC клиентом](https\://en.wikipedia. rg/wiki/Comparison_of_Internet_Relay_Chat_clients) или подключитесь к каналу через [веб-клиент](https://kiwiirc.com/nextclient/)
+  - В случае Slack-а есть два варианта:
+    - [OpenJSF Slack](https://slack-invite.openjsf.org/) — это Slack с несколькими каналами Node.js (каналы, начинающиеся с `#nodejs-`, имеют отношение к проекту).
+    - [Узел Slackers](https://www.nodeslackers.com/) - это сообщество Node.js-focused Slack
+- Официальный аккаунт Twitter Node.js - [nodejs](https://twitter.com/nodejs).
+- Календарь [Node.js проекта](https://nodejs.org/calendar) со всеми публичными командными заседаниями.
 
-## Learning
+## Обучение
 
-- [Official Learn section](https://nodejs.org/en/learn/) of the Node.js website.
-- [Official API reference documentation](https://nodejs.org/api/).
-- [NodeSchool.io](https://nodeschool.io/) will teach you Node.js concepts via interactive command-line games.
-- [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) collects new information every day.
-- [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
-- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
+- [Официальный раздел обучения](https://nodejs.org/en/learn/) веб-сайта Node.js.
+- [Официальная документация по API](https://nodejs.org/api/).
+- [NodeSchool.io](https://nodeschool.io/) научит вас концепциям Node.js через интерактивные игры в командной строке.
+- [Тег переполнения стека Node.js](https://stackoverflow.com/questions/tagged/node.js) собирает новую информацию каждый день.
+- [Тег сообщества DEV Node.js](https://dev.to/t/node) — это место, где можно поделиться узлом. с проектами, статьями и учебниками, а также начать обсуждение и запросить отзыв на узле. - связанные с этим темы. Разработчики всех уровней квалификации приглашаются принять участие.
+- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) - дружественное сообщество разработчиков бэкенда Node.js, поддерживающее друг друга на Discord.
