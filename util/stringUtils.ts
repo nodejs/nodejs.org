@@ -21,3 +21,8 @@ export const parseRichTextIntoPlainText = (richText: string) =>
     .replace(/^[ ]+|[ ]+$/gm, '')
     // replaces leading numbers and dots from each line with an empty string
     .replace(/^\d+\.\s/gm, '');
+
+export const dashToCamelCase = (str: string) =>
+  str
+    .replace(/-([a-z])/g, (match, chr) => chr.toUpperCase())
+    .replace(/^[A-Z]/, chr => chr.toLowerCase());
