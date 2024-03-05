@@ -1,4 +1,4 @@
-commit_message: 'chore: synced translations from crowdin'
+commit_message: 'chore: synced translations from crowdin [skip ci]'
 pull_request_title: '[automated]: crowdin sync'
 pull_request_labels:
   - 'github_actions:pull-request'
