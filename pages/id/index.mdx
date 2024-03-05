@@ -1,0 +1,115 @@
+---
+title: Jalankan JavaScript Di Mana Saja
+layout: home
+---
+
+<section>
+  <WithBadge section="indeks" />
+
+  <div>
+    <h1 className="special">Jalankan JavaScript Di Mana Saja</h1>
+
+    Node.js® adalah lingkungan runtime JavaScript sumber terbuka, gratis, lintas platform yang memungkinkan pengembang membuat server, aplikasi web, alat baris perintah, dan skrip.
+  </div>
+
+  <div>
+    <WithNodeRelease status={['Aktif LTS', 'Pemeliharaan LTS']}>
+      {({ release }) => (
+        <>
+          <DownloadButton release={release}>Unduh Node.js (LTS)</DownloadButton>
+          <small>
+            Unduh Node.js <b>{release.versionWithPrefix}</b>
+            <sup title="Mengunduh pemasang Node.js untuk platform Anda saat ini">1</sup> dengan dukungan jangka panjang.
+            Node.js juga dapat diinstal melalui <a href="/download/package-manager">manajer paket</a>.
+          </small>
+        </>
+      )}
+    </WithNodeRelease>
+
+    <WithNodeRelease status={"Saat Ini"}>
+      {({ release }) => (
+        <small>
+          Ingin fitur baru lebih cepat?
+          Dapatkan <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="Mengunduh pemasang Node.js untuk platform Anda saat ini">1</sup> sebagai gantinya.
+        </small>
+      )}
+    </WithNodeRelease>
+  </div>
+</section>
+
+<section>
+  <div>
+    ```js displayName="Create an HTTP Server"
+    import { createServer } from 'node:http';
+
+    const server = createServer((req, res) => {
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end('Hello World!\n');
+    });
+
+    // starts a simple http server locally on port 3000
+    server.listen(3000, '127.0.0.1', () => {
+      console.log('Listening on 127.0.0.1:3000');
+    });
+    ```
+
+    ```js displayName="Write Tests"
+    import assert from 'node:assert';
+    import test from 'node:test';
+
+    test('that 1 is equal 1', () => {
+      assert.strictEqual(1, 1);
+    });
+
+    test('that throws as 1 is not equal 2', () => {
+      // throws an exception because 1 != 2
+      assert.strictEqual(1, 2);
+    });
+    ```
+
+    ```js displayName="Read and Hash a File"
+    import { createHash } from 'node:crypto';
+    import { readFile } from 'node:fs/promises';
+
+    const hasher = createHash('sha1');
+    const fileContent = await readFile('./package.json');
+
+    hasher.setEncoding('hex');
+    hasher.write(fileContent);
+    hasher.end();
+
+    const fileHash = hasher.read();
+    ```
+
+    ```js displayName="Read Streams"
+    import { createReadStream, createWriteStream } from 'node:fs';
+
+    const res = await fetch('https://nodejs.org/dist/index.json');
+    const json = await res.json(); // yields a json object
+
+    const readableStream = createReadStream('./package.json');
+    const writableStream = createWriteStream('./package2.json');
+
+    readableStream.setEncoding('utf8');
+
+    readableStream.on('data', chunk => writableStream.write(chunk));
+    ```
+
+    ```js displayName="Work with Threads"
+    import { Worker, isMainThread,
+      workerData, parentPort } from 'node:worker_threads';
+
+    if (isMainThread) {
+      const data = 'some data';
+      const worker = new Worker(import.meta.filename, { workerData: data });
+      worker.on('message', msg => console.log('Reply from Thread:', msg));
+    } else {
+      const source = workerData;
+      parentPort.postMessage(btoa(source.toUpperCase()));
+    }
+    ```
+  </div>
+
+  Pelajari lebih lanjut apa yang bisa ditawarkan Node.js dengan [Bahan Pembelajaran](/learn).
+</section>
