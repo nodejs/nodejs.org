@@ -1,0 +1,115 @@
+---
+title: Chạy JavaScript Mọi Nơi
+layout: home
+---
+
+<section>
+  <WithBadge section="index" />
+
+  <div>
+    <h1 className="special">Chạy JavaScript Mọi Nơi</h1>
+
+    Node.js® là một môi trường thực thi JavaScript miễn phí, mã nguồn mở, đa nền tảng cho phép các nhà phát triển tạo máy chủ, ứng dụng web, công cụ dòng lệnh và scripts.
+  </div>
+
+  <div>
+    <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
+      {({ release }) => (
+        <>
+          <DownloadButton release={release}>Tải xuống Node.js (LTS)</DownloadButton>
+          <small>
+            Tải xuống Node.js <b>{release.versionWithPrefix}</b>
+            <sup title="Tải xuống trình cài đặt Node.js cho nền tảng hiện tại của bạn">1</sup> với hỗ trợ dài hạn.
+            Node.js cũng có thể được cài đặt thông qua <a href="/download/package-manager">các trình quản lý gói</a>.
+          </small>
+        </>
+      )}
+    </WithNodeRelease>
+
+    <WithNodeRelease status={"Hiện tại"}>
+      {({ release }) => (
+        <small>
+          Muốn có các tính năng mới sớm hơn không?
+          Nhận <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="Tải xuống trình cài đặt Node.js cho nền tảng hiện tại của bạn">1</sup> thay vì.
+        </small>
+      )}
+    </WithNodeRelease>
+  </div>
+</section>
+
+<section>
+  <div>
+    ```js displayName="Create an HTTP Server"
+    import { createServer } from 'node:http';
+
+    const server = createServer((req, res) => {
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end('Hello World!\n');
+    });
+
+    // starts a simple http server locally on port 3000
+    server.listen(3000, '127.0.0.1', () => {
+      console.log('Listening on 127.0.0.1:3000');
+    });
+    ```
+
+    ```js displayName="Write Tests"
+    import assert from 'node:assert';
+    import test from 'node:test';
+
+    test('that 1 is equal 1', () => {
+      assert.strictEqual(1, 1);
+    });
+
+    test('that throws as 1 is not equal 2', () => {
+      // throws an exception because 1 != 2
+      assert.strictEqual(1, 2);
+    });
+    ```
+
+    ```js displayName="Read and Hash a File"
+    import { createHash } from 'node:crypto';
+    import { readFile } from 'node:fs/promises';
+
+    const hasher = createHash('sha1');
+    const fileContent = await readFile('./package.json');
+
+    hasher.setEncoding('hex');
+    hasher.write(fileContent);
+    hasher.end();
+
+    const fileHash = hasher.read();
+    ```
+
+    ```js displayName="Read Streams"
+    import { createReadStream, createWriteStream } from 'node:fs';
+
+    const res = await fetch('https://nodejs.org/dist/index.json');
+    const json = await res.json(); // yields a json object
+
+    const readableStream = createReadStream('./package.json');
+    const writableStream = createWriteStream('./package2.json');
+
+    readableStream.setEncoding('utf8');
+
+    readableStream.on('data', chunk => writableStream.write(chunk));
+    ```
+
+    ```js displayName="Work with Threads"
+    import { Worker, isMainThread,
+      workerData, parentPort } from 'node:worker_threads';
+
+    if (isMainThread) {
+      const data = 'some data';
+      const worker = new Worker(import.meta.filename, { workerData: data });
+      worker.on('message', msg => console.log('Reply from Thread:', msg));
+    } else {
+      const source = workerData;
+      parentPort.postMessage(btoa(source.toUpperCase()));
+    }
+    ```
+  </div>
+
+  Tìm hiểu thêm về những gì Node.js có thể cung cấp với [Tài liệu học tập](/learn).
+</section>
