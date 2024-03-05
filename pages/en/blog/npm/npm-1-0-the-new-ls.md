@@ -2,7 +2,7 @@
 date: '2011-03-18T06:22:17.000Z'
 category: npm
 title: "npm 1.0: The New 'ls'"
-layout: blog-post.hbs
+layout: blog-post
 author: Isaac Schlueter
 ---
 

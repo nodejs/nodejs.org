@@ -1,5 +1,5 @@
 ---
-layout: docs.hbs
+layout: docs
 title: Installing Node.js via package manager
 ---
 

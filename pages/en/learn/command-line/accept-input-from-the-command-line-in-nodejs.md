@@ -1,6 +1,6 @@
 ---
 title: Accept input from the command line in Node.js
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 ---
 

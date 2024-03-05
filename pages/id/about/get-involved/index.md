@@ -1,6 +1,6 @@
 ---
 title: Get involved
-layout: about.hbs
+layout: about
 ---
 
 # Get Involved

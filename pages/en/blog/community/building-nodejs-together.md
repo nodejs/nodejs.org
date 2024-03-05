@@ -2,7 +2,7 @@
 date: '2014-07-29T21:00:00.000Z'
 category: community
 title: Building Node.js Together
-layout: blog-post.hbs
+layout: blog-post
 author: tjfontaine
 ---
 

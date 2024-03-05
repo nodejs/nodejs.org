@@ -2,7 +2,7 @@
 date: '2011-10-04T22:39:56.000Z'
 category: uncategorized
 title: An Easy Way to Build Scalable Network Programs
-layout: blog-post.hbs
+layout: blog-post
 author: ryandahl
 ---
 

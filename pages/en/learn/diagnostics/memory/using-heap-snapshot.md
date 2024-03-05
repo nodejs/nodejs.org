@@ -1,6 +1,6 @@
 ---
 title: Using Heap Snapshot
-layout: learn.hbs
+layout: learn
 ---
 
 # Using Heap Snapshot

@@ -1,6 +1,6 @@
 ---
 title: Sommet des Collaborateurs
-layout: about.hbs
+layout: about
 ---
 
 # Sommet des Collaborateurs

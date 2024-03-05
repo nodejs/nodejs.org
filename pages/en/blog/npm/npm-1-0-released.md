@@ -2,7 +2,7 @@
 date: '2011-05-01T15:09:45.000Z'
 category: npm
 title: 'npm 1.0: Released'
-layout: blog-post.hbs
+layout: blog-post
 author: Isaac Schlueter
 ---
 

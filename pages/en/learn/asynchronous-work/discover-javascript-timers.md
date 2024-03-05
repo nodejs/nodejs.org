@@ -1,6 +1,6 @@
 ---
 title: Discover JavaScript Timers
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, MylesBorins, LaRuaNa, amiller-gh, ahmadawais, ovflowd
 ---
 

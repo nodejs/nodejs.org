@@ -1,6 +1,6 @@
 ---
 title: Output to the command line using Node.js
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, potch, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
 ---
 

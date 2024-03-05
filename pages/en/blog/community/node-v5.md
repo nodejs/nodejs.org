@@ -2,7 +2,7 @@
 date: '2015-10-30T12:00:00.000Z'
 category: community
 title: What You Should Know about Node.js v5 and More
-layout: blog-post.hbs
+layout: blog-post
 author: The Node.js Project
 ---
 

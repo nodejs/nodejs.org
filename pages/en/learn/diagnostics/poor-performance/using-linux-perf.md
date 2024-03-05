@@ -1,6 +1,6 @@
 ---
 title: Using Linux Perf
-layout: learn.hbs
+layout: learn
 ---
 
 # Using Linux Perf

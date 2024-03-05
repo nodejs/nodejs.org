@@ -2,7 +2,7 @@
 date: '2014-06-11T16:00:00.000Z'
 category: uncategorized
 title: Notes from the Road
-layout: blog-post.hbs
+layout: blog-post
 author: tjfontaine
 ---
 

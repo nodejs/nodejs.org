@@ -2,7 +2,7 @@
 date: '2015-05-08T18:00:00.000Z'
 category: community
 title: Transitions
-layout: blog-post.hbs
+layout: blog-post
 author: Scott Hammond
 ---
 

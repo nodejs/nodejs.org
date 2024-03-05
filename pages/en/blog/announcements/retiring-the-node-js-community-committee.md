@@ -2,7 +2,7 @@
 date: '2021-10-07T20:00:00.000Z'
 category: announcements
 title: Retiring the Node.js Community Committee
-layout: blog-post.hbs
+layout: blog-post
 author: Tierney Cyren
 ---
 

@@ -2,7 +2,7 @@
 date: '2015-09-04T21:00:00.000Z'
 category: announcements
 title: Node.js Foundation Elects Board of Directors
-layout: blog-post.hbs
+layout: blog-post
 author: The Node.js Project
 ---
 

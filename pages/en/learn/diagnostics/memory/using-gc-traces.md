@@ -1,6 +1,6 @@
 ---
 title: Tracing garbage collection
-layout: learn.hbs
+layout: learn
 ---
 
 # Tracing garbage collection

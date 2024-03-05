@@ -1,6 +1,6 @@
 ---
 title: Node.js File Paths
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
 ---
 

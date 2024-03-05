@@ -1,6 +1,6 @@
 ---
 title: Impliquez-vous
-layout: about.hbs
+layout: about
 ---
 
 # Impliquez-vous

@@ -2,7 +2,7 @@
 date: '2017-02-10T12:00:00.000Z'
 category: weekly
 title: Weekly Update - February 10th, 2017
-layout: blog-post.hbs
+layout: blog-post
 author: 'Minwoo Jung (github.com/JungMinu)'
 ---
 

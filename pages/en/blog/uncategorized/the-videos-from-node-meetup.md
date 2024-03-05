@@ -2,7 +2,7 @@
 date: '2011-08-12T07:14:34.000Z'
 category: uncategorized
 title: The Videos from the Meetup
-layout: blog-post.hbs
+layout: blog-post
 author: ryandahl
 ---
 

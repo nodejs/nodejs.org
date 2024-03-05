@@ -2,7 +2,7 @@
 date: '2016-12-03T14:41:04.442Z'
 category: announcements
 title: Node.js v7 has updated V8 to 5.4
-layout: blog-post.hbs
+layout: blog-post
 author: Michaël Zasso
 ---
 

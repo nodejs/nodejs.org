@@ -1,6 +1,6 @@
 ---
 title: How to use the Node.js REPL
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, vaishnav-mk
 ---
 

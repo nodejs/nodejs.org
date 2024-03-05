@@ -2,7 +2,7 @@
 date: '2015-10-22T17:00:00.000Z'
 category: uncategorized
 title: '“Convince Your Boss” Letter'
-layout: blog-post.hbs
+layout: blog-post
 author: The Node.js Project
 ---
 

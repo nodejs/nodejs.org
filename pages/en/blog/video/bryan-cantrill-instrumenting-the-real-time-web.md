@@ -2,7 +2,7 @@
 date: '2012-05-08T17:00:34.000Z'
 category: video
 title: 'Bryan Cantrill: Instrumenting the Real Time Web'
-layout: blog-post.hbs
+layout: blog-post
 author: Isaac Schlueter
 ---
 

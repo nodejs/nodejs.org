@@ -2,7 +2,7 @@
 date: '2011-09-23T19:45:50.000Z'
 category: uncategorized
 title: libuv status report
-layout: blog-post.hbs
+layout: blog-post
 author: ryandahl
 ---
 
