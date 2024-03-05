@@ -7,7 +7,7 @@ title: Установка Node.js через менеджер пакетов
 
 > Пакеты на этой странице поддерживаются и поддерживаются соответствующими пакетами, **не** основной командой Node.js. Пожалуйста, сообщите о любых проблемах, с которыми вы столкнулись сопровождающему пакета. Если ваша проблема - это ошибка в самом Node.js, сопровождающий сообщит о проблеме upstream.
 
----
+***
 
 - [Альпийский Linux](#alpine-linux)
 - [Android](#android)
@@ -33,7 +33,7 @@ title: Установка Node.js через менеджер пакетов
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
----
+***
 
 ## Альпийский Linux
 
@@ -227,9 +227,9 @@ pkgin -y install nodejs
 
 ## nvm
 
-Node Version Manager is a bash script used to manage multiple released Node.js versions. It allows
-you to perform operations like install, uninstall, switch version, etc.
-To install nvm, use this [install script](https://github.com/nvm-sh/nvm#install--update-script).
+Node Version Manager - это сценарий bash, используемый для управления несколькими выпущенными версиями Node.js. Он позволяет
+выполнять операции, такие как установка, удаление, переключение версии и т. д.
+Чтобы установить nvm, используйте этот [сценарий установки](https://github.com/nvm-sh/nvm#install--update-script).
 
 На Unix / OS X системах Node.js, собранных из исходного кода, можно установить с помощью
 [nvm](https://github.com/creationix/nvm), установив в местоположение, которое ожидается nvm:
