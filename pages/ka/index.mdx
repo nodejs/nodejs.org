@@ -1,29 +1,28 @@
 ---
-title: Run JavaScript Everywhere
+title: გაშვებეთ JavaScript ყველაფერისთვის
 layout: home
 ---
 
 <section>
- <WithBadge section="index" />
+  <WithBadge section="index" />
 
   <div>
-    <h1 className="special">Run JavaScript Everywhere</h1>
+    <h1 className="special">გაშვებეთ JavaScript ყველაფერისთვის</h1>
 
-    Node.js® is a free, open-source, cross-platform JavaScript runtime
-    environment that lets developers create servers, web apps,
-    command line tools and scripts.
-
+    Node.js® არის უფასო, ღია წყვილი, გადადითი JavaScript-ის გაშვების გარეშე
+    გარემო, რომელიც აძლევს დეველოპერებს შექმნას სერვერებს, ვებ აპლიკაციებს,
+    ბრძანების ხელსაწყოებს და სკრიპტებს.
   </div>
 
   <div>
-    <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
+    <WithNodeRelease status={['აქტიური LTS', 'მენეჯმენტის LTS']}>
       {({ release }) => (
         <>
-          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+          <DownloadButton release={release}>Node.js-ის გადმოწერა (LTS)</DownloadButton>
           <small>
-            Downloads Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
-            Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
+            გადმოწერეთ Node.js <b>{release.versionWithPrefix}</b>
+            <sup title="გადმოწერს Node.js ინსტალატორს თქვენს მიმდინარე პლატფორმაზე">1</sup> დახმარეთ დიდი დროვითი მხარდაჭერით.
+            Node.js შეიძლება ინსტალირდეს ასევე <a href="/download/package-manager">პაკეჯის მენეჯერების</a> საშუალებით.
           </small>
         </>
       )}
@@ -32,13 +31,12 @@ layout: home
     <WithNodeRelease status={"Current"}>
       {({ release }) => (
         <small>
-          Want new features sooner?
-          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> instead.
+          გსურთ ახალი ფუნქციები უფრო სწრაფად?
+          მიიღეთ <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="გადმოწერს Node.js ინსტალატორს თქვენს მიმდინარე პლატფორმაზე">1</sup> თუმცა დახმარეთ.
         </small>
       )}
     </WithNodeRelease>
-
   </div>
 </section>
 
@@ -113,9 +111,7 @@ layout: home
       parentPort.postMessage(btoa(source.toUpperCase()));
     }
     ```
-
   </div>
 
-Learn more what Node.js is able to offer with our [Learning materials](/learn).
-
+  შეიცავს მეტის შესაძლებლობებს Node.js ჩვენს [სწავლის მასალებში](/learn).
 </section>
