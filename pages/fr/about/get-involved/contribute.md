@@ -1,6 +1,6 @@
 ---
 title: Contribuer
-layout: about.hbs
+layout: about
 ---
 
 # Contribuer
