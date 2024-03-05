@@ -1,5 +1,7 @@
 'use strict';
 
+import Image from 'next/image';
+
 import Blockquote from './components/Common/Blockquote';
 import Button from './components/Common/Button';
 import DownloadButton from './components/Downloads/DownloadButton';
@@ -82,6 +84,8 @@ export const mdxComponents = {
     // Renders a Release CodeBox
     ReleaseCodeBox: ReleaseCodeBox,
   },
+  // Renders a Next.js Image Component for rendering images
+  Image: Image,
 };
 
 /**
