@@ -1,24 +1,17 @@
 ---
-title: About Node.js®
+title: درباره Node.js®
 layout: about
 ---
 
-<div className="my-4 flex items-center justify-center">
-  <img
-    alt="Node.js mascot"
-    src="/static/images/node-mascot.svg"
-    className="w-[100px]"
-  />
+<div className="my-4 flex موارد مرکزی justify-center">
+  <img alt="نماد Node.js" src="/static/images/node-mascot.svg" className="w-[100px]" />
 </div>
 
----
+***
 
-# About Node.js®
+# درباره Node.js®
 
-As an asynchronous event-driven JavaScript runtime, Node.js is designed to build
-scalable network applications. In the following "hello world" example, many
-connections can be handled concurrently. Upon each connection, the callback is
-fired, but if there is no work to be done, Node.js will sleep.
+به عنوان یک زمان اجرای جاوااسکریپت ناهمگام وابسته به رویداد، Node.js برای ساخت برنامه های شبکه قابل مقیاس طراحی شده است. در مثال "سلام دنیا" زیر، اتصالات زیادی می توانند به صورت همزمان اداره شوند. با هر اتصال، بازخوانی انجام می شود، اما اگر کاری برای انجام وجود نداشته باشد، Node.js خوابیده خواهد شد.
 
 ```js
 const http = require('node:http');
@@ -37,42 +30,24 @@ server.listen(port, hostname, () => {
 });
 ```
 
-This is in contrast to today's more common concurrency model, in which OS threads
-are employed. Thread-based networking is relatively inefficient and very
-difficult to use. Furthermore, users of Node.js are free from worries of
-dead-locking the process, since there are no locks. Almost no function in
-Node.js directly performs I/O, so the process never blocks except when the I/O is performed using
-synchronous methods of Node.js standard library. Because nothing blocks, scalable systems are very
-reasonable to develop in Node.js.
+این با مدل همزمانی رایج امروز متفاوت است که در آن رشته های سیستم عامل استفاده می شوند. شبکه مبتنی بر رشته نسبتاً ناکارآمد و بسیار دشوار برای استفاده است. علاوه بر این، کاربران Node.js از نگرانی های قفل کردن فرآیند آزاد هستند، زیرا هیچ قفلی وجود ندارد. تقریباً هیچ تابعی در Node.js به طور مستقیم I/O انجام نمی دهد، بنابراین فرآیند هرگز قفل نمی شود مگر اینکه I/O با استفاده از روش های همگانی کتابخانه استاندارد Node.js انجام شود. به دلیل عدم قفل شدن چیزی، سیستم های قابل مقیاس توسعه دادنی در Node.js بسیار منطقی هستند.
 
-If some of this language is unfamiliar, there is a full article on
-\[Blocking vs. Non-Blocking]\[].
+اگر برخی از این زبان ناآشنا باشد، یک مقاله کامل در مورد \[مسدود کردن در مقابل عدم مسدود کردن]\[] وجود دارد.
 
----
+***
 
-Node.js is similar in design to, and influenced by, systems like Ruby's
-\[Event Machine]\[] and Python's \[Twisted]\[]. Node.js takes the event model a bit
-further. It presents an event loop as a runtime construct instead of as a library. In other systems,
-there is always a blocking call to start the event-loop.
-Typically, behavior is defined through callbacks at the beginning of a script, and
-at the end a server is started through a blocking call like `EventMachine::run()`.
-In Node.js, there is no such start-the-event-loop call. Node.js simply enters the event loop after executing the input script. Node.js
-exits the event loop when there are no more callbacks to perform. This behavior
-is like browser JavaScript — the event loop is hidden from the user.
+Node.js در طراحی خود شبیه به سیستم هایی مانند \[Event Machine]\[] Ruby و \[Twisted]\[] Python است. Node.js مدل رویداد را یکم بیشتر می بیند. این یک حلقه رویداد را به عنوان یک سازه زمان اجرا نشان می دهد به جای یک کتابخانه. در سایر سیستم ها، همیشه یک تماس مسدود کننده برای شروع حلقه رویداد وجود دارد. به طور معمول، رفتار از طریق بازخوانی ها در ابتدای یک اسکریپت تعریف می شود و در انتها یک سرور از طریق یک تماس مسدود مانند `EventMachine::run()` شروع می شود. در Node.js، چنین تماسی برای شروع حلقه رویداد وجود ندارد. Node.js به سادگی پس از اجرای اسکریپت ورودی وارد حلقه رویداد می شود. Node.js از حلقه رویداد خارج می شود زمانی که دیگر بازخوانی برای انجام وجود نداشته باشد. این رفتار مانند جاوااسکریپت مرورگر است - حلقه رویداد از کاربر مخفی است.
 
-HTTP is a first-class citizen in Node.js, designed with streaming and low
-latency in mind. This makes Node.js well suited for the foundation of a web
-library or framework.
+HTTP یک شهروند اول در Node.js است، طراحی شده با استریمینگ و کم‌تاخیر در ذهن. این باعث می‌شود Node.js مناسب برای پایه‌گذاری یک کتابخانه یا چارچوب وب باشد.
 
-Node.js being designed without threads doesn't mean you can't take
-advantage of multiple cores in your environment. Child processes can be spawned
-by using our \[`child_process.fork()`]\[] API, and are designed to be easy to
-communicate with. Built upon that same interface is the \[`cluster`]\[] module,
-which allows you to share sockets between processes to enable load balancing
-over your cores.
+اینکه Node.js بدون رشته‌ها طراحی شده است به این معنا نیست که نمی‌توانید از چندین هسته در محیط خود استفاده کنید. فرآیندهای فرزندی می‌توانند با استفاده از API \[`child_process.fork()`]\[] ایجاد شوند و طراحی شده‌اند تا ارتباط با آنها آسان باشد. بر پایه همان رابط، ماژول \[`cluster`]\[] ساخته شده است که به شما امکان می‌دهد تا سوکت‌ها را بین فرآیندها به اشتراک بگذارید تا بارگذاری تعادلی را بر روی هسته‌های خود فعال کنید.
 
-[blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+[مسدودکننده در مقابل غیرمسدودکننده]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
+
 [`cluster`]: https://nodejs.org/api/cluster.html
-[event machine]: https://github.com/eventmachine/eventmachine
-[twisted]: https://twistedmatrix.com/trac/
+
+[ماشین رویداد]: https://github.com/eventmachine/eventmachine
+
+[پیچیده]: https://twistedmatrix.com/trac/
