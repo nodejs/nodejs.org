@@ -28,8 +28,13 @@ layout: about
 وهي مسؤولة عن التوجيه الرفيع المستوى للمشروع.
 
 [consensus seeking]: https://en.wikipedia.org/wiki/consensusus-seeking_decision
+
 [readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
+
 [tsc]: https://github.com/nodejs/TSC
+
 [technical steering committee (tsc)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
+
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/cooperator-guide.md
+
 [nodejs/node]: https://github.com/nodejs/node
