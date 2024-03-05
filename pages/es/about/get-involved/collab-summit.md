@@ -20,11 +20,6 @@ antes de integrarlos en las sesiones de trabajo.
 Esta es tu oportunidad de aprender lo que está ocurriendo dentro de la comunidad para saltar
 y contribuir con las habilidades que tienes y te gustaría afinar.
 
-Working groups will put together a schedule so that people can
-familiarize themselves before folks get onsite, having the general collaborator
-discussions, and then dive into breakout sessions.
+Los grupos de trabajo elaborarán un horario para que las personas puedan familiarizarse antes de que lleguen al lugar, teniendo las discusiones generales de colaboradores y luego sumergirse en sesiones de trabajo en grupo.
 
-We'd love to see you at Collab Summit! Check out the [Summit repo](https://github.com/nodejs/summit)
-for upcoming and past Collab Summits and have a look at the
-[issues filed](https://github.com/nodejs/summit/issues) that share what
-individual working groups and committees are looking to discuss in-person.
+¡Nos encantaría verte en la Cumbre de Colaboración! Echa un vistazo al [repositorio de la Cumbre](https://github.com/nodejs/summit) para ver las próximas y pasadas Cumbres de Colaboración y echa un vistazo a los [problemas presentados](https://github.com/nodejs/summit/issues) que comparten lo que los grupos de trabajo y comités individuales quieren discutir en persona.
