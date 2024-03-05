@@ -45,8 +45,8 @@ Node.js directly performs I/O, so the process never blocks except when the I/O i
 synchronous methods of Node.js standard library. Because nothing blocks, scalable systems are very
 reasonable to develop in Node.js.
 
-If some of this language is unfamiliar, there is a full article on
-\[Blocking vs. Non-Blocking]\[].
+Якщо якась з мов не знайома, на ній є повна стаття для
+\[Блокування від блокування]\[].
 
 ---
 
@@ -71,8 +71,8 @@ communicate with. Built upon that same interface is the \[`cluster`]\[] module,
 which allows you to share sockets between processes to enable load balancing
 over your cores.
 
-[blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+[блокування проти неблокуючого]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
-[`cluster`]: https://nodejs.org/api/cluster.html
-[event machine]: https://github.com/eventmachine/eventmachine
-[twisted]: https://twistedmatrix.com/trac/
+[`кластер`]: https://nodejs.org/api/cluster.html
+[машина подій]: https://github.com/eventmachine/eventmachine
+[згинається]: https://twistedmatrix.com/trac/

@@ -1,26 +1,26 @@
 ---
-title: Get involved
+title: Involucrarse
 layout: about
 ---
 
-# Get Involved
+# Participar
 
-## Community Discussion
+## Debate de la comunidad
 
-- The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
-- For real-time chat about Node.js development use one of the platforms below
-  - For IRC, go to `irc.libera.chat` in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [a web client](https://kiwiirc.com/nextclient/)
-  - For Slack, there are two options:
-    - The [OpenJSF Slack](https://slack-invite.openjsf.org/) is a Foundation run Slack with several Node.js channels (channels prefixed by `#nodejs-` are related to the project).
-    - [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
-- The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
-- The [Node.js project calendar](https://nodejs.org/calendar) with all public team meetings.
+- La [lista de problemas de GitHub](https://github.com/nodejs/node/issues) es el lugar para la discusión de las características principales de Node.js.
+- Para el chat en tiempo real sobre el desarrollo de Node.js, utilice una de las plataformas a continuación
+  - Para IRC, ve a `irc.libera.chat` en el canal `#node.js` con un [cliente IRC](https\://en.wikipedia. rg/wiki/Comparison_of_Internet_Relay_Chat_clients) o conéctate en tu navegador web al canal usando [un cliente web](https://kiwiirc.com/nextclient/)
+  - Para Slack, hay dos opciones:
+    - El [Slack OpenJSF](https://slack-invite.openjsf.org/) es una Fundación que ejecuta Slack con varios canales de Node.js (los canales con prefijo `#nodejs-` están relacionados con el proyecto).
+    - [Node Slackers](https://www.nodeslackers.com/) es una comunidad de Slack centrada en Node.js.
+- La cuenta oficial de Twitter de Node.js es [nodejs](https://twitter.com/nodejs).
+- El [calendario del proyecto Node.js](https://nodejs.org/calendar) con todas las reuniones públicas del equipo.
 
-## Learning
+## Aprender
 
-- [Official Learn section](https://nodejs.org/en/learn/) of the Node.js website.
-- [Official API reference documentation](https://nodejs.org/api/).
-- [NodeSchool.io](https://nodeschool.io/) will teach you Node.js concepts via interactive command-line games.
-- [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) collects new information every day.
-- [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
-- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
+- [Sección de Aprendizaje Oficial](https://nodejs.org/en/learn/) del sitio web de Node.js.
+- [Documentación oficial de referencia de API](https://nodejs.org/api/).
+- [NodeSchool.io](https://nodeschool.io/) te enseñará conceptos Node.js a través de juegos interactivos de línea de comandos.
+- [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) recopila nueva información cada día.
+- [La etiqueta Node.js de la comunidad DEV](https://dev.to/t/node) es un lugar para compartir Node. s proyectos, artículos y tutoriales, así como iniciar discusiones y pedir comentarios sobre Node. temas relacionados. Los desarrolladores de todos los niveles de habilidad son bienvenidos a participar.
+- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) es una comunidad amigable de desarrolladores del backend de Node.js que se apoyan mutuamente en Discord.

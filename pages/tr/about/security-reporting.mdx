@@ -1,58 +1,43 @@
 ---
-title: Security Reporting
+title: Güvenlik Raporu
 layout: about
 ---
 
-# Security Reporting
+# Güvenlik Raporu
 
-For more details on active Security Policies, checkout [this page](https://github.com/nodejs/node/security/policy).
+Aktif Güvenlik Politikaları hakkında daha fazla bilgi için \[bu sayfaya] (https://github.com/nodejs/node/security/policy) göz atın.
 
-## Reporting a bug in Node.js
+## Node.js'ye Hata Bildirmek
 
-Report security bugs in Node.js via [HackerOne](https://hackerone.com/nodejs).
+Node.js'deki güvenlik hatalarını \[HackerOne] (https://hackerone.com/nodejs) aracılığıyla bildirin.
 
-Your report will be acknowledged within 5 days, and you'll receive a more
-detailed response to your report within 10 days indicating the next steps in
-handling your submission.
+Raporunuz 5 gün içinde onaylanacak ve size daha fazla bilgi verilecektir.
+Raporunuza 10 gün içinde ayrıntılı bir yanıt vererek sonraki adımları belirtiniz.
+başvurunuzu ele alıyoruz.
 
-After the initial reply to your report, the security team will endeavor to keep
-you informed of the progress being made towards a fix and full announcement,
-and may ask for additional information or guidance surrounding the reported
-issue.
+Raporunuza yapılan ilk yanıttan sonra, güvenlik ekibi sorunun düzeltilmesi ve tam bir duyuru yapılması için yapılan ilerlemeler hakkında sizi bilgilendirmeye çalışacaktır. Ayrıca, bildirilen sorun etrafında ek bilgi veya rehberlik talep edebilirler.
 
-### Node.js bug bounty program
+### Node.js'nin Bug Bounty Programı
 
-The Node.js project engages in an official bug bounty program for security
-researchers and responsible public disclosures. The program is managed through
-the HackerOne platform. See [https://hackerone.com/nodejs](https://hackerone.com/nodejs) for further details.
+Node.js projesi, güvenlik için resmi bir hata ödül programı yürütmektedir
+araştırmacılar ve sorumlu kamu açıklamaları. Program aşağıdakiler aracılığıyla yönetilmektedir
+HackerOne platformu. Daha fazla ayrıntı için [https://hackerone.com/nodejs](https://hackerone.com/nodejs) adresine bakınız.
 
-## Reporting a bug in a third party module
+## Üçüncü taraf modülündeki bir hatayı bildirme
 
-Security bugs in third party modules should be reported to their respective
-maintainers.
+Üçüncü taraf modüllerindeki güvenlik hataları ilgili bakımcılara bildirilmelidir.
 
-## Disclosure policy
+## Bilgilendirme politikası
 
-Here is the security disclosure policy for Node.js
+İşte Node.js için güvenlik açıklama politikası
 
-- The security report is received and is assigned a primary handler. This
-  person will coordinate the fix and release process. The problem is confirmed
-  and a list of all affected versions is determined. Code is audited to find
-  any potential similar problems. Fixes are prepared for all releases which are
-  still under maintenance. These fixes are not committed to the public
-  repository but rather held locally pending the announcement.
+- Güvenlik raporu alınır ve birincil bir işleyiciye atanır. Bu kişi, düzeltme ve yayınlama sürecini koordine edecektir. Sorun doğrulanır ve etkilenen tüm sürümlerin bir listesi belirlenir. Potansiyel benzer sorunları bulmak için kod denetlenir. Bakım altındaki tüm sürümler için düzeltmeler hazırlanır. Bu düzeltmeler, kamu depolarına taahhüt edilmez, ancak duyuru yapılmak üzere yerel olarak tutulur.
 
-- A suggested embargo date for this vulnerability is chosen and a CVE (Common
-  Vulnerabilities and Exposures (CVE®)) is requested for the vulnerability.
+- Bu güvenlik açığı için önerilen bir yayın tarihi belirlenir ve güvenlik açığı için bir CVE (Common Vulnerabilities and Exposures - Ortak Güvenlik Açıkları ve Tehlikeler) talep edilir.
 
-- On the embargo date, the Node.js security mailing list is sent a copy of the
-  announcement. The changes are pushed to the public repository and new builds
-  are deployed to nodejs.org. Within 6 hours of the mailing list being
-  notified, a copy of the advisory will be published on the Node.js blog.
+- Embargo tarihinde, Node.js güvenlik posta listesine duyurunun bir kopyası gönderilir. Değişiklikler kamuya açık depoya taşınır ve yeni derlemeler nodejs.org'a dağıtılır. Posta listesinin bilgilendirilmesinden sonra 6 saat içinde, duyuru Node.js blogunda yayımlanır.
 
-- Typically the embargo date will be set 72 hours from the time the CVE is
-  issued. However, this may vary depending on the severity of the bug or
-  difficulty in applying a fix.
+- Genellikle, CVE'nin verilme zamanından itibaren 72 saat sonra embargo tarihi belirlenir. Ancak, bu, hatanın ciddiyetine veya düzeltmenin uygulanmasındaki zorluğa bağlı olarak değişebilir.
 
 - This process can take some time, especially when coordination is required
   with maintainers of other projects. Every effort will be made to handle the

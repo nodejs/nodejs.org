@@ -1,47 +1,47 @@
 ---
-title: Contributing
+title: 贡献中
 layout: about
 ---
 
-# Contributing
+# 贡献中
 
-Thank you for your interest in contributing to Node.js! There are multiple ways and places you can contribute, and we're here to help facilitate that.
+谢谢您有兴趣为Node.j做出贡献！您可以贡献多种方式和地点，我们来这里帮助促进这一点。
 
-## Asking for General Help
+## 请求常规帮助
 
-Because the level of activity in the `nodejs/node` repository is so high, questions or requests for general help using Node.js should be directed at the [Node.js help repository](https://github.com/nodejs/help/issues).
+由于在 "nodejs/node" 存储库中的活动水平很高，使用节点的一般性帮助的问题或请求。 s 应该指向[Node.js help repository](https://github.com/nodejs/help/issues)。
 
-## Reporting an Issue
+## 报告问题
 
-If you have found what you believe to be an issue with Node.js please do not hesitate to file an issue on the GitHub project. When filing your issue please make sure you can express the issue with a reproducible test case, and that test case should not include any external dependencies. That is to say, the test case can be executed without anything more than Node.js itself.
+如果您发现您认为与 Node.js 有关的问题，请立即在 GitHub 项目上提交一个问题。 在提交您的问题时，请确保您可以用可复制的测试案例来表达问题。 而且该测试案例不应包括任何外部依赖项。 这就是说，测试案例可以比Node.js本身更多地执行。
 
-When reporting an issue we also need as much information about your environment that you can include. We never know what information will be pertinent when trying to narrow down the issue. Please include at least the following information:
+当报告一个问题时，我们也需要你可以包含的关于你的环境的信息。 我们永远不知道在试图缩小问题范围时哪些信息是相关的。请至少包括以下信息：
 
-- Version of Node.js
-- Platform you're running on (macOS, SmartOS, Linux, Windows)
-- Architecture you're running on (32bit or 64bit and x86 or ARM)
+- Node.js 版本
+- 您正在运行的平台 (macOS, SmartOS, Linux, Windows)
+- 您正在运行的架构(32位或64位或x86或ARM)
 
-The Node.js project is currently managed across a number of separate GitHub repositories, each with their own separate issues database. If possible, please direct any issues you are reporting to the appropriate repository but don't worry if things happen to get put in the wrong place, the community of contributors will be more than happy to help get you pointed in the right direction.
+Node.js项目目前由若干独立的GitHub 仓库管理，每个仓库都有各自独立的问题数据库。 如有可能： 请指示您报告的任何问题到适当的仓库，但如果事情发生在错误的地方，请不要担心！ 贡献者社区将非常乐意帮助你朝着正确的方向前进。
 
-- To report issues specific to Node.js, please use [nodejs/node](https://github.com/nodejs/node)
-- To report issues specific to this website, please use [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
+- 要报告Node.js特有的问题，请使用 [nodejs/node](https://github.com/nodejs/node)
+- 要报告这个网站特有的问题，请使用 [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
 
-## Code contributions
+## 代码贡献
 
-If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Contribution Guidelines](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). The review process by existing collaborators for all contributions to the project is explained there as well.
+如果您想修复bug或向Node.js添加一个新功能，请确保您查阅[Node.js 贡献准则](https://github)。 om/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). The review process by existing collaborators for all contributions to the project is also explained.
 
-If you are wondering how to start, you can check [Node Todo](https://www.nodetodo.org/) which may guide you towards your first contribution.
+如果你想知道如何开始，你可以检查 [Node Todo](https://www.nodetodo.org/) 哪个可以引导你做出第一个贡献。
 
-## Becoming a collaborator
+## 成为合作者
 
-By becoming a collaborator, contributors can have even more impact on the project. They can help other contributors by reviewing their contributions, triage issues and take an even bigger part in shaping the project's future. Individuals identified by the TSC as making significant and valuable contributions across any Node.js repository may be made Collaborators and given commit access to the project. Activities taken into consideration include (but are not limited to) the quality of:
+通过成为合作者，捐助方可以对该项目产生更大影响。 它们可以通过审查它们的贡献、筛选问题和在塑造项目未来方面发挥更大的作用来帮助其他捐助者。 海训方案确定的个人在任何方面都作出了重要和宝贵的贡献。 s 存储库可以被设置为 Collaborator，并且可以提交对该项目的访问权限。 考虑到的活动包括（但不限于）下列质量：
 
-- code commits and pull requests
-- documentation commits and pull requests
-- comments on issues and pull requests
-- contributions to the Node.js website
-- assistance provided to end users and novice contributors
-- participation in working groups
-- other participation in the wider Node.js community
+- 代码提交和拉取请求
+- 文档提交和拉取请求
+- 评论问题和拉取请求
+- 对 Node.js 网站的贡献
+- 为终端用户和新手贡献者提供的援助
+- 参加工作组会议
+- 其他参与更广泛的 Node.js 社区
 
-If individuals making valuable contributions do not believe they have been considered for commit access, they may [log an issue](https://github.com/nodejs/TSC/issues) or [contact a TSC member](https://github.com/nodejs/node#tsc-technical-steering-committee) directly.
+如果作出宝贵贡献的个人不认为他们被考虑进行访问，他们可以[记录一个问题](https://github)。 om/nodejs/TSC/issues或[联系TSC成员](https://github.com/nodejs/node#tsc-technical-steering-committee)。

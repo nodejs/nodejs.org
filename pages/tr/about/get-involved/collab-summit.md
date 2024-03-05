@@ -1,30 +1,18 @@
 ---
-title: Collab Summit
+title: İşbirliği Zirvesi
 layout: about
 ---
 
-# Collaborator Summit
+# İşbirlikçi Zirvesi
 
-Node.js's Collaborator Summit is an un-conference for bringing current and
-potential contributors together to discuss Node.js with lively collaboration,
-education, and knowledge sharing. Committees and working groups come together
-twice per year to make important decisions while also being able to work on some
-exciting efforts they want to push forward in-person.
+Node.js İşbirlikçi Zirvesi, mevcut ve potansiyel katkıda bulunanları bir araya getirmek, canlı işbirliği, eğitim ve bilgi paylaşımı ile Node.js'i tartışmak için düzenlenen bir konferans değildir. Komiteler ve çalışma grupları, önemli kararlar almak için yılda iki kez bir araya gelirken aynı zamanda kişisel olarak ilerletmek istedikleri heyecan verici çalışmalarda da çalışabilirler.
 
-## Who attends?
+## Kimler katılıyor?
 
-Anyone is welcome to attend Collab Summit. During the
-summit, leaders will help onboard new contributors to groups they'd love to help
-prior to integrating them into the working sessions.
+Collab Summit'e katılmak isteyen herkesi bekliyoruz. Zirve sırasında, liderler yeni katkı sağlayıcıları gruplara entegre etmeden önce desteklemek için onları çalışma oturumlarına dahil etmek için yardımcı olacaklar.
 
-This is your opportunity to learn what is happening within the community to jump
-in and contribute with the skills you have and would like to hone.
+Bu, topluluk içinde neler olduğunu öğrenmek ve sahip olduğunuz ve geliştirmek istediğiniz becerilerle katkıda bulunmak için bir fırsattır.
 
-Working groups will put together a schedule so that people can
-familiarize themselves before folks get onsite, having the general collaborator
-discussions, and then dive into breakout sessions.
+Çalışma grupları, insanların genel işbirlikçi tartışmaları yapmadan önce siteye gelmeden önce programı inceleyebilecekleri ve ardından ayrılma oturumlarına geçebilecekleri bir program oluşturacaklar.
 
-We'd love to see you at Collab Summit! Check out the [Summit repo](https://github.com/nodejs/summit)
-for upcoming and past Collab Summits and have a look at the
-[issues filed](https://github.com/nodejs/summit/issues) that share what
-individual working groups and committees are looking to discuss in-person.
+Collab Summit'e seni de görmek isteriz! Yaklaşan ve geçmiş Collab Zirveleri için [Zirve Deposunu](https://github.com/nodejs/summit) kontrol et ve bireysel çalışma gruplarının ve komitelerin kişisel olarak tartışmak istedikleri konuları paylaşan [Açılan Konuları](https://github.com/nodejs/summit/issues) inceleyebilirsin.
