@@ -1,26 +1,26 @@
 ---
-title: Get involved
+title: Terlibatlah
 layout: about
 ---
 
-# Get Involved
+# Terlibatlah
 
-## Community Discussion
+## Diskusi Komunitas
 
-- The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
-- For real-time chat about Node.js development use one of the platforms below
-  - For IRC, go to `irc.libera.chat` in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [a web client](https://kiwiirc.com/nextclient/)
-  - For Slack, there are two options:
-    - The [OpenJSF Slack](https://slack-invite.openjsf.org/) is a Foundation run Slack with several Node.js channels (channels prefixed by `#nodejs-` are related to the project).
-    - [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
-- The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
-- The [Node.js project calendar](https://nodejs.org/calendar) with all public team meetings.
+- Daftar isu GitHub merupakan tempat untuk diskusi fitur inti Node.js.
+- Untuk obrolan waktu nyata tentang pengembangan Node.js, gunakan salah satu platform di bawah ini
+  - Untuk IRC, buka `irc.libera.chat` di saluran `#node.js` dengan [klien IRC](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) atau hubungkan melalui browser web ke saluran menggunakan [klien web](https://kiwiirc.com/nextclient/)
+  - Untuk Slack, ada dua pilihan:
+    - Slack OpenJSF adalah Slack yang dijalankan oleh Yayasan dengan beberapa saluran Node.js (saluran yang diawali dengan `#nodejs-` terkait dengan proyek).
+    - [Node Slackers](https://www.nodeslackers.com/) adalah komunitas Slack yang berfokus pada Node.js.
+- Akun Twitter resmi Node.js adalah [nodejs](https://twitter.com/nodejs).
+- Kalender proyek [Node.js](https://nodejs.org/calendar) dengan semua pertemuan tim publik.
 
-## Learning
+## Pembelajaran
 
-- [Official Learn section](https://nodejs.org/en/learn/) of the Node.js website.
-- [Official API reference documentation](https://nodejs.org/api/).
-- [NodeSchool.io](https://nodeschool.io/) will teach you Node.js concepts via interactive command-line games.
-- [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) collects new information every day.
-- [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
-- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
+- Bagian Pembelajaran resmi (Official Learn section) dari situs web [Node.js](https://nodejs.org/en/learn/).
+- Dokumentasi referensi API resmi (Official API reference documentation) dari [Node.js](https://nodejs.org/api/).
+- [NodeSchool.io](https://nodeschool.io/) akan mengajarkan konsep-konsep Node.js melalui permainan baris perintah interaktif.
+- Tag [Node.js di Stack Overflow](https://stackoverflow.com/questions/tagged/node.js) mengumpulkan informasi baru setiap hari.
+- Tag Komunitas DEV Node.js (The DEV Community Node.js tag) adalah tempat untuk berbagi proyek, artikel, dan tutorial Node.js serta memulai diskusi dan meminta umpan balik tentang topik terkait Node.js. Pengembang dari semua tingkatan keterampilan dipersilakan untuk ikut serta.
+- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) adalah komunitas ramah pengembang backend Node.js yang saling mendukung di Discord.
