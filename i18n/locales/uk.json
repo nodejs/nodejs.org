@@ -12,7 +12,7 @@
       },
       "navBar": {
         "links": {
-          "about": "About",
+          "about": "Про Node.js",
           "download": "Завантажити",
           "docs": "Документація",
           "guides": "Посібники",
@@ -93,7 +93,7 @@
             "diagnostics": "Діагностика",
             "userJourney": "User Journey",
             "memory": "Пам’ять",
-            "liveDebugging": "Live Debugging",
+            "liveDebugging": "Налагодження в реальному часі",
             "poorPerformance": "Низька продуктивність",
             "flameGraphs": "Flame Graphs"
           }
@@ -131,7 +131,7 @@
         "unofficialBuilds": "Неофіційні збірки",
         "buildingFromSource": "Збірка Node.js із вихідного коду на підтримуваних платформах",
         "installingOnLinux": "Установка Node.js через бінарний архів",
-        "installingOnWsl": "Встановити на підсистему Windows для Linux (WSL)"
+        "installingOnWsl": "Установити на підсистему Windows для Linux (WSL)"
       }
     },
     "downloadReleasesTable": {
