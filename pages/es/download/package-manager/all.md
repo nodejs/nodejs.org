@@ -7,7 +7,7 @@ title: Instalar Node.js a través del gestor de paquetes
 
 > Los paquetes de esta página son mantenidos y soportados por sus respectivos empaquetadores, **no** el equipo central de Node.js. Por favor, informe de cualquier problema que encuentre al mantenedor del paquete. Si resulta que su problema es un error en Node.js, el mantenedor informará del problema en el desarrollador principal.
 
----
+***
 
 - [Alpine Linux](#alpine-linux)
 - [Android](#android)
@@ -33,7 +33,7 @@ title: Instalar Node.js a través del gestor de paquetes
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
----
+***
 
 ## Alpine Linux
 
@@ -107,8 +107,8 @@ Los paquetes compatibles con las distribuciones Linux basadas en Debian y Ubuntu
 
 ## fnm
 
-Fast and simple Node.js version manager built in Rust used to manage multiple released Node.js versions. It allows you to perform operations like install, uninstall, switch Node versions automatically based on the current directory, etc.
-To install fnm, use this [install script](https://github.com/Schniz/fnm#using-a-script-macoslinux).
+Administrador de versiones de Node.js rápido y sencillo construido en Rust utilizado para gestionar múltiples versiones de Node.js publicadas. Permite realizar operaciones como instalar, desinstalar, cambiar automáticamente entre versiones de Node basadas en el directorio actual, etc.
+Para instalar fnm, utiliza este [script de instalación](https://github.com/Schniz/fnm#using-a-script-macoslinux).
 
 fnm tiene soporte multiplataforma (macOS, Windows, Linux) y todos los shells populares (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
 fnm se construye pensando en la velocidad y el soporte de compatibilidad para archivos `.node-version` y `.nvmrc`.
@@ -238,9 +238,9 @@ En sistemas Unix / OS X se puede instalar Node.js construido desde la fuente usa
 env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
-After this you can use `nvm` to switch between released versions and versions
-built from source.
-For example, if the version of Node.js is v8.0.0-pre:
+Después de esto, puedes usar `nvm` para cambiar entre versiones publicadas y versiones
+compiladas desde el código fuente.
+Por ejemplo, si la versión de Node.js es v8.0.0-pre:
 
 ```bash
 nvm use 8
