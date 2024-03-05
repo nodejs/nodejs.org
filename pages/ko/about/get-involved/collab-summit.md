@@ -5,26 +5,14 @@ layout: about
 
 # Collaborator Summit
 
-Node.js's Collaborator Summit is an un-conference for bringing current and
-potential contributors together to discuss Node.js with lively collaboration,
-education, and knowledge sharing. Committees and working groups come together
-twice per year to make important decisions while also being able to work on some
-exciting efforts they want to push forward in-person.
+Node.js의 협업자 서밋은 현재 및 잠재적인 기여자들을 모아 Node.js에 대해 활발한 협업, 교육 및 지식 공유를 논의하는 언컨퍼런스입니다. 위원회 및 작업 그룹은 매년 두 번 모여 중요한 결정을 내리는 동시에 직접 진행하고 싶은 흥미로운 노력들에도 참여할 수 있습니다.
 
-## Who attends?
+## 누가 참석하나요?
 
-Anyone is welcome to attend Collab Summit. During the
-summit, leaders will help onboard new contributors to groups they'd love to help
-prior to integrating them into the working sessions.
+누구나 Collab Summit에 참석할 수 있습니다. 서밋 중에 리더들은 새로운 기여자들을 그들이 도와주고 싶은 그룹에 온보딩하고, 이를 작업 세션에 통합하기 전에 도와줄 것입니다.
 
-This is your opportunity to learn what is happening within the community to jump
-in and contribute with the skills you have and would like to hone.
+이것은 커뮤니티 내에서 무슨 일이 일어나고 있는지를 배우는 기회입니다. 당신이 가지고 있는 기술로 기여하고 싶고 연마하고 싶은 기술을 활용해보세요.
 
-Working groups will put together a schedule so that people can
-familiarize themselves before folks get onsite, having the general collaborator
-discussions, and then dive into breakout sessions.
+워킹 그룹은 일정을 마련하여 사람들이 현장에 도착하기 전에 스스로를 익힐 수 있도록 하고, 일반 협력자들과의 토론을 진행한 후에 세부 세션으로 진입할 것입니다.
 
-We'd love to see you at Collab Summit! Check out the [Summit repo](https://github.com/nodejs/summit)
-for upcoming and past Collab Summits and have a look at the
-[issues filed](https://github.com/nodejs/summit/issues) that share what
-individual working groups and committees are looking to discuss in-person.
+Collab Summit에서 당신을 만나고 싶습니다! [Summit repo](https://github.com/nodejs/summit)에서 다가오는 Collab Summit 및 지난 Collab Summit을 확인하고, [제기된 이슈들](https://github.com/nodejs/summit/issues)을 살펴보세요. 개별 워킹 그룹과 위원회가 대면으로 논의할 내용을 공유합니다.
