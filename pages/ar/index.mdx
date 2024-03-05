@@ -1,44 +1,42 @@
 ---
-title: Run JavaScript Everywhere
+title: تشغيل جافا سكريبت في كل مكان
 layout: home
 ---
 
 <section>
-  <WithBadge section="index" />
+  <WithBadge section="فهرس" />
 
   <div>
-    <h1 className="special">Run JavaScript Everywhere</h1>
+    <h1 className="special">تشغيل جافا سكريبت في كل مكان</h1>
 
-    Node.js® is a free, open-source, cross-platform JavaScript runtime
-    environment that lets developers create servers, web apps,
-    command line tools and scripts.
-
+    Node.js®️ هو تشغيل مجاني، مفتوح المصدر، عبر منصة JavaScript
+    بيئة تتيح للمطورين إنشاء خوادم، تطبيقات ويب،
+    أدوات سطر الأوامر والنصوص النصية.
   </div>
 
   <div>
-    <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
+    <WithNodeRelease status={['نشط LTS', 'صيانة LTS']}>
       {({ release }) => (
         <>
-          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+          <DownloadButton release={release}>تنزيل Node.js (LTS)</DownloadButton>
           <small>
-            Downloads Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
-            Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
+            يتم تنزيل Node.js <b>{release.versionWithPrefix}</b>
+            <sup title="تنزيل مثبت Node.js لمنصة العمل الحالية">1</sup> مع الدعم على المدى الطويل.
+            يمكن أيضًا تثبيت Node.js عبر <a href="/download/package-manager">مديري الحزم</a>.
           </small>
         </>
       )}
     </WithNodeRelease>
 
-    <WithNodeRelease status="Current">
+    <WithNodeRelease status="الحالي">
       {({ release }) => (
         <small>
-          Want new features sooner?
-          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> instead.
+          تريد ميزات جديدة بشكل أسرع؟
+          احصل على <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="تنزيل مثبت Node.js لمنصة العمل الحالية">1</sup> بدلاً من ذلك.
         </small>
       )}
     </WithNodeRelease>
-
   </div>
 </section>
 
@@ -113,9 +111,7 @@ layout: home
       parentPort.postMessage(btoa(source.toUpperCase()));
     }
     ```
-
   </div>
 
-Learn more what Node.js is able to offer with our [Learning materials](/learn).
-
+  تعرف على المزيد مما يستطيع Node.js أن يقدمه من خلال [مواد التعلم](/learn).
 </section>
