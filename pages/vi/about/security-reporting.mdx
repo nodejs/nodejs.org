@@ -1,71 +1,48 @@
 ---
-title: Security Reporting
+title: Báo cáo Bảo mật
 layout: about
 ---
 
-# Security Reporting
+# Báo cáo Bảo mật
 
-For more details on active Security Policies, checkout [this page](https://github.com/nodejs/node/security/policy).
+Để biết thêm chi tiết về Chính sách Bảo mật hoạt động, vui lòng kiểm tra [trang này](https://github.com/nodejs/node/security/policy).
 
-## Reporting a bug in Node.js
+## Báo cáo lỗi trong Node.js
 
-Report security bugs in Node.js via [HackerOne](https://hackerone.com/nodejs).
+Báo cáo lỗi bảo mật trong Node.js qua [HackerOne](https://hackerone.com/nodejs).
 
-Your report will be acknowledged within 5 days, and you'll receive a more
-detailed response to your report within 10 days indicating the next steps in
-handling your submission.
+Báo cáo của bạn sẽ được xác nhận trong vòng 5 ngày, và bạn sẽ nhận được một phản hồi chi tiết hơn về báo cáo của bạn trong vòng 10 ngày, cho biết các bước tiếp theo trong xử lý báo cáo của bạn.
 
-After the initial reply to your report, the security team will endeavor to keep
-you informed of the progress being made towards a fix and full announcement,
-and may ask for additional information or guidance surrounding the reported
-issue.
+Sau câu trả lời ban đầu cho báo cáo của bạn, nhóm bảo mật sẽ cố gắng thông báo cho bạn về tiến triển đang diễn ra để sửa lỗi và thông báo đầy đủ, và có thể yêu cầu thêm thông tin hoặc hướng dẫn về vấn đề được báo cáo.
 
-### Node.js bug bounty program
+### Chương trình thưởng lỗi Node.js
 
-The Node.js project engages in an official bug bounty program for security
-researchers and responsible public disclosures. The program is managed through
-the HackerOne platform. See [https://hackerone.com/nodejs](https://hackerone.com/nodejs) for further details.
+Dự án Node.js tham gia vào một chương trình thưởng lỗi chính thức dành cho các nhà nghiên cứu bảo mật và công bố trách nhiệm. Chương trình được quản lý thông qua nền tảng HackerOne. Xem chi tiết tại [https://hackerone.com/nodejs](https://hackerone.com/nodejs) để biết thêm thông tin.
 
-## Reporting a bug in a third party module
+## Báo cáo lỗi trong một module bên thứ ba
 
-Security bugs in third party modules should be reported to their respective
-maintainers.
+Các lỗi bảo mật trong các module bên thứ ba nên được báo cáo cho các nhà quản trị tương ứng của chúng.
 
-## Disclosure policy
+## Chính sách tiết lộ
 
-Here is the security disclosure policy for Node.js
+Dưới đây là chính sách tiết lộ bảo mật cho Node.js
 
-- The security report is received and is assigned a primary handler. This
-  person will coordinate the fix and release process. The problem is confirmed
-  and a list of all affected versions is determined. Code is audited to find
-  any potential similar problems. Fixes are prepared for all releases which are
-  still under maintenance. These fixes are not committed to the public
-  repository but rather held locally pending the announcement.
+* Báo cáo bảo mật được nhận và được giao cho một người xử lý chính. Người này sẽ phối hợp quá trình sửa lỗi và phát hành. Vấn đề được xác nhận và một danh sách của tất cả các phiên bản bị ảnh hưởng được xác định. Mã được kiểm tra để tìm ra bất kỳ vấn đề tương tự nào. Các sửa lỗi được chuẩn bị cho tất cả các phiên bản vẫn đang được bảo trì. Những sửa lỗi này không được commit vào kho lưu trữ công khai mà được giữ cục bộ đợi thông báo.
 
-- A suggested embargo date for this vulnerability is chosen and a CVE (Common
-  Vulnerabilities and Exposures (CVE®)) is requested for the vulnerability.
+* Một ngày embargo đề xuất cho lỗ hổng này được chọn và một CVE (Các Lỗ Hổng và Mối Nguy Hiểm Phổ Biến (CVE®)) được yêu cầu cho lỗ hổng này.
 
-- On the embargo date, the Node.js security mailing list is sent a copy of the
-  announcement. The changes are pushed to the public repository and new builds
-  are deployed to nodejs.org. Within 6 hours of the mailing list being
-  notified, a copy of the advisory will be published on the Node.js blog.
+* Vào ngày embargo, danh sách gửi thư bảo mật Node.js được gửi một bản sao của thông báo. Các thay đổi được đẩy lên kho lưu trữ công khai và các bản build mới được triển khai trên nodejs.org. Trong vòng 6 giờ kể từ khi danh sách gửi thư được thông báo, một bản sao của thông báo sẽ được xuất bản trên blog Node.js.
 
-- Typically the embargo date will be set 72 hours from the time the CVE is
-  issued. However, this may vary depending on the severity of the bug or
-  difficulty in applying a fix.
+* Thường thì ngày embargo sẽ được đặt 72 giờ kể từ khi CVE được phát hành. Tuy nhiên, điều này có thể thay đổi tùy thuộc vào mức độ nghiêm trọng của lỗi hoặc độ khó trong việc áp dụng sửa lỗi.
 
-- This process can take some time, especially when coordination is required
-  with maintainers of other projects. Every effort will be made to handle the
-  bug in as timely a manner as possible; however, it's important that we follow
-  the release process above to ensure that the disclosure is handled in a
-  consistent manner.
+* Quá trình này có thể mất một thời gian, đặc biệt khi cần phối hợp với các nhà quản trị của các dự án khác. Mọi nỗ lực sẽ được thực hiện để xử lý lỗi một cách kịp thời nhất có thể; tuy nhiên, quan trọng là chúng ta phải tuân thủ quy trình phát hành ở trên để đảm bảo rằng việc tiết lộ được xử lý một cách nhất quán.
 
-## Receiving security updates
+## Nhận cập nhật bảo mật
 
-Security notifications will be distributed via the following methods.
+Thông báo bảo mật sẽ được phân phối qua các phương pháp sau.
 
-- [Google Group](https://groups.google.com/group/nodejs-sec)
-- [Node.js Blog](/blog)
+* [Google Group](https://groups.google.com/group/nodejs-sec)
+* [Node.js Blog](/blog)
 
 ## Comments on this policy
 
@@ -75,15 +52,8 @@ If you have suggestions on how this process could be improved please submit a
 
 ## OpenSSF Best Practices
 
-<a
-  href="https://bestpractices.coreinfrastructure.org/projects/29"
-  style={{ display: 'inline-flex' }}
->
-  <img
-    alt="OpenSSF Badge"
-    src="https://bestpractices.coreinfrastructure.org/projects/29/badge"
-    style={{ display: 'inline' }}
-  />
+<a href="https://bestpractices.coreinfrastructure.org/projects/29" style={{ display: 'inline-flex' }}>
+  <img alt="OpenSSF Badge" src="https://bestpractices.coreinfrastructure.org/projects/29/badge" style={{ display: 'inline' }} />
 </a>
 
-The Open Source Security Foundation (OpenSSF) [Best Practices badge](https://github.com/coreinfrastructure/best-practices-badge) is a way for Free/Libre and Open Source Software (FLOSS) projects to show that they follow best practices. Projects can voluntarily self-certify how they follow each best practice. Consumers of the badge can quickly assess which FLOSS projects are following best practices and as a result are more likely to produce higher-quality secure software.
+Tổ chức Bảo mật Mã nguồn Mở (OpenSSF) [Huy hiệu Thực hành Tốt nhất](https://github.com/coreinfrastructure/best-practices-badge) là một cách để các dự án Phần mềm Tự do/Mã nguồn Mở (FLOSS) thể hiện rằng họ tuân thủ các phương pháp tốt nhất. Các dự án có thể tự chứng nhận theo cách họ tuân thủ từng phương pháp tốt nhất. Người tiêu dùng của huy hiệu có thể nhanh chóng đánh giá xem dự án FLOSS nào đang tuân thủ các phương pháp tốt nhất và do đó có khả năng tạo ra phần mềm an toàn chất lượng cao hơn.
