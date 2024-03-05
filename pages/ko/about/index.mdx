@@ -1,0 +1,53 @@
+---
+title: Node.js®에 대해
+layout: about
+---
+
+<div className="my-4 유연한 항목 중앙 정렬">
+  <img alt="Node.js 마스코트" src="/static/images/node-mascot.svg" className="w-[100px]" />
+</div>
+
+***
+
+# Node.js®에 대해
+
+Node.js는 비동기 이벤트 기반 JavaScript 런타임으로 설계되어 확장 가능한 네트워크 응용 프로그램을 구축하는 데 사용됩니다. 다음의 'hello world' 예제에서 여러 연결을 동시에 처리할 수 있습니다. 각 연결마다 콜백이 호출되지만 작업이 필요하지 않은 경우 Node.js는 대기합니다.
+
+```js
+const http = require('node:http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+이는 현재 보다 일반적인 동시성 모델과 대조적입니다. OS 스레드를 사용하는 스레드 기반 네트워킹은 비교적 효율적이지 않으며 매우 어렵게 사용됩니다. 또한, Node.js 사용자들은 프로세스를 데드락에 걸리지 않도록 걱정할 필요가 없습니다. Node.js에서 거의 모든 함수가 직접 I/O를 수행하지 않으므로 I/O가 Node.js 표준 라이브러리의 동기 메서드를 사용하여 수행될 때만 프로세스가 차단됩니다. 아무것도 차단되지 않기 때문에 확장 가능한 시스템을 Node.js에서 개발하는 것은 매우 합리적입니다.
+
+이 언어가 익숙하지 않다면 \[차단 vs. 비차단]에 대한 전체 기사가 있습니다.
+
+***
+
+Node.js는 Ruby의 \[Event Machine] 및 Python의 \[Twisted]와 같은 시스템에서 영향을 받은 디자인과 유사합니다. Node.js는 이벤트 모델을 조금 더 발전시켰습니다. 다른 시스템에서는 항상 이벤트 루프를 시작하는 차단 호출이 있습니다. 일반적으로 동작은 스크립트의 시작 부분에서 콜백을 통해 정의되며, 마지막에는 `EventMachine::run()`과 같은 차단 호출을 통해 서버가 시작됩니다. Node.js에서는 이벤트 루프를 시작하는 호출이 없습니다. Node.js는 입력 스크립트를 실행한 후 간단히 이벤트 루프에 진입합니다. Node.js는 더 이상 수행할 콜백이 없을 때 이벤트 루프를 종료합니다. 이 동작은 브라우저 JavaScript와 유사합니다 - 사용자에게 이벤트 루프가 숨겨져 있습니다.
+
+HTTP는 Node.js에서 주요 요소로, 스트리밍 및 낮은 지연 시간을 고려하여 설계되었습니다. 이로 인해 Node.js는 웹 라이브러리 또는 프레임워크의 기초로 적합합니다.
+
+Node.js는 스레드 없이 설계되었지만 환경의 다중 코어를 활용할 수 없다는 뜻은 아닙니다. \[`child_process.fork()`]\[] API를 사용하여 자식 프로세스를 생성할 수 있으며, 이를 통해 손쉽게 통신할 수 있습니다. 이와 동일한 인터페이스를 기반으로 한 \[`cluster`]\[] 모듈을 사용하여 프로세스 간에 소켓을 공유하여 코어 간의 부하 분산을 가능하게 합니다.
+
+[차단 vs. 비차단]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+
+[`child_process.fork()`]: https://nodejs.org/api/child_process.html
+
+[`cluster`]: https://nodejs.org/api/cluster.html
+
+[이벤트 머신]: https://github.com/eventmachine/eventmachine
+
+[twisted]: https://twistedmatrix.com/trac/
