@@ -1,0 +1,54 @@
+---
+title: Node.js について
+layout: about
+---
+
+<div className="Flex my-4 items-center justify-center">
+  <img alt="Node.js のマスク" src="/static/images/node-maskot.svg" className="w-[100px]" />
+</div>
+
+***
+
+# Node.js について
+
+非同期イベント駆動型のJavaScriptランタイムとして、Node.js はスケーラブルなネットワークアプリケーションを構築するために設計されています。次の「hello world」の例では、多くの接続を同時に処理できます。各接続ごとにコールバックが実行されますが、何も処理する必要がない場合は、Node.js はスリープ状態になります。
+
+```js
+const http = require('node:http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+これは、現在より一般的な並行性モデルとは対照的であり、OSスレッドが使用されています。スレッドベースのネットワーキングは比較的効率が悪く、非常に使いにくいです。さらに、Node.js のユーザーは、プロセスをデッドロックさせる心配がないため、ロックがありません。Node.js では、ほとんどの関数が直接 I/O を実行しないため、I/O が Node.js 標準ライブラリの同期メソッドを使用して実行される場合を除いて、プロセスはブロックされません。何もブロックされないため、スケーラブルなシステムを Node.js で開発するのは非常に合理的です。
+
+この言語のいくつかがよく知られていない場合は、
+\[Blocking vs. Non-Blocking]の記事があります。
+
+***
+
+Node.js は Ruby の \[Event Machine]\[] や Python の \[Twisted]\[] のようなシステムに似ており、影響を受けています。Node.js はイベントモデルを少し進化させています。他のシステムでは、常にイベントループを開始するブロッキングコールがあります。通常、振る舞いはスクリプトの最初でコールバックを介して定義され、`EventMachine::run()` のようなブロッキングコールでサーバーが起動します。しかし、Node.js にはそのようなイベントループを開始するコールはありません。Node.js は単に入力スクリプトを実行した後にイベントループに入ります。Node.js は、実行するコールバックがもうないときにイベントループを終了します。この振る舞いはブラウザのJavaScriptと似ており、ユーザーからはイベントループが隠されています。
+
+HTTP は Node.js において第一級の市民です。ストリーミングと低遅延を念頭に設計されています。これにより、Node.js はウェブライブラリやフレームワークの基盤として非常に適しています。
+
+スレッドを使用せずに設計された Node.js であっても、環境内の複数のコアを活用することはできます。\[`child_process.fork()`]\[] API を使用して子プロセスを生成し、簡単に通信できるように設計されています。同じインターフェースを基に構築されたのが \[`cluster`]\[] モジュールであり、プロセス間でソケットを共有してコア上での負荷分散を可能にします。
+
+[ブロッキング対ノンブロッキング]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+
+[`child_process.fork()`]: https://nodejs.org/api/child_process.html
+
+[`cluster`]: https://nodejs.org/api/cluster.html
+
+[イベントマシン]: https://github.com/eventmachine/eventmachine
+
+[ツイスト]: https://wisteredmatrix.com/trac/
