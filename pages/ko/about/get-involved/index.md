@@ -1,26 +1,26 @@
 ---
-title: Get involved
+title: 참여하다
 layout: about
 ---
 
-# Get Involved
+# 참여하다
 
-## Community Discussion
+## 커뮤니티 토론
 
-- The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
-- For real-time chat about Node.js development use one of the platforms below
-  - For IRC, go to `irc.libera.chat` in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [a web client](https://kiwiirc.com/nextclient/)
-  - For Slack, there are two options:
-    - The [OpenJSF Slack](https://slack-invite.openjsf.org/) is a Foundation run Slack with several Node.js channels (channels prefixed by `#nodejs-` are related to the project).
-    - [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
-- The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
-- The [Node.js project calendar](https://nodejs.org/calendar) with all public team meetings.
+- [GitHub issues list](https://github.com/nodejs/node/issues)는 Node.js 코어 기능에 대한 토론을 위한 장소입니다.
+- Node.js 개발에 대한 실시간 채팅은 아래 플랫폼 중 하나를 사용하십시오.
+  - IRC의 경우, [IRC 클라이언트](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients)로 `irc.libera.chat`의 `#node.js` 채널로 이동하거나 [웹 클라이언트](https://kiwiirc.com/nextclient/)를 사용하여 웹 브라우저에서 채널에 연결하십시오.
+  - Slack의 경우 두 가지 옵션이 있습니다:
+    - [OpenJSF Slack](https://slack-invite.openjsf.org/)은 여러 Node.js 채널이 있는 재단 운영 Slack입니다 (`#nodejs-`로 접두사가 붙은 채널은 해당 프로젝트와 관련이 있음).
+    - [Node Slackers](https://www.nodeslackers.com/)는 Node.js에 초점을 맞춘 Slack 커뮤니티입니다.
+- 공식 Node.js Twitter 계정은 [nodejs](https://twitter.com/nodejs)입니다.
+- 모든 공개 팀 회의가 있는 [Node.js 프로젝트 캘린더](https://nodejs.org/calendar).
 
-## Learning
+## 학습
 
-- [Official Learn section](https://nodejs.org/en/learn/) of the Node.js website.
-- [Official API reference documentation](https://nodejs.org/api/).
-- [NodeSchool.io](https://nodeschool.io/) will teach you Node.js concepts via interactive command-line games.
-- [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) collects new information every day.
-- [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
-- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
+- [Node.js 웹 사이트의 공식 학습 섹션](https://nodejs.org/en/learn/).
+- [공식 API 참조 문서](https://nodejs.org/api/).
+- [NodeSchool.io](https://nodeschool.io/)은 상호 작용하는 명령줄 게임을 통해 Node.js 개념을 가르칩니다.
+- [Stack Overflow Node.js 태그](https://stackoverflow.com/questions/tagged/node.js)은 매일 새로운 정보를 수집합니다.
+- [DEV 커뮤니티 Node.js 태그](https://dev.to/t/node)는 Node.js 프로젝트, 기사 및 자습서를 공유하고 토론을 시작하며 Node.js 관련 주제에 대한 피드백을 요청할 수 있는 장소입니다. 모든 기술 수준의 개발자들이 참여할 수 있습니다.
+- [Nodeiflux](https://discordapp.com/invite/vUsrbjd)는 Discord에서 서로 지원하는 친근한 Node.js 백엔드 개발자 커뮤니티입니다.
