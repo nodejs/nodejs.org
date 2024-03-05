@@ -1,0 +1,290 @@
+{
+  "components": {
+    "containers": {
+      "footer": {
+        "links": {
+          "trademarkPolicy": "سياسة العلامات التجارية",
+          "privacyPolicy": "سياسة الخصوصية",
+          "codeOfConduct": "مدونة قواعد السلوك",
+          "security": "السياسة الأمنية",
+          "openJS": "مؤسسة OpenJS"
+        }
+      },
+      "navBar": {
+        "links": {
+          "about": "حول",
+          "download": "تنزيل",
+          "docs": "الوثائق",
+          "guides": "أدلة",
+          "learn": "تعلم",
+          "security": "أمان",
+          "certification": "شهادة",
+          "blog": "المدونة"
+        }
+      }
+    },
+    "navigation": {
+      "learn": {
+        "gettingStarted": {
+          "links": {
+            "gettingStarted": "بدء العمل",
+            "introductionToNodejs": "مقدمة إلى Node.js",
+            "howToInstallNodejs": "كيفية تثبيت Node.js",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "كم تحتاج إلى معرفة جافا سكريبت لاستخدام Node.j؟",
+            "differencesBetweenNodejsAndTheBrowser": "الاختلافات بين Node.js والمستعرض",
+            "theV8JavascriptEngine": "محرك جافا سكريبت V8",
+            "anIntroductionToTheNpmPackageManager": "مقدمة لمدير الحزمة npm",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) وما بعده",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js، الفرق بين التنمية والإنتاج",
+            "nodejsWithTypescript": "Node.js مع TypeScript",
+            "nodejsWithWebassembly": "Node.js مع WebAssembly",
+            "debugging": "تصحيح أخطاء Node.js",
+            "profiling": "تطبيقات توسيم Node.js",
+            "securityBestPractices": "أفضل الممارسات الأمنية"
+          }
+        },
+        "asynchronousWork": {
+          "links": {
+            "asynchronousWork": "العمل المتزامن",
+            "asynchronousFlowControl": "التحكم المتزامن في التدفق",
+            "overviewOfBlockingVsNonBlocking": "نظرة عامة على حظر ضد عدم حظر",
+            "javascriptAsynchronousProgrammingAndCallbacks": "برمجة جافا سكريبت وتزامن المكالمات",
+            "discoverJavaScriptTimers": "اكتشف أوقات جافا سكريبت",
+            "theNodejsEventLoop": "حلقة حدث Node.js",
+            "theNodejsEventEmitter": "إمتار حدث Node.js",
+            "understandingProcessnexttick": "فهم العملية.nextTick()",
+            "understandingSetimmediate": "Understanding setImmediate()",
+            "dontBlockTheEventLoop": "لا تقم بحظر حلقة الحدث"
+          }
+        },
+        "manipulatingFiles": {
+          "links": {
+            "manipulatingFiles": "معالجة الملفات",
+            "nodejsFileStats": "إحصائيات ملف Node.js",
+            "nodejsFilePaths": "مسار ملف Node.js",
+            "workingWithFileDescriptorsInNodejs": "العمل مع أوصاف الملفات في Node.js",
+            "readingFilesWithNodejs": "قراءة الملفات باستخدام Node.js",
+            "writingFilesWithNodejs": "كتابة الملفات باستخدام Node.js",
+            "workingWithFoldersInNodejs": "العمل مع المجلدات في Node.js",
+            "howToWorkWithFileSystems": "كيفية العمل مع نظم الملفات المختلفة"
+          }
+        },
+        "commandLine": {
+          "links": {
+            "commandLine": "سطر الأوامر",
+            "runNodejsScriptsFromTheCommandLine": "تشغيل البرامج النصية Node.js من سطر الأوامر",
+            "howToReadEnvironmentVariablesFromNodejs": "كيفية قراءة متغيرات البيئة من Node.js",
+            "howToUseTheNodejsRepl": "كيفية استخدام Node.js REPL",
+            "outputToTheCommandLineUsingNodejs": "المخرجات إلى سطر الأوامر باستخدام Node.js",
+            "acceptInputFromTheCommandLineInNodejs": "قبول الإدخال من سطر الأوامر في Node.js"
+          }
+        },
+        "modules": {
+          "links": {
+            "modules": "وحدات",
+            "publishingNodeApiModules": "كيفية نشر حزمة عقد API",
+            "anatomyOfAnHttpTransaction": "تشريح معاملة HTTP",
+            "abiStability": "إستقرار ABI",
+            "backpressuringInStreams": "الضغط الخلفي في البث"
+          }
+        },
+        "diagnostics": {
+          "links": {
+            "diagnostics": "التشخيص",
+            "userJourney": "رحلة المستخدم",
+            "memory": "الذاكرة",
+            "liveDebugging": "تصحيح أخطاء مباشر",
+            "poorPerformance": "الأداء الضعيف",
+            "flameGraphs": "رسوم اللعب"
+          }
+        }
+      },
+      "about": {
+        "links": {
+          "about": "حول Node.js",
+          "aboutSide": "حول Node.js®️",
+          "governance": "إدارة المشروع",
+          "releases": "الإصدارات السابقة",
+          "security": "الإبلاغ الأمني"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "getInvolved": "اشترك",
+          "collabSummit": "قمة المتعاونين",
+          "upcomingEvents": "الأحداث القادمة",
+          "contribute": "المساهمة في Node.js",
+          "codeOfConduct": "مدونة قواعد السلوك"
+        }
+      }
+    },
+    "downloadList": {
+      "links": {
+        "previousReleases": "الإصدارات السابقة",
+        "packageManager": "تثبيت Node.js عبر مدير الحزمة",
+        "shaSums": {
+          "title": "توقيع SHASUMS لملفات الإصدار",
+          "howToVerify": " (كيفية التحقق)"
+        },
+        "allDownloads": "جميع خيارات التحميل",
+        "nightlyReleases": "البناء الليلي",
+        "unofficialBuilds": "بنايات غير رسمية",
+        "buildingFromSource": "بناء Node.js من المصدر على المنصات المدعومة",
+        "installingOnLinux": "تثبيت Node.js عبر أرشيف ثنائي",
+        "installingOnWsl": "تثبيت على نظام Windows الفرعي لـ Linux (WSL)"
+      }
+    },
+    "downloadReleasesTable": {
+      "changelog": "تغيير",
+      "releases": "الإصدارات",
+      "docs": "الوثائق"
+    },
+    "pagination": {
+      "next": "التالي",
+      "previous": "السابق"
+    },
+    "common": {
+      "breadcrumbs": {
+        "navigateToHome": "الانتقال إلى الصفحة الرئيسية"
+      },
+      "crossLink": {
+        "previous": "المسبق",
+        "next": "التالي"
+      },
+      "codebox": {
+        "copy": "نسخ إلى الحافظة",
+        "copied": "تم النسخ إلى الحافظة!"
+      },
+      "pagination": {
+        "prev": "السابق",
+        "prevAriaLabel": "الصفحة السابقة",
+        "next": "التالي",
+        "nextAriaLabel": "الصفحة التالية",
+        "defaultLabel": "ترقيم الصفحات",
+        "pageLabel": "انتقل إلى الصفحة {pageNumber}"
+      },
+      "sidebar": {
+        "title": "تغيير الصفحة"
+      },
+      "languageDropdown": {
+        "label": "اختر اللغة"
+      },
+      "themeToggle": {
+        "label": "تبديل الوضع المظلم"
+      }
+    },
+    "mdx": {
+      "upcomingEvents": {
+        "defaultTitle": "لا يوجد حدث قادم"
+      }
+    },
+    "metabar": {
+      "lastUpdated": "آخر تحديث",
+      "readingTime": "وقت القراءة",
+      "addedIn": "إضافة في",
+      "author": "المؤلف",
+      "authors": "المؤلفون",
+      "contribute": "المساهمة",
+      "contributeText": "تحرير هذه الصفحة",
+      "viewAs": "عرض كـ",
+      "tableOfContents": "جدول المحتويات"
+    },
+    "downloads": {
+      "changelogModal": {
+        "startContributing": "ابدأ المساهمة"
+      }
+    },
+    "search": {
+      "searchBox": {
+        "placeholder": "ابدأ الكتابة..."
+      },
+      "seeAll": {
+        "text": "شاهد جميع نتائج {count}"
+      },
+      "searchError": {
+        "text": "حدث خطأ أثناء البحث. الرجاء المحاولة مرة أخرى لاحقاً."
+      },
+      "poweredBy": {
+        "text": "مدعوم من قبل"
+      },
+      "noResults": {
+        "text": "لم يتم العثور على نتائج ل \"{query}\"."
+      },
+      "emptyState": {
+        "text": "ابحث عن شيء..."
+      },
+      "searchPage": {
+        "title": "أنت تبحث عن: {query}"
+      }
+    },
+    "blog": {
+      "blogHeader": {
+        "subtitle": "أحدث أخبار Node.js، ودراسات الحالة، ودروس التعليمات، والموارد.",
+        "rssLink": "تغذية RSS"
+      }
+    }
+  },
+  "layouts": {
+    "blogPost": {
+      "author": {
+        "byLine": "{author, select, null {} other {بواسطة {author} }}"
+      }
+    },
+    "blogIndex": {
+      "categoryName": "{category, select, all {مدونة} other {{category} مشاركات المدونة}}"
+    },
+    "blog": {
+      "title": "المدونة",
+      "selectCategory": "الفئات",
+      "categories": {
+        "all": "كل شيء",
+        "announcements": "اعلانات",
+        "release": "الإصدارات",
+        "vulnerability": "نقاط الضعف",
+        "advisory-board": "المجلس الاستشاري",
+        "community": "المجتمع",
+        "feature": "الميزة",
+        "module": "الوحدة",
+        "npm": "npm",
+        "uncategorized": "غير مصنف",
+        "video": "فيديو",
+        "weekly": "التحديثات الأسبوعية",
+        "wg": "الأفرقة العاملة",
+        "events": "الأحداث"
+      }
+    },
+    "error": {
+      "notFound": {
+        "title": "تعذر العثور على الصفحة",
+        "description": "عذراً، لم نتمكن من العثور على الصفحة التي كنت بعدها! حاول البدء مرة أخرى من الصفحة الرئيسية."
+      },
+      "internalServerError": {
+        "title": "خطأ خادم داخلي",
+        "description": "لقد ألقت هذه الصفحة خطأ غير قابل للاسترداد."
+      },
+      "backToHome": "العودة إلى الصفحة الرئيسية"
+    },
+    "download": {
+      "selectCategory": "الفئات",
+      "categories": {
+        "download": "مثبت مبني مسبقاً",
+        "prebuilt-binaries": "ثنائيات مبنية مسبقاً",
+        "package-manager": "مدير الحزمة",
+        "source-code": "الكود المصدري"
+      },
+      "buttons": {
+        "prebuilt": "تحميل Node.js {version}",
+        "source": "تحميل مصدر Node.js {version}"
+      },
+      "dropdown": {
+        "bitness": "البيتانس",
+        "os": "نظام التشغيل",
+        "version": "الإصدار",
+        "platform": "المنصة"
+      },
+      "codeBox": {
+        "communityWarning": "لا يقوم مشروع Node.js بصيانة مديري الحزم ونصوص التثبيت الخاصة بهم."
+      }
+    }
+  }
+}
