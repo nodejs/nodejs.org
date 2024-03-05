@@ -1,0 +1,62 @@
+---
+title: 关于 Node.js®️
+layout: about
+---
+
+<div className="my-4 flex items-center justify-center">
+  <img alt="Node.js mascot" src="/static/images/node-mascot.svg" className="w-[100px]" />
+</div>
+
+***
+
+# 关于 Node.js®️
+
+作为一种异步事件驱动的 JavaScript 运行库，Node.js旨在构建可扩展的网络应用程序。在下面的“hello world”示例中，可以同时处理许多连接。每次连接时都会触发回调函数，但如果没有工作要做，Node.js将进入休眠状态。
+
+```js
+const http = require('node:http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+这与今天更常见的同系模式形成对比，使用了操作系统线程
+。 基于线索的联网效率相对较低，很难使用
+。 此外，Node.js的用户不再担心
+不再锁定过程，因为没有锁。
+节点几乎没有函数。 s 直接执行I/O, 所以除使用
+同步节点方法执行I/O 以外, 整个过程永远不会阻止. s 标准库。因为没有任何模块，可缩放的系统非常适合
+在 Node.js 中开发。
+
+如果有些语言不熟悉，则有一篇关于
+的完整文章\[Blocking vs. Non-Blocking]\[]。
+
+***
+
+Node.js 的设计与 Ruby 的 \[Event Machine]\[] 和 Python 的 \[Twisted]\[] 等系统类似，并受其影响。Node.js 将事件模型推进了一步。它将事件循环呈现为运行时构造，而不是作为库。在其他系统中，总是有一个阻塞调用来启动事件循环。通常，行为是通过脚本开头的回调函数来定义的，在脚本末尾，通过像 `EventMachine::run()` 这样的阻塞调用启动服务器。在 Node.js 中，没有这样的启动事件循环的调用。Node.js 在执行输入脚本后简单地进入事件循环。当没有更多的回调需要执行时，Node.js 退出事件循环。这种行为类似于浏览器 JavaScript — 事件循环对用户是隐藏的。
+
+HTTP 是 Node.js 中的一流公民，设计时考虑到流媒体和低
+延迟。 这使得Node.js非常适合于建立Web
+库或框架。
+
+Node.js 被设计为无需线程，并不意味着您不能利用环境中的多个核心。可以通过使用我们的 \[`child_process.fork()`]\[] API 来生成子进程，并且设计为易于通信。建立在相同接口之上的是 \[`cluster`]\[] 模块，允许您在进程之间共享套接字，以实现核心的负载平衡。
+
+[封禁与非封禁]: </learn/asynchronous-work/overview of blocking-vs-non-blocking>
+
+[`child_process.fork()`]: https://nodejs.org/api/child_process.html
+
+[`cluster`]: https://nodejs.org/api/cluster.html
+
+[事件机]: https://github.com/eventmachine/eventmobile
+
+[已扭曲的]: https://twittedmatrix.com/trac/
