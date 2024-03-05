@@ -4,17 +4,16 @@ layout: home
 ---
 
 <section>
- <WithBadge section="indeks" />
+  <WithBadge section="indeks" />
 
   <div>
     <h1 className="special">Her Yerde JavaScript Çalıştırın</h1>
 
     Node.js®, ücretsiz, açık kaynaklı, çapraz platform JavaScript çalıştırma ortamıdır. Geliştiricilere sunucular, web uygulamaları, komut satırı araçları ve betikler oluşturma imkanı sağlar.
-
   </div>
 
   <div>
-    <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
+    <WithNodeRelease status={['Aktif LTS', 'Bakım LTS']}>
       {({ release }) => (
         <>
           <DownloadButton release={release}>Node.js'i İndir (LTS)</DownloadButton>
@@ -27,7 +26,7 @@ layout: home
       )}
     </WithNodeRelease>
 
-    <WithNodeRelease status={"Current"}>
+    <WithNodeRelease status={"Güncel"}>
       {({ release }) => (
         <small>
           Daha yeni özelliklere mi ihtiyacınız var?{" "}
@@ -42,7 +41,6 @@ layout: home
         </small>
       )}
     </WithNodeRelease>
-
   </div>
 </section>
 
@@ -117,9 +115,7 @@ layout: home
       parentPort.postMessage(btoa(source.toUpperCase()));
     }
     ```
-
   </div>
 
-Node.js'in sunabileceklerini daha yakından keşfetmek için [Öğrenme materyallerimize](/learn) göz atın.
-
+  Node.js'in sunabileceklerini daha yakından keşfetmek için [Öğrenme materyallerimize](/learn) göz atın.
 </section>
