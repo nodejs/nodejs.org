@@ -7,7 +7,7 @@ title: パッケージマネージャを介した Node.js のインストール
 
 > このページのパッケージは、それぞれのパッケージによってメンテナンスされ、サポートされています。Node.js のコアチームではありません。 発生した問題については、パッケージメンテナに報告してください。 Node.js 自体のバグが問題であることが判明した場合、メンテナは問題を上流に報告します。
 
----
+***
 
 - format@@0(#alpine-linux)
 - [Android](#android)
@@ -33,7 +33,7 @@ title: パッケージマネージャを介した Node.js のインストール
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
----
+***
 
 ## Alpine Linux
 
@@ -151,7 +151,7 @@ Node.js は、IBM i Access Client Solutions 製品でもインストールでき
 
 ## macOS
 
-Download the [macOS Installer](/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
+Node.js の [macOS Installer](/#home-downloadhead) を [nodejs.org](https://nodejs.org/) のウェブサイトから直接ダウンロードしてください。
 
 _もし bash でパッケージをダウンロードしたい場合:_
 
@@ -192,9 +192,9 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## n
 
-`n` is a simple to use Node.js version manager for Mac and Linux. Specify the target version to install using a rich syntax,
-or select from a menu of previously downloaded versions. The versions are installed system-wide or user-wide, and for more
-targeted use you can run a version directly from the cached downloads.
+`n` は、Mac と Linux 用の使いやすい Node.js バージョンマネージャーです。リッチな構文を使用してインストールするターゲットバージョンを指定するか、
+以前にダウンロードしたバージョンのメニューから選択してください。これらのバージョンはシステム全体またはユーザー全体にインストールされ、
+よりターゲットを絞った使用方法では、キャッシュされたダウンロードからバージョンを直接実行できます。
 
 installメソッド(bootstrap, npm, Homebrew, third-party)については、 [homepage](https://github.com/tj/n)と全ての使い方の詳細を参照してください。
 
@@ -227,20 +227,18 @@ Nodenvのインストール手順はformat@@0(https\://github.com/nodenv/nodenv#
 
 ## nvm
 
-Node Version Manager is a bash script used to manage multiple released Node.js versions. It allows
-you to perform operations like install, uninstall, switch version, etc.
-To install nvm, use this [install script](https://github.com/nvm-sh/nvm#install--update-script).
+Node Version Manager は、複数のリリースされた Node.js バージョンを管理するために使用される bash スクリプトです。インストール、アンインストール、バージョンの切り替えなどの操作を行うことができます。
+nvm をインストールするには、この [install script](https://github.com/nvm-sh/nvm#install--update-script) を使用してください。
 
-On Unix / OS X systems Node.js built from source can be installed using
-[nvm](https://github.com/creationix/nvm) by installing into the location that nvm expects:
+Unix / OS X システムでは、nvm によってソースから構築された Node.js をインストールすることができます。
+これには、nvm が期待する場所にインストールすることが必要です:
 
 ```bash
 env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
-After this you can use `nvm` to switch between released versions and versions
-built from source.
-For example, if the version of Node.js is v8.0.0-pre:
+これにより、`nvm` を使用してリリースされたバージョンとソースから構築されたバージョンを切り替えることができます。
+例えば、Node.js のバージョンが v8.0.0-pre の場合:
 
 ```bash
 nvm use 8
@@ -370,7 +368,7 @@ xbps-install -Sy nodejs
 
 ## Windows
 
-Download the [Windows Installer](/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
+Node.js の [Windows Installer](/#home-downloadhead) を [nodejs.org](https://nodejs.org/) のウェブサイトから直接ダウンロードしてください。
 
 ### 代替
 
