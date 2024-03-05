@@ -1,19 +1,19 @@
 ---
 layout: docs
-title: Installing Node.js via package manager
+title: Menginstal Node.js melalui package manager
 ---
 
-# Installing Node.js via Package Managers
+# Menginstal Node.js melalui Manajer Paket
 
-> The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
+> Paket-paket di halaman ini dikelola dan didukung oleh para pengemas masing-masing, **bukan** tim inti Node.js. Harap laporkan masalah yang Anda temui kepada pengelola paket. Jika ternyata masalah Anda adalah bug dalam Node.js itu sendiri, pengelola akan melaporkan masalah tersebut ke hulu.
 
----
+***
 
 - [Alpine Linux](#alpine-linux)
 - [Android](#android)
 - [Arch Linux](#arch-linux)
-- [CentOS, Fedora and Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
-- [Debian and Ubuntu based Linux distributions](#debian-and-ubuntu-based-linux-distributions)
+- [CentOS, Fedora dan Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
+- [Distribusi Linux berbasis Debian dan Ubuntu](#debian-and-ubuntu-based-linux-distributions)
 - [fnm](#fnm)
 - [FreeBSD](#freebsd)
 - [Gentoo](#gentoo)
@@ -26,24 +26,24 @@ title: Installing Node.js via package manager
 - [nvs](#nvs)
 - [OpenBSD](#openbsd)
 - [openSUSE and SLE](#opensuse-and-sle)
-- [SmartOS and illumos](#smartos-and-illumos)
+- [SmartOS dan illumos](#smartos-and-illumos)
 - [Snap](#snap)
 - [Solus](#solus)
 - [Void Linux](#void-linux)
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
----
+***
 
 ## Alpine Linux
 
-Node.js LTS and npm packages are available in the Main Repository.
+Node.js (Node.js LTS dan paket npm tersedia di Main Repository).
 
 ```bash
 apk add nodejs npm
 ```
 
-Node.js Current can be installed from the Community Repository.
+Node.js Current dapat diinstal dari Community Repository.
 
 ```bash
 apk add nodejs-current
@@ -51,79 +51,79 @@ apk add nodejs-current
 
 ## Android
 
-Android support is still experimental in Node.js, so precompiled binaries are not yet provided by Node.js developers.
+Dukungan Android masih bersifat eksperimental di Node.js, sehingga biner pra-kompilasi belum disediakan oleh pengembang Node.js.
 
-However, there are some third-party solutions. For example, [Termux](https://termux.com/) community provides terminal emulator and Linux environment for Android, as well as own package manager and [extensive collection](https://github.com/termux/termux-packages) of many precompiled applications. This command in Termux app will install the last available Node.js version:
+Namun, ada beberapa solusi pihak ketiga. Misalnya, komunitas [Termux](https://termux.com/) menyediakan emulator terminal dan lingkungan Linux untuk Android, serta manajer paket sendiri dan [koleksi yang luas](https://github.com/termux/termux-packages) dari banyak aplikasi pra-kompilasi. Perintah ini di aplikasi Termux akan menginstal versi Node.js terakhir yang tersedia:
 
 ```bash
 pkg install nodejs
 ```
 
-Currently, Termux Node.js binaries are linked against `system-icu` (depending on `libicu` package).
+Saat ini, biner Node.js Termux terhubung dengan `system-icu` (tergantung pada paket `libicu`).
 
 ## Arch Linux
 
-Node.js and npm packages are available in the Community Repository.
+Paket Node.js dan npm tersedia di Repositori Komunitas.
 
 ```bash
 pacman -S nodejs npm
 ```
 
-## CentOS, Fedora and Red Hat Enterprise Linux
+## CentOS, Fedora, dan Red Hat Enterprise Linux
 
-Node.js is available as a module called `nodejs` in CentOS/RHEL 8 and Fedora.
+Node.js tersedia sebagai modul yang disebut `nodejs` di CentOS/RHEL 8 dan Fedora.
 
 ```bash
 dnf module install nodejs:<stream>
 ```
 
-where `<stream>` corresponds to the major version of Node.js.
-To see a list of available streams:
+dimana `<stream>` sesuai dengan versi mayor Node.js.
+Untuk melihat daftar aliran yang tersedia:
 
 ```bash
 dnf module list nodejs
 ```
 
-For example, to install Node.js 18:
+Sebagai contoh, untuk menginstal Node.js 18:
 
 ```bash
 dnf module install nodejs:18/common
 ```
 
-### Alternatives
+### Alternatif
 
-These resources provide packages compatible with CentOS, Fedora, and RHEL.
+Sumber daya ini menyediakan paket yang kompatibel dengan CentOS, Fedora, dan RHEL.
 
-- [Node.js snaps](#snap) maintained and supported at https\://github.com/nodejs/snap
-- [Node.js binary distributions](#debian-and-ubuntu-based-linux-distributions) maintained and supported by [NodeSource](https://github.com/nodesource/distributions)
+- [Node.js snaps](#snap) dipelihara dan didukung di https\://github.com/nodejs/snap
+- [Node.js distribusi biner](#debian-and-ubuntu-based-linux-distributions) dipelihara dan didukung oleh [NodeSource](https://github.com/nodesource/distributions)
 
-## Debian and Ubuntu based Linux distributions
+## Distribusi Linux berbasis Debian dan Ubuntu
 
-[Node.js binary distributions](https://github.com/nodesource/distributions) are available from NodeSource.
+[Node.js distribusi biner](https://github.com/nodesource/distributions) tersedia dari NodeSource.
 
-### Alternatives
+### Alternatif
 
-Packages compatible with Debian and Ubuntu based Linux distributions are available via [Node.js snaps](#snap).
+Paket yang kompatibel dengan distribusi Linux berbasis Debian dan Ubuntu tersedia melalui [Node.js snaps](#snap).
 
 ## fnm
 
-Fast and simple Node.js version manager built in Rust used to manage multiple released Node.js versions. It allows you to perform operations like install, uninstall, switch Node versions automatically based on the current directory, etc.
-To install fnm, use this [install script](https://github.com/Schniz/fnm#using-a-script-macoslinux).
+Manajer versi Node.js cepat dan sederhana yang dibangun di Rust digunakan untuk mengelola beberapa versi Node.js yang dirilis. Ini memungkinkan Anda untuk melakukan operasi seperti menginstal, menghapus, beralih versi Node secara otomatis berdasarkan direktori saat ini, dll.
+Untuk menginstal fnm, gunakan [skrip instalasi ini](https://github.com/Schniz/fnm#using-a-script-macoslinux).
 
-fnm has cross-platform support (macOS, Windows, Linux) & all popular shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
-fnm is built with speed in mind and compatibility support for `.node-version` and `.nvmrc` files.
+fnm memiliki dukungan lintas-platform (macOS, Windows, Linux) & semua shell populer (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
+fnm dibangun dengan kecepatan dalam pikiran dan dukungan kompatibilitas untuk file `.node-version` dan `.nvmrc`.
 
 ## FreeBSD
 
-The most recent release of Node.js is available via the [www/node](https://www.freshports.org/www/node) port.
+Rilis terbaru dari Node.js tersedia melalui port [www/node](https://www.freshports.org/www/node).
 
-Install a binary package via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
+Pasang paket biner melalui [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
 ```bash
 pkg install node
 ```
 
-Or compile it on your own using [ports](https://www.freebsd.org/cgi/man.cgi?ports):
+Atau kompilasi sendiri menggunakan [ports](https://www.freebsd.org/cgi/man.cgi?ports):
 
 ```bash
 cd /usr/ports/www/node && make install
@@ -131,7 +131,7 @@ cd /usr/ports/www/node && make install
 
 ## Gentoo
 
-Node.js is available in the portage tree.
+Node.js tersedia dalam pohon portage.
 
 ```bash
 emerge nodejs
@@ -139,35 +139,35 @@ emerge nodejs
 
 ## IBM i
 
-LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](https://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs18`, `nodejs20` etc)
+Versi LTS dari Node.js tersedia dari IBM, dan dapat diakses melalui [manajer paket 'yum'](https://ibm.biz/ibmi-rpms). Nama paketnya adalah `nodejs` diikuti oleh nomor versi utama (misalnya, `nodejs18`, `nodejs20`, dll).
 
-To install Node.js 20.x from the command line, run the following as a user with \*ALLOBJ special authority:
+Untuk menginstal Node.js 20.x dari baris perintah, jalankan hal berikut sebagai pengguna dengan wewenang khusus \*ALLOBJ:
 
 ```bash
 yum install nodejs20
 ```
 
-Node.js can also be installed with the IBM i Access Client Solutions product. See [this support document](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) for more details
+Node.js juga dapat diinstal dengan produk IBM i Access Client Solutions. Lihat [dokumen dukungan ini](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) untuk lebih banyak detail
 
 ## macOS
 
-Download the [macOS Installer](/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
+Unduh [Pemasang macOS](/#home-downloadhead) langsung dari situs web [nodejs.org](https://nodejs.org/).
 
-_If you want to download the package with bash:_
+_Jika Anda ingin mengunduh paket dengan bash:_
 
 ```bash
 curl "https://nodejs.org/dist/latest/$(curl -s https://nodejs.org/dist/latest/ | grep "pkg" | cut -d'"' -f 2)" -o "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
 ```
 
-### Alternatives
+### Alternatif
 
-Using **[Homebrew](https://brew.sh/)**:
+Menggunakan **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-Using **[MacPorts](https://www.macports.org/)**:
+Menggunakan **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -176,15 +176,15 @@ port install nodejs<major version>
 port install nodejs7
 ```
 
-Using **[pkgsrc](https://pkgsrc.joyent.com/install-on-macos/)**:
+Menggunakan **[pkgsrc](https://pkgsrc.joyent.com/install-on-macos/)**:
 
-Install the binary package:
+Pasang paket biner:
 
 ```bash
 pkgin -y install nodejs
 ```
 
-Or build manually from pkgsrc:
+Atau bangun secara manual dari pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
@@ -192,13 +192,12 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## n
 
-`n` is a simple to use Node.js version manager for Mac and Linux. Specify the target version to install using a rich syntax,
-or select from a menu of previously downloaded versions. The versions are installed system-wide or user-wide, and for more
-targeted use you can run a version directly from the cached downloads.
+`n` adalah manajer versi Node.js yang mudah digunakan untuk Mac dan Linux. Tentukan versi target untuk diinstal menggunakan sintaks yang kaya,
+atau pilih dari menu versi yang sebelumnya diunduh. Versi-versi diinstal secara sistem atau pengguna, dan untuk penggunaan yang lebih terarah Anda dapat menjalankan versi langsung dari unduhan yang disimpan.
 
-See the [homepage](https://github.com/tj/n) for install methods (bootstrap, npm, Homebrew, third-party), and all the usage details.
+Lihat [beranda](https://github.com/tj/n) untuk metode instalasi (bootstrap, npm, Homebrew, pihak ketiga), dan semua detail penggunaan.
 
-If you already have `npm` then installing `n` and then the newest LTS `node` version is as simple as:
+Jika Anda sudah memiliki `npm` maka menginstal `n` dan kemudian versi LTS `node` terbaru adalah sangat mudah:
 
 ```
 npm install -g n
@@ -207,13 +206,13 @@ n lts
 
 ## NetBSD
 
-Node.js is available in the pkgsrc tree:
+Node.js tersedia di pohon pkgsrc:
 
 ```bash
 cd /usr/pkgsrc/lang/nodejs && make install
 ```
 
-Or install a binary package (if available for your platform) using pkgin:
+Atau instal paket biner (jika tersedia untuk platform Anda) menggunakan pkgin:
 
 ```bash
 pkgin -y install nodejs
@@ -221,33 +220,27 @@ pkgin -y install nodejs
 
 ## Nodenv
 
-`nodenv` is a lightweight node version manager, similar to `nvm`. It's simple and predictable. A rich plugin ecosystem lets you tailor it to suit your needs. Use `nodenv` to pick a Node version for your application and guarantee that your development environment matches production.
+`nodenv` adalah manajer versi node yang ringan, mirip dengan `nvm`. Ini sederhana dan dapat diprediksi. Ekosistem plugin yang kaya memungkinkan Anda menyesuaikannya sesuai kebutuhan Anda. Gunakan `nodenv` untuk memilih versi Node untuk aplikasi Anda dan pastikan bahwa lingkungan pengembangan Anda cocok dengan produksi.
 
-Nodenv installation instructions are maintained [on its Github page](https://github.com/nodenv/nodenv#installation). Please visit that page to ensure you're following the latest version of the installation steps.
+Instruksi instalasi Nodenv dijaga [di halaman Github-nya](https://github.com/nodenv/nodenv#installation). Silakan kunjungi halaman tersebut untuk memastikan Anda mengikuti versi terbaru langkah-langkah instalasi.
 
 ## nvm
 
-Node Version Manager is a bash script used to manage multiple released Node.js versions. It allows
-you to perform operations like install, uninstall, switch version, etc.
-To install nvm, use this [install script](https://github.com/nvm-sh/nvm#install--update-script).
+Node Version Manager adalah skrip bash yang digunakan untuk mengelola beberapa versi Node.js yang dirilis. Ini memungkinkan Anda untuk melakukan operasi seperti menginstal, menghapus, beralih versi, dll. Untuk menginstal nvm, gunakan [skrip instalasi ini](https://github.com/nvm-sh/nvm#install--update-script).
 
-On Unix / OS X systems Node.js built from source can be installed using
-[nvm](https://github.com/creationix/nvm) by installing into the location that nvm expects:
+Pada sistem Unix / OS X, Node.js yang dibangun dari sumber dapat diinstal menggunakan [nvm](https://github.com/creationix/nvm) dengan menginstal ke lokasi yang diharapkan oleh nvm:
 
 ```bash
 env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
-After this you can use `nvm` to switch between released versions and versions
-built from source.
-For example, if the version of Node.js is v8.0.0-pre:
+Setelah itu Anda dapat menggunakan `nvm` untuk beralih antara versi yang dirilis dan versi yang dibangun dari sumber. Misalnya, jika versi Node.js adalah v8.0.0-pre:
 
 ```bash
 nvm use 8
 ```
 
-Once the official release is out you will want to uninstall the version built
-from source:
+Setelah versi resmi dirilis, Anda akan ingin menghapus versi yang dibangun dari sumber:
 
 ```bash
 nvm uninstall 8
@@ -257,11 +250,11 @@ nvm uninstall 8
 
 #### Windows
 
-The `nvs` version manager is cross-platform and can be used on Windows, macOS, and Unix-like systems
+Manajer versi `nvs` adalah lintas-platform dan dapat digunakan di Windows, macOS, dan sistem mirip Unix
 
-To install `nvs` on Windows go to the [release page](https://github.com/jasongin/nvs/releases) here and download the MSI installer file of the latest release.
+Untuk menginstal `nvs` di Windows, pergi ke [halaman rilis](https://github.com/jasongin/nvs/releases) di sini dan unduh file penginstal MSI dari rilis terbaru.
 
-You can also use `chocolatey` to install it:
+Anda juga dapat menggunakan `chocolatey` untuk menginstalnya:
 
 ```bash
 choco install nvs
@@ -269,25 +262,25 @@ choco install nvs
 
 #### macOS,UnixLike
 
-You can find the documentation regarding the installation steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
+Anda dapat menemukan dokumentasi mengenai langkah-langkah instalasi `nvs` di sistem macOS/Unix-like [di sini](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
 
-#### Usage
+#### Penggunaan
 
-After this you can use `nvs` to switch between different versions of node.
+Setelah ini Anda dapat menggunakan `nvs` untuk beralih antara berbagai versi Node.js.
 
-To add the latest version of node:
+Untuk menambahkan versi terbaru Node.js:
 
 ```bash
 nvs add latest
 ```
 
-Or to add the latest LTS version of node:
+Atau untuk menambahkan versi LTS terbaru Node.js:
 
 ```bash
 nvs add lts
 ```
 
-Then run the `nvs use` command to add a version of node to your `PATH` for the current shell:
+Kemudian jalankan perintah `nvs use` untuk menambahkan versi Node.js ke `PATH` untuk shell saat ini:
 
 ```bash
 $ nvs use lts
@@ -295,7 +288,7 @@ PATH -= %LOCALAPPDATA%\nvs\default
 PATH += %LOCALAPPDATA%\nvs\node\14.17.0\x64
 ```
 
-To add it to `PATH` permanently, use `nvs link`:
+Untuk menambahkannya ke `PATH` secara permanen, gunakan `nvs link`:
 
 ```bash
 nvs link lts
@@ -303,46 +296,46 @@ nvs link lts
 
 ## OpenBSD
 
-Node.js is available through the ports system.
+Node.js tersedia melalui sistem port.
 
 ```bash
 /usr/ports/lang/node
 ```
 
-Using [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
+Menggunakan [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) di OpenBSD:
 
 ```bash
 pkg_add node
 ```
 
-## openSUSE and SLE
+## openSUSE dan SLE
 
-Node.js is available in the main repositories under the following packages:
+Node.js tersedia di repositori utama di bawah paket-paket berikut:
 
 - **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
 - **openSUSE Tumbleweed**: `nodejs20`
-- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, and `nodejs14`
-  (The "Web and Scripting Module" must be [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
-- **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, and `nodejs14`
-  (The "Web and Scripting Module" must be [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
+- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, dan `nodejs14`
+  (Modul "Web and Scripting" harus diaktifkan [di sini](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
+- **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, dan `nodejs14`
+  (Modul "Web and Scripting" harus diaktifkan [di sini](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
 
-For example, to install Node.js 14.x on openSUSE Leap 15.2, run the following as root:
+Sebagai contoh, untuk menginstal Node.js 14.x di openSUSE Leap 15.2, jalankan perintah berikut sebagai root:
 
 ```bash
 zypper install nodejs14
 ```
 
-Different major versions of Node can be installed and used concurrently.
+Versi mayor Node yang berbeda dapat diinstal dan digunakan secara bersamaan.
 
-## SmartOS and illumos
+## SmartOS dan illumos
 
-SmartOS images come with pkgsrc pre-installed. On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal:
+Gambar SmartOS dilengkapi dengan pkgsrc yang telah diinstal sebelumnya. Pada distribusi illumos lainnya, pertama-tama instal **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, kemudian Anda dapat menginstal paket biner seperti biasa:
 
 ```bash
 pkgin -y install nodejs
 ```
 
-Or build manually from pkgsrc:
+Atau bangun secara manual dari pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
@@ -350,11 +343,11 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## Snap
 
-[Node.js snaps](https://github.com/nodejs/snap) are available as [`node`](https://snapcraft.io/node) on the Snap store.
+[Node.js snaps](https://github.com/nodejs/snap) tersedia sebagai [`node`](https://snapcraft.io/node) di Snap store.
 
 ## Solus
 
-Solus provides Node.js in its main repository.
+Solus menyediakan Node.js di repositori utamanya.
 
 ```bash
 sudo eopkg install nodejs
@@ -362,7 +355,7 @@ sudo eopkg install nodejs
 
 ## Void Linux
 
-Void Linux ships Node.js stable in the main repository.
+Void Linux mengirimkan Node.js stabil di repositori utama.
 
 ```bash
 xbps-install -Sy nodejs
@@ -370,11 +363,11 @@ xbps-install -Sy nodejs
 
 ## Windows
 
-Download the [Windows Installer](/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
+Unduh [Pemasang Windows](/#home-downloadhead) langsung dari situs web [nodejs.org](https://nodejs.org/).
 
-### Alternatives
+### Alternatif
 
-Using **[Winget](https://aka.ms/winget-cli)**:
+Menggunakan **[Winget](https://aka.ms/winget-cli)**:
 
 ```bash
 winget install OpenJS.NodeJS
@@ -382,10 +375,9 @@ winget install OpenJS.NodeJS
 winget install OpenJS.NodeJS.LTS
 ```
 
-After running one of the two commands above, it may be necessary to restart the
-terminal emulator before the `node` CLI command becomes available.
+Setelah menjalankan salah satu dari dua perintah di atas, mungkin perlu untuk me-restart emulator terminal sebelum perintah CLI `node` menjadi tersedia.
 
-Using **[Chocolatey](https://chocolatey.org/)**:
+Menggunakan **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -393,7 +385,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-Using **[Scoop](https://scoop.sh/)**:
+Menggunakan **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs
@@ -403,8 +395,7 @@ scoop install nodejs-lts
 
 ## z/OS
 
-IBM&reg; SDK for Node.js - z/OS&reg; is available in two installation formats,
-SMP/E and PAX. Select the installation format that applies to you:
+IBM® SDK untuk Node.js - z/OS® tersedia dalam dua format instalasi, SMP/E dan PAX. Pilih format instalasi yang sesuai dengan Anda:
 
-- [Installing and configuring SMP/E edition of Node.js on z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
-- [Installing and configuring PAX edition of Node.js on z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)
+- [Menginstal dan mengkonfigurasi edisi SMP/E Node.js di z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
+- [Menginstal dan mengkonfigurasi edisi PAX Node.js di z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)
