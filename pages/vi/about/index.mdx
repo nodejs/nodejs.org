@@ -1,0 +1,71 @@
+---
+title: Về Node.js®
+layout: about
+---
+
+<div className="my-4 flex items-center justify-center">
+  <img alt="Nhân vật biểu tượng của Node.js" src="/static/images/node-mascot.svg" className="w-[100px]" />
+</div>
+
+***
+
+# Về Node.js®
+
+Với Node.js, một môi trường chạy JavaScript bất đồng bộ dựa trên sự kiện, được thiết kế để xây dựng
+các ứng dụng mạng có khả năng mở rộng. Trong ví dụ "hello world" sau đây, nhiều
+kết nối có thể được xử lý đồng thời. Mỗi khi có kết nối, callback sẽ được
+kích hoạt, nhưng nếu không có công việc nào cần thực hiện, Node.js sẽ ngủ.
+
+```js
+const http = require('node:http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+Điều này đối lập với mô hình song song phổ biến hơn hiện nay, trong đó các luồng hệ điều hành
+được sử dụng. Mạng dựa trên luồng là tương đối không hiệu quả và rất
+khó sử dụng. Hơn nữa, người dùng của Node.js không cần lo lắng về
+tình trạng kẹt tiến trình, vì không có khóa. Gần như không có chức năng nào trong
+Node.js thực hiện trực tiếp I/O, vì vậy quá trình không bao giờ bị chặn trừ khi I/O được thực hiện bằng
+các phương thức đồng bộ của thư viện chuẩn Node.js. Vì không có gì bị chặn, việc phát triển hệ thống có khả năng mở rộng là rất
+hợp lý trong Node.js.
+
+Nếu một số ngôn ngữ này không quen thuộc, có một bài viết đầy đủ về
+\[Blocking vs. Non-Blocking]\[].
+
+***
+
+Node.js tương tự trong thiết kế với các hệ thống như
+\[Event Machine]\[] của Ruby và \[Twisted]\[] của Python. Node.js đưa mô hình sự kiện một chút
+xa hơn. Nó trình bày vòng lặp sự kiện như một cấu trúc thời gian chạy thay vì là một thư viện. Trong các hệ thống khác,
+luôn có một cuộc gọi chặn để bắt đầu vòng lặp sự kiện.
+Thường thì hành vi được xác định thông qua các callback ở đầu của một script, và
+cuối cùng một máy chủ được khởi đầu thông qua một cuộc gọi chặn như `EventMachine::run()`.
+Trong Node.js, không có cuộc gọi bắt đầu-vòng-lặp-sự-kiện như vậy. Node.js đơn giản là nhập vào vòng lặp sự kiện sau khi thực thi script đầu vào. Node.js
+thoát khỏi vòng lặp sự kiện khi không còn callback nào để thực hiện nữa. Hành vi này
+tương tự như JavaScript trên trình duyệt — vòng lặp sự kiện được ẩn khỏi người dùng.
+
+HTTP là một công dân ưu tú trong Node.js, được thiết kế với luồng dữ liệu và thời gian trễ thấp trong tâm trí. Điều này khiến cho Node.js rất phù hợp để làm nền tảng của một thư viện hoặc framework web.
+
+Node.js được thiết kế mà không sử dụng luồng không có nghĩa là bạn không thể tận dụng nhiều nhân trong môi trường của bạn. Quá trình con có thể được tạo ra bằng cách sử dụng API \[`child_process.fork()`]\[] của chúng tôi, và được thiết kế để dễ dàng giao tiếp. Dựa trên giao diện đó là mô-đun \[`cluster`]\[], cho phép bạn chia sẻ sockets giữa các quá trình để kích hoạt cân bằng tải trên các nhân của bạn.
+
+[chặn vs. không chặn]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+
+[`child_process.fork()`]: https://nodejs.org/api/child_process.html
+
+[`cluster`]: https://nodejs.org/api/cluster.html
+
+[máy sự kiện]: https://github.com/eventmachine/eventmachine
+
+[qu twisted]: https://twistedmatrix.com/trac/
