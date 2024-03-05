@@ -4,21 +4,21 @@
       "footer": {
         "links": {
           "trademarkPolicy": "Trademark Policy",
-          "privacyPolicy": "Privacy Policy",
-          "codeOfConduct": "Code of Conduct",
-          "security": "Security Policy",
+          "privacyPolicy": "Політика конфіденційності",
+          "codeOfConduct": "Кодекс поведінки",
+          "security": "Політика безпеки",
           "openJS": "OpenJS Foundation"
         }
       },
       "navBar": {
         "links": {
           "about": "About",
-          "download": "Download",
-          "docs": "Docs",
-          "guides": "Guides",
+          "download": "Завантажити",
+          "docs": "Документація",
+          "guides": "Посібники",
           "learn": "Learn",
           "security": "Security",
-          "certification": "Certification",
+          "certification": "Сертифікація",
           "blog": "Blog"
         }
       }
@@ -50,7 +50,7 @@
             "overviewOfBlockingVsNonBlocking": "Overview of Blocking vs Non-Blocking",
             "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asynchronous Programming and Callbacks",
             "discoverJavaScriptTimers": "Discover JavaScript Timers",
-            "theNodejsEventLoop": "The Node.js Event Loop",
+            "theNodejsEventLoop": "Цикл подій Node.js",
             "theNodejsEventEmitter": "The Node.js Event Emitter",
             "understandingProcessnexttick": "Understanding process.nextTick()",
             "understandingSetimmediate": "Understanding setImmediate()",
@@ -76,7 +76,7 @@
             "howToReadEnvironmentVariablesFromNodejs": "Як зчитувати змінні оточення з Node.js",
             "howToUseTheNodejsRepl": "How to use the Node.js REPL",
             "outputToTheCommandLineUsingNodejs": "Вивід у командний рядок з Node.js",
-            "acceptInputFromTheCommandLineInNodejs": "Accept input from the command line in Node.js"
+            "acceptInputFromTheCommandLineInNodejs": "Зчитування вводу з командного рядка з Node.js"
           }
         },
         "modules": {
@@ -112,7 +112,7 @@
         "links": {
           "getInvolved": "Долучитися",
           "collabSummit": "Collaborator Summit",
-          "upcomingEvents": "Upcoming Events",
+          "upcomingEvents": "Майбутні події",
           "contribute": "Contribute to Node.js",
           "codeOfConduct": "Кодекс поведінки"
         }
@@ -121,7 +121,7 @@
     "downloadList": {
       "links": {
         "previousReleases": "Попередні випуски",
-        "packageManager": "Installing Node.js via package manager",
+        "packageManager": "Установка Node.js через менеджер пакетів",
         "shaSums": {
           "title": "Signed SHASUMS for release files",
           "howToVerify": " (How to verify)"
@@ -129,8 +129,8 @@
         "allDownloads": "Усі завантаження",
         "nightlyReleases": "Nightly builds",
         "unofficialBuilds": "Неофіційні збірки",
-        "buildingFromSource": "Building Node.js from source on supported platforms",
-        "installingOnLinux": "Installing Node.js via binary archive",
+        "buildingFromSource": "Збірка Node.js із вихідного коду на підтримуваних платформах",
+        "installingOnLinux": "Установка Node.js через бінарний архів",
         "installingOnWsl": "Встановити на підсистему Windows для Linux (WSL)"
       }
     },
@@ -187,7 +187,7 @@
       "contribute": "Contribute",
       "contributeText": "Редагувати цю сторінку",
       "viewAs": "View as",
-      "tableOfContents": "Table of Contents"
+      "tableOfContents": "Зміст"
     },
     "downloads": {
       "changelogModal": {
@@ -208,7 +208,7 @@
         "text": "Powered by"
       },
       "noResults": {
-        "text": "No results found for \"{query}\"."
+        "text": "Не знайдено результатів для «{query}»."
       },
       "emptyState": {
         "text": "Search something..."
@@ -256,20 +256,20 @@
     "error": {
       "notFound": {
         "title": "Page could not be found",
-        "description": "Sorry, we couldn't find the page you're after! Try starting again from the homepage."
+        "description": "На жаль, нам не вдалося знайти сторінку, яку ви шукаєте! Спробуйте знову з головної сторінки."
       },
       "internalServerError": {
         "title": "Internal Server Error",
         "description": "This page has thrown a non-recoverable error."
       },
-      "backToHome": "Back to Home"
+      "backToHome": "До головної"
     },
     "download": {
       "selectCategory": "Categories",
       "categories": {
         "download": "Prebuilt Installer",
         "prebuilt-binaries": "Prebuilt Binaries",
-        "package-manager": "Package Manager",
+        "package-manager": "Менеджер пакетів",
         "source-code": "Вихідний код"
       },
       "buttons": {
