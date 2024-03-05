@@ -1,5 +1,5 @@
 ---
-title: İşbirliği Zirvesi
+title: İşbirlikçi Zirvesi
 layout: about
 ---
 
