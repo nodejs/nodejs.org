@@ -4,14 +4,10 @@ layout: about
 ---
 
 <div className="центр элементов оправдывающий центр my-4 flex">
-  <img
-    alt="талисман Node.js"
-    src="/static/images/node-mascot.svg"
-    className="w-[100px]"
-  />
+  <img alt="талисман Node.js" src="/static/images/node-mascot.svg" className="w-[100px]" />
 </div>
 
----
+***
 
 # О Node.js®️
 
@@ -37,18 +33,12 @@ server.listen(port, hostname, () => {
 });
 ```
 
-This is in contrast to today's more common concurrency model, in which OS threads
-are employed. Thread-based networking is relatively inefficient and very
-difficult to use. Furthermore, users of Node.js are free from worries of
-dead-locking the process, since there are no locks. Almost no function in
-Node.js directly performs I/O, so the process never blocks except when the I/O is performed using
-synchronous methods of Node.js standard library. Because nothing blocks, scalable systems are very
-reasonable to develop in Node.js.
+Это в отличие от более распространенной модели параллелизма сегодня, в которой используются потоки ОС. Сетевое взаимодействие на основе потоков относительно неэффективно и очень сложно использовать. Более того, пользователи Node.js освобождены от опасений блокировки процесса, поскольку здесь нет блокировок. Почти ни одна функция в Node.js не выполняет ввод-вывод напрямую, поэтому процесс никогда не блокируется, за исключением случаев, когда ввод-вывод выполняется с использованием синхронных методов стандартной библиотеки Node.js. Поскольку ничто не блокирует, разработка масштабируемых систем в Node.js вполне разумна.
 
 Если некоторые из этих языков незнакомы, существует полная статья об
 \[Блокировка против блокировки]\[].
 
----
+***
 
 Node.js разрабатывает такие системы, как
 \[Event Machine]\[] и \[Twisted]\[]. Node.js дальше принимает модель события немного
@@ -60,19 +50,16 @@ Node.js разрабатывает такие системы, как
 завершает цикл события, когда больше нет обратных вызовов. Это поведение
 подобно браузеру JavaScript — цикл событий скрыт от пользователя.
 
-HTTP is a first-class citizen in Node.js, designed with streaming and low
-latency in mind. This makes Node.js well suited for the foundation of a web
-library or framework.
+HTTP в Node.js считается объектом первого класса, разработанным с учетом потоковой передачи данных и низкой задержки. Это делает Node.js отлично подходящим для основы веб-библиотеки или фреймворка.
 
-Node.js being designed without threads doesn't mean you can't take
-advantage of multiple cores in your environment. Child processes can be spawned
-by using our \[`child_process.fork()`]\[] API, and are designed to be easy to
-communicate with. Built upon that same interface is the \[`cluster`]\[] module,
-which allows you to share sockets between processes to enable load balancing
-over your cores.
+Тот факт, что Node.js разработан без потоков, не означает, что вы не можете использовать несколько ядер в вашей среде. Дочерние процессы могут быть запущены с использованием нашего API `child_process.fork()`, и предназначены для удобной связи. На основе этого же интерфейса построен модуль `cluster`, который позволяет вам обмениваться сокетами между процессами для обеспечения балансировки нагрузки по ядрам.
 
 [блокировка или неблокировка]: /learn/asynchronous-work/overviews-blocking-vs-non-blockking
+
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
+
 [«кластер»]: https://nodejs.org/api/cluster.html
+
 [машина событий]: https://github.com/eventmachine/eventmachine
+
 [закрученный]: https://twistedmatrix.com/trac/
