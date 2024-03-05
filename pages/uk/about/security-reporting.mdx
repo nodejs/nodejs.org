@@ -11,14 +11,9 @@ layout: about
 
 Повідомити про помилки безпеки в Node.js через [HackerOne](https://hackerone.com/nodejs).
 
-Your report will be acknowledged within 5 days, and you'll receive a more
-detailed response to your report within 10 days indicating the next steps in
-handling your submission.
+Ваш звіт буде визнаний протягом 5 днів, і ви отримаєте більш детальну відповідь на ваш звіт протягом 10 днів, що вказуватиме на наступні кроки у вирішенні вашого подання.
 
-After the initial reply to your report, the security team will endeavor to keep
-you informed of the progress being made towards a fix and full announcement,
-and may ask for additional information or guidance surrounding the reported
-issue.
+Після початкової відповіді на ваш звіт, команда безпеки прагне інформувати вас про прогрес у виправленні та повному оголошенні, і може попросити додаткову інформацію або керівництво, що стосується повідомленої проблеми.
 
 ### Програма для помилок Node.js
 
@@ -28,44 +23,31 @@ HackerOne . Детальніше [https://hackerone.com/nodejs](https://hackeron
 
 ## Повідомляти про помилку в сторонньому модулі
 
-Security bugs in third party modules should be reported to their respective
-maintainers.
+Помилки безпеки в сторонніх модулях повинні бути повідомлені їх відповідним розробникам.
 
 ## Політика розкриття інформації
 
 Ось політика розкриття безпеки для Node.js
 
-- The security report is received and is assigned a primary handler. This
-  person will coordinate the fix and release process. The problem is confirmed
-  and a list of all affected versions is determined. Code is audited to find
-  any potential similar problems. Fixes are prepared for all releases which are
-  still under maintenance. These fixes are not committed to the public
-  repository but rather held locally pending the announcement.
+* Звіт про безпеку отримано і призначено основного обробника. Ця особа буде координувати процес виправлення та випуску. Проблема підтверджується, і визначається список всіх пошкоджених версій. Код перевіряється на виявлення будь-яких потенційних схожих проблем. Виправлення готуються для всіх версій, які ще перебувають під обслуговуванням. Ці виправлення не включаються до загального репозиторію, а зберігаються локально до оголошення.
 
-- Пропонована дата ембарго на цю вразливість обрана, а також дата CVE (Common
+* Пропонована дата ембарго на цю вразливість обрана, а також дата CVE (Common
   Vulnerabilities and Exposures (CVE®️)) запитується про вразливість.
 
-- On the embargo date, the Node.js security mailing list is sent a copy of the
-  announcement. The changes are pushed to the public repository and new builds
-  are deployed to nodejs.org. Within 6 hours of the mailing list being
-  notified, a copy of the advisory will be published on the Node.js blog.
+* На дату ембарго список розсилання безпеки Node.js отримує копію оголошення. Зміни пушуються до загального репозиторію, і нові збірки розгортаються на nodejs.org. Протягом 6 годин після повідомлення списку розсилання буде опублікована копія консультації на блозі Node.js.
 
-- Зазвичай дата ембарго буде встановлена 72 години, відколи заявляється CVE
+* Зазвичай дата ембарго буде встановлена 72 години, відколи заявляється CVE
   . Однак це може відрізнятися в залежності від серйозності проблеми помилки чи
   у застосуванні виправлень.
 
-- This process can take some time, especially when coordination is required
-  with maintainers of other projects. Every effort will be made to handle the
-  bug in as timely a manner as possible; however, it's important that we follow
-  the release process above to ensure that the disclosure is handled in a
-  consistent manner.
+* Цей процес може зайняти певний час, особливо коли потрібна координація з розробниками інших проектів. Всі зусилля будуть зроблені для вирішення помилки якнайшвидше; проте важливо дотримуватися вищезазначеного процесу випуску, щоб забезпечити однаковий підхід до розголошення.
 
 ## Отримання оновлень безпеки
 
 Оповіщення про безпеку будуть поширюватися серед наступних методів.
 
-- [Google Група](https://groups.google.com/group/nodejs-sec)
-- [Блог Node.js](/blog)
+* [Google Група](https://groups.google.com/group/nodejs-sec)
+* [Блог Node.js](/blog)
 
 ## Коментарі до цієї політики
 
@@ -75,15 +57,8 @@ maintainers.
 
 ## Дослідження OpenSSF
 
-<a
-  href="https://bestpractices.coreure.org/projects/29"
-  style={{ display: 'inline-flex' }}
->
-  <img
-    alt="Значок OpenSSF"
-    src="https://bestpractices.coreure.org/projects/29/badge"
-    style={{ display: 'inline' }}
-  />
+<a href="https://bestpractices.coreure.org/projects/29" style={{ display: 'inline-flex' }}>
+  <img alt="Значок OpenSSF" src="https://bestpractices.coreure.org/projects/29/badge" style={{ display: 'inline' }} />
 </a>
 
 Фонд безпеки з відкритим вихідним кодом (OpenSSF) \[Найкращий спосіб практики]\(https://github. om/coreinfrastruct/best-practes-badge) - це спосіб для проектів вільного / Libre та Open Source Software (FLOSS), щоб показати, що вони слідують найкращій практиці. Проекти можуть добровільно самооцінювати, як вони слідують за кожною найкращою практикою. Споживачі значка можуть швидко оцінити, який проект FLOSS дотримуються найкращих практик і в результаті швидше за все, створюють безпечне програмне забезпечення більш високої якості.
