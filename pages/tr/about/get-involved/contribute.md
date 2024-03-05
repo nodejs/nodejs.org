@@ -1,47 +1,47 @@
 ---
-title: Contributing
-layout: about.hbs
+title: Katkıda bulunma
+layout: about
 ---
 
-# Contributing
+# Katkıda bulunma
 
-Thank you for your interest in contributing to Node.js! There are multiple ways and places you can contribute, and we're here to help facilitate that.
+Node.js'e katkıda bulunmaya ilginiz için teşekkür ederiz! Katkıda bulunabileceğiniz birçok yol ve yer bulunmaktadır ve biz de bunu kolaylaştırmak için buradayız.
 
-## Asking for General Help
+## Genel Yardım Talebi
 
-Because the level of activity in the `nodejs/node` repository is so high, questions or requests for general help using Node.js should be directed at the [Node.js help repository](https://github.com/nodejs/help/issues).
+Nodejs/node\` deposundaki etkinlik düzeyi çok yüksek olduğundan, Node.js kullanımıyla ilgili genel yardım soruları veya talepleri [Node.js yardım deposu] (https\://github.com/nodejs/help/issues) adresine yönlendirilmelidir.
 
-## Reporting an Issue
+## Sorun Bildirme
 
-If you have found what you believe to be an issue with Node.js please do not hesitate to file an issue on the GitHub project. When filing your issue please make sure you can express the issue with a reproducible test case, and that test case should not include any external dependencies. That is to say, the test case can be executed without anything more than Node.js itself.
+Eğer Node.js ile ilgili bir sorun bulduysanız, lütfen GitHub projesinde bir sorun (issue) bildirmekten çekinmeyin. Sorununuzu bildirirken, sorunun tekrarlanabilir bir test örneği ile ifade edilebildiğinden emin olun, ve bu test örneği dış bağımlılıklar içermemelidir. Yani, test örneği sadece Node.js'in kendisi ile çalıştırılabilir olmalıdır.
 
-When reporting an issue we also need as much information about your environment that you can include. We never know what information will be pertinent when trying to narrow down the issue. Please include at least the following information:
+Bir sorun bildirirken, mümkün olduğunca çevrenizle ilgili bilgi de dahil etmeniz gerekmektedir. Sorunu daraltmaya çalışırken hangi bilgilerin önemli olacağını bilemeyiz. En azından aşağıdaki bilgileri içermeye çalışın:
 
-- Version of Node.js
-- Platform you're running on (macOS, SmartOS, Linux, Windows)
-- Architecture you're running on (32bit or 64bit and x86 or ARM)
+- Node.js Sürümü
+- Çalıştırdığınız platform (macOS, SmartOS, Linux, Windows)
+- Üzerinde çalıştığınız mimari (32bit veya 64bit ve x86 veya ARM)
 
-The Node.js project is currently managed across a number of separate GitHub repositories, each with their own separate issues database. If possible, please direct any issues you are reporting to the appropriate repository but don't worry if things happen to get put in the wrong place, the community of contributors will be more than happy to help get you pointed in the right direction.
+Node.js projesi şu anda birkaç ayrı GitHub deposu üzerinden yönetilmektedir, her birinin kendi ayrı sorun veritabanı bulunmaktadır. Mümkünse, bildirdiğiniz herhangi bir sorunu uygun deposuna yönlendirin, ancak yanlış yere yerleştirilirse endişelenmeyin, katkıda bulunan topluluk sizi doğru yöne yönlendirmekten memnuniyet duyacaktır.
 
-- To report issues specific to Node.js, please use [nodejs/node](https://github.com/nodejs/node)
-- To report issues specific to this website, please use [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
+- Node.js'ye özgü sorunları bildirmek için lütfen [nodejs/node](https://github.com/nodejs/node) adresini kullanın
+- Bu web sitesine özgü sorunları bildirmek için lütfen [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues) adresini kullanın
 
-## Code contributions
+## Kod katkıları
 
-If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Contribution Guidelines](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). The review process by existing collaborators for all contributions to the project is explained there as well.
+Node.js'ye hata düzeltmek veya yeni bir özellik eklemek istiyorsanız, lütfen [Node.js Katkı Yönergelerine] (https\://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests) başvurduğunuzdan emin olun. Projeye yapılan tüm katkılar için mevcut işbirlikçiler tarafından yapılan inceleme süreci de burada açıklanmaktadır.
 
-If you are wondering how to start, you can check [Node Todo](https://www.nodetodo.org/) which may guide you towards your first contribution.
+Nasıl başlayacağınızı merak ediyorsanız, ilk katkınıza doğru size rehberlik edebilecek [Node Todo] (https\://www\.nodetodo.org/) adresini kontrol edebilirsiniz.
 
-## Becoming a collaborator
+## İşbirlikçi olmak
 
-By becoming a collaborator, contributors can have even more impact on the project. They can help other contributors by reviewing their contributions, triage issues and take an even bigger part in shaping the project's future. Individuals identified by the TSC as making significant and valuable contributions across any Node.js repository may be made Collaborators and given commit access to the project. Activities taken into consideration include (but are not limited to) the quality of:
+İşbirlikçi olarak kabul edilerek, katkıda bulunanlar projeye daha da büyük bir etki yapabilirler. Diğer katkı sağlayıcıları, katkılarını gözden geçirerek, sorunları sınıflandırarak ve projenin geleceğini şekillendirmede daha büyük bir rol alarak yardımcı olabilirler. Node.js topluluğu tarafından herhangi bir Node.js deposunda önemli ve değerli katkılar yapan bireyler İşbirlikçi olarak belirlenebilir ve projeye commit erişimi verilebilir. Dikkate alınan faaliyetler şunları içerir (ancak bunlarla sınırlı değildir):
 
-- code commits and pull requests
-- documentation commits and pull requests
-- comments on issues and pull requests
-- contributions to the Node.js website
-- assistance provided to end users and novice contributors
-- participation in working groups
-- other participation in the wider Node.js community
+- kod taahhütleri ve pull request istekleri
+- belgelendirme taahhütleri ve çekme istekleri
+- sorunlar ve çekme istekleri hakkında yorumlar
+- node.js web sitesine katkılar
+- son kullanıcılara ve acemi katılımcılara sağlanan yardım
+- çalışma gruplarına destek
+- daha geniş Node.js topluluklarında katkı sağlamak
 
-If individuals making valuable contributions do not believe they have been considered for commit access, they may [log an issue](https://github.com/nodejs/TSC/issues) or [contact a TSC member](https://github.com/nodejs/node#tsc-technical-steering-committee) directly.
+Kişiler değerli katkılarının dikkate alınmadığını düşünürlerse, bunu <a href="https://github.com/nodejs/TSC/issues">sorun olarak bildirebilir</a> veya bir <a href="https://github.com/nodejs/node#tsc-technical-steering-committee">TSC üyesi</a> ile doğrudan iletişime geçebilir.
