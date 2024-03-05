@@ -24,7 +24,7 @@ Gruppi di lavoro metteranno insieme un programma in modo che le persone possono
 familiarizzare prima che le persone ottengono sul posto, avere il collaboratore generale
 discussioni, e poi tuffarsi in sessioni di breakout.
 
-We'd love to see you at Collab Summit! Check out the [Summit repo](https://github.com/nodejs/summit)
-for upcoming and past Collab Summits and have a look at the
-[issues filed](https://github.com/nodejs/summit/issues) that share what
-individual working groups and committees are looking to discuss in-person.
+Ci piacerebbe vederti al Collab Summit! Dai un'occhiata al [repository del Summit](https://github.com/nodejs/summit)
+per i prossimi e passati Collab Summit e guarda le
+[issue aperte](https://github.com/nodejs/summit/issues) che condividono cosa
+i singoli gruppi di lavoro e comitati vogliono discutere di persona.
