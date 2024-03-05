@@ -1,30 +1,18 @@
 ---
-title: Collab Summit
+title: Hội nghị Collab
 layout: about
 ---
 
-# Collaborator Summit
+# Hội nghị Cộng tác viên
 
-Node.js's Collaborator Summit is an un-conference for bringing current and
-potential contributors together to discuss Node.js with lively collaboration,
-education, and knowledge sharing. Committees and working groups come together
-twice per year to make important decisions while also being able to work on some
-exciting efforts they want to push forward in-person.
+Hội nghị Cộng tác viên của Node.js là một hội thảo không chính thức để đưa các nhà đóng góp hiện tại và tiềm năng cùng nhau thảo luận về Node.js với sự cộng tác sôi nổi, giáo dục và chia sẻ kiến thức. Các ủy ban và nhóm làm việc tụ tập hai lần mỗi năm để đưa ra các quyết định quan trọng trong khi cũng có thể làm việc trên một số nỗ lực hấp dẫn mà họ muốn đẩy mạnh trực tiếp.
 
-## Who attends?
+## Ai tham dự?
 
-Anyone is welcome to attend Collab Summit. During the
-summit, leaders will help onboard new contributors to groups they'd love to help
-prior to integrating them into the working sessions.
+Bất kỳ ai đều được hoan nghênh tham dự Hội nghị Collab. Trong suốt hội nghị, các nhà lãnh đạo sẽ giúp đào tạo các nhà đóng góp mới cho các nhóm mà họ muốn giúp đỡ trước khi tích hợp họ vào các phiên làm việc.
 
-This is your opportunity to learn what is happening within the community to jump
-in and contribute with the skills you have and would like to hone.
+Đây là cơ hội của bạn để biết những gì đang diễn ra trong cộng đồng để tham gia và đóng góp với những kỹ năng bạn có và muốn rèn luyện.
 
-Working groups will put together a schedule so that people can
-familiarize themselves before folks get onsite, having the general collaborator
-discussions, and then dive into breakout sessions.
+Các nhóm làm việc sẽ tổ chức lịch trình để mọi người có thể làm quen trước khi đến, có những cuộc trò chuyện chung với những người đồng nghiệp, và sau đó nhảy vào các phiên tách ra.
 
-We'd love to see you at Collab Summit! Check out the [Summit repo](https://github.com/nodejs/summit)
-for upcoming and past Collab Summits and have a look at the
-[issues filed](https://github.com/nodejs/summit/issues) that share what
-individual working groups and committees are looking to discuss in-person.
+Chúng tôi rất mong được gặp bạn tại Hội nghị Collab! Hãy kiểm tra [Kho Hội nghị](https://github.com/nodejs/summit) để biết về các Hội nghị Collab sắp tới và đã qua và xem các [vấn đề được đệ trình](https://github.com/nodejs/summit/issues) chia sẻ những gì các nhóm làm việc và ủy ban cá nhân đang muốn thảo luận trực tiếp.
