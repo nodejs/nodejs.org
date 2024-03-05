@@ -1,24 +1,24 @@
 ---
-title: Collab Summit
+title: Cumbre de Collab
 layout: about
 ---
 
-# Collaborator Summit
+# Cumbre de Colaboradores
 
-Node.js's Collaborator Summit is an un-conference for bringing current and
-potential contributors together to discuss Node.js with lively collaboration,
-education, and knowledge sharing. Committees and working groups come together
-twice per year to make important decisions while also being able to work on some
-exciting efforts they want to push forward in-person.
+La Cumbre de Colaboradores de Node.js es una no conferencia para reunir a los colaboradores actuales y
+potenciales para discutir Node.js con una viva colaboración,
+educación y compartir conocimientos. Tanto los grupos de trabajo como los grupos de trabajo se reúnen
+dos veces al año para tomar decisiones importantes y al mismo tiempo poder trabajar en algunos
+apasionantes esfuerzos que quieren hacer avanzar en persona.
 
-## Who attends?
+## ¿Quién asiste?
 
-Anyone is welcome to attend Collab Summit. During the
-summit, leaders will help onboard new contributors to groups they'd love to help
-prior to integrating them into the working sessions.
+Cualquiera es bienvenido a asistir a la Cumbre de Collab. Durante la cumbre
+, los líderes ayudarán a incorporar nuevos colaboradores a grupos a los que les encantaría ayudar
+antes de integrarlos en las sesiones de trabajo.
 
-This is your opportunity to learn what is happening within the community to jump
-in and contribute with the skills you have and would like to hone.
+Esta es tu oportunidad de aprender lo que está ocurriendo dentro de la comunidad para saltar
+y contribuir con las habilidades que tienes y te gustaría afinar.
 
 Working groups will put together a schedule so that people can
 familiarize themselves before folks get onsite, having the general collaborator
