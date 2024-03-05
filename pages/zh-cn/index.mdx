@@ -1,44 +1,42 @@
 ---
-title: Run JavaScript Everywhere
+title: 在所有地方运行 JavaScript
 layout: home
 ---
 
 <section>
-  <WithBadge section="index" />
+  <WithBadge section="索引" />
 
   <div>
-    <h1 className="special">Run JavaScript Everywhere</h1>
+    <h1 className="special">在任何地方运行JavaScript</h1>
 
-    Node.js® is a free, open-source, cross-platform JavaScript runtime
-    environment that lets developers create servers, web apps,
-    command line tools and scripts.
-
+    Node.js:registered：这是一个免费的开放源码、跨平台JavaScript运行时间
+    环境，可以让开发者创建服务器、网络应用、
+    命令行工具和脚本。
   </div>
 
   <div>
-    <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
+    <WithNodeRelease status={['活动LTS', '维护LTS']}>
       {({ release }) => (
         <>
-          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+          <DownloadButton release={release}>下载 Node.js (LTS)</DownloadButton>
           <small>
-            Downloads Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
-            Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
+            下载 Node.js <b>{release.versionWithPrefix}</b>
+            <sup title="为您当前平台下载 Node.js 安装程序">1</sup>，支持长期支持。
+            也可通过 <a href="/download/package-manager">软件包管理器</a> 安装 Node.js。
           </small>
         </>
       )}
     </WithNodeRelease>
 
-    <WithNodeRelease status="Current">
+    <WithNodeRelease status="当前的">
       {({ release }) => (
         <small>
-          Want new features sooner?
-          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> instead.
+          想更早获得新功能吗？
+          获取 <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="下载适用于您当前平台的 Node.js 安装程序">1</sup>。
         </small>
       )}
     </WithNodeRelease>
-
   </div>
 </section>
 
@@ -113,9 +111,7 @@ layout: home
       parentPort.postMessage(btoa(source.toUpperCase()));
     }
     ```
-
   </div>
 
-Learn more what Node.js is able to offer with our [Learning materials](/learn).
-
+  了解更多我们的[学习材料](/learn)可以提供的 Node.js。
 </section>
