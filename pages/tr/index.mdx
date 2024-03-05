@@ -4,7 +4,7 @@ layout: home
 ---
 
 <section>
-  <WithBadge section="indeks" />
+ <WithBadge section="indeks" />
 
   <div>
     <h1 className="special">Her Yerde JavaScript Çalıştırın</h1>
@@ -14,7 +14,7 @@ layout: home
   </div>
 
   <div>
-    <WithNodeRelease status={['Aktif LTS', 'Bakım LTS']}>
+    <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
       {({ release }) => (
         <>
           <DownloadButton release={release}>Node.js'i İndir (LTS)</DownloadButton>
@@ -27,7 +27,7 @@ layout: home
       )}
     </WithNodeRelease>
 
-    <WithNodeRelease status="Güncel">
+    <WithNodeRelease status={"Current"}>
       {({ release }) => (
         <small>
           Daha yeni özelliklere mi ihtiyacınız var?{" "}
