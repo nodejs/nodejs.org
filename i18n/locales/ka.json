@@ -3,23 +3,23 @@
     "containers": {
       "footer": {
         "links": {
-          "trademarkPolicy": "Trademark Policy",
-          "privacyPolicy": "Privacy Policy",
-          "codeOfConduct": "Code of Conduct",
-          "security": "Security Policy",
-          "openJS": "OpenJS Foundation"
+          "trademarkPolicy": "მწარმოებლობის პოლიტიკა",
+          "privacyPolicy": "კეთილიდან",
+          "codeOfConduct": "ქეიდან",
+          "security": "უსაფრთხოების პოლიტიკა",
+          "openJS": "OpenJS ფონდაცია"
         }
       },
       "navBar": {
         "links": {
-          "about": "About",
-          "download": "Download",
-          "docs": "Docs",
-          "guides": "Guides",
-          "learn": "Learn",
-          "security": "Security",
-          "certification": "Certification",
-          "blog": "Blog"
+          "about": "შესახებ",
+          "download": "გადმოწერეთ",
+          "docs": "დოკუმენტები",
+          "guides": "წესები",
+          "learn": "შეისწავლეთ",
+          "security": "უსაფრთხოება",
+          "certification": "სერთიფიკაცია",
+          "blog": "ბლოგი"
         }
       }
     },
@@ -27,263 +27,263 @@
       "learn": {
         "gettingStarted": {
           "links": {
-            "gettingStarted": "Getting Started",
-            "introductionToNodejs": "Introduction to Node.js",
-            "howToInstallNodejs": "How to install Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "How much JavaScript do you need to know to use Node.js?",
-            "differencesBetweenNodejsAndTheBrowser": "Differences between Node.js and the Browser",
-            "theV8JavascriptEngine": "The V8 JavaScript Engine",
-            "anIntroductionToTheNpmPackageManager": "An introduction to the npm package manager",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) and beyond",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
-            "nodejsWithTypescript": "Node.js with TypeScript",
-            "nodejsWithWebassembly": "Node.js with WebAssembly",
-            "debugging": "Debugging Node.js",
-            "profiling": "Profiling Node.js Applications",
-            "securityBestPractices": "Security Best Practices"
+            "gettingStarted": "დასაწყისი",
+            "introductionToNodejs": "Node.js-ის შესახებ შესავსება",
+            "howToInstallNodejs": "Node.js-ის ინსტალაციის მეთოდები",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "რამდენი JavaScript უნდა იცოდე რომ გამოიყენო Node.js?",
+            "differencesBetweenNodejsAndTheBrowser": "Node.js-ის და ბრაუზერის შორის განსხვავებები",
+            "theV8JavascriptEngine": "V8 JavaScript ძრავი",
+            "anIntroductionToTheNpmPackageManager": "npm პაკეტების მენეჯერის შესახებ შესავსება",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) და განაწილება",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, განსხვავება შეფუთვასა და პროდუქციას შორის",
+            "nodejsWithTypescript": "Node.js TypeScript-ით",
+            "nodejsWithWebassembly": "Node.js და WebAssembly",
+            "debugging": "Node.js-ის დებაგირება",
+            "profiling": "Node.js აპლიკაციების პროფილირება",
+            "securityBestPractices": "უმაღლესი პრაქტიკები უსაფრთხოებაში"
           }
         },
         "asynchronousWork": {
           "links": {
-            "asynchronousWork": "Asynchronous Work",
-            "asynchronousFlowControl": "Asynchronous flow control",
-            "overviewOfBlockingVsNonBlocking": "Overview of Blocking vs Non-Blocking",
-            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asynchronous Programming and Callbacks",
-            "discoverJavaScriptTimers": "Discover JavaScript Timers",
-            "theNodejsEventLoop": "The Node.js Event Loop",
-            "theNodejsEventEmitter": "The Node.js Event Emitter",
-            "understandingProcessnexttick": "Understanding process.nextTick()",
-            "understandingSetimmediate": "Understanding setImmediate()",
-            "dontBlockTheEventLoop": "Don't Block the Event Loop"
+            "asynchronousWork": "ასინქრონული სამუშაო",
+            "asynchronousFlowControl": "ასინქრონული ნაკეთობის კონტროლი",
+            "overviewOfBlockingVsNonBlocking": "ბლოკირება წინდაწილების შესახებ vs არა-ბლოკირება",
+            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript-ის ასინქრონული პროგრამირება და კოლბექები",
+            "discoverJavaScriptTimers": "განიხილე JavaScript ტაიმერები",
+            "theNodejsEventLoop": "Node.js ივენთ ლუპი",
+            "theNodejsEventEmitter": "Node.js ივენთ ემიტერი",
+            "understandingProcessnexttick": "process.nextTick()-ის გაგება",
+            "understandingSetimmediate": "setImmediate()-ის გაგება",
+            "dontBlockTheEventLoop": "არ დაბლოკოთ ივენთ ლუპი"
           }
         },
         "manipulatingFiles": {
           "links": {
-            "manipulatingFiles": "Manipulating Files",
-            "nodejsFileStats": "Node.js file stats",
-            "nodejsFilePaths": "Node.js File Paths",
-            "workingWithFileDescriptorsInNodejs": "Working with file descriptors in Node.js",
-            "readingFilesWithNodejs": "Reading files with Node.js",
-            "writingFilesWithNodejs": "Writing files with Node.js",
-            "workingWithFoldersInNodejs": "Working with folders in Node.js",
-            "howToWorkWithFileSystems": "How to work with Different Filesystems"
+            "manipulatingFiles": "ფაილების მართვა",
+            "nodejsFileStats": "Node.js ფაილის სტატისტიკა",
+            "nodejsFilePaths": "Node.js ფაილის გზები",
+            "workingWithFileDescriptorsInNodejs": "ფაილის დისკრიპტორებთან მუშაობა Node.js-ში",
+            "readingFilesWithNodejs": "ფაილების წაკითხვა Node.js-ით",
+            "writingFilesWithNodejs": "ფაილების ჩაწერა Node.js-ით",
+            "workingWithFoldersInNodejs": "Node.js-ში საქაღალდეში მუშაობა",
+            "howToWorkWithFileSystems": "როგორ მუშაობს სხვადასხვა ფაილურ სისტემებთან"
           }
         },
         "commandLine": {
           "links": {
-            "commandLine": "Command Line",
-            "runNodejsScriptsFromTheCommandLine": "Run Node.js scripts from the command line",
-            "howToReadEnvironmentVariablesFromNodejs": "How to read environment variables from Node.js",
-            "howToUseTheNodejsRepl": "How to use the Node.js REPL",
-            "outputToTheCommandLineUsingNodejs": "Output to the command line using Node.js",
-            "acceptInputFromTheCommandLineInNodejs": "Accept input from the command line in Node.js"
+            "commandLine": "ბრძანების ხაზი",
+            "runNodejsScriptsFromTheCommandLine": "გაშვებები Node.js სკრიპტები ბრძანების ხაზიდან",
+            "howToReadEnvironmentVariablesFromNodejs": "როგორ წაიკითხოს გარე გარჩევები Node.js-დან",
+            "howToUseTheNodejsRepl": "Node.js REPL-ის გამოყენება როგორ შეგვიძლია",
+            "outputToTheCommandLineUsingNodejs": "გამოსაშვები ბრძანებები ბრძანების ხაზზე Node.js-ით",
+            "acceptInputFromTheCommandLineInNodejs": "შეინახეთ შესაყვანი ბრძანებები Node.js-ში ბრძანების ხაზზე"
           }
         },
         "modules": {
           "links": {
-            "modules": "Modules",
-            "publishingNodeApiModules": "How to publish a Node-API package",
-            "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction",
-            "abiStability": "ABI Stability",
-            "backpressuringInStreams": "Backpressuring in Streams"
+            "modules": "მოდულები",
+            "publishingNodeApiModules": "როგორ გამოაქვეყნოს Node-API პაკეტი",
+            "anatomyOfAnHttpTransaction": "HTTP ტრანზაქციის ანატომია",
+            "abiStability": "ABI სტაბილობა",
+            "backpressuringInStreams": "სტრიმებში უკან დაჭრა"
           }
         },
         "diagnostics": {
           "links": {
-            "diagnostics": "Diagnostics",
-            "userJourney": "User Journey",
-            "memory": "Memory",
-            "liveDebugging": "Live Debugging",
-            "poorPerformance": "Poor Performance",
-            "flameGraphs": "Flame Graphs"
+            "diagnostics": "დიაგნოსტიკა",
+            "userJourney": "მომხმარებლის გზამკვლევი",
+            "memory": "მეხსიერება",
+            "liveDebugging": "ცოცხალი დიაგნოსტიკა",
+            "poorPerformance": "საშუალო პერფორმანსი",
+            "flameGraphs": "ფლეიმ გრაფიკები"
           }
         }
       },
       "about": {
         "links": {
-          "about": "About Node.js",
-          "aboutSide": "About Node.js®",
-          "governance": "Project Governance",
-          "releases": "Previous Releases",
-          "security": "Security Reporting"
+          "about": "Node.js-ის შესახებ",
+          "aboutSide": "Node.js-ზე შესახებ",
+          "governance": "პროექტის წყარო",
+          "releases": "წინა გამოსახულებები",
+          "security": "უსაფრთხოების რეპორტი"
         }
       },
       "getInvolved": {
         "links": {
-          "getInvolved": "Get Involved",
+          "getInvolved": "დაჯილდოთ",
           "collabSummit": "Collaborator Summit",
-          "upcomingEvents": "Upcoming Events",
-          "contribute": "Contribute to Node.js",
-          "codeOfConduct": "Code of Conduct"
+          "upcomingEvents": "მოვალე ღონისვრის ღონიდან",
+          "contribute": "Node.js-ზე მონაწილეების მიცემა",
+          "codeOfConduct": "ქედი ქონდუქტი"
         }
       }
     },
     "downloadList": {
       "links": {
-        "previousReleases": "Previous Releases",
-        "packageManager": "Installing Node.js via package manager",
+        "previousReleases": "წინა გამოსახულებები",
+        "packageManager": "Node.js-ის დაყენება პაკეტის მენეჯერის მეშვეობით",
         "shaSums": {
-          "title": "Signed SHASUMS for release files",
-          "howToVerify": " (How to verify)"
+          "title": "ხელმოწერების SHASUMS რელიზის ფაილებისთვის",
+          "howToVerify": " (როგორ შეამოწმოთ)"
         },
-        "allDownloads": "All download options",
-        "nightlyReleases": "Nightly builds",
-        "unofficialBuilds": "Unofficial builds",
-        "buildingFromSource": "Building Node.js from source on supported platforms",
-        "installingOnLinux": "Installing Node.js via binary archive",
-        "installingOnWsl": "Install on Windows Subsystem for Linux (WSL)"
+        "allDownloads": "ყველა ჩამოტვირთვის ვარიანტი",
+        "nightlyReleases": "ღამითი ვერსიები",
+        "unofficialBuilds": "არაოფიციალური ვერსიები",
+        "buildingFromSource": "Node.js-ის შექმნა წყაროდან დამატებითი პლათფორმებზე",
+        "installingOnLinux": "Node.js-ის ინსტალაცია ბინარულ არქივში",
+        "installingOnWsl": "Node.js-ის ინსტალაცია Windows Subsystem for Linux (WSL)-ზე"
       }
     },
     "downloadReleasesTable": {
-      "changelog": "Changelog",
-      "releases": "Releases",
-      "docs": "Docs"
+      "changelog": "შეცვალებების ჟურნალი",
+      "releases": "გამოცემები",
+      "docs": "დოკუმენტაცია"
     },
     "pagination": {
-      "next": "Next",
-      "previous": "Previous"
+      "next": "შემდეგი",
+      "previous": "წინა"
     },
     "common": {
       "breadcrumbs": {
-        "navigateToHome": "Navigate to Home"
+        "navigateToHome": "გადასვლა მთავარ გვერდზე"
       },
       "crossLink": {
-        "previous": "Prev",
-        "next": "Next"
+        "previous": "წინა",
+        "next": "შემდეგი"
       },
       "codebox": {
-        "copy": "Copy to clipboard",
-        "copied": "Copied to clipboard!"
+        "copy": "კოპირება ბუფერში",
+        "copied": "კოპირებულია ბუფერში!"
       },
       "pagination": {
-        "prev": "Previous",
-        "prevAriaLabel": "Previous page",
-        "next": "Next",
-        "nextAriaLabel": "Next page",
-        "defaultLabel": "Pagination",
-        "pageLabel": "Go to page {pageNumber}"
+        "prev": "წინა",
+        "prevAriaLabel": "წინის გვერდი",
+        "next": "შემდეგი",
+        "nextAriaLabel": "შემდეგი გვერდი",
+        "defaultLabel": "გვერდების ნავიგაცია",
+        "pageLabel": "გადასვლა გვერდზე {pageNumber}"
       },
       "sidebar": {
-        "title": "Change page"
+        "title": "გვერდის შეცვლა"
       },
       "languageDropdown": {
-        "label": "Choose Language"
+        "label": "აირჩიეთ ენა"
       },
       "themeToggle": {
-        "label": "Toggle Dark Mode"
+        "label": "გადარჩევის ჩართვა წიმის რეჟიმში"
       }
     },
     "mdx": {
       "upcomingEvents": {
-        "defaultTitle": "No Upcoming Event"
+        "defaultTitle": "შემომავალი ღონისძიება არ არის"
       }
     },
     "metabar": {
-      "lastUpdated": "Last Updated",
-      "readingTime": "Reading Time",
-      "addedIn": "Added In",
-      "author": "Author",
-      "authors": "Authors",
-      "contribute": "Contribute",
-      "contributeText": "Edit this page",
-      "viewAs": "View as",
-      "tableOfContents": "Table of Contents"
+      "lastUpdated": "ბოლო განახლება",
+      "readingTime": "წაკითხვის დრო",
+      "addedIn": "დამატებულია",
+      "author": "ავტორი",
+      "authors": "ავტორები",
+      "contribute": "მომხმარებელთა მონაწილეობა",
+      "contributeText": "რედაქტირება ამ გვერდზე",
+      "viewAs": "ნახვა როგორ",
+      "tableOfContents": "შინაარსის სარჩევა"
     },
     "downloads": {
       "changelogModal": {
-        "startContributing": "Start Contributing"
+        "startContributing": "დაიწყე შენი მონაწილეები"
       }
     },
     "search": {
       "searchBox": {
-        "placeholder": "Start typing..."
+        "placeholder": "დაიწყე ჩაწერა..."
       },
       "seeAll": {
-        "text": "See all {count} results"
+        "text": "ნახე ყველა {count} შედეგი"
       },
       "searchError": {
-        "text": "An error occurred while searching. Please try again later."
+        "text": "მოხდა შეცდომა საძიებოსას. გთხოვთ, კიდევ ერთხელ სცადოთ."
       },
       "poweredBy": {
-        "text": "Powered by"
+        "text": "დამხმარებულია"
       },
       "noResults": {
-        "text": "No results found for \"{query}\"."
+        "text": "შედეგები არ მოიძებნა \"{query}\"."
       },
       "emptyState": {
-        "text": "Search something..."
+        "text": "ძიება..."
       },
       "searchPage": {
-        "title": "You're searching: {query}"
+        "title": "შენ ძიებს: {query}"
       }
     },
     "blog": {
       "blogHeader": {
-        "subtitle": "The latest Node.js news, case studies, tutorials, and resources.",
-        "rssLink": "RSS feed"
+        "subtitle": "Node.js-ის უახლესი სიახლეები, შემთხვევები, სამართალი და რესურსები.",
+        "rssLink": "RSS კავშირი"
       }
     }
   },
   "layouts": {
     "blogPost": {
       "author": {
-        "byLine": "{author, select, null {} other {By {author}, }}"
+        "byLine": "{author, select, null {} other {ავტორი: {author}, }}"
       }
     },
     "blogIndex": {
-      "categoryName": "{category, select, all {Blog} other {{category} Blog Posts}}"
+      "categoryName": "{category, select, all {ბლოგი} other {{category} ბლოგი პოსტები}}"
     },
     "blog": {
-      "title": "Blog",
-      "selectCategory": "Categories",
+      "title": "ბლოგი",
+      "selectCategory": "კატეგორიები",
       "categories": {
-        "all": "Everything",
-        "announcements": "Announcements",
-        "release": "Releases",
-        "vulnerability": "Vulnerabilities",
-        "advisory-board": "Advisory Board",
-        "community": "Community",
-        "feature": "Feature",
-        "module": "Module",
+        "all": "ყველაფერი",
+        "announcements": "განიცხადებები",
+        "release": "გამოსახულებები",
+        "vulnerability": "უსაფრთხოება",
+        "advisory-board": "სამთავრო რჩევები",
+        "community": "თემა",
+        "feature": "ფიჩერი",
+        "module": "მოდული",
         "npm": "npm",
-        "uncategorized": "Uncategorized",
-        "video": "Video",
-        "weekly": "Weekly Updates",
-        "wg": "Working Groups",
-        "events": "Events"
+        "uncategorized": "უკატეგორიო",
+        "video": "ვიდეო",
+        "weekly": "ყოველკვირის განახლებები",
+        "wg": "სამუშაო ჯგუფები",
+        "events": "ღონისძიებები"
       }
     },
     "error": {
       "notFound": {
-        "title": "Page could not be found",
-        "description": "Sorry, we couldn't find the page you're after! Try starting again from the homepage."
+        "title": "გვერდი ვერ მოიძებნა",
+        "description": "საწყისი გვერდიდან სცადეთ თავიდან!"
       },
       "internalServerError": {
-        "title": "Internal Server Error",
-        "description": "This page has thrown a non-recoverable error."
+        "title": "შიდა სერვერის შეცდომა",
+        "description": "გვერდი მოგვიანებელ შეცდომას გამოიმზადა."
       },
-      "backToHome": "Back to Home"
+      "backToHome": "უკაცრიელი გვერდზე"
     },
     "download": {
-      "selectCategory": "Categories",
+      "selectCategory": "კატეგორიები",
       "categories": {
-        "download": "Prebuilt Installer",
-        "prebuilt-binaries": "Prebuilt Binaries",
-        "package-manager": "Package Manager",
-        "source-code": "Source Code"
+        "download": "წინასწარ დაყენება",
+        "prebuilt-binaries": "წინასწარ კომპილატორები",
+        "package-manager": "პაკეტების მენეჯერი",
+        "source-code": "წყარო კოდი"
       },
       "buttons": {
-        "prebuilt": "Download Node.js {version}",
-        "source": "Download Node.js {version} source"
+        "prebuilt": "Node.js {version}-ის გადმოწერა",
+        "source": "Node.js {version}-ის წყაროს გადმოწერა"
       },
       "dropdown": {
-        "bitness": "Bitness",
-        "os": "Operating System",
-        "version": "Version",
-        "platform": "Platform"
+        "bitness": "ბიტნესი",
+        "os": "ოპერაციული სისტემა",
+        "version": "ვერსია",
+        "platform": "პლატფორმა"
       },
       "codeBox": {
-        "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project."
+        "communityWarning": "პაკეტის მენეჯერები და მათი ინსტალაციის სკრიპტები არ იქნება შეიცავენ Node.js პროექტის მიერ."
       }
     }
   }
