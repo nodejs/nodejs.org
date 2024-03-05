@@ -1,0 +1,117 @@
+---
+title: 在所有地方运行 JavaScript
+layout: home
+---
+
+<section>
+  <WithBadge section="索引" />
+
+  <div>
+    <h1 className="special">在任何地方运行JavaScript</h1>
+
+    Node.js:registered：这是一个免费的开放源码、跨平台JavaScript运行时间
+    环境，可以让开发者创建服务器、网络应用、
+    命令行工具和脚本。
+  </div>
+
+  <div>
+    <WithNodeRelease status={['活动LTS', '维护LTS']}>
+      {({ release }) => (
+        <>
+          <DownloadButton release={release}>下载 Node.js (LTS)</DownloadButton>
+          <small>
+            下载 Node.js <b>{release.versionWithPrefix}</b>
+            <sup title="为您当前平台下载 Node.js 安装程序">1</sup>，支持长期支持。
+            也可通过 <a href="/download/package-manager">软件包管理器</a> 安装 Node.js。
+          </small>
+        </>
+      )}
+    </WithNodeRelease>
+
+    <WithNodeRelease status={"当前"}>
+      {({ release }) => (
+        <small>
+          想更早获得新功能吗？
+          获取 <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="下载适用于您当前平台的 Node.js 安装程序">1</sup>。
+        </small>
+      )}
+    </WithNodeRelease>
+  </div>
+</section>
+
+<section>
+  <div>
+    ```js displayName="Create an HTTP Server"
+    import { createServer } from 'node:http';
+
+    const server = createServer((req, res) => {
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end('Hello World!\n');
+    });
+
+    // starts a simple http server locally on port 3000
+    server.listen(3000, '127.0.0.1', () => {
+      console.log('Listening on 127.0.0.1:3000');
+    });
+    ```
+
+    ```js displayName="Write Tests"
+    import assert from 'node:assert';
+    import test from 'node:test';
+
+    test('that 1 is equal 1', () => {
+      assert.strictEqual(1, 1);
+    });
+
+    test('that throws as 1 is not equal 2', () => {
+      // throws an exception because 1 != 2
+      assert.strictEqual(1, 2);
+    });
+    ```
+
+    ```js displayName="Read and Hash a File"
+    import { createHash } from 'node:crypto';
+    import { readFile } from 'node:fs/promises';
+
+    const hasher = createHash('sha1');
+    const fileContent = await readFile('./package.json');
+
+    hasher.setEncoding('hex');
+    hasher.write(fileContent);
+    hasher.end();
+
+    const fileHash = hasher.read();
+    ```
+
+    ```js displayName="Read Streams"
+    import { createReadStream, createWriteStream } from 'node:fs';
+
+    const res = await fetch('https://nodejs.org/dist/index.json');
+    const json = await res.json(); // yields a json object
+
+    const readableStream = createReadStream('./package.json');
+    const writableStream = createWriteStream('./package2.json');
+
+    readableStream.setEncoding('utf8');
+
+    readableStream.on('data', chunk => writableStream.write(chunk));
+    ```
+
+    ```js displayName="Work with Threads"
+    import { Worker, isMainThread,
+      workerData, parentPort } from 'node:worker_threads';
+
+    if (isMainThread) {
+      const data = 'some data';
+      const worker = new Worker(import.meta.filename, { workerData: data });
+      worker.on('message', msg => console.log('Reply from Thread:', msg));
+    } else {
+      const source = workerData;
+      parentPort.postMessage(btoa(source.toUpperCase()));
+    }
+    ```
+  </div>
+
+  了解更多我们的[学习材料](/learn)可以提供的 Node.js。
+</section>
