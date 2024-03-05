@@ -1,26 +1,26 @@
 ---
-title: Get involved
+title: Tham gia
 layout: about
 ---
 
-# Get Involved
+# Tham Gia
 
-## Community Discussion
+## Thảo luận Cộng đồng
 
-- The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
-- For real-time chat about Node.js development use one of the platforms below
-  - For IRC, go to `irc.libera.chat` in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [a web client](https://kiwiirc.com/nextclient/)
-  - For Slack, there are two options:
-    - The [OpenJSF Slack](https://slack-invite.openjsf.org/) is a Foundation run Slack with several Node.js channels (channels prefixed by `#nodejs-` are related to the project).
-    - [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
-- The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
-- The [Node.js project calendar](https://nodejs.org/calendar) with all public team meetings.
+- Danh sách [vấn đề trên GitHub](https://github.com/nodejs/node/issues) là nơi để thảo luận về các tính năng cốt lõi của Node.js.
+- Để trò chuyện thời gian thực về phát triển Node.js, sử dụng một trong các nền tảng dưới đây
+  - Đối với IRC, truy cập `irc.libera.chat` trong kênh `#node.js` với một [client IRC](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) hoặc kết nối trong trình duyệt web của bạn đến kênh bằng [một client web](https://kiwiirc.com/nextclient/)
+  - Đối với Slack, có hai lựa chọn:
+    - [OpenJSF Slack](https://slack-invite.openjsf.org/) là một Slack do Tổ chức quản lý với một số kênh Node.js (các kênh có tiền tố bởi `#nodejs-` liên quan đến dự án).
+    - [Node Slackers](https://www.nodeslackers.com/) là một cộng đồng Slack tập trung vào Node.js.
+- Tài khoản Twitter chính thức của Node.js là [nodejs](https://twitter.com/nodejs).
+- Lịch trình dự án [Node.js](https://nodejs.org/calendar) với tất cả các cuộc họp công khai của nhóm.
 
-## Learning
+## Học tập
 
-- [Official Learn section](https://nodejs.org/en/learn/) of the Node.js website.
-- [Official API reference documentation](https://nodejs.org/api/).
-- [NodeSchool.io](https://nodeschool.io/) will teach you Node.js concepts via interactive command-line games.
-- [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) collects new information every day.
-- [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
-- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
+- Mục học tập chính thức của [Node.js](https://nodejs.org/en/learn/) trên trang web Node.js.
+- Tài liệu tham khảo API chính thức của [Node.js](https://nodejs.org/api/).
+- [NodeSchool.io](https://nodeschool.io/) sẽ giúp bạn hiểu các khái niệm Node.js thông qua các trò chơi tương tác trên dòng lệnh.
+- Thẻ [Node.js trên Stack Overflow](https://stackoverflow.com/questions/tagged/node.js) thu thập thông tin mới mỗi ngày.
+- Thẻ Node.js trên [cộng đồng DEV](https://dev.to/t/node) là nơi để chia sẻ các dự án, bài viết và hướng dẫn Node.js cũng như bắt đầu thảo luận và yêu cầu phản hồi về các chủ đề liên quan đến Node.js. Các nhà phát triển ở mọi cấp độ kỹ năng đều được chào đón tham gia.
+- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) là cộng đồng thân thiện của các nhà phát triển backend Node.js hỗ trợ nhau trên Discord.
