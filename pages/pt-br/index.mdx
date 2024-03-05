@@ -1,0 +1,117 @@
+---
+title: Executar JavaScript em todos os lugares
+layout: home
+---
+
+<section>
+  <WithBadge section="Índice" />
+
+  <div>
+    <h1 className="special">Executar JavaScript Em Todo Lugar</h1>
+
+    Node.js®️ é um ambiente livre e de código aberto e multi-plataforma JavaScript em tempo de execução
+    que permite que desenvolvedores criem servidores, aplicativos web,
+    ferramentas e scripts de linha de comando.
+  </div>
+
+  <div>
+    <WithNodeRelease status={['Ativos LTS', 'Manutenção LTS']}>
+      {({ release }) => (
+        <>
+          <DownloadButton release={release}>Download Node. s (LTS)</DownloadButton>
+          <small>
+            Ponto de Downloads. s <b>{release.versionWithPrefix}</b>
+            <sup title="Downloads a Node.js installer for your current platform">1</sup> com suporte a longo prazo.
+            Node.js também podem ser instalados via <a href="/download/package-manager">gerenciadores de pacotes</a>.
+          </small>
+        </>
+      )}
+    </WithNodeRelease>
+
+    <WithNodeRelease status={"Atual"}>
+      {({ release }) => (
+        <small>
+          Quer novas funcionalidades mais cedo?
+          Obtenha <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="Baixa um instalador Node.js para sua plataforma atual">1</sup> ao invés disso.
+        </small>
+      )}
+    </WithNodeRelease>
+  </div>
+</section>
+
+<section>
+  <div>
+    ```js displayName="Create an HTTP Server"
+    import { createServer } from 'node:http';
+
+    const server = createServer((req, res) => {
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end('Hello World!\n');
+    });
+
+    // starts a simple http server locally on port 3000
+    server.listen(3000, '127.0.0.1', () => {
+      console.log('Listening on 127.0.0.1:3000');
+    });
+    ```
+
+    ```js displayName="Write Tests"
+    import assert from 'node:assert';
+    import test from 'node:test';
+
+    test('that 1 is equal 1', () => {
+      assert.strictEqual(1, 1);
+    });
+
+    test('that throws as 1 is not equal 2', () => {
+      // throws an exception because 1 != 2
+      assert.strictEqual(1, 2);
+    });
+    ```
+
+    ```js displayName="Read and Hash a File"
+    import { createHash } from 'node:crypto';
+    import { readFile } from 'node:fs/promises';
+
+    const hasher = createHash('sha1');
+    const fileContent = await readFile('./package.json');
+
+    hasher.setEncoding('hex');
+    hasher.write(fileContent);
+    hasher.end();
+
+    const fileHash = hasher.read();
+    ```
+
+    ```js displayName="Read Streams"
+    import { createReadStream, createWriteStream } from 'node:fs';
+
+    const res = await fetch('https://nodejs.org/dist/index.json');
+    const json = await res.json(); // yields a json object
+
+    const readableStream = createReadStream('./package.json');
+    const writableStream = createWriteStream('./package2.json');
+
+    readableStream.setEncoding('utf8');
+
+    readableStream.on('data', chunk => writableStream.write(chunk));
+    ```
+
+    ```js displayName="Work with Threads"
+    import { Worker, isMainThread,
+      workerData, parentPort } from 'node:worker_threads';
+
+    if (isMainThread) {
+      const data = 'some data';
+      const worker = new Worker(import.meta.filename, { workerData: data });
+      worker.on('message', msg => console.log('Reply from Thread:', msg));
+    } else {
+      const source = workerData;
+      parentPort.postMessage(btoa(source.toUpperCase()));
+    }
+    ```
+  </div>
+
+  Saiba mais sobre o que Node.js é capaz de oferecer com nossos [materiais de aprendizado](/learn).
+</section>
