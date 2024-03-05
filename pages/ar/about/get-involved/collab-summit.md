@@ -5,11 +5,7 @@ layout: about
 
 # قمة المتعاونين
 
-Node.js's Collaborator Summit is an un-conference for bringing current and
-potential contributors together to discuss Node.js with lively collaboration,
-education, and knowledge sharing. Committees and working groups come together
-twice per year to make important decisions while also being able to work on some
-exciting efforts they want to push forward in-person.
+قمة مشاركي Node.js هي مؤتمر غير رسمي لجمع المساهمين الحاليين والمحتملين معًا لمناقشة Node.js بتعاون حيوي وتعليم وتبادل المعرفة. تجتمع اللجان والمجموعات العاملة مرتين في السنة لاتخاذ قرارات هامة بينما يمكنهم أيضًا العمل على بعض الجهود المثيرة التي يرغبون في تقدمها شخصيًا.
 
 ## من يحضر؟
 
@@ -20,11 +16,6 @@ exciting efforts they want to push forward in-person.
 هذه هي فرصتك لتعلم ما يحدث داخل المجتمع للقفز
 والإسهام بالمهارات التي لديكم والتي تودون الشرف.
 
-Working groups will put together a schedule so that people can
-familiarize themselves before folks get onsite, having the general collaborator
-discussions, and then dive into breakout sessions.
+سيقوم فرق العمل بوضع جدول زمني بحيث يمكن للناس أن يتعرفوا على الأمور قبل وصول الأشخاص إلى الموقع، من خلال المناقشات العامة بين المشاركين، ثم الانغماس في جلسات الانفصال.
 
-We'd love to see you at Collab Summit! Check out the [Summit repo](https://github.com/nodejs/summit)
-for upcoming and past Collab Summits and have a look at the
-[issues filed](https://github.com/nodejs/summit/issues) that share what
-individual working groups and committees are looking to discuss in-person.
+نود أن نراك في قمة التعاون! تحقق من [مستودع القمة](https://github.com/nodejs/summit) لمعرفة قمم التعاون القادمة والسابقة وانظر إلى [المشكلات المقدمة](https://github.com/nodejs/summit/issues) التي تشارك ما تبحث عنه الفرق العاملة الفردية واللجان في مناقشتها شخصيًا.
