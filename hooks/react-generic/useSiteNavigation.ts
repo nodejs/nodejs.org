@@ -11,7 +11,7 @@ import type {
 type Context = Record<string, RichTranslationValues>;
 type Navigation = Record<string, NavigationEntry>;
 
-export interface MappedNavigationEntry {
+interface MappedNavigationEntry {
   items: Array<[string, MappedNavigationEntry]>;
   label: FormattedMessage;
   link: string;
