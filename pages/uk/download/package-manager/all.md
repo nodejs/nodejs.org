@@ -1,13 +1,13 @@
 ---
 layout: docs
-title: Installing Node.js via package manager
+title: Установка Node.js через менеджер пакетів
 ---
 
-# Installing Node.js via Package Managers
+# Установка Node.js через менеджер пакетів
 
 > The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
 
----
+***
 
 - [Alpine Linux](#alpine-linux)
 - [Android](#android)
@@ -33,11 +33,11 @@ title: Installing Node.js via package manager
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
----
+***
 
 ## Alpine Linux
 
-Node.js LTS and npm packages are available in the Main Repository.
+Node.js ДПС (LTS) та пакети npm доступні в головному репозиторії.
 
 ```bash
 apk add nodejs npm
@@ -63,7 +63,7 @@ Currently, Termux Node.js binaries are linked against `system-icu` (depending on
 
 ## Arch Linux
 
-Node.js and npm packages are available in the Community Repository.
+Node.js та пакети npm доступні в репозиторії спільноти.
 
 ```bash
 pacman -S nodejs npm
@@ -71,7 +71,7 @@ pacman -S nodejs npm
 
 ## CentOS, Fedora та Red Hat Enterprise Linux
 
-Node.js is available as a module called `nodejs` in CentOS/RHEL 8 and Fedora.
+Node.js доступний як модуль із назвою `nodejs` у CentOS/RHEL 8 та Fedora.
 
 ```bash
 dnf module install nodejs:<stream>
@@ -92,7 +92,7 @@ dnf module install nodejs:18/common
 
 ### Альтернативи
 
-These resources provide packages compatible with CentOS, Fedora, and RHEL.
+Ці ресурси надають пакети, які сумісні з CentOS, Fedora та RHEL.
 
 - [Node.js snaps](#snap) maintained and supported at https\://github.com/nodejs/snap
 - [Node.js binary distributions](#debian-and-ubuntu-based-linux-distributions) maintained and supported by [NodeSource](https://github.com/nodesource/distributions)
@@ -107,15 +107,15 @@ Packages compatible with Debian and Ubuntu based Linux distributions are availab
 
 ## fnm
 
-Fast and simple Node.js version manager built in Rust used to manage multiple released Node.js versions. It allows you to perform operations like install, uninstall, switch Node versions automatically based on the current directory, etc.
-To install fnm, use this [install script](https://github.com/Schniz/fnm#using-a-script-macoslinux).
+Швидкий і простий менеджер версій Node.js, створений на Rust, використовується для керування багатьох випущених версій Node.js. Він дозволяє виконувати такі операції, як установка, видалення, автоматична зміна версій Node залежно від поточної директорії тощо.
+Щоб установити fnm, [перейдіть сюди](https://github.com/Schniz/fnm#using-a-script-macoslinux).
 
 fnm has cross-platform support (macOS, Windows, Linux) & all popular shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
 fnm is built with speed in mind and compatibility support for `.node-version` and `.nvmrc` files.
 
 ## FreeBSD
 
-The most recent release of Node.js is available via the [www/node](https://www.freshports.org/www/node) port.
+Останній випуск Node.js доступний на порті [www/node](https://www.freshports.org/www/node).
 
 Install a binary package via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
@@ -151,23 +151,23 @@ Node.js can also be installed with the IBM i Access Client Solutions product. Se
 
 ## macOS
 
-Download the [macOS Installer](/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
+Завантажте [інсталятор macOS](/#home-downloadhead) безпосередньо з вебсайту [nodejs.org](https://nodejs.org/).
 
-_If you want to download the package with bash:_
+_Якщо ви бажаєте завантажити пакет через bash:_
 
 ```bash
 curl "https://nodejs.org/dist/latest/$(curl -s https://nodejs.org/dist/latest/ | grep "pkg" | cut -d'"' -f 2)" -o "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
 ```
 
-### Alternatives
+### Альтернативи
 
-Using **[Homebrew](https://brew.sh/)**:
+Через **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-Using **[MacPorts](https://www.macports.org/)**:
+Через **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -176,7 +176,7 @@ port install nodejs<major version>
 port install nodejs7
 ```
 
-Using **[pkgsrc](https://pkgsrc.joyent.com/install-on-macos/)**:
+Через **[pkgsrc](https://pkgsrc.joyent.com/install-on-macos/)**:
 
 Install the binary package:
 
@@ -315,7 +315,7 @@ Using [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenB
 pkg_add node
 ```
 
-## openSUSE and SLE
+## openSUSE та SLE
 
 Node.js is available in the main repositories under the following packages:
 
@@ -334,7 +334,7 @@ zypper install nodejs14
 
 Different major versions of Node can be installed and used concurrently.
 
-## SmartOS and illumos
+## SmartOS та illumos
 
 SmartOS images come with pkgsrc pre-installed. On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal:
 
@@ -372,7 +372,7 @@ xbps-install -Sy nodejs
 
 Download the [Windows Installer](/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
 
-### Alternatives
+### Альтернативи
 
 Using **[Winget](https://aka.ms/winget-cli)**:
 
@@ -385,7 +385,7 @@ winget install OpenJS.NodeJS.LTS
 After running one of the two commands above, it may be necessary to restart the
 terminal emulator before the `node` CLI command becomes available.
 
-Using **[Chocolatey](https://chocolatey.org/)**:
+Через **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -393,7 +393,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-Using **[Scoop](https://scoop.sh/)**:
+Через **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs
