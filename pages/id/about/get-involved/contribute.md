@@ -1,47 +1,47 @@
 ---
-title: Contributing
+title: Berkontribusi
 layout: about
 ---
 
-# Contributing
+# Berkontribusi
 
-Thank you for your interest in contributing to Node.js! There are multiple ways and places you can contribute, and we're here to help facilitate that.
+Terima kasih atas minat Anda untuk berkontribusi pada Node.js! Ada beberapa cara dan tempat di mana Anda dapat berkontribusi, dan kami di sini untuk membantu memfasilitasi hal tersebut.
 
-## Asking for General Help
+## Meminta Bantuan Umum
 
-Because the level of activity in the `nodejs/node` repository is so high, questions or requests for general help using Node.js should be directed at the [Node.js help repository](https://github.com/nodejs/help/issues).
+Karena tingkat aktivitas di repositori `nodejs/node` sangat tinggi, pertanyaan atau permintaan bantuan umum menggunakan Node.js sebaiknya diarahkan ke [repositori bantuan Node.js](https://github.com/nodejs/help/issues).
 
-## Reporting an Issue
+## Melaporkan Masalah
 
-If you have found what you believe to be an issue with Node.js please do not hesitate to file an issue on the GitHub project. When filing your issue please make sure you can express the issue with a reproducible test case, and that test case should not include any external dependencies. That is to say, the test case can be executed without anything more than Node.js itself.
+Jika Anda menemukan apa yang Anda yakini sebagai masalah dengan Node.js, jangan ragu untuk mengajukan masalah di proyek GitHub. Saat mengajukan masalah Anda, pastikan Anda dapat mengekspresikan masalah dengan kasus uji yang dapat direproduksi, dan kasus uji tersebut tidak boleh mencakup dependensi eksternal apa pun. Artinya, kasus uji dapat dieksekusi tanpa apa pun selain Node.js itu sendiri.
 
-When reporting an issue we also need as much information about your environment that you can include. We never know what information will be pertinent when trying to narrow down the issue. Please include at least the following information:
+Ketika melaporkan masalah, kami juga memerlukan sebanyak mungkin informasi tentang lingkungan Anda yang dapat Anda sertakan. Kami tidak pernah tahu informasi apa yang akan relevan saat mencoba mempersempit masalah. Sertakan setidaknya informasi berikut:
 
-- Version of Node.js
-- Platform you're running on (macOS, SmartOS, Linux, Windows)
-- Architecture you're running on (32bit or 64bit and x86 or ARM)
+- Versi Node.js
+- Platform yang Anda gunakan (macOS, SmartOS, Linux, Windows)
+- Arsitektur yang Anda jalankan (32bit atau 64bit dan x86 atau ARM)
 
-The Node.js project is currently managed across a number of separate GitHub repositories, each with their own separate issues database. If possible, please direct any issues you are reporting to the appropriate repository but don't worry if things happen to get put in the wrong place, the community of contributors will be more than happy to help get you pointed in the right direction.
+Proyek Node.js saat ini dikelola di sejumlah repositori GitHub terpisah, masing-masing dengan basis data masalah mereka sendiri. Jika memungkinkan, harap arahkan masalah yang Anda laporkan ke repositori yang tepat tetapi jangan khawatir jika hal-hal terjadi di tempat yang salah, komunitas kontributor akan dengan senang hati membantu Anda menunjukkan arah yang benar.
 
-- To report issues specific to Node.js, please use [nodejs/node](https://github.com/nodejs/node)
-- To report issues specific to this website, please use [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
+- Untuk melaporkan masalah yang spesifik untuk Node.js, silakan gunakan [nodejs/node](https://github.com/nodejs/node)
+- Untuk melaporkan masalah yang spesifik untuk situs web ini, silakan gunakan [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
 
-## Code contributions
+## Kontribusi kode
 
-If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Contribution Guidelines](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). The review process by existing collaborators for all contributions to the project is explained there as well.
+Jika Anda ingin memperbaiki bug atau menambah fitur baru ke Node.js, pastikan Anda berkonsultasi dengan [Panduan Kontribusi Node.js](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). Proses peninjauan oleh kolaborator yang sudah ada untuk semua kontribusi ke proyek dijelaskan di sana juga.
 
-If you are wondering how to start, you can check [Node Todo](https://www.nodetodo.org/) which may guide you towards your first contribution.
+Jika Anda bingung bagaimana memulai, Anda dapat memeriksa [Node Todo](https://www.nodetodo.org/) yang mungkin membimbing Anda menuju kontribusi pertama Anda.
 
-## Becoming a collaborator
+## Menjadi kolaborator
 
-By becoming a collaborator, contributors can have even more impact on the project. They can help other contributors by reviewing their contributions, triage issues and take an even bigger part in shaping the project's future. Individuals identified by the TSC as making significant and valuable contributions across any Node.js repository may be made Collaborators and given commit access to the project. Activities taken into consideration include (but are not limited to) the quality of:
+Dengan menjadi kolaborator, kontributor dapat memiliki dampak yang lebih besar pada proyek. Mereka dapat membantu kontributor lain dengan meninjau kontribusi mereka, menilai masalah, dan mengambil bagian yang lebih besar dalam membentuk masa depan proyek. Individu yang diidentifikasi oleh TSC sebagai membuat kontribusi signifikan dan berharga di seluruh repositori Node.js dapat menjadi Kolaborator dan diberi akses commit ke proyek. Aktivitas yang dipertimbangkan termasuk (tetapi tidak terbatas pada) kualitas:
 
-- code commits and pull requests
-- documentation commits and pull requests
-- comments on issues and pull requests
-- contributions to the Node.js website
-- assistance provided to end users and novice contributors
-- participation in working groups
-- other participation in the wider Node.js community
+- komit kode dan pull request
+- commit dokumentasi dan pull requests
+- komentar pada isu dan pull requests
+- kontribusi ke situs web Node.js
+- bantuan yang diberikan kepada pengguna akhir dan kontributor pemula
+- partisipasi dalam kelompok kerja
+- partisipasi lain dalam komunitas Node.js yang lebih luas
 
-If individuals making valuable contributions do not believe they have been considered for commit access, they may [log an issue](https://github.com/nodejs/TSC/issues) or [contact a TSC member](https://github.com/nodejs/node#tsc-technical-steering-committee) directly.
+Jika individu yang memberikan kontribusi berharga tidak percaya bahwa mereka telah dipertimbangkan untuk akses komit, mereka dapat [membuat isu](https://github.com/nodejs/TSC/issues) atau [menghubungi anggota TSC](https://github.com/nodejs/node#tsc-technical-steering-committee) langsung.
