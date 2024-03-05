@@ -1,44 +1,40 @@
 ---
-title: Run JavaScript Everywhere
+title: Chạy JavaScript Mọi Nơi
 layout: home
 ---
 
 <section>
- <WithBadge section="index" />
+  <WithBadge section="index" />
 
   <div>
-    <h1 className="special">Run JavaScript Everywhere</h1>
+    <h1 className="special">Chạy JavaScript Mọi Nơi</h1>
 
-    Node.js® is a free, open-source, cross-platform JavaScript runtime
-    environment that lets developers create servers, web apps,
-    command line tools and scripts.
-
+    Node.js® là một môi trường thực thi JavaScript miễn phí, mã nguồn mở, đa nền tảng cho phép các nhà phát triển tạo máy chủ, ứng dụng web, công cụ dòng lệnh và scripts.
   </div>
 
   <div>
     <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
       {({ release }) => (
         <>
-          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+          <DownloadButton release={release}>Tải xuống Node.js (LTS)</DownloadButton>
           <small>
-            Downloads Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
-            Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
+            Tải xuống Node.js <b>{release.versionWithPrefix}</b>
+            <sup title="Tải xuống trình cài đặt Node.js cho nền tảng hiện tại của bạn">1</sup> với hỗ trợ dài hạn.
+            Node.js cũng có thể được cài đặt thông qua <a href="/download/package-manager">các trình quản lý gói</a>.
           </small>
         </>
       )}
     </WithNodeRelease>
 
-    <WithNodeRelease status={"Current"}>
+    <WithNodeRelease status={"Hiện tại"}>
       {({ release }) => (
         <small>
-          Want new features sooner?
-          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> instead.
+          Muốn có các tính năng mới sớm hơn không?
+          Nhận <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="Tải xuống trình cài đặt Node.js cho nền tảng hiện tại của bạn">1</sup> thay vì.
         </small>
       )}
     </WithNodeRelease>
-
   </div>
 </section>
 
@@ -113,9 +109,7 @@ layout: home
       parentPort.postMessage(btoa(source.toUpperCase()));
     }
     ```
-
   </div>
 
-Learn more what Node.js is able to offer with our [Learning materials](/learn).
-
+  Tìm hiểu thêm về những gì Node.js có thể cung cấp với [Tài liệu học tập](/learn).
 </section>
