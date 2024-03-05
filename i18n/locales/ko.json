@@ -1,0 +1,290 @@
+{
+  "components": {
+    "containers": {
+      "footer": {
+        "links": {
+          "trademarkPolicy": "상표 정책",
+          "privacyPolicy": "개인정보 보호 정책",
+          "codeOfConduct": "행동 강령",
+          "security": "보안 정책",
+          "openJS": "OpenJS Foundation"
+        }
+      },
+      "navBar": {
+        "links": {
+          "about": "소개",
+          "download": "다운로드",
+          "docs": "문서",
+          "guides": "가이드",
+          "learn": "배우다",
+          "security": "보안",
+          "certification": "인증",
+          "blog": "블로그"
+        }
+      }
+    },
+    "navigation": {
+      "learn": {
+        "gettingStarted": {
+          "links": {
+            "gettingStarted": "시작하기",
+            "introductionToNodejs": "Node.js 소개",
+            "howToInstallNodejs": "Node.js 설치 방법",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Node.js를 사용하기 위해 알아야 하는 JavaScript 양",
+            "differencesBetweenNodejsAndTheBrowser": "Node.js와 브라우저의 차이점",
+            "theV8JavascriptEngine": "V8 JavaScript 엔진",
+            "anIntroductionToTheNpmPackageManager": "npm 패키지 관리자 소개",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) 이상",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, 개발과 프로덕션의 차이",
+            "nodejsWithTypescript": "TypeScript로 Node.js 사용하기",
+            "nodejsWithWebassembly": "Node.js와 WebAssembly",
+            "debugging": "Node.js 디버깅",
+            "profiling": "Node.js 응용프로그램 프로파일링",
+            "securityBestPractices": "보안 최상의 실천법"
+          }
+        },
+        "asynchronousWork": {
+          "links": {
+            "asynchronousWork": "비동기 작업",
+            "asynchronousFlowControl": "비동기 흐름 제어",
+            "overviewOfBlockingVsNonBlocking": "블로킹 vs 논블로킹 개요",
+            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript 비동기 프로그래밍과 콜백",
+            "discoverJavaScriptTimers": "JavaScript 타이머 탐색",
+            "theNodejsEventLoop": "Node.js 이벤트 루프",
+            "theNodejsEventEmitter": "Node.js 이벤트 발생기",
+            "understandingProcessnexttick": "process.nextTick() 이해하기",
+            "understandingSetimmediate": "setImmediate() 이해하기",
+            "dontBlockTheEventLoop": "이벤트 루프를 차단하지 마세요"
+          }
+        },
+        "manipulatingFiles": {
+          "links": {
+            "manipulatingFiles": "파일 조작",
+            "nodejsFileStats": "Node.js 파일 통계",
+            "nodejsFilePaths": "Node.js 파일 경로",
+            "workingWithFileDescriptorsInNodejs": "Node.js에서 파일 디스크립터 작업",
+            "readingFilesWithNodejs": "Node.js로 파일 읽기",
+            "writingFilesWithNodejs": "Node.js로 파일 쓰기",
+            "workingWithFoldersInNodejs": "Node.js에서 폴더 작업하기",
+            "howToWorkWithFileSystems": "다른 파일 시스템과 작업하는 방법"
+          }
+        },
+        "commandLine": {
+          "links": {
+            "commandLine": "명령 줄",
+            "runNodejsScriptsFromTheCommandLine": "Node.js 스크립트를 명령 줄에서 실행하는 방법",
+            "howToReadEnvironmentVariablesFromNodejs": "Node.js에서 환경 변수를 읽는 방법",
+            "howToUseTheNodejsRepl": "Node.js REPL 사용 방법",
+            "outputToTheCommandLineUsingNodejs": "Node.js를 사용하여 명령 줄에 출력",
+            "acceptInputFromTheCommandLineInNodejs": "Node.js에서 명령 줄로부터 입력 받기"
+          }
+        },
+        "modules": {
+          "links": {
+            "modules": "모듈",
+            "publishingNodeApiModules": "Node-API 패키지를 게시하는 방법",
+            "anatomyOfAnHttpTransaction": "HTTP 트랜잭션의 해부학",
+            "abiStability": "ABI 안정성",
+            "backpressuringInStreams": "스트림에서 백프레셔링"
+          }
+        },
+        "diagnostics": {
+          "links": {
+            "diagnostics": "진단",
+            "userJourney": "사용자 여정",
+            "memory": "메모리",
+            "liveDebugging": "실시간 디버깅",
+            "poorPerformance": "성능 저하",
+            "flameGraphs": "플레임 그래프"
+          }
+        }
+      },
+      "about": {
+        "links": {
+          "about": "Node.js 소개",
+          "aboutSide": "Node.js®에 대해",
+          "governance": "프로젝트 거버넌스",
+          "releases": "이전 릴리스",
+          "security": "보안 보고서 작성"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "getInvolved": "참여하다",
+          "collabSummit": "Collaborator Summit",
+          "upcomingEvents": "다가오는 이벤트",
+          "contribute": "Node.js에 기여하기",
+          "codeOfConduct": "행동 강령"
+        }
+      }
+    },
+    "downloadList": {
+      "links": {
+        "previousReleases": "이전 릴리스",
+        "packageManager": "패키지 관리자를 통해 Node.js 설치",
+        "shaSums": {
+          "title": "릴리스 파일에 대한 서명된 SHASUMS",
+          "howToVerify": "(검증 방법)"
+        },
+        "allDownloads": "모든 다운로드 옵션",
+        "nightlyReleases": "매일 빌드",
+        "unofficialBuilds": "비공식 빌드",
+        "buildingFromSource": "지원되는 플랫폼에서 Node.js 빌드하기",
+        "installingOnLinux": "바이너리 아카이브를 통한 Node.js 설치",
+        "installingOnWsl": "Windows Subsystem for Linux (WSL)에 설치하기"
+      }
+    },
+    "downloadReleasesTable": {
+      "changelog": "변경 로그",
+      "releases": "릴리스",
+      "docs": "문서"
+    },
+    "pagination": {
+      "next": "다음",
+      "previous": "이전"
+    },
+    "common": {
+      "breadcrumbs": {
+        "navigateToHome": "홈으로 이동"
+      },
+      "crossLink": {
+        "previous": "이전",
+        "next": "다음"
+      },
+      "codebox": {
+        "copy": "클립 보드에 복사",
+        "copied": "클립 보드에 복사되었습니다!"
+      },
+      "pagination": {
+        "prev": "이전",
+        "prevAriaLabel": "이전 페이지",
+        "next": "다음",
+        "nextAriaLabel": "다음 페이지",
+        "defaultLabel": "페이지 네비게이션",
+        "pageLabel": "페이지로 이동 {pageNumber}"
+      },
+      "sidebar": {
+        "title": "페이지 변경"
+      },
+      "languageDropdown": {
+        "label": "언어 선택"
+      },
+      "themeToggle": {
+        "label": "다크 모드 전환"
+      }
+    },
+    "mdx": {
+      "upcomingEvents": {
+        "defaultTitle": "다가오는 이벤트 없음"
+      }
+    },
+    "metabar": {
+      "lastUpdated": "최근 업데이트",
+      "readingTime": "읽는 시간",
+      "addedIn": "추가됨",
+      "author": "저자",
+      "authors": "저자",
+      "contribute": "기여",
+      "contributeText": "이 페이지 편집",
+      "viewAs": "다음으로 보기",
+      "tableOfContents": "목차"
+    },
+    "downloads": {
+      "changelogModal": {
+        "startContributing": "기여 시작하기"
+      }
+    },
+    "search": {
+      "searchBox": {
+        "placeholder": "입력 시작..."
+      },
+      "seeAll": {
+        "text": "모든 {count} 결과 보기"
+      },
+      "searchError": {
+        "text": "검색하는 동안 오류가 발생했습니다. 나중에 다시 시도하십시오."
+      },
+      "poweredBy": {
+        "text": "제공:"
+      },
+      "noResults": {
+        "text": "\"{query}\"에 대한 결과를 찾을 수 없습니다."
+      },
+      "emptyState": {
+        "text": "검색어를 입력하세요..."
+      },
+      "searchPage": {
+        "title": "{query}을(를) 검색 중입니다."
+      }
+    },
+    "blog": {
+      "blogHeader": {
+        "subtitle": "최신 Node.js 뉴스, 사례 연구, 자습서 및 리소스.",
+        "rssLink": "RSS 피드"
+      }
+    }
+  },
+  "layouts": {
+    "blogPost": {
+      "author": {
+        "byLine": "{author, select, null {} other {{author}의 글, }}"
+      }
+    },
+    "blogIndex": {
+      "categoryName": "{category, select, all {블로그} other {{category} 블로그 글}}"
+    },
+    "blog": {
+      "title": "블로그",
+      "selectCategory": "카테고리",
+      "categories": {
+        "all": "모든 것",
+        "announcements": "공지",
+        "release": "릴리스",
+        "vulnerability": "취약점",
+        "advisory-board": "자문 위원회",
+        "community": "커뮤니티",
+        "feature": "기능",
+        "module": "모듈",
+        "npm": "npm",
+        "uncategorized": "미분류",
+        "video": "비디오",
+        "weekly": "주간 업데이트",
+        "wg": "작업 그룹",
+        "events": "이벤트"
+      }
+    },
+    "error": {
+      "notFound": {
+        "title": "페이지를 찾을 수 없음",
+        "description": "죄송합니다. 찾으시는 페이지를 찾을 수 없습니다! 홈페이지에서 다시 시작해보세요."
+      },
+      "internalServerError": {
+        "title": "내부 서버 오류",
+        "description": "이 페이지에서 복구할 수 없는 오류가 발생했습니다."
+      },
+      "backToHome": "홈으로 돌아가기"
+    },
+    "download": {
+      "selectCategory": "카테고리",
+      "categories": {
+        "download": "Prebuilt Installer",
+        "prebuilt-binaries": "Prebuilt Binaries",
+        "package-manager": "Package Manager",
+        "source-code": "Source Code"
+      },
+      "buttons": {
+        "prebuilt": "Node.js {version} 다운로드",
+        "source": "Node.js {version} 소스 다운로드"
+      },
+      "dropdown": {
+        "bitness": "Bitness",
+        "os": "운영 체제",
+        "version": "버전",
+        "platform": "플랫폼"
+      },
+      "codeBox": {
+        "communityWarning": "패키지 관리자 및 설치 스크립트는 Node.js 프로젝트에서 유지보수되지 않습니다."
+      }
+    }
+  }
+}
