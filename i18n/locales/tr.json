@@ -3,22 +3,22 @@
     "containers": {
       "footer": {
         "links": {
-          "trademarkPolicy": "Trademark Policy",
-          "privacyPolicy": "Privacy Policy",
-          "codeOfConduct": "Code of Conduct",
-          "security": "Security Policy",
-          "openJS": "OpenJS Foundation"
+          "trademarkPolicy": "Ticari Marka Politikası",
+          "privacyPolicy": "Gizlilik Politikası",
+          "codeOfConduct": "Davranış Kuralları",
+          "security": "Güvenlik Politikası",
+          "openJS": "OpenJS Vakfı"
         }
       },
       "navBar": {
         "links": {
-          "about": "About",
-          "download": "Download",
-          "docs": "Docs",
-          "guides": "Guides",
-          "learn": "Learn",
-          "security": "Security",
-          "certification": "Certification",
+          "about": "Hakkında",
+          "download": "İndir",
+          "docs": "Dokümanlar",
+          "guides": "Kılavuzlar",
+          "learn": "Öğrenmek",
+          "security": "Güvenlik",
+          "certification": "Sertifikasyon",
           "blog": "Blog"
         }
       }
@@ -102,25 +102,25 @@
       "about": {
         "links": {
           "about": "About Node.js",
-          "aboutSide": "About Node.js®",
-          "governance": "Project Governance",
-          "releases": "Previous Releases",
-          "security": "Security Reporting"
+          "aboutSide": "Node.js® Hakkında",
+          "governance": "Proje Yönetimi",
+          "releases": "Önceki Yayınlar",
+          "security": "Güvenlik Raporlaması"
         }
       },
       "getInvolved": {
         "links": {
-          "getInvolved": "Get Involved",
-          "collabSummit": "Collaborator Summit",
-          "upcomingEvents": "Upcoming Events",
-          "contribute": "Contribute to Node.js",
-          "codeOfConduct": "Code of Conduct"
+          "getInvolved": "Katılın",
+          "collabSummit": "İşbirlikçi Zirvesi",
+          "upcomingEvents": "Yaklaşan Etkinlikler",
+          "contribute": "Node.js'ye katkıda bulunun",
+          "codeOfConduct": "Davranış Kuralları"
         }
       }
     },
     "downloadList": {
       "links": {
-        "previousReleases": "Previous Releases",
+        "previousReleases": "Önceki Yayınlar",
         "packageManager": "Installing Node.js via package manager",
         "shaSums": {
           "title": "Signed SHASUMS for release files",
