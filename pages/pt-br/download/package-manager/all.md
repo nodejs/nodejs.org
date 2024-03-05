@@ -1,19 +1,19 @@
 ---
 layout: docs
-title: Installing Node.js via package manager
+title: Instalando Node.js através do gerenciador de pacotes
 ---
 
-# Installing Node.js via Package Managers
+# Instalando Node.js via Gerenciador de Pacotes
 
-> The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
+> Os pacotes nesta página são mantidos e suportados por seus respectivos pacotes, **não** à equipe central do Node.js. Por favor relate qualquer problema que você encontrar ao mantenedor do pacote. Se acontecer que seu problema seja um bug no Node.js em si, o mantenedor informará a questão a montante.
 
 ---
 
-- [Alpine Linux](#alpine-linux)
+- [Linux](#alpine-linux)
 - [Android](#android)
 - [Arch Linux](#arch-linux)
-- [CentOS, Fedora and Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
-- [Debian and Ubuntu based Linux distributions](#debian-and-ubuntu-based-linux-distributions)
+- [CentOS, Fedora e Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
+- [Distribuições Linux baseadas em Debian e Ubuntu](#debian-and-ubuntu-based-linux-distributions)
 - [fnm](#fnm)
 - [FreeBSD](#freebsd)
 - [Gentoo](#gentoo)
@@ -26,7 +26,7 @@ title: Installing Node.js via package manager
 - [nvs](#nvs)
 - [OpenBSD](#openbsd)
 - [openSUSE and SLE](#opensuse-and-sle)
-- [SmartOS and illumos](#smartos-and-illumos)
+- [SmartOS e illumos](#smartos-and-illumos)
 - [Snap](#snap)
 - [Solus](#solus)
 - [Void Linux](#void-linux)
@@ -35,15 +35,15 @@ title: Installing Node.js via package manager
 
 ---
 
-## Alpine Linux
+## Linux alpino
 
-Node.js LTS and npm packages are available in the Main Repository.
+Os pacotes Node.js LTS e npm estão disponíveis no Repositório Principal.
 
 ```bash
 apk add nodejs npm
 ```
 
-Node.js Current can be installed from the Community Repository.
+A corrente do Node.js pode ser instalada pelo Repositório da Comunidade.
 
 ```bash
 apk add nodejs-current
@@ -51,79 +51,79 @@ apk add nodejs-current
 
 ## Android
 
-Android support is still experimental in Node.js, so precompiled binaries are not yet provided by Node.js developers.
+Suporte ao Android ainda é experimental no Node.js, então binários pré-compilados ainda não são fornecidos por desenvolvedores Node.js.
 
-However, there are some third-party solutions. For example, [Termux](https://termux.com/) community provides terminal emulator and Linux environment for Android, as well as own package manager and [extensive collection](https://github.com/termux/termux-packages) of many precompiled applications. This command in Termux app will install the last available Node.js version:
+No entanto, existem algumas soluções de terceiros. Por exemplo, [Termux](https\://termux. A comunidade om/) fornece emulador de terminais e ambiente Linux para Android, bem como o próprio gerenciador de pacotes e a [coleção extensa](https\://github. de muitas aplicações pré-compiladas/termux/termux-packages) de muitas aplicações pré-compiladas. Este comando no aplicativo Termux instalará a última versão disponível do Node.js:
 
 ```bash
 pkg install nodejs
 ```
 
-Currently, Termux Node.js binaries are linked against `system-icu` (depending on `libicu` package).
+Atualmente, os binários de Termux Node.js estão ligados ao `system-icu` (dependendo do pacote `libicu`).
 
-## Arch Linux
+## Arquitetura Linux
 
-Node.js and npm packages are available in the Community Repository.
+Os pacotes Node.js e npm estão disponíveis no Repositório da Comunidade.
 
 ```bash
 pacman -S nodejs npm
 ```
 
-## CentOS, Fedora and Red Hat Enterprise Linux
+## CentOS, Fedora e Red Hat Enterprise Linux
 
-Node.js is available as a module called `nodejs` in CentOS/RHEL 8 and Fedora.
+Node.js está disponível como um módulo chamado `nodejs` em CentOS/RHEL 8 e Fedora.
 
 ```bash
 dnf module install nodejs:<stream>
 ```
 
-where `<stream>` corresponds to the major version of Node.js.
-To see a list of available streams:
+onde `<stream>` corresponde à versão principal do Node.js.
+Para ver uma lista dos fluxos disponíveis:
 
 ```bash
 dnf module list nodejs
 ```
 
-For example, to install Node.js 18:
+Por exemplo, para instalar o Node.js 18:
 
 ```bash
 dnf module install nodejs:18/common
 ```
 
-### Alternatives
+### Alternativas
 
-These resources provide packages compatible with CentOS, Fedora, and RHEL.
+Esses recursos fornecem pacotes compatíveis com a CentOS, Fedora e RHEL.
 
-- [Node.js snaps](#snap) maintained and supported at https\://github.com/nodejs/snap
-- [Node.js binary distributions](#debian-and-ubuntu-based-linux-distributions) maintained and supported by [NodeSource](https://github.com/nodesource/distributions)
+- [snaps do Node.js](#snap) mantiveram e suportadas em https\://github.com/nodejs/snap
+- [distribuições binárias do Node.js](#debian-and-ubuntu-based-linux-distributions) mantidas e apoiadas por [NodeSource](https://github.com/nodesource/distributions)
 
-## Debian and Ubuntu based Linux distributions
+## Distribuições Linux baseadas em Debian e Ubuntu
 
-[Node.js binary distributions](https://github.com/nodesource/distributions) are available from NodeSource.
+[distribuições binárias do Node.js](https://github.com/nodesource/distributions) estão disponíveis no NodeSource.
 
-### Alternatives
+### Alternativas
 
-Packages compatible with Debian and Ubuntu based Linux distributions are available via [Node.js snaps](#snap).
+Pacotes compatíveis com as distribuições do Debian e Ubuntu baseadas em Linux estão disponíveis através dos [snaps do Node.js](#snap).
 
 ## fnm
 
-Fast and simple Node.js version manager built in Rust used to manage multiple released Node.js versions. It allows you to perform operations like install, uninstall, switch Node versions automatically based on the current directory, etc.
-To install fnm, use this [install script](https://github.com/Schniz/fnm#using-a-script-macoslinux).
+Gestor de versão do Node.js simples e rápido, criado com o Rust usado para gerenciar múltiplas versões do Node.js lançadas. Ele permite que você execute operações como instalar, desinstalar e alternar as versões do Node automaticamente baseadas no diretório atual, etc.
+Para instalar fnm, use este [script de instalação](https://github.com/Schniz/fnm#using-a-script-macoslinux).
 
-fnm has cross-platform support (macOS, Windows, Linux) & all popular shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
-fnm is built with speed in mind and compatibility support for `.node-version` and `.nvmrc` files.
+fnm tem suporte multiplataforma (macOS, Windows, Linux) e todas as cascas populares (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
+fnm é construído com velocidade em mente e suporte a compatibilidade dos arquivos `.node-version` e `.nvmrc`.
 
-## FreeBSD
+## BSD
 
-The most recent release of Node.js is available via the [www/node](https://www.freshports.org/www/node) port.
+A versão mais recente do Node.js está disponível através da porta [www/node](https://www.freshports.org/www/node).
 
-Install a binary package via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
+Instalar um pacote binário via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
 ```bash
 pkg install node
 ```
 
-Or compile it on your own using [ports](https://www.freebsd.org/cgi/man.cgi?ports):
+Ou compile-o por sua conta usando [ports](https://www.freebsd.org/cgi/man.cgi?ports):
 
 ```bash
 cd /usr/ports/www/node && make install
@@ -131,43 +131,43 @@ cd /usr/ports/www/node && make install
 
 ## Gentoo
 
-Node.js is available in the portage tree.
+Node.js está disponível na árvore de portagens.
 
 ```bash
 emerge nodejs
 ```
 
-## IBM i
+## IBM I
 
-LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](https://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs18`, `nodejs20` etc)
+As versões LTS do Node.js estão disponíveis na IBM e estão disponíveis via [gerenciador de pacotes ''yum'](https://ibm.biz/ibmi-rpms). O nome do pacote é `nodejs` seguido do número da versão maior (por exemplo, `nodejs18`, `nodejs20` etc)
 
-To install Node.js 20.x from the command line, run the following as a user with \*ALLOBJ special authority:
+Para instalar o Node.js 20.x da linha de comando, execute o seguinte como um usuário com a autoridade especial \*ALLOBJ:
 
 ```bash
 yum install nodejs20
 ```
 
-Node.js can also be installed with the IBM i Access Client Solutions product. See [this support document](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) for more details
+Node.js também pode ser instalado com o produto de soluções de cliente IBM. Veja [este documento de suporte](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) para mais detalhes
 
 ## macOS
 
-Download the [macOS Installer](/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
+Baixe o [instalador do macOS](/#home-downloadhead) diretamente do site do [nodejs.org](https://nodejs.org/).
 
-_If you want to download the package with bash:_
+_Se você quiser baixar o pacote com o bash:_
 
 ```bash
 curl "https://nodejs.org/dist/latest/$(curl -s https://nodejs.org/dist/latest/ | grep "pkg" | cut -d'"' -f 2)" -o "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
 ```
 
-### Alternatives
+### Alternativas
 
-Using **[Homebrew](https://brew.sh/)**:
+Usando **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-Using **[MacPorts](https://www.macports.org/)**:
+Usando **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -176,15 +176,15 @@ port install nodejs<major version>
 port install nodejs7
 ```
 
-Using **[pkgsrc](https://pkgsrc.joyent.com/install-on-macos/)**:
+Usando **[pkgsrc](https://pkgsrc.joyent.com/install-on-macos/)**:
 
-Install the binary package:
+Instale o pacote binário:
 
 ```bash
 pkgin -y install nodejs
 ```
 
-Or build manually from pkgsrc:
+Ou construir manualmente a partir de pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
@@ -192,13 +192,13 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## n
 
-`n` is a simple to use Node.js version manager for Mac and Linux. Specify the target version to install using a rich syntax,
-or select from a menu of previously downloaded versions. The versions are installed system-wide or user-wide, and for more
-targeted use you can run a version directly from the cached downloads.
+`n` é simples de usar o gerenciador de versões Node.js para Mac e Linux. Especifique a versão de destino para instalar usando uma sintaxe rica,
+ou selecione um menu das versões baixadas anteriormente. As versões são instaladas, em todo o sistema ou para todo o usuário, e para mais uso direcionado
+você pode executar uma versão diretamente a partir dos downloads armazenados em cache.
 
-See the [homepage](https://github.com/tj/n) for install methods (bootstrap, npm, Homebrew, third-party), and all the usage details.
+Veja o [homepage](https://github.com/tj/n) para instalar métodos (bootstrap, npm, Homebrew, terceiros) e todos os detalhes de uso.
 
-If you already have `npm` then installing `n` and then the newest LTS `node` version is as simple as:
+Se você já tem o `npm` então instalando `n` e então a nova versão do `node` é tão simples como:
 
 ```
 npm install -g n
@@ -207,13 +207,13 @@ n lts
 
 ## NetBSD
 
-Node.js is available in the pkgsrc tree:
+Node.js está disponível na árvore pkgsrc:
 
 ```bash
 cd /usr/pkgsrc/lang/nodejs && make install
 ```
 
-Or install a binary package (if available for your platform) using pkgin:
+Ou instale um pacote binário (se disponível para sua plataforma) usando pkgin:
 
 ```bash
 pkgin -y install nodejs
@@ -221,9 +221,9 @@ pkgin -y install nodejs
 
 ## Nodenv
 
-`nodenv` is a lightweight node version manager, similar to `nvm`. It's simple and predictable. A rich plugin ecosystem lets you tailor it to suit your needs. Use `nodenv` to pick a Node version for your application and guarantee that your development environment matches production.
+`nodenv` é um gerenciador de versão de nó leve semelhante, similar ao `nvm`. É simples e previsível. Um ecossistema de plugins rico permite que você o adapte às suas necessidades. Use `nodenv` para escolher uma versão do Node para sua aplicação e garantir que seu ambiente de desenvolvimento corresponde à produção.
 
-Nodenv installation instructions are maintained [on its Github page](https://github.com/nodenv/nodenv#installation). Please visit that page to ensure you're following the latest version of the installation steps.
+Instruções de instalação do Nodenv são mantidas [na sua página do Github](https://github.com/nodenv/nodenv#installation). Por favor, visite essa página para garantir que você está seguindo a versão mais recente dos passos de instalação.
 
 ## nvm
 
@@ -231,23 +231,23 @@ Node Version Manager is a bash script used to manage multiple released Node.js v
 you to perform operations like install, uninstall, switch version, etc.
 To install nvm, use this [install script](https://github.com/nvm-sh/nvm#install--update-script).
 
-On Unix / OS X systems Node.js built from source can be installed using
-[nvm](https://github.com/creationix/nvm) by installing into the location that nvm expects:
+Em Unix / OS X systems Node.js construídos a partir da fonte pode ser instalado usando
+[nvm](https://github.com/creationix/nvm) instalando no local que o nvm espera:
 
 ```bash
 env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
-After this you can use `nvm` to switch between released versions and versions
-built from source.
-For example, if the version of Node.js is v8.0.0-pre:
+Depois disso, você pode usar o `nvm` para alternar entre versões lançadas e versões
+construídas da origem.
+Por exemplo, se a versão do Node.js for a v8.0.0-pre:
 
 ```bash
 nvm use 8
 ```
 
-Once the official release is out you will want to uninstall the version built
-from source:
+Uma vez que a versão oficial for lançada, você vai querer desinstalar a versão criada
+da fonte:
 
 ```bash
 nvm uninstall 8
@@ -255,13 +255,13 @@ nvm uninstall 8
 
 ## nvs
 
-#### Windows
+#### Janelas
 
-The `nvs` version manager is cross-platform and can be used on Windows, macOS, and Unix-like systems
+O gerenciador de versões `nvs` é multiplataforma e pode ser usado no Windows, macOS e no sistema Unix-like
 
-To install `nvs` on Windows go to the [release page](https://github.com/jasongin/nvs/releases) here and download the MSI installer file of the latest release.
+Para instalar o `nvs` no Windows vá para a [página de lançamento](https://github.com/jasongin/nvs/releases) aqui e baixe o arquivo do instalador MSI da versão mais recente.
 
-You can also use `chocolatey` to install it:
+Você também pode usar o `chocolatey` para instalá-lo:
 
 ```bash
 choco install nvs
@@ -269,25 +269,25 @@ choco install nvs
 
 #### macOS,UnixLike
 
-You can find the documentation regarding the installation steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
+Você pode encontrar a documentação sobre os passos de instalação de `nvs` no macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
 
-#### Usage
+#### Utilização
 
-After this you can use `nvs` to switch between different versions of node.
+Depois disso você pode usar o `nvs` para alternar entre diferentes versões do nó.
 
-To add the latest version of node:
+Para adicionar a versão mais recente do nó:
 
 ```bash
 nvs add latest
 ```
 
-Or to add the latest LTS version of node:
+Ou para adicionar a versão mais recente do nó LTS:
 
 ```bash
 nvs add lts
 ```
 
-Then run the `nvs use` command to add a version of node to your `PATH` for the current shell:
+Então execute o comando `nvs use` para adicionar uma versão do nó ao seu `PATH` para o shell atual:
 
 ```bash
 $ nvs use lts
@@ -295,7 +295,7 @@ PATH -= %LOCALAPPDATA%\nvs\default
 PATH += %LOCALAPPDATA%\nvs\node\14.17.0\x64
 ```
 
-To add it to `PATH` permanently, use `nvs link`:
+Para adicioná-lo ao `PATH` permanentemente, use o `nvs link`:
 
 ```bash
 nvs link lts
@@ -303,58 +303,58 @@ nvs link lts
 
 ## OpenBSD
 
-Node.js is available through the ports system.
+Node.js está disponível através do sistema de portas.
 
 ```bash
 /usr/ports/lang/node
 ```
 
-Using [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
+Usando o [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) no OpenBSD:
 
 ```bash
 pkg_add node
 ```
 
-## openSUSE and SLE
+## openSUSE e SLE
 
-Node.js is available in the main repositories under the following packages:
+Node.js está disponível nos repositórios principais nos seguintes pacotes:
 
 - **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
 - **openSUSE Tumbleweed**: `nodejs20`
-- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, and `nodejs14`
-  (The "Web and Scripting Module" must be [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
+- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, e `nodejs14`
+  (O "Web and Scripting Module" deve ser [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
 - **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, and `nodejs14`
-  (The "Web and Scripting Module" must be [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
+  (O "Web and Scripting Module" deve ser [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
 
-For example, to install Node.js 14.x on openSUSE Leap 15.2, run the following as root:
+Por exemplo, para instalar o Node.js 14.x no openSUSE Leap 15.2, execute o seguinte como root:
 
 ```bash
 zypper install nodejs14
 ```
 
-Different major versions of Node can be installed and used concurrently.
+Diferentes versões maiores do Node podem ser instaladas e usadas simultaneamente.
 
-## SmartOS and illumos
+## SmartOS e illumos
 
-SmartOS images come with pkgsrc pre-installed. On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal:
+Imagens SmartOS vêm com pkgsrc pré-instaladas. Em outras distribuições do illumos, primeiro instale **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, então você pode instalar o pacote binário como normal:
 
 ```bash
 pkgin -y install nodejs
 ```
 
-Or build manually from pkgsrc:
+Ou construir manualmente a partir de pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-## Snap
+## Capturar
 
-[Node.js snaps](https://github.com/nodejs/snap) are available as [`node`](https://snapcraft.io/node) on the Snap store.
+[snaps do Node.js](https://github.com/nodejs/snap) estão disponíveis como [`node`](https://snapcraft.io/node) na loja do Snap.
 
 ## Solus
 
-Solus provides Node.js in its main repository.
+O Solus fornece o Node.js em seu repositório principal.
 
 ```bash
 sudo eopkg install nodejs
@@ -362,19 +362,19 @@ sudo eopkg install nodejs
 
 ## Void Linux
 
-Void Linux ships Node.js stable in the main repository.
+O Void Linux navio Node.js estável no repositório principal.
 
 ```bash
 xbps-install -Sy nodejs
 ```
 
-## Windows
+## Janelas
 
-Download the [Windows Installer](/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
+Baixe o [instalador Windows](/#home-downloadhead) diretamente do [nodejs.org](https://nodejs.org/) web site.
 
-### Alternatives
+### Alternativas
 
-Using **[Winget](https://aka.ms/winget-cli)**:
+Usando **[Winget](https://aka.ms/winget-cli)**:
 
 ```bash
 winget install OpenJS.NodeJS
@@ -382,10 +382,10 @@ winget install OpenJS.NodeJS
 winget install OpenJS.NodeJS.LTS
 ```
 
-After running one of the two commands above, it may be necessary to restart the
-terminal emulator before the `node` CLI command becomes available.
+Depois de executar um dos dois comandos acima, pode ser necessário reiniciar o emulador de terminal
+antes que o comando `node` CLI fique disponível.
 
-Using **[Chocolatey](https://chocolatey.org/)**:
+Usando **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -393,7 +393,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-Using **[Scoop](https://scoop.sh/)**:
+Usando **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs
@@ -401,10 +401,10 @@ scoop install nodejs
 scoop install nodejs-lts
 ```
 
-## z/OS
+## z/S.O.
 
-IBM&reg; SDK for Node.js - z/OS&reg; is available in two installation formats,
-SMP/E and PAX. Select the installation format that applies to you:
+IBM&reg; SDK para Node.js - z/OS&reg; está disponível em dois formatos de instalação,
+SMP/E e PAX. Selecione o formato de instalação que se aplica a você:
 
-- [Installing and configuring SMP/E edition of Node.js on z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
-- [Installing and configuring PAX edition of Node.js on z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)
+- [Instalando e configurando a edição SMP/E do Node.js no z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
+- [Instalando e configurando a edição PAX do Node.js no z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)

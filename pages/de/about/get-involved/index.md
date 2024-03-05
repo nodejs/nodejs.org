@@ -1,5 +1,5 @@
 ---
-title: Get involved
+title: Beteilige dich
 layout: about
 ---
 

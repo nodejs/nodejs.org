@@ -1,17 +1,13 @@
 ---
-title: Collab Summit
+title: 协作者峰会
 layout: about
 ---
 
-# Collaborator Summit
+# 协作者峰会
 
-Node.js's Collaborator Summit is an un-conference for bringing current and
-potential contributors together to discuss Node.js with lively collaboration,
-education, and knowledge sharing. Committees and working groups come together
-twice per year to make important decisions while also being able to work on some
-exciting efforts they want to push forward in-person.
+Node.js协作者峰会是一个非正式的会议，其目的在于让现有的及具潜力的协作者齐聚一堂，让大家以现场协作、教学及分享知识的方式一同讨论Node.js。委员会及工作组每年有两次聚会，他们会一起做出重要的决定，同时还会在线下开展他们想要推进的令人兴奋的工作。
 
-## Who attends?
+## 谁参加？
 
 Anyone is welcome to attend Collab Summit. During the
 summit, leaders will help onboard new contributors to groups they'd love to help

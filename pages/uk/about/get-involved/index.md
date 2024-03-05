@@ -16,7 +16,7 @@ layout: about
 - The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
 - The [Node.js project calendar](https://nodejs.org/calendar) with all public team meetings.
 
-## Learning
+## Навчання
 
 - [Official Learn section](https://nodejs.org/en/learn/) of the Node.js website.
 - [Official API reference documentation](https://nodejs.org/api/).

@@ -1,47 +1,47 @@
 ---
-title: Contributing
+title: Contribuire
 layout: about
 ---
 
-# Contributing
+# Contribuire
 
-Thank you for your interest in contributing to Node.js! There are multiple ways and places you can contribute, and we're here to help facilitate that.
+Grazie per il vostro interesse a contribuire a Node.js! Ci sono diversi modi e luoghi che potete contribuire, e siamo qui per aiutare a facilitare questo.
 
-## Asking for General Help
+## Chiedere aiuto generale
 
-Because the level of activity in the `nodejs/node` repository is so high, questions or requests for general help using Node.js should be directed at the [Node.js help repository](https://github.com/nodejs/help/issues).
+Poiché il livello di attività nel repository `nodejs/node` è così alto, domande o richieste di aiuto generale utilizzando Node. s dovrebbe essere diretto al [Node.js help repository](https://github.com/nodejs/help/issues).
 
-## Reporting an Issue
+## Segnalare un problema
 
-If you have found what you believe to be an issue with Node.js please do not hesitate to file an issue on the GitHub project. When filing your issue please make sure you can express the issue with a reproducible test case, and that test case should not include any external dependencies. That is to say, the test case can be executed without anything more than Node.js itself.
+Se hai trovato quello che credi di essere un problema con Node.js non esitare a presentare un problema sul progetto GitHub. Al momento di archiviare il tuo problema assicurati di poter esprimere il problema con un caso di prova riproducibile, e tale caso di prova non dovrebbe includere alcuna dipendenza esterna. Vale a dire, il caso di prova può essere eseguito senza nulla di più di Node.js stesso.
 
-When reporting an issue we also need as much information about your environment that you can include. We never know what information will be pertinent when trying to narrow down the issue. Please include at least the following information:
+Quando segnaliamo un problema abbiamo anche bisogno di tante informazioni sul tuo ambiente che puoi includere. Non sappiamo mai quali informazioni saranno pertinenti quando si tenta di restringere il problema. Si prega di includere almeno le seguenti informazioni:
 
-- Version of Node.js
-- Platform you're running on (macOS, SmartOS, Linux, Windows)
-- Architecture you're running on (32bit or 64bit and x86 or ARM)
+- Versione di Node.js
+- Piattaforma su cui stai eseguendo (macOS, SmartOS, Linux, Windows)
+- Architettura su cui stai eseguendo (32bit o 64bit e x86 o ARM)
 
-The Node.js project is currently managed across a number of separate GitHub repositories, each with their own separate issues database. If possible, please direct any issues you are reporting to the appropriate repository but don't worry if things happen to get put in the wrong place, the community of contributors will be more than happy to help get you pointed in the right direction.
+Il progetto Node.js è attualmente gestito su una serie di repository separati di GitHub, ciascuno con il proprio database di problemi separato. Se possibile, si prega di dirigere eventuali problemi che si stanno segnalando al repository appropriato, ma non preoccuparsi se le cose accadono per ottenere messo nel posto sbagliato, la comunità di contributori sarà più che felice di aiutarvi a farvi orientare nella giusta direzione.
 
-- To report issues specific to Node.js, please use [nodejs/node](https://github.com/nodejs/node)
-- To report issues specific to this website, please use [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
+- Per segnalare problemi specifici a Node.js, utilizza [nodejs/node](https://github.com/nodejs/node)
+- Per segnalare problemi specifici a questo sito, utilizza [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
 
-## Code contributions
+## Contributi di codice
 
-If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Contribution Guidelines](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). The review process by existing collaborators for all contributions to the project is explained there as well.
+Se desideri correggere i bug o aggiungere una nuova funzionalità a Node.js, assicurati di consultare le [Linee Guida di Contribuzione di Node.js](https\://github. om/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). Il processo di revisione da parte dei collaboratori esistenti per tutti i contributi al progetto è spiegato anche lì.
 
-If you are wondering how to start, you can check [Node Todo](https://www.nodetodo.org/) which may guide you towards your first contribution.
+Se ti stai chiedendo come iniziare, puoi controllare [Node Todo](https://www.nodetodo.org/) che potrebbe guidarti verso il tuo primo contributo.
 
-## Becoming a collaborator
+## Diventare un collaboratore
 
-By becoming a collaborator, contributors can have even more impact on the project. They can help other contributors by reviewing their contributions, triage issues and take an even bigger part in shaping the project's future. Individuals identified by the TSC as making significant and valuable contributions across any Node.js repository may be made Collaborators and given commit access to the project. Activities taken into consideration include (but are not limited to) the quality of:
+Diventando un collaboratore, i collaboratori possono avere un impatto ancora maggiore sul progetto. Possono aiutare altri collaboratori rivedendo i loro contributi, i problemi di triage e prendere una parte ancora più grande nel plasmare il futuro del progetto. Individui identificati dal TSC come contributi significativi e preziosi in tutti i Nodi. s repository può essere fatto Collaboratori e dato accesso commit al progetto. Le attività prese in considerazione comprendono (ma non si limitano a) la qualità:
 
-- code commits and pull requests
-- documentation commits and pull requests
-- comments on issues and pull requests
-- contributions to the Node.js website
-- assistance provided to end users and novice contributors
-- participation in working groups
-- other participation in the wider Node.js community
+- commit di codice e richieste pull
+- commit di documentazione e richieste pull
+- commenti su questioni e richieste di richiamo
+- contributi al sito web Node.js
+- assistenza fornita agli utenti finali e ai contributori dei principianti
+- partecipazione a gruppi di lavoro
+- altra partecipazione alla più ampia comunità di Node.js
 
-If individuals making valuable contributions do not believe they have been considered for commit access, they may [log an issue](https://github.com/nodejs/TSC/issues) or [contact a TSC member](https://github.com/nodejs/node#tsc-technical-steering-committee) directly.
+Se gli individui che forniscono contributi preziosi non credono di essere stati considerati per l'accesso al commit possono [registrare un problema](https\://github. om/nodejs/TSC/issues) o [contatta direttamente un abbonamento TSC](https://github.com/nodejs/node#tsc-technical-steering-committee).
