@@ -7,7 +7,7 @@ title: Installiere Node.js über den Paketmanager
 
 > Die Pakete auf dieser Seite werden von ihren jeweiligen Paketdienstleistern, **nicht** dem Node.js Kern-Team betreut und unterstützt. Bitte melden Sie dem Paketbetreuer alle aufgetretenen Probleme. Sollte sich herausstellen, dass Ihr Problem ein Fehler in Node.js ist, wird der Betreuer das Problem im Quelltext melden.
 
----
+***
 
 - [Alpines Linux](#alpine-linux)
 - [Android](#android)
@@ -33,7 +33,7 @@ title: Installiere Node.js über den Paketmanager
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
----
+***
 
 ## Alpine Linux
 
