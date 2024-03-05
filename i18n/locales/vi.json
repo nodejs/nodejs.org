@@ -3,22 +3,22 @@
     "containers": {
       "footer": {
         "links": {
-          "trademarkPolicy": "Trademark Policy",
-          "privacyPolicy": "Privacy Policy",
-          "codeOfConduct": "Code of Conduct",
-          "security": "Security Policy",
-          "openJS": "OpenJS Foundation"
+          "trademarkPolicy": "Chính sách Nhãn hiệu",
+          "privacyPolicy": "Chính sách Bảo mật",
+          "codeOfConduct": "Quy định ứng xử",
+          "security": "Chính sách Bảo mật",
+          "openJS": "Tổ chức OpenJS Foundation"
         }
       },
       "navBar": {
         "links": {
-          "about": "About",
-          "download": "Download",
-          "docs": "Docs",
-          "guides": "Guides",
-          "learn": "Learn",
-          "security": "Security",
-          "certification": "Certification",
+          "about": "Về chúng tôi",
+          "download": "Tải xuống",
+          "docs": "Tài liệu",
+          "guides": "Hướng dẫn",
+          "learn": "Học",
+          "security": "Bảo mật",
+          "certification": "Chứng chỉ",
           "blog": "Blog"
         }
       }
@@ -27,263 +27,263 @@
       "learn": {
         "gettingStarted": {
           "links": {
-            "gettingStarted": "Getting Started",
-            "introductionToNodejs": "Introduction to Node.js",
-            "howToInstallNodejs": "How to install Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "How much JavaScript do you need to know to use Node.js?",
-            "differencesBetweenNodejsAndTheBrowser": "Differences between Node.js and the Browser",
-            "theV8JavascriptEngine": "The V8 JavaScript Engine",
-            "anIntroductionToTheNpmPackageManager": "An introduction to the npm package manager",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) and beyond",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
-            "nodejsWithTypescript": "Node.js with TypeScript",
-            "nodejsWithWebassembly": "Node.js with WebAssembly",
+            "gettingStarted": "Bắt đầu",
+            "introductionToNodejs": "Giới thiệu về Node.js",
+            "howToInstallNodejs": "Cách cài đặt Node.js",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Bạn cần biết bao nhiêu JavaScript để sử dụng Node.js?",
+            "differencesBetweenNodejsAndTheBrowser": "Sự khác biệt giữa Node.js và Trình duyệt",
+            "theV8JavascriptEngine": "Bộ máy JavaScript V8",
+            "anIntroductionToTheNpmPackageManager": "Giới thiệu về trình quản lý gói npm",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) và hơn thế nữa",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, sự khác biệt giữa môi trường phát triển và sản xuất",
+            "nodejsWithTypescript": "Node.js với TypeScript",
+            "nodejsWithWebassembly": "Node.js với WebAssembly",
             "debugging": "Debugging Node.js",
-            "profiling": "Profiling Node.js Applications",
-            "securityBestPractices": "Security Best Practices"
+            "profiling": "Phân tích Ứng dụng Node.js",
+            "securityBestPractices": "Thực hành An toàn tốt nhất"
           }
         },
         "asynchronousWork": {
           "links": {
-            "asynchronousWork": "Asynchronous Work",
-            "asynchronousFlowControl": "Asynchronous flow control",
-            "overviewOfBlockingVsNonBlocking": "Overview of Blocking vs Non-Blocking",
-            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asynchronous Programming and Callbacks",
-            "discoverJavaScriptTimers": "Discover JavaScript Timers",
-            "theNodejsEventLoop": "The Node.js Event Loop",
-            "theNodejsEventEmitter": "The Node.js Event Emitter",
-            "understandingProcessnexttick": "Understanding process.nextTick()",
-            "understandingSetimmediate": "Understanding setImmediate()",
-            "dontBlockTheEventLoop": "Don't Block the Event Loop"
+            "asynchronousWork": "Công việc Bất đồng bộ",
+            "asynchronousFlowControl": "Kiểm soát Luồng Bất đồng bộ",
+            "overviewOfBlockingVsNonBlocking": "Tổng quan về Chặn và Không chặn",
+            "javascriptAsynchronousProgrammingAndCallbacks": "Lập trình Bất đồng bộ và Gọi lại trong JavaScript",
+            "discoverJavaScriptTimers": "Khám phá Bộ đếm Thời gian JavaScript",
+            "theNodejsEventLoop": "Vòng lặp Sự kiện Node.js",
+            "theNodejsEventEmitter": "Bộ phát sự kiện Node.js",
+            "understandingProcessnexttick": "Hiểu process.nextTick()",
+            "understandingSetimmediate": "Hiểu setImmediate()",
+            "dontBlockTheEventLoop": "Không chặn vòng lặp sự kiện"
           }
         },
         "manipulatingFiles": {
           "links": {
-            "manipulatingFiles": "Manipulating Files",
-            "nodejsFileStats": "Node.js file stats",
-            "nodejsFilePaths": "Node.js File Paths",
-            "workingWithFileDescriptorsInNodejs": "Working with file descriptors in Node.js",
-            "readingFilesWithNodejs": "Reading files with Node.js",
-            "writingFilesWithNodejs": "Writing files with Node.js",
-            "workingWithFoldersInNodejs": "Working with folders in Node.js",
-            "howToWorkWithFileSystems": "How to work with Different Filesystems"
+            "manipulatingFiles": "Thao tác với tệp",
+            "nodejsFileStats": "Thống kê tệp Node.js",
+            "nodejsFilePaths": "Đường dẫn Tệp Node.js",
+            "workingWithFileDescriptorsInNodejs": "Làm việc với bộ mô tả tệp trong Node.js",
+            "readingFilesWithNodejs": "Đọc tệp với Node.js",
+            "writingFilesWithNodejs": "Viết tệp với Node.js",
+            "workingWithFoldersInNodejs": "Làm việc với thư mục trong Node.js",
+            "howToWorkWithFileSystems": "Cách làm việc với các Hệ thống Tập tin Khác nhau"
           }
         },
         "commandLine": {
           "links": {
-            "commandLine": "Command Line",
-            "runNodejsScriptsFromTheCommandLine": "Run Node.js scripts from the command line",
-            "howToReadEnvironmentVariablesFromNodejs": "How to read environment variables from Node.js",
-            "howToUseTheNodejsRepl": "How to use the Node.js REPL",
-            "outputToTheCommandLineUsingNodejs": "Output to the command line using Node.js",
-            "acceptInputFromTheCommandLineInNodejs": "Accept input from the command line in Node.js"
+            "commandLine": "Dòng lệnh",
+            "runNodejsScriptsFromTheCommandLine": "Chạy các kịch bản Node.js từ dòng lệnh",
+            "howToReadEnvironmentVariablesFromNodejs": "Cách đọc biến môi trường từ Node.js",
+            "howToUseTheNodejsRepl": "Cách sử dụng Node.js REPL",
+            "outputToTheCommandLineUsingNodejs": "Xuất đầu ra ra dòng lệnh bằng Node.js",
+            "acceptInputFromTheCommandLineInNodejs": "Chấp nhận đầu vào từ dòng lệnh trong Node.js"
           }
         },
         "modules": {
           "links": {
             "modules": "Modules",
-            "publishingNodeApiModules": "How to publish a Node-API package",
-            "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction",
-            "abiStability": "ABI Stability",
-            "backpressuringInStreams": "Backpressuring in Streams"
+            "publishingNodeApiModules": "Cách xuất bản một gói Node-API",
+            "anatomyOfAnHttpTransaction": "Cấu trúc của Một Giao Dịch HTTP",
+            "abiStability": "Ổn Định ABI",
+            "backpressuringInStreams": "Backpressuring trong Luồng"
           }
         },
         "diagnostics": {
           "links": {
-            "diagnostics": "Diagnostics",
-            "userJourney": "User Journey",
-            "memory": "Memory",
-            "liveDebugging": "Live Debugging",
-            "poorPerformance": "Poor Performance",
-            "flameGraphs": "Flame Graphs"
+            "diagnostics": "Chẩn Đoán",
+            "userJourney": "Hành Trình Người Dùng",
+            "memory": "Bộ Nhớ",
+            "liveDebugging": "Gỡ Lỗi Trực Tiếp",
+            "poorPerformance": "Hiệu Suất Kém",
+            "flameGraphs": "Biểu Đồ Flame"
           }
         }
       },
       "about": {
         "links": {
-          "about": "About Node.js",
-          "aboutSide": "About Node.js®",
-          "governance": "Project Governance",
-          "releases": "Previous Releases",
-          "security": "Security Reporting"
+          "about": "Về Node.js",
+          "aboutSide": "Về Node.js®",
+          "governance": "Quản trị Dự án",
+          "releases": "Các Phiên Bản Trước Đó",
+          "security": "Báo cáo Bảo mật"
         }
       },
       "getInvolved": {
         "links": {
-          "getInvolved": "Get Involved",
-          "collabSummit": "Collaborator Summit",
-          "upcomingEvents": "Upcoming Events",
-          "contribute": "Contribute to Node.js",
-          "codeOfConduct": "Code of Conduct"
+          "getInvolved": "Tham Gia",
+          "collabSummit": "Hội nghị Cộng tác viên",
+          "upcomingEvents": "Sự kiện sắp tới",
+          "contribute": "Đóng góp cho Node.js",
+          "codeOfConduct": "Quy định ứng xử"
         }
       }
     },
     "downloadList": {
       "links": {
-        "previousReleases": "Previous Releases",
-        "packageManager": "Installing Node.js via package manager",
+        "previousReleases": "Các Phiên Bản Trước Đó",
+        "packageManager": "Cài đặt Node.js qua trình quản lý gói",
         "shaSums": {
-          "title": "Signed SHASUMS for release files",
-          "howToVerify": " (How to verify)"
+          "title": "SHASUMS đã ký cho các tệp phát hành",
+          "howToVerify": " (Cách xác minh)"
         },
-        "allDownloads": "All download options",
-        "nightlyReleases": "Nightly builds",
-        "unofficialBuilds": "Unofficial builds",
-        "buildingFromSource": "Building Node.js from source on supported platforms",
-        "installingOnLinux": "Installing Node.js via binary archive",
-        "installingOnWsl": "Install on Windows Subsystem for Linux (WSL)"
+        "allDownloads": "Tất cả các tùy chọn tải xuống",
+        "nightlyReleases": "Phiên bản xây dựng hàng đêm",
+        "unofficialBuilds": "Phiên bản không chính thức",
+        "buildingFromSource": "Xây dựng Node.js từ mã nguồn trên các nền tảng được hỗ trợ",
+        "installingOnLinux": "Cài đặt Node.js thông qua bản lưu trữ nhị phân",
+        "installingOnWsl": "Cài đặt trên Windows Subsystem for Linux (WSL)"
       }
     },
     "downloadReleasesTable": {
-      "changelog": "Changelog",
-      "releases": "Releases",
-      "docs": "Docs"
+      "changelog": "Nhật ký thay đổi",
+      "releases": "Phiên bản",
+      "docs": "Tài liệu"
     },
     "pagination": {
-      "next": "Next",
-      "previous": "Previous"
+      "next": "Tiếp theo",
+      "previous": "Trước đó"
     },
     "common": {
       "breadcrumbs": {
-        "navigateToHome": "Navigate to Home"
+        "navigateToHome": "Chuyển đến Trang chủ"
       },
       "crossLink": {
-        "previous": "Prev",
-        "next": "Next"
+        "previous": "Trước",
+        "next": "Tiếp theo"
       },
       "codebox": {
-        "copy": "Copy to clipboard",
-        "copied": "Copied to clipboard!"
+        "copy": "Sao chép vào bảng ghi",
+        "copied": "Đã sao chép vào bảng ghi!"
       },
       "pagination": {
-        "prev": "Previous",
-        "prevAriaLabel": "Previous page",
-        "next": "Next",
-        "nextAriaLabel": "Next page",
-        "defaultLabel": "Pagination",
-        "pageLabel": "Go to page {pageNumber}"
+        "prev": "Trước",
+        "prevAriaLabel": "Trang trước",
+        "next": "Tiếp theo",
+        "nextAriaLabel": "Trang tiếp theo",
+        "defaultLabel": "Phân trang",
+        "pageLabel": "Đi tới trang {pageNumber}"
       },
       "sidebar": {
-        "title": "Change page"
+        "title": "Thay đổi trang"
       },
       "languageDropdown": {
-        "label": "Choose Language"
+        "label": "Chọn ngôn ngữ"
       },
       "themeToggle": {
-        "label": "Toggle Dark Mode"
+        "label": "Chuyển chế độ Tối"
       }
     },
     "mdx": {
       "upcomingEvents": {
-        "defaultTitle": "No Upcoming Event"
+        "defaultTitle": "Không có sự kiện sắp tới"
       }
     },
     "metabar": {
-      "lastUpdated": "Last Updated",
-      "readingTime": "Reading Time",
-      "addedIn": "Added In",
-      "author": "Author",
-      "authors": "Authors",
-      "contribute": "Contribute",
-      "contributeText": "Edit this page",
-      "viewAs": "View as",
-      "tableOfContents": "Table of Contents"
+      "lastUpdated": "Được cập nhật lần cuối",
+      "readingTime": "Thời gian đọc",
+      "addedIn": "Được thêm vào",
+      "author": "Tác giả",
+      "authors": "Các tác giả",
+      "contribute": "Đóng góp",
+      "contributeText": "Chỉnh sửa trang này",
+      "viewAs": "Xem như",
+      "tableOfContents": "Mục lục"
     },
     "downloads": {
       "changelogModal": {
-        "startContributing": "Start Contributing"
+        "startContributing": "Bắt đầu đóng góp"
       }
     },
     "search": {
       "searchBox": {
-        "placeholder": "Start typing..."
+        "placeholder": "Bắt đầu gõ..."
       },
       "seeAll": {
-        "text": "See all {count} results"
+        "text": "Xem tất cả {count} kết quả"
       },
       "searchError": {
-        "text": "An error occurred while searching. Please try again later."
+        "text": "Đã xảy ra lỗi khi tìm kiếm. Vui lòng thử lại sau."
       },
       "poweredBy": {
-        "text": "Powered by"
+        "text": "Được cung cấp bởi"
       },
       "noResults": {
-        "text": "No results found for \"{query}\"."
+        "text": "Không tìm thấy kết quả cho \"{query}\"."
       },
       "emptyState": {
-        "text": "Search something..."
+        "text": "Tìm kiếm một cái gì đó..."
       },
       "searchPage": {
-        "title": "You're searching: {query}"
+        "title": "Bạn đang tìm kiếm: {query}"
       }
     },
     "blog": {
       "blogHeader": {
-        "subtitle": "The latest Node.js news, case studies, tutorials, and resources.",
-        "rssLink": "RSS feed"
+        "subtitle": "Các tin tức, trường hợp nghiên cứu, hướng dẫn và tài nguyên Node.js mới nhất.",
+        "rssLink": "Nguồn cấp dữ liệu RSS"
       }
     }
   },
   "layouts": {
     "blogPost": {
       "author": {
-        "byLine": "{author, select, null {} other {By {author}, }}"
+        "byLine": "{author, select, null {} other {Bởi {author}, }}"
       }
     },
     "blogIndex": {
-      "categoryName": "{category, select, all {Blog} other {{category} Blog Posts}}"
+      "categoryName": "{category, select, all {Blog} other {{category} Bài viết Blog}}"
     },
     "blog": {
       "title": "Blog",
-      "selectCategory": "Categories",
+      "selectCategory": "Danh mục",
       "categories": {
-        "all": "Everything",
-        "announcements": "Announcements",
-        "release": "Releases",
-        "vulnerability": "Vulnerabilities",
-        "advisory-board": "Advisory Board",
-        "community": "Community",
-        "feature": "Feature",
-        "module": "Module",
+        "all": "Mọi thứ",
+        "announcements": "Thông báo",
+        "release": "Phiên bản",
+        "vulnerability": "Lỗ hổng",
+        "advisory-board": "Hội đồng Tư vấn",
+        "community": "Cộng đồng",
+        "feature": "Tính năng",
+        "module": "Mô-đun",
         "npm": "npm",
-        "uncategorized": "Uncategorized",
+        "uncategorized": "Chưa phân loại",
         "video": "Video",
-        "weekly": "Weekly Updates",
-        "wg": "Working Groups",
-        "events": "Events"
+        "weekly": "Cập Nhật Hàng Tuần",
+        "wg": "Nhóm Làm Việc",
+        "events": "Sự Kiện"
       }
     },
     "error": {
       "notFound": {
-        "title": "Page could not be found",
-        "description": "Sorry, we couldn't find the page you're after! Try starting again from the homepage."
+        "title": "Không Thể Tìm Thấy Trang",
+        "description": "Xin lỗi, chúng tôi không thể tìm thấy trang bạn đang tìm! Hãy thử bắt đầu lại từ trang chủ."
       },
       "internalServerError": {
-        "title": "Internal Server Error",
-        "description": "This page has thrown a non-recoverable error."
+        "title": "Lỗi Máy Chủ Nội Bộ",
+        "description": "Trang này đã gây ra một lỗi không thể khôi phục được."
       },
-      "backToHome": "Back to Home"
+      "backToHome": "Quay Lại Trang Chủ"
     },
     "download": {
-      "selectCategory": "Categories",
+      "selectCategory": "Danh Mục",
       "categories": {
-        "download": "Prebuilt Installer",
-        "prebuilt-binaries": "Prebuilt Binaries",
-        "package-manager": "Package Manager",
-        "source-code": "Source Code"
+        "download": "Trình cài đặt được xây sẵn",
+        "prebuilt-binaries": "Tập tin nhị phân được xây sẵn",
+        "package-manager": "Quản lý gói",
+        "source-code": "Mã nguồn"
       },
       "buttons": {
-        "prebuilt": "Download Node.js {version}",
-        "source": "Download Node.js {version} source"
+        "prebuilt": "Tải xuống Node.js {version}",
+        "source": "Tải xuống mã nguồn Node.js {version}"
       },
       "dropdown": {
         "bitness": "Bitness",
-        "os": "Operating System",
-        "version": "Version",
-        "platform": "Platform"
+        "os": "Hệ điều hành",
+        "version": "Phiên bản",
+        "platform": "Nền tảng"
       },
       "codeBox": {
-        "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project."
+        "communityWarning": "Các trình quản lý gói và các kịch bản cài đặt của chúng không được duy trì bởi dự án Node.js."
       }
     }
   }
