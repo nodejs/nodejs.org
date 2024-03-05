@@ -4,14 +4,10 @@ layout: about
 ---
 
 <div className="مركز المبررات للأصناف المرنة My-4">
-  <img
-    alt="سماعة Node.js"
-    src="/static/images/node-mascot.svg"
-    className="w-[100px]"
-  />
+  <img alt="سماعة Node.js" src="/static/images/node-mascot.svg" className="w-[100px]" />
 </div>
 
----
+***
 
 # حول Node.js®️
 
@@ -37,18 +33,12 @@ server.listen(port, hostname, () => {
 });
 ```
 
-This is in contrast to today's more common concurrency model, in which OS threads
-are employed. Thread-based networking is relatively inefficient and very
-difficult to use. Furthermore, users of Node.js are free from worries of
-dead-locking the process, since there are no locks. Almost no function in
-Node.js directly performs I/O, so the process never blocks except when the I/O is performed using
-synchronous methods of Node.js standard library. Because nothing blocks, scalable systems are very
-reasonable to develop in Node.js.
+هذا يتناقض مع نموذج التوازي الأكثر شيوعًا اليوم، حيث يتم استخدام خيوط نظام التشغيل. شبكة الخيوط تعتبر غير كفءة نسبيًا وصعبة للغاية في الاستخدام. علاوة على ذلك، مستخدمو Node.js معفون من مشاكل تأمين العملية، حيث لا توجد أقفال. تقريبًا لا تقوم وظيفة في Node.js بأداء الإدخال/الإخراج مباشرة، لذلك لا تتوقف العملية أبدًا إلا عند أداء الإدخال/الإخراج باستخدام طرق متزامنة من مكتبة القياسية لـ Node.js. نظرًا لعدم وجود أي عوائق، يُعتبر تطوير أنظمة قابلة للتوسع في Node.js أمرًا معقولًا للغاية.
 
 إذا كانت بعض هذه اللغة غير مألوفة، هناك مقالة كاملة على
 \[حظر ضد غير حظر]\[].
 
----
+***
 
 إن Node.js مشابهة في التصميم لنظم مثل روبي
 \[آلة الحدث] \[] و Python \[Twisted]\[]. Node.js تأخذ نموذج الحدث بقليل من
@@ -64,15 +54,14 @@ HTTP هو مواطن من الدرجة الأولى في Node.js، مصمم مع
 . وهذا يجعل Node.js مناسبة بشكل جيد لإنشاء مكتبة أو إطار ويب
 .
 
-Node.js being designed without threads doesn't mean you can't take
-advantage of multiple cores in your environment. Child processes can be spawned
-by using our \[`child_process.fork()`]\[] API, and are designed to be easy to
-communicate with. Built upon that same interface is the \[`cluster`]\[] module,
-which allows you to share sockets between processes to enable load balancing
-over your cores.
+تصميم Node.js بدون خيوط لا يعني أنه لا يمكنك الاستفادة من النوى المتعددة في بيئتك. يمكن إنشاء عمليات فرعية عن طريق استخدام واجهة برمجة التطبيقات \[`child_process.fork()`]\[] لدينا، وهي مصممة لتكون سهلة التواصل معها. ومبنيًا على نفس الواجهة هو وحدة \[`cluster`]\[]، التي تتيح لك مشاركة مقابس بين العمليات لتمكين توازن الحمل على النوى الخاصة بك.
 
 [حظر ضد عدم حظر]: </learn/asynchronous-work/Overview of blocking-vs-non-block>
+
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
+
 [`مجموعة`]: https://nodejs.org/api/cluster.html
+
 [آلة الحدث]: https://github.com/eventmachine/eventmachine
+
 [التلاعب]: https://twistedmatrix.com/trac/
