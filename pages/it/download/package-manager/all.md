@@ -7,7 +7,7 @@ title: Installazione di Node.js tramite gestore pacchetti
 
 > I pacchetti di questa pagina sono mantenuti e supportati dai rispettivi packager, **non** il core team di Node.js. Si prega di segnalare eventuali problemi riscontrati al responsabile del pacchetto. Se si scopre che il problema è un bug in Node.js stesso, il manutentore segnalerà il problema a monte.
 
----
+***
 
 - [Alpine Linux](#alpine-linux)
 - [Android](#android)
@@ -33,7 +33,7 @@ title: Installazione di Node.js tramite gestore pacchetti
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
----
+***
 
 ## Alpine Linux
 
