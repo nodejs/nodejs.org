@@ -1,47 +1,47 @@
 ---
-title: Contributing
+title: コントリビューション
 layout: about
 ---
 
-# Contributing
+# コントリビューション
 
-Thank you for your interest in contributing to Node.js! There are multiple ways and places you can contribute, and we're here to help facilitate that.
+Node.js への貢献にご関心をお寄せいただき、ありがとうございます! あなたが貢献できる複数の方法と場所があります。
 
-## Asking for General Help
+## 一般的なヘルプを求める
 
-Because the level of activity in the `nodejs/node` repository is so high, questions or requests for general help using Node.js should be directed at the [Node.js help repository](https://github.com/nodejs/help/issues).
+`nodejs/node` リポジトリ内のアクティビティのレベルは、Node を使用する一般的なヘルプに対する質問や要求が非常に高いためです。 s は [Node.js help repository](https://github.com/nodejs/help/issues) に向けられる必要があります。
 
-## Reporting an Issue
+## 問題の報告
 
-If you have found what you believe to be an issue with Node.js please do not hesitate to file an issue on the GitHub project. When filing your issue please make sure you can express the issue with a reproducible test case, and that test case should not include any external dependencies. That is to say, the test case can be executed without anything more than Node.js itself.
+Node.js で問題があると思われるものが見つかった場合は、GitHub プロジェクトで問題を提出することを躊躇しないでください。 問題を提出する際は、再現可能なテストケースで問題を表明できるようにしてください。 そのテストケースには外部の依存関係を含めてはいけません つまり、テストケースはNode.js自体以上のものがなくても実行できます。
 
-When reporting an issue we also need as much information about your environment that you can include. We never know what information will be pertinent when trying to narrow down the issue. Please include at least the following information:
+問題を報告する際には、お客様の環境に関する情報と同じくらい多くの情報が必要になります。 問題を絞り込もうとするときに、どのような情報が関連するのかわかりません。少なくとも以下の情報を含めてください:
 
-- Version of Node.js
-- Platform you're running on (macOS, SmartOS, Linux, Windows)
-- Architecture you're running on (32bit or 64bit and x86 or ARM)
+- Node.js のバージョン
+- 実行しているプラットフォーム (macOS, SmartOS, Linux, Windows)
+- あなたが実行しているアーキテクチャ（32bitまたは64bitとx86またはARM）
 
-The Node.js project is currently managed across a number of separate GitHub repositories, each with their own separate issues database. If possible, please direct any issues you are reporting to the appropriate repository but don't worry if things happen to get put in the wrong place, the community of contributors will be more than happy to help get you pointed in the right direction.
+Node.js プロジェクトは現在、個別の GitHub リポジトリで管理されており、それぞれに個別の Issue データベースがあります。 可能であれば、 適切なリポジトリに報告された問題を指示してください。しかし、間違った場所に置かれることを心配しないでください。 貢献者のコミュニティは喜んであなたを正しい方向に向かせるのを助けるでしょう
 
-- To report issues specific to Node.js, please use [nodejs/node](https://github.com/nodejs/node)
-- To report issues specific to this website, please use [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
+- Node.js 固有の問題を報告するには、[nodejs/node](https://github.com/nodejs/node) を使用してください。
+- このウェブサイト固有の問題を報告するには、[nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues) を使用してください。
 
-## Code contributions
+## コードの貢献
 
-If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Contribution Guidelines](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). The review process by existing collaborators for all contributions to the project is explained there as well.
+バグを修正したり、Node.js に新しい機能を追加したい場合は、[Node.js コントリビューションガイドライン](https://github) を確認してください。 om/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). プロジェクトへのすべての貢献に対する既存の共同編集者によるレビュープロセスについても説明されています。
 
-If you are wondering how to start, you can check [Node Todo](https://www.nodetodo.org/) which may guide you towards your first contribution.
+どのように始めればいいのか迷っている場合は、[Node Todo](https://www.nodetodo.org/)を確認してください。
 
-## Becoming a collaborator
+## コラボレーターになる
 
-By becoming a collaborator, contributors can have even more impact on the project. They can help other contributors by reviewing their contributions, triage issues and take an even bigger part in shaping the project's future. Individuals identified by the TSC as making significant and valuable contributions across any Node.js repository may be made Collaborators and given commit access to the project. Activities taken into consideration include (but are not limited to) the quality of:
+協力者になることで、貢献者はプロジェクトにさらに大きな影響を与えることができます。 彼らは他の貢献者を助けることができ、貢献やトリアージの問題を検討し、プロジェクトの未来を形作る上でさらに大きな役割を果たすことができます。 TSCによって特定された個人は、任意のノード間で重要かつ貴重な貢献をします。 sのリポジトリは、Collaboratorを作成し、プロジェクトへのコミットアクセス権を与えることができます。 考慮される活動には、以下の品質が含まれます(ただし、これに限定されません)。
 
-- code commits and pull requests
-- documentation commits and pull requests
-- comments on issues and pull requests
-- contributions to the Node.js website
-- assistance provided to end users and novice contributors
-- participation in working groups
-- other participation in the wider Node.js community
+- コードコミットとプルリクエスト
+- ドキュメントのコミットとプルリクエスト
+- 課題とプルリクエストに関するコメント
+- Node.js のウェブサイトへの貢献
+- エンドユーザーや初心者の貢献者に提供される支援
+- ワーキンググループへの参加
+- より広範な Node.js コミュニティへの参加
 
-If individuals making valuable contributions do not believe they have been considered for commit access, they may [log an issue](https://github.com/nodejs/TSC/issues) or [contact a TSC member](https://github.com/nodejs/node#tsc-technical-steering-committee) directly.
+貴重な貢献をしている個人がコミットアクセスが考慮されていないと信じていない場合は、format@@0(https\://github) om/nodejs/TSC/issues) または format@@0(https\://github.com/nodejs/node#tsc-technical-steering-committee) を直接
