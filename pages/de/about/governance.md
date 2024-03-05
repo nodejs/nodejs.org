@@ -28,8 +28,13 @@ Das Projekt wird vom \[Technischen Lenkungsausschuss (TSC)]\[]
 geleitet, der für die Führung des Projekts auf hoher Ebene verantwortlich ist.
 
 [consensus seeking]: https://de.wikipedia.org/wiki/Konsenssuche
+
 [readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
+
 [tsc]: https://github.com/nodejs/TSC
+
 [technical steering committee (tsc)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
+
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
+
 [nodejs/node]: https://github.com/nodejs/node
