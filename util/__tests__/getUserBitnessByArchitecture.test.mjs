@@ -1,4 +1,4 @@
-import { getUserBitnessByArchitecture } from '@/util/getUserBitnessByArchitecture'; // Replace 'yourFile' with the correct path to your file containing getUserBitnessByArchitecture function
+import { getUserBitnessByArchitecture } from '@/util/getUserBitnessByArchitecture'; 
 
 describe('getUserBitnessByArchitecture', () => {
   it('should return "arm64" for arm architecture and 64-bit', () => {
