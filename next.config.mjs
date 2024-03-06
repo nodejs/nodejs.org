@@ -27,8 +27,27 @@ const nextConfig = {
   // We allow the BASE_PATH to be overridden in case that the Website
   // is being built on a subdirectory (e.g. /nodejs-website)
   basePath: BASE_PATH,
-  // We disable image optimisation during static export builds
-  images: { unoptimized: ENABLE_STATIC_EXPORT },
+  images: {
+    // We disable image optimisation during static export builds
+    unoptimized: ENABLE_STATIC_EXPORT,
+    // We allow SVGs to be used as images
+    dangerouslyAllowSVG: true,
+    // We add it to the remote pattern for the static images we use from GitHub
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        port: '',
+        pathname: '/nodejs/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'user-images.githubusercontent.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
   // On static export builds we want the output directory to be "build"
   distDir: ENABLE_STATIC_EXPORT ? 'build' : '.next',
   // On static export builds we want to enable the export feature

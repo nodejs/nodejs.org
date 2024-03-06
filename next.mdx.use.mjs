@@ -97,8 +97,6 @@ export const htmlComponents = {
   blockquote: Blockquote,
   // Renders a CodeBox Component for `pre` tags
   pre: MDXCodeBox,
-  // When `width` and `height` attributes are provided uses Next.js `Image` component,
-  // otherwise uses the HTML `img` tag
-  // @see https://nextjs.org/docs/pages/api-reference/components/image
+  // Renders an Image Component for `img` tags
   img: MDXImage,
 };
