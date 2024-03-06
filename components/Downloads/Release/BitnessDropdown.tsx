@@ -9,6 +9,7 @@ import Select from '@/components/Common/Select';
 import { useDetectOS } from '@/hooks/react-client';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import { bitnessItems, formatDropdownItems } from '@/util/downloadUtils';
+import { getUserBitnessByArchitecture } from '@/util/getUserBitnessByArchitecture';
 
 const parseNumericBitness = (bitness: string) =>
   /^\d+$/.test(bitness) ? Number(bitness) : bitness;
@@ -22,13 +23,17 @@ const BitnessDropdown: FC = () => {
   // we also reset the bitness when the OS changes, because different OSs have
   // different bitnesses available
 
+  // useEffect(() => {
+  //   if (userArchitecture == 'arm' && userBitness == 64) {
+  //     setBitness('arm64');
+  //   } else {
+  //     setBitness(userBitness);
+  //   }
+  // }, [setBitness, userBitness, userArchitecture]);
+
   useEffect(() => {
-    if (userArchitecture == 'arm' && userBitness == 64) {
-      setBitness('arm64');
-    } else {
-      setBitness(userBitness);
-    }
-  }, [setBitness, userBitness, userArchitecture]);
+    setBitness(getUserBitnessByArchitecture(userArchitecture, userBitness));
+  }, [userArchitecture, userBitness]);
 
   // @TODO: We should have a proper utility that gives
   // disabled OSs, Platforms, based on specific criteria

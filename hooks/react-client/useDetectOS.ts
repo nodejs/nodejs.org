@@ -23,7 +23,8 @@ const useDetectOS = () => {
   useEffect(() => {
     Promise.all([getBitness(), getArchitecture()]).then(
       ([bitness, architecture]) => {
-        const userAgent: string | undefined = navigator?.userAgent;
+        const userAgent: string | undefined =
+          (typeof navigator === 'object' && navigator.userAgent) || '';
         const defaultBitness: number = 86; // Default bitness if unable to determine
         setUserOSState({
           os: detectOS(),
