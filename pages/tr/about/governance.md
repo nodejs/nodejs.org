@@ -1,35 +1,37 @@
 ---
-title: Project Governance
+title: Proje Yönetimi
 layout: about
 ---
 
-# Project Governance
+# Proje Yönetimi
 
-## Consensus Seeking Process
+## Uzlaşma Arama Süreci
 
-The Node.js project follows a [Consensus Seeking][] decision making model.
+Node.js projesi bir \[Konsensüs Arayışı]\[] karar verme modeli izlemektedir.
 
-## Collaborators
+## İşbirlikçiler
 
-The [nodejs/node][] core GitHub repository is maintained by the Collaborators
-who are added by the Technical Steering Committee ([TSC][]) on an ongoing basis.
+Nodejs/node]\[] core GitHub deposu Collaborators tarafından korunmaktadır
+Teknik Yönlendirme Komitesi ([TSC][]) tarafından sürekli olarak eklenmektedir.
 
-Individuals making significant and valuable contributions are made Collaborators
-and given commit-access to the project. These individuals are identified by the
-TSC and their nomination is discussed with the existing Collaborators.
+Büyük ve değerli katkılarda bulunan bireyler "İşbirlikçi" olarak atanır ve projeye commit erişimi verilir. Bu bireyler, TSC tarafından tanımlanır ve aday göstermeleri mevcut İşbirlikçilerle tartışılır.
 
-For the current list of Collaborators, see the project's [README.md][].
+İşbirlikçilerin güncel listesi için, projenin [README.md][] dosyasına bakın.
 
-A guide for Collaborators is maintained at [collaborator-guide.md][].
+İşbirlikçiler için bir rehber, [collaborator-guide.md][] dosyasında bulunmaktadır.
 
-## Technical Steering Committee
+## Teknik Yönlendirme Komitesi
 
-The project is governed by the [Technical Steering Committee (TSC)][]
-which is responsible for high-level guidance of the project.
+Projeyi yöneten \[Teknik Yönlendirme Komitesi (TSC)]\[], projenin yüksek düzeyde yönlendirmesinden sorumludur.
 
 [consensus seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
+
 [readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
+
 [tsc]: https://github.com/nodejs/TSC
+
 [technical steering committee (tsc)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
+
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
+
 [nodejs/node]: https://github.com/nodejs/node
