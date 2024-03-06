@@ -3,22 +3,22 @@
     "containers": {
       "footer": {
         "links": {
-          "trademarkPolicy": "Trademark Policy",
-          "privacyPolicy": "Privacy Policy",
-          "codeOfConduct": "Code of Conduct",
-          "security": "Security Policy",
-          "openJS": "OpenJS Foundation"
+          "trademarkPolicy": "Ticari Marka Politikası",
+          "privacyPolicy": "Gizlilik Politikası",
+          "codeOfConduct": "Davranış Kuralları",
+          "security": "Güvenlik Politikası",
+          "openJS": "OpenJS Vakfı"
         }
       },
       "navBar": {
         "links": {
-          "about": "About",
-          "download": "Download",
-          "docs": "Docs",
-          "guides": "Guides",
-          "learn": "Learn",
-          "security": "Security",
-          "certification": "Certification",
+          "about": "Hakkında",
+          "download": "İndir",
+          "docs": "Dokümanlar",
+          "guides": "Kılavuzlar",
+          "learn": "Öğrenmek",
+          "security": "Güvenlik",
+          "certification": "Sertifikasyon",
           "blog": "Blog"
         }
       }
@@ -27,263 +27,263 @@
       "learn": {
         "gettingStarted": {
           "links": {
-            "gettingStarted": "Getting Started",
-            "introductionToNodejs": "Introduction to Node.js",
-            "howToInstallNodejs": "How to install Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "How much JavaScript do you need to know to use Node.js?",
-            "differencesBetweenNodejsAndTheBrowser": "Differences between Node.js and the Browser",
-            "theV8JavascriptEngine": "The V8 JavaScript Engine",
-            "anIntroductionToTheNpmPackageManager": "An introduction to the npm package manager",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) and beyond",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
-            "nodejsWithTypescript": "Node.js with TypeScript",
-            "nodejsWithWebassembly": "Node.js with WebAssembly",
-            "debugging": "Debugging Node.js",
-            "profiling": "Profiling Node.js Applications",
-            "securityBestPractices": "Security Best Practices"
+            "gettingStarted": "Başlarken",
+            "introductionToNodejs": "Node.js'e Giriş",
+            "howToInstallNodejs": "Node.js nasıl kurulur",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Node.js kullanabilmek için ne kadar JavaScript bilmelisiniz?",
+            "differencesBetweenNodejsAndTheBrowser": "Node.js ile Tarayıcı Arasındaki Farklar",
+            "theV8JavascriptEngine": "V8 JavaScript Motoru",
+            "anIntroductionToTheNpmPackageManager": "Npm paket yöneticisine bir giriş",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) ve sonrası",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, geliştirme ve üretim arasındaki fark",
+            "nodejsWithTypescript": "TypeScript ile Node.js",
+            "nodejsWithWebassembly": "WebAssembly ile Node.js",
+            "debugging": "Node.js'te Hata Ayıklama",
+            "profiling": "Node.js Uygulamalarının Profilini Çıkarma",
+            "securityBestPractices": "En İyi Güvenlik Uygulamaları"
           }
         },
         "asynchronousWork": {
           "links": {
-            "asynchronousWork": "Asynchronous Work",
-            "asynchronousFlowControl": "Asynchronous flow control",
-            "overviewOfBlockingVsNonBlocking": "Overview of Blocking vs Non-Blocking",
-            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asynchronous Programming and Callbacks",
-            "discoverJavaScriptTimers": "Discover JavaScript Timers",
-            "theNodejsEventLoop": "The Node.js Event Loop",
-            "theNodejsEventEmitter": "The Node.js Event Emitter",
-            "understandingProcessnexttick": "Understanding process.nextTick()",
-            "understandingSetimmediate": "Understanding setImmediate()",
-            "dontBlockTheEventLoop": "Don't Block the Event Loop"
+            "asynchronousWork": "Asenkron Çalışma",
+            "asynchronousFlowControl": "Asenkron akış kontrolü",
+            "overviewOfBlockingVsNonBlocking": "Engellemeye ve Engellememeye Genel Bakış",
+            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asenkron Programlama ve Geri Çağırmalar",
+            "discoverJavaScriptTimers": "JavaScript Zamanlayıcılarını Keşfedin",
+            "theNodejsEventLoop": "Node.js Olay Döngüsü",
+            "theNodejsEventEmitter": "Node.js Olay Döngüsü",
+            "understandingProcessnexttick": "process.nextTick() anlamak",
+            "understandingSetimmediate": "setImmediate() Fonksiyonunu Anlama",
+            "dontBlockTheEventLoop": "Etkinlik Döngüsünü Engelleme"
           }
         },
         "manipulatingFiles": {
           "links": {
-            "manipulatingFiles": "Manipulating Files",
-            "nodejsFileStats": "Node.js file stats",
-            "nodejsFilePaths": "Node.js File Paths",
-            "workingWithFileDescriptorsInNodejs": "Working with file descriptors in Node.js",
-            "readingFilesWithNodejs": "Reading files with Node.js",
-            "writingFilesWithNodejs": "Writing files with Node.js",
-            "workingWithFoldersInNodejs": "Working with folders in Node.js",
-            "howToWorkWithFileSystems": "How to work with Different Filesystems"
+            "manipulatingFiles": "Dosyaları Değiştirme",
+            "nodejsFileStats": "Node.js dosya istatistikleri",
+            "nodejsFilePaths": "Node.js Dosya Yolları",
+            "workingWithFileDescriptorsInNodejs": "Node.js'de dosya tanımlayıcıları ile çalışma",
+            "readingFilesWithNodejs": "Node.js ile dosya okuma",
+            "writingFilesWithNodejs": "Node.js ile dosya yazma",
+            "workingWithFoldersInNodejs": "Node.js'de klasörlerle çalışma",
+            "howToWorkWithFileSystems": "Farklı Dosya Sistemleriyle Çalışma"
           }
         },
         "commandLine": {
           "links": {
-            "commandLine": "Command Line",
-            "runNodejsScriptsFromTheCommandLine": "Run Node.js scripts from the command line",
-            "howToReadEnvironmentVariablesFromNodejs": "How to read environment variables from Node.js",
-            "howToUseTheNodejsRepl": "How to use the Node.js REPL",
-            "outputToTheCommandLineUsingNodejs": "Output to the command line using Node.js",
-            "acceptInputFromTheCommandLineInNodejs": "Accept input from the command line in Node.js"
+            "commandLine": "Komut Satırı",
+            "runNodejsScriptsFromTheCommandLine": "Node.js komut dosyalarını komut satırından çalıştırma",
+            "howToReadEnvironmentVariablesFromNodejs": "Node.js'den ortam değişkenleri nasıl okunur",
+            "howToUseTheNodejsRepl": "Node.js REPL nasıl kullanılır",
+            "outputToTheCommandLineUsingNodejs": "Node.js kullanarak komut satırına çıktı",
+            "acceptInputFromTheCommandLineInNodejs": "Node.js'de komut satırından girdi kabul etme"
           }
         },
         "modules": {
           "links": {
-            "modules": "Modules",
-            "publishingNodeApiModules": "How to publish a Node-API package",
-            "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction",
-            "abiStability": "ABI Stability",
-            "backpressuringInStreams": "Backpressuring in Streams"
+            "modules": "Modüller",
+            "publishingNodeApiModules": "Bir Node-API paketi nasıl yayımlanır",
+            "anatomyOfAnHttpTransaction": "Bir HTTP İşleminin Anatomisi",
+            "abiStability": "ABI İstikrarlılığı",
+            "backpressuringInStreams": "Akışlarda Geri Baskılama"
           }
         },
         "diagnostics": {
           "links": {
-            "diagnostics": "Diagnostics",
-            "userJourney": "User Journey",
-            "memory": "Memory",
-            "liveDebugging": "Live Debugging",
-            "poorPerformance": "Poor Performance",
-            "flameGraphs": "Flame Graphs"
+            "diagnostics": "Teşhisler",
+            "userJourney": "Kullanıcı Yolculuğu",
+            "memory": "Bellek",
+            "liveDebugging": "Canlı Hata Ayıklama",
+            "poorPerformance": "Düşük Performans",
+            "flameGraphs": "Alev Grafikleri"
           }
         }
       },
       "about": {
         "links": {
-          "about": "About Node.js",
-          "aboutSide": "About Node.js®",
-          "governance": "Project Governance",
-          "releases": "Previous Releases",
-          "security": "Security Reporting"
+          "about": "Node.js Hakkında",
+          "aboutSide": "Node.js® Hakkında",
+          "governance": "Proje Yönetimi",
+          "releases": "Önceki Sürümler",
+          "security": "Güvenlik Raporlaması"
         }
       },
       "getInvolved": {
         "links": {
-          "getInvolved": "Get Involved",
-          "collabSummit": "Collaborator Summit",
-          "upcomingEvents": "Upcoming Events",
-          "contribute": "Contribute to Node.js",
-          "codeOfConduct": "Code of Conduct"
+          "getInvolved": "Katılın",
+          "collabSummit": "İşbirlikçi Zirvesi",
+          "upcomingEvents": "Yaklaşan Etkinlikler",
+          "contribute": "Node.js'ye katkıda bulunun",
+          "codeOfConduct": "Davranış Kuralları"
         }
       }
     },
     "downloadList": {
       "links": {
-        "previousReleases": "Previous Releases",
-        "packageManager": "Installing Node.js via package manager",
+        "previousReleases": "Önceki Sürümler",
+        "packageManager": "Node.js'i paket yöneticisi ile kurmak",
         "shaSums": {
-          "title": "Signed SHASUMS for release files",
-          "howToVerify": " (How to verify)"
+          "title": "Sürüm dosyaları için İmzalı SHASUMS",
+          "howToVerify": " (Nasıl doğrulanır)"
         },
-        "allDownloads": "All download options",
-        "nightlyReleases": "Nightly builds",
-        "unofficialBuilds": "Unofficial builds",
-        "buildingFromSource": "Building Node.js from source on supported platforms",
-        "installingOnLinux": "Installing Node.js via binary archive",
-        "installingOnWsl": "Install on Windows Subsystem for Linux (WSL)"
+        "allDownloads": "Tüm indirme seçenekleri",
+        "nightlyReleases": "Gecelik Sürümler",
+        "unofficialBuilds": "Resmi Olmayan Sürümler",
+        "buildingFromSource": "Desteklenen platformlarda kaynaktan Node.js oluşturma",
+        "installingOnLinux": "Node.js'yi ikili arşiv aracılığıyla yükleme",
+        "installingOnWsl": "Linux için Windows Alt Sistemine (WSL) yükleme"
       }
     },
     "downloadReleasesTable": {
-      "changelog": "Changelog",
-      "releases": "Releases",
-      "docs": "Docs"
+      "changelog": "Değişiklik Günlüğü",
+      "releases": "Sürümler",
+      "docs": "Dokümanlar"
     },
     "pagination": {
-      "next": "Next",
-      "previous": "Previous"
+      "next": "Sonraki",
+      "previous": "Önceki"
     },
     "common": {
       "breadcrumbs": {
-        "navigateToHome": "Navigate to Home"
+        "navigateToHome": "Ana Sayfaya Git"
       },
       "crossLink": {
-        "previous": "Prev",
-        "next": "Next"
+        "previous": "Önceki",
+        "next": "Sonraki"
       },
       "codebox": {
-        "copy": "Copy to clipboard",
-        "copied": "Copied to clipboard!"
+        "copy": "Panoya kopyala",
+        "copied": "Panoya kopyalandı!"
       },
       "pagination": {
-        "prev": "Previous",
-        "prevAriaLabel": "Previous page",
-        "next": "Next",
-        "nextAriaLabel": "Next page",
-        "defaultLabel": "Pagination",
-        "pageLabel": "Go to page {pageNumber}"
+        "prev": "Önceki",
+        "prevAriaLabel": "Önceki sayfa",
+        "next": "Sonraki",
+        "nextAriaLabel": "Sonraki sayfa",
+        "defaultLabel": "Sayfalandırma",
+        "pageLabel": "{pageNumber}. sayfaya git"
       },
       "sidebar": {
-        "title": "Change page"
+        "title": "Sayfayı değiştir"
       },
       "languageDropdown": {
-        "label": "Choose Language"
+        "label": "Dil Seçiniz"
       },
       "themeToggle": {
-        "label": "Toggle Dark Mode"
+        "label": "Karanlık Modu Aç / Kapat"
       }
     },
     "mdx": {
       "upcomingEvents": {
-        "defaultTitle": "No Upcoming Event"
+        "defaultTitle": "Yaklaşan Etkinlik Yok"
       }
     },
     "metabar": {
-      "lastUpdated": "Last Updated",
-      "readingTime": "Reading Time",
-      "addedIn": "Added In",
-      "author": "Author",
-      "authors": "Authors",
-      "contribute": "Contribute",
-      "contributeText": "Edit this page",
-      "viewAs": "View as",
-      "tableOfContents": "Table of Contents"
+      "lastUpdated": "Son Güncelleme",
+      "readingTime": "Okuma Süresi",
+      "addedIn": "Eklendi",
+      "author": "Yazar",
+      "authors": "Yazarlar",
+      "contribute": "Katkıda bulunun",
+      "contributeText": "Bu sayfayı düzenleyin",
+      "viewAs": "Olarak görüntüle",
+      "tableOfContents": "İçindekiler"
     },
     "downloads": {
       "changelogModal": {
-        "startContributing": "Start Contributing"
+        "startContributing": "Katkıda Bulunmaya Başlayın"
       }
     },
     "search": {
       "searchBox": {
-        "placeholder": "Start typing..."
+        "placeholder": "Yazmaya başla..."
       },
       "seeAll": {
-        "text": "See all {count} results"
+        "text": "Tüm {count} sonuçları görün"
       },
       "searchError": {
-        "text": "An error occurred while searching. Please try again later."
+        "text": "Arama sırasında bir hata oluştu. Lütfen daha sonra tekrar deneyin."
       },
       "poweredBy": {
-        "text": "Powered by"
+        "text": "Tarafından desteklenmektedir"
       },
       "noResults": {
-        "text": "No results found for \"{query}\"."
+        "text": "\"{query}\" için sonuç bulunamadı."
       },
       "emptyState": {
-        "text": "Search something..."
+        "text": "Bir şey ara..."
       },
       "searchPage": {
-        "title": "You're searching: {query}"
+        "title": "Aradığınız: {query}"
       }
     },
     "blog": {
       "blogHeader": {
-        "subtitle": "The latest Node.js news, case studies, tutorials, and resources.",
-        "rssLink": "RSS feed"
+        "subtitle": "En son Node.js haberleri, vaka çalışmaları, eğitimler ve kaynaklar.",
+        "rssLink": "RSS beslemesi"
       }
     }
   },
   "layouts": {
     "blogPost": {
       "author": {
-        "byLine": "{author, select, null {} other {By {author}, }}"
+        "byLine": "{author, select, null {} other {{author} tarafından }}"
       }
     },
     "blogIndex": {
-      "categoryName": "{category, select, all {Blog} other {{category} Blog Posts}}"
+      "categoryName": "{category, select, all {Blog} other {{category} Blog Gönderileri}}"
     },
     "blog": {
       "title": "Blog",
-      "selectCategory": "Categories",
+      "selectCategory": "Kategoriler",
       "categories": {
-        "all": "Everything",
-        "announcements": "Announcements",
-        "release": "Releases",
-        "vulnerability": "Vulnerabilities",
-        "advisory-board": "Advisory Board",
-        "community": "Community",
-        "feature": "Feature",
-        "module": "Module",
+        "all": "Her şey",
+        "announcements": "Duyurular",
+        "release": "Sürümler",
+        "vulnerability": "Güvenlik Açıkları",
+        "advisory-board": "Danışma Kurulu",
+        "community": "Topluluk",
+        "feature": "Özellik",
+        "module": "Modül",
         "npm": "npm",
-        "uncategorized": "Uncategorized",
+        "uncategorized": "Kategorize Edilmemiş",
         "video": "Video",
-        "weekly": "Weekly Updates",
-        "wg": "Working Groups",
-        "events": "Events"
+        "weekly": "Haftalık Güncellemeler",
+        "wg": "Çalışma Grupları",
+        "events": "Etkinlikler"
       }
     },
     "error": {
       "notFound": {
-        "title": "Page could not be found",
-        "description": "Sorry, we couldn't find the page you're after! Try starting again from the homepage."
+        "title": "Sayfa bulunamadı",
+        "description": "Üzgünüz, aradığınız sayfayı bulamadık! Ana sayfadan tekrar başlamayı deneyin."
       },
       "internalServerError": {
-        "title": "Internal Server Error",
-        "description": "This page has thrown a non-recoverable error."
+        "title": "Dahili Sunucu Hatası",
+        "description": "Bu sayfa kurtarılamaz bir hata verdi."
       },
-      "backToHome": "Back to Home"
+      "backToHome": "Ana Sayfaya Geri Dön"
     },
     "download": {
-      "selectCategory": "Categories",
+      "selectCategory": "Kategoriler",
       "categories": {
-        "download": "Prebuilt Installer",
-        "prebuilt-binaries": "Prebuilt Binaries",
-        "package-manager": "Package Manager",
-        "source-code": "Source Code"
+        "download": "Önceden yapılmış Yükleyici",
+        "prebuilt-binaries": "Ön Derlenmiş İkili Dosyalar",
+        "package-manager": "Paket Yöneticisi",
+        "source-code": "Kaynak Kodu"
       },
       "buttons": {
-        "prebuilt": "Download Node.js {version}",
-        "source": "Download Node.js {version} source"
+        "prebuilt": "Node.js® İndir {version}",
+        "source": "Node.js {version} kaynağını indirin"
       },
       "dropdown": {
         "bitness": "Bitness",
-        "os": "Operating System",
-        "version": "Version",
+        "os": "İşletim Sistemi",
+        "version": "Versiyon",
         "platform": "Platform"
       },
       "codeBox": {
-        "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project."
+        "communityWarning": "Paket yöneticileri ve bunların kurulum betikleri Node.js projesi tarafından bakımı yapılmamaktadır."
       }
     }
   }
