@@ -4,7 +4,7 @@ export const getUserBitnessByArchitecture = (
 ) => {
   if (userArchitecture === 'arm' && userBitness === 64) {
     return 'arm64';
-  } else {
-    return userBitness;
   }
+
+  return userBitness;
 };
