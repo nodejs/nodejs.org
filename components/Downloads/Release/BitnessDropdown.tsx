@@ -23,14 +23,6 @@ const BitnessDropdown: FC = () => {
   // we also reset the bitness when the OS changes, because different OSs have
   // different bitnesses available
 
-  // useEffect(() => {
-  //   if (userArchitecture == 'arm' && userBitness == 64) {
-  //     setBitness('arm64');
-  //   } else {
-  //     setBitness(userBitness);
-  //   }
-  // }, [setBitness, userBitness, userArchitecture]);
-
   useEffect(() => {
     setBitness(getUserBitnessByArchitecture(userArchitecture, userBitness));
   }, [userArchitecture, userBitness]);
