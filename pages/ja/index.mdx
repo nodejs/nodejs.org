@@ -9,21 +9,18 @@ layout: home
   <div>
     <h1 className="special">Run JavaScript Everywhere</h1>
 
-    Node.js® is a free, open-source, cross-platform JavaScript runtime
-    environment that lets developers create servers, web apps,
-    command line tools and scripts.
-
+    Node.js®は自由かつオープンソースでクロスプラットフォームに対応したJavaScript実行環境です。開発者にサーバー、ウェブアプリ、コマンドラインツール、スクリプトの開発環境を提供します。
   </div>
 
   <div>
     <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
       {({ release }) => (
         <>
-          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+          <DownloadButton release={release}>Node.js (LTS)をダウンロードする</DownloadButton>
           <small>
-            Downloads Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
-            Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
+            長期サポート版Node.js <b>{release.versionWithPrefix}</b>
+            <sup title="Downloads a Node.js installer for your current platform">1</sup>をダウンロードする。
+            <a href="/download/package-manager">パッケージマネージャー</a>を利用したインストール方法もあります。
           </small>
         </>
       )}
@@ -32,13 +29,12 @@ layout: home
     <WithNodeRelease status={"Current"}>
       {({ release }) => (
         <small>
-          Want new features sooner?
-          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> instead.
+          最新の機能をすぐに試したい場合は
+          <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="Downloads a Node.js installer for your current platform">1</sup>をインストールできます。
         </small>
       )}
     </WithNodeRelease>
-
   </div>
 </section>
 
@@ -113,9 +109,7 @@ layout: home
       parentPort.postMessage(btoa(source.toUpperCase()));
     }
     ```
-
   </div>
 
-Learn more what Node.js is able to offer with our [Learning materials](/learn).
-
+  私たちの[学習教材](/learn)でNode.jsでできることをさらに学んでみましょう。
 </section>
