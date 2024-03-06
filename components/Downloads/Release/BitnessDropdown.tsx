@@ -9,18 +9,25 @@ import Select from '@/components/Common/Select';
 import { useDetectOS } from '@/hooks/react-client';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import { bitnessItems, formatDropdownItems } from '@/util/downloadUtils';
+import { getUserBitnessByArchitecture } from '@/util/getUserBitnessByArchitecture';
 
 const parseNumericBitness = (bitness: string) =>
   /^\d+$/.test(bitness) ? Number(bitness) : bitness;
 
 const BitnessDropdown: FC = () => {
-  const { bitness: userBitness } = useDetectOS();
+  const { bitness: userBitness, architecture: userArchitecture } =
+    useDetectOS();
   const { bitness, os, release, setBitness } = useContext(ReleaseContext);
   const t = useTranslations();
 
   // we also reset the bitness when the OS changes, because different OSs have
   // different bitnesses available
-  useEffect(() => setBitness(userBitness), [setBitness, userBitness]);
+
+  useEffect(() => {
+    setBitness(getUserBitnessByArchitecture(userArchitecture, userBitness));
+    // we shouldn't update the effect on setter state change
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userArchitecture, userBitness]);
 
   // @TODO: We should have a proper utility that gives
   // disabled OSs, Platforms, based on specific criteria
