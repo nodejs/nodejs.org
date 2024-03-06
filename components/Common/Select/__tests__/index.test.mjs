@@ -10,6 +10,12 @@ describe('Select', () => {
   const label = 'Option label';
   const onChange = jest.fn();
 
+  global.ResizeObserver = jest.fn().mockImplementation(() => ({
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+    disconnect: jest.fn(),
+  }));
+
   it('renders the label when provided', () => {
     const { getByLabelText } = render(
       <Select
