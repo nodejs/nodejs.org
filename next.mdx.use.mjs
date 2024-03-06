@@ -1,7 +1,5 @@
 'use strict';
 
-import Image from 'next/image';
-
 import Blockquote from './components/Common/Blockquote';
 import Button from './components/Common/Button';
 import DownloadButton from './components/Downloads/DownloadButton';
@@ -24,6 +22,7 @@ import Link from './components/Link';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
 import MDXCodeBox from './components/MDX/CodeBox';
 import MDXCodeTabs from './components/MDX/CodeTabs';
+import MDXImage from './components/MDX/Image';
 import SearchPage from './components/MDX/SearchPage';
 import WithBadge from './components/withBadge';
 import WithBanner from './components/withBanner';
@@ -98,6 +97,8 @@ export const htmlComponents = {
   blockquote: Blockquote,
   // Renders a CodeBox Component for `pre` tags
   pre: MDXCodeBox,
-  // Renders a Next.js Image Component for `img` tags
-  img: Image,
+  // When `width` and `height` attributes are provided uses Next.js `Image` component,
+  // otherwise uses the HTML `img` tag
+  // @see https://nextjs.org/docs/pages/api-reference/components/image
+  img: MDXImage,
 };
