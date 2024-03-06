@@ -4,15 +4,15 @@
       "footer": {
         "links": {
           "trademarkPolicy": "Trademark Policy",
-          "privacyPolicy": "Privacy Policy",
-          "codeOfConduct": "Code of Conduct",
+          "privacyPolicy": "Політика конфіденційності",
+          "codeOfConduct": "Кодекс поведінки",
           "security": "Security Policy",
           "openJS": "OpenJS Foundation"
         }
       },
       "navBar": {
         "links": {
-          "about": "About",
+          "about": "Про Node.js",
           "download": "Download",
           "docs": "Docs",
           "guides": "Guides",
@@ -39,7 +39,7 @@
             "nodejsWithTypescript": "Node.js with TypeScript",
             "nodejsWithWebassembly": "Node.js with WebAssembly",
             "debugging": "Debugging Node.js",
-            "profiling": "Profiling Node.js Applications",
+            "profiling": "Профілювання застосунків Node.js",
             "securityBestPractices": "Security Best Practices"
           }
         },
