@@ -8,7 +8,7 @@ import BreadcrumbRoot from '@/components/Common/Breadcrumbs/BreadcrumbRoot';
 import BreadcrumbTruncatedItem from '@/components/Common/Breadcrumbs/BreadcrumbTruncatedItem';
 import type { FormattedMessage } from '@/types';
 
-type BreadcrumbLink = {
+export type BreadcrumbLink = {
   label: FormattedMessage;
   href: string | undefined;
 };
