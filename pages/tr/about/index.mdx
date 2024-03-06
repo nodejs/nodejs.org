@@ -1,24 +1,17 @@
 ---
-title: About Node.js®
+title: Node.js® Hakkında
 layout: about
 ---
 
 <div className="my-4 flex items-center justify-center">
-  <img
-    alt="Node.js mascot"
-    src="/static/images/node-mascot.svg"
-    className="w-[100px]"
-  />
+  <img alt="Node.js maskotu" src="/static/images/node-mascot.svg" className="w-[100px]" />
 </div>
 
----
+***
 
-# About Node.js®
+# Node.js® Hakkında
 
-As an asynchronous event-driven JavaScript runtime, Node.js is designed to build
-scalable network applications. In the following "hello world" example, many
-connections can be handled concurrently. Upon each connection, the callback is
-fired, but if there is no work to be done, Node.js will sleep.
+Asenkron olaya dayalı bir JavaScript çalıştırma ortamı olarak, Node.js, ölçeklenebilir ağ uygulamaları oluşturmak için tasarlanmıştır. Aşağıdaki "merhaba dünya" örneğinde, birçok bağlantı aynı anda işlenebilir. Her bağlantıda geri çağrı tetiklenir, ancak yapılacak iş yoksa, Node.js uyur.
 
 ```js
 const http = require('node:http');
@@ -37,42 +30,24 @@ server.listen(port, hostname, () => {
 });
 ```
 
-This is in contrast to today's more common concurrency model, in which OS threads
-are employed. Thread-based networking is relatively inefficient and very
-difficult to use. Furthermore, users of Node.js are free from worries of
-dead-locking the process, since there are no locks. Almost no function in
-Node.js directly performs I/O, so the process never blocks except when the I/O is performed using
-synchronous methods of Node.js standard library. Because nothing blocks, scalable systems are very
-reasonable to develop in Node.js.
+Bu, bugünün daha yaygın olan eş zamanlılık modeline karşı bir durumdur, bu modelde işletim sistemi iş parçacıkları kullanılır. İş parçacığı tabanlı ağ iletişimi nispeten verimsizdir ve çok zor kullanılır. Ayrıca, Node.js kullanıcıları, kilitlenme endişelerinden bağımsızdır, çünkü kilitler yoktur. Node.js'deki neredeyse hiçbir işlev doğrudan G/Ç yapmaz, bu nedenle işlem, Node.js standart kitaplığının senkron yöntemleri kullanılarak G/Ç gerçekleştirildiğinde dışında asla bloke olmaz. Hiçbir şey bloke olmadığı için, ölçeklenebilir sistemlerin Node.js'te geliştirilmesi çok mantıklıdır.
 
-If some of this language is unfamiliar, there is a full article on
-\[Blocking vs. Non-Blocking]\[].
+Eğer bu dilin bir kısmı size yabancı geliyorsa, \[Blokajlı ve Blokajlı Olmayan]\[] hakkında tam bir makale bulunmaktadır.
 
----
+***
 
-Node.js is similar in design to, and influenced by, systems like Ruby's
-\[Event Machine]\[] and Python's \[Twisted]\[]. Node.js takes the event model a bit
-further. It presents an event loop as a runtime construct instead of as a library. In other systems,
-there is always a blocking call to start the event-loop.
-Typically, behavior is defined through callbacks at the beginning of a script, and
-at the end a server is started through a blocking call like `EventMachine::run()`.
-In Node.js, there is no such start-the-event-loop call. Node.js simply enters the event loop after executing the input script. Node.js
-exits the event loop when there are no more callbacks to perform. This behavior
-is like browser JavaScript — the event loop is hidden from the user.
+Node.js, Ruby'nin \[Event Machine]\[] ve Python'un \[Twisted]\[] gibi sistemlere benzer şekilde tasarlanmış ve etkilenmiştir. Node.js, olay modelini biraz daha ileri götürür. Olay döngüsünü bir kütüphane olarak değil, bir çalışma zamanı yapısı olarak sunar. Diğer sistemlerde, olay döngüsünü başlatmak için her zaman bir blokajlı çağrı vardır. Tipik olarak, davranış, betiğin başında geri çağrılar aracılığıyla tanımlanır ve sonunda EventMachine::run() gibi bir blokajlı çağrı ile bir sunucu başlatılır. Node.js'te böyle bir olay-döngüsünü-başlatma çağrısı yoktur. Node.js, girdi betiğini yürüttükten sonra basitçe olay döngüsüne girer. Node.js, yapılacak başka geri çağrı kalmadığında olay döngüsünden çıkar. Bu davranış, tarayıcı JavaScript'iyle benzerdir - olay döngüsü kullanıcıdan gizlenir.
 
-HTTP is a first-class citizen in Node.js, designed with streaming and low
-latency in mind. This makes Node.js well suited for the foundation of a web
-library or framework.
+HTTP, Node.js'de birinci sınıf bir vatandaştır ve akış ve düşük gecikme düşünülerek tasarlanmıştır. Bu, Node.js'in bir web kitaplığının veya çerçevesinin temeli için uygun olmasını sağlar.
 
-Node.js being designed without threads doesn't mean you can't take
-advantage of multiple cores in your environment. Child processes can be spawned
-by using our \[`child_process.fork()`]\[] API, and are designed to be easy to
-communicate with. Built upon that same interface is the \[`cluster`]\[] module,
-which allows you to share sockets between processes to enable load balancing
-over your cores.
+Node.js'in iş parçacıkları olmadan tasarlanmış olması, çevrenizdeki birden fazla çekirdeği kullanamayacağınız anlamına gelmez. Çocuk süreçler, \[child\_process.fork()]\[] API'si kullanılarak oluşturulabilir ve iletişim kurmak için tasarlanmıştır. Aynı arayüz üzerine inşa edilmiş olan \[cluster]\[] modülü, çekirdekleriniz üzerinde yük dengelemeyi etkinleştirmek için süreçler arasında soket paylaşmanıza izin verir.
 
-[blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+[blokajlı ve Blokajlı Olmayan]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
+
 [`cluster`]: https://nodejs.org/api/cluster.html
+
 [event machine]: https://github.com/eventmachine/eventmachine
+
 [twisted]: https://twistedmatrix.com/trac/
