@@ -1,22 +1,22 @@
 ---
-title: Get involved
+title: 参与
 layout: about
 ---
 
-# Get Involved
+# 参与
 
-## Community Discussion
+## 社区讨论
 
-- The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
-- For real-time chat about Node.js development use one of the platforms below
-  - For IRC, go to `irc.libera.chat` in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [a web client](https://kiwiirc.com/nextclient/)
-  - For Slack, there are two options:
-    - The [OpenJSF Slack](https://slack-invite.openjsf.org/) is a Foundation run Slack with several Node.js channels (channels prefixed by `#nodejs-` are related to the project).
-    - [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
-- The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
-- The [Node.js project calendar](https://nodejs.org/calendar) with all public team meetings.
+- [GitHub Issues 列表](https://github.com/nodejs/node/issues)是讨论Node.js核心功能的地方。
+- 想实时聊聊关于 Node.js 开发方面的内容，可以使用下列某一平台：
+  - 对于IRRC，请在`#node.js`频道中的`irc.libera.chat`，通过带有[IRC 客户端](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients)连接或者可以通过[网页客户端](https://kiwiirc.com/nextclient/)直接在进入该频道。
+  - 使用 Slack，有两种选项：
+    - [OpenJSF Slack](https://slack-invite.openjsf.org/) 是一个由基金会运营的 Slack，拥有多个 Node.js 频道（以 `#nodejs-` 为前缀的频道与该项目相关）。
+    - [Node Slackers](https://www.nodeslackers.com/) 是一个专注于 Node.js 的 Slack 社区。
+- Node.js 官方 Twitter 账号是 [nodejs](https://twitter.com/nodejs)。
+- 查看包含所有公开团队会议的Node.js项目日历。
 
-## Learning
+## 学习
 
 - [Official Learn section](https://nodejs.org/en/learn/) of the Node.js website.
 - [Official API reference documentation](https://nodejs.org/api/).
