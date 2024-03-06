@@ -1,89 +1,70 @@
 ---
-title: Security Reporting
+title: Güvenlik Raporlaması
 layout: about
 ---
 
-# Security Reporting
+# Güvenlik Raporlaması
 
-For more details on active Security Policies, checkout [this page](https://github.com/nodejs/node/security/policy).
+Aktif Güvenlik Politikaları hakkında daha fazla bilgi için \[bu sayfaya] (https://github.com/nodejs/node/security/policy) göz atın.
 
-## Reporting a bug in Node.js
+## Node.js'de bir hata bildirme
 
-Report security bugs in Node.js via [HackerOne](https://hackerone.com/nodejs).
+Node.js'deki güvenlik hatalarını \[HackerOne] (https://hackerone.com/nodejs) aracılığıyla bildirin.
 
-Your report will be acknowledged within 5 days, and you'll receive a more
-detailed response to your report within 10 days indicating the next steps in
-handling your submission.
+Raporunuz 5 gün içinde onaylanacak ve size daha fazla bilgi verilecektir.
+Raporunuza 10 gün içinde ayrıntılı bir yanıt vererek sonraki adımları belirtiniz.
+başvurunuzu ele alıyoruz.
 
-After the initial reply to your report, the security team will endeavor to keep
-you informed of the progress being made towards a fix and full announcement,
-and may ask for additional information or guidance surrounding the reported
-issue.
+Bildiriminize verilen ilk yanıttan sonra, güvenlik ekibi aşağıdaki hususları yerine getirmeye çalışacaktır
+Düzeltme ve tam duyuru için kaydedilen ilerleme hakkında sizi bilgilendireceğiz,
+ve bildirilen raporla ilgili ek bilgi veya rehberlik isteyebilir
+sorun.
 
-### Node.js bug bounty program
+### Node.js bug bounty programı
 
-The Node.js project engages in an official bug bounty program for security
-researchers and responsible public disclosures. The program is managed through
-the HackerOne platform. See [https://hackerone.com/nodejs](https://hackerone.com/nodejs) for further details.
+Node.js projesi, güvenlik için resmi bir hata ödül programı yürütmektedir
+araştırmacılar ve sorumlu kamu açıklamaları. Program aşağıdakiler aracılığıyla yönetilmektedir
+HackerOne platformu. Daha fazla ayrıntı için [https://hackerone.com/nodejs](https://hackerone.com/nodejs) adresine bakınız.
 
-## Reporting a bug in a third party module
+## Üçüncü taraf bir modüldeki hatayı bildirme
 
-Security bugs in third party modules should be reported to their respective
-maintainers.
+Üçüncü parti modüllerdeki güvenlik hataları ilgili modüllere bildirilmelidir.
+bakımcılar.
 
-## Disclosure policy
+## Bilgilendirme politikası
 
-Here is the security disclosure policy for Node.js
+İşte Node.js için güvenlik açıklama politikası
 
-- The security report is received and is assigned a primary handler. This
-  person will coordinate the fix and release process. The problem is confirmed
-  and a list of all affected versions is determined. Code is audited to find
-  any potential similar problems. Fixes are prepared for all releases which are
-  still under maintenance. These fixes are not committed to the public
-  repository but rather held locally pending the announcement.
+* Güvenlik raporu alındığında ve birincil bir sorumlu atanır. Bu kişi, düzeltme ve yayın sürecini koordine edecektir. Sorun doğrulanır ve etkilenen tüm sürümlerin bir listesi belirlenir. Potansiyel benzer sorunları bulmak için kod denetlenir. Bakım altındaki tüm sürümler için düzeltmeler hazırlanır. Bu düzeltmeler, genel depoya taahhüt edilmez, ancak duyuruya kadar yerel olarak tutulur.
 
-- A suggested embargo date for this vulnerability is chosen and a CVE (Common
-  Vulnerabilities and Exposures (CVE®)) is requested for the vulnerability.
+* Bu zafiyet için önerilen ambargo tarihi belirlenir ve bir CVE (Common Vulnerabilities and Exposures - Ortak Zayıflıklar ve Maruz Kalma) talep edilir.
 
-- On the embargo date, the Node.js security mailing list is sent a copy of the
-  announcement. The changes are pushed to the public repository and new builds
-  are deployed to nodejs.org. Within 6 hours of the mailing list being
-  notified, a copy of the advisory will be published on the Node.js blog.
+* Ambargo tarihinde, Node.js güvenlik posta listesine aşağıdaki belgenin bir kopyası gönderilir
+  Duyuru. Değişiklikler genel depoya ve yeni yapılara aktarılır
+  nodejs.org'a dağıtılır. Posta listesinin oluşturulmasından sonraki 6 saat içinde
+  bildirilirse, danışmanlığın bir kopyası Node.js blogunda yayınlanacaktır.
 
-- Typically the embargo date will be set 72 hours from the time the CVE is
-  issued. However, this may vary depending on the severity of the bug or
-  difficulty in applying a fix.
+* Genellikle, zafiyetin yayınlandığı tarihten itibaren 72 saat sonra ambargo tarihi belirlenir. Ancak, bu, hatanın ciddiyetine veya bir düzeltmenin uygulanmasındaki zorluğa bağlı olarak değişebilir.
 
-- This process can take some time, especially when coordination is required
-  with maintainers of other projects. Every effort will be made to handle the
-  bug in as timely a manner as possible; however, it's important that we follow
-  the release process above to ensure that the disclosure is handled in a
-  consistent manner.
+* Bu süreç bazen zaman alabilir, özellikle diğer projelerin bakımcılarıyla koordinasyon gerektiğinde. Mümkün olduğunca hızlı bir şekilde sorunu ele almak için her çaba gösterilecektir; ancak, açıklamanın tutarlı bir şekilde ele alınmasını sağlamak için yukarıdaki yayın sürecini takip etmek önemlidir.
 
-## Receiving security updates
+## Güvenlik güncellemeleri almak
 
-Security notifications will be distributed via the following methods.
+Güvenlik bildirimleri aşağıdaki yöntemlerle dağıtılacaktır.
 
-- [Google Group](https://groups.google.com/group/nodejs-sec)
-- [Node.js Blog](/blog)
+* [Google Group](https://groups.google.com/group/nodejs-sec)
+* [Node.js Blog](/blog)
 
-## Comments on this policy
+## Bu politikaya ilişkin yorumlar
 
-If you have suggestions on how this process could be improved please submit a
-[pull request](https://github.com/nodejs/nodejs.org) or
-[file an issue](https://github.com/nodejs/security-wg/issues/new) to discuss.
+Bu sürecin nasıl geliştirilebileceğine dair önerileriniz varsa lütfen
+[pull request](https://github.com/nodejs/nodejs.org) veya
+Tartışmak için \[bir konuyu dosyalayın] (https://github.com/nodejs/security-wg/issues/new).
 
-## OpenSSF Best Practices
+## OpenSSF En İyi Uygulamaları
 
-<a
-  href="https://bestpractices.coreinfrastructure.org/projects/29"
-  style={{ display: 'inline-flex' }}
->
-  <img
-    alt="OpenSSF Badge"
-    src="https://bestpractices.coreinfrastructure.org/projects/29/badge"
-    style={{ display: 'inline' }}
-  />
+<a href="https://bestpractices.coreinfrastructure.org/projects/29" style={{ display: 'inline-flex' }}>
+  <img alt="OpenSSF Rozeti" src="https://bestpractices.coreinfrastructure.org/projects/29/badge" style={{ display: 'inline' }} />
 </a>
 
-The Open Source Security Foundation (OpenSSF) [Best Practices badge](https://github.com/coreinfrastructure/best-practices-badge) is a way for Free/Libre and Open Source Software (FLOSS) projects to show that they follow best practices. Projects can voluntarily self-certify how they follow each best practice. Consumers of the badge can quickly assess which FLOSS projects are following best practices and as a result are more likely to produce higher-quality secure software.
+Açık Kaynak Güvenlik Vakfı (OpenSSF) \[En İyi Uygulamalar rozeti] (https://github.com/coreinfrastructure/best-practices-badge), Özgür/Kütüphane ve Açık Kaynak Yazılım (FLOSS) projelerinin en iyi uygulamaları takip ettiklerini göstermeleri için bir yoldur. Projeler gönüllü olarak her bir en iyi uygulamayı nasıl takip ettiklerini kendi kendilerine belgeleyebilirler. Rozetin tüketicileri, hangi FLOSS projelerinin en iyi uygulamaları takip ettiğini ve sonuç olarak daha yüksek kalitede güvenli yazılım üretme olasılığının daha yüksek olduğunu hızlı bir şekilde değerlendirebilirler.
