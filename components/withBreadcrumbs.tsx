@@ -13,6 +13,8 @@ const WithBreadcrumbs: FC = () => {
   const { pathname } = useClientContext();
   const isMobileScreen = useMediaQuery('(max-width: 639px)');
 
+  const maxLength = isMobileScreen ? 2 : 4;
+
   const getBreadrumbs = () => {
     const [navigationKey] =
       navigationItems.find(([, item]) => pathname.includes(item.link)) || [];
@@ -49,8 +51,6 @@ const WithBreadcrumbs: FC = () => {
       return breadcrumbs;
     }, [] as Array<BreadcrumbLink>);
   };
-
-  const maxLength = isMobileScreen ? 2 : 4;
 
   return <Breadcrumbs links={getBreadrumbs()} maxLength={maxLength} />;
 };
