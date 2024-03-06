@@ -16,10 +16,13 @@ const WithBreadcrumbs: FC = () => {
   const getBreadrumbs = () => {
     const [navigationKey] =
       navigationItems.find(([, item]) => pathname.includes(item.link)) || [];
+
     if (navigationKey === undefined) {
       return [];
     }
+
     const navigationTree = getSideNavigation([navigationKey as NavigationKeys]);
+
     const pathList = pathname
       .split('/')
       .filter(item => item !== '')
@@ -30,19 +33,26 @@ const WithBreadcrumbs: FC = () => {
     // Reduce the pathList to a breadcrumbs array by finding each path in the current navigation layer,
     // updating the currentNode to the found node's items(next layer) for the next iteration.
     return pathList.reduce((breadcrumbs, path) => {
-      const foundNode = currentNode.find(([nodePath]) => nodePath === path);
-      if (foundNode) {
-        const [, { label, link = '', items = [] }] = foundNode;
+      const nodeWithCurrentPath = currentNode.find(
+        ([nodePath]) => nodePath === path
+      );
+
+      if (nodeWithCurrentPath) {
+        const [, { label, link = '', items = [] }] = nodeWithCurrentPath;
+
+        // Goes deeper on the tree of items if there are any.
         currentNode = items;
+
         return label ? [...breadcrumbs, { label, href: link }] : breadcrumbs;
       }
+
       return breadcrumbs;
     }, [] as Array<BreadcrumbLink>);
   };
 
-  return (
-    <Breadcrumbs links={getBreadrumbs()} maxLength={isMobileScreen ? 2 : 4} />
-  );
+  const maxLength = isMobileScreen ? 2 : 4;
+
+  return <Breadcrumbs links={getBreadrumbs()} maxLength={maxLength} />;
 };
 
 export default WithBreadcrumbs;
