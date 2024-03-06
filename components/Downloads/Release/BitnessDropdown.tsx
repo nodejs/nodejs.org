@@ -25,6 +25,8 @@ const BitnessDropdown: FC = () => {
 
   useEffect(() => {
     setBitness(getUserBitnessByArchitecture(userArchitecture, userBitness));
+    // we shouldn't update the effect on setter state change
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userArchitecture, userBitness]);
 
   // @TODO: We should have a proper utility that gives
