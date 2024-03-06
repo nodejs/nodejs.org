@@ -1,13 +1,13 @@
 ---
 layout: docs
-title: Installing Node.js via package manager
+title: از طریق پکیج منیجر Node.js نصب
 ---
 
-# Installing Node.js via Package Managers
+# نصب Node.js از طریق پکیج منیجر
 
-> The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
+> پکیج‌های این صفحه توسط پکیج منیجر های مربوطه نگهداری و پشتیبانی می‌شوند، **نه** توسط تیم هسته Node.js. لطفاً اگر به هرگونه مشکلی برخوردید آن را به نگه دارنده پکیج گزارش دهید. اگر مشکل شما یک باگ در خود Node.js باشد، نگه دارنده آن را به مرجع اصلی گزارش خواهد داد.
 
----
+***
 
 - [Alpine Linux](#alpine-linux)
 - [Android](#android)
@@ -33,17 +33,17 @@ title: Installing Node.js via package manager
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
----
+***
 
 ## Alpine Linux
 
-Node.js LTS and npm packages are available in the Main Repository.
+بسته‌های Node.js LTS و npm در مخزن اصلی موجود هستند.
 
 ```bash
 apk add nodejs npm
 ```
 
-Node.js Current can be installed from the Community Repository.
+Node.js Current نیز می‌تواند از مخزن کامیونیتی نصب شود.
 
 ```bash
 apk add nodejs-current
@@ -51,79 +51,79 @@ apk add nodejs-current
 
 ## Android
 
-Android support is still experimental in Node.js, so precompiled binaries are not yet provided by Node.js developers.
+پشتیبانی از اندروید در Node.js هنوز در مرحله آزمایشی است، بنابراین باینری‌های از پیش کامپایل شده هنوز توسط توسعه دهندگان Node.js ارائه نشده‌اند.
 
-However, there are some third-party solutions. For example, [Termux](https://termux.com/) community provides terminal emulator and Linux environment for Android, as well as own package manager and [extensive collection](https://github.com/termux/termux-packages) of many precompiled applications. This command in Termux app will install the last available Node.js version:
+با این حال، برخی راه حل‌های شخص ثالث وجود دارند. به عنوان مثال، کامیونیتی [Termux](https://termux.com/) یک شبیه‌ساز ترمینال و محیط لینوکس برای اندروید، به همراه پکیج منیجر مخصوص و [مجموعه گسترده‌ای](https://github.com/termux/termux-packages) از بسیاری از برنامه‌های از پیش کامپایل شده را ارائه می‌دهد. این دستور در برنامه Termux، آخرین نسخه موجود از Node.js را نصب خواهد کرد:
 
 ```bash
 pkg install nodejs
 ```
 
-Currently, Termux Node.js binaries are linked against `system-icu` (depending on `libicu` package).
+در حال حاضر، باینری‌های Node.js در Termux به `system-icu` لینک شده‌اند (وابسته به بسته `libicu`).
 
 ## Arch Linux
 
-Node.js and npm packages are available in the Community Repository.
+بسته‌های Node.js و npm در مخزن کامیونیتی موجود هستند.
 
 ```bash
 pacman -S nodejs npm
 ```
 
-## CentOS, Fedora and Red Hat Enterprise Linux
+## CentOS - Fedora - Red Hat Enterprise Linux
 
-Node.js is available as a module called `nodejs` in CentOS/RHEL 8 and Fedora.
+Node.js در CentOS/RHEL 8 و Fedora به عنوان یک ماژول با نام `nodejs` موجود است.
 
 ```bash
 dnf module install nodejs:<stream>
 ```
 
-where `<stream>` corresponds to the major version of Node.js.
-To see a list of available streams:
+که در آن `<stream>` مربوط به نسخه اصلی Node.js است.
+برای مشاهده لیست استریم‌های موجود:
 
 ```bash
 dnf module list nodejs
 ```
 
-For example, to install Node.js 18:
+به عنوان مثال، برای نصب Node.js 18:
 
 ```bash
 dnf module install nodejs:18/common
 ```
 
-### Alternatives
+### جایگزین
 
-These resources provide packages compatible with CentOS, Fedora, and RHEL.
+این منابع بسته‌هایی را ارائه می‌کنند که با CentOS ، Fedora و RHEL سازگار هستند.
 
-- [Node.js snaps](#snap) maintained and supported at https\://github.com/nodejs/snap
-- [Node.js binary distributions](#debian-and-ubuntu-based-linux-distributions) maintained and supported by [NodeSource](https://github.com/nodesource/distributions)
+- [Node.js snaps](#snap) که در https\://github.com/nodejs/snap نگهداری و پشتیبانی می‌شوند.
+- [توزیع‌های باینری Node.js](#debian-and-ubuntu-based-linux-distributions) که توسط [NodeSource](https://github.com/nodesource/distributions) نگهداری و پشتیبانی می‌شوند.
 
-## Debian and Ubuntu based Linux distributions
+## توزیع‌های لینوکس مبتنی بر Debian و Ubuntu
 
-[Node.js binary distributions](https://github.com/nodesource/distributions) are available from NodeSource.
+[توزیع‌های باینری Node.js](https://github.com/nodesource/distributions) از NodeSource در دسترس هستند.
 
-### Alternatives
+### جایگزین
 
-Packages compatible with Debian and Ubuntu based Linux distributions are available via [Node.js snaps](#snap).
+بسته‌هایی که با توزیع‌های لینوکس مبتنی بر دبیان و اوبونتو سازگار هستند، از طریق [Node.js snaps](#snap) در دسترس می‌باشند.
 
 ## fnm
 
-Fast and simple Node.js version manager built in Rust used to manage multiple released Node.js versions. It allows you to perform operations like install, uninstall, switch Node versions automatically based on the current directory, etc.
-To install fnm, use this [install script](https://github.com/Schniz/fnm#using-a-script-macoslinux).
+مدیر نسخه سریع و ساده Node.js که با Rust ساخته شده است و برای مدیریت نسخه‌های مختلف منتشر شده Node.js استفاده می‌شود. به شما امکان می‌دهد عملیاتی مانند نصب، حذف، تغییر نسخه‌های Node را براساس پوشه فعلی به صورت خودکار انجام دهید و غیره.
+برای نصب fnm از این [اسکریپت نصب](https://github.com/Schniz/fnm#using-a-script-macoslinux) استفاده کنید.
 
-fnm has cross-platform support (macOS, Windows, Linux) & all popular shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
-fnm is built with speed in mind and compatibility support for `.node-version` and `.nvmrc` files.
+fnm پشتیبانی از پلتفرم‌های متعدد (macOS ، Windows ، Linux) و تمام شل‌های محبوب (Bash ، Zsh ، Fish ، PowerShell ، Windows Command Line Prompt) را دارد.
+fnm با تمرکز بر سرعت و پشتیبانی از سازگاری برای فایل‌های `‎.node-version` و `‎.nvmrc` ساخته شده است.
 
 ## FreeBSD
 
-The most recent release of Node.js is available via the [www/node](https://www.freshports.org/www/node) port.
+آخرین نسخه منتشر شده Node.js از طریق [پورت www/node](https://www.freshports.org/www/node) در دسترس است.
 
-Install a binary package via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
+بسته باینری را از طریق [pkg](https://www.freebsd.org/cgi/man.cgi?pkg) نصب کنید:
 
 ```bash
 pkg install node
 ```
 
-Or compile it on your own using [ports](https://www.freebsd.org/cgi/man.cgi?ports):
+یا آن را با استفاده از [ports](https://www.freebsd.org/cgi/man.cgi?ports) کامپایل کنید:
 
 ```bash
 cd /usr/ports/www/node && make install
@@ -131,7 +131,7 @@ cd /usr/ports/www/node && make install
 
 ## Gentoo
 
-Node.js is available in the portage tree.
+Node.js در portage tree موجود است.
 
 ```bash
 emerge nodejs
