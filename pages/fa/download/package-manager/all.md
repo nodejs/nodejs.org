@@ -139,35 +139,35 @@ emerge nodejs
 
 ## IBM i
 
-LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](https://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs18`, `nodejs20` etc)
+نسخه‌های LTS از Node.js در دسترس هستند و از طریق [پکیج منیجر 'yum'](https://ibm.biz/ibmi-rpms) قابل دسترسی می‌باشند. نام بسته `nodejs` به دنبال شماره نسخه اصلی است (به عنوان مثال: `nodejs18` ، `nodejs20` و غیره)
 
-To install Node.js 20.x from the command line, run the following as a user with \*ALLOBJ special authority:
+برای نصب Node.js 20.x از خط فرمان، دستور زیر را به عنوان کاربر با مجوز ویژه ‎\*ALLOBJ اجرا کنید:
 
 ```bash
 yum install nodejs20
 ```
 
-Node.js can also be installed with the IBM i Access Client Solutions product. See [this support document](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) for more details
+Node.js همچنین می‌تواند با محصول IBM i Access Client Solutions نصب شود. برای جزئیات بیشتر به [این سند پشتیبانی](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) مراجعه کنید.
 
 ## macOS
 
-Download the [macOS Installer](/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
+دانلود مستقیم [نصب‌کننده macOS](/#home-downloadhead) از وب‌سایت [nodejs.org](https://nodejs.org/)
 
-_If you want to download the package with bash:_
+_اگر می‌خواهید بسته را با bash دانلود کنید:_
 
 ```bash
 curl "https://nodejs.org/dist/latest/$(curl -s https://nodejs.org/dist/latest/ | grep "pkg" | cut -d'"' -f 2)" -o "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
 ```
 
-### Alternatives
+### جایگزین
 
-Using **[Homebrew](https://brew.sh/)**:
+با استفاده از **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-Using **[MacPorts](https://www.macports.org/)**:
+با استفاده از **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -176,15 +176,15 @@ port install nodejs<major version>
 port install nodejs7
 ```
 
-Using **[pkgsrc](https://pkgsrc.joyent.com/install-on-macos/)**:
+با استفاده از **[pkgsrc](https://pkgsrc.joyent.com/install-on-macos/)**:
 
-Install the binary package:
+نصب بسته باینری:
 
 ```bash
 pkgin -y install nodejs
 ```
 
-Or build manually from pkgsrc:
+یا ساخت دستی از pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
@@ -192,13 +192,11 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## n
 
-`n` is a simple to use Node.js version manager for Mac and Linux. Specify the target version to install using a rich syntax,
-or select from a menu of previously downloaded versions. The versions are installed system-wide or user-wide, and for more
-targeted use you can run a version directly from the cached downloads.
+`n` یک مدیر نسخه ساده برای استفاده Node.js برای Mac و Linux است. نسخه مورد نظر برای نصب را مشخص کنید، یا از میان منوی نسخه‌های قبلاً دانلود شده انتخاب نمایید. نسخه‌ها در سطح سیستم یا در سطح کاربر نصب می‌شوند و برای استفاده هدفمندتر می‌توانید نسخه‌ای را مستقیماً از دانلودهای ذخیره شده اجرا کنید.
 
-See the [homepage](https://github.com/tj/n) for install methods (bootstrap, npm, Homebrew, third-party), and all the usage details.
+برای روش‌های نصب (bootstrap, npm, Homebrew, third-party) و تمام جزئیات استفاده، به [صفحه اصلی](https://github.com/tj/n) مراجعه کنید.
 
-If you already have `npm` then installing `n` and then the newest LTS `node` version is as simple as:
+اگر قبلاً `npm` را داشته باشید، نصب `n` و سپس نسخه LTS جدیدترین `node` به این سادگی است:
 
 ```
 npm install -g n
@@ -207,13 +205,13 @@ n lts
 
 ## NetBSD
 
-Node.js is available in the pkgsrc tree:
+Node.js در pkgsrc tree موجود است:
 
 ```bash
 cd /usr/pkgsrc/lang/nodejs && make install
 ```
 
-Or install a binary package (if available for your platform) using pkgin:
+یا یک بسته باینری را نصب کنید (در صورت موجود بودن برای پلتفرم شما) با استفاده از pkgin:
 
 ```bash
 pkgin -y install nodejs
@@ -221,33 +219,29 @@ pkgin -y install nodejs
 
 ## Nodenv
 
-`nodenv` is a lightweight node version manager, similar to `nvm`. It's simple and predictable. A rich plugin ecosystem lets you tailor it to suit your needs. Use `nodenv` to pick a Node version for your application and guarantee that your development environment matches production.
+`nodenv` یک مدیر نسخه سبک Node، مشابه `nvm` است. ساده و قابل پیش‌بینی است. یک اکوسیستم پلاگین غنی به شما امکان می‌دهد آن را برای تطابق با نیازهایتان سفارشی کنید. از `nodenv` برای انتخاب نسخه Node برای برنامه خود استفاده کنید و اطمینان حاصل کنید که محیط توسعه شما با محیط تولید مطابقت دارد.
 
-Nodenv installation instructions are maintained [on its Github page](https://github.com/nodenv/nodenv#installation). Please visit that page to ensure you're following the latest version of the installation steps.
+دستورالعمل‌های نصب Nodenv در [صفحه گیت‌هاب آن](https://github.com/nodenv/nodenv#installation) نگهداری می‌شوند. لطفاً به آن صفحه مراجعه کنید تا از آخرین نسخه مراحل نصب پیروی کنید.
 
 ## nvm
 
-Node Version Manager is a bash script used to manage multiple released Node.js versions. It allows
-you to perform operations like install, uninstall, switch version, etc.
-To install nvm, use this [install script](https://github.com/nvm-sh/nvm#install--update-script).
+Node Version Manager یک اسکریپت bash است که برای مدیریت نسخه‌های مختلف منتشر شده Node.js استفاده می‌شود. به شما امکان می‌دهد عملیاتی مانند نصب، حذف، تغییر نسخه و غیره را انجام دهید.
+برای نصب nvm، از این [اسکریپت نصب](https://github.com/nvm-sh/nvm#install--update-script) استفاده کنید.
 
-On Unix / OS X systems Node.js built from source can be installed using
-[nvm](https://github.com/creationix/nvm) by installing into the location that nvm expects:
+در سیستم‌های Unix / OS X، می‌توانیم Node.js ساخته شده از سورس کد را با استفاده از [nvm](https://github.com/creationix/nvm) در مکانی که nvm انتظار دارد، نصب کنیم:
 
 ```bash
 env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
-After this you can use `nvm` to switch between released versions and versions
-built from source.
-For example, if the version of Node.js is v8.0.0-pre:
+پس از این می‌توانید از `nvm` برای سوئیچ بین نسخه‌های منتشر شده و نسخه‌های ساخته شده از سورس کد استفاده کنید.
+به عنوان مثال، اگر نسخه Node.js برابر با v8.0.0-pre باشد:
 
 ```bash
 nvm use 8
 ```
 
-Once the official release is out you will want to uninstall the version built
-from source:
+هنگامی که نسخه رسمی منتشر شد، باید نسخه ساخته شده از سوررس کد را حذف کنید:
 
 ```bash
 nvm uninstall 8
@@ -257,37 +251,37 @@ nvm uninstall 8
 
 #### Windows
 
-The `nvs` version manager is cross-platform and can be used on Windows, macOS, and Unix-like systems
+مدیر نسخه `nvs` چندسکویی است و می‌تواند در ویندوز، macOS و سیستم‌های شبیه یونیکس استفاده شود.
 
-To install `nvs` on Windows go to the [release page](https://github.com/jasongin/nvs/releases) here and download the MSI installer file of the latest release.
+برای نصب `nvs` در ویندوز به [صفحه انتشار](https://github.com/jasongin/nvs/releases) بروید و فایل نصب‌کننده MSI از آخرین نسخه را دانلود کنید.
 
-You can also use `chocolatey` to install it:
+همچنین می‌توانید از `chocolatey` برای نصب آن استفاده کنید:
 
 ```bash
 choco install nvs
 ```
 
-#### macOS,UnixLike
+#### macOS، UnixLike
 
-You can find the documentation regarding the installation steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
+می‌توانید مستندات مربوط به مراحل نصب `nvs` در سیستم‌های macOS/Unix-like را [اینجا](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux) پیدا کنید.
 
-#### Usage
+#### استفاده
 
-After this you can use `nvs` to switch between different versions of node.
+پس از این می‌توانید از `nvs` برای تغییر بین نسخه‌های مختلف node استفاده کنید.
 
-To add the latest version of node:
+برای اضافه کردن آخرین نسخه از node:
 
 ```bash
 nvs add latest
 ```
 
-Or to add the latest LTS version of node:
+یا برای اضافه کردن آخرین نسخه LTS از node:
 
 ```bash
 nvs add lts
 ```
 
-Then run the `nvs use` command to add a version of node to your `PATH` for the current shell:
+سپس دستور `nvs use` را اجرا کنید تا یک نسخه از node را به `PATH` برای شل فعلی اضافه کنید:
 
 ```bash
 $ nvs use lts
@@ -295,7 +289,7 @@ PATH -= %LOCALAPPDATA%\nvs\default
 PATH += %LOCALAPPDATA%\nvs\node\14.17.0\x64
 ```
 
-To add it to `PATH` permanently, use `nvs link`:
+برای اضافه کردن آن به `PATH` به صورت دائمی، از `nvs link` استفاده کنید:
 
 ```bash
 nvs link lts
@@ -303,46 +297,46 @@ nvs link lts
 
 ## OpenBSD
 
-Node.js is available through the ports system.
+Node.js از طریق سیستم پورت‌ها در دسترس است.
 
 ```bash
 /usr/ports/lang/node
 ```
 
-Using [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
+با استفاده از [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) در OpenBSD:
 
 ```bash
 pkg_add node
 ```
 
-## openSUSE and SLE
+## openSUSE و SLE
 
-Node.js is available in the main repositories under the following packages:
+Node.js در مخازن اصلی تحت بسته‌های زیر موجود است:
 
-- **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
-- **openSUSE Tumbleweed**: `nodejs20`
+- `nodejs10` ، `nodejs12` ، `nodejs14` :**openSUSE Leap 15.2**
+- - `nodejs20` :**openSUSE Tumbleweed**
 - **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, and `nodejs14`
-  (The "Web and Scripting Module" must be [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
-- **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, and `nodejs14`
-  (The "Web and Scripting Module" must be [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
+  (باید [ماژول "Web and Scripting"](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated) فعال شود.)
+- `nodejs10`، `nodejs12` ، `nodejs14` :**SUSE Linux Enterprise Server (SLES) 15 SP2**
+  (باید [ماژول "Web and Scripting"](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module) فعال شود.)
 
-For example, to install Node.js 14.x on openSUSE Leap 15.2, run the following as root:
+به عنوان مثال، برای نصب Node.js 14.x در openSUSE Leap 15.2، با دسترسی root دستور زیر را اجرا کنید:
 
 ```bash
 zypper install nodejs14
 ```
 
-Different major versions of Node can be installed and used concurrently.
+نسخه‌های مختلف اصلی Node می‌توانند همزمان نصب و استفاده شوند.
 
-## SmartOS and illumos
+## SmartOS و illumos
 
-SmartOS images come with pkgsrc pre-installed. On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal:
+image های SmartOS با pkgsrc از پیش نصب شده ارائه می‌شوند. در توزیع‌های دیگر illumos، ابتدا **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)** را نصب کنید، سپس می‌توانید بسته باینری را به صورت عادی نصب کنید:
 
 ```bash
 pkgin -y install nodejs
 ```
 
-Or build manually from pkgsrc:
+یا به صورت دستی از pkgsrc بسازید:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
@@ -350,11 +344,11 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## Snap
 
-[Node.js snaps](https://github.com/nodejs/snap) are available as [`node`](https://snapcraft.io/node) on the Snap store.
+[اسنپ ​​های Node.js](https://github.com/nodejs/snap) تحت عنوان [`node`](https://snapcraft.io/node) در فروشگاه Snap در دسترس هستند.
 
 ## Solus
 
-Solus provides Node.js in its main repository.
+Solus، بسته Node.js را در مخزن اصلی خود ارائه می‌دهد.
 
 ```bash
 sudo eopkg install nodejs
@@ -362,7 +356,7 @@ sudo eopkg install nodejs
 
 ## Void Linux
 
-Void Linux ships Node.js stable in the main repository.
+Void Linux نسخه پایدار Node.js را در مخزن اصلی خود ارائه می‌کند.
 
 ```bash
 xbps-install -Sy nodejs
@@ -370,11 +364,11 @@ xbps-install -Sy nodejs
 
 ## Windows
 
-Download the [Windows Installer](/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
+مستقیماً [نصب‌کننده ویندوز](/#home-downloadhead) را از وب‌سایت [nodejs.org](https://nodejs.org/) دانلود کنید.
 
-### Alternatives
+### جایگزین
 
-Using **[Winget](https://aka.ms/winget-cli)**:
+با استفاده از **[Winget](https://aka.ms/winget-cli)**:
 
 ```bash
 winget install OpenJS.NodeJS
@@ -382,10 +376,9 @@ winget install OpenJS.NodeJS
 winget install OpenJS.NodeJS.LTS
 ```
 
-After running one of the two commands above, it may be necessary to restart the
-terminal emulator before the `node` CLI command becomes available.
+پس از اجرای یکی از دو دستور بالا، ممکن است لازم باشد ترمینال را دوباره راه‌اندازی کنید تا دستور `node` در CLI در دسترس قرار بگیرد.
 
-Using **[Chocolatey](https://chocolatey.org/)**:
+با استفاده از **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -393,7 +386,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-Using **[Scoop](https://scoop.sh/)**:
+با استفاده از **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs
@@ -403,8 +396,7 @@ scoop install nodejs-lts
 
 ## z/OS
 
-IBM&reg; SDK for Node.js - z/OS&reg; is available in two installation formats,
-SMP/E and PAX. Select the installation format that applies to you:
+IBM&reg; SDK برای Node.js - z/OS&reg; در دو قالب نصب، SMP/E و PAX در دسترس است. قالب نصب مربوط به خود را انتخاب کنید:
 
-- [Installing and configuring SMP/E edition of Node.js on z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
-- [Installing and configuring PAX edition of Node.js on z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)
+- [نصب و پیکربندی نسخه SMP/E از Node.js در z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
+- [نصب و پیکربندی نسخه PAX از Node.js در z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)
