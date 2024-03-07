@@ -81,7 +81,7 @@ layout: home
 
     hasher.setEncoding('hex');
     // ensure you have a `package.json` file for this test!
-    hasher.write(await readFile('./package.json'));
+    hasher.write(await readFile('package.json'));
     hasher.end();
 
     const fileHash = hasher.read();
