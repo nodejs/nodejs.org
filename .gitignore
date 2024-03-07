@@ -34,3 +34,7 @@ tsconfig.tsbuildinfo
 
 # Sentry Config File
 .sentryclirc
+
+# jetbrains IDE stuff
+*.iml
+.idea/
