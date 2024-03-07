@@ -1,5 +1,6 @@
 {
   "**/*.{js,mjs,ts,tsx,md,mdx}": ["eslint --fix", "prettier --check --write"],
   "**/*.css": ["stylelint --allow-empty-input", "prettier --write"],
-  "**/*.{json,yml}": ["prettier --check --write"]
+  "**/*.{json,yml}": ["prettier --check --write"],
+  "**/__tests__/*.test.mjs": ["npx turbo test:staged"]
 }

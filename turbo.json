@@ -144,6 +144,16 @@
       ],
       "outputs": ["coverage/**", "junit.xml"]
     },
+    "test:staged": {
+      "inputs": [
+        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx,mjs}",
+        "{app,components,layouts,pages,styles}/**/*.css",
+        "{next-data,scripts,i18n}/**/*.{mjs,json}",
+        "{app,pages}/**/*.{mdx,md}",
+        "*.{md,mdx,json,ts,tsx,mjs,yml}"
+      ],
+      "outputs": ["coverage/**", "junit.xml"]
+    },
     "test": {
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx,mjs}",
