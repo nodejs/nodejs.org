@@ -1,5 +1,6 @@
 .avatarGroup {
   @apply flex
     h-8
-    items-center;
+    items-center
+    overflow-x-scroll;
 }

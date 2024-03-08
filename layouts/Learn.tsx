@@ -20,7 +20,7 @@ const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
         <WithSidebarCrossLinks navKey="learn" />
       </main>
 
-      <WithMetaBar />
+      <WithMetaBar enableGithubAvatar />
 
       <WithBreadcrumbs />
     </ArticleLayout>
