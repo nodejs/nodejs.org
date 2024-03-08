@@ -42,6 +42,7 @@ layout: home
 <section>
   <div>
     ```js displayName="Create an HTTP Server"
+    // make a file `server.mjs` and run with `node server.mjs`
     import { createServer } from 'node:http';
 
     const server = createServer((req, res) => {
@@ -56,6 +57,7 @@ layout: home
     ```
 
     ```js displayName="Write Tests"
+    // make a file `tests.mjs` and run with `node tests.mjs`
     import assert from 'node:assert';
     import test from 'node:test';
 
@@ -70,34 +72,37 @@ layout: home
     ```
 
     ```js displayName="Read and Hash a File"
+    // make a file `crypto.mjs` and run with `node crypto.mjs`
     import { createHash } from 'node:crypto';
     import { readFile } from 'node:fs/promises';
 
     const hasher = createHash('sha1');
-    const fileContent = await readFile('./package.json');
 
     hasher.setEncoding('hex');
-    hasher.write(fileContent);
+    // ensure you have a `package.json` file for this test!
+    hasher.write(await readFile('package.json'));
     hasher.end();
 
     const fileHash = hasher.read();
     ```
 
     ```js displayName="Read Streams"
+    // make a file `streams.mjs` and run with `node streams.mjs`
+    import { pipeline } from 'node:stream';
     import { createReadStream, createWriteStream } from 'node:fs';
+    import { createGzip } from 'node:zlib';
+    import { promisify } from 'node:util';
 
-    const res = await fetch('https://nodejs.org/dist/index.json');
-    const json = await res.json(); // yields a json object
-
-    const readableStream = createReadStream('./package.json');
-    const writableStream = createWriteStream('./package2.json');
-
-    readableStream.setEncoding('utf8');
-
-    readableStream.on('data', chunk => writableStream.write(chunk));
+    await promisify(pipeline)
+    ( // ensure you have a `package.json` file for this test!
+      createReadStream('package.json'),
+      createGzip(),
+      createWriteStream('package.json.gz')
+    );
     ```
 
     ```js displayName="Work with Threads"
+    // make a file `threads.mjs` and run with `node threads.mjs`
     import { Worker, isMainThread,
       workerData, parentPort } from 'node:worker_threads';
 
