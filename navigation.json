@@ -82,6 +82,10 @@
           "link": "/about",
           "label": "components.navigation.about.links.aboutSide"
         },
+        "branding": {
+          "link": "/about/branding",
+          "label": "components.navigation.about.links.branding"
+        },
         "governance": {
           "link": "/about/governance",
           "label": "components.navigation.about.links.governance"
