@@ -1,5 +1,5 @@
 ---
-title: Run JavaScript Everywhere
+title: JavaScript überall ausführen
 layout: home
 ---
 
@@ -7,23 +7,22 @@ layout: home
   <WithBadge section="index" />
 
   <div>
-    <h1 className="special">Run JavaScript Everywhere</h1>
+    <h1 className="special">JavaScript überall ausführen</h1>
 
-    Node.js® is a free, open-source, cross-platform JavaScript runtime
-    environment that lets developers create servers, web apps,
-    command line tools and scripts.
-
+    Node.js® ist eine kostenlose, quelloffene, plattformübergreifende JavaScript-Laufzeitumgebung,
+    mit der Entwickler Server, Webanwendungen
+    Kommandozeilen-Tools und Skripte erstellen können.
   </div>
 
   <div>
     <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
       {({ release }) => (
         <>
-          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+          <DownloadButton release={release}>Node.js (LTS) herunterladen</DownloadButton>
           <small>
-            Downloads Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
-            Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
+            Lade Node.js <b>{release.versionWithPrefix}</b> 
+            <sup title="Downloads a Node.js installer for your current platform">1</sup> mit Langzeitunterstützung herunter.
+            Node.js kann auch mit <a href="/download/package-manager">Paket-Managern</a> installiert werden.
           </small>
         </>
       )}
@@ -32,19 +31,19 @@ layout: home
     <WithNodeRelease status={"Current"}>
       {({ release }) => (
         <small>
-          Want new features sooner?
-          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> instead.
+          Möchtest du schneller neue Funktionen nutzen?
+          Hole dir <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="Downloads a Node.js installer for your current platform">1</sup> stattdessen.
         </small>
       )}
     </WithNodeRelease>
-
   </div>
 </section>
 
 <section>
   <div>
     ```js displayName="Create an HTTP Server"
+    // make a file `server.mjs` and run with `node server.mjs`
     import { createServer } from 'node:http';
 
     const server = createServer((req, res) => {
@@ -59,6 +58,7 @@ layout: home
     ```
 
     ```js displayName="Write Tests"
+    // make a file `tests.mjs` and run with `node tests.mjs`
     import assert from 'node:assert';
     import test from 'node:test';
 
@@ -73,34 +73,37 @@ layout: home
     ```
 
     ```js displayName="Read and Hash a File"
+    // make a file `crypto.mjs` and run with `node crypto.mjs`
     import { createHash } from 'node:crypto';
     import { readFile } from 'node:fs/promises';
 
     const hasher = createHash('sha1');
-    const fileContent = await readFile('./package.json');
 
     hasher.setEncoding('hex');
-    hasher.write(fileContent);
+    // ensure you have a `package.json` file for this test!
+    hasher.write(await readFile('package.json'));
     hasher.end();
 
     const fileHash = hasher.read();
     ```
 
     ```js displayName="Read Streams"
+    // make a file `streams.mjs` and run with `node streams.mjs`
+    import { pipeline } from 'node:stream';
     import { createReadStream, createWriteStream } from 'node:fs';
+    import { createGzip } from 'node:zlib';
+    import { promisify } from 'node:util';
 
-    const res = await fetch('https://nodejs.org/dist/index.json');
-    const json = await res.json(); // yields a json object
-
-    const readableStream = createReadStream('./package.json');
-    const writableStream = createWriteStream('./package2.json');
-
-    readableStream.setEncoding('utf8');
-
-    readableStream.on('data', chunk => writableStream.write(chunk));
+    await promisify(pipeline)
+    ( // ensure you have a `package.json` file for this test!
+      createReadStream('package.json'),
+      createGzip(),
+      createWriteStream('package.json.gz')
+    );
     ```
 
     ```js displayName="Work with Threads"
+    // make a file `threads.mjs` and run with `node threads.mjs`
     import { Worker, isMainThread,
       workerData, parentPort } from 'node:worker_threads';
 
@@ -113,9 +116,7 @@ layout: home
       parentPort.postMessage(btoa(source.toUpperCase()));
     }
     ```
-
   </div>
 
-Learn more what Node.js is able to offer with our [Learning materials](/learn).
-
+  Erfahren Sie mehr über die Möglichkeiten von Node.js mit unseren [Lernmaterialien](/learn).
 </section>
