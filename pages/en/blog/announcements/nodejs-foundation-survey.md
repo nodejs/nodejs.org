@@ -2,7 +2,7 @@
 date: '2016-04-12T13:00:00.000Z'
 category: announcements
 title: 'New Node.js Foundation Survey Reports New “Full Stack” In Demand Among Enterprise Developers'
-layout: blog-post.hbs
+layout: blog-post
 author: The Node.js Project
 ---
 

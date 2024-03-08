@@ -2,7 +2,7 @@
 date: '2017-02-22T14:41:04.442Z'
 category: community
 title: Node.js - Quality with Speed
-layout: blog-post.hbs
+layout: blog-post
 author: Michael Dawson and Myles Borins
 ---
 

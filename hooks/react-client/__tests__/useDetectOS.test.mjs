@@ -35,6 +35,7 @@ describe('useDetectOS', () => {
       expect(result.current).toStrictEqual({
         os: 'WIN',
         bitness: 64,
+        architecture: '',
       });
     });
   });
@@ -53,6 +54,7 @@ describe('useDetectOS', () => {
       expect(result.current).toStrictEqual({
         os: 'WIN',
         bitness: 64,
+        architecture: '',
       });
     });
   });
@@ -71,6 +73,7 @@ describe('useDetectOS', () => {
       expect(result.current).toStrictEqual({
         os: 'MAC',
         bitness: 86,
+        architecture: '',
       });
     });
   });

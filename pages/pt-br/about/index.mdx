@@ -1,6 +1,6 @@
 ---
 title: About Node.js®
-layout: about.hbs
+layout: about
 ---
 
 <div className="my-4 flex items-center justify-center">
@@ -46,12 +46,12 @@ synchronous methods of Node.js standard library. Because nothing blocks, scalabl
 reasonable to develop in Node.js.
 
 If some of this language is unfamiliar, there is a full article on
-[Blocking vs. Non-Blocking][].
+\[Blocking vs. Non-Blocking]\[].
 
 ---
 
 Node.js is similar in design to, and influenced by, systems like Ruby's
-[Event Machine][] and Python's [Twisted][]. Node.js takes the event model a bit
+\[Event Machine]\[] and Python's \[Twisted]\[]. Node.js takes the event model a bit
 further. It presents an event loop as a runtime construct instead of as a library. In other systems,
 there is always a blocking call to start the event-loop.
 Typically, behavior is defined through callbacks at the beginning of a script, and
@@ -66,8 +66,8 @@ library or framework.
 
 Node.js being designed without threads doesn't mean you can't take
 advantage of multiple cores in your environment. Child processes can be spawned
-by using our [`child_process.fork()`][] API, and are designed to be easy to
-communicate with. Built upon that same interface is the [`cluster`][] module,
+by using our \[`child_process.fork()`]\[] API, and are designed to be easy to
+communicate with. Built upon that same interface is the \[`cluster`]\[] module,
 which allows you to share sockets between processes to enable load balancing
 over your cores.
 

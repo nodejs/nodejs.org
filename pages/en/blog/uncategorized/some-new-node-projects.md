@@ -2,7 +2,7 @@
 date: '2011-08-29T15:30:41.000Z'
 category: uncategorized
 title: Some New Node Projects
-layout: blog-post.hbs
+layout: blog-post
 author: ryandahl
 ---
 

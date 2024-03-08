@@ -2,7 +2,7 @@
 date: '2012-12-21T00:45:13.000Z'
 category: feature
 title: A New Streaming API for Node v0.10
-layout: blog-post.hbs
+layout: blog-post
 author: Isaac Z. Schlueter
 ---
 

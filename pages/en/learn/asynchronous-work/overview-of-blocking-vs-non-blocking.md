@@ -1,6 +1,6 @@
 ---
 title: Overview of Blocking vs Non-Blocking
-layout: learn.hbs
+layout: learn
 authors: ovflowd, HassanBahati
 ---
 

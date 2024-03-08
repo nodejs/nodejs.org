@@ -1,6 +1,6 @@
 ---
 title: ECMAScript 2015 (ES6) and beyond
-layout: learn.hbs
+layout: learn
 authors: ovflowd
 ---
 

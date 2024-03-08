@@ -2,7 +2,7 @@
 date: '2015-12-04T12:00:00.000Z'
 category: weekly
 title: Weekly Update - Dec 4th, 2015
-layout: blog-post.hbs
+layout: blog-post
 author: 'Minwoo Jung (@jmwsoft)'
 ---
 

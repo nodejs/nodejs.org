@@ -2,7 +2,7 @@
 date: '2015-08-07T12:00:00.000Z'
 category: weekly
 title: Weekly Update - Aug 7th, 2015
-layout: blog-post.hbs
+layout: blog-post
 author: 'Steven Sinatra (@diagramatics)'
 ---
 

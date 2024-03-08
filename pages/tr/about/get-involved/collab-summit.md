@@ -1,6 +1,6 @@
 ---
-title: Collab Summit
-layout: about.hbs
+title: İşbirlikçi Zirvesi
+layout: about
 ---
 
 # Collaborator Summit

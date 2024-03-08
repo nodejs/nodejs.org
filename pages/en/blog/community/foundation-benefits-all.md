@@ -2,7 +2,7 @@
 date: '2015-05-15T22:50:46.000Z'
 category: community
 title: The Node.js Foundation benefits all
-layout: blog-post.hbs
+layout: blog-post
 author: Scott Hammond
 ---
 

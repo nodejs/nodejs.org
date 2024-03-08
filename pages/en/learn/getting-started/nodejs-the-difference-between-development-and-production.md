@@ -1,6 +1,6 @@
 ---
 title: Node.js, the difference between development and production
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, RenanTKN
 ---
 

@@ -1,31 +1,31 @@
 ---
-title: Project Governance
-layout: about.hbs
+title: Gouvernance du Projet
+layout: about
 ---
 
-# Project Governance
+# Gouvernance du Projet
 
-## Consensus Seeking Process
+## Processus de recherche de consensus
 
-The Node.js project follows a [Consensus Seeking][] decision making model.
+Le projet Node.js suit un modèle de prise de décision [Consensus Seeking][].
 
-## Collaborators
+## Collaborateurs
 
-The [nodejs/node][] core GitHub repository is maintained by the Collaborators
-who are added by the Technical Steering Committee ([TSC][]) on an ongoing basis.
+Le dépôt GitHub [nodejs/node][] core est maintenu par les Collaborateurs
+qui sont ajoutés par le Comité de pilotage technique ([TSC][]) sur une base continue.
 
-Individuals making significant and valuable contributions are made Collaborators
-and given commit-access to the project. These individuals are identified by the
-TSC and their nomination is discussed with the existing Collaborators.
+Les personnes qui apportent des contributions significatives et précieuses sont nommées collaborateurs
+et se voient attribuer un accès au projet. Ces personnes sont identifiées par le
+TSC et leur nomination est discutée avec les collaborateurs existants.
 
-For the current list of Collaborators, see the project's [README.md][].
+Pour la liste actuelle des collaborateurs, voir le [README.md][] du projet.
 
-A guide for Collaborators is maintained at [collaborator-guide.md][].
+Un guide pour les collaborateurs est disponible à l'adresse suivante : [collaborator-guide.md][].
 
-## Technical Steering Committee
+## Comité de pilotage technique
 
-The project is governed by the [Technical Steering Committee (TSC)][]
-which is responsible for high-level guidance of the project.
+Le projet est régi par le \[Comité de pilotage technique (CTP)]\[]
+qui est responsable de l'orientation à haut niveau du projet.
 
 [consensus seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members

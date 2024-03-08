@@ -1,6 +1,6 @@
 ---
 title: Memory
-layout: learn.hbs
+layout: learn
 ---
 
 # Memory

@@ -1,6 +1,6 @@
 ---
 title: How to publish a Node-API package
-layout: learn.hbs
+layout: learn
 ---
 
 # How to publish a Node-API version of a package alongside a non-Node-API version

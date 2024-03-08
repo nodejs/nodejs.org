@@ -1,6 +1,6 @@
 ---
 title: User Journey
-layout: learn.hbs
+layout: learn
 ---
 
 # User Journey

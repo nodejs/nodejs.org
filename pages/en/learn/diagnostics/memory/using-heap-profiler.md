@@ -1,6 +1,6 @@
 ---
 title: Using Heap Profiler
-layout: learn.hbs
+layout: learn
 ---
 
 # Using Heap Profiler

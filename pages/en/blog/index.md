@@ -1,4 +1,4 @@
 ---
 title: Blog
-layout: blog-category.hbs
+layout: blog-category
 ---

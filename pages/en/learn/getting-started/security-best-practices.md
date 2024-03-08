@@ -1,6 +1,6 @@
 ---
 title: Security Best Practices
-layout: learn.hbs
+layout: learn
 ---
 
 # Security Best Practices

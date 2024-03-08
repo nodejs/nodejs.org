@@ -2,7 +2,7 @@
 date: '2011-03-24T06:07:13.000Z'
 category: npm
 title: 'npm 1.0: Global vs Local installation'
-layout: blog-post.hbs
+layout: blog-post
 author: Isaac Schlueter
 ---
 
