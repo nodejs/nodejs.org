@@ -9,7 +9,7 @@ layout: about
 
 The Node.js project follows a [Consensus Seeking][] decision making model.
 
-## Collaborators
+## Colaboradores
 
 The [nodejs/node][] core GitHub repository is maintained by the Collaborators
 who are added by the Technical Steering Committee ([TSC][]) on an ongoing basis.
