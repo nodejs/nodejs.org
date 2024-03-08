@@ -3,23 +3,23 @@ title: Contributing
 layout: about
 ---
 
-# Contributing
+# Contribuindo
 
-Thank you for your interest in contributing to Node.js! There are multiple ways and places you can contribute, and we're here to help facilitate that.
+Agradecemos seu interesse em contribuir para o Node.js! Existem várias maneiras e locais nos quais você pode contribuir, e estamos aqui para facilitar esse processo.
 
-## Asking for General Help
+## Pedindo Ajuda Geral
 
-Because the level of activity in the `nodejs/node` repository is so high, questions or requests for general help using Node.js should be directed at the [Node.js help repository](https://github.com/nodejs/help/issues).
+Devido ao alto nível de atividade no repositório `nodejs/node`, perguntas ou solicitações de ajuda geral usando Node.js devem ser direcionadas ao [repositório de ajuda do Node.js](https://github.com/nodejs/help/issues).
 
-## Reporting an Issue
+## Reportando um problema
 
-If you have found what you believe to be an issue with Node.js please do not hesitate to file an issue on the GitHub project. When filing your issue please make sure you can express the issue with a reproducible test case, and that test case should not include any external dependencies. That is to say, the test case can be executed without anything more than Node.js itself.
+Se você encontrou o que acredita ser um problema com o Node.js, por favor não hesite em reportá-lo no GitHub do projeto. Quando for reportar um problema, certifique-se de descrevê-lo juntamente com um caso de teste reprodúzivel. Este caso de teste não deve incluir nenhuma dependência externa, ou seja, o caso de teste pode ser executado sem nada mais do que o próprio Node.js.
 
-When reporting an issue we also need as much information about your environment that you can include. We never know what information will be pertinent when trying to narrow down the issue. Please include at least the following information:
+Quando estiver reportando um problema, envie o máximo de informações possíveis sobre o ambiente em que este ocorreu. Nós nunca sabemos qual informação será importante quando tentamos restringir as causas do problema. Por favor, inclua ao menos as seguintes informações:
 
-- Version of Node.js
-- Platform you're running on (macOS, SmartOS, Linux, Windows)
-- Architecture you're running on (32bit or 64bit and x86 or ARM)
+- Versão do Node.js
+- Plataforma em que você está executando (macOS, SmartOS, Linux, Windows)
+- Arquitetura em que você está executando (32 bits ou 64 bits e x86 ou ARM)
 
 The Node.js project is currently managed across a number of separate GitHub repositories, each with their own separate issues database. If possible, please direct any issues you are reporting to the appropriate repository but don't worry if things happen to get put in the wrong place, the community of contributors will be more than happy to help get you pointed in the right direction.
 
