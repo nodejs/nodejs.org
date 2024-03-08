@@ -98,7 +98,7 @@ layout: home
     ( // ensure you have a `package.json` file for this test!
       createReadStream('package.json'),
       createGzip(),
-      createWriteStream('package.json')
+      createWriteStream('package.json.gz')
     );
     ```
 
