@@ -16,7 +16,10 @@ const Tabs: FC<PropsWithChildren<TabsProps>> = ({
   children,
   ...props
 }) => (
-  <TabsPrimitive.Root {...props}>
+  <TabsPrimitive.Root
+    {...props}
+    className={[styles.tabsRoot, props.className].filter(Boolean).join(' ')}
+  >
     <TabsPrimitive.List className={styles.tabsList}>
       {tabs.map(tab => (
         <TabsPrimitive.Trigger
