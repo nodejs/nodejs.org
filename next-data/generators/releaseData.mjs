@@ -2,8 +2,6 @@
 
 import nodevu from '@nodevu/core';
 
-import { fetchNodeJsChangelog } from '@/util/fetchNodeJsChangelog';
-
 // Gets the appropriate release status for each major release
 const getNodeReleaseStatus = (now, support) => {
   const { endOfLife, maintenanceStart, ltsStart, currentStart } = support;
@@ -53,9 +51,6 @@ const generateReleaseData = () => {
         // Get the major release status based on our Release Schedule
         const status = getNodeReleaseStatus(new Date(), support);
 
-        // Get the raw changelog for the latest minor for a given major
-        const changelog = await fetchNodeJsChangelog(latestVersion.semver.raw);
-
         return {
           ...support,
           status,
@@ -68,7 +63,6 @@ const generateReleaseData = () => {
           v8: latestVersion.dependencies.v8 || '',
           releaseDate: latestVersion.releaseDate || '',
           modules: latestVersion.modules.version || '',
-          changelog,
         };
       })
     );
