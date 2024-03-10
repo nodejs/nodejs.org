@@ -61,6 +61,7 @@
 .centeredLayout {
   @apply flex
     w-full
+    min-w-0
     items-center
     justify-center
     px-4
@@ -117,7 +118,7 @@
     &:nth-of-type(2) {
       @apply flex
           min-w-0
-          max-w-md
+          max-w-full
           flex-[1_1]
           flex-col
           items-center
@@ -126,7 +127,9 @@
           lg:max-w-3xl;
 
       > div {
-        @apply w-fit max-w-full;
+        @apply w-fit
+          max-w-md
+          md:max-w-full;
       }
 
       > p {
