@@ -1,4 +1,5 @@
 import { provideChangelogData } from '@/next-data/providers/changelogData';
+import provideReleaseData from '@/next-data/providers/releaseData';
 import { VERCEL_REVALIDATE } from '@/next.constants.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 
@@ -16,11 +17,18 @@ export const GET = async (_: Request, { params }: StaticParams) => {
 };
 
 // This function generates the static paths that come from the dynamic segments
-// `[locale]/next-data/release-data/` and returns an array of all available static paths
+// `[locale]/next-data/changelog-data/[version]` and returns an array of all available static paths
 // This is used for ISR static validation and generation
-export const generateStaticParams = async () => [
-  { locale: defaultLocale.code },
-];
+export const generateStaticParams = async () => {
+  const releases = provideReleaseData();
+
+  const mappedParams = releases.map(release => ({
+    locale: defaultLocale.code,
+    version: String(release.versionWithPrefix),
+  }));
+
+  return mappedParams;
+};
 
 // Enforces that only the paths from `generateStaticParams` are allowed, giving 404 on the contrary
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
