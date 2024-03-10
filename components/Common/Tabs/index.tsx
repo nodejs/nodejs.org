@@ -1,4 +1,5 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs';
+import classNames from 'classnames';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 
 import styles from './index.module.css';
@@ -18,7 +19,7 @@ const Tabs: FC<PropsWithChildren<TabsProps>> = ({
 }) => (
   <TabsPrimitive.Root
     {...props}
-    className={[styles.tabsRoot, props.className].filter(Boolean).join(' ')}
+    className={classNames(styles.tabsRoot, props.className)}
   >
     <TabsPrimitive.List className={styles.tabsList}>
       {tabs.map(tab => (
