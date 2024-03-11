@@ -127,7 +127,7 @@
           lg:max-w-3xl;
 
       > div {
-        @apply w-fit
+        @apply w-full
           max-w-md
           md:max-w-full;
       }
