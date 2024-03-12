@@ -5,7 +5,7 @@ import type { FC } from 'react';
 
 import { ReleaseContext } from '@/providers/releaseProvider';
 
-import LinkWithArrow from './LinkWithArrow';
+import LinkWithArrow from '@/components/Downloads/Release/LinkWithArrow';
 
 const NpmLink: FC = () => {
   const { release } = useContext(ReleaseContext);
