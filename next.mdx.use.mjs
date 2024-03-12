@@ -22,6 +22,7 @@ import Link from './components/Link';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
 import MDXCodeBox from './components/MDX/CodeBox';
 import MDXCodeTabs from './components/MDX/CodeTabs';
+import MDXImage from './components/MDX/Image';
 import SearchPage from './components/MDX/SearchPage';
 import WithBadge from './components/withBadge';
 import WithBanner from './components/withBanner';
@@ -96,4 +97,6 @@ export const htmlComponents = {
   blockquote: Blockquote,
   // Renders a CodeBox Component for `pre` tags
   pre: MDXCodeBox,
+  // Renders an Image Component for `img` tags
+  img: MDXImage,
 };
