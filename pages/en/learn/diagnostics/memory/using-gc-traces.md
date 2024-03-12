@@ -23,10 +23,10 @@ and what is the outcome.
 
 For the proposal of this guide, we'll use this script:
 
-```js
+```mjs
 // script.mjs
 
-import os from 'os';
+import os from 'node:os';
 
 let len = 1_000_000;
 const entries = new Set();
@@ -246,10 +246,10 @@ our entries, we could use a file.
 
 Let's modify our script a bit:
 
-```js
+```mjs
 // script-fix.mjs
-import os from 'os';
-import fs from 'fs/promises';
+import os from 'node:os';
+import fs from 'node:fs/promises';
 
 let len = 1_000_000;
 const fileName = `entries-${Date.now()}`;
@@ -332,8 +332,8 @@ v8.setFlagsFromString('--notrace-gc');
 In Node.js, you can use [performance hooks][] to trace
 garbage collection.
 
-```js
-const { PerformanceObserver } = require('perf_hooks');
+```cjs
+const { PerformanceObserver } = require('node:perf_hooks');
 
 // Create a performance observer
 const obs = new PerformanceObserver(list => {

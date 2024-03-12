@@ -17,8 +17,16 @@ the API docs for each of those.
 Any node web server application will at some point have to create a web server
 object. This is done by using [`createServer`][].
 
-```js
+```cjs
 const http = require('node:http');
+
+const server = http.createServer((request, response) => {
+  // magic happens here!
+});
+```
+
+```mjs
+import http from 'node:http';
 
 const server = http.createServer((request, response) => {
   // magic happens here!
@@ -138,8 +146,31 @@ At this point, we've covered creating a server, and grabbing the method, URL,
 headers and body out of requests. When we put that all together, it might look
 something like this:
 
-```js
+```cjs
 const http = require('node:http');
+
+http
+  .createServer((request, response) => {
+    const { headers, method, url } = request;
+    let body = [];
+    request
+      .on('error', err => {
+        console.error(err);
+      })
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        // At this point, we have the headers, method, url and body, and can now
+        // do whatever we need to in order to respond to this request.
+      });
+  })
+  .listen(8080); // Activates this server, listening on port 8080.
+```
+
+```mjs
+import http from 'node:http';
 
 http
   .createServer((request, response) => {
@@ -254,8 +285,48 @@ Building on the earlier example, we're going to make a server that sends back
 all of the data that was sent to us by the user. We'll format that data as JSON
 using `JSON.stringify`.
 
-```js
+```cjs
 const http = require('node:http');
+
+http
+  .createServer((request, response) => {
+    const { headers, method, url } = request;
+    let body = [];
+    request
+      .on('error', err => {
+        console.error(err);
+      })
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        // BEGINNING OF NEW STUFF
+
+        response.on('error', err => {
+          console.error(err);
+        });
+
+        response.statusCode = 200;
+        response.setHeader('Content-Type', 'application/json');
+        // Note: the 2 lines above could be replaced with this next one:
+        // response.writeHead(200, {'Content-Type': 'application/json'})
+
+        const responseBody = { headers, method, url, body };
+
+        response.write(JSON.stringify(responseBody));
+        response.end();
+        // Note: the 2 lines above could be replaced with this next one:
+        // response.end(JSON.stringify(responseBody))
+
+        // END OF NEW STUFF
+      });
+  })
+  .listen(8080);
+```
+
+```mjs
+import http from 'node:http';
 
 http
   .createServer((request, response) => {
@@ -301,8 +372,26 @@ sends whatever data is received in the request right back in the response. All
 we need to do is grab the data from the request stream and write that data to
 the response stream, similar to what we did previously.
 
-```js
+```cjs
 const http = require('node:http');
+
+http
+  .createServer((request, response) => {
+    let body = [];
+    request
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        response.end(body);
+      });
+  })
+  .listen(8080);
+```
+
+```mjs
+import http from 'node:http';
 
 http
   .createServer((request, response) => {
@@ -327,8 +416,31 @@ conditions:
 
 In any other case, we want to simply respond with a 404.
 
-```js
+```cjs
 const http = require('node:http');
+
+http
+  .createServer((request, response) => {
+    if (request.method === 'POST' && request.url === '/echo') {
+      let body = [];
+      request
+        .on('data', chunk => {
+          body.push(chunk);
+        })
+        .on('end', () => {
+          body = Buffer.concat(body).toString();
+          response.end(body);
+        });
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
+```
+
+```mjs
+import http from 'node:http';
 
 http
   .createServer((request, response) => {
@@ -360,8 +472,23 @@ is a [`ReadableStream`][] and the `response` object is a [`WritableStream`][].
 That means we can use [`pipe`][] to direct data from one to the other. That's
 exactly what we want for an echo server!
 
-```js
+```cjs
 const http = require('node:http');
+
+http
+  .createServer((request, response) => {
+    if (request.method === 'POST' && request.url === '/echo') {
+      request.pipe(response);
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
+```
+
+```mjs
+import http from 'node:http';
 
 http
   .createServer((request, response) => {
@@ -390,6 +517,29 @@ On the response, we'll just log the error to `stderr`.
 
 ```js
 const http = require('node:http');
+
+http
+  .createServer((request, response) => {
+    request.on('error', err => {
+      console.error(err);
+      response.statusCode = 400;
+      response.end();
+    });
+    response.on('error', err => {
+      console.error(err);
+    });
+    if (request.method === 'POST' && request.url === '/echo') {
+      request.pipe(response);
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
+```
+
+```js
+import http from 'node:http';
 
 http
   .createServer((request, response) => {
