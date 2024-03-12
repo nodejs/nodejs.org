@@ -40,7 +40,7 @@ const WithMetaBar: FC<WithMetaBarProps> = ({ enableGithubAvatar }) => {
         'components.metabar.readingTime': readingTime.text,
         ...(enableGithubAvatar && {
           [`components.metabar.${avatars.length > 1 ? 'authors' : 'author'}`]: (
-            <AvatarGroup avatars={avatars} />
+            <AvatarGroup avatars={avatars} limit={8} />
           ),
         }),
         'components.metabar.contribute': (
