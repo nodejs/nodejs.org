@@ -64,7 +64,8 @@ export const generateStaticParams = async () => [
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#runtime
 export const runtime = VERCEL_ENV ? 'edge' : 'nodejs';
 
-// Enforces that only the paths from `generateStaticParams` are allowed, giving 404 on the contrary
+// In this case we want to catch-all possible requests. This ensures that we always generate and
+// serve the OpenGrapgh images independently on the locale
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
 export const dynamicParams = true;
 
