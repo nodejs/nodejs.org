@@ -66,7 +66,7 @@ export const mdxComponents = {
     BitnessDropdown: BitnessDropdown,
     // Renders a drop-down menu from which the operating system can select
     OperatingSystemDropdown: OperatingSystemDropdown,
-    // Renders a link to the NPM version of the selected release
+    // Renders a link to the npm version of the selected release
     NpmLink: NpmLink,
     // Renders a release version of the selected release
     Version: ReleaseVersion,
