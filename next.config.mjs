@@ -109,6 +109,8 @@ const nextConfig = {
 const millionConfig = {
   // support react server components
   auto: { rsc: true },
+  // We don't want to send telemetry data to Million
+  telemetry: false,
 };
 
 /** @type {import('@sentry/cli').SentryCliOptions} */
