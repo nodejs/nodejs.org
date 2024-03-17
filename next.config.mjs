@@ -1,6 +1,7 @@
 'use strict';
 
 import { withSentryConfig } from '@sentry/nextjs';
+import million from 'million/compiler';
 import withNextIntl from 'next-intl/plugin';
 
 import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
@@ -14,6 +15,9 @@ import {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // We want to enforce React to run within its strict mode
+  // This is a requirement for Million.js
+  reactStrictMode: true,
   // We intentionally disable Next.js's built-in i18n support
   // as we dom have our own i18n and internationalisation engine
   i18n: null,
@@ -27,6 +31,8 @@ const nextConfig = {
   // We allow the BASE_PATH to be overridden in case that the Website
   // is being built on a subdirectory (e.g. /nodejs-website)
   basePath: BASE_PATH,
+  // Numerous next/image specific configurations based on security
+  // and optimisation policies for the Node.js website
   images: {
     // We disable image optimisation during static export builds
     unoptimized: ENABLE_STATIC_EXPORT,
@@ -127,10 +133,13 @@ const sentryConfig = {
 // Next.js Configuration with `next.intl` enabled
 const nextWithIntl = withNextIntl('./i18n.tsx')(nextConfig);
 
+// Enables Million.js React Compiler for Next.js
+const nextWithMillion = million.next(nextWithIntl, { auto: true });
+
 // Next.js Configuration with `sentry` enabled
 const nextWithSentry = withSentryConfig(
-  // Next.js Config with i18n Configuration
-  nextWithIntl,
+  // Next.js Config with i18n Middlewares and Million.js
+  nextWithMillion,
   // Default Sentry Settings
   sentrySettings,
   // Default Sentry Extension Configuration
