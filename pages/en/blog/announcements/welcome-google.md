@@ -2,7 +2,7 @@
 date: '2016-03-29T13:00:00.000Z'
 category: announcements
 title: 'Welcome Google Cloud Platform!'
-layout: blog-post.hbs
+layout: blog-post
 author: The Node.js Project
 ---
 

@@ -137,7 +137,7 @@ At the top of the markdown file, within the Markdown Frontmatter, set a page the
 ```markdown
 ---
 title: Title of the Page
-layout: layout-name.hbs
+layout: layout-name
 ---
 
 [Content of the Page]
@@ -389,7 +389,7 @@ They are responsible for adding additional styling and structure surrounding the
 Layouts are defined within the `layouts` folder.
 They are React Components that receive the `children` prop, which is the transformed MDX content of the Markdown file.
 
-Each Page layout is configured within their Markdown's Frontmatter as `layout: name-of-layout.hbs`.
+Each Page layout is configured within their Markdown's Frontmatter as `layout: name-of-layout`.
 
 ### How we style the Website?
 
@@ -499,3 +499,4 @@ If you're unfamiliar or curious about something, we recommend opening a Discussi
 [Shiki]: https://github.com/shikijs/shiki
 [Tailwind]: https://tailwindcss.com/
 [Radix UI]: https://www.radix-ui.com/
+[`next-intl`]: https://www.npmjs.com/package/next-intl

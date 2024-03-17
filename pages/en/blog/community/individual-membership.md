@@ -2,7 +2,7 @@
 date: '2015-11-04T12:00:00.000Z'
 category: community
 title: Node.js Foundation Individual Membership Now Open
-layout: blog-post.hbs
+layout: blog-post
 author: mikeal
 ---
 

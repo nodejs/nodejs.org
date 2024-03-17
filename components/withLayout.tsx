@@ -11,14 +11,14 @@ import SearchLayout from '@/layouts/Search';
 import type { Layouts } from '@/types';
 
 const layouts = {
-  'about.hbs': AboutLayout,
-  'home.hbs': HomeLayout,
-  'learn.hbs': LearnLayout,
-  'page.hbs': DefaultLayout,
-  'blog-post.hbs': PostLayout,
-  'blog-category.hbs': BlogLayout,
-  'search.hbs': SearchLayout,
-  'download.hbs': DownloadLayout,
+  about: AboutLayout,
+  home: HomeLayout,
+  learn: LearnLayout,
+  page: DefaultLayout,
+  'blog-post': PostLayout,
+  'blog-category': BlogLayout,
+  search: SearchLayout,
+  download: DownloadLayout,
 } satisfies Record<Layouts, FC>;
 
 type WithLayouProps<L = Layouts> = PropsWithChildren<{ layout: L }>;

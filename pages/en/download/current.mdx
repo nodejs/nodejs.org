@@ -1,17 +1,17 @@
 ---
-layout: download.hbs
+layout: download
 title: Download Node.js®
 subtitle: Download Node.js the way you want.
 ---
 
 <section>
-  I want the <Release.VersionDropdown /> version of Node.js for <Release.OperatingSystemDropdown exclude={["LINUX"]} /> running <Release.BitnessDropdown />
+I want the <Release.VersionDropdown /> version of Node.js for <Release.OperatingSystemDropdown exclude={["LINUX"]} /> running <Release.BitnessDropdown />
 
-  <Release.DownloadButton kind="installer" />
+<Release.DownloadButton kind={"installer"} />
 </section>
 
 <section>
-Node.js includes <LinkWithArrow href="https://npmjs.com">npm</LinkWithArrow> (<Release.NpmVersion />) and corepack.
+Node.js includes <Release.NpmLink />.
 
 Read the changelog for <Release.ChangelogLink>this version</Release.ChangelogLink>
 

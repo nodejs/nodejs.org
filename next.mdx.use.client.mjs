@@ -6,6 +6,7 @@ import LinkWithArrow from './components/Downloads/Release/LinkWithArrow';
 import Link from './components/Link';
 import MDXCodeBox from './components/MDX/CodeBox';
 import MDXCodeTabs from './components/MDX/CodeTabs';
+import MDXImage from './components/MDX/Image';
 
 /**
  * A full list of React Components that we want to pass through to MDX
@@ -33,4 +34,6 @@ export const htmlComponents = {
   blockquote: Blockquote,
   // Renders a CodeBox Component for `pre` tags
   pre: MDXCodeBox,
+  // Renders an Image Component for `img` tags
+  img: MDXImage,
 };

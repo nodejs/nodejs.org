@@ -29,7 +29,7 @@ export const IGNORED_ROUTES = [
  */
 export const DYNAMIC_ROUTES = new Map([
   // Provides Routes for all Blog Categories
-  ...provideBlogCategories().map(c => [`blog/${c}`, 'blog-category.hbs']),
+  ...provideBlogCategories().map(c => [`blog/${c}`, 'blog-category']),
   // Provides Routes for all Blog Categories w/ Pagination
   ...provideBlogCategories()
     // retrieves the amount of pages for each blog category
@@ -38,7 +38,7 @@ export const DYNAMIC_ROUTES = new Map([
     // each page for a category (i.e. blog/all/page/1)
     .map(([c, t]) => [...Array(t).keys()].map(p => `blog/${c}/page/${p + 1}`))
     // creates a tuple of each pathname and layout for the route
-    .map(paths => paths.map(path => [path, 'blog-category.hbs']))
+    .map(paths => paths.map(path => [path, 'blog-category']))
     // flattens the array since we have a .map inside another .map
     .flat(),
 ]);
@@ -91,4 +91,5 @@ export const PAGE_VIEWPORT = {
   ],
   width: 'device-width',
   initialScale: 1,
+  maximumScale: 1,
 };

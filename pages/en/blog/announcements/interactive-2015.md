@@ -2,7 +2,7 @@
 date: '2015-09-10T17:00:00.000Z'
 category: announcements
 title: Node.js Interactive
-layout: blog-post.hbs
+layout: blog-post
 author: The Node.js Project
 ---
 

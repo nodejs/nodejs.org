@@ -1,6 +1,6 @@
 ---
 title: Working with folders in Node.js
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, liangpeili, LaRuaNa, ahmadawais, clean99
 ---
 
@@ -16,8 +16,22 @@ Use `fs.access()` (and its promise-based `fsPromises.access()` counterpart) to c
 
 Use `fs.mkdir()` or `fs.mkdirSync()` or `fsPromises.mkdir()` to create a new folder.
 
-```js
+```cjs
 const fs = require('node:fs');
+
+const folderName = '/Users/joe/test';
+
+try {
+  if (!fs.existsSync(folderName)) {
+    fs.mkdirSync(folderName);
+  }
+} catch (err) {
+  console.error(err);
+}
+```
+
+```mjs
+import fs from 'node:fs';
 
 const folderName = '/Users/joe/test';
 
@@ -36,8 +50,16 @@ Use `fs.readdir()` or `fs.readdirSync()` or `fsPromises.readdir()` to read the c
 
 This piece of code reads the content of a folder, both files and subfolders, and returns their relative path:
 
-```js
+```cjs
 const fs = require('node:fs');
+
+const folderPath = '/Users/joe';
+
+fs.readdirSync(folderPath);
+```
+
+```mjs
+import fs from 'node:fs';
 
 const folderPath = '/Users/joe';
 
@@ -54,8 +76,22 @@ fs.readdirSync(folderPath).map(fileName => {
 
 You can also filter the results to only return the files, and exclude the folders:
 
-```js
+```cjs
 const fs = require('node:fs');
+
+const isFile = fileName => {
+  return fs.lstatSync(fileName).isFile();
+};
+
+fs.readdirSync(folderPath)
+  .map(fileName => {
+    return path.join(folderPath, fileName);
+  })
+  .filter(isFile);
+```
+
+```mjs
+import fs from 'node:fs';
 
 const isFile = fileName => {
   return fs.lstatSync(fileName).isFile();
@@ -72,8 +108,19 @@ fs.readdirSync(folderPath)
 
 Use `fs.rename()` or `fs.renameSync()` or `fsPromises.rename()` to rename folder. The first parameter is the current path, the second the new path:
 
-```js
+```cjs
 const fs = require('node:fs');
+
+fs.rename('/Users/joe', '/Users/roger', err => {
+  if (err) {
+    console.error(err);
+  }
+  // done
+});
+```
+
+```mjs
+import fs from 'node:fs';
 
 fs.rename('/Users/joe', '/Users/roger', err => {
   if (err) {
@@ -85,8 +132,18 @@ fs.rename('/Users/joe', '/Users/roger', err => {
 
 `fs.renameSync()` is the synchronous version:
 
-```js
+```cjs
 const fs = require('node:fs');
+
+try {
+  fs.renameSync('/Users/joe', '/Users/roger');
+} catch (err) {
+  console.error(err);
+}
+```
+
+```mjs
+import fs from 'node:fs';
 
 try {
   fs.renameSync('/Users/joe', '/Users/roger');
@@ -97,7 +154,7 @@ try {
 
 `fsPromises.rename()` is the promise-based version:
 
-```js
+```cjs
 const fs = require('node:fs/promises');
 
 async function example() {
@@ -110,12 +167,34 @@ async function example() {
 example();
 ```
 
+```mjs
+import fs from 'node:fs/promises';
+
+try {
+  await fs.rename('/Users/joe', '/Users/roger');
+} catch (err) {
+  console.log(err);
+}
+```
+
 ## Remove a folder
 
 Use `fs.rmdir()` or `fs.rmdirSync()` or `fsPromises.rmdir()` to remove a folder.
 
-```js
+```cjs
 const fs = require('node:fs');
+
+fs.rmdir(dir, err => {
+  if (err) {
+    throw err;
+  }
+
+  console.log(`${dir} is deleted!`);
+});
+```
+
+```mjs
+import fs from 'node:fs';
 
 fs.rmdir(dir, err => {
   if (err) {
@@ -130,8 +209,20 @@ To remove a folder that has contents use `fs.rm()` with the option `{ recursive:
 
 `{ recursive: true, force: true }` makes it so that exceptions will be ignored if the folder does not exist.
 
-```js
+```cjs
 const fs = require('node:fs');
+
+fs.rm(dir, { recursive: true, force: true }, err => {
+  if (err) {
+    throw err;
+  }
+
+  console.log(`${dir} is deleted!`);
+});
+```
+
+```mjs
+import fs from 'node:fs';
 
 fs.rm(dir, { recursive: true, force: true }, err => {
   if (err) {

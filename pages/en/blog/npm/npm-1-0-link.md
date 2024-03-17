@@ -2,7 +2,7 @@
 date: '2011-04-07T00:40:33.000Z'
 category: npm
 title: 'npm 1.0: link'
-layout: blog-post.hbs
+layout: blog-post
 author: Isaac Schlueter
 ---
 

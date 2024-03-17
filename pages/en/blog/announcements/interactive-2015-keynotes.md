@@ -2,7 +2,7 @@
 date: '2015-11-20T09:00:00.000Z'
 category: announcements
 title: Keynotes for Node.js Interactive 2015 Announced
-layout: blog-post.hbs
+layout: blog-post
 author: The Node.js Project
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Understanding process.nextTick()
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais, ovflowd, marksist300
 ---
 

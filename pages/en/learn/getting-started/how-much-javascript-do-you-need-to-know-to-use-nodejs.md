@@ -1,6 +1,6 @@
 ---
 title: 'How much JavaScript do you need to know to use Node.js?'
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmadawais, elanandkumar, ovflowd, vaishnav-mk
 ---
 

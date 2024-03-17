@@ -7,7 +7,7 @@ import BitnessDropdown from './components/Downloads/Release/BitnessDropdown';
 import BlogPostLink from './components/Downloads/Release/BlogPostLink';
 import ChangelogLink from './components/Downloads/Release/ChangelogLink';
 import ReleaseDownloadButton from './components/Downloads/Release/DownloadButton';
-import NpmVersion from './components/Downloads/Release/NpmVersion';
+import NpmLink from './components/Downloads/Release/NpmLink';
 import OperatingSystemDropdown from './components/Downloads/Release/OperatingSystemDropdown';
 import PlatformDropdown from './components/Downloads/Release/PlatformDropdown';
 import ReleaseCodeBox from './components/Downloads/Release/ReleaseCodeBox';
@@ -54,8 +54,8 @@ export const mdxComponents = {
     BitnessDropdown: BitnessDropdown,
     // Renders a drop-down menu from which the operating system can select
     OperatingSystemDropdown: OperatingSystemDropdown,
-    // Renders a npm version of the selected release
-    NpmVersion: NpmVersion,
+    // Renders a link to the npm version of the selected release
+    NpmLink: NpmLink,
     // Renders a release version of the selected release
     Version: ReleaseVersion,
     // Renders a release status of the selected release

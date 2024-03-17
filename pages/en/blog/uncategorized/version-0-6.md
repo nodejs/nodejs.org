@@ -2,7 +2,7 @@
 date: '2011-10-25T22:26:23.000Z'
 category: uncategorized
 title: Version 0.6 Coming Soon
-layout: blog-post.hbs
+layout: blog-post
 author: ryandahl
 ---
 

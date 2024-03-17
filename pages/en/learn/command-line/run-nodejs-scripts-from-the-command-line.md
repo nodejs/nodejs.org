@@ -1,6 +1,6 @@
 ---
 title: Run Node.js scripts from the command line
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, akazyti, AugustinMauroy
 ---
 

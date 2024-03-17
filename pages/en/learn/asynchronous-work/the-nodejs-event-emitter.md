@@ -1,6 +1,6 @@
 ---
 title: The Node.js Event emitter
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, ovflowd
 ---
 
@@ -14,8 +14,14 @@ This module, in particular, offers the `EventEmitter` class, which we'll use to 
 
 You initialize that using
 
-```js
+```cjs
 const EventEmitter = require('node:events');
+
+const eventEmitter = new EventEmitter();
+```
+
+```mjs
+import EventEmitter from 'node:events';
 
 const eventEmitter = new EventEmitter();
 ```

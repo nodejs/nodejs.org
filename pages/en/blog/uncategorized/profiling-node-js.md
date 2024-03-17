@@ -2,7 +2,7 @@
 date: '2012-04-25T20:48:58.000Z'
 category: uncategorized
 title: Profiling Node.js
-layout: blog-post.hbs
+layout: blog-post
 author: Dave Pacheco
 ---
 

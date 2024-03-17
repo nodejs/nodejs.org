@@ -9,7 +9,7 @@ const LinkWithArrow: FC<ComponentProps<typeof Link>> = ({
 }) => (
   <Link {...props}>
     {children}
-    <ArrowUpRightIcon className="ml-1 inline w-3 fill-white" />
+    <ArrowUpRightIcon className="ml-1 inline w-3 fill-neutral-600 dark:fill-white" />
   </Link>
 );
 

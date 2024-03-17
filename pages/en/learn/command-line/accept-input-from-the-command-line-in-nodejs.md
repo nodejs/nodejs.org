@@ -1,6 +1,6 @@
 ---
 title: Accept input from the command line in Node.js
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
 ---
 
@@ -10,15 +10,31 @@ How to make a Node.js CLI program interactive?
 
 Node.js since version 7 provides the [`readline` module](https://nodejs.org/api/readline.html) to perform exactly this: get input from a readable stream such as the `process.stdin` stream, which during the execution of a Node.js program is the terminal input, one line at a time.
 
-```js
-const readline = require('node:readline').createInterface({
+```cjs
+const readline = require('node:readline');
+
+const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-readline.question(`What's your name?`, name => {
+rl.question(`What's your name?`, name => {
   console.log(`Hi ${name}!`);
-  readline.close();
+  rl.close();
+});
+```
+
+```mjs
+import readline from 'node:readline';
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.question(`What's your name?`, name => {
+  console.log(`Hi ${name}!`);
+  rl.close();
 });
 ```
 
@@ -38,8 +54,24 @@ A more complete and abstract solution is provided by the [Inquirer.js package](h
 
 You can install it using `npm install inquirer`, and then you can replicate the above code like this:
 
-```js
+```cjs
 const inquirer = require('inquirer');
+
+const questions = [
+  {
+    type: 'input',
+    name: 'name',
+    message: "What's your name?",
+  },
+];
+
+inquirer.prompt(questions).then(answers => {
+  console.log(`Hi ${answers.name}!`);
+});
+```
+
+```mjs
+import inquirer from 'inquirer';
 
 const questions = [
   {

@@ -69,6 +69,7 @@
       "files": ["**/*.{mdx,tsx}"],
       "rules": {
         "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+        "react/no-unescaped-entities": "off",
         "react/function-component-definition": [
           "error",
           {

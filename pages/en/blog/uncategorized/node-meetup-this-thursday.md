@@ -2,7 +2,7 @@
 date: '2011-08-03T04:37:02.000Z'
 category: uncategorized
 title: Node Meetup this Thursday
-layout: blog-post.hbs
+layout: blog-post
 author: ryandahl
 ---
 

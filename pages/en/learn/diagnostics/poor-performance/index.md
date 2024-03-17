@@ -1,6 +1,6 @@
 ---
 title: Poor Performance
-layout: learn.hbs
+layout: learn
 ---
 
 # Poor Performance

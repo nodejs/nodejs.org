@@ -1,6 +1,6 @@
 ---
 title: How to install Node.js
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, ZYSzys, ollelauribostrom, MylesBorins, fhemberger, LaRuaNa, ahmadawais, benhalverson, ovflowd
 ---
 

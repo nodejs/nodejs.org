@@ -1,6 +1,6 @@
 ---
 title: Working with file descriptors in Node.js
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, vaishnav-mk
 ---
 
@@ -10,7 +10,15 @@ Before you're able to interact with a file that sits in your filesystem, you mus
 
 A file descriptor is a reference to an open file, a number (fd) returned by opening the file using the `open()` method offered by the `fs` module. This number (`fd`) uniquely identifies an open file in operating system:
 
-```js
+```cjs
+const fs = require('node:fs');
+
+fs.open('/Users/joe/test.txt', 'r', (err, fd) => {
+  // fd is our file descriptor
+});
+```
+
+```mjs
 const fs = require('node:fs');
 
 fs.open('/Users/joe/test.txt', 'r', (err, fd) => {
@@ -33,8 +41,18 @@ That flag means we open the file for reading.
 
 You can also open the file by using the `fs.openSync` method, which returns the file descriptor, instead of providing it in a callback:
 
-```js
+```cjs
 const fs = require('node:fs');
+
+try {
+  const fd = fs.openSync('/Users/joe/test.txt', 'r');
+} catch (err) {
+  console.error(err);
+}
+```
+
+```mjs
+import fs from 'node:fs';
 
 try {
   const fd = fs.openSync('/Users/joe/test.txt', 'r');
@@ -49,7 +67,7 @@ You can also open the file by using the promise-based `fsPromises.open` method o
 
 The `fs/promises` module is available starting only from Node.js v14. Before v14, after v10, you can use `require('fs').promises` instead. Before v10, after v8, you can use `util.promisify` to convert `fs` methods into promise-based methods.
 
-```js
+```cjs
 const fs = require('node:fs/promises');
 // Or const fs = require('fs').promises before v14.
 async function example() {
@@ -65,11 +83,35 @@ async function example() {
 example();
 ```
 
+```mjs
+import fs from 'node:fs/promises';
+// Or const fs = require('fs').promises before v14.
+let filehandle;
+try {
+  filehandle = await fs.open('/Users/joe/test.txt', 'r');
+  console.log(filehandle.fd);
+  console.log(await filehandle.readFile({ encoding: 'utf8' }));
+} finally {
+  if (filehandle) await filehandle.close();
+}
+```
+
 Here is an example of `util.promisify`:
 
-```js
+```cjs
 const fs = require('node:fs');
 const util = require('node:util');
+
+async function example() {
+  const open = util.promisify(fs.open);
+  const fd = await open('/Users/joe/test.txt', 'r');
+}
+example();
+```
+
+```mjs
+import fs from 'node:fs';
+import util from 'node:util';
 
 async function example() {
   const open = util.promisify(fs.open);

@@ -19,8 +19,10 @@
     rounded
     border
     border-neutral-200
+    bg-white
     shadow-lg
-    dark:border-neutral-900;
+    dark:border-neutral-900
+    dark:bg-neutral-950;
 
   > div {
     @apply max-h-80

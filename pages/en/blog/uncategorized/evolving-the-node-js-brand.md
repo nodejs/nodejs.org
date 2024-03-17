@@ -2,7 +2,7 @@
 date: '2011-07-11T19:02:45.000Z'
 category: uncategorized
 title: Evolving the Node.js Brand
-layout: blog-post.hbs
+layout: blog-post
 author: Emily Tanaka-Delgado
 ---
 

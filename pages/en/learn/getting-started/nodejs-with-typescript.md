@@ -1,6 +1,6 @@
 ---
 title: Node.js with TypeScript
-layout: learn.hbs
+layout: learn
 authors: sbielenica, ovflowd, vaishnav-mk
 ---
 

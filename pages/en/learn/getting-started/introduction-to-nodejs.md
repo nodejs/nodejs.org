@@ -1,6 +1,6 @@
 ---
 title: Introduction to Node.js
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, potch, MylesBorins, RomainLanz, virkt25, Trott, onel0p3z, ollelauribostrom, MarkPieszak, fhemberger, LaRuaNa, FrozenPandaz, mcollina, amiller-gh, ahmadawais, saqibameen, dangen-effy, aymen94, benhalverson
 ---
 
@@ -24,8 +24,8 @@ In Node.js the new ECMAScript standards can be used without problems, as you don
 
 The most common example Hello World of Node.js is a web server:
 
-```js
-const http = require('node:http');
+```cjs
+const { createServer } = require('node:http');
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -33,7 +33,24 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+```mjs
+import { createServer } from 'node:http';
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {

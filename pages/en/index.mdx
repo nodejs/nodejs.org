@@ -1,10 +1,10 @@
 ---
 title: Run JavaScript Everywhere
-layout: home.hbs
+layout: home
 ---
 
 <section>
-  <WithBadge section="index" />
+ <WithBadge section="index" />
 
   <div>
     <h1 className="special">Run JavaScript Everywhere</h1>
@@ -28,7 +28,7 @@ layout: home.hbs
         </>
       )}
     </WithNodeRelease>
-    <WithNodeRelease status="Current">
+    <WithNodeRelease status={"Current"}>
       {({ release }) => (
         <small>
           Want new features sooner?
@@ -43,6 +43,7 @@ layout: home.hbs
 <section>
   <div>
     ```js displayName="Create an HTTP Server"
+    // server.mjs
     import { createServer } from 'node:http';
 
     const server = createServer((req, res) => {
@@ -54,9 +55,12 @@ layout: home.hbs
     server.listen(3000, '127.0.0.1', () => {
       console.log('Listening on 127.0.0.1:3000');
     });
+
+    // run with `node server.mjs`
     ```
 
     ```js displayName="Write Tests"
+    // tests.mjs
     import assert from 'node:assert';
     import test from 'node:test';
 
@@ -68,37 +72,46 @@ layout: home.hbs
       // throws an exception because 1 != 2
       assert.strictEqual(1, 2);
     });
+
+    // run with `node tests.mjs`
     ```
 
     ```js displayName="Read and Hash a File"
+    // crypto.mjs
     import { createHash } from 'node:crypto';
     import { readFile } from 'node:fs/promises';
 
     const hasher = createHash('sha1');
-    const fileContent = await readFile('./package.json');
 
     hasher.setEncoding('hex');
-    hasher.write(fileContent);
+    // ensure you have a `package.json` file for this test!
+    hasher.write(await readFile('package.json'));
     hasher.end();
 
     const fileHash = hasher.read();
+
+    // run with `node crypto.mjs`
     ```
 
     ```js displayName="Read Streams"
+    // streams.mjs
+    import { pipeline } from 'node:stream';
     import { createReadStream, createWriteStream } from 'node:fs';
+    import { createGzip } from 'node:zlib';
+    import { promisify } from 'node:util';
 
-    const res = await fetch('https://nodejs.org/dist/index.json');
-    const json = await res.json(); // yields a json object
+    await promisify(pipeline)
+    ( // ensure you have a `package.json` file for this test!
+      createReadStream('package.json'),
+      createGzip(),
+      createWriteStream('package.json.gz')
+    );
 
-    const readableStream = createReadStream('./package.json');
-    const writableStream = createWriteStream('./package2.json');
-
-    readableStream.setEncoding('utf8');
-
-    readableStream.on('data', chunk => writableStream.write(chunk));
+    // run with `node streams.mjs`
     ```
 
     ```js displayName="Work with Threads"
+    // threads.mjs
     import { Worker, isMainThread,
       workerData, parentPort } from 'node:worker_threads';
 
@@ -110,6 +123,8 @@ layout: home.hbs
       const source = workerData;
       parentPort.postMessage(btoa(source.toUpperCase()));
     }
+
+    // run with `node threads.mjs`
     ```
 
   </div>

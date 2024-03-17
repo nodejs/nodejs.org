@@ -2,7 +2,7 @@
 date: '2016-05-30T12:00:00.000Z'
 category: weekly
 title: Weekly Update - May 30th, 2016
-layout: blog-post.hbs
+layout: blog-post
 author: 'Minwoo Jung (github.com/JungMinu)'
 ---
 

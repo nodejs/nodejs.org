@@ -1,16 +1,6 @@
 ---
 title: About Node.js®
-layout: about.hbs
----
-
-<div className="my-4 flex items-center justify-center">
-  <img
-    alt="Node.js mascot"
-    src="/static/images/node-mascot.svg"
-    className="w-[100px]"
-  />
-</div>
-
+layout: about
 ---
 
 # About Node.js®
@@ -20,8 +10,25 @@ scalable network applications. In the following "hello world" example, many
 connections can be handled concurrently. Upon each connection, the callback is
 fired, but if there is no work to be done, Node.js will sleep.
 
-```js
-const http = require('node:http');
+```cjs
+const { createServer } = require('node:http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+```mjs
+import { createServer } from 'node:http';
 
 const hostname = '127.0.0.1';
 const port = 3000;

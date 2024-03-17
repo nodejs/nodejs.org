@@ -1,6 +1,6 @@
 ---
 title: The V8 JavaScript Engine
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, smfoote, co16353sidak, MylesBorins, LaRuaNa, andys8, ahmadawais, karlhorky, aymen94
 ---
 

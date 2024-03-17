@@ -2,7 +2,7 @@
 date: '2011-03-18T03:17:12.000Z'
 category: video
 title: Welcome to the Node blog
-layout: blog-post.hbs
+layout: blog-post
 author: ryandahl
 ---
 
