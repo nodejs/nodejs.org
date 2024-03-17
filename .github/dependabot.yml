@@ -57,6 +57,7 @@ updates:
       react:
         patterns:
           - 'react'
+          - 'million'
           - 'react-dom'
           - '@types/react'
           - '@types/react-dom'
