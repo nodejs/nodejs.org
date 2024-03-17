@@ -134,7 +134,7 @@ const sentryConfig = {
 const nextWithIntl = withNextIntl('./i18n.tsx')(nextConfig);
 
 // Enables Million.js React Compiler for Next.js
-const nextWithMillion = million.next(nextWithIntl, { auto: true });
+const nextWithMillion = million.next(nextWithIntl, { auto: true, rsc: true });
 
 // Next.js Configuration with `sentry` enabled
 const nextWithSentry = withSentryConfig(
