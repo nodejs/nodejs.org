@@ -4,6 +4,7 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import * as ScrollPrimitive from '@radix-ui/react-scroll-area';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import classNames from 'classnames';
+import { For } from 'million/react';
 import { useId, useMemo } from 'react';
 import type { FC } from 'react';
 
@@ -96,31 +97,35 @@ const Select: FC<SelectProps> = ({
             <ScrollPrimitive.Root type="auto">
               <SelectPrimitive.Viewport>
                 <ScrollPrimitive.Viewport>
-                  {mappedValues.map(({ label, items }, key) => (
-                    <SelectPrimitive.Group key={label?.toString() ?? key}>
-                      {label && (
-                        <SelectPrimitive.Label
-                          className={classNames(styles.item, styles.label)}
-                        >
-                          {label}
-                        </SelectPrimitive.Label>
-                      )}
+                  <For each={mappedValues}>
+                    {({ label, items }, key) => (
+                      <SelectPrimitive.Group key={label?.toString() ?? key}>
+                        {label && (
+                          <SelectPrimitive.Label
+                            className={classNames(styles.item, styles.label)}
+                          >
+                            {label}
+                          </SelectPrimitive.Label>
+                        )}
 
-                      {items.map(({ value, label, iconImage, disabled }) => (
-                        <SelectPrimitive.Item
-                          key={value}
-                          value={value}
-                          disabled={disabled}
-                          className={classNames(styles.item, styles.text)}
-                        >
-                          <SelectPrimitive.ItemText>
-                            {iconImage}
-                            <span>{label}</span>
-                          </SelectPrimitive.ItemText>
-                        </SelectPrimitive.Item>
-                      ))}
-                    </SelectPrimitive.Group>
-                  ))}
+                        <For each={items}>
+                          {({ value, label, iconImage, disabled }) => (
+                            <SelectPrimitive.Item
+                              key={value}
+                              value={value}
+                              disabled={disabled}
+                              className={classNames(styles.item, styles.text)}
+                            >
+                              <SelectPrimitive.ItemText>
+                                {iconImage}
+                                <span>{label}</span>
+                              </SelectPrimitive.ItemText>
+                            </SelectPrimitive.Item>
+                          )}
+                        </For>
+                      </SelectPrimitive.Group>
+                    )}
+                  </For>
                 </ScrollPrimitive.Viewport>
               </SelectPrimitive.Viewport>
               <ScrollPrimitive.Scrollbar orientation="vertical">

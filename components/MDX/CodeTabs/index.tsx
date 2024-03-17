@@ -1,6 +1,7 @@
 'use client';
 
 import * as TabsPrimitive from '@radix-ui/react-tabs';
+import { For } from 'million/react';
 import type { ComponentProps, FC, ReactElement } from 'react';
 
 import CodeTabs from '@/components/Common/CodeTabs';
@@ -40,11 +41,13 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
       defaultValue={tabs[Number(defaultTab)].key}
       {...props}
     >
-      {languages.map((_, index) => (
-        <TabsPrimitive.Content key={tabs[index].key} value={tabs[index].key}>
-          {codes[index]}
-        </TabsPrimitive.Content>
-      ))}
+      <For each={tabs}>
+        {(_, index) => (
+          <TabsPrimitive.Content key={tabs[index].key} value={tabs[index].key}>
+            {codes[index]}
+          </TabsPrimitive.Content>
+        )}
+      </For>
     </CodeTabs>
   );
 };

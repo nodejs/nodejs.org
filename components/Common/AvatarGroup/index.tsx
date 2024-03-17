@@ -1,6 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
+import { For } from 'million/react';
 import type { ComponentProps, FC } from 'react';
 import { useState, useMemo } from 'react';
 
@@ -30,13 +31,15 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
 
   return (
     <div className={styles.avatarGroup}>
-      {renderAvatars.map((avatar, index) => (
-        <Avatar
-          src={avatar.src}
-          alt={getAcronymFromString(avatar.alt)}
-          key={index}
-        />
-      ))}
+      <For each={renderAvatars}>
+        {(avatar, index) => (
+          <Avatar
+            src={avatar.src}
+            alt={getAcronymFromString(avatar.alt)}
+            key={index}
+          />
+        )}
+      </For>
 
       {avatars.length > limit && (
         <span

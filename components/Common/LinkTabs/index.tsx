@@ -1,3 +1,4 @@
+import { For } from 'million/react';
 import type { FC, PropsWithChildren } from 'react';
 
 import Link from '@/components/Link';
@@ -21,16 +22,18 @@ const LinkTabs: FC<PropsWithChildren<LinkTabsProps>> = ({
 }) => (
   <>
     <div className={styles.tabsList}>
-      {tabs.map(tab => (
-        <Link
-          key={tab.key}
-          href={tab.link}
-          className={styles.tabsTrigger}
-          data-state={tab.key === activeTab ? 'active' : 'inactive'}
-        >
-          {tab.label}
-        </Link>
-      ))}
+      <For each={tabs}>
+        {({ key, label, link }) => (
+          <Link
+            key={key}
+            href={link}
+            className={styles.tabsTrigger}
+            data-state={key === activeTab ? 'active' : 'inactive'}
+          >
+            {label}
+          </Link>
+        )}
+      </For>
     </div>
 
     <div className={styles.tabsSelect}>

@@ -1,6 +1,7 @@
 import { LanguageIcon } from '@heroicons/react/24/outline';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import classNames from 'classnames';
+import { For } from 'million/react';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
@@ -40,17 +41,19 @@ const LanguageDropdown: FC<LanguageDropDownProps> = ({
           sideOffset={5}
         >
           <div>
-            {availableLanguages.map(({ name, code }) => (
-              <DropdownMenu.Item
-                key={code}
-                onClick={() => onChange({ name, code })}
-                className={classNames(styles.dropDownItem, {
-                  [styles.currentDropDown]: code === currentLanguage,
-                })}
-              >
-                {name}
-              </DropdownMenu.Item>
-            ))}
+            <For each={availableLanguages}>
+              {({ name, code }) => (
+                <DropdownMenu.Item
+                  key={code}
+                  onClick={() => onChange({ name, code })}
+                  className={classNames(styles.dropDownItem, {
+                    [styles.currentDropDown]: code === currentLanguage,
+                  })}
+                >
+                  {name}
+                </DropdownMenu.Item>
+              )}
+            </For>
           </div>
         </DropdownMenu.Content>
       </DropdownMenu.Portal>

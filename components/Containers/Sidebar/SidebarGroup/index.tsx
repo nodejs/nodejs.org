@@ -1,3 +1,4 @@
+import { For } from 'million/react';
 import type { ComponentProps, FC } from 'react';
 
 import SidebarItem from '@/components/Containers/Sidebar/SidebarItem';
@@ -14,9 +15,11 @@ const SidebarGroup: FC<SidebarGroupProps> = ({ groupName, items }) => (
   <section className={styles.group}>
     <label className={styles.groupName}>{groupName}</label>
     <ul className={styles.itemList}>
-      {items.map(({ label, link }) => (
-        <SidebarItem key={link} label={label} link={link} />
-      ))}
+      <For each={items}>
+        {({ label, link }) => (
+          <SidebarItem key={link} label={label} link={link} />
+        )}
+      </For>
     </ul>
   </section>
 );

@@ -1,3 +1,4 @@
+import { For } from 'million/react';
 import { useTranslations } from 'next-intl';
 import type { ComponentProps, FC } from 'react';
 
@@ -35,13 +36,15 @@ const SideBar: FC<SidebarProps> = ({ groups }) => {
         />
       )}
 
-      {groups.map(({ groupName, items }) => (
-        <SidebarGroup
-          key={groupName.toString()}
-          groupName={groupName}
-          items={items}
-        />
-      ))}
+      <For each={groups}>
+        {({ groupName, items }) => (
+          <SidebarGroup
+            key={groupName.toString()}
+            groupName={groupName}
+            items={items}
+          />
+        )}
+      </For>
     </aside>
   );
 };

@@ -3,6 +3,7 @@
 import Hamburger from '@heroicons/react/24/solid/Bars3Icon';
 import XMark from '@heroicons/react/24/solid/XMarkIcon';
 import * as Label from '@radix-ui/react-label';
+import { For } from 'million/react';
 import { useState } from 'react';
 import type { FC, ComponentProps } from 'react';
 
@@ -57,11 +58,13 @@ const NavBar: FC<NavbarProps> = ({
 
       <div className={`${style.main} peer-checked:flex`}>
         <div className={style.navItems}>
-          {navItems.map(({ text, link }) => (
-            <NavItem key={link} href={link}>
-              {text}
-            </NavItem>
-          ))}
+          <For each={navItems}>
+            {({ text, link }) => (
+              <NavItem key={link} href={link}>
+                {text}
+              </NavItem>
+            )}
+          </For>
         </div>
 
         <div className={style.actionsWrapper}>

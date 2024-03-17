@@ -1,3 +1,4 @@
+import { For } from 'million/react';
 import { useTranslations } from 'next-intl';
 import type { ComponentProps, FC } from 'react';
 
@@ -33,13 +34,15 @@ const ProgressionSidebar: FC<ProgressionSidebarProps> = ({ groups }) => {
         defaultValue={currentItem?.value}
       />
 
-      {groups.map(({ groupName, items }) => (
-        <ProgressionSidebarGroup
-          key={groupName.toString()}
-          groupName={groupName}
-          items={items}
-        />
-      ))}
+      <For each={groups}>
+        {({ groupName, items }) => (
+          <ProgressionSidebarGroup
+            key={groupName.toString()}
+            groupName={groupName}
+            items={items}
+          />
+        )}
+      </For>
     </nav>
   );
 };

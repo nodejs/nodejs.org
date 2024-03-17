@@ -1,3 +1,4 @@
+import { For } from 'million/react';
 import type { FC } from 'react';
 
 import FormattedTime from '@/components/Common/FormattedTime';
@@ -37,16 +38,18 @@ const UpcomingMeetings: FC = async () => {
         <FormattedTime date={date} format={{ day: 'numeric', month: 'long' }} />
       </h4>
 
-      {entries.map(({ id, start, end, summary, location, description }) => (
-        <Event
-          key={id}
-          start={start}
-          end={end}
-          summary={summary}
-          location={location}
-          description={description}
-        />
-      ))}
+      <For each={entries}>
+        {entry => (
+          <Event
+            key={entry.id}
+            start={entry.start}
+            end={entry.end}
+            summary={entry.summary}
+            location={entry.location}
+            description={entry.description}
+          />
+        )}
+      </For>
     </div>
   ));
 };

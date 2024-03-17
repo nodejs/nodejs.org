@@ -1,3 +1,4 @@
+import { For } from 'million/react';
 import { useTranslations } from 'next-intl';
 import type { FC, SVGProps } from 'react';
 
@@ -40,15 +41,17 @@ const Footer: FC = () => {
         </NavItem>
 
         <div className={styles.social}>
-          {siteNavigation.socialLinks.map(link => {
-            const SocialIcon = footerSocialIcons[link.icon];
+          <For each={siteNavigation.socialLinks}>
+            {link => {
+              const SocialIcon = footerSocialIcons[link.icon];
 
-            return (
-              <NavItem key={link.icon} href={link.link} type="footer">
-                <SocialIcon width={20} height={20} aria-label={link.link} />
-              </NavItem>
-            );
-          })}
+              return (
+                <NavItem key={link.icon} href={link.link} type="footer">
+                  <SocialIcon width={20} height={20} aria-label={link.link} />
+                </NavItem>
+              );
+            }}
+          </For>
         </div>
       </div>
     </footer>
