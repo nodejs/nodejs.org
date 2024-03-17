@@ -1,6 +1,7 @@
 'use strict';
 
 import { withSentryConfig } from '@sentry/nextjs';
+import million from 'million/compiler';
 import withNextIntl from 'next-intl/plugin';
 
 import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
@@ -96,6 +97,12 @@ const nextConfig = {
     // Removes the warning regarding the WebPack Build Worker
     webpackBuildWorker: false,
   },
+  reactStrictMode: true,
+};
+
+const millionConfig = {
+  // support react server components
+  auto: { rsc: true },
 };
 
 /** @type {import('@sentry/cli').SentryCliOptions} */
@@ -139,4 +146,7 @@ const nextWithSentry = withSentryConfig(
 
 // Decides whether enabling Sentry or not
 // By default we only want to enable Sentry within a Vercel Environment
-export default SENTRY_ENABLE ? nextWithSentry : nextWithIntl;
+export default million.next(
+  SENTRY_ENABLE ? nextWithSentry : nextWithIntl,
+  millionConfig
+);
