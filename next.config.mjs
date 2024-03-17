@@ -14,6 +14,8 @@ import {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Just to ensure that React is always on strict mode
+  reactStrictMode: true,
   // We intentionally disable Next.js's built-in i18n support
   // as we dom have our own i18n and internationalisation engine
   i18n: null,
