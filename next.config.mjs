@@ -47,6 +47,12 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'website-assets.oramasearch.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
   // On static export builds we want the output directory to be "build"
