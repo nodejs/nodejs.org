@@ -91,6 +91,7 @@ The Website also uses several other Open Source libraries (not limited to) liste
 - We use [Storybook](https://storybook.js.org/) for Manual Testing and Visual Regression Tests of our React Components
   - Storybook also provides a sandboxed environment, which is very useful whilst for crafting React Components
 - We use [Sentry](https://sentry.io/about) for reporting Exceptions and monitoring the performance and reliability of the application
+- We use [MillionJS](https://million.dev/) as a React compiler.
 
 ## Code Editing
 
