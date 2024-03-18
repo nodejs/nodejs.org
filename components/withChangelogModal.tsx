@@ -83,7 +83,7 @@ const WithChangelogModal: FC<WithChangelogModalProps> = ({
     heading: `Node.js ${versionWithPrefix}`,
     avatars: [{ src: getGitHubAvatarUrl(author), alt: author }],
     subheading: slug,
-    open: modalOpen,
+    open: modalOpen && typeof ChangelogMDX !== 'undefined',
     onOpenChange: setModalOpen,
   };
 
