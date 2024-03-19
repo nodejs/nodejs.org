@@ -25,13 +25,18 @@ const useDetectOS = () => {
       ([bitness, architecture]) => {
         const userAgent: string | undefined =
           (typeof navigator === 'object' && navigator.userAgent) || '';
-        const defaultBitness: number = 64; // Default bitness if unable to determine
+        const defaultBitness: number = 86; // Default bitness if unable to determine
         setUserOSState({
           os: detectOS(),
           bitness:
             bitness === '64' ||
             userAgent?.includes('WOW64') ||
-            userAgent?.includes('Win64')
+            userAgent?.includes('Win64') ||
+            userAgent?.includes('x86_64') ||
+            userAgent?.includes('x86-64') ||
+            userAgent?.includes('x64_64') ||
+            userAgent?.includes('x64;') ||
+            userAgent?.includes('AMD64')
               ? 64
               : defaultBitness,
           architecture: architecture ? architecture : '',
