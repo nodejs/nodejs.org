@@ -18,11 +18,13 @@
     },
     "docs": {
       "link": "https://nodejs.org/docs/latest/api/",
-      "label": "components.containers.navBar.links.docs"
+      "label": "components.containers.navBar.links.docs",
+      "target": "_blank"
     },
     "certification": {
       "link": "https://openjsf.org/certification",
-      "label": "components.containers.navBar.links.certification"
+      "label": "components.containers.navBar.links.certification",
+      "target": "_blank"
     }
   },
   "footerLinks": [

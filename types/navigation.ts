@@ -1,3 +1,5 @@
+import type { HTMLAttributeAnchorTarget } from 'react';
+
 export interface FooterConfig {
   text: string;
   link: string;
@@ -22,6 +24,7 @@ export interface NavigationEntry {
   label?: string;
   link?: string;
   items?: Record<string, NavigationEntry>;
+  target?: HTMLAttributeAnchorTarget | undefined;
 }
 
 export interface SiteNavigation {
