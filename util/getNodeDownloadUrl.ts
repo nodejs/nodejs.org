@@ -44,7 +44,7 @@ export const getNodeDownloadUrl = (
         return `${baseURL}/node-${versionWithPrefix}-linux-${bitness}.tar.xz`;
       }
 
-      return `${baseURL}/node-${versionWithPrefix}-linux-x64.tar.xz`;
+      return `${baseURL}/node-${versionWithPrefix}-linux-x${bitness}.tar.xz`;
     default:
       return `${baseURL}/node-${versionWithPrefix}.tar.gz`;
   }

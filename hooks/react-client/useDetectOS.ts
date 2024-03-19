@@ -25,7 +25,7 @@ const useDetectOS = () => {
       ([bitness, architecture]) => {
         const userAgent: string | undefined =
           (typeof navigator === 'object' && navigator.userAgent) || '';
-        const defaultBitness: number = 86; // Default bitness if unable to determine
+        const defaultBitness: number = 64; // Default bitness if unable to determine
         setUserOSState({
           os: detectOS(),
           bitness:
