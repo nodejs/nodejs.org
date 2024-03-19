@@ -1,6 +1,8 @@
 a.item {
   @apply relative
     z-20
+    mx-0
+    my-2
     flex
     w-full
     items-center
