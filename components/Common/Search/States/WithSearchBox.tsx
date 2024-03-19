@@ -71,7 +71,9 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
   }, []);
 
   useEffect(
-    () => debounce(() => search(searchTerm), 1000),
+    () => {
+      debounce(() => search(searchTerm), 1000)();
+    },
     // we don't need to care about memoization of search function
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [searchTerm, selectedFacet]
@@ -100,7 +102,12 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
   };
 
   const facets: Facets = {
-    all: searchResults?.count ?? 0,
+    all: searchResults?.facets
+      ? Object.values(searchResults?.facets.siteSection.values).reduce(
+          (a, b) => a + b,
+          0
+        )
+      : 0,
     ...(searchResults?.facets?.siteSection?.values ?? {}),
   };
 
