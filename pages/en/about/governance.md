@@ -26,7 +26,8 @@ A guide for Collaborators is maintained at [collaborator-guide.md][].
 
 The project is governed by the [Technical Steering Committee (TSC)][]
 which is responsible for high-level guidance of the project. TSC is a
-subset of active Collaborators and is nominated by existing TSC members.
+subset of active Collaborators and who are nominated by other existing TSC
+members.
 
 [consensus seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
