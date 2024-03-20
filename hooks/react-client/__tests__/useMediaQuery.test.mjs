@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 
-import { useMediaQuery } from '@/hooks/react-client/useMediaQuery';
+import useMediaQuery from '@/hooks/react-client/useMediaQuery';
 
 describe('useMediaQuery', () => {
   it('should check for matchMedia support', () => {
