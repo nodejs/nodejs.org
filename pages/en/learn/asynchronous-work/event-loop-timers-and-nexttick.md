@@ -1,6 +1,6 @@
 ---
 title: The Node.js Event Loop
-layout: learn.hbs
+layout: learn
 ---
 
 # The Node.js Event Loop

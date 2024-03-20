@@ -76,9 +76,7 @@ const getPage: FC<DynamicParams> = async ({ params }) => {
   // Gets the current full pathname for a given path
   const pathname = dynamicRouter.getPathname(path);
 
-  // @todo: once removed the legacy layouts remove the any casting
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const staticGeneratedLayout = DYNAMIC_ROUTES.get(pathname) as any;
+  const staticGeneratedLayout = DYNAMIC_ROUTES.get(pathname);
 
   // If the current patname is a statically generated route
   // it means it does not have a Markdown file nor exists under the filesystem

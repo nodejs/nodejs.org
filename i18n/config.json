@@ -40,6 +40,16 @@
     "default": false
   },
   {
+    "code": "fa",
+    "localName": "فارسی",
+    "name": "Persian",
+    "langDir": "rtl",
+    "dateFormat": "YYYY/MM/DD",
+    "hrefLang": "fa",
+    "enabled": false,
+    "default": false
+  },
+  {
     "code": "fr",
     "localName": "Français",
     "name": "French",

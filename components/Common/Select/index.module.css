@@ -59,8 +59,10 @@
 }
 
 .dropdown {
-  @apply max-w-xs
+  @apply max-h-48
+    max-w-xs
     overflow-hidden
+    overflow-y-auto
     rounded-md
     border
     border-neutral-200
@@ -86,16 +88,24 @@
       dark:data-[highlighted]:bg-green-600;
   }
 
-  .text span {
+  .text > span {
     @apply flex
       items-center
       gap-2;
+  }
+
+  .text > span > span {
+    @apply truncate;
   }
 
   .label {
     @apply text-neutral-600
       dark:text-neutral-400;
   }
+}
+
+.dropdown:has(.label) .text > span > span {
+  @apply pl-3;
 }
 
 .inline {

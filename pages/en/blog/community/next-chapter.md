@@ -2,7 +2,7 @@
 date: '2015-05-08T19:00:00.000Z'
 category: community
 title: Next Chapter
-layout: blog-post.hbs
+layout: blog-post
 author: tjfontaine
 ---
 

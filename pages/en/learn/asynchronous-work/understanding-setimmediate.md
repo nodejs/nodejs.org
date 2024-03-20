@@ -1,6 +1,6 @@
 ---
 title: Understanding setImmediate()
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais, clean99, ovflowd
 ---
 

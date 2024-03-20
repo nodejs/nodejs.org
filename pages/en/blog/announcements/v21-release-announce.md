@@ -2,7 +2,7 @@
 date: '2023-10-17T15:45:00.000Z'
 category: announcements
 title: 'Node.js 21 is now available!'
-layout: blog-post.hbs
+layout: blog-post
 author: The Node.js Project
 ---
 

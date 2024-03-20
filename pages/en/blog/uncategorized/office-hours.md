@@ -2,7 +2,7 @@
 date: '2011-03-24T04:42:47.000Z'
 category: uncategorized
 title: Office Hours
-layout: blog-post.hbs
+layout: blog-post
 author: ryandahl
 ---
 

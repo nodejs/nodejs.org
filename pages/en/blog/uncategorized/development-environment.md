@@ -2,7 +2,7 @@
 date: '2011-04-05T03:16:27.000Z'
 category: uncategorized
 title: Development Environment
-layout: blog-post.hbs
+layout: blog-post
 author: ryandahl
 ---
 

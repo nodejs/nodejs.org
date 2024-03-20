@@ -1,12 +1,9 @@
-> \[!IMPORTANT]\
-> The **Node.js** Website is currently being redesigned; Read more [here](https://github.com/nodejs/nodejs.org/discussions/5131) to get involved!
-
 <p align="center">
   <br />
   <a href="https://nodejs.org">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="./public/static/images/logos/nodejs-new-pantone-white.svg">
-      <img src="./public/static/images/logos/nodejs-new-pantone-black.svg" width="200px">
+      <source media="(prefers-color-scheme: dark)" srcset="./public/static/logos/nodejsDark.svg">
+      <img src="./public/static/logos/nodejsLight.svg" width="200px">
     </picture>
   </a>
 </p>

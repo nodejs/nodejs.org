@@ -18,9 +18,6 @@ export const IGNORED_ROUTES = [
   // This is used to ignore all blog routes except for the English language
   ({ locale, pathname }) =>
     locale !== defaultLocale.code && /^blog/.test(pathname),
-  // Do not statically build the redesign pages on the static export
-  // @deprecated this should be removed once we remove the legacy website
-  ({ pathname }) => /^new-design/.test(pathname),
 ];
 
 /**
@@ -32,7 +29,7 @@ export const IGNORED_ROUTES = [
  */
 export const DYNAMIC_ROUTES = new Map([
   // Provides Routes for all Blog Categories
-  ...provideBlogCategories().map(c => [`blog/${c}`, 'blog-category.hbs']),
+  ...provideBlogCategories().map(c => [`blog/${c}`, 'blog-category']),
   // Provides Routes for all Blog Categories w/ Pagination
   ...provideBlogCategories()
     // retrieves the amount of pages for each blog category
@@ -41,7 +38,7 @@ export const DYNAMIC_ROUTES = new Map([
     // each page for a category (i.e. blog/all/page/1)
     .map(([c, t]) => [...Array(t).keys()].map(p => `blog/${c}/page/${p + 1}`))
     // creates a tuple of each pathname and layout for the route
-    .map(paths => paths.map(path => [path, 'blog-category.hbs']))
+    .map(paths => paths.map(path => [path, 'blog-category']))
     // flattens the array since we have a .map inside another .map
     .flat(),
 ]);
@@ -82,7 +79,17 @@ export const PAGE_METADATA = {
  * @return {import('next').Viewport}
  */
 export const PAGE_VIEWPORT = {
-  themeColor: siteConfig.accentColor,
+  themeColor: [
+    {
+      color: siteConfig.lightAccentColor,
+      media: '(prefers-color-scheme: light)',
+    },
+    {
+      color: siteConfig.darkAccentColor,
+      media: '(prefers-color-scheme: dark)',
+    },
+  ],
   width: 'device-width',
   initialScale: 1,
+  maximumScale: 1,
 };

@@ -1,6 +1,6 @@
 ---
 title: How to work with Different Filesystems
-layout: learn.hbs
+layout: learn
 ---
 
 # How to Work with Different Filesystems

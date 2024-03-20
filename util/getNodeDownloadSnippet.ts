@@ -1,87 +1,97 @@
 import dedent from 'dedent';
 
+import type { NodeRelease } from '@/types';
+import type { PackageManager } from '@/types/release';
 import type { UserOS } from '@/types/userOS';
 
-export const getNodeDownloadSnippet = (major: number, os: UserOS) => {
+export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
+  const snippets: Record<PackageManager, string> = {
+    NVM: '',
+    BREW: '',
+    DOCKER: '',
+    CHOCO: '',
+  };
+
   if (os === 'LINUX' || os === 'MAC') {
-    const platformSnippets = {
-      NVM: dedent`
-        # Installs NVM (Node Version Manager)
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+    snippets.NVM = dedent`
+      # installs NVM (Node Version Manager)
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
-        # Installs Node.js
-        nvm install v${major}
+      # download and install Node.js
+      nvm install ${release.major}
 
-        # Checks that Node is installed
-        node -v
+      # verifies the right Node.js version is in the environment
+      node -v # should print \`${release.versionWithPrefix}\`
 
-        # Checks your NPM version
-        npm -v`,
-      BREW: dedent`
-        # Installs Brew (macOS/Linux Package Manager)
-        curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+      # verifies the right NPM version is in the environment
+      npm -v # should print \`${release.npm}\``;
 
-        # Installs Node.js
-        brew install node@${major}
+    snippets.BREW = dedent`
+      # download and installs Homebrew (macOS/Linux Package Manager)
+      curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
-        # Checks that Node is installed
-        node -v
+      # download and install Node.js
+      brew install node@${release.major}
 
-        # Checks your NPM version
-        npm -v`,
-      DOCKER: '',
-    };
+      # verifies the right Node.js version is in the environment
+      node -v # should print \`${release.versionWithPrefix}\`
 
-    if (os === 'MAC') {
-      platformSnippets.DOCKER = dedent`
-        # Installs Brew (macOS Package Manager)
-        curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+      # verifies the right NPM version is in the environment
+      npm -v # should print \`${release.npm}\``;
+  }
 
-        # Installs Docker Desktop
-        brew install docker --cask
+  if (os === 'MAC') {
+    snippets.DOCKER = dedent`
+      # installs Homebrew (macOS/Linux Package Manager)
+      curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
-        # Pull Node.js Docker Image
-        docker pull node:${major}-${major >= 4 ? 'alpine' : 'slim'}
-      `;
-    }
+      # installs Docker Desktop
+      brew install docker --cask
 
-    return platformSnippets;
+      # pulls the Node.js Docker image
+      docker pull node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'}
+
+      # verifies the right Node.js version is in the environment
+      docker run node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'} node -v # should print \`${release.versionWithPrefix}\`
+
+      # verifies the right NPM version is in the environment
+      docker run node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'} npm -v # should print \`${release.npm}\``;
   }
 
   if (os === 'WIN') {
-    return {
-      NVM: dedent`
-        # Installs Chocolatey (Windows Package Manager)
-        Set-ExecutionPolicy Bypass -Scope Process -Force;
-        [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
-        iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));
+    snippets.CHOCO = dedent`
+      # installs Chocolatey (Windows Package Manager)
+      Set-ExecutionPolicy Bypass -Scope Process -Force;
+      [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
+      iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'));
 
-        # Installs NVM (Node Version Manager)
-        choco install nvm
+      # download and install Node.js
+      choco install nodejs --version="${release.version}"
 
-        # Installs Node.js
-        nvm install v${major}
+      # verifies the right Node.js version is in the environment
+      node -v # should print \`${release.versionWithPrefix}\`
 
-        # Checks that Node is installed
-        node -v
+      # verifies the right NPM version is in the environment
+      npm -v # should print \`${release.npm}\``;
 
-        # Checks your NPM version
-        npm -v`,
-      DOCKER: dedent`
-        # Installs Chocolatey (Windows Package Manager)
-        Set-ExecutionPolicy Bypass -Scope Process -Force;
-        [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
-        iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'));
+    snippets.DOCKER = dedent`
+      # installs Chocolatey (Windows Package Manager)
+      Set-ExecutionPolicy Bypass -Scope Process -Force;
+      [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
+      iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'));
 
-        # Installs Docker Desktop
-        choco install docker-desktop
+      # installs Docker Desktop
+      choco install docker-desktop
 
-        # Pull Node.js Docker Image
-        docker pull node:${major}-${major >= 4 ? 'alpine' : 'slim'}
-      `,
-      BREW: '',
-    };
+      # pulls the Node.js Docker image
+      docker pull node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'}
+
+      # verifies the right Node.js version is in the environment
+      docker run node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'} node -v # should print \`${release.versionWithPrefix}\`
+
+      # verifies the right NPM version is in the environment
+      docker run node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'} npm -v # should print \`${release.npm}\``;
   }
 
-  return { NVM: '', BREW: '', DOCKER: '' };
+  return snippets;
 };

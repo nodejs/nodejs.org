@@ -1,6 +1,6 @@
 ---
 title: Backpressuring in Streams
-layout: learn.hbs
+layout: learn
 ---
 
 # Backpressuring in Streams
@@ -36,8 +36,24 @@ pipes, sockets, and signals. In Node.js, we find a similar mechanism called
 part of the internal codebase utilizes that module. As a developer, you
 are more than encouraged to use them too!
 
-```js
+```cjs
 const readline = require('node:readline');
+
+// process.stdin and process.stdout are both instances of Streams.
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.question('Why should you use streams? ', answer => {
+  console.log(`Maybe it's ${answer}, maybe it's because they are awesome! :)`);
+
+  rl.close();
+});
+```
+
+```mjs
+import readline from 'node:readline';
 
 // process.stdin and process.stdout are both instances of Streams.
 const rl = readline.createInterface({
@@ -67,12 +83,24 @@ While that will take a few minutes to complete, in another shell we may run
 a script that takes Node.js' module [`zlib`][], that wraps around another
 compression tool, [`gzip(1)`][].
 
-```js
+```cjs
 const gzip = require('node:zlib').createGzip();
 const fs = require('node:fs');
 
 const inp = fs.createReadStream('The.Matrix.1080p.mkv');
 const out = fs.createWriteStream('The.Matrix.1080p.mkv.gz');
+
+inp.pipe(gzip).pipe(out);
+```
+
+```mjs
+import { createGzip } from 'node:zlib';
+import { createReadStream, createWriteStream } from 'node:fs';
+
+const gzip = createGzip();
+
+const inp = createReadStream('The.Matrix.1080p.mkv');
+const out = createWriteStream('The.Matrix.1080p.mkv.gz');
 
 inp.pipe(gzip).pipe(out);
 ```
@@ -95,7 +123,7 @@ cleaning up and providing a callback when the pipeline is complete.
 
 Here is an example of using pipeline:
 
-```js
+```cjs
 const { pipeline } = require('node:stream/promises');
 const fs = require('node:fs');
 const zlib = require('node:zlib');
@@ -118,13 +146,58 @@ pipeline(
 );
 ```
 
+```mjs
+import { pipeline } from 'node:stream/promises';
+import fs from 'node:fs';
+import zlib from 'node:zlib';
+
+// Use the pipeline API to easily pipe a series of streams
+// together and get notified when the pipeline is fully done.
+// A pipeline to gzip a potentially huge video file efficiently:
+
+pipeline(
+  fs.createReadStream('The.Matrix.1080p.mkv'),
+  zlib.createGzip(),
+  fs.createWriteStream('The.Matrix.1080p.mkv.gz'),
+  err => {
+    if (err) {
+      console.error('Pipeline failed', err);
+    } else {
+      console.log('Pipeline succeeded');
+    }
+  }
+);
+```
+
 You can also call [`promisify`][] on pipeline to use it with `async` / `await`:
 
-```js
+```cjs
 const stream = require('node:stream');
 const fs = require('node:fs');
 const zlib = require('node:zlib');
 const util = require('node:util');
+
+const pipeline = util.promisify(stream.pipeline);
+
+async function run() {
+  try {
+    await pipeline(
+      fs.createReadStream('The.Matrix.1080p.mkv'),
+      zlib.createGzip(),
+      fs.createWriteStream('The.Matrix.1080p.mkv.gz')
+    );
+    console.log('Pipeline succeeded');
+  } catch (err) {
+    console.error('Pipeline failed', err);
+  }
+}
+```
+
+```mjs
+import stream from 'node:stream';
+import fs from 'node:fs';
+import zlib from 'node:zlib';
+import util from 'node:util';
 
 const pipeline = util.promisify(stream.pipeline);
 
@@ -504,8 +577,30 @@ readable.on('data', data => writable.write(data));
 
 Here's an example of using [`.push()`][] with a Readable stream.
 
-```js
+```cjs
 const { Readable } = require('node:stream');
+
+// Create a custom Readable stream
+const myReadableStream = new Readable({
+  objectMode: true,
+  read(size) {
+    // Push some data onto the stream
+    this.push({ message: 'Hello, world!' });
+    this.push(null); // Mark the end of the stream
+  },
+});
+
+// Consume the stream
+myReadableStream.on('data', chunk => {
+  console.log(chunk);
+});
+
+// Output:
+// { message: 'Hello, world!' }
+```
+
+```mjs
+import { Readable } from 'stream';
 
 // Create a custom Readable stream
 const myReadableStream = new Readable({

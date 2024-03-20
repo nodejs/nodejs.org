@@ -4,23 +4,9 @@ import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import { captureException } from '@sentry/nextjs';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
-import { useMemo } from 'react';
 
 import Button from '@/components/Common/Button';
-import CenteredLayout from '@/layouts/New/Centered';
-import { ENABLE_WEBSITE_REDESIGN } from '@/next.constants.mjs';
-
-/** @deprecated remove legacy component when website redesign is done */
-const LegacyErrorPage: FC<{ error: Error }> = ({ error }) => {
-  useMemo(() => captureException(error), [error]);
-
-  return (
-    <div className="container">
-      <h2>500: Internal Server Error</h2>
-      <h3>This Page has thrown a non-recoverable Error</h3>
-    </div>
-  );
-};
+import CenteredLayout from '@/layouts/Centered';
 
 const ErrorPage: FC<{ error: Error }> = ({ error }) => {
   captureException(error);
@@ -47,4 +33,4 @@ const ErrorPage: FC<{ error: Error }> = ({ error }) => {
   );
 };
 
-export default ENABLE_WEBSITE_REDESIGN ? ErrorPage : LegacyErrorPage;
+export default ErrorPage;

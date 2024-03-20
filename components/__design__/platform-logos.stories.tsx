@@ -1,6 +1,7 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 import Apple from '@/components/Icons/Platform/Apple';
+import Choco from '@/components/Icons/Platform/Choco';
 import Docker from '@/components/Icons/Platform/Docker';
 import Generic from '@/components/Icons/Platform/Generic';
 import Homebrew from '@/components/Icons/Platform/Homebrew';
@@ -23,6 +24,7 @@ export const PlatformLogos: StoryObj = {
       </div>
       <div className="flex flex-col items-center gap-4">
         <Generic width={64} height={64} />
+        <Choco width={64} height={64} />
       </div>
     </div>
   ),

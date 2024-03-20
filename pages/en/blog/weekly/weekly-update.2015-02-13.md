@@ -2,7 +2,7 @@
 date: '2015-02-13T12:00:00.000Z'
 category: weekly
 title: Weekly Update - Feb 13th, 2015
-layout: blog-post.hbs
+layout: blog-post
 author: 'Tierney Coren (@bnb)'
 ---
 

@@ -2,7 +2,7 @@
 date: '2012-03-28T19:25:26.000Z'
 category: module
 title: Service logging in JSON with Bunyan
-layout: blog-post.hbs
+layout: blog-post
 author: trentmick
 ---
 

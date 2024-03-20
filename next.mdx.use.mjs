@@ -9,7 +9,7 @@ import BitnessDropdown from './components/Downloads/Release/BitnessDropdown';
 import BlogPostLink from './components/Downloads/Release/BlogPostLink';
 import ReleaseDownloadButton from './components/Downloads/Release/DownloadButton';
 import LinkWithArrow from './components/Downloads/Release/LinkWithArrow';
-import NpmVersion from './components/Downloads/Release/NpmVersion';
+import NpmLink from './components/Downloads/Release/NpmLink';
 import OperatingSystemDropdown from './components/Downloads/Release/OperatingSystemDropdown';
 import PlatformDropdown from './components/Downloads/Release/PlatformDropdown';
 import ReleaseCodeBox from './components/Downloads/Release/ReleaseCodeBox';
@@ -18,16 +18,15 @@ import ReleaseVersion from './components/Downloads/Release/ReleaseVersion';
 import SourceButton from './components/Downloads/Release/SourceButton';
 import VerifyingBinariesLink from './components/Downloads/Release/VerifyingBinariesLink';
 import VersionDropdown from './components/Downloads/Release/VersionDropdown';
-import HomeDownloadButton from './components/Home/HomeDownloadButton';
 import Link from './components/Link';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
 import MDXCodeBox from './components/MDX/CodeBox';
 import MDXCodeTabs from './components/MDX/CodeTabs';
+import MDXImage from './components/MDX/Image';
 import SearchPage from './components/MDX/SearchPage';
 import WithBadge from './components/withBadge';
 import WithBanner from './components/withBanner';
 import WithNodeRelease from './components/withNodeRelease';
-import { ENABLE_WEBSITE_REDESIGN } from './next.constants.mjs';
 
 /**
  * A full list of React Components that we want to pass through to MDX
@@ -35,9 +34,6 @@ import { ENABLE_WEBSITE_REDESIGN } from './next.constants.mjs';
  * @satisfies {import('mdx/types').MDXComponents}
  */
 export const mdxComponents = {
-  // Legacy Component
-  HomeDownloadButton: HomeDownloadButton,
-  // Legacy Component
   DownloadReleasesTable: DownloadReleasesTable,
   // HOC for getting Node.js Release Metadata
   WithNodeRelease: WithNodeRelease,
@@ -70,8 +66,8 @@ export const mdxComponents = {
     BitnessDropdown: BitnessDropdown,
     // Renders a drop-down menu from which the operating system can select
     OperatingSystemDropdown: OperatingSystemDropdown,
-    // Renders a npm version of the selected release
-    NpmVersion: NpmVersion,
+    // Renders a link to the npm version of the selected release
+    NpmLink: NpmLink,
     // Renders a release version of the selected release
     Version: ReleaseVersion,
     // Renders a release status of the selected release
@@ -97,11 +93,10 @@ export const mdxComponents = {
 export const htmlComponents = {
   // Renders a Link Component for `a` tags
   a: Link,
-  // @deprecated once the website redesign happens
-  // switch to only use the Blockquote Component
-  blockquote: ENABLE_WEBSITE_REDESIGN
-    ? Blockquote
-    : ({ children }) => <div className="highlight-box">{children}</div>,
+  // Renders a Blockquote Component for `blockquote` tags
+  blockquote: Blockquote,
   // Renders a CodeBox Component for `pre` tags
   pre: MDXCodeBox,
+  // Renders an Image Component for `img` tags
+  img: MDXImage,
 };

@@ -1,6 +1,6 @@
 ---
 title: Security Best Practices
-layout: learn.hbs
+layout: learn
 ---
 
 # Security Best Practices
@@ -43,8 +43,20 @@ it correctly.
 Ensure that the WebServer handles socket errors properly, for instance, when a
 server is created without an error handler, it will be vulnerable to DoS
 
-```js
+```cjs
 const net = require('node:net');
+
+const server = net.createServer(function (socket) {
+  // socket.on('error', console.error) // this prevents the server to crash
+  socket.write('Echo server\r\n');
+  socket.pipe(socket);
+});
+
+server.listen(5000, '0.0.0.0');
+```
+
+```mjs
+import net from 'node:net';
 
 const server = net.createServer(function (socket) {
   // socket.on('error', console.error) // this prevents the server to crash

@@ -1,15 +1,9 @@
 'use strict';
 
-import { resolve } from 'node:path';
-
 import { withSentryConfig } from '@sentry/nextjs';
 import withNextIntl from 'next-intl/plugin';
 
-import {
-  BASE_PATH,
-  ENABLE_STATIC_EXPORT,
-  ENABLE_WEBSITE_REDESIGN,
-} from './next.constants.mjs';
+import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 import {
   SENTRY_DSN,
@@ -20,6 +14,8 @@ import {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Just to ensure that React is always on strict mode
+  reactStrictMode: true,
   // We intentionally disable Next.js's built-in i18n support
   // as we dom have our own i18n and internationalisation engine
   i18n: null,
@@ -33,8 +29,33 @@ const nextConfig = {
   // We allow the BASE_PATH to be overridden in case that the Website
   // is being built on a subdirectory (e.g. /nodejs-website)
   basePath: BASE_PATH,
-  // We disable image optimisation during static export builds
-  images: { unoptimized: ENABLE_STATIC_EXPORT },
+  images: {
+    // We disable image optimisation during static export builds
+    unoptimized: ENABLE_STATIC_EXPORT,
+    // We allow SVGs to be used as images
+    dangerouslyAllowSVG: true,
+    // We add it to the remote pattern for the static images we use from GitHub
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        port: '',
+        pathname: '/nodejs/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'user-images.githubusercontent.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'website-assets.oramasearch.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
   // On static export builds we want the output directory to be "build"
   distDir: ENABLE_STATIC_EXPORT ? 'build' : '.next',
   // On static export builds we want to enable the export feature
@@ -65,31 +86,9 @@ const nextConfig = {
     // Tree-shakes modules from Sentry Bundle
     config.plugins.push(new webpack.DefinePlugin(SENTRY_EXTENSIONS));
 
-    // This allows us to customise our global styles on build-tim,e
-    // based on if we're running the Website Redesign or not
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      // @deprecated remove when website redesign is done
-      globalStyles$: resolve(
-        ENABLE_WEBSITE_REDESIGN
-          ? './styles/new/index.css'
-          : './styles/old/index.css'
-      ),
-    };
-
     return config;
   },
   experimental: {
-    turbo: {
-      resolveAlias: {
-        // This allows us to customise our global styles on build-tim,e
-        // based on if we're running the Website Redesign or not
-        // @deprecated remove when website redesign is done
-        globalStyles: ENABLE_WEBSITE_REDESIGN
-          ? './styles/new/index.css'
-          : './styles/old/index.css',
-      },
-    },
     // Some of our static pages from `getStaticProps` have a lot of data
     // since we pass the fully-compiled MDX page from `MDXRemote` through
     // a page's static props.

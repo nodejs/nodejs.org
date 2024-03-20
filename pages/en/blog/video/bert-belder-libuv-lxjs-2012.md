@@ -2,7 +2,7 @@
 date: '2012-09-30T17:28:45.000Z'
 category: video
 title: Bert Belder - libuv at LXJS 2012
-layout: blog-post.hbs
+layout: blog-post
 author: The Node.js Project
 ---
 

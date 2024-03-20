@@ -5,6 +5,7 @@ import { useContext, useEffect, useMemo } from 'react';
 import type { FC } from 'react';
 
 import Select from '@/components/Common/Select';
+import Choco from '@/components/Icons/Platform/Choco';
 import Docker from '@/components/Icons/Platform/Docker';
 import Homebrew from '@/components/Icons/Platform/Homebrew';
 import NVM from '@/components/Icons/Platform/NVM';
@@ -26,11 +27,15 @@ const PlatformDropdown: FC = () => {
     const disabledItems = [];
 
     if (os === 'WIN') {
-      disabledItems.push('BREW');
+      disabledItems.push('BREW', 'NVM');
     }
 
     if (os === 'LINUX') {
-      disabledItems.push('DOCKER');
+      disabledItems.push('DOCKER', 'CHOCO');
+    }
+
+    if (os === 'MAC') {
+      disabledItems.push('CHOCO');
     }
 
     const releaseSupportsHomebrew = supportedHomebrewVersions.includes(
@@ -71,6 +76,7 @@ const PlatformDropdown: FC = () => {
           NVM: <NVM width={16} height={16} />,
           BREW: <Homebrew width={16} height={16} />,
           DOCKER: <Docker width={16} height={16} />,
+          CHOCO: <Choco width={16} height={16} />,
         },
         disabledItems,
       })}

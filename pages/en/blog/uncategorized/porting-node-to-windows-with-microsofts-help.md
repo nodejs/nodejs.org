@@ -2,7 +2,7 @@
 date: '2011-06-23T22:22:58.000Z'
 category: uncategorized
 title: 'Porting Node to Windows With Microsoft’s Help'
-layout: blog-post.hbs
+layout: blog-post
 author: ryandahl
 ---
 

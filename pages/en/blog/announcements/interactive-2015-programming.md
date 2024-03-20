@@ -2,7 +2,7 @@
 date: '2015-10-20T17:00:00.000Z'
 category: announcements
 title: Node.js Foundation Announces Programming For Node.js Interactive
-layout: blog-post.hbs
+layout: blog-post
 author: The Node.js Project
 ---
 

@@ -2,7 +2,7 @@
 date: '2016-09-12T16:00:00.000Z'
 category: announcements
 title: Node.js Foundation Announces Schedule for Second Annual Node.js Interactive North America
-layout: blog-post.hbs
+layout: blog-post
 author: The Node.js Project
 ---
 

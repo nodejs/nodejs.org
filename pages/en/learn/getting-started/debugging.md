@@ -1,6 +1,6 @@
 ---
 title: Debugging Node.js
-layout: learn.hbs
+layout: learn
 ---
 
 # Debugging Node.js

@@ -34,54 +34,5 @@
       "link": "https://nodejs.org/en/blog/vulnerability/february-2024-security-releases/"
     }
   },
-  "websiteBadges": {},
-  "footerLinks": [
-    {
-      "link": "https://openjsf.org/wp-content/uploads/sites/84/2021/01/OpenJS-Foundation-Trademark-Policy-2021-01-12.docx.pdf",
-      "text": "components.footer.links.trademarkPolicy"
-    },
-    {
-      "link": "https://openjsf.org/wp-content/uploads/sites/84/2021/04/OpenJS-Foundation-Privacy-Policy-2019-11-15.pdf",
-      "text": "components.footer.links.privacyPolicy"
-    },
-    {
-      "link": "https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md",
-      "text": "components.footer.links.codeOfConduct"
-    },
-    {
-      "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
-      "text": "components.footer.links.security"
-    },
-    {
-      "link": "https://openjsf.org/",
-      "text": "components.footer.links.openJS"
-    }
-  ],
-  "socialLinks": [
-    {
-      "icon": "github",
-      "link": "https://github.com/nodejs/node",
-      "alt": "GitHub"
-    },
-    {
-      "icon": "mastodon",
-      "link": "https://social.lfx.dev/@nodejs",
-      "alt": "Mastodon"
-    },
-    {
-      "icon": "twitter",
-      "link": "https://twitter.com/nodejs",
-      "alt": "Twitter"
-    },
-    {
-      "icon": "slack",
-      "link": "https://openjs-foundation.slack.com/join/shared_invite/zt-238w9sb83-Qk9NcsrEMomq94Y~3gW8EQ#/shared-invite/email",
-      "alt": "Slack"
-    },
-    {
-      "icon": "linkedin",
-      "link": "https://www.linkedin.com/company/node-js",
-      "alt": "LinkedIn"
-    }
-  ]
+  "websiteBadges": {}
 }

@@ -1,6 +1,6 @@
 ---
 title: Writing files with Node.js
-layout: learn.hbs
+layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, ovflowd, vaishnav-mk
 ---
 

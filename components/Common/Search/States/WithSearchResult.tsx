@@ -15,7 +15,7 @@ type SearchResultProps = {
 };
 
 export const WithSearchResult: FC<SearchResultProps> = props => {
-  const isAPIResult = props.hit.document.siteSection.toLowerCase() === 'api';
+  const isAPIResult = props.hit.document.siteSection.toLowerCase() === 'docs';
   const basePath = isAPIResult ? BASE_URL : '';
   const path = `${basePath}/${props.hit.document.path}`;
 
