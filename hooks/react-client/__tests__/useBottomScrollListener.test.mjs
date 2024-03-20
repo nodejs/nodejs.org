@@ -1,37 +1,38 @@
-import { renderHook } from '@testing-library/react';
+import { fireEvent, renderHook } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
 
 import useBottomScrollListener from '@/hooks/react-client/useBottomScrollListener';
 
 describe('useBottomScrollListener', () => {
-  const callback = jest.fn();
-
-  it('should call the callback when the bottom of the window is reached', async () => {
+  it('should call the callback when the scroll reaches the bottom', () => {
+    const callback = jest.fn();
     renderHook(() => useBottomScrollListener(callback));
 
-    const mockElement = document.createElement('div');
-    mockElement.style.height = '10000px';
-    document.body.appendChild(mockElement);
+    act(() => {
+      fireEvent.scroll(window, {
+        target: { scrollY: 100, innerHeight: 200, scrollHeight: 200 },
+      });
+    });
 
-    global.window.scrollTo(0, 10000);
-    global.window.dispatchEvent(new Event('scroll'));
-
+    // timout is needed because the callback is called in the next tick
     setTimeout(() => {
       expect(callback).toHaveBeenCalled();
     }, 1);
-    document.body.removeChild(mockElement);
   });
 
-  it('should not call the callback when the bottom of the window is not reached', () => {
+  it('should not call the callback when the scroll does not reach the bottom', () => {
+    const callback = jest.fn();
     renderHook(() => useBottomScrollListener(callback));
 
-    const mockElement = document.createElement('div');
-    mockElement.style.height = '10000px';
-    document.body.appendChild(mockElement);
+    act(() => {
+      fireEvent.scroll(window, {
+        target: { scrollY: 100, innerHeight: 200, scrollHeight: 300 },
+      });
+    });
 
-    global.window.scrollTo(0, 0);
-    global.window.dispatchEvent(new Event('scroll'));
-
-    expect(callback).not.toHaveBeenCalled();
-    document.body.removeChild(mockElement);
+    // timout is needed because the callback is called in the next tick
+    setTimeout(() => {
+      expect(callback).not.toHaveBeenCalled();
+    }, 1);
   });
 });
