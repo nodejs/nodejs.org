@@ -4,7 +4,7 @@ import type { UserOS } from '@/types/userOS';
 // A utility enum to help convert `userOs` data type to user-readable format
 export enum OperatingSystem {
   WIN = 'Windows',
-  MAC = 'MacOS',
+  MAC = 'macOS',
   LINUX = 'Linux',
   OTHER = 'Other',
 }
