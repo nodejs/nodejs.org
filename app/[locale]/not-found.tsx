@@ -22,9 +22,8 @@ const NotFoundPage: FC = () => {
           <Image
             src="/static/images/node-mascot.svg"
             alt="The Node.js mascot"
-            className="w-[100px]"
-            height={200}
-            width={174.375}
+            height={114.69}
+            width={100}
           />
         </div>
         <p className="-mt-4 max-w-sm text-center text-lg">
