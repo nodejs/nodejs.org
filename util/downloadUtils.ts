@@ -41,6 +41,14 @@ export const platformItems = [
     label: 'Docker',
     value: 'DOCKER' as PackageManager,
   },
+  {
+    label: 'apt',
+    value: 'APT' as PackageManager,
+  },
+  {
+    label: 'yum',
+    value: 'YUM' as PackageManager,
+  },
 ];
 
 export const bitnessItems = {

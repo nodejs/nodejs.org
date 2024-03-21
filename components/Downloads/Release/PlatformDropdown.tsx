@@ -5,10 +5,12 @@ import { useContext, useEffect, useMemo } from 'react';
 import type { FC } from 'react';
 
 import Select from '@/components/Common/Select';
+import Apt from '@/components/Icons/Platform/Apt';
 import Choco from '@/components/Icons/Platform/Choco';
 import Docker from '@/components/Icons/Platform/Docker';
 import Homebrew from '@/components/Icons/Platform/Homebrew';
 import NVM from '@/components/Icons/Platform/NVM';
+import Yum from '@/components/Icons/Platform/Yum';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import type { PackageManager } from '@/types/release';
 import { formatDropdownItems, platformItems } from '@/util/downloadUtils';
@@ -27,7 +29,7 @@ const PlatformDropdown: FC = () => {
     const disabledItems = [];
 
     if (os === 'WIN') {
-      disabledItems.push('BREW', 'NVM');
+      disabledItems.push('BREW', 'NVM', 'APT', 'YUM');
     }
 
     if (os === 'LINUX') {
@@ -35,7 +37,7 @@ const PlatformDropdown: FC = () => {
     }
 
     if (os === 'MAC') {
-      disabledItems.push('CHOCO');
+      disabledItems.push('CHOCO', 'APT', 'YUM');
     }
 
     const releaseSupportsHomebrew = supportedHomebrewVersions.includes(
@@ -77,6 +79,8 @@ const PlatformDropdown: FC = () => {
           BREW: <Homebrew width={16} height={16} />,
           DOCKER: <Docker width={16} height={16} />,
           CHOCO: <Choco width={16} height={16} />,
+          APT: <Apt width={16} height={16} />,
+          YUM: <Yum width={16} height={16} />,
         },
         disabledItems,
       })}

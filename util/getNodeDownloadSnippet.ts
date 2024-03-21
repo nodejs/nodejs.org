@@ -10,6 +10,8 @@ export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
     BREW: '',
     DOCKER: '',
     CHOCO: '',
+    APT: '',
+    YUM: '',
   };
 
   if (os === 'LINUX' || os === 'MAC') {
@@ -32,6 +34,32 @@ export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
 
       # download and install Node.js
       brew install node@${release.major}
+
+      # verifies the right Node.js version is in the environment
+      node -v # should print \`${release.versionWithPrefix}\`
+
+      # verifies the right NPM version is in the environment
+      npm -v # should print \`${release.npm}\``;
+
+    snippets.APT = dedent`
+      # configure Node.js repository from NodeSource
+      curl -fsSL https://deb.nodesource.com/setup_${release.major}.x | bash -
+
+      # Install Node.js, replace yum with dnf if needed
+      apt-get install nodejs -y
+
+      # verifies the right Node.js version is in the environment
+      node -v # should print \`${release.versionWithPrefix}\`
+
+      # verifies the right NPM version is in the environment
+      npm -v # should print \`${release.npm}\``;
+
+    snippets.YUM = dedent`
+      # configure Node.js repository from NodeSource
+      curl -fsSL https://rpm.nodesource.com/setup_${release.major}.x | bash -
+
+      # Install Node.js, replace yum with dnf if needed
+      yum install nodejs -y
 
       # verifies the right Node.js version is in the environment
       node -v # should print \`${release.versionWithPrefix}\`
