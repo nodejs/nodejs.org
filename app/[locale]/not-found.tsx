@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
@@ -17,6 +18,15 @@ const NotFoundPage: FC = () => {
       <main>
         404
         <h1 className="special -mt-4">{t('layouts.error.notFound.title')}</h1>
+        <div className="my-4 flex items-center justify-center">
+          <Image
+            src="/static/images/node-mascot.svg"
+            alt="The Node.js mascot"
+            className="w-[100px]"
+            height={200}
+            width={174.375}
+          />
+        </div>
         <p className="-mt-4 max-w-sm text-center text-lg">
           {t('layouts.error.notFound.description')}
         </p>
