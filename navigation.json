@@ -39,7 +39,7 @@
       "text": "components.containers.footer.links.codeOfConduct"
     },
     {
-      "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
+      "link": "https://github.com/nodejs/node/blob/main/SECURITY.md",
       "text": "components.containers.footer.links.security"
     },
     {
@@ -120,7 +120,7 @@
           "label": "components.navigation.getInvolved.links.contribute"
         },
         "codeOfConduct": {
-          "link": "https://github.com/nodejs/admin/blob/HEAD/CODE_OF_CONDUCT.md",
+          "link": "https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md",
           "label": "components.navigation.getInvolved.links.codeOfConduct"
         }
       }
