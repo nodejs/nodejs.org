@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import {
   NotificationProvider,
   NotificationDispatch,
-} from '@/providers/NotificationProvider';
+} from '../NotificationProvider';
 
 jest.useFakeTimers();
 
