@@ -21,7 +21,6 @@ import { useRouter } from '@/navigation.mjs';
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '@/next.constants.mjs';
 import { search as oramaSearch, getInitialFacets } from '@/next.orama.mjs';
 import type { SearchDoc } from '@/types';
-import { debounce } from '@/util/debounce';
 
 type Facets = { [key: string]: number };
 
@@ -72,7 +71,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
 
   useEffect(
     () => {
-      debounce(() => search(searchTerm), 1000)();
+      search(searchTerm);
     },
     // we don't need to care about memoization of search function
     // eslint-disable-next-line react-hooks/exhaustive-deps
