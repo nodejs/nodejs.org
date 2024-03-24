@@ -103,6 +103,7 @@
         "links": {
           "about": "关于 Node.js",
           "aboutSide": "关于 Node.js®",
+          "branding": "Node.js 品牌指引",
           "governance": "项目治理",
           "releases": "以前的版本",
           "security": "安全报告"
