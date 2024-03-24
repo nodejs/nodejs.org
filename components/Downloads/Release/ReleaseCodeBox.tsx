@@ -25,17 +25,19 @@ const ReleaseCodeBox: FC = () => {
     // but usually we should recommend users to download "major" versions
     // since our Downlooad Buttons get the latest minor of a major, it does make sense
     // to request installation of a major via a package manager
+    const codeLanguage = os === 'WIN' ? 'powershell' : 'bash';
     memoizedShiki
-      .then(shiki => highlightToHtml(shiki)(updatedCode, 'bash'))
+      .then(shiki => highlightToHtml(shiki)(updatedCode, codeLanguage))
       .then(setCode);
     // Only react when the specific release number changed
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [release.versionWithPrefix, os, platform]);
 
+  const codeLanguage = os === 'WIN' ? 'PowerShell' : 'Bash';
   return (
     <div className="mb-2 mt-6 flex min-h-80 flex-col gap-2">
       {code && (
-        <CodeBox language="Bash">
+        <CodeBox language={codeLanguage}>
           <code dangerouslySetInnerHTML={{ __html: code }} />
         </CodeBox>
       )}
