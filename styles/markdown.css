@@ -41,7 +41,8 @@ main {
   h5,
   h6 {
     &[id] a {
-      @apply text-neutral-900 dark:text-white;
+      @apply text-neutral-900
+        dark:text-white;
     }
   }
 
