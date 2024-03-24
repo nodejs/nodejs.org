@@ -1,5 +1,5 @@
 ---
-title: Run JavaScript Everywhere
+title: 어디서든 JavaScript를 실행하세요!!
 layout: home
 ---
 
@@ -7,23 +7,20 @@ layout: home
   <WithBadge section="index" />
 
   <div>
-    <h1 className="special">Run JavaScript Everywhere</h1>
+    <h1 className="special">어디서든 JavaScript를 실행하세요!!</h1>
 
-    Node.js® is a free, open-source, cross-platform JavaScript runtime
-    environment that lets developers create servers, web apps,
-    command line tools and scripts.
-
+    Node.js®는 무료, 오픈소스, 크로스플랫폼 JavaSript 런타임 환경으로 개발자 여러분이 서버, 웹 앱, 커맨드 작성 도구와 스크립트를 만들도록 해줍니다.
   </div>
 
   <div>
     <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
       {({ release }) => (
         <>
-          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+          <DownloadButton release={release}>Node.js 다운로드 (LTS)</DownloadButton>
           <small>
-            Downloads Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
-            Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
+            Node.js 다운로드  <b>{release.versionWithPrefix}</b>
+            <sup title="Downloads a Node.js installer for your current platform">1</sup> LTS.
+            Node.js는 <a href="/download/package-manager">package managers</a>를 통해서도 다운로드 할 수 있습니다..
           </small>
         </>
       )}
@@ -32,19 +29,19 @@ layout: home
     <WithNodeRelease status={"Current"}>
       {({ release }) => (
         <small>
-          Want new features sooner?
-          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> instead.
+          새로운 기능을 먼저 경험하고 싶다면
+           <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="Downloads a Node.js installer for your current platform">1</sup> 를 다운 받으세요.
         </small>
       )}
     </WithNodeRelease>
-
   </div>
 </section>
 
 <section>
   <div>
     ```js displayName="Create an HTTP Server"
+    // server.mjs
     import { createServer } from 'node:http';
 
     const server = createServer((req, res) => {
@@ -56,9 +53,12 @@ layout: home
     server.listen(3000, '127.0.0.1', () => {
       console.log('Listening on 127.0.0.1:3000');
     });
+
+    // run with `node server.mjs`
     ```
 
     ```js displayName="Write Tests"
+    // tests.mjs
     import assert from 'node:assert';
     import test from 'node:test';
 
@@ -70,37 +70,46 @@ layout: home
       // throws an exception because 1 != 2
       assert.strictEqual(1, 2);
     });
+
+    // run with `node tests.mjs`
     ```
 
     ```js displayName="Read and Hash a File"
+    // crypto.mjs
     import { createHash } from 'node:crypto';
     import { readFile } from 'node:fs/promises';
 
     const hasher = createHash('sha1');
-    const fileContent = await readFile('./package.json');
 
     hasher.setEncoding('hex');
-    hasher.write(fileContent);
+    // ensure you have a `package.json` file for this test!
+    hasher.write(await readFile('package.json'));
     hasher.end();
 
     const fileHash = hasher.read();
+
+    // run with `node crypto.mjs`
     ```
 
-    ```js displayName="Read Streams"
+    ```js displayName="Streams Pipeline"
+    // streams.mjs
+    import { pipeline } from 'node:stream/promises';
     import { createReadStream, createWriteStream } from 'node:fs';
+    import { createGzip } from 'node:zlib';
 
-    const res = await fetch('https://nodejs.org/dist/index.json');
-    const json = await res.json(); // yields a json object
+    // ensure you have a `package.json` file for this test!
+    await pipeline
+    (
+      createReadStream('package.json'),
+      createGzip(),
+      createWriteStream('package.json.gz')
+    );
 
-    const readableStream = createReadStream('./package.json');
-    const writableStream = createWriteStream('./package2.json');
-
-    readableStream.setEncoding('utf8');
-
-    readableStream.on('data', chunk => writableStream.write(chunk));
+    // run with `node streams.mjs`
     ```
 
     ```js displayName="Work with Threads"
+    // threads.mjs
     import { Worker, isMainThread,
       workerData, parentPort } from 'node:worker_threads';
 
@@ -112,10 +121,10 @@ layout: home
       const source = workerData;
       parentPort.postMessage(btoa(source.toUpperCase()));
     }
-    ```
 
+    // run with `node threads.mjs`
+    ```
   </div>
 
-Learn more what Node.js is able to offer with our [Learning materials](/learn).
-
+  Node.js에 대해 더 알고 싶다면 학습 자료를 확인하세요[Learning materials](/learn).
 </section>
