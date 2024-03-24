@@ -17,12 +17,7 @@ export const NEXT_REHYPE_PLUGINS = [
   // Generates `id` attributes for headings (H1, ...)
   rehypeSlug,
   // Automatically add anchor links to headings (H1, ...)
-  [
-    rehypeAutolinkHeadings,
-    {
-      behavior: 'wrap',
-    },
-  ],
+  [rehypeAutolinkHeadings, { behavior: 'wrap' }],
   // Transforms sequential code elements into code tabs and
   // adds our syntax highlighter (Shikiji) to Codeboxes
   rehypeShikiji,
