@@ -12,3 +12,7 @@
 @import './base.css';
 @import './markdown.css';
 @import './effects.css';
+
+html {
+  scrollbar-gutter: stable;
+}
