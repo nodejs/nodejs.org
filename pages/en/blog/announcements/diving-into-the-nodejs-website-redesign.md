@@ -107,9 +107,10 @@ Many people and organizations have contributed in both big and small ways to rea
 - [Vercel](https://www.vercel.com/) for providing the infrastructure that serves and powers the Node.js Website
 - and lastly, the [OpenJS Foundation](https://openjsf.org/) for their support and guidance.
 
-In closing, Matteo Collina, a member of the TSC, said this on social media:
+The community is strong, and we're excited about what we can accomplish together.
 
 > Here is your weekly reminder that the Node.js project is driven by volunteers. Therefore every feature that lands is because someone spent time (or money) to make it happen. This is called Open Governance.
+> <cite>"Matteo Collina"</cite>
 
 Want to get involved? [Check out the project on GitHub](https://github.com/nodejs/nodejs.org).
 
