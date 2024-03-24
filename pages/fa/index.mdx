@@ -43,6 +43,7 @@ layout: home
 <section>
   <div>
     ```js displayName="Create an HTTP Server"
+    // server.mjs
     import { createServer } from 'node:http';
 
     const server = createServer((req, res) => {
@@ -54,9 +55,12 @@ layout: home
     server.listen(3000, '127.0.0.1', () => {
       console.log('Listening on 127.0.0.1:3000');
     });
+
+    // run with `node server.mjs`
     ```
 
     ```js displayName="Write Tests"
+    // tests.mjs
     import assert from 'node:assert';
     import test from 'node:test';
 
@@ -68,37 +72,46 @@ layout: home
       // throws an exception because 1 != 2
       assert.strictEqual(1, 2);
     });
+
+    // run with `node tests.mjs`
     ```
 
     ```js displayName="Read and Hash a File"
+    // crypto.mjs
     import { createHash } from 'node:crypto';
     import { readFile } from 'node:fs/promises';
 
     const hasher = createHash('sha1');
-    const fileContent = await readFile('./package.json');
 
     hasher.setEncoding('hex');
-    hasher.write(fileContent);
+    // ensure you have a `package.json` file for this test!
+    hasher.write(await readFile('package.json'));
     hasher.end();
 
     const fileHash = hasher.read();
+
+    // run with `node crypto.mjs`
     ```
 
-    ```js displayName="Read Streams"
+    ```js displayName="Streams Pipeline"
+    // streams.mjs
+    import { pipeline } from 'node:stream/promises';
     import { createReadStream, createWriteStream } from 'node:fs';
+    import { createGzip } from 'node:zlib';
 
-    const res = await fetch('https://nodejs.org/dist/index.json');
-    const json = await res.json(); // yields a json object
+    // ensure you have a `package.json` file for this test!
+    await pipeline
+    (
+      createReadStream('package.json'),
+      createGzip(),
+      createWriteStream('package.json.gz')
+    );
 
-    const readableStream = createReadStream('./package.json');
-    const writableStream = createWriteStream('./package2.json');
-
-    readableStream.setEncoding('utf8');
-
-    readableStream.on('data', chunk => writableStream.write(chunk));
+    // run with `node streams.mjs`
     ```
 
     ```js displayName="Work with Threads"
+    // threads.mjs
     import { Worker, isMainThread,
       workerData, parentPort } from 'node:worker_threads';
 
@@ -110,6 +123,8 @@ layout: home
       const source = workerData;
       parentPort.postMessage(btoa(source.toUpperCase()));
     }
+
+    // run with `node threads.mjs`
     ```
   </div>
 
