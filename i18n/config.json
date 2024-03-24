@@ -126,7 +126,8 @@
     "langDir": "ltr",
     "dateFormat": "DD-MM-YYYY",
     "hrefLang": "ro",
-    "enabled": false
+    "enabled": false,
+    "default": false
   },
   {
     "code": "ru",
