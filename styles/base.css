@@ -4,9 +4,8 @@
 
 html,
 body {
-  scrollbar-gutter: stable;
-
-  @apply size-full;
+  @apply size-full
+    [scrollbar-gutter:stable];
 }
 
 body {
