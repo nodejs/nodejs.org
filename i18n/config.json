@@ -120,6 +120,16 @@
     "default": false
   },
   {
+    "code": "ro",
+    "localName": "Română",
+    "name": "Romanian",
+    "langDir": "ltr",
+    "dateFormat": "DD-MM-YYYY",
+    "hrefLang": "ro",
+    "enabled": false,
+    "default": false
+  },
+  {
     "code": "ru",
     "localName": "Русский",
     "name": "Russian",
