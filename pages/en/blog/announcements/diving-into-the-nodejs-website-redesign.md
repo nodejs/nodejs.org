@@ -110,7 +110,7 @@ Many people and organizations have contributed in both big and small ways to rea
 The community is strong, and we're excited about what we can accomplish together.
 
 > Here is your weekly reminder that the Node.js project is driven by volunteers. Therefore every feature that lands is because someone spent time (or money) to make it happen. This is called Open Governance.
-> <cite>"Matteo Collina"</cite>
+> <cite>"Matteo Collina," via social media</cite>
 
 Want to get involved? [Check out the project on GitHub](https://github.com/nodejs/nodejs.org).
 
