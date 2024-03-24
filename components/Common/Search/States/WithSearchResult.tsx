@@ -1,9 +1,11 @@
 import type { Result } from '@orama/orama';
 import type { FC } from 'react';
 
-import { pathToBreadcrumbs } from '@/components/Common/Search/utils';
+import {
+  pathToBreadcrumbs,
+  searchHitToLinkPath,
+} from '@/components/Common/Search/utils';
 import Link from '@/components/Link';
-import { BASE_URL } from '@/next.constants.mjs';
 import { highlighter } from '@/next.orama.mjs';
 import type { SearchDoc } from '@/types';
 
@@ -12,18 +14,18 @@ import styles from './index.module.css';
 type SearchResultProps = {
   hit: Result<SearchDoc>;
   searchTerm: string;
+  selected: boolean;
 };
 
 export const WithSearchResult: FC<SearchResultProps> = props => {
-  const isAPIResult = props.hit.document.siteSection.toLowerCase() === 'docs';
-  const basePath = isAPIResult ? BASE_URL : '';
-  const path = `${basePath}/${props.hit.document.path}`;
+  const path = searchHitToLinkPath(props.hit);
 
   return (
     <Link
       key={props.hit.id}
       href={path}
       className={styles.fulltextSearchResult}
+      data-state={props.selected ? 'selected' : 'not-selected'}
     >
       <div
         className={styles.fulltextSearchResultTitle}
