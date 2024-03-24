@@ -30,7 +30,7 @@ Le projet Node.js est actuellement géré par un certain nombre de dépôts GitH
 
 Si vous souhaitez corriger des bogues ou ajouter une nouvelle fonctionnalité à Node.js, veuillez consulter les [Directives de contribution à Node.js] (https\://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). Le processus de révision par les collaborateurs existants pour toutes les contributions au projet y est également expliqué.
 
-Si vous vous demandez comment commencer, vous pouvez consulter [Node Todo] (https\://www\.nodetodo.org/) qui vous guidera peut-être vers votre première contribution.
+Si vous vous demandez comment commencer, vous pouvez consulter [Node Todo](https://www.nodetodo.org/) qui vous guidera peut-être vers votre première contribution.
 
 ## Devenir un collaborateur
 
