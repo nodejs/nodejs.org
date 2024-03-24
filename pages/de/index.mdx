@@ -12,31 +12,33 @@ layout: home
     Node.js® ist eine kostenlose, quelloffene, plattformübergreifende JavaScript-Laufzeitumgebung,
     mit der Entwickler Server, Webanwendungen
     Kommandozeilen-Tools und Skripte erstellen können.
+
   </div>
 
   <div>
     <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
       {({ release }) => (
-        <>
-          <DownloadButton release={release}>Node.js (LTS) herunterladen</DownloadButton>
-          <small>
-            Lade Node.js <b>{release.versionWithPrefix}</b> 
-            <sup title="Downloads a Node.js installer for your current platform">1</sup> mit Langzeitunterstützung herunter.
-            Node.js kann auch mit <a href="/download/package-manager">Paket-Managern</a> installiert werden.
-          </small>
-        </>
-      )}
+                                                                    <>
+                                                                      <DownloadButton release={release}>Node.js (LTS) herunterladen</DownloadButton>
+                                                                      <small>
+                                                                        Lade Node.js <b>{release.versionWithPrefix}</b> 
+                                                                        <sup title="Downloads a Node.js installer for your current platform">1</sup> mit Langzeitunterstützung herunter.
+                                                                        Node.js kann auch mit <a href="/download/package-manager">Paket-Managern</a> installiert werden.
+                                                                      </small>
+                                                                    </>
+                                                                  )}
     </WithNodeRelease>
 
     <WithNodeRelease status={"Current"}>
       {({ release }) => (
-        <small>
-          Möchtest du schneller neue Funktionen nutzen?
-          Hole dir <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> stattdessen.
-        </small>
-      )}
+                                                                    <small>
+                                                                      Möchtest du schneller neue Funktionen nutzen?
+                                                                      Hole dir <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+                                                                      <sup title="Downloads a Node.js installer for your current platform">1</sup> stattdessen.
+                                                                    </small>
+                                                                  )}
     </WithNodeRelease>
+
   </div>
 </section>
 
@@ -116,7 +118,9 @@ layout: home
       parentPort.postMessage(btoa(source.toUpperCase()));
     }
     ```
+
   </div>
 
-  Erfahren Sie mehr über die Möglichkeiten von Node.js mit unseren [Lernmaterialien](/learn).
+Erfahren Sie mehr über die Möglichkeiten von Node.js mit unseren [Lernmaterialien](/learn).
+
 </section>

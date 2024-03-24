@@ -7,7 +7,7 @@ title: Installing Node.js via package manager
 
 > Die Pakete auf dieser Seite werden von ihren jeweiligen Paketbetreuern nicht vom Node.js-Kernteam gepflegt und unterstützt. Bitte melden Sie alle Probleme, die Ihnen begegnen, dem Paketbetreuer. Wenn sich herausstellt, dass es sich um einen Fehler in Node.js selbst handelt, wird der Betreuer das Problem an die Entwickler weitermelden.
 
-***
+---
 
 - [Alpine Linux](#alpine-linux)
 - [Android](#android)
@@ -33,7 +33,7 @@ title: Installing Node.js via package manager
 - [Windows](#windows-1)
 - [z/OS](#zos)
 
-***
+---
 
 ## Alpine Linux
 

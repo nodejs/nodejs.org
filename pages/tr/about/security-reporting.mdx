@@ -35,25 +35,25 @@ bakımcılar.
 
 İşte Node.js için güvenlik açıklama politikası
 
-* Güvenlik raporu alındığında ve birincil bir sorumlu atanır. Bu kişi, düzeltme ve yayın sürecini koordine edecektir. Sorun doğrulanır ve etkilenen tüm sürümlerin bir listesi belirlenir. Potansiyel benzer sorunları bulmak için kod denetlenir. Bakım altındaki tüm sürümler için düzeltmeler hazırlanır. Bu düzeltmeler, genel depoya taahhüt edilmez, ancak duyuruya kadar yerel olarak tutulur.
+- Güvenlik raporu alındığında ve birincil bir sorumlu atanır. Bu kişi, düzeltme ve yayın sürecini koordine edecektir. Sorun doğrulanır ve etkilenen tüm sürümlerin bir listesi belirlenir. Potansiyel benzer sorunları bulmak için kod denetlenir. Bakım altındaki tüm sürümler için düzeltmeler hazırlanır. Bu düzeltmeler, genel depoya taahhüt edilmez, ancak duyuruya kadar yerel olarak tutulur.
 
-* Bu zafiyet için önerilen ambargo tarihi belirlenir ve bir CVE (Common Vulnerabilities and Exposures - Ortak Zayıflıklar ve Maruz Kalma) talep edilir.
+- Bu zafiyet için önerilen ambargo tarihi belirlenir ve bir CVE (Common Vulnerabilities and Exposures - Ortak Zayıflıklar ve Maruz Kalma) talep edilir.
 
-* Ambargo tarihinde, Node.js güvenlik posta listesine aşağıdaki belgenin bir kopyası gönderilir
+- Ambargo tarihinde, Node.js güvenlik posta listesine aşağıdaki belgenin bir kopyası gönderilir
   Duyuru. Değişiklikler genel depoya ve yeni yapılara aktarılır
   nodejs.org'a dağıtılır. Posta listesinin oluşturulmasından sonraki 6 saat içinde
   bildirilirse, danışmanlığın bir kopyası Node.js blogunda yayınlanacaktır.
 
-* Genellikle, zafiyetin yayınlandığı tarihten itibaren 72 saat sonra ambargo tarihi belirlenir. Ancak, bu, hatanın ciddiyetine veya bir düzeltmenin uygulanmasındaki zorluğa bağlı olarak değişebilir.
+- Genellikle, zafiyetin yayınlandığı tarihten itibaren 72 saat sonra ambargo tarihi belirlenir. Ancak, bu, hatanın ciddiyetine veya bir düzeltmenin uygulanmasındaki zorluğa bağlı olarak değişebilir.
 
-* Bu süreç bazen zaman alabilir, özellikle diğer projelerin bakımcılarıyla koordinasyon gerektiğinde. Mümkün olduğunca hızlı bir şekilde sorunu ele almak için her çaba gösterilecektir; ancak, açıklamanın tutarlı bir şekilde ele alınmasını sağlamak için yukarıdaki yayın sürecini takip etmek önemlidir.
+- Bu süreç bazen zaman alabilir, özellikle diğer projelerin bakımcılarıyla koordinasyon gerektiğinde. Mümkün olduğunca hızlı bir şekilde sorunu ele almak için her çaba gösterilecektir; ancak, açıklamanın tutarlı bir şekilde ele alınmasını sağlamak için yukarıdaki yayın sürecini takip etmek önemlidir.
 
 ## Güvenlik güncellemeleri almak
 
 Güvenlik bildirimleri aşağıdaki yöntemlerle dağıtılacaktır.
 
-* [Google Group](https://groups.google.com/group/nodejs-sec)
-* [Node.js Blog](/blog)
+- [Google Group](https://groups.google.com/group/nodejs-sec)
+- [Node.js Blog](/blog)
 
 ## Bu politikaya ilişkin yorumlar
 
@@ -63,8 +63,15 @@ Tartışmak için \[bir konuyu dosyalayın] (https://github.com/nodejs/security-
 
 ## OpenSSF En İyi Uygulamaları
 
-<a href="https://bestpractices.coreinfrastructure.org/projects/29" style={{ display: 'inline-flex' }}>
-  <img alt="OpenSSF Rozeti" src="https://bestpractices.coreinfrastructure.org/projects/29/badge" style={{ display: 'inline' }} />
+<a
+  href="https://bestpractices.coreinfrastructure.org/projects/29"
+  style={{ display: 'inline-flex' }}
+>
+  <img
+    alt="OpenSSF Rozeti"
+    src="https://bestpractices.coreinfrastructure.org/projects/29/badge"
+    style={{ display: 'inline' }}
+  />
 </a>
 
 Açık Kaynak Güvenlik Vakfı (OpenSSF) \[En İyi Uygulamalar rozeti] (https://github.com/coreinfrastructure/best-practices-badge), Özgür/Kütüphane ve Açık Kaynak Yazılım (FLOSS) projelerinin en iyi uygulamaları takip ettiklerini göstermeleri için bir yoldur. Projeler gönüllü olarak her bir en iyi uygulamayı nasıl takip ettiklerini kendi kendilerine belgeleyebilirler. Rozetin tüketicileri, hangi FLOSS projelerinin en iyi uygulamaları takip ettiğini ve sonuç olarak daha yüksek kalitede güvenli yazılım üretme olasılığının daha yüksek olduğunu hızlı bir şekilde değerlendirebilirler.
