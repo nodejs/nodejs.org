@@ -16,7 +16,7 @@ Read on for a deeper dive into the journey and insights into what's to come.
 
 ## Scale and Constraints
 
-The nodejs.org site has been around for over 14 years. A design resembling the utilitarian download and docs homepage first appeared in late 2011. This was Node.js `0.6` days, for context.
+The nodejs.org site has been around for over 14 years. A design resembling the utilitarian download and docs homepage first appeared in late 2011. This was Node.js _0.6_ days, for context.
 
 ![A screenshot of the nodejs.org website from late 2011.](/static/images/blog/announcements/2011-nodejs-screenshot.png)
 
@@ -24,7 +24,7 @@ Ever since, the site has slowly grown in scale, as the project has needed it to.
 
 ## A False Start: nodejs.dev
 
-The project's first attempt at a redesign began in 2019. The work started on a new domain and a new repo, [nodejs.dev](https://github.com/nodejs/nodejs.dev). In retrospect, this might have unintentionally doomed the project from the start. The team faced challenges of siloed development. Put simply, this codebase was not where the community or contributors were. Established contributor workflows were not present. Already busy people volunteering their time don't want to learn a second set of tools. It was a high burden. The project was not able to sustain the kind of leadership it needed to maintain momentum. Additionally, a singular cutover for the new tech stack would have been complicated and pose a risk to the established presence of the site.
+The project's first attempt at a redesign began in 2019. The work started on a new domain and a new repo, [nodejs.dev](https://github.com/nodejs/nodejs.dev). In retrospect, this might have unintentionally doomed the project from the start. The team faced challenges of siloed development. Put simply, this codebase was not where the community or contributors were. Established contributor workflows were not present. Already busy people volunteering their time don't want to learn a second set of tools. It was too heavy a burden. The project was not able to sustain the kind of leadership it needed to maintain momentum. Additionally, a singular cutover for the new tech stack would have been complicated and pose a risk to the established presence of the site.
 
 Out of nodejs.dev, however, came a lot of lessons and renewed content. A series of [comprehensive learning resources](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs) was created that we carried forward into our current design. A vision from all this was forming: incremental evolution, in-place development, and as little disruption as possible.
 
