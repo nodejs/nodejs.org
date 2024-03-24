@@ -168,5 +168,15 @@
     "hrefLang": "zh-Hant",
     "enabled": false,
     "default": false
+  },
+  {
+    "code": "pl",
+    "localName": "Polski",
+    "name": "Polish",
+    "langDir": "ltr",
+    "dateFormat": "DD/MM/YYYY",
+    "hrefLang": "pl",
+    "enabled": false,
+    "default": false
   }
 ]
