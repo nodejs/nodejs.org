@@ -19,7 +19,9 @@ export const NEXT_REHYPE_PLUGINS = [
   // Automatically add anchor links to headings (H1, ...)
   [
     rehypeAutolinkHeadings,
-    { properties: { ariaHidden: true, tabIndex: -1, class: 'anchor' } },
+    {
+      behavior: 'wrap',
+    },
   ],
   // Transforms sequential code elements into code tabs and
   // adds our syntax highlighter (Shikiji) to Codeboxes
