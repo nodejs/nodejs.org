@@ -3,12 +3,6 @@ title: À propos de Node.js®
 layout: about
 ---
 
-<div className="my-4 flex items-center justify-center">
-  <img alt="Mascotte de Node.js" src="/static/images/node-mascot.svg" className="w-[100px]" />
-</div>
-
-***
-
 # À propos de Node.js®
 
 En tant que moteur d'exécution JavaScript asynchrone piloté par les événements, Node.js est conçu pour construire des applications réseau évolutives.
@@ -16,13 +10,30 @@ des applications réseau évolutives. Dans l'exemple suivant, "hello world", de 
 peuvent être gérées simultanément. À chaque connexion, le rappel est
 mais s'il n'y a pas de travail à faire, Node.js se met en veille.
 
-```js
-const http = require('node:http');
+```cjs
+const { createServer } = require('node:http');
 
 const hostname = '127.0.0.1';
 const port = 3000;
 
-const server = http.createServer((req, res) => {
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+```mjs
+import { createServer } from 'node:http';
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   res.end('Hello World');
