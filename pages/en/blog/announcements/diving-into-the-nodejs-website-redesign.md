@@ -8,11 +8,11 @@ author: Brian Muenzenmeyer
 
 By now you've noticed nodejs.org's fresh new look!
 
-![A screenshot of the nodejs.org website from 2024.](/static/images/blog/announcements/2024-nodejs-screenshot.png)
-
 We've taken great care in approaching this design with a nod to the past and look to the future. The site has many converging use cases, thousands of pages, and is a daily resource to many. The whole story had some dead ends and detours. But in the end it was a collective effort; coming to life with the contributions of over three dozen contributors and fantastic teamwork with select partners. The site improves the information architecture, brings content to users' fingertips like never before, and puts in place a stable development platform for years to come. We've also iterated on a revamped developer experience, clearer CI/CD feedback, and an approachable tech stack.
 
 Read on for a deeper dive into the journey and insights into what's to come.
+
+![A screenshot of the nodejs.org website from 2024.](/static/images/blog/announcements/2024-nodejs-screenshot.png)
 
 ## Scale and Constraints
 
