@@ -1,77 +1,57 @@
 ---
-title: Security Reporting
+title: گزارش امنیتی
 layout: about
 ---
 
-# Security Reporting
+# گزارش امنیتی
 
-برای کسب جزئیات بیشتر در مورد خط مشی‌های امنیتی، به [این صفحه](https://github.com/nodejs/node/security/policy) سر بزنید.
+برای جزئیات بیشتر در مورد سیاست‌های امنیتی فعال، [این صفحه](https://github.com/nodejs/node/security/policy) را بررسی کنید.
 
-## Reporting a bug in Node.js
+## گزارش باگ در Node.js
 
 برای گزارش باگ‌های امنیتی در Node.js از [HackerOne](https://hackerone.com/nodejs) استفاده کنید.
 
-گزارش شما طی ۵ روز تصدیق خواهد شد و شما یک پاسخ با جزئیات بیشتر حاوی مراحل بعدی در بررسی گزارش‌تان را در ۱۰ روز دریافت خواهید کرد.
+گزارش شما طی ۵ روز تایید خواهد شد و شما ظرف ۱۰ روز پاسخی با جزئیات بیشتر حاوی مراحل بعدی در بررسی گزارش‌تان را دریافت خواهید کرد.
 
-پس از پاسخ اولیه به گزارش شما، تیم امنیتی تلاش خواهد کرد که شما را از مراحلِ پیشرفتِ روندِ ترمیم و اعلان نهایی آگاه نگه دارد و ممکن هست که از شما درخواست اطلاعات تکمیلی یا راهنمایی‌ در مورد گزارشتان کند.
+پس از پاسخ اولیه به گزارش شما، تیم امنیتی تلاش خواهد کرد تا شما را از پیشرفت‌های صورت گرفته در جهت رفع مشکل و اعلام نهایی آگاه کند، و ممکن است درخواست اطلاعات یا راهنمایی بیشتری در مورد مشکل گزارش شده داشته باشد.
 
 ### برنامه پاداشِ کشف باگ در Node.js
 
-The Node.js project engages in an official bug bounty program for security
-researchers and responsible public disclosures. The program is managed through
-the HackerOne platform. See [https://hackerone.com/nodejs](https://hackerone.com/nodejs) for further details.
+پروژه Node.js در یک برنامه رسمی پاداش کشف باگ برای محققان امنیتی و افشای مسئولانه در فضای عمومی مشارکت دارد. این برنامه از طریق پلتفرم HackerOne مدیریت می‌شود. برای اطلاعات بیشتر به [https://hackerone.com/nodejs](https://hackerone.com/nodejs) مراجعه کنید.
 
-## Reporting a bug in a third party module
+## گزارش باگ در ماژول شخص‌ثالث
 
-Security bugs in third party modules should be reported to their respective
-maintainers.
+باگ‌های امنیتی در ماژول‌های شخص ثالث باید به نگهدارندگان مربوطه گزارش شوند.
 
-## Disclosure policy
+## سیاست افشاگری
 
-Here is the security disclosure policy for Node.js
+سیاست افشاگری امنیتی برای Node.js :
 
-* The security report is received and is assigned a primary handler. This
-  person will coordinate the fix and release process. The problem is confirmed
-  and a list of all affected versions is determined. Code is audited to find
-  any potential similar problems. Fixes are prepared for all releases which are
-  still under maintenance. These fixes are not committed to the public
-  repository but rather held locally pending the announcement.
+* گزارش امنیتی دریافت و یک کنترل کننده اصلی به آن اختصاص داده می‌شود. این شخص فرایند رفع مشکل و انتشار را هماهنگ می‌کند. مشکل تایید و لیستی از تمام نسخه‌های تاثیرپذیر تعیین می‌شود. کد برای یافتن هرگونه مشکل مشابه بالقوه دیگر بررسی می‌شود. رفع‌ها برای تمام نسخه‌هایی که هنوز تحت پشتیبانی هستند آماده می‌شوند. این رفع‌ها به مخزن عمومی ارسال نمی‌شوند بلکه به صورت محلی نگهداری می‌شوند تا زمان اعلام فرا برسد.
 
-* A suggested embargo date for this vulnerability is chosen and a CVE (Common
-  Vulnerabilities and Exposures (CVE®)) is requested for the vulnerability.
+* یک تاریخ محرمانگی پیشنهادی برای این آسیب‌پذیری انتخاب می‌شود و یک CVE (آسیب‌پذیری‌ها و مواجهه‌های رایج مشترک) برای آسیب‌پذیری درخواست می‌شود.
 
-* On the embargo date, the Node.js security mailing list is sent a copy of the
-  announcement. The changes are pushed to the public repository and new builds
-  are deployed to nodejs.org. Within 6 hours of the mailing list being
-  notified, a copy of the advisory will be published on the Node.js blog.
+* در تاریخ محرمانگی، کپی اطلاعیه به لیست ایمیل امنیتی Node.js ارسال می‌شود. تغییرات به مخزن عمومی ارسال و نسخه‌های جدید در nodejs.org منتشر می‌شوند. در عرض 6 ساعت از اطلاع‌رسانی به لیست ایمیل، کپی‌ای از اطلاعیه در بلاگ Node.js منتشر خواهد شد.
 
-* Typically the embargo date will be set 72 hours from the time the CVE is
-  issued. However, this may vary depending on the severity of the bug or
-  difficulty in applying a fix.
+* معمولاً تاریخ محرمانگی 72 ساعت پس از صدور CVE تنظیم می‌شود. با این حال، ممکن است بر اساس شدت باگ یا دشواری در اعمال رفع تغییر کند.
 
-* This process can take some time, especially when coordination is required
-  with maintainers of other projects. Every effort will be made to handle the
-  bug in as timely a manner as possible; however, it's important that we follow
-  the release process above to ensure that the disclosure is handled in a
-  consistent manner.
+* این فرایند ممکن است زمانبر باشد، به ویژه زمانی که هماهنگی با نگهدارندگان پروژه‌های دیگر نیز مورد نیاز باشد. تلاش خواهد شد تا باگ در سریع‌ترین زمان ممکن برطرف شود؛ با این حال، مهم است که ما از فرایند انتشار بالا پیروی کنیم تا اطمینان حاصل شود که افشاگری به شیوه‌ای یکپارچه انجام می‌شود.
 
-## Receiving security updates
+## دریافت به‌روزرسانی‌های امنیتی
 
-Security notifications will be distributed via the following methods.
+اطلاعیه‌های امنیتی از طریق روش‌های زیر توزیع خواهند شد:
 
-* [Google Group](https://groups.google.com/group/nodejs-sec)
-* [Node.js Blog](/blog)
+* [گروه گوگل](https://groups.google.com/group/nodejs-sec)
+* [بلاگ Node.js](/blog)
 
-## Comments on this policy
+## نظرات درباره این سیاست
 
-If you have suggestions on how this process could be improved please submit a
-[pull request](https://github.com/nodejs/nodejs.org) or
-[file an issue](https://github.com/nodejs/security-wg/issues/new) to discuss.
+اگر پیشنهادی برای بهبود این فرایند دارید، لطفاً یک [pull request](https://github.com/nodejs/nodejs.org) ارسال کنید یا یک [issue جدید](https://github.com/nodejs/security-wg/issues/new) ایجاد نمایید تا آن را بررسی کنیم.
 
-## OpenSSF Best Practices
+## رویه‌های بهینه OpenSSF
 
 <a href="https://bestpractices.coreinfrastructure.org/projects/29" style={{ display: 'inline-flex' }}>
-  <img alt="OpenSSF Badge" src="https://bestpractices.coreinfrastructure.org/projects/29/badge" style={{ display: 'inline' }} />
+  <img alt="نشان OpenSSF" src="https://bestpractices.coreinfrastructure.org/projects/29/badge" style={{ display: 'inline' }} />
 </a>
 
-The Open Source Security Foundation (OpenSSF) [Best Practices badge](https://github.com/coreinfrastructure/best-practices-badge) is a way for Free/Libre and Open Source Software (FLOSS) projects to show that they follow best practices. Projects can voluntarily self-certify how they follow each best practice. Consumers of the badge can quickly assess which FLOSS projects are following best practices and as a result are more likely to produce higher-quality secure software.
+[نشان بهترین شیوه ها](https://github.com/coreinfrastructure/best-practices-badge) بنیاد امنیت متن باز (OpenSSF) راهی است برای پروژه‌های نرم‌افزار آزاد/رایگان و متن باز (FLOSS) تا نشان دهند که از رویه‌های بهینه پیروی می‌کنند. پروژه‌ها می‌توانند به صورت داوطلبانه خود تأیید کنند که چگونه از هر رویه بهینه پیروی می‌کنند. مصرف‌کنندگان این نشان می‌توانند به سرعت ارزیابی کنند که کدام پروژه‌های FLOSS از رویه‌های بهینه پیروی می‌کنند و در نتیجه احتمال بیشتری دارد که نرم‌افزارهای امن با کیفیت بالاتر تولید کنند.
