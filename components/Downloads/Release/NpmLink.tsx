@@ -10,7 +10,9 @@ const NpmLink: FC = () => {
   const { release } = useContext(ReleaseContext);
 
   return (
-    <LinkWithArrow href={`https://github.com/npm/cli/releases/tag/v${release.npm}`}>
+    <LinkWithArrow
+      href={`https://github.com/npm/cli/releases/tag/v${release.npm}`}
+    >
       npm ({release.npm})
     </LinkWithArrow>
   );
