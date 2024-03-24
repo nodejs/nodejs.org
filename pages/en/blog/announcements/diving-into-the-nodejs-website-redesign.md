@@ -1,7 +1,7 @@
 ---
 date: '2024-03-24T12:30:09.000Z'
 category: announcements
-title: Diving the Node.js Website Redesign
+title: Diving into the Node.js Website Redesign
 layout: blog-post
 author: Brian Muenzenmeyer
 ---
