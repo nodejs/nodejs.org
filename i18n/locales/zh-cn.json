@@ -3,23 +3,23 @@
     "containers": {
       "footer": {
         "links": {
-          "trademarkPolicy": "Trademark Policy",
-          "privacyPolicy": "Privacy Policy",
-          "codeOfConduct": "Code of Conduct",
-          "security": "Security Policy",
-          "openJS": "OpenJS Foundation"
+          "trademarkPolicy": "商标政策",
+          "privacyPolicy": "隐私政策",
+          "codeOfConduct": "行为守则",
+          "security": "安全政策",
+          "openJS": "OpenJS 基金会"
         }
       },
       "navBar": {
         "links": {
-          "about": "About",
-          "download": "Download",
-          "docs": "Docs",
-          "guides": "Guides",
-          "learn": "Learn",
-          "security": "Security",
-          "certification": "Certification",
-          "blog": "Blog"
+          "about": "关于",
+          "download": "下载",
+          "docs": "文档",
+          "guides": "指南",
+          "learn": "学习",
+          "security": "安全",
+          "certification": "认证",
+          "blog": "博客"
         }
       }
     },
@@ -27,263 +27,263 @@
       "learn": {
         "gettingStarted": {
           "links": {
-            "gettingStarted": "Getting Started",
-            "introductionToNodejs": "Introduction to Node.js",
-            "howToInstallNodejs": "How to install Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "How much JavaScript do you need to know to use Node.js?",
-            "differencesBetweenNodejsAndTheBrowser": "Differences between Node.js and the Browser",
-            "theV8JavascriptEngine": "The V8 JavaScript Engine",
-            "anIntroductionToTheNpmPackageManager": "An introduction to the npm package manager",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) and beyond",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
-            "nodejsWithTypescript": "Node.js with TypeScript",
-            "nodejsWithWebassembly": "Node.js with WebAssembly",
-            "debugging": "Debugging Node.js",
-            "profiling": "Profiling Node.js Applications",
-            "securityBestPractices": "Security Best Practices"
+            "gettingStarted": "入门",
+            "introductionToNodejs": "Node.js 介绍",
+            "howToInstallNodejs": "如何安装 Node.js",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "使用 Node.js 需要了解多少 JavaScript？",
+            "differencesBetweenNodejsAndTheBrowser": "Node.js 与浏览器的区别",
+            "theV8JavascriptEngine": "V8 JavaScript 引擎",
+            "anIntroductionToTheNpmPackageManager": "npm 包管理器介绍",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) 及以后版本",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js 开发与生产环境的区别",
+            "nodejsWithTypescript": "Node.js 与 TypeScript",
+            "nodejsWithWebassembly": "Node.js 与 WebAssembly",
+            "debugging": "调试 Node.js",
+            "profiling": "分析 Node.js 应用",
+            "securityBestPractices": "安全最佳实践"
           }
         },
         "asynchronousWork": {
           "links": {
-            "asynchronousWork": "Asynchronous Work",
-            "asynchronousFlowControl": "Asynchronous flow control",
-            "overviewOfBlockingVsNonBlocking": "Overview of Blocking vs Non-Blocking",
-            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asynchronous Programming and Callbacks",
-            "discoverJavaScriptTimers": "Discover JavaScript Timers",
-            "theNodejsEventLoop": "The Node.js Event Loop",
-            "theNodejsEventEmitter": "The Node.js Event Emitter",
-            "understandingProcessnexttick": "Understanding process.nextTick()",
-            "understandingSetimmediate": "Understanding setImmediate()",
-            "dontBlockTheEventLoop": "Don't Block the Event Loop"
+            "asynchronousWork": "异步工作",
+            "asynchronousFlowControl": "异步流程控制",
+            "overviewOfBlockingVsNonBlocking": "阻塞与非阻塞概览",
+            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript 异步编程和回调",
+            "discoverJavaScriptTimers": "了解 JavaScript 定时器",
+            "theNodejsEventLoop": "Node.js 事件循环",
+            "theNodejsEventEmitter": "Node.js 事件发射器",
+            "understandingProcessnexttick": "理解 process.nextTick()",
+            "understandingSetimmediate": "理解 setImmediate()",
+            "dontBlockTheEventLoop": "不要阻塞事件循环"
           }
         },
         "manipulatingFiles": {
           "links": {
-            "manipulatingFiles": "Manipulating Files",
-            "nodejsFileStats": "Node.js file stats",
-            "nodejsFilePaths": "Node.js File Paths",
-            "workingWithFileDescriptorsInNodejs": "Working with file descriptors in Node.js",
-            "readingFilesWithNodejs": "Reading files with Node.js",
-            "writingFilesWithNodejs": "Writing files with Node.js",
-            "workingWithFoldersInNodejs": "Working with folders in Node.js",
-            "howToWorkWithFileSystems": "How to work with Different Filesystems"
+            "manipulatingFiles": "操作文件",
+            "nodejsFileStats": "Node.js 文件状态",
+            "nodejsFilePaths": "Node.js 文件路径",
+            "workingWithFileDescriptorsInNodejs": "在 Node.js 中使用文件描述符",
+            "readingFilesWithNodejs": "使用 Node.js 读取文件",
+            "writingFilesWithNodejs": "使用 Node.js 写文件",
+            "workingWithFoldersInNodejs": "在 Node.js 中操作文件夹",
+            "howToWorkWithFileSystems": "如何使用不同的文件系统"
           }
         },
         "commandLine": {
           "links": {
-            "commandLine": "Command Line",
-            "runNodejsScriptsFromTheCommandLine": "Run Node.js scripts from the command line",
-            "howToReadEnvironmentVariablesFromNodejs": "How to read environment variables from Node.js",
-            "howToUseTheNodejsRepl": "How to use the Node.js REPL",
-            "outputToTheCommandLineUsingNodejs": "Output to the command line using Node.js",
-            "acceptInputFromTheCommandLineInNodejs": "Accept input from the command line in Node.js"
+            "commandLine": "命令行",
+            "runNodejsScriptsFromTheCommandLine": "从命令行运行 Node.js 脚本",
+            "howToReadEnvironmentVariablesFromNodejs": "如何从 Node.js 读取环境变量",
+            "howToUseTheNodejsRepl": "如何使用 Node.js REPL",
+            "outputToTheCommandLineUsingNodejs": "使用 Node.js 向命令行输出",
+            "acceptInputFromTheCommandLineInNodejs": "在 Node.js 中接受命令行输入"
           }
         },
         "modules": {
           "links": {
-            "modules": "Modules",
-            "publishingNodeApiModules": "How to publish a Node-API package",
-            "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction",
-            "abiStability": "ABI Stability",
-            "backpressuringInStreams": "Backpressuring in Streams"
+            "modules": "模块",
+            "publishingNodeApiModules": "如何发布 Node-API 包",
+            "anatomyOfAnHttpTransaction": "HTTP 事务剖析",
+            "abiStability": "ABI 稳定性",
+            "backpressuringInStreams": "流中的背压"
           }
         },
         "diagnostics": {
           "links": {
-            "diagnostics": "Diagnostics",
-            "userJourney": "User Journey",
-            "memory": "Memory",
-            "liveDebugging": "Live Debugging",
-            "poorPerformance": "Poor Performance",
-            "flameGraphs": "Flame Graphs"
+            "diagnostics": "诊断",
+            "userJourney": "用户旅程",
+            "memory": "内存",
+            "liveDebugging": "实时调试",
+            "poorPerformance": "性能不佳",
+            "flameGraphs": "火焰图"
           }
         }
       },
       "about": {
         "links": {
-          "about": "About Node.js",
-          "aboutSide": "About Node.js®",
-          "governance": "Project Governance",
-          "releases": "Previous Releases",
-          "security": "Security Reporting"
+          "about": "关于 Node.js",
+          "aboutSide": "关于 Node.js®",
+          "governance": "项目治理",
+          "releases": "以前的版本",
+          "security": "安全报告"
         }
       },
       "getInvolved": {
         "links": {
-          "getInvolved": "Get Involved",
-          "collabSummit": "Collaborator Summit",
-          "upcomingEvents": "Upcoming Events",
-          "contribute": "Contribute to Node.js",
-          "codeOfConduct": "Code of Conduct"
+          "getInvolved": "参与",
+          "collabSummit": "协作者峰会",
+          "upcomingEvents": "即将到来的事件",
+          "contribute": "贡献给 Node.js",
+          "codeOfConduct": "行为守则"
         }
       }
     },
     "downloadList": {
       "links": {
-        "previousReleases": "Previous Releases",
-        "packageManager": "Installing Node.js via package manager",
+        "previousReleases": "以前的版本",
+        "packageManager": "通过包管理器安装 Node.js",
         "shaSums": {
-          "title": "Signed SHASUMS for release files",
-          "howToVerify": " (How to verify)"
+          "title": "发布文件的签名 SHASUMS",
+          "howToVerify": "（如何验证）"
         },
-        "allDownloads": "All download options",
-        "nightlyReleases": "Nightly builds",
-        "unofficialBuilds": "Unofficial builds",
-        "buildingFromSource": "Building Node.js from source on supported platforms",
-        "installingOnLinux": "Installing Node.js via binary archive",
-        "installingOnWsl": "Install on Windows Subsystem for Linux (WSL)"
+        "allDownloads": "所有下载选项",
+        "nightlyReleases": "夜间构建",
+        "unofficialBuilds": "非官方构建",
+        "buildingFromSource": "在支持的平台上从源码构建 Node.js",
+        "installingOnLinux": "通过二进制存档安装 Node.js",
+        "installingOnWsl": "在 Windows 子系统 for Linux（WSL）上安装"
       }
     },
     "downloadReleasesTable": {
-      "changelog": "Changelog",
-      "releases": "Releases",
-      "docs": "Docs"
+      "changelog": "变更日志",
+      "releases": "版本",
+      "docs": "文档"
     },
     "pagination": {
-      "next": "Next",
-      "previous": "Previous"
+      "next": "下一个",
+      "previous": "上一个"
     },
     "common": {
       "breadcrumbs": {
-        "navigateToHome": "Navigate to Home"
+        "navigateToHome": "导航到首页"
       },
       "crossLink": {
-        "previous": "Prev",
-        "next": "Next"
+        "previous": "上一个",
+        "next": "下一个"
       },
       "codebox": {
-        "copy": "Copy to clipboard",
-        "copied": "Copied to clipboard!"
+        "copy": "复制到剪贴板",
+        "copied": "已复制到剪贴板！"
       },
       "pagination": {
-        "prev": "Previous",
-        "prevAriaLabel": "Previous page",
-        "next": "Next",
-        "nextAriaLabel": "Next page",
-        "defaultLabel": "Pagination",
-        "pageLabel": "Go to page {pageNumber}"
+        "prev": "上一页",
+        "prevAriaLabel": "上一页",
+        "next": "下一页",
+        "nextAriaLabel": "下一页",
+        "defaultLabel": "分页",
+        "pageLabel": "前往页面 {pageNumber}"
       },
       "sidebar": {
-        "title": "Change page"
+        "title": "更改页面"
       },
       "languageDropdown": {
-        "label": "Choose Language"
+        "label": "选择语言"
       },
       "themeToggle": {
-        "label": "Toggle Dark Mode"
+        "label": "切换深色模式"
       }
     },
     "mdx": {
       "upcomingEvents": {
-        "defaultTitle": "No Upcoming Event"
+        "defaultTitle": "没有即将到来的事件"
       }
     },
     "metabar": {
-      "lastUpdated": "Last Updated",
-      "readingTime": "Reading Time",
-      "addedIn": "Added In",
-      "author": "Author",
-      "authors": "Authors",
-      "contribute": "Contribute",
-      "contributeText": "Edit this page",
-      "viewAs": "View as",
-      "tableOfContents": "Table of Contents"
+      "lastUpdated": "最后更新",
+      "readingTime": "阅读时间",
+      "addedIn": "添加在",
+      "author": "作者",
+      "authors": "作者们",
+      "contribute": "贡献",
+      "contributeText": "编辑此页",
+      "viewAs": "查看为",
+      "tableOfContents": "目录"
     },
     "downloads": {
       "changelogModal": {
-        "startContributing": "Start Contributing"
+        "startContributing": "开始贡献"
       }
     },
     "search": {
       "searchBox": {
-        "placeholder": "Start typing..."
+        "placeholder": "开始输入..."
       },
       "seeAll": {
-        "text": "See all {count} results"
+        "text": "查看所有 {count} 结果"
       },
       "searchError": {
-        "text": "An error occurred while searching. Please try again later."
+        "text": "搜索时发生错误。请稍后再试。"
       },
       "poweredBy": {
-        "text": "Powered by"
+        "text": "技术提供"
       },
       "noResults": {
-        "text": "No results found for \"{query}\"."
+        "text": "未找到与  \"{query}\" 相关的结果。"
       },
       "emptyState": {
-        "text": "Search something..."
+        "text": "搜索一些东西..."
       },
       "searchPage": {
-        "title": "You're searching: {query}"
+        "title": "您正在搜索：{query}"
       }
     },
     "blog": {
       "blogHeader": {
-        "subtitle": "The latest Node.js news, case studies, tutorials, and resources.",
-        "rssLink": "RSS feed"
+        "subtitle": "最新的 Node.js 新闻、案例研究、教程和资源。",
+        "rssLink": "RSS 订阅"
       }
     }
   },
   "layouts": {
     "blogPost": {
       "author": {
-        "byLine": "{author, select, null {} other {By {author}, }}"
+        "byLine": "{author, select, null {} other {由 {author} 编写, }}"
       }
     },
     "blogIndex": {
-      "categoryName": "{category, select, all {Blog} other {{category} Blog Posts}}"
+      "categoryName": "{category, select, all {博客} other {{category} 博客帖子}}"
     },
     "blog": {
-      "title": "Blog",
-      "selectCategory": "Categories",
+      "title": "博客",
+      "selectCategory": "类别",
       "categories": {
-        "all": "Everything",
-        "announcements": "Announcements",
-        "release": "Releases",
-        "vulnerability": "Vulnerabilities",
-        "advisory-board": "Advisory Board",
-        "community": "Community",
-        "feature": "Feature",
-        "module": "Module",
+        "all": "所有内容",
+        "announcements": "公告",
+        "release": "发布",
+        "vulnerability": "漏洞",
+        "advisory-board": "顾问委员会",
+        "community": "社区",
+        "feature": "特色",
+        "module": "模块",
         "npm": "npm",
-        "uncategorized": "Uncategorized",
-        "video": "Video",
-        "weekly": "Weekly Updates",
-        "wg": "Working Groups",
-        "events": "Events"
+        "uncategorized": "未分类",
+        "video": "视频",
+        "weekly": "每周更新",
+        "wg": "工作组",
+        "events": "事件"
       }
     },
     "error": {
       "notFound": {
-        "title": "Page could not be found",
-        "description": "Sorry, we couldn't find the page you're after! Try starting again from the homepage."
+        "title": "找不到页面",
+        "description": "抱歉，我们找不到您要找的页面！尝试从首页重新开始。"
       },
       "internalServerError": {
-        "title": "Internal Server Error",
-        "description": "This page has thrown a non-recoverable error."
+        "title": "内部服务器错误",
+        "description": "此页面引发了一个不可恢复的错误。"
       },
-      "backToHome": "Back to Home"
+      "backToHome": "返回首页"
     },
     "download": {
-      "selectCategory": "Categories",
+      "selectCategory": "选择类别",
       "categories": {
-        "download": "Prebuilt Installer",
-        "prebuilt-binaries": "Prebuilt Binaries",
-        "package-manager": "Package Manager",
-        "source-code": "Source Code"
+        "download": "预构建安装程序",
+        "prebuilt-binaries": "预构建的二进制文件",
+        "package-manager": "包管理器",
+        "source-code": "源代码"
       },
       "buttons": {
-        "prebuilt": "Download Node.js {version}",
-        "source": "Download Node.js {version} source"
+        "prebuilt": "下载 Node.js {version}",
+        "source": "下载 Node.js {version} 源代码"
       },
       "dropdown": {
-        "bitness": "Bitness",
-        "os": "Operating System",
-        "version": "Version",
-        "platform": "Platform"
+        "bitness": "位数",
+        "os": "操作系统",
+        "version": "版本",
+        "platform": "平台"
       },
       "codeBox": {
-        "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project."
+        "communityWarning": "包管理器及其安装脚本不由 Node.js 项目维护。"
       }
     }
   }
