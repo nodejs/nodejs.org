@@ -99,8 +99,9 @@ layout: home
     import { createReadStream, createWriteStream } from 'node:fs';
     import { createGzip } from 'node:zlib';
 
+    // ensure you have a `package.json` file for this test!
     await pipeline
-    ( // ensure you have a `package.json` file for this test!
+    (
       createReadStream('package.json'),
       createGzip(),
       createWriteStream('package.json.gz')
