@@ -18,6 +18,12 @@ If you have any questions or feedbacks on current translations, you can [start a
 
 ## How to add a new language
 
+Open discussion on the [Crowdin project](https://crowdin.com/project/nodejs-web) to request a new language. After wait for the language to be added to the project by the Crowdin manager
+
+After that, one of the member of the Node.js Website team should add the new language to the project.
+
+### Adding a new language to the project
+
 Go on `/i18n/config.json` and add the new language to the `locales` array.
 
 Fill the language object with the following fields:
@@ -43,8 +49,6 @@ Fill the language object with the following fields:
 | `dateFormat` | The date format. It must be a valid [moment.js format](https://momentjs.com/docs/#/displaying/format/) | `DD.MM.YYYY` |
 | `hrefLang`   | The language code in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format         | `fr`         |
 | `enabled`    | If the language is enabled or not                                                                      | `true`       |
-
-Please also add the new locale file to the locales folder `/i18n/locales`.
 
 ## Adding new Translation Keys
 
