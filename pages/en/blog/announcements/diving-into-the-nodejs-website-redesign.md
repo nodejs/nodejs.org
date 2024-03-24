@@ -58,7 +58,7 @@ As we built and started previewing the site both on the new infrastructure and r
 
 Throughout all of these integrations and development steps, we've focused on end-user accessibility and performance. Vercel and [Cloudflare](https://cloudflare.com) support ensures the site is fast and reliable. We've also invested in our CI/CD pipeline with GitHub Actions, providing contributors with real-time feedback. This includes visual regression testing with Chromatic, Lighthouse results, and a suite of linters and tests to ensure the site quality remains high.
 
-![A screenshot of the nodejs.org lighthouse scores. Run on a Windows Chrome browser in desktop mode. Performance: 100, Accessibility: 94, Best Practices: 100, SEO: 100](/static/images/blog/announcements/2024-nodejs-redesign-lighthouse.png)
+![A screenshot of the nodejs.org lighthouse scores. Run on a Windows Chrome browser in desktop mode. Performance: 100, Accessibility: 91, Best Practices: 100, SEO: 100](/static/images/blog/announcements/2024-nodejs-redesign-lighthouse.png)
 
 ### Grace Hopper and Hacktoberfest
 
