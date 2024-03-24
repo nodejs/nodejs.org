@@ -95,13 +95,13 @@ layout: home
 
     ```js displayName="Streams Pipeline"
     // streams.mjs
-    import { pipeline } from 'node:stream';
+    import { pipeline } from 'node:stream/promises';
     import { createReadStream, createWriteStream } from 'node:fs';
     import { createGzip } from 'node:zlib';
-    import { promisify } from 'node:util';
 
-    await promisify(pipeline)
-    ( // ensure you have a `package.json` file for this test!
+    // ensure you have a `package.json` file for this test!
+    await pipeline
+    (
       createReadStream('package.json'),
       createGzip(),
       createWriteStream('package.json.gz')
