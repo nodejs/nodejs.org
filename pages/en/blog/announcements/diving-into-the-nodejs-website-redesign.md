@@ -6,8 +6,6 @@ layout: blog-post
 author: Brian Muenzenmeyer
 ---
 
-# Diving into the Node.js Website Redesign
-
 By now you've noticed nodejs.org's fresh new look!
 
 ![A screenshot of the nodejs.org website from 2024.](/static/images/blog/announcements/2024-nodejs-screenshot.png)
