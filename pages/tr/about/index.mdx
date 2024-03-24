@@ -3,23 +3,34 @@ title: Node.js® Hakkında
 layout: about
 ---
 
-<div className="my-4 flex items-center justify-center">
-  <img alt="Node.js maskotu" src="/static/images/node-mascot.svg" className="w-[100px]" />
-</div>
-
-***
-
 # Node.js® Hakkında
 
 Asenkron olaya dayalı bir JavaScript çalıştırma ortamı olarak, Node.js, ölçeklenebilir ağ uygulamaları oluşturmak için tasarlanmıştır. Aşağıdaki "merhaba dünya" örneğinde, birçok bağlantı aynı anda işlenebilir. Her bağlantıda geri çağrı tetiklenir, ancak yapılacak iş yoksa, Node.js uyur.
 
-```js
-const http = require('node:http');
+```cjs
+const { createServer } = require('node:http');
 
 const hostname = '127.0.0.1';
 const port = 3000;
 
-const server = http.createServer((req, res) => {
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+```mjs
+import { createServer } from 'node:http';
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   res.end('Hello World');
