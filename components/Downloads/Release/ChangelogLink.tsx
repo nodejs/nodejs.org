@@ -10,12 +10,9 @@ const ChangelogLink: FC<PropsWithChildren> = ({ children }) => {
   const { modalOpen, setModalOpen } = useContext(ReleaseContext);
 
   return (
-    <LinkWithArrow
-      className="cursor-pointer"
-      onClick={() => setModalOpen(!modalOpen)}
-    >
-      {children}
-    </LinkWithArrow>
+    <button onClick={() => setModalOpen(!modalOpen)}>
+      <LinkWithArrow className="cursor-pointer">{children}</LinkWithArrow>
+    </button>
   );
 };
 
