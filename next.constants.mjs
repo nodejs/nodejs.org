@@ -25,7 +25,7 @@ export const VERCEL_REVALIDATE = Number(
 );
 
 /**
- * This is used for telling Next.js to to a Static Export Build of the Website
+ * This is used for telling Next.js to do a Static Export Build of the Website
  *
  * This is used for static/without a Node.js server hosting, such as on our
  * legacy Website Build Environment on Node.js's DigitalOcean Droplet.
