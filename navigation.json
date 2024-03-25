@@ -39,7 +39,7 @@
       "text": "components.containers.footer.links.codeOfConduct"
     },
     {
-      "link": "https://github.com/nodejs/node/blob/main/SECURITY.md",
+      "link": "https://github.com/nodejs/node/security/policy",
       "text": "components.containers.footer.links.security"
     },
     {
