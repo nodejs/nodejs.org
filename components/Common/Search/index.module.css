@@ -23,3 +23,11 @@
     top-[8px]
     size-5;
 }
+
+.shortcutIndicator {
+  @apply invisible
+    absolute
+    right-2
+    ml-2
+    md:visible;
+}
