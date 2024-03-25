@@ -44,7 +44,7 @@ In April 2023, we performed a miniature cutover. This is a bit of an ironic stat
 
 ## Redesign
 
-Also in 2023, the [OpenJS Foundation](https://openjsf.org/) began a redesign of their site. They hired [Hayden Bleasel](https://haydenbleasel.com/) and were kind enough to include nodejs.org in the scope of his contract. Hayden brought a modern design to the site and helped us think through the multi-faceted use cases we encountered. The result was a [Figma](https://www.figma.com/) document that we could use to guide our development. Included were UX flows, dark/light modes, page layouts, mobile viewport considerations, and a component breakdown.
+The [OpenJS Foundation](https://openjsf.org/) was kind enough to help fund our redesign with designer [Hayden Bleasel](https://haydenbleasel.com/). Hayden brought a modern design to the site and helped us think through the multi-faceted use cases we encountered. The result was a [Figma](https://www.figma.com/) document that we could use to guide our development. Included were UX flows, dark/light modes, page layouts, mobile viewport considerations, and a component breakdown.
 
 ![A screenshot of the nodejs.org website redesign in Figma.](/static/images/blog/announcements/2024-nodejs-figma.png)
 
