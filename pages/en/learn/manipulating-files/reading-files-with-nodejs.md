@@ -21,7 +21,7 @@ fs.readFile('/Users/joe/test.txt', 'utf8', (err, data) => {
 ```
 
 ```mjs
-import fs from 'node:fs/promises';
+import fs from 'node:fs';
 
 fs.readFile('/Users/joe/test.txt', 'utf8', (err, data) => {
   if (err) {
