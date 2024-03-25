@@ -29,6 +29,6 @@
     absolute
     right-2
     ml-2
-    font-open-sans
-    md:visible;
+    md:visible
+    [&>kbd]:font-ibm-plex-mono;
 }
