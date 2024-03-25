@@ -23,6 +23,7 @@ const CodeTabs: FC<PropsWithChildren<CodeTabsProps>> = ({
   <Tabs
     {...props}
     className={styles.root}
+    forceDarkTheme={true}
     addons={
       linkUrl &&
       linkText && (
