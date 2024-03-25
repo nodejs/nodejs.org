@@ -9,7 +9,7 @@ a.item {
     text-sm
     font-regular
     text-neutral-800
-    dark:text-neutral-200;
+    dark:text-neutral-500;
 
   &:hover {
     @apply text-neutral-900
@@ -26,8 +26,8 @@ a.item {
   }
 
   &.active {
-    @apply text-neutral-900
-      dark:text-white;
+    @apply text-green-500
+      dark:text-green-500;
 
     svg {
       @apply fill-green-500;
