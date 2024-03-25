@@ -25,9 +25,8 @@ const ReleaseCodeBox: FC = () => {
     // but usually we should recommend users to download "major" versions
     // since our Downlooad Buttons get the latest minor of a major, it does make sense
     // to request installation of a major via a package manager
-    const codeLanguage = os === 'WIN' ? 'powershell' : 'bash';
     memoizedShiki
-      .then(shiki => highlightToHtml(shiki)(updatedCode, codeLanguage))
+      .then(shiki => highlightToHtml(shiki)(updatedCode, 'bash'))
       .then(setCode);
     // Only react when the specific release number changed
     // eslint-disable-next-line react-hooks/exhaustive-deps
