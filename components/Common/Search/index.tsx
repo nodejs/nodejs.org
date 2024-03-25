@@ -30,10 +30,7 @@ export const SearchButton: FC = () => {
 
   const { os } = useDetectOS();
 
-  let osCommandKey = 'Ctrl';
-  if (os === 'MAC') {
-    osCommandKey = '⌘';
-  }
+  const osCommandKey = os === 'MAC' ? '⌘' : 'Ctrl';
 
   return (
     <>
