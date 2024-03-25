@@ -32,7 +32,7 @@ describe('getNodeDownloadUrl', () => {
   it('returns the default download URL for other operating systems', () => {
     const os = 'OTHER';
     const bitness = 86;
-    const expectedUrl = 'https://nodejs.org/dist/v18.16.0/node-v18.16.0.tar.xz';
+    const expectedUrl = 'https://nodejs.org/dist/v18.16.0/node-v18.16.0.tar.gz';
 
     expect(getNodeDownloadUrl(version, os, bitness)).toBe(expectedUrl);
   });

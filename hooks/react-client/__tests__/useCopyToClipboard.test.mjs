@@ -1,6 +1,6 @@
 import { render, fireEvent, screen, act } from '@testing-library/react';
 
-import { useCopyToClipboard } from '..';
+import useCopyToClipboard from '@/hooks/react-client/useCopyToClipboard';
 
 const mockWriteText = jest.fn();
 const originalNavigator = { ...window.navigator };

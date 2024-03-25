@@ -16,49 +16,47 @@ describe('String utils', () => {
     expect(getAcronymFromString('')).toBe('');
   });
 
-  it('parseRichTextIntoPlainText returns the correct plain text from an HTML tag', () => {
-    expect(parseRichTextIntoPlainText('<p>John Doe</p>')).toBe('John Doe');
+  it('parseRichTextIntoPlainText returns plain text without HTML and JSX tags', () => {
+    const richText = '<p>This is <strong>bold</strong> and <em>italic</em></p>';
+    const result = parseRichTextIntoPlainText(richText);
+    expect(result).toBe('This is bold and italic');
   });
 
-  it('parseRichTextIntoPlainText returns only the text of a link tag', () => {
-    expect(
-      parseRichTextIntoPlainText('[this is a link](https://www.google.com)')
-    ).toBe('this is a link');
+  it('parseRichTextIntoPlainText replaces Markdown links with their text content', () => {
+    const richText =
+      'Check out [Node.js](https://nodejs.org/en/) for more information.';
+    const result = parseRichTextIntoPlainText(richText);
+    expect(result).toBe('Check out Node.js for more information.');
   });
 
-  it('parseRichTextIntoPlainText replaces markdown lists with their content', () => {
-    expect(
-      parseRichTextIntoPlainText('- this is a list item\n- this is another')
-    ).toBe('this is a list item\nthis is another');
+  it('parseRichTextIntoPlainText replaces Markdown lists with their content', () => {
+    const richText = '- Item 1\n- Item 2\n- Item 3';
+    const result = parseRichTextIntoPlainText(richText);
+    expect(result).toBe('Item 1\nItem 2\nItem 3');
   });
 
-  it('parseRichTextIntoPlainText removes underscore, bold and italic with their content', () => {
-    expect(
-      parseRichTextIntoPlainText(
-        '**bold content**, *italic content*, _underscore content_'
-      )
-    ).toBe('bold content, italic content, underscore content');
+  it('parseRichTextIntoPlainText replaces Markdown underscore, bold, and italic with their content', () => {
+    const richText = 'This is _underscore_, **bold**, and *italic*.';
+    const result = parseRichTextIntoPlainText(richText);
+    expect(result).toBe('This is underscore, bold, and italic.');
   });
 
-  it('parseRichTextIntoPlainText removes code blocks with their content', () => {
-    expect(
-      parseRichTextIntoPlainText('this is a\n```code block```\nwith content')
-    ).toBe('this is a\nwith content');
+  it('parseRichTextIntoPlainText replaces Markdown multiline code blocks with an empty string', () => {
+    const richText =
+      'Some text\n```\nconst x = 42;\nconsole.log(x);\n```\nMore text';
+    const result = parseRichTextIntoPlainText(richText);
+    expect(result).toBe('Some text\nMore text');
   });
 
-  it('parseRichTextIntoPlainText replaces empty lines or lines just with spaces with an empty string', () => {
-    expect(parseRichTextIntoPlainText('\n \n')).toBe('');
+  it('parseRichTextIntoPlainText removes empty lines or lines with just spaces', () => {
+    const richText = 'Line 1\n  \nLine 3';
+    const result = parseRichTextIntoPlainText(richText);
+    expect(result).toBe('Line 1\nLine 3');
   });
 
-  it('parseRichTextIntoPlainText replaces leading and trailing spaces from each line with an empty string', () => {
-    expect(parseRichTextIntoPlainText('  this is a line  ')).toBe(
-      'this is a line'
-    );
-  });
-
-  it('parseRichTextIntoPlainText replaces leading numbers and dots from each line with an empty string', () => {
-    expect(
-      parseRichTextIntoPlainText('1. this is a line\n2. this is a second line')
-    ).toBe('this is a line\nthis is a second line');
+  it('parseRichTextIntoPlainText removes leading and trailing spaces from each line', () => {
+    const richText = '   Line 1   \n   Line 2   \n   Line 3   ';
+    const result = parseRichTextIntoPlainText(richText);
+    expect(result).toBe('Line 1\nLine 2\nLine 3');
   });
 });

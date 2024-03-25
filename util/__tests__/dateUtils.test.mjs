@@ -1,4 +1,4 @@
-import { dateIsBetween } from '../dateUtils';
+import { dateIsBetween } from '@/util/dateUtils';
 
 describe('dateIsBetween', () => {
   it('returns true when the current date is between start and end dates', () => {
