@@ -34,5 +34,14 @@
       "link": "https://nodejs.org/en/blog/vulnerability/february-2024-security-releases/"
     }
   },
-  "websiteBadges": {}
+  "websiteBadges": {
+    "index": {
+      "startDate": "2024-03-24T13:34:50.449Z",
+      "endDate": "2024-03-31T13:34:50.449Z",
+      "kind": "default",
+      "title": "New Blog Post",
+      "text": "Diving into the Node.js Website Redesign",
+      "link": "https://nodejs.org/en/blog/announcements/diving-into-the-nodejs-website-redesign"
+    }
+  }
 }
