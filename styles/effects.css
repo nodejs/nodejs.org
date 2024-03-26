@@ -10,29 +10,3 @@ h1.special {
     md:leading-[4rem]
     md:-tracking-[0.06rem];
 }
-
-div.glowingBackdrop {
-  @apply absolute
-    left-0
-    top-0
-    -z-10
-    size-full
-    bg-[url('/static/images/patterns/hexagon-grid.svg')]
-    bg-center
-    bg-no-repeat
-    opacity-50
-    md:opacity-100;
-
-  &::after {
-    @apply absolute
-      inset-0
-      m-auto
-      aspect-square
-      w-[300px]
-      rounded-full
-      bg-green-300
-      blur-[120px]
-      content-['']
-      dark:bg-green-700;
-  }
-}
