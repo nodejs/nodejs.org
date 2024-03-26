@@ -36,3 +36,86 @@ div.glowingBackdrop {
       dark:bg-green-700;
   }
 }
+
+.turtle {
+  animation: surf 1s infinite ease-in-out;
+  margin: 0 0 -400px -300px;
+  position: absolute;
+  transform: translate(0, 0);
+  z-index: 1;
+}
+
+.turtle img {
+  height: auto;
+  width: 300px;
+}
+
+.turtle::after {
+  background: url('/static/images/smoke.gif');
+  content: '';
+  display: block;
+  height: 150px;
+  left: 0;
+  opacity: 0.15;
+  position: absolute;
+  top: 0;
+  touch-action: none;
+  transform: rotate(-90deg) translate(-140%, -60%);
+  user-select: none;
+  user-select: none;
+  user-select: none;
+  width: 150px;
+  z-index: -1;
+}
+
+@media (max-width: 1500px) {
+  .turtle {
+    margin: 0 0 -300px -100px;
+  }
+
+  .turtle img {
+    width: 200px;
+  }
+
+  .turtle::after {
+    transform: rotate(-90deg) translate(-80%, -60%);
+  }
+}
+
+@media (max-width: 750px) {
+  .turtle {
+    margin: 0;
+    right: 0;
+    top: 40px;
+  }
+
+  .turtle img {
+    width: 150px;
+  }
+
+  .turtle::after {
+    transform: rotate(-90deg) translate(-50%, -60%);
+  }
+}
+
+@keyframes surf {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(0, 6px);
+  }
+
+  50% {
+    transform: translate(0, -6px);
+  }
+
+  75% {
+    transform: translate(0, 3px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
