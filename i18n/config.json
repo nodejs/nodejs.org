@@ -188,5 +188,15 @@
     "hrefLang": "pl",
     "enabled": false,
     "default": false
+  },
+  {
+    "code": "el",
+    "localName": "Ελληνικά",
+    "name": "Greek",
+    "langDir": "ltr",
+    "dateFormat": "DD/MM/YYYY",
+    "hrefLang": "el-GR",
+    "enabled": false,
+    "default": false
   }
 ]
