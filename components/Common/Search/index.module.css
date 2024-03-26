@@ -29,8 +29,8 @@
     absolute
     right-2
     ml-2
-    transition-opacity
-    duration-500
-    md:visible
-    [&>kbd]:font-ibm-plex-mono;
+    font-ibm-plex-mono
+    motion-safe:transition-opacity
+    motion-safe:duration-100
+    md:visible;
 }
