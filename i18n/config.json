@@ -164,7 +164,7 @@
     "localName": "O'zbek",
     "name": "Uzbek",
     "langDir": "ltr",
-    "dateFormat": "DD/MM/YYYY",
+    "dateFormat": "DD.MM.YYYY",
     "hrefLang": "uz",
     "enabled": false,
     "default": false
