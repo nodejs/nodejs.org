@@ -212,6 +212,21 @@ const getDynamicRouter = async () => {
       path
     );
 
+    const match = path.match(/blog\/(release|vulnerability)/);
+
+    if (match) {
+      const category = match[1];
+      const currentFile = siteConfig.rssFeeds.find(
+        item => item.category === category
+      )?.file;
+      // Dynamically construct the XML path for blog/release and blog/vulnerability
+      pageMetadata.alternates.types['application/rss+xml'] =
+        `${baseUrlAndPath}/en/feed/${currentFile}`;
+    } else {
+      pageMetadata.alternates.types['application/rss+xml'] =
+        `${BASE_URL}${BASE_PATH}/en/feed/blog.xml`;
+    }
+
     availableLocaleCodes.forEach(currentLocale => {
       pageMetadata.alternates.languages[currentLocale] = getUrlForPathname(
         currentLocale,
