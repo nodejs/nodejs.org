@@ -224,7 +224,7 @@ const getDynamicRouter = async () => {
         `${baseUrlAndPath}/en/feed/${currentFile}`;
     } else {
       pageMetadata.alternates.types['application/rss+xml'] =
-        `${BASE_URL}${BASE_PATH}/en/feed/blog.xml`;
+        `${baseUrlAndPath}/en/feed/blog.xml`;
     }
 
     availableLocaleCodes.forEach(currentLocale => {
