@@ -120,6 +120,16 @@
     "default": false
   },
   {
+    "code": "pt",
+    "localName": "Português",
+    "name": "Português",
+    "langDir": "ltr",
+    "dateFormat": "MM.DD.YYYY",
+    "hrefLang": "pt",
+    "enabled": false,
+    "default": false
+  },
+  {
     "code": "ro",
     "localName": "Română",
     "name": "Romanian",
