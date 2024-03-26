@@ -196,7 +196,7 @@
     "langDir": "rtl",
     "dateFormat": "DD/MM/YYYY",
     "hrefLang": "ur",
-    "enabled": true,
+    "enabled": false,
     "default": false
   }
 ]
