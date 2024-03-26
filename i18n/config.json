@@ -188,5 +188,15 @@
     "hrefLang": "pl",
     "enabled": false,
     "default": false
+  },
+  {
+    "code": "nl",
+    "localName": "Nederlands",
+    "name": "Dutch",
+    "langDir": "ltr",
+    "dateFormat": "DD-MM-YYYY",
+    "hrefLang": "nl",
+    "enabled": false,
+    "default": false
   }
 ]
