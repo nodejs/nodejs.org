@@ -188,5 +188,15 @@
     "hrefLang": "pl",
     "enabled": false,
     "default": false
+  },
+  {
+    "code": "ur",
+    "localName": "اردو",
+    "name": "Urdu",
+    "langDir": "rtl",
+    "dateFormat": "DD/MM/YYYY",
+    "hrefLang": "ur",
+    "enabled": true,
+    "default": false
   }
 ]
