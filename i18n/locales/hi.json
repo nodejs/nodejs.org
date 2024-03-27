@@ -1,0 +1,291 @@
+{
+  "components": {
+    "containers": {
+      "footer": {
+        "links": {
+          "trademarkPolicy": "ट्रेडमार्क नीति",
+          "privacyPolicy": "गोपनीयता",
+          "codeOfConduct": "आचार संहिता",
+          "security": "सुरक्षा नीति",
+          "openJS": "OpenJS संस्थान"
+        }
+      },
+      "navBar": {
+        "links": {
+          "about": "बारे में",
+          "download": "डाउनलोड",
+          "docs": "दस्तावेज़",
+          "guides": "मार्गदर्शिकाएँ",
+          "learn": "सीखें",
+          "security": "सुरक्षा",
+          "certification": "प्रमाणीकरण",
+          "blog": "ब्लॉग"
+        }
+      }
+    },
+    "navigation": {
+      "learn": {
+        "gettingStarted": {
+          "links": {
+            "gettingStarted": "प्रारंभ करना",
+            "introductionToNodejs": "Node.js का परिचय",
+            "howToInstallNodejs": "Node.js को कैसे इंस्टॉल करें",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Node.js का उपयोग करने के लिए आपको कितना जावास्क्रिप्ट जानना चाहिए?",
+            "differencesBetweenNodejsAndTheBrowser": "Node.js और ब्राउज़र के बीच अंतर",
+            "theV8JavascriptEngine": "V8 जावास्क्रिप्ट इंजन",
+            "anIntroductionToTheNpmPackageManager": "npm पैकेज मैनेजर का परिचय",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) और उससे आगे",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, विकास और उत्पादन के बीच अंतर",
+            "nodejsWithTypescript": "Node.js और TypeScript",
+            "nodejsWithWebassembly": "Node.js और WebAssembly",
+            "debugging": "Node.js का डिबगिंग",
+            "profiling": "Node.js एप्लिकेशन का प्रोफाइलिंग",
+            "securityBestPractices": "सुरक्षा के सर्वोत्तम प्रथाएँ"
+          }
+        },
+        "asynchronousWork": {
+          "links": {
+            "asynchronousWork": "असमंचित कार्य",
+            "asynchronousFlowControl": "असमंचित फ़्लो नियंत्रण",
+            "overviewOfBlockingVsNonBlocking": "ब्लॉकिंग बनाम गैर-ब्लॉकिंग का अवलोकन",
+            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript असमंचित प्रोग्रामिंग और कॉलबैक्स",
+            "discoverJavaScriptTimers": "JavaScript टाइमर्स की खोज",
+            "theNodejsEventLoop": "Node.js ईवेंट लूप",
+            "theNodejsEventEmitter": "Node.js ईवेंट ईमिटर",
+            "understandingProcessnexttick": "process.nextTick() को समझना",
+            "understandingSetimmediate": "setImmediate() को समझना",
+            "dontBlockTheEventLoop": "ईवेंट लूप को न ब्लॉक करें"
+          }
+        },
+        "manipulatingFiles": {
+          "links": {
+            "manipulatingFiles": "फ़ाइलों का संशोधन",
+            "nodejsFileStats": "Node.js फ़ाइल आंकड़े",
+            "nodejsFilePaths": "Node.js फ़ाइल पथ",
+            "workingWithFileDescriptorsInNodejs": "Node.js में फ़ाइल डेस्क्रिप्टर्स के साथ काम करना",
+            "readingFilesWithNodejs": "Node.js के साथ फ़ाइलें पढ़ना",
+            "writingFilesWithNodejs": "Node.js के साथ फ़ाइलें लिखना",
+            "workingWithFoldersInNodejs": "Node.js में फ़ोल्डर्स के साथ काम करना",
+            "howToWorkWithFileSystems": "विभिन्न फ़ाइल सिस्टम के साथ कैसे काम करें"
+          }
+        },
+        "commandLine": {
+          "links": {
+            "commandLine": "कमांड लाइन",
+            "runNodejsScriptsFromTheCommandLine": "कमांड लाइन से Node.js स्क्रिप्ट चलाएं",
+            "howToReadEnvironmentVariablesFromNodejs": "Node.js से पर्यावरण चर पढ़ने का तरीका",
+            "howToUseTheNodejsRepl": "Node.js REPL का उपयोग कैसे करें",
+            "outputToTheCommandLineUsingNodejs": "Node.js का उपयोग करके कमांड लाइन पर आउटपुट",
+            "acceptInputFromTheCommandLineInNodejs": "Node.js में कमांड लाइन से इनपुट स्वीकार करें"
+          }
+        },
+        "modules": {
+          "links": {
+            "modules": "मॉड्यूल",
+            "publishingNodeApiModules": "Node-API पैकेज प्रकाशित करने का तरीका",
+            "anatomyOfAnHttpTransaction": "एक HTTP लेन-देन का शरीर रचना",
+            "abiStability": "ABI स्थिरता",
+            "backpressuringInStreams": "स्ट्रीम में बैकप्रेशरिंग"
+          }
+        },
+        "diagnostics": {
+          "links": {
+            "diagnostics": "डायग्नोस्टिक्स",
+            "userJourney": "उपयोगकर्ता की यात्रा",
+            "memory": "मेमोरी",
+            "liveDebugging": "लाइव डीबगिंग",
+            "poorPerformance": "कम दक्षता",
+            "flameGraphs": "फ्लेम ग्राफ"
+          }
+        }
+      },
+      "about": {
+        "links": {
+          "about": "नोड.जेएस के बारे में",
+          "aboutSide": "नोड.जेएस® के बारे में",
+          "branding": "नोड.जेएस का ब्रांडिंग",
+          "governance": "परियोजना प्रबंधन",
+          "releases": "पिछले रिलीज़",
+          "security": "सुरक्षा की सूचना"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "getInvolved": "शामिल हों",
+          "collabSummit": "सहकारी समिट",
+          "upcomingEvents": "आगामी घटनाएं",
+          "contribute": "नोड.जेएस में योगदान दें",
+          "codeOfConduct": "आचार संहिता"
+        }
+      }
+    },
+    "downloadList": {
+      "links": {
+        "previousReleases": "पिछले रिलीज़",
+        "packageManager": "पैकेज प्रबंधक के माध्यम से नोड.जेएस को स्थापित करें",
+        "shaSums": {
+          "title": "प्रकाशित SHASUMS विमान फ़ाइलों के लिए",
+          "howToVerify": " (सत्यापित करने का तरीका)"
+        },
+        "allDownloads": "सभी डाउनलोड विकल्प",
+        "nightlyReleases": "नाइटली बिल्ड्स",
+        "unofficialBuilds": "अनौपचारिक बिल्ड्स",
+        "buildingFromSource": "समर्थित प्लेटफार्म पर स्रोत से नोड.जेएस का निर्माण",
+        "installingOnLinux": "लिनक्स पर बाइनरी आर्काइव के माध्यम से नोड.जेएस की स्थापना",
+        "installingOnWsl": "विंडोज़ उपनिर्देशित लिनक्स (WSL) पर स्थापित करें"
+      }
+    },
+    "downloadReleasesTable": {
+      "changelog": "परिवर्तन विवरण",
+      "releases": "रिलीज़",
+      "docs": "दस्तावेज़"
+    },
+    "pagination": {
+      "next": "अगला",
+      "previous": "पिछला"
+    },
+    "common": {
+      "breadcrumbs": {
+        "navigateToHome": "होम पेज पर जाएं"
+      },
+      "crossLink": {
+        "previous": "पिछला",
+        "next": "अगला"
+      },
+      "codebox": {
+        "copy": "क्लिपबोर्ड पर कॉपी करें",
+        "copied": "क्लिपबोर्ड पर कॉपी किया गया!"
+      },
+      "pagination": {
+        "prev": "पिछला",
+        "prevAriaLabel": "पिछला पृष्ठ",
+        "next": "अगला",
+        "nextAriaLabel": "अगला पृष्ठ",
+        "defaultLabel": "पेजिनेशन",
+        "pageLabel": "पृष्ठ पर जाएं {pageNumber}"
+      },
+      "sidebar": {
+        "title": "पृष्ठ बदलें"
+      },
+      "languageDropdown": {
+        "label": "भाषा चुनें"
+      },
+      "themeToggle": {
+        "label": "डार्क मोड टॉगल करें"
+      }
+    },
+    "mdx": {
+      "upcomingEvents": {
+        "defaultTitle": "कोई आगामी घटना नहीं"
+      }
+    },
+    "metabar": {
+      "lastUpdated": "अंतिम अपडेट",
+      "readingTime": "पढ़ने का समय",
+      "addedIn": "में जोड़ा गया",
+      "author": "लेखक",
+      "authors": "लेखक",
+      "contribute": "योगदान दें",
+      "contributeText": "इस पृष्ठ को संपादित करें",
+      "viewAs": "के रूप में देखें",
+      "tableOfContents": "सारांश"
+    },
+    "downloads": {
+      "changelogModal": {
+        "startContributing": "योगदान देना शुरू करें"
+      }
+    },
+    "search": {
+      "searchBox": {
+        "placeholder": "टाइप करना शुरू करें..."
+      },
+      "seeAll": {
+        "text": "सभी {count} परिणाम देखें"
+      },
+      "searchError": {
+        "text": "खोज करते समय एक त्रुटि आई है। कृपया बाद में पुन: प्रयास करें।"
+      },
+      "poweredBy": {
+        "text": "द्वारा संचालित"
+      },
+      "noResults": {
+        "text": "\"{query}\" के लिए कोई परिणाम नहीं मिले।"
+      },
+      "emptyState": {
+        "text": "कुछ खोजें..."
+      },
+      "searchPage": {
+        "title": "आप खोज रहे हैं: {query}"
+      }
+    },
+    "blog": {
+      "blogHeader": {
+        "subtitle": "नवीनतम Node.js समाचार, मामला अध्ययन, ट्यूटोरियल्स, और संसाधन।",
+        "rssLink": "RSS फ़ीड"
+      }
+    }
+  },
+  "layouts": {
+    "blogPost": {
+      "author": {
+        "byLine": "{author, select, null {} other {द्वारा {author}, }}"
+      }
+    },
+    "blogIndex": {
+      "categoryName": "{category, select, all {ब्लॉग} other {{category} ब्लॉग पोस्ट}}"
+    },
+    "blog": {
+      "title": "ब्लॉग",
+      "selectCategory": "श्रेणियाँ",
+      "categories": {
+        "all": "सब कुछ",
+        "announcements": "घोषणाएँ",
+        "release": "रिलीज़",
+        "vulnerability": "कमजोरी",
+        "advisory-board": "सलाहकार मंडल",
+        "community": "समुदाय",
+        "feature": "विशेषता",
+        "module": "मॉड्यूल",
+        "npm": "npm",
+        "uncategorized": "श्रेणी निर्दिष्ट नहीं",
+        "video": "वीडियो",
+        "weekly": "साप्ताहिक अपडेट",
+        "wg": "कामकाज दल",
+        "events": "घटनाएँ"
+      }
+    },
+    "error": {
+      "notFound": {
+        "title": "पृष्ठ नहीं मिला",
+        "description": "माफ़ कीजिए, हमें वह पृष्ठ नहीं मिला जिसे आप खोज रहे हैं! पुनः प्रारंभ करने के लिए होमपेज पर वापस जाएं।"
+      },
+      "internalServerError": {
+        "title": "आंतरिक सर्वर त्रुटि",
+        "description": "इस पृष्ठ ने एक अप्राप्य त्रुटि को उत्पन्न किया है।"
+      },
+      "backToHome": "होम पर वापस"
+    },
+    "download": {
+      "selectCategory": "श्रेणियाँ",
+      "categories": {
+        "download": "पूर्वनिर्मित स्थापक",
+        "prebuilt-binaries": "पूर्वनिर्मित बाइनरी",
+        "package-manager": "पैकेज प्रबंधक",
+        "source-code": "स्रोत कोड"
+      },
+      "buttons": {
+        "prebuilt": "Node.js {version} डाउनलोड करें",
+        "source": "Node.js {version} स्रोत डाउनलोड करें"
+      },
+      "dropdown": {
+        "bitness": "बिटनेस",
+        "os": "ऑपरेटिंग सिस्टम",
+        "version": "संस्करण",
+        "platform": "प्लेटफ़ॉर्म"
+      },
+      "codeBox": {
+        "communityWarning": "पैकेज प्रबंधक और उनके स्थापना स्क्रिप्ट नोड.जेएस परियोजना द्वारा बनाए नहीं गए हैं।"
+      }
+    }
+  }
+}

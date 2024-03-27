@@ -8,6 +8,9 @@ const loadLocaleDictionary = async (locale: string) => {
     // This enables HMR on the English Locale, so that instant refresh
     // happens while we add/change texts on the source locale
     return import('./i18n/locales/en.json').then(f => f.default);
+  } else if (locale === 'hi') {
+    // This enables Hindi locale
+    return import('./i18n/locales/hi.json').then(f => f.default);
   }
 
   if (availableLocaleCodes.includes(locale)) {
