@@ -1,14 +1,13 @@
 import { getTranslations } from 'next-intl/server';
 import type { FC, PropsWithChildren } from 'react';
 
+import LinkTabs from '@/components/Common/LinkTabs';
+import WithNodeRelease from '@/components/withNodeRelease';
 import { useClientContext } from '@/hooks/react-server';
 import getReleaseData from '@/next-data/releaseData';
 import { ReleaseProvider } from '@/providers/releaseProvider';
 import type { NodeReleaseStatus } from '@/types';
 import { getDownloadCategory, mapCategoriesToTabs } from '@/util/downloadUtils';
-
-import LinkTabs from './Common/LinkTabs';
-import WithNodeRelease from './withNodeRelease';
 
 const WithDownloadCategories: FC<PropsWithChildren> = async ({ children }) => {
   const t = await getTranslations();

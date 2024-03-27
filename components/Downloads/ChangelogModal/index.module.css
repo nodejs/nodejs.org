@@ -3,11 +3,9 @@
     inset-0
     flex
     justify-center
-    bg-white
-    bg-opacity-90
-    backdrop-blur-lg
-    dark:bg-neutral-950
-    dark:bg-opacity-80;
+    bg-white/40
+    backdrop-blur-[2px]
+    dark:bg-neutral-950/40;
 
   .content {
     @apply relative
@@ -16,7 +14,7 @@
       inline-flex
       w-full
       flex-col
-      overflow-y-scroll
+      overflow-y-auto
       rounded
       border
       border-neutral-200
@@ -24,9 +22,8 @@
       p-8
       focus:outline-none
       dark:bg-neutral-950
-      sm:mt-20
-      lg:w-2/3
-      xl:w-3/5
+      sm:my-20
+      lg:max-w-[900px]
       xl:p-12
       xs:p-6;
   }
@@ -38,7 +35,11 @@
       block
       size-6
       cursor-pointer
-      sm:hidden;
+      rounded
+      focus:outline-none
+      focus:ring-2
+      focus:ring-neutral-200
+      dark:focus:ring-neutral-900;
   }
 
   .title {
@@ -84,10 +85,6 @@
     @apply flex
       flex-col
       gap-4;
-
-    a {
-      @apply underline;
-    }
 
     pre {
       @apply overflow-auto;

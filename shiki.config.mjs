@@ -4,6 +4,7 @@ import diffLanguage from 'shiki/langs/diff.mjs';
 import dockerLanguage from 'shiki/langs/docker.mjs';
 import javaScriptLanguage from 'shiki/langs/javascript.mjs';
 import jsonLanguage from 'shiki/langs/json.mjs';
+import powershellLanguage from 'shiki/langs/powershell.mjs';
 import shellScriptLanguage from 'shiki/langs/shellscript.mjs';
 import shellSessionLanguage from 'shiki/langs/shellsession.mjs';
 import typeScriptLanguage from 'shiki/langs/typescript.mjs';
@@ -33,6 +34,12 @@ export const LANGUAGES = [
     scopeName: 'source.shell',
     aliases: ['bash', 'sh', 'shell', 'zsh'],
     displayName: 'Bash',
+  },
+  {
+    ...powershellLanguage[0],
+    scopeName: 'source.powershell',
+    aliases: ['ps', 'ps1'],
+    displayName: 'PowerShell',
   },
   {
     ...shellSessionLanguage[0],

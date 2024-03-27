@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useState, type FC } from 'react';
 
 import { WithSearchBox } from '@/components/Common/Search/States/WithSearchBox';
+import { useDetectOS } from '@/hooks';
 import { useKeyboardCommands } from '@/hooks/react-client';
 
 import styles from './index.module.css';
@@ -27,6 +28,10 @@ export const SearchButton: FC = () => {
     }
   });
 
+  const { os } = useDetectOS();
+
+  const osCommandKey = os === 'MAC' ? '⌘' : 'Ctrl';
+
   return (
     <>
       <button
@@ -37,6 +42,9 @@ export const SearchButton: FC = () => {
         <MagnifyingGlassIcon className={styles.magnifyingGlassIcon} />
 
         {t('components.search.searchBox.placeholder')}
+        <span title={`${osCommandKey} K`} className={styles.shortcutIndicator}>
+          <kbd>{osCommandKey} K</kbd>
+        </span>
       </button>
 
       {isOpen ? <WithSearchBox onClose={closeSearchBox} /> : null}
