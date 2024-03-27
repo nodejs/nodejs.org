@@ -60,6 +60,16 @@
     "default": false
   },
   {
+    "code": "hi",
+    "localName": "हिन्दी",
+    "name": "Hindi",
+    "langDir": "ltr",
+    "dateFormat": "DD/MM/YYYY",
+    "hrefLang": "hi",
+    "enabled": false,
+    "default": false
+  },
+  {
     "code": "id",
     "localName": "Bahasa Indonesia",
     "name": "Indonesian",
