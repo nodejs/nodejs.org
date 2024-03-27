@@ -147,6 +147,7 @@
   @apply flex
     w-full
     justify-center
+    overflow-x-hidden
     bg-gradient-subtle
     dark:bg-gradient-subtle-dark
     xs:bg-none
