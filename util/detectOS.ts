@@ -9,6 +9,8 @@ export const detectOsInUserAgent = (userAgent: string | undefined): UserOS => {
       return 'MAC';
     case 'Linux':
       return 'LINUX';
+    case 'Aix':
+      return 'AIX';
     default:
       return 'OTHER';
   }

@@ -52,6 +52,10 @@ const BitnessDropdown: FC = () => {
       disabledItems.push('s390x');
     }
 
+    if (os === 'AIX' && semVer.satisfies(release.version, '< 4.1.0')) {
+      disabledItems.push('ppc64');
+    }
+
     return disabledItems;
   }, [os, release.version]);
 

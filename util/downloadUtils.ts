@@ -6,6 +6,7 @@ export enum OperatingSystem {
   WIN = 'Windows',
   MAC = 'macOS',
   LINUX = 'Linux',
+  AIX = 'Aix',
   OTHER = 'Other',
 }
 
@@ -21,6 +22,10 @@ export const operatingSystemItems = [
   {
     label: OperatingSystem.LINUX,
     value: 'LINUX' as UserOS,
+  },
+  {
+    label: OperatingSystem.AIX,
+    value: 'AIX' as UserOS,
   },
 ];
 
@@ -88,6 +93,12 @@ export const bitnessItems = {
     {
       label: 'System Z',
       value: 's390x',
+    },
+  ],
+  AIX: [
+    {
+      label: 'Power',
+      value: 'ppc64',
     },
   ],
   OTHER: [],
