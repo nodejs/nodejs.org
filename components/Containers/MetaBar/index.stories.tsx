@@ -5,9 +5,27 @@ import AvatarGroup from '@/components/Common/AvatarGroup';
 import MetaBar from '@/components/Containers/MetaBar';
 import GitHub from '@/components/Icons/Social/GitHub';
 import Link from '@/components/Link';
+import { getGitHubAvatarUrl } from '@/util/gitHubUtils';
 
 type Story = StoryObj<typeof MetaBar>;
 type Meta = MetaObj<typeof MetaBar>;
+
+const names = [
+  'ovflowd',
+  'bmuenzenmeyer',
+  'AugustinMauroy',
+  'HinataKah0',
+  'Harkunwar',
+  'rodion-arr',
+  'mikeesto',
+  'bnb',
+  'benhalverson',
+  'aymen94',
+  'shanpriyan',
+  'Wai-Dung',
+  'manishprivet',
+  'araujogui',
+];
 
 export const Default: Story = {
   args: {
@@ -20,20 +38,11 @@ export const Default: Story = {
       'components.metabar.author': 'The Node.js Project',
       'components.metabar.authors': (
         <AvatarGroup
-          avatars={[
-            {
-              src: 'https://avatars.githubusercontent.com/canerakdas',
-              alt: 'Caner Akdas',
-            },
-            {
-              src: 'https://avatars.githubusercontent.com/bmuenzenmeyer',
-              alt: 'Brian Muenzenmeyer',
-            },
-            {
-              src: 'https://avatars.githubusercontent.com/ovflowd',
-              alt: 'Claudio W',
-            },
-          ]}
+          avatars={names.map(name => ({
+            src: getGitHubAvatarUrl(name),
+            alt: name,
+          }))}
+          limit={8}
         />
       ),
       'components.metabar.contribute': (
