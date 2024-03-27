@@ -19,6 +19,7 @@ const WithRouterSelect: FC<WithSidebarSelectProps> = ({
 
   return (
     <Select
+      inline
       label={label}
       values={values}
       defaultValue={defaultValue}
