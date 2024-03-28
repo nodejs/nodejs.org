@@ -111,6 +111,7 @@ These are maintained in different repositories and we urge users to open **issue
   - A really warm thank you to Cloudflare as we would not be able to serve our community without their immense support.
 - Thanks to [Sentry](https://sentry.io/welcome/) for providing an open source license for their error reporting, monitoring and diagnostic tools.
 - Thanks to [Crowdin](https://crowdin.com/) for providing a platform that allows us to localize the Node.js Website and collaborate with translators.
+- Thanks to [Orama](https://docs.oramasearch.com/) for providing a search platform that indexes our expansive content and provides lightning-fast results for our users.
 
 [code of conduct]: https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md
 [contribution guidelines]: https://github.com/nodejs/nodejs.org/blob/main/CONTRIBUTING.md

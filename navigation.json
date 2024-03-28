@@ -18,11 +18,13 @@
     },
     "docs": {
       "link": "https://nodejs.org/docs/latest/api/",
-      "label": "components.containers.navBar.links.docs"
+      "label": "components.containers.navBar.links.docs",
+      "target": "_blank"
     },
     "certification": {
       "link": "https://openjsf.org/certification",
-      "label": "components.containers.navBar.links.certification"
+      "label": "components.containers.navBar.links.certification",
+      "target": "_blank"
     }
   },
   "footerLinks": [
@@ -39,7 +41,7 @@
       "text": "components.containers.footer.links.codeOfConduct"
     },
     {
-      "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
+      "link": "https://github.com/nodejs/node/security/policy",
       "text": "components.containers.footer.links.security"
     },
     {
@@ -65,7 +67,7 @@
     },
     {
       "icon": "slack",
-      "link": "https://openjs-foundation.slack.com/join/shared_invite/zt-238w9sb83-Qk9NcsrEMomq94Y~3gW8EQ#/shared-invite/email",
+      "link": "https://slack-invite.openjsf.org/",
       "alt": "Slack"
     },
     {
@@ -120,7 +122,7 @@
           "label": "components.navigation.getInvolved.links.contribute"
         },
         "codeOfConduct": {
-          "link": "https://github.com/nodejs/admin/blob/HEAD/CODE_OF_CONDUCT.md",
+          "link": "https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md",
           "label": "components.navigation.getInvolved.links.codeOfConduct"
         }
       }

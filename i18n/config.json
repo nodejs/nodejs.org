@@ -120,6 +120,16 @@
     "default": false
   },
   {
+    "code": "ro",
+    "localName": "Română",
+    "name": "Romanian",
+    "langDir": "ltr",
+    "dateFormat": "DD-MM-YYYY",
+    "hrefLang": "ro",
+    "enabled": false,
+    "default": false
+  },
+  {
     "code": "ru",
     "localName": "Русский",
     "name": "Russian",
@@ -166,6 +176,16 @@
     "langDir": "ltr",
     "dateFormat": "YYYY/MM/DD",
     "hrefLang": "zh-Hant",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "pl",
+    "localName": "Polski",
+    "name": "Polish",
+    "langDir": "ltr",
+    "dateFormat": "DD/MM/YYYY",
+    "hrefLang": "pl",
     "enabled": false,
     "default": false
   }

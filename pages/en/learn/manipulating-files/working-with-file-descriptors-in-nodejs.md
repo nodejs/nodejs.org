@@ -19,7 +19,7 @@ fs.open('/Users/joe/test.txt', 'r', (err, fd) => {
 ```
 
 ```mjs
-const fs = require('node:fs');
+import fs from 'node:fs';
 
 fs.open('/Users/joe/test.txt', 'r', (err, fd) => {
   // fd is our file descriptor
