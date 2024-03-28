@@ -16,11 +16,12 @@ export const mapBlogCategoryToPreviewType = (type: string): BlogPreviewType => {
 // @todo: we should check about the future of GitHub avatars
 // and mapping them to the respective users
 // @see https://github.com/nodejs/nodejs.dev/blob/main/src/data/blog/authors.yaml
-export const mapAuthorToCardAuthors = (author: string) => {
+export const mapAuthorToCardAuthors = (author: string, username?: string) => {
   const authors = author.split(/, | and |;| by /i);
+  const usernames = username?.split(/, | and |;| by /i) || [];
 
-  return authors.map(fullName => ({
+  return authors.map((fullName, index) => ({
     fullName,
-    src: `https://ui-avatars.com/api/?name=${fullName}`,
+    src: `https://github.com/${usernames[index]}.png?size=40`,
   }));
 };
