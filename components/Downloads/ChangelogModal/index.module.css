@@ -89,5 +89,10 @@
     pre {
       @apply overflow-auto;
     }
+
+    code,
+    a {
+      @apply break-words;
+    }
   }
 }
