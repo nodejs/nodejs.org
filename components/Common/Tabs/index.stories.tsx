@@ -40,13 +40,6 @@ export const Default: Story = {
   args: defaultArgs,
 };
 
-export const DarkTheme: Story = {
-  args: {
-    ...defaultArgs,
-    forceDarkTheme: true,
-  },
-};
-
 export const WithAddon: Story = {
   args: {
     ...defaultArgs,

@@ -9,12 +9,13 @@ type Tab = { key: string; label: string };
 type TabsProps = TabsPrimitive.TabsProps & {
   tabs: Array<Tab>;
   addons?: ReactNode;
-  forceDarkTheme?: boolean;
+  triggerClassName?: string;
 };
 
 const Tabs: FC<PropsWithChildren<TabsProps>> = ({
   tabs,
   addons,
+  triggerClassName,
   children,
   ...props
 }) => (
@@ -27,9 +28,7 @@ const Tabs: FC<PropsWithChildren<TabsProps>> = ({
         <TabsPrimitive.Trigger
           key={tab.key}
           value={tab.key}
-          className={classNames(styles.tabsTrigger, {
-            [styles.dark]: props.forceDarkTheme,
-          })}
+          className={classNames(styles.tabsTrigger, triggerClassName)}
         >
           {tab.label}
         </TabsPrimitive.Trigger>
