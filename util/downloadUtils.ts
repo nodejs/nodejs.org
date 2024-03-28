@@ -6,7 +6,7 @@ export enum OperatingSystem {
   WIN = 'Windows',
   MAC = 'macOS',
   LINUX = 'Linux',
-  AIX = 'Aix',
+  AIX = 'AIX',
   OTHER = 'Other',
 }
 
