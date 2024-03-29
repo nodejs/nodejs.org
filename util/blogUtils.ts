@@ -1,4 +1,7 @@
+import { authors as authorsMap } from '@/next.json.mjs';
 import type { BlogPreviewType } from '@/types';
+
+import { getGitHubAvatarUrl } from './gitHubUtils';
 
 export const mapBlogCategoryToPreviewType = (type: string): BlogPreviewType => {
   switch (type) {
@@ -16,12 +19,14 @@ export const mapBlogCategoryToPreviewType = (type: string): BlogPreviewType => {
 // @todo: we should check about the future of GitHub avatars
 // and mapping them to the respective users
 // @see https://github.com/nodejs/nodejs.dev/blob/main/src/data/blog/authors.yaml
-export const mapAuthorToCardAuthors = (author: string, username?: string) => {
+export const mapAuthorToCardAuthors = (author: string) => {
   const authors = author.split(/, | and |;| by /i);
-  const usernames = username?.split(/, | and |;| by /i) || [];
 
-  return authors.map((fullName, index) => ({
-    fullName,
-    src: `https://github.com/${usernames[index]}.png?size=40`,
-  }));
+  return authors.map(fullName => {
+    let src = `https://ui-avatars.com/api/?name=${fullName}`;
+
+    if (authorsMap[fullName]) src = getGitHubAvatarUrl(authorsMap[fullName].id);
+
+    return { fullName, src };
+  });
 };

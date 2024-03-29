@@ -36,7 +36,7 @@ const WithBlogCategories: FC<WithBlogCategoriesProps> = ({
               key={post.slug}
               title={post.title}
               category={post.categories[0]}
-              authors={mapAuthorToCardAuthors(post.author, post.username)}
+              authors={mapAuthorToCardAuthors(post.author)}
               date={post.date}
               slug={post.slug}
             />

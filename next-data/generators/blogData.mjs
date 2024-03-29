@@ -27,7 +27,7 @@ const getFrontMatter = (filename, source) => {
   const {
     title = 'Untitled',
     author = 'The Node.js Project',
-    username = 'nodejs',
+    username,
     date = new Date(),
     category = 'uncategorized',
   } = graymatter(source).data;
