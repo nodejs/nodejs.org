@@ -8,6 +8,7 @@ describe('mapAuthorToCardAuthors', () => {
       ['Timothy J Fontaine;John Doe'],
       ['Timothy J Fontaine & John Doe'],
       ['Timothy J Fontaine by John Doe'],
+      ['Timothy J Fontaine prepared by John Doe'],
     ])('returns the correct card authors', author => {
       const result = mapAuthorToCardAuthors(author);
 

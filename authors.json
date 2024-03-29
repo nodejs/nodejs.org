@@ -1,9 +1,4 @@
 {
-  "Manish Kumar": {
-    "id": "manishprivet",
-    "name": "Manish Kumar",
-    "website": "https://github.com/manishprivet"
-  },
   "Timothy J Fontaine": {
     "id": "tjfontaine",
     "name": "Timothy J Fontaine",
@@ -19,7 +14,7 @@
     "website": "https://github.com/codebytere"
   },
   "The Node.js Project": {
-    "id": "node-js-website",
+    "id": "nodejs",
     "name": "The Node.js Project",
     "website": "https://github.com/nodejs"
   },
@@ -95,7 +90,7 @@
     "website": "https://github.com/indexzero"
   },
   "Ryan Dahl": {
-    "id": "ryandahl",
+    "id": "ry",
     "name": "Ryan Dahl",
     "website": "https://github.com/ry"
   },
@@ -213,5 +208,35 @@
     "id": "juanarbol",
     "name": "Juan José Arboleda",
     "website": "https://github.com/juanarbol"
+  },
+  "Juan José": {
+    "id": "juanarbol",
+    "name": "Juan José Arboleda",
+    "website": "https://github.com/juanarbol"
+  },
+  "Brian Muenzenmeyer": {
+    "id": "bmuenzenmeyer",
+    "name": "Brian Muenzenmeyer",
+    "website": "https://github.com/bmuenzenmeyer"
+  },
+  "Marco Ippolito": {
+    "id": "marco-ippolito",
+    "name": "Marco Ippolito",
+    "website": "https://github.com/marco-ippolito"
+  },
+  "Ulises Gascón": {
+    "id": "UlisesGascon",
+    "name": "Ulises Gascón",
+    "website": "https://github.com/UlisesGascon"
+  },
+  "Claudio Wunder": {
+    "id": "ovflowd",
+    "name": "Claudio Wunder",
+    "website": "https://github.com/ovflowd"
+  },
+  "Matt Cowley": {
+    "id": "MattIPv4",
+    "name": "Matt Cowley",
+    "website": "https://github.com/MattIPv4"
   }
 }
