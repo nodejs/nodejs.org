@@ -1,13 +1,11 @@
 import type { Result } from '@orama/orama';
 import type { FC } from 'react';
 
-import {
-  pathToBreadcrumbs,
-  searchHitToLinkPath,
-} from '@/components/Common/Search/utils';
+import { pathToBreadcrumbs } from '@/components/Common/Search/utils';
 import Link from '@/components/Link';
 import { highlighter } from '@/next.orama.mjs';
 import type { SearchDoc } from '@/types';
+import { searchHitToLinkPath } from '@/util/search';
 
 import styles from './index.module.css';
 

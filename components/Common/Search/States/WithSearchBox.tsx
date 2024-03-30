@@ -16,12 +16,12 @@ import { WithError } from '@/components/Common/Search/States/WithError';
 import { WithNoResults } from '@/components/Common/Search/States/WithNoResults';
 import { WithPoweredBy } from '@/components/Common/Search/States/WithPoweredBy';
 import { WithSearchResult } from '@/components/Common/Search/States/WithSearchResult';
-import { searchHitToLinkPath } from '@/components/Common/Search/utils';
 import { useClickOutside, useKeyboardCommands } from '@/hooks/react-client';
 import { useRouter } from '@/navigation.mjs';
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '@/next.constants.mjs';
 import { search as oramaSearch, getInitialFacets } from '@/next.orama.mjs';
 import type { SearchDoc } from '@/types';
+import { searchHitToLinkPath } from '@/util/search';
 
 type Facets = { [key: string]: number };
 
@@ -82,19 +82,15 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
 
   useKeyboardCommands(cmd => {
     if (!searchResults) return;
-    console.log('Happening', cmd);
 
     switch (cmd) {
       case 'down':
-        console.log('down');
         setSelectedResult(prev => (prev ?? -1) + 1);
         break;
       case 'up':
-        console.log('up');
         setSelectedResult(prev => (prev ?? 1) - 1);
         break;
       case 'enter':
-        console.log('enter');
         handleEnter();
         break;
       default:
