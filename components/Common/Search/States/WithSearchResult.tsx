@@ -1,5 +1,5 @@
 import type { Result } from '@orama/orama';
-import type { FC } from 'react';
+import { useEffect, type FC, useRef } from 'react';
 
 import { pathToBreadcrumbs } from '@/components/Common/Search/utils';
 import Link from '@/components/Link';
@@ -16,7 +16,14 @@ type SearchResultProps = {
 };
 
 export const WithSearchResult: FC<SearchResultProps> = props => {
+  const divRef = useRef<HTMLDivElement>(null);
   const path = searchHitToLinkPath(props.hit);
+
+  useEffect(() => {
+    if (props.selected && divRef.current) {
+      divRef.current?.scrollIntoView({ block: 'center' });
+    }
+  }, [props.selected]);
 
   return (
     <Link
@@ -27,6 +34,7 @@ export const WithSearchResult: FC<SearchResultProps> = props => {
     >
       <div
         className={styles.fulltextSearchResultTitle}
+        ref={divRef}
         dangerouslySetInnerHTML={{
           __html: highlighter
             .highlight(props.hit.document.pageSectionTitle, props.searchTerm)

@@ -85,10 +85,16 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
 
     switch (cmd) {
       case 'down':
-        setSelectedResult(prev => (prev ?? -1) + 1);
+        setSelectedResult(prev =>
+          Math.min(
+            searchResults.count,
+            DEFAULT_ORAMA_QUERY_PARAMS.limit - 1,
+            (prev ?? -1) + 1
+          )
+        );
         break;
       case 'up':
-        setSelectedResult(prev => (prev ?? 1) - 1);
+        setSelectedResult(prev => Math.max(0, (prev ?? 1) - 1));
         break;
       case 'enter':
         handleEnter();
