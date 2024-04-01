@@ -16,6 +16,10 @@ const getDropDownStatus = (version: string, status: string) => {
     return `${version} (Current)`;
   }
 
+  if (status === 'Maintenance') {
+    return `${version} (Maintenance)`;
+  }
+
   return version;
 };
 
