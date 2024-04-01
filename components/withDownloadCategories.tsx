@@ -17,7 +17,7 @@ const WithDownloadCategories: FC<PropsWithChildren> = async ({ children }) => {
   const { page, category, subCategory } = getDownloadCategory(pathname);
 
   const initialRelease: Array<NodeReleaseStatus> = pathname.includes('current')
-    ? ['Current']
+    ? ['Current', 'Maintenance']
     : ['Active LTS', 'Maintenance LTS'];
 
   return (

@@ -11,7 +11,7 @@ const getNodeReleaseStatus = (now, support) => {
   }
 
   if (maintenanceStart && now > new Date(maintenanceStart)) {
-    return 'Maintenance LTS';
+    return ltsStart ? 'Maintenance LTS' : 'Maintenance';
   }
 
   if (ltsStart && now > new Date(ltsStart)) {
