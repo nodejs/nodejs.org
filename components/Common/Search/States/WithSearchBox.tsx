@@ -81,22 +81,22 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
   );
 
   useKeyboardCommands(cmd => {
-    if (!searchResults) return;
+    if (searchError || !searchResults || searchResults.count <= 0) return;
 
-    switch (cmd) {
-      case 'down':
-        setSelectedResult(prev =>
-          Math.min(
-            searchResults.count,
-            DEFAULT_ORAMA_QUERY_PARAMS.limit - 1,
-            (prev ?? -1) + 1
-          )
-        );
+    switch (true) {
+      case cmd === 'down' && selectedResult == null:
+        setSelectedResult(0);
         break;
-      case 'up':
-        setSelectedResult(prev => Math.max(0, (prev ?? 1) - 1));
+      case cmd === 'down' &&
+        selectedResult != null &&
+        selectedResult < searchResults.count &&
+        selectedResult < DEFAULT_ORAMA_QUERY_PARAMS.limit - 1:
+        setSelectedResult(selectedResult + 1);
         break;
-      case 'enter':
+      case cmd === 'up' && selectedResult != null && selectedResult != 0:
+        setSelectedResult(selectedResult - 1);
+        break;
+      case cmd === 'enter':
         handleEnter();
         break;
       default:
