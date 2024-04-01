@@ -1,5 +1,6 @@
 export type NodeReleaseStatus =
   | 'Maintenance LTS'
+  | 'Maintenance'
   | 'Active LTS'
   | 'Current'
   | 'End-of-life'
