@@ -173,6 +173,21 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
             <form onSubmit={onSubmit}>
               <input
                 ref={searchInputRef}
+                aria-activedescendant={
+                  selectedResult != null
+                    ? `search-hit-${selectedResult}`
+                    : undefined
+                }
+                aria-autocomplete="list"
+                aria-controls="fulltext-results-container"
+                aria-expanded={
+                  !searchError &&
+                  !!searchTerm &&
+                  !!searchResults &&
+                  searchResults.count > 0
+                }
+                autoComplete="off"
+                role="combobox"
                 type="search"
                 className={styles.searchBoxInput}
                 onChange={event => setSearchTerm(event.target.value)}
@@ -198,7 +213,11 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
             ))}
           </div>
 
-          <div className={styles.fulltextResultsContainer}>
+          <div
+            id={`fulltext-results-container`}
+            className={styles.fulltextResultsContainer}
+            role="listbox"
+          >
             {searchError && <WithError />}
 
             {!searchError && !searchTerm && <WithEmptyState />}
@@ -213,6 +232,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
                       hit={hit}
                       searchTerm={searchTerm}
                       selected={selectedResult === idx}
+                      idx={idx}
                     />
                   ))}
 

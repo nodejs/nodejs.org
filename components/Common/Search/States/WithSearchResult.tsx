@@ -13,6 +13,7 @@ type SearchResultProps = {
   hit: Result<SearchDoc>;
   searchTerm: string;
   selected: boolean;
+  idx: number;
 };
 
 export const WithSearchResult: FC<SearchResultProps> = props => {
@@ -27,10 +28,12 @@ export const WithSearchResult: FC<SearchResultProps> = props => {
 
   return (
     <Link
+      id={`search-hit-${props.idx}`}
       key={props.hit.id}
       href={path}
       className={styles.fulltextSearchResult}
-      data-state={props.selected ? 'selected' : 'not-selected'}
+      role="option"
+      aria-selected={props.selected}
     >
       <div
         className={styles.fulltextSearchResultTitle}
