@@ -3,13 +3,13 @@
     bg-white
     dark:border-neutral-900
     dark:bg-neutral-950
-    md:flex
-    md:h-16
-    md:flex-row
-    md:items-center
-    md:gap-8
-    md:border-b
-    md:px-8;
+    lg:flex
+    lg:h-16
+    lg:flex-row
+    lg:items-center
+    lg:gap-8
+    lg:border-b
+    lg:px-8;
 }
 
 .nodeIconAndMobileItemsToggler {
@@ -21,11 +21,11 @@
     border-neutral-200
     px-4
     dark:border-neutral-900
-    md:flex
-    md:h-full
-    md:items-center
-    md:border-0
-    md:px-0;
+    lg:flex
+    lg:h-full
+    lg:items-center
+    lg:border-0
+    lg:px-0;
 }
 
 .nodeIconWrapper {
@@ -53,16 +53,16 @@
 .sidebarItemTogglerLabel {
   @apply block
     cursor-pointer
-    md:hidden;
+    lg:hidden;
 }
 
 .main {
   @apply hidden
     flex-1
     flex-col
-    md:flex
-    md:flex-row
-    md:items-center;
+    lg:flex
+    lg:flex-row
+    lg:items-center;
 }
 
 .navItems {
@@ -73,10 +73,10 @@
     border-neutral-200
     p-4
     dark:border-neutral-900
-    md:flex-1
-    md:flex-row
-    md:border-0
-    md:p-0;
+    lg:flex-1
+    lg:flex-row
+    lg:border-0
+    lg:p-0;
 }
 
 .actionsWrapper {
@@ -87,8 +87,8 @@
     border-neutral-200
     p-4
     dark:border-neutral-900
-    md:border-0
-    md:p-0;
+    lg:border-0
+    lg:p-0;
 }
 
 .ghIconWrapper {

@@ -6,6 +6,7 @@ import type { FC } from 'react';
 
 import Select from '@/components/Common/Select';
 import Apple from '@/components/Icons/Platform/Apple';
+import Aix from '@/components/Icons/Platform/Generic';
 import Linux from '@/components/Icons/Platform/Linux';
 import Microsoft from '@/components/Icons/Platform/Microsoft';
 import { useDetectOS } from '@/hooks/react-client';
@@ -75,6 +76,7 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
           WIN: <Microsoft width={16} height={16} />,
           MAC: <Apple width={16} height={16} />,
           LINUX: <Linux width={16} height={16} />,
+          AIX: <Aix width={16} height={16} />,
         },
       })}
       defaultValue={os}

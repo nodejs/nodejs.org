@@ -59,6 +59,13 @@ export const getNodeDownloadUrl = (
       // Since the x86 platform is not officially supported, returns the x64
       // link as the default value.
       return `${baseURL}/node-${versionWithPrefix}-linux-x64.tar.xz`;
+    case 'AIX':
+      // Prepares a downloadable Node.js link for AIX
+      if (typeof bitness === 'string') {
+        return `${baseURL}/node-${versionWithPrefix}-aix-${bitness}.tar.gz`;
+      }
+
+      return `${baseURL}/node-${versionWithPrefix}-aix-ppc64.tar.gz`;
     default:
       // Prepares a downloadable Node.js source code link
       return `${baseURL}/node-${versionWithPrefix}.tar.gz`;
