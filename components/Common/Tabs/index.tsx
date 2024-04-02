@@ -9,11 +9,13 @@ type Tab = { key: string; label: string };
 type TabsProps = TabsPrimitive.TabsProps & {
   tabs: Array<Tab>;
   addons?: ReactNode;
+  triggerClassName?: string;
 };
 
 const Tabs: FC<PropsWithChildren<TabsProps>> = ({
   tabs,
   addons,
+  triggerClassName,
   children,
   ...props
 }) => (
@@ -26,7 +28,7 @@ const Tabs: FC<PropsWithChildren<TabsProps>> = ({
         <TabsPrimitive.Trigger
           key={tab.key}
           value={tab.key}
-          className={styles.tabsTrigger}
+          className={classNames(styles.tabsTrigger, triggerClassName)}
         >
           {tab.label}
         </TabsPrimitive.Trigger>
