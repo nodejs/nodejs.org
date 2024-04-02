@@ -16,7 +16,7 @@ want to push forward in-person.
 
 The Collaboration Summit is primarily attended by existing contributors and
 community members, but it also welcomes those who are not yet a contributor
-and ant to get onboard. f you are new to contributing to Node.js, the
+and want to get onboard. If you are new to contributing to Node.js, the
 Collaboration Summit can be a good opportunity to help you learn what is
 happening within the community and contribute with the skills you have
 and would like to hone.
