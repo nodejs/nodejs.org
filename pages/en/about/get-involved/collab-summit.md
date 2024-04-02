@@ -9,7 +9,7 @@ Node.js's Collaboration Summit is an un-conference for bringing current and
 potential contributors together to discuss Node.js with lively collaboration,
 education, and knowledge sharing. Teams, working groups and contributors
 from the community come together twice per year to have discussions that
-helps with decision-making while also working on some exciting efforts they
+help decision-making while also working on some exciting efforts they
 want to push forward in-person.
 
 ## Who attends?
