@@ -8,16 +8,12 @@ import Select from '@/components/Common/Select';
 import { ReleaseContext } from '@/providers/releaseProvider';
 
 const getDropDownStatus = (version: string, status: string) => {
-  if (status === 'Active LTS') {
+  if (status === 'LTS') {
     return `${version} (LTS)`;
   }
 
   if (status === 'Current') {
     return `${version} (Current)`;
-  }
-
-  if (status === 'Maintenance') {
-    return `${version} (Maintenance)`;
   }
 
   return version;

@@ -13,7 +13,7 @@ import { ReleaseContext } from '@/providers/releaseProvider';
 import type { PackageManager } from '@/types/release';
 import { formatDropdownItems, platformItems } from '@/util/downloadUtils';
 
-const supportedHomebrewVersions = ['Active LTS', 'Maintenance LTS', 'Current'];
+const supportedHomebrewVersions = ['LTS', 'Current'];
 
 const PlatformDropdown: FC = () => {
   const { release, os, platform, setPlatform } = useContext(ReleaseContext);
