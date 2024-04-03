@@ -21,7 +21,7 @@ import { useRouter } from '@/navigation.mjs';
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '@/next.constants.mjs';
 import { search as oramaSearch, getInitialFacets } from '@/next.orama.mjs';
 import type { SearchDoc } from '@/types';
-import { searchHitToLinkPath } from '@/util/search';
+import { searchHitToLinkPath } from '@/util/searchUtils';
 
 type Facets = { [key: string]: number };
 
