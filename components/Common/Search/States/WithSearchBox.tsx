@@ -81,7 +81,9 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
   );
 
   useKeyboardCommands(cmd => {
-    if (searchError || !searchResults || searchResults.count <= 0) return;
+    if (searchError || !searchResults || searchResults.count <= 0) {
+      return;
+    }
 
     switch (true) {
       case cmd === 'down' && selectedResult == null:
@@ -111,10 +113,16 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
   };
 
   const handleEnter = () => {
-    if (selectedResult == null || (searchResults && searchResults?.count <= 0))
+    if (
+      selectedResult == null ||
+      (searchResults && searchResults?.count <= 0)
+    ) {
       return;
+    }
     const selectedHit = searchResults?.hits[selectedResult ?? 0];
-    if (!selectedHit) return;
+    if (!selectedHit) {
+      return;
+    }
 
     router.push(searchHitToLinkPath(selectedHit));
     reset();
@@ -125,7 +133,9 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
     e.preventDefault();
 
     // Prevent searching if a result is selected
-    if (selectedResult) return;
+    if (selectedResult) {
+      return;
+    }
 
     router.push(`/search?q=${searchTerm}&section=${selectedFacetName}`);
     reset();
