@@ -48,6 +48,6 @@ describe('generateReleaseData', () => {
     expect(release.v8).toBe('8.0.276.20');
     expect(release.releaseDate).toBe('2021-04-20');
     expect(release.modules).toBe('83');
-    expect(release.status).toBe('Maintenance LTS');
+    expect(release.status).toBe('LTS');
   });
 });

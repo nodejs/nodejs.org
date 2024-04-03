@@ -12,7 +12,7 @@ export const Default: Story = {
       ltsStart: '2023-10-24',
       maintenanceStart: '2024-10-22',
       endOfLife: '2026-04-30',
-      status: 'Active LTS',
+      status: 'LTS',
       major: 20,
       version: '20.11.0',
       versionWithPrefix: 'v20.11.0',
