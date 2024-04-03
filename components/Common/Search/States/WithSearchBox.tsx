@@ -32,7 +32,7 @@ type SearchBoxProps = { onClose: () => void };
 export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState<SearchResults>(null);
-  const [selectedResult, setSelectedResult] = useState<Nullable<number>>();
+  const [selectedResult, setSelectedResult] = useState<number | null>(null);
   const [selectedFacet, setSelectedFacet] = useState<number>(0);
   const [searchError, setSearchError] = useState<Nullable<Error>>(null);
 
