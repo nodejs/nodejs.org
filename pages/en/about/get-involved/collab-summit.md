@@ -30,4 +30,4 @@ and brainstorms.
 For information about upcoming and past Collaboration Summits, check out the
 [Summit repo](https://github.com/openjs-foundation/summit). Have a look at the
 [issues filed](https://github.com/nodejs/summit/issues) that share what
-contributors and community embers are proposing to discuss in-person.
+contributors and community members are proposing to discuss in-person.
