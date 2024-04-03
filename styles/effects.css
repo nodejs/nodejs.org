@@ -4,6 +4,7 @@ h1.special {
     text-4xl
     leading-[3rem]
     -tracking-[0.045rem]
+    text-transparent
     dark:bg-gradient-subtle-white
     md:text-5xl
     md:leading-[4rem]

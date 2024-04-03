@@ -91,7 +91,7 @@ export default {
         900: '#411526',
       },
       white: '#FFFFFF',
-      transparent: 'transparent',
+      transparent: 'RGBA(255, 255, 255, 0)',
       shadow: '#101828',
     },
     fontSize: {
