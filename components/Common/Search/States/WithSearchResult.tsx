@@ -22,7 +22,7 @@ export const WithSearchResult: FC<SearchResultProps> = props => {
 
   useEffect(() => {
     if (props.selected && divRef.current) {
-      divRef.current?.scrollIntoView({ block: 'center' });
+      divRef.current.scrollIntoView({ block: 'center' });
     }
   }, [props.selected]);
 
