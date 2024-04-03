@@ -58,10 +58,19 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
       .catch(setSearchError);
   };
 
-  useClickOutside(searchBoxRef, () => {
+  const reset = () => {
+    setSearchTerm('');
+    setSearchResults(null);
+    setSelectedResult(null);
+    setSelectedFacet(0);
+  };
+
+  const handleClose = () => {
     reset();
     onClose();
-  });
+  };
+
+  useClickOutside(searchBoxRef, handleClose);
 
   useEffect(() => {
     searchInputRef.current?.focus();
@@ -105,13 +114,6 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
     }
   });
 
-  const reset = () => {
-    setSearchTerm('');
-    setSearchResults(null);
-    setSelectedResult(null);
-    setSelectedFacet(0);
-  };
-
   const handleEnter = () => {
     if (
       selectedResult == null ||
@@ -125,8 +127,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
     }
 
     router.push(searchHitToLinkPath(selectedHit));
-    reset();
-    onClose();
+    handleClose();
   };
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -138,8 +139,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
     }
 
     router.push(`/search?q=${searchTerm}&section=${selectedFacetName}`);
-    reset();
-    onClose();
+    handleClose();
   };
 
   const changeFacet = (idx: number) => setSelectedFacet(idx);
