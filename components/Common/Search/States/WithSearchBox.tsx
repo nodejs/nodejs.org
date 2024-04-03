@@ -224,7 +224,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
           </div>
 
           <div
-            id={`fulltext-results-container`}
+            id="fulltext-results-container"
             className={styles.fulltextResultsContainer}
             role="listbox"
           >
