@@ -21,6 +21,7 @@
       bg-white
       p-8
       focus:outline-none
+      dark:border-neutral-900
       dark:bg-neutral-950
       sm:my-20
       lg:max-w-[900px]
