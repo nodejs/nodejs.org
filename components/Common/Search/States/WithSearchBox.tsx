@@ -32,7 +32,7 @@ type SearchBoxProps = { onClose: () => void };
 export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState<SearchResults>(null);
-  const [selectedResult, setSelectedResult] = useState<number | null>(null);
+  const [selectedResult, setSelectedResult] = useState<number>();
   const [selectedFacet, setSelectedFacet] = useState<number>(0);
   const [searchError, setSearchError] = useState<Nullable<Error>>(null);
 
@@ -61,7 +61,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
   const reset = () => {
     setSearchTerm('');
     setSearchResults(null);
-    setSelectedResult(null);
+    setSelectedResult(undefined);
     setSelectedFacet(0);
   };
 
@@ -95,16 +95,16 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
     }
 
     switch (true) {
-      case cmd === 'down' && selectedResult == null:
+      case cmd === 'down' && selectedResult === undefined:
         setSelectedResult(0);
         break;
       case cmd === 'down' &&
-        selectedResult != null &&
+        selectedResult != undefined &&
         selectedResult < searchResults.count &&
         selectedResult < DEFAULT_ORAMA_QUERY_PARAMS.limit - 1:
         setSelectedResult(selectedResult + 1);
         break;
-      case cmd === 'up' && selectedResult != null && selectedResult != 0:
+      case cmd === 'up' && selectedResult != undefined && selectedResult != 0:
         setSelectedResult(selectedResult - 1);
         break;
       case cmd === 'enter':
@@ -116,7 +116,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
 
   const handleEnter = () => {
     if (
-      selectedResult == null ||
+      selectedResult === undefined ||
       (searchResults && searchResults?.count <= 0)
     ) {
       return;
@@ -184,7 +184,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
               <input
                 ref={searchInputRef}
                 aria-activedescendant={
-                  selectedResult != null
+                  selectedResult != undefined
                     ? `search-hit-${selectedResult}`
                     : undefined
                 }
