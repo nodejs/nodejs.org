@@ -6,7 +6,7 @@ type KeyboardCommandCallback = (key: KeyboardCommand) => void;
 
 const useKeyboardCommands = (fn: KeyboardCommandCallback) => {
   useEffect(() => {
-    function handleKeyDown(event: KeyboardEvent) {
+    const handleKeyDown = (event: KeyboardEvent) => {
       // Detect ⌘ + k on Mac, Ctrl + k on Windows
       if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
         event.preventDefault();
@@ -27,7 +27,7 @@ const useKeyboardCommands = (fn: KeyboardCommandCallback) => {
           fn('up');
           break;
       }
-    }
+    };
 
     document.addEventListener('keydown', handleKeyDown);
 
