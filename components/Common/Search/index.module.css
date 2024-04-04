@@ -29,7 +29,7 @@
     absolute
     right-2
     px-1
-    font-["Inter",var(--font-ibm-plex-mono)]
+    font-ibm-plex-mono
     text-xs
     leading-5
     motion-safe:transition-opacity
