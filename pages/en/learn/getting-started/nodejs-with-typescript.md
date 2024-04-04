@@ -95,15 +95,15 @@ example.ts:12:5 - error TS2322: Type 'string' is not assignable to type 'number'
           ~~~
     The expected type comes from property 'age' which is declared here on type 'User'
 
-example.ts:15:9 - error TS2322: Type 'boolean' is not assignable to type 'string'.
+example.ts:15:7 - error TS2322: Type 'boolean' is not assignable to type 'string'.
 
-15   const isJustineAnAdult: string = isAdult(justine, "I shouldn't be here!");
-           ~~~~~~~~~~~~~~~~
+15 const isJustineAnAdult: string = isAdult(justine, "I shouldn't be here!");
+         ~~~~~~~~~~~~~~~~
 
-example.ts:15:53 - error TS2554: Expected 1 arguments, but got 2.
+example.ts:15:51 - error TS2554: Expected 1 arguments, but got 2.
 
-15   const isJustineAnAdult: string = isAdult(justine, "I shouldn't be here!");
-                                                       ~~~~~~~~~~~~~~~~~~~~~~
+15 const isJustineAnAdult: string = isAdult(justine, "I shouldn't be here!");
+                                                     ~~~~~~~~~~~~~~~~~~~~~~
 
 
 Found 3 errors in the same file, starting at: example.ts:12
