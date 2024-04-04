@@ -117,14 +117,12 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
   const handleEnter = () => {
     if (
       selectedResult === undefined ||
-      (searchResults && searchResults?.count <= 0)
+      !searchResults ||
+      searchResults.count <= 0
     ) {
       return;
     }
-    const selectedHit = searchResults?.hits[selectedResult ?? 0];
-    if (!selectedHit) {
-      return;
-    }
+    const selectedHit = searchResults.hits[selectedResult];
 
     handleClose();
     router.push(searchHitToLinkPath(selectedHit));
@@ -184,18 +182,15 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
               <input
                 ref={searchInputRef}
                 aria-activedescendant={
-                  selectedResult != undefined
+                  selectedResult !== undefined
                     ? `search-hit-${selectedResult}`
                     : undefined
                 }
                 aria-autocomplete="list"
                 aria-controls="fulltext-results-container"
-                aria-expanded={
-                  !searchError &&
-                  !!searchTerm &&
-                  !!searchResults &&
-                  searchResults.count > 0
-                }
+                aria-expanded={Boolean(
+                  !searchError && searchTerm && searchResults?.count
+                )}
                 autoComplete="off"
                 role="combobox"
                 type="search"
