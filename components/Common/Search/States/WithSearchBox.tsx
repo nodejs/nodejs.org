@@ -131,11 +131,6 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Prevent searching if a result is selected
-    if (selectedResult) {
-      return;
-    }
-
     handleClose();
     router.push(`/search?q=${searchTerm}&section=${selectedFacetName}`);
   };
