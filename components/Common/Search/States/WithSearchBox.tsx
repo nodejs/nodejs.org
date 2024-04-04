@@ -126,8 +126,8 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
       return;
     }
 
-    router.push(searchHitToLinkPath(selectedHit));
     handleClose();
+    router.push(searchHitToLinkPath(selectedHit));
   };
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -138,8 +138,8 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
       return;
     }
 
-    router.push(`/search?q=${searchTerm}&section=${selectedFacetName}`);
     handleClose();
+    router.push(`/search?q=${searchTerm}&section=${selectedFacetName}`);
   };
 
   const changeFacet = (idx: number) => setSelectedFacet(idx);
