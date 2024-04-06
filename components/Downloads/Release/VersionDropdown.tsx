@@ -25,7 +25,7 @@ const VersionDropdown: FC = () => {
 
   return (
     <Select
-      label={t('layouts.download.dropdown.version')}
+      ariaLabel={t('layouts.download.dropdown.version')}
       values={releases.map(({ status, versionWithPrefix }) => ({
         value: versionWithPrefix,
         label: getDropDownStatus(versionWithPrefix, status),

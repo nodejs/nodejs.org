@@ -1,5 +1,4 @@
 'use client';
-
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useEffect, useContext, useMemo } from 'react';
@@ -82,11 +81,11 @@ const BitnessDropdown: FC = () => {
 
   return (
     <Select
-      label={t('layouts.download.dropdown.bitness')}
       values={formatDropdownItems({
         items: bitnessItems[os],
         disabledItems,
       })}
+      ariaLabel={t('layouts.download.dropdown.bitness')}
       defaultValue={String(bitness)}
       onChange={bitness => setBitness(parseNumericBitness(bitness))}
       className="w-28"
