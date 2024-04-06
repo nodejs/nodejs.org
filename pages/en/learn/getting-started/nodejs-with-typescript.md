@@ -132,7 +132,7 @@ npx tsc example.ts
 node example.js
 ```
 
-### Running TypeScript code with ts-node
+### Running TypeScript Code with `ts-node`
 
 You can use [ts-node](https://typestrong.org/ts-node/) to run TypeScript code directly in Node.js without the need to compile it first. But it's not typechecking your code. So we recommend to type check your code first with `tsc` and then run it with `ts-node` before shipping it.
 
