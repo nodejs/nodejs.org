@@ -123,7 +123,7 @@ Node.js canot run TypeScript natively. You cannot call `node example.ts` from th
 
 ### Compiling TypeScript to JavaScript
 
-If you want to run TypeScript code in Node.js, you need to compile it to JavaScript first. You can do this using the TypeScript compiler `tsc` as shown above.
+If you want to run TypeScript code in Node.js, you need to compile it to JavaScript first. You can do this using the TypeScript compiler `tsc` as shown earlier.
 
 Here's a small example:
 
