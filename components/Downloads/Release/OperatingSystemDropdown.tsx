@@ -1,5 +1,4 @@
 'use client';
-
 import { useTranslations } from 'next-intl';
 import { useContext, useEffect, useMemo } from 'react';
 import type { FC } from 'react';
@@ -68,7 +67,6 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
 
   return (
     <Select
-      label={t('layouts.download.dropdown.os')}
       values={formatDropdownItems({
         items: operatingSystemItems,
         disabledItems,
@@ -79,6 +77,7 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
           AIX: <Aix width={16} height={16} />,
         },
       })}
+      ariaLabel={t('layouts.download.dropdown.os')}
       defaultValue={os}
       onChange={value => setOS(value as UserOS)}
       className="w-[8.5rem]"
