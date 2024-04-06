@@ -148,7 +148,7 @@ Then you can run your TypeScript code like this:
 npx ts-node example.ts
 ```
 
-### Running TypeScript code with nodejs loader
+### Running TypeScript Code with a Node.js Loader
 
 Since Node.js v19.0.0, you can use a [custom loader](https://nodejs.org/api/cli.html#--importmodule). Download a loader such as `ts-node` or `tsx` or `nodejs-loaders`
 
