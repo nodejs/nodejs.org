@@ -117,7 +117,7 @@ TypeScript offers a whole lot of other great mechanisms like interfaces, classes
 
 Some of the other benefits of TypeScript that are worth mentioning are that it can be adopted progressively, it helps making code more readable and understandable and it allows developers to use modern language features while shipping code for older Node.js versions.
 
-## Running TypeScript code in Node.js
+## Running TypeScript Code in Node.js
 
 Node.js canot run TypeScript natively. You cannot call `node example.ts` from the command line directly. But there are three solutions to this problem:
 
