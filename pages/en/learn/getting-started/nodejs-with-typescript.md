@@ -150,7 +150,7 @@ npx ts-node example.ts
 
 ### Running TypeScript code with nodejs loader
 
-Since node v19.0.0 we had [custom loader](https://nodejs.org/docs/v20.11.1/api/cli.html#--importmodule). So you i'll need to download an loader such as `ts-node` or `tsx` or `nodejs-loaders`
+Since Node.js v19.0.0, you can use a [custom loader](https://nodejs.org/api/cli.html#--importmodule). Download a loader such as `ts-node` or `tsx` or `nodejs-loaders`
 
 First you need to install the loader:
 
