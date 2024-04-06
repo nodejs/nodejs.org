@@ -152,7 +152,7 @@ npx ts-node example.ts
 
 Since node v19.0.0 we had [custom loader](https://nodejs.org/docs/v20.11.1/api/cli.html#--importmodule). So you i'll need to download an loader such as `ts-node` or `tsx` or `nodejs-loaders`
 
-Firs you need to install the loader:
+First you need to install the loader:
 
 ```bash
 npm i -D ts-node
