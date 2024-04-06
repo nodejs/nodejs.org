@@ -125,7 +125,7 @@ Sadly node can do this `node example.ts`. But there are three solutions to this 
 
 If you want to run TypeScript code in Node.js, you need to compile it to JavaScript first. You can do this using the TypeScript compiler `tsc` as shown above.
 
-Here a small example:
+Here's a small example:
 
 ```bash
 npx tsc example.ts
