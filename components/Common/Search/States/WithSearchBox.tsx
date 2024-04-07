@@ -5,7 +5,6 @@ import {
   ChevronLeftIcon,
 } from '@heroicons/react/24/outline';
 import type { Results, Nullable } from '@orama/orama';
-import classNames from 'classnames';
 import { useState, useRef, useEffect } from 'react';
 import type { FC } from 'react';
 
@@ -16,6 +15,7 @@ import { WithError } from '@/components/Common/Search/States/WithError';
 import { WithNoResults } from '@/components/Common/Search/States/WithNoResults';
 import { WithPoweredBy } from '@/components/Common/Search/States/WithPoweredBy';
 import { WithSearchResult } from '@/components/Common/Search/States/WithSearchResult';
+import Tabs from '@/components/Common/Tabs';
 import { useClickOutside, useKeyboardCommands } from '@/hooks/react-client';
 import { useRouter } from '@/navigation.mjs';
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '@/next.constants.mjs';
@@ -135,7 +135,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
     router.push(`/search?q=${searchTerm}&section=${selectedFacetName}`);
   };
 
-  const changeFacet = (idx: number) => setSelectedFacet(idx);
+  const changeFacet = (idx: string) => setSelectedFacet(Number(idx));
 
   const filterBySection = () => {
     if (selectedFacet === 0) {
@@ -197,20 +197,17 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
           </div>
 
           <div className={styles.fulltextSearchSections}>
-            {Object.keys(facets).map((facetName, idx) => (
-              <button
-                key={facetName}
-                className={classNames(styles.fulltextSearchSection, {
-                  [styles.fulltextSearchSectionSelected]: selectedFacet === idx,
-                })}
-                onClick={() => changeFacet(idx)}
-              >
-                {facetName}
-                <span className={styles.fulltextSearchSectionCount}>
-                  ({facets[facetName].toLocaleString('en')})
-                </span>
-              </button>
-            ))}
+            <Tabs
+              activationMode="manual"
+              defaultValue="0"
+              autoFocus={true}
+              tabs={Object.keys(facets).map((facetName, idx) => ({
+                key: facetName,
+                label: `${facetName} (${facets[facetName].toLocaleString('en')})`,
+                value: idx.toString(),
+              }))}
+              onValueChange={changeFacet}
+            />
           </div>
 
           <div
