@@ -119,7 +119,7 @@ Some of the other benefits of TypeScript that are worth mentioning are that it c
 
 ## Running TypeScript Code in Node.js
 
-Node.js canot run TypeScript natively. You cannot call `node example.ts` from the command line directly. But there are three solutions to this problem:
+Node.js cannot run TypeScript natively. You cannot call `node example.ts` from the command line directly. But there are three solutions to this problem:
 
 ### Compiling TypeScript to JavaScript
 
