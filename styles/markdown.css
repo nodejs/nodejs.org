@@ -40,9 +40,13 @@ main {
   h4,
   h5,
   h6 {
-    &[id] a {
-      @apply text-neutral-900
+    &[id] {
+      @apply scroll-mt-[5.5rem];
+
+      a {
+        @apply text-neutral-900
         dark:text-white;
+      }
     }
   }
 
