@@ -5,7 +5,6 @@ import { getClientContext } from '@/client-context';
 import BlogHeader from '@/components/Blog/BlogHeader';
 import WithBlogCategories from '@/components/withBlogCategories';
 import WithFooter from '@/components/withFooter';
-import WithNavBar from '@/components/withNavBar';
 import getBlogData from '@/next-data/blogData';
 
 import styles from './layouts.module.css';
@@ -38,8 +37,6 @@ const BlogLayout: FC = async () => {
 
   return (
     <>
-      <WithNavBar />
-
       <div className={styles.blogLayout}>
         <main>
           <BlogHeader category={blogData.category} />

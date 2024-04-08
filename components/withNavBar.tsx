@@ -6,14 +6,14 @@ import type { FC } from 'react';
 
 import NavBar from '@/components/Containers/NavBar';
 import WithBanner from '@/components/withBanner';
-import { useClientContext, useSiteNavigation } from '@/hooks';
-import { useRouter } from '@/navigation.mjs';
+import { useSiteNavigation } from '@/hooks';
+import { usePathname, useRouter } from '@/navigation.mjs';
 import { availableLocales } from '@/next.locales.mjs';
 
 const WithNavBar: FC = () => {
   const { navigationItems } = useSiteNavigation();
   const { resolvedTheme, setTheme } = useTheme();
-  const { pathname } = useClientContext();
+  const pathname = usePathname();
   const { replace } = useRouter();
 
   const locale = useLocale();
@@ -22,7 +22,7 @@ const WithNavBar: FC = () => {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
 
   return (
-    <div>
+    <>
       <WithBanner section="index" />
 
       <NavBar
@@ -38,7 +38,7 @@ const WithNavBar: FC = () => {
           target,
         }))}
       />
-    </div>
+    </>
   );
 };
 

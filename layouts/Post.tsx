@@ -5,7 +5,6 @@ import Preview from '@/components/Common/Preview';
 import WithBlogCrossLinks from '@/components/withBlogCrossLinks';
 import WithFooter from '@/components/withFooter';
 import WithMetaBar from '@/components/withMetaBar';
-import WithNavBar from '@/components/withNavBar';
 import { useClientContext } from '@/hooks/react-server';
 import ContentLayout from '@/layouts/Content';
 import {
@@ -23,8 +22,6 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <>
-      <WithNavBar />
-
       <ContentLayout>
         <div className={styles.postLayout}>
           <main>

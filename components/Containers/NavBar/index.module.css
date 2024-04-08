@@ -1,5 +1,8 @@
 .container {
-  @apply border-neutral-200
+  @apply sticky
+    top-0
+    z-10
+    border-neutral-200
     bg-white
     dark:border-neutral-900
     dark:bg-neutral-950

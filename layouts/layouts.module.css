@@ -1,47 +1,62 @@
 .baseLayout {
-  @apply grid
-    size-full
+  @apply flex
+  min-h-svh
+  w-full
+  flex-col;
+
+  > main {
+    @apply grid
+    flex-grow
     grid-cols-[1fr]
-    grid-rows-[auto_1fr_auto];
+    grid-rows-[1fr_auto]
+    gap-0
+    self-center;
+
+    &.withSidebar {
+      @apply max-w-8xl
+        md:grid-cols-[theme(spacing.60)_1fr]
+        lg:grid-cols-[theme(spacing.52)_1fr]
+        xl:grid-cols-[theme(spacing.80)_1fr];
+    }
+  }
 }
 
 .articleLayout {
-  @apply mx-auto
-    grid
-    w-full
-    max-w-8xl
-    grid-rows-[1fr]
-    overflow-hidden
-    grid-areas-[sidebar_main_metabar,sidebar_footer_metabar]
-    sm:grid-cols-[theme(spacing.52)_1fr_theme(spacing.52)]
-    xl:grid-cols-[theme(spacing.80)_1fr_theme(spacing.80)]
-    xs:m-0
-    xs:block
-    xs:overflow-auto;
+  @apply block
+    lg:grid
+    lg:grid-cols-[1fr_theme(spacing.52)]
+    lg:grid-rows-[1fr]
+    lg:grid-areas-[main_metabar,footer_metabar]
+    xl:grid-cols-[1fr_theme(spacing.80)];
 
   > *:nth-child(1) {
-    @apply grid-in-[sidebar];
+    @apply items-center
+      overflow-y-auto
+      overflow-x-hidden
+      bg-none
+      p-4
+      pb-12
+      grid-in-[main]
+      md:bg-gradient-subtle
+      md:bg-fixed
+      md:p-12
+      md:dark:bg-gradient-subtle-dark
+      xl:px-18;
+
+    > article {
+      @apply flex 
+        max-w-2xl
+        flex-col
+        gap-6;
+    }
   }
 
   > *:nth-child(2) {
-    @apply overflow-y-auto
-      overflow-x-hidden
-      bg-gradient-subtle
-      p-12
-      grid-in-[main]
-      dark:bg-gradient-subtle-dark
-      xl:px-18
-      xs:bg-none
-      xs:p-4
-      xs:dark:bg-none;
-  }
-
-  > *:nth-child(3) {
     @apply grid-in-[metabar];
   }
 
-  > *:nth-child(4) {
-    @apply sticky
+  > *:nth-child(3) {
+    @apply fixed
       bottom-0
       flex
       w-full
@@ -54,7 +69,8 @@
       py-4
       grid-in-[footer]
       dark:border-t-neutral-900
-      dark:bg-neutral-950;
+      dark:bg-neutral-950
+      md:sticky;
   }
 }
 
@@ -220,6 +236,8 @@
 }
 
 .postLayout {
+  @apply bg-fixed;
+
   main {
     > section {
       @apply flex

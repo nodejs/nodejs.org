@@ -1,30 +1,42 @@
 .wrapper {
-  @apply flex
-    flex-col
-    items-start
-    gap-8
-    overflow-auto
-    overflow-x-hidden
-    border-r
-    border-r-neutral-200
+  @apply w-full
+    border-r-0
     bg-white
-    px-4
-    py-6
-    dark:border-r-neutral-900
     dark:bg-neutral-950
     md:max-w-xs
-    lg:px-6
-    xs:w-full
-    xs:border-r-0;
+    md:border-r
+    md:border-r-neutral-200
+    md:dark:border-r-neutral-900;
 
-  > section {
-    @apply flex
-      xs:hidden;
-  }
+  > aside {
+    @apply sticky
+      top-0
+      -mt-16
+      pt-16;
 
-  > span {
-    @apply hidden
-      w-full
-      xs:flex;
+    > nav {
+      @apply flex
+        max-h-[calc(100svh-4rem)]
+        flex-col
+        items-center
+        gap-8
+        overflow-y-auto
+        px-4
+        py-6
+        md:items-start
+        lg:px-6;
+
+      > span {
+        @apply flex
+          w-full
+          max-w-2xl
+          md:hidden;
+      }
+
+      > section {
+        @apply hidden
+            md:flex;
+      }
+    }
   }
 }

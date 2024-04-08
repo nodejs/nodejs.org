@@ -27,33 +27,35 @@ const MetaBar: FC<MetaBarProps> = ({ items, headings }) => {
   );
 
   return (
-    <div className={styles.wrapper}>
-      <dl>
-        {Object.entries(items)
-          .filter(([, value]) => !!value)
-          .map(([key, value]) => (
-            <Fragment key={key}>
-              <dt>{t(key)}</dt>
-              <dd>{value}</dd>
-            </Fragment>
-          ))}
+    <aside className={styles.wrapper}>
+      <nav>
+        <dl>
+          {Object.entries(items)
+            .filter(([, value]) => !!value)
+            .map(([key, value]) => (
+              <Fragment key={key}>
+                <dt>{t(key)}</dt>
+                <dd>{value}</dd>
+              </Fragment>
+            ))}
 
-        {heading.length > 0 && (
-          <>
-            <dt>{t('components.metabar.tableOfContents')}</dt>
-            <dd>
-              <ol>
-                {heading.map(head => (
-                  <li key={head.value}>
-                    <Link href={`#${head?.data?.id}`}>{head.value}</Link>
-                  </li>
-                ))}
-              </ol>
-            </dd>
-          </>
-        )}
-      </dl>
-    </div>
+          {heading.length > 0 && (
+            <>
+              <dt>{t('components.metabar.tableOfContents')}</dt>
+              <dd>
+                <ol>
+                  {heading.map(head => (
+                    <li key={head.value}>
+                      <Link href={`#${head?.data?.id}`}>{head.value}</Link>
+                    </li>
+                  ))}
+                </ol>
+              </dd>
+            </>
+          )}
+        </dl>
+      </nav>
+    </aside>
   );
 };
 
