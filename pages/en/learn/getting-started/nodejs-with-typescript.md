@@ -164,10 +164,6 @@ Then you can run your TypeScript code like this:
 node --loader=ts-node/esm example.ts
 ```
 
-## Conclusion
-
-TypeScript is a powerful tool that can help you write better code, catch bugs early and make your code more readable and maintainable. It's a great choice for Node.js projects and can be adopted progressively. TypeScript is widely used in the Node.js world and has a lot of great features that can help you write better code.
-
 ## TypeScript in the Node.js world
 
 TypeScript is well-established in the Node.js world and used by many companies, open-source projects, tools and frameworks.
