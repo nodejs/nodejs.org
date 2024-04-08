@@ -40,6 +40,7 @@ export const SearchButton: FC = () => {
         type="button"
         onClick={openSearchBox}
         className={styles.searchButton}
+        aria-label={t('components.search.searchBox.placeholder')}
       >
         <MagnifyingGlassIcon className={styles.magnifyingGlassIcon} />
 
