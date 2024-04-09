@@ -188,5 +188,15 @@
     "hrefLang": "pl",
     "enabled": false,
     "default": false
+  },
+  {
+    "code": "sr",
+    "localName": "Srpski",
+    "name": "Serbian",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "sr",
+    "enabled": false,
+    "default": false
   }
 ]
