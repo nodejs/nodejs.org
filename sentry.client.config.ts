@@ -62,7 +62,11 @@ export const sentryClient = new BrowserClient({
 getCurrentHub().bindClient(sentryClient);
 
 // Loads this Dynamically to avoid adding this to the main bundle (initial load)
-import('@sentry/nextjs').then(({ Replay, BrowserTracing }) => {
-  sentryClient.addIntegration(new Replay({ maskAllText: false }));
-  sentryClient.addIntegration(new BrowserTracing());
-});
+const lazyLoadSentryIntegrations = async () => {
+  const { addIntegration, replayIntegration, browserTracingIntegration } =
+    await import('@sentry/nextjs');
+  addIntegration(replayIntegration({ maskAllText: false }));
+  addIntegration(browserTracingIntegration());
+};
+
+lazyLoadSentryIntegrations();
