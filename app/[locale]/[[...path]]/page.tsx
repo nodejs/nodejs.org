@@ -31,7 +31,7 @@ export const generateMetadata = async ({ params }: DynamicParams) => {
 
 // Gets all mapped routes to the Next.js Routing Engine by Locale
 const mapRoutesForLocale = async (locale: string) => {
-  const routesForLanguage = await dynamicRouter.getRoutesByLanguage(locale);
+  const routesForLanguage = dynamicRouter.getRoutesByLanguage(locale);
 
   return routesForLanguage.map(pathname =>
     dynamicRouter.mapPathToRoute(locale, pathname)
