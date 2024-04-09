@@ -28,12 +28,12 @@ export const NotificationProvider: FC<PropsWithChildren<NotificationProps>> = ({
   children,
 }) => {
   const [notification, dispatch] = useState<NotificationContextType>(null);
-
   useEffect(() => {
-    const timeout = setTimeout(() => dispatch(null), notification?.duration);
-
-    return () => clearTimeout(timeout);
-  }, [notification]);
+    if (notification && typeof window !== 'undefined') {
+      const timeout = setTimeout(() => dispatch(null), notification?.duration);
+      return () => clearTimeout(timeout);
+    }
+  }, [notification?.duration]);
 
   return (
     <NotificationContext.Provider value={notification}>
