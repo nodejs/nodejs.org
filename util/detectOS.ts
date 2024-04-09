@@ -1,7 +1,7 @@
 import type { UserOS } from '@/types/userOS';
 
 export const detectOsInUserAgent = (userAgent: string | undefined): UserOS => {
-  const osMatch = userAgent?.match(/(Win|Mac|Linux)/);
+  const osMatch = userAgent?.match(/(Win|Mac|Linux|AIX)/);
   switch (osMatch && osMatch[1]) {
     case 'Win':
       return 'WIN';
