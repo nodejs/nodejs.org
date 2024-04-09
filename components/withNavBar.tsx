@@ -4,6 +4,7 @@ import { useLocale } from 'next-intl';
 import { useTheme } from 'next-themes';
 import type { FC } from 'react';
 
+import { STORYBOOK_MODE_THEME } from '@/.storybook/constants';
 import NavBar from '@/components/Containers/NavBar';
 import WithBanner from '@/components/withBanner';
 import { useClientContext, useSiteNavigation } from '@/hooks';
@@ -19,7 +20,11 @@ const WithNavBar: FC = () => {
   const locale = useLocale();
 
   const toggleCurrentTheme = () =>
-    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
+    setTheme(
+      resolvedTheme === STORYBOOK_MODE_THEME.dark
+        ? STORYBOOK_MODE_THEME.light
+        : STORYBOOK_MODE_THEME.dark
+    );
 
   return (
     <div>
