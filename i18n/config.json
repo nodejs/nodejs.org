@@ -188,5 +188,15 @@
     "hrefLang": "pl",
     "enabled": false,
     "default": false
+  },
+  {
+    "code": "th",
+    "localName": "ไทย",
+    "name": "Thai",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "th",
+    "enabled": false,
+    "default": false
   }
 ]
