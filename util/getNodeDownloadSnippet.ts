@@ -51,7 +51,7 @@ export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
     case os === 'WIN':
       snippets.CHOCO = dedent`
       # download and install Node.js
-      choco install nodejs --version="${release.version}"
+      choco install nodejs${release.isLts ? '-lts' : ''} --version="${release.version}"
 
       # verifies the right Node.js version is in the environment
       node -v # should print \`${release.versionWithPrefix}\`
