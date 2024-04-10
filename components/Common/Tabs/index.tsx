@@ -4,7 +4,12 @@ import type { FC, PropsWithChildren, ReactNode } from 'react';
 
 import styles from './index.module.css';
 
-type Tab = { key: string; label: string; value?: string };
+type Tab = {
+  key: string;
+  label: string;
+  secondaryLabel?: string;
+  value?: string;
+};
 
 type TabsProps = TabsPrimitive.TabsProps & {
   tabs: Array<Tab>;
@@ -31,6 +36,11 @@ const Tabs: FC<PropsWithChildren<TabsProps>> = ({
           className={classNames(styles.tabsTrigger, triggerClassName)}
         >
           {tab.label}
+          {tab.secondaryLabel ? (
+            <span className={styles.tabSecondaryLabel}>
+              {tab.secondaryLabel}
+            </span>
+          ) : null}
         </TabsPrimitive.Trigger>
       ))}
 

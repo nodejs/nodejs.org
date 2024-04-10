@@ -204,7 +204,8 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
               autoFocus={true}
               tabs={Object.keys(facets).map((facetName, idx) => ({
                 key: facetName,
-                label: `${facetName} (${facets[facetName].toLocaleString('en')})`,
+                label: facetName,
+                secondaryLabel: `(${facets[facetName].toLocaleString('en')})`,
                 value: idx.toString(),
               }))}
               onValueChange={changeFacet}
