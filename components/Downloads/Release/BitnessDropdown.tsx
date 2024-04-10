@@ -6,6 +6,7 @@ import semVer from 'semver';
 
 import Select from '@/components/Common/Select';
 import { useDetectOS } from '@/hooks/react-client';
+import { OS } from '@/next.constants.mjs';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import { bitnessItems, formatDropdownItems } from '@/util/downloadUtils';
 import { getUserBitnessByArchitecture } from '@/util/getUserBitnessByArchitecture';
@@ -35,23 +36,23 @@ const BitnessDropdown: FC = () => {
   const disabledItems = useMemo(() => {
     const disabledItems = [];
 
-    if (os === 'WIN' && semVer.satisfies(release.version, '< 19.9.0')) {
+    if (os === OS.WIN && semVer.satisfies(release.version, '< 19.9.0')) {
       disabledItems.push('arm64');
     }
 
-    if (os === 'LINUX' && semVer.satisfies(release.version, '< 4.0.0')) {
+    if (os === OS.LINUX && semVer.satisfies(release.version, '< 4.0.0')) {
       disabledItems.push('arm64', 'armv7l');
     }
 
-    if (os === 'LINUX' && semVer.satisfies(release.version, '< 4.4.0')) {
+    if (os === OS.LINUX && semVer.satisfies(release.version, '< 4.4.0')) {
       disabledItems.push('ppc64le');
     }
 
-    if (os === 'LINUX' && semVer.satisfies(release.version, '< 6.6.0')) {
+    if (os === OS.LINUX && semVer.satisfies(release.version, '< 6.6.0')) {
       disabledItems.push('s390x');
     }
 
-    if (os === 'AIX' && semVer.satisfies(release.version, '< 6.7.0')) {
+    if (os === OS.AIX && semVer.satisfies(release.version, '< 6.7.0')) {
       disabledItems.push('ppc64');
     }
 

@@ -8,6 +8,7 @@ import Choco from '@/components/Icons/Platform/Choco';
 import Docker from '@/components/Icons/Platform/Docker';
 import Homebrew from '@/components/Icons/Platform/Homebrew';
 import NVM from '@/components/Icons/Platform/NVM';
+import { OS } from '@/next.constants.mjs';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import type { PackageManager } from '@/types/release';
 import { formatDropdownItems, platformItems } from '@/util/downloadUtils';
@@ -25,15 +26,15 @@ const PlatformDropdown: FC = () => {
   const disabledItems = useMemo(() => {
     const disabledItems = [];
 
-    if (os === 'WIN') {
+    if (os === OS.WIN) {
       disabledItems.push('BREW', 'NVM');
     }
 
-    if (os === 'LINUX') {
+    if (os === OS.LINUX) {
       disabledItems.push('DOCKER', 'CHOCO');
     }
 
-    if (os === 'MAC') {
+    if (os === OS.MAC) {
       disabledItems.push('CHOCO');
     }
 

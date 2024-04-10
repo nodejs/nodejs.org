@@ -1,4 +1,4 @@
-import { DIST_URL } from '@/next.constants.mjs';
+import { DIST_URL, OS } from '@/next.constants.mjs';
 import type { UserOS } from '@/types/userOS';
 
 export const getNodeDownloadUrl = (
@@ -14,7 +14,7 @@ export const getNodeDownloadUrl = (
   }
 
   switch (os) {
-    case 'MAC':
+    case OS.MAC:
       // Prepares a downloadable Node.js installer link for the x64, ARM64 platforms
       if (kind === 'installer') {
         return `${baseURL}/node-${versionWithPrefix}.pkg`;
@@ -29,7 +29,7 @@ export const getNodeDownloadUrl = (
       // Since the x86 platform is not officially supported, returns the x64
       // link as the default value.
       return `${baseURL}/node-${versionWithPrefix}-darwin-x64.tar.gz`;
-    case 'WIN': {
+    case OS.WIN: {
       if (kind === 'installer') {
         // Prepares a downloadable Node.js installer link for the ARM platforms
         if (typeof bitness === 'string') {
@@ -48,7 +48,7 @@ export const getNodeDownloadUrl = (
       // Prepares a downloadable Node.js link for the x64 and x86 platforms
       return `${baseURL}/node-${versionWithPrefix}-win-x${bitness}.zip`;
     }
-    case 'LINUX':
+    case OS.LINUX:
       // Prepares a downloadable Node.js link for the ARM platforms such as
       // ARMv7 and ARMv8
       if (typeof bitness === 'string') {
@@ -59,7 +59,7 @@ export const getNodeDownloadUrl = (
       // Since the x86 platform is not officially supported, returns the x64
       // link as the default value.
       return `${baseURL}/node-${versionWithPrefix}-linux-x64.tar.xz`;
-    case 'AIX':
+    case OS.AIX:
       // Prepares a downloadable Node.js link for AIX
       if (typeof bitness === 'string') {
         return `${baseURL}/node-${versionWithPrefix}-aix-${bitness}.tar.gz`;

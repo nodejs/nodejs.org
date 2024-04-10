@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from 'react';
 import type { FC } from 'react';
 
 import CodeBox from '@/components/Common/CodeBox';
+import { OS } from '@/next.constants.mjs';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import { getShiki, highlightToHtml } from '@/util/getHighlighter';
 import { getNodeDownloadSnippet } from '@/util/getNodeDownloadSnippet';
@@ -32,7 +33,7 @@ const ReleaseCodeBox: FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [release.versionWithPrefix, os, platform]);
 
-  const codeLanguage = os === 'WIN' ? 'PowerShell' : 'Bash';
+  const codeLanguage = os === OS.WIN ? 'PowerShell' : 'Bash';
   return (
     <div className="mb-2 mt-6 flex min-h-80 flex-col gap-2">
       {code && (

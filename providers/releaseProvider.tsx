@@ -4,6 +4,7 @@ import type { Dispatch, PropsWithChildren, FC } from 'react';
 import { createContext, useMemo, useReducer } from 'react';
 
 import WithChangelogModal from '@/components/withChangelogModal';
+import { OS } from '@/next.constants.mjs';
 import type { NodeRelease } from '@/types';
 import type {
   ReleaseDispatchActions,
@@ -12,11 +13,12 @@ import type {
   ReleaseProviderProps,
   ReleaseState,
 } from '@/types/release';
+import type { UserOS } from '@/types/userOS';
 
 const initialState: ReleaseState = {
   releases: [],
   release: {} as NodeRelease,
-  os: 'OTHER',
+  os: OS.OTHER as UserOS,
   bitness: '',
   platform: 'NVM',
   modalOpen: false,

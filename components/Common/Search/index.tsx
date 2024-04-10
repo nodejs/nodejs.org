@@ -8,6 +8,7 @@ import { useState, type FC } from 'react';
 import { WithSearchBox } from '@/components/Common/Search/States/WithSearchBox';
 import { useDetectOS } from '@/hooks';
 import { useKeyboardCommands } from '@/hooks/react-client';
+import { OS } from '@/next.constants.mjs';
 
 import styles from './index.module.css';
 
@@ -31,7 +32,7 @@ export const SearchButton: FC = () => {
 
   const { os } = useDetectOS();
 
-  const osCommandKey = os === 'MAC' ? '⌘' : 'Ctrl';
+  const osCommandKey = os === OS.MAC ? '⌘' : 'Ctrl';
   const isOSLoading = os === 'LOADING';
 
   return (

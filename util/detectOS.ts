@@ -1,18 +1,19 @@
+import { OS } from '@/next.constants.mjs';
 import type { UserOS } from '@/types/userOS';
 
 export const detectOsInUserAgent = (userAgent: string | undefined): UserOS => {
   const osMatch = userAgent?.match(/(Win|Mac|Linux|AIX)/);
   switch (osMatch && osMatch[1]) {
     case 'Win':
-      return 'WIN';
+      return OS.WIN as UserOS;
     case 'Mac':
-      return 'MAC';
+      return OS.MAC as UserOS;
     case 'Linux':
-      return 'LINUX';
+      return OS.LINUX as UserOS;
     case 'AIX':
-      return 'AIX';
+      return OS.AIX as UserOS;
     default:
-      return 'OTHER';
+      return OS.OTHER as UserOS;
   }
 };
 

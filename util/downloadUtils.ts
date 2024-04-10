@@ -1,3 +1,4 @@
+import { OS } from '@/next.constants.mjs';
 import type { PackageManager } from '@/types/release';
 import type { UserOS } from '@/types/userOS';
 
@@ -13,19 +14,19 @@ export enum OperatingSystem {
 export const operatingSystemItems = [
   {
     label: OperatingSystem.WIN,
-    value: 'WIN' as UserOS,
+    value: OS.WIN as UserOS,
   },
   {
     label: OperatingSystem.MAC,
-    value: 'MAC' as UserOS,
+    value: OS.MAC as UserOS,
   },
   {
     label: OperatingSystem.LINUX,
-    value: 'LINUX' as UserOS,
+    value: OS.LINUX as UserOS,
   },
   {
     label: OperatingSystem.AIX,
-    value: 'AIX' as UserOS,
+    value: OS.AIX as UserOS,
   },
 ];
 

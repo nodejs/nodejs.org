@@ -1,5 +1,6 @@
 import dedent from 'dedent';
 
+import { OS } from '@/next.constants.mjs';
 import type { NodeRelease } from '@/types';
 import type { PackageManager } from '@/types/release';
 import type { UserOS } from '@/types/userOS';
@@ -12,7 +13,7 @@ export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
     CHOCO: '',
   };
 
-  if (os === 'LINUX' || os === 'MAC') {
+  if (os === OS.LINUX || os === OS.MAC) {
     snippets.NVM = dedent`
       # installs NVM (Node Version Manager)
       curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -40,7 +41,7 @@ export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
       npm -v # should print \`${release.npm}\``;
   }
 
-  if (os === 'MAC') {
+  if (os === OS.MAC) {
     snippets.DOCKER = dedent`
       # installs Homebrew (macOS/Linux Package Manager)
       curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
@@ -58,7 +59,7 @@ export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
       docker run node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'} npm -v # should print \`${release.npm}\``;
   }
 
-  if (os === 'WIN') {
+  if (os === OS.WIN) {
     snippets.CHOCO = dedent`
       # installs Chocolatey (Windows Package Manager)
       Set-ExecutionPolicy Bypass -Scope Process -Force;

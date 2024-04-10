@@ -1,6 +1,7 @@
 import { renderHook, waitFor } from '@testing-library/react';
 
 import useDetectOS from '@/hooks/react-client/useDetectOS';
+import { OS } from '@/next.constants.mjs';
 
 const windowsUserAgent =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36';
@@ -33,7 +34,7 @@ describe('useDetectOS', () => {
 
     await waitFor(() => {
       expect(result.current).toStrictEqual({
-        os: 'WIN',
+        os: OS.WIN,
         bitness: 64,
         architecture: '',
       });
@@ -52,7 +53,7 @@ describe('useDetectOS', () => {
 
     await waitFor(() => {
       expect(result.current).toStrictEqual({
-        os: 'WIN',
+        os: OS.WIN,
         bitness: 64,
         architecture: '',
       });
@@ -71,7 +72,7 @@ describe('useDetectOS', () => {
 
     await waitFor(() => {
       expect(result.current).toStrictEqual({
-        os: 'MAC',
+        os: OS.MAC,
         bitness: 86,
         architecture: '',
       });

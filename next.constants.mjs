@@ -160,3 +160,14 @@ export const ORAMA_CLOUD_ENDPOINT =
  * This is a public API key and can be shared publicly on the frontend.
  */
 export const ORAMA_CLOUD_API_KEY = process.env.NEXT_PUBLIC_ORAMA_API_KEY || '';
+
+/**
+ * This are the different types of OS types that are used in the app.
+ */
+export const OS = {
+  WIN: 'WIN',
+  MAC: 'MAC',
+  LINUX: 'LINUX',
+  AIX: 'AIX',
+  OTHER: 'OTHER',
+};
