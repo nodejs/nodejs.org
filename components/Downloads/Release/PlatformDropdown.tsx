@@ -29,11 +29,7 @@ const PlatformDropdown: FC = () => {
       disabledItems.push('BREW', 'NVM');
     }
 
-    if (os === 'LINUX') {
-      disabledItems.push('DOCKER', 'CHOCO');
-    }
-
-    if (os === 'MAC') {
+    if (os === 'LINUX' || os === 'MAC') {
       disabledItems.push('CHOCO');
     }
 
