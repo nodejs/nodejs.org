@@ -10,7 +10,6 @@ import type { FC } from 'react';
 
 import styles from '@/components/Common/Search/States/index.module.css';
 import { WithAllResults } from '@/components/Common/Search/States/WithAllResults';
-import { WithEmptyState } from '@/components/Common/Search/States/WithEmptyState';
 import { WithError } from '@/components/Common/Search/States/WithError';
 import { WithNoResults } from '@/components/Common/Search/States/WithNoResults';
 import { WithPoweredBy } from '@/components/Common/Search/States/WithPoweredBy';
@@ -184,9 +183,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
                 }
                 aria-autocomplete="list"
                 aria-controls="fulltext-results-container"
-                aria-expanded={Boolean(
-                  !searchError && searchTerm && searchResults?.count
-                )}
+                aria-expanded={Boolean(!searchError && searchResults?.count)}
                 autoComplete="off"
                 role="combobox"
                 type="search"
@@ -219,9 +216,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
           >
             {searchError && <WithError />}
 
-            {!searchError && !searchTerm && <WithEmptyState />}
-
-            {!searchError && searchTerm && (
+            {!searchError && (
               <>
                 {searchResults &&
                   searchResults.count > 0 &&
