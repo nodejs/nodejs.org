@@ -23,13 +23,13 @@ const WithBlogCrossLinks: FC = async () => {
 
   return (
     <div className="mt-4 grid w-full grid-cols-2 gap-4 xs:grid-cols-1">
-      {(previousCrossLink && (
+      {previousCrossLink && (
         <CrossLink
           type="previous"
           text={previousCrossLink.title}
           link={previousCrossLink.slug}
         />
-      )) || <div />}
+      )}
 
       {nextCrossLink && (
         <CrossLink
