@@ -115,14 +115,15 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
   });
 
   const handleEnter = () => {
-    if (
-      selectedResult === undefined ||
-      !searchResults ||
-      searchResults.count <= 0
-    ) {
+    if (!searchResults || !selectedResult) {
       return;
     }
+
     const selectedHit = searchResults.hits[selectedResult];
+
+    if (!selectedHit) {
+      return;
+    }
 
     handleClose();
     router.push(searchHitToLinkPath(selectedHit));
