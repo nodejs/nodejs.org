@@ -1,0 +1,291 @@
+{
+  "components": {
+    "containers": {
+      "footer": {
+        "links": {
+          "trademarkPolicy": "سیاست نشان تجاری",
+          "privacyPolicy": "سیاست حفظ حریم خصوصی",
+          "codeOfConduct": "منشور اخلاقی",
+          "security": "سیاست موارد امنیتی",
+          "openJS": "بنیاد OpenJS"
+        }
+      },
+      "navBar": {
+        "links": {
+          "about": "درباره",
+          "download": "دانلود",
+          "docs": "اسناد",
+          "guides": "راهنما",
+          "learn": "یادگیری",
+          "security": "امنیت",
+          "certification": "گواهینامه",
+          "blog": "بلاگ"
+        }
+      }
+    },
+    "navigation": {
+      "learn": {
+        "gettingStarted": {
+          "links": {
+            "gettingStarted": "شروع",
+            "introductionToNodejs": "معرفی Node.js",
+            "howToInstallNodejs": "چگونه Node.js را نصب کنیم",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "برای استفاده از Node.js چقدر باید جاوااسکریپت بدانیم؟",
+            "differencesBetweenNodejsAndTheBrowser": "تفاوت‌های بین Node.js و مرورگر",
+            "theV8JavascriptEngine": "موتور جاوااسکریپت V8",
+            "anIntroductionToTheNpmPackageManager": "معرفی پکیج منیجر npm",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) و بعد از آن",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js، تفاوت بین محیط توسعه و پروداکشن",
+            "nodejsWithTypescript": "Node.js با TypeScript",
+            "nodejsWithWebassembly": "Node.js با WebAssembly",
+            "debugging": "اشکال‌زدایی Node.js",
+            "profiling": "پروفایل‌سازی برنامه‌های Node.js",
+            "securityBestPractices": "بهترین شیوه‌های امنیتی"
+          }
+        },
+        "asynchronousWork": {
+          "links": {
+            "asynchronousWork": "کار غیرهمگام",
+            "asynchronousFlowControl": "کنترل جریان غیرهمگام",
+            "overviewOfBlockingVsNonBlocking": "مروری بر رویکرد Blocking در مقابل Non-Blocking",
+            "javascriptAsynchronousProgrammingAndCallbacks": "برنامه‌نویسی غیرهمگام جاوااسکریپت و کالبک‌ها",
+            "discoverJavaScriptTimers": "کشف تایمرهای جاوااسکریپت",
+            "theNodejsEventLoop": "حلقه رویدادهای Node.js",
+            "theNodejsEventEmitter": "منبع رویداد Node.js",
+            "understandingProcessnexttick": "درک process.nextTick()‎",
+            "understandingSetimmediate": "درک setImmediate()‎",
+            "dontBlockTheEventLoop": "حلقه رویدادها را بلاک نکنید"
+          }
+        },
+        "manipulatingFiles": {
+          "links": {
+            "manipulatingFiles": "دستکاری فایل‌ها",
+            "nodejsFileStats": "وضعیت فایل در Node.js",
+            "nodejsFilePaths": "مسیرهای فایل در Node.js",
+            "workingWithFileDescriptorsInNodejs": "کار با توصیفگرهای فایل در Node.js",
+            "readingFilesWithNodejs": "خواندن فایل‌ها با Node.js",
+            "writingFilesWithNodejs": "نوشتن فایل‌ها با Node.js",
+            "workingWithFoldersInNodejs": "کار با پوشه‌ها در Node.js",
+            "howToWorkWithFileSystems": "چگونه با سیستم فایل‌های مختلف کار کنیم"
+          }
+        },
+        "commandLine": {
+          "links": {
+            "commandLine": "خط فرمان",
+            "runNodejsScriptsFromTheCommandLine": "اجرای اسکریپت‌های Node.js از خط فرمان",
+            "howToReadEnvironmentVariablesFromNodejs": "چگونه متغیرهای محیطی را توسط Node.js بخوانیم",
+            "howToUseTheNodejsRepl": "نحوه استفاده از Node.js REPL",
+            "outputToTheCommandLineUsingNodejs": "خروجی دادن به خط فرمان با استفاده از Node.js",
+            "acceptInputFromTheCommandLineInNodejs": "دریافت ورودی از خط فرمان در Node.js"
+          }
+        },
+        "modules": {
+          "links": {
+            "modules": "ماژول‌ها",
+            "publishingNodeApiModules": "چگونه یک پکیج Node-API منتشر کنیم",
+            "anatomyOfAnHttpTransaction": "ساختار یک تراکنش HTTP",
+            "abiStability": "پایداری ABI",
+            "backpressuringInStreams": "فشار برگشتی در استریم‌ها"
+          }
+        },
+        "diagnostics": {
+          "links": {
+            "diagnostics": "عیب شناسی",
+            "userJourney": "سفر کاربر",
+            "memory": "حافظه",
+            "liveDebugging": "اشکال زدایی زنده",
+            "poorPerformance": "عملکرد نامناسب",
+            "flameGraphs": "نمودارهای Flame"
+          }
+        }
+      },
+      "about": {
+        "links": {
+          "about": "درباره Node.js",
+          "aboutSide": "درباره Node.js®‎",
+          "branding": "برندسازی Node.js",
+          "governance": "حاکمیت پروژه",
+          "releases": "نسخه‌های قبلی",
+          "security": "گزارش امنیتی"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "getInvolved": "مشارکت کنید",
+          "collabSummit": "نشست مشارکت کنندگان (Collab Summit)",
+          "upcomingEvents": "رویدادهای آینده",
+          "contribute": "مشارکت در Node.js",
+          "codeOfConduct": "منشور اخلاقی"
+        }
+      }
+    },
+    "downloadList": {
+      "links": {
+        "previousReleases": "نسخه‌های قبلی",
+        "packageManager": "از طریق پکیج منیجر Node.js نصب",
+        "shaSums": {
+          "title": "SHASUMهای امضاشده برای فایل‌های انتشار",
+          "howToVerify": " (چگونه راستی‌آزمایی کنیم؟)"
+        },
+        "allDownloads": "تمام آپشن‌های دانلود",
+        "nightlyReleases": "نسخه‌های شبانه",
+        "unofficialBuilds": "نسخه‌های غیررسمی",
+        "buildingFromSource": "بیلد Node.js از سورس‌کد در پلتفرم‌های پشتیبانی شده",
+        "installingOnLinux": "نصب Node.js از طریق آرشیو باینری",
+        "installingOnWsl": "نصب در زیرسیستم ویندوز برای لینوکس (WSL)"
+      }
+    },
+    "downloadReleasesTable": {
+      "changelog": "تغییرات",
+      "releases": "نسخه‌های منتشر شده",
+      "docs": "اسناد"
+    },
+    "pagination": {
+      "next": "بعدی",
+      "previous": "قبلی"
+    },
+    "common": {
+      "breadcrumbs": {
+        "navigateToHome": "پیمایش به صفحه اصلی"
+      },
+      "crossLink": {
+        "previous": "قبلی",
+        "next": "بعدی"
+      },
+      "codebox": {
+        "copy": "کپی در کلیپ‌بورد",
+        "copied": "در کلیپ بورد کپی شد!"
+      },
+      "pagination": {
+        "prev": "قبلی",
+        "prevAriaLabel": "صفحه قبلی",
+        "next": "بعدی",
+        "nextAriaLabel": "صفحه بعدی",
+        "defaultLabel": "صفحه‌بندی",
+        "pageLabel": "به صفحه {pageNumber} برو"
+      },
+      "sidebar": {
+        "title": "تغییر صفحه"
+      },
+      "languageDropdown": {
+        "label": "انتخاب زبان"
+      },
+      "themeToggle": {
+        "label": "فعال کردن حالت تاریک"
+      }
+    },
+    "mdx": {
+      "upcomingEvents": {
+        "defaultTitle": "رویدادی برای آینده وجود ندارد"
+      }
+    },
+    "metabar": {
+      "lastUpdated": "آخرین به‌روزرسانی",
+      "readingTime": "زمان خواندن",
+      "addedIn": "افزوده شده در",
+      "author": "نویسنده",
+      "authors": "نویسندگان",
+      "contribute": "مشارکت کردن",
+      "contributeText": "ویرایش این صفحه",
+      "viewAs": "مشاهده به عنوان",
+      "tableOfContents": "فهرست مطالب"
+    },
+    "downloads": {
+      "changelogModal": {
+        "startContributing": "شروع به مشارکت"
+      }
+    },
+    "search": {
+      "searchBox": {
+        "placeholder": "شروع به تایپ..."
+      },
+      "seeAll": {
+        "text": "مشاهده تمامی {count} نتیجه"
+      },
+      "searchError": {
+        "text": "خطایی در هنگام جستجو رخ داد. لطفا بعداً دوباره امتحان کنید."
+      },
+      "poweredBy": {
+        "text": "توسط"
+      },
+      "noResults": {
+        "text": "نتیجه‌ای برای \"{query}\" یافت نشد."
+      },
+      "emptyState": {
+        "text": "جستجو چیزی..."
+      },
+      "searchPage": {
+        "title": "در حال جستجو شما: {query}"
+      }
+    },
+    "blog": {
+      "blogHeader": {
+        "subtitle": "آخرین اخبار، مطالعات موردی، آموزش‌ها و منابع Node.js.",
+        "rssLink": "فید RSS"
+      }
+    }
+  },
+  "layouts": {
+    "blogPost": {
+      "author": {
+        "byLine": "{author, select, null {} other {توسط {author}، }}"
+      }
+    },
+    "blogIndex": {
+      "categoryName": "{category, select, all {وبلاگ} other {{category} پست‌های وبلاگ}}"
+    },
+    "blog": {
+      "title": "بلاگ",
+      "selectCategory": "دسته‌بندی‌ها",
+      "categories": {
+        "all": "همه چیز",
+        "announcements": "اطلاعیه‌ها",
+        "release": "نسخه‌های منتشر شده",
+        "vulnerability": "آسیب‌پذیری‌ها",
+        "advisory-board": "هیئت مشاوران",
+        "community": "جامعه",
+        "feature": "ویژگی",
+        "module": "ماژول",
+        "npm": "npm",
+        "uncategorized": "دسته‌بندی‌نشده",
+        "video": "ویدیو",
+        "weekly": "به‌روزرسانی‌های هفتگی",
+        "wg": "گروه‌های کاری",
+        "events": "رویدادها"
+      }
+    },
+    "error": {
+      "notFound": {
+        "title": "صفحه پیدا نشد",
+        "description": "با عرض پوزش، ما نتوانستیم صفحه مورد نظر شما را پیدا کنیم! دوباره از صفحه اصلی شروع کنید."
+      },
+      "internalServerError": {
+        "title": "خطای داخلی سرور",
+        "description": "این صفحه یک خطای غیرقابل بازیابی ایجاد کرده است."
+      },
+      "backToHome": "بازگشت به خانه"
+    },
+    "download": {
+      "selectCategory": "دسته‌بندی‌ها",
+      "categories": {
+        "download": "نصب کننده از پیش ساخته شده",
+        "prebuilt-binaries": "باینری‌های از پیش ساخته شده",
+        "package-manager": "پکیج منیجر",
+        "source-code": "سورس کد"
+      },
+      "buttons": {
+        "prebuilt": "دانلود Node.js {version}",
+        "source": "دانلود سورس Node.js {version}"
+      },
+      "dropdown": {
+        "bitness": "Bitness",
+        "os": "سیستم عامل",
+        "version": "نسخه",
+        "platform": "پلتفرم"
+      },
+      "codeBox": {
+        "communityWarning": "پکیج منیجرها و اسکریپت‌های نصب آن‌ها توسط پروژه Node.js نگهداری نمی‌شوند."
+      }
+    }
+  }
+}
