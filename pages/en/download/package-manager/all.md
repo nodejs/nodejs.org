@@ -370,16 +370,15 @@ Solus provides Node.js in its main repository.
 sudo eopkg install nodejs
 ```
 
-## vfox 
+## vfox
 
-A cross-platform(Windows, macOS, Linux) and **extendable** version manager. 
+A cross-platform(Windows, macOS, Linux) and **extendable** version manager.
 
-It allows you to **different versions for different projects**, **different versions for different shells**, and switch Node versions automatically based on the current directory, etc. 
+It allows you to **different versions for different projects**, **different versions for different shells**, and switch Node versions automatically based on the current directory, etc.
 
 It support all popular shells (Bash, Zsh, Fish, PowerShell, Clink, Cmder).
 
 See the [Quick Start](https://vfox.lhan.me/guides/quick-start.html) for quickly using vfox, and all the usage details.
-
 
 ## Void Linux
 
