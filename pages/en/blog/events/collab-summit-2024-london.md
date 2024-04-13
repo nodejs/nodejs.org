@@ -87,6 +87,6 @@ Finally, we discussed standards for supply chain security, such as [CycloneDX](h
 
 ## Wrapping up
 
-We had many productive discussions at the summit. Both the contributors and community members learned a lot from each other. We will follow up on them in respective working groups/teams on GitHub.
+We had many productive discussions at the summit. Both the contributors and community members learned a lot from each other. We will follow up on the discussions in respective working groups/teams on GitHub.
 
 We are also looking into the organization of the next summit in the second half of 2024. Follow [this issue](https://github.com/nodejs/admin/issues/814) if you are interested!
