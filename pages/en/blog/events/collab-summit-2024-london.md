@@ -8,7 +8,7 @@ author: Joyee Cheung
 
 About twice per year, Node.js contributors and community members get together in an unconference called [the Node.js collaboration summit](https://nodejs.org/en/about/get-involved/collab-summit). At the summit, we share knowledge about the project and the ecosystem, brainstorm solutions to technical and non-technical issues, make progress in decision-making discussions, and push forward new initiatives.
 
-The [first collaboration summit of 2024](https://github.com/openjs-foundation/summit/issues/387) was held in the first week of April, hosted by Bloomberg at their London office. In this edition, 20 attendees joined in person, including 15 Node.js core collaborators (10 of whom were from the Technical Steering Committee) and 5 more members/contributors from the community. We were also joined by around a dozen remote participants who contributed significantly to the discussions. In addition, we had our first crossover session with WinterCG.
+The [first collaboration summit of 2024](https://github.com/openjs-foundation/summit/issues/387) was held on 3-4 April, hosted by Bloomberg at their London office. In this edition, 20 attendees joined in person, including 15 Node.js core collaborators (10 of whom were from the Technical Steering Committee) and 5 more members/contributors from the community. We were also joined by around a dozen remote participants who contributed significantly to the discussions. In addition, we had our first crossover session with WinterCG.
 
 Here is a recap of what happened at the summit.
 
