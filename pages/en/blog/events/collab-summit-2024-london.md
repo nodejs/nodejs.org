@@ -1,7 +1,7 @@
 ---
 date: '2024-04-15T00:00:00.000Z'
 category: events
-title: Trip report: Node.js collaboration summit (2024 London)
+title: 'Trip report: Node.js collaboration summit (2024 London)'
 layout: blog-post
 author: Joyee Cheung
 ---
@@ -22,7 +22,7 @@ Matteo Collina ([@mcollina](https://github.com/mcollina)) and Robert Nagy ([@ron
 
 ## New features for the built-in CLI
 
-Ruy Adorno ([@ruyadorno](https://github.com/ruyadorno)) presented the recent development in the [tooling group](https://github.com/nodejs/tooling). We discussed  adding a new command line utility that lets users  quickly start a static file server for Web development. Folks at the session generally found the idea favorable. We discussed the goals and non-goals of this new utility at the session and will follow up on GitHub.
+Ruy Adorno ([@ruyadorno](https://github.com/ruyadorno)) presented the recent development in the [tooling group](https://github.com/nodejs/tooling). We discussed adding a new command line utility that lets users quickly start a static file server for Web development. Folks at the session generally found the idea favorable. We discussed the goals and non-goals of this new utility at the session and will follow up on GitHub.
 
 Before the summit, a [recent pull request](https://github.com/nodejs/node/pull/52190) to add a subcommand `node run` (similar to a built-in, slimmed-down version of `npm run`) started a debate on GitHub. The author of the pull request, Yagiz Nizipli ([@anonrig](https://github.com/anonrig)), joined remotely and we used the session to settle the debate in the pull request. Most people at the session favored the idea, though we also agreed that we should have a more thought-out subcommand strategy. We agreed that this new feature could land as `node --run` in the first iteration. While the option is still experimental, we'll figure out whether or how we should introduce more subcommands in the future and how we can minimize breakage to existing workflows. At the meantime we could also explore adding more performant primitives that help package managers speed up their script runners.
 
@@ -81,7 +81,7 @@ Daniel Ehrenberg ([@littledan](https://github.com/littledan)) briefed the audien
 
 Since the summit overlaps with the monthly call of [WinterCG](https://wintercg.org/), part of this session was scheduled to be a cross-over session with WinterCG. We were joined by Luca Casonato ([@lucacasonato](https://github.com/lucacasonato), remote) who explained how WinterCG works. Andreu Botella ([@andreubotella](https://github.com/andreubotella)) also joined remotely and shared how the [minimum common API](https://github.com/wintercg/proposal-common-minimum-api) tried to leave room in the specification when Node.js API behavior deviates from the browsers. We agreed that both Node.js contributors and others from WinterCG should make an effort to improve communication and ensure that the specifications are compatible and interoperable with Node.js. We also discussed how to get funding to help Node.js implement proposals coming out of WinterCG.
 
-Because Node.js has a distributed consensus-seeking model, one solution to effective communication proposed in the [mini-summit at NodeConf EU last year](https://github.com/nodejs/TSC/issues/1422) was to set up a [standards-positions repository](https://github.com/nodejs/standards-positions)  that captures consensus within the project about proposals in standards. We revisited this idea in this summit, and discussed communication setups that may help folks from WinterCG get input more effectively from those who work on the relevant parts in Node.js. The discussions will continue in the [standards-positions repository](https://github.com/nodejs/standards-positions).
+Because Node.js has a distributed consensus-seeking model, one solution to effective communication proposed in the [mini-summit at NodeConf EU last year](https://github.com/nodejs/TSC/issues/1422) was to set up a [standards-positions repository](https://github.com/nodejs/standards-positions) that captures consensus within the project about proposals in standards. We revisited this idea in this summit, and discussed communication setups that may help folks from WinterCG get input more effectively from those who work on the relevant parts in Node.js. The discussions will continue in the [standards-positions repository](https://github.com/nodejs/standards-positions).
 
 Finally, we discussed standards for supply chain security, such as [CycloneDX](https://github.com/CycloneDX) and [SLSA](https://github.com/slsa-framework/slsa). Feelings about SLSA were mixed; several people expressed that it is incompatible with Node.js's current contribution model, and implementing it requires a significant change in the contribution process that needs resources we do not have. The project is still in a learning process, and we want to explore different options in security standards. The exploration will continue in the [security working group](https://github.com/nodejs/security-wg).
 
