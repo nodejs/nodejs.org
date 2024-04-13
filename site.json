@@ -37,12 +37,12 @@
   },
   "websiteBadges": {
     "index": {
-      "startDate": "2024-03-24T13:34:50.449Z",
-      "endDate": "2024-03-31T13:34:50.449Z",
+      "startDate": "2024-04-15T00:00:00.000Z",
+      "endDate": "2024-04-22T00:00:00.000Z",
       "kind": "default",
       "title": "New Blog Post",
-      "text": "Diving into the Node.js Website Redesign",
-      "link": "https://nodejs.org/en/blog/announcements/diving-into-the-nodejs-website-redesign"
+      "text": "Trip report: Node.js collaboration summit (2024 London)",
+      "link": "https://nodejs.org/en/blog/events/collab-summit-2024-london"
     }
   }
 }
