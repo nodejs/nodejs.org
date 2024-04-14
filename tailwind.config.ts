@@ -116,6 +116,7 @@ export default {
     fontFamily: {
       'open-sans': ['var(--font-open-sans)'],
       'ibm-plex-mono': ['var(--font-ibm-plex-mono)'],
+      vazirmatn: ['var(--font-vazirmatn)'],
     },
     extend: {
       screens: { xs: { max: '670px', min: '0px' } },

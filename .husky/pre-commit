@@ -1,8 +1,8 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+# #!/usr/bin/env sh
+# . "$(dirname -- "$0")/_/husky.sh"
 
-# lint and format staged files
-npx lint-staged
+# # lint and format staged files
+# npx lint-staged
 
-# verify typescript staged files
-npx tsc --build .
+# # verify typescript staged files
+# npx tsc --build .

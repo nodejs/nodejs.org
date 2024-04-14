@@ -46,7 +46,7 @@
     "langDir": "rtl",
     "dateFormat": "YYYY/MM/DD",
     "hrefLang": "fa",
-    "enabled": false,
+    "enabled": true,
     "default": false
   },
   {
