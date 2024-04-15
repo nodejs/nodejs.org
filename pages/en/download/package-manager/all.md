@@ -14,6 +14,7 @@ title: Installing Node.js via package manager
 - [Arch Linux](#arch-linux)
 - [CentOS, Fedora and Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
 - [Debian and Ubuntu based Linux distributions](#debian-and-ubuntu-based-linux-distributions)
+- [Exherbo Linux](#exherbo-linux)
 - [fnm](#fnm)
 - [FreeBSD](#freebsd)
 - [Gentoo](#gentoo)
@@ -104,6 +105,14 @@ These resources provide packages compatible with CentOS, Fedora, and RHEL.
 ### Alternatives
 
 Packages compatible with Debian and Ubuntu based Linux distributions are available via [Node.js snaps](#snap).
+
+## Exherbo Linux
+
+Node.js and npm packages are available in the [arbor repository](https://gitlab.exherbo.org/exherbo/arbor/-/tree/master/packages/dev-lang/node).
+
+```bash
+cave resolve -x node
+```
 
 ## fnm
 
