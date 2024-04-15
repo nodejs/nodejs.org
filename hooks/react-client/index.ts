@@ -6,4 +6,3 @@ export { default as useClientContext } from './useClientContext';
 export { default as useKeyboardCommands } from './useKeyboardCommands';
 export { default as useClickOutside } from './useClickOutside';
 export { default as useBottomScrollListener } from './useBottomScrollListener';
-export { default as useHideSidebar } from './useHideSidebar';

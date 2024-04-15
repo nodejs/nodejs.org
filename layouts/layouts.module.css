@@ -4,8 +4,9 @@
     w-full
     flex-col;
 
-  > main {
+  > *:last-child {
     @apply grid
+      w-full
       flex-grow
       grid-cols-[1fr]
       grid-rows-[1fr_auto]
@@ -13,10 +14,16 @@
       self-center;
 
     &.withSidebar {
-      @apply max-w-8xl
-        md:grid-cols-[theme(spacing.60)_1fr]
-        lg:grid-cols-[theme(spacing.52)_1fr]
-        xl:grid-cols-[theme(spacing.80)_1fr];
+      &:has(footer) > :first-child {
+        @apply hidden;
+      }
+
+      &:not(:has(footer)) {
+        @apply max-w-8xl
+          md:grid-cols-[theme(spacing.60)_1fr]
+          lg:grid-cols-[theme(spacing.52)_1fr]
+          xl:grid-cols-[theme(spacing.80)_1fr];
+      }
     }
   }
 }

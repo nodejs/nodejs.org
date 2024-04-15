@@ -14,7 +14,7 @@ const GlobalErrorPage: FC<{ error: Error }> = ({ error }) => {
   return (
     <html>
       <body>
-        <BaseLayout showSidebar={false}>
+        <BaseLayout>
           <CenteredLayout>
             <div className="glowingBackdrop" />
 

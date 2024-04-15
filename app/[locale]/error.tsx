@@ -6,13 +6,11 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import Button from '@/components/Common/Button';
-import { useHideSidebar } from '@/hooks';
 import CenteredLayout from '@/layouts/Centered';
 
 const ErrorPage: FC<{ error: Error }> = ({ error }) => {
   captureException(error);
   const t = useTranslations();
-  useHideSidebar();
 
   return (
     <CenteredLayout>
