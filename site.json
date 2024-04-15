@@ -40,8 +40,8 @@
       "startDate": "2024-04-15T00:00:00.000Z",
       "endDate": "2024-04-22T00:00:00.000Z",
       "kind": "default",
-      "title": "New Blog Post",
-      "text": "Trip report: Node.js collaboration summit (2024 London)",
+      "title": "Trip report",
+      "text": "Node.js collaboration summit (2024 London)",
       "link": "https://nodejs.org/en/blog/events/collab-summit-2024-london"
     }
   }
