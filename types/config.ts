@@ -26,3 +26,9 @@ export interface SiteConfig {
   websiteBanners: Record<string, WebsiteBanner>;
   websiteBadges: Record<string, WebsiteBadge>;
 }
+
+export interface Author {
+  id: string;
+  name: string;
+  website: string;
+}

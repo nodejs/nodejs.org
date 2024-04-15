@@ -16,7 +16,7 @@ layout: home
   </div>
 
   <div>
-    <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
+    <WithNodeRelease status={['LTS']}>
       {({ release }) => (
         <>
           <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
@@ -28,7 +28,7 @@ layout: home
         </>
       )}
     </WithNodeRelease>
-    <WithNodeRelease status={"Current"}>
+    <WithNodeRelease status={['Current']}>
       {({ release }) => (
         <small>
           Want new features sooner?
@@ -43,7 +43,7 @@ layout: home
 <section>
   <div>
     ```js displayName="Create an HTTP Server"
-    // make a file `server.mjs` and run with `node server.mjs`
+    // server.mjs
     import { createServer } from 'node:http';
 
     const server = createServer((req, res) => {
@@ -55,10 +55,12 @@ layout: home
     server.listen(3000, '127.0.0.1', () => {
       console.log('Listening on 127.0.0.1:3000');
     });
+
+    // run with `node server.mjs`
     ```
 
     ```js displayName="Write Tests"
-    // make a file `tests.mjs` and run with `node tests.mjs`
+    // tests.mjs
     import assert from 'node:assert';
     import test from 'node:test';
 
@@ -70,10 +72,12 @@ layout: home
       // throws an exception because 1 != 2
       assert.strictEqual(1, 2);
     });
+
+    // run with `node tests.mjs`
     ```
 
     ```js displayName="Read and Hash a File"
-    // make a file `crypto.mjs` and run with `node crypto.mjs`
+    // crypto.mjs
     import { createHash } from 'node:crypto';
     import { readFile } from 'node:fs/promises';
 
@@ -85,25 +89,29 @@ layout: home
     hasher.end();
 
     const fileHash = hasher.read();
+
+    // run with `node crypto.mjs`
     ```
 
-    ```js displayName="Read Streams"
-    // make a file `streams.mjs` and run with `node streams.mjs`
-    import { pipeline } from 'node:stream';
+    ```js displayName="Streams Pipeline"
+    // streams.mjs
+    import { pipeline } from 'node:stream/promises';
     import { createReadStream, createWriteStream } from 'node:fs';
     import { createGzip } from 'node:zlib';
-    import { promisify } from 'node:util';
 
-    await promisify(pipeline)
-    ( // ensure you have a `package.json` file for this test!
+    // ensure you have a `package.json` file for this test!
+    await pipeline
+    (
       createReadStream('package.json'),
       createGzip(),
       createWriteStream('package.json.gz')
     );
+
+    // run with `node streams.mjs`
     ```
 
     ```js displayName="Work with Threads"
-    // make a file `threads.mjs` and run with `node threads.mjs`
+    // threads.mjs
     import { Worker, isMainThread,
       workerData, parentPort } from 'node:worker_threads';
 
@@ -115,6 +123,8 @@ layout: home
       const source = workerData;
       parentPort.postMessage(btoa(source.toUpperCase()));
     }
+
+    // run with `node threads.mjs`
     ```
 
   </div>

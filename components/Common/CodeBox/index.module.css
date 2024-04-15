@@ -11,6 +11,7 @@
 
     & > code {
       @apply grid
+        overflow-x-auto
         bg-transparent
         p-0
         font-ibm-plex-mono
@@ -24,11 +25,6 @@
         @apply relative
           min-w-0
           pl-8;
-
-        & > span {
-          @apply whitespace-break-spaces
-            break-words;
-        }
 
         &:not(:empty:last-child)::before {
           @apply inline-block

@@ -78,7 +78,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Restore Lint Cache
-        uses: actions/cache/restore@ab5e6d0c87105b4c9c2047343972218f562e4319 # v4.0.1
+        uses: actions/cache/restore@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
         with:
           path: |
             .eslintmdcache
@@ -122,7 +122,7 @@ jobs:
           commit_message: 'chore: automated format of translated files'
 
       - name: Save Lint Cache
-        uses: actions/cache/save@ab5e6d0c87105b4c9c2047343972218f562e4319 # v4.0.1
+        uses: actions/cache/save@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
         with:
           path: |
             .eslintmdcache

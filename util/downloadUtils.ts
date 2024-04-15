@@ -4,8 +4,9 @@ import type { UserOS } from '@/types/userOS';
 // A utility enum to help convert `userOs` data type to user-readable format
 export enum OperatingSystem {
   WIN = 'Windows',
-  MAC = 'MacOS',
+  MAC = 'macOS',
   LINUX = 'Linux',
+  AIX = 'AIX',
   OTHER = 'Other',
 }
 
@@ -21,6 +22,10 @@ export const operatingSystemItems = [
   {
     label: OperatingSystem.LINUX,
     value: 'LINUX' as UserOS,
+  },
+  {
+    label: OperatingSystem.AIX,
+    value: 'AIX' as UserOS,
   },
 ];
 
@@ -90,7 +95,14 @@ export const bitnessItems = {
       value: 's390x',
     },
   ],
+  AIX: [
+    {
+      label: 'Power',
+      value: 'ppc64',
+    },
+  ],
   OTHER: [],
+  LOADING: [],
 };
 
 type formatDropdownItemsType = {

@@ -1,14 +1,14 @@
 ---
 title: Node.js with TypeScript
 layout: learn
-authors: sbielenica, ovflowd, vaishnav-mk
+authors: sbielenica, ovflowd, vaishnav-mk, AugustinMauroy
 ---
 
 # Node.js with TypeScript
 
 ## What is TypeScript
 
-**[TypeScript](https://www.typescriptlang.org)** is a trendy open-source language maintained and developed by Microsoft. It's loved and used by a lot of software developers around the world.
+**[TypeScript](https://www.typescriptlang.org)** is an open-source language maintained and developed by Microsoft. It's loved and used by a lot of software developers around the world.
 
 Basically, it's a superset of JavaScript that adds new capabilities to the language. The most notable addition is static type definitions, something that is not present in plain JavaScript. Thanks to types, it's possible, for example, to declare what kind of arguments we are expecting and what is returned exactly in our functions or what's the exact shape of the object that we are creating. TypeScript is a really powerful tool and opens a new world of possibilities in JavaScript projects. It makes our code more secure and robust by preventing many bugs before the code is even shipped - it catches problems during code development and integrates wonderfully with code editors like Visual Studio Code.
 
@@ -85,14 +85,14 @@ const isJustineAnAdult: string = isAdult(justine, "I shouldn't be here!");
 **And this is what TypeScript has to say about this:**
 
 ```console
-example.ts:12:3 - error TS2322: Type 'string' is not assignable to type 'number'.
+example.ts:12:5 - error TS2322: Type 'string' is not assignable to type 'number'.
 
-12   age: "Secret!",
-     ~~~
+12     age: 'Secret!',
+       ~~~
 
-  example.ts:3:3
-    3   age: number;
-        ~~~
+  example.ts:3:5
+    3     age: number;
+          ~~~
     The expected type comes from property 'age' which is declared here on type 'User'
 
 example.ts:15:7 - error TS2322: Type 'boolean' is not assignable to type 'string'.
@@ -106,7 +106,7 @@ example.ts:15:51 - error TS2554: Expected 1 arguments, but got 2.
                                                      ~~~~~~~~~~~~~~~~~~~~~~
 
 
-Found 3 errors.
+Found 3 errors in the same file, starting at: example.ts:12
 ```
 
 As you can see TypeScript successfully prevents us from shipping code that could work unexpectedly. That's wonderful!
@@ -116,6 +116,53 @@ As you can see TypeScript successfully prevents us from shipping code that could
 TypeScript offers a whole lot of other great mechanisms like interfaces, classes, utility types and so on. Also, on bigger projects you can declare your TypeScript compiler configuration in a separate file and granularly adjust how it works, how strict it is and where it stores compiled files for example. You can read more about all this awesome stuff in [the official TypeScript docs](https://www.typescriptlang.org/docs).
 
 Some of the other benefits of TypeScript that are worth mentioning are that it can be adopted progressively, it helps making code more readable and understandable and it allows developers to use modern language features while shipping code for older Node.js versions.
+
+## Running TypeScript Code in Node.js
+
+Node.js cannot run TypeScript natively. You cannot call `node example.ts` from the command line directly. But there are three solutions to this problem:
+
+### Compiling TypeScript to JavaScript
+
+If you want to run TypeScript code in Node.js, you need to compile it to JavaScript first. You can do this using the TypeScript compiler `tsc` as shown earlier.
+
+Here's a small example:
+
+```bash
+npx tsc example.ts
+node example.js
+```
+
+### Running TypeScript Code with `ts-node`
+
+You can use [ts-node](https://typestrong.org/ts-node/) to run TypeScript code directly in Node.js without the need to compile it first. But it's not typechecking your code. So we recommend to type check your code first with `tsc` and then run it with `ts-node` before shipping it.
+
+To use `ts-node`, you need to install it first:
+
+```bash
+npm i -D ts-node
+```
+
+Then you can run your TypeScript code like this:
+
+```bash
+npx ts-node example.ts
+```
+
+### Running TypeScript Code with a Node.js Loader
+
+Since Node.js v19.0.0, you can use a [custom loader](https://nodejs.org/api/cli.html#--importmodule). Download a loader such as `ts-node` or `tsx` or `nodejs-loaders`
+
+First you need to install the loader:
+
+```bash
+npm i -D ts-node
+```
+
+Then you can run your TypeScript code like this:
+
+```bash
+node --loader=ts-node/esm example.ts
+```
 
 ## TypeScript in the Node.js world
 

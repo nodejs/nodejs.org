@@ -39,6 +39,18 @@ main {
   h3,
   h4,
   h5,
+  h6 {
+    &[id] a {
+      @apply text-neutral-900
+        dark:text-white;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
   h6,
   strong {
     @apply font-semibold
@@ -63,10 +75,11 @@ main {
       dark:text-white;
   }
 
-  a {
+  a,
+  .anchor {
     @apply text-green-600
       dark:text-green-400
-      xs:underline;
+      xs:font-semibold;
 
     &:hover {
       @apply text-green-900
@@ -74,7 +87,7 @@ main {
     }
 
     &[role='button'] {
-      @apply xs:no-underline;
+      @apply xs:font-regular;
     }
 
     &:has(code) {

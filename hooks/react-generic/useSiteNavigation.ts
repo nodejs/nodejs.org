@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import type { RichTranslationValues } from 'next-intl';
+import type { HTMLAttributeAnchorTarget } from 'react';
 
 import { siteNavigation } from '@/next.json.mjs';
 import type {
@@ -15,6 +16,7 @@ interface MappedNavigationEntry {
   items: Array<[string, MappedNavigationEntry]>;
   label: FormattedMessage;
   link: string;
+  target?: HTMLAttributeAnchorTarget | undefined;
 }
 
 // Provides Context replacement for variables within the Link. This is also something that is not going
@@ -40,9 +42,13 @@ const useSiteNavigation = () => {
       t.rich(label, context[key] || {});
 
     return Object.entries(entries).map(
-      ([key, { label, link, items }]): [string, MappedNavigationEntry] => [
+      ([key, { label, link, items, target }]): [
+        string,
+        MappedNavigationEntry,
+      ] => [
         key,
         {
+          target,
           label: label ? getFormattedMessage(label, key) : '',
           link: link ? replaceLinkWithContext(link, context[key]) : '',
           items: items ? mapNavigationEntries(items, context) : [],

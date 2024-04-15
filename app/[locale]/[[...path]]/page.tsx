@@ -78,7 +78,7 @@ const getPage: FC<DynamicParams> = async ({ params }) => {
 
   const staticGeneratedLayout = DYNAMIC_ROUTES.get(pathname);
 
-  // If the current patname is a statically generated route
+  // If the current pathname is a statically generated route
   // it means it does not have a Markdown file nor exists under the filesystem
   // but it is a valid route with an assigned layout that should be rendered
   if (staticGeneratedLayout !== undefined) {

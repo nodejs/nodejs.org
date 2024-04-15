@@ -14,7 +14,7 @@
       pt-3
       xs:px-2;
 
-    > button {
+    .trigger {
       @apply border-b
         border-b-transparent
         px-1

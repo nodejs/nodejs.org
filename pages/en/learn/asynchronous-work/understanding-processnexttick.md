@@ -42,11 +42,13 @@ process.nextTick(() => {
 });
 ```
 
-#### Output:
+#### Example output:
 
 ```bash
 Hello => number 1
 Running at next tick => number 2
-The timeout running last => number 4
 Running before the timeout => number 3
+The timeout running last => number 4
 ```
+
+The exact output may differ from run to run.

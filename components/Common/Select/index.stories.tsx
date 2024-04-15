@@ -82,7 +82,7 @@ export const InlineSelect: Story = {
           },
           {
             value: 'macos',
-            label: 'MacOS',
+            label: 'macOS',
             iconImage: <Apple width={16} height={16} />,
           },
           {
