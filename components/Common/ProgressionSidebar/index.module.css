@@ -38,7 +38,7 @@
 
       > section {
         @apply hidden
-        md:flex;
+          md:flex;
       }
     }
   }

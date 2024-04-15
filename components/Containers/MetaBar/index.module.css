@@ -19,15 +19,15 @@
 
   dl {
     @apply w-full
-    overflow-y-auto
-    pb-20
-    pr-10
-    pt-6
-    [scrollbar-color:theme(colors.neutral.200)_transparent]
-    [scrollbar-width:thin]
-    dark:[scrollbar-color:theme(colors.neutral.600)_transparent]
-    md:pb-6
-    lg:max-h-[calc(100svh-4rem)];
+      overflow-y-auto
+      pb-20
+      pr-10
+      pt-6
+      [scrollbar-color:theme(colors.neutral.200)_transparent]
+      [scrollbar-width:thin]
+      dark:[scrollbar-color:theme(colors.neutral.600)_transparent]
+      md:pb-6
+      lg:max-h-[calc(100svh-4rem)];
   }
 
   dt {

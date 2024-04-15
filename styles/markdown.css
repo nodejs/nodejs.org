@@ -45,7 +45,7 @@ main {
 
       a {
         @apply text-neutral-900
-        dark:text-white;
+          dark:text-white;
       }
     }
   }

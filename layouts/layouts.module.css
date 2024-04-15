@@ -1,16 +1,16 @@
 .baseLayout {
   @apply flex
-  min-h-svh
-  w-full
-  flex-col;
+    min-h-svh
+    w-full
+    flex-col;
 
   > main {
     @apply grid
-    flex-grow
-    grid-cols-[1fr]
-    grid-rows-[1fr_auto]
-    gap-0
-    self-center;
+      flex-grow
+      grid-cols-[1fr]
+      grid-rows-[1fr_auto]
+      gap-0
+      self-center;
 
     &.withSidebar {
       @apply max-w-8xl
