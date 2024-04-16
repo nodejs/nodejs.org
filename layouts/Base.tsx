@@ -12,7 +12,7 @@ import { NotificationProvider } from '@/providers/notificationProvider';
 
 import styles from './layouts.module.css';
 
-const getSidebar = (slug: string): FC | false => {
+const getSidebar = (slug: string): FC | null => {
   switch (slug) {
     case 'learn':
       return memo(function Sidebar() {
@@ -23,11 +23,11 @@ const getSidebar = (slug: string): FC | false => {
         return <WithSidebar navKeys={['about', 'getInvolved']} />;
       });
     case 'download':
-      return false;
+      return null;
     case 'blog':
-      return false;
+      return null;
     case '':
-      return false;
+      return null;
     default:
       return memo(function Sidebar() {
         return <WithSidebar navKeys={[]} />;
