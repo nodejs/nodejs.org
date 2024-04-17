@@ -5,7 +5,7 @@
 html,
 body {
   @apply size-full
-    [scrollbar-gutter:stable];
+    [scrollbar-gutter:auto];
 }
 
 body {
