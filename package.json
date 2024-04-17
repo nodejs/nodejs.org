@@ -23,8 +23,8 @@
     "lint:js": "eslint \"**/*.{js,mjs,ts,tsx}\" --cache --cache-strategy=content --cache-location=.eslintjscache",
     "lint:md": "eslint \"**/*.md?(x)\" --cache --cache-strategy=content --cache-location=.eslintmdcache",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
-    "lint": "npm run lint:js && npm run lint:md && npm run lint:css",
-    "lint:fix": "npm run lint:js -- --fix && npm run lint:md -- --fix && npm run lint:css -- --fix",
+    "lint": "turbo run lint:md lint:js lint:css",
+    "lint:fix": "turbo run lint:md lint:js lint:css --no-cache -- --fix",
     "prettier": "prettier \"**/*.{js,mjs,ts,tsx,md,mdx,json,yml,css}\" --check --cache --cache-strategy=content --cache-location=.prettiercache",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run lint:fix && npm run prettier:fix",
@@ -33,7 +33,7 @@
     "storybook:build": "cross-env NODE_NO_WARNINGS=1 storybook build --quiet --webpack-stats-json",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 jest",
     "test:unit:watch": "npm run test:unit -- --watch",
-    "test": "npm run test:unit",
+    "test": "turbo test:unit",
     "prepare": "husky"
   },
   "dependencies": {
