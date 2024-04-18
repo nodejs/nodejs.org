@@ -51,7 +51,8 @@ module being loaded by `require()` meets the following requirements:
 the module name space object. In this case it is similar to dynamic
 `import()` but is run synchronously and returns the name space object
 directly.
-
+We intend to eventually enable `require(esm)` by default in the future, without
+the flag.
 Contributed by Joyee Cheung in [#51977](https://github.com/nodejs/node/pull/51977)
 
 #### Running package.json scripts
