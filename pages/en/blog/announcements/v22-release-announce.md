@@ -25,7 +25,7 @@ which contains the full list of commits included in this release.
 
 #### glob and globSync
 
-This release introduces `glob` and `globSync` functions for pattern matching.
+This release adds to the `node:fs`module the functions `glob` and `globSync` for pattern matching.
 Developers can now utilize these functions for matching file paths based on specified patterns.
 
 Contributed by Moshe Atlow [#51912](https://github.com/nodejs/node/pull/51912)
@@ -33,7 +33,7 @@ Contributed by Moshe Atlow [#51912](https://github.com/nodejs/node/pull/51912)
 #### Maglev
 
 V8's Maglev Compiler is now enabled by default on supported architectures (<https://v8.dev/blog/maglev>).
-Maglev improves CPU performance for short-lived CLI programs.
+Maglev improves performance for short-lived CLI programs.
 Contributed by Keyhan Vakil in [#51360](https://github.com/nodejs/node/pull/51360)
 
 #### Support require()ing synchronous ESM graphs
@@ -53,6 +53,7 @@ the module name space object. In this case it is similar to dynamic
 directly.
 We intend to eventually enable `require(esm)` by default in the future, without
 the flag.
+
 Contributed by Joyee Cheung in [#51977](https://github.com/nodejs/node/pull/51977)
 
 #### Running package.json scripts
