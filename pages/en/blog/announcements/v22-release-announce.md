@@ -7,7 +7,7 @@ author: The Node.js Project
 ---
 
 We're excited to announce the release of Node.js 22!
-Highlights include require()ing ESM graphs, WebSocket client, updates of the V8 JavaScript engine, and more!
+Highlights include require()ing ESM graphs, a WebSocket client, updates of the V8 JavaScript engine, and more!
 
 As a reminder, Node.js 22 will enter long-term support (LTS) in October, but until then, it will be the "Current" release for the next six months.
 We encourage you to explore the new features and benefits offered by this latest release and evaluate their potential impact on your applications.
