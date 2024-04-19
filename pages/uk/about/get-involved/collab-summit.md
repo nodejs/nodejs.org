@@ -1,30 +1,18 @@
 ---
-title: Collab Summit
+title: Саміт співавторів
 layout: about
 ---
 
-# Collaborator Summit
+# Саміт співавторів
 
-Node.js's Collaborator Summit is an un-conference for bringing current and
-potential contributors together to discuss Node.js with lively collaboration,
-education, and knowledge sharing. Committees and working groups come together
-twice per year to make important decisions while also being able to work on some
-exciting efforts they want to push forward in-person.
+Саміт співавторства/Collaboration Summit Node.js ― це "неконференція", на яку збираються поточні та потенційні співавтори, щоб наживо обговорити Node.js та поділитися знаннями. Команди, робочі групи та співавтори зі спільноти збираються двічі на рік для прийняття важливих рішень, водночас маючи змогу попрацювати над ідеями, які вони хочуть просувати особисто.
 
-## Who attends?
+## Хто запрошений?
 
-Anyone is welcome to attend Collab Summit. During the
-summit, leaders will help onboard new contributors to groups they'd love to help
-prior to integrating them into the working sessions.
+Участь у Саміті співавторства в основному беруть існуючі учасники та члени спільноти, але він також вітає тих, хто також бажає стати співавтором. Якщо ви новачок у внесенні змін до Node.js, Саміт співавторства може бути гарною можливістю допомогти вам дізнатися, що відбувається в межах спільноти, і зробити внесок вже з тими навичками, які ви хочете покращити.
 
-This is your opportunity to learn what is happening within the community to jump
-in and contribute with the skills you have and would like to hone.
+Перед самітом співавтори та учасники спільноти надсилають пропозиції щодо створення розкладу подій. Присутні можуть попередньо ознайомитись з подією та в загальному обговорити її з іншими співавторами, перед тим як відвідати. Також буде багато можливостей для нетворкінгу та брейнштормів.
 
-Working groups will put together a schedule so that people can
-familiarize themselves before folks get onsite, having the general collaborator
-discussions, and then dive into breakout sessions.
-
-We'd love to see you at Collab Summit! Check out the [Summit repo](https://github.com/nodejs/summit)
-for upcoming and past Collab Summits and have a look at the
-[issues filed](https://github.com/nodejs/summit/issues) that share what
-individual working groups and committees are looking to discuss in-person.
+Ми будемо раді бачити вас на Саміті Співатворів/Collab Summit! Перегляньте [репозиторій саміту](https://github.com/nodejs/summit)
+для майбутніх і минулих подій і ознайомтесь із
+[відкритими питаннями](https://github.com/nodejs/summit/issues), щоб розуміти, які проблеми співавтори та учасники спільноти хочуть обговорити наживо.
