@@ -1,26 +1,26 @@
 ---
-title: Get involved
+title: مشارکت کنید
 layout: about
 ---
 
-# Get Involved
+# مشارکت کنید
 
-## Community Discussion
+## گفتگوی جامعه
 
-- The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
-- For real-time chat about Node.js development use one of the platforms below
-  - For IRC, go to `irc.libera.chat` in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [a web client](https://kiwiirc.com/nextclient/)
-  - For Slack, there are two options:
-    - The [OpenJSF Slack](https://slack-invite.openjsf.org/) is a Foundation run Slack with several Node.js channels (channels prefixed by `#nodejs-` are related to the project).
-    - [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
-- The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
-- The [Node.js project calendar](https://nodejs.org/calendar) with all public team meetings.
+- [لیست issue ها در گیت‌هاب](https://github.com/nodejs/node/issues) محل بحث در مورد ویژگی‌های اصلی Node.js است.
+- برای گفتگوی لحظه‌ای در مورد توسعه Node.js از یکی از پلتفرم‌های زیر استفاده کنید
+  - برای IRC، به `irc.libera.chat` در کانال `‎#node.js` با یک [کلاینت IRC](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) بروید یا در مرورگر وب خود به کانال با استفاده از یک [کلاینت تحت وب](https://kiwiirc.com/nextclient/) متصل شوید.
+  - برای Slack، دو راه وجود دارد:
+    - [OpenJSF Slack](https://slack-invite.openjsf.org/) یک Slack است که توسط بنیاد اجرا می‌شود با چندین کانال Node.js (کانال‌های با پیشوند `‎#nodejs-‎` مربوط به پروژه هستند).
+    - [Node Slackers](https://www.nodeslackers.com/) یک جامعه Slack متمرکز بر Node.js است.
+- حساب رسمی Node.js در توییتر [nodejs](https://twitter.com/nodejs) است.
+- [تقویم پروژه Node.js](https://nodejs.org/calendar) با تمام جلسات عمومی تیم.
 
-## Learning
+## یادگیری
 
-- [Official Learn section](https://nodejs.org/en/learn/) of the Node.js website.
-- [Official API reference documentation](https://nodejs.org/api/).
-- [NodeSchool.io](https://nodeschool.io/) will teach you Node.js concepts via interactive command-line games.
-- [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) collects new information every day.
-- [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
-- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
+- [بخش یادگیری رسمی](https://nodejs.org/en/learn/) وبسایت Node.js.
+- [مستندات رسمی API reference](https://nodejs.org/api/).
+- [NodeSchool.io](https://nodeschool.io/) مفاهیم Node.js را از طریق بازی‌های تعاملی خط فرمان به شما می‌آموزد.
+- [تگ Node.js در Stack Overflow](https://stackoverflow.com/questions/tagged/node.js) هر روز اطلاعات جدیدی را جمع می‌کند.
+- [تگ Node.js در جامعه DEV](https://dev.to/t/node) محلی برای اشتراک‌گذاری پروژه‌ها، مقالات و آموزش‌های Node.js و نیز شروع بحث‌ها و درخواست بازخورد در مورد موضوعات مرتبط با Node.js است. توسعه‌دهندگان در تمام سطوح مهارت می‌توانند شرکت کنند.
+- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) یک جامعه دوستانه از توسعه‌دهندگان بک‌اند Node.js است که در Discord از یکدیگر پشتیبانی می‌کنند.
