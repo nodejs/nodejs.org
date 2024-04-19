@@ -59,7 +59,7 @@ Contributed by Joyee Cheung in [#51977](https://github.com/nodejs/node/pull/5197
 #### Running package.json scripts
 
 Node.js 22 includes a new experimental feature for the execution of scripts from the `package.json` with the cli flag `node --run <script-in-package-json>`.
-It also supports `node run test` which executes the test command inside `package.json` scripts.
+It also supports `node --run test` which executes the test command inside `package.json` scripts.
 Contributed by Yagiz Nizipli [#52190](https://github.com/nodejs/node/pull/52190)
 
 #### Stream default High Water Mark
