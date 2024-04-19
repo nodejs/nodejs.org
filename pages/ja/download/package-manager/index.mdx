@@ -1,21 +1,23 @@
 ---
 layout: download
-title: Download Node.js®
-subtitle: Download Node.js the way you want.
+title: Node.js®をダウンロードする
+subtitle: 好きな方法でNode.jsをダウンロードできます。
 ---
 
 <section>
-  Install Node.js <Release.VersionDropdown /> on <Release.OperatingSystemDropdown /> using <Release.PlatformDropdown />
+  <Release.PlatformDropdown />を利用して<Release.OperatingSystemDropdown exclude={["AIX"]} />用のNode.js <Release.VersionDropdown />をインストールする。
 
   <Release.ReleaseCodeBox />
 </section>
 
 <section>
-  Node.js includes <LinkWithArrow href="https://npmjs.com">npm</LinkWithArrow> (<Release.NpmVersion />) and corepack.
+  Node.jsは<Release.NpmLink />を同梱しています。
 
-  Read the blog post for <Release.BlogPostLink>this version</Release.BlogPostLink>
+  <Release.ChangelogLink>このバージョン</Release.ChangelogLink>に関する変更点を確認する。
 
-  Learn how to <Release.VerifyingBinariesLink>verify signed SHASUMS</Release.VerifyingBinariesLink>
+  <Release.BlogPostLink>このバージョン</Release.BlogPostLink>に関するブログ記事を確認する。
 
-  Check out other community supported <LinkWithArrow href="/download/package-manager/all">package managers</LinkWithArrow>
+  <Release.VerifyingBinariesLink>署名済みSHASUMSの検証方法</Release.VerifyingBinariesLink>を確認する。
+
+  コミュニティーによってサポートされているその他の<LinkWithArrow href="/download/package-manager/all">パッケージマネージャー</LinkWithArrow>を確認する。
 </section>
