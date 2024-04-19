@@ -9,7 +9,7 @@ layout: about
 
 - La [GitHub issues list](https://github.com/nodejs/node/issues) est le lieu de discussion des fonctionnalités de base de Node.js.
 - Pour discuter en temps réel du développement de Node.js, utilisez l'une des plateformes suivantes
-  - Pour IRC, allez sur `irc.libera.chat` dans le canal `#node.js` avec un [client IRC](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) ou connectez-vous dans votre navigateur web au canal en utilisant [un client web] (https\://kiwiirc.com/nextclient/).
+  - Pour IRC, allez sur `irc.libera.chat` dans le canal `#node.js` avec un [client IRC](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) ou connectez-vous dans votre navigateur web au canal en utilisant [un client web] (https://kiwiirc.com/nextclient/).
   - Pour Slack, il y a deux options :
     - Le [OpenJSF Slack](https://slack-invite.openjsf.org/) est un Slack géré par la Fondation avec plusieurs canaux Node.js (les canaux préfixés par `#nodejs-` sont liés au projet).
     - [Node Slackers](https://www.nodeslackers.com/) est une communauté Slack axée sur Node.js.
