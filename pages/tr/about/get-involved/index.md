@@ -21,6 +21,6 @@ layout: about
 - Node.js web sitesinin [Resmi Öğrenme bölümü] (https\://nodejs.org/en/learn/).
 - [Resmi API referans belgeleri](https://nodejs.org/api/).
 - [NodeSchool.io](https://nodeschool.io/) size Node.js kavramlarını etkileşimli komut satırı oyunları aracılığıyla öğretecek.
-- [Stack Overflow Node.js etiketi] (https\://stackoverflow\.com/questions/tagged/node.js) her gün yeni bilgiler toplamaktadır.
-- [DEV Topluluğu Node.js etiketi] (https\://dev.to/t/node) Node.js projelerini, makalelerini ve eğitimlerini paylaşmanın yanı sıra Node.js ile ilgili konularda tartışmalar başlatmak ve geri bildirim istemek için bir yerdir. Tüm beceri seviyelerindeki geliştiriciler katılabilir.
-- [Nodeiflux] (https\://discordapp.com/invite/vUsrbjd), Discord'da birbirini destekleyen Node.js arka uç geliştiricilerinden oluşan samimi bir topluluktur.
+- [Stack Overflow Node.js etiketi] (https://stackoverflow.com/questions/tagged/node.js) her gün yeni bilgiler toplamaktadır.
+- [DEV Topluluğu Node.js etiketi] (https://dev.to/t/node) Node.js projelerini, makalelerini ve eğitimlerini paylaşmanın yanı sıra Node.js ile ilgili konularda tartışmalar başlatmak ve geri bildirim istemek için bir yerdir. Tüm beceri seviyelerindeki geliştiriciler katılabilir.
+- [Nodeiflux] (https://discordapp.com/invite/vUsrbjd), Discord'da birbirini destekleyen Node.js arka uç geliştiricilerinden oluşan samimi bir topluluktur.
