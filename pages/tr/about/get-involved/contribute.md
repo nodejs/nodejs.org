@@ -9,7 +9,7 @@ Node.js'e katkıda bulunmaya ilginiz için teşekkür ederiz! Katkıda bulunabil
 
 ## Genel Yardım Talebi
 
-Nodejs/node\` deposundaki etkinlik düzeyi çok yüksek olduğundan, Node.js kullanımıyla ilgili genel yardım soruları veya talepleri [Node.js yardım deposu] (https\://github.com/nodejs/help/issues) adresine yönlendirilmelidir.
+Nodejs/node\\` deposundaki etkinlik düzeyi çok yüksek olduğundan, Node.js kullanımıyla ilgili genel yardım soruları veya talepleri [Node.js yardım deposu] (https\://github.com/nodejs/help/issues) adresine yönlendirilmelidir.
 
 ## Sorun Bildirme
 
