@@ -1,40 +1,31 @@
 ---
-title: Project Governance
+title: حاکمیت پروژه
 layout: about
 ---
 
-# Project Governance
+# حاکمیت پروژه
 
-## Consensus Seeking Process
+## توافق جمعی (Consensus Seeking Process)
 
-The Node.js project follows a [Consensus Seeking][] decision making model.
+پروژه Node.js از مدل تصمیم‌گیری [Consensus Seeking][] پیروی می‌کند.
 
-## Collaborators
+## همکاران
 
-The [nodejs/node][] core GitHub repository is maintained by the Collaborators
-who are added by the Technical Steering Committee ([TSC][]) on an ongoing basis.
+مخزن اصلی گیت‌هاب [nodejs/node][] توسط همکارانی که به صورت مداوم توسط دیگر همکاران موجود نامزد می‌شوند، نگهداری می‌شود.
 
-Individuals making significant and valuable contributions are made Collaborators
-and given commit-access to the project. These individuals are identified by the
-TSC and their nomination is discussed with the existing Collaborators.
+افرادی که مشارکت های مهم و ارزشمندی دارند، به عنوان همکار انتخاب می شوند و به آنها دسترسی ارسال (commit) به پروژه داده می شود. این افراد توسط سایر همکاران شناسایی می شوند و پیشنهاد نامزدی آنها با همکاران فعلی در میان گذاشته و مورد بحث قرار می گیرد.
 
-For the current list of Collaborators, see the project's [README.md][].
+برای لیست فعلی همکاران، به [README.md][] پروژه مراجعه کنید.
 
-A guide for Collaborators is maintained at [collaborator-guide.md][].
+راهنمای همکاران در [collaborator-guide.md][] نگهداری می شود.
 
-## Technical Steering Committee
+## کمیته هدایت فنی
 
-The project is governed by the [Technical Steering Committee (TSC)][]
-which is responsible for high-level guidance of the project.
+پروژه توسط کمیته هدایت فنی یا همان [Technical Steering Committee (TSC)][] اداره می شود که مسئول هدایت کلان پروژه است. TSC یک زیرمجموعه از همکاران فعال است که توسط سایر اعضای TSC موجود نامزد می‌شوند.
 
 [consensus seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
-
 [readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
-
 [tsc]: https://github.com/nodejs/TSC
-
 [technical steering committee (tsc)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
-
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
-
 [nodejs/node]: https://github.com/nodejs/node
