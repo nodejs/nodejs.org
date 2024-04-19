@@ -9,7 +9,7 @@ Merci de votre intérêt à contribuer à Node.js ! Vous pouvez contribuer de pl
 
 ## Demander de l'aide générale
 
-Le niveau d'activité du dépôt `nodejs/node` étant très élevé, les questions ou les demandes d'aide générale concernant l'utilisation de Node.js doivent être adressées au [Node.js help repository] (https\://github.com/nodejs/help/issues).Node.js
+Le niveau d'activité du dépôt `nodejs/node` étant très élevé, les questions ou les demandes d'aide générale concernant l'utilisation de Node.js doivent être adressées au [Node.js help repository] (https://github.com/nodejs/help/issues).Node.js
 
 ## Signaler un problème
 
@@ -28,9 +28,9 @@ Le projet Node.js est actuellement géré par un certain nombre de dépôts GitH
 
 ## Contributions au code
 
-Si vous souhaitez corriger des bogues ou ajouter une nouvelle fonctionnalité à Node.js, veuillez consulter les [Directives de contribution à Node.js] (https\://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). Le processus de révision par les collaborateurs existants pour toutes les contributions au projet y est également expliqué.
+Si vous souhaitez corriger des bogues ou ajouter une nouvelle fonctionnalité à Node.js, veuillez consulter les [Directives de contribution à Node.js] (https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). Le processus de révision par les collaborateurs existants pour toutes les contributions au projet y est également expliqué.
 
-Si vous vous demandez comment commencer, vous pouvez consulter [Node Todo] (https\://www\.nodetodo.org/) qui vous guidera peut-être vers votre première contribution.
+Si vous vous demandez comment commencer, vous pouvez consulter [Node Todo](https://www.nodetodo.org/) qui vous guidera peut-être vers votre première contribution.
 
 ## Devenir un collaborateur
 
@@ -44,4 +44,4 @@ En devenant collaborateur, les contributeurs peuvent avoir encore plus d'impact 
 - participation à des groupes de travail
 - autre participation à la communauté Node.js plus large
 
-Si des personnes apportant des contributions précieuses estiment qu'elles n'ont pas été prises en compte pour l'accès à l'engagement, elles peuvent [enregistrer un problème] (https\://github.com/nodejs/TSC/issues) ou [contacter un membre du TSC] (https\://github.com/nodejs/node#tsc-technical-steering-committee) directement.
+Si des personnes apportant des contributions précieuses estiment qu'elles n'ont pas été prises en compte pour l'accès à l'engagement, elles peuvent [enregistrer un problème] (https://github.com/nodejs/TSC/issues) ou [contacter un membre du TSC] (https://github.com/nodejs/node#tsc-technical-steering-committee) directement.
