@@ -9,7 +9,7 @@ author: The Node.js Project
 We're excited to announce the release of Node.js 22!
 Highlights include require()ing ES modules, a WebSocket client, updates of the V8 JavaScript engine, and more!
 
-As a reminder, Node.js 22 will enter long-term support (LTS) in October, but until then, it will be the "Current" release for the next six months.
+Node.js 22 will enter long-term support (LTS) in October, but until then, it will be the "Current" release for the next six months.
 We encourage you to explore the new features and benefits offered by this latest release and evaluate their potential impact on your applications.
 
 The project continues to make progress across a number of areas, with many new features and fixes flowing into existing LTS releases.
@@ -23,12 +23,11 @@ which contains the full list of commits included in this release.
 
 ### Notable Changes
 
-#### glob and globSync
+#### V8 Update to 12.4
 
-This release adds to the `node:fs`module the functions `glob` and `globSync` for pattern matching.
-Developers can now utilize these functions for matching file paths based on specified patterns.
+The V8 release 12.4 includes new features like WebAssembly Garbage Collection, [Array.fromAsync](https://tc39.es/proposal-array-from-async/), [Set methods](https://tc39.es/proposal-set-methods/) and [iterator helpers](https://tc39.es/proposal-iterator-helpers/).
 
-Contributed by Moshe Atlow [#51912](https://github.com/nodejs/node/pull/51912)
+Contributed by Michaël Zasso [#52465](https://github.com/nodejs/node/pull/52465)
 
 #### Maglev
 
@@ -76,12 +75,19 @@ When in watch mode, changes in the watched files cause the Node.js process to re
 
 Contributed by Moshe Atlow [#52074](https://github.com/nodejs/node/pull/52074)
 
-#### Websocket
+#### WebSocket
 
 The browser-compatible implementation of WebSocket, previously behind the flag `--experimental-websocket`, will be enabled by default.
 This provides a WebSocket client to Node.js without external dependencies.
 
 Contributed by the Undici team and Aras Abbasi in [#51594](https://github.com/nodejs/node/pull/51594)
+
+#### glob and globSync
+
+This release adds to the `node:fs`module the functions `glob` and `globSync` for pattern matching.
+Developers can now utilize these functions for matching file paths based on specified patterns.
+
+Contributed by Moshe Atlow [#51912](https://github.com/nodejs/node/pull/51912)
 
 ### Improve performance of AbortSignal creation
 
@@ -94,5 +100,7 @@ Contributed by Raz Luvaton in [#52505](https://github.com/nodejs/node/pull/52505
 Try out the new Node.js 22 release! We’re always happy to hear your feedback. Testing your applications and modules with Node.js 22 helps to ensure the future compatibility of your project with the latest Node.js changes and features.
 
 Also of note is that Node.js 18 will go End-of-Life in April 2025, so we advise you to start planning to upgrade to Node.js 20 (LTS) or Node.js 22 (soon to be LTS).
+
+Looking to the future, the [Next-10](https://github.com/nodejs/next-10) team is running a survey to gather info from the ecosystem. Help shape the future of Node.js by participating. Submit your feedback [here](TBD).
 
 [CHANGELOG]: https://github.com/nodejs/node/releases/tag/v22.0.0
