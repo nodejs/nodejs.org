@@ -5,13 +5,15 @@ subtitle: Node.js را به شیوه‌ای که می‌خواهید دانلو�
 ---
 
 <section>
-  من نسخه <Release.VersionDropdown /> از Node.js را برای <Release.OperatingSystemDropdown exclude={["LINUX"]} /> در حال اجرا <Release.BitnessDropdown /> می‌خواهم
+  من نسخه <Release.VersionDropdown /> از Node.js را برای <Release.OperatingSystemDropdown exclude={["LINUX", "AIX"]} /> در حال اجرا <Release.BitnessDropdown /> می‌خواهم
 
   <Release.DownloadButton kind={"installer"} />
 </section>
 
 <section>
-  Node.js شامل <LinkWithArrow href="https://npmjs.com">npm</LinkWithArrow> (<Release.NpmVersion />) و corepack است.
+  Node.js شامل <Release.NpmLink /> است.
+
+  گزارش تغییرات <Release.ChangelogLink>این نسخه</Release.ChangelogLink> را بخوانید
 
   پست بلاگ مربوط به <Release.BlogPostLink>این نسخه</Release.BlogPostLink> را بخوانید
 
