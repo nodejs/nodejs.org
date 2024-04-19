@@ -3,12 +3,6 @@ title: À propos de Node.js®
 layout: about
 ---
 
-<div className="my-4 flex items-center justify-center">
-  <img alt="Mascotte de Node.js" src="/static/images/node-mascot.svg" className="w-[100px]" />
-</div>
-
-***
-
 # À propos de Node.js®
 
 En tant que moteur d'exécution JavaScript asynchrone piloté par les événements, Node.js est conçu pour construire des applications réseau évolutives.
@@ -16,13 +10,30 @@ des applications réseau évolutives. Dans l'exemple suivant, "hello world", de 
 peuvent être gérées simultanément. À chaque connexion, le rappel est
 mais s'il n'y a pas de travail à faire, Node.js se met en veille.
 
-```js
-const http = require('node:http');
+```cjs
+const { createServer } = require('node:http');
 
 const hostname = '127.0.0.1';
 const port = 3000;
 
-const server = http.createServer((req, res) => {
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+```mjs
+import { createServer } from 'node:http';
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   res.end('Hello World');
@@ -42,12 +53,12 @@ méthodes synchrones de la bibliothèque standard de Node.js. Comme rien ne se b
 raisonnables à développer en Node.js.
 
 Si ce langage ne vous est pas familier, vous trouverez un article complet sur le site suivant
-\[Blocage et non-blocage]\[].
+[Blocage et non-blocage][].
 
-***
+---
 
-La conception de Node.js est similaire et influencée par des systèmes tels que Ruby \[Event Machine]\[] et Python \[Twisted]\[].
-\[Event Machine]\[] de Ruby et \[Twisted]\[] de Python. Node.js pousse le modèle d'événement un peu plus loin.
+La conception de Node.js est similaire et influencée par des systèmes tels que Ruby [Event Machine][] et Python [Twisted][].
+[Event Machine][] de Ruby et [Twisted][] de Python. Node.js pousse le modèle d'événement un peu plus loin.
 un peu plus loin. Il présente une boucle d'événements comme une construction d'exécution plutôt que comme une bibliothèque. Dans d'autres systèmes,
 il y a toujours un appel bloquant pour démarrer la boucle d'événements.
 Généralement, le comportement est défini par des rappels au début d'un script et, à la fin, un serveur est démarré par le biais d'un appel bloquant.
@@ -61,18 +72,14 @@ latence. Node.js est donc bien adapté à la création d'une bibliothèque ou d'
 web ou d'un framework.
 
 Le fait que Node.js soit conçu sans threads ne signifie pas que vous ne pouvez pas tirer
-profiter de plusieurs cœurs dans votre environnement. Les processus enfants peuvent être créés en utilisant notre API \[`child_process.fork()`]\[].
-en utilisant notre API \[`child_process.fork()`]\[], et sont conçus pour être faciles à communiquer.
-communiquer avec. Le module \[`cluster`]\[] est construit sur cette même interface,
+profiter de plusieurs cœurs dans votre environnement. Les processus enfants peuvent être créés en utilisant notre API [`child_process.fork()`][].
+en utilisant notre API [`child_process.fork()`][], et sont conçus pour être faciles à communiquer.
+communiquer avec. Le module [`cluster`][] est construit sur cette même interface,
 qui vous permet de partager des sockets entre les processus afin d'équilibrer la charge
 sur vos cœurs.
 
 [bloquant ou non bloquant]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
-
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
-
 [`cluster`]: https://nodejs.org/api/cluster.html
-
 [événements machine]: https://github.com/eventmachine/eventmachine
-
 [tordu]: https://twistedmatrix.com/trac/
