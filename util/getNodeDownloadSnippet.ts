@@ -6,8 +6,8 @@ import type { UserOS } from '@/types/userOS';
 
 export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
   const snippets: Record<PackageManager, string> = {
-    NVM: '',
     FNM: '',
+    NVM: '',
     BREW: '',
     DOCKER: '',
     CHOCO: '',
@@ -26,12 +26,12 @@ export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
   }
 
   if (os === 'MAC' || os === 'LINUX') {
-    snippets.NVM = dedent`
-      # installs NVM (Node Version Manager)
-      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+    snippets.FNM = dedent`
+      # installs fnm (Fast Node Manager)
+      curl -fsSL https://fnm.vercel.app/install | bash
 
       # download and install Node.js
-      nvm install ${release.major}
+      fnm use --install-if-missing ${release.major}
 
       # verifies the right Node.js version is in the environment
       node -v # should print \`${release.versionWithPrefix}\`
@@ -39,12 +39,12 @@ export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
       # verifies the right NPM version is in the environment
       npm -v # should print \`${release.npm}\``;
 
-    snippets.FNM = dedent`
-      # installs fnm (Fast Node Manager)
-      curl -fsSL https://fnm.vercel.app/install | bash
+    snippets.NVM = dedent`
+      # installs NVM (Node Version Manager)
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
       # download and install Node.js
-      fnm use --install-if-missing ${release.major}
+      nvm install ${release.major}
 
       # verifies the right Node.js version is in the environment
       node -v # should print \`${release.versionWithPrefix}\`

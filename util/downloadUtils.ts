@@ -31,12 +31,12 @@ export const operatingSystemItems = [
 
 export const platformItems = [
   {
-    label: 'NVM',
-    value: 'NVM' as PackageManager,
-  },
-  {
     label: 'fnm',
     value: 'FNM' as PackageManager,
+  },
+  {
+    label: 'NVM',
+    value: 'NVM' as PackageManager,
   },
   {
     label: 'Brew',
