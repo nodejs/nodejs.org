@@ -84,9 +84,13 @@
     rounded-md
     p-2
     text-left
-    text-sm
-    hover:bg-neutral-300
-    dark:hover:bg-neutral-900;
+    text-sm;
+
+  &[aria-selected='true'],
+  &:hover {
+    @apply bg-neutral-300
+      dark:bg-neutral-900;
+  }
 }
 
 .fulltextSearchResultTitle {
@@ -105,42 +109,8 @@
 .fulltextSearchSections {
   @apply mb-1
     mt-2
-    flex
-    gap-2
-    overflow-x-auto
     p-2
-    text-xs
-    font-semibold
-    text-neutral-700
-    dark:text-neutral-600
     md:px-4;
-}
-
-.fulltextSearchSection {
-  @apply rounded-lg
-    border-b
-    border-transparent
-    px-2
-    py-1
-    capitalize
-    hover:bg-neutral-200
-    dark:border-neutral-900
-    dark:border-b-transparent
-    dark:hover:bg-neutral-900;
-}
-
-.fulltextSearchSectionSelected {
-  @apply rounded-b-none
-    border-neutral-700
-    text-neutral-900
-    dark:border-neutral-700
-    dark:text-neutral-300;
-}
-
-.fulltextSearchSectionCount {
-  @apply ml-1
-    text-neutral-500
-    dark:text-neutral-800;
 }
 
 .seeAllFulltextSearchResults {

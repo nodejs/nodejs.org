@@ -79,7 +79,7 @@ const getDynamicRouter = async () => {
    * This method returns a list of all routes that exist for a given locale
    *
    * @param {string} locale
-   * @returns {Array<string>}
+   * @returns {Promise<Array<string>>}
    */
   const getRoutesByLanguage = async (locale = defaultLocale.code) => {
     const shouldIgnoreStaticRoute = pathname =>
@@ -187,7 +187,7 @@ const getDynamicRouter = async () => {
    *
    * @param {string} locale
    * @param {string} path
-   * @returns {import('next').Metadata}
+   * @returns {Promise<import('next').Metadata>}
    */
   const _getPageMetadata = async (locale = defaultLocale.code, path = '') => {
     const pageMetadata = { ...PAGE_METADATA };
@@ -212,13 +212,32 @@ const getDynamicRouter = async () => {
       path
     );
 
+    const blogMatch = path.match(/^blog\/(release|vulnerability)(\/|$)/);
+    if (blogMatch) {
+      const category = blogMatch[1];
+      const currentFile = siteConfig.rssFeeds.find(
+        item => item.category === category
+      )?.file;
+      // Use getUrlForPathname to dynamically construct the XML path for blog/release and blog/vulnerability
+      pageMetadata.alternates.types['application/rss+xml'] = getUrlForPathname(
+        locale,
+        `feed/${currentFile}`
+      );
+    } else {
+      // Use getUrlForPathname for the default blog XML feed path
+      pageMetadata.alternates.types['application/rss+xml'] = getUrlForPathname(
+        locale,
+        'feed/blog.xml'
+      );
+    }
+
     availableLocaleCodes.forEach(currentLocale => {
       pageMetadata.alternates.languages[currentLocale] = getUrlForPathname(
         currentLocale,
         path
       );
       pageMetadata.openGraph.images = [
-        `${currentLocale}/next-data/og?title=${data.title}&type=${data.category ?? 'announcement'}`,
+        `${currentLocale}/next-data/og?title=${pageMetadata.title}&type=${data.category ?? 'announcement'}`,
       ];
     });
 

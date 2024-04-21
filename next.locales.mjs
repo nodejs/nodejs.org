@@ -20,7 +20,11 @@ const availableLocalesMap = Object.fromEntries(
   localeConfig.map(locale => [locale.code, locale])
 );
 
+// Creates all supported locales
+const allLocaleCodes = localeConfig.map(locale => locale.code);
+
 export {
+  allLocaleCodes,
   availableLocales,
   availableLocaleCodes,
   availableLocalesMap,

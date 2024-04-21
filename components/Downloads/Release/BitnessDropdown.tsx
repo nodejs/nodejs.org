@@ -1,5 +1,4 @@
 'use client';
-
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useEffect, useContext, useMemo } from 'react';
@@ -52,6 +51,10 @@ const BitnessDropdown: FC = () => {
       disabledItems.push('s390x');
     }
 
+    if (os === 'AIX' && semVer.satisfies(release.version, '< 6.7.0')) {
+      disabledItems.push('ppc64');
+    }
+
     return disabledItems;
   }, [os, release.version]);
 
@@ -60,21 +63,27 @@ const BitnessDropdown: FC = () => {
   // this can be an optimisation for the future
   // to remove this logic from this component
   useEffect(() => {
-    const mappedBittnessesValues = bitnessItems[os].map(({ value }) => value);
+    const mappedBitnessValues = bitnessItems[os].map(({ value }) => value);
 
-    const currentBittnessExcluded =
+    const currentBitnessExcluded =
       // Different OSs support different Bitnessess, hence we should also check
       // if besides the current bitness not being supported for a given release version
       // we also should check if it is not supported by the OS
       disabledItems.includes(String(bitness)) ||
-      !mappedBittnessesValues.includes(String(bitness));
+      !mappedBitnessValues.includes(String(bitness));
 
-    const nonExcludedBitness = mappedBittnessesValues.find(
-      bittness => !disabledItems.includes(bittness)
+    const nonExcludedBitness = mappedBitnessValues.find(
+      bitness => !disabledItems.includes(bitness)
     );
 
-    if (currentBittnessExcluded && nonExcludedBitness) {
-      setBitness(nonExcludedBitness);
+    if (currentBitnessExcluded && nonExcludedBitness) {
+      // We set it as a Number for cases where it is 64 or 86 otherwise we are
+      // setting it as a string (ARMv7, ARMv6, etc.)
+      if (Number.isNaN(Number(nonExcludedBitness)) === false) {
+        setBitness(Number(nonExcludedBitness));
+      } else {
+        setBitness(nonExcludedBitness);
+      }
     }
     // we shouldn't react when "actions" change
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -82,11 +91,11 @@ const BitnessDropdown: FC = () => {
 
   return (
     <Select
-      label={t('layouts.download.dropdown.bitness')}
       values={formatDropdownItems({
         items: bitnessItems[os],
         disabledItems,
       })}
+      ariaLabel={t('layouts.download.dropdown.bitness')}
       defaultValue={String(bitness)}
       onChange={bitness => setBitness(parseNumericBitness(bitness))}
       className="w-28"

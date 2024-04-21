@@ -28,11 +28,21 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2024-02-14T15:30:00.000Z",
-      "endDate": "2024-02-21T17:30:00.000Z",
-      "text": "New security releases available",
-      "link": "https://nodejs.org/en/blog/vulnerability/february-2024-security-releases/"
+      "startDate": "2024-04-10T03:00:00.000Z",
+      "endDate": "2024-04-17T17:30:00.000Z",
+      "text": "Security releases are now available!",
+      "link": "https://nodejs.org/en/blog/vulnerability/april-2024-security-releases-2/",
+      "type": "warning"
     }
   },
-  "websiteBadges": {}
+  "websiteBadges": {
+    "index": {
+      "startDate": "2024-04-15T00:00:00.000Z",
+      "endDate": "2024-04-22T00:00:00.000Z",
+      "kind": "default",
+      "title": "Trip report",
+      "text": "Node.js collaboration summit (2024 London)",
+      "link": "https://nodejs.org/en/blog/events/collab-summit-2024-london"
+    }
+  }
 }

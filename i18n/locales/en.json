@@ -112,7 +112,7 @@
       "getInvolved": {
         "links": {
           "getInvolved": "Get Involved",
-          "collabSummit": "Collaborator Summit",
+          "collabSummit": "Collaboration Summit",
           "upcomingEvents": "Upcoming Events",
           "contribute": "Contribute to Node.js",
           "codeOfConduct": "Code of Conduct"
@@ -284,6 +284,7 @@
         "platform": "Platform"
       },
       "codeBox": {
+        "managerInstalled": "Please ensure you have the right package manager installed before running a script.",
         "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project."
       }
     }

@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { useEffect, useState, type FC } from 'react';
 
 import { WithPoweredBy } from '@/components/Common/Search/States/WithPoweredBy';
+import { WithSearchBox } from '@/components/Common/Search/States/WithSearchBox';
 import { pathToBreadcrumbs } from '@/components/Common/Search/utils';
 import Link from '@/components/Link';
 import { useBottomScrollListener } from '@/hooks/react-client';
@@ -27,6 +28,7 @@ const SearchPage: FC = () => {
 
   const searchTerm = searchParams?.get('q');
   const searchSection = searchParams?.get('section');
+  const [shownSearchBox, setShownSearchbox] = useState<boolean>(!searchTerm);
 
   useBottomScrollListener(() => setOffset(offset => offset + 10));
 
@@ -78,6 +80,9 @@ const SearchPage: FC = () => {
 
   return (
     <div className={styles.searchPageContainer}>
+      {shownSearchBox ? (
+        <WithSearchBox onClose={() => setShownSearchbox(false)} />
+      ) : null}
       <div className={styles.searchTermContainer}>
         <h1>
           {t('components.search.searchPage.title', { query: searchTerm })}
