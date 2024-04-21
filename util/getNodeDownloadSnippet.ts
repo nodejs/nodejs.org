@@ -7,6 +7,7 @@ import type { UserOS } from '@/types/userOS';
 export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
   const snippets: Record<PackageManager, string> = {
     NVM: '',
+    FNM: '',
     BREW: '',
     DOCKER: '',
     CHOCO: '',
@@ -38,6 +39,19 @@ export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
         # verifies the right NPM version is in the environment
         npm -v # should print \`${release.npm}\``;
 
+      snippets.FNM = dedent`
+        # installs fnm (Fast Node Manager)
+        curl -fsSL https://fnm.vercel.app/install | bash
+
+        # download and install Node.js
+        fnm use --install-if-missing ${release.major}
+
+        # verifies the right Node.js version is in the environment
+        node -v # should print \`${release.versionWithPrefix}\`
+
+        # verifies the right NPM version is in the environment
+        npm -v # should print \`${release.npm}\``;
+
       snippets.BREW = dedent`
         # download and install Node.js
         brew install node@${release.major}
@@ -49,6 +63,19 @@ export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
         npm -v # should print \`${release.npm}\``;
     // eslint-disable-next-line no-fallthrough
     case os === 'WIN':
+      snippets.FNM = dedent`
+        # installs fnm (Fast Node Manager)
+        winget install Schniz.fnm
+
+        # download and install Node.js
+        fnm use --install-if-missing ${release.major}
+
+        # verifies the right Node.js version is in the environment
+        node -v # should print \`${release.versionWithPrefix}\`
+
+        # verifies the right NPM version is in the environment
+        npm -v # should print \`${release.npm}\``;
+
       snippets.CHOCO = dedent`
       # download and install Node.js
       choco install nodejs${release.isLts ? '-lts' : ''} --version="${release.version}"
