@@ -27,7 +27,7 @@ which contains the full list of commits included in this release.
 
 The V8 release 12.4 includes new features like WebAssembly Garbage Collection, [Array.fromAsync](https://tc39.es/proposal-array-from-async/), [Set methods](https://tc39.es/proposal-set-methods/) and [iterator helpers](https://tc39.es/proposal-iterator-helpers/).
 
-Contributed by Michaël Zasso [#52465](https://github.com/nodejs/node/pull/52465)
+Contributed by Michaël Zasso in [#52465](https://github.com/nodejs/node/pull/52465)
 
 #### Maglev
 
