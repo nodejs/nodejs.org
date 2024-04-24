@@ -101,6 +101,6 @@ Try out the new Node.js 22 release! We’re always happy to hear your feedback. 
 
 Also of note is that Node.js 18 will go End-of-Life in April 2025, so we advise you to start planning to upgrade to Node.js 20 (LTS) or Node.js 22 (soon to be LTS).
 
-Looking to the future, the [Next-10](https://github.com/nodejs/next-10) team is running a survey to gather info from the ecosystem. Help shape the future of Node.js by participating. Submit your feedback [here](TBD).
+Looking to the future, the [Next-10](https://github.com/nodejs/next-10) team is running a survey to gather info from the ecosystem. Help shape the future of Node.js by participating. Submit your feedback [here](https://linuxfoundation.surveymonkey.com/r/nodenext10survey24).
 
 [CHANGELOG]: https://github.com/nodejs/node/releases/tag/v22.0.0
