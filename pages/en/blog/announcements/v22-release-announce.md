@@ -33,6 +33,7 @@ Contributed by Michaël Zasso in [#52465](https://github.com/nodejs/node/pull/52
 
 V8's Maglev Compiler is now enabled by default on supported architectures (<https://v8.dev/blog/maglev>).
 Maglev improves performance for short-lived CLI programs.
+
 Contributed by Keyhan Vakil in [#51360](https://github.com/nodejs/node/pull/51360)
 
 #### Support require()ing synchronous ESM graphs
@@ -59,6 +60,7 @@ Contributed by Joyee Cheung in [#51977](https://github.com/nodejs/node/pull/5197
 
 Node.js 22 includes a new experimental feature for the execution of scripts from the `package.json` with the cli flag `node --run <script-in-package-json>`.
 It also supports `node --run test` which executes the test command inside `package.json` scripts.
+
 Contributed by Yagiz Nizipli [#52190](https://github.com/nodejs/node/pull/52190)
 
 #### Stream default High Water Mark
@@ -66,6 +68,7 @@ Contributed by Yagiz Nizipli [#52190](https://github.com/nodejs/node/pull/52190)
 Increased the default High Water Mark for streams from 16KiB to 64KiB.
 This provides a performance boost across the board at the cost of slightly higher memory usage.
 Users in memory sensitive environments are encouraged to explicitly set `setDefaultHighWaterMark`.
+
 Contributed by Robert Nagy in [#52037](https://github.com/nodejs/node/pull/52037)
 
 #### Watch Mode (node --watch)
