@@ -1,9 +1,5 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-export const GlowingBackdrop: StoryObj = {
-  render: () => <div className="glowingBackdrop" />,
-};
-
 export const H1Special: StoryObj = {
   render: () => <h1 className="special">Special H1</h1>,
 };

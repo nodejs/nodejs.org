@@ -7,9 +7,6 @@
     border
     border-neutral-900
     bg-neutral-950
-    bg-[url('/static/images/patterns/hexagon-grid.svg')]
-    bg-contain
-    bg-center
     @container/preview;
 
   &::after {
@@ -57,6 +54,21 @@
       @xl/preview:gap-12
       @xl/preview:text-2xl
       @2xl/preview:text-3xl;
+
+    .hexagon {
+      @apply absolute
+        inset-0
+        m-auto
+        size-full
+        @md/preview:h-3/5
+        @md/preview:w-3/5
+        @lg/preview:h-2/3
+        @lg/preview:w-2/3
+        @xl/preview:h-3/5
+        @xl/preview:w-3/5
+        @2xl/preview:h-2/3
+        @2xl/preview:w-2/3;
+    }
 
     .logo {
       @apply mx-auto
