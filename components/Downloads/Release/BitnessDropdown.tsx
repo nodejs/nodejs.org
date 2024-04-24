@@ -79,11 +79,13 @@ const BitnessDropdown: FC = () => {
     if (currentBitnessExcluded && nonExcludedBitness) {
       // We set it as a Number for cases where it is 64 or 86 otherwise we are
       // setting it as a string (ARMv7, ARMv6, etc.)
-      if (Number.isNaN(Number(nonExcludedBitness)) === false) {
-        setBitness(Number(nonExcludedBitness));
-      } else {
-        setBitness(nonExcludedBitness);
-      }
+      const numericBitness = Number(nonExcludedBitness);
+
+      setBitness(
+        numericBitness.toString() === nonExcludedBitness
+          ? numericBitness
+          : nonExcludedBitness
+      );
     }
     // we shouldn't react when "actions" change
     // eslint-disable-next-line react-hooks/exhaustive-deps
