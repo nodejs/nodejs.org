@@ -89,7 +89,7 @@ Developers can now utilize these functions for matching file paths based on spec
 
 Contributed by Moshe Atlow [#51912](https://github.com/nodejs/node/pull/51912)
 
-### Improve performance of AbortSignal creation
+#### Improve performance of AbortSignal creation
 
 This release enhances the efficiency of creating `AbortSignal` instances, leading to significantly improved performance in `fetch` and the test runner.
 
