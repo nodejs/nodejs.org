@@ -1,5 +1,5 @@
 ---
-date: '2024-04-17T15:45:00.000Z'
+date: '2024-04-24T17:45:00.000Z'
 category: announcements
 title: 'Node.js 22 is now available!'
 layout: blog-post
