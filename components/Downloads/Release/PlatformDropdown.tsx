@@ -68,8 +68,8 @@ const PlatformDropdown: FC = () => {
       values={formatDropdownItems({
         items: platformItems,
         icons: {
-          FNM: <FNM width={16} height={16} />,
           NVM: <NVM width={16} height={16} />,
+          FNM: <FNM width={16} height={16} />,
           BREW: <Homebrew width={16} height={16} />,
           DOCKER: <Docker width={16} height={16} />,
           CHOCO: <Choco width={16} height={16} />,

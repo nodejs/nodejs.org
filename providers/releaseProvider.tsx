@@ -18,7 +18,7 @@ const initialState: ReleaseState = {
   release: {} as NodeRelease,
   os: 'OTHER',
   bitness: '',
-  platform: 'FNM',
+  platform: 'NVM',
   modalOpen: false,
 };
 
