@@ -40,7 +40,7 @@
 
 ```bash
 npm ci
-npx turbo serve
+npx turbo dev
 
 # listening at localhost:3000
 ```
