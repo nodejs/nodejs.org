@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { getLocale } from 'next-intl/server';
 import type { FC, PropsWithChildren } from 'react';
 
+import FrozenRouter from '@/components/withFrozenRouter';
 import BaseLayout from '@/layouts/Base';
 import { VERCEL_ENV } from '@/next.constants.mjs';
 import { IBM_PLEX_MONO, OPEN_SANS } from '@/next.fonts';
@@ -25,7 +26,9 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
       <body suppressHydrationWarning>
         <LocaleProvider>
           <ThemeProvider>
-            <BaseLayout>{children}</BaseLayout>
+            <FrozenRouter>
+              <BaseLayout>{children}</BaseLayout>
+            </FrozenRouter>
           </ThemeProvider>
         </LocaleProvider>
 
