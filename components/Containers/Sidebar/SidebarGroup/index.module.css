@@ -6,7 +6,8 @@
 }
 
 .groupName {
-  @apply px-2
+  @apply border-b-2
+    px-2
     text-xs
     font-semibold
     text-neutral-800
