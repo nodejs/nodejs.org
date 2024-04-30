@@ -114,7 +114,7 @@ const HexagonGrid: FC<HexagonGridProps> = props => (
       <path
         d="M847.032 456.367L889.698 431.733L932.365 456.367V505.633L889.698 530.267L847.032 505.633V456.367Z"
         fill="white"
-        fill-opacity="0.25"
+        fillOpacity="0.25"
         stroke="rgba(255, 255, 255, 1.0)"
         strokeWidth="1.0"
       />
@@ -326,7 +326,7 @@ const HexagonGrid: FC<HexagonGridProps> = props => (
       <path
         d="M543.775 231.367L586.463 206.733L629.151 231.367V280.633L586.463 305.267L543.775 280.633V231.367Z"
         fill="white"
-        fill-opacity="0.25"
+        fillOpacity="0.25"
         stroke="rgba(255, 255, 255, 1.0)"
         strokeWidth="1.0"
       />
@@ -348,7 +348,7 @@ const HexagonGrid: FC<HexagonGridProps> = props => (
       <path
         d="M890.348 81.3667L933.036 56.7331L975.724 81.3667V130.633L933.036 155.267L890.348 130.633V81.3667Z"
         fill="white"
-        fill-opacity="0.25"
+        fillOpacity="0.25"
         stroke="rgba(255, 255, 255, 1.0)"
         strokeWidth="1.0"
       />
@@ -560,7 +560,7 @@ const HexagonGrid: FC<HexagonGridProps> = props => (
       <path
         d="M283.839 531.367L326.527 506.733L369.215 531.367V580.633L326.527 605.267L283.839 580.633V531.367Z"
         fill="white"
-        fill-opacity="0.25"
+        fillOpacity="0.25"
         stroke="rgba(255, 255, 255, 1.0)"
         strokeWidth="1.0"
       />
@@ -597,7 +597,7 @@ const HexagonGrid: FC<HexagonGridProps> = props => (
       <path
         d="M67.2306 156.367L109.919 131.733L152.607 156.367V205.633L109.919 230.267L67.2306 205.633V156.367Z"
         fill="white"
-        fill-opacity="0.25"
+        fillOpacity="0.25"
         stroke="rgba(255, 255, 255, 1.0)"
         strokeWidth="1.0"
       />
@@ -811,7 +811,7 @@ const HexagonGrid: FC<HexagonGridProps> = props => (
       <path
         d="M847.032 456.367L889.698 431.733L932.365 456.367V505.633L889.698 530.267L847.032 505.633V456.367Z"
         fill="white"
-        fill-opacity="0.25"
+        fillOpacity="0.25"
         stroke="rgba(0, 0, 0, 1.0)"
         strokeWidth="1.0"
       />
@@ -1023,7 +1023,7 @@ const HexagonGrid: FC<HexagonGridProps> = props => (
       <path
         d="M543.775 231.367L586.463 206.733L629.151 231.367V280.633L586.463 305.267L543.775 280.633V231.367Z"
         fill="white"
-        fill-opacity="0.25"
+        fillOpacity="0.25"
         stroke="rgba(0, 0, 0, 1.0)"
         strokeWidth="1.0"
       />
@@ -1045,7 +1045,7 @@ const HexagonGrid: FC<HexagonGridProps> = props => (
       <path
         d="M890.348 81.3667L933.036 56.7331L975.724 81.3667V130.633L933.036 155.267L890.348 130.633V81.3667Z"
         fill="white"
-        fill-opacity="0.25"
+        fillOpacity="0.25"
         stroke="rgba(0, 0, 0, 1.0)"
         strokeWidth="1.0"
       />
@@ -1257,7 +1257,7 @@ const HexagonGrid: FC<HexagonGridProps> = props => (
       <path
         d="M283.839 531.367L326.527 506.733L369.215 531.367V580.633L326.527 605.267L283.839 580.633V531.367Z"
         fill="white"
-        fill-opacity="0.25"
+        fillOpacity="0.25"
         stroke="rgba(0, 0, 0, 1.0)"
         strokeWidth="1.0"
       />
@@ -1294,7 +1294,7 @@ const HexagonGrid: FC<HexagonGridProps> = props => (
       <path
         d="M67.2306 156.367L109.919 131.733L152.607 156.367V205.633L109.919 230.267L67.2306 205.633V156.367Z"
         fill="white"
-        fill-opacity="0.25"
+        fillOpacity="0.25"
         stroke="rgba(0, 0, 0, 1.0)"
         strokeWidth="1.0"
       />
