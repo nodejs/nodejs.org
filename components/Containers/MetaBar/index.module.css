@@ -18,6 +18,8 @@
     xs:border-t-neutral-200
     xs:dark:border-t-neutral-900;
 
+  overflow-wrap: anywhere;
+
   dt {
     @apply mb-2
       text-sm
