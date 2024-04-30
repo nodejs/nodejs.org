@@ -16,9 +16,8 @@
     xs:border-l-0
     xs:border-t
     xs:border-t-neutral-200
-    xs:dark:border-t-neutral-900;
-
-  overflow-wrap: anywhere;
+    xs:dark:border-t-neutral-900
+    [overflow-wrap:anywhere];
 
   dt {
     @apply mb-2
