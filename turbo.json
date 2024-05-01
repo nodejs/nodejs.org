@@ -2,7 +2,7 @@
   "$schema": "https://turbo.build/schema.json",
   "globalEnv": ["NODE_ENV"],
   "pipeline": {
-    "serve": {
+    "dev": {
       "cache": false,
       "persistent": true,
       "env": [
