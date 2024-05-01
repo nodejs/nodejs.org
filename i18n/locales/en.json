@@ -105,7 +105,7 @@
           "aboutSide": "About Node.js®",
           "branding": "Branding of Node.js",
           "governance": "Project Governance",
-          "releases": "Previous Releases",
+          "releases": "Node.js Releases",
           "security": "Security Reporting"
         }
       },
@@ -121,7 +121,7 @@
     },
     "downloadList": {
       "links": {
-        "previousReleases": "Previous Releases",
+        "previousReleases": "Node.js Releases",
         "packageManager": "Installing Node.js via package manager",
         "shaSums": {
           "title": "Signed SHASUMS for release files",
@@ -284,6 +284,7 @@
         "platform": "Platform"
       },
       "codeBox": {
+        "managerInstalled": "Please ensure you have the right package manager installed before running a script.",
         "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project."
       }
     }

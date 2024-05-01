@@ -94,7 +94,7 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
 
   return (
     <div className={styles.root}>
-      <pre ref={ref} className={styles.content} tabIndex={0}>
+      <pre ref={ref} className={styles.content} tabIndex={0} dir="ltr">
         {transformCode(children, language)}
       </pre>
 

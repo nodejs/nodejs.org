@@ -2,7 +2,7 @@
   "$schema": "https://turbo.build/schema.json",
   "globalEnv": ["NODE_ENV"],
   "pipeline": {
-    "serve": {
+    "dev": {
       "cache": false,
       "persistent": true,
       "env": [
@@ -83,41 +83,33 @@
       ]
     },
     "lint:js": {
-      "cache": false,
+      "inputs": [
+        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx,mjs}",
+        "{next-data,scripts,i18n}/**/*.{mjs,json}",
+        "{.storybook,public}/**/*.{ts,js,json}",
+        "*.{json,ts,tsx}"
+      ],
       "outputs": [".eslintjscache"]
     },
     "lint:md": {
-      "cache": false,
+      "inputs": ["{app,pages}/**/*.{md,mdx}", "*.{md,mdx}"],
       "outputs": [".eslintmdcache"]
     },
     "lint:css": {
-      "cache": false,
+      "inputs": ["{app,components,layouts,pages,styles}/**/*.css"],
       "outputs": [".stylelintcache"]
     },
-    "lint": {
-      "cache": false,
-      "outputs": [".eslintjscache", ".eslintmdcache", ".stylelintcache"]
-    },
     "lint:fix": {
-      "cache": false,
-      "outputs": [".eslintjscache", ".eslintmdcache", ".stylelintcache"]
+      "cache": false
     },
     "prettier": {
-      "cache": false,
       "outputs": [".prettiercache"]
     },
     "prettier:fix": {
-      "cache": false,
-      "outputs": [".prettiercache"]
+      "cache": false
     },
     "format": {
-      "cache": false,
-      "outputs": [
-        ".eslintjscache",
-        ".eslintmdcache",
-        ".stylelintcache",
-        ".prettiercache"
-      ]
+      "cache": false
     },
     "storybook": {
       "cache": false,
@@ -135,16 +127,6 @@
       "outputs": ["storybook-static/**"]
     },
     "test:unit": {
-      "inputs": [
-        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx,mjs}",
-        "{app,components,layouts,pages,styles}/**/*.css",
-        "{next-data,scripts,i18n}/**/*.{mjs,json}",
-        "{app,pages}/**/*.{mdx,md}",
-        "*.{md,mdx,json,ts,tsx,mjs,yml}"
-      ],
-      "outputs": ["coverage/**", "junit.xml"]
-    },
-    "test": {
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx,mjs}",
         "{app,components,layouts,pages,styles}/**/*.css",
