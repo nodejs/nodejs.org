@@ -56,7 +56,7 @@
     "@savvywombat/tailwindcss-grid-areas": "~4.0.0",
     "@sentry/nextjs": "~7.107.0",
     "@tailwindcss/container-queries": "~0.1.1",
-    "@types/node": "20.11.28",
+    "@types/node": "20.12.7",
     "@vcarl/remark-headings": "~0.1.0",
     "@vercel/analytics": "~1.2.2",
     "@vercel/speed-insights": "~1.0.10",
