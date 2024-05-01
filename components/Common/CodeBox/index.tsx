@@ -6,10 +6,10 @@ import {
 } from '@heroicons/react/24/outline';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
-import { Fragment, isValidElement, useRef } from 'react';
+import { Fragment, isValidElement, useRef, useState } from 'react';
 
 import Button from '@/components/Common/Button';
-import { useCopyToClipboard, useNotification } from '@/hooks';
+import { useCopyToClipboard } from '@/hooks';
 
 import styles from './index.module.css';
 
@@ -71,27 +71,27 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   showCopyButton = true,
 }) => {
   const ref = useRef<HTMLPreElement>(null);
-
-  const notify = useNotification();
   const [, copyToClipboard] = useCopyToClipboard();
   const t = useTranslations();
-
+  const [copyButtonText, setCopyButtonText] = useState<string>(
+    t('components.common.codebox.copy')
+  );
+  const [icon, setIcon] = useState<ReactNode>(
+    <DocumentDuplicateIcon className={styles.icon} />
+  );
   const onCopy = async () => {
     if (ref.current?.textContent) {
       copyToClipboard(ref.current.textContent);
 
-      notify({
-        duration: 3000,
-        message: (
-          <div className={styles.notification}>
-            <CodeBracketIcon className={styles.icon} />
-            {t('components.common.codebox.copied')}
-          </div>
-        ),
-      });
+      setCopyButtonText(t('components.common.codebox.copied')); // Change button text to
+      setIcon(<CodeBracketIcon className={styles.icon} />); // Change icon
+      // Reset button text to "Copy" after 3 seconds
+      setTimeout(() => {
+        setCopyButtonText(t('components.common.codebox.copy'));
+        setIcon(<DocumentDuplicateIcon className={styles.icon} />);
+      }, 3000);
     }
   };
-
   return (
     <div className={styles.root}>
       <pre ref={ref} className={styles.content} tabIndex={0} dir="ltr">
@@ -104,8 +104,8 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
 
           {showCopyButton && (
             <Button kind="neutral" className={styles.action} onClick={onCopy}>
-              <DocumentDuplicateIcon className={styles.icon} />
-              {t('components.common.codebox.copy')}
+              {icon}
+              {copyButtonText}
             </Button>
           )}
         </div>
