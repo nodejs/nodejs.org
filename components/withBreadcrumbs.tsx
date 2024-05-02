@@ -35,9 +35,10 @@ const WithBreadcrumbs: FC = () => {
     // Reduce the pathList to a breadcrumbs array by finding each path in the current navigation layer,
     // updating the currentNode to the found node's items(next layer) for the next iteration.
     return pathList.reduce((breadcrumbs, path) => {
-      const nodeWithCurrentPath = currentNode.find(
-        ([nodePath]) => nodePath === path
-      );
+      const nodeWithCurrentPath = currentNode.find(([nodePath]) => {
+        const matchs = path.toLowerCase().includes(nodePath.toLowerCase());
+        return matchs;
+      });
 
       if (nodeWithCurrentPath) {
         const [, { label, link = '', items = [] }] = nodeWithCurrentPath;
