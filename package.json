@@ -70,7 +70,7 @@
     "gray-matter": "~4.0.3",
     "husky": "9.0.11",
     "lint-staged": "15.2.2",
-    "next": "~14.1.4",
+    "next": "~14.2.3",
     "next-intl": "~3.10.0",
     "next-themes": "~0.3.0",
     "postcss": "~8.4.38",
@@ -126,7 +126,7 @@
     "stylelint-config-standard": "36.0.0",
     "stylelint-order": "6.0.4",
     "stylelint-selector-bem-pattern": "4.0.0",
-    "turbo": "1.13.2",
+    "turbo": "1.13.3",
     "user-agent-data-types": "0.4.2"
   }
 }
