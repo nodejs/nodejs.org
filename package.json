@@ -120,7 +120,7 @@
     "prettier": "3.2.5",
     "prettier-plugin-tailwindcss": "0.5.14",
     "remark-frontmatter": "5.0.0",
-    "remark-preset-lint-node": "5.0.0",
+    "remark-preset-lint-node": "5.0.2",
     "storybook": "~8.0.5",
     "stylelint": "16.3.1",
     "stylelint-config-standard": "36.0.0",
