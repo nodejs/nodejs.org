@@ -58,7 +58,7 @@ try {
 
 You can also use the promise-based `fsPromises.readFile()` method offered by the `fs/promises` module:
 
-```js
+```cjs
 const fs = require('node:fs/promises');
 
 async function example() {
