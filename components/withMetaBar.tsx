@@ -1,3 +1,4 @@
+'use client';
 import { useFormatter } from 'next-intl';
 import type { FC } from 'react';
 
@@ -5,7 +6,8 @@ import AvatarGroup from '@/components/Common/AvatarGroup';
 import MetaBar from '@/components/Containers/MetaBar';
 import GitHub from '@/components/Icons/Social/GitHub';
 import Link from '@/components/Link';
-import { useClientContext } from '@/hooks/server';
+import { useClientContext } from '@/hooks/react-client';
+import useMediaQuery from '@/hooks/react-client/useMediaQuery';
 import { DEFAULT_DATE_FORMAT } from '@/next.calendar.constants.mjs';
 import { getGitHubBlobUrl, getGitHubAvatarUrl } from '@/util/gitHubUtils';
 import { getAcronymFromString } from '@/util/stringUtils';
@@ -24,6 +26,11 @@ const WithMetaBar: FC = () => {
     alt: getAcronymFromString(username),
   }));
 
+  // Doing that because on mobile list on top of page and on desktop list on the right side
+  const shortAvatarList = useMediaQuery(
+    '(min-width: 670px) and (max-width: 1280px)'
+  );
+
   return (
     <MetaBar
       items={{
@@ -31,7 +38,7 @@ const WithMetaBar: FC = () => {
         'components.metabar.readingTime': readingTime.text,
         ...(avatars.length && {
           [`components.metabar.${avatars.length > 1 ? 'authors' : 'author'}`]: (
-            <AvatarGroup avatars={avatars} limit={8} />
+            <AvatarGroup avatars={avatars} limit={shortAvatarList ? 4 : 8} />
           ),
         }),
         'components.metabar.contribute': (
