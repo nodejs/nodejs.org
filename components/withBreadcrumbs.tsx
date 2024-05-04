@@ -36,8 +36,7 @@ const WithBreadcrumbs: FC = () => {
     // updating the currentNode to the found node's items(next layer) for the next iteration.
     return pathList.reduce((breadcrumbs, path) => {
       const nodeWithCurrentPath = currentNode.find(([nodePath]) => {
-        const matchs = path.toLowerCase().includes(nodePath.toLowerCase());
-        return matchs;
+        return path.toLowerCase().includes(nodePath.toLowerCase());
       });
 
       if (nodeWithCurrentPath) {
