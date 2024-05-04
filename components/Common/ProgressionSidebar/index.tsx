@@ -1,9 +1,10 @@
 import { useTranslations } from 'next-intl';
 import type { ComponentProps, FC } from 'react';
+import { useRef } from 'react';
 
 import ProgressionSidebarGroup from '@/components/Common/ProgressionSidebar/ProgressionSidebarGroup';
 import WithRouterSelect from '@/components/withRouterSelect';
-import { useClientContext } from '@/hooks/react-server';
+import { useClientContext, useNavigationState } from '@/hooks';
 
 import styles from './index.module.css';
 
@@ -14,6 +15,9 @@ type ProgressionSidebarProps = {
 const ProgressionSidebar: FC<ProgressionSidebarProps> = ({ groups }) => {
   const t = useTranslations();
   const { pathname } = useClientContext();
+  const ref = useRef<HTMLElement>(null);
+
+  useNavigationState('progressionSidebar', ref);
 
   const selectItems = groups.map(({ items, groupName }) => ({
     label: groupName,
@@ -26,7 +30,7 @@ const ProgressionSidebar: FC<ProgressionSidebarProps> = ({ groups }) => {
     .find(item => pathname === item.value);
 
   return (
-    <nav className={styles.wrapper}>
+    <nav className={styles.wrapper} ref={ref}>
       <WithRouterSelect
         label={t('components.common.sidebar.title')}
         values={selectItems}
