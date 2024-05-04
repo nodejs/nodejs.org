@@ -35,6 +35,7 @@ const WithBreadcrumbs: FC<WithBreadcrumbsProps> = ({ navKeys = [] }) => {
       const nodeWithCurrentPath = currentNode.find(
         ([nodePath, entry]) =>
           nodePath === path &&
+          // Skip checking child path if it is the last path since there is no more child item inside
           (index === pathList.length - 1 ||
             entry.items.some(
               ([childPath]) => childPath === pathList[index + 1]
