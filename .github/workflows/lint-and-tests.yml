@@ -37,7 +37,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        uses: step-security/harden-runner@a4aa98b93cab29d9b1101a6143fb8bce00e2eac4 # v2.7.1
         with:
           egress-policy: audit
 
@@ -66,12 +66,12 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        uses: step-security/harden-runner@a4aa98b93cab29d9b1101a6143fb8bce00e2eac4 # v2.7.1
         with:
           egress-policy: audit
 
       - name: Git Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
         with:
           # Since we checkout the HEAD of the current Branch, if the Pull Request comes from a Fork
           # we want to clone the fork's repository instead of the base repository
@@ -174,12 +174,12 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        uses: step-security/harden-runner@a4aa98b93cab29d9b1101a6143fb8bce00e2eac4 # v2.7.1
         with:
           egress-policy: audit
 
       - name: Git Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
         with:
           # Since we checkout the HEAD of the current Branch, if the Pull Request comes from a Fork
           # we want to clone the fork's repository instead of the base repository
@@ -239,7 +239,7 @@ jobs:
         if: steps.chromatic-deploy.outcome == 'success'
         # This comments the current Jest Coverage Report containing JUnit XML reports
         # and a Code Coverage Summary
-        uses: MishaKav/jest-coverage-comment@c2d5cfd6c32e8799c6deb0fd76a8e2d9ad8b35c2 # v1.0.25
+        uses: MishaKav/jest-coverage-comment@434e6d2d37116d23d812809b61d499639842fa3b # v1.0.26
         with:
           title: 'Unit Test Coverage Report'
           junitxml-path: ./junit.xml
