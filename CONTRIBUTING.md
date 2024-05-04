@@ -91,7 +91,7 @@ for getting things done and landing your contribution.
 
    ```bash
    npm ci # installs this project's dependencies
-   npx turbo serve # starts a preview of your local changes
+   npx turbo dev # starts a development environment
    ```
 
 7. Perform your changes. In case you're unfamiliar with the structure of this repository, we recommend a read on the [Collaborator Guide](./COLLABORATOR_GUIDE.md)
@@ -118,14 +118,8 @@ for getting things done and landing your contribution.
     git push -u origin name-of-your-branch
     ```
 
-    > [!NOTE]\
-    > By default if you run the Website (either via `npm run serve` or `npm run build`) two files on the `public` folder will be generated.
-    >
-    > You don't need to reset/discard these files, as by default we use Git Hooks that simply ignore these files during commit.
-    > Note that these files are generated and should **not** be committed. (`public/node-release-data.json` and `public/blog-posts-data.json`)
-
-    > [!IMPORTANT]\
-    > Before committing and opening a Pull Request, please go first through our [Commit](#commit-guidelines) and [Pull Request](#pull-request-policy) guidelines outlined below.
+> [!IMPORTANT]\
+> Before committing and opening a Pull Request, please go first through our [Commit](#commit-guidelines) and [Pull Request](#pull-request-policy) guidelines outlined below.
 
 11. Create a Pull Request.
 
@@ -143,7 +137,7 @@ This repository contains several scripts and commands for performing numerous ta
 <details>
   <summary>Commands for Running & Building the Website</summary>
 
-- `npx turbo serve` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
+- `npx turbo dev` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
 - `npx turbo build` builds the Application on Production mode. The output is by default within `.next` folder.
   - This is used for the Node.js Vercel Deployments (Preview & Production)
 - `npx turbo deploy` builds the Application on Export Production Mode. The output is by default within `build` folder.

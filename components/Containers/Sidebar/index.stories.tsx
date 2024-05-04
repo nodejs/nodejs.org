@@ -71,7 +71,7 @@ export const Default: Story = {
           },
           {
             link: '/item13',
-            label: 'Previous Releases',
+            label: 'Node.js Releases',
           },
         ],
       },
