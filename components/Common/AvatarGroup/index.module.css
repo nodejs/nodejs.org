@@ -2,6 +2,6 @@
   @apply -mb-4
     flex
     items-center
-    overflow-x-scroll
+    overflow-x-auto
     pb-4;
 }
