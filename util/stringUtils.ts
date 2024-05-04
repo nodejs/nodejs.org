@@ -24,5 +24,5 @@ export const parseRichTextIntoPlainText = (richText: string) =>
 
 export const dashToCamelCase = (str: string) =>
   str
-    .replace(/-([a-z])/g, (match, chr) => chr.toUpperCase())
+    .replace(/-([a-z0-9])/g, (match, chr) => chr.toUpperCase())
     .replace(/^[A-Z]/, chr => chr.toLowerCase());
