@@ -215,7 +215,7 @@
     main {
       @apply max-w-[660px]
         gap-4
-        break-all;
+        break-normal;
     }
   }
 }
