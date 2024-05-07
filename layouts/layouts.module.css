@@ -215,7 +215,8 @@
     main {
       @apply max-w-[660px]
         gap-4
-        break-normal;
+        break-all
+        lg:break-normal;
     }
   }
 }
