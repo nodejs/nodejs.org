@@ -39,7 +39,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
   const searchInputRef = useRef<HTMLInputElement>(null);
   const searchBoxRef = useRef<HTMLDivElement>(null);
 
-  const search = (term: string) => {
+  const search = (term: string, section: number) => {
     oramaSearch({
       term,
       ...DEFAULT_ORAMA_QUERY_PARAMS,
@@ -51,7 +51,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
         'path',
         'siteSection',
       ],
-      ...filterBySection(),
+      ...filterBySection(section),
     })
       .then(setSearchResults)
       .catch(setSearchError);
@@ -128,15 +128,15 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
 
   const changeFacet = (idx: string) => {
     setSelectedFacet(Number(idx));
-    search(searchTerm);
+    search(searchTerm, Number(idx));
   };
 
-  const filterBySection = () => {
-    if (selectedFacet === 0) {
+  const filterBySection = (section: number) => {
+    if (section === 0) {
       return {};
     }
 
-    return { where: { siteSection: { eq: selectedFacetName } } };
+    return { where: { siteSection: { eq: Object.keys(facets)[section] } } };
   };
 
   const facets: Facets = {
@@ -184,7 +184,7 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
                 className={styles.searchBoxInput}
                 onChange={event => {
                   setSearchTerm(event.target.value);
-                  search(event.target.value);
+                  search(event.target.value, selectedFacet);
                 }}
                 value={searchTerm}
               />
