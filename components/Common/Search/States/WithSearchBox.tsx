@@ -79,15 +79,6 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
     return reset;
   }, []);
 
-  useEffect(
-    () => {
-      search(searchTerm);
-    },
-    // we don't need to care about memoization of search function
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [searchTerm, selectedFacet]
-  );
-
   useKeyboardCommands(cmd => {
     if (searchError || !searchResults || searchResults.count <= 0) {
       return;
@@ -135,7 +126,10 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
     router.push(`/search?q=${searchTerm}&section=${selectedFacetName}`);
   };
 
-  const changeFacet = (idx: string) => setSelectedFacet(Number(idx));
+  const changeFacet = (idx: string) => {
+    setSelectedFacet(Number(idx));
+    search(searchTerm);
+  };
 
   const filterBySection = () => {
     if (selectedFacet === 0) {
@@ -188,7 +182,10 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
                 role="combobox"
                 type="search"
                 className={styles.searchBoxInput}
-                onChange={event => setSearchTerm(event.target.value)}
+                onChange={event => {
+                  setSearchTerm(event.target.value);
+                  search(event.target.value);
+                }}
                 value={searchTerm}
               />
             </form>
