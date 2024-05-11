@@ -19,6 +19,10 @@
     xs:border-t-neutral-200
     xs:dark:border-t-neutral-900;
 
+  dl {
+    @apply w-full;
+  }
+
   dt {
     @apply mb-2
       text-sm
