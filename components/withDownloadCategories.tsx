@@ -28,16 +28,16 @@ const WithDownloadCategories: FC<PropsWithChildren> = async ({ children }) => {
         page: page,
         categories: [
           {
-            category: 'download',
-            label: t('layouts.download.categories.download'),
+            category: 'package-manager',
+            label: t('layouts.download.categories.package-manager'),
+          },
+          {
+            category: 'prebuilt-installer',
+            label: t('layouts.download.categories.prebuilt-installer'),
           },
           {
             category: 'prebuilt-binaries',
             label: t('layouts.download.categories.prebuilt-binaries'),
-          },
-          {
-            category: 'package-manager',
-            label: t('layouts.download.categories.package-manager'),
           },
           {
             category: 'source-code',

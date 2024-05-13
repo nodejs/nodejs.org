@@ -271,6 +271,10 @@
     {
       "source": "/:locale/blog/weekly-updates/:path*",
       "destination": "/:locale/blog/weekly/:path*"
+    },
+    {
+      "source": "/:locale/download",
+      "destination": "/:locale/download/package-manager"
     }
   ],
   "internal": []
