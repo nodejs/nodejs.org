@@ -35,6 +35,10 @@ export const platformItems = [
     value: 'NVM' as PackageManager,
   },
   {
+    label: 'fnm',
+    value: 'FNM' as PackageManager,
+  },
+  {
     label: 'Brew',
     value: 'BREW' as PackageManager,
   },

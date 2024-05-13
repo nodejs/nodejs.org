@@ -6,6 +6,7 @@ import type { FC } from 'react';
 import Select from '@/components/Common/Select';
 import Choco from '@/components/Icons/Platform/Choco';
 import Docker from '@/components/Icons/Platform/Docker';
+import FNM from '@/components/Icons/Platform/FNM';
 import Homebrew from '@/components/Icons/Platform/Homebrew';
 import NVM from '@/components/Icons/Platform/NVM';
 import { ReleaseContext } from '@/providers/releaseProvider';
@@ -68,6 +69,7 @@ const PlatformDropdown: FC = () => {
         items: platformItems,
         icons: {
           NVM: <NVM width={16} height={16} />,
+          FNM: <FNM width={16} height={16} />,
           BREW: <Homebrew width={16} height={16} />,
           DOCKER: <Docker width={16} height={16} />,
           CHOCO: <Choco width={16} height={16} />,
