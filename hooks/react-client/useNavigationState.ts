@@ -24,15 +24,15 @@ const useNavigationState = <T extends HTMLElement>(
 
   useEffect(() => {
     const element = ref.current;
-    if (navigationState[id] && navigationState[id].y !== element?.scrollTop) {
-      element?.scroll({ top: navigationState[id].y, behavior: 'instant' });
+    if (element) {
+      if (navigationState[id] && navigationState[id].y !== element.scrollTop) {
+        element.scroll({ top: navigationState[id].y, behavior: 'instant' });
+      }
+
+      element.addEventListener('scroll', handleScroll, { passive: true });
+
+      return () => element.removeEventListener('scroll', handleScroll);
     }
-
-    element?.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      element?.removeEventListener('scroll', handleScroll);
-    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
