@@ -31,7 +31,7 @@ export const operatingSystemItems = [
 
 export const platformItems = [
   {
-    label: 'NVM',
+    label: 'nvm',
     value: 'NVM' as PackageManager,
   },
   {
