@@ -10,7 +10,7 @@ Both the browser and Node.js use JavaScript as their programming language. Build
 
 From the perspective of a frontend developer who extensively uses JavaScript, Node.js apps bring with them a huge advantage: the comfort of programming everything - the frontend and the backend - in a single language.
 
-You have a huge opportunity because we know how hard it is to fully, deeply learn a programming language, and by using the same language to perform all your work on the web - both on the client and on the server, you're in a unique position of advantage.
+You have a huge opportunity because we know how hard it is to fully, deeply learn a programming language, and by using the same  language to perform all your work on the web - both on the client and on the server, you're in a unique position of advantage.
 
 > **What changes is the ecosystem.**
 
