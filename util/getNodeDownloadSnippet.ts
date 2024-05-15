@@ -33,7 +33,7 @@ export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
 
   if (os === 'MAC' || os === 'LINUX') {
     snippets.NVM = dedent`
-      # installs NVM (Node Version Manager)
+      # installs nvm (Node Version Manager)
       curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
       # download and install Node.js
