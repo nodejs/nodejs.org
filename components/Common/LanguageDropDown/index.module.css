@@ -10,8 +10,6 @@
     @apply bg-neutral-100
       dark:bg-neutral-900;
   }
-
-  transition: none !important;
 }
 
 .dropDownContent {
@@ -30,6 +28,8 @@
     @apply max-h-80
       w-48 overflow-y-auto;
   }
+
+  transition: none !important;
 }
 
 .dropDownItem {
