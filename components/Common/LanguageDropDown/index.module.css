@@ -28,8 +28,6 @@
     @apply max-h-80
       w-48 overflow-y-auto;
   }
-
-  transition: none !important;
 }
 
 .dropDownItem {
