@@ -1,6 +1,7 @@
 import {
   getAcronymFromString,
   parseRichTextIntoPlainText,
+  dashToCamelCase,
 } from '@/util/stringUtils';
 
 describe('String utils', () => {
@@ -58,5 +59,23 @@ describe('String utils', () => {
     const richText = '   Line 1   \n   Line 2   \n   Line 3   ';
     const result = parseRichTextIntoPlainText(richText);
     expect(result).toBe('Line 1\nLine 2\nLine 3');
+  });
+
+  it('should convert dash-separated strings to camelCase', () => {
+    expect(dashToCamelCase('hello-world')).toBe('helloWorld');
+    expect(dashToCamelCase('my-name-is')).toBe('myNameIs');
+    expect(dashToCamelCase('dash-to-camel-case')).toBe('dashToCamelCase');
+  });
+
+  it('should handle strings without dashes', () => {
+    expect(dashToCamelCase('hello')).toBe('hello');
+    expect(dashToCamelCase('world')).toBe('world');
+  });
+
+  it('should handle numbers in the string', () => {
+    expect(dashToCamelCase('my-name-is-007')).toBe('myNameIs007');
+    expect(dashToCamelCase('123-abc')).toBe('123Abc');
+    expect(dashToCamelCase('test-1-2-3')).toBe('test123');
+    expect(dashToCamelCase('test-123-abc')).toBe('test123Abc');
   });
 });
