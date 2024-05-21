@@ -22,7 +22,7 @@ const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
 
       <WithMetaBar />
 
-      <WithBreadcrumbs />
+      <WithBreadcrumbs navKeys={['learn']} />
     </ArticleLayout>
   </>
 );

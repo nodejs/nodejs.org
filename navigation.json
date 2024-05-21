@@ -92,11 +92,11 @@
           "link": "/about/governance",
           "label": "components.navigation.about.links.governance"
         },
-        "releases": {
+        "previousReleases": {
           "link": "/about/previous-releases",
           "label": "components.navigation.about.links.releases"
         },
-        "security": {
+        "securityReporting": {
           "link": "/about/security-reporting",
           "label": "components.navigation.about.links.security"
         }
@@ -113,7 +113,7 @@
           "link": "/about/get-involved/collab-summit",
           "label": "components.navigation.getInvolved.links.collabSummit"
         },
-        "upcomingEvents": {
+        "events": {
           "link": "/about/get-involved/events",
           "label": "components.navigation.getInvolved.links.upcomingEvents"
         },
