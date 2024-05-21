@@ -1,6 +1,7 @@
 import {
   getAcronymFromString,
   parseRichTextIntoPlainText,
+  dashToCamelCase,
 } from '@/util/stringUtils';
 
 describe('String utils', () => {
@@ -58,5 +59,17 @@ describe('String utils', () => {
     const richText = '   Line 1   \n   Line 2   \n   Line 3   ';
     const result = parseRichTextIntoPlainText(richText);
     expect(result).toBe('Line 1\nLine 2\nLine 3');
+  });
+
+  it('dashToCamelCase returns correct camelCase', () => {
+    expect(dashToCamelCase('foo-bar-baz')).toBe('fooBarBaz');
+  });
+
+  it('dashToCamelCase returns correct camelCase with capital first letter', () => {
+    expect(dashToCamelCase('Foo-bar')).toBe('fooBar');
+  });
+
+  it('dashToCamelCase returns correct camelCase with numbers', () => {
+    expect(dashToCamelCase('foo-123-bar')).toBe('foo123Bar');
   });
 });
