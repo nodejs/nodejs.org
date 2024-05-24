@@ -8,6 +8,7 @@ import NavBar from '@/components/Containers/NavBar';
 import WithBanner from '@/components/withBanner';
 import { useClientContext, useSiteNavigation } from '@/hooks';
 import { useRouter } from '@/navigation.mjs';
+import { siteConfig } from '@/next.json.mjs';
 import { availableLocales } from '@/next.locales.mjs';
 
 const WithNavBar: FC = () => {
@@ -17,6 +18,8 @@ const WithNavBar: FC = () => {
   const { replace } = useRouter();
 
   const locale = useLocale();
+
+  const isPrideEnabled = siteConfig.enablePrideLogo;
 
   const toggleCurrentTheme = () =>
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
@@ -37,6 +40,7 @@ const WithNavBar: FC = () => {
           text: label,
           target,
         }))}
+        enablePrideLogo={isPrideEnabled}
       />
     </div>
   );

@@ -11,7 +11,9 @@ import { SearchButton } from '@/components/Common/Search';
 import ThemeToggle from '@/components/Common/ThemeToggle';
 import NavItem from '@/components/Containers/NavBar/NavItem';
 import NodejsDark from '@/components/Icons/Logos/NodejsDark';
+import NodejsDarkPride from '@/components/Icons/Logos/NodejsDarkPride';
 import NodejsLight from '@/components/Icons/Logos/NodejsLight';
+import NodejsLightPride from '@/components/Icons/Logos/NodejsLightPride';
 import GitHub from '@/components/Icons/Social/GitHub';
 import Link from '@/components/Link';
 import type { FormattedMessage } from '@/types';
@@ -31,12 +33,14 @@ type NavbarProps = {
   }>;
   languages: ComponentProps<typeof LanguageDropdown>;
   onThemeTogglerClick: () => void;
+  enablePrideLogo?: boolean;
 };
 
 const NavBar: FC<NavbarProps> = ({
   navItems,
   languages,
   onThemeTogglerClick,
+  enablePrideLogo = false,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -44,8 +48,17 @@ const NavBar: FC<NavbarProps> = ({
     <nav className={`${style.container}`}>
       <div className={style.nodeIconAndMobileItemsToggler}>
         <Link className={style.nodeIconWrapper} href="/" aria-label="Home">
-          <NodejsDark className={style.nodejsLogoDark} />
-          <NodejsLight className={style.nodejsLogoLight} />
+          {enablePrideLogo ? (
+            <>
+              <NodejsDarkPride className={style.nodejsLogoDark} />
+              <NodejsLightPride className={style.nodejsLogoLight} />
+            </>
+          ) : (
+            <>
+              <NodejsDark className={style.nodejsLogoDark} />
+              <NodejsLight className={style.nodejsLogoLight} />
+            </>
+          )}
         </Link>
 
         <Label.Root

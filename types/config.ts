@@ -21,6 +21,7 @@ export interface SiteConfig {
   lightAccentColor: string;
   darkAccentColor: string;
   og: OGConfig;
+  enablePrideLogo: boolean;
   twitter: TwitterConfig;
   rssFeeds: Array<RSSFeed>;
   websiteBanners: Record<string, WebsiteBanner>;

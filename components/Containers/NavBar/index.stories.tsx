@@ -45,4 +45,45 @@ export const Default: Story = {
   },
 };
 
+export const WithPrideLogo: Story = {
+  args: {
+    navItems: [
+      {
+        text: 'Learn',
+        link: '/',
+      },
+      {
+        text: 'About',
+        link: '/about',
+      },
+      {
+        text: 'Docs',
+        link: '/docs',
+      },
+      {
+        text: 'Download',
+        link: '/download',
+      },
+      {
+        text: 'Blog',
+        link: '/blog',
+      },
+      {
+        text: 'Certification',
+        link: 'https://openjsf.org/certification',
+      },
+    ],
+    languages: {
+      availableLanguages: [
+        { name: 'English', code: 'en' },
+        { name: 'French', code: 'fr' },
+        { name: 'Spanish', code: 'es' },
+      ],
+      currentLanguage: 'en',
+    },
+    onThemeTogglerClick: () => {},
+    enablePrideLogo: true,
+  },
+};
+
 export default { component: NavBar } as Meta;
