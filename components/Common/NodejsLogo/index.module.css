@@ -1,0 +1,12 @@
+.nodejsLogoDark {
+  @apply h-6
+    w-20
+    dark:hidden;
+}
+
+.nodejsLogoLight {
+  @apply hidden
+    h-6
+    w-20
+    dark:block;
+}
