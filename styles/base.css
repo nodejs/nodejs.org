@@ -1,5 +1,6 @@
 * {
-  @apply subpixel-antialiased;
+  @apply subpixel-antialiased
+    transition-colors;
 }
 
 html,
