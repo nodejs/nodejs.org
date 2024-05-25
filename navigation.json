@@ -201,13 +201,13 @@
               "link": "/learn/asynchronous-work/javascript-asynchronous-programming-and-callbacks",
               "label": "components.navigation.learn.asynchronousWork.links.javascriptAsynchronousProgrammingAndCallbacks"
             },
-            "discoverJavaScriptTimers": {
+            "discoverJavascriptTimers": {
               "link": "/learn/asynchronous-work/discover-javascript-timers",
-              "label": "components.navigation.learn.asynchronousWork.links.discoverJavaScriptTimers"
+              "label": "components.navigation.learn.asynchronousWork.links.discoverJavascriptTimers"
             },
-            "theNodejsEventLoop": {
+            "eventLoopTimersAndNexttick": {
               "link": "/learn/asynchronous-work/event-loop-timers-and-nexttick",
-              "label": "components.navigation.learn.asynchronousWork.links.theNodejsEventLoop"
+              "label": "components.navigation.learn.asynchronousWork.links.eventLoopTimersAndNexttick"
             },
             "theNodejsEventEmitter": {
               "link": "/learn/asynchronous-work/the-nodejs-event-emitter",
@@ -254,9 +254,9 @@
               "link": "/learn/manipulating-files/working-with-folders-in-nodejs",
               "label": "components.navigation.learn.manipulatingFiles.links.workingWithFoldersInNodejs"
             },
-            "howToWorkWithFileSystems": {
+            "workingWithDifferentFilesystems": {
               "link": "/learn/manipulating-files/working-with-different-filesystems",
-              "label": "components.navigation.learn.manipulatingFiles.links.howToWorkWithFileSystems"
+              "label": "components.navigation.learn.manipulatingFiles.links.workingWithDifferentFilesystems"
             }
           }
         },

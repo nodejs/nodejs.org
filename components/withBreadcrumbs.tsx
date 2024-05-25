@@ -34,11 +34,13 @@ const WithBreadcrumbs: FC<WithBreadcrumbsProps> = ({ navKeys = [] }) => {
     return pathList.reduce((breadcrumbs, path, index) => {
       const nodeWithCurrentPath = currentNode.find(
         ([nodePath, entry]) =>
-          nodePath === path &&
+          // Checking link in cases where nodePath cannot = path. Like 'discoverJavaScriptTimers'
+          (nodePath === path || entry.link === pathname) &&
           // Skip checking child path if it is the last path since there is no more child item inside
           (index === pathList.length - 1 ||
             entry.items.some(
-              ([childPath]) => childPath === pathList[index + 1]
+              ([childPath, entry]) =>
+                childPath === pathList[index + 1] || entry.link === pathname
             ))
       );
 
