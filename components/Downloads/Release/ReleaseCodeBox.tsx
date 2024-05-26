@@ -43,9 +43,9 @@ const ReleaseCodeBox: FC = () => {
       )}
 
       <span className="text-center text-xs text-neutral-800 dark:text-neutral-200">
-        <b>{t('layouts.download.codeBox.managerInstalled')}</b>
-        <br />
         {t('layouts.download.codeBox.communityWarning')}
+        <br />
+        <b>{t('layouts.download.codeBox.communityWarningReport')}</b>
       </span>
     </div>
   );

@@ -17,7 +17,7 @@ const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
 
       <WithMetaBar />
 
-      <WithBreadcrumbs />
+      <WithBreadcrumbs navKeys={['about', 'getInvolved']} />
     </ArticleLayout>
   </>
 );
