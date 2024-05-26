@@ -29,6 +29,7 @@
       bg-gradient-subtle
       p-12
       grid-in-[main]
+      motion-safe:scroll-smooth
       dark:bg-gradient-subtle-dark
       xl:px-18
       xs:bg-none
