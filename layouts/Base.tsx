@@ -8,7 +8,7 @@ import { NotificationProvider } from '@/providers/notificationProvider';
 import styles from './layouts.module.css';
 
 const BaseLayout: FC<PropsWithChildren> = ({ children }) => (
-  <NotificationProvider viewportClassName="absolute bottom-0 right-0 list-none">
+  <NotificationProvider viewportClassName="fixed bottom-0 right-0 list-none">
     <NavigationStateProvider>
       <div className={styles.baseLayout}>{children}</div>
     </NavigationStateProvider>
