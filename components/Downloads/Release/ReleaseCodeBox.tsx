@@ -36,11 +36,9 @@ const ReleaseCodeBox: FC = () => {
 
   return (
     <div className="mb-2 mt-6 flex flex-col gap-2">
-      {code && (
-        <CodeBox language={codeLanguage}>
-          <code dangerouslySetInnerHTML={{ __html: code }} />
-        </CodeBox>
-      )}
+      <CodeBox language={codeLanguage} className="min-h-[15.5rem]">
+        <code dangerouslySetInnerHTML={{ __html: code }} />
+      </CodeBox>
 
       <span className="text-center text-xs text-neutral-800 dark:text-neutral-200">
         {t('layouts.download.codeBox.communityWarning')}
