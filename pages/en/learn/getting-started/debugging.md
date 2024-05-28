@@ -69,7 +69,7 @@ either the IP address or by using ssh tunnels as described below.
 A minimal CLI debugger is available with `node inspect myscript.js`.
 Several commercial and open source tools can also connect to the Node.js Inspector.
 
-### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+, [Microsoft Edge](https://www.microsoftedgeinsider.com)
+### Chrome DevTools 55+, Microsoft Edge
 
 - **Option 1**: Open `chrome://inspect` in a Chromium-based
   browser or `edge://inspect` in Edge. Click the Configure button and ensure your target host and port
@@ -77,37 +77,47 @@ Several commercial and open source tools can also connect to the Node.js Inspect
 - **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
   (see above) or the --inspect hint text and paste into Chrome.
 
+See https://github.com/ChromeDevTools/devtools-frontend, https://www.microsoftedgeinsider.com for more information.
+
 > Note that the Node.js and the Chrome need to be run on the same platform.
 
-### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
+### Visual Studio Code 1.10+
 
 - In the Debug panel, click the settings icon to open `.vscode/launch.json`.
   Select "Node.js" for initial setup.
 
-### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017+
+See https://github.com/microsoft/vscode for more information.
+
+### Visual Studio 2017+
 
 - Choose "Debug > Start Debugging" from the menu or hit F5.
 - [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging).
 
-### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) and other JetBrains IDEs
+### JetBrains WebStorm and other JetBrains IDEs
 
 - Create a new Node.js debug configuration and hit Debug. `--inspect` will be used
   by default for Node.js 7+. To disable uncheck `js.debugger.node.use.inspect` in
   the IDE Registry. To learn more about running and debugging Node.js in WebStorm and other JetBrains IDEs,
   check out [WebStorm online help](https://www.jetbrains.com/help/webstorm/running-and-debugging-node-js.html).
 
-### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
+### chrome-remote-interface
 
 - Library to ease connections to [Inspector Protocol][] endpoints.
 
-### [Gitpod](https://www.gitpod.io)
+See https://github.com/cyrus-and/chrome-remote-interface for more information.
+
+### Gitpod
 
 - Start a Node.js debug configuration from the `Debug` view or hit `F5`. [Detailed instructions](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
 
-### [Eclipse IDE](https://eclipse.org/eclipseide) with Eclipse Wild Web Developer extension
+See https://www.gitpod.io for more information.
+
+### Eclipse IDE with Eclipse Wild Web Developer extension
 
 - From a .js file, choose "Debug As... > Node program", or
 - Create a Debug Configuration to attach debugger to running Node.js application (already started with `--inspect`).
+
+See https://eclipse.org/eclipseide for more information.
 
 ## Command-line options
 
@@ -163,18 +173,18 @@ couple popular ones are listed below.
 
 The V8 Debugging Protocol is no longer maintained or documented.
 
-### [Built-in Debugger](https://nodejs.org/dist/latest/docs/api/debugger.html)
+### Built-in Debugger
 
 Start `node debug script_name.js` to start your script under the builtin
 command-line debugger. Your script starts in another Node.js process started with
 the `--debug-brk` option, and the initial Node.js process runs the `_debugger.js`
-script and connects to your target.
+script and connects to your target. See [docs](https://nodejs.org/dist/latest/docs/api/debugger.html) for more information.
 
-### [node-inspector](https://github.com/node-inspector/node-inspector)
+### node-inspector
 
 Debug your Node.js app with Chrome DevTools by using an intermediary process
 which translates the [Inspector Protocol][] used in Chromium to the V8 Debugger
-protocol used in Node.js.
+protocol used in Node.js. See https://github.com/node-inspector/node-inspector for more information.
 
 [Inspector Protocol]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
 [UUID]: https://tools.ietf.org/html/rfc4122
