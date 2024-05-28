@@ -221,7 +221,8 @@ There are some tools to check your regexps for safety, like
 
 - [safe-regex](https://github.com/davisjam/safe-regex)
 - [rxxr2](https://github.com/superhuman/rxxr2).
-  However, neither of these will catch all vulnerable regexps.
+
+However, neither of these will catch all vulnerable regexps.
 
 Another approach is to use a different regexp engine.
 You could use the [node-re2](https://github.com/uhop/node-re2) module, which uses Google's blazing-fast [RE2](https://github.com/google/re2) regexp engine.
