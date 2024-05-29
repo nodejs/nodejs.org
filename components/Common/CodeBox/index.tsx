@@ -1,16 +1,13 @@
 'use client';
 
-import {
-  DocumentDuplicateIcon,
-  CodeBracketIcon,
-} from '@heroicons/react/24/outline';
+import { DocumentDuplicateIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
-import { Fragment, isValidElement, useRef } from 'react';
+import { Fragment, isValidElement, useRef, useState } from 'react';
 
 import Button from '@/components/Common/Button';
-import { useCopyToClipboard, useNotification } from '@/hooks';
+import { useCopyToClipboard } from '@/hooks';
 
 import styles from './index.module.css';
 
@@ -78,23 +75,24 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
 }) => {
   const ref = useRef<HTMLPreElement>(null);
 
-  const notify = useNotification();
   const [, copyToClipboard] = useCopyToClipboard();
   const t = useTranslations();
+  const [copyContent, setCopyContent] = useState<string>(
+    t('components.common.codebox.copy')
+  );
+  const [copyTimeout, setCopyTimeout] = useState<NodeJS.Timeout>();
 
   const onCopy = async () => {
     if (ref.current?.textContent) {
       copyToClipboard(ref.current.textContent);
-
-      notify({
-        duration: 3000,
-        message: (
-          <div className={styles.notification}>
-            <CodeBracketIcon className={styles.icon} />
-            {t('components.common.codebox.copied')}
-          </div>
-        ),
-      });
+      setCopyContent(t('components.common.codebox.copied'));
+      clearTimeout(copyTimeout);
+      setCopyTimeout(
+        setTimeout(
+          () => setCopyContent(t('components.common.codebox.copy')),
+          3000
+        )
+      );
     }
   };
 
@@ -116,7 +114,7 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
           {showCopyButton && (
             <Button kind="neutral" className={styles.action} onClick={onCopy}>
               <DocumentDuplicateIcon className={styles.icon} />
-              {t('components.common.codebox.copy')}
+              {copyContent}
             </Button>
           )}
         </div>
