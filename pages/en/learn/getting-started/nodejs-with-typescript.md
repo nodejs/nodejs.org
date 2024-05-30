@@ -148,20 +148,26 @@ Then you can run your TypeScript code like this:
 npx ts-node example.ts
 ```
 
-### Running TypeScript Code with a Node.js Loader
+### Running TypeScript Code with `tsx`
 
-Since Node.js v19.0.0, you can use a [custom loader](https://nodejs.org/api/cli.html#--importmodule). Download a loader such as `ts-node` or `tsx` or `nodejs-loaders`
+You can use [tsx](https://tsx.is/) to run TypeScript code directly in Node.js without the need to compile it first. But it's not typechecking your code. So we recommend to type check your code first with `tsc` and then run it with `tsx` before shipping it.
 
-First you need to install the loader:
+To use `tsx`, you need to install it first:
 
 ```bash
-npm i -D ts-node
+npm i -D tsx
 ```
 
 Then you can run your TypeScript code like this:
 
 ```bash
-node --loader=ts-node/esm example.ts
+npx tsx example.ts
+```
+
+If you want to use `tsx` via `node`, you can register `tsx` via `--import`:
+
+```bash
+node --import=tsx example.ts
 ```
 
 ## TypeScript in the Node.js world
