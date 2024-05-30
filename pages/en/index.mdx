@@ -16,27 +16,7 @@ layout: home
   </div>
 
   <div>
-    <WithNodeRelease status={['LTS']}>
-      {({ release }) => (
-        <>
-          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
-          <small>
-            Downloads Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
-            Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
-          </small>
-        </>
-      )}
-    </WithNodeRelease>
-    <WithNodeRelease status={['Current']}>
-      {({ release }) => (
-        <small>
-          Want new features sooner?
-          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> instead.
-        </small>
-      )}
-    </WithNodeRelease>
+    <DownloadButton downloadLink={'/download/prebuilt-binaries'}>Download Node.js</DownloadButton>
   </div>
 </section>
 

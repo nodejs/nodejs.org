@@ -11,20 +11,22 @@ import { getNodeDownloadUrl } from '@/util/getNodeDownloadUrl';
 
 import styles from './index.module.css';
 
-type DownloadButtonProps = { release: NodeRelease };
+type DownloadButtonProps = { release?: NodeRelease; downloadLink?: string };
 
 const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
-  release: { versionWithPrefix },
+  release: { versionWithPrefix = '' } = {},
+  downloadLink,
   children,
 }) => {
   const { os, bitness } = useDetectOS();
-  const downloadLink = getNodeDownloadUrl(versionWithPrefix, os, bitness);
+  const downloadHref =
+    downloadLink || getNodeDownloadUrl(versionWithPrefix, os, bitness);
 
   return (
     <>
       <Button
         kind="special"
-        href={downloadLink}
+        href={downloadHref}
         className={classNames(styles.downloadButton, styles.special)}
       >
         {children}
@@ -34,7 +36,7 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
 
       <Button
         kind="primary"
-        href={downloadLink}
+        href={downloadHref}
         className={classNames(styles.downloadButton, styles.primary)}
       >
         {children}
