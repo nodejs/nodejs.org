@@ -4,7 +4,7 @@ import NodejsLogo from '@/components/Common/NodejsLogo';
 import { siteConfig } from '@/next.json.mjs';
 
 const WithNodejsLogo: FC = () => (
-  <NodejsLogo isPrideEnabled={siteConfig.enablePrideLogo} />
+  <NodejsLogo variant={siteConfig.logoVariant} />
 );
 
 export default WithNodejsLogo;

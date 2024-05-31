@@ -8,7 +8,7 @@ type Meta = MetaObj<typeof NodejsLogo>;
 export const Default: Story = {};
 
 export const WithPride: Story = {
-  args: { isPrideEnabled: true },
+  args: { variant: 'pride' },
 };
 
 export default { component: NodejsLogo } as Meta;
