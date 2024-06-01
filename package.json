@@ -75,7 +75,7 @@
     "next-themes": "~0.3.0",
     "postcss": "~8.4.38",
     "postcss-calc": "~9.0.1",
-    "postcss-import": "~16.0.1",
+    "postcss-import": "~16.1.0",
     "postcss-mixins": "~10.0.1",
     "postcss-simple-vars": "~7.0.1",
     "react": "^18.3.1",
