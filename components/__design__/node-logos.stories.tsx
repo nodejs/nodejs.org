@@ -3,7 +3,9 @@ import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import JsIconGreen from '@/components/Icons/Logos/JsIconGreen';
 import JsIconWhite from '@/components/Icons/Logos/JsIconWhite';
 import NodejsLogoDark from '@/components/Icons/Logos/NodejsDark';
+import NodejsDarkPride from '@/components/Icons/Logos/NodejsDarkPride';
 import NodejsLogoLight from '@/components/Icons/Logos/NodejsLight';
+import NodejsLightPride from '@/components/Icons/Logos/NodejsLightPride';
 import NodejsStackedBlack from '@/components/Icons/Logos/NodejsStackedBlack';
 import NodejsStackedDark from '@/components/Icons/Logos/NodejsStackedDark';
 import NodejsStackedLight from '@/components/Icons/Logos/NodejsStackedLight';
@@ -14,6 +16,15 @@ export const HorizontalLogos: StoryObj = {
     <div className="flex flex-row gap-4">
       <NodejsLogoLight width={267} height={80} className="hidden dark:block" />
       <NodejsLogoDark width={267} height={80} className="block dark:hidden" />
+    </div>
+  ),
+};
+
+export const PrideLogos: StoryObj = {
+  render: () => (
+    <div className="flex flex-row gap-4">
+      <NodejsDarkPride width={267} height={80} className="block dark:hidden" />
+      <NodejsLightPride className="hidden dark:block" width={267} height={80} />
     </div>
   ),
 };
