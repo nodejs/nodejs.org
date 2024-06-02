@@ -330,47 +330,60 @@
               "label": "components.navigation.learn.diagnostics.links.flameGraphs"
             }
           }
+        },
+        "testRunner": {
+          "label": "components.navigation.learn.testRunner.links.testRunner",
+          "items": {
+            "introduction": {
+              "link": "/learn/test-runner/introduction",
+              "label": "components.navigation.learn.testRunner.links.introduction"
+            },
+            "usingTestRunner": {
+              "link": "/learn/test-runner/using-test-runner",
+              "label": "components.navigation.learn.testRunner.links.usingTesRunner"
+            }
+          }
         }
       }
-    },
-    "download": {
-      "items": {
-        "shaSums": {
-          "link": "https://nodejs.org/dist/{nodeVersion}/SHASUMS256.txt.asc",
-          "label": "components.downloadList.links.shaSums.title"
-        },
-        "allDownloads": {
-          "link": "https://nodejs.org/dist/{nodeVersion}/",
-          "label": "components.downloadList.links.allDownloads"
-        },
-        "packageManager": {
-          "link": "/download/package-manager",
-          "label": "components.downloadList.links.packageManager"
-        },
-        "previousReleases": {
-          "link": "/about/previous-releases",
-          "label": "components.downloadList.links.previousReleases"
-        },
-        "nightlyReleases": {
-          "link": "https://nodejs.org/download/nightly/",
-          "label": "components.downloadList.links.nightlyReleases"
-        },
-        "unofficialBuilds": {
-          "link": "https://unofficial-builds.nodejs.org/download/",
-          "label": "components.downloadList.links.unofficialBuilds"
-        },
-        "buildingFromSource": {
-          "link": "https://github.com/nodejs/node/blob/main/BUILDING.md#building-nodejs-on-supported-platforms",
-          "label": "components.downloadList.links.buildingFromSource"
-        },
-        "installingOnLinux": {
-          "link": "https://github.com/nodejs/help/wiki/Installation",
-          "label": "components.downloadList.links.installingOnLinux"
-        },
-        "installingOnWsl": {
-          "link": "https://github.com/nodejs/node/blob/main/BUILDING.md#building-nodejs-on-supported-platforms",
-          "label": "components.downloadList.links.installingOnWsl"
-        }
+    }
+  },
+  "download": {
+    "items": {
+      "shaSums": {
+        "link": "https://nodejs.org/dist/{nodeVersion}/SHASUMS256.txt.asc",
+        "label": "components.downloadList.links.shaSums.title"
+      },
+      "allDownloads": {
+        "link": "https://nodejs.org/dist/{nodeVersion}/",
+        "label": "components.downloadList.links.allDownloads"
+      },
+      "packageManager": {
+        "link": "/download/package-manager",
+        "label": "components.downloadList.links.packageManager"
+      },
+      "previousReleases": {
+        "link": "/about/previous-releases",
+        "label": "components.downloadList.links.previousReleases"
+      },
+      "nightlyReleases": {
+        "link": "https://nodejs.org/download/nightly/",
+        "label": "components.downloadList.links.nightlyReleases"
+      },
+      "unofficialBuilds": {
+        "link": "https://unofficial-builds.nodejs.org/download/",
+        "label": "components.downloadList.links.unofficialBuilds"
+      },
+      "buildingFromSource": {
+        "link": "https://github.com/nodejs/node/blob/main/BUILDING.md#building-nodejs-on-supported-platforms",
+        "label": "components.downloadList.links.buildingFromSource"
+      },
+      "installingOnLinux": {
+        "link": "https://github.com/nodejs/help/wiki/Installation",
+        "label": "components.downloadList.links.installingOnLinux"
+      },
+      "installingOnWsl": {
+        "link": "https://github.com/nodejs/node/blob/main/BUILDING.md#building-nodejs-on-supported-platforms",
+        "label": "components.downloadList.links.installingOnWsl"
       }
     }
   }
