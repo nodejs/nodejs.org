@@ -6,7 +6,7 @@ authors: JakobJingleheimer
 
 # Using Node.js's test runner
 
-Node.js has a built-in test runner that is very powerful and flexible. This guide will show you how to set up a test runner using Node.js's built-in test runner.
+Node.js has a flexible and robust built-in test runner. This guide will show you how to set up and use it.
 
 ```text displayName="Architecture overview"
 example/
