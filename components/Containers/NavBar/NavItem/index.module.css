@@ -6,6 +6,10 @@
     px-3
     py-2;
 
+  &:hover {
+    @apply bg-neutral-100 dark:bg-neutral-900;
+  }
+
   .label {
     @apply text-sm
       font-medium
