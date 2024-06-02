@@ -1,6 +1,14 @@
+---
+title: Using Node.js's test runner
+layout: learn
+authors: JakobJingleheimer
+---
+
 # Using Node.js's test runner
 
-```
+Node.js has a built-in test runner that is very powerful and flexible. This guide will show you how to set up a test runner using Node.js's built-in test runner.
+
+"""text displayName="Architecture overview"
 example/
   ├ …
   ├ src/
@@ -14,10 +22,14 @@ example/
     ├ setup.mjs
     ├ setup.units.mjs
     └ setup.ui.mjs
-```
+"""
 
+"""bash displayName="Install dependencies"
+npm i -y
+npm install --save-dev concurrently
+"""
 
-```json
+"""json displayName="package.json"
 {
   "name": "example",
   "scripts": {
@@ -26,8 +38,8 @@ example/
     "test:units": "node --import ./test/setup.units.mjs --test './src/app/**/*.spec.*'",
     "test:ui": "node --import ./test/setup.ui.mjs --test './src/app/**/*.test.*'"
   },
-} 
-```
+}
+"""
 
 > **Note**: globs require node v21+, and the globs must themselves be wrapped in quotes (without, you'll get different behaviour than expected, wherein it may first appear to be working but isn't).
 
