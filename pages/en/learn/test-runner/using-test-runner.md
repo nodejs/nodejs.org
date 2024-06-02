@@ -8,7 +8,7 @@ authors: JakobJingleheimer
 
 Node.js has a built-in test runner that is very powerful and flexible. This guide will show you how to set up a test runner using Node.js's built-in test runner.
 
-"""text displayName="Architecture overview"
+```text displayName="Architecture overview"
 example/
   ├ …
   ├ src/
@@ -22,14 +22,14 @@ example/
     ├ setup.mjs
     ├ setup.units.mjs
     └ setup.ui.mjs
-"""
+```
 
-"""bash displayName="Install dependencies"
+```bash displayName="Install dependencies"
 npm i -y
 npm install --save-dev concurrently
-"""
+```
 
-"""json displayName="package.json"
+```json displayName="package.json"
 {
   "name": "example",
   "scripts": {
@@ -37,9 +37,9 @@ npm install --save-dev concurrently
     "test:sw": "node --import ./test/setup.sw.mjs --test './src/sw/**/*.spec.*'",
     "test:units": "node --import ./test/setup.units.mjs --test './src/app/**/*.spec.*'",
     "test:ui": "node --import ./test/setup.ui.mjs --test './src/app/**/*.test.*'"
-  },
+  }
 }
-"""
+```
 
 > **Note**: globs require node v21+, and the globs must themselves be wrapped in quotes (without, you'll get different behaviour than expected, wherein it may first appear to be working but isn't).
 
@@ -53,11 +53,11 @@ There are some things you always want, so put them in a base setup file like the
 ```js
 import { register } from 'node:module';
 
-
 register('some-typescript-loader');
 // TypeScript is supported hereafter
 // BUT other test/setup.*.mjs files still must be plain JavaScript!
 ```
+
 </details>
 
 Then for each setup, create a dedicated `setup` file (ensuring the base `setup.mjs` file is imported within each). There are a number of reasons to isolate the setups, but the most obvious reason is [YAGNI](https://en.wikipedia.org/wiki/You_aren't_gonna_need_it) + performance: much of what you may be setting up are environment-specific mocks/stubs, which can be quite expensive and will slow down test runs. You want to avoid those costs (literal money you pay to CI, time waiting for tests to finish, etc) when you don't need them.
@@ -78,12 +78,12 @@ import { ServiceWorkerGlobalScope } from './globals/ServiceWorkerGlobalScope.js'
 
 import './setup.mjs'; // 💡
 
-
 beforeEach(globalSWBeforeEach);
 function globalSWBeforeEach() {
   globalThis.self = new ServiceWorkerGlobalScope();
 }
 ```
+
 </details>
 
 ```js
@@ -92,19 +92,20 @@ import { describe, mock, it } from 'node:test';
 
 import { onActivate } from './onActivate.js';
 
-
 describe('ServiceWorker::onActivate()', () => {
   const globalSelf = globalThis.self;
   const claim = mock.fn(async function mock__claim() {});
   const matchAll = mock.fn(async function mock__matchAll() {});
 
   class ActivateEvent extends Event {
-    constructor(...args) { super('activate', ...args); }
+    constructor(...args) {
+      super('activate', ...args);
+    }
   }
 
   before(() => {
     globalThis.self = {
-      clients: { claim, matchAll }
+      clients: { claim, matchAll },
     };
   });
   after(() => {
@@ -135,7 +136,6 @@ By default, node generates a filename that is incompatible with syntax highlight
 import { basename, dirname, extname, join } from 'node:path';
 import { snapshot } from 'node:test';
 
-
 snapshot.setResolveSnapshotPath(generateSnapshotPath);
 /**
  * @param {string} testFilePath '/tmp/foo.test.js'
@@ -149,11 +149,12 @@ function generateSnapshotPath(testFilePath) {
   return join(base, `${filename}.snap.cjs`);
 }
 ```
+
 </details>
 
 The example below demonstrates snapshot testing with [testing library](https://testing-library.com/) for UI components; note the two different ways of accessing `assert.snapshot`):
 
-```jsx
+```ts
 import { describe, it } from 'node:test';
 
 import { prettyDOM } from '@testing-library/dom';
@@ -193,11 +194,11 @@ import { register } from 'node:module';
 
 import './setup.mjs'; // 💡
 
-
 register('some-plaintext-loader');
 // plain-text files like graphql can now be imported:
 // import GET_ME from 'get-me.gql'; GET_ME = '
 ```
+
 </details>
 
 ```js
@@ -208,19 +209,18 @@ import { Cat } from './Cat.js';
 import { Fish } from './Fish.js';
 import { Plastic } from './Plastic.js';
 
-
 describe('Cat', () => {
   it('should eat fish', () => {
     const cat = new Cat();
     const fish = new Fish();
-    
+
     assert.doesNotThrow(() => cat.eat(fish));
   });
-  
+
   it('should NOT eat plastic', () => {
     const cat = new Cat();
     const plastic = new Plastic();
-    
+
     assert.throws(() => cat.eat(plastic));
   });
 });
@@ -245,7 +245,6 @@ import './setup.units.mjs'; // 💡
 
 import { IndexedDb } from './globals/IndexedDb.js';
 
-
 register('some-css-modules-loader');
 
 jsdom(undefined, {
@@ -258,18 +257,19 @@ const pushState = globalThis.history.pushState.bind(globalThis.history);
 globalThis.history.pushState = function mock_pushState(data, unused, url) {
   pushState(data, unused, url);
   globalThis.location.assign(url);
-}
+};
 
 beforeEach(globalUIBeforeEach);
 function globalUIBeforeEach() {
   globalThis.indexedDb = new IndexedDb();
 }
 ```
+
 </details>
 
 You can have 2 different levels of UI tests: a unit-like (wherein externals & dependencies are mocked) and a more end-to-end (where only externals like IndexedDb are mocked but the rest of the chain is real). The former is generally the purer option, and the latter is generally deferred to a fully end-to-end automated usability test via something like [Playwright](https://playwright.dev/) or [Puppeteer](https://pptr.dev/). Below is an example of the former.
 
-```jsx
+```ts
 import { before, describe, mock, it } from 'node:test';
 
 import { screen } from '@testing-library/dom';
@@ -291,20 +291,20 @@ describe('<SomeOtherComponent>', () => {
 
     ({ SomeOtherComponent } = await import('./SomeOtherComponent.jsx'));
   });
-  
+
   describe('when calcSomeValue fails', () => {
     // This you would not want to handle with a snapshot because that would be brittle:
     // When inconsequential updates are made to the error message,
     // the snapshot test would erroneously fail
     // (and the snapshot would need to be updated for no real value).
-    
+
     it('should fail gracefully by displaying a pretty error', () => {
       calcSomeValue.mockImplementation(function mock__calcSomeValue() { return null });
 
       render(<SomeOtherComponent>);
-      
+
       const errorMessage = screen.queryByText('unable');
-      
+
       assert.ok(errorMessage);
     });
   });
