@@ -18,7 +18,6 @@ type BreadcrumbsProps = {
   maxLength?: number;
   hideHome?: boolean;
 };
-// Convert link.label to string and get its length
 
 const Breadcrumbs: FC<BreadcrumbsProps> = ({
   links = [],
