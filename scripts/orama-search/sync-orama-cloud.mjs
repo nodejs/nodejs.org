@@ -12,6 +12,10 @@ const oramaHeaders = {
   Authorization: `Bearer ${API_KEY}`,
 };
 
+console.log(
+  `Syncing ${siteContent.length} documents to Orama Cloud index ${INDEX_ID}`
+);
+
 // Orama allows to send several documents at once, so we batch them in groups of 50.
 // This is not strictly necessary, but it makes the process faster.
 const runUpdate = async () => {
@@ -22,37 +26,60 @@ const runUpdate = async () => {
     batches.push(siteContent.slice(i, i + batchSize));
   }
 
+  console.log(`Sending ${batches.length} batches of ${batchSize} documents`);
+
   await Promise.all(batches.map(insertBatch));
 };
 
 // We call the "notify" API to upsert the documents in the index.
 // Orama will keep a queue of all the documents we send, and will process them once we call the "deploy" API.
 // Full docs on the "notify" API: https://docs.oramasearch.com/cloud/data-sources/custom-integrations/webhooks#updating-removing-inserting-elements-in-a-live-index
-const insertBatch = async batch =>
-  await fetch(`${ORAMA_API_BASE_URL}/notify`, {
+const insertBatch = async batch => {
+  const { ok, statusText, url } = await fetch(`${ORAMA_API_BASE_URL}/notify`, {
     method: 'POST',
     headers: oramaHeaders,
     body: JSON.stringify({ upsert: batch }),
   });
 
+  if (!ok) {
+    console.error('Request to %s failed with status: %s', url, statusText);
+    process.exit(1000);
+  }
+};
+
 // We call the "deploy" API to trigger a deployment of the index, which will process all the documents in the queue.
 // Full docs on the "deploy" API: https://docs.oramasearch.com/cloud/data-sources/custom-integrations/webhooks#deploying-the-index
-const triggerDeployment = async () =>
-  await fetch(`${ORAMA_API_BASE_URL}/deploy`, {
+const triggerDeployment = async () => {
+  const { ok, statusText, url } = await fetch(`${ORAMA_API_BASE_URL}/deploy`, {
     method: 'POST',
     headers: oramaHeaders,
   });
+
+  if (!ok) {
+    console.error('Request to %s failed with status: %s', url, statusText);
+    process.exit(1001);
+  }
+};
 
 // We call the "snapshot" API to empty the index before inserting the new documents.
 // The "snapshot" API is typically used to replace the entire index with a fresh set of documents, but we use it here to empty the index.
 // This operation gets queued, so the live index will still be available until we call the "deploy" API and redeploy the index.
 // Full docs on the "snapshot" API: https://docs.oramasearch.com/cloud/data-sources/custom-integrations/webhooks#inserting-a-snapshot
-const emptyOramaIndex = async () =>
-  await fetch(`${ORAMA_API_BASE_URL}/snapshot`, {
-    method: 'POST',
-    headers: oramaHeaders,
-    body: JSON.stringify([]),
-  });
+const emptyOramaIndex = async () => {
+  const { ok, statusText, url } = await fetch(
+    `${ORAMA_API_BASE_URL}/snapshot`,
+    {
+      method: 'POST',
+      headers: oramaHeaders,
+      body: JSON.stringify([]),
+    }
+  );
+
+  if (!ok) {
+    console.error('Request to %s failed with status: %s', url, statusText);
+    process.exit(1002);
+  }
+};
 
 // Now we proceed to call the APIs in order:
 // 1. Empty the index
