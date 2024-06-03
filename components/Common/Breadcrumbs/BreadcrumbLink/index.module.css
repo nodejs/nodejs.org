@@ -1,4 +1,6 @@
 .link {
+  @apply w-full truncate;
+
   &.active {
     @apply rounded
       bg-green-600
