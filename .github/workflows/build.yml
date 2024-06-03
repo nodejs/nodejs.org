@@ -125,6 +125,9 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
 
       - name: Sync Orama Cloud
+        env:
+          ORAMA_INDEX_ID: ${{ secrets.ORAMA_INDEX_ID }}
+          ORAMA_SECRET_KEY: ${{ secrets.ORAMA_SECRET_KEY }}
         if: github.ref == 'refs/heads/main'
         run: |
           npm run sync-orama

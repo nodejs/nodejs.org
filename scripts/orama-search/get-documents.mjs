@@ -15,24 +15,11 @@ if (!existsSync(dataBasePath)) {
   );
 }
 
-console.debug(
-  'Page data is existent:',
-  existsSync(`${dataBasePath}/page-data.body`)
-);
-
-console.debug(
-  'API data is existent:',
-  existsSync(`${dataBasePath}/api-data.body`)
-);
-
 const nextPageData = readFileSync(`${dataBasePath}/page-data.body`, 'utf-8');
 const nextAPIPageData = readFileSync(`${dataBasePath}/api-data.body`, 'utf-8');
 
 const pageData = JSON.parse(nextPageData);
 const apiData = JSON.parse(nextAPIPageData);
-
-console.debug('Found page data:', pageData.length);
-console.debug('Found API data:', apiData.length);
 
 const splitIntoSections = markdownContent => {
   const lines = markdownContent.split(/\n/gm);

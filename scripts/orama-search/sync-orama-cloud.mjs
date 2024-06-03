@@ -12,9 +12,7 @@ const oramaHeaders = {
   Authorization: `Bearer ${API_KEY}`,
 };
 
-console.log(
-  `Syncing ${siteContent.length} documents to Orama Cloud index ${INDEX_ID}`
-);
+console.log(`Syncing ${siteContent.length} documents to Orama Cloud`);
 
 // Orama allows to send several documents at once, so we batch them in groups of 50.
 // This is not strictly necessary, but it makes the process faster.
@@ -35,27 +33,27 @@ const runUpdate = async () => {
 // Orama will keep a queue of all the documents we send, and will process them once we call the "deploy" API.
 // Full docs on the "notify" API: https://docs.oramasearch.com/cloud/data-sources/custom-integrations/webhooks#updating-removing-inserting-elements-in-a-live-index
 const insertBatch = async batch => {
-  const { ok, statusText, url } = await fetch(`${ORAMA_API_BASE_URL}/notify`, {
+  const { ok, statusText } = await fetch(`${ORAMA_API_BASE_URL}/notify`, {
     method: 'POST',
     headers: oramaHeaders,
     body: JSON.stringify({ upsert: batch }),
   });
 
   if (!ok) {
-    throw new Error(`Request to ${url} failed with status: ${statusText}`);
+    throw new Error(`Request to notify failed with status: ${statusText}`);
   }
 };
 
 // We call the "deploy" API to trigger a deployment of the index, which will process all the documents in the queue.
 // Full docs on the "deploy" API: https://docs.oramasearch.com/cloud/data-sources/custom-integrations/webhooks#deploying-the-index
 const triggerDeployment = async () => {
-  const { ok, statusText, url } = await fetch(`${ORAMA_API_BASE_URL}/deploy`, {
+  const { ok, statusText } = await fetch(`${ORAMA_API_BASE_URL}/deploy`, {
     method: 'POST',
     headers: oramaHeaders,
   });
 
   if (!ok) {
-    throw new Error(`Request to ${url} failed with status: ${statusText}`);
+    throw new Error(`Request to deploy failed with status: ${statusText}`);
   }
 };
 
@@ -64,17 +62,14 @@ const triggerDeployment = async () => {
 // This operation gets queued, so the live index will still be available until we call the "deploy" API and redeploy the index.
 // Full docs on the "snapshot" API: https://docs.oramasearch.com/cloud/data-sources/custom-integrations/webhooks#inserting-a-snapshot
 const emptyOramaIndex = async () => {
-  const { ok, statusText, url } = await fetch(
-    `${ORAMA_API_BASE_URL}/snapshot`,
-    {
-      method: 'POST',
-      headers: oramaHeaders,
-      body: JSON.stringify([]),
-    }
-  );
+  const { ok, statusText } = await fetch(`${ORAMA_API_BASE_URL}/snapshot`, {
+    method: 'POST',
+    headers: oramaHeaders,
+    body: JSON.stringify([]),
+  });
 
   if (!ok) {
-    throw new Error(`Request to ${url} failed with status: ${statusText}`);
+    throw new Error(`Request to snapshot failed with status: ${statusText}`);
   }
 };
 
