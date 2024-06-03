@@ -42,8 +42,7 @@ const insertBatch = async batch => {
   });
 
   if (!ok) {
-    console.error('Request to %s failed with status: %s', url, statusText);
-    process.exit(1000);
+    throw new Error(`Request to ${url} failed with status: ${statusText}`);
   }
 };
 
@@ -56,8 +55,7 @@ const triggerDeployment = async () => {
   });
 
   if (!ok) {
-    console.error('Request to %s failed with status: %s', url, statusText);
-    process.exit(1001);
+    throw new Error(`Request to ${url} failed with status: ${statusText}`);
   }
 };
 
@@ -76,8 +74,7 @@ const emptyOramaIndex = async () => {
   );
 
   if (!ok) {
-    console.error('Request to %s failed with status: %s', url, statusText);
-    process.exit(1002);
+    throw new Error(`Request to ${url} failed with status: ${statusText}`);
   }
 };
 
