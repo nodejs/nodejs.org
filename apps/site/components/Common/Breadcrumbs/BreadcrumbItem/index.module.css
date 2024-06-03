@@ -1,7 +1,9 @@
 .item {
   @apply flex
+    max-w-96
     items-center
     gap-5
+    truncate
     text-sm
     font-medium;
 

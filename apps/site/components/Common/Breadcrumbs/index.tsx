@@ -29,13 +29,6 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
   const lengthOffset = maxLength - totalLength;
   const isOverflow = lengthOffset < 0;
 
-  const formatLabelWithWordCount = (label: string, maxWords: number) => {
-    const words = label.split(' ');
-    if (words.length > maxWords) {
-      return <>{words.slice(0, maxWords).join(' ')} ...</>;
-    }
-    return label;
-  };
   const items = useMemo(
     () =>
       links.map((link, index, items) => {
@@ -45,8 +38,6 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
           // We add 1 here to take into account of the truncated breadcrumb.
           position <= Math.abs(lengthOffset) + 1 && isOverflow && !isLastItem;
 
-        const labelString = link.label.toString();
-        const formattedLabel = formatLabelWithWordCount(labelString, 6);
         return (
           <BreadcrumbItem
             key={link.label.toString()}
@@ -55,7 +46,7 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
             position={position + +!hideHome}
           >
             <BreadcrumbLink href={link.href} active={isLastItem}>
-              <div className=" text-center">{formattedLabel}</div>
+              {link.label}
             </BreadcrumbLink>
           </BreadcrumbItem>
         );
