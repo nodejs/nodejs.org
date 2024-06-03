@@ -1,6 +1,6 @@
 .link {
   @apply w-full 
-  truncate;
+    truncate;
 
   &.active {
     @apply rounded
