@@ -100,6 +100,7 @@ const nextConfig = {
       '@radix-ui/react-select',
       '@radix-ui/react-toast',
       'tailwindcss',
+      'shiki',
     ],
     // Removes the warning regarding the WebPack Build Worker
     webpackBuildWorker: false,
