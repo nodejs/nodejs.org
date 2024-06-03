@@ -4,7 +4,10 @@ The Node.js Web Team (@nodejs/web) is a team in the Node.js Project that is comp
 
 ### TSC Oversight 
 
-Any website change that expresses a position about a global event or group of people requires explicit [TSC](https://github.com/nodejs/TSC/blob/main/TSC-Charter.md#section-4-responsibilities-of-the-tsc) approval.
+Any website change that expresses a position about a global event or group of people requires explicit
+[TSC](https://github.com/nodejs/TSC/blob/main/TSC-Charter.md#section-4-responsibilities-of-the-tsc)
+approval. This can be obtained by pinging `@nodejs/tsc` and receive no objections after seven days,
+or by sending an email to `tsc@iojs.org` and receive at least one approval and no objections after seven days.
 
 ### Node.js Website Team (`@nodejs/nodejs-website`)
 
