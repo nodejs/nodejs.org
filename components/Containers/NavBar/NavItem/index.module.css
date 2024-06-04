@@ -6,14 +6,15 @@
     px-3
     py-2;
 
-  &:hover {
-    @apply bg-neutral-100 dark:bg-neutral-900;
-  }
-
   .label {
     @apply text-sm
       font-medium
       leading-5;
+
+    &:hover {
+      @apply text-green-400
+        dark:text-green-400;
+    }
   }
 
   .icon {
@@ -49,7 +50,8 @@
     }
 
     &:hover {
-      @apply bg-neutral-100 dark:bg-neutral-900;
+      @apply bg-neutral-100
+        dark:bg-neutral-900;
     }
   }
 }
