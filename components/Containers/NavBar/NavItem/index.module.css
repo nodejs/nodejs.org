@@ -24,7 +24,7 @@
         dark:text-white;
     }
 
-    &:hover {
+    &:not(.active):hover {
       .label {
         @apply text-green-400
           dark:text-green-400;
