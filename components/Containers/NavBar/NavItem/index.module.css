@@ -22,8 +22,10 @@
     .label {
       @apply text-neutral-900
         dark:text-white;
+    }
 
-      &:hover {
+    &:hover {
+      .label {
         @apply text-green-400
           dark:text-green-400;
       }
