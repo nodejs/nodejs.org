@@ -1,7 +1,6 @@
 .list {
   @apply flex
     w-full
-    items-center
     gap-5
     pl-2;
 }
