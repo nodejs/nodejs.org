@@ -26,8 +26,8 @@
 
     &:not(.active):hover {
       .label {
-        @apply text-green-400
-          dark:text-green-400;
+        @apply text-green-700
+          dark:text-green-700;
       }
     }
 
