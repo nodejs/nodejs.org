@@ -25,7 +25,7 @@ example/
 ```
 
 ```bash displayName="Install dependencies"
-npm i -y
+npm init -y
 npm install --save-dev concurrently
 ```
 
