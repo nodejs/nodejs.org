@@ -1,6 +1,7 @@
 {
   "type": "module",
   "private": true,
+  "name": "@nodejs/website",
   "description": "Nodejs.org Website",
   "homepage": "https://nodejs.org",
   "repository": {
@@ -14,6 +15,7 @@
   "engines": {
     "node": "v20"
   },
+  "packageManager": "npm@10.7.0",
   "scripts": {
     "scripts:release-post": "cross-env NODE_NO_WARNINGS=1 node scripts/release-post/index.mjs",
     "dev": "cross-env NODE_NO_WARNINGS=1 next dev",
@@ -126,7 +128,7 @@
     "stylelint-config-standard": "36.0.0",
     "stylelint-order": "6.0.4",
     "stylelint-selector-bem-pattern": "4.0.0",
-    "turbo": "1.13.3",
+    "turbo": "2.0.1",
     "user-agent-data-types": "0.4.2"
   }
 }
