@@ -20,4 +20,4 @@ Testing your code is important because it allows you to verify that your code wo
 
 ## Running tests with Node.js
 
-To run test with Node.js, we recommend you to read the latest [test runner doc](https://nodejs.org/docs/latest/api/test.html#test-runner).
+To run tests with Node.js, we recommend you to read the [test runner documentation](https://nodejs.org/docs/latest/api/test.html#test-runner).
