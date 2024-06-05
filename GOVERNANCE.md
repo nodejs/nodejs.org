@@ -2,7 +2,7 @@
 
 The Node.js Web Team (@nodejs/web) is a team in the Node.js Project that is composed by a set of subteams. Each containing specific responsibilities and goals.
 
-### TSC Oversight 
+### TSC Oversight
 
 Any website change that expresses a position about a global event or group of people requires explicit
 [TSC](https://github.com/nodejs/TSC/blob/main/TSC-Charter.md#section-4-responsibilities-of-the-tsc)
