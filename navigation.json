@@ -340,7 +340,7 @@
             },
             "usingTestRunner": {
               "link": "/learn/test-runner/using-test-runner",
-              "label": "components.navigation.learn.testRunner.links.usingTesRunner"
+              "label": "components.navigation.learn.testRunner.links.usingTestRunner"
             }
           }
         }
