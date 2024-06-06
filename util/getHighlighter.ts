@@ -1,6 +1,6 @@
-import { getHighlighterCore } from 'shiki/core';
-import type { HighlighterCore } from 'shiki/core';
-import getWasm from 'shiki/wasm';
+import { getHighlighterCore } from '@shikijs/core';
+import type { HighlighterCore } from '@shikijs/core';
+import { getWasmInstance } from '@shikijs/core/wasm-inlined';
 
 import { LANGUAGES, DEFAULT_THEME } from '@/shiki.config.mjs';
 
@@ -9,7 +9,7 @@ export const getShiki = () =>
   getHighlighterCore({
     themes: [DEFAULT_THEME],
     langs: LANGUAGES,
-    loadWasm: getWasm,
+    loadWasm: getWasmInstance,
   });
 
 export const highlightToHtml =
