@@ -97,6 +97,13 @@
             "poorPerformance": "Poor Performance",
             "flameGraphs": "Flame Graphs"
           }
+        },
+        "testRunner": {
+          "links": {
+            "testRunner": "Test Runner",
+            "introduction": "Discovering Node.js's test runner",
+            "usingTestRunner": "Using Node.js's test runner"
+          }
         }
       },
       "about": {
