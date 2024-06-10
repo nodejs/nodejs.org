@@ -3,6 +3,7 @@
     items-center
     gap-2
     rounded
+    border-transparent
     px-3
     py-2;
 
@@ -38,7 +39,8 @@
         dark:border-green-700;
 
       .label {
-        @apply text-white;
+        @apply text-neutral-900
+          dark:text-white;
       }
 
       .icon {
@@ -55,8 +57,10 @@
     }
 
     &:hover {
-      @apply text-green-700
-        dark:text-green-700;
+      .label {
+        @apply text-green-700
+          dark:text-green-700;
+      }
     }
   }
 }
