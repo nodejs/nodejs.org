@@ -27,9 +27,9 @@
 
     &:hover {
       @apply border-b-2
-        border-green-700
+        border-neutral-100
         dark:border-b-2
-        dark:border-green-700;
+        dark:border-neutral-900;
     }
 
     &.active {
