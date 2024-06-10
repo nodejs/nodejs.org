@@ -59,7 +59,7 @@
     &:hover {
       .label {
         @apply text-green-700
-          dark:text-green-700;
+          dark:text-green-400;
       }
     }
   }
