@@ -19,10 +19,10 @@
   }
 
   &:hover {
-    @apply border-b-4
+    @apply border-b-1
+      dark:border-b-1
       border-green-700
-      dark:border-b-4
-      dark:border-white;
+      dark:border-green-700;
   }
 
   &.nav {
@@ -55,10 +55,8 @@
     }
 
     &:hover {
-      @apply border-b-4
-        border-green-700
-        dark:border-b-4
-        dark:border-white;
+      @apply text-green-700
+        dark:text-green-700;
     }
   }
 }
