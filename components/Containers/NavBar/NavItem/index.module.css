@@ -1,34 +1,21 @@
 .navItem {
-  @apply inline-flex
-    items-center
-    gap-2
-    rounded
-    px-3
-    py-2;
+  @apply inline-flex items-center gap-2 rounded px-3 py-2;
 
   .label {
-    @apply text-sm
-      font-medium
-      leading-5;
+    @apply text-sm font-medium leading-5;
   }
 
   .icon {
-    @apply size-3
-      text-neutral-500
-      dark:text-neutral-200;
+    @apply size-3 text-neutral-500 dark:text-neutral-200;
+  }
+
+  &:hover {
+    @apply bg-neutral-100 dark:bg-neutral-900;
   }
 
   &.nav {
     .label {
-      @apply text-neutral-900
-        dark:text-white;
-    }
-
-    &:not(.active):hover {
-      .label {
-        @apply text-green-700
-          dark:text-green-700;
-      }
+      @apply text-neutral-900 dark:text-white;
     }
 
     &.active {
@@ -39,21 +26,18 @@
       }
 
       .icon {
-        @apply text-white
-          opacity-50;
+        @apply text-white opacity-50;
       }
     }
   }
 
   &.footer {
     .label {
-      @apply text-neutral-800
-        dark:text-white;
+      @apply text-neutral-800 dark:text-white;
     }
 
     &:hover {
-      @apply bg-neutral-100
-        dark:bg-neutral-900;
+      @apply bg-neutral-100 dark:bg-neutral-900;
     }
   }
 }
