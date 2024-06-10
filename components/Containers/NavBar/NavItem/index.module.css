@@ -18,17 +18,17 @@
       dark:text-neutral-200;
   }
 
-  &:hover {
-    @apply border-b-2
-      border-green-700
-      dark:border-b-2
-      dark:border-green-700;
-  }
-
   &.nav {
     .label {
       @apply text-neutral-900
         dark:text-white;
+    }
+
+    &:hover {
+      @apply border-b-2
+        border-green-700
+        dark:border-b-2
+        dark:border-green-700;
     }
 
     &.active {
