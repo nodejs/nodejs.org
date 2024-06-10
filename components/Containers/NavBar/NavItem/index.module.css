@@ -18,6 +18,13 @@
       dark:text-neutral-200;
   }
 
+  &:hover {
+    @apply border-b-4
+      border-green-700
+      dark:border-b-4
+      dark:border-white;
+  }
+
   &.nav {
     .label {
       @apply text-neutral-900
@@ -25,7 +32,10 @@
     }
 
     &.active {
-      @apply bg-green-600;
+      @apply border-b-4
+        border-green-700
+        dark:border-b-4
+        dark:border-white;
 
       .label {
         @apply text-white;
@@ -45,7 +55,10 @@
     }
 
     &:hover {
-      @apply bg-neutral-100 dark:bg-neutral-900;
+      @apply border-b-4
+        border-green-700
+        dark:border-b-4
+        dark:border-white;
     }
   }
 }
