@@ -32,10 +32,10 @@
     }
 
     &.active {
-      @apply border-b-4
+      @apply border-b-1
+        dark:border-b-1
         border-green-700
-        dark:border-b-4
-        dark:border-white;
+        dark:border-green-700;
 
       .label {
         @apply text-white;
