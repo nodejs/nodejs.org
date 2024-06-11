@@ -55,7 +55,7 @@
         dark:text-white;
     }
 
-    &:not(.social):hover {
+    &:hover:not(.social) {
       .label {
         @apply text-green-700
           dark:text-green-400;
