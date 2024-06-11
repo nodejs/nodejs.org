@@ -22,13 +22,19 @@
     .label {
       @apply text-neutral-900
         dark:text-white;
+
+      &:not(:hover) svg {
+        pointer-events: none;
+      }
     }
 
-    &:hover:not(.social) .label {
-      @apply border-b-2
-        border-neutral-900
-        dark:border-b-2
-        dark:border-neutral-100;
+    &:hover {
+      .label {
+        @apply border-b-2
+          border-neutral-900
+          dark:border-b-2
+          dark:border-neutral-100;
+      }
     }
 
     &.active {
@@ -53,11 +59,17 @@
     .label {
       @apply text-neutral-800
         dark:text-white;
+
+      &:not(:hover) svg {
+        pointer-events: none;
+      }
     }
 
-    &:hover:not(.social) .label {
-      @apply text-green-700
-        dark:text-green-400;
+    &:hover {
+      .label {
+        @apply text-green-700
+          dark:text-green-400;
+      }
     }
   }
 }
