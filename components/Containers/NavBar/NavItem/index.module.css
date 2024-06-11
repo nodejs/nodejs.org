@@ -24,7 +24,7 @@
         dark:text-white;
     }
 
-    &:hover {
+    &:hover:not(.social) .label {
       @apply border-b-2
         border-neutral-900
         dark:border-b-2
