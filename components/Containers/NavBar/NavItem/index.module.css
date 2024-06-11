@@ -22,10 +22,6 @@
     .label {
       @apply text-neutral-900
         dark:text-white;
-
-      &:not(:hover) svg {
-        pointer-events: none;
-      }
     }
 
     &:hover {
@@ -59,17 +55,11 @@
     .label {
       @apply text-neutral-800
         dark:text-white;
-
-      &:not(:hover) svg {
-        pointer-events: none;
-      }
     }
 
-    &:hover {
-      .label {
-        @apply text-green-700
-          dark:text-green-400;
-      }
+    &:hover .label:not(:has(svg)) {
+      @apply text-green-700
+        dark:text-green-400;
     }
   }
 }
