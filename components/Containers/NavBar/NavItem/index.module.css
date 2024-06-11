@@ -55,11 +55,9 @@
         dark:text-white;
     }
 
-    &:hover:not(.social) {
-      .label {
-        @apply text-green-700
-          dark:text-green-400;
-      }
+    &:hover:not(.social) .label {
+      @apply text-green-700
+        dark:text-green-400;
     }
   }
 }
