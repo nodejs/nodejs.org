@@ -2,16 +2,18 @@
   @apply flex
     flex-col
     items-center
-    gap-6
     border-t
     border-neutral-200
     bg-white
-    py-4
+    
     dark:border-neutral-900
     dark:bg-neutral-950
+    sm:gap-0
     sm:px-8
+    sm:py-0
     md:flex-row
     md:justify-between
+    md:gap-6
     md:py-5;
 
   .sectionPrimary {
@@ -20,8 +22,9 @@
       content-start
       items-center
       justify-center
-      gap-1
-      self-stretch;
+      self-stretch
+      sm:gap-0
+      md:gap-1;
 
     a {
       @apply whitespace-nowrap;
@@ -32,13 +35,15 @@
     @apply flex
       flex-col
       items-center
-      gap-1
-      md:flex-row;
+      sm:gap-0
+      md:flex-row
+      md:gap-1;
 
     .social {
       @apply flex
         items-center
-        gap-1;
+        sm:gap-0
+        md:gap-1;
     }
   }
 }
