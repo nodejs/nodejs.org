@@ -24,13 +24,11 @@
         dark:text-white;
     }
 
-    &:hover {
-      .label {
-        @apply border-b-2
-          border-neutral-900
-          dark:border-b-2
-          dark:border-neutral-100;
-      }
+    &:hover:not(.active) {
+      @apply border-b-2
+        border-neutral-900
+        dark:border-b-2
+        dark:border-neutral-100;
     }
 
     &.active {
