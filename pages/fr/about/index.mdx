@@ -3,7 +3,7 @@ title: À propos de Node.js®
 layout: about
 ---
 
-# À propos de Node.js®
+À propos de Node.js®
 
 En tant que moteur d'exécution JavaScript asynchrone piloté par les événements, Node.js est conçu pour construire des applications réseau évolutives.
 des applications réseau évolutives. Dans l'exemple suivant, "hello world", de nombreuses
@@ -17,13 +17,13 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
 
@@ -34,13 +34,13 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
 
@@ -62,7 +62,7 @@ La conception de Node.js est similaire et influencée par des systèmes tels que
 un peu plus loin. Il présente une boucle d'événements comme une construction d'exécution plutôt que comme une bibliothèque. Dans d'autres systèmes,
 il y a toujours un appel bloquant pour démarrer la boucle d'événements.
 Généralement, le comportement est défini par des rappels au début d'un script et, à la fin, un serveur est démarré par le biais d'un appel bloquant.
-à la fin, un serveur est démarré par un appel bloquant comme `EventMachine::run()`.
+la fin, un serveur est démarré par un appel bloquant comme `EventMachine::run()`.
 Dans Node.js, il n'y a pas de tel appel start-the-event-loop. Node.js entre simplement dans la boucle d'événements après avoir exécuté le script d'entrée. Node.js
 quitte la boucle d'événements lorsqu'il n'y a plus de rappels à effectuer. Ce comportement
 est similaire à celui d'un navigateur JavaScript - la boucle d'événements est cachée à l'utilisateur.
