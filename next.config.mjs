@@ -116,6 +116,8 @@ const nextConfig = {
     // Enables Next.js's Instrumentation Hook
     instrumentationHook: true,
   },
+  // To import ESM-only packages with next dev --turbo. Source: https://github.com/vercel/next.js/issues/63318#issuecomment-2079677098
+  transpilePackages: ['shiki'],
 };
 
 /** @type {import('@sentry/cli').SentryCliOptions} */
