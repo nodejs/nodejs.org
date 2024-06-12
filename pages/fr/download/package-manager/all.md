@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: download
 title: Installer Node.js via le gestionnaire de paquets
 ---
 
