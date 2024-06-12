@@ -3,7 +3,7 @@ title: Node.js درباره
 layout: about
 ---
 
-# درباره ®Node.js
+درباره ®Node.js
 
 به عنوان یک رانتایم جاوااسکریپتِ غیرهمگام و رویداد محور، Node.js برای ساخت برنامه‌های تحت شبکه مقیاس‌پذیر طراحی شده است. در مثال "سلام دنیا" زیر، کانکشن متعددی می‌توانند به صورت همزمان پردازش شوند. با هر کانکشن، callback فراخوانی می‌شود، اما اگر کاری برای انجام وجود نداشته باشد، Node.js به حالت خواب می‌رود.
 
@@ -14,13 +14,13 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
 
@@ -31,13 +31,13 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
 
