@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: download
 title: از طریق پکیج منیجر Node.js نصب
 ---
 
