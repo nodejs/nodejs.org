@@ -7,6 +7,8 @@ import WithNavBar from '@/components/withNavBar';
 import WithSidebar from '@/components/withSidebar';
 import ArticleLayout from '@/layouts/Article';
 
+import styles from '/components/Containers/Footer/index.module.css';
+
 const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <WithNavBar />
@@ -18,11 +20,16 @@ const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
         <main>{children}</main>
 
         <WithMetaBar />
+        <div className={styles.mobileFooter}>
+          <WithFooter />
+        </div>
       </div>
 
       <WithBreadcrumbs navKeys={['about', 'getInvolved']} />
     </ArticleLayout>
-    <WithFooter />
+    <div className={styles.desktopFooter}>
+      <WithFooter />
+    </div>
   </>
 );
 

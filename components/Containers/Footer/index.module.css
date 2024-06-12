@@ -47,3 +47,21 @@
     }
   }
 }
+
+.mobileFooter {
+  display: none;
+}
+
+.desktopFooter {
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .mobileFooter {
+    display: block;
+  }
+
+  .desktopFooter {
+    display: none;
+  }
+}
