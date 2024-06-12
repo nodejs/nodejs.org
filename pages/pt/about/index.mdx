@@ -3,7 +3,7 @@ title: Sobre a Node.js®
 layout: about
 ---
 
-# Sobre a Node.js®
+Sobre a Node.js®
 
 Como uma execução de JavaScript assíncrona orientada a eventos, a Node.js foi desenhada para construir aplicações de rede escaláveis. No seguinte exemplo de "hello world", muitas conexões podem ser manipuladas simultaneamente. Em cada conexão, a função de retorno de chamada é disparada, mas se não existir trabalho a ser feito, a Node.js dormirá.
 
@@ -14,13 +14,13 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
 
@@ -31,13 +31,13 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
 
@@ -47,11 +47,11 @@ Se alguma desta linguagem não for familiar, existe um artigo completo sobre [Bl
 
 ---
 
-A Node.js é semelhante em desenho a, e influenciada por, sistemas como a [Máquina de Evento][Event Machine] da Ruby e o [Twisted][Twisted] da Python. A Node.js leva o modelo de evento um pouco mais longe. Esta apresenta um ciclo de eventos como uma construção de execução e não como uma biblioteca. Noutros sistemas, existe sempre uma chamada bloqueante para começar o ciclo de eventos. Tipicamente, o comportamento é definido através das funções de retorno de chamada no início de um programa, e no final um servidor é iniciado através duma chamada bloqueante como `EventMachine::run()`. Na Node.js, não existe essa chama que começa o ciclo de evento. A Node.js simplesmente entra no ciclo de eventos após executar o programa de entrada. A Node.js sai do ciclo de eventos quando não existir mais funções de retorno de chamada para executar. Este comportamento é semelhante a JavaScript do navegador — o ciclo de eventos está oculto para o utilizador.
+Node.js é semelhante em desenho a, e influenciada por, sistemas como a [Máquina de Evento][Event Machine] da Ruby e o [Twisted][Twisted] da Python. A Node.js leva o modelo de evento um pouco mais longe. Esta apresenta um ciclo de eventos como uma construção de execução e não como uma biblioteca. Noutros sistemas, existe sempre uma chamada bloqueante para começar o ciclo de eventos. Tipicamente, o comportamento é definido através das funções de retorno de chamada no início de um programa, e no final um servidor é iniciado através duma chamada bloqueante como `EventMachine::run()`. Na Node.js, não existe essa chama que começa o ciclo de evento. A Node.js simplesmente entra no ciclo de eventos após executar o programa de entrada. A Node.js sai do ciclo de eventos quando não existir mais funções de retorno de chamada para executar. Este comportamento é semelhante a JavaScript do navegador — o ciclo de eventos está oculto para o utilizador.
 
-O protocolo de transferência de hipertexto é um cidadão de primeira classe na Node.js, desenhado com fluxo contínuo e baixa latência em mente. Isto torna a Node.js adequada para a fundação duma biblioteca ou abstração da Web.
+protocolo de transferência de hipertexto é um cidadão de primeira classe na Node.js, desenhado com fluxo contínuo e baixa latência em mente. Isto torna a Node.js adequada para a fundação duma biblioteca ou abstração da Web.
 
-O fato da Node.js ter sido desenhada sem linhas de processamento não significa que não possamos tirar partido de vários núcleos no nosso ambiente. Os processos filhos podem ser gerados com o uso da nossa interface de programação de aplicação [`child_process.fork()`][], e estão desenhadas para serem fáceis de se comunicar. Construída sobre esta mesma interface está o módulo [`cluster`][], que permite-nos partilhar tomadas entre processos para permitir o balanceio de carga entre os nossos núcleos.
+fato da Node.js ter sido desenhada sem linhas de processamento não significa que não possamos tirar partido de vários núcleos no nosso ambiente. Os processos filhos podem ser gerados com o uso da nossa interface de programação de aplicação [`child_process.fork()`][], e estão desenhadas para serem fáceis de se comunicar. Construída sobre esta mesma interface está o módulo [`cluster`][], que permite-nos partilhar tomadas entre processos para permitir o balanceio de carga entre os nossos núcleos.
 
 [bloqueio vs não bloqueio]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
