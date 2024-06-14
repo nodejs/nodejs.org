@@ -125,9 +125,15 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
 
       - name: Sync Orama Cloud
+        # We only want to sync the Orama Cloud production indexes on `push` events.
+        # We also want to sync the Orama Cloud preview (deployment) indexes on `pull_request_target` events.
+        # We also want to ensure that the sync only happens on the `ubuntu-latest` runner to avoid duplicate syncs
+        # or Windows-based path issues.
         env:
-          ORAMA_INDEX_ID: ${{ secrets.ORAMA_INDEX_ID }}
-          ORAMA_SECRET_KEY: ${{ secrets.ORAMA_SECRET_KEY }}
-        if: github.ref == 'refs/heads/main'
+          ORAMA_INDEX_ID: ${{ github.event_name == 'push' && secrets.ORAMA_PRODUCTION_INDEX_ID || secrets.ORAMA_INDEX_ID }}
+          ORAMA_SECRET_KEY: ${{ github.event_name == 'push' && secrets.ORAMA_PRODUCTION_SECRET_KEY || secrets.ORAMA_SECRET_KEY }}
+        if: |
+          (matrix.os == 'ubuntu-latest') &&
+          ((github.event_name == 'push') || (github.event_name == 'pull_request_target'))
         run: |
           npm run sync-orama
