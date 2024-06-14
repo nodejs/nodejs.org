@@ -1,0 +1,85 @@
+---
+title: À propos de Node.js®
+layout: about
+---
+
+À propos de Node.js®
+
+En tant que moteur d'exécution JavaScript asynchrone piloté par les événements, Node.js est conçu pour construire des applications réseau évolutives.
+des applications réseau évolutives. Dans l'exemple suivant, "hello world", de nombreuses
+peuvent être gérées simultanément. À chaque connexion, le rappel est
+mais s'il n'y a pas de travail à faire, Node.js se met en veille.
+
+```cjs
+const { createServer } = require('node:http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+```mjs
+import { createServer } from 'node:http';
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+Cela contraste avec le modèle de concurrence le plus courant aujourd'hui, dans lequel les threads du système d'exploitation sont utilisés.
+sont utilisés. Les réseaux basés sur les threads sont relativement inefficaces et très
+difficile à utiliser. En outre, les utilisateurs de Node.js n'ont pas à s'inquiéter d'un blocage du processus, puisqu'il n'y a pas de verrous.
+de bloquer le processus, puisqu'il n'y a pas de verrous. Presque aucune fonction de
+Node.js n'exécute directement des E/S, de sorte que le processus ne se bloque jamais, sauf lorsque les E/S sont exécutées à l'aide des méthodes synchrones de Node.js.
+méthodes synchrones de la bibliothèque standard de Node.js. Comme rien ne se bloque, il est très raisonnable de développer des systèmes évolutifs en Node.js.
+raisonnables à développer en Node.js.
+
+Si ce langage ne vous est pas familier, vous trouverez un article complet sur le site suivant
+[Blocage et non-blocage][].
+
+---
+
+La conception de Node.js est similaire et influencée par des systèmes tels que Ruby [Event Machine][] et Python [Twisted][].
+[Event Machine][] de Ruby et [Twisted][] de Python. Node.js pousse le modèle d'événement un peu plus loin.
+un peu plus loin. Il présente une boucle d'événements comme une construction d'exécution plutôt que comme une bibliothèque. Dans d'autres systèmes,
+il y a toujours un appel bloquant pour démarrer la boucle d'événements.
+Généralement, le comportement est défini par des rappels au début d'un script et, à la fin, un serveur est démarré par le biais d'un appel bloquant.
+la fin, un serveur est démarré par un appel bloquant comme `EventMachine::run()`.
+Dans Node.js, il n'y a pas de tel appel start-the-event-loop. Node.js entre simplement dans la boucle d'événements après avoir exécuté le script d'entrée. Node.js
+quitte la boucle d'événements lorsqu'il n'y a plus de rappels à effectuer. Ce comportement
+est similaire à celui d'un navigateur JavaScript - la boucle d'événements est cachée à l'utilisateur.
+
+HTTP est un citoyen de première classe dans Node.js, conçu pour la diffusion en continu et la faible latence.
+latence. Node.js est donc bien adapté à la création d'une bibliothèque ou d'un cadre web.
+web ou d'un framework.
+
+Le fait que Node.js soit conçu sans threads ne signifie pas que vous ne pouvez pas tirer
+profiter de plusieurs cœurs dans votre environnement. Les processus enfants peuvent être créés en utilisant notre API [`child_process.fork()`][].
+en utilisant notre API [`child_process.fork()`][], et sont conçus pour être faciles à communiquer.
+communiquer avec. Le module [`cluster`][] est construit sur cette même interface,
+qui vous permet de partager des sockets entre les processus afin d'équilibrer la charge
+sur vos cœurs.
+
+[bloquant ou non bloquant]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+[`child_process.fork()`]: https://nodejs.org/api/child_process.html
+[`cluster`]: https://nodejs.org/api/cluster.html
+[événements machine]: https://github.com/eventmachine/eventmachine
+[tordu]: https://twisted.org/

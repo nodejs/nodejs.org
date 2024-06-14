@@ -177,6 +177,10 @@
       "destination": "/:locale/guides"
     },
     {
+      "source": "/:locale/docs/guides/domain-postmortem",
+      "destination": "/:locale/blog/community/domain-postmortem"
+    },
+    {
       "source": "/:locale/docs/es6",
       "destination": "/:locale/learn/getting-started/ecmascript-2015-es6-and-beyond"
     },
