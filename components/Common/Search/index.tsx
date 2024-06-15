@@ -1,6 +1,7 @@
 'use client';
 
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import { useState, type FC } from 'react';
 
@@ -31,6 +32,7 @@ export const SearchButton: FC = () => {
   const { os } = useDetectOS();
 
   const osCommandKey = os === 'MAC' ? '⌘' : 'Ctrl';
+  const isOSLoading = os === 'LOADING';
 
   return (
     <>
@@ -38,13 +40,19 @@ export const SearchButton: FC = () => {
         type="button"
         onClick={openSearchBox}
         className={styles.searchButton}
+        aria-label={t('components.search.searchBox.placeholder')}
       >
         <MagnifyingGlassIcon className={styles.magnifyingGlassIcon} />
 
         {t('components.search.searchBox.placeholder')}
-        <span title={`${osCommandKey} K`} className={styles.shortcutIndicator}>
-          <kbd>{osCommandKey} K</kbd>
-        </span>
+        <kbd
+          title={`${osCommandKey} K`}
+          className={classNames(styles.shortcutIndicator, {
+            'opacity-0': isOSLoading,
+          })}
+        >
+          <abbr>{osCommandKey} K</abbr>
+        </kbd>
       </button>
 
       {isOpen ? <WithSearchBox onClose={closeSearchBox} /> : null}

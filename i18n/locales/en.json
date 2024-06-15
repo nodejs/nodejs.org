@@ -49,8 +49,8 @@
             "asynchronousFlowControl": "Asynchronous flow control",
             "overviewOfBlockingVsNonBlocking": "Overview of Blocking vs Non-Blocking",
             "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asynchronous Programming and Callbacks",
-            "discoverJavaScriptTimers": "Discover JavaScript Timers",
-            "theNodejsEventLoop": "The Node.js Event Loop",
+            "discoverJavascriptTimers": "Discover JavaScript Timers",
+            "eventLoopTimersAndNexttick": "The Node.js Event Loop",
             "theNodejsEventEmitter": "The Node.js Event Emitter",
             "understandingProcessnexttick": "Understanding process.nextTick()",
             "understandingSetimmediate": "Understanding setImmediate()",
@@ -66,7 +66,7 @@
             "readingFilesWithNodejs": "Reading files with Node.js",
             "writingFilesWithNodejs": "Writing files with Node.js",
             "workingWithFoldersInNodejs": "Working with folders in Node.js",
-            "howToWorkWithFileSystems": "How to work with Different Filesystems"
+            "workingWithDifferentFilesystems": "How to work with Different Filesystems"
           }
         },
         "commandLine": {
@@ -97,6 +97,13 @@
             "poorPerformance": "Poor Performance",
             "flameGraphs": "Flame Graphs"
           }
+        },
+        "testRunner": {
+          "links": {
+            "testRunner": "Test Runner",
+            "introduction": "Discovering Node.js's test runner",
+            "usingTestRunner": "Using Node.js's test runner"
+          }
         }
       },
       "about": {
@@ -105,14 +112,14 @@
           "aboutSide": "About Node.js®",
           "branding": "Branding of Node.js",
           "governance": "Project Governance",
-          "releases": "Previous Releases",
+          "releases": "Node.js Releases",
           "security": "Security Reporting"
         }
       },
       "getInvolved": {
         "links": {
           "getInvolved": "Get Involved",
-          "collabSummit": "Collaborator Summit",
+          "collabSummit": "Collaboration Summit",
           "upcomingEvents": "Upcoming Events",
           "contribute": "Contribute to Node.js",
           "codeOfConduct": "Code of Conduct"
@@ -121,7 +128,7 @@
     },
     "downloadList": {
       "links": {
-        "previousReleases": "Previous Releases",
+        "previousReleases": "Node.js Releases",
         "packageManager": "Installing Node.js via package manager",
         "shaSums": {
           "title": "Signed SHASUMS for release files",
@@ -268,7 +275,7 @@
     "download": {
       "selectCategory": "Categories",
       "categories": {
-        "download": "Prebuilt Installer",
+        "prebuilt-installer": "Prebuilt Installer",
         "prebuilt-binaries": "Prebuilt Binaries",
         "package-manager": "Package Manager",
         "source-code": "Source Code"
@@ -284,7 +291,9 @@
         "platform": "Platform"
       },
       "codeBox": {
-        "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project."
+        "systemManagerWarning": "is not a Node.js package manager. Please ensure you already have {packageManager} installed.",
+        "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project.",
+        "communityWarningReport": "If you encounter issues, please reach out to the package manager's maintainers."
       }
     }
   }

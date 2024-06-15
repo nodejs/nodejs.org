@@ -92,11 +92,11 @@
           "link": "/about/governance",
           "label": "components.navigation.about.links.governance"
         },
-        "releases": {
+        "previousReleases": {
           "link": "/about/previous-releases",
           "label": "components.navigation.about.links.releases"
         },
-        "security": {
+        "securityReporting": {
           "link": "/about/security-reporting",
           "label": "components.navigation.about.links.security"
         }
@@ -113,7 +113,7 @@
           "link": "/about/get-involved/collab-summit",
           "label": "components.navigation.getInvolved.links.collabSummit"
         },
-        "upcomingEvents": {
+        "events": {
           "link": "/about/get-involved/events",
           "label": "components.navigation.getInvolved.links.upcomingEvents"
         },
@@ -201,13 +201,13 @@
               "link": "/learn/asynchronous-work/javascript-asynchronous-programming-and-callbacks",
               "label": "components.navigation.learn.asynchronousWork.links.javascriptAsynchronousProgrammingAndCallbacks"
             },
-            "discoverJavaScriptTimers": {
+            "discoverJavascriptTimers": {
               "link": "/learn/asynchronous-work/discover-javascript-timers",
-              "label": "components.navigation.learn.asynchronousWork.links.discoverJavaScriptTimers"
+              "label": "components.navigation.learn.asynchronousWork.links.discoverJavascriptTimers"
             },
-            "theNodejsEventLoop": {
+            "eventLoopTimersAndNexttick": {
               "link": "/learn/asynchronous-work/event-loop-timers-and-nexttick",
-              "label": "components.navigation.learn.asynchronousWork.links.theNodejsEventLoop"
+              "label": "components.navigation.learn.asynchronousWork.links.eventLoopTimersAndNexttick"
             },
             "theNodejsEventEmitter": {
               "link": "/learn/asynchronous-work/the-nodejs-event-emitter",
@@ -254,9 +254,9 @@
               "link": "/learn/manipulating-files/working-with-folders-in-nodejs",
               "label": "components.navigation.learn.manipulatingFiles.links.workingWithFoldersInNodejs"
             },
-            "howToWorkWithFileSystems": {
+            "workingWithDifferentFilesystems": {
               "link": "/learn/manipulating-files/working-with-different-filesystems",
-              "label": "components.navigation.learn.manipulatingFiles.links.howToWorkWithFileSystems"
+              "label": "components.navigation.learn.manipulatingFiles.links.workingWithDifferentFilesystems"
             }
           }
         },
@@ -330,47 +330,60 @@
               "label": "components.navigation.learn.diagnostics.links.flameGraphs"
             }
           }
+        },
+        "testRunner": {
+          "label": "components.navigation.learn.testRunner.links.testRunner",
+          "items": {
+            "introduction": {
+              "link": "/learn/test-runner/introduction",
+              "label": "components.navigation.learn.testRunner.links.introduction"
+            },
+            "usingTestRunner": {
+              "link": "/learn/test-runner/using-test-runner",
+              "label": "components.navigation.learn.testRunner.links.usingTestRunner"
+            }
+          }
         }
       }
-    },
-    "download": {
-      "items": {
-        "shaSums": {
-          "link": "https://nodejs.org/dist/{nodeVersion}/SHASUMS256.txt.asc",
-          "label": "components.downloadList.links.shaSums.title"
-        },
-        "allDownloads": {
-          "link": "https://nodejs.org/dist/{nodeVersion}/",
-          "label": "components.downloadList.links.allDownloads"
-        },
-        "packageManager": {
-          "link": "/download/package-manager",
-          "label": "components.downloadList.links.packageManager"
-        },
-        "previousReleases": {
-          "link": "/about/previous-releases",
-          "label": "components.downloadList.links.previousReleases"
-        },
-        "nightlyReleases": {
-          "link": "https://nodejs.org/download/nightly/",
-          "label": "components.downloadList.links.nightlyReleases"
-        },
-        "unofficialBuilds": {
-          "link": "https://unofficial-builds.nodejs.org/download/",
-          "label": "components.downloadList.links.unofficialBuilds"
-        },
-        "buildingFromSource": {
-          "link": "https://github.com/nodejs/node/blob/main/BUILDING.md#building-nodejs-on-supported-platforms",
-          "label": "components.downloadList.links.buildingFromSource"
-        },
-        "installingOnLinux": {
-          "link": "https://github.com/nodejs/help/wiki/Installation",
-          "label": "components.downloadList.links.installingOnLinux"
-        },
-        "installingOnWsl": {
-          "link": "https://github.com/nodejs/node/blob/main/BUILDING.md#building-nodejs-on-supported-platforms",
-          "label": "components.downloadList.links.installingOnWsl"
-        }
+    }
+  },
+  "download": {
+    "items": {
+      "shaSums": {
+        "link": "https://nodejs.org/dist/{nodeVersion}/SHASUMS256.txt.asc",
+        "label": "components.downloadList.links.shaSums.title"
+      },
+      "allDownloads": {
+        "link": "https://nodejs.org/dist/{nodeVersion}/",
+        "label": "components.downloadList.links.allDownloads"
+      },
+      "packageManager": {
+        "link": "/download/package-manager",
+        "label": "components.downloadList.links.packageManager"
+      },
+      "previousReleases": {
+        "link": "/about/previous-releases",
+        "label": "components.downloadList.links.previousReleases"
+      },
+      "nightlyReleases": {
+        "link": "https://nodejs.org/download/nightly/",
+        "label": "components.downloadList.links.nightlyReleases"
+      },
+      "unofficialBuilds": {
+        "link": "https://unofficial-builds.nodejs.org/download/",
+        "label": "components.downloadList.links.unofficialBuilds"
+      },
+      "buildingFromSource": {
+        "link": "https://github.com/nodejs/node/blob/main/BUILDING.md#building-nodejs-on-supported-platforms",
+        "label": "components.downloadList.links.buildingFromSource"
+      },
+      "installingOnLinux": {
+        "link": "https://github.com/nodejs/help/wiki/Installation",
+        "label": "components.downloadList.links.installingOnLinux"
+      },
+      "installingOnWsl": {
+        "link": "https://github.com/nodejs/node/blob/main/BUILDING.md#building-nodejs-on-supported-platforms",
+        "label": "components.downloadList.links.installingOnWsl"
       }
     }
   }

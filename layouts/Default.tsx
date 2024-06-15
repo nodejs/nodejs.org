@@ -12,7 +12,9 @@ const DefaultLayout: FC<PropsWithChildren> = ({ children }) => (
     <ArticleLayout>
       <WithSidebar navKeys={[]} />
 
-      <main>{children}</main>
+      <div>
+        <main>{children}</main>
+      </div>
     </ArticleLayout>
 
     <WithFooter />

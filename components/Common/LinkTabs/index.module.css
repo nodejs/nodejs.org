@@ -7,7 +7,7 @@
     border-b-neutral-200
     font-open-sans
     dark:border-b-neutral-800
-    xs:hidden;
+    max-xs:hidden;
 
   .tabsTrigger {
     @apply border-b-2
@@ -36,6 +36,6 @@
     @apply my-6
       hidden
       w-full
-      xs:flex;
+      max-xs:flex;
   }
 }

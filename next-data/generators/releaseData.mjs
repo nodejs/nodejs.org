@@ -4,18 +4,14 @@ import nodevu from '@nodevu/core';
 
 // Gets the appropriate release status for each major release
 const getNodeReleaseStatus = (now, support) => {
-  const { endOfLife, maintenanceStart, ltsStart, currentStart } = support;
+  const { endOfLife, ltsStart, currentStart } = support;
 
-  if (endOfLife && now > new Date(endOfLife)) {
+  if (endOfLife && now >= new Date(endOfLife)) {
     return 'End-of-life';
   }
 
-  if (maintenanceStart && now > new Date(maintenanceStart)) {
-    return 'Maintenance LTS';
-  }
-
-  if (ltsStart && now > new Date(ltsStart)) {
-    return 'Active LTS';
+  if (ltsStart && now >= new Date(ltsStart)) {
+    return 'LTS';
   }
 
   if (currentStart && now >= new Date(currentStart)) {
@@ -58,7 +54,7 @@ const generateReleaseData = () => {
           version: latestVersion.semver.raw,
           versionWithPrefix: `v${latestVersion.semver.raw}`,
           codename: major.support.codename || '',
-          isLts: status === 'Active LTS' || status === 'Maintenance LTS',
+          isLts: status === 'LTS',
           npm: latestVersion.dependencies.npm || '',
           v8: latestVersion.dependencies.v8 || '',
           releaseDate: latestVersion.releaseDate || '',

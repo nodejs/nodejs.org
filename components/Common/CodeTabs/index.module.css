@@ -10,11 +10,11 @@
       border-t
       border-neutral-900
       bg-neutral-950
-      px-4
+      px-2
       pt-3
-      xs:px-2;
+      md:px-4;
 
-    > button {
+    .trigger {
       @apply border-b
         border-b-transparent
         px-1
