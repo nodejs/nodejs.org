@@ -180,6 +180,16 @@
     "default": false
   },
   {
+    "code": "uz",
+    "localName": "O'zbek",
+    "name": "Uzbek",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "uz",
+    "enabled": false,
+    "default": false
+  },
+  {
     "code": "zh-cn",
     "localName": "简体中文",
     "name": "Simplified Chinese",
