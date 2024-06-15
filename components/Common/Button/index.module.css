@@ -22,7 +22,7 @@
       text-white
       dark:text-neutral-200;
 
-    &:hover {
+    &:hover:not([aria-disabled='true']) {
       @apply bg-neutral-800;
     }
 
@@ -44,7 +44,7 @@
       text-white
       shadow-sm;
 
-    &:hover {
+    &:hover:not([aria-disabled='true']) {
       @apply border-green-700
         bg-green-700
         text-white;
@@ -66,7 +66,7 @@
       text-neutral-800
       dark:text-neutral-200;
 
-    &:hover {
+    &:hover:not([aria-disabled='true']) {
       @apply bg-neutral-100
         text-neutral-800
         dark:bg-neutral-900
@@ -127,7 +127,7 @@
       @apply opacity-50;
     }
 
-    &:hover {
+    &:hover:not([aria-disabled='true']) {
       @apply bg-green-600/20;
     }
 

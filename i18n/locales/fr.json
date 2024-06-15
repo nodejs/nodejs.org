@@ -49,8 +49,8 @@
             "asynchronousFlowControl": "Contrôle de l'exécution asynchrone",
             "overviewOfBlockingVsNonBlocking": "Vue d'ensemble des opérations bloquantes vs non bloquantes",
             "javascriptAsynchronousProgrammingAndCallbacks": "Programmation asynchrone en JavaScript et Callbacks",
-            "discoverJavaScriptTimers": "Découvrez les minuteurs JavaScript",
-            "theNodejsEventLoop": "La boucle d'évènement Node.js",
+            "discoverJavascriptTimers": "Découvrez les minuteurs JavaScript",
+            "eventLoopTimersAndNexttick": "La boucle d'évènement Node.js",
             "theNodejsEventEmitter": "L'émetteur d'événement Node.js",
             "understandingProcessnexttick": "Comprendre process.nextTick()",
             "understandingSetimmediate": "Comprendre setImmediate()",
@@ -66,7 +66,7 @@
             "readingFilesWithNodejs": "Lire des fichiers avec Node.js",
             "writingFilesWithNodejs": "Écrire des fichiers avec Node.js",
             "workingWithFoldersInNodejs": "Travailler avec des dossiers dans Node.js",
-            "howToWorkWithFileSystems": "Comment travailler avec différents systèmes de fichiers"
+            "workingWithDifferentFilesystems": "Comment travailler avec différents systèmes de fichiers"
           }
         },
         "commandLine": {
@@ -97,14 +97,22 @@
             "poorPerformance": "Live debugging",
             "flameGraphs": "Flame Graphs"
           }
+        },
+        "testRunner": {
+          "links": {
+            "testRunner": "Exécuteur de test",
+            "introduction": "Découverte de l'exécuteur de tests de Node.js",
+            "usingTestRunner": "Utilisation de l'exécuteur de tests de Node.js"
+          }
         }
       },
       "about": {
         "links": {
           "about": "À propos de Node.js",
           "aboutSide": "À propos de Node.js®",
+          "branding": "L'image de marque de Node.js",
           "governance": "Gouvernance du Projet",
-          "releases": "Versions antérieures",
+          "releases": "Versions de Node.js",
           "security": "Rapport de sécurité"
         }
       },
@@ -120,7 +128,7 @@
     },
     "downloadList": {
       "links": {
-        "previousReleases": "Versions antérieures",
+        "previousReleases": "Versions de Node.js",
         "packageManager": "Installer Node.js via le gestionnaire de paquets",
         "shaSums": {
           "title": "SHASUMS signés pour les fichiers des versions",
@@ -267,7 +275,7 @@
     "download": {
       "selectCategory": "Catégories",
       "categories": {
-        "download": "Installateur pré-construit",
+        "prebuilt-installer": "Installateur préconstruit",
         "prebuilt-binaries": "Binaires préconstruits",
         "package-manager": "Gestionnaire de paquets",
         "source-code": "Code source"
@@ -283,7 +291,9 @@
         "platform": "Plateforme"
       },
       "codeBox": {
-        "communityWarning": "Les gestionnaires de paquets et leurs scripts d'installation ne sont pas maintenus par le projet Node.js."
+        "systemManagerWarning": "n'est pas un gestionnaire de paquets Node.js. Veuillez vous assurer que {packageManager} est déjà installé.",
+        "communityWarning": "Les gestionnaires de paquets et leurs scripts d'installation ne sont pas maintenus par le projet Node.js.",
+        "communityWarningReport": "Si vous rencontrez des problèmes, veuillez contacter les responsables du gestionnaire de paquets."
       }
     }
   }

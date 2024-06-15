@@ -13,11 +13,13 @@ const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
     <ArticleLayout>
       <WithSidebar navKeys={['about', 'getInvolved']} />
 
-      <main>{children}</main>
+      <div>
+        <main>{children}</main>
 
-      <WithMetaBar />
+        <WithMetaBar />
+      </div>
 
-      <WithBreadcrumbs />
+      <WithBreadcrumbs navKeys={['about', 'getInvolved']} />
     </ArticleLayout>
   </>
 );

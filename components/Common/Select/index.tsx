@@ -37,6 +37,7 @@ type SelectProps = {
   inline?: boolean;
   onChange?: (value: string) => void;
   className?: string;
+  ariaLabel?: string;
 };
 
 const Select: FC<SelectProps> = ({
@@ -47,6 +48,7 @@ const Select: FC<SelectProps> = ({
   inline,
   onChange,
   className,
+  ariaLabel,
 }) => {
   const id = useId();
 
@@ -72,7 +74,7 @@ const Select: FC<SelectProps> = ({
         className
       )}
     >
-      {label && !inline && (
+      {label && (
         <label className={styles.label} htmlFor={id}>
           {label}
         </label>
@@ -81,7 +83,7 @@ const Select: FC<SelectProps> = ({
       <SelectPrimitive.Root value={defaultValue} onValueChange={onChange}>
         <SelectPrimitive.Trigger
           className={styles.trigger}
-          aria-label={label}
+          aria-label={ariaLabel}
           id={id}
         >
           <SelectPrimitive.Value placeholder={placeholder} />
