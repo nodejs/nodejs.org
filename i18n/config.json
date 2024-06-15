@@ -110,6 +110,16 @@
     "default": false
   },
   {
+    "code": "mn",
+    "localName": "Монгол",
+    "name": "Mongolian",
+    "langDir": "ltr",
+    "dateFormat": "YYYY.MM.DD",
+    "hrefLang": "mn",
+    "enabled": false,
+    "default": false
+  },
+  {
     "code": "pt-br",
     "localName": "Português do Brasil",
     "name": "Brazilian Portuguese",
