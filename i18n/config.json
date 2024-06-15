@@ -30,6 +30,16 @@
     "default": false
   },
   {
+    "code": "el",
+    "localName": "Ελληνικά",
+    "name": "Greek",
+    "langDir": "ltr",
+    "dateFormat": "DD/MM/YYYY",
+    "hrefLang": "el-GR",
+    "enabled": false,
+    "default": false
+  },
+  {
     "code": "en",
     "localName": "English",
     "name": "English",
@@ -130,6 +140,16 @@
     "default": false
   },
   {
+    "code": "pl",
+    "localName": "Polski",
+    "name": "Polish",
+    "langDir": "ltr",
+    "dateFormat": "DD/MM/YYYY",
+    "hrefLang": "pl",
+    "enabled": false,
+    "default": false
+  },
+  {
     "code": "pt-br",
     "localName": "Português do Brasil",
     "name": "Brazilian Portuguese",
@@ -166,6 +186,16 @@
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "ru",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "sv",
+    "localName": "Svenska",
+    "name": "Swedish",
+    "langDir": "ltr",
+    "dateFormat": "YYYY-MM-DD",
+    "hrefLang": "sv",
     "enabled": false,
     "default": false
   },
@@ -216,26 +246,6 @@
     "langDir": "ltr",
     "dateFormat": "YYYY/MM/DD",
     "hrefLang": "zh-Hant",
-    "enabled": false,
-    "default": false
-  },
-  {
-    "code": "pl",
-    "localName": "Polski",
-    "name": "Polish",
-    "langDir": "ltr",
-    "dateFormat": "DD/MM/YYYY",
-    "hrefLang": "pl",
-    "enabled": false,
-    "default": false
-  },
-  {
-    "code": "sv",
-    "localName": "Svenska",
-    "name": "Swedish",
-    "langDir": "ltr",
-    "dateFormat": "YYYY-MM-DD",
-    "hrefLang": "sv",
     "enabled": false,
     "default": false
   }
