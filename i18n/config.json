@@ -27,7 +27,7 @@
     "dateFormat": "DD/MM/YYYY",
     "hrefLang": "el-GR",
     "enabled": false,
-    "default": true
+    "default": false
   },
   {
     "code": "en",
