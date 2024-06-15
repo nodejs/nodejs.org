@@ -19,7 +19,7 @@ const Badge: FC<PropsWithChildren<BadgeProps>> = ({
   <Link className={`${styles.wrapper} ${styles[kind]}`} {...args}>
     {badgeText && <span className={styles.badge}>{badgeText}</span>}
     <span className={styles.message}>{children}</span>
-    <ArrowRightIcon className={styles.icon} />
+    {args.href && <ArrowRightIcon className={styles.icon} />}
   </Link>
 );
 

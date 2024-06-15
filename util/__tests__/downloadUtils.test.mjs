@@ -103,8 +103,8 @@ describe('mapCategoriesToTabs', () => {
       page: 'download',
       categories: [
         {
-          category: 'download',
-          label: 'Download',
+          category: 'prebuilt-binaries',
+          label: 'Prebuilt Binaries',
         },
         {
           category: 'package-manager',
@@ -115,7 +115,11 @@ describe('mapCategoriesToTabs', () => {
     });
 
     expect(result).toEqual([
-      { key: 'download', label: 'Download', link: '/download/current' },
+      {
+        key: 'prebuilt-binaries',
+        label: 'Prebuilt Binaries',
+        link: '/download/prebuilt-binaries/current',
+      },
       {
         key: 'package-manager',
         label: 'Package Manager',
@@ -129,8 +133,8 @@ describe('mapCategoriesToTabs', () => {
       page: 'download',
       categories: [
         {
-          category: 'download',
-          label: 'Download',
+          category: 'prebuilt-binaries',
+          label: 'Prebuilt Binaries',
         },
         {
           category: 'package-manager',
@@ -140,7 +144,11 @@ describe('mapCategoriesToTabs', () => {
     });
 
     expect(result).toEqual([
-      { key: 'download', label: 'Download', link: '/download' },
+      {
+        key: 'prebuilt-binaries',
+        label: 'Prebuilt Binaries',
+        link: '/download/prebuilt-binaries',
+      },
       {
         key: 'package-manager',
         label: 'Package Manager',

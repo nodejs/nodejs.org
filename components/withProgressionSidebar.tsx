@@ -1,3 +1,5 @@
+'use client';
+
 import type { RichTranslationValues } from 'next-intl';
 import type { FC } from 'react';
 

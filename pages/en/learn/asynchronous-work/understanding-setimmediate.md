@@ -51,3 +51,11 @@ start();
 ```
 
 This code will first call `start()`, then call `foo()` in `process.nextTick queue`. After that, it will handle `promises microtask queue`, which prints `bar` and adds `zoo()` in `process.nextTick queue` at the same time. Then it will call `zoo()` which has just been added. In the end, the `baz()` in `macrotask queue` is called.
+
+The principle aforementioned holds true in CommonJS cases, but keep in mind in ES Modules, e.g. `mjs` files, the execution order will be different:
+
+```js
+// start bar foo zoo baz
+```
+
+This is because the ES Module being loaded is wrapped as an asynchronous operation, and thus the entire script is actually already in the `promises microtask queue`. So when the promise is immediately resolved, its callback is appended to the `microtask` queue. Node.js will attempt to clear the queue until moving to any other queue, and hence you will see it outputs `bar` first.

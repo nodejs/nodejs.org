@@ -1,5 +1,5 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Tabs from '../index';
@@ -38,7 +38,9 @@ describe('Tabs', () => {
 
     expect(screen.getByRole('tabpanel')).toHaveTextContent('Package Manager');
 
-    await userEvent.click(screen.getByRole('tab', { name: 'Source Code' }));
+    await act(async () => {
+      await userEvent.click(screen.getByRole('tab', { name: 'Source Code' }));
+    });
 
     expect(screen.getByRole('tabpanel')).toHaveTextContent('Source Code');
   });

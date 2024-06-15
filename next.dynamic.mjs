@@ -79,7 +79,7 @@ const getDynamicRouter = async () => {
    * This method returns a list of all routes that exist for a given locale
    *
    * @param {string} locale
-   * @returns {Array<string>}
+   * @returns {Promise<Array<string>>}
    */
   const getRoutesByLanguage = async (locale = defaultLocale.code) => {
     const shouldIgnoreStaticRoute = pathname =>
@@ -187,7 +187,7 @@ const getDynamicRouter = async () => {
    *
    * @param {string} locale
    * @param {string} path
-   * @returns {import('next').Metadata}
+   * @returns {Promise<import('next').Metadata>}
    */
   const _getPageMetadata = async (locale = defaultLocale.code, path = '') => {
     const pageMetadata = { ...PAGE_METADATA };
