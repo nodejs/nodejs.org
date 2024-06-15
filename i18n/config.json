@@ -10,6 +10,16 @@
     "default": false
   },
   {
+    "code": "bn",
+    "localName": "বাংলা",
+    "name": "Bengali",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "bn",
+    "enabled": false,
+    "default": false
+  },
+  {
     "code": "de",
     "localName": "Deutsch",
     "name": "German",
