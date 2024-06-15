@@ -80,6 +80,16 @@
     "default": false
   },
   {
+    "code": "he",
+    "localName": "עִברִית",
+    "name": "Hebrew",
+    "langDir": "rtl",
+    "dateFormat": "DD-MM-YYYY",
+    "hrefLang": "he",
+    "enabled": false,
+    "default": false
+  },
+  {
     "code": "id",
     "localName": "Bahasa Indonesia",
     "name": "Indonesian",
