@@ -1,5 +1,5 @@
 import { setContext, setTags } from '@sentry/nextjs';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import type { FC } from 'react';
 
@@ -9,7 +9,11 @@ import WithLayout from '@/components/withLayout';
 import { ENABLE_STATIC_EXPORT, VERCEL_REVALIDATE } from '@/next.constants.mjs';
 import { PAGE_VIEWPORT, DYNAMIC_ROUTES } from '@/next.dynamic.constants.mjs';
 import { dynamicRouter } from '@/next.dynamic.mjs';
-import { availableLocaleCodes, defaultLocale } from '@/next.locales.mjs';
+import {
+  allLocaleCodes,
+  availableLocaleCodes,
+  defaultLocale,
+} from '@/next.locales.mjs';
 import { MatterProvider } from '@/providers/matterProvider';
 
 type DynamicStaticPaths = { path: Array<string>; locale: string };
@@ -67,7 +71,14 @@ const getPage: FC<DynamicParams> = async ({ params }) => {
     // Forces the current locale to be the Default Locale
     unstable_setRequestLocale(defaultLocale.code);
 
-    return notFound();
+    if (!allLocaleCodes.includes(locale)) {
+      // when the locale is not listed in the locales, return NotFound
+      return notFound();
+    }
+
+    // Redirect to the default locale path
+    const pathname = dynamicRouter.getPathname(path);
+    return redirect(`/${defaultLocale.code}/${pathname}`);
   }
 
   // Configures the current Locale to be the given Locale of the Request
@@ -78,7 +89,7 @@ const getPage: FC<DynamicParams> = async ({ params }) => {
 
   const staticGeneratedLayout = DYNAMIC_ROUTES.get(pathname);
 
-  // If the current patname is a statically generated route
+  // If the current pathname is a statically generated route
   // it means it does not have a Markdown file nor exists under the filesystem
   // but it is a valid route with an assigned layout that should be rendered
   if (staticGeneratedLayout !== undefined) {

@@ -4,6 +4,7 @@ import {
   DocumentDuplicateIcon,
   CodeBracketIcon,
 } from '@heroicons/react/24/outline';
+import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 import { Fragment, isValidElement, useRef } from 'react';
@@ -63,12 +64,17 @@ const transformCode = (code: ReactNode, language: string): ReactNode => {
   );
 };
 
-type CodeBoxProps = { language: string; showCopyButton?: boolean };
+type CodeBoxProps = {
+  language: string;
+  showCopyButton?: boolean;
+  className?: string;
+};
 
 const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   children,
   language,
   showCopyButton = true,
+  className,
 }) => {
   const ref = useRef<HTMLPreElement>(null);
 
@@ -94,7 +100,12 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
 
   return (
     <div className={styles.root}>
-      <pre ref={ref} className={styles.content} tabIndex={0}>
+      <pre
+        ref={ref}
+        className={classNames(styles.content, className)}
+        tabIndex={0}
+        dir="ltr"
+      >
         {transformCode(children, language)}
       </pre>
 

@@ -1,0 +1,61 @@
+---
+title: Node.js درباره
+layout: about
+---
+
+درباره ®Node.js
+
+به عنوان یک رانتایم جاوااسکریپتِ غیرهمگام و رویداد محور، Node.js برای ساخت برنامه‌های تحت شبکه مقیاس‌پذیر طراحی شده است. در مثال "سلام دنیا" زیر، کانکشن متعددی می‌توانند به صورت همزمان پردازش شوند. با هر کانکشن، callback فراخوانی می‌شود، اما اگر کاری برای انجام وجود نداشته باشد، Node.js به حالت خواب می‌رود.
+
+```cjs
+const { createServer } = require('node:http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+```mjs
+import { createServer } from 'node:http';
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+این برخلاف مدل رایج‌تر همزمانی امروزی است، که در آن از Theradهای سیستم‌عامل استفاده می‌شود. شبکه مبتنی بر Therad نسبتاً ناکارآمد و بسیار دشوار برای استفاده است. علاوه بر این، کاربران Node.js نگران قفل شدن فرایند نیستند، زیرا قفلی وجود ندارد. تقریباً هیچ فانکشنی در Node.js مستقیماً I/O را انجام نمی‌دهد، بنابراین فرایند هرگز بلوکه نمی‌شود مگر زمانی که I/O با استفاده از روش‌های همگام از کتابخانه استاندارد Node.js انجام شود. از آنجایی که چیزی بلوکه نمی‌شود، پیاده سازی سیستم‌های مقیاس‌پذیر در Node.js بسیار منطقی است.
+
+اگر برخی از این اصطلاحات برایتان جدید است، می‌توانید مقاله کاملی را در مورد [Blocking vs. Non-Blocking][] مطالعه کنید.
+
+---
+
+Node.js در طراحی خود شبیه به سیستم‌هایی مانند [Event Machine][] در Ruby و [Twisted][] در Python است و از آنها الهام گرفته است. Node.js مدل رویداد را یک گام جلوتر می‌برد. حلقه رویداد را به عنوان یک ساختار زمان اجرا و نه یک کتابخانه ارائه می‌دهد. در سایر سیستم‌ها، همیشه یک blocking call برای شروع حلقه رویداد وجود دارد.
+معمولاً رفتار از طریق callback‌ها در ابتدای اسکریپت تعریف می‌شود، و در انتها یک سرور از طریق یک blocking call مانند `EventMachine::run()‎` راه‌اندازی می‌شود. در Node.js چنین تماسی برای شروع حلقه رویداد وجود ندارد. Node.js پس از اجرای اسکریپت ورودی، به طور ساده وارد حلقه رویداد می‌شود. Node.js زمانی از حلقه رویداد خارج می‌شود که دیگر callback‌یی برای اجرا وجود نداشته باشد. این رفتار شبیه جاوااسکریپت مرورگر است - حلقه رویداد از کاربر پنهان است.
+
+HTTP در Node.js از جایگاه ویژه‌ای برخوردار است و با در نظر گرفتن استریمینگ و کاهش تاخیر طراحی شده است. این ویژگی باعث می‌شود Node.js برای پایه‌گذاری یک کتابخانه یا فریمورک وب مناسب باشد.
+
+اگرچه Node.js بدون استفاده از threadها طراحی شده است، اما این به این معنی نیست که نمی‌توانید از چندهسته‌ای بودن محیط خود بهره ببرید. می‌توانید فرایندهای فرزند را با استفاده از API مربوط به خود یعنی [`child_process.fork()‎`][] ایجاد کنید و به گونه ای طراحی شده اند که برقراری ارتباط با آنها آسان باشد. بر پایه همان رابط، ماژول [`cluster`][] نیز بنا شده که به شما امکان می‌دهد سوکت‌ها را بین فرایندها به اشتراک بگذارید تا بتوانید بار را بر روی هسته‌های خود متعادل کنید.
+
+[blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+[`child_process.fork()‎`]: https://nodejs.org/api/child_process.html
+[`cluster`]: https://nodejs.org/api/cluster.html
+[event machine]: https://github.com/eventmachine/eventmachine
+[twisted]: https://twisted.org/

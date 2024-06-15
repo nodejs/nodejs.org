@@ -39,6 +39,18 @@ main {
   h3,
   h4,
   h5,
+  h6 {
+    &[id] a {
+      @apply text-neutral-900
+        dark:text-white;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
   h6,
   strong {
     @apply font-semibold
@@ -63,10 +75,11 @@ main {
       dark:text-white;
   }
 
-  a {
+  a,
+  .anchor {
     @apply text-green-600
       dark:text-green-400
-      xs:underline;
+      max-xs:font-semibold;
 
     &:hover {
       @apply text-green-900
@@ -74,12 +87,12 @@ main {
     }
 
     &[role='button'] {
-      @apply xs:no-underline;
+      @apply max-xs:font-regular;
     }
 
     &:has(code) {
-      @apply xs:decoration-neutral-800
-        dark:xs:decoration-neutral-200;
+      @apply max-xs:decoration-neutral-800
+        dark:max-xs:decoration-neutral-200;
     }
   }
 
@@ -131,8 +144,8 @@ main {
         text-neutral-900
         dark:border-neutral-800
         dark:text-white
-        xs:block
-        xs:border-l-0;
+        max-xs:block
+        max-xs:border-l-0;
 
       > a {
         @apply pr-2;
@@ -147,7 +160,7 @@ main {
       @apply sm:border-b-0;
 
       &:last-child {
-        @apply xs:border-b-0;
+        @apply max-xs:border-b-0;
       }
     }
 

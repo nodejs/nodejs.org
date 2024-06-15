@@ -3,6 +3,7 @@ export type BlogPreviewType = 'announcements' | 'release' | 'vulnerability';
 export interface BlogPost {
   title: string;
   author: string;
+  username: string;
   date: Date;
   categories: Array<string>;
   slug: string;

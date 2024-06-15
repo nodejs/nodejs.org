@@ -1,30 +1,33 @@
 ---
-title: Collab Summit
+title: Collaboration Summit
 layout: about
 ---
 
-# Collaborator Summit
+# Collaboration Summit
 
-Node.js's Collaborator Summit is an un-conference for bringing current and
+Node.js's Collaboration Summit is an un-conference for bringing current and
 potential contributors together to discuss Node.js with lively collaboration,
-education, and knowledge sharing. Committees and working groups come together
-twice per year to make important decisions while also being able to work on some
-exciting efforts they want to push forward in-person.
+education, and knowledge sharing. Teams, working groups and contributors
+from the community come together twice per year to have discussions that
+help decision-making while also working on some exciting efforts they
+want to push forward in-person.
 
 ## Who attends?
 
-Anyone is welcome to attend Collab Summit. During the
-summit, leaders will help onboard new contributors to groups they'd love to help
-prior to integrating them into the working sessions.
+The Collaboration Summit is primarily attended by existing contributors and
+community members, but it also welcomes those who are not yet a contributor
+and want to get onboard. If you are new to contributing to Node.js, the
+Collaboration Summit can be a good opportunity to help you learn what is
+happening within the community and contribute with the skills you have
+and would like to hone.
 
-This is your opportunity to learn what is happening within the community to jump
-in and contribute with the skills you have and would like to hone.
+Prior to the summit, contributors and community members send session proposals to
+create a schedule. Attendees can familiarize themselves with the session before
+getting onsite, having the general collaborator discussions, and then diving
+into sessions. There will also be plenty of opportunities for hallway tracks
+and brainstorms.
 
-Working groups will put together a schedule so that people can
-familiarize themselves before folks get onsite, having the general collaborator
-discussions, and then dive into breakout sessions.
-
-We'd love to see you at Collab Summit! Check out the [Summit repo](https://github.com/nodejs/summit)
-for upcoming and past Collab Summits and have a look at the
+For information about upcoming and past Collaboration Summits, check out the
+[Summit repo](https://github.com/openjs-foundation/summit). Have a look at the
 [issues filed](https://github.com/nodejs/summit/issues) that share what
-individual working groups and committees are looking to discuss in-person.
+contributors and community members are proposing to discuss in-person.

@@ -600,7 +600,7 @@ myReadableStream.on('data', chunk => {
 ```
 
 ```mjs
-import { Readable } from 'stream';
+import { Readable } from 'node:stream';
 
 // Create a custom Readable stream
 const myReadableStream = new Readable({

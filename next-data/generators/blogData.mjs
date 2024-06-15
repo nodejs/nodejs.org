@@ -27,6 +27,7 @@ const getFrontMatter = (filename, source) => {
   const {
     title = 'Untitled',
     author = 'The Node.js Project',
+    username,
     date = new Date(),
     category = 'uncategorized',
   } = graymatter(source).data;
@@ -47,7 +48,7 @@ const getFrontMatter = (filename, source) => {
   // this is the url used for the blog post it based on the category and filename
   const slug = `/blog/${category}/${basename(filename, extname(filename))}`;
 
-  return { title, author, date: new Date(date), categories, slug };
+  return { title, author, username, date: new Date(date), categories, slug };
 };
 
 /**

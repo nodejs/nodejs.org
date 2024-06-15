@@ -22,7 +22,7 @@ fs.stat('/Users/joe/test.txt', (err, stats) => {
 ```
 
 ```mjs
-import fs from 'node:fs/promises';
+import fs from 'node:fs';
 
 fs.stat('/Users/joe/test.txt', (err, stats) => {
   if (err) {
@@ -45,7 +45,7 @@ try {
 ```
 
 ```mjs
-import fs from 'node:fs/promises';
+import fs from 'node:fs';
 
 try {
   const stats = fs.statSync('/Users/joe/test.txt');

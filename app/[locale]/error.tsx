@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import Button from '@/components/Common/Button';
+import GlowingBackdrop from '@/components/Common/GlowingBackdrop';
 import CenteredLayout from '@/layouts/Centered';
 
 const ErrorPage: FC<{ error: Error }> = ({ error }) => {
@@ -14,7 +15,7 @@ const ErrorPage: FC<{ error: Error }> = ({ error }) => {
 
   return (
     <CenteredLayout>
-      <div className="glowingBackdrop" />
+      <GlowingBackdrop />
 
       <main>
         500
