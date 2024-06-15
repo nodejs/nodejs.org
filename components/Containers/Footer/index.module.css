@@ -6,10 +6,10 @@
     border-t
     border-neutral-200
     bg-white
-    px-8
     py-4
     dark:border-neutral-900
     dark:bg-neutral-950
+    sm:px-8
     md:flex-row
     md:justify-between
     md:py-5;

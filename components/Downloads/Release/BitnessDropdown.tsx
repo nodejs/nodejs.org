@@ -63,21 +63,29 @@ const BitnessDropdown: FC = () => {
   // this can be an optimisation for the future
   // to remove this logic from this component
   useEffect(() => {
-    const mappedBittnessesValues = bitnessItems[os].map(({ value }) => value);
+    const mappedBitnessValues = bitnessItems[os].map(({ value }) => value);
 
-    const currentBittnessExcluded =
+    const currentBitnessExcluded =
       // Different OSs support different Bitnessess, hence we should also check
       // if besides the current bitness not being supported for a given release version
       // we also should check if it is not supported by the OS
       disabledItems.includes(String(bitness)) ||
-      !mappedBittnessesValues.includes(String(bitness));
+      !mappedBitnessValues.includes(String(bitness));
 
-    const nonExcludedBitness = mappedBittnessesValues.find(
-      bittness => !disabledItems.includes(bittness)
+    const nonExcludedBitness = mappedBitnessValues.find(
+      bitness => !disabledItems.includes(bitness)
     );
 
-    if (currentBittnessExcluded && nonExcludedBitness) {
-      setBitness(nonExcludedBitness);
+    if (currentBitnessExcluded && nonExcludedBitness) {
+      // We set it as a Number for cases where it is 64 or 86 otherwise we are
+      // setting it as a string (ARMv7, ARMv6, etc.)
+      const numericBitness = Number(nonExcludedBitness);
+
+      setBitness(
+        numericBitness.toString() === nonExcludedBitness
+          ? numericBitness
+          : nonExcludedBitness
+      );
     }
     // we shouldn't react when "actions" change
     // eslint-disable-next-line react-hooks/exhaustive-deps

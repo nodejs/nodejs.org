@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import Button from '@/components/Common/Button';
+import GlowingBackdrop from '@/components/Common/GlowingBackdrop';
 import CenteredLayout from '@/layouts/Centered';
 
 const NotFoundPage: FC = () => {
@@ -13,7 +14,7 @@ const NotFoundPage: FC = () => {
 
   return (
     <CenteredLayout>
-      <div className="glowingBackdrop" />
+      <GlowingBackdrop />
 
       <main>
         404

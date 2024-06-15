@@ -3,6 +3,7 @@
   "description": "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
   "favicon": "/static/images/favicons/favicon.png",
   "accentColor": "#333",
+  "logoVariant": "pride",
   "twitter": {
     "username": "@nodejs",
     "card": "summary",
@@ -28,21 +29,21 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2024-04-03T03:00:00.000Z",
-      "endDate": "2024-04-10T17:30:00.000Z",
-      "text": "Security releases are now available!",
-      "link": "https://nodejs.org/en/blog/vulnerability/april-2024-security-releases/",
-      "type": "warning"
+      "startDate": "2024-04-24T03:00:00.000Z",
+      "endDate": "2024-05-17T17:30:00.000Z",
+      "text": "Node.js v22 is now available!",
+      "link": "https://nodejs.org/en/blog/announcements/v22-release-announce",
+      "type": "default"
     }
   },
   "websiteBadges": {
     "index": {
-      "startDate": "2024-03-24T13:34:50.449Z",
-      "endDate": "2024-03-31T13:34:50.449Z",
+      "startDate": "2024-04-24T00:00:00.000Z",
+      "endDate": "2024-05-24T00:00:00.000Z",
       "kind": "default",
-      "title": "New Blog Post",
-      "text": "Diving into the Node.js Website Redesign",
-      "link": "https://nodejs.org/en/blog/announcements/diving-into-the-nodejs-website-redesign"
+      "title": "Survey",
+      "text": "Help us shape the next 10 years of Node.js",
+      "link": "https://linuxfoundation.surveymonkey.com/r/nodenext10survey24"
     }
   }
 }

@@ -1,8 +1,7 @@
 import type { PackageManager } from '@/types/release';
 import type { UserOS } from '@/types/userOS';
 
-// A utility enum to help convert `userOs` data type to user-readable format
-export enum OperatingSystem {
+export enum OperatingSystemLabel {
   WIN = 'Windows',
   MAC = 'macOS',
   LINUX = 'Linux',
@@ -10,40 +9,52 @@ export enum OperatingSystem {
   OTHER = 'Other',
 }
 
+export enum PackageManagerLabel {
+  NVM = 'nvm',
+  FNM = 'fnm',
+  BREW = 'Brew',
+  CHOCO = 'Chocolatey',
+  DOCKER = 'Docker',
+}
+
 export const operatingSystemItems = [
   {
-    label: OperatingSystem.WIN,
+    label: OperatingSystemLabel.WIN,
     value: 'WIN' as UserOS,
   },
   {
-    label: OperatingSystem.MAC,
+    label: OperatingSystemLabel.MAC,
     value: 'MAC' as UserOS,
   },
   {
-    label: OperatingSystem.LINUX,
+    label: OperatingSystemLabel.LINUX,
     value: 'LINUX' as UserOS,
   },
   {
-    label: OperatingSystem.AIX,
+    label: OperatingSystemLabel.AIX,
     value: 'AIX' as UserOS,
   },
 ];
 
 export const platformItems = [
   {
-    label: 'NVM',
+    label: PackageManagerLabel.NVM,
     value: 'NVM' as PackageManager,
   },
   {
-    label: 'Brew',
+    label: PackageManagerLabel.FNM,
+    value: 'FNM' as PackageManager,
+  },
+  {
+    label: PackageManagerLabel.BREW,
     value: 'BREW' as PackageManager,
   },
   {
-    label: 'Chocolatey',
+    label: PackageManagerLabel.CHOCO,
     value: 'CHOCO' as PackageManager,
   },
   {
-    label: 'Docker',
+    label: PackageManagerLabel.DOCKER,
     value: 'DOCKER' as PackageManager,
   },
 ];
@@ -156,8 +167,5 @@ export const mapCategoriesToTabs = ({
   categories.map(({ category, label }) => ({
     key: category,
     label: label,
-    link:
-      category === 'download'
-        ? `/${[page, subCategory].filter(Boolean).join('/')}`
-        : `/${[page, category, subCategory].filter(Boolean).join('/')}`,
+    link: `/${[page, category, subCategory].filter(Boolean).join('/')}`,
   }));

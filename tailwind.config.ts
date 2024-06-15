@@ -118,7 +118,7 @@ export default {
       'ibm-plex-mono': ['var(--font-ibm-plex-mono)'],
     },
     extend: {
-      screens: { xs: { max: '670px', min: '0px' } },
+      screens: { xs: '670px' },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-subtle':

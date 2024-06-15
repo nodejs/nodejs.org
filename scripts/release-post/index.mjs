@@ -28,7 +28,7 @@ import handlebars from 'handlebars';
 import { format } from 'prettier';
 
 import { downloadsTable } from './downloadsTable.mjs';
-import prettierConfig from '../../.prettierrc.json' assert { type: 'json' };
+import prettierConfig from '../../.prettierrc.json' with { type: 'json' };
 import { getRelativePath } from '../../next.helpers.mjs';
 
 const URLS = {

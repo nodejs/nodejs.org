@@ -2,7 +2,7 @@
 node_modules
 npm-debug.log
 .npm
-.env.local
+.env.*
 
 # Next.js Build Output
 .next

@@ -5,6 +5,7 @@ import { captureException } from '@sentry/nextjs';
 import type { FC } from 'react';
 
 import Button from '@/components/Common/Button';
+import GlowingBackdrop from '@/components/Common/GlowingBackdrop';
 import BaseLayout from '@/layouts/Base';
 import CenteredLayout from '@/layouts/Centered';
 
@@ -16,7 +17,7 @@ const GlobalErrorPage: FC<{ error: Error }> = ({ error }) => {
       <body>
         <BaseLayout>
           <CenteredLayout>
-            <div className="glowingBackdrop" />
+            <GlowingBackdrop />
 
             <main>
               500

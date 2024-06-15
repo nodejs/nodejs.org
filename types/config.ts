@@ -13,6 +13,8 @@ export interface OGConfig {
   imgHeight: string;
 }
 
+export type LogoVariant = 'default' | 'pride';
+
 export interface SiteConfig {
   title: string;
   description: string;
@@ -21,6 +23,7 @@ export interface SiteConfig {
   lightAccentColor: string;
   darkAccentColor: string;
   og: OGConfig;
+  logoVariant: LogoVariant;
   twitter: TwitterConfig;
   rssFeeds: Array<RSSFeed>;
   websiteBanners: Record<string, WebsiteBanner>;

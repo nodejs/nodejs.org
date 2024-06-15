@@ -1,12 +1,12 @@
 import {
-  Dedupe,
-  Breadcrumbs,
-  HttpContext,
-  LinkedErrors,
   BrowserClient,
-  getCurrentHub,
   defaultStackParser,
   makeFetchTransport,
+  setCurrentClient,
+  breadcrumbsIntegration,
+  dedupeIntegration,
+  httpContextIntegration,
+  linkedErrorsIntegration,
 } from '@sentry/nextjs';
 
 import {
@@ -28,10 +28,10 @@ export const sentryClient = new BrowserClient({
   stackParser: defaultStackParser,
   // All supported Integrations by us
   integrations: [
-    new Dedupe(),
-    new HttpContext(),
-    new Breadcrumbs(),
-    new LinkedErrors(),
+    dedupeIntegration(),
+    httpContextIntegration(),
+    breadcrumbsIntegration(),
+    linkedErrorsIntegration(),
   ],
   // We only want to allow ingestion from these pre-selected allowed URLs
   // Note that the vercel.app prefix is for our Pull Request Branch Previews
@@ -59,10 +59,14 @@ export const sentryClient = new BrowserClient({
 });
 
 // Attaches this Browser Client to Sentry
-getCurrentHub().bindClient(sentryClient);
+setCurrentClient(sentryClient);
 
 // Loads this Dynamically to avoid adding this to the main bundle (initial load)
-import('@sentry/nextjs').then(({ Replay, BrowserTracing }) => {
-  sentryClient.addIntegration(new Replay({ maskAllText: false }));
-  sentryClient.addIntegration(new BrowserTracing());
-});
+const lazyLoadSentryIntegrations = async () => {
+  const { addIntegration, replayIntegration, browserTracingIntegration } =
+    await import('@sentry/nextjs');
+  addIntegration(replayIntegration({ maskAllText: false }));
+  addIntegration(browserTracingIntegration());
+};
+
+lazyLoadSentryIntegrations();

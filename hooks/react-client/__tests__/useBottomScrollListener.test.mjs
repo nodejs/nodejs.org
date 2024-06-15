@@ -1,5 +1,4 @@
-import { fireEvent, renderHook } from '@testing-library/react';
-import { act } from 'react-dom/test-utils';
+import { fireEvent, renderHook, act } from '@testing-library/react';
 
 import useBottomScrollListener from '@/hooks/react-client/useBottomScrollListener';
 

@@ -1,22 +1,20 @@
 .wrapper {
   @apply flex
+    w-full
     flex-col
     items-start
     gap-8
     overflow-y-auto
-    border-l
-    border-l-neutral-200
+    border-neutral-200
     px-4
     py-6
-    dark:border-l-neutral-900
-    md:max-w-xs
-    lg:px-6
-    xs:mt-8
-    xs:w-full
-    xs:border-l-0
-    xs:border-t
-    xs:border-t-neutral-200
-    xs:dark:border-t-neutral-900;
+    [overflow-wrap:anywhere]
+    dark:border-neutral-900
+    lg:px-6;
+
+  dl {
+    @apply w-full;
+  }
 
   dt {
     @apply mb-2
@@ -40,8 +38,8 @@
         text-neutral-900
         underline
         dark:text-white
-        xs:inline-block
-        xs:py-1;
+        max-xs:inline-block
+        max-xs:py-1;
 
       &:hover {
         @apply text-neutral-800
