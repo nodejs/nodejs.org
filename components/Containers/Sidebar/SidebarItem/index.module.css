@@ -6,10 +6,22 @@
     dark:text-neutral-200;
 
   a {
+    @apply inline-flex
+      items-center
+      gap-2
+      p-2;
+  }
+
+  .label {
     @apply w-full
-      p-2
       text-sm
       font-regular;
+  }
+
+  .icon {
+    @apply size-3
+      text-neutral-500
+      dark:text-neutral-200;
   }
 }
 

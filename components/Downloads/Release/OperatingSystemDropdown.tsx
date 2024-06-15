@@ -1,11 +1,12 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useContext, useEffect, useMemo } from 'react';
+import { useContext, useEffect } from 'react';
 import type { FC } from 'react';
 
 import Select from '@/components/Common/Select';
 import Apple from '@/components/Icons/Platform/Apple';
+import Aix from '@/components/Icons/Platform/Generic';
 import Linux from '@/components/Icons/Platform/Linux';
 import Microsoft from '@/components/Icons/Platform/Microsoft';
 import { useDetectOS } from '@/hooks/react-client';
@@ -22,7 +23,7 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
   exclude = [],
 }) => {
   const { os: userOS } = useDetectOS();
-  const { platform, os, setOS } = useContext(ReleaseContext);
+  const { os, setOS } = useContext(ReleaseContext);
   const t = useTranslations();
 
   // we shouldn't react when "actions" change
@@ -33,50 +34,33 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
   // disabled OSs, Platforms, based on specific criteria
   // this can be an optimisation for the future
   // to remove this logic from this component
-  const disabledItems = useMemo(() => {
-    const disabledItems = exclude;
-
-    if (platform === 'BREW') {
-      disabledItems.push('WIN');
-    }
-
-    if (platform === 'DOCKER') {
-      disabledItems.push('LINUX');
-    }
-
-    return disabledItems;
-  }, [exclude, platform]);
-
-  // @TODO: We should have a proper utility that gives
-  // disabled OSs, Platforms, based on specific criteria
-  // this can be an optimisation for the future
-  // to remove this logic from this component
   useEffect(() => {
-    const currentOSExcluded = disabledItems.includes(os);
+    const currentOSExcluded = exclude.includes(os);
 
     const nonExcludedOS = operatingSystemItems
       .map(({ value }) => value)
-      .find(os => !disabledItems.includes(os));
+      .find(os => !exclude.includes(os));
 
     if (currentOSExcluded && nonExcludedOS) {
       setOS(nonExcludedOS);
     }
     // we shouldn't react when "actions" change
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [os, disabledItems]);
+  }, [os, exclude]);
 
   return (
     <Select
-      label={t('layouts.download.dropdown.os')}
       values={formatDropdownItems({
         items: operatingSystemItems,
-        disabledItems,
+        disabledItems: exclude,
         icons: {
           WIN: <Microsoft width={16} height={16} />,
           MAC: <Apple width={16} height={16} />,
           LINUX: <Linux width={16} height={16} />,
+          AIX: <Aix width={16} height={16} />,
         },
       })}
+      ariaLabel={t('layouts.download.dropdown.os')}
       defaultValue={os}
       onChange={value => setOS(value as UserOS)}
       className="w-[8.5rem]"

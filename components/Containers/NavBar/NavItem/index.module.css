@@ -18,6 +18,11 @@
       dark:text-neutral-200;
   }
 
+  &:hover {
+    @apply bg-neutral-100
+      dark:bg-neutral-900;
+  }
+
   &.nav {
     .label {
       @apply text-neutral-900
@@ -45,7 +50,8 @@
     }
 
     &:hover {
-      @apply bg-neutral-100 dark:bg-neutral-900;
+      @apply bg-neutral-100
+        dark:bg-neutral-900;
     }
   }
 }

@@ -19,6 +19,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
   const { frontmatter } = useClientContext();
 
   const authors = mapAuthorToCardAuthors(frontmatter.author);
+
   const type = mapBlogCategoryToPreviewType(frontmatter.category);
 
   return (

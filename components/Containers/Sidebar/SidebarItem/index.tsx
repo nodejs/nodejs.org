@@ -1,3 +1,4 @@
+import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import type { FC } from 'react';
 
 import ActiveLink from '@/components/Common/ActiveLink';
@@ -13,7 +14,9 @@ type SidebarItemProps = {
 const SidebarItem: FC<SidebarItemProps> = ({ label, link }) => (
   <li className={styles.sideBarItem}>
     <ActiveLink href={link} activeClassName={styles.active}>
-      {label}
+      <span className={styles.label}>{label}</span>
+
+      {link.startsWith('http') && <ArrowUpRightIcon className={styles.icon} />}
     </ActiveLink>
   </li>
 );

@@ -32,16 +32,18 @@ const ReleaseCodeBox: FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [release.versionWithPrefix, os, platform]);
 
+  const codeLanguage = os === 'WIN' ? 'PowerShell' : 'Bash';
+
   return (
-    <div className="mb-2 mt-6 flex min-h-80 flex-col gap-2">
-      {code && (
-        <CodeBox language="Bash">
-          <code dangerouslySetInnerHTML={{ __html: code }} />
-        </CodeBox>
-      )}
+    <div className="mb-2 mt-6 flex flex-col gap-2">
+      <CodeBox language={codeLanguage} className="min-h-[15.5rem]">
+        <code dangerouslySetInnerHTML={{ __html: code }} />
+      </CodeBox>
 
       <span className="text-center text-xs text-neutral-800 dark:text-neutral-200">
         {t('layouts.download.codeBox.communityWarning')}
+        <br />
+        <b>{t('layouts.download.codeBox.communityWarningReport')}</b>
       </span>
     </div>
   );

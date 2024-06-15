@@ -32,9 +32,10 @@ const WithNavBar: FC = () => {
           availableLanguages: availableLocales,
           onChange: locale => replace(pathname!, { locale: locale.code }),
         }}
-        navItems={navigationItems.map(([, { label, link }]) => ({
+        navItems={navigationItems.map(([, { label, link, target }]) => ({
           link,
           text: label,
+          target,
         }))}
       />
     </div>

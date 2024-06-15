@@ -46,7 +46,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        uses: step-security/harden-runner@f086349bfa2bd1361f7909c78558e816508cdc10 # v2.8.0
         with:
           egress-policy: audit
 
@@ -65,7 +65,7 @@ jobs:
         run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
 
       - name: Git Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
         with:
           # Since we checkout the HEAD of the current Branch, if the Pull Request comes from a Fork
           # we want to clone the fork's repository instead of the base repository
@@ -125,6 +125,15 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
 
       - name: Sync Orama Cloud
-        if: github.ref == 'refs/heads/main'
+        # We only want to sync the Orama Cloud production indexes on `push` events.
+        # We also want to sync the Orama Cloud preview (deployment) indexes on `pull_request_target` events.
+        # We also want to ensure that the sync only happens on the `ubuntu-latest` runner to avoid duplicate syncs
+        # or Windows-based path issues.
+        env:
+          ORAMA_INDEX_ID: ${{ github.event_name == 'push' && secrets.ORAMA_PRODUCTION_INDEX_ID || secrets.ORAMA_INDEX_ID }}
+          ORAMA_SECRET_KEY: ${{ github.event_name == 'push' && secrets.ORAMA_PRODUCTION_SECRET_KEY || secrets.ORAMA_SECRET_KEY }}
+        if: |
+          (matrix.os == 'ubuntu-latest') &&
+          ((github.event_name == 'push') || (github.event_name == 'pull_request_target'))
         run: |
           npm run sync-orama
