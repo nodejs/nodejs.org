@@ -5,22 +5,22 @@ import {
   ChevronLeftIcon,
 } from '@heroicons/react/24/outline';
 import type { Results, Nullable } from '@orama/orama';
-import classNames from 'classnames';
 import { useState, useRef, useEffect } from 'react';
 import type { FC } from 'react';
 
 import styles from '@/components/Common/Search/States/index.module.css';
 import { WithAllResults } from '@/components/Common/Search/States/WithAllResults';
-import { WithEmptyState } from '@/components/Common/Search/States/WithEmptyState';
 import { WithError } from '@/components/Common/Search/States/WithError';
 import { WithNoResults } from '@/components/Common/Search/States/WithNoResults';
 import { WithPoweredBy } from '@/components/Common/Search/States/WithPoweredBy';
 import { WithSearchResult } from '@/components/Common/Search/States/WithSearchResult';
-import { useClickOutside } from '@/hooks/react-client';
+import Tabs from '@/components/Common/Tabs';
+import { useClickOutside, useKeyboardCommands } from '@/hooks/react-client';
 import { useRouter } from '@/navigation.mjs';
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '@/next.constants.mjs';
 import { search as oramaSearch, getInitialFacets } from '@/next.orama.mjs';
 import type { SearchDoc } from '@/types';
+import { searchHitToLinkPath } from '@/util/searchUtils';
 
 type Facets = { [key: string]: number };
 
@@ -31,6 +31,7 @@ type SearchBoxProps = { onClose: () => void };
 export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState<SearchResults>(null);
+  const [selectedResult, setSelectedResult] = useState<number>();
   const [selectedFacet, setSelectedFacet] = useState<number>(0);
   const [searchError, setSearchError] = useState<Nullable<Error>>(null);
 
@@ -56,10 +57,19 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
       .catch(setSearchError);
   };
 
-  useClickOutside(searchBoxRef, () => {
+  const reset = () => {
+    setSearchTerm('');
+    setSearchResults(null);
+    setSelectedResult(undefined);
+    setSelectedFacet(0);
+  };
+
+  const handleClose = () => {
     reset();
     onClose();
-  });
+  };
+
+  useClickOutside(searchBoxRef, handleClose);
 
   useEffect(() => {
     searchInputRef.current?.focus();
@@ -78,19 +88,54 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
     [searchTerm, selectedFacet]
   );
 
-  const reset = () => {
-    setSearchTerm('');
-    setSearchResults(null);
-    setSelectedFacet(0);
+  useKeyboardCommands(cmd => {
+    if (searchError || !searchResults || searchResults.count <= 0) {
+      return;
+    }
+
+    switch (true) {
+      case cmd === 'down' && selectedResult === undefined:
+        setSelectedResult(0);
+        break;
+      case cmd === 'down' &&
+        selectedResult != undefined &&
+        selectedResult < searchResults.count &&
+        selectedResult < DEFAULT_ORAMA_QUERY_PARAMS.limit - 1:
+        setSelectedResult(selectedResult + 1);
+        break;
+      case cmd === 'up' && selectedResult != undefined && selectedResult != 0:
+        setSelectedResult(selectedResult - 1);
+        break;
+      case cmd === 'enter':
+        handleEnter();
+        break;
+      default:
+    }
+  });
+
+  const handleEnter = () => {
+    if (!searchResults || !selectedResult) {
+      return;
+    }
+
+    const selectedHit = searchResults.hits[selectedResult];
+
+    if (!selectedHit) {
+      return;
+    }
+
+    handleClose();
+    router.push(searchHitToLinkPath(selectedHit));
   };
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    handleClose();
     router.push(`/search?q=${searchTerm}&section=${selectedFacetName}`);
-    onClose();
   };
 
-  const changeFacet = (idx: number) => setSelectedFacet(idx);
+  const changeFacet = (idx: string) => setSelectedFacet(Number(idx));
 
   const filterBySection = () => {
     if (selectedFacet === 0) {
@@ -131,6 +176,16 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
             <form onSubmit={onSubmit}>
               <input
                 ref={searchInputRef}
+                aria-activedescendant={
+                  selectedResult !== undefined
+                    ? `search-hit-${selectedResult}`
+                    : undefined
+                }
+                aria-autocomplete="list"
+                aria-controls="fulltext-results-container"
+                aria-expanded={Boolean(!searchError && searchResults?.count)}
+                autoComplete="off"
+                role="combobox"
                 type="search"
                 className={styles.searchBoxInput}
                 onChange={event => setSearchTerm(event.target.value)}
@@ -140,36 +195,38 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
           </div>
 
           <div className={styles.fulltextSearchSections}>
-            {Object.keys(facets).map((facetName, idx) => (
-              <button
-                key={facetName}
-                className={classNames(styles.fulltextSearchSection, {
-                  [styles.fulltextSearchSectionSelected]: selectedFacet === idx,
-                })}
-                onClick={() => changeFacet(idx)}
-              >
-                {facetName}
-                <span className={styles.fulltextSearchSectionCount}>
-                  ({facets[facetName].toLocaleString('en')})
-                </span>
-              </button>
-            ))}
+            <Tabs
+              activationMode="manual"
+              defaultValue="0"
+              autoFocus={true}
+              tabs={Object.keys(facets).map((facetName, idx) => ({
+                key: facetName,
+                label: facetName,
+                secondaryLabel: `(${facets[facetName].toLocaleString('en')})`,
+                value: idx.toString(),
+              }))}
+              onValueChange={changeFacet}
+            />
           </div>
 
-          <div className={styles.fulltextResultsContainer}>
+          <div
+            id="fulltext-results-container"
+            className={styles.fulltextResultsContainer}
+            role="listbox"
+          >
             {searchError && <WithError />}
 
-            {!searchError && !searchTerm && <WithEmptyState />}
-
-            {!searchError && searchTerm && (
+            {!searchError && (
               <>
                 {searchResults &&
                   searchResults.count > 0 &&
-                  searchResults.hits.map(hit => (
+                  searchResults.hits.map((hit, idx) => (
                     <WithSearchResult
                       key={hit.id}
                       hit={hit}
                       searchTerm={searchTerm}
+                      selected={selectedResult === idx}
+                      idx={idx}
                     />
                   ))}
 

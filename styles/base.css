@@ -1,17 +1,19 @@
 * {
-  @apply subpixel-antialiased;
+  @apply subpixel-antialiased
+    motion-safe:transition-colors;
 }
 
 html,
 body {
-  @apply size-full;
+  @apply size-full
+    [scrollbar-gutter:auto];
 }
 
 body {
-  @apply scroll-smooth
-    bg-white
+  @apply bg-white
     font-open-sans
     text-neutral-950
+    motion-safe:scroll-smooth
     dark:bg-neutral-950
     dark:text-white;
 }

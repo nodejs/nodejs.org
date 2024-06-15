@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 import styles from './index.module.css';
 
-type AvatarProps = {
+export type AvatarProps = {
   src: string;
   alt: string;
 };

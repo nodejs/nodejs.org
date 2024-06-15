@@ -72,7 +72,8 @@
     dark:bg-neutral-950;
 
   .item {
-    @apply truncate
+    @apply select-none
+      truncate
       px-2.5
       py-1.5
       text-sm

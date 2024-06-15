@@ -14,15 +14,17 @@ const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
     <ArticleLayout>
       <WithProgressionSidebar navKey="learn" />
 
-      <main>
-        {children}
+      <div>
+        <main>
+          {children}
 
-        <WithSidebarCrossLinks navKey="learn" />
-      </main>
+          <WithSidebarCrossLinks navKey="learn" />
+        </main>
 
-      <WithMetaBar />
+        <WithMetaBar />
+      </div>
 
-      <WithBreadcrumbs />
+      <WithBreadcrumbs navKeys={['learn']} />
     </ArticleLayout>
   </>
 );

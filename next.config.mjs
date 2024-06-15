@@ -86,6 +86,15 @@ const nextConfig = {
     // Tree-shakes modules from Sentry Bundle
     config.plugins.push(new webpack.DefinePlugin(SENTRY_EXTENSIONS));
 
+    // Ignore Sentry's Critical Dependency from Open Telemetry
+    // (which is genuinely a cause of concern, but there is no work around at the moment)
+    config.ignoreWarnings = [
+      {
+        module: /@opentelemetry\/instrumentation/,
+        message: /Critical dependency/,
+      },
+    ];
+
     return config;
   },
   experimental: {
@@ -100,10 +109,15 @@ const nextConfig = {
       '@radix-ui/react-select',
       '@radix-ui/react-toast',
       'tailwindcss',
+      'shiki',
     ],
     // Removes the warning regarding the WebPack Build Worker
     webpackBuildWorker: false,
+    // Enables Next.js's Instrumentation Hook
+    instrumentationHook: true,
   },
+  // To import ESM-only packages with next dev --turbo. Source: https://github.com/vercel/next.js/issues/63318#issuecomment-2079677098
+  transpilePackages: ['shiki'],
 };
 
 /** @type {import('@sentry/cli').SentryCliOptions} */
@@ -139,10 +153,8 @@ const nextWithIntl = withNextIntl('./i18n.tsx')(nextConfig);
 const nextWithSentry = withSentryConfig(
   // Next.js Config with i18n Configuration
   nextWithIntl,
-  // Default Sentry Settings
-  sentrySettings,
-  // Default Sentry Extension Configuration
-  sentryConfig
+  // Sentrz SDK and WebPack Settings
+  { ...sentrySettings, ...sentryConfig }
 );
 
 // Decides whether enabling Sentry or not

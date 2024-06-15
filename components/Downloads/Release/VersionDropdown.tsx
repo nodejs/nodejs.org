@@ -8,7 +8,7 @@ import Select from '@/components/Common/Select';
 import { ReleaseContext } from '@/providers/releaseProvider';
 
 const getDropDownStatus = (version: string, status: string) => {
-  if (status === 'Active LTS') {
+  if (status === 'LTS') {
     return `${version} (LTS)`;
   }
 
@@ -25,7 +25,7 @@ const VersionDropdown: FC = () => {
 
   return (
     <Select
-      label={t('layouts.download.dropdown.version')}
+      ariaLabel={t('layouts.download.dropdown.version')}
       values={releases.map(({ status, versionWithPrefix }) => ({
         value: versionWithPrefix,
         label: getDropDownStatus(versionWithPrefix, status),

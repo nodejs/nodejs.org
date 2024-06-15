@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://nodejs.org">Node.js</a> Website built using Next.js with TypeScript, SCSS and MDXv2
+  <a href="https://nodejs.org">Node.js</a> Website built using Next.js with TypeScript, CSS Modules/Tailwind, and MDXv3
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@
 
 ```bash
 npm ci
-npx turbo serve
+npx turbo dev
 
 # listening at localhost:3000
 ```

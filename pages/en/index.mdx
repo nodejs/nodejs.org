@@ -16,7 +16,7 @@ layout: home
   </div>
 
   <div>
-    <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
+    <WithNodeRelease status={['LTS']}>
       {({ release }) => (
         <>
           <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
@@ -28,7 +28,7 @@ layout: home
         </>
       )}
     </WithNodeRelease>
-    <WithNodeRelease status={"Current"}>
+    <WithNodeRelease status={['Current']}>
       {({ release }) => (
         <small>
           Want new features sooner?

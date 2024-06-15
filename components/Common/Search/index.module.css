@@ -1,14 +1,12 @@
 .searchButton {
-  @apply relative
+  @apply flex
     w-52
+    gap-2
     rounded-md
     bg-neutral-200
-    py-2
-    pl-9
-    pr-4
-    text-left
+    p-2
     text-sm
-    text-neutral-700
+    text-neutral-800
     hover:bg-neutral-300
     hover:text-neutral-900
     dark:bg-neutral-900
@@ -18,8 +16,20 @@
 }
 
 .magnifyingGlassIcon {
-  @apply absolute
-    left-2
-    top-[8px]
-    size-5;
+  @apply size-5;
+}
+
+.shortcutIndicator {
+  @apply invisible
+    flex
+    flex-1
+    items-center
+    justify-end
+    self-center
+    px-1
+    font-ibm-plex-mono
+    text-xs
+    motion-safe:transition-opacity
+    motion-safe:duration-100
+    md:visible;
 }

@@ -10,11 +10,6 @@ import { getShiki, highlightToHast } from './util/getHighlighter';
 // to attribute the current language of the <pre> element
 const languagePrefix = 'language-';
 
-// We do a top-level await, since the Unist-tree visitor
-// is synchronous, and it makes more sense to do a top-level
-// await, rather than an await inside the visitor function
-const memoizedShiki = await getShiki();
-
 /**
  * Retrieve the value for the given meta key.
  *
@@ -60,6 +55,11 @@ function isCodeBlock(node) {
 
 export default function rehypeShikiji() {
   return async function (tree) {
+    // We do a top-level await, since the Unist-tree visitor
+    // is synchronous, and it makes more sense to do a top-level
+    // await, rather than an await inside the visitor function
+    const memoizedShiki = await getShiki();
+
     visit(tree, 'element', (_, index, parent) => {
       const languages = [];
       const displayNames = [];
