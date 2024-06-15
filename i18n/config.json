@@ -70,6 +70,16 @@
     "default": false
   },
   {
+    "code": "fi",
+    "localName": "Suomi",
+    "name": "Finnish",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "fi",
+    "enabled": false,
+    "default": false
+  },
+  {
     "code": "fr",
     "localName": "Français",
     "name": "French",
@@ -156,6 +166,16 @@
     "langDir": "ltr",
     "dateFormat": "YYYY.MM.DD",
     "hrefLang": "mn",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "nl",
+    "localName": "Nederlands",
+    "name": "Dutch",
+    "langDir": "ltr",
+    "dateFormat": "DD-MM-YYYY",
+    "hrefLang": "nl",
     "enabled": false,
     "default": false
   },
