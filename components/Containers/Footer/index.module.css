@@ -49,19 +49,9 @@
 }
 
 .mobileFooter {
-  display: none;
+  @apply block md:hidden;
 }
 
 .desktopFooter {
-  display: block;
-}
-
-@media (max-width: 640px) {
-  .mobileFooter {
-    display: block;
-  }
-
-  .desktopFooter {
-    display: none;
-  }
+  @apply hidden md:block;
 }
