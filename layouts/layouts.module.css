@@ -43,7 +43,7 @@
         xl:px-18;
     }
 
-    > *:last-child {
+    > *:nth-child(2) {
       @apply mt-8
         border-t
         grid-in-[metabar]
