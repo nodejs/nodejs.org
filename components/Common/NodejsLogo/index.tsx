@@ -1,8 +1,7 @@
 import type { FC } from 'react';
 
-import NodejsDark from '@/components/Icons/Logos/NodejsDark';
+import Nodejs from '@/components/Icons/Logos/Nodejs';
 import NodejsDarkPride from '@/components/Icons/Logos/NodejsDarkPride';
-import NodejsLight from '@/components/Icons/Logos/NodejsLight';
 import NodejsLightPride from '@/components/Icons/Logos/NodejsLightPride';
 import type { LogoVariant } from '@/types';
 
@@ -22,8 +21,7 @@ const NodejsLogo: FC<NodejsLogoProps> = ({ variant = 'default' }) => (
     )}
     {variant === 'default' && (
       <>
-        <NodejsDark className={style.nodejsLogoDark} />
-        <NodejsLight className={style.nodejsLogoLight} />
+        <Nodejs className={style.nodejsLogo} />
       </>
     )}
   </>
