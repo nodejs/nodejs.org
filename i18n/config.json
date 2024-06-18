@@ -276,7 +276,7 @@
     "langDir": "ltr",
     "dateFormat": "YYYY/MM/DD",
     "hrefLang": "zh-Hans",
-    "enabled": false,
+    "enabled": true,
     "default": false
   },
   {
