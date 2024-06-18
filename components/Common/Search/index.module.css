@@ -1,6 +1,6 @@
 .searchButton {
   @apply flex
-    w-52
+    w-60
     gap-2
     rounded-md
     bg-neutral-200
