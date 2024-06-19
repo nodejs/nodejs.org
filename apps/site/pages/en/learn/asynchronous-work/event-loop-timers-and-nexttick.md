@@ -8,7 +8,7 @@ layout: learn
 ## What is the Event Loop?
 
 The event loop is what allows Node.js to perform non-blocking I/O
-operations — despite the fact that JavaScript is single-threaded — by
+operations — despite the fact that a single JavaScript thread is used by default — by
 offloading operations to the system kernel whenever possible.
 
 Since most modern kernels are multi-threaded, they can handle multiple
