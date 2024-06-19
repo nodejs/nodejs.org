@@ -36,7 +36,7 @@ const Footer: FC = () => {
 
       <div className={styles.sectionSecondary}>
         <NavItem type="footer" href={openJSlink.link}>
-          &copy; {t(openJSlink.text)}
+          &copy; {openJSlink.text}
         </NavItem>
 
         <div className={styles.social}>
