@@ -1,3 +1,4 @@
+
 {
   "type": "module",
   "private": true,
@@ -15,10 +16,6 @@
   "engines": {
     "node": "v20"
   },
-  "packageManager": "npm@10.7.0",
-  "workspaces": [
-    "apps/*"
-  ],
   "scripts": {
     "scripts:release-post": "cross-env NODE_NO_WARNINGS=1 node scripts/release-post/index.mjs",
     "dev": "cross-env NODE_NO_WARNINGS=1 next dev --turbo",
@@ -73,8 +70,6 @@
     "github-slugger": "~2.0.0",
     "glob": "~10.4.1",
     "gray-matter": "~4.0.3",
-    "husky": "9.0.11",
-    "lint-staged": "15.2.5",
     "next": "~14.2.4",
     "next-intl": "~3.14.1",
     "next-themes": "~0.3.0",
@@ -131,7 +126,6 @@
     "stylelint-config-standard": "36.0.0",
     "stylelint-order": "6.0.4",
     "stylelint-selector-bem-pattern": "4.0.0",
-    "turbo": "2.0.3",
     "user-agent-data-types": "0.4.2"
   }
 }
