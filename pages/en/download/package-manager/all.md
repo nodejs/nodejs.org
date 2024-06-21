@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: download
 title: Installing Node.js via package manager
 ---
 
