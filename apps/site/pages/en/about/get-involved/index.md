@@ -32,4 +32,4 @@ If you are looking for a more informal place to discuss Node.js, there are sever
 Please note that these are not officially endorsed by the Node.js project. Also follow their respective code of conduct/rules.
 
 - [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
-- [ES Community](https://discord.gg/zJsuc6vvhn) is a Discord community for French-speaking javascript developers.
+- [ES Community](https://discord.gg/zJsuc6vvhn) is a Discord community for French-speaking JavaScript developers.
