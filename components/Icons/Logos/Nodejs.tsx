@@ -1,7 +1,17 @@
 import classNames from 'classnames';
 import type { FC, SVGProps } from 'react';
 
-const Nodejs: FC<SVGProps<SVGSVGElement>> = ({ className, ...props }) => (
+import type { LogoVariant } from '@/types';
+
+type HexagonGridProps = SVGProps<SVGSVGElement> & {
+  variant?: LogoVariant;
+};
+
+const Nodejs: FC<HexagonGridProps> = ({
+  className,
+  variant = 'default',
+  ...props
+}) => (
   <svg
     width="267"
     height="80"
@@ -56,61 +66,117 @@ const Nodejs: FC<SVGProps<SVGSVGElement>> = ({ className, ...props }) => (
         d="M181.551 48.7155C181.689 48.6228 181.874 48.6228 182.012 48.7155L185.739 50.8919C185.877 50.9845 185.969 51.1235 185.969 51.3087V55.6615C185.969 55.8468 185.877 55.9858 185.739 56.0784L182.012 58.2548C181.874 58.3474 181.689 58.3474 181.551 58.2548L177.824 56.0784C177.686 55.9858 177.594 55.8468 177.594 55.6615V51.3087C177.594 51.1235 177.686 50.9845 177.824 50.8919L181.551 48.7155Z"
         fill="#5FA04E"
       />
-      <path
-        d="M76.3012 28.9882C75.5647 28.5716 74.6903 28.5716 73.954 28.9882L54.5792 40.241C53.8429 40.6578 53.4287 41.4449 53.4287 42.2786V64.83C53.4287 65.6637 53.8889 66.4507 54.5792 66.8676L73.954 78.1203C74.6903 78.5369 75.5647 78.5369 76.3012 78.1203L95.6758 66.8676C96.4123 66.4507 96.8263 65.6637 96.8263 64.83V42.2786C96.8263 41.4449 96.3662 40.6578 95.6758 40.241L76.3012 28.9882Z"
-        fill="url(#paint0_linear_1803_3458)"
-      />
-      <path
-        d="M95.7221 40.241L76.2554 28.9882C76.0714 28.8956 75.8412 28.803 75.6572 28.7568L53.8433 66.3119C54.0273 66.5433 54.2575 66.7286 54.4874 66.8676L73.9544 78.1203C74.5067 78.4443 75.1508 78.5369 75.749 78.3517L96.2284 40.6578C96.0904 40.4726 95.9063 40.3336 95.7221 40.241Z"
-        fill="url(#paint1_linear_1803_3458)"
-      />
-      <path
-        d="M95.7224 66.8669C96.2747 66.5427 96.6889 65.9871 96.8729 65.385L75.5651 28.7098C75.013 28.6172 74.4146 28.6633 73.9085 28.9876L54.5796 40.1939L75.427 78.4437C75.7031 78.3973 76.0255 78.3046 76.3016 78.1659L95.7224 66.8669Z"
-        fill="url(#paint2_linear_1803_3458)"
-      />
+
+      {variant === 'pride' ? (
+        <>
+          <mask
+            id="mask1_12_17"
+            style={{ maskType: 'alpha' }}
+            maskUnits="userSpaceOnUse"
+            x="53"
+            y="28"
+            width="44"
+            height="51"
+          >
+            <path
+              d="M76.2211 28.9482C75.4847 28.5316 74.6105 28.5316 73.8743 28.9482L54.5024 40.1993C53.7662 40.616 53.3521 41.4029 53.3521 42.2366V64.7846C53.3521 65.6181 53.8122 66.405 54.5024 66.8219L73.8743 78.0729C74.6105 78.4894 75.4847 78.4894 76.2211 78.0729L95.5929 66.8219C96.3288 66.405 96.7431 65.6181 96.7431 64.7846V42.2366C96.7431 41.4029 96.2832 40.616 95.5929 40.1993L76.2211 28.9482Z"
+              fill="white"
+            />
+          </mask>
+          <g mask="url(#mask1_12_17)">
+            <path
+              d="M103.17 53.5459H53.4209V61.8043H103.17V53.5459Z"
+              fill="#008026"
+            />
+            <path
+              d="M103.17 61.8042H53.4209V70.1621H103.17V61.8042Z"
+              fill="#004DFF"
+            />
+            <path
+              d="M103.17 37.0293H53.4209V45.2877H103.17V37.0293Z"
+              fill="#FF8C00"
+            />
+            <path
+              d="M103.17 45.2876H53.4209V53.546H103.17V45.2876Z"
+              fill="#FFED00"
+            />
+            <path
+              d="M103.17 28.6714H53.4209V37.0293H103.17V28.6714Z"
+              fill="#E40303"
+            />
+            <path
+              d="M103.17 70.1626H53.4209V78.421H103.17V70.1626Z"
+              fill="#750787"
+            />
+          </g>
+        </>
+      ) : (
+        <>
+          <path
+            d="M76.3012 28.9882C75.5647 28.5716 74.6903 28.5716 73.954 28.9882L54.5792 40.241C53.8429 40.6578 53.4287 41.4449 53.4287 42.2786V64.83C53.4287 65.6637 53.8889 66.4507 54.5792 66.8676L73.954 78.1203C74.6903 78.5369 75.5647 78.5369 76.3012 78.1203L95.6758 66.8676C96.4123 66.4507 96.8263 65.6637 96.8263 64.83V42.2786C96.8263 41.4449 96.3662 40.6578 95.6758 40.241L76.3012 28.9882Z"
+            fill="url(#paint0_linear_1803_3458)"
+          />
+          <path
+            d="M95.7221 40.241L76.2554 28.9882C76.0714 28.8956 75.8412 28.803 75.6572 28.7568L53.8433 66.3119C54.0273 66.5433 54.2575 66.7286 54.4874 66.8676L73.9544 78.1203C74.5067 78.4443 75.1508 78.5369 75.749 78.3517L96.2284 40.6578C96.0904 40.4726 95.9063 40.3336 95.7221 40.241Z"
+            fill="url(#paint1_linear_1803_3458)"
+          />
+          <path
+            d="M95.7224 66.8669C96.2747 66.5427 96.6889 65.9871 96.8729 65.385L75.5651 28.7098C75.013 28.6172 74.4146 28.6633 73.9085 28.9876L54.5796 40.1939L75.427 78.4437C75.7031 78.3973 76.0255 78.3046 76.3016 78.1659L95.7224 66.8669Z"
+            fill="url(#paint2_linear_1803_3458)"
+          />
+        </>
+      )}
     </g>
-    <defs>
-      <linearGradient
-        id="paint0_linear_1803_3458"
-        x1="83.0183"
-        y1="37.3689"
-        x2="65.3246"
-        y2="73.2407"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#3F873F" />
-        <stop offset="0.3296" stopColor="#3F8B3D" />
-        <stop offset="0.6367" stopColor="#3E9638" />
-        <stop offset="0.9341" stopColor="#3DA92E" />
-        <stop offset="1" stopColor="#3DAE2B" />
-      </linearGradient>
-      <linearGradient
-        id="paint1_linear_1803_3458"
-        x1="72.1833"
-        y1="56.1876"
-        x2="121.552"
-        y2="19.937"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop offset="0.1376" stopColor="#3F873F" />
-        <stop offset="0.4016" stopColor="#52A044" />
-        <stop offset="0.7129" stopColor="#64B749" />
-        <stop offset="0.9081" stopColor="#6ABF4B" />
-      </linearGradient>
-      <linearGradient
-        id="paint2_linear_1803_3458"
-        x1="52.7188"
-        y1="53.5463"
-        x2="97.551"
-        y2="53.5463"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop offset="0.0919165" stopColor="#6ABF4B" />
-        <stop offset="0.2871" stopColor="#64B749" />
-        <stop offset="0.5984" stopColor="#52A044" />
-        <stop offset="0.8624" stopColor="#3F873F" />
-      </linearGradient>
-    </defs>
+    {variant === 'pride' ? (
+      <defs>
+        <clipPath id="clip0_12_17">
+          <rect width="267" height="79.988" fill="white" />
+        </clipPath>
+      </defs>
+    ) : (
+      <defs>
+        <linearGradient
+          id="paint0_linear_1803_3458"
+          x1="83.0183"
+          y1="37.3689"
+          x2="65.3246"
+          y2="73.2407"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#3F873F" />
+          <stop offset="0.3296" stopColor="#3F8B3D" />
+          <stop offset="0.6367" stopColor="#3E9638" />
+          <stop offset="0.9341" stopColor="#3DA92E" />
+          <stop offset="1" stopColor="#3DAE2B" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_1803_3458"
+          x1="72.1833"
+          y1="56.1876"
+          x2="121.552"
+          y2="19.937"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.1376" stopColor="#3F873F" />
+          <stop offset="0.4016" stopColor="#52A044" />
+          <stop offset="0.7129" stopColor="#64B749" />
+          <stop offset="0.9081" stopColor="#6ABF4B" />
+        </linearGradient>
+        <linearGradient
+          id="paint2_linear_1803_3458"
+          x1="52.7188"
+          y1="53.5463"
+          x2="97.551"
+          y2="53.5463"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.0919165" stopColor="#6ABF4B" />
+          <stop offset="0.2871" stopColor="#64B749" />
+          <stop offset="0.5984" stopColor="#52A044" />
+          <stop offset="0.8624" stopColor="#3F873F" />
+        </linearGradient>
+      </defs>
+    )}
   </svg>
 );
 

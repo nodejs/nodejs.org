@@ -3,18 +3,17 @@ import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import JsIconGreen from '@/components/Icons/Logos/JsIconGreen';
 import JsIconWhite from '@/components/Icons/Logos/JsIconWhite';
 import NodejsLogo from '@/components/Icons/Logos/Nodejs';
-import NodejsPride from '@/components/Icons/Logos/NodejsPride';
 import NodejsStackedBlack from '@/components/Icons/Logos/NodejsStackedBlack';
 import NodejsStackedDark from '@/components/Icons/Logos/NodejsStackedDark';
 import NodejsStackedLight from '@/components/Icons/Logos/NodejsStackedLight';
 import NodejsStackedWhite from '@/components/Icons/Logos/NodejsStackedWhite';
 
-export const HorizontalLogos: StoryObj = {
+export const HorizontalLogo: StoryObj = {
   render: () => <NodejsLogo width={267} height={80} />,
 };
 
-export const PrideLogos: StoryObj = {
-  render: () => <NodejsPride width={267} height={80} />,
+export const PrideLogo: StoryObj = {
+  render: () => <NodejsLogo variant="pride" width={267} height={80} />,
 };
 
 export const StackedLogos: StoryObj = {
