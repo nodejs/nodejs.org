@@ -2,8 +2,8 @@
   <br />
   <a href="https://nodejs.org">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="./public/static/logos/nodejsDark.svg">
-      <img src="./public/static/logos/nodejsLight.svg" width="200px">
+      <source media="(prefers-color-scheme: dark)" srcset="./public/static/logos/nodejsLight.svg">
+      <img src="./public/static/logos/nodejsDark.svg" width="200px">
     </picture>
   </a>
 </p>
