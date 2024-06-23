@@ -22,6 +22,7 @@
     "build": "cross-env NODE_NO_WARNINGS=1 next build",
     "start": "cross-env NODE_NO_WARNINGS=1 next start",
     "deploy": "cross-env NEXT_PUBLIC_STATIC_EXPORT=true npm run build",
+    "check-types": "tsc --noEmit",
     "lint:js": "eslint \"**/*.{js,mjs,ts,tsx}\" --cache --cache-strategy=content --cache-location=.eslintjscache",
     "lint:md": "eslint \"**/*.md?(x)\" --cache --cache-strategy=content --cache-location=.eslintmdcache",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",

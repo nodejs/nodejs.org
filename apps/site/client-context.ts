@@ -1,8 +1,7 @@
 import { cache } from 'react';
 
-import { assignClientContext } from './util/assignClientContext';
-
 import type { ClientSharedServerContext } from '@/types';
+import { assignClientContext } from '@/util/assignClientContext';
 
 // This allows us to have Server-Side Context's of the shared "contextual" data
 // which includes the frontmatter, the current pathname from the dynamic segments

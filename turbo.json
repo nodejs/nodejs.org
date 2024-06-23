@@ -1,4 +1,14 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "tasks": {}
+  "tasks": {
+    "lint": {
+      "dependsOn": ["lint:md", "lint:css", "lint:js"]
+    },
+    "check-types": {
+      "dependsOn": ["^topo"]
+    },
+    "topo": {
+      "dependsOn": ["^topo"]
+    }
+  }
 }
