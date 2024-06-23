@@ -10,8 +10,8 @@ body {
 }
 
 body {
-  @apply bg-white
-    font-open-sans
+  @apply font-open-sans
+    bg-white
     text-neutral-950
     motion-safe:scroll-smooth
     dark:bg-neutral-950

@@ -1,15 +1,15 @@
 .container {
   @apply border-neutral-200
     bg-white
-    dark:border-neutral-900
-    dark:bg-neutral-950
     lg:flex
     lg:h-16
     lg:flex-row
     lg:items-center
     lg:gap-8
     lg:border-b
-    lg:px-8;
+    lg:px-8
+    dark:border-neutral-900
+    dark:bg-neutral-950;
 }
 
 .nodeIconAndMobileItemsToggler {
@@ -20,12 +20,12 @@
     border-b
     border-neutral-200
     px-4
-    dark:border-neutral-900
     lg:flex
     lg:h-full
     lg:items-center
     lg:border-0
-    lg:px-0;
+    lg:px-0
+    dark:border-neutral-900;
 }
 
 .nodeIconWrapper {
@@ -59,11 +59,11 @@
     border-b
     border-neutral-200
     p-4
-    dark:border-neutral-900
     lg:flex-1
     lg:flex-row
     lg:border-0
-    lg:p-0;
+    lg:p-0
+    dark:border-neutral-900;
 }
 
 .actionsWrapper {
@@ -73,9 +73,9 @@
     border-b
     border-neutral-200
     p-4
-    dark:border-neutral-900
     lg:border-0
-    lg:p-0;
+    lg:p-0
+    dark:border-neutral-900;
 }
 
 .ghIconWrapper {

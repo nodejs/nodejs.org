@@ -21,12 +21,12 @@
       bg-white
       p-6
       focus:outline-none
-      dark:border-neutral-900
-      dark:bg-neutral-950
       sm:my-20
       sm:p-8
       lg:max-w-[900px]
-      xl:p-12;
+      xl:p-12
+      dark:border-neutral-900
+      dark:bg-neutral-950;
   }
 
   .close {
@@ -52,9 +52,9 @@
   }
 
   .description {
-    @apply mb-4
+    @apply font-regular
+      mb-4
       text-lg
-      font-regular
       text-neutral-800
       dark:text-neutral-200;
   }

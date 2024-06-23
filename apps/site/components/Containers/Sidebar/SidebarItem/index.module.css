@@ -13,9 +13,9 @@
   }
 
   .label {
-    @apply w-full
-      text-sm
-      font-regular;
+    @apply font-regular
+      w-full
+      text-sm;
   }
 
   .icon {

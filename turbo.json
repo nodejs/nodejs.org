@@ -1,7 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
+    "//#prettier": {
+      "outputs": [".prettiercache"]
+    },
     "lint": {
+      "dependsOn": ["lint:md", "lint:css", "lint:js"]
+    },
+    "lint:lint-staged": {
       "dependsOn": ["lint:md", "lint:css", "lint:js"]
     },
     "check-types": {

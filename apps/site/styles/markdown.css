@@ -59,10 +59,10 @@ main {
   }
 
   code {
-    @apply rounded
+    @apply font-ibm-plex-mono
+      rounded
       bg-neutral-100
       px-1
-      font-ibm-plex-mono
       text-base
       font-semibold
       text-neutral-900
@@ -77,9 +77,9 @@ main {
 
   a,
   .anchor {
-    @apply text-green-600
-      dark:text-green-400
-      max-xs:font-semibold;
+    @apply max-xs:font-semibold
+      text-green-600
+      dark:text-green-400;
 
     &:hover {
       @apply text-green-900
@@ -135,7 +135,9 @@ main {
 
     th,
     td {
-      @apply border
+      @apply max-xs:block
+        max-xs:border-l-0
+        border
         border-r-0
         border-t-0
         border-neutral-200
@@ -143,9 +145,7 @@ main {
         py-2
         text-neutral-900
         dark:border-neutral-800
-        dark:text-white
-        max-xs:block
-        max-xs:border-l-0;
+        dark:text-white;
 
       > a {
         @apply pr-2;

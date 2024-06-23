@@ -10,13 +10,13 @@
       p-4;
 
     & > code {
-      @apply grid
+      @apply font-ibm-plex-mono
+        font-regular
+        grid
         overflow-x-auto
         bg-transparent
         p-0
-        font-ibm-plex-mono
         text-sm
-        font-regular
         leading-snug
         text-neutral-400
         [counter-reset:line];
@@ -32,13 +32,13 @@
         }
 
         &:not(:empty:last-child)::after {
-          @apply absolute
+          @apply w-4.5
+            font-ibm-plex-mono
+            absolute
             left-0
             top-0
             mr-4
-            w-4.5
             text-right
-            font-ibm-plex-mono
             text-neutral-600
             [content:counter(line)]
             [counter-increment:line];

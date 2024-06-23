@@ -22,7 +22,7 @@ const WithBlogCrossLinks: FC = async () => {
   ];
 
   return (
-    <div className="mt-4 grid w-full grid-cols-2 gap-4 max-xs:grid-cols-1">
+    <div className="max-xs:grid-cols-1 mt-4 grid w-full grid-cols-2 gap-4">
       {(previousCrossLink && (
         <CrossLink
           type="previous"

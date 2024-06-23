@@ -9,8 +9,8 @@
     px-4
     py-6
     [overflow-wrap:anywhere]
-    dark:border-neutral-900
-    lg:px-6;
+    lg:px-6
+    dark:border-neutral-900;
 
   dl {
     @apply w-full;
@@ -34,12 +34,12 @@
       dark:text-white;
 
     a {
-      @apply font-semibold
+      @apply max-xs:inline-block
+        max-xs:py-1
+        font-semibold
         text-neutral-900
         underline
-        dark:text-white
-        max-xs:inline-block
-        max-xs:py-1;
+        dark:text-white;
 
       &:hover {
         @apply text-neutral-800

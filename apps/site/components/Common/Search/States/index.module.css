@@ -16,18 +16,18 @@
     h-screen
     w-full
     bg-neutral-100
-    dark:bg-neutral-950
     md:h-[450px]
     md:max-w-3xl
     md:rounded-xl
-    md:shadow-lg;
+    md:shadow-lg
+    dark:bg-neutral-950;
 }
 
 .searchBoxInnerPanel {
   @apply pt-12
     text-neutral-800
-    dark:text-neutral-400
-    md:pt-2;
+    md:pt-2
+    dark:text-neutral-400;
 }
 
 .searchBoxMagnifyingGlassIcon {

@@ -2,10 +2,10 @@
   @apply max-w-full;
 
   .tabsList {
-    @apply flex
+    @apply font-open-sans
+      flex
       gap-2
-      overflow-x-auto
-      font-open-sans;
+      overflow-x-auto;
 
     .tabsTrigger {
       @apply whitespace-nowrap

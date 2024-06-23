@@ -45,9 +45,8 @@ jobs:
         # This step is responsible for providing a reusable string that can be used within other steps and jobs
         # that use the `turbo` cli command as a way of easily providing shared arguments to the `turbo` command
         id: turborepo_arguments
-        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-        run: echo "turbo_args=--force=true --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
+        run: echo "turbo_args=--force=true" >> "$GITHUB_OUTPUT"
 
   lint:
     # This Job should run either on `merge_groups` or `push` events
@@ -126,7 +125,7 @@ jobs:
             github.event.pull_request.head.ref != 'chore/crowdin')
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npx --package=turbo@latest -- turbo lint:js lint:md lint:css prettier ${{ needs.base.outputs.turbo_args }}
+        run: npx --package=turbo@latest -- turbo lint prettier ${{ needs.base.outputs.turbo_args }}
 
       - name: Run `tsc build`
         # We want to ensure that the whole codebase is passing and successfully compiles with TypeScript

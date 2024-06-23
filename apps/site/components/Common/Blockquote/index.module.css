@@ -16,8 +16,8 @@
     dark:text-white;
 
   & cite {
-    @apply text-base
-      font-regular
+    @apply font-regular
+      text-base
       not-italic;
 
     &::before {

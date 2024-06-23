@@ -13,7 +13,8 @@
   }
 
   .trigger {
-    @apply inline-flex
+    @apply shadow-xs
+      inline-flex
       h-11
       w-full
       min-w-[17rem]
@@ -30,7 +31,6 @@
       text-base
       font-medium
       text-neutral-900
-      shadow-xs
       outline-none
       focus:border-neutral-500
       focus:ring-1

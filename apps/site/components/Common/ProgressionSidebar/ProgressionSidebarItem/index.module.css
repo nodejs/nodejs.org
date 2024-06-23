@@ -1,5 +1,6 @@
 a.item {
-  @apply relative
+  @apply font-regular
+    relative
     z-20
     flex
     w-full
@@ -7,7 +8,6 @@ a.item {
     gap-1
     overflow-hidden
     text-sm
-    font-regular
     text-neutral-800
     dark:text-neutral-200;
 

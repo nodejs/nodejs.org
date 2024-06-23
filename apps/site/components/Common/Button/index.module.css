@@ -1,9 +1,9 @@
 .button {
-  @apply relative
+  @apply px-4.5
+    relative
     inline-flex
     items-center
     gap-2
-    px-4.5
     py-2.5
     text-center
     font-semibold;
@@ -95,7 +95,8 @@
       shadow-sm;
 
     &::before {
-      @apply absolute
+      @apply bg-gradient-glow-backdrop
+        absolute
         left-0
         right-0
         top-0
@@ -103,7 +104,6 @@
         mx-auto
         h-full
         w-full
-        bg-gradient-glow-backdrop
         opacity-30
         content-[''];
     }

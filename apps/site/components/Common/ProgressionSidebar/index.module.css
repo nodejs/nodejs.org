@@ -9,11 +9,11 @@
     bg-white
     px-4
     py-6
-    dark:border-neutral-900
-    dark:bg-neutral-950
     sm:border-r
     md:max-w-xs
-    lg:px-6;
+    lg:px-6
+    dark:border-neutral-900
+    dark:bg-neutral-950;
 
   > section {
     @apply hidden

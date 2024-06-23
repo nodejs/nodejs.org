@@ -103,12 +103,6 @@
     "lint:fix": {
       "cache": false
     },
-    "prettier": {
-      "outputs": [".prettiercache"]
-    },
-    "prettier:fix": {
-      "cache": false
-    },
     "format": {
       "cache": false
     },

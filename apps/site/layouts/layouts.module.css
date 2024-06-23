@@ -6,19 +6,19 @@
 }
 
 .articleLayout {
-  @apply mx-auto
+  @apply max-w-8xl
+    sm:grid-areas-[sidebar_main,sidebar_footer]
+    lg:grid-areas-[sidebar_main_metabar,sidebar_footer_metabar]
+    mx-auto
     block
     w-full
-    max-w-8xl
     overflow-auto
     sm:grid
     sm:grid-cols-[theme(spacing.52)_1fr]
     sm:grid-rows-[1fr]
     sm:overflow-hidden
-    sm:grid-areas-[sidebar_main,sidebar_footer]
     md:grid-cols-[theme(spacing.64)_1fr]
     lg:grid-cols-[theme(spacing.52)_1fr_theme(spacing.52)]
-    lg:grid-areas-[sidebar_main_metabar,sidebar_footer_metabar]
     xl:grid-cols-[theme(spacing.80)_1fr_theme(spacing.80)];
 
   > *:nth-child(1) {
@@ -31,22 +31,22 @@
       sm:max-lg:block;
 
     > *:first-child {
-      @apply overflow-y-auto
+      @apply grid-in-[main]
+        sm:bg-gradient-subtle
+        sm:dark:bg-gradient-subtle-dark
+        xl:px-18
+        overflow-y-auto
         overflow-x-hidden
         p-4
-        grid-in-[main]
         motion-safe:scroll-smooth
-        sm:bg-gradient-subtle
         sm:bg-fixed
-        sm:p-12
-        sm:dark:bg-gradient-subtle-dark
-        xl:px-18;
+        sm:p-12;
     }
 
     > *:last-child {
-      @apply mt-8
+      @apply grid-in-[metabar]
+        mt-8
         border-t
-        grid-in-[metabar]
         sm:mt-0
         lg:max-w-xs
         lg:border-l
@@ -55,7 +55,8 @@
   }
 
   > *:nth-child(3) {
-    @apply sticky
+    @apply grid-in-[footer]
+      sticky
       bottom-0
       flex
       w-full
@@ -66,7 +67,6 @@
       border-t-neutral-200
       bg-white
       py-4
-      grid-in-[footer]
       dark:border-t-neutral-900
       dark:bg-neutral-950;
   }
@@ -116,11 +116,11 @@
         }
 
         small {
-          @apply text-center
+          @apply max-xs:text-xs
+            text-center
             text-sm
             text-neutral-800
-            dark:text-neutral-400
-            max-xs:text-xs;
+            dark:text-neutral-400;
 
           sup {
             @apply cursor-help;
@@ -158,13 +158,13 @@
 
 .blogLayout,
 .downloadLayout {
-  @apply flex
-    w-full
-    justify-center
-    bg-gradient-subtle
+  @apply bg-gradient-subtle
     dark:bg-gradient-subtle-dark
     max-xs:bg-none
-    max-xs:dark:bg-none;
+    max-xs:dark:bg-none
+    flex
+    w-full
+    justify-center;
 
   main {
     @apply max-w-5xl
@@ -198,33 +198,33 @@
 }
 
 .contentLayout {
-  @apply mx-auto
-    grid
-    w-full
-    max-w-8xl
-    grid-rows-[1fr]
+  @apply max-w-8xl
     max-xs:m-0
     max-xs:block
+    mx-auto
+    grid
+    w-full
+    grid-rows-[1fr]
     sm:grid-cols-[1fr_theme(spacing.52)]
     xl:grid-cols-[1fr_theme(spacing.80)];
 
   > *:nth-child(1) {
-    @apply flex
-      w-full
-      justify-center
-      border-l
-      border-l-neutral-200
-      bg-gradient-subtle
-      px-4
-      py-14
-      dark:border-l-neutral-900
+    @apply bg-gradient-subtle
       dark:bg-gradient-subtle-dark
       max-xs:border-l-0
       max-xs:bg-none
       max-xs:pb-4
       max-xs:dark:bg-none
+      flex
+      w-full
+      justify-center
+      border-l
+      border-l-neutral-200
+      px-4
+      py-14
       md:px-14
-      lg:px-28;
+      lg:px-28
+      dark:border-l-neutral-900;
 
     main {
       @apply max-w-[660px]
@@ -235,12 +235,12 @@
   }
 
   > *:nth-child(2) {
-    @apply mt-8
-      border-t
-      xs:mt-0
+    @apply xs:mt-0
       xs:max-w-xs
       xs:border-l
-      xs:border-t-0;
+      xs:border-t-0
+      mt-8
+      border-t;
   }
 }
 

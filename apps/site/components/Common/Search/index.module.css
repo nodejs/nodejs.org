@@ -20,14 +20,14 @@
 }
 
 .shortcutIndicator {
-  @apply invisible
+  @apply font-ibm-plex-mono
+    invisible
     flex
     flex-1
     items-center
     justify-end
     self-center
     px-1
-    font-ibm-plex-mono
     text-xs
     motion-safe:transition-opacity
     motion-safe:duration-100
