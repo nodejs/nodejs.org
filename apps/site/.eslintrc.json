@@ -1,5 +1,6 @@
 {
   "extends": "prettier",
+  "ignorePatterns": ["storybook-static/**"],
   "overrides": [
     {
       "files": ["public/**/*.js"],

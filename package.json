@@ -20,6 +20,7 @@
     "apps/*"
   ],
   "scripts": {
+    "dev": "turbo run dev",
     "build": "turbo run build",
     "start": "turbo run start",
     "check-types": "turbo check-types",
