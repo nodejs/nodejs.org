@@ -1,6 +1,9 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
+    "scripts:release-post": {
+      "cache": false
+    },
     "//#prettier": {
       "outputs": [".prettiercache"]
     },

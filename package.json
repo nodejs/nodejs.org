@@ -24,6 +24,7 @@
     "build": "turbo run build",
     "start": "turbo run start",
     "check-types": "turbo check-types",
+    "scripts:release-post": "turbo run scripts:release-post",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint --force -- --fix",
     "prettier": "prettier \"**/*.{js,mjs,ts,tsx,md,mdx,json,yml,css}\" --check --cache --cache-strategy=content --cache-location=.prettiercache",
