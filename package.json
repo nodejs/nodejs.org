@@ -26,9 +26,9 @@
     "check-types": "turbo check-types",
     "scripts:release-post": "turbo run scripts:release-post",
     "lint": "turbo run lint",
-    "lint:fix": "turbo run lint --force -- --fix",
+    "lint:fix": "turbo run lint --force",
     "prettier": "prettier \"**/*.{js,mjs,ts,tsx,md,mdx,json,yml,css}\" --check --cache --cache-strategy=content --cache-location=.prettiercache",
-    "prettier:fix": "npm run prettier -- --write",
+    "prettier:fix": "npm run prettier --write",
     "format": "npm run lint:fix && npm run prettier:fix",
     "test": "turbo test:unit",
     "prepare": "husky"
