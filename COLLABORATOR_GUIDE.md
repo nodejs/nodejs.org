@@ -336,13 +336,13 @@ This is to ensure that the Website is always available and that we do not depend
 #### What is `next.dynamic.mjs`?
 
 Our whole Website uses a custom renderer for rendering the pages.
-As you might have seen, within the `pages` directory we have [Next.js Dynamic Route](https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes) named `[...path].tsx` that matches against all possible routes of the Website.
+As you might have seen, within the `apps/site/pages` directory we have [Next.js Dynamic Route](https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes) named `[...path].tsx` that matches against all possible routes of the Website.
 
-This means that each `.md(x)` file within `pages/` is not rendered by Next.js regular App Tree (`pages/_document.tsx` and `pages/_app.tsx`) but a custom render tree.
+This means that each `.md(x)` file within `apps/site/pages/` is not rendered by Next.js regular App Tree (`apps/site/pages/_document.tsx` and `apps/site/pages/_app.tsx`) but a custom render tree.
 
 This custom render uses `getStaticPaths` and [Incremental Static Generation](https://nextjs.org/docs/pages/building-your-application/data-fetching/incremental-static-regeneration) to generate the full list of supported pages of the Website.
 For example, this allows us to generate Localized Pages for every page that is not translated, by telling Next.js to create a localised path.
-`next.dynamic.mjs` is responsible for getting a full list of the source pages (`pages/en`) and identifying which pages have been translated.
+`next.dynamic.mjs` is responsible for getting a full list of the source pages (`apps/site/pages/en`) and identifying which pages have been translated.
 
 Non-translated pages will have their Localized contexts and translated React message-bags (`next-intl`) but the content will be the same as the source page (English).
 Whereas localized pages will have localized context and content.
