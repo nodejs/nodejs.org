@@ -103,7 +103,7 @@ for getting things done and landing your contribution.
    git merge upstream/main
    ```
 
-9. Run `npx turbo format` to confirm that linting and formatting are passing.
+9. Run `npm run format` to confirm that linting and formatting are passing.
 
    ```bash
    npm run format
@@ -142,7 +142,7 @@ This repository contains several scripts and commands for performing numerous ta
   - This is used for the Node.js Vercel Deployments (Preview & Production)
 - `npx turbo deploy` builds the Application on Export Production Mode. The output is by default within `build` folder.
   - This is used for the Node.js Legacy Website Server (DigitalOcean)
-- `npx turbo start` starts a web server running serving the built content from `npx turbo build`
+- `npx turbo start` starts a web server running serving the built content from `npm run build`
 
 </details>
 
