@@ -226,7 +226,7 @@
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "ru",
-    "enabled": false,
+    "enabled": true,
     "default": false
   },
   {
