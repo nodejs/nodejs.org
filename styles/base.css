@@ -5,8 +5,7 @@
 
 html,
 body {
-  @apply size-full
-    [scrollbar-gutter:auto];
+  @apply h-full;
 }
 
 body {
