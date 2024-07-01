@@ -125,11 +125,7 @@ jobs:
             github.event.pull_request.head.ref != 'chore/crowdin')
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npx --package=turbo@latest -- turbo lint prettier ${{ needs.base.outputs.turbo_args }}
-
-      - name: Run `tsc build`
-        # We want to ensure that the whole codebase is passing and successfully compiles with TypeScript
-        run: npx --package=typescript@latest -- tsc --build .
+        run: npx --package=turbo@latest -- turbo lint check-types prettier ${{ needs.base.outputs.turbo_args }}
 
       - name: Save Lint Cache
         # We only want to save caches on `push` events or `pull_request_target` events
