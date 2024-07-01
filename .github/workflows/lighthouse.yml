@@ -43,7 +43,7 @@ jobs:
           egress-policy: audit
 
       - name: Git Checkout
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           # Since we checkout the HEAD of the current Branch, if the Pull Request comes from a Fork
           # we want to clone the fork's repository instead of the base repository
