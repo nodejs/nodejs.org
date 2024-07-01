@@ -33,8 +33,7 @@
     "storybook:build": "cross-env NODE_NO_WARNINGS=1 storybook build --quiet --webpack-stats-json",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 jest",
     "test:unit:watch": "npm run test:unit -- --watch",
-    "test": "turbo test:unit",
-    "prepare": "husky"
+    "test": "turbo test:unit"
   },
   "dependencies": {
     "@heroicons/react": "~2.1.1",
