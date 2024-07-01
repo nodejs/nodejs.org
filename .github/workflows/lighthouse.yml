@@ -66,7 +66,7 @@ jobs:
           comment_tag: 'lighthouse_audit'
 
       - name: Capture Vercel Preview
-        uses: patrickedqvist/wait-for-vercel-preview@dca4940010f36d2d44caa487087a09b57939b24a # v1.3.1
+        uses: patrickedqvist/wait-for-vercel-preview@06c79330064b0e6ef7a2574603b62d3c98789125 # v1.3.2
         id: vercel_preview_url
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
