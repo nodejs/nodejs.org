@@ -3,7 +3,6 @@
   "description": "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
   "favicon": "/static/images/favicons/favicon.png",
   "accentColor": "#333",
-  "logoVariant": "pride",
   "twitter": {
     "username": "@nodejs",
     "card": "summary",
@@ -29,11 +28,11 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2024-04-24T03:00:00.000Z",
-      "endDate": "2024-05-17T17:30:00.000Z",
-      "text": "Node.js v22 is now available!",
-      "link": "https://nodejs.org/en/blog/announcements/v22-release-announce",
-      "type": "default"
+      "startDate": "2024-06-26T00:00:00.000Z",
+      "endDate": "2024-07-02T00:00:00.000Z",
+      "text": "New security releases to be made available July 2nd, 2024",
+      "link": "https://nodejs.org/en/blog/vulnerability/july-2024-security-releases",
+      "type": "warning"
     }
   },
   "websiteBadges": {
