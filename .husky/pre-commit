@@ -5,4 +5,4 @@
 npx lint-staged
 
 # verify typescript staged files
-npx tsc --build .
+npx tsc --build apps/site

@@ -4,34 +4,34 @@ pull_request_title: '[automated]: crowdin sync'
 pull_request_labels:
   - 'github_actions:pull-request'
 files:
-  - source: /pages/en/**/*.md
-    translation: /pages/%two_letters_code%/**/%original_file_name%
+  - source: /apps/site/pages/en/**/*.md
+    translation: /apps/site/pages/%two_letters_code%/**/%original_file_name%
     content_segmentation: 0
     ignore:
-      - /pages/en/blog/**/*.md
-      - /pages/en/learn/**/*.md
-      - /pages/en/download/index.md
-      - /pages/en/download/current.md
+      - /apps/site/pages/en/blog/**/*.md
+      - /apps/site/pages/en/learn/**/*.md
+      - /apps/site/pages/en/download/index.md
+      - /apps/site/pages/en/download/current.md
     languages_mapping:
       two_letters_code:
         es-ES: es
         pt-BR: pt-br
         zh-CN: zh-cn
         zh-TW: zh-tw
-  - source: /pages/en/**/*.mdx
-    translation: /pages/%two_letters_code%/**/%original_file_name%
+  - source: /apps/site/pages/en/**/*.mdx
+    translation: /apps/site/pages/%two_letters_code%/**/%original_file_name%
     content_segmentation: 0
     ignore:
-      - /pages/en/blog/**/*.mdx
-      - /pages/en/learn/**/*.mdx
+      - /apps/site/pages/en/blog/**/*.mdx
+      - /apps/site/pages/en/learn/**/*.mdx
     languages_mapping:
       two_letters_code:
         es-ES: es
         pt-BR: pt-br
         zh-CN: zh-cn
         zh-TW: zh-tw
-  - source: /i18n/locales/en.json
-    translation: /i18n/locales/%two_letters_code%.json
+  - source: /apps/site/i18n/locales/en.json
+    translation: /apps/site/i18n/locales/%two_letters_code%.json
     languages_mapping:
       two_letters_code:
         es-ES: es

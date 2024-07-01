@@ -1,0 +1,50 @@
+.tabsRoot {
+  @apply max-w-full;
+
+  .tabsList {
+    @apply font-open-sans
+      flex
+      gap-2
+      overflow-x-auto;
+
+    .tabsTrigger {
+      @apply whitespace-nowrap
+        border-b-2
+        border-b-transparent
+        px-1
+        pb-[11px]
+        text-sm
+        font-semibold
+        text-neutral-800
+        dark:text-neutral-200;
+
+      .tabSecondaryLabel {
+        @apply pl-1
+          text-neutral-500
+          dark:text-neutral-800;
+      }
+
+      &[data-state='active'] {
+        @apply border-b-green-600
+          text-green-600
+          dark:border-b-green-400
+          dark:text-green-400;
+
+        .tabSecondaryLabel {
+          @apply text-green-800
+          dark:text-green-600;
+        }
+      }
+    }
+
+    .addons {
+      @apply ml-auto
+        border-b-2
+        border-b-transparent
+        px-1
+        pb-[11px]
+        text-sm
+        font-semibold;
+    }
+  }
+}

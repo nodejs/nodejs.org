@@ -1,0 +1,81 @@
+.root {
+  @apply @container/preview
+    relative
+    flex
+    aspect-[1.90/1]
+    items-center
+    rounded
+    border
+    border-neutral-900
+    bg-neutral-950;
+
+  &::after {
+    @apply bg-gradient-radial
+      @md/preview:blur-3xl
+      absolute
+      inset-0
+      m-auto
+      aspect-square
+      w-1/3
+      rounded-full
+      blur-2xl
+      content-[''];
+
+    &.announcements {
+      @apply from-green-700/90;
+    }
+
+    &.release {
+      @apply from-info-600/90;
+    }
+
+    &.vulnerability {
+      @apply from-warning-600/90;
+    }
+  }
+
+  .container {
+    @apply @sm/preview:text-base
+      @md/preview:gap-6
+      @md/preview:text-lg
+      @lg/preview:gap-8
+      @lg/preview:text-xl
+      @xl/preview:gap-12
+      @xl/preview:text-2xl
+      @2xl/preview:text-3xl
+      z-10
+      mx-auto
+      flex
+      w-2/3
+      max-w-xl
+      flex-col
+      gap-4
+      text-center
+      text-xs
+      font-semibold
+      text-white;
+
+    .hexagon {
+      @apply @md/preview:h-3/5
+        @md/preview:w-3/5
+        @lg/preview:h-2/3
+        @lg/preview:w-2/3
+        @xl/preview:h-3/5
+        @xl/preview:w-3/5
+        @2xl/preview:h-2/3
+        @2xl/preview:w-2/3
+        absolute
+        inset-0
+        m-auto
+        size-full;
+    }
+
+    .logo {
+      @apply @md/preview:size-14
+        @lg/preview:size-16
+        @xl/preview:size-20
+        mx-auto
+        size-6;
+    }
+  }
+}

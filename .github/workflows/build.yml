@@ -136,4 +136,4 @@ jobs:
           (matrix.os == 'ubuntu-latest') &&
           ((github.event_name == 'push') || (github.event_name == 'pull_request_target'))
         run: |
-          npm run sync-orama
+          cd apps/site && npm run sync-orama

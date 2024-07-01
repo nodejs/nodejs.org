@@ -1,0 +1,135 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "globalEnv": ["NODE_ENV"],
+  "tasks": {
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "env": [
+        "NEXT_PUBLIC_VERCEL_ENV",
+        "NEXT_PUBLIC_STATIC_EXPORT",
+        "NEXT_PUBLIC_BASE_URL",
+        "NEXT_PUBLIC_VERCEL_URL",
+        "NEXT_PUBLIC_DIST_URL",
+        "NEXT_PUBLIC_DOCS_URL",
+        "NEXT_PUBLIC_BASE_PATH",
+        "NEXT_PUBLIC_ORAMA_API_KEY",
+        "NEXT_PUBLIC_ORAMA_ENDPOINT",
+        "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
+        "NEXT_PUBLIC_DATA_URL"
+      ]
+    },
+    "build": {
+      "inputs": [
+        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
+        "{app,components,layouts,pages,styles}/**/*.css",
+        "{next-data,scripts,i18n}/**/*.{mjs,json}",
+        "{app,pages}/**/*.{mdx,md}",
+        "*.{md,mdx,json,ts,tsx,mjs,yml}"
+      ],
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": [
+        "NEXT_PUBLIC_VERCEL_ENV",
+        "NEXT_PUBLIC_STATIC_EXPORT",
+        "NEXT_PUBLIC_BASE_URL",
+        "NEXT_PUBLIC_VERCEL_URL",
+        "NEXT_PUBLIC_DIST_URL",
+        "NEXT_PUBLIC_DOCS_URL",
+        "NEXT_PUBLIC_BASE_PATH",
+        "NEXT_PUBLIC_ORAMA_API_KEY",
+        "NEXT_PUBLIC_ORAMA_ENDPOINT",
+        "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
+        "NEXT_PUBLIC_DATA_URL"
+      ]
+    },
+    "start": {
+      "cache": false,
+      "persistent": true,
+      "env": [
+        "NEXT_PUBLIC_VERCEL_ENV",
+        "NEXT_PUBLIC_STATIC_EXPORT",
+        "NEXT_PUBLIC_BASE_URL",
+        "NEXT_PUBLIC_VERCEL_URL",
+        "NEXT_PUBLIC_DIST_URL",
+        "NEXT_PUBLIC_DOCS_URL",
+        "NEXT_PUBLIC_BASE_PATH",
+        "NEXT_PUBLIC_ORAMA_API_KEY",
+        "NEXT_PUBLIC_ORAMA_ENDPOINT",
+        "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
+        "NEXT_PUBLIC_DATA_URL"
+      ]
+    },
+    "deploy": {
+      "inputs": [
+        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
+        "{app,components,layouts,pages,styles}/**/*.css",
+        "{next-data,scripts,i18n}/**/*.{mjs,json}",
+        "{app,pages}/**/*.{mdx,md}",
+        "*.{md,mdx,json,ts,tsx,mjs,yml}"
+      ],
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": [
+        "NEXT_PUBLIC_VERCEL_ENV",
+        "NEXT_PUBLIC_STATIC_EXPORT",
+        "NEXT_PUBLIC_BASE_URL",
+        "NEXT_PUBLIC_VERCEL_URL",
+        "NEXT_PUBLIC_DIST_URL",
+        "NEXT_PUBLIC_DOCS_URL",
+        "NEXT_PUBLIC_BASE_PATH",
+        "NEXT_PUBLIC_ORAMA_API_KEY",
+        "NEXT_PUBLIC_ORAMA_ENDPOINT",
+        "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
+        "NEXT_PUBLIC_DATA_URL"
+      ]
+    },
+    "lint:js": {
+      "inputs": [
+        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx,mjs}",
+        "{next-data,scripts,i18n}/**/*.{mjs,json}",
+        "{.storybook,public}/**/*.{ts,js,json}",
+        "*.{json,ts,tsx}"
+      ],
+      "outputs": [".eslintjscache"]
+    },
+    "lint:md": {
+      "inputs": ["{app,pages}/**/*.{md,mdx}", "*.{md,mdx}"],
+      "outputs": [".eslintmdcache"]
+    },
+    "lint:css": {
+      "inputs": ["{app,components,layouts,pages,styles}/**/*.css"],
+      "outputs": [".stylelintcache"]
+    },
+    "lint:fix": {
+      "cache": false
+    },
+    "format": {
+      "cache": false
+    },
+    "storybook": {
+      "cache": false,
+      "persistent": true
+    },
+    "storybook:build": {
+      "inputs": [
+        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
+        "{app,components,layouts,pages,styles}/**/*.css",
+        "{next-data,scripts,i18n}/**/*.{mjs,json}",
+        "{.storybook,public}/**/*.{ts,js,css,json}",
+        "{app,pages}/**/*.{mdx,md}",
+        "*.{md,mdx,json,ts,tsx,mjs,yml}"
+      ],
+      "outputs": ["storybook-static/**"]
+    },
+    "test:unit": {
+      "inputs": [
+        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx,mjs}",
+        "{app,components,layouts,pages,styles}/**/*.css",
+        "{next-data,scripts,i18n}/**/*.{mjs,json}",
+        "{app,pages}/**/*.{mdx,md}",
+        "*.{md,mdx,json,ts,tsx,mjs,yml}"
+      ],
+      "outputs": ["coverage/**", "junit.xml"]
+    }
+  }
+}

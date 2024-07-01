@@ -1,0 +1,22 @@
+.listItem,
+.listItem:link,
+.listItem:active {
+  @apply aria-current:bg-green-600
+    aria-current:text-white
+    flex
+    size-10
+    items-center
+    justify-center
+    rounded
+    px-3
+    py-2.5
+    text-neutral-800
+    dark:text-neutral-200;
+
+  &:hover {
+    @apply bg-neutral-100
+      text-neutral-800
+      dark:bg-neutral-900
+      dark:text-neutral-200;
+  }
+}

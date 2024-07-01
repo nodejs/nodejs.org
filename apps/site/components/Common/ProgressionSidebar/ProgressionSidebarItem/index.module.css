@@ -1,0 +1,36 @@
+a.item {
+  @apply font-regular
+    relative
+    z-20
+    flex
+    w-full
+    items-center
+    gap-1
+    overflow-hidden
+    text-sm
+    text-neutral-800
+    dark:text-neutral-200;
+
+  &:hover {
+    @apply text-neutral-900
+      dark:text-white;
+  }
+
+  svg {
+    @apply flex-shrink-0
+      fill-neutral-200
+      stroke-white
+      stroke-[4]
+      dark:fill-neutral-800
+      dark:stroke-neutral-950;
+  }
+
+  &.active {
+    @apply text-neutral-900
+      dark:text-white;
+
+    svg {
+      @apply fill-green-500;
+    }
+  }
+}

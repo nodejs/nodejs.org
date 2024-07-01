@@ -1,0 +1,100 @@
+{
+  "extends": "prettier",
+  "ignorePatterns": ["storybook-static/**"],
+  "overrides": [
+    {
+      "files": ["public/**/*.js"],
+      "env": { "browser": true }
+    },
+    {
+      "files": ["components/**/*.stories.tsx"],
+      "extends": "plugin:storybook/recommended"
+    },
+    {
+      "files": ["**/{__tests__,__mocks__}/*.mjs"],
+      "env": { "jest": true }
+    },
+    {
+      "files": ["**/*.{js,mjs,ts,tsx,mdx}"],
+      "env": { "es6": true, "node": true },
+      "plugins": ["import"],
+      "extends": ["eslint:recommended", "next", "next/core-web-vitals"],
+      "rules": {
+        "import/namespace": "off",
+        "import/order": [
+          "error",
+          {
+            "groups": [
+              "builtin",
+              "external",
+              "internal",
+              ["sibling", "parent"],
+              "index",
+              "unknown"
+            ],
+            "newlines-between": "always",
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "files": ["**/*.ts?(x)"],
+      "plugins": ["@typescript-eslint", "no-relative-import-paths"],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": true,
+        "tsconfigRootDir": "."
+      },
+      "rules": {
+        "@typescript-eslint/consistent-type-imports": "error",
+        "@typescript-eslint/array-type": ["error", { "default": "generic" }],
+        "no-relative-import-paths/no-relative-import-paths": [
+          "warn",
+          { "allowSameFolder": true, "prefix": "@" }
+        ]
+      }
+    },
+    {
+      "files": ["**/*.md?(x)"],
+      "extends": "plugin:mdx/recommended",
+      "rules": {
+        "react/jsx-no-undef": "off",
+        "@next/next/no-img-element": "off"
+      }
+    },
+    {
+      "files": ["**/*.{mdx,tsx}"],
+      "rules": {
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+        "react/no-unescaped-entities": "off",
+        "react/function-component-definition": [
+          "error",
+          {
+            "namedComponents": "arrow-function",
+            "unnamedComponents": "arrow-function"
+          }
+        ],
+        "no-restricted-syntax": [
+          "error",
+          {
+            "selector": "ImportDeclaration[source.value='react'][specifiers.0.type='ImportDefaultSpecifier']",
+            "message": "Default React import not allowed since we use the TypeScript jsx-transform. If you need a global type that collides with a React named export (such as `MouseEvent`), try using `globalThis.MouseHandler`"
+          },
+          {
+            "selector": "ImportDeclaration[source.value='react'] :matches(ImportNamespaceSpecifier)",
+            "message": "Named * React import is not allowed. Please import what you need from React with Named Imports"
+          }
+        ]
+      }
+    }
+  ]
+}
