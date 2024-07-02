@@ -288,5 +288,15 @@
     "hrefLang": "zh-Hant",
     "enabled": false,
     "default": false
+  },
+  {
+    "code": "bo",
+    "localName": "བོད་སྐད་",
+    "name": "Tibetan",
+    "langDir": "ltr",
+    "dateFormat": "YYYY.MM.DD",
+    "hrefLang": "bo",
+    "enabled": false,
+    "default": false
   }
 ]
