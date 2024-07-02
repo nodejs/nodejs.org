@@ -1,4 +1,7 @@
 .link {
+  @apply max-w-fit 
+    truncate;
+
   &.active {
     @apply rounded
       bg-green-600
