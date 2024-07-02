@@ -79,8 +79,6 @@ Several commercial and open source tools can also connect to the Node.js Inspect
 
 See https://github.com/ChromeDevTools/devtools-frontend, https://www.microsoftedgeinsider.com for more information.
 
-> Note that the Node.js and the Chrome need to be run on the same platform.
-
 ### Visual Studio Code 1.10+
 
 - In the Debug panel, click the settings icon to open `.vscode/launch.json`.
