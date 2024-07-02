@@ -7,9 +7,9 @@
     lg:h-16
     lg:flex-row
     lg:items-center
-    lg:gap-8
+    lg:gap-2
     lg:border-b
-    lg:px-8;
+    lg:px-2;
 }
 
 .nodeIconAndMobileItemsToggler {
@@ -55,7 +55,6 @@
 .navItems {
   @apply flex
     flex-col
-    gap-1
     border-b
     border-neutral-200
     p-4
@@ -69,7 +68,6 @@
 .actionsWrapper {
   @apply flex
     items-center
-    gap-2
     border-b
     border-neutral-200
     p-4
