@@ -29,8 +29,8 @@
   "websiteBanners": {
     "index": {
       "startDate": "2024-06-26T00:00:00.000Z",
-      "endDate": "2024-07-04T23:59:00.000Z",
-      "text": "New security releases to be made available July 4th, 2024",
+      "endDate": "2024-07-08T23:59:00.000Z",
+      "text": "New security releases to be made available July 8th, 2024",
       "link": "https://nodejs.org/en/blog/vulnerability/july-2024-security-releases",
       "type": "warning"
     }
