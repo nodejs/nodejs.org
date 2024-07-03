@@ -1,0 +1,19 @@
+* {
+  @apply subpixel-antialiased
+    motion-safe:transition-colors;
+}
+
+html,
+body {
+  @apply size-full
+    [scrollbar-gutter:auto];
+}
+
+body {
+  @apply font-open-sans
+    bg-white
+    text-neutral-950
+    motion-safe:scroll-smooth
+    dark:bg-neutral-950
+    dark:text-white;
+}

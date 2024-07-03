@@ -1,0 +1,141 @@
+.select {
+  @apply inline-flex
+    flex-col
+    gap-1.5;
+
+  .label {
+    @apply block
+      w-full
+      text-sm
+      font-medium
+      text-neutral-800
+      dark:text-neutral-200;
+  }
+
+  .trigger {
+    @apply shadow-xs
+      inline-flex
+      h-11
+      w-full
+      min-w-[17rem]
+      items-center
+      justify-between
+      gap-2
+      rounded
+      border
+      border-neutral-300
+      bg-white
+      px-3.5
+      py-2.5
+      text-left
+      text-base
+      font-medium
+      text-neutral-900
+      outline-none
+      focus:border-neutral-500
+      focus:ring-1
+      focus:ring-neutral-500
+      data-[placeholder]:text-neutral-800
+      dark:border-neutral-800
+      dark:bg-neutral-950
+      dark:text-white
+      dark:focus:border-neutral-600
+      dark:focus:ring-neutral-600
+      dark:data-[placeholder]:text-neutral-200;
+  }
+
+  .trigger span {
+    @apply flex
+      h-5
+      items-center
+      gap-2;
+  }
+
+  .icon {
+    @apply size-5
+      text-neutral-600
+      dark:text-neutral-400;
+  }
+}
+
+.dropdown {
+  @apply max-h-48
+    max-w-xs
+    overflow-hidden
+    overflow-y-auto
+    rounded-md
+    border
+    border-neutral-200
+    bg-white
+    shadow-lg
+    dark:border-neutral-800
+    dark:bg-neutral-950;
+
+  .item {
+    @apply select-none
+      truncate
+      px-2.5
+      py-1.5
+      text-sm
+      font-medium;
+  }
+
+  .text {
+    @apply text-neutral-800
+      data-[highlighted]:bg-green-500
+      data-[highlighted]:text-white
+      data-[highlighted]:outline-none
+      dark:text-neutral-200
+      dark:data-[highlighted]:bg-green-600;
+  }
+
+  .text > span {
+    @apply flex
+      items-center
+      gap-2;
+  }
+
+  .text > span > span {
+    @apply truncate;
+  }
+
+  .label {
+    @apply text-neutral-600
+      dark:text-neutral-400;
+  }
+}
+
+.dropdown:has(.label) .text > span > span {
+  @apply pl-3;
+}
+
+.inline {
+  .trigger {
+    @apply h-auto
+      min-w-fit
+      px-2.5
+      py-2
+      text-sm
+      font-medium;
+  }
+
+  .icon {
+    @apply size-4;
+  }
+
+  .text {
+    @apply text-neutral-900
+      data-[highlighted]:bg-neutral-100
+      data-[disabled]:text-neutral-600
+      data-[highlighted]:text-neutral-900
+      dark:text-white
+      dark:data-[highlighted]:bg-neutral-900
+      dark:data-[disabled]:text-neutral-700;
+  }
+
+  &.dropdown {
+    @apply mt-1
+      w-[calc(100%+1.5rem)]
+      rounded;
+  }
+}
