@@ -116,7 +116,7 @@
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "id",
-    "enabled": false,
+    "enabled": true,
     "default": false
   },
   {
