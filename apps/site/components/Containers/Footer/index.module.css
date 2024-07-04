@@ -1,0 +1,44 @@
+.footer {
+  @apply flex
+    flex-col
+    items-center
+    gap-6
+    border-t
+    border-neutral-200
+    bg-white
+    py-4
+    sm:px-8
+    md:flex-row
+    md:justify-between
+    md:py-5
+    dark:border-neutral-900
+    dark:bg-neutral-950;
+
+  .sectionPrimary {
+    @apply flex
+      flex-wrap
+      content-start
+      items-center
+      justify-center
+      gap-1
+      self-stretch;
+
+    a {
+      @apply whitespace-nowrap;
+    }
+  }
+
+  .sectionSecondary {
+    @apply flex
+      flex-col
+      items-center
+      gap-1
+      md:flex-row;
+
+    .social {
+      @apply flex
+        items-center
+        gap-1;
+    }
+  }
+}

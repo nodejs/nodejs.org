@@ -45,9 +45,8 @@ jobs:
         # This step is responsible for providing a reusable string that can be used within other steps and jobs
         # that use the `turbo` cli command as a way of easily providing shared arguments to the `turbo` command
         id: turborepo_arguments
-        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-        run: echo "turbo_args=--force=true --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
+        run: echo "turbo_args=--force=true" >> "$GITHUB_OUTPUT"
 
   lint:
     # This Job should run either on `merge_groups` or `push` events
@@ -126,11 +125,7 @@ jobs:
             github.event.pull_request.head.ref != 'chore/crowdin')
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npx --package=turbo@latest -- turbo lint:js lint:md lint:css prettier ${{ needs.base.outputs.turbo_args }}
-
-      - name: Run `tsc build`
-        # We want to ensure that the whole codebase is passing and successfully compiles with TypeScript
-        run: npx --package=typescript@latest -- tsc --build .
+        run: npx --package=turbo@latest -- turbo lint check-types prettier ${{ needs.base.outputs.turbo_args }}
 
       - name: Save Lint Cache
         # We only want to save caches on `push` events or `pull_request_target` events
@@ -227,6 +222,7 @@ jobs:
         # sha reference has no stable git tag reference or URL. see https://github.com/chromaui/chromatic-cli/issues/797
         uses: chromaui/action@5f6574e351eb055223ae8ea9e1a734d1d695ea9c
         with:
+          workingDir: apps/site
           buildScriptName: storybook:build
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           exitOnceUploaded: true
@@ -242,5 +238,5 @@ jobs:
         uses: MishaKav/jest-coverage-comment@434e6d2d37116d23d812809b61d499639842fa3b # v1.0.26
         with:
           title: 'Unit Test Coverage Report'
-          junitxml-path: ./junit.xml
+          junitxml-path: ./apps/site/junit.xml
           junitxml-title: Unit Test Report

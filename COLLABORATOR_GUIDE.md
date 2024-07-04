@@ -96,41 +96,45 @@ The Website also uses several other Open Source libraries (not limited to) liste
 
 ### Structure of this Repository
 
-- React Components are defined on `/components`
-- React Templates are defined on `/layouts`
-- Global Stylesheets are declared on `/styles`
+⚠️ The repository is actively under migration to a multi-package workspace.
+Locations are subject to change. (If you are someone updating these paths,
+please document those changes here.)
+
+- React Components are defined on `apps/site/components`
+- React Templates are defined on `apps/site/layouts`
+- Global Stylesheets are declared on `apps/site/styles`
   - Styles are done with [PostCSS][]
-- Public files are stored on `/public`
-  - Static Images, JavaScript files, and others are stored within `/public/static`
-- Internationalisation is done on `/i18n`
-  - React Localisation Data is stored within `/i18n/locales`
+- Public files are stored on `apps/site/public`
+  - Static Images, JavaScript files, and others are stored within `apps/site/public/static`
+- Internationalisation is done on `apps/site/i18n`
+  - React Localisation Data is stored within `apps/site/i18n/locales`
   - We use the [ICU Message Syntax](https://formatjs.io/docs/core-concepts/icu-syntax/) for Translations
-  - Configuration for Locales is done within `/i18n/config.json`
-- Website Content is defined within `/pages`
-  - Initial development usually happens in English: `/pages/en`
-  - Localized versions of `/pages/en` are done within `/pages/{localeCode}`
+  - Configuration for Locales is done within `apps/site/i18n/config.json`
+- Website Content is defined within `apps/site/pages`
+  - Initial development usually happens in English: `apps/site/pages/en`
+  - Localized versions of `/pages/en` are done within `apps/site/pages/{localeCode}`
   - All content is in Markdown and is per locale.
   - The top of each Markdown file is a YAML (Frontmatter) block for page-specific localization information passed to various templates.
-  - The bulk of the Markdown content for each page is referenced as `{children}` on their respective JSX Layout (`layouts/`)
-- Multi-Purpose React Hooks are defined on `/hooks`
-- Multi-Purpose TypeScript definitions are defined on `/types`
-- React Context Providers are defined on `/providers`
-- Build-time Data Fetching Scripts are defined on `/next-data`
+  - The bulk of the Markdown content for each page is referenced as `{children}` on their respective JSX Layout (`apps/site/layouts/`)
+- Multi-Purpose React Hooks are defined on `apps/site/hooks`
+- Multi-Purpose TypeScript definitions are defined on `apps/site/types`
+- React Context Providers are defined on `apps/site/providers`
+- Build-time Data Fetching Scripts are defined on `apps/site/next-data`
   - Used for Node.js Release data fetching
   - Generation of build-time indexes such as blog data
-- Multi-Purpose Scripts are stored within `/scripts`
+- Multi-Purpose Scripts are stored within `apps/site/scripts`
   - Such as Node.js Release Blog Post generation
-- Storybook Configuration is done within `/.storybook`
+- Storybook Configuration is done within `apps/site/.storybook`
   - We use an almost out-of-the-box Storybook Experience with a few extra customisations
 
 ### Adding new Pages
 
 1. Create new page content including the layout, title and copy.
-2. Update the relevant `/layout` to add a link to the new page.
+2. Update the relevant `apps/site/layout` to add a link to the new page.
 
 #### Create the page content
 
-Create a new markdown file in `/pages/en`.
+Create a new markdown file in `apps/site/pages/en`.
 
 At the top of the markdown file, within the Markdown Frontmatter, set a page the title and layout.
 
@@ -192,7 +196,7 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
   - We require that you define one Tailwind Token per line, just as shown on the example above, since this improves readability
 - Only write CSS within CSS Modules, avoid writing CSS within JavaScript files
 - We recommend creating mixins for reusable animations, effects and more
-  - You can create Mixins within the `styles/mixins` folder
+  - You can create Mixins within the `apps/site/styles/mixins` folder
 
 > \[!NOTE]\
 > Tailwind is already configured for this repository. You don't need to import any Tailwind module within your CSS module.\
@@ -205,11 +209,11 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 
 ### Best practices when creating a Component
 
-- All React Components should be placed within the `components` folder.
+- All React Components should be placed within the `apps/site/components` folder.
 - Each Component should be placed, whenever possible, within a sub-folder, which we call the "Domain" of the Component
   - The domain represents where these Components belong to or where they will be used.
   - For example, Components used within Article Pages or that are part of the structure of an Article or the Article Layouts,
-    should be placed within `components/Article`
+    should be placed within `apps/site/components/Article`
 - Each component should have its folder with the name of the Component
 - The structure of each component folder follows the following template:
   ```text
@@ -332,13 +336,13 @@ This is to ensure that the Website is always available and that we do not depend
 #### What is `next.dynamic.mjs`?
 
 Our whole Website uses a custom renderer for rendering the pages.
-As you might have seen, within the `pages` directory we have [Next.js Dynamic Route](https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes) named `[...path].tsx` that matches against all possible routes of the Website.
+As you might have seen, within the `apps/site/pages` directory we have [Next.js Dynamic Route](https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes) named `[...path].tsx` that matches against all possible routes of the Website.
 
-This means that each `.md(x)` file within `pages/` is not rendered by Next.js regular App Tree (`pages/_document.tsx` and `pages/_app.tsx`) but a custom render tree.
+This means that each `.md(x)` file within `apps/site/pages/` is not rendered by Next.js regular App Tree (`apps/site/pages/_document.tsx` and `apps/site/pages/_app.tsx`) but a custom render tree.
 
 This custom render uses `getStaticPaths` and [Incremental Static Generation](https://nextjs.org/docs/pages/building-your-application/data-fetching/incremental-static-regeneration) to generate the full list of supported pages of the Website.
 For example, this allows us to generate Localized Pages for every page that is not translated, by telling Next.js to create a localised path.
-`next.dynamic.mjs` is responsible for getting a full list of the source pages (`pages/en`) and identifying which pages have been translated.
+`next.dynamic.mjs` is responsible for getting a full list of the source pages (`apps/site/pages/en`) and identifying which pages have been translated.
 
 Non-translated pages will have their Localized contexts and translated React message-bags (`next-intl`) but the content will be the same as the source page (English).
 Whereas localized pages will have localized context and content.
