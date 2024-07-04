@@ -36,7 +36,7 @@
     "test": "turbo test:unit"
   },
   "dependencies": {
-    "@heroicons/react": "~2.1.1",
+    "@heroicons/react": "~2.1.4",
     "@mdx-js/mdx": "^3.0.1",
     "@nodevu/core": "~0.1.0",
     "@orama/highlight": "^0.1.6",
