@@ -238,5 +238,5 @@ jobs:
         uses: MishaKav/jest-coverage-comment@434e6d2d37116d23d812809b61d499639842fa3b # v1.0.26
         with:
           title: 'Unit Test Coverage Report'
-          junitxml-path: ./junit.xml
+          junitxml-path: ./apps/site/junit.xml
           junitxml-title: Unit Test Report
