@@ -91,7 +91,7 @@ for getting things done and landing your contribution.
 
    ```bash
    npm ci # installs this project's dependencies
-   npx turbo dev # starts a development environment
+   npm run dev # starts a development environment
    ```
 
 7. Perform your changes. In case you're unfamiliar with the structure of this repository, we recommend a read on the [Collaborator Guide](./COLLABORATOR_GUIDE.md)
@@ -103,10 +103,10 @@ for getting things done and landing your contribution.
    git merge upstream/main
    ```
 
-9. Run `npx turbo format` to confirm that linting and formatting are passing.
+9. Run `npm run format` to confirm that linting and formatting are passing.
 
    ```bash
-   npx turbo format
+   npm run format
    ```
 
 10. Once you're happy with your changes, add and commit them to your branch, then push the branch to your fork.
@@ -137,28 +137,28 @@ This repository contains several scripts and commands for performing numerous ta
 <details>
   <summary>Commands for Running & Building the Website</summary>
 
-- `npx turbo dev` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
-- `npx turbo build` builds the Application on Production mode. The output is by default within `.next` folder.
+- `npm run dev` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
+- `npm run build` builds the Application on Production mode. The output is by default within `.next` folder.
   - This is used for the Node.js Vercel Deployments (Preview & Production)
 - `npx turbo deploy` builds the Application on Export Production Mode. The output is by default within `build` folder.
   - This is used for the Node.js Legacy Website Server (DigitalOcean)
-- `npx turbo start` starts a web server running serving the built content from `npx turbo build`
+- `npx turbo start` starts a web server running serving the built content from `npm run build`
 
 </details>
 
 <details>
   <summary>Commands for Maintenance Tasks and Tests</summary>
 
-- `npx turbo lint` runs the linter for all the js files.
-  - `npx turbo lint:fix` attempts to fix any linting errors
-- `npx turbo prettier` runs the prettier for all the js files.
-  - `npx turbo prettier:fix` attempts to fix any style errors
-- `npx turbo format` formats and fixes the whole codebase
-- `npx turbo scripts:release-post` generates a release post for the current release
-  - **Usage:** `npx turbo scripts:release-post -- --version=vXX.X.X --force`
+- `npm run lint` runs the linter for all files.
+  - `npm run lint:fix` attempts to fix any linting errors
+- `npm run prettier` runs the prettier for all the js files.
+  - `npm run prettier:fix` attempts to fix any style errors
+- `npx turbo format` formats and fixes lints for the whole codebase
+- `npm run scripts:release-post` in the `apps/site` directory generates a release post for the current release
+  - **Usage:** `npm run scripts:release-post -- --version=vXX.X.X --force`
 - `npx turbo storybook` starts Storybook's local server
 - `npx turbo storybook:build` builds Storybook as a static web application for publishing
-- `npx turbo test` runs all tests locally
+- `npm run test` runs all tests locally
   - `npx turbo test:unit` runs jest (unit-tests) locally
 
 </details>
