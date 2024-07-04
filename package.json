@@ -37,13 +37,13 @@
   "dependencies": {
     "husky": "9.0.11",
     "lint-staged": "15.2.5",
-    "turbo": "2.0.3"
+    "turbo": "2.0.6"
   },
   "devDependencies": {
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
-    "prettier": "3.3.0",
-    "prettier-plugin-tailwindcss": "0.6.1",
-    "typescript": "~5.4.2"
+    "prettier": "3.3.2",
+    "prettier-plugin-tailwindcss": "0.6.5",
+    "typescript": "~5.5.3"
   }
 }
