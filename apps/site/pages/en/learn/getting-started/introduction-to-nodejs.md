@@ -95,7 +95,3 @@ and we close the response, adding the content as an argument to `end()`:
 ```js
 res.end('Hello World\n');
 ```
-
-### More Examples
-
-See https://github.com/nodejs/examples for a list of Node.js examples that go beyond hello world.
