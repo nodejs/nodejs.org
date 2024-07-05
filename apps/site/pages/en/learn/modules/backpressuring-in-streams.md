@@ -124,7 +124,7 @@ cleaning up and providing a callback when the pipeline is complete.
 Here is an example of using pipeline:
 
 ```cjs
-const { pipeline } = require('node:stream/promises');
+const { pipeline } = require('node:stream');
 const fs = require('node:fs');
 const zlib = require('node:zlib');
 
@@ -147,7 +147,7 @@ pipeline(
 ```
 
 ```mjs
-import { pipeline } from 'node:stream/promises';
+import { pipeline } from 'node:stream';
 import fs from 'node:fs';
 import zlib from 'node:zlib';
 
