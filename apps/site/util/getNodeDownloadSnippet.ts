@@ -1,11 +1,16 @@
 import dedent from 'dedent';
+import type { TranslationValues } from 'next-intl';
 
 import type { NodeRelease } from '@/types';
 import type { PackageManager } from '@/types/release';
 import type { UserOS } from '@/types/userOS';
 
 // @TODO: These snippets should be extracted to i18n (?)
-export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
+export const getNodeDownloadSnippet = (
+  release: NodeRelease,
+  os: UserOS,
+  t: (key: string, values?: TranslationValues) => string
+) => {
   const snippets: Record<PackageManager, string> = {
     NVM: '',
     FNM: '',
@@ -16,94 +21,95 @@ export const getNodeDownloadSnippet = (release: NodeRelease, os: UserOS) => {
 
   if (os === 'WIN' || os === 'MAC' || os === 'LINUX') {
     snippets.DOCKER = dedent`
-      # NOTE:
-      # Docker is not a Node.js package manager. Please ensure it is already installed
-      # on your system. Follow official instructions at https://docs.docker.com/desktop/
-      # Docker images are provided officially at https://github.com/nodejs/docker-node/
+      # ${t('layouts.download.codeBox.noteWithColon')}
+      # ${t('layouts.download.codeBox.dockerIsNotNodejsPackageManager')}
+      # ${t('layouts.download.codeBox.PleaseEndureAlreadyInstallOnSystem')}
+      # ${t('layouts.download.codeBox.dockerInstructions')}
+      # ${t('layouts.download.codeBox.dockerImagesLink')}
 
-      # pulls the Node.js Docker image
+      # ${t('layouts.download.codeBox.pullsNodejsDockerImage')}
       docker pull node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'}
 
-      # verifies the right Node.js version is in the environment
-      docker run node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'} node -v # should print \`${release.versionWithPrefix}\`
+      # ${t('layouts.download.codeBox.verifiesRightNodejsVersion')}
+      docker run node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'} node -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.versionWithPrefix })}
 
-      # verifies the right NPM version is in the environment
-      docker run node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'} npm -v # should print \`${release.npm}\``;
+      # ${t('layouts.download.codeBox.verifiesRoghtNpmVesrion')}
+      docker run node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'} npm -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.npm })}`;
   }
 
   if (os === 'MAC' || os === 'LINUX') {
     snippets.NVM = dedent`
-      # installs nvm (Node Version Manager)
+      # ${t('layouts.download.codeBox.installsNvm')}
       curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
-      # download and install Node.js (you may need to restart the terminal)
+      # ${t('layouts.download.codeBox.downloadAndInstallNodejsRestartTerminal')}
       nvm install ${release.major}
 
-      # verifies the right Node.js version is in the environment
-      node -v # should print \`${release.versionWithPrefix}\`
+      # ${t('layouts.download.codeBox.verifiesRightNodejsVersion')}
+      node -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.versionWithPrefix })}
 
-      # verifies the right NPM version is in the environment
-      npm -v # should print \`${release.npm}\``;
+      # ${t('layouts.download.codeBox.verifiesRoghtNpmVesrion')}
+      npm -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.npm })}`;
 
     snippets.FNM = dedent`
-      # installs fnm (Fast Node Manager)
+      # ${t('layouts.download.codeBox.installsFnm')}
       curl -fsSL https://fnm.vercel.app/install | bash
 
-      # download and install Node.js
+      # ${t('layouts.download.codeBox.downloadAndInstallNodejs')}
       fnm use --install-if-missing ${release.major}
 
-      # verifies the right Node.js version is in the environment
-      node -v # should print \`${release.versionWithPrefix}\`
+      # ${t('layouts.download.codeBox.verifiesRightNodejsVersion')}
+      node -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.versionWithPrefix })}
 
-      # verifies the right NPM version is in the environment
-      npm -v # should print \`${release.npm}\``;
+      # ${t('layouts.download.codeBox.verifiesRoghtNpmVesrion')}
+      npm -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.npm })}`;
 
     snippets.BREW = dedent`
-      # NOTE:
-      # Homebrew is not a Node.js package manager. Please ensure it is already installed
-      # on your system. Follow official instructions at https://brew.sh/
-      # Homebrew only supports installing major Node.js versions and might not support
-      # the latest Node.js version from the ${release.major} release line.
+      # ${t('layouts.download.codeBox.noteWithColon')}
+      # ${t('layouts.download.codeBox.homebrewIsNotNodejsPackageManager')}
+      # ${t('layouts.download.codeBox.PleaseEndureAlreadyInstallOnSystem')}
+      # ${t('layouts.download.codeBox.homebrewInstructions')}
+      # ${t('layouts.download.codeBox.homebrewSupportsIntallingMajorNodejsVersion', { version: release.major })}
 
-      # download and install Node.js
+      # ${t('layouts.download.codeBox.downloadAndInstallNodejs')}
       brew install node@${release.major}
 
-      # verifies the right Node.js version is in the environment
-      node -v # should print \`${release.versionWithPrefix}\`
+      # ${t('layouts.download.codeBox.verifiesRightNodejsVersion')}
+      node -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.versionWithPrefix })}
 
-      # verifies the right NPM version is in the environment
-      npm -v # should print \`${release.npm}\``;
+      # ${t('layouts.download.codeBox.verifiesRoghtNpmVesrion')}
+      npm -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.npm })}`;
   }
 
   if (os === 'WIN') {
     snippets.FNM = dedent`
-      # installs fnm (Fast Node Manager)
+      # ${t('layouts.download.codeBox.installsFnm')}
       winget install Schniz.fnm
 
-      # download and install Node.js
+      # ${t('layouts.download.codeBox.downloadAndInstallNodejs')}
       fnm use --install-if-missing ${release.major}
 
-      # verifies the right Node.js version is in the environment
-      node -v # should print \`${release.versionWithPrefix}\`
+      # ${t('layouts.download.codeBox.verifiesRightNodejsVersion')}
+      node -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.versionWithPrefix })}
 
-      # verifies the right NPM version is in the environment
-      npm -v # should print \`${release.npm}\``;
+      # ${t('layouts.download.codeBox.verifiesRoghtNpmVesrion')}
+      npm -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.npm })}`;
 
     snippets.CHOCO = dedent`
-      # NOTE:
-      # Chocolatey is not a Node.js package manager. Please ensure it is already installed
-      # on your system. Follow official instructions at https://chocolatey.org/
-      # Chocolatey is not officially maintained by the Node.js project and might not
-      # support the ${release.versionWithPrefix} version of Node.js
+      # ${t('layouts.download.codeBox.noteWithColon')}
+      # ${t('layouts.download.codeBox.chocolateyIsNotNodejsPackageManager')}
+      # ${t('layouts.download.codeBox.PleaseEndureAlreadyInstallOnSystem')}
+      # ${t('layouts.download.codeBox.chocolateyInstructions')}
+      # ${t('layouts.download.codeBox.chocolateyNotMaintanedByNodejs', { version: release.versionWithPrefix })}
 
-      # download and install Node.js
+      # ${t('layouts.download.codeBox.downloadAndInstallNodejs')}
       choco install nodejs${release.isLts ? '-lts' : ''} --version="${release.version}"
 
-      # verifies the right Node.js version is in the environment
-      node -v # should print \`${release.major}\`
+      # ${t('layouts.download.codeBox.verifiesRightNodejsVersion')}
+      node -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.major })}
 
-      # verifies the right NPM version is in the environment
-      npm -v # should print \`${release.npm}\``;
+      # ${t('layouts.download.codeBox.verifiesRoghtNpmVesrion')}
+      npm -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.npm })}`;
   }
 
   return snippets;
