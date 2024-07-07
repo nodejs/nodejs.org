@@ -2,8 +2,8 @@
   <br />
   <a href="https://nodejs.org">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="./public/static/logos/nodejsDark.svg">
-      <img src="./public/static/logos/nodejsLight.svg" width="200px">
+      <source media="(prefers-color-scheme: dark)" srcset="https://nodejs.org/static/logos/nodejsLight.svg">
+      <img src="https://nodejs.org/static/logos/nodejsDark.svg" width="200px">
     </picture>
   </a>
 </p>
@@ -29,6 +29,9 @@
   <img src="https://github.com/nodejs/nodejs.org/actions/workflows/build.yml/badge.svg" alt="Build and Analysis Checks" />
   <a title="scorecard" href="https://securityscorecards.dev/viewer/?uri=github.com/nodejs/nodejs.org">
     <img src="https://api.securityscorecards.dev/projects/github.com/nodejs/nodejs.org/badge" alt="nodejs.org scorecard badge" />
+  </a>
+  <a href="http://commitizen.github.io/cz-cli/" alt="Commitizen friendly">
+    <img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg">
   </a>
   <br />
   <br />
