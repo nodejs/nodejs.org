@@ -124,7 +124,7 @@ cleaning up and providing a callback when the pipeline is complete.
 Here is an example of using pipeline:
 
 ```cjs
-const { pipeline } = require('node:stream/promises');
+const { pipeline } = require('node:stream');
 const fs = require('node:fs');
 const zlib = require('node:zlib');
 
@@ -147,7 +147,7 @@ pipeline(
 ```
 
 ```mjs
-import { pipeline } from 'node:stream/promises';
+import { pipeline } from 'node:stream';
 import fs from 'node:fs';
 import zlib from 'node:zlib';
 
@@ -169,15 +169,12 @@ pipeline(
 );
 ```
 
-You can also call [`promisify`][] on pipeline to use it with `async` / `await`:
+You can also use the [`stream/promises`][] module to use pipeline with `async` / `await`:
 
 ```cjs
-const stream = require('node:stream');
+const { pipeline } = require('node:stream/promises');
 const fs = require('node:fs');
 const zlib = require('node:zlib');
-const util = require('node:util');
-
-const pipeline = util.promisify(stream.pipeline);
 
 async function run() {
   try {
@@ -194,12 +191,9 @@ async function run() {
 ```
 
 ```mjs
-import stream from 'node:stream';
+import { pipeline } from 'node:stream/promises';
 import fs from 'node:fs';
 import zlib from 'node:zlib';
-import util from 'node:util';
-
-const pipeline = util.promisify(stream.pipeline);
 
 async function run() {
   try {
@@ -749,4 +743,4 @@ Node.js.
 [piped]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
 [`pump`]: https://github.com/mafintosh/pump
 [`pipeline`]: https://nodejs.org/api/stream.html#stream_stream_pipeline_streams_callback
-[`promisify`]: https://nodejs.org/api/util.html#util_util_promisify_original
+[`stream/promises`]: https://nodejs.org/api/stream.html#streampipelinesource-transforms-destination-options
