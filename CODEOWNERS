@@ -6,12 +6,12 @@
 .husky @nodejs/web-infra
 
 # Framework
-./app/site/next.config.mjs @nodejs/web-infra
-./app/site/next.dynamic.mjs @nodejs/web-infra
+app/site/next.config.mjs @nodejs/web-infra
+app/site/next.dynamic.mjs @nodejs/web-infra
 
 # Node.js Release Blog Posts
-./app/site/pages/en/blog/release @nodejs/releasers
-./app/site/pages/en/blog/announcements @nodejs/releasers
+app/site/pages/en/blog/release @nodejs/releasers
+app/site/pages/en/blog/announcements @nodejs/releasers
 
 # Package Ecosystem
 package.json @nodejs/nodejs-website
@@ -19,5 +19,5 @@ turbo.json @nodejs/nodejs-website @nodejs/web-infra
 
 # Web Infrastructure
 crowdin.yml @nodejs/web-infra
-./app/site/redirects.json @nodejs/web-infra
-./app/site/site.json @nodejs/web-infra
+app/site/redirects.json @nodejs/web-infra
+app/site/site.json @nodejs/web-infra
