@@ -270,6 +270,16 @@
     "default": false
   },
   {
+    "code": "ur-PK",
+    "localName": "اردو (پاکستان)",
+    "name": "Urdu (Pakistan)",
+    "langDir": "rtl",
+    "dateFormat": "DD/MM/YYYY",
+    "hrefLang": "ur-PK",
+    "enabled": false,
+    "default": false
+  },
+  {
     "code": "uz",
     "localName": "O'zbek",
     "name": "Uzbek",
