@@ -72,10 +72,8 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
-          # By default Git Checkout on `pull-request-target` will checkout
-          # the `default` branch of the Pull Request. We want to checkout
-          # the actual branch of the Pull Request.
-          ref: ${{ github.event.pull_request.head.ref }}
+          # Provides the Pull Request commit SHA or the GitHub merge group ref
+          ref: ${{ github.event.pull_request.head.sha || github.ref }}
 
       - name: Restore Lint Cache
         uses: actions/cache/restore@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2

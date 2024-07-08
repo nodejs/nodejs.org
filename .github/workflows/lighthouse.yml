@@ -45,16 +45,8 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
-          # Since we checkout the HEAD of the current Branch, if the Pull Request comes from a Fork
-          # we want to clone the fork's repository instead of the base repository
-          # this allows us to have the correct history tree of the perspective of the Pull Request's branch
-          # If the Workflow is running on `merge_group` or `push` events it fallsback to the base repository
-          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
-          # We checkout the branch itself instead of a specific SHA (Commit) as we want to ensure that this Workflow
-          # is always running with the latest `ref` (changes) of the Pull Request's branch
-          # If the Workflow is running on `merge_group` or `push` events it fallsback to `github.ref` which will often be `main`
-          # or the merge_group `ref`
-          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+          # Provides the Pull Request commit SHA or the GitHub merge group ref
+          ref: ${{ github.event.pull_request.head.sha || github.ref }}
 
       - name: Add Comment to PR
         # Signal that a lighthouse run is about to start
