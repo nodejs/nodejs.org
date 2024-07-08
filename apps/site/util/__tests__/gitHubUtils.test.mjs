@@ -20,7 +20,7 @@ describe('GitHub utils', () => {
   it('getGitHubBlobUrl returns the correct URL', () => {
     const result = getGitHubBlobUrl('learn/getting-started/introduction.md');
     const expected =
-      'https://github.com/nodejs/nodejs.org/blob/main/pages/en/learn/getting-started/introduction.md';
+      'https://github.com/nodejs/nodejs.org/blob/main/apps/site/pages/en/learn/getting-started/introduction.md';
     expect(result).toBe(expected);
   });
 
