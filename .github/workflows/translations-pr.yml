@@ -8,12 +8,12 @@ on:
     branches:
       - main
     paths:
-      - 'pages/**/*.md'
-      - 'pages/**/*.mdx'
-      - '!pages/en/**/*.md'
-      - '!pages/en/**/*.mdx'
-      - 'i18n/locales/*.json'
-      - '!i18n/locales/en.json'
+      - 'apps/site/pages/**/*.md'
+      - 'apps/site/pages/**/*.mdx'
+      - '!apps/site/pages/en/**/*.md'
+      - '!apps/site/pages/en/**/*.mdx'
+      - 'apps/site/i18n/locales/*.json'
+      - '!apps/site/i18n/locales/en.json'
 
 permissions:
   actions: read
@@ -79,8 +79,8 @@ jobs:
         uses: actions/cache/restore@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
         with:
           path: |
-            .eslintmdcache
-            .prettiercache
+            apps/site/.eslintmdcache
+            apps/site/.prettiercache
           # We want to restore Turborepo Cache and ESlint and Prettier Cache
           # The ESLint and Prettier cache's are useful to reduce the overall runtime of ESLint and Prettier
           # as they will only run on files that have changed since the last cached run
@@ -106,12 +106,12 @@ jobs:
       - name: Run `npx lint:md --fix`
         # This runs a specific version of ESLint with only the Translation Pages Globbing
         # This avoid that unrelated changes get linted/modified within this PR
-        run: npx eslint "pages/**/*.md?(x)" --fix --cache --cache-strategy=metadata --cache-file=.eslintmdcache
+        run: npx eslint "apps/site/pages/**/*.md?(x)" --fix --cache --cache-strategy=metadata --cache-file=apps/site/.eslintmdcache
 
       - name: Run `npx prettier --write`
         # This runs a specific version of Prettier with only the Translation Pages Globbing
         # This avoid that unrelated changes get prettied/modified within this PR
-        run: npx prettier "{pages,i18n}/**/*.{json,md,mdx}" --check --write --cache --cache-strategy=metadata --cache-location=.prettiercache
+        run: npx prettier "apps/site/{pages,i18n}/**/*.{json,md,mdx}" --check --write --cache --cache-strategy=metadata --cache-location=apps/site/.prettiercache
 
       - name: Push Changes back to Pull Request
         uses: stefanzweifel/git-auto-commit-action@8621497c8c39c72f3e2a999a26b4ca1b5058a842 # v5.0.1
@@ -123,6 +123,6 @@ jobs:
         uses: actions/cache/save@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
         with:
           path: |
-            .eslintmdcache
-            .prettiercache
-          key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.eslintmdcache') }}
+            apps/site/.eslintmdcache
+            apps/site/.prettiercache
+          key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('apps/site/.eslintmdcache') }}
