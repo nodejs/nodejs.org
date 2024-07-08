@@ -38,7 +38,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@f086349bfa2bd1361f7909c78558e816508cdc10 # v2.8.0
+        uses: step-security/harden-runner@17d0e2bd7d51742c71671bd19fa12bdc9d40a3d6 # v2.8.1
         with:
           egress-policy: audit
 
@@ -106,7 +106,7 @@ jobs:
           # Run as a separate file so we do not have to inline all of our formatting logic.
           # See https://github.com/actions/github-script#run-a-separate-file for more info.
           script: |
-            const { formatLighthouseResults } = await import('${{github.workspace}}/scripts/lighthouse/index.mjs')
+            const { formatLighthouseResults } = await import('${{github.workspace}}/apps/site/scripts/lighthouse/index.mjs')
             await formatLighthouseResults({core})
 
       - name: Add Comment to PR

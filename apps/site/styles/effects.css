@@ -1,0 +1,12 @@
+h1.special {
+  @apply bg-gradient-subtle-gray
+    dark:bg-gradient-subtle-white
+    bg-clip-text
+    text-4xl
+    leading-[3rem]
+    -tracking-[0.045rem]
+    [-webkit-text-fill-color:transparent]
+    md:text-5xl
+    md:leading-[4rem]
+    md:-tracking-[0.06rem];
+}
