@@ -5,6 +5,7 @@ import type {
 	RegisterSearchBoxProps,
 	RegisterSearchButtonProps,
 } from "@orama/searchbox";
+import { useTheme } from "next-themes";
 import { SearchBox, SearchButton as OramaSearchButton } from "@orama/searchbox";
 import { OramaClient } from "@oramacloud/client";
 import "@orama/searchbox/dist/index.css";
@@ -19,21 +20,46 @@ const oramaClient = new OramaClient({
 	api_key: ORAMA_CLOUD_API_KEY,
 });
 
-const searchBoxProps: RegisterSearchBoxProps = {
-	oramaInstance: oramaClient,
-	colorScheme: "dark",
-	backdrop: true,
-	resultsMap: {
-		title: "pageSectionTitle",
-		description: "pageSectionContent",
-	},
-};
-
-const searchButtonProps: RegisterSearchButtonProps = {
-	colorScheme: "dark",
-};
-
 export const SearchButton: FC = () => {
+	const { resolvedTheme } = useTheme();
+
+	const searchBoxProps: RegisterSearchBoxProps = {
+		// @ts-ignore - This is a bug in the searchbox types
+		oramaInstance: oramaClient,
+		colorScheme: resolvedTheme,
+		backdrop: true,
+		resultsMap: {
+			title: "pageSectionTitle",
+			description: "pageSectionContent",
+		},
+		facetProperty: "siteSection",
+		themeConfig: {
+			dark: {
+				"--text-color-accent": "#84ba64",
+			},
+			light: {
+				"--text-color-accent": "#84ba64",
+			},
+		},
+		seeAllLink: {
+			url: "/search",
+			label: (count: string, term?: string | undefined) =>
+				`See all ${count} results for ${term}`,
+		},
+	};
+
+	const searchButtonProps: RegisterSearchButtonProps = {
+		colorScheme: resolvedTheme,
+		themeConfig: {
+			dark: {
+				"--search-btn-border-color-hover": "#417e384d",
+			},
+			light: {
+				"--search-btn-border-color-hover": "#417e384d",
+			},
+		},
+	};
+
 	return (
 		<>
 			<OramaSearchButton {...searchButtonProps} />
