@@ -2,31 +2,18 @@ import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 import JsIconGreen from '@/components/Icons/Logos/JsIconGreen';
 import JsIconWhite from '@/components/Icons/Logos/JsIconWhite';
-import NodejsLogoDark from '@/components/Icons/Logos/NodejsDark';
-import NodejsDarkPride from '@/components/Icons/Logos/NodejsDarkPride';
-import NodejsLogoLight from '@/components/Icons/Logos/NodejsLight';
-import NodejsLightPride from '@/components/Icons/Logos/NodejsLightPride';
+import NodejsLogo from '@/components/Icons/Logos/Nodejs';
 import NodejsStackedBlack from '@/components/Icons/Logos/NodejsStackedBlack';
 import NodejsStackedDark from '@/components/Icons/Logos/NodejsStackedDark';
 import NodejsStackedLight from '@/components/Icons/Logos/NodejsStackedLight';
 import NodejsStackedWhite from '@/components/Icons/Logos/NodejsStackedWhite';
 
-export const HorizontalLogos: StoryObj = {
-  render: () => (
-    <div className="flex flex-row gap-4">
-      <NodejsLogoLight width={267} height={80} className="hidden dark:block" />
-      <NodejsLogoDark width={267} height={80} className="block dark:hidden" />
-    </div>
-  ),
+export const HorizontalLogo: StoryObj = {
+  render: () => <NodejsLogo width={267} height={80} />,
 };
 
-export const PrideLogos: StoryObj = {
-  render: () => (
-    <div className="flex flex-row gap-4">
-      <NodejsDarkPride width={267} height={80} className="block dark:hidden" />
-      <NodejsLightPride className="hidden dark:block" width={267} height={80} />
-    </div>
-  ),
+export const PrideLogo: StoryObj = {
+  render: () => <NodejsLogo variant="pride" width={267} height={80} />,
 };
 
 export const StackedLogos: StoryObj = {
