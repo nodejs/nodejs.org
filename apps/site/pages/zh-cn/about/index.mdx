@@ -14,13 +14,13 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
 
@@ -31,13 +31,13 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
 
@@ -51,7 +51,7 @@ Node.js 在设计上受到了诸如 Ruby 的 [Event Machine][] 和 Python 的 [T
 
 HTTP 在 Node.js 中是第一类公民，设计时考虑了流式传输和低延迟。这使得 Node.js 非常适合作为 Web 库或框架的基础。
 
-Node.js 的设计没有线程并不意味着您不能利用环境中的多个核心。可以使用我们的 [child_process.fork()](https://nodejs.org/docs/latest/api/child_process.html#child_processforkmodulepath-args-options) API 来生成子进程，并且设计得易于通信。建立在同一接口之上的是 [cluster](https://nodejs.org/docs/latest/api/cluster.html) 模块，它允许您在进程之间共享套接字，从而实现对核心的负载均衡。
+Node.js 的设计没有线程并不意味着您不能利用环境中的多个核心。可以使用我们的 [child\_process.fork()](https://nodejs.org/docs/latest/api/child_process.html#child_processforkmodulepath-args-options) API 来生成子进程，并且设计得易于通信。建立在同一接口之上的是 [cluster](https://nodejs.org/docs/latest/api/cluster.html) 模块，它允许您在进程之间共享套接字，从而实现对核心的负载均衡。
 
 [blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
