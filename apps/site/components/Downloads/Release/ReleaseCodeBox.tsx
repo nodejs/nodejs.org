@@ -23,7 +23,7 @@ const ReleaseCodeBox: FC = () => {
     const updatedCode = getNodeDownloadSnippet(release, os, t)[platform];
     // Docker and NVM support downloading tags/versions by their full release number
     // but usually we should recommend users to download "major" versions
-    // since our Downlooad Buttons get the latest minor of a major, it does make sense
+    // since our Download Buttons get the latest minor of a major, it does make sense
     // to request installation of a major via a package manager
     memoizedShiki
       .then(shiki => highlightToHtml(shiki)(updatedCode, 'bash'))

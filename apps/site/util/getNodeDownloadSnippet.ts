@@ -33,7 +33,7 @@ export const getNodeDownloadSnippet = (
       # ${t('layouts.download.codeBox.verifiesRightNodejsVersion')}
       docker run node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'} node -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.versionWithPrefix })}
 
-      # ${t('layouts.download.codeBox.verifiesRoghtNpmVesrion')}
+      # ${t('layouts.download.codeBox.verifiesRightNpmVesrion')}
       docker run node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'} npm -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.npm })}`;
   }
 
@@ -48,7 +48,7 @@ export const getNodeDownloadSnippet = (
       # ${t('layouts.download.codeBox.verifiesRightNodejsVersion')}
       node -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.versionWithPrefix })}
 
-      # ${t('layouts.download.codeBox.verifiesRoghtNpmVesrion')}
+      # ${t('layouts.download.codeBox.verifiesRightNpmVesrion')}
       npm -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.npm })}`;
 
     snippets.FNM = dedent`
@@ -61,7 +61,7 @@ export const getNodeDownloadSnippet = (
       # ${t('layouts.download.codeBox.verifiesRightNodejsVersion')}
       node -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.versionWithPrefix })}
 
-      # ${t('layouts.download.codeBox.verifiesRoghtNpmVesrion')}
+      # ${t('layouts.download.codeBox.verifiesRightNpmVesrion')}
       npm -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.npm })}`;
 
     snippets.BREW = dedent`
@@ -77,7 +77,7 @@ export const getNodeDownloadSnippet = (
       # ${t('layouts.download.codeBox.verifiesRightNodejsVersion')}
       node -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.versionWithPrefix })}
 
-      # ${t('layouts.download.codeBox.verifiesRoghtNpmVesrion')}
+      # ${t('layouts.download.codeBox.verifiesRightNpmVesrion')}
       npm -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.npm })}`;
   }
 
@@ -92,7 +92,7 @@ export const getNodeDownloadSnippet = (
       # ${t('layouts.download.codeBox.verifiesRightNodejsVersion')}
       node -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.versionWithPrefix })}
 
-      # ${t('layouts.download.codeBox.verifiesRoghtNpmVesrion')}
+      # ${t('layouts.download.codeBox.verifiesRightNpmVesrion')}
       npm -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.npm })}`;
 
     snippets.CHOCO = dedent`
@@ -108,7 +108,7 @@ export const getNodeDownloadSnippet = (
       # ${t('layouts.download.codeBox.verifiesRightNodejsVersion')}
       node -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.major })}
 
-      # ${t('layouts.download.codeBox.verifiesRoghtNpmVesrion')}
+      # ${t('layouts.download.codeBox.verifiesRightNpmVesrion')}
       npm -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.npm })}`;
   }
 
