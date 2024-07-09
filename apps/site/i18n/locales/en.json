@@ -296,7 +296,7 @@
         "installsNvm": "installs nvm (Node Version Manager)",
         "downloadAndInstallNodejsRestartTerminal": "download and install Node.js (you may need to restart the terminal)",
         "verifiesRightNodejsVersion": "verifies the right Node.js version is in the environment",
-        "verifiesRightNpmVesrion": "verifies the right npm version is in the environment",
+        "verifiesRightNpmVersion": "verifies the right npm version is in the environment",
         "shouldPrint": "should print `{version}`",
         "installsFnm": "installs fnm (Fast Node Manager)",
         "downloadAndInstallNodejs": "download and install Node.js",
