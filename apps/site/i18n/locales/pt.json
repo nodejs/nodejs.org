@@ -15,7 +15,7 @@
           "download": "Descarregar",
           "docs": "Documentação",
           "guides": "Guias",
-          "learn": "Aprender",
+          "learn": "Estudar",
           "security": "Segurança",
           "certification": "Certificação",
           "blog": "Blogue"
@@ -203,7 +203,7 @@
     },
     "search": {
       "searchBox": {
-        "placeholder": "Começar a digitar..."
+        "placeholder": "Digitar..."
       },
       "seeAll": {
         "text": "Ver todos os {count} resultados"
@@ -277,10 +277,10 @@
         "prebuilt-installer": "Instalador do Pré-compilado",
         "prebuilt-binaries": "Binários Pré-compilados",
         "package-manager": "Gestor de Pacote",
-        "source-code": "Código Fonte"
+        "source-code": "Código-Fonte"
       },
       "buttons": {
-        "prebuilt": "Descarregue o Node.js {version}",
+        "prebuilt": "Descarregar a Node.js {version}",
         "source": "Descarregue o código fonte do Node.js {version}"
       },
       "dropdown": {
