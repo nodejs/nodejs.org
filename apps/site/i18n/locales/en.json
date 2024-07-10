@@ -300,6 +300,7 @@
         "shouldPrint": "should print `{version}`",
         "installsFnm": "installs fnm (Fast Node Manager)",
         "downloadAndInstallNodejs": "download and install Node.js",
+        "activateFNM": "activate fnm",
         "noteWithColon": "NOTE:",
         "dockerIsNotNodejsPackageManager": "Docker is not a Node.js package manager.",
         "PleaseEndureAlreadyInstallOnSystem": "Please ensure it is already installed on your system.",
