@@ -1,0 +1,71 @@
+---
+title: Tentang Node.js®
+layout: about
+---
+
+Tentang Node.js®
+
+Sebagai runtime JavaScript berbasis peristiwa asinkron, Node.js dirancang untuk membangun
+aplikasi jaringan yang dapat diskalakan. Dalam contoh "Hello World" berikut, banyak
+koneksi dapat ditangani secara bersamaan. Pada setiap koneksi, panggilan baliknya adalah
+dipecat, tetapi jika tidak ada pekerjaan yang harus dilakukan, Node.js akan tidur.
+
+```cjs
+const { createServer } = require('node:http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+```mjs
+import { createServer } from 'node:http';
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+Ini berbeda dengan model konkurensi yang lebih umum saat ini, di mana utas OS
+dipekerjakan. Jaringan berbasis thread relatif tidak efisien dan sangat
+sulit untuk digunakan. Selain itu, pengguna Node.js bebas dari kekhawatiran
+dead-locking proses, karena tidak ada kunci. Hampir tidak ada fungsi di
+Node.js langsung melakukan I/O, jadi proses tidak pernah memblokir kecuali saat I/O dilakukan menggunakan
+metode sinkron dari pustaka standar Node.js. Karena tidak ada yang menghalangi, sistem yang dapat diskalakan sangat
+masuk akal untuk dikembangkan di Node.js.
+
+Jika ada yang belum familiar dengan bahasa ini, ada artikel lengkap tentang [Blocking vs. Non-Blocking][].
+
+---
+
+Node.js memiliki desain yang mirip dengan, dan dipengaruhi oleh, sistem seperti [Event Machine] \[] Ruby dan \[Twisted] \[] Python. Node.js membawa model acara sedikit lebih jauh. Ini menyajikan loop peristiwa sebagai konstruksi runtime, bukan sebagai perpustakaan. Di sistem lain, selalu ada panggilan pemblokiran untuk memulai perulangan peristiwa. Biasanya, perilaku ditentukan melalui callback di awal skrip, dan di akhir skrip, server dimulai melalui panggilan pemblokiran seperti `EventMachine::run()`. Di Node.js, tidak ada panggilan start-the-event-loop. Node.js cukup memasuki loop acara setelah menjalankan skrip input. Node.js keluar dari loop peristiwa ketika tidak ada lagi callback yang harus dilakukan. Perilaku ini seperti JavaScript browser — loop peristiwa disembunyikan dari pengguna.
+
+HTTP adalah warga negara kelas satu di Node.js, dirancang dengan streaming dan rendah
+latensi dalam pikiran. Ini membuat Node.js sangat cocok untuk fondasi web
+perpustakaan atau kerangka kerja.
+
+Node.js dirancang tanpa thread bukan berarti Anda tidak dapat memanfaatkan banyak inti di lingkungan Anda. Proses anak dapat dihasilkan dengan menggunakan API child_process.fork() kami, dan dirancang agar mudah untuk berkomunikasi. Dibangun di atas antarmuka yang sama adalah modul cluster, yang memungkinkan Anda berbagi soket antar proses untuk mengaktifkan penyeimbangan beban pada inti Anda.
+
+[blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+[`child_process.fork()`]: https://nodejs.org/api/child_process.html
+[`cluster`]: https://nodejs.org/api/cluster.html
+[event machine]: https://github.com/eventmachine/eventmachine
+[berpilin]: https://twisted.org/
