@@ -5,7 +5,6 @@ import type { NodeRelease } from '@/types';
 import type { PackageManager } from '@/types/release';
 import type { UserOS } from '@/types/userOS';
 
-// @TODO: These snippets should be extracted to i18n (?)
 export const getNodeDownloadSnippet = (
   release: NodeRelease,
   os: UserOS,
