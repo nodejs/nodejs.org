@@ -112,7 +112,7 @@ const nextConfig = {
       'shiki',
     ],
     // Removes the warning regarding the WebPack Build Worker
-    webpackBuildWorker: false,
+    webpackBuildWorker: true,
     // Enables Next.js's Instrumentation Hook
     instrumentationHook: true,
   },

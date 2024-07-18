@@ -1,4 +1,4 @@
-import { getHighlighterCore } from '@shikijs/core';
+import { getSingletonHighlighterCore } from '@shikijs/core';
 import type { HighlighterCore } from '@shikijs/core';
 import { getWasmInstance } from '@shikijs/core/wasm-inlined';
 
@@ -6,7 +6,7 @@ import { LANGUAGES, DEFAULT_THEME } from '@/shiki.config.mjs';
 
 // This creates a memoized minimal Shikiji Syntax Highlighter
 export const getShiki = () =>
-  getHighlighterCore({
+  getSingletonHighlighterCore({
     themes: [DEFAULT_THEME],
     langs: LANGUAGES,
     loadWasm: getWasmInstance,
