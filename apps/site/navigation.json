@@ -17,9 +17,8 @@
       "label": "components.containers.navBar.links.blog"
     },
     "docs": {
-      "link": "https://nodejs.org/docs/latest/api/",
-      "label": "components.containers.navBar.links.docs",
-      "target": "_blank"
+      "link": "/docs/latest/api/",
+      "label": "components.containers.navBar.links.docs"
     },
     "certification": {
       "link": "https://openjsf.org/certification",
