@@ -292,7 +292,26 @@
       "codeBox": {
         "systemManagerWarning": "is not a Node.js package manager. Please ensure you already have {packageManager} installed.",
         "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project.",
-        "communityWarningReport": "If you encounter issues, please reach out to the package manager's maintainers."
+        "communityWarningReport": "If you encounter issues, please reach out to the package manager's maintainers.",
+        "installsNvm": "installs nvm (Node Version Manager)",
+        "downloadAndInstallNodejsRestartTerminal": "download and install Node.js (you may need to restart the terminal)",
+        "verifiesRightNodejsVersion": "verifies the right Node.js version is in the environment",
+        "verifiesRightNpmVersion": "verifies the right npm version is in the environment",
+        "shouldPrint": "should print `{version}`",
+        "installsFnm": "installs fnm (Fast Node Manager)",
+        "downloadAndInstallNodejs": "download and install Node.js",
+        "noteWithColon": "NOTE:",
+        "dockerIsNotNodejsPackageManager": "Docker is not a Node.js package manager.",
+        "PleaseEndureAlreadyInstallOnSystem": "Please ensure it is already installed on your system.",
+        "dockerInstructions": "Follow official instructions at https://docs.docker.com/desktop/",
+        "dockerImagesLink": "Docker images are provided officially at https://github.com/nodejs/docker-node/",
+        "pullsNodejsDockerImage": "pulls the Node.js Docker image",
+        "homebrewIsNotNodejsPackageManager": "Homebrew is not a Node.js package manager.",
+        "homebrewInstructions": "Follow official instructions at https://brew.sh/",
+        "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew only supports installing major Node.js versions and might not support the latest Node.js version from the {version} release line.",
+        "chocolateyIsNotNodejsPackageManager": "Chocolatey is not a Node.js package manager.",
+        "chocolateyInstructions": "Follow official instructions at https://chocolatey.org/",
+        "chocolateyNotMaintanedByNodejs": "Chocolatey is not officially maintained by the Node.js project and might not support the {version} version of Node.js"
       }
     }
   }
