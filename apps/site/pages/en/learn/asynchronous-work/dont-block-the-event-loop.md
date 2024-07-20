@@ -392,7 +392,7 @@ I/O-intensive tasks involve querying an external service provider (DNS, file sys
 While a Worker with an I/O-intensive task is waiting for its response, it has nothing else to do and can be de-scheduled by the operating system, giving another Worker a chance to submit their request.
 Thus, _I/O-intensive tasks will be making progress even while the associated thread is not running_.
 External service providers like databases and file systems have been highly optimized to handle many pending requests concurrently.
-For example, a file system will examine a large set of pending write and read requests to merge conflicting updates and to retrieve files in an optimal order (e.g. see [these slides](http://researcher.ibm.com/researcher/files/il-AVISHAY/01-block_io-v1.3.pdf)).
+For example, a file system will examine a large set of pending write and read requests to merge conflicting updates and to retrieve files in an optimal order.
 
 If you rely on only one Worker Pool, e.g. the Node.js Worker Pool, then the differing characteristics of CPU-bound and I/O-bound work may harm your application's performance.
 
