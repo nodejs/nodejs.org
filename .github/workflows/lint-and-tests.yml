@@ -224,3 +224,4 @@ jobs:
           title: 'Unit Test Coverage Report'
           junitxml-path: ./apps/site/junit.xml
           junitxml-title: Unit Test Report
+          coverage-summary-path: ./apps/site/coverage/coverage-summary.json
