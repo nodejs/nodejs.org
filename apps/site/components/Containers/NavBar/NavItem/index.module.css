@@ -7,9 +7,9 @@
     py-2;
 
   .label {
-    @apply text-sm
+    @apply text-base
       font-medium
-      leading-5;
+      lg:text-sm;
   }
 
   .icon {

@@ -1,6 +1,8 @@
 .searchButton {
   @apply flex
-    w-52
+    grow
+    basis-80
+    items-center
     gap-2
     rounded-md
     bg-neutral-200
@@ -9,6 +11,7 @@
     text-neutral-800
     hover:bg-neutral-300
     hover:text-neutral-900
+    sm:mr-auto
     dark:bg-neutral-900
     dark:text-neutral-600
     dark:hover:bg-neutral-800
