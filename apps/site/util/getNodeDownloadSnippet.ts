@@ -54,6 +54,9 @@ export const getNodeDownloadSnippet = (
       # ${t('layouts.download.codeBox.installsFnm')}
       curl -fsSL https://fnm.vercel.app/install | bash
 
+      # ${t('layouts.download.codeBox.activateFNM')}
+      source ~/.bashrc
+
       # ${t('layouts.download.codeBox.downloadAndInstallNodejs')}
       fnm use --install-if-missing ${release.major}
 
