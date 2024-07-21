@@ -47,6 +47,8 @@
   @apply hidden
     flex-1
     flex-col
+    justify-between
+    gap-4
     lg:flex
     lg:flex-row
     lg:items-center;
@@ -55,12 +57,13 @@
 .navItems {
   @apply flex
     flex-col
-    gap-1
+    gap-0
     border-b
     border-neutral-200
     p-4
     lg:flex-1
     lg:flex-row
+    lg:gap-1
     lg:border-0
     lg:p-0
     dark:border-neutral-900;
@@ -68,11 +71,16 @@
 
 .actionsWrapper {
   @apply flex
+    flex-row
+    flex-wrap
     items-center
+    justify-between
     gap-2
     border-b
     border-neutral-200
     p-4
+    sm:flex-nowrap
+    lg:basis-96
     lg:border-0
     lg:p-0
     dark:border-neutral-900;
