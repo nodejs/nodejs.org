@@ -31,9 +31,7 @@ const NavItem: FC<PropsWithChildren<NavItemProps>> = ({
   >
     <span className={styles.label}>{children}</span>
 
-    {((type === 'nav' && href.startsWith('http')) || target === '_blank') && (
-      <ArrowUpRightIcon className={styles.icon} />
-    )}
+    {target === '_blank' && <ArrowUpRightIcon className={styles.icon} />}
   </ActiveLink>
 );
 

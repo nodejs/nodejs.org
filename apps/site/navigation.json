@@ -17,7 +17,7 @@
       "label": "components.containers.navBar.links.blog"
     },
     "docs": {
-      "link": "/docs/latest/api/",
+      "link": "https://nodejs.org/docs/latest/api/",
       "label": "components.containers.navBar.links.docs"
     },
     "certification": {
