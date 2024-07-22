@@ -1,5 +1,6 @@
 .list {
   @apply flex
-    items-center
-    gap-5;
+    w-full
+    gap-5
+    px-6;
 }
