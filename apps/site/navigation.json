@@ -22,7 +22,7 @@
       "target": "_blank"
     },
     "certification": {
-      "link": "https://openjsf.org/certification",
+      "link": "https://training.linuxfoundation.org/openjs/",
       "label": "components.containers.navBar.links.certification",
       "target": "_blank"
     }
