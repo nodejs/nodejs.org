@@ -228,8 +228,8 @@
 
     main {
       @apply max-w-[660px]
-        gap-4
-        break-words;
+        gap-4;
+      overflow-wrap: anywhere;
     }
   }
 
