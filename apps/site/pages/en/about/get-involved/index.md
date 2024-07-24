@@ -16,12 +16,14 @@ If you are interested in getting involved with the Node.js community, there are 
 
 ## Learning Materials
 
-- [Reddit Node.js community](https://www.reddit.com/r/node).
+If you are looking to learn more about Node.js, there are many resources available to you.
+
 - [Official Learn section](https://nodejs.org/en/learn/) of the Node.js website.
 - [Official API reference documentation](https://nodejs.org/api/).
 - [NodeSchool.io](https://nodeschool.io/) will teach you Node.js concepts via interactive command-line games.
 - [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) collects new information every day.
 - [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
+- [Reddit Node.js community](https://www.reddit.com/r/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
 
 ## Unofficial Discussion Areas
 
