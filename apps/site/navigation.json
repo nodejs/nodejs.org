@@ -18,8 +18,7 @@
     },
     "docs": {
       "link": "https://nodejs.org/docs/latest/api/",
-      "label": "components.containers.navBar.links.docs",
-      "target": "_blank"
+      "label": "components.containers.navBar.links.docs"
     },
     "certification": {
       "link": "https://training.linuxfoundation.org/openjs/",
