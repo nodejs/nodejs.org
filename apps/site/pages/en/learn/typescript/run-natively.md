@@ -52,3 +52,9 @@ The most prominent unsupported features that require transformation are:
 In addition, Node.js does not read `tsconfig.json` files and does not support
 features that depend on settings within `tsconfig.json`, such as paths or
 converting newer JavaScript syntax into older standards.
+
+## Important notes
+
+Thanks to all the contributors who have made this feature possible. We hope that this feature will be stable and available in the LTS version of Node.js soon.
+
+We can understand that this feature is experimental and has some limitations, and this may disappoint you. So please be patient and wait for the stable version of this feature. And **NEVER** spam us. If you are happy, you can share these articles on social media and tell your friends about this feature.
