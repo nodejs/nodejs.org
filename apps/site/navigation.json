@@ -185,6 +185,27 @@
             }
           }
         },
+        "typescript": {
+          "label": "components.navigation.learn.typescript.links.typescript",
+          "items": {
+            "introduction": {
+              "link": "/learn/typescript/introduction",
+              "label": "components.navigation.learn.typescript.links.introduction"
+            },
+            "transpile": {
+              "link": "/learn/typescript/transpile",
+              "label": "components.navigation.learn.typescript.links.transpile"
+            },
+            "run": {
+              "link": "/learn/typescript/run",
+              "label": "components.navigation.learn.typescript.links.run"
+            },
+            "runNatively": {
+              "link": "/learn/typescript/run-natively",
+              "label": "components.navigation.learn.typescript.links.runNatively"
+            }
+          }
+        },
         "asynchronousWork": {
           "label": "components.navigation.learn.asynchronousWork.links.asynchronousWork",
           "items": {

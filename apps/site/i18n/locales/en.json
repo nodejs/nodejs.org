@@ -42,6 +42,15 @@
             "securityBestPractices": "Security Best Practices"
           }
         },
+        "typescript": {
+          "links": {
+            "typescript": "TypeScript",
+            "introduction": "Introduction to TypeScript",
+            "transpile": "Running TypeScript code using transpilation",
+            "run": "Running TypeScript with a runner",
+            "runNatively": "Running TypeScript with a Node.js Itself"
+          }
+        },
         "asynchronousWork": {
           "links": {
             "asynchronousWork": "Asynchronous Work",

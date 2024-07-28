@@ -37,12 +37,12 @@
   },
   "websiteBadges": {
     "index": {
-      "startDate": "2024-04-24T00:00:00.000Z",
-      "endDate": "2024-05-24T00:00:00.000Z",
+      "startDate": "2024-07-01T00:00:00.000Z",
+      "endDate": "2024-08-01T00:00:00.000Z",
       "kind": "default",
-      "title": "Survey",
-      "text": "Help us shape the next 10 years of Node.js",
-      "link": "https://linuxfoundation.surveymonkey.com/r/nodenext10survey24"
+      "title": "Discover",
+      "text": "TypeScript in Node.js",
+      "link": "https://nodejs.org/en/learn/typescript/introduction/"
     }
   }
 }
