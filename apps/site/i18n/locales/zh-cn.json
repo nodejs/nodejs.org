@@ -29,14 +29,14 @@
             "gettingStarted": "快速上手",
             "introductionToNodejs": "Node.js 介绍",
             "howToInstallNodejs": "如何安装 Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "使用Node.js需要了解多少JavaScript？",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "使用 Node.js 需要了解多少 JavaScript？",
             "differencesBetweenNodejsAndTheBrowser": "Node.js 与浏览器的区别",
             "theV8JavascriptEngine": "JavaScript V8 引擎",
             "anIntroductionToTheNpmPackageManager": "Npm 包管理器简介",
             "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) 与未来",
             "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js 在开发与生产环境中的区别",
             "nodejsWithTypescript": "Node.js 与 TypeScript",
-            "nodejsWithWebassembly": "使用WebAssembly的Node.js",
+            "nodejsWithWebassembly": "使用 WebAssembly 的 Node.js",
             "debugging": "调试 Node.js",
             "profiling": "分析 Node.js 应用程序",
             "securityBestPractices": "安全最佳实践"
@@ -120,7 +120,7 @@
           "getInvolved": "参与贡献",
           "collabSummit": "协作者峰会",
           "upcomingEvents": "近期活动",
-          "contribute": "为Node.js做出贡献",
+          "contribute": "为 Node.js 做出贡献",
           "codeOfConduct": "行为准则"
         }
       }
@@ -130,7 +130,7 @@
         "previousReleases": "Node.js 版本",
         "packageManager": "使用包管理器安装 Node.js",
         "shaSums": {
-          "title": "发布文件的签名SHASUMS",
+          "title": "发布文件的签名 SHASUMS",
           "howToVerify": " （如何验证） "
         },
         "allDownloads": "所有下载选项",
@@ -138,7 +138,7 @@
         "unofficialBuilds": "非官方构建",
         "buildingFromSource": "在支持的平台上从源代码构建 Node.js",
         "installingOnLinux": "通过二进制文件安装 Node.js",
-        "installingOnWsl": "在适用于 Linux 的 Windows 子系统（WSL）上安装 Node. js"
+        "installingOnWsl": "在适用于 Linux 的 Windows 子系统（WSL）上安装 Node.js"
       }
     },
     "downloadReleasesTable": {
