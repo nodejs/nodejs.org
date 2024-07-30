@@ -13,6 +13,7 @@ export enum PackageManagerLabel {
   NVM = 'nvm',
   FNM = 'fnm',
   BREW = 'Brew',
+  WINGET = 'WinGet',
   CHOCO = 'Chocolatey',
   DOCKER = 'Docker',
 }
@@ -37,6 +38,10 @@ export const operatingSystemItems = [
 ];
 
 export const platformItems = [
+  {
+    label: PackageManagerLabel.WINGET,
+    value: 'WINGET' as PackageManager,
+  },
   {
     label: PackageManagerLabel.NVM,
     value: 'NVM' as PackageManager,

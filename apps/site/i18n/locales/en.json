@@ -310,6 +310,9 @@
         "homebrewIsNotNodejsPackageManager": "Homebrew is not a Node.js package manager.",
         "homebrewInstructions": "Follow official instructions at https://brew.sh/",
         "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew only supports installing major Node.js versions and might not support the latest Node.js version from the {version} release line.",
+        "wingetIsNotNodejsPackageManager": "The Windows Package Manager is not a Node.js package manager.",
+        "wingetInstructions": "Follow official instructions at https://learn.microsoft.com/en-us/windows/package-manager/winget/install",
+        "wingetNotMaintainedByNodejs": "WinGet is not officially maintained by the Node.js project and might not support the {version} version of Node.js",
         "chocolateyIsNotNodejsPackageManager": "Chocolatey is not a Node.js package manager.",
         "chocolateyInstructions": "Follow official instructions at https://chocolatey.org/",
         "chocolateyNotMaintainedByNodejs": "Chocolatey is not officially maintained by the Node.js project and might not support the {version} version of Node.js"
