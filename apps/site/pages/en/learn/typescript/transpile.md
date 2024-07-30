@@ -36,11 +36,11 @@ const justine: User = {
 const isJustineAnAdult: boolean = isAdult(justine);
 ```
 
-**Step 2:** Install TypeScript globally using npm:
+**Step 2:** Install TypeScript globally using a package manager:
 
-If you want to discover npm, you can check our [our introduction to the npm package manager](/learn/getting-started/an-introduction-to-the-npm-package-manager)
+In this example we're going to use npm, you can check our [our introduction to the npm package manager](/learn/getting-started/an-introduction-to-the-npm-package-manager) for more information.
 
-There are two ways to install TypeScript, globally or locally. We recommend installing it globally for the sake of simplicity.
+There are two ways to install TypeScript, globally or locally. We do not recommend installing it globally for the sake of everyone working with you.
 
 ```bash displayName="Install TypeScript globally"
 npm i -g typescript # -g is a shorthand for --global

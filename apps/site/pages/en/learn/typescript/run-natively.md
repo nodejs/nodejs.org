@@ -12,13 +12,13 @@ In the previous articles, we learned how to run TypeScript code using transpilat
 
 ## Running TypeScript code with Node.js
 
-Node.js has experimental support for TypeScript. You can run TypeScript code directly in Node.js without the need to compile it first.
+Node.js has experimental support for some TypeScript syntax. You can write code that's valid TypeScript directly in Node.js without the need to transpile it first.
 
-So how do you run TypeScript code with Node.js?
+So how do you run typed JavaScript code with Node.js?
 
 First, you need to install a nightly version of Node.js. You can download it from the [official Node.js website](https://nodejs.org/download/nightly/).
 
-Then, you can run your TypeScript code like this:
+Then, you can run your file like this:
 
 ```bash
 node --experimental-strip-types example.ts
@@ -26,7 +26,7 @@ node --experimental-strip-types example.ts
 
 The `--experimental-strip-types` flag tells Node.js to strip the type annotations from the TypeScript code before running it.
 
-And that's it! You can now run TypeScript code directly in Node.js without the need to compile it first.
+And that's it! You can now run typed JavaScript code directly in Node.js without the need to transpile it first, and use TypeScript to catch type-related errors.
 In the future we all hope that this feature will be stable and available in the LTS version of Node.js, so that we can all enjoy it without any additional steps.
 
 ## Limitations
@@ -57,4 +57,4 @@ converting newer JavaScript syntax into older standards.
 
 Thanks to all the contributors who have made this feature possible. We hope that this feature will be stable and available in the LTS version of Node.js soon.
 
-We can understand that this feature is experimental and has some limitations, and this may disappoint you. So please be patient and wait for the stable version of this feature. And **NEVER** spam us. If you are happy, you can share these articles on social media and tell your friends about this feature.
+We can understand that this feature is experimental and has some limitations; if that doesn't suit your usecase, please use something else, or contribute a fix. Bug reports are also welcome, please keep in mind the project is run by volunteers, without warranty of any kind, so please be patient if you can't contribute the fix yourself.

@@ -32,17 +32,17 @@ function isAdult(user: User): boolean {
   return user.age >= 18;
 }
 
-const justine: User = {
+const justine = {
   name: 'Justine',
   age: 23,
-};
+} satisfies User;
 
-const isJustineAnAdult: boolean = isAdult(justine);
+const isJustineAnAdult = isAdult(justine);
 ```
 
 The first part (with the `type` keyword) is responsible for declaring our custom object type representing users. Later we utilize this newly created type to create function `isAdult` that accepts one argument of type `User` and returns `boolean`. After this, we create `justine`, our example data that can be used for calling the previously defined function. Finally, we create a new variable with information on whether `justine` is an adult.
 
-There are additional things about this example that you should know. Firstly, if we would not comply with declared types, TypeScript would alarm us that something is wrong and prevent misuse. Secondly, not everything must be typed explicitly - TypeScript is very smart and can deduce types for us. For example, variable `isJustineAnAdult` would be of type `boolean` even if we didn't type it explicitly or `justine` would be valid argument for our function even if we didn't declare this variable as of `User` type.
+There are additional things about this example that you should know. Firstly, if we would not comply with declared types, TypeScript would alarm us that something is wrong and prevent misuse. Secondly, not everything must be typed explicitly - TypeScript is very smart and can infer types for us. For example, variable `isJustineAnAdult` is of type `boolean` even if we didn't type it explicitly or `justine` would be valid argument for our function even though we didn't declare this variable as of `User` type.
 
 ## How to run TypeScript code
 
