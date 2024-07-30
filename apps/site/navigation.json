@@ -163,10 +163,6 @@
               "link": "/learn/getting-started/nodejs-the-difference-between-development-and-production",
               "label": "components.navigation.learn.gettingStarted.links.nodejsTheDifferenceBetweenDevelopmentAndProduction"
             },
-            "nodejsWithTypescript": {
-              "link": "/learn/getting-started/nodejs-with-typescript",
-              "label": "components.navigation.learn.gettingStarted.links.nodejsWithTypescript"
-            },
             "nodejsWithWebassembly": {
               "link": "/learn/getting-started/nodejs-with-webassembly",
               "label": "components.navigation.learn.gettingStarted.links.nodejsWithWebassembly"
