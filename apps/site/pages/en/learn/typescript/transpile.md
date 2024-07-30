@@ -1,4 +1,3 @@
-````md
 ---
 title: Running TypeScript code using transpilation
 layout: learn
@@ -36,7 +35,6 @@ const justine = {
 
 const isJustineAnAdult = isAdult(justine);
 ```
-````
 
 **Step 2:** Install TypeScript locally using a package manager:
 
@@ -118,7 +116,3 @@ Found 3 errors in the same file, starting at: example.ts:12
 ```
 
 As you can see, TypeScript is very helpful in catching bugs before they even happen. This is one of the reasons why TypeScript is so popular among developers.
-
-```
-
-```
