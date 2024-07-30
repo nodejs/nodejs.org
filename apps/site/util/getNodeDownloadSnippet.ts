@@ -22,7 +22,7 @@ export const getNodeDownloadSnippet = (
     snippets.DOCKER = dedent`
       # ${t('layouts.download.codeBox.noteWithColon')}
       # ${t('layouts.download.codeBox.dockerIsNotNodejsPackageManager')}
-      # ${t('layouts.download.codeBox.PleaseEndureAlreadyInstallOnSystem')}
+      # ${t('layouts.download.codeBox.PleaseEnsureAlreadyInstallOnSystem')}
       # ${t('layouts.download.codeBox.dockerInstructions')}
       # ${t('layouts.download.codeBox.dockerImagesLink')}
 
@@ -69,7 +69,7 @@ export const getNodeDownloadSnippet = (
     snippets.BREW = dedent`
       # ${t('layouts.download.codeBox.noteWithColon')}
       # ${t('layouts.download.codeBox.homebrewIsNotNodejsPackageManager')}
-      # ${t('layouts.download.codeBox.PleaseEndureAlreadyInstallOnSystem')}
+      # ${t('layouts.download.codeBox.PleaseEnsureAlreadyInstallOnSystem')}
       # ${t('layouts.download.codeBox.homebrewInstructions')}
       # ${t('layouts.download.codeBox.homebrewSupportsIntallingMajorNodejsVersion', { version: release.major })}
 
@@ -100,9 +100,9 @@ export const getNodeDownloadSnippet = (
     snippets.CHOCO = dedent`
       # ${t('layouts.download.codeBox.noteWithColon')}
       # ${t('layouts.download.codeBox.chocolateyIsNotNodejsPackageManager')}
-      # ${t('layouts.download.codeBox.PleaseEndureAlreadyInstallOnSystem')}
+      # ${t('layouts.download.codeBox.PleaseEnsureAlreadyInstallOnSystem')}
       # ${t('layouts.download.codeBox.chocolateyInstructions')}
-      # ${t('layouts.download.codeBox.chocolateyNotMaintanedByNodejs', { version: release.versionWithPrefix })}
+      # ${t('layouts.download.codeBox.chocolateyNotMaintainedByNodejs', { version: release.versionWithPrefix })}
 
       # ${t('layouts.download.codeBox.downloadAndInstallNodejs')}
       choco install nodejs${release.isLts ? '-lts' : ''} --version="${release.version}"

@@ -303,7 +303,7 @@
         "activateFNM": "activate fnm",
         "noteWithColon": "NOTE:",
         "dockerIsNotNodejsPackageManager": "Docker is not a Node.js package manager.",
-        "PleaseEndureAlreadyInstallOnSystem": "Please ensure it is already installed on your system.",
+        "PleaseEnsureAlreadyInstallOnSystem": "Please ensure it is already installed on your system.",
         "dockerInstructions": "Follow official instructions at https://docs.docker.com/desktop/",
         "dockerImagesLink": "Docker images are provided officially at https://github.com/nodejs/docker-node/",
         "pullsNodejsDockerImage": "pulls the Node.js Docker image",
@@ -312,7 +312,7 @@
         "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew only supports installing major Node.js versions and might not support the latest Node.js version from the {version} release line.",
         "chocolateyIsNotNodejsPackageManager": "Chocolatey is not a Node.js package manager.",
         "chocolateyInstructions": "Follow official instructions at https://chocolatey.org/",
-        "chocolateyNotMaintanedByNodejs": "Chocolatey is not officially maintained by the Node.js project and might not support the {version} version of Node.js"
+        "chocolateyNotMaintainedByNodejs": "Chocolatey is not officially maintained by the Node.js project and might not support the {version} version of Node.js"
       }
     }
   }
