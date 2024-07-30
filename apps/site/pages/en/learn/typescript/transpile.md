@@ -1,3 +1,4 @@
+````md
 ---
 title: Running TypeScript code using transpilation
 layout: learn
@@ -28,23 +29,18 @@ function isAdult(user: User): boolean {
   return user.age >= 18;
 }
 
-const justine: User = {
+const justine = {
   name: 'Justine',
   age: 23,
-};
+} satisfies User;
 
-const isJustineAnAdult: boolean = isAdult(justine);
+const isJustineAnAdult = isAdult(justine);
 ```
+````
 
-**Step 2:** Install TypeScript globally using a package manager:
+**Step 2:** Install TypeScript locally using a package manager:
 
 In this example we're going to use npm, you can check our [our introduction to the npm package manager](/learn/getting-started/an-introduction-to-the-npm-package-manager) for more information.
-
-There are two ways to install TypeScript, globally or locally. We do not recommend installing it globally for the sake of everyone working with you.
-
-```bash displayName="Install TypeScript globally"
-npm i -g typescript # -g is a shorthand for --global
-```
 
 ```bash displayName="Install TypeScript locally"
 npm i -D typescript # -D is a shorthand for --save-dev
@@ -53,10 +49,10 @@ npm i -D typescript # -D is a shorthand for --save-dev
 **Step 3:** Compile your TypeScript code to JavaScript using the `tsc` command:
 
 ```bash
-tsc example.ts
+npx tsc example.ts
 ```
 
-> **NOTE:** You can also use `npx tsc example.ts` if you don't want to install TypeScript globally. [npx](https://www.npmjs.com/package/npx) is a tool that allows you to run Node.js packages without installing them globally.
+> **NOTE:** `npx` is a tool that allows you to run Node.js packages without installing them globally.
 
 `tsc` is the TypeScript compiler which will take our TypeScript code and compile it to JavaScript.
 This command will result in a new file named `example.js` that we can run using Node.js.
@@ -122,3 +118,7 @@ Found 3 errors in the same file, starting at: example.ts:12
 ```
 
 As you can see, TypeScript is very helpful in catching bugs before they even happen. This is one of the reasons why TypeScript is so popular among developers.
+
+```
+
+```
