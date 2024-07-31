@@ -20,10 +20,10 @@ permissions:
 
 jobs:
   comment_on_translation_pr:
-    # This comment should only be posted on PRs that come from users and not from Crowdin
+    # This comment should always be posted on forks, or from internal PRs not originating from Crowdin (which are direct branches)
     if: |
-      github.event.pull_request.head.repo.full_name == 'nodejs/nodejs.org' &&
-      github.event.pull_request.head.ref != 'chore/crowdin'
+      (github.event.pull_request.head.repo.full_name != 'nodejs/nodejs.org') ||
+      (github.event.pull_request.head.repo.full_name == 'nodejs/nodejs.org' && github.event.pull_request.head.ref != 'chore/crowdin')
 
     name: Comment on Translation PR
     runs-on: ubuntu-latest
