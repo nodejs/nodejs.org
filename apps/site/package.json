@@ -85,7 +85,7 @@
     "tailwindcss": "^3.4.3",
     "typescript": "~5.5.3",
     "unist-util-visit": "~5.0.0",
-    "vfile": "~6.0.1",
+    "vfile": "~6.0.2",
     "vfile-matter": "~5.0.0"
   },
   "devDependencies": {
