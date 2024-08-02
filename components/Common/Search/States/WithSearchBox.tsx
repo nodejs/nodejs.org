@@ -8,6 +8,8 @@ import type { Results, Nullable } from '@orama/orama';
 import classNames from 'classnames';
 import { useState, useRef, useEffect } from 'react';
 import type { FC } from 'react';
+import FocusLock from 'react-focus-lock';
+import { RemoveScroll } from 'react-remove-scroll';
 
 import styles from '@/components/Common/Search/States/index.module.css';
 import { WithAllResults } from '@/components/Common/Search/States/WithAllResults';
@@ -113,87 +115,92 @@ export const WithSearchBox: FC<SearchBoxProps> = ({ onClose }) => {
   const selectedFacetName = Object.keys(facets)[selectedFacet];
 
   return (
-    <div className={styles.searchBoxModalContainer}>
-      <div className={styles.searchBoxModalPanel} ref={searchBoxRef}>
-        <div className={styles.searchBoxInnerPanel}>
-          <div className={styles.searchBoxInputContainer}>
-            <button
-              onClick={onClose}
-              className={styles.searchBoxBackIconContainer}
-            >
-              <ChevronLeftIcon className={styles.searchBoxBackIcon} />
-            </button>
+    <RemoveScroll>
+      <FocusLock>
+        <div className={styles.searchBoxModalContainer}>
+          <div className={styles.searchBoxModalPanel} ref={searchBoxRef}>
+            <div className={styles.searchBoxInnerPanel}>
+              <div className={styles.searchBoxInputContainer}>
+                <button
+                  onClick={onClose}
+                  className={styles.searchBoxBackIconContainer}
+                >
+                  <ChevronLeftIcon className={styles.searchBoxBackIcon} />
+                </button>
 
-            <MagnifyingGlassIcon
-              className={styles.searchBoxMagnifyingGlassIcon}
-            />
+                <MagnifyingGlassIcon
+                  className={styles.searchBoxMagnifyingGlassIcon}
+                />
 
-            <form onSubmit={onSubmit}>
-              <input
-                ref={searchInputRef}
-                type="search"
-                className={styles.searchBoxInput}
-                onChange={event => setSearchTerm(event.target.value)}
-                value={searchTerm}
-              />
-            </form>
-          </div>
-
-          <div className={styles.fulltextSearchSections}>
-            {Object.keys(facets).map((facetName, idx) => (
-              <button
-                key={facetName}
-                className={classNames(styles.fulltextSearchSection, {
-                  [styles.fulltextSearchSectionSelected]: selectedFacet === idx,
-                })}
-                onClick={() => changeFacet(idx)}
-              >
-                {facetName}
-                <span className={styles.fulltextSearchSectionCount}>
-                  ({facets[facetName].toLocaleString('en')})
-                </span>
-              </button>
-            ))}
-          </div>
-
-          <div className={styles.fulltextResultsContainer}>
-            {searchError && <WithError />}
-
-            {!searchError && !searchTerm && <WithEmptyState />}
-
-            {!searchError && searchTerm && (
-              <>
-                {searchResults &&
-                  searchResults.count > 0 &&
-                  searchResults.hits.map(hit => (
-                    <WithSearchResult
-                      key={hit.id}
-                      hit={hit}
-                      searchTerm={searchTerm}
-                    />
-                  ))}
-
-                {searchResults && searchResults.count === 0 && (
-                  <WithNoResults searchTerm={searchTerm} />
-                )}
-
-                {searchResults && searchResults.count > 8 && (
-                  <WithAllResults
-                    searchResults={searchResults}
-                    searchTerm={searchTerm}
-                    selectedFacetName={selectedFacetName}
-                    onSeeAllClick={onClose}
+                <form onSubmit={onSubmit}>
+                  <input
+                    ref={searchInputRef}
+                    type="search"
+                    className={styles.searchBoxInput}
+                    onChange={event => setSearchTerm(event.target.value)}
+                    value={searchTerm}
                   />
-                )}
-              </>
-            )}
-          </div>
+                </form>
+              </div>
 
-          <div className={styles.fulltextSearchFooter}>
-            <WithPoweredBy />
+              <div className={styles.fulltextSearchSections}>
+                {Object.keys(facets).map((facetName, idx) => (
+                  <button
+                    key={facetName}
+                    className={classNames(styles.fulltextSearchSection, {
+                      [styles.fulltextSearchSectionSelected]:
+                        selectedFacet === idx,
+                    })}
+                    onClick={() => changeFacet(idx)}
+                  >
+                    {facetName}
+                    <span className={styles.fulltextSearchSectionCount}>
+                      ({facets[facetName].toLocaleString('en')})
+                    </span>
+                  </button>
+                ))}
+              </div>
+
+              <div className={styles.fulltextResultsContainer}>
+                {searchError && <WithError />}
+
+                {!searchError && !searchTerm && <WithEmptyState />}
+
+                {!searchError && searchTerm && (
+                  <>
+                    {searchResults &&
+                      searchResults.count > 0 &&
+                      searchResults.hits.map(hit => (
+                        <WithSearchResult
+                          key={hit.id}
+                          hit={hit}
+                          searchTerm={searchTerm}
+                        />
+                      ))}
+
+                    {searchResults && searchResults.count === 0 && (
+                      <WithNoResults searchTerm={searchTerm} />
+                    )}
+
+                    {searchResults && searchResults.count > 8 && (
+                      <WithAllResults
+                        searchResults={searchResults}
+                        searchTerm={searchTerm}
+                        selectedFacetName={selectedFacetName}
+                        onSeeAllClick={onClose}
+                      />
+                    )}
+                  </>
+                )}
+              </div>
+
+              <div className={styles.fulltextSearchFooter}>
+                <WithPoweredBy />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </FocusLock>
+    </RemoveScroll>
   );
 };

@@ -79,6 +79,8 @@
     "postcss-simple-vars": "~7.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-focus-lock": "^2.12.1",
+    "react-remove-scroll": "^2.5.10",
     "rehype-autolink-headings": "~7.1.0",
     "rehype-slug": "~6.0.0",
     "remark-gfm": "~4.0.0",
