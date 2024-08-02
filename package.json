@@ -37,7 +37,7 @@
   "dependencies": {
     "husky": "9.0.11",
     "lint-staged": "15.2.7",
-    "turbo": "2.0.6"
+    "turbo": "2.0.11"
   },
   "devDependencies": {
     "commitizen": "4.3.0",
