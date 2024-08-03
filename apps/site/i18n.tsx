@@ -7,13 +7,13 @@ const loadLocaleDictionary = async (locale: string) => {
   if (locale === 'en') {
     // This enables HMR on the English Locale, so that instant refresh
     // happens while we add/change texts on the source locale
-    return import('./i18n/locales/en.json').then(f => f.default);
+    return import('@nodejs/i18n/locales/en.json').then(f => f.default);
   }
 
   if (availableLocaleCodes.includes(locale)) {
     // Other languages don't really require HMR as they will never be development languages
     // so we can load them dynamically
-    return import(`./i18n/locales/${locale}.json`).then(f => f.default);
+    return import(`@nodejs/i18n/locales/${locale}.json`).then(f => f.default);
   }
 
   throw new Error(`Unsupported locale: ${locale}`);

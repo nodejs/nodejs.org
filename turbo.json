@@ -8,10 +8,18 @@
       "outputs": [".prettiercache"]
     },
     "lint": {
-      "dependsOn": ["lint:md", "lint:css", "lint:js"]
+      "dependsOn": [
+        "@nodejs/website#lint:md",
+        "@nodejs/website#lint:css",
+        "@nodejs/website#lint:js"
+      ]
     },
     "lint:lint-staged": {
-      "dependsOn": ["lint:md", "lint:css", "lint:js"]
+      "dependsOn": [
+        "@nodejs/website#lint:md",
+        "@nodejs/website#lint:css",
+        "@nodejs/website#lint:js"
+      ]
     },
     "check-types": {
       "dependsOn": ["^topo"]
