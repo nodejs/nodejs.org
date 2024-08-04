@@ -16,13 +16,14 @@ export const getNodeDownloadSnippet = (
     BREW: '',
     DOCKER: '',
     CHOCO: '',
+    PROTO: '',
   };
 
   if (os === 'WIN' || os === 'MAC' || os === 'LINUX') {
     snippets.DOCKER = dedent`
       # ${t('layouts.download.codeBox.noteWithColon')}
       # ${t('layouts.download.codeBox.dockerIsNotNodejsPackageManager')}
-      # ${t('layouts.download.codeBox.PleaseEndureAlreadyInstallOnSystem')}
+      # ${t('layouts.download.codeBox.PleaseEnsureAlreadyInstallOnSystem')}
       # ${t('layouts.download.codeBox.dockerInstructions')}
       # ${t('layouts.download.codeBox.dockerImagesLink')}
 
@@ -34,6 +35,20 @@ export const getNodeDownloadSnippet = (
 
       # ${t('layouts.download.codeBox.verifiesRightNpmVersion')}
       docker run node:${release.major}-${release.major >= 4 ? 'alpine' : 'slim'} npm -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.npm })}`;
+
+    snippets.PROTO = dedent`
+      # ${t('layouts.download.codeBox.noteWithColon')}
+      # ${t('layouts.download.codeBox.PleaseEnsureAlreadyInstallOnSystem')}
+      # ${t('layouts.download.codeBox.protoInstructions')}
+
+      # ${t('layouts.download.codeBox.downloadAndInstallNodejs')}
+      proto install node ${release.major}
+
+      # ${t('layouts.download.codeBox.verifiesRightNodejsVersion')}
+      node -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.versionWithPrefix })}
+
+      # ${t('layouts.download.codeBox.verifiesRightNpmVersion')}
+      npm -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.npm })}`;
   }
 
   if (os === 'MAC' || os === 'LINUX') {
@@ -69,7 +84,7 @@ export const getNodeDownloadSnippet = (
     snippets.BREW = dedent`
       # ${t('layouts.download.codeBox.noteWithColon')}
       # ${t('layouts.download.codeBox.homebrewIsNotNodejsPackageManager')}
-      # ${t('layouts.download.codeBox.PleaseEndureAlreadyInstallOnSystem')}
+      # ${t('layouts.download.codeBox.PleaseEnsureAlreadyInstallOnSystem')}
       # ${t('layouts.download.codeBox.homebrewInstructions')}
       # ${t('layouts.download.codeBox.homebrewSupportsIntallingMajorNodejsVersion', { version: release.major })}
 
@@ -103,7 +118,7 @@ export const getNodeDownloadSnippet = (
     snippets.CHOCO = dedent`
       # ${t('layouts.download.codeBox.noteWithColon')}
       # ${t('layouts.download.codeBox.chocolateyIsNotNodejsPackageManager')}
-      # ${t('layouts.download.codeBox.PleaseEndureAlreadyInstallOnSystem')}
+      # ${t('layouts.download.codeBox.PleaseEnsureAlreadyInstallOnSystem')}
       # ${t('layouts.download.codeBox.chocolateyInstructions')}
       # ${t('layouts.download.codeBox.chocolateyNotMaintanedByNodejs', { version: release.versionWithPrefix })}
 

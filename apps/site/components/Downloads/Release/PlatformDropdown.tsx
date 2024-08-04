@@ -1,7 +1,7 @@
 'use client';
 import { useTranslations } from 'next-intl';
-import { useContext, useEffect, useMemo } from 'react';
 import type { FC } from 'react';
+import { useContext, useEffect, useMemo } from 'react';
 
 import Select from '@/components/Common/Select';
 import Choco from '@/components/Icons/Platform/Choco';
@@ -9,6 +9,7 @@ import Docker from '@/components/Icons/Platform/Docker';
 import FNM from '@/components/Icons/Platform/FNM';
 import Homebrew from '@/components/Icons/Platform/Homebrew';
 import NVM from '@/components/Icons/Platform/NVM';
+import Proto from '@/components/Icons/Platform/Proto';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import type { PackageManager } from '@/types/release';
 import { formatDropdownItems, platformItems } from '@/util/downloadUtils';
@@ -73,6 +74,7 @@ const PlatformDropdown: FC = () => {
           BREW: <Homebrew width={16} height={16} />,
           DOCKER: <Docker width={16} height={16} />,
           CHOCO: <Choco width={16} height={16} />,
+          PROTO: <Proto width={16} height={16} />,
         },
         disabledItems,
       })}
