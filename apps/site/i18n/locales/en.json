@@ -290,6 +290,7 @@
         "platform": "Platform"
       },
       "codeBox": {
+        "fnmEnvSetup": "configure fnm environment",
         "systemManagerWarning": "is not a Node.js package manager. Please ensure you already have {packageManager} installed.",
         "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project.",
         "communityWarningReport": "If you encounter issues, please reach out to the package manager's maintainers.",

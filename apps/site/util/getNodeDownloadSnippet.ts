@@ -88,6 +88,9 @@ export const getNodeDownloadSnippet = (
       # ${t('layouts.download.codeBox.installsFnm')}
       winget install Schniz.fnm
 
+      # ${t('layouts.download.codeBox.fnmEnvSetup')}
+      fnm env --use-on-cd | Out-String | Invoke-Expression
+
       # ${t('layouts.download.codeBox.downloadAndInstallNodejs')}
       fnm use --install-if-missing ${release.major}
 
