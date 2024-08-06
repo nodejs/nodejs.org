@@ -1,0 +1,8 @@
+# annotations tell scorecard that we have mitigated a concern. automation is only so good at establishing context
+# https://github.com/ossf/scorecard/blob/main/config/README.md#annotating-your-project
+annotations:
+  # our workflows only run when a maintainer allows it
+  - checks:
+      - dangerous-workflow
+    reasons:
+      - reason: remediated
