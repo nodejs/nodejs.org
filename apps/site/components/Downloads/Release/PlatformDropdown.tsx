@@ -4,6 +4,7 @@ import { useContext, useEffect, useMemo } from 'react';
 import type { FC } from 'react';
 
 import Select from '@/components/Common/Select';
+import WinGet from '@/components/Icons/Platform/WinGet';
 import Choco from '@/components/Icons/Platform/Choco';
 import Docker from '@/components/Icons/Platform/Docker';
 import FNM from '@/components/Icons/Platform/FNM';
@@ -31,7 +32,7 @@ const PlatformDropdown: FC = () => {
     }
 
     if (os === 'LINUX' || os === 'MAC') {
-      disabledItems.push('CHOCO');
+      disabledItems.push('WINGET', 'CHOCO');
     }
 
     const releaseSupportsHomebrew = supportedHomebrewVersions.includes(
@@ -68,6 +69,7 @@ const PlatformDropdown: FC = () => {
       values={formatDropdownItems({
         items: platformItems,
         icons: {
+          WINGET: <WinGet width={16} height={16} />,
           NVM: <NVM width={16} height={16} />,
           FNM: <FNM width={16} height={16} />,
           BREW: <Homebrew width={16} height={16} />,

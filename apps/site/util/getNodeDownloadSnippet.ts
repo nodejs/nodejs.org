@@ -15,6 +15,7 @@ export const getNodeDownloadSnippet = (
     FNM: '',
     BREW: '',
     DOCKER: '',
+    WINGET: '',
     CHOCO: '',
   };
 
@@ -22,7 +23,7 @@ export const getNodeDownloadSnippet = (
     snippets.DOCKER = dedent`
       # ${t('layouts.download.codeBox.noteWithColon')}
       # ${t('layouts.download.codeBox.dockerIsNotNodejsPackageManager')}
-      # ${t('layouts.download.codeBox.PleaseEndureAlreadyInstallOnSystem')}
+      # ${t('layouts.download.codeBox.PleaseEnsureAlreadyInstallOnSystem')}
       # ${t('layouts.download.codeBox.dockerInstructions')}
       # ${t('layouts.download.codeBox.dockerImagesLink')}
 
@@ -69,7 +70,7 @@ export const getNodeDownloadSnippet = (
     snippets.BREW = dedent`
       # ${t('layouts.download.codeBox.noteWithColon')}
       # ${t('layouts.download.codeBox.homebrewIsNotNodejsPackageManager')}
-      # ${t('layouts.download.codeBox.PleaseEndureAlreadyInstallOnSystem')}
+      # ${t('layouts.download.codeBox.PleaseEnsureAlreadyInstallOnSystem')}
       # ${t('layouts.download.codeBox.homebrewInstructions')}
       # ${t('layouts.download.codeBox.homebrewSupportsIntallingMajorNodejsVersion', { version: release.major })}
 
@@ -84,6 +85,22 @@ export const getNodeDownloadSnippet = (
   }
 
   if (os === 'WIN') {
+    snippets.WINGET = dedent`
+      # ${t('layouts.download.codeBox.noteWithColon')}
+      # ${t('layouts.download.codeBox.wingetIsNotNodejsPackageManager')}
+      # ${t('layouts.download.codeBox.PleaseEnsureAlreadyInstallOnSystem')}
+      # ${t('layouts.download.codeBox.wingetInstructions')}
+      # ${t('layouts.download.codeBox.wingetNotMaintainedByNodejs', { version: release.versionWithPrefix })}
+
+      # ${t('layouts.download.codeBox.downloadAndInstallNodejs')}
+      winget install -e --id OpenJS.NodeJS${release.isLts ? '.LTS' : ''} -v ${release.version}
+
+      # ${t('layouts.download.codeBox.verifiesRightNodejsVersion')}
+      node -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.versionWithPrefix })}
+
+      # ${t('layouts.download.codeBox.verifiesRightNpmVersion')}
+      npm -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.npm })}`;
+
     snippets.FNM = dedent`
       # ${t('layouts.download.codeBox.installsFnm')}
       winget install Schniz.fnm
@@ -103,9 +120,9 @@ export const getNodeDownloadSnippet = (
     snippets.CHOCO = dedent`
       # ${t('layouts.download.codeBox.noteWithColon')}
       # ${t('layouts.download.codeBox.chocolateyIsNotNodejsPackageManager')}
-      # ${t('layouts.download.codeBox.PleaseEndureAlreadyInstallOnSystem')}
+      # ${t('layouts.download.codeBox.PleaseEnsureAlreadyInstallOnSystem')}
       # ${t('layouts.download.codeBox.chocolateyInstructions')}
-      # ${t('layouts.download.codeBox.chocolateyNotMaintanedByNodejs', { version: release.versionWithPrefix })}
+      # ${t('layouts.download.codeBox.chocolateyNotMaintainedByNodejs', { version: release.versionWithPrefix })}
 
       # ${t('layouts.download.codeBox.downloadAndInstallNodejs')}
       choco install nodejs${release.isLts ? '-lts' : ''} --version="${release.version}"
