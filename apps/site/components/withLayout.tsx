@@ -8,6 +8,7 @@ import HomeLayout from '@/layouts/Home';
 import LearnLayout from '@/layouts/Learn';
 import PostLayout from '@/layouts/Post';
 import SearchLayout from '@/layouts/Search';
+import SimplePage from '@/layouts/SimplePage';
 import type { Layouts } from '@/types';
 
 const layouts = {
@@ -19,6 +20,7 @@ const layouts = {
   'blog-category': BlogLayout,
   search: SearchLayout,
   download: DownloadLayout,
+  article: SimplePage,
 } satisfies Record<Layouts, FC>;
 
 type WithLayoutProps<L = Layouts> = PropsWithChildren<{ layout: L }>;
