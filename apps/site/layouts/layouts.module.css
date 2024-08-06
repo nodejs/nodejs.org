@@ -1,6 +1,8 @@
 .baseLayout {
   @apply grid
-    size-full
+    h-max
+    min-h-full
+    w-full
     grid-cols-[1fr]
     grid-rows-[auto_1fr_auto];
 }
