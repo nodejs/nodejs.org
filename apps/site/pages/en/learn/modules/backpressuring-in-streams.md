@@ -5,7 +5,7 @@ layout: learn
 
 # Backpressuring in Streams
 
-There is a general problem that occurs during data handling called
+There is a general problem that occurs during data handling calledd
 [`backpressure`][] and describes a buildup of data behind a buffer during data
 transfer. When the receiving end of the transfer has complex operations, or is
 slower for whatever reason, there is a tendency for data from the incoming
