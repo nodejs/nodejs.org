@@ -283,6 +283,10 @@
     {
       "source": "/:locale/download/current",
       "destination": "/:locale/download/package-manager/current"
+    },
+    {
+      "source": "/:locale/learn/getting-started/nodejs-with-typescript",
+      "destination": "/:locale/learn/typescript/introduction"
     }
   ],
   "internal": []
