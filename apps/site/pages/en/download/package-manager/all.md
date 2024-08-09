@@ -9,31 +9,40 @@ title: Installing Node.js via package manager
 
 ---
 
-- [Alpine Linux](#alpine-linux)
-- [Android](#android)
-- [Arch Linux](#arch-linux)
-- [CentOS, Fedora and Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
-- [Debian and Ubuntu based Linux distributions](#debian-and-ubuntu-based-linux-distributions)
-- [Exherbo Linux](#exherbo-linux)
-- [fnm](#fnm)
-- [FreeBSD](#freebsd)
-- [Gentoo](#gentoo)
-- [IBM i](#ibm-i)
-- [macOS](#macos)
-- [n](#n)
-- [NetBSD](#netbsd)
-- [Nodenv](#nodenv)
-- [nvm](#nvm)
-- [nvs](#nvs)
-- [OpenBSD](#openbsd)
-- [openSUSE and SLE](#opensuse-and-sle)
-- [SmartOS and illumos](#smartos-and-illumos)
-- [Snap](#snap)
-- [Solus](#solus)
-- [vfox](#vfox)
-- [Void Linux](#void-linux)
-- [Windows](#windows-1)
-- [z/OS](#zos)
+- [Installing Node.js via Package Managers](#installing-nodejs-via-package-managers)
+  - [Alpine Linux](#alpine-linux)
+  - [Android](#android)
+  - [Arch Linux](#arch-linux)
+  - [CentOS, Fedora and Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
+    - [Alternatives](#alternatives)
+  - [Debian and Ubuntu based Linux distributions](#debian-and-ubuntu-based-linux-distributions)
+    - [Alternatives](#alternatives-1)
+  - [Exherbo Linux](#exherbo-linux)
+  - [fnm](#fnm)
+  - [FreeBSD](#freebsd)
+  - [Gentoo](#gentoo)
+  - [IBM i](#ibm-i)
+  - [macOS](#macos)
+    - [Alternatives](#alternatives-2)
+  - [n](#n)
+  - [NetBSD](#netbsd)
+  - [Nodenv](#nodenv)
+  - [nvm](#nvm)
+  - [nvs](#nvs)
+    - [Windows](#windows)
+    - [macOS,UnixLike](#macosunixlike)
+    - [Usage](#usage)
+  - [OpenBSD](#openbsd)
+  - [openSUSE and SLE](#opensuse-and-sle)
+  - [proto](#proto)
+  - [SmartOS and illumos](#smartos-and-illumos)
+  - [Snap](#snap)
+  - [Solus](#solus)
+  - [vfox](#vfox)
+  - [Void Linux](#void-linux)
+  - [Windows](#windows-1)
+    - [Alternatives](#alternatives-3)
+  - [z/OS](#zos)
 
 ---
 
@@ -96,7 +105,7 @@ dnf module install nodejs:18/common
 
 These resources provide packages compatible with CentOS, Fedora, and RHEL.
 
-- [Node.js snaps](#snap) maintained and supported at https://github.com/nodejs/snap
+- [Node.js snaps](#snap) maintained and supported at <https://github.com/nodejs/snap>
 - [Node.js binary distributions](#debian-and-ubuntu-based-linux-distributions) maintained and supported by [NodeSource](https://github.com/nodesource/distributions)
 
 ## Debian and Ubuntu based Linux distributions
@@ -343,6 +352,23 @@ zypper install nodejs14
 ```
 
 Different major versions of Node can be installed and used concurrently.
+
+## proto
+
+[proto](https://moonrepo.dev/proto) is a pluggable version manager, a unified toolchain. [proto](https://moonrepo.dev/proto) was designed to be a modern and holistic version manager for all of your favorite programming languages. Supports Bun, Deno, Node (npm, pnpm, yarn), Rust, Go, and more.
+
+Here's how to install Node.js using [proto](https://moonrepo.dev/proto):
+
+```bash
+# LTS
+proto install node lts
+# Current
+proto install node
+# Specific version
+proto install node 18.20.4
+```
+
+Read the [documentation](https://moonrepo.dev/docs/proto) for more information.
 
 ## SmartOS and illumos
 
