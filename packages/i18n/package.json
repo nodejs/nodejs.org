@@ -1,5 +1,5 @@
 {
-  "name": "@nodejs/i18n",
+  "name": "@node-core/website-i18n",
   "private": true,
   "version": "0.1.0",
   "license": "MIT"

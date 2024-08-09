@@ -9,16 +9,16 @@
     },
     "lint": {
       "dependsOn": [
-        "@nodejs/website#lint:md",
-        "@nodejs/website#lint:css",
-        "@nodejs/website#lint:js"
+        "@node-core/website#lint:md",
+        "@node-core/website#lint:css",
+        "@node-core/website#lint:js"
       ]
     },
     "lint:lint-staged": {
       "dependsOn": [
-        "@nodejs/website#lint:md",
-        "@nodejs/website#lint:css",
-        "@nodejs/website#lint:js"
+        "@node-core/website#lint:md",
+        "@node-core/website#lint:css",
+        "@node-core/website#lint:js"
       ]
     },
     "check-types": {
