@@ -169,6 +169,11 @@ If you want to use `tsx` via `node`, you can register `tsx` via `--import`:
 ```bash
 node --import=tsx example.ts
 ```
+### Experimental TypeScript support via strip types
+
+Starting from version 22.6.0 Node.js introduces native support for Typescript with limitations.
+
+For more information visit: https://nodejs.org/en/blog/release/v22.6.0
 
 ## TypeScript in the Node.js world
 
