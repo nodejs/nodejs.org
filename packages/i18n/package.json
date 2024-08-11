@@ -1,6 +1,21 @@
 {
   "name": "@node-core/website-i18n",
-  "private": true,
   "version": "0.1.0",
-  "license": "MIT"
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./locales/en.json": "./locales/en.json"
+  },
+  "devDependencies": {
+    "typescript": "~5.5.3"
+  }
 }
