@@ -6,7 +6,7 @@ authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, RenanTKN, mc
 
 # Node.js, the difference between development and production
 
-__There is no difference between development and production in Node.js__, i.e., there are no specific settings you need to apply to make Node.js work in a production configuration.
+**There is no difference between development and production in Node.js**, i.e., there are no specific settings you need to apply to make Node.js work in a production configuration.
 However, a few libraries in the npm registry recognize using the `NODE_ENV` variable and default it to a `development` setting.
 Always run your Node.js with the `NODE_ENV=production` set.
 
@@ -47,16 +47,16 @@ if (process.env.NODE_ENV === 'production') {
 
 For example [Pug](https://pugjs.org), the templating library used by [Express](https://expressjs.com), compiles in debug mode if `NODE_ENV` is not set to `production`. Express views are compiled in every request in development mode, while in production they are cached. There are many more examples.
 
-__This environment variable is a convention widely used in external libraries, but not within Node.js itself__.
+**This environment variable is a convention widely used in external libraries, but not within Node.js itself**.
 
 ## Why is NODE_ENV considered an antipattern?
 
 An environment is a digital platform or a system where engineers can build, test, _deploy_, and manage software products. Conventionally, there are four stages or types of environments where our application is run:
 
-* Development
-* Testing
-* Staging
-* Production
+- Development
+- Testing
+- Staging
+- Production
 
 The fundamental problem of `NODE_ENV` stems from developers combining optimizations and software behavior with the environment their software is running on. The result is code like the following:
 
