@@ -1,0 +1,21 @@
+{
+  "name": "@node-core/website-i18n",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./config.json": "./dist/config.json"
+  },
+  "dependencies": {
+    "typescript": "~5.5.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
