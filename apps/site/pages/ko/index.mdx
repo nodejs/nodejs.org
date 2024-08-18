@@ -1,5 +1,5 @@
 ---
-title: Запускайте JavaScript будь-де
+title: 어디서든 JavaScript를 실행하세요!!
 layout: home
 ---
 
@@ -7,9 +7,9 @@ layout: home
 <WithBadge section="index" />
 
 <div>
-  <h1 className="special">Запускайте JavaScript будь-де</h1>
+  <h1 className="special">어디서든 JavaScript를 실행하세요!!</h1>
 
-Node.js® — це безплатне, кросплатформне середовище виконання JavaScript із відкритим кодом, яке дозволяє розробникам створювати сервери, вебзастосунки, інструменти командного рядка та скрипти.
+Node.js®는 무료, 오픈소스, 크로스플랫폼 JavaSript 런타임 환경으로 개발자 여러분이 서버, 웹 앱, 커맨드 작성 도구와 스크립트를 만들도록 해줍니다.
 
 </div>
 
@@ -17,22 +17,22 @@ Node.js® — це безплатне, кросплатформне середо
   <WithNodeRelease status={['LTS']}>
     {({ release }) => (
       <>
-        <DownloadButton release={release}>Завантажити Node.js (LTS)</DownloadButton>
+        <DownloadButton release={release}>Node.js 다운로드 (LTS)</DownloadButton>
         <small>
-          Завантажує Node.js <b>{release.versionWithPrefix}</b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> із довгостроковою підтримкою.
-          Node.js також можна встановити через <a href="/download/package-manager">менеджери пакетів</a>.
+          Node.js 다운로드  <b>{release.versionWithPrefix}</b>
+          <sup title="Downloads a Node.js installer for your current platform">1</sup> LTS.
+          Node.js는 <a href="/download/package-manager">package managers</a>를 통해서도 다운로드 할 수 있습니다..
         </small>
       </>
     )}
   </WithNodeRelease>
 
-  <WithNodeRelease status={['Current']}>
+  <WithNodeRelease status={['현재버전']}>
     {({ release }) => (
       <small>
-        Хочете отримати нові функції швидше?
-        Завантажте <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-        <sup title="Downloads a Node.js installer for your current platform">1</sup>.
+        새로운 기능을 먼저 경험하고 싶다면
+         <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+        <sup title="Downloads a Node.js installer for your current platform">1</sup> 를 다운 받으세요.
       </small>
     )}
   </WithNodeRelease>
@@ -132,6 +132,6 @@ if (isMainThread) {
 
 </div>
 
-Дізнайтеся більше про можливості Node.js із [нашими навчальними матеріалами](/learn).
+Node.js에 대해 더 알고 싶다면 학습 자료를 확인하세요[Learning materials](/learn).
 
 </section>

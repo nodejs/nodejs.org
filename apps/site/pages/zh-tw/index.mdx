@@ -1,5 +1,5 @@
 ---
-title: Запускайте JavaScript будь-де
+title: 隨時隨地執行 JavaScript
 layout: home
 ---
 
@@ -7,9 +7,9 @@ layout: home
 <WithBadge section="index" />
 
 <div>
-  <h1 className="special">Запускайте JavaScript будь-де</h1>
+  <h1 className="special">隨時隨地執行 JavaScript</h1>
 
-Node.js® — це безплатне, кросплатформне середовище виконання JavaScript із відкритим кодом, яке дозволяє розробникам створювати сервери, вебзастосунки, інструменти командного рядка та скрипти.
+Node.js® 是一款免費的跨平台開源 JavaScript 執行環境，供開發者建立伺服器、網頁應用程式、命令列工具與腳本。
 
 </div>
 
@@ -17,11 +17,11 @@ Node.js® — це безплатне, кросплатформне середо
   <WithNodeRelease status={['LTS']}>
     {({ release }) => (
       <>
-        <DownloadButton release={release}>Завантажити Node.js (LTS)</DownloadButton>
+        <DownloadButton release={release}>下載 Node.js (LTS)</DownloadButton>
         <small>
-          Завантажує Node.js <b>{release.versionWithPrefix}</b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> із довгостроковою підтримкою.
-          Node.js також можна встановити через <a href="/download/package-manager">менеджери пакетів</a>.
+          下載享有長期支援功能的 Node.js  <b>{release.versionWithPrefix}</b>
+          <sup title="Downloads a Node.js installer for your current platform">1</sup>。
+          Node.js 也可以透過 <a href="/download/package-manager">套件管理器</a> 安裝。
         </small>
       </>
     )}
@@ -30,9 +30,9 @@ Node.js® — це безплатне, кросплатформне середо
   <WithNodeRelease status={['Current']}>
     {({ release }) => (
       <small>
-        Хочете отримати нові функції швидше?
-        Завантажте <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-        <sup title="Downloads a Node.js installer for your current platform">1</sup>.
+        想要更快體驗新功能嗎？
+        那就下載 <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+        <sup title="Downloads a Node.js installer for your current platform">1</sup> 吧。
       </small>
     )}
   </WithNodeRelease>
@@ -132,6 +132,6 @@ if (isMainThread) {
 
 </div>
 
-Дізнайтеся більше про можливості Node.js із [нашими навчальними матеріалами](/learn).
+我們提供大量[學習資源](/learn)，探索 Node.js 的無限潛能。
 
 </section>

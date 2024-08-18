@@ -1,0 +1,320 @@
+{
+  "components": {
+    "containers": {
+      "footer": {
+        "links": {
+          "trademarkPolicy": "商標政策",
+          "privacyPolicy": "隱私政策",
+          "codeOfConduct": "行為準則",
+          "security": "安全性政策"
+        }
+      },
+      "navBar": {
+        "links": {
+          "about": "關於",
+          "download": "下載",
+          "docs": "文件",
+          "guides": "指南",
+          "learn": "學習資源",
+          "security": "安全性",
+          "certification": "認證",
+          "blog": "部落格"
+        }
+      }
+    },
+    "navigation": {
+      "learn": {
+        "gettingStarted": {
+          "links": {
+            "gettingStarted": "開始入門",
+            "introductionToNodejs": "Node.js 介紹",
+            "howToInstallNodejs": "如何安裝 Node.js",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "使用 Node.js 前，需要掌握多少 JavaScript 知識？",
+            "differencesBetweenNodejsAndTheBrowser": "Node.js 與瀏覽器的差別",
+            "theV8JavascriptEngine": "JavaScript V8 引擎",
+            "anIntroductionToTheNpmPackageManager": "Npm 套件管理器介紹",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) 與更高的版本",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js 在開發與生產環境的差別",
+            "nodejsWithTypescript": "Node.js 搭配 TypeScript",
+            "nodejsWithWebassembly": "Node.js 搭配 WebAssembly",
+            "debugging": "Node.js 除錯",
+            "profiling": "分析 Node.js 應用程式",
+            "securityBestPractices": "安全最佳實踐"
+          }
+        },
+        "asynchronousWork": {
+          "links": {
+            "asynchronousWork": "非同步工作",
+            "asynchronousFlowControl": "非同步流程控制",
+            "overviewOfBlockingVsNonBlocking": "阻塞與非阻塞概述",
+            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript 中的非同步與回調函數",
+            "discoverJavascriptTimers": "探索 JavaScript 計時器",
+            "eventLoopTimersAndNexttick": "Node.js 中的事件循環",
+            "theNodejsEventEmitter": "Node.js 中的事件發射器",
+            "understandingProcessnexttick": "理解 process.nextTick()",
+            "understandingSetimmediate": "理解 setImmediate()",
+            "dontBlockTheEventLoop": "請勿阻塞事件循環"
+          }
+        },
+        "manipulatingFiles": {
+          "links": {
+            "manipulatingFiles": "檔案操作",
+            "nodejsFileStats": "Node.js 中的檔案狀態",
+            "nodejsFilePaths": "Node.js 中的檔案路徑",
+            "workingWithFileDescriptorsInNodejs": "在 Node.js 中使用檔案描述符",
+            "readingFilesWithNodejs": "使用 Node.js 讀取檔案",
+            "writingFilesWithNodejs": "使用 Node.js 寫入檔案",
+            "workingWithFoldersInNodejs": "在 Node.js 中操作資料夾",
+            "workingWithDifferentFilesystems": "如何使用不同的檔案系統"
+          }
+        },
+        "commandLine": {
+          "links": {
+            "commandLine": "命令列",
+            "runNodejsScriptsFromTheCommandLine": "使用命令列執行 Node.js 腳本",
+            "howToReadEnvironmentVariablesFromNodejs": "如何從 Node.js 中讀取環境變數",
+            "howToUseTheNodejsRepl": "如何使用 Node.js REPL",
+            "outputToTheCommandLineUsingNodejs": "使用 Node.js 輸出到命令列",
+            "acceptInputFromTheCommandLineInNodejs": "在 Node.js 中接受命令列輸入"
+          }
+        },
+        "modules": {
+          "links": {
+            "modules": "模塊",
+            "publishingNodeApiModules": "如何釋出 Node-API 套件",
+            "anatomyOfAnHttpTransaction": "HTTP 事務解析",
+            "abiStability": "ABI 穩定性",
+            "backpressuringInStreams": "串流中的背壓機制"
+          }
+        },
+        "diagnostics": {
+          "links": {
+            "diagnostics": "診斷訊息",
+            "userJourney": "使用者旅程",
+            "memory": "記憶體",
+            "liveDebugging": "即時除錯",
+            "poorPerformance": "低效能",
+            "flameGraphs": "火焰圖"
+          }
+        },
+        "testRunner": {
+          "links": {
+            "testRunner": "測試執行器",
+            "introduction": "探索 Node.js 中的測試執行器",
+            "usingTestRunner": "使用 Node.js 中的測試執行器"
+          }
+        }
+      },
+      "about": {
+        "links": {
+          "about": "關於 Node.js",
+          "aboutSide": "關於 Node.js®",
+          "branding": "Node.js 的品牌形象",
+          "governance": "專案治理",
+          "releases": "Node.js 版本",
+          "security": "安全性回報"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "getInvolved": "加入我們",
+          "collabSummit": "協作高峰會",
+          "upcomingEvents": "近期活動",
+          "contribute": "為 Node.js 做出貢獻",
+          "codeOfConduct": "行為準則"
+        }
+      }
+    },
+    "downloadList": {
+      "links": {
+        "previousReleases": "Node.js 版本",
+        "packageManager": "使用套件管理器安裝 Node.js",
+        "shaSums": {
+          "title": "釋出檔案的已簽署 SHASUM",
+          "howToVerify": " (如何驗證)"
+        },
+        "allDownloads": "所有下載選項",
+        "nightlyReleases": "每日建構版本",
+        "unofficialBuilds": "非官方建構版本",
+        "buildingFromSource": "在支援的平台上從原始碼建構 Node.js",
+        "installingOnLinux": "使用二進制存檔安裝 Node.js",
+        "installingOnWsl": "在適用於 Linux 的 Windows 子系統 (WSL) 上安裝"
+      }
+    },
+    "downloadReleasesTable": {
+      "changelog": "更新紀錄",
+      "releases": "版本釋出",
+      "docs": "文件"
+    },
+    "pagination": {
+      "next": "下一頁",
+      "previous": "上一頁"
+    },
+    "common": {
+      "breadcrumbs": {
+        "navigateToHome": "返回首頁"
+      },
+      "crossLink": {
+        "previous": "上一頁",
+        "next": "下一頁"
+      },
+      "codebox": {
+        "copy": "複製到剪貼簿",
+        "copied": "已複製到剪貼簿！"
+      },
+      "pagination": {
+        "prev": "上一頁",
+        "prevAriaLabel": "上一頁",
+        "next": "下一頁",
+        "nextAriaLabel": "下一頁",
+        "defaultLabel": "分頁",
+        "pageLabel": "前往頁面 {pageNumber}"
+      },
+      "sidebar": {
+        "title": "變更頁面"
+      },
+      "languageDropdown": {
+        "label": "選擇語言"
+      },
+      "themeToggle": {
+        "label": "切換深色模式"
+      }
+    },
+    "mdx": {
+      "upcomingEvents": {
+        "defaultTitle": "近期沒有活動"
+      }
+    },
+    "metabar": {
+      "lastUpdated": "最後更新",
+      "readingTime": "閱讀時長",
+      "addedIn": "新增於",
+      "author": "作者",
+      "authors": "作者",
+      "contribute": "貢獻",
+      "contributeText": "編輯此頁面",
+      "viewAs": "檢視模式",
+      "tableOfContents": "目錄"
+    },
+    "downloads": {
+      "changelogModal": {
+        "startContributing": "開始貢獻"
+      }
+    },
+    "search": {
+      "searchBox": {
+        "placeholder": "開始輸入…"
+      },
+      "seeAll": {
+        "text": "查看全部 {count} 則結果"
+      },
+      "searchError": {
+        "text": "搜尋時發生錯誤，請稍後再試。"
+      },
+      "poweredBy": {
+        "text": "技術支援"
+      },
+      "noResults": {
+        "text": "找不到任何「{query}」的搜尋結果。"
+      },
+      "emptyState": {
+        "text": "開始搜尋…"
+      },
+      "searchPage": {
+        "title": "你正在搜尋：{query}"
+      }
+    },
+    "blog": {
+      "blogHeader": {
+        "subtitle": "最新的 Node.js 動態、案例研究、教學和資源。",
+        "rssLink": "RSS 訂閱"
+      }
+    }
+  },
+  "layouts": {
+    "blogPost": {
+      "author": {
+        "byLine": "{author, select, null {} other {By {author}, }}"
+      }
+    },
+    "blogIndex": {
+      "categoryName": "{category, select, all {Blog} other {{category} Blog Posts}}"
+    },
+    "blog": {
+      "title": "部落格",
+      "selectCategory": "類別",
+      "categories": {
+        "all": "所有內容",
+        "announcements": "公告",
+        "release": "版本釋出",
+        "vulnerability": "漏洞",
+        "advisory-board": "諮詢委員會",
+        "community": "社群",
+        "feature": "功能",
+        "module": "模塊",
+        "npm": "npm",
+        "uncategorized": "未歸類",
+        "video": "影片",
+        "weekly": "每週更新",
+        "wg": "工作小組",
+        "events": "活動"
+      }
+    },
+    "error": {
+      "notFound": {
+        "title": "找不到頁面",
+        "description": "很抱歉，查無目標頁面！請從首頁重新開始。"
+      },
+      "internalServerError": {
+        "title": "內部伺服器錯誤",
+        "description": "此頁面發生了無法恢復的錯誤。"
+      },
+      "backToHome": "回到首頁"
+    },
+    "download": {
+      "selectCategory": "類別",
+      "categories": {
+        "prebuilt-installer": "預建構安裝程式",
+        "prebuilt-binaries": "預建構二進制文件",
+        "package-manager": "套件管理器",
+        "source-code": "原始碼"
+      },
+      "buttons": {
+        "prebuilt": "下載 Node.js {version}",
+        "source": "下載 Node.js {version} 的原始碼"
+      },
+      "dropdown": {
+        "bitness": "位元數",
+        "os": "作業系統",
+        "version": "版本",
+        "platform": "平台"
+      },
+      "codeBox": {
+        "fnmEnvSetup": "設定 fnm 環境",
+        "systemManagerWarning": "不是 Node.js 的套件管理器。請確保你已安裝 {packageManager}。",
+        "communityWarning": "套件管理器與其安裝腳本並非由 Node.js 專案維護。",
+        "communityWarningReport": "如果遇到問題，請聯絡套件管理器的維護者。",
+        "installsNvm": "安裝 nvm (Node 版本管理器)",
+        "downloadAndInstallNodejsRestartTerminal": "下載並安裝 Node.js (您可能需要重新啟動終端機)",
+        "verifiesRightNodejsVersion": "驗證環境中正確的 Node.js 版本",
+        "verifiesRightNpmVersion": "驗證環境中正確的 npm 版本",
+        "shouldPrint": "應該顯示 `{version}`",
+        "installsFnm": "安裝 fnm (快速 Node 管理器)",
+        "downloadAndInstallNodejs": "下載並安裝 Node.js",
+        "activateFNM": "啟用 fnm",
+        "noteWithColon": "請注意：",
+        "dockerIsNotNodejsPackageManager": "Docker 並非 Node.js 套件管理器。",
+        "PleaseEndureAlreadyInstallOnSystem": "請確保它已經安裝在您的系統上。",
+        "dockerInstructions": "請前往下列網址並按照官方指示操作：https://docs.docker.com/desktop/",
+        "dockerImagesLink": "Docker 映像可於 https://github.com/nodejs/docker-node/ 官網取得。",
+        "pullsNodejsDockerImage": "拉取 Node.js Docker 映像",
+        "homebrewIsNotNodejsPackageManager": "Homebrew 並非 Node.js 套件管理器。",
+        "homebrewInstructions": "請前往下列網址並按照官方指示操作：https://brew.sh/",
+        "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew 僅支援安裝 Node.js 主要版本，並可能不支援 {version} 發行系列的最新 Node.js 版本。",
+        "chocolateyIsNotNodejsPackageManager": "Chocolatey 並非 Node.js 套件管理器。",
+        "chocolateyInstructions": "請前往下列網址並按照官方指示操作：https://chocolatey.org/",
+        "chocolateyNotMaintanedByNodejs": "Chocolatey 並非由 Node.js 專案官方維護，並可能不支援 {version} 版本的 Node.j"
+      }
+    }
+  }
+}
