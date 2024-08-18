@@ -10,7 +10,8 @@
       "types": "./src/index.d.ts",
       "default": "./dist/index.js"
     },
-    "./config.json": "./dist/config.json"
+    "./config.json": "./dist/config.json",
+    "./locales/en.json": "./locales/en.json"
   },
   "dependencies": {
     "typescript": "~5.5.3"
