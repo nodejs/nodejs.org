@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "name": "@nodejs/website",
+  "name": "nodejs-website",
   "description": "Nodejs.org Website",
   "homepage": "https://nodejs.org",
   "repository": {
