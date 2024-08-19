@@ -51,4 +51,13 @@ Running before the timeout => number 3
 The timeout running last => number 4
 ```
 
-The exact output may differ from run to run.
+The output aforementioned holds true in ES Modules, e.g. mjs files, but keep in mind in CommonJS case, the output may be different:
+
+```bash
+Hello => number 1
+Running at next tick => number 2
+The timeout running last => number 4
+Running before the timeout => number 3
+```
+
+This is because the execution order of setImmediate and setTimeout is undeterministic in CommonJs.
