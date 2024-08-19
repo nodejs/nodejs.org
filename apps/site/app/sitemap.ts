@@ -6,30 +6,59 @@ import {
   EXTERNAL_LINKS_SITEMAP,
 } from '@/next.constants.mjs';
 import { dynamicRouter } from '@/next.dynamic.mjs';
-import { availableLocaleCodes } from '@/next.locales.mjs';
+import { availableLocaleCodes, defaultLocale } from '@/next.locales.mjs';
 
 // This is the combination of the Application Base URL and Base PATH
 const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
 
 // This allows us to generate a `sitemap.xml` file dynamically based on the needs of the Node.js Website
-// Next.js Sitemap Generation doesn't support `alternate` refs yet
-// @see https://github.com/vercel/next.js/discussions/55646
 const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
-  const paths: Array<string> = [];
-
-  for (const locale of availableLocaleCodes) {
-    const routes = await dynamicRouter.getRoutesByLanguage(locale);
-
-    paths.push(...routes.map(route => `${baseUrlAndPath}/${locale}/${route}`));
-  }
+  const routes = await dynamicRouter.getRoutesByLanguage(defaultLocale.code);
+  const paths = [];
 
   const currentDate = new Date().toISOString();
 
-  return [...paths, ...EXTERNAL_LINKS_SITEMAP].map(route => ({
-    url: route,
-    lastModified: currentDate,
-    changeFrequency: 'always',
-  }));
+  for (const route of routes) {
+    const availableLocalesForRoute = [];
+
+    for (const locale of availableLocaleCodes.filter(
+      locale => locale !== defaultLocale.code
+    )) {
+      const markdownFile = await dynamicRouter.getMarkdownFile(locale, route);
+      const isAvailable = markdownFile.filename !== '';
+      if (isAvailable) {
+        availableLocalesForRoute.push(locale);
+      }
+    }
+
+    const alternatesPaths = availableLocalesForRoute.reduce(
+      (acc, locale) => ({
+        ...acc,
+        [locale]: `${baseUrlAndPath}/${locale}/${route}`,
+      }),
+      {}
+    );
+
+    paths.push({
+      url: `${baseUrlAndPath}/${defaultLocale.code}/${route}`,
+      lastModified: currentDate,
+      changeFrequency: 'always' as const,
+      alternates: {
+        languages: {
+          ...alternatesPaths,
+        },
+      },
+    });
+  }
+
+  return [
+    ...paths,
+    ...EXTERNAL_LINKS_SITEMAP.map(route => ({
+      url: route,
+      lastModified: currentDate,
+      changeFrequency: 'always' as const,
+    })),
+  ];
 };
 
 export default sitemap;
