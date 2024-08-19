@@ -266,7 +266,7 @@
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "uk",
-    "enabled": false,
+    "enabled": true,
     "default": false
   },
   {
