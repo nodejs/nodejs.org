@@ -63,7 +63,6 @@
     "classnames": "~2.5.1",
     "cross-env": "7.0.3",
     "dedent": "1.5.3",
-    "eslint-import-resolver-typescript": "^3.6.1",
     "feed": "~4.2.2",
     "github-slugger": "~2.0.0",
     "glob": "~10.4.1",
