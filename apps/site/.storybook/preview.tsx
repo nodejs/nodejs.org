@@ -3,8 +3,9 @@ import type { Preview, ReactRenderer } from '@storybook/react';
 import { NextIntlClientProvider } from 'next-intl';
 
 import { STORYBOOK_MODES, STORYBOOK_SIZES } from '@/.storybook/constants';
-import englishLocale from '@/i18n/locales/en.json';
 import { NotificationProvider } from '@/providers/notificationProvider';
+
+import englishLocale from '@node-core/website-i18n/locales/en.json';
 
 import '../next.fonts';
 import '../styles/index.css';

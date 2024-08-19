@@ -1,10 +1,6 @@
 {
   "name": "@node-core/website-i18n",
   "type": "module",
-  "scripts": {
-    "dev": "tsc --watch",
-    "build": "tsc"
-  },
   "exports": {
     ".": {
       "types": "./src/index.d.ts",
@@ -12,6 +8,10 @@
     },
     "./config.json": "./dist/config.json",
     "./locales/en.json": "./locales/en.json"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
   },
   "dependencies": {
     "typescript": "~5.5.3"
