@@ -1,13 +1,17 @@
 {
   "extends": ["//"],
   "tasks": {
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
     "build": {
       "dependsOn": [],
       "outputs": ["dist/**"]
     },
-    "dev": {
-      "cache": false,
-      "persistent": true
+    "lint:js": {
+      "inputs": ["src/**/*.ts"],
+      "outputs": [".eslintjscache"]
     }
   }
 }
