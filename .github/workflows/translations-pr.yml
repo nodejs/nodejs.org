@@ -12,8 +12,8 @@ on:
       - 'apps/site/pages/**/*.mdx'
       - '!apps/site/pages/en/**/*.md'
       - '!apps/site/pages/en/**/*.mdx'
-      - 'apps/site/i18n/locales/*.json'
-      - '!apps/site/i18n/locales/en.json'
+      - 'packages/i18n/locales/*.json'
+      - '!packages/i18n/locales/en.json'
 
 permissions:
   actions: read
