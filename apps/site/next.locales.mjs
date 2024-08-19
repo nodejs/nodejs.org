@@ -18,7 +18,7 @@ const availableLocaleCodes = getAvailableLocaleCodes();
 
 // This provides the default locale information for the Next.js Application
 // This is marked by the unique `locale.default` property on the `en` locale
-/** @type {import('./types').LocaleConfig} */
+/** @type {import('@node-core/website-i18n/types').LocaleConfig} */
 const defaultLocale = getDefaultLocale();
 
 // Creates a Map of available locales for easy access
