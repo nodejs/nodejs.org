@@ -1,69 +1,54 @@
-"use client";
-
-import type { FC } from "react";
-import type {
-	RegisterSearchBoxProps,
-	RegisterSearchButtonProps,
-} from "@orama/searchbox";
-import { useTheme } from "next-themes";
-import { SearchBox, SearchButton as OramaSearchButton } from "@orama/searchbox";
-import { OramaClient } from "@oramacloud/client";
-import "@orama/searchbox/dist/index.css";
+import { OramaSearchBox, OramaSearchButton } from '@orama/react-components';
+import { useTheme } from 'next-themes';
+import type { FC } from 'react';
+import { useState } from 'react';
+import '@orama/searchbox/dist/index.css';
 
 import {
-	ORAMA_CLOUD_ENDPOINT,
-	ORAMA_CLOUD_API_KEY,
-} from "@/next.constants.mjs";
-
-const oramaClient = new OramaClient({
-	endpoint: ORAMA_CLOUD_ENDPOINT,
-	api_key: ORAMA_CLOUD_API_KEY,
-});
+  ORAMA_CLOUD_ENDPOINT,
+  ORAMA_CLOUD_API_KEY,
+} from '@/next.constants.mjs';
 
 export const SearchButton: FC = () => {
-	const { resolvedTheme } = useTheme();
+  const [isOpen, setIsOpen] = useState(false);
+  const { resolvedTheme } = useTheme();
+  const colorScheme = resolvedTheme as 'light' | 'dark';
 
-	const searchBoxProps: RegisterSearchBoxProps = {
-		// @ts-ignore - This is a bug in the searchbox types
-		oramaInstance: oramaClient,
-		colorScheme: resolvedTheme,
-		backdrop: true,
-		resultsMap: {
-			title: "pageSectionTitle",
-			description: "pageSectionContent",
-		},
-		facetProperty: "siteSection",
-		themeConfig: {
-			dark: {
-				"--text-color-accent": "#84ba64",
-			},
-			light: {
-				"--text-color-accent": "#84ba64",
-			},
-		},
-		seeAllLink: {
-			url: "/search",
-			label: (count: string, term?: string | undefined) =>
-				`See all ${count} results for ${term}`,
-		},
-	};
+  return (
+    <>
+      <OramaSearchButton
+        id="orama-ui-search-button"
+        colorScheme={colorScheme}
+        onClick={() => setIsOpen(true)}
+      >
+        Search
+      </OramaSearchButton>
 
-	const searchButtonProps: RegisterSearchButtonProps = {
-		colorScheme: resolvedTheme,
-		themeConfig: {
-			dark: {
-				"--search-btn-border-color-hover": "#417e384d",
-			},
-			light: {
-				"--search-btn-border-color-hover": "#417e384d",
-			},
-		},
-	};
-
-	return (
-		<>
-			<OramaSearchButton {...searchButtonProps} />
-			<SearchBox {...searchBoxProps} />
-		</>
-	);
+      <OramaSearchBox
+        id="orama-ui-searchbox"
+        open={isOpen}
+        onSearchboxClosed={() => setIsOpen(false)}
+        colorScheme={colorScheme}
+        index={{ api_key: ORAMA_CLOUD_API_KEY, endpoint: ORAMA_CLOUD_ENDPOINT }}
+        facetProperty="siteSection"
+        resultMap={{
+          title: 'pageTitle',
+          description: 'pageSectionContent',
+          section: 'siteSection',
+          path: 'path',
+        }}
+        sourcesMap={{
+          title: 'pageTitle',
+          description: 'path',
+          path: 'path',
+        }}
+        sourceBaseUrl="/en/"
+        suggestions={[
+          'How to install Node.js',
+          'Creating a npm package',
+          'Upgrading Node.js',
+        ]}
+      />
+    </>
+  );
 };
