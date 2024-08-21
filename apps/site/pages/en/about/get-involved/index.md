@@ -9,7 +9,7 @@ If you are interested in getting involved with the Node.js community, there are 
 
 ## Community Discussion
 
-- The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features and if you have questions about node.js, you can use the [github discussions](https://github.com/orgs/nodejs/discussions).
+- The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features and if you have questions about Node.js, you can use the [github discussions](https://github.com/orgs/nodejs/discussions).
 - The [`nodejs/help`](https://github.com/nodjes/help/issues) repository is the place to ask questions about Node.js.
 - The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
 - The [Node.js project calendar](https://nodejs.org/calendar) with all public team meetings.
