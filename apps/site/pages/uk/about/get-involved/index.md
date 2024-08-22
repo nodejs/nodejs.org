@@ -22,5 +22,5 @@ layout: about
 - [Офіційна документація з API](https://nodejs.org/api/).
 - [NodeSchool.io](https://nodeschool.io/) навчить вас концепцій Node.js за допомогою інтерактивних ігор у командному рядку.
 - [Тег Node.js у Stack Overflow](https://stackoverflow.com/questions/tagged/node.js) щодня збирає нову інформацію.
-- [Тег Node.js на DEV Community](https://dev.to/t/node) — це місце, де можна ділитися проєктами, статтями та практичними заняттями з Node.js, а також почати обговорення та просити відгуки до тем, пов'язаних із Node.js. До участі запрошуються розробники всіх рівнів.
+- [Тег Node.js на DEV Community](https://dev.to/t/node) — це місце, де можна ділитися проєктами, статтями та посібниками з Node.js, а також почати обговорення та просити відгуки до тем, пов'язаних із Node.js. До участі запрошуються розробники всіх рівнів.
 - [Nodeiflux](https://discordapp.com/invite/vUsrbjd) — це дружня спільнота бекенд-розробників Node.js, які підтримують один одного в Discord.
