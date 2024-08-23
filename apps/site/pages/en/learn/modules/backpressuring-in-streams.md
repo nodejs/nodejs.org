@@ -506,7 +506,7 @@ the next section will go a little bit more in-depth.
 ## Rules to Abide By When Implementing Custom Streams
 
 The golden rule of streams is **to always respect backpressure**. What
-constitutes as best practice is non-contradictory practice. So long as you are
+constitutes as best practice is non-contradictory practice. So as long as you are
 careful to avoid behaviors that conflict with internal backpressure support,
 you can be sure you're following good practice.
 
