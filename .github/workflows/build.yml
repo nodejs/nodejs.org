@@ -99,6 +99,8 @@ jobs:
           # this should be a last resort in case by any chances the build memory gets too high
           # but in general this should never happen
           NODE_OPTIONS: '--max_old_space_size=4096'
+          # Used for API requests that require GitHub API scopes
+          NEXT_GITHUB_API_KEY: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Next.js (Static)
         # We only run full static builds within Pull Requests. As they're not needed on `merge_group` or `push` events
@@ -115,6 +117,8 @@ jobs:
           # this should be a last resort in case by any chances the build memory gets too high
           # but in general this should never happen
           NODE_OPTIONS: '--max_old_space_size=4096'
+          # Used for API requests that require GitHub API scopes
+          NEXT_GITHUB_API_KEY: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Sync Orama Cloud
         # We only want to sync the Orama Cloud production indexes on `push` events.
