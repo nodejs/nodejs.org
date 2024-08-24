@@ -6,7 +6,7 @@ authors: RedYetiDev
 
 # Collecting code coverage in Node.js
 
-Node.js provides built-in support for code coverage through its test runner, which can be enabled using the `--experimental-code-coverage` flag.
+Node.js provides built-in support for code coverage through its test runner, which can be enabled using the [`--experimental-code-coverage`](https://nodejs.org/api/cli.html#--experimental-test-coverage) flag.
 
 ## What is code coverage?
 
@@ -205,9 +205,9 @@ Each of these different methods will produce the same report, with 100% code cov
 
 Node.js offers two CLI arguments for managing the inclusion or exclusion of specific files in a coverage report.
 
-The `--test-coverage-include` flag restricts the coverage to files that match the provided glob pattern. By default, files in the `/node_modules/` directory are excluded, but this flag allows you to explicitly include them.
+The [`--test-coverage-include`](https://nodejs.org/api/cli.html#--test-coverage-include) flag restricts the coverage to files that match the provided glob pattern. By default, files in the `/node_modules/` directory are excluded, but this flag allows you to explicitly include them.
 
-The `--test-coverage-exclude` flag omits files that match the given glob pattern from the coverage report.
+The [`--test-coverage-exclude`](https://nodejs.org/api/cli.html#--test-coverage-exclude) flag omits files that match the given glob pattern from the coverage report.
 
 These flags can be used multiple times, and when both are used together, files must adhere to the inclusion rules, while also avoiding the exclusion rules.
 
@@ -277,9 +277,9 @@ By default, when all tests pass, Node.js exits with code `0`, which indicates a 
 
 Node.js currently supports thresholds for all three of the coverages supported:
 
-- `--test-coverage-lines` for line coverage.
-- `--test-coverage-branches` for branch coverage.
-- `--test-coverage-functions` for function coverage.
+- [`--test-coverage-lines`](https://nodejs.org/api/cli.html#--test-coverage-linesthreshold) for line coverage.
+- [`--test-coverage-branches`](https://nodejs.org/api/cli.html#--test-coverage-branchesthreshold) for branch coverage.
+- [`--test-coverage-functions`](https://nodejs.org/api/cli.html#--test-coverage-functionsthreshold) for function coverage.
 
 If you wanted to require the previous example to have line coverage >= 90%, you could use the `--test-coverage-lines=90` flag.
 
