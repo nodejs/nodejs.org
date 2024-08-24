@@ -396,6 +396,10 @@
             "mocking": {
               "link": "/learn/test-runner/mocking",
               "label": "components.navigation.learn.testRunner.links.mocking"
+            },
+            "collectingCodeCoverage": {
+              "link": "/learn/test-runner/collecting-code-coverage",
+              "label": "components.navigation.learn.testRunner.links.collectingCodeCoverage"
             }
           }
         }

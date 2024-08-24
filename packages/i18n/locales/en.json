@@ -119,7 +119,8 @@
             "testRunner": "Test Runner",
             "introduction": "Discovering Node.js's test runner",
             "usingTestRunner": "Using Node.js's test runner",
-            "mocking": "Mocking in tests"
+            "mocking": "Mocking in tests",
+            "collectingCodeCoverage": "Collecting code coverage in Node.js"
           }
         }
       },
