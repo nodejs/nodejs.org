@@ -284,7 +284,7 @@ Node.js currently supports thresholds for all three of the coverages supported:
 If you wanted to require the previous example to have line coverage >= 90%, you could use the `--test-coverage-lines=90` flag.
 
 ```bash
-node --experimental-test-coverage --test-coverage-lines=75 --test main.test.js
+node --experimental-test-coverage --test-coverage-lines=90 --test main.test.js
 ```
 
 ```text displayName="Coverage Report"
