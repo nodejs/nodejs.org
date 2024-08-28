@@ -14,6 +14,7 @@
           "about": "About",
           "download": "Download",
           "docs": "Docs",
+          "support": "Version Support",
           "guides": "Guides",
           "learn": "Learn",
           "security": "Security",
@@ -298,6 +299,7 @@
         "platform": "Platform"
       },
       "codeBox": {
+        "unsupportedVersionWarning": "This version is out of maintenance. Find more information here:",
         "fnmEnvSetup": "configure fnm environment",
         "systemManagerWarning": "is not a Node.js package manager. Please ensure you already have {packageManager} installed.",
         "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project.",
