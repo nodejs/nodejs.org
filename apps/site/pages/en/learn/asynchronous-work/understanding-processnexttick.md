@@ -30,11 +30,11 @@ Use `nextTick()` when you want to make sure that in the next event loop iteratio
 console.log('Hello => number 1');
 
 setImmediate(() => {
-  console.log('Running before the timeout => number 3');
-});
+  console.log('The immediate running last => number 4');
+})
 
 setTimeout(() => {
-  console.log('The timeout running last => number 4');
+  console.log('The timeout running before immediate => number 3');
 }, 0);
 
 process.nextTick(() => {
@@ -47,8 +47,8 @@ process.nextTick(() => {
 ```bash
 Hello => number 1
 Running at next tick => number 2
-Running before the timeout => number 3
-The timeout running last => number 4
+The timeout running before immediate => number 3
+The immediate running last => number 4
 ```
 
 The exact output may differ from run to run.
