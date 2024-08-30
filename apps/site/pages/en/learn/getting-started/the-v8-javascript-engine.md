@@ -18,19 +18,19 @@ The Node.js ecosystem is huge and thanks to V8 which also powers desktop apps, w
 
 Other browsers have their own JavaScript engine:
 
-- Firefox has [**SpiderMonkey**](https://spidermonkey.dev)
-- Safari has [**JavaScriptCore**](https://developer.apple.com/documentation/javascriptcore) (also called Nitro)
-- Edge was originally based on [**Chakra**](https://github.com/Microsoft/ChakraCore) but has more recently been [rebuilt using Chromium](https://support.microsoft.com/en-us/help/4501095/download-the-new-microsoft-edge-based-on-chromium) and the V8 engine.
+- Firefox has [**SpiderMonkey**](https://spidermonkey.dev){:target="_blank"}
+- Safari has [**JavaScriptCore**](https://developer.apple.com/documentation/javascriptcore){:target="_blank"} (also called Nitro)
+- Edge was originally based on [**Chakra**](https://github.com/Microsoft/ChakraCore){:target="_blank"} but has more recently been [rebuilt using Chromium](https://support.microsoft.com/en-us/help/4501095/download-the-new-microsoft-edge-based-on-chromium){:target="_blank"} and the V8 engine.
 
 and many others exist as well.
 
-All those engines implement the [ECMA ES-262 standard](https://www.ecma-international.org/publications/standards/Ecma-262.htm), also called ECMAScript, the standard used by JavaScript.
+All those engines implement the [ECMA ES-262 standard](https://www.ecma-international.org/publications/standards/Ecma-262.htm){:target="_blank"}, also called ECMAScript, the standard used by JavaScript.
 
 ## The quest for performance
 
 V8 is written in C++, and it's continuously improved. It is portable and runs on Mac, Windows, Linux and several other systems.
 
-In this V8 introduction, we will ignore the implementation details of V8: they can be found on more authoritative sites (e.g. the [V8 official site](https://v8.dev/)), and they change over time, often radically.
+In this V8 introduction, we will ignore the implementation details of V8: they can be found on more authoritative sites (e.g. the [V8 official site](https://v8.dev/){:target="_blank"}), and they change over time, often radically.
 
 V8 is always evolving, just like the other JavaScript engines around, to speed up the Web and the Node.js ecosystem.
 
