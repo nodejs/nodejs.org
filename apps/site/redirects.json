@@ -265,6 +265,10 @@
       "destination": "/:locale/about/get-involved/:path*"
     },
     {
+      "source": "/learn",
+      "destination": "/en/learn"
+    },
+    {
       "source": "/:locale/learn",
       "destination": "/:locale/learn/getting-started/introduction-to-nodejs"
     },
