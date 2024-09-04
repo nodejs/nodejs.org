@@ -28,11 +28,11 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2024-07-08T00:00:00.000Z",
-      "endDate": "2024-07-16T23:59:00.000Z",
-      "text": "July Security Release is available",
-      "link": "https://nodejs.org/en/blog/vulnerability/july-2024-security-releases",
-      "type": "warning"
+      "startDate": "2024-09-04T00:00:00.000Z",
+      "endDate": "2024-09-30T00:00:00.000Z",
+      "text": "Save 60% on Node.js Training and Certification through September 30 with code ROCKET60",
+      "link": "https://training.linuxfoundation.org/openjs-sept-24-promo/",
+      "type": "default"
     }
   },
   "websiteBadges": {
