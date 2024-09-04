@@ -6,6 +6,8 @@ authors: sbielenica, ovflowd, vaishnav-mk, AugustinMauroy
 
 # Node.js with TypeScript
 
+> Note: Since this article was written, Node.js added experimental support for TypeScript with the `--experimental-strip-types` flag, in [version 22.6.0](https://nodejs.org/en/blog/release/v22.6.0).
+
 ## What is TypeScript
 
 **[TypeScript](https://www.typescriptlang.org)** is an open-source language maintained and developed by Microsoft. It's loved and used by a lot of software developers around the world.
