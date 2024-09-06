@@ -82,7 +82,6 @@ jobs:
             .turbo/cache
             node_modules/.cache
             .eslintmdcache
-            .eslintjscache
             .stylelintcache
             .prettiercache
           # We want to restore Turborepo Cache and ESlint and Prettier Cache
@@ -136,7 +135,6 @@ jobs:
             .turbo/cache
             node_modules/.cache
             .eslintmdcache
-            .eslintjscache
             .stylelintcache
             .prettiercache
           key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.turbo/cache/**') }}

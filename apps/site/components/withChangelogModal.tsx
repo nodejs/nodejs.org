@@ -62,7 +62,7 @@ const WithChangelogModal: FC<WithChangelogModalProps> = ({
             }
           );
         }
-      } catch (_) {
+      } catch {
         throw new Error(`Failed to fetch changelog for, ${versionWithPrefix}`);
       }
     };

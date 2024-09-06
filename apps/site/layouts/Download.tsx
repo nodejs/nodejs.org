@@ -10,6 +10,7 @@ import styles from './layouts.module.css';
 const DownloadLayout: FC<PropsWithChildren> = async ({ children }) => {
   const {
     frontmatter: { title, subtitle },
+    // eslint-disable-next-line react-hooks/rules-of-hooks
   } = useClientContext();
 
   return (
