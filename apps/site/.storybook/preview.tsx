@@ -1,11 +1,10 @@
+import englishLocale from '@node-core/website-i18n/locales/en.json';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import type { Preview, ReactRenderer } from '@storybook/react';
 import { NextIntlClientProvider } from 'next-intl';
 
 import { STORYBOOK_MODES, STORYBOOK_SIZES } from '@/.storybook/constants';
 import { NotificationProvider } from '@/providers/notificationProvider';
-
-import englishLocale from '@node-core/website-i18n/locales/en.json';
 
 import '../next.fonts';
 import '../styles/index.css';

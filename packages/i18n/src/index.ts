@@ -1,6 +1,5 @@
 import localeConfig from './config.json' assert { type: 'json' };
-
-import { LocaleConfig } from './types.js';
+import type { LocaleConfig } from './types.js';
 
 export const importLocale = async (locale: string) => {
   return import(`../locales/${locale}.json`).then(f => f.default);
@@ -9,7 +8,7 @@ export const importLocale = async (locale: string) => {
 // As set of available and enabled locales for the website
 // This is used for allowing us to redirect the user to any
 // of the available locales that we have enabled on the website
-export const getAvailableLocales = (): LocaleConfig[] =>
+export const getAvailableLocales = (): Array<LocaleConfig> =>
   localeConfig.filter(locale => locale.enabled);
 
 // This gives an easy way of accessing all available locale codes

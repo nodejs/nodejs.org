@@ -19,15 +19,16 @@
     "lint:js": "eslint src/**/*.ts --cache --cache-strategy=content --cache-location=.eslintjscache"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "7.11.0",
-    "@typescript-eslint/parser": "7.11.0",
-    "typescript": "~5.5.3"
+    "typescript": "~5.5.4",
+    "typescript-eslint": "~8.4.0"
   },
   "engines": {
     "node": ">=18"
   },
   "devDependencies": {
-    "eslint": "8.57.0",
-    "eslint-config-prettier": "9.1.0"
+    "eslint": "~9.10.0",
+    "eslint-config-prettier": "~9.1.0",
+    "eslint-import-resolver-typescript": "~3.6.3",
+    "eslint-plugin-import-x": "~4.2.1"
   }
 }
