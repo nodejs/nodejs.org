@@ -89,8 +89,7 @@
         "{next-data,scripts,i18n}/**/*.{mjs,json}",
         "{.storybook,public}/**/*.{ts,js,json}",
         "*.{json,ts,tsx}"
-      ],
-      "outputs": [".eslintjscache"]
+      ]
     },
     "lint:md": {
       "inputs": ["{app,pages}/**/*.{md,mdx}", "*.{md,mdx}"],

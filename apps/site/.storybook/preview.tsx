@@ -1,11 +1,10 @@
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
+import type { Preview, ReactRenderer } from '@storybook/react';
 import { NextIntlClientProvider } from 'next-intl';
 
-import { withThemeByDataAttribute } from '@storybook/addon-themes';
-import { NotificationProvider } from '@/providers/notificationProvider';
 import { STORYBOOK_MODES, STORYBOOK_SIZES } from '@/.storybook/constants';
-import type { Preview, ReactRenderer } from '@storybook/react';
-
 import englishLocale from '@/i18n/locales/en.json';
+import { NotificationProvider } from '@/providers/notificationProvider';
 
 import '../next.fonts';
 import '../styles/index.css';
