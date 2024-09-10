@@ -46,7 +46,7 @@ jobs:
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           # Provides the Pull Request commit SHA or the GitHub merge group ref
-          ref: ${{ github.event.pull_request.head.sha || github.ref }}
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.ref }}
 
       - name: Add Comment to PR
         # Signal that a lighthouse run is about to start

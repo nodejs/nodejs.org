@@ -68,7 +68,7 @@ jobs:
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           # Provides the Pull Request commit SHA or the GitHub merge group ref
-          ref: ${{ github.event.pull_request.head.sha || github.ref }}
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.ref }}
           # We only need to fetch the last commit from the head_ref
           # since we're not using the `--filter` operation from turborepo
           # We don't use the `--filter` as we always want to force builds regardless of having changes or not
