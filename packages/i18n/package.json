@@ -13,19 +13,16 @@
   ],
   "scripts": {
     "build": "tsc --declaration --emitDeclarationOnly",
-    "lint:js": "eslint \"**/*.{js,mjs,ts}\" --cache --cache-strategy=content --cache-location=.eslintjscache"
-  },
-  "dependencies": {
-    "typescript": "~5.5.4",
-    "typescript-eslint": "~8.4.0"
+    "lint:js": "eslint \"**/*.{js,mjs,ts}\""
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "devDependencies": {
     "eslint": "~9.10.0",
-    "eslint-config-prettier": "~9.1.0",
     "eslint-import-resolver-typescript": "~3.6.3",
-    "eslint-plugin-import-x": "~4.2.1"
+    "eslint-plugin-import-x": "~4.2.1",
+    "typescript": "~5.5.4",
+    "typescript-eslint": "~8.4.0"
   }
 }

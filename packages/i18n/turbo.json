@@ -10,8 +10,11 @@
       "outputs": ["dist/**"]
     },
     "lint:js": {
-      "inputs": ["src/**/*.ts"],
-      "outputs": [".eslintjscache"]
+      "inputs": ["src/**/*.{js,mjs,ts,tsx}"]
+    },
+    "lint:md": {
+      "inputs": ["src/**/*.md?(x)"],
+      "outputs": [".eslintmdcache"]
     }
   }
 }

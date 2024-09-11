@@ -24,7 +24,6 @@ build-storybook.log
 cache
 
 # Cache Files
-.eslintjscache
 .eslintmdcache
 .stylelintcache
 .prettiercache
