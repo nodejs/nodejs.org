@@ -1,22 +1,19 @@
 {
   "name": "@node-core/website-i18n",
   "type": "module",
-  "exports": {
-    ".": {
-      "types": "./src/index.d.ts",
-      "default": "./dist/index.js"
-    },
-    "./types": {
-      "types": "./src/types.d.ts",
-      "default": "./dist/types.js"
-    },
-    "./config.json": "./dist/config.json",
-    "./locales/en.json": "./locales/en.json"
+  ".": {
+    "types": "./dist/index.d.mts",
+    "default": "./lib/index.mjs"
   },
+  "main": "./lib/index.mjs",
+  "module": "./lib/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "locales"
+  ],
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
-    "lint:js": "eslint src/**/*.ts --cache --cache-strategy=content --cache-location=.eslintjscache"
+    "build": "tsc --declaration --emitDeclarationOnly",
+    "lint:js": "eslint \"**/*.{js,mjs,ts}\" --cache --cache-strategy=content --cache-location=.eslintjscache"
   },
   "dependencies": {
     "typescript": "~5.5.4",
