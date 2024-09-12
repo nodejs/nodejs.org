@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import type { FC, PropsWithChildren } from 'react';
 
 import GlowingBackdrop from '@/components/Common/GlowingBackdrop';
@@ -6,16 +7,29 @@ import WithNavBar from '@/components/withNavBar';
 
 import styles from './layouts.module.css';
 
-const HomeLayout: FC<PropsWithChildren> = ({ children }) => (
+type GlowingBackdropLayoutProps = PropsWithChildren<{
+  kind?: 'home';
+}>;
+
+const GlowingBackdropLayout: FC<GlowingBackdropLayoutProps> = ({
+  kind,
+  children,
+}) => (
   <>
     <WithNavBar />
     <div className={styles.centeredLayout}>
       <GlowingBackdrop />
 
-      <main className={styles.homeLayout}>{children}</main>
+      <main
+        className={classNames({
+          [styles.homeLayout]: kind === 'home',
+        })}
+      >
+        {children}
+      </main>
     </div>
     <WithFooter />
   </>
 );
 
-export default HomeLayout;
+export default GlowingBackdropLayout;

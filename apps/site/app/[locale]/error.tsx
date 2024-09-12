@@ -6,14 +6,14 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import Button from '@/components/Common/Button';
-import HomeLayout from '@/layouts/Home';
+import GlowingBackdropLayout from '@/layouts/GlowingBackdrop';
 
 const ErrorPage: FC<{ error: Error }> = ({ error }) => {
   captureException(error);
   const t = useTranslations();
 
   return (
-    <HomeLayout>
+    <GlowingBackdropLayout>
       500
       <h1 className="special -mt-4">
         {t('layouts.error.internalServerError.title')}
@@ -25,7 +25,7 @@ const ErrorPage: FC<{ error: Error }> = ({ error }) => {
         {t('layouts.error.backToHome')}
         <ArrowRightIcon />
       </Button>
-    </HomeLayout>
+    </GlowingBackdropLayout>
   );
 };
 

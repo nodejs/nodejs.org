@@ -6,13 +6,13 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import Button from '@/components/Common/Button';
-import HomeLayout from '@/layouts/Home';
+import GlowingBackdropLayout from '@/layouts/GlowingBackdrop';
 
 const NotFoundPage: FC = () => {
   const t = useTranslations();
 
   return (
-    <HomeLayout>
+    <GlowingBackdropLayout>
       404
       <h1 className="special -mt-4">{t('layouts.error.notFound.title')}</h1>
       <div className="my-4 flex items-center justify-center">
@@ -30,7 +30,7 @@ const NotFoundPage: FC = () => {
         {t('layouts.error.backToHome')}
         <ArrowRightIcon />
       </Button>
-    </HomeLayout>
+    </GlowingBackdropLayout>
   );
 };
 

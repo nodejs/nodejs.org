@@ -6,7 +6,7 @@ import type { FC } from 'react';
 
 import Button from '@/components/Common/Button';
 import BaseLayout from '@/layouts/Base';
-import HomeLayout from '@/layouts/Home';
+import GlowingBackdropLayout from '@/layouts/GlowingBackdrop';
 
 const GlobalErrorPage: FC<{ error: Error }> = ({ error }) => {
   captureException(error);
@@ -15,7 +15,7 @@ const GlobalErrorPage: FC<{ error: Error }> = ({ error }) => {
     <html>
       <body>
         <BaseLayout>
-          <HomeLayout>
+          <GlowingBackdropLayout>
             500
             <h1 className="special -mt-4">Internal Server Error</h1>
             <p className="-mt-4 max-w-sm text-center text-lg">
@@ -25,7 +25,7 @@ const GlobalErrorPage: FC<{ error: Error }> = ({ error }) => {
               Back to Home
               <ArrowRightIcon />
             </Button>
-          </HomeLayout>
+          </GlowingBackdropLayout>
         </BaseLayout>
       </body>
     </html>
