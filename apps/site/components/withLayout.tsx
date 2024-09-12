@@ -1,6 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 
 import AboutLayout from '@/layouts/About';
+import ArticlePageLayout from '@/layouts/ArticlePage';
 import BlogLayout from '@/layouts/Blog';
 import DefaultLayout from '@/layouts/Default';
 import DownloadLayout from '@/layouts/Download';
@@ -8,7 +9,6 @@ import HomeLayout from '@/layouts/Home';
 import LearnLayout from '@/layouts/Learn';
 import PostLayout from '@/layouts/Post';
 import SearchLayout from '@/layouts/Search';
-import SimplePage from '@/layouts/SimplePage';
 import type { Layouts } from '@/types';
 
 const layouts = {
@@ -20,7 +20,7 @@ const layouts = {
   'blog-category': BlogLayout,
   search: SearchLayout,
   download: DownloadLayout,
-  article: SimplePage,
+  article: ArticlePageLayout,
 } satisfies Record<Layouts, FC>;
 
 type WithLayoutProps<L = Layouts> = PropsWithChildren<{ layout: L }>;

@@ -5,7 +5,7 @@ import WithNavBar from '@/components/withNavBar';
 import WithSidebar from '@/components/withSidebar';
 import ArticleLayout from '@/layouts/Article';
 
-const SimplePage: FC<PropsWithChildren> = ({ children }) => (
+const ArticlePageLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <WithNavBar />
 
@@ -21,4 +21,4 @@ const SimplePage: FC<PropsWithChildren> = ({ children }) => (
   </>
 );
 
-export default SimplePage;
+export default ArticlePageLayout;
