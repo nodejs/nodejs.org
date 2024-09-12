@@ -1,12 +1,12 @@
 ---
-title: Running TypeScript with a Node.js Itself
+title: Running TypeScript Natively
 layout: learn
 authors: AugustinMauroy
 ---
 
 > **⚠️WARNING⚠️:** All content in this article uses Node.js experimental features. Please make sure you are using a version of Node.js that supports the features mentioned in this article. And remember that experimental features can change on future versions of Node.js.
 
-# Running TypeScript with a Node.js Itself
+# Running TypeScript Natively
 
 In the previous articles, we learned how to run TypeScript code using transpilation and with a runner. In this article, we will learn how to run TypeScript code using Node.js itself.
 

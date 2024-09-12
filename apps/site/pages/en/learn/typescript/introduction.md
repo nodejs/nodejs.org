@@ -10,7 +10,7 @@ authors: sbielenica, ovflowd, vaishnav-mk, AugustinMauroy
 
 **[TypeScript](https://www.typescriptlang.org)** is an open-source language maintained and developed by Microsoft. It's loved and used by a lot of software developers around the world.
 
-Basically, it's a superset of JavaScript that adds new capabilities to the language. The most notable addition is static type definitions, something that is not present in plain JavaScript. Thanks to types, it's possible, for example, to declare what kind of arguments we are expecting and what is returned exactly in our functions or what's the exact shape of the object that we are creating. TypeScript is a really powerful tool and opens a new world of possibilities in JavaScript projects. It makes our code more secure and robust by preventing many bugs before the code is even shipped - it catches problems during code development and integrates wonderfully with code editors like Visual Studio Code.
+Basically, TypeScript add adds additional syntax to JavaScript to support a tighter integration with your editor. Catch errors early in your editor or in your CI/CD pipeline, and write more maintainable code.
 
 We can talk about other TypeScript benefits later, let's see some examples now!
 

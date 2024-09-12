@@ -47,7 +47,7 @@
             "introduction": "Introduction to TypeScript",
             "transpile": "Running TypeScript code using transpilation",
             "run": "Running TypeScript with a runner",
-            "runNatively": "Running TypeScript with a Node.js Itself"
+            "runNatively": "Running TypeScript Natively"
           }
         },
         "asynchronousWork": {
