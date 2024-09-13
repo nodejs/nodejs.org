@@ -4,7 +4,7 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import * as ScrollPrimitive from '@radix-ui/react-scroll-area';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import classNames from 'classnames';
-import { useId, useMemo } from 'react';
+import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import type { FC } from 'react';
 
 import type { FormattedMessage } from '@/types';
@@ -51,7 +51,9 @@ const Select: FC<SelectProps> = ({
   ariaLabel,
 }) => {
   const id = useId();
-
+  const spanRef = useRef<HTMLSpanElement>(null);
+  const [elementWidth, setElementWidth] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const mappedValues = useMemo(() => {
     let mappedValues = values;
 
@@ -66,6 +68,24 @@ const Select: FC<SelectProps> = ({
     return mappedValues;
   }, [values]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (spanRef.current) {
+      setElementWidth(spanRef.current.offsetWidth);
+    }
+  }, [windowWidth]);
+
   return (
     <span
       className={classNames(
@@ -73,6 +93,7 @@ const Select: FC<SelectProps> = ({
         { [styles.inline]: inline },
         className
       )}
+      ref={spanRef}
     >
       {label && (
         <label className={styles.label} htmlFor={id}>
@@ -94,10 +115,16 @@ const Select: FC<SelectProps> = ({
           <SelectPrimitive.Content
             position={inline ? 'popper' : 'item-aligned'}
             className={classNames(styles.dropdown, { [styles.inline]: inline })}
+            style={{
+              maxWidth: `${elementWidth}px`,
+            }}
           >
             <ScrollPrimitive.Root type="auto">
               <SelectPrimitive.Viewport>
                 <ScrollPrimitive.Viewport>
+                  <ScrollPrimitive.Scrollbar orientation="horizontal">
+                    <ScrollPrimitive.Thumb />
+                  </ScrollPrimitive.Scrollbar>
                   {mappedValues.map(({ label, items }, key) => (
                     <SelectPrimitive.Group key={label?.toString() ?? key}>
                       {label && (
