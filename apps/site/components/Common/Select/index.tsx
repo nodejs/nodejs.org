@@ -122,9 +122,6 @@ const Select: FC<SelectProps> = ({
             <ScrollPrimitive.Root type="auto">
               <SelectPrimitive.Viewport>
                 <ScrollPrimitive.Viewport>
-                  <ScrollPrimitive.Scrollbar orientation="horizontal">
-                    <ScrollPrimitive.Thumb />
-                  </ScrollPrimitive.Scrollbar>
                   {mappedValues.map(({ label, items }, key) => (
                     <SelectPrimitive.Group key={label?.toString() ?? key}>
                       {label && (
@@ -144,7 +141,9 @@ const Select: FC<SelectProps> = ({
                         >
                           <SelectPrimitive.ItemText>
                             {iconImage}
-                            <span>{label}</span>
+                            <span className={classNames(styles.textWrap)}>
+                              {label}
+                            </span>
                           </SelectPrimitive.ItemText>
                         </SelectPrimitive.Item>
                       ))}

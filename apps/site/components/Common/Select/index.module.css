@@ -133,6 +133,10 @@
       dark:data-[disabled]:text-neutral-700;
   }
 
+  .textWrap {
+    text-wrap: wrap !important ;
+  }
+
   &.dropdown {
     @apply mt-1
       w-[calc(100%+1.5rem)]
