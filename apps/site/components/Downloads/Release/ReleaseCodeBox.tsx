@@ -6,12 +6,10 @@ import type { FC } from 'react';
 
 import CodeBox from '@/components/Common/CodeBox';
 import { ReleaseContext } from '@/providers/releaseProvider';
-import { getShiki, highlightToHtml } from '@/util/getHighlighter';
+import { shikiPromise, highlightToHtml } from '@/util/getHighlighter';
 import { getNodeDownloadSnippet } from '@/util/getNodeDownloadSnippet';
 
-// We cannot do top-level awaits on utilities or code that is imported by client-only components
-// hence we only declare a Promise and let it be fulfilled by the first call to the function
-const memoizedShiki = getShiki();
+const memoizedShiki = shikiPromise.then(highlightToHtml);
 
 const ReleaseCodeBox: FC = () => {
   const { platform, os, release } = useContext(ReleaseContext);
@@ -25,9 +23,7 @@ const ReleaseCodeBox: FC = () => {
     // but usually we should recommend users to download "major" versions
     // since our Download Buttons get the latest minor of a major, it does make sense
     // to request installation of a major via a package manager
-    memoizedShiki
-      .then(shiki => highlightToHtml(shiki)(updatedCode, 'bash'))
-      .then(setCode);
+    memoizedShiki.then(shiki => shiki(updatedCode, 'bash')).then(setCode);
     // Only react when the specific release number changed
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [release.versionWithPrefix, os, platform]);
