@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "name": "@nodejs/website",
+  "name": "nodejs-website",
   "description": "Nodejs.org Website",
   "homepage": "https://nodejs.org",
   "repository": {
@@ -17,7 +17,8 @@
   },
   "packageManager": "npm@10.7.0",
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
     "dev": "turbo run dev",
@@ -35,15 +36,21 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "husky": "9.0.11",
-    "lint-staged": "15.2.7",
-    "turbo": "2.1.1"
+    "husky": "9.1.6",
+    "lint-staged": "15.2.10",
+    "turbo": "2.1.2"
   },
   "devDependencies": {
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
     "prettier": "3.3.3",
-    "prettier-plugin-tailwindcss": "0.6.6",
-    "typescript": "~5.5.0"
+    "prettier-plugin-tailwindcss": "0.6.6"
+  },
+  "overrides": {
+    "eslint": "9.10.0",
+    "@typescript-eslint/typescript-estree": "8.5.0",
+    "eslint-config-next": {
+      "eslint-plugin-import": "npm:eslint-plugin-import-x@4.2.1"
+    }
   }
 }

@@ -1,3 +1,4 @@
+import { importLocale } from '@node-core/website-i18n';
 import { getRequestConfig } from 'next-intl/server';
 
 import { availableLocaleCodes } from '@/next.locales.mjs';
@@ -7,13 +8,15 @@ const loadLocaleDictionary = async (locale: string) => {
   if (locale === 'en') {
     // This enables HMR on the English Locale, so that instant refresh
     // happens while we add/change texts on the source locale
-    return import('./i18n/locales/en.json').then(f => f.default);
+    return import('@node-core/website-i18n/locales/en.json').then(
+      f => f.default
+    );
   }
 
   if (availableLocaleCodes.includes(locale)) {
     // Other languages don't really require HMR as they will never be development languages
     // so we can load them dynamically
-    return import(`./i18n/locales/${locale}.json`).then(f => f.default);
+    return importLocale(locale);
   }
 
   throw new Error(`Unsupported locale: ${locale}`);

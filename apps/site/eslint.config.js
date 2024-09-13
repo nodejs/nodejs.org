@@ -1,4 +1,3 @@
-import { fixupPluginRules } from '@eslint/compat';
 import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import importX from 'eslint-plugin-import-x';
@@ -9,27 +8,16 @@ import storybook from 'eslint-plugin-storybook';
 import tseslint from 'typescript-eslint';
 
 const compat = new FlatCompat();
-const pluginToPatch = '@next/next';
 
-const compatConfig = compat
-  .config({
-    extends: [
-      // https://github.com/vercel/next.js/discussions/49337
-      'plugin:@next/eslint-plugin-next/core-web-vitals',
+const compatConfig = compat.config({
+  extends: [
+    // https://github.com/vercel/next.js/discussions/49337
+    'plugin:@next/eslint-plugin-next/core-web-vitals',
 
-      // https://github.com/facebook/react/issues/28313
-      'plugin:react-hooks/recommended',
-    ],
-  })
-  .map(entry => {
-    if (Object.hasOwn(entry.plugins, pluginToPatch)) {
-      entry.plugins[pluginToPatch] = fixupPluginRules(
-        entry.plugins[pluginToPatch]
-      );
-    }
-
-    return entry;
-  });
+    // https://github.com/facebook/react/issues/28313
+    'plugin:react-hooks/recommended',
+  ],
+});
 
 export default tseslint.config(
   {
@@ -58,6 +46,7 @@ export default tseslint.config(
       'no-relative-import-paths': noRelativeImportPaths,
     },
     rules: {
+      '@next/next/no-duplicate-head': 'off',
       '@typescript-eslint/array-type': ['error', { default: 'generic' }],
       '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/no-require-imports': 'off',
