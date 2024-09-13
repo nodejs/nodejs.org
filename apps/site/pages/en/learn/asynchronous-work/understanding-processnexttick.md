@@ -30,34 +30,34 @@ Use `nextTick()` when you want to make sure that in the next event loop iteratio
 console.log('Hello => number 1');
 
 setImmediate(() => {
-  console.log('Running before the timeout => number 3');
+  console.log('Running setImmediate in the check phase => number 3');
 });
 
 setTimeout(() => {
-  console.log('The timeout running last => number 4');
+  console.log('Running setTimeout in the timers phase => number 4');
 }, 0);
 
 process.nextTick(() => {
-  console.log('Running at next tick => number 2');
+  console.log('Running process.nextTick in the nextTick queue => number 2');
 });
 ```
 
 #### Example output:
 
-```bash
+```text
 Hello => number 1
-Running at next tick => number 2
-Running before the timeout => number 3
-The timeout running last => number 4
+Running process.nextTick in the nextTick queue => number 2
+Running setImmediate in the check phase => number 3
+Running setTimeout in the timers phase => number 4
 ```
 
 The output aforementioned holds true in ES Modules, e.g. mjs files, but keep in mind in CommonJS case, the output may be different:
 
-```bash
+```text
 Hello => number 1
-Running at next tick => number 2
-The timeout running last => number 4
-Running before the timeout => number 3
+Running process.nextTick in the nextTick queue => number 2
+Running setTimeout in the timers phase => number 4
+Running setImmediate in the check phase => number 3
 ```
 
-This is because the execution order of setImmediate and setTimeout is undeterministic in CommonJs.
+This is because the execution order of `setImmediate` and `setTimeout` is undeterministic in CommonJS.
