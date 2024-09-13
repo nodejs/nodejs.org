@@ -1,6 +1,8 @@
-import { getSingletonHighlighterCore } from '@shikijs/core';
+import {
+  getSingletonHighlighterCore,
+  createWasmOnigEngine,
+} from '@shikijs/core';
 import type { HighlighterCore } from '@shikijs/core';
-import { default as getWasmInstance } from '@shikijs/core/wasm-inlined';
 
 import { LANGUAGES, DEFAULT_THEME } from '@/shiki.config.mjs';
 
@@ -9,7 +11,7 @@ export const getShiki = () =>
   getSingletonHighlighterCore({
     themes: [DEFAULT_THEME],
     langs: LANGUAGES,
-    loadWasm: getWasmInstance,
+    engine: createWasmOnigEngine(import('shiki/wasm')),
   });
 
 export const highlightToHtml =

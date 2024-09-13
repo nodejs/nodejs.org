@@ -18,46 +18,13 @@ export const LANGUAGES = [
     aliases: ['mjs', 'cjs', 'js'],
     displayName: 'JavaScript',
   },
-  {
-    ...jsonLanguage[0],
-    scopeName: 'source.json',
-    displayName: 'JSON',
-  },
-  {
-    ...typeScriptLanguage[0],
-    scopeName: 'source.ts',
-    aliases: ['ts'],
-    displayName: 'TypeScript',
-  },
-  {
-    ...shellScriptLanguage[0],
-    scopeName: 'source.shell',
-    aliases: ['bash', 'sh', 'shell', 'zsh'],
-    displayName: 'Bash',
-  },
-  {
-    ...powershellLanguage[0],
-    scopeName: 'source.powershell',
-    aliases: ['ps', 'ps1'],
-    displayName: 'PowerShell',
-  },
-  {
-    ...shellSessionLanguage[0],
-    scopeName: 'text.shell-session',
-    aliases: ['console'],
-    displayName: 'Bash',
-  },
-  {
-    ...dockerLanguage[0],
-    scopeName: 'source.dockerfile',
-    aliases: ['dockerfile'],
-    displayName: 'Dockerfile',
-  },
-  {
-    ...diffLanguage[0],
-    scopeName: 'source.diff',
-    displayName: 'Diff',
-  },
+  ...jsonLanguage,
+  ...typeScriptLanguage,
+  ...shellScriptLanguage,
+  ...powershellLanguage,
+  ...shellSessionLanguage,
+  ...dockerLanguage,
+  ...diffLanguage,
 ];
 
 // This is the default theme we use for our Shiki Syntax Highlighter
