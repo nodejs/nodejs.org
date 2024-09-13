@@ -24,13 +24,13 @@ Un guide pour les collaborateurs est disponible à l'adresse suivante : [collabo
 
 ## Comité de pilotage technique
 
-Le projet est régi par le [Comité de pilotage technique (TSC)][]
+Le projet est régi par le \[Comité de pilotage technique (TSC)]\[]
 qui est responsable de l'orientation de haut niveau du projet. Le TSC est un
 un sous-ensemble de collaborateurs actifs qui sont nommés par d'autres membres existants du TSC.
 
 [consensus seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
 [tsc]: https://github.com/nodejs/TSC
-[comité de pilotage technique (tsc)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
+[technical steering committee (tsc)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
 [nodejs/node]: https://github.com/nodejs/node
