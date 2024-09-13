@@ -1,4 +1,5 @@
 {
+  "$schema": "https://turbo.build/schema.json",
   "extends": ["//"],
   "tasks": {
     "dev": {
@@ -10,11 +11,7 @@
       "outputs": ["dist/**"]
     },
     "lint:js": {
-      "inputs": ["src/**/*.{js,mjs,ts,tsx}"]
-    },
-    "lint:md": {
-      "inputs": ["src/**/*.md?(x)"],
-      "outputs": [".eslintmdcache"]
+      "inputs": ["lib/**/*.{js,mjs,ts}"]
     }
   }
 }
