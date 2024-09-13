@@ -1,6 +1,6 @@
 import { getSingletonHighlighterCore } from '@shikijs/core';
 import type { HighlighterCore } from '@shikijs/core';
-import { getWasmInstance } from '@shikijs/core/wasm-inlined';
+import { default as getWasmInstance } from '@shikijs/core/wasm-inlined';
 
 import { LANGUAGES, DEFAULT_THEME } from '@/shiki.config.mjs';
 
