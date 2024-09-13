@@ -22,6 +22,7 @@ const compatConfig = compat.config({
 export default tseslint.config(
   {
     ignores: [
+      'node_modules',
       '.next',
       '.swc',
       '.turbo',
