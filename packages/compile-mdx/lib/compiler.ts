@@ -1,13 +1,9 @@
 import { evaluate } from '@mdx-js/mdx';
-import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
+import type { RunOptions, Jsx } from '@mdx-js/mdx';
+import * as runtime from 'react/jsx-runtime'
 import type { PluggableList } from 'unified';
 import type { VFile } from 'vfile';
 import { matter } from 'vfile-matter';
-
-import { createGitHubSlugger } from './utils/gitHubUtils';
-
-// Defines the React Runtime Components
-const reactRuntime = { Fragment, jsx, jsxs };
 
 type CompileMDXArgs = {
   source: VFile;
@@ -15,6 +11,13 @@ type CompileMDXArgs = {
   remarkPlugins?: PluggableList;
   fileExtension: 'md' | 'mdx';
 };
+
+// Define the runtime for the MDX Compiler
+const reactRuntime = {
+  Fragment: runtime.Fragment,
+  jsx: runtime.jsx as Jsx,
+  jsxs: runtime.jsxs as Jsx,
+} satisfies RunOptions;
 
 /**
  * This is our custom simple MDX Compiler that is used to compile Markdown and MDX
@@ -30,25 +33,18 @@ export async function compileMDX({
   // cleaning the frontmatter to the source that is going to be parsed by the MDX Compiler
   matter(source, { strip: true });
 
-  const slugger = createGitHubSlugger();
-
   // This is a minimal MDX Compiler that is lightweight and only parses the MDX
-  const { default: MDXContent } = await evaluate(source, {
+  const { default: MDXContent } = await evaluate(source,
+    {
     rehypePlugins,
     remarkPlugins,
     format: fileExtension,
     ...reactRuntime,
-  });
+    }
+  );
 
-  // Retrieve some parsed data from the VFile metadata
-  // such as frontmatter and Markdown headings
-  const { headings, matter: frontmatter, readingTime } = source.data;
-
-  headings.forEach(heading => {
-    // we re-sluggify the links to match the GitHub slugger
-    // since some also do not come with sluggifed links
-    heading.data = { ...heading.data, id: slugger(heading.value) };
-  });
-
-  return { MDXContent, headings, frontmatter, readingTime };
+  return {
+    MDXContent,
+    source,
+  };
 }

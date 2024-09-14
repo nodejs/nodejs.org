@@ -19,6 +19,7 @@ import {
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { siteConfig } from './next.json.mjs';
 import { availableLocaleCodes, defaultLocale } from './next.locales.mjs';
+import { createGitHubSlugger } from './util/gitHubUtils';
 
 // This is the combination of the Application Base URL and Base PATH
 const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
@@ -40,7 +41,7 @@ const createCachedMarkdownCache = () => {
   if (IS_DEVELOPMENT) {
     return {
       has: () => false,
-      set: () => {},
+      set: () => { },
       get: () => null,
     };
   }
@@ -164,22 +165,36 @@ const getDynamicRouter = async () => {
    * @param {string} source
    * @param {string} filename
    */
-  const _getMDXContent = async (source = '', filename = '') => {
+  const _getMDXContent = async (sourceString = '', filename = '') => {
     // We create a VFile (Virtual File) to be able to access some contextual
     // data post serialization (compilation) of the source Markdown into MDX
-    const sourceAsVirtualFile = new VFile(source);
+    const sourceAsVirtualFile = new VFile(sourceString);
 
     // Gets the file extension of the file, to determine which parser and plugins to use
     const fileExtension = filename.endsWith('.mdx') ? 'mdx' : 'md';
 
     // This compiles our MDX source (VFile) into a final MDX-parsed VFile
     // that then is passed as a string to the MDXProvider which will run the MDX Code
-    return compileMDX({
+    const { MDXContent, source } = await compileMDX({
       source: sourceAsVirtualFile,
       fileExtension: fileExtension,
       rehypePlugins: NEXT_REHYPE_PLUGINS,
       remarkPlugins: NEXT_REMARK_PLUGINS,
     });
+
+    const slugger = createGitHubSlugger();
+
+    // Retrieve some parsed data from the VFile metadata
+    // such as frontmatter and Markdown headings
+    const { headings, matter: frontmatter, readingTime } = source.data;
+
+    headings.forEach(heading => {
+      // we re-sluggify the links to match the GitHub slugger
+      // since some also do not come with sluggifed links
+      heading.data = { ...heading.data, id: slugger(heading.value) };
+    });
+
+    return { MDXContent, headings, frontmatter, readingTime };
   };
 
   // Creates a Cached Version of the MDX Compiler

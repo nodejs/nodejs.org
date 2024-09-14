@@ -1,5 +1,5 @@
-'use strict';
-// @augustin-note: this sould stay in the app, not in the mdx package
+import type { MDXComponents } from 'mdx/types';
+
 import DownloadButton from './components/Downloads/DownloadButton';
 import DownloadLink from './components/Downloads/DownloadLink';
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
@@ -24,8 +24,6 @@ import WithNodeRelease from './components/withNodeRelease';
 
 /**
  * A full list of React Components that we want to pass through to MDX
- *
- * @satisfies {import('mdx/types').MDXComponents}
  */
 export const mdxComponents = {
   DownloadReleasesTable: DownloadReleasesTable,
@@ -73,4 +71,4 @@ export const mdxComponents = {
     // Renders a Changelog Modal Link Button
     ChangelogLink: ChangelogLink,
   },
-};
+} satisfies MDXComponents;

@@ -65,6 +65,7 @@
     "cross-env": "7.0.3",
     "dedent": "1.5.3",
     "feed": "~4.2.2",
+    "github-slugger": "^2.0.0",
     "glob": "~11.0.0",
     "gray-matter": "~4.0.3",
     "next": "~14.2.11",

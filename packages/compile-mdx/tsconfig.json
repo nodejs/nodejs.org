@@ -16,6 +16,6 @@
     "baseUrl": ".",
     "outDir": "dist"
   },
-  "include": ["lib", "types.d.ts"],
+  "include": ["lib"],
   "exclude": ["node_modules", "dist"]
 }

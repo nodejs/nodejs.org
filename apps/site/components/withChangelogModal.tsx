@@ -7,8 +7,8 @@ import { VFile } from 'vfile';
 
 import ChangelogModal from '@/components/Downloads/ChangelogModal';
 import { NEXT_REHYPE_PLUGINS, NEXT_REMARK_PLUGINS } from '@/mdx.plugins.mjs';
+import { clientMdxComponents, htmlComponents } from '@/mdx.use.client';
 import changelogData from '@/next-data/changelogData';
-import { clientMdxComponents, htmlComponents } from '@/next.mdx.use.client.mjs';
 import type { NodeRelease } from '@/types';
 import {
   getNodeJsChangelogAuthor,

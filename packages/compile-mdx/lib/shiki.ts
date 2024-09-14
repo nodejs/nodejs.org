@@ -1,9 +1,8 @@
-'use strict';
-
+// @ts-nocheck
+// @augustin-note: fix type anotation
 import classNames from 'classnames';
 import { toString } from 'hast-util-to-string';
 import type { ThemeRegistrationRaw } from 'shiki';
-import type { Node } from 'unist';
 import { SKIP, visit } from 'unist-util-visit';
 
 import { shikiPromise, highlightToHast } from './utils/getHighlighter';
@@ -49,7 +48,7 @@ function getMetaParameter(meta: unknown, key: string): string | undefined {
  *
  * @return {boolean} - True when it is a valid code element, false otherwise.
  */
-function isCodeBlock(node: Node): boolean {
+function isCodeBlock(node) {
   return Boolean(
     node?.tagName === 'pre' && node?.children[0].tagName === 'code'
   );
