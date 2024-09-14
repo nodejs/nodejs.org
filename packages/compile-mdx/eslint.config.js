@@ -5,13 +5,7 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
   {
-    ignores: [
-      'build',
-      'coverage',
-      'global.d.ts',
-      'junit.xml',
-      'storybook-static/**',
-    ],
+    ignores: ['dist', '.turbo', 'node_modules'],
   },
   {
     extends: [
@@ -20,7 +14,7 @@ export default tseslint.config(
       importX.flatConfigs.typescript,
       ...tseslint.configs.recommended,
     ],
-    files: ['**/*.{js,mjs,ts}'],
+    files: ['**/*.ts'],
     plugins: {
       'no-relative-import-paths': noRelativeImportPaths,
     },
@@ -51,7 +45,7 @@ export default tseslint.config(
       ],
       'no-relative-import-paths/no-relative-import-paths': [
         'warn',
-        { allowSameFolder: true, prefix: '@' },
+        { allowSameFolder: true, prefix: '~' },
       ],
     },
   }

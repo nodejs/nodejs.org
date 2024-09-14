@@ -1,8 +1,9 @@
+import { compileMDX } from '@node-core/compile-mdx/compiler';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import { VFile } from 'vfile';
 
 import { MDXRenderer } from '@/components/mdxRenderer';
-import { compileMDX } from '@/next.mdx.compiler.mjs';
+import { NEXT_REHYPE_PLUGINS, NEXT_REMARK_PLUGINS } from '@/mdx.plugins.mjs';
 
 type Props = { children: string };
 
@@ -44,7 +45,12 @@ export default {
   render: (_, { loaded: { Content } }) => Content,
   loaders: [
     async ({ args }) => {
-      const { MDXContent } = await compileMDX(new VFile(args.children), 'mdx');
+      const { MDXContent } = await compileMDX({
+        source: new VFile(args.children),
+        fileExtension: 'mdx',
+        rehypePlugins: NEXT_REHYPE_PLUGINS,
+        remarkPlugins: NEXT_REMARK_PLUGINS,
+      });
 
       return { Content: <MDXRenderer Component={MDXContent} /> };
     },

@@ -4,10 +4,12 @@ import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { join, normalize, sep } from 'node:path';
 
+import { compileMDX } from '@node-core/compile-mdx/compiler';
 import matter from 'gray-matter';
 import { cache } from 'react';
 import { VFile } from 'vfile';
 
+import { NEXT_REHYPE_PLUGINS, NEXT_REMARK_PLUGINS } from './mdx.plugins.mjs';
 import { BASE_URL, BASE_PATH, IS_DEVELOPMENT } from './next.constants.mjs';
 import {
   IGNORED_ROUTES,
@@ -17,7 +19,6 @@ import {
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { siteConfig } from './next.json.mjs';
 import { availableLocaleCodes, defaultLocale } from './next.locales.mjs';
-import { compileMDX } from './next.mdx.compiler.mjs';
 
 // This is the combination of the Application Base URL and Base PATH
 const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
@@ -173,7 +174,12 @@ const getDynamicRouter = async () => {
 
     // This compiles our MDX source (VFile) into a final MDX-parsed VFile
     // that then is passed as a string to the MDXProvider which will run the MDX Code
-    return compileMDX(sourceAsVirtualFile, fileExtension);
+    return compileMDX({
+      source: sourceAsVirtualFile,
+      fileExtension: fileExtension,
+      rehypePlugins: NEXT_REHYPE_PLUGINS,
+      remarkPlugins: NEXT_REMARK_PLUGINS,
+    });
   };
 
   // Creates a Cached Version of the MDX Compiler

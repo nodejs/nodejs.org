@@ -1,5 +1,5 @@
 'use strict';
-
+// @augustin-note: this sould stay in the app, not in the mdx package
 import DownloadButton from './components/Downloads/DownloadButton';
 import DownloadLink from './components/Downloads/DownloadLink';
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';

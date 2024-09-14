@@ -1,12 +1,11 @@
-'use strict';
-
+import rehypeShikiji from '@node-core/compile-mdx/shiki';
 import remarkHeadings from '@vcarl/remark-headings';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import readingTime from 'remark-reading-time';
 
-import rehypeShikiji from './next.mdx.shiki.mjs';
+import { DEFAULT_THEME } from './shiki.config.mjs';
 
 /**
  * Provides all our Rehype Plugins that are used within MDX
@@ -20,7 +19,7 @@ export const NEXT_REHYPE_PLUGINS = [
   [rehypeAutolinkHeadings, { behavior: 'wrap' }],
   // Transforms sequential code elements into code tabs and
   // adds our syntax highlighter (Shikiji) to Codeboxes
-  rehypeShikiji,
+  rehypeShikiji(DEFAULT_THEME),
 ];
 
 /**

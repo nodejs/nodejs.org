@@ -1,5 +1,5 @@
 'use strict';
-
+// @augustin-note: this sould stay in the app, not in the mdx package
 import Blockquote from './components/Common/Blockquote';
 import Button from './components/Common/Button';
 import LinkWithArrow from './components/Downloads/Release/LinkWithArrow';

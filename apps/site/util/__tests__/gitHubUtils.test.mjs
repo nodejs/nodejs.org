@@ -1,6 +1,5 @@
 import {
   getGitHubAvatarUrl,
-  createGitHubSlugger,
   getGitHubBlobUrl,
   getGitHubApiDocsUrl,
 } from '@/util/gitHubUtils';
@@ -10,11 +9,6 @@ describe('GitHub utils', () => {
     expect(getGitHubAvatarUrl('octocat')).toBe(
       'https://avatars.githubusercontent.com/octocat'
     );
-  });
-
-  it('createGitHubSlugger returns a slugger', () => {
-    const slugger = createGitHubSlugger();
-    expect(slugger).toBeDefined();
   });
 
   it('getGitHubBlobUrl returns the correct URL', () => {

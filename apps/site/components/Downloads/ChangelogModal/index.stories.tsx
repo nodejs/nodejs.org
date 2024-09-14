@@ -1,9 +1,10 @@
+import { compileMDX } from '@node-core/compile-mdx/compiler';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import { VFile } from 'vfile';
 
 import ChangelogModal from '@/components/Downloads/ChangelogModal';
 import { MDXRenderer } from '@/components/mdxRenderer';
-import { compileMDX } from '@/next.mdx.compiler.mjs';
+import { NEXT_REHYPE_PLUGINS, NEXT_REMARK_PLUGINS } from '@/mdx.plugins.mjs';
 import { getGitHubAvatarUrl } from '@/util/gitHubUtils';
 
 type Story = StoryObj<typeof ChangelogModal>;
@@ -189,10 +190,12 @@ export const Default: Story = {
   render: (_, { loaded: { Content } }) => Content,
   loaders: [
     async ({ args: { children, ...props } }) => {
-      const { MDXContent } = await compileMDX(
-        new VFile(children?.toString()),
-        'md'
-      );
+      const { MDXContent } = await compileMDX({
+        source: new VFile(children?.toString()),
+        fileExtension: 'md',
+        rehypePlugins: NEXT_REHYPE_PLUGINS,
+        remarkPlugins: NEXT_REMARK_PLUGINS,
+      });
 
       return {
         Content: (

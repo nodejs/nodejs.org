@@ -2,9 +2,11 @@
 
 import classNames from 'classnames';
 import { toString } from 'hast-util-to-string';
+import type { ThemeRegistrationRaw } from 'shiki';
+import type { Node } from 'unist';
 import { SKIP, visit } from 'unist-util-visit';
 
-import { shikiPromise, highlightToHast } from './util/getHighlighter';
+import { shikiPromise, highlightToHast } from './utils/getHighlighter';
 
 // This is what Remark will use as prefix within a <pre> className
 // to attribute the current language of the <pre> element
@@ -21,13 +23,13 @@ const languagePrefix = 'language-';
  *
  * @return {string | undefined} - The value related to the given key.
  */
-function getMetaParameter(meta, key) {
+function getMetaParameter(meta: unknown, key: string): string | undefined {
   if (typeof meta !== 'string') {
     return;
   }
 
   const matches = meta.match(new RegExp(`${key}="(?<parameter>[^"]*)"`));
-  const parameter = matches?.groups.parameter;
+  const parameter = matches?.groups?.parameter;
 
   return parameter !== undefined && parameter.length > 0
     ? parameter
@@ -47,18 +49,19 @@ function getMetaParameter(meta, key) {
  *
  * @return {boolean} - True when it is a valid code element, false otherwise.
  */
-function isCodeBlock(node) {
+function isCodeBlock(node: Node): boolean {
   return Boolean(
     node?.tagName === 'pre' && node?.children[0].tagName === 'code'
   );
 }
 
-export default function rehypeShikiji() {
+export default function rehypeShikiji(theme: ThemeRegistrationRaw) {
   return async function (tree) {
     // We do a top-level await, since the Unist-tree visitor
     // is synchronous, and it makes more sense to do a top-level
     // await, rather than an await inside the visitor function
-    const memoizedShiki = highlightToHast(await shikiPromise);
+    const rawShiki = await shikiPromise([], theme);
+    const memoizedShiki = highlightToHast(rawShiki);
 
     visit(tree, 'element', (_, index, parent) => {
       const languages = [];
@@ -174,7 +177,7 @@ export default function rehypeShikiji() {
       const languageId = codeLanguage.slice(languagePrefix.length);
 
       // Parses the <pre> contents and returns a HAST tree with the highlighted code
-      const { children } = memoizedShiki(preElementContents, languageId);
+      const { children } = memoizedShiki(preElementContents, languageId, theme);
 
       // Adds the original language back to the <pre> element
       children[0].properties.class = classNames(

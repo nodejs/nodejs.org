@@ -1,15 +1,21 @@
 'use client';
 
+import {
+  shikiPromise,
+  highlightToHtml,
+} from '@node-core/compile-mdx/utils/getHighlighter.js';
 import { useTranslations } from 'next-intl';
 import { useContext, useEffect, useState } from 'react';
 import type { FC } from 'react';
 
 import CodeBox from '@/components/Common/CodeBox';
 import { ReleaseContext } from '@/providers/releaseProvider';
-import { shikiPromise, highlightToHtml } from '@/util/getHighlighter';
+import { LANGUAGES, DEFAULT_THEME } from '@/shiki.config.mjs';
 import { getNodeDownloadSnippet } from '@/util/getNodeDownloadSnippet';
 
-const memoizedShiki = shikiPromise.then(highlightToHtml);
+const memoizedShiki = shikiPromise(LANGUAGES, DEFAULT_THEME).then(
+  highlightToHtml
+);
 
 const ReleaseCodeBox: FC = () => {
   const { platform, os, release } = useContext(ReleaseContext);
@@ -23,7 +29,9 @@ const ReleaseCodeBox: FC = () => {
     // but usually we should recommend users to download "major" versions
     // since our Download Buttons get the latest minor of a major, it does make sense
     // to request installation of a major via a package manager
-    memoizedShiki.then(shiki => shiki(updatedCode, 'bash')).then(setCode);
+    memoizedShiki
+      .then(shiki => shiki(updatedCode, 'bash', DEFAULT_THEME))
+      .then(setCode);
     // Only react when the specific release number changed
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [release.versionWithPrefix, os, platform]);
