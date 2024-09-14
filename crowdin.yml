@@ -30,8 +30,8 @@ files:
         pt-BR: pt-br
         zh-CN: zh-cn
         zh-TW: zh-tw
-  - source: /apps/site/i18n/locales/en.json
-    translation: /apps/site/i18n/locales/%two_letters_code%.json
+  - source: /packages/i18n/locales/en.json
+    translation: /packages/i18n/locales/%two_letters_code%.json
     languages_mapping:
       two_letters_code:
         es-ES: es

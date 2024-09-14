@@ -37,7 +37,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@17d0e2bd7d51742c71671bd19fa12bdc9d40a3d6 # v2.8.1
+        uses: step-security/harden-runner@5c7944e73c4c2a096b17a9cb74d65b6c2bbafbde # v2.9.1
         with:
           egress-policy: audit
 
@@ -65,7 +65,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@17d0e2bd7d51742c71671bd19fa12bdc9d40a3d6 # v2.8.1
+        uses: step-security/harden-runner@5c7944e73c4c2a096b17a9cb74d65b6c2bbafbde # v2.9.1
         with:
           egress-policy: audit
 
@@ -82,7 +82,6 @@ jobs:
             .turbo/cache
             node_modules/.cache
             .eslintmdcache
-            .eslintjscache
             .stylelintcache
             .prettiercache
           # We want to restore Turborepo Cache and ESlint and Prettier Cache
@@ -96,7 +95,7 @@ jobs:
             cache-lint-
 
       - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
@@ -136,7 +135,6 @@ jobs:
             .turbo/cache
             node_modules/.cache
             .eslintmdcache
-            .eslintjscache
             .stylelintcache
             .prettiercache
           key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.turbo/cache/**') }}
@@ -161,7 +159,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@17d0e2bd7d51742c71671bd19fa12bdc9d40a3d6 # v2.8.1
+        uses: step-security/harden-runner@5c7944e73c4c2a096b17a9cb74d65b6c2bbafbde # v2.9.1
         with:
           egress-policy: audit
 
@@ -175,7 +173,7 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
@@ -204,7 +202,7 @@ jobs:
             startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
             github.event.pull_request.head.ref != 'chore/crowdin')
         # sha reference has no stable git tag reference or URL. see https://github.com/chromaui/chromatic-cli/issues/797
-        uses: chromaui/action@5f6574e351eb055223ae8ea9e1a734d1d695ea9c
+        uses: chromaui/action@b984808b772126a9f44b2b7737b131b68a2ede32
         with:
           workingDir: apps/site
           buildScriptName: storybook:build

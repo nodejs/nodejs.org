@@ -1,5 +1,5 @@
-import classNames from 'classnames';
 import type { StorybookConfig } from '@storybook/nextjs';
+import classNames from 'classnames';
 
 const rootClasses = classNames(
   // note: this is hard-coded sadly as next/font can only be loaded within next.js context

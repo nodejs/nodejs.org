@@ -46,7 +46,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@17d0e2bd7d51742c71671bd19fa12bdc9d40a3d6 # v2.8.1
+        uses: step-security/harden-runner@5c7944e73c4c2a096b17a9cb74d65b6c2bbafbde # v2.9.1
         with:
           egress-policy: audit
 
@@ -76,8 +76,20 @@ jobs:
           # regardless of having code changes or not
           fetch-depth: 1
 
+      - uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        with:
+          # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
+          path: |
+            ~/.npm
+            ${{ github.workspace }}/apps/site/.next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
       - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
@@ -99,6 +111,8 @@ jobs:
           # this should be a last resort in case by any chances the build memory gets too high
           # but in general this should never happen
           NODE_OPTIONS: '--max_old_space_size=4096'
+          # Used for API requests that require GitHub API scopes
+          NEXT_GITHUB_API_KEY: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Next.js (Static)
         # We only run full static builds within Pull Requests. As they're not needed on `merge_group` or `push` events
@@ -115,6 +129,8 @@ jobs:
           # this should be a last resort in case by any chances the build memory gets too high
           # but in general this should never happen
           NODE_OPTIONS: '--max_old_space_size=4096'
+          # Used for API requests that require GitHub API scopes
+          NEXT_GITHUB_API_KEY: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Sync Orama Cloud
         # We only want to sync the Orama Cloud production indexes on `push` events.

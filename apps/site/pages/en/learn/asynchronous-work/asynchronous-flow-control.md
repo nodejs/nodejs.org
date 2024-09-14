@@ -227,7 +227,7 @@ recipients.forEach(function (recipient) {
 });
 ```
 
-3. **Limited parallel:** parallel with limit, such as successfully emailing 1,000,000 recipients from a list of 10E7 users.
+3. **Limited parallel:** parallel with limit, such as successfully emailing 1,000,000 recipients from a list of 10 million users.
 
 ```js
 let successCount = 0;

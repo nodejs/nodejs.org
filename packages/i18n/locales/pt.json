@@ -203,7 +203,7 @@
     },
     "search": {
       "searchBox": {
-        "placeholder": "Digitar..."
+        "placeholder": "Pesquisar..."
       },
       "seeAll": {
         "text": "Ver todos os {count} resultados"
@@ -290,9 +290,30 @@
         "platform": "Plataforma"
       },
       "codeBox": {
+        "fnmEnvSetup": "configurar o ambiente da fnm",
         "systemManagerWarning": "não é um gestor de pacote da Node.js. Devemos certificar-nos de que já temos {packageManager} instalado.",
         "communityWarning": "Os gestores de pacotes e os seus programas de instalação não são mantidos pelo projeto Node.js.",
-        "communityWarningReport": "Se encontrarmos problemas, devemos dirigir-nos aos responsáveis do gestor de pacote."
+        "communityWarningReport": "Se encontrarmos problemas, devemos dirigir-nos aos responsáveis do gestor de pacote.",
+        "installsNvm": "instala a nvm (Node Version Manager, ou Gestor de Pacote de Node)",
+        "downloadAndInstallNodejsRestartTerminal": "descarregar e instalar a Node.js (podemos precisar de reiniciar o terminal)",
+        "verifiesRightNodejsVersion": "verifica se a versão correta da Node.js está no ambiente",
+        "verifiesRightNpmVersion": "verifica se a versão correta da npm está no ambiente",
+        "shouldPrint": "deve imprimir `{version}`",
+        "installsFnm": "instala a fnm (Fast Node Manager, ou Gestor Rápido de Node)",
+        "downloadAndInstallNodejs": "decarregar e instalar a Node.js",
+        "activateFNM": "ativar a fnm",
+        "noteWithColon": "NOTA:",
+        "dockerIsNotNodejsPackageManager": "Docker não é um gestor de pacote da Node.js.",
+        "PleaseEndureAlreadyInstallOnSystem": "Precisamos de certificar-nos de que já instalada no nosso sistema.",
+        "dockerInstructions": "Seguir as instruções oficiais em https://docs.docker.com/desktop/",
+        "dockerImagesLink": "As imagens da Docker são fornecidas oficialmente em https://github.com/nodejs/docker-node/",
+        "pullsNodejsDockerImage": "puxa a imagem de Docker da Node.js",
+        "homebrewIsNotNodejsPackageManager": "Homebrew não é um gestor de pacote da Node.js.",
+        "homebrewInstructions": "Seguir as instruções oficiais em https://brew.sh/",
+        "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew só suporta instalar versões principais da Node.js e pode não suportar a versão mais recente da Node.js da linha de lançamento {version}.",
+        "chocolateyIsNotNodejsPackageManager": "Chocolatey não é um gestor de pacote da Node.js.",
+        "chocolateyInstructions": "Seguir as instruções oficiais em https://chocolatey.org/",
+        "chocolateyNotMaintanedByNodejs": "Chocolatey não é oficialmente mantida pelo projeto Node.js e pode não suportar a versão {version} da Node.js"
       }
     }
   }

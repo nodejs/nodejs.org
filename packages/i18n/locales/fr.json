@@ -290,9 +290,30 @@
         "platform": "Plateforme"
       },
       "codeBox": {
+        "fnmEnvSetup": "configurer l'environnement fnm",
         "systemManagerWarning": "n'est pas un gestionnaire de paquets Node.js. Veuillez vous assurer que {packageManager} est déjà installé.",
         "communityWarning": "Les gestionnaires de paquets et leurs scripts d'installation ne sont pas maintenus par le projet Node.js.",
-        "communityWarningReport": "Si vous rencontrez des problèmes, veuillez contacter les responsables du gestionnaire de paquets."
+        "communityWarningReport": "Si vous rencontrez des problèmes, veuillez contacter les responsables du gestionnaire de paquets.",
+        "installsNvm": "installe nvm (Gestionnaire de version node)",
+        "downloadAndInstallNodejsRestartTerminal": "télécharger et installer Node.js (il peut être nécessaire de redémarrer le terminal)",
+        "verifiesRightNodejsVersion": "vérifie que la bonne version de Node.js est présente dans l'environnement",
+        "verifiesRightNpmVersion": "vérifie que la bonne version de npm est présente dans l'environnement",
+        "shouldPrint": "devrait imprimer `{version}`",
+        "installsFnm": "installe fnm (Fast Node Manager)",
+        "downloadAndInstallNodejs": "télécharger et installer Node.js",
+        "activateFNM": "activer le fnm",
+        "noteWithColon": "NOTE:",
+        "dockerIsNotNodejsPackageManager": "Docker n'est pas un gestionnaire de paquets Node.js.",
+        "PleaseEndureAlreadyInstallOnSystem": "Assurez-vous qu'il est déjà installé sur votre système.",
+        "dockerInstructions": "Suivez les instructions officielles à l'adresse suivante : https://docs.docker.com/desktop/",
+        "dockerImagesLink": "Les images Docker sont fournies officiellement à l'adresse https://github.com/nodejs/docker-node/",
+        "pullsNodejsDockerImage": "tire l'image Docker de Node.js",
+        "homebrewIsNotNodejsPackageManager": "Homebrew n'est pas un gestionnaire de paquets Node.js.",
+        "homebrewInstructions": "Suivez les instructions officielles à l'adresse suivante : https://brew.sh/",
+        "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew ne prend en charge que l'installation des versions majeures de Node.js et peut ne pas prendre en charge la dernière version de Node.js de la ligne de publication {version}.",
+        "chocolateyIsNotNodejsPackageManager": "Chocolatey n'est pas un gestionnaire de paquets Node.js.",
+        "chocolateyInstructions": "Suivez les instructions officielles à l'adresse suivante : https://chocolatey.org/",
+        "chocolateyNotMaintanedByNodejs": "Chocolatey n'est pas officiellement maintenu par le projet Node.js et pourrait ne pas supporter la version {version} de Node.js"
       }
     }
   }

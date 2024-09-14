@@ -59,6 +59,7 @@ server.listen(port, hostname, () => {
 ```
 
 To run this snippet, save it as a `server.js` file and run `node server.js` in your terminal.
+If you use mjs version of the code, you should save it as a `server.mjs` file and run `node server.mjs` in your terminal.
 
 This code first includes the Node.js [`http` module](https://nodejs.org/api/http.html).
 

@@ -13,6 +13,7 @@ const WithDownloadCategories: FC<PropsWithChildren> = async ({ children }) => {
   const t = await getTranslations();
   const releases = await getReleaseData();
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { pathname } = useClientContext();
   const { page, category, subCategory } = getDownloadCategory(pathname);
 

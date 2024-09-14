@@ -290,9 +290,30 @@
         "platform": "Platform"
       },
       "codeBox": {
+        "fnmEnvSetup": "konfigurasikan lingkungan fnm",
         "systemManagerWarning": "bukan manajer paket Node.js. Pastikan Anda sudah menginstal {packageManager}.",
         "communityWarning": "Package manager dan skrip instalasi tidak di kelola oleh Node.js.",
-        "communityWarningReport": "Jika kamu mengalami masalah, harap hubungi pengelola pengelola paket."
+        "communityWarningReport": "Jika kamu mengalami masalah, harap hubungi pengelola pengelola paket.",
+        "installsNvm": "menginstal nvm (Pengelola Versi Node)",
+        "downloadAndInstallNodejsRestartTerminal": "unduh dan pasang Node.js (anda mungkin perlu memulai ulang terminal)",
+        "verifiesRightNodejsVersion": "memastikan versi Node.js yang benar ada di lingkungan",
+        "verifiesRightNpmVersion": "memastikan versi npm yang benar ada di lingkungan",
+        "shouldPrint": "seharusnya mencetak `{version}`",
+        "installsFnm": "menginstal fnm (Pengelola Node Cepat)",
+        "downloadAndInstallNodejs": "unduh dan pasang Node.js",
+        "activateFNM": "aktifkan fnm",
+        "noteWithColon": "CATATAN:",
+        "dockerIsNotNodejsPackageManager": "Docker bukan pengelola paket Node.js.",
+        "PleaseEndureAlreadyInstallOnSystem": "Silakan pastikan bahwa ia sudah terpasang di sistem Anda.",
+        "dockerInstructions": "Ikuti instruksi resmi di https://docs.docker.com/desktop/",
+        "dockerImagesLink": "Gambar Docker disediakan secara resmi di https://github.com/nodejs/docker-node/",
+        "pullsNodejsDockerImage": "mengambil gambar Docker Node.js",
+        "homebrewIsNotNodejsPackageManager": "Homebrew bukan pengelola paket Node.js.",
+        "homebrewInstructions": "Ikuti instruksi resmi di https://brew.sh/",
+        "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew hanya mendukung pemasangan versi utama Node.js dan mungkin tidak mendukung versi Node.js terbaru dari jalur rilis {version}.",
+        "chocolateyIsNotNodejsPackageManager": "Chocolatey bukan pengelola paket Node.js.",
+        "chocolateyInstructions": "Ikuti instruksi resmi di https://chocolatey.org/",
+        "chocolateyNotMaintanedByNodejs": "Chocolatey tidak secara resmi dikelola oleh proyek Node.js dan mungkin tidak mendukung versi {version} dari Node.js"
       }
     }
   }

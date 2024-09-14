@@ -121,14 +121,16 @@ See https://eclipse.org/eclipseide for more information.
 
 The following table lists the impact of various runtime flags on debugging:
 
-| Flag                               | Meaning                                                                                                                                           |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| --inspect                          | Enable inspector agent; Listen on default address and port (127.0.0.1:9229)                                                                       |
-| --inspect=[host:port]              | Enable inspector agent; Bind to address or hostname host (default: 127.0.0.1); Listen on port port (default: 9229)                                |
-| --inspect-brk                      | Enable inspector agent; Listen on default address and port (127.0.0.1:9229); Break before user code starts                                        |
-| --inspect-brk=[host:port]          | Enable inspector agent; Bind to address or hostname host (default: 127.0.0.1); Listen on port port (default: 9229); Break before user code starts |
-| node inspect script.js             | Spawn child process to run user's script under --inspect flag; and use main process to run CLI debugger.                                          |
-| node inspect --port=xxxx script.js | Spawn child process to run user's script under --inspect flag; and use main process to run CLI debugger. Listen on port port (default: 9229)      |
+| Flag                               | Meaning                                                                                                                                               |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --inspect                          | Enable inspector agent; Listen on default address and port (127.0.0.1:9229)                                                                           |
+| --inspect=[host:port]              | Enable inspector agent; Bind to address or hostname host (default: 127.0.0.1); Listen on port port (default: 9229)                                    |
+| --inspect-brk                      | Enable inspector agent; Listen on default address and port (127.0.0.1:9229); Break before user code starts                                            |
+| --inspect-brk=[host:port]          | Enable inspector agent; Bind to address or hostname host (default: 127.0.0.1); Listen on port port (default: 9229); Break before user code starts     |
+| --inspect-wait                     | Enable inspector agent; Listen on default address and port (127.0.0.1:9229); Wait for debugger to be attached.                                        |
+| --inspect-wait=[host:port]         | Enable inspector agent; Bind to address or hostname host (default: 127.0.0.1); Listen on port port (default: 9229); Wait for debugger to be attached. |
+| node inspect script.js             | Spawn child process to run user's script under --inspect flag; and use main process to run CLI debugger.                                              |
+| node inspect --port=xxxx script.js | Spawn child process to run user's script under --inspect flag; and use main process to run CLI debugger. Listen on port port (default: 9229)          |
 
 ## Enabling remote debugging scenarios
 

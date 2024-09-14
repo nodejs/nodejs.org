@@ -21,6 +21,7 @@
       ]
     },
     "build": {
+      "dependsOn": ["^build"],
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
         "{app,components,layouts,pages,styles}/**/*.css",
@@ -89,8 +90,7 @@
         "{next-data,scripts,i18n}/**/*.{mjs,json}",
         "{.storybook,public}/**/*.{ts,js,json}",
         "*.{json,ts,tsx}"
-      ],
-      "outputs": [".eslintjscache"]
+      ]
     },
     "lint:md": {
       "inputs": ["{app,pages}/**/*.{md,mdx}", "*.{md,mdx}"],

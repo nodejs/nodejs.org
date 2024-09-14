@@ -1,10 +1,9 @@
 import { LanguageIcon } from '@heroicons/react/24/outline';
+import type { LocaleConfig } from '@node-core/website-i18n/types';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
-
-import type { LocaleConfig } from '@/types';
 
 import styles from './index.module.css';
 

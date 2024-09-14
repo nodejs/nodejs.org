@@ -12,18 +12,18 @@ on:
       - 'apps/site/pages/**/*.mdx'
       - '!apps/site/pages/en/**/*.md'
       - '!apps/site/pages/en/**/*.mdx'
-      - 'apps/site/i18n/locales/*.json'
-      - '!apps/site/i18n/locales/en.json'
+      - 'packages/i18n/locales/*.json'
+      - '!packages/i18n/locales/en.json'
 
 permissions:
   actions: read
 
 jobs:
   comment_on_translation_pr:
-    # This comment should only be posted on PRs that come from users and not from Crowdin
+    # This comment should always be posted on forks, or from internal PRs not originating from Crowdin (which are direct branches)
     if: |
-      github.event.pull_request.head.repo.full_name == 'nodejs/nodejs.org' &&
-      github.event.pull_request.head.ref != 'chore/crowdin'
+      (github.event.pull_request.head.repo.full_name != 'nodejs/nodejs.org') ||
+      (github.event.pull_request.head.repo.full_name == 'nodejs/nodejs.org' && github.event.pull_request.head.ref != 'chore/crowdin')
 
     name: Comment on Translation PR
     runs-on: ubuntu-latest
@@ -34,7 +34,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@17d0e2bd7d51742c71671bd19fa12bdc9d40a3d6 # v2.8.1
+        uses: step-security/harden-runner@5c7944e73c4c2a096b17a9cb74d65b6c2bbafbde # v2.9.1
         with:
           egress-policy: audit
 
@@ -65,7 +65,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@17d0e2bd7d51742c71671bd19fa12bdc9d40a3d6 # v2.8.1
+        uses: step-security/harden-runner@5c7944e73c4c2a096b17a9cb74d65b6c2bbafbde # v2.9.1
         with:
           egress-policy: audit
 
@@ -92,7 +92,7 @@ jobs:
             cache-lint-
 
       - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
