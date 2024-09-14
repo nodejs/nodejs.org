@@ -26,6 +26,6 @@ export const highlightToHtml =
       .match(/<code>(.+?)<\/code>/s)![1];
 
 export const highlightToHast =
-  (shiki: HighlighterCore) =>
-  (code: string, language: string, theme: ThemeRegistrationRaw) =>
+  (shiki: HighlighterCore, theme: ThemeRegistrationRaw) =>
+  (code: string, language: string) =>
     shiki.codeToHast(code, { lang: language, theme: theme });

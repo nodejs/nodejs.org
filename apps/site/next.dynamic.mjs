@@ -9,7 +9,7 @@ import matter from 'gray-matter';
 import { cache } from 'react';
 import { VFile } from 'vfile';
 
-import { NEXT_REHYPE_PLUGINS, NEXT_REMARK_PLUGINS } from './mdx.plugins.mjs';
+import { REHYPE_PLUGINS, REMARK_PLUGINS } from './mdx.plugins.mjs';
 import { BASE_URL, BASE_PATH, IS_DEVELOPMENT } from './next.constants.mjs';
 import {
   IGNORED_ROUTES,
@@ -41,7 +41,7 @@ const createCachedMarkdownCache = () => {
   if (IS_DEVELOPMENT) {
     return {
       has: () => false,
-      set: () => { },
+      set: () => {},
       get: () => null,
     };
   }
@@ -178,8 +178,8 @@ const getDynamicRouter = async () => {
     const { MDXContent, source } = await compileMDX({
       source: sourceAsVirtualFile,
       fileExtension: fileExtension,
-      rehypePlugins: NEXT_REHYPE_PLUGINS,
-      remarkPlugins: NEXT_REMARK_PLUGINS,
+      rehypePlugins: REHYPE_PLUGINS,
+      remarkPlugins: REMARK_PLUGINS,
     });
 
     const slugger = createGitHubSlugger();

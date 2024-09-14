@@ -4,7 +4,7 @@ import { VFile } from 'vfile';
 
 import ChangelogModal from '@/components/Downloads/ChangelogModal';
 import { MDXRenderer } from '@/components/mdxRenderer';
-import { NEXT_REHYPE_PLUGINS, NEXT_REMARK_PLUGINS } from '@/mdx.plugins.mjs';
+import { REHYPE_PLUGINS, REMARK_PLUGINS } from '@/mdx.plugins.mjs';
 import { getGitHubAvatarUrl } from '@/util/gitHubUtils';
 
 type Story = StoryObj<typeof ChangelogModal>;
@@ -193,8 +193,8 @@ export const Default: Story = {
       const { MDXContent } = await compileMDX({
         source: new VFile(children?.toString()),
         fileExtension: 'md',
-        rehypePlugins: NEXT_REHYPE_PLUGINS,
-        remarkPlugins: NEXT_REMARK_PLUGINS,
+        rehypePlugins: REHYPE_PLUGINS,
+        remarkPlugins: REMARK_PLUGINS,
       });
 
       return {

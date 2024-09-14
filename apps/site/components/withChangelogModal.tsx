@@ -6,7 +6,7 @@ import type { FC, ReactElement } from 'react';
 import { VFile } from 'vfile';
 
 import ChangelogModal from '@/components/Downloads/ChangelogModal';
-import { NEXT_REHYPE_PLUGINS, NEXT_REMARK_PLUGINS } from '@/mdx.plugins.mjs';
+import { REHYPE_PLUGINS, REMARK_PLUGINS } from '@/mdx.plugins.mjs';
 import { clientMdxComponents, htmlComponents } from '@/mdx.use.client';
 import changelogData from '@/next-data/changelogData';
 import type { NodeRelease } from '@/types';
@@ -53,8 +53,8 @@ const WithChangelogModal: FC<WithChangelogModalProps> = ({
           compileMDX({
             source: new VFile(changelogWithoutHeader),
             fileExtension: 'md',
-            rehypePlugins: NEXT_REHYPE_PLUGINS,
-            remarkPlugins: NEXT_REMARK_PLUGINS,
+            rehypePlugins: REHYPE_PLUGINS,
+            remarkPlugins: REMARK_PLUGINS,
           }).then(({ MDXContent }) => {
             // This is a tricky one. React states does not allow you to actually store React components
             // hence we need to render the component within an Effect and set the state as a ReactElement

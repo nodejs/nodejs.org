@@ -3,7 +3,7 @@ import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import { VFile } from 'vfile';
 
 import { MDXRenderer } from '@/components/mdxRenderer';
-import { NEXT_REHYPE_PLUGINS, NEXT_REMARK_PLUGINS } from '@/mdx.plugins.mjs';
+import { REHYPE_PLUGINS, REMARK_PLUGINS } from '@/mdx.plugins.mjs';
 
 type Props = { children: string };
 
@@ -39,8 +39,8 @@ export default {
       const { MDXContent } = await compileMDX({
         source: new VFile(args.children),
         fileExtension: 'mdx',
-        rehypePlugins: NEXT_REHYPE_PLUGINS,
-        remarkPlugins: NEXT_REMARK_PLUGINS,
+        rehypePlugins: REHYPE_PLUGINS,
+        remarkPlugins: REMARK_PLUGINS,
       });
 
       return { Content: <MDXRenderer Component={MDXContent} /> };
