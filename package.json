@@ -18,7 +18,8 @@
   "packageManager": "npm@10.7.0",
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "package/compile-mdx"
   ],
   "scripts": {
     "dev": "turbo run dev",
