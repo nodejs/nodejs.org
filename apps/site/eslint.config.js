@@ -22,6 +22,7 @@ const compatConfig = compat.config({
 export default tseslint.config(
   {
     ignores: [
+      'node_modules',
       '.next',
       '.swc',
       '.turbo',
@@ -88,6 +89,7 @@ export default tseslint.config(
     rules: {
       'no-irregular-whitespace': 'off',
       '@next/next/no-img-element': 'off',
+      '@next/next/no-html-link-for-pages': ['error', 'apps/site/pages/'],
 
       // https://github.com/typescript-eslint/typescript-eslint/issues/9860
       '@typescript-eslint/consistent-type-imports': 'off',
