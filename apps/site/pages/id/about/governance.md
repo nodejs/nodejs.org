@@ -11,7 +11,7 @@ Proyek Node.js mengikuti model pengambilan keputusan \[Pencarian Konsensus] \[].
 
 ## Kolaborator
 
-Repositori inti GitHub [nodejs/node][] dikelola oleh Kolaborator
+Repositori inti GitHub [nodejs/node] \[] dikelola oleh Kolaborator
 yang dinominasikan oleh Kolaborator lain yang ada secara berkelanjutan.
 
 Individu yang memberikan kontribusi signifikan dan berharga akan dijadikan Kolaborator dan diberikan akses komitmen terhadap proyek. Individu-individu ini diidentifikasi oleh Kolaborator lain dan nominasi mereka didiskusikan dengan Kolaborator yang ada.
