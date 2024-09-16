@@ -60,7 +60,7 @@
 
 .dropdown {
   @apply max-h-48
-    max-w-xs
+    max-w-fit
     overflow-hidden
     overflow-y-auto
     rounded-md
@@ -96,7 +96,9 @@
   }
 
   .text > span > span {
-    @apply truncate;
+    @apply max-w-[250px]
+      truncate
+      text-wrap;
   }
 
   .label {
