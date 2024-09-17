@@ -96,7 +96,7 @@
   }
 
   .text > span > span {
-    @apply max-w-[250px]
+    @apply max-w-64
       truncate
       text-wrap;
   }
