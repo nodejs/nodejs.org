@@ -12,8 +12,8 @@ on:
       - 'apps/site/pages/**/*.mdx'
       - '!apps/site/pages/en/**/*.md'
       - '!apps/site/pages/en/**/*.mdx'
-      - 'apps/site/i18n/locales/*.json'
-      - '!apps/site/i18n/locales/en.json'
+      - 'packages/i18n/locales/*.json'
+      - '!packages/i18n/locales/en.json'
 
 permissions:
   actions: read
@@ -73,7 +73,7 @@ jobs:
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           # Provides the Pull Request commit SHA or the GitHub merge group ref
-          ref: ${{ github.event.pull_request.head.sha || github.ref }}
+          ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || github.ref }}
 
       - name: Restore Lint Cache
         uses: actions/cache/restore@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
@@ -106,7 +106,7 @@ jobs:
       - name: Run `npx lint:md --fix`
         # This runs a specific version of ESLint with only the Translation Pages Globbing
         # This avoid that unrelated changes get linted/modified within this PR
-        run: npx eslint "apps/site/pages/**/*.md?(x)" --fix --cache --cache-strategy=metadata --cache-file=apps/site/.eslintmdcache
+        run: npx eslint "apps/site/pages/**/*.md?(x)" --fix --cache --cache-strategy=metadata --cache-file=apps/site/.eslintmdcache --config=apps/site/eslint.config.js
 
       - name: Run `npx prettier --write`
         # This runs a specific version of Prettier with only the Translation Pages Globbing

@@ -33,3 +33,5 @@ tsconfig.tsbuildinfo
 
 # Sentry Config File
 .sentryclirc
+
+dist/
