@@ -1,8 +1,9 @@
 import { importLocale } from '@node-core/website-i18n';
-import deepmerge from 'deepmerge';
 import { getRequestConfig } from 'next-intl/server';
 
 import { availableLocaleCodes } from '@/next.locales.mjs';
+
+import deepMerge from './util/deepMerge';
 
 // Loads the Application Locales/Translations Dynamically
 const loadLocaleDictionary = async (locale: string) => {
@@ -22,7 +23,7 @@ const loadLocaleDictionary = async (locale: string) => {
     const messages = await importLocale(locale);
 
     // Use default messages as fallback
-    return deepmerge(defaultMessages, messages);
+    return deepMerge(defaultMessages, messages);
   }
 
   throw new Error(`Unsupported locale: ${locale}`);
