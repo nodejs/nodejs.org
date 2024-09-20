@@ -96,7 +96,9 @@
   }
 
   .text > span > span {
-    @apply truncate;
+    @apply max-w-64
+      truncate
+      text-wrap;
   }
 
   .label {
