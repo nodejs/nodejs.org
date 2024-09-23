@@ -10,3 +10,47 @@ h1.special {
     md:leading-[4rem]
     md:-tracking-[0.06rem];
 }
+
+.turtle {
+  @apply animate-surf
+  absolute
+    z-10
+    translate-x-0
+    translate-y-0;
+}
+
+.turtle img {
+  @apply h-auto
+    w-[200];
+}
+
+.turtle::after {
+  @apply absolute
+    left-[-50%]
+    top-[50%]
+    -z-10
+    block
+    h-[150]
+    w-[150]
+    rotate-[-90deg]
+    select-none
+    bg-[url('/static/images/smoke.gif')]
+    opacity-[0.15];
+  /* stylelint-disable-next-line declaration-empty-line-before */
+  content: '';
+}
+
+@media (max-width: 750px) {
+  .turtle {
+    @apply m-0;
+  }
+
+  .turtle img {
+    @apply w-[100];
+  }
+
+  .turtle::after {
+    @apply left-[-100%]
+    top-[20%];
+  }
+}
