@@ -1,11 +1,11 @@
 import { FlatCompat } from '@eslint/eslintrc';
-import js from '@eslint/js';
-import importX from 'eslint-plugin-import-x';
 import * as mdx from 'eslint-plugin-mdx';
-import noRelativeImportPaths from 'eslint-plugin-no-relative-import-paths';
 import react from 'eslint-plugin-react';
 import storybook from 'eslint-plugin-storybook';
 import tseslint from 'typescript-eslint';
+
+// eslint-disable-next-line no-relative-import-paths/no-relative-import-paths
+import baseConfig from '../../eslint.config.js';
 
 const compat = new FlatCompat();
 
@@ -20,62 +20,12 @@ const compatConfig = compat.config({
 });
 
 export default tseslint.config(
+  ...baseConfig,
   {
-    ignores: [
-      'node_modules',
-      '.next',
-      '.swc',
-      '.turbo',
-      'build',
-      'coverage',
-      'global.d.ts',
-      'junit.xml',
-      'storybook-static/**',
-    ],
-  },
-  {
-    extends: [
-      js.configs.recommended,
-      importX.flatConfigs.recommended,
-      importX.flatConfigs.typescript,
-      react.configs.flat['jsx-runtime'],
-      ...tseslint.configs.recommended,
-      ...compatConfig,
-    ],
+    extends: [react.configs.flat['jsx-runtime'], ...compatConfig],
     files: ['**/*.{js,md,mdx,mjs,ts,tsx}'],
-    plugins: {
-      'no-relative-import-paths': noRelativeImportPaths,
-    },
     rules: {
       '@next/next/no-duplicate-head': 'off',
-      '@typescript-eslint/array-type': ['error', { default: 'generic' }],
-      '@typescript-eslint/consistent-type-imports': 'error',
-      '@typescript-eslint/no-require-imports': 'off',
-      'import-x/namespace': 'off',
-      'import-x/no-named-as-default-member': 'off',
-      'import-x/no-unresolved': 'off',
-      'import-x/order': [
-        'error',
-        {
-          groups: [
-            'builtin',
-            'external',
-            'internal',
-            ['sibling', 'parent'],
-            'index',
-            'unknown',
-          ],
-          'newlines-between': 'always',
-          alphabetize: {
-            order: 'asc',
-            caseInsensitive: true,
-          },
-        },
-      ],
-      'no-relative-import-paths/no-relative-import-paths': [
-        'warn',
-        { allowSameFolder: true, prefix: '@' },
-      ],
     },
     settings: {
       react: {
@@ -98,7 +48,7 @@ export default tseslint.config(
   {
     files: ['**/*.{mdx,tsx}'],
     rules: {
-      '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+      // '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
       'react/no-unescaped-entities': 'off',
       'react/function-component-definition': [
         'error',
