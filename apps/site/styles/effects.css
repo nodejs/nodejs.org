@@ -21,7 +21,7 @@ h1.special {
 
 .turtle img {
   @apply h-auto
-    w-[200];
+    w-[200px];
 }
 
 .turtle::after {
@@ -30,8 +30,8 @@ h1.special {
     top-[50%]
     -z-10
     block
-    h-[150]
-    w-[150]
+    h-[150px]
+    w-[150px]
     rotate-[-90deg]
     select-none
     bg-[url('/static/images/smoke.gif')]
@@ -46,7 +46,7 @@ h1.special {
   }
 
   .turtle img {
-    @apply w-[100];
+    @apply w-[100px];
   }
 
   .turtle::after {
