@@ -13,7 +13,7 @@ h1.special {
 
 .turtle {
   @apply animate-surf
-  absolute
+    absolute
     z-10
     translate-x-0
     translate-y-0;
@@ -51,6 +51,6 @@ h1.special {
 
   .turtle::after {
     @apply left-[-100%]
-    top-[20%];
+      top-[20%];
   }
 }
