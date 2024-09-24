@@ -1,4 +1,5 @@
 import { FlatCompat } from '@eslint/eslintrc';
+import importX from 'eslint-plugin-import-x';
 import * as mdx from 'eslint-plugin-mdx';
 import react from 'eslint-plugin-react';
 import storybook from 'eslint-plugin-storybook';
@@ -22,9 +23,17 @@ const compatConfig = compat.config({
 export default tseslint.config(
   ...baseConfig,
   {
-    extends: [react.configs.flat['jsx-runtime'], ...compatConfig],
+    extends: [
+      react.configs.flat['jsx-runtime'],
+      ...tseslint.configs.recommended,
+      importX.flatConfigs.typescript,
+      ...compatConfig,
+    ],
     files: ['**/*.{js,md,mdx,mjs,ts,tsx}'],
     rules: {
+      '@typescript-eslint/array-type': ['error', { default: 'generic' }],
+      '@typescript-eslint/consistent-type-imports': 'error',
+      '@typescript-eslint/no-require-imports': 'off',
       '@next/next/no-duplicate-head': 'off',
     },
     settings: {
@@ -48,7 +57,7 @@ export default tseslint.config(
   {
     files: ['**/*.{mdx,tsx}'],
     rules: {
-      // '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+      '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
       'react/no-unescaped-entities': 'off',
       'react/function-component-definition': [
         'error',
