@@ -1,18 +1,15 @@
-> \[!IMPORTANT]\
-> The **Node.js** Website is currently being redesigned; Read more [here](https://github.com/nodejs/nodejs.org/discussions/5131) to get involved!
-
 <p align="center">
   <br />
   <a href="https://nodejs.org">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="./public/static/images/logos/nodejs-new-pantone-white.svg">
-      <img src="./public/static/images/logos/nodejs-new-pantone-black.svg" width="200px">
+      <source media="(prefers-color-scheme: dark)" srcset="https://nodejs.org/static/logos/nodejsLight.svg">
+      <img src="https://nodejs.org/static/logos/nodejsDark.svg" width="200px">
     </picture>
   </a>
 </p>
 
 <p align="center">
-  <a href="https://nodejs.org">Node.js</a> Website built using Next.js with TypeScript, SCSS and MDXv2
+  <a href="https://nodejs.org">Node.js</a> Website built using Next.js with TypeScript, CSS Modules/Tailwind, and MDXv3
 </p>
 
 <p align="center">
@@ -33,6 +30,9 @@
   <a title="scorecard" href="https://securityscorecards.dev/viewer/?uri=github.com/nodejs/nodejs.org">
     <img src="https://api.securityscorecards.dev/projects/github.com/nodejs/nodejs.org/badge" alt="nodejs.org scorecard badge" />
   </a>
+  <a href="http://commitizen.github.io/cz-cli/" alt="Commitizen friendly">
+    <img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg">
+  </a>
   <br />
   <br />
 </p>
@@ -43,7 +43,7 @@
 
 ```bash
 npm ci
-npx turbo serve
+npx turbo dev
 
 # listening at localhost:3000
 ```
@@ -114,6 +114,7 @@ These are maintained in different repositories and we urge users to open **issue
   - A really warm thank you to Cloudflare as we would not be able to serve our community without their immense support.
 - Thanks to [Sentry](https://sentry.io/welcome/) for providing an open source license for their error reporting, monitoring and diagnostic tools.
 - Thanks to [Crowdin](https://crowdin.com/) for providing a platform that allows us to localize the Node.js Website and collaborate with translators.
+- Thanks to [Orama](https://docs.oramasearch.com/) for providing a search platform that indexes our expansive content and provides lightning-fast results for our users.
 
 [code of conduct]: https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md
 [contribution guidelines]: https://github.com/nodejs/nodejs.org/blob/main/CONTRIBUTING.md

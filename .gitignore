@@ -2,6 +2,7 @@
 node_modules
 npm-debug.log
 .npm
+.env.*
 
 # Next.js Build Output
 .next
@@ -23,7 +24,6 @@ build-storybook.log
 cache
 
 # Cache Files
-.eslintjscache
 .eslintmdcache
 .stylelintcache
 .prettiercache
@@ -33,3 +33,5 @@ tsconfig.tsbuildinfo
 
 # Sentry Config File
 .sentryclirc
+
+dist/

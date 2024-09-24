@@ -1,0 +1,21 @@
+---
+date: '{{date}}'
+category: release
+title: Node v{{version}} ({{versionPolicy}})
+layout: blog-post
+author: {{author}}
+---
+
+{{changelog}}
+
+{{#files}}
+{{.}} \
+{{/files}}
+Other release files: https://nodejs.org/dist/v{{version}}/ \
+Documentation: https://nodejs.org/docs/v{{version}}/api/
+
+### SHASUMS
+
+```
+{{shasums}}
+```

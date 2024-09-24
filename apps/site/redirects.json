@@ -1,0 +1,297 @@
+{
+  "external": [
+    {
+      "source": "/index.html",
+      "destination": "/"
+    },
+    {
+      "source": "/api.html",
+      "destination": "/api"
+    },
+    {
+      "source": "/changelog.html",
+      "destination": "https://github.com/nodejs/node/blob/HEAD/CHANGELOG.md"
+    },
+    {
+      "source": "/calendar",
+      "destination": "https://calendar.google.com/calendar/embed?src=nodejs.org_nr77ama8p7d7f9ajrpnu506c98%40group.calendar.google.com"
+    },
+    {
+      "source": "/calendar.ics",
+      "destination": "https://calendar.google.com/calendar/ical/nodejs.org_nr77ama8p7d7f9ajrpnu506c98%40group.calendar.google.com/public/basic.ics"
+    },
+    {
+      "source": "/:locale/security",
+      "destination": "https://github.com/nodejs/node/security/policy#security"
+    },
+    {
+      "source": "/:locale/contribute/accepting_contributions.html",
+      "destination": "https://github.com/nodejs/dev-policy"
+    },
+    {
+      "source": "/:locale/advisory-board",
+      "destination": "https://github.com/nodejs/TSC"
+    },
+    {
+      "source": "/:locale/about/advisory-board",
+      "destination": "https://github.com/nodejs/TSC"
+    },
+    {
+      "source": "/:locale/about/organization",
+      "destination": "https://github.com/nodejs/TSC"
+    },
+    {
+      "source": "/:locale/about/organization/tsc-meetings",
+      "destination": "https://github.com/nodejs/TSC/tree/HEAD/meetings"
+    },
+    {
+      "source": "/:locale/about/trademark",
+      "destination": "https://trademark-policy.openjsf.org"
+    },
+    {
+      "source": "/:locale/foundation",
+      "destination": "https://openjsf.org"
+    },
+    {
+      "source": "/:locale/foundation/case-studies",
+      "destination": "https://openjsf.org/projects"
+    },
+    {
+      "source": "/:locale/foundation/members",
+      "destination": "https://openjsf.org/about/members"
+    },
+    {
+      "source": "/:locale/foundation/board",
+      "destination": "https://openjsf.org/about/governance"
+    },
+    {
+      "source": "/:locale/foundation/tsc",
+      "destination": "https://github.com/nodejs/TSC"
+    },
+    {
+      "source": "/:locale/foundation/certification",
+      "destination": "https://openjsf.org/certification"
+    },
+    {
+      "source": "/:locale/foundation/in-the-news",
+      "destination": "https://openjsf.org"
+    },
+    {
+      "source": "/:locale/foundation/announcements",
+      "destination": "https://openjsf.org/blog"
+    },
+    {
+      "source": "/:locale/foundation/education",
+      "destination": "https://openjsf.org/certification"
+    },
+    {
+      "source": "/guides",
+      "destination": "/en/learn"
+    },
+    {
+      "source": "/about",
+      "destination": "/en/about"
+    },
+    {
+      "source": "/community",
+      "destination": "/en/get-involved"
+    },
+    {
+      "source": "/contribute/:path*",
+      "destination": "/en/get-involved"
+    },
+    {
+      "source": "/documentation/:path*",
+      "destination": "/en/docs/:path*"
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/en/blog/:path*"
+    },
+    {
+      "source": "/:locale/community",
+      "destination": "/:locale/get-involved"
+    },
+    {
+      "source": "/:locale/docs/inspector",
+      "destination": "/:locale/learn/getting-started/debugging"
+    },
+    {
+      "source": "/:locale/contribute/:path*",
+      "destination": "/:locale/get-involved"
+    },
+    {
+      "source": "/:locale/documentation/:path*",
+      "destination": "/:locale/docs/:path*"
+    },
+    {
+      "source": "/(atom|feed|rss).xml",
+      "destination": "/en/feed/blog.xml"
+    },
+    {
+      "source": "/feed",
+      "destination": "/en/feed/blog.xml"
+    },
+    {
+      "source": "/feed/release",
+      "destination": "/en/feed/releases.xml"
+    },
+    {
+      "source": "/feed/vulnerability",
+      "destination": "/en/feed/vulnerability.xml"
+    },
+    {
+      "source": "/(static/|)favicon.ico",
+      "destination": "/static/images/favicons/favicon.png"
+    },
+    {
+      "source": "/(static/|)favicon.png",
+      "destination": "/static/images/favicons/favicon.png"
+    },
+    {
+      "source": "/(static/|)apple-touch-icon(.*).png",
+      "destination": "/static/images/favicons/favicon.png"
+    },
+    {
+      "source": "/(static/)images/logo.svg",
+      "destination": "/static/logos/nodejsLight.svg"
+    },
+    {
+      "source": "/logos/:path*",
+      "destination": "/static/images/logos/:path*"
+    },
+    {
+      "source": "/:locale/download/releases",
+      "destination": "/:locale/about/previous-releases"
+    },
+    {
+      "source": "/:locale/about/security",
+      "destination": "/:locale/about/security-reporting"
+    },
+    {
+      "source": "/:locale/docs",
+      "destination": "https://nodejs.org/docs/latest/api/"
+    },
+    {
+      "source": "/:locale/docs/guides",
+      "destination": "/:locale/guides"
+    },
+    {
+      "source": "/:locale/docs/guides/domain-postmortem",
+      "destination": "/:locale/blog/community/domain-postmortem"
+    },
+    {
+      "source": "/:locale/docs/es6",
+      "destination": "/:locale/learn/getting-started/ecmascript-2015-es6-and-beyond"
+    },
+    {
+      "source": "/:locale/docs/guides/:path*",
+      "destination": "/:locale/guides/:path*"
+    },
+    {
+      "source": "/:locale/guides",
+      "destination": "/:locale/learn"
+    },
+    {
+      "source": "/:locale/guides/getting-started-guide",
+      "destination": "/:locale/learn/getting-started/introduction-to-nodejs"
+    },
+    {
+      "source": "/:locale/guides/blocking-vs-non-blocking",
+      "destination": "/:locale/learn/asynchronous-work/overview-of-blocking-vs-non-blocking"
+    },
+    {
+      "source": "/:locale/guides/timers-in-node",
+      "destination": "/:locale/learn/asynchronous-work/discover-javascript-timers"
+    },
+    {
+      "source": "/:locale/guides/working-with-different-filesystems",
+      "destination": "/:locale/learn/manipulating-files/working-with-different-filesystems"
+    },
+    {
+      "source": "/:locale/guides/anatomy-of-an-http-transaction",
+      "destination": "/:locale/learn/modules/anatomy-of-an-http-transaction"
+    },
+    {
+      "source": "/:locale/guides/backpressuring-in-streams/",
+      "destination": "/:locale/learn/modules/backpressuring-in-streams/"
+    },
+    {
+      "source": "/:locale/guides/publishing-napi-modules",
+      "destination": "/:locale/learn/modules/publishing-node-api-modules"
+    },
+    {
+      "source": "/:locale/guides/simple-profiling",
+      "destination": "/:locale/learn/getting-started/profiling"
+    },
+    {
+      "source": "/:locale/guides/diagnostics-flamegraph",
+      "destination": "/:locale/learn/diagnostics/flame-graphs"
+    },
+    {
+      "source": "/:locale/guides/diagnostics",
+      "destination": "/:locale/learn/diagnostics/user-journey"
+    },
+    {
+      "source": "/:locale/guides/debugging-getting-started",
+      "destination": "/:locale/learn/getting-started/debugging"
+    },
+    {
+      "source": "/:locale/guides/diagnostics/:path*",
+      "destination": "/:locale/learn/diagnostics/:path*"
+    },
+    {
+      "source": "/:locale/guides/abi-stability",
+      "destination": "/:locale/learn/modules/abi-stability"
+    },
+    {
+      "source": "/:locale/guides/security",
+      "destination": "/:locale/learn/getting-started/security-best-practices"
+    },
+    {
+      "source": "/:locale/guides/event-loop-timers-and-nexttick",
+      "destination": "/:locale/learn/asynchronous-work/event-loop-timers-and-nexttick"
+    },
+    {
+      "source": "/:locale/guides/dont-block-the-event-loop",
+      "destination": "/:locale/learn/asynchronous-work/dont-block-the-event-loop"
+    },
+    {
+      "source": "/:locale/get-involved",
+      "destination": "/:locale/about/get-involved"
+    },
+    {
+      "source": "/:locale/get-involved/:path*",
+      "destination": "/:locale/about/get-involved/:path*"
+    },
+    {
+      "source": "/learn",
+      "destination": "/en/learn"
+    },
+    {
+      "source": "/:locale/learn",
+      "destination": "/:locale/learn/getting-started/introduction-to-nodejs"
+    },
+    {
+      "source": "/:locale/about/releases",
+      "destination": "/:locale/about/previous-releases"
+    },
+    {
+      "source": "/:locale/blog/weekly-updates/:path*",
+      "destination": "/:locale/blog/weekly/:path*"
+    },
+    {
+      "source": "/:locale/download",
+      "destination": "/:locale/download/package-manager"
+    },
+    {
+      "source": "/:locale/download/current",
+      "destination": "/:locale/download/package-manager/current"
+    },
+    {
+      "source": "/:locale/learn/getting-started/nodejs-with-typescript",
+      "destination": "/:locale/learn/typescript/introduction"
+    }
+  ],
+  "internal": []
+}

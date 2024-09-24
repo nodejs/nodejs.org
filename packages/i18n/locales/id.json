@@ -1,0 +1,320 @@
+{
+  "components": {
+    "containers": {
+      "footer": {
+        "links": {
+          "trademarkPolicy": "Kebijakan Merek Dagang",
+          "privacyPolicy": "Kebijakan Privasi",
+          "codeOfConduct": "Pedoman Perilaku",
+          "security": "Kebijakan Keamanan"
+        }
+      },
+      "navBar": {
+        "links": {
+          "about": "Tentang",
+          "download": "Unduh",
+          "docs": "Dokumentasi",
+          "guides": "Panduan",
+          "learn": "Pelajari",
+          "security": "Keamanan",
+          "certification": "Sertifikasi",
+          "blog": "Artikel"
+        }
+      }
+    },
+    "navigation": {
+      "learn": {
+        "gettingStarted": {
+          "links": {
+            "gettingStarted": "Memulai",
+            "introductionToNodejs": "Pengantar Node.js",
+            "howToInstallNodejs": "Instruksi Pemasangan Node.js",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Seberapa banyak JavaScript yang anda perlu tahu untuk menggunakan Node.js?",
+            "differencesBetweenNodejsAndTheBrowser": "Perbedaan Node.js dengan Browser",
+            "theV8JavascriptEngine": "V8 JavaScript Engine",
+            "anIntroductionToTheNpmPackageManager": "Perkenalan package manager npm",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) dan seterusnya",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, perbedaan antara development dan production",
+            "nodejsWithTypescript": "Node.js dengan TypeScript",
+            "nodejsWithWebassembly": "Node.js dengan WebAssembly",
+            "debugging": "Men-debug Node.js",
+            "profiling": "Profilisasi Aplikasi Node.js",
+            "securityBestPractices": "Praktik Keamanan Terbaik"
+          }
+        },
+        "asynchronousWork": {
+          "links": {
+            "asynchronousWork": "Pekerjaan Asinkron",
+            "asynchronousFlowControl": "Pengendalian alur asinkron",
+            "overviewOfBlockingVsNonBlocking": "Ringkasan Pemblokiran vs Non-Pemblokiran",
+            "javascriptAsynchronousProgrammingAndCallbacks": "Pemrograman dan Panggilan Balik Asinkron JavaScript",
+            "discoverJavascriptTimers": "Jelajahi Pengatur Waktu JavaScript",
+            "eventLoopTimersAndNexttick": "Node.js Event Loop",
+            "theNodejsEventEmitter": "Node.js Event Emitter",
+            "understandingProcessnexttick": "Memahami process.nextTick()",
+            "understandingSetimmediate": "Memahami setImmediate()",
+            "dontBlockTheEventLoop": "Jangan blokir Event Loop"
+          }
+        },
+        "manipulatingFiles": {
+          "links": {
+            "manipulatingFiles": "Manipulasi File",
+            "nodejsFileStats": "Statistik berkas Node.js",
+            "nodejsFilePaths": "Path Berkas Node.js",
+            "workingWithFileDescriptorsInNodejs": "Bekerja dengan file descriptors di Node.js",
+            "readingFilesWithNodejs": "Membaca file dengan Node.js",
+            "writingFilesWithNodejs": "Menulis file dengan Node.js",
+            "workingWithFoldersInNodejs": "Bekerja dengan folder di Node.js",
+            "workingWithDifferentFilesystems": "Bekerja dengan Sistem file yang berbeda"
+          }
+        },
+        "commandLine": {
+          "links": {
+            "commandLine": "Baris Perintah",
+            "runNodejsScriptsFromTheCommandLine": "Menjalankan skrip Node.js dari baris perintah",
+            "howToReadEnvironmentVariablesFromNodejs": "Membaca environment variable dari Node.js",
+            "howToUseTheNodejsRepl": "Cara menggunakan Node.js REPL",
+            "outputToTheCommandLineUsingNodejs": "Output ke baris perintah menggunakan Node.js",
+            "acceptInputFromTheCommandLineInNodejs": "Menerima input dari baris perintah di Node.js"
+          }
+        },
+        "modules": {
+          "links": {
+            "modules": "Module",
+            "publishingNodeApiModules": "Cara mempublikasikan paket Node-API",
+            "anatomyOfAnHttpTransaction": "Anatomi Transaksi HTTP",
+            "abiStability": "Stabilitas ABI",
+            "backpressuringInStreams": "Backpressuring dalam aliran (streams)"
+          }
+        },
+        "diagnostics": {
+          "links": {
+            "diagnostics": "Diagnostik",
+            "userJourney": "Jurnal Pengguna",
+            "memory": "Memori",
+            "liveDebugging": "Pemecahan Masalah Langsung",
+            "poorPerformance": "Performa Buruk",
+            "flameGraphs": "Flame Graph"
+          }
+        },
+        "testRunner": {
+          "links": {
+            "testRunner": "Test Runner",
+            "introduction": "Jelajahi Node.js test runner",
+            "usingTestRunner": "Menggunakan Node.js's test runner"
+          }
+        }
+      },
+      "about": {
+        "links": {
+          "about": "Tentang Node.js",
+          "aboutSide": "Tentang Node.js®",
+          "branding": "Pencitraan Node.js",
+          "governance": "Tata Kelola Proyek",
+          "releases": "Rilisan Node.js",
+          "security": "Pelaporan Keamanan"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "getInvolved": "Mari Berpartisipasi",
+          "collabSummit": "KTT Kolaborasi",
+          "upcomingEvents": "Event Mendatang",
+          "contribute": "Berkontribusi pada Node.js",
+          "codeOfConduct": "Kode Etik"
+        }
+      }
+    },
+    "downloadList": {
+      "links": {
+        "previousReleases": "Rilisan Node.js",
+        "packageManager": "Instalasi Node.js menggunakan package manager",
+        "shaSums": {
+          "title": "SHASUMS yang ditandatangani untuk file rilisan",
+          "howToVerify": " (Cara Verifikasi)"
+        },
+        "allDownloads": "Semua opsi unduhan",
+        "nightlyReleases": "Build Nightly",
+        "unofficialBuilds": "Build tidak resmi",
+        "buildingFromSource": "Membangun Node.js dari sumber pada plaform yang didukung",
+        "installingOnLinux": "Instalasi Node.js melalui arsip biner",
+        "installingOnWsl": "Instalasi pada Windows Subsystem for Linux (WSL)"
+      }
+    },
+    "downloadReleasesTable": {
+      "changelog": "Log Perubahan",
+      "releases": "Rilis",
+      "docs": "Dokumentasi"
+    },
+    "pagination": {
+      "next": "Berikutnya",
+      "previous": "Sebelumnya"
+    },
+    "common": {
+      "breadcrumbs": {
+        "navigateToHome": "Navigasi ke Beranda"
+      },
+      "crossLink": {
+        "previous": "Sebelumnya",
+        "next": "Berikutnya"
+      },
+      "codebox": {
+        "copy": "Salin ke papan klip",
+        "copied": "Disalin ke papan klip!"
+      },
+      "pagination": {
+        "prev": "Sebelumnya",
+        "prevAriaLabel": "Halaman Sebelumnya",
+        "next": "Berikutnya",
+        "nextAriaLabel": "Halaman selanjutnya",
+        "defaultLabel": "Penyusunan Halaman",
+        "pageLabel": "Pergi ke halaman {pageNumber}"
+      },
+      "sidebar": {
+        "title": "Ubah halaman"
+      },
+      "languageDropdown": {
+        "label": "Pilih Bahasa"
+      },
+      "themeToggle": {
+        "label": "Aktifkan Mode Gelap"
+      }
+    },
+    "mdx": {
+      "upcomingEvents": {
+        "defaultTitle": "Tidak ada Event Mendatang"
+      }
+    },
+    "metabar": {
+      "lastUpdated": "Pembaruan Terakhir",
+      "readingTime": "Waktu Membaca",
+      "addedIn": "Ditambahkan pada",
+      "author": "Penulis",
+      "authors": "Penulis",
+      "contribute": "Kontribusi",
+      "contributeText": "Sunting halaman ini",
+      "viewAs": "Tampilkan sebagai",
+      "tableOfContents": "Daftar isi"
+    },
+    "downloads": {
+      "changelogModal": {
+        "startContributing": "Mulai Berkontribusi"
+      }
+    },
+    "search": {
+      "searchBox": {
+        "placeholder": "Mulai mengetik..."
+      },
+      "seeAll": {
+        "text": "Lihat semua {count} hasil"
+      },
+      "searchError": {
+        "text": "Terjadi kesalahan saat pencarian. Harap coba lagi nanti."
+      },
+      "poweredBy": {
+        "text": "Diberdayakan oleh"
+      },
+      "noResults": {
+        "text": "Tidak ada hasil ditemukan untuk \"{query}\"."
+      },
+      "emptyState": {
+        "text": "Mencari sesuatu..."
+      },
+      "searchPage": {
+        "title": "Anda sedang mencari: {query}"
+      }
+    },
+    "blog": {
+      "blogHeader": {
+        "subtitle": "Berita terbaru Node.js, studi kasus, tutorial, dan sumber.",
+        "rssLink": "RSS feed"
+      }
+    }
+  },
+  "layouts": {
+    "blogPost": {
+      "author": {
+        "byLine": "{author, select, null {} other{Oleh {author}, }}"
+      }
+    },
+    "blogIndex": {
+      "categoryName": "{category, select, all {Artikel} other {{category} Postingan Artikel}}"
+    },
+    "blog": {
+      "title": "Artikel",
+      "selectCategory": "Kategori",
+      "categories": {
+        "all": "Semuanya",
+        "announcements": "Pengumuman",
+        "release": "Rilis",
+        "vulnerability": "Kerentanan",
+        "advisory-board": "Dewan Penasihat",
+        "community": "Komunitas",
+        "feature": "Fitur",
+        "module": "Modul",
+        "npm": "npm",
+        "uncategorized": "Tidak dikategorikan",
+        "video": "Video",
+        "weekly": "Pembaruan mingguan",
+        "wg": "Kelompok Kerja",
+        "events": "Event"
+      }
+    },
+    "error": {
+      "notFound": {
+        "title": "Halaman tidak dapat ditemukan",
+        "description": "Maaf, kami tidak dapat menemukan halaman yang anda cari! Coba memulai kembali dari halaman beranda."
+      },
+      "internalServerError": {
+        "title": "Kesalahan Server Internal",
+        "description": "Halaman ini mengalami error yang tidak dapat diperbaiki."
+      },
+      "backToHome": "Kembali ke Beranda"
+    },
+    "download": {
+      "selectCategory": "Kategori",
+      "categories": {
+        "prebuilt-installer": "Prebuilt Installer",
+        "prebuilt-binaries": "Biner Prebuilt",
+        "package-manager": "Package manager",
+        "source-code": "Kode Sumber"
+      },
+      "buttons": {
+        "prebuilt": "Unduh Node.js {version}",
+        "source": "Unduh kode sumber Node.js {version}"
+      },
+      "dropdown": {
+        "bitness": "Panjang Bit",
+        "os": "Sistem Operasi",
+        "version": "Versi",
+        "platform": "Platform"
+      },
+      "codeBox": {
+        "fnmEnvSetup": "konfigurasikan lingkungan fnm",
+        "systemManagerWarning": "bukan manajer paket Node.js. Pastikan Anda sudah menginstal {packageManager}.",
+        "communityWarning": "Package manager dan skrip instalasi tidak di kelola oleh Node.js.",
+        "communityWarningReport": "Jika kamu mengalami masalah, harap hubungi pengelola pengelola paket.",
+        "installsNvm": "menginstal nvm (Pengelola Versi Node)",
+        "downloadAndInstallNodejsRestartTerminal": "unduh dan pasang Node.js (anda mungkin perlu memulai ulang terminal)",
+        "verifiesRightNodejsVersion": "memastikan versi Node.js yang benar ada di lingkungan",
+        "verifiesRightNpmVersion": "memastikan versi npm yang benar ada di lingkungan",
+        "shouldPrint": "seharusnya mencetak `{version}`",
+        "installsFnm": "menginstal fnm (Pengelola Node Cepat)",
+        "downloadAndInstallNodejs": "unduh dan pasang Node.js",
+        "activateFNM": "aktifkan fnm",
+        "noteWithColon": "CATATAN:",
+        "dockerIsNotNodejsPackageManager": "Docker bukan pengelola paket Node.js.",
+        "PleaseEndureAlreadyInstallOnSystem": "Silakan pastikan bahwa ia sudah terpasang di sistem Anda.",
+        "dockerInstructions": "Ikuti instruksi resmi di https://docs.docker.com/desktop/",
+        "dockerImagesLink": "Gambar Docker disediakan secara resmi di https://github.com/nodejs/docker-node/",
+        "pullsNodejsDockerImage": "mengambil gambar Docker Node.js",
+        "homebrewIsNotNodejsPackageManager": "Homebrew bukan pengelola paket Node.js.",
+        "homebrewInstructions": "Ikuti instruksi resmi di https://brew.sh/",
+        "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew hanya mendukung pemasangan versi utama Node.js dan mungkin tidak mendukung versi Node.js terbaru dari jalur rilis {version}.",
+        "chocolateyIsNotNodejsPackageManager": "Chocolatey bukan pengelola paket Node.js.",
+        "chocolateyInstructions": "Ikuti instruksi resmi di https://chocolatey.org/",
+        "chocolateyNotMaintanedByNodejs": "Chocolatey tidak secara resmi dikelola oleh proyek Node.js dan mungkin tidak mendukung versi {version} dari Node.js"
+      }
+    }
+  }
+}

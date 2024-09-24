@@ -1,0 +1,34 @@
+.blogHeader {
+  h1 {
+    @apply inline-flex
+      w-full
+      items-center
+      justify-between;
+
+    a {
+      @apply inline-flex
+        size-9
+        items-center
+        justify-center
+        rounded-md
+        p-2;
+
+      &:hover {
+        @apply bg-neutral-100
+          dark:bg-neutral-900;
+      }
+    }
+
+    svg {
+      @apply size-6
+        text-neutral-500;
+    }
+  }
+
+  p {
+    @apply text-lg
+      font-medium
+      text-neutral-800
+      dark:text-neutral-200;
+  }
+}

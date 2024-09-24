@@ -18,6 +18,12 @@ If you have any questions or feedbacks on current translations, you can [start a
 
 ## How to add a new language
 
+Open discussion on the [Crowdin project](https://crowdin.com/project/nodejs-web) to request a new language. After wait for the language to be added to the project by the Crowdin manager
+
+After that, one of the member of the Node.js Website team should add the new language to the project.
+
+### Adding a new language to the project
+
 Go on `/i18n/config.json` and add the new language to the `locales` array.
 
 Fill the language object with the following fields:
@@ -44,8 +50,6 @@ Fill the language object with the following fields:
 | `hrefLang`   | The language code in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format         | `fr`         |
 | `enabled`    | If the language is enabled or not                                                                      | `true`       |
 
-Please also add the new locale file to the locales folder `/i18n/locales` and import it in the `/i18n/locales/index.mjs` file.
-
 ## Adding new Translation Keys
 
 If you're making a new Component and adding Translation Keys for your Component, they should follow these guidelines:
@@ -54,7 +58,7 @@ If you're making a new Component and adding Translation Keys for your Component,
 - The translation keys should have the prefix as the canonical path of your Component. If your Component is `components/Common/MyComponent` the prefix key should be `components.common.myComponent`
   - The Translation Key suffix should be easy to understand and semantic. For example, if the key is about "the text of a button that when interacted it copies content to the clipboard", the suffix should probably be `copyButton.title`. The final translation key would be `components.common.myComponent.copyButton.title`
   - Translation Keys should be in Camel Case only.
-  - The values of each Translation Key should follow the [ICU Message Syntax](https://formatjs.io/docs/core-concepts/icu-syntax/)
+  - The values of each Translation Key should follow the [ICU Message Syntax](https://next-intl-docs.vercel.app/docs/usage/messages#rendering-icu-messages)
 - All new Translation keys should be added at the bottom of the `i18n/locales/en.json` file. Since this makes it easier for Translators to notice that there are new Translation keys to be translated.
 
 #### Notes about Translation Keys
@@ -77,7 +81,7 @@ It's important to mention that we use nested translation keys within the Locale 
 
 ### Translations and Unit Testing
 
-Translation Keys should not be translated during Unit Testing. If your Component uses, for example `usTranslations`, you should provide the `<NextIntlProvider>` surrounding your `testing-library` render logic, or you can create a wrapper for your test. Note that you should not import the English messages to your Unit Test as:
+Translation Keys should not be translated during Unit Testing. If your Component uses, for example `useTranslations`, you should provide the `<NextIntlProvider>` surrounding your `testing-library` render logic, or you can create a wrapper for your test. Note that you should not import the English messages to your Unit Test as:
 
 - Unit Testing should test a Component functionality.
 - Unit Tests should not rely on text, titles, or string bags, as these texts will change arbitrarily and make the test suite fail.

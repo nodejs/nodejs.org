@@ -38,27 +38,19 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        uses: step-security/harden-runner@5c7944e73c4c2a096b17a9cb74d65b6c2bbafbde # v2.9.1
         with:
           egress-policy: audit
 
       - name: Git Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
-          # Since we checkout the HEAD of the current Branch, if the Pull Request comes from a Fork
-          # we want to clone the fork's repository instead of the base repository
-          # this allows us to have the correct history tree of the perspective of the Pull Request's branch
-          # If the Workflow is running on `merge_group` or `push` events it fallsback to the base repository
-          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
-          # We checkout the branch itself instead of a specific SHA (Commit) as we want to ensure that this Workflow
-          # is always running with the latest `ref` (changes) of the Pull Request's branch
-          # If the Workflow is running on `merge_group` or `push` events it fallsback to `github.ref` which will often be `main`
-          # or the merge_group `ref`
-          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+          # Provides the Pull Request commit SHA or the GitHub merge group ref
+          ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || github.ref }}
 
       - name: Add Comment to PR
         # Signal that a lighthouse run is about to start
-        uses: thollander/actions-comment-pull-request@1d3973dc4b8e1399c0620d3f2b1aa5e795465308 # v2.4.3
+        uses: thollander/actions-comment-pull-request@fabd468d3a1a0b97feee5f6b9e499eab0dd903f6 # v2.5.0
         with:
           message: |
             Running Lighthouse audit...
@@ -66,7 +58,7 @@ jobs:
           comment_tag: 'lighthouse_audit'
 
       - name: Capture Vercel Preview
-        uses: patrickedqvist/wait-for-vercel-preview@dca4940010f36d2d44caa487087a09b57939b24a # v1.3.1
+        uses: patrickedqvist/wait-for-vercel-preview@06c79330064b0e6ef7a2574603b62d3c98789125 # v1.3.2
         id: vercel_preview_url
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -78,7 +70,7 @@ jobs:
       - name: Audit Preview URL with Lighthouse
         # Conduct the lighthouse audit
         id: lighthouse_audit
-        uses: treosh/lighthouse-ci-action@03becbfc543944dd6e7534f7ff768abb8a296826 # v10.1.0
+        uses: treosh/lighthouse-ci-action@1b0e7c33270fbba31a18a0fbb1de7cc5256b6d39 # v11.4.0
         with:
           # Defines the settings and assertions to audit
           configPath: './.lighthouserc.json'
@@ -106,12 +98,12 @@ jobs:
           # Run as a separate file so we do not have to inline all of our formatting logic.
           # See https://github.com/actions/github-script#run-a-separate-file for more info.
           script: |
-            const { formatLighthouseResults } = await import('${{github.workspace}}/scripts/lighthouse/index.mjs')
+            const { formatLighthouseResults } = await import('${{github.workspace}}/apps/site/scripts/lighthouse/index.mjs')
             await formatLighthouseResults({core})
 
       - name: Add Comment to PR
         # Replace the previous message with our formatted lighthouse results
-        uses: thollander/actions-comment-pull-request@1d3973dc4b8e1399c0620d3f2b1aa5e795465308 # v2.4.3
+        uses: thollander/actions-comment-pull-request@fabd468d3a1a0b97feee5f6b9e499eab0dd903f6 # v2.5.0
         with:
           # Reference the previously created comment
           comment_tag: 'lighthouse_audit'

@@ -1,0 +1,41 @@
+.tabsList {
+  @apply font-open-sans
+    max-xs:hidden
+    mb-6
+    mt-10
+    flex
+    gap-2
+    border-b
+    border-b-neutral-200
+    dark:border-b-neutral-800;
+
+  .tabsTrigger {
+    @apply border-b-2
+      border-b-transparent
+      px-1
+      pb-[11px]
+      text-sm
+      font-semibold
+      text-neutral-800
+      dark:text-neutral-200;
+
+    &[data-state='active'] {
+      @apply border-b-green-600
+        text-green-600
+        dark:border-b-green-400
+        dark:text-green-400;
+    }
+  }
+}
+
+.tabsSelect {
+  @apply sm:visible
+    md:hidden;
+
+  > span {
+    @apply max-xs:flex
+      my-6
+      hidden
+      w-full;
+  }
+}

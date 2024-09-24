@@ -1,0 +1,7 @@
+.avatarGroup {
+  @apply -mb-4
+    flex
+    items-center
+    overflow-x-auto
+    pb-4;
+}

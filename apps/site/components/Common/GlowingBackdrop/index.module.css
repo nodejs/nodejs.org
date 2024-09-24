@@ -1,0 +1,33 @@
+.glowingBackdrop {
+  @apply absolute
+    left-0
+    top-0
+    -z-10
+    size-full
+    opacity-50
+    md:opacity-100;
+
+  &::after {
+    @apply absolute
+      inset-0
+      m-auto
+      aspect-square
+      w-[300px]
+      rounded-full
+      bg-green-300
+      blur-[120px]
+      content-['']
+      dark:bg-green-700;
+  }
+
+  svg {
+    @apply absolute
+      inset-0
+      m-auto
+      aspect-[1.67]
+      max-w-[1004px]
+      object-cover
+      text-neutral-300
+      dark:text-neutral-900/75;
+  }
+}

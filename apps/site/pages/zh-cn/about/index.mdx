@@ -1,0 +1,60 @@
+---
+title: 关于 Node.js®
+layout: about
+---
+
+关于 Node.js®
+
+作为一个异步事件驱动的 JavaScript 运行库，Node.js 旨在构建可扩展的网络应用程序。在下面的 "hello world" 示例中，可以同时处理许多连接。每次连接时，回调函数被触发，但如果没有工作要做，Node.js 将进入睡眠状态。
+
+```cjs
+const { createServer } = require('node:http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+```mjs
+import { createServer } from 'node:http';
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+这与当今更常见的使用操作系统线程并发模型形成对比。基于线程的网络编程效率相对低效，而且非常难以使用。此外，Node.js 的用户不必担心死锁进程，因为没有锁。Node.js 几乎没有任何函数直接执行 I/O 操作，除非使用 Node.js 标准库的同步方法执行 I/O，否则进程永远不会阻塞。由于没有任何阻塞，因此在 Node.js 中开发可扩展的系统非常合理。
+
+如果对其中一些语言不熟悉，可以阅读关于 [Blocking vs. Non-Blocking][] 的完整文章。
+
+---
+
+Node.js 在设计上受到了诸如 Ruby 的 [Event Machine][] 和 Python 的 [Twisted][] 等系统的影响。Node.js 将事件模型推进了一步。它将事件循环呈现为运行时构造而不是库。在其他系统中，始终存在一个阻塞调用来启动事件循环。通常，行为是通过脚本开头的回调函数定义的，并且在脚本末尾通过像 `EventMachine::run()` 这样的阻塞调用启动服务器。在 Node.js 中，没有这样的启动事件循环调用。Node.js 在执行输入脚本后简单地进入事件循环。当没有更多的回调要执行时，Node.js 退出事件循环。这种行为类似于浏览器 JavaScript —— 事件循环对用户是隐藏的。
+
+HTTP 在 Node.js 中是第一类公民，设计时考虑了流式传输和低延迟。这使得 Node.js 非常适合作为 Web 库或框架的基础。
+
+Node.js 的设计没有线程并不意味着您不能利用环境中的多个核心。可以使用我们的 [child_process.fork()](https://nodejs.org/docs/latest/api/child_process.html#child_processforkmodulepath-args-options) API 来生成子进程，并且设计得易于通信。建立在同一接口之上的是 [cluster](https://nodejs.org/docs/latest/api/cluster.html) 模块，它允许您在进程之间共享套接字，从而实现对核心的负载均衡。
+
+[blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+[`child_process.fork()`]: https://nodejs.org/api/child_process.html
+[`cluster`]: https://nodejs.org/api/cluster.html
+[event machine]: https://github.com/eventmachine/eventmachine
+[twisted]: https://twisted.org/

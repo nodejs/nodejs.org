@@ -1,154 +1,31 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": ["NODE_ENV"],
-  "pipeline": {
-    "serve": {
-      "cache": false,
-      "persistent": true,
-      "env": [
-        "NEXT_PUBLIC_VERCEL_ENV",
-        "NEXT_PUBLIC_STATIC_EXPORT",
-        "NEXT_PUBLIC_BASE_URL",
-        "NEXT_PUBLIC_VERCEL_URL",
-        "NEXT_PUBLIC_DIST_URL",
-        "NEXT_PUBLIC_DOCS_URL",
-        "NEXT_PUBLIC_BASE_PATH",
-        "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
-        "NEXT_PUBLIC_ENABLE_REDESIGN",
-        "NEXT_PUBLIC_DATA_URL"
-      ]
+  "tasks": {
+    "scripts:release-post": {
+      "cache": false
     },
-    "build": {
-      "inputs": [
-        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
-        "{app,components,layouts,pages,styles}/**/*.css",
-        "{next-data,scripts,i18n}/**/*.{mjs,json}",
-        "{app,pages}/**/*.{mdx,md}",
-        "*.{md,mdx,json,ts,tsx,mjs,yml}"
-      ],
-      "outputs": [".next/**", "!.next/cache/**"],
-      "env": [
-        "NEXT_PUBLIC_VERCEL_ENV",
-        "NEXT_PUBLIC_STATIC_EXPORT",
-        "NEXT_PUBLIC_BASE_URL",
-        "NEXT_PUBLIC_VERCEL_URL",
-        "NEXT_PUBLIC_DIST_URL",
-        "NEXT_PUBLIC_DOCS_URL",
-        "NEXT_PUBLIC_BASE_PATH",
-        "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
-        "NEXT_PUBLIC_ENABLE_REDESIGN",
-        "NEXT_PUBLIC_DATA_URL"
-      ]
-    },
-    "start": {
-      "cache": false,
-      "persistent": true,
-      "env": [
-        "NEXT_PUBLIC_VERCEL_ENV",
-        "NEXT_PUBLIC_STATIC_EXPORT",
-        "NEXT_PUBLIC_BASE_URL",
-        "NEXT_PUBLIC_VERCEL_URL",
-        "NEXT_PUBLIC_DIST_URL",
-        "NEXT_PUBLIC_DOCS_URL",
-        "NEXT_PUBLIC_BASE_PATH",
-        "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
-        "NEXT_PUBLIC_ENABLE_REDESIGN",
-        "NEXT_PUBLIC_DATA_URL"
-      ]
-    },
-    "deploy": {
-      "inputs": [
-        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
-        "{app,components,layouts,pages,styles}/**/*.css",
-        "{next-data,scripts,i18n}/**/*.{mjs,json}",
-        "{app,pages}/**/*.{mdx,md}",
-        "*.{md,mdx,json,ts,tsx,mjs,yml}"
-      ],
-      "outputs": [".next/**", "!.next/cache/**"],
-      "env": [
-        "NEXT_PUBLIC_VERCEL_ENV",
-        "NEXT_PUBLIC_STATIC_EXPORT",
-        "NEXT_PUBLIC_BASE_URL",
-        "NEXT_PUBLIC_VERCEL_URL",
-        "NEXT_PUBLIC_DIST_URL",
-        "NEXT_PUBLIC_DOCS_URL",
-        "NEXT_PUBLIC_BASE_PATH",
-        "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
-        "NEXT_PUBLIC_ENABLE_REDESIGN",
-        "NEXT_PUBLIC_DATA_URL"
-      ]
-    },
-    "lint:js": {
-      "cache": false,
-      "outputs": [".eslintjscache"]
-    },
-    "lint:md": {
-      "cache": false,
-      "outputs": [".eslintmdcache"]
-    },
-    "lint:css": {
-      "cache": false,
-      "outputs": [".stylelintcache"]
+    "//#prettier": {
+      "outputs": [".prettiercache"]
     },
     "lint": {
-      "cache": false,
-      "outputs": [".eslintjscache", ".eslintmdcache", ".stylelintcache"]
-    },
-    "lint:fix": {
-      "cache": false,
-      "outputs": [".eslintjscache", ".eslintmdcache", ".stylelintcache"]
-    },
-    "prettier": {
-      "cache": false,
-      "outputs": [".prettiercache"]
-    },
-    "prettier:fix": {
-      "cache": false,
-      "outputs": [".prettiercache"]
-    },
-    "format": {
-      "cache": false,
-      "outputs": [
-        ".eslintjscache",
-        ".eslintmdcache",
-        ".stylelintcache",
-        ".prettiercache"
+      "dependsOn": [
+        "@node-core/website#lint:md",
+        "@node-core/website#lint:css",
+        "lint:js"
       ]
     },
-    "storybook": {
-      "cache": false,
-      "persistent": true
+    "lint:lint-staged": {
+      "dependsOn": [
+        "@node-core/website#lint:md",
+        "@node-core/website#lint:css",
+        "@node-core/website#lint:js"
+      ]
     },
-    "storybook:build": {
-      "inputs": [
-        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
-        "{app,components,layouts,pages,styles}/**/*.css",
-        "{next-data,scripts,i18n}/**/*.{mjs,json}",
-        "{.storybook,public}/**/*.{ts,js,css,json}",
-        "{app,pages}/**/*.{mdx,md}",
-        "*.{md,mdx,json,ts,tsx,mjs,yml}"
-      ],
-      "outputs": ["storybook-static/**"]
+    "check-types": {
+      "dependsOn": ["^topo"]
     },
-    "test:unit": {
-      "inputs": [
-        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx,mjs}",
-        "{app,components,layouts,pages,styles}/**/*.css",
-        "{next-data,scripts,i18n}/**/*.{mjs,json}",
-        "{app,pages}/**/*.{mdx,md}",
-        "*.{md,mdx,json,ts,tsx,mjs,yml}"
-      ],
-      "outputs": ["coverage/**", "junit.xml"]
-    },
-    "test": {
-      "inputs": [
-        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx,mjs}",
-        "{app,components,layouts,pages,styles}/**/*.css",
-        "{next-data,scripts,i18n}/**/*.{mjs,json}",
-        "{app,pages}/**/*.{mdx,md}",
-        "*.{md,mdx,json,ts,tsx,mjs,yml}"
-      ],
-      "outputs": ["coverage/**", "junit.xml"]
+    "topo": {
+      "dependsOn": ["^topo"]
     }
   }
 }
