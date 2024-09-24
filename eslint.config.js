@@ -17,20 +17,12 @@ export default tseslint.config(
     ],
   },
   {
-    extends: [
-      js.configs.recommended,
-      importX.flatConfigs.recommended,
-      importX.flatConfigs.typescript,
-      ...tseslint.configs.recommended,
-    ],
+    extends: [js.configs.recommended, importX.flatConfigs.recommended],
     files: ['**/*.{js,mjs,ts,tsx}'],
     plugins: {
       'no-relative-import-paths': noRelativeImportPaths,
     },
     rules: {
-      '@typescript-eslint/array-type': ['error', { default: 'generic' }],
-      '@typescript-eslint/consistent-type-imports': 'error',
-      '@typescript-eslint/no-require-imports': 'off',
       'import-x/namespace': 'off',
       'import-x/no-named-as-default-member': 'off',
       'import-x/no-unresolved': 'off',
