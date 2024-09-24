@@ -33,7 +33,16 @@
   }
 
   .close {
-    @apply pr-4;
+    @apply pr-4
+      transition-transform;
+
+    &:hover {
+      @apply text-white;
+
+      svg {
+        @apply scale-110;
+      }
+    }
   }
 }
 

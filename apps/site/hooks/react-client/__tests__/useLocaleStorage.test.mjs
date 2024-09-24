@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 
-import { useLocaleStorage } from '@/hooks/react-client/useLocaleStorage';
+import { useLocalStorage } from '@/hooks/react-client/useLocalStorage';
 
-describe('useLocaleStorage', () => {
+describe('useLocalStorage', () => {
   beforeEach(() => {
     Object.defineProperty(window, 'localStorage', {
       value: {
@@ -16,7 +16,7 @@ describe('useLocaleStorage', () => {
 
   it('should initialize with the provided initial value', () => {
     render(() => {
-      const [value] = useLocaleStorage('testKey', 'initialValue');
+      const [value] = useLocalStorage('testKey', 'initialValue');
       expect(value).toBe('initialValue');
     });
   });
@@ -24,7 +24,7 @@ describe('useLocaleStorage', () => {
   it('should update localStorage when value changes', () => {
     render(() => {
       const TestComponent = () => {
-        const [value, setValue] = useLocaleStorage('testKey', 'initialValue');
+        const [value, setValue] = useLocalStorage('testKey', 'initialValue');
 
         act(() => {
           setValue('newValue');

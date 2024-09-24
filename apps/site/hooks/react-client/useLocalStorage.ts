@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 
-const useLocaleStorage = <T>(key: string, initialValue?: T) => {
+const useLocalStorage = <T>(key: string, initialValue?: T) => {
   const [value, setValue] = useState<T>(() => {
     if (typeof window !== 'undefined') {
       const item = window.localStorage.getItem(key);
@@ -19,4 +19,4 @@ const useLocaleStorage = <T>(key: string, initialValue?: T) => {
   return [value, setValue] as const;
 };
 
-export default useLocaleStorage;
+export default useLocalStorage;

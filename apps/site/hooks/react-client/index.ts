@@ -7,3 +7,4 @@ export { default as useKeyboardCommands } from './useKeyboardCommands';
 export { default as useClickOutside } from './useClickOutside';
 export { default as useBottomScrollListener } from './useBottomScrollListener';
 export { default as useNavigationState } from './useNavigationState';
+export { default as useLocalStorage } from './useLocalStorage';
