@@ -19,6 +19,8 @@
     "node": ">=20"
   },
   "devDependencies": {
-    "typescript": "~5.5.4"
+    "eslint-import-resolver-typescript": "~3.6.3",
+    "typescript": "~5.5.4",
+    "typescript-eslint": "~8.5.0"
   }
 }

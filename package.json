@@ -46,13 +46,10 @@
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "~9.10.0",
-    "eslint-import-resolver-typescript": "~3.6.3",
     "eslint-plugin-import-x": "~4.2.1",
     "eslint-plugin-no-relative-import-paths": "~1.5.5",
     "prettier": "3.3.3",
-    "prettier-plugin-tailwindcss": "0.6.6",
-    "typescript": "~5.5.4",
-    "typescript-eslint": "~8.5.0"
+    "prettier-plugin-tailwindcss": "0.6.6"
   },
   "overrides": {
     "eslint-config-next": {
