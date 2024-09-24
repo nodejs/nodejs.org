@@ -37,9 +37,7 @@ h1.special {
     select-none
     bg-[url('/static/images/smoke.gif')]
     opacity-[0.15]
+    content-['']
     md:-left-1/2
     md:top-1/2;
-  /* stylelint-disable-next-line declaration-empty-line-before */
-  content: '';
 }
-
