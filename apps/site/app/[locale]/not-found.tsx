@@ -18,7 +18,9 @@ const NotFoundPage: FC = () => {
 
       <main>
         404
-        <h1 className="special -mt-4">{t('layouts.error.notFound.title')}</h1>
+        <h1 className="special -mt-4 text-center">
+          {t('layouts.error.notFound.title')}
+        </h1>
         <div className="my-4 flex h-[150px] items-center justify-center md:h-[300px]">
           <div className="turtle motion-safe:animate-surf motion-reduce:animate-none">
             <Image
