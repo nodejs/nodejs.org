@@ -21,36 +21,25 @@ h1.special {
 
 .turtle img {
   @apply h-auto
-    w-[200px];
+    w-24
+    md:w-48;
 }
 
 .turtle::after {
   @apply absolute
-    left-[-50%]
-    top-[50%]
+    -left-full
+    top-[20%]
     -z-10
     block
-    h-[150px]
-    w-[150px]
-    rotate-[-90deg]
+    h-36
+    w-36
+    -rotate-90
     select-none
     bg-[url('/static/images/smoke.gif')]
-    opacity-[0.15];
+    opacity-[0.15]
+    md:-left-1/2
+    md:top-1/2;
   /* stylelint-disable-next-line declaration-empty-line-before */
   content: '';
 }
 
-@media (max-width: 750px) {
-  .turtle {
-    @apply m-0;
-  }
-
-  .turtle img {
-    @apply w-[100px];
-  }
-
-  .turtle::after {
-    @apply left-[-100%]
-      top-[20%];
-  }
-}
