@@ -160,7 +160,7 @@
     },
     "common": {
       "banner": {
-        "hide": "Hide this banner"
+        "hide": "Dismiss this banner"
       },
       "breadcrumbs": {
         "navigateToHome": "Navigate to Home"
