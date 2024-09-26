@@ -8,6 +8,8 @@ authors: RedYetiDev
 
 Node.js provides built-in support for code coverage through its test runner, which can be enabled using the [`--experimental-code-coverage`](https://nodejs.org/api/cli.html#--experimental-test-coverage) flag.
 
+If using the `run()` API, the `coverage` option must be set to `true`. For more information on the `run()` API, see [the `node:test` documentation](https://nodejs.org/docs/latest/api/test.html#runoptions).
+
 ## What is code coverage?
 
 Code coverage is a metric for test runners that gauges how much of a program’s source code is executed during testing. It reveals which portions of the codebase are tested and which are not, helping to pinpoint gaps in the test suite. This ensures more comprehensive testing of the software and minimizes the risk of undetected bugs. Typically expressed as a percentage, higher code coverage percentages indicate more thorough test coverage. For a more detailed explanation of code coverage, you can refer to the ["Code coverage" Wikipedia article](https://en.wikipedia.org/wiki/Code_coverage).
@@ -16,7 +18,7 @@ Code coverage is a metric for test runners that gauges how much of a program’s
 
 Let's walk through a simple example to demonstrate how code coverage works in Node.js.
 
-> **Note:** This example is written using CommonJS. If you are unfamiliar with this concept, please read the [CommonJS Modules](https://nodejs.org/docs/latest/api/modules.html) documentation.
+> **Note:** This example, and all other ones in this file, are written using CommonJS. If you are unfamiliar with this concept, please read the [CommonJS Modules](https://nodejs.org/docs/latest/api/modules.html) documentation.
 
 ```cjs displayName="main.js"
 function add(a, b) {
@@ -51,10 +53,13 @@ In the module, we have three functions: `add`, `isEven`, and `multiply`.
 
 In the test file, we are testing the `add()` and `isEven()` functions. Notice that the `multiply()` function is not covered by any tests.
 
-To collect code coverage while running your tests, use the following command:
+To collect code coverage while running your tests, see the following snippets:
 
-```bash
+```bash displayName="CLI"
 node --experimental-test-coverage --test main.test.js
+```
+```js displayName="run()"
+run({ files: ['main.test.js'], coverage: true });
 ```
 
 After running the tests, you'll receive a report that looks something like this:
@@ -205,9 +210,9 @@ Each of these different methods will produce the same report, with 100% code cov
 
 Node.js offers two CLI arguments for managing the inclusion or exclusion of specific files in a coverage report.
 
-The [`--test-coverage-include`](https://nodejs.org/api/cli.html#--test-coverage-include) flag restricts the coverage to files that match the provided glob pattern. By default, files in the `/node_modules/` directory are excluded, but this flag allows you to explicitly include them.
+The [`--test-coverage-include`](https://nodejs.org/api/cli.html#--test-coverage-include) flag (`coverageIncludeGlobs` in the `run()` API) restricts the coverage to files that match the provided glob pattern. By default, files in the `/node_modules/` directory are excluded, but this flag allows you to explicitly include them.
 
-The [`--test-coverage-exclude`](https://nodejs.org/api/cli.html#--test-coverage-exclude) flag omits files that match the given glob pattern from the coverage report.
+The [`--test-coverage-exclude`](https://nodejs.org/api/cli.html#--test-coverage-exclude) flag (`coverageExcludeGlobs` in the `run()` API) omits files that match the given glob pattern from the coverage report.
 
 These flags can be used multiple times, and when both are used together, files must adhere to the inclusion rules, while also avoiding the exclusion rules.
 
@@ -233,10 +238,13 @@ These flags can be used multiple times, and when both are used together, files m
 ℹ end of coverage report
 ```
 
-`src/age.js` has less-than-optimal coverage in the report above, but with the `--test-coverage-exclude` flag, it can be excluded from the report entirely.
+`src/age.js` has less-than-optimal coverage in the report above, but with the `--test-coverage-exclude` flag (`coverageExcludeGlobs` in the `run()` API), it can be excluded from the report entirely.
 
-```bash
+```bash displayName="CLI"
 node --experimental-test-coverage --test-coverage-exclude=src/age.js --test main.test.js
+```
+```js displayName="run()"
+run({ files: ['main.test.js'], coverage: true, coverageExclude: ['src/age.js'] });
 ```
 
 ```text displayName="New coverage report"
@@ -252,10 +260,13 @@ node --experimental-test-coverage --test-coverage-exclude=src/age.js --test main
 ℹ end of coverage report
 ```
 
-Our test file is also included in this coverage report, but we only want JavaScript files in the `src/` directory. The `--test-coverage-include` flag can be used in this case.
+Our test file is also included in this coverage report, but we only want JavaScript files in the `src/` directory. The `--test-coverage-include` flag (`coverageIncludeGlobs` in the `run()` API) can be used in this case.
 
-```bash
+```bash displayName="CLI"
 node --experimental-test-coverage --test-coverage-include=src/*.js --test main.test.js
+```
+```js displayName="run()"
+run({ files: ['main.test.js'], coverage: true, coverageInclude: ['src/*.js'] });
 ```
 
 ```text displayName="New coverage report"
@@ -277,14 +288,17 @@ By default, when all tests pass, Node.js exits with code `0`, which indicates a 
 
 Node.js currently supports thresholds for all three of the coverages supported:
 
-- [`--test-coverage-lines`](https://nodejs.org/api/cli.html#--test-coverage-linesthreshold) for line coverage.
-- [`--test-coverage-branches`](https://nodejs.org/api/cli.html#--test-coverage-branchesthreshold) for branch coverage.
-- [`--test-coverage-functions`](https://nodejs.org/api/cli.html#--test-coverage-functionsthreshold) for function coverage.
+- [`--test-coverage-lines`](https://nodejs.org/api/cli.html#--test-coverage-linesthreshold) (`lineCoverage` in the `run()` API) for line coverage.
+- [`--test-coverage-branches`](https://nodejs.org/api/cli.html#--test-coverage-branchesthreshold) (`branchCoverage` in the `run()` API) for branch coverage.
+- [`--test-coverage-functions`](https://nodejs.org/api/cli.html#--test-coverage-functionsthreshold) (`functionCoverage` in the `run()` API) for function coverage.
 
-If you wanted to require the previous example to have line coverage >= 90%, you could use the `--test-coverage-lines=90` flag.
+If you wanted to require the previous example to have line coverage >= 90%, you could use the `--test-coverage-lines=90` flag (`lineCoverage: 90` in the `run()` API).
 
-```bash
+```bash displayName="CLI"
 node --experimental-test-coverage --test-coverage-lines=90 --test main.test.js
+```
+```js displayName="run()"
+run({ files: ['main.test.js'], coverage: true, lineCoverage: 90 });
 ```
 
 ```text displayName="Coverage Report"
