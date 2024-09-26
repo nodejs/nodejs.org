@@ -29,7 +29,7 @@ const Banner: FC<PropsWithChildren<BannerProps>> = ({
       </span>
       {onHiding && (
         <button
-          arria-label={t('hide')}
+          aria-label={t('hide')}
           className={styles.close}
           title={t('hide')}
           onClick={onHiding}
