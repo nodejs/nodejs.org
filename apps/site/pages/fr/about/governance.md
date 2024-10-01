@@ -24,7 +24,7 @@ Un guide pour les collaborateurs est disponible à l'adresse suivante : [collabo
 
 ## Comité de pilotage technique
 
-Le projet est régi par le [Comité de pilotage technique (TSC)][Technical Steering Committee (TSC)]
+Le projet est régi par le \[Comité de pilotage technique (TSC)]\[]
 qui est responsable de l'orientation de haut niveau du projet. Le TSC est un
 un sous-ensemble de collaborateurs actifs qui sont nommés par d'autres membres existants du TSC.
 
