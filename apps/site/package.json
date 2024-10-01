@@ -70,7 +70,7 @@
     "next": "~14.2.11",
     "next-intl": "~3.19.1",
     "next-themes": "~0.3.0",
-    "postcss": "~8.4.45",
+    "postcss": "~8.4.47",
     "postcss-calc": "~10.0.2",
     "postcss-import": "~16.1.0",
     "postcss-mixins": "~11.0.1",
