@@ -83,7 +83,7 @@
     "remark-reading-time": "~2.0.1",
     "semver": "~7.6.3",
     "shiki": "~1.17.5",
-    "tailwindcss": "^3.4.11",
+    "tailwindcss": "^3.4.13",
     "unist-util-visit": "~5.0.0",
     "vfile": "~6.0.3",
     "vfile-matter": "~5.0.0"
