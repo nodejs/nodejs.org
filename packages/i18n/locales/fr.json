@@ -35,11 +35,19 @@
             "anIntroductionToTheNpmPackageManager": "Une introduction au gestionnaire de paquets npm",
             "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) et au-delà",
             "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, la différence entre le développement et la production",
-            "nodejsWithTypescript": "Node.js avec TypeScript",
             "nodejsWithWebassembly": "Node.js avec WebAssembly",
             "debugging": "Débogage de Node.js",
             "profiling": "Profilage des applications Node.js",
             "securityBestPractices": "Meilleures pratiques de sécurité"
+          }
+        },
+        "typescript": {
+          "links": {
+            "typescript": "TypeScript",
+            "introduction": "Introduction à TypeScript",
+            "transpile": "Exécution du code TypeScript à l'aide de la transpilation",
+            "run": "Exécuter TypeScript avec un runner",
+            "runNatively": "Exécuter TypeScript en mode natif"
           }
         },
         "asynchronousWork": {
