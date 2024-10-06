@@ -141,6 +141,8 @@ In the above, the first and second cases (the `it`s) can sabotage each other bec
 
 ### Modules + units
 
+This leverages [`mock`](https://nodejs.org/api/test.html#class-mocktracker) from node's test runner.
+
 ```mjs
 import assert from 'node:assert/strict';
 import { before, describe, it, mock } from 'node:test';
@@ -178,9 +180,9 @@ describe('foo', { concurrency: true }, () => {
 });
 ```
 
-### Services
+### APIs
 
-A little-known fact: node has a builtin way to mock `fetch`. [`undici`](https://github.com/nodejs/undici) is the Node.js implementation of fetch. You do not have to install it—it's shipped with node by default.
+A little-known fact: node has a builtin way to mock `fetch`. [`undici`](https://github.com/nodejs/undici) is the Node.js implementation of `fetch`. You do not have to install it—it's shipped with `node` by default.
 
 ```mjs displayName="endpoints.spec.mjs"
 import assert from 'node:assert/strict';
@@ -244,7 +246,9 @@ describe('endpoints', { concurrency: true }, () => {
 
 ### Time
 
-Like Doctor Strange, you too can control time. You would usually do this just for convience to avoid artificially protracted test runs (do you really want to wait 3 minutes for that setTimeout to trigger?). You may also want to travel through time.
+Like Doctor Strange, you too can control time. You would usually do this just for convience to avoid artificially protracted test runs (do you really want to wait 3 minutes for that setTimeout to trigger?). You may also want to travel through time. This leverages [`mock timers`](https://nodejs.org/api/test.html#class-mocktimers) from node's test runner.
+
+Note the use of time-zone here (`Z` in the time-stamps). Neglecting to include a consistent time-zone can (read: likely will) lead to unexpected restults.
 
 ```mjs displayName="master-time.spec.mjs"
 import assert from 'node:assert/strict';
