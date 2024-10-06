@@ -109,7 +109,8 @@
           "links": {
             "testRunner": "Test Runner",
             "introduction": "Discovering Node.js's test runner",
-            "usingTestRunner": "Using Node.js's test runner"
+            "usingTestRunner": "Using Node.js's test runner",
+            "mocking": "Mocking in tests"
           }
         }
       },
