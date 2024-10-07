@@ -35,5 +35,5 @@ export const getCalendarEvents = async (calendarId = '', maxResults = 20) => {
 
   return fetch(calendarQueryUrl.toString())
     .then(response => response.json())
-    .then(calendar => calendar.items);
+    .then(calendar => calendar.items ?? []);
 };

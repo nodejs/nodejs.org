@@ -12,7 +12,7 @@ import styles from './calendar.module.css';
 type GroupedEntries = Record<string, Array<CalendarEvent>>;
 
 const UpcomingMeetings: FC = async () => {
-  const events = (await getCalendarEvents(CALENDAR_NODEJS_ID)) ?? [];
+  const events = await getCalendarEvents(CALENDAR_NODEJS_ID);
 
   const groupedEntries = events.filter(getZoomLink).reduce((acc, event) => {
     const startDate = new Date(
