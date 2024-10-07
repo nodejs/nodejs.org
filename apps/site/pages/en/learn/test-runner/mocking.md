@@ -67,7 +67,7 @@ export function main() {
 }
 ```
 
-Here, `bar` is a node_module installed via npm (or yarn, etc).
+Here, `bar` is an external package, e.g. an npm dependency.
 
 Uncontroversially, for unit tests, this should always be mocked. For component and integration tests, whether to mock depends on what this is.
 
@@ -182,7 +182,7 @@ describe('foo', { concurrency: true }, () => {
 
 ### APIs
 
-A little-known fact is that there is a builtin way to mock `fetch`. [`undici`](https://github.com/nodejs/undici) is the Node.js implementation of `fetch`. You do not have to install it—it's shipped with `node` by default.
+A little-known fact is that there is a builtin way to mock `fetch`. [`undici`](https://github.com/nodejs/undici) is the Node.js implementation of `fetch`. It's shipped with `node`, but not currently exposed by `node` itself, so it must be installed (ex `npm install undici`).
 
 ```mjs displayName="endpoints.spec.mjs"
 import assert from 'node:assert/strict';
