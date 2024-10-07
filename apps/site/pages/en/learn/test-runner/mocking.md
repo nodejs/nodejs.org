@@ -6,7 +6,7 @@ authors: JakobJingleheimer
 
 # Mocking in tests
 
-Tests should be deterministic, runnable in any order any number of times and always produce the same result. Proper setup and mocking make that possible.
+Tests should be deterministic: runnable in any order, any number of times, and always produce the same result. Proper setup and mocking make this possible.
 
 Mocking is a means of creating a facsimile, a puppet. This is generally done in a `when 'a', do 'b'` manner of puppeteering. The idea is to limit the number of moving pieces and control things that "don't matter". "mocks" and "stubs" are technically different kinds of "test doubles". For the curious mind, a stub is a replacement that does nothing (a no-op) but track its invocation. A mock is a stub that also has a fake implementation (the `when 'a', do 'b'`). Within this doc, the difference is unimportant, and stubs are referred to as mocks.
 
@@ -69,7 +69,7 @@ export function main() {
 
 Here, `bar` is a node_module installed via npm (or yarn, etc).
 
-Uncontroversially, for unit tests, this should always be mocked. For component and integration tests, whether to mock depends on what it is.
+Uncontroversially, for unit tests, this should always be mocked. For component and integration tests, whether to mock depends on what this is.
 
 #### Why
 
@@ -83,7 +83,7 @@ Sometimes, it's just not realistic to mock. For example, you would almost never 
 
 These are things like databases, environments (Chromium or Firefox for a web app, an operating system for a node app, etc), file systems, memory store, etc.
 
-Ideally, mocking these would not be necessary. Aside from somehow creating isolated copies for each case (usually very impractical, due to cost, additional execution time, etc), the next best option is to mock. Without doing, tests sabotage each other:
+Ideally, mocking these would not be necessary. Aside from somehow creating isolated copies for each case (usually very impractical due to cost, additional execution time, etc), the next best option is to mock. Without mocking, tests sabotage each other:
 
 ```mjs displayName="storage.mjs"
 import { db } from 'db';
@@ -131,6 +131,8 @@ describe('storage', { concurrency: true }, () => {
     const items = await db.getAll();
 
     assert.equal(items.length, 1); // ensure save did not create duplicates
+
+    assert.deepEqual(items[0], { key: 'good', val: 'item' });
   });
 });
 ```
