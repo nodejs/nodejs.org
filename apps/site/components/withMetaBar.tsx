@@ -10,7 +10,6 @@ import { useClientContext } from '@/hooks/react-client';
 import useMediaQuery from '@/hooks/react-client/useMediaQuery';
 import { DEFAULT_DATE_FORMAT } from '@/next.calendar.constants.mjs';
 import { getGitHubBlobUrl, getGitHubAvatarUrl } from '@/util/gitHubUtils';
-import { getAcronymFromString } from '@/util/stringUtils';
 
 const WithMetaBar: FC = () => {
   const { headings, readingTime, frontmatter, filename } = useClientContext();
@@ -23,7 +22,7 @@ const WithMetaBar: FC = () => {
     frontmatter.authors?.split(',').map(author => author.trim()) ?? [];
   const avatars = usernames.map(username => ({
     src: getGitHubAvatarUrl(username),
-    alt: getAcronymFromString(username),
+    alt: username,
   }));
 
   // Doing that because on mobile list on top of page and on desktop list on the right side
