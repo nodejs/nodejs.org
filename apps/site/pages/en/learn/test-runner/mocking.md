@@ -21,19 +21,19 @@ But first, there are several types of tests:
 | integration      | components fitting together               | -                                                                                              | external code, external system           |
 | end-to-end (e2e) | app + external data stores, delivery, etc | A fake user (ex a Playwright agent) literally using an app connected to real external systems. | none (do not mock)                       |
 
-There are varying schools of thought about when you should and should not mock, the broadstrokes of which are laid out below.
+There are different schools of thought about when to mock and when not to mock, the broad strokes of which are outlined below.
 
 ## When and not to mock
 
 There are 3 main mock candidates:
 
-- own code
-- external code
-- external system
+- Own code
+- External code
+- External system
 
 ### Own code
 
-This is what you/your project control.
+This is what your project controls.
 
 ```mjs displayName="your-project/main.mjs"
 import foo from './foo.mjs';
@@ -53,11 +53,11 @@ For a true unit test of `main`, `foo` should be mocked: you're testing that `mai
 
 Mocking `foo` can be more trouble than worth, especially when `foo` is simple, well-tested, and rarely updated.
 
-Others argue that not mocking `foo` is better because it's more authentic and increases coverage of `foo` (because `main`'s tests will also verify `foo`). This can, however, create noise: when `foo` breaks, a bunch of other tests will also break, so tracking down the problem is more tedious: if only the 1 test for the item ultimately responsible for the issue is failing, that's very easy to spot; whereas 100 tests failing creates a needle-in-a-haystack to find the real problem.
+Not mocking `foo` can be better because it's more authentic and increases coverage of `foo` (because `main`'s tests will also verify `foo`). This can, however, create noise: when `foo` breaks, a bunch of other tests will also break, so tracking down the problem is more tedious: if only the 1 test for the item ultimately responsible for the issue is failing, that's very easy to spot; whereas 100 tests failing creates a needle-in-a-haystack to find the real problem.
 
 ### External code
 
-This is what you/your project does not control.
+This is what your project does not control.
 
 ```mjs displayName="your-project/main.mjs"
 import bar from 'bar';
@@ -73,11 +73,11 @@ Uncontroversially, for unit tests, this should always be mocked. For component a
 
 #### Why
 
-Verifying that someone else's code works with your code is not the role of a unit test (and their code should already be tested).
+Verifying that code that your project does not maintain works is not the goal of a unit test (and that code should have its own tests).
 
 #### Why not
 
-Sometimes, it's just not realistic to mock. For example, you would almost never mock react (the medicine would be worse than the ailment).
+Sometimes, it's just not realistic to mock. For example, you would almost never mock a large framework such as react or angular (the medicine would be worse than the ailment).
 
 ### External system
 
@@ -118,7 +118,7 @@ describe('storage', { concurrency: true }, () => {
 
     const results = await read('a', true);
 
-    assert.equal(items.length, 1); // ensure read did not retrieve erroneous item
+    assert.equal(results.length, 1); // ensure read did not retrieve erroneous item
 
     assert.deepEqual(results[0], { key: 'good', val: 'item' });
   });
@@ -135,13 +135,13 @@ describe('storage', { concurrency: true }, () => {
 });
 ```
 
-In the above, the first and second cases (the `it`s) can sabotage each other because they are run concurrently and mutate the same store (a race condition): "save"'s insertion can cause the otherwise valid "read"'s test to fail its assertion on items found (and "read"'s can do the same thing to "save"'s).
+In the above, the first and second cases (the `it()` statements) can sabotage each other because they are run concurrently and mutate the same store (a race condition): `save()`'s insertion can cause the otherwise valid `read()`'s test to fail its assertion on items found (and `read()`'s can do the same thing to `save()`'s).
 
 ## What to mock
 
 ### Modules + units
 
-This leverages [`mock`](https://nodejs.org/api/test.html#class-mocktracker) from node's test runner.
+This leverages [`mock`](https://nodejs.org/api/test.html#class-mocktracker) from the Node.js test runner.
 
 ```mjs
 import assert from 'node:assert/strict';
@@ -167,8 +167,6 @@ describe('foo', { concurrency: true }, () => {
 
     // This MUST be a dynamic import because that is the only way to ensure the
     // import starts after the mock has been set up.
-    // There is a far more technical explanation,
-    // but just trust that this is logically necessary.
     ({ foo } = await import('./foo.mjs'));
   });
 
@@ -182,7 +180,7 @@ describe('foo', { concurrency: true }, () => {
 
 ### APIs
 
-A little-known fact: node has a builtin way to mock `fetch`. [`undici`](https://github.com/nodejs/undici) is the Node.js implementation of `fetch`. You do not have to install it—it's shipped with `node` by default.
+A little-known fact is that there is a builtin way to mock `fetch`. [`undici`](https://github.com/nodejs/undici) is the Node.js implementation of `fetch`. You do not have to install it—it's shipped with `node` by default.
 
 ```mjs displayName="endpoints.spec.mjs"
 import assert from 'node:assert/strict';
@@ -246,7 +244,7 @@ describe('endpoints', { concurrency: true }, () => {
 
 ### Time
 
-Like Doctor Strange, you too can control time. You would usually do this just for convience to avoid artificially protracted test runs (do you really want to wait 3 minutes for that setTimeout to trigger?). You may also want to travel through time. This leverages [`mock timers`](https://nodejs.org/api/test.html#class-mocktimers) from node's test runner.
+Like Doctor Strange, you too can control time. You would usually do this just for convenience to avoid artificially protracted test runs (do you really want to wait 3 minutes for that `setTimeout()` to trigger?). You may also want to travel through time. This leverages [`mock.timers`](https://nodejs.org/api/test.html#class-mocktimers) from the Node.js test runner.
 
 Note the use of time-zone here (`Z` in the time-stamps). Neglecting to include a consistent time-zone can (read: likely will) lead to unexpected restults.
 
