@@ -248,7 +248,7 @@ describe('endpoints', { concurrency: true }, () => {
 
 Like Doctor Strange, you too can control time. You would usually do this just for convenience to avoid artificially protracted test runs (do you really want to wait 3 minutes for that `setTimeout()` to trigger?). You may also want to travel through time. This leverages [`mock.timers`](https://nodejs.org/api/test.html#class-mocktimers) from the Node.js test runner.
 
-Note the use of time-zone here (`Z` in the time-stamps). Neglecting to include a consistent time-zone can (read: likely will) lead to unexpected restults.
+Note the use of time-zone here (`Z` in the time-stamps). Neglecting to include a consistent time-zone will likely lead to unexpected restults.
 
 ```mjs displayName="master-time.spec.mjs"
 import assert from 'node:assert/strict';
