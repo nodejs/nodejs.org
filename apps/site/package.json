@@ -90,7 +90,7 @@
   },
   "devDependencies": {
     "@eslint/compat": "~1.1.1",
-    "@next/eslint-plugin-next": "~14.2.11",
+    "@next/eslint-plugin-next": "~14.2.14",
     "@storybook/addon-controls": "~8.3.0",
     "@storybook/addon-interactions": "~8.3.0",
     "@storybook/addon-themes": "~8.3.0",
