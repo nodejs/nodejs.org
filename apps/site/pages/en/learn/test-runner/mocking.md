@@ -6,13 +6,13 @@ authors: JakobJingleheimer
 
 # Mocking in tests
 
-Tests should be deterministic: runnable in any order, any number of times, and always produce the same result. Proper setup and mocking make this possible.
-
 Mocking is a means of creating a facsimile, a puppet. This is generally done in a `when 'a', do 'b'` manner of puppeteering. The idea is to limit the number of moving pieces and control things that "don't matter". "mocks" and "stubs" are technically different kinds of "test doubles". For the curious mind, a stub is a replacement that does nothing (a no-op) but track its invocation. A mock is a stub that also has a fake implementation (the `when 'a', do 'b'`). Within this doc, the difference is unimportant, and stubs are referred to as mocks.
+
+Tests should be deterministic: runnable in any order, any number of times, and always produce the same result. Proper setup and mocking make this possible.
 
 Node.js provides many ways to mock various pieces of code.
 
-But first, there are several types of tests:
+This articles deals with the following types of tests:
 
 | type             | description                               | example                                                                                        | mock candidates                          |
 | :--------------- | :---------------------------------------- | :--------------------------------------------------------------------------------------------- | :--------------------------------------- |
