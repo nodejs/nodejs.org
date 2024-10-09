@@ -1,10 +1,10 @@
 # Adding a Learn Page
 
-Since the redesign of the website, we have a new section called ‘Learn’. This is intended to provide a more explanatory set of resources than the API docs, which are designed purely to explain the available APIs.
+Since the redesign of the website, we have a new section called 'Learn'. This is intended to provide a more explanatory set of resources than the API docs, which are designed purely to explain the available APIs.
 
-The learn section is separate from the API docs, and is intended to provide a more narrative, tutorial-style set of resources. This is a place where we can provide more context and guidance on how to use the APIs, and how to build applications with them.
+The Learn section is separate from the API docs and is intended to provide a more narrative, tutorial style set of resources. This is a place where we can provide more context and guidance on how to use the APIs and how to build applications with them.
 
-The ‘Learn’ section is also divided into several sub-categories. Keep in mind that the sub-categories must have the same theme.
+The Learn section is also divided into several sub-categories. Note that the sub-categories must be on the same topic.
 
 ## Structure of the Learn section
 
@@ -27,14 +27,15 @@ layout: learn
 authors: github_username, another_github_username
 ```
 
-Litle bit of explanation about the frontmatter:
-- `title`: The title of the article. This will be displayed as the title of the page. We recommend to use the same title as the navigation entry. How to enter entries for navigation is explained later in this document.
-- `layout`: This must be set to `learn`. To keep the same style as the other Learn pages.
-- `authors`: A list of the GitHub usernames of the authors of the article. This is used to display the profile pictures of the authors on the page.
+A little bit of explanation about the frontmatter:
+
+- `title`: The title of the article. This will be displayed as the title of the page. We recommend that you use the same title as the navigation entry. How to enter navigation entries is explained later in this document.
+- `layout`: This must be set so that the Learning page has the same style as the other Learning pages.
+- `authors`: A list of the GitHub usernames of the authors of the article. This is used to display the authors' profile pictures on the page. The frontmatter must always have the_utilsatuer_name followed by `, ` the space is important.
 
 ### Modify the navigation
 
-The data of the navigation is store in `app/site/navigation.json`. To add a new entry to the navigation, you need to add a new object to the `sideNavigation.learn`.
+The data of the navigation is stored in app/site/navigation.json. To add a new entry to the navigation, you need to add a new object to the sideNavigation.learn.
 
 ```json
 {
@@ -54,7 +55,7 @@ The data of the navigation is store in `app/site/navigation.json`. To add a new 
 }
 ```
 
-The label key is used to display the title of the article in the navigation. To add a new i18n key we recommend you to read [the translation guide](./TRANSLATION.md#adding-new-translation-keys).
+The `label` key is used to display the title of the article in the navigation. To add a new i18n key we recommend you to read [the translation guide](./TRANSLATION.md#adding-new-translation-keys).
 
 ### Add the article
 
@@ -79,7 +80,7 @@ To edit an existing article, you need to find the markdown file in the `site/pag
 
 ### Codebox
 
-The codebox component is used to display code snippets. If two code snippets is following without any text between them, they will be displayed in the same codebox, but with two tabs.
+The codebox component is used to display code snippets. If two code snippets follow without any text between them, they will be displayed in the same codebox, but with two tabs.
 
 ```md
 '''cjs
