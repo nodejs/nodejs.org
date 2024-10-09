@@ -36,11 +36,19 @@
             "anIntroductionToTheNpmPackageManager": "Вступ до менеджера пакетів npm",
             "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) і новіші версії",
             "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Різниця між клієнтським та розробницьким середовищем у Node.js",
-            "nodejsWithTypescript": "Node.js із TypeScript",
             "nodejsWithWebassembly": "Node.js із WebAssembly",
             "debugging": "Налагодження Node.js",
             "profiling": "Профілювання застосунків Node.js",
             "securityBestPractices": "Найкращі практики безпеки"
+          }
+        },
+        "typescript": {
+          "links": {
+            "typescript": "TypeScript",
+            "introduction": "Вступ до TypeScript",
+            "transpile": "Запуск коду на TypeScript за допомогою транспіляції",
+            "run": "Запуск коду на TypeScript із виконавцем",
+            "runNatively": "Запуск коду на TypeScript нативно"
           }
         },
         "asynchronousWork": {

@@ -19,7 +19,7 @@ const ErrorPage: FC<{ error: Error }> = ({ error }) => {
 
       <main>
         500
-        <h1 className="special -mt-4">
+        <h1 className="special -mt-4 text-center">
           {t('layouts.error.internalServerError.title')}
         </h1>
         <p className="-mt-4 max-w-sm text-center text-lg">

@@ -18,14 +18,18 @@ const NotFoundPage: FC = () => {
 
       <main>
         404
-        <h1 className="special -mt-4">{t('layouts.error.notFound.title')}</h1>
-        <div className="my-4 flex items-center justify-center">
-          <Image
-            src="/static/images/node-mascot.svg"
-            alt="The Node.js mascot"
-            height={114.69}
-            width={100}
-          />
+        <h1 className="special -mt-4 text-center">
+          {t('layouts.error.notFound.title')}
+        </h1>
+        <div className="my-4 flex h-[150px] items-center justify-center md:h-[300px]">
+          <div className="turtle motion-safe:animate-surf motion-reduce:animate-none">
+            <Image
+              src="/static/images/node-mascot.svg"
+              alt="The Node.js mascot"
+              height={114.69}
+              width={100}
+            />
+          </div>
         </div>
         <p className="-mt-4 max-w-sm text-center text-lg">
           {t('layouts.error.notFound.description')}

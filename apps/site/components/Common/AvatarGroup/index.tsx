@@ -11,7 +11,7 @@ import { getAcronymFromString } from '@/util/stringUtils';
 import styles from './index.module.css';
 
 type AvatarGroupProps = {
-  avatars: Array<ComponentProps<typeof Avatar>>;
+  avatars: Array<Omit<ComponentProps<typeof Avatar>, 'fallback'>>;
   limit?: number;
   isExpandable?: boolean;
 };
@@ -33,7 +33,8 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
       {renderAvatars.map((avatar, index) => (
         <Avatar
           src={avatar.src}
-          alt={getAcronymFromString(avatar.alt)}
+          alt={avatar.alt}
+          fallback={getAcronymFromString(avatar.alt)}
           key={index}
         />
       ))}
