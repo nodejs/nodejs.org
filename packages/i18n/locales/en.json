@@ -160,6 +160,9 @@
       "previous": "Previous"
     },
     "common": {
+      "banner": {
+        "hide": "Dismiss this banner"
+      },
       "breadcrumbs": {
         "navigateToHome": "Navigate to Home"
       },
