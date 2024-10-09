@@ -15,7 +15,7 @@ on:
 
 # Cancel any runs on the same branch
 concurrency:
-  group: ${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
