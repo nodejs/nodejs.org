@@ -109,7 +109,8 @@
           "links": {
             "testRunner": "Test Çalıştırıcısı",
             "introduction": "Node.js'in test çalıştırıcısını keşfet",
-            "usingTestRunner": "Node.js'in test çalıştırıcısını kullan"
+            "usingTestRunner": "Node.js'in test çalıştırıcısını kullan",
+            "mocking": "Testlerde Mock Kullanımı"
           }
         }
       },
