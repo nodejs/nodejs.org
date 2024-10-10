@@ -6,40 +6,35 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import Button from '@/components/Common/Button';
-import GlowingBackdrop from '@/components/Common/GlowingBackdrop';
-import CenteredLayout from '@/layouts/Centered';
+import GlowingBackdropLayout from '@/layouts/GlowingBackdrop';
 
 const NotFoundPage: FC = () => {
   const t = useTranslations();
 
   return (
-    <CenteredLayout>
-      <GlowingBackdrop />
-
-      <main>
-        404
-        <h1 className="special -mt-4 text-center">
-          {t('layouts.error.notFound.title')}
-        </h1>
-        <div className="my-4 flex h-[150px] items-center justify-center md:h-[300px]">
-          <div className="turtle motion-safe:animate-surf motion-reduce:animate-none">
-            <Image
-              src="/static/images/node-mascot.svg"
-              alt="The Node.js mascot"
-              height={114.69}
-              width={100}
-            />
-          </div>
+    <GlowingBackdropLayout>
+      404
+      <h1 className="special -mt-4 text-center">
+        {t('layouts.error.notFound.title')}
+      </h1>
+      <div className="my-4 flex h-[150px] items-center justify-center md:h-[300px]">
+        <div className="turtle motion-safe:animate-surf motion-reduce:animate-none">
+          <Image
+            src="/static/images/node-mascot.svg"
+            alt="The Node.js mascot"
+            height={114.69}
+            width={100}
+          />
         </div>
-        <p className="-mt-4 max-w-sm text-center text-lg">
-          {t('layouts.error.notFound.description')}
-        </p>
-        <Button href="/">
-          {t('layouts.error.backToHome')}
-          <ArrowRightIcon />
-        </Button>
-      </main>
-    </CenteredLayout>
+      </div>
+      <p className="-mt-4 max-w-sm text-center text-lg">
+        {t('layouts.error.notFound.description')}
+      </p>
+      <Button href="/">
+        {t('layouts.error.backToHome')}
+        <ArrowRightIcon />
+      </Button>
+    </GlowingBackdropLayout>
   );
 };
 
