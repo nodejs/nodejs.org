@@ -10,7 +10,7 @@ Si vous souhaitez vous impliquer dans la communauté Node.js, il existe de nombr
 ## Discussions de la communauté
 
 - La [GitHub issues list](https://github.com/nodejs/node/issues) est le lieu de discussion des fonctionnalités de base de Node.js et si vous avez des questions sur Node.js, vous pouvez utiliser les [github discussions](https://github.com/orgs/nodejs/discussions).
-- Le dépôt [`nodejs/help`](https://github.com/nodjes/help/issues) est l'endroit où poser des questions sur Node.js.
+- Le dépôt [`nodejs/help`](https://github.com/nodejs/help/issues) est l'endroit où poser des questions sur Node.js.
 - Le compte Twitter officiel de Node.js est [nodejs](https://twitter.com/nodejs).
 - Le [calendrier du projet Node.js](https://nodejs.org/calendar) avec toutes les réunions publiques de l'équipe.
 

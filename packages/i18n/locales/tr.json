@@ -1,0 +1,329 @@
+{
+  "components": {
+    "containers": {
+      "footer": {
+        "links": {
+          "trademarkPolicy": "Ticari Marka Politikası",
+          "privacyPolicy": "Gizlilik Politikası",
+          "codeOfConduct": "Davranış Kuralları",
+          "security": "Güvenlik Politikası"
+        }
+      },
+      "navBar": {
+        "links": {
+          "about": "Hakkında",
+          "download": "İndir",
+          "docs": "Dokümanlar",
+          "guides": "Kılavuzlar",
+          "learn": "Öğrenmek",
+          "security": "Güvenlik",
+          "certification": "Sertifikasyon",
+          "blog": "Blog"
+        }
+      }
+    },
+    "navigation": {
+      "learn": {
+        "gettingStarted": {
+          "links": {
+            "gettingStarted": "Başlarken",
+            "introductionToNodejs": "Node.js'e Giriş",
+            "howToInstallNodejs": "Node.js nasıl kurulur",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Node.js kullanabilmek için ne kadar JavaScript bilmelisiniz?",
+            "differencesBetweenNodejsAndTheBrowser": "Node.js ile Tarayıcı Arasındaki Farklar",
+            "theV8JavascriptEngine": "V8 JavaScript Motoru",
+            "anIntroductionToTheNpmPackageManager": "Npm paket yöneticisine bir giriş",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) ve sonrası",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, geliştirme ve üretim arasındaki fark",
+            "nodejsWithWebassembly": "WebAssembly ile Node.js",
+            "debugging": "Node.js'te Hata Ayıklama",
+            "profiling": "Node.js Uygulamalarının Profilini Çıkarma",
+            "securityBestPractices": "En İyi Güvenlik Uygulamaları"
+          }
+        },
+        "typescript": {
+          "links": {
+            "typescript": "TypeScript",
+            "introduction": "TypeScript'e Giriş",
+            "transpile": "Transpilasyon kullanarak TypeScript kodu çalıştırma",
+            "run": "TypeScript'i çalıştırıcı ile kullanma",
+            "runNatively": "TypeScript'i Yerel olarak çalıştırma"
+          }
+        },
+        "asynchronousWork": {
+          "links": {
+            "asynchronousWork": "Asenkron Çalışma",
+            "asynchronousFlowControl": "Asenkron akış kontrolü",
+            "overviewOfBlockingVsNonBlocking": "Engellemeye ve Engellememeye Genel Bakış",
+            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asenkron Programlama ve Geri Çağırmalar",
+            "discoverJavascriptTimers": "JavaScript Zamanlayıcılarını Keşfedin",
+            "eventLoopTimersAndNexttick": "Node.js Olay Döngüsü",
+            "theNodejsEventEmitter": "Node.js Olay Döngüsü",
+            "understandingProcessnexttick": "process.nextTick() anlamak",
+            "understandingSetimmediate": "setImmediate() Fonksiyonunu Anlama",
+            "dontBlockTheEventLoop": "Etkinlik Döngüsünü Engelleme"
+          }
+        },
+        "manipulatingFiles": {
+          "links": {
+            "manipulatingFiles": "Dosyaları Değiştirme",
+            "nodejsFileStats": "Node.js dosya istatistikleri",
+            "nodejsFilePaths": "Node.js Dosya Yolları",
+            "workingWithFileDescriptorsInNodejs": "Node.js'de dosya tanımlayıcıları ile çalışma",
+            "readingFilesWithNodejs": "Node.js ile dosya okuma",
+            "writingFilesWithNodejs": "Node.js ile dosya yazma",
+            "workingWithFoldersInNodejs": "Node.js'de klasörlerle çalışma",
+            "workingWithDifferentFilesystems": "Farklı Dosya Sistemleri ile nasıl çalışılır"
+          }
+        },
+        "commandLine": {
+          "links": {
+            "commandLine": "Komut Satırı",
+            "runNodejsScriptsFromTheCommandLine": "Node.js komut dosyalarını komut satırından çalıştırma",
+            "howToReadEnvironmentVariablesFromNodejs": "Node.js'den ortam değişkenleri nasıl okunur",
+            "howToUseTheNodejsRepl": "Node.js REPL nasıl kullanılır",
+            "outputToTheCommandLineUsingNodejs": "Node.js kullanarak komut satırına çıktı",
+            "acceptInputFromTheCommandLineInNodejs": "Node.js'de komut satırından girdi kabul etme"
+          }
+        },
+        "modules": {
+          "links": {
+            "modules": "Modüller",
+            "publishingNodeApiModules": "Bir Node-API paketi nasıl yayımlanır",
+            "anatomyOfAnHttpTransaction": "Bir HTTP İşleminin Anatomisi",
+            "abiStability": "ABI İstikrarlılığı",
+            "backpressuringInStreams": "Akışlarda Geri Baskılama"
+          }
+        },
+        "diagnostics": {
+          "links": {
+            "diagnostics": "Teşhisler",
+            "userJourney": "Kullanıcı Yolculuğu",
+            "memory": "Bellek",
+            "liveDebugging": "Canlı Hata Ayıklama",
+            "poorPerformance": "Düşük Performans",
+            "flameGraphs": "Alev Grafikleri"
+          }
+        },
+        "testRunner": {
+          "links": {
+            "testRunner": "Test Çalıştırıcısı",
+            "introduction": "Node.js'in test çalıştırıcısını keşfet",
+            "usingTestRunner": "Node.js'in test çalıştırıcısını kullan",
+            "mocking": "Testlerde Mock Kullanımı"
+          }
+        }
+      },
+      "about": {
+        "links": {
+          "about": "Node.js Hakkında",
+          "aboutSide": "Node.js® Hakkında",
+          "branding": "Node.js'in markalaşması",
+          "governance": "Proje Yönetimi",
+          "releases": "Node.js Sürümleri",
+          "security": "Güvenlik Raporlaması"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "getInvolved": "Katılın",
+          "collabSummit": "İş Birliği Zirvesi",
+          "upcomingEvents": "Yaklaşan Etkinlikler",
+          "contribute": "Node.js'ye katkıda bulunun",
+          "codeOfConduct": "Davranış Kuralları"
+        }
+      }
+    },
+    "downloadList": {
+      "links": {
+        "previousReleases": "Node.js Sürümleri",
+        "packageManager": "Node.js'i paket yöneticisi ile kurmak",
+        "shaSums": {
+          "title": "Sürüm dosyaları için İmzalı SHASUMS",
+          "howToVerify": " (Nasıl doğrulanır)"
+        },
+        "allDownloads": "Tüm indirme seçenekleri",
+        "nightlyReleases": "Gecelik Sürümler",
+        "unofficialBuilds": "Resmi Olmayan Sürümler",
+        "buildingFromSource": "Desteklenen platformlarda kaynaktan Node.js oluşturma",
+        "installingOnLinux": "Node.js'yi ikili arşiv aracılığıyla yükleme",
+        "installingOnWsl": "Linux için Windows Alt Sistemine (WSL) yükleme"
+      }
+    },
+    "downloadReleasesTable": {
+      "changelog": "Değişiklik Günlüğü",
+      "releases": "Sürümler",
+      "docs": "Dokümanlar"
+    },
+    "pagination": {
+      "next": "Sonraki",
+      "previous": "Önceki"
+    },
+    "common": {
+      "breadcrumbs": {
+        "navigateToHome": "Ana Sayfaya Git"
+      },
+      "crossLink": {
+        "previous": "Önceki",
+        "next": "Sonraki"
+      },
+      "codebox": {
+        "copy": "Panoya kopyala",
+        "copied": "Panoya kopyalandı!"
+      },
+      "pagination": {
+        "prev": "Önceki",
+        "prevAriaLabel": "Önceki sayfa",
+        "next": "Sonraki",
+        "nextAriaLabel": "Sonraki sayfa",
+        "defaultLabel": "Sayfalandırma",
+        "pageLabel": "{pageNumber}. sayfaya git"
+      },
+      "sidebar": {
+        "title": "Sayfayı değiştir"
+      },
+      "languageDropdown": {
+        "label": "Dil Seçiniz"
+      },
+      "themeToggle": {
+        "label": "Karanlık Modu Aç / Kapat"
+      }
+    },
+    "mdx": {
+      "upcomingEvents": {
+        "defaultTitle": "Yaklaşan Etkinlik Yok"
+      }
+    },
+    "metabar": {
+      "lastUpdated": "Son Güncelleme",
+      "readingTime": "Okuma Süresi",
+      "addedIn": "Eklendi",
+      "author": "Yazar",
+      "authors": "Yazarlar",
+      "contribute": "Katkıda bulunun",
+      "contributeText": "Bu sayfayı düzenleyin",
+      "viewAs": "Olarak görüntüle",
+      "tableOfContents": "İçindekiler"
+    },
+    "downloads": {
+      "changelogModal": {
+        "startContributing": "Katkıda Bulunmaya Başlayın"
+      }
+    },
+    "search": {
+      "searchBox": {
+        "placeholder": "Yazmaya başla..."
+      },
+      "seeAll": {
+        "text": "Tüm {count} sonuçları görün"
+      },
+      "searchError": {
+        "text": "Arama sırasında bir hata oluştu. Lütfen daha sonra tekrar deneyin."
+      },
+      "poweredBy": {
+        "text": "Tarafından desteklenmektedir"
+      },
+      "noResults": {
+        "text": "\"{query}\" için sonuç bulunamadı."
+      },
+      "emptyState": {
+        "text": "Bir şey ara..."
+      },
+      "searchPage": {
+        "title": "Aradığınız: {query}"
+      }
+    },
+    "blog": {
+      "blogHeader": {
+        "subtitle": "En son Node.js haberleri, vaka çalışmaları, eğitimler ve kaynaklar.",
+        "rssLink": "RSS beslemesi"
+      }
+    }
+  },
+  "layouts": {
+    "blogPost": {
+      "author": {
+        "byLine": "{author, select, null {} other {{author} tarafından }}"
+      }
+    },
+    "blogIndex": {
+      "categoryName": "{category, select, all {Blog} other {{category} Blog Gönderileri}}"
+    },
+    "blog": {
+      "title": "Blog",
+      "selectCategory": "Kategoriler",
+      "categories": {
+        "all": "Her şey",
+        "announcements": "Duyurular",
+        "release": "Sürümler",
+        "vulnerability": "Güvenlik Açıkları",
+        "advisory-board": "Danışma Kurulu",
+        "community": "Topluluk",
+        "feature": "Özellik",
+        "module": "Modül",
+        "npm": "npm",
+        "uncategorized": "Kategorize Edilmemiş",
+        "video": "Video",
+        "weekly": "Haftalık Güncellemeler",
+        "wg": "Çalışma Grupları",
+        "events": "Etkinlikler"
+      }
+    },
+    "error": {
+      "notFound": {
+        "title": "Sayfa bulunamadı",
+        "description": "Üzgünüz, aradığınız sayfayı bulamadık! Ana sayfadan tekrar başlamayı deneyin."
+      },
+      "internalServerError": {
+        "title": "Dahili Sunucu Hatası",
+        "description": "Bu sayfa kurtarılamaz bir hata verdi."
+      },
+      "backToHome": "Ana Sayfaya Geri Dön"
+    },
+    "download": {
+      "selectCategory": "Kategoriler",
+      "categories": {
+        "prebuilt-installer": "Önceden Hazırlanmış Yükleyici",
+        "prebuilt-binaries": "Ön Derlenmiş İkili Dosyalar",
+        "package-manager": "Paket Yöneticisi",
+        "source-code": "Kaynak Kodu"
+      },
+      "buttons": {
+        "prebuilt": "Node.js® İndir {version}",
+        "source": "Node.js {version} kaynağını indirin"
+      },
+      "dropdown": {
+        "bitness": "Bitness",
+        "os": "İşletim Sistemi",
+        "version": "Versiyon",
+        "platform": "Platform"
+      },
+      "codeBox": {
+        "fnmEnvSetup": "fnm ortamını yapılandırın",
+        "systemManagerWarning": "node.js paket yöneticisi değildir. Lütfen {packageManager}'ın zaten yüklü olduğundan emin olun.",
+        "communityWarning": "Paket yöneticileri ve bunların kurulum betikleri Node.js projesi tarafından bakımı yapılmamaktadır.",
+        "communityWarningReport": "Sorunlarla karşılaşırsanız, lütfen paket yöneticisi yetkilileriyle iletişime geçin.",
+        "installsNvm": "nvm (Node Version Manager) kurar",
+        "downloadAndInstallNodejsRestartTerminal": "Node.js indirip kurun (terminali yeniden başlatmanız gerekebilir)",
+        "verifiesRightNodejsVersion": "doğru Node.js sürümünün ortamda bulunduğunu doğrular",
+        "verifiesRightNpmVersion": "doğru npm sürümünün ortamda bulunduğunu doğrular",
+        "shouldPrint": "şu çıktıyı vermelidir: `{version}`",
+        "installsFnm": "fnm (Fast Node Manager) kurar",
+        "downloadAndInstallNodejs": "Node.js indirip kurun",
+        "activateFNM": "fnm'i etkinleştir",
+        "noteWithColon": "NOT:",
+        "dockerIsNotNodejsPackageManager": "Docker bir Node.js paket yöneticisi değildir.",
+        "PleaseEndureAlreadyInstallOnSystem": "Lütfen sisteminizde zaten yüklü olduğunu kontrol edin.",
+        "dockerInstructions": "Resmi talimatlar için https://docs.docker.com/desktop/ adresini takip edin.",
+        "dockerImagesLink": "Docker görüntüleri resmi olarak https://github.com/nodejs/docker-node/ adresinden sağlanmaktadır.",
+        "pullsNodejsDockerImage": "Node.js Docker görüntüsünü çeker",
+        "homebrewIsNotNodejsPackageManager": "Homebrew bir Node.js paket yöneticisi değildir.",
+        "homebrewInstructions": "Resmi talimatlar için https://brew.sh/ adresini takip edin.",
+        "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew yalnızca ana Node.js sürümlerinin kurulumunu destekler ve {version} sürüm satırındaki en son Node.js sürümünü desteklemeyebilir.",
+        "chocolateyIsNotNodejsPackageManager": "Chocolatey, Node.js paket yöneticisi değildir.",
+        "chocolateyInstructions": "Resmi talimatlar için https://chocolatey.org/ adresini takip edin.",
+        "chocolateyNotMaintanedByNodejs": "Chocolatey, Node.js projesi tarafından resmi olarak sürdürülmüyor ve Node.js'nin {version} sürümünü desteklemiyor olabilir"
+      }
+    }
+  }
+}

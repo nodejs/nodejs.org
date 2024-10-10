@@ -1,5 +1,5 @@
 ---
-title: Exécuter du JavaScript partout
+title: Ejecuta JavaScript en cualquier parte
 layout: home
 ---
 
@@ -7,21 +7,20 @@ layout: home
 <WithBadge section="index" />
 
 <div>
-  <h1 className="special">Exécuter du JavaScript partout</h1>
+  <h1 className="special">Ejecuta JavaScript en cualquier parte</h1>
 
-  Node.js® est un environnement d'exécution JavaScript gratuit, open-source et multiplateforme qui permet aux développeurs de créer des serveurs, des applications web et des applications de gestion de contenu.
-  qui permet aux développeurs de créer des serveurs, des applications web, des outils en ligne de commande et des scripts.
+  Node.js® es un entorno de ejecución de JavaScript multiplataforma, de código abierto y gratuito que permite a los desarrolladores crear servidores, aplicaciones web, herramientas de línea de comando y scripts.
 </div>
 
 <div>
   <WithNodeRelease status={['LTS']}>
     {({ release }) => (
       <>
-        <DownloadButton release={release}>Télécharger Node.js (LTS)</DownloadButton>
+        <DownloadButton release={release}>Descargar Node.js (LTS)</DownloadButton>
         <small>
-          Télécharger Node.js  <b>{release.versionWithPrefix}</b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> avec un support à long terme.
-            Node.js peut également être installé via <a href="/download/package-manager">gestionnaires de paquets</a>.
+          Descarga Node.js <b>{release.versionWithPrefix}</b>
+          <sup title="Downloads a Node.js installer for your current platform">1</sup> con soporte a largo plazo.
+          Node.js también puede ser instalado a través de <a href="/download/package-manager">gestores de paquetes</a>.
         </small>
       </>
     )}
@@ -30,9 +29,9 @@ layout: home
   <WithNodeRelease status={['Current']}>
     {({ release }) => (
       <small>
-        Vous voulez de nouvelles fonctionnalités plus tôt ?
-        Obtenez <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-        <sup title="Downloads a Node.js installer for your current platform">1</sup> à la place.
+        ¿Quieres nuevas funciones más pronto?
+        Consigue<b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+        <sup title="Downloads a Node.js installer for your current platform">1</sup> en vez.
       </small>
     )}
   </WithNodeRelease>
@@ -127,5 +126,5 @@ layout: home
   ```
 </div>
 
-Apprenez-en plus sur ce que Node.js est capable d'offrir avec notre [Matériel d'apprentissage](/learn).
+Aprenda más sobre lo que Node.js puede ofrecer con nuestros [Materiales de aprendizaje](/learn).
 </section>

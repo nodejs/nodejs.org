@@ -109,7 +109,8 @@
           "links": {
             "testRunner": "Executor de Teste",
             "introduction": "Descobrir o executor de teste da Node.js",
-            "usingTestRunner": "Usar o executor de teste da Node.js"
+            "usingTestRunner": "Usar o executor de teste da Node.js",
+            "mocking": "Simulação em Testes"
           }
         }
       },
