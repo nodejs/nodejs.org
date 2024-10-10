@@ -14,6 +14,7 @@
           "about": "关于",
           "download": "下载",
           "docs": "文档",
+          "support": "版本支持",
           "guides": "指南",
           "learn": "学习",
           "security": "安全",
@@ -290,6 +291,7 @@
         "platform": "平台"
       },
       "codeBox": {
+        "unsupportedVersionWarning": "此版本已停止维护。在此处查找更多信息：",
         "systemManagerWarning": "不是一个 Node.js 包管理器。请确保您已安装好 {packageManager}。",
         "communityWarning": "包管理器与它们的安装脚本不由 Node.js 项目维护。",
         "communityWarningReport": "如果您遇到问题，请联系包管理器的维护者。"
