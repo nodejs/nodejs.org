@@ -100,7 +100,7 @@ const BitnessDropdown: FC = () => {
       ariaLabel={t('layouts.download.dropdown.bitness')}
       defaultValue={String(bitness)}
       onChange={bitness => setBitness(parseNumericBitness(bitness))}
-      className="w-28"
+      className="min-w-28"
       inline={true}
     />
   );
