@@ -1,41 +1,11 @@
 ---
-layout: download
+layout: article
 title: Menginstal Node.js melalui manajer paket
 ---
 
 # Menginstal Node.js melalui manajer paket
 
 > Paket-paket di halaman ini dijaga dan didukung oleh para pemberi paket mereka masing-masing, bukan tim inti Node.js. Harap laporkan setiap masalah yang Anda temui kepada pemelihara paket. Jika masalah Anda ternyata adalah bug dalam Node.js itu sendiri, pemelihara akan melaporkan masalah tersebut ke hulu.
-
----
-
-- [Alpine Linux](#alpine-linux)
-- [Android](#android)
-- [Arch Linux](#arch-linux)
-- [CentOS, Fedora dan Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
-- [Distribusi Linux berbasis Debian dan Ubuntu](#debian-and-ubuntu-based-linux-distributions)
-- [Exherbo Linux](#exherbo-linux)
-- [fnm](#fnm)
-- [FreeBSD](#freebsd)
-- [Gentoo](#gentoo)
-- [IBM i](#ibm-i)
-- [macOS](#macos)
-- [n](#n)
-- [NetBSD](#netbsd)
-- [Nodenv](#nodenv)
-- [nvm](#nvm)
-- [nvs](#nvs)
-- [OpenBSD](#openbsd)
-- [openSUSE dan SLE](#opensuse-and-sle)
-- [SmartOS dan illumos](#smartos-and-illumos)
-- [Snap](#snap)
-- [Solus](#solus)
-- [vfox](#vfox)
-- [Void Linux](#void-linux)
-- [Windows](#windows-1)
-- [z/OS](#zos)
-
----
 
 ## Alpine Linux
 
