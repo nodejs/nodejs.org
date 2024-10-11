@@ -1,41 +1,11 @@
 ---
-layout: download
+layout: article
 title: Node.js'i paket yöneticisi aracılığıyla yüklemek
 ---
 
 # Paket Yöneticileri Aracılığıyla Node.js Kurulumu
 
 > Bu sayfadaki paketler, ilgili paketleyiciler tarafından sürdürülür ve desteklenir, Node.js çekirdek ekibi tarafından **değil**. Karşılaştığınız herhangi bir sorunu paketin bakımını üstlenen kişiye bildirin. Sorununuzun Node.js'in kendisinde bir hata olduğu ortaya çıkarsa, bakımı üstlenen kişi bu sorunu yukarıya raporlayacaktır.
-
----
-
-- [Alpine Linux](#alpine-linux)
-- [Android](#android)
-- [Arch Linux](#arch-linux)
-- [CentOS, Fedora ve Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
-- [Debian ve Ubuntu tabanlı Linux dağıtımları](#debian-and-ubuntu-based-linux-distributions)
-- [Exherbo Linux](#exherbo-linux)
-- [fnm](#fnm)
-- [FreeBSD](#freebsd)
-- [Gentoo](#gentoo)
-- [IBM i](#ibm-i)
-- [macOS](#macos)
-- [n](#n)
-- [NetBSD](#netbsd)
-- [Nodenv](#nodenv)
-- [nvm](#nvm)
-- [nvs](#nvs)
-- [OpenBSD](#openbsd)
-- [openSUSE ve SLE](#opensuse-and-sle)
-- [SmartOS ve illumos](#smartos-and-illumos)
-- [Snap](#snap)
-- [Solus](#solus)
-- [vfox](#vfox)
-- [Void Linux](#void-linux)
-- [Windows](#windows-1)
-- [z/OS](#zos)
-
----
 
 ## Alpine Linux
 
