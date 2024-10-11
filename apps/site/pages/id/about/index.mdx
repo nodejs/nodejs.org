@@ -17,13 +17,13 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
 
@@ -34,13 +34,13 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
 
@@ -56,13 +56,13 @@ Jika ada yang belum familiar dengan bahasa ini, ada artikel lengkap tentang [Blo
 
 ---
 
-Node.js memiliki desain yang mirip dengan, dan dipengaruhi oleh, sistem seperti [Event Machine] \[] Ruby dan \[Twisted] \[] Python. Node.js membawa model acara sedikit lebih jauh. Ini menyajikan loop peristiwa sebagai konstruksi runtime, bukan sebagai perpustakaan. Di sistem lain, selalu ada panggilan pemblokiran untuk memulai perulangan peristiwa. Biasanya, perilaku ditentukan melalui callback di awal skrip, dan di akhir skrip, server dimulai melalui panggilan pemblokiran seperti `EventMachine::run()`. Di Node.js, tidak ada panggilan start-the-event-loop. Node.js cukup memasuki loop acara setelah menjalankan skrip input. Node.js keluar dari loop peristiwa ketika tidak ada lagi callback yang harus dilakukan. Perilaku ini seperti JavaScript browser — loop peristiwa disembunyikan dari pengguna.
+Node.js memiliki desain yang mirip dengan, dan dipengaruhi oleh, sistem seperti [Event Machine] [] Ruby dan [Twisted] [] Python. Node.js membawa model acara sedikit lebih jauh. Ini menyajikan loop peristiwa sebagai konstruksi runtime, bukan sebagai perpustakaan. Di sistem lain, selalu ada panggilan pemblokiran untuk memulai perulangan peristiwa. Biasanya, perilaku ditentukan melalui callback di awal skrip, dan di akhir skrip, server dimulai melalui panggilan pemblokiran seperti `EventMachine::run()`. Di Node.js, tidak ada panggilan start-the-event-loop. Node.js cukup memasuki loop acara setelah menjalankan skrip input. Node.js keluar dari loop peristiwa ketika tidak ada lagi callback yang harus dilakukan. Perilaku ini seperti JavaScript browser — loop peristiwa disembunyikan dari pengguna.
 
 HTTP adalah warga negara kelas satu di Node.js, dirancang dengan streaming dan rendah
 latensi dalam pikiran. Ini membuat Node.js sangat cocok untuk fondasi web
 perpustakaan atau kerangka kerja.
 
-Node.js dirancang tanpa thread bukan berarti Anda tidak dapat memanfaatkan banyak inti di lingkungan Anda. Proses anak dapat dihasilkan dengan menggunakan API child_process.fork() kami, dan dirancang agar mudah untuk berkomunikasi. Dibangun di atas antarmuka yang sama adalah modul cluster, yang memungkinkan Anda berbagi soket antar proses untuk mengaktifkan penyeimbangan beban pada inti Anda.
+Node.js dirancang tanpa thread bukan berarti Anda tidak dapat memanfaatkan banyak inti di lingkungan Anda. Proses anak dapat dihasilkan dengan menggunakan API child\_process.fork() kami, dan dirancang agar mudah untuk berkomunikasi. Dibangun di atas antarmuka yang sama adalah modul cluster, yang memungkinkan Anda berbagi soket antar proses untuk mengaktifkan penyeimbangan beban pada inti Anda.
 
 [blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
