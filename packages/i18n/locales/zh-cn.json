@@ -35,11 +35,19 @@
             "anIntroductionToTheNpmPackageManager": "Npm 包管理器简介",
             "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) 与未来",
             "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js 在开发与生产环境中的区别",
-            "nodejsWithTypescript": "Node.js 与 TypeScript",
             "nodejsWithWebassembly": "使用WebAssembly的Node.js",
             "debugging": "调试 Node.js",
             "profiling": "分析 Node.js 应用程序",
             "securityBestPractices": "安全最佳实践"
+          }
+        },
+        "typescript": {
+          "links": {
+            "typescript": "TypeScript",
+            "introduction": "TypeScript 简介",
+            "transpile": "使用转译技术运行 TypeScript 代码",
+            "run": "使用运行程序运行 TypeScript",
+            "runNatively": "以原生方式运行 TypeScript"
           }
         },
         "asynchronousWork": {
@@ -101,7 +109,8 @@
           "links": {
             "testRunner": "测试运行程序",
             "introduction": "了解 Node.js 测试运行程序",
-            "usingTestRunner": "使用 Node.js 测试运行程序"
+            "usingTestRunner": "使用 Node.js 测试运行程序",
+            "mocking": "在测试中进行模拟"
           }
         }
       },
@@ -290,9 +299,30 @@
         "platform": "平台"
       },
       "codeBox": {
+        "fnmEnvSetup": "配置 fnm 环境",
         "systemManagerWarning": "不是一个 Node.js 包管理器。请确保您已安装好 {packageManager}。",
         "communityWarning": "包管理器与它们的安装脚本不由 Node.js 项目维护。",
-        "communityWarningReport": "如果您遇到问题，请联系包管理器的维护者。"
+        "communityWarningReport": "如果您遇到问题，请联系包管理器的维护者。",
+        "installsNvm": "安装 nvm (Node 版本管理器)",
+        "downloadAndInstallNodejsRestartTerminal": "下载并安装 Node.js（可能需要重启终端）",
+        "verifiesRightNodejsVersion": "验证环境中是否存在正确的 Node.js 版本",
+        "verifiesRightNpmVersion": "验证环境中是否存在正确的 npm 版本",
+        "shouldPrint": "应该打印 `{version}`",
+        "installsFnm": "安装 fnm (快速 Node 管理器)",
+        "downloadAndInstallNodejs": "下载并安装 Node.js",
+        "activateFNM": "激活 fnm",
+        "noteWithColon": "注意：",
+        "dockerIsNotNodejsPackageManager": "Docker 不是 Node.js 包管理器。",
+        "PleaseEndureAlreadyInstallOnSystem": "请确保它已在您的系统上安装。",
+        "dockerInstructions": "请按照官方说明访问 https://docs.docker.com/desktop/",
+        "dockerImagesLink": "Docker 镜像可在 https://github.com/nodejs/docker-node/ 官方提供。",
+        "pullsNodejsDockerImage": "拉取 Node.js Docker 镜像",
+        "homebrewIsNotNodejsPackageManager": "Homebrew 不是 Node.js 包管理器。",
+        "homebrewInstructions": "请按照官方说明访问 https://brew.sh/",
+        "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew 仅支持安装主要的 Node.js 版本，可能不支持来自 {version} 版本线的最新 Node.js 版本。",
+        "chocolateyIsNotNodejsPackageManager": "Chocolatey 不是 Node.js 包管理器。",
+        "chocolateyInstructions": "请按照官方说明访问 https://chocolatey.org/",
+        "chocolateyNotMaintanedByNodejs": "Chocolatey 并非由 Node.js 项目官方维护，可能不支持 {version} 版的 Node.js"
       }
     }
   }
