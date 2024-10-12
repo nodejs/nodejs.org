@@ -74,8 +74,7 @@ export const getNodeDownloadSnippet = (
       # ${t('layouts.download.codeBox.homebrewSupportsIntallingMajorNodejsVersion', { version: release.major })}
 
       # ${t('layouts.download.codeBox.downloadAndInstallNodejs')}
-      brew install node@${release.major}
-      ${['Current', 'Pending'].includes(release.status) ? 'brew install corepack' : ''}
+      brew install node@${release.major}${['Current', 'Pending'].includes(release.status) ? '\nbrew install corepack' : ''}
 
       # ${t('layouts.download.codeBox.verifiesRightNodejsVersion')}
       node -v # ${t('layouts.download.codeBox.shouldPrint', { version: release.versionWithPrefix })}
