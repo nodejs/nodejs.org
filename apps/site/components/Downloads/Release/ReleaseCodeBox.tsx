@@ -15,7 +15,6 @@ const memoizedShiki = shikiPromise.then(highlightToHtml);
 
 const ReleaseCodeBox: FC = () => {
   const { platform, os, release } = useContext(ReleaseContext);
-  // const locale = useLocale();
 
   const [code, setCode] = useState('');
   const t = useTranslations();
@@ -32,7 +31,6 @@ const ReleaseCodeBox: FC = () => {
   }, [release.versionWithPrefix, os, platform]);
 
   const codeLanguage = os === 'WIN' ? 'PowerShell' : 'Bash';
-  //{parseVersion().major < 18 && (
   return (
     <div className="mb-2 mt-6 flex flex-col gap-2">
       {semVer.lt(release.versionWithPrefix, '18.0.0') && (
