@@ -118,7 +118,7 @@ emerge nodejs
 
 ## IBM i
 
-Node.js'nin LTS sürümleri IBM'den temin edilebilir ve [yum paket yöneticisi] (https://ibm.biz/ibmi-rpms) aracılığıyla kullanılabilir. Paket adı `nodejs` ve ardından ana sürüm numarasıdır (örneğin, `nodejs18`, `nodejs20` vb.)
+Node.js'nin LTS sürümleri IBM'den temin edilebilir ve [yum paket yöneticisi](https://ibm.biz/ibmi-rpms) aracılığıyla kullanılabilir. Paket adı `nodejs` ve ardından ana sürüm numarasıdır (örneğin, `nodejs18`, `nodejs20` vb.)
 
 Node.js 20.x'i komut satırından yüklemek için, \*ALLOBJ özel yetkisine sahip bir kullanıcı olarak aşağıdakileri çalıştırın:
 
@@ -126,7 +126,7 @@ Node.js 20.x'i komut satırından yüklemek için, \*ALLOBJ özel yetkisine sahi
 yum install nodejs20
 ```
 
-Node.js, IBM i Access Client Solutions ürünü ile de kurulabilir. Daha fazla ayrıntı için [bu destek belgesine] (http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) bakın
+Node.js, IBM i Access Client Solutions ürünü ile de kurulabilir. Daha fazla ayrıntı için [bu destek belgesine](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) bakın
 
 ## macOS
 
@@ -202,7 +202,7 @@ pkgin -y install nodejs
 
 nodenv`, `nvm`ye benzer hafif bir node sürüm yöneticisidir. Basit ve öngörülebilirdir. Zengin bir eklenti ekosistemi, onu ihtiyaçlarınıza göre uyarlamanızı sağlar. Uygulamanız için bir Node sürümü seçmek ve geliştirme ortamınızın üretimle eşleşmesini garanti etmek için `nodenv\` kullanın.
 
-Nodenv kurulum talimatları [Github sayfasında] (https://github.com/nodenv/nodenv#installation) tutulmaktadır. Kurulum adımlarının en son sürümünü takip ettiğinizden emin olmak için lütfen bu sayfayı ziyaret edin.
+Nodenv kurulum talimatları [Github sayfasında](https://github.com/nodenv/nodenv#installation) tutulmaktadır. Kurulum adımlarının en son sürümünü takip ettiğinizden emin olmak için lütfen bu sayfayı ziyaret edin.
 
 ## nvm
 
@@ -238,7 +238,7 @@ nvm uninstall 8
 
 `nvs` sürüm yöneticisi çapraz platformdur ve Windows, macOS ve Unix benzeri sistemlerde kullanılabilir
 
-Windows'a `nvs` yüklemek için buradan [sürüm sayfasına] (https://github.com/jasongin/nvs/releases) gidin ve en son sürümün MSI yükleyici dosyasını indirin.
+Windows'a `nvs` yüklemek için buradan [sürüm sayfasına](https://github.com/jasongin/nvs/releases) gidin ve en son sürümün MSI yükleyici dosyasını indirin.
 
 Yüklemek için `chocolatey` de kullanabilirsiniz:
 
