@@ -1,41 +1,11 @@
 ---
-layout: download
+layout: article
 title: از طریق پکیج منیجر Node.js نصب
 ---
 
 # نصب Node.js از طریق پکیج منیجر
 
 > پکیج‌های این صفحه توسط پکیج منیجر های مربوطه نگهداری و پشتیبانی می‌شوند، **نه** توسط تیم هسته Node.js. لطفاً اگر به هرگونه مشکلی برخوردید آن را به نگه دارنده پکیج گزارش دهید. اگر مشکل شما یک باگ در خود Node.js باشد، نگه دارنده آن را به مرجع اصلی گزارش خواهد داد.
-
----
-
-- [Alpine Linux](#alpine-linux)
-- [Android](#android)
-- [Arch Linux](#arch-linux)
-- [CentOS, Fedora and Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
-- [Debian and Ubuntu based Linux distributions](#debian-and-ubuntu-based-linux-distributions)
-- [Exherbo Linux](#exherbo-linux)
-- [fnm](#fnm)
-- [FreeBSD](#freebsd)
-- [Gentoo](#gentoo)
-- [IBM i](#ibm-i)
-- [macOS](#macos)
-- [n](#n)
-- [NetBSD](#netbsd)
-- [Nodenv](#nodenv)
-- [nvm](#nvm)
-- [nvs](#nvs)
-- [OpenBSD](#openbsd)
-- [openSUSE and SLE](#opensuse-and-sle)
-- [SmartOS and illumos](#smartos-and-illumos)
-- [Snap](#snap)
-- [Solus](#solus)
-- [vfox](#vfox)
-- [Void Linux](#void-linux)
-- [Windows](#windows-1)
-- [z/OS](#zos)
-
----
 
 ## Alpine Linux
 
