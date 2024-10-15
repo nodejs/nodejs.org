@@ -14,7 +14,6 @@
           "about": "Sobre",
           "download": "Descarregar",
           "docs": "Documentação",
-          "support": "Suporte de Versão",
           "guides": "Guias",
           "learn": "Estudar",
           "security": "Segurança",
@@ -299,7 +298,6 @@
         "platform": "Plataforma"
       },
       "codeBox": {
-        "unsupportedVersionWarning": "Esta versão não é mais suportada. Encontre mais informações aqui:",
         "fnmEnvSetup": "configurar o ambiente da fnm",
         "systemManagerWarning": "não é um gestor de pacote da Node.js. Devemos certificar-nos de que já temos {packageManager} instalado.",
         "communityWarning": "Os gestores de pacotes e os seus programas de instalação não são mantidos pelo projeto Node.js.",

@@ -21,7 +21,7 @@
       "label": "components.containers.navBar.links.docs"
     },
     "support": {
-      "link": "https://nodejs.org/en/about/previous-releases",
+      "link": "/about/previous-releases",
       "label": "components.containers.navBar.links.support"
     },
     "certification": {

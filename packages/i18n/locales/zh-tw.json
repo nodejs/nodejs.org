@@ -14,7 +14,6 @@
           "about": "關於",
           "download": "下載",
           "docs": "文件",
-          "support": "版本支持",
           "guides": "指南",
           "learn": "學習資源",
           "security": "安全性",
@@ -291,7 +290,6 @@
         "platform": "平台"
       },
       "codeBox": {
-        "unsupportedVersionWarning": "此版本已停止維護。請在此處尋找更多資訊：",
         "fnmEnvSetup": "設定 fnm 環境",
         "systemManagerWarning": "不是 Node.js 的套件管理器。請確保你已安裝 {packageManager}。",
         "communityWarning": "套件管理器與其安裝腳本並非由 Node.js 專案維護。",

@@ -14,7 +14,6 @@
           "about": "Tentang",
           "download": "Unduh",
           "docs": "Dokumentasi",
-          "support": "Dukungan Versi",
           "guides": "Panduan",
           "learn": "Pelajari",
           "security": "Keamanan",
@@ -291,7 +290,6 @@
         "platform": "Platform"
       },
       "codeBox": {
-        "unsupportedVersionWarning": "Versi ini tidak lagi mendapatkan dukungan. Temukan informasi lebih lanjut di sini:",
         "fnmEnvSetup": "konfigurasikan lingkungan fnm",
         "systemManagerWarning": "bukan manajer paket Node.js. Pastikan Anda sudah menginstal {packageManager}.",
         "communityWarning": "Package manager dan skrip instalasi tidak di kelola oleh Node.js.",

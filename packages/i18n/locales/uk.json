@@ -14,7 +14,6 @@
           "about": "Про Node.js",
           "download": "Завантажити",
           "docs": "Документація",
-          "support": "Підтримка версій",
           "guides": "Посібники",
           "learn": "Навчання",
           "security": "Безпека",
@@ -299,7 +298,6 @@
         "platform": "Платформа"
       },
       "codeBox": {
-        "unsupportedVersionWarning": "Ця версія не підтримується. Знайдіть більше інформації тут:",
         "fnmEnvSetup": "налаштовує середовище fnm",
         "systemManagerWarning": "не є менеджером пакетів Node.js. Переконайтеся, що у вас уже встановлено {packageManager}.",
         "communityWarning": "Менеджери пакетів та їхні скрипти встановлення не обслуговуються проєктом Node.js.",
