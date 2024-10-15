@@ -5,9 +5,8 @@ import { captureException } from '@sentry/nextjs';
 import type { FC } from 'react';
 
 import Button from '@/components/Common/Button';
-import GlowingBackdrop from '@/components/Common/GlowingBackdrop';
 import BaseLayout from '@/layouts/Base';
-import CenteredLayout from '@/layouts/Centered';
+import GlowingBackdropLayout from '@/layouts/GlowingBackdrop';
 
 const GlobalErrorPage: FC<{ error: Error }> = ({ error }) => {
   captureException(error);
@@ -16,23 +15,17 @@ const GlobalErrorPage: FC<{ error: Error }> = ({ error }) => {
     <html>
       <body>
         <BaseLayout>
-          <CenteredLayout>
-            <GlowingBackdrop />
-
-            <main>
-              500
-              <h1 className="special -mt-4 text-center">
-                Internal Server Error
-              </h1>
-              <p className="-mt-4 max-w-sm text-center text-lg">
-                This page has thrown a non-recoverable error.
-              </p>
-              <Button href="/">
-                Back to Home
-                <ArrowRightIcon />
-              </Button>
-            </main>
-          </CenteredLayout>
+          <GlowingBackdropLayout>
+            500
+            <h1 className="special -mt-4 text-center">Internal Server Error</h1>
+            <p className="-mt-4 max-w-sm text-center text-lg">
+              This page has thrown a non-recoverable error.
+            </p>
+            <Button href="/">
+              Back to Home
+              <ArrowRightIcon />
+            </Button>
+          </GlowingBackdropLayout>
         </BaseLayout>
       </body>
     </html>
