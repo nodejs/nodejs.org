@@ -32,7 +32,7 @@ const VersionDropdown: FC = () => {
       }))}
       defaultValue={release.versionWithPrefix}
       onChange={setVersion}
-      className="w-40"
+      className="min-w-40"
       inline={true}
     />
   );
