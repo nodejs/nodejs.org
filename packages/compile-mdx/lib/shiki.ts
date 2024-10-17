@@ -1,14 +1,21 @@
-'use strict';
-
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import classNames from 'classnames';
 import { toString } from 'hast-util-to-string';
+import type { LanguageRegistration, ThemeRegistrationRaw } from 'shiki';
+import type { Node as UnistNode } from 'unist';
 import { SKIP, visit } from 'unist-util-visit';
 
-import { shikiPromise, highlightToHast } from './util/getHighlighter';
+import { shikiPromise, highlightToHast } from './utils/getHighlighter';
 
 // This is what Remark will use as prefix within a <pre> className
 // to attribute the current language of the <pre> element
 const languagePrefix = 'language-';
+
+type Node = UnistNode & {
+  tagName: string;
+  children: Array<UnistNode>;
+};
 
 /**
  * Retrieve the value for the given meta key.
@@ -16,29 +23,23 @@ const languagePrefix = 'language-';
  * @example - Returns "CommonJS"
  * getMetaParameter('displayName="CommonJS"', 'displayName');
  *
- * @param {any} meta - The meta parameter.
+ * @param {unknown} meta - The meta parameter.
  * @param {string} key - The key to retrieve the value.
  *
  * @return {string | undefined} - The value related to the given key.
  */
-function getMetaParameter(meta, key) {
+function getMetaParameter(meta: unknown, key: string): string | undefined {
   if (typeof meta !== 'string') {
     return;
   }
 
   const matches = meta.match(new RegExp(`${key}="(?<parameter>[^"]*)"`));
-  const parameter = matches?.groups.parameter;
+  const parameter = matches?.groups?.parameter;
 
   return parameter !== undefined && parameter.length > 0
     ? parameter
     : undefined;
 }
-
-/**
- * @typedef {import('unist').Node} Node
- * @property {string} tagName
- * @property {Array<import('unist').Node>} children
- */
 
 /**
  * Checks if the given node is a valid code element.
@@ -47,18 +48,28 @@ function getMetaParameter(meta, key) {
  *
  * @return {boolean} - True when it is a valid code element, false otherwise.
  */
-function isCodeBlock(node) {
+function isCodeBlock(node: Node): boolean {
   return Boolean(
     node?.tagName === 'pre' && node?.children[0].tagName === 'code'
   );
 }
 
-export default function rehypeShikiji() {
+export default function rehypeShikiji(
+  langs: Array<LanguageRegistration>,
+  theme: ThemeRegistrationRaw
+) {
   return async function (tree) {
+    if (!tree) {
+      throw new Error('No tree was provided to the rehypeShikiji plugin');
+    }
+
     // We do a top-level await, since the Unist-tree visitor
     // is synchronous, and it makes more sense to do a top-level
     // await, rather than an await inside the visitor function
-    const memoizedShiki = highlightToHast(await shikiPromise);
+    const memoizedShiki = highlightToHast(
+      await shikiPromise(langs, theme),
+      theme
+    );
 
     visit(tree, 'element', (_, index, parent) => {
       const languages = [];

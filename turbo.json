@@ -4,6 +4,11 @@
     "scripts:release-post": {
       "cache": false
     },
+    "dev": {
+      "dependsOn": [
+        "@node-core/compile-mdx#build"
+      ]
+    },
     "//#prettier": {
       "outputs": [".prettiercache"]
     },
