@@ -3,7 +3,9 @@
 import { useTranslations } from 'next-intl';
 import { useContext, useEffect, useState } from 'react';
 import type { FC } from 'react';
+import semVer from 'semver';
 
+import Banner from '@/components/Common/Banner';
 import CodeBox from '@/components/Common/CodeBox';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import { shikiPromise, highlightToHtml } from '@/util/getHighlighter';
@@ -29,13 +31,16 @@ const ReleaseCodeBox: FC = () => {
   }, [release.versionWithPrefix, os, platform]);
 
   const codeLanguage = os === 'WIN' ? 'PowerShell' : 'Bash';
-
   return (
     <div className="mb-2 mt-6 flex flex-col gap-2">
+      {semVer.lt(release.versionWithPrefix, '18.0.0') && (
+        <Banner type="error" link="/about/previous-releases/">
+          {t('layouts.download.codeBox.unsupportedVersionWarning')}&nbsp;
+        </Banner>
+      )}
       <CodeBox language={codeLanguage} className="min-h-[15.5rem]">
         <code dangerouslySetInnerHTML={{ __html: code }} />
       </CodeBox>
-
       <span className="text-center text-xs text-neutral-800 dark:text-neutral-200">
         {t('layouts.download.codeBox.communityWarning')}
         <br />
