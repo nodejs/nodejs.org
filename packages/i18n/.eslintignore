@@ -1,7 +1,0 @@
-# Node.js
-node_modules
-
-# Build Directories
-.next
-.turbo
-dist
