@@ -1,7 +1,40 @@
-export const pathToBreadcrumbs = (path: string) =>
-  path
-    .replace(/#.+$/, '')
-    .split('/')
-    .slice(0, -1)
-    .map(element => element.replaceAll('-', ' '))
-    .filter(Boolean);
+export const themeConfig = {
+  colors: {
+    light: {
+      '--text-color-primary': '#000000',
+      '--text-color-accent': '#417e38',
+      '--background-color-secondary': '#f6f7f9',
+      '--background-color-tertiary': '#d9e1e4',
+      '--border-color-accent': '#417e38',
+      '--border-color-primary': '#E9EDF0',
+      '--border-color-tertiary': '#537a4d',
+      '--button-background-color-primary': '#417e38',
+      '--button-background-color-secondary': '#FFFFFF',
+      '--button-background-color-secondary-hover': '#eef8ed',
+      '--button-border-color-secondary': '#DADADA',
+      '--button-text-color-secondary': '#2D3437',
+      '--chat-button-border-color-gradientThree': '#84ba64',
+      '--chat-button-border-color-gradientFour': '#4c683b',
+      '--chat-button-background-color-gradientOne': '#417e38',
+      '--chat-button-background-color-gradientTwo': '#80b37a',
+    },
+    dark: {
+      '--text-color-primary': '#ffffff',
+      '--text-color-accent': '#84ba64',
+      '--background-color-secondary': '#0d121c',
+      '--background-color-tertiary': '#2c3437',
+      '--border-color-accent': '#84ba64',
+      '--border-color-primary': '#2D3437',
+      '--border-color-tertiary': '#a0bb90',
+      '--button-background-color-primary': '#84ba64',
+      '--button-background-color-secondary': '#0D121C',
+      '--button-background-color-secondary-hover': '#3f5034',
+      '--button-border-color-secondary': '#2D3437',
+      '--button-text-color-secondary': '#E9EDF0',
+      '--chat-button-border-color-gradientThree': '#84ba64',
+      '--chat-button-border-color-gradientFour': '#4c683b',
+      '--chat-button-background-color-gradientOne': '#84ba64',
+      '--chat-button-background-color-gradientTwo': '#3f5034',
+    },
+  },
+};
