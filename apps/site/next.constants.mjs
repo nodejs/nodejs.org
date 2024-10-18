@@ -168,3 +168,18 @@ export const ORAMA_CLOUD_API_KEY = process.env.NEXT_PUBLIC_ORAMA_API_KEY || '';
  * Note: This has no NEXT_PUBLIC prefix as it should not be exposed to the Browser.
  */
 export const GITHUB_API_KEY = process.env.NEXT_GITHUB_API_KEY || '';
+
+/**
+ * OpenJS Ecosystem Support Program (ESP) partners provide security updates and support for end-of-life and unsupported versions
+ *
+ * See https://openjsf.org/ecosystem-sustainability-program
+ *
+ * This is the minimum version Node.js support according to https://nodejs.org/en/about/previous-releases
+ */
+export const ESP_SUPPORT_THRESHOLD_VERSION =
+  process.env.ESP_SUPPORT_THRESHOLD_VERSION || '18.0.0';
+
+/**
+ * This deep link into the app is repeated in the top nav, but we want to ignore it for active-link highlighting, since it will be covered by About
+ */
+export const VERSION_SUPPORT_SHORTCUT = '/about/previous-releases';

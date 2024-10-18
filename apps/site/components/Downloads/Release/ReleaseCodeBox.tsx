@@ -7,6 +7,7 @@ import semVer from 'semver';
 
 import Banner from '@/components/Common/Banner';
 import CodeBox from '@/components/Common/CodeBox';
+import { ESP_SUPPORT_THRESHOLD_VERSION } from '@/next.constants.mjs';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import { shikiPromise, highlightToHtml } from '@/util/getHighlighter';
 import { getNodeDownloadSnippet } from '@/util/getNodeDownloadSnippet';
@@ -33,7 +34,7 @@ const ReleaseCodeBox: FC = () => {
   const codeLanguage = os === 'WIN' ? 'PowerShell' : 'Bash';
   return (
     <div className="mb-2 mt-6 flex flex-col gap-2">
-      {semVer.lt(release.versionWithPrefix, '18.0.0') && (
+      {semVer.lt(release.versionWithPrefix, ESP_SUPPORT_THRESHOLD_VERSION) && (
         <Banner type="error" link="/about/previous-releases/">
           {t('layouts.download.codeBox.unsupportedVersionWarning')}&nbsp;
         </Banner>
