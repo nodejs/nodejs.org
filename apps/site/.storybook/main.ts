@@ -34,7 +34,7 @@ const config: StorybookConfig = {
   webpack: async config => ({
     ...config,
     // We want to conform as much as possible with our target settings
-    target: 'browserslist',
+    target: 'browserslist:development',
     // Performance Hints do not make sense on Storybook as it is bloated by design
     performance: { hints: false },
     // `nodevu` is a Node.js-specific package that requires Node.js modules
@@ -52,7 +52,8 @@ const config: StorybookConfig = {
     ignoreWarnings: [
       e =>
         e.message.includes('Critical dep') ||
-        e.message.includes('was not found in'),
+        e.message.includes('was not found in') ||
+        e.message.includes('generated code contains'),
     ],
   }),
 };
