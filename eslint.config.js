@@ -1,9 +1,10 @@
 import js from '@eslint/js';
 import importX from 'eslint-plugin-import-x';
 import noRelativeImportPaths from 'eslint-plugin-no-relative-import-paths';
-import tseslint from 'typescript-eslint';
 
-export default tseslint.config(
+export default [
+  js.configs.recommended,
+  importX.flatConfigs.recommended,
   {
     ignores: [
       'node_modules',
@@ -17,7 +18,6 @@ export default tseslint.config(
     ],
   },
   {
-    extends: [js.configs.recommended, importX.flatConfigs.recommended],
     files: ['**/*.{js,mjs,ts,tsx}'],
     plugins: {
       'no-relative-import-paths': noRelativeImportPaths,
@@ -49,5 +49,5 @@ export default tseslint.config(
         { allowSameFolder: true, prefix: '@' },
       ],
     },
-  }
-);
+  },
+];
