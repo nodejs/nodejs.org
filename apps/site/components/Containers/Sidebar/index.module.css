@@ -1,9 +1,7 @@
 .wrapper {
-  @apply sticky
-    top-0
+  @apply top-0
     flex
     h-max
-    min-h-screen
     w-full
     flex-col
     items-start
@@ -14,6 +12,8 @@
     bg-white
     px-4
     py-6
+    sm:sticky
+    sm:min-h-screen
     sm:border-r
     md:max-w-xs
     lg:px-6
