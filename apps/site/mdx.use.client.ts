@@ -1,4 +1,4 @@
-'use strict';
+import type { MDXComponents } from 'mdx/types';
 
 import Blockquote from './components/Common/Blockquote';
 import Button from './components/Common/Button';
@@ -10,8 +10,6 @@ import MDXImage from './components/MDX/Image';
 
 /**
  * A full list of React Components that we want to pass through to MDX
- *
- * @satisfies {import('mdx/types').MDXComponents}
  */
 export const clientMdxComponents = {
   // Renders MDX CodeTabs
@@ -20,12 +18,10 @@ export const clientMdxComponents = {
   Button: Button,
   // Links with External Arrow
   LinkWithArrow: LinkWithArrow,
-};
+} as MDXComponents;
 
 /**
  * A full list of wired HTML elements into custom React Components
- *
- * @type {import('mdx/types').MDXComponents}
  */
 export const htmlComponents = {
   // Renders a Link Component for `a` tags
@@ -36,4 +32,4 @@ export const htmlComponents = {
   pre: MDXCodeBox,
   // Renders an Image Component for `img` tags
   img: MDXImage,
-};
+} as MDXComponents;

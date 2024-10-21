@@ -1,0 +1,30 @@
+{
+  "name": "@node-core/compile-mdx",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    "./compiler": "./dist/compiler.js",
+    "./shiki": "./dist/shiki.js",
+    "./utils/*": "./dist/utils/*"
+  },
+  "scripts": {
+    "build": "tsc --declaration --declarationMap",
+    "check-types": "tsc --noEmit",
+    "lint:js": "eslint \"**/*.{js,mjs,ts}\""
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "eslint": "~9.10.0",
+    "eslint-import-resolver-typescript": "~3.6.3",
+    "eslint-plugin-import-x": "~4.2.1",
+    "typescript": "~5.5.4",
+    "typescript-eslint": "~8.5.0"
+  },
+  "dependencies": {
+    "@shikijs/core": "^1.17.6",
+    "github-slugger": "^2.0.0",
+    "shiki": "^1.17.6"
+  }
+}

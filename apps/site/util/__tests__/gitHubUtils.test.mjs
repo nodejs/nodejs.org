@@ -1,8 +1,8 @@
 import {
   getGitHubAvatarUrl,
-  createGitHubSlugger,
   getGitHubBlobUrl,
   getGitHubApiDocsUrl,
+  createGitHubSlugger
 } from '@/util/gitHubUtils';
 
 describe('GitHub utils', () => {
@@ -10,11 +10,6 @@ describe('GitHub utils', () => {
     expect(getGitHubAvatarUrl('octocat')).toBe(
       'https://avatars.githubusercontent.com/octocat'
     );
-  });
-
-  it('createGitHubSlugger returns a slugger', () => {
-    const slugger = createGitHubSlugger();
-    expect(slugger).toBeDefined();
   });
 
   it('getGitHubBlobUrl returns the correct URL', () => {
@@ -29,5 +24,10 @@ describe('GitHub utils', () => {
     const expected =
       'https://api.github.com/repos/nodejs/node/contents/doc/api?ref=assert';
     expect(result).toBe(expected);
+  });
+
+  it('createGitHubSlugger returns a function', () => {
+    const slugger = createGitHubSlugger();
+    expect(typeof slugger).toBe('function');
   });
 });
