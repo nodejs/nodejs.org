@@ -99,6 +99,14 @@ const resolveDownloads = version => {
     );
   }
 
+  if (semVer.satisfies(version, '>= 23.0.0')) {
+    downloads = downloads.filter(
+      ver =>
+        ver.title !== 'Windows 32-bit Installer' &&
+        ver.title !== 'Windows 32-bit Binary'
+    );
+  }
+
   return downloads;
 };
 

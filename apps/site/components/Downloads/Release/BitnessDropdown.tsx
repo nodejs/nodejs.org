@@ -39,6 +39,10 @@ const BitnessDropdown: FC = () => {
       disabledItems.push('arm64');
     }
 
+    if (os === 'WIN' && semVer.satisfies(release.version, '>= 23.0.0')) {
+      disabledItems.push('86');
+    }
+
     if (os === 'LINUX' && semVer.satisfies(release.version, '< 4.0.0')) {
       disabledItems.push('arm64', 'armv7l');
     }
