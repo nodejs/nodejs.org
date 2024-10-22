@@ -1,0 +1,26 @@
+# Stage 1: Build and install dependencies
+FROM node:18-alpine AS builder
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Copy the rest of your application code
+COPY . .
+
+# Build your application if necessary (uncomment the next line if you have a build script)
+# RUN npm run build
+
+# Stage 2: Setup the production environment
+FROM node:18-alpine
+WORKDIR /app
+
+# Only copy necessary files from the builder stage
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app .
+
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Define the command to run your app
+CMD ["node", "server.js"]
+
