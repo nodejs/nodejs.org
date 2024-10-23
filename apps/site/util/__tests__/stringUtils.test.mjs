@@ -2,6 +2,7 @@ import {
   getAcronymFromString,
   parseRichTextIntoPlainText,
   dashToCamelCase,
+  twoDateToUIID,
 } from '@/util/stringUtils';
 
 describe('String utils', () => {
@@ -71,5 +72,11 @@ describe('String utils', () => {
 
   it('dashToCamelCase returns correct camelCase with numbers', () => {
     expect(dashToCamelCase('foo-123-bar')).toBe('foo123Bar');
+  });
+
+  it('twoDateToUIID returns the correct UUID', () => {
+    const date = '2024-01-01T00:00:00.000Z';
+    const date2 = '2024-01-01T00:00:00.000Z';
+    expect(twoDateToUIID(date, date2)).toBe('2024-01-01-2024-01-01');
   });
 });
