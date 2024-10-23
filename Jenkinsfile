@@ -2,16 +2,17 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_CREDENTIALS = 'docker-hub-credentials' // استخدم الـ ID الخاص بالـ Docker Hub Credentials
-        DOCKER_IMAGE = 'bedomm180/ci-app' // اسم الصورة التي تريد دفعها إلى Docker Hub
+        DOCKER_HUB_CREDENTIALS = 'docker-hub-credentials' // ID الخاص بـ Docker Hub Credentials
+        DOCKER_IMAGE = 'bedomm180/ci-app' // اسم الصورة على Docker Hub
+        GITHUB_CREDENTIALS = 'github-credentials2' // ID الخاص بـ GitHub Credentials
         GITHUB_REPO = 'https://github.com/abdelrahmanonline4/nodejs.org' // رابط الـ GitHub Repo
     }
 
     stages {
         stage('Checkout or Fetch Code') {
             steps {
-                // جلب الكود من GitHub
-                git url: "${GITHUB_REPO}"
+                // جلب الكود من GitHub باستخدام الـ credentials
+                git credentialsId: "${GITHUB_CREDENTIALS}", url: "${GITHUB_REPO}"
             }
         }
 
@@ -27,7 +28,7 @@ pipeline {
         stage('Run Unit Testing') {
             steps {
                 script {
-                    // تشغيل اختبارات الوحدة للتأكد من عمل المشروع بشكل صحيح
+                    // تشغيل اختبارات الوحدة
                     sh 'npm test'
                 }
             }
@@ -63,4 +64,3 @@ pipeline {
         }
     }
 }
-
