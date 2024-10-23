@@ -9,7 +9,7 @@ Node.js'e katkıda bulunmaya ilginiz için teşekkür ederiz! Katkıda bulunabil
 
 ## Genel Yardım Talebi
 
-`nodejs/node` deposundaki etkinlik düzeyi çok yüksek olduğundan, Node.js kullanımıyla ilgili genel yardım soruları veya talepleri [Node.js yardım deposu] (https://github.com/nodejs/help/issues) adresine yönlendirilmelidir.
+`nodejs/node` deposundaki etkinlik düzeyi çok yüksek olduğundan, Node.js kullanımıyla ilgili genel yardım soruları veya talepleri [Node.js yardım deposu](https://github.com/nodejs/help/issues) adresine yönlendirilmelidir.
 
 ## Sorun Bildirme
 
@@ -28,9 +28,9 @@ Node.js projesi şu anda birkaç ayrı GitHub deposu üzerinden yönetilmektedir
 
 ## Kod katkıları
 
-Node.js'e hata düzeltmek veya yeni bir özellik eklemek istiyorsanız, lütfen [Node.js Katkı Yönergelerini] (https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests) dikkate aldığınızdan emin olun. Projeye yapılan tüm katkılar için mevcut iş birlikçiler tarafından yapılan inceleme süreci de burada açıklanmaktadır.
+Node.js'e hata düzeltmek veya yeni bir özellik eklemek istiyorsanız, lütfen [Node.js Katkı Yönergelerini](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests) dikkate aldığınızdan emin olun. Projeye yapılan tüm katkılar için mevcut iş birlikçiler tarafından yapılan inceleme süreci de burada açıklanmaktadır.
 
-Nasıl başlayacağınızı merak ediyorsanız, ilk katkınızda size rehberlik edebilecek [Node Todo] (https://www.nodetodo.org/) adresini kontrol edebilirsiniz.
+Nasıl başlayacağınızı merak ediyorsanız, ilk katkınızda size rehberlik edebilecek [Node Todo](https://www.nodetodo.org/) adresini kontrol edebilirsiniz.
 
 ## İş birlikçi olmak
 
