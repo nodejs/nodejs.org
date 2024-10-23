@@ -18,7 +18,7 @@
     sm:grid
     sm:grid-cols-[theme(spacing.52)_1fr]
     sm:grid-rows-[1fr]
-    sm:overflow-hidden
+    sm:overflow-visible
     md:grid-cols-[theme(spacing.64)_1fr]
     lg:grid-cols-[theme(spacing.52)_1fr_theme(spacing.52)]
     xl:grid-cols-[theme(spacing.80)_1fr_theme(spacing.80)];
