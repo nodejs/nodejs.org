@@ -190,11 +190,6 @@
         "label": "Toggle Dark Mode"
       }
     },
-    "mdx": {
-      "upcomingEvents": {
-        "defaultTitle": "No Upcoming Event"
-      }
-    },
     "metabar": {
       "lastUpdated": "Last Updated",
       "readingTime": "Reading Time",
