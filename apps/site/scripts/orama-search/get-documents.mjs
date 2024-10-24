@@ -46,6 +46,21 @@ const splitIntoSections = markdownContent => {
   }));
 };
 
+const uppercaseFirst = string =>
+  string.charAt(0).toUpperCase() + string.slice(1);
+
+const getFormattedPath = ({ path, title }) =>
+  path
+    .replace(/#.+$/, '')
+    .split('/')
+    .slice(1)
+    .map(element => element.replaceAll('-', ' '))
+    .map(element => uppercaseFirst(element))
+    .filter(Boolean)
+    .join(' > ') +
+  ' — ' +
+  title;
+
 const getPageTitle = data =>
   data.title ||
   data.pathname
@@ -63,11 +78,18 @@ export const siteContent = [...pageData, ...apiData]
 
     const siteSection = pathname.split('/').shift();
     const subSections = splitIntoSections(markdownContent);
-
     return subSections.map(section => {
+      const path = `${pathname}#${slug(section.pageSectionTitle)}`;
+
       return {
-        path: pathname + '#' + slug(section.pageSectionTitle),
-        siteSection,
+        path,
+        formattedPath: getFormattedPath({
+          path,
+          title: section.pageSectionTitle,
+        }),
+        siteSection: uppercaseFirst(siteSection),
+        pageLink:
+          siteSection.toLowerCase() === 'docs' ? `/${path}` : `/en/${path}`,
         pageTitle: title,
         ...section,
       };

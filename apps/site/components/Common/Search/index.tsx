@@ -1,61 +1,64 @@
 'use client';
 
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
-import classNames from 'classnames';
+import { OramaSearchBox, OramaSearchButton } from '@orama/react-components';
 import { useTranslations } from 'next-intl';
-import { useState, type FC } from 'react';
+import { useTheme } from 'next-themes';
+import { type FC } from 'react';
 
-import { WithSearchBox } from '@/components/Common/Search/States/WithSearchBox';
-import { useDetectOS } from '@/hooks';
-import { useKeyboardCommands } from '@/hooks/react-client';
+import {
+  ORAMA_CLOUD_ENDPOINT,
+  ORAMA_CLOUD_API_KEY,
+  DEFAULT_ORAMA_QUERY_PARAMS,
+  DEFAULT_ORAMA_SUGGESTIONS,
+  BASE_URL,
+} from '@/next.constants.mjs';
 
-import styles from './index.module.css';
+import { themeConfig } from './utils';
 
-export const SearchButton: FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const SearchButton: FC = () => {
+  const { resolvedTheme } = useTheme();
   const t = useTranslations();
-  const openSearchBox = () => setIsOpen(true);
-  const closeSearchBox = () => setIsOpen(false);
+  const colorScheme = resolvedTheme as 'light' | 'dark';
 
-  useKeyboardCommands(cmd => {
-    switch (cmd) {
-      case 'cmd-k':
-        openSearchBox();
-        break;
-      case 'escape':
-        closeSearchBox();
-        break;
-      default:
-    }
-  });
-
-  const { os } = useDetectOS();
-
-  const osCommandKey = os === 'MAC' ? '⌘' : 'Ctrl';
-  const isOSLoading = os === 'LOADING';
+  const sourceMap = {
+    title: 'pageSectionTitle',
+    description: 'formattedPath',
+    path: 'pageLink',
+  };
 
   return (
     <>
-      <button
-        type="button"
-        onClick={openSearchBox}
-        className={styles.searchButton}
+      <OramaSearchButton
+        style={{ flexGrow: 1 }}
+        colorScheme={colorScheme}
+        themeConfig={themeConfig}
         aria-label={t('components.search.searchBox.placeholder')}
       >
-        <MagnifyingGlassIcon className={styles.magnifyingGlassIcon} />
-
         {t('components.search.searchBox.placeholder')}
-        <kbd
-          title={`${osCommandKey} K`}
-          className={classNames(styles.shortcutIndicator, {
-            'opacity-0': isOSLoading,
-          })}
-        >
-          <abbr>{osCommandKey} K</abbr>
-        </kbd>
-      </button>
+      </OramaSearchButton>
 
-      {isOpen ? <WithSearchBox onClose={closeSearchBox} /> : null}
+      <OramaSearchBox
+        index={{ api_key: ORAMA_CLOUD_API_KEY, endpoint: ORAMA_CLOUD_ENDPOINT }}
+        colorScheme={colorScheme}
+        themeConfig={themeConfig}
+        sourceBaseUrl={BASE_URL}
+        sourcesMap={sourceMap}
+        resultMap={{
+          ...sourceMap,
+          section: 'siteSection',
+        }}
+        facetProperty="siteSection"
+        linksTarget="_self"
+        highlight={{
+          caseSensitive: false,
+          HTMLTag: 'b',
+          CSSClass: 'font-bold',
+        }}
+        searchParams={DEFAULT_ORAMA_QUERY_PARAMS}
+        suggestions={DEFAULT_ORAMA_SUGGESTIONS}
+      />
     </>
   );
 };
+
+export default SearchButton;
