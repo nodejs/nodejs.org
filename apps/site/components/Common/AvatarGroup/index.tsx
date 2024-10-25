@@ -1,25 +1,29 @@
 'use client';
 
 import classNames from 'classnames';
-import type { ComponentProps, FC } from 'react';
-import { useState, useMemo } from 'react';
+import type { FC } from 'react';
+import { useState, useMemo, Fragment } from 'react';
 
+import type { AvatarProps } from '@/components/Common/AvatarGroup/Avatar';
 import Avatar from '@/components/Common/AvatarGroup/Avatar';
 import avatarstyles from '@/components/Common/AvatarGroup/Avatar/index.module.css';
-import { getAcronymFromString } from '@/util/stringUtils';
+import AvatarOverlay from '@/components/Common/AvatarGroup/Overlay';
+import Tooltip from '@/components/Common/Tooltip';
 
 import styles from './index.module.css';
 
-type AvatarGroupProps = {
-  avatars: Array<Omit<ComponentProps<typeof Avatar>, 'fallback'>>;
+export type AvatarGroupProps = {
+  avatars: Array<AvatarProps & { website?: string }>;
   limit?: number;
   isExpandable?: boolean;
+  size?: AvatarProps['size'];
 };
 
 const AvatarGroup: FC<AvatarGroupProps> = ({
   avatars,
   limit = 10,
   isExpandable = true,
+  size = 'small',
 }) => {
   const [showMore, setShowMore] = useState(false);
 
@@ -30,19 +34,24 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
 
   return (
     <div className={styles.avatarGroup}>
-      {renderAvatars.map((avatar, index) => (
-        <Avatar
-          src={avatar.src}
-          alt={avatar.alt}
-          fallback={getAcronymFromString(avatar.alt)}
-          key={index}
-        />
+      {renderAvatars.map(({ website, ...avatar }) => (
+        <Fragment key={avatar.nickname}>
+          {website ? (
+            <Tooltip
+              content={<AvatarOverlay {...avatar} website={website} />}
+              asChild
+            >
+              <Avatar {...avatar} size={size} className="cursor-pointer" />
+            </Tooltip>
+          ) : (
+            <Avatar {...avatar} size={size} />
+          )}
+        </Fragment>
       ))}
-
       {avatars.length > limit && (
         <span
           onClick={isExpandable ? () => setShowMore(prev => !prev) : undefined}
-          className={classNames(avatarstyles.avatarRoot, 'cursor-pointer')}
+          className={classNames(avatarstyles.container, 'cursor-pointer')}
         >
           <span className={avatarstyles.avatar}>
             {`${showMore ? '-' : '+'}${avatars.length - limit}`}

@@ -1,27 +1,40 @@
 import * as RadixAvatar from '@radix-ui/react-avatar';
-import type { FC } from 'react';
+import classNames from 'classnames';
+import type { ComponentPropsWithoutRef, ElementRef } from 'react';
+import { forwardRef } from 'react';
 
 import styles from './index.module.css';
 
 export type AvatarProps = {
-  src: string;
-  alt: string;
-  fallback: string;
+  image?: string;
+  name?: string;
+  nickname: string;
+  fallback?: string;
+  size?: 'small' | 'medium';
 };
 
-const Avatar: FC<AvatarProps> = ({ src, alt, fallback }) => (
-  <RadixAvatar.Root className={styles.avatarRoot}>
+const Avatar = forwardRef<
+  ElementRef<typeof RadixAvatar.Root>,
+  ComponentPropsWithoutRef<typeof RadixAvatar.Root> & AvatarProps
+>(({ image, name, fallback, size = 'small', ...props }, ref) => (
+  <RadixAvatar.Root
+    {...props}
+    className={classNames(styles.container, styles[size], props.className)}
+    ref={ref}
+  >
     <RadixAvatar.Image
       loading="lazy"
-      src={src}
-      alt={alt}
-      title={alt}
+      src={image}
+      alt={name}
       className={styles.avatar}
     />
-    <RadixAvatar.Fallback delayMs={500} className={styles.avatar}>
+    <RadixAvatar.Fallback
+      delayMs={500}
+      className={`${styles.avatar} ${styles[size]}`}
+    >
       {fallback}
     </RadixAvatar.Fallback>
   </RadixAvatar.Root>
-);
+));
 
 export default Avatar;

@@ -1,17 +1,15 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import AvatarGroup from '@/components/Common/AvatarGroup';
 import Preview from '@/components/Common/Preview';
+import WithAvatarGroup from '@/components/withAvatarGroup';
 import WithBlogCrossLinks from '@/components/withBlogCrossLinks';
 import WithFooter from '@/components/withFooter';
 import WithMetaBar from '@/components/withMetaBar';
 import WithNavBar from '@/components/withNavBar';
 import { useClientContext } from '@/hooks/react-server';
 import ContentLayout from '@/layouts/Content';
-import {
-  mapAuthorToCardAuthors,
-  mapBlogCategoryToPreviewType,
-} from '@/util/blogUtils';
+import { mapAuthorToCardAuthors } from '@/util/authorUtils';
+import { mapBlogCategoryToPreviewType } from '@/util/blogUtils';
 
 import styles from './layouts.module.css';
 
@@ -32,14 +30,9 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
             <h1>{frontmatter.title}</h1>
 
             <section>
-              <AvatarGroup
-                avatars={authors.map(author => ({
-                  alt: author.fullName,
-                  src: author.src,
-                }))}
-              />
+              <WithAvatarGroup names={authors} />
 
-              <p>{authors.map(author => author.fullName).join(', ')}</p>
+              <p>{authors.join(', ')}</p>
             </section>
 
             <Preview title={frontmatter.title!} type={type} />

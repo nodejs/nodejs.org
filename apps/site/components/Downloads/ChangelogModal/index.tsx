@@ -3,17 +3,17 @@
 import { ArrowUpRightIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import * as Dialog from '@radix-ui/react-dialog';
 import { useTranslations } from 'next-intl';
-import type { FC, PropsWithChildren, ComponentProps } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
-import AvatarGroup from '@/components/Common/AvatarGroup';
 import Link from '@/components/Link';
+import WithAvatarGroup from '@/components/withAvatarGroup';
 
 import styles from './index.module.css';
 
 type ChangelogModalProps = PropsWithChildren<{
   heading: string;
   subheading: string;
-  avatars: ComponentProps<typeof AvatarGroup>['avatars'];
+  avatars: Array<string>;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
 }>;
@@ -44,7 +44,7 @@ const ChangelogModal: FC<ChangelogModalProps> = ({
             </Dialog.Description>
 
             <div className={styles.authors}>
-              <AvatarGroup avatars={avatars} isExpandable={false} />
+              <WithAvatarGroup usernames={avatars} isExpandable={false} />
 
               <Link href="/about/get-involved">
                 {t('components.downloads.changelogModal.startContributing')}

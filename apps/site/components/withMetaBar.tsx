@@ -2,14 +2,14 @@
 import { useFormatter } from 'next-intl';
 import type { FC } from 'react';
 
-import AvatarGroup from '@/components/Common/AvatarGroup';
 import MetaBar from '@/components/Containers/MetaBar';
 import GitHub from '@/components/Icons/Social/GitHub';
 import Link from '@/components/Link';
+import WithAvatarGroup from '@/components/withAvatarGroup';
 import { useClientContext } from '@/hooks/react-client';
 import useMediaQuery from '@/hooks/react-client/useMediaQuery';
 import { DEFAULT_DATE_FORMAT } from '@/next.calendar.constants.mjs';
-import { getGitHubBlobUrl, getGitHubAvatarUrl } from '@/util/gitHubUtils';
+import { getGitHubBlobUrl } from '@/util/gitHubUtils';
 
 const WithMetaBar: FC = () => {
   const { headings, readingTime, frontmatter, filename } = useClientContext();
@@ -20,10 +20,6 @@ const WithMetaBar: FC = () => {
 
   const usernames =
     frontmatter.authors?.split(',').map(author => author.trim()) ?? [];
-  const avatars = usernames.map(username => ({
-    src: getGitHubAvatarUrl(username),
-    alt: username,
-  }));
 
   // Doing that because on mobile list on top of page and on desktop list on the right side
   const shortAvatarList = useMediaQuery(
@@ -35,10 +31,15 @@ const WithMetaBar: FC = () => {
       items={{
         'components.metabar.lastUpdated': lastUpdated,
         'components.metabar.readingTime': readingTime.text,
-        ...(avatars.length && {
-          [`components.metabar.${avatars.length > 1 ? 'authors' : 'author'}`]: (
-            <AvatarGroup avatars={avatars} limit={shortAvatarList ? 4 : 8} />
-          ),
+        ...(usernames.length && {
+          [`components.metabar.${usernames.length > 1 ? 'authors' : 'author'}`]:
+            (
+              <WithAvatarGroup
+                usernames={usernames}
+                fallbackImage={true}
+                limit={shortAvatarList ? 4 : 8}
+              />
+            ),
         }),
         'components.metabar.contribute': (
           <>

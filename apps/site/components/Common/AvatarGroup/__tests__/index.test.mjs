@@ -22,8 +22,8 @@ const names = [
 ];
 
 const avatars = names.map(name => ({
-  src: getGitHubAvatarUrl(name),
-  alt: name,
+  image: getGitHubAvatarUrl(name),
+  nickname: name,
 }));
 
 describe('AvatarGroup', () => {

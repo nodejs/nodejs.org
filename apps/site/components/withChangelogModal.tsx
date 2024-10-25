@@ -13,7 +13,6 @@ import {
   getNodeJsChangelogAuthor,
   getNodeJsChangelogSlug,
 } from '@/util/getNodeJsChangelog';
-import { getGitHubAvatarUrl } from '@/util/gitHubUtils';
 
 type WithChangelogModalProps = {
   release: NodeRelease;
@@ -81,7 +80,7 @@ const WithChangelogModal: FC<WithChangelogModalProps> = ({
 
   const modalProps = {
     heading: `Node.js ${versionWithPrefix}`,
-    avatars: [{ src: getGitHubAvatarUrl(author), alt: author }],
+    avatars: [author],
     subheading: slug,
     open: modalOpen && typeof ChangelogMDX !== 'undefined',
     onOpenChange: setModalOpen,

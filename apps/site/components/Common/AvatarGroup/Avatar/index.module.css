@@ -1,6 +1,9 @@
 .avatar {
   @apply flex
-    size-8
+    h-full
+    max-h-10
+    w-full
+    max-w-10
     items-center
     justify-center
     rounded-full
@@ -15,9 +18,21 @@
     dark:text-neutral-300;
 }
 
-.avatarRoot {
+.container {
   @apply -ml-2
     size-8
     flex-shrink-0
     first:ml-0;
+
+  &:hover {
+    @apply z-10;
+  }
+}
+
+.small {
+  @apply size-8;
+}
+
+.medium {
+  @apply size-10;
 }

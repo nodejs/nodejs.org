@@ -24,14 +24,25 @@ const names = [
 ];
 
 const unknownAvatar = {
-  src: 'https://avatars.githubusercontent.com/u/',
-  alt: 'unknown-avatar',
+  image: 'https://avatars.githubusercontent.com/u/',
+  nickname: 'unknown-avatar',
 };
 
 const defaultProps = {
   avatars: [
     unknownAvatar,
-    ...names.map(name => ({ src: getGitHubAvatarUrl(name), alt: name })),
+    ...names.map(name => ({ image: getGitHubAvatarUrl(name), nickname: name })),
+  ],
+};
+
+const avatarOverlay = {
+  avatars: [
+    {
+      image: getGitHubAvatarUrl('nodejs'),
+      name: 'Node.js',
+      nickname: 'nodejs',
+      website: 'https://nodejs.org',
+    },
   ],
 };
 
@@ -44,6 +55,10 @@ export const WithCustomLimit: Story = {
     ...defaultProps,
     limit: 5,
   },
+};
+
+export const WithOverlay: Story = {
+  args: avatarOverlay,
 };
 
 export const InSmallContainer: Story = {
