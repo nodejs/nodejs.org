@@ -1,6 +1,5 @@
 .content {
-  @apply z-50
-    rounded-md
+  @apply rounded-md
     border
     bg-white
     text-sm
