@@ -51,9 +51,9 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
       {avatars.length > limit && (
         <span
           onClick={isExpandable ? () => setShowMore(prev => !prev) : undefined}
-          className={classNames(avatarstyles.container, 'cursor-pointer')}
+          className={classNames(avatarstyles.avatar, 'cursor-pointer')}
         >
-          <span className={avatarstyles.avatar}>
+          <span className={avatarstyles.item}>
             {`${showMore ? '-' : '+'}${avatars.length - limit}`}
           </span>
         </span>

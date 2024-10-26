@@ -1,4 +1,4 @@
-.avatar {
+.item {
   @apply flex
     h-full
     max-h-10
@@ -18,7 +18,7 @@
     dark:text-neutral-300;
 }
 
-.container {
+.avatar {
   @apply -ml-2
     size-8
     flex-shrink-0

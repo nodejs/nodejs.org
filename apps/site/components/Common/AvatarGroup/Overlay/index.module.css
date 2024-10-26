@@ -1,4 +1,4 @@
-.container {
+.overlay {
   @apply flex
     min-w-56
     gap-2

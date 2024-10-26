@@ -17,7 +17,7 @@ const AvatarOverlay: FC<AvatarOverlayProps> = ({
   fallback,
   website,
 }) => (
-  <Link className={styles.container} href={website} target="_blank">
+  <Link className={styles.overlay} href={website} target="_blank">
     <Avatar
       image={image}
       name={name}

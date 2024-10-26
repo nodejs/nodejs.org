@@ -19,18 +19,18 @@ const Avatar = forwardRef<
 >(({ image, name, fallback, size = 'small', ...props }, ref) => (
   <RadixAvatar.Root
     {...props}
-    className={classNames(styles.container, styles[size], props.className)}
+    className={classNames(styles.avatar, styles[size], props.className)}
     ref={ref}
   >
     <RadixAvatar.Image
       loading="lazy"
       src={image}
       alt={name}
-      className={styles.avatar}
+      className={styles.item}
     />
     <RadixAvatar.Fallback
       delayMs={500}
-      className={`${styles.avatar} ${styles[size]}`}
+      className={classNames(styles.item, styles[size])}
     >
       {fallback}
     </RadixAvatar.Fallback>
