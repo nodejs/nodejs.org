@@ -1,5 +1,3 @@
-'use strict';
-
 import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { join, normalize, sep } from 'node:path';
@@ -40,7 +38,7 @@ const createCachedMarkdownCache = () => {
   if (IS_DEVELOPMENT) {
     return {
       has: () => false,
-      set: () => { },
+      set: () => {},
       get: () => null,
     };
   }
@@ -79,7 +77,9 @@ const getDynamicRouter = async () => {
   /**
    * This method returns a list of all routes that exist for a given locale
    */
-  const getRoutesByLanguage = async (locale = defaultLocale.code): Promise<Array<string>> => {
+  const getRoutesByLanguage = async (
+    locale = defaultLocale.code
+  ): Promise<Array<string>> => {
     const shouldIgnoreStaticRoute = (pathname: string) =>
       IGNORED_ROUTES.every(e => !e({ pathname, locale }));
 
@@ -93,7 +93,10 @@ const getDynamicRouter = async () => {
    * or the English version of the Markdown file if no localized version exists
    * and then returns the contents of the file and the name of the file (not the path)
    */
-  const _getMarkdownFile = async (locale = '', pathname = ''): Promise<{ source: string; filename: string }> => {
+  const _getMarkdownFile = async (
+    locale = '',
+    pathname = ''
+  ): Promise<{ source: string; filename: string }> => {
     const normalizedPathname = normalize(pathname).replace('.', '');
 
     // This verifies if the given pathname actually exists on our Map
@@ -176,7 +179,10 @@ const getDynamicRouter = async () => {
    * This method generates the Next.js App Router Metadata
    * that can be used for each page to provide metadata
    */
-  const _getPageMetadata = async (locale = defaultLocale.code, path = ''): Promise<Metadata> => {
+  const _getPageMetadata = async (
+    locale = defaultLocale.code,
+    path = ''
+  ): Promise<Metadata> => {
     const pageMetadata = PAGE_METADATA;
 
     const { source = '' } = await getMarkdownFile(locale, path);
@@ -187,46 +193,61 @@ const getDynamicRouter = async () => {
       ? `${siteConfig.title} — ${data.title}`
       : siteConfig.title;
 
-    pageMetadata.twitter.title = pageMetadata.title;
+    if (pageMetadata.twitter) {
+      pageMetadata.twitter.title = pageMetadata.title;
+    }
 
     const getUrlForPathname = (l: string, p: string) =>
       `${baseUrlAndPath}/${l}${p ? `/${p}` : ''}`;
 
-    pageMetadata.alternates.canonical = getUrlForPathname(locale, path);
+    if (pageMetadata.alternates) {
+      pageMetadata.alternates.canonical = getUrlForPathname(locale, path);
 
-    pageMetadata.alternates.languages['x-default'] = getUrlForPathname(
-      defaultLocale.code,
-      path
-    );
+      if (pageMetadata.alternates.languages) {
+        pageMetadata.alternates.languages['x-default'] = getUrlForPathname(
+          defaultLocale.code,
+          path
+        );
+      }
 
-    const blogMatch = path.match(/^blog\/(release|vulnerability)(\/|$)/);
-    if (blogMatch) {
-      const category = blogMatch[1];
-      const currentFile = siteConfig.rssFeeds.find(
-        item => item.category === category
-      )?.file;
-      // Use getUrlForPathname to dynamically construct the XML path for blog/release and blog/vulnerability
-      pageMetadata.alternates.types['application/rss+xml'] = getUrlForPathname(
-        locale,
-        `feed/${currentFile}`
-      );
-    } else {
-      // Use getUrlForPathname for the default blog XML feed path
-      pageMetadata.alternates.types['application/rss+xml'] = getUrlForPathname(
-        locale,
-        'feed/blog.xml'
-      );
+      const blogMatch = path.match(/^blog\/(release|vulnerability)(\/|$)/);
+      if (blogMatch) {
+        const category = blogMatch[1];
+        const currentFile = siteConfig.rssFeeds.find(
+          item => item.category === category
+        )?.file;
+        // Use getUrlForPathname to dynamically construct the XML path for blog/release and blog/vulnerability
+        if (pageMetadata.alternates.types) {
+          pageMetadata.alternates.types['application/rss+xml'] =
+            getUrlForPathname(locale, `feed/${currentFile}`);
+        }
+      } else {
+        // Use getUrlForPathname for the default blog XML feed path
+        if (pageMetadata.alternates.types) {
+          pageMetadata.alternates.types['application/rss+xml'] =
+            getUrlForPathname(locale, 'feed/blog.xml');
+        }
+      }
+
+      availableLocaleCodes.forEach(currentLocale => {
+        // Ensure currentLocale is a valid key for languages
+        if (
+          pageMetadata.alternates?.languages &&
+          currentLocale in pageMetadata.alternates.languages
+        ) {
+          pageMetadata.alternates.languages[
+            currentLocale as keyof typeof pageMetadata.alternates.languages
+          ] = getUrlForPathname(currentLocale, path);
+        }
+      });
     }
 
-    availableLocaleCodes.forEach(currentLocale => {
-      pageMetadata.alternates.languages[currentLocale] = getUrlForPathname(
-        currentLocale,
-        path
+    if (pageMetadata.openGraph) {
+      pageMetadata.openGraph.images = availableLocaleCodes.map(
+        currentLocale =>
+          `${currentLocale}/next-data/og?title=${pageMetadata.title}&type=${data.category ?? 'announcement'}`
       );
-      pageMetadata.openGraph.images = [
-        `${currentLocale}/next-data/og?title=${pageMetadata.title}&type=${data.category ?? 'announcement'}`,
-      ];
-    });
+    }
 
     return pageMetadata;
   };
