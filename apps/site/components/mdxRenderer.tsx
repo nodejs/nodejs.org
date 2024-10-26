@@ -1,8 +1,8 @@
 import type { MDXComponents, MDXContent } from 'mdx/types';
 import type { FC } from 'react';
 
-import { htmlComponents, clientMdxComponents } from '@/next.mdx.use.client.mjs';
-import { mdxComponents } from '@/next.mdx.use.mjs';
+import { mdxComponents } from '@/next.mdx.use';
+import { htmlComponents, clientMdxComponents } from '@/next.mdx.use.client';
 
 // Combine all MDX Components to be used
 const combinedComponents: MDXComponents = {

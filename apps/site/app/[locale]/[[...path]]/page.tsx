@@ -15,6 +15,7 @@ import {
   defaultLocale,
 } from '@/next.locales.mjs';
 import { MatterProvider } from '@/providers/matterProvider';
+import type { Layouts } from '@/types';
 
 type DynamicStaticPaths = { path: Array<string>; locale: string };
 type DynamicParams = { params: DynamicStaticPaths };
@@ -155,7 +156,7 @@ const getPage: FC<DynamicParams> = async ({ params }) => {
     // within a server-side context
     return (
       <MatterProvider {...sharedContext}>
-        <WithLayout layout={frontmatter.layout}>
+        <WithLayout layout={frontmatter.layout as Layouts}>
           <MDXRenderer Component={MDXContent} />
         </WithLayout>
       </MatterProvider>

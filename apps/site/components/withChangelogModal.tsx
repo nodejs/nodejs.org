@@ -6,8 +6,8 @@ import { VFile } from 'vfile';
 
 import ChangelogModal from '@/components/Downloads/ChangelogModal';
 import changelogData from '@/next-data/changelogData';
-import { compileMDX } from '@/next.mdx.compiler.mjs';
-import { clientMdxComponents, htmlComponents } from '@/next.mdx.use.client.mjs';
+import { compileMDX } from '@/next.mdx.compiler';
+import { clientMdxComponents, htmlComponents } from '@/next.mdx.use.client';
 import type { NodeRelease } from '@/types';
 import {
   getNodeJsChangelogAuthor,

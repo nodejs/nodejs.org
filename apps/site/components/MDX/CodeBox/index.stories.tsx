@@ -2,7 +2,7 @@ import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import { VFile } from 'vfile';
 
 import { MDXRenderer } from '@/components/mdxRenderer';
-import { compileMDX } from '@/next.mdx.compiler.mjs';
+import { compileMDX } from '@/next.mdx.compiler';
 
 type Props = { children: string };
 

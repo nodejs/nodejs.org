@@ -16,7 +16,7 @@ import {
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { siteConfig } from './next.json.mjs';
 import { availableLocaleCodes, defaultLocale } from './next.locales.mjs';
-import { compileMDX } from './next.mdx.compiler.mjs';
+import { compileMDX } from './next.mdx.compiler';
 
 // This is the combination of the Application Base URL and Base PATH
 const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
@@ -171,9 +171,9 @@ const getDynamicRouter = async () => {
   };
 
   // Creates a Cached Version of the MDX Compiler
-  const getMDXContent = cache(async (source: string, filename: string) => {
+  const getMDXContent = async (source: string, filename: string) => {
     return await _getMDXContent(source, filename);
-  });
+  };
 
   /**
    * This method generates the Next.js App Router Metadata
