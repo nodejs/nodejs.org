@@ -1,4 +1,4 @@
-'use strict';
+import type { Metadata, Viewport } from 'next';
 
 import {
   provideBlogCategories,
@@ -7,14 +7,18 @@ import {
 import { BASE_PATH, BASE_URL } from './next.constants.mjs';
 import { siteConfig } from './next.json.mjs';
 import { defaultLocale } from './next.locales.mjs';
+import type { Layouts } from './types';
+
+type RouteSegment = {
+  locale: string;
+  pathname: string;
+};
 
 /**
  * This is a list of all static routes or pages from the Website that we do not
  * want to allow to be statically built on our Static Export Build.
- *
- * @type {Array<((route: import('./types').RouteSegment) => boolean)>} A list of Ignored Routes by Regular Expressions
  */
-export const IGNORED_ROUTES = [
+export const IGNORED_ROUTES: Array<(route: RouteSegment) => boolean> = [
   // This is used to ignore all blog routes except for the English language
   ({ locale, pathname }) =>
     locale !== defaultLocale.code && /^blog/.test(pathname),
@@ -24,12 +28,10 @@ export const IGNORED_ROUTES = [
  * This constant is used to create static routes on-the-fly that do not have a file-system
  * counterpart route. This is useful for providing routes with matching Layout Names
  * but that do not have Markdown content and a matching file for the route
- *
- * @type {Map<string, import('./types').Layouts>} A Map of pathname and Layout Name
  */
-export const DYNAMIC_ROUTES = new Map([
+export const DYNAMIC_ROUTES = new Map<string, Layouts>([
   // Provides Routes for all Blog Categories
-  ...provideBlogCategories().map(c => [`blog/${c}`, 'blog-category']),
+  ...provideBlogCategories().map(c => [`blog/${c}`, 'blog-category'] as [string, Layouts]),
   // Provides Routes for all Blog Categories w/ Pagination
   ...provideBlogCategories()
     // retrieves the amount of pages for each blog category
@@ -38,15 +40,14 @@ export const DYNAMIC_ROUTES = new Map([
     // each page for a category (i.e. blog/all/page/1)
     .map(([c, t]) => [...Array(t).keys()].map(p => `blog/${c}/page/${p + 1}`))
     // creates a tuple of each pathname and layout for the route
-    .map(paths => paths.map(path => [path, 'blog-category']))
+    .map(paths => paths.map(path => [path, 'blog-category'] as [string, Layouts]))
     // flattens the array since we have a .map inside another .map
-    .flat(),
+    .flat()
 ]);
+
 
 /**
  * This is the default Next.js Page Metadata for all pages
- *
- * @type {import('next').Metadata}
  */
 export const PAGE_METADATA = {
   metadataBase: new URL(`${BASE_URL}${BASE_PATH}`),
@@ -55,7 +56,6 @@ export const PAGE_METADATA = {
   robots: { index: true, follow: true },
   twitter: {
     card: siteConfig.twitter.card,
-    title: siteConfig.twitter.title,
     creator: siteConfig.twitter.username,
     images: {
       url: siteConfig.twitter.img,
@@ -71,14 +71,12 @@ export const PAGE_METADATA = {
   },
   icons: { icon: siteConfig.favicon },
   openGraph: { images: siteConfig.twitter.img },
-};
+} as Metadata;
 
 /**
  * This is the default Next.js Viewport Metadata for all pages
- *
- * @return {import('next').Viewport}
  */
-export const PAGE_VIEWPORT = {
+export const PAGE_VIEWPORT: Viewport = {
   themeColor: [
     {
       color: siteConfig.lightAccentColor,

@@ -1,4 +1,4 @@
-'use strict';
+import type { DateTimeFormatOptions } from 'next-intl';
 
 /**
  * This is used for Node.js Calendar and any other Google Calendar that we might want to load within the Website
@@ -28,10 +28,8 @@ export const CALENDAR_NODEJS_ID =
 
 /**
  * Default Date format for Calendars and Time Components
- *
- * @type {import('next-intl').DateTimeFormatOptions}
  */
-export const DEFAULT_DATE_FORMAT = {
+export const DEFAULT_DATE_FORMAT: DateTimeFormatOptions = {
   year: 'numeric',
   month: 'short',
   day: '2-digit',

@@ -2,7 +2,7 @@ import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import type { ComponentProps, FC, PropsWithChildren } from 'react';
 
 import Tabs from '@/components/Common/Tabs';
-import { Link } from '@/navigation.mjs';
+import { Link } from '@/navigation';
 
 import styles from './index.module.css';
 

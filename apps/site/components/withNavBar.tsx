@@ -7,7 +7,7 @@ import type { FC } from 'react';
 import NavBar from '@/components/Containers/NavBar';
 import WithBanner from '@/components/withBanner';
 import { useClientContext, useSiteNavigation } from '@/hooks';
-import { useRouter } from '@/navigation.mjs';
+import { useRouter } from '@/navigation';
 import { availableLocales } from '@/next.locales.mjs';
 
 const WithNavBar: FC = () => {

@@ -3,7 +3,7 @@
 import type { ComponentProps, FC } from 'react';
 
 import Select from '@/components/Common/Select';
-import { useRouter } from '@/navigation.mjs';
+import { useRouter } from '@/navigation';
 
 type WithSidebarSelectProps = Pick<
   ComponentProps<typeof Select>,

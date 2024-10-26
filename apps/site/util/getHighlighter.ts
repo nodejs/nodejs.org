@@ -2,7 +2,7 @@ import { getSingletonHighlighterCore } from '@shikijs/core';
 import type { HighlighterCore } from '@shikijs/core';
 import { createJavaScriptRegexEngine } from '@shikijs/engine-javascript';
 
-import { LANGUAGES, DEFAULT_THEME } from '@/shiki.config.mjs';
+import { LANGUAGES, DEFAULT_THEME } from '@/shiki.config';
 
 // This creates a memoized minimal Shikiji Syntax Highlighter
 export const shikiPromise = getSingletonHighlighterCore({

@@ -1,5 +1,3 @@
-'use strict';
-
 import { createSharedPathnamesNavigation } from 'next-intl/navigation';
 
 import { availableLocaleCodes } from './next.locales.mjs';

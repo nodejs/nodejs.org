@@ -7,8 +7,8 @@ import { setClientContext } from '@/client-context';
 import { MDXRenderer } from '@/components/mdxRenderer';
 import WithLayout from '@/components/withLayout';
 import { ENABLE_STATIC_EXPORT, VERCEL_REVALIDATE } from '@/next.constants.mjs';
-import { PAGE_VIEWPORT, DYNAMIC_ROUTES } from '@/next.dynamic.constants.mjs';
-import { dynamicRouter } from '@/next.dynamic.mjs';
+import { dynamicRouter } from '@/next.dynamic';
+import { PAGE_VIEWPORT, DYNAMIC_ROUTES } from '@/next.dynamic.constants';
 import {
   allLocaleCodes,
   availableLocaleCodes,
@@ -37,7 +37,7 @@ export const generateMetadata = async ({ params }: DynamicParams) => {
 const mapRoutesForLocale = async (locale: string) => {
   const routesForLanguage = await dynamicRouter.getRoutesByLanguage(locale);
 
-  return routesForLanguage.map(pathname =>
+  return routesForLanguage.map((pathname: string) =>
     dynamicRouter.mapPathToRoute(locale, pathname)
   );
 };

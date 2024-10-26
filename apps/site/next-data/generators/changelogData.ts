@@ -1,18 +1,12 @@
-'use strict';
-
 import { fetchNodeJsChangelog } from '@/util/fetchNodeJsChangelog';
 
 /**
  * This method is used to generate the Node.js Changelog Data
  * for self-consumption during RSC and Static Builds
- *
- * @returns {Promise<string>}
  */
-const generateChangelogData = async version => {
+const generateChangelogData = async (version: string): Promise<string> => {
   // Get the raw changelog for the latest minor for a given major
-  const changelog = await fetchNodeJsChangelog(version);
-
-  return changelog;
+  return fetchNodeJsChangelog(version);
 };
 
 export default generateChangelogData;

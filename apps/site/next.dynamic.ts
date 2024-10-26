@@ -5,6 +5,7 @@ import { readFile } from 'node:fs/promises';
 import { join, normalize, sep } from 'node:path';
 
 import matter from 'gray-matter';
+import type { Metadata } from 'next';
 import { cache } from 'react';
 import { VFile } from 'vfile';
 
@@ -13,7 +14,7 @@ import {
   IGNORED_ROUTES,
   DYNAMIC_ROUTES,
   PAGE_METADATA,
-} from './next.dynamic.constants.mjs';
+} from './next.dynamic.constants';
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { siteConfig } from './next.json.mjs';
 import { availableLocaleCodes, defaultLocale } from './next.locales.mjs';
@@ -23,7 +24,7 @@ import { compileMDX } from './next.mdx.compiler.mjs';
 const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
 
 // This is a small utility that allows us to quickly separate locale from the remaining pathname
-const getPathname = (path = []) => path.join('/');
+const getPathname = (path: Array<string> = []) => path.join('/');
 
 // This maps a pathname into an actual route object that can be used
 // we use a platform-specific separator to split the pathname
@@ -39,7 +40,7 @@ const createCachedMarkdownCache = () => {
   if (IS_DEVELOPMENT) {
     return {
       has: () => false,
-      set: () => {},
+      set: () => { },
       get: () => null,
     };
   }
@@ -77,12 +78,9 @@ const getDynamicRouter = async () => {
 
   /**
    * This method returns a list of all routes that exist for a given locale
-   *
-   * @param {string} locale
-   * @returns {Promise<Array<string>>}
    */
-  const getRoutesByLanguage = async (locale = defaultLocale.code) => {
-    const shouldIgnoreStaticRoute = pathname =>
+  const getRoutesByLanguage = async (locale = defaultLocale.code): Promise<Array<string>> => {
+    const shouldIgnoreStaticRoute = (pathname: string) =>
       IGNORED_ROUTES.every(e => !e({ pathname, locale }));
 
     return [...pathnameToFilename.keys()]
@@ -94,12 +92,8 @@ const getDynamicRouter = async () => {
    * This method attempts to retrieve either a localized Markdown file
    * or the English version of the Markdown file if no localized version exists
    * and then returns the contents of the file and the name of the file (not the path)
-   *
-   * @param {string} locale
-   * @param {string} pathname
-   * @returns {Promise<{ source: string; filename: string }>}
    */
-  const _getMarkdownFile = async (locale = '', pathname = '') => {
+  const _getMarkdownFile = async (locale = '', pathname = ''): Promise<{ source: string; filename: string }> => {
     const normalizedPathname = normalize(pathname).replace('.', '');
 
     // This verifies if the given pathname actually exists on our Map
@@ -152,16 +146,13 @@ const getDynamicRouter = async () => {
   };
 
   // Creates a Cached Version of the Markdown File Resolver
-  const getMarkdownFile = cache(async (locale, pathname) => {
+  const getMarkdownFile = cache(async (locale: string, pathname: string) => {
     return await _getMarkdownFile(locale, pathname);
   });
 
   /**
    * This method runs the MDX compiler on the server-side and returns the
    * parsed JSX ready to be rendered on a page as a React Component
-   *
-   * @param {string} source
-   * @param {string} filename
    */
   const _getMDXContent = async (source = '', filename = '') => {
     // We create a VFile (Virtual File) to be able to access some contextual
@@ -177,20 +168,16 @@ const getDynamicRouter = async () => {
   };
 
   // Creates a Cached Version of the MDX Compiler
-  const getMDXContent = cache(async (source, filename) => {
+  const getMDXContent = cache(async (source: string, filename: string) => {
     return await _getMDXContent(source, filename);
   });
 
   /**
    * This method generates the Next.js App Router Metadata
    * that can be used for each page to provide metadata
-   *
-   * @param {string} locale
-   * @param {string} path
-   * @returns {Promise<import('next').Metadata>}
    */
-  const _getPageMetadata = async (locale = defaultLocale.code, path = '') => {
-    const pageMetadata = { ...PAGE_METADATA };
+  const _getPageMetadata = async (locale = defaultLocale.code, path = ''): Promise<Metadata> => {
+    const pageMetadata = PAGE_METADATA;
 
     const { source = '' } = await getMarkdownFile(locale, path);
 
@@ -202,7 +189,7 @@ const getDynamicRouter = async () => {
 
     pageMetadata.twitter.title = pageMetadata.title;
 
-    const getUrlForPathname = (l, p) =>
+    const getUrlForPathname = (l: string, p: string) =>
       `${baseUrlAndPath}/${l}${p ? `/${p}` : ''}`;
 
     pageMetadata.alternates.canonical = getUrlForPathname(locale, path);
@@ -245,7 +232,7 @@ const getDynamicRouter = async () => {
   };
 
   // Creates a Cached Version of the Page Metadata Context
-  const getPageMetadata = cache(async (locale, path) => {
+  const getPageMetadata = cache(async (locale: string, path: string) => {
     return await _getPageMetadata(locale, path);
   });
 

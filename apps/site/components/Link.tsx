@@ -1,6 +1,6 @@
 import type { FC, ComponentProps } from 'react';
 
-import { Link as LocalizedLink } from '@/navigation.mjs';
+import { Link as LocalizedLink } from '@/navigation';
 
 type LinkProps = Omit<ComponentProps<typeof LocalizedLink>, 'href'> & {
   href?: string;

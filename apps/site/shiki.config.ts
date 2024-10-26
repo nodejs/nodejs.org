@@ -1,5 +1,4 @@
-'use strict';
-
+import type { LanguageRegistration } from 'shiki';
 import diffLanguage from 'shiki/langs/diff.mjs';
 import dockerLanguage from 'shiki/langs/docker.mjs';
 import javaScriptLanguage from 'shiki/langs/javascript.mjs';
@@ -12,15 +11,13 @@ import shikiNordTheme from 'shiki/themes/nord.mjs';
 
 /**
  * All languages needed within the Node.js website for syntax highlighting.
- *
- * @type {Array<import('shiki').LanguageRegistration>}
  */
-export const LANGUAGES = [
+export const LANGUAGES: Array<LanguageRegistration> = [
   {
     ...javaScriptLanguage[0],
     // We path the JavaScript language to include the CommonJS and ES Module aliases
     // that are commonly used (non-standard aliases) within our API docs and Blog posts
-    aliases: javaScriptLanguage[0].aliases.concat('cjs', 'mjs'),
+    aliases: javaScriptLanguage[0].aliases?.concat('cjs', 'mjs'),
   },
   ...jsonLanguage,
   ...typeScriptLanguage,
