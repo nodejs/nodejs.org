@@ -18,7 +18,7 @@ It started as a way to download and manage dependencies of Node.js packages, but
 
 ## Packages
 
-`npm` manages downloads of dependencies of your project.
+`npm` installs, updates and manages downloads of dependencies of your project. Dependencies are pre-written pieces of code such as libraries and packages that your Node.js application needs to work.  
 
 ### Installing all dependencies
 
