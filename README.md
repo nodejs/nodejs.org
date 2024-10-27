@@ -105,6 +105,8 @@ These are maintained in different repositories and we urge users to open **issue
 
 [Translation Guidelines][]
 
+[Status Page](https://status.nodejs.org/) of the Node.js web infrastructure.
+
 ## Thanks
 
 - Thanks to all contributors and collaborators that make this project possible.
