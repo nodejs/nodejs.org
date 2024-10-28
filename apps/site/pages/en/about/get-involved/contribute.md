@@ -24,7 +24,7 @@ When reporting an issue we also need as much information about your environment 
 The Node.js project is currently managed across a number of separate GitHub repositories, each with their own separate issues database. If possible, please direct any issues you are reporting to the appropriate repository but don't worry if things happen to get put in the wrong place, the community of contributors will be more than happy to help get you pointed in the right direction.
 
 - To report issues specific to Node.js, please use [nodejs/node](https://github.com/nodejs/node)
-- To report issues specific to this website, please use [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
+- To report issues specific to this website, please use [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues). Please check if issues have already been reported before creating a new one. The [status page](https://status.nodejs.org) also reports any large-scale disruptions to the site and downloads.
 
 ## Code contributions
 

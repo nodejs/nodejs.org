@@ -20,6 +20,10 @@
       "link": "https://nodejs.org/docs/latest/api/",
       "label": "components.containers.navBar.links.docs"
     },
+    "support": {
+      "link": "/about/previous-releases",
+      "label": "components.containers.navBar.links.support"
+    },
     "certification": {
       "link": "https://training.linuxfoundation.org/openjs/",
       "label": "components.containers.navBar.links.certification",
@@ -163,10 +167,6 @@
               "link": "/learn/getting-started/nodejs-the-difference-between-development-and-production",
               "label": "components.navigation.learn.gettingStarted.links.nodejsTheDifferenceBetweenDevelopmentAndProduction"
             },
-            "nodejsWithTypescript": {
-              "link": "/learn/getting-started/nodejs-with-typescript",
-              "label": "components.navigation.learn.gettingStarted.links.nodejsWithTypescript"
-            },
             "nodejsWithWebassembly": {
               "link": "/learn/getting-started/nodejs-with-webassembly",
               "label": "components.navigation.learn.gettingStarted.links.nodejsWithWebassembly"
@@ -182,6 +182,27 @@
             "securityBestPractices": {
               "link": "/learn/getting-started/security-best-practices",
               "label": "components.navigation.learn.gettingStarted.links.securityBestPractices"
+            }
+          }
+        },
+        "typescript": {
+          "label": "components.navigation.learn.typescript.links.typescript",
+          "items": {
+            "introduction": {
+              "link": "/learn/typescript/introduction",
+              "label": "components.navigation.learn.typescript.links.introduction"
+            },
+            "transpile": {
+              "link": "/learn/typescript/transpile",
+              "label": "components.navigation.learn.typescript.links.transpile"
+            },
+            "run": {
+              "link": "/learn/typescript/run",
+              "label": "components.navigation.learn.typescript.links.run"
+            },
+            "runNatively": {
+              "link": "/learn/typescript/run-natively",
+              "label": "components.navigation.learn.typescript.links.runNatively"
             }
           }
         },
@@ -344,6 +365,10 @@
             "usingTestRunner": {
               "link": "/learn/test-runner/using-test-runner",
               "label": "components.navigation.learn.testRunner.links.usingTestRunner"
+            },
+            "mocking": {
+              "link": "/learn/test-runner/mocking",
+              "label": "components.navigation.learn.testRunner.links.mocking"
             }
           }
         }

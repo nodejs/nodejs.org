@@ -14,6 +14,7 @@
           "about": "About",
           "download": "Download",
           "docs": "Docs",
+          "support": "Version Support",
           "guides": "Guides",
           "learn": "Learn",
           "security": "Security",
@@ -35,11 +36,19 @@
             "anIntroductionToTheNpmPackageManager": "An introduction to the npm package manager",
             "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) and beyond",
             "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
-            "nodejsWithTypescript": "Node.js with TypeScript",
             "nodejsWithWebassembly": "Node.js with WebAssembly",
             "debugging": "Debugging Node.js",
             "profiling": "Profiling Node.js Applications",
             "securityBestPractices": "Security Best Practices"
+          }
+        },
+        "typescript": {
+          "links": {
+            "typescript": "TypeScript",
+            "introduction": "Introduction to TypeScript",
+            "transpile": "Running TypeScript code using transpilation",
+            "run": "Running TypeScript with a runner",
+            "runNatively": "Running TypeScript Natively"
           }
         },
         "asynchronousWork": {
@@ -102,7 +111,8 @@
           "links": {
             "testRunner": "Test Runner",
             "introduction": "Discovering Node.js's test runner",
-            "usingTestRunner": "Using Node.js's test runner"
+            "usingTestRunner": "Using Node.js's test runner",
+            "mocking": "Mocking in tests"
           }
         }
       },
@@ -179,11 +189,6 @@
       },
       "themeToggle": {
         "label": "Toggle Dark Mode"
-      }
-    },
-    "mdx": {
-      "upcomingEvents": {
-        "defaultTitle": "No Upcoming Event"
       }
     },
     "metabar": {
@@ -291,6 +296,7 @@
         "platform": "Platform"
       },
       "codeBox": {
+        "unsupportedVersionWarning": "This version is out of maintenance. Find more information here:",
         "fnmEnvSetup": "configure fnm environment",
         "systemManagerWarning": "is not a Node.js package manager. Please ensure you already have {packageManager} installed.",
         "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project.",

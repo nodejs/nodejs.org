@@ -1,41 +1,11 @@
 ---
-layout: download
+layout: article
 title: Instalação da Node.js através do Gestor de Pacote
 ---
 
 # Instalação da Node.js através dos Gestores de Pacote
 
 > Os pacotes nesta página são mantidos e suportados por seus respetivos empacotadores, **não** pela equipa principal da Node.js. Precisamos reportar quaisquer problemas que encontrarmos ao responsável do pacote. Se o nosso problema for um erro de programação na própria Node.js, o responsável reportará o problema.
-
----
-
-- [Alpine Linux](#alpine-linux)
-- [Android](#android)
-- [Arch Linux](#arch-linux)
-- [CentOS, Fedora e Red Hat Enterprise Linux](#centos-fedora-e-red-hat-enterprise-linux)
-- [Distribuições de Linux baseadas em Debian e Ubuntu](#distribuicoes-de-linux-baseadas-em-debian-e-ubuntu)
-- [Exherbo Linux](#exherbo-linux)
-- [fnm](#fnm)
-- [FreeBSD](#freebsd)
-- [Gentoo](#gentoo)
-- [IBM i](#ibm-i)
-- [macOS](#macos)
-- [n](#n)
-- [NetBSD](#netbsd)
-- [Nodenv](#nodenv)
-- [nvm](#nvm)
-- [nvs](#nvs)
-- [OpenBSD](#openbsd)
-- [openSUSE e SLE](#opensuse-e-sle)
-- [SmartOS e illumos](#smartos-e-illumos)
-- [Snap](#snap)
-- [Solus](#solus)
-- [vfox](#vfox)
-- [Void Linux](#void-linux)
-- [Windows](#windows-1)
-- [z/OS](#zos)
-
----
 
 ## Linux Alpino
 

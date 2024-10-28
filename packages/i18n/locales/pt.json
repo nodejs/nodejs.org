@@ -35,11 +35,19 @@
             "anIntroductionToTheNpmPackageManager": "Introdução ao gestor de pacotes npm",
             "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) e além",
             "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, a diferença entre o desenvolvimento e a produção",
-            "nodejsWithTypescript": "Node.js com TypeScript",
             "nodejsWithWebassembly": "Node.js com WebAssembly",
             "debugging": "Depuração da Node.js",
             "profiling": "Definição de Perfis de Aplicações de Node.js",
             "securityBestPractices": "Boas Práticas de Segurança"
+          }
+        },
+        "typescript": {
+          "links": {
+            "typescript": "TypeScript",
+            "introduction": "Introdução à TypeScript",
+            "transpile": "Executar o código da TypeScript utilizando a tradução de código",
+            "run": "Executar a TypeScript com uma executora",
+            "runNatively": "Executar a TypeScript Nativamente"
           }
         },
         "asynchronousWork": {
@@ -101,7 +109,8 @@
           "links": {
             "testRunner": "Executor de Teste",
             "introduction": "Descobrir o executor de teste da Node.js",
-            "usingTestRunner": "Usar o executor de teste da Node.js"
+            "usingTestRunner": "Usar o executor de teste da Node.js",
+            "mocking": "Simulação em Testes"
           }
         }
       },

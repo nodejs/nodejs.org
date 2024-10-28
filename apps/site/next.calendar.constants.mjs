@@ -24,7 +24,7 @@ export const SHARED_CALENDAR_KEY =
  * This is Node.js's Public Google Calendar ID used for all public entries from Node.js Calendar
  */
 export const CALENDAR_NODEJS_ID =
-  'nodejs.org_nr77ama8p7d7f9ajrpnu506c98@group.calendar.google.com';
+  'c_16f0ae5d3a22625175d199dbdb1cac84c2d09eab7f173e94f558417cb5cdbfd8@group.calendar.google.com';
 
 /**
  * Default Date format for Calendars and Time Components
