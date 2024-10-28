@@ -1,41 +1,11 @@
 ---
-layout: download
+layout: article
 title: 使用套件管理器安裝 Node.js
 ---
 
 # 使用套件管理器安裝 Node.js
 
 > 本站上的套件皆由各自的套件管理器維護與支援，**並非**由 Node.js 的核心團隊維護。若遭遇任何問題，請向該套件的維護者回報。如果問題確實是 Node.js 本身的錯誤，將由維護者負責向上游回報。
-
----
-
-- [Alpine Linux](#alpine-linux)
-- [Android](#android)
-- [Arch Linux](#arch-linux)
-- [CentOS, Fedora 與 Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
-- [基於 Debian 與 Ubuntu 的 Linux 發行版](#debian-and-ubuntu-based-linux-distributions)
-- [Exherbo Linux](#exherbo-linux)
-- [fnm](#fnm)
-- [FreeBSD](#freebsd)
-- [Gentoo](#gentoo)
-- [IBM i](#ibm-i)
-- [macOS](#macos)
-- [n](#n)
-- [NetBSD](#netbsd)
-- [Nodenv](#nodenv)
-- [nvm](#nvm)
-- [nvs](#nvs)
-- [OpenBSD](#openbsd)
-- [openSUSE 與 SLE](#opensuse-and-sle)
-- [SmartOS 與 illumos](#smartos-and-illumos)
-- [Snap](#snap)
-- [Solus](#solus)
-- [vfox](#vfox)
-- [Void Linux](#void-linux)
-- [Windows](#windows-1)
-- [z/OS](#zos)
-
----
 
 ## Alpine Linux
 

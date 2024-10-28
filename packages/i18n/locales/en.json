@@ -14,6 +14,7 @@
           "about": "About",
           "download": "Download",
           "docs": "Docs",
+          "support": "Version Support",
           "guides": "Guides",
           "learn": "Learn",
           "security": "Security",
@@ -109,7 +110,8 @@
           "links": {
             "testRunner": "Test Runner",
             "introduction": "Discovering Node.js's test runner",
-            "usingTestRunner": "Using Node.js's test runner"
+            "usingTestRunner": "Using Node.js's test runner",
+            "mocking": "Mocking in tests"
           }
         }
       },
@@ -186,11 +188,6 @@
       },
       "themeToggle": {
         "label": "Toggle Dark Mode"
-      }
-    },
-    "mdx": {
-      "upcomingEvents": {
-        "defaultTitle": "No Upcoming Event"
       }
     },
     "metabar": {
@@ -298,6 +295,7 @@
         "platform": "Platform"
       },
       "codeBox": {
+        "unsupportedVersionWarning": "This version is out of maintenance. Find more information here:",
         "fnmEnvSetup": "configure fnm environment",
         "systemManagerWarning": "is not a Node.js package manager. Please ensure you already have {packageManager} installed.",
         "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project.",

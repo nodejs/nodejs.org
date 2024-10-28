@@ -16,6 +16,7 @@ const customJestConfig = {
     'next/router': '<rootDir>/components/__mocks__/next-router.mjs',
     'next-intl': '<rootDir>/components/__mocks__/next-intl.mjs',
     'github-slugger': '<rootDir>/components/__mocks__/github-slugger.mjs',
+    '^@/(.*)$': '<rootDir>/$1',
   },
 };
 

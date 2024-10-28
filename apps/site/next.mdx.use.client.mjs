@@ -20,6 +20,8 @@ export const clientMdxComponents = {
   Button: Button,
   // Links with External Arrow
   LinkWithArrow: LinkWithArrow,
+  // Regular links (without arrow)
+  Link: Link,
 };
 
 /**

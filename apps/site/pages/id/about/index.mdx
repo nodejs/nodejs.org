@@ -56,7 +56,7 @@ Jika ada yang belum familiar dengan bahasa ini, ada artikel lengkap tentang [Blo
 
 ---
 
-Node.js memiliki desain yang mirip dengan, dan dipengaruhi oleh, sistem seperti [Event Machine] \[] Ruby dan \[Twisted] \[] Python. Node.js membawa model acara sedikit lebih jauh. Ini menyajikan loop peristiwa sebagai konstruksi runtime, bukan sebagai perpustakaan. Di sistem lain, selalu ada panggilan pemblokiran untuk memulai perulangan peristiwa. Biasanya, perilaku ditentukan melalui callback di awal skrip, dan di akhir skrip, server dimulai melalui panggilan pemblokiran seperti `EventMachine::run()`. Di Node.js, tidak ada panggilan start-the-event-loop. Node.js cukup memasuki loop acara setelah menjalankan skrip input. Node.js keluar dari loop peristiwa ketika tidak ada lagi callback yang harus dilakukan. Perilaku ini seperti JavaScript browser — loop peristiwa disembunyikan dari pengguna.
+Node.js memiliki desain yang mirip dengan, dan dipengaruhi oleh, sistem seperti [Event Machine][] Ruby dan [Twisted][] Python. Node.js membawa model acara sedikit lebih jauh. Ini menyajikan loop peristiwa sebagai konstruksi runtime, bukan sebagai perpustakaan. Di sistem lain, selalu ada panggilan pemblokiran untuk memulai perulangan peristiwa. Biasanya, perilaku ditentukan melalui callback di awal skrip, dan di akhir skrip, server dimulai melalui panggilan pemblokiran seperti `EventMachine::run()`. Di Node.js, tidak ada panggilan start-the-event-loop. Node.js cukup memasuki loop acara setelah menjalankan skrip input. Node.js keluar dari loop peristiwa ketika tidak ada lagi callback yang harus dilakukan. Perilaku ini seperti JavaScript browser — loop peristiwa disembunyikan dari pengguna.
 
 HTTP adalah warga negara kelas satu di Node.js, dirancang dengan streaming dan rendah
 latensi dalam pikiran. Ini membuat Node.js sangat cocok untuk fondasi web
@@ -68,4 +68,4 @@ Node.js dirancang tanpa thread bukan berarti Anda tidak dapat memanfaatkan banya
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
 [`cluster`]: https://nodejs.org/api/cluster.html
 [event machine]: https://github.com/eventmachine/eventmachine
-[berpilin]: https://twisted.org/
+[twisted]: https://twisted.org/

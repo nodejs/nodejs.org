@@ -63,7 +63,7 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
       ariaLabel={t('layouts.download.dropdown.os')}
       defaultValue={os}
       onChange={value => setOS(value as UserOS)}
-      className="w-[8.5rem]"
+      className="min-w-[8.5rem]"
       inline={true}
     />
   );
