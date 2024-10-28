@@ -275,8 +275,8 @@ authors: github_username, another_github_username
 A little bit of explanation about the frontmatter:
 
 - `title`: The title of the article. This will be displayed as the title of the page. We recommend that you use the same title as the navigation entry. How to enter navigation entries is explained later in this document.
-- `layout`: This must be set so that the Learning page has the same style as the other Learning pages.
-- `authors`: A list of the GitHub usernames of the authors of the article. This is used to display the authors' profile pictures on the page. The frontmatter must always have the_utilsatuer_name followed by `, ` the space is important.
+- `layout`: This must be set to `learn` so that the new article has the same style as other Learn pages.
+- `authors`: A list of the GitHub usernames of the authors of the article. This is used to display the authors' profile pictures on the page. The frontmatter must always have the `github_username` followed by `, `. The comma and space is important.
 
 ### Modify the navigation
 
@@ -321,7 +321,7 @@ To edit an existing article, you need to find the markdown file in the `site/pag
 > [!NOTE]
 > If you rewrite a big part of the article you can add yourself as an author in the frontmatter. **But** if you only fix a typo or a small part of the article, you don't need to add yourself as an author.
 
-### Accesible MDX components
+### Accessible MDX components
 
 #### Codebox
 
@@ -337,4 +337,4 @@ import http from 'node:http';
 '''
 ```
 
-`cjs` and `mjs` are variant of `js`, it's just to display the correct language in the codebox (cjs = CommonJS, mjs = ES Module).
+`cjs` and `mjs` are variants of `js`, it's just to display the correct language in the codebox (cjs = CommonJS, mjs = ES Module).
