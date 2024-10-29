@@ -1,9 +1,5 @@
 .wrapper {
-  @apply sticky
-    top-0
-    flex
-    h-max
-    min-h-screen
+  @apply flex
     w-full
     flex-col
     items-start

@@ -1,9 +1,5 @@
 .wrapper {
-  @apply sticky
-    top-0
-    flex
-    h-max
-    min-h-screen
+  @apply flex
     w-full
     flex-col
     items-start
@@ -13,6 +9,10 @@
     px-4
     py-6
     [overflow-wrap:anywhere]
+    lg:sticky
+    lg:top-0
+    lg:h-max
+    lg:min-h-screen
     lg:px-6
     dark:border-neutral-900;
 
