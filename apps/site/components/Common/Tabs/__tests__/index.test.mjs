@@ -2,6 +2,7 @@ import * as TabsPrimitive from '@radix-ui/react-tabs';
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import Link from '../../../Link';
 import Tabs from '../index';
 
 describe('Tabs', () => {
@@ -46,7 +47,7 @@ describe('Tabs', () => {
   });
 
   it('should render the given addons', async () => {
-    render(<Sut addons={<a href="/">addon</a>} />);
+    render(<Sut addons={<Link href="/">addon</Link>} />);
 
     expect(screen.getByRole('link', { name: 'addon' })).toBeInTheDocument();
   });

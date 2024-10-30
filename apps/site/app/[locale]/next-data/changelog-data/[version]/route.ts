@@ -4,13 +4,15 @@ import { VERCEL_REVALIDATE } from '@/next.constants.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 
 type StaticParams = {
-  params: { version: string };
+  params: Promise<{ version: string }>;
 };
 
 // This is the Route Handler for the `GET` method which handles the request
 // for generating static data related to the Node.js Changelog Data
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
-export const GET = async (_: Request, { params }: StaticParams) => {
+export const GET = async (_: Request, props: StaticParams) => {
+  const params = await props.params;
+
   const changelogData = await provideChangelogData(params.version);
 
   return Response.json(changelogData);
