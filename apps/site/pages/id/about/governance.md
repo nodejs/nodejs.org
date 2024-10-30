@@ -7,7 +7,7 @@ layout: about
 
 ## Proses Pencarian Kesepakatan
 
-Proyek Node.js mengikuti model pengambilan keputusan \[Pencarian Konsensus] \[].
+Proyek Node.js mengikuti model pengambilan keputusan [Pencarian Konsensus][consensus seeking].
 
 ## Kolaborator
 

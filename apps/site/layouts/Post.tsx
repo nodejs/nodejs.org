@@ -7,7 +7,6 @@ import WithFooter from '@/components/withFooter';
 import WithMetaBar from '@/components/withMetaBar';
 import WithNavBar from '@/components/withNavBar';
 import { useClientContext } from '@/hooks/react-server';
-import ContentLayout from '@/layouts/Content';
 import { mapAuthorToCardAuthors } from '@/util/authorUtils';
 import { mapBlogCategoryToPreviewType } from '@/util/blogUtils';
 
@@ -24,7 +23,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
     <>
       <WithNavBar />
 
-      <ContentLayout>
+      <div className={styles.contentLayout}>
         <div className={styles.postLayout}>
           <main>
             <h1>{frontmatter.title}</h1>
@@ -44,7 +43,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
         </div>
 
         <WithMetaBar />
-      </ContentLayout>
+      </div>
 
       <WithFooter />
     </>
