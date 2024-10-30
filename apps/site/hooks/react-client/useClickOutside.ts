@@ -2,7 +2,7 @@ import type { RefObject } from 'react';
 import { useEffect } from 'react';
 
 const useClickOutside = <T extends HTMLElement>(
-  ref: RefObject<T>,
+  ref: RefObject<T | null>,
   fn: () => void
 ) => {
   useEffect(() => {

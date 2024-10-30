@@ -19,9 +19,6 @@ const nextConfig = {
   // We intentionally disable Next.js's built-in i18n support
   // as we dom have our own i18n and internationalisation engine
   i18n: null,
-  // We want to always enforce that SWC minifies the sources even during Development mode
-  // so that bundles are minified on-the-go. SWF minifying is fast, and has almost no penalties
-  swcMinify: true,
   // We don't use trailing slashes on URLs from the Node.js Website
   trailingSlash: false,
   // We don't want to redirect with trailing slashes
@@ -113,8 +110,6 @@ const nextConfig = {
     ],
     // Removes the warning regarding the WebPack Build Worker
     webpackBuildWorker: true,
-    // Enables Next.js's Instrumentation Hook
-    instrumentationHook: true,
   },
   // To import ESM-only packages with next dev --turbo. Source: https://github.com/vercel/next.js/issues/63318#issuecomment-2079677098
   transpilePackages: ['shiki'],

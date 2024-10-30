@@ -25,7 +25,9 @@ export const generateViewport = async () => ({ ...PAGE_VIEWPORT });
 
 // This generates each page's HTML Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-metadata
-export const generateMetadata = async ({ params }: DynamicParams) => {
+export const generateMetadata = async (props: DynamicParams) => {
+  const params = await props.params;
+
   const { path = [], locale = defaultLocale.code } = params;
 
   const pathname = dynamicRouter.getPathname(path);
@@ -64,7 +66,8 @@ export const generateStaticParams = async () => {
 // then it proceeds to retrieve the Markdown file and parse the MDX Content into a React Component
 // finally it returns (if the locale and route are valid) the React Component with the relevant context
 // and attached context providers for rendering the current page
-const getPage: FC<DynamicParams> = async ({ params }) => {
+const getPage: FC<DynamicParams> = async props => {
+  const params = await props.params;
   const { path = [], locale = defaultLocale.code } = params;
 
   if (!availableLocaleCodes.includes(locale)) {
