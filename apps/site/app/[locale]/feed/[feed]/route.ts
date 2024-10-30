@@ -8,12 +8,14 @@ import { defaultLocale } from '@/next.locales.mjs';
 // We only support fetching these pages from the /en/ locale code
 const locale = defaultLocale.code;
 
-type StaticParams = { params: { feed: string; locale: string } };
+type StaticParams = { params: Promise<{ feed: string; locale: string }> };
 
 // This is the Route Handler for the `GET` method which handles the request
 // for the Node.js Website Blog Feeds (RSS)
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
-export const GET = async (_: Request, { params }: StaticParams) => {
+export const GET = async (_: Request, props: StaticParams) => {
+  const params = await props.params;
+
   // Generate the Feed for the given feed type (blog, releases, etc)
   const websiteFeed = provideWebsiteFeeds(params.feed);
 

@@ -7,13 +7,15 @@ import { VERCEL_REVALIDATE } from '@/next.constants.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 
 type StaticParams = {
-  params: { locale: string; category: string; page: string };
+  params: Promise<{ locale: string; category: string; page: string }>;
 };
 
 // This is the Route Handler for the `GET` method which handles the request
 // for providing Blog Posts for Blog Categories and Pagination Metadata
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
-export const GET = async (_: Request, { params }: StaticParams) => {
+export const GET = async (_: Request, props: StaticParams) => {
+  const params = await props.params;
+
   const requestedPage = Number(params.page);
 
   const data =
