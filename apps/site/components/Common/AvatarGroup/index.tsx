@@ -34,13 +34,10 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
 
   return (
     <div className={styles.avatarGroup}>
-      {renderAvatars.map(({ website, ...avatar }) => (
+      {renderAvatars.map(({ ...avatar }) => (
         <Fragment key={avatar.nickname}>
-          {website ? (
-            <Tooltip
-              content={<AvatarOverlay {...avatar} website={website} />}
-              asChild
-            >
+          {avatar.website ? (
+            <Tooltip content={<AvatarOverlay {...avatar} />} asChild>
               <Avatar {...avatar} size={size} className="cursor-pointer" />
             </Tooltip>
           ) : (
@@ -51,7 +48,11 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
       {avatars.length > limit && (
         <span
           onClick={isExpandable ? () => setShowMore(prev => !prev) : undefined}
-          className={classNames(avatarstyles.avatar, 'cursor-pointer')}
+          className={classNames(
+            avatarstyles.avatar,
+            avatarstyles[size],
+            'cursor-pointer'
+          )}
         >
           <span className={avatarstyles.item}>
             {`${showMore ? '-' : '+'}${avatars.length - limit}`}

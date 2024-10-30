@@ -3,6 +3,8 @@ import classNames from 'classnames';
 import type { ComponentPropsWithoutRef, ElementRef } from 'react';
 import { forwardRef } from 'react';
 
+import Link from '@/components/Link';
+
 import styles from './index.module.css';
 
 export type AvatarProps = {
@@ -11,30 +13,47 @@ export type AvatarProps = {
   nickname: string;
   fallback?: string;
   size?: 'small' | 'medium';
+  website?: string;
 };
 
 const Avatar = forwardRef<
   ElementRef<typeof RadixAvatar.Root>,
   ComponentPropsWithoutRef<typeof RadixAvatar.Root> & AvatarProps
->(({ image, name, fallback, size = 'small', ...props }, ref) => (
-  <RadixAvatar.Root
-    {...props}
-    className={classNames(styles.avatar, styles[size], props.className)}
-    ref={ref}
-  >
-    <RadixAvatar.Image
-      loading="lazy"
-      src={image}
-      alt={name}
-      className={styles.item}
-    />
-    <RadixAvatar.Fallback
-      delayMs={500}
-      className={classNames(styles.item, styles[size])}
-    >
-      {fallback}
-    </RadixAvatar.Fallback>
-  </RadixAvatar.Root>
-));
+>(
+  (
+    { image, nickname, name, fallback, website, size = 'small', ...props },
+    ref
+  ) => {
+    const Wrapper = website ? Link : 'div';
+
+    return (
+      <RadixAvatar.Root
+        {...props}
+        className={classNames(styles.avatar, styles[size], props.className)}
+        ref={ref}
+      >
+        <Wrapper
+          {...(website ? { href: website, target: '_blank' } : {})}
+          className={styles.wrapper}
+        >
+          <RadixAvatar.Image
+            loading="lazy"
+            src={image}
+            alt={name || nickname}
+            className={classNames(styles.item, {
+              [styles.clickable]: website,
+            })}
+          />
+          <RadixAvatar.Fallback
+            delayMs={500}
+            className={classNames(styles.item, styles[size])}
+          >
+            {fallback}
+          </RadixAvatar.Fallback>
+        </Wrapper>
+      </RadixAvatar.Root>
+    );
+  }
+);
 
 export default Avatar;

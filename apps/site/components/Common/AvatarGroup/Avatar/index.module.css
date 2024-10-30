@@ -1,9 +1,11 @@
 .item {
-  @apply flex
+  @apply xs:max-h-10
+    xs:max-w-10
+    flex
     h-full
-    max-h-10
+    max-h-12
     w-full
-    max-w-10
+    max-w-12
     items-center
     justify-center
     rounded-full
@@ -19,18 +21,27 @@
 }
 
 .avatar {
-  @apply -ml-2
+  @apply xs:-ml-2
+    ml-0.5
     size-8
     flex-shrink-0
     first:ml-0;
 
-  &:hover {
-    @apply z-10;
+  .wrapper {
+    @apply max-xs:block
+      max-xs:py-0;
   }
 }
 
 .small {
-  @apply size-8;
+  @apply xs:size-8
+    size-12;
+
+  .clickable {
+    @apply xs:border-white
+      xs:dark:border-neutral-950
+      border-green-500;
+  }
 }
 
 .medium {
