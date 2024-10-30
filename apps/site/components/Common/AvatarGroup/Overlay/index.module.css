@@ -1,6 +1,7 @@
 .overlay {
   @apply flex
     min-w-56
+    items-center
     gap-2
     p-3;
 }

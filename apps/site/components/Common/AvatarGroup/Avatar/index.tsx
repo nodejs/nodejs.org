@@ -40,9 +40,7 @@ const Avatar = forwardRef<
             loading="lazy"
             src={image}
             alt={name || nickname}
-            className={classNames(styles.item, {
-              [styles.clickable]: website,
-            })}
+            className={styles.item}
           />
           <RadixAvatar.Fallback
             delayMs={500}

@@ -31,6 +31,7 @@ export const getAuthorWithId = (
       image: fallbackImage ? getGitHubAvatarUrl(username) : undefined,
       nickname: username,
       fallback: getAcronymFromString(username),
+      website: `https://github.com/${username}`,
     };
   });
 

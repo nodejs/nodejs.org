@@ -36,12 +36,6 @@
 .small {
   @apply xs:size-8
     size-12;
-
-  .clickable {
-    @apply xs:border-white
-      xs:dark:border-neutral-950
-      border-green-500;
-  }
 }
 
 .medium {

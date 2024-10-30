@@ -75,6 +75,7 @@ describe('getAuthorWithId', () => {
         nickname: 'canerakdas',
         fallback: 'C',
         image: 'https://avatars.githubusercontent.com/canerakdas',
+        website: 'https://github.com/canerakdas',
       },
     ]);
   });
@@ -86,6 +87,7 @@ describe('getAuthorWithId', () => {
       {
         nickname: 'canerakdas',
         fallback: 'C',
+        website: 'https://github.com/canerakdas',
       },
     ]);
   });
@@ -107,7 +109,7 @@ describe('getAuthorWithName', () => {
   });
 
   it('should return fallback details when author is not found', () => {
-    const result = getAuthorWithId(['Caner Akdas']);
+    const result = getAuthorWithName(['Caner Akdas']);
 
     expect(result).toEqual([
       {
