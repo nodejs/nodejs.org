@@ -2,11 +2,7 @@ import { ImageResponse } from 'next/og';
 
 import HexagonGrid from '@/components/Icons/HexagonGrid';
 import JsIconWhite from '@/components/Icons/Logos/JsIconWhite';
-import {
-  ENABLE_STATIC_EXPORT,
-  VERCEL_ENV,
-  VERCEL_REVALIDATE,
-} from '@/next.constants.mjs';
+import { ENABLE_STATIC_EXPORT, VERCEL_ENV } from '@/next.constants.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 import tailwindConfig from '@/tailwind.config';
 import { hexToRGBA } from '@/util/hexToRGBA';
@@ -60,10 +56,6 @@ export const generateStaticParams = async () => [
   { locale: defaultLocale.code },
 ];
 
-// We want to use `edge` runtime when using Vercel
-// @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#runtime
-export const runtime = VERCEL_ENV ? 'edge' : 'nodejs';
-
 // In this case we want to catch-all possible requests. This ensures that we always generate and
 // serve the OpenGrapgh images independently on the locale
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
@@ -76,4 +68,4 @@ export const dynamic = ENABLE_STATIC_EXPORT ? 'force-static' : 'auto';
 // Ensures that this endpoint is invalidated and re-executed every X minutes
 // so that when new deployments happen, the data is refreshed
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
-export const revalidate = VERCEL_REVALIDATE;
+export const revalidate = 300;

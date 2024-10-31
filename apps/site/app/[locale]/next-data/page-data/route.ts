@@ -2,7 +2,6 @@ import { deflateSync } from 'node:zlib';
 
 import matter from 'gray-matter';
 
-import { VERCEL_REVALIDATE } from '@/next.constants.mjs';
 import { dynamicRouter } from '@/next.dynamic.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 import { parseRichTextIntoPlainText } from '@/util/stringUtils';
@@ -69,4 +68,4 @@ export const dynamic = 'error';
 // Ensures that this endpoint is invalidated and re-executed every X minutes
 // so that when new deployments happen, the data is refreshed
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
-export const revalidate = VERCEL_REVALIDATE;
+export const revalidate = 300;
