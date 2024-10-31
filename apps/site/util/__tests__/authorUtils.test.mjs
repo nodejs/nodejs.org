@@ -61,33 +61,8 @@ describe('getAuthorWithId', () => {
         name: 'The Node.js Project',
         nickname: 'nodejs',
         fallback: 'TNJP',
-        website: 'https://github.com/nodejs',
+        url: 'https://github.com/nodejs',
         image: 'https://avatars.githubusercontent.com/nodejs',
-      },
-    ]);
-  });
-
-  it('should return fallback image when author is not found and fallbackImage is true', () => {
-    const result = getAuthorWithId(['canerakdas'], true);
-
-    expect(result).toEqual([
-      {
-        nickname: 'canerakdas',
-        fallback: 'C',
-        image: 'https://avatars.githubusercontent.com/canerakdas',
-        website: 'https://github.com/canerakdas',
-      },
-    ]);
-  });
-
-  it('should not return fallback image when author is not found and fallbackImage is false', () => {
-    const result = getAuthorWithId(['canerakdas']);
-
-    expect(result).toEqual([
-      {
-        nickname: 'canerakdas',
-        fallback: 'C',
-        website: 'https://github.com/canerakdas',
       },
     ]);
   });
@@ -102,7 +77,7 @@ describe('getAuthorWithName', () => {
         name: 'The Node.js Project',
         nickname: 'nodejs',
         fallback: 'TNJP',
-        website: 'https://github.com/nodejs',
+        url: 'https://github.com/nodejs',
         image: 'https://avatars.githubusercontent.com/nodejs',
       },
     ]);

@@ -13,45 +13,40 @@ export type AvatarProps = {
   nickname: string;
   fallback?: string;
   size?: 'small' | 'medium';
-  website?: string;
+  url?: string;
 };
 
 const Avatar = forwardRef<
   ElementRef<typeof RadixAvatar.Root>,
   ComponentPropsWithoutRef<typeof RadixAvatar.Root> & AvatarProps
->(
-  (
-    { image, nickname, name, fallback, website, size = 'small', ...props },
-    ref
-  ) => {
-    const Wrapper = website ? Link : 'div';
+>(({ image, nickname, name, fallback, url, size = 'small', ...props }, ref) => {
+  const Wrapper = url ? Link : 'div';
 
-    return (
-      <RadixAvatar.Root
-        {...props}
-        className={classNames(styles.avatar, styles[size], props.className)}
-        ref={ref}
+  return (
+    <RadixAvatar.Root
+      {...props}
+      className={classNames(styles.avatar, styles[size], props.className)}
+      ref={ref}
+    >
+      <Wrapper
+        {...(url ? { href: url, target: '_blank' } : {})}
+        className={styles.wrapper}
       >
-        <Wrapper
-          {...(website ? { href: website, target: '_blank' } : {})}
-          className={styles.wrapper}
+        <RadixAvatar.Image
+          loading="lazy"
+          src={image}
+          alt={name || nickname}
+          className={styles.item}
+        />
+        <RadixAvatar.Fallback
+          delayMs={500}
+          className={classNames(styles.item, styles[size])}
         >
-          <RadixAvatar.Image
-            loading="lazy"
-            src={image}
-            alt={name || nickname}
-            className={styles.item}
-          />
-          <RadixAvatar.Fallback
-            delayMs={500}
-            className={classNames(styles.item, styles[size])}
-          >
-            {fallback}
-          </RadixAvatar.Fallback>
-        </Wrapper>
-      </RadixAvatar.Root>
-    );
-  }
-);
+          {fallback}
+        </RadixAvatar.Fallback>
+      </Wrapper>
+    </RadixAvatar.Root>
+  );
+});
 
 export default Avatar;

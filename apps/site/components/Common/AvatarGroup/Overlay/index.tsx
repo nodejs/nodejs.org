@@ -7,7 +7,7 @@ import Link from '@/components/Link';
 import styles from './index.module.css';
 
 export type AvatarOverlayProps = ComponentProps<typeof Avatar> & {
-  website?: string;
+  url?: string;
 };
 
 const AvatarOverlay: FC<AvatarOverlayProps> = ({
@@ -15,9 +15,9 @@ const AvatarOverlay: FC<AvatarOverlayProps> = ({
   name,
   nickname,
   fallback,
-  website,
+  url,
 }) => (
-  <Link className={styles.overlay} href={website} target="_blank">
+  <Link className={styles.overlay} href={url} target="_blank">
     <Avatar
       image={image}
       name={name}

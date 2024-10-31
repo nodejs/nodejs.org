@@ -11,19 +11,17 @@ type WithAvatarGroupProps = Omit<
 > & {
   usernames?: Array<string>;
   names?: Array<string>;
-  fallbackImage?: boolean;
 };
 
 const WithAvatarGroup: FC<WithAvatarGroupProps> = ({
   usernames,
   names,
-  fallbackImage,
   ...props
 }) => (
   <AvatarGroup
     avatars={
       usernames
-        ? getAuthorWithId(usernames, fallbackImage)
+        ? getAuthorWithId(usernames)
         : names
           ? getAuthorWithName(names)
           : []

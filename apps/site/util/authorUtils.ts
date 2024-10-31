@@ -6,10 +6,7 @@ import { getAcronymFromString } from './stringUtils';
 export const mapAuthorToCardAuthors = (author: string) =>
   author.split(/, | and |;| & | prepared by | by /i);
 
-export const getAuthorWithId = (
-  usernames: Array<string>,
-  fallbackImage?: boolean
-) =>
+export const getAuthorWithId = (usernames: Array<string>) =>
   usernames.map(username => {
     const author = Object.values(authors).find(
       ({ id }: { id: string }) => id.toLowerCase() === username.toLowerCase()
@@ -23,15 +20,15 @@ export const getAuthorWithId = (
         name: name,
         nickname: id,
         fallback: getAcronymFromString(name),
-        website: website,
+        url: website,
       };
     }
 
     return {
-      image: fallbackImage ? getGitHubAvatarUrl(username) : undefined,
+      image: getGitHubAvatarUrl(username),
       nickname: username,
       fallback: getAcronymFromString(username),
-      website: `https://github.com/${username}`,
+      url: `https://github.com/${username}`,
     };
   });
 
@@ -52,7 +49,7 @@ export const getAuthorWithName = (names: Array<string>) =>
           name: name,
           nickname: id,
           fallback: getAcronymFromString(name),
-          website: website,
+          url: website,
         };
       }
     }

@@ -36,7 +36,6 @@ const WithMetaBar: FC = () => {
             (
               <WithAvatarGroup
                 usernames={usernames}
-                fallbackImage={true}
                 limit={shortAvatarList ? 4 : 8}
               />
             ),
