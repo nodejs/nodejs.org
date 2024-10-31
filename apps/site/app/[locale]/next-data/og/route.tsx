@@ -2,7 +2,6 @@ import { ImageResponse } from 'next/og';
 
 import HexagonGrid from '@/components/Icons/HexagonGrid';
 import JsIconWhite from '@/components/Icons/Logos/JsIconWhite';
-import { ENABLE_STATIC_EXPORT, VERCEL_ENV } from '@/next.constants.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 import tailwindConfig from '@/tailwind.config';
 import { hexToRGBA } from '@/util/hexToRGBA';
@@ -63,7 +62,7 @@ export const dynamicParams = true;
 
 // Enforces that this route is used as static rendering
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
-export const dynamic = ENABLE_STATIC_EXPORT ? 'force-static' : 'auto';
+export const dynamic = 'auto';
 
 // Ensures that this endpoint is invalidated and re-executed every X minutes
 // so that when new deployments happen, the data is refreshed
