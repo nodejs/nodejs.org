@@ -10,6 +10,15 @@ import generateReleaseData from '@/next-data/generators/releaseData.mjs';
 jest.mock('@nodevu/core');
 
 describe('generateReleaseData', () => {
+  beforeAll(() => {
+    jest.useFakeTimers();
+    jest.setSystemTime(new Date('2024-10-18'));
+  });
+
+  afterAll(() => {
+    jest.useRealTimers();
+  });
+
   test('generates release data with correct status', async () => {
     const mockNodevuOutput = {
       14: {
