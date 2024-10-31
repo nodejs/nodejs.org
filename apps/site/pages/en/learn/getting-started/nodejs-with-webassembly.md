@@ -52,7 +52,7 @@ const fs = require('node:fs');
 // Use the readFileSync function to read the contents of the "add.wasm" file
 const wasmBuffer = fs.readFileSync('/path/to/add.wasm');
 
-// use the WebAssembly.instantiate method to instantiate the WebAssembly module
+// Use the WebAssembly.instantiate method to instantiate the WebAssembly module
 WebAssembly.instantiate(wasmBuffer).then(wasmModule => {
   // Exported function lives under instance.exports object
   const { add } = wasmModule.instance.exports;
