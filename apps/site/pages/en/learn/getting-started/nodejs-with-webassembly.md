@@ -73,7 +73,7 @@ const wasmModule = await WebAssembly.instantiate(wasmBuffer);
 
 // Exported function lives under instance.exports object
 const { add } = wasmModule.instance.exports;
-    
+
 const sum = add(5, 6);
 
 console.log(sum); // Outputs 11
