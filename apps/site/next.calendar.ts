@@ -1,17 +1,11 @@
-'use strict';
+import type { CalendarEvent } from '@/types';
 
 import {
   BASE_CALENDAR_URL,
   SHARED_CALENDAR_KEY,
-} from './next.calendar.constants.mjs';
+} from './next.calendar.constants';
 
-/**
- *
- * @param {string} calendarId
- * @param {number} maxResults
- * @returns {Promise<Array<import('./types').CalendarEvent>>}
- */
-export const getCalendarEvents = async (calendarId = '', maxResults = 20) => {
+export const getCalendarEvents = async (calendarId = '', maxResults = 20): Promise<Array<CalendarEvent>> => {
   const currentDate = new Date();
   const nextWeekDate = new Date();
 
@@ -19,8 +13,8 @@ export const getCalendarEvents = async (calendarId = '', maxResults = 20) => {
 
   const calendarQueryParams = new URLSearchParams({
     calendarId,
-    maxResults,
-    singleEvents: true,
+    maxResults: maxResults.toString(),
+    singleEvents: 'true',
     timeZone: 'Etc/Utc',
     key: SHARED_CALENDAR_KEY,
     timeMax: nextWeekDate.toISOString(),

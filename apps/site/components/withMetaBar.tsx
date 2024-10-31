@@ -8,7 +8,7 @@ import GitHub from '@/components/Icons/Social/GitHub';
 import Link from '@/components/Link';
 import { useClientContext } from '@/hooks/react-client';
 import useMediaQuery from '@/hooks/react-client/useMediaQuery';
-import { DEFAULT_DATE_FORMAT } from '@/next.calendar.constants.mjs';
+import { DEFAULT_DATE_FORMAT } from '@/next.calendar.constants';
 import { getGitHubBlobUrl, getGitHubAvatarUrl } from '@/util/gitHubUtils';
 
 const WithMetaBar: FC = () => {

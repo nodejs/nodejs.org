@@ -13,7 +13,7 @@ export default createMiddleware({
   localePrefix: 'always',
 
   // We already have our own way of providing alternate links
-  // generated on `next.dynamic.mjs`
+  // generated on `next.dynamic.ts`
   alternateLinks: false,
 });
 

@@ -5,7 +5,7 @@ import {
   BASE_URL,
   EXTERNAL_LINKS_SITEMAP,
 } from '@/next.constants.mjs';
-import { dynamicRouter } from '@/next.dynamic.mjs';
+import { dynamicRouter } from '@/next.dynamic';
 import { availableLocaleCodes, defaultLocale } from '@/next.locales.mjs';
 
 // This is the combination of the Application Base URL and Base PATH

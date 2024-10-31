@@ -3,8 +3,8 @@ import type { FC } from 'react';
 import FormattedTime from '@/components/Common/FormattedTime';
 import Event from '@/components/MDX/Calendar/Event';
 import { getZoomLink, isZoned } from '@/components/MDX/Calendar/utils';
-import { CALENDAR_NODEJS_ID } from '@/next.calendar.constants.mjs';
-import { getCalendarEvents } from '@/next.calendar.mjs';
+import { getCalendarEvents } from '@/next.calendar';
+import { CALENDAR_NODEJS_ID } from '@/next.calendar.constants';
 import type { CalendarEvent } from '@/types';
 
 import styles from './calendar.module.css';

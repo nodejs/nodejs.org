@@ -3,7 +3,7 @@ import { deflateSync } from 'node:zlib';
 import matter from 'gray-matter';
 
 import { VERCEL_REVALIDATE } from '@/next.constants.mjs';
-import { dynamicRouter } from '@/next.dynamic.mjs';
+import { dynamicRouter } from '@/next.dynamic';
 import { defaultLocale } from '@/next.locales.mjs';
 import { parseRichTextIntoPlainText } from '@/util/stringUtils';
 

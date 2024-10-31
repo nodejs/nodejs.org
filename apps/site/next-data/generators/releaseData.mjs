@@ -1,5 +1,7 @@
 'use strict';
 
+// NOTE: this file canot be a ts file
+// because `nodevu` din't have typedefs
 import nodevu from '@nodevu/core';
 
 // Gets the appropriate release status for each major release

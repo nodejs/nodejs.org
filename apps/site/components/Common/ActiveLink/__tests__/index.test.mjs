@@ -5,8 +5,8 @@ import { VERSION_SUPPORT_SHORTCUT } from '@/next.constants.mjs';
 import ActiveLink from '..';
 
 // mock usePathname, but retain all the other imports
-jest.mock('@/navigation.mjs', () => ({
-  ...jest.requireActual('@/navigation.mjs'),
+jest.mock('@/navigation', () => ({
+  ...jest.requireActual('@/navigation'),
   usePathname: jest.fn(),
 }));
 
@@ -48,7 +48,7 @@ describe('ActiveLink', () => {
   });
 
   it('does not set active class when href base does not match', () => {
-    const { usePathname } = require('@/navigation.mjs');
+    const { usePathname } = require('@/navigation');
     usePathname.mockReturnValue('/not-link/sublink');
 
     render(
@@ -66,7 +66,7 @@ describe('ActiveLink', () => {
   });
 
   it('sets active class when href is other than VERSION_SUPPORT_SHORTCUT', () => {
-    const { usePathname } = require('@/navigation.mjs');
+    const { usePathname } = require('@/navigation');
     usePathname.mockReturnValue('/link/sublink');
 
     render(
@@ -87,7 +87,7 @@ describe('ActiveLink', () => {
   });
 
   it('does not set active class when href is VERSION_SUPPORT_SHORTCUT', () => {
-    const { usePathname } = require('@/navigation.mjs');
+    const { usePathname } = require('@/navigation');
     usePathname.mockReturnValue(VERSION_SUPPORT_SHORTCUT);
 
     render(

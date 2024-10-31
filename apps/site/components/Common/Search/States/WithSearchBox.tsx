@@ -16,7 +16,7 @@ import { WithPoweredBy } from '@/components/Common/Search/States/WithPoweredBy';
 import { WithSearchResult } from '@/components/Common/Search/States/WithSearchResult';
 import Tabs from '@/components/Common/Tabs';
 import { useClickOutside, useKeyboardCommands } from '@/hooks/react-client';
-import { useRouter } from '@/navigation.mjs';
+import { useRouter } from '@/navigation';
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '@/next.constants.mjs';
 import { search as oramaSearch, getInitialFacets } from '@/next.orama.mjs';
 import type { SearchDoc } from '@/types';

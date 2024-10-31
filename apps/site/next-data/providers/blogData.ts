@@ -1,6 +1,6 @@
 import { cache } from 'react';
 
-import generateBlogData from '@/next-data/generators/blogData.mjs';
+import generateBlogData from '@/next-data/generators/blogData';
 import { BLOG_POSTS_PER_PAGE } from '@/next.constants.mjs';
 import type { BlogPostsRSC } from '@/types';
 

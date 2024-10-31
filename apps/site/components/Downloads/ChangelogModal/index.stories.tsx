@@ -3,7 +3,7 @@ import { VFile } from 'vfile';
 
 import ChangelogModal from '@/components/Downloads/ChangelogModal';
 import { MDXRenderer } from '@/components/mdxRenderer';
-import { compileMDX } from '@/next.mdx.compiler.mjs';
+import { compileMDX } from '@/next.mdx.compiler';
 import { getGitHubAvatarUrl } from '@/util/gitHubUtils';
 
 type Story = StoryObj<typeof ChangelogModal>;

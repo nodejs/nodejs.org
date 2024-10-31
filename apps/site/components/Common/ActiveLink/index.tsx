@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import type { ComponentProps, FC } from 'react';
 
 import Link from '@/components/Link';
-import { usePathname } from '@/navigation.mjs';
+import { usePathname } from '@/navigation';
 import { VERSION_SUPPORT_SHORTCUT } from '@/next.constants.mjs';
 
 type ActiveLocalizedLinkProps = ComponentProps<typeof Link> & {
