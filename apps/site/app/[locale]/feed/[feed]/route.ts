@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
 
 import provideWebsiteFeeds from '@/next-data/providers/websiteFeeds';
-import { VERCEL_REVALIDATE } from '@/next.constants.mjs';
 import { siteConfig } from '@/next.json.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 
@@ -44,4 +43,4 @@ export const dynamic = 'force-static';
 // Ensures that this endpoint is invalidated and re-executed every X minutes
 // so that when new deployments happen, the data is refreshed
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
-export const revalidate = VERCEL_REVALIDATE;
+export const revalidate = 300;
