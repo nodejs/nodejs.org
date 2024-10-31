@@ -12,7 +12,7 @@ import Tooltip from '@/components/Common/Tooltip';
 
 import styles from './index.module.css';
 
-export type AvatarGroupProps = {
+type AvatarGroupProps = {
   avatars: Array<AvatarProps & { url?: string }>;
   limit?: number;
   isExpandable?: boolean;
