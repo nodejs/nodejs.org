@@ -30,12 +30,6 @@ export const GET = async (_: Request, props: StaticParams) => {
 export const generateStaticParams = async () =>
   siteConfig.rssFeeds.map(feed => ({ feed: feed.file, locale }));
 
-// In this case we want to catch-all possible requests. This is so that if a non defined feed is
-// requested we can manually return a 404 response for it instead of having Next.js handle it
-// and return our top level custom 404 html page instead
-// @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
-export const dynamicParams = true;
-
 // Enforces that this route is cached and static as much as possible
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
 export const dynamic = 'force-static';
