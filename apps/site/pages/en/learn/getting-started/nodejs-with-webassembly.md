@@ -49,13 +49,34 @@ Once you have a WebAssembly module, you can use the Node.js `WebAssembly` object
 // Assume add.wasm file exists that contains a single function adding 2 provided arguments
 const fs = require('node:fs');
 
+// Use the readFileSync function to read the contents of the "add.wasm" file
 const wasmBuffer = fs.readFileSync('/path/to/add.wasm');
+
+// Use the WebAssembly.instantiate method to instantiate the WebAssembly module
 WebAssembly.instantiate(wasmBuffer).then(wasmModule => {
-  // Exported function live under instance.exports
+  // Exported function lives under instance.exports object
   const { add } = wasmModule.instance.exports;
   const sum = add(5, 6);
   console.log(sum); // Outputs: 11
 });
+```
+
+```mjs
+// Assume add.wasm file exists that contains a single function adding 2 provided arguments
+import fs from 'node:fs/promises';
+
+// Use readFile to read contents of the "add.wasm" file
+const wasmBuffer = await fs.readFile('path/to/add.wsm');
+
+// Use the WebAssembly.instantiate method to instantiate the WebAssembly module
+const wasmModule = await WebAssembly.instantiate(wasmBuffer);
+
+// Exported function lives under instance.exports object
+const { add } = wasmModule.instance.exports;
+
+const sum = add(5, 6);
+
+console.log(sum); // Outputs 11
 ```
 
 ## Interacting with the OS
