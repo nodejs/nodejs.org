@@ -55,15 +55,6 @@ export const generateStaticParams = async () => [
   { locale: defaultLocale.code },
 ];
 
-// In this case we want to catch-all possible requests. This ensures that we always generate and
-// serve the OpenGrapgh images independently on the locale
-// @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
-export const dynamicParams = true;
-
-// Enforces that this route is used as static rendering
-// @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
-export const dynamic = 'auto';
-
 // Ensures that this endpoint is invalidated and re-executed every X minutes
 // so that when new deployments happen, the data is refreshed
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate

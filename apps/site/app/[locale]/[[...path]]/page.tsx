@@ -168,11 +168,6 @@ const getPage: FC<DynamicParams> = async props => {
   return notFound();
 };
 
-// In this case we want to catch-all possible pages even to this page. This ensures that we use our 404
-// and that all pages including existing ones are handled here and provide `next-intl` locale also
-// @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
-export const dynamicParams = true;
-
 // Enforces that this route is used as static rendering
 // Except whenever on the Development mode as we want instant-refresh when making changes
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
