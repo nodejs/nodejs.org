@@ -1,7 +1,7 @@
 import { deflateSync } from 'node:zlib';
 
 import provideReleaseData from '@/next-data/providers/releaseData';
-import { GITHUB_API_KEY, VERCEL_REVALIDATE } from '@/next.constants.mjs';
+import { GITHUB_API_KEY } from '@/next.constants.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 import type { GitHubApiFile } from '@/types';
 import { getGitHubApiDocsUrl } from '@/util/gitHubUtils';
@@ -77,4 +77,4 @@ export const dynamic = 'error';
 // Ensures that this endpoint is invalidated and re-executed every X minutes
 // so that when new deployments happen, the data is refreshed
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
-export const revalidate = VERCEL_REVALIDATE;
+export const revalidate = 300;

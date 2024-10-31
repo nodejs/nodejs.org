@@ -1,12 +1,12 @@
 import { setContext, setTags } from '@sentry/nextjs';
 import { notFound, redirect } from 'next/navigation';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 import type { FC } from 'react';
 
 import { setClientContext } from '@/client-context';
 import { MDXRenderer } from '@/components/mdxRenderer';
 import WithLayout from '@/components/withLayout';
-import { ENABLE_STATIC_EXPORT, VERCEL_REVALIDATE } from '@/next.constants.mjs';
+import { ENABLE_STATIC_EXPORT } from '@/next.constants.mjs';
 import { PAGE_VIEWPORT, DYNAMIC_ROUTES } from '@/next.dynamic.constants.mjs';
 import { dynamicRouter } from '@/next.dynamic.mjs';
 import {
@@ -72,7 +72,7 @@ const getPage: FC<DynamicParams> = async props => {
 
   if (!availableLocaleCodes.includes(locale)) {
     // Forces the current locale to be the Default Locale
-    unstable_setRequestLocale(defaultLocale.code);
+    setRequestLocale(defaultLocale.code);
 
     if (!allLocaleCodes.includes(locale)) {
       // when the locale is not listed in the locales, return NotFound
@@ -85,7 +85,7 @@ const getPage: FC<DynamicParams> = async props => {
   }
 
   // Configures the current Locale to be the given Locale of the Request
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
 
   // Gets the current full pathname for a given path
   const pathname = dynamicRouter.getPathname(path);
@@ -181,6 +181,6 @@ export const dynamic = 'force-static';
 // Ensures that this endpoint is invalidated and re-executed every X minutes
 // so that when new deployments happen, the data is refreshed
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
-export const revalidate = VERCEL_REVALIDATE;
+export const revalidate = 300;
 
 export default getPage;
