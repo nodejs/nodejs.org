@@ -20,10 +20,6 @@
       "link": "https://nodejs.org/docs/latest/api/",
       "label": "components.containers.navBar.links.docs"
     },
-    "support": {
-      "link": "/about/previous-releases",
-      "label": "components.containers.navBar.links.support"
-    },
     "certification": {
       "link": "https://training.linuxfoundation.org/openjs/",
       "label": "components.containers.navBar.links.certification",
@@ -38,6 +34,10 @@
     {
       "link": "https://privacy-policy.openjsf.org/",
       "text": "components.containers.footer.links.privacyPolicy"
+    },
+    {
+      "link": "/about/previous-releases",
+      "text": "components.containers.footer.links.versionSupport"
     },
     {
       "link": "https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md",
