@@ -103,10 +103,10 @@
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
     "@types/semver": "~7.5.8",
-    "eslint-config-next": "15.0.0-rc.1",
+    "eslint-config-next": "15.0.2",
     "eslint-import-resolver-typescript": "~3.6.3",
     "eslint-plugin-mdx": "~3.1.5",
-    "eslint-plugin-react": "~7.37.1",
+    "eslint-plugin-react": "~7.37.2",
     "eslint-plugin-react-hooks": "5.0.0",
     "eslint-plugin-storybook": "0.10.0--canary.156.ce8985b.0",
     "handlebars": "4.7.8",
@@ -116,12 +116,12 @@
     "remark-frontmatter": "5.0.0",
     "remark-preset-lint-node": "5.1.2",
     "storybook": "~8.3.0",
-    "stylelint": "16.9.0",
+    "stylelint": "16.10.0",
     "stylelint-config-standard": "36.0.1",
     "stylelint-order": "6.0.4",
     "stylelint-selector-bem-pattern": "4.0.1",
     "typescript": "~5.5.4",
-    "typescript-eslint": "~8.8.1",
+    "typescript-eslint": "~8.12.2",
     "user-agent-data-types": "0.4.2"
   }
 }
