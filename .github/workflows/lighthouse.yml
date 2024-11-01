@@ -50,12 +50,12 @@ jobs:
 
       - name: Add Comment to PR
         # Signal that a lighthouse run is about to start
-        uses: thollander/actions-comment-pull-request@fabd468d3a1a0b97feee5f6b9e499eab0dd903f6 # v2.5.0
+        uses: thollander/actions-comment-pull-request@e2c37e53a7d2227b61585343765f73a9ca57eda9 # v3.0.0
         with:
           message: |
             Running Lighthouse audit...
           # Used later to edit the existing comment
-          comment_tag: 'lighthouse_audit'
+          comment-tag: 'lighthouse_audit'
 
       - name: Capture Vercel Preview
         uses: patrickedqvist/wait-for-vercel-preview@06c79330064b0e6ef7a2574603b62d3c98789125 # v1.3.2
@@ -103,9 +103,9 @@ jobs:
 
       - name: Add Comment to PR
         # Replace the previous message with our formatted lighthouse results
-        uses: thollander/actions-comment-pull-request@fabd468d3a1a0b97feee5f6b9e499eab0dd903f6 # v2.5.0
+        uses: thollander/actions-comment-pull-request@e2c37e53a7d2227b61585343765f73a9ca57eda9 # v3.0.0
         with:
           # Reference the previously created comment
-          comment_tag: 'lighthouse_audit'
+          comment-tag: 'lighthouse_audit'
           message: |
             ${{ steps.format_lighthouse_score.outputs.comment }}
