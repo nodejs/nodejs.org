@@ -21,11 +21,8 @@
 }
 
 .avatar {
-  @apply xs:-ml-2
-    ml-0.5
-    size-8
-    flex-shrink-0
-    first:ml-0;
+  @apply size-8
+    flex-shrink-0;
 
   .wrapper {
     @apply max-xs:block
@@ -35,9 +32,14 @@
 
 .small {
   @apply xs:size-8
-    size-12;
+    xs:-ml-2
+    ml-0.5
+    size-10
+    first:ml-0;
 }
 
 .medium {
-  @apply size-10;
+  @apply -ml-2.5
+    size-10
+    first:ml-0;
 }

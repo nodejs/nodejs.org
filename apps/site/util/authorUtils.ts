@@ -6,11 +6,17 @@ import { getAcronymFromString } from './stringUtils';
 export const mapAuthorToCardAuthors = (author: string) =>
   author.split(/, | and |;| & | prepared by | by /i);
 
+type Author = {
+  id: string;
+  name: string;
+  website?: string;
+};
+
 export const getAuthorWithId = (usernames: Array<string>) =>
   usernames.map(username => {
     const author = Object.values(authors).find(
       ({ id }: { id: string }) => id.toLowerCase() === username.toLowerCase()
-    ) as { id: string; name: string; website?: string };
+    ) as Author | undefined;
 
     if (author) {
       const { id, name, website } = author;
@@ -38,11 +44,7 @@ export const getAuthorWithName = (names: Array<string>) =>
       const author = authors[name as keyof typeof authors];
 
       if (author) {
-        const {
-          id,
-          name,
-          website,
-        }: { id: string; name: string; website?: string } = author;
+        const { id, name, website }: Author = author;
 
         return {
           image: getGitHubAvatarUrl(id),

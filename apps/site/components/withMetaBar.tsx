@@ -36,7 +36,7 @@ const WithMetaBar: FC = () => {
             (
               <WithAvatarGroup
                 usernames={usernames}
-                limit={shortAvatarList ? 4 : 8}
+                limit={shortAvatarList ? 4 : 6}
               />
             ),
         }),

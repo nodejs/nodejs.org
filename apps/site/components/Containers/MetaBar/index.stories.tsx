@@ -35,7 +35,7 @@ export const Default: Story = {
       'components.metabar.readingTime': '15 minutes',
       'components.metabar.addedIn': 'v1.0.0',
       'components.metabar.author': 'The Node.js Project',
-      'components.metabar.authors': <WithAvatarGroup names={names} limit={8} />,
+      'components.metabar.authors': <WithAvatarGroup names={names} limit={6} />,
       'components.metabar.contribute': (
         <>
           <GitHub className="fill-neutral-700 dark:fill-neutral-100" />
