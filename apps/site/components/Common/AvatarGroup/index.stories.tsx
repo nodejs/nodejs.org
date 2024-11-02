@@ -30,7 +30,7 @@ const unknownAvatar = {
 };
 
 const defaultProps = {
-  avatars: [unknownAvatar, ...getAuthorWithId(names)],
+  avatars: [unknownAvatar, ...getAuthorWithId(names, true)],
 };
 
 export const Default: Story = {

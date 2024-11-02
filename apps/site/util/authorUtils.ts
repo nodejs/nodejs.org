@@ -3,8 +3,18 @@ import authors from '@/authors.json';
 import { getGitHubAvatarUrl } from './gitHubUtils';
 import { getAcronymFromString } from './stringUtils';
 
-export const mapAuthorToCardAuthors = (author: string) =>
-  author.split(/, | and |;| & | prepared by | by /i);
+export const mapAuthorToCardAuthors = (author: string) => {
+  // Clears text in parentheses
+  const cleanedAuthor = author.replace(/\s*\(.*?\)\s*/g, '').trim();
+
+  // Defines the separators such as (",", "and", ";", "&", "prepared by", "by")
+  const separators = /,|\band\b|;|&| prepared by | by /i;
+
+  return cleanedAuthor
+    .split(separators)
+    .map(name => name.trim())
+    .filter(Boolean);
+};
 
 type Author = {
   id: string;
@@ -12,7 +22,7 @@ type Author = {
   website?: string;
 };
 
-export const getAuthorWithId = (usernames: Array<string>) =>
+export const getAuthorWithId = (usernames: Array<string>, hasUrl: boolean) =>
   usernames.map(username => {
     const author = Object.values(authors).find(
       ({ id }: { id: string }) => id.toLowerCase() === username.toLowerCase()
@@ -26,7 +36,7 @@ export const getAuthorWithId = (usernames: Array<string>) =>
         name: name,
         nickname: id,
         fallback: getAcronymFromString(name),
-        url: website,
+        url: hasUrl ? website : undefined,
       };
     }
 
@@ -34,11 +44,11 @@ export const getAuthorWithId = (usernames: Array<string>) =>
       image: getGitHubAvatarUrl(username),
       nickname: username,
       fallback: getAcronymFromString(username),
-      url: `https://github.com/${username}`,
+      url: hasUrl ? `https://github.com/${username}` : undefined,
     };
   });
 
-export const getAuthorWithName = (names: Array<string>) =>
+export const getAuthorWithName = (names: Array<string>, hasUrl: boolean) =>
   names.map(name => {
     if (Object.keys(authors).includes(name)) {
       const author = authors[name as keyof typeof authors];
@@ -51,7 +61,7 @@ export const getAuthorWithName = (names: Array<string>) =>
           name: name,
           nickname: id,
           fallback: getAcronymFromString(name),
-          url: website,
+          url: hasUrl ? website : undefined,
         };
       }
     }

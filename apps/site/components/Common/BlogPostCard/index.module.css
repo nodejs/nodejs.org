@@ -33,6 +33,10 @@
 .footer {
   @apply flex
     gap-x-3;
+
+  div:first-child {
+    @apply overflow-visible;
+  }
 }
 
 .author {

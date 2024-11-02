@@ -47,7 +47,7 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
       {description && <p className={styles.description}>{description}</p>}
 
       <footer className={styles.footer}>
-        <WithAvatarGroup names={authors} size="medium" />
+        <WithAvatarGroup names={authors} size="medium" clickable={false} />
 
         <div className={styles.author}>
           {authors && <p>{authors.join(', ')}</p>}

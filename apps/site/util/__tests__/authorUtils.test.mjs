@@ -28,6 +28,8 @@ describe('mapAuthorToCardAuthors', () => {
       ['Timothy J Fontaine & John Doe'],
       ['Timothy J Fontaine by John Doe'],
       ['Timothy J Fontaine prepared by John Doe'],
+      ['Timothy J Fontaine (@TimothyJFontaine) & John Doe (@JohnDoe)'],
+      ['Timothy J Fontaine (TimothyJFontaine) & John Doe (JohnDoe)'],
     ])('returns the correct card authors', author => {
       const result = mapAuthorToCardAuthors(author);
 
@@ -54,7 +56,7 @@ describe('mapAuthorToCardAuthors', () => {
 
 describe('getAuthorWithId', () => {
   it('should return author details when author is found', () => {
-    const result = getAuthorWithId(['nodejs']);
+    const result = getAuthorWithId(['nodejs'], true);
 
     expect(result).toEqual([
       {
@@ -70,7 +72,7 @@ describe('getAuthorWithId', () => {
 
 describe('getAuthorWithName', () => {
   it('should return author details when author is found', () => {
-    const result = getAuthorWithName(['The Node.js Project']);
+    const result = getAuthorWithName(['The Node.js Project'], true);
 
     expect(result).toEqual([
       {
@@ -84,7 +86,7 @@ describe('getAuthorWithName', () => {
   });
 
   it('should return fallback details when author is not found', () => {
-    const result = getAuthorWithName(['Caner Akdas']);
+    const result = getAuthorWithName(['Caner Akdas'], true);
 
     expect(result).toEqual([
       {

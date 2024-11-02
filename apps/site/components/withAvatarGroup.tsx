@@ -11,19 +11,21 @@ type WithAvatarGroupProps = Omit<
 > & {
   usernames?: Array<string>;
   names?: Array<string>;
+  clickable?: boolean;
 };
 
 const WithAvatarGroup: FC<WithAvatarGroupProps> = ({
   usernames,
   names,
+  clickable = true,
   ...props
 }) => (
   <AvatarGroup
     avatars={
       usernames
-        ? getAuthorWithId(usernames)
+        ? getAuthorWithId(usernames, clickable)
         : names
-          ? getAuthorWithName(names)
+          ? getAuthorWithName(names, clickable)
           : []
     }
     {...props}

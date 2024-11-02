@@ -7,15 +7,15 @@ type Story = StoryObj<typeof AvatarOverlay>;
 type Meta = MetaObj<typeof AvatarOverlay>;
 
 export const Default: Story = {
-  args: getAuthorWithId(['nodejs'])[0],
+  args: getAuthorWithId(['nodejs'], true)[0],
 };
 
 export const FallBack: Story = {
-  args: getAuthorWithName(['Node.js'])[0],
+  args: getAuthorWithName(['Node.js'], true)[0],
 };
 
 export const WithoutName: Story = {
-  args: getAuthorWithId(['canerakdas'])[0],
+  args: getAuthorWithId(['canerakdas'], true)[0],
 };
 
 export default { component: AvatarOverlay } as Meta;
