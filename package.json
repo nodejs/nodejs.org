@@ -45,8 +45,8 @@
     "@types/eslint__js": "~8.42.3",
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "~9.10.0",
-    "eslint-plugin-import-x": "~4.2.1",
+    "eslint": "~9.14.0",
+    "eslint-plugin-import-x": "~4.4.0",
     "eslint-plugin-no-relative-import-paths": "~1.5.5",
     "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "0.6.8"
