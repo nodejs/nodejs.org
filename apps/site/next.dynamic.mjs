@@ -8,7 +8,12 @@ import matter from 'gray-matter';
 import { cache } from 'react';
 import { VFile } from 'vfile';
 
-import { BASE_URL, BASE_PATH, IS_DEVELOPMENT } from './next.constants.mjs';
+import {
+  BASE_URL,
+  BASE_PATH,
+  IS_DEVELOPMENT,
+  DEFAULT_CATEGORY_OG_TYPE,
+} from './next.constants.mjs';
 import {
   IGNORED_ROUTES,
   DYNAMIC_ROUTES,
@@ -196,49 +201,50 @@ const getDynamicRouter = async () => {
 
     const { data } = matter(source);
 
+    const getUrlForPathname = (l, p) =>
+      `${baseUrlAndPath}/${l}${p ? `/${p}` : ''}`;
+
+    // Default Title for the page
     pageMetadata.title = data.title
       ? `${siteConfig.title} — ${data.title}`
       : siteConfig.title;
 
+    // Default Twitter Title for the page
     pageMetadata.twitter.title = pageMetadata.title;
 
-    const getUrlForPathname = (l, p) =>
-      `${baseUrlAndPath}/${l}${p ? `/${p}` : ''}`;
+    // Default Open Graph Image for the page
+    pageMetadata.openGraph.images = [
+      `${defaultLocale.code}/next-data/og/${data.category ?? DEFAULT_CATEGORY_OG_TYPE}/${pageMetadata.title}`,
+    ];
 
+    // Default canonical URL for the page
     pageMetadata.alternates.canonical = getUrlForPathname(locale, path);
 
+    // Default alternate URL for the page in the default locale
     pageMetadata.alternates.languages['x-default'] = getUrlForPathname(
       defaultLocale.code,
       path
     );
 
-    const blogMatch = path.match(/^blog\/(release|vulnerability)(\/|$)/);
-    if (blogMatch) {
-      const category = blogMatch[1];
-      const currentFile = siteConfig.rssFeeds.find(
-        item => item.category === category
-      )?.file;
-      // Use getUrlForPathname to dynamically construct the XML path for blog/release and blog/vulnerability
-      pageMetadata.alternates.types['application/rss+xml'] = getUrlForPathname(
-        locale,
-        `feed/${currentFile}`
-      );
-    } else {
-      // Use getUrlForPathname for the default blog XML feed path
-      pageMetadata.alternates.types['application/rss+xml'] = getUrlForPathname(
-        locale,
-        'feed/blog.xml'
-      );
-    }
+    // Add the default blog feed as the list of feed for the page
+    pageMetadata.alternates.types['application/rss+xml'] = getUrlForPathname(
+      locale,
+      'feed/blog.xml'
+    );
 
+    // Simply assume that a blog feed exists for a given category, otherwise,
+    // the page will simply give a 404 as it does not exist, which is fine
+    pageMetadata.alternates.types['application/rss+xml'] = getUrlForPathname(
+      locale,
+      `feed/${data.category ?? DEFAULT_CATEGORY_OG_TYPE}.xml`
+    );
+
+    // Iterate all languages to generate alternate URLs for each language
     availableLocaleCodes.forEach(currentLocale => {
       pageMetadata.alternates.languages[currentLocale] = getUrlForPathname(
         currentLocale,
         path
       );
-      pageMetadata.openGraph.images = [
-        `${currentLocale}/next-data/og?title=${pageMetadata.title}&type=${data.category ?? 'announcement'}`,
-      ];
     });
 
     return pageMetadata;
