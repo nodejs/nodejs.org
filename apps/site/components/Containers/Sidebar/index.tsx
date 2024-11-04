@@ -37,7 +37,7 @@ const SideBar: FC<SidebarProps> = ({ groups }) => {
 
       {groups.map(({ groupName, items }) => (
         <SidebarGroup
-          key={groupName.toString()}
+          key={groupName?.toString()}
           groupName={groupName}
           items={items}
         />

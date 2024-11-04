@@ -39,7 +39,7 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
 
         return (
           <BreadcrumbItem
-            key={link.label.toString()}
+            key={link.label?.toString()}
             hidden={hidden}
             hideSeparator={isLastItem}
             position={position + +!hideHome}

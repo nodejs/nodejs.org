@@ -39,7 +39,7 @@ const ProgressionSidebar: FC<ProgressionSidebarProps> = ({ groups }) => {
 
       {groups.map(({ groupName, items }) => (
         <ProgressionSidebarGroup
-          key={groupName.toString()}
+          key={groupName?.toString()}
           groupName={groupName}
           items={items}
         />
