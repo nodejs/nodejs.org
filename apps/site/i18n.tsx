@@ -31,12 +31,18 @@ const loadLocaleDictionary = async (locale: string) => {
 
 // Provides `next-intl` configuration for RSC/SSR
 export default getRequestConfig(async ({ requestLocale }) => {
-  // Awaits for resolving the Request Locale
-  const locale = await requestLocale;
+  // This typically corresponds to the `[locale]` segment
+  let locale = await requestLocale;
+
+  // Ensure that the incoming locale is valid
+  if (!locale || !availableLocaleCodes.includes(locale)) {
+    locale = defaultLocale.code;
+  }
 
   return {
+    locale,
     // This is the dictionary of messages to be loaded
-    messages: await loadLocaleDictionary(locale ?? defaultLocale.code),
+    messages: await loadLocaleDictionary(locale),
     // We always define the App timezone as UTC
     timeZone: 'Etc/UTC',
   };
