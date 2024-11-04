@@ -21,7 +21,12 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
   const { langDir, hrefLang } = availableLocalesMap[locale] || defaultLocale;
 
   return (
-    <html className={fontClasses} dir={langDir} lang={hrefLang}>
+    <html
+      className={fontClasses}
+      dir={langDir}
+      lang={hrefLang}
+      suppressHydrationWarning
+    >
       <body suppressHydrationWarning>
         <LocaleProvider>
           <ThemeProvider>
