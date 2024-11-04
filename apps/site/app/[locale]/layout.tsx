@@ -14,13 +14,9 @@ import '@/styles/index.css';
 
 const fontClasses = classNames(IBM_PLEX_MONO.variable, OPEN_SANS.variable);
 
-const RootLayout: FC<
-  PropsWithChildren<{
-    params: Promise<{
-      locale: string;
-    }>;
-  }>
-> = async ({ children, params }) => {
+type RotLayoutProps = PropsWithChildren<{ params: { locale: string } }>;
+
+const RootLayout: FC<RotLayoutProps> = async ({ children, params }) => {
   const { locale } = await params;
 
   const { langDir, hrefLang } = availableLocalesMap[locale] || defaultLocale;
