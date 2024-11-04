@@ -3,6 +3,7 @@
     rounded-md
     p-2
     text-neutral-700
+    motion-safe:transition-colors
     dark:text-neutral-300;
 
   &:hover {
