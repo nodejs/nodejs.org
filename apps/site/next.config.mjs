@@ -26,6 +26,7 @@ const nextConfig = {
   // We allow the BASE_PATH to be overridden in case that the Website
   // is being built on a subdirectory (e.g. /nodejs-website)
   basePath: BASE_PATH,
+  // Vercel/Next.js Image Optimization Settings
   images: {
     // We disable image optimisation during static export builds
     unoptimized: ENABLE_STATIC_EXPORT,
@@ -69,7 +70,7 @@ const nextConfig = {
   // as we already check it on the CI within each Pull Request
   // we also configure ESLint to run its lint checking on all files (next lint)
   eslint: { dirs: ['.'], ignoreDuringBuilds: true },
-  // Adds custom WebPack configuration to our Next.hs setup
+  // Adds custom WebPack configuration to our Next.js setup
   webpack: function (config, { webpack }) {
     // Next.js WebPack Bundler does not know how to handle `.mjs` files on `node_modules`
     // This is not an issue when using TurboPack as it uses SWC and it is ESM-only

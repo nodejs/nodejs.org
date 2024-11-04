@@ -1,5 +1,4 @@
 import {
-  provideBlogCategories,
   provideBlogPosts,
   providePaginatedBlogPosts,
 } from '@/next-data/providers/blogData';
@@ -28,39 +27,16 @@ export const GET = async (_: Request, props: StaticParams) => {
 };
 
 // This function generates the static paths that come from the dynamic segments
-// `[locale]/next-data/blog-data/[category]` and returns an array of all available static paths
-// This is used for ISR static validation and generation
-export const generateStaticParams = async () => {
-  // This metadata is the original list of all available categories and all available years
-  // within the Node.js Website Blog Posts (2011, 2012...)
-  const categories = provideBlogCategories();
-
-  const mappedCategories = categories.map(category => {
-    // gets the current pagination meta for a given category
-    const { pagination } = provideBlogPosts(category);
-
-    // creates a sequential array containing each page number
-    const pages = [...Array(pagination.pages).keys()].map((_, key) => key + 1);
-
-    // maps the data into valid Next.js Route Engine routes with all required params
-    // notice that we add an extra 0 in the beginning in case we want a non-paginated route
-    return [0, ...pages].map(page => ({
-      locale: defaultLocale.code,
-      page: String(page),
-      category,
-    }));
-  });
-
-  return mappedCategories.flat();
-};
-
-// Enforces that only the paths from `generateStaticParams` are allowed, giving 404 on the contrary
-// @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
-export const dynamicParams = false;
+// `[locale]/next-data/blog-data/[category]/[page]` this will return a default value as we don't want to
+// statically generate this route as it is compute-expensive.
+// Hence we generate a "fake" OG image during build just to satisfy Next.js requirements.
+export const generateStaticParams = async () => [
+  { locale: defaultLocale.code, category: 'all', page: '0' },
+];
 
 // Enforces that this route is cached and static as much as possible
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
-export const dynamic = 'error';
+export const dynamic = 'force-static';
 
 // Ensures that this endpoint is invalidated and re-executed every X minutes
 // so that when new deployments happen, the data is refreshed

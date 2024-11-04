@@ -17,7 +17,7 @@ import {
 import { MatterProvider } from '@/providers/matterProvider';
 
 type DynamicStaticPaths = { path: Array<string>; locale: string };
-type DynamicParams = { params: DynamicStaticPaths };
+type DynamicParams = { params: Promise<DynamicStaticPaths> };
 
 // This is the default Viewport Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-viewport#generateviewport-function

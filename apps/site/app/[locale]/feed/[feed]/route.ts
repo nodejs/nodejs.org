@@ -30,6 +30,10 @@ export const GET = async (_: Request, props: StaticParams) => {
 export const generateStaticParams = async () =>
   siteConfig.rssFeeds.map(feed => ({ feed: feed.file, locale }));
 
+// Enforces that only the paths from `generateStaticParams` are allowed, giving 404 on the contrary
+// @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
+export const dynamicParams = false;
+
 // Enforces that this route is cached and static as much as possible
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
 export const dynamic = 'force-static';

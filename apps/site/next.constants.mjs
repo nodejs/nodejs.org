@@ -90,6 +90,11 @@ export const NEXT_DATA_URL = process.env.NEXT_PUBLIC_DATA_URL
 export const MD_EXTENSION_REGEX = /((\/)?(index))?\.mdx?$/i;
 
 /**
+ * This is the default type of blog post type that we use for OG Meta Tags
+ */
+export const DEFAULT_CATEGORY_OG_TYPE = 'announcement';
+
+/**
  * This defines how many blog posts each pagination page should have
  */
 export const BLOG_POSTS_PER_PAGE = 6;
