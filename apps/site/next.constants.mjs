@@ -178,8 +178,3 @@ export const GITHUB_API_KEY = process.env.NEXT_GITHUB_API_KEY || '';
  */
 export const ESP_SUPPORT_THRESHOLD_VERSION =
   process.env.ESP_SUPPORT_THRESHOLD_VERSION || '18.0.0';
-
-/**
- * This deep link into the app is repeated in the top nav, but we want to ignore it for active-link highlighting, since it will be covered by About
- */
-export const VERSION_SUPPORT_SHORTCUT = '/about/previous-releases';
