@@ -12,6 +12,7 @@ type WithAvatarGroupProps = Omit<
   usernames?: Array<string>;
   names?: Array<string>;
   clickable?: boolean;
+  container?: HTMLElement | null;
 };
 
 const WithAvatarGroup: FC<WithAvatarGroupProps> = ({

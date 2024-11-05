@@ -17,6 +17,7 @@ type AvatarGroupProps = {
   limit?: number;
   isExpandable?: boolean;
   size?: AvatarProps['size'];
+  container?: HTMLElement;
 };
 
 const AvatarGroup: FC<AvatarGroupProps> = ({
@@ -24,6 +25,7 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
   limit = 10,
   isExpandable = true,
   size = 'small',
+  container,
 }) => {
   const [showMore, setShowMore] = useState(false);
 
@@ -37,7 +39,11 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
       {renderAvatars.map(({ ...avatar }) => (
         <Fragment key={avatar.nickname}>
           {avatar.url ? (
-            <Tooltip content={<AvatarOverlay {...avatar} />} asChild>
+            <Tooltip
+              asChild
+              container={container}
+              content={<AvatarOverlay {...avatar} />}
+            >
               <Avatar {...avatar} size={size} className="cursor-pointer" />
             </Tooltip>
           ) : (

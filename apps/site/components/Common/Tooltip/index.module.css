@@ -1,6 +1,5 @@
 .content {
-  @apply mx-1.5
-    rounded-md
+  @apply rounded-md
     border
     bg-white
     text-sm

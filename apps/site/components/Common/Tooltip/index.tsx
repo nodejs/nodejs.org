@@ -1,4 +1,5 @@
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
+import classNames from 'classnames';
 import type { ComponentProps, FC, PropsWithChildren, ReactNode } from 'react';
 
 import styles from './index.module.css';
@@ -8,6 +9,7 @@ type TooltipProps = {
   content: ReactNode;
   kind?: 'default' | 'warning' | 'error';
   side?: ComponentProps<typeof TooltipPrimitive.Content>['side'];
+  container?: HTMLElement | null;
 };
 
 const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
@@ -16,17 +18,20 @@ const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
   content,
   asChild = false,
   side = 'bottom',
+  container,
 }) => (
   <TooltipPrimitive.Provider delayDuration={200}>
     <TooltipPrimitive.Root>
       <TooltipPrimitive.Trigger asChild={asChild}>
         {children}
       </TooltipPrimitive.Trigger>
-      <TooltipPrimitive.Portal>
+      <TooltipPrimitive.Portal container={container}>
         <TooltipPrimitive.Content
           side={side}
           sideOffset={4}
-          className={`${styles[kind]} ${styles.content}`}
+          className={classNames(styles[kind], styles.content, {
+            'mx-1.5': side === 'top' || side === 'bottom',
+          })}
         >
           {content}
           <TooltipPrimitive.Arrow
