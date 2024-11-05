@@ -21,8 +21,11 @@ const WithMetaBar: FC = () => {
   const usernames =
     frontmatter.authors?.split(',').map(author => author.trim()) ?? [];
 
-  // Doing that because on mobile list on top of page and on desktop list on the right side
-  const shortAvatarList = useMediaQuery(
+  // Since we cannot show the same number of avatars in Mobile / Tablet
+  // resolution as we do on desktop and there is overflow, we are adjusting
+  // the number of avatars manually for the resolutions below
+  const isMobileResolution = useMediaQuery('(max-width: 670px)');
+  const isTabletResolution = useMediaQuery(
     '(min-width: 670px) and (max-width: 1280px)'
   );
 
@@ -36,7 +39,7 @@ const WithMetaBar: FC = () => {
             (
               <WithAvatarGroup
                 usernames={usernames}
-                limit={shortAvatarList ? 4 : 6}
+                limit={isMobileResolution ? 7 : isTabletResolution ? 5 : 9}
               />
             ),
         }),
