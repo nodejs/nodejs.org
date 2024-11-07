@@ -25,6 +25,7 @@ updates:
           - 'eslint'
           - 'typescript-eslint'
           - 'eslint-*'
+          - '@eslint/*'
           - 'stylelint'
           - 'stylelint-*'
         exclude-patterns:
