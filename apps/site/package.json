@@ -53,7 +53,7 @@
     "@radix-ui/react-tabs": "^1.1.0",
     "@radix-ui/react-toast": "^1.2.2",
     "@savvywombat/tailwindcss-grid-areas": "~4.0.0",
-    "@sentry/nextjs": "^8.36.0",
+    "@sentry/nextjs": "^8.37.1",
     "@tailwindcss/container-queries": "~0.1.1",
     "@types/node": "20.17.5",
     "@vcarl/remark-headings": "~0.1.0",
