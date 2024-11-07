@@ -41,7 +41,7 @@
     "@node-core/website-i18n": "*",
     "@nodevu/core": "~0.1.0",
     "@orama/highlight": "^0.1.6",
-    "@oramacloud/client": "^1.3.16",
+    "@oramacloud/client": "^1.3.20",
     "@radix-ui/react-accessible-icon": "^1.1.0",
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.2",
