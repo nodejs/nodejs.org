@@ -1,12 +1,6 @@
-import type { StorybookConfig } from '@storybook/nextjs';
-import classNames from 'classnames';
+import { resolve } from 'node:path';
 
-const rootClasses = classNames(
-  // note: this is hard-coded sadly as next/font can only be loaded within next.js context
-  '__variable_open-sans-normal',
-  // note: this is hard-coded sadly as next/font can only be loaded within next.js context
-  '__variable_ibm-plex-mono-normal'
-);
+import type { StorybookConfig } from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
   stories: ['../components/**/*.stories.tsx'],
@@ -14,18 +8,53 @@ const config: StorybookConfig = {
   staticDirs: ['../public'],
   typescript: { reactDocgen: false, check: false },
   core: { disableTelemetry: true, disableWhatsNewNotifications: true },
-  framework: {
-    name: '@storybook/nextjs',
-    options: { builder: { useSWC: true } },
-  },
+  framework: '@storybook/react-webpack5',
+  swc: () => ({
+    jsc: {
+      transform: {
+        react: {
+          runtime: 'automatic',
+        },
+      },
+    },
+  }),
   previewBody:
+    '<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">' +
     // This `<style>` is necessary to simulate what `next-themes` (ThemeProvider) does on real applications
     // `next-theme` automatically injects the color-scheme based on the system preference or the current applied theme
     // on Storybook we don't use `next-theme` as we want to simulate themes
     '<style>:root { color-scheme: light; } html[data-theme="dark"] { color-scheme: dark; }</style>' +
-    // This adds the base styling for dark/light themes within Storybook. This is a Storybook-only style
-    `<body class="${rootClasses}"></body>`,
+    '<style>:root { --font-open-sans: "Open Sans"; }</style>' +
+    '<style>:root { --font-ibm-plex-mono: "IBM Plex Mono"; }</style>',
   addons: [
+    '@storybook/addon-webpack5-compiler-swc',
+    {
+      name: '@storybook/addon-styling-webpack',
+      options: {
+        rules: [
+          {
+            test: /\.css$/,
+            use: [
+              'style-loader',
+              {
+                loader: 'css-loader',
+                options: {
+                  importLoaders: 1,
+                  modules: {
+                    auto: true,
+                    localIdentName: '[name]__[local]--[hash:base64:5]',
+                  },
+                },
+              },
+              {
+                loader: 'postcss-loader',
+                options: { implementation: require.resolve('postcss') },
+              },
+            ],
+          },
+        ],
+      },
+    },
     '@storybook/addon-controls',
     '@storybook/addon-interactions',
     '@storybook/addon-themes',
@@ -39,7 +68,18 @@ const config: StorybookConfig = {
     performance: { hints: false },
     // `nodevu` is a Node.js-specific package that requires Node.js modules
     // this is incompatible with Storybook. So we just mock the module
-    resolve: { ...config.resolve, alias: { '@nodevu/core': false } },
+    resolve: {
+      ...config.resolve,
+      alias: {
+        '@nodevu/core': false,
+        '@/navigation.mjs': resolve(__dirname, '__mocks__/navigation.mjs'),
+        '@/client-context.ts': resolve(
+          __dirname,
+          '__mocks__/client-context.mjs'
+        ),
+        '@': resolve(__dirname, '../'),
+      },
+    },
     // We need to configure `node:` APIs as Externals to WebPack
     // since essentially they're not supported on the browser
     externals: {
