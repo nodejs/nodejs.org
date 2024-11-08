@@ -1,4 +1,4 @@
-import { resolve } from 'node:path';
+import { join } from 'node:path';
 
 import type { StorybookConfig } from '@storybook/react-webpack5';
 
@@ -9,22 +9,18 @@ const config: StorybookConfig = {
   typescript: { reactDocgen: false, check: false },
   core: { disableTelemetry: true, disableWhatsNewNotifications: true },
   framework: '@storybook/react-webpack5',
-  swc: () => ({
-    jsc: {
-      transform: {
-        react: {
-          runtime: 'automatic',
-        },
-      },
-    },
-  }),
+  swc: () => ({ jsc: { transform: { react: { runtime: 'automatic' } } } }),
   previewBody:
+    // This injects Google Fonts as next-fonts is not supported on plain Storybook React
+    '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' +
     '<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">' +
     // This `<style>` is necessary to simulate what `next-themes` (ThemeProvider) does on real applications
     // `next-theme` automatically injects the color-scheme based on the system preference or the current applied theme
     // on Storybook we don't use `next-theme` as we want to simulate themes
     '<style>:root { color-scheme: light; } html[data-theme="dark"] { color-scheme: dark; }</style>' +
+    // Injects the Open Sans font as the same font variable defined by `next.fonts.mjs`
     '<style>:root { --font-open-sans: "Open Sans"; }</style>' +
+    // Injects the IBM Plex font as the same font variable defined by `next.fonts.mjs`
     '<style>:root { --font-ibm-plex-mono: "IBM Plex Mono"; }</style>',
   addons: [
     '@storybook/addon-webpack5-compiler-swc',
@@ -34,23 +30,7 @@ const config: StorybookConfig = {
         rules: [
           {
             test: /\.css$/,
-            use: [
-              'style-loader',
-              {
-                loader: 'css-loader',
-                options: {
-                  importLoaders: 1,
-                  modules: {
-                    auto: true,
-                    localIdentName: '[name]__[local]--[hash:base64:5]',
-                  },
-                },
-              },
-              {
-                loader: 'postcss-loader',
-                options: { implementation: require.resolve('postcss') },
-              },
-            ],
+            use: ['style-loader', 'css-loader', 'postcss-loader'],
           },
         ],
       },
@@ -72,12 +52,9 @@ const config: StorybookConfig = {
       ...config.resolve,
       alias: {
         '@nodevu/core': false,
-        '@/navigation.mjs': resolve(__dirname, '__mocks__/navigation.mjs'),
-        '@/client-context.ts': resolve(
-          __dirname,
-          '__mocks__/client-context.mjs'
-        ),
-        '@': resolve(__dirname, '../'),
+        '@/navigation.mjs': join(__dirname, '__mocks__/navigation.mjs'),
+        '@/client-context': join(__dirname, '__mocks__/client-context.mjs'),
+        '@': join(__dirname, '../'),
       },
     },
     // We need to configure `node:` APIs as Externals to WebPack
