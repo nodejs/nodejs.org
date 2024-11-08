@@ -35,6 +35,7 @@ h1.special {
     w-36
     -rotate-90
     select-none
+    bg-[url('/static/images/smoke.gif')]
     opacity-[0.15]
     content-['']
     md:-left-1/2

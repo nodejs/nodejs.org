@@ -24,21 +24,25 @@ const config: StorybookConfig = {
     '<style>:root { --font-ibm-plex-mono: "IBM Plex Mono"; }</style>',
   addons: [
     '@storybook/addon-webpack5-compiler-swc',
+    '@storybook/addon-controls',
+    '@storybook/addon-interactions',
+    '@storybook/addon-themes',
+    '@storybook/addon-viewport',
     {
       name: '@storybook/addon-styling-webpack',
       options: {
         rules: [
           {
             test: /\.css$/,
-            use: ['style-loader', 'css-loader', 'postcss-loader'],
+            use: [
+              'style-loader',
+              { loader: 'css-loader', options: { url: false } },
+              'postcss-loader',
+            ],
           },
         ],
       },
     },
-    '@storybook/addon-controls',
-    '@storybook/addon-interactions',
-    '@storybook/addon-themes',
-    '@storybook/addon-viewport',
   ],
   webpack: async config => ({
     ...config,
