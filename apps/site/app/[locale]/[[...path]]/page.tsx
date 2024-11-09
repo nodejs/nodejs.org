@@ -26,9 +26,7 @@ export const generateViewport = async () => ({ ...PAGE_VIEWPORT });
 // This generates each page's HTML Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 export const generateMetadata = async (props: DynamicParams) => {
-  const params = await props.params;
-
-  const { path = [], locale = defaultLocale.code } = params;
+  const { path = [], locale = defaultLocale.code } = await props.params;
 
   const pathname = dynamicRouter.getPathname(path);
 
@@ -67,8 +65,7 @@ export const generateStaticParams = async () => {
 // finally it returns (if the locale and route are valid) the React Component with the relevant context
 // and attached context providers for rendering the current page
 const getPage: FC<DynamicParams> = async props => {
-  const params = await props.params;
-  const { path = [], locale = defaultLocale.code } = params;
+  const { path = [], locale = defaultLocale.code } = await props.params;
 
   if (!availableLocaleCodes.includes(locale)) {
     if (!allLocaleCodes.includes(locale)) {
