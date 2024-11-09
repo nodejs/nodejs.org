@@ -515,7 +515,7 @@ and message would be. As usual with errors, you should consult the
 
 On the response, we'll just log the error to `stderr`.
 
-```js
+```cjs
 const http = require('node:http');
 
 http
@@ -538,7 +538,7 @@ http
   .listen(8080);
 ```
 
-```js
+```mjs
 import http from 'node:http';
 
 http
