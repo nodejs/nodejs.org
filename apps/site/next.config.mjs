@@ -7,7 +7,6 @@ import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 import {
   SENTRY_DSN,
-  SENTRY_ENABLE,
   SENTRY_EXTENSIONS,
   SENTRY_TUNNEL,
 } from './sentry.constants.mjs';
@@ -142,17 +141,11 @@ const sentryConfig = {
   transpileClientSDK: true,
 };
 
-// Next.js Configuration with `next.intl` enabled
-const nextWithIntl = withNextIntl('./i18n.tsx')(nextConfig);
-
-// Next.js Configuration with `sentry` enabled
-const nextWithSentry = withSentryConfig(
+// Decides whether enabling Sentry or not
+// By default we only want to enable Sentry within a Vercel Environment
+export default withSentryConfig(
   // Next.js Config with i18n Configuration
-  nextWithIntl,
+  withNextIntl('./i18n.tsx')(nextConfig),
   // Sentrz SDK and WebPack Settings
   { ...sentrySettings, ...sentryConfig }
 );
-
-// Decides whether enabling Sentry or not
-// By default we only want to enable Sentry within a Vercel Environment
-export default SENTRY_ENABLE ? nextWithSentry : nextWithIntl;
