@@ -226,17 +226,17 @@ const getDynamicRouter = async () => {
       path
     );
 
-    // Add the default blog feed as the list of feed for the page
-    pageMetadata.alternates.types['application/rss+xml'] = getUrlForPathname(
-      locale,
-      'feed/blog.xml'
+    // Retrieves a matching blog feed for the category of the blog post
+    // If no matching blog feed is found, we simply fallback to the default blog feed
+    const matchingBlogFeed = siteConfig.rssFeeds.find(
+      feed => feed.category === data.category
     );
 
-    // Simply assume that a blog feed exists for a given category, otherwise,
-    // the page will simply give a 404 as it does not exist, which is fine
+    // Adds the RSS Feed URL to the page metadata, if a matching feed is found
+    // otherwise, we fallback to the default blog feed
     pageMetadata.alternates.types['application/rss+xml'] = getUrlForPathname(
       locale,
-      `feed/${data.category ?? DEFAULT_CATEGORY_OG_TYPE}.xml`
+      `feed/${matchingBlogFeed?.file ?? 'blog.xml'}`
     );
 
     // Iterate all languages to generate alternate URLs for each language
