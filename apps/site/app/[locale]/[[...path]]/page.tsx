@@ -68,6 +68,9 @@ const getPage: FC<DynamicParams> = async props => {
   const { path = [], locale = defaultLocale.code } = await props.params;
 
   if (!availableLocaleCodes.includes(locale)) {
+    // Forces the current locale to be the Default Locale
+    setRequestLocale(defaultLocale.code);
+
     if (!allLocaleCodes.includes(locale)) {
       // when the locale is not listed in the locales, return NotFound
       return notFound();
@@ -75,6 +78,7 @@ const getPage: FC<DynamicParams> = async props => {
 
     // Redirect to the default locale path
     const pathname = dynamicRouter.getPathname(path);
+
     return redirect(`/${defaultLocale.code}/${pathname}`);
   }
 

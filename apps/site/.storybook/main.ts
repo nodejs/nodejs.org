@@ -2,6 +2,8 @@ import { join } from 'node:path';
 
 import type { StorybookConfig } from '@storybook/react-webpack5';
 
+const mocksFolder = join(__dirname, '../components/__mocks__');
+
 const config: StorybookConfig = {
   stories: ['../components/**/*.stories.tsx'],
   logLevel: 'error',
@@ -44,8 +46,8 @@ const config: StorybookConfig = {
       ...config.resolve,
       alias: {
         '@nodevu/core': false,
-        '@/navigation.mjs': join(__dirname, '__mocks__/navigation.mjs'),
-        '@/client-context': join(__dirname, '__mocks__/client-context.mjs'),
+        'next-intl/navigation': join(mocksFolder, './next-intl.mjs'),
+        '@/client-context': join(mocksFolder, './client-context.mjs'),
         '@': join(__dirname, '../'),
       },
     },

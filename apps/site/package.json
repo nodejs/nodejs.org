@@ -68,7 +68,7 @@
     "glob": "~11.0.0",
     "gray-matter": "~4.0.3",
     "next": "15.0.2",
-    "next-intl": "~3.23.5",
+    "next-intl": "~3.24.0",
     "next-themes": "^0.3.0",
     "postcss": "~8.4.47",
     "postcss-calc": "~10.0.2",
