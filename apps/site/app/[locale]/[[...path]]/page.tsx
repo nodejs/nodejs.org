@@ -69,8 +69,6 @@ export const generateStaticParams = async () => {
 const getPage: FC<DynamicParams> = async props => {
   const { path = [], locale = defaultLocale.code } = await props.params;
 
-  console.warn(path, locale);
-
   if (!availableLocaleCodes.includes(locale)) {
     // Forces the current locale to be the Default Locale
     setRequestLocale(defaultLocale.code);
