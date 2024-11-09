@@ -45,7 +45,9 @@ const mapRoutesForLocale = async (locale: string) => {
 // This provides all the possible paths that can be generated statically
 // + provides all the paths that we support on the Node.js Website
 export const generateStaticParams = async () => {
-  const paths: Array<DynamicStaticPaths> = [];
+  const paths: Array<DynamicStaticPaths> = [
+    { locale: defaultLocale.code, path: [] },
+  ];
 
   // If static exports are enabled we need to compute all available routes
   // And then append them to Next.js's Route Engine
