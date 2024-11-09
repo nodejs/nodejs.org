@@ -1,6 +1,3 @@
-import Link from 'next/link';
-import { redirect, usePathname, useRouter } from 'next/navigation';
-
 export const useMessages = () => ({});
 
 export const useNow = () => new Date();
@@ -28,8 +25,8 @@ export const useFormatter = () => {
 export const NextIntlClientProvider = ({ children }) => children;
 
 export const createNavigation = () => ({
-  Link: Link,
-  redirect: redirect,
-  usePathname: usePathname,
-  useRouter: useRouter,
+  Link: props => <a {...props} onClick={e => e.preventDefault()} />,
+  redirect: () => void null,
+  usePathname: () => '',
+  useRouter: () => ({ push: () => void null, replace: () => void null }),
 });

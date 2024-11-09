@@ -39,7 +39,10 @@
         "NEXT_PUBLIC_BASE_PATH",
         "NEXT_PUBLIC_ORAMA_API_KEY",
         "NEXT_PUBLIC_ORAMA_ENDPOINT",
-        "NEXT_PUBLIC_DATA_URL"
+        "NEXT_PUBLIC_DATA_URL",
+        "SENTRY_ORG",
+        "SENTRY_PROJECT",
+        "SENTRY_AUTH_TOKEN"
       ]
     },
     "start": {
@@ -55,7 +58,10 @@
         "NEXT_PUBLIC_BASE_PATH",
         "NEXT_PUBLIC_ORAMA_API_KEY",
         "NEXT_PUBLIC_ORAMA_ENDPOINT",
-        "NEXT_PUBLIC_DATA_URL"
+        "NEXT_PUBLIC_DATA_URL",
+        "SENTRY_ORG",
+        "SENTRY_PROJECT",
+        "SENTRY_AUTH_TOKEN"
       ]
     },
     "deploy": {
@@ -77,7 +83,10 @@
         "NEXT_PUBLIC_BASE_PATH",
         "NEXT_PUBLIC_ORAMA_API_KEY",
         "NEXT_PUBLIC_ORAMA_ENDPOINT",
-        "NEXT_PUBLIC_DATA_URL"
+        "NEXT_PUBLIC_DATA_URL",
+        "SENTRY_ORG",
+        "SENTRY_PROJECT",
+        "SENTRY_AUTH_TOKEN"
       ]
     },
     "lint:js": {
