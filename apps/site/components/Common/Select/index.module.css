@@ -86,7 +86,8 @@
       data-[highlighted]:text-white
       data-[highlighted]:outline-none
       dark:text-neutral-200
-      dark:data-[highlighted]:bg-green-600;
+      dark:data-[highlighted]:bg-green-600
+      dark:data-[highlighted]:text-white;
   }
 
   .text > span {
@@ -132,7 +133,8 @@
       data-[highlighted]:text-neutral-900
       dark:text-white
       dark:data-[highlighted]:bg-neutral-900
-      dark:data-[disabled]:text-neutral-700;
+      dark:data-[disabled]:text-neutral-700
+      dark:data-[highlighted]:text-white;
   }
 
   &.dropdown {

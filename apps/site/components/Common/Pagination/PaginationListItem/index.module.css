@@ -11,6 +11,7 @@
     px-3
     py-2.5
     text-neutral-800
+    motion-safe:transition-colors
     dark:text-neutral-200;
 
   &:hover {

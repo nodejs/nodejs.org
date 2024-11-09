@@ -1,6 +1,5 @@
 * {
-  @apply subpixel-antialiased
-    motion-safe:transition-colors;
+  @apply subpixel-antialiased;
 }
 
 html,

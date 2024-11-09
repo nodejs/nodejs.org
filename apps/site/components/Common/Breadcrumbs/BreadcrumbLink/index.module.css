@@ -1,5 +1,5 @@
 .link {
-  @apply max-w-fit 
+  @apply max-w-fit
     truncate;
 
   &.active {
@@ -9,6 +9,7 @@
       py-1
       font-semibold
       text-white
+      motion-safe:transition-colors
       dark:text-white;
 
     &:hover {
