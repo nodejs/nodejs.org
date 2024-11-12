@@ -13,7 +13,7 @@ day 2: https://hackmd.io/V3xtjlcrTIGsemPv8t-tKg
 
 Following the successful Node.js collaboration summit in London earlier this year, the Node.js community gathered once again for the second summit of 2024. This time, the event was hosted by [Baseline](https://www.baseline.community/events), a community and workshop space in Dublin.
 
-The [second collaboration summit of 2024](https://github.com/openjs-foundation/summit/issues/419), held on 7-8 November, continued the tradition of sharing knowledge, brainstorming solutions, and pushing forward new initiatives within the Node.js ecosystem. This edition focused on a range of topics, from collaborator health and diversity to documentation improvements and technical advancements. Here is a recap of what happened at the summit.
+The [second collaboration summit of 2024](https://github.com/openjs-foundation/summit/issues/419), held on 7–8 November, continued the tradition of sharing knowledge, brainstorming solutions, and pushing forward new initiatives within the Node.js ecosystem. This edition focused on a range of topics, from collaborator health and diversity to documentation improvements and technical advancements. Here is a recap of what happened at the summit.
 
 ## Collaborator health survey
 
@@ -25,7 +25,7 @@ The [second collaboration summit of 2024](https://github.com/openjs-foundation/s
 
 ## Documentation Improvements (Node.js learn section)
 
-The documentation session focused on improving the "Learn" section of the Node.js website, aiming to make it more accessible and up-to-date for newcomers and experienced developers alike. The discussion was initiated by Stephen and taken up by Claudio (Who is node.js website maintainer).
+The documentation session focused on improving the "Learn" section of the Node.js website, aiming to make it more accessible and up-to-date for newcomers and experienced developers alike. The discussion was initiated by Stephen and taken up by Claudio (a maintainer of nodejs.org).
 
 ### Key Points Discussed
 
