@@ -299,7 +299,7 @@ import NameOfComponent from '@components/PathTo/YourComponent';
 type Story = StoryObj<typeof NameOfComponent>;
 type Meta = MetaObj<typeof NameOfComponent>;
 
-// If the component has any props that are interactable, they should be passed here
+// If the component has any props that are interactive, they should be passed here
 // We recommend reading Storybook docs for args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {};
 
