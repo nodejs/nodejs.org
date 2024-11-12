@@ -73,9 +73,53 @@ The documentation session highlighted the need for improved ownership, regular u
 
 ## Module loading customization/optimization and CJS/ESM interoperability
 
-ESM as first class ???
-`node --inti` like `npm init` but with `type` key to `module`.
-also https://github.com/pkgjs/create-package-json mention by wes
+The session on module loading customization and CJS/ESM interoperability focused on several key areas, including the removal of the `--experimental-default-type` flag, marking syntax detection as stable, and documenting dual package shipping patterns.
+
+### `--experimental-default-type`
+
+- **Removal Discussion**: There was a consensus that the `--experimental-default-type` flag could be removed, as no one in the room objected to its removal.
+- **Error Message Improvement**: It was noted that the error message from mixing CJS and ESM syntax could be improved.
+- **Next Steps**: Geoffrey suggested marking syntax detection as stable and dropping the default mode switch experiment. Benjamin agreed, noting that there have been no complaints about the current implementation.
+- **Timeline for Removal**: Joyee raised the question of when to remove the flag, suggesting it could be done in the next major or minor release. Michael Dawson questioned the benefit of removing it now, while Geoffrey pointed out the code complexity in keeping it.
+
+### Syntax Detection
+
+- **Stability**: The group discussed whether syntax detection could be marked as stable, given that it has been unflagged since July.
+
+### Documenting Dual Package Shipping Patterns
+
+- **Ecosystem Practices**: The discussion turned to documenting dual package shipping patterns and updating ecosystem practices. Filip mentioned that he decided not to support CJS users who run Node.js versions that don't support `require(esm)`.
+- **Guidance for Maintainers**: The consensus was that maintainers should be provided with different guides for different choices, as some may still want to support older versions of Node.js.
+- **Future Prospects**: Jordan envisioned a future where shipping native ESM (only) in all packages would be feasible, as long as there is an easy method for users on older engines to seamlessly adapt/transpile a consistent compile source.
+
+### ESM as First Class
+
+- **Opinionated Documentation**: Geoffrey suggested that the documentation could be more opinionated, telling people to write ESM and considering CommonJS as legacy (but still supported). This would move away from presenting both as equal first-class citizens.
+- **Learn Article**: Jacob mentioned a potential Learn article that could be ported from the loaders example, providing practical guidance on configuring CommonJS and ESM for Node.js.
+
+### `node --init`
+
+- **Problem** (npm init): The group discussed the issue of `npm init` not making `"type": "module"` by default.
+- **Solution** (`node --init`): The proposed solution was to introduce a `node --init` command to create a `package.json` with `"type": "module"`. This could be extended to include `"scripts": {"test": "node --test"}` to bootstrap a project.
+- **Related Work**: Wes mentioned that the package maintenance working group (Node.js WG) is working on an [`pkgjs/create-package-json`](https://github.com/pkgjs/create-package-json) an alternative to `npm init`.
+
+> **⚠️ WARNING**: This is a proposal and not yet implemented. Also, it's may never be implemented.
+> Please don't take this for granted.
+
+### Missing Pieces of ESM
+
+- **Performance**: Geoffrey mentioned a work-in-progress to remove async handling in the ESM loader, which is currently failing tests due to unexpected async activity. Jacob noted that it is currently impossible for ESM to be faster than CJS, but Joyee mentioned that it would be possible when import defer eval is shipped in V8.
+- **Snapshot & SEA Support**: The group discussed the need for snapshot and SEA support in ESM.
+
+### Synchronous, In-thread & Universal Module Loader Customization Hooks
+
+- **Proposal Summary**: Joyee summarized the new proposal for synchronous, in-thread, and universal module loader customization hooks.
+- **Escape Hatch**: Matteo mentioned the initial motivation for making hooks async to support network loading and his experiments with making async operations synchronous using a package called [`everysync`](https://www.npmjs.com/package/everysync).
+- **Migration Guide**: Jacob confirmed that the plan before removing the async hooks is to write a migration guide including [`everysync`](https://www.npmjs.com/package/everysync) (or similar).
+
+### Summary
+
+The session on module loading customization and CJS/ESM interoperability highlighted the need for clear documentation, improved error messages, and a more opinionated approach to promoting ESM as a first-class citizen. The group also discussed the challenges and potential solutions for making ESM faster and more efficient, as well as the need for better tools and practices to facilitate the migration to ESM.
 
 ## Facilitating userland migrations to new features and breaking changes
 
@@ -99,4 +143,4 @@ Diagnostic doesn't work with ESM so issue for "ESM as first class"
 
 Thanks to all the attendees. Special thanks to the Baseline team for hosting the summit and providing a welcoming space for the Node.js community.
 
-Also big thanks to Claudio Wunder, Matteo Collina, Robin Ginn, and the [OpenJS Foundation](https://openjsf.org) for organizing the event and making it possible.
+Also big thanks to [Claudio Wunder](https://github.com/ovflowd), [Matteo Collina](https://github.com/mcollina), Robin Ginn, and the [OpenJS Foundation](https://openjsf.org) for organizing the event and making it possible.
