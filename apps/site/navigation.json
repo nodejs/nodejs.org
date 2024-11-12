@@ -77,6 +77,11 @@
       "icon": "linkedin",
       "link": "https://www.linkedin.com/company/node-js",
       "alt": "LinkedIn"
+    },
+    {
+      "icon": "bluesky",
+      "link": "https://bsky.app/profile/nodejs.org",
+      "alt": "Bluesky"
     }
   ],
   "sideNavigation": {
