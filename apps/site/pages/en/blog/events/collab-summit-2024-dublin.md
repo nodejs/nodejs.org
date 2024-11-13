@@ -17,11 +17,19 @@ The [second collaboration summit of 2024](https://github.com/openjs-foundation/s
 
 ## Collaborator health survey
 
+<!-- @AugustinMauroy todo -->
+
 ## Next-10 Survey
+
+<!-- @AugustinMauroy todo -->
 
 ## To know you is to love you. Diversifying Node.js
 
+<!-- @AugustinMauroy todo -->
+
 ## Next 10 - Deep dive on funding
+
+<!-- @AugustinMauroy todo -->
 
 ## Documentation Improvements (Node.js learn section)
 
@@ -121,17 +129,90 @@ The session on module loading customization and CJS/ESM interoperability focused
 
 The session on module loading customization and CJS/ESM interoperability highlighted the need for clear documentation, improved error messages, and a more opinionated approach to promoting ESM as a first-class citizen. The group also discussed the challenges and potential solutions for making ESM faster and more efficient, as well as the need for better tools and practices to facilitate the migration to ESM.
 
-## Facilitating userland migrations to new features and breaking changes
+## Facilitating Userland Migrations to New Features and Breaking Changes
 
-This session was presented by [Jacob Smith](https://github.com/JakobJingleheimer).
+This session, presented by [Jacob Smith](https://github.com/JakobJingleheimer), focused on strategies and tools to facilitate the migration of userland code to new features and breaking changes in Node.js. The discussions revolved around codemods, lint rules, and best practices for managing these transitions.
 
-## Node.js Diagnostics WG meeting
+### Key Points Discussed
 
-Diagnostic doesn't work with ESM so issue for "ESM as first class"
+#### Codemods
 
-## Tooling group session
+- **Demonstration**: Jacob demonstrated the `ts-correct-specifier` codemod, which can help automate the migration process. This tool can be particularly useful for updating TypeScript specifiers to comply with new standards or changes in Node.js.
+- **Potential for Dependencies**: The group discussed the potential for codemods to be used not just for code but also for dependencies. This could help ensure that dependencies are updated to be compatible with new Node.js features and breaking changes.
+- **Dependabot Integration**: Darcy suggested improved Dependabot integration to facilitate migrations. Dependabot can automatically create pull requests to update dependencies, making it easier to keep projects up-to-date.
+- **Registry for Migrated Projects**: The idea of maintaining a registry for projects that have already been migrated was proposed. This would help avoid redundant work and save compute resources by preventing the same migrations from being performed multiple times.
+- **Good First Issues**: Geoffrey suggested creating a tracking issue in the Node.js repository for codemods that need to be developed. Tagging these issues as "good first issues" could encourage new contributors to get involved and help with the migration efforts.
 
-- X -> 🦋
+#### Lint Rules
+
+- **Enforcing Best Practices**: Wes suggested using lint rules to enforce best practices. Lint rules can help catch issues early in the development process and ensure that code adheres to the latest standards and best practices.
+- **Automated Fixes**: Alexander mentioned the use of lint rules with automated fixes, such as those provided by VSCode, to help developers quickly update their code to comply with new features and breaking changes.
+
+#### Best Practices
+
+- **Setting Clear Expectations**: James emphasized the importance of setting clear expectations and timelines for breaking changes. This includes providing warnings before major changes and ensuring clear documentation about the status and upcoming changes.
+- **Opt-In Mechanisms**: There was a discussion on making experimental features opt-in via API or flags, especially for library authors who might rely on these features. This would give developers more control over when and how they adopt new features.
+- **Incentives for Migration**: Jordan cautioned that changing people's behavior is challenging and requires incentives rather than enforcement. Providing clear benefits and easy-to-use tools can encourage developers to migrate to new features and breaking changes.
+
+### Potential Action Items
+
+- **Develop and Promote Codemods**: Continue developing and promoting codemods to automate the migration process. Encourage the community to contribute to these tools and create new codemods as needed.
+- **Integrate with Dependabot**: Improve Dependabot integration to facilitate dependency updates and migrations. This could include creating custom Dependabot configurations or scripts to handle specific migration tasks.
+- **Create a Registry for Migrated Projects**: Maintain a registry of projects that have already been migrated to avoid redundant work and save compute resources. This could be done through a centralized repository or a tracking issue in the Node.js repository.
+- **Implement Lint Rules**: Use lint rules to enforce best practices and catch issues early in the development process. Encourage the use of automated fixes to help developers quickly update their code.
+- **Set Clear Expectations and Timelines**: Provide clear documentation and timelines for breaking changes. This includes providing warnings before major changes and ensuring that developers are aware of the status and upcoming changes.
+- **Provide Opt-In Mechanisms**: Make experimental features opt-in via API or flags to give developers more control over when and how they adopt new features.
+- **Offer Incentives for Migration**: Provide clear benefits and easy-to-use tools to encourage developers to migrate to new features and breaking changes.
+
+## Node.js Diagnostics WG Meeting
+
+The Node.js Diagnostics Working Group (WG) meeting focused on several key areas related to diagnostics and observability in Node.js, including async context, diagnostics channels, and the future of the `import-in-the-middle` project.
+
+### Async Context
+
+- **Current State**: Stephen presented some slides about async context, highlighting that it currently doesn't work very well with concurrency.
+- **Cache Behavior**: Chengzhong discussed the cache behavior related to async context, noting that there hasn't been a conclusive solution yet.
+- **Documentation**: Stephen pointed out that diagnostics documentation doesn't exist in the "Learn" section, and Augustin suggested that it might need an update from the guide section.
+
+### Future of `import-in-the-middle`
+
+- **Critical Package**: Bryan discussed the critical role of `import-in-the-middle` for APM vendors, as it provides the ability to manipulate ESM modules and shim exports.
+- **Edge Cases**: Bryan noted that there are too many edge cases that the package cannot support, particularly when modules modify their exports. Currently, APM vendors modify code in hooks, which has performance implications but is the best available solution.
+- **Diagnostics Channels**: Matteo emphasized the need to plan and document packages that are broken and to provide a path for APM vendors. He suggested using diagnostics channels if possible.
+- **Monkey Patching**: Bryan mentioned that diagnostics channels are useful, but there is still a need for some monkey patching abilities.
+
+### Diagnostics Channels and Observability
+
+- **Abort Control**: Simon discussed the possibility of using diagnostics channels for abort control, which is not possible with tracing channels.
+- **Monkey Patching**: The group discussed the ability to patch sources for transpilers but noted that relying on it for functionalities is brittle and depends on the discretion of hook authors.
+- **Live Debugging**: Thomas talked about efforts to get live debugging, currently using the inspector protocol, and collaborating with V8 to improve this area.
+- **Transactional Memory**: Alexander suggested exploring transactional memory, and Thomas mentioned ideas like thread pause optimization and copy-on-write for data processing.
+
+## Tooling Group Session
+
+The tooling group session focused on various aspects of improving the tooling ecosystem around Node.js, including social media engagement, handling experimental status, and facilitating migrations to new features and breaking changes.
+
+### Social Media Engagement
+
+- **Bluesky Platform**: Wes presented the `pkgjs` initiative and discussed the potential migration from the current social media platform to Bluesky. The rationale behind this move was the better engagement and open-source nature of Bluesky.
+- **Cross-Posting**: There was a suggestion to start with cross-posting to both platforms to ensure a smooth transition and maintain engagement with existing followers.
+- **Automation**: Jacob mentioned that Bluesky supports automation, which could be beneficial for managing social media presence.
+- **Foundation Involvement**: The discussion highlighted the need to involve the OpenJS Foundation in this decision and potentially take it to the Community Programs Committee (CPC) for further deliberation.
+- **Password Sharing**: Joyee suggested sharing the social media account passwords using a secure method like OnePassword to streamline the posting process and reduce delays due to timezone differences.
+
+### Handling Experimental Status
+
+- **Experimental Features**: The group discussed the handling of experimental features, especially when their adoption becomes significant. Stephen noted that even though some features are experimental, they are widely used by the community, such as `module.register`.
+- **Timeline and Expectations**: James emphasized the importance of setting clear expectations and timelines for experimental features. This includes providing warnings before major changes and ensuring clear documentation about the status and upcoming changes.
+- **Opt-In Mechanisms**: There was a discussion on making experimental features opt-in via API or flags, especially for library authors who might rely on these features.
+- **Lint Rules and Codemods**: Wes suggested using lint rules to enforce best practices and codemods to facilitate migrations. Jordan cautioned that changing people's behavior is challenging and requires incentives rather than enforcement.
+
+### Facilitating Migrations
+
+- **Codemods**: Jacob demonstrated the `ts-correct-specifier` codemod, which can help automate the migration process. The group discussed the potential for codemods to be used not just for code but also for dependencies.
+- **Dependabot Integration**: Darcy suggested improved Dependabot integration to facilitate migrations, noting that people may not want to run random codemods found on the internet.
+- **Registry for Migrated Projects**: The idea of maintaining a registry for projects that have already been migrated was proposed to avoid redundant work and save compute resources.
+- **Good First Issues**: Geoffrey suggested creating a tracking issue in the Node.js repository for codemods that need to be developed, tagging them as "good first issues" to encourage new contributors.
 
 ## Personal note
 
