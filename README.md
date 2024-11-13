@@ -43,7 +43,7 @@
 
 ```bash
 npm ci
-npx turbo dev
+npm run dev
 
 # listening at localhost:3000
 ```

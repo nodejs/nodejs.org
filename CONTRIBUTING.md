@@ -92,7 +92,7 @@ for getting things done and landing your contribution.
 
    ```bash
    npm ci # installs this project's dependencies
-   npx turbo dev  # starts a development environment
+   npm run dev  # starts a development environment
    ```
 
 7. Perform your changes. In case you're unfamiliar with the structure of this repository, we recommend a read on the [Collaborator Guide](./COLLABORATOR_GUIDE.md)
