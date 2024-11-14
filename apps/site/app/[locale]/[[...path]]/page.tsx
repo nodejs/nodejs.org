@@ -1,6 +1,6 @@
 import { setContext, setTags } from '@sentry/nextjs';
 import { notFound, redirect } from 'next/navigation';
-import { setRequestLocale } from 'next-intl/server';
+import { unstable_setRequestLocale } from 'next-intl/server';
 import type { FC } from 'react';
 
 import { setClientContext } from '@/client-context';
@@ -69,7 +69,7 @@ const getPage: FC<DynamicParams> = async ({ params }) => {
 
   if (!availableLocaleCodes.includes(locale)) {
     // Forces the current locale to be the Default Locale
-    setRequestLocale(defaultLocale.code);
+    unstable_setRequestLocale(defaultLocale.code);
 
     if (!allLocaleCodes.includes(locale)) {
       // when the locale is not listed in the locales, return NotFound
@@ -82,7 +82,7 @@ const getPage: FC<DynamicParams> = async ({ params }) => {
   }
 
   // Configures the current Locale to be the given Locale of the Request
-  setRequestLocale(locale);
+  unstable_setRequestLocale(locale);
 
   // Gets the current full pathname for a given path
   const pathname = dynamicRouter.getPathname(path);
