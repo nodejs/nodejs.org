@@ -15,21 +15,194 @@ Following the successful Node.js collaboration summit in London earlier this yea
 
 The [second collaboration summit of 2024](https://github.com/openjs-foundation/summit/issues/419), held on 7–8 November, continued the tradition of sharing knowledge, brainstorming solutions, and pushing forward new initiatives within the Node.js ecosystem. This edition focused on a range of topics, from collaborator health and diversity to documentation improvements and technical advancements. Here is a recap of what happened at the summit.
 
-## Collaborator health survey
+## Collaborator Health Survey
 
-<!-- @AugustinMauroy todo -->
+The collaborator health survey session at the Node.js collaboration summit in Dublin focused on understanding the current state of collaborator health and identifying ways to improve the well-being and productivity of contributors. The discussion, led by Marco, aimed to gather insights from the community and develop actionable steps to enhance the collaborator experience.
+
+### Current State of Collaborator Health
+
+The session began with a presentation by Marco, who shared slides outlining the current state of collaborator health within the Node.js project. Key points discussed included:
+
+- **CI Challenges**: Jacob highlighted the biggest issue with the CI system as finding out what is wrong when something goes awry. This can be a frustrating and time-consuming process for collaborators.
+- **ncu-ci Command**: Joyee showcased the `ncu-ci` command and the reliability repository, demonstrating tools that can help streamline the CI process and improve collaborator efficiency.
+- **Documentation Needs**: mhdawson and Geoffrey emphasized the importance of mentioning the `ncu-ci` command in the bot comment for CI and documenting it better in the collaborator guide. This would ensure that collaborators are aware of the available tools and how to use them effectively.
+
+### Community Feedback and Suggestions
+
+The discussion also included valuable feedback and suggestions from the community on how to improve collaborator health:
+
+- **BuildPulse Integration**: Joyee mentioned that BuildPulse is already integrated with the CI system but noted that many collaborators are unaware of its capabilities. Improving awareness and documentation around BuildPulse could help collaborators better understand and utilize the tool.
+- **Artifact Distribution**: Stephen suggested using artifacts from the builds to help with bisecting commits, although mhdawson noted that the CI system does not currently distribute them. Joyee added that only the Windows artifacts are available, highlighting a gap in the current process.
+- **AI Products**: Wes mentioned that Netflix has seen impressive AI products that could help with CI issues, suggesting potential partnerships worth exploring.
+- **Social Media Recognition**: Jacob proposed announcing first PRs or collaborator nominations on social media to provide public recognition for contributors. This could help motivate and engage collaborators, fostering a sense of community and achievement.
+
+### Challenges and Solutions
+
+The session also addressed some of the challenges faced by collaborators and proposed solutions to improve their experience:
+
+- **New Collaborator Onboarding**: Marco highlighted the need for more public recognition for new collaborators to encourage their continued engagement. However, Tierney cautioned about the potential for contributors to participate solely for social approval and then drop out, suggesting the need to balance recognition with meaningful contributions.
+- **Small Changes and Effort**: Jacob noted that small changes do not necessarily equate to low effort, as some seemingly minor changes can require significant effort to implement. This underscores the importance of recognizing and valuing all contributions, regardless of their size.
+- **Project Management**: Ethan emphasized the need for better project management within the Node.js project, including tracking features and roadmaps. This could help ensure that collaborators have clear guidance and support in their contributions.
+- **Buddy System**: mhdawson suggested implementing a buddy system to help new collaborators get started and provide ongoing support. This could involve pairing new collaborators with more experienced contributors to help them navigate the project and contribute effectively.
+
+### Actionable Steps
+
+The session concluded with a discussion of actionable steps that the Node.js community can take to improve collaborator health:
+
+- **Improve CI Documentation**: Ensure that the `ncu-ci` command and other CI tools are well-documented in the collaborator guide. This will help collaborators understand and utilize these tools effectively.
+- **Promote BuildPulse**: Increase awareness and documentation around BuildPulse to help collaborators better understand and utilize the tool for bisecting commits and improving CI efficiency.
+- **Public Recognition**: Implement public recognition for new collaborators, such as announcing first PRs or collaborator nominations on social media. This can help motivate and engage collaborators, fostering a sense of community and achievement.
+- **Balance Recognition and Contributions**: Ensure that recognition is balanced with meaningful contributions to avoid the potential for contributors to participate solely for social approval and then drop out.
+- **Value All Contributions**: Recognize and value all contributions, regardless of their size, acknowledging the effort required to implement even seemingly minor changes.
+- **Improve Project Management**: Implement better project management practices, including tracking features and roadmaps, to provide clear guidance and support for collaborators.
+- **Buddy System**: Establish a buddy system to help new collaborators get started and provide ongoing support, pairing them with more experienced contributors to help them navigate the project and contribute effectively.
 
 ## Next-10 Survey
 
-<!-- @AugustinMauroy todo -->
+The Next-10 Survey session at the Node.js collaboration summit in Dublin focused on the results and insights gathered from the latest survey conducted by the Node.js community. The discussion, led by Jean, aimed to analyze the survey data, identify trends, and develop actionable steps to address the findings. The survey covered a wide range of topics, including ESM syntax usage, next initiatives, and the overall health of the Node.js ecosystem.
+
+### Survey Overview
+
+Jean presented the slides outlining the key findings from the Next-10 Survey, which can be found [here](https://github.com/openjs-foundation/summit/issues/423) and [here](https://github.com/nodejs/next-10/tree/main/surveys/2024-04). The survey received over 2000 responses, providing a comprehensive view of the Node.js community's thoughts and experiences.
+
+### ESM Syntax Usage
+
+One of the main topics discussed was the usage of ESM (ECMAScript Modules) syntax in production environments. Key points included:
+
+- **Awareness and Adoption**: Geoffrey noted that with over 2000 responses, most participants should have a good understanding of whether they are running ESM in production. However, Joyee mentioned that some respondents might not actually know whether they are using ESM, as frameworks like Next.js transpile ESM to CJS (CommonJS) behind the scenes.
+- **Usage Counter Proposal**: Joyee suggested adding an opt-in usage counter to core that dumps JSON files, which could be requested in the survey. This would allow respondents to easily sanitize and share their usage data, providing more accurate insights into ESM adoption.
+- **Visibility and Outreach**: Jacob emphasized the need for more visibility of the survey to reach a broader audience. Ethan added that it is crucial to reach out to the right people to ask relevant questions and gather meaningful data.
+
+### Next Initiatives
+
+The discussion also covered potential next initiatives for the Node.js project:
+
+- **Failed Participation Example**: Wes shared an example of a failed participation initiative related to vulnerability reporting. He cautioned that it is important to be clear about what you want to achieve and to engage people effectively.
+- **Flaky CI Working Group**: Jean proposed the creation of a working group focused on addressing flaky CI issues, highlighting the need to improve the reliability of the CI system.
+- **Next-Gen HTTP**: Jean also mentioned the importance of exploring next-generation HTTP protocols and their implications for the Node.js ecosystem.
+
+### Data Analysis and Professional Help
+
+The session highlighted the need for more professional help with data analysis to extract meaningful insights from the survey results:
+
+- **Professional Data Analysis**: An unidentified participant suggested the need for more professional help with the data, noting that while the survey received a large number of responses, the analysis could be improved to derive actionable insights.
+- **Zoom AI Tool**: Several participants mentioned the hope that the Zoom AI tool captured missed discussions, underscoring the importance of comprehensive documentation and analysis.
+
+### Actionable Steps
+
+The session concluded with a discussion of actionable steps that the Node.js community can take to address the findings from the Next-10 Survey:
+
+- **Improve Survey Visibility**: Increase the visibility of the survey to reach a broader audience and gather more comprehensive data. This could involve promoting the survey through various channels and engaging with key stakeholders.
+- **Clarify ESM Usage**: Ensure that respondents have a clear understanding of whether they are using ESM in production. This could involve providing guidance on how to determine ESM usage and adding an opt-in usage counter to core.
+- **Create Working Groups**: Establish working groups to address specific initiatives, such as a flaky CI working group, to focus on improving the reliability of the CI system.
+- **Explore Next-Gen HTTP**: Investigate next-generation HTTP protocols and their implications for the Node.js ecosystem, ensuring that the project remains at the forefront of web development technologies.
+- **Seek Professional Data Analysis**: Engage professional data analysts to help extract meaningful insights from the survey results, ensuring that the data is used effectively to inform decision-making.
+- **Document Missed Discussions**: Ensure that all discussions and insights are comprehensively documented, utilizing tools like the Zoom AI tool to capture missed discussions and provide a complete record of the session.
+
 
 ## To know you is to love you. Diversifying Node.js
 
-<!-- @AugustinMauroy todo -->
+Diversity and inclusion are fundamental to the growth and success of any open-source community. The Node.js collaboration summit in Dublin provided a platform to discuss and address these critical issues. The session on diversity, led by Robin, focused on understanding the current state of diversity within the Node.js collaborator culture and identifying actionable steps to foster a more inclusive environment.
+
+### Current State of Diversity
+
+Robin began the session by asking three key questions to gauge the attendees' perspectives on the Node.js collaborator culture. The responses were collected on post-it notes and provided valuable insights into the current state of diversity within the community.
+
+#### Q1: What words or phrases would you use to describe the Node.js collaborator culture?
+
+- **Silos**: Some attendees felt that the community is divided into silos, with different groups working independently.
+- **Scrappy**: The collaborator culture was described as scrappy, indicating a hands-on, DIY approach.
+- **Similar pains that get heard and carried over**: There was a recognition that similar issues often resurface and need to be addressed repeatedly.
+- **Chaos**: Some attendees perceived the collaborator culture as chaotic, with a lack of clear structure and organization.
+
+#### Q2: What actions or behaviors would we like to see more of to contribute to a positive perception? What behaviors make you feel valued and included?
+
+- **Patience**: Attendees emphasized the importance of patience in fostering a positive and inclusive environment.
+- **Faster to get PR landed**: Streamlining the process for landing pull requests (PRs) was identified as a way to make contributors feel valued.
+- **Mentorship**: Providing mentorship opportunities was seen as crucial for encouraging new contributors and helping them integrate into the community.
+- **Outreach**: Actively reaching out to diverse groups and communities was highlighted as a way to promote inclusion.
+- **Think more global**: Considering the global nature of the Node.js community and tailoring initiatives to be inclusive of different cultures and backgrounds.
+- **Professionalism**: Maintaining a professional demeanor in interactions was seen as important for creating a welcoming environment.
+- **Positive comments**: Providing positive feedback and encouragement was identified as a way to make contributors feel valued.
+
+#### Q3: What is something that each of you could do personally or as a group to engage new diverse contributors? What's the best way to break into the project?
+
+- **Mentoring**: Offering mentorship to new contributors was seen as a key action item.
+- **Personal invites**: Personally inviting individuals from diverse backgrounds to contribute to the project.
+- **Respect**: Showing respect for all contributors, regardless of their background or experience level.
+- **Positive comments**: Providing positive feedback and encouragement to new contributors.
+- **Promote more work**: Actively promoting the work of diverse contributors to highlight their contributions.
+- **Patience**: Being patient with new contributors as they learn the ropes.
+- **Attending diversity events**: Participating in diversity-focused events to engage with new contributors and foster a more inclusive community.
+
+### Actionable Steps for Improving Diversity
+
+The discussion highlighted several actionable steps that the Node.js community can take to improve diversity and inclusion:
+
+- **Mentorship Programs**: Establish formal mentorship programs to provide guidance and support to new contributors.
+- **Outreach Initiatives**: Actively reach out to diverse groups and communities to encourage their participation in the Node.js project.
+- **Global Perspective**: Consider the global nature of the Node.js community and tailor initiatives to be inclusive of different cultures and backgrounds.
+- **Positive Feedback**: Provide positive feedback and encouragement to new contributors to make them feel valued and included.
+- **Promote Diverse Contributions**: Actively promote the work of diverse contributors to highlight their contributions and encourage others to get involved.
+- **Attend Diversity Events**: Participate in diversity-focused events to engage with new contributors and foster a more inclusive community.
+
+### Challenges and Solutions
+
+The session also addressed some of the challenges faced by the Node.js community in promoting diversity and inclusion:
+
+- **Language Barriers**: English as the primary language can be a barrier for non-native speakers. The community discussed the importance of providing more async communication in English to help overcome this challenge.
+- **Undocumented Internal Knowledge**: The lack of documentation about internals can make it difficult for new contributors to get up to speed. Writing more documentation about internals, such as Async Hooks, was identified as a way to address this issue.
+- **Gatekeeping**: The perception that making small contributions requires a lot of time and effort can be a barrier to entry. The community discussed the need to provide more guidance and support to help new contributors get started.
 
 ## Next 10 - Deep dive on funding
 
-<!-- @AugustinMauroy todo -->
+Funding is a critical aspect of sustaining and growing the Node.js project. The session on funding at the Node.js collaboration summit in Dublin delved into the current state of funding, potential sources of revenue, and strategies for effectively utilizing available resources. The discussion, led by mhdawson, aimed to identify actionable steps to ensure the long-term financial health of the project.
+
+### Current State of Funding
+
+The session began with an overview of the current funding landscape for the Node.js project. Key points discussed included:
+
+- **Foundation Support**: The OpenJS Foundation plays a crucial role in providing financial support for the Node.js project. However, there is a need to explore additional funding sources to ensure the project's sustainability.
+- **Company Contributions**: While many companies benefit from Node.js, their contributions to the project often fall short of what is needed to support its ongoing development and maintenance.
+- **Volunteer Efforts**: The project heavily relies on volunteer contributions, but this model can be unsustainable in the long term, especially for critical tasks such as security and CI maintenance.
+
+### Potential Sources of Funding
+
+The discussion explored various potential sources of funding that could help sustain the Node.js project:
+
+- **Open Collective**: Tierney mentioned the use of Open Collective as a funding platform, noting its advantages and limitations. While it has been used for CI funding, it has not seen widespread adoption.
+- **GitHub Sponsors**: Another potential funding source is GitHub Sponsors, which could provide a more streamlined way for companies and individuals to contribute financially to the project.
+- **Secure Project Funding**: Robin highlighted that the Node.js project is one of the first few foundations to receive secure project funding, with an initial allocation of $10,000 per project.
+- **Project Alpha Omega**: Robin also mentioned Project Alpha Omega, which is now separate from OpenSSF and could provide additional funding opportunities.
+
+### Strategies for Effective Utilization of Funds
+
+The session also focused on strategies for effectively utilizing available funds to support the project's needs:
+
+- **Prioritizing Critical Tasks**: mhdawson emphasized the importance of prioritizing critical tasks such as security and CI maintenance. These tasks are essential for the project's health and should be funded accordingly.
+- **Documenting Needs**: Tierney suggested documenting the project's funding needs clearly to ensure that potential contributors understand what is required and how their contributions will be used.
+- **Engaging Companies**: Stephen proposed that the foundation could engage with companies to encourage them to contribute financially to the project. This could involve talking to employers of new contributors to highlight the benefits of supporting Node.js.
+- **Reducing Workload**: Rafael suggested reducing the project's workload by maintaining fewer active release lines, such as one LTS and one Current release. This could help alleviate the burden on volunteers and make the project more sustainable.
+
+### Challenges and Solutions
+
+The discussion also addressed some of the challenges faced by the Node.js project in securing and utilizing funding:
+
+- **Compliance and Regulations**: Rob noted that compliance with regulations is something that companies are willing to pay for, highlighting a potential funding opportunity.
+- **Extended EOL Support**: Wes suggested using funding to extend the End of Life (EOL) support for LTS releases, noting that this could be a valuable service for companies relying on older versions of Node.js.
+- **DevRel and Communication**: Matteo emphasized the need for better communication with the broader community about the project's funding needs and how contributions are used. This could involve funding DevRel efforts to write blog posts and summarize the work of various working groups.
+- **Social Media Recognition**: Joyee suggested that social media recognition for companies contributing to the project could put social pressure on other companies to follow suit.
+
+### Actionable Steps
+
+The session concluded with a discussion of actionable steps that the Node.js community can take to improve the project's funding situation:
+
+- **Identify Funding Needs**: Clearly document the project's funding needs and priorities to ensure that potential contributors understand what is required.
+- **Engage with Companies**: Actively engage with companies to encourage them to contribute financially to the project. This could involve highlighting the benefits of supporting Node.js and the impact of their contributions.
+- **Explore Additional Funding Sources**: Continue to explore additional funding sources, such as Open Collective, GitHub Sponsors, and secure project funding.
+- **Prioritize Critical Tasks**: Ensure that available funds are used to support critical tasks such as security and CI maintenance.
+- **Improve Communication**: Improve communication with the broader community about the project's funding needs and how contributions are used. This could involve funding DevRel efforts to write blog posts and summarize the work of various working groups.
+- **Reduce Workload**: Consider reducing the project's workload by maintaining fewer active release lines to make the project more sustainable.
 
 ## Documentation Improvements (Node.js learn section)
 
