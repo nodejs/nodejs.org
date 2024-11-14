@@ -1,6 +1,6 @@
 # Node.js Website Translation Policy
 
-Node.js is a global platform and so this site has many translations. We use [Crowdin](https://crowdin.com) to translate the Node.js Website
+Node.js is a global platform, so this site has many translations. We use [Crowdin](https://crowdin.com) to translate the Node.js Website
 
 The site's translation into languages other than English is handled by [Crowdin translators](https://support.crowdin.com/translation-process-overview/).
 

@@ -7,7 +7,7 @@
 
 # Framework
 apps/site/next.config.mjs @nodejs/web-infra
-app/site/next.dynamic.mjs @nodejs/web-infra
+apps/site/next.dynamic.mjs @nodejs/web-infra
 
 # Node.js Release Blog Posts
 apps/site/pages/en/blog/release @nodejs/releasers
