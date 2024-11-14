@@ -194,7 +194,7 @@ The tooling group session focused on various aspects of improving the tooling ec
 
 ### Social Media Engagement
 
-- **Bluesky Platform**: Wes presented the `pkgjs` initiative and discussed the potential migration from the current social media platform to Bluesky. The rationale behind this move was the better engagement and open-source nature of Bluesky.
+- **Bluesky Platform**: Wes presented the `pkgjs` initiative and discussed the potential migration from the current social media platform to Bluesky. The rationale behind this move was the better engagement and open-source nature of Bluesky. At the time of publish, Node.js is present on Bluesky under the handle [@nodejs.org](https://bsky.app/profile/nodejs.org).
 - **Cross-Posting**: There was a suggestion to start with cross-posting to both platforms to ensure a smooth transition and maintain engagement with existing followers.
 - **Automation**: Jacob mentioned that Bluesky supports automation, which could be beneficial for managing social media presence.
 - **Foundation Involvement**: The discussion highlighted the need to involve the OpenJS Foundation in this decision and potentially take it to the Community Programs Committee (CPC) for further deliberation.
