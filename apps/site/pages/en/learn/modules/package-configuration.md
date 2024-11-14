@@ -1,6 +1,7 @@
 ---
 title: Package Configuration
 layout: learn
+authors: JakobJingleheimer
 ---
 
 # Package configuration
