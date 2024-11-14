@@ -216,7 +216,7 @@ The tooling group session focused on various aspects of improving the tooling ec
 
 ## Personal note
 
-> I think that was the part that touched and pleased me the most. It was the connection with the people. Because everyone involved is great. These are people I'd only been able to talk to online, and here you meet them in real life.
+> I think the part that touched and pleased me the most was the connection with the people, because everyone involved is great. These are people I'd only been able to talk to online, and here you meet them in real life.
 >
 > <cite>Augustin Mauroy</cite>
 
