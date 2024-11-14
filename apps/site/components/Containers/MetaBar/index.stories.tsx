@@ -1,8 +1,8 @@
 import { CodeBracketIcon } from '@heroicons/react/24/outline';
+import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 import MetaBar from '@/components/Containers/MetaBar';
-import GitHub from '@/components/Icons/Social/GitHub';
 import Link from '@/components/Link';
 import WithAvatarGroup from '@/components/withAvatarGroup';
 
@@ -40,7 +40,7 @@ export const Default: Story = {
       ),
       'components.metabar.contribute': (
         <>
-          <GitHub className="fill-neutral-700 dark:fill-neutral-100" />
+          <GitHubIcon className="fill-neutral-700 dark:fill-neutral-100" />
           <Link href="/contribute">Edit this page</Link>
         </>
       ),

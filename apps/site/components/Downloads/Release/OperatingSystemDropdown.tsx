@@ -1,14 +1,14 @@
 'use client';
 
+import AppleIcon from '@node-core/ui-components/Icons/Platform/Apple';
+import AixIcon from '@node-core/ui-components/Icons/Platform/Generic';
+import LinuxIcon from '@node-core/ui-components/Icons/Platform/Linux';
+import MicrosoftIcon from '@node-core/ui-components/Icons/Platform/Microsoft';
 import { useTranslations } from 'next-intl';
 import { useContext, useEffect } from 'react';
 import type { FC } from 'react';
 
 import Select from '@/components/Common/Select';
-import Apple from '@/components/Icons/Platform/Apple';
-import Aix from '@/components/Icons/Platform/Generic';
-import Linux from '@/components/Icons/Platform/Linux';
-import Microsoft from '@/components/Icons/Platform/Microsoft';
 import { useDetectOS } from '@/hooks/react-client';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import type { UserOS } from '@/types/userOS';
@@ -54,10 +54,10 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
         items: operatingSystemItems,
         disabledItems: exclude,
         icons: {
-          WIN: <Microsoft width={16} height={16} />,
-          MAC: <Apple width={16} height={16} />,
-          LINUX: <Linux width={16} height={16} />,
-          AIX: <Aix width={16} height={16} />,
+          WIN: <MicrosoftIcon width={16} height={16} />,
+          MAC: <AppleIcon width={16} height={16} />,
+          LINUX: <LinuxIcon width={16} height={16} />,
+          AIX: <AixIcon width={16} height={16} />,
         },
       })}
       ariaLabel={t('layouts.download.dropdown.os')}
