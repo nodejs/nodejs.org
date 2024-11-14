@@ -222,6 +222,6 @@ The tooling group session focused on various aspects of improving the tooling ec
 
 ## Thanks
 
-Thanks to all the attendees. Special thanks to the Baseline team for hosting the summit and providing a welcoming space for the Node.js community.
+Thank you to all the attendees! Special appreciation goes to the Baseline team for hosting the summit and creating a welcoming space for the Node.js community.
 
-Also big thanks to [Claudio Wunder](https://github.com/ovflowd), [Matteo Collina](https://github.com/mcollina), Robin Ginn, and the [OpenJS Foundation](https://openjsf.org) for organizing the event and making it possible.
+A big thanks as well to [Claudio Wunder](https://github.com/ovflowd), [Matteo Collina](https://github.com/mcollina), Robin Ginn, and the [OpenJS Foundation](https://openjsf.org) for organizing and making this event possible.
