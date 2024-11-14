@@ -1,6 +1,7 @@
 ---
 title: How to use Streams
 layout: learn
+authors: mcollina, ceres6, simoneb, codyzu
 ---
 
 # How To Use Streams
@@ -553,6 +554,7 @@ await pipeline(
 
 Be aware that fetch body is a `ReadableStream<Uint8Array>` and therefore a [`TextDecoderStream`][] is needed to work with chunks as strings.
 
+This work is derived from the content published by [Matteo Collina][] in [Platformatic's Blog][]
 [`Stream`]: https://nodejs.org/api/stream.html
 [`Buffer`]: https://nodejs.org/api/buffer.html
 [`TypedArray`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
@@ -593,3 +595,5 @@ Be aware that fetch body is a `ReadableStream<Uint8Array>` and therefore a [`Tex
 [`fs.WriteStream`]: https://nodejs.org/api/fs.html#class-fswritestream
 [`process.stdout`]: https://nodejs.org/api/process.html#processstdout
 [`process.stderr`]: https://nodejs.org/api/process.html#processstderr
+[Matteo Collina]: https://github.com/mcollina
+[Platformatic's Blog]: https://blog.platformatic.dev/a-guide-to-reading-and-writing-nodejs-streams
