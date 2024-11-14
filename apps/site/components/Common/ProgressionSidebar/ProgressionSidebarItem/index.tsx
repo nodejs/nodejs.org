@@ -1,8 +1,8 @@
+import type { FormattedMessage } from '@node-core/ui-components/types';
 import type { FC } from 'react';
 
-import ActiveLink from '@/components/Common/ActiveLink';
 import ProgressionSidebarIcon from '@/components/Common/ProgressionSidebar/ProgressionSidebarIcon';
-import type { FormattedMessage } from '@/types';
+import WithActiveLink from '@/components/withActiveLink';
 
 import styles from './index.module.css';
 
@@ -15,14 +15,14 @@ const ProgressionSidebarItem: FC<ProgressionSidebarItemProps> = ({
   label,
   link,
 }) => (
-  <ActiveLink
+  <WithActiveLink
     className={styles.item}
     activeClassName={styles.active}
     href={link}
   >
     <ProgressionSidebarIcon />
     {label}
-  </ActiveLink>
+  </WithActiveLink>
 );
 
 export default ProgressionSidebarItem;

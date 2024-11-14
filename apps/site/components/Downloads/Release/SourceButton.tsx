@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useContext } from 'react';
 import type { FC } from 'react';
 
-import Button from '@/components/Common/Button';
+import WithButton from '@/components/withButton';
 import { ReleaseContext } from '@/providers/releaseProvider';
 
 const SourceButton: FC = () => {
@@ -17,12 +17,12 @@ const SourceButton: FC = () => {
 
   return (
     <div className="mb-2 mt-6 flex items-center gap-2">
-      <Button href={url} disabled={!version}>
+      <WithButton href={url} disabled={!version}>
         <CloudArrowDownIcon />
         {t('layouts.download.buttons.source', {
           version: version,
         })}
-      </Button>
+      </WithButton>
     </div>
   );
 };

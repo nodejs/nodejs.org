@@ -1,5 +1,6 @@
 'use client';
 
+import Select from '@node-core/ui-components/Common/Select';
 import ChocoIcon from '@node-core/ui-components/Icons/Platform/Choco';
 import DockerIcon from '@node-core/ui-components/Icons/Platform/Docker';
 import FNMIcon from '@node-core/ui-components/Icons/Platform/FNM';
@@ -9,7 +10,6 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useContext, useEffect, useMemo } from 'react';
 
-import Select from '@/components/Common/Select';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import type { PackageManager } from '@/types/release';
 import { formatDropdownItems, platformItems } from '@/util/downloadUtils';

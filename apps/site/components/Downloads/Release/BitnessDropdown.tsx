@@ -1,10 +1,10 @@
 'use client';
+import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useEffect, useContext, useMemo } from 'react';
 import semVer from 'semver';
 
-import Select from '@/components/Common/Select';
 import { useDetectOS } from '@/hooks/react-client';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import { bitnessItems, formatDropdownItems } from '@/util/downloadUtils';

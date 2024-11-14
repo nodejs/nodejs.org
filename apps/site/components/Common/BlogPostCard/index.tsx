@@ -1,8 +1,8 @@
+import Preview from '@node-core/ui-components/Common/Preview';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import FormattedTime from '@/components/Common/FormattedTime';
-import Preview from '@/components/Common/Preview';
 import Link from '@/components/Link';
 import WithAvatarGroup from '@/components/withAvatarGroup';
 import { mapBlogCategoryToPreviewType } from '@/util/blogUtils';

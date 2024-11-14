@@ -1,8 +1,8 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
+import type { FormattedMessage } from '@node-core/ui-components/types';
 import type { FC } from 'react';
 
-import ActiveLink from '@/components/Common/ActiveLink';
-import type { FormattedMessage } from '@/types';
+import WithActiveLink from '@/components/withActiveLink';
 
 import styles from './index.module.css';
 
@@ -13,11 +13,11 @@ type SidebarItemProps = {
 
 const SidebarItem: FC<SidebarItemProps> = ({ label, link }) => (
   <li className={styles.sideBarItem}>
-    <ActiveLink href={link} activeClassName={styles.active}>
+    <WithActiveLink href={link} activeClassName={styles.active}>
       <span className={styles.label}>{label}</span>
 
       {link.startsWith('http') && <ArrowUpRightIcon className={styles.icon} />}
-    </ActiveLink>
+    </WithActiveLink>
   </li>
 );
 

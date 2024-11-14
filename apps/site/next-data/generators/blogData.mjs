@@ -6,7 +6,7 @@ import readline from 'node:readline';
 
 import graymatter from 'gray-matter';
 
-import { getMarkdownFiles } from '../../next.helpers.mjs';
+import { getMarkdownFiles } from '@/next.helpers.mjs';
 
 // gets the current blog path based on local module path
 const blogPath = join(process.cwd(), 'pages/en/blog');

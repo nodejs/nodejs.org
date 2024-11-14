@@ -1,4 +1,4 @@
-export type BlogPreviewType = 'announcements' | 'release' | 'vulnerability';
+export type { BlogPreviewType } from '@node-core/ui-components/types';
 
 export interface BlogPost {
   title: string;

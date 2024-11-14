@@ -4,7 +4,7 @@ import zlib from 'node:zlib';
 
 import { slug } from 'github-slugger';
 
-import { getRelativePath } from '../../next.helpers.mjs';
+import { getRelativePath } from '@/next.helpers.mjs';
 
 const currentRoot = getRelativePath(import.meta.url);
 const dataBasePath = join(currentRoot, '../../.next/server/app/en/next-data');

@@ -2,7 +2,7 @@ import {
   mapAuthorToCardAuthors,
   getAuthorWithId,
   getAuthorWithName,
-} from '../authorUtils';
+} from '@/util/authorUtils';
 
 describe('mapAuthorToCardAuthors', () => {
   it('maps authors to card authors with default avatar source', () => {

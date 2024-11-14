@@ -1,6 +1,6 @@
+import NodejsLogo from '@node-core/ui-components/Common/NodejsLogo';
 import type { FC } from 'react';
 
-import NodejsLogo from '@/components/Common/NodejsLogo';
 import { siteConfig } from '@/next.json.mjs';
 
 const WithNodejsLogo: FC = () => (

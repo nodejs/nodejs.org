@@ -4,7 +4,7 @@ import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import Button from '@/components/Common/Button';
+import WithButton from '@/components/withButton';
 import GlowingBackdropLayout from '@/layouts/GlowingBackdrop';
 
 const ErrorPage: FC<{ error: Error }> = () => {
@@ -19,10 +19,10 @@ const ErrorPage: FC<{ error: Error }> = () => {
       <p className="-mt-4 max-w-sm text-center text-lg">
         {t('layouts.error.internalServerError.description')}
       </p>
-      <Button href="/">
+      <WithButton href="/">
         {t('layouts.error.backToHome')}
         <ArrowRightIcon />
-      </Button>
+      </WithButton>
     </GlowingBackdropLayout>
   );
 };

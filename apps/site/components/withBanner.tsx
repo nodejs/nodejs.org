@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import Banner from '@/components/Common/Banner';
+import BannerWithLink from '@/components/Common/BannerWithLink';
 import { siteConfig } from '@/next.json.mjs';
 import { dateIsBetween } from '@/util/dateUtils';
 
@@ -9,9 +9,9 @@ const WithBanner: FC<{ section: string }> = ({ section }) => {
 
   if (banner && dateIsBetween(banner.startDate, banner.endDate)) {
     return (
-      <Banner type={banner.type} link={banner.link}>
+      <BannerWithLink type={banner.type} link={banner.text}>
         {banner.text}
-      </Banner>
+      </BannerWithLink>
     );
   }
 

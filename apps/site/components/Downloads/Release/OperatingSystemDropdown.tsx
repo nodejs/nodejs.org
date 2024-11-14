@@ -1,5 +1,6 @@
 'use client';
 
+import Select from '@node-core/ui-components/Common/Select';
 import AppleIcon from '@node-core/ui-components/Icons/Platform/Apple';
 import AixIcon from '@node-core/ui-components/Icons/Platform/Generic';
 import LinuxIcon from '@node-core/ui-components/Icons/Platform/Linux';
@@ -8,7 +9,6 @@ import { useTranslations } from 'next-intl';
 import { useContext, useEffect } from 'react';
 import type { FC } from 'react';
 
-import Select from '@/components/Common/Select';
 import { useDetectOS } from '@/hooks/react-client';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import type { UserOS } from '@/types/userOS';

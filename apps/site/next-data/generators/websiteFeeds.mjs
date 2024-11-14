@@ -2,8 +2,8 @@
 
 import { Feed } from 'feed';
 
-import { BASE_URL, BASE_PATH } from '../../next.constants.mjs';
-import { siteConfig } from '../../next.json.mjs';
+import { BASE_URL, BASE_PATH } from '@/next.constants.mjs';
+import { siteConfig } from '@/next.json.mjs';
 
 // This is the Base URL for the Node.js Website
 // with English locale (which is where the website feeds run)

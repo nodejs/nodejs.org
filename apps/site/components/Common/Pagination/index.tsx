@@ -2,8 +2,8 @@ import { ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/20/solid';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import Button from '@/components/Common/Button';
 import { useGetPageElements } from '@/components/Common/Pagination/useGetPageElements';
+import WithButton from '@/components/withButton';
 
 import styles from './index.module.css';
 
@@ -36,7 +36,7 @@ const Pagination: FC<PaginationProps> = ({
       aria-label={t('components.common.pagination.defaultLabel')}
       className={styles.pagination}
     >
-      <Button
+      <WithButton
         aria-label={t('components.common.pagination.prevAriaLabel')}
         disabled={currentPage === 1}
         kind="secondary"
@@ -45,11 +45,11 @@ const Pagination: FC<PaginationProps> = ({
       >
         <ArrowLeftIcon className={styles.arrowIcon} />
         <span>{t('components.common.pagination.prev')}</span>
-      </Button>
+      </WithButton>
 
       <ol className={styles.list}>{parsedPages}</ol>
 
-      <Button
+      <WithButton
         aria-label={t('components.common.pagination.nextAriaLabel')}
         disabled={currentPage === pages.length}
         kind="secondary"
@@ -58,7 +58,7 @@ const Pagination: FC<PaginationProps> = ({
       >
         <span>{t('components.common.pagination.next')}</span>
         <ArrowRightIcon className={styles.arrowIcon} />
-      </Button>
+      </WithButton>
     </nav>
   );
 };

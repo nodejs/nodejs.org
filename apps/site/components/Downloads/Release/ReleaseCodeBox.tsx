@@ -1,12 +1,13 @@
 'use client';
 
+import CodeBox from '@node-core/ui-components/Common/CodeBox';
 import { useTranslations } from 'next-intl';
 import { useContext, useEffect, useState } from 'react';
 import type { FC } from 'react';
 import semVer from 'semver';
 
-import Banner from '@/components/Common/Banner';
-import CodeBox from '@/components/Common/CodeBox';
+import BannerWithLink from '@/components/Common/BannerWithLink';
+import CopyButton from '@/components/Common/CopyButton';
 import { ESP_SUPPORT_THRESHOLD_VERSION } from '@/next.constants.mjs';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import { shikiPromise, highlightToHtml } from '@/util/getHighlighter';
@@ -35,11 +36,15 @@ const ReleaseCodeBox: FC = () => {
   return (
     <div className="mb-2 mt-6 flex flex-col gap-2">
       {semVer.lt(release.versionWithPrefix, ESP_SUPPORT_THRESHOLD_VERSION) && (
-        <Banner type="error" link="/about/previous-releases/">
+        <BannerWithLink type="error" link="/about/previous-releases/">
           {t('layouts.download.codeBox.unsupportedVersionWarning')}&nbsp;
-        </Banner>
+        </BannerWithLink>
       )}
-      <CodeBox language={codeLanguage} className="min-h-[15.5rem]">
+      <CodeBox
+        language={codeLanguage}
+        className="min-h-[15.5rem]"
+        CopyButton={CopyButton}
+      >
         <code dangerouslySetInnerHTML={{ __html: code }} />
       </CodeBox>
       <span className="text-center text-xs text-neutral-800 dark:text-neutral-200">

@@ -2,6 +2,9 @@ import tailwindConfig from '@/tailwind.config';
 
 const colors = tailwindConfig.theme.colors;
 export const themeConfig = {
+  typography: {
+    '--font-primary': 'var(--font-open-sans)',
+  },
   colors: {
     light: {
       '--text-color-primary': colors.neutral[900],

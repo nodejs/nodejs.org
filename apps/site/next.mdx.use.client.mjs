@@ -1,7 +1,9 @@
 'use strict';
 
-import Blockquote from './components/Common/Blockquote';
-import Button from './components/Common/Button';
+import Blockquote from '@node-core/ui-components/Common/Blockquote';
+
+import WithButton from '@/components/withButton';
+
 import LinkWithArrow from './components/Downloads/Release/LinkWithArrow';
 import Link from './components/Link';
 import MDXCodeBox from './components/MDX/CodeBox';
@@ -17,7 +19,7 @@ export const clientMdxComponents = {
   // Renders MDX CodeTabs
   CodeTabs: MDXCodeTabs,
   // Renders a Button Component for `button` tags
-  Button: Button,
+  Button: WithButton,
   // Links with External Arrow
   LinkWithArrow: LinkWithArrow,
   // Regular links (without arrow)

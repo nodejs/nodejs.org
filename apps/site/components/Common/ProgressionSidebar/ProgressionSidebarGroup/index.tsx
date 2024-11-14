@@ -1,7 +1,7 @@
+import type { FormattedMessage } from '@node-core/ui-components/types';
 import type { ComponentProps, FC } from 'react';
 
 import ProgressionSidebarItem from '@/components/Common/ProgressionSidebar/ProgressionSidebarItem';
-import type { FormattedMessage } from '@/types';
 
 import styles from './index.module.css';
 

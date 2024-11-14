@@ -24,12 +24,13 @@ import { existsSync, readFileSync } from 'node:fs';
 import { writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
+import prettierConfig from '@/../../.prettierrc.json' with { type: 'json' };
 import handlebars from 'handlebars';
 import { format } from 'prettier';
 
+import { getRelativePath } from '@/next.helpers.mjs';
+
 import { downloadsTable } from './downloadsTable.mjs';
-import prettierConfig from '../../../../.prettierrc.json' with { type: 'json' };
-import { getRelativePath } from '../../next.helpers.mjs';
 
 const URLS = {
   NODE_DIST_JSON: 'https://nodejs.org/dist/index.json',

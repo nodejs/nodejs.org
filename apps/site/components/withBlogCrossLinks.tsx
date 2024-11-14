@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import { getClientContext } from '@/client-context';
-import CrossLink from '@/components/Common/CrossLink';
+import WithCrossLink from '@/components/withCrossLink';
 import getBlogData from '@/next-data/blogData';
 
 const WithBlogCrossLinks: FC = async () => {
@@ -24,7 +24,7 @@ const WithBlogCrossLinks: FC = async () => {
   return (
     <div className="max-xs:grid-cols-1 mt-4 grid w-full grid-cols-2 gap-4">
       {(previousCrossLink && (
-        <CrossLink
+        <WithCrossLink
           type="previous"
           text={previousCrossLink.title}
           link={previousCrossLink.slug}
@@ -32,7 +32,7 @@ const WithBlogCrossLinks: FC = async () => {
       )) || <div />}
 
       {nextCrossLink && (
-        <CrossLink
+        <WithCrossLink
           type="next"
           text={nextCrossLink.title}
           link={nextCrossLink.slug}

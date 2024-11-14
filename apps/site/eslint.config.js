@@ -2,7 +2,6 @@ import { FlatCompat } from '@eslint/eslintrc';
 import importX from 'eslint-plugin-import-x';
 import * as mdx from 'eslint-plugin-mdx';
 import react from 'eslint-plugin-react';
-import storybook from 'eslint-plugin-storybook';
 import tseslint from 'typescript-eslint';
 
 // eslint-disable-next-line no-relative-import-paths/no-relative-import-paths
@@ -83,15 +82,5 @@ export default tseslint.config(
         },
       ],
     },
-  },
-  {
-    files: ['.storybook/**', '**/*.mjs', '**/*.test.*'],
-    rules: {
-      'no-relative-import-paths/no-relative-import-paths': 'off',
-    },
-  },
-  {
-    files: ['components/**/*.stories.tsx'],
-    extends: [...storybook.configs['flat/recommended']],
   }
 );

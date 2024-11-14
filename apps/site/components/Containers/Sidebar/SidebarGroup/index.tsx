@@ -1,7 +1,7 @@
+import type { FormattedMessage } from '@node-core/ui-components/types';
 import type { ComponentProps, FC } from 'react';
 
 import SidebarItem from '@/components/Containers/Sidebar/SidebarItem';
-import type { FormattedMessage } from '@/types';
 
 import styles from './index.module.css';
 

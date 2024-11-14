@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import CrossLink from '@/components/Common/CrossLink';
+import WithCrossLink from '@/components/withCrossLink';
 import { useClientContext, useSiteNavigation } from '@/hooks/server';
 import type { NavigationKeys } from '@/types';
 
@@ -26,7 +26,7 @@ const WithSidebarCrossLinks: FC<WithCrossLinksProps> = ({ navKey }) => {
   return (
     <div className="mt-4 grid w-full grid-cols-1 gap-4 md:grid-cols-2">
       {(previousCrossLink && (
-        <CrossLink
+        <WithCrossLink
           type="previous"
           text={previousCrossLink.label}
           link={previousCrossLink.link}
@@ -34,7 +34,7 @@ const WithSidebarCrossLinks: FC<WithCrossLinksProps> = ({ navKey }) => {
       )) || <div />}
 
       {nextCrossLink && (
-        <CrossLink
+        <WithCrossLink
           type="next"
           text={nextCrossLink.label}
           link={nextCrossLink.link}

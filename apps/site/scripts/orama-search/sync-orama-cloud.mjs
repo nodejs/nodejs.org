@@ -1,7 +1,8 @@
 import { CloudManager } from '@oramacloud/client';
 
+import { ORAMA_SYNC_BATCH_SIZE } from '@/next.constants.mjs';
+
 import { siteContent } from './get-documents.mjs';
-import { ORAMA_SYNC_BATCH_SIZE } from '../../next.constants.mjs';
 
 // The following follows the instructions at https://docs.orama.com/cloud/data-sources/custom-integrations/webhooks
 

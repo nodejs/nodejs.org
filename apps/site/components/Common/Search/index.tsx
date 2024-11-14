@@ -3,7 +3,7 @@
 import { OramaSearchBox, OramaSearchButton } from '@orama/react-components';
 import { useTranslations, useLocale } from 'next-intl';
 import { useTheme } from 'next-themes';
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { useRouter } from '@/navigation.mjs';
 import {
@@ -132,9 +132,7 @@ const SearchButton: FC = () => {
           const fullURLObject = new URL(event.detail.result.path, BASE_URL);
 
           // result.path already contains LOCALE. Locale is set to undefined here so router does not add it once again.
-          router.push(fullURLObject.href, {
-            locale: undefined,
-          });
+          router.push(fullURLObject.href, { locale: undefined });
         }}
       />
     </>

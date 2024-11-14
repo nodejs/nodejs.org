@@ -4,7 +4,7 @@ import { CloudArrowDownIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import type { FC, PropsWithChildren } from 'react';
 
-import Button from '@/components/Common/Button';
+import WithButton from '@/components/withButton';
 import { useDetectOS } from '@/hooks';
 import type { NodeRelease } from '@/types';
 import { getNodeDownloadUrl } from '@/util/getNodeDownloadUrl';
@@ -28,7 +28,7 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
 
   return (
     <>
-      <Button
+      <WithButton
         kind="special"
         href={downloadLink}
         className={classNames(styles.downloadButton, styles.special)}
@@ -36,9 +36,9 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
         {children}
 
         <CloudArrowDownIcon />
-      </Button>
+      </WithButton>
 
-      <Button
+      <WithButton
         kind="primary"
         href={downloadLink}
         className={classNames(styles.downloadButton, styles.primary)}
@@ -46,7 +46,7 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
         {children}
 
         <CloudArrowDownIcon />
-      </Button>
+      </WithButton>
     </>
   );
 };

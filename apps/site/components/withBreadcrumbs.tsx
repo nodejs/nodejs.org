@@ -1,9 +1,11 @@
 'use client';
 
+import type { BreadcrumbLink } from '@node-core/ui-components/Common/Breadcrumbs';
+import Breadcrumbs from '@node-core/ui-components/Common/Breadcrumbs';
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import type { BreadcrumbLink } from '@/components/Common/Breadcrumbs';
-import Breadcrumbs from '@/components/Common/Breadcrumbs';
+import Link from '@/components/Link';
 import { useClientContext, useMediaQuery, useSiteNavigation } from '@/hooks';
 import type { NavigationKeys } from '@/types';
 import { dashToCamelCase } from '@/util/stringUtils';
@@ -14,6 +16,7 @@ type WithBreadcrumbsProps = {
 
 const WithBreadcrumbs: FC<WithBreadcrumbsProps> = ({ navKeys = [] }) => {
   const { getSideNavigation } = useSiteNavigation();
+  const t = useTranslations();
   const { pathname } = useClientContext();
   const isMobileScreen = useMediaQuery('(max-width: 639px)');
 
@@ -57,7 +60,14 @@ const WithBreadcrumbs: FC<WithBreadcrumbsProps> = ({ navKeys = [] }) => {
     }, [] as Array<BreadcrumbLink>);
   };
 
-  return <Breadcrumbs links={getBreadrumbs()} maxLength={maxLength} />;
+  return (
+    <Breadcrumbs
+      links={getBreadrumbs()}
+      maxLength={maxLength}
+      LinkWrapper={Link}
+      homeLinkAriaLabel={t('components.common.breadcrumbs.navigateToHome')}
+    />
+  );
 };
 
 export default WithBreadcrumbs;

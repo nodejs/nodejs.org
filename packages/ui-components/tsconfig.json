@@ -6,16 +6,21 @@
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",
-    "outDir": "dist",
-    "jsx": "react-jsx",
     "paths": { "@node-core/ui-components/*": ["./*"] }
   },
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx"
+  ],
+  "exclude": ["node_modules"]
 }
