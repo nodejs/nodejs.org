@@ -27,7 +27,7 @@ export const useFormatter = () => {
 
 export const NextIntlClientProvider = ({ children }) => children;
 
-export const createNavigation = () => ({
+export const createSharedPathnamesNavigation = () => ({
   Link: Link,
   redirect: redirect,
   usePathname: usePathname,
