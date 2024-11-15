@@ -95,6 +95,12 @@ export const MD_EXTENSION_REGEX = /((\/)?(index))?\.mdx?$/i;
 export const DEFAULT_CATEGORY_OG_TYPE = 'announcement';
 
 /**
+ * This is the base url for changelog entries
+ */
+export const BASE_CHANGELOG_URL =
+  'https://github.com/nodejs/node/releases/tag/v';
+
+/**
  * This defines how many blog posts each pagination page should have
  */
 export const BLOG_POSTS_PER_PAGE = 6;
