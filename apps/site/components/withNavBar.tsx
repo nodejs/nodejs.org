@@ -6,15 +6,15 @@ import type { FC } from 'react';
 
 import NavBar from '@/components/Containers/NavBar';
 import WithBanner from '@/components/withBanner';
-import { useClientContext, useSiteNavigation } from '@/hooks';
-import { useRouter } from '@/navigation.mjs';
+import { useSiteNavigation } from '@/hooks';
+import { useRouter, usePathname } from '@/navigation.mjs';
 import { availableLocales } from '@/next.locales.mjs';
 
 const WithNavBar: FC = () => {
   const { navigationItems } = useSiteNavigation();
   const { resolvedTheme, setTheme } = useTheme();
-  const { pathname } = useClientContext();
   const { replace } = useRouter();
+  const pathname = usePathname();
 
   const locale = useLocale();
 
