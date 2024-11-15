@@ -1,4 +1,7 @@
 import * as basePage from '@/app/[locale]/page';
+import { ENABLE_STATIC_EXPORT } from '@/next.constants.mjs';
+import { dynamicRouter } from '@/next.dynamic.mjs';
+import { availableLocaleCodes } from '@/next.locales.mjs';
 
 // This is the default Viewport Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-viewport#generateviewport-function
@@ -10,7 +13,20 @@ export const generateMetadata = basePage.generateMetadata;
 
 // This provides all the possible paths that can be generated statically
 // + provides all the paths that we support on the Node.js Website
-export const generateStaticParams = basePage.generateStaticParams;
+export const generateStaticParams = async () => {
+  const allAvailableRoutes = await Promise.all(
+    // Gets all mapped routes to the Next.js Routing Engine by Locale
+    availableLocaleCodes.map(async (locale: string) => {
+      const routesForLanguage = await dynamicRouter.getRoutesByLanguage(locale);
+
+      return routesForLanguage.map(pathname =>
+        dynamicRouter.mapPathToRoute(locale, pathname)
+      );
+    })
+  );
+
+  return ENABLE_STATIC_EXPORT ? allAvailableRoutes.flat().sort() : [];
+};
 
 // Enforces that this route is used as static rendering
 // Except whenever on the Development mode as we want instant-refresh when making changes

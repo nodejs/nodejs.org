@@ -33,13 +33,7 @@ export const generateMetadata = async (props: DynamicParams) => {
 export const generateStaticParams = async () => {
   const allAvailableRoutes = await Promise.all(
     // Gets all mapped routes to the Next.js Routing Engine by Locale
-    availableLocaleCodes.map(async (locale: string) => {
-      const routesForLanguage = await dynamicRouter.getRoutesByLanguage(locale);
-
-      return routesForLanguage.map(pathname =>
-        dynamicRouter.mapPathToRoute(locale, pathname)
-      );
-    })
+    availableLocaleCodes.map((locale: string) => ({ locale }))
   );
 
   return ENABLE_STATIC_EXPORT ? allAvailableRoutes.flat().sort() : [];
