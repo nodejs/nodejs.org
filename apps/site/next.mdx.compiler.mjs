@@ -38,7 +38,7 @@ const getMarkdownParser = async (source, components) => {
 
   const { result } = await parser.process(source);
 
-  return <>{result}</>;
+  return result;
 };
 
 /**
