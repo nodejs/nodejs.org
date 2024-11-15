@@ -1,4 +1,3 @@
-import { setContext, setTags } from '@sentry/nextjs';
 import { notFound, redirect } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import type { FC } from 'react';
@@ -9,11 +8,8 @@ import WithLayout from '@/components/withLayout';
 import { ENABLE_STATIC_EXPORT } from '@/next.constants.mjs';
 import { PAGE_VIEWPORT, DYNAMIC_ROUTES } from '@/next.dynamic.constants.mjs';
 import { dynamicRouter } from '@/next.dynamic.mjs';
-import {
-  allLocaleCodes,
-  availableLocaleCodes,
-  defaultLocale,
-} from '@/next.locales.mjs';
+import { allLocaleCodes, availableLocaleCodes } from '@/next.locales.mjs';
+import { defaultLocale } from '@/next.locales.mjs';
 import { MatterProvider } from '@/providers/matterProvider';
 
 type DynamicStaticPaths = { path: Array<string>; locale: string };
@@ -45,21 +41,11 @@ const mapRoutesForLocale = async (locale: string) => {
 // This provides all the possible paths that can be generated statically
 // + provides all the paths that we support on the Node.js Website
 export const generateStaticParams = async () => {
-  const paths: Array<DynamicStaticPaths> = [
-    { locale: defaultLocale.code, path: [] },
-  ];
+  const allAvailableRoutes = await Promise.all(
+    availableLocaleCodes.map(mapRoutesForLocale)
+  );
 
-  // If static exports are enabled we need to compute all available routes
-  // And then append them to Next.js's Route Engine
-  if (ENABLE_STATIC_EXPORT) {
-    const allAvailableRoutes = await Promise.all(
-      availableLocaleCodes.map(mapRoutesForLocale)
-    );
-
-    paths.push(...allAvailableRoutes.flat());
-  }
-
-  return paths.sort();
+  return ENABLE_STATIC_EXPORT ? allAvailableRoutes.flat().sort() : [];
 };
 
 // This method parses the current pathname and does any sort of modifications needed on the route
@@ -96,9 +82,6 @@ const getPage: FC<DynamicParams> = async props => {
   // it means it does not have a Markdown file nor exists under the filesystem
   // but it is a valid route with an assigned layout that should be rendered
   if (staticGeneratedLayout !== undefined) {
-    // Decorate the Locale and current Pathname to Sentry
-    setTags({ pathname, locale });
-
     // Metadata and shared Context to be available through the lifecycle of the page
     const sharedContext = { pathname: `/${pathname}` };
 
@@ -124,9 +107,6 @@ const getPage: FC<DynamicParams> = async props => {
     pathname
   );
 
-  // Decorate the Locale and current Pathname to Sentry
-  setTags({ pathname, locale, filename });
-
   if (source.length && filename.length) {
     // This parses the source Markdown content and returns a React Component and
     // relevant context from the Markdown File
@@ -141,13 +121,6 @@ const getPage: FC<DynamicParams> = async props => {
       readingTime,
       filename,
     };
-
-    // Add Additional relevant reproduction Context from MDX
-    setContext('MDX Provider', {
-      frontmatter,
-      headings,
-      readingTime,
-    });
 
     // Defines a shared Server Context for the Client-Side
     // That is shared for all pages under the dynamic router

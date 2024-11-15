@@ -13,11 +13,13 @@ export const fetchNodeJsChangelog = async (version: string) => {
   // related to the changelog version that we want to fetch
   const section = getChangelogSectionRegex(sectionId);
 
+  const fetchURL = url.replace('github.', 'raw.githubusercontent.');
+
   // Replaces the GitHub URL to the RAW source URL so we're able to fetch the data
-  const content = fetch(url.replace('github.', 'raw.githubusercontent.'));
+  const content = fetch(fetchURL, { cache: 'force-cache' });
 
   const [, changelogContent] = await content
-    .then(res => res.text())
+    .then(response => response.text())
     .then(content => section.exec(content) || []);
 
   return changelogContent || '';

@@ -1,12 +1,9 @@
 'use strict';
 
-import { withSentryConfig } from '@sentry/nextjs';
 import withNextIntl from 'next-intl/plugin';
 
 import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
-import { SENTRY_DSN, SENTRY_TUNNEL } from './sentry.constants.mjs';
-import { SENTRY_EXTENSIONS } from './sentry.constants.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -66,12 +63,12 @@ const nextConfig = {
   // as we already check it on the CI within each Pull Request
   // we also configure ESLint to run its lint checking on all files (next lint)
   eslint: { dirs: ['.'], ignoreDuringBuilds: true },
-  // Adds custom WebPack configuration to our Next.js setup
-  webpack: ({ plugins, ...config }, { webpack: { DefinePlugin } }) => ({
-    ...config,
-    plugins: [...plugins, new DefinePlugin(SENTRY_EXTENSIONS)],
-  }),
   experimental: {
+    optimizeCss: true,
+    serverMinification: true,
+    webpackBuildWorker: true,
+    parallelServerBuildTraces: true,
+    parallelServerCompiles: true,
     // A list of packages that Next.js should automatically evaluate and optimise the imports for.
     // @see https://vercel.com/blog/how-we-optimized-package-imports-in-next-js
     optimizePackageImports: [
@@ -85,44 +82,14 @@ const nextConfig = {
       '@radix-ui/react-slot',
       '@radix-ui/react-tabs',
       '@radix-ui/react-toast',
-      '@sentry/nextjs',
+      '@orama/highlight',
+      '@heroicons/react',
       'tailwindcss',
       'shiki',
     ],
   },
 };
 
-/** @type {import('@sentry/cli').SentryCliOptions} */
-const sentrySettings = {
-  // We don't want Sentry to emit logs
-  silent: true,
-  // Define the Sentry Organisation
-  org: 'nodejs-org',
-  // Define the Sentry Project on our Sentry Organisation
-  project: 'nodejs-org',
-  // Sentry DSN for the Node.js Website
-  dsn: SENTRY_DSN,
-};
-
-/** @type {import('@sentry/nextjs/types/config/types').UserSentryOptions} */
-const sentryConfig = {
-  // Upload Next.js or third-party code in addition to our code
-  widenClientFileUpload: true,
-  // Attempt to circumvent ad blockers
-  tunnelRoute: SENTRY_TUNNEL(),
-  // Prevent source map comments in built files
-  hideSourceMaps: false,
-  // Tree shake Sentry stuff from the bundle
-  disableLogger: true,
-  // Applies same WebPack Transpilation as Next.js
-  transpileClientSDK: true,
-};
-
 // Decides whether enabling Sentry or not
 // By default we only want to enable Sentry within a Vercel Environment
-export default withSentryConfig(
-  // Next.js Config with i18n Configuration
-  withNextIntl('./i18n.tsx')(nextConfig),
-  // Sentrz SDK and WebPack Settings
-  { ...sentrySettings, ...sentryConfig }
-);
+export default withNextIntl('./i18n.tsx')(nextConfig);
