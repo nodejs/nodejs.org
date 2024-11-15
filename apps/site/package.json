@@ -67,7 +67,7 @@
     "github-slugger": "~2.0.0",
     "glob": "~11.0.0",
     "gray-matter": "~4.0.3",
-    "next": "15.0.2",
+    "next": "15.0.3",
     "next-intl": "~3.24.0",
     "next-themes": "^0.3.0",
     "postcss": "~8.4.47",
@@ -91,7 +91,7 @@
   },
   "devDependencies": {
     "@eslint/compat": "~1.2.2",
-    "@next/eslint-plugin-next": "15.0.2",
+    "@next/eslint-plugin-next": "15.0.3",
     "@storybook/addon-controls": "^8.4.2",
     "@storybook/addon-interactions": "^8.4.2",
     "@storybook/addon-styling-webpack": "^1.0.1",
