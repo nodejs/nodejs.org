@@ -1,5 +1,4 @@
 'use strict';
-'use server';
 
 import { evaluate } from '@mdx-js/mdx';
 import { Fragment, jsx, jsxs } from 'react/jsx-runtime';

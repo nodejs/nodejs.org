@@ -18,6 +18,8 @@ export const IGNORED_ROUTES = [
   // This is used to ignore all blog routes except for the English language
   ({ locale, pathname }) =>
     locale !== defaultLocale.code && /^blog/.test(pathname),
+  // This is used to ignore all pathnames that are empty
+  ({ locale, pathname }) => locale.length && !pathname.length,
 ];
 
 /**
