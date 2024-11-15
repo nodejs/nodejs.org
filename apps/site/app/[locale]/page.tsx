@@ -28,20 +28,18 @@ export const generateMetadata = async (props: DynamicParams) => {
   return dynamicRouter.getPageMetadata(locale, pathname);
 };
 
-// Gets all mapped routes to the Next.js Routing Engine by Locale
-const mapRoutesForLocale = async (locale: string) => {
-  const routesForLanguage = await dynamicRouter.getRoutesByLanguage(locale);
-
-  return routesForLanguage.map(pathname =>
-    dynamicRouter.mapPathToRoute(locale, pathname)
-  );
-};
-
 // This provides all the possible paths that can be generated statically
 // + provides all the paths that we support on the Node.js Website
 export const generateStaticParams = async () => {
   const allAvailableRoutes = await Promise.all(
-    availableLocaleCodes.map(mapRoutesForLocale)
+    // Gets all mapped routes to the Next.js Routing Engine by Locale
+    availableLocaleCodes.map(async (locale: string) => {
+      const routesForLanguage = await dynamicRouter.getRoutesByLanguage(locale);
+
+      return routesForLanguage.map(pathname =>
+        dynamicRouter.mapPathToRoute(locale, pathname)
+      );
+    })
   );
 
   return ENABLE_STATIC_EXPORT ? allAvailableRoutes.flat().sort() : [];

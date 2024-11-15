@@ -64,10 +64,15 @@ const nextConfig = {
   // we also configure ESLint to run its lint checking on all files (next lint)
   eslint: { dirs: ['.'], ignoreDuringBuilds: true },
   experimental: {
+    // Run CSS optimizations/bundle minification with Critters
     optimizeCss: true,
+    // Ensure that server-side code is also minified
     serverMinification: true,
+    // Use Workers and Threads for webpack compilation
     webpackBuildWorker: true,
+    // Execute parallel tracing of server builds
     parallelServerBuildTraces: true,
+    // Execute parallel server compilation
     parallelServerCompiles: true,
     // A list of packages that Next.js should automatically evaluate and optimise the imports for.
     // @see https://vercel.com/blog/how-we-optimized-package-imports-in-next-js
