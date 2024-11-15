@@ -1,3 +1,12 @@
+/**
+ * This file extends on the `page.tsx` file, which is the default file that is used to render
+ * the entry points for each locale and then also reused within the [...path] route to render the
+ * and contains all logic for rendering our dynamic and static routes within the Node.js Website.
+ *
+ * Note: that each `page.tsx` should have its own `generateStaticParams` to prevent clash of
+ * dynamic params, which will lead on static export errors and other sort of issues.
+ */
+
 import * as basePage from '@/app/[locale]/page';
 import { ENABLE_STATIC_EXPORT } from '@/next.constants.mjs';
 import { dynamicRouter } from '@/next.dynamic.mjs';

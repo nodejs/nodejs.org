@@ -1,3 +1,12 @@
+/**
+ * This file contains the logic for rendering our dynamic and static routes within the Node.js Website
+ * this page route template is used to render the entry points for each locale and then also reused within
+ * the [...path] route to render the individual pages under each locale of the Website.
+ *
+ * Note: that each `page.tsx` should have its own `generateStaticParams` to prevent clash of
+ * dynamic params, which will lead on static export errors and other sort of issues.
+ */
+
 import { notFound, redirect } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import type { FC } from 'react';
