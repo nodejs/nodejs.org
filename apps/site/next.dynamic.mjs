@@ -215,6 +215,8 @@ const getDynamicRouter = async () => {
     // Default Open Graph Image for the page
     pageMetadata.openGraph.images = [
       `${defaultLocale.code}/next-data/og/${data.category ?? DEFAULT_CATEGORY_OG_TYPE}/${pageMetadata.title}`,
+      // Provides the default OG image as the first one will give a 404 on full static exports
+      `${defaultLocale.code}/next-data/og/announcement/Run JavaScript Everywhere`,
     ];
 
     // Default canonical URL for the page

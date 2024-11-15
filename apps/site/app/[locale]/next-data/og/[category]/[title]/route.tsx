@@ -55,7 +55,11 @@ export const GET = async (_: Request, props: StaticParams) => {
 // statically generate this route as it is compute-expensive.
 // Hence we generate a "fake" OG image during build just to satisfy Next.js requirements.
 export const generateStaticParams = async () => [
-  { locale: defaultLocale.code, category: 'default', title: 'default' },
+  {
+    locale: defaultLocale.code,
+    category: 'announcement',
+    title: 'Run JavaScript Everywhere',
+  },
 ];
 
 // Enforces that this route is cached and static as much as possible
