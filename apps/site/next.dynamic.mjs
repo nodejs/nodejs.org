@@ -1,6 +1,5 @@
 'use strict';
 
-import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { join, normalize, sep } from 'node:path';
 
@@ -111,8 +110,7 @@ const getDynamicRouter = async () => {
     // meaning that the route exists on the website and can be rendered
     if (pathnameToFilename.has(normalizedPathname)) {
       const filename = pathnameToFilename.get(normalizedPathname);
-
-      let filePath = join(process.cwd(), 'pages');
+      const filepath = join(process.cwd(), 'pages', locale, filename);
 
       // We verify if our Markdown cache already has a cache entry for a localized
       // version of this file, because if not, it means that either
@@ -125,21 +123,31 @@ const getDynamicRouter = async () => {
         return { source: fileContent, filename };
       }
 
+      // Attempts to read a file or simply (and silently) fail, as the file might
+      // simply not exist or whatever other reason that might cause the file to not be read
+      const fileLanguageContent = await readFile(filepath, 'utf8').catch(
+        () => undefined
+      );
+
       // No cache hit exists, so we check if the localized file actually
       // exists within our file system and if it does we set it on the cache
-      // and return the current fetched result; If the file does not exist
-      // we fallback to the English source
-      if (existsSync(join(filePath, locale, filename))) {
-        filePath = join(filePath, locale, filename);
+      // and return the current fetched result;
+      if (fileLanguageContent && typeof fileLanguageContent === 'string') {
+        cachedMarkdownFiles.set(
+          `${locale}${normalizedPathname}`,
+          fileLanguageContent
+        );
 
-        const fileContent = await readFile(filePath, 'utf8');
-
-        cachedMarkdownFiles.set(`${locale}${normalizedPathname}`, fileContent);
-
-        return { source: fileContent, filename };
+        return { source: fileLanguageContent, filename };
       }
 
-      // We then attempt to retrieve the source version of the file as there is no localised version
+      // Prevent infinite loops as if at this point the file does not exist with the default locale
+      // then there must be an issue on the file system or there's an error on the mapping of paths to files
+      if (locale === defaultLocale.code) {
+        return { filename: '', source: '' };
+      }
+
+      // We attempt to retrieve the source version (defaultLocale) of the file as there is no localised version
       // of the file and we set it on the cache to prevent future checks of the same locale for this file
       const { source: fileContent } = await _getMarkdownFile(
         defaultLocale.code,
