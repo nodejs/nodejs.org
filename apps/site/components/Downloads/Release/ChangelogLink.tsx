@@ -4,19 +4,17 @@ import type { FC, PropsWithChildren } from 'react';
 import { useContext } from 'react';
 
 import LinkWithArrow from '@/components/Downloads/Release/LinkWithArrow';
+import Link from '@/components/Link';
 import { ReleaseContext } from '@/providers/releaseProvider';
 
+const BASE_CHANGELOG_URL = 'https://github.com/nodejs/node/releases/tag/v';
+
 const ChangelogLink: FC<PropsWithChildren> = ({ children }) => {
-  const { modalOpen, setModalOpen } = useContext(ReleaseContext);
+  const { release } = useContext(ReleaseContext);
 
   return (
     <LinkWithArrow asChild>
-      <button
-        className="anchor cursor-pointer"
-        onClick={() => setModalOpen(!modalOpen)}
-      >
-        {children}
-      </button>
+      <Link href={`${BASE_CHANGELOG_URL}${release.version}`}>{children}</Link>
     </LinkWithArrow>
   );
 };
