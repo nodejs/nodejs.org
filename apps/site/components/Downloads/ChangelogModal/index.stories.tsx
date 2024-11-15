@@ -2,8 +2,7 @@ import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import { VFile } from 'vfile';
 
 import ChangelogModal from '@/components/Downloads/ChangelogModal';
-import { MDXRenderer } from '@/components/mdxRenderer';
-import { compileMDX } from '@/next.mdx.compiler.mjs';
+import { compile } from '@/next.mdx.compiler.mjs';
 import { getGitHubAvatarUrl } from '@/util/gitHubUtils';
 
 type Story = StoryObj<typeof ChangelogModal>;
@@ -189,17 +188,12 @@ export const Default: Story = {
   render: (_, { loaded: { Content } }) => Content,
   loaders: [
     async ({ args: { children, ...props } }) => {
-      const { MDXContent } = await compileMDX(
-        new VFile(children?.toString()),
-        'md'
-      );
+      const { content } = await compile(new VFile(children?.toString()), 'md');
 
       return {
         Content: (
           <ChangelogModal {...props}>
-            <main>
-              <MDXRenderer Component={MDXContent} />
-            </main>
+            <main>{content}</main>
           </ChangelogModal>
         ),
       };

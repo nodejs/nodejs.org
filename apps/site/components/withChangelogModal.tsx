@@ -6,7 +6,7 @@ import { VFile } from 'vfile';
 
 import ChangelogModal from '@/components/Downloads/ChangelogModal';
 import changelogData from '@/next-data/changelogData';
-import { compileMDX } from '@/next.mdx.compiler.mjs';
+import { compile } from '@/next.mdx.compiler.mjs';
 import { clientMdxComponents, htmlComponents } from '@/next.mdx.use.client.mjs';
 import type { NodeRelease } from '@/types';
 import {
@@ -49,17 +49,10 @@ const WithChangelogModal: FC<WithChangelogModalProps> = ({
           // render the changelog heading as the "ChangelogModal" subheading
           const changelogWithoutHeader = data.split('\n').slice(2).join('\n');
 
-          compileMDX(new VFile(changelogWithoutHeader), 'md').then(
-            ({ MDXContent }) => {
-              // This is a tricky one. React states does not allow you to actually store React components
-              // hence we need to render the component within an Effect and set the state as a ReactElement
-              // which is a function that can be eval'd by React during runtime.
-              const renderedElement = (
-                <MDXContent components={clientComponents} />
-              );
+          const source = new VFile(changelogWithoutHeader);
 
-              setChangelogMDX(renderedElement);
-            }
+          compile(source, 'md', clientComponents).then(({ content }) =>
+            setChangelogMDX(content)
           );
         }
       } catch {

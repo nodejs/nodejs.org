@@ -90,6 +90,4 @@ const nextConfig = {
   },
 };
 
-// Decides whether enabling Sentry or not
-// By default we only want to enable Sentry within a Vercel Environment
 export default withNextIntl('./i18n.tsx')(nextConfig);

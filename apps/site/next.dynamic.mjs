@@ -22,7 +22,7 @@ import {
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { siteConfig } from './next.json.mjs';
 import { availableLocaleCodes, defaultLocale } from './next.locales.mjs';
-import { compileMDX } from './next.mdx.compiler.mjs';
+import { compile } from './next.mdx.compiler.mjs';
 
 // This is the combination of the Application Base URL and Base PATH
 const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
@@ -178,7 +178,7 @@ const getDynamicRouter = async () => {
 
     // This compiles our MDX source (VFile) into a final MDX-parsed VFile
     // that then is passed as a string to the MDXProvider which will run the MDX Code
-    return compileMDX(sourceAsVirtualFile, fileExtension);
+    return compile(sourceAsVirtualFile, fileExtension);
   };
 
   // Creates a Cached Version of the MDX Compiler

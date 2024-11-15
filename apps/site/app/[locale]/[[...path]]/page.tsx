@@ -3,7 +3,6 @@ import { setRequestLocale } from 'next-intl/server';
 import type { FC } from 'react';
 
 import { setClientContext } from '@/client-context';
-import { MDXRenderer } from '@/components/mdxRenderer';
 import WithLayout from '@/components/withLayout';
 import { ENABLE_STATIC_EXPORT } from '@/next.constants.mjs';
 import { PAGE_VIEWPORT, DYNAMIC_ROUTES } from '@/next.dynamic.constants.mjs';
@@ -110,7 +109,7 @@ const getPage: FC<DynamicParams> = async props => {
   if (source.length && filename.length) {
     // This parses the source Markdown content and returns a React Component and
     // relevant context from the Markdown File
-    const { MDXContent, frontmatter, headings, readingTime } =
+    const { content, frontmatter, headings, readingTime } =
       await dynamicRouter.getMDXContent(source, filename);
 
     // Metadata and shared Context to be available through the lifecycle of the page
@@ -131,9 +130,7 @@ const getPage: FC<DynamicParams> = async props => {
     // within a server-side context
     return (
       <MatterProvider {...sharedContext}>
-        <WithLayout layout={frontmatter.layout}>
-          <MDXRenderer Component={MDXContent} />
-        </WithLayout>
+        <WithLayout layout={frontmatter.layout}>{content}</WithLayout>
       </MatterProvider>
     );
   }
