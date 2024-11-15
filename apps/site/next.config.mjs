@@ -5,11 +5,8 @@ import withNextIntl from 'next-intl/plugin';
 
 import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
-import {
-  SENTRY_DSN,
-  SENTRY_EXTENSIONS,
-  SENTRY_TUNNEL,
-} from './sentry.constants.mjs';
+import { SENTRY_DSN, SENTRY_TUNNEL } from './sentry.constants.mjs';
+import { SENTRY_EXTENSIONS } from './sentry.constants.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -59,9 +56,9 @@ const nextConfig = {
   output: ENABLE_STATIC_EXPORT ? 'export' : undefined,
   // This configures all the Next.js rewrites, which are used for rewriting internal URLs into other internal Endpoints
   // This feature is not supported within static export builds, hence we pass an empty array if static exports are enabled
-  rewrites: !ENABLE_STATIC_EXPORT ? rewrites : undefined,
+  rewrites: ENABLE_STATIC_EXPORT ? undefined : rewrites,
   // This configures all Next.js redirects
-  redirects: !ENABLE_STATIC_EXPORT ? redirects : undefined,
+  redirects: ENABLE_STATIC_EXPORT ? undefined : redirects,
   // We don't want to run Type Checking on Production Builds
   // as we already check it on the CI within each Pull Request
   typescript: { ignoreBuildErrors: true },
@@ -70,45 +67,29 @@ const nextConfig = {
   // we also configure ESLint to run its lint checking on all files (next lint)
   eslint: { dirs: ['.'], ignoreDuringBuilds: true },
   // Adds custom WebPack configuration to our Next.js setup
-  webpack: function (config, { webpack }) {
-    // Next.js WebPack Bundler does not know how to handle `.mjs` files on `node_modules`
-    // This is not an issue when using TurboPack as it uses SWC and it is ESM-only
-    // Once Next.js uses Turbopack for their build process we can remove this
-    config.module.rules.push({
-      test: /\.m?js$/,
-      type: 'javascript/auto',
-      resolve: { fullySpecified: false },
-    });
-
-    // Tree-shakes modules from Sentry Bundle
-    config.plugins.push(new webpack.DefinePlugin(SENTRY_EXTENSIONS));
-
-    // Ignore Sentry's Critical Dependency from Open Telemetry
-    // (which is genuinely a cause of concern, but there is no work around at the moment)
-    config.ignoreWarnings = [
-      {
-        module: /@opentelemetry\/instrumentation/,
-        message: /Critical dependency/,
-      },
-    ];
-
-    return config;
-  },
+  webpack: ({ plugins, ...config }, { webpack: { DefinePlugin } }) => ({
+    ...config,
+    plugins: [...plugins, new DefinePlugin(SENTRY_EXTENSIONS)],
+  }),
   experimental: {
     // A list of packages that Next.js should automatically evaluate and optimise the imports for.
     // @see https://vercel.com/blog/how-we-optimized-package-imports-in-next-js
     optimizePackageImports: [
+      '@radix-ui/react-accessible-icon',
       '@radix-ui/react-avatar',
+      '@radix-ui/react-dialog',
+      '@radix-ui/react-dropdown-menu',
+      '@radix-ui/react-label',
+      '@radix-ui/react-scroll-area',
       '@radix-ui/react-select',
+      '@radix-ui/react-slot',
+      '@radix-ui/react-tabs',
       '@radix-ui/react-toast',
+      '@sentry/nextjs',
       'tailwindcss',
       'shiki',
     ],
-    // Removes the warning regarding the WebPack Build Worker
-    webpackBuildWorker: true,
   },
-  // To import ESM-only packages with next dev --turbo. Source: https://github.com/vercel/next.js/issues/63318#issuecomment-2079677098
-  transpilePackages: ['shiki'],
 };
 
 /** @type {import('@sentry/cli').SentryCliOptions} */
