@@ -1,19 +1,16 @@
 'use strict';
 
-import { evaluate } from '@mdx-js/mdx';
-import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
 import rehypeReact from 'rehype-react';
+import remarkMdx from 'remark-mdx';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
 import { matter } from 'vfile-matter';
 
 import { MDX_COMPONENTS } from './next.mdx.components.mjs';
+import { nodeTypes, createSval, reactRuntime } from './next.mdx.evaluater.mjs';
 import { REHYPE_PLUGINS, REMARK_PLUGINS } from './next.mdx.plugins.mjs';
 import { createGitHubSlugger } from './util/gitHubUtils';
-
-// Defines the React Runtime Components
-const reactRuntime = { Fragment, jsx, jsxs };
 
 /**
  * This is our custom Markdown Compiler that is used to compile Markdown files
@@ -38,28 +35,32 @@ const getMarkdownParser = async (source, components) => {
 
   const { result } = await parser.process(source);
 
-  return <>{result}</>;
+  return result;
 };
 
 /**
  * This is our custom MDX Compiler that is used to compile MDX files
  * this returns a serializable VFile as a string that then gets passed to our MDX Provider
  *
- * @deprecated This should be replaced by a non eval'd approach
  * @param {string} source MDX source content from the MDX file
  * @param {import('mdx/types').MDXComponents} components
  *
  * @returns {Promise<import('react').ReactElement>} The compiled MDX into React
  */
 const getMdxParser = async (source, components) => {
-  const { default: MDXContent } = await evaluate(source, {
-    rehypePlugins: REHYPE_PLUGINS,
-    remarkPlugins: REMARK_PLUGINS,
-    format: 'mdx',
-    ...reactRuntime,
-  });
+  const createEvaluater = createSval(components);
 
-  return <MDXContent components={components} />;
+  const parser = unified()
+    .use(remarkParse)
+    .use(remarkMdx)
+    .use(REMARK_PLUGINS)
+    .use(remarkRehype, { allowDangerousHtml: true, passThrough: nodeTypes })
+    .use(REHYPE_PLUGINS)
+    .use(rehypeReact, { ...reactRuntime, createEvaluater, components });
+
+  const { result } = await parser.process(source);
+
+  return result;
 };
 
 /**

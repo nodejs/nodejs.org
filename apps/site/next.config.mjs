@@ -29,6 +29,12 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'bestpractices.coreinfrastructure.org',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'raw.githubusercontent.com',
         port: '',
         pathname: '/nodejs/**',
@@ -64,8 +70,6 @@ const nextConfig = {
   // we also configure ESLint to run its lint checking on all files (next lint)
   eslint: { dirs: ['.'], ignoreDuringBuilds: true },
   experimental: {
-    // Run CSS optimizations/bundle minification with Critters
-    optimizeCss: true,
     // Ensure that server-side code is also minified
     serverMinification: true,
     // Use Workers and Threads for webpack compilation
