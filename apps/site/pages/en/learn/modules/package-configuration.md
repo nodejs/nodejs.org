@@ -10,7 +10,7 @@ Configuration is always a chore, but an unfortunately necessary evil. And config
 
 A frequent question is “how do I make this work!?” (often with angry tears); but yet more frequently we come across packages that are just misconfigured.
 
-All the provided `package.json` configurations (not specifically marked “does not work”) work in Node.js 12.22.x (v12 latest, the oldest supported line) and 17.2.0 (current latest at the time)<sup>[1](#footnotes)</sup>, and for grins, with webpack 5.53.0 and 5.63.0 respectively. These are available: [nodejs/package-examples](https://github.com/nodejs/package-examples/blob/main/config).
+All the provided `package.json` configurations (not specifically marked “does not work”) work in Node.js 12.22.x (v12 latest, the oldest supported line) and 17.2.0 (current latest at the time)[^1], and for grins, with webpack 5.53.0 and 5.63.0 respectively. These are available: [nodejs/package-examples](https://github.com/nodejs/package-examples/blob/main/config).
 
 For curious cats, [Preamble: How did we get here](#preamble-how-did-we-get-here) and [Down the rabbit-hole](#down-the-rabbithole) provide background and deeper explanations. If you're just looking for a solution, jump to [Pick your poison](#pick-your-poison) for the TLDR.
 
@@ -227,7 +227,7 @@ We're not in Kansas anymore, Toto.
 
 The configurations (there are 2 options) are nearly the same as [ESM source and both CJS & ESM distribution](#esm-source-and-both-cjs-amp-esm-distribution), just exclude `packageJson.exports.import`.
 
-💡 Using `"type": "module"`<sup>[2](#footnotes)</sup> paired with the `.cjs` file extension (for commonjs files) yields best results. For more information on why, see [Down the rabbit-hole](#down-the-rabbithole) and [Gotchas](#gotchas) below.
+💡 Using `"type": "module"`[^2] paired with the `.cjs` file extension (for commonjs files) yields best results. For more information on why, see [Down the rabbit-hole](#down-the-rabbithole) and [Gotchas](#gotchas) below.
 
 **Working example**: [esm-with-cjs-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/esm/cjs-distro)
 
@@ -235,7 +235,7 @@ The configurations (there are 2 options) are nearly the same as [ESM source and 
 
 These are "mixologist" territory.
 
-When source code is written in non-JavaScript (ex TypeScript), options can be limited due to needing to use file extension(s) specific to that language (ex `.ts`) and there is often no `.mjs` equivalent<sup>[3](#footnotes)</sup>.
+When source code is written in non-JavaScript (ex TypeScript), options can be limited due to needing to use file extension(s) specific to that language (ex `.ts`) and there is often no `.mjs` equivalent[^3].
 
 Similar to [CJS source and both CJS & ESM distribution](#cjs-source-and-both-cjs-amp-esm-distribution), you have the same options.
 
@@ -264,7 +264,7 @@ The working example below was created prior to Webpack's recent release, so it u
 }
 ```
 
-💡 Using `"type": "module"`<sup>[2](#footnotes)</sup> paired with the `.cjs` file extension (for commonjs files) yields best results. For more information on why, see [Down the rabbit-hole](#down-the-rabbithole) and [Gotchas](#gotchas) below.
+💡 Using `"type": "module"`[^2] paired with the `.cjs` file extension (for commonjs files) yields best results. For more information on why, see [Down the rabbit-hole](#down-the-rabbithole) and [Gotchas](#gotchas) below.
 
 #### Publish a CJS distribution with an ESM wrapper
 
@@ -401,6 +401,8 @@ This does not work because `packageJson.exports["."].import` will get interprete
 
 ## Footnotes
 
-1. There was a bug in Node.js v13.0–13.6 where `packageJson.exports["."]` had to be an array with verbose config options as the first item (as an object) and the “default” as the second item (as a string). See [nodejs/modules#446](https://github.com/nodejs/modules/issues/446).
-2. The `"type"` field in package.json changes what the `.js` file extension means, similar to to an [HTML script element’s type attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-type).
-3. TypeScript has experimental support for the [package.json `"type"` field](https://www.typescriptlang.org/docs/handbook/esm-node.html#type-in-packagejson-and-new-extensions) and [`.cts` and `.mts` file extensions](https://www.typescriptlang.org/docs/handbook/esm-node.html#new-file-extensions).
+[^1]: There was a bug in Node.js v13.0–13.6 where `packageJson.exports["."]` had to be an array with verbose config options as the first item (as an object) and the “default” as the second item (as a string). See [nodejs/modules#446](https://github.com/nodejs/modules/issues/446).
+
+[^2]: The `"type"` field in package.json changes what the `.js` file extension means, similar to to an [HTML script element’s type attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-type).
+
+[^3]: TypeScript has experimental support for the [package.json `"type"` field](https://www.typescriptlang.org/docs/handbook/esm-node.html#type-in-packagejson-and-new-extensions) and [`.cts` and `.mts` file extensions](https://www.typescriptlang.org/docs/handbook/esm-node.html#new-file-extensions).
