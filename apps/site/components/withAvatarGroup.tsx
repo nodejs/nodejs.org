@@ -8,12 +8,14 @@ import { getAuthorWithId, getAuthorWithName } from '@/util/authorUtils';
 type WithAvatarGroupProps = Omit<
   ComponentProps<typeof AvatarGroup>,
   'avatars'
-> & {
-  usernames?: Array<string>;
-  names?: Array<string>;
-  clickable?: boolean;
-  container?: HTMLElement | null;
-};
+> &
+  (
+    | { usernames: Array<string>; names?: never }
+    | { names: Array<string>; usernames?: never }
+  ) & {
+    clickable?: boolean;
+    container?: HTMLElement | null;
+  };
 
 const WithAvatarGroup: FC<WithAvatarGroupProps> = ({
   usernames,
@@ -25,9 +27,7 @@ const WithAvatarGroup: FC<WithAvatarGroupProps> = ({
     avatars={
       usernames
         ? getAuthorWithId(usernames, clickable)
-        : names
-          ? getAuthorWithName(names, clickable)
-          : []
+        : getAuthorWithName(names, clickable)
     }
     {...props}
   />

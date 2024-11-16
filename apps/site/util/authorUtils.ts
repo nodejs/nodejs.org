@@ -16,8 +16,8 @@ export const mapAuthorToCardAuthors = (author: string) => {
     .filter(Boolean);
 };
 
-export const getAuthorWithId = (usernames: Array<string>, hasUrl: boolean) =>
-  usernames.map(username => {
+export const getAuthorWithId = (usernames: Array<string>, hasUrl: boolean) => {
+  const mapIdToAuthor = (username: string) => {
     const author = Object.values(authors).find(
       ({ id }) => id.toLowerCase() === username.toLowerCase()
     );
@@ -40,15 +40,16 @@ export const getAuthorWithId = (usernames: Array<string>, hasUrl: boolean) =>
       fallback: getAcronymFromString(username),
       url: hasUrl ? `https://github.com/${username}` : undefined,
     };
-  });
+  };
 
-export const getAuthorWithName = (names: Array<string>, hasUrl: boolean) =>
-  names.map(name => {
-    if (Object.keys(authors).includes(name)) {
-      const author = authors[name as keyof typeof authors];
+  return usernames.map(mapIdToAuthor);
+};
 
-      if (name in authors) {
-        const { id, name, website } = author;
+export const getAuthorWithName = (names: Array<string>, hasUrl: boolean) => {
+  const mapNameToAuthor = (username: string) => {
+    if (Object.keys(authors).includes(username)) {
+      if (username in authors) {
+        const { id, name, website } = authors[username];
 
         return {
           image: getGitHubAvatarUrl(id),
@@ -61,7 +62,10 @@ export const getAuthorWithName = (names: Array<string>, hasUrl: boolean) =>
     }
 
     return {
-      nickname: name,
-      fallback: getAcronymFromString(name),
+      nickname: username,
+      fallback: getAcronymFromString(username),
     };
-  });
+  };
+
+  return names.map(mapNameToAuthor);
+};

@@ -29,7 +29,8 @@ const Avatar = forwardRef<
       ref={ref}
     >
       <Wrapper
-        {...(url ? { href: url, target: '_blank' } : {})}
+        href={url || undefined}
+        target={url ? '_blank' : undefined}
         className={styles.wrapper}
       >
         <RadixAvatar.Image
