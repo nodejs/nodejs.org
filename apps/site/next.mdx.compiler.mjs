@@ -1,14 +1,14 @@
 'use strict';
 
+import { compile as mdxCompile } from '@mdx-js/mdx';
 import rehypeReact from 'rehype-react';
-import remarkMdx from 'remark-mdx';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
 import { matter } from 'vfile-matter';
 
 import { MDX_COMPONENTS } from './next.mdx.components.mjs';
-import { nodeTypes, createSval, reactRuntime } from './next.mdx.evaluater.mjs';
+import { createSval, reactRuntime } from './next.mdx.evaluater.mjs';
 import { REHYPE_PLUGINS, REMARK_PLUGINS } from './next.mdx.plugins.mjs';
 import { createGitHubSlugger } from './util/gitHubUtils';
 
@@ -48,19 +48,16 @@ const getMarkdownParser = async (source, components) => {
  * @returns {Promise<import('react').ReactElement>} The compiled MDX into React
  */
 const getMdxParser = async (source, components) => {
-  const createEvaluater = createSval(components);
+  const compiled = await mdxCompile(source, {
+    rehypePlugins: REHYPE_PLUGINS,
+    remarkPlugins: REMARK_PLUGINS,
+    format: 'mdx',
+  });
 
-  const parser = unified()
-    .use(remarkParse)
-    .use(remarkMdx)
-    .use(REMARK_PLUGINS)
-    .use(remarkRehype, { allowDangerousHtml: true, passThrough: nodeTypes })
-    .use(REHYPE_PLUGINS)
-    .use(rehypeReact, { ...reactRuntime, createEvaluater, components });
-
-  const { result } = await parser.process(source);
-
-  return result;
+  const sval = createSval(components);
+  sval.run(compiled.toString());
+  const MDXContent = sval.exports.default;
+  return <MDXContent components={components} />;
 };
 
 /**
