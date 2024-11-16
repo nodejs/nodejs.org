@@ -32,6 +32,7 @@
         gap-2
         text-center
         text-neutral-200
+        motion-safe:transition-colors
         lg:flex;
 
       & > .icon {

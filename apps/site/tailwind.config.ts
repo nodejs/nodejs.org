@@ -153,7 +153,7 @@ export default {
       },
     },
   },
-  darkMode: ['class', '[data-theme="dark"]'],
+  darkMode: ['selector', '[data-theme="dark"]'],
   plugins: [
     require('@savvywombat/tailwindcss-grid-areas'),
     require('@tailwindcss/container-queries'),

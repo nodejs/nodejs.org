@@ -6,9 +6,10 @@ authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais, ovflowd, marksist300
 
 # Understanding process.nextTick()
 
-As you try to understand the Node.js event loop, one important part of it is `process.nextTick()`. Every time the event loop takes a full trip, we call it a tick.
+As you try to understand the Node.js event loop, one important part of it is `process.nextTick()`.
+Every time the runtime calls back into JavaScript for an event, we call it a tick.
 
-When we pass a function to `process.nextTick()`, we instruct the engine to invoke this function at the end of the current operation, before the next event loop tick starts:
+When we pass a function to `process.nextTick()`, we instruct the engine to invoke this function immediately after the current operation completes, before moving to the next phase in the event loop:
 
 ```js
 process.nextTick(() => {

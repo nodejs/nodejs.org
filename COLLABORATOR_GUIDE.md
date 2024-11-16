@@ -90,7 +90,6 @@ The Website also uses several other Open Source libraries (not limited to) liste
 - We use [Rehype](https://github.com/rehypejs/rehype) and [Remark](https://github.com/remarkjs/remark) to extend MDX functionality
 - We use [Storybook](https://storybook.js.org/) for Manual Testing and Visual Regression Tests of our React Components
   - Storybook also provides a sandboxed environment, which is very useful whilst for crafting React Components
-- We use [Sentry](https://sentry.io/about) for reporting Exceptions and monitoring the performance and reliability of the application
 
 ## Code Editing
 
@@ -299,7 +298,7 @@ import NameOfComponent from '@components/PathTo/YourComponent';
 type Story = StoryObj<typeof NameOfComponent>;
 type Meta = MetaObj<typeof NameOfComponent>;
 
-// If the component has any props that are interactable, they should be passed here
+// If the component has any props that are interactive, they should be passed here
 // We recommend reading Storybook docs for args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {};
 

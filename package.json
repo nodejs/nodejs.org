@@ -15,7 +15,6 @@
   "engines": {
     "node": "v20"
   },
-  "packageManager": "npm@10.7.0",
   "workspaces": [
     "apps/*",
     "packages/*"
@@ -38,10 +37,10 @@
   "dependencies": {
     "husky": "9.1.6",
     "lint-staged": "15.2.10",
-    "turbo": "2.1.3"
+    "turbo": "2.3.0"
   },
   "devDependencies": {
-    "@eslint/js": "~9.10.0",
+    "@eslint/js": "~9.14.0",
     "@types/eslint__js": "~8.42.3",
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
