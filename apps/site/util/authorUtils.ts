@@ -47,7 +47,7 @@ export const getAuthorWithName = (names: Array<string>, hasUrl: boolean) =>
     if (Object.keys(authors).includes(name)) {
       const author = authors[name as keyof typeof authors];
 
-      if (author) {
+      if (name in authors) {
         const { id, name, website } = author;
 
         return {
