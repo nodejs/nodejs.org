@@ -1,7 +1,6 @@
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import classNames from 'classnames';
-import { getLocale } from 'next-intl/server';
 import type { FC, PropsWithChildren } from 'react';
 
 import BaseLayout from '@/layouts/Base';
@@ -15,13 +14,20 @@ import '@/styles/index.css';
 
 const fontClasses = classNames(IBM_PLEX_MONO.variable, OPEN_SANS.variable);
 
-const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
-  const locale = await getLocale();
+type RotLayoutProps = PropsWithChildren<{ params: { locale: string } }>;
+
+const RootLayout: FC<RotLayoutProps> = async ({ children, params }) => {
+  const { locale } = await params;
 
   const { langDir, hrefLang } = availableLocalesMap[locale] || defaultLocale;
 
   return (
-    <html className={fontClasses} dir={langDir} lang={hrefLang}>
+    <html
+      className={fontClasses}
+      dir={langDir}
+      lang={hrefLang}
+      suppressHydrationWarning
+    >
       <body suppressHydrationWarning>
         <LocaleProvider>
           <ThemeProvider>

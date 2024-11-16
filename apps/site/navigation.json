@@ -69,6 +69,11 @@
       "alt": "Twitter"
     },
     {
+      "icon": "bluesky",
+      "link": "https://bsky.app/profile/nodejs.org",
+      "alt": "Bluesky"
+    },
+    {
       "icon": "slack",
       "link": "https://slack-invite.openjsf.org/",
       "alt": "Slack"

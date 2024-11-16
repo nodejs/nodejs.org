@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
+  - name: Node.js Status Page
+    url: https://status.nodejs.org
+    about: 'Need to check if there is any ongoing incidents?'
   - name: Report an API Docs Issue on the Node.js Website
     url: https://github.com/nodejs/node/issues/new?assignees=&labels=doc&template=3-api-ref-docs-problem.yml
     about: 'Is something wrong with the API Docs? Did you face a bug with the API Docs?'

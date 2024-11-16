@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import type { FC, SVGProps } from 'react';
 
 import NavItem from '@/components/Containers/NavBar/NavItem';
+import Bluesky from '@/components/Icons/Social/Bluesky';
 import GitHub from '@/components/Icons/Social/GitHub';
 import LinkedIn from '@/components/Icons/Social/LinkedIn';
 import Mastodon from '@/components/Icons/Social/Mastodon';
@@ -17,6 +18,7 @@ const footerSocialIcons: Record<string, React.FC<SVGProps<SVGSVGElement>>> = {
   twitter: Twitter,
   slack: Slack,
   linkedin: LinkedIn,
+  bluesky: Bluesky,
 };
 
 const Footer: FC = () => {
