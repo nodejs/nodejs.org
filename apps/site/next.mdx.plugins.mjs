@@ -13,7 +13,7 @@ import rehypeShikiji from './next.mdx.shiki.mjs';
  *
  * @type {Array<import('unified').Plugin>}
  */
-export const NEXT_REHYPE_PLUGINS = [
+export const REHYPE_PLUGINS = [
   // Generates `id` attributes for headings (H1, ...)
   rehypeSlug,
   // Automatically add anchor links to headings (H1, ...)
@@ -28,4 +28,11 @@ export const NEXT_REHYPE_PLUGINS = [
  *
  * @type {Array<import('unified').Plugin>}
  */
-export const NEXT_REMARK_PLUGINS = [remarkGfm, remarkHeadings, readingTime];
+export const REMARK_PLUGINS = [
+  // Support GFM syntax to be used within Markdown
+  remarkGfm,
+  // Generates metadata regarding headings
+  remarkHeadings,
+  // Calculates the reading time of the content
+  readingTime,
+];

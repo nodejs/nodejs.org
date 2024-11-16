@@ -1,6 +1,5 @@
 'use strict';
 
-import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { join, normalize, sep } from 'node:path';
 
@@ -8,7 +7,12 @@ import matter from 'gray-matter';
 import { cache } from 'react';
 import { VFile } from 'vfile';
 
-import { BASE_URL, BASE_PATH, IS_DEVELOPMENT } from './next.constants.mjs';
+import {
+  BASE_URL,
+  BASE_PATH,
+  IS_DEVELOPMENT,
+  DEFAULT_CATEGORY_OG_TYPE,
+} from './next.constants.mjs';
 import {
   IGNORED_ROUTES,
   DYNAMIC_ROUTES,
@@ -17,7 +21,7 @@ import {
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { siteConfig } from './next.json.mjs';
 import { availableLocaleCodes, defaultLocale } from './next.locales.mjs';
-import { compileMDX } from './next.mdx.compiler.mjs';
+import { compile } from './next.mdx.compiler.mjs';
 
 // This is the combination of the Application Base URL and Base PATH
 const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
@@ -106,8 +110,7 @@ const getDynamicRouter = async () => {
     // meaning that the route exists on the website and can be rendered
     if (pathnameToFilename.has(normalizedPathname)) {
       const filename = pathnameToFilename.get(normalizedPathname);
-
-      let filePath = join(process.cwd(), 'pages');
+      const filepath = join(process.cwd(), 'pages', locale, filename);
 
       // We verify if our Markdown cache already has a cache entry for a localized
       // version of this file, because if not, it means that either
@@ -120,21 +123,31 @@ const getDynamicRouter = async () => {
         return { source: fileContent, filename };
       }
 
+      // Attempts to read a file or simply (and silently) fail, as the file might
+      // simply not exist or whatever other reason that might cause the file to not be read
+      const fileLanguageContent = await readFile(filepath, 'utf8').catch(
+        () => undefined
+      );
+
       // No cache hit exists, so we check if the localized file actually
       // exists within our file system and if it does we set it on the cache
-      // and return the current fetched result; If the file does not exist
-      // we fallback to the English source
-      if (existsSync(join(filePath, locale, filename))) {
-        filePath = join(filePath, locale, filename);
+      // and return the current fetched result;
+      if (fileLanguageContent && typeof fileLanguageContent === 'string') {
+        cachedMarkdownFiles.set(
+          `${locale}${normalizedPathname}`,
+          fileLanguageContent
+        );
 
-        const fileContent = await readFile(filePath, 'utf8');
-
-        cachedMarkdownFiles.set(`${locale}${normalizedPathname}`, fileContent);
-
-        return { source: fileContent, filename };
+        return { source: fileLanguageContent, filename };
       }
 
-      // We then attempt to retrieve the source version of the file as there is no localised version
+      // Prevent infinite loops as if at this point the file does not exist with the default locale
+      // then there must be an issue on the file system or there's an error on the mapping of paths to files
+      if (locale === defaultLocale.code) {
+        return { filename: '', source: '' };
+      }
+
+      // We attempt to retrieve the source version (defaultLocale) of the file as there is no localised version
       // of the file and we set it on the cache to prevent future checks of the same locale for this file
       const { source: fileContent } = await _getMarkdownFile(
         defaultLocale.code,
@@ -173,7 +186,7 @@ const getDynamicRouter = async () => {
 
     // This compiles our MDX source (VFile) into a final MDX-parsed VFile
     // that then is passed as a string to the MDXProvider which will run the MDX Code
-    return compileMDX(sourceAsVirtualFile, fileExtension);
+    return compile(sourceAsVirtualFile, fileExtension);
   };
 
   // Creates a Cached Version of the MDX Compiler
@@ -196,49 +209,52 @@ const getDynamicRouter = async () => {
 
     const { data } = matter(source);
 
+    const getUrlForPathname = (l, p) =>
+      `${baseUrlAndPath}/${l}${p ? `/${p}` : ''}`;
+
+    // Default Title for the page
     pageMetadata.title = data.title
       ? `${siteConfig.title} — ${data.title}`
       : siteConfig.title;
 
+    // Default Twitter Title for the page
     pageMetadata.twitter.title = pageMetadata.title;
 
-    const getUrlForPathname = (l, p) =>
-      `${baseUrlAndPath}/${l}${p ? `/${p}` : ''}`;
+    // Default Open Graph Image for the page
+    pageMetadata.openGraph.images = [
+      `${defaultLocale.code}/next-data/og/${data.category ?? DEFAULT_CATEGORY_OG_TYPE}/${pageMetadata.title}`,
+      // Provides the default OG image as the first one will give a 404 on full static exports
+      `${defaultLocale.code}/next-data/og/announcement/Run JavaScript Everywhere`,
+    ];
 
+    // Default canonical URL for the page
     pageMetadata.alternates.canonical = getUrlForPathname(locale, path);
 
+    // Default alternate URL for the page in the default locale
     pageMetadata.alternates.languages['x-default'] = getUrlForPathname(
       defaultLocale.code,
       path
     );
 
-    const blogMatch = path.match(/^blog\/(release|vulnerability)(\/|$)/);
-    if (blogMatch) {
-      const category = blogMatch[1];
-      const currentFile = siteConfig.rssFeeds.find(
-        item => item.category === category
-      )?.file;
-      // Use getUrlForPathname to dynamically construct the XML path for blog/release and blog/vulnerability
-      pageMetadata.alternates.types['application/rss+xml'] = getUrlForPathname(
-        locale,
-        `feed/${currentFile}`
-      );
-    } else {
-      // Use getUrlForPathname for the default blog XML feed path
-      pageMetadata.alternates.types['application/rss+xml'] = getUrlForPathname(
-        locale,
-        'feed/blog.xml'
-      );
-    }
+    // Retrieves a matching blog feed for the category of the blog post
+    // If no matching blog feed is found, we simply fallback to the default blog feed
+    const matchingBlogFeed = siteConfig.rssFeeds.find(
+      feed => feed.category === data.category
+    );
 
+    // Adds the RSS Feed URL to the page metadata, if a matching feed is found
+    // otherwise, we fallback to the default blog feed
+    pageMetadata.alternates.types['application/rss+xml'] = getUrlForPathname(
+      locale,
+      `feed/${matchingBlogFeed?.file ?? 'blog.xml'}`
+    );
+
+    // Iterate all languages to generate alternate URLs for each language
     availableLocaleCodes.forEach(currentLocale => {
       pageMetadata.alternates.languages[currentLocale] = getUrlForPathname(
         currentLocale,
         path
       );
-      pageMetadata.openGraph.images = [
-        `${currentLocale}/next-data/og?title=${pageMetadata.title}&type=${data.category ?? 'announcement'}`,
-      ];
     });
 
     return pageMetadata;

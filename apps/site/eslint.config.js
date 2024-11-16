@@ -35,6 +35,7 @@ export default tseslint.config(
       '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/no-require-imports': 'off',
       '@next/next/no-duplicate-head': 'off',
+      'import-x/no-duplicates': 'off',
     },
     settings: {
       react: {

@@ -1,5 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "dangerouslyDisablePackageManagerCheck": true,
   "tasks": {
     "scripts:release-post": {
       "cache": false
