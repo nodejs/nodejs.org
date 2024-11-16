@@ -42,13 +42,13 @@ export async function compile(
     format: fileExtension,
   });
 
-  const {
-    exports: { default: MDXContent },
-    run,
-  } = createSval(components);
+  const interpreter = createSval(components);
 
   // Run the compiled JavaScript code from MDX
-  run(compiled.toString());
+  interpreter.run(compiled.toString());
+
+  // Retrieve the default export from the compiled MDX
+  const MDXContent = interpreter.exports.default;
 
   // Render the MDX content directly from the compiler
   const content = <MDXContent components={components} />;
