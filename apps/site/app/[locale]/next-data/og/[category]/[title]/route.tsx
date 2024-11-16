@@ -22,7 +22,7 @@ type StaticParams = {
 };
 
 // This is the Route Handler for the `GET` method which handles the request
-// for generating OpenGrapgh images for Blog Posts and Pages
+// for generating OpenGraph images for Blog Posts and Pages
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 export const GET = async (_: Request, props: StaticParams) => {
   const params = await props.params;

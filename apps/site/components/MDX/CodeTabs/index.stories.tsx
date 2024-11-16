@@ -45,7 +45,7 @@ export default {
     async ({ args }) => {
       const { content } = await compile(new VFile(args.children), 'mdx');
 
-      return { Content: <>{content}</> };
+      return { Content: content };
     },
   ],
 } as Meta;

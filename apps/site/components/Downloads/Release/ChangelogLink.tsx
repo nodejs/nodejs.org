@@ -5,9 +5,8 @@ import { useContext } from 'react';
 
 import LinkWithArrow from '@/components/Downloads/Release/LinkWithArrow';
 import Link from '@/components/Link';
+import { BASE_CHANGELOG_URL } from '@/next.constants.mjs';
 import { ReleaseContext } from '@/providers/releaseProvider';
-
-const BASE_CHANGELOG_URL = 'https://github.com/nodejs/node/releases/tag/v';
 
 const ChangelogLink: FC<PropsWithChildren> = ({ children }) => {
   const { release } = useContext(ReleaseContext);
