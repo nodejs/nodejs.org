@@ -13,11 +13,12 @@ a.item {
 
   &:hover {
     @apply text-neutral-900
+      motion-safe:transition-colors
       dark:text-white;
   }
 
   svg {
-    @apply flex-shrink-0
+    @apply shrink-0
       fill-neutral-200
       stroke-white
       stroke-[4]

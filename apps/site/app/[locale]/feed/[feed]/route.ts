@@ -1,19 +1,20 @@
 import { NextResponse } from 'next/server';
 
 import provideWebsiteFeeds from '@/next-data/providers/websiteFeeds';
-import { VERCEL_REVALIDATE } from '@/next.constants.mjs';
 import { siteConfig } from '@/next.json.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 
 // We only support fetching these pages from the /en/ locale code
 const locale = defaultLocale.code;
 
-type StaticParams = { params: { feed: string; locale: string } };
+type StaticParams = { params: Promise<{ feed: string; locale: string }> };
 
 // This is the Route Handler for the `GET` method which handles the request
 // for the Node.js Website Blog Feeds (RSS)
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
-export const GET = async (_: Request, { params }: StaticParams) => {
+export const GET = async (_: Request, props: StaticParams) => {
+  const params = await props.params;
+
   // Generate the Feed for the given feed type (blog, releases, etc)
   const websiteFeed = provideWebsiteFeeds(params.feed);
 
@@ -29,11 +30,9 @@ export const GET = async (_: Request, { params }: StaticParams) => {
 export const generateStaticParams = async () =>
   siteConfig.rssFeeds.map(feed => ({ feed: feed.file, locale }));
 
-// In this case we want to catch-all possible requests. This is so that if a non defined feed is
-// requested we can manually return a 404 response for it instead of having Next.js handle it
-// and return our top level custom 404 html page instead
+// Enforces that only the paths from `generateStaticParams` are allowed, giving 404 on the contrary
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 // Enforces that this route is cached and static as much as possible
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
@@ -42,4 +41,4 @@ export const dynamic = 'force-static';
 // Ensures that this endpoint is invalidated and re-executed every X minutes
 // so that when new deployments happen, the data is refreshed
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
-export const revalidate = VERCEL_REVALIDATE;
+export const revalidate = 300;

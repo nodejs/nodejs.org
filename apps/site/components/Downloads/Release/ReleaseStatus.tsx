@@ -10,7 +10,7 @@ const ReleaseStatus: FC = () => {
     release: { status },
   } = useContext(ReleaseContext);
 
-  return <>{status}</>;
+  return status;
 };
 
 export default ReleaseStatus;

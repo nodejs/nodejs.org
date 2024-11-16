@@ -5,6 +5,7 @@
         "links": {
           "trademarkPolicy": "Trademark Policy",
           "privacyPolicy": "Privacy Policy",
+          "versionSupport": "Version Support",
           "codeOfConduct": "Code of Conduct",
           "security": "Security Policy"
         }
@@ -14,7 +15,6 @@
           "about": "About",
           "download": "Download",
           "docs": "Docs",
-          "support": "Version Support",
           "guides": "Guides",
           "learn": "Learn",
           "security": "Security",

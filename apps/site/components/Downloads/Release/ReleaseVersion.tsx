@@ -10,7 +10,7 @@ const ReleaseVersion: FC = () => {
     release: { version },
   } = useContext(ReleaseContext);
 
-  return <>{version}</>;
+  return version;
 };
 
 export default ReleaseVersion;

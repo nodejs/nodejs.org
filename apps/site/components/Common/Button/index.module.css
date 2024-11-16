@@ -6,7 +6,8 @@
     gap-2
     py-2.5
     text-center
-    font-semibold;
+    font-semibold
+    motion-safe:transition-colors;
 
   svg {
     @apply size-5;

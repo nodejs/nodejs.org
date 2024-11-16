@@ -23,15 +23,14 @@ const getBlogData = (cat: string, page?: number): Promise<BlogPostsRSC> => {
     );
   }
 
-  const fetchURL = page
-    ? // Provides a conditional fetch URL based on the given function parameters
-      `${NEXT_DATA_URL}blog-data/${cat}/${page}`
-    : `${NEXT_DATA_URL}blog-data/${cat}/0`;
+  const fetchURL = `${NEXT_DATA_URL}blog-data/${cat}/${page ?? 0}`;
 
   // When we're on RSC with Server capabilities we prefer using Next.js Data Fetching
   // as this will load cached data from the server instead of generating data on the fly
   // this is extremely useful for ISR and SSG as it will not generate this data on every request
-  return fetch(fetchURL).then(r => r.text().then(parseBlogDataResponse));
+  return fetch(fetchURL, { cache: 'force-cache' })
+    .then(response => response.text())
+    .then(response => parseBlogDataResponse(response));
 };
 
 export default getBlogData;

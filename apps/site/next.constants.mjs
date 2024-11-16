@@ -15,16 +15,6 @@ export const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 export const VERCEL_ENV = process.env.NEXT_PUBLIC_VERCEL_ENV || undefined;
 
 /**
- * This is used for defining a default time of when `next-data` and other dynamically generated
- * but static-enabled pages should be regenerated.
- *
- * Note that this is a custom Environment Variable that can be defined by us when necessary
- */
-export const VERCEL_REVALIDATE = Number(
-  process.env.NEXT_PUBLIC_VERCEL_REVALIDATE_TIME || 300
-);
-
-/**
  * This is used for telling Next.js to do a Static Export Build of the Website
  *
  * This is used for static/without a Node.js server hosting, such as on our
@@ -98,6 +88,17 @@ export const NEXT_DATA_URL = process.env.NEXT_PUBLIC_DATA_URL
  * Route Segments for Next.js Dynamic Routes on `pages/[...path].tsx`
  */
 export const MD_EXTENSION_REGEX = /((\/)?(index))?\.mdx?$/i;
+
+/**
+ * This is the default type of blog post type that we use for OG Meta Tags
+ */
+export const DEFAULT_CATEGORY_OG_TYPE = 'announcement';
+
+/**
+ * This is the base url for changelog entries
+ */
+export const BASE_CHANGELOG_URL =
+  'https://github.com/nodejs/node/releases/tag/v';
 
 /**
  * This defines how many blog posts each pagination page should have
@@ -178,8 +179,3 @@ export const GITHUB_API_KEY = process.env.NEXT_GITHUB_API_KEY || '';
  */
 export const ESP_SUPPORT_THRESHOLD_VERSION =
   process.env.ESP_SUPPORT_THRESHOLD_VERSION || '18.0.0';
-
-/**
- * This deep link into the app is repeated in the top nav, but we want to ignore it for active-link highlighting, since it will be covered by About
- */
-export const VERSION_SUPPORT_SHORTCUT = '/about/previous-releases';

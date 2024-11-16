@@ -1,7 +1,7 @@
 import { importLocale } from '@node-core/website-i18n';
 import { getRequestConfig } from 'next-intl/server';
 
-import { availableLocaleCodes } from '@/next.locales.mjs';
+import { availableLocaleCodes, defaultLocale } from '@/next.locales.mjs';
 
 import deepMerge from './util/deepMerge';
 
@@ -13,7 +13,7 @@ const loadLocaleDictionary = async (locale: string) => {
     '@node-core/website-i18n/locales/en.json'
   ).then(f => f.default);
 
-  if (locale === 'en') {
+  if (locale === defaultLocale.code) {
     return defaultMessages;
   }
 
@@ -30,9 +30,20 @@ const loadLocaleDictionary = async (locale: string) => {
 };
 
 // Provides `next-intl` configuration for RSC/SSR
-export default getRequestConfig(async ({ locale }) => ({
-  // This is the dictionary of messages to be loaded
-  messages: await loadLocaleDictionary(locale),
-  // We always define the App timezone as UTC
-  timeZone: 'Etc/UTC',
-}));
+export default getRequestConfig(async ({ requestLocale }) => {
+  // This typically corresponds to the `[locale]` segment
+  let locale = await requestLocale;
+
+  // Ensure that the incoming locale is valid
+  if (!locale || !availableLocaleCodes.includes(locale)) {
+    locale = defaultLocale.code;
+  }
+
+  return {
+    locale,
+    // This is the dictionary of messages to be loaded
+    messages: await loadLocaleDictionary(locale),
+    // We always define the App timezone as UTC
+    timeZone: 'Etc/UTC',
+  };
+});

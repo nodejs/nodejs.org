@@ -3,7 +3,6 @@
 import type { Dispatch, PropsWithChildren, FC } from 'react';
 import { createContext, useMemo, useReducer } from 'react';
 
-import WithChangelogModal from '@/components/withChangelogModal';
 import type { NodeRelease } from '@/types';
 import type {
   ReleaseDispatchActions,
@@ -19,7 +18,6 @@ const initialState: ReleaseState = {
   os: 'OTHER',
   bitness: '',
   platform: 'NVM',
-  modalOpen: false,
 };
 
 const createDispatchActions = (
@@ -29,7 +27,6 @@ const createDispatchActions = (
   setOS: payload => dispatch({ type: 'SET_OS', payload }),
   setBitness: payload => dispatch({ type: 'SET_BITNESS', payload }),
   setPlatform: payload => dispatch({ type: 'SET_PLATFORM', payload }),
-  setModalOpen: payload => dispatch({ type: 'SET_MODAL_OPEN', payload }),
 });
 
 export const ReleaseContext = createContext<ReleaseContextType>({
@@ -56,8 +53,6 @@ export const ReleaseProvider: FC<PropsWithChildren<ReleaseProviderProps>> = ({
         return { ...state, bitness: action.payload };
       case 'SET_PLATFORM':
         return { ...state, platform: action.payload };
-      case 'SET_MODAL_OPEN':
-        return { ...state, modalOpen: action.payload };
       default:
         return state;
     }
@@ -74,12 +69,6 @@ export const ReleaseProvider: FC<PropsWithChildren<ReleaseProviderProps>> = ({
   return (
     <ReleaseContext.Provider value={{ ...state, ...actions }}>
       {children}
-
-      <WithChangelogModal
-        release={state.release}
-        modalOpen={state.modalOpen}
-        setModalOpen={actions.setModalOpen}
-      />
     </ReleaseContext.Provider>
   );
 };

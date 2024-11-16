@@ -1,3 +1,5 @@
+import type { JSX } from 'react';
+
 import type { PackageManager } from '@/types/release';
 import type { UserOS } from '@/types/userOS';
 

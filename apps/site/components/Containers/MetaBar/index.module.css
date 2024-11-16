@@ -9,6 +9,10 @@
     px-4
     py-6
     [overflow-wrap:anywhere]
+    lg:sticky
+    lg:top-0
+    lg:h-max
+    lg:min-h-screen
     lg:px-6
     dark:border-neutral-900;
 
