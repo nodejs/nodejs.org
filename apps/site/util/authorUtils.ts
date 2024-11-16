@@ -1,4 +1,4 @@
-import authors from '@/authors.json';
+import { authors } from '@/next.json.mjs';
 
 import { getGitHubAvatarUrl } from './gitHubUtils';
 import { getAcronymFromString } from './stringUtils';
@@ -16,17 +16,11 @@ export const mapAuthorToCardAuthors = (author: string) => {
     .filter(Boolean);
 };
 
-type Author = {
-  id: string;
-  name: string;
-  website?: string;
-};
-
 export const getAuthorWithId = (usernames: Array<string>, hasUrl: boolean) =>
   usernames.map(username => {
     const author = Object.values(authors).find(
-      ({ id }: { id: string }) => id.toLowerCase() === username.toLowerCase()
-    ) as Author | undefined;
+      ({ id }) => id.toLowerCase() === username.toLowerCase()
+    );
 
     if (author) {
       const { id, name, website } = author;
@@ -54,7 +48,7 @@ export const getAuthorWithName = (names: Array<string>, hasUrl: boolean) =>
       const author = authors[name as keyof typeof authors];
 
       if (author) {
-        const { id, name, website }: Author = author;
+        const { id, name, website } = author;
 
         return {
           image: getGitHubAvatarUrl(id),

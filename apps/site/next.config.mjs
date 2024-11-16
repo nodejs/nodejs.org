@@ -90,6 +90,7 @@ const nextConfig = {
       '@radix-ui/react-slot',
       '@radix-ui/react-tabs',
       '@radix-ui/react-toast',
+      '@radix-ui/react-tooltip',
       '@orama/highlight',
       '@heroicons/react',
       'tailwindcss',

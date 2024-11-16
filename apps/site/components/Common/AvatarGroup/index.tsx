@@ -13,7 +13,7 @@ import Tooltip from '@/components/Common/Tooltip';
 import styles from './index.module.css';
 
 type AvatarGroupProps = {
-  avatars: Array<AvatarProps & { url?: string }>;
+  avatars: Array<AvatarProps>;
   limit?: number;
   isExpandable?: boolean;
   size?: AvatarProps['size'];
@@ -38,17 +38,20 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
     <div className={styles.avatarGroup}>
       {renderAvatars.map(({ ...avatar }) => (
         <Fragment key={avatar.nickname}>
-          {avatar.url ? (
-            <Tooltip
-              asChild
-              container={container}
-              content={<AvatarOverlay {...avatar} />}
-            >
-              <Avatar {...avatar} size={size} className="cursor-pointer" />
-            </Tooltip>
-          ) : (
-            <Avatar {...avatar} size={size} />
-          )}
+          <Tooltip
+            asChild
+            container={container}
+            content={<AvatarOverlay {...avatar} />}
+          >
+            <Avatar
+              {...avatar}
+              size={size}
+              className={classNames({
+                'cursor-pointer': avatar.url,
+                'pointer-events-none': !avatar.url,
+              })}
+            />
+          </Tooltip>
         </Fragment>
       ))}
       {avatars.length > limit && (

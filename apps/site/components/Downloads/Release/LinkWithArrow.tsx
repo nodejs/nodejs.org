@@ -18,10 +18,10 @@ const LinkWithArrow: FC<PropsWithChildren<LinkWithArrowProps>> = ({
 
   return (
     <Comp {...props}>
-      <>
+      <span>
         {children}
         <ArrowUpRightIcon className="ml-1 inline w-3 fill-neutral-600 dark:fill-white" />
-      </>
+      </span>
     </Comp>
   );
 };

@@ -33,5 +33,5 @@ export interface SiteConfig {
 export interface Author {
   id: string;
   name: string;
-  website: string;
+  website?: string;
 }
