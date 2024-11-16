@@ -1,66 +1,12 @@
 'use strict';
 
-import { evaluate } from '@mdx-js/mdx';
-import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
-import rehypeReact from 'rehype-react';
-import remarkParse from 'remark-parse';
-import remarkRehype from 'remark-rehype';
-import { unified } from 'unified';
+import { compile as mdxCompile } from '@mdx-js/mdx';
 import { matter } from 'vfile-matter';
 
 import { MDX_COMPONENTS } from './next.mdx.components.mjs';
+import { createSval } from './next.mdx.evaluater.mjs';
 import { REHYPE_PLUGINS, REMARK_PLUGINS } from './next.mdx.plugins.mjs';
 import { createGitHubSlugger } from './util/gitHubUtils';
-
-// Defines the React Runtime Components
-const reactRuntime = { Fragment, jsx, jsxs };
-
-/**
- * This is our custom Markdown Compiler that is used to compile Markdown files
- *
- * @todo Implement the MDX parsing capabilities for source containing ESTree code
- * @see https://github.com/mdx-js/mdx/blob/main/packages/mdx/lib/node-types.js
- * @see https://www.npmjs.com/package/sval
- * @see https://github.com/syntax-tree/hast-util-to-jsx-runtime
- *
- * @param {string} source The source content of the Markdown file
- * @param {import('mdx/types').MDXComponents} components
- *
- * @returns {Promise<import('react').ReactElement>} The compiled MD into React
- */
-const getMarkdownParser = async (source, components) => {
-  const parser = unified()
-    .use(remarkParse)
-    .use(REMARK_PLUGINS)
-    .use(remarkRehype, { allowDangerousHtml: true })
-    .use(REHYPE_PLUGINS)
-    .use(rehypeReact, { ...reactRuntime, components });
-
-  const { result } = await parser.process(source);
-
-  return result;
-};
-
-/**
- * This is our custom MDX Compiler that is used to compile MDX files
- * this returns a serializable VFile as a string that then gets passed to our MDX Provider
- *
- * @deprecated This should be replaced by a non eval'd approach
- * @param {string} source MDX source content from the MDX file
- * @param {import('mdx/types').MDXComponents} components
- *
- * @returns {Promise<import('react').ReactElement>} The compiled MDX into React
- */
-const getMdxParser = async (source, components) => {
-  const { default: MDXContent } = await evaluate(source, {
-    rehypePlugins: REHYPE_PLUGINS,
-    remarkPlugins: REMARK_PLUGINS,
-    format: 'mdx',
-    ...reactRuntime,
-  });
-
-  return <MDXContent components={components} />;
-};
 
 /**
  * This is our custom simple MDX Compiler that is used to compile Markdown and MDX
@@ -89,10 +35,23 @@ export async function compile(
   // Creates a GitHub slugger to generate the same slugs as GitHub
   const slugger = createGitHubSlugger();
 
-  const content =
-    fileExtension === 'mdx'
-      ? await getMdxParser(source, components)
-      : await getMarkdownParser(source, components);
+  // Compiles the MDX/Markdown source into a serializable VFile
+  const compiled = await mdxCompile(source, {
+    rehypePlugins: REHYPE_PLUGINS,
+    remarkPlugins: REMARK_PLUGINS,
+    format: fileExtension,
+  });
+
+  const interpreter = createSval(components);
+
+  // Run the compiled JavaScript code from MDX
+  interpreter.run(compiled.toString());
+
+  // Retrieve the default export from the compiled MDX
+  const MDXContent = interpreter.exports.default;
+
+  // Render the MDX content directly from the compiler
+  const content = <MDXContent components={components} />;
 
   // Retrieve some parsed data from the VFile metadata
   // such as frontmatter and Markdown headings
