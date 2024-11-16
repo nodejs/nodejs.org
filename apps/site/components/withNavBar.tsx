@@ -4,6 +4,7 @@ import { useLocale } from 'next-intl';
 import { useTheme } from 'next-themes';
 import type { FC } from 'react';
 
+import Button from '@/components/Common/Button';
 import NavBar from '@/components/Containers/NavBar';
 import WithBanner from '@/components/withBanner';
 import { useSiteNavigation } from '@/hooks';
@@ -23,6 +24,15 @@ const WithNavBar: FC = () => {
 
   return (
     <div>
+      <Button
+        className={
+          '!fixed left-0 m-3 -translate-y-16 p-3 !transition focus:translate-y-0'
+        }
+        href="#main-content"
+      >
+        Skip Navigation
+      </Button>
+
       <WithBanner section="index" />
 
       <NavBar
@@ -38,6 +48,7 @@ const WithNavBar: FC = () => {
           target,
         }))}
       />
+      <a id="main-content" />
     </div>
   );
 };
