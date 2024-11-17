@@ -93,8 +93,8 @@
             "publishingNodeApiModules": "How to publish a Node-API package",
             "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction",
             "abiStability": "ABI Stability",
-            "backpressuringInStreams": "Backpressuring in Streams",
-            "howToUseStreams": "How to use streams"
+            "howToUseStreams": "How to use streams",
+            "backpressuringInStreams": "Backpressuring in Streams"
           }
         },
         "diagnostics": {

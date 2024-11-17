@@ -100,13 +100,48 @@ stream.on('data', chunk => {
 });
 ```
 
+```mjs
+import { Readable } from 'node:stream';
+
+class MyStream extends Readable {
+  #count = 0;
+  _read(size) {
+    this.push(':-)');
+    if (++this.#count === 5) {
+      this.push(null);
+    }
+  }
+}
+
+const stream = new MyStream();
+
+stream.on('data', chunk => {
+  console.log(chunk.toString());
+});
+```
+
 In this code, the `MyStream` class extends Readable and overrides the [`_read`][] method to push a string ":-)" to the internal buffer. After pushing the string five times, it signals the end of the stream by pushing `null`. The [`on('data')`][] event handler logs each chunk to the console as it is received.
 
 #### Advanced Control with the readable Event
 
 For even finer control over data flow, the readable event can be used. This event is more complex but provides better performance for certain applications by allowing explicit control over when data is read from the stream:
 
-```js
+```cjs
+const stream = new MyStream({
+  highWaterMark: 1,
+});
+
+stream.on('readable', () => {
+  console.count('>> readable event');
+  let chunk;
+  while ((chunk = stream.read()) !== null) {
+    console.log(chunk.toString()); // Process the chunk
+  }
+});
+stream.on('end', () => console.log('>> end event'));
+```
+
+```mjs
 const stream = new MyStream({
   highWaterMark: 1,
 });
@@ -143,7 +178,21 @@ NOTE: You can try to run the code with `NODE_DEBUG=stream` to see that `emitRead
 
 If we want to see readable events called before each smiley, we can wrap `push` into a `setImmediate` or `process.nextTick` like this:
 
-```js
+```cjs
+class MyStream extends Readable {
+  #count = 0;
+  _read(size) {
+    setImmediate(() => {
+      this.push(':-)');
+      if (++this.#count === 5) {
+        return this.push(null);
+      }
+    });
+  }
+}
+```
+
+```mjs
 class MyStream extends Readable {
   #count = 0;
   _read(size) {
@@ -186,6 +235,32 @@ And we’ll get:
 #### Creating a Writable
 
 Here's an example of creating a writable stream that converts all incoming data to uppercase before writing it to the standard output:
+
+```cjs
+const { Writable } = require('node:stream');
+const { once } = require('node:events');
+
+class MyStream extends Writable {
+  constructor() {
+    super({ highWaterMark: 10 /* 10 bytes */ });
+  }
+  _write(data, encode, cb) {
+    process.stdout.write(data.toString().toUpperCase() + '\n', cb);
+  }
+}
+const stream = new MyStream();
+
+for (let i = 0; i < 10; i++) {
+  const waitDrain = !stream.write('hello');
+
+  if (waitDrain) {
+    console.log('>> wait drain');
+    await once(stream, 'drain');
+  }
+}
+
+stream.end('world');
+```
 
 ```mjs
 import { Writable } from 'node:stream';
@@ -271,10 +346,51 @@ server.listen(8080, () => {
 });
 ```
 
+```mjs
+import { net } from 'node:net';
+
+// Create a TCP server
+const server = net.createServer(socket => {
+  socket.write('Hello from server!\n');
+
+  socket.on('data', data => {
+    console.log(`Client says: ${data.toString()}`);
+  });
+
+  // Handle client disconnection
+  socket.on('end', () => {
+    console.log('Client disconnected');
+  });
+});
+
+// Start the server on port 8080
+server.listen(8080, () => {
+  console.log('Server listening on port 8080');
+});
+```
+
 The previous code will open a TCP socket on port 8080, send `Hello from server!` to any connecting client, and log any data received.
 
 ```cjs
 const net = require('node:net');
+
+// Connect to the server at localhost:8080
+const client = net.createConnection({ port: 8080 }, () => {
+  client.write('Hello from client!\n');
+});
+
+client.on('data', data => {
+  console.log(`Server says: ${data.toString()}`);
+});
+
+// Handle the server closing the connection
+client.on('end', () => {
+  console.log('Disconnected from server');
+});
+```
+
+```mjs
+import { net } from 'node:net';
 
 // Connect to the server at localhost:8080
 const client = net.createConnection({ port: 8080 }, () => {
@@ -318,6 +434,17 @@ const upper = new Transform({
 });
 ```
 
+```mjs
+import { Transform } from 'node:stream';
+
+const upper = new Transform({
+  transform: function (data, enc, cb) {
+    this.push(data.toString().toUpperCase());
+    cb();
+  },
+});
+```
+
 This stream will take any input and output it in uppercase.
 
 ## How to operate with streams
@@ -347,6 +474,46 @@ const upper = new Transform({
 });
 
 const readStream = fs.createReadStream(__filename, { highWaterMark: 1 });
+const writeStream = process.stdout;
+
+readStream.pipe(upper).pipe(writeStream);
+
+readStream.on('close', () => {
+  console.log('Readable stream closed');
+});
+
+upper.on('close', () => {
+  console.log('Transform stream closed');
+});
+
+upper.on('error', err => {
+  console.error('\nError in transform stream:', err.message);
+});
+
+writeStream.on('close', () => {
+  console.log('Writable stream closed');
+});
+```
+
+```mjs
+import fs from 'node:fs';
+import { Transform } from 'node:stream';
+
+let errorCount = 0;
+const upper = new Transform({
+  transform: function (data, enc, cb) {
+    if (errorCount === 10) {
+      return cb(new Error('BOOM!'));
+    }
+    errorCount++;
+    this.push(data.toString().toUpperCase());
+    cb();
+  },
+});
+
+const readStream = fs.createReadStream(import.meta.filename, {
+  highWaterMark: 1,
+});
 const writeStream = process.stdout;
 
 readStream.pipe(upper).pipe(writeStream);
@@ -421,6 +588,47 @@ pipeline(readStream, upper, writeStream, err => {
 });
 ```
 
+```mjs
+import fs from 'node:fs';
+import { Transform, pipeline } from 'node:stream';
+
+let errorCount = 0;
+const upper = new Transform({
+  transform: function (data, enc, cb) {
+    if (errorCount === 10) {
+      return cb(new Error('BOOM!'));
+    }
+    errorCount++;
+    this.push(data.toString().toUpperCase());
+    cb();
+  },
+});
+
+const readStream = fs.createReadStream(import.meta.filename, {
+  highWaterMark: 1,
+});
+const writeStream = process.stdout;
+
+readStream.on('close', () => {
+  console.log('Readable stream closed');
+});
+
+upper.on('close', () => {
+  console.log('\nTransform stream closed');
+});
+
+writeStream.on('close', () => {
+  console.log('Writable stream closed');
+});
+
+pipeline(readStream, upper, writeStream, err => {
+  if (err) {
+    return console.error('Pipeline error:', err.message);
+  }
+  console.log('Pipeline succeeded');
+});
+```
+
 In this case, all streams will be closed with the following output:
 
 ```bash
@@ -451,6 +659,21 @@ Async iterators offer a more modern and often more readable way to work with rea
 
 Here's an example demonstrating the use of async iterators with a readable stream:
 
+```cjs
+const fs = require('node:fs');
+const { pipeline } = require('node:stream/promises');
+
+await pipeline(
+  fs.createReadStream(import.meta.filename),
+  async function* (source) {
+    for await (let chunk of source) {
+      yield chunk.toString().toUpperCase();
+    }
+  },
+  process.stdout
+);
+```
+
 ```mjs
 import fs from 'fs';
 import { pipeline } from 'stream/promises';
@@ -473,7 +696,19 @@ This code achieves the same result as the previous examples, without the need to
 By default, streams can work with strings, [`Buffer`][], [`TypedArray`][], or [`DataView`][]. If an arbitrary value different from these (e.g., an object) is pushed into a stream, a `TypeError` will be thrown. However, it is possible to work with objects by setting the `objectMode` option to `true`. This allows the stream to work with any JavaScript value, except for `null`, which is used to signal the end of the stream. This means you can `push` and `read` any value in a readable stream, and `write` any value in a writable stream.
 
 ```cjs
-const { Readable } = require('stream');
+const { Readable } = require('node:stream');
+
+const readable = Readable({
+  objectMode: true,
+  read() {
+    this.push({ hello: 'world' });
+    this.push(null);
+  },
+});
+```
+
+```mjs
+import { Readable } from 'node:stream';
 
 const readable = Readable({
   objectMode: true,
@@ -490,15 +725,15 @@ When working in object mode, it is important to remember that the `highWaterMark
 
 When using streams, it is important to make sure the producer doesn't overwhelm the consumer. For this, the backpressure mechanism is used in all streams in the Node.js API, and implementors are responsible for maintaining that behavior.
 
-In any scenario where the data buffer has exceeded the [`highWaterMark`](https://nodejs.org/api/stream.html#stream_buffering) or the write queue is currently busy, [`write()`](https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback) will return `false`.
+In any scenario where the data buffer has exceeded the [`highWaterMark`][] or the write queue is currently busy, [`.write()`][] will return `false`.
 
-When a `false` value is returned, the backpressure system kicks in. It will pause the incoming [`Readable`](https://nodejs.org/api/stream.html#stream_readable_streams) stream from sending any data and wait until the consumer is ready again. Once the data buffer is emptied, a [`'drain'`](https://nodejs.org/api/stream.html#stream_event_drain) event will be emitted to resume the incoming data flow.
+When a `false` value is returned, the backpressure system kicks in. It will pause the incoming [`Readable`][] stream from sending any data and wait until the consumer is ready again. Once the data buffer is emptied, a [`'drain'`][] event will be emitted to resume the incoming data flow.
 
 For a deeper understanding of backpressure, check the [`backpressure guide`][].
 
 ## Streams vs Web streams
 
-The stream concept is not exclusive to Node.js. In fact, Node.js has a different implementation of the stream concept called [`Web Streams`][], which implements the [`WHATWG Streams Standard`][]. Although the concepts behind them are similar, it is important to be aware that they have different APIs and are not directly compatible. 
+The stream concept is not exclusive to Node.js. In fact, Node.js has a different implementation of the stream concept called [`Web Streams`][], which implements the [`WHATWG Streams Standard`][]. Although the concepts behind them are similar, it is important to be aware that they have different APIs and are not directly compatible.
 
 [`Web Streams`][] implement the [`ReadableStream`][], [`WritableStream`][], and [`TransformStream`][] classes, which are homologous to Node.js's [`Readable`][], [`Writable`][], and [`Transform`][] streams.
 
@@ -533,7 +768,49 @@ readable
   });
 ```
 
+```mjs
+import { Duplex } from 'node:stream';
+
+const duplex = Duplex({
+  read() {
+    this.push('world');
+    this.push(null);
+  },
+  write(chunk, encoding, callback) {
+    console.log('writable', chunk);
+    callback();
+  },
+});
+
+const { readable, writable } = Duplex.toWeb(duplex);
+writable.getWriter().write('hello');
+
+readable
+  .getReader()
+  .read()
+  .then(result => {
+    console.log('readable', result.value);
+  });
+```
+
 The helper functions are useful if you need to return a Web Stream from a Node.js module or vice versa. For regular consumption of streams, async iterators enable seamless interaction with both Node.js and Web Streams.
+
+```cjs
+const { pipeline } = require('node:stream/promises');
+
+const { body } = await fetch('https://nodejs.org/api/stream.html');
+
+await pipeline(
+  body,
+  new TextDecoderStream(),
+  async function* (source) {
+    for await (const chunk of source) {
+      yield chunk.toString().toUpperCase();
+    }
+  },
+  process.stdout
+);
+```
 
 ```mjs
 import { pipeline } from 'node:stream/promises';
@@ -578,6 +855,7 @@ This work is derived from content published by [Matteo Collina][] in [Platformat
 [`.write()`]: https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback
 [`_write`]: https://nodejs.org/api/stream.html#writable_writechunk-encoding-callback
 [`.end()`]: https://nodejs.org/api/stream.html#writableendchunk-encoding-callback
+[`'drain'`]: https://nodejs.org/api/stream.html#stream_event_drain
 [`_transform`]: https://nodejs.org/api/stream.html#transform_transformchunk-encoding-callback
 [`Readable.from()`]: https://nodejs.org/api/stream.html#streamreadablefromiterable-options
 [`highWaterMark`]: https://nodejs.org/api/stream.html#stream_buffering
