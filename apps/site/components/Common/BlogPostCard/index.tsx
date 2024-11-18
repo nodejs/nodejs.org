@@ -1,22 +1,19 @@
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import AvatarGroup from '@/components/Common/AvatarGroup';
 import FormattedTime from '@/components/Common/FormattedTime';
 import Preview from '@/components/Common/Preview';
 import Link from '@/components/Link';
+import WithAvatarGroup from '@/components/withAvatarGroup';
 import { mapBlogCategoryToPreviewType } from '@/util/blogUtils';
 
 import styles from './index.module.css';
-
-// @todo: this should probably be a global type?
-type Author = { fullName: string; src: string };
 
 type BlogPostCardProps = {
   title: string;
   category: string;
   description?: string;
-  authors?: Array<Author>;
+  authors?: Array<string>;
   date?: Date;
   slug?: string;
 };
@@ -30,8 +27,6 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
   date,
 }) => {
   const t = useTranslations();
-
-  const avatars = authors.map(({ fullName, src }) => ({ alt: fullName, src }));
 
   const type = mapBlogCategoryToPreviewType(category);
 
@@ -52,10 +47,10 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
       {description && <p className={styles.description}>{description}</p>}
 
       <footer className={styles.footer}>
-        <AvatarGroup avatars={avatars ?? []} />
+        <WithAvatarGroup names={authors} size="medium" clickable={false} />
 
         <div className={styles.author}>
-          {avatars && <p>{avatars.map(({ alt }) => alt).join(', ')}</p>}
+          {authors && <p>{authors.join(', ')}</p>}
 
           {date && <FormattedTime date={date} />}
         </div>

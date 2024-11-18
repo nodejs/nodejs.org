@@ -1,11 +1,10 @@
 import { CodeBracketIcon } from '@heroicons/react/24/outline';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import AvatarGroup from '@/components/Common/AvatarGroup';
 import MetaBar from '@/components/Containers/MetaBar';
 import GitHub from '@/components/Icons/Social/GitHub';
 import Link from '@/components/Link';
-import { getGitHubAvatarUrl } from '@/util/gitHubUtils';
+import WithAvatarGroup from '@/components/withAvatarGroup';
 
 type Story = StoryObj<typeof MetaBar>;
 type Meta = MetaObj<typeof MetaBar>;
@@ -37,13 +36,7 @@ export const Default: Story = {
       'components.metabar.addedIn': 'v1.0.0',
       'components.metabar.author': 'The Node.js Project',
       'components.metabar.authors': (
-        <AvatarGroup
-          avatars={names.map(name => ({
-            src: getGitHubAvatarUrl(name),
-            alt: name,
-          }))}
-          limit={8}
-        />
+        <WithAvatarGroup usernames={names} limit={6} />
       ),
       'components.metabar.contribute': (
         <>

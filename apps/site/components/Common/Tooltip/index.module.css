@@ -1,0 +1,41 @@
+.content {
+  @apply rounded-md
+    border
+    bg-white
+    text-sm
+    font-medium
+    text-neutral-900
+    shadow-lg
+    dark:bg-neutral-950
+    dark:text-white;
+
+  &.default {
+    @apply border-neutral-200
+      dark:border-neutral-900;
+
+    .arrow {
+      @apply fill-neutral-200
+        dark:fill-neutral-900;
+    }
+  }
+
+  &.error {
+    @apply border-danger-400
+      dark:border-danger-900;
+
+    .arrow {
+      @apply fill-danger-400
+        dark:fill-danger-900;
+    }
+  }
+
+  &.warning {
+    @apply border-warning-400
+      dark:border-warning-900;
+
+    .arrow {
+      @apply fill-warning-400
+        dark:fill-warning-900;
+    }
+  }
+}

@@ -1,6 +1,11 @@
-.avatar {
-  @apply flex
-    size-8
+.item {
+  @apply xs:max-h-10
+    xs:max-w-10
+    flex
+    h-full
+    max-h-12
+    w-full
+    max-w-12
     items-center
     justify-center
     rounded-full
@@ -15,9 +20,26 @@
     dark:text-neutral-300;
 }
 
-.avatarRoot {
-  @apply -ml-2
-    size-8
-    flex-shrink-0
+.avatar {
+  @apply size-8
+    flex-shrink-0;
+
+  .wrapper {
+    @apply max-xs:block
+      max-xs:py-0;
+  }
+}
+
+.small {
+  @apply xs:size-8
+    xs:-ml-2
+    ml-0.5
+    size-10
+    first:ml-0;
+}
+
+.medium {
+  @apply -ml-2.5
+    size-10
     first:ml-0;
 }

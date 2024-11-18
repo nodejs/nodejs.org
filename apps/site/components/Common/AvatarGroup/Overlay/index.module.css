@@ -1,0 +1,29 @@
+.overlay {
+  @apply flex
+    min-w-56
+    items-center
+    gap-2
+    p-3;
+}
+
+.user {
+  @apply grow;
+}
+
+.name {
+  @apply font-semibold
+    text-neutral-900
+    dark:text-neutral-300;
+}
+
+.nickname {
+  @apply font-medium
+    text-neutral-700
+    dark:text-neutral-500;
+}
+
+.arrow {
+  @apply w-3
+    fill-neutral-600
+    dark:fill-white;
+}
