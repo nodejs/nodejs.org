@@ -1,7 +1,7 @@
 import { authors } from '@/next.json.mjs';
-
-import { getGitHubAvatarUrl } from './gitHubUtils';
-import { getAcronymFromString } from './stringUtils';
+import type { AuthorProps } from '@/types';
+import { getGitHubAvatarUrl } from '@/util/gitHubUtils';
+import { getAcronymFromString } from '@/util/stringUtils';
 
 export const mapAuthorToCardAuthors = (author: string) => {
   // Clears text in parentheses
@@ -68,4 +68,12 @@ export const getAuthorWithName = (names: Array<string>, hasUrl: boolean) => {
   };
 
   return names.map(mapNameToAuthor);
+};
+
+export const getAuthors = ({ usernames, names, clickable }: AuthorProps) => {
+  if (usernames) {
+    return getAuthorWithId(usernames, clickable ?? true);
+  }
+
+  return getAuthorWithName(names || [], clickable ?? true);
 };

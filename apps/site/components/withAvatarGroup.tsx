@@ -3,19 +3,14 @@
 import type { ComponentProps, FC } from 'react';
 
 import AvatarGroup from '@/components/Common/AvatarGroup';
-import { getAuthorWithId, getAuthorWithName } from '@/util/authorUtils';
+import type { AuthorProps } from '@/types';
+import { getAuthors } from '@/util/authorUtils';
 
 type WithAvatarGroupProps = Omit<
   ComponentProps<typeof AvatarGroup>,
   'avatars'
 > &
-  (
-    | { usernames: Array<string>; names?: never }
-    | { names: Array<string>; usernames?: never }
-  ) & {
-    clickable?: boolean;
-    container?: HTMLElement | null;
-  };
+  AuthorProps;
 
 const WithAvatarGroup: FC<WithAvatarGroupProps> = ({
   usernames,
@@ -24,11 +19,11 @@ const WithAvatarGroup: FC<WithAvatarGroupProps> = ({
   ...props
 }) => (
   <AvatarGroup
-    avatars={
-      usernames
-        ? getAuthorWithId(usernames, clickable)
-        : getAuthorWithName(names, clickable)
-    }
+    avatars={getAuthors({
+      usernames: usernames,
+      names: names,
+      clickable: clickable,
+    })}
     {...props}
   />
 );
