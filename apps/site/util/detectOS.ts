@@ -1,15 +1,11 @@
 import type { UserOS } from '@/types/userOS';
 
 export const detectOsInUserAgent = (userAgent: string | undefined): UserOS => {
+  // Match OS names and convert to uppercase directly if there's a match
   const osMatch = userAgent?.match(/(Win|Mac|Linux|AIX)/);
-  const osMap: Record<string, UserOS> = {
-    Win: 'WIN',
-    Mac: 'MAC',
-    Linux: 'LINUX',
-    AIX: 'AIX',
-  };
-  return osMap[osMatch?.[1] ?? ''] || 'OTHER';
+  return osMatch ? (osMatch[1].toUpperCase() as UserOS) : 'OTHER';
 };
+
 
 // Since `navigator.appVersion` is deprecated, we use the `userAgent``
 // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/appVersion
