@@ -18,7 +18,11 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
   release: { versionWithPrefix },
   children,
 }) => {
-  const { os, bitness: userBitness, architecture: userArchitecture } = useDetectOS();
+  const {
+    os,
+    bitness: userBitness,
+    architecture: userArchitecture,
+  } = useDetectOS();
   const bitness = getUserBitnessByArchitecture(userArchitecture, userBitness);
   const downloadLink = getNodeDownloadUrl(versionWithPrefix, os, bitness);
 
