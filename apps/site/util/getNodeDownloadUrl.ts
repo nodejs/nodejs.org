@@ -10,64 +10,45 @@ export const getNodeDownloadUrl = (
   const baseURL = `${DIST_URL}${versionWithPrefix}`;
 
   if (kind === 'source') {
+    // Prepares a downloadable Node.js source code link
     return `${baseURL}/node-${versionWithPrefix}.tar.gz`;
   }
 
-  switch (os) {
-    case 'MAC':
-      // Prepares a downloadable Node.js installer link for the x64, ARM64 platforms
-      if (kind === 'installer') {
-        return `${baseURL}/node-${versionWithPrefix}.pkg`;
-      }
+  // Map of OS-specific logic for generating download URLs
+  const osUrlMap: Record<UserOS, (bitness: string | number, kind: string) => string> = {
+    MAC: (bitness, kind) =>
+      kind === 'installer'
+        ? // Prepares a downloadable Node.js installer link for the macOS platform
+          `${baseURL}/node-${versionWithPrefix}.pkg`
+        : // Prepares a downloadable Node.js link for the macOS platform (ARM64 or x64)
+          // Since ARM and x64 are supported, returns the platform-specific binary link
+          `${baseURL}/node-${versionWithPrefix}-darwin-${typeof bitness === 'string' ? bitness : 'x64'}.tar.gz`,
 
-      // Prepares a downloadable Node.js link for the ARM64 platform
-      if (typeof bitness === 'string') {
-        return `${baseURL}/node-${versionWithPrefix}-darwin-${bitness}.tar.gz`;
-      }
+    WIN: (bitness, kind) =>
+      kind === 'installer'
+        ? // Prepares a downloadable Node.js installer link for the Windows platform
+          // Supports both ARM and x86/x64 architecture, choosing based on bitness
+          `${baseURL}/node-${versionWithPrefix}-${typeof bitness === 'string' ? bitness : `x${bitness}`}.msi`
+        : // Prepares a downloadable Node.js link for Windows platform (ARM64 or x86/x64)
+          // Returns the zip format for both ARM and x86/x64 platforms
+          `${baseURL}/node-${versionWithPrefix}-win-${typeof bitness === 'string' ? bitness : `x${bitness}`}.zip`,
 
-      // Prepares a downloadable Node.js link for the x64 platform.
-      // Since the x86 platform is not officially supported, returns the x64
-      // link as the default value.
-      return `${baseURL}/node-${versionWithPrefix}-darwin-x64.tar.gz`;
-    case 'WIN': {
-      if (kind === 'installer') {
-        // Prepares a downloadable Node.js installer link for the ARM platforms
-        if (typeof bitness === 'string') {
-          return `${baseURL}/node-${versionWithPrefix}-${bitness}.msi`;
-        }
+    LINUX: (bitness) =>
+      // Prepares a downloadable Node.js link for the Linux platform
+      // Supports ARM platforms (ARMv7/ARMv8) and x64 platforms.
+      // Returns ARM or x64 based on the bitness provided.
+      `${baseURL}/node-${versionWithPrefix}-linux-${typeof bitness === 'string' ? bitness : 'x64'}.tar.xz`,
 
-        // Prepares a downloadable Node.js installer link for the x64 and x86 platforms
-        return `${baseURL}/node-${versionWithPrefix}-x${bitness}.msi`;
-      }
+    AIX: (bitness) =>
+      // Prepares a downloadable Node.js link for the AIX platform
+      // Supports the PPC64 architecture. Returns the appropriate binary based on bitness.
+      `${baseURL}/node-${versionWithPrefix}-aix-${typeof bitness === 'string' ? bitness : 'ppc64'}.tar.gz`,
 
-      // Prepares a downloadable Node.js link for the ARM64 platform
-      if (typeof bitness === 'string') {
-        return `${baseURL}/node-${versionWithPrefix}-win-${bitness}.zip`;
-      }
+    OTHER: () =>
+      // Prepares a downloadable Node.js source code link as a fallback for unsupported OS
+      `${baseURL}/node-${versionWithPrefix}.tar.gz`,
+  };
 
-      // Prepares a downloadable Node.js link for the x64 and x86 platforms
-      return `${baseURL}/node-${versionWithPrefix}-win-x${bitness}.zip`;
-    }
-    case 'LINUX':
-      // Prepares a downloadable Node.js link for the ARM platforms such as
-      // ARMv7 and ARMv8
-      if (typeof bitness === 'string') {
-        return `${baseURL}/node-${versionWithPrefix}-linux-${bitness}.tar.xz`;
-      }
-
-      // Prepares a downloadable Node.js link for the x64 platform.
-      // Since the x86 platform is not officially supported, returns the x64
-      // link as the default value.
-      return `${baseURL}/node-${versionWithPrefix}-linux-x64.tar.xz`;
-    case 'AIX':
-      // Prepares a downloadable Node.js link for AIX
-      if (typeof bitness === 'string') {
-        return `${baseURL}/node-${versionWithPrefix}-aix-${bitness}.tar.gz`;
-      }
-
-      return `${baseURL}/node-${versionWithPrefix}-aix-ppc64.tar.gz`;
-    default:
-      // Prepares a downloadable Node.js source code link
-      return `${baseURL}/node-${versionWithPrefix}.tar.gz`;
-  }
+  // Return the URL based on the detected OS
+  return osUrlMap[os]?.(bitness, kind) || osUrlMap.OTHER();
 };
