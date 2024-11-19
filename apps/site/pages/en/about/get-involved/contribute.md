@@ -28,20 +28,26 @@ The Node.js project is currently managed across a number of separate GitHub repo
 
 ## Code contributions
 
-If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Contribution Guidelines](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). The review process by existing collaborators for all contributions to the project is explained there as well.
+If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Contribution Guidelines](https://github.com/nodejs/node/blob/main/doc/contributing/pull-requests.md). The review process by existing collaborators for all contributions to the project is explained there as well.
 
 If you are wondering how to start, you can check [Node Todo](https://www.nodetodo.org/) which may guide you towards your first contribution.
 
 ## Becoming a collaborator
 
-By becoming a collaborator, contributors can have even more impact on the project. They can help other contributors by reviewing their contributions, triage issues and take an even bigger part in shaping the project's future. Individuals identified by the TSC as making significant and valuable contributions across any Node.js repository may be made Collaborators and given commit access to the project. Activities taken into consideration include (but are not limited to) the quality of:
+By becoming a collaborator, contributors can have even more impact on the project. They can help other contributors by reviewing their contributions, triaging issues and taking an even bigger part in shaping the project's future.
 
-- code commits and pull requests
-- documentation commits and pull requests
-- comments on issues and pull requests
-- contributions to the Node.js website
-- assistance provided to end users and novice contributors
-- participation in working groups
-- other participation in the wider Node.js community
+Existing collaborators may identify and nominate individuals who make significant and valuable contributions across any Node.js repository to be a new collaborator and give them commit access to the project. Activities taken into consideration include (but are not limited to) the quality of:
 
-If individuals making valuable contributions do not believe they have been considered for commit access, they may [log an issue](https://github.com/nodejs/TSC/issues) or [contact a TSC member](https://github.com/nodejs/node#tsc-technical-steering-committee) directly.
+- Commits in the [nodejs/node][] repository.
+- Pull requests and issues opened in the [nodejs/node][] repository.
+- Comments on pull requests and issues in the [nodejs/node][] repository
+- Reviews on pull requests in the [nodejs/node][] repository
+- Help provided to end-users and novice contributors
+- Pull requests and issues opened throughout the Node.js organization
+- Comments on pull requests and issues throughout the Node.js organization
+- Participation in other projects, teams, and working groups of the Node.js organization
+- Other participation in the wider Node.js community
+
+Collaborators might overlook someone with valuable contributions. In that case, the contributor may open an issue or contact a collaborator to request a nomination.
+
+[nodejs/node]: https://github.com/nodejs/node
