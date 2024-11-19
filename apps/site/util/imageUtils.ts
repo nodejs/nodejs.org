@@ -12,5 +12,5 @@ export const isSvgImage = (src: string): boolean => {
   const [image] = src.split('?');
 
   // Check if the base path (before any query parameters) ends with '.svg'
-  return image.endsWith('.svg')
+  return image.endsWith('.svg');
 };
