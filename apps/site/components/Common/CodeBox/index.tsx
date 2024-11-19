@@ -4,7 +4,7 @@ import {
   DocumentDuplicateIcon,
   CodeBracketIcon,
 } from '@heroicons/react/24/outline';
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 import { Fragment, isValidElement, useRef } from 'react';
@@ -102,7 +102,7 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
     <div className={styles.root}>
       <pre
         ref={ref}
-        className={classNames(styles.content, className)}
+        className={clsx(styles.content, className)}
         tabIndex={0}
         dir="ltr"
       >

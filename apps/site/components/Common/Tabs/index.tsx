@@ -1,5 +1,5 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 
 import styles from './index.module.css';
@@ -26,14 +26,14 @@ const Tabs: FC<PropsWithChildren<TabsProps>> = ({
 }) => (
   <TabsPrimitive.Root
     {...props}
-    className={classNames(styles.tabsRoot, props.className)}
+    className={clsx(styles.tabsRoot, props.className)}
   >
     <TabsPrimitive.List className={styles.tabsList}>
       {tabs.map(tab => (
         <TabsPrimitive.Trigger
           key={tab.key}
           value={tab.value ?? tab.key}
-          className={classNames(styles.tabsTrigger, triggerClassName)}
+          className={clsx(styles.tabsTrigger, triggerClassName)}
         >
           {tab.label}
           {tab.secondaryLabel ? (

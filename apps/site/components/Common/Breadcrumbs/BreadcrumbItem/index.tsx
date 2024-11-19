@@ -1,5 +1,5 @@
 import ChevronRightIcon from '@heroicons/react/24/outline/ChevronRightIcon';
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import type { ComponentProps, FC, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';
@@ -24,7 +24,7 @@ const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
     itemProp={!disableMicrodata ? 'itemListElement' : undefined}
     itemScope={!disableMicrodata ? true : undefined}
     itemType={!disableMicrodata ? 'https://schema.org/ListItem' : undefined}
-    className={classNames(
+    className={clsx(
       styles.item,
       { [styles.visuallyHidden]: hidden },
       props.className

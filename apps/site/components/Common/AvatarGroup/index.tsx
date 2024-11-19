@@ -1,6 +1,6 @@
 'use client';
 
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import type { FC } from 'react';
 import { useState, useMemo, Fragment } from 'react';
 
@@ -46,7 +46,7 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
             <Avatar
               {...avatar}
               size={size}
-              className={classNames({
+              className={clsx({
                 'cursor-pointer': avatar.url,
                 'pointer-events-none': !avatar.url,
               })}
@@ -57,7 +57,7 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
       {avatars.length > limit && (
         <span
           onClick={isExpandable ? () => setShowMore(prev => !prev) : undefined}
-          className={classNames(
+          className={clsx(
             avatarstyles.avatar,
             avatarstyles[size],
             'cursor-pointer'

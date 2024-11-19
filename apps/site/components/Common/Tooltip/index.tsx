@@ -1,5 +1,5 @@
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import type { ComponentProps, FC, PropsWithChildren, ReactNode } from 'react';
 
 import styles from './index.module.css';
@@ -29,7 +29,7 @@ const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
         <TooltipPrimitive.Content
           side={side}
           sideOffset={4}
-          className={classNames(styles[kind], styles.content, {
+          className={clsx(styles[kind], styles.content, {
             'mx-1.5': side === 'top' || side === 'bottom',
           })}
         >

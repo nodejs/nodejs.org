@@ -1,6 +1,6 @@
 'use client';
 
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import type { ComponentProps, FC } from 'react';
 
 import Link from '@/components/Link';
@@ -21,7 +21,7 @@ const ActiveLink: FC<ActiveLocalizedLinkProps> = ({
 }) => {
   const pathname = usePathname();
 
-  const finalClassName = classNames(className, {
+  const finalClassName = clsx(className, {
     [activeClassName]: allowSubPath
       ? // When using allowSubPath we want only to check if
         // the current pathname starts with the utmost upper level

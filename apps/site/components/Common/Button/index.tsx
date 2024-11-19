@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import type { FC, AnchorHTMLAttributes } from 'react';
 
 import Link from '@/components/Link';
@@ -23,7 +23,7 @@ const Button: FC<ButtonProps> = ({
     role="button"
     href={disabled ? undefined : href}
     aria-disabled={disabled}
-    className={classNames(styles.button, styles[kind], className)}
+    className={clsx(styles.button, styles[kind], className)}
     {...props}
   >
     {children}

@@ -3,7 +3,7 @@
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import * as ScrollPrimitive from '@radix-ui/react-scroll-area';
 import * as SelectPrimitive from '@radix-ui/react-select';
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import { useId, useMemo } from 'react';
 import type { FC } from 'react';
 
@@ -68,11 +68,7 @@ const Select: FC<SelectProps> = ({
 
   return (
     <span
-      className={classNames(
-        styles.select,
-        { [styles.inline]: inline },
-        className
-      )}
+      className={clsx(styles.select, { [styles.inline]: inline }, className)}
     >
       {label && (
         <label className={styles.label} htmlFor={id}>
@@ -93,7 +89,7 @@ const Select: FC<SelectProps> = ({
         <SelectPrimitive.Portal>
           <SelectPrimitive.Content
             position={inline ? 'popper' : 'item-aligned'}
-            className={classNames(styles.dropdown, { [styles.inline]: inline })}
+            className={clsx(styles.dropdown, { [styles.inline]: inline })}
           >
             <ScrollPrimitive.Root type="auto">
               <SelectPrimitive.Viewport>
@@ -102,7 +98,7 @@ const Select: FC<SelectProps> = ({
                     <SelectPrimitive.Group key={label?.toString() ?? key}>
                       {label && (
                         <SelectPrimitive.Label
-                          className={classNames(styles.item, styles.label)}
+                          className={clsx(styles.item, styles.label)}
                         >
                           {label}
                         </SelectPrimitive.Label>
@@ -113,7 +109,7 @@ const Select: FC<SelectProps> = ({
                           key={value}
                           value={value}
                           disabled={disabled}
-                          className={classNames(styles.item, styles.text)}
+                          className={clsx(styles.item, styles.text)}
                         >
                           <SelectPrimitive.ItemText>
                             {iconImage}

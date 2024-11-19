@@ -1,5 +1,5 @@
 import * as RadixAvatar from '@radix-ui/react-avatar';
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import type { ComponentPropsWithoutRef, ElementRef } from 'react';
 import { forwardRef } from 'react';
 
@@ -25,7 +25,7 @@ const Avatar = forwardRef<
   return (
     <RadixAvatar.Root
       {...props}
-      className={classNames(styles.avatar, styles[size], props.className)}
+      className={clsx(styles.avatar, styles[size], props.className)}
       ref={ref}
     >
       <Wrapper
@@ -41,7 +41,7 @@ const Avatar = forwardRef<
         />
         <RadixAvatar.Fallback
           delayMs={500}
-          className={classNames(styles.item, styles[size])}
+          className={clsx(styles.item, styles[size])}
         >
           {fallback}
         </RadixAvatar.Fallback>

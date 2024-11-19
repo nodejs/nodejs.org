@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import type { FC, SVGProps } from 'react';
 
 import type { LogoVariant } from '@/types';
@@ -18,7 +18,7 @@ const Nodejs: FC<NodeJsLogoProps> = ({
     viewBox="0 0 267 80"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className={classNames('fill-[#333333] dark:fill-white', className)}
+    className={clsx('fill-[#333333] dark:fill-white', className)}
     {...props}
   >
     <mask

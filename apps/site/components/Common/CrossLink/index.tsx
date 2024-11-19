@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
@@ -20,7 +20,7 @@ const CrossLink: FC<CrossLinkProps> = ({ type, text, link }) => {
   return (
     <Link className={styles.crossLink} href={link}>
       <span
-        className={classNames(styles.header, {
+        className={clsx(styles.header, {
           [styles.reverse]: type === 'next',
         })}
       >
@@ -29,7 +29,7 @@ const CrossLink: FC<CrossLinkProps> = ({ type, text, link }) => {
       </span>
 
       <span
-        className={classNames(styles.content, {
+        className={clsx(styles.content, {
           [styles.reverse]: type === 'next',
         })}
       >

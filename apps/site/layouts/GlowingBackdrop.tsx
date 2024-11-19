@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import type { FC, PropsWithChildren } from 'react';
 
 import GlowingBackdrop from '@/components/Common/GlowingBackdrop';
@@ -21,7 +21,7 @@ const GlowingBackdropLayout: FC<GlowingBackdropLayoutProps> = ({
       <GlowingBackdrop />
 
       <main
-        className={classNames({
+        className={clsx({
           [styles.homeLayout]: kind === 'home',
         })}
       >

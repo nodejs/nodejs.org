@@ -1,7 +1,7 @@
 'use client';
 
 import { CloudArrowDownIcon } from '@heroicons/react/24/outline';
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import type { FC, PropsWithChildren } from 'react';
 
 import Button from '@/components/Common/Button';
@@ -25,7 +25,7 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
       <Button
         kind="special"
         href={downloadLink}
-        className={classNames(styles.downloadButton, styles.special)}
+        className={clsx(styles.downloadButton, styles.special)}
       >
         {children}
 
@@ -35,7 +35,7 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
       <Button
         kind="primary"
         href={downloadLink}
-        className={classNames(styles.downloadButton, styles.primary)}
+        className={clsx(styles.downloadButton, styles.primary)}
       >
         {children}
 

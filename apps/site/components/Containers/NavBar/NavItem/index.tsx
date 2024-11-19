@@ -1,5 +1,5 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import type { FC, HTMLAttributeAnchorTarget, PropsWithChildren } from 'react';
 
 import ActiveLink from '@/components/Common/ActiveLink';
@@ -24,7 +24,7 @@ const NavItem: FC<PropsWithChildren<NavItemProps>> = ({
 }) => (
   <ActiveLink
     href={href}
-    className={classNames(styles.navItem, styles[type], className)}
+    className={clsx(styles.navItem, styles[type], className)}
     activeClassName={styles.active}
     allowSubPath={href.startsWith('/')}
     target={target}

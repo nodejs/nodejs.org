@@ -1,7 +1,7 @@
 import { LanguageIcon } from '@heroicons/react/24/outline';
 import type { LocaleConfig } from '@node-core/website-i18n/types';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
@@ -43,7 +43,7 @@ const LanguageDropdown: FC<LanguageDropDownProps> = ({
               <DropdownMenu.Item
                 key={code}
                 onClick={() => onChange({ name, code })}
-                className={classNames(styles.dropDownItem, {
+                className={clsx(styles.dropDownItem, {
                   [styles.currentDropDown]: code === currentLanguage,
                 })}
               >

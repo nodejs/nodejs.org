@@ -1,6 +1,6 @@
 'use strict';
 
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import { toString } from 'hast-util-to-string';
 import { SKIP, visit } from 'unist-util-visit';
 
@@ -177,7 +177,7 @@ export default function rehypeShikiji() {
       const { children } = memoizedShiki(preElementContents, languageId);
 
       // Adds the original language back to the <pre> element
-      children[0].properties.class = classNames(
+      children[0].properties.class = clsx(
         children[0].properties.class,
         codeLanguage
       );

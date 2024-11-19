@@ -1,7 +1,7 @@
 'use client';
 
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import { useTranslations } from 'next-intl';
 import { useState, type FC } from 'react';
 
@@ -47,7 +47,7 @@ export const SearchButton: FC = () => {
         {t('components.search.searchBox.placeholder')}
         <kbd
           title={`${osCommandKey} K`}
-          className={classNames(styles.shortcutIndicator, {
+          className={clsx(styles.shortcutIndicator, {
             'opacity-0': isOSLoading,
           })}
         >

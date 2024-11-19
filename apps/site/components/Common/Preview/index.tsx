@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import type { FC } from 'react';
 
 import HexagonGrid from '@/components/Icons/HexagonGrid';
@@ -13,7 +13,7 @@ type PreviewProps = {
 };
 
 const Preview: FC<PreviewProps> = ({ type = 'announcements', title }) => (
-  <div className={classNames(styles.root, styles[type])}>
+  <div className={clsx(styles.root, styles[type])}>
     <div className={styles.container} aria-hidden={true}>
       <HexagonGrid className={styles.hexagon} />
       <JsIconWhite className={styles.logo} />

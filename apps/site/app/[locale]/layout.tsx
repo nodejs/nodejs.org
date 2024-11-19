@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import type { FC, PropsWithChildren } from 'react';
 
 import BaseLayout from '@/layouts/Base';
@@ -12,7 +12,7 @@ import { ThemeProvider } from '@/providers/themeProvider';
 
 import '@/styles/index.css';
 
-const fontClasses = classNames(IBM_PLEX_MONO.variable, OPEN_SANS.variable);
+const fontClasses = clsx(IBM_PLEX_MONO.variable, OPEN_SANS.variable);
 
 type RotLayoutProps = PropsWithChildren<{ params: { locale: string } }>;
 
