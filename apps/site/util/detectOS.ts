@@ -11,6 +11,6 @@ export const detectOsInUserAgent = (userAgent: string | undefined): UserOS => {
   return osMap[osMatch?.[1] ?? ''] || 'OTHER';
 };
 
-// Since navigator.appVersion is deprecated, we use the userAgent
+// Since `navigator.appVersion` is deprecated, we use the `userAgent``
 // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/appVersion
 export const detectOS = (): UserOS => detectOsInUserAgent(navigator?.userAgent);
