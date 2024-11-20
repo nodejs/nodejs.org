@@ -70,6 +70,7 @@ updates:
       orama:
         patterns:
           - '@orama/*'
+          - '@oramacloud/*'
     ignore:
       # Manually update major versions of @types/node with the version specified within .nvmrc
       - dependency-name: '@types/node'
