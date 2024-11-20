@@ -37,6 +37,21 @@ rl.question(`What's your name?`, name => {
   rl.close();
 });
 ```
+or you could use a promise
+```mjs
+import readline from "node:readline/promises";
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+const name = await rl.question("What's your name? ");
+rl.close()
+
+console.log(`Hi ${name}!`);
+
+```
 
 This piece of code asks the user's _name_, and once the text is entered and the user presses enter, we send a greeting.
 
