@@ -23,8 +23,6 @@ const nextConfig = {
   images: {
     // We disable image optimisation during static export builds
     unoptimized: ENABLE_STATIC_EXPORT,
-    // We allow SVGs to be used as images
-    dangerouslyAllowSVG: true,
     // We add it to the remote pattern for the static images we use from GitHub
     remotePatterns: [
       {
