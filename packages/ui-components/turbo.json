@@ -3,6 +3,7 @@
   "extends": ["//"],
   "globalEnv": ["NODE_ENV"],
   "tasks": {
+    "build": {},
     "lint:js": {
       "inputs": ["**/*.{json,mjs,js,ts,tsx}"]
     },
