@@ -24,6 +24,7 @@ const Button: FC<ButtonProps> = ({
     href={disabled ? undefined : href}
     aria-disabled={disabled}
     className={classNames(styles.button, styles[kind], className)}
+    tabIndex={!href ? 0 : undefined}
     {...props}
   >
     {children}
