@@ -1,4 +1,7 @@
 /**
+ * This is a temporary workaround that can be removed once Next.js is upgraded.
+ * See https://github.com/vercel/next.js/pull/72970
+ *
  * Checks if the given source string points to an SVG image.
  *
  * This function examines the base part of the provided string (ignoring query parameters)
