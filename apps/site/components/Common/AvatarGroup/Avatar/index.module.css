@@ -34,12 +34,10 @@
   @apply xs:size-8
     xs:-ml-2
     ml-0.5
-    size-10
-    first:ml-0;
+    size-10;
 }
 
 .medium {
   @apply -ml-2.5
-    size-10
-    first:ml-0;
+    size-10;
 }
