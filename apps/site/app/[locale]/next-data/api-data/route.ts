@@ -29,16 +29,14 @@ export const GET = async () => {
 
   const gitHubApiResponse = await fetch(
     getGitHubApiDocsUrl(versionWithPrefix),
-    { ...authorizationHeaders, cache: 'force-cache' }
+    authorizationHeaders
   );
 
   return gitHubApiResponse.json().then((apiDocsFiles: Array<GitHubApiFile>) => {
     // maps over each api file and get the download_url, fetch the content and deflates it
     const mappedApiFiles = apiDocsFiles.map(
       async ({ name, path: filename, download_url }) => {
-        const apiFileResponse = await fetch(download_url, {
-          cache: 'force-cache',
-        });
+        const apiFileResponse = await fetch(download_url);
 
         // Retrieves the content as a raw text string
         const source = await apiFileResponse.text();
