@@ -3,6 +3,7 @@
 name: Crowdin Sync
 
 on:
+  workflow_dispatch: # Allow running when we want to, for events such as urgent translation mistakes or 100% completed languages
   schedule:
     - cron: '0 5 * * 5' # At 05:00 on Fridays. This guarantees that we have the 72 hour weekend time to review translations.
 
@@ -33,8 +34,11 @@ jobs:
       - name: crowdin action
         uses: crowdin/github-action@2d540f18b0a416b1fbf2ee5be35841bd380fc1da #v2.3.0
         with:
+          # testing only
+          dryrun_action: true
+          # do not upload existing translations - this is a one-way operation
           upload_sources: true
-          upload_translations: false #do not upload existing translations - this is a one-way operation
+          upload_translations: false
           # the rest of this controls how the PR comes in with new translations
           download_translations: true
           localization_branch_name: chore/crowdin
