@@ -1,5 +1,5 @@
 # This action automates the synchronization of our crowdin translations, so that a human does not need to kick it off from the crowdin UI
-# See translations-pr-line-and-format.yml for quality control we conduct on ingress of new translations.
+# See translations-pr-lint-and-format.yml for quality control we conduct on ingress of new translations.
 name: Crowdin Sync
 
 on:
