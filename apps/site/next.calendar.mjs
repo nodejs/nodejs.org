@@ -33,7 +33,7 @@ export const getCalendarEvents = async (calendarId = '', maxResults = 20) => {
     calendarQueryUrl.searchParams.append(key, value)
   );
 
-  return fetch(calendarQueryUrl, { cache: 'force-cache' })
+  return fetch(calendarQueryUrl)
     .then(response => response.json())
     .then(calendar => calendar.items ?? []);
 };
