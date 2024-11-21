@@ -10,7 +10,7 @@
 .articleLayout {
   @apply max-w-8xl
     sm:grid-areas-[sidebar_main,sidebar_footer]
-    lg:grid-areas-[sidebar_main_metabar,sidebar_footer_metabar]
+    lg:grid-areas-[sidebar_._metabar,sidebar_main_metabar,sidebar_footer_metabar]
     mx-auto
     block
     w-full
@@ -42,7 +42,11 @@
         p-4
         motion-safe:scroll-smooth
         sm:bg-fixed
-        sm:p-12;
+        sm:p-12
+        lg:sticky
+        lg:bottom-[4rem]
+        lg:h-max
+        lg:min-h-[calc(100vh_-_4rem)];
     }
 
     > *:last-child {
@@ -61,6 +65,7 @@
       sticky
       bottom-0
       flex
+      h-[4rem]
       w-full
       flex-col
       items-center
