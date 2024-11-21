@@ -1,7 +1,8 @@
 # This Workflow is used to comment on PRs that have changes that touch Translated Files
 # and then comments on their PRs mentioning that they should not do so
+# It also formats incoming content because it is often not adherent to our rules post-translation.
 
-name: Crowdin Checks
+name: Incoming Translation Checks
 
 on:
   pull_request_target:
