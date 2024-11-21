@@ -48,7 +48,7 @@ jobs:
           pull_request_labels: github_actions:pull-request
           commit_message: 'chore: synced translations from crowdin [skip ci]'
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # A numeric ID, found at https://crowdin.com/project/nodejs-web/tools/api
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           # Created from https://crowdin.com/settings#api-key logged in using nodejs-crowdin-bot
