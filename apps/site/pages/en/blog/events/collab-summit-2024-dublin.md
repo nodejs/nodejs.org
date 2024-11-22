@@ -17,11 +17,11 @@ The [second collaboration summit of 2024](https://github.com/openjs-foundation/s
 
 ## Collaborator Health Survey
 
-The collaborator health survey session at the Node.js collaboration summit in Dublin focused on understanding the current state of collaborator health and identifying ways to improve the well-being and productivity of contributors. The discussion, led by Marco, aimed to gather insights from the community and develop actionable steps to enhance the collaborator experience.
+The collaborator health survey session at the Node.js collaboration summit in Dublin focused on understanding the current state of collaborator health and identifying ways to improve the well-being and productivity of contributors. The discussion, led by Marco Ippolito ([@marco-ippolito](https://github.com/marco-ippolito)) and Michael Dawson ([@mhdawson](https://github.com/mhdawson)), aimed to gather insights from the community and develop actionable steps to enhance the collaborator experience.
 
 ### Current State of Collaborator Health
 
-The session began with a presentation by Marco Ippolito ([@marco-ippolito](https://github.com/marco-ippolito)) , who shared slides outlining the current state of collaborator health within the Node.js project. Key points discussed included:
+The session began with shared slides outlining the current state of collaborator health within the Node.js project. Key points discussed included:
 
 - **CI Challenges**: We highlighted the biggest issue with the CI system as finding out what is wrong when something goes awry. This can be a frustrating and time-consuming process for collaborators.
 - **ncu-ci Command**: A collaborator showcased the [`ncu-ci` command](https://github.com/nodejs/node-core-utils/blob/main/docs/ncu-ci.md) and the [reliability repository](https://github.com/nodejs/reliability), demonstrating tools that can help streamline the CI process and improve collaborator efficiency.
@@ -155,7 +155,7 @@ The session also addressed some of the challenges faced by the Node.js community
 
 ## Next 10 - Deep dive on funding
 
-Funding is a critical aspect of sustaining and growing the Node.js project. The session on funding at the Node.js collaboration summit in Dublin delved into the current state of funding, potential sources of revenue, and strategies for effectively utilizing available resources. The discussion, led by Michael Dawson ([@mhdawson](https://github.com/mhdawson)), aimed to identify actionable steps to ensure the long-term financial health of the project.
+Funding is a critical aspect of sustaining and growing the Node.js project. The session on funding at the Node.js collaboration summit in Dublin delved into the current state of funding, potential sources of revenue, and strategies for effectively utilizing available resources. The discussion, led by Michael Dawson ([@mhdawson](https://github.com/mhdawson)) and Jean Burellier ([@sheplu](https://github.com/sheplu)), aimed to identify actionable steps to ensure the long-term financial health of the project.
 
 ### Current State of Funding
 
@@ -249,7 +249,7 @@ The documentation session focused on improving the "Learn" section of the Node.j
 
 ## Module loading customization/optimization and CJS/ESM interoperability
 
-The session on module loading customization and CJS/ESM interoperability focused on several key areas, including the removal of the `--experimental-default-type` flag, marking syntax detection as stable, and documenting dual package shipping patterns. Joyee Cheung ([@joyeecheung](https://github.com/joyeecheung)) proposed and led the session.
+The session on module loading customization and CJS/ESM interoperability focused on several key areas, including the removal of the `--experimental-default-type` flag, marking syntax detection as stable, and documenting dual package shipping patterns. Joyee Cheung ([@joyeecheung](https://github.com/joyeecheung)), Matteo Collina ([@mcollina](https://github.com/mcollina)), Paolo Insogna ([@ShogunPanda](https://github.com/ShogunPanda)), and Geoffrey Booth ([@GeoffreyBooth](https://github.com/GeoffreyBooth)) proposed and led the session.
 
 ### `--experimental-default-type`
 
@@ -311,26 +311,11 @@ This session, presented by Jacob Smith ([@JakobJingleheimer](https://github.com/
 - **Registry for Migrated Projects**: The idea of maintaining a registry for projects that have already been migrated was proposed. This would help avoid redundant work and save compute resources by preventing the same migrations from being performed multiple times.
 - **Good First Issues**: We suggested creating a tracking issue in the Node.js repository for codemods that need to be developed. Tagging these issues as "good first issues" could encourage new contributors to get involved and help with the migration efforts.
 
-#### Lint Rules
-
-- **Enforcing Best Practices**: We suggested using lint rules to enforce best practices. Lint rules can help catch issues early in the development process and ensure that code adheres to the latest standards and best practices.
-- **Automated Fixes**: We mentioned the use of lint rules with automated fixes, such as those provided by VSCode, to help developers quickly update their code to comply with new features and breaking changes.
-
-#### Best Practices
-
-- **Setting Clear Expectations**: We emphasized the importance of setting clear expectations and timelines for breaking changes. This includes providing warnings before major changes and ensuring clear documentation about the status and upcoming changes.
-- **Opt-In Mechanisms**: There was a discussion on making experimental features opt-in via API or flags, especially for library authors who might rely on these features. This would give developers more control over when and how they adopt new features.
-- **Incentives for Migration**: We cautioned that changing people's behavior is challenging and requires incentives rather than enforcement. Providing clear benefits and easy-to-use tools can encourage developers to migrate to new features and breaking changes.
-
 ### Potential Action Items
 
 - **Develop and Promote Codemods**: Continue developing and promoting codemods to automate the migration process. Encourage the community to contribute to these tools and create new codemods as needed.
 - **Integrate with Dependabot**: Improve Dependabot integration to facilitate dependency updates and migrations. This could include creating custom Dependabot configurations or scripts to handle specific migration tasks.
 - **Create a Registry for Migrated Projects**: Maintain a registry of projects that have already been migrated to avoid redundant work and save compute resources. This could be done through a centralized repository or a tracking issue in the Node.js repository.
-- **Implement Lint Rules**: Use lint rules to enforce best practices and catch issues early in the development process. Encourage the use of automated fixes to help developers quickly update their code.
-- **Set Clear Expectations and Timelines**: Provide clear documentation and timelines for breaking changes. This includes providing warnings before major changes and ensuring that developers are aware of the status and upcoming changes.
-- **Provide Opt-In Mechanisms**: Make experimental features opt-in via API or flags to give developers more control over when and how they adopt new features.
-- **Offer Incentives for Migration**: Provide clear benefits and easy-to-use tools to encourage developers to migrate to new features and breaking changes.
 
 ## Node.js Diagnostics WG Meeting
 
@@ -358,29 +343,22 @@ The Node.js Diagnostics Working Group (WG) meeting focused on several key areas 
 
 ## Tooling Group Session
 
-The tooling group session focused on various aspects of improving the tooling ecosystem around Node.js, including social media engagement, handling experimental status, and facilitating migrations to new features and breaking changes.
+The tooling group session focused on various aspects of improving the tooling ecosystem around Node.js, including social media engagement, handling experimental status, and facilitating migrations to new features and breaking changes. Presenting were Ruy Adorno ([@ruyadorno](https://github.com/ruyadorno)), Stephen Belanger ([@Qard](https://github.com/Qard)), and Wes Todd ([@wesleytodd](https://github.com/wesleytodd)).
 
 ### Social Media Engagement
 
-- **Bluesky Platform**: Wes presented the `pkgjs` initiative and discussed the potential migration from the current social media platform to Bluesky. The rationale behind this move was the better engagement and open-source nature of Bluesky. At the time of publish, Node.js is present on Bluesky under the handle [@nodejs.org](https://bsky.app/profile/nodejs.org).
+- **Bluesky Platform**: We presented the `pkgjs` initiative and discussed the potential migration from the current social media platform to Bluesky. The rationale behind this move was the better engagement and open-source nature of Bluesky. At the time of publish, Node.js is present on Bluesky under the handle [@nodejs.org](https://bsky.app/profile/nodejs.org).
 - **Cross-Posting**: There was a suggestion to start with cross-posting to both platforms to ensure a smooth transition and maintain engagement with existing followers.
-- **Automation**: Jacob mentioned that Bluesky supports automation, which could be beneficial for managing social media presence.
+- **Automation**: It was mentioned that Bluesky supports automation, which could be beneficial for managing social media presence.
 - **Foundation Involvement**: The discussion highlighted the need to involve the OpenJS Foundation in this decision and potentially take it to the Community Programs Committee (CPC) for further deliberation.
-- **Password Sharing**: Joyee suggested sharing the social media account passwords using a secure method like OnePassword to streamline the posting process and reduce delays due to timezone differences.
+- **Password Sharing**: We suggested sharing the social media account passwords using a secure method like OnePassword to streamline the posting process and reduce delays due to timezone differences.
 
 ### Handling Experimental Status
 
-- **Experimental Features**: The group discussed the handling of experimental features, especially when their adoption becomes significant. Stephen noted that even though some features are experimental, they are widely used by the community, such as `module.register`.
-- **Timeline and Expectations**: James emphasized the importance of setting clear expectations and timelines for experimental features. This includes providing warnings before major changes and ensuring clear documentation about the status and upcoming changes.
+- **Experimental Features**: The group discussed the handling of experimental features, especially when their adoption becomes significant. It was noted that even though some features are experimental, they are widely used by the community, such as `module.register`.
+- **Timeline and Expectations**: We emphasized the importance of setting clear expectations and timelines for experimental features. This includes providing warnings before major changes and ensuring clear documentation about the status and upcoming changes.
 - **Opt-In Mechanisms**: There was a discussion on making experimental features opt-in via API or flags, especially for library authors who might rely on these features.
-- **Lint Rules and Codemods**: Wes suggested using lint rules to enforce best practices and codemods to facilitate migrations. Jordan cautioned that changing people's behavior is challenging and requires incentives rather than enforcement.
-
-### Facilitating Migrations
-
-- **Codemods**: Jacob demonstrated the `ts-correct-specifier` codemod, which can help automate the migration process. The group discussed the potential for codemods to be used not just for code but also for dependencies.
-- **Dependabot Integration**: Darcy suggested improved Dependabot integration to facilitate migrations, noting that people may not want to run random codemods found on the internet.
-- **Registry for Migrated Projects**: The idea of maintaining a registry for projects that have already been migrated was proposed to avoid redundant work and save compute resources.
-- **Good First Issues**: Geoffrey suggested creating a tracking issue in the Node.js repository for codemods that need to be developed, tagging them as "good first issues" to encourage new contributors.
+- **Lint Rules and Codemods**: We suggested using lint rules to enforce best practices and codemods to facilitate migrations. It was cautioned that changing people's behavior is challenging and requires incentives rather than enforcement.
 
 ## Personal note
 
