@@ -155,7 +155,7 @@ The session also addressed some of the challenges faced by the Node.js community
 
 ## Next 10 - Deep dive on funding
 
-Funding is a critical aspect of sustaining and growing the Node.js project. The session on funding at the Node.js collaboration summit in Dublin delved into the current state of funding, potential sources of revenue, and strategies for effectively utilizing available resources. The discussion, led by mhdawson, aimed to identify actionable steps to ensure the long-term financial health of the project.
+Funding is a critical aspect of sustaining and growing the Node.js project. The session on funding at the Node.js collaboration summit in Dublin delved into the current state of funding, potential sources of revenue, and strategies for effectively utilizing available resources. The discussion, led by Michael Dawson ([@mhdawson](https://github.com/mhdawson)), aimed to identify actionable steps to ensure the long-term financial health of the project.
 
 ### Current State of Funding
 
@@ -169,28 +169,28 @@ The session began with an overview of the current funding landscape for the Node
 
 The discussion explored various potential sources of funding that could help sustain the Node.js project:
 
-- **Open Collective**: Tierney mentioned the use of Open Collective as a funding platform, noting its advantages and limitations. While it has been used for CI funding, it has not seen widespread adoption.
+- **Open Collective**: We mentioned the use of Open Collective as a funding platform, noting its advantages and limitations. While it has been used for CI funding, it has not seen widespread adoption.
 - **GitHub Sponsors**: Another potential funding source is GitHub Sponsors, which could provide a more streamlined way for companies and individuals to contribute financially to the project.
-- **Secure Project Funding**: Robin highlighted that the Node.js project is one of the first few foundations to receive secure project funding, with an initial allocation of $10,000 per project.
-- **Project Alpha Omega**: Robin also mentioned Project Alpha Omega, which is now separate from OpenSSF and could provide additional funding opportunities.
+- **Secure Project Funding**: We highlighted that the Node.js project is one of the first few foundations to receive secure project funding, with an initial allocation of $10,000 per project.
+- **Project Alpha Omega**: We also mentioned Project Alpha Omega, which is now separate from OpenSSF and could provide additional funding opportunities.
 
 ### Strategies for Effective Utilization of Funds
 
 The session also focused on strategies for effectively utilizing available funds to support the project's needs:
 
-- **Prioritizing Critical Tasks**: mhdawson emphasized the importance of prioritizing critical tasks such as security and CI maintenance. These tasks are essential for the project's health and should be funded accordingly.
-- **Documenting Needs**: Tierney suggested documenting the project's funding needs clearly to ensure that potential contributors understand what is required and how their contributions will be used.
-- **Engaging Companies**: Stephen proposed that the foundation could engage with companies to encourage them to contribute financially to the project. This could involve talking to employers of new contributors to highlight the benefits of supporting Node.js.
-- **Reducing Workload**: Rafael suggested reducing the project's workload by maintaining fewer active release lines, such as one LTS and one Current release. This could help alleviate the burden on volunteers and make the project more sustainable.
+- **Prioritizing Critical Tasks**: We emphasized the importance of prioritizing critical tasks such as security and CI maintenance. These tasks are essential for the project's health and should be funded accordingly.
+- **Documenting Needs**: We suggested documenting the project's funding needs clearly to ensure that potential contributors understand what is required and how their contributions will be used.
+- **Engaging Companies**: We proposed that the foundation could engage with companies to encourage them to contribute financially to the project. This could involve talking to employers of new contributors to highlight the benefits of supporting Node.js.
+- **Reducing Workload**: We suggested reducing the project's workload by maintaining fewer active release lines, such as one LTS and one Current release. This could help alleviate the burden on volunteers and make the project more sustainable.
 
 ### Challenges and Solutions
 
 The discussion also addressed some of the challenges faced by the Node.js project in securing and utilizing funding:
 
-- **Compliance and Regulations**: Rob noted that compliance with regulations is something that companies are willing to pay for, highlighting a potential funding opportunity.
-- **Extended EOL Support**: Wes suggested using funding to extend the End of Life (EOL) support for LTS releases, noting that this could be a valuable service for companies relying on older versions of Node.js.
-- **DevRel and Communication**: Matteo emphasized the need for better communication with the broader community about the project's funding needs and how contributions are used. This could involve funding DevRel efforts to write blog posts and summarize the work of various working groups.
-- **Social Media Recognition**: Joyee suggested that social media recognition for companies contributing to the project could put social pressure on other companies to follow suit.
+- **Compliance and Regulations**: We noted that compliance with regulations is something that companies are willing to pay for, highlighting a potential funding opportunity.
+- **Extended EOL Support**: We suggested using funding to extend the End of Life (EOL) support for LTS releases, noting that this could be a valuable service for companies relying on older versions of Node.js.
+- **DevRel and Communication**: We emphasized the need for better communication with the broader community about the project's funding needs and how contributions are used. This could involve funding DevRel efforts to write blog posts and summarize the work of various working groups.
+- **Social Media Recognition**: We suggested that social media recognition for companies contributing to the project could put social pressure on other companies to follow suit.
 
 ### Actionable Steps
 
