@@ -101,7 +101,7 @@ The session concluded with a discussion of actionable steps that the Node.js com
 
 ## To know you is to love you. Diversifying Node.js
 
-Diversity and inclusion are fundamental to the growth and success of any open-source community. The Node.js collaboration summit in Dublin provided a platform to discuss and address these critical issues. The session on diversity, led by Robin, focused on understanding the current state of diversity within the Node.js collaborator culture and identifying actionable steps to foster a more inclusive environment.
+Diversity and inclusion are fundamental to the growth and success of any open-source community. The Node.js collaboration summit in Dublin provided a platform to discuss and address these critical issues. The session on diversity, led by Robin Bender Ginn ([@rginn](https://github.com/rginn)), focused on understanding the current state of diversity within the Node.js collaborator culture and identifying actionable steps to foster a more inclusive environment.
 
 ### Current State of Diversity
 
