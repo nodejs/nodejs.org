@@ -299,7 +299,7 @@ The session on module loading customization and CJS/ESM interoperability highlig
 
 ## Facilitating Userland Migrations to New Features and Breaking Changes
 
-This session, presented by [Jacob Smith](https://github.com/JakobJingleheimer), focused on strategies and tools to facilitate the migration of userland code to new features and breaking changes in Node.js. The discussions revolved around codemods, lint rules, and best practices for managing these transitions.
+This session, presented by Jacob Smith ([@JakobJingleheimer](https://github.com/JakobJingleheimer)), focused on strategies and tools to facilitate the migration of userland code to new features and breaking changes in Node.js. The discussions revolved around codemods, lint rules, and best practices for managing these transitions.
 
 ### Key Points Discussed
 
@@ -307,20 +307,20 @@ This session, presented by [Jacob Smith](https://github.com/JakobJingleheimer), 
 
 - **Demonstration**: Jacob demonstrated the `ts-correct-specifier` codemod, which can help automate the migration process. This tool can be particularly useful for updating TypeScript specifiers to comply with new standards or changes in Node.js.
 - **Potential for Dependencies**: The group discussed the potential for codemods to be used not just for code but also for dependencies. This could help ensure that dependencies are updated to be compatible with new Node.js features and breaking changes.
-- **Dependabot Integration**: Darcy suggested improved Dependabot integration to facilitate migrations. Dependabot can automatically create pull requests to update dependencies, making it easier to keep projects up-to-date.
+- **Dependabot Integration**: We suggested improved Dependabot integration to facilitate migrations. Dependabot can automatically create pull requests to update dependencies, making it easier to keep projects up-to-date.
 - **Registry for Migrated Projects**: The idea of maintaining a registry for projects that have already been migrated was proposed. This would help avoid redundant work and save compute resources by preventing the same migrations from being performed multiple times.
-- **Good First Issues**: Geoffrey suggested creating a tracking issue in the Node.js repository for codemods that need to be developed. Tagging these issues as "good first issues" could encourage new contributors to get involved and help with the migration efforts.
+- **Good First Issues**: We suggested creating a tracking issue in the Node.js repository for codemods that need to be developed. Tagging these issues as "good first issues" could encourage new contributors to get involved and help with the migration efforts.
 
 #### Lint Rules
 
-- **Enforcing Best Practices**: Wes suggested using lint rules to enforce best practices. Lint rules can help catch issues early in the development process and ensure that code adheres to the latest standards and best practices.
-- **Automated Fixes**: Alexander mentioned the use of lint rules with automated fixes, such as those provided by VSCode, to help developers quickly update their code to comply with new features and breaking changes.
+- **Enforcing Best Practices**: We suggested using lint rules to enforce best practices. Lint rules can help catch issues early in the development process and ensure that code adheres to the latest standards and best practices.
+- **Automated Fixes**: We mentioned the use of lint rules with automated fixes, such as those provided by VSCode, to help developers quickly update their code to comply with new features and breaking changes.
 
 #### Best Practices
 
-- **Setting Clear Expectations**: James emphasized the importance of setting clear expectations and timelines for breaking changes. This includes providing warnings before major changes and ensuring clear documentation about the status and upcoming changes.
+- **Setting Clear Expectations**: We emphasized the importance of setting clear expectations and timelines for breaking changes. This includes providing warnings before major changes and ensuring clear documentation about the status and upcoming changes.
 - **Opt-In Mechanisms**: There was a discussion on making experimental features opt-in via API or flags, especially for library authors who might rely on these features. This would give developers more control over when and how they adopt new features.
-- **Incentives for Migration**: Jordan cautioned that changing people's behavior is challenging and requires incentives rather than enforcement. Providing clear benefits and easy-to-use tools can encourage developers to migrate to new features and breaking changes.
+- **Incentives for Migration**: We cautioned that changing people's behavior is challenging and requires incentives rather than enforcement. Providing clear benefits and easy-to-use tools can encourage developers to migrate to new features and breaking changes.
 
 ### Potential Action Items
 
