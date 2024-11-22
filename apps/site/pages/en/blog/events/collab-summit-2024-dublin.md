@@ -334,27 +334,27 @@ This session, presented by Jacob Smith ([@JakobJingleheimer](https://github.com/
 
 ## Node.js Diagnostics WG Meeting
 
-The Node.js Diagnostics Working Group (WG) meeting focused on several key areas related to diagnostics and observability in Node.js, including async context, diagnostics channels, and the future of the `import-in-the-middle` project.
+The Node.js Diagnostics Working Group (WG) meeting focused on several key areas related to diagnostics and observability in Node.js, including async context, diagnostics channels, and the future of the `import-in-the-middle` project. Stephen Belanger ([@Qard](https://github.com/Qard)) presented.
 
 ### Async Context
 
 - **Current State**: Stephen presented some slides about async context, highlighting that it currently doesn't work very well with concurrency.
-- **Cache Behavior**: Chengzhong discussed the cache behavior related to async context, noting that there hasn't been a conclusive solution yet.
-- **Documentation**: Stephen pointed out that diagnostics documentation doesn't exist in the "Learn" section, and Augustin suggested that it might need an update from the guide section.
+- **Cache Behavior**: We discussed the cache behavior related to async context, noting that there hasn't been a conclusive solution yet.
+- **Documentation**: We pointed out that diagnostics documentation doesn't exist in the "Learn" section, and Augustin suggested that it might need an update from the guide section.
 
 ### Future of `import-in-the-middle`
 
-- **Critical Package**: Bryan discussed the critical role of `import-in-the-middle` for APM vendors, as it provides the ability to manipulate ESM modules and shim exports.
-- **Edge Cases**: Bryan noted that there are too many edge cases that the package cannot support, particularly when modules modify their exports. Currently, APM vendors modify code in hooks, which has performance implications but is the best available solution.
-- **Diagnostics Channels**: Matteo emphasized the need to plan and document packages that are broken and to provide a path for APM vendors. He suggested using diagnostics channels if possible.
-- **Monkey Patching**: Bryan mentioned that diagnostics channels are useful, but there is still a need for some monkey patching abilities.
+- **Critical Package**: We discussed the critical role of `import-in-the-middle` for APM vendors, as it provides the ability to manipulate ESM modules and shim exports.
+- **Edge Cases**: We noted that there are too many edge cases that the package cannot support, particularly when modules modify their exports. Currently, APM vendors modify code in hooks, which has performance implications but is the best available solution.
+- **Diagnostics Channels**: We emphasized the need to plan and document packages that are broken and to provide a path for APM vendors. Suggested using diagnostics channels if possible.
+- **Monkey Patching**: We mentioned that diagnostics channels are useful, but there is still a need for some monkey patching abilities.
 
 ### Diagnostics Channels and Observability
 
-- **Abort Control**: Simon discussed the possibility of using diagnostics channels for abort control, which is not possible with tracing channels.
+- **Abort Control**: We discussed the possibility of using diagnostics channels for abort control, which is not possible with tracing channels.
 - **Monkey Patching**: The group discussed the ability to patch sources for transpilers but noted that relying on it for functionalities is brittle and depends on the discretion of hook authors.
-- **Live Debugging**: Thomas talked about efforts to get live debugging, currently using the inspector protocol, and collaborating with V8 to improve this area.
-- **Transactional Memory**: Alexander suggested exploring transactional memory, and Thomas mentioned ideas like thread pause optimization and copy-on-write for data processing.
+- **Live Debugging**: We talked about efforts to get live debugging, currently using the inspector protocol, and collaborating with V8 to improve this area.
+- **Transactional Memory**: We suggested exploring transactional memory, and Thomas mentioned ideas like thread pause optimization and copy-on-write for data processing.
 
 ## Tooling Group Session
 
