@@ -229,8 +229,6 @@ The documentation session focused on improving the "Learn" section of the Node.j
 
 ### Potential Action Items
 
-> If you want to follow the breakout, you can check the [nodejs.org collab summit brainstorming notes](https://github.com/nodejs/nodejs.org/issues/7197).
-
 - **Identify Owners**: Establish clear ownership and responsibility for the "Learn" section to ensure regular updates and maintenance.
 
 - **Update Content**: Ensure that the "Learn" section is updated regularly to reflect the latest changes and best practices.
