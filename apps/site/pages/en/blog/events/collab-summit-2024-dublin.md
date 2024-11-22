@@ -205,29 +205,31 @@ The session concluded with a discussion of actionable steps that the Node.js com
 
 ## Documentation Improvements (Node.js learn section)
 
-The documentation session focused on improving the "Learn" section of the Node.js website, aiming to make it more accessible and up-to-date for newcomers and experienced developers alike. The discussion was initiated by Stephen and taken up by Claudio (a maintainer of nodejs.org).
+The documentation session focused on improving the "Learn" section of the Node.js website, aiming to make it more accessible and up-to-date for newcomers and experienced developers alike. The discussion was led by Stephen Belanger ([@Qard](https://github.com/Qard)) and Claudio W ([@ovflowd](https://github.com/ovflowd)).
 
 ### Key Points Discussed
 
-- **Website Redesign and Current State**: Claudio discussed the ongoing website redesign and the current state of the documentation. The consensus was that the "Learn" section needs more attention and regular updates.
+- **Website Redesign and Current State**: We discussed the ongoing website redesign and the current state of the documentation. The consensus was that the "Learn" section needs more attention and regular updates.
 
-- **Ownership and Responsibility**: Augustin pointed out that there is no clear ownership of the content in the "Learn" section. This lack of responsibility makes it challenging to keep the documentation updated.
+- **Ownership and Responsibility**: We pointed out that there is no clear ownership of the content in the "Learn" section. This lack of responsibility makes it challenging to keep the documentation updated.
 
-- **Linking to Changes**: Jacob suggested adding links in the "Learn" section to mention all the changes, making it easier for users to track updates.
+- **Linking to Changes**: We suggested adding links in the "Learn" section to mention all the changes, making it easier for users to track updates.
 
-- **Last Updated/Reviewed**: Alexander proposed adding a "last updated" or "last reviewed" section to reflect the currency of the documentation. This would help users understand how up-to-date the information is.
+- **Last Updated/Reviewed**: We proposed adding a "last updated" or "last reviewed" section to reflect the currency of the documentation. This would help users understand how up-to-date the information is.
 
-- **Translation and Sync Issues**: Brian and Matteo discussed the challenges of translating the "Learn" section. While Crowdin helps keep translations up-to-date, there were concerns about the potential for misinterpretations and the difficulty of maintaining external translations.
+- **Translation and Sync Issues**: We discussed the challenges of translating the "Learn" section. While Crowdin helps keep translations up-to-date, there were concerns about the potential for misinterpretations and the difficulty of maintaining external translations.
 
-- **Target Audience and Content Relevance**: Matteo emphasized the importance of understanding the target audience for the "Learn" section. The discussion highlighted the need for a more structured flow that introduces basic concepts in a way that makes sense for beginners. It was noted that the current content includes deep topics like profiling but lacks essential content like HTTP, which can lead users to seek outdated information elsewhere.
+- **Target Audience and Content Relevance**: We emphasized the importance of understanding the target audience for the "Learn" section. The discussion highlighted the need for a more structured flow that introduces basic concepts in a way that makes sense for beginners. It was noted that the current content includes deep topics like profiling but lacks essential content like HTTP, which can lead users to seek outdated information elsewhere.
 
-- **Content Creators and Contributors**: Stephen suggested reaching out to known content creators to contribute to the "Learn" section. The idea of creating a scroll of "things that you should know" was also proposed to guide users through essential topics.
+- **Content Creators and Contributors**: We suggested reaching out to known content creators to contribute to the "Learn" section. The idea of creating a scroll of "things that you should know" was also proposed to guide users through essential topics.
 
-- **External Content and Verification**: Alexander suggested pointing to external content from the website, but Claudio raised concerns about the difficulty of verifying the quality and relevance of external resources.
+- **External Content and Verification**: We suggested pointing to external content from the website, but Claudio raised concerns about the difficulty of verifying the quality and relevance of external resources.
 
-- **API Docs vs. Learn Section**: Augustin clarified that the "Learn" section should not be a course but rather a guide with examples using the API docs. The goal is to provide practical examples and guidance rather than comprehensive tutorials.
+- **API Docs vs. Learn Section**: We clarified that the "Learn" section should not be a course but rather a guide with examples using the API docs. The goal is to provide practical examples and guidance rather than comprehensive tutorials.
 
 ### Potential Action Items
+
+> If you want to follow the breakout, you can check the [nodejs.org collab summit brainstorming notes](https://github.com/nodejs/nodejs.org/issues/7197).
 
 - **Identify Owners**: Establish clear ownership and responsibility for the "Learn" section to ensure regular updates and maintenance.
 
@@ -244,12 +246,6 @@ The documentation session focused on improving the "Learn" section of the Node.j
 - **Verify External Content**: If pointing to external content, ensure that it is verified and relevant to the needs of Node.js users.
 
 - **Differentiate from API Docs**: Ensure that the "Learn" section provides practical examples and guidance rather than comprehensive tutorials, differentiating it from the API docs.
-
-### Summary
-
-The documentation session highlighted the need for improved ownership, regular updates, and a clear understanding of the target audience for the "Learn" section. By addressing these issues, the Node.js community can provide more accessible and up-to-date documentation that meets the needs of both newcomers and experienced developers.
-
-> If you want to follow the discussion, you can check the [collab summit brainstorming notes](https://github.com/nodejs/nodejs.org/issues/7197).
 
 ## Module loading customization/optimization and CJS/ESM interoperability
 
