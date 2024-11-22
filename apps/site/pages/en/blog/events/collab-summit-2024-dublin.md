@@ -360,12 +360,6 @@ The tooling group session focused on various aspects of improving the tooling ec
 - **Opt-In Mechanisms**: There was a discussion on making experimental features opt-in via API or flags, especially for library authors who might rely on these features.
 - **Lint Rules and Codemods**: We suggested using lint rules to enforce best practices and codemods to facilitate migrations. It was cautioned that changing people's behavior is challenging and requires incentives rather than enforcement.
 
-## Personal note
-
-> I think the part that touched and pleased me the most was the connection with the people, because everyone involved is great. These are people I'd only been able to talk to online, and here you meet them in real life.
->
-> <cite>Augustin Mauroy</cite>
-
 ## Thanks
 
 Thank you to all the attendees! Special appreciation goes to the Baseline team for hosting the summit and creating a welcoming space for the Node.js community.
