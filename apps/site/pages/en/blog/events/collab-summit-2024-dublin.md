@@ -21,29 +21,29 @@ The collaborator health survey session at the Node.js collaboration summit in Du
 
 ### Current State of Collaborator Health
 
-The session began with a presentation by Marco, who shared slides outlining the current state of collaborator health within the Node.js project. Key points discussed included:
+The session began with a presentation by Marco Ippolito ([@marco-ippolito](https://github.com/marco-ippolito)) , who shared slides outlining the current state of collaborator health within the Node.js project. Key points discussed included:
 
-- **CI Challenges**: Jacob highlighted the biggest issue with the CI system as finding out what is wrong when something goes awry. This can be a frustrating and time-consuming process for collaborators.
-- **ncu-ci Command**: Joyee showcased the `ncu-ci` command and the reliability repository, demonstrating tools that can help streamline the CI process and improve collaborator efficiency.
-- **Documentation Needs**: mhdawson and Geoffrey emphasized the importance of mentioning the `ncu-ci` command in the bot comment for CI and documenting it better in the collaborator guide. This would ensure that collaborators are aware of the available tools and how to use them effectively.
+- **CI Challenges**: We highlighted the biggest issue with the CI system as finding out what is wrong when something goes awry. This can be a frustrating and time-consuming process for collaborators.
+- **ncu-ci Command**: A collaborator showcased the [`ncu-ci` command](https://github.com/nodejs/node-core-utils/blob/main/docs/ncu-ci.md) and the [reliability repository](https://github.com/nodejs/reliability), demonstrating tools that can help streamline the CI process and improve collaborator efficiency.
+- **Documentation Needs**: Discussion emphasized the importance of mentioning the `ncu-ci` command in the bot comment for CI and documenting it better in the collaborator guide. This would ensure that collaborators are aware of the available tools and how to use them effectively.
 
 ### Community Feedback and Suggestions
 
 The discussion also included valuable feedback and suggestions from the community on how to improve collaborator health:
 
-- **BuildPulse Integration**: Joyee mentioned that BuildPulse is already integrated with the CI system but noted that many collaborators are unaware of its capabilities. Improving awareness and documentation around BuildPulse could help collaborators better understand and utilize the tool.
-- **Artifact Distribution**: Stephen suggested using artifacts from the builds to help with bisecting commits, although mhdawson noted that the CI system does not currently distribute them. Joyee added that only the Windows artifacts are available, highlighting a gap in the current process.
-- **AI Products**: Wes mentioned that Netflix has seen impressive AI products that could help with CI issues, suggesting potential partnerships worth exploring.
-- **Social Media Recognition**: Jacob proposed announcing first PRs or collaborator nominations on social media to provide public recognition for contributors. This could help motivate and engage collaborators, fostering a sense of community and achievement.
+- **BuildPulse Integration**: We mentioned that BuildPulse is already integrated with the CI system but noted that many collaborators are unaware of its capabilities. Improving awareness and documentation around BuildPulse could help collaborators better understand and utilize the tool.
+- **Artifact Distribution**: We suggested using artifacts from the builds to help with bisecting commits, although it was noted that the CI system does not currently distribute them. Further, only the Windows artifacts are available, highlighting a gap in the current process.
+- **AI Products**: A collaborator mentioned that their company has seen impressive AI products that could help with CI issues, suggesting potential partnerships worth exploring.
+- **Social Media Recognition**: We proposed announcing first PRs or collaborator nominations on social media to provide public recognition for contributors. This could help motivate and engage collaborators, fostering a sense of community and achievement.
 
 ### Challenges and Solutions
 
 The session also addressed some of the challenges faced by collaborators and proposed solutions to improve their experience:
 
-- **New Collaborator Onboarding**: Marco highlighted the need for more public recognition for new collaborators to encourage their continued engagement. However, Tierney cautioned about the potential for contributors to participate solely for social approval and then drop out, suggesting the need to balance recognition with meaningful contributions.
-- **Small Changes and Effort**: Jacob noted that small changes do not necessarily equate to low effort, as some seemingly minor changes can require significant effort to implement. This underscores the importance of recognizing and valuing all contributions, regardless of their size.
-- **Project Management**: Ethan emphasized the need for better project management within the Node.js project, including tracking features and roadmaps. This could help ensure that collaborators have clear guidance and support in their contributions.
-- **Buddy System**: mhdawson suggested implementing a buddy system to help new collaborators get started and provide ongoing support. This could involve pairing new collaborators with more experienced contributors to help them navigate the project and contribute effectively.
+- **New Collaborator Onboarding**: We highlighted the need for more public recognition for new collaborators to encourage their continued engagement. However, their was caution about the potential for contributors to participate solely for social approval and then drop out, suggesting the need to balance recognition with meaningful contributions.
+- **Small Changes and Effort**: We noted that small changes do not necessarily equate to low effort, as some seemingly minor changes can require significant effort to implement. This underscores the importance of recognizing and valuing all contributions, regardless of their size.
+- **Project Management**: We emphasized the need for better project management within the Node.js project, including tracking features and roadmaps. This could help ensure that collaborators have clear guidance and support in their contributions.
+- **Buddy System**: We suggested implementing a buddy system to help new collaborators get started and provide ongoing support. This could involve pairing new collaborators with more experienced contributors to help them navigate the project and contribute effectively.
 
 ### Actionable Steps
 
@@ -98,7 +98,6 @@ The session concluded with a discussion of actionable steps that the Node.js com
 - **Explore Next-Gen HTTP**: Investigate next-generation HTTP protocols and their implications for the Node.js ecosystem, ensuring that the project remains at the forefront of web development technologies.
 - **Seek Professional Data Analysis**: Engage professional data analysts to help extract meaningful insights from the survey results, ensuring that the data is used effectively to inform decision-making.
 - **Document Missed Discussions**: Ensure that all discussions and insights are comprehensively documented, utilizing tools like the Zoom AI tool to capture missed discussions and provide a complete record of the session.
-
 
 ## To know you is to love you. Diversifying Node.js
 
