@@ -59,33 +59,33 @@ The session concluded with a discussion of actionable steps that the Node.js com
 
 ## Next-10 Survey
 
-The Next-10 Survey session at the Node.js collaboration summit in Dublin focused on the results and insights gathered from the latest survey conducted by the Node.js community. The discussion, led by Jean, aimed to analyze the survey data, identify trends, and develop actionable steps to address the findings. The survey covered a wide range of topics, including ESM syntax usage, next initiatives, and the overall health of the Node.js ecosystem.
+The Next-10 Survey session at the Node.js collaboration summit in Dublin focused on the results and insights gathered from the latest survey conducted by the Node.js community. The discussion, led by Jean Burellier ([@sheplu](https://github.com/sheplu)), aimed to analyze the survey data, identify trends, and develop actionable steps to address the findings. The survey covered a wide range of topics, including ESM syntax usage, next initiatives, and the overall health of the Node.js ecosystem.
 
 ### Survey Overview
 
-Jean presented the slides outlining the key findings from the Next-10 Survey, which can be found [here](https://github.com/openjs-foundation/summit/issues/423) and [here](https://github.com/nodejs/next-10/tree/main/surveys/2024-04). The survey received over 2000 responses, providing a comprehensive view of the Node.js community's thoughts and experiences.
+Jean presented the slides outlining the [key findings from the Next-10 Survey](https://github.com/nodejs/next-10/tree/main/surveys/2024-04). The survey received over 2000 responses, providing a comprehensive view of the Node.js community's thoughts and experiences.
 
 ### ESM Syntax Usage
 
 One of the main topics discussed was the usage of ESM (ECMAScript Modules) syntax in production environments. Key points included:
 
-- **Awareness and Adoption**: Geoffrey noted that with over 2000 responses, most participants should have a good understanding of whether they are running ESM in production. However, Joyee mentioned that some respondents might not actually know whether they are using ESM, as frameworks like Next.js transpile ESM to CJS (CommonJS) behind the scenes.
-- **Usage Counter Proposal**: Joyee suggested adding an opt-in usage counter to core that dumps JSON files, which could be requested in the survey. This would allow respondents to easily sanitize and share their usage data, providing more accurate insights into ESM adoption.
-- **Visibility and Outreach**: Jacob emphasized the need for more visibility of the survey to reach a broader audience. Ethan added that it is crucial to reach out to the right people to ask relevant questions and gather meaningful data.
+- **Awareness and Adoption**: We noted that with over 2000 responses, most participants should have a good understanding of whether they are running ESM in production. However, we also acknowledged that some respondents might not actually know whether they are using ESM, as frameworks like Next.js transpile ESM to CJS (CommonJS) behind the scenes.
+- **Usage Counter Proposal**: We suggested adding an opt-in usage counter to core that dumps JSON files, which could be requested in the survey. This would allow respondents to easily sanitize and share their usage data, providing more accurate insights into ESM adoption.
+- **Visibility and Outreach**: We emphasized the need for more visibility of the survey to reach a broader audience. Ethan added that it is crucial to reach out to the right people to ask relevant questions and gather meaningful data.
 
 ### Next Initiatives
 
 The discussion also covered potential next initiatives for the Node.js project:
 
-- **Failed Participation Example**: Wes shared an example of a failed participation initiative related to vulnerability reporting. He cautioned that it is important to be clear about what you want to achieve and to engage people effectively.
-- **Flaky CI Working Group**: Jean proposed the creation of a working group focused on addressing flaky CI issues, highlighting the need to improve the reliability of the CI system.
-- **Next-Gen HTTP**: Jean also mentioned the importance of exploring next-generation HTTP protocols and their implications for the Node.js ecosystem.
+- **Failed Participation Example**: We shared an example of a failed participation initiative related to vulnerability reporting. It is important to be clear about what you want to achieve and to engage people effectively.
+- **Flaky CI Working Group**: We proposed the creation of a working group focused on addressing flaky CI issues, highlighting the need to improve the reliability of the CI system.
+- **Next-Gen HTTP**: We also mentioned the importance of exploring next-generation HTTP protocols and their implications for the Node.js ecosystem.
 
 ### Data Analysis and Professional Help
 
 The session highlighted the need for more professional help with data analysis to extract meaningful insights from the survey results:
 
-- **Professional Data Analysis**: An unidentified participant suggested the need for more professional help with the data, noting that while the survey received a large number of responses, the analysis could be improved to derive actionable insights.
+- **Professional Data Analysis**: A participant suggested the need for more professional help with the data, noting that while the survey received a large number of responses, the analysis could be improved to derive actionable insights.
 - **Zoom AI Tool**: Several participants mentioned the hope that the Zoom AI tool captured missed discussions, underscoring the importance of comprehensive documentation and analysis.
 
 ### Actionable Steps
