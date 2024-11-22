@@ -38,10 +38,10 @@
   "websiteBadges": {
     "index": {
       "startDate": "2024-11-01T00:00:00.000Z",
-      "endDate": "2024-12-01T00:00:00.000Z",
+      "endDate": "2024-12-31T00:00:00.000Z",
       "kind": "default",
       "title": "Read",
-      "text": "Dublin Node.js Collab Summit",
+      "text": "Node.js Collab Summit Report",
       "link": "https://nodejs.org/en/blog/events/collab-summit-2024-dublin"
     }
   }
