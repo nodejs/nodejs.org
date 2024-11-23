@@ -50,8 +50,6 @@ const config: StorybookConfig = {
         '@': join(__dirname, '../'),
       },
     },
-    // We need to configure `node:` APIs as Externals to WebPack
-    // since essentially they're not supported on the browser
     // Removes Pesky Critical Dependency Warnings due to `next/font`
     ignoreWarnings: [
       e =>
