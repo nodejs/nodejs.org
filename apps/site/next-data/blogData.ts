@@ -25,10 +25,9 @@ const getBlogData = (cat: string, page?: number): Promise<BlogPostsRSC> => {
 
   const fetchURL = `${NEXT_DATA_URL}blog-data/${cat}/${page ?? 0}`;
 
-  // When we're on RSC with Server capabilities we prefer using Next.js Data Fetching
-  // as this will load cached data from the server instead of generating data on the fly
-  // this is extremely useful for ISR and SSG as it will not generate this data on every request
-  return fetch(fetchURL, { cache: 'force-cache' })
+  // This data cannot be cached because it is continuously updated. Caching it would lead to
+  // outdated information being shown to the user.
+  return fetch(fetchURL)
     .then(response => response.text())
     .then(response => parseBlogDataResponse(response));
 };
