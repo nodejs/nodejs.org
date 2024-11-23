@@ -76,3 +76,13 @@ updates:
       - dependency-name: '@types/node'
         update-types: ['version-update:semver-major']
     open-pull-requests-limit: 10
+
+  - package-ecosystem: npm
+    directory: /apps/site
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /packages/i18n
+    schedule:
+      interval: daily
