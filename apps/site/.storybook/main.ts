@@ -45,7 +45,6 @@ const config: StorybookConfig = {
     resolve: {
       ...config.resolve,
       alias: {
-        '@nodevu/core': false,
         'next-intl/navigation': join(mocksFolder, './next-intl.mjs'),
         '@/client-context': join(mocksFolder, './client-context.mjs'),
         '@': join(__dirname, '../'),
@@ -53,16 +52,9 @@ const config: StorybookConfig = {
     },
     // We need to configure `node:` APIs as Externals to WebPack
     // since essentially they're not supported on the browser
-    externals: {
-      'node:fs': 'commonjs fs',
-      'node:url': 'commonjs url',
-      'node:path': 'commonjs path',
-      'node:readline': 'commonjs readline',
-    },
     // Removes Pesky Critical Dependency Warnings due to `next/font`
     ignoreWarnings: [
       e =>
-        e.message.includes('Critical dep') ||
         e.message.includes('was not found in') ||
         e.message.includes('generated code contains'),
     ],
