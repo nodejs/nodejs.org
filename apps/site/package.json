@@ -58,7 +58,7 @@
     "@tailwindcss/container-queries": "~0.1.1",
     "@types/node": "20.16.5",
     "@vcarl/remark-headings": "~0.1.0",
-    "@vercel/analytics": "~1.4.0",
+    "@vercel/analytics": "~1.4.1",
     "@vercel/otel": "~1.10.0",
     "@vercel/speed-insights": "~1.1.0",
     "autoprefixer": "~10.4.20",
