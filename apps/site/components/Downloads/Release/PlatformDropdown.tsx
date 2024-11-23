@@ -1,14 +1,15 @@
 'use client';
+
+import ChocoIcon from '@node-core/ui-components/Icons/Platform/Choco';
+import DockerIcon from '@node-core/ui-components/Icons/Platform/Docker';
+import FNMIcon from '@node-core/ui-components/Icons/Platform/FNM';
+import HomebrewIcon from '@node-core/ui-components/Icons/Platform/Homebrew';
+import NVMIcon from '@node-core/ui-components/Icons/Platform/NVM';
 import { useTranslations } from 'next-intl';
-import { useContext, useEffect, useMemo } from 'react';
 import type { FC } from 'react';
+import { useContext, useEffect, useMemo } from 'react';
 
 import Select from '@/components/Common/Select';
-import Choco from '@/components/Icons/Platform/Choco';
-import Docker from '@/components/Icons/Platform/Docker';
-import FNM from '@/components/Icons/Platform/FNM';
-import Homebrew from '@/components/Icons/Platform/Homebrew';
-import NVM from '@/components/Icons/Platform/NVM';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import type { PackageManager } from '@/types/release';
 import { formatDropdownItems, platformItems } from '@/util/downloadUtils';
@@ -68,11 +69,11 @@ const PlatformDropdown: FC = () => {
       values={formatDropdownItems({
         items: platformItems,
         icons: {
-          NVM: <NVM width={16} height={16} />,
-          FNM: <FNM width={16} height={16} />,
-          BREW: <Homebrew width={16} height={16} />,
-          DOCKER: <Docker width={16} height={16} />,
-          CHOCO: <Choco width={16} height={16} />,
+          NVM: <NVMIcon width={16} height={16} />,
+          FNM: <FNMIcon width={16} height={16} />,
+          BREW: <HomebrewIcon width={16} height={16} />,
+          DOCKER: <DockerIcon width={16} height={16} />,
+          CHOCO: <ChocoIcon width={16} height={16} />,
         },
         disabledItems,
       })}

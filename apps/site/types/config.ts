@@ -1,3 +1,5 @@
+import type { LogoVariant } from '@node-core/ui-components/types';
+
 import type { RSSFeed, WebsiteBadge, WebsiteBanner } from './features';
 
 export interface TwitterConfig {
@@ -12,8 +14,6 @@ export interface OGConfig {
   imgWidth: string;
   imgHeight: string;
 }
-
-export type LogoVariant = 'default' | 'pride';
 
 export interface SiteConfig {
   title: string;

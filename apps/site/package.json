@@ -39,6 +39,7 @@
     "@heroicons/react": "~2.1.5",
     "@mdx-js/mdx": "^3.1.0",
     "@node-core/website-i18n": "*",
+    "@node-core/ui-components": "*",
     "@nodevu/core": "0.3.0",
     "@opentelemetry/api": "1.9.0",
     "@orama/highlight": "0.1.6",

@@ -1,24 +1,24 @@
+import BlueskyIcon from '@node-core/ui-components/Icons/Social/Bluesky';
+import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
+import LinkedInIcon from '@node-core/ui-components/Icons/Social/LinkedIn';
+import MastodonIcon from '@node-core/ui-components/Icons/Social/Mastodon';
+import SlackIcon from '@node-core/ui-components/Icons/Social/Slack';
+import XIcon from '@node-core/ui-components/Icons/Social/X';
 import { useTranslations } from 'next-intl';
 import type { FC, SVGProps } from 'react';
 
 import NavItem from '@/components/Containers/NavBar/NavItem';
-import Bluesky from '@/components/Icons/Social/Bluesky';
-import GitHub from '@/components/Icons/Social/GitHub';
-import LinkedIn from '@/components/Icons/Social/LinkedIn';
-import Mastodon from '@/components/Icons/Social/Mastodon';
-import Slack from '@/components/Icons/Social/Slack';
-import Twitter from '@/components/Icons/Social/Twitter';
 import { siteNavigation } from '@/next.json.mjs';
 
 import styles from './index.module.css';
 
 const footerSocialIcons: Record<string, React.FC<SVGProps<SVGSVGElement>>> = {
-  github: GitHub,
-  mastodon: Mastodon,
-  twitter: Twitter,
-  slack: Slack,
-  linkedin: LinkedIn,
-  bluesky: Bluesky,
+  github: GitHubIcon,
+  mastodon: MastodonIcon,
+  twitter: XIcon,
+  slack: SlackIcon,
+  linkedin: LinkedInIcon,
+  bluesky: BlueskyIcon,
 };
 
 const Footer: FC = () => {
