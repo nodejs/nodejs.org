@@ -3,3 +3,12 @@
     flex-wrap
     items-center;
 }
+
+.small {
+  @apply xs:-space-x-2
+    space-x-0.5;
+}
+
+.medium {
+  @apply -space-x-2.5;
+}
