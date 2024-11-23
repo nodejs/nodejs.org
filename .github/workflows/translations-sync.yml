@@ -1,6 +1,7 @@
 # This action automates the synchronization of our crowdin translations, so that a human does not need to kick it off from the crowdin UI
+# See translations-upload.yml for automation to upload our source content
 # See translations-pr-lint-and-format.yml for quality control we conduct on ingress of new translations.
-name: Crowdin Sync
+name: Crowdin Download
 
 on:
   workflow_dispatch: # Allow running when we want to, for events such as urgent translation mistakes or 100% completed languages
@@ -34,10 +35,8 @@ jobs:
       - name: crowdin action
         uses: crowdin/github-action@2d540f18b0a416b1fbf2ee5be35841bd380fc1da #v2.3.0
         with:
-          # testing only
-          dryrun_action: true
-          # do not upload existing translations - this is a one-way operation
-          upload_sources: true
+          # do not upload anything - this is a one-way operation download
+          upload_sources: false
           upload_translations: false
           # the rest of this controls how the PR comes in with new translations
           download_translations: true
