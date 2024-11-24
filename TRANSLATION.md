@@ -92,7 +92,7 @@ Translation Keys should not be translated during Unit Testing. If your Component
 
 Translations are synced between Crowdin and the repository via GitHub Actions.
 
-- One every push to `main`, we upload any new source content.
+- On every push to `main`, we upload any new source content.
 - Via a cron schedule, and as needed manually by a collaborator, we download completed translations.
 
 Incoming translations are linted to ensure they come from crowdin, and are also formatted to adhere to our project settings.
