@@ -1,20 +1,6 @@
 {
-  "type": "module",
-  "private": true,
   "name": "@node-core/website",
-  "description": "Nodejs.org Website",
-  "homepage": "https://nodejs.org",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nodejs/nodejs.org.git"
-  },
-  "author": {
-    "name": "Node.js Website Working Group"
-  },
-  "license": "MIT",
-  "engines": {
-    "node": "v20"
-  },
+  "type": "module",
   "scripts": {
     "scripts:release-post": "cross-env NODE_NO_WARNINGS=1 node scripts/release-post/index.mjs",
     "dev": "cross-env NODE_NO_WARNINGS=1 next dev --turbopack",
@@ -56,7 +42,6 @@
     "@radix-ui/react-tooltip": "^1.1.4",
     "@savvywombat/tailwindcss-grid-areas": "~4.0.0",
     "@tailwindcss/container-queries": "~0.1.1",
-    "@types/node": "20.16.5",
     "@vcarl/remark-headings": "~0.1.0",
     "@vercel/analytics": "~1.4.1",
     "@vercel/otel": "~1.10.0",
