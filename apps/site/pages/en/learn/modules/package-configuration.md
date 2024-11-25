@@ -52,14 +52,14 @@ This the "Rum & Coke" of packages: pretty difficult to mess up. Essentially just
 
 **Working example**: [cjs-with-cjs-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/cjs-distro)
 
-```json
+```jsonc
 {
   "type": "commonjs", // current default, but may change
-  "engines": { "node": ">=12.22.7" }, // optional, but kind
+  "engines": { "node": ">=12.22.7" },
   "exports": {
-    ".": "PATH/TO/DIST/CODE/ENTRYPOINT.js", // ex "./dist/index.js"
-    "./package.json": "./package.json" // ensure this file is importable
-  }
+    ".": "./dist/index.js",
+    "./package.json": "./package.json",
+  },
 }
 ```
 
@@ -71,14 +71,14 @@ The "Gin & Tonic" of packages: This takes a small bit of finesse but is also pre
 
 **Working example**: [cjs-with-esm-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/esm-distro)
 
-```json
+```jsonc
 {
   "type": "commonjs", // current default, but may change
-  "engines": { "node": ">=12.22.7" }, // optional, but kind
+  "engines": { "node": ">=12.22.7" },
   "exports": {
-    ".": "PATH/TO/DIST/CODE/ENTRYPOINT.mjs", // ex "./dist/index.mjs"
-    "./package.json": "./package.json" // ensure this file is importable
-  }
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json",
+  },
 }
 ```
 
@@ -100,25 +100,24 @@ Pros:
 
 Cons:
 
-- Hacky-ish: Leverages non-explicitly documented behaviour in Node.js's algorithm (it _can_ but is very unlikely to change).
 - Requires very specific syntax (either in source code and/or bundler gymnastics).
 
 **Working example**: [cjs-with-dual-distro (properties)](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/dual/property-distro)
 
-```json
+```jsonc
 {
   "type": "commonjs", // current default, but may change
-  "engines": { "node": ">=12.22.7" }, // optional, but kind
+  "engines": { "node": ">=12.22.7" },
   "exports": {
-    ".": "PATH/TO/DIST/CJS-CODE/ENTRYPOINT.js", // ex "./dist/cjs/index.js"
-    "./package.json": "./package.json" // ensure this file is importable
-  }
+    ".": "./dist/cjs/index.js",
+    "./package.json": "./package.json",
+  },
 }
 ```
 
 Typically, you would see `module.exports` assigned to something (be it an object or a function) like this:
 
-```js
+```cjs
 const someObject = {
   foo() {},
   bar() {},
@@ -130,7 +129,7 @@ module.exports = someObject;
 
 Instead, do this:
 
-```js
+```cjs
 module.exports.foo = function foo() {};
 module.exports.foo = function bar() {};
 module.exports.foo = function qux() {};
@@ -150,18 +149,18 @@ Cons:
 
 **Working example**: [cjs-with-dual-distro (wrapper)](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/dual/wrapper-distro)
 
-```json
+```jsonc
 {
   "type": "commonjs", // current default, but may change
-  "engines": { "node": ">=12.22.7" }, // optional, but kind
+  "engines": { "node": ">=12.22.7" },
   "exports": {
     ".": {
-      "import": "PATH/TO/DIST/ESM-CODE/ENTRYPOINT.mjs", // ex "./dist/es/wrapper.mjs"
-      "require": "PATH/TO/DIST/CJS-CODE/ENTRYPOINT.js", // ex "./dist/cjs/index.js"
-      "default": "PATH/TO/DIST/CJS-CODE/ENTRYPOINT.js" // ex "./dist/cjs/index.js"
+      "import": "./dist/esm/wrapper.mjs",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/cjs/index.js",
     },
-    "./package.json": "./package.json" // ensure this file is importable
-  }
+    "./package.json": "./package.json",
+  },
 }
 ```
 
@@ -169,9 +168,7 @@ In order to support named exports from the CJS bundle for an ESM consumer, this 
 
 In certain conditions, CJS exports an object (which gets aliased to ESM's `default`); that object, like any object, is destructure-able. You can leverage that to pluck all the members of the object out, and then re-export them so the ESM consumer is none the wiser.
 
-```js
-// ./dist/es/wrapper.mjs
-
+```js displayName="./dist/esm/wrapper.mjs"
 import cjs from '../cjs/index.js';
 
 const { a, b, c /* … */ } = cjs;
@@ -193,18 +190,18 @@ Cons:
 
 **Working example**: [cjs-with-dual-distro (double)](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/dual/double-distro)
 
-```json
+```jsonc
 {
   "type": "commonjs", // current default, but may change
-  "engines": { "node": ">=12.22.7" }, // optional, but kind
+  "engines": { "node": ">=12.22.7" },
   "exports": {
     ".": {
-      "import": "PATH/TO/DIST/ESM-CODE/ENTRYPOINT.mjs", // ex "./dist/es/index.mjs"
-      "require": "PATH/TO/DIST/CJS-CODE/ENTRYPOINT.js", // ex "./dist/cjs/index.js"
-      "default": "PATH/TO/DIST/CJS-CODE/ENTRYPOINT.js" // ex "./dist/cjs/index.js"
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/cjs/index.js",
     },
-    "./package.json": "./package.json" // ensure this file is importable
-  }
+    "./package.json": "./package.json",
+  },
 }
 ```
 
@@ -219,10 +216,10 @@ This is almost exactly the same as the CJS-CJS configuration above with 1 small 
 ```json
 {
   "type": "module",
-  "engines": { "node": ">=12.22.7" }, // optional, but kind
+  "engines": { "node": ">=12.22.7" },
   "exports": {
-    ".": "PATH/TO/DIST/CODE/ENTRYPOINT.js", // ex "./dist/index.js"
-    "./package.json": "./package.json" // ensure this file is importable
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
   }
 }
 ```
@@ -262,10 +259,10 @@ The working example below was created prior to Webpack's recent release, so it u
 ```json
 {
   "type": "module",
-  "engines": { "node": ">=12.22.7" }, // optional, but kind
+  "engines": { "node": ">=12.22.7" },
   "exports": {
-    ".": "PATH/TO/DIST/CJS-CODE/ENTRYPOINT.cjs", // ex "./dist/index.cjs"
-    "./package.json": "./package.json" // ensure this file is importable
+    ".": "./dist/index.cjs",
+    "./package.json": "./package.json"
   }
 }
 ```
@@ -280,18 +277,18 @@ This is also almost identical to the [CJS source and dual distribution using an 
 
 **Working example**: [esm-with-dual-distro (wrapper)](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/esm/dual/wrapper-distro)
 
-```json
+```jsonc
 {
   "type": "module",
-  "engines": { "node": ">=12.22.7" }, // optional, but kind
+  "engines": { "node": ">=12.22.7" },
   "exports": {
     ".": {
-      "import": "PATH/TO/DIST/ESM-CODE/ENTRYPOINT.js", // ex "./dist/es/wrapper.js"
-      "require": "PATH/TO/DIST/CJS-CODE/ENTRYPOINT.cjs", // ex "./dist/cjs/index.cjs"
-      "default": "PATH/TO/DIST/CJS-CODE/ENTRYPOINT.cjs" // ex "./dist/cjs/index.cjs"
+      "import": "./dist/esm/wrapper.js",
+      "require": "./dist/cjs/index.cjs",
+      "default": "./dist/cjs/index.cjs",
     },
-    "./package.json": "./package.json" // ensure this file is importable
-  }
+    "./package.json": "./package.json",
+  },
 }
 ```
 
@@ -309,20 +306,20 @@ This option has the least burden on development/developer experience.
 
 This also means that whatever build tooling must produce the distribution file with a `.cjs` file extension. This might necessitate chaining multiple build tools or adding a subsequent step to move/rename the file to have the `.cjs` file extension (ex `mv ./dist/index.js ./dist/index.cjs`)<sup>[3](#footnotes)</sup>. This can be worked around by adding a subsequent step to move/rename those outputted files (ex [Rollup](https://rollupjs.org/) or [a simple shell script](https://stackoverflow.com/q/21985492)).
 
-Support for the `.cjs` file extension was added in 12.0.0, and using it will cause ESM to properly recognised a file as commonjs (`import { foo } from './foo.cjs` works). However, `require()` does not auto-resolve `.cjs` like it does for `.js`, so file extension cannot be omitted as is commonplace in commonjs: `require('./foo')` will fail, but `require('./foo.cjs')` works. Using it in your package's exports has no drawbacks: `packageJson.exports` (and `packageJson.main`) requires a file extension regardless, and consumers reference your package by the `"name"` field of your package.json (so they're blissfully unaware).
+Support for the `.cjs` file extension was added in 12.0.0, and using it will cause ESM to properly recognised a file as commonjs (`import { foo } from './foo.cjs'` works). However, `require()` does not auto-resolve `.cjs` like it does for `.js`, so file extension cannot be omitted as is commonplace in commonjs: `require('./foo')` will fail, but `require('./foo.cjs')` works. Using it in your package's exports has no drawbacks: `packageJson.exports` (and `packageJson.main`) requires a file extension regardless, and consumers reference your package by the `"name"` field of your package.json (so they're blissfully unaware).
 
 **Working example**: [esm-with-dual-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/esm/dual/double-distro)
 
 ```json
 {
   "type": "module",
-  "engines": { "node": ">=12.22.7" }, // optional, but kind
+  "engines": { "node": ">=12.22.7" },
   "exports": {
     ".": {
-      "import": "PATH/TO/DIST/ESM-CODE/ENTRYPOINT.js", // ex "./dist/es/index.js"
-      "require": "PATH/TO/DIST/CJS-CODE/ENTRYPOINT.cjs" // ex "./dist/index.cjs"
+      "import": "./dist/esm/index.js",
+      "require": "./dist/index.cjs"
     },
-    "./package.json": "./package.json" // ensure this file is importable
+    "./package.json": "./package.json"
   }
 }
 ```
@@ -368,16 +365,15 @@ So when you see configuration options citing or named with `require` or `import`
 
 The `package.json`'s `"type"` field changes the `.js` file extension to mean either `commonjs` or ES `module` respectively. It is very common in dual/mixed packages (that contain both CJS and ESM) to use this field incorrectly.
 
-```json
-// ⚠️ THIS DOES NOT WORK
+```json displayName="⚠️ THIS DOES NOT WORK"
 {
   "type": "module",
-  "main": "PATH/TO/DIST/CJS-CODE/ENTRYPOINT.js",
+  "main": "./dist/CJS/index.js",
   "exports": {
     ".": {
-      "import": "PATH/TO/DIST/ESM-CODE/ENTRYPOINT.js",
-      "require": "PATH/TO/DIST/CJS-CODE/ENTRYPOINT.js",
-      "default": "PATH/TO/DIST/CJS-CODE/ENTRYPOINT.js"
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/cjs/index.js"
     },
     "./package.json": "./package.json"
   }
@@ -388,15 +384,14 @@ This does not work because `"type": "module"` causes `packageJson.main`, `packag
 
 Excluding `"type": "module"` produces the opposite problem:
 
-```json
-// ⚠️ THIS DOES NOT WORK
+```json displayName="⚠️ THIS DOES NOT WORK"
 {
-  "main": "PATH/TO/DIST/CJS-CODE/ENTRYPOINT.js",
+  "main": "./dist/CJS/index.js",
   "exports": {
     ".": {
-      "import": "PATH/TO/DIST/ESM-CODE/ENTRYPOINT.js",
-      "require": "PATH/TO/DIST/CJS-CODE/ENTRYPOINT.js",
-      "default": "PATH/TO/DIST/CJS-CODE/ENTRYPOINT.js"
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/cjs/index.js"
     },
     "./package.json": "./package.json"
   }
