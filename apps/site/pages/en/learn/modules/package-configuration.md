@@ -14,6 +14,16 @@ All the provided `package.json` configurations (not specifically marked “does 
 
 For curious cats, [Preamble: How did we get here](#preamble-how-did-we-get-here) and [Down the rabbit-hole](#down-the-rabbithole) provide background and deeper explanations. If you're just looking for a solution, jump to [Pick your poison](#pick-your-poison) for the TLDR.
 
+## General notes
+
+[Syntax detection](https://nodejs.org/api/packages.html#syntax-detection) is _**not**_ a replacement for proper package configuration; syntax detection is not fool-proof and it has [significant performance cost](https://github.com/nodejs/node/pull/55238).
+
+When using [`"exports"`](https://nodejs.org/api/packages.html#conditional-exports) in package.json, it is generally a good idea to include `"./package.json": "./package.json"` so that it can be imported ([`module.findPackageJSON`](https://nodejs.org/api/module.html#modulefindpackagejsonspecifier-base) is not affected by this limitation, but `import` may be more convenient).
+
+`"exports"` can be advisable over [`"main"`](https://nodejs.org/api/packages.html#main) because it prevents external access to internal code (so you can be relatively sure users are not depending on things they shouldn't). If you don't need that, `"main"` is simpler and may be a better option for you.
+
+The `"engines"` field provides both a human-friendly and a machine-friendly indication of with which version(s) of Node.js the package is compatible. Depending on the package manager used, an exception may be thrown causing the installation to fail when the consumer is using an incompatible version of Node.js (which can be very helpful to consumers). Including this field will save a lot of headache for consumers with an older version of Node.js who cannot use the package.
+
 ## Preamble: How did we get here
 
 CommonJS (CJS) was created _long_ before ECMAScript Modules (ESM), back when JavaScript was still adolescent—CJS and jQuery were created just 3 years apart. CJS is not an official (TC39) standard and is supported by a limited few platforms (most notably, Node.js). ESM as a standard has been incoming for several years; it is currently supported by all major platforms (browsers, Deno, Node.js, etc), meaning it will run pretty much everywhere. As it became clear ESM would effectively succeed CJS (which is still very popular and widespread), many attempted to adopt early on, often before a particular aspect of the ESM specification was finalised. Because of this, those changed over time as better information became available (often informed by learnings/experiences of those eager beavers), going from best-guess to the aligning with the specification.
@@ -73,8 +83,6 @@ The "Gin & Tonic" of packages: This takes a small bit of finesse but is also pre
 ```
 
 The [`.mjs`](https://nodejs.org/api/esm.html#enabling) file extension is a trump-card: it will override **any** other configuration and the file will be treated as ESM. Using this file extension is necessary because `packageJson.exports.import` does **NOT** signify that the file is ESM (contrary to common, if not universal, misperception), only that it is the file to be used when the package is imported (ESM _can_ import CJS. See [Gotchas](#gotchas) below).
-
-The [`"engines"`](https://nodejs.dev/learn/the-package-json-guide#engines) field provides both a human-friendly and a machine-friendly indication of with which version(s) of Node.js the package is compatible. Depending on the package manager used, an exception may be thrown causing the installation to fail when the consumer is using an incompatible version of Node.js (which can be very helpful to consumers). Including this field here will save a lot of headache for consumers with an older version of Node.js who cannot use the package.
 
 ### CJS source and both CJS & ESM distribution
 
