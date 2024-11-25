@@ -227,7 +227,7 @@ This is almost exactly the same as the CJS-CJS configuration above with 1 small 
 }
 ```
 
-Note that ESM is not “backwards” compatible with CJS: a CJS module cannot `require()` an ES Module; it is possible to use a dynamic import (`await import()`), but this is likely not what consumers expect (and, unlike ESM, CJS does not support [Top-Level Await](https://github.com/tc39/proposal-top-level-await/)).
+Note that ESM now _is_ “backwards” compatible with CJS: a CJS module now _can_ [`require()` an ES Module](https://nodejs.org/api/modules.html#loading-ecmascript-modules-using-require) without a flag as of 23.0.0.
 
 ### ESM source with only CJS distribution
 
@@ -243,11 +243,9 @@ The configurations (there are 2 options) are nearly the same as [ESM source and 
 
 These are "mixologist" territory.
 
-When source code is written in non-JavaScript (ex TypeScript), options can be limited due to needing to use file extension(s) specific to that language (ex `.ts`) and there is often no `.mjs` equivalent[^3].
+When source code is written in non-JavaScript (ex TypeScript), options can be limited due to needing to use file extension(s) specific to that language (ex `.ts`) and there may be no `.mjs` equivalent.
 
 Similar to [CJS source and both CJS & ESM distribution](#cjs-source-and-both-cjs-amp-esm-distribution), you have the same options.
-
-There is also a 4th option of publishing only an ESM distribution and forcing consumers to use a dynamic import (`await import()`), but that is not quite the same and will likely lead to angry consumers, so it is not covered here.
 
 #### Publish only a CJS distribution with property exports
 
@@ -412,5 +410,3 @@ This does not work because `packageJson.exports["."].import` will get interprete
 [^1]: There was a bug in Node.js v13.0–13.6 where `packageJson.exports["."]` had to be an array with verbose config options as the first item (as an object) and the “default” as the second item (as a string). See [nodejs/modules#446](https://github.com/nodejs/modules/issues/446).
 
 [^2]: The `"type"` field in package.json changes what the `.js` file extension means, similar to to an [HTML script element’s type attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-type).
-
-[^3]: TypeScript has experimental support for the [package.json `"type"` field](https://www.typescriptlang.org/docs/handbook/esm-node.html#type-in-packagejson-and-new-extensions) and [`.cts` and `.mts` file extensions](https://www.typescriptlang.org/docs/handbook/esm-node.html#new-file-extensions).
