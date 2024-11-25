@@ -37,14 +37,14 @@ This article covers configuration of all possible combinations in modern Node.js
 - ESM source and distribution
 - CJS source and distribution with good/specific `module.exports`
 
-| You as a package author write     | Consumers of your package write their code in                    | Your options                                                                                |
-| :-------------------------------- | :--------------------------------------------------------------- | :------------------------------------------------------------------------------------------ |
-| CJS source code using `require()` | CJS: consumers `require()` your package                          | [CJS source and distribution](#cjs-source-and-distribution)                                 |
-| CJS source code using `require()` | ESM: consumers `import` your package                             | [CJS source and only ESM distribution](#cjs-source-and-only-esm-distribution)               |
-| CJS source code using `require()` | CJS & ESM: consumers either `require()` or `import` your package | [CJS source and both CJS & ESM distribution](#cjs-source-and-both-cjs-amp-esm-distribution) |
-| ESM source code using `import`    | CJS: consumers `require()` your package                          | [ESM source with only CJS distribution](#esm-source-with-only-cjs-distribution)             |
-| ESM source code using `import`    | ESM: consumers `import` your package                             | [ESM source and distribution](#esm-source-and-distribution)                                 |
-| ESM: source code uses `import`    | CJS & ESM: consumers either `require()` or `import` your package | [ESM source and both CJS & ESM distribution](#esm-source-and-both-cjs-amp-esm-distribution) |
+| You as a package author write     | Consumers of your package write their code in                    | Your options                                                                                                                                                 |
+| :-------------------------------- | :--------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CJS source code using `require()` | CJS: consumers `require()` your package                          | [CJS source and distribution](#cjs-source-and-distribution)                                                                                                  |
+| CJS source code using `require()` | ESM: consumers `import` your package                             | [CJS source and only ESM distribution](#cjs-source-and-only-esm-distribution)                                                                                |
+| CJS source code using `require()` | CJS & ESM: consumers either `require()` or `import` your package | [CJS source and both CJS & ESM distribution](#cjs-source-and-both-cjs-amp-esm-distribution)                                                                  |
+| ESM source code using `import`    | CJS: consumers `require()` your package                          | [ESM source with only CJS distribution](#esm-source-with-only-cjs-distribution)<br />[ESM source and distribution](#esm-source-and-distribution)             |
+| ESM source code using `import`    | ESM: consumers `import` your package                             | [ESM source and distribution](#esm-source-and-distribution)                                                                                                  |
+| ESM: source code uses `import`    | CJS & ESM: consumers either `require()` or `import` your package | [ESM source and both CJS & ESM distribution](#esm-source-and-both-cjs-amp-esm-distribution)<br />[ESM source and distribution](#esm-source-and-distribution) |
 
 ### CJS source and distribution
 
@@ -225,6 +225,8 @@ Alternatively, you can use `"default"` and `"node"` keys, which are less counter
 ### ESM source and distribution
 
 The wine of packages: Simple, tried, and true.
+
+Note that since Node.js v23.0.0, it is possible to `require` static ESM (code that does not use top-level `await`). See [Loading ECMAScript modules using `require()`](https://nodejs.org/api/modules.html#loading-ecmascript-modules-using-require) for details.
 
 This is almost exactly the same as the CJS-CJS configuration above with 1 small difference: the [`"type"`](https://nodejs.org/api/packages.html#type) field.
 
