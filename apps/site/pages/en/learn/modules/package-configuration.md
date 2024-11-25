@@ -206,6 +206,22 @@ Cons:
 }
 ```
 
+Alternatively, you can use `"default"` and `"node"` keys, which are less counter-intuitive: Node.js will always choose the `"node"` option (which always works), and non-Node.js tooling will choose `"default"` when configured to target something other than node. **This precludes the dual-package hazard.**
+
+```jsonc
+{
+  "type": "commonjs", // current default, but may change
+  "engines": { "node": ">=12.22.7" },
+  "exports": {
+    ".": {
+      "default": "./dist/esm/index.mjs",
+      "node": "./dist/cjs/index.js",
+    },
+    "./package.json": "./package.json",
+  },
+}
+```
+
 ### ESM source and distribution
 
 The wine of packages: Simple, tried, and true.
@@ -311,7 +327,7 @@ Support for the `.cjs` file extension was added in 12.0.0, and using it will cau
 
 **Working example**: [esm-with-dual-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/esm/dual/double-distro)
 
-```json
+```json displayName="import & require"
 {
   "type": "module",
   "engines": { "node": ">=12.22.7" },
@@ -319,6 +335,22 @@ Support for the `.cjs` file extension was added in 12.0.0, and using it will cau
     ".": {
       "import": "./dist/esm/index.js",
       "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  }
+}
+```
+
+Alternatively, you can use `"default"` and `"node"` keys, which are less counter-intuitive: Node.js will always choose the `"node"` option (which always works), and non-Node.js tooling will choose `"default"` when configured to target something other than node. **This precludes the dual-package hazard.**
+
+```json displayName="default & node"
+{
+  "type": "module",
+  "engines": { "node": ">=12.22.7" },
+  "exports": {
+    ".": {
+      "default": "./dist/esm/index.js",
+      "node": "./dist/index.cjs"
     },
     "./package.json": "./package.json"
   }
