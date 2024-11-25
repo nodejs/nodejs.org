@@ -337,7 +337,7 @@ The configuration for this is the same as [CJS source and both CJS & ESM distrib
 
 🛑 You should not do this: Versions of Node.js prior to 12.x are End of Life and are now vulnerable to serious security exploits.
 
-If you're a security researcher needing to investigate Node.js prior to v12.22.x, feel free to contact me for help configuring.
+If you're a security researcher needing to investigate Node.js prior to v12.22.x, feel free to contact us for help configuring.
 
 ## Down the rabbit-hole
 
