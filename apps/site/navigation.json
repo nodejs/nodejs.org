@@ -131,7 +131,7 @@
           "label": "components.navigation.getInvolved.links.upcomingEvents"
         },
         "contribute": {
-          "link": "/about/get-involved/contribute",
+          "link": "https://github.com/nodejs/node/blob/main/CONTRIBUTING.md",
           "label": "components.navigation.getInvolved.links.contribute"
         },
         "codeOfConduct": {
