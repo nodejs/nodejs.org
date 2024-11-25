@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": "v20"
+    "node": "v22"
   },
   "workspaces": [
     "apps/*",

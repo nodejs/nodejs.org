@@ -16,7 +16,7 @@
     "lint:js": "eslint \"**/*.{js,mjs,ts}\""
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "devDependencies": {
     "eslint-import-resolver-typescript": "~3.6.3",
