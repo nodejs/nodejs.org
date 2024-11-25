@@ -309,7 +309,7 @@ This is also almost identical to the [CJS source and dual distribution using an 
 }
 ```
 
-💡 Using `"type": "module"`<sup>[2](#footnotes)</sup> paired with the `.cjs` file extension (for commonjs files) yields best results. For more information on why, see [Down the rabbit-hole](#down-the-rabbithole) and [Gotchas](#gotchas) below.
+💡 Using `"type": "module"`[^2] paired with the `.cjs` file extension (for commonjs files) yields best results. For more information on why, see [Down the rabbit-hole](#down-the-rabbithole) and [Gotchas](#gotchas) below.
 
 #### Publish both full CJS & ESM distributions
 
@@ -321,7 +321,7 @@ In terms of package configuration, there are a few options that differ mostly in
 
 This option has the least burden on development/developer experience.
 
-This also means that whatever build tooling must produce the distribution file with a `.cjs` file extension. This might necessitate chaining multiple build tools or adding a subsequent step to move/rename the file to have the `.cjs` file extension (ex `mv ./dist/index.js ./dist/index.cjs`)<sup>[3](#footnotes)</sup>. This can be worked around by adding a subsequent step to move/rename those outputted files (ex [Rollup](https://rollupjs.org/) or [a simple shell script](https://stackoverflow.com/q/21985492)).
+This also means that whatever build tooling must produce the distribution file with a `.cjs` file extension. This might necessitate chaining multiple build tools or adding a subsequent step to move/rename the file to have the `.cjs` file extension (ex `mv ./dist/index.js ./dist/index.cjs`). This can be worked around by adding a subsequent step to move/rename those outputted files (ex [Rollup](https://rollupjs.org/) or [a simple shell script](https://stackoverflow.com/q/21985492)).
 
 Support for the `.cjs` file extension was added in 12.0.0, and using it will cause ESM to properly recognised a file as commonjs (`import { foo } from './foo.cjs'` works). However, `require()` does not auto-resolve `.cjs` like it does for `.js`, so file extension cannot be omitted as is commonplace in commonjs: `require('./foo')` will fail, but `require('./foo.cjs')` works. Using it in your package's exports has no drawbacks: `packageJson.exports` (and `packageJson.main`) requires a file extension regardless, and consumers reference your package by the `"name"` field of your package.json (so they're blissfully unaware).
 
@@ -357,7 +357,7 @@ Alternatively, you can use `"default"` and `"node"` keys, which are less counter
 }
 ```
 
-💡 Using `"type": "module"`<sup>[2](#footnotes)</sup> paired with the `.cjs` file extension (for commonjs files) yields best results. For more information on why, see [Down the rabbit-hole](#down-the-rabbithole) and [Gotchas](#gotchas) below.
+💡 Using `"type": "module"`[^2] paired with the `.cjs` file extension (for commonjs files) yields best results. For more information on why, see [Down the rabbit-hole](#down-the-rabbithole) and [Gotchas](#gotchas) below.
 
 ##### Use the `.mjs` (or equivalent) file extension for all source code files
 
