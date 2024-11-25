@@ -178,7 +178,7 @@ export { a, b, c /* … */ };
 
 #### Two full distributions
 
-The "Long Island Ice Tea" of packages: Chuck in a bunch of stuff and hope for the best. This is probably the most common and easiest of the CJS to CJS & ESM options, but you pay for it.
+The "Long Island Ice Tea" of packages: Chuck in a bunch of stuff and hope for the best. This is probably the most common and easiest of the CJS to CJS & ESM options, but you pay for it. This is rarely a good idea.
 
 Pros:
 
@@ -296,7 +296,7 @@ This is also almost identical to the [CJS source and dual distribution using an 
 
 #### Publish both full CJS & ESM distributions
 
-The "Tokyo Tea" of packages: Chuck in a bunch of stuff (with a surprise) and hope for the best. This is probably the most common and easiest of the ESM to CJS & ESM options, but you pay for it.
+The "Tokyo Tea" of packages: Chuck in a bunch of stuff (with a surprise) and hope for the best. This is probably the most common and easiest of the ESM to CJS & ESM options, but you pay for it. This is rarely a good idea.
 
 In terms of package configuration, there are a few options that differ mostly in personal preference.
 
