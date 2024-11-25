@@ -187,6 +187,7 @@ Pros:
 Cons:
 
 - Larger package weight (basically double)
+- Vulnerable to the Dual-Package Hazard
 
 **Working example**: [cjs-with-dual-distro (double)](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/dual/double-distro)
 
