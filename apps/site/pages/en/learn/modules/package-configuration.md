@@ -48,7 +48,7 @@ This article covers configuration of all possible combinations in modern Node.js
 
 ### CJS source and distribution
 
-This the "Rum & Coke" of packages: pretty difficult to mess up. Essentially just declare the package’s exports via the [`"exports"`](https://nodejs.org/api/packages.html#conditional-exports) field/field-set.
+This the "Rum & Coke" of packages: pretty difficult to mess up. You _technially_ may not need _any_ package configuration beyond [`"name"`](https://nodejs.org/api/packages.html#name). But the less arcane, the better: Essentially just declare the package’s exports via the `"exports"` field/field-set.
 
 **Working example**: [cjs-with-cjs-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/cjs-distro)
 
