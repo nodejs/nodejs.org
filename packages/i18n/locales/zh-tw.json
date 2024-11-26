@@ -28,7 +28,6 @@
           "links": {
             "gettingStarted": "開始入門",
             "introductionToNodejs": "Node.js 介紹",
-            "howToInstallNodejs": "如何安裝 Node.js",
             "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "使用 Node.js 前，需要掌握多少 JavaScript 知識？",
             "differencesBetweenNodejsAndTheBrowser": "Node.js 與瀏覽器的差別",
             "theV8JavascriptEngine": "JavaScript V8 引擎",
