@@ -139,10 +139,6 @@
               "link": "/learn/getting-started/introduction-to-nodejs",
               "label": "components.navigation.learn.gettingStarted.links.introductionToNodejs"
             },
-            "howToInstallNodejs": {
-              "link": "/learn/getting-started/how-to-install-nodejs",
-              "label": "components.navigation.learn.gettingStarted.links.howToInstallNodejs"
-            },
             "howMuchJavascriptDoYouNeedToKnowToUseNodejs": {
               "link": "/learn/getting-started/how-much-javascript-do-you-need-to-know-to-use-nodejs",
               "label": "components.navigation.learn.gettingStarted.links.howMuchJavascriptDoYouNeedToKnowToUseNodejs"
