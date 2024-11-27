@@ -27,12 +27,39 @@ permissions:
   pull-requests: write
 
 jobs:
-  lighthouse-ci:
+  get-vercel-preview:
     # We want to skip our lighthouse analysis on Dependabot PRs
     if: |
       startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
       github.event.label.name == 'github_actions:pull-request'
+    name: Get Vercel Preview
+    runs-on: ubuntu-latest
+    outputs:
+      deployment_found: ${{ steps.check_deployment.outputs.deployment_found }}
+      url: ${{ steps.check_deployment.outputs.url }}
+    steps:
+      - name: Capture Vercel Preview
+        id: check_deployment
+        uses: patrickedqvist/wait-for-vercel-preview@06c79330064b0e6ef7a2574603b62d3c98789125 # v1.3.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 300 # timeout after 5 minutes
+          check_interval: 10 # check every 10 seconds
+        continue-on-error: true
+      - name: Set Outputs
+        if: always()
+        id: set_outputs
+        run: |
+          if [[ -z "${{ steps.check_deployment.outputs.url }}" ]]; then
+            echo "deployment_found=false" >> $GITHUB_OUTPUT
+          else
+            echo "deployment_found=true" >> $GITHUB_OUTPUT
+            echo "url=${{ steps.check_deployment.outputs.url }}" >> $GITHUB_OUTPUT
+          fi
 
+  lighthouse-ci:
+    needs: get-vercel-preview
+    if: needs.get-vercel-preview.outputs.deployment_found == 'true'
     name: Lighthouse Report
     runs-on: ubuntu-latest
 
@@ -57,16 +84,6 @@ jobs:
           # Used later to edit the existing comment
           comment-tag: 'lighthouse_audit'
 
-      - name: Capture Vercel Preview
-        uses: patrickedqvist/wait-for-vercel-preview@06c79330064b0e6ef7a2574603b62d3c98789125 # v1.3.2
-        id: vercel_preview_url
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          # timeout after 5 minutes
-          max_timeout: 300
-          # check every 10 seconds
-          check_interval: 10
-
       - name: Audit Preview URL with Lighthouse
         # Conduct the lighthouse audit
         id: lighthouse_audit
@@ -76,11 +93,11 @@ jobs:
           configPath: './.lighthouserc.json'
           # These URLS capture critical pages / site functionality.
           urls: |
-            ${{ steps.vercel_preview_url.outputs.url }}/en
-            ${{ steps.vercel_preview_url.outputs.url }}/en/about
-            ${{ steps.vercel_preview_url.outputs.url }}/en/about/previous-releases
-            ${{ steps.vercel_preview_url.outputs.url }}/en/download
-            ${{ steps.vercel_preview_url.outputs.url }}/en/blog
+            ${{ needs.get-vercel-preview.outputs.url }}/en
+            ${{ needs.get-vercel-preview.outputs.url }}/en/about
+            ${{ needs.get-vercel-preview.outputs.url }}/en/about/previous-releases
+            ${{ needs.get-vercel-preview.outputs.url }}/en/download
+            ${{ needs.get-vercel-preview.outputs.url }}/en/blog
           uploadArtifacts: true # save results as a action artifacts
           temporaryPublicStorage: true # upload lighthouse report to the temporary storage
 
@@ -93,7 +110,7 @@ jobs:
           # see https://github.com/actions/github-script#use-env-as-input
           LIGHTHOUSE_RESULT: ${{ steps.lighthouse_audit.outputs.manifest }}
           LIGHTHOUSE_LINKS: ${{ steps.lighthouse_audit.outputs.links }}
-          VERCEL_PREVIEW_URL: ${{ steps.vercel_preview_url.outputs.url }}
+          VERCEL_PREVIEW_URL: ${{ needs.get-vercel-preview.outputs.url }}
         with:
           # Run as a separate file so we do not have to inline all of our formatting logic.
           # See https://github.com/actions/github-script#run-a-separate-file for more info.
