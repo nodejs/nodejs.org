@@ -12,6 +12,7 @@ import {
   BASE_PATH,
   IS_DEVELOPMENT,
   DEFAULT_CATEGORY_OG_TYPE,
+  ENABLE_STATIC_EXPORT,
 } from './next.constants.mjs';
 import {
   IGNORED_ROUTES,
@@ -222,9 +223,9 @@ const getDynamicRouter = async () => {
 
     // Default Open Graph Image for the page
     pageMetadata.openGraph.images = [
-      `${defaultLocale.code}/next-data/og/${data.category ?? DEFAULT_CATEGORY_OG_TYPE}/${pageMetadata.title}`,
-      // Provides the default OG image as the first one will give a 404 on full static exports
-      `${defaultLocale.code}/next-data/og/announcement/Run JavaScript Everywhere`,
+      ENABLE_STATIC_EXPORT
+        ? `${defaultLocale.code}/next-data/og/announcement/Run JavaScript Everywhere`
+        : `${defaultLocale.code}/next-data/og/${data.category ?? DEFAULT_CATEGORY_OG_TYPE}/${pageMetadata.title}`,
     ];
 
     // Default canonical URL for the page
