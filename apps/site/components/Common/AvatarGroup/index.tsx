@@ -35,7 +35,7 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
   );
 
   return (
-    <div className={styles.avatarGroup}>
+    <div className={classNames(styles.avatarGroup, styles[size])}>
       {renderAvatars.map(({ ...avatar }) => (
         <Fragment key={avatar.nickname}>
           <Tooltip
