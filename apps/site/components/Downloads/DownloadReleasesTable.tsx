@@ -18,6 +18,7 @@ const DownloadReleasesTable: FC = async () => {
       <thead>
         <tr>
           <th>Node.js Version</th>
+          <th>Module Version</th>
           <th>Codename</th>
           <th>Release Date</th>
           <th colSpan={2}>npm</th>
@@ -27,6 +28,7 @@ const DownloadReleasesTable: FC = async () => {
         {releaseData.map(release => (
           <tr key={release.major}>
             <td data-label="Version">v{release.version}</td>
+            <td data-label="Modules">v{release.modules}</td>
             <td data-label="LTS">{release.codename || '-'}</td>
             <td data-label="Date">
               <time>{release.releaseDate}</time>
