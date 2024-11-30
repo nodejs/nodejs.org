@@ -52,14 +52,22 @@ This the "Rum & Coke" of packages: pretty difficult to mess up. You _technially_
 
 **Working example**: [cjs-with-cjs-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/cjs-distro)
 
-```jsonc
+```json displayName="Minimal package.json"
 {
+  "name": "cjs-source-and-distribution"
+  // "main": "./index.js"
+}
+```
+
+```json displayName="Advanced (verbose) package.json"
+{
+  "name": "cjs-source-and-distribution",
   "type": "commonjs", // current default, but may change
   "engines": { "node": ">=12.22.7" },
   "exports": {
     ".": "./dist/index.js",
-    "./package.json": "./package.json",
-  },
+    "./package.json": "./package.json"
+  }
 }
 ```
 
@@ -71,14 +79,22 @@ The "Gin & Tonic" of packages: This takes a small bit of finesse but is also pre
 
 **Working example**: [cjs-with-esm-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/esm-distro)
 
-```jsonc
+```json displayName="Minimal package.json"
 {
+  "name": "cjs-source-with-esm-distribution",
+  "main": "./dist/index.mjs"
+}
+```
+
+```json displayName="Advanced (verbose) package.json"
+{
+  "name": "cjs-source-with-esm-distribution",
   "type": "commonjs", // current default, but may change
   "engines": { "node": ">=12.22.7" },
   "exports": {
     ".": "./dist/index.mjs",
-    "./package.json": "./package.json",
-  },
+    "./package.json": "./package.json"
+  }
 }
 ```
 
@@ -104,14 +120,22 @@ Cons:
 
 **Working example**: [cjs-with-dual-distro (properties)](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/dual/property-distro)
 
-```jsonc
+```json displayName="Minimal package.json"
 {
+  "name": "cjs-source-with-esm-via-properties-distribution",
+  "main": "./dist/cjs/index.js"
+}
+```
+
+```json displayName="Advanced (verbose) package.json"
+{
+  "name": "cjs-source-with-esm-via-properties-distribution",
   "type": "commonjs", // current default, but may change
   "engines": { "node": ">=12.22.7" },
   "exports": {
     ".": "./dist/cjs/index.js",
-    "./package.json": "./package.json",
-  },
+    "./package.json": "./package.json"
+  }
 }
 ```
 
@@ -149,18 +173,32 @@ Cons:
 
 **Working example**: [cjs-with-dual-distro (wrapper)](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/dual/wrapper-distro)
 
-```jsonc
+```json displayName="Minimal package.json"
 {
-  "type": "commonjs", // current default, but may change
+  "name": "cjs-with-wrapper-dual-distro",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/wrapper.mjs",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/cjs/index.js"
+    }
+  }
+}
+```
+
+```json displayName="Advanced (verbose) package.json"
+{
+  "name": "cjs-with-wrapper-dual-distro",
+  "type": "commonjs",
   "engines": { "node": ">=12.22.7" },
   "exports": {
     ".": {
       "import": "./dist/esm/wrapper.mjs",
       "require": "./dist/cjs/index.js",
-      "default": "./dist/cjs/index.js",
+      "default": "./dist/cjs/index.js"
     },
-    "./package.json": "./package.json",
-  },
+    "./package.json": "./package.json"
+  }
 }
 ```
 
@@ -191,34 +229,61 @@ Cons:
 
 **Working example**: [cjs-with-dual-distro (double)](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/dual/double-distro)
 
-```jsonc
+```json displayName="Minimal package.json"
 {
-  "type": "commonjs", // current default, but may change
+  "name": "cjs-with-full-dual-distro",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/cjs/index.js"
+    }
+  }
+}
+```
+
+```json displayName="Advanced (verbose) package.json"
+{
+  "name": "cjs-with-full-dual-distro",
+  "type": "commonjs",
   "engines": { "node": ">=12.22.7" },
   "exports": {
     ".": {
       "import": "./dist/esm/index.mjs",
       "require": "./dist/cjs/index.js",
-      "default": "./dist/cjs/index.js",
+      "default": "./dist/cjs/index.js"
     },
-    "./package.json": "./package.json",
-  },
+    "./package.json": "./package.json"
+  }
 }
 ```
 
 Alternatively, you can use `"default"` and `"node"` keys, which are less counter-intuitive: Node.js will always choose the `"node"` option (which always works), and non-Node.js tooling will choose `"default"` when configured to target something other than node. **This precludes the dual-package hazard.**
 
-```jsonc
+```json displayName="Minimal package.json"
 {
-  "type": "commonjs", // current default, but may change
+  "name": "cjs-with-alt-full-dual-distro",
+  "exports": {
+    ".": {
+      "default": "./dist/esm/index.mjs",
+      "node": "./dist/cjs/index.js"
+    }
+  }
+}
+```
+
+```json displayName="Advanced (verbose) package.json"
+{
+  "name": "cjs-with-alt-full-dual-distro",
+  "type": "commonjs",
   "engines": { "node": ">=12.22.7" },
   "exports": {
     ".": {
       "default": "./dist/esm/index.mjs",
-      "node": "./dist/cjs/index.js",
+      "node": "./dist/cjs/index.js"
     },
-    "./package.json": "./package.json",
-  },
+    "./package.json": "./package.json"
+  }
 }
 ```
 
@@ -232,8 +297,17 @@ This is almost exactly the same as the CJS-CJS configuration above with 1 small 
 
 **Working example**: [esm-with-esm-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/esm/esm-distro)
 
-```json
+```json displayName="Minimal package.json"
 {
+  "name": "esm-source-and-distribution",
+  "type": "module"
+  // "main": "./index.js"
+}
+```
+
+```json displayName="Advanced (verbose) package.json"
+{
+  "name": "esm-source-and-distribution",
   "type": "module",
   "engines": { "node": ">=12.22.7" },
   "exports": {
@@ -275,8 +349,17 @@ The working example below was created prior to Webpack's recent release, so it u
 
 **Working example**: [esm-with-cjs-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/esm/dual/property-distro)
 
-```json
+```json displayName="Minimal package.json"
 {
+  "name": "esm-with-cjs-distribution",
+  "type": "module",
+  "main": "./dist/index.cjs"
+}
+```
+
+```json displayName="Advanced (verbose) package.json"
+{
+  "name": "esm-with-cjs-distribution",
   "type": "module",
   "engines": { "node": ">=12.22.7" },
   "exports": {
@@ -296,18 +379,33 @@ This is also almost identical to the [CJS source and dual distribution using an 
 
 **Working example**: [esm-with-dual-distro (wrapper)](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/esm/dual/wrapper-distro)
 
-```jsonc
+```json displayName="Minimal package.json"
 {
+  "name": "esm-with-cjs-and-esm-wrapper-distribution",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/wrapper.js",
+      "require": "./dist/cjs/index.cjs",
+      "default": "./dist/cjs/index.cjs"
+    }
+  }
+}
+```
+
+```json displayName="Advanced (verbose) package.json"
+{
+  "name": "esm-with-cjs-and-esm-wrapper-distribution",
   "type": "module",
   "engines": { "node": ">=12.22.7" },
   "exports": {
     ".": {
       "import": "./dist/esm/wrapper.js",
       "require": "./dist/cjs/index.cjs",
-      "default": "./dist/cjs/index.cjs",
+      "default": "./dist/cjs/index.cjs"
     },
-    "./package.json": "./package.json",
-  },
+    "./package.json": "./package.json"
+  }
 }
 ```
 
@@ -329,7 +427,19 @@ Support for the `.cjs` file extension was added in 12.0.0, and using it will cau
 
 **Working example**: [esm-with-dual-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/esm/dual/double-distro)
 
-```json displayName="import & require"
+```json displayName="Minimal import & require package.json"
+{
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/index.cjs"
+    }
+  }
+}
+```
+
+```json displayName="Advanced (verbose) import & require package.json"
 {
   "type": "module",
   "engines": { "node": ">=12.22.7" },
@@ -345,7 +455,19 @@ Support for the `.cjs` file extension was added in 12.0.0, and using it will cau
 
 Alternatively, you can use `"default"` and `"node"` keys, which are less counter-intuitive: Node.js will always choose the `"node"` option (which always works), and non-Node.js tooling will choose `"default"` when configured to target something other than node. **This precludes the dual-package hazard.**
 
-```json displayName="default & node"
+```json displayName="Minimal default & node package.json"
+{
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./dist/esm/index.js",
+      "node": "./dist/index.cjs"
+    }
+  }
+}
+```
+
+```json displayName="Advanced (verbose) default & node package.json"
 {
   "type": "module",
   "engines": { "node": ">=12.22.7" },
