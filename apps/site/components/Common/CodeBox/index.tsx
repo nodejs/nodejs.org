@@ -7,7 +7,7 @@ import {
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
-import { Fragment, isValidElement, useRef } from 'react';
+import { Fragment, isValidElement, useEffect, useRef, useState } from 'react';
 
 import Button from '@/components/Common/Button';
 import { useCopyToClipboard, useNotification } from '@/hooks';
@@ -77,10 +77,20 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   className,
 }) => {
   const ref = useRef<HTMLPreElement>(null);
+  const [isDisabled, setIsDisabled] = useState(true);
 
   const notify = useNotification();
   const [, copyToClipboard] = useCopyToClipboard();
   const t = useTranslations();
+
+  // Update button disabled state based on content
+  useEffect(() => {
+    if (ref.current?.textContent) {
+      setIsDisabled(false);
+    } else {
+      setIsDisabled(true);
+    }
+  }, [children]);
 
   const onCopy = async () => {
     if (ref.current?.textContent) {
@@ -118,8 +128,7 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
               kind="neutral"
               className={styles.action}
               onClick={onCopy}
-              disabled={!ref.current?.textContent}
-              tabIndex={0}
+              disabled={isDisabled} // Button disabled based on state
             >
               <DocumentDuplicateIcon className={styles.icon} />
               {t('components.common.codebox.copy')}
