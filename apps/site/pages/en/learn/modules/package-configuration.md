@@ -34,8 +34,8 @@ An additional complication is bundlers, which historically managed much of this 
 
 This article covers configuration of all possible combinations in modern Node.js (v12+). If you are trying to decide which options are ideal, it is better to avoid dual packages, so either:
 
-- ESM source and distribution
 - CJS source and distribution with good/specific `module.exports`
+- ESM source and distribution
 
 | You as a package author write     | Consumers of your package write their code in                    | Your options                                                                                                                                                 |
 | :-------------------------------- | :--------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
