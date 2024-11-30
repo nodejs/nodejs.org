@@ -12,7 +12,7 @@ A frequent question is “how do I make this work!?” (often with angry tears);
 
 All the provided `package.json` configurations (not specifically marked “does not work”) work in Node.js 12.22.x (v12 latest, the oldest supported line) and 17.2.0 (current latest at the time)[^1], and for grins, with webpack 5.53.0 and 5.63.0 respectively. These are available: [nodejs/package-examples](https://github.com/nodejs/package-examples/blob/main/config).
 
-For curious cats, [Preamble: How did we get here](#preamble-how-did-we-get-here) and [Down the rabbit-hole](#down-the-rabbithole) provide background and deeper explanations. If you're just looking for a solution, jump to [Pick your poison](#pick-your-poison) for the TLDR.
+For curious cats, [Preamble: How did we get here](#preamble-how-did-we-get-here) and [Down the rabbit-hole](#down-the-rabbithole) provide background and deeper explanations. If you're just looking for a solution, jump to [Pick your fix](#pick-your-fix) for the TLDR.
 
 ## General notes
 
@@ -30,7 +30,7 @@ CommonJS (CJS) was created _long_ before ECMAScript Modules (ESM), back when Jav
 
 An additional complication is bundlers, which historically managed much of this territory. However, much of what we previously needed bundle(r)s to manage is now native functionality; yet bundlers are still (and likely always will be) necessary for some things. Unfortunately, functionality bundlers no-longer need to provide is deeply ingrained in older bundlers’ implementations, so they can at times be too helpful, and in some cases, anti-pattern (bundling a library is often not recommended by bundler authors themselves). The hows and whys of that are an article unto itself.
 
-## Pick your poison
+## Pick your fix
 
 This article covers configuration of all possible combinations in modern Node.js (v12+). If you are trying to decide which options are ideal, it is better to avoid dual packages, so either:
 
