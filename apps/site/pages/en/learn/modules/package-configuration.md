@@ -290,7 +290,7 @@ The working example below was created prior to Webpack's recent release, so it u
 
 #### Publish a CJS distribution with an ESM wrapper
 
-The "Pornstar Martini" of packages: There's a lot going on here.
+The "Pornstar Martini" of packages: There's a lot going on here. Unlike the cocktail, this is usually not the best.
 
 This is also almost identical to the [CJS source and dual distribution using an ESM wrapper](#use-a-simple-esm-wrapper), but with subtle differences `"type": "module"` and some `.cjs` file extenions in package.json.
 
