@@ -22,7 +22,7 @@ When using [`"exports"`](https://nodejs.org/api/packages.html#conditional-export
 
 `"exports"` can be advisable over [`"main"`](https://nodejs.org/api/packages.html#main) because it prevents external access to internal code (so you can be relatively sure users are not depending on things they shouldn't). If you don't need that, `"main"` is simpler and may be a better option for you.
 
-The `"engines"` field provides both a human-friendly and a machine-friendly indication of with which version(s) of Node.js the package is compatible. Depending on the package manager used, an exception may be thrown causing the installation to fail when the consumer is using an incompatible version of Node.js (which can be very helpful to consumers). Including this field will save a lot of headache for consumers with an older version of Node.js who cannot use the package.
+The `"engines"` field provides both a human-friendly and a machine-friendly indication of which version(s) of Node.js the package is compatible. Depending on the package manager used, an exception may be thrown causing the installation to fail when the consumer is using an incompatible version of Node.js (which can be very helpful to consumers). Including this field will save a lot of headache for consumers with an older version of Node.js who cannot use the package.
 
 ## Preamble: How did we get here
 
