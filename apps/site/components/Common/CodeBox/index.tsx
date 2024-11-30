@@ -119,6 +119,7 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
               className={styles.action}
               onClick={onCopy}
               disabled={!ref.current?.textContent}
+              tabIndex={0}
             >
               <DocumentDuplicateIcon className={styles.icon} />
               {t('components.common.codebox.copy')}
