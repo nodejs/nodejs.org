@@ -558,8 +558,6 @@ Excluding `"type": "module"` produces the opposite problem:
 
 This does not work because `packageJson.exports["."].import` will get interpreted as CJS (but it’s actually ESM).
 
-## Footnotes
-
 [^1]: There was a bug in Node.js v13.0–13.6 where `packageJson.exports["."]` had to be an array with verbose config options as the first item (as an object) and the “default” as the second item (as a string). See [nodejs/modules#446](https://github.com/nodejs/modules/issues/446).
 
 [^2]: The `"type"` field in package.json changes what the `.js` file extension means, similar to to an [HTML script element’s type attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-type).
