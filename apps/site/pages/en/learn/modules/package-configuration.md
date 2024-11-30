@@ -266,8 +266,8 @@ Alternatively, you can use `"default"` and `"node"` keys, which are less counter
   "name": "cjs-with-alt-full-dual-distro",
   "exports": {
     ".": {
-      "default": "./dist/esm/index.mjs",
-      "node": "./dist/cjs/index.js"
+      "node": "./dist/cjs/index.js",
+      "default": "./dist/esm/index.mjs"
     }
   }
 }
@@ -280,8 +280,8 @@ Alternatively, you can use `"default"` and `"node"` keys, which are less counter
   "engines": { "node": ">=12.22.7" },
   "exports": {
     ".": {
-      "default": "./dist/esm/index.mjs",
-      "node": "./dist/cjs/index.js"
+      "node": "./dist/cjs/index.js",
+      "default": "./dist/esm/index.mjs"
     },
     "./package.json": "./package.json"
   }
@@ -461,8 +461,8 @@ Alternatively, you can use `"default"` and `"node"` keys, which are less counter
   "type": "module",
   "exports": {
     ".": {
-      "default": "./dist/esm/index.js",
-      "node": "./dist/index.cjs"
+      "node": "./dist/index.cjs",
+      "default": "./dist/esm/index.js"
     }
   }
 }
@@ -474,8 +474,8 @@ Alternatively, you can use `"default"` and `"node"` keys, which are less counter
   "engines": { "node": ">=12.22.7" },
   "exports": {
     ".": {
-      "default": "./dist/esm/index.js",
-      "node": "./dist/index.cjs"
+      "node": "./dist/index.cjs",
+      "default": "./dist/esm/index.js"
     },
     "./package.json": "./package.json"
   }
