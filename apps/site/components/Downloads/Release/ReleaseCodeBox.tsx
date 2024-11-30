@@ -21,13 +21,20 @@ const ReleaseCodeBox: FC = () => {
   const t = useTranslations();
 
   useEffect(() => {
-    const updatedCode = getNodeDownloadSnippet(release, os, t)[platform];
-    // Docker and NVM support downloading tags/versions by their full release number
-    // but usually we should recommend users to download "major" versions
-    // since our Download Buttons get the latest minor of a major, it does make sense
-    // to request installation of a major via a package manager
-    memoizedShiki.then(shiki => shiki(updatedCode, 'bash')).then(setCode);
-    // Only react when the specific release number changed
+    async function getSnippet() {
+      const [shiki, { [platform]: updatedCode }] = await Promise.all([
+        memoizedShiki,
+        getNodeDownloadSnippet(release, os, t),
+      ]);
+
+      // Docker and nvm support downloading tags/versions by their full release number
+      // but usually we should recommend users to download "major" versions since
+      // our Download Buttons get the latest minor of a major, it does make sense
+      // to request installation of a major via a package manager
+      setCode(await shiki(updatedCode, 'bash'));
+      // Only react when the specific release number changed
+    }
+    getSnippet();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [release.versionWithPrefix, os, platform]);
 
