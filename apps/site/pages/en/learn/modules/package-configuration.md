@@ -243,7 +243,7 @@ This is almost exactly the same as the CJS-CJS configuration above with 1 small 
 }
 ```
 
-Note that ESM now _is_ “backwards” compatible with CJS: a CJS module now _can_ [`require()` an ES Module](https://nodejs.org/api/modules.html#loading-ecmascript-modules-using-require) without a flag as of 23.0.0.
+Note that ESM now _is_ “backwards” compatible with CJS: a CJS module now _can_ [`require()` an ES Module](https://nodejs.org/api/modules.html#loading-ecmascript-modules-using-require) without a flag as of 23.0.0 and 22.12.0.
 
 ### ESM source with only CJS distribution
 
