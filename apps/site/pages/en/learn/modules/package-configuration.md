@@ -36,6 +36,7 @@ This article covers configuration of all possible combinations in modern Node.js
 
 - CJS source and distribution with good/specific `module.exports`
 - ESM source and distribution
+  - If your source-code does _not_ contain any top-level `await`, your ESM likely can be `required()`, meaning it can be consumed by a project using CJS. See [`require()` an ES Module](https://nodejs.org/api/modules.html#loading-ecmascript-modules-using-require).
 
 | You as a package author write     | Consumers of your package write their code in                    | Your options                                                                                                                                                 |
 | :-------------------------------- | :--------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
