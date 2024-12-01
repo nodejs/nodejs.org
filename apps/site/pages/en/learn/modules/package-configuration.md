@@ -152,7 +152,7 @@ const someObject = {
 module.exports = someObject;
 ```
 
-Instead, do this:
+Node.js detects the named exports in CJS via [static analysis that look for certain patterns](https://github.com/nodejs/cjs-module-lexer/tree/main?tab=readme-ov-file#parsing-examples), which the example above evades. To make the named exports detectable, do this:
 
 ```cjs
 module.exports.foo = function foo() {};
