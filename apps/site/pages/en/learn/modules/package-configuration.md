@@ -140,7 +140,7 @@ Cons:
 }
 ```
 
-Typically, you would see `module.exports` assigned to something (be it an object or a function) like this:
+Sometimes, a CJS module may re-assign `module.exports` to something else (be it an object or a function) like this:
 
 ```cjs
 const someObject = {
