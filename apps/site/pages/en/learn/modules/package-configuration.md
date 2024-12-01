@@ -156,8 +156,8 @@ Instead, do this:
 
 ```cjs
 module.exports.foo = function foo() {};
-module.exports.foo = function bar() {};
-module.exports.foo = function qux() {};
+module.exports.bar = function bar() {};
+module.exports.qux = function qux() {};
 ```
 
 #### Use a simple ESM wrapper
