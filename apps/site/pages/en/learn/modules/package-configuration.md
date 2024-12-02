@@ -113,7 +113,7 @@ Pros:
 
 - Smaller package weight
 - Easy and simple (probably least effort if you don't mind keeping to a minor syntax stipulation)
-- Precludes the Dual-Package Hazard
+- Precludes [the Dual-Package Hazard](#the-dual-package-hazard)
 
 Cons:
 
@@ -228,7 +228,7 @@ Pros:
 Cons:
 
 - Larger package weight (basically double)
-- Vulnerable to the Dual-Package Hazard
+- Vulnerable to [the Dual-Package Hazard](#the-dual-package-hazard)
 
 **Working example**: [cjs-with-dual-distro (double)](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/dual/double-distro)
 
@@ -519,7 +519,13 @@ So when you see configuration options citing or named with `require` or `import`
 
 ⚠️ Adding an `"exports"` field/field-set to a package’s configuration effectively [blocks deep pathing into the package](https://nodejs.org/api/packages.html#package-entry-points) for anything not explicitly listed in the exports’ subpathing. This means it can be a breaking change.
 
-⚠️ Consider carefully whether to distribute both CJS and ESM: It creates the potential for the [Dual Package Hazard](https://nodejs.org/api/packages.html#dual-package-hazard) (especially if misconfigured and the consumer tries to get clever). This can lead to an extremely confusing bug in consuming projects, especially when your package is not perfectly configured. Consumers can even be blind-sided by an intermediary package that uses the "other" format of your package (eg consumer uses the ESM distribution, and some other package the consumer is also using itself uses the CJS distribution). If your package is in any way stateful, consuming both the CJS and ESM distributions will result in parallel states (which is almost surely unintentional).
+⚠️ Consider carefully whether to distribute both CJS and ESM: It creates the potential for the [Dual Package Hazard](#the-dual-package-hazard) (especially if misconfigured and the consumer tries to get clever). This can lead to an extremely confusing bug in consuming projects, especially when your package is not perfectly configured. Consumers can even be blind-sided by an intermediary package that uses the "other" format of your package (eg consumer uses the ESM distribution, and some other package the consumer is also using itself uses the CJS distribution). If your package is in any way stateful, consuming both the CJS and ESM distributions will result in parallel states (which is almost surely unintentional).
+
+### The dual-package hazard
+
+When an application is using a package that provides both CommonJS and ES module sources, there is a risk of certain bugs if both instances of the package get loaded. This potential comes from the fact that the `pkgInstance` created by `const pkgInstance = require('pkg')` is not the same as the `pkgInstance` created by `import pkgInstance from 'pkg'` (or an alternative main path like `'pkg/module'`). This is the “dual package hazard”, where two instances of the same package can be loaded within the same runtime environment. While it is unlikely that an application or package would intentionally load both instances directly, it is common for an application to load one copy while a dependency of the application loads the other copy. This hazard can happen because Node.js supports intermixing CommonJS and ES modules, and can lead to unexpected and confusing behavior.
+
+If the package main export is a constructor, an `instanceof` comparison of instances created by the two copies returns `false`, and if the export is an object, properties added to one (like `pkgInstance.foo = 3`) are not present on the other. This differs from how `import` and `require` statements work in all-CommonJS or all-ES module environments, respectively, and therefore is surprising to users. It also differs from the behavior users are familiar with when using transpilation via tools like [Babel](https://babeljs.io/) or [`esm`](https://github.com/standard-things/esm#readme).
 
 ## Gotchas
 
