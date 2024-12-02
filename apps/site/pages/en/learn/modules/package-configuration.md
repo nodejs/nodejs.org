@@ -203,7 +203,7 @@ Cons:
 }
 ```
 
-In order to support named exports from the CJS bundle for an ESM consumer, this will need a bit of gymnastics from a bundler but is conceptually very simple.
+When the CJS output from the bundler evades the named exports detection in Node.js, a ESM wrapper can be used to explicitly re-export the known named exports for ESM consumers.
 
 When CJS exports an object (which gets aliased to ESM's `default`), you can save references to all the members of the object locally in the wrapper, and then re-export them so the ESM consumer can access all of them by name.
 
