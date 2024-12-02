@@ -48,8 +48,8 @@ node -e "console.log(123)"
 
 ## Restart the application automatically
 
-As of nodejs V16, there is a built-in option to automatically restart the application when a file changes. This is useful for development purposes.
-To use this feature, you need to pass the `--watch' flag to nodejs.
+As of Node.js V16, there is a built-in option to automatically restart the application when a file changes. This is useful for development purposes.
+To use this feature, you need to pass the `--watch` flag to Node.js.
 
 ```bash
 node --watch app.js
@@ -58,4 +58,48 @@ node --watch app.js
 So when you change the file, the application will restart automatically.
 Read the [`--watch` flag documentation](https://nodejs.org/docs/latest-v22.x/api/cli.html#--watch).
 
-## Run a task with node.js
+## Run a task with Node.js
+
+Node.js provides a built-in task runner that allows you to execute specific commands defined in your `package.json` file. This can be particularly useful for automating repetitive tasks such as running tests, building your project, or linting your code.
+
+### Using the `--run` flag
+
+The `--run` flag allows you to run a specified command from the `scripts` section of your `package.json` file. For example, if you have the following `package.json`:
+
+```json
+{
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --run -- --watch",
+    "test": "node --test",
+  }
+}
+```
+
+You can run the `test` script using the `--run` flag:
+
+```bash
+node --run test
+```
+
+### Passing arguments to the command
+
+Let's explain the `dev` key in the `scripts` object of the `package.json` file.
+
+The syntaxt `-- --another-argument` is used to pass arguments to the command. In this case, the `--watch` argument is passed to the `dev` script.
+
+```bash
+node --run dev
+```
+
+### Environment variables
+
+The `--run` flag sets specific environment variables that can be useful for your scripts:
+
+- `NODE_RUN_SCRIPT_NAME`: The name of the script being run.
+- `NODE_RUN_PACKAGE_JSON_PATH`: The path to the `package.json` file being processed.
+
+### Intentional limitations
+
+The Node.js task runner is intentionally more limited compared to other task runners like `npm run` or `yarn run`. It focuses on performance and simplicity, omitting features like running `pre` or `post` scripts. This makes it suitable for straightforward tasks but may not cover all use cases.
