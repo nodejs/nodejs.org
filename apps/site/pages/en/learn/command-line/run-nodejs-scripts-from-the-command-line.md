@@ -56,4 +56,6 @@ node --watch app.js
 ```
 
 So when you change the file, the application will restart automatically.
-Read the [`--watch` flag documentation](https://nodejs.org/docs/latest/api/cli.html#--watch).
+Read the [`--watch` flag documentation](https://nodejs.org/docs/latest-v22.x/api/cli.html#--watch).
+
+## Run a task with node.js

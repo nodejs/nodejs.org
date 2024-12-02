@@ -57,3 +57,10 @@ node --env-file=.env --env-file=.development.env app.js
 ```
 
 > Note: if the same variable is defined in the environment and in the file, the value from the environment takes precedence.
+
+But there may be a problem: if the file doesn't exist, it will return an error.
+To avoid this, you can use the `--env-file-if-exists` flag.
+
+```bash
+node --env-file-if-exists=.env app.js
+```
