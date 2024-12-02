@@ -87,7 +87,7 @@ node --run test
 
 Let's explain the `dev` key in the `scripts` object of the `package.json` file.
 
-The syntaxt `-- --another-argument` is used to pass arguments to the command. In this case, the `--watch` argument is passed to the `dev` script.
+The syntax `-- --another-argument` is used to pass arguments to the command. In this case, the `--watch` argument is passed to the `dev` script.
 
 ```bash
 node --run dev
