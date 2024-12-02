@@ -64,7 +64,7 @@ Node.js provides a built-in task runner that allows you to execute specific comm
 
 ### Using the `--run` flag
 
-The `--run` flag allows you to run a specified command from the `scripts` section of your `package.json` file. For example, if you have the following `package.json`:
+The [`--run`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--run) flag allows you to run a specified command from the `scripts` section of your `package.json` file. For example, if you have the following `package.json`:
 
 ```json
 {
