@@ -346,9 +346,16 @@ The "Mojito" of packages: Tricky to make and needs good ingredients.
 
 This option is almost identical to the [CJS source with CJS & ESM distribution's property exports](#attach-named-exports-directly-onto-raw-exports-endraw-) above. The only difference is in package.json: `"type": "module"`.
 
-Only some build tools support generating this output. [Rollup](https://www.rollupjs.org/) produces compatible output out of the box when targetting commonjs. Webpack as of [v5.66.0+](https://github.com/webpack/webpack/releases/tag/v5.66.0) does with the new [`commonjs-static`](https://webpack.js.org/configuration/output/#type-commonjs-static) output type, (prior to this no commonjs options produces compatible output). It is not currently possible with [esbuild](https://esbuild.github.io/) (which produces a non-static `exports`).
+Only some build tools support generating this output. [Rollup](https://www.rollupjs.org/) produces compatible output out of the box when targetting commonjs. Webpack as of [v5.66.0+](https://github.com/webpack/webpack/releases/tag/v5.66.0) does with the new [`commonjs-static`](https://webpack.js.org/configuration/output/#type-commonjs-static) output type, (prior to this, no commonjs options produces compatible output). It is not currently possible with [esbuild](https://esbuild.github.io/) (which produces a non-static `exports`).
 
 The working example below was created prior to Webpack's recent release, so it uses Rollup (I'll get around to adding a Webpack option too).
+
+These examples assume javascript files within use the extension `.js`; `"type"` in `package.json` controls how those are interpreted:
+
+`"type":"commonjs"` + `.js` → `cjs`<br />
+`"type":"module"` + `.js` → `mjs`
+
+If your files explicitly _all_ use `.cjs` and/or `.mjs` file extensions (none use `.js`), `"type"` is superfluous.
 
 **Working example**: [esm-with-cjs-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/esm/dual/property-distro)
 
