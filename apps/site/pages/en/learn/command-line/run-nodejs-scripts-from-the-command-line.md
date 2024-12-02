@@ -14,7 +14,7 @@ If your main Node.js application file is `app.js`, you can call it by typing:
 node app.js
 ```
 
-Above, you are explicitly telling the shell to run your script with `node`. You can also embed this information into your JavaScript file with a ["shebang"](https://en.wikipedia.org/wiki/Shebang_(Unix)) line. The "shebang" is the first line in the file, and tells the OS which interpreter to use for running the script. Below is the first line of JavaScript:
+Above, you are explicitly telling the shell to run your script with `node`. You can also embed this information into your JavaScript file with a ["shebang"](<https://en.wikipedia.org/wiki/Shebang_(Unix)>) line. The "shebang" is the first line in the file, and tells the OS which interpreter to use for running the script. Below is the first line of JavaScript:
 
 ```js
 #!/usr/bin/node
@@ -72,7 +72,7 @@ The [`--run`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--run) flag allo
   "scripts": {
     "start": "node app.js",
     "dev": "node --run -- --watch",
-    "test": "node --test",
+    "test": "node --test"
   }
 }
 ```
