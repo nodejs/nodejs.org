@@ -21,6 +21,7 @@ You can pass multiple variables to `console.log`, for example:
 ```js
 const x = 'x';
 const y = 'y';
+
 console.log(x, y);
 ```
 
@@ -177,7 +178,7 @@ There is a `styleText` function provided by the `node:util` module. Let's discov
 
 First of all, you need to import the `styleText` function from the `node:util` module:
 
-```esm
+```mjs
 import { styleText } from 'node:util';
 ```
 
