@@ -16,7 +16,7 @@ USER_ID=239482 USER_KEY=foobar node app.js
 
 That will pass the user `USER_ID` as **239482** and the `USER_KEY` as **foobar**. This is suitable for testing, however for production, you will probably be configuring some bash scripts to export variables.
 
-> Note: `process` does not require a "require", it's automatically available.
+> Note: `process` does not need to be imported, it is a global object in Node.js.
 
 Here is an example that accesses the `USER_ID` and `USER_KEY` environment variables, which we set in above code.
 
