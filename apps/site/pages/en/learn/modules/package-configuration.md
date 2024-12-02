@@ -205,7 +205,7 @@ Cons:
 
 In order to support named exports from the CJS bundle for an ESM consumer, this will need a bit of gymnastics from a bundler but is conceptually very simple.
 
-In certain conditions, CJS exports an object (which gets aliased to ESM's `default`); that object, like any object, is destructure-able. You can leverage that to pluck all the members of the object out, and then re-export them so the ESM consumer is none the wiser.
+When CJS exports an object (which gets aliased to ESM's `default`), you can save references to all the members of the object locally in the wrapper, and then re-export them so the ESM consumer can access all of them by name.
 
 ```js displayName="./dist/esm/wrapper.mjs"
 import cjs from '../cjs/index.js';
