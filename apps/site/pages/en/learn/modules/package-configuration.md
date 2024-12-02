@@ -215,6 +215,8 @@ const { a, b, c /* … */ } = cjs;
 export { a, b, c /* … */ };
 ```
 
+**However**, this does break live bindings: a reassignment to `cjs.a` will not reflect in `esmWrapper.a`.
+
 #### Two full distributions
 
 The "Long Island Ice Tea" of packages: Chuck in a bunch of stuff and hope for the best. This is probably the most common and easiest of the CJS to CJS & ESM options, but you pay for it. This is rarely a good idea.
