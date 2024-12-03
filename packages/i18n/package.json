@@ -15,12 +15,9 @@
     "build": "tsc --declaration --emitDeclarationOnly",
     "lint:js": "eslint \"**/*.{js,mjs,ts}\""
   },
-  "engines": {
-    "node": ">=20"
-  },
   "devDependencies": {
     "eslint-import-resolver-typescript": "~3.6.3",
     "typescript": "~5.6.3",
-    "typescript-eslint": "~8.14.0"
+    "typescript-eslint": "~8.16.0"
   }
 }

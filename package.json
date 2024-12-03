@@ -1,7 +1,7 @@
 {
+  "name": "nodejs-website",
   "type": "module",
   "private": true,
-  "name": "nodejs-website",
   "description": "Nodejs.org Website",
   "homepage": "https://nodejs.org",
   "repository": {
@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": "v20"
+    "node": "v22"
   },
   "workspaces": [
     "apps/*",
@@ -35,19 +35,20 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "husky": "9.1.6",
+    "husky": "9.1.7",
     "lint-staged": "15.2.10",
     "turbo": "2.3.0"
   },
   "devDependencies": {
-    "@eslint/js": "~9.14.0",
+    "@eslint/js": "~9.16.0",
     "@types/eslint__js": "8.42.3",
+    "@types/node": "22.9.3",
     "commitizen": "4.3.1",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "~9.14.0",
-    "eslint-plugin-import-x": "~4.4.2",
+    "eslint": "~9.16.0",
+    "eslint-plugin-import-x": "~4.4.3",
     "eslint-plugin-no-relative-import-paths": "~1.5.5",
-    "prettier": "3.3.3",
-    "prettier-plugin-tailwindcss": "0.6.8"
+    "prettier": "3.4.1",
+    "prettier-plugin-tailwindcss": "0.6.9"
   }
 }

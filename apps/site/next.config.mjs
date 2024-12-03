@@ -7,11 +7,6 @@ import { redirects, rewrites } from './next.rewrites.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Just to ensure that React is always on strict mode
-  reactStrictMode: true,
-  // We intentionally disable Next.js's built-in i18n support
-  // as we dom have our own i18n and internationalisation engine
-  i18n: null,
   // We don't use trailing slashes on URLs from the Node.js Website
   trailingSlash: false,
   // We don't want to redirect with trailing slashes
@@ -23,7 +18,8 @@ const nextConfig = {
   images: {
     // We disable image optimisation during static export builds
     unoptimized: ENABLE_STATIC_EXPORT,
-    // We add it to the remote pattern for the static images we use from GitHub
+    // We add it to the remote pattern for the static images we use from multiple sources
+    // to be marked as safe sources (these come from Markdown files)
     remotePatterns: [
       {
         protocol: 'https',
