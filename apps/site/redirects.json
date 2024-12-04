@@ -265,6 +265,10 @@
       "destination": "/:locale/about/get-involved/:path*"
     },
     {
+      "source": "/:locale/about/get-involved/contribute",
+      "destination": "https://github.com/nodejs/node/blob/main/CONTRIBUTING.md"
+    },
+    {
       "source": "/learn",
       "destination": "/en/learn"
     },
