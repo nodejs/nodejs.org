@@ -449,7 +449,7 @@ The [OpenSSF][] is leading several initiatives that can be very useful, especial
 [typosquatting]: https://en.wikipedia.org/wiki/Typosquatting
 [Mitigations for lockfile poisoning]: https://blog.ulisesgascon.com/lockfile-posioned
 [`npm ci`]: https://docs.npmjs.com/cli/v8/commands/npm-ci
-[`npm audit`]: https://docs.npmjs.com/cli/v9/commands/npm-audit
+[`npm-audit`]: https://docs.npmjs.com/cli/v9/commands/npm-audit
 [secure-heap documentation]: https://nodejs.org/dist/latest-v18.x/docs/api/cli.html#--secure-heapn
 [CVE-2022-21824]: https://www.cvedetails.com/cve/CVE-2022-21824/
 [CVE-2018-3721]: https://www.cvedetails.com/cve/CVE-2018-3721/
