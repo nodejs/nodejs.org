@@ -2,15 +2,14 @@
 import { useFormatter } from 'next-intl';
 import type { FC } from 'react';
 
-import AvatarGroup from '@/components/Common/AvatarGroup';
 import MetaBar from '@/components/Containers/MetaBar';
 import GitHub from '@/components/Icons/Social/GitHub';
 import Link from '@/components/Link';
+import WithAvatarGroup from '@/components/withAvatarGroup';
 import { useClientContext } from '@/hooks/react-client';
 import useMediaQuery from '@/hooks/react-client/useMediaQuery';
 import { DEFAULT_DATE_FORMAT } from '@/next.calendar.constants.mjs';
-import { getGitHubBlobUrl, getGitHubAvatarUrl } from '@/util/gitHubUtils';
-import { getAcronymFromString } from '@/util/stringUtils';
+import { getGitHubBlobUrl } from '@/util/gitHubUtils';
 
 const WithMetaBar: FC = () => {
   const { headings, readingTime, frontmatter, filename } = useClientContext();
@@ -21,13 +20,12 @@ const WithMetaBar: FC = () => {
 
   const usernames =
     frontmatter.authors?.split(',').map(author => author.trim()) ?? [];
-  const avatars = usernames.map(username => ({
-    src: getGitHubAvatarUrl(username),
-    alt: getAcronymFromString(username),
-  }));
 
-  // Doing that because on mobile list on top of page and on desktop list on the right side
-  const shortAvatarList = useMediaQuery(
+  // Since we cannot show the same number of avatars in Mobile / Tablet
+  // resolution as we do on desktop and there is overflow, we are adjusting
+  // the number of avatars manually for the resolutions below
+  const isMobileResolution = useMediaQuery('(max-width: 670px)');
+  const isTabletResolution = useMediaQuery(
     '(min-width: 670px) and (max-width: 1280px)'
   );
 
@@ -36,10 +34,14 @@ const WithMetaBar: FC = () => {
       items={{
         'components.metabar.lastUpdated': lastUpdated,
         'components.metabar.readingTime': readingTime.text,
-        ...(avatars.length && {
-          [`components.metabar.${avatars.length > 1 ? 'authors' : 'author'}`]: (
-            <AvatarGroup avatars={avatars} limit={shortAvatarList ? 4 : 8} />
-          ),
+        ...(usernames.length && {
+          [`components.metabar.${usernames.length > 1 ? 'authors' : 'author'}`]:
+            (
+              <WithAvatarGroup
+                usernames={usernames}
+                limit={isMobileResolution ? 7 : isTabletResolution ? 5 : 9}
+              />
+            ),
         }),
         'components.metabar.contribute': (
           <>

@@ -1,12 +1,19 @@
 import { deflateSync } from 'node:zlib';
 
 import provideReleaseData from '@/next-data/providers/releaseData';
-import { VERCEL_REVALIDATE } from '@/next.constants.mjs';
+import { GITHUB_API_KEY } from '@/next.constants.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 import type { GitHubApiFile } from '@/types';
 import { getGitHubApiDocsUrl } from '@/util/gitHubUtils';
 import { parseRichTextIntoPlainText } from '@/util/stringUtils';
 
+// Defines if we should use the GitHub API Key for the request
+// based on the environment variable `GITHUB_API_KEY`
+const authorizationHeaders = GITHUB_API_KEY
+  ? { headers: { Authorization: `Bearer ${GITHUB_API_KEY}` } }
+  : undefined;
+
+// Formats a pathname for an API file from Markdown file basename
 const getPathnameForApiFile = (name: string, version: string) =>
   `docs/${version}/api/${name.replace('.md', '.html')}`;
 
@@ -20,7 +27,10 @@ export const GET = async () => {
     release => release.status === 'LTS'
   )!;
 
-  const gitHubApiResponse = await fetch(getGitHubApiDocsUrl(versionWithPrefix));
+  const gitHubApiResponse = await fetch(
+    getGitHubApiDocsUrl(versionWithPrefix),
+    authorizationHeaders
+  );
 
   return gitHubApiResponse.json().then((apiDocsFiles: Array<GitHubApiFile>) => {
     // maps over each api file and get the download_url, fetch the content and deflates it
@@ -62,9 +72,9 @@ export const dynamicParams = false;
 
 // Enforces that this route is used as static rendering
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
-export const dynamic = 'error';
+export const dynamic = 'force-static';
 
 // Ensures that this endpoint is invalidated and re-executed every X minutes
 // so that when new deployments happen, the data is refreshed
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
-export const revalidate = VERCEL_REVALIDATE;
+export const revalidate = 300;

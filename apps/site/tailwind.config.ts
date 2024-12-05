@@ -139,9 +139,21 @@ export default {
       spacing: { '4.5': '1.125rem', '18': '4.5rem' },
       aria: { current: 'current="page"' },
       maxWidth: { '8xl': '95rem' },
+      animation: {
+        surf: 'surf 1s infinite ease-in-out',
+      },
+      keyframes: {
+        surf: {
+          '0%': { transform: 'translate(0, 0)' },
+          '25%': { transform: 'translate(0, 6px)' },
+          '50%': { transform: 'translate(0, -6px)' },
+          '75%': { transform: 'translate(0, 3px)' },
+          '100%': { transform: 'translate(0, 0)' },
+        },
+      },
     },
   },
-  darkMode: ['class', '[data-theme="dark"]'],
+  darkMode: ['selector', '[data-theme="dark"]'],
   plugins: [
     require('@savvywombat/tailwindcss-grid-areas'),
     require('@tailwindcss/container-queries'),

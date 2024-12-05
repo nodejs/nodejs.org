@@ -79,7 +79,7 @@ const PlatformDropdown: FC = () => {
       ariaLabel={t('layouts.download.dropdown.platform')}
       defaultValue={platform}
       onChange={platform => setPlatform(platform as PackageManager)}
-      className="w-28"
+      className="min-w-28"
       inline={true}
     />
   );

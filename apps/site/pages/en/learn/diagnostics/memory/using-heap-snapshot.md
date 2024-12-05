@@ -156,7 +156,7 @@ heap snapshot exercise][heapsnapshot exercise].
 [take a heap snapshot image]: /static/images/docs/guides/diagnostics/snapshot.png
 [heapsnapshot-signal flag]: https://nodejs.org/api/cli.html#--heapsnapshot-signalsignal
 [heapdump package]: https://www.npmjs.com/package/heapdump
-[`writeHeapSnapshot` docs]: https://nodejs.org/api/v8.html#v8_v8_writeheapsnapshot_filename
+[`writeHeapSnapshot` docs]: https://nodejs.org/api/v8.html#v8writeheapsnapshotfilenameoptions
 [openprofiling]: https://github.com/vmarchaud/openprofiling-node
 [load button image]: /static/images/docs/guides/diagnostics/load-snapshot.png
 [comparison image]: /static/images/docs/guides/diagnostics/compare.png

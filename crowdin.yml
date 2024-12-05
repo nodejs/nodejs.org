@@ -1,8 +1,10 @@
-commit_message: 'chore: synced translations from crowdin [skip ci]'
+project_id_env: 'CROWDIN_PROJECT_ID'
+api_token_env: 'CROWDIN_PERSONAL_TOKEN'
 append_commit_message: false
-pull_request_title: '[automated]: crowdin sync'
-pull_request_labels:
-  - 'github_actions:pull-request'
+
+# without this, crowdin will flatten all files
+preserve_hierarchy: true
+
 files:
   - source: /apps/site/pages/en/**/*.md
     translation: /apps/site/pages/%two_letters_code%/**/%original_file_name%
@@ -30,8 +32,8 @@ files:
         pt-BR: pt-br
         zh-CN: zh-cn
         zh-TW: zh-tw
-  - source: /apps/site/i18n/locales/en.json
-    translation: /apps/site/i18n/locales/%two_letters_code%.json
+  - source: /packages/i18n/locales/en.json
+    translation: /packages/i18n/locales/%two_letters_code%.json
     languages_mapping:
       two_letters_code:
         es-ES: es

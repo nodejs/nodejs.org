@@ -1,0 +1,23 @@
+{
+  "name": "@node-core/website-i18n",
+  "type": "module",
+  ".": {
+    "types": "./dist/index.d.mts",
+    "default": "./lib/index.mjs"
+  },
+  "main": "./lib/index.mjs",
+  "module": "./lib/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "locales"
+  ],
+  "scripts": {
+    "build": "tsc --declaration --emitDeclarationOnly",
+    "lint:js": "eslint \"**/*.{js,mjs,ts}\""
+  },
+  "devDependencies": {
+    "eslint-import-resolver-typescript": "~3.6.3",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "~8.16.0"
+  }
+}

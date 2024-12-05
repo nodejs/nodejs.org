@@ -15,16 +15,6 @@ export const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 export const VERCEL_ENV = process.env.NEXT_PUBLIC_VERCEL_ENV || undefined;
 
 /**
- * This is used for defining a default time of when `next-data` and other dynamically generated
- * but static-enabled pages should be regenerated.
- *
- * Note that this is a custom Environment Variable that can be defined by us when necessary
- */
-export const VERCEL_REVALIDATE = Number(
-  process.env.NEXT_PUBLIC_VERCEL_REVALIDATE_TIME || 300
-);
-
-/**
  * This is used for telling Next.js to do a Static Export Build of the Website
  *
  * This is used for static/without a Node.js server hosting, such as on our
@@ -100,6 +90,17 @@ export const NEXT_DATA_URL = process.env.NEXT_PUBLIC_DATA_URL
 export const MD_EXTENSION_REGEX = /((\/)?(index))?\.mdx?$/i;
 
 /**
+ * This is the default type of blog post type that we use for OG Meta Tags
+ */
+export const DEFAULT_CATEGORY_OG_TYPE = 'announcement';
+
+/**
+ * This is the base url for changelog entries
+ */
+export const BASE_CHANGELOG_URL =
+  'https://github.com/nodejs/node/releases/tag/v';
+
+/**
  * This defines how many blog posts each pagination page should have
  */
 export const BLOG_POSTS_PER_PAGE = 6;
@@ -160,3 +161,21 @@ export const ORAMA_CLOUD_ENDPOINT =
  * This is a public API key and can be shared publicly on the frontend.
  */
 export const ORAMA_CLOUD_API_KEY = process.env.NEXT_PUBLIC_ORAMA_API_KEY || '';
+
+/**
+ * A GitHub Access Token for accessing the GitHub API and not being rate-limited
+ * The current token is registered on the "nodejs-vercel" GitHub Account.
+ *
+ * Note: This has no NEXT_PUBLIC prefix as it should not be exposed to the Browser.
+ */
+export const GITHUB_API_KEY = process.env.NEXT_GITHUB_API_KEY || '';
+
+/**
+ * OpenJS Ecosystem Support Program (ESP) partners provide security updates and support for end-of-life and unsupported versions
+ *
+ * See https://openjsf.org/ecosystem-sustainability-program
+ *
+ * This is the minimum version Node.js support according to https://nodejs.org/en/about/previous-releases
+ */
+export const ESP_SUPPORT_THRESHOLD_VERSION =
+  process.env.ESP_SUPPORT_THRESHOLD_VERSION || '18.0.0';

@@ -43,7 +43,7 @@
 
 ```bash
 npm ci
-npx turbo dev
+npm run dev
 
 # listening at localhost:3000
 ```
@@ -104,6 +104,8 @@ These are maintained in different repositories and we urge users to open **issue
 [Dependency Pinning][]
 
 [Translation Guidelines][]
+
+[Status Page](https://status.nodejs.org/) of the Node.js web infrastructure.
 
 ## Thanks
 

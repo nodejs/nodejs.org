@@ -1,0 +1,328 @@
+{
+  "components": {
+    "containers": {
+      "footer": {
+        "links": {
+          "trademarkPolicy": "Політика торгових марок",
+          "privacyPolicy": "Політика конфіденційності",
+          "codeOfConduct": "Кодекс поведінки",
+          "security": "Політика безпеки"
+        }
+      },
+      "navBar": {
+        "links": {
+          "about": "Про Node.js",
+          "download": "Завантажити",
+          "docs": "Документація",
+          "guides": "Посібники",
+          "learn": "Навчання",
+          "security": "Безпека",
+          "certification": "Сертифікація",
+          "blog": "Блог"
+        }
+      }
+    },
+    "navigation": {
+      "learn": {
+        "gettingStarted": {
+          "links": {
+            "gettingStarted": "Початок роботи",
+            "introductionToNodejs": "Вступ до Node.js",
+            "howToInstallNodejs": "Як установити Node.js",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Як добре треба знати JavaScript, щоб використовувати Node.js?",
+            "differencesBetweenNodejsAndTheBrowser": "Різниця між Node.js і браузером",
+            "theV8JavascriptEngine": "Рушій JavaScript V8",
+            "anIntroductionToTheNpmPackageManager": "Вступ до менеджера пакетів npm",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) і новіші версії",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Різниця між клієнтським та розробницьким середовищем у Node.js",
+            "nodejsWithWebassembly": "Node.js із WebAssembly",
+            "debugging": "Налагодження Node.js",
+            "profiling": "Профілювання застосунків Node.js",
+            "securityBestPractices": "Найкращі практики безпеки"
+          }
+        },
+        "typescript": {
+          "links": {
+            "typescript": "TypeScript",
+            "introduction": "Вступ до TypeScript",
+            "transpile": "Запуск коду на TypeScript за допомогою транспіляції",
+            "run": "Запуск коду на TypeScript із виконавцем",
+            "runNatively": "Запуск коду на TypeScript нативно"
+          }
+        },
+        "asynchronousWork": {
+          "links": {
+            "asynchronousWork": "Асинхронна робота",
+            "asynchronousFlowControl": "Асинхронне управління потоком",
+            "overviewOfBlockingVsNonBlocking": "Огляд блокувальних і неблокувальних викликів",
+            "javascriptAsynchronousProgrammingAndCallbacks": "Асинхронне програмування і функції зворотного виклику в JavaScript",
+            "discoverJavascriptTimers": "Таймери JavaScript",
+            "eventLoopTimersAndNexttick": "Цикл подій у Node.js",
+            "theNodejsEventEmitter": "Емітер подій у Node.js",
+            "understandingProcessnexttick": "Розуміння process.nextTick()",
+            "understandingSetimmediate": "Розуміння setImmediate()",
+            "dontBlockTheEventLoop": "Уникайте блокування циклу подій"
+          }
+        },
+        "manipulatingFiles": {
+          "links": {
+            "manipulatingFiles": "Робота з файлами",
+            "nodejsFileStats": "Властивості файлу в Node.js",
+            "nodejsFilePaths": "Шляхи файлу в Node.js",
+            "workingWithFileDescriptorsInNodejs": "Робота з файловими дескрипторами в Node.js",
+            "readingFilesWithNodejs": "Читання файлів із Node.js",
+            "writingFilesWithNodejs": "Запис у файл із Node.js",
+            "workingWithFoldersInNodejs": "Робота з директоріями з Node.js",
+            "workingWithDifferentFilesystems": "Робота з різними файловими системами"
+          }
+        },
+        "commandLine": {
+          "links": {
+            "commandLine": "Командний рядок",
+            "runNodejsScriptsFromTheCommandLine": "Запуск скриптів Node.js із командного рядка",
+            "howToReadEnvironmentVariablesFromNodejs": "Отримання доступу до змінних середовища в Node.js",
+            "howToUseTheNodejsRepl": "Як використовувати REPL у Node.js",
+            "outputToTheCommandLineUsingNodejs": "Вивід у командний рядок із Node.js",
+            "acceptInputFromTheCommandLineInNodejs": "Зчитування вводу з командного рядка з Node.js"
+          }
+        },
+        "modules": {
+          "links": {
+            "modules": "Модулі",
+            "publishingNodeApiModules": "Як опублікувати пакет Node-API",
+            "anatomyOfAnHttpTransaction": "Анатомія HTTP-транзакції",
+            "abiStability": "Стабільність ABI",
+            "backpressuringInStreams": "Зворотний тиск у потоках"
+          }
+        },
+        "diagnostics": {
+          "links": {
+            "diagnostics": "Діагностика",
+            "userJourney": "Шлях користувача",
+            "memory": "Пам’ять",
+            "liveDebugging": "Налагодження в реальному часі",
+            "poorPerformance": "Низька продуктивність",
+            "flameGraphs": "Flame-графіки"
+          }
+        },
+        "testRunner": {
+          "links": {
+            "testRunner": "Виконавець тестів",
+            "introduction": "Що таке виконавець тестів у Node.js?",
+            "usingTestRunner": "Використання виконавця тестів у Node.js"
+          }
+        }
+      },
+      "about": {
+        "links": {
+          "about": "Про Node.js",
+          "aboutSide": "Про Node.js®",
+          "branding": "Брендинг Node.js",
+          "governance": "Управління проєктом",
+          "releases": "Релізи Node.js",
+          "security": "Звітність про безпеку"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "getInvolved": "Долучитися",
+          "collabSummit": "Саміт співпраці",
+          "upcomingEvents": "Майбутні події",
+          "contribute": "Внесок у Node.js",
+          "codeOfConduct": "Кодекс поведінки"
+        }
+      }
+    },
+    "downloadList": {
+      "links": {
+        "previousReleases": "Релізи Node.js",
+        "packageManager": "Установка Node.js через менеджер пакетів",
+        "shaSums": {
+          "title": "Підписані SHASUMS для файлів релізу",
+          "howToVerify": " (Як перевірити)"
+        },
+        "allDownloads": "Усі варіанти завантажень",
+        "nightlyReleases": "Нічні збірки",
+        "unofficialBuilds": "Неофіційні збірки",
+        "buildingFromSource": "Збірка Node.js із вихідного коду на підтримуваних платформах",
+        "installingOnLinux": "Установка Node.js через бінарний архів",
+        "installingOnWsl": "Установка на підсистемі Windows для Linux (WSL)"
+      }
+    },
+    "downloadReleasesTable": {
+      "changelog": "Список змін",
+      "releases": "Релізи",
+      "docs": "Документація"
+    },
+    "pagination": {
+      "next": "Далі",
+      "previous": "Назад"
+    },
+    "common": {
+      "breadcrumbs": {
+        "navigateToHome": "До головної"
+      },
+      "crossLink": {
+        "previous": "Назад",
+        "next": "Далі"
+      },
+      "codebox": {
+        "copy": "Скопіювати",
+        "copied": "Скопійовано!"
+      },
+      "pagination": {
+        "prev": "Назад",
+        "prevAriaLabel": "Попередня сторінка",
+        "next": "Далі",
+        "nextAriaLabel": "Наступна сторінка",
+        "defaultLabel": "Нумерація сторінок",
+        "pageLabel": "Перейти до {pageNumber} сторінки"
+      },
+      "sidebar": {
+        "title": "Змінити сторінку"
+      },
+      "languageDropdown": {
+        "label": "Обрати мову"
+      },
+      "themeToggle": {
+        "label": "Перемкнути темний режим"
+      }
+    },
+    "mdx": {
+      "upcomingEvents": {
+        "defaultTitle": "Немає майбутніх подій"
+      }
+    },
+    "metabar": {
+      "lastUpdated": "Востаннє оновлено",
+      "readingTime": "Час на читання",
+      "addedIn": "Додано",
+      "author": "Автор",
+      "authors": "Автори",
+      "contribute": "Долучитися",
+      "contributeText": "Редагувати цю сторінку",
+      "viewAs": "Переглянути як",
+      "tableOfContents": "Зміст"
+    },
+    "downloads": {
+      "changelogModal": {
+        "startContributing": "Долучитися"
+      }
+    },
+    "search": {
+      "searchBox": {
+        "placeholder": "Пошук..."
+      },
+      "seeAll": {
+        "text": "Переглянути всі {count} результатів"
+      },
+      "searchError": {
+        "text": "Виникла помилка під час пошуку. Спробуйте пізніше."
+      },
+      "poweredBy": {
+        "text": "За підтримки"
+      },
+      "noResults": {
+        "text": "Не знайдено результатів для «{query}»."
+      },
+      "emptyState": {
+        "text": "Знайти щось..."
+      },
+      "searchPage": {
+        "title": "Ви шукаєте: {query}"
+      }
+    },
+    "blog": {
+      "blogHeader": {
+        "subtitle": "Останні новини Node.js, тематичні дослідження, практичні заняття та ресурси.",
+        "rssLink": "RSS-канал"
+      }
+    }
+  },
+  "layouts": {
+    "blogPost": {
+      "author": {
+        "byLine": "{author, select, null {} other  {Від {author}, }}"
+      }
+    },
+    "blogIndex": {
+      "categoryName": "{category, select, all {Блог} other {Пости блогу {category}}}"
+    },
+    "blog": {
+      "title": "Блог",
+      "selectCategory": "Категорії",
+      "categories": {
+        "all": "Усе",
+        "announcements": "Оголошення",
+        "release": "Релізи",
+        "vulnerability": "Уразливості",
+        "advisory-board": "Консультативний комітет",
+        "community": "Спільнота",
+        "feature": "Функціонал",
+        "module": "Модуль",
+        "npm": "npm",
+        "uncategorized": "Без категорії",
+        "video": "Відео",
+        "weekly": "Щотижневі оновлення",
+        "wg": "Робочі групи",
+        "events": "Події"
+      }
+    },
+    "error": {
+      "notFound": {
+        "title": "Сторінку не знайдено",
+        "description": "На жаль, нам не вдалося знайти сторінку, яку ви шукаєте! Спробуйте почати знову з головної сторінки."
+      },
+      "internalServerError": {
+        "title": "Внутрішня помилка сервера",
+        "description": "На цій сторінці виникла невиправна помилка."
+      },
+      "backToHome": "До головної"
+    },
+    "download": {
+      "selectCategory": "Категорії",
+      "categories": {
+        "prebuilt-installer": "Готовий інсталятор",
+        "prebuilt-binaries": "Готові бінарні файли",
+        "package-manager": "Менеджер пакетів",
+        "source-code": "Вихідний код"
+      },
+      "buttons": {
+        "prebuilt": "Завантажити Node.js {version}",
+        "source": "Завантажити вихідний код Node.js {version}"
+      },
+      "dropdown": {
+        "bitness": "Розрядність",
+        "os": "Операційна система",
+        "version": "Версія",
+        "platform": "Платформа"
+      },
+      "codeBox": {
+        "fnmEnvSetup": "налаштовує середовище fnm",
+        "systemManagerWarning": "не є менеджером пакетів Node.js. Переконайтеся, що у вас уже встановлено {packageManager}.",
+        "communityWarning": "Менеджери пакетів та їхні скрипти встановлення не обслуговуються проєктом Node.js.",
+        "communityWarningReport": "Якщо у вас виникне проблема, звертайтеся до супроводжувачів менеджера пакетів.",
+        "installsNvm": "установлює nvm (Node Version Manager)",
+        "downloadAndInstallNodejsRestartTerminal": "завантажує й установлює Node.js (можливо, вам доведеться перезапустити термінал)",
+        "verifiesRightNodejsVersion": "перевіряє правильність версії Node.js у середовищі",
+        "verifiesRightNpmVersion": "перевіряє правильність версії npm у середовищі",
+        "shouldPrint": "повинно вивести `{version}`",
+        "installsFnm": "установлює fnm (Fast Node Manager)",
+        "downloadAndInstallNodejs": "завантажує й установлює Node.js",
+        "activateFNM": "активує fnm",
+        "noteWithColon": "ПРИМІТКА:",
+        "dockerIsNotNodejsPackageManager": "Docker не є менеджером пакетів Node.js.",
+        "PleaseEndureAlreadyInstallOnSystem": "Переконайтеся, що він уже встановлений на вашій системі.",
+        "dockerInstructions": "Дотримуйтесь офіційних інструкцій на https://docs.docker.com/desktop/",
+        "dockerImagesLink": "Образи Docker офіційно надаються на https://github.com/nodejs/docker-node/",
+        "pullsNodejsDockerImage": "завантажує образ Docker Node.js",
+        "homebrewIsNotNodejsPackageManager": "Homebrew не є менеджером пакетів Node.js.",
+        "homebrewInstructions": "Дотримуйтесь офіційних інструкцій на https://brew.sh/",
+        "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew підтримує лише основні версії Node.js і може не підтримувати останню версію Node.js {version} ряду версій.",
+        "chocolateyIsNotNodejsPackageManager": "Chocolatey не є менеджером пакетів Node.js.",
+        "chocolateyInstructions": "Дотримуйтесь офіційних інструкцій на https://chocolatey.org/",
+        "chocolateyNotMaintanedByNodejs": "Chocolatey офіційно не підтримується проєктом Node.js і може не підтримувати Node.js версії {version}"
+      }
+    }
+  }
+}

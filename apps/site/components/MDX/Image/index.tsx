@@ -2,7 +2,11 @@ import type { ImageProps } from 'next/image';
 import Image from 'next/image';
 import type { FC } from 'react';
 
-const MDXImage: FC<ImageProps> = ({ width, height, alt, ...props }) => {
+import { isSvgImage } from '@/util/imageUtils';
+
+const MDXImage: FC<ImageProps> = ({ width, height, alt, src, ...props }) => {
+  const isUnoptimizedImage = isSvgImage(src.toString());
+
   if (!width || !height) {
     // Since `width` and `height` are not provided in the Markdown image format,
     // we provide the height and width automatically.
@@ -10,6 +14,8 @@ const MDXImage: FC<ImageProps> = ({ width, height, alt, ...props }) => {
     return (
       <Image
         {...props}
+        src={src}
+        unoptimized={isUnoptimizedImage}
         alt={alt}
         width={0}
         height={0}
@@ -19,7 +25,16 @@ const MDXImage: FC<ImageProps> = ({ width, height, alt, ...props }) => {
     );
   }
 
-  return <Image {...props} alt={alt} width={width} height={height} />;
+  return (
+    <Image
+      {...props}
+      alt={alt}
+      width={width}
+      height={height}
+      src={src}
+      unoptimized={isUnoptimizedImage}
+    />
+  );
 };
 
 export default MDXImage;

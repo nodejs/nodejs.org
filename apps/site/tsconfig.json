@@ -9,23 +9,14 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "paths": {
-      "@/*": ["./*"]
-    },
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "paths": { "@/*": ["./*"] },
+    "plugins": [{ "name": "next" }],
     "baseUrl": "."
-  },
-  "mdx": {
-    "checkMdx": true
   },
   "include": [
     "next-env.d.ts",
@@ -34,8 +25,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".storybook/**/*.ts",
-    ".storybook/**/*.tsx",
-    "build/types/**/*.ts"
+    ".storybook/**/*.tsx"
   ],
   "exclude": ["node_modules", ".next"]
 }

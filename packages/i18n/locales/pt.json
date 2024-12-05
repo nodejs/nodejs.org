@@ -1,0 +1,329 @@
+{
+  "components": {
+    "containers": {
+      "footer": {
+        "links": {
+          "trademarkPolicy": "Política da Marca Comercial",
+          "privacyPolicy": "Política de Privacidade",
+          "codeOfConduct": "Código de Conduta",
+          "security": "Política de Segurança"
+        }
+      },
+      "navBar": {
+        "links": {
+          "about": "Sobre",
+          "download": "Descarregar",
+          "docs": "Documentação",
+          "guides": "Guias",
+          "learn": "Estudar",
+          "security": "Segurança",
+          "certification": "Certificação",
+          "blog": "Blogue"
+        }
+      }
+    },
+    "navigation": {
+      "learn": {
+        "gettingStarted": {
+          "links": {
+            "gettingStarted": "Começar",
+            "introductionToNodejs": "Introdução ao Node.js",
+            "howToInstallNodejs": "Como instalar o Node.js",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Quanto JavaScript precisas de saber para usar o Node.js?",
+            "differencesBetweenNodejsAndTheBrowser": "Diferenças entre o Node.js e o Navegador",
+            "theV8JavascriptEngine": "O Motor de JavaScript V8",
+            "anIntroductionToTheNpmPackageManager": "Introdução ao gestor de pacotes npm",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) e além",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, a diferença entre o desenvolvimento e a produção",
+            "nodejsWithWebassembly": "Node.js com WebAssembly",
+            "debugging": "Depuração da Node.js",
+            "profiling": "Definição de Perfis de Aplicações de Node.js",
+            "securityBestPractices": "Boas Práticas de Segurança"
+          }
+        },
+        "typescript": {
+          "links": {
+            "typescript": "TypeScript",
+            "introduction": "Introdução à TypeScript",
+            "transpile": "Executar o código da TypeScript utilizando a tradução de código",
+            "run": "Executar a TypeScript com uma executora",
+            "runNatively": "Executar a TypeScript Nativamente"
+          }
+        },
+        "asynchronousWork": {
+          "links": {
+            "asynchronousWork": "Trabalho Assíncrono",
+            "asynchronousFlowControl": "Controlo do Fluxo Assíncrono",
+            "overviewOfBlockingVsNonBlocking": "Visão Geral de Bloqueante vs Não Bloqueante",
+            "javascriptAsynchronousProgrammingAndCallbacks": "Programação Assíncrona de JavaScript e Funções de Resposta",
+            "discoverJavascriptTimers": "Descobrir os Temporizadores da JavaScript",
+            "eventLoopTimersAndNexttick": "O Ciclo de Evento da Node.js",
+            "theNodejsEventEmitter": "O Emissor de Evento da Node.js",
+            "understandingProcessnexttick": "Entendendo o process.nextTick()",
+            "understandingSetimmediate": "Entendendo o setImmediate()",
+            "dontBlockTheEventLoop": "Não Bloqueie o Ciclo de Eventos"
+          }
+        },
+        "manipulatingFiles": {
+          "links": {
+            "manipulatingFiles": "Manipulando Ficheiros",
+            "nodejsFileStats": "Estatísticas de Ficheiro da Node.js",
+            "nodejsFilePaths": "Caminhos de Ficheiros no Node.js",
+            "workingWithFileDescriptorsInNodejs": "Trabalhar com os Descritores de Ficheiro na Node.js",
+            "readingFilesWithNodejs": "Ler Ficheiros com a Node.js",
+            "writingFilesWithNodejs": "Escrever Ficheiros com a Node.js",
+            "workingWithFoldersInNodejs": "Trabalhando com pastas no Node.js",
+            "workingWithDifferentFilesystems": "Como trabalhar com diferentes Sistemas de Ficheiros"
+          }
+        },
+        "commandLine": {
+          "links": {
+            "commandLine": "Linha de Comando",
+            "runNodejsScriptsFromTheCommandLine": "Execute scripts de Node.js através da linha de comandos",
+            "howToReadEnvironmentVariablesFromNodejs": "Como Ler Variáveis de Ambiente no Node.js",
+            "howToUseTheNodejsRepl": "Como Usar o REPL do Node.js",
+            "outputToTheCommandLineUsingNodejs": "Saída para a linha de comando usando o Node.js",
+            "acceptInputFromTheCommandLineInNodejs": "Aceitar entrada na linha de comando no Node.js"
+          }
+        },
+        "modules": {
+          "links": {
+            "modules": "Módulos",
+            "publishingNodeApiModules": "Como publicar um pacote da Node-API",
+            "anatomyOfAnHttpTransaction": "Anatomia de uma Transação do Protocolo de Hipertexto",
+            "abiStability": "Estabilidade da Interface Binária da Aplicação",
+            "backpressuringInStreams": "Contrapressão nas Correntes de Dados"
+          }
+        },
+        "diagnostics": {
+          "links": {
+            "diagnostics": "Diagnósticos",
+            "userJourney": "Jornada do Utilizador",
+            "memory": "Memória",
+            "liveDebugging": "Depuração em Direto",
+            "poorPerformance": "Desempenho Deficiente",
+            "flameGraphs": "Gráficos de Chamas"
+          }
+        },
+        "testRunner": {
+          "links": {
+            "testRunner": "Executor de Teste",
+            "introduction": "Descobrir o executor de teste da Node.js",
+            "usingTestRunner": "Usar o executor de teste da Node.js",
+            "mocking": "Simulação em Testes"
+          }
+        }
+      },
+      "about": {
+        "links": {
+          "about": "Sobre a Node.js",
+          "aboutSide": "Sobre a Node.js®",
+          "branding": "Marca da Node.js",
+          "governance": "Gestão do Projeto",
+          "releases": "Lançamentos da Node.js",
+          "security": "Relatórios de Segurança"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "getInvolved": "Participar",
+          "collabSummit": "Cimeira de Colaboração",
+          "upcomingEvents": "Próximos Eventos",
+          "contribute": "Colaborar com a Node.js",
+          "codeOfConduct": "Código de Conduta"
+        }
+      }
+    },
+    "downloadList": {
+      "links": {
+        "previousReleases": "Lançamentos da Node.js",
+        "packageManager": "Instalar a Node.js através do gestor de pacote",
+        "shaSums": {
+          "title": "SHASUMS assinados para ficheiros de lançamento",
+          "howToVerify": " (Como verificar)"
+        },
+        "allDownloads": "Todas as opções de descarga",
+        "nightlyReleases": "Compilações noturnas",
+        "unofficialBuilds": "Compilações não oficiais",
+        "buildingFromSource": "Compilar a Node.js a partir do código fonte nas plataformas suportadas",
+        "installingOnLinux": "Instalar a Node.js através do arquivo binário",
+        "installingOnWsl": "Instalar no Subsistema de Windows para Linux (WSL)"
+      }
+    },
+    "downloadReleasesTable": {
+      "changelog": "Registo de Alterações",
+      "releases": "Lançamentos",
+      "docs": "Documentação"
+    },
+    "pagination": {
+      "next": "Próxima",
+      "previous": "Anterior"
+    },
+    "common": {
+      "breadcrumbs": {
+        "navigateToHome": "Navegar para a Página Inicial"
+      },
+      "crossLink": {
+        "previous": "Anterior",
+        "next": "Próximo"
+      },
+      "codebox": {
+        "copy": "Copiar para a área de transferência",
+        "copied": "Copiado para a área de transferência!"
+      },
+      "pagination": {
+        "prev": "Anterior",
+        "prevAriaLabel": "Página anterior",
+        "next": "Próximo",
+        "nextAriaLabel": "Próxima página",
+        "defaultLabel": "Paginação",
+        "pageLabel": "Ir para a página {pageNumber}"
+      },
+      "sidebar": {
+        "title": "Mudar de página"
+      },
+      "languageDropdown": {
+        "label": "Selecionar o idioma"
+      },
+      "themeToggle": {
+        "label": "Alternar Modo Escuro"
+      }
+    },
+    "mdx": {
+      "upcomingEvents": {
+        "defaultTitle": "Nenhum Evento Próximo"
+      }
+    },
+    "metabar": {
+      "lastUpdated": "Última Atualização",
+      "readingTime": "Duração da Leitura",
+      "addedIn": "Adicionado Em",
+      "author": "Autor(a)",
+      "authors": "Autores",
+      "contribute": "Colaborar",
+      "contributeText": "Editar esta página",
+      "viewAs": "Ver como",
+      "tableOfContents": "Índice"
+    },
+    "downloads": {
+      "changelogModal": {
+        "startContributing": "Começar a Colaborar"
+      }
+    },
+    "search": {
+      "searchBox": {
+        "placeholder": "Pesquisar..."
+      },
+      "seeAll": {
+        "text": "Ver todos os {count} resultados"
+      },
+      "searchError": {
+        "text": "Ocorreu um erro durante a pesquisa. Por favor, tente novamente mais tarde."
+      },
+      "poweredBy": {
+        "text": "Com o apoio de"
+      },
+      "noResults": {
+        "text": "Não foram encontrados resultados para \"{query}\"."
+      },
+      "emptyState": {
+        "text": "Procure algo..."
+      },
+      "searchPage": {
+        "title": "Estás a pesquisar: {query}"
+      }
+    },
+    "blog": {
+      "blogHeader": {
+        "subtitle": "As últimas notícias, estudos de caso, tutoriais e recursos da Node.js.",
+        "rssLink": "RSS feed"
+      }
+    }
+  },
+  "layouts": {
+    "blogPost": {
+      "author": {
+        "byLine": "{author, select, null {} other {Por {author}, }}"
+      }
+    },
+    "blogIndex": {
+      "categoryName": "{category, select, all {Blog} other {Publicações do Blogue {category}}}"
+    },
+    "blog": {
+      "title": "Blogue",
+      "selectCategory": "Categorias",
+      "categories": {
+        "all": "Tudo",
+        "announcements": "Anúncios",
+        "release": "Lançamentos",
+        "vulnerability": "Vulnerabilidades",
+        "advisory-board": "Conselho Consultivo",
+        "community": "Comunidade",
+        "feature": "Funcionalidade",
+        "module": "Módulo",
+        "npm": "npm",
+        "uncategorized": "Sem categoria",
+        "video": "Vídeo",
+        "weekly": "Atualizações Semanais",
+        "wg": "Grupos de Trabalho",
+        "events": "Eventos"
+      }
+    },
+    "error": {
+      "notFound": {
+        "title": "Não foi possível encontrar a página",
+        "description": "Lamentamos, mas não conseguimos encontrar a página que procuravas! Tente começar de novo a partir da página inicial."
+      },
+      "internalServerError": {
+        "title": "Erro Interno do Servidor",
+        "description": "Esta página registou um erro irrecuperável."
+      },
+      "backToHome": "Voltar à Página Inicial"
+    },
+    "download": {
+      "selectCategory": "Categorias",
+      "categories": {
+        "prebuilt-installer": "Instalador do Pré-compilado",
+        "prebuilt-binaries": "Binários Pré-compilados",
+        "package-manager": "Gestor de Pacote",
+        "source-code": "Código-Fonte"
+      },
+      "buttons": {
+        "prebuilt": "Descarregar a Node.js {version}",
+        "source": "Descarregue o código fonte do Node.js {version}"
+      },
+      "dropdown": {
+        "bitness": "Quantidade dos Bits",
+        "os": "Sistema Operativo",
+        "version": "Versão",
+        "platform": "Plataforma"
+      },
+      "codeBox": {
+        "fnmEnvSetup": "configurar o ambiente da fnm",
+        "systemManagerWarning": "não é um gestor de pacote da Node.js. Devemos certificar-nos de que já temos {packageManager} instalado.",
+        "communityWarning": "Os gestores de pacotes e os seus programas de instalação não são mantidos pelo projeto Node.js.",
+        "communityWarningReport": "Se encontrarmos problemas, devemos dirigir-nos aos responsáveis do gestor de pacote.",
+        "installsNvm": "instala a nvm (Node Version Manager, ou Gestor de Pacote de Node)",
+        "downloadAndInstallNodejsRestartTerminal": "descarregar e instalar a Node.js (podemos precisar de reiniciar o terminal)",
+        "verifiesRightNodejsVersion": "verifica se a versão correta da Node.js está no ambiente",
+        "verifiesRightNpmVersion": "verifica se a versão correta da npm está no ambiente",
+        "shouldPrint": "deve imprimir `{version}`",
+        "installsFnm": "instala a fnm (Fast Node Manager, ou Gestor Rápido de Node)",
+        "downloadAndInstallNodejs": "decarregar e instalar a Node.js",
+        "activateFNM": "ativar a fnm",
+        "noteWithColon": "NOTA:",
+        "dockerIsNotNodejsPackageManager": "Docker não é um gestor de pacote da Node.js.",
+        "PleaseEndureAlreadyInstallOnSystem": "Precisamos de certificar-nos de que já instalada no nosso sistema.",
+        "dockerInstructions": "Seguir as instruções oficiais em https://docs.docker.com/desktop/",
+        "dockerImagesLink": "As imagens da Docker são fornecidas oficialmente em https://github.com/nodejs/docker-node/",
+        "pullsNodejsDockerImage": "puxa a imagem de Docker da Node.js",
+        "homebrewIsNotNodejsPackageManager": "Homebrew não é um gestor de pacote da Node.js.",
+        "homebrewInstructions": "Seguir as instruções oficiais em https://brew.sh/",
+        "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew só suporta instalar versões principais da Node.js e pode não suportar a versão mais recente da Node.js da linha de lançamento {version}.",
+        "chocolateyIsNotNodejsPackageManager": "Chocolatey não é um gestor de pacote da Node.js.",
+        "chocolateyInstructions": "Seguir as instruções oficiais em https://chocolatey.org/",
+        "chocolateyNotMaintanedByNodejs": "Chocolatey não é oficialmente mantida pelo projeto Node.js e pode não suportar a versão {version} da Node.js"
+      }
+    }
+  }
+}

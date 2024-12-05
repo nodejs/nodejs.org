@@ -23,7 +23,9 @@ updates:
         patterns:
           - '@typescript-eslint/*'
           - 'eslint'
+          - 'typescript-eslint'
           - 'eslint-*'
+          - '@eslint/*'
           - 'stylelint'
           - 'stylelint-*'
         exclude-patterns:
@@ -43,10 +45,9 @@ updates:
       next-js:
         patterns:
           - 'next'
-          - 'turbo'
-          - 'next-mdx-remote'
-          - 'next-sitemap'
-          - 'next-themes'
+          - 'eslint-config-next'
+          - '@next/eslint-plugin-next'
+          - 'next-*'
           - '@vercel/*'
       mdx:
         patterns:
@@ -63,8 +64,13 @@ updates:
       tailwind:
         patterns:
           - '@savvywombat/tailwindcss-grid-areas'
+          - '@tailwindcss/container-queries'
           - 'prettier-plugin-tailwindcss'
           - 'tailwindcss'
+      orama:
+        patterns:
+          - '@orama/*'
+          - '@oramacloud/*'
     ignore:
       # Manually update major versions of @types/node with the version specified within .nvmrc
       - dependency-name: '@types/node'

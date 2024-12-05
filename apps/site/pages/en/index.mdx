@@ -4,14 +4,13 @@ layout: home
 ---
 
 <section>
- <WithBadge section="index" />
+  <WithBadge section="index" />
 
   <div>
     <h1 className="special">Run JavaScript Everywhere</h1>
 
-    Node.js® is a free, open-source, cross-platform JavaScript runtime
-    environment that lets developers create servers, web apps,
-    command line tools and scripts.
+    Node.js® is a free, open-source, cross-platform JavaScript runtime environment
+    that lets developers create servers, web apps, command line tools and scripts.
 
   </div>
 
@@ -23,11 +22,12 @@ layout: home
           <small>
             Downloads Node.js <b>{release.versionWithPrefix}</b>
             <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
-            Node.js can also be installed via <a href="/download/package-manager">package managers</a>.
+            Node.js can also be installed via <Link href="/download/package-manager">package managers</Link>.
           </small>
         </>
       )}
     </WithNodeRelease>
+
     <WithNodeRelease status={['Current']}>
       {({ release }) => (
         <small>
@@ -37,6 +37,7 @@ layout: home
         </small>
       )}
     </WithNodeRelease>
+
   </div>
 </section>
 

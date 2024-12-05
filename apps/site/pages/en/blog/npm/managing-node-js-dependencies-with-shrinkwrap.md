@@ -14,7 +14,7 @@ author: Dave Pacheco
 Photo by Luc Viatour (flickr)
 </p>
 
-**This post is outdated.** Please refer to official npm documentation on [shrinkwrap](https://docs.npmjs.com/cli/v8/configuring-npm/npm-shrinkwrap-json) and/or [lockfiles](https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json) instead.
+**This post is outdated.** Please refer to official npm documentation on [shrinkwrap](https://docs.npmjs.com/cli/configuring-npm/npm-shrinkwrap-json) and/or [lockfiles](https://docs.npmjs.com/cli/configuring-npm/package-lock-json) instead.
 
 <details>
 <summary>Original contents</summary>

@@ -16,11 +16,13 @@
         "NEXT_PUBLIC_BASE_PATH",
         "NEXT_PUBLIC_ORAMA_API_KEY",
         "NEXT_PUBLIC_ORAMA_ENDPOINT",
-        "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
-        "NEXT_PUBLIC_DATA_URL"
+        "NEXT_PUBLIC_DATA_URL",
+        "TURBO_CACHE",
+        "TURBO_TELEMETRY_DISABLED"
       ]
     },
     "build": {
+      "dependsOn": ["^build"],
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
         "{app,components,layouts,pages,styles}/**/*.css",
@@ -39,8 +41,9 @@
         "NEXT_PUBLIC_BASE_PATH",
         "NEXT_PUBLIC_ORAMA_API_KEY",
         "NEXT_PUBLIC_ORAMA_ENDPOINT",
-        "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
-        "NEXT_PUBLIC_DATA_URL"
+        "NEXT_PUBLIC_DATA_URL",
+        "TURBO_CACHE",
+        "TURBO_TELEMETRY_DISABLED"
       ]
     },
     "start": {
@@ -56,8 +59,9 @@
         "NEXT_PUBLIC_BASE_PATH",
         "NEXT_PUBLIC_ORAMA_API_KEY",
         "NEXT_PUBLIC_ORAMA_ENDPOINT",
-        "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
-        "NEXT_PUBLIC_DATA_URL"
+        "NEXT_PUBLIC_DATA_URL",
+        "TURBO_CACHE",
+        "TURBO_TELEMETRY_DISABLED"
       ]
     },
     "deploy": {
@@ -79,8 +83,9 @@
         "NEXT_PUBLIC_BASE_PATH",
         "NEXT_PUBLIC_ORAMA_API_KEY",
         "NEXT_PUBLIC_ORAMA_ENDPOINT",
-        "NEXT_PUBLIC_VERCEL_REVALIDATE_TIME",
-        "NEXT_PUBLIC_DATA_URL"
+        "NEXT_PUBLIC_DATA_URL",
+        "TURBO_CACHE",
+        "TURBO_TELEMETRY_DISABLED"
       ]
     },
     "lint:js": {
@@ -89,8 +94,7 @@
         "{next-data,scripts,i18n}/**/*.{mjs,json}",
         "{.storybook,public}/**/*.{ts,js,json}",
         "*.{json,ts,tsx}"
-      ],
-      "outputs": [".eslintjscache"]
+      ]
     },
     "lint:md": {
       "inputs": ["{app,pages}/**/*.{md,mdx}", "*.{md,mdx}"],

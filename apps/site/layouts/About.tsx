@@ -1,6 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 
 import WithBreadcrumbs from '@/components/withBreadcrumbs';
+import WithFooter from '@/components/withFooter';
 import WithMetaBar from '@/components/withMetaBar';
 import WithNavBar from '@/components/withNavBar';
 import WithSidebar from '@/components/withSidebar';
@@ -21,6 +22,8 @@ const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
 
       <WithBreadcrumbs navKeys={['about', 'getInvolved']} />
     </ArticleLayout>
+
+    <WithFooter />
   </>
 );
 

@@ -65,38 +65,32 @@ describe('BlogPostCard', () => {
     );
 
     it('Renders all passed authors fullName(s), comma-separated', () => {
-      const authors = [
-        { fullName: 'Jane Doe', src: '' },
-        { fullName: 'John Doe', src: '' },
-      ];
+      const authors = ['Jane Doe', 'John Doe'];
 
       renderBlogPostCard({ authors });
 
       const fullNames = authors.reduce((prev, curr, index) => {
         if (index === 0) {
-          return curr.fullName;
+          return curr;
         }
 
-        return `${prev}, ${curr.fullName}`;
+        return `${prev}, ${curr}`;
       }, '');
 
       expect(screen.getByText(fullNames)).toBeVisible();
     });
 
     it('Renders all passed authors fullName(s), comma-separated', () => {
-      const authors = [
-        { fullName: 'Jane Doe', src: '' },
-        { fullName: 'John Doe', src: '' },
-      ];
+      const authors = ['Jane Doe', 'John Doe'];
 
       renderBlogPostCard({ authors });
 
       const fullNames = authors.reduce((prev, curr, index) => {
         if (index === 0) {
-          return curr.fullName;
+          return curr;
         }
 
-        return `${prev}, ${curr.fullName}`;
+        return `${prev}, ${curr}`;
       }, '');
 
       expect(screen.getByText(fullNames)).toBeVisible();

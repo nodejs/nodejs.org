@@ -1,7 +1,7 @@
 {
+  "name": "nodejs-website",
   "type": "module",
   "private": true,
-  "name": "@nodejs/website",
   "description": "Nodejs.org Website",
   "homepage": "https://nodejs.org",
   "repository": {
@@ -13,11 +13,11 @@
   },
   "license": "MIT",
   "engines": {
-    "node": "v20"
+    "node": "v22"
   },
-  "packageManager": "npm@10.7.0",
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
     "dev": "turbo run dev",
@@ -29,21 +29,26 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint --force",
     "prettier": "prettier \"**/*.{js,mjs,ts,tsx,md,mdx,json,yml,css}\" --check --cache --cache-strategy=content --cache-location=.prettiercache",
-    "prettier:fix": "npm run prettier --write",
+    "prettier:fix": "npm run prettier -- --write",
     "format": "npm run lint:fix && npm run prettier:fix",
     "test": "turbo test:unit",
     "prepare": "husky"
   },
   "dependencies": {
-    "husky": "9.0.11",
-    "lint-staged": "15.2.7",
-    "turbo": "2.0.11"
+    "husky": "9.1.7",
+    "lint-staged": "15.2.10",
+    "turbo": "2.3.3"
   },
   "devDependencies": {
-    "commitizen": "4.3.0",
+    "@eslint/js": "~9.16.0",
+    "@types/eslint__js": "8.42.3",
+    "@types/node": "22.10.1",
+    "commitizen": "4.3.1",
     "cz-conventional-changelog": "3.3.0",
-    "prettier": "3.3.2",
-    "prettier-plugin-tailwindcss": "0.6.5",
-    "typescript": "~5.5.3"
+    "eslint": "~9.16.0",
+    "eslint-plugin-import-x": "~4.4.3",
+    "eslint-plugin-no-relative-import-paths": "~1.5.5",
+    "prettier": "3.4.1",
+    "prettier-plugin-tailwindcss": "0.6.9"
   }
 }

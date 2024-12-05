@@ -1,6 +1,6 @@
 # Node.js Website Translation Policy
 
-Node.js is a global platform and so this site has many translations. We use [Crowdin](https://crowdin.com) to translate the Node.js Website
+Node.js is a global platform, so this site has many translations. We use [Crowdin](https://crowdin.com) to translate the Node.js Website
 
 The site's translation into languages other than English is handled by [Crowdin translators](https://support.crowdin.com/translation-process-overview/).
 
@@ -87,3 +87,12 @@ Translation Keys should not be translated during Unit Testing. If your Component
 - Unit Tests should not rely on text, titles, or string bags, as these texts will change arbitrarily and make the test suite fail.
   - In this case, you should test your component by aria-text, or other `aria-*` attributes or even by class names or other artifacts.
 - Visual Regression Testing is recommended to test how different languages and text appear within a Component.
+
+## Deploying Translations
+
+Translations are synced between Crowdin and the repository via GitHub Actions.
+
+- On every push to `main`, we upload any new source content.
+- Via a cron schedule, and as needed manually by a collaborator, we download completed translations.
+
+Incoming translations are linted to ensure they come from crowdin, and are also formatted to adhere to our project settings.

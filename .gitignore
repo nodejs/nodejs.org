@@ -24,7 +24,6 @@ build-storybook.log
 cache
 
 # Cache Files
-.eslintjscache
 .eslintmdcache
 .stylelintcache
 .prettiercache
@@ -32,5 +31,4 @@ cache
 # TypeScript
 tsconfig.tsbuildinfo
 
-# Sentry Config File
-.sentryclirc
+dist/

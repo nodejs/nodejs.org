@@ -1,6 +1,7 @@
 ---
 title: Security Best Practices
 layout: learn
+authors: RafaelGSS, UlisesGascon, fraxken, facutuesca, mhdawson, arhart, naugtur, anonrig
 ---
 
 # Security Best Practices
@@ -441,15 +442,15 @@ The [OpenSSF][] is leading several initiatives that can be very useful, especial
 [--inspect switch]: /learn/getting-started/debugging
 [same-origin policy]: /learn/getting-started/debugging
 [DNS Rebinding wiki]: https://en.wikipedia.org/wiki/DNS_rebinding
-[files property]: https://docs.npmjs.com/cli/v8/configuring-npm/package-json#files
+[files property]: https://docs.npmjs.com/cli/configuring-npm/package-json#files
 [unpublish the package]: https://docs.npmjs.com/unpublishing-packages-from-the-registry
 [CWE-444]: https://cwe.mitre.org/data/definitions/444.html
 [RFC7230]: https://datatracker.ietf.org/doc/html/rfc7230#section-3
 [policy mechanism]: https://nodejs.org/api/permissions.html#policies
 [typosquatting]: https://en.wikipedia.org/wiki/Typosquatting
 [Mitigations for lockfile poisoning]: https://blog.ulisesgascon.com/lockfile-posioned
-[`npm ci`]: https://docs.npmjs.com/cli/v8/commands/npm-ci
 [`npm-audit`]: https://docs.npmjs.com/cli/commands/npm-audit
+[`npm ci`]: https://docs.npmjs.com/cli/v8/commands/npm-ci
 [secure-heap documentation]: https://nodejs.org/dist/latest-v18.x/docs/api/cli.html#--secure-heapn
 [CVE-2022-21824]: https://www.cvedetails.com/cve/CVE-2022-21824/
 [CVE-2018-3721]: https://www.cvedetails.com/cve/CVE-2018-3721/

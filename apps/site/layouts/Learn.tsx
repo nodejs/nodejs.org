@@ -1,6 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 
 import WithBreadcrumbs from '@/components/withBreadcrumbs';
+import WithFooter from '@/components/withFooter';
 import WithMetaBar from '@/components/withMetaBar';
 import WithNavBar from '@/components/withNavBar';
 import WithProgressionSidebar from '@/components/withProgressionSidebar';
@@ -26,6 +27,8 @@ const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
 
       <WithBreadcrumbs navKeys={['learn']} />
     </ArticleLayout>
+
+    <WithFooter />
   </>
 );
 

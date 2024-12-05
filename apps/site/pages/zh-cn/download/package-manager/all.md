@@ -1,41 +1,11 @@
 ---
-layout: download
+layout: article
 title: 通过包管理器安装 Node.js
 ---
 
 # 通过包管理器安装 Node.js
 
 > 这个页面上的软件包由各自的打包者维护和支持，而不是 Node.js 核心团队。当将您遇到的任何疑问时，请将问题报告给软件包维护者。如果问题最终是 Node.js 本身的 bug，则维护者将向上报告该问题。
-
----
-
-- [Alpine Linux](#alpine-linux)
-- [Android](#android)
-- [Arch Linux](#arch-linux)
-- [CentOS, Fedora 和 Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
-- [Debian 以及 Ubuntu based Linux 发行版](#debian-and-ubuntu-based-linux-distributions)
-- [Exherbo Linux](#exherbo-linux)
-- [fnm](#fnm)
-- [FreeBSD](#freebsd)
-- [Gentoo](#gentoo)
-- [IBM i](#ibm-i)
-- [macOS](#macos)
-- [n](#n)
-- [NetBSD](#netbsd)
-- [Nodenv](#nodenv)
-- [nvm](#nvm)
-- [nvs](#nvs)
-- [OpenBSD](#openbsd)
-- [openSUSE 与 SLE](#opensused-sle)
-- [SmartOS 和 illumos](#smartos-andillumos)
-- [Snap](#snap)
-- [Solus](#solus)
-- [vfox](#vfox)
-- [Void Linux](#void-linux)
-- [Windows](#windows-1)
-- [z/OS](#zos)
-
----
 
 ## Alpine Linux
 

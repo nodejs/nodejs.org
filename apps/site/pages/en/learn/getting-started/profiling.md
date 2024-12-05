@@ -5,6 +5,12 @@ layout: learn
 
 # Profiling Node.js Applications
 
+Profiling a Node.js application involves measuring its performance by analyzing
+the CPU, memory, and other runtime metrics while the application is running.
+This helps in identifying bottlenecks, high CPU usage, memory leaks, or slow
+function calls that may impact the application's efficiency, responsiveness
+and scalability.
+
 There are many third party tools available for profiling Node.js applications
 but, in many cases, the easiest option is to use the Node.js built-in profiler.
 The built-in profiler uses the [profiler inside V8][] which samples the stack at

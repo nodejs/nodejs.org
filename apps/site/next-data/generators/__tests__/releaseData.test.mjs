@@ -10,6 +10,15 @@ import generateReleaseData from '@/next-data/generators/releaseData.mjs';
 jest.mock('@nodevu/core');
 
 describe('generateReleaseData', () => {
+  beforeAll(() => {
+    jest.useFakeTimers();
+    jest.setSystemTime(new Date('2024-10-18'));
+  });
+
+  afterAll(() => {
+    jest.useRealTimers();
+  });
+
   test('generates release data with correct status', async () => {
     const mockNodevuOutput = {
       14: {
@@ -43,11 +52,11 @@ describe('generateReleaseData', () => {
     expect(release.version).toBe('14.0.0');
     expect(release.versionWithPrefix).toBe('v14.0.0');
     expect(release.codename).toBe('');
-    expect(release.isLts).toBe(true);
+    expect(release.isLts).toBe(false);
     expect(release.npm).toBe('6.14.10');
     expect(release.v8).toBe('8.0.276.20');
     expect(release.releaseDate).toBe('2021-04-20');
     expect(release.modules).toBe('83');
-    expect(release.status).toBe('LTS');
+    expect(release.status).toBe('End-of-life');
   });
 });

@@ -1,12 +1,8 @@
-import classNames from 'classnames';
-import type { StorybookConfig } from '@storybook/nextjs';
+import { join } from 'node:path';
 
-const rootClasses = classNames(
-  // note: this is hard-coded sadly as next/font can only be loaded within next.js context
-  '__variable_open-sans-normal',
-  // note: this is hard-coded sadly as next/font can only be loaded within next.js context
-  '__variable_ibm-plex-mono-normal'
-);
+import type { StorybookConfig } from '@storybook/react-webpack5';
+
+const mocksFolder = join(__dirname, '../components/__mocks__');
 
 const config: StorybookConfig = {
   stories: ['../components/**/*.stories.tsx'],
@@ -14,45 +10,51 @@ const config: StorybookConfig = {
   staticDirs: ['../public'],
   typescript: { reactDocgen: false, check: false },
   core: { disableTelemetry: true, disableWhatsNewNotifications: true },
-  framework: {
-    name: '@storybook/nextjs',
-    options: { builder: { useSWC: true } },
-  },
-  previewBody:
-    // This `<style>` is necessary to simulate what `next-themes` (ThemeProvider) does on real applications
-    // `next-theme` automatically injects the color-scheme based on the system preference or the current applied theme
-    // on Storybook we don't use `next-theme` as we want to simulate themes
-    '<style>:root { color-scheme: light; } html[data-theme="dark"] { color-scheme: dark; }</style>' +
-    // This adds the base styling for dark/light themes within Storybook. This is a Storybook-only style
-    `<body class="${rootClasses}"></body>`,
+  framework: '@storybook/react-webpack5',
+  swc: () => ({ jsc: { transform: { react: { runtime: 'automatic' } } } }),
   addons: [
+    '@storybook/addon-webpack5-compiler-swc',
     '@storybook/addon-controls',
     '@storybook/addon-interactions',
     '@storybook/addon-themes',
     '@storybook/addon-viewport',
+    {
+      name: '@storybook/addon-styling-webpack',
+      options: {
+        rules: [
+          {
+            test: /\.css$/,
+            use: [
+              'style-loader',
+              { loader: 'css-loader', options: { url: false } },
+              'postcss-loader',
+            ],
+          },
+        ],
+      },
+    },
   ],
   webpack: async config => ({
     ...config,
     // We want to conform as much as possible with our target settings
-    target: 'browserslist',
+    target: 'browserslist:development',
     // Performance Hints do not make sense on Storybook as it is bloated by design
     performance: { hints: false },
     // `nodevu` is a Node.js-specific package that requires Node.js modules
     // this is incompatible with Storybook. So we just mock the module
-    resolve: { ...config.resolve, alias: { '@nodevu/core': false } },
-    // We need to configure `node:` APIs as Externals to WebPack
-    // since essentially they're not supported on the browser
-    externals: {
-      'node:fs': 'commonjs fs',
-      'node:url': 'commonjs url',
-      'node:path': 'commonjs path',
-      'node:readline': 'commonjs readline',
+    resolve: {
+      ...config.resolve,
+      alias: {
+        'next-intl/navigation': join(mocksFolder, './next-intl.mjs'),
+        '@/client-context': join(mocksFolder, './client-context.mjs'),
+        '@': join(__dirname, '../'),
+      },
     },
     // Removes Pesky Critical Dependency Warnings due to `next/font`
     ignoreWarnings: [
       e =>
-        e.message.includes('Critical dep') ||
-        e.message.includes('was not found in'),
+        e.message.includes('was not found in') ||
+        e.message.includes('generated code contains'),
     ],
   }),
 };

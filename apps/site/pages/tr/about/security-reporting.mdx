@@ -1,0 +1,66 @@
+---
+title: Güvenlik Raporlaması
+layout: about
+---
+
+Güvenlik Raporlaması
+
+Aktif Güvenlik Politikaları hakkında daha fazla bilgi için [bu sayfaya](https://github.com/nodejs/node/security/policy) göz atın.
+
+## Node.js'de bir hata bildirme
+
+Node.js'deki güvenlik hatalarını [HackerOne](https://hackerone.com/nodejs) aracılığıyla bildirin.
+
+Raporunuz 5 gün içinde onaylanacak ve 10 gün içinde raporunuza, gönderiminizi ele alırken sonraki adımları belirten daha ayrıntılı bir yanıt alacaksınız.
+
+Raporunuza yapılan ilk yanıttan sonra, güvenlik ekibi sorunun düzeltilmesi ve tam bir duyuru yapılması için yapılan ilerlemeler hakkında sizi bilgilendirmeye çalışacaktır. Ayrıca, bildirilen sorun hakkında ek bilgi veya rehberlik talep edebilirler.
+
+### Node.js hata ödül programı
+
+Node.js projesi, güvenlik araştırmacıları ve sorumlu kamu açıklamaları için resmi bir hata ödül programı yürütmektedir. Program HackerOne platformu üzerinden yönetilmektedir. Daha fazla ayrıntı için [https://hackerone.com/nodejs](https://hackerone.com/nodejs) adresine bakın.
+
+## Üçüncü taraf bir modüldeki hatayı bildirme
+
+Üçüncü taraf modüllerdeki güvenlik hataları ilgili bakımcılara bildirilmelidir.
+
+## Bilgilendirme politikası
+
+Node.js için güvenlik açıklama politikası
+
+Güvenlik raporu alınır ve birincil bir işleyici atanır. Bu kişi düzeltme ve sürüm sürecini koordine edecektir. Sorun doğrulanır ve etkilenen tüm sürümlerin bir listesi belirlenir. Kod, olası benzer sorunları bulmak için denetlenir. Hala bakım altında olan tüm sürümler için düzeltmeler hazırlanır. Bu düzeltmeler genel depoya taahhüt edilmez, bunun yerine duyuruya kadar yerel olarak tutulur.
+
+Bu zafiyet için önerilen ambargo tarihi belirlenir ve bir CVE (Common Vulnerabilities and Exposures - Ortak Zayıflıklar ve Maruz Kalma) talep edilir.
+
+Ambargo tarihinde, Node.js güvenlik posta listesine duyurunun bir kopyası gönderilir. Değişiklikler genel depoya gönderilir ve yeni yapılar nodejs.org'a dağıtılır. Posta listesine bildirim yapıldıktan sonraki 6 saat içinde, duyurunun bir kopyası Node.js blogunda yayınlanır.
+
+Genellikle, zafiyetin yayınlandığı tarihten itibaren 72 saat sonra ambargo tarihi belirlenir. Ancak, bu, hatanın ciddiyetine veya bir düzeltmenin uygulanmasındaki zorluğa bağlı olarak değişebilir.
+
+Bu süreç, özellikle diğer projelerin bakımcılarıyla koordinasyon gerektiğinde biraz zaman alabilir. Hatanın mümkün olduğunca zamanında ele alınması için her türlü çaba gösterilecektir; ancak, ifşanın tutarlı bir şekilde ele alınmasını sağlamak için yukarıdaki yayın sürecini takip etmemiz önemlidir.
+
+## Güvenlik güncellemeleri almak
+
+Güvenlik bildirimleri aşağıdaki yöntemlerle dağıtılacaktır.
+
+[Google Grubu](https://groups.google.com/group/nodejs-sec)
+[Node.js Bloğu](/blog)
+
+## Bu politikaya ilişkin yorumlar
+
+Bu sürecin nasıl geliştirilebileceğine dair önerileriniz varsa lütfen
+[çekme isteği yapın](https://github.com/nodejs/nodejs.org) veya
+Tartışmak için [bir konuyu dosyalayın](https://github.com/nodejs/security-wg/issues/new).
+
+## OpenSSF En İyi Uygulamaları
+
+<a
+  href="https://bestpractices.coreinfrastructure.org/projects/29"
+  style={{ display: 'inline-flex' }}
+>
+  <img
+    alt="OpenSSF Rozeti"
+    src="https://bestpractices.coreinfrastructure.org/projects/29/badge"
+    style={{ display: 'inline' }}
+  />
+</a>
+
+Açık Kaynak Güvenlik Vakfı (OpenSSF) [En İyi Uygulamalar rozeti](https://github.com/coreinfrastructure/best-practices-badge), Özgür/Kütüphane ve Açık Kaynak Yazılım (FLOSS) projelerinin en iyi uygulamaları takip ettiklerini göstermeleri için bir yoldur. Projeler gönüllü olarak her bir en iyi uygulamayı nasıl takip ettiklerini kendi kendilerine belgeleyebilirler. Rozetin tüketicileri, hangi FLOSS projelerinin en iyi uygulamaları takip ettiğini ve sonuç olarak daha yüksek kalitede güvenli yazılım üretme olasılığının daha yüksek olduğunu hızlı bir şekilde değerlendirebilirler.

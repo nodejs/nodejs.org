@@ -8,7 +8,7 @@ import { debounce } from '@/util/debounce';
 
 const useNavigationState = <T extends HTMLElement>(
   id: string,
-  ref: RefObject<T>,
+  ref: RefObject<T | null>,
   debounceTime = 300
 ) => {
   const navigationState = useContext(NavigationStateContext);

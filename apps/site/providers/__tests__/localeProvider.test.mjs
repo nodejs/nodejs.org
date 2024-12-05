@@ -4,7 +4,7 @@ import { LocaleProvider } from '@/providers/localeProvider';
 
 jest.mock('next-intl', () => ({
   useMessages: jest.fn(() => ({ 'en-US': { greeting: 'Hello!' } })),
-  NextIntlClientProvider: ({ children }) => <>{children}</>,
+  NextIntlClientProvider: ({ children }) => children,
   useTimeZone: jest.fn(() => 'UTC'),
 }));
 
