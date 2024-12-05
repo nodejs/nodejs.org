@@ -28,10 +28,10 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2024-09-04T00:00:00.000Z",
-      "endDate": "2024-09-30T00:00:00.000Z",
-      "text": "Save 60% on Node.js Training and Certification through September 30 with code ROCKET60",
-      "link": "https://training.linuxfoundation.org/openjs-sept-24-promo/",
+      "startDate": "2024-12-04T00:00:00.000Z",
+      "endDate": "2024-12-11T00:00:00.000Z",
+      "text": "Save up to 60% on Node.js courses and certifications",
+      "link": "https://training.linuxfoundation.org/cyber-monday-openjs-2024/",
       "type": "default"
     }
   },
