@@ -45,7 +45,7 @@ jobs:
           pull_request_title: '[automated]: crowdin sync'
           pull_request_body: 'New Crowdin translations from the [Node.js Crowdin project](https://crowdin.com/project/nodejs-web)'
           pull_request_labels: github_actions:pull-request
-          commit_message: 'chore: synced translations from crowdin [skip ci]'
+          commit_message: 'chore: synced translations from crowdin'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # A numeric ID, found at https://crowdin.com/project/nodejs-web/tools/api
