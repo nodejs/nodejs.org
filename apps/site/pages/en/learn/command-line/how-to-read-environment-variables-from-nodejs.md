@@ -16,7 +16,7 @@ USER_ID=239482 USER_KEY=foobar node app.js
 
 That will pass the user `USER_ID` as **239482** and the `USER_KEY` as **foobar**. This is suitable for testing, however for production, you will probably be configuring some bash scripts to export variables.
 
-> Note: `process` does not require a "require", it's automatically available.
+> Note: `process` does not need to be imported, it is a global object in Node.js.
 
 Here is an example that accesses the `USER_ID` and `USER_KEY` environment variables, which we set in above code.
 
@@ -27,7 +27,7 @@ process.env.USER_KEY; // "foobar"
 
 In the same way you can access any custom environment variable you set.
 
-Node.js 20 introduced **experimental** [support for .env files](https://nodejs.org/dist/latest-v20.x/docs/api/cli.html#--env-fileconfig).
+Node.js 20 introduced **experimental** [support for .env files](https://nodejs.org/dist/latest-v22.x/docs/api/cli.html#--env-fileconfig).
 
 Now, you can use the `--env-file` flag to specify an environment file when running your Node.js application. Here's an example `.env` file and how to access its variables using `process.env`.
 
@@ -57,3 +57,10 @@ node --env-file=.env --env-file=.development.env app.js
 ```
 
 > Note: if the same variable is defined in the environment and in the file, the value from the environment takes precedence.
+
+But there may be a problem: if the file doesn't exist, it will return an error.
+To avoid this, you can use the `--env-file-if-exists` flag.
+
+```bash
+node --env-file-if-exists=.env app.js
+```
