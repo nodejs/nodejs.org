@@ -34,7 +34,6 @@ jobs:
   comment_on_translation_pr:
     # This comment should always be posted on forks, or from internal PRs not originating from Crowdin (which are direct branches)
     if: |
-      (github.event_name == 'workflow_run' && github.event.workflow_run.head_commit.message != 'chore: synced translations from crowdin') ||
       (github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.full_name != 'nodejs/nodejs.org') ||
       (github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.full_name == 'nodejs/nodejs.org' && github.event.pull_request.head.ref != 'chore/crowdin')
 
