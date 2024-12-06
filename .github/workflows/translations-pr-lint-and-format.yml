@@ -5,6 +5,12 @@
 name: Incoming Translation Checks
 
 on:
+  # run when new translations download
+  workflow_run:
+    workflows: ["Crowdin Download"]
+    types:
+      - completed
+  # run when someone tries to manually change localized content
   pull_request_target:
     branches:
       - main
