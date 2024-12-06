@@ -5,6 +5,7 @@
         "links": {
           "trademarkPolicy": "Kebijakan Merek Dagang",
           "privacyPolicy": "Kebijakan Privasi",
+          "versionSupport": "Dukungan Versi",
           "codeOfConduct": "Pedoman Perilaku",
           "security": "Kebijakan Keamanan"
         }
@@ -18,7 +19,8 @@
           "learn": "Pelajari",
           "security": "Keamanan",
           "certification": "Sertifikasi",
-          "blog": "Artikel"
+          "blog": "Artikel",
+          "contribute": "Kontribusi"
         }
       }
     },
@@ -35,11 +37,19 @@
             "anIntroductionToTheNpmPackageManager": "Perkenalan package manager npm",
             "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) dan seterusnya",
             "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, perbedaan antara development dan production",
-            "nodejsWithTypescript": "Node.js dengan TypeScript",
             "nodejsWithWebassembly": "Node.js dengan WebAssembly",
             "debugging": "Men-debug Node.js",
             "profiling": "Profilisasi Aplikasi Node.js",
             "securityBestPractices": "Praktik Keamanan Terbaik"
+          }
+        },
+        "typescript": {
+          "links": {
+            "typescript": "TypeScript",
+            "introduction": "Pengantar TypeScript",
+            "transpile": "Menjalankan kode TypeScript menggunakan transpilasi",
+            "run": "Menjalankan TypeScript dengan runner",
+            "runNatively": "Menjalankan TypeScript Secara Native"
           }
         },
         "asynchronousWork": {
@@ -101,7 +111,8 @@
           "links": {
             "testRunner": "Test Runner",
             "introduction": "Jelajahi Node.js test runner",
-            "usingTestRunner": "Menggunakan Node.js's test runner"
+            "usingTestRunner": "Menggunakan Node.js's test runner",
+            "mocking": "Mengejek dalam pengujian"
           }
         }
       },
@@ -178,11 +189,6 @@
       },
       "themeToggle": {
         "label": "Aktifkan Mode Gelap"
-      }
-    },
-    "mdx": {
-      "upcomingEvents": {
-        "defaultTitle": "Tidak ada Event Mendatang"
       }
     },
     "metabar": {
@@ -290,6 +296,7 @@
         "platform": "Platform"
       },
       "codeBox": {
+        "unsupportedVersionWarning": "Versi ini sudah tidak dalam tahap pemeliharaan. Temukan informasi selengkapnya di sini:",
         "fnmEnvSetup": "konfigurasikan lingkungan fnm",
         "systemManagerWarning": "bukan manajer paket Node.js. Pastikan Anda sudah menginstal {packageManager}.",
         "communityWarning": "Package manager dan skrip instalasi tidak di kelola oleh Node.js.",
