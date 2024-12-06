@@ -21,3 +21,5 @@ turbo.json @nodejs/nodejs-website @nodejs/web-infra
 crowdin.yml @nodejs/web-infra
 apps/site/redirects.json @nodejs/web-infra
 apps/site/site.json @nodejs/web-infra
+
+apps/site/pages/en/learn/getting-started/security-best-practices.md @nodejs/security-wg
