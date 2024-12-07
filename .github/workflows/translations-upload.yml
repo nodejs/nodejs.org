@@ -1,6 +1,6 @@
 # This action automates the upload of our source content to crowdin.
 # See translations-sync.yml for the automation to download new translations on a schedule
-# See translations-pr-lint-and-format.yml for quality control we conduct on ingress of new translations.
+# See translations-pr-lint.yml for quality control we conduct on ingress of new translations.
 name: Crowdin Upload
 
 on:

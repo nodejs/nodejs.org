@@ -1,6 +1,8 @@
 # This action automates the synchronization of our crowdin translations, so that a human does not need to kick it off from the crowdin UI
+# It also formats incoming content because it is often not adherent to our rules post-translation.
+
 # See translations-upload.yml for automation to upload our source content
-# See translations-pr-lint-and-format.yml for quality control we conduct on ingress of new translations.
+# See translations-pr-lint.yml for quality control we conduct on ingress of new translations.
 name: Crowdin Download
 
 on:
@@ -28,11 +30,9 @@ jobs:
         with:
           egress-policy: audit
 
-      - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-
         # see all the options at https://github.com/crowdin/github-action
-      - name: crowdin action
+      - name: Crowdin PR
+        id: crowdin
         uses: crowdin/github-action@2d540f18b0a416b1fbf2ee5be35841bd380fc1da # v2.3.0
         with:
           # do not upload anything - this is a one-way operation download
@@ -44,7 +44,6 @@ jobs:
           create_pull_request: true
           pull_request_title: '[automated]: crowdin sync'
           pull_request_body: 'New Crowdin translations from the [Node.js Crowdin project](https://crowdin.com/project/nodejs-web)'
-          pull_request_labels: github_actions:pull-request
           commit_message: 'chore: synced translations from crowdin'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -52,3 +51,74 @@ jobs:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           # Created from https://crowdin.com/settings#api-key logged in using nodejs-crowdin-bot
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+
+  format_crowdin_pull_request:
+    runs-on: ubuntu-latest
+
+    permissions:
+      # This permission is required by `stefanzweifel/git-auto-commit-action`
+      contents: write
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@0080882f6c36860b6ba35c610c98ce87d4e2f26f # v2.10.2
+        with:
+          egress-policy: audit
+
+      - name: Git Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          # Use the number from the output of crowdin/github-action
+          ref: refs/pull/${{ steps.crowdin.outputs.pull_request_number }}/head
+
+      - name: Restore Lint Cache
+        uses: actions/cache/restore@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4.1.2
+        with:
+          path: |
+            apps/site/.eslintmdcache
+            apps/site/.prettiercache
+          # We want to restore Turborepo Cache and ESlint and Prettier Cache
+          # The ESLint and Prettier cache's are useful to reduce the overall runtime of ESLint and Prettier
+          # as they will only run on files that have changed since the last cached run
+          # this might of course lead to certain files not being checked against the linter, but the chances
+          # of such situation from happening are very slim as the checksums of both files would need to match
+          key: cache-lint-${{ hashFiles('package-lock.json') }}-
+          restore-keys: |
+            cache-lint-${{ hashFiles('package-lock.json') }}-
+            cache-lint-
+
+      - name: Set up Node.js
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+        with:
+          # We want to ensure that the Node.js version running here respects our supported versions
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install npm packages
+        # We want to avoid npm from running the Audit Step and Funding messages on a CI environment
+        # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
+        run: npm i --no-audit --no-fund --ignore-scripts --userconfig=/dev/null
+
+      - name: Run `npx lint:md --fix`
+        # This runs a specific version of ESLint with only the Translation Pages Globbing
+        # This avoid that unrelated changes get linted/modified within this PR
+        run: npx eslint "apps/site/pages/**/*.md?(x)" --fix --cache --cache-strategy=metadata --cache-file=apps/site/.eslintmdcache --config=apps/site/eslint.config.js
+
+      - name: Run `npx prettier --write`
+        # This runs a specific version of Prettier with only the Translation Pages Globbing
+        # This avoid that unrelated changes get prettied/modified within this PR
+        run: npx prettier "apps/site/{pages,i18n}/**/*.{json,md,mdx}" --check --write --cache --cache-strategy=metadata --cache-location=apps/site/.prettiercache
+
+      - name: Push Changes back to Pull Request
+        uses: stefanzweifel/git-auto-commit-action@8621497c8c39c72f3e2a999a26b4ca1b5058a842 # v5.0.1
+        with:
+          commit_options: '--no-verify --signoff'
+          commit_message: 'chore: automated format of translated files'
+
+      - name: Save Lint Cache
+        uses: actions/cache/save@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4.1.2
+        with:
+          path: |
+            apps/site/.eslintmdcache
+            apps/site/.prettiercache
+          key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('apps/site/.eslintmdcache') }}
