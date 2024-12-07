@@ -120,6 +120,7 @@ jobs:
         with:
           commit_options: '--no-verify --signoff'
           commit_message: 'chore: automated format of translated files'
+          branch: 'chore/crowdin'
 
       - name: Save Lint Cache
         uses: actions/cache/save@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4.1.2
