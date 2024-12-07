@@ -35,7 +35,6 @@ jobs:
 
         # see all the options at https://github.com/crowdin/github-action
       - name: Crowdin PR
-        id: crowdin
         uses: crowdin/github-action@2d540f18b0a416b1fbf2ee5be35841bd380fc1da # v2.3.0
         with:
           # do not upload anything - this is a one-way operation download
@@ -56,6 +55,7 @@ jobs:
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
 
   format_crowdin_pull_request:
+    needs: synchronize-with-crowdin
     runs-on: ubuntu-latest
 
     permissions:
@@ -72,7 +72,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           # Use the number from the output of crowdin/github-action
-          ref: refs/pull/${{ steps.crowdin.outputs.pull_request_number }}/head
+          ref: refs/pull/${{ steps.synchronize-with-crowdin.outputs.pull_request_number }}/head
 
       - name: Restore Lint Cache
         uses: actions/cache/restore@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4.1.2
