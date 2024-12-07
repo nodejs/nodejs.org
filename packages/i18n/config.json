@@ -156,7 +156,7 @@
     "langDir": "ltr",
     "dateFormat": "YYYY.MM.DD",
     "hrefLang": "ko",
-    "enabled": false,
+    "enabled": true,
     "default": false
   },
   {

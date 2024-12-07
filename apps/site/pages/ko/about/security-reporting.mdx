@@ -1,0 +1,64 @@
+---
+title: 보안 보고
+layout: about
+---
+
+보안 보고
+
+활성 보안 정책에 대한 자세한 내용은 [이 페이지](https://github.com/nodejs/node/security/policy)를 확인하세요.
+
+## Node.js의 버그 신고
+
+Node.js의 보안 버그는 [HackerOne](https://hackerone.com/nodejs)를 통해 신고해 주세요.
+
+신고는 5일 이내에 확인되며, 제출물 처리에 대한 다음 단계가 포함된 보다 구체적인 응답은 10일 이내에 받게 됩니다.
+
+신고에 대한 초기 답변 이후, 보안 팀은 문제 수정 및 전체 발표 진행 상황을 지속적으로 알려드리며, 신고된 문제에 대한 추가 정보나 안내를 요청할 수 있습니다.
+
+### Node.js 버그 바운티 프로그램
+
+Node.js 프로젝트는 보안 연구자 및 책임 있는 공개 보고를 위한 공식 버그 바운티 프로그램에 참여하고 있습니다. 이 프로그램은 HackerOne 플랫폼을 통해 관리됩니다. 자세한 내용은 [https://hackerone.com/nodejs](https://hackerone.com/nodejs)를 참조하세요.
+
+## 타사 모듈의 버그 신고
+
+타사 모듈의 보안 버그는 해당 모듈의 유지보수자에게 신고해야 합니다.
+
+## 공개 정책
+
+Node.js의 보안 공개 정책은 다음과 같습니다.
+
+보안 보고서가 수신되고 주요 담당자가 지정됩니다. 이 담당자는 수정 및 릴리스 프로세스를 조정합니다. 문제가 확인되고 영향을 받는 버전 목록이 결정됩니다. 코드 감사가 진행되어 유사한 잠재적 문제가 있는지 확인합니다. 유지 관리 중인 모든 릴리스에 대한 수정 사항이 준비되며, 이 수정 사항은 공개 리포지토리에 커밋되지 않고 발표를 기다리며 로컬에 보관됩니다.
+
+이 취약점에 대해 제안된 비공개 기간(엠바고 날짜)이 선택되며, 해당 취약점에 대한 CVE(Common Vulnerabilities and Exposures, CVE®)가 요청됩니다.
+
+비공개 기간에 Node.js 보안 메일링 리스트에 발표 사본이 발송됩니다. 변경 사항이 공개 리포지토리에 푸시되고, 새로운 빌드가 nodejs.org에 배포됩니다. 메일링 리스트에 통지된 후 6시간 이내에 advisory 사본이 Node.js 블로그에 게시됩니다.
+
+일반적으로, CVE가 발급된 시점부터 72시간 후로 비공개 기간(엠바고 날짜)이 설정됩니다. 그러나 이는 버그의 심각도나 수정 사항 적용의 난이도에 따라 달라질 수 있습니다.
+
+이 과정은 특히 다른 프로젝트의 유지관리자들과 조율이 필요한 경우 시간이 다소 걸릴 수 있습니다. 버그를 최대한 신속하게 처리하기 위해 모든 노력을 기울일 것이지만, 공개가 일관된 방식으로 처리될 수 있도록 위에 설명된 공개 절차를 따르는 것이 중요합니다.
+
+## 보안 업데이트 수신
+
+보안 알림은 다음 방법을 통해 배포됩니다.
+
+[Google Group](https://groups.google.com/group/nodejs-sec)
+[Node.js 블로그](/blog)
+
+## 이 정책에 대한 의견
+
+프로세스를 개선할 수 있는 제안이 있는 경우 [풀 리퀘스트](https://github.com/nodejs/nodejs.org)를 제출하시거나 [문제를 제기](https://github.com/nodejs/security-wg/issues/new)하여 논의해 주세요.
+
+## OpenSSF 모범 사례
+
+<a
+  href="https://bestpractices.coreinfrastructure.org/projects/29"
+  style={{ display: 'inline-flex' }}
+>
+  <img
+    alt="OpenSSF 배지"
+    src="https://bestpractices.coreinfrastructure.org/projects/29/badge"
+    style={{ display: 'inline' }}
+  />
+</a>
+
+Open Source Security Foundation(OpenSSF) [모범 사례 배지](https://github.com/coreinfrastructure/best-practices-badge)는 자유/오픈 소스 소프트웨어(FLOSS) 프로젝트가 모범 사례를 따르고 있음을 보여주는 방법입니다. 프로젝트는 자발적으로 각 사례를 어떻게 따르고 있는지에 대해 자체 인증할 수 있습니다. 이 배지를 확인하는 사용자들은 FLOSS 프로젝트가 모범 사례를 따르고 있는지 빠르게 평가할 수 있으며, 그 결과 더 높은 품질의 안전한 소프트웨어를 제작할 가능성이 높다는 것을 알 수 있습니다.
