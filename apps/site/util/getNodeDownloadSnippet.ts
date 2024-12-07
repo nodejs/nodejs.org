@@ -1,15 +1,16 @@
 import dedent from 'dedent';
 import type { TranslationValues } from 'next-intl';
 
+import getNvmData from '@/next-data/nvmData';
 import type { NodeRelease } from '@/types';
 import type { PackageManager } from '@/types/release';
 import type { UserOS } from '@/types/userOS';
 
-export const getNodeDownloadSnippet = (
+export async function getNodeDownloadSnippet(
   release: NodeRelease,
   os: UserOS,
   t: (key: string, values?: TranslationValues) => string
-) => {
+) {
   const snippets: Record<PackageManager, string> = {
     NVM: '',
     FNM: '',
@@ -39,7 +40,7 @@ export const getNodeDownloadSnippet = (
   if (os === 'MAC' || os === 'LINUX') {
     snippets.NVM = dedent`
       # ${t('layouts.download.codeBox.installsNvm')}
-      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/${await getNvmData()}/install.sh | bash
 
       # ${t('layouts.download.codeBox.downloadAndInstallNodejsRestartTerminal')}
       nvm install ${release.major}
@@ -118,4 +119,4 @@ export const getNodeDownloadSnippet = (
   }
 
   return snippets;
-};
+}
