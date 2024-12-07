@@ -1,0 +1,57 @@
+# This Workflow is used to comment on PRs that have changes that touch Translated Files
+# and then comments on their PRs mentioning that they should not do so
+
+name: Incoming Translation Checks
+
+on:
+  # run when someone tries to manually change localized content
+  pull_request_target:
+    branches:
+      - main
+    paths:
+      - 'apps/site/pages/**/*.md'
+      - 'apps/site/pages/**/*.mdx'
+      - '!apps/site/pages/en/**/*.md'
+      - '!apps/site/pages/en/**/*.mdx'
+      - 'packages/i18n/locales/*.json'
+      - '!packages/i18n/locales/en.json'
+
+# Cancel any runs on the same branch
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  actions: read
+
+jobs:
+  comment_on_translation_pr:
+    # This comment should always be posted on forks, or from internal PRs not originating from Crowdin (which are direct branches)
+    if: |
+      (github.event.pull_request.head.repo.full_name != 'nodejs/nodejs.org') ||
+      (github.event.pull_request.head.repo.full_name == 'nodejs/nodejs.org' && github.event.pull_request.head.ref != 'chore/crowdin')
+
+    name: Comment on Translation PR
+    runs-on: ubuntu-latest
+
+    permissions:
+      # This permission is required by `thollander/actions-comment-pull-request`
+      pull-requests: write
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@0080882f6c36860b6ba35c610c98ce87d4e2f26f # v2.10.2
+        with:
+          egress-policy: audit
+
+      - uses: thollander/actions-comment-pull-request@e2c37e53a7d2227b61585343765f73a9ca57eda9 # v3.0.0
+        with:
+          message: |
+            > [!NOTE]\
+            > Your Pull Request seems to be updating **Translations** of the Node.js Website.
+            >
+            > Whilst we appreciate your intent; Any Translation update should be done through our [Crowdin Project](https://crowdin.com/project/nodejs-web).
+            > We recommend giving a read on our [Translation Guidelines](https://github.com/nodejs/nodejs.org/blob/main/TRANSLATION.md).
+            >
+            > Thank you!
+          comment-tag: use_crowdin
