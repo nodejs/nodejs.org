@@ -39,7 +39,7 @@ export const getNodeDownloadSnippet = (
   if (os === 'MAC' || os === 'LINUX') {
     snippets.NVM = dedent`
       # ${t('layouts.download.codeBox.installsNvm')}
-      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
       # ${t('layouts.download.codeBox.downloadAndInstallNodejsRestartTerminal')}
       nvm install ${release.major}
