@@ -5,6 +5,7 @@
         "links": {
           "trademarkPolicy": "Політика торгових марок",
           "privacyPolicy": "Політика конфіденційності",
+          "versionSupport": "Підтримка версії",
           "codeOfConduct": "Кодекс поведінки",
           "security": "Політика безпеки"
         }
@@ -18,7 +19,8 @@
           "learn": "Навчання",
           "security": "Безпека",
           "certification": "Сертифікація",
-          "blog": "Блог"
+          "blog": "Блог",
+          "contribute": "Долучитися"
         }
       }
     },
@@ -109,7 +111,8 @@
           "links": {
             "testRunner": "Виконавець тестів",
             "introduction": "Що таке виконавець тестів у Node.js?",
-            "usingTestRunner": "Використання виконавця тестів у Node.js"
+            "usingTestRunner": "Використання виконавця тестів у Node.js",
+            "mocking": "Мокінг у тестах"
           }
         }
       },
@@ -186,11 +189,6 @@
       },
       "themeToggle": {
         "label": "Перемкнути темний режим"
-      }
-    },
-    "mdx": {
-      "upcomingEvents": {
-        "defaultTitle": "Немає майбутніх подій"
       }
     },
     "metabar": {
@@ -298,6 +296,7 @@
         "platform": "Платформа"
       },
       "codeBox": {
+        "unsupportedVersionWarning": "Ця версія більше не обслуговується. Дізнайтеся більше тут:",
         "fnmEnvSetup": "налаштовує середовище fnm",
         "systemManagerWarning": "не є менеджером пакетів Node.js. Переконайтеся, що у вас уже встановлено {packageManager}.",
         "communityWarning": "Менеджери пакетів та їхні скрипти встановлення не обслуговуються проєктом Node.js.",
