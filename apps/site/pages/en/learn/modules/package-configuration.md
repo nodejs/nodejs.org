@@ -6,15 +6,53 @@ authors: JakobJingleheimer
 
 # Package configuration
 
-Configuration is always a chore, but an unfortunately necessary evil. And configuring a package for CommonJS (CJS) and ES Modules (ESM) can be a waking nightmare—not least because it has changed a dozen times in half as many years.
-
-A frequent question is “how do I make this work!?” (often with angry tears); but yet more frequently we come across packages that are just misconfigured.
-
 All the provided `package.json` configurations (not specifically marked “does not work”) work in Node.js 12.22.x (v12 latest, the oldest supported line) and 17.2.0 (current latest at the time)[^1], and for grins, with webpack 5.53.0 and 5.63.0 respectively. These are available: [nodejs/package-examples](https://github.com/nodejs/package-examples/blob/main/config).
 
-For curious cats, [Preamble: How did we get here](#preamble-how-did-we-get-here) and [Down the rabbit-hole](#down-the-rabbithole) provide background and deeper explanations. If you're just looking for a solution, jump to [Pick your fix](#pick-your-fix) for the TLDR.
+For curious cats, [How did we get here](#how-did-we-get-here) and [Down the rabbit-hole](#down-the-rabbithole) provide background and deeper explanations.
 
-## General notes
+## Pick your fix
+
+There are 2 main options, which cover almost all use-cases:
+
+- Write source code and publish in CJS (you use `require()`); CJS is consumable by both CJS and ESM (in all versions of node). Skip to [CJS source and distribution](#cjs-source-and-distribution).
+- Write source code and publish in ESM (you use `import`, and don't use top-level `await`); ESM is consumable by both ESM and CJS (in node 22.x and 23.x; see [`require()` an ES Module](https://nodejs.org/api/modules.html#loading-ecmascript-modules-using-require)). Skip to [ESM source and distribution](#esm-source-and-distribution).
+
+It's generally best to publish only 1 format, either CJS _or_ ESM. Not both. Publishing multiple formats can result in the [dual-package hazard](#the-dual-package-hazard), as well as other drawbacks.
+
+There are other options available, mostly for historical purposes.
+
+<table>
+  <thead>
+    <tr>
+      <th>You as a package author write</th>
+      <th>Consumers of your package write their code in</th>
+      <th>Your options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td rowspan="2">CJS source code using <code>require()<code></td>
+      <td>ESM: consumers <code>import</code> your package</td>
+      <td><a href="#cjs-source-and-only-esm-distribution">CJS source and only ESM distribution</a></td>
+    </tr>
+    <tr>
+      <td>CJS & ESM: consumers either <code>require()</code> or <code>import</code> your package</td>
+      <td><a href="#cjs-source-and-both-cjs-amp-esm-distribution">CJS source and both CJS & ESM distribution</a></td>
+    </tr>
+    <tr>
+      <td rowspan="2">ESM source code using <code>import</code></td>
+      <td>CJS: consumers <code>require()</code> your package (and you use top-level <code>await</code>)</td>
+      <td><a href="#esm-source-with-only-cjs-distribution">ESM source with only CJS distribution</a></td>
+    </tr>
+    <tr>
+      <td>CJS & ESM: consumers either <code>require()</code> or <code>import</code> your package</td>
+      <td><a href="#esm-source-and-both-cjs-amp-esm-distribution">ESM source and both CJS & ESM distribution</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### General notes
 
 [Syntax detection](https://nodejs.org/api/packages.html#syntax-detection) is _**not**_ a replacement for proper package configuration; syntax detection is not fool-proof and it has [significant performance cost](https://github.com/nodejs/node/pull/55238).
 
@@ -24,32 +62,9 @@ When using [`"exports"`](https://nodejs.org/api/packages.html#conditional-export
 
 The `"engines"` field provides both a human-friendly and a machine-friendly indication of which version(s) of Node.js the package is compatible. Depending on the package manager used, an exception may be thrown causing the installation to fail when the consumer is using an incompatible version of Node.js (which can be very helpful to consumers). Including this field will save a lot of headache for consumers with an older version of Node.js who cannot use the package.
 
-## Preamble: How did we get here
-
-[CommonJS (CJS)](https://wiki.commonjs.org/wiki/Modules) was created _long_ before ECMAScript Modules (ESM), back when JavaScript was still adolescent—CJS and jQuery were created just 3 years apart. CJS is not an official ([TC39](https://tc39.es)) standard and is supported by a limited few platforms (most notably, Node.js). ESM as a standard has been incoming for several years; it is currently supported by all major platforms (browsers, Deno, Node.js, etc), meaning it will run pretty much everywhere. As it became clear ESM would effectively succeed CJS (which is still very popular and widespread), many attempted to adopt early on, often before a particular aspect of the ESM specification was finalised. Because of this, those changed over time as better information became available (often informed by learnings/experiences of those eager beavers), going from best-guess to the aligning with the specification.
-
-An additional complication is bundlers, which historically managed much of this territory. However, much of what we previously needed bundle(r)s to manage is now native functionality; yet bundlers are still (and likely always will be) necessary for some things. Unfortunately, functionality bundlers no-longer need to provide is deeply ingrained in older bundlers’ implementations, so they can at times be too helpful, and in some cases, anti-pattern (bundling a library is often not recommended by bundler authors themselves). The hows and whys of that are an article unto itself.
-
-## Pick your fix
-
-This article covers configuration of all possible combinations in currently supported Node.js versions. If you are trying to decide which options are ideal, it is better to avoid dual packages, so either:
-
-- CJS source and distribution with good/specific `module.exports`
-- ESM source and distribution
-  - If your source-code does _not_ contain any top-level `await`, your ESM likely can be `required()`, meaning it can be consumed by a project using CJS. See [`require()` an ES Module](https://nodejs.org/api/modules.html#loading-ecmascript-modules-using-require).
-
-| You as a package author write     | Consumers of your package write their code in                    | Your options                                                                                                                                                 |
-| :-------------------------------- | :--------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CJS source code using `require()` | CJS: consumers `require()` your package                          | [CJS source and distribution](#cjs-source-and-distribution)                                                                                                  |
-| CJS source code using `require()` | ESM: consumers `import` your package                             | [CJS source and only ESM distribution](#cjs-source-and-only-esm-distribution)                                                                                |
-| CJS source code using `require()` | CJS & ESM: consumers either `require()` or `import` your package | [CJS source and both CJS & ESM distribution](#cjs-source-and-both-cjs-amp-esm-distribution)                                                                  |
-| ESM source code using `import`    | CJS: consumers `require()` your package                          | [ESM source with only CJS distribution](#esm-source-with-only-cjs-distribution)<br />[ESM source and distribution](#esm-source-and-distribution)             |
-| ESM source code using `import`    | ESM: consumers `import` your package                             | [ESM source and distribution](#esm-source-and-distribution)                                                                                                  |
-| ESM: source code uses `import`    | CJS & ESM: consumers either `require()` or `import` your package | [ESM source and both CJS & ESM distribution](#esm-source-and-both-cjs-amp-esm-distribution)<br />[ESM source and distribution](#esm-source-and-distribution) |
-
 ### CJS source and distribution
 
-This the "Rum & Coke" of packages: pretty difficult to mess up. You _technially_ may not need _any_ package configuration beyond [`"name"`](https://nodejs.org/api/packages.html#name). But the less arcane, the better: Essentially just declare the package’s exports via the `"exports"` field/field-set.
+You _technially_ may not need _any_ package configuration beyond [`"name"`](https://nodejs.org/api/packages.html#name). But the less arcane, the better: Essentially just declare the package’s exports via the `"exports"` field/field-set.
 
 **Working example**: [cjs-with-cjs-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/cjs-distro)
 
@@ -74,9 +89,41 @@ This the "Rum & Coke" of packages: pretty difficult to mess up. You _technially_
 
 Note that `packageJson.exports["."] = filepath` is shorthand for `packageJson.exports["."].default = filepath`
 
+### ESM source and distribution
+
+Simple, tried, and true.
+
+Note that since Node.js v23.0.0, it is possible to `require` static ESM (code that does not use top-level `await`). See [Loading ECMAScript modules using `require()`](https://nodejs.org/api/modules.html#loading-ecmascript-modules-using-require) for details.
+
+This is almost exactly the same as the CJS-CJS configuration above with 1 small difference: the [`"type"`](https://nodejs.org/api/packages.html#type) field.
+
+**Working example**: [esm-with-esm-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/esm/esm-distro)
+
+```json displayName="Minimal package.json"
+{
+  "name": "esm-source-and-distribution",
+  "type": "module"
+  // "main": "./index.js"
+}
+```
+
+```json displayName="Advanced (verbose) package.json"
+{
+  "name": "esm-source-and-distribution",
+  "type": "module",
+  "engines": { "node": ">=12.22.7" },
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  }
+}
+```
+
+Note that ESM now _is_ “backwards” compatible with CJS: a CJS module now _can_ [`require()` an ES Module](https://nodejs.org/api/modules.html#loading-ecmascript-modules-using-require) without a flag as of 23.0.0 and 22.12.0.
+
 ### CJS source and only ESM distribution
 
-The "Gin & Tonic" of packages: This takes a small bit of finesse but is also pretty straight-forward.
+This takes a small bit of finesse but is also pretty straight-forward.
 
 **Working example**: [cjs-with-esm-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/esm-distro)
 
@@ -107,7 +154,7 @@ You have a few options:
 
 #### Attach named exports directly onto `exports`
 
-The "French 75" of packages: Classic but takes some sophistication and finesse.
+Classic but takes some sophistication and finesse.
 
 Pros:
 
@@ -162,7 +209,7 @@ module.exports.qux = function qux() {};
 
 #### Use a simple ESM wrapper
 
-The "Piña Colada" of packages: Complicated setup and difficult to get the balance right.
+Complicated setup and difficult to get the balance right.
 
 Pros:
 
@@ -219,7 +266,7 @@ export { a, b, c /* … */ };
 
 #### Two full distributions
 
-The "Long Island Ice Tea" of packages: Chuck in a bunch of stuff and hope for the best. This is probably the most common and easiest of the CJS to CJS & ESM options, but you pay for it. This is rarely a good idea.
+Chuck in a bunch of stuff and hope for the best. This is probably the most common and easiest of the CJS to CJS & ESM options, but you pay for it. This is rarely a good idea.
 
 Pros:
 
@@ -290,38 +337,6 @@ Alternatively, you can use `"default"` and `"node"` keys, which are less counter
 }
 ```
 
-### ESM source and distribution
-
-The wine of packages: Simple, tried, and true.
-
-Note that since Node.js v23.0.0, it is possible to `require` static ESM (code that does not use top-level `await`). See [Loading ECMAScript modules using `require()`](https://nodejs.org/api/modules.html#loading-ecmascript-modules-using-require) for details.
-
-This is almost exactly the same as the CJS-CJS configuration above with 1 small difference: the [`"type"`](https://nodejs.org/api/packages.html#type) field.
-
-**Working example**: [esm-with-esm-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/esm/esm-distro)
-
-```json displayName="Minimal package.json"
-{
-  "name": "esm-source-and-distribution",
-  "type": "module"
-  // "main": "./index.js"
-}
-```
-
-```json displayName="Advanced (verbose) package.json"
-{
-  "name": "esm-source-and-distribution",
-  "type": "module",
-  "engines": { "node": ">=12.22.7" },
-  "exports": {
-    ".": "./dist/index.js",
-    "./package.json": "./package.json"
-  }
-}
-```
-
-Note that ESM now _is_ “backwards” compatible with CJS: a CJS module now _can_ [`require()` an ES Module](https://nodejs.org/api/modules.html#loading-ecmascript-modules-using-require) without a flag as of 23.0.0 and 22.12.0.
-
 ### ESM source with only CJS distribution
 
 We're not in Kansas anymore, Toto.
@@ -333,8 +348,6 @@ The configurations (there are 2 options) are nearly the same as [ESM source and 
 **Working example**: [esm-with-cjs-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/esm/cjs-distro)
 
 ### ESM source and both CJS & ESM distribution
-
-These are "mixologist" territory.
 
 When source code is written in non-JavaScript (ex TypeScript), options can be limited due to needing to use file extension(s) specific to that language (ex `.ts`) and there may be no `.mjs` equivalent.
 
@@ -533,6 +546,12 @@ So when you see configuration options citing or named with `require` or `import`
 When an application is using a package that provides both CommonJS and ES module sources, there is a risk of certain bugs if both instances of the package get loaded. This potential comes from the fact that the `pkgInstance` created by `const pkgInstance = require('pkg')` is not the same as the `pkgInstance` created by `import pkgInstance from 'pkg'` (or an alternative main path like `'pkg/module'`). This is the “dual package hazard”, where two instances of the same package can be loaded within the same runtime environment. While it is unlikely that an application or package would intentionally load both instances directly, it is common for an application to load one copy while a dependency of the application loads the other copy. This hazard can happen because Node.js supports intermixing CommonJS and ES modules, and can lead to unexpected and confusing behavior.
 
 If the package main export is a constructor, an `instanceof` comparison of instances created by the two copies returns `false`, and if the export is an object, properties added to one (like `pkgInstance.foo = 3`) are not present on the other. This differs from how `import` and `require` statements work in all-CommonJS or all-ES module environments, respectively, and therefore is surprising to users. It also differs from the behavior users are familiar with when using transpilation via tools like [Babel](https://babeljs.io/) or [`esm`](https://github.com/standard-things/esm#readme).
+
+### How did we get here
+
+[CommonJS (CJS)](https://wiki.commonjs.org/wiki/Modules) was created _long_ before ECMAScript Modules (ESM), back when JavaScript was still adolescent—CJS and jQuery were created just 3 years apart. CJS is not an official ([TC39](https://tc39.es)) standard and is supported by a limited few platforms (most notably, Node.js). ESM as a standard has been incoming for several years; it is currently supported by all major platforms (browsers, Deno, Node.js, etc), meaning it will run pretty much everywhere. As it became clear ESM would effectively succeed CJS (which is still very popular and widespread), many attempted to adopt early on, often before a particular aspect of the ESM specification was finalised. Because of this, those changed over time as better information became available (often informed by learnings/experiences of those eager beavers), going from best-guess to the aligning with the specification.
+
+An additional complication is bundlers, which historically managed much of this territory. However, much of what we previously needed bundle(r)s to manage is now native functionality; yet bundlers are still (and likely always will be) necessary for some things. Unfortunately, functionality bundlers no-longer need to provide is deeply ingrained in older bundlers’ implementations, so they can at times be too helpful, and in some cases, anti-pattern (bundling a library is often not recommended by bundler authors themselves). The hows and whys of that are an article unto itself.
 
 ## Gotchas
 
