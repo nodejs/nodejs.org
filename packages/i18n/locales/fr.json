@@ -5,6 +5,7 @@
         "links": {
           "trademarkPolicy": "Politique de Marque",
           "privacyPolicy": "Politique de confidentialité",
+          "versionSupport": "Support de la version",
           "codeOfConduct": "Code de conduite",
           "security": "Politique de sécurité"
         }
@@ -18,7 +19,8 @@
           "learn": "Apprendre",
           "security": "Sécurité",
           "certification": "Certification",
-          "blog": "Blog"
+          "blog": "Blog",
+          "contribute": "Contribuer"
         }
       }
     },
@@ -189,11 +191,6 @@
         "label": "Basculer en mode sombre"
       }
     },
-    "mdx": {
-      "upcomingEvents": {
-        "defaultTitle": "Aucun événement à venir"
-      }
-    },
     "metabar": {
       "lastUpdated": "Dernière Mise à jour",
       "readingTime": "Temps de Lecture",
@@ -299,6 +296,7 @@
         "platform": "Plateforme"
       },
       "codeBox": {
+        "unsupportedVersionWarning": "Cette version n'est plus maintenue. Plus d'informations ici :",
         "fnmEnvSetup": "configurer l'environnement fnm",
         "systemManagerWarning": "n'est pas un gestionnaire de paquets Node.js. Veuillez vous assurer que {packageManager} est déjà installé.",
         "communityWarning": "Les gestionnaires de paquets et leurs scripts d'installation ne sont pas maintenus par le projet Node.js.",

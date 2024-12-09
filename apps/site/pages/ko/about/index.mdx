@@ -1,0 +1,63 @@
+---
+title: Node.js®에 대하여
+layout: about
+---
+
+Node.js®에 대하여
+
+Node.js는 비동기 이벤트 기반의 JavaScript 런타임으로, 확장 가능한 네트워크 애플리케이션을 구축하도록 설계되었습니다. 다음의 "hello world" 예제에서는 많은 연결을 동시에 처리할 수 있습니다. 각 연결마다 콜백이 호출되지만, 할 일이 없으면 Node.js는 대기 상태가 됩니다.
+
+```cjs
+const { createServer } = require('node:http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+```mjs
+import { createServer } from 'node:http';
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+이는 운영 체제 스레드를 사용하는 오늘날의 더 일반적인 동시성 모델과 대조됩니다. 스레드 기반 네트워킹은 상대적으로 비효율적이며 사용하기도 매우 어렵습니다. 또한, Node.js 사용자는 락(lock)이 없기 때문에 프로세스가 데드락에 걸릴 걱정을 할 필요가 없습니다. Node.js의 거의 모든 함수는 직접 I/O를 수행하지 않으므로, Node.js 표준 라이브러리의 동기 메서드를 사용하여 I/O를 수행하는 경우를 제외하고는 프로세스가 차단되지 않습니다. 이처럼 차단이 발생하지 않기 때문에 Node.js에서는 확장 가능한 시스템을 개발하는 것이 매우 적합합니다.
+
+언어가 낯설다면 [Blocking vs. Non-Blocking][]에 대한 전체 기사를 참고하세요.
+
+---
+
+Node.js는 Ruby의 [Event Machine][]과 Python의 [Twisted][]와 같은 시스템에서 영향을 받아 이와 비슷한 설계를 가지고 있습니다. Node.js는 이벤트 모델을 한 단계 더 발전시켜, 이벤트 루프를 라이브러리가 아닌 런타임 구성 요소로 제공합니다.
+다른 시스템에서는 항상 이벤트 루프를 시작하기 위해 차단 호출(blocking call)이 필요합니다. 일반적으로 스크립트의 시작 부분에서 콜백을 통해 동작을 정의한 뒤, `EventMachine::run()`과 같은 차단 호출을 통해 서버를 시작합니다.
+반면, Node.js에서는 이벤트 루프를 시작하는 별도의 호출이 필요하지 않습니다. Node.js는 입력 스크립트를 실행한 후 자동으로 이벤트 루프에 진입하며, 처리할 콜백이 더 이상 없을 때 이벤트 루프를 종료합니다.
+동작은 브라우저 JavaScript와 유사하며, 이벤트 루프는 사용자에게 드러나지 않습니다.
+
+HTTP는 Node.js에서 중요한 구성 요소로 설계되었으며, 스트리밍 및 낮은 대기 시간을 염두에 두고 있습니다. 이러한 이유로 Node.js는 웹 라이브러리나 프레임워크의 기반으로 적합합니다.
+
+Node.js가 스레드 없이 설계되었다고 해서 환경에서 여러 코어를 활용할 수 없다는 것은 아닙니다. 자식 프로세스는 [`child_process.fork()`][] API를 사용하여 생성할 수 있으며, 통신이 용이하도록 설계되었습니다. 같은 인터페이스를 기반으로 [`cluster`][] 모듈이 있으며, 이를 통해 프로세스 간에 소켓을 공유하여 코어 간의 로드 밸런싱을 가능하게 합니다.[`child_process.fork()`][]
+
+[blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
+[`child_process.fork()`]: https://nodejs.org/api/child_process.html
+[`cluster`]: https://nodejs.org/api/cluster.html
+[event machine]: https://github.com/eventmachine/eventmachine
+[twisted]: https://twisted.org/
