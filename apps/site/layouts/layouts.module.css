@@ -14,7 +14,6 @@
     mx-auto
     block
     w-full
-    overflow-auto
     sm:grid
     sm:grid-cols-[theme(spacing.52)_1fr]
     sm:grid-rows-[1fr]
@@ -24,12 +23,15 @@
     xl:grid-cols-[theme(spacing.80)_1fr_theme(spacing.80)];
 
   > *:nth-child(1) {
-    @apply grid-in-[sidebar];
+    @apply grid-in-[sidebar]
+      lg:sticky
+      lg:top-0
+      lg:h-[100vh]
+      lg:overflow-y-auto;
   }
 
   > *:nth-child(2) {
     @apply contents
-      overflow-y-scroll
       sm:max-lg:block;
 
     > *:first-child {
@@ -37,8 +39,6 @@
         sm:bg-gradient-subtle
         sm:dark:bg-gradient-subtle-dark
         xl:px-18
-        overflow-y-auto
-        overflow-x-hidden
         p-4
         motion-safe:scroll-smooth
         sm:bg-fixed
@@ -50,6 +50,8 @@
         mt-8
         border-t
         sm:mt-0
+        lg:sticky
+        lg:top-0
         lg:max-w-xs
         lg:border-l
         lg:border-t-0;
