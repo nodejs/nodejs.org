@@ -115,7 +115,7 @@ for getting things done and landing your contribution.
     ```bash
     cd ~/nodejs.org
     git add .
-    git commit #let commitizen handle the commit
+    git commit -m "describe your changes"
     git push -u origin name-of-your-branch
     ```
 
