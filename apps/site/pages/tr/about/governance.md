@@ -7,7 +7,7 @@ layout: about
 
 ## Uzlaşma Arama Süreci
 
-Node.js projesi bir [Uzlaşma Arayışı][consensus seeking] karar verme modeli izlemektedir.
+Node.js projesi bir [Uzlaşma Arayışı][] karar verme modeli izlemektedir.
 
 ## İş birlikçiler
 
@@ -21,7 +21,7 @@ Node.js projesi bir [Uzlaşma Arayışı][consensus seeking] karar verme modeli 
 
 ## Teknik Yönlendirme Komitesi
 
-Proje, projenin üst düzey rehberliğinden sorumlu olan [Teknik Yönlendirme Komitesi (TYK)][technical steering committee (tsc)] tarafından yönetilmektedir. TYK, diğer mevcut TYK üyeleri tarafından aday gösterilen aktif İş birlikçilerin bir alt kümesidir.
+Proje, projenin üst düzey rehberliğinden sorumlu olan [Teknik Yönlendirme Komitesi (TYK)][] tarafından yönetilmektedir. TYK, diğer mevcut TYK üyeleri tarafından aday gösterilen aktif İş birlikçilerin bir alt kümesidir.
 
 [consensus seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
