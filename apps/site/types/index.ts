@@ -10,5 +10,4 @@ export * from './redirects';
 export * from './server';
 export * from './github';
 export * from './calendar';
-export * from './search';
 export * from './author';

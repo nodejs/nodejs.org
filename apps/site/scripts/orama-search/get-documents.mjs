@@ -46,6 +46,9 @@ const splitIntoSections = markdownContent => {
   }));
 };
 
+const uppercaseFirst = string =>
+  string.charAt(0).toUpperCase() + string.slice(1);
+
 const getPageTitle = data =>
   data.title ||
   data.pathname
@@ -63,11 +66,12 @@ export const siteContent = [...pageData, ...apiData]
 
     const siteSection = pathname.split('/').shift();
     const subSections = splitIntoSections(markdownContent);
-
     return subSections.map(section => {
+      const path = `${pathname}#${slug(section.pageSectionTitle)}`;
+
       return {
-        path: pathname + '#' + slug(section.pageSectionTitle),
-        siteSection,
+        path,
+        siteSection: uppercaseFirst(siteSection),
         pageTitle: title,
         ...section,
       };
