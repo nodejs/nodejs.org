@@ -30,7 +30,6 @@
           "links": {
             "gettingStarted": "Початок роботи",
             "introductionToNodejs": "Вступ до Node.js",
-            "howToInstallNodejs": "Як установити Node.js",
             "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Як добре треба знати JavaScript, щоб використовувати Node.js?",
             "differencesBetweenNodejsAndTheBrowser": "Різниця між Node.js і браузером",
             "theV8JavascriptEngine": "Рушій JavaScript V8",
