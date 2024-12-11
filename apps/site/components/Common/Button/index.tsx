@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import type { FC, AnchorHTMLAttributes } from 'react';
+import type { KeyboardEvent, MouseEvent } from 'react';
 
 import Link from '@/components/Link';
 
@@ -24,13 +25,13 @@ const Button: FC<ButtonProps> = ({
   const isButton = !href;
 
   // Handle keydown events for keyboard accessibility
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>) => {
+  const handleKeyDown = (e: KeyboardEvent<HTMLAnchorElement>) => {
     if (disabled) return;
 
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       if (onClick) {
-        onClick(e as unknown as React.MouseEvent<HTMLAnchorElement>);
+        onClick(e as unknown as MouseEvent<HTMLAnchorElement>);
       }
     }
   };
