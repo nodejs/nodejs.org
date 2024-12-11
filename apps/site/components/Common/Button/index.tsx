@@ -12,7 +12,7 @@ import styles from './index.module.css';
 
 type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   kind?: 'neutral' | 'primary' | 'secondary' | 'special';
-  // We have an extra `disabled` prop as we simulate a button
+  // We have an extra `disabled` prop as we simulate a button..
   disabled?: boolean;
 };
 
