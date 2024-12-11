@@ -1,6 +1,10 @@
 import classNames from 'classnames';
-import type { FC, AnchorHTMLAttributes } from 'react';
-import type { KeyboardEvent, MouseEvent } from 'react';
+import type {
+  FC,
+  AnchorHTMLAttributes,
+  KeyboardEvent,
+  MouseEvent,
+} from 'react';
 
 import Link from '@/components/Link';
 
