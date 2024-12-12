@@ -1,5 +1,3 @@
 html[lang='ko'] {
-  line-height: 1.8;
-  word-break: keep-all;
-  word-wrap: break-word;
+  @apply break-words break-keep leading-[1.8];
 }
