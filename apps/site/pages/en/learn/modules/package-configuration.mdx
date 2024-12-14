@@ -355,7 +355,7 @@ Similar to [CJS source and both CJS & ESM distribution](#cjs-source-and-both-cjs
 
 #### Publish only a CJS distribution with property exports
 
-The "Mojito" of packages: Tricky to make and needs good ingredients.
+Tricky to make and needs good ingredients.
 
 This option is almost identical to the [CJS source with CJS & ESM distribution's property exports](#attach-named-exports-directly-onto-raw-exports-endraw-) above. The only difference is in package.json: `"type": "module"`.
 
@@ -396,7 +396,7 @@ If your files explicitly _all_ use `.cjs` and/or `.mjs` file extensions (none us
 
 #### Publish a CJS distribution with an ESM wrapper
 
-The "Pornstar Martini" of packages: There's a lot going on here. Unlike the cocktail, this is usually not the best.
+There's a lot going on here, and this is usually not the best.
 
 This is also almost identical to the [CJS source and dual distribution using an ESM wrapper](#use-a-simple-esm-wrapper), but with subtle differences `"type": "module"` and some `.cjs` file extenions in package.json.
 
@@ -436,7 +436,7 @@ This is also almost identical to the [CJS source and dual distribution using an 
 
 #### Publish both full CJS & ESM distributions
 
-The "Tokyo Tea" of packages: Chuck in a bunch of stuff (with a surprise) and hope for the best. This is probably the most common and easiest of the ESM to CJS & ESM options, but you pay for it. This is rarely a good idea.
+Chuck in a bunch of stuff (with a surprise) and hope for the best. This is probably the most common and easiest of the ESM to CJS & ESM options, but you pay for it. This is rarely a good idea.
 
 In terms of package configuration, there are a few options that differ mostly in personal preference.
 
