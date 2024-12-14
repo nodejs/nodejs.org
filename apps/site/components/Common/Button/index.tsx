@@ -14,7 +14,6 @@ import styles from './index.module.css';
 
 type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   kind?: 'neutral' | 'primary' | 'secondary' | 'special';
-  // We have an extra `disabled` prop as we simulate a button
   disabled?: boolean;
 };
 
@@ -27,7 +26,6 @@ const Button: FC<ButtonProps> = ({
   onClick,
   ...props
 }) => {
-  //to handle the keyboard interactions, specifically for Enter and Space keys
   const onKeyDownHandler = (e: KeyboardEvent<HTMLAnchorElement>) => {
     if (disabled) {
       e.preventDefault();
@@ -42,7 +40,6 @@ const Button: FC<ButtonProps> = ({
     }
   };
 
-  // to manage mouse click events for the component, providing behavior consistent with the disabled state
   const onClickHandler = (e: MouseEvent<HTMLAnchorElement>) => {
     if (disabled) {
       e.preventDefault();
