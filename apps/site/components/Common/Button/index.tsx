@@ -12,7 +12,7 @@ import styles from './index.module.css';
 
 type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   kind?: 'neutral' | 'primary' | 'secondary' | 'special';
-  // We have an extra `disabled` prop as we simulate a button..
+  // We have an extra `disabled` prop as we simulate a button
   disabled?: boolean;
 };
 
@@ -25,10 +25,7 @@ const Button: FC<ButtonProps> = ({
   onClick,
   ...props
 }) => {
-  // Check if the component is being used as a button (no href provided)
-  const isButton = !href;
-
-  // Handle keydown events for keyboard accessibility
+  //to handle the keyboard interactions, specifically for Enter and Space keys
   const handleKeyDown = (e: KeyboardEvent<HTMLAnchorElement>) => {
     if (disabled) return;
 
@@ -40,17 +37,26 @@ const Button: FC<ButtonProps> = ({
     }
   };
 
+  // to manage mouse click events for the component, providing behavior consistent with the disabled state
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (disabled) {
+      e.preventDefault();
+      return;
+    }
+    if (onClick) {
+      onClick(e);
+    }
+  };
+
   return (
     <Link
-      role={isButton ? 'button' : undefined} // Set role to 'button' only when used as a button
-      href={disabled ? undefined : href} // Disable the link when disabled
+      role="button"
+      href={disabled ? undefined : href}
       aria-disabled={disabled}
-      className={classNames(styles.button, styles[kind], className, {
-        [styles.disabled]: disabled, // Add disabled style when appropriate
-      })}
-      tabIndex={isButton ? (disabled ? -1 : 0) : undefined} // Remove from tab order if disabled for buttons
-      onKeyDown={isButton ? handleKeyDown : undefined} // Add keyboard support for buttons
-      onClick={isButton && !disabled ? onClick : undefined} // Prevent click if disabled, for buttons
+      className={classNames(styles.button, styles[kind], className)}
+      tabIndex={disabled ? -1 : 0} // Ensure focusable if not disabled
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
       {...props}
     >
       {children}
