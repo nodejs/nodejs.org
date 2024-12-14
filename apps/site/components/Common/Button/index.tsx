@@ -28,7 +28,7 @@ const Button: FC<ButtonProps> = ({
   ...props
 }) => {
   //to handle the keyboard interactions, specifically for Enter and Space keys
-  const handleKeyDown = (e: KeyboardEvent<HTMLAnchorElement>) => {
+  const onKeyDownHandler = (e: KeyboardEvent<HTMLAnchorElement>) => {
     if (disabled) {
       e.preventDefault();
       return;
@@ -61,7 +61,7 @@ const Button: FC<ButtonProps> = ({
       className={classNames(styles.button, styles[kind], className)}
       tabIndex={disabled ? -1 : 0} // Ensure focusable if not disabled
       onClick={onClickHandler}
-      onKeyDown={handleKeyDown}
+      onKeyDown={onKeyDownHandler}
       {...props}
     >
       {children}
