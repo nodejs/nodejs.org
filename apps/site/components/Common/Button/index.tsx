@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import type {
   FC,
@@ -27,18 +29,21 @@ const Button: FC<ButtonProps> = ({
 }) => {
   //to handle the keyboard interactions, specifically for Enter and Space keys
   const handleKeyDown = (e: KeyboardEvent<HTMLAnchorElement>) => {
-    if (disabled) return;
+    if (disabled) {
+      e.preventDefault();
+      return;
+    }
 
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      if (onClick) {
+      if (typeof onClick === 'function') {
         onClick(e as unknown as MouseEvent<HTMLAnchorElement>);
       }
     }
   };
 
   // to manage mouse click events for the component, providing behavior consistent with the disabled state
-  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+  const onClickHandler = (e: MouseEvent<HTMLAnchorElement>) => {
     if (disabled) {
       e.preventDefault();
       return;
@@ -55,7 +60,7 @@ const Button: FC<ButtonProps> = ({
       aria-disabled={disabled}
       className={classNames(styles.button, styles[kind], className)}
       tabIndex={disabled ? -1 : 0} // Ensure focusable if not disabled
-      onClick={handleClick}
+      onClick={onClickHandler}
       onKeyDown={handleKeyDown}
       {...props}
     >
