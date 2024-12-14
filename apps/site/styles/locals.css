@@ -1,0 +1,10 @@
+/**
+ * To enhance readability for Korean users, line spacing is increased,
+ * line breaks in the middle of words are prevented, and long words are
+ * managed to avoid disrupting the layout.
+ */
+html[lang='ko'] {
+  @apply break-words
+    break-keep
+    leading-7;
+}
