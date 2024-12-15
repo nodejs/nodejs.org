@@ -131,8 +131,7 @@ export const EXTERNAL_LINKS_SITEMAP = [
  * @see https://docs.oramasearch.com/open-source/usage/search/introduction
  */
 export const DEFAULT_ORAMA_QUERY_PARAMS = {
-  mode: 'fulltext',
-  limit: 8,
+  limit: 25,
   threshold: 0,
   boost: {
     pageSectionTitle: 4,
@@ -143,6 +142,15 @@ export const DEFAULT_ORAMA_QUERY_PARAMS = {
     siteSection: {},
   },
 };
+
+/**
+ * The initial Orama Cloud chat suggestions visible in the empty state of the search box.
+ */
+export const DEFAULT_ORAMA_SUGGESTIONS = [
+  'How to install Node.js?',
+  'How to create an HTTP server?',
+  'Upgrading Node.js version',
+];
 
 /**
  * The default batch size to use when syncing Orama Cloud

@@ -1,61 +1,144 @@
 'use client';
 
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
-import classNames from 'classnames';
-import { useTranslations } from 'next-intl';
-import { useState, type FC } from 'react';
+import { OramaSearchBox, OramaSearchButton } from '@orama/react-components';
+import { useTranslations, useLocale } from 'next-intl';
+import { useTheme } from 'next-themes';
+import { type FC } from 'react';
 
-import { WithSearchBox } from '@/components/Common/Search/States/WithSearchBox';
-import { useDetectOS } from '@/hooks';
-import { useKeyboardCommands } from '@/hooks/react-client';
+import { useRouter } from '@/navigation.mjs';
+import {
+  ORAMA_CLOUD_ENDPOINT,
+  ORAMA_CLOUD_API_KEY,
+  DEFAULT_ORAMA_QUERY_PARAMS,
+  DEFAULT_ORAMA_SUGGESTIONS,
+  BASE_URL,
+} from '@/next.constants.mjs';
 
-import styles from './index.module.css';
+type ResultMapDescription = {
+  path: string;
+  pageSectionTitle: string;
+};
 
-export const SearchButton: FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+type ResultMapPath = { path: string; siteSection: string };
+
+import { themeConfig } from './utils';
+
+const uppercaseFirst = (word: string) =>
+  word.charAt(0).toUpperCase() + word.slice(1);
+
+const getFormattedPath = (path: string, title: string) =>
+  `${path
+    .replace(/#.+$/, '')
+    .split('/')
+    .map(element => element.replaceAll('-', ' '))
+    .map(element => uppercaseFirst(element))
+    .filter(Boolean)
+    .join(' > ')} — ${title}`;
+
+const SearchButton: FC = () => {
+  const { resolvedTheme } = useTheme();
   const t = useTranslations();
-  const openSearchBox = () => setIsOpen(true);
-  const closeSearchBox = () => setIsOpen(false);
+  const locale = useLocale();
+  const colorScheme = resolvedTheme as 'light' | 'dark';
+  const router = useRouter();
 
-  useKeyboardCommands(cmd => {
-    switch (cmd) {
-      case 'cmd-k':
-        openSearchBox();
-        break;
-      case 'escape':
-        closeSearchBox();
-        break;
-      default:
-    }
-  });
+  const sourceMap = {
+    title: 'pageSectionTitle',
+    description: 'formattedPath',
+    path: 'path',
+  };
 
-  const { os } = useDetectOS();
-
-  const osCommandKey = os === 'MAC' ? '⌘' : 'Ctrl';
-  const isOSLoading = os === 'LOADING';
+  const resultMap = {
+    ...sourceMap,
+    description: ({ path, pageSectionTitle }: ResultMapDescription) =>
+      getFormattedPath(path, pageSectionTitle),
+    path: ({ path, siteSection }: ResultMapPath) =>
+      siteSection.toLowerCase() === 'docs' ? `/${path}` : `/${locale}/${path}`,
+    section: 'siteSection',
+  };
 
   return (
     <>
-      <button
-        type="button"
-        onClick={openSearchBox}
-        className={styles.searchButton}
+      <OramaSearchButton
+        style={{ flexGrow: 1 }}
+        colorScheme={colorScheme}
+        themeConfig={themeConfig}
         aria-label={t('components.search.searchBox.placeholder')}
       >
-        <MagnifyingGlassIcon className={styles.magnifyingGlassIcon} />
-
         {t('components.search.searchBox.placeholder')}
-        <kbd
-          title={`${osCommandKey} K`}
-          className={classNames(styles.shortcutIndicator, {
-            'opacity-0': isOSLoading,
-          })}
-        >
-          <abbr>{osCommandKey} K</abbr>
-        </kbd>
-      </button>
+      </OramaSearchButton>
 
-      {isOpen ? <WithSearchBox onClose={closeSearchBox} /> : null}
+      <OramaSearchBox
+        index={{ api_key: ORAMA_CLOUD_API_KEY, endpoint: ORAMA_CLOUD_ENDPOINT }}
+        colorScheme={colorScheme}
+        themeConfig={themeConfig}
+        sourceBaseUrl={BASE_URL}
+        sourcesMap={sourceMap}
+        resultMap={resultMap}
+        facetProperty="siteSection"
+        linksTarget="_self"
+        highlightTitle={{
+          caseSensitive: false,
+          HTMLTag: 'b',
+          CSSClass: 'font-bold',
+        }}
+        searchParams={DEFAULT_ORAMA_QUERY_PARAMS}
+        suggestions={DEFAULT_ORAMA_SUGGESTIONS}
+        chatMarkdownLinkHref={({ href }) => {
+          if (!href) {
+            return href;
+          }
+
+          const baseURLObject = new URL(BASE_URL);
+          const baseURLHostName = baseURLObject.hostname;
+
+          const searchBoxURLObject = new URL(href);
+          const searchBoxURLHostName = searchBoxURLObject.hostname;
+          const serachBoxURLPathName = searchBoxURLObject.pathname;
+
+          // We do not want to add the locale to the url for external links and docs links
+          if (
+            baseURLHostName !== searchBoxURLHostName ||
+            serachBoxURLPathName.startsWith('/docs/')
+          ) {
+            return href;
+          }
+
+          const URLWithLocale = new URL(
+            `${locale}${searchBoxURLObject.pathname}`,
+            searchBoxURLObject.origin
+          );
+
+          return URLWithLocale.href;
+        }}
+        onAnswerSourceClick={event => {
+          event.preventDefault();
+
+          const baseURLObject = new URL(BASE_URL);
+
+          const { path } = event.detail.source;
+
+          const finalPath = path.startsWith('docs/')
+            ? path
+            : `${locale}/${path}`;
+
+          const finalURL = new URL(finalPath, baseURLObject);
+
+          window.open(finalURL, '_blank');
+        }}
+        onSearchResultClick={event => {
+          event.preventDefault();
+
+          const fullURLObject = new URL(event.detail.result.path, BASE_URL);
+
+          // result.path already contains LOCALE. Locale is set to undefined here so router does not add it once again.
+          router.push(fullURLObject.href, {
+            locale: undefined,
+          });
+        }}
+      />
     </>
   );
 };
+
+export default SearchButton;
