@@ -17,7 +17,6 @@ import SourceButton from './components/Downloads/Release/SourceButton';
 import VerifyingBinariesLink from './components/Downloads/Release/VerifyingBinariesLink';
 import VersionDropdown from './components/Downloads/Release/VersionDropdown';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
-import SearchPage from './components/MDX/SearchPage';
 import WithBadge from './components/withBadge';
 import WithBanner from './components/withBanner';
 import WithNodeRelease from './components/withNodeRelease';
@@ -39,8 +38,6 @@ export const mdxComponents = {
   DownloadButton: DownloadButton,
   // Renders a Download Link
   DownloadLink: DownloadLink,
-  // Renders a Search Page
-  SearchPage: SearchPage,
   // Renders an container for Upcoming Node.js Meetings
   UpcomingMeetings: UpcomingMeetings,
   // Group of components that enable you to select versions for Node.js
