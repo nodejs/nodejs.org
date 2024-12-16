@@ -45,7 +45,8 @@ const Button: FC<ButtonProps> = ({
       e.preventDefault();
       return;
     }
-    if (onClick) {
+
+    if (typeof onClick === 'function') {
       onClick(e);
     }
   };
