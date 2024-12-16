@@ -28,7 +28,6 @@
           "links": {
             "gettingStarted": "快速上手",
             "introductionToNodejs": "Node.js 介绍",
-            "howToInstallNodejs": "如何安装 Node.js",
             "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "使用Node.js需要了解多少JavaScript？",
             "differencesBetweenNodejsAndTheBrowser": "Node.js 与浏览器的区别",
             "theV8JavascriptEngine": "JavaScript V8 引擎",

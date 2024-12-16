@@ -299,6 +299,10 @@
     {
       "source": "/:locale/learn/getting-started/nodejs-with-typescript",
       "destination": "/:locale/learn/typescript/introduction"
+    },
+    {
+      "source": "/:locale/learn/getting-started/how-to-install-nodejs",
+      "destination": "/en/download/package-manager"
     }
   ],
   "internal": []
