@@ -56,7 +56,7 @@
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "es-ES",
-    "enabled": false,
+    "enabled": true,
     "default": false
   },
   {
