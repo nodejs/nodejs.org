@@ -52,16 +52,6 @@ There are other options available, mostly for historical purposes.
   </tbody>
 </table>
 
-### General notes
-
-[Syntax detection](https://nodejs.org/api/packages.html#syntax-detection) is _**not**_ a replacement for proper package configuration; syntax detection is not fool-proof and it has [significant performance cost](https://github.com/nodejs/node/pull/55238).
-
-When using [`"exports"`](https://nodejs.org/api/packages.html#conditional-exports) in package.json, it is generally a good idea to include `"./package.json": "./package.json"` so that it can be imported ([`module.findPackageJSON`](https://nodejs.org/api/module.html#modulefindpackagejsonspecifier-base) is not affected by this limitation, but `import` may be more convenient).
-
-`"exports"` can be advisable over [`"main"`](https://nodejs.org/api/packages.html#main) because it prevents external access to internal code (so you can be relatively sure users are not depending on things they shouldn't). If you don't need that, `"main"` is simpler and may be a better option for you.
-
-The `"engines"` field provides both a human-friendly and a machine-friendly indication of which version(s) of Node.js the package is compatible. Depending on the package manager used, an exception may be thrown causing the installation to fail when the consumer is using an incompatible version of Node.js (which can be very helpful to consumers). Including this field will save a lot of headache for consumers with an older version of Node.js who cannot use the package.
-
 ### CJS source and distribution
 
 You _technially_ may not need _any_ package configuration beyond [`"name"`](https://nodejs.org/api/packages.html#name). But the less arcane, the better: Essentially just declare the package’s exports via the `"exports"` field/field-set.
@@ -517,6 +507,16 @@ The configuration for this is the same as [CJS source and both CJS & ESM distrib
 🛑 You should not do this: Versions of Node.js prior to 12.x are End of Life and are now vulnerable to serious security exploits.
 
 If you're a security researcher needing to investigate Node.js prior to v12.22.x, feel free to contact us for help configuring.
+
+## General notes
+
+[Syntax detection](https://nodejs.org/api/packages.html#syntax-detection) is _**not**_ a replacement for proper package configuration; syntax detection is not fool-proof and it has [significant performance cost](https://github.com/nodejs/node/pull/55238).
+
+When using [`"exports"`](https://nodejs.org/api/packages.html#conditional-exports) in package.json, it is generally a good idea to include `"./package.json": "./package.json"` so that it can be imported ([`module.findPackageJSON`](https://nodejs.org/api/module.html#modulefindpackagejsonspecifier-base) is not affected by this limitation, but `import` may be more convenient).
+
+`"exports"` can be advisable over [`"main"`](https://nodejs.org/api/packages.html#main) because it prevents external access to internal code (so you can be relatively sure users are not depending on things they shouldn't). If you don't need that, `"main"` is simpler and may be a better option for you.
+
+The `"engines"` field provides both a human-friendly and a machine-friendly indication of which version(s) of Node.js the package is compatible. Depending on the package manager used, an exception may be thrown causing the installation to fail when the consumer is using an incompatible version of Node.js (which can be very helpful to consumers). Including this field will save a lot of headache for consumers with an older version of Node.js who cannot use the package.
 
 ## Down the rabbit-hole
 
