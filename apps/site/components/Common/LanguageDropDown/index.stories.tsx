@@ -8,9 +8,9 @@ type Meta = MetaObj<typeof LanguageDropDown>;
 export const Default: Story = {
   args: {
     availableLanguages: [
-      { name: 'English', code: 'en' },
-      { name: 'French', code: 'fr' },
-      { name: 'Spanish', code: 'es' },
+      { name: 'English', code: 'en', localName: 'English' },
+      { name: 'French', code: 'fr', localName: 'Français' },
+      { name: 'Spanish', code: 'es', localName: 'Español' },
     ],
     currentLanguage: 'en',
   },
