@@ -146,16 +146,6 @@ In order to _directly_ supply both audiences (so that your distribution works "n
 
 Classic but takes some sophistication and finesse.
 
-Pros:
-
-- Smaller package weight
-- Easy and simple (probably least effort if you don't mind keeping to a minor syntax stipulation)
-- Precludes [the Dual-Package Hazard](#the-dual-package-hazard)
-
-Cons:
-
-- Requires very specific syntax (either in source code and/or bundler gymnastics).
-
 **Working example**: [cjs-with-dual-distro (properties)](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/dual/property-distro)
 
 ```json displayName="Minimal package.json"
@@ -176,6 +166,16 @@ Cons:
   }
 }
 ```
+
+Pros:
+
+- Smaller package weight
+- Easy and simple (probably least effort if you don't mind keeping to a minor syntax stipulation)
+- Precludes [the Dual-Package Hazard](#the-dual-package-hazard)
+
+Cons:
+
+- Requires very specific syntax (either in source code and/or bundler gymnastics).
 
 Sometimes, a CJS module may re-assign `module.exports` to something else (be it an object or a function) like this:
 
@@ -200,14 +200,6 @@ module.exports.qux = function qux() {};
 #### Use a simple ESM wrapper
 
 Complicated setup and difficult to get the balance right.
-
-Pros:
-
-- Smaller package weight
-
-Cons:
-
-- Likely requires complicated bundler gymnastics (we could not find any existing option to automate this in Webpack).
 
 **Working example**: [cjs-with-dual-distro (wrapper)](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/dual/wrapper-distro)
 
@@ -240,6 +232,14 @@ Cons:
 }
 ```
 
+Pros:
+
+- Smaller package weight
+
+Cons:
+
+- Likely requires complicated bundler gymnastics (we could not find any existing option to automate this in Webpack).
+
 When the CJS output from the bundler evades the named exports detection in Node.js, a ESM wrapper can be used to explicitly re-export the known named exports for ESM consumers.
 
 When CJS exports an object (which gets aliased to ESM's `default`), you can save references to all the members of the object locally in the wrapper, and then re-export them so the ESM consumer can access all of them by name.
@@ -257,15 +257,6 @@ export { a, b, c /* … */ };
 #### Two full distributions
 
 Chuck in a bunch of stuff and hope for the best. This is probably the most common and easiest of the CJS to CJS & ESM options, but you pay for it. This is rarely a good idea.
-
-Pros:
-
-- Simple bundler configuration
-
-Cons:
-
-- Larger package weight (basically double)
-- Vulnerable to [the Dual-Package Hazard](#the-dual-package-hazard)
 
 **Working example**: [cjs-with-dual-distro (double)](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/dual/double-distro)
 
@@ -297,6 +288,15 @@ Cons:
   }
 }
 ```
+
+Pros:
+
+- Simple bundler configuration
+
+Cons:
+
+- Larger package weight (basically double)
+- Vulnerable to [the Dual-Package Hazard](#the-dual-package-hazard)
 
 Alternatively, you can use `"default"` and `"node"` keys, which are less counter-intuitive: Node.js will always choose the `"node"` option (which always works), and non-Node.js tooling will choose `"default"` when configured to target something other than node. **This precludes the dual-package hazard.**
 
