@@ -144,7 +144,7 @@ In order to _directly_ supply both audiences (so that your distribution works "n
 
 #### Attach named exports directly onto `exports`
 
-Classic but takes some sophistication and finesse.
+Classic but takes some sophistication and finesse. This means adding properties onto the existing `module.exports` (instead of re-assigning `module.exports` as a whole).
 
 **Working example**: [cjs-with-dual-distro (properties)](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/dual/property-distro)
 
