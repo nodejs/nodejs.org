@@ -54,7 +54,7 @@ There are other options available, mostly for historical purposes.
 
 ### CJS source and distribution
 
-You _technially_ may not need _any_ package configuration beyond [`"name"`](https://nodejs.org/api/packages.html#name). But the less arcane, the better: Essentially just declare the package’s exports via the `"exports"` field/field-set.
+The most minimal configuration may be only [`"name"`](https://nodejs.org/api/packages.html#name). But the less arcane, the better: Essentially just declare the package’s exports via the `"exports"` field/field-set.
 
 **Working example**: [cjs-with-cjs-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/cjs-distro)
 
@@ -113,7 +113,7 @@ Note that ESM now _is_ “backwards” compatible with CJS: a CJS module now _ca
 
 ### CJS source and only ESM distribution
 
-This takes a small bit of finesse but is also pretty straight-forward.
+This takes a small bit of finesse but is also pretty straight-forward. This may be the choice pick of older projects targetting newer standards, or authors who merely prefer CJS but are publishing for a different environment.
 
 **Working example**: [cjs-with-esm-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/cjs/esm-distro)
 
@@ -140,7 +140,7 @@ The [`.mjs`](https://nodejs.org/api/esm.html#enabling) file extension is a trump
 
 ### CJS source and both CJS & ESM distribution
 
-You have a few options:
+In order to _directly_ supply both audiences (so that your distribution works "natively" in either), you have a few options:
 
 #### Attach named exports directly onto `exports`
 
