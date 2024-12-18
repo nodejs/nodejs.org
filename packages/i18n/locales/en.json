@@ -90,7 +90,7 @@
         "modules": {
           "links": {
             "modules": "Modules",
-            "packageConfiguration": "Package configuration",
+            "publishingAPackage": "Publishing a package",
             "publishingNodeApiModules": "How to publish a Node-API package",
             "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction",
             "abiStability": "ABI Stability",
