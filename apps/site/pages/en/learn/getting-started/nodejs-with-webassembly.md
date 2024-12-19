@@ -66,7 +66,7 @@ WebAssembly.instantiate(wasmBuffer).then(wasmModule => {
 import fs from 'node:fs/promises';
 
 // Use readFile to read contents of the "add.wasm" file
-const wasmBuffer = await fs.readFile('path/to/add.wsm');
+const wasmBuffer = await fs.readFile('/path/to/add.wasm');
 
 // Use the WebAssembly.instantiate method to instantiate the WebAssembly module
 const wasmModule = await WebAssembly.instantiate(wasmBuffer);
@@ -76,7 +76,7 @@ const { add } = wasmModule.instance.exports;
 
 const sum = add(5, 6);
 
-console.log(sum); // Outputs 11
+console.log(sum); // Outputs: 11
 ```
 
 ## Interacting with the OS
