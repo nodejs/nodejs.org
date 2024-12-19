@@ -15,17 +15,61 @@ This creates some unique constraints that only a functional style of programming
 However, callbacks can become challenging to handle in more complicated procedures. This often results in "callback hell" where multiple nested functions with callbacks make the code more challenging to read, debug, organize, etc.
 
 ```js
-async1(function (input, result1) {
-  async2(function (result2) {
-    async3(function (result3) {
-      async4(function (result4) {
-        async5(function (output) {
-          // do something with output
+function async1(callback) {
+  setTimeout(() => {
+    console.log('async1 completed');
+    callback('result1');  // Passing result to next function
+  }, 1000);  // Simulate 1-second async operation
+}
+
+function async2(callback) {
+  setTimeout(() => {
+    console.log('async2 completed');
+    callback('result2');  // Passing result to next function
+  }, 1000);  // Simulate 1-second async operation
+}
+
+function async3(callback) {
+  setTimeout(() => {
+    console.log('async3 completed');
+    callback('result3');  // Passing result to next function
+  }, 1000);  // Simulate 1-second async operation
+}
+
+function async4(callback) {
+  setTimeout(() => {
+    console.log('async4 completed');
+    callback('result4');  // Passing result to next function
+  }, 1000);  // Simulate 1-second async operation
+}
+
+function async5(callback) {
+  setTimeout(() => {
+    console.log('async5 completed');
+    callback('final result');  // Final output after all async operations
+  }, 1000);  // Simulate 1-second async operation
+}
+
+async1(function(input, result1) {
+  async2(function(result2) {
+    async3(function(result3) {
+      async4(function(result4) {
+        async5(function(output) {
+          // Do something with the output (final result after all async calls)
+          console.log('Final output:', output);
         });
       });
     });
   });
 });
+//=============================================OUTPUT IS GIVEN BELOW================================================
+async1 completed
+async2 completed
+async3 completed
+async4 completed
+async5 completed
+Final output: final result
+
 ```
 
 Of course, in real life there would most likely be additional lines of code to handle `result1`, `result2`, etc., thus, the length and complexity of this issue usually results in code that looks much more messy than the example above.
