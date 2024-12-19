@@ -22,4 +22,6 @@ crowdin.yml @nodejs/web-infra
 apps/site/redirects.json @nodejs/web-infra
 apps/site/site.json @nodejs/web-infra
 
+# Specific content
 apps/site/pages/en/learn/getting-started/security-best-practices.md @nodejs/security-wg
+apps/site/pages/en/learn/typescript @nodejs/typescript
