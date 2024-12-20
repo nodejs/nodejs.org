@@ -97,4 +97,4 @@ and we close the response, adding the content as an argument to `end()`:
 res.end('Hello World\n');
 ```
 
-[Download node.js](https://nodejs.org/en/download/package-manager)
+If you haven't already done so, [download](https://nodejs.org/en/download) Node.js.
