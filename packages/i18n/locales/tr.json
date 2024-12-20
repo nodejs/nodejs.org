@@ -28,7 +28,6 @@
           "links": {
             "gettingStarted": "Başlarken",
             "introductionToNodejs": "Node.js'e Giriş",
-            "howToInstallNodejs": "Node.js nasıl kurulur",
             "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Node.js kullanabilmek için ne kadar JavaScript bilmelisiniz?",
             "differencesBetweenNodejsAndTheBrowser": "Node.js ile Tarayıcı Arasındaki Farklar",
             "theV8JavascriptEngine": "V8 JavaScript Motoru",

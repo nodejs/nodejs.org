@@ -96,3 +96,5 @@ and we close the response, adding the content as an argument to `end()`:
 ```js
 res.end('Hello World\n');
 ```
+
+If you haven't already done so, [download](https://nodejs.org/en/download) Node.js.

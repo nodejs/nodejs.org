@@ -30,7 +30,6 @@
           "links": {
             "gettingStarted": "Memulai",
             "introductionToNodejs": "Pengantar Node.js",
-            "howToInstallNodejs": "Instruksi Pemasangan Node.js",
             "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Seberapa banyak JavaScript yang anda perlu tahu untuk menggunakan Node.js?",
             "differencesBetweenNodejsAndTheBrowser": "Perbedaan Node.js dengan Browser",
             "theV8JavascriptEngine": "V8 JavaScript Engine",
