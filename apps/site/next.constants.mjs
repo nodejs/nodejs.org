@@ -12,7 +12,7 @@ export const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
  *
  * @see https://vercel.com/docs/concepts/projects/environment-variables/system-environment-variables#framework-environment-variables
  */
-export const VERCEL_ENV = process.env.NEXT_PUBLIC_VERCEL_ENV || undefined;
+export const VERCEL_ENV = process.env.VERCEL_ENV || undefined;
 
 /**
  * This is used for telling Next.js to do a Static Export Build of the Website
@@ -36,8 +36,8 @@ export const ENABLE_STATIC_EXPORT =
  */
 export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
   ? process.env.NEXT_PUBLIC_BASE_URL
-  : process.env.NEXT_PUBLIC_VERCEL_URL
-    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+  : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
     : 'https://nodejs.org';
 
 /**
