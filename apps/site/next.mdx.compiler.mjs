@@ -3,7 +3,6 @@
 import { compile as mdxCompile } from '@mdx-js/mdx';
 import { matter } from 'vfile-matter';
 
-import { MDX_COMPONENTS } from './next.mdx.components.mjs';
 import { createSval } from './next.mdx.evaluater.mjs';
 import { REHYPE_PLUGINS, REMARK_PLUGINS } from './next.mdx.plugins.mjs';
 import { createGitHubSlugger } from './util/gitHubUtils';
@@ -27,7 +26,7 @@ import { createGitHubSlugger } from './util/gitHubUtils';
 export async function compile(
   source,
   fileExtension,
-  components = MDX_COMPONENTS,
+  components = {},
   props = {}
 ) {
   // Parses the Frontmatter to the VFile and removes from the original source

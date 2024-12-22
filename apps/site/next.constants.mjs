@@ -168,7 +168,8 @@ export const ORAMA_CLOUD_ENDPOINT =
  * The default Orama Cloud API Key to use when searching with Orama Cloud.
  * This is a public API key and can be shared publicly on the frontend.
  */
-export const ORAMA_CLOUD_API_KEY = process.env.NEXT_PUBLIC_ORAMA_API_KEY || '';
+export const ORAMA_CLOUD_API_KEY =
+  process.env.NEXT_PUBLIC_ORAMA_API_KEY || 'qopIuAERiWP2EZOpDjvczjws7WV40yrj';
 
 /**
  * A GitHub Access Token for accessing the GitHub API and not being rate-limited
