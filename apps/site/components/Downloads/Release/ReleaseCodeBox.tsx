@@ -22,7 +22,7 @@ const ReleaseCodeBox: FC = () => {
     const interpreter = createSval({ props: { release } }, 'script');
 
     // Evaluates the JavaScript code applying the release context to the code
-    interpreter.run(`exports.content = \`${snippet.content}\``);
+    interpreter.run(`exports.content = \`${snippet?.content}\``);
 
     // Sets the parsed raw string to be used by the JSX CodeBox
     return interpreter.exports.content;
