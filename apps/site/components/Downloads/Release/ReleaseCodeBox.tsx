@@ -6,7 +6,7 @@ import { useContext, useMemo } from 'react';
 import semVer from 'semver';
 
 import Banner from '@/components/Common/Banner';
-import JSXCOdeBox from '@/components/JSX/CodeBox';
+import JSXCodeBox from '@/components/JSX/CodeBox';
 import { ESP_SUPPORT_THRESHOLD_VERSION } from '@/next.constants.mjs';
 import { createSval } from '@/next.jsx.compiler.mjs';
 import { ReleaseContext } from '@/providers/releaseProvider';
@@ -39,9 +39,9 @@ const ReleaseCodeBox: FC = () => {
         </Banner>
       )}
 
-      <JSXCOdeBox language={codeLanguage} className="min-h-[15.5rem]">
+      <JSXCodeBox language={codeLanguage} className="min-h-[15.5rem]">
         {parsedSnippet}
-      </JSXCOdeBox>
+      </JSXCodeBox>
 
       <span className="text-center text-xs text-neutral-800 dark:text-neutral-200">
         {t('layouts.download.codeBox.communityWarning')}
