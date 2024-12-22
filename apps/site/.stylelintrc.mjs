@@ -15,7 +15,7 @@ const CUSTOM_AT_RULES = [
 // Enforces certain selectors to be only in camelCase notation
 // We use these for id selectors and classname selectors
 const ONLY_ALLOW_CAMEL_CASE_SELECTORS = [
-  /^(?:[a-z]+(?:[A-Z][a-z]*)*)$/,
+  /^(?:[a-z0-9]+(?:[A-Z][a-z0-9]*)*)$/,
   { message: s => `Expected '${s}' to be in camelCase` },
 ];
 

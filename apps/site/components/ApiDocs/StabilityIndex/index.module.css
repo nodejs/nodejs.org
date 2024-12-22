@@ -1,23 +1,23 @@
 .stabilityIndex {
-  @apply py-3
-    px-4
-    flex
+  @apply flex
     flex-row
     items-center
     gap-2
-    text-white
-    rounded;
+    rounded
+    px-4
+    py-3
+    text-white;
 
-  .indexLelvel {
+  .indexLevel {
     @apply rounded-sm
-      text-sm
-      px-1.5;
+      px-1.5
+      text-sm;
   }
 
   &.stabilityLevel3 {
     @apply bg-info-600;
 
-    .indexLelvel {
+    .indexLevel {
       @apply bg-info-700;
     }
   }
@@ -25,7 +25,7 @@
   &.stabilityLevel2 {
     @apply bg-green-600;
 
-    .indexLelvel {
+    .indexLevel {
       @apply bg-green-700;
     }
   }
@@ -33,7 +33,7 @@
   &.stabilityLevel1 {
     @apply bg-warning-600;
 
-    .indexLelvel {
+    .indexLevel {
       @apply bg-warning-700;
     }
   }
@@ -41,7 +41,7 @@
   &.stabilityLevel0 {
     @apply bg-danger-600;
 
-    .indexLelvel {
+    .indexLevel {
       @apply bg-danger-700;
     }
   }

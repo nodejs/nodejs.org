@@ -8,12 +8,15 @@ type StabilityIndexProps = PropsWithChildren<{
 }>;
 
 const StabilityIndex: FC<StabilityIndexProps> = ({ level, children }) => (
-    <div className={classNames(styles.stabilityIndex, styles[`stabilityLevel${level}`])}>
-      <span
-        className={styles.indexLelvel}
-      >{level}</span>{children}
-    </div>
-  );
-
+  <div
+    className={classNames(
+      styles.stabilityIndex,
+      styles[`stabilityLevel${level}`]
+    )}
+  >
+    <span className={styles.indexLevel}>{level}</span>
+    {children}
+  </div>
+);
 
 export default StabilityIndex;
