@@ -39,7 +39,7 @@ const ReleaseCodeBox: FC = () => {
         </Banner>
       )}
 
-      <JSXCodeBox language={codeLanguage} className="min-h-[10rem]">
+      <JSXCodeBox language={codeLanguage} className="min-h-[12rem]">
         {os !== 'LOADING' ? parsedSnippet : ''}
       </JSXCodeBox>
 

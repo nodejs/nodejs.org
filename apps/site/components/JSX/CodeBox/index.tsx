@@ -18,16 +18,21 @@ const codeToHast = highlightToHast(await shikiPromise);
 const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   children,
   language,
+  showCopyButton,
   className,
 }) => {
   const out = codeToHast(dedent(children as string), language);
-  const classes = classNames(`language-${language}`, className);
 
   return toJsxRuntime(out, {
     ...reactRuntime,
     components: {
       pre: ({ children }) => (
-        <MDXCodeBox className={classes}>{children}</MDXCodeBox>
+        <MDXCodeBox
+          showCopyButton={showCopyButton ? 'true' : undefined}
+          className={classNames(`language-${language}`, className)}
+        >
+          {children}
+        </MDXCodeBox>
       ),
     },
   });

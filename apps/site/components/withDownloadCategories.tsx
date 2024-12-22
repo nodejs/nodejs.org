@@ -11,6 +11,7 @@ import { ReleaseProvider } from '@/providers/releaseProvider';
 import type { NodeReleaseStatus } from '@/types';
 import { getDownloadCategory, mapCategoriesToTabs } from '@/util/downloadUtils';
 
+// By default the translated languages do not contain all the download snippets
 const fallbackSnippets = await getDownloadSnippets(defaultLocale.code);
 
 const WithDownloadCategories: FC<PropsWithChildren> = async ({ children }) => {
