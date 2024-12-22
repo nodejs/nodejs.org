@@ -5,7 +5,7 @@ import type { FC, PropsWithChildren } from 'react';
 
 import MDXCodeBox from '@/components/MDX/CodeBox';
 import { reactRuntime } from '@/next.mdx.compiler.mjs';
-import { highlightToHast, shikiPromise } from '@/util/getHighlighter';
+import { highlightToHast } from '@/util/getHighlighter';
 
 type CodeBoxProps = {
   language: string;
@@ -13,17 +13,15 @@ type CodeBoxProps = {
   className?: string;
 };
 
-const codeToHast = highlightToHast(await shikiPromise);
-
 const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   children,
   language,
   showCopyButton,
   className,
 }) => {
-  const out = codeToHast(dedent(children as string), language);
+  const highlighted = highlightToHast(dedent(String(children)), language);
 
-  return toJsxRuntime(out, {
+  return toJsxRuntime(highlighted, {
     ...reactRuntime,
     components: {
       pre: ({ children }) => (
