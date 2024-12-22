@@ -12,6 +12,7 @@
       "env": [
         "VERCEL_ENV",
         "VERCEL_URL",
+        "VERCEL_REGION",
         "NEXT_PUBLIC_STATIC_EXPORT",
         "NEXT_PUBLIC_BASE_URL",
         "NEXT_PUBLIC_DIST_URL",
