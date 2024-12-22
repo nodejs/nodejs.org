@@ -99,11 +99,11 @@ Incoming translations are linted to ensure they come from crowdin, and are also 
 
 ## Why We Translate This section and Not this Section
 
-> First what we mean by "section" is a part of the website. It's an collection of pages that are related to each other. For example, the "Learn" section is a collection of pages that are related to learning/discovering Node.js.
+> First what we mean by "section" is a part of the website. It's a collection of pages that are related to each other. For example, the "Learn" section is a collection of pages that are related to learning/discovering Node.js.
 
 Here we only talk about md/mdx file. The translation of components is covered by a JSON dictionary, so not an issue at all.
 
-We have theses sections on the website:
+We have these sections on the website:
 
 - Learn
 - About
@@ -119,5 +119,5 @@ We have theses sections on the website:
 
 ### Sections that are not translated
 
-- **Blog**: The blog is not translated because it's not useful to translate blog posts. Most of blog are release notes, and it's not useful to translate them.
+- **Blog**: The blog is not translated because it's not useful to translate blog posts. Most of the blog posts are release notes, and it's not useful to translate them.
 - **Learn**: The learn section is not translated because it contains technical terms that are hard to translate. Plus, we don't have the ability to trust the quality of the translations. It's better to have the content in English than to have bad translations. If you want to have more information read [this message](https://github.com/nodejs/nodejs.org/issues/6429#issuecomment-2558265376) that summarizes whole reasons.
