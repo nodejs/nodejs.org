@@ -12,7 +12,7 @@ import {
   BASE_URL,
   DEFAULT_CATEGORY_OG_TYPE,
   ENABLE_STATIC_EXPORT,
-  IS_DEVELOPMENT,
+  IS_DEV_ENV,
 } from './next.constants.mjs';
 import {
   DYNAMIC_ROUTES,
@@ -42,7 +42,7 @@ const mapPathToRoute = (locale = defaultLocale.code, path = '') => ({
 // Provides an in-memory Map that lasts the whole build process
 // and disabled when on development mode (stubbed)
 const createCachedMarkdownCache = () => {
-  if (IS_DEVELOPMENT) {
+  if (IS_DEV_ENV) {
     return {
       has: () => false,
       set: () => {},
