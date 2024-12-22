@@ -4,7 +4,7 @@ import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
 import Sval from 'sval';
 
 // Defines the React Runtime Components
-const reactRuntime = { Fragment, jsx, jsxs };
+export const reactRuntime = { Fragment, jsx, jsxs };
 
 /**
  * Creates a JavaScript Evaluater
