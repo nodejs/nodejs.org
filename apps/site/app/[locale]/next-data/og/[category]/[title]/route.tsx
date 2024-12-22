@@ -13,13 +13,10 @@ const CATEGORY_TO_THEME_COLOUR_MAP = {
   vulnerability: tailwindConfig.theme.colors.warning['600'],
 };
 
-type StaticParams = {
-  params: Promise<{
-    locale: string;
-    category: keyof typeof CATEGORY_TO_THEME_COLOUR_MAP;
-    title: string;
-  }>;
-};
+type Category = keyof typeof CATEGORY_TO_THEME_COLOUR_MAP;
+
+type DynamicStaticPaths = { locale: string; category: Category; title: string };
+type StaticParams = { params: Promise<DynamicStaticPaths> };
 
 // This is the Route Handler for the `GET` method which handles the request
 // for generating OpenGraph images for Blog Posts and Pages

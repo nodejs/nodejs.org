@@ -1,37 +1,51 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import type { FC, ReactNode } from 'react';
 import { useContext, useEffect, useState } from 'react';
-import type { FC } from 'react';
 import semVer from 'semver';
+import { VFile } from 'vfile';
 
 import Banner from '@/components/Common/Banner';
-import CodeBox from '@/components/Common/CodeBox';
+import JSXCodeBox from '@/components/JSX/CodeBox';
 import { ESP_SUPPORT_THRESHOLD_VERSION } from '@/next.constants.mjs';
+import { compile } from '@/next.mdx.compiler.mjs';
 import { ReleaseContext } from '@/providers/releaseProvider';
-import { shikiPromise, highlightToHtml } from '@/util/getHighlighter';
-import { getNodeDownloadSnippet } from '@/util/getNodeDownloadSnippet';
-
-const memoizedShiki = shikiPromise.then(highlightToHtml);
 
 const ReleaseCodeBox: FC = () => {
-  const { platform, os, release } = useContext(ReleaseContext);
+  const { platform, os, release, snippet } = useContext(ReleaseContext);
 
-  const [code, setCode] = useState('');
+  const [code, setCode] = useState<ReactNode>(null);
   const t = useTranslations();
 
   useEffect(() => {
-    const updatedCode = getNodeDownloadSnippet(release, os, t)[platform];
-    // Docker and NVM support downloading tags/versions by their full release number
-    // but usually we should recommend users to download "major" versions
-    // since our Download Buttons get the latest minor of a major, it does make sense
-    // to request installation of a major via a package manager
-    memoizedShiki.then(shiki => shiki(updatedCode, 'bash')).then(setCode);
+    // Wraps the code snippet (which is a plain string imported from `provideDownloadSnippets`)
+    // To be wrapped with the JSX CodeBox component that invokes Shiki's Hast to JSX runtime compiler
+    // Whilst evaluating the snippet as a JavaScript template literal, which allows us to access
+    // the `props` object passed to the MDX Compiler.
+    const wrappedContent = `
+      <CodeBox language="${os === 'WIN' ? 'ps1' : 'bash'}">
+        {\`${snippet.content}\`}
+      </CodeBox>`;
+
+    // Compiles the MDX snippet to JSX and sets the code state
+    const promise = compile(
+      // Wraps the code snippet with a VFile object to be passed to the MDX Compiler
+      new VFile(wrappedContent),
+      // The MDX Compiler will use the `jsx` extension to compile the code snippet
+      'mdx',
+      // Passes the `CodeBox` component to the MDX Compiler as a component within the `components` object
+      { CodeBox: JSXCodeBox },
+      // Passes the `release` object to the MDX Compiler as a property within the `props` object
+      { release }
+    );
+
+    // Sets the code state with the compiled JSX code
+    promise.then(({ content }) => setCode(content));
     // Only react when the specific release number changed
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [release.versionWithPrefix, os, platform]);
 
-  const codeLanguage = os === 'WIN' ? 'PowerShell' : 'Bash';
   return (
     <div className="mb-2 mt-6 flex flex-col gap-2">
       {semVer.lt(release.versionWithPrefix, ESP_SUPPORT_THRESHOLD_VERSION) && (
@@ -39,9 +53,9 @@ const ReleaseCodeBox: FC = () => {
           {t('layouts.download.codeBox.unsupportedVersionWarning')}&nbsp;
         </Banner>
       )}
-      <CodeBox language={codeLanguage} className="min-h-[15.5rem]">
-        <code dangerouslySetInnerHTML={{ __html: code }} />
-      </CodeBox>
+
+      {code}
+
       <span className="text-center text-xs text-neutral-800 dark:text-neutral-200">
         {t('layouts.download.codeBox.communityWarning')}
         <br />

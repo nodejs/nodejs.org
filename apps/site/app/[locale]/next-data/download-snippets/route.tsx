@@ -1,36 +1,30 @@
-import {
-  provideBlogPosts,
-  providePaginatedBlogPosts,
-} from '@/next-data/providers/blogData';
+import provideDownloadSnippets from '@/next-data/providers/downloadSnippets';
 import { defaultLocale } from '@/next.locales.mjs';
 
-type DynamicStaticPaths = { locale: string; category: string; page: string };
+type DynamicStaticPaths = { locale: string };
 type StaticParams = { params: Promise<DynamicStaticPaths> };
 
 // This is the Route Handler for the `GET` method which handles the request
-// for providing Blog Posts for Blog Categories and Pagination Metadata
+// for generating OpenGraph images for Blog Posts and Pages
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 export const GET = async (_: Request, props: StaticParams) => {
   const params = await props.params;
 
-  const requestedPage = Number(params.page);
+  // Retrieve all available Download snippets for a given locale if available
+  const snippets = provideDownloadSnippets(params.locale);
 
-  const data =
-    requestedPage >= 1
-      ? // This allows us to blindly get all blog posts from a given category
-        // if the page number is 0 or something smaller than 1
-        providePaginatedBlogPosts(params.category, requestedPage)
-      : provideBlogPosts(params.category);
-
-  return Response.json(data, { status: data.posts.length ? 200 : 404 });
+  // We append always the default/fallback snippets when a result is found
+  return Response.json(snippets, {
+    status: snippets !== undefined ? 200 : 404,
+  });
 };
 
 // This function generates the static paths that come from the dynamic segments
-// `[locale]/next-data/blog-data/[category]/[page]` this will return a default value as we don't want to
+// `[locale]/next-data/download-snippets/` this will return a default value as we don't want to
 // statically generate this route as it is compute-expensive.
-// Hence we generate a "fake" OG image during build just to satisfy Next.js requirements.
+// Hence we generate a fake route just to satisfy Next.js requirements.
 export const generateStaticParams = async () => [
-  { locale: defaultLocale.code, category: 'all', page: '0' },
+  { locale: defaultLocale.code },
 ];
 
 // Enforces that this route is cached and static as much as possible

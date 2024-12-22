@@ -7,7 +7,7 @@ const websiteFeeds = generateWebsiteFeeds(provideBlogPosts('all'));
 
 const provideWebsiteFeeds = cache((feed: string) => {
   if (feed.includes('.xml') && websiteFeeds.has(feed)) {
-    return websiteFeeds.get(feed)?.rss2();
+    return websiteFeeds.get(feed)!.rss2();
   }
 
   return undefined;
