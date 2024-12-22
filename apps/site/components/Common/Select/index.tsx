@@ -120,7 +120,12 @@ const Select: FC<SelectProps> = ({
           </SelectPrimitive.Trigger>
 
           <SelectPrimitive.Portal>
-            <SelectPrimitive.Content className={classNames(styles.dropdown)}>
+            <SelectPrimitive.Content
+              position={inline ? 'popper' : 'item-aligned'}
+              className={classNames(styles.dropdown, {
+                [styles.inline]: inline,
+              })}
+            >
               <ScrollPrimitive.Root type="auto">
                 <SelectPrimitive.Viewport>
                   <ScrollPrimitive.Viewport>
