@@ -90,6 +90,12 @@ export default {
         800: '#8B1245',
         900: '#411526',
       },
+      pulse: {
+        100: '#0000330F',
+        200: '#00002D17',
+        300: '#DDEAF814',
+        400: '#D3EDF81D',
+      },
       white: '#FFFFFF',
       transparent: 'transparent',
       shadow: '#101828',
@@ -141,6 +147,8 @@ export default {
       maxWidth: { '8xl': '95rem' },
       animation: {
         surf: 'surf 1s infinite ease-in-out',
+        pulse: 'pulse 500ms infinite alternate-reverse',
+        'pulse-dark': 'pulse-dark 500ms infinite alternate-reverse',
       },
       keyframes: {
         surf: {
@@ -149,6 +157,14 @@ export default {
           '50%': { transform: 'translate(0, -6px)' },
           '75%': { transform: 'translate(0, 3px)' },
           '100%': { transform: 'translate(0, 0)' },
+        },
+        pulse: {
+          from: { background: 'theme("colors.pulse.100")' },
+          to: { background: 'theme("colors.pulse.200")' },
+        },
+        'pulse-dark': {
+          from: { background: 'theme("colors.pulse.300")' },
+          to: { background: 'theme("colors.pulse.400")' },
         },
       },
     },

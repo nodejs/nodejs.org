@@ -4,9 +4,10 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import * as ScrollPrimitive from '@radix-ui/react-scroll-area';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import classNames from 'classnames';
-import { useId, useMemo } from 'react';
+import { useEffect, useId, useMemo, useState } from 'react';
 import type { FC } from 'react';
 
+import Skeleton from '@/components/Common/Skeleton';
 import type { FormattedMessage } from '@/types';
 
 import styles from './index.module.css';
@@ -30,7 +31,7 @@ const isValuesArray = (values: Array<unknown>): values is Array<SelectValue> =>
   Boolean(values[0] && typeof values[0] === 'object' && 'value' in values[0]);
 
 type SelectProps = {
-  values: Array<SelectGroup> | Array<SelectValue> | Array<string>;
+  values: Array<SelectGroup | string | SelectValue>;
   defaultValue?: string;
   placeholder?: string;
   label?: string;
@@ -38,6 +39,7 @@ type SelectProps = {
   onChange?: (value: string) => void;
   className?: string;
   ariaLabel?: string;
+  loading?: boolean;
 };
 
 const Select: FC<SelectProps> = ({
@@ -49,8 +51,12 @@ const Select: FC<SelectProps> = ({
   onChange,
   className,
   ariaLabel,
+  loading = false,
 }) => {
   const id = useId();
+  const [value, setValue] = useState(defaultValue);
+
+  useEffect(() => setValue(defaultValue), [defaultValue]);
 
   const mappedValues = useMemo(() => {
     let mappedValues = values;
@@ -63,76 +69,97 @@ const Select: FC<SelectProps> = ({
       return [{ items: mappedValues }];
     }
 
-    return mappedValues;
+    return mappedValues as Array<SelectGroup>;
   }, [values]);
 
+  // We render the actual item slotted to fix/prevent the issue
+  // of the tirgger flashing on the initial render
+  const currentItem = useMemo(
+    () =>
+      mappedValues
+        .flatMap(({ items }) => items)
+        .find(item => item.value === value),
+    [mappedValues, value]
+  );
+
+  // Both change the internal state and emit the change event
+  const handleChange = (value: string) => {
+    setValue(value);
+
+    if (typeof onChange === 'function') {
+      onChange(value);
+    }
+  };
+
   return (
-    <span
-      className={classNames(
-        styles.select,
-        { [styles.inline]: inline },
-        className
-      )}
-    >
-      {label && (
-        <label className={styles.label} htmlFor={id}>
-          {label}
-        </label>
-      )}
+    <Skeleton loading={loading}>
+      <span
+        className={classNames(
+          styles.select,
+          { [styles.inline]: inline },
+          className
+        )}
+      >
+        {label && (
+          <label className={styles.label} htmlFor={id}>
+            {label}
+          </label>
+        )}
 
-      <SelectPrimitive.Root value={defaultValue} onValueChange={onChange}>
-        <SelectPrimitive.Trigger
-          className={styles.trigger}
-          aria-label={ariaLabel}
-          id={id}
-        >
-          <SelectPrimitive.Value placeholder={placeholder} />
-          <ChevronDownIcon className={styles.icon} />
-        </SelectPrimitive.Trigger>
-
-        <SelectPrimitive.Portal>
-          <SelectPrimitive.Content
-            position={inline ? 'popper' : 'item-aligned'}
-            className={classNames(styles.dropdown, { [styles.inline]: inline })}
+        <SelectPrimitive.Root value={value} onValueChange={handleChange}>
+          <SelectPrimitive.Trigger
+            className={styles.trigger}
+            aria-label={ariaLabel}
+            id={id}
           >
-            <ScrollPrimitive.Root type="auto">
-              <SelectPrimitive.Viewport>
-                <ScrollPrimitive.Viewport>
-                  {mappedValues.map(({ label, items }, key) => (
-                    <SelectPrimitive.Group key={label?.toString() ?? key}>
-                      {label && (
-                        <SelectPrimitive.Label
-                          className={classNames(styles.item, styles.label)}
-                        >
-                          {label}
-                        </SelectPrimitive.Label>
-                      )}
+            <SelectPrimitive.Value placeholder={placeholder}>
+              {currentItem?.iconImage}
+              <span>{currentItem?.label}</span>
+            </SelectPrimitive.Value>
+            <ChevronDownIcon className={styles.icon} />
+          </SelectPrimitive.Trigger>
 
-                      {items.map(({ value, label, iconImage, disabled }) => (
-                        <SelectPrimitive.Item
-                          key={value}
-                          value={value}
-                          disabled={disabled}
-                          className={classNames(styles.item, styles.text)}
-                        >
-                          <SelectPrimitive.ItemText>
-                            {iconImage}
-                            <span>{label}</span>
-                          </SelectPrimitive.ItemText>
-                        </SelectPrimitive.Item>
-                      ))}
-                    </SelectPrimitive.Group>
-                  ))}
-                </ScrollPrimitive.Viewport>
-              </SelectPrimitive.Viewport>
-              <ScrollPrimitive.Scrollbar orientation="vertical">
-                <ScrollPrimitive.Thumb />
-              </ScrollPrimitive.Scrollbar>
-            </ScrollPrimitive.Root>
-          </SelectPrimitive.Content>
-        </SelectPrimitive.Portal>
-      </SelectPrimitive.Root>
-    </span>
+          <SelectPrimitive.Portal>
+            <SelectPrimitive.Content className={classNames(styles.dropdown)}>
+              <ScrollPrimitive.Root type="auto">
+                <SelectPrimitive.Viewport>
+                  <ScrollPrimitive.Viewport>
+                    {mappedValues.map(({ label, items }, key) => (
+                      <SelectPrimitive.Group key={label?.toString() ?? key}>
+                        {label && (
+                          <SelectPrimitive.Label
+                            className={classNames(styles.item, styles.label)}
+                          >
+                            {label}
+                          </SelectPrimitive.Label>
+                        )}
+
+                        {items.map(({ value, label, iconImage, disabled }) => (
+                          <SelectPrimitive.Item
+                            key={value}
+                            value={value}
+                            disabled={disabled}
+                            className={classNames(styles.item, styles.text)}
+                          >
+                            <SelectPrimitive.ItemText>
+                              {iconImage}
+                              <span>{label}</span>
+                            </SelectPrimitive.ItemText>
+                          </SelectPrimitive.Item>
+                        ))}
+                      </SelectPrimitive.Group>
+                    ))}
+                  </ScrollPrimitive.Viewport>
+                </SelectPrimitive.Viewport>
+                <ScrollPrimitive.Scrollbar orientation="vertical">
+                  <ScrollPrimitive.Thumb />
+                </ScrollPrimitive.Scrollbar>
+              </ScrollPrimitive.Root>
+            </SelectPrimitive.Content>
+          </SelectPrimitive.Portal>
+        </SelectPrimitive.Root>
+      </span>
+    </Skeleton>
   );
 };
 
