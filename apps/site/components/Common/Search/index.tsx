@@ -132,9 +132,7 @@ const SearchButton: FC = () => {
           const fullURLObject = new URL(event.detail.result.path, BASE_URL);
 
           // result.path already contains LOCALE. Locale is set to undefined here so router does not add it once again.
-          router.push(fullURLObject.href, {
-            locale: undefined,
-          });
+          router.push(fullURLObject.href, { locale: undefined });
         }}
       />
     </>

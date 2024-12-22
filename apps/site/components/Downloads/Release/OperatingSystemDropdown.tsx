@@ -60,8 +60,9 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
           AIX: <Aix width={16} height={16} />,
         },
       })}
-      ariaLabel={t('layouts.download.dropdown.os')}
       defaultValue={os}
+      loading={os === 'LOADING'}
+      ariaLabel={t('layouts.download.dropdown.os')}
       onChange={value => setOS(value as UserOS)}
       className="min-w-[8.5rem]"
       inline={true}
