@@ -15,7 +15,7 @@ type UserOSState = {
 
 const useDetectOS = () => {
   const [userOSState, setUserOSState] = useState<UserOSState>({
-    os: 'OTHER',
+    os: 'LOADING',
     bitness: 86,
     architecture: 'ARM',
   });

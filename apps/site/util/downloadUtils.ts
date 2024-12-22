@@ -115,6 +115,7 @@ export const bitnessItems = {
     },
   ],
   OTHER: [],
+  LOADING: [],
 };
 
 type formatDropdownItemsType = {

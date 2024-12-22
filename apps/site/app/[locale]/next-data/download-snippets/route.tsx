@@ -5,7 +5,7 @@ type DynamicStaticPaths = { locale: string };
 type StaticParams = { params: Promise<DynamicStaticPaths> };
 
 // This is the Route Handler for the `GET` method which handles the request
-// for generating OpenGraph images for Blog Posts and Pages
+// for generating JSON data for Download Snippets
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 export const GET = async (_: Request, props: StaticParams) => {
   const params = await props.params;
