@@ -1,16 +1,11 @@
 import {
   ENABLE_STATIC_EXPORT,
-  IS_DEVELOPMENT,
+  IS_DEV_ENV,
   NEXT_DATA_URL,
   VERCEL_ENV,
 } from '@/next.constants.mjs';
 import { availableLocaleCodes } from '@/next.locales.mjs';
 import type { DownloadSnippet } from '@/types';
-
-// Prevents React from throwing an Error when not able to fulfil a request
-// due to internal processing errors
-const parseDownloadSnippetResponse = (data: string): Array<DownloadSnippet> =>
-  data.startsWith('{') ? JSON.parse(data) : [];
 
 const getDownloadSnippets = (lang: string): Promise<Array<DownloadSnippet>> => {
   // Prevents attempting to retrieve data for an unsupported language as both the generator
@@ -23,7 +18,7 @@ const getDownloadSnippets = (lang: string): Promise<Array<DownloadSnippet>> => {
   // hence the self-ingestion APIs will not be available. In this case we want to load
   // the data directly within the current thread, which will anyways be loaded only once
   // We use lazy-imports to prevent `provideBlogData` from executing on import
-  if (ENABLE_STATIC_EXPORT || (!IS_DEVELOPMENT && !VERCEL_ENV)) {
+  if (ENABLE_STATIC_EXPORT || (VERCEL_ENV !== 'production' && !IS_DEV_ENV)) {
     return import('@/next-data/providers/downloadSnippets').then(
       ({ default: provideDownloadSnippets }) => provideDownloadSnippets(lang)!
     );
@@ -43,7 +38,7 @@ const getDownloadSnippets = (lang: string): Promise<Array<DownloadSnippet>> => {
   // that does not provide a clear stack trace of which request is failing and what the JSON.parse error is
   return fetch(fetchURL)
     .then(response => response.text())
-    .then(response => parseDownloadSnippetResponse(response));
+    .then(JSON.parse);
 };
 
 export default getDownloadSnippets;

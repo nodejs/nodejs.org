@@ -3,7 +3,7 @@
 /**
  * This is used to verify if the current Website is running on a Development Environment
  */
-export const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
+export const IS_DEV_ENV = process.env.NODE_ENV === 'development';
 
 /**
  * This is used for telling Next.js if the Website is deployed on Vercel
