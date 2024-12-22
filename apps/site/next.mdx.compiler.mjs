@@ -1,11 +1,15 @@
 'use strict';
 
 import { compile as mdxCompile } from '@mdx-js/mdx';
+import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
 import { matter } from 'vfile-matter';
 
-import { createSval } from './next.mdx.evaluater.mjs';
+import { createSval } from './next.jsx.compiler.mjs';
 import { REHYPE_PLUGINS, REMARK_PLUGINS } from './next.mdx.plugins.mjs';
 import { createGitHubSlugger } from './util/gitHubUtils';
+
+// Defines a JSX Fragment and JSX Runtime for the MDX Compiler
+export const reactRuntime = { Fragment, jsx, jsxs };
 
 /**
  * This is our custom simple MDX Compiler that is used to compile Markdown and MDX
@@ -43,7 +47,10 @@ export async function compile(
     format: fileExtension,
   });
 
-  const interpreter = createSval(components);
+  const interpreter = createSval({
+    ...components,
+    'react/jsx-runtime': reactRuntime,
+  });
 
   // Run the compiled JavaScript code from MDX
   interpreter.run(compiled.toString());
