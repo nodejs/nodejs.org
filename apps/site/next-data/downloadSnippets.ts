@@ -7,6 +7,11 @@ import {
 import { availableLocaleCodes } from '@/next.locales.mjs';
 import type { DownloadSnippet } from '@/types';
 
+// Prevents React from throwing an Error when not able to fulfil a request
+// due to internal processing errors
+const parseDownloadSnippetResponse = (data: string): Array<DownloadSnippet> =>
+  data.startsWith('{') ? JSON.parse(data) : [];
+
 const getDownloadSnippets = (lang: string): Promise<Array<DownloadSnippet>> => {
   // Prevents attempting to retrieve data for an unsupported language as both the generator
   // and the API endpoint will simply return 404. And we want to prevent a 404 response.
@@ -38,7 +43,7 @@ const getDownloadSnippets = (lang: string): Promise<Array<DownloadSnippet>> => {
   // that does not provide a clear stack trace of which request is failing and what the JSON.parse error is
   return fetch(fetchURL)
     .then(response => response.text())
-    .then(JSON.parse);
+    .then(response => parseDownloadSnippetResponse(response));
 };
 
 export default getDownloadSnippets;
