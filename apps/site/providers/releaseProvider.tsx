@@ -13,7 +13,7 @@ import type {
 } from '@/types/release';
 
 const initialState: ReleaseState = {
-  os: 'OTHER',
+  os: 'LOADING',
   bitness: '',
   platform: 'NVM',
   version: '',
