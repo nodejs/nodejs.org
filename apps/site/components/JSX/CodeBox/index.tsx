@@ -4,7 +4,7 @@ import { toJsxRuntime } from 'hast-util-to-jsx-runtime';
 import type { FC, PropsWithChildren } from 'react';
 
 import MDXCodeBox from '@/components/MDX/CodeBox';
-import { reactRuntime } from '@/next.mdx.evaluater.mjs';
+import { reactRuntime } from '@/next.mdx.compiler.mjs';
 import { highlightToHast, shikiPromise } from '@/util/getHighlighter';
 
 type CodeBoxProps = {
