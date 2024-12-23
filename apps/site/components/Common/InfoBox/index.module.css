@@ -53,7 +53,7 @@
     }
   }
 
-  &.error {
+  &.danger {
     @apply bg-danger-600;
 
     .title {

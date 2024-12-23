@@ -36,9 +36,9 @@ export const Warning: Story = {
   },
 };
 
-export const Error: Story = {
+export const Danger: Story = {
   args: {
-    level: 'error',
+    level: 'danger',
     title: '0',
     children:
       'Deprecated. The feature may emit warnings. Backward compatibility is not guaranteed.',
