@@ -1,10 +1,16 @@
 ---
 title: How to use the Node.js REPL
 layout: learn
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, vaishnav-mk
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, vaishnav-mk, AugustinMauyroy
 ---
 
 # How to use the Node.js REPL
+
+## What is the Node.js REPL?
+
+Node.js comes with a built-in REPL (Read-Eval-Print Loop) environment that allows you to execute JavaScript code interactively. The REPL is accessible through the terminal and is a great way to test out small pieces of code.
+
+## How to use the Node.js REPL
 
 The `node` command is the one we use to run our Node.js scripts:
 
@@ -112,8 +118,12 @@ If you type `.break` at the end of a line, the multiline mode will stop and the 
 
 We can import the REPL in a JavaScript file using `repl`.
 
-```js
+```cjs
 const repl = require('node:repl');
+```
+
+```mjs
+import repl from 'node:repl';
 ```
 
 Using the repl variable we can perform various operations.

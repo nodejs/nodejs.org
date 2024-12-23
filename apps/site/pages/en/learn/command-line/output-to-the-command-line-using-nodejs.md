@@ -1,14 +1,14 @@
 ---
 title: Output to the command line using Node.js
 layout: learn
-authors: flaviocopes, potch, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
+authors: flaviocopes, potch, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais, AugustinMauroy
 ---
 
 # Output to the command line using Node.js
 
 ### Basic output using the console module
 
-Node.js provides a [`console` module](https://nodejs.org/api/console.html) which provides tons of very useful ways to interact with the command line.
+Node.js provides a [`console` module](https://nodejs.org/docs/latest-v22.x/api/console.html) which provides tons of very useful ways to interact with the command line.
 
 It is basically the same as the `console` object you find in the browser.
 
@@ -21,6 +21,7 @@ You can pass multiple variables to `console.log`, for example:
 ```js
 const x = 'x';
 const y = 'y';
+
 console.log(x, y);
 ```
 
@@ -168,44 +169,31 @@ It will not appear in the console, but it will appear in the error log.
 
 ### Color the output
 
-You can color the output of your text in the console by using [escape sequences](https://gist.github.com/iamnewton/8754917). An escape sequence is a set of characters that identifies a color.
+> **NOTE**
+> This part of the resource is designed with version 22.11 which notes `styleText` as ‘Active development’.
 
-Example:
+In many cases, you will be tempted to paste certain text to get a nice output at the terminal.
 
-```js
-console.log('\x1b[33m%s\x1b[0m', 'hi!');
+There is a `styleText` function provided by the `node:util` module. Let's discover how to use it.
+
+First of all, you need to import the `styleText` function from the `node:util` module:
+
+```mjs
+import { styleText } from 'node:util';
 ```
 
-You can try that in the Node.js REPL, and it will print `hi!` in yellow.
-
-However, this is the low-level way to do this. The simplest way to go about coloring the console output is by using a library. [Chalk](https://github.com/chalk/chalk) is such a library, and in addition to coloring it also helps with other styling facilities, like making text bold, italic or underlined.
-
-You install it with `npm install chalk`, then you can use it:
-
-```js
-const chalk = require('chalk');
-
-console.log(chalk.yellow('hi!'));
+```cjs
+const { styleText } = require('node:util');
 ```
 
-Using `chalk.yellow` is much more convenient than trying to remember the escape codes, and the code is much more readable.
-
-Check the project link posted above for more usage examples.
-
-### Create a progress bar
-
-[Progress](https://www.npmjs.com/package/progress) is an awesome package to create a progress bar in the console. Install it using `npm install progress`
-
-This snippet creates a 10-step progress bar, and every 100ms one step is completed. When the bar completes we clear the interval:
+Then, you can use it to style your text:
 
 ```js
-const ProgressBar = require('progress');
-
-const bar = new ProgressBar(':bar', { total: 10 });
-const timer = setInterval(() => {
-  bar.tick();
-  if (bar.complete) {
-    clearInterval(timer);
-  }
-}, 100);
+console.log(
+  styleText(['red'], 'This is red text ') +
+    styleText(['green, bold'], 'and this is green bold text ') +
+    'this is normal text'
+);
 ```
+
+The first argument is an array of styles, and the second argument is the text you want to style. We invite you to read [the docs](https://nodejs.org/docs/latest-v22.x/api/util.html#utilstyletextformat-text-options)
