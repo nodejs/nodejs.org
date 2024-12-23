@@ -5,8 +5,8 @@ import type { FC, SVGProps } from 'react';
  */
 const NpmIcon: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
-    width="800px"
-    height="800px"
+    width="32px"
+    height="32px"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

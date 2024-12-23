@@ -4,7 +4,13 @@ import type { FC, SVGProps } from 'react';
  * @see https://github.com/yarnpkg/assets/blob/master/yarn-kitten-circle.svg
  */
 const YarnIcon: FC<SVGProps<SVGSVGElement>> = props => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 518 518" {...props}>
+  <svg
+    width="32px"
+    height="32px"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 518 518"
+    {...props}
+  >
     <path
       fill="#2c8ebb"
       d="M259 0c143 0 259 116 259 259S402 518 259 518 0 402 0 259 116 0 259 0z"
