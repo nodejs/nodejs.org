@@ -1,4 +1,4 @@
-.stabilityIndex {
+.infoBox {
   @apply flex
     flex-row
     items-center
@@ -6,42 +6,57 @@
     rounded
     px-4
     py-3
+    text-sm
     text-white;
 
-  .indexLevel {
-    @apply rounded-sm
-      px-1.5
-      text-sm;
+  &.small {
+    @apply gap-1
+      py-2
+      text-xs;
+
+    .title {
+      @apply px-1;
+    }
   }
 
-  &.stabilityLevel3 {
+  .title {
+    @apply rounded-sm
+      px-1.5;
+  }
+
+  svg {
+    @apply inline
+      size-5;
+  }
+
+  &.info {
     @apply bg-info-600;
 
-    .indexLevel {
+    .title {
       @apply bg-info-700;
     }
   }
 
-  &.stabilityLevel2 {
+  &.success {
     @apply bg-green-600;
 
-    .indexLevel {
+    .title {
       @apply bg-green-700;
     }
   }
 
-  &.stabilityLevel1 {
+  &.warning {
     @apply bg-warning-600;
 
-    .indexLevel {
+    .title {
       @apply bg-warning-700;
     }
   }
 
-  &.stabilityLevel0 {
+  &.error {
     @apply bg-danger-600;
 
-    .indexLevel {
+    .title {
       @apply bg-danger-700;
     }
   }
