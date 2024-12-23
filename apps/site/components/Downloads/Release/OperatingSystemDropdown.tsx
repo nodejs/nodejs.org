@@ -9,7 +9,7 @@ import Apple from '@/components/Icons/Platform/Apple';
 import Aix from '@/components/Icons/Platform/Generic';
 import Linux from '@/components/Icons/Platform/Linux';
 import Microsoft from '@/components/Icons/Platform/Microsoft';
-import { useDetectOS } from '@/hooks/react-client';
+import { useClientContext } from '@/hooks';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import type { UserOS } from '@/types/userOS';
 import {
@@ -22,7 +22,7 @@ type OperatingSystemDropdownProps = { exclude?: Array<UserOS> };
 const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
   exclude = [],
 }) => {
-  const { os: userOS } = useDetectOS();
+  const { os: userOS } = useClientContext();
   const { os, setOS } = useContext(ReleaseContext);
   const t = useTranslations();
 

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import type { FC, PropsWithChildren } from 'react';
 
 import Button from '@/components/Common/Button';
-import { useDetectOS } from '@/hooks';
+import { useClientContext } from '@/hooks';
 import type { NodeRelease } from '@/types';
 import { getNodeDownloadUrl } from '@/util/getNodeDownloadUrl';
 import { getUserBitnessByArchitecture } from '@/util/getUserBitnessByArchitecture';
@@ -22,7 +22,8 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
     os,
     bitness: userBitness,
     architecture: userArchitecture,
-  } = useDetectOS();
+  } = useClientContext();
+
   const bitness = getUserBitnessByArchitecture(userArchitecture, userBitness);
   const downloadLink = getNodeDownloadUrl(versionWithPrefix, os, bitness);
 

@@ -15,9 +15,9 @@ type UserOSState = {
 
 const useDetectOS = () => {
   const [userOSState, setUserOSState] = useState<UserOSState>({
-    os: 'LOADING',
-    bitness: 86,
-    architecture: 'ARM',
+    os: detectOS(),
+    bitness: 64,
+    architecture: 'x64',
   });
 
   useEffect(() => {
@@ -25,6 +25,7 @@ const useDetectOS = () => {
       ([bitness, architecture]) => {
         const userAgent: string | undefined =
           (typeof navigator === 'object' && navigator.userAgent) || '';
+
         // Default bitness if unable to determine
         const defaultBitness: number = 86;
         // Regex to detect 64-bit architecture in user agent
