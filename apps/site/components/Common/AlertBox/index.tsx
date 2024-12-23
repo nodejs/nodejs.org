@@ -15,7 +15,7 @@ const AlertBox: FC<AlertBoxProps> = ({
   children,
   size = 'default',
 }) => (
-  <div className={classNames(styles.infoBox, styles[level], styles[size])}>
+  <div className={classNames(styles.alertBox, styles[level], styles[size])}>
     <span className={styles.title}>{title}</span>
     {children}
   </div>
