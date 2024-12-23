@@ -8,6 +8,9 @@ const mockContext = {
   headings: [],
   readingTime: { text: '', minutes: 0, time: 0, words: 0 },
   filename: '',
+  os: 'OTHER',
+  architecture: 'x64',
+  bitness: 64,
 };
 
 describe('MatterProvider', () => {

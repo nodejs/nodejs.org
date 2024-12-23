@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import Image from 'next/image';
-import type { FC, HTMLAttributes } from 'react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef } from 'react';
 
 import Link from '@/components/Link';
 
@@ -15,20 +16,16 @@ export type AvatarProps = {
   url?: string;
 };
 
-const Avatar: FC<HTMLAttributes<HTMLSpanElement> & AvatarProps> = ({
-  image,
-  nickname,
-  name,
-  fallback,
-  url,
-  size = 'small',
-  ...props
-}) => {
+const Avatar = forwardRef<
+  HTMLSpanElement,
+  HTMLAttributes<HTMLSpanElement> & AvatarProps
+>(({ image, nickname, name, fallback, url, size = 'small', ...props }, ref) => {
   const Wrapper = url ? Link : 'div';
 
   return (
     <span
       {...props}
+      ref={ref}
       className={classNames(styles.avatar, styles[size], props.className)}
     >
       <Wrapper
@@ -56,6 +53,6 @@ const Avatar: FC<HTMLAttributes<HTMLSpanElement> & AvatarProps> = ({
       </Wrapper>
     </span>
   );
-};
+});
 
 export default Avatar;
