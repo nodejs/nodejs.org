@@ -35,6 +35,7 @@ files:
   - source: /apps/site/snippets/en/**/*.bash
     translation: /apps/site/snippets/%two_letters_code%/**/%original_file_name%
     content_segmentation: 0
+    type: txt
     languages_mapping:
       two_letters_code:
         es-ES: es
