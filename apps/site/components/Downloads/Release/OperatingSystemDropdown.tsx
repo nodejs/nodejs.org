@@ -26,7 +26,6 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
   const { os, setOS } = useContext(ReleaseContext);
   const t = useTranslations();
 
-  // we shouldn't react when "actions" change
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => setOS(userOS), [userOS]);
 

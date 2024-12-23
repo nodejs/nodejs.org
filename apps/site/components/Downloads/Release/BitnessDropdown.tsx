@@ -20,9 +20,6 @@ const BitnessDropdown: FC = () => {
   const { bitness, os, release, setBitness } = useContext(ReleaseContext);
   const t = useTranslations();
 
-  // we also reset the bitness when the OS changes, because different OSs have
-  // different bitnesses available
-
   useEffect(() => {
     setBitness(getUserBitnessByArchitecture(userArchitecture, userBitness));
     // we shouldn't update the effect on setter state change

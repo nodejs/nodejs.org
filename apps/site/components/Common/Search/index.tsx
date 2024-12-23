@@ -3,7 +3,7 @@
 import { OramaSearchBox, OramaSearchButton } from '@orama/react-components';
 import { useTranslations, useLocale } from 'next-intl';
 import { useTheme } from 'next-themes';
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { useRouter } from '@/navigation.mjs';
 import {
