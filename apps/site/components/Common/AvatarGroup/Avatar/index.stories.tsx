@@ -20,12 +20,4 @@ export const NoSquare: Story = {
   },
 };
 
-export const FallBack: Story = {
-  args: {
-    image: 'https://avatars.githubusercontent.com/u/',
-    nickname: 'John Doe',
-    fallback: 'JD',
-  },
-};
-
 export default { component: Avatar } as Meta;

@@ -45,6 +45,7 @@ const config: StorybookConfig = {
     resolve: {
       ...config.resolve,
       alias: {
+        'next/image': join(mocksFolder, './next-image.mjs'),
         'next-intl/navigation': join(mocksFolder, './next-intl.mjs'),
         '@/client-context': join(mocksFolder, './client-context.mjs'),
         '@': join(__dirname, '../'),

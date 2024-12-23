@@ -1,3 +1,5 @@
+'use strict';
+
 export const useMessages = () => ({});
 
 export const useNow = () => new Date();
