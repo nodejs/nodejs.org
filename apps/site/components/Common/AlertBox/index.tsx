@@ -3,13 +3,13 @@ import type { FC, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';
 
-type InfoBoxProps = PropsWithChildren<{
+type AlertBoxProps = PropsWithChildren<{
   level: 'info' | 'success' | 'warning' | 'danger';
   title: string;
   size?: 'default' | 'small';
 }>;
 
-const InfoBox: FC<InfoBoxProps> = ({
+const AlertBox: FC<AlertBoxProps> = ({
   level,
   title,
   children,
@@ -21,4 +21,4 @@ const InfoBox: FC<InfoBoxProps> = ({
   </div>
 );
 
-export default InfoBox;
+export default AlertBox;

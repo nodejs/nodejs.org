@@ -1,10 +1,10 @@
 import { ExclamationCircleIcon } from '@heroicons/react/24/solid';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import InfoBox from '@/components/Common/InfoBox';
+import AlertBox from '@/components/Common/AlertBox';
 
-type Story = StoryObj<typeof InfoBox>;
-type Meta = MetaObj<typeof InfoBox>;
+type Story = StoryObj<typeof AlertBox>;
+type Meta = MetaObj<typeof AlertBox>;
 
 export const Info: Story = {
   args: {
@@ -63,7 +63,7 @@ export const WithIcon: Story = {
 };
 
 export default {
-  component: InfoBox,
+  component: AlertBox,
   argTypes: {
     size: {
       options: ['default', 'small'],
