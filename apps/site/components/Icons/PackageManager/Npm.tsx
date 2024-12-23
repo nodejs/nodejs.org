@@ -8,7 +8,7 @@ const NpmIcon: FC<SVGProps<SVGSVGElement>> = props => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <g fill="none" fill-rule="evenodd">
+    <g fill="none" fillRule="evenodd">
       <rect width="24" height="24" fill="#D40001" />
       <path
         fill="#fff"
