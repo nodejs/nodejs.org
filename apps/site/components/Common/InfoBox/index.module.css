@@ -9,6 +9,16 @@
     text-sm
     text-white;
 
+  a {
+    @apply font-ibm-plex-mono
+      text-white
+      underline;
+
+    &:hover {
+      @apply no-underline;
+    }
+  }
+
   &.small {
     @apply gap-1
       py-2
