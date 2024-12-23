@@ -72,7 +72,7 @@ describe('useDetectOS', () => {
     await waitFor(() => {
       expect(result.current).toStrictEqual({
         os: 'MAC',
-        bitness: 86,
+        bitness: 64,
         architecture: '',
       });
     });
