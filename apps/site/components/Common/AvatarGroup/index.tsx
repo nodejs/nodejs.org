@@ -35,7 +35,11 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
   );
 
   return (
-    <div className={classNames(styles.avatarGroup, styles[size])}>
+    <div
+      className={classNames(styles.avatarGroup, styles[size], {
+        [styles.expandable]: avatars.length > limit,
+      })}
+    >
       {renderAvatars.map(({ ...avatar }) => (
         <Fragment key={avatar.nickname}>
           <Tooltip
@@ -54,6 +58,7 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
           </Tooltip>
         </Fragment>
       ))}
+
       {avatars.length > limit && (
         <span
           onClick={isExpandable ? () => setShowMore(prev => !prev) : undefined}

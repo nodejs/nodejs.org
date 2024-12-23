@@ -2,13 +2,22 @@
   @apply flex
     flex-wrap
     items-center;
+
+  &:not(.expandable) {
+    > span {
+      @apply ml-0;
+    }
+  }
 }
 
 .small {
-  @apply xs:-space-x-2
-    space-x-0.5;
+  > span {
+    @apply -ml-2;
+  }
 }
 
 .medium {
-  @apply -space-x-2.5;
+  > span {
+    @apply -ml-2.5;
+  }
 }

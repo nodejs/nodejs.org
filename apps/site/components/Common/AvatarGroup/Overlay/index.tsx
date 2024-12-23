@@ -25,6 +25,7 @@ const AvatarOverlay: FC<AvatarOverlayProps> = ({
       fallback={fallback}
       size="medium"
     />
+
     <div className={styles.user}>
       {name && <div className={styles.name}>{name}</div>}
       {nickname && <div className={styles.nickname}>{nickname}</div>}

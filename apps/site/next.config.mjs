@@ -23,6 +23,12 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'bestpractices.coreinfrastructure.org',
         port: '',
         pathname: '/**',
@@ -76,7 +82,6 @@ const nextConfig = {
     // @see https://vercel.com/blog/how-we-optimized-package-imports-in-next-js
     optimizePackageImports: [
       '@radix-ui/react-accessible-icon',
-      '@radix-ui/react-avatar',
       '@radix-ui/react-dropdown-menu',
       '@radix-ui/react-label',
       '@radix-ui/react-scroll-area',
@@ -86,6 +91,7 @@ const nextConfig = {
       '@radix-ui/react-toast',
       '@radix-ui/react-tooltip',
       '@orama/highlight',
+      '@orama/react-components',
       '@heroicons/react',
       'tailwindcss',
       'shiki',
