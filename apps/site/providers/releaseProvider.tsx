@@ -43,18 +43,6 @@ export const ReleaseProvider: FC<PropsWithChildren<ReleaseProviderProps>> = ({
   snippets,
   initialRelease,
 }) => {
-  const getReleaseFromVersion = useMemo(
-    () => (version: string) =>
-      releases.find(release => release.versionWithPrefix === version)!,
-    [releases]
-  );
-
-  const getSnippetFromPlatform = useMemo(
-    () => (platform: string) =>
-      snippets.find(snippet => snippet.name === platform)!,
-    [snippets]
-  );
-
   const releaseReducer = (state: ReleaseState, action: ReleaseAction) => {
     switch (action.type) {
       case 'SET_VERSION':
@@ -77,24 +65,28 @@ export const ReleaseProvider: FC<PropsWithChildren<ReleaseProviderProps>> = ({
 
   const actions = useMemo(() => createDispatchActions(dispatch), [dispatch]);
 
-  const providerContext = useMemo(
-    () => ({
-      ...state,
-      ...actions,
-      releases,
-      snippets,
-      release: getReleaseFromVersion(state.version),
-      snippet: getSnippetFromPlatform(state.platform.toLowerCase()),
-    }),
-    [
-      state,
-      actions,
-      releases,
-      snippets,
-      getReleaseFromVersion,
-      getSnippetFromPlatform,
-    ]
+  const releaseFromVersion = useMemo(
+    () => releases.find(r => r.versionWithPrefix === state.version)!,
+    // Memoizes the release based on the version
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [state.version]
   );
+
+  const snippetFromPlatform = useMemo(
+    () => snippets.find(s => s.name === state.platform.toLowerCase())!,
+    // Memoizes the snippet based on the platform
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [state.platform]
+  );
+
+  const providerContext = {
+    ...state,
+    ...actions,
+    releases,
+    snippets,
+    release: releaseFromVersion,
+    snippet: snippetFromPlatform,
+  };
 
   return (
     <ReleaseContext.Provider value={providerContext}>
