@@ -1,8 +1,5 @@
 import type { FC, SVGProps } from 'react';
 
-/**
- * @see https://github.com/yarnpkg/assets/blob/master/yarn-kitten-circle.svg
- */
 const YarnIcon: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
     width="32px"

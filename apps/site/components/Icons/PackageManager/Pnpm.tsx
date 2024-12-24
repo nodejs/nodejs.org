@@ -1,8 +1,5 @@
 import type { FC, SVGProps } from 'react';
 
-/**
- * @see https://pnpm.io/logos
- */
 const PnpmIcon: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
     width="32px"
