@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import type { ComponentProps, FC } from 'react';
 import { useRef } from 'react';

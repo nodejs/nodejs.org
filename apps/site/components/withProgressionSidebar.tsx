@@ -1,10 +1,8 @@
-'use client';
-
 import type { RichTranslationValues } from 'next-intl';
 import type { FC } from 'react';
 
 import ProgressionSidebar from '@/components/Common/ProgressionSidebar';
-import { useSiteNavigation } from '@/hooks/server';
+import { useSiteNavigation } from '@/hooks';
 import type { NavigationKeys } from '@/types';
 
 type WithProgressionSidebarProps = {

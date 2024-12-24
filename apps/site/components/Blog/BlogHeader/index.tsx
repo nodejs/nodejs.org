@@ -1,7 +1,5 @@
-'use client';
-
 import { RssIcon } from '@heroicons/react/24/solid';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import type { FC } from 'react';
 
 import Link from '@/components/Link';
@@ -13,11 +11,11 @@ type BlogHeaderProps = {
   category: string;
 };
 
-const BlogHeader: FC<BlogHeaderProps> = ({ category }) => {
-  const t = useTranslations();
-  const currentFile =
-    siteConfig.rssFeeds.find(item => item.category === category)?.file ??
-    'blog.xml';
+const BlogHeader: FC<BlogHeaderProps> = async ({ category }) => {
+  const t = await getTranslations();
+
+  const feed = siteConfig.rssFeeds.find(item => item.category === category);
+  const currentFile = feed ? feed.file : 'blog.xml';
 
   return (
     <header className={styles.blogHeader}>

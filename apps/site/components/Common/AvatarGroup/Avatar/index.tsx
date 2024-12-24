@@ -16,6 +16,9 @@ export type AvatarProps = {
   url?: string;
 };
 
+// @TODO: We temporarily removed the Avatar Radix UI primitive, since it was causing flashing
+// during initial load and not being able to render nicely when images are already cached.
+// @see https://github.com/radix-ui/primitives/pull/3008
 const Avatar = forwardRef<
   HTMLSpanElement,
   HTMLAttributes<HTMLSpanElement> & AvatarProps

@@ -1,9 +1,9 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 import type { FC, PropsWithChildren } from 'react';
 
+import { getClientContext } from '@/client-context';
 import LinkTabs from '@/components/Common/LinkTabs';
 import WithNodeRelease from '@/components/withNodeRelease';
-import { useClientContext } from '@/hooks/react-server';
 import getDownloadSnippets from '@/next-data/downloadSnippets';
 import getReleaseData from '@/next-data/releaseData';
 import { defaultLocale } from '@/next.locales.mjs';
@@ -12,6 +12,7 @@ import type { NodeReleaseStatus } from '@/types';
 import { getDownloadCategory, mapCategoriesToTabs } from '@/util/downloadUtils';
 
 // By default the translated languages do not contain all the download snippets
+// Hence we always merge any translated snippet with the fallbacks for missing snippets
 const fallbackSnippets = await getDownloadSnippets(defaultLocale.code);
 
 const WithDownloadCategories: FC<PropsWithChildren> = async ({ children }) => {
@@ -20,8 +21,7 @@ const WithDownloadCategories: FC<PropsWithChildren> = async ({ children }) => {
   const releases = await getReleaseData();
   const snippets = await getDownloadSnippets(locale);
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { pathname } = useClientContext();
+  const { pathname } = getClientContext();
   const { page, category, subCategory } = getDownloadCategory(pathname);
 
   const initialRelease: NodeReleaseStatus = pathname.includes('current')
