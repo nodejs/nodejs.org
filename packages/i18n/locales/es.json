@@ -30,7 +30,6 @@
           "links": {
             "gettingStarted": "Primeros pasos",
             "introductionToNodejs": "Introducción a Node.js",
-            "howToInstallNodejs": "Cómo instalar Node.js",
             "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "¿Cuánto necesitas saber de JavaScript para usar Node.js?",
             "differencesBetweenNodejsAndTheBrowser": "Diferencias entre Node.js y el navegador",
             "theV8JavascriptEngine": "El motor de JavaScript V8",

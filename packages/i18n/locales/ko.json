@@ -30,7 +30,6 @@
           "links": {
             "gettingStarted": "시작하기",
             "introductionToNodejs": "Node.js 소개",
-            "howToInstallNodejs": "Node.js 설치 방법",
             "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Node.js를 사용하기 위해 얼마나 많은 JavaScript를 알아야 할까요?",
             "differencesBetweenNodejsAndTheBrowser": "Node.js와 브라우저 간의 차이",
             "theV8JavascriptEngine": "V8 JavaScript 엔진",
