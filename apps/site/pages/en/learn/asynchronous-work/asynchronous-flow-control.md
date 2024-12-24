@@ -173,7 +173,48 @@ function serialProcedure(operation) {
 serialProcedure(operations.shift());
 ```
 
-2. **Full parallel:** when ordering is not an issue, such as emailing a list of 1,000,000 email recipients.
+2. **Limited in series:** functions will be executed in a strict sequential order, but with a limit on the number of executions. Useful when you need to process a large list but with a cap on the number of items successfully processed.
+
+```js
+let successCount = 0;
+
+function final() {
+  console.log(`dispatched ${successCount} emails`);
+  console.log('finished');
+}
+
+function dispatch(recipient, callback) {
+  // `sendEmail` is a hypothetical SMTP client
+  sendMail(
+    {
+      subject: 'Dinner tonight',
+      message: 'We have lots of cabbage on the plate. You coming?',
+      smtp: recipient.email,
+    },
+    callback
+  );
+}
+
+function sendOneMillionEmailsOnly() {
+  getListOfTenMillionGreatEmails(function (err, bigList) {
+    if (err) throw err;
+
+    function serial(recipient) {
+      if (!recipient || successCount >= 1000000) return final();
+      dispatch(recipient, function (_err) {
+        if (!_err) successCount += 1;
+        serial(bigList.pop());
+      });
+    }
+
+    serial(bigList.pop());
+  });
+}
+
+sendOneMillionEmailsOnly();
+```
+
+3. **Full parallel:** when ordering is not an issue, such as emailing a list of 1,000,000 email recipients.
 
 ```js
 let count = 0;
@@ -225,47 +266,6 @@ recipients.forEach(function (recipient) {
     }
   });
 });
-```
-
-3. **Limited parallel:** parallel with limit, such as successfully emailing 1,000,000 recipients from a list of 10 million users.
-
-```js
-let successCount = 0;
-
-function final() {
-  console.log(`dispatched ${successCount} emails`);
-  console.log('finished');
-}
-
-function dispatch(recipient, callback) {
-  // `sendEmail` is a hypothetical SMTP client
-  sendMail(
-    {
-      subject: 'Dinner tonight',
-      message: 'We have lots of cabbage on the plate. You coming?',
-      smtp: recipient.email,
-    },
-    callback
-  );
-}
-
-function sendOneMillionEmailsOnly() {
-  getListOfTenMillionGreatEmails(function (err, bigList) {
-    if (err) throw err;
-
-    function serial(recipient) {
-      if (!recipient || successCount >= 1000000) return final();
-      dispatch(recipient, function (_err) {
-        if (!_err) successCount += 1;
-        serial(bigList.pop());
-      });
-    }
-
-    serial(bigList.pop());
-  });
-}
-
-sendOneMillionEmailsOnly();
 ```
 
 Each has its own use cases, benefits, and issues you can experiment and read about in more detail. Most importantly, remember to modularize your operations and use callbacks! If you feel any doubt, treat everything as if it were middleware!
