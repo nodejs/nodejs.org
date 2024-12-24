@@ -17,6 +17,12 @@
     @apply cursor-not-allowed;
   }
 
+  &.small {
+    @apply px-3
+      py-2
+      text-sm;
+  }
+
   &.neutral {
     @apply rounded
       bg-neutral-900

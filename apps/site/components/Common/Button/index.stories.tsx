@@ -11,6 +11,7 @@ export const Neutral: Story = {
     kind: 'neutral',
     children: 'Download Node (LTS)',
     disabled: false,
+    size: 'default',
   },
 };
 
@@ -19,6 +20,7 @@ export const Primary: Story = {
     kind: 'primary',
     children: 'Download Node (LTS)',
     disabled: false,
+    size: 'default',
   },
 };
 
@@ -27,6 +29,7 @@ export const Secondary: Story = {
     kind: 'secondary',
     children: 'Download Node (LTS)',
     disabled: false,
+    size: 'default',
   },
 };
 
@@ -35,6 +38,7 @@ export const Special: Story = {
     kind: 'special',
     children: 'Download Node (LTS)',
     disabled: false,
+    size: 'default',
   },
 };
 
@@ -48,7 +52,16 @@ export const WithIcon: Story = {
       </>
     ),
     disabled: false,
+    size: 'default',
   },
 };
 
-export default { component: Button } as Meta;
+export default {
+  component: Button,
+  argTypes: {
+    size: {
+      options: ['default', 'small'],
+      control: { type: 'radio' },
+    },
+  },
+} as Meta;

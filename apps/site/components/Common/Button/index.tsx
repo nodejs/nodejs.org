@@ -14,11 +14,13 @@ import styles from './index.module.css';
 
 type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   kind?: 'neutral' | 'primary' | 'secondary' | 'special';
+  size?: 'default' | 'small';
   disabled?: boolean;
 };
 
 const Button: FC<ButtonProps> = ({
   kind = 'primary',
+  size = 'default',
   disabled = false,
   href = undefined,
   children,
@@ -56,7 +58,12 @@ const Button: FC<ButtonProps> = ({
       role="button"
       href={disabled ? undefined : href}
       aria-disabled={disabled}
-      className={classNames(styles.button, styles[kind], className)}
+      className={classNames(
+        styles.button,
+        styles[kind],
+        styles[size],
+        className
+      )}
       tabIndex={disabled ? -1 : 0} // Ensure focusable if not disabled
       onClick={onClickHandler}
       onKeyDown={onKeyDownHandler}
