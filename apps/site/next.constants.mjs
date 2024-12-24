@@ -3,16 +3,25 @@
 /**
  * This is used to verify if the current Website is running on a Development Environment
  */
-export const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
+export const IS_DEV_ENV = process.env.NODE_ENV === 'development';
 
 /**
  * This is used for telling Next.js if the Website is deployed on Vercel
  *
  * Can be used for conditionally enabling features that we know are Vercel only
  *
- * @see https://vercel.com/docs/concepts/projects/environment-variables/system-environment-variables#framework-environment-variables
+ * @see https://vercel.com/docs/projects/environment-variables/system-environment-variables#VERCEL_ENV
  */
-export const VERCEL_ENV = process.env.NEXT_PUBLIC_VERCEL_ENV || undefined;
+export const VERCEL_ENV = process.env.VERCEL_ENV || undefined;
+
+/**
+ * This is used for telling Next.js if we are current during build time or in runtime environment
+ *
+ * Can be used for conditionally enabling features that we know are Vercel only
+ *
+ * @see https://vercel.com/docs/projects/environment-variables/system-environment-variables#VERCEL_REGION
+ */
+export const VERCEL_REGION = process.env.VERCEL_REGION || undefined;
 
 /**
  * This is used for telling Next.js to do a Static Export Build of the Website
@@ -36,8 +45,8 @@ export const ENABLE_STATIC_EXPORT =
  */
 export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
   ? process.env.NEXT_PUBLIC_BASE_URL
-  : process.env.NEXT_PUBLIC_VERCEL_URL
-    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+  : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
     : 'https://nodejs.org';
 
 /**
@@ -168,7 +177,8 @@ export const ORAMA_CLOUD_ENDPOINT =
  * The default Orama Cloud API Key to use when searching with Orama Cloud.
  * This is a public API key and can be shared publicly on the frontend.
  */
-export const ORAMA_CLOUD_API_KEY = process.env.NEXT_PUBLIC_ORAMA_API_KEY || '';
+export const ORAMA_CLOUD_API_KEY =
+  process.env.NEXT_PUBLIC_ORAMA_API_KEY || 'qopIuAERiWP2EZOpDjvczjws7WV40yrj';
 
 /**
  * A GitHub Access Token for accessing the GitHub API and not being rate-limited

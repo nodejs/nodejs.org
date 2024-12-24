@@ -3,7 +3,7 @@
 import type { Dispatch, PropsWithChildren, FC } from 'react';
 import { createContext, useMemo, useReducer } from 'react';
 
-import type { NodeRelease } from '@/types';
+import type { DownloadSnippet, NodeRelease } from '@/types';
 import type {
   ReleaseDispatchActions,
   ReleaseAction,
@@ -13,11 +13,10 @@ import type {
 } from '@/types/release';
 
 const initialState: ReleaseState = {
-  releases: [],
-  release: {} as NodeRelease,
-  os: 'OTHER',
+  os: 'LOADING',
   bitness: '',
   platform: 'NVM',
+  version: '',
 };
 
 const createDispatchActions = (
@@ -32,21 +31,22 @@ const createDispatchActions = (
 export const ReleaseContext = createContext<ReleaseContextType>({
   ...initialState,
   ...createDispatchActions(() => {}),
+  releases: [],
+  snippets: [],
+  release: {} as NodeRelease,
+  snippet: {} as DownloadSnippet,
 });
 
 export const ReleaseProvider: FC<PropsWithChildren<ReleaseProviderProps>> = ({
   children,
   releases,
+  snippets,
   initialRelease,
 }) => {
-  const getReleaseFromVersion = (version: string) =>
-    releases.find(({ versionWithPrefix }) => versionWithPrefix === version) ??
-    ({} as NodeRelease);
-
   const releaseReducer = (state: ReleaseState, action: ReleaseAction) => {
     switch (action.type) {
       case 'SET_VERSION':
-        return { ...state, release: getReleaseFromVersion(action.payload) };
+        return { ...state, version: action.payload };
       case 'SET_OS':
         return { ...state, os: action.payload };
       case 'SET_BITNESS':
@@ -60,14 +60,36 @@ export const ReleaseProvider: FC<PropsWithChildren<ReleaseProviderProps>> = ({
 
   const [state, dispatch] = useReducer(releaseReducer, {
     ...initialState,
-    releases: releases,
-    release: initialRelease,
+    version: initialRelease.versionWithPrefix,
   });
 
   const actions = useMemo(() => createDispatchActions(dispatch), [dispatch]);
 
+  const releaseFromVersion = useMemo(
+    () => releases.find(r => r.versionWithPrefix === state.version)!,
+    // Memoizes the release based on the version
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [state.version]
+  );
+
+  const snippetFromPlatform = useMemo(
+    () => snippets.find(s => s.name === state.platform.toLowerCase())!,
+    // Memoizes the snippet based on the platform
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [state.platform]
+  );
+
+  const providerContext = {
+    ...state,
+    ...actions,
+    releases,
+    snippets,
+    release: releaseFromVersion,
+    snippet: snippetFromPlatform,
+  };
+
   return (
-    <ReleaseContext.Provider value={{ ...state, ...actions }}>
+    <ReleaseContext.Provider value={providerContext}>
       {children}
     </ReleaseContext.Provider>
   );

@@ -1,0 +1,28 @@
+.skeleton {
+  @apply dark:animate-pulse-dark
+    pointer-events-none
+    animate-pulse
+    cursor-default
+    select-none
+    rounded-md
+    border-none
+    bg-clip-border
+    text-transparent
+    shadow-none
+    outline-none;
+}
+
+.skeleton[data-inline-skeleton] {
+  @apply leading-none;
+}
+
+.skeleton:empty {
+  @apply block
+    h-3;
+}
+
+.skeleton > *,
+.skeleton::after,
+.skeleton::before {
+  @apply invisible;
+}

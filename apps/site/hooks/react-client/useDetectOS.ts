@@ -16,29 +16,32 @@ type UserOSState = {
 const useDetectOS = () => {
   const [userOSState, setUserOSState] = useState<UserOSState>({
     os: 'LOADING',
-    bitness: 86,
-    architecture: 'ARM',
+    bitness: 64,
+    architecture: '',
   });
 
   useEffect(() => {
-    Promise.all([getBitness(), getArchitecture()]).then(
-      ([bitness, architecture]) => {
-        const userAgent: string | undefined =
-          (typeof navigator === 'object' && navigator.userAgent) || '';
-        // Default bitness if unable to determine
-        const defaultBitness: number = 86;
-        // Regex to detect 64-bit architecture in user agent
-        const bitnessRegex = /WOW64|Win64|x86_64|x86-64|x64_64|x64;|AMD64/;
+    // If the navigator User Agent indicates a 64-bit OS, we can assume the bitness is 64.
+    const uaIndicates64 = /WOW64|Win64|x86_64|x86-64|x64_64|x64;|AMD64/.test(
+      navigator.userAgent
+    );
 
-        setUserOSState({
-          os: detectOS(),
-          bitness:
-            bitness === '64' || bitnessRegex.test(userAgent)
-              ? 64
-              : defaultBitness,
-          architecture: architecture ? architecture : '',
-        });
-      }
+    // We immediately set the OS to LOADING, and then we update it with the detected OS.
+    // This is due to that initial render set within the state will indicate a mismatch from
+    // the server-side rendering versus what the initial state is from the client-side
+    setUserOSState(current => ({ ...current, os: detectOS() }));
+
+    // We then update the bitness based on the detected OS and the user agent
+    getBitness().then((bitness = '64') =>
+      setUserOSState(current => ({
+        ...current,
+        bitness: bitness === '64' || uaIndicates64 ? 64 : 86,
+      }))
+    );
+
+    // We then update the architecture based on the detected OS
+    getArchitecture().then((architecture = '') =>
+      setUserOSState(current => ({ ...current, architecture }))
     );
   }, []);
 

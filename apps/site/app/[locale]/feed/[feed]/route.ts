@@ -4,10 +4,8 @@ import provideWebsiteFeeds from '@/next-data/providers/websiteFeeds';
 import { siteConfig } from '@/next.json.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 
-// We only support fetching these pages from the /en/ locale code
-const locale = defaultLocale.code;
-
-type StaticParams = { params: Promise<{ feed: string; locale: string }> };
+type DynamicStaticPaths = { locale: string; feed: string };
+type StaticParams = { params: Promise<DynamicStaticPaths> };
 
 // This is the Route Handler for the `GET` method which handles the request
 // for the Node.js Website Blog Feeds (RSS)
@@ -20,7 +18,7 @@ export const GET = async (_: Request, props: StaticParams) => {
 
   return new NextResponse(websiteFeed, {
     headers: { 'Content-Type': 'application/xml' },
-    status: websiteFeed ? 200 : 404,
+    status: websiteFeed !== undefined ? 200 : 404,
   });
 };
 
@@ -28,7 +26,10 @@ export const GET = async (_: Request, props: StaticParams) => {
 // `[locale]/feeds/[feed]` and returns an array of all available static paths
 // This is used for ISR static validation and generation
 export const generateStaticParams = async () =>
-  siteConfig.rssFeeds.map(feed => ({ feed: feed.file, locale }));
+  siteConfig.rssFeeds.map(feed => ({
+    locale: defaultLocale.code,
+    feed: feed.file,
+  }));
 
 // Enforces that only the paths from `generateStaticParams` are allowed, giving 404 on the contrary
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams

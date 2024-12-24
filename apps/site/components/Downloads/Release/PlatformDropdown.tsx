@@ -1,4 +1,5 @@
 'use client';
+
 import { useTranslations } from 'next-intl';
 import { useContext, useEffect, useMemo } from 'react';
 import type { FC } from 'react';
@@ -76,8 +77,9 @@ const PlatformDropdown: FC = () => {
         },
         disabledItems,
       })}
-      ariaLabel={t('layouts.download.dropdown.platform')}
       defaultValue={platform}
+      loading={os === 'LOADING'}
+      ariaLabel={t('layouts.download.dropdown.platform')}
       onChange={platform => setPlatform(platform as PackageManager)}
       className="min-w-28"
       inline={true}

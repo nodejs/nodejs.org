@@ -1,4 +1,5 @@
 'use client';
+
 import { useFormatter } from 'next-intl';
 import type { FC } from 'react';
 

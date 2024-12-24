@@ -29,7 +29,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
             <h1>{frontmatter.title}</h1>
 
             <section>
-              <WithAvatarGroup names={authors} />
+              <WithAvatarGroup names={authors} size="medium" />
 
               <p>{authors.join(', ')}</p>
             </section>

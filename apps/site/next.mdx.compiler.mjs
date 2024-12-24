@@ -1,20 +1,24 @@
 'use strict';
 
 import { compile as mdxCompile } from '@mdx-js/mdx';
+import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
 import { matter } from 'vfile-matter';
 
-import { MDX_COMPONENTS } from './next.mdx.components.mjs';
-import { createSval } from './next.mdx.evaluater.mjs';
+import { createSval } from './next.jsx.compiler.mjs';
 import { REHYPE_PLUGINS, REMARK_PLUGINS } from './next.mdx.plugins.mjs';
 import { createGitHubSlugger } from './util/gitHubUtils';
+
+// Defines a JSX Fragment and JSX Runtime for the MDX Compiler
+export const reactRuntime = { Fragment, jsx, jsxs };
 
 /**
  * This is our custom simple MDX Compiler that is used to compile Markdown and MDX
  * this returns a serializable VFile as a string that then gets passed to our MDX Provider
  *
- * @param {import('vfile').VFile} source
- * @param {'md' | 'mdx'} fileExtension
- * @param {import('mdx/types').MDXComponents} components
+ * @param {import('vfile').VFile} source The source Markdown/MDX content
+ * @param {'md' | 'mdx'} fileExtension If it should use the MDX or a plain Markdown parser/compiler
+ * @param {import('mdx/types').MDXComponents} components The MDX Components to be used in the MDX Provider
+ * @param {Record<string, any>} props Extra optional React props for the MDX Provider
  *
  * @returns {Promise<{
  *   content: import('react').ReactElement;
@@ -26,7 +30,8 @@ import { createGitHubSlugger } from './util/gitHubUtils';
 export async function compile(
   source,
   fileExtension,
-  components = MDX_COMPONENTS
+  components = {},
+  props = {}
 ) {
   // Parses the Frontmatter to the VFile and removes from the original source
   // cleaning the frontmatter to the source that is going to be parsed by the MDX Compiler
@@ -42,7 +47,10 @@ export async function compile(
     format: fileExtension,
   });
 
-  const interpreter = createSval(components);
+  const interpreter = createSval({
+    ...components,
+    'react/jsx-runtime': reactRuntime,
+  });
 
   // Run the compiled JavaScript code from MDX
   interpreter.run(compiled.toString());
@@ -51,7 +59,7 @@ export async function compile(
   const MDXContent = interpreter.exports.default;
 
   // Render the MDX content directly from the compiler
-  const content = <MDXContent components={components} />;
+  const content = <MDXContent {...props} components={components} />;
 
   // Retrieve some parsed data from the VFile metadata
   // such as frontmatter and Markdown headings

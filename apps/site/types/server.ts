@@ -1,9 +1,11 @@
 import type { Heading } from '@vcarl/remark-headings';
 import type { ReadTimeResults } from 'reading-time';
 
-import type { LegacyFrontMatter } from './frontmatter';
+import type { useDetectOS } from '@/hooks';
+import type { LegacyFrontMatter } from '@/types/frontmatter';
 
-export interface ClientSharedServerContext {
+export interface ClientSharedServerContext
+  extends ReturnType<typeof useDetectOS> {
   frontmatter: LegacyFrontMatter;
   headings: Array<Heading>;
   pathname: string;

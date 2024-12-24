@@ -1,11 +1,12 @@
 'use client';
+
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useEffect, useContext, useMemo } from 'react';
 import semVer from 'semver';
 
 import Select from '@/components/Common/Select';
-import { useDetectOS } from '@/hooks/react-client';
+import { useClientContext } from '@/hooks';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import { bitnessItems, formatDropdownItems } from '@/util/downloadUtils';
 import { getUserBitnessByArchitecture } from '@/util/getUserBitnessByArchitecture';
@@ -15,12 +16,9 @@ const parseNumericBitness = (bitness: string) =>
 
 const BitnessDropdown: FC = () => {
   const { bitness: userBitness, architecture: userArchitecture } =
-    useDetectOS();
+    useClientContext();
   const { bitness, os, release, setBitness } = useContext(ReleaseContext);
   const t = useTranslations();
-
-  // we also reset the bitness when the OS changes, because different OSs have
-  // different bitnesses available
 
   useEffect(() => {
     setBitness(getUserBitnessByArchitecture(userArchitecture, userBitness));
@@ -101,6 +99,7 @@ const BitnessDropdown: FC = () => {
         items: bitnessItems[os],
         disabledItems,
       })}
+      loading={os === 'LOADING'}
       ariaLabel={t('layouts.download.dropdown.bitness')}
       defaultValue={String(bitness)}
       onChange={bitness => setBitness(parseNumericBitness(bitness))}

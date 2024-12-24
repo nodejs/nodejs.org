@@ -23,14 +23,8 @@ const names = [
   'araujogui',
 ];
 
-const unknownAvatar = {
-  image: 'https://avatars.githubusercontent.com/u/',
-  nickname: 'unknown-avatar',
-  fallback: 'UA',
-};
-
 const defaultProps = {
-  avatars: [unknownAvatar, ...getAuthorWithId(names, true)],
+  avatars: getAuthorWithId(names, true),
 };
 
 export const Default: Story = {

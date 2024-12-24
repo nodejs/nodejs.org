@@ -10,12 +10,11 @@
     justify-center
     rounded-full
     border-2
-    border-white
+    border-transparent
     bg-neutral-100
     object-cover
     text-xs
     text-neutral-800
-    dark:border-neutral-950
     dark:bg-neutral-900
     dark:text-neutral-300;
 }

@@ -32,6 +32,16 @@ files:
         pt-BR: pt-br
         zh-CN: zh-cn
         zh-TW: zh-tw
+  - source: /apps/site/snippets/en/**/*.bash
+    translation: /apps/site/snippets/%two_letters_code%/**/%original_file_name%
+    content_segmentation: 0
+    type: txt
+    languages_mapping:
+      two_letters_code:
+        es-ES: es
+        pt-BR: pt-br
+        zh-CN: zh-cn
+        zh-TW: zh-tw
   - source: /packages/i18n/locales/en.json
     translation: /packages/i18n/locales/%two_letters_code%.json
     languages_mapping:

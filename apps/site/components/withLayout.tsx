@@ -8,7 +8,6 @@ import DownloadLayout from '@/layouts/Download';
 import GlowingBackdropLayout from '@/layouts/GlowingBackdrop';
 import LearnLayout from '@/layouts/Learn';
 import PostLayout from '@/layouts/Post';
-import SearchLayout from '@/layouts/Search';
 import type { Layouts } from '@/types';
 
 const layouts = {
@@ -18,7 +17,6 @@ const layouts = {
   page: DefaultLayout,
   'blog-post': PostLayout,
   'blog-category': BlogLayout,
-  search: SearchLayout,
   download: DownloadLayout,
   article: ArticlePageLayout,
 } satisfies Record<Layouts, FC>;

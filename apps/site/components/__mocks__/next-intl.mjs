@@ -1,3 +1,5 @@
+'use strict';
+
 export const useMessages = () => ({});
 
 export const useNow = () => new Date();
@@ -30,3 +32,6 @@ export const createNavigation = () => ({
   usePathname: () => '',
   useRouter: () => ({ push: () => void null, replace: () => void null }),
 });
+
+// eslint-disable-next-line react-hooks/rules-of-hooks
+export const getTranslations = () => Promise.resolve(useTranslations());

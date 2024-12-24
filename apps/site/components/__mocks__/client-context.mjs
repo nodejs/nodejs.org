@@ -1,3 +1,5 @@
+'use strict';
+
 export const getClientContext = () => ({
   frontmatter: '',
   pathname: '',

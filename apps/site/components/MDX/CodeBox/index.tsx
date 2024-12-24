@@ -10,13 +10,14 @@ const MDXCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   className,
   showCopyButton,
 }) => {
-  const matches = className?.match(/language-(?<language>.*)/);
+  const matches = className?.match(/language-(?<language>[a-zA-Z]+)/);
   const language = matches?.groups?.language ?? '';
 
   return (
     <CodeBox
       language={getLanguageDisplayName(language)}
       showCopyButton={showCopyButton ? showCopyButton === 'true' : undefined}
+      className={className}
     >
       {code}
     </CodeBox>

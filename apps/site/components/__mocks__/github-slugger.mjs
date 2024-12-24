@@ -1,3 +1,5 @@
+'use strict';
+
 class GitHubSlugger {
   slug() {
     return 'mock-slug';

@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+import type { DownloadSnippet } from '@/types/downloads';
 import type { NodeRelease } from '@/types/releases';
 import type { UserOS } from '@/types/userOS';
 
@@ -7,8 +8,7 @@ export type PackageManager = 'NVM' | 'FNM' | 'BREW' | 'DOCKER' | 'CHOCO';
 
 export interface ReleaseState {
   os: UserOS;
-  release: NodeRelease;
-  releases: Array<NodeRelease>;
+  version: string;
   bitness: string | number;
   platform: PackageManager;
 }
@@ -28,10 +28,16 @@ export interface ReleaseDispatchActions {
 
 export interface ReleaseContextType
   extends ReleaseState,
-    ReleaseDispatchActions {}
+    ReleaseDispatchActions {
+  releases: Array<NodeRelease>;
+  snippets: Array<DownloadSnippet>;
+  release: NodeRelease;
+  snippet: DownloadSnippet;
+}
 
 export interface ReleaseProviderProps {
   children: ReactNode;
   releases: Array<NodeRelease>;
+  snippets: Array<DownloadSnippet>;
   initialRelease: NodeRelease;
 }
