@@ -7,9 +7,7 @@ import { siteConfig } from '@/next.json.mjs';
 
 import styles from './index.module.css';
 
-type BlogHeaderProps = {
-  category: string;
-};
+type BlogHeaderProps = { category: string };
 
 const BlogHeader: FC<BlogHeaderProps> = async ({ category }) => {
   const t = await getTranslations();
