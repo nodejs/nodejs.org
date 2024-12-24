@@ -1,7 +1,7 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 import Select from '@/components/Common/Select';
-import Aix from '@/components/Icons/Platform/AIX';
+import AIX from '@/components/Icons/Platform/AIX';
 import Apple from '@/components/Icons/Platform/Apple';
 import Linux from '@/components/Icons/Platform/Linux';
 import Microsoft from '@/components/Icons/Platform/Microsoft';
@@ -94,7 +94,7 @@ export const InlineSelect: Story = {
           {
             value: 'aix',
             label: 'Aix',
-            iconImage: <Aix width={16} height={16} />,
+            iconImage: <AIX width={16} height={16} />,
           },
         ],
       },

@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import Aix from '@/components/Icons/Platform/AIX';
+import AIX from '@/components/Icons/Platform/AIX';
 import Apple from '@/components/Icons/Platform/Apple';
 import Choco from '@/components/Icons/Platform/Choco';
 import Docker from '@/components/Icons/Platform/Docker';
@@ -17,7 +17,7 @@ export const PlatformLogos: StoryObj = {
         <Apple width={64} height={64} />
         <Linux width={64} height={64} />
         <Microsoft width={64} height={64} />
-        <Aix width={64} height={64} />
+        <AIX width={64} height={64} />
       </div>
       <div className="flex flex-col items-center gap-4">
         <Docker width={64} height={64} />

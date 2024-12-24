@@ -1,6 +1,6 @@
 import type { FC, SVGProps } from 'react';
 
-const Aix: FC<SVGProps<SVGSVGElement>> = props => (
+const AIX: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
     width={32}
     height={32}
@@ -43,4 +43,4 @@ const Aix: FC<SVGProps<SVGSVGElement>> = props => (
   </svg>
 );
 
-export default Aix;
+export default AIX;

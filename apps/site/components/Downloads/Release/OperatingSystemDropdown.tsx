@@ -5,7 +5,7 @@ import { useContext, useEffect } from 'react';
 import type { FC } from 'react';
 
 import Select from '@/components/Common/Select';
-import Aix from '@/components/Icons/Platform/AIX';
+import AIX from '@/components/Icons/Platform/AIX';
 import Apple from '@/components/Icons/Platform/Apple';
 import Linux from '@/components/Icons/Platform/Linux';
 import Microsoft from '@/components/Icons/Platform/Microsoft';
@@ -57,7 +57,7 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = ({
           WIN: <Microsoft width={16} height={16} />,
           MAC: <Apple width={16} height={16} />,
           LINUX: <Linux width={16} height={16} />,
-          AIX: <Aix width={16} height={16} />,
+          AIX: <AIX width={16} height={16} />,
         },
       })}
       ariaLabel={t('layouts.download.dropdown.os')}
