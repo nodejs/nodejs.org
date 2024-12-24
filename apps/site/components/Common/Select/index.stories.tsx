@@ -93,7 +93,7 @@ export const InlineSelect: Story = {
           },
           {
             value: 'aix',
-            label: 'Aix',
+            label: 'AIX',
             iconImage: <AIX width={16} height={16} />,
           },
         ],
