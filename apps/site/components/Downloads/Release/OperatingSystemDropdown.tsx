@@ -5,8 +5,8 @@ import { useContext, useEffect } from 'react';
 import type { FC } from 'react';
 
 import Select from '@/components/Common/Select';
+import Aix from '@/components/Icons/Platform/AIX';
 import Apple from '@/components/Icons/Platform/Apple';
-import Aix from '@/components/Icons/Platform/Generic';
 import Linux from '@/components/Icons/Platform/Linux';
 import Microsoft from '@/components/Icons/Platform/Microsoft';
 import { useDetectOS } from '@/hooks/react-client';
