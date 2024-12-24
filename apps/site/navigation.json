@@ -330,6 +330,10 @@
               "link": "/learn/modules/abi-stability",
               "label": "components.navigation.learn.modules.links.abiStability"
             },
+            "howToUseStreams": {
+              "link": "/learn/modules/how-to-use-streams",
+              "label": "components.navigation.learn.modules.links.howToUseStreams"
+            },
             "backpressuringInStreams": {
               "link": "/learn/modules/backpressuring-in-streams",
               "label": "components.navigation.learn.modules.links.backpressuringInStreams"
