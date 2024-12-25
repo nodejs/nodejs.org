@@ -285,16 +285,8 @@
       "destination": "/:locale/blog/weekly/:path*"
     },
     {
-      "source": "/:locale/download",
-      "destination": "/:locale/download/package-manager"
-    },
-    {
       "source": "/download/package-manager",
-      "destination": "/en/download/package-manager"
-    },
-    {
-      "source": "/:locale/download/current",
-      "destination": "/:locale/download/package-manager/current"
+      "destination": "/en/download"
     },
     {
       "source": "/:locale/learn/getting-started/nodejs-with-typescript",
@@ -302,7 +294,35 @@
     },
     {
       "source": "/:locale/learn/getting-started/how-to-install-nodejs",
-      "destination": "/en/download/package-manager"
+      "destination": "/:locale/download/package-manager"
+    },
+    {
+      "source": "/:locale/download/package-manager",
+      "destination": "/:locale/download"
+    },
+    {
+      "source": "/:locale/download/package-manager/current",
+      "destination": "/:locale/download/current"
+    },
+    {
+      "source": "/:locale/download/prebuilt-binaries",
+      "destination": "/:locale/download"
+    },
+    {
+      "source": "/:locale/download/prebuilt-binaries/current",
+      "destination": "/:locale/download/current"
+    },
+    {
+      "source": "/:locale/download/prebuilt-installer",
+      "destination": "/:locale/download"
+    },
+    {
+      "source": "/:locale/download/source-code/current",
+      "destination": "/:locale/download/current"
+    },
+    {
+      "source": "/:locale/download/source-code/current",
+      "destination": "/:locale/download/current"
     }
   ],
   "internal": []

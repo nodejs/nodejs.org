@@ -5,7 +5,7 @@ import type { FC } from 'react';
 import { useContext } from 'react';
 
 import Select from '@/components/Common/Select';
-import { ReleaseContext } from '@/providers/releaseProvider';
+import { ReleaseContext, ReleasesContext } from '@/providers/releaseProvider';
 
 const getDropDownStatus = (version: string, status: string) => {
   if (status === 'LTS') {
@@ -20,7 +20,8 @@ const getDropDownStatus = (version: string, status: string) => {
 };
 
 const VersionDropdown: FC = () => {
-  const { releases, release, setVersion } = useContext(ReleaseContext);
+  const { releases } = useContext(ReleasesContext);
+  const { release, setVersion } = useContext(ReleaseContext);
   const t = useTranslations();
 
   return (
@@ -32,7 +33,7 @@ const VersionDropdown: FC = () => {
       }))}
       defaultValue={release.versionWithPrefix}
       onChange={setVersion}
-      className="min-w-40"
+      className="min-w-36"
       inline={true}
     />
   );

@@ -5,82 +5,80 @@ import { useContext, useEffect, useMemo } from 'react';
 import type { FC } from 'react';
 
 import Select from '@/components/Common/Select';
-import Choco from '@/components/Icons/Platform/Choco';
-import Docker from '@/components/Icons/Platform/Docker';
-import FNM from '@/components/Icons/Platform/FNM';
-import Homebrew from '@/components/Icons/Platform/Homebrew';
-import NVM from '@/components/Icons/Platform/NVM';
 import { ReleaseContext } from '@/providers/releaseProvider';
-import type { PackageManager } from '@/types/release';
-import { formatDropdownItems, platformItems } from '@/util/downloadUtils';
-
-const supportedHomebrewVersions = ['LTS', 'Current'];
+import type { InstallationMethod } from '@/types/release';
+import { nextItem, INSTALL_METHODS, parseCompat } from '@/util/downloadUtils';
 
 const PlatformDropdown: FC = () => {
-  const { release, os, platform, setPlatform } = useContext(ReleaseContext);
+  const release = useContext(ReleaseContext);
   const t = useTranslations();
 
-  // @TODO: We should have a proper utility that gives
-  // disabled OSs, Platforms, based on specific criteria
-  // this can be an optimisation for the future
-  // to remove this logic from this component
-  const disabledItems = useMemo(() => {
-    const disabledItems = [];
-
-    if (os === 'WIN') {
-      disabledItems.push('BREW', 'NVM');
+  // Prevents the Platform from being set during OS loading state
+  // This also prevents the Platform from being set (by Dropdwon or Automatic methods)
+  // when we haven't yet loaded the OS and defined the initial Platform
+  const setPlaform = (platform: InstallationMethod | '') => {
+    if (release.os !== 'LOADING' && release.platform !== '') {
+      release.setPlatform(platform);
     }
+  };
 
-    if (os === 'LINUX' || os === 'MAC') {
-      disabledItems.push('CHOCO');
-    }
-
-    const releaseSupportsHomebrew = supportedHomebrewVersions.includes(
-      release.status
-    );
-
-    if (!releaseSupportsHomebrew) {
-      disabledItems.push('BREW');
-    }
-
-    return disabledItems;
-  }, [os, release.status]);
-
-  // @TODO: We should have a proper utility that gives
-  // disabled OSs, Platforms, based on specific criteria
-  // this can be an optimisation for the future
-  // to remove this logic from this component
-  useEffect(() => {
-    const currentPlatformExcluded = disabledItems.includes(platform);
-
-    const nonExcludedPlatform = platformItems
-      .map(({ value }) => value)
-      .find(platform => !disabledItems.includes(platform));
-
-    if (currentPlatformExcluded && nonExcludedPlatform) {
-      setPlatform(nonExcludedPlatform);
-    }
-    // we shouldn't react when "actions" change
+  // We parse the compatibility of the dropdown items
+  const parsedPlatforms = useMemo(
+    () => parseCompat(INSTALL_METHODS, release),
+    // We only want to react on the change of the OS and Version
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [release.status, disabledItems, platform]);
+    [release.os, release.version]
+  );
+
+  // We group Platforms on the Platform Dropdown to provide the User
+  // understanding of what is recommended/official and what is not.
+  const grouppedPlatforms = useMemo(
+    () => [
+      {
+        label: t('layouts.download.dropdown.platformGroups.official'),
+        items: parsedPlatforms.filter(({ recommended }) => recommended),
+      },
+      {
+        label: t('layouts.download.dropdown.platformGroups.unofficial'),
+        items: parsedPlatforms.filter(({ recommended }) => !recommended),
+      },
+    ],
+    // We only want to react on the change of the parsedPlatforms
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [parsedPlatforms]
+  );
+
+  useEffect(() => {
+    // We should only define the initial Platform if the current platform is empty
+    // (aka has not yet been set) and the OS has finished loading (in the sense that)
+    // `detectOS` has finished running and decided what platform we are running on.
+    if (release.os !== 'LOADING' && release.platform === '') {
+      release.setPlatform(
+        // Sets either the utmost recommended platform or the first non-disabled one
+        // Note that the first item of groupped platforms is always the recommended one
+        nextItem('', grouppedPlatforms[0].items) ||
+          nextItem('', parsedPlatforms)
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [parsedPlatforms, release.platform, release.os]);
+
+  // We set the Platform to the next available platform when the current
+  // one is not valid anymore due to OS or Version changes
+  useEffect(
+    () => setPlaform(nextItem(release.platform, parsedPlatforms)),
+    // We only want to react on the change of the OS and Version
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [release.os, release.version]
+  );
 
   return (
-    <Select
-      values={formatDropdownItems({
-        items: platformItems,
-        icons: {
-          NVM: <NVM width={16} height={16} />,
-          FNM: <FNM width={16} height={16} />,
-          BREW: <Homebrew width={16} height={16} />,
-          DOCKER: <Docker width={16} height={16} />,
-          CHOCO: <Choco width={16} height={16} />,
-        },
-        disabledItems,
-      })}
-      defaultValue={platform}
-      loading={os === 'LOADING'}
+    <Select<InstallationMethod | ''>
+      values={grouppedPlatforms}
+      defaultValue={release.platform}
+      loading={release.os === 'LOADING' || release.platform === ''}
       ariaLabel={t('layouts.download.dropdown.platform')}
-      onChange={platform => setPlatform(platform as PackageManager)}
+      onChange={platform => platform && setPlaform(platform)}
       className="min-w-28"
       inline={true}
     />

@@ -5,44 +5,47 @@ import * as ScrollPrimitive from '@radix-ui/react-scroll-area';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import classNames from 'classnames';
 import { useEffect, useId, useMemo, useState } from 'react';
-import type { FC } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import Skeleton from '@/components/Common/Skeleton';
 import type { FormattedMessage } from '@/types';
 
 import styles from './index.module.css';
 
-type SelectValue = {
-  label: FormattedMessage;
-  value: string;
-  iconImage?: React.ReactNode;
+export type SelectValue<T extends string> = {
+  label: FormattedMessage | string;
+  value: T;
+  iconImage?: ReactElement<SVGSVGElement>;
   disabled?: boolean;
 };
 
-type SelectGroup = {
-  label?: FormattedMessage;
-  items: Array<SelectValue>;
+export type SelectGroup<T extends string> = {
+  label?: FormattedMessage | string;
+  items: Array<SelectValue<T>>;
 };
 
 const isStringArray = (values: Array<unknown>): values is Array<string> =>
   Boolean(values[0] && typeof values[0] === 'string');
 
-const isValuesArray = (values: Array<unknown>): values is Array<SelectValue> =>
+const isValuesArray = <T extends string>(
+  values: Array<unknown>
+): values is Array<SelectValue<T>> =>
   Boolean(values[0] && typeof values[0] === 'object' && 'value' in values[0]);
 
-type SelectProps = {
-  values: Array<SelectGroup | string | SelectValue>;
-  defaultValue?: string;
+type SelectProps<T extends string> = {
+  values: Array<SelectGroup<T>> | Array<T> | Array<SelectValue<T>>;
+  defaultValue?: T;
   placeholder?: string;
   label?: string;
   inline?: boolean;
-  onChange?: (value: string) => void;
+  onChange?: (value: T) => void;
   className?: string;
   ariaLabel?: string;
   loading?: boolean;
+  disabled?: boolean;
 };
 
-const Select: FC<SelectProps> = ({
+const Select = <T extends string>({
   values = [],
   defaultValue,
   placeholder,
@@ -52,7 +55,8 @@ const Select: FC<SelectProps> = ({
   className,
   ariaLabel,
   loading = false,
-}) => {
+  disabled = false,
+}: SelectProps<T>): ReactNode => {
   const id = useId();
   const [value, setValue] = useState(defaultValue);
 
@@ -69,7 +73,7 @@ const Select: FC<SelectProps> = ({
       return [{ items: mappedValues }];
     }
 
-    return mappedValues as Array<SelectGroup>;
+    return mappedValues as Array<SelectGroup<T>>;
   }, [values]);
 
   // We render the actual item slotted to fix/prevent the issue
@@ -83,7 +87,7 @@ const Select: FC<SelectProps> = ({
   );
 
   // Both change the internal state and emit the change event
-  const handleChange = (value: string) => {
+  const handleChange = (value: T) => {
     setValue(value);
 
     if (typeof onChange === 'function') {
@@ -106,15 +110,23 @@ const Select: FC<SelectProps> = ({
           </label>
         )}
 
-        <SelectPrimitive.Root value={value} onValueChange={handleChange}>
+        <SelectPrimitive.Root
+          value={currentItem !== undefined ? value : undefined}
+          onValueChange={handleChange}
+          disabled={disabled}
+        >
           <SelectPrimitive.Trigger
             className={styles.trigger}
             aria-label={ariaLabel}
             id={id}
           >
             <SelectPrimitive.Value placeholder={placeholder}>
-              {currentItem?.iconImage}
-              <span>{currentItem?.label}</span>
+              {currentItem !== undefined && (
+                <>
+                  {currentItem.iconImage}
+                  <span>{currentItem.label}</span>
+                </>
+              )}
             </SelectPrimitive.Value>
             <ChevronDownIcon className={styles.icon} />
           </SelectPrimitive.Trigger>

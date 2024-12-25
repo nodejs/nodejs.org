@@ -20,6 +20,7 @@
   },
   "include": [
     "next-env.d.ts",
+    "global.d.ts",
     "**/*.mdx",
     "**/*.ts",
     "**/*.tsx",

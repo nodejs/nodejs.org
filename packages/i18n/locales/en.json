@@ -279,26 +279,34 @@
     },
     "download": {
       "selectCategory": "Categories",
-      "categories": {
-        "prebuilt-installer": "Prebuilt Installer",
-        "prebuilt-binaries": "Prebuilt Binaries",
-        "package-manager": "Package Manager",
-        "source-code": "Source Code"
-      },
       "buttons": {
-        "prebuilt": "Download Node.js {version}",
-        "source": "Download Node.js {version} source"
+        "installer": "{os} Installer (.{extension})",
+        "binary": "Standalone Binary (.{extension})"
       },
       "dropdown": {
         "bitness": "Bitness",
         "os": "Operating System",
         "version": "Version",
-        "platform": "Platform"
+        "platform": "Platform",
+        "packageManager": "Package Manager",
+        "unknown": "Unknown",
+        "platformGroups": {
+          "official": "Recommended (Official)",
+          "unofficial": "Community (Unofficial)"
+        }
       },
       "codeBox": {
-        "unsupportedVersionWarning": "This version is out of maintenance. Find more information here:",
-        "communityWarning": "Package managers and their installation scripts are not maintained by the Node.js project.",
-        "communityWarningReport": "If you encounter issues, please reach out to the package manager's maintainers."
+        "unsupportedVersionWarning": "This version is out of maintenance. Please use a currently supported version. <link>Understand EOL support.</link>",
+        "communityPlatformInfo": "Installation methods that involve community software are supported by the teams maintaining that software.",
+        "externalSupportInfo": "If you encounter any issues please visit <link>{platform}'s website</link>",
+        "platformInfo": {
+          "default": "{platform} and their installation scripts are not maintained by the Node.js project.",
+          "nvm": "\"nvm\" is a cross-platform Node.js version manager.",
+          "fnm": "\"fnm\" is a cross-platform Node.js version manager.",
+          "brew": "Homebrew is a package manager for macOS and Linux.",
+          "choco": "Chocolatey is a package manager for Windows.",
+          "docker": "Docker is a containerization platform."
+        }
       }
     }
   }

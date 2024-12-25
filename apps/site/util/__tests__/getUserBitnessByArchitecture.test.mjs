@@ -8,6 +8,6 @@ describe('getUserBitnessByArchitecture', () => {
 
   it('should return the user bitness for other architectures', () => {
     const result = getUserBitnessByArchitecture('x86', 32);
-    expect(result).toBe(32);
+    expect(result).toBe('32');
   });
 });

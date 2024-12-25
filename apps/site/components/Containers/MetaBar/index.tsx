@@ -8,7 +8,7 @@ import Link from '@/components/Link';
 import styles from './index.module.css';
 
 type MetaBarProps = {
-  items: Record<string, React.ReactNode>;
+  items: Partial<Record<IntlMessageKeys, React.ReactNode>>;
   headings?: {
     items: Array<Heading>;
     minDepth?: number;
@@ -33,7 +33,7 @@ const MetaBar: FC<MetaBarProps> = ({ items, headings }) => {
           .filter(([, value]) => !!value)
           .map(([key, value]) => (
             <Fragment key={key}>
-              <dt>{t(key)}</dt>
+              <dt>{t(key as IntlMessageKeys)}</dt>
               <dd>{value}</dd>
             </Fragment>
           ))}

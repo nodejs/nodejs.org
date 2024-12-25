@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import dedent from 'dedent';
 import { toJsxRuntime } from 'hast-util-to-jsx-runtime';
 import type { FC, PropsWithChildren } from 'react';
 
@@ -19,7 +18,7 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   showCopyButton,
   className,
 }) => {
-  const highlighted = highlightToHast(dedent(String(children)), language);
+  const highlighted = highlightToHast(String(children), language);
 
   return toJsxRuntime(highlighted, {
     ...reactRuntime,

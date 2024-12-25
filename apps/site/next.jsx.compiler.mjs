@@ -10,7 +10,7 @@ import Sval from 'sval';
  *
  * @returns {Sval} Returns an Sandboxed instance of a JavaScript interpreter
  */
-export const createSval = (dependencies, mode = 'module') => {
+export const createSval = (dependencies = {}, mode = 'module') => {
   const svalInterpreter = new Sval({
     ecmaVer: 'latest',
     sandBox: true,

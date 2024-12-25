@@ -1,7 +1,7 @@
 import type { HTMLAttributeAnchorTarget } from 'react';
 
 export interface FooterConfig {
-  text: string;
+  text: IntlMessageKeys;
   link: string;
 }
 
@@ -21,7 +21,7 @@ export type NavigationKeys =
   | 'blog';
 
 export interface NavigationEntry {
-  label?: string;
+  label?: IntlMessageKeys;
   link?: string;
   items?: Record<string, NavigationEntry>;
   target?: HTMLAttributeAnchorTarget | undefined;

@@ -10,9 +10,10 @@
     text-white;
 
   a {
-    @apply font-ibm-plex-mono
+    @apply font-bold
       text-white
-      underline;
+      underline
+      hover:text-white;
 
     &:hover {
       @apply no-underline;

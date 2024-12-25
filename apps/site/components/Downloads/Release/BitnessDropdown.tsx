@@ -3,107 +3,63 @@
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useEffect, useContext, useMemo } from 'react';
-import semVer from 'semver';
 
 import Select from '@/components/Common/Select';
 import { useClientContext } from '@/hooks';
 import { ReleaseContext } from '@/providers/releaseProvider';
-import { bitnessItems, formatDropdownItems } from '@/util/downloadUtils';
+import { ARCHITECTURES, nextItem, parseCompat } from '@/util/downloadUtils';
 import { getUserBitnessByArchitecture } from '@/util/getUserBitnessByArchitecture';
 
 const parseNumericBitness = (bitness: string) =>
   /^\d+$/.test(bitness) ? Number(bitness) : bitness;
 
 const BitnessDropdown: FC = () => {
-  const { bitness: userBitness, architecture: userArchitecture } =
-    useClientContext();
-  const { bitness, os, release, setBitness } = useContext(ReleaseContext);
+  const { architecture, bitness } = useClientContext();
+
+  const release = useContext(ReleaseContext);
   const t = useTranslations();
 
-  useEffect(() => {
-    setBitness(getUserBitnessByArchitecture(userArchitecture, userBitness));
-    // we shouldn't update the effect on setter state change
+  // Prevents the Bitness from being set during OS loading state
+  // and always correctly parses the Bitness to a number when needed
+  const setBitness = (bitness: string) => {
+    if (release.os !== 'LOADING') {
+      release.setBitness(parseNumericBitness(bitness));
+    }
+  };
+
+  useEffect(
+    () => setBitness(getUserBitnessByArchitecture(architecture, bitness)),
+    // Only react on the change of the Client Context Architecture and Bitness
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userArchitecture, userBitness]);
+    [architecture, bitness]
+  );
 
-  // @TODO: We should have a proper utility that gives
-  // disabled OSs, Platforms, based on specific criteria
-  // this can be an optimisation for the future
-  // to remove this logic from this component
-  const disabledItems = useMemo(() => {
-    const disabledItems = [];
-
-    if (os === 'WIN' && semVer.satisfies(release.version, '< 19.9.0')) {
-      disabledItems.push('arm64');
-    }
-
-    if (os === 'WIN' && semVer.satisfies(release.version, '>= 23.0.0')) {
-      disabledItems.push('86');
-    }
-
-    if (os === 'LINUX' && semVer.satisfies(release.version, '< 4.0.0')) {
-      disabledItems.push('arm64', 'armv7l');
-    }
-
-    if (os === 'LINUX' && semVer.satisfies(release.version, '< 4.4.0')) {
-      disabledItems.push('ppc64le');
-    }
-
-    if (os === 'LINUX' && semVer.satisfies(release.version, '< 6.6.0')) {
-      disabledItems.push('s390x');
-    }
-
-    if (os === 'AIX' && semVer.satisfies(release.version, '< 6.7.0')) {
-      disabledItems.push('ppc64');
-    }
-
-    return disabledItems;
-  }, [os, release.version]);
-
-  // @TODO: We should have a proper utility that gives
-  // disabled OSs, Platforms, based on specific criteria
-  // this can be an optimisation for the future
-  // to remove this logic from this component
-  useEffect(() => {
-    const mappedBitnessValues = bitnessItems[os].map(({ value }) => value);
-
-    const currentBitnessExcluded =
-      // Different OSs support different Bitnessess, hence we should also check
-      // if besides the current bitness not being supported for a given release version
-      // we also should check if it is not supported by the OS
-      disabledItems.includes(String(bitness)) ||
-      !mappedBitnessValues.includes(String(bitness));
-
-    const nonExcludedBitness = mappedBitnessValues.find(
-      bitness => !disabledItems.includes(bitness)
-    );
-
-    if (currentBitnessExcluded && nonExcludedBitness) {
-      // We set it as a Number for cases where it is 64 or 86 otherwise we are
-      // setting it as a string (ARMv7, ARMv6, etc.)
-      const numericBitness = Number(nonExcludedBitness);
-
-      setBitness(
-        numericBitness.toString() === nonExcludedBitness
-          ? numericBitness
-          : nonExcludedBitness
-      );
-    }
-    // we shouldn't react when "actions" change
+  // We parse the compatibility of the dropdown items
+  const parsedArchitectures = useMemo(
+    () => parseCompat(ARCHITECTURES[release.os], release),
+    // We only want to react on the change of the OS, Bitness, and Version
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [os, disabledItems]);
+    [release.os, release.bitness, release.version]
+  );
+
+  // We set the Bitness to the next available Architecture when the current
+  // one is not valid anymore due to OS or Version changes
+  useEffect(
+    () => setBitness(nextItem(String(release.bitness), parsedArchitectures)),
+    // We only want to react on the change of the OS and Version
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [release.os, release.version, release.bitness]
+  );
 
   return (
     <Select
-      values={formatDropdownItems({
-        items: bitnessItems[os],
-        disabledItems,
-      })}
-      loading={os === 'LOADING'}
+      values={parsedArchitectures}
+      loading={release.os === 'LOADING'}
+      placeholder={t('layouts.download.dropdown.unknown')}
       ariaLabel={t('layouts.download.dropdown.bitness')}
-      defaultValue={String(bitness)}
-      onChange={bitness => setBitness(parseNumericBitness(bitness))}
-      className="min-w-28"
+      defaultValue={String(release.bitness)}
+      onChange={bitness => setBitness(bitness)}
+      className="min-w-20"
       inline={true}
     />
   );
