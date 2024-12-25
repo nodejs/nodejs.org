@@ -71,7 +71,9 @@ const NavBar: FC<NavbarProps> = ({
         </div>
 
         <div className={style.actionsWrapper}>
-          <SearchButton />
+          <div className={style.searchWrapper}>
+            <SearchButton />
+          </div>
 
           <ThemeToggle onClick={onThemeTogglerClick} />
 

@@ -12,6 +12,11 @@
     dark:bg-neutral-950;
 }
 
+.searchWrapper {
+  @apply flex
+    flex-grow;
+}
+
 .nodeIconAndMobileItemsToggler {
   @apply flex
     h-16
