@@ -120,6 +120,6 @@ We have these sections on the website:
 
 ### Sections that are not translated
 
-- **Learn**: The learn section is not translated because it contains technical terms that are hard to translate. Plus, we don't have the ability to trust the quality of the translations. It's better to have the content in English than to have bad translations. If you want to have more information read [this message](https://github.com/nodejs/nodejs.org/issues/6429#issuecomment-2558265376) that summarizes whole reasons.
+- **Learn**: Per TSC consensus, the learn section is not translated. It contains technical terms that are hard to translate. Maintainers do not have the ability or bandwidth to ensure quality. It's better to have the content in English than to have bad translations. If you want to have more information read [this message](https://github.com/nodejs/nodejs.org/issues/6429#issuecomment-2558265376) that further explains.
 - **Blog**: The blog is not translated because it's not useful to translate blog posts. Most of the blog posts are release notes, and it's not useful to translate them.
 - **Docs**: The API docs are too expansive, and versioned, to be translated.
