@@ -96,3 +96,30 @@ Translations are synced between Crowdin and the repository via GitHub Actions.
 - Via a cron schedule, and as needed manually by a collaborator, we download completed translations.
 
 Incoming translations are linted to ensure they come from crowdin, and are also formatted to adhere to our project settings.
+
+## Why We Translate This section and Not That Section
+
+> First, what we mean by "section" is a part of the website. It's a collection of pages that are related to each other. They often correspond to the top-navigation of the site. For example, the "Learn" section is a collection of pages that are related to learning/discovering Node.js.
+
+Here we only talk about md/mdx files. The translation of React components is covered by a JSON dictionary and not covered here.
+
+We have these sections on the website:
+
+- Home page
+- Learn
+- About
+- Download
+- Blog
+- Docs (not this codebase at all)
+
+### Sections that are translated
+
+- **Home page**: The landing page is translated because it's the first page that people see when they visit the website. It's important that everyone can understand what Node.js is and what it can do.
+- **About**: This section is translated because it contains information about the Node.js project, its governance. There are no technical terms that are hard to translate.
+- **Download**: This section is translated because it contains information about how to download Node.js. And it's really important that everyone can understand how to download Node.js.
+
+### Sections that are not translated
+
+- **Learn**: Per TSC consensus, the learn section is not translated. It contains technical terms that are hard to translate. Maintainers do not have the ability or bandwidth to ensure quality. It's better to have the content in English than to have bad translations. If you want to have more information read [this message](https://github.com/nodejs/nodejs.org/issues/6429#issuecomment-2558265376) that further explains.
+- **Blog**: The blog is not translated because it's not useful to translate blog posts. Most of the blog posts are release notes, and it's not useful to translate them.
+- **Docs**: The API docs are too expansive, and versioned, to be translated.
