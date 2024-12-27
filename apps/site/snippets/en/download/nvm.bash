@@ -6,3 +6,4 @@ nvm install ${props.release.major}
 
 # Verify the Node.js version:
 node -v # Should print "${props.release.versionWithPrefix}".
+nvm current # Should print "${props.release.versionWithPrefix}".
