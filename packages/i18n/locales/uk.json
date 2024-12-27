@@ -90,6 +90,7 @@
         "modules": {
           "links": {
             "modules": "Модулі",
+            "publishingAPackage": "Публікація пакета",
             "publishingNodeApiModules": "Як опублікувати пакет Node-API",
             "anatomyOfAnHttpTransaction": "Анатомія HTTP-транзакції",
             "abiStability": "Стабільність ABI",
@@ -296,30 +297,8 @@
       },
       "codeBox": {
         "unsupportedVersionWarning": "Ця версія більше не обслуговується. Дізнайтеся більше тут:",
-        "fnmEnvSetup": "налаштовує середовище fnm",
-        "systemManagerWarning": "не є менеджером пакетів Node.js. Переконайтеся, що у вас уже встановлено {packageManager}.",
         "communityWarning": "Менеджери пакетів та їхні скрипти встановлення не обслуговуються проєктом Node.js.",
-        "communityWarningReport": "Якщо у вас виникне проблема, звертайтеся до супроводжувачів менеджера пакетів.",
-        "installsNvm": "установлює nvm (Node Version Manager)",
-        "downloadAndInstallNodejsRestartTerminal": "завантажує й установлює Node.js (можливо, вам доведеться перезапустити термінал)",
-        "verifiesRightNodejsVersion": "перевіряє правильність версії Node.js у середовищі",
-        "verifiesRightNpmVersion": "перевіряє правильність версії npm у середовищі",
-        "shouldPrint": "повинно вивести `{version}`",
-        "installsFnm": "установлює fnm (Fast Node Manager)",
-        "downloadAndInstallNodejs": "завантажує й установлює Node.js",
-        "activateFNM": "активує fnm",
-        "noteWithColon": "ПРИМІТКА:",
-        "dockerIsNotNodejsPackageManager": "Docker не є менеджером пакетів Node.js.",
-        "PleaseEndureAlreadyInstallOnSystem": "Переконайтеся, що він уже встановлений на вашій системі.",
-        "dockerInstructions": "Дотримуйтесь офіційних інструкцій на https://docs.docker.com/desktop/",
-        "dockerImagesLink": "Образи Docker офіційно надаються на https://github.com/nodejs/docker-node/",
-        "pullsNodejsDockerImage": "завантажує образ Docker Node.js",
-        "homebrewIsNotNodejsPackageManager": "Homebrew не є менеджером пакетів Node.js.",
-        "homebrewInstructions": "Дотримуйтесь офіційних інструкцій на https://brew.sh/",
-        "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew підтримує лише основні версії Node.js і може не підтримувати останню версію Node.js {version} ряду версій.",
-        "chocolateyIsNotNodejsPackageManager": "Chocolatey не є менеджером пакетів Node.js.",
-        "chocolateyInstructions": "Дотримуйтесь офіційних інструкцій на https://chocolatey.org/",
-        "chocolateyNotMaintanedByNodejs": "Chocolatey офіційно не підтримується проєктом Node.js і може не підтримувати Node.js версії {version}"
+        "communityWarningReport": "Якщо у вас виникне проблема, звертайтеся до супроводжувачів менеджера пакетів."
       }
     }
   }
