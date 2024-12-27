@@ -35,8 +35,8 @@ jobs:
     name: Get Vercel Preview
     runs-on: ubuntu-latest
     outputs:
-      deployment_found: ${{ steps.check_deployment.outputs.deployment_found }}
-      url: ${{ steps.check_deployment.outputs.url }}
+      deployment_found: ${{ steps.set_outputs.outputs.deployment_found }}
+      url: ${{ steps.set_outputs.outputs.url }}
     steps:
       - name: Capture Vercel Preview
         id: check_deployment
