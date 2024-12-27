@@ -1,3 +1,9 @@
+# NOTE:
+# Docker is not a Node.js package manager.
+# Please ensure it is already installed on your system.
+# Follow official instructions at https://docs.docker.com/desktop/
+# Docker images are provided officially at https://github.com/nodejs/docker-node/
+
 # pulls the Node.js Docker image
 docker pull node:${props.release.major}-${props.release.major >= 4 ? 'alpine' : 'slim'}
 
