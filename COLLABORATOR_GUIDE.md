@@ -272,7 +272,8 @@ To add a new download installation method, follow these steps:
 
    - Add a new entry to the `INSTALL_METHODS` array.
    - Each entry should have the following properties:
-     - `iconImage`: The path to the icon image for the installation method. This should be an SVG component stored within `apps/site/components/Icons/InstallationMethod` and must follow the other icon component references (being a `FC` supporting `SVGSVGElement` props).
+     - `iconImage`: The React component of the icon image for the installation method. This should be an SVG component stored within `apps/site/components/Icons/InstallationMethod` and must follow the other icon component references (being a `FC` supporting `SVGSVGElement` props).
+       - Don't forget to add it on the `index.tsx` file from the `InstallationMethod` folder.
      - `recommended`: A boolean indicating if this method is recommended. This property is available only for official installation methods.
      - `url`: The URL for the installation method.
      - `value`: The key of the installation method, which must be unique.
@@ -281,10 +282,11 @@ To add a new download installation method, follow these steps:
 
    ```javascript
    // filepath: /nodejs.org/apps/site/utils/downloadUtils.tsx
+   // See full refernece of INSTALL_METHODS witihin `downloadUtils.tsx`
    export const INSTALL_METHODS = [
      // ...existing methods...
      {
-       iconImage: 'path/to/icon.svg',
+       iconImage: <InstallMethodIcons.YourIconImage width={16} height={16} />,
        url: 'https://example.com/install',
        value: 'exampleMethod',
      },
@@ -350,13 +352,14 @@ Example:
 
 ```javascript
 // filepath: /nodejs.org/apps/site/utils/downloadUtils.tsx
+// See full refernece of compatibility property witihin `downloadUtils.tsx`
 export const INSTALL_METHODS = [
   {
     iconImage: 'path/to/icon.svg',
     url: 'https://example.com/install',
     value: 'exampleMethod',
     compatibility: {
-      os: ['linux', 'macos'],
+      os: ['LINUX', 'MAC'],
       semver: ['>=14.0.0'],
       platform: ['x64', 'arm64'],
     },
