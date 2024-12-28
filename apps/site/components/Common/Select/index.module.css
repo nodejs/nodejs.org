@@ -108,8 +108,14 @@
   }
 }
 
-.dropdown:has(.label) .text > span > span {
-  @apply pl-3;
+.dropdown:has(.label) .text > span {
+  &:has(svg) > svg {
+    @apply ml-3;
+  }
+
+  &:not(&:has(svg)) > span {
+    @apply ml-3;
+  }
 }
 
 .inline {

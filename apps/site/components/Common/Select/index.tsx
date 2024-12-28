@@ -5,44 +5,47 @@ import * as ScrollPrimitive from '@radix-ui/react-scroll-area';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import classNames from 'classnames';
 import { useEffect, useId, useMemo, useState } from 'react';
-import type { FC } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import Skeleton from '@/components/Common/Skeleton';
 import type { FormattedMessage } from '@/types';
 
 import styles from './index.module.css';
 
-type SelectValue = {
-  label: FormattedMessage;
-  value: string;
-  iconImage?: React.ReactNode;
+export type SelectValue<T extends string> = {
+  label: FormattedMessage | string;
+  value: T;
+  iconImage?: ReactElement<SVGSVGElement>;
   disabled?: boolean;
 };
 
-type SelectGroup = {
-  label?: FormattedMessage;
-  items: Array<SelectValue>;
+export type SelectGroup<T extends string> = {
+  label?: FormattedMessage | string;
+  items: Array<SelectValue<T>>;
 };
 
 const isStringArray = (values: Array<unknown>): values is Array<string> =>
   Boolean(values[0] && typeof values[0] === 'string');
 
-const isValuesArray = (values: Array<unknown>): values is Array<SelectValue> =>
+const isValuesArray = <T extends string>(
+  values: Array<unknown>
+): values is Array<SelectValue<T>> =>
   Boolean(values[0] && typeof values[0] === 'object' && 'value' in values[0]);
 
-type SelectProps = {
-  values: Array<SelectGroup | string | SelectValue>;
-  defaultValue?: string;
+type SelectProps<T extends string> = {
+  values: Array<SelectGroup<T>> | Array<T> | Array<SelectValue<T>>;
+  defaultValue?: T;
   placeholder?: string;
   label?: string;
   inline?: boolean;
-  onChange?: (value: string) => void;
+  onChange?: (value: T) => void;
   className?: string;
   ariaLabel?: string;
   loading?: boolean;
+  disabled?: boolean;
 };
 
-const Select: FC<SelectProps> = ({
+const Select = <T extends string>({
   values = [],
   defaultValue,
   placeholder,
@@ -52,7 +55,8 @@ const Select: FC<SelectProps> = ({
   className,
   ariaLabel,
   loading = false,
-}) => {
+  disabled = false,
+}: SelectProps<T>): ReactNode => {
   const id = useId();
   const [value, setValue] = useState(defaultValue);
 
@@ -69,7 +73,7 @@ const Select: FC<SelectProps> = ({
       return [{ items: mappedValues }];
     }
 
-    return mappedValues as Array<SelectGroup>;
+    return mappedValues as Array<SelectGroup<T>>;
   }, [values]);
 
   // We render the actual item slotted to fix/prevent the issue
@@ -82,8 +86,39 @@ const Select: FC<SelectProps> = ({
     [mappedValues, value]
   );
 
+  const memoizedMappedValues = useMemo(() => {
+    return mappedValues.map(({ label, items }, key) => (
+      <SelectPrimitive.Group key={label?.toString() ?? key}>
+        {label && (
+          <SelectPrimitive.Label
+            className={classNames(styles.item, styles.label)}
+          >
+            {label}
+          </SelectPrimitive.Label>
+        )}
+
+        {items.map(({ value, label, iconImage, disabled }) => (
+          <SelectPrimitive.Item
+            key={value}
+            value={value}
+            disabled={disabled}
+            className={classNames(styles.item, styles.text)}
+          >
+            <SelectPrimitive.ItemText>
+              {iconImage}
+              <span>{label}</span>
+            </SelectPrimitive.ItemText>
+          </SelectPrimitive.Item>
+        ))}
+      </SelectPrimitive.Group>
+    ));
+    // We explicitly want to recalculate these values only when the values themselves changed
+    // This is to prevent re-rendering and re-calcukating the values on every render
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [JSON.stringify(values)]);
+
   // Both change the internal state and emit the change event
-  const handleChange = (value: string) => {
+  const handleChange = (value: T) => {
     setValue(value);
 
     if (typeof onChange === 'function') {
@@ -106,15 +141,23 @@ const Select: FC<SelectProps> = ({
           </label>
         )}
 
-        <SelectPrimitive.Root value={value} onValueChange={handleChange}>
+        <SelectPrimitive.Root
+          value={currentItem !== undefined ? value : undefined}
+          onValueChange={handleChange}
+          disabled={disabled}
+        >
           <SelectPrimitive.Trigger
             className={styles.trigger}
             aria-label={ariaLabel}
             id={id}
           >
             <SelectPrimitive.Value placeholder={placeholder}>
-              {currentItem?.iconImage}
-              <span>{currentItem?.label}</span>
+              {currentItem !== undefined && (
+                <>
+                  {currentItem.iconImage}
+                  <span>{currentItem.label}</span>
+                </>
+              )}
             </SelectPrimitive.Value>
             <ChevronDownIcon className={styles.icon} />
           </SelectPrimitive.Trigger>
@@ -129,31 +172,7 @@ const Select: FC<SelectProps> = ({
               <ScrollPrimitive.Root type="auto">
                 <SelectPrimitive.Viewport>
                   <ScrollPrimitive.Viewport>
-                    {mappedValues.map(({ label, items }, key) => (
-                      <SelectPrimitive.Group key={label?.toString() ?? key}>
-                        {label && (
-                          <SelectPrimitive.Label
-                            className={classNames(styles.item, styles.label)}
-                          >
-                            {label}
-                          </SelectPrimitive.Label>
-                        )}
-
-                        {items.map(({ value, label, iconImage, disabled }) => (
-                          <SelectPrimitive.Item
-                            key={value}
-                            value={value}
-                            disabled={disabled}
-                            className={classNames(styles.item, styles.text)}
-                          >
-                            <SelectPrimitive.ItemText>
-                              {iconImage}
-                              <span>{label}</span>
-                            </SelectPrimitive.ItemText>
-                          </SelectPrimitive.Item>
-                        ))}
-                      </SelectPrimitive.Group>
-                    ))}
+                    {memoizedMappedValues}
                   </ScrollPrimitive.Viewport>
                 </SelectPrimitive.Viewport>
                 <ScrollPrimitive.Scrollbar orientation="vertical">

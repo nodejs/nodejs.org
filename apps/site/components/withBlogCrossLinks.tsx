@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { getClientContext } from '@/client-context';
 import CrossLink from '@/components/Common/CrossLink';
 import getBlogData from '@/next-data/blogData';
+import type { BlogCategory } from '@/types';
 
 const WithBlogCrossLinks: FC = async () => {
   const { pathname } = getClientContext();
@@ -10,7 +11,7 @@ const WithBlogCrossLinks: FC = async () => {
   // Extracts from the static URL the components used for the Blog Post slug
   const [, , category, postname] = pathname.split('/');
 
-  const { posts } = await getBlogData(category);
+  const { posts } = await getBlogData(category as BlogCategory);
 
   const currentItem = posts.findIndex(
     ({ slug }) => slug === `/blog/${category}/${postname}`

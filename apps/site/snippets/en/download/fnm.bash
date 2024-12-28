@@ -1,14 +1,11 @@
-# installs fnm (Fast Node Manager)
-curl -fsSL https://fnm.vercel.app/install | bash
+# Download and install fnm:
+${props.os === 'WIN' ?
+  'winget install Schniz.fnm' :
+  'curl -o- https://fnm.vercel.app/install | bash'
+}
 
-# activate fnm
-source ~/.bashrc
+# Download and install Node.js:
+fnm install ${props.release.major}
 
-# download and install Node.js
-fnm use --install-if-missing ${props.release.major}
-
-# verifies the right Node.js version is in the environment
-node -v # should print "${props.release.versionWithPrefix}"
-
-# verifies the right npm version is in the environment
-npm -v # should print "${props.release.npm}"
+# Verify the Node.js version:
+node -v # Should print "${props.release.versionWithPrefix}".

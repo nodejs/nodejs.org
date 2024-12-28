@@ -8,7 +8,7 @@ import Button from '@/components/Common/Button';
 import { useClientContext } from '@/hooks';
 import type { NodeRelease } from '@/types';
 import { getNodeDownloadUrl } from '@/util/getNodeDownloadUrl';
-import { getUserBitnessByArchitecture } from '@/util/getUserBitnessByArchitecture';
+import { getUserPlatform } from '@/util/getUserPlatform';
 
 import styles from './index.module.css';
 
@@ -18,14 +18,10 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
   release: { versionWithPrefix },
   children,
 }) => {
-  const {
-    os,
-    bitness: userBitness,
-    architecture: userArchitecture,
-  } = useClientContext();
+  const { os, bitness, architecture } = useClientContext();
 
-  const bitness = getUserBitnessByArchitecture(userArchitecture, userBitness);
-  const downloadLink = getNodeDownloadUrl(versionWithPrefix, os, bitness);
+  const platform = getUserPlatform(architecture, bitness);
+  const downloadLink = getNodeDownloadUrl(versionWithPrefix, os, platform);
 
   return (
     <>

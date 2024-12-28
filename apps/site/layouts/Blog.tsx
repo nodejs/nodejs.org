@@ -7,6 +7,7 @@ import WithBlogCategories from '@/components/withBlogCategories';
 import WithFooter from '@/components/withFooter';
 import WithNavBar from '@/components/withNavBar';
 import getBlogData from '@/next-data/blogData';
+import type { BlogCategory } from '@/types';
 
 import styles from './layouts.module.css';
 
@@ -18,7 +19,10 @@ const getBlogCategory = async (pathname: string) => {
   // note that malformed routes can't happen as they are all statically generated
   const [, , category = 'all', , page = 1] = pathname.split('/');
 
-  const { posts, pagination } = await getBlogData(category, Number(page));
+  const { posts, pagination } = await getBlogData(
+    category as BlogCategory,
+    Number(page)
+  );
 
   return { category, posts, pagination, page: Number(page) };
 };
@@ -27,7 +31,7 @@ const BlogLayout: FC = async () => {
   const { pathname } = getClientContext();
   const t = await getTranslations();
 
-  const mapCategoriesToTabs = (categories: Array<string>) =>
+  const mapCategoriesToTabs = (categories: Array<BlogCategory>) =>
     categories.map(category => ({
       key: category,
       label: t(`layouts.blog.categories.${category}`),

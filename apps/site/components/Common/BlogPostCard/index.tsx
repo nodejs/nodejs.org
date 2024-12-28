@@ -5,13 +5,14 @@ import FormattedTime from '@/components/Common/FormattedTime';
 import Preview from '@/components/Common/Preview';
 import Link from '@/components/Link';
 import WithAvatarGroup from '@/components/withAvatarGroup';
+import type { BlogCategory } from '@/types';
 import { mapBlogCategoryToPreviewType } from '@/util/blogUtils';
 
 import styles from './index.module.css';
 
 type BlogPostCardProps = {
   title: string;
-  category: string;
+  category: BlogCategory;
   description?: string;
   authors?: Array<string>;
   date?: Date;

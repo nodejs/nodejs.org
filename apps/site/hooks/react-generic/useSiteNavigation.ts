@@ -38,7 +38,7 @@ const useSiteNavigation = () => {
   const t = useTranslations();
 
   const mapNavigationEntries = (entries: Navigation, context: Context = {}) => {
-    const getFormattedMessage = (label: string, key: string) =>
+    const getFormattedMessage = (label: IntlMessageKeys, key: string) =>
       t.rich(label, context[key] || {}) as FormattedMessage;
 
     return Object.entries(entries).map(

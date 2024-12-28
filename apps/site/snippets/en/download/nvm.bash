@@ -1,11 +1,9 @@
-# installs nvm (Node Version Manager)
+# Download and install nvm:
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
-# download and install Node.js (you may need to restart the terminal)
+# Download and install Node.js:
 nvm install ${props.release.major}
 
-# verifies the right Node.js version is in the environment
-node -v # should print "${props.release.versionWithPrefix}"
-
-# verifies the right npm version is in the environment
-npm -v # should print "${props.release.npm}"
+# Verify the Node.js version:
+node -v # Should print "${props.release.versionWithPrefix}".
+nvm current # Should print "${props.release.versionWithPrefix}".

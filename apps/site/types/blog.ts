@@ -1,17 +1,18 @@
 export type BlogPreviewType = 'announcements' | 'release' | 'vulnerability';
+export type BlogCategory = IntlMessageKeys<'layouts.blog.categories'>;
 
 export interface BlogPost {
   title: string;
   author: string;
   username: string;
   date: Date;
-  categories: Array<string>;
+  categories: Array<BlogCategory>;
   slug: string;
 }
 
 export interface BlogData {
   posts: Array<BlogPost>;
-  categories: Array<string>;
+  categories: Array<BlogCategory>;
 }
 
 export interface BlogPagination {

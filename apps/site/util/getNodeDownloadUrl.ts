@@ -1,12 +1,14 @@
 import { DIST_URL } from '@/next.constants.mjs';
-import type { UserOS } from '@/types/userOS';
+import type { UserOS, UserPlatform } from '@/types/userOS';
+
+type DownloadKind = 'installer' | 'binary' | 'source';
 
 export const getNodeDownloadUrl = (
   versionWithPrefix: string,
-  os: UserOS,
-  bitness: string | number,
-  kind: 'installer' | 'binary' | 'source' = 'installer'
-): string => {
+  os: UserOS | 'LOADING',
+  platform: UserPlatform = 'x64',
+  kind: DownloadKind = 'installer'
+) => {
   const baseURL = `${DIST_URL}${versionWithPrefix}`;
 
   if (kind === 'source') {
@@ -21,8 +23,8 @@ export const getNodeDownloadUrl = (
       }
 
       // Prepares a downloadable Node.js link for the ARM64 platform
-      if (typeof bitness === 'string') {
-        return `${baseURL}/node-${versionWithPrefix}-darwin-${bitness}.tar.gz`;
+      if (typeof platform === 'string') {
+        return `${baseURL}/node-${versionWithPrefix}-darwin-${platform}.tar.gz`;
       }
 
       // Prepares a downloadable Node.js link for the x64 platform.
@@ -32,27 +34,27 @@ export const getNodeDownloadUrl = (
     case 'WIN': {
       if (kind === 'installer') {
         // Prepares a downloadable Node.js installer link for the ARM platforms
-        if (typeof bitness === 'string') {
-          return `${baseURL}/node-${versionWithPrefix}-${bitness}.msi`;
+        if (typeof platform === 'string') {
+          return `${baseURL}/node-${versionWithPrefix}-${platform}.msi`;
         }
 
         // Prepares a downloadable Node.js installer link for the x64 and x86 platforms
-        return `${baseURL}/node-${versionWithPrefix}-x${bitness}.msi`;
+        return `${baseURL}/node-${versionWithPrefix}-x${platform}.msi`;
       }
 
       // Prepares a downloadable Node.js link for the ARM64 platform
-      if (typeof bitness === 'string') {
-        return `${baseURL}/node-${versionWithPrefix}-win-${bitness}.zip`;
+      if (typeof platform === 'string') {
+        return `${baseURL}/node-${versionWithPrefix}-win-${platform}.zip`;
       }
 
       // Prepares a downloadable Node.js link for the x64 and x86 platforms
-      return `${baseURL}/node-${versionWithPrefix}-win-x${bitness}.zip`;
+      return `${baseURL}/node-${versionWithPrefix}-win-x${platform}.zip`;
     }
     case 'LINUX':
       // Prepares a downloadable Node.js link for the ARM platforms such as
       // ARMv7 and ARMv8
-      if (typeof bitness === 'string') {
-        return `${baseURL}/node-${versionWithPrefix}-linux-${bitness}.tar.xz`;
+      if (typeof platform === 'string') {
+        return `${baseURL}/node-${versionWithPrefix}-linux-${platform}.tar.xz`;
       }
 
       // Prepares a downloadable Node.js link for the x64 platform.
@@ -61,8 +63,8 @@ export const getNodeDownloadUrl = (
       return `${baseURL}/node-${versionWithPrefix}-linux-x64.tar.xz`;
     case 'AIX':
       // Prepares a downloadable Node.js link for AIX
-      if (typeof bitness === 'string') {
-        return `${baseURL}/node-${versionWithPrefix}-aix-${bitness}.tar.gz`;
+      if (typeof platform === 'string') {
+        return `${baseURL}/node-${versionWithPrefix}-aix-${platform}.tar.gz`;
       }
 
       return `${baseURL}/node-${versionWithPrefix}-aix-ppc64.tar.gz`;

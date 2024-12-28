@@ -1,95 +1,73 @@
 'use client';
 
-import type { Dispatch, PropsWithChildren, FC } from 'react';
-import { createContext, useMemo, useReducer } from 'react';
+import type { PropsWithChildren, FC } from 'react';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useReducer,
+} from 'react';
 
-import type { DownloadSnippet, NodeRelease } from '@/types';
-import type {
-  ReleaseDispatchActions,
-  ReleaseAction,
-  ReleaseContextType,
-  ReleaseProviderProps,
-  ReleaseState,
-} from '@/types/release';
+import reducer, { getActions, releaseState } from '@/reducers/releaseReducer';
+import type { NodeRelease } from '@/types';
+import type * as Types from '@/types/release';
 
-const initialState: ReleaseState = {
-  os: 'LOADING',
-  bitness: '',
-  platform: 'NVM',
-  version: '',
-};
-
-const createDispatchActions = (
-  dispatch: Dispatch<ReleaseAction>
-): ReleaseDispatchActions => ({
-  setVersion: payload => dispatch({ type: 'SET_VERSION', payload }),
-  setOS: payload => dispatch({ type: 'SET_OS', payload }),
-  setBitness: payload => dispatch({ type: 'SET_BITNESS', payload }),
-  setPlatform: payload => dispatch({ type: 'SET_PLATFORM', payload }),
-});
-
-export const ReleaseContext = createContext<ReleaseContextType>({
-  ...initialState,
-  ...createDispatchActions(() => {}),
+export const ReleasesContext = createContext<Types.ReleasesContextType>({
   releases: [],
   snippets: [],
-  release: {} as NodeRelease,
-  snippet: {} as DownloadSnippet,
 });
 
-export const ReleaseProvider: FC<PropsWithChildren<ReleaseProviderProps>> = ({
-  children,
-  releases,
-  snippets,
-  initialRelease,
-}) => {
-  const releaseReducer = (state: ReleaseState, action: ReleaseAction) => {
-    switch (action.type) {
-      case 'SET_VERSION':
-        return { ...state, version: action.payload };
-      case 'SET_OS':
-        return { ...state, os: action.payload };
-      case 'SET_BITNESS':
-        return { ...state, bitness: action.payload };
-      case 'SET_PLATFORM':
-        return { ...state, platform: action.payload };
-      default:
-        return state;
-    }
-  };
+export const ReleaseContext = createContext<Types.ReleaseContextType>({
+  ...releaseState,
+  ...getActions(() => {}),
+  release: {} as NodeRelease,
+});
 
-  const [state, dispatch] = useReducer(releaseReducer, {
-    ...initialState,
-    version: initialRelease.versionWithPrefix,
+export const ReleasesProvider: FC<
+  PropsWithChildren<Types.ReleasesProviderProps>
+> = ({ children, releases, snippets }) => (
+  <ReleasesContext.Provider value={{ releases, snippets }}>
+    {children}
+  </ReleasesContext.Provider>
+);
+
+export const ReleaseProvider: FC<
+  PropsWithChildren<Types.ReleaseProviderProps>
+> = ({ children, initialRelease }) => {
+  const { releases } = useContext(ReleasesContext);
+  const parentProvider = useContext(ReleaseContext);
+
+  const [state, dispatch] = useReducer(reducer, {
+    ...releaseState,
+    // The initialRelease can only be `undefined` if a parent provider exists
+    // This is an intentional design flaw, forcing a context to exist.
+    // Note that if there is no parent provider the initial state for said provider will be used
+    version: initialRelease?.versionWithPrefix || parentProvider?.version,
   });
 
-  const actions = useMemo(() => createDispatchActions(dispatch), [dispatch]);
+  const actions = useMemo(() => getActions(dispatch), [dispatch]);
 
-  const releaseFromVersion = useMemo(
+  useEffect(() => {
+    // This allows us to nest one Release Provider unto another (whenever possible)
+    // and to actually set the version of a given provider based on a parent provider
+    // Which is super handy for the Download page to reuse other current Node.js states
+    if (parentProvider.version && parentProvider.version !== state.version) {
+      actions.setVersion(parentProvider.version);
+    }
+    // We should only react if the parentProvider changes
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [actions, parentProvider]);
+
+  const release = useMemo(
     () => releases.find(r => r.versionWithPrefix === state.version)!,
     // Memoizes the release based on the version
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [state.version]
   );
 
-  const snippetFromPlatform = useMemo(
-    () => snippets.find(s => s.name === state.platform.toLowerCase())!,
-    // Memoizes the snippet based on the platform
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [state.platform]
-  );
-
-  const providerContext = {
-    ...state,
-    ...actions,
-    releases,
-    snippets,
-    release: releaseFromVersion,
-    snippet: snippetFromPlatform,
-  };
-
   return (
-    <ReleaseContext.Provider value={providerContext}>
+    <ReleaseContext.Provider value={{ ...state, ...actions, release }}>
       {children}
     </ReleaseContext.Provider>
   );

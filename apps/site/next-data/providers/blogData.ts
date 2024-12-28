@@ -2,35 +2,37 @@ import { cache } from 'react';
 
 import generateBlogData from '@/next-data/generators/blogData.mjs';
 import { BLOG_POSTS_PER_PAGE } from '@/next.constants.mjs';
-import type { BlogPostsRSC } from '@/types';
+import type { BlogCategory, BlogPostsRSC } from '@/types';
 
 const { categories, posts } = await generateBlogData();
 
 export const provideBlogCategories = cache(() => categories);
 
-export const provideBlogPosts = cache((category: string): BlogPostsRSC => {
-  const categoryPosts = posts
-    .filter(post => post.categories.includes(category))
-    .sort((a, b) => b.date.getTime() - a.date.getTime());
+export const provideBlogPosts = cache(
+  (category: BlogCategory): BlogPostsRSC => {
+    const categoryPosts = posts
+      .filter(post => post.categories.includes(category))
+      .sort((a, b) => b.date.getTime() - a.date.getTime());
 
-  // Total amount of possible pages given the amount of blog posts
-  const total = categoryPosts.length / BLOG_POSTS_PER_PAGE;
+    // Total amount of possible pages given the amount of blog posts
+    const total = categoryPosts.length / BLOG_POSTS_PER_PAGE;
 
-  return {
-    posts: categoryPosts,
-    pagination: {
-      prev: null,
-      next: null,
-      // In case the division results on a remainder we need
-      // to have an extra page containing the remainder entries
-      pages: Math.floor(total % 1 === 0 ? total : total + 1),
-      total: categoryPosts.length,
-    },
-  };
-});
+    return {
+      posts: categoryPosts,
+      pagination: {
+        prev: null,
+        next: null,
+        // In case the division results on a remainder we need
+        // to have an extra page containing the remainder entries
+        pages: Math.floor(total % 1 === 0 ? total : total + 1),
+        total: categoryPosts.length,
+      },
+    };
+  }
+);
 
 export const providePaginatedBlogPosts = cache(
-  (category: string, page: number): BlogPostsRSC => {
+  (category: BlogCategory, page: number): BlogPostsRSC => {
     const { posts, pagination } = provideBlogPosts(category);
 
     // This autocorrects if invalid numbers are given to only allow

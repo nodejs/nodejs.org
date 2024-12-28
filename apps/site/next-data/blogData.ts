@@ -5,9 +5,12 @@ import {
   VERCEL_ENV,
   VERCEL_REGION,
 } from '@/next.constants.mjs';
-import type { BlogPostsRSC } from '@/types';
+import type { BlogCategory, BlogPostsRSC } from '@/types';
 
-const getBlogData = (cat: string, page?: number): Promise<BlogPostsRSC> => {
+const getBlogData = (
+  cat: BlogCategory,
+  page?: number
+): Promise<BlogPostsRSC> => {
   const IS_NOT_VERCEL_RUNTIME_ENV =
     (!IS_DEV_ENV && VERCEL_ENV && !VERCEL_REGION) ||
     (!IS_DEV_ENV && !VERCEL_ENV);

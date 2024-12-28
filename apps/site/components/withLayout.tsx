@@ -12,7 +12,7 @@ import type { Layouts } from '@/types';
 
 const layouts = {
   about: AboutLayout,
-  home: props => <GlowingBackdropLayout kind="home" {...props} />,
+  home: GlowingBackdropLayout,
   learn: LearnLayout,
   page: DefaultLayout,
   'blog-post': PostLayout,
