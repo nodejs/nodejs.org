@@ -4,14 +4,14 @@ import Blockquote from './components/Common/Blockquote';
 import Button from './components/Common/Button';
 import DownloadButton from './components/Downloads/DownloadButton';
 import DownloadLink from './components/Downloads/DownloadLink';
-import BitnessDropdown from './components/Downloads/Release/BitnessDropdown';
 import BlogPostLink from './components/Downloads/Release/BlogPostLink';
 import ChangelogLink from './components/Downloads/Release/ChangelogLink';
-import ReleaseDownloadButton from './components/Downloads/Release/DownloadButton';
+import InstallationMethodDropdown from './components/Downloads/Release/InstallationMethodDropdown';
 import LinkWithArrow from './components/Downloads/Release/LinkWithArrow';
 import OperatingSystemDropdown from './components/Downloads/Release/OperatingSystemDropdown';
 import PackageManagerDropdown from './components/Downloads/Release/PackageManagerDropdown';
 import PlatformDropdown from './components/Downloads/Release/PlatformDropdown';
+import PrebuiltDownloadButtons from './components/Downloads/Release/PrebuiltDownloadButtons';
 import ReleaseCodeBox from './components/Downloads/Release/ReleaseCodeBox';
 import VersionDropdown from './components/Downloads/Release/VersionDropdown';
 import Link from './components/Link';
@@ -46,17 +46,17 @@ export const clientMdxComponents = {
     // Renders a drop-down menu to select a version
     VersionDropdown: VersionDropdown,
     // Renders a drop-down menu to select a platform
-    PlatformDropdown: PlatformDropdown,
+    InstallationMethodDropdown: InstallationMethodDropdown,
     // Renders a drop-down menu to select a package manager
     PackageManagerDropdown: PackageManagerDropdown,
     // Renders a drop-down menu to select a bitness
-    BitnessDropdown: BitnessDropdown,
+    PlatformDropdown: PlatformDropdown,
     // Renders a drop-down menu to select an operating system
     OperatingSystemDropdown: OperatingSystemDropdown,
     // Renders a Blog Post Link for the selected release
     BlogPostLink: BlogPostLink,
     // Renders a Download Button for the selected release
-    DownloadButton: ReleaseDownloadButton,
+    PrebuiltDownloadButtons: PrebuiltDownloadButtons,
     // Renders a Release CodeBox
     ReleaseCodeBox: ReleaseCodeBox,
     // Renders a Changelog Modal Link Button

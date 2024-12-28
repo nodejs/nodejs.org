@@ -2,21 +2,20 @@
 
 import { useEffect, useState } from 'react';
 
-import type { UserOS } from '@/types/userOS';
+import type { UserArchitecture, UserBitness, UserOS } from '@/types/userOS';
 import { detectOS } from '@/util/detectOS';
-import { getArchitecture } from '@/util/getArchitecture';
-import { getBitness } from '@/util/getBitness';
+import { getHighEntropyValues } from '@/util/getHighEntropyValues';
 
 type UserOSState = {
-  os: UserOS;
-  bitness: number;
-  architecture: string;
+  os: UserOS | 'LOADING';
+  bitness: UserBitness | '';
+  architecture: UserArchitecture | '';
 };
 
 const useDetectOS = () => {
   const [userOSState, setUserOSState] = useState<UserOSState>({
     os: 'LOADING',
-    bitness: 64,
+    bitness: '',
     architecture: '',
   });
 
@@ -26,22 +25,23 @@ const useDetectOS = () => {
       navigator.userAgent
     );
 
-    // We immediately set the OS to LOADING, and then we update it with the detected OS.
-    // This is due to that initial render set within the state will indicate a mismatch from
-    // the server-side rendering versus what the initial state is from the client-side
-    setUserOSState(current => ({ ...current, os: detectOS() }));
-
-    // We then update the bitness based on the detected OS and the user agent
-    getBitness().then((bitness = '64') =>
-      setUserOSState(current => ({
-        ...current,
-        bitness: bitness === '64' || uaIndicates64 ? 64 : 86,
-      }))
-    );
-
-    // We then update the architecture based on the detected OS
-    getArchitecture().then((architecture = '') =>
-      setUserOSState(current => ({ ...current, architecture }))
+    // We attempt to get the high entropy values from the Browser and set the User OS State
+    // based from the values we get from the Browser, if it fails we fallback to the User Agent
+    // to determine the bitness and architecture of the User OS.
+    getHighEntropyValues(['bitness', 'architecture']).then(
+      ({
+        // If there is no getHighEntropyValues API on the Browser or it failed to resolve
+        // we attempt to fallback to what the User Agent indicates
+        bitness = uaIndicates64 ? '64' : '32',
+        architecture = 'x86',
+      }) => {
+        setUserOSState(current => ({
+          ...current,
+          os: detectOS(),
+          bitness: bitness as UserBitness,
+          architecture: architecture as UserArchitecture,
+        }));
+      }
     );
   }, []);
 

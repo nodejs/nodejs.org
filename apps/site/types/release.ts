@@ -1,31 +1,33 @@
 import type { DownloadSnippet } from '@/types/downloads';
 import type { NodeRelease } from '@/types/releases';
-import type { UserOS } from '@/types/userOS';
+import type { UserOS, UserPlatform } from '@/types/userOS';
 
 export type InstallationMethod = 'NVM' | 'FNM' | 'BREW' | 'DOCKER' | 'CHOCO';
 export type PackageManager = 'NPM' | 'YARN' | 'PNPM';
 
+// Items with a pipe/default value mean that they are auto inferred
+// during runtime and do not have necessarily a consistent initial value
 export interface ReleaseState {
-  os: UserOS;
   version: string;
-  bitness: string | number;
-  platform: InstallationMethod | '';
-  packageManager: PackageManager | '';
+  os: UserOS | 'LOADING';
+  platform: UserPlatform | '';
+  installMethod: InstallationMethod | '';
+  packageManager: PackageManager;
 }
 
 export type ReleaseAction =
-  | { type: 'SET_OS'; payload: UserOS }
   | { type: 'SET_VERSION'; payload: string }
-  | { type: 'SET_BITNESS'; payload: string | number }
-  | { type: 'SET_PLATFORM'; payload: InstallationMethod | '' }
-  | { type: 'SET_MANAGER'; payload: PackageManager | '' };
+  | { type: 'SET_OS'; payload: UserOS }
+  | { type: 'SET_PLATFORM'; payload: UserPlatform }
+  | { type: 'SET_INSTALL_METHOD'; payload: InstallationMethod }
+  | { type: 'SET_MANAGER'; payload: PackageManager };
 
 export interface ReleaseDispatchActions {
   setVersion: (version: string) => void;
   setOS: (os: UserOS) => void;
-  setBitness: (bitness: string | number) => void;
-  setPlatform: (platform: InstallationMethod | '') => void;
-  setPackageManager: (packageManager: PackageManager | '') => void;
+  setPlatform: (bitness: UserPlatform) => void;
+  setInstallMethod: (installMethod: InstallationMethod) => void;
+  setPackageManager: (packageManager: PackageManager) => void;
 }
 
 export interface ReleasesContextType {

@@ -35,7 +35,12 @@ const parseSnippet = (s: string, releaseContext: ReleaseContextType) => {
 
 const ReleaseCodeBox: FC = () => {
   const { snippets } = useContext(ReleasesContext);
-  const { platform, os, packageManager, release } = useContext(ReleaseContext);
+  const {
+    installMethod: platform,
+    os,
+    packageManager,
+    release,
+  } = useContext(ReleaseContext);
 
   const t = useTranslations();
 
@@ -61,7 +66,7 @@ const ReleaseCodeBox: FC = () => {
       // Bundles the Platform and Package Manager snippets
       `${platformSnippet?.content ?? ''}\n${packageManagerSnippet?.content ?? ''}`,
       // Passes a partial state of only the things we need to the parser
-      { release, platform, os } as ReleaseContextType
+      { release, installMethod: platform, os } as ReleaseContextType
     );
   }, [snippets, release, platform, os, packageManager]);
 

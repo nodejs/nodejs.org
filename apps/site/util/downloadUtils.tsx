@@ -6,15 +6,16 @@ import PackageManagerIcons from '@/components/Icons/PackageManager';
 import PlatformIcons from '@/components/Icons/Platform';
 import type { NodeReleaseStatus } from '@/types';
 import type * as Types from '@/types/release';
-import type { UserOS } from '@/types/userOS';
+import type { UserOS, UserPlatform } from '@/types/userOS';
 
 // This is a manual list of OS's that do not support/have a way of being installed
 // with an executable installer. This is used to disable the installer button.
 // Note: Windows has one tiny exception for x64 on Node.js versions < 4.0.0
-export const OS_NOT_SUPPORTING_INSTALLERS: Array<UserOS> = [
+export const OS_NOT_SUPPORTING_INSTALLERS: Array<UserOS | 'LOADING'> = [
   'LINUX',
   'AIX',
   'OTHER',
+  'LOADING',
 ];
 
 export enum OperatingSystemLabel {
@@ -42,8 +43,8 @@ export enum PackageManagerLabel {
 
 type DownloadCompatibility = {
   os: Array<UserOS>;
-  platform: Array<Types.InstallationMethod | ''>;
-  bitness: Array<string>;
+  installMethod: Array<Types.InstallationMethod>;
+  platform: Array<UserPlatform>;
   semver: Array<string>;
   releases: Array<NodeReleaseStatus>;
 };
@@ -92,32 +93,33 @@ export const parseCompat = <
   T extends DownloadDropdownItem<K>,
 >(
   items: Array<T>,
-  { os, platform, bitness, version, release }: Types.ReleaseContextType
+  { os, installMethod, platform, version, release }: Types.ReleaseContextType
 ): Array<T> => {
   const satisfiesSemver = (semver: string) => satisfies(version, semver);
 
-  const supportsOS = (item: T) => item.compatibility.os?.includes(os) ?? true;
+  const supportsOS = (i: T['compatibility']) =>
+    os === 'LOADING' || (i.os?.includes(os) ?? true);
 
-  const supportsPlatform = (item: T) =>
-    item.compatibility.platform?.includes(platform) ?? true;
+  const supportsInstallMethod = (i: T['compatibility']) =>
+    (installMethod === '' || i.installMethod?.includes(installMethod)) ?? true;
 
-  const supportsBitness = (item: T) =>
-    item.compatibility.bitness?.includes(String(bitness)) ?? true;
+  const supportsPlatform = (i: T['compatibility']) =>
+    platform === '' || (i.platform?.includes(platform) ?? true);
 
-  const supportsVersion = (item: T) =>
-    item.compatibility.semver?.some(satisfiesSemver) ?? true;
+  const supportsVersion = (i: T['compatibility']) =>
+    i.semver?.some(satisfiesSemver) ?? true;
 
-  const supportsRelease = (item: T) =>
-    item.compatibility.releases?.includes(release.status) ?? true;
+  const supportsRelease = (i: T['compatibility']) =>
+    i.releases?.includes(release.status) ?? true;
 
   return items.map(item => ({
     ...item,
     disabled:
-      !supportsOS(item) ||
-      !supportsPlatform(item) ||
-      !supportsBitness(item) ||
-      !supportsVersion(item) ||
-      !supportsRelease(item),
+      !supportsOS(item.compatibility) ||
+      !supportsInstallMethod(item.compatibility) ||
+      !supportsPlatform(item.compatibility) ||
+      !supportsVersion(item.compatibility) ||
+      !supportsRelease(item.compatibility),
   }));
 };
 
@@ -143,7 +145,7 @@ export const OPERATING_SYSTEMS: Array<DownloadDropdownItem<UserOS>> = [
   {
     label: OperatingSystemLabel.AIX,
     value: 'AIX',
-    compatibility: { platform: [''] },
+    compatibility: { installMethod: [] },
     iconImage: <OSIcons.AIX width={16} height={16} />,
   },
 ];
@@ -223,19 +225,19 @@ export const PACKAGE_MANAGERS: Array<
   },
 ];
 
-export const ARCHITECTURES: Record<
+export const PLATFORMS: Record<
   UserOS,
-  Array<DownloadDropdownItem<string>>
+  Array<DownloadDropdownItem<UserPlatform>>
 > = {
   WIN: [
     {
       label: 'x64',
-      value: '64',
+      value: 'x64',
       compatibility: {},
     },
     {
       label: 'x86',
-      value: '86',
+      value: 'x86',
       compatibility: { semver: ['< 23.0.0'] },
     },
     {
@@ -247,7 +249,7 @@ export const ARCHITECTURES: Record<
   MAC: [
     {
       label: 'x64',
-      value: '64',
+      value: 'x64',
       compatibility: {},
     },
     {
@@ -259,7 +261,7 @@ export const ARCHITECTURES: Record<
   LINUX: [
     {
       label: 'x64',
-      value: '64',
+      value: 'x64',
       compatibility: {},
     },
     {
@@ -291,5 +293,4 @@ export const ARCHITECTURES: Record<
     },
   ],
   OTHER: [],
-  LOADING: [],
 };

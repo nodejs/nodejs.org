@@ -17,15 +17,24 @@ import { getNodeDownloadUrl } from '@/util/getNodeDownloadUrl';
 // Retrieves the pure extension piece from the input string
 const getExtension = (input: string) => String(input.split('.').slice(-1));
 
-const DownloadButton: FC = () => {
+const PrebuiltDownloadButtons: FC = () => {
   const t = useTranslations();
-  const { release, os, bitness } = useContext(ReleaseContext);
-
-  const version = release.versionWithPrefix;
+  const { release, os, platform } = useContext(ReleaseContext);
 
   const { installerUrl, installerExt, binaryUrl, binaryExt } = useMemo(() => {
-    const installerUrl = getNodeDownloadUrl(version, os, bitness, 'installer');
-    const binaryUrl = getNodeDownloadUrl(version, os, bitness, 'binary');
+    const installerUrl = getNodeDownloadUrl(
+      release.versionWithPrefix,
+      os,
+      platform || undefined,
+      'installer'
+    );
+
+    const binaryUrl = getNodeDownloadUrl(
+      release.versionWithPrefix,
+      os,
+      platform || undefined,
+      'binary'
+    );
 
     return {
       installerUrl,
@@ -33,35 +42,28 @@ const DownloadButton: FC = () => {
       installerExt: getExtension(installerUrl),
       binaryExt: getExtension(binaryUrl),
     };
-  }, [version, os, bitness]);
+  }, [os, platform, release.versionWithPrefix]);
 
   return (
     <div className="my-4 flex gap-2">
-      {OS_NOT_SUPPORTING_INSTALLERS.includes(os) || (
-        <Skeleton loading={os === 'LOADING'}>
-          <Button
-            href={installerUrl}
-            disabled={!version}
-            size="small"
-            className="min-w-56"
-          >
-            <CloudArrowDownIcon />
-
-            {t('layouts.download.buttons.installer', {
-              os: OperatingSystemLabel[os],
-              extension: installerExt,
-            })}
-          </Button>
-        </Skeleton>
-      )}
-
       <Skeleton loading={os === 'LOADING'}>
         <Button
-          href={binaryUrl}
-          disabled={!version}
+          href={installerUrl}
+          disabled={OS_NOT_SUPPORTING_INSTALLERS.includes(os)}
           size="small"
           className="min-w-56"
         >
+          <CloudArrowDownIcon />
+
+          {t('layouts.download.buttons.installer', {
+            os: OperatingSystemLabel[os],
+            extension: installerExt,
+          })}
+        </Button>
+      </Skeleton>
+
+      <Skeleton loading={os === 'LOADING'}>
+        <Button href={binaryUrl} size="small" className="min-w-56">
           <CloudArrowDownIcon />
 
           {t('layouts.download.buttons.binary', { extension: binaryExt })}
@@ -71,4 +73,4 @@ const DownloadButton: FC = () => {
   );
 };
 
-export default DownloadButton;
+export default PrebuiltDownloadButtons;

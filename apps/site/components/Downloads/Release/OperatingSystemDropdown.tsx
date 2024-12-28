@@ -17,35 +17,32 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = () => {
   const release = useContext(ReleaseContext);
   const t = useTranslations();
 
-  // Prevents the OS from being set during OS loading state
-  const setOS = (newOS: UserOS) => {
-    if (release.os !== 'LOADING') {
-      release.setOS(newOS);
+  useEffect(() => {
+    if (os !== 'LOADING') {
+      release.setOS(os);
     }
-  };
-
-  // Reacts on Client Context change of OS
-  // Only this Hook is allowed to bypass the `setOS` from above
-  // As this Hook is what defined the initial OS state
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => release.setOS(os), [os]);
+    // Reacts on Client Context change of OS
+    // Only this Hook is allowed to bypass the `setOS` from above
+    // As this Hook is what defined the initial OS state
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [os]);
 
   // We parse the compatibility of the dropdown items
   const parsedOperatingSystems = useMemo(
     () => parseCompat(OPERATING_SYSTEMS, release),
     // We only want to react on the change of the OS, Bitness, and Version
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [release.os, release.bitness, release.version]
+    [release.os, release.platform, release.version]
   );
 
   return (
     <Select<UserOS>
       values={parsedOperatingSystems}
-      defaultValue={release.os}
+      defaultValue={release.os !== 'LOADING' ? release.os : undefined}
       loading={release.os === 'LOADING'}
       placeholder={t('layouts.download.dropdown.unknown')}
       ariaLabel={t('layouts.download.dropdown.os')}
-      onChange={value => setOS(value)}
+      onChange={value => release.setOS(value)}
       className="min-w-[8.5rem]"
       inline={true}
     />

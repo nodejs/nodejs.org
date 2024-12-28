@@ -284,10 +284,10 @@
         "binary": "Standalone Binary (.{extension})"
       },
       "dropdown": {
-        "bitness": "Bitness",
+        "platform": "Platform",
         "os": "Operating System",
         "version": "Version",
-        "platform": "Platform",
+        "installMethod": "Install Method",
         "packageManager": "Package Manager",
         "unknown": "Unknown",
         "platformGroups": {
