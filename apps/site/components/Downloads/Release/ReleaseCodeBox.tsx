@@ -5,13 +5,14 @@ import type { FC } from 'react';
 import { useContext, useMemo } from 'react';
 
 import AlertBox from '@/components/Common/AlertBox';
+import CodeBox from '@/components/Common/CodeBox';
 import Skeleton from '@/components/Common/Skeleton';
-import JSXCodeBox from '@/components/JSX/CodeBox';
 import Link from '@/components/Link';
 import { createSval } from '@/next.jsx.compiler.mjs';
 import { ReleaseContext, ReleasesContext } from '@/providers/releaseProvider';
 import type { ReleaseContextType } from '@/types/release';
 import { INSTALL_METHODS } from '@/util/downloadUtils';
+import { highlightToHtml } from '@/util/getHighlighter';
 
 import LinkWithArrow from './LinkWithArrow';
 
@@ -35,46 +36,56 @@ const parseSnippet = (s: string, releaseContext: ReleaseContextType) => {
 
 const ReleaseCodeBox: FC = () => {
   const { snippets } = useContext(ReleasesContext);
-  const {
-    installMethod: platform,
-    os,
-    packageManager,
-    release,
-  } = useContext(ReleaseContext);
+  const { installMethod, os, packageManager, release } =
+    useContext(ReleaseContext);
 
   const t = useTranslations();
 
   // Retrieves the current platform (Dropdown Item) based on the selected platform value
   const currentPlatform = useMemo(
-    () => INSTALL_METHODS.find(({ value }) => value === platform),
-    [platform]
+    () => INSTALL_METHODS.find(({ value }) => value === installMethod),
+    [installMethod]
   );
 
   // Parses the snippets based on the selected platform, package manager, and release context
   const parsedSnippets = useMemo(() => {
     // Retrieves a snippet for the given Installation Method (aka Platform)
-    const platformSnippet = snippets.find(
-      s => s.name === platform.toLowerCase()
+    const installMethodSnippet = snippets.find(
+      ({ name }) => name === installMethod.toLowerCase()
     );
 
     // Retrieves a snippet for the given Package Manager to be bundled with the Platform snippet
     const packageManagerSnippet = snippets.find(
-      s => s.name === packageManager.toLowerCase()
+      ({ name }) => name === packageManager.toLowerCase()
     );
 
-    return parseSnippet(
-      // Bundles the Platform and Package Manager snippets
-      `${platformSnippet?.content ?? ''}\n${packageManagerSnippet?.content ?? ''}`,
-      // Passes a partial state of only the things we need to the parser
-      { release, installMethod: platform, os } as ReleaseContextType
-    );
-  }, [snippets, release, platform, os, packageManager]);
+    // Prevents numerous recalculations of `sval` and `Shiki` when not necessary
+    // As we only want to parse the snippets when both the Platform and Package Manager snippets are available
+    if (installMethodSnippet && packageManagerSnippet) {
+      const content = parseSnippet(
+        // Bundles the Platform and Package Manager snippets
+        `${installMethodSnippet.content}\n${packageManagerSnippet.content}`,
+        // Passes a partial state of only the things we need to the parser
+        { release, os } as ReleaseContextType
+      );
+
+      // We use Shikis's `hast-util-to-html` to convert the highlighted code into plain HTML (Pretty much using Rehype)
+      // This is actually faster than using `hast-util-to-jsx-runtime` and then rendering the JSX
+      // As it requires React's runtime to interpolate and build these components dynamically
+      // Which also leads to a lot o GC being emitted. (Tested via Profiling)
+      return highlightToHtml(content, os === 'WIN' ? 'ps1' : 'bash');
+    }
+
+    return '';
+    // Only change to these specific properties which are relevant for the re-rendering of the CodeBox
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [release.versionWithPrefix, installMethod, os, packageManager]);
 
   // Determines the code language based on the OS
-  const codeLanguage = os === 'WIN' ? 'ps1' : 'bash';
+  const displayName = os === 'WIN' ? 'PowerShell' : 'Bash';
 
   // Determines if the code box should render the skeleton loader
-  const renderSkeleton = os === 'LOADING' || platform === '';
+  const renderSkeleton = os === 'LOADING' || installMethod === '';
 
   // Defines fallbacks for the currentPlatform object
   const {
@@ -100,9 +111,9 @@ const ReleaseCodeBox: FC = () => {
       )}
 
       <Skeleton loading={renderSkeleton}>
-        <JSXCodeBox language={codeLanguage} className="min-h-[16rem]">
-          {parsedSnippets}
-        </JSXCodeBox>
+        <CodeBox language={displayName} className="min-h-[16rem]">
+          <code dangerouslySetInnerHTML={{ __html: parsedSnippets }} />
+        </CodeBox>
       </Skeleton>
 
       <span className="text-center text-xs text-neutral-800 dark:text-neutral-200">

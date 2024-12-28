@@ -12,7 +12,7 @@ type GlowingBackdropLayoutProps = PropsWithChildren<{
 }>;
 
 const GlowingBackdropLayout: FC<GlowingBackdropLayoutProps> = ({
-  kind,
+  kind = 'home',
   children,
 }) => (
   <>

@@ -86,6 +86,37 @@ const Select = <T extends string>({
     [mappedValues, value]
   );
 
+  const memoizedMappedValues = useMemo(() => {
+    return mappedValues.map(({ label, items }, key) => (
+      <SelectPrimitive.Group key={label?.toString() ?? key}>
+        {label && (
+          <SelectPrimitive.Label
+            className={classNames(styles.item, styles.label)}
+          >
+            {label}
+          </SelectPrimitive.Label>
+        )}
+
+        {items.map(({ value, label, iconImage, disabled }) => (
+          <SelectPrimitive.Item
+            key={value}
+            value={value}
+            disabled={disabled}
+            className={classNames(styles.item, styles.text)}
+          >
+            <SelectPrimitive.ItemText>
+              {iconImage}
+              <span>{label}</span>
+            </SelectPrimitive.ItemText>
+          </SelectPrimitive.Item>
+        ))}
+      </SelectPrimitive.Group>
+    ));
+    // We explicitly want to recalculate these values only when the values themselves changed
+    // This is to prevent re-rendering and re-calcukating the values on every render
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [JSON.stringify(values)]);
+
   // Both change the internal state and emit the change event
   const handleChange = (value: T) => {
     setValue(value);
@@ -141,31 +172,7 @@ const Select = <T extends string>({
               <ScrollPrimitive.Root type="auto">
                 <SelectPrimitive.Viewport>
                   <ScrollPrimitive.Viewport>
-                    {mappedValues.map(({ label, items }, key) => (
-                      <SelectPrimitive.Group key={label?.toString() ?? key}>
-                        {label && (
-                          <SelectPrimitive.Label
-                            className={classNames(styles.item, styles.label)}
-                          >
-                            {label}
-                          </SelectPrimitive.Label>
-                        )}
-
-                        {items.map(({ value, label, iconImage, disabled }) => (
-                          <SelectPrimitive.Item
-                            key={value}
-                            value={value}
-                            disabled={disabled}
-                            className={classNames(styles.item, styles.text)}
-                          >
-                            <SelectPrimitive.ItemText>
-                              {iconImage}
-                              <span>{label}</span>
-                            </SelectPrimitive.ItemText>
-                          </SelectPrimitive.Item>
-                        ))}
-                      </SelectPrimitive.Group>
-                    ))}
+                    {memoizedMappedValues}
                   </ScrollPrimitive.Viewport>
                 </SelectPrimitive.Viewport>
                 <ScrollPrimitive.Scrollbar orientation="vertical">
