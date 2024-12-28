@@ -8,7 +8,7 @@ import Select from '@/components/Common/Select';
 import { useClientContext } from '@/hooks';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import type { UserOS } from '@/types/userOS';
-import { OPERATING_SYSTEMS, parseCompat } from '@/util/downloadUtils';
+import { nextItem, OPERATING_SYSTEMS, parseCompat } from '@/util/downloadUtils';
 
 type OperatingSystemDropdownProps = { exclude?: Array<UserOS> };
 
@@ -30,9 +30,22 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = () => {
   // We parse the compatibility of the dropdown items
   const parsedOperatingSystems = useMemo(
     () => parseCompat(OPERATING_SYSTEMS, release),
-    // We only want to react on the change of the Install Method
+    // We only want to react on the change of the Install Method and Version
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [release.installMethod, release.os]
+    [release.installMethod, release.version]
+  );
+
+  // We set the OS to the next available OS when the current
+  // one is not valid anymore due to Version changes
+  useEffect(
+    () => {
+      if (release.os !== 'LOADING') {
+        release.setOS(nextItem(release.os, parsedOperatingSystems));
+      }
+    },
+    // We only want to react on the change of the Version, Install Method and OS
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [release.installMethod, release.version, release.os]
   );
 
   return (

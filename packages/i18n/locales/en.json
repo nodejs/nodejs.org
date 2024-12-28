@@ -136,22 +136,6 @@
         }
       }
     },
-    "downloadList": {
-      "links": {
-        "previousReleases": "Node.js Releases",
-        "packageManager": "Installing Node.js via package manager",
-        "shaSums": {
-          "title": "Signed SHASUMS for release files",
-          "howToVerify": " (How to verify)"
-        },
-        "allDownloads": "All download options",
-        "nightlyReleases": "Nightly builds",
-        "unofficialBuilds": "Unofficial builds",
-        "buildingFromSource": "Building Node.js from source on supported platforms",
-        "installingOnLinux": "Installing Node.js via binary archive",
-        "installingOnWsl": "Install on Windows Subsystem for Linux (WSL)"
-      }
-    },
     "downloadReleasesTable": {
       "changelog": "Changelog",
       "releases": "Releases",
@@ -162,6 +146,11 @@
       "previous": "Previous"
     },
     "common": {
+      "alertBox": {
+        "info": "Info",
+        "warning": "Warning",
+        "danger": "Danger"
+      },
       "breadcrumbs": {
         "navigateToHome": "Navigate to Home"
       },
@@ -202,32 +191,9 @@
       "viewAs": "View as",
       "tableOfContents": "Table of Contents"
     },
-    "downloads": {
-      "changelogModal": {
-        "startContributing": "Start Contributing"
-      }
-    },
     "search": {
       "searchBox": {
         "placeholder": "Start typing..."
-      },
-      "seeAll": {
-        "text": "See all {count} results"
-      },
-      "searchError": {
-        "text": "An error occurred while searching. Please try again later."
-      },
-      "poweredBy": {
-        "text": "Powered by"
-      },
-      "noResults": {
-        "text": "No results found for \"{query}\"."
-      },
-      "emptyState": {
-        "text": "Search something..."
-      },
-      "searchPage": {
-        "title": "You're searching: {query}"
       }
     },
     "blog": {
@@ -278,7 +244,6 @@
       "backToHome": "Back to Home"
     },
     "download": {
-      "selectCategory": "Categories",
       "buttons": {
         "installer": "{os} Installer (.{extension})",
         "binary": "Standalone Binary (.{extension})"
@@ -299,6 +264,7 @@
         "unsupportedVersionWarning": "This version is out of maintenance. Please use a currently supported version. <link>Understand EOL support.</link>",
         "communityPlatformInfo": "Installation methods that involve community software are supported by the teams maintaining that software.",
         "externalSupportInfo": "If you encounter any issues please visit <link>{platform}'s website</link>",
+        "noScriptDetected": "This page requires JavaScript. You can download Node.js without JavaScript by visiting the <link>releases page</link> directly.",
         "platformInfo": {
           "default": "{platform} and their installation scripts are not maintained by the Node.js project.",
           "nvm": "\"nvm\" is a cross-platform Node.js version manager.",

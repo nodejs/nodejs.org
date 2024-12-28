@@ -2,40 +2,24 @@
 
 import { useState, useEffect } from 'react';
 
-const mediaQueryChangeSubscribe = (mq: MediaQueryList, handler: () => void) => {
-  if (mq.addEventListener) {
-    mq.addEventListener('change', handler);
-  } else {
-    mq.addListener(handler);
-  }
-};
-
-const mediaQueryChangeUnsubscribe = (
-  mq: MediaQueryList,
-  handler: () => void
-) => {
-  if (mq.removeEventListener) {
-    mq.removeEventListener('change', handler);
-  } else {
-    mq.removeListener(handler);
-  }
-};
-
-const useMediaQuery = (query: string): boolean | undefined => {
-  const [matches, setMatches] = useState<boolean>();
+const useMediaQuery = (query: string) => {
+  const [matches, setMatches] = useState(false);
 
   useEffect(() => {
-    if (typeof window?.matchMedia === 'function') {
-      const mq = window.matchMedia(query);
-      setMatches(mq.matches);
+    const { matches, addEventListener, removeEventListener } =
+      window.matchMedia?.(query) ?? {
+        matches: false,
+        addEventListener: () => {},
+        removeEventListener: () => {},
+      };
 
-      const handler = (): void => setMatches(mq.matches);
-      mediaQueryChangeSubscribe(mq, handler);
+    setMatches(matches);
 
-      return (): void => mediaQueryChangeUnsubscribe(mq, handler);
-    }
+    const handler = (event: MediaQueryListEvent) => setMatches(event.matches);
 
-    return undefined;
+    addEventListener('change', handler);
+
+    return () => removeEventListener('change', handler);
   }, [query]);
 
   return matches;

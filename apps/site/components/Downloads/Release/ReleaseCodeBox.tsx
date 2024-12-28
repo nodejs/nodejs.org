@@ -96,8 +96,28 @@ const ReleaseCodeBox: FC = () => {
 
   return (
     <div className="mb-6 mt-4 flex flex-col gap-2">
+      <noscript>
+        <AlertBox
+          title={t('components.common.alertBox.warning')}
+          level="warning"
+          size="small"
+        >
+          {t.rich('layouts.download.codeBox.noScriptDetected', {
+            link: text => (
+              <Link href="/about/previous-releases#looking-for-latest-release-of-a-version-branch">
+                <b>{text}</b>
+              </Link>
+            ),
+          })}
+        </AlertBox>
+      </noscript>
+
       {release.status === 'End-of-life' && (
-        <AlertBox title="Warning" level="warning" size="small">
+        <AlertBox
+          title={t('components.common.alertBox.warning')}
+          level="warning"
+          size="small"
+        >
           {t.rich('layouts.download.codeBox.unsupportedVersionWarning', {
             link: text => <Link href="/about/previous-releases/">{text}</Link>,
           })}
@@ -105,7 +125,11 @@ const ReleaseCodeBox: FC = () => {
       )}
 
       {!currentPlatform || currentPlatform.recommended || (
-        <AlertBox title="Info" level="info" size="small">
+        <AlertBox
+          title={t('components.common.alertBox.info')}
+          level="info"
+          size="small"
+        >
           {t('layouts.download.codeBox.communityPlatformInfo')}
         </AlertBox>
       )}
