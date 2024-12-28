@@ -81,4 +81,40 @@ describe('getNodeDownloadUrl', () => {
 
     expect(getNodeDownloadUrl(invalidVersion, os, platform)).toBe(expectedUrl);
   });
+
+  it('returns the correct download URL for Mac (ARM64)', () => {
+    const os = 'MAC';
+    const platform = 'arm64';
+    const expectedUrl =
+      'https://nodejs.org/dist/v18.16.0/node-v18.16.0-darwin-arm64.tar.gz';
+
+    expect(getNodeDownloadUrl(version, os, platform)).toBe(expectedUrl);
+  });
+
+  it('returns the correct download URL for Windows (ARM64)', () => {
+    const os = 'WIN';
+    const platform = 'arm64';
+    const expectedUrl =
+      'https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-arm64.zip';
+
+    expect(getNodeDownloadUrl(version, os, platform)).toBe(expectedUrl);
+  });
+
+  it('returns the correct download URL for Linux (x64)', () => {
+    const os = 'LINUX';
+    const platform = 'x64';
+    const expectedUrl =
+      'https://nodejs.org/dist/v18.16.0/node-v18.16.0-linux-x64.tar.xz';
+
+    expect(getNodeDownloadUrl(version, os, platform)).toBe(expectedUrl);
+  });
+
+  it('returns the correct download URL for AIX (default)', () => {
+    const os = 'AIX';
+    const platform = 'default';
+    const expectedUrl =
+      'https://nodejs.org/dist/v18.16.0/node-v18.16.0-aix-ppc64.tar.gz';
+
+    expect(getNodeDownloadUrl(version, os, platform)).toBe(expectedUrl);
+  });
 });

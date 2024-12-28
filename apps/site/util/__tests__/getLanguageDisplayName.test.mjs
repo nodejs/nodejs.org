@@ -20,4 +20,9 @@ describe('getLanguageDisplayName', () => {
     const result = getLanguageDisplayName('js');
     expect(result).toBe('JavaScript');
   });
+
+  it('should handle invalid inputs gracefully', () => {
+    const result = getLanguageDisplayName(null);
+    expect(result).toBe(null);
+  });
 });

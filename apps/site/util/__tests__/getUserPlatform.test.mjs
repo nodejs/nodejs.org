@@ -20,4 +20,19 @@ describe('getUserPlatform', () => {
     const result = getUserPlatform('', '');
     expect(result).toBe('x86');
   });
+
+  it('should return x64 for Windows platform', () => {
+    const result = getUserPlatform('win', '64');
+    expect(result).toBe('x64');
+  });
+
+  it('should return x64 for Mac platform', () => {
+    const result = getUserPlatform('mac', '64');
+    expect(result).toBe('x64');
+  });
+
+  it('should return x86 for unknown platform', () => {
+    const result = getUserPlatform('unknown', '32');
+    expect(result).toBe('x86');
+  });
 });
