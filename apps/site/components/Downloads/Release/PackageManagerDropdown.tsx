@@ -30,7 +30,7 @@ const PackageManagerDropdown: FC = () => {
       ),
     // We only want to react on the change of the Version
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [release.version]
+    [release.version, release.packageManager]
   );
 
   return (
