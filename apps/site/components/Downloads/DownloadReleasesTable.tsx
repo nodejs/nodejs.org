@@ -3,8 +3,8 @@ import type { FC } from 'react';
 
 import LinkWithArrow from '@/components/LinkWithArrow';
 import getReleaseData from '@/next-data/releaseData';
+import { BASE_CHANGELOG_URL } from '@/next.constants.mjs';
 import { getNodeApiLink } from '@/util/getNodeApiLink';
-import { getNodeJsChangelog } from '@/util/getNodeJsChangelog';
 
 // This is a React Async Server Component
 // Note that Hooks cannot be used in a RSC async component
@@ -43,9 +43,7 @@ const DownloadReleasesTable: FC = async () => {
                 {t('components.downloadReleasesTable.actions.releases')}
               </LinkWithArrow>
 
-              <LinkWithArrow
-                href={getNodeJsChangelog(release.versionWithPrefix)}
-              >
+              <LinkWithArrow href={`${BASE_CHANGELOG_URL}${release.version}`}>
                 {t('components.downloadReleasesTable.actions.changelog')}
               </LinkWithArrow>
 
