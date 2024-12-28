@@ -40,7 +40,7 @@ const PlatformDropdown: FC = () => {
         : [],
     // We only want to react on the change of the OS, Platform, and Version
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [release.os, release.platform, release.version]
+    [release.os, release.version]
   );
 
   // We set the Platform to the next available Architecture when the current
