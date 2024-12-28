@@ -30,9 +30,9 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = () => {
   // We parse the compatibility of the dropdown items
   const parsedOperatingSystems = useMemo(
     () => parseCompat(OPERATING_SYSTEMS, release),
-    // We only want to react on the change of the OS, Bitness, and Version
+    // We only want to react on the change of the Install Method
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [release.os, release.platform, release.version]
+    [release.installMethod]
   );
 
   return (
