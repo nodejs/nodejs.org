@@ -64,7 +64,7 @@ const PlatformDropdown: FC = () => {
       placeholder={t('layouts.download.dropdown.unknown')}
       ariaLabel={t('layouts.download.dropdown.installMethod')}
       onChange={platform => platform && release.setPlatform(platform)}
-      className="min-w-20"
+      className="min-w-28"
       inline={true}
     />
   );
