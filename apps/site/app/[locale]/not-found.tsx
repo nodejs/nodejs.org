@@ -12,7 +12,7 @@ const NotFoundPage: FC = () => {
   const t = useTranslations();
 
   return (
-    <GlowingBackdropLayout>
+    <GlowingBackdropLayout kind="default">
       404
       <h1 className="special -mt-4 text-center">
         {t('layouts.error.notFound.title')}

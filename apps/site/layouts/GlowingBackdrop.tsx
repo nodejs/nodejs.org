@@ -8,7 +8,7 @@ import WithNavBar from '@/components/withNavBar';
 import styles from './layouts.module.css';
 
 type GlowingBackdropLayoutProps = PropsWithChildren<{
-  kind?: 'home';
+  kind?: 'home' | 'default';
 }>;
 
 const GlowingBackdropLayout: FC<GlowingBackdropLayoutProps> = ({
