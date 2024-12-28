@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import type { FC } from 'react';
 
+import LinkWithArrow from '@/components/LinkWithArrow';
 import getReleaseData from '@/next-data/releaseData';
 import { getNodeApiLink } from '@/util/getNodeApiLink';
 import { getNodeJsChangelog } from '@/util/getNodeJsChangelog';
@@ -17,11 +18,12 @@ const DownloadReleasesTable: FC = async () => {
     <table id="tbVersions" className="download-table full-width">
       <thead>
         <tr>
-          <th>Node.js Version</th>
-          <th>Module Version</th>
-          <th>Codename</th>
-          <th>Release Date</th>
-          <th colSpan={2}>npm</th>
+          <th>{t('components.downloadReleasesTable.version')}</th>
+          <th>{t('components.downloadReleasesTable.nApiVersion')}</th>
+          <th>{t('components.downloadReleasesTable.codename')}</th>
+          <th>{t('components.downloadReleasesTable.releaseDate')}</th>
+          <th>{t('components.downloadReleasesTable.npmVersion')}</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -35,17 +37,21 @@ const DownloadReleasesTable: FC = async () => {
             </td>
             <td data-label="npm">v{release.npm}</td>
             <td className="download-table-last">
-              <a
+              <LinkWithArrow
                 href={`https://nodejs.org/download/release/${release.versionWithPrefix}/`}
               >
-                {t('components.downloadReleasesTable.releases')}
-              </a>
-              <a href={getNodeJsChangelog(release.versionWithPrefix)}>
-                {t('components.downloadReleasesTable.changelog')}
-              </a>
-              <a href={getNodeApiLink(release.versionWithPrefix)}>
-                {t('components.downloadReleasesTable.docs')}
-              </a>
+                {t('components.downloadReleasesTable.actions.releases')}
+              </LinkWithArrow>
+
+              <LinkWithArrow
+                href={getNodeJsChangelog(release.versionWithPrefix)}
+              >
+                {t('components.downloadReleasesTable.actions.changelog')}
+              </LinkWithArrow>
+
+              <LinkWithArrow href={getNodeApiLink(release.versionWithPrefix)}>
+                {t('components.downloadReleasesTable.actions.docs')}
+              </LinkWithArrow>
             </td>
           </tr>
         ))}

@@ -13,6 +13,9 @@
   - [Best practices when creating a Component](#best-practices-when-creating-a-component)
     - [How a new Component should look like when freshly created](#how-a-new-component-should-look-like-when-freshly-created)
   - [Best practices for Component development in general](#best-practices-for-component-development-in-general)
+- [The new Downloads page](#the-new-downloads-page)
+  - [Adding a Download Installation Method](#adding-a-download-installation-method)
+  - [Adding a Download Package Manager](#adding-a-download-package-manager)
 - [Unit Tests and Storybooks](#unit-tests-and-storybooks)
   - [General Guidelines for Unit Tests](#general-guidelines-for-unit-tests)
   - [General Guidelines for Storybooks](#general-guidelines-for-storybooks)
@@ -258,6 +261,114 @@ export default MyComponent;
 - Avoid using DOM/Web APIs/`document`/`window` API access within a React Component.
   Use utilities or Hooks when you need a Reactive state
 - Avoid making your Component too big. Deconstruct it into smaller Components/Hooks whenever possible
+
+## The new Downloads page
+
+### Adding a Download Installation Method
+
+To add a new download installation method, follow these steps:
+
+1. **Update `INSTALL_METHODS` in `apps/site/utils/downloadUtils.tsx`:**
+
+   - Add a new entry to the `INSTALL_METHODS` array.
+   - Each entry should have the following properties:
+     - `iconImage`: The path to the icon image for the installation method. This should be an SVG component stored within `apps/site/components/Icons/InstallationMethod` and must follow the other icon component references (being a `FC` supporting `SVGSVGElement` props).
+     - `recommended`: A boolean indicating if this method is recommended. This property is available only for official installation methods.
+     - `url`: The URL for the installation method.
+     - `value`: The key of the installation method, which must be unique.
+
+   Example:
+
+   ```javascript
+   // filepath: /nodejs.org/apps/site/utils/downloadUtils.tsx
+   export const INSTALL_METHODS = [
+     // ...existing methods...
+     {
+       iconImage: 'path/to/icon.svg',
+       url: 'https://example.com/install',
+       value: 'exampleMethod',
+     },
+   ];
+   ```
+
+2. **Add translation key in `packages/i18n/locales/en.json`:**
+
+   - Add an entry under `layouts.download.codeBox.platformInfo` for the `info` property of the new installation method.
+
+   Example:
+
+   ```json
+   // filepath: /nodejs.org/packages/i18n/locales/en.json
+   {
+     "layouts": {
+       "download": {
+         "codeBox": {
+           "platformInfo": {
+             "exampleMethod": "Example installation method description."
+           }
+         }
+       }
+     }
+   }
+   ```
+
+3. **Update `InstallationMethodLabel` and `InstallationMethod` in `@/types/release.ts`:**
+
+   - Add the new method to the `InstallationMethodLabel` and `InstallationMethod` types.
+
+   Example:
+
+   ```typescript
+   // filepath: /nodejs.org/apps/site/types/release.ts
+   export type InstallationMethod = 'exampleMethod' | 'anotherMethod' | ...;
+
+   export const InstallationMethodLabel: Record<InstallationMethod, string> = {
+     exampleMethod: 'Example Method',
+     anotherMethod: 'Another Method',
+     // ...existing methods...
+   };
+   ```
+
+4. **Add a snippet in `apps/site/snippets/download`:**
+
+   - Create a new file with the same key as the `value` property (e.g., `exampleMethod.bash`).
+   - Add the installation instructions in this file.
+   - The snippet file can use JavaScript template syntax and has access to a `props` variable of type `ReleaseContextType`.
+
+   Example:
+
+   ```bash
+   // filepath: /nodejs.org/apps/site/snippets/download/exampleMethod.bash
+   echo "Installing Node.js version ${props.version} using Example Method"
+   ```
+
+5. **Configure `compatbility` within the `INSTALL_METHODS` object in `downloadUtils.ts`:**
+
+- Use the `compatbility` property to enable/list the installation method for specific OSs, Node.js version ranges, or architectures/platforms.
+
+Example:
+
+```javascript
+// filepath: /nodejs.org/apps/site/utils/downloadUtils.tsx
+export const INSTALL_METHODS = [
+  {
+    iconImage: 'path/to/icon.svg',
+    url: 'https://example.com/install',
+    value: 'exampleMethod',
+    compatibility: {
+      os: ['linux', 'macos'],
+      semver: ['>=14.0.0'],
+      platform: ['x64', 'arm64'],
+    },
+  },
+];
+```
+
+By following these steps, you can successfully add a new download installation method to the Node.js website.
+
+### Adding a Download Package Manager
+
+You can add a PACKAGE_MANAGER the same way as adding an INSTALLATION_METHOD (from the section above, "Adding a Download Installation Method") but it should be added to the PACKAGE_MANAGERS object in `apps/site/utils/downloadUtils.tsx`.
 
 ## Unit Tests and Storybooks
 

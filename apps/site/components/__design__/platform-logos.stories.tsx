@@ -1,7 +1,7 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
+import InstallMethodIcons from '@/components/Icons/InstallationMethod';
 import OSIcons from '@/components/Icons/OperatingSystem';
-import PlatformIcons from '@/components/Icons/Platform';
 
 export const PlatformLogos: StoryObj = {
   render: () => (
@@ -13,12 +13,12 @@ export const PlatformLogos: StoryObj = {
         <OSIcons.AIX width={64} height={64} />
       </div>
       <div className="flex flex-col items-center gap-4">
-        <PlatformIcons.Docker width={64} height={64} />
-        <PlatformIcons.Homebrew width={64} height={64} />
-        <PlatformIcons.NVM width={64} height={64} />
+        <InstallMethodIcons.Docker width={64} height={64} />
+        <InstallMethodIcons.Homebrew width={64} height={64} />
+        <InstallMethodIcons.NVM width={64} height={64} />
       </div>
       <div className="flex flex-col items-center gap-4">
-        <PlatformIcons.Choco width={64} height={64} />
+        <InstallMethodIcons.Choco width={64} height={64} />
       </div>
     </div>
   ),
