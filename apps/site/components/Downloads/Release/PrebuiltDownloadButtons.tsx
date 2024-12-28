@@ -30,7 +30,7 @@ const PrebuiltDownloadButtons: FC = () => {
     : '';
 
   return (
-    <div className="my-4 flex gap-2">
+    <div className="my-4 flex flex-wrap gap-2">
       <Skeleton
         loading={os === 'LOADING' || platform === ''}
         hide={OS_NOT_SUPPORTING_INSTALLERS.includes(os)}
