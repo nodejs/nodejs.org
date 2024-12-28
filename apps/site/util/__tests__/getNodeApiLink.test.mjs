@@ -36,4 +36,13 @@ describe('getNodeApiLink', () => {
 
     expect(result).toBe(expectedLink);
   });
+
+  it('returns the correct API link for invalid versions', () => {
+    const version = 'invalid';
+    const expectedLink = `https://nodejs.org/dist/${version}/docs/api/`;
+
+    const result = getNodeApiLink(version);
+
+    expect(result).toBe(expectedLink);
+  });
 });

@@ -28,4 +28,33 @@ describe('debounce', () => {
 
     expect(fn).toHaveBeenCalledWith(3);
   });
+
+  it('should delay the execution of the function', () => {
+    const fn = jest.fn();
+    const debouncedFn = debounce(fn, 1000);
+
+    debouncedFn();
+
+    expect(fn).not.toHaveBeenCalled();
+
+    jest.advanceTimersByTime(500);
+    expect(fn).not.toHaveBeenCalled();
+
+    jest.advanceTimersByTime(500);
+    expect(fn).toHaveBeenCalled();
+  });
+
+  it('should execute only once within the delay', () => {
+    const fn = jest.fn();
+    const debouncedFn = debounce(fn, 1000);
+
+    debouncedFn();
+    jest.advanceTimersByTime(500);
+    debouncedFn();
+    jest.advanceTimersByTime(500);
+    debouncedFn();
+    jest.advanceTimersByTime(1000);
+
+    expect(fn).toHaveBeenCalledTimes(1);
+  });
 });

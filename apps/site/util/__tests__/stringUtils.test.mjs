@@ -2,6 +2,9 @@ import {
   getAcronymFromString,
   parseRichTextIntoPlainText,
   dashToCamelCase,
+  capitalize,
+  camelCase,
+  kebabCase,
 } from '@/util/stringUtils';
 
 describe('String utils', () => {
@@ -71,5 +74,29 @@ describe('String utils', () => {
 
   it('dashToCamelCase returns correct camelCase with numbers', () => {
     expect(dashToCamelCase('foo-123-bar')).toBe('foo123Bar');
+  });
+
+  it('capitalize returns correct capitalized string', () => {
+    expect(capitalize('hello world')).toBe('Hello world');
+  });
+
+  it('camelCase returns correct camelCase string', () => {
+    expect(camelCase('Hello World')).toBe('helloWorld');
+  });
+
+  it('kebabCase returns correct kebab-case string', () => {
+    expect(kebabCase('Hello World')).toBe('hello-world');
+  });
+
+  it('capitalize handles empty string', () => {
+    expect(capitalize('')).toBe('');
+  });
+
+  it('camelCase handles empty string', () => {
+    expect(camelCase('')).toBe('');
+  });
+
+  it('kebabCase handles empty string', () => {
+    expect(kebabCase('')).toBe('');
   });
 });

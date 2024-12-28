@@ -2,6 +2,9 @@ import {
   mapAuthorToCardAuthors,
   getAuthorWithId,
   getAuthorWithName,
+  getAuthorName,
+  getAuthorBio,
+  getAuthorImage,
 } from '../authorUtils';
 
 describe('mapAuthorToCardAuthors', () => {
@@ -94,5 +97,47 @@ describe('getAuthorWithName', () => {
         fallback: 'CA',
       },
     ]);
+  });
+});
+
+describe('getAuthorName', () => {
+  it('should return the correct author name', () => {
+    const authorId = 'tjfontaine';
+    const result = getAuthorName(authorId);
+    expect(result).toBe('Timothy J Fontaine');
+  });
+
+  it('should return undefined for an unknown author', () => {
+    const authorId = 'unknown';
+    const result = getAuthorName(authorId);
+    expect(result).toBeUndefined();
+  });
+});
+
+describe('getAuthorBio', () => {
+  it('should return the correct author bio', () => {
+    const authorId = 'tjfontaine';
+    const result = getAuthorBio(authorId);
+    expect(result).toBeUndefined(); // Assuming no bio is provided in the authors.json
+  });
+
+  it('should return undefined for an unknown author', () => {
+    const authorId = 'unknown';
+    const result = getAuthorBio(authorId);
+    expect(result).toBeUndefined();
+  });
+});
+
+describe('getAuthorImage', () => {
+  it('should return the correct author image URL', () => {
+    const authorId = 'tjfontaine';
+    const result = getAuthorImage(authorId);
+    expect(result).toBe('https://avatars.githubusercontent.com/tjfontaine');
+  });
+
+  it('should return undefined for an unknown author', () => {
+    const authorId = 'unknown';
+    const result = getAuthorImage(authorId);
+    expect(result).toBeUndefined();
   });
 });

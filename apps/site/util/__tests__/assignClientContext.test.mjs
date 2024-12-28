@@ -25,6 +25,9 @@ describe('assignClientContext', () => {
     expect(result.headings).toEqual(mockContext.headings);
     expect(result.readingTime).toEqual(mockContext.readingTime);
     expect(result.filename).toEqual(mockContext.filename);
+    expect(result.os).toEqual(mockContext.os);
+    expect(result.architecture).toEqual(mockContext.architecture);
+    expect(result.bitness).toEqual(mockContext.bitness);
 
     expect(result).toEqual(mockContext);
   });
@@ -42,5 +45,26 @@ describe('assignClientContext', () => {
       words: 0,
     });
     expect(result.filename).toEqual('');
+    expect(result.os).toEqual('OTHER');
+    expect(result.architecture).toEqual('x64');
+    expect(result.bitness).toEqual(64);
+  });
+
+  it('should handle invalid inputs gracefully', () => {
+    const result = assignClientContext(null);
+
+    expect(result.frontmatter).toEqual({});
+    expect(result.pathname).toEqual('');
+    expect(result.headings).toEqual([]);
+    expect(result.readingTime).toEqual({
+      text: '',
+      minutes: 0,
+      time: 0,
+      words: 0,
+    });
+    expect(result.filename).toEqual('');
+    expect(result.os).toEqual('OTHER');
+    expect(result.architecture).toEqual('x64');
+    expect(result.bitness).toEqual(64);
   });
 });

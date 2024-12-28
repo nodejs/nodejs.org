@@ -42,7 +42,17 @@ describe('getNodeJsChangelog', () => {
   it('returns the correct changelog URL for other versions', () => {
     const version = '0.12.7';
     const expectedUrl =
-      'https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V012.md#0.12.7';
+      'https://github.com/nodejs/node-v0.x-archive/blob/0.12.7/ChangeLog';
+
+    const result = getNodeJsChangelog(version);
+
+    expect(result).toBe(expectedUrl);
+  });
+
+  it('returns the correct changelog URL for invalid versions', () => {
+    const version = 'invalid';
+    const expectedUrl =
+      'https://github.com/nodejs/node-v0.x-archive/blob/invalid/ChangeLog';
 
     const result = getNodeJsChangelog(version);
 
