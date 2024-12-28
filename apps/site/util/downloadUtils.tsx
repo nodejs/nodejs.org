@@ -146,7 +146,7 @@ export const OPERATING_SYSTEMS: Array<DownloadDropdownItem<UserOS>> = [
   {
     label: OperatingSystemLabel.AIX,
     value: 'AIX',
-    compatibility: { installMethod: [] },
+    compatibility: { installMethod: ['' as Types.InstallationMethod] },
     iconImage: <OSIcons.AIX width={16} height={16} />,
   },
 ];
