@@ -11,10 +11,9 @@ type GlowingBackdropLayoutProps = PropsWithChildren<{
   kind?: 'home' | 'default';
 }>;
 
-const GlowingBackdropLayout: FC<GlowingBackdropLayoutProps> = ({
-  kind = 'home',
-  children,
-}) => (
+const GlowingBackdropLayout: FC<
+  PropsWithChildren<GlowingBackdropLayoutProps>
+> = ({ kind = 'home', children }) => (
   <>
     <WithNavBar />
     <div className={styles.centeredLayout}>
