@@ -32,7 +32,7 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = () => {
     () => parseCompat(OPERATING_SYSTEMS, release),
     // We only want to react on the change of the Install Method
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [release.installMethod]
+    [release.installMethod, release.os]
   );
 
   return (
