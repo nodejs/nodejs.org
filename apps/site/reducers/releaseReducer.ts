@@ -9,7 +9,8 @@ export const releaseState: Types.ReleaseState = {
   // Until the User's OS is detected (or failed to be detected)
   os: 'LOADING',
   // The detected User Platform from a combination of Bitness and Architecture
-  platform: '',
+  // We set the default value to `x64` as it is the most common platform for modern systems
+  platform: 'x64',
   // The selected installation method when not choosing an installer or prebuilt binary
   installMethod: '',
   // The package manager field is always set by default to `NPM`

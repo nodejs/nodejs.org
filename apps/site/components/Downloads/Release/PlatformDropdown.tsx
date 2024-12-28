@@ -57,12 +57,12 @@ const PlatformDropdown: FC = () => {
   );
 
   return (
-    <Select<UserPlatform | ''>
+    <Select<UserPlatform>
       values={parsedPlatforms}
-      loading={release.os === 'LOADING'}
+      defaultValue={release.platform !== '' ? release.platform : undefined}
+      loading={release.os === 'LOADING' || release.platform === ''}
       placeholder={t('layouts.download.dropdown.unknown')}
       ariaLabel={t('layouts.download.dropdown.installMethod')}
-      defaultValue={release.platform}
       onChange={platform => platform && release.setPlatform(platform)}
       className="min-w-20"
       inline={true}

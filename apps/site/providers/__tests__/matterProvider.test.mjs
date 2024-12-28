@@ -8,18 +8,15 @@ const mockContext = {
   headings: [],
   readingTime: { text: '', minutes: 0, time: 0, words: 0 },
   filename: '',
-  // @TODO: For some reason the initial value of the provider is flipping between
-  // LOADING and OTHER, although the initial state is LOADING, render() might be doing more
-  // than just initial rendering; This requires more investigation.
-  os: expect.any(String),
+  os: 'LOADING',
   architecture: '',
-  bitness: 64,
+  bitness: '',
 };
 
 describe('MatterProvider', () => {
   it('renders the provider with the provided context value', () => {
     render(
-      <MatterProvider>
+      <MatterProvider os="LOADING">
         <MatterContext.Consumer>
           {value => {
             expect(value).toEqual(mockContext);

@@ -23,7 +23,7 @@ describe('useDetectOS', () => {
       value: {
         userAgent: windowsUserAgent,
         userAgentData: {
-          getHighEntropyValues: jest.fn().mockResolvedValue({ bitness: 64 }),
+          getHighEntropyValues: jest.fn().mockResolvedValue({ bitness: '64' }),
         },
       },
       writable: true,
@@ -34,17 +34,15 @@ describe('useDetectOS', () => {
     await waitFor(() => {
       expect(result.current).toStrictEqual({
         os: 'WIN',
-        bitness: 64,
-        architecture: '',
+        bitness: '64',
+        architecture: 'x86',
       });
     });
   });
 
   it('should detect WIN OS and 64 bitness from user agent', async () => {
     Object.defineProperty(global, 'navigator', {
-      value: {
-        userAgent: windowsUserAgent,
-      },
+      value: { userAgent: windowsUserAgent },
       writable: true,
     });
 
@@ -53,17 +51,15 @@ describe('useDetectOS', () => {
     await waitFor(() => {
       expect(result.current).toStrictEqual({
         os: 'WIN',
-        bitness: 64,
-        architecture: '',
+        bitness: '64',
+        architecture: 'x86',
       });
     });
   });
 
   it('should detect MAC OS and default bitness', async () => {
     Object.defineProperty(global, 'navigator', {
-      value: {
-        userAgent: macUserAgent,
-      },
+      value: { userAgent: macUserAgent },
       writable: true,
     });
 
@@ -72,8 +68,8 @@ describe('useDetectOS', () => {
     await waitFor(() => {
       expect(result.current).toStrictEqual({
         os: 'MAC',
-        bitness: 64,
-        architecture: '',
+        bitness: '32',
+        architecture: 'x86',
       });
     });
   });

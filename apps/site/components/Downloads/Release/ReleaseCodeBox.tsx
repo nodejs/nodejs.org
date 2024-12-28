@@ -100,7 +100,7 @@ const ReleaseCodeBox: FC = () => {
       )}
 
       <Skeleton loading={renderSkeleton}>
-        <JSXCodeBox language={codeLanguage} className="min-h-[15.5rem]">
+        <JSXCodeBox language={codeLanguage} className="min-h-[16rem]">
           {parsedSnippets}
         </JSXCodeBox>
       </Skeleton>

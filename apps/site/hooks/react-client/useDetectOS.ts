@@ -25,6 +25,11 @@ const useDetectOS = () => {
       navigator.userAgent
     );
 
+    // We immediately set the OS to LOADING, and then we update it with the detected OS.
+    // This is due to that initial render set within the state will indicate a mismatch from
+    // the server-side rendering versus what the initial state is from the client-side
+    setUserOSState(current => ({ ...current, os: detectOS() }));
+
     // We attempt to get the high entropy values from the Browser and set the User OS State
     // based from the values we get from the Browser, if it fails we fallback to the User Agent
     // to determine the bitness and architecture of the User OS.
@@ -37,7 +42,6 @@ const useDetectOS = () => {
       }) => {
         setUserOSState(current => ({
           ...current,
-          os: detectOS(),
           bitness: bitness as UserBitness,
           architecture: architecture as UserArchitecture,
         }));

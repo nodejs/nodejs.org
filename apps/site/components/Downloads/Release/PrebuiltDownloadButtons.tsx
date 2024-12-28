@@ -2,7 +2,7 @@
 
 import { CloudArrowDownIcon } from '@heroicons/react/24/outline';
 import { useTranslations } from 'next-intl';
-import { useContext, useMemo } from 'react';
+import { useContext } from 'react';
 import type { FC } from 'react';
 
 import Button from '@/components/Common/Button';
@@ -21,52 +21,37 @@ const PrebuiltDownloadButtons: FC = () => {
   const t = useTranslations();
   const { release, os, platform } = useContext(ReleaseContext);
 
-  const { installerUrl, installerExt, binaryUrl, binaryExt } = useMemo(() => {
-    const installerUrl = getNodeDownloadUrl(
-      release.versionWithPrefix,
-      os,
-      platform || undefined,
-      'installer'
-    );
+  const installerUrl = platform
+    ? getNodeDownloadUrl(release.versionWithPrefix, os, platform, 'installer')
+    : '';
 
-    const binaryUrl = getNodeDownloadUrl(
-      release.versionWithPrefix,
-      os,
-      platform || undefined,
-      'binary'
-    );
-
-    return {
-      installerUrl,
-      binaryUrl,
-      installerExt: getExtension(installerUrl),
-      binaryExt: getExtension(binaryUrl),
-    };
-  }, [os, platform, release.versionWithPrefix]);
+  const binaryUrl = platform
+    ? getNodeDownloadUrl(release.versionWithPrefix, os, platform, 'binary')
+    : '';
 
   return (
     <div className="my-4 flex gap-2">
-      <Skeleton loading={os === 'LOADING'}>
-        <Button
-          href={installerUrl}
-          disabled={OS_NOT_SUPPORTING_INSTALLERS.includes(os)}
-          size="small"
-          className="min-w-56"
-        >
+      <Skeleton
+        loading={os === 'LOADING' || platform === ''}
+        hide={OS_NOT_SUPPORTING_INSTALLERS.includes(os)}
+      >
+        <Button href={installerUrl} size="small" className="min-w-56">
           <CloudArrowDownIcon />
 
           {t('layouts.download.buttons.installer', {
             os: OperatingSystemLabel[os],
-            extension: installerExt,
+            extension: getExtension(installerUrl),
           })}
         </Button>
       </Skeleton>
 
-      <Skeleton loading={os === 'LOADING'}>
+      <Skeleton loading={os === 'LOADING' || platform === ''}>
         <Button href={binaryUrl} size="small" className="min-w-56">
           <CloudArrowDownIcon />
 
-          {t('layouts.download.buttons.binary', { extension: binaryExt })}
+          {t('layouts.download.buttons.binary', {
+            extension: getExtension(binaryUrl),
+          })}
         </Button>
       </Skeleton>
     </div>
