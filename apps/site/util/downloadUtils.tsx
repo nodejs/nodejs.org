@@ -42,9 +42,9 @@ export enum PackageManagerLabel {
 }
 
 type DownloadCompatibility = {
-  os: Array<UserOS>;
-  installMethod: Array<Types.InstallationMethod>;
-  platform: Array<UserPlatform>;
+  os: Array<UserOS | 'LOADING'>;
+  installMethod: Array<Types.InstallationMethod | ''>;
+  platform: Array<UserPlatform | ''>;
   semver: Array<string>;
   releases: Array<NodeReleaseStatus>;
 };
@@ -97,15 +97,13 @@ export const parseCompat = <
 ): Array<T> => {
   const satisfiesSemver = (semver: string) => satisfies(version, semver);
 
-  const supportsOS = (i: T['compatibility']) =>
-    i.os?.includes(os as UserOS) ?? true;
+  const supportsOS = (i: T['compatibility']) => i.os?.includes(os) ?? true;
 
   const supportsInstallMethod = (i: T['compatibility']) =>
-    i.installMethod?.includes(installMethod as Types.InstallationMethod) ??
-    true;
+    i.installMethod?.includes(installMethod) ?? true;
 
   const supportsPlatform = (i: T['compatibility']) =>
-    i.platform?.includes(platform as UserPlatform) ?? true;
+    i.platform?.includes(platform) ?? true;
 
   const supportsVersion = (i: T['compatibility']) =>
     i.semver?.some(satisfiesSemver) ?? true;
@@ -146,7 +144,7 @@ export const OPERATING_SYSTEMS: Array<DownloadDropdownItem<UserOS>> = [
   {
     label: OperatingSystemLabel.AIX,
     value: 'AIX',
-    compatibility: { installMethod: ['' as Types.InstallationMethod] },
+    compatibility: { installMethod: [''] },
     iconImage: <OSIcons.AIX width={16} height={16} />,
   },
 ];
