@@ -3,7 +3,7 @@
 import type { FC, PropsWithChildren } from 'react';
 import { useContext } from 'react';
 
-import LinkWithArrow from '@/components/Downloads/Release/LinkWithArrow';
+import LinkWithArrow from '@/components/LinkWithArrow';
 import { ReleaseContext } from '@/providers/releaseProvider';
 
 const BlogPostLink: FC<PropsWithChildren> = ({ children }) => {
