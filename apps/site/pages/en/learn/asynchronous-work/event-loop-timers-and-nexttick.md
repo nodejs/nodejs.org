@@ -190,7 +190,7 @@ those timers' callbacks.
 
 ### check
 
-This phase allows a person to execute callbacks immediately after the
+This phase allows the event loop to execute callbacks immediately after the
 **poll** phase has completed. If the **poll** phase becomes idle and
 scripts have been queued with `setImmediate()`, the event loop may
 continue to the **check** phase rather than waiting.
