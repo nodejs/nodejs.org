@@ -98,13 +98,14 @@ export const parseCompat = <
   const satisfiesSemver = (semver: string) => satisfies(version, semver);
 
   const supportsOS = (i: T['compatibility']) =>
-    os === 'LOADING' || (i.os?.includes(os) ?? true);
+    i.os?.includes(os as UserOS) ?? true;
 
   const supportsInstallMethod = (i: T['compatibility']) =>
-    (installMethod === '' || i.installMethod?.includes(installMethod)) ?? true;
+    i.installMethod?.includes(installMethod as Types.InstallationMethod) ??
+    true;
 
   const supportsPlatform = (i: T['compatibility']) =>
-    platform === '' || (i.platform?.includes(platform) ?? true);
+    i.platform?.includes(platform as UserPlatform) ?? true;
 
   const supportsVersion = (i: T['compatibility']) =>
     i.semver?.some(satisfiesSemver) ?? true;
