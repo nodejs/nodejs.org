@@ -111,7 +111,7 @@ const ReleaseCodeBox: FC = () => {
       )}
 
       <Skeleton loading={renderSkeleton}>
-        <CodeBox language={displayName} className="min-h-[16rem]">
+        <CodeBox language={displayName} className="min-h-[16.5rem]">
           <code dangerouslySetInnerHTML={{ __html: parsedSnippets }} />
         </CodeBox>
       </Skeleton>

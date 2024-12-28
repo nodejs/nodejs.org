@@ -30,12 +30,16 @@ const PrebuiltDownloadButtons: FC = () => {
     : '';
 
   return (
-    <div className="my-4 flex flex-wrap gap-2">
+    <div className="my-4 flex flex-col gap-2 sm:flex-row">
       <Skeleton
         loading={os === 'LOADING' || platform === ''}
         hide={OS_NOT_SUPPORTING_INSTALLERS.includes(os)}
       >
-        <Button href={installerUrl} size="small" className="min-w-56">
+        <Button
+          href={installerUrl}
+          size="small"
+          className="w-full min-w-56 sm:w-auto"
+        >
           <CloudArrowDownIcon />
 
           {t('layouts.download.buttons.installer', {
@@ -46,7 +50,11 @@ const PrebuiltDownloadButtons: FC = () => {
       </Skeleton>
 
       <Skeleton loading={os === 'LOADING' || platform === ''}>
-        <Button href={binaryUrl} size="small" className="min-w-56">
+        <Button
+          href={binaryUrl}
+          size="small"
+          className="w-full min-w-56 sm:w-auto"
+        >
           <CloudArrowDownIcon />
 
           {t('layouts.download.buttons.binary', {
