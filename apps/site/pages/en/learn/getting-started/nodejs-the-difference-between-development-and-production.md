@@ -12,43 +12,6 @@ Always run your Node.js with the `NODE_ENV=production` set.
 
 A popular way of configuring your application is by using the [twelve factor methodology](https://12factor.net/).
 
-## NODE_ENV in Express
-
-In the wildly popular [express](https://expressjs.com/) framework, setting the `NODE_ENV` to `production` generally ensures that:
-
-- logging is kept to a minimum, essential level
-- more caching levels take place to optimize performance
-
-This is usually done by executing the command
-
-```bash
-export NODE_ENV=production
-```
-
-in the shell, but it's better to put it in your shell configuration file (e.g. `.bash_profile` with the Bash shell) because otherwise the setting does not persist in case of a system restart.
-
-You can also apply the environment variable by prepending it to your application initialization command:
-
-```bash
-NODE_ENV=production node app.js
-```
-
-For example, in an Express app, you can use this to set different error handlers per environment:
-
-```js
-if (process.env.NODE_ENV === 'development') {
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-}
-
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.errorHandler());
-}
-```
-
-For example [Pug](https://pugjs.org), the templating library used by [Express](https://expressjs.com), compiles in debug mode if `NODE_ENV` is not set to `production`. Express views are compiled in every request in development mode, while in production they are cached. There are many more examples.
-
-**This environment variable is a convention widely used in external libraries, but not within Node.js itself**.
-
 ## Why is NODE_ENV considered an antipattern?
 
 An environment is a digital platform or a system where engineers can build, test, _deploy_, and manage software products. Conventionally, there are four stages or types of environments where our application is run:
