@@ -18,4 +18,4 @@ const Devbox: FC<SVGProps<SVGSVGElement>> = props => (
   </svg>
 );
 
-export default Choco;
+export default Devbox;
