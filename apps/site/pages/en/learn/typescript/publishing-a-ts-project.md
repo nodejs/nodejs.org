@@ -1,10 +1,10 @@
 ---
-title: Publishing a TypeScript package
+title: Publishing a TypeScript project
 layout: learn
 authors: JakobJingleheimer
 ---
 
-# Publishing a TypeScript package
+# Publishing a TypeScript project
 
 This article augments TypeScript's own [Publishing guide](https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html) with specifics for native node support.
 
