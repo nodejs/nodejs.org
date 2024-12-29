@@ -1,6 +1,5 @@
 import { getLanguageDisplayName } from '@/util/getLanguageDisplayName';
 
-// mock usePathname, but retain all the other imports
 jest.mock('@/shiki.config.mjs', () => ({
   LANGUAGES: [
     { name: 'javascript', aliases: ['js'], displayName: 'JavaScript' },

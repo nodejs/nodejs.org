@@ -2,7 +2,6 @@ import { render, screen } from '@testing-library/react';
 
 import ActiveLink from '..';
 
-// mock usePathname, but retain all the other imports
 jest.mock('@/navigation.mjs', () => ({
   ...jest.requireActual('@/navigation.mjs'),
   usePathname: jest.fn(),
