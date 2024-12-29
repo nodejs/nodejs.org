@@ -212,7 +212,7 @@
             },
             "publishingTSProject": {
               "link": "/learn/typescript/publishing-a-ts-project",
-              "label": "components.navigation.learn.typescript.links.publishing-a-ts-project"
+              "label": "components.navigation.learn.typescript.links.publishingTSProject"
             }
           }
         },
