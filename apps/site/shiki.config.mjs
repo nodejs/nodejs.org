@@ -8,6 +8,7 @@ import powershellLanguage from 'shiki/langs/powershell.mjs';
 import shellScriptLanguage from 'shiki/langs/shellscript.mjs';
 import shellSessionLanguage from 'shiki/langs/shellsession.mjs';
 import typeScriptLanguage from 'shiki/langs/typescript.mjs';
+import yamlLanguage from 'shiki/langs/yaml.mjs';
 import shikiNordTheme from 'shiki/themes/nord.mjs';
 
 /**
@@ -29,6 +30,7 @@ export const LANGUAGES = [
   ...shellSessionLanguage,
   ...dockerLanguage,
   ...diffLanguage,
+  ...yamlLanguage,
 ];
 
 // This is the default theme we use for our Shiki Syntax Highlighter
