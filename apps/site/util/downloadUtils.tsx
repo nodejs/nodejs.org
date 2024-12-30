@@ -188,7 +188,7 @@ export const INSTALL_METHODS: Array<
     value: 'DEVBOX',
     compatibility: { os: ['WIN', 'MAC', 'LINUX'] },
     iconImage: <PlatformIcons.Devbox width={16} height={16} />,
-    url: 'https://github.com/jetify-com/devbox',
+    url: 'https://jetify.com/devbox/',
     info: 'layouts.download.codeBox.platformInfo.devbox',
   },
   {
