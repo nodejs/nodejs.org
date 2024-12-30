@@ -10,7 +10,7 @@ This article augments TypeScript's own [Publishing guide](https://www.typescript
 
 Some important things to note:
 
-- Everything from [][../modules/publishing-a-package] applies here.
+- Everything from [Publishing a package](../modules/publishing-a-package) applies here.
 
 - Node runs TypeScript via a process called "[type stripping](https://nodejs.org/api/typescript.html#type-stripping)", wherein node (via [Amaro](https://github.com/nodejs/amaro)) removes TypeScript-specific syntax, leaving behind vanilla JavaScript (which node already understands). This behaviour is enabled by default of node version 23.6.0.
 
@@ -214,7 +214,7 @@ jobs:
 fixtures
 ```
 
-`npm publish` will automatically run [`prepack` beforehand](https://docs.npmjs.com/cli/v11/using-npm/scripts#npm-publish). `npm` will also run `prepack` automatically before `npm pack --dry-run` (so you can easily see what your published package will be without actually publishing it). **Beware**, [`node --run` does _not_ do that](https://nodejs.org/api/cli.html#intentional-limitations). You can't use `node --run` for this step, so that is not a caveat here, but it can be for other steps.
+`npm publish` will automatically run [`prepack` beforehand](https://docs.npmjs.com/cli/v11/using-npm/scripts#npm-publish). `npm` will also run `prepack` automatically before `npm pack --dry-run` (so you can easily see what your published package will be without actually publishing it). **Beware**, [`node --run` does _not_ do that](../command-line/run-nodejs-scripts-from-the-command-line.md#using-the---run-flag). You can't use `node --run` for this step, so that is not a caveat here, but it can be for other steps.
 
 #### Breaking this down
 
