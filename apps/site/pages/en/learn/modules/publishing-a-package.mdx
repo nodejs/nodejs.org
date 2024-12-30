@@ -8,7 +8,7 @@ authors: JakobJingleheimer
 
 All the provided `package.json` configurations (not specifically marked “does not work”) work in Node.js 12.22.x (v12 latest, the oldest supported line) and 17.2.0 (current latest at the time)[^1], and for grins, with webpack 5.53.0 and 5.63.0 respectively. These are available: [JakobJingleheimer/nodejs-module-config-examples](https://github.com/JakobJingleheimer/nodejs-module-config-examples).
 
-For curious cats, [How did we get here](#how-did-we-get-here) and [Down the rabbit-hole](#down-the-rabbithole) provide background and deeper explanations.
+For curious cats, [How did we get here](#how-did-we-get-here) and [Down the rabbit-hole](#down-the-rabbit-hole) provide background and deeper explanations.
 
 ## Pick your fix
 
@@ -333,7 +333,7 @@ We're not in Kansas anymore, Toto.
 
 The configurations (there are 2 options) are nearly the same as [ESM source and both CJS & ESM distribution](#esm-source-and-both-cjs-amp-esm-distribution), just exclude `packageJson.exports.import`.
 
-💡 Using `"type": "module"`[^2] paired with the `.cjs` file extension (for commonjs files) yields best results. For more information on why, see [Down the rabbit-hole](#down-the-rabbithole) and [Gotchas](#gotchas) below.
+💡 Using `"type": "module"`[^2] paired with the `.cjs` file extension (for commonjs files) yields best results. For more information on why, see [Down the rabbit-hole](#down-the-rabbit-hole) and [Gotchas](#gotchas) below.
 
 **Working example**: [esm-with-cjs-distro](https://github.com/JakobJingleheimer/nodejs-module-config-examples/tree/main/packages/esm/cjs-distro)
 
@@ -382,7 +382,7 @@ If your files explicitly _all_ use `.cjs` and/or `.mjs` file extensions (none us
 }
 ```
 
-💡 Using `"type": "module"`[^2] paired with the `.cjs` file extension (for commonjs files) yields best results. For more information on why, see [Down the rabbit-hole](#down-the-rabbithole) and [Gotchas](#gotchas) below.
+💡 Using `"type": "module"`[^2] paired with the `.cjs` file extension (for commonjs files) yields best results. For more information on why, see [Down the rabbit-hole](#down-the-rabbit-hole) and [Gotchas](#gotchas) below.
 
 #### Publish a CJS distribution with an ESM wrapper
 
@@ -422,7 +422,7 @@ This is also almost identical to the [CJS source and dual distribution using an 
 }
 ```
 
-💡 Using `"type": "module"`[^2] paired with the `.cjs` file extension (for commonjs files) yields best results. For more information on why, see [Down the rabbit-hole](#down-the-rabbithole) and [Gotchas](#gotchas) below.
+💡 Using `"type": "module"`[^2] paired with the `.cjs` file extension (for commonjs files) yields best results. For more information on why, see [Down the rabbit-hole](#down-the-rabbit-hole) and [Gotchas](#gotchas) below.
 
 #### Publish both full CJS & ESM distributions
 
@@ -494,7 +494,7 @@ Alternatively, you can use `"default"` and `"node"` keys, which are less counter
 }
 ```
 
-💡 Using `"type": "module"`[^2] paired with the `.cjs` file extension (for commonjs files) yields best results. For more information on why, see [Down the rabbit-hole](#down-the-rabbithole) and [Gotchas](#gotchas) below.
+💡 Using `"type": "module"`[^2] paired with the `.cjs` file extension (for commonjs files) yields best results. For more information on why, see [Down the rabbit-hole](#down-the-rabbit-hole) and [Gotchas](#gotchas) below.
 
 ##### Use the `.mjs` (or equivalent) file extension for all source code files
 
