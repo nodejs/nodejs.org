@@ -127,10 +127,6 @@ jobs:
     "types:check": "tsc --noEmit"
   },
   "optionalDependencies": {
-    // This is used only in CI.
-    // Avoid bloating your local node_modules
-    // (where you probably won't use it) by
-    // running `npm install --omit="optional"`
     "typescript": "^5.7.2"
   }
 }
@@ -159,6 +155,8 @@ jobs:
   "exclude": ["**/*/*.test.*", "**/fixtures/**"]
 }
 ```
+
+Pro-tip: The TypeScript executable (`tsc`) is likely used only in CI. Avoid bloating your local node_modules (where you probably won't use it) by adding [`--omit="optional"`](https://docs.npmjs.com/cli/v11/commands/npm-install#omit) when you run `npm install` locally: `npm install --omit="optional"`
 
 ### Generate type declarations
 
