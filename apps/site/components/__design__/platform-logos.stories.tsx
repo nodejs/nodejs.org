@@ -16,6 +16,7 @@ export const PlatformLogos: StoryObj = {
         <PlatformIcons.Docker width={64} height={64} />
         <PlatformIcons.Homebrew width={64} height={64} />
         <PlatformIcons.NVM width={64} height={64} />
+        <PlatformIcons.Devbox width={64} height={64} />
       </div>
       <div className="flex flex-col items-center gap-4">
         <PlatformIcons.Choco width={64} height={64} />
