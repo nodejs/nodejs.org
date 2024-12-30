@@ -40,16 +40,16 @@ That would be derived from a repository looking something like:
 ```text displayName="Source of the example TypeScript package (directory overview)"
 example-ts-pkg/
 ├ .github/
-┆ ├ workflows/
-┆ ┆ ├ ci.yml
-┆ ┆ └ publish.yml
-┆ └ dependabot.yml
+  ├ workflows/
+    ├ ci.yml
+    └ publish.yml
+  └ dependabot.yml
 ├ src/
-┆ ├ foo.fixture.js
-┆ ├ main.ts
-┆ ├ main.test.ts
-┆ ├ some-util.ts
-┆ └ some-util.test.ts
+  ├ foo.fixture.js
+  ├ main.ts
+  ├ main.test.ts
+  ├ some-util.ts
+  └ some-util.test.ts
 ├ LICENSE
 ├ package.json
 └ README.md
@@ -123,7 +123,7 @@ jobs:
 {
   "name": "example-ts-pkg",
   "scripts": {
-    "test": "node --test",
+    "test": "node --test './src/**/*.test.ts'",
     "types:check": "tsc --noEmit"
   },
   "optionalDependencies": {
