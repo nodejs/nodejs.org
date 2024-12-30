@@ -12,7 +12,7 @@ Some important things to note:
 
 - Everything from [Publishing a package](../modules/publishing-a-package) applies here.
 
-- Node runs TypeScript via a process called "[type stripping](https://nodejs.org/api/typescript.html#type-stripping)", wherein node (via [Amaro](https://github.com/nodejs/amaro)) removes TypeScript-specific syntax, leaving behind vanilla JavaScript (which node already understands). This behaviour is enabled by default of node version 23.6.0.
+- Node runs TypeScript code via a process called "[type stripping](https://nodejs.org/api/typescript.html#type-stripping)", wherein node (via [Amaro](https://github.com/nodejs/amaro)) removes TypeScript-specific syntax, leaving behind vanilla JavaScript (which node already understands). This behaviour is enabled by default of node version 23.6.0.
 
   - Node does **not** strip types in `node_modules` because it can cause significant performance issues for the official TypeScript compiler (`tsc`), so the TypeScript maintainers would like to discourage people publishing raw TypeScript, at least for now.
 
@@ -70,6 +70,8 @@ const bar: number = 1 + foo;
 TypeScript has warned that the above code will not behave as intended, just like a unit test warns that code does not behave as intended.
 
 Your IDE (ex VS Code) likely has built-in support for TypeScript, displaying errors as you work. If not, and/or you missed those, CI will have your back.
+
+The following [GitHub Action](https://github.com/features/actions) sets up a CI task to automatically check (and require) types pass inspection for a PR into the `main` branch.
 
 ```yaml displayName=".github/workflows/ci.yml"
 name: Tests
@@ -164,7 +166,7 @@ Type declarations (`.d.ts` and friends) provide type information as a sidecar fi
 
 Since these are generated based on source code, they can be built as part of your publication process and do not need to be checked into your repository.
 
-Take the following example (a [GitHub Action](https://github.com/features/actions)), where the type declarations are generated just before publishing to the NPM registry.
+Take the following example, where the type declarations are generated just before publishing to the NPM registry.
 
 ```yaml displayName=".github/workflows/publish.yml"
 name: Publish to NPM
