@@ -22,7 +22,7 @@
 
   dt {
     @apply mb-2
-      text-sm
+      text-[17px]
       font-medium
       text-neutral-800
       dark:text-neutral-200;
