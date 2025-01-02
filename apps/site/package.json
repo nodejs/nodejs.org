@@ -83,7 +83,7 @@
     "@storybook/addon-styling-webpack": "^1.0.1",
     "@storybook/addon-themes": "^8.4.6",
     "@storybook/addon-viewport": "^8.4.6",
-    "@storybook/addon-webpack5-compiler-swc": "^1.0.5",
+    "@storybook/addon-webpack5-compiler-swc": "^2.0.0",
     "@storybook/react-webpack5": "^8.4.6",
     "@testing-library/jest-dom": "~6.6.3",
     "@testing-library/react": "~16.1.0",
