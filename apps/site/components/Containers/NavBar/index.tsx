@@ -8,6 +8,7 @@ import { useState } from 'react';
 import type { FC, ComponentProps, HTMLAttributeAnchorTarget } from 'react';
 
 import LanguageDropdown from '@/components/Common/LanguageDropDown';
+import Skeleton from '@/components/Common/Skeleton';
 import ThemeToggle from '@/components/Common/ThemeToggle';
 import NavItem from '@/components/Containers/NavBar/NavItem';
 import GitHub from '@/components/Icons/Social/GitHub';
@@ -19,6 +20,7 @@ import style from './index.module.css';
 
 const SearchButton = dynamic(() => import('@/components/Common/Search'), {
   ssr: false,
+  loading: () => <Skeleton className={style.searchButtonSkeleton} loading />,
 });
 
 const navInteractionIcons = {
@@ -71,9 +73,7 @@ const NavBar: FC<NavbarProps> = ({
         </div>
 
         <div className={style.actionsWrapper}>
-          <div className={style.searchWrapper}>
-            <SearchButton />
-          </div>
+          <SearchButton />
 
           <ThemeToggle onClick={onThemeTogglerClick} />
 

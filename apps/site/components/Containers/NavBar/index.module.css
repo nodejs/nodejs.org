@@ -12,11 +12,6 @@
     dark:bg-neutral-950;
 }
 
-.searchWrapper {
-  @apply flex
-    flex-grow;
-}
-
 .nodeIconAndMobileItemsToggler {
   @apply flex
     h-16
@@ -89,6 +84,10 @@
     lg:border-0
     lg:p-0
     dark:border-neutral-900;
+}
+
+.searchButtonSkeleton {
+  @apply flex-grow;
 }
 
 .ghIconWrapper {
