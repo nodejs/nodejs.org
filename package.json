@@ -42,7 +42,7 @@
   "devDependencies": {
     "@eslint/js": "~9.16.0",
     "@types/eslint__js": "8.42.3",
-    "@types/node": "22.10.1",
+    "@types/node": "22.10.3",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "~9.16.0",
     "eslint-plugin-import-x": "~4.4.3",
