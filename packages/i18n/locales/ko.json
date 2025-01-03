@@ -30,7 +30,6 @@
           "links": {
             "gettingStarted": "시작하기",
             "introductionToNodejs": "Node.js 소개",
-            "howToInstallNodejs": "Node.js 설치 방법",
             "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Node.js를 사용하기 위해 얼마나 많은 JavaScript를 알아야 할까요?",
             "differencesBetweenNodejsAndTheBrowser": "Node.js와 브라우저 간의 차이",
             "theV8JavascriptEngine": "V8 JavaScript 엔진",
@@ -91,9 +90,11 @@
         "modules": {
           "links": {
             "modules": "모듈",
+            "publishingAPackage": "패키지 배포하기",
             "publishingNodeApiModules": "Node-API 패키지 배포하기",
             "anatomyOfAnHttpTransaction": "HTTP 트랜잭션의 구조",
             "abiStability": "ABI 안정성",
+            "howToUseStreams": "스트림 사용하는 방법",
             "backpressuringInStreams": "스트림의 배압(Backpressure)"
           }
         },
@@ -136,22 +137,6 @@
         }
       }
     },
-    "downloadList": {
-      "links": {
-        "previousReleases": "Node.js 릴리스",
-        "packageManager": "패키지 관리자를 통한 Node.js 설치",
-        "shaSums": {
-          "title": "릴리스 파일의 서명된 SHASUMS",
-          "howToVerify": " (검증 방법)"
-        },
-        "allDownloads": "모든 다운로드 옵션",
-        "nightlyReleases": "야간 빌드(Nightly builds)",
-        "unofficialBuilds": "비공식 빌드",
-        "buildingFromSource": "지원되는 플랫폼에서 소스에서 Node.js 빌드하기",
-        "installingOnLinux": "이진 아카이브를 통해 Node.js 설치하기",
-        "installingOnWsl": "Windows Subsystem for Linux (WSL) 에 설치하기"
-      }
-    },
     "downloadReleasesTable": {
       "changelog": "변경로그",
       "releases": "릴리스",
@@ -162,6 +147,11 @@
       "previous": "이전"
     },
     "common": {
+      "alertBox": {
+        "info": "정보",
+        "warning": "경고",
+        "danger": "위험"
+      },
       "breadcrumbs": {
         "navigateToHome": "홈으로 이동"
       },
@@ -202,32 +192,9 @@
       "viewAs": "보기",
       "tableOfContents": "목차"
     },
-    "downloads": {
-      "changelogModal": {
-        "startContributing": "기여 시작하기"
-      }
-    },
     "search": {
       "searchBox": {
         "placeholder": "검색어를 입력하세요..."
-      },
-      "seeAll": {
-        "text": "{count} 개 결과 모두 보기"
-      },
-      "searchError": {
-        "text": "검색 중 오류가 발생했습니다. 나중에 다시 시도해 주세요."
-      },
-      "poweredBy": {
-        "text": "제공"
-      },
-      "noResults": {
-        "text": "\"{query}\"에 대한 결과를 찾을 수 없습니다."
-      },
-      "emptyState": {
-        "text": "검색어를 입력하세요..."
-      },
-      "searchPage": {
-        "title": "검색 중: {query}"
       }
     },
     "blog": {
@@ -278,49 +245,35 @@
       "backToHome": "홈으로 돌아가기"
     },
     "download": {
-      "selectCategory": "카테고리",
-      "categories": {
-        "prebuilt-installer": "사전 빌드된 설치 프로그램",
-        "prebuilt-binaries": "사전 빌드된 바이너리",
-        "package-manager": "패키지 관리자",
-        "source-code": "소스 코드"
-      },
       "buttons": {
-        "prebuilt": "Node.js {version} 다운로드",
-        "source": "Node.js {version} 소스 다운로드"
+        "installer": "{os} 설치 프로그램 (.{extension})",
+        "binary": "Standalone Binary (.{extension})"
       },
       "dropdown": {
-        "bitness": "비트",
+        "platform": "플랫폼",
         "os": "운영 체제",
         "version": "버전",
-        "platform": "플랫폼"
+        "installMethod": "설치 방법",
+        "packageManager": "패키지 관리자",
+        "unknown": "알 수 없음",
+        "platformGroups": {
+          "official": "권장됨 (공식)",
+          "unofficial": "커뮤니티 (비공식)"
+        }
       },
       "codeBox": {
-        "unsupportedVersionWarning": "이 버전은 더 이상 유지 관리되지 않습니다. 자세한 내용은 여기에서 확인하세요:",
-        "fnmEnvSetup": "fnm 환경 구성",
-        "systemManagerWarning": "{packageManager}가 Node.js 패키지 관리자가 아닙니다. 이미 설치되어 있는지 확인하세요.",
-        "communityWarning": "패키지 관리자 및 설치 스크립트는 Node.js 프로젝트에서 유지 관리되지 않습니다.",
-        "communityWarningReport": "문제가 발생하면 패키지 관리자의 유지 관리자에게 문의하세요.",
-        "installsNvm": "nvm (Node Version Manager) 을 설치합니다.",
-        "downloadAndInstallNodejsRestartTerminal": "Node.js를 다운로드하고 설치합니다 (터미널을 다시 시작해야 할 수 있습니다)",
-        "verifiesRightNodejsVersion": "환경에 올바른 Node.js 버전이 있는지 확인합니다.",
-        "verifiesRightNpmVersion": "환경에 올바른 npm 버전이 있는지 확인합니다.",
-        "shouldPrint": "`{version}`이 출력되어야 합니다.",
-        "installsFnm": "fnm (Fast Node Manager) 을 설치합니다.",
-        "downloadAndInstallNodejs": "Node.js를 다운로드하고 설치합니다.",
-        "activateFNM": "fnm을 활성화합니다.",
-        "noteWithColon": "참고:",
-        "dockerIsNotNodejsPackageManager": "Docker는 Node.js 패키지 관리자가 아닙니다.",
-        "PleaseEndureAlreadyInstallOnSystem": "시스템에 이미 설치되어 있는지 확인하세요.",
-        "dockerInstructions": "https://docs.docker.com/desktop/의 공식 지침을 따르세요.",
-        "dockerImagesLink": "Docker 이미지는 https://github.com/nodejs/docker-node/에서 공식적으로 제공됩니다.",
-        "pullsNodejsDockerImage": "Node.js Docker 이미지를 가져옵니다.",
-        "homebrewIsNotNodejsPackageManager": "Homebrew는 Node.js 패키지 관리자가 아닙니다.",
-        "homebrewInstructions": "https://brew.sh/의 공식 지침을 따르세요.",
-        "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew는 주요 Node.js 버전 설치만 지원하며 {version} 릴리즈 라인의 최신 Node.js 버전을 지원하지 않을 수 있습니다.",
-        "chocolateyIsNotNodejsPackageManager": "Chocolatey는 Node.js 패키지 관리자가 아닙니다.",
-        "chocolateyInstructions": "https://chocolatey.org/의 공식 지침을 따르세요.",
-        "chocolateyNotMaintanedByNodejs": "Chocolatey는 Node.js 프로젝트에 의해 공식적으로 유지 관리되지 않으며 {version} 버전의 Node.js를 지원하지 않을 수 있습니다."
+        "unsupportedVersionWarning": "이 버전은 유지 관리가 종료되었습니다. 현재 지원되는 버전을 사용하세요. <link>EOL 지원 이해하기</link>",
+        "communityPlatformInfo": "커뮤니티 소프트웨어를 사용하는 설치 방법은 해당 소프트웨어를 유지 관리하는 팀에서 지원합니다.",
+        "externalSupportInfo": "문제가 발생하면 <link>{platform}'s 웹사이트</link>를 방문하세요.",
+        "noScriptDetected": "이 페이지는 JavaScript가 필요합니다. JavaScript 없이 Node.js를 다운로드하려면 <link>릴리스 페이지</link>를 직접 방문하세요.",
+        "platformInfo": {
+          "default": "{platform}과 설치 스크립트는 Node.js 프로젝트에서 유지 관리되지 않습니다.",
+          "nvm": "\"nvm\"은 플랫폼 간 Node.js 버전 관리자입니다.",
+          "fnm": "\"fnm\"은 플랫폼 간 Node.js 버전 관리자입니다.",
+          "brew": "Homebrew는 macOS와 Linux용 패키지 관리자입니다.",
+          "choco": "Chocolatey는 Windows용 패키지 관리자입니다.",
+          "docker": "Docker는 컨테이너화 플랫폼입니다. "
+        }
       }
     }
   }
