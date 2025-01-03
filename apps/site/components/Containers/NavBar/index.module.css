@@ -86,8 +86,15 @@
     dark:border-neutral-900;
 }
 
-.searchButtonSkeleton {
-  @apply flex-grow;
+span.searchButtonSkeleton {
+  @apply my-px
+    mr-2
+    flex-grow
+    rounded-xl;
+
+  &:empty {
+    @apply h-10;
+  }
 }
 
 .ghIconWrapper {
