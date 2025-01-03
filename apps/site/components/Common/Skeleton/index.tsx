@@ -1,12 +1,14 @@
+import classNames from 'classnames';
 import type { FC, PropsWithChildren } from 'react';
 import { isValidElement } from 'react';
 
 import styles from './index.module.css';
 
-type SkeletonProps = { hide?: boolean; loading?: boolean };
+type SkeletonProps = { hide?: boolean; loading?: boolean; className?: string };
 
 const Skeleton: FC<PropsWithChildren<SkeletonProps>> = ({
   children,
+  className,
   hide = false,
   loading = true,
 }) => {
@@ -26,7 +28,7 @@ const Skeleton: FC<PropsWithChildren<SkeletonProps>> = ({
     <span
       tabIndex={-1}
       aria-hidden="true"
-      className={styles.skeleton}
+      className={classNames(styles.skeleton, className)}
       data-inline-skeleton={isValidElement(children) ? undefined : true}
     >
       {children}
