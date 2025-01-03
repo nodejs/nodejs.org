@@ -7,8 +7,8 @@
      text-sm
      font-medium;
 
-  &:last-child {
-    @apply w-full;
+  &:not(:last-child) {
+    @apply shrink-0;
   }
 
   a {
