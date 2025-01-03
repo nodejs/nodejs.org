@@ -90,9 +90,11 @@
         "modules": {
           "links": {
             "modules": "Modules",
+            "publishingAPackage": "Publication d'un paquet",
             "publishingNodeApiModules": "Comment publier le paquet N-API",
             "anatomyOfAnHttpTransaction": "Anatomie d'une transaction HTTP",
             "abiStability": "Stabilité de l'ABI",
+            "howToUseStreams": "Comment utiliser les flux",
             "backpressuringInStreams": "La contre-pression dans Streams"
           }
         },
@@ -135,22 +137,6 @@
         }
       }
     },
-    "downloadList": {
-      "links": {
-        "previousReleases": "Versions de Node.js",
-        "packageManager": "Installer Node.js via le gestionnaire de paquets",
-        "shaSums": {
-          "title": "SHASUMS signés pour les fichiers des versions",
-          "howToVerify": " (Comment vérifier)"
-        },
-        "allDownloads": "Toutes les options de téléchargement",
-        "nightlyReleases": "Versions quotidiennes",
-        "unofficialBuilds": "Constructions non officielles",
-        "buildingFromSource": "Compiler Node.js à partir du code source sur les systèmes d'exploitation maintenus",
-        "installingOnLinux": "Installation de Node.js via une archive binaire",
-        "installingOnWsl": "Installation sur le sous-système Windows pour Linux (WSL)"
-      }
-    },
     "downloadReleasesTable": {
       "changelog": "Journal de modifications",
       "releases": "Sorties",
@@ -161,6 +147,11 @@
       "previous": "Précédent"
     },
     "common": {
+      "alertBox": {
+        "info": "Information",
+        "warning": "Avertissement",
+        "danger": "Danger"
+      },
       "breadcrumbs": {
         "navigateToHome": "Naviguer à l'accueil"
       },
@@ -201,32 +192,9 @@
       "viewAs": "Afficher en tant que",
       "tableOfContents": "Table des matières"
     },
-    "downloads": {
-      "changelogModal": {
-        "startContributing": "Commencer à contribuer"
-      }
-    },
     "search": {
       "searchBox": {
         "placeholder": "Commencer à écrire..."
-      },
-      "seeAll": {
-        "text": "Voir les {count} résultats"
-      },
-      "searchError": {
-        "text": "Une erreur est survenue lors de la recherche. Veuillez réessayer plus tard."
-      },
-      "poweredBy": {
-        "text": "Propulsé par"
-      },
-      "noResults": {
-        "text": "Aucun résultat trouvé pour \"{query}\"."
-      },
-      "emptyState": {
-        "text": "Chercher quelque chose..."
-      },
-      "searchPage": {
-        "title": "Vous recherchez : {query}"
       }
     },
     "blog": {
@@ -277,49 +245,35 @@
       "backToHome": "Retourner à l'accueil"
     },
     "download": {
-      "selectCategory": "Catégories",
-      "categories": {
-        "prebuilt-installer": "Installateur préconstruit",
-        "prebuilt-binaries": "Binaires préconstruits",
-        "package-manager": "Gestionnaire de paquets",
-        "source-code": "Code source"
-      },
       "buttons": {
-        "prebuilt": "Télécharger Node.js {version}",
-        "source": "Télécharger les sources de Node.js {version}"
+        "installer": "{os} Installateur (.{extension})",
+        "binary": "Binaire autonome (.{extension})"
       },
       "dropdown": {
-        "bitness": "Bitness",
+        "platform": "Plateforme",
         "os": "Système d'exploitation",
         "version": "Version",
-        "platform": "Plateforme"
+        "installMethod": "Méthode d'installation",
+        "packageManager": "Gestionnaire de paquets",
+        "unknown": "Inconnu",
+        "platformGroups": {
+          "official": "Recommandé (officiel)",
+          "unofficial": "Communauté (non officielle)"
+        }
       },
       "codeBox": {
-        "unsupportedVersionWarning": "Cette version n'est plus maintenue. Plus d'informations ici :",
-        "fnmEnvSetup": "configurer l'environnement fnm",
-        "systemManagerWarning": "n'est pas un gestionnaire de paquets Node.js. Veuillez vous assurer que {packageManager} est déjà installé.",
-        "communityWarning": "Les gestionnaires de paquets et leurs scripts d'installation ne sont pas maintenus par le projet Node.js.",
-        "communityWarningReport": "Si vous rencontrez des problèmes, veuillez contacter les responsables du gestionnaire de paquets.",
-        "installsNvm": "installe nvm (Gestionnaire de version node)",
-        "downloadAndInstallNodejsRestartTerminal": "télécharger et installer Node.js (il peut être nécessaire de redémarrer le terminal)",
-        "verifiesRightNodejsVersion": "vérifie que la bonne version de Node.js est présente dans l'environnement",
-        "verifiesRightNpmVersion": "vérifie que la bonne version de npm est présente dans l'environnement",
-        "shouldPrint": "devrait imprimer `{version}`",
-        "installsFnm": "installe fnm (Fast Node Manager)",
-        "downloadAndInstallNodejs": "télécharger et installer Node.js",
-        "activateFNM": "activer le fnm",
-        "noteWithColon": "NOTE:",
-        "dockerIsNotNodejsPackageManager": "Docker n'est pas un gestionnaire de paquets Node.js.",
-        "PleaseEndureAlreadyInstallOnSystem": "Assurez-vous qu'il est déjà installé sur votre système.",
-        "dockerInstructions": "Suivez les instructions officielles à l'adresse suivante : https://docs.docker.com/desktop/",
-        "dockerImagesLink": "Les images Docker sont fournies officiellement à l'adresse https://github.com/nodejs/docker-node/",
-        "pullsNodejsDockerImage": "tire l'image Docker de Node.js",
-        "homebrewIsNotNodejsPackageManager": "Homebrew n'est pas un gestionnaire de paquets Node.js.",
-        "homebrewInstructions": "Suivez les instructions officielles à l'adresse suivante : https://brew.sh/",
-        "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew ne prend en charge que l'installation des versions majeures de Node.js et peut ne pas prendre en charge la dernière version de Node.js de la ligne de publication {version}.",
-        "chocolateyIsNotNodejsPackageManager": "Chocolatey n'est pas un gestionnaire de paquets Node.js.",
-        "chocolateyInstructions": "Suivez les instructions officielles à l'adresse suivante : https://chocolatey.org/",
-        "chocolateyNotMaintanedByNodejs": "Chocolatey n'est pas officiellement maintenu par le projet Node.js et pourrait ne pas supporter la version {version} de Node.js"
+        "unsupportedVersionWarning": "Cette version ne fait plus l'objet d'une maintenance. Veuillez utiliser une version actuellement supportée. <link>Comprendre l'accompagnement de fin de vie.</link>",
+        "communityPlatformInfo": "Les méthodes d'installation qui impliquent des logiciels communautaires sont soutenues par les équipes qui maintiennent ces logiciels.",
+        "externalSupportInfo": "Si vous rencontrez des problèmes, veuillez consulter <link>le site web de {platform}</link>",
+        "noScriptDetected": "Cette page nécessite JavaScript. Vous pouvez télécharger Node.js sans JavaScript en visitant directement la page <link>page de diffusion</link> directement.",
+        "platformInfo": {
+          "default": "{platform} et leurs scripts d'installation ne sont pas maintenus par le projet Node.js.",
+          "nvm": "\"nvm\" est un gestionnaire de versions Node.js multiplateforme.",
+          "fnm": "\"fnm\" est un gestionnaire de versions Node.js multiplateforme.",
+          "brew": "Homebrew est un gestionnaire de paquets pour macOS et Linux.",
+          "choco": "Chocolatey est un gestionnaire de paquets pour Windows.",
+          "docker": "Docker est une plateforme de conteneurisation."
+        }
       }
     }
   }
