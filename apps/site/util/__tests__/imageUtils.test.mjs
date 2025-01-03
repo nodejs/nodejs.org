@@ -41,3 +41,14 @@ describe('isSvgImage', () => {
     });
   });
 });
+
+describe('imageUtils', () => {
+  describe('isSvgImage', () => {
+    it('should detect .svg extension properly', () => {
+      expect(isSvgImage('icon.svg')).toBe(true);
+    });
+    it('should return false for non-svg source', () => {
+      expect(isSvgImage('logo.png')).toBe(false);
+    });
+  });
+});
