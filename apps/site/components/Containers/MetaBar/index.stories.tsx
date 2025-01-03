@@ -78,6 +78,21 @@ export const Default: Story = {
           depth: 3,
           data: { id: 'contact_and_future_updates' },
         },
+        {
+          value: 'Email',
+          depth: 4,
+          data: { id: 'email' },
+        },
+        {
+          value: 'Slack',
+          depth: 4,
+          data: { id: 'slack' },
+        },
+        {
+          value: '#node-website',
+          depth: 5, // h5s do not get shown
+          data: { id: 'node-website' },
+        },
       ],
     },
   },

@@ -44,8 +44,13 @@ const MetaBar: FC<MetaBarProps> = ({ items, headings }) => {
             <dd>
               <ol>
                 {heading.map(head => (
-                  <li key={head.value}>
-                    <Link href={`#${head?.data?.id}`}>{head.value}</Link>
+                  <li
+                    key={head.value}
+                    className={
+                      head.depth === 3 ? 'pl-2' : head.depth === 4 ? 'pl-4' : ''
+                    }
+                  >
+                    <Link href={`#${head?.data?.id}`}> {head.value}</Link>
                   </li>
                 ))}
               </ol>
