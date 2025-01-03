@@ -20,7 +20,9 @@ import style from './index.module.css';
 
 const SearchButton = dynamic(() => import('@/components/Common/Search'), {
   ssr: false,
-  loading: () => <Skeleton className={style.searchButtonSkeleton} loading />,
+  loading: () => (
+    <Skeleton className={style.searchButtonSkeleton} loading={true} />
+  ),
 });
 
 const navInteractionIcons = {

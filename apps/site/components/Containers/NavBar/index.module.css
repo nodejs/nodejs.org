@@ -87,7 +87,14 @@
 }
 
 .searchButtonSkeleton {
-  @apply flex-grow;
+  @apply my-px
+    mr-2
+    flex-grow
+    rounded-xl;
+
+  &:empty {
+    @apply h-10;
+  }
 }
 
 .ghIconWrapper {

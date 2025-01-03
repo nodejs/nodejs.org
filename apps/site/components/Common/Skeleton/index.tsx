@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import type { FC, PropsWithChildren } from 'react';
 import { isValidElement } from 'react';
 
@@ -27,7 +28,7 @@ const Skeleton: FC<PropsWithChildren<SkeletonProps>> = ({
     <span
       tabIndex={-1}
       aria-hidden="true"
-      className={`${styles.skeleton} ${className}`}
+      className={classNames(styles.skeleton, className)}
       data-inline-skeleton={isValidElement(children) ? undefined : true}
     >
       {children}
