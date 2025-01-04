@@ -93,6 +93,10 @@ main {
     &:has(code) {
       @apply max-xs:decoration-neutral-800
         dark:max-xs:decoration-neutral-200;
+
+      code {
+        @apply text-inherit;
+      }
     }
   }
 
