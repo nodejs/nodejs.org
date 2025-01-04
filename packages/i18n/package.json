@@ -16,8 +16,8 @@
     "lint:js": "eslint \"**/*.{js,mjs,ts}\""
   },
   "devDependencies": {
-    "eslint-import-resolver-typescript": "~3.6.3",
+    "eslint-import-resolver-typescript": "~3.7.0",
     "typescript": "~5.7.2",
-    "typescript-eslint": "~8.16.0"
+    "typescript-eslint": "~8.19.0"
   }
 }
