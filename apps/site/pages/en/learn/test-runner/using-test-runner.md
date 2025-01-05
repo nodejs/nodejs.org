@@ -83,8 +83,8 @@ test('Check package.jsons', { concurrency: true }, async t => {
     ).map(path => import(path, { with: { type: 'json' } }))
   );
 
-  // ⚠️ `t.test`, NOT `test`
   const cases = pjsons.map(pjson =>
+    // ⚠️ `t.test`, NOT `test`
     t.test(`Ensure fields are properly set: ${pjson.name}`, () => {
       assert.partialDeepStrictEqual(pjson.keywords, [
         'node.js',
