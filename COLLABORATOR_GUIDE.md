@@ -282,7 +282,7 @@ To add a new download installation method, follow these steps:
 
    ```javascript
    // filepath: /nodejs.org/apps/site/utils/downloadUtils.tsx
-   // See full refernece of INSTALL_METHODS witihin `downloadUtils.tsx`
+   // See full reference of INSTALL_METHODS within `downloadUtils.tsx`
    export const INSTALL_METHODS = [
      // ...existing methods...
      {
@@ -344,15 +344,15 @@ To add a new download installation method, follow these steps:
    echo "Installing Node.js version ${props.version} using Example Method"
    ```
 
-5. **Configure `compatbility` within the `INSTALL_METHODS` object in `downloadUtils.ts`:**
+5. **Configure `compatibility` within the `INSTALL_METHODS` object in `downloadUtils.ts`:**
 
-- Use the `compatbility` property to enable/list the installation method for specific OSs, Node.js version ranges, or architectures/platforms.
+- Use the `compatibility` property to enable/list the installation method for specific OSs, Node.js version ranges, or architectures/platforms.
 
 Example:
 
 ```javascript
 // filepath: /nodejs.org/apps/site/utils/downloadUtils.tsx
-// See full refernece of compatibility property witihin `downloadUtils.tsx`
+// See full reference of compatibility property within `downloadUtils.tsx`
 export const INSTALL_METHODS = [
   {
     iconImage: 'path/to/icon.svg',
