@@ -1,6 +1,6 @@
 'use client';
 
-import { useFormatter } from 'next-intl';
+import { useFormatter, useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import MetaBar from '@/components/Containers/MetaBar';
@@ -21,6 +21,8 @@ const WithMetaBar: FC = () => {
 
   const usernames =
     frontmatter.authors?.split(',').map(author => author.trim()) ?? [];
+
+  const t = useTranslations();
 
   // Since we cannot show the same number of avatars in Mobile / Tablet
   // resolution as we do on desktop and there is overflow, we are adjusting
@@ -47,7 +49,9 @@ const WithMetaBar: FC = () => {
         'components.metabar.contribute': (
           <>
             <GitHub className="fill-neutral-700 dark:fill-neutral-100" />
-            <Link href={getGitHubBlobUrl(filename)}>Edit this page</Link>
+            <Link href={getGitHubBlobUrl(filename)}>
+              {t('components.metabar.contributeText')}
+            </Link>
           </>
         ),
       }}
