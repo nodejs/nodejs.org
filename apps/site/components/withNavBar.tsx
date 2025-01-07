@@ -2,7 +2,7 @@
 
 import { useLocale } from 'next-intl';
 import { useTheme } from 'next-themes';
-import type { FC } from 'react';
+import type { FC, KeyboardEvent } from 'react';
 import { useState } from 'react';
 
 import NavBar from '@/components/Containers/NavBar';
@@ -25,7 +25,7 @@ const WithNavBar: FC = () => {
   const toggleCurrentTheme = () =>
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
 
-  const handleTabPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleTabPress = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Tab') {
       setTabPressed(prev => !prev);
     }
