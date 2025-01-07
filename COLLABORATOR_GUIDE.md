@@ -371,7 +371,7 @@ By following these steps, you can successfully add a new download installation m
 
 ### Adding a Download Package Manager
 
-You can add a PACKAGE_MANAGER the same way as adding an INSTALLATION_METHOD (from the section above, "Adding a Download Installation Method") but it should be added to the PACKAGE_MANAGERS object in `apps/site/utils/downloadUtils.tsx`.
+You can add a PACKAGE_MANAGER the same way as adding an INSTALLATION_METHOD (from the section above, "Adding a Download Installation Method") but it should be added to the PACKAGE_MANAGERS object in `apps/site/util/downloadUtils.tsx`.
 
 ## Unit Tests and Storybooks
 
