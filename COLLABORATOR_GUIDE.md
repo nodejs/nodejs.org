@@ -268,7 +268,7 @@ export default MyComponent;
 
 To add a new download installation method, follow these steps:
 
-1. **Update `INSTALL_METHODS` in `apps/site/utils/downloadUtils.tsx`:**
+1. **Update `INSTALL_METHODS` in `apps/site/util/downloadUtils.tsx`:**
 
    - Add a new entry to the `INSTALL_METHODS` array.
    - Each entry should have the following properties:
