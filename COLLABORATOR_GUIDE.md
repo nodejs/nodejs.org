@@ -331,7 +331,7 @@ To add a new download installation method, follow these steps:
    };
    ```
 
-4. **Add a snippet in `apps/site/snippets/download`:**
+4. **Add a snippet in `apps/site/snippets/en/download`:**
 
    - Create a new file with the same key as the `value` property (e.g., `exampleMethod.bash`).
    - Add the installation instructions in this file.
@@ -340,7 +340,7 @@ To add a new download installation method, follow these steps:
    Example:
 
    ```bash
-   // filepath: /nodejs.org/apps/site/snippets/download/exampleMethod.bash
+   // filepath: /nodejs.org/apps/site/snippets/en/download/exampleMethod.bash
    echo "Installing Node.js version ${props.version} using Example Method"
    ```
 
