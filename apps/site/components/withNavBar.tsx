@@ -1,5 +1,6 @@
 'use client';
 
+import classNames from 'classnames';
 import { useLocale } from 'next-intl';
 import { useTheme } from 'next-themes';
 import type { FC, KeyboardEvent } from 'react';
@@ -19,6 +20,10 @@ const WithNavBar: FC = () => {
   const { replace } = useRouter();
   const pathname = usePathname();
   const [tabPressed, setTabPressed] = useState(false);
+  const classNameOnTabPress = classNames(
+    '!fixed left-0 m-3 -translate-y-16 p-3 transition-all focus:translate-y-0',
+    { '-translate-y-16': !tabPressed, 'translate-y-0': tabPressed }
+  );
 
   const locale = useLocale();
 
@@ -34,7 +39,7 @@ const WithNavBar: FC = () => {
   return (
     <div onKeyDown={handleTabPress}>
       <Button
-        className="${tabPressed ? 'translate-y-0' : '-translate-y-16' !fixed left-0 m-3 -translate-y-16 p-3 transition-all focus:translate-y-0"
+        className={classNameOnTabPress}
         aria-hidden={!tabPressed}
         href="#main"
       >
