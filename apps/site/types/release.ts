@@ -2,7 +2,13 @@ import type { DownloadSnippet } from '@/types/downloads';
 import type { NodeRelease } from '@/types/releases';
 import type { UserOS, UserPlatform } from '@/types/userOS';
 
-export type InstallationMethod = 'NVM' | 'FNM' | 'BREW' | 'DOCKER' | 'CHOCO';
+export type InstallationMethod =
+  | 'NVM'
+  | 'FNM'
+  | 'BREW'
+  | 'DEVBOX'
+  | 'DOCKER'
+  | 'CHOCO';
 export type PackageManager = 'NPM' | 'YARN' | 'PNPM';
 
 // Items with a pipe/default value mean that they are auto inferred
