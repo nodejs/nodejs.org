@@ -1,10 +1,9 @@
 'use client';
 
 import classNames from 'classnames';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
-import type { FC, KeyboardEvent } from 'react';
-import { useState } from 'react';
+import type { FC } from 'react';
 
 import NavBar from '@/components/Containers/NavBar';
 import WithBanner from '@/components/withBanner';
@@ -12,39 +11,28 @@ import { useSiteNavigation } from '@/hooks';
 import { useRouter, usePathname } from '@/navigation.mjs';
 import { availableLocales } from '@/next.locales.mjs';
 
-import Button from './Common/Button';
-
 const WithNavBar: FC = () => {
   const { navigationItems } = useSiteNavigation();
   const { resolvedTheme, setTheme } = useTheme();
   const { replace } = useRouter();
   const pathname = usePathname();
-  const [tabPressed, setTabPressed] = useState(false);
+
   const classNameOnTabPress = classNames(
-    '!fixed left-0 m-3 -translate-y-16 p-3 transition-all focus:translate-y-0',
-    { '-translate-y-16': !tabPressed, 'translate-y-0': tabPressed }
+    'bg-[#000] text-center font-semibold inline-flex items-center justify-center gap-2 py-2.5',
+    'absolute left-0 top-0 m-3 -translate-y-16 bg-blue-500 p-3 text-white transition-transform focus:translate-y-0 focus:outline-none'
   );
 
   const locale = useLocale();
+  const t = useTranslations();
 
   const toggleCurrentTheme = () =>
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
 
-  const handleTabPress = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Tab') {
-      setTabPressed(prev => !prev);
-    }
-  };
-
   return (
-    <div onKeyDown={handleTabPress}>
-      <Button
-        className={classNameOnTabPress}
-        aria-hidden={!tabPressed}
-        href="#main"
-      >
-        Skip to main content
-      </Button>
+    <div>
+      <a className={classNameOnTabPress} href="#main">
+        {t('components.containers.navBar.links.skipToContent')}
+      </a>
 
       <WithBanner section="index" />
 
