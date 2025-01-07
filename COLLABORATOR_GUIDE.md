@@ -281,7 +281,7 @@ To add a new download installation method, follow these steps:
    Example:
 
    ```javascript
-   // filepath: /nodejs.org/apps/site/utils/downloadUtils.tsx
+   // filepath: /nodejs.org/apps/site/util/downloadUtils.tsx
    // See full reference of INSTALL_METHODS within `downloadUtils.tsx`
    export const INSTALL_METHODS = [
      // ...existing methods...
