@@ -7,7 +7,6 @@ import DownloadLink from './components/Downloads/DownloadLink';
 import BlogPostLink from './components/Downloads/Release/BlogPostLink';
 import ChangelogLink from './components/Downloads/Release/ChangelogLink';
 import InstallationMethodDropdown from './components/Downloads/Release/InstallationMethodDropdown';
-import LinkWithArrow from './components/Downloads/Release/LinkWithArrow';
 import OperatingSystemDropdown from './components/Downloads/Release/OperatingSystemDropdown';
 import PackageManagerDropdown from './components/Downloads/Release/PackageManagerDropdown';
 import PlatformDropdown from './components/Downloads/Release/PlatformDropdown';
@@ -15,6 +14,7 @@ import PrebuiltDownloadButtons from './components/Downloads/Release/PrebuiltDown
 import ReleaseCodeBox from './components/Downloads/Release/ReleaseCodeBox';
 import VersionDropdown from './components/Downloads/Release/VersionDropdown';
 import Link from './components/Link';
+import LinkWithArrow from './components/LinkWithArrow';
 import MDXCodeBox from './components/MDX/CodeBox';
 import MDXCodeTabs from './components/MDX/CodeTabs';
 import MDXImage from './components/MDX/Image';
