@@ -148,7 +148,7 @@ export default function rehypeShikiji() {
       }
     });
 
-    visit(tree, 'element', async (node, index, parent) => {
+    visit(tree, 'element', (node, index, parent) => {
       // We only want to process <pre>...</pre> elements
       if (!parent || index == null || node.tagName !== 'pre') {
         return;
