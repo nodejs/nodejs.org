@@ -1,5 +1,6 @@
 'use strict';
 
+import { parse } from 'acorn';
 import classNames from 'classnames';
 import { toString } from 'hast-util-to-string';
 import { SKIP, visit } from 'unist-util-visit';
@@ -51,6 +52,29 @@ function isCodeBlock(node) {
   return Boolean(
     node?.tagName === 'pre' && node?.children[0].tagName === 'code'
   );
+}
+
+/**
+ * Check code syntax is valid.
+ *
+ * @param {string} code - The code to be checked.
+ * @param {string} languageId - The language id.
+ * @returns {boolean}
+ */
+function checkCodeSyntax(code, languageId) {
+  try {
+    if (!['js', 'cjs', 'mjs'].includes(languageId)) {
+      return true;
+    }
+
+    parse(code, {
+      ecmaVersion: 'latest',
+      sourceType: languageId === 'cjs' ? 'script' : 'module',
+    });
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 export default function rehypeShikiji() {
@@ -124,7 +148,7 @@ export default function rehypeShikiji() {
       }
     });
 
-    visit(tree, 'element', (node, index, parent) => {
+    visit(tree, 'element', async (node, index, parent) => {
       // We only want to process <pre>...</pre> elements
       if (!parent || index == null || node.tagName !== 'pre') {
         return;
@@ -167,6 +191,11 @@ export default function rehypeShikiji() {
 
       // Grabs the relevant alias/name of the language
       const languageId = codeLanguage.slice(languagePrefix.length);
+
+      // Check code for syntax errors
+      if (!checkCodeSyntax(preElementContents, languageId)) {
+        throw new Error('Code block contains syntax errors');
+      }
 
       // Parses the <pre> contents and returns a HAST tree with the highlighted code
       const { children } = highlightToHast(preElementContents, languageId);
