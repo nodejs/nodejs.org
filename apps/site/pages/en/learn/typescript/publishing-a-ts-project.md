@@ -22,22 +22,7 @@ Some important things to note:
 
 - `.nvmrc` comes from [NVM](https://github.com/nvm-sh/nvm), a multi-version manager for node. It allows you to specify the version of node the project should generally use.
 
-A published package will look something like:
-
-```text displayName="Published example TypeScript package (directory overview)"
-example-ts-pkg/
-├ LICENSE
-├ main.d.ts
-├ main.d.ts.map
-├ main.js
-├ package.json
-├ README.md
-├ some-util.d.ts
-├ some-util.d.ts.map
-└ some-util.js
-```
-
-That would be derived from a repository looking something like:
+A repository would look something like:
 
 ```text displayName="Source of the example TypeScript package (directory overview)"
 example-ts-pkg/
@@ -54,7 +39,23 @@ example-ts-pkg/
   └ some-util.test.ts
 ├ LICENSE
 ├ package.json
-└ README.md
+├ README.md
+└ tsconfig.json
+```
+
+And its published package would look something like:
+
+```text displayName="Published example TypeScript package (directory overview)"
+example-ts-pkg/
+├ LICENSE
+├ main.d.ts
+├ main.d.ts.map
+├ main.js
+├ package.json
+├ README.md
+├ some-util.d.ts
+├ some-util.d.ts.map
+└ some-util.js
 ```
 
 ## What to do with your types
