@@ -140,19 +140,13 @@ jobs:
 {
   "compilerOptions": {
     "allowArbitraryExtensions": true,
-    "allowImportingTsExtensions": true,
-    "baseUrl": "./",
     "declaration": true,
     "declarationMap": true,
-    "esModuleInterop": true, // Flux Capacitor: The universe breaks without it, but nobody knows exactly what it does.
     "lib": ["ESNext"],
     "module": "NodeNext",
-    "moduleResolution": "NodeNext",
     "outDir": "./",
     "resolveJsonModule": true,
-    "resolvePackageJsonExports": true,
-    "resolvePackageJsonImports": true,
-    "target": "ESNext"
+    "rewriteRelativeImportExtensions": true
   },
   // These may be different for your repo:
   "include": ["./src"],
