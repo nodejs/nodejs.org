@@ -12,11 +12,11 @@ Some important things to note:
 
 - Everything from [Publishing a package](../modules/publishing-a-package) applies here.
 
-- Node runs TypeScript code via a process called "[type stripping](https://nodejs.org/api/typescript.html#type-stripping)", wherein node (via [Amaro](https://github.com/nodejs/amaro)) removes TypeScript-specific syntax, leaving behind vanilla JavaScript (which node already understands). This behaviour is enabled by default of node version 23.6.0.
+- Node runs TypeScript code via a process called "[type stripping](https://nodejs.org/api/typescript.html#type-stripping)", wherein node (via [Amaro](https://github.com/nodejs/amaro)) removes TypeScript-specific syntax, leaving behind vanilla JavaScript (which node already understands). This behaviour is enabled by default as of node version 23.6.0.
 
-  - Node does **not** strip types in `node_modules` because it can cause significant performance issues for the official TypeScript compiler (`tsc`), so the TypeScript maintainers would like to discourage people publishing raw TypeScript, at least for now.
+  - Node does **not** strip types in `node_modules` because it can cause significant performance issues for the official TypeScript compiler (`tsc`) and parts of VS Code, so the TypeScript maintainers would like to discourage people publishing raw TypeScript, at least for now.
 
-- Consuming TypeScript-specific features like `enum` in node still require a flag ([`--experimental-transform-types`](https://nodejs.org/api/typescript.html#typescript-features)). There are often better alternatives for these anyway.
+- Consuming TypeScript-specific features like `enum` in node still requires a flag ([`--experimental-transform-types`](https://nodejs.org/api/typescript.html#typescript-features)). There are often better alternatives for these anyway.
 
 - Use [dependabot](https://docs.github.com/en/code-security/dependabot) to keep your dependencies current, including those in github actions. It's a very easy set-and-forget configuration.
 
@@ -28,10 +28,12 @@ A published package will look something like:
 example-ts-pkg/
 ├ LICENSE
 ├ main.d.ts
+├ main.d.ts.map
 ├ main.js
 ├ package.json
 ├ README.md
 ├ some-util.d.ts
+├ some-util.d.ts.map
 └ some-util.js
 ```
 
@@ -154,7 +156,7 @@ jobs:
   },
   // These may be different for your repo:
   "include": ["./src"],
-  "exclude": ["**/*/*.test.*", "**/fixtures/**"]
+  "exclude": ["**/*/*.test.*", "**/*.fixture.*"]
 }
 ```
 
@@ -179,7 +181,6 @@ jobs:
 
     permissions:
       contents: read
-      id-token: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -209,10 +210,10 @@ jobs:
 ```text displayName=".npmignore"
 *.ts
 !*.d.ts
-fixtures
+*.fixture.*
 ```
 
-`npm publish` will automatically run [`prepack` beforehand](https://docs.npmjs.com/cli/v11/using-npm/scripts#npm-publish). `npm` will also run `prepack` automatically before `npm pack --dry-run` (so you can easily see what your published package will be without actually publishing it). **Beware**, [`node --run` does _not_ do that](../command-line/run-nodejs-scripts-from-the-command-line.md#using-the---run-flag). You can't use `node --run` for this step, so that is not a caveat here, but it can be for other steps.
+`npm publish` will automatically run [`prepack` beforehand](https://docs.npmjs.com/cli/v11/using-npm/scripts#npm-publish). `npm` will also run `prepack` automatically before `npm pack --dry-run` (so you can easily see what your published package will be without actually publishing it). **Beware**, [`node --run` does _not_ do that](../command-line/run-nodejs-scripts-from-the-command-line.md#using-the---run-flag). You can't use `node --run` for this step, so that caveat does not apply here, but it can for other steps.
 
 #### Breaking this down
 
