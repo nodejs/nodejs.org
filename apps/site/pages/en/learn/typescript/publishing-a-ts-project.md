@@ -70,7 +70,7 @@ const bar: number = 1 + foo;
 //    ^^^ Type 'string' is not assignable to type 'number'.
 ```
 
-TypeScript has warned that the above code will not behave as intended, just like a unit test warns that code does not behave as intended.
+TypeScript has warned that the above code will not behave as intended, just like a unit test warns that code does not behave as intended. They are complementary and verify different things—you should have both.
 
 Your IDE (ex VS Code) likely has built-in support for TypeScript, displaying errors as you work. If not, and/or you missed those, CI will have your back.
 
