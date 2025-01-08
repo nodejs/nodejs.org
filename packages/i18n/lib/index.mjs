@@ -6,7 +6,7 @@ import localeConfig from '@node-core/website-i18n/config.json' with { type: 'jso
  * Imports a locale when exists from the locales directory
  *
  * @param {string} locale The locale code to import
- * @returns {Record<string, any>} The imported locale
+ * @returns {Promise<Record<string, any>>} The imported locale
  */
 export const importLocale = async locale => {
   return import(`../locales/${locale}.json`).then(f => f.default);
