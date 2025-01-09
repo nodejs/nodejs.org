@@ -12,6 +12,10 @@ Some important things to note:
 
 - Everything from [Publishing a package](../modules/publishing-a-package) applies here.
 
+  - Fields like `main` operate on _published_ content, so when TypeScript source-code is transpiled to JavaScript, JavaScript is the published content and `main` would point to a JavaScript file with a JavaScript file extension (ex `main.ts` → `"main": "main.js"`).
+
+  - Fields like `scripts.test` operate on source-code, so they would use the file extensions of the source code (ex `"test": "node --test './src/**/*.test.ts'`).
+
 - Node runs TypeScript code via a process called "[type stripping](https://nodejs.org/api/typescript.html#type-stripping)", wherein node (via [Amaro](https://github.com/nodejs/amaro)) removes TypeScript-specific syntax, leaving behind vanilla JavaScript (which node already understands). This behaviour is enabled by default as of node version 23.6.0.
 
   - Node does **not** strip types in `node_modules` because it can cause significant performance issues for the official TypeScript compiler (`tsc`) and parts of VS Code, so the TypeScript maintainers would like to discourage people publishing raw TypeScript, at least for now.
