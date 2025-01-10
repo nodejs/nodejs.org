@@ -17,7 +17,7 @@ const WithNavBar: FC = () => {
   const { replace } = useRouter();
   const pathname = usePathname();
 
-  const classNameOnTabPress = classNames(
+  const skipToContent = classNames(
     'bg-[#000] text-center font-semibold inline-flex items-center justify-center gap-2 py-2.5',
     'absolute left-0 top-0 m-3 -translate-y-16 bg-blue-500 p-3 text-white transition-transform focus:translate-y-0 focus:outline-none'
   );
@@ -30,7 +30,7 @@ const WithNavBar: FC = () => {
 
   return (
     <div>
-      <a className={classNameOnTabPress} href="#main">
+      <a className={skipToContent} href="#main">
         {t('components.containers.navBar.links.skipToContent')}
       </a>
 
