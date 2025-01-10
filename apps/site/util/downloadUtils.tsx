@@ -171,6 +171,7 @@ export const INSTALL_METHODS: Array<
     value: 'FNM',
     compatibility: { os: ['MAC', 'LINUX', 'WIN'] },
     iconImage: <InstallMethodIcons.FNM width={16} height={16} />,
+    recommended: true,
     url: 'https://github.com/Schniz/fnm',
     info: 'layouts.download.codeBox.platformInfo.fnm',
   },
