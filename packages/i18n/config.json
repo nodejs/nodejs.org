@@ -136,7 +136,7 @@
     "langDir": "ltr",
     "dateFormat": "YYYY.MM.DD",
     "hrefLang": "ja",
-    "enabled": false,
+    "enabled": true,
     "default": false
   },
   {
