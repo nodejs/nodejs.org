@@ -17,13 +17,13 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
 
@@ -34,13 +34,13 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
 
@@ -62,7 +62,7 @@ HTTP adalah warga negara kelas satu di Node.js, dirancang dengan streaming dan r
 latensi dalam pikiran. Ini membuat Node.js sangat cocok untuk fondasi web
 perpustakaan atau kerangka kerja.
 
-Node.js dirancang tanpa thread bukan berarti Anda tidak dapat memanfaatkan banyak inti di lingkungan Anda. Proses anak dapat dihasilkan dengan menggunakan API child_process.fork() kami, dan dirancang agar mudah untuk berkomunikasi. Dibangun di atas antarmuka yang sama adalah modul cluster, yang memungkinkan Anda berbagi soket antar proses untuk mengaktifkan penyeimbangan beban pada inti Anda.
+Node.js dirancang tanpa thread bukan berarti Anda tidak dapat memanfaatkan banyak inti di lingkungan Anda. Proses anak dapat dihasilkan dengan menggunakan API child\_process.fork() kami, dan dirancang agar mudah untuk berkomunikasi. Dibangun di atas antarmuka yang sama adalah modul cluster, yang memungkinkan Anda berbagi soket antar proses untuk mengaktifkan penyeimbangan beban pada inti Anda.
 
 [blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html
