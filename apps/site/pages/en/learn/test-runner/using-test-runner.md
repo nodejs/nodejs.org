@@ -64,6 +64,40 @@ Then for each setup, create a dedicated `setup` file (ensuring the base `setup.m
 
 Each example below was taken from real-world projects; they may not be appropriate/applicable to yours, but each demonstrate general concepts that are broadly applicable.
 
+## Dynamically generating test cases
+
+Some times, you may want to dynamically generate test-cases. For instance, you want to test the same thing across a bunch of files. This is possible, albeit slightly arcane. You must use `test` (you cannot use `describe`) + `await testContext.test`:
+
+```js
+import assert from 'node:assert/strict';
+import { globSync } from 'node:fs';
+import { test } from 'node:test';
+import { fileURLToPath } from 'node:url';
+
+test('Check package.jsons', { concurrency: true }, async t => {
+  const pjsons = await Promise.all(
+    globSync(
+      // Get all the package.json files 1-level deep within ./workspaces
+      // ⚠️ Passing a file URL string, like from import.meta.resolve, causes glob* to fail silently
+      fileURLToPath(import.meta.resolve('./workspaces/*/package.json'))
+    ).map(path => import(path, { with: { type: 'json' } }))
+  );
+
+  const cases = pjsons.map(pjson =>
+    // ⚠️ `t.test`, NOT `test`
+    t.test(`Ensure fields are properly set: ${pjson.name}`, () => {
+      assert.partialDeepStrictEqual(pjson.keywords, [
+        'node.js',
+        'sliced bread',
+      ]);
+    })
+  );
+
+  // Allow the cases to run concurrently.
+  await Promise.allSettled(cases);
+});
+```
+
 ## ServiceWorker tests
 
 [`ServiceWorkerGlobalScope`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope) contains very specific APIs that don't exist in other environments, and some of its APIs are seemingly similar to others (ex `fetch`) but have augmented behaviour. You do not want these to spill into unrelated tests.
