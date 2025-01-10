@@ -13,9 +13,9 @@ const loadLocaleDictionary = async (locale: string) => {
   }
 
   if (availableLocaleCodes.includes(locale)) {
-    // Other languages don't really require HMR as they will never be development languages
-    // so we can load them dynamically
-    const messages = importLocale(locale);
+    // Other languages don't really require HMR as they
+    // will never be development languages so we can load them dynamically
+    const messages = await importLocale(locale);
 
     // Use default messages as fallback
     return deepMerge(defaultMessages, messages);

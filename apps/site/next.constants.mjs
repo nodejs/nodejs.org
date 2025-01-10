@@ -187,3 +187,9 @@ export const ORAMA_CLOUD_API_KEY =
  * Note: This has no NEXT_PUBLIC prefix as it should not be exposed to the Browser.
  */
 export const GITHUB_API_KEY = process.env.NEXT_GITHUB_API_KEY || '';
+
+/**
+ * The resource we point people to when discussing internationalization efforts.
+ */
+export const TRANSLATION_URL =
+  'https://github.com/nodejs/nodejs.org/blob/main/TRANSLATION.md#how-to-translate';
