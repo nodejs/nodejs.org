@@ -1,6 +1,7 @@
 'use client';
 
-import { useLocale } from 'next-intl';
+import classNames from 'classnames';
+import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import type { FC } from 'react';
 
@@ -16,13 +17,23 @@ const WithNavBar: FC = () => {
   const { replace } = useRouter();
   const pathname = usePathname();
 
+  const skipToContent = classNames(
+    'bg-[#000] text-center font-semibold inline-flex items-center justify-center gap-2 py-2.5',
+    'absolute left-0 top-0 m-3 -translate-y-16 bg-blue-500 p-3 text-white transition-transform focus:translate-y-0 focus:outline-none'
+  );
+
   const locale = useLocale();
+  const t = useTranslations();
 
   const toggleCurrentTheme = () =>
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
 
   return (
     <div>
+      <a className={skipToContent} href="#main">
+        {t('components.containers.navBar.links.skipToContent')}
+      </a>
+
       <WithBanner section="index" />
 
       <NavBar
