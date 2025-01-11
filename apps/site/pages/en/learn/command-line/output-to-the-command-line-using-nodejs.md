@@ -191,7 +191,7 @@ Then, you can use it to style your text:
 ```js
 console.log(
   styleText(['red'], 'This is red text ') +
-    styleText(['green, bold'], 'and this is green bold text ') +
+    styleText(['green', 'bold'], 'and this is green bold text ') +
     'this is normal text'
 );
 ```
