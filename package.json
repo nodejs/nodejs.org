@@ -35,6 +35,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "acorn": "^8.14.0",
     "husky": "9.1.7",
     "lint-staged": "15.3.0",
     "turbo": "2.3.3"
