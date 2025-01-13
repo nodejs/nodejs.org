@@ -47,6 +47,48 @@ example-ts-pkg/
 └ tsconfig.json
 ```
 
+```text displayName="(alt 1) Source of the example TypeScript package (directory overview)"
+example-ts-pkg/
+├ .github/
+  ├ workflows/
+    ├ ci.yml
+    └ publish.yml
+  └ dependabot.yml
+├ src/
+  ├ __test__
+    ├ foo.fixture.js
+    ├ main.test.ts
+  ├ main.ts
+  └ some-util.ts
+    ├ __test__
+      └ some-util.test.ts
+    └ some-util.ts
+├ LICENSE
+├ package.json
+├ README.md
+└ tsconfig.json
+```
+
+```text displayName="(alt 2) Source of the example TypeScript package (directory overview)"
+example-ts-pkg/
+├ .github/
+  ├ workflows/
+    ├ ci.yml
+    └ publish.yml
+  └ dependabot.yml
+├ src/
+  ├ main.ts
+  ├ some-util.ts
+├ test/
+  ├ foo.fixture.js
+  ├ main.ts
+  └ some-util.ts
+├ LICENSE
+├ package.json
+├ README.md
+└ tsconfig.json
+```
+
 And its published package would look something like:
 
 ```text displayName="Published example TypeScript package (directory overview)"
@@ -61,6 +103,22 @@ example-ts-pkg/
 ├ some-util.d.ts.map
 └ some-util.js
 ```
+
+```text displayName="(alt) Published example TypeScript package (directory overview)"
+example-ts-pkg/
+├ dist/
+  ├ main.d.ts
+  ├ main.d.ts.map
+  ├ main.js
+  ├ some-util.d.ts
+  ├ some-util.d.ts.map
+  └ some-util.js
+├ LICENSE
+├ package.json
+└ README.md
+```
+
+A note about directory organisation: There are a few common practices for placing tests. Principle of least knowledge says to co-locate them (put them adjacent to implementation). Sometimes, that's in the same directory, or within a drawer like a `__test__` (also adjacent to the implementation, "alt 1"). Alternatively, some opt to create a `test/` sibling to `src/` ("alt 2"), either with a mirrored structure or a "junk drawer".
 
 ## What to do with your types
 
@@ -159,6 +217,8 @@ jobs:
 }
 ```
 
+Note that test files may well have a different `tsconfig.json` applied (hence why they are excluded in the above sample).
+
 ### Generate type declarations
 
 Type declarations (`.d.ts` and friends) provide type information as a sidecar file, allowing the execution code to be vanilla JavaScript whilst still having types.
@@ -210,6 +270,11 @@ jobs:
 *.ts
 !*.d.ts
 *.fixture.*
+```
+
+```text displayName="(alt: dist/) .npmignore"
+src
+test
 ```
 
 `npm publish` will automatically run [`prepack` beforehand](https://docs.npmjs.com/cli/v11/using-npm/scripts#npm-publish). `npm` will also run `prepack` automatically before `npm pack --dry-run` (so you can easily see what your published package will be without actually publishing it). **Beware**, [`node --run` does _not_ do that](../command-line/run-nodejs-scripts-from-the-command-line.md#using-the---run-flag). You can't use `node --run` for this step, so that caveat does not apply here, but it can for other steps.
