@@ -11,7 +11,19 @@ const config: StorybookConfig = {
   typescript: { reactDocgen: false, check: false },
   core: { disableTelemetry: true, disableWhatsNewNotifications: true },
   framework: '@storybook/react-webpack5',
-  swc: () => ({ jsc: { transform: { react: { runtime: 'automatic' } } } }),
+  swc: () => ({
+    jsc: {
+      parser: {
+        syntax: 'typescript',
+        tsx: true,
+      },
+      transform: {
+        react: {
+          runtime: 'automatic',
+        },
+      },
+    },
+  }),
   addons: [
     '@storybook/addon-webpack5-compiler-swc',
     '@storybook/addon-controls',

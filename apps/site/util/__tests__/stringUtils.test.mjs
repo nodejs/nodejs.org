@@ -72,4 +72,43 @@ describe('String utils', () => {
   it('dashToCamelCase returns correct camelCase with numbers', () => {
     expect(dashToCamelCase('foo-123-bar')).toBe('foo123Bar');
   });
+
+  test('getAcronymFromString returns an acronym for a simple string', () => {
+    const result = getAcronymFromString('Node JS');
+    expect(result).toBe('NJ');
+  });
+
+  test('parseRichTextIntoPlainText removes markdown syntax', () => {
+    const result = parseRichTextIntoPlainText(
+      'Hello **world**!\n*italic text*'
+    );
+    expect(result).toBe('Hello world!\nitalic text');
+  });
+
+  test('dashToCamelCase converts dashed strings to camelCase', () => {
+    const result = dashToCamelCase('es-2015');
+    expect(result).toBe('es2015');
+  });
+
+  describe('stringUtils', () => {
+    describe('getAcronymFromString', () => {
+      it('should return correct acronym', () => {
+        const result = getAcronymFromString('Hello World');
+        expect(result).toBe('HW');
+      });
+    });
+
+    describe('parseRichTextIntoPlainText', () => {
+      it('should remove markdown and HTML', () => {
+        const result = parseRichTextIntoPlainText('<h1>Hello</h1> *world*');
+        expect(result).toBe('Hello world');
+      });
+    });
+
+    describe('dashToCamelCase', () => {
+      it('should convert dash-case to camelCase', () => {
+        expect(dashToCamelCase('es-2015-config')).toBe('es2015Config');
+      });
+    });
+  });
 });

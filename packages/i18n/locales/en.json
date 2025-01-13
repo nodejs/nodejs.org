@@ -94,6 +94,7 @@
             "publishingNodeApiModules": "How to publish a Node-API package",
             "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction",
             "abiStability": "ABI Stability",
+            "howToUseStreams": "How to use streams",
             "backpressuringInStreams": "Backpressuring in Streams"
           }
         },
@@ -137,9 +138,16 @@
       }
     },
     "downloadReleasesTable": {
-      "changelog": "Changelog",
-      "releases": "Releases",
-      "docs": "Docs"
+      "version": "Node.js",
+      "nApiVersion": "N-API",
+      "npmVersion": "npm",
+      "codename": "Codename",
+      "releaseDate": "Released at",
+      "actions": {
+        "changelog": "Changelog",
+        "releases": "Releases",
+        "docs": "Docs"
+      }
     },
     "pagination": {
       "next": "Next",

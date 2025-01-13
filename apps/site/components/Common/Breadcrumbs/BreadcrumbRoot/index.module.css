@@ -1,6 +1,7 @@
 .list {
-  @apply flex
-    w-full
+  @apply xs:w-full
+    flex
+    w-screen
     gap-5
     px-6;
 }

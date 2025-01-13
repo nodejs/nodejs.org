@@ -1,9 +1,9 @@
 import satisfies from 'semver/functions/satisfies';
 
 import type { SelectValue } from '@/components/Common/Select';
+import InstallMethodIcons from '@/components/Icons/InstallationMethod';
 import OSIcons from '@/components/Icons/OperatingSystem';
 import PackageManagerIcons from '@/components/Icons/PackageManager';
-import PlatformIcons from '@/components/Icons/Platform';
 import type { NodeReleaseStatus } from '@/types';
 import type * as Types from '@/types/release';
 import type { UserOS, UserPlatform } from '@/types/userOS';
@@ -162,7 +162,7 @@ export const INSTALL_METHODS: Array<
     label: InstallationMethodLabel.NVM,
     value: 'NVM',
     compatibility: { os: ['MAC', 'LINUX', 'OTHER'] },
-    iconImage: <PlatformIcons.NVM width={16} height={16} />,
+    iconImage: <InstallMethodIcons.NVM width={16} height={16} />,
     recommended: true,
     url: 'https://github.com/nvm-sh/nvm',
     info: 'layouts.download.codeBox.platformInfo.nvm',
@@ -171,7 +171,7 @@ export const INSTALL_METHODS: Array<
     label: InstallationMethodLabel.FNM,
     value: 'FNM',
     compatibility: { os: ['MAC', 'LINUX', 'WIN'] },
-    iconImage: <PlatformIcons.FNM width={16} height={16} />,
+    iconImage: <InstallMethodIcons.FNM width={16} height={16} />,
     url: 'https://github.com/Schniz/fnm',
     info: 'layouts.download.codeBox.platformInfo.fnm',
   },
@@ -179,7 +179,7 @@ export const INSTALL_METHODS: Array<
     label: InstallationMethodLabel.BREW,
     value: 'BREW',
     compatibility: { os: ['MAC', 'LINUX'], releases: ['Current', 'LTS'] },
-    iconImage: <PlatformIcons.Homebrew width={16} height={16} />,
+    iconImage: <InstallMethodIcons.Homebrew width={16} height={16} />,
     url: 'https://brew.sh/',
     info: 'layouts.download.codeBox.platformInfo.brew',
   },
@@ -187,7 +187,7 @@ export const INSTALL_METHODS: Array<
     label: InstallationMethodLabel.DEVBOX,
     value: 'DEVBOX',
     compatibility: { os: ['WIN', 'MAC', 'LINUX'] },
-    iconImage: <PlatformIcons.Devbox width={16} height={16} />,
+    iconImage: <InstallMethodIcons.Devbox width={16} height={16} />,
     url: 'https://jetify.com/devbox/',
     info: 'layouts.download.codeBox.platformInfo.devbox',
   },
@@ -195,7 +195,7 @@ export const INSTALL_METHODS: Array<
     label: InstallationMethodLabel.CHOCO,
     value: 'CHOCO',
     compatibility: { os: ['WIN'] },
-    iconImage: <PlatformIcons.Choco width={16} height={16} />,
+    iconImage: <InstallMethodIcons.Choco width={16} height={16} />,
     url: 'https://chocolatey.org/',
     info: 'layouts.download.codeBox.platformInfo.choco',
   },
@@ -203,7 +203,7 @@ export const INSTALL_METHODS: Array<
     label: InstallationMethodLabel.DOCKER,
     value: 'DOCKER',
     compatibility: { os: ['WIN', 'MAC', 'LINUX'] },
-    iconImage: <PlatformIcons.Docker width={16} height={16} />,
+    iconImage: <InstallMethodIcons.Docker width={16} height={16} />,
     recommended: true,
     url: 'https://docs.docker.com/get-started/get-docker/',
     info: 'layouts.download.codeBox.platformInfo.docker',

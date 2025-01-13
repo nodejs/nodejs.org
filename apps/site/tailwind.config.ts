@@ -99,6 +99,7 @@ export default {
       white: '#FFFFFF',
       transparent: 'transparent',
       shadow: '#101828',
+      inherit: 'inherit',
     },
     fontSize: {
       xs: ['0.75rem', '1rem'],

@@ -2,7 +2,8 @@ import {
   mapAuthorToCardAuthors,
   getAuthorWithId,
   getAuthorWithName,
-} from '../authorUtils';
+  getAuthors,
+} from '@/util/authorUtils';
 
 describe('mapAuthorToCardAuthors', () => {
   it('maps authors to card authors with default avatar source', () => {
@@ -94,5 +95,27 @@ describe('getAuthorWithName', () => {
         fallback: 'CA',
       },
     ]);
+  });
+});
+
+describe('authorUtils', () => {
+  test('mapAuthorToCardAuthors splits authors by common separators', () => {
+    const result = mapAuthorToCardAuthors('Node, React & prepared by Vue');
+    expect(result).toEqual(['Node', 'React', 'Vue']);
+  });
+
+  test('getAuthorWithId returns objects with GitHub avatars', () => {
+    const result = getAuthorWithId(['someUser'], false);
+    expect(result[0].image).toContain('github');
+  });
+
+  test('getAuthorWithName returns known author details or fallback to acronym', () => {
+    const result = getAuthorWithName(['unknownAuthor'], true);
+    expect(result[0].fallback).toBe('U');
+  });
+
+  test('getAuthors uses getAuthorWithId if usernames array is provided', () => {
+    const result = getAuthors({ usernames: ['testUser'] });
+    expect(result[0].nickname).toBe('testUser');
   });
 });

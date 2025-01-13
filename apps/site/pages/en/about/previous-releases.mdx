@@ -14,12 +14,27 @@ Production applications should only use _Active LTS_ or _Maintenance LTS_ releas
 
 ![Releases](https://raw.githubusercontent.com/nodejs/Release/main/schedule.svg?sanitize=true)
 
-Full details regarding Node.js release schedule are available [on GitHub](https://github.com/nodejs/release#release-schedule).
+Full details regarding the Node.js release schedule are available [on GitHub](https://github.com/nodejs/release#release-schedule).
 
 ### Commercial Support
 
-Commercial support for versions past Maintenance phase is available through our OpenJS Ecosystem Sustainability Program partner [HeroDevs](https://herodevs.com/).
+Commercial support for versions past the Maintenance phase is available through our OpenJS Ecosystem Sustainability Program partner [HeroDevs](https://herodevs.com/).
 
-## Looking for latest release of a version branch?
+## Looking for the latest release of a version branch?
 
 <DownloadReleasesTable />
+
+## Official versus Community
+
+The Node.js website offers numerous installation methods that allow Node.js to be installed in a non-interactive manner,
+for example, via CLIs, OS package managers (such as `apt`), or Node.js version managers (such as `nvm`).
+
+The Node.js project, in an attempt to popularize and advertise community efforts, has introduced a new Downloads page that lists both Official and Community installation methods, providing more versatility and options for users.
+With this change, we introduced the concept of "Official" and "Community" installation methods. In order to be considered "Official", the installation method must meet the following requirements:
+
+| Requirements                                                                                                                       |
+| ---------------------------------------------------------------------------------------------------------------------------------- |
+| New Node.js releases must be available simultaneously upon the official release                                                    |
+| Project maintainers have a close relationship with Node.js, including direct communication                                         |
+| Installation method downloads the official binaries bundled by the Node.js project                                                 |
+| Installation method does **not** build from source when binaries are available, or alter the official binaries provided by Node.js |

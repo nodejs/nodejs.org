@@ -8,13 +8,12 @@ import AlertBox from '@/components/Common/AlertBox';
 import CodeBox from '@/components/Common/CodeBox';
 import Skeleton from '@/components/Common/Skeleton';
 import Link from '@/components/Link';
+import LinkWithArrow from '@/components/LinkWithArrow';
 import { createSval } from '@/next.jsx.compiler.mjs';
 import { ReleaseContext, ReleasesContext } from '@/providers/releaseProvider';
 import type { ReleaseContextType } from '@/types/release';
 import { INSTALL_METHODS } from '@/util/downloadUtils';
 import { highlightToHtml } from '@/util/getHighlighter';
-
-import LinkWithArrow from './LinkWithArrow';
 
 // Creates a minimal JavaScript interpreter for parsing the JavaScript code from the snippets
 // Note: that the code runs inside a sandboxed environment and cannot interact with any code outside of the sandbox

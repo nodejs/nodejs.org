@@ -1,8 +1,8 @@
 import { debounce } from '@/util/debounce';
 
-describe('debounce', () => {
-  jest.useFakeTimers();
+jest.useFakeTimers();
 
+describe('debounce', () => {
   it('should call the function only once', () => {
     const fn = jest.fn();
     const debouncedFn = debounce(fn, 1000);
@@ -27,5 +27,16 @@ describe('debounce', () => {
     jest.runAllTimers();
 
     expect(fn).toHaveBeenCalledWith(3);
+  });
+
+  it('should call the function after the delay', () => {
+    const mockFn = jest.fn();
+    const debouncedFn = debounce(mockFn, 500);
+
+    debouncedFn();
+    expect(mockFn).not.toBeCalled();
+
+    jest.advanceTimersByTime(500);
+    expect(mockFn).toBeCalled();
   });
 });
