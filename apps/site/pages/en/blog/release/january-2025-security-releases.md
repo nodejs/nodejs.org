@@ -17,9 +17,9 @@ releases lines on or shortly after, Tuesday, January 21, 2025 in order to addres
 
 ## Impact
 
-The 20.x release line of Node.js is vulnerable to 1 high severity issues, 2 medium severity issues.
-The 22.x release line of Node.js is vulnerable to 1 high severity issues, 2 medium severity issues.
 The 23.x release line of Node.js is vulnerable to 1 high severity issues, 2 medium severity issues.
+The 22.x release line of Node.js is vulnerable to 1 high severity issues, 2 medium severity issues.
+The 20.x release line of Node.js is vulnerable to 1 high severity issues, 2 medium severity issues.
 The 18.x release line of Node.js is vulnerable to 2 medium severity issues.
 
 It's important to note that End-of-Life versions are always affected when a security release occurs.
