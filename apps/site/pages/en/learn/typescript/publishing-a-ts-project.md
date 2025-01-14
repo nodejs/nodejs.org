@@ -28,7 +28,7 @@ Some important things to note:
 
 A repository would look something like:
 
-```text displayName="Source of the example TypeScript package (directory overview)"
+```text displayName="Directory overview the example TypeScript package"
 example-ts-pkg/
 ├ .github/
   ├ workflows/
@@ -47,7 +47,7 @@ example-ts-pkg/
 └ tsconfig.json
 ```
 
-```text displayName="(alt 1) Source of the example TypeScript package (directory overview)"
+```text displayName="(alt 1) Directory overview the example TypeScript package (directory overview)"
 example-ts-pkg/
 ├ .github/
   ├ workflows/
@@ -69,7 +69,7 @@ example-ts-pkg/
 └ tsconfig.json
 ```
 
-```text displayName="(alt 2) Source of the example TypeScript package (directory overview)"
+```text displayName="(alt 2) Directory overview the example TypeScript package (directory overview)"
 example-ts-pkg/
 ├ .github/
   ├ workflows/
