@@ -26,9 +26,9 @@ Some important things to note:
 
 - `.nvmrc` comes from [NVM](https://github.com/nvm-sh/nvm), a multi-version manager for node. It allows you to specify the version of node the project should generally use.
 
-A repository would look something like:
+A directory overview of a repository would look something like:
 
-```text displayName="Directory overview the example TypeScript package"
+```text displayName="Files co-located"
 example-ts-pkg/
 ├ .github/
   ├ workflows/
@@ -47,7 +47,7 @@ example-ts-pkg/
 └ tsconfig.json
 ```
 
-```text displayName="(alt 1) Directory overview the example TypeScript package (directory overview)"
+```text displayName="Files co-located but segregated"
 example-ts-pkg/
 ├ .github/
   ├ workflows/
@@ -69,7 +69,7 @@ example-ts-pkg/
 └ tsconfig.json
 ```
 
-```text displayName="(alt 2) Directory overview the example TypeScript package (directory overview)"
+```text displayName="'src' and 'test' fully segregated"
 example-ts-pkg/
 ├ .github/
   ├ workflows/
@@ -89,9 +89,9 @@ example-ts-pkg/
 └ tsconfig.json
 ```
 
-And its published package would look something like:
+And a directory overview of its published package would look something like:
 
-```text displayName="Published example TypeScript package (directory overview)"
+```text displayName="Fully flat"
 example-ts-pkg/
 ├ LICENSE
 ├ main.d.ts
@@ -104,7 +104,7 @@ example-ts-pkg/
 └ some-util.js
 ```
 
-```text displayName="(alt) Published example TypeScript package (directory overview)"
+```text displayName="With 'dist'"
 example-ts-pkg/
 ├ dist/
   ├ main.d.ts
