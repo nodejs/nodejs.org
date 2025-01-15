@@ -10,6 +10,8 @@ import LearnLayout from '@/layouts/Learn';
 import PostLayout from '@/layouts/Post';
 import type { Layouts } from '@/types';
 
+import WithNavBar from './withNavBar';
+
 const layouts = {
   about: AboutLayout,
   home: GlowingBackdropLayout,
@@ -19,6 +21,7 @@ const layouts = {
   'blog-category': BlogLayout,
   download: DownloadLayout,
   article: ArticlePageLayout,
+  skipToContent: WithNavBar,
 } satisfies Record<Layouts, FC>;
 
 type WithLayoutProps<L = Layouts> = PropsWithChildren<{ layout: L }>;
