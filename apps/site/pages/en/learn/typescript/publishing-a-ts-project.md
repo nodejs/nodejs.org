@@ -279,6 +279,8 @@ test
 
 `npm publish` will automatically run [`prepack` beforehand](https://docs.npmjs.com/cli/using-npm/scripts#npm-publish). `npm` will also run `prepack` automatically before `npm pack --dry-run` (so you can easily see what your published package will be without actually publishing it). **Beware**, [`node --run` does _not_ do that](../command-line/run-nodejs-scripts-from-the-command-line.md#using-the---run-flag). You can't use `node --run` for this step, so that caveat does not apply here, but it can for other steps.
 
+The `NPM_TOKEN` within `publish.yml` is an [npm access token](https://docs.npmjs.com/about-access-tokens). It must be added it to your [github **repository** secrets](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository).
+
 #### Breaking this down
 
 Generating type declarations is deterministic: you'll get the same output from the same input, every time. So there is no need to commit these to git.
