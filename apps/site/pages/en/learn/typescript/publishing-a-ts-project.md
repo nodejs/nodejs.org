@@ -118,7 +118,7 @@ example-ts-pkg/
 └ README.md
 ```
 
-A note about directory organisation: There are a few common practices for placing tests. Principle of least knowledge says to co-locate them (put them adjacent to implementation). Sometimes, that's in the same directory, or within a drawer like a `__test__` (also adjacent to the implementation, "alt 1"). Alternatively, some opt to create a `test/` sibling to `src/` ("alt 2"), either with a mirrored structure or a "junk drawer".
+A note about directory organisation: There are a few common practices for placing tests. Principle of least knowledge says to co-locate them (put them adjacent to implementation). Sometimes, that's in the same directory, or within a drawer like a `__test__` (also adjacent to the implementation, "Files co-located but segregated"). Alternatively, some opt to create a `test/` sibling to `src/` ("'src' and 'test' fully segregated"), either with a mirrored structure or a "junk drawer".
 
 ## What to do with your types
 
