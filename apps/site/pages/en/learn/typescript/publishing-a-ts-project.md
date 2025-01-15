@@ -139,11 +139,13 @@ Your editor (ex VS Code) likely has built-in support for TypeScript, displaying 
 The following [GitHub Action](https://github.com/features/actions) sets up a CI task to automatically check (and require) types pass inspection for a PR into the `main` branch.
 
 ```yaml displayName=".github/workflows/ci.yml"
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
 name: Tests
 
 on:
   pull_request:
-    branches: ['main']
+    branches: ['*']
 
 jobs:
   check-types:
@@ -164,22 +166,38 @@ jobs:
       # You may want to run a lint check here too
       - run: node --run types:check
 
-  test:
+  get-matrix:
+    # Automatically pick active LTS versions
     runs-on: ubuntu-latest
+    outputs:
+      latest: ${{ steps.set-matrix.outputs.requireds }}
+    steps:
+      - uses: ljharb/actions/node/matrix@main
+        id: set-matrix
+        with:
+          versionsAsRoot: true
+          type: majors
+          preset: '>= 22' # glob is not backported below 22.x
+
+  test:
+    needs: [get-matrix]
+    runs-on: ${{ matrix.os }}
 
     strategy:
+      fail-fast: false
       matrix:
-        node:
-          - version: 23.x
-          - version: 22.x
-      fail-fast: false # Prevent a failure in one version cancelling other runs
+        node-version: ${{ fromJson(needs.get-matrix.outputs.latest) }}
+        os:
+          - macos-latest
+          - ubuntu-latest
+          - windows-latest
 
     steps:
       - uses: actions/checkout@v4
-      - name: Use node ${{ matrix.node.version }}
+      - name: Use node ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node.version }}
+          node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - name: npm clean install
         run: npm ci
@@ -228,6 +246,8 @@ Since these are generated based on source code, they can be built as part of you
 Take the following example, where the type declarations are generated just before publishing to the NPM registry.
 
 ```yaml displayName=".github/workflows/publish.yml"
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
 name: Publish to NPM
 on:
   push:
