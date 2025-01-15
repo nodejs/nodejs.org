@@ -28,11 +28,11 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2024-12-04T00:00:00.000Z",
-      "endDate": "2024-12-11T00:00:00.000Z",
-      "text": "Save up to 60% on Node.js courses and certifications",
-      "link": "https://training.linuxfoundation.org/cyber-monday-openjs-2024/",
-      "type": "default"
+      "startDate": "2025-01-14T03:00:00.000Z",
+      "endDate": "2025-01-21T03:00:00.000Z",
+      "text": "New security releases to be made available Tuesday, January 21, 2025",
+      "link": "https://nodejs.org/en/blog/vulnerability/january-2025-security-releases",
+      "type": "warning"
     }
   },
   "websiteBadges": {

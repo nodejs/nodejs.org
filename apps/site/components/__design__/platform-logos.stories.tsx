@@ -16,6 +16,7 @@ export const PlatformLogos: StoryObj = {
         <InstallMethodIcons.Docker width={64} height={64} />
         <InstallMethodIcons.Homebrew width={64} height={64} />
         <InstallMethodIcons.NVM width={64} height={64} />
+        <InstallMethodIcons.Devbox width={64} height={64} />
       </div>
       <div className="flex flex-col items-center gap-4">
         <InstallMethodIcons.Choco width={64} height={64} />
