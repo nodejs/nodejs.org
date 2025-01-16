@@ -18,7 +18,7 @@ const WithNavBar: FC = () => {
   const pathname = usePathname();
 
   const skipToContent = classNames(
-    'bg-[#000] text-center font-semibold inline-flex items-center justify-center gap-2 py-2.5',
+    'bg-[#000] text-center font-semibold inline-flex items-center justify-center gap-2 py-2.5 motion-safe:transition-colors rounded border border-green-600 bg-green-600 text-white shadow-sm',
     'absolute left-0 top-0 m-3 -translate-y-16 bg-blue-500 p-3 text-white transition-transform focus:translate-y-0 focus:outline-none'
   );
 
