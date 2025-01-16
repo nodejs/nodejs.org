@@ -28,9 +28,9 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2025-01-14T03:00:00.000Z",
-      "endDate": "2025-01-21T03:00:00.000Z",
-      "text": "New security releases to be made available Tuesday, January 21, 2025",
+      "startDate": "2025-01-21T03:00:00.000Z",
+      "endDate": "2025-01-28T03:00:00.000Z",
+      "text": "January Security Release is available",
       "link": "https://nodejs.org/en/blog/vulnerability/january-2025-security-releases",
       "type": "warning"
     }
