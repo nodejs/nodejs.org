@@ -114,11 +114,26 @@ jobs:
           # Used for API requests that require GitHub API scopes
           NEXT_GITHUB_API_KEY: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build Next.js (Static)
-        # We only run full static builds within Pull Requests. As they're not needed on `merge_group` or `push` events
+      - name: Build Next.js (Static All Locales)
+        # We only run full static builds within Pull Requests. This step is also used to export
+        # static output in all languages, and it only works on `push` events.
+        if: github.event_name == 'push'
+        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
+        # the `${{ steps.turborepo_arguments.outputs.turbo_args }}` is a string substitution coming from a previous step
+        run: npx --package=turbo@latest -- turbo deploy ${{ steps.turborepo_arguments.outputs.turbo_args }}
+        env:
+          # We want to ensure we have enough RAM allocated to the Node.js process
+          # this should be a last resort in case by any chances the build memory gets too high
+          # but in general this should never happen
+          NODE_OPTIONS: '--max_old_space_size=4096'
+          # Used for API requests that require GitHub API scopes
+          NEXT_GITHUB_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build Next.js (Static Default Locale)
+        # We want to generate static output in the default language within Pull Requests
+        # in order to reduce source wastages and build times.
         # Note that we skip full static builds on Crowdin-based Pull Requests as these PRs should only contain translation changes
         if: |
-          (github.event_name == 'push') ||
           (github.event_name == 'pull_request_target' &&
             github.event.pull_request.head.ref != 'chore/crowdin')
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
@@ -131,6 +146,8 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
           # Used for API requests that require GitHub API scopes
           NEXT_GITHUB_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+          # We want to ensure that the static export for default locale only happens on `pull_request_target` events
+          NEXT_PUBLIC_STATIC_EXPORT_LOCALE: true
 
       - name: Sync Orama Cloud
         # We only want to sync the Orama Cloud production indexes on `push` events.
