@@ -128,6 +128,9 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
           # Used for API requests that require GitHub API scopes
           NEXT_GITHUB_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+          # We want to ensure that static exports for all locales are triggered only on `push` events to save resources
+          # and time.
+          NEXT_PUBLIC_STATIC_EXPORT_LOCALE: true
 
       - name: Build Next.js (Static Default Locale)
         # We want to generate static output in the default language within Pull Requests
@@ -146,8 +149,8 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
           # Used for API requests that require GitHub API scopes
           NEXT_GITHUB_API_KEY: ${{ secrets.GITHUB_TOKEN }}
-          # We want to ensure that the static export for default locale only happens on `pull_request_target` events
-          NEXT_PUBLIC_STATIC_EXPORT_LOCALE: true
+          # We want to ensure that static exports for all locales do not occur on `pull_request_target` events
+          NEXT_PUBLIC_STATIC_EXPORT_LOCALE: false
 
       - name: Sync Orama Cloud
         # We only want to sync the Orama Cloud production indexes on `push` events.

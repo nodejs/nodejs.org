@@ -25,8 +25,8 @@ export const generateMetadata = basePage.generateMetadata;
 
 // Generates all possible static paths based on the locales and environment configuration
 // - Returns an empty array if static export is disabled (`ENABLE_STATIC_EXPORT` is false)
-// - If `ENABLE_STATIC_EXPORT_LOCALE` is true, generates paths only for the default locale
-// - Otherwise, generates paths for all available locales
+// - If `ENABLE_STATIC_EXPORT_LOCALE` is true, generates paths for all available locales
+// - Otherwise, generates paths only for the default locale
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-static-params
 export const generateStaticParams = async () => {
   // Return an empty array if static export is disabled
@@ -43,17 +43,13 @@ export const generateStaticParams = async () => {
     );
   };
 
-  // Handles the case where static export is enabled but only for the default locale
-  if (ENABLE_STATIC_EXPORT_LOCALE) {
-    const routes = await getRoutesForLocale(defaultLocale.code);
-
-    return routes.sort();
-  }
+  // Determine which locales to include in the static export
+  const locales = ENABLE_STATIC_EXPORT_LOCALE
+    ? availableLocaleCodes
+    : [defaultLocale.code];
 
   // Generates all possible routes for all available locales
-  const routes = await Promise.all(
-    availableLocaleCodes.map(getRoutesForLocale)
-  );
+  const routes = await Promise.all(locales.map(getRoutesForLocale));
 
   return routes.flat().sort();
 };
