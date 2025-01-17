@@ -20,7 +20,7 @@
           "security": "セキュリティー",
           "certification": "認定資格",
           "blog": "ブログ",
-          "contribute": "編集への協力"
+          "contribute": "開発への協力"
         }
       }
     },
@@ -132,7 +132,7 @@
           "getInvolved": "参加しよう",
           "collabSummit": "コラボレーションサミット",
           "upcomingEvents": "今後のイベント",
-          "contribute": "Node.jsに貢献する",
+          "contribute": "開発への協力",
           "codeOfConduct": "行動規範"
         }
       }
@@ -279,6 +279,7 @@
           "fnm": "\"fnm\"はクロスプラットフォームに対応したNode.jsのバージョンマネージャーです。",
           "brew": "HomebrewはmacOS用およびLinux用のパッケージマネージャーです。",
           "choco": "ChocolateyはWIndows用のパッケージマネージャーです。",
+          "devbox": "Devboxは隔離された再現可能な開発環境を構築します。",
           "docker": "Dockerはコンテナー化に関するプラットフォームです。"
         }
       }
