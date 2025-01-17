@@ -32,6 +32,7 @@ export enum InstallationMethodLabel {
   FNM = 'fnm',
   BREW = 'Brew',
   CHOCO = 'Chocolatey',
+  DEVBOX = 'Devbox',
   DOCKER = 'Docker',
 }
 
@@ -171,6 +172,7 @@ export const INSTALL_METHODS: Array<
     value: 'FNM',
     compatibility: { os: ['MAC', 'LINUX', 'WIN'] },
     iconImage: <InstallMethodIcons.FNM width={16} height={16} />,
+    recommended: true,
     url: 'https://github.com/Schniz/fnm',
     info: 'layouts.download.codeBox.platformInfo.fnm',
   },
@@ -181,6 +183,14 @@ export const INSTALL_METHODS: Array<
     iconImage: <InstallMethodIcons.Homebrew width={16} height={16} />,
     url: 'https://brew.sh/',
     info: 'layouts.download.codeBox.platformInfo.brew',
+  },
+  {
+    label: InstallationMethodLabel.DEVBOX,
+    value: 'DEVBOX',
+    compatibility: { os: ['WIN', 'MAC', 'LINUX'] },
+    iconImage: <InstallMethodIcons.Devbox width={16} height={16} />,
+    url: 'https://jetify.com/devbox/',
+    info: 'layouts.download.codeBox.platformInfo.devbox',
   },
   {
     label: InstallationMethodLabel.CHOCO,
