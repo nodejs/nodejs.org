@@ -66,7 +66,7 @@ async function example() {
     const data = await fs.readFile('/Users/joe/test.txt', { encoding: 'utf8' });
     console.log(data);
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 }
 example();
@@ -79,7 +79,7 @@ try {
   const data = await fs.readFile('/Users/joe/test.txt', { encoding: 'utf8' });
   console.log(data);
 } catch (err) {
-  console.log(err);
+  console.error(err);
 }
 ```
 
