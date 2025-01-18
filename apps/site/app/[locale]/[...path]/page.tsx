@@ -8,9 +8,12 @@
  */
 
 import * as basePage from '@/app/[locale]/page';
-import { ENABLE_STATIC_EXPORT } from '@/next.constants.mjs';
+import {
+  ENABLE_STATIC_EXPORT_LOCALE,
+  ENABLE_STATIC_EXPORT,
+} from '@/next.constants.mjs';
 import { dynamicRouter } from '@/next.dynamic.mjs';
-import { availableLocaleCodes } from '@/next.locales.mjs';
+import { availableLocaleCodes, defaultLocale } from '@/next.locales.mjs';
 
 // This is the default Viewport Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-viewport#generateviewport-function
@@ -20,21 +23,35 @@ export const generateViewport = basePage.generateViewport;
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 export const generateMetadata = basePage.generateMetadata;
 
-// This provides all the possible paths that can be generated statically
-// + provides all the paths that we support on the Node.js Website
+// Generates all possible static paths based on the locales and environment configuration
+// - Returns an empty array if static export is disabled (`ENABLE_STATIC_EXPORT` is false)
+// - If `ENABLE_STATIC_EXPORT_LOCALE` is true, generates paths for all available locales
+// - Otherwise, generates paths only for the default locale
+// @see https://nextjs.org/docs/app/api-reference/functions/generate-static-params
 export const generateStaticParams = async () => {
-  const allAvailableRoutes = await Promise.all(
-    // Gets all mapped routes to the Next.js Routing Engine by Locale
-    availableLocaleCodes.map(async (locale: string) => {
-      const routesForLanguage = await dynamicRouter.getRoutesByLanguage(locale);
+  // Return an empty array if static export is disabled
+  if (!ENABLE_STATIC_EXPORT) {
+    return [];
+  }
 
-      return routesForLanguage.map(pathname =>
-        dynamicRouter.mapPathToRoute(locale, pathname)
-      );
-    })
-  );
+  // Helper function to fetch and map routes for a specific locale
+  const getRoutesForLocale = async (locale: string) => {
+    const routes = await dynamicRouter.getRoutesByLanguage(locale);
 
-  return ENABLE_STATIC_EXPORT ? allAvailableRoutes.flat().sort() : [];
+    return routes.map(pathname =>
+      dynamicRouter.mapPathToRoute(locale, pathname)
+    );
+  };
+
+  // Determine which locales to include in the static export
+  const locales = ENABLE_STATIC_EXPORT_LOCALE
+    ? availableLocaleCodes
+    : [defaultLocale.code];
+
+  // Generates all possible routes for all available locales
+  const routes = await Promise.all(locales.map(getRoutesForLocale));
+
+  return routes.flat().sort();
 };
 
 // Enforces that this route is used as static rendering

@@ -36,6 +36,17 @@ export const ENABLE_STATIC_EXPORT =
   process.env.NEXT_PUBLIC_STATIC_EXPORT === true;
 
 /**
+ * This is used to ensure that pages are Static Export for all locales or only
+ * in the default (`en`) locale.
+ *
+ * Note that this is a manual Environment Variable defined by us during the
+ * build process in CI.
+ */
+export const ENABLE_STATIC_EXPORT_LOCALE =
+  process.env.NEXT_PUBLIC_STATIC_EXPORT_LOCALE === 'true' ||
+  process.env.NEXT_PUBLIC_STATIC_EXPORT_LOCALE === true;
+
+/**
  * This is used for any place that requires the full canonical URL path for the Node.js Website (and its deployment), such as for example, the Node.js RSS Feed.
  *
  * This variable can either come from the Vercel Deployment as `NEXT_PUBLIC_VERCEL_URL` or from the `NEXT_PUBLIC_BASE_URL` Environment Variable that is manually defined

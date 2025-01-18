@@ -13,7 +13,10 @@ import type { FC } from 'react';
 
 import { setClientContext } from '@/client-context';
 import WithLayout from '@/components/withLayout';
-import { ENABLE_STATIC_EXPORT } from '@/next.constants.mjs';
+import {
+  ENABLE_STATIC_EXPORT_LOCALE,
+  ENABLE_STATIC_EXPORT,
+} from '@/next.constants.mjs';
 import { PAGE_VIEWPORT, DYNAMIC_ROUTES } from '@/next.dynamic.constants.mjs';
 import { dynamicRouter } from '@/next.dynamic.mjs';
 import { allLocaleCodes, availableLocaleCodes } from '@/next.locales.mjs';
@@ -37,15 +40,28 @@ export const generateMetadata = async (props: DynamicParams) => {
   return dynamicRouter.getPageMetadata(locale, pathname);
 };
 
-// This provides all the possible paths that can be generated statically
-// + provides all the paths that we support on the Node.js Website
+// Generates all possible static paths based on the locales and environment configuration
+// - Returns an empty array if static export is disabled (`ENABLE_STATIC_EXPORT` is false)
+// - If `ENABLE_STATIC_EXPORT_LOCALE` is true, generates paths for all available locales
+// - Otherwise, generates paths only for the default locale
+// @see https://nextjs.org/docs/app/api-reference/functions/generate-static-params
 export const generateStaticParams = async () => {
-  const allAvailableRoutes = await Promise.all(
+  // Return an empty array if static export is disabled
+  if (!ENABLE_STATIC_EXPORT) {
+    return [];
+  }
+
+  // Determine which locales to include in the static export
+  const locales = ENABLE_STATIC_EXPORT_LOCALE
+    ? availableLocaleCodes
+    : [defaultLocale.code];
+
+  const routes = await Promise.all(
     // Gets all mapped routes to the Next.js Routing Engine by Locale
-    availableLocaleCodes.map((locale: string) => ({ locale }))
+    locales.map((locale: string) => ({ locale }))
   );
 
-  return ENABLE_STATIC_EXPORT ? allAvailableRoutes.flat().sort() : [];
+  return routes.flat().sort();
 };
 
 // This method parses the current pathname and does any sort of modifications needed on the route
