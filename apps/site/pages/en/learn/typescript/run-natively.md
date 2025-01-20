@@ -1,7 +1,7 @@
 ---
 title: Running TypeScript Natively
 layout: learn
-authors: AugustinMauroy,khaosdoctor
+authors: AugustinMauroy,khaosdoctor,jakebailey
 ---
 
 > **⚠️WARNING⚠️:** All content in this article uses Node.js experimental features. Please make sure you are using a version of Node.js that supports the features mentioned in this article. And remember that experimental features can change in future versions of Node.js.
@@ -57,7 +57,7 @@ You can get more information on the [API docs](https://nodejs.org/docs/latest/ap
 
 ### Configuration
 
-Node.js will not support `tsconfig.json` by default. This means that, for a seamless experience while using TypeScript with Node, a base `tsconfig.json` configuration is required in order to match what Node achieves using [Amaro](https://github.com/nodejs/amaro) (Node's TS loader). Such configuration can be found [here](https://nodejs.org/api/typescript.html#type-stripping) using TypeScript on version **5.7 or higher**.
+Node.js's TypeScript loader ([Amaro](https://github.com/nodejs/amaro)) does not check the `tsconfig.json` file when transforming TypeScript code. In order to configure TypeScript to recognize (and match) this behavior when type checking, we recommend setting the `compilerOptions` listed in [here](https://nodejs.org/api/typescript.html#type-stripping), as well as using TypeScript on version **5.7 or higher**.
 
 ## Important notes
 
