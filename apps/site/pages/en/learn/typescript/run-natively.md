@@ -1,7 +1,7 @@
 ---
 title: Running TypeScript Natively
 layout: learn
-authors: AugustinMauroy,khaosdoctor,jakebailey
+authors: AugustinMauroy, khaosdoctor, jakebailey
 ---
 
 > **⚠️WARNING⚠️:** All content in this article uses Node.js experimental features. Please make sure you are using a version of Node.js that supports the features mentioned in this article. And remember that experimental features can change in future versions of Node.js.
