@@ -57,7 +57,9 @@ You can get more information on the [API docs](https://nodejs.org/docs/latest/ap
 
 ### Configuration
 
-Node.js's TypeScript loader ([Amaro](https://github.com/nodejs/amaro)) does not check the `tsconfig.json` file when transforming TypeScript code. In order to configure TypeScript to recognize (and match) this behavior when type checking, we recommend setting the `compilerOptions` listed in [here](https://nodejs.org/api/typescript.html#type-stripping), as well as using TypeScript on version **5.7 or higher**.
+The Node.js TypeScript loader ([Amaro](https://github.com/nodejs/amaro)) does not need or use `tsconfig.json` to run TypeScript code.
+
+We recommend configuring your editor and `tsc` to reflect Node.js behavior by creating a `tsconfig.json` using the `compilerOptions` listed [here](https://nodejs.org/api/typescript.html#type-stripping), as well as using TypeScript version **5.7 or higher**.
 
 ## Important notes
 
