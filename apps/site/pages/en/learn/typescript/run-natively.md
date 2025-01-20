@@ -14,7 +14,7 @@ In the previous articles, we learned how to run TypeScript code using transpilat
 
 Since V22.6.0, Node.js has experimental support for some TypeScript syntax via "type stripping". You can write code that's valid TypeScript directly in Node.js without the need to transpile it first.
 
-The `--experimental-strip-types` flag tells Node.js to strip the type annotations from the TypeScript code before running it.
+The [`--experimental-strip-types`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--experimental-strip-types) flag tells Node.js to strip the type annotations from the TypeScript code before running it.
 
 ```bash
 node --experimental-strip-types example.ts
@@ -22,13 +22,13 @@ node --experimental-strip-types example.ts
 
 And that's it! You can now run TypeScript code directly in Node.js without the need to transpile it first, and use TypeScript to catch type-related errors.
 
-In V22.7.0 this experimental support was extended to transform TypeScript-only syntax, like `enum`s and `namespace`, with the addition of the `--experimental-transform-types` flag. Enabling `--experimental-transform-types` automatically implies that `--experimental-strip-types` is enabled, so there's no need to use both flags in the same command:
+In V22.7.0 this experimental support was extended to transform TypeScript-only syntax, like `enum`s and `namespace`, with the addition of the [`--experimental-transform-types`](https://nodejs.org/docs/latest-v23.x/api/cli.html#--experimental-transform-types) flag. Enabling `--experimental-transform-types` automatically implies that `--experimental-strip-types` is enabled, so there's no need to use both flags in the same command:
 
 ```bash
 node --experimental-transform-types another-example.ts
 ```
 
-From version V23 onwards, the `--experimental-strip-types` flag is enabled by default, enabling you to run any supported syntax, so running files like the one below with `node file.ts` is supported:
+From V23 onwards, the `--experimental-strip-types` flag is enabled by default (you can disable it via the [`--no-experimental-strip-types`](https://nodejs.org/docs/latest-v23.x/api/cli.html#--no-experimental-strip-types) flag), enabling you to run any supported syntax, so running files like the one below with `node file.ts` is supported:
 
 ```ts
 function foo(bar: number): string {
@@ -53,7 +53,7 @@ Future versions of Node.js will include support for TypeScript without the need 
 
 At the time of writing, the experimental support for TypeScript in Node.js has some limitations.
 
-You can get more information on the [API docs](https://nodejs.org/docs/latest/api/typescript.html#typescript-features).
+You can get more information on the [API docs](https://nodejs.org/docs/latest-v23.x/api/typescript.html#typescript-features).
 
 ### Configuration
 
