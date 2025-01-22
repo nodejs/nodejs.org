@@ -11,6 +11,8 @@ import { useSiteNavigation } from '@/hooks';
 import { useRouter, usePathname } from '@/navigation.mjs';
 import { availableLocales } from '@/next.locales.mjs';
 
+import Button from './Common/Button';
+
 const WithNavBar: FC = () => {
   const { navigationItems } = useSiteNavigation();
   const { resolvedTheme, setTheme } = useTheme();
@@ -18,8 +20,7 @@ const WithNavBar: FC = () => {
   const pathname = usePathname();
 
   const skipToContent = classNames(
-    'bg-[#000] text-center font-semibold inline-flex items-center justify-center gap-2 py-2.5 motion-safe:transition-colors rounded border border-green-600 bg-green-600 text-white shadow-sm',
-    'absolute left-0 top-0 m-3 -translate-y-16 bg-blue-500 p-3 text-white transition-transform focus:translate-y-0 focus:outline-none'
+    'absolute left-0 top-0 m-3 -translate-y-16 bg-blue-500 p-3 transition-transform focus:translate-y-0 focus:outline-none'
   );
 
   const locale = useLocale();
@@ -30,9 +31,9 @@ const WithNavBar: FC = () => {
 
   return (
     <div>
-      <a className={skipToContent} href="#main">
+      <Button className={skipToContent} href="#main">
         {t('components.containers.navBar.links.skipToContent')}
-      </a>
+      </Button>
 
       <WithBanner section="index" />
 
