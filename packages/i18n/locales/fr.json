@@ -138,9 +138,16 @@
       }
     },
     "downloadReleasesTable": {
-      "changelog": "Journal de modifications",
-      "releases": "Sorties",
-      "docs": "Docs"
+      "version": "Node.js",
+      "nApiVersion": "N-API",
+      "npmVersion": "npm",
+      "codename": "Nom de code",
+      "releaseDate": "Publié le",
+      "actions": {
+        "changelog": "Journal de modifications",
+        "releases": "Versions",
+        "docs": "Documents"
+      }
     },
     "pagination": {
       "next": "Suivant",
@@ -272,6 +279,7 @@
           "fnm": "\"fnm\" est un gestionnaire de versions Node.js multiplateforme.",
           "brew": "Homebrew est un gestionnaire de paquets pour macOS et Linux.",
           "choco": "Chocolatey est un gestionnaire de paquets pour Windows.",
+          "devbox": "Devbox crée des environnements de développement isolés et reproductibles.",
           "docker": "Docker est une plateforme de conteneurisation."
         }
       }

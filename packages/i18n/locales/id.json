@@ -90,9 +90,11 @@
         "modules": {
           "links": {
             "modules": "Module",
+            "publishingAPackage": "Menerbitkan Paket",
             "publishingNodeApiModules": "Cara mempublikasikan paket Node-API",
             "anatomyOfAnHttpTransaction": "Anatomi Transaksi HTTP",
             "abiStability": "Stabilitas ABI",
+            "howToUseStreams": "Cara menggunakan stream",
             "backpressuringInStreams": "Backpressuring dalam aliran (streams)"
           }
         },
@@ -135,32 +137,28 @@
         }
       }
     },
-    "downloadList": {
-      "links": {
-        "previousReleases": "Rilisan Node.js",
-        "packageManager": "Instalasi Node.js menggunakan package manager",
-        "shaSums": {
-          "title": "SHASUMS yang ditandatangani untuk file rilisan",
-          "howToVerify": " (Cara Verifikasi)"
-        },
-        "allDownloads": "Semua opsi unduhan",
-        "nightlyReleases": "Build Nightly",
-        "unofficialBuilds": "Build tidak resmi",
-        "buildingFromSource": "Membangun Node.js dari sumber pada plaform yang didukung",
-        "installingOnLinux": "Instalasi Node.js melalui arsip biner",
-        "installingOnWsl": "Instalasi pada Windows Subsystem for Linux (WSL)"
-      }
-    },
     "downloadReleasesTable": {
-      "changelog": "Log Perubahan",
-      "releases": "Rilis",
-      "docs": "Dokumentasi"
+      "version": "Node.js",
+      "nApiVersion": "N-API",
+      "npmVersion": "npm",
+      "codename": "Kode nama",
+      "releaseDate": "Dirilis pada",
+      "actions": {
+        "changelog": "Log Perubahan",
+        "releases": "Rilis",
+        "docs": "Dokumen"
+      }
     },
     "pagination": {
       "next": "Berikutnya",
       "previous": "Sebelumnya"
     },
     "common": {
+      "alertBox": {
+        "info": "Info",
+        "warning": "Peringatan",
+        "danger": "Bahaya"
+      },
       "breadcrumbs": {
         "navigateToHome": "Navigasi ke Beranda"
       },
@@ -201,32 +199,9 @@
       "viewAs": "Tampilkan sebagai",
       "tableOfContents": "Daftar isi"
     },
-    "downloads": {
-      "changelogModal": {
-        "startContributing": "Mulai Berkontribusi"
-      }
-    },
     "search": {
       "searchBox": {
         "placeholder": "Mulai mengetik..."
-      },
-      "seeAll": {
-        "text": "Lihat semua {count} hasil"
-      },
-      "searchError": {
-        "text": "Terjadi kesalahan saat pencarian. Harap coba lagi nanti."
-      },
-      "poweredBy": {
-        "text": "Diberdayakan oleh"
-      },
-      "noResults": {
-        "text": "Tidak ada hasil ditemukan untuk \"{query}\"."
-      },
-      "emptyState": {
-        "text": "Mencari sesuatu..."
-      },
-      "searchPage": {
-        "title": "Anda sedang mencari: {query}"
       }
     },
     "blog": {
@@ -277,49 +252,36 @@
       "backToHome": "Kembali ke Beranda"
     },
     "download": {
-      "selectCategory": "Kategori",
-      "categories": {
-        "prebuilt-installer": "Prebuilt Installer",
-        "prebuilt-binaries": "Biner Prebuilt",
-        "package-manager": "Package manager",
-        "source-code": "Kode Sumber"
-      },
       "buttons": {
-        "prebuilt": "Unduh Node.js {version}",
-        "source": "Unduh kode sumber Node.js {version}"
+        "installer": "Penginstal {os} (.{extension})",
+        "binary": "Biner Standalone (.{extension})"
       },
       "dropdown": {
-        "bitness": "Panjang Bit",
+        "platform": "Platform",
         "os": "Sistem Operasi",
         "version": "Versi",
-        "platform": "Platform"
+        "installMethod": "Cara pasang",
+        "packageManager": "Package manager",
+        "unknown": "Tak diketahui",
+        "platformGroups": {
+          "official": "Direkomendasikan (Resmi)",
+          "unofficial": "Komunitas (Tidak Resmi)"
+        }
       },
       "codeBox": {
-        "unsupportedVersionWarning": "Versi ini sudah tidak dalam tahap pemeliharaan. Temukan informasi selengkapnya di sini:",
-        "fnmEnvSetup": "konfigurasikan lingkungan fnm",
-        "systemManagerWarning": "bukan manajer paket Node.js. Pastikan Anda sudah menginstal {packageManager}.",
-        "communityWarning": "Package manager dan skrip instalasi tidak di kelola oleh Node.js.",
-        "communityWarningReport": "Jika kamu mengalami masalah, harap hubungi pengelola pengelola paket.",
-        "installsNvm": "menginstal nvm (Pengelola Versi Node)",
-        "downloadAndInstallNodejsRestartTerminal": "unduh dan pasang Node.js (anda mungkin perlu memulai ulang terminal)",
-        "verifiesRightNodejsVersion": "memastikan versi Node.js yang benar ada di lingkungan",
-        "verifiesRightNpmVersion": "memastikan versi npm yang benar ada di lingkungan",
-        "shouldPrint": "seharusnya mencetak `{version}`",
-        "installsFnm": "menginstal fnm (Pengelola Node Cepat)",
-        "downloadAndInstallNodejs": "unduh dan pasang Node.js",
-        "activateFNM": "aktifkan fnm",
-        "noteWithColon": "CATATAN:",
-        "dockerIsNotNodejsPackageManager": "Docker bukan pengelola paket Node.js.",
-        "PleaseEndureAlreadyInstallOnSystem": "Silakan pastikan bahwa ia sudah terpasang di sistem Anda.",
-        "dockerInstructions": "Ikuti instruksi resmi di https://docs.docker.com/desktop/",
-        "dockerImagesLink": "Gambar Docker disediakan secara resmi di https://github.com/nodejs/docker-node/",
-        "pullsNodejsDockerImage": "mengambil gambar Docker Node.js",
-        "homebrewIsNotNodejsPackageManager": "Homebrew bukan pengelola paket Node.js.",
-        "homebrewInstructions": "Ikuti instruksi resmi di https://brew.sh/",
-        "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew hanya mendukung pemasangan versi utama Node.js dan mungkin tidak mendukung versi Node.js terbaru dari jalur rilis {version}.",
-        "chocolateyIsNotNodejsPackageManager": "Chocolatey bukan pengelola paket Node.js.",
-        "chocolateyInstructions": "Ikuti instruksi resmi di https://chocolatey.org/",
-        "chocolateyNotMaintanedByNodejs": "Chocolatey tidak secara resmi dikelola oleh proyek Node.js dan mungkin tidak mendukung versi {version} dari Node.js"
+        "unsupportedVersionWarning": "Versi ini sudah tidak dalam tahap pemeliharaan. Harap gunakan versi yang saat ini didukung. <link>Pahami dukungan EOL.</link>",
+        "communityPlatformInfo": "Metode instalasi yang melibatkan perangkat lunak komunitas didukung oleh tim yang memelihara perangkat lunak tersebut.",
+        "externalSupportInfo": "Jika Anda mengalami masalah, silakan kunjungi situs web <link>{platform}</link>",
+        "noScriptDetected": "Halaman ini memerlukan JavaScript. Anda dapat mengunduh Node.js tanpa JavaScript dengan mengunjungi <link>halaman rilis</link> secara langsung.",
+        "platformInfo": {
+          "default": "{platform} dan skrip instalasinya tidak dikelola oleh proyek Node.js.",
+          "nvm": "\"nvm\" adalah manajer versi Node.js lintas-platform.",
+          "fnm": "\"fnm\" adalah manajer versi Node.js lintas-platform.",
+          "brew": "Homebrew adalah manajer paket untuk macOS dan Linux.",
+          "choco": "Chocolatey adalah manajer paket untuk Windows.",
+          "devbox": "Devbox menciptakan lingkungan pengembangan yang terisolasi dan dapat direproduksi.",
+          "docker": "Docker adalah platform kontainerisasi."
+        }
       }
     }
   }

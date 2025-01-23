@@ -9,7 +9,7 @@ Versi Node.js utama memasuki status rilis saat ini selama enam bulan, yang membe
 
 ## Jadwal rilis
 
-![Releases](https://dimensi-dp.org/images/schedule.svg)
+![Releases](https://raw.githubusercontent.com/nodejs/Release/main/schedule.svg?sanitize=true)
 
 Detail lengkap mengenai jadwal rilis Node.js tersedia [di GitHub](https://github.com/nodejs/release#release-schedule).
 
@@ -20,3 +20,17 @@ Dukungan komersial untuk versi yang melewati fase Pemeliharaan tersedia melalui 
 ## Mencari rilis terbaru dari cabang versi?
 
 <DownloadReleasesTable />
+
+## Resmi vs Komunitas
+
+Situs web Node.js menawarkan sejumlah metode instalasi yang memungkinkan Node.js diinstal dengan cara non-interaktif, misalnya, melalui CLI, pengelola paket OS (seperti `apt`), atau pengelola versi Node.js (seperti `nvm`).
+
+Proyek Node.js, dalam upaya untuk mempopulerkan dan mengiklankan upaya komunitas, telah memperkenalkan halaman Unduhan baru yang mencantumkan metode instalasi Resmi dan Komunitas, yang menyediakan lebih banyak fleksibilitas dan opsi bagi pengguna.
+Dengan perubahan ini, kami memperkenalkan konsep metode instalasi "Resmi" dan "Komunitas". Agar dianggap "Resmi", metode instalasi harus memenuhi persyaratan berikut:
+
+| Persyaratan                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------ |
+| Rilis Node.js baru harus tersedia secara bersamaan setelah rilis resmi                                                         |
+| Pengelola proyek memiliki hubungan dekat dengan Node.js, termasuk komunikasi langsung                                          |
+| Metode instalasi mengunduh biner resmi yang dibundel oleh proyek Node.js                                                       |
+| Metode instalasi **tidak** membangun dari sumber ketika biner tersedia, atau mengubah biner resmi yang disediakan oleh Node.js |
