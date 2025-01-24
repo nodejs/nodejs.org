@@ -36,6 +36,7 @@ const Button: FC<ButtonProps> = ({
           styles[size],
           className
         )}
+        tabIndex={disabled ? -1 : 0}
         {...props}
       >
         {children}
