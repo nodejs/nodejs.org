@@ -359,16 +359,6 @@ Descarga el [Instalador de Windows](/#home-downloadhead) directamente desde la w
 
 ### Alternativas
 
-Usando **[Winget](https://aka.ms/winget-cli)**:
-
-```bash
-winget install OpenJS.NodeJS
-# or for LTS
-winget install OpenJS.NodeJS.LTS
-```
-
-Después de ejecutar uno de los dos comandos anteriores, puede ser necesario reiniciar el emulador de terminal antes de que el comando CLI `node` esté disponible.
-
 Usando **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash

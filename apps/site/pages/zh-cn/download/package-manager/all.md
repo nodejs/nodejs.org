@@ -355,16 +355,6 @@ xbps-install -Sy nodejs
 
 ### 备选资源
 
-使用 **[Winget](https://aka.ms/winget-cli)**：
-
-```bash
-winget install OpenJS.NodeJS
-# or for LTS
-winget install OpenJS.NodeJS.LTS
-```
-
-在运行上述两个命令之后，可能需要重新启动终端模拟器，然后 `node` 命令行界面命令才能生效。
-
 使用 **[Chocolatey](https://chocolatey.org/)**：
 
 ```bash

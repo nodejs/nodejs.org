@@ -364,17 +364,6 @@ Téléchargez l'[Installateur Windowsr](/#home-downloadhead) directement depuis 
 
 ### Alternatives
 
-Utilisation **[Winget](https://aka.ms/winget-cli)**:
-
-```bash
-winget install OpenJS.NodeJS
-# or for LTS
-winget install OpenJS.NodeJS.LTS
-```
-
-Après avoir exécuté l'une des deux commandes ci-dessus, il peut être nécessaire de redémarrer l'émulateur de terminal avant que la commande CLI `node` ne soit disponible.
-l'émulateur de terminal avant que la commande CLI `node` ne soit disponible.
-
 Utilisation **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash

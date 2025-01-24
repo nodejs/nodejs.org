@@ -358,16 +358,6 @@ xbps-install -Sy nodejs
 
 ### جایگزین
 
-با استفاده از **[Winget](https://aka.ms/winget-cli)**:
-
-```bash
-winget install OpenJS.NodeJS
-# or for LTS
-winget install OpenJS.NodeJS.LTS
-```
-
-پس از اجرای یکی از دو دستور بالا، ممکن است لازم باشد ترمینال را دوباره راه‌اندازی کنید تا دستور `node` در CLI در دسترس قرار بگیرد.
-
 با استفاده از **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash

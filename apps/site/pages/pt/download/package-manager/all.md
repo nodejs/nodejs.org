@@ -353,16 +353,6 @@ Descarregamos o [instalador da Node.js](/#home-downloadhead) diretamente a parti
 
 ### Alternativas
 
-Com o uso do **[Winget](https://aka.ms/winget-cli)**:
-
-```bash
-winget install OpenJS.NodeJS
-# or for LTS
-winget install OpenJS.NodeJS.LTS
-```
-
-Após executarmos um dos dois comandos acima, pode ser necessário reiniciar o emulador de terminal antes do comando `node` da interface da linha de comando torne-se disponível.
-
 Com o uso do **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash

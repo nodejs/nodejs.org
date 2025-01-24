@@ -357,16 +357,6 @@ xbps-install -Sy nodejs
 
 ### Альтернативи
 
-Через **[Winget](https://aka.ms/winget-cli)**:
-
-```bash
-winget install OpenJS.NodeJS
-# or for LTS
-winget install OpenJS.NodeJS.LTS
-```
-
-Після запуску однієї з двох команд вище, можливо, необхідно буде перезапустити емулятор термінала, перш ніж CLI-команда `node` стане доступною.
-
 Через **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash

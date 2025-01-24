@@ -361,16 +361,6 @@ Unduh [Pemasang Windows](/#home-downloadhead) langsung dari situs web [nodejs.or
 
 ### Windows
 
-Unduh [Pemasang Windows](/#home-downloadhead) langsung dari situs web [nodejs.org](https://nodejs.org/).
-
-```bash
-winget install OpenJS.NodeJS
-# or for LTS
-winget install OpenJS.NodeJS.LTS
-```
-
-Menggunakan **[Winget](https://aka.ms/winget-cli)**:
-
 Menggunakan **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash

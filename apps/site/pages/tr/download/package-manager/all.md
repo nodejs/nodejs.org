@@ -363,17 +363,6 @@ Windows Installer](/#home-downloadhead) doğrudan [nodejs.org](https://nodejs.or
 
 ### Alternatifler
 
-[Winget](https://aka.ms/winget-cli)\*\* kullanarak:
-
-```bash
-winget install OpenJS.NodeJS
-# or for LTS
-winget install OpenJS.NodeJS.LTS
-```
-
-Yukarıdaki iki komuttan birini çalıştırdıktan sonra, yeniden başlatmak gerekebilir
-CLI komutu kullanılabilir hale gelmeden önce terminal emülatörü.
-
 [Chocolatey](https://chocolatey.org/)\*\* kullanarak:
 
 ```bash
