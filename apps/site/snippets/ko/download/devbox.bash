@@ -1,7 +1,7 @@
 # Devbox 다운로드 및 설치:
 curl -fsSL https://get.jetify.com/devbox | bash
 
-프로젝트에서 Devbox 초기화
+# 프로젝트에서 Devbox 초기화
 devbox init
 
 # Node.js 다운로드 및 설치:
