@@ -46,7 +46,7 @@ server.on('request', (request, response) => {
 });
 ```
 
-When an HTTP request hits the server, node calls the request handler function
+When an HTTP request hits the server, Node calls the request handler function
 with a few handy objects for dealing with the transaction, `request` and
 `response`. We'll get to those shortly.
 
