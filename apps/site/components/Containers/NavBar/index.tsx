@@ -26,20 +26,8 @@ const SearchButton = dynamic(() => import('@/components/Common/Search'), {
 });
 
 const navInteractionIcons = {
-  show: (
-    <Hamburger
-      className={style.navInteractionIcon}
-      aria-hidden="false"
-      aria-label="Open navigation menu"
-    />
-  ),
-  close: (
-    <XMark
-      className={style.navInteractionIcon}
-      aria-hidden="false"
-      aria-label="Close navigation menu"
-    />
-  ),
+  show: <Hamburger className={style.navInteractionIcon} />,
+  close: <XMark className={style.navInteractionIcon} />,
 };
 
 type NavbarProps = {
@@ -70,6 +58,7 @@ const NavBar: FC<NavbarProps> = ({
         id="sidebarItemToggler"
         type="checkbox"
         onChange={e => setIsMenuOpen(() => e.target.checked)}
+        aria-label={`${isMenuOpen ? 'Close' : 'Show'} navigation menu`}
       />
       <Label.Root
         className={style.sidebarItemTogglerLabel}

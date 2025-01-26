@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr auto;
   padding: 0.5rem;
   @apply border-neutral-200
     bg-white
@@ -16,6 +16,7 @@
 }
 
 .sidebarItemToggler {
+  position: absolute;
   opacity: 0;
 }
 .sidebarItemToggler:focus + label {
@@ -38,7 +39,7 @@
 }
 
 .main {
-  grid-column: span 3;
+  grid-column: span 2;
   @apply hidden
     flex-1
     flex-col
