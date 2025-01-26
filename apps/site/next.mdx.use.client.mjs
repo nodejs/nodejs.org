@@ -6,13 +6,14 @@ import DownloadButton from './components/Downloads/DownloadButton';
 import DownloadLink from './components/Downloads/DownloadLink';
 import BlogPostLink from './components/Downloads/Release/BlogPostLink';
 import ChangelogLink from './components/Downloads/Release/ChangelogLink';
-import InstallationMethodDropdown from './components/Downloads/Release/InstallationMethodDropdown';
-import OperatingSystemDropdown from './components/Downloads/Release/OperatingSystemDropdown';
-import PackageManagerDropdown from './components/Downloads/Release/PackageManagerDropdown';
-import PlatformDropdown from './components/Downloads/Release/PlatformDropdown';
-import PrebuiltDownloadButtons from './components/Downloads/Release/PrebuiltDownloadButtons';
+import ReleaseDownloadLink from './components/Downloads/Release/DownloadLink';
+import ReleaseInstallationMethodDropdown from './components/Downloads/Release/InstallationMethodDropdown';
+import ReleaseOperatingSystemDropdown from './components/Downloads/Release/OperatingSystemDropdown';
+import ReleasePackageManagerDropdown from './components/Downloads/Release/PackageManagerDropdown';
+import ReleasePlatformDropdown from './components/Downloads/Release/PlatformDropdown';
+import ReleasePrebuiltDownloadButtons from './components/Downloads/Release/PrebuiltDownloadButtons';
 import ReleaseCodeBox from './components/Downloads/Release/ReleaseCodeBox';
-import VersionDropdown from './components/Downloads/Release/VersionDropdown';
+import ReleaseVersionDropdown from './components/Downloads/Release/VersionDropdown';
 import Link from './components/Link';
 import LinkWithArrow from './components/LinkWithArrow';
 import MDXCodeBox from './components/MDX/CodeBox';
@@ -44,23 +45,25 @@ export const clientMdxComponents = {
     // Provides an individual Node.js Release Context for Downloads
     Provider: ReleaseProvider,
     // Renders a drop-down menu to select a version
-    VersionDropdown: VersionDropdown,
+    VersionDropdown: ReleaseVersionDropdown,
     // Renders a drop-down menu to select a platform
-    InstallationMethodDropdown: InstallationMethodDropdown,
+    InstallationMethodDropdown: ReleaseInstallationMethodDropdown,
     // Renders a drop-down menu to select a package manager
-    PackageManagerDropdown: PackageManagerDropdown,
+    PackageManagerDropdown: ReleasePackageManagerDropdown,
     // Renders a drop-down menu to select a bitness
-    PlatformDropdown: PlatformDropdown,
+    PlatformDropdown: ReleasePlatformDropdown,
     // Renders a drop-down menu to select an operating system
-    OperatingSystemDropdown: OperatingSystemDropdown,
+    OperatingSystemDropdown: ReleaseOperatingSystemDropdown,
     // Renders a Blog Post Link for the selected release
     BlogPostLink: BlogPostLink,
     // Renders a Download Button for the selected release
-    PrebuiltDownloadButtons: PrebuiltDownloadButtons,
+    PrebuiltDownloadButtons: ReleasePrebuiltDownloadButtons,
     // Renders a Release CodeBox
     ReleaseCodeBox: ReleaseCodeBox,
-    // Renders a Changelog Modal Link Button
+    // Renders a Changelog Link Button
     ChangelogLink: ChangelogLink,
+    // Renders a DownloadLink Button
+    DownloadLink: ReleaseDownloadLink,
   },
 };
 
