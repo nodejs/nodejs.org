@@ -26,8 +26,20 @@ const SearchButton = dynamic(() => import('@/components/Common/Search'), {
 });
 
 const navInteractionIcons = {
-  show: <Hamburger className={style.navInteractionIcon} />,
-  close: <XMark className={style.navInteractionIcon} />,
+  show: (
+    <Hamburger
+      className={style.navInteractionIcon}
+      aria-hidden="false"
+      aria-label="Open navigation menu"
+    />
+  ),
+  close: (
+    <XMark
+      className={style.navInteractionIcon}
+      aria-hidden="false"
+      aria-label="Close navigation menu"
+    />
+  ),
 };
 
 type NavbarProps = {
@@ -49,21 +61,22 @@ const NavBar: FC<NavbarProps> = ({
 
   return (
     <nav className={`${style.container}`}>
-      <div className={style.nodeIconAndMobileItemsToggler}>
-        <Link className={style.nodeIconWrapper} href="/" aria-label="Home">
-          <WithNodejsLogo />
-        </Link>
+      <Link className={style.nodeIconWrapper} href="/" aria-label="Home">
+        <WithNodejsLogo />
+      </Link>
 
-        <Label.Root
-          onClick={() => setIsMenuOpen(prev => !prev)}
-          className={style.sidebarItemTogglerLabel}
-          htmlFor="sidebarItemToggler"
-        >
-          {navInteractionIcons[isMenuOpen ? 'close' : 'show']}
-        </Label.Root>
-      </div>
-
-      <input className="peer hidden" id="sidebarItemToggler" type="checkbox" />
+      <input
+        className={`peer ${style.sidebarItemToggler}`}
+        id="sidebarItemToggler"
+        type="checkbox"
+        onChange={e => setIsMenuOpen(() => e.target.checked)}
+      />
+      <Label.Root
+        className={style.sidebarItemTogglerLabel}
+        htmlFor="sidebarItemToggler"
+      >
+        {navInteractionIcons[isMenuOpen ? 'close' : 'show']}
+      </Label.Root>
 
       <div className={`${style.main} peer-checked:flex`}>
         <div className={style.navItems}>

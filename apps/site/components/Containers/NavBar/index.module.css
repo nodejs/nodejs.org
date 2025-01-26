@@ -1,4 +1,7 @@
 .container {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  padding: 0.5rem;
   @apply border-neutral-200
     bg-white
     lg:flex
@@ -12,20 +15,11 @@
     dark:bg-neutral-950;
 }
 
-.nodeIconAndMobileItemsToggler {
-  @apply flex
-    h-16
-    shrink-0
-    items-center
-    border-b
-    border-neutral-200
-    px-4
-    lg:flex
-    lg:h-full
-    lg:items-center
-    lg:border-0
-    lg:px-0
-    dark:border-neutral-900;
+.sidebarItemToggler {
+  opacity: 0;
+}
+.sidebarItemToggler:focus + label {
+  outline: 1px solid gold;
 }
 
 .nodeIconWrapper {
@@ -44,6 +38,7 @@
 }
 
 .main {
+  grid-column: span 3;
   @apply hidden
     flex-1
     flex-col
