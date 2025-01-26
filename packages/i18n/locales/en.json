@@ -12,6 +12,8 @@
       },
       "navBar": {
         "links": {
+          "open": "Show navigation menu",
+          "close": "Close navigation menu",
           "about": "About",
           "download": "Download",
           "docs": "Docs",

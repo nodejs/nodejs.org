@@ -29,10 +29,7 @@
 }
 
 .sidebarItemToggler {
-  position: absolute;
-  right: 1rem;
-  opacity: 0;
-  appearance: none;
+  @apply absolute right-4 -z-10 appearance-none opacity-0;
   transform: translateY(-200%);
 }
 
