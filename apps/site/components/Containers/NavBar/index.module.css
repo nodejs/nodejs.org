@@ -18,6 +18,10 @@
 .sidebarItemToggler {
   position: absolute;
   opacity: 0;
+  appearance: none;
+}
+.sidebarItemToggler:focus {
+  outline: none;
 }
 .sidebarItemToggler:focus + label {
   outline: 1px solid gold;
