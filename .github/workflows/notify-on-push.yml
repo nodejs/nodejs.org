@@ -10,7 +10,7 @@ permissions:
 jobs:
   notify_on_push:
     name: Notify on Force Push on `main`
-    if: github.repository == 'nodejs/nodejs.org' && github.event.forced
+    if: github.repository == 'nodejs/nodejs.org'
     runs-on: ubuntu-latest
     steps:
       - name: Slack Notification
