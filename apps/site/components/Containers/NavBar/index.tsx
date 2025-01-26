@@ -49,9 +49,17 @@ const NavBar: FC<NavbarProps> = ({
 
   return (
     <nav className={`${style.container}`}>
-      <Link className={style.nodeIconWrapper} href="/" aria-label="Home">
-        <WithNodejsLogo />
-      </Link>
+      <div className={style.nodeIconAndMobileItemsToggler}>
+        <Link className={style.nodeIconWrapper} href="/" aria-label="Home">
+          <WithNodejsLogo />
+        </Link>
+        <Label.Root
+          className={style.sidebarItemTogglerLabel}
+          htmlFor="sidebarItemToggler"
+        >
+          {navInteractionIcons[isMenuOpen ? 'close' : 'show']}
+        </Label.Root>
+      </div>
 
       <input
         className={`peer ${style.sidebarItemToggler}`}
@@ -60,12 +68,6 @@ const NavBar: FC<NavbarProps> = ({
         onChange={e => setIsMenuOpen(() => e.target.checked)}
         aria-label={`${isMenuOpen ? 'Close' : 'Show'} navigation menu`}
       />
-      <Label.Root
-        className={style.sidebarItemTogglerLabel}
-        htmlFor="sidebarItemToggler"
-      >
-        {navInteractionIcons[isMenuOpen ? 'close' : 'show']}
-      </Label.Root>
 
       <div className={`${style.main} peer-checked:flex`}>
         <div className={style.navItems}>
