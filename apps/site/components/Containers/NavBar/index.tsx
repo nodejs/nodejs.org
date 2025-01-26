@@ -3,6 +3,7 @@
 import Hamburger from '@heroicons/react/24/solid/Bars3Icon';
 import XMark from '@heroicons/react/24/solid/XMarkIcon';
 import * as Label from '@radix-ui/react-label';
+import classNames from 'classnames';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import type { FC, ComponentProps, HTMLAttributeAnchorTarget } from 'react';
@@ -53,6 +54,7 @@ const NavBar: FC<NavbarProps> = ({
         <Link className={style.nodeIconWrapper} href="/" aria-label="Home">
           <WithNodejsLogo />
         </Link>
+
         <Label.Root
           className={style.sidebarItemTogglerLabel}
           htmlFor="sidebarItemToggler"
@@ -62,7 +64,7 @@ const NavBar: FC<NavbarProps> = ({
       </div>
 
       <input
-        className={`peer ${style.sidebarItemToggler}`}
+        className={classNames(['peer', style.sidebarItemToggler])}
         id="sidebarItemToggler"
         type="checkbox"
         onChange={e => setIsMenuOpen(() => e.target.checked)}
