@@ -5,6 +5,7 @@ import XMark from '@heroicons/react/24/solid/XMarkIcon';
 import * as Label from '@radix-ui/react-label';
 import classNames from 'classnames';
 import dynamic from 'next/dynamic';
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import type { FC, ComponentProps, HTMLAttributeAnchorTarget } from 'react';
 
@@ -47,6 +48,7 @@ const NavBar: FC<NavbarProps> = ({
   onThemeTogglerClick,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const t = useTranslations();
 
   return (
     <nav className={`${style.container}`}>
@@ -68,7 +70,9 @@ const NavBar: FC<NavbarProps> = ({
         id="sidebarItemToggler"
         type="checkbox"
         onChange={e => setIsMenuOpen(() => e.target.checked)}
-        aria-label={`${isMenuOpen ? 'Close' : 'Show'} navigation menu`}
+        aria-label={t(
+          `components.containers.navBar.controls.${isMenuOpen ? 'close' : 'open'}`
+        )}
       />
 
       <div className={`${style.main} peer-checked:flex`}>
