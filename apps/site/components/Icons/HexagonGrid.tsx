@@ -7,6 +7,7 @@ const HexagonGrid: FC<HexagonGridProps> = props => (
     viewBox="0 0 1216 726"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
     {...props}
   >
     <mask
