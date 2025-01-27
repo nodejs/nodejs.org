@@ -66,7 +66,6 @@
     "react-dom": "^18.3.1",
     "rehype-autolink-headings": "~7.1.0",
     "rehype-slug": "~6.0.0",
-    "remark": "^15.0.1",
     "remark-gfm": "~4.0.0",
     "remark-reading-time": "~2.0.1",
     "semver": "~7.6.3",

@@ -66,7 +66,9 @@ async function validateFile(filePath) {
  * @returns {void}
  */
 function reportErrors(errors) {
-  if (errors.length === 0) return;
+  if (errors.length === 0) {
+    return;
+  }
 
   console.error('Errors found in the following files:');
   errors.forEach(({ path, position, message }) => {
