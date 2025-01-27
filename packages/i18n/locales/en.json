@@ -48,7 +48,8 @@
             "introduction": "Introduction to TypeScript",
             "transpile": "Running TypeScript code using transpilation",
             "run": "Running TypeScript with a runner",
-            "runNatively": "Running TypeScript Natively"
+            "runNatively": "Running TypeScript Natively",
+            "publishingTSProject": "Publishing a TypeScript project"
           }
         },
         "asynchronousWork": {

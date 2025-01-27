@@ -209,6 +209,10 @@
             "runNatively": {
               "link": "/learn/typescript/run-natively",
               "label": "components.navigation.learn.typescript.links.runNatively"
+            },
+            "publishingTSProject": {
+              "link": "/learn/typescript/publishing-a-ts-project",
+              "label": "components.navigation.learn.typescript.links.publishingTSProject"
             }
           }
         },
