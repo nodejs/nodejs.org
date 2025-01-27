@@ -104,6 +104,10 @@
       "inputs": ["{app,pages}/**/*.{md,mdx}", "*.{md,mdx}"],
       "outputs": [".eslintmdcache"]
     },
+    "lint:snippets": {
+      "inputs": ["{app,pages}/**/*.{md,mdx}", "*.{md,mdx}"],
+      "outputs": []
+    },
     "lint:css": {
       "inputs": ["{app,components,layouts,pages,styles}/**/*.css"],
       "outputs": [".stylelintcache"]
