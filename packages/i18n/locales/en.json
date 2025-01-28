@@ -11,6 +11,10 @@
         }
       },
       "navBar": {
+        "controls": {
+          "open": "Show navigation menu",
+          "close": "Close navigation menu"
+        },
         "links": {
           "about": "About",
           "download": "Download",
@@ -283,6 +287,7 @@
           "docker": "Docker is a containerization platform."
         }
       }
-    }
+    },
+    "logo": "Node.js logo"
   }
 }
