@@ -1,7 +1,7 @@
 import { DIST_URL } from '@/next.constants.mjs';
 import type { UserOS, UserPlatform } from '@/types/userOS';
 
-type DownloadKind = 'installer' | 'binary' | 'source';
+export type DownloadKind = 'installer' | 'binary' | 'source';
 
 export const getNodeDownloadUrl = (
   versionWithPrefix: string,
