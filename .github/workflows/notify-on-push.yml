@@ -10,7 +10,9 @@ permissions:
 jobs:
   notify_on_push:
     name: Notify on any direct push to `main`
-    if: github.repository == 'nodejs/nodejs.org'
+    if: >
+      github.repository == 'nodejs/nodejs.org' && 
+      github.actor != 'github-merge-queue[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Slack Notification
