@@ -149,7 +149,7 @@ This leverages [`mock`](https://nodejs.org/api/test.html#class-mocktracker) from
 import assert from 'node:assert/strict';
 import { before, describe, it, mock } from 'node:test';
 
-describe('foo',  concurrency: true }, () => {
+describe('foo', { concurrency: true }, () => {
   let barMock = mock.fn();
   let foo;
 
