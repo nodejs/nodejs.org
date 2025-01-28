@@ -248,18 +248,24 @@ class MyStream extends Writable {
     process.stdout.write(data.toString().toUpperCase() + '\n', cb);
   }
 }
-const stream = new MyStream();
 
-for (let i = 0; i < 10; i++) {
-  const waitDrain = !stream.write('hello');
+async function main() {
+  const stream = new MyStream();
 
-  if (waitDrain) {
-    console.log('>> wait drain');
-    await once(stream, 'drain');
+  for (let i = 0; i < 10; i++) {
+    const waitDrain = !stream.write('hello');
+
+    if (waitDrain) {
+      console.log('>> wait drain');
+      await once(stream, 'drain');
+    }
   }
+
+  stream.end('world');
 }
 
-stream.end('world');
+// Call the async function
+main().catch(console.error);
 ```
 
 ```mjs
@@ -663,15 +669,19 @@ Here's an example demonstrating the use of async iterators with a readable strea
 const fs = require('node:fs');
 const { pipeline } = require('node:stream/promises');
 
-await pipeline(
-  fs.createReadStream(import.meta.filename),
-  async function* (source) {
-    for await (let chunk of source) {
-      yield chunk.toString().toUpperCase();
-    }
-  },
-  process.stdout
-);
+async function main() {
+  await pipeline(
+    fs.createReadStream(__filename),
+    async function* (source) {
+      for await (let chunk of source) {
+        yield chunk.toString().toUpperCase();
+      }
+    },
+    process.stdout
+  );
+}
+
+main().catch(console.error);
 ```
 
 ```mjs
@@ -798,18 +808,22 @@ The helper functions are useful if you need to return a Web Stream from a Node.j
 ```cjs
 const { pipeline } = require('node:stream/promises');
 
-const { body } = await fetch('https://nodejs.org/api/stream.html');
+async function main() {
+  const { body } = await fetch('https://nodejs.org/api/stream.html');
 
-await pipeline(
-  body,
-  new TextDecoderStream(),
-  async function* (source) {
-    for await (const chunk of source) {
-      yield chunk.toString().toUpperCase();
-    }
-  },
-  process.stdout
-);
+  await pipeline(
+    body,
+    new TextDecoderStream(),
+    async function* (source) {
+      for await (const chunk of source) {
+        yield chunk.toString().toUpperCase();
+      }
+    },
+    process.stdout
+  );
+}
+
+main().catch(console.error);
 ```
 
 ```mjs
