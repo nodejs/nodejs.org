@@ -20,7 +20,8 @@
           "security": "Security",
           "certification": "Certification",
           "blog": "Blog",
-          "contribute": "Contribute"
+          "contribute": "Contribute",
+          "skipToContent": "Skip to content"
         }
       }
     },

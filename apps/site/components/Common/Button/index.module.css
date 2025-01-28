@@ -1,6 +1,5 @@
 .button {
   @apply px-4.5
-    relative
     inline-flex
     items-center
     justify-center
@@ -12,6 +11,10 @@
 
   svg {
     @apply size-5;
+  }
+
+  .button:not(.skipToContent) {
+    @apply relative; /* Only apply `relative` when NOT `skipToContent` */
   }
 
   &[aria-disabled='true'] {
