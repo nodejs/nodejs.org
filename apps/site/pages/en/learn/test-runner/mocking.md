@@ -149,7 +149,6 @@ This leverages [`mock`](https://nodejs.org/api/test.html#class-mocktracker) from
 import assert from 'node:assert/strict';
 import { before, describe, it, mock } from 'node:test';
 
-
 describe('foo', { concurrency: true }, () => {
   let barMock = mock.fn();
   let foo;
@@ -157,12 +156,12 @@ describe('foo', { concurrency: true }, () => {
   before(async () => {
     const barNamedExports = await import('./bar.mjs')
       // discard the original default export
-      .then(({ default, ...rest }) => rest);
+      .then(({ default: _, ...rest }) => rest);
 
     // It's usually not necessary to manually call restore() after each
     // nor reset() after all (node does this automatically).
     mock.module('./bar.mjs', {
-      defaultExport: barMock
+      defaultExport: barMock,
       // Keep the other exports that you don't want to mock.
       namedExports: barNamedExports,
     });
@@ -173,7 +172,9 @@ describe('foo', { concurrency: true }, () => {
   });
 
   it('should do the thing', () => {
-    barMock.mockImplementationOnce(function bar_mock() {/* … */});
+    barMock.mockImplementationOnce(function bar_mock() {
+      /* … */
+    });
 
     assert.equal(foo(), 42);
   });
