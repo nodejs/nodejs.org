@@ -5,6 +5,7 @@
         "links": {
           "trademarkPolicy": "商標政策",
           "privacyPolicy": "隱私政策",
+          "versionSupport": "版本支援",
           "codeOfConduct": "行為準則",
           "security": "安全性政策"
         }
@@ -18,7 +19,8 @@
           "learn": "學習資源",
           "security": "安全性",
           "certification": "認證",
-          "blog": "部落格"
+          "blog": "部落格",
+          "contribute": "貢獻"
         }
       }
     },
@@ -34,11 +36,19 @@
             "anIntroductionToTheNpmPackageManager": "Npm 套件管理器介紹",
             "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) 與更高的版本",
             "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js 在開發與生產環境的差別",
-            "nodejsWithTypescript": "Node.js 搭配 TypeScript",
             "nodejsWithWebassembly": "Node.js 搭配 WebAssembly",
             "debugging": "Node.js 除錯",
             "profiling": "分析 Node.js 應用程式",
             "securityBestPractices": "安全最佳實踐"
+          }
+        },
+        "typescript": {
+          "links": {
+            "typescript": "TypeScript",
+            "introduction": "TypeScript 介紹",
+            "transpile": "透過翻譯執行 TypeScript 程式碼。",
+            "run": "透過執行器執行 TypeScript",
+            "runNatively": "原生執行 TypeScript"
           }
         },
         "asynchronousWork": {
@@ -46,7 +56,7 @@
             "asynchronousWork": "非同步工作",
             "asynchronousFlowControl": "非同步流程控制",
             "overviewOfBlockingVsNonBlocking": "阻塞與非阻塞概述",
-            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript 中的非同步與回調函數",
+            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript 中的非同步程式與回呼函式",
             "discoverJavascriptTimers": "探索 JavaScript 計時器",
             "eventLoopTimersAndNexttick": "Node.js 中的事件循環",
             "theNodejsEventEmitter": "Node.js 中的事件發射器",
@@ -80,9 +90,11 @@
         "modules": {
           "links": {
             "modules": "模塊",
+            "publishingAPackage": "發布套件",
             "publishingNodeApiModules": "如何釋出 Node-API 套件",
             "anatomyOfAnHttpTransaction": "HTTP 事務解析",
             "abiStability": "ABI 穩定性",
+            "howToUseStreams": "如何使用串流",
             "backpressuringInStreams": "串流中的背壓機制"
           }
         },
@@ -100,7 +112,8 @@
           "links": {
             "testRunner": "測試執行器",
             "introduction": "探索 Node.js 中的測試執行器",
-            "usingTestRunner": "使用 Node.js 中的測試執行器"
+            "usingTestRunner": "使用 Node.js 中的測試執行器",
+            "mocking": "如何使用串流"
           }
         }
       },
@@ -124,32 +137,28 @@
         }
       }
     },
-    "downloadList": {
-      "links": {
-        "previousReleases": "Node.js 版本",
-        "packageManager": "使用套件管理器安裝 Node.js",
-        "shaSums": {
-          "title": "釋出檔案的已簽署 SHASUM",
-          "howToVerify": " (如何驗證)"
-        },
-        "allDownloads": "所有下載選項",
-        "nightlyReleases": "每日建構版本",
-        "unofficialBuilds": "非官方建構版本",
-        "buildingFromSource": "在支援的平台上從原始碼建構 Node.js",
-        "installingOnLinux": "使用二進制存檔安裝 Node.js",
-        "installingOnWsl": "在適用於 Linux 的 Windows 子系統 (WSL) 上安裝"
-      }
-    },
     "downloadReleasesTable": {
-      "changelog": "更新紀錄",
-      "releases": "版本釋出",
-      "docs": "文件"
+      "version": "Node.js",
+      "nApiVersion": "N-API",
+      "npmVersion": "npm",
+      "codename": "代號",
+      "releaseDate": "發佈於",
+      "actions": {
+        "changelog": "更新紀錄",
+        "releases": "發行版本",
+        "docs": "文件"
+      }
     },
     "pagination": {
       "next": "下一頁",
       "previous": "上一頁"
     },
     "common": {
+      "alertBox": {
+        "info": "資訊",
+        "warning": "警告",
+        "danger": "危險"
+      },
       "breadcrumbs": {
         "navigateToHome": "返回首頁"
       },
@@ -179,14 +188,9 @@
         "label": "切換深色模式"
       }
     },
-    "mdx": {
-      "upcomingEvents": {
-        "defaultTitle": "近期沒有活動"
-      }
-    },
     "metabar": {
       "lastUpdated": "最後更新",
-      "readingTime": "閱讀時長",
+      "readingTime": "閱讀時間",
       "addedIn": "新增於",
       "author": "作者",
       "authors": "作者",
@@ -195,32 +199,9 @@
       "viewAs": "檢視模式",
       "tableOfContents": "目錄"
     },
-    "downloads": {
-      "changelogModal": {
-        "startContributing": "開始貢獻"
-      }
-    },
     "search": {
       "searchBox": {
         "placeholder": "開始輸入…"
-      },
-      "seeAll": {
-        "text": "查看全部 {count} 則結果"
-      },
-      "searchError": {
-        "text": "搜尋時發生錯誤，請稍後再試。"
-      },
-      "poweredBy": {
-        "text": "技術支援"
-      },
-      "noResults": {
-        "text": "找不到任何「{query}」的搜尋結果。"
-      },
-      "emptyState": {
-        "text": "開始搜尋…"
-      },
-      "searchPage": {
-        "title": "你正在搜尋：{query}"
       }
     },
     "blog": {
@@ -271,48 +252,36 @@
       "backToHome": "回到首頁"
     },
     "download": {
-      "selectCategory": "類別",
-      "categories": {
-        "prebuilt-installer": "預建構安裝程式",
-        "prebuilt-binaries": "預建構二進制文件",
-        "package-manager": "套件管理器",
-        "source-code": "原始碼"
-      },
       "buttons": {
-        "prebuilt": "下載 Node.js {version}",
-        "source": "下載 Node.js {version} 的原始碼"
+        "installer": "{os} 安裝程式 (.{extension})",
+        "binary": "獨立可執行檔 (.{extension})"
       },
       "dropdown": {
-        "bitness": "位元數",
+        "platform": "平台",
         "os": "作業系統",
         "version": "版本",
-        "platform": "平台"
+        "installMethod": "安裝方式",
+        "packageManager": "套件管理程式",
+        "unknown": "未知",
+        "platformGroups": {
+          "official": "官方推薦",
+          "unofficial": "非官方社群"
+        }
       },
       "codeBox": {
-        "fnmEnvSetup": "設定 fnm 環境",
-        "systemManagerWarning": "不是 Node.js 的套件管理器。請確保你已安裝 {packageManager}。",
-        "communityWarning": "套件管理器與其安裝腳本並非由 Node.js 專案維護。",
-        "communityWarningReport": "如果遇到問題，請聯絡套件管理器的維護者。",
-        "installsNvm": "安裝 nvm (Node 版本管理器)",
-        "downloadAndInstallNodejsRestartTerminal": "下載並安裝 Node.js (您可能需要重新啟動終端機)",
-        "verifiesRightNodejsVersion": "驗證環境中正確的 Node.js 版本",
-        "verifiesRightNpmVersion": "驗證環境中正確的 npm 版本",
-        "shouldPrint": "應該顯示 `{version}`",
-        "installsFnm": "安裝 fnm (快速 Node 管理器)",
-        "downloadAndInstallNodejs": "下載並安裝 Node.js",
-        "activateFNM": "啟用 fnm",
-        "noteWithColon": "請注意：",
-        "dockerIsNotNodejsPackageManager": "Docker 並非 Node.js 套件管理器。",
-        "PleaseEndureAlreadyInstallOnSystem": "請確保它已經安裝在您的系統上。",
-        "dockerInstructions": "請前往下列網址並按照官方指示操作：https://docs.docker.com/desktop/",
-        "dockerImagesLink": "Docker 映像可於 https://github.com/nodejs/docker-node/ 官網取得。",
-        "pullsNodejsDockerImage": "拉取 Node.js Docker 映像",
-        "homebrewIsNotNodejsPackageManager": "Homebrew 並非 Node.js 套件管理器。",
-        "homebrewInstructions": "請前往下列網址並按照官方指示操作：https://brew.sh/",
-        "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew 僅支援安裝 Node.js 主要版本，並可能不支援 {version} 發行系列的最新 Node.js 版本。",
-        "chocolateyIsNotNodejsPackageManager": "Chocolatey 並非 Node.js 套件管理器。",
-        "chocolateyInstructions": "請前往下列網址並按照官方指示操作：https://chocolatey.org/",
-        "chocolateyNotMaintanedByNodejs": "Chocolatey 並非由 Node.js 專案官方維護，並可能不支援 {version} 版本的 Node.j"
+        "unsupportedVersionWarning": "此版本已不再維護，請改用現正支援的版本。<link>了解更新終止 (EOL) 支援</link>。",
+        "communityPlatformInfo": "涉及社群軟體的安裝方式由其維護團隊提供支援。",
+        "externalSupportInfo": "若您遇到任何問題，請造訪 <link>{platform} 網站</link>",
+        "noScriptDetected": "此網頁需要使用 JavaScript。您可以直接造訪 <link>發行網頁</link> 以下載 Node.js，無需 JavaScript。",
+        "platformInfo": {
+          "default": "套件管理器與其安裝指令稿並非由 Node.js 專案維護。",
+          "nvm": "\"nvm\" 是跨平台的 Node.js 版本管理程式。",
+          "fnm": "\"fnm\" 是跨平台的 Node.js 版本管理程式。",
+          "brew": "Homebrew 是 macOS 及 Linux 的套件管理程式。",
+          "choco": "Chocolatey 是 Windows 的套件管理程式。",
+          "devbox": "Devbox 會建立隔離且可重現的開發環境。",
+          "docker": "Docker 是一款容器化平台。"
+        }
       }
     }
   }
