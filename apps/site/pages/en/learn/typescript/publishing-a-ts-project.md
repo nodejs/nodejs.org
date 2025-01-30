@@ -6,7 +6,7 @@ authors: JakobJingleheimer
 
 # Publishing a TypeScript project
 
-This article augments TypeScript's own [Publishing guide](https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html) with specifics for native node support.
+This article covers items regarding typescript publishing specifically.
 
 Some important things to note:
 
