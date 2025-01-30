@@ -22,6 +22,8 @@ Some important things to note:
 
 - Consuming TypeScript-specific features like `enum` in node still requires a flag ([`--experimental-transform-types`](https://nodejs.org/api/typescript.html#typescript-features)). There are often better alternatives for these anyway.
 
+  - To ensure TypeScript-specific features are _not_ present (so your code can just run in node), set the [`erasableSyntaxOnly`](https://devblogs.microsoft.com/typescript/announcing-typescript-5-8-beta/#the---erasablesyntaxonly-option) config option in TypeScript version 5.8+.
+
 - Use [dependabot](https://docs.github.com/en/code-security/dependabot) to keep your dependencies current, including those in github actions. It's a very easy set-and-forget configuration.
 
 - `.nvmrc` comes from [NVM](https://github.com/nvm-sh/nvm), a multi-version manager for node. It allows you to specify the version of node the project should generally use.
