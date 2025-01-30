@@ -248,6 +248,8 @@ Take the following example, where the type declarations are generated just befor
 ```yaml displayName=".github/workflows/publish.yml"
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
+# This is mostly boilerplate.
+
 name: Publish to NPM
 on:
   push:
@@ -268,12 +270,8 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
 
-      # You can probably ignore the boilerplate config above
-
-      - name: Publish with provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --access public --provenance
+      # - name: Publish to NPM
+      #   run: … npm publish …
 ```
 
 ```diff displayName="package.json"
@@ -299,7 +297,7 @@ test
 
 `npm publish` will automatically run [`prepack` beforehand](https://docs.npmjs.com/cli/using-npm/scripts#npm-publish). `npm` will also run `prepack` automatically before `npm pack --dry-run` (so you can easily see what your published package will be without actually publishing it). **Beware**, [`node --run` does _not_ do that](../command-line/run-nodejs-scripts-from-the-command-line.md#using-the---run-flag). You can't use `node --run` for this step, so that caveat does not apply here, but it can for other steps.
 
-The `NPM_TOKEN` within `publish.yml` is an [npm access token](https://docs.npmjs.com/about-access-tokens). It must be added it to your [github **repository** secrets](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository).
+The steps to actually publish to npm will be included in a separate article (there are several pros and cons to beyond the scope of this article).
 
 #### Breaking this down
 
