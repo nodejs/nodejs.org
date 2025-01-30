@@ -33,16 +33,16 @@ A directory overview of a repository would look something like:
 ```text displayName="Files co-located"
 example-ts-pkg/
 ├ .github/
-  ├ workflows/
-    ├ ci.yml
-    └ publish.yml
-  └ dependabot.yml
+│ ├ workflows/
+│ │ ├ ci.yml
+│ │ └ publish.yml
+│ └ dependabot.yml
 ├ src/
-  ├ foo.fixture.js
-  ├ main.ts
-  ├ main.test.ts
-  ├ some-util.ts
-  └ some-util.test.ts
+│ ├ foo.fixture.js
+│ ├ main.ts
+│ ├ main.test.ts
+│ ├ some-util.ts
+│ └ some-util.test.ts
 ├ LICENSE
 ├ package.json
 ├ README.md
@@ -52,19 +52,19 @@ example-ts-pkg/
 ```text displayName="Files co-located but segregated"
 example-ts-pkg/
 ├ .github/
-  ├ workflows/
-    ├ ci.yml
-    └ publish.yml
-  └ dependabot.yml
+│ ├ workflows/
+│ │ ├ ci.yml
+│ │ └ publish.yml
+│ └ dependabot.yml
 ├ src/
-  ├ __test__
-    ├ foo.fixture.js
-    ├ main.test.ts
-  ├ main.ts
-  └ some-util.ts
-    ├ __test__
-      └ some-util.test.ts
-    └ some-util.ts
+│ ├ __test__/
+│ │ ├ foo.fixture.js
+│ │ ├ main.test.ts
+│ ├ main.ts
+│ └ some-util.ts
+│ │ ├ __test__
+│ │   └ some-util.test.ts
+│ │ └ some-util.ts
 ├ LICENSE
 ├ package.json
 ├ README.md
@@ -74,17 +74,17 @@ example-ts-pkg/
 ```text displayName="'src' and 'test' fully segregated"
 example-ts-pkg/
 ├ .github/
-  ├ workflows/
-    ├ ci.yml
-    └ publish.yml
-  └ dependabot.yml
+│ ├ workflows/
+│ │ ├ ci.yml
+│ │ └ publish.yml
+│ └ dependabot.yml
 ├ src/
-  ├ main.ts
-  ├ some-util.ts
+│ ├ main.ts
+│ ├ some-util.ts
 ├ test/
-  ├ foo.fixture.js
-  ├ main.ts
-  └ some-util.ts
+│ ├ foo.fixture.js
+│ ├ main.ts
+│ └ some-util.ts
 ├ LICENSE
 ├ package.json
 ├ README.md
@@ -109,12 +109,12 @@ example-ts-pkg/
 ```text displayName="With 'dist'"
 example-ts-pkg/
 ├ dist/
-  ├ main.d.ts
-  ├ main.d.ts.map
-  ├ main.js
-  ├ some-util.d.ts
-  ├ some-util.d.ts.map
-  └ some-util.js
+│ ├ main.d.ts
+│ ├ main.d.ts.map
+│ ├ main.js
+│ ├ some-util.d.ts
+│ ├ some-util.d.ts.map
+│ └ some-util.js
 ├ LICENSE
 ├ package.json
 └ README.md
