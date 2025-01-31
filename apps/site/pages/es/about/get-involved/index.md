@@ -1,5 +1,5 @@
 ---
-title: Participar
+title: Colaborar
 layout: about
 ---
 
