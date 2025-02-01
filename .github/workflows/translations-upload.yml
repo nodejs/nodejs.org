@@ -27,7 +27,7 @@ jobs:
 
         # see all the options at https://github.com/crowdin/github-action
       - name: crowdin action
-        uses: crowdin/github-action@2d540f18b0a416b1fbf2ee5be35841bd380fc1da # v2.3.0
+        uses: crowdin/github-action@b811e495831e49ff516e7c801f7c5546879b9ee7 # v2.5.2
         with:
           # only upload sources, ensuring this is a one-way operation
           upload_sources: true
