@@ -18,6 +18,6 @@
   "devDependencies": {
     "eslint-import-resolver-typescript": "~3.7.0",
     "typescript": "~5.7.2",
-    "typescript-eslint": "~8.19.0"
+    "typescript-eslint": "~8.22.0"
   }
 }
