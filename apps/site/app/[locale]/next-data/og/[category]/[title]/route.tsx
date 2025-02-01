@@ -55,7 +55,7 @@ export const generateStaticParams = async () => [
   {
     locale: defaultLocale.code,
     category: 'announcement',
-    title: encodeURIComponent('Run JavaScript Everywhere'),
+    title: 'RunJavaScriptEverywhere',
   },
 ];
 
