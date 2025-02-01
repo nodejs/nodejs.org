@@ -28,12 +28,22 @@
     dark:border-neutral-900;
 }
 
+.sidebarItemToggler {
+  @apply absolute
+    right-4
+    -z-10
+    -translate-y-[200%]
+    appearance-none
+    opacity-0;
+}
+
 .nodeIconWrapper {
   @apply h-[30px]
     flex-1;
 }
 
-.navInteractionIcon {
+.navInteractionIcon,
+.sidebarItemToggler {
   @apply size-6;
 }
 
