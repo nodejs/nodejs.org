@@ -38,7 +38,7 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.1",
     "@radix-ui/react-toast": "^1.2.2",
-    "@radix-ui/react-tooltip": "^1.1.4",
+    "@radix-ui/react-tooltip": "^1.1.7",
     "@savvywombat/tailwindcss-grid-areas": "~4.0.0",
     "@tailwindcss/container-queries": "~0.1.1",
     "@vcarl/remark-headings": "~0.1.0",
