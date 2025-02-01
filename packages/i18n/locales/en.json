@@ -12,8 +12,7 @@
       },
       "navBar": {
         "controls": {
-          "open": "Show navigation menu",
-          "close": "Close navigation menu"
+          "open": "Show navigation menu"
         },
         "links": {
           "about": "About",
