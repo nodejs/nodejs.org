@@ -49,6 +49,6 @@
     "eslint-plugin-import-x": "~4.6.1",
     "eslint-plugin-no-relative-import-paths": "~1.5.5",
     "prettier": "3.4.2",
-    "prettier-plugin-tailwindcss": "0.6.9"
+    "prettier-plugin-tailwindcss": "0.6.11"
   }
 }
