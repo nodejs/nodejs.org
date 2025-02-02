@@ -4,11 +4,9 @@ layout: learn
 authors: AugustinMauroy, khaosdoctor, jakebailey, robpalme
 ---
 
-> **⚠️WARNING⚠️:** All content in this article uses Node.js experimental features. Please make sure you are using a version of Node.js that supports the features mentioned in this article. And remember that experimental features can change in future versions of Node.js.
-
 # Running TypeScript Natively
 
-In the previous articles, we learned how to run TypeScript code using transpilation and with a runner. In this article, we will learn how to run TypeScript code using Node.js itself.
+Since v23.6.0, Node.js enables "type stripping" by default. If you are using v23.6.0 or later and your source code contains only [erasable typescript syntax](https://devblogs.microsoft.com/typescript/announcing-typescript-5-8-beta/#the---erasablesyntaxonly-option), you do not need this article.
 
 ## Running TypeScript code with Node.js
 
@@ -28,7 +26,7 @@ In V22.7.0 this experimental support was extended to transform TypeScript-only s
 node --experimental-transform-types another-example.ts
 ```
 
-From V23 onwards, the `--experimental-strip-types` flag is enabled by default (you can disable it via the [`--no-experimental-strip-types`](https://nodejs.org/docs/latest-v23.x/api/cli.html#--no-experimental-strip-types) flag), enabling you to run any supported syntax, so running files like the one below with `node file.ts` is supported:
+From v23.6.0 onwards, type stripping is enabled by default (you can disable it via [`--no-experimental-strip-types`](https://nodejs.org/docs/latest-v23.x/api/cli.html#--no-experimental-strip-types)), enabling you to run any supported syntax, so running files like the one below with `node file.ts` is supported:
 
 ```ts
 function foo(bar: number): string {

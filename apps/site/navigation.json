@@ -198,17 +198,17 @@
               "link": "/learn/typescript/introduction",
               "label": "components.navigation.learn.typescript.links.introduction"
             },
-            "transpile": {
-              "link": "/learn/typescript/transpile",
-              "label": "components.navigation.learn.typescript.links.transpile"
+            "runNatively": {
+              "link": "/learn/typescript/run-natively",
+              "label": "components.navigation.learn.typescript.links.runNatively"
             },
             "run": {
               "link": "/learn/typescript/run",
               "label": "components.navigation.learn.typescript.links.run"
             },
-            "runNatively": {
-              "link": "/learn/typescript/run-natively",
-              "label": "components.navigation.learn.typescript.links.runNatively"
+            "transpile": {
+              "link": "/learn/typescript/transpile",
+              "label": "components.navigation.learn.typescript.links.transpile"
             }
           }
         },

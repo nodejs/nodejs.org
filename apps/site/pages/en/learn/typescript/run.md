@@ -6,7 +6,7 @@ authors: AugustinMauroy
 
 # Running TypeScript with a runner
 
-In the previous article, we learned how to run TypeScript code using transpilation. In this article, we will learn how to run TypeScript code using a runner.
+If you want more advanced processing of TypeScript than node's built-in support (or you're using node prior to v22.7.0), you have 2 options: use a runner (which handles much of the complexity for you), or handle it all yourself via [transpilation](./transpile.md).
 
 ## Running TypeScript code with `ts-node`
 
