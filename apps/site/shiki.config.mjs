@@ -2,6 +2,7 @@
 
 import diffLanguage from 'shiki/langs/diff.mjs';
 import dockerLanguage from 'shiki/langs/docker.mjs';
+import iniLanguage from 'shiki/langs/ini.mjs';
 import javaScriptLanguage from 'shiki/langs/javascript.mjs';
 import jsonLanguage from 'shiki/langs/json.mjs';
 import powershellLanguage from 'shiki/langs/powershell.mjs';
@@ -23,6 +24,7 @@ export const LANGUAGES = [
     // that are commonly used (non-standard aliases) within our API docs and Blog posts
     aliases: javaScriptLanguage[0].aliases.concat('cjs', 'mjs'),
   },
+  ...iniLanguage,
   ...jsonLanguage,
   ...typeScriptLanguage,
   ...shellScriptLanguage,
