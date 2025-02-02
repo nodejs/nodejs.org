@@ -68,7 +68,27 @@ Each example below was taken from real-world projects; they may not be appropria
 
 Some times, you may want to dynamically generate test-cases. For instance, you want to test the same thing across a bunch of files. This is possible, albeit slightly arcane. You must use `test` (you cannot use `describe`) + `testContext.test`:
 
-```js displayName="simple example (prior to 23.8.0)"
+### Simple example
+
+```js displayName="23.8.0 and later"
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+
+import { detectOsInUserAgent } from '…';
+
+const userAgents = [
+  { ua: /* … */, os: 'WIN' },
+  // …
+];
+
+test('Detect OS via user-agent', { concurrency: true }, t => {
+  for (const { os, ua } from userAgents) {
+    t.test(ua, () => assert.equal(detectOsInUserAgent(ua), os));
+  }
+});
+```
+
+```js displayName="prior to 23.8.0"
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
@@ -88,27 +108,29 @@ test('Detect OS via user-agent', { concurrency: true }, async t => {
 });
 ```
 
-```js displayName="simple example (23.8.0 and later)"
+### Advanced example
+
+```js displayName="23.8.0 and later"
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import { detectOsInUserAgent } from '…';
+import { getWorkspacePJSONs } from './getWorkspacePJSONs.mjs';
 
-const userAgents = [
-  { ua: /* … */, os: 'WIN' },
-  // …
-];
+const requiredKeywords = ['node.js', 'sliced bread'];
 
-test('Detect OS via user-agent', { concurrency: true }, t => {
-  for (const { os, ua } from userAgents) {
-    t.test(ua, () => assert.equal(detectOsInUserAgent(ua), os));
+test('Check package.jsons', { concurrency: true }, async t => {
+  const pjsons = await getWorkspacePJSONs();
+
+  for (const pjson of pjsons) {
+    // ⚠️ `t.test`, NOT `test`
+    t.test(`Ensure fields are properly set: ${pjson.name}`, () => {
+      assert.partialDeepStrictEqual(pjson.keywords, requiredKeywords);
+    });
   }
 });
 ```
 
-<!-- separate groups -->
-
-```js displayName="Advanced example (prior to 23.8.0)"
+```js displayName="prior to 23.8.0"
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
@@ -128,26 +150,6 @@ test('Check package.jsons', { concurrency: true }, async t => {
 
   // Allow the cases to run concurrently.
   await Promise.allSettled(cases);
-});
-```
-
-```js displayName="Advanced example (23.8.0 and later)"
-import assert from 'node:assert/strict';
-import { test } from 'node:test';
-
-import { getWorkspacePJSONs } from './getWorkspacePJSONs.mjs';
-
-const requiredKeywords = ['node.js', 'sliced bread'];
-
-test('Check package.jsons', { concurrency: true }, async t => {
-  const pjsons = await getWorkspacePJSONs();
-
-  for (const pjson of pjsons) {
-    // ⚠️ `t.test`, NOT `test`
-    t.test(`Ensure fields are properly set: ${pjson.name}`, () => {
-      assert.partialDeepStrictEqual(pjson.keywords, requiredKeywords);
-    });
-  }
 });
 ```
 
