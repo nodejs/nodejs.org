@@ -317,7 +317,7 @@ test
 
 `npm publish` will automatically run [`prepack` beforehand](https://docs.npmjs.com/cli/using-npm/scripts#npm-publish). `npm` will also run `prepack` automatically before `npm pack --dry-run` (so you can easily see what your published package will be without actually publishing it). **Beware**, [`node --run` does _not_ do that](../command-line/run-nodejs-scripts-from-the-command-line.md#using-the---run-flag). You can't use `node --run` for this step, so that caveat does not apply here, but it can for other steps.
 
-The steps to actually publish to npm will be included in a separate article (there are several pros and cons to beyond the scope of this article).
+The steps to actually publish to npm will be included in a separate article (there are several pros and cons beyond the scope of this article).
 
 #### Breaking this down
 
