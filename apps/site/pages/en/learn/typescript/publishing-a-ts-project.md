@@ -305,8 +305,8 @@ jobs:
 ```
 
 ```text displayName=".npmignore"
-*.ts
-!*.d.ts
+*.*ts       # foo.cts foo.mts foo.ts
+!*.d.*ts
 *.fixture.*
 ```
 
