@@ -304,13 +304,13 @@ jobs:
 }
 ```
 
-```text displayName=".npmignore"
+```ini displayName=".npmignore"
 *.*ts       # foo.cts foo.mts foo.ts
 !*.d.*ts
 *.fixture.*
 ```
 
-```text displayName="(alt: dist/) .npmignore"
+```ini displayName=".npmignore ('dist' output)"
 src
 test
 ```
