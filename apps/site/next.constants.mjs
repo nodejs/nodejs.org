@@ -98,7 +98,7 @@ export const NEXT_DATA_URL = process.env.NEXT_PUBLIC_DATA_URL
   ? process.env.NEXT_PUBLIC_DATA_URL
   : VERCEL_ENV
     ? `${BASE_URL}${BASE_PATH}/en/next-data/`
-    : `http://localhost:3000/en/next-data/`;
+    : `http://localhost:${process.env.PORT ?? 3000}/en/next-data/`;
 
 /**
  * This ReGeX is used to remove the `index.md(x)` suffix of a name and to remove
