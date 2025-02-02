@@ -219,7 +219,7 @@ jobs:
 }
 ```
 
-```json displayName="tsconfig.json"
+```json displayName="tsconfig.json (flat output)"
 {
   "compilerOptions": {
     "allowArbitraryExtensions": true,
@@ -228,6 +228,24 @@ jobs:
     "lib": ["ESNext"],
     "module": "NodeNext",
     "outDir": "./",
+    "resolveJsonModule": true,
+    "rewriteRelativeImportExtensions": true
+  },
+  // These may be different for your repo:
+  "include": ["./src"],
+  "exclude": ["**/*/*.test.*", "**/*.fixture.*"]
+}
+```
+
+```json displayName="tsconfig.json ('dist' output)"
+{
+  "compilerOptions": {
+    "allowArbitraryExtensions": true,
+    "declaration": true,
+    "declarationMap": true,
+    "lib": ["ESNext"],
+    "module": "NodeNext",
+    "outDir": "./dist",
     "resolveJsonModule": true,
     "rewriteRelativeImportExtensions": true
   },
