@@ -11,7 +11,7 @@ import { availableLocaleCodes } from '../../next.locales.mjs';
  * This method is used to generate the Node.js Website Download Snippets
  * for self-consumption during RSC and Static Builds
  */
-const generateDownloadSnippets = async () => {
+export default async function generateDownloadSnippets() {
   /**
    * This generates all the Download Snippets for each available Locale
    *
@@ -39,6 +39,4 @@ const generateDownloadSnippets = async () => {
   });
 
   return new Map(await Promise.all(downloadSnippets));
-};
-
-export default generateDownloadSnippets;
+}
