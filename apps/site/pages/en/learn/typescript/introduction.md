@@ -83,6 +83,10 @@ fs.readFile('example.txt', 'utf8', (err, data) => {
 
 Many popular JavaScript libraries have their type definitions available in the `@types` namespace, maintained by the DefinitelyTyped community. This enables seamless integration of existing JavaScript libraries with TypeScript projects.
 
+### Transform Capabilities
+
+TypeScript also includes powerful transformation capabilities, particularly for JSX (used in React and similar frameworks). The TypeScript compiler can transform JSX syntax into regular JavaScript, similar to how Babel works. While we won't cover these transformation features in these articles, it's worth noting that TypeScript isn't just about type checking—it's also a powerful tool for transforming modern JavaScript syntax into compatible versions for different environments.
+
 ## How to run TypeScript code
 
 Okay, so we have some TypeScript code. Now how do we run it?
