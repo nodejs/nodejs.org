@@ -52,8 +52,7 @@ TypeScript consists of two main components: the code itself and type definitions
 
 The code part is regular JavaScript with additional TypeScript-specific syntax for type annotations. When TypeScript code is compiled, all the TypeScript-specific parts are removed, resulting in clean JavaScript that can run in any environment. For example:
 
-```ts
-// This is TypeScript code
+```ts displayName="example.ts"
 function greet(name: string) {
   console.log(`Hello, ${name}!`);
 }
@@ -61,9 +60,9 @@ function greet(name: string) {
 
 ### Type Definitions
 
-Type definitions are declarations that describe the shape of existing JavaScript code. They are usually stored in `.d.ts` files and don't contain any actual implementation—they only describe the types. These definitions are essential for TypeScript to understand the types of libraries written in JavaScript.
+Type definitions describe the shape of existing JavaScript code. They are usually stored in `.d.ts` files and don't contain any actual implementation—they only describe the types. These definitions are essential for interoperability with JavaScript: code is not usually distributed as TypeScript, but instead transpiled to JavaScript that includes sidecar type definition files.
 
-For example, when you use Node.js with TypeScript, you'll need type definitions for Node.js APIs. This is where `@types/node` comes in—it's a package that contains type definitions for Node.js standard library. You can install it using:
+For example, when you use Node.js with TypeScript, you'll need type definitions for Node.js APIs. This is available via `@types/node`. Install it using:
 
 ```bash
 npm add --save-dev @types/node
@@ -71,21 +70,21 @@ npm add --save-dev @types/node
 
 These type definitions allow TypeScript to understand Node.js APIs and provide proper type checking and autocompletion when you use functions like `fs.readFile` or `http.createServer`. For example:
 
-```ts
+```js
 import * as fs from 'fs';
 
-// TypeScript knows the correct types thanks to @types/node
-fs.readFile('example.txt', 'utf8', (err, data) => {
+fs.readFile('example.txt', 'foo', (err, data) => {
+//                          ^^^ Argument of type '"foo"' is not assignable to parameter of type …
   if (err) throw err;
   console.log(data);
 });
 ```
 
-Many popular JavaScript libraries have their type definitions available in the `@types` namespace, maintained by the DefinitelyTyped community. This enables seamless integration of existing JavaScript libraries with TypeScript projects.
+Many popular JavaScript libraries have their type definitions available under the `@types` namespace, maintained by the DefinitelyTyped community. This enables seamless integration of existing JavaScript libraries with TypeScript projects.
 
 ### Transform Capabilities
 
-TypeScript also includes powerful transformation capabilities, particularly for JSX (used in React and similar frameworks). The TypeScript compiler can transform JSX syntax into regular JavaScript, similar to how Babel works. While we won't cover these transformation features in these articles, it's worth noting that TypeScript isn't just about type checking—it's also a powerful tool for transforming modern JavaScript syntax into compatible versions for different environments.
+TypeScript also includes powerful transformation capabilities, particularly for JSX (used in React and similar frameworks). The TypeScript compiler can transform JSX syntax into regular JavaScript, similar to how Babel works. While we won't cover these transformation features in these articles, it's worth noting that TypeScript isn't only a tool for type checking—it's also a build tool for transforming modern JavaScript syntax into compatible versions for different environments.
 
 ## How to run TypeScript code
 
