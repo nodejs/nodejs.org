@@ -225,11 +225,12 @@ jobs:
     "allowArbitraryExtensions": true,
     "declaration": true,
     "declarationMap": true,
-    "lib": ["ESNext"],
+    "lib": ["es2023"],
     "module": "NodeNext",
     "outDir": "./",
     "resolveJsonModule": true,
-    "rewriteRelativeImportExtensions": true
+    "rewriteRelativeImportExtensions": true,
+    "target": "es2022"
   },
   // These may be different for your repo:
   "include": ["./src"],
@@ -243,11 +244,12 @@ jobs:
     "allowArbitraryExtensions": true,
     "declaration": true,
     "declarationMap": true,
-    "lib": ["ESNext"],
+    "lib": ["es2023"],
     "module": "NodeNext",
     "outDir": "./dist",
     "resolveJsonModule": true,
-    "rewriteRelativeImportExtensions": true
+    "rewriteRelativeImportExtensions": true,
+    "target": "es2022"
   },
   // These may be different for your repo:
   "include": ["./src"],
@@ -314,6 +316,8 @@ jobs:
 src
 test
 ```
+
+You'll want to publish a package compiled to support all Node.js LTS versions since you don't know which version the consumer will be running; the `tsconfig`s in this article support node 18.x and later.
 
 `npm publish` will automatically run [`prepack` beforehand](https://docs.npmjs.com/cli/using-npm/scripts#npm-publish). `npm` will also run `prepack` automatically before `npm pack --dry-run` (so you can easily see what your published package will be without actually publishing it). **Beware**, [`node --run` does _not_ do that](../command-line/run-nodejs-scripts-from-the-command-line.md#using-the---run-flag). You can't use `node --run` for this step, so that caveat does not apply here, but it can for other steps.
 
