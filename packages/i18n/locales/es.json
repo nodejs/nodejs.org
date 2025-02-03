@@ -11,6 +11,10 @@
         }
       },
       "navBar": {
+        "controls": {
+          "open": "Mostrar menú de navegación",
+          "close": "Cerrar menú de navegación"
+        },
         "links": {
           "about": "Acerca de",
           "download": "Descargar",
@@ -30,7 +34,6 @@
           "links": {
             "gettingStarted": "Primeros pasos",
             "introductionToNodejs": "Introducción a Node.js",
-            "howToInstallNodejs": "Cómo instalar Node.js",
             "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "¿Cuánto necesitas saber de JavaScript para usar Node.js?",
             "differencesBetweenNodejsAndTheBrowser": "Diferencias entre Node.js y el navegador",
             "theV8JavascriptEngine": "El motor de JavaScript V8",
@@ -91,9 +94,11 @@
         "modules": {
           "links": {
             "modules": "Módulos",
+            "publishingAPackage": "Publicar un paquete",
             "publishingNodeApiModules": "Cómo publicar un paquete de Node-API",
             "anatomyOfAnHttpTransaction": "Anatomía de una transacción HTTP",
             "abiStability": "Estabilidad ABI",
+            "howToUseStreams": "Cómo usar streams",
             "backpressuringInStreams": "Control de flujo en Streams"
           }
         },
@@ -136,32 +141,28 @@
         }
       }
     },
-    "downloadList": {
-      "links": {
-        "previousReleases": "Lanzamientos de Node.js",
-        "packageManager": "Instalar Node.js mediante un gestor de paquetes",
-        "shaSums": {
-          "title": "SHASUMS firmados para archivos de lanzamiento",
-          "howToVerify": " (Cómo verificarlo)"
-        },
-        "allDownloads": "Todas las opciones de descarga",
-        "nightlyReleases": "Versiones Nightly",
-        "unofficialBuilds": "Versiones no oficiales",
-        "buildingFromSource": "Compilar Node.js desde el código fuente en plataformas compatibles",
-        "installingOnLinux": "Instalar Node.js a través del archivo binario",
-        "installingOnWsl": "Instalar en Windows Subsystem for Linux (WSL)"
-      }
-    },
     "downloadReleasesTable": {
-      "changelog": "Historial",
-      "releases": "Lanzamientos",
-      "docs": "Documentación"
+      "version": "Node.js",
+      "nApiVersion": "N-API",
+      "npmVersion": "npm",
+      "codename": "Nombre en clave",
+      "releaseDate": "Lanzado en",
+      "actions": {
+        "changelog": "Historial",
+        "releases": "Lanzamientos",
+        "docs": "Documentación"
+      }
     },
     "pagination": {
       "next": "Siguiente",
       "previous": "Anterior"
     },
     "common": {
+      "alertBox": {
+        "info": "Información",
+        "warning": "Aviso",
+        "danger": "Peligro"
+      },
       "breadcrumbs": {
         "navigateToHome": "Ir al inicio"
       },
@@ -202,32 +203,9 @@
       "viewAs": "Mostrar como",
       "tableOfContents": "Tabla de Contenidos"
     },
-    "downloads": {
-      "changelogModal": {
-        "startContributing": "Comienza a Contribuir"
-      }
-    },
     "search": {
       "searchBox": {
         "placeholder": "Empezar a escribir..."
-      },
-      "seeAll": {
-        "text": "Ver los {count} resultados"
-      },
-      "searchError": {
-        "text": "Ocurrió un error mientras se realizaba la búsqueda. Por favor, intenta nuevamente más tarde."
-      },
-      "poweredBy": {
-        "text": "Impulsado por"
-      },
-      "noResults": {
-        "text": "Lo sentimos, no hay resultados para {query}."
-      },
-      "emptyState": {
-        "text": "Buscar algo..."
-      },
-      "searchPage": {
-        "title": "Usted está buscando: {query}"
       }
     },
     "blog": {
@@ -278,50 +256,38 @@
       "backToHome": "Volver al inicio"
     },
     "download": {
-      "selectCategory": "Categorías",
-      "categories": {
-        "prebuilt-installer": "Instalador precompilado",
-        "prebuilt-binaries": "Binarios precompilados",
-        "package-manager": "Gestor de Paquetes",
-        "source-code": "Código Fuente"
-      },
       "buttons": {
-        "prebuilt": "Descargar Node.js {version}",
-        "source": "Descargar código fuente de Node.js {version}"
+        "installer": "Instalador para {os} (.{extension})",
+        "binary": "Binario Independiente (.{extension})"
       },
       "dropdown": {
-        "bitness": "Arquitectura",
+        "platform": "Plataforma",
         "os": "Sistema Operativo",
         "version": "Versión",
-        "platform": "Plataforma"
+        "installMethod": "Método de instalación",
+        "packageManager": "Gestor de Paquetes",
+        "unknown": "Desconocido",
+        "platformGroups": {
+          "official": "Recomendado (Oficial)",
+          "unofficial": "Comunidad (No oficial)"
+        }
       },
       "codeBox": {
-        "unsupportedVersionWarning": "Esta versión está fuera de mantenimiento. Encuentre más información aquí:",
-        "fnmEnvSetup": "configurar el entorno de fnm",
-        "systemManagerWarning": "no es un manejador de paquetes de Node.js. Por favor, asegúrate de tener un {packageManager} instalado.",
-        "communityWarning": "El proyecto Node.js no mantiene los gestores de paquetes ni sus scripts de instalación.",
-        "communityWarningReport": "Si encuentras problemas, por favor, contacta con los mantenedores del manejador de paquetes.",
-        "installsNvm": "instala nvm (Node Version Manager)",
-        "downloadAndInstallNodejsRestartTerminal": "descargar e instalar Node.js (es posible que necesites reiniciar la terminal)",
-        "verifiesRightNodejsVersion": "verifica que la versión correcta de Node.js se encuentra en el entorno",
-        "verifiesRightNpmVersion": "verifica que la versión correcta de npm está en el entorno",
-        "shouldPrint": "debería de imprimir `{version}`",
-        "installsFnm": "instala fnm (Fast Node Manager)",
-        "downloadAndInstallNodejs": "descarga e instala Node.js",
-        "activateFNM": "activar fnm",
-        "noteWithColon": "NOTA:",
-        "dockerIsNotNodejsPackageManager": "Docker no es un administrador de paquetes de Node.js.",
-        "PleaseEndureAlreadyInstallOnSystem": "Por favor asegúrese de que ya esté instalado en su sistema.",
-        "dockerInstructions": "Siga las instrucciones oficiales en https://docs.docker.com/desktop/",
-        "dockerImagesLink": "Las imágenes de Docker se proporcionan oficialmente en https://github.com/nodejs/docker-node/",
-        "pullsNodejsDockerImage": "descarga la imagen de Docker de Node.js",
-        "homebrewIsNotNodejsPackageManager": "Homebrew no es un administrador de paquetes de Node.js.",
-        "homebrewInstructions": "Siga las instrucciones oficiales en https://brew.sh/",
-        "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew solo admite la instalación de versiones principales de Node.js y puede que no sea compatible con la última versión de Node.js de la línea de lanzamiento {version}.",
-        "chocolateyIsNotNodejsPackageManager": "Chocolatey no es un administrador de paquetes de Node.js.",
-        "chocolateyInstructions": "Siga las instrucciones oficiales en https://chocolatey.org/",
-        "chocolateyNotMaintanedByNodejs": "Chocolatey no es mantenido oficialmente por el proyecto Node.js y puede que no sea compatible con la versión {version} de Node.js"
+        "unsupportedVersionWarning": "Esta versión no se mantiene. Por favor usa una versión soportada. <link>Aprende de soporte de fin de vida útil (EOL)</link>",
+        "communityPlatformInfo": "Métodos de instalación que dependen de software comunitario son soportados por los equipos que mantienen ese software.",
+        "externalSupportInfo": "Si se encuentran problemas, por favor visita al <link>sito web de {platform}</link>",
+        "noScriptDetected": "Esta página requiere JavaScript. Se puede descargar Node.js sin JavaScript al visitar <link>la página de versiones</link>.",
+        "platformInfo": {
+          "default": "{platform} y sus scripts de instalación no son mantenidos por el proyecto de Node.js.",
+          "nvm": "\"nvm\" es un gestor de versiones de Node.js multiplataforma.",
+          "fnm": "\"fnm\" es un gestor de versiones de Node.js multiplataforma.",
+          "brew": "Homebrew es un gestor de paquetes para macOS y Linux.",
+          "choco": "Chocolatey es un gestor de paquetes para Windows.",
+          "devbox": "Devbox crea entornos de desarrollo aislados y reproducibles.",
+          "docker": "Docker es una plataforma de contenedorización."
+        }
       }
-    }
+    },
+    "logo": "Logo de Node.js"
   }
 }

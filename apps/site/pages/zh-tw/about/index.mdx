@@ -3,7 +3,7 @@ title: 關於 Node.js®
 layout: about
 ---
 
-關於 Node.js®
+# 關於 Node.js®
 
 Node.js 身為非同步事件驅動的 JavaScript 執行環境，旨在建構可擴展的網路應用程式。在下面的 "hello world" 範例中，Node.js 可以同時處理多個並行連線。每個連線都會觸發回呼函式，但如果沒有任何工作需要處理， Node.js 就會進入休眠。
 
@@ -43,18 +43,12 @@ server.listen(port, hostname, () => {
 
 這與目前更常見的作業系統多執行緒並行模型形成鮮明對比。執行緒導向的網路效率相對較低且難以使用。此外，Node.js 的使用者也不必擔心死鎖 (deadlock) 問題，因為系統中並沒有上鎖機制。Node.js 中幾乎沒有直接執行 I/O 的函式，所以除了使用 Node.js 標準函式庫的同步方法進行 I/O 外，不會阻塞行程。少了阻塞使得在 Node.js 中開發可擴展的系統變得非常容易。
 
-如果對上文中部分用語不熟悉，可以參考關於[阻塞與非阻塞][]的完整文章。
+如果您不熟悉這些術語，可以參考這篇完整的文章[〈阻塞與非阻塞概述〉](/learn/asynchronous-work/overview-of-blocking-vs-non-blocking)。
 
 ---
 
-Node.js 在設計上類似於 Ruby 的 [Event Machine][] 和 Python 的 [Twisted][] 等系統，也受到了它們的影響並進一步發展事件模型。它將事件迴圈呈現為一個執行時期結構而非函式庫。在其他系統中，總是需要阻塞式呼叫才能啟動事件迴圈。通常，行為是定義於在指令稿開頭的回呼函式，並在結尾透過 `EventMachine::run()` 等阻塞式呼叫啟動伺服器。然而在 Node.js 中卻沒有這種啟動事件迴圈的呼叫。Node.js 會在執行輸入指令稿後直接進入事件迴圈。若無需要執行的回呼函式，Node.js 就會退出事件迴圈。這種行為類似於瀏覽器中的 JavaScript，即使用者不會感知事件迴圈的存在。
+Node.js 在設計上類似於 Ruby 的 [Event Machine](https://github.com/eventmachine/eventmachine) 和 Python 的 [Twisted](https://twisted.org/) 等系統，也受到了它們的影響並進一步發展事件模型。它將事件迴圈呈現為一個執行時期結構而非函式庫。在其他系統中，總是需要阻塞式呼叫才能啟動事件迴圈。通常，行為是定義於在指令稿開頭的回呼函式，並在結尾透過 `EventMachine::run()` 等阻塞式呼叫啟動伺服器。然而在 Node.js 中卻沒有這種啟動事件迴圈的呼叫。Node.js 會在執行輸入指令稿後直接進入事件迴圈。若無需要執行的回呼函式，Node.js 就會退出事件迴圈。這種行為類似於瀏覽器中的 JavaScript，即使用者不會感知事件迴圈的存在。
 
 HTTP 是 Node.js 中的一等公民，在設計時就考慮到了串流處理和低延遲。這使得 Node.js 非常適合作為 web 函式庫或框架的基礎。
 
-雖然 Node.js 的設計中沒有執行緒，但這並不代表其無法善用多核心環境。透過我們的 `child_process.fork()][]` API 可以產生能便利互相溝通的子行程。基於相同介面的 `[cluster][]` 模組則可讓您在程序間共享 socket，已達成多核心負載平衡。
-
-[阻塞與非阻塞]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
-[`child_process.fork()`]: https://nodejs.org/api/child_process.html
-[`cluster`]: https://nodejs.org/api/cluster.html
-[event machine]: https://github.com/eventmachine/eventmachine
-[twisted]: https://twisted.org/
+雖然 Node.js 的設計中沒有執行緒，但這並不代表其無法善用多核心環境。透過我們的 [`child_process.fork()`](https://nodejs.org/api/child_process.html) API 可以產生能便利互相溝通的子行程。基於相同介面的 [`cluster`](https://nodejs.org/api/cluster.html) 模組則可讓您在程序間共享 socket，以達成多核心負載平衡。

@@ -11,6 +11,10 @@
         }
       },
       "navBar": {
+        "controls": {
+          "open": "顯示導覽選單",
+          "close": "關閉導覽選單"
+        },
         "links": {
           "about": "關於",
           "download": "下載",
@@ -80,7 +84,7 @@
         "commandLine": {
           "links": {
             "commandLine": "命令列",
-            "runNodejsScriptsFromTheCommandLine": "使用命令列執行 Node.js 腳本",
+            "runNodejsScriptsFromTheCommandLine": "使用命令列執行 Node.js 指令稿",
             "howToReadEnvironmentVariablesFromNodejs": "如何從 Node.js 中讀取環境變數",
             "howToUseTheNodejsRepl": "如何使用 Node.js REPL",
             "outputToTheCommandLineUsingNodejs": "使用 Node.js 輸出到命令列",
@@ -264,8 +268,8 @@
         "packageManager": "套件管理程式",
         "unknown": "未知",
         "platformGroups": {
-          "official": "官方推薦",
-          "unofficial": "非官方社群"
+          "official": "推薦（官方）",
+          "unofficial": "社群（非官方）"
         }
       },
       "codeBox": {
@@ -283,6 +287,7 @@
           "docker": "Docker 是一款容器化平台。"
         }
       }
-    }
+    },
+    "logo": "Node.js 標誌"
   }
 }
