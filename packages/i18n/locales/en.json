@@ -49,7 +49,7 @@
             "transpile": "Running TypeScript code using transpilation",
             "run": "Running TypeScript with a runner",
             "runNatively": "Running TypeScript Natively",
-            "publishingTSProject": "Publishing a TypeScript project"
+            "publishingTSPackage": "Publishing a TypeScript package"
           }
         },
         "asynchronousWork": {

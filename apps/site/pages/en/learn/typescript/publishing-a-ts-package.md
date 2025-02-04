@@ -1,10 +1,10 @@
 ---
-title: Publishing a TypeScript project
+title: Publishing a TypeScript package
 layout: learn
 authors: JakobJingleheimer
 ---
 
-# Publishing a TypeScript project
+# Publishing a TypeScript package
 
 This article covers items regarding TypeScript publishing specifically. Publishing means distributed as a package via npm (or other package manager); this is not about compiling an app / server to be run in production (such as a PWA and/or endpoint server).
 
