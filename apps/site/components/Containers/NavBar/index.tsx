@@ -70,7 +70,7 @@ const NavBar: FC<NavbarProps> = ({
         id="sidebarItemToggler"
         type="checkbox"
         onChange={e => setIsMenuOpen(() => e.target.checked)}
-        aria-label={t(`components.containers.navBar.controls.open`)}
+        aria-label={t(`components.containers.navBar.controls.toggle`)}
       />
 
       <div className={`${style.main} peer-checked:flex`}>
