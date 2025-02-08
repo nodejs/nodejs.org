@@ -26,7 +26,7 @@ Some important things to note:
 
 - Use [dependabot](https://docs.github.com/en/code-security/dependabot) to keep your dependencies current, including those in github actions. It's a very easy set-and-forget configuration.
 
-- `.nvmrc` comes from [NVM](https://github.com/nvm-sh/nvm), a multi-version manager for node. It allows you to specify the version of node the project should generally use.
+- `.nvmrc` comes from [`nvm`](https://github.com/nvm-sh/nvm), a multi-version manager for node. It allows you to specify the version of node the project should generally use.
 
 A directory overview of a repository would look something like:
 
@@ -136,7 +136,7 @@ const bar: number = 1 + foo;
 
 TypeScript has warned that the above code will not behave as intended, just like a unit test warns that code does not behave as intended. They are complementary and verify different things—you should have both.
 
-Your editor (ex VS Code) likely has built-in support for TypeScript, displaying errors as you work. If not, and/or you missed those, CI will have your back.
+Your editor (eg VS Code) likely has built-in support for TypeScript, displaying errors as you work. If not, and/or you missed those, CI will have your back.
 
 The following [GitHub Action](https://github.com/features/actions) sets up a CI task to automatically check (and require) types pass inspection for a PR into the `main` branch.
 
@@ -265,14 +265,14 @@ Type declarations (`.d.ts` and friends) provide type information as a sidecar fi
 
 Since these are generated based on source code, they can be built as part of your publication process and do not need to be checked into your repository.
 
-Take the following example, where the type declarations are generated just before publishing to the NPM registry.
+Take the following example, where the type declarations are generated just before publishing to the npm registry.
 
 ```yaml displayName=".github/workflows/publish.yml"
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
 # This is mostly boilerplate.
 
-name: Publish to NPM
+name: Publish to npm
 on:
   push:
     tags:
@@ -292,7 +292,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
 
-      # - name: Publish to NPM
+      # - name: Publish to npm
       #   run: … npm publish …
 ```
 
@@ -329,4 +329,4 @@ Generating type declarations is deterministic: you'll get the same output from t
 
 [`npm publish`](https://docs.npmjs.com/cli/commands/npm-publish) grabs everything applicable and available at the moment the command is run; so generating type declarations immediately before means those are available and will get picked up.
 
-By default, `npm publish` grabs (almost) everything (see [Files included in package](https://docs.npmjs.com/cli/commands/npm-publish#files-included-in-package)). In order to keep your published package minimal (see the "Heaviest Objects in the Universe" meme about `node_modules`), you want to exclude certain files (like tests and test fixtures) from from packaging. Add these to the opt-out list specified in [`.npmignore`](https://docs.npmjs.com/cli/using-npm/developers#keeping-files-out-of-your-package); ensure the `!*.d.ts` exception is listed, or the generated type declartions will not be published! Alternatively, you can use [package.json "files"](https://docs.npmjs.com/cli/configuring-npm/package-json#files) to create an opt-in list.
+By default, `npm publish` grabs (almost) everything (see [Files included in package](https://docs.npmjs.com/cli/commands/npm-publish#files-included-in-package)). In order to keep your published package minimal (see the "Heaviest Objects in the Universe" meme about `node_modules`), you want to exclude certain files (like tests and test fixtures) from from packaging. Add these to the opt-out list specified in [`.npmignore`](https://docs.npmjs.com/cli/using-npm/developers#keeping-files-out-of-your-package); ensure the `!*.d.ts` exception is listed, or the generated type declartions will not be published! Alternatively, you can use [package.json "files"](https://docs.npmjs.com/cli/configuring-npm/package-json#files) to create an opt-in (if a mistake is made accidentally omitting a file, your package may be broken for downstream users, so this is a less safe option).
