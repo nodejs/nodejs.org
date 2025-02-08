@@ -61,10 +61,10 @@ example-ts-pkg/
 │ │ ├ foo.fixture.js
 │ │ ├ main.test.ts
 │ ├ main.ts
-│ └ some-util.ts
-│ │ ├ __test__
-│ │   └ some-util.test.ts
-│ │ └ some-util.ts
+│ └ some-util/
+│   ├ __test__
+│   │ └ some-util.test.ts
+│   └ some-util.ts
 ├ LICENSE
 ├ package.json
 ├ README.md
