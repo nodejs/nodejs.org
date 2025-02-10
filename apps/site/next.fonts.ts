@@ -16,5 +16,6 @@ export const OPEN_SANS = Open_Sans({
 export const IBM_PLEX_MONO = IBM_Plex_Mono({
   weight: ['400', '600'],
   subsets: ['latin'],
+  fallback: ['ui-monospace'],
   variable: '--font-ibm-plex-mono',
 });
