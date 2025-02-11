@@ -10,7 +10,7 @@ In the previous article, we learned how to run TypeScript code using transpilati
 
 ## Running TypeScript code with `ts-node`
 
-[ts-node](https://typestrong.org/ts-node/) is a TypeScript execution environment for Node.js. It allows you to run TypeScript code directly in Node.js without the need to compile it first. Note, however, that it does not type check your code. So we recommend to type check your code first with `tsc` and then run it with `ts-node` before shipping it.
+[ts-node](https://typestrong.org/ts-node/) is a TypeScript execution environment for Node.js. It allows you to run TypeScript code directly in Node.js without the need to compile it first. By default, `ts-node` performs type checking unless `transpileOnly` is enabled. While `ts-node` can catch type errors at runtime, we still recommend type-checking your code first with `tsc` before shipping it.
 
 To use `ts-node`, you need to install it first:
 
