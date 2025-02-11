@@ -35,17 +35,17 @@ Now let's get to work.
 3. Run node with perf enabled (see [perf output issues](#perf-output-issues) for tips specific to Node.js versions)
 
    ```
-   perf record -e cycles:u -g -- node --perf-basic-prof app.js
+   perf record -e cycles:u -g -- node --perf-basic-prof --interpreted-frames-native-stack app.js
    ```
 
 4. Disregard warnings unless they're saying you can't run perf due to missing packages; you may get some warnings about not being able to access kernel module samples which you're not after anyway.
 5. Run `perf script > perfs.out` to generate the data file you'll visualize in a moment. It's useful to [apply some cleanup](#filtering-out-nodejs-internal-functions) for a more readable graph
-6. Install stackvis if not yet installed `npm i -g stackvis`
-7. Run `stackvis perf < perfs.out > flamegraph.htm`
+6. Clone Brendan Gregg's FlameGraph tools: https://github.com/brendangregg/FlameGraph
+7. Run `cat perfs.out | ./FlameGraph/stackcollapse-perf.pl | ./FlameGraph/flamegraph.pl --colors=js > profile.svg`
 
 Now open the flame graph file in your favorite browser and watch it burn. It's color-coded so you can focus on the most saturated orange bars first. They're likely to represent CPU heavy functions.
 
-Worth mentioning - if you click an element of a flame graph a zoom-in of its surroundings will be displayed above the graph.
+Worth mentioning - if you click an element of a flame graph a it will zoom-in on the section you clicked.
 
 ### Using `perf` to sample a running process
 
