@@ -31,7 +31,7 @@ For all intents and purposes, this is an official Node.js space, and we are eage
 
 ### How to Join
 
-Joining the Node.js Discord server is easy! Simply visit [https://discord.gg/nodejs](https://discord.gg/nodejs) and become part of our growing community. We can't wait to see you there!
+Joining the Node.js Discord server is easy! Simply visit [https://discord.gg/REPLACEME](https://discord.gg/REPLACEME) and become part of our growing community. We can't wait to see you there!
 
 ### Looking Ahead
 

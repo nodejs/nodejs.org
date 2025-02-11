@@ -9,7 +9,7 @@ If you are interested in getting involved with the Node.js community, there are 
 
 ## Community Discussion
 
-- The [Node.js official Discord server](https://discord.gg/nodejs) is a place to chat with other Node.js developers and getting official news from the Node.js project.
+- The [Node.js official Discord server](https://discord.gg/REPLACEME) is a place to chat with other Node.js developers and getting official news from the Node.js project.
 - The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features and if you have questions about Node.js, you can use the [github discussions](https://github.com/orgs/nodejs/discussions).
 - The [`nodejs/help`](https://github.com/nodejs/help/issues) repository is the place to ask questions about Node.js.
 - The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
