@@ -3,11 +3,10 @@
 
   .tabsList {
     @apply font-open-sans
+      scrollbar-thin
       flex
       gap-2
       overflow-x-auto;
-
-    scrollbar-width: thin;
 
     .tabsTrigger {
       @apply whitespace-nowrap
