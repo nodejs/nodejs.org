@@ -7,6 +7,8 @@
       gap-2
       overflow-x-auto;
 
+    scrollbar-width: thin;
+
     .tabsTrigger {
       @apply whitespace-nowrap
         border-b-2

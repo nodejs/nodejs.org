@@ -21,6 +21,8 @@
         text-neutral-400
         [counter-reset:line];
 
+      scrollbar-width: thin;
+
       & > [class='line'] {
         @apply relative
           min-w-0
