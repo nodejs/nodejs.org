@@ -12,6 +12,7 @@
     & > code {
       @apply font-ibm-plex-mono
         font-regular
+        scrollbar-thin
         grid
         overflow-x-auto
         bg-transparent

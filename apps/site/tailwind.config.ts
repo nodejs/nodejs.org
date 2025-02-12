@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 
 export default {
   content: [
@@ -174,5 +175,12 @@ export default {
   plugins: [
     require('@savvywombat/tailwindcss-grid-areas'),
     require('@tailwindcss/container-queries'),
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.scrollbar-thin': {
+          'scrollbar-width': 'thin',
+        },
+      });
+    }),
   ],
 } satisfies Config;
