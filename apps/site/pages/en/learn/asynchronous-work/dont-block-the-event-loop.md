@@ -365,7 +365,7 @@ For a complicated task, move the work off of the Event Loop onto a Worker Pool.
 You have two options for a destination Worker Pool to which to offload work.
 
 1. You can use the built-in Node.js Worker Pool by developing a [C++ addon](https://nodejs.org/api/addons.html). On older versions of Node, build your C++ addon using [NAN](https://github.com/nodejs/nan), and on newer versions use [N-API](https://nodejs.org/api/n-api.html). [node-webworker-threads](https://www.npmjs.com/package/webworker-threads) offers a JavaScript-only way to access the Node.js Worker Pool.
-2. You can create and manage your own Worker Pool dedicated to computation rather than the Node.js I/O-themed Worker Pool. The most straightforward ways to do this is using [Child Process](https://nodejs.org/api/child_process.html) or [Cluster](https://nodejs.org/api/cluster.html).
+2. You can create and manage your own Worker Pool dedicated to computation rather than the Node.js I/O-themed Worker Pool. The most straightforward way to do this is using [Child Process](https://nodejs.org/api/child_process.html) or [Cluster](https://nodejs.org/api/cluster.html).
 
 You should _not_ simply create a [Child Process](https://nodejs.org/api/child_process.html) for every client.
 You can receive client requests more quickly than you can create and manage children, and your server might become a [fork bomb](https://en.wikipedia.org/wiki/Fork_bomb).
@@ -392,7 +392,7 @@ I/O-intensive tasks involve querying an external service provider (DNS, file sys
 While a Worker with an I/O-intensive task is waiting for its response, it has nothing else to do and can be de-scheduled by the operating system, giving another Worker a chance to submit their request.
 Thus, _I/O-intensive tasks will be making progress even while the associated thread is not running_.
 External service providers like databases and file systems have been highly optimized to handle many pending requests concurrently.
-For example, a file system will examine a large set of pending write and read requests to merge conflicting updates and to retrieve files in an optimal order.
+For example, a file system will examine a large set of pending write and read requests to merge conflicting updates and retrieve files in an optimal order.
 
 If you rely on only one Worker Pool, e.g. the Node.js Worker Pool, then the differing characteristics of CPU-bound and I/O-bound work may harm your application's performance.
 
@@ -436,7 +436,7 @@ Two examples should illustrate the possible variation in task times.
 
 Suppose your server must read files in order to handle some client requests.
 After consulting the Node.js [File system](https://nodejs.org/api/fs.html) APIs, you opted to use `fs.readFile()` for simplicity.
-However, `fs.readFile()` is ([currently](https://github.com/nodejs/node/pull/17054)) not partitioned: it submits a single `fs.read()` Task spanning the entire file.
+However, `fs.readFile()` before v10 was not partitioned: it submitted a single `fs.read()` Task spanning the entire file.
 If you read shorter files for some users and longer files for others, `fs.readFile()` may introduce significant variation in Task lengths, to the detriment of Worker Pool throughput.
 
 For a worst-case scenario, suppose an attacker can convince your server to read an _arbitrary_ file (this is a [directory traversal vulnerability](https://www.owasp.org/index.php/Path_Traversal)).
