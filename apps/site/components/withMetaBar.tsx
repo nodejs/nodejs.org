@@ -20,6 +20,10 @@ const WithMetaBar: FC = () => {
   const lastUpdated = frontmatter.date
     ? formatter.dateTime(new Date(frontmatter.date), DEFAULT_DATE_FORMAT)
     : undefined;
+  const readingTimeText = formatter.number(Math.round(readingTime.minutes), {
+    style: 'unit',
+    unit: 'minute',
+  });
 
   const usernames =
     frontmatter.authors?.split(',').map(author => author.trim()) ?? [];
@@ -39,7 +43,7 @@ const WithMetaBar: FC = () => {
     <MetaBar
       items={{
         'components.metabar.lastUpdated': lastUpdated,
-        'components.metabar.readingTime': readingTime.text,
+        'components.metabar.readingTime': readingTimeText,
         ...(usernames.length && {
           [`components.metabar.${usernames.length > 1 ? 'authors' : 'author'}`]:
             (
