@@ -11,6 +11,9 @@
         }
       },
       "navBar": {
+        "controls": {
+          "toggle": "Перемкнути меню навігації"
+        },
         "links": {
           "about": "Про Node.js",
           "download": "Завантажити",
@@ -48,7 +51,8 @@
             "introduction": "Вступ до TypeScript",
             "transpile": "Запуск коду на TypeScript за допомогою транспіляції",
             "run": "Запуск коду на TypeScript із виконавцем",
-            "runNatively": "Запуск коду на TypeScript нативно"
+            "runNatively": "Запуск коду на TypeScript нативно",
+            "publishingTSPackage": "Публікація пакета TypeScript"
           }
         },
         "asynchronousWork": {
@@ -283,6 +287,7 @@
           "docker": "Docker — це платформа контейнеризації."
         }
       }
-    }
+    },
+    "logo": "Логотип Node.js"
   }
 }

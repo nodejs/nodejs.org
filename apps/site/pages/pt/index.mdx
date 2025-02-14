@@ -4,47 +4,45 @@ layout: home
 ---
 
 <section>
-  <WithBadge section="index" />
+<WithBadge section="index" />
 
-  <div>
-    <h1 className="special">Executar a JavaScript em Toda Parte</h1>
+<div>
+<h1 className="special">Executar a JavaScript em Toda Parte</h1>
 
-    Node.js® é uma ambiente de execução de JavaScript disponível para várias plataformas,
-    de código aberto e gratuita, que permite os programadores criar servidores, aplicações
-    da Web, ferramentas de linha de comando e programas de automação de tarefas.
+Node.js® é um ambiente de execução de JavaScript multiplataforma,
+de código-aberto e gratuita, que permite aos programadores criar servidores, aplicações
+da Web, ferramentas de linha de comando e programas de automação de tarefas.
+</div>
 
-  </div>
+<div>
+<WithNodeRelease status={['LTS']}>
+{({ release }) => (
+<>
+<DownloadButton release={release}>Descarregar a Node.js (LTS)</DownloadButton>
+<small>
+Descarrega a Node.js <b>{release.versionWithPrefix}</b>
+<sup title="Downloads a Node.js installer for your current platform">1</sup> com suporte de longo prazo.
+A Node.js também pode ser instalada por meio de <Link href="/download">gestores de versão</Link>.
+</small>
+</>
+)}
+</WithNodeRelease>
 
-  <div>
-    <WithNodeRelease status={['LTS']}>
-      {({ release }) => (
-        <>
-          <DownloadButton release={release}>Descarregar a Node.js (LTS)</DownloadButton>
-          <small>
-            Descarregar a Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Descarregar um instalador da Node.js para a nossa plataforma atual">1</sup> com o suporte de longo prazo.
-            A Node.js também pode ser instalada através dos <Link href="/download/package-manager">gestores de pacotes</Link>.
-          </small>
-        </>
-      )}
-    </WithNodeRelease>
-
-    <WithNodeRelease status={['Current']}>
-      {({ release }) => (
-        <small>
-          Se estivermos ansiosos quanto as novas funcionalidades,
-          podemos obter a <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Descarregar um instalador da Node.js para a nossa plataforma atual">1</sup>.
-        </small>
-      )}
-    </WithNodeRelease>
-
-  </div>
+<WithNodeRelease status={['Current']}>
+{({ release }) => (
+<small>
+Queremos novas funcionalidades mais cedo?
+Podemos então obter a <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+<sup title="Descarrega um instalador da Node.js para a nossa plataforma atual">1</sup>.
+</small>
+)}
+</WithNodeRelease>
+</div>
 </section>
 
 <section>
-  <div>
-    ```js displayName="Create an HTTP Server"
+<div>
+```js displayName="Create an HTTP Server"
     // server.mjs
     import { createServer } from 'node:http';
 
@@ -61,7 +59,7 @@ layout: home
     // run with `node server.mjs`
     ```
 
-    ```js displayName="Write Tests"
+```js displayName="Write Tests"
     // tests.mjs
     import assert from 'node:assert';
     import test from 'node:test';
@@ -78,7 +76,7 @@ layout: home
     // run with `node tests.mjs`
     ```
 
-    ```js displayName="Read and Hash a File"
+```js displayName="Read and Hash a File"
     // crypto.mjs
     import { createHash } from 'node:crypto';
     import { readFile } from 'node:fs/promises';
@@ -95,7 +93,7 @@ layout: home
     // run with `node crypto.mjs`
     ```
 
-    ```js displayName="Streams Pipeline"
+```js displayName="Streams Pipeline"
     // streams.mjs
     import { pipeline } from 'node:stream/promises';
     import { createReadStream, createWriteStream } from 'node:fs';
@@ -112,7 +110,7 @@ layout: home
     // run with `node streams.mjs`
     ```
 
-    ```js displayName="Work with Threads"
+```js displayName="Work with Threads"
     // threads.mjs
     import { Worker, isMainThread,
       workerData, parentPort } from 'node:worker_threads';
@@ -128,7 +126,7 @@ layout: home
 
     // run with `node threads.mjs`
     ```
+</div>
 
-  </div>
-  Podemos saber mais do que a Node.js é capaz de oferecer com os nossos [materiais de aprendizado](/learn).
+É possível saber que mais a Node.js consegue oferecer com os nossos [materiais de estudo](/learn).
 </section>
