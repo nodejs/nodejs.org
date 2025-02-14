@@ -20,9 +20,10 @@ const WithMetaBar: FC = () => {
   const lastUpdated = frontmatter.date
     ? formatter.dateTime(new Date(frontmatter.date), DEFAULT_DATE_FORMAT)
     : undefined;
-  const readingTimeText = formatter.number(Math.round(readingTime.minutes), {
+  const readingTimeText = formatter.number(readingTime.minutes, {
     style: 'unit',
     unit: 'minute',
+    maximumFractionDigits: 0,
   });
 
   const usernames =
