@@ -1,7 +1,7 @@
 ---
 title: Reading files with Node.js
 layout: learn
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, benhalverson
 ---
 
 # Reading files with Node.js
@@ -92,10 +92,10 @@ In this case, a better option is to read the file content using streams.
 ```mjs
 import fs from 'fs';
 import path from 'path';
+import { pipeline } from 'node:stream/promises';
 
 const fileUrl = 'https://www.gutenberg.org/files/2701/2701-0.txt';
 const outputFilePath = path.join(process.cwd(), 'mobey.md');
-import { pipeline } from 'node:stream/promises';
 
 async function downloadFile(url, outoutPath) {
   const response = await fetch(url);
