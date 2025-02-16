@@ -214,7 +214,7 @@ export const INSTALL_METHODS: Array<
     label: InstallationMethodLabel.N,
     value: 'N',
     compatibility: { os: ['MAC', 'LINUX'] },
-    iconImage: <InstallMethodIcons.N width={16} height={16} />,
+    iconImage: <InstallMethodIcons.Placeholder width={16} height={16} />,
     url: 'https://github.com/tj/n',
     info: 'layouts.download.codeBox.platformInfo.n',
   },
