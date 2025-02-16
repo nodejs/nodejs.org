@@ -95,7 +95,7 @@ import path from 'path';
 import { pipeline } from 'node:stream/promises';
 
 const fileUrl = 'https://www.gutenberg.org/files/2701/2701-0.txt';
-const outputFilePath = path.join(process.cwd(), 'mobey.md');
+const outputFilePath = path.join(process.cwd(), 'moby.md');
 
 async function downloadFile(url, outoutPath) {
   const response = await fetch(url);
