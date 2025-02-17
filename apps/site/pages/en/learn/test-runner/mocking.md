@@ -208,7 +208,7 @@ describe('endpoints', { concurrency: true }, () => {
     };
 
     agent
-      .get('example.com')
+      .get('https://example.com')
       .intercept({
         path: endpoint,
         method: 'GET',
@@ -230,7 +230,7 @@ describe('endpoints', { concurrency: true }, () => {
     };
 
     agent
-      .get('example.com')
+      .get('https://example.com')
       .intercept({
         path: endpoint,
         method: 'PUT',
