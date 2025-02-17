@@ -8,7 +8,7 @@ author: Carl Vitullo, Claudio Wunder
 
 First, the news: [The OpenJS Foundation](https://openjsf.org/) and [Reactiflux](https://reactiflux.com/) have collaborated to bring forth an official Discord community for Node.js 🎉 You can [join the Node.js Discord](https://discord.gg/vUsrbjd) now.
 
-Over the past several years, Discord has become the de-facto platform for communities to connect and communicate. Many Node.js community members already use Discord to discuss Node.js, seek advice, and share their projects. By establishing an official Node.js Discord server, we aim to gather these conversations and provide a safe and well-moderated space for our online community to congregate. Lots of other open-source projects, such as [TypeScript](https://discord.gg/typescript), [Rust](https://discord.gg/rust-lang), and [Kubernetes](https://discord.gg/kubernetes), have successfully built their communities on Discord.
+Over the past several years, Discord has become the de-facto platform for communities to connect and communicate. Many Node.js community members already use Discord to discuss Node.js, seek advice, and share their projects. By establishing an official Node.js Discord server, we aim to gather these conversations and provide a safe and well-moderated space for our online community to congregate. Lots of other open-source projects, such as [TypeScript](https://discord.gg/typescript), [Rust](https://discord.gg/rust-lang), and [Python](https://discord.gg/python), have successfully built their communities on Discord.
 
 Our Node.js Discord space will be perfect for:
 
