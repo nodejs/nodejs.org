@@ -34,6 +34,7 @@ export enum InstallationMethodLabel {
   CHOCO = 'Chocolatey',
   DEVBOX = 'Devbox',
   DOCKER = 'Docker',
+  VOLTA = 'Volta',
 }
 
 export enum PackageManagerLabel {
@@ -208,6 +209,14 @@ export const INSTALL_METHODS: Array<
     recommended: true,
     url: 'https://docs.docker.com/get-started/get-docker/',
     info: 'layouts.download.codeBox.platformInfo.docker',
+  },
+  {
+    label: InstallationMethodLabel.VOLTA,
+    value: 'VOLTA',
+    compatibility: { os: ['WIN', 'MAC', 'LINUX'] },
+    iconImage: <InstallMethodIcons.Volta width={16} height={16} />,
+    url: 'https://docs.volta.sh/guide/getting-started',
+    info: 'layouts.download.codeBox.platformInfo.volta',
   },
 ];
 
