@@ -2,7 +2,7 @@
 # For more about n and other ways to install: https://github.com/tj/n
 
 # Download and install n and Node.js with a single command:
-curl -L https://bit.ly/n-install | bash -s ${props.release.major}
+curl -fsSL https://raw.githubusercontent.com/mklement0/n-install/stable/bin/n-install | bash -s ${props.release.major}
 
 # Download and install Node.js, done for you by n-install:
 #   n install ${props.release.major}
