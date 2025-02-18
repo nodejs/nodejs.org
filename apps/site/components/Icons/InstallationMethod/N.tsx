@@ -1,6 +1,5 @@
 import type { FC, SVGProps } from 'react';
 
-// This is an empty placeholder for layout purposes.
 const N: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
     width="32"
@@ -9,7 +8,27 @@ const N: FC<SVGProps<SVGSVGElement>> = props => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
-  ></svg>
+  >
+    // terminal background (with border for on black background)
+    <rect
+      x="0"
+      y="0"
+      width="32"
+      height="32"
+      fill="#1e1e1e"
+      stroke="#ffffff"
+      strokeWidth="2"
+      rx="5"
+    />
+    // close, minimize, maximize buttons
+    <circle cx="5" cy="3" r="3" fill="#ff5f56" />
+    <circle cx="12" cy="3" r="3" fill="#ffbd2e" />
+    <circle cx="19" cy="3" r="3" fill="#27c93f" />
+    // text with outline
+    <text x="6" y="22" fontFamily="monospace" fontSize="14" fill="#00ff00">
+      $n
+    </text>
+  </svg>
 );
 
 export default N;
