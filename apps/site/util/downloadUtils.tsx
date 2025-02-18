@@ -215,7 +215,6 @@ export const INSTALL_METHODS: Array<
     value: 'VOLTA',
     compatibility: { os: ['WIN', 'MAC', 'LINUX'] },
     iconImage: <InstallMethodIcons.Volta width={16} height={16} />,
-    recommended: true,
     url: 'https://docs.volta.sh/guide/getting-started',
     info: 'layouts.download.codeBox.platformInfo.volta',
   },

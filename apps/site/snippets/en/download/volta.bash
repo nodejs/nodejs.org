@@ -4,8 +4,8 @@ ${props.os === 'WIN' ?
   'curl https://get.volta.sh | bash'
 }
 
-#Select a default Node version
+# Download and install Node.js:
 volta install node@${props.release.major}
 
-#Or to use the latest LTS version, run:
-volta install node
+# Verify the Node.js version:
+node -v # Should print "${props.release.versionWithPrefix}".
