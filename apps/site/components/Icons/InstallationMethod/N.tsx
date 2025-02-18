@@ -1,7 +1,7 @@
 import type { FC, SVGProps } from 'react';
 
 // This is an empty placeholder for layout purposes.
-const Placeholder: FC<SVGProps<SVGSVGElement>> = props => (
+const N: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
     width="32"
     height="32"
@@ -12,4 +12,4 @@ const Placeholder: FC<SVGProps<SVGSVGElement>> = props => (
   ></svg>
 );
 
-export default Placeholder;
+export default N;
