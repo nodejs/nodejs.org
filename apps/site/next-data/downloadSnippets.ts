@@ -29,7 +29,7 @@ export default async function getDownloadSnippets(
     const { default: provideDownloadSnippets } = await import(
       '@/next-data/providers/downloadSnippets'
     );
-    return provideDownloadSnippets(lang)!;
+    return (await provideDownloadSnippets(lang))!;
   }
 
   // Applies the language to the URL, since this content is actually localized

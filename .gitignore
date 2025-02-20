@@ -32,3 +32,8 @@ cache
 tsconfig.tsbuildinfo
 
 dist/
+
+# Ignore worker artifacts
+apps/site/.open-next
+apps/site/.wrangler
+apps/site/.cloudflare/.asset-manifests
