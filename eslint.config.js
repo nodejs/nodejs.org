@@ -15,6 +15,8 @@ export default [
       'global.d.ts',
       'junit.xml',
       'storybook-static/**',
+      '**/.wrangler',
+      '**/.open-next',
     ],
   },
   {
