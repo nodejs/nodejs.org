@@ -11,7 +11,7 @@ export const GET = async (_: Request, props: StaticParams) => {
   const params = await props.params;
 
   // Retrieve all available Download snippets for a given locale if available
-  const snippets = provideDownloadSnippets(params.locale);
+  const snippets = await provideDownloadSnippets(params.locale);
 
   // We append always the default/fallback snippets when a result is found
   return Response.json(snippets, {

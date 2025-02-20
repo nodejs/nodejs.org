@@ -2,15 +2,22 @@ import { cache } from 'react';
 
 import generateBlogData from '@/next-data/generators/blogData.mjs';
 import { BLOG_POSTS_PER_PAGE } from '@/next.constants.mjs';
-import type { BlogCategory, BlogPostsRSC } from '@/types';
+import type { BlogCategory, BlogPostsRSC, BlogPost } from '@/types';
 
-const { categories, posts } = await generateBlogData();
+let blogData: {
+  categories: Array<BlogCategory>;
+  posts: Array<BlogPost>;
+};
 
-export const provideBlogCategories = cache(() => categories);
+export const provideBlogCategories = cache(async () => {
+  blogData ??= await generateBlogData();
+  return blogData.categories;
+});
 
 export const provideBlogPosts = cache(
-  (category: BlogCategory): BlogPostsRSC => {
-    const categoryPosts = posts
+  async (category: BlogCategory): Promise<BlogPostsRSC> => {
+    blogData ??= await generateBlogData();
+    const categoryPosts = blogData.posts
       .filter(post => post.categories.includes(category))
       .sort((a, b) => b.date.getTime() - a.date.getTime());
 
@@ -32,8 +39,8 @@ export const provideBlogPosts = cache(
 );
 
 export const providePaginatedBlogPosts = cache(
-  (category: BlogCategory, page: number): BlogPostsRSC => {
-    const { posts, pagination } = provideBlogPosts(category);
+  async (category: BlogCategory, page: number): Promise<BlogPostsRSC> => {
+    const { posts, pagination } = await provideBlogPosts(category);
 
     // This autocorrects if invalid numbers are given to only allow
     // actual valid numbers to be provided

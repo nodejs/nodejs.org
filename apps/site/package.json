@@ -18,7 +18,11 @@
     "sync-orama": "node ./scripts/orama-search/sync-orama-cloud.mjs",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 jest",
     "test:unit:watch": "npm run test:unit -- --watch",
-    "test": "turbo test:unit"
+    "test": "turbo test:unit",
+    "build:worker": "npx opennextjs-cloudflare build",
+    "postbuild:worker": "node ./.cloudflare/prepare-build.mjs",
+    "cf:preview": "npm run build:worker && npx wrangler dev",
+    "cf:deploy": "npx wrangler deploy"
   },
   "dependencies": {
     "@heroicons/react": "~2.2.0",
@@ -91,6 +95,8 @@
     "stylelint-selector-bem-pattern": "4.0.1",
     "typescript": "~5.7.2",
     "typescript-eslint": "~8.25.0",
-    "user-agent-data-types": "0.4.2"
+    "user-agent-data-types": "0.4.2",
+    "wrangler": "^4.6.0",
+    "@opennextjs/cloudflare": "^0.6.4"
   }
 }
