@@ -5,5 +5,6 @@ import FNM from '@/components/Icons/InstallationMethod/FNM';
 import Homebrew from '@/components/Icons/InstallationMethod/Homebrew';
 import N from '@/components/Icons/InstallationMethod/N';
 import NVM from '@/components/Icons/InstallationMethod/NVM';
+import Volta from '@/components/Icons/InstallationMethod/Volta';
 
-export default { Choco, Devbox, Docker, FNM, Homebrew, N, NVM };
+export default { Choco, Devbox, Docker, FNM, Homebrew, N, NVM, Volta };

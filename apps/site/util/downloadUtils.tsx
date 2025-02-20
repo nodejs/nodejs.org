@@ -35,6 +35,7 @@ export enum InstallationMethodLabel {
   DEVBOX = 'Devbox',
   DOCKER = 'Docker',
   N = 'n',
+  VOLTA = 'Volta',
 }
 
 export enum PackageManagerLabel {
@@ -217,6 +218,14 @@ export const INSTALL_METHODS: Array<
     iconImage: <InstallMethodIcons.N width={16} height={16} />,
     url: 'https://github.com/tj/n',
     info: 'layouts.download.codeBox.platformInfo.n',
+  },
+  {
+    label: InstallationMethodLabel.VOLTA,
+    value: 'VOLTA',
+    compatibility: { os: ['WIN', 'MAC', 'LINUX'] },
+    iconImage: <InstallMethodIcons.Volta width={16} height={16} />,
+    url: 'https://docs.volta.sh/guide/getting-started',
+    info: 'layouts.download.codeBox.platformInfo.volta',
   },
 ];
 

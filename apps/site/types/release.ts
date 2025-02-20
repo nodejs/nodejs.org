@@ -5,6 +5,7 @@ import type { UserOS, UserPlatform } from '@/types/userOS';
 export type InstallationMethod =
   | 'NVM'
   | 'FNM'
+  | 'VOLTA'
   | 'BREW'
   | 'DEVBOX'
   | 'DOCKER'
