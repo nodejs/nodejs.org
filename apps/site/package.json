@@ -2,9 +2,11 @@
   "name": "@node-core/website",
   "type": "module",
   "scripts": {
-    "build": "cross-env NODE_NO_WARNINGS=1 next build --turbopack",
+    "prebuild": "pnpm build-blog-data",
+    "build": "cross-env NODE_NO_WARNINGS=1 next build",
     "check-types": "tsc --noEmit",
     "deploy": "cross-env NEXT_PUBLIC_STATIC_EXPORT=true NODE_NO_WARNINGS=1 next build",
+    "predev": "pnpm build-blog-data",
     "dev": "cross-env NODE_NO_WARNINGS=1 next dev",
     "lint": "turbo run lint:md lint:js lint:css",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
@@ -17,7 +19,12 @@
     "sync-orama": "node ./scripts/orama-search/sync-orama-cloud.mjs",
     "test": "turbo test:unit",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --test-coverage-exclude=**/*.test.* --experimental-test-module-mocks --enable-source-maps --import=global-jsdom/register --import=tsx --import=tests/setup.jsx --test **/*.test.*",
-    "test:unit:watch": "cross-env NODE_OPTIONS=\"--watch\" pnpm test:unit"
+    "test:unit:watch": "cross-env NODE_OPTIONS=\"--watch\" pnpm test:unit",
+    "build-blog-data": "node ./scripts/blog-data/generate.mjs",
+    "build-blog-data:watch": "node --watch --watch-path=pages/en/blog ./scripts/blog-data/generate.mjs",
+    "cloudflare:build:worker": "opennextjs-cloudflare build",
+    "cloudflare:preview": "pnpm run cloudflare:build:worker && wrangler dev",
+    "cloudflare:deploy": "pnpm run cloudflare:build:worker && wrangler deploy"
   },
   "dependencies": {
     "@heroicons/react": "~2.2.0",
@@ -75,7 +82,9 @@
   "devDependencies": {
     "@eslint/compat": "~1.2.8",
     "@eslint/eslintrc": "~3.3.1",
+    "@flarelabs-net/wrangler-build-time-fs-assets-polyfilling": "^0.0.0",
     "@next/eslint-plugin-next": "15.3.1",
+    "@opennextjs/cloudflare": "^1.0.0-beta.4",
     "@testing-library/user-event": "~14.6.1",
     "@types/semver": "~7.7.0",
     "eslint-config-next": "15.3.1",
@@ -104,7 +113,8 @@
     "tsx": "^4.19.3",
     "typescript": "~5.8.2",
     "typescript-eslint": "~8.31.1",
-    "user-agent-data-types": "0.4.2"
+    "user-agent-data-types": "0.4.2",
+    "wrangler": "^4.13.0"
   },
   "imports": {
     "#site/*": [
