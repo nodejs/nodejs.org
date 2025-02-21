@@ -70,10 +70,10 @@ The [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) function
 In the following example, we are sending a POST request to the Ollama API with a JSON payload. Ollama is a cli tool that allows you to run LLM's (Large Language Models) on your local machine. You can download it [here](https://ollama.com/download)
 
 ```bash
-ollama run deepseek-r1:1.5b
+ollama run mistral
 ```
 
-This will download the `deepseek-r1:1.5b` model and run it on your local machine.
+This will download the `mistral` model and run it on your local machine.
 
 With a pool, you can reuse connections to the same server, which can improve performance. Here is an example of how you can use a pool with Undici:
 
@@ -96,10 +96,10 @@ async function streamOllamaCompletion(prompt) {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ prompt, model: 'deepseek-r1:8b' }),
+    body: JSON.stringify({ prompt, model: 'mistral' }),
   });
 
-  // You can read about hTTP status codes here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+  // You can read about HTTP status codes here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
   // 200 means the request was successful.
   if (statusCode !== 200) {
     throw new Error(`Ollama request failed with status ${statusCode}`);
