@@ -8,7 +8,7 @@ authors: benhalverson, LankyMoose
 
 ## Introduction
 
-[Undici](https://undici.nodejs.org) is an HTTP client libary that powers the fetch API in Node.js. It was written from scratch and does not rely on the built-in HTTP client in Node.js. It includes a number of features that make it a good choice for high-performance applications.
+[Undici](https://undici.nodejs.org) is an HTTP client library that powers the fetch API in Node.js. It was written from scratch and does not rely on the built-in HTTP client in Node.js. It includes a number of features that make it a good choice for high-performance applications.
 
 ## Basic GET Usage
 
