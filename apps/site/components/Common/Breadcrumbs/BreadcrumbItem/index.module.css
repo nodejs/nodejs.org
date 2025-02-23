@@ -1,3 +1,5 @@
+@reference "../../../../styles/index.css";
+
 .item {
   @apply flex
      max-w-fit

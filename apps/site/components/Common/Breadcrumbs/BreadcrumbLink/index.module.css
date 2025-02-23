@@ -1,3 +1,5 @@
+@reference "../../../../styles/index.css";
+
 .link {
   @apply max-w-fit
     truncate;

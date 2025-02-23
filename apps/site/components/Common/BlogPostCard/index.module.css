@@ -1,11 +1,13 @@
+@reference "../../../styles/index.css";
+
 .container {
   @apply max-w-full
     flex-1;
 }
 
 .subtitle {
-  @apply mb-2
-    mt-6
+  @apply mt-6
+    mb-2
     inline-block
     text-xs
     font-semibold

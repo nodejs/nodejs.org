@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .select {
   @apply inline-flex
     flex-col
@@ -13,8 +15,7 @@
   }
 
   .trigger {
-    @apply shadow-xs
-      inline-flex
+    @apply inline-flex
       h-11
       w-full
       min-w-[17rem]
@@ -31,6 +32,7 @@
       text-base
       font-medium
       text-neutral-900
+      shadow-xs
       outline-none
       focus:border-neutral-500
       focus:ring-1
@@ -72,12 +74,12 @@
     dark:bg-neutral-950;
 
   .item {
-    @apply select-none
-      truncate
+    @apply truncate
       px-2.5
       py-1.5
       text-sm
-      font-medium;
+      font-medium
+      select-none;
   }
 
   .text {
@@ -134,12 +136,12 @@
 
   .text {
     @apply text-neutral-900
-      data-[highlighted]:bg-neutral-100
       data-[disabled]:text-neutral-600
+      data-[highlighted]:bg-neutral-100
       data-[highlighted]:text-neutral-900
       dark:text-white
-      dark:data-[highlighted]:bg-neutral-900
       dark:data-[disabled]:text-neutral-700
+      dark:data-[highlighted]:bg-neutral-900
       dark:data-[highlighted]:text-white;
   }
 
