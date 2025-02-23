@@ -173,8 +173,6 @@ export default {
   },
   darkMode: ['selector', '[data-theme="dark"]'],
   plugins: [
-    require('@savvywombat/tailwindcss-grid-areas'),
-    require('@tailwindcss/container-queries'),
     plugin(function ({ addUtilities }) {
       addUtilities({
         '.scrollbar-thin': {

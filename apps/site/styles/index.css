@@ -9,8 +9,10 @@
 @import 'tailwindcss';
 @import './base.css' layer(utilities);
 @import './markdown.css' layer(utilities);
-@import './effects.css' layer(utilities);
+@import './effects.css';
 @import './locals.css' layer(utilities);
+
+@config '../tailwind.config.ts';
 
 @theme {
   --green-100: #edf2eb;
@@ -85,9 +87,9 @@
   --transparent: 'transparent';
   --shadow: #101828;
   --inherit: 'inherit';
-  --shadow-xs: 0px 1px 2px 0px theme(colors.shadow / 5%);
-  --shadow-lg: 0px 4px 6px -2px theme(colors.shadow / 3%),
-    0px 12px 16px -4px theme(colors.shadow / 8%);
+  --shadow-xs: 0px 1px 2px 0px --theme(--color-shadow / 5%);
+  --shadow-lg: 0px 4px 6px -2px --theme(--color-shadow / 3%),
+    0px 12px 16px -4px --theme(--color-shadow / 8%);
   --font-open-sans: var(--font-open-sans);
   --ibm-plex-mono: var(--font-ibm-plex-mono);
   --font-weight-regular: '400';
@@ -145,21 +147,39 @@
 
   @keyframes pulse {
     from {
-      background: theme(colors.pulse.100);
+      background: var(--color-pulse-100);
     }
 
     to {
-      background: theme('colors.pulse.200');
+      background: var(--color-pulse-200);
     }
   }
 
   @keyframes pulse-dark {
     from {
-      background: theme(colors.pulse.300);
+      background: var(--color-pulse-300);
     }
 
     to {
-      background: theme(colors.pulse.400);
+      background: var(--color-pulse-400);
     }
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
 }
