@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .container {
   @apply border-neutral-200
     bg-white
