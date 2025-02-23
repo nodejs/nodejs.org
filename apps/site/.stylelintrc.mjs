@@ -43,5 +43,7 @@ export default {
     'import-notation': 'string',
     // Allow the `@apply` at rule as its part of Tailwind
     'at-rule-no-deprecated': [true, { ignoreAtRules: ['apply'] }],
+    'at-rule-no-unknown': null,
+    'function-no-unknown': null,
   },
 };

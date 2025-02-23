@@ -11,3 +11,155 @@
 @import './markdown.css' layer(utilities);
 @import './effects.css' layer(utilities);
 @import './locals.css' layer(utilities);
+
+@theme {
+  --green-100: #edf2eb;
+  --green-200: #c5e5b4;
+  --green-300: #99cc7d;
+  --green-400: #84ba64;
+  --green-500: #5fa04e;
+  --green-600: #417e38;
+  --green-700: #2c682c;
+  --green-800: #2c682c;
+  --green-900: #1a3f1d;
+  --neutral-100: #f6f7f9;
+  --neutral-200: #e9edf0;
+  --neutral-300: #d9e1e4;
+  --neutral-400: #cbd4d9;
+  --neutral-500: #b1bcc2;
+  --neutral-600: #929fa5;
+  --neutral-700: #6e7b83;
+  --neutral-800: #556066;
+  --neutral-900: #2c3437;
+  --neutral-950: #0d121c;
+  --danger-100: #fbf1f0;
+  --danger-200: #fad3d4;
+  --danger-300: #fab6b7;
+  --danger-400: #fa8e8e;
+  --danger-500: #f65354;
+  --danger-600: #de1a1b;
+  --danger-700: #b80c0c;
+  --danger-800: #900e0e;
+  --danger-900: #661514;
+  --warning-100: #fdf3e7;
+  --warning-200: #fad9b0;
+  --warning-300: #f5bc75;
+  --warning-400: #e99c40;
+  --warning-500: #d07912;
+  --warning-600: #ae5f00;
+  --warning-700: #8b4d04;
+  --warning-800: #683d08;
+  --warning-900: #4d2f0b;
+  --info-100: #e9f4fa;
+  --info-200: #bce6fc;
+  --info-300: #8ed4f8;
+  --info-400: #52baed;
+  --info-500: #229ad6;
+  --info-600: #0c7bb3;
+  --info-700: #066291;
+  --info-800: #074d71;
+  --info-900: #0a3953;
+  --accent1-100: #f7f1fb;
+  --accent1-200: #ead9fb;
+  --accent1-300: #dbbdf9;
+  --accent1-400: #c79bf2;
+  --accent1-500: #af74e8;
+  --accent1-600: #9756d6;
+  --accent1-700: #7d3cbe;
+  --accent1-800: #642b9e;
+  --accent1-900: #361b52;
+  --accent2-100: #fbf0f4;
+  --accent2-200: #fbd4e6;
+  --accent2-300: #fbb4d2;
+  --accent2-400: #f68bb7;
+  --accent2-500: #ed5393;
+  --accent2-600: #d6246e;
+  --accent2-700: #b01356;
+  --accent2-800: #8b1245;
+  --accent2-900: #411526;
+  --pulse-100: #0000330f;
+  --pulse-200: #00002d17;
+  --pulse-300: #ddeaf814;
+  --pulse-400: #d3edf81d;
+  --white: #fff;
+  --transparent: 'transparent';
+  --shadow: #101828;
+  --inherit: 'inherit';
+  --shadow-xs: 0px 1px 2px 0px theme(colors.shadow / 5%);
+  --shadow-lg: 0px 4px 6px -2px theme(colors.shadow / 3%),
+    0px 12px 16px -4px theme(colors.shadow / 8%);
+  --font-open-sans: var(--font-open-sans);
+  --ibm-plex-mono: var(--font-ibm-plex-mono);
+  --font-weight-regular: '400';
+  --font-weight-medium: '500';
+  --font-weight-semibold: '600';
+  --font-weight-bold: '700';
+  --font-xs: 0.75rem;
+  --font-xs-line-height: 1rem;
+  --font-sm: 0.87rem;
+  --font-sm-line-height: 1.25rem;
+  --font-base: 1rem;
+  --font-base-line-height: 1.5rem;
+  --font-lg: 1.125rem;
+  --font-lg-line-height: 1.75rem;
+  --font-xl: 1.25rem;
+  --font-xl-line-height: 1.875rem;
+  --font-2xl: 1.5rem;
+  --font-2xl-line-height: 2rem;
+  --font-3xl: 1.875rem;
+  --font-3xl-line-height: 2.25rem;
+  --font-4xl: 2.25rem;
+  --font-4xl-line-height: 2.5rem;
+  --font-5xl: 3rem;
+  --font-5xl-line-height: 3rem;
+  --font-6xl: 3.75rem;
+  --font-6xl-line-height: 3.75rem;
+  --font-7xl: 4.5rem;
+  --font-7xl-line-height: 4.5rem;
+  --breakpoint-xs: 670px;
+  --animate-surf: surf 1s infinite ease-in-out;
+  --animate-pulse: pulse 500ms infinite alternate-reverse;
+  --animate-pulse-dark: pulse-dark 500ms infinite alternate-reverse;
+
+  @keyframes surf {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    25% {
+      transform: translate(0, 6px);
+    }
+
+    50% {
+      transform: translate(0, -6px);
+    }
+
+    75% {
+      transform: translate(0, 3px);
+    }
+
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes pulse {
+    from {
+      background: theme(colors.pulse.100);
+    }
+
+    to {
+      background: theme('colors.pulse.200');
+    }
+  }
+
+  @keyframes pulse-dark {
+    from {
+      background: theme(colors.pulse.300);
+    }
+
+    to {
+      background: theme(colors.pulse.400);
+    }
+  }
+}
