@@ -6,10 +6,8 @@
  * @see https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
 */
 
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-@import './base.css';
-@import './markdown.css';
-@import './effects.css';
-@import './locals.css';
+@import 'tailwindcss';
+@import './base.css' layer(utilities);
+@import './markdown.css' layer(utilities);
+@import './effects.css' layer(utilities);
+@import './locals.css' layer(utilities);
