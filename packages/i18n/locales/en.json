@@ -42,6 +42,7 @@
             "nodejsWithWebassembly": "Node.js with WebAssembly",
             "debugging": "Debugging Node.js",
             "profiling": "Profiling Node.js Applications",
+            "fetch": "Fetching data with Node.js",
             "securityBestPractices": "Security Best Practices"
           }
         },
