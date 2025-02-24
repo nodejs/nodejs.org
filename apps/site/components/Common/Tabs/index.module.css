@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .tabsRoot {
   @apply max-w-full;
 
@@ -8,13 +10,13 @@
       overflow-x-auto;
 
     .tabsTrigger {
-      @apply whitespace-nowrap
-        border-b-2
+      @apply border-b-2
         border-b-transparent
         px-1
         pb-[11px]
         text-sm
         font-semibold
+        whitespace-nowrap
         text-neutral-800
         dark:text-neutral-200;
 

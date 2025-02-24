@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .root {
   > [role='tabpanel'] > :first-child {
     @apply rounded-t-none;

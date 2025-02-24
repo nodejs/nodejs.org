@@ -1,8 +1,10 @@
+@reference "../../../styles/index.css";
+
 .tabsList {
   @apply font-open-sans
     max-xs:hidden
-    mb-6
     mt-10
+    mb-6
     flex
     gap-2
     border-b

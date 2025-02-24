@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .alertBox {
   @apply flex
     flex-row

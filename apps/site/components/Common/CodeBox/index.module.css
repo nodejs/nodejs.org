@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .root {
   @apply w-full
     rounded
@@ -32,12 +34,12 @@
         }
 
         &:not(:empty:last-child)::after {
-          @apply w-4.5
-            font-ibm-plex-mono
+          @apply font-ibm-plex-mono
             absolute
-            left-0
             top-0
+            left-0
             mr-4
+            w-4.5
             text-right
             text-neutral-600
             [content:counter(line)]

@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .content {
   @apply rounded-md
     border

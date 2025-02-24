@@ -1,3 +1,5 @@
+@reference "../../../../styles/index.css";
+
 .group {
   @apply flex
     w-full

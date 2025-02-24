@@ -60,7 +60,7 @@ main {
 
   code {
     @apply font-ibm-plex-mono
-      rounded
+      rounded-sm
       bg-neutral-100
       px-1
       text-base
@@ -102,14 +102,14 @@ main {
 
   ul {
     @apply list-disc
-      pl-9
       pr-5
+      pl-9
       leading-6
       text-neutral-900
       dark:text-white;
 
     li div:has(> pre) {
-      @apply !my-1;
+      @apply my-1!;
     }
   }
 
@@ -121,7 +121,7 @@ main {
       dark:text-white;
 
     li div:has(> pre) {
-      @apply !my-1;
+      @apply my-1!;
     }
   }
 
@@ -130,7 +130,7 @@ main {
       w-full
       border-separate
       border-spacing-0
-      rounded
+      rounded-sm
       border
       border-neutral-200
       text-left
@@ -142,8 +142,8 @@ main {
       @apply max-xs:block
         max-xs:border-l-0
         border
-        border-r-0
         border-t-0
+        border-r-0
         border-neutral-200
         px-4
         py-2

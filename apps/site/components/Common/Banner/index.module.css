@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .banner {
   @apply flex
     w-full

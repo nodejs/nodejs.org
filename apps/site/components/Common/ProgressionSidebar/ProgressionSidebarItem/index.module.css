@@ -1,3 +1,5 @@
+@reference "../../../../styles/index.css";
+
 a.item {
   @apply font-regular
     relative

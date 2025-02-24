@@ -4,7 +4,7 @@
  * managed to avoid disrupting the layout.
  */
 html[lang='ko'] {
-  @apply break-words
-    break-keep
-    leading-7;
+  @apply leading-7
+    break-words
+    break-keep;
 }

@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .root {
   @apply m-6
     rounded

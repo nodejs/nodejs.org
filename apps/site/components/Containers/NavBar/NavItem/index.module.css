@@ -1,3 +1,5 @@
+@reference "../../../../styles/index.css";
+
 .navItem {
   @apply inline-flex
     items-center
