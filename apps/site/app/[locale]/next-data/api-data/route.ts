@@ -21,7 +21,7 @@ const getPathnameForApiFile = (name: string, version: string) =>
 // for a digest and metadata of all API pages from the Node.js Website
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 export const GET = async () => {
-  const releases = provideReleaseData();
+  const releases = await provideReleaseData();
 
   const { versionWithPrefix } = releases.find(
     release => release.status === 'LTS'

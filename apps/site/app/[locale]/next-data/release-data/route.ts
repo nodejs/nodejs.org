@@ -5,7 +5,7 @@ import { defaultLocale } from '@/next.locales.mjs';
 // for generating static data related to the Node.js Release Data
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 export const GET = async () => {
-  const releaseData = provideReleaseData();
+  const releaseData = await provideReleaseData();
 
   return Response.json(releaseData);
 };
