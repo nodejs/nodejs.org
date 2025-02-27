@@ -1,7 +1,7 @@
+
 import classNames from 'classnames';
 import Image from 'next/image';
-import type { HTMLAttributes } from 'react';
-import { forwardRef } from 'react';
+import type {FC, HTMLAttributes } from 'react';
 
 import Link from '@/components/Link';
 
@@ -14,21 +14,17 @@ export type AvatarProps = {
   fallback?: string;
   size?: 'small' | 'medium';
   url?: string;
-};
+} & HTMLAttributes<HTMLSpanElement>;
 
 // @TODO: We temporarily removed the Avatar Radix UI primitive, since it was causing flashing
 // during initial load and not being able to render nicely when images are already cached.
 // @see https://github.com/radix-ui/primitives/pull/3008
-const Avatar = forwardRef<
-  HTMLSpanElement,
-  HTMLAttributes<HTMLSpanElement> & AvatarProps
->(({ image, nickname, name, fallback, url, size = 'small', ...props }, ref) => {
+const Avatar: FC<AvatarProps> = (({ image, nickname, name, fallback, url, size = 'small', ...props }) => {
   const Wrapper = url ? Link : 'div';
 
   return (
     <span
       {...props}
-      ref={ref}
       className={classNames(styles.avatar, styles[size], props.className)}
     >
       <Wrapper

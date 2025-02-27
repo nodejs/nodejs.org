@@ -1,11 +1,9 @@
-'use strict';
-
+import type { NextConfig } from 'next';
 import withNextIntl from 'next-intl/plugin';
 
 import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   // We don't use trailing slashes on URLs from the Node.js Website
   trailingSlash: false,
@@ -97,6 +95,6 @@ const nextConfig = {
       'shiki',
     ],
   },
-};
+} as NextConfig;
 
 export default withNextIntl('./i18n.tsx')(nextConfig);
