@@ -93,7 +93,7 @@ const getDynamicRouter = async () => {
 
     return [...pathnameToFilename.keys()]
       .filter(shouldIgnoreStaticRoute)
-      .concat([...DYNAMIC_ROUTES.keys()]);
+      .concat([...(await DYNAMIC_ROUTES()).keys()]);
   };
 
   /**

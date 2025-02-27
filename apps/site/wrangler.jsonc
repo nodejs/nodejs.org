@@ -1,0 +1,29 @@
+{
+  "main": ".open-next/worker.js",
+  "name": "nodejs-website",
+  "compatibility_date": "2024-11-07",
+  "compatibility_flags": ["nodejs_compat"],
+  "account_id": "8ed4d03ac99f77561d0e8c9cbcc76cb6",
+  "minify": true,
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS",
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+  },
+  "alias": {
+    "server-only": "./.cloudflare/server-only.mjs",
+    "node:fs": "./.cloudflare/node/fs.mjs",
+    "fs": "./.cloudflare/node/fs.mjs",
+    "node:fs/promises": "./.cloudflare/node/fs/promises.mjs",
+    "node:readline": "./.cloudflare/node/readline.ts",
+  },
+  "kv_namespaces": [
+    {
+      "binding": "NEXT_CACHE_WORKERS_KV",
+      "id": "32e8e26d2d2647fd96789baf83209fa9",
+    },
+  ],
+}
