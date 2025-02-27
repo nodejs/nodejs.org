@@ -11,6 +11,9 @@
         }
       },
       "navBar": {
+        "controls": {
+          "toggle": "Afficher/Fermer le menu de navigation"
+        },
         "links": {
           "about": "À propos",
           "download": "Téléchargement",
@@ -48,7 +51,8 @@
             "introduction": "Introduction à TypeScript",
             "transpile": "Exécution du code TypeScript à l'aide de la transpilation",
             "run": "Exécuter TypeScript avec un runner",
-            "runNatively": "Exécuter TypeScript en mode natif"
+            "runNatively": "Exécuter TypeScript en mode natif",
+            "publishingTSPackage": "Publier un package TypeScript"
           }
         },
         "asynchronousWork": {
@@ -280,9 +284,11 @@
           "brew": "Homebrew est un gestionnaire de paquets pour macOS et Linux.",
           "choco": "Chocolatey est un gestionnaire de paquets pour Windows.",
           "devbox": "Devbox crée des environnements de développement isolés et reproductibles.",
-          "docker": "Docker est une plateforme de conteneurisation."
+          "docker": "Docker est une plateforme de conteneurisation.",
+          "volta": "\"Volta\" est un gestionnaire de versions Node.js multiplateforme."
         }
       }
-    }
+    },
+    "logo": "Logo Node.js"
   }
 }

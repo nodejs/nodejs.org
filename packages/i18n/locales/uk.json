@@ -11,6 +11,9 @@
         }
       },
       "navBar": {
+        "controls": {
+          "toggle": "Перемкнути меню навігації"
+        },
         "links": {
           "about": "Про Node.js",
           "download": "Завантажити",
@@ -48,7 +51,8 @@
             "introduction": "Вступ до TypeScript",
             "transpile": "Запуск коду на TypeScript за допомогою транспіляції",
             "run": "Запуск коду на TypeScript із виконавцем",
-            "runNatively": "Запуск коду на TypeScript нативно"
+            "runNatively": "Запуск коду на TypeScript нативно",
+            "publishingTSPackage": "Публікація пакета TypeScript"
           }
         },
         "asynchronousWork": {
@@ -142,7 +146,7 @@
       "nApiVersion": "N-API",
       "npmVersion": "npm",
       "codename": "Кодова назва",
-      "releaseDate": "Опубліковано о",
+      "releaseDate": "Опубліковано",
       "actions": {
         "changelog": "Список змін",
         "releases": "Релізи",
@@ -280,9 +284,11 @@
           "brew": "Homebrew — це менеджер пакетів для macOS та Linux.",
           "choco": "Chocolatey — це менеджер пакетів для Windows.",
           "devbox": "Devbox створює ізольовані та відтворювані середовища розробки.",
-          "docker": "Docker — це платформа контейнеризації."
+          "docker": "Docker — це платформа контейнеризації.",
+          "volta": "«Volta» — це кросплатформний менеджер версій Node.js."
         }
       }
-    }
+    },
+    "logo": "Логотип Node.js"
   }
 }
