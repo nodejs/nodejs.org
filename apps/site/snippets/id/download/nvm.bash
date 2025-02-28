@@ -1,6 +1,9 @@
 # Unduh dan pasang nvm:
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
+# sebagai pengganti memulai ulang shell
+\. "$HOME/.nvm/nvm.sh"
+
 # Unduh dan pasang Node.js:
 nvm install ${props.release.major}
 
