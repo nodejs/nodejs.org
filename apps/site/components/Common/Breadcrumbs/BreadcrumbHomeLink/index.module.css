@@ -1,3 +1,5 @@
+@reference "../../../../styles/index.css";
+
 .icon {
   @apply size-4;
 }

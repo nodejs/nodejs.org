@@ -1,3 +1,5 @@
+@reference "../../../../styles/index.css";
+
 .sideBarItem {
   @apply flex
     w-full

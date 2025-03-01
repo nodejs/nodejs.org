@@ -1,15 +1,17 @@
+@reference "../../../styles/index.css";
+
 .skeleton {
   @apply dark:animate-pulse-dark
     pointer-events-none
     animate-pulse
     cursor-default
-    select-none
     rounded-md
     border-none
     bg-clip-border
     text-transparent
     shadow-none
-    outline-none;
+    outline-none
+    select-none;
 }
 
 .skeleton[data-inline-skeleton] {

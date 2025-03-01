@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .languageDropdown {
   @apply h-9
     w-9

@@ -1,9 +1,9 @@
+@reference "../../../../styles/index.css";
+
 .listItem,
 .listItem:link,
 .listItem:active {
-  @apply aria-current:bg-green-600
-    aria-current:text-white
-    flex
+  @apply flex
     size-10
     items-center
     justify-center
@@ -11,6 +11,8 @@
     px-3
     py-2.5
     text-neutral-800
+    aria-current:bg-green-600
+    aria-current:text-white
     motion-safe:transition-colors
     dark:text-neutral-200;
 

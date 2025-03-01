@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .crossLink {
   @apply flex
     flex-col

@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .footer {
   @apply flex
     flex-col
