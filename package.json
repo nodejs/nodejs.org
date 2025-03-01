@@ -41,10 +41,10 @@
     "turbo": "2.4.4"
   },
   "devDependencies": {
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
     "@eslint/js": "~9.21.0",
     "@types/node": "22.13.8",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "~9.21.0",
     "eslint-plugin-import-x": "~4.6.1",
