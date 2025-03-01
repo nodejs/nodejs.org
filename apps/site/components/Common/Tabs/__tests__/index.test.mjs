@@ -1,5 +1,5 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import { act, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Link from '../../../Link';
@@ -26,26 +26,24 @@ const Sut = ({ addons }) => {
 };
 
 describe('Tabs', () => {
-  it('should render the correct number of tabs', () => {
-    act(() => render(<Sut />));
+  it('should render the correct number of tabs', async () => {
+    render(<Sut />);
 
     expect(screen.getAllByRole('tab')).toHaveLength(3);
   });
 
   it('should render the correct tab content when clicked', async () => {
-    act(() => render(<Sut />));
+    render(<Sut />);
 
     expect(screen.getByRole('tabpanel')).toHaveTextContent('Package Manager');
 
-    await act(async () => {
-      await userEvent.click(screen.getByRole('tab', { name: 'Source Code' }));
-    });
+    await userEvent.click(screen.getByRole('tab', { name: 'Source Code' }));
 
     expect(screen.getByRole('tabpanel')).toHaveTextContent('Source Code');
   });
 
   it('should render the given addons', async () => {
-    act(() => render(<Sut addons={<Link href="/">addon</Link>} />));
+    render(<Sut addons={<Link href="/">addon</Link>} />);
 
     expect(screen.getByRole('link', { name: 'addon' })).toBeInTheDocument();
   });
