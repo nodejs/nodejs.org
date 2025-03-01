@@ -37,11 +37,7 @@ export default tseslint.config(
       '@next/next/no-duplicate-head': 'off',
       'import-x/no-duplicates': 'off',
     },
-    settings: {
-      react: {
-        version: 'detect',
-      },
-    },
+    settings: { react: { version: 'detect' } },
   },
   {
     files: ['**/*.{md,mdx}'],

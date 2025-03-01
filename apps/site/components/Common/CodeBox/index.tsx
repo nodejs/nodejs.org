@@ -6,7 +6,7 @@ import {
 } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import type { FC, PropsWithChildren, ReactNode } from 'react';
+import type { FC, PropsWithChildren, ReactElement, ReactNode } from 'react';
 import { Fragment, isValidElement, useRef } from 'react';
 
 import Button from '@/components/Common/Button';
@@ -16,7 +16,10 @@ import styles from './index.module.css';
 
 // Transforms a code element with plain text content into a more structured
 // format for rendering with line numbers
-const transformCode = (code: ReactNode, language: string): ReactNode => {
+const transformCode = (
+  code: ReactElement<PropsWithChildren>,
+  language: string
+): ReactNode => {
   if (!isValidElement(code)) {
     // Early return when the `CodeBox` child is not a valid element since the
     // type is a ReactNode, and can assume any value
@@ -106,7 +109,7 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
         tabIndex={0}
         dir="ltr"
       >
-        {transformCode(children, language)}
+        {transformCode(children as ReactElement<PropsWithChildren>, language)}
       </pre>
 
       {language && (
