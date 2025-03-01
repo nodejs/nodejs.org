@@ -1,12 +1,12 @@
 'use client';
 
 import {
-  DocumentDuplicateIcon,
   CodeBracketIcon,
+  DocumentDuplicateIcon,
 } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import type { FC, PropsWithChildren, ReactElement, ReactNode } from 'react';
+import type { FC, PropsWithChildren, ReactElement } from 'react';
 import { Fragment, isValidElement, useRef } from 'react';
 
 import Button from '@/components/Common/Button';
@@ -16,10 +16,10 @@ import styles from './index.module.css';
 
 // Transforms a code element with plain text content into a more structured
 // format for rendering with line numbers
-const transformCode = (
-  code: ReactElement<PropsWithChildren>,
+const transformCode = <T extends ReactElement<PropsWithChildren>>(
+  code: T,
   language: string
-): ReactNode => {
+): ReactElement<HTMLElement> | T => {
   if (!isValidElement(code)) {
     // Early return when the `CodeBox` child is not a valid element since the
     // type is a ReactNode, and can assume any value
