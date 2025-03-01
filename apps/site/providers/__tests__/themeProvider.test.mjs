@@ -23,7 +23,7 @@ describe('ThemeProvider', () => {
         storageKey: 'theme',
         children: <div>Mock Component</div>,
       },
-      expect.any(Object)
+      undefined
     );
     expect(container.firstChild).toHaveTextContent('Mock Component');
   });
