@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 
 export default {
   content: [
@@ -171,4 +172,13 @@ export default {
     },
   },
   darkMode: ['selector', '[data-theme="dark"]'],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.scrollbar-thin': {
+          'scrollbar-width': 'thin',
+        },
+      });
+    }),
+  ],
 } satisfies Config;

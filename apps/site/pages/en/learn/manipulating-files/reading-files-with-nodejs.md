@@ -112,7 +112,7 @@ async function downloadFile(url, outoutPath) {
 }
 
 async function readFile(filePath) {
-  const readStream = createReadStream(filePath, { encoding: 'utf8' });
+  const readStream = fs.createReadStream(filePath, { encoding: 'utf8' });
 
   try {
     for await (const chunk of readStream) {
