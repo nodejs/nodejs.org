@@ -1,8 +1,8 @@
 import { render, fireEvent } from '@testing-library/react';
 
-import { getGitHubAvatarUrl } from '@/util/gitHubUtils';
-
 import AvatarGroup from '../index';
+
+import { getGitHubAvatarUrl } from '@/util/gitHubUtils';
 
 const names = [
   'ovflowd',

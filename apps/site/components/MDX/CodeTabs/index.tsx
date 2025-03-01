@@ -7,7 +7,7 @@ type MDXCodeTabsProps = Pick<
   ComponentProps<typeof CodeTabs>,
   'linkText' | 'linkUrl'
 > & {
-  children: Array<ReactElement>;
+  children: Array<ReactElement<unknown>>;
   languages: string;
   displayNames?: string;
   defaultTab?: string;

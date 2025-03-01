@@ -41,5 +41,7 @@ export default {
     'media-feature-range-notation': 'prefix',
     // Adopts the import notation from `postcss-import`
     'import-notation': 'string',
+    // Allow the `@apply` at rule as its part of Tailwind
+    'at-rule-no-deprecated': [true, { ignoreAtRules: ['apply'] }],
   },
 };

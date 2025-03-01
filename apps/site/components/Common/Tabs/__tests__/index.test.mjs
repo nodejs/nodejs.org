@@ -1,34 +1,32 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import { act, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Link from '../../../Link';
 import Tabs from '../index';
 
+const Sut = ({ addons }) => {
+  const tabs = [
+    { key: 'package', label: 'Package Manager' },
+    { key: 'prebuilt', label: 'Prebuilt Installer' },
+    { key: 'source', label: 'Source Code' },
+  ];
+
+  return (
+    <Tabs tabs={tabs} defaultValue="package" addons={addons}>
+      <TabsPrimitive.Content value="package">
+        Package Manager
+      </TabsPrimitive.Content>
+      <TabsPrimitive.Content value="prebuilt">
+        Prebuilt Installer
+      </TabsPrimitive.Content>
+      <TabsPrimitive.Content value="source">Source Code</TabsPrimitive.Content>
+    </Tabs>
+  );
+};
+
 describe('Tabs', () => {
-  const Sut = ({ addons }) => {
-    const tabs = [
-      { key: 'package', label: 'Package Manager' },
-      { key: 'prebuilt', label: 'Prebuilt Installer' },
-      { key: 'source', label: 'Source Code' },
-    ];
-
-    return (
-      <Tabs tabs={tabs} defaultValue="package" addons={addons}>
-        <TabsPrimitive.Content value="package">
-          Package Manager
-        </TabsPrimitive.Content>
-        <TabsPrimitive.Content value="prebuilt">
-          Prebuilt Installer
-        </TabsPrimitive.Content>
-        <TabsPrimitive.Content value="source">
-          Source Code
-        </TabsPrimitive.Content>
-      </Tabs>
-    );
-  };
-
-  it('should render the correct number of tabs', () => {
+  it('should render the correct number of tabs', async () => {
     render(<Sut />);
 
     expect(screen.getAllByRole('tab')).toHaveLength(3);
@@ -39,9 +37,7 @@ describe('Tabs', () => {
 
     expect(screen.getByRole('tabpanel')).toHaveTextContent('Package Manager');
 
-    await act(async () => {
-      await userEvent.click(screen.getByRole('tab', { name: 'Source Code' }));
-    });
+    await userEvent.click(screen.getByRole('tab', { name: 'Source Code' }));
 
     expect(screen.getByRole('tabpanel')).toHaveTextContent('Source Code');
   });

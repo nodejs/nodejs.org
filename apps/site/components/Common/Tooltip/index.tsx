@@ -1,6 +1,6 @@
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import classNames from 'classnames';
-import type { ComponentProps, FC, PropsWithChildren, ReactNode } from 'react';
+import type { FC, PropsWithChildren, ReactNode } from 'react';
 
 import styles from './index.module.css';
 
@@ -8,7 +8,7 @@ type TooltipProps = {
   asChild?: boolean;
   content: ReactNode;
   kind?: 'default' | 'warning' | 'error';
-  side?: ComponentProps<typeof TooltipPrimitive.Content>['side'];
+  side?: TooltipPrimitive.TooltipContentProps['side'];
   container?: HTMLElement | null;
 };
 
