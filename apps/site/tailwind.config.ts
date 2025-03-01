@@ -13,7 +13,6 @@ export default {
   ],
   theme: {
     extend: {
-      screens: { xs: '670px' },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-subtle':
@@ -26,10 +25,6 @@ export default {
           'linear-gradient(180deg, theme(colors.white) 0%, theme(colors.white / 80%) 100%)',
         'gradient-glow-backdrop':
           'radial-gradient(8em circle at calc(50%) 10px, theme(colors.green.500), transparent 30%)',
-      },
-      boxShadow: {
-        xs: '0px 1px 2px 0px theme(colors.shadow / 5%)',
-        lg: '0px 4px 6px -2px theme(colors.shadow / 3%), 0px 12px 16px -4px theme(colors.shadow / 8%)',
       },
       spacing: { '4.5': '1.125rem', '18': '4.5rem' },
       aria: { current: 'current="page"' },
