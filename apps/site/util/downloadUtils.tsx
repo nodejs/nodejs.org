@@ -34,6 +34,7 @@ export enum InstallationMethodLabel {
   CHOCO = 'Chocolatey',
   DEVBOX = 'Devbox',
   DOCKER = 'Docker',
+  N = 'n',
   VOLTA = 'Volta',
 }
 
@@ -209,6 +210,14 @@ export const INSTALL_METHODS: Array<
     recommended: true,
     url: 'https://docs.docker.com/get-started/get-docker/',
     info: 'layouts.download.codeBox.platformInfo.docker',
+  },
+  {
+    label: InstallationMethodLabel.N,
+    value: 'N',
+    compatibility: { os: ['MAC', 'LINUX'] },
+    iconImage: <InstallMethodIcons.N width={16} height={16} />,
+    url: 'https://github.com/tj/n',
+    info: 'layouts.download.codeBox.platformInfo.n',
   },
   {
     label: InstallationMethodLabel.VOLTA,
