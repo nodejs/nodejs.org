@@ -291,9 +291,9 @@ Node.jsは次のパッケージがメインリポジトリーにあります：
 - **openSUSE Leap 15.2**： `nodejs10`、`nodejs12`、`nodejs14`
 - **openSUSE Tumbleweed**： `nodejs20`
 - **SUSE Linux Enterprise Server (SLES) 12**： `nodejs10`、`nodejs12`、`nodejs14`
-  （「Webおよびスクリプティングモジュール」を[有効にする](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated)必要があります。）
+（「Webおよびスクリプティングモジュール」を[有効にする](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated)必要があります。）
 - **SUSE Linux Enterprise Server (SLES) 15 SP2**： `nodejs10`、`nodejs12`、`nodejs14`
-  （「Webおよびスクリプティングモジュール」を[有効にする](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module)必要があります。）
+（「Webおよびスクリプティングモジュール」を[有効にする](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module)必要があります。）
 
 例えば、openSUSE Leap 15.2にNode.js 14.xをインストールする場合は次のコマンドをrootユーザーで実行します：
 
