@@ -12,9 +12,33 @@
 @import './effects.css';
 @import './locals.css' layer(utilities);
 
-@config '../tailwind.config.ts';
-
 @theme {
+  --color-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --color-gradient-subtle: linear-gradient(
+    180deg,
+    var(--color-neutral-100, rgba(0, 0, 0 /50%)) 0%,
+    var(--color-neutral-100, rgba(0, 0, 0 / 0%)) 48.32%
+  );
+  --color-gradient-subtle-dark: linear-gradient(
+    180deg,
+    var(--color-neutral-900, rgba(0, 0, 0 / 50%)) 0%,
+    var(--color-neutral-900, rgba(0, 0, 0 / 0%)) 48.32%
+  );
+  --color-gradient-subtle-gray: linear-gradient(
+    180deg,
+    var(--color-neutral-900) 0%,
+    var(--color-neutral-900, rgba(0, 0, 0 / 80%)) 100%
+  );
+  --color-gradient-subtle-white: linear-gradient(
+    180deg,
+    var(--color-white) 0%,
+    var(--color-white, rgba(0, 0, 0 / 80%)) 100%
+  );
+  --color-gradient-glow-backdrop: radial-gradient(
+    8em circle at calc(50%) 10px,
+    var(--color-green-500),
+    transparent 30%
+  );
   --color-green-100: #edf2eb;
   --color-green-200: #c5e5b4;
   --color-green-300: #99cc7d;
@@ -184,3 +208,13 @@
     border-color: var(--color-gray-200, currentColor);
   }
 }
+
+@utility scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+@utility max-w-8xl {
+  max-width: 95rem;
+}
+
+@custom-variant aria-current (&[aria-sort="page"]);
