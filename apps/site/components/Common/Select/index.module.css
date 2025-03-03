@@ -15,14 +15,14 @@
   }
 
   .trigger {
-    @apply inline-flex
+    @apply r
+      ounded-sm
+      inline-flex
       h-11
       w-full
       min-w-[17rem]
-      items-center
-      justify-between
+      items-center justify-between
       gap-2
-      rounded
       border
       border-neutral-300
       bg-white
@@ -33,7 +33,7 @@
       font-medium
       text-neutral-900
       shadow-xs
-      outline-none
+      outline-hidden
       focus:border-neutral-500
       focus:ring-1
       focus:ring-neutral-500
@@ -86,7 +86,7 @@
     @apply text-neutral-800
       data-[highlighted]:bg-green-500
       data-[highlighted]:text-white
-      data-[highlighted]:outline-none
+      data-[highlighted]:outline-hidden
       dark:text-neutral-200
       dark:data-[highlighted]:bg-green-600
       dark:data-[highlighted]:text-white;

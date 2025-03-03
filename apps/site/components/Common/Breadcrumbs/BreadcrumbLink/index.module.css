@@ -5,7 +5,7 @@
     truncate;
 
   &.active {
-    @apply rounded
+    @apply rounded-sm
       bg-green-600
       px-2
       py-1

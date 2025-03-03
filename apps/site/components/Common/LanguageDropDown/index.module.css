@@ -19,8 +19,7 @@
   @apply max-h-80
     w-48
     overflow-hidden
-    rounded
-    border
+    rounded-sm border
     border-neutral-200
     bg-white
     shadow-lg
@@ -40,7 +39,7 @@
     text-sm
     font-medium
     text-neutral-800
-    outline-none
+    outline-hidden
     data-[highlighted]:bg-green-600
     data-[highlighted]:text-white
     dark:text-white;

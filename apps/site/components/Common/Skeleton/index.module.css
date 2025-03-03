@@ -10,7 +10,7 @@
     bg-clip-border
     text-transparent
     shadow-none
-    outline-none
+    outline-hidden
     select-none;
 }
 

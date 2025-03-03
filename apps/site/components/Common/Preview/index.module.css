@@ -6,7 +6,7 @@
     flex
     aspect-[1.90/1]
     items-center
-    rounded
+    rounded-sm
     border
     border-neutral-900
     bg-neutral-950;

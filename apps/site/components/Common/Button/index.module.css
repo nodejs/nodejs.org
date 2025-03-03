@@ -27,7 +27,7 @@
   }
 
   &.neutral {
-    @apply rounded
+    @apply rounded-sm
       bg-neutral-900
       text-white
       dark:text-neutral-200;
@@ -47,12 +47,12 @@
   }
 
   &.primary {
-    @apply rounded
+    @apply rounded-sm
       border
       border-green-600
       bg-green-600
       text-white
-      shadow-sm;
+      shadow-xs;
 
     &:hover:not([aria-disabled='true']) {
       @apply border-green-700
@@ -102,7 +102,7 @@
       border-green-600/30
       bg-green-600/10
       text-white
-      shadow-sm;
+      shadow-xs;
 
     &::before {
       @apply bg-gradient-glow-backdrop

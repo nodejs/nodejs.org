@@ -2,7 +2,7 @@
 
 .root {
   @apply m-6
-    rounded
+    rounded-sm
     border
     border-neutral-200
     bg-white

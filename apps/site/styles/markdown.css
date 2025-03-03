@@ -60,7 +60,7 @@ main {
 
   code {
     @apply font-ibm-plex-mono
-      rounded-sm
+      rounded-xs
       bg-neutral-100
       px-1
       text-base
@@ -130,7 +130,7 @@ main {
       w-full
       border-separate
       border-spacing-0
-      rounded-sm
+      rounded-xs
       border
       border-neutral-200
       text-left
