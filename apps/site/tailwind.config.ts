@@ -31,7 +31,6 @@ export default {
       maxWidth: { '8xl': '95rem' },
     },
   },
-  darkMode: ['selector', '[data-theme="dark"]'],
   plugins: [
     plugin(function ({ addUtilities }) {
       addUtilities({

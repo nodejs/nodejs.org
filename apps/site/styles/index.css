@@ -87,12 +87,12 @@
   --color-transparent: 'transparent';
   --color-shadow: #101828;
   --inherit: 'inherit';
-  --shadow-xs: 0px 1px 2px 0px var(--color-shadow) / 5%;
+  --shadow-xs: 0px 1px 2px 0px var(--color-shadow, rgba(0, 0, 0 / 5%));
   --shadow-lg:
-    0px 4px 6px -2px var(--color-shadow) / 3%,
-    0px 12px 16px -4px var(--color-shadow) / 8%;
-  --font-open-sans: var(--font-open-sans);
-  --font-ibm-plex-mono: var(--font-ibm-plex-mono);
+    0px 4px 6px -2px var(--color-shadow, rgba(0, 0, 0 / 3%)),
+    0px 12px 16px -4px var(--color-shadow, rgba(0, 0, 0 / 8%));
+  --font-open-sans: var(--open-sans);
+  --font-ibm-plex-mono: var(--ibm-plex-mono);
   --font-weight-regular: '400';
   --font-weight-medium: '500';
   --font-weight-semibold: '600';
