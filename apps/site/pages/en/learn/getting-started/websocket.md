@@ -8,7 +8,7 @@ authors: callezenwaka
 
 ## Introduction
 
-Node.js v22 introduced an enhancement to [WebSocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) support by enabling a built-in WebSocket client by default. This change, derived from the [Undici](https://undici.nodejs.org) library, simplifies real-time communication for Node.js applications.
+Node.js v21 introduced (see [commit](https://github.com/nodejs/node/commit/e28dbe1c2b), [PR](https://github.com/nodejs/node/pull/49830) and [CHANGELOG](https://github.com/nodejs/node/blob/47a59bde2aadb3ad1b377c0ef12df7abc28840e9/doc/changelogs/CHANGELOG_V21.md#L1329-L1345)) an enhancement to [WebSocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) support by enabling a built-in WebSocket client by default. This change, derived from the [Undici](https://undici.nodejs.org) library, simplifies real-time communication for Node.js applications. The [release Version 22.4.0](https://github.com/nodejs/node/releases/tag/v22.4.0) shows that the WebSocket API is now considered stable in Node v22 ([commit](https://github.com/nodejs/node/commit/16c0884d48) and [PR](https://github.com/nodejs/node/pull/53352)) and ready for production use, as per the project's documentation standards.
 
 ## Native WebSocket Client
 
