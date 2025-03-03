@@ -1,3 +1,5 @@
+@reference "../../../../styles/index.css";
+
 .group {
   @apply flex
     flex-col
@@ -16,8 +18,8 @@
 
     &::after {
       @apply absolute
-        left-[0.45rem]
         top-0
+        left-[0.45rem]
         z-10
         h-full
         w-px
@@ -40,8 +42,8 @@
 
       &:last-child::after {
         @apply absolute
-          left-0
           top-[calc(50%+0.25rem)]
+          left-0
           h-20
           w-4
           bg-white
