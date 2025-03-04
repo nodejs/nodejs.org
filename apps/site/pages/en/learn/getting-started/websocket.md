@@ -8,13 +8,17 @@ authors: callezenwaka
 
 ## Introduction
 
-Node.js v21 introduced (see [commit](https://github.com/nodejs/node/commit/e28dbe1c2b), [PR](https://github.com/nodejs/node/pull/49830) and [CHANGELOG](https://github.com/nodejs/node/blob/47a59bde2aadb3ad1b377c0ef12df7abc28840e9/doc/changelogs/CHANGELOG_V21.md#L1329-L1345)) an enhancement to [WebSocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) support by enabling a built-in WebSocket client by default. This change, derived from the [Undici](https://undici.nodejs.org) library, simplifies real-time communication for Node.js applications. The [release Version 22.4.0](https://github.com/nodejs/node/releases/tag/v22.4.0) shows that the WebSocket API is now considered stable in Node v22 ([commit](https://github.com/nodejs/node/commit/16c0884d48) and [PR](https://github.com/nodejs/node/pull/53352)) and ready for production use, as per the project's documentation standards.
+Since [Node.js v21](https://github.com/nodejs/node/blob/47a59bde2aadb3ad1b377c0ef12df7abc28840e9/doc/changelogs/CHANGELOG_V21.md#L1329-L1345), the [WebSocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) has been enhanced using the [Undici](https://undici.nodejs.org) library, introducing a built-in WebSocket client. This simplifies real-time communication for Node.js applications. In [Node.js v22.4.0](https://github.com/nodejs/node/releases/tag/v22.4.0) release, the WebSocket API was marked as stable, indicating it's ready for production use.
+
+## What is a WebSocket
+
+[WebSocket](https://en.wikipedia.org/wiki/WebSocket) is a standardized communication protocol that enables simultaneous two-way communication over a single TCP connection. It has full-duplex or bi-directional capabilities that distinguishes it from HTTP. WebSocket achieves HTTP compatibility by using the HTTP Upgrade header to transition protocols. It allows servers to push content to clients without initial requests and maintains open connections for continuous message exchange, making it ideal for real-time data transfer with lower overhead than alternatives like HTTP polling. WebSocket communications typically occur over TCP ports 443 (secured) or 80 (unsecured), helping bypass firewall restrictions on non-web connections. The protocol defines its own URI schemes (ws:// and wss://) for unencrypted and encrypted connections respectively and supported by all major browsers.
 
 ## Native WebSocket Client
 
-Node.js can now act as a WebSocket `client` without relying on external libraries like [ws](https://www.npmjs.com/package/ws) or [socket.io](https://www.npmjs.com/package/socket.io) for client connections. This allows Node.js applications to initiate and manage outgoing WebSocket connections directly, streamlining tasks such as connecting to real-time data feeds or interacting with other WebSocket servers. Users can now create a websocket client connection with the standard `new WebSocket()` [constructor](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/WebSocket).
+Node.js can now act as a WebSocket `client` without relying on external libraries like [ws](https://www.npmjs.com/package/ws) or [socket.io](https://www.npmjs.com/package/socket.io) for client connections. This allows Node.js applications to initiate and manage outgoing WebSocket connections directly, streamlining tasks such as connecting to real-time data feeds or interacting with other WebSocket servers. Users can now create a websocket client connection with the standard [new WebSocket()](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/WebSocket) constructor.
 
-Building on the previous summary, let's add more practical examples to demonstrate the new WebSocket client functionality that demonstrates basic use-cases.
+Building on the above, let's add more practical examples to demonstrate the new WebSocket client functionality that demonstrates basic use-cases.
 
 ### Basic Connection and Message Handling
 
