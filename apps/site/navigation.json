@@ -189,6 +189,10 @@
               "link": "/learn/getting-started/fetch",
               "label": "components.navigation.learn.gettingStarted.links.fetch"
             },
+            "websocket": {
+              "link": "/learn/getting-started/websocket",
+              "label": "components.navigation.learn.gettingStarted.links.websocket"
+            },
             "securityBestPractices": {
               "link": "/learn/getting-started/security-best-practices",
               "label": "components.navigation.learn.gettingStarted.links.securityBestPractices"
