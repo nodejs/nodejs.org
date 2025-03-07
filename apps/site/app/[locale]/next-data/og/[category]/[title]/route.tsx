@@ -4,13 +4,12 @@ import HexagonGrid from '@/components/Icons/HexagonGrid';
 import JsIconWhite from '@/components/Icons/Logos/JsIconWhite';
 import { DEFAULT_CATEGORY_OG_TYPE } from '@/next.constants.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
-import tailwindConfig from '@/tailwind.config';
 import { hexToRGBA } from '@/util/hexToRGBA';
 
 const CATEGORY_TO_THEME_COLOUR_MAP = {
-  announcement: tailwindConfig.theme.colors.green['700'],
-  release: tailwindConfig.theme.colors.info['600'],
-  vulnerability: tailwindConfig.theme.colors.warning['600'],
+  announcement: 'var(--color-green-900)',
+  release: 'var(--color-info-600)',
+  vulnerability: 'var(--color-warning-600)',
 };
 
 type Category = keyof typeof CATEGORY_TO_THEME_COLOUR_MAP;

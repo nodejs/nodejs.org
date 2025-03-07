@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .avatarGroup {
   @apply flex
     flex-wrap

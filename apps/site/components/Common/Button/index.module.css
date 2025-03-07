@@ -1,10 +1,12 @@
+@reference "../../../styles/index.css";
+
 .button {
-  @apply px-4.5
-    relative
+  @apply relative
     inline-flex
     items-center
     justify-center
     gap-2
+    px-4.5
     py-2.5
     text-center
     font-semibold
@@ -25,7 +27,7 @@
   }
 
   &.neutral {
-    @apply rounded
+    @apply rounded-sm
       bg-neutral-900
       text-white
       dark:text-neutral-200;
@@ -45,12 +47,12 @@
   }
 
   &.primary {
-    @apply rounded
+    @apply rounded-sm
       border
       border-green-600
       bg-green-600
       text-white
-      shadow-sm;
+      shadow-xs;
 
     &:hover:not([aria-disabled='true']) {
       @apply border-green-700
@@ -100,14 +102,14 @@
       border-green-600/30
       bg-green-600/10
       text-white
-      shadow-sm;
+      shadow-xs;
 
     &::before {
       @apply bg-gradient-glow-backdrop
         absolute
-        left-0
-        right-0
         top-0
+        right-0
+        left-0
         -z-10
         mx-auto
         h-full
@@ -119,8 +121,8 @@
     &::after {
       @apply absolute
         -top-px
-        left-0
         right-0
+        left-0
         mx-auto
         h-px
         w-2/5

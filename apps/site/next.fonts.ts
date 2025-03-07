@@ -7,7 +7,7 @@ export const OPEN_SANS = Open_Sans({
   weight: ['300', '400', '600', '700'],
   display: 'fallback',
   subsets: ['latin'],
-  variable: '--font-open-sans',
+  variable: '--open-sans',
 });
 
 // This configures the Next.js Font for IBM Plex Mono
@@ -17,5 +17,5 @@ export const IBM_PLEX_MONO = IBM_Plex_Mono({
   weight: ['400', '600'],
   subsets: ['latin'],
   fallback: ['ui-monospace'],
-  variable: '--font-ibm-plex-mono',
+  variable: '--ibm-plex-mono',
 });
