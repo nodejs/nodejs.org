@@ -8,7 +8,7 @@ import LinkedIn from '@/components/Icons/Social/LinkedIn';
 import Mastodon from '@/components/Icons/Social/Mastodon';
 import Slack from '@/components/Icons/Social/Slack';
 import Twitter from '@/components/Icons/Social/Twitter';
-import { siteNavigation } from '@/next.json.mjs';
+import type { FooterConfig, SocialConfig } from '@/types';
 
 import styles from './index.module.css';
 
@@ -21,15 +21,20 @@ const footerSocialIcons: Record<string, React.FC<SVGProps<SVGSVGElement>>> = {
   bluesky: Bluesky,
 };
 
-const Footer: FC = () => {
+type FooterProps = {
+  socialLinks: Array<SocialConfig>;
+  footerLinks: Array<FooterConfig>;
+};
+
+const Footer: FC<FooterProps> = ({ socialLinks, footerLinks }) => {
   const t = useTranslations();
 
-  const openJSlink = siteNavigation.footerLinks.at(-1)!;
+  const openJSlink = footerLinks.at(-1)!;
 
   return (
     <footer className={styles.footer}>
       <div className={styles.sectionPrimary}>
-        {siteNavigation.footerLinks.slice(0, -1).map(item => (
+        {footerLinks.slice(0, -1).map(item => (
           <NavItem type="footer" href={item.link} key={item.link}>
             {t(item.text)}
           </NavItem>
@@ -42,7 +47,7 @@ const Footer: FC = () => {
         </NavItem>
 
         <div className={styles.social}>
-          {siteNavigation.socialLinks.map(link => {
+          {socialLinks.map(link => {
             const SocialIcon = footerSocialIcons[link.icon];
 
             return (
