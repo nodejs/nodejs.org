@@ -97,15 +97,15 @@ import { pipeline } from 'node:stream/promises';
 const fileUrl = 'https://www.gutenberg.org/files/2701/2701-0.txt';
 const outputFilePath = path.join(process.cwd(), 'moby.md');
 
-async function downloadFile(url, outoutPath) {
+async function downloadFile(url, outputPath) {
   const response = await fetch(url);
 
   if (!response.ok || !response.body) {
     throw new Error(`Failed to fetch ${url}. Status: ${response.status}`);
   }
 
-  const fileStream = fs.createWriteStream(outoutPath);
-  console.log(`Downloading file from ${url} to ${outoutPath}`);
+  const fileStream = fs.createWriteStream(outputPath);
+  console.log(`Downloading file from ${url} to ${outputPath}`);
 
   await pipeline(response.body, fileStream);
   console.log('File downloaded successfully');
