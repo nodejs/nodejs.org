@@ -301,9 +301,9 @@ Node.js ana depolarda aşağıdaki paketler altında mevcuttur:
 - **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
 - **openSUSE Tumbleweed**: `nodejs20`
 - **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12` ve `nodejs14`
-  ("Web ve Komut Dosyası Modülü" [etkin](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated) olmalıdır.)
+("Web ve Komut Dosyası Modülü" [etkin](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated) olmalıdır.)
 - **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12` ve `nodejs14`
-  ("Web ve Komut Dosyası Modülü" [etkin](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module) olmalıdır.)
+("Web ve Komut Dosyası Modülü" [etkin](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module) olmalıdır.)
 
 Örneğin, openSUSE Leap 15.2 üzerinde Node.js 14.x yüklemek için aşağıdakileri root olarak çalıştırın:
 
