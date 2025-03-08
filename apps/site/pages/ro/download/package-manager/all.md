@@ -299,7 +299,7 @@ Node.js este disponibil în depozitele principale în următoarele pachete:
 - **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
 - **openSUSE Tumbleweed**: `nodejs20`
 - **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, and `nodejs14`
-(„Modulul Web și Scripting” trebuie să fie [activată](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
+  („Modulul Web și Scripting” trebuie să fie [activată](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
 - **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, și `nodejs14` ("Web and Scripting Module" trebuie să fie [activat](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
 
 De exemplu, pentru a instala Node.js 14.x pe openSUSE Leap 15.2, rulați următoarea comandă ca și utilizator root:
