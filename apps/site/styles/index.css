@@ -12,6 +12,8 @@
 @import './effects.css';
 @import './locals.css' layer(utilities);
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @theme {
   --color-gradient-radial: radial-gradient(var(--tw-gradient-stops));
   --color-gradient-subtle: linear-gradient(

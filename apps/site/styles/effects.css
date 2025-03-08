@@ -6,7 +6,6 @@
     text-4xl
     leading-[3rem]
     -tracking-[0.045rem]
-    [-webkit-text-fill-color:transparent]
     md:text-5xl
     md:leading-[4rem]
     md:-tracking-[0.06rem];
@@ -28,18 +27,18 @@
 
   &::after {
     @apply absolute
-    top-[20%]
     -left-full
+    top-[20%]
     -z-10
     block
     h-36
     w-36
     -rotate-90
+    select-none
     bg-[url('/static/images/smoke.gif')]
     opacity-[0.15]
     content-['']
-    select-none
-    md:top-1/2
-    md:-left-1/2;
+    md:-left-1/2
+    md:top-1/2;
   }
 }
