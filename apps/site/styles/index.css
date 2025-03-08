@@ -12,7 +12,7 @@
 @import './effects.css';
 @import './locals.css' layer(utilities);
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *, .dark, .dark *));
 
 @theme {
   --color-gradient-radial: radial-gradient(var(--tw-gradient-stops));
