@@ -302,9 +302,9 @@ Node.js est disponible dans les dépôts principaux sous les paquets suivants :
 - **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
 - **openSUSE Tumbleweed**: `nodejs20`
 - **SUSE Linux Enterprise Server (SLES) 12** : `nodejs10`, `nodejs12`, et `nodejs14`
-(Le "Web et Scripting Module" doit être [activé](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
+  (Le "Web et Scripting Module" doit être [activé](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
 - **SUSE Linux Enterprise Server (SLES) 15 SP2** : `nodejs10`, `nodejs12`, et `nodejs14`
-(Le "Web etScripting Module" doit être [activés](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
+  (Le "Web etScripting Module" doit être [activés](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
 
 Par exemple, pour installer Node.js 14.x sur openSUSE Leap 15.2, exécutez ce qui suit en tant que root :
 

@@ -296,9 +296,9 @@ Node.js در مخازن اصلی تحت بسته‌های زیر موجود اس
 - `nodejs10` ، `nodejs12` ، `nodejs14` :**openSUSE Leap 15.2**
 - - `nodejs20` :**openSUSE Tumbleweed**
 - **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, and `nodejs14`
-(باید [ماژول "Web and Scripting"](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated) فعال شود.)
+  (باید [ماژول "Web and Scripting"](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated) فعال شود.)
 - `nodejs10`، `nodejs12` ، `nodejs14` :**SUSE Linux Enterprise Server (SLES) 15 SP2**
-(باید [ماژول "Web and Scripting"](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module) فعال شود.)
+  (باید [ماژول "Web and Scripting"](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module) فعال شود.)
 
 به عنوان مثال، برای نصب Node.js 14.x در openSUSE Leap 15.2، با دسترسی root دستور زیر را اجرا کنید:
 
