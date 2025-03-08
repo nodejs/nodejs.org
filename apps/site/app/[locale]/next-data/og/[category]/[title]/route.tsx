@@ -7,9 +7,9 @@ import { defaultLocale } from '@/next.locales.mjs';
 import { hexToRGBA } from '@/util/hexToRGBA';
 
 const CATEGORY_TO_THEME_COLOUR_MAP = {
-  announcement: 'var(--color-green-900)',
-  release: 'var(--color-info-600)',
-  vulnerability: 'var(--color-warning-600)',
+  announcement: '#1a3f1d',
+  release: '#0c7bb3',
+  vulnerability: '#ae5f00',
 };
 
 type Category = keyof typeof CATEGORY_TO_THEME_COLOUR_MAP;
