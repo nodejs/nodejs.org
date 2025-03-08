@@ -3,7 +3,7 @@ title: Node.js®とは
 layout: about
 ---
 
-Node.js®とは
+# Node.js®とは
 
 非同期イベント駆動型のJavaScript実行環境であるNode.jsはスケール可能なネットワークアプリケーションを構築するために設計されています。次の「hello world」の例では多数のネットワーク接続を同時に処理できます。各ネットワーク接続でコールバックが呼び出されますが、実行する処理がない場合はNode.jsはスリープします。
 
@@ -43,18 +43,12 @@ server.listen(port, hostname, () => {
 
 これはOSのスレッドを使用する一般的な同時実行モデルとは対照的です。スレッドベースのネットワーク処理は比較的効率が悪く、使いこなすのが非常に難しくなります。さらにNode.jsではロックがないため、プロセスのデッドロックの心配から解放されます。Node.jsにはI/Oを直接実行する関数がほとんどないため、Node.js標準ライブラリーの同期メソッドを使用してI/Oが実行される場合を除いてプロセスがブロックされることはありません。何もブロックしないNode.jsでスケーラブルなシステムを開発するのは非常に合理的です。
 
-もしこの説明が聞き慣れない場合は [Blocking vs. Non-Blocking][] を確認してみてください。
+もしこの内容に馴染みがない場合は、さらに詳しく解説している[Blocking vs. Non-Blocking](/learn/asynchronous-work/overview-of-blocking-vs-non-blocking)を確認してください。
 
 ---
 
-Node.jsはRubyの [Event Machine][] やPythonの [Twisted][] に影響を受けており、似たシステム設計になっています。Node.jsはイベントモデルをもう少し深掘りしています。Node.jsはイベントループをライブラリーとしてではなく実行環境の構成要素として提供します。他のシステムではイベントループを開始するために常にブロック処理の呼び出しがあります。一般的にはスクリプトの最初にコールバックによって振る舞いが定義され、最後に `EventMachine::run()` のようなブロック処理の呼び出しによってサーバーが起動されます。Node.jsにはこのようなイベントループの開始時の呼び出しがありません。Node.jsは入力されたスクリプトを実行したあと、単にイベントループに入ります。Node.jsは実行するコールバックがなくなるとイベントループを終了します。この動作はブラウザー上のJavaScriptと同じでイベントループはユーザーから隠されています。
+Node.jsはRubyの[Event Machine](https://github.com/eventmachine/eventmachine)やPythonの[Twisted](https://twisted.org/)に影響を受けており、似たシステム設計になっています。Node.jsはイベントモデルをもう少し深掘りしています。Node.jsはイベントループをライブラリーとしてではなく実行環境の構成要素として提供します。他のシステムではイベントループを開始するために常にブロック処理の呼び出しがあります。一般的にはスクリプトの最初にコールバックによって振る舞いが定義され、最後に `EventMachine::run()` のようなブロック処理の呼び出しによってサーバーが起動されます。Node.jsにはこのようなイベントループの開始時の呼び出しがありません。Node.jsは入力されたスクリプトを実行したあと、単にイベントループに入ります。Node.jsは実行するコールバックがなくなるとイベントループを終了します。この動作はブラウザー上のJavaScriptと同じでイベントループはユーザーから隠されています。
 
 HTTPはNode.jsの中では第一級オブジェクトであり、ストリーミングや低レイテンシーを意識して設計されています。このためNode.jsはウェブのライブラリーやフレームワークの基盤として適しています。
 
-Node.jsはスレッドを用いず設計されていますが、マルチコアを利用できないわけではありません。子プロセスは [`child_process.fork()`][] APIを使って作成でき、簡単に通信できるように設計されています。これと同じインターフェイスをもとに作られたのが [`cluster`][] モジュールで、プロセス間でソケットを共有することでコアの負荷分散を行えます。
-
-[blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
-[`child_process.fork()`]: https://nodejs.org/api/child_process.html
-[`cluster`]: https://nodejs.org/api/cluster.html
-[event machine]: https://github.com/eventmachine/eventmachine
-[twisted]: https://twisted.org/
+Node.jsはスレッドを用いず設計されていますが、マルチコアを利用できないわけではありません。子プロセスは[`child_process.fork()`](https://nodejs.org/api/child_process.html) APIを使って作成でき、簡単に通信できるように設計されています。これと同じインターフェイスをもとに作られたのが[`cluster`](https://nodejs.org/api/cluster.html)モジュールで、プロセス間でソケットを共有することでコアの負荷分散を行えます。
