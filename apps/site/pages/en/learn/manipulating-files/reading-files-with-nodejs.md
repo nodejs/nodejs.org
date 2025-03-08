@@ -85,7 +85,7 @@ try {
 
 All three of `fs.readFile()`, `fs.readFileSync()` and `fsPromises.readFile()` read the full content of the file in memory before returning the data.
 
-This means that big files are going to have a major impact on your memory consumption and speed of execution of the program.
+This means that big files are going to have a major effect on your memory consumption and speed of execution of the program.
 
 In this case, a better option is to read the file content using streams.
 
