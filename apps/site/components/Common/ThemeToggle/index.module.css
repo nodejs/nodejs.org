@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .themeToggle {
   @apply size-9
     rounded-md

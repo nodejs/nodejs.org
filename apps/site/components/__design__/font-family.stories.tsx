@@ -2,7 +2,7 @@ import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 export const FontFamily: StoryObj = {
   render: () => (
-    <div className="align-center ga-1 w-100 flex h-full flex-row flex-wrap justify-start">
+    <div className="align-center ga-1 flex h-full w-100 flex-row flex-wrap justify-start">
       <div>
         <p className="font-regular text-xs">Text XS/Regular</p>
         <p className="text-xs font-medium">Text XS/Medium</p>
