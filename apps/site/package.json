@@ -62,6 +62,7 @@
     "react-dom": "^19.1.0",
     "reading-time": "~1.5.0",
     "rehype-autolink-headings": "~7.1.0",
+    "rehype-mermaid": "^3.0.0",
     "rehype-slug": "~6.0.0",
     "remark-gfm": "~4.0.1",
     "remark-reading-time": "~2.0.1",

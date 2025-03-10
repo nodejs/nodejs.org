@@ -2,6 +2,7 @@
 
 import remarkHeadings from '@vcarl/remark-headings';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeMermaid from 'rehype-mermaid';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import readingTime from 'remark-reading-time';
@@ -14,6 +15,9 @@ import rehypeShikiji from './next.mdx.shiki.mjs';
  * @type {Array<import('unified').Plugin>}
  */
 export const REHYPE_PLUGINS = [
+  // Transforms Mermaid code blocks into SVGs
+  // note: needs to be imported before rehype-shiki to prevent transforming into code-blocks
+  [rehypeMermaid, { strategy: 'inline-svg', dark: true }],
   // Generates `id` attributes for headings (H1, ...)
   rehypeSlug,
   // Automatically add anchor links to headings (H1, ...)
