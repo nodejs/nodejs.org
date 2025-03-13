@@ -1,8 +1,12 @@
-import type { RichTranslationValues } from 'next-intl';
+'use client';
+
+import ProgressionSidebar from '@node-core/ui-components/Common/ProgressionSidebar';
+import { usePathname } from 'next/navigation';
+import { useTranslations, type RichTranslationValues } from 'next-intl';
 import type { FC } from 'react';
 
-import ProgressionSidebar from '@/components/Common/ProgressionSidebar';
-import { useSiteNavigation } from '@/hooks';
+import { useSiteNavigation } from '@/hooks/server';
+import { useRouter } from '@/navigation.mjs';
 import type { NavigationKeys } from '@/types';
 
 type WithProgressionSidebarProps = {
@@ -15,7 +19,9 @@ const WithProgressionSidebar: FC<WithProgressionSidebarProps> = ({
   context,
 }) => {
   const { getSideNavigation } = useSiteNavigation();
-
+  const pathname = usePathname();
+  const t = useTranslations();
+  const { push } = useRouter();
   const [[, sidebarNavigation]] = getSideNavigation([navKey], context);
 
   const mappedProgressionSidebarItems = sidebarNavigation.items.map(
@@ -25,7 +31,14 @@ const WithProgressionSidebar: FC<WithProgressionSidebarProps> = ({
     })
   );
 
-  return <ProgressionSidebar groups={mappedProgressionSidebarItems} />;
+  return (
+    <ProgressionSidebar
+      groups={mappedProgressionSidebarItems}
+      pathname={pathname!}
+      title={t('components.common.sidebar.title')}
+      onSelect={push}
+    />
+  );
 };
 
 export default WithProgressionSidebar;

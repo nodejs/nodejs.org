@@ -10,7 +10,7 @@ import { availableLocalesMap, defaultLocale } from '@/next.locales.mjs';
 import { LocaleProvider } from '@/providers/localeProvider';
 import { ThemeProvider } from '@/providers/themeProvider';
 
-import '@/styles/index.css';
+import '@node-core/ui-components/styles/index.css';
 
 const fontClasses = classNames(IBM_PLEX_MONO.variable, OPEN_SANS.variable);
 

@@ -1,10 +1,10 @@
 'use client';
 
+import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
 import { useContext, useEffect, useMemo } from 'react';
 import type { FC } from 'react';
 
-import Select from '@/components/Common/Select';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import type { PackageManager } from '@/types/release';
 import { nextItem, PACKAGE_MANAGERS, parseCompat } from '@/util/downloadUtils';
