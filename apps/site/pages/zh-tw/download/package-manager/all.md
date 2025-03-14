@@ -295,7 +295,7 @@ Node.js 收錄於主儲存庫的以下軟體包：
 - **openSUSE Leap 15.2**：`nodejs10`、`nodejs12`、`nodejs14`
 - **openSUSE Tumbleweed**：`nodejs20`
 - **SUSE Linux Enterprise Server (SLES) 12**：`nodejs10`、`nodejs12`和`nodejs14`
-  (「Web 與腳本模組」必須[啟用](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated)。)
+(「Web 與腳本模組」必須[啟用](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated)。)
 - **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, and `nodejs14` (「Web 與腳本模組」必須[啟用](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module)。)
 
 舉例而言，如果要在 openSUSE Leap 15.2 上安裝 Node.js 14.x，請以 root 身分執行下列命令：

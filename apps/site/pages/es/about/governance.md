@@ -7,25 +7,18 @@ layout: about
 
 ## Proceso de Búsqueda de Consenso
 
-El proyecto Node.js sigue un modelo de toma de decisiones basado en la [Búsqueda de Consenso][].
+El proyecto Node.js busca hacer [decisiones por consenso](https://es.wikipedia.org/wiki/Decisi%C3%B3n_por_consenso).
 
 ## Colaboradores
 
-El repositorio principal de GitHub [nodejs/node][] es mantenido por los Colaboradores, quienes son nominados por otros Colaboradores existentes de manera continua.
+El repositorio principal de GitHub [nodejs/node](https://github.com/nodejs/node) es mantenido por los colaboradores, quienes son nominados por otros colaboradores existentes de manera continua.
 
-Las personas que realizan contribuciones significativas y valiosas se convierten en Colaboradores y se les otorga permisos de escritura al proyecto. Estas personas son identificadas por otros Colaboradores y su nominación es discutida con los Colaboradores existentes.
+Las personas que realizan contribuciones significativas y valiosas se convierten en colaboradores y se les otorga permisos de escritura al proyecto. Estas personas son identificadas por otros colaboradores y su nominación es discutida con los colaboradores existentes.
 
-Para ver el listado actual de Colaboradores/as, revisa el [README.md][] del proyecto.
+La lista de los colaboradores actuales se puede encontrar en el [README.md](https://github.com/nodejs/node/blob/main/README.md#current-project-team-members) del proyecto.
 
-La guía para Colaboraciones es mantenida en [collaborator-guide.md][].
+La guía para colaboraciones es mantenida en [collaborator-guide.md](https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md).
 
 ## Comité Directivo Técnico
 
-El proyecto está gobernado por el [Comité Técnico de Dirección (TSC)][] que es responsable de la orientación de alto nivel del proyecto. El TSC es un subconjunto de Colaboradores activos que son nominados por otros miembros existentes del TSC.
-
-[consensus seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
-[readme.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
-[tsc]: https://github.com/nodejs/TSC
-[technical steering committee (tsc)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
-[collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
-[nodejs/node]: https://github.com/nodejs/node
+El proyecto está gobernado por el [Comité Técnico de Dirección (TSC)](https://github.com/nodejs/TSC/blob/main/TSC-Charter.md) que es responsable de la orientación de alto nivel del proyecto. El TSC es un subconjunto de Colaboradores activos que son nominados por otros miembros existentes del TSC.
