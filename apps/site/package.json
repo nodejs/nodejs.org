@@ -39,7 +39,7 @@
     "@radix-ui/react-tabs": "^1.1.3",
     "@radix-ui/react-toast": "^1.2.6",
     "@radix-ui/react-tooltip": "^1.1.8",
-    "@tailwindcss/postcss": "^4.0.12",
+    "@tailwindcss/postcss": "^4.0.14",
     "@vcarl/remark-headings": "~0.1.0",
     "@vercel/analytics": "~1.5.0",
     "@vercel/otel": "~1.10.1",
@@ -69,7 +69,7 @@
     "semver": "~7.7.1",
     "shiki": "~3.1.0",
     "sval": "^0.6.1",
-    "tailwindcss": "~4.0.12",
+    "tailwindcss": "~4.0.14",
     "unist-util-visit": "~5.0.0",
     "vfile": "~6.0.3",
     "vfile-matter": "~5.0.0"
