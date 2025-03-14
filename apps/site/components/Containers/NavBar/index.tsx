@@ -73,7 +73,7 @@ const NavBar: FC<NavbarProps> = ({
         aria-label={t(`components.containers.navBar.controls.toggle`)}
       />
 
-      <div className={`${style.main} peer-checked:flex`}>
+      <div className={`${style.main} hidden peer-checked:flex`}>
         <div className={style.navItems}>
           {navItems.map(({ text, link, target }) => (
             <NavItem key={link} href={link} target={target}>
