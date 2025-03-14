@@ -112,6 +112,10 @@
         "securityReporting": {
           "link": "/about/security-reporting",
           "label": "components.navigation.about.links.security"
+        },
+        "nodeSupporters": {
+          "link": "/about/supporters",
+          "label": "components.navigation.about.links.supporters"
         }
       }
     },
