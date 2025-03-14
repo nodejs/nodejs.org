@@ -18,6 +18,7 @@ import MDXCodeBox from './components/MDX/CodeBox';
 import MDXCodeTabs from './components/MDX/CodeTabs';
 import MDXImage from './components/MDX/Image';
 import WithSupporterIconList from './components/withSupporterIconList';
+import WithSupporterLogoList from './components/withSupporterLogoList';
 import { ReleaseProvider } from './providers/releaseProvider';
 
 /**
@@ -36,6 +37,8 @@ export const clientMdxComponents = {
   LinkWithArrow: LinkWithArrow,
   // A List of supporter Icons
   SupporterIconList: WithSupporterIconList,
+  // A List of supporter Logos
+  SupporterLogoList: WithSupporterLogoList,
   // Group of components that enable you to select versions for Node.js
   // releases and download selected versions. Uses `releaseProvider` as a provider
   Release: {

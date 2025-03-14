@@ -1,0 +1,7 @@
+.supporterIcon {
+  @apply h-12
+    w-12
+    rounded-lg
+    bg-neutral-100
+    p-1;
+}

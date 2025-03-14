@@ -7,6 +7,8 @@ import { randomSupporterList } from '@/components/Common/Supporters/utils';
 import { DEFAULT_SUPPORTERS_LIST } from '@/next.supporters.constants';
 import type { Supporter } from '@/types';
 
+import style from './index.module.css';
+
 type SupporterIconListProps = {
   supporters: Array<Supporter>;
   maxLength?: number;
@@ -50,7 +52,7 @@ const SupporterIconList: FC<SupporterIconListProps> = ({
   }, []);
 
   return (
-    <div className="flex flex-row flex-wrap items-center justify-center gap-4">
+    <div className={style.supporterIconList}>
       {seedList.slice(0, maxLength).map((supporter, index) => (
         <SupporterIcon
           {...supporter}
