@@ -11,16 +11,19 @@
         }
       },
       "navBar": {
+        "controls": {
+          "toggle": "メニューを切り替える"
+        },
         "links": {
           "about": "About",
           "download": "ダウンロード",
           "docs": "ドキュメント",
           "guides": "ガイド",
           "learn": "学ぶ",
-          "security": "セキュリティー",
+          "security": "セキュリティ",
           "certification": "認定資格",
           "blog": "ブログ",
-          "contribute": "開発への協力"
+          "contribute": "貢献"
         }
       }
     },
@@ -39,7 +42,9 @@
             "nodejsWithWebassembly": "Node.jsとWebAssembly",
             "debugging": "Node.jsのデバッグ",
             "profiling": "Node.jsアプリケーションのプロファイリング",
-            "securityBestPractices": "セキュリティーベストプラクティス"
+            "fetch": "Node.jsでデータを取得する",
+            "websocket": "Node.jsでのWebSocketクライアント",
+            "securityBestPractices": "セキュリティベストプラクティス"
           }
         },
         "typescript": {
@@ -48,7 +53,8 @@
             "introduction": "TypeScriptの導入",
             "transpile": "トランスパイルを用いたTypeScriptの実行",
             "run": "実行ツールを用いたTypeScriptの実行",
-            "runNatively": "TypeScriptをネイティブに実行する"
+            "runNatively": "TypeScriptをネイティブに実行する",
+            "publishingTSPackage": "TypeScriptパッケージを公開する"
           }
         },
         "asynchronousWork": {
@@ -124,7 +130,7 @@
           "branding": "Node.jsのブランド",
           "governance": "プロジェクトの管理体制",
           "releases": "Node.js リリース",
-          "security": "セキュリティーレポート"
+          "security": "セキュリティレポート"
         }
       },
       "getInvolved": {
@@ -280,9 +286,11 @@
           "brew": "HomebrewはmacOS用およびLinux用のパッケージマネージャーです。",
           "choco": "ChocolateyはWIndows用のパッケージマネージャーです。",
           "devbox": "Devboxは隔離された再現可能な開発環境を構築します。",
-          "docker": "Dockerはコンテナー化に関するプラットフォームです。"
+          "docker": "Dockerはコンテナー化に関するプラットフォームです。",
+          "volta": "\"Volta\"はクロスプラットフォームに対応したNode.jsのバージョンマネージャーです。"
         }
       }
-    }
+    },
+    "logo": "Node.jsロゴ"
   }
 }
