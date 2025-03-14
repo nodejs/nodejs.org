@@ -15,32 +15,6 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *, .dark, .dark *));
 
 @theme {
-  --color-gradient-radial: radial-gradient(var(--tw-gradient-stops));
-  --color-gradient-subtle: linear-gradient(
-    180deg,
-    var(--color-neutral-100, rgba(0, 0, 0 /50%)) 0%,
-    var(--color-neutral-100, rgba(0, 0, 0 / 0%)) 48.32%
-  );
-  --color-gradient-subtle-dark: linear-gradient(
-    180deg,
-    var(--color-neutral-900, rgba(0, 0, 0 / 50%)) 0%,
-    var(--color-neutral-900, rgba(0, 0, 0 / 0%)) 48.32%
-  );
-  --color-gradient-subtle-gray: linear-gradient(
-    180deg,
-    var(--color-neutral-900) 0%,
-    var(--color-neutral-900, rgba(0, 0, 0 / 80%)) 100%
-  );
-  --color-gradient-subtle-white: linear-gradient(
-    180deg,
-    var(--color-white) 0%,
-    var(--color-white, rgba(0, 0, 0 / 80%)) 100%
-  );
-  --color-gradient-glow-backdrop: radial-gradient(
-    8em circle at calc(50%) 10px,
-    var(--color-green-500),
-    transparent 30%
-  );
   --color-green-100: #edf2eb;
   --color-green-200: #c5e5b4;
   --color-green-300: #99cc7d;
@@ -220,3 +194,50 @@
 }
 
 @custom-variant aria-current (&[aria-sort="page"]);
+
+@utility bg-gradient-subtle-dark {
+  background-image: linear-gradient(
+    180deg,
+    --alpha(var(--color-neutral-900) / 50%) 0%,
+    --alpha(var(--color-neutral-900) / 0%) 48.32%
+  );
+}
+
+@utility bg-gradient-subtle {
+  background-image: linear-gradient(
+    180deg,
+    --alpha(var(--color-neutral-100) / 50%) 0%,
+    --alpha(var(--color-neutral-100) / 0%) 48.32%
+  );
+}
+
+@utility bg-gradient-subtle-gray {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-neutral-900) 0%,
+    --alpha(var(--color-neutral-900) / 80%) 100%
+  );
+}
+
+@utility bg-gradient-subtle-white {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-white) 0%,
+    --alpha(var(--color-white) / 80%) 100%
+  );
+}
+
+@utility bg-gradient-glow-backdrop {
+  background-image: radial-gradient(
+    8em circle at calc(50%) 10px,
+    var(--color-green-500),
+    transparent 30%
+  );
+}
+
+@utility bg-gradient-radial {
+  background-image: radial-gradient(
+    var(--tw-gradient-from),
+    var(--tw-gradient-to)
+  );
+}
