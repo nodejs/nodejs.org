@@ -27,18 +27,18 @@
 
   &::after {
     @apply absolute
-    -left-full
     top-[20%]
+    -left-full
     -z-10
     block
     h-36
     w-36
     -rotate-90
-    select-none
     bg-[url('/static/images/smoke.gif')]
     opacity-[0.15]
     content-['']
-    md:-left-1/2
-    md:top-1/2;
+    select-none
+    md:top-1/2
+    md:-left-1/2;
   }
 }
