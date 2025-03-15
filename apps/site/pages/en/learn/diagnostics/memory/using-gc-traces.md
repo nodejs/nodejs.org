@@ -13,7 +13,7 @@ By the end of this guide, you'll be able to:
 - Interpret traces
 - Identify potential memory issues in your Node.js application
 
-There's a lot to learn about how the garbage collector works, but if you learn
+There's a lot to learn about how the garbage collector works, but if you are to learn
 one thing it's that when GC is running, your code is not.
 
 You may want to know how often and long the garbage collection runs,
