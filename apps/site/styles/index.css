@@ -230,7 +230,7 @@
 @utility bg-gradient-glow-backdrop {
   background-image: radial-gradient(
     8em circle at calc(50%) 10px,
-    var(--color-green-500),
+    var(--color-green-400),
     transparent 30%
   );
 }
