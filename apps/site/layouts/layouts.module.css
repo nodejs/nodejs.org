@@ -25,7 +25,7 @@
     xl:grid-cols-[theme(spacing.80)_1fr_theme(spacing.80)];
 
   > *:nth-child(1) {
-    @apply [grid-area:'sidebar']
+    @apply [grid-area:sidebar]
       lg:sticky
       lg:top-0
       lg:h-[100vh]
@@ -40,7 +40,7 @@
       @apply sm:bg-gradient-subtle
         sm:dark:bg-gradient-subtle-dark
         p-4
-        [grid-area:'main']
+        [grid-area:main]
         motion-safe:scroll-smooth
         sm:bg-fixed
         sm:p-12
@@ -50,7 +50,7 @@
     > *:last-child {
       @apply mt-8
         border-t
-        [grid-area:'metabar']
+        [grid-area:metabar]
         sm:mt-0
         lg:sticky
         lg:top-0
@@ -72,7 +72,7 @@
       border-t-neutral-200
       bg-white
       py-4
-      [grid-area:'footer']
+      [grid-area:footer]
       dark:border-t-neutral-900
       dark:bg-neutral-950;
   }
