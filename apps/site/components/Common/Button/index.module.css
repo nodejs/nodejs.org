@@ -1,10 +1,12 @@
+@reference "../../../styles/index.css";
+
 .button {
-  @apply px-4.5
-    relative
+  @apply relative
     inline-flex
     items-center
     justify-center
     gap-2
+    px-4.5
     py-2.5
     text-center
     font-semibold
@@ -25,7 +27,7 @@
   }
 
   &.neutral {
-    @apply rounded
+    @apply rounded-sm
       bg-neutral-900
       text-white
       dark:text-neutral-200;
@@ -45,12 +47,12 @@
   }
 
   &.primary {
-    @apply rounded
+    @apply rounded-sm
       border
       border-green-600
       bg-green-600
       text-white
-      shadow-sm;
+      shadow-xs;
 
     &:hover:not([aria-disabled='true']) {
       @apply border-green-700
@@ -95,19 +97,24 @@
   }
 
   &.special {
-    @apply rounded-lg
+    @apply before:bg-gradient-glow-backdrop
+      rounded-lg
       border
       border-green-600/30
       bg-green-600/10
       text-white
-      shadow-sm;
+      shadow-xs
+      after:bg-gradient-to-r
+      after:from-green-600/0
+      after:via-green-600
+      after:to-green-600/0
+      after:content-[''];
 
     &::before {
-      @apply bg-gradient-glow-backdrop
-        absolute
-        left-0
-        right-0
+      @apply absolute
         top-0
+        right-0
+        left-0
         -z-10
         mx-auto
         h-full
@@ -119,16 +126,11 @@
     &::after {
       @apply absolute
         -top-px
-        left-0
         right-0
+        left-0
         mx-auto
         h-px
-        w-2/5
-        bg-gradient-to-r
-        from-green-600/0
-        via-green-600
-        to-green-600/0
-        content-[''];
+        w-2/5;
     }
 
     &[aria-disabled='true'] {
