@@ -2,11 +2,11 @@ import type { FC, SVGProps } from 'react';
 
 const Mastodon: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
-    width="75"
-    height="79"
+    width="20"
+    height="20"
     viewBox="0 0 75 79"
-    fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    fill="none"
     {...props}
   >
     <path

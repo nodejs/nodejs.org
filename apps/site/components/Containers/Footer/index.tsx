@@ -3,6 +3,7 @@ import type { FC, SVGProps } from 'react';
 
 import NavItem from '@/components/Containers/NavBar/NavItem';
 import Bluesky from '@/components/Icons/Social/Bluesky';
+import Discord from '@/components/Icons/Social/Discord';
 import GitHub from '@/components/Icons/Social/GitHub';
 import LinkedIn from '@/components/Icons/Social/LinkedIn';
 import Mastodon from '@/components/Icons/Social/Mastodon';
@@ -19,6 +20,7 @@ const footerSocialIcons: Record<string, React.FC<SVGProps<SVGSVGElement>>> = {
   slack: Slack,
   linkedin: LinkedIn,
   bluesky: Bluesky,
+  discord: Discord,
 };
 
 const Footer: FC = () => {

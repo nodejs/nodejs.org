@@ -1,6 +1,7 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 import Bluesky from '@/components/Icons/Social/Bluesky';
+import Discord from '@/components/Icons/Social/Discord';
 import GitHub from '@/components/Icons/Social/GitHub';
 import LinkedIn from '@/components/Icons/Social/LinkedIn';
 import Mastodon from '@/components/Icons/Social/Mastodon';
@@ -19,6 +20,9 @@ export const SocialMediaLogos: StoryObj = {
         <Slack width={64} height={64} />
         <Twitter width={64} height={64} />
         <Bluesky width={64} height={64} />
+      </div>
+      <div className="flex flex-col items-center gap-4">
+        <Discord width={64} height={64} />
       </div>
     </div>
   ),
