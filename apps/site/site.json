@@ -28,8 +28,8 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2025-02-11T21:00:00.000Z",
-      "endDate": "2025-04-01T21:00:00.000Z",
+      "startDate": "2025-03-17T00:00:00.000Z",
+      "endDate": "2025-04-17T00:00:00.000Z",
       "text": "Node.js launches an official Discord community",
       "link": "https://nodejs.org/en/blog/announcements/official-discord-launch-announcement",
       "type": "default"
