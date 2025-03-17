@@ -12,7 +12,7 @@ Over the past several years, Discord has become the de-facto platform for commun
 
 Our Node.js Discord space will be perfect for:
 
-- Hosting livestreams by [Node.js Ambassadors](https://github.com/nodejs/nodejs-ambassadors) and community members
+- Hosting livestreams by Node.js Ambassadors and community members
 - Facilitating discussions about Node.js, answering questions, and sharing projects
 - Connecting with Node.js maintainers, influencers, and contributors
 - Receiving the latest updates on Node.js releases and events hosted by the OpenJS Foundation
