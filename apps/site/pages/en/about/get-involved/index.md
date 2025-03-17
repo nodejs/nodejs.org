@@ -9,6 +9,7 @@ If you are interested in getting involved with the Node.js community, there are 
 
 ## Community Discussion
 
+- The [Node.js official Discord server](/discord) is a place to chat with other Node.js developers and getting official news from the Node.js project.
 - The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features and if you have questions about Node.js, you can use the [github discussions](https://github.com/orgs/nodejs/discussions).
 - The [`nodejs/help`](https://github.com/nodejs/help/issues) repository is the place to ask questions about Node.js.
 - The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
@@ -32,6 +33,4 @@ Please note that these are not officially endorsed by the Node.js project. Also 
 
 - [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
 - [OpenJSF Slack](https://slack-invite.openjsf.org/) is a Slack workspace for the OpenJS Foundation. There are several channels related to Node.js. _(channels prefixed by `#nodejs-` are related to the project)_
-- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
-- [ES Community](https://discord.gg/zJsuc6vvhn) is a Discord community for French-speaking JavaScript developers.
 - `irc.libera.chat` in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [a web client](https://kiwiirc.com/nextclient/).

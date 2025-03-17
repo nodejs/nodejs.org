@@ -331,6 +331,14 @@
     {
       "source": "/:locale/download/source-code/current",
       "destination": "/:locale/download/current"
+    },
+    {
+      "source": "/discord",
+      "destination": "https://discord.gg/vUsrbjd"
+    },
+    {
+      "source": "/:locale/discord",
+      "destination": "https://discord.gg/vUsrbjd"
     }
   ],
   "internal": []

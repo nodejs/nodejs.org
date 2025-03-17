@@ -28,11 +28,11 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2025-01-21T03:00:00.000Z",
-      "endDate": "2025-01-28T03:00:00.000Z",
-      "text": "January Security Release is available",
-      "link": "https://nodejs.org/en/blog/vulnerability/january-2025-security-releases",
-      "type": "warning"
+      "startDate": "2025-03-17T00:00:00.000Z",
+      "endDate": "2025-04-17T00:00:00.000Z",
+      "text": "Node.js launches an official Discord community",
+      "link": "https://nodejs.org/en/blog/announcements/official-discord-launch-announcement",
+      "type": "default"
     }
   },
   "websiteBadges": {
