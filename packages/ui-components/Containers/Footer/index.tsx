@@ -12,7 +12,6 @@ import {
   Slack,
   X,
 } from '@node-core/ui-components/Icons/Social';
-
 import type { LinkLike } from '@node-core/ui-components/types';
 
 import styles from './index.module.css';
