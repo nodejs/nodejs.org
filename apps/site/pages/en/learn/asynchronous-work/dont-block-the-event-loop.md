@@ -436,7 +436,7 @@ Two examples should illustrate the possible variation in task times.
 
 Suppose your server must read files in order to handle some client requests.
 After consulting the Node.js [File system](https://nodejs.org/api/fs.html) APIs, you opted to use `fs.readFile()` for simplicity.
-However, `fs.readFile()` is ([currently](https://github.com/nodejs/node/pull/17054)) not partitioned: it submits a single `fs.read()` Task spanning the entire file.
+However, `fs.readFile()` before v10 was not partitioned: it submitted a single `fs.read()` Task spanning the entire file.
 If you read shorter files for some users and longer files for others, `fs.readFile()` may introduce significant variation in Task lengths, to the detriment of Worker Pool throughput.
 
 For a worst-case scenario, suppose an attacker can convince your server to read an _arbitrary_ file (this is a [directory traversal vulnerability](https://www.owasp.org/index.php/Path_Traversal)).
