@@ -16,6 +16,7 @@ on:
     types:
       - labeled
   merge_group:
+  workflow_dispatch:
 
 defaults:
   run:
@@ -49,13 +50,13 @@ jobs:
         run: echo "turbo_args=--force=true" >> "$GITHUB_OUTPUT"
 
   lint:
-    # This Job should run either on `merge_groups` or `push` events
+    # This Job should run either on `merge_groups`, `push`, or `workflow_dispatch` events
     # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
     # since we want to run lint checks against any changes on pull requests, or the final patch on merge groups
     # or if direct pushes happen to main (or when changes in general land on the `main` (default) branch)
     # Note that the reason why we run this on pushes against `main` is that on rare cases, maintainers might do direct pushes against `main`
     if: |
-      (github.event_name == 'push' || github.event_name == 'merge_group') ||
+      (github.event_name == 'push' || github.event_name == 'merge_group' || github.event_name == 'workflow_dispatch') ||
       (github.event_name == 'pull_request_target' &&
         github.event.label.name == 'github_actions:pull-request')
 
@@ -111,7 +112,7 @@ jobs:
         # the Pull Request comes from a Crowdin Branch, as we don't want to run ESLint and Prettier on Crowdin PRs
         # Note: Linting and Prettifying of files on Crowdin PRs is handled by the `translations-pr.yml` Workflow
         if: |
-          (github.event_name == 'push' || github.event_name == 'merge_group') ||
+          (github.event_name == 'push' || github.event_name == 'merge_group' || github.event_name == 'workflow_dispatch') ||
           (github.event_name == 'pull_request_target' &&
             github.event.pull_request.head.ref != 'chore/crowdin')
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
@@ -140,12 +141,12 @@ jobs:
           key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.turbo/cache/**') }}
 
   tests:
-    # This Job should run either on `merge_groups` or `push` events
+    # This Job should run either on `merge_groups`, `push`, or `workflow_dispatch` events
     # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
     # since we want to run lint checks against any changes on pull requests and on final patches against a pull request.
     # We don't need to execute the tests again on pushes against (`main`) as the merge group should already handle that
     if: |
-      (github.event_name == 'push' || github.event_name == 'merge_group') ||
+      (github.event_name == 'push' || github.event_name == 'merge_group' || github.event_name == 'workflow_dispatch') ||
       (github.event_name == 'pull_request_target' &&
         github.event.label.name == 'github_actions:pull-request')
 
@@ -197,7 +198,7 @@ jobs:
         # We only need to run Storybook Builds and Storybook Visual Regression Tests within Pull Requests that actually
         # introduce changes to the Storybook. Hence, we skip running these on Crowdin PRs and Dependabot PRs
         if: |
-          github.event_name == 'push' ||
+          github.event_name == 'push' || github.event_name == 'workflow_dispatch' ||
           (github.event_name == 'pull_request_target' &&
             startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
             github.event.pull_request.head.ref != 'chore/crowdin')
