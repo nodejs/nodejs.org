@@ -294,9 +294,9 @@ Node.js는 다음 패키지로 메인 리포지토리에서 사용할 수 있습
 - **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
 - **openSUSE Tumbleweed**: `nodejs20`
 - **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, 및 `nodejs14`
-  ( "웹 및 스크립팅 모듈"이 [활성화](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated)되어야 합니다.)
+( "웹 및 스크립팅 모듈"이 [활성화](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated)되어야 합니다.)
 - **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, 및 `nodejs14`
-  ( "웹 및 스크립팅 모듈"이 [활성화](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module)되어야 합니다.)
+( "웹 및 스크립팅 모듈"이 [활성화](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module)되어야 합니다.)
 
 예를 들어, openSUSE Leap 15.2에서 Node.js 14.x를 설치하려면 다음 명령을 root로 실행하세요:
 

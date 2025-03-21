@@ -3,7 +3,7 @@ title: Lançamentos da Node.js
 layout: about
 ---
 
-Lançamentos da Node.js
+# Lançamentos da Node.js
 
 As principais versões da Node.js entram no estado de lançamento _Atual (Current)_ por seis meses, o que dá aos autores de bibliotecas tempo para adicionar suporte a estas. Depois de seis meses, as versões de número ímpares (9, 11, etc.) deixam de ser suportadas e as versões de números pares (10, 12, etc) passam para o estado _SLP Ativo (Active LTS)_ e estão prontas para uso geral. O estado de lançamento _SLP (LTS)_ é “suporte de longo prazo”, o que normalmente garante que os erros de programação críticos serão corrigidos durante um total de 30 meses. As aplicações de produção apenas devem usar os lançamentos _SLP Ativo (Active LTS)_ ou _SLP de Manutenção (Maintenance LTS)_.
 
@@ -15,8 +15,21 @@ Todos os detalhes sobre o calendário de lançamento da Node.js estão disponív
 
 ### Apoio Comercial
 
-apoio comercial para versões após a fase de Manutenção está disponível através do nosso parceiro do Programa de Sustentabilidade do Ecossistema da OpenJS [HeroDevs](https://herodevs.com/).
+O apoio comercial para versões após a fase de manutenção está disponível através do nosso parceiro [HeroDevs](https://herodevs.com/) do Programa de Sustentabilidade do Ecossistema OpenJS.
 
-## Procura o lançamento mais recente de um ramo de versão?
+## Procura pelo lançamento mais recente do ramo de uma versão?
 
 <DownloadReleasesTable />
+
+## Oficial ou Comunitário
+
+O sítio da Node.js oferece vários métodos de instalação que permitem que a Node.js seja instalada duma maneira não interativa, por exemplo, através das interfaces de linha de comando, gestores de pacotes do sistema operativo (como o `apt`) ou gestores de versões da Node.js (como o `nvm`).
+
+O projeto Node.js, numa tentativa de popularizar e publicitar os esforços da comunidade, introduziu uma nova página de Descargas que lista os métodos de instalação Oficial e Comunitário, proporcionando mais versatilidade e opções aos utilizadores. Com essa mudança, introduzimos o conceito de métodos de instalação “Oficial” e “Comunitário”. Para ser considerado “Oficial”, o método de instalação deve atender aos seguintes requisitos:
+
+| Requisitos                                                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| As novas versões da Node.js devem estar disponíveis em simultâneo com o lançamento oficial                                                             |
+| Os responsáveis pela manutenção dos projetos têm uma relação estreita com a Node.js, incluindo comunicação direta                                      |
+| O método de instalação descarrega os binários oficiais empacotados pelo projeto Node.js                                                                |
+| O método de instalação **não** compila a partir da fonte quando os binários estão disponíveis, nem altera os binários oficiais fornecidos pela Node.js |
