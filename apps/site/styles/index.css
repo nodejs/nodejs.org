@@ -34,4 +34,4 @@
   }
 }
 
-@custom-variant aria-current (&[aria-sort="page"]);
+@custom-variant aria-current (&[aria-current="page"]);
