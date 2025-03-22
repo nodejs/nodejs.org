@@ -1,3 +1,5 @@
+@reference "../../../../styles/index.css";
+
 .item {
   @apply xs:max-h-10
     xs:max-w-10

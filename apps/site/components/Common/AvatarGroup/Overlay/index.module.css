@@ -1,3 +1,5 @@
+@reference "../../../../styles/index.css";
+
 .overlay {
   @apply flex
     min-w-56

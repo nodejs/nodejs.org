@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .wrapper {
   @apply flex
     max-w-2xl
@@ -18,10 +20,7 @@
   & cite {
     @apply font-regular
       text-base
-      not-italic;
-
-    &::before {
-      @apply content-['—_'];
-    }
+      not-italic
+      before:content-['—_'];
   }
 }

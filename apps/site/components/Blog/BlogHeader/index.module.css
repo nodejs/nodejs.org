@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .blogHeader {
   h1 {
     @apply inline-flex

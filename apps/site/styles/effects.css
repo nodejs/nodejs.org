@@ -1,43 +1,41 @@
-h1.special {
-  @apply bg-gradient-subtle-gray
+@utility special {
+  &h1 {
+    @apply bg-gradient-subtle-gray
     dark:bg-gradient-subtle-white
     bg-clip-text
     text-4xl
     leading-[3rem]
     -tracking-[0.045rem]
-    [-webkit-text-fill-color:transparent]
     md:text-5xl
     md:leading-[4rem]
     md:-tracking-[0.06rem];
+  }
 }
 
-.turtle {
+@utility turtle {
   @apply animate-surf
     absolute
     z-10
     translate-x-0
-    translate-y-0;
-}
+    translate-y-0
+    after:absolute
+    after:top-[20%]
+    after:-left-full
+    after:-z-10
+    after:block
+    after:h-36
+    after:w-36
+    after:-rotate-90
+    after:bg-[url('/static/images/turtle.png')]
+    after:opacity-[0.15]
+    after:content-['']
+    after:select-none
+    after:md:top-1/2
+    after:md:-left-1/2;
 
-.turtle img {
-  @apply h-auto
+  & img {
+    @apply h-auto
     w-24
     md:w-48;
-}
-
-.turtle::after {
-  @apply absolute
-    -left-full
-    top-[20%]
-    -z-10
-    block
-    h-36
-    w-36
-    -rotate-90
-    select-none
-    bg-[url('/static/images/smoke.gif')]
-    opacity-[0.15]
-    content-['']
-    md:-left-1/2
-    md:top-1/2;
+  }
 }
