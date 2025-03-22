@@ -58,6 +58,7 @@ To collect code coverage while running your tests, see the following snippets:
 ```bash displayName="CLI"
 node --experimental-test-coverage --test main.test.js
 ```
+
 ```js displayName="run()"
 run({ files: ['main.test.js'], coverage: true });
 ```
@@ -243,8 +244,13 @@ These flags can be used multiple times, and when both are used together, files m
 ```bash displayName="CLI"
 node --experimental-test-coverage --test-coverage-exclude=src/age.js --test main.test.js
 ```
+
 ```js displayName="run()"
-run({ files: ['main.test.js'], coverage: true, coverageExclude: ['src/age.js'] });
+run({
+  files: ['main.test.js'],
+  coverage: true,
+  coverageExclude: ['src/age.js'],
+});
 ```
 
 ```text displayName="New coverage report"
@@ -265,6 +271,7 @@ Our test file is also included in this coverage report, but we only want JavaScr
 ```bash displayName="CLI"
 node --experimental-test-coverage --test-coverage-include=src/*.js --test main.test.js
 ```
+
 ```js displayName="run()"
 run({ files: ['main.test.js'], coverage: true, coverageInclude: ['src/*.js'] });
 ```
@@ -297,6 +304,7 @@ If you wanted to require the previous example to have line coverage >= 90%, you 
 ```bash displayName="CLI"
 node --experimental-test-coverage --test-coverage-lines=90 --test main.test.js
 ```
+
 ```js displayName="run()"
 run({ files: ['main.test.js'], coverage: true, lineCoverage: 90 });
 ```
