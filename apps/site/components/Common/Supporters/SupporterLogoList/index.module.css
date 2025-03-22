@@ -1,0 +1,22 @@
+.supporterLogoList {
+  @apply flex
+    flex-col
+    gap-2;
+}
+
+.supporterTier {
+  @apply flex
+    flex-wrap
+    items-center
+    justify-center
+    gap-4
+    last-of-type:mb-0
+    md:gap-6;
+}
+
+.supporterLogo {
+  @apply flex
+    items-center
+    justify-center
+    p-2;
+}
