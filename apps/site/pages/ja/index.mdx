@@ -4,133 +4,130 @@ layout: home
 ---
 
 <section>
-<WithBadge section="index" />
+  <WithBadge section="index" />
 
-<div>
-  <h1 className="special">どこでもJavaScriptを使おう</h1>
+  <div>
+    <h1 className="special">どこでもJavaScriptを使おう</h1>
 
-Node.js®はクロスプラットフォームに対応したフリーでオープンソースのJavaScript実行環境です。開発者にサーバー、ウェブアプリ、コマンドラインツール、スクリプトなどを開発する環境を提供します。
+    Node.js®はクロスプラットフォームに対応したフリーでオープンソースのJavaScript実行環境です。開発者にサーバー、ウェブアプリ、コマンドラインツール、スクリプトなどを開発する環境を提供します。
 
-</div>
+  </div>
 
-<div>
-  <WithNodeRelease status={['LTS']}>
-    {({ release }) => (
-      <>
-        <DownloadButton release={release}>Node.js (LTS)をダウンロードする</DownloadButton>
+  <div>
+    <WithNodeRelease status={['LTS']}>
+      {({ release }) => (
+        <>
+          <DownloadButton release={release}>Node.js（LTS）をダウンロードする</DownloadButton>
+          <small>
+            長期サポート版Node.js <b>{release.versionWithPrefix}</b>
+            <sup title="Downloads a Node.js installer for your current platform">1</sup>をダウンロードする。
+            <Link href="/download">バージョンマネージャー</Link>を利用したインストール方法もあります。
+          </small>
+        </>
+      )}
+    </WithNodeRelease>
+
+    <WithNodeRelease status={['Current']}>
+      {({ release }) => (
         <small>
-          長期サポート版Node.js <b>{release.versionWithPrefix}</b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup>をダウンロードする。
-          <Link href="/download/package-manager">パッケージマネージャー</Link>を利用したインストール方法もあります。
+          最新の機能をすぐに試したい場合は
+          <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="Downloads a Node.js installer for your current platform">1</sup>をインストールできます。
         </small>
-      </>
-    )}
-  </WithNodeRelease>
+      )}
+    </WithNodeRelease>
 
-  <WithNodeRelease status={['Current']}>
-    {({ release }) => (
-      <small>
-        最新の機能をすぐに試したい場合は
-        <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-        <sup title="Downloads a Node.js installer for your current platform">1</sup>をインストールできます。
-      </small>
-    )}
-  </WithNodeRelease>
-</div>
+  </div>
 </section>
 
 <section>
-<div>
-  ```js displayName="Create an HTTP Server"
-  // server.mjs
-  import { createServer } from 'node:http';
+  <div>
+    ```js displayName="Create an HTTP Server"
+    // server.mjs
+    import { createServer } from 'node:http';
 
-const server = createServer((req, res) => {
-res.writeHead(200, { 'Content-Type': 'text/plain' });
-res.end('Hello World!\n');
-});
+    const server = createServer((req, res) => {
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end('Hello World!\n');
+    });
 
-// starts a simple http server locally on port 3000
-server.listen(3000, '127.0.0.1', () => {
-console.log('Listening on 127.0.0.1:3000');
-});
+    // starts a simple http server locally on port 3000
+    server.listen(3000, '127.0.0.1', () => {
+      console.log('Listening on 127.0.0.1:3000');
+    });
 
-// run with `node server.mjs`
+    // run with `node server.mjs`
+    ```
 
-````
+    ```js displayName="Write Tests"
+    // tests.mjs
+    import assert from 'node:assert';
+    import test from 'node:test';
 
-```js displayName="Write Tests"
-// tests.mjs
-import assert from 'node:assert';
-import test from 'node:test';
+    test('that 1 is equal 1', () => {
+      assert.strictEqual(1, 1);
+    });
 
-test('that 1 is equal 1', () => {
-  assert.strictEqual(1, 1);
-});
+    test('that throws as 1 is not equal 2', () => {
+      // throws an exception because 1 != 2
+      assert.strictEqual(1, 2);
+    });
 
-test('that throws as 1 is not equal 2', () => {
-  // throws an exception because 1 != 2
-  assert.strictEqual(1, 2);
-});
+    // run with `node tests.mjs`
+    ```
 
-// run with `node tests.mjs`
-````
+    ```js displayName="Read and Hash a File"
+    // crypto.mjs
+    import { createHash } from 'node:crypto';
+    import { readFile } from 'node:fs/promises';
 
-```js displayName="Read and Hash a File"
-// crypto.mjs
-import { createHash } from 'node:crypto';
-import { readFile } from 'node:fs/promises';
+    const hasher = createHash('sha1');
 
-const hasher = createHash('sha1');
+    hasher.setEncoding('hex');
+    // ensure you have a `package.json` file for this test!
+    hasher.write(await readFile('package.json'));
+    hasher.end();
 
-hasher.setEncoding('hex');
-// ensure you have a `package.json` file for this test!
-hasher.write(await readFile('package.json'));
-hasher.end();
+    const fileHash = hasher.read();
 
-const fileHash = hasher.read();
+    // run with `node crypto.mjs`
+    ```
 
-// run with `node crypto.mjs`
-```
+    ```js displayName="Streams Pipeline"
+    // streams.mjs
+    import { pipeline } from 'node:stream/promises';
+    import { createReadStream, createWriteStream } from 'node:fs';
+    import { createGzip } from 'node:zlib';
 
-```js displayName="Streams Pipeline"
-// streams.mjs
-import { pipeline } from 'node:stream/promises';
-import { createReadStream, createWriteStream } from 'node:fs';
-import { createGzip } from 'node:zlib';
+    // ensure you have a `package.json` file for this test!
+    await pipeline
+    (
+      createReadStream('package.json'),
+      createGzip(),
+      createWriteStream('package.json.gz')
+    );
 
-// ensure you have a `package.json` file for this test!
-await pipeline(
-  createReadStream('package.json'),
-  createGzip(),
-  createWriteStream('package.json.gz')
-);
+    // run with `node streams.mjs`
+    ```
 
-// run with `node streams.mjs`
-```
+    ```js displayName="Work with Threads"
+    // threads.mjs
+    import { Worker, isMainThread,
+      workerData, parentPort } from 'node:worker_threads';
 
-```js displayName="Work with Threads"
-// threads.mjs
-import {
-  Worker,
-  isMainThread,
-  workerData,
-  parentPort,
-} from 'node:worker_threads';
+    if (isMainThread) {
+      const data = 'some data';
+      const worker = new Worker(import.meta.filename, { workerData: data });
+      worker.on('message', msg => console.log('Reply from Thread:', msg));
+    } else {
+      const source = workerData;
+      parentPort.postMessage(btoa(source.toUpperCase()));
+    }
 
-if (isMainThread) {
-  const data = 'some data';
-  const worker = new Worker(import.meta.filename, { workerData: data });
-  worker.on('message', msg => console.log('Reply from Thread:', msg));
-} else {
-  const source = workerData;
-  parentPort.postMessage(btoa(source.toUpperCase()));
-}
+    // run with `node threads.mjs`
+    ```
 
-// run with `node threads.mjs`
-```
-
-</div>
+  </div>
 
 私たちの[学習教材](/learn)でNode.jsでできることをさらに学んでみましょう。
 
