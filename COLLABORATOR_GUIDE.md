@@ -224,7 +224,7 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 
   ```text
   - ComponentName
-    - index.tsx            // The component itself
+    - index.tsx             // The component itself
     - index.module.css      // Component-specific styles
     - index.stories.tsx     // Storybook stories (only for @node-core/ui-components)
     - __tests__/            // Component tests (such as unit tests, etc.)
