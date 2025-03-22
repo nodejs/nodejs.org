@@ -1,12 +1,16 @@
+'use client';
+
+import AvatarGroup from '@node-core/ui-components/Common/AvatarGroup';
+import Image from 'next/image';
 import type { ComponentProps, FC } from 'react';
 
-import AvatarGroup from '@/components/Common/AvatarGroup';
+import Link from '@/components/Link';
 import type { AuthorProps } from '@/types';
 import { getAuthors } from '@/util/authorUtils';
 
 type WithAvatarGroupProps = Omit<
   ComponentProps<typeof AvatarGroup>,
-  'avatars'
+  'avatars' | 'as'
 > &
   AuthorProps;
 
@@ -22,6 +26,8 @@ const WithAvatarGroup: FC<WithAvatarGroupProps> = ({
       names: names,
       clickable: clickable,
     })}
+    as={Link}
+    img={Image}
     {...props}
   />
 );

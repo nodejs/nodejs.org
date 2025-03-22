@@ -1,0 +1,30 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "globalEnv": ["NODE_ENV"],
+  "tasks": {
+    "build": {},
+    "lint:js": {
+      "inputs": ["**/*.{json,mjs,js,ts,tsx}"]
+    },
+    "lint:css": {
+      "inputs": ["**/*.css"],
+      "outputs": [".stylelintcache"]
+    },
+    "lint:fix": {
+      "cache": false
+    },
+    "storybook": {
+      "cache": false,
+      "persistent": true
+    },
+    "storybook:build": {
+      "inputs": ["**/*.{ts,tsx,mjs,css,json}"],
+      "outputs": ["storybook-static/**"]
+    },
+    "test:unit": {
+      "inputs": ["**/*.{ts,tsx,mjs}"],
+      "outputs": ["coverage/**", "junit.xml"]
+    }
+  }
+}

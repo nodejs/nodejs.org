@@ -1,9 +1,9 @@
+import type { SelectValue } from '@node-core/ui-components/Common/Select';
+import * as InstallMethodIcons from '@node-core/ui-components/Icons/InstallationMethod';
+import * as OSIcons from '@node-core/ui-components/Icons/OperatingSystem';
+import * as PackageManagerIcons from '@node-core/ui-components/Icons/PackageManager';
 import satisfies from 'semver/functions/satisfies';
 
-import type { SelectValue } from '@/components/Common/Select';
-import InstallMethodIcons from '@/components/Icons/InstallationMethod';
-import OSIcons from '@/components/Icons/OperatingSystem';
-import PackageManagerIcons from '@/components/Icons/PackageManager';
 import type { NodeReleaseStatus } from '@/types';
 import type * as Types from '@/types/release';
 import type { UserOS, UserPlatform } from '@/types/userOS';

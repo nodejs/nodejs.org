@@ -102,10 +102,10 @@ The Website also uses several other Open Source libraries (not limited to) liste
 Locations are subject to change. (If you are someone updating these paths,
 please document those changes here.)
 
-- React Components are defined on `apps/site/components`
+- React Components are defined on `apps/site/components` and `packages/ui-components`
 - React Templates are defined on `apps/site/layouts`
-- Global Stylesheets are declared on `apps/site/styles`
-  - Styles are done with [PostCSS][]
+- Global Stylesheets are declared on `packages/ui-components/styles`
+  - Styles are done with [PostCSS][] and [Tailwind][]
 - Public files are stored on `apps/site/public`
   - Static Images, JavaScript files, and others are stored within `apps/site/public/static`
 - Internationalisation is done on `apps/site/i18n`
@@ -126,7 +126,7 @@ please document those changes here.)
   - Generation of build-time indexes such as blog data
 - Multi-Purpose Scripts are stored within `apps/site/scripts`
   - Such as Node.js Release Blog Post generation
-- Storybook Configuration is done within `apps/site/.storybook`
+- Storybook Configuration is done within `packages/ui-components/.storybook`
   - We use an almost out-of-the-box Storybook Experience with a few extra customisations
 
 ### Adding new Pages
@@ -197,8 +197,6 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
   - We discourage the usage of any plain CSS styles and tokens, when in doubt ask for help
   - We require that you define one Tailwind Token per line, just as shown on the example above, since this improves readability
 - Only write CSS within CSS Modules, avoid writing CSS within JavaScript files
-- We recommend creating mixins for reusable animations, effects and more
-  - You can create Mixins within the `apps/site/styles/mixins` folder
 
 > \[!NOTE]\
 > Tailwind is already configured for this repository. You don't need to import any Tailwind module within your CSS module.\
@@ -211,26 +209,76 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 
 ### Best practices when creating a Component
 
-- All React Components should be placed within the `apps/site/components` folder.
-- Each Component should be placed, whenever possible, within a sub-folder, which we call the "Domain" of the Component
-  - The domain represents where these Components belong to or where they will be used.
-  - For example, Components used within Article Pages or that are part of the structure of an Article or the Article Layouts,
-    should be placed within `apps/site/components/Article`
-- Each component should have its folder with the name of the Component
-- The structure of each component folder follows the following template:
+- **All React components** should be placed within either `@node-core/ui-components` (for reusable components) or `apps/site/components` (for website-specific components).
+- **Generic UI components** that are not tied to the website should be placed in the `@node-core/ui-components` package.
+  - These components should be **framework-agnostic** and must not rely on Next.js-specific features such as `usePathname()` or `useTranslations()`.
+  - If a component previously relied on Next.js, it should now accept these values as **props** instead.
+- **Website-specific components** that rely on Next.js or are tied to the website should remain in `apps/site/components`.
+  - These components can use Next.js-specific hooks, API calls, or configurations.
+  - When using a generic UI component that requires Next.js functionality, pass it as a **prop** instead of modifying the component.
+- **Each component** should be placed within a sub-folder, which we call the **"Domain"** of the component.
+  - The domain represents where the component belongs or where it will be used.
+  - For example, components used within article pages or related to the structure of an article should be placed within `@node-core/ui-components/Common/Article`.
+- **Each component should have its own folder** with the name of the component.
+- The structure of each component folder follows this template:
+
   ```text
   - ComponentName
-    - index.tsx // the component itself
-    - index.module.css // all styles of the component are placed there
-    - index.stories.tsx // component Storybook stories
-    - __tests__ // component tests (such as unit tests, etc)
-      - index.test.mjs // unit tests should be done in ESM and not TypeScript
+    - index.tsx             // The component itself
+    - index.module.css      // Component-specific styles
+    - index.stories.tsx     // Storybook stories (only for @node-core/ui-components)
+    - __tests__/            // Component tests (such as unit tests, etc.)
+      - index.test.mjs      // Unit tests should be done in ESM, not TypeScript
   ```
-- React Hooks belonging to a single Component should be placed within the Component's folder
-  - If the Hook as a wider usability or can be used by other components, it should be placed in the root `hooks` folder.
-- If the Component has "sub-components" they should follow the same philosophy as the Component itself.
-  - For example, if the Component `ComponentName` has a sub-component called `SubComponentName`,
-    then it should be placed within `ComponentName/SubComponentName`
+
+- **If a component requires Next.js features, it should be wrapped within `apps/site`** rather than being modified directly in `@node-core/ui-components`.
+
+  - Example: A component that requires `usePathname()` should **not** call it directly inside `@node-core/ui-components`. Instead:
+    - The **base component** should accept `pathname` as a prop.
+    - The **wrapper component** in `apps/site` should call `usePathname()` and pass it to the base component.
+
+  Example structure:
+
+  - **Base Component (`@node-core/ui-components`)**
+
+    ```tsx
+    const BaseComponent: FC<...> = ({ pathname, ariaLabel }) => {
+      return <... ariaLabel={ariaLabel}></...>;
+    };
+    ```
+
+  - **Wrapper Component (`apps/site/components`)**
+
+    ```tsx
+    const Component: FC<...> = (...) => {
+      const pathname = usePathname();
+      const t = useTranslations();
+
+      return <BaseComponent pathname={pathname} ariaLabel={t('my.key')} />;
+    };
+    ```
+
+  - **Importing Components:**
+    - **For website-specific functionality**, import the wrapper from `apps/site/components`.
+    - **For direct UI use cases**, import from `@node-core/ui-components`.
+
+- **Storybook is now a dependency of `@node-core/ui-components`** and should not be included in `apps/site`.
+
+  - Storybook stories should be written only for components in `@node-core/ui-components`.
+
+- **React Hooks that belong to a single component should be placed within that component’s folder.**
+
+  - If the hook has a **wider usability** or can be used by multiple components, it should be placed in the `apps/site/hooks` folder.
+  - These hooks should only exist in `apps/site`.
+
+- **If a component has sub-components, they should follow the same structure as the main component.**
+  - Example: If `ComponentName` has a sub-component called `SubComponentName`, it should be placed within:
+    ```text
+    - ComponentName/
+      - index.tsx
+      - SubComponentName/
+        - index.tsx
+    ```
 
 #### How a new Component should look like when freshly created
 
@@ -272,7 +320,7 @@ To add a new download installation method, follow these steps:
 
    - Add a new entry to the `INSTALL_METHODS` array.
    - Each entry should have the following properties:
-     - `iconImage`: The React component of the icon image for the installation method. This should be an SVG component stored within `apps/site/components/Icons/InstallationMethod` and must follow the other icon component references (being a `FC` supporting `SVGSVGElement` props).
+     - `iconImage`: The React component of the icon image for the installation method. This should be an SVG component stored within `@node-core/ui-components/Icons/InstallationMethod` and must follow the other icon component references (being a `FC` supporting `SVGSVGElement` props).
        - Don't forget to add it on the `index.tsx` file from the `InstallationMethod` folder.
      - `recommended`: A boolean indicating if this method is recommended. This property is available only for official installation methods.
      - `url`: The URL for the installation method.
@@ -379,7 +427,7 @@ Each new feature or bug fix should be accompanied by a unit test (when deemed va
 We use [Jest][] as our test runner and [React Testing Library][] for our React unit tests.
 
 We also use [Storybook][] to document our components.
-Each component should have a storybook story that documents the component's usage.
+Components within `packages/ui-components` should have a storybook story that documents the component's usage.
 
 Visual Regression Testing is automatically done via [Chromatic](https://www.chromatic.com/) to ensure that Components are rendered correctly.
 
@@ -407,7 +455,7 @@ They also allow Developers to preview Components and be able to test them manual
 
 ```tsx
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
-import NameOfComponent from '@components/PathTo/YourComponent';
+import NameOfComponent from '@node-core/ui-components/PathTo/YourComponent';
 
 type Story = StoryObj<typeof NameOfComponent>;
 type Meta = MetaObj<typeof NameOfComponent>;
@@ -548,7 +596,7 @@ The Node.js Website uses Tailwind as a CSS Framework for crafting our React Comp
 #### Font Families on the Website
 
 We use `next/fonts` Open Sans as the default font for the Node.js Website.
-The font is configured as a CSS variable and then configured on `tailwind.config.js` as the default font for the Website.
+The font is configured as a CSS variable and then configured on `packages/ui-components/tailwind.config.ts` as the default font for the Website.
 
 #### Why we use RadixUI?
 

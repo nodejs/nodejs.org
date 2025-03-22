@@ -1,7 +1,7 @@
+import GlowingBackdrop from '@node-core/ui-components/Common/GlowingBackdrop';
 import classNames from 'classnames';
 import type { FC, PropsWithChildren } from 'react';
 
-import GlowingBackdrop from '@/components/Common/GlowingBackdrop';
 import WithFooter from '@/components/withFooter';
 import WithNavBar from '@/components/withNavBar';
 

@@ -1,12 +1,12 @@
 'use client';
 
+import AlertBox from '@node-core/ui-components/Common/AlertBox';
+import Skeleton from '@node-core/ui-components/Common/Skeleton';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useContext, useMemo } from 'react';
 
-import AlertBox from '@/components/Common/AlertBox';
 import CodeBox from '@/components/Common/CodeBox';
-import Skeleton from '@/components/Common/Skeleton';
 import Link from '@/components/Link';
 import LinkWithArrow from '@/components/LinkWithArrow';
 import { createSval } from '@/next.jsx.compiler.mjs';

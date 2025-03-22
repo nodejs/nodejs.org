@@ -1,8 +1,8 @@
 'use client';
 
+import Select from '@node-core/ui-components/Common/Select';
 import type { ComponentProps, FC } from 'react';
 
-import Select from '@/components/Common/Select';
 import { useRouter } from '@/navigation.mjs';
 
 type WithSidebarSelectProps = Pick<

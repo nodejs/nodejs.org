@@ -1,10 +1,10 @@
 'use client';
 
+import MetaBar from '@node-core/ui-components/Containers/MetaBar';
+import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
 import { useFormatter, useLocale, useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import MetaBar from '@/components/Containers/MetaBar';
-import GitHub from '@/components/Icons/Social/GitHub';
 import Link from '@/components/Link';
 import WithAvatarGroup from '@/components/withAvatarGroup';
 import { useClientContext } from '@/hooks/react-client';
@@ -42,21 +42,24 @@ const WithMetaBar: FC = () => {
 
   return (
     <MetaBar
+      heading={t('components.metabar.tableOfContents')}
+      as={Link}
       items={{
-        'components.metabar.lastUpdated': lastUpdated,
-        'components.metabar.readingTime': readingTimeText,
+        [t('components.metabar.lastUpdated')]: lastUpdated,
+        [t('components.metabar.readingTime')]: readingTimeText,
         ...(usernames.length && {
-          [`components.metabar.${usernames.length > 1 ? 'authors' : 'author'}`]:
-            (
-              <WithAvatarGroup
-                usernames={usernames}
-                limit={isMobileResolution ? 7 : isTabletResolution ? 5 : 9}
-              />
-            ),
+          [t(
+            `components.metabar.${usernames.length > 1 ? 'authors' : 'author'}`
+          )]: (
+            <WithAvatarGroup
+              usernames={usernames}
+              limit={isMobileResolution ? 7 : isTabletResolution ? 5 : 9}
+            />
+          ),
         }),
-        'components.metabar.contribute': (
+        [t('components.metabar.contribute')]: (
           <>
-            <GitHub className="fill-neutral-700 dark:fill-neutral-100" />
+            <GitHubIcon className="fill-neutral-700 dark:fill-neutral-100" />
             <Link
               href={
                 locale === defaultLocale.code
