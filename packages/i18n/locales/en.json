@@ -288,6 +288,7 @@
           "choco": "Chocolatey is a package manager for Windows.",
           "devbox": "Devbox creates isolated, reproducible development environments.",
           "docker": "Docker is a containerization platform.",
+          "n": "\"n\" is a cross-platform Node.js version manager.",
           "volta": "\"Volta\" is a cross-platform Node.js version manager."
         }
       }
