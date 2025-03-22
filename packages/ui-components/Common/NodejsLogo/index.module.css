@@ -1,3 +1,4 @@
 .nodejsLogo {
-  @apply h-6 w-20;
+  @apply h-6
+    w-20;
 }

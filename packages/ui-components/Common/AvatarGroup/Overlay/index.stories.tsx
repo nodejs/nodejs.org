@@ -6,10 +6,10 @@ type Story = StoryObj<typeof AvatarOverlay>;
 type Meta = MetaObj<typeof AvatarOverlay>;
 
 const author = {
-  image: 'https://avatars.githubusercontent.com/avivkeller',
-  name: 'Aviv Keller',
-  nickname: 'avivkeller',
-  fallback: 'AK',
+  image: 'https://avatars.githubusercontent.com/ghost',
+  name: 'Ghost User',
+  nickname: 'ghost',
+  fallback: 'GU',
 };
 
 export const Default: Story = {

@@ -1,5 +1,7 @@
 .avatarGroup {
-  @apply flex flex-wrap items-center;
+  @apply flex
+    flex-wrap
+    items-center;
 
   &:not(.expandable) {
     > span {

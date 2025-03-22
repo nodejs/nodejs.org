@@ -1,0 +1,30 @@
+.turtle {
+  @apply animate-surf
+    absolute
+    z-10
+    translate-x-0
+    translate-y-0;
+}
+
+.turtle img {
+  @apply h-auto
+    w-24
+    md:w-48;
+}
+
+.turtle::after {
+  @apply absolute
+    -left-full
+    top-[20%]
+    -z-10
+    block
+    h-36
+    w-36
+    -rotate-90
+    select-none
+    bg-[url('/static/images/smoke.gif')]
+    opacity-[0.15]
+    content-['']
+    md:-left-1/2
+    md:top-1/2;
+}

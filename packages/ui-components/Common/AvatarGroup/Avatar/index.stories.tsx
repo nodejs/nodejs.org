@@ -7,8 +7,8 @@ type Meta = MetaObj<typeof Avatar>;
 
 export const Default: Story = {
   args: {
-    image: 'https://avatars.githubusercontent.com/avivkeller',
-    nickname: 'avivkeller',
+    image: 'https://avatars.githubusercontent.com/ghost',
+    nickname: 'ghost',
   },
 };
 

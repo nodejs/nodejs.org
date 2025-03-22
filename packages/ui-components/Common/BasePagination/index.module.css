@@ -1,13 +1,11 @@
 .pagination {
-  @apply grid items-center justify-between gap-y-5 md:gap-y-0;
-
-  grid-template-areas: 'pages pages pages' 'prev . next';
-}
-
-@screen md {
-  .pagination {
-    grid-template-areas: 'prev pages next';
-  }
+  @apply grid
+    items-center
+    justify-between
+    gap-y-5
+    [grid-template-areas:'pages_pages_pages''prev_._next']
+    md:gap-y-0
+    md:[grid-template-areas:'prev_pages_next'];
 }
 
 .previousButton,
@@ -24,9 +22,16 @@
 }
 
 .arrowIcon {
-  @apply h-5 shrink-0 text-neutral-600 dark:text-neutral-400;
+  @apply h-5
+    shrink-0
+    text-neutral-600
+    dark:text-neutral-400;
 }
 
 .list {
-  @apply flex list-none justify-center gap-1 [grid-area:pages];
+  @apply flex
+    list-none
+    justify-center
+    gap-1
+    [grid-area:pages];
 }
