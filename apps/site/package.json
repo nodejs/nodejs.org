@@ -56,6 +56,7 @@
     "next": "15.2.3",
     "next-intl": "~3.26.5",
     "next-themes": "~0.4.4",
+    "playwright": "^1.51.0",
     "postcss": "~8.5.3",
     "postcss-calc": "~10.1.1",
     "postcss-import": "~16.1.0",
@@ -65,6 +66,7 @@
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "rehype-autolink-headings": "~7.1.0",
+    "rehype-mermaid": "^3.0.0",
     "rehype-slug": "~6.0.0",
     "remark-gfm": "~4.0.1",
     "remark-reading-time": "~2.0.1",
@@ -111,5 +113,12 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "~8.25.0",
     "user-agent-data-types": "0.4.2"
+  },
+  "overrides": {
+    "rehype-mermaid": {
+      "dependencies": {
+        "mermaid-isomorphic": "*"
+      }
+    }
   }
 }
