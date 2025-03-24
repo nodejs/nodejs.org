@@ -1,3 +1,4 @@
+import Notification from '@node-core/ui-components/Common/Notification';
 import * as Toast from '@radix-ui/react-toast';
 import type {
   Dispatch,
@@ -7,8 +8,6 @@ import type {
   SetStateAction,
 } from 'react';
 import { createContext, useEffect, useState } from 'react';
-
-import Notification from '@/components/Common/Notification';
 
 type NotificationContextType = {
   message: string | ReactNode;

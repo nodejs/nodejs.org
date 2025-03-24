@@ -204,7 +204,7 @@ jobs:
         # sha reference has no stable git tag reference or URL. see https://github.com/chromaui/chromatic-cli/issues/797
         uses: chromaui/action@30b6228aa809059d46219e0f556752e8672a7e26
         with:
-          workingDir: apps/site
+          workingDir: packages/ui-components
           buildScriptName: storybook:build
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           exitOnceUploaded: true
@@ -220,6 +220,9 @@ jobs:
         uses: MishaKav/jest-coverage-comment@d74238813c33e6ea20530ff91b5ea37953d11c91 # v1.0.27
         with:
           title: 'Unit Test Coverage Report'
-          junitxml-path: ./apps/site/junit.xml
-          junitxml-title: Unit Test Report
-          coverage-summary-path: ./apps/site/coverage/coverage-summary.json
+          multiple-junitxml-files: |
+            @node-core/ui-components, ./packages/ui-components/junit.xml
+            @nodejs/website, ./apps/site/junit.xml
+          multiple-files: |
+            @node-core/ui-components, ./packages/ui-components/coverage/coverage-summary.json
+            @nodejs/website, ./apps/site/coverage/coverage-summary.json

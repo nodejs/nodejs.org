@@ -1,12 +1,12 @@
 'use client';
 
 import { CloudArrowDownIcon } from '@heroicons/react/24/outline';
+import Skeleton from '@node-core/ui-components/Common/Skeleton';
 import { useTranslations } from 'next-intl';
 import { useContext } from 'react';
 import type { FC } from 'react';
 
 import Button from '@/components/Common/Button';
-import Skeleton from '@/components/Common/Skeleton';
 import { ReleaseContext } from '@/providers/releaseProvider';
 import {
   OperatingSystemLabel,

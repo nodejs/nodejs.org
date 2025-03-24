@@ -1,6 +1,6 @@
+import Preview from '@node-core/ui-components/Common/Preview';
 import type { FC, PropsWithChildren } from 'react';
 
-import Preview from '@/components/Common/Preview';
 import WithAvatarGroup from '@/components/withAvatarGroup';
 import WithBlogCrossLinks from '@/components/withBlogCrossLinks';
 import WithFooter from '@/components/withFooter';
