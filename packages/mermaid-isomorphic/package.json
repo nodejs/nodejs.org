@@ -1,0 +1,62 @@
+{
+  "name": "mermaid-isomorphic",
+  "version": "3.0.0",
+  "description": "Transform mermaid diagrams in the browser or Node.js",
+  "keywords": [
+    "browser",
+    "isomorphic",
+    "mermaid",
+    "mermaidjs",
+    "node",
+    "nodejs"
+  ],
+  "homepage": "https://github.com/remcohaszing/mermaid-isomorphic#readme",
+  "bugs": "https://github.com/remcohaszing/mermaid-isomorphic/issues",
+  "repository": "remcohaszing/mermaid-isomorphic",
+  "funding": "https://github.com/sponsors/remcohaszing",
+  "license": "MIT",
+  "author": "Remco Haszing <remcohaszing@gmail.com>",
+  "sideEffects": false,
+  "type": "module",
+  "main": "./dist/mermaid-isomorphic.js",
+  "exports": {
+    "browser": "./dist/browser.js",
+    "default": "./dist/mermaid-isomorphic.js"
+  },
+  "files": [
+    "index.html",
+    "src",
+    "dist",
+    "!test*"
+  ],
+  "scripts": {
+    "prepack": "tsc",
+    "pretest": "tsc",
+    "test": "c8 node --enable-source-maps --test",
+    "check-types": "tsc --noEmit",
+    "lint:js": "eslint \"**/*.{js,mjs,ts}\""
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.0.0",
+    "mermaid": "^11.0.0"
+  },
+  "peerDependencies": {
+    "playwright": "1"
+  },
+  "devDependencies": {
+    "@fontsource/irish-grover": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "c8": "^10.0.0",
+    "esbuild": "^0.24.0",
+    "eslint-import-resolver-typescript": "~3.8.3",
+    "playwright": "^1.0.0",
+    "snapshot-fixtures": "^1.0.0",
+    "typescript": "5.8.2",
+    "typescript-eslint": "~8.25.0"
+  },
+  "peerDependenciesMeta": {
+    "playwright": {
+      "optional": true
+    }
+  }
+}

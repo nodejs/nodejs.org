@@ -22,6 +22,7 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
+    "storybook": "turbo run storybook",
     "storybook:build": "turbo run storybook:build",
     "start": "turbo run start",
     "check-types": "turbo check-types",
