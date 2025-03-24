@@ -5,31 +5,29 @@ layout: about
 
 # Get Involved
 
-If you are interested in getting involved with the Node.js community, there are many ways to do so. The Node.js project is a large and diverse community, and there are many ways to contribute, beyond just writing code.
+If you are interested in getting involved with the Node.js community, there are many ways to do so. The Node.js project is a large and diverse community with many ways to contribute beyond just writing code.
 
 ## Community Discussion
 
-- The [Node.js official Discord server](/discord) is a place to chat with other Node.js developers and getting official news from the Node.js project.
-- The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features and if you have questions about Node.js, you can use the [github discussions](https://github.com/orgs/nodejs/discussions).
-- The [`nodejs/help`](https://github.com/nodejs/help/issues) repository is the place to ask questions about Node.js.
-- The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
-- The [Node.js project calendar](https://nodejs.org/calendar) with all public team meetings.
+- The [`nodejs/node` GitHub repository](https://github.com/nodejs/node/issues) is the place to discuss Node.js core features and reporting issues.
+- The [`nodejs/help` GitHub repository](https://github.com/nodejs/help/issues) is the official place to ask questions about Node.js.
+- Node.js's [official Discord server](/discord) is a place to chat with other Node.js developers and get official news from the Node.js project.
+- Node.js's [project calendar](https://nodejs.org/calendar) with all public Node.js team meetings.
 
 ## Learning Materials
 
 If you are looking to learn more about Node.js, there are many resources available to you.
 
-- [Official Learn section](https://nodejs.org/en/learn/) of the Node.js website.
-- [Official API reference documentation](https://nodejs.org/api/).
-- [NodeSchool.io](https://nodeschool.io/) will teach you Node.js concepts via interactive command-line games.
-- [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) collects new information every day.
-- [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
-- [Reddit Node.js community](https://www.reddit.com/r/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
+- Node.js's [official learning materials](https://nodejs.org/en/learn/).
+- Node.js's [official API reference documentation](https://nodejs.org/api/).
+- [NodeSchool.io](https://nodeschool.io/) teaches Node.js concepts via interactive command-line games.
+- [StackOverflow's Node.js tag](https://stackoverflow.com/questions/tagged/node.js) contains a large number of threads with helpful resources.
+- [The DEV Community Node.js's tag](https://dev.to/t/node) contains articles and content related to Node.js.
 
 ## Unofficial Discussion Areas
 
-If you are looking for a more informal place to discuss Node.js, there are several unofficial discussion areas.
-Please note that these are not officially endorsed by the Node.js project. Also follow their respective code of conduct/rules.
+There are several unofficial discussion areas if you are looking for a more informal place to discuss Node.js.
+Please note that the Node.js project does not officially endorse these. Please follow their respective codes of conduct/rules.
 
 - [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
 - [OpenJSF Slack](https://slack-invite.openjsf.org/) is a Slack workspace for the OpenJS Foundation. There are several channels related to Node.js. _(channels prefixed by `#nodejs-` are related to the project)_
