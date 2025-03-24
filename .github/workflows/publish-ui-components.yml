@@ -39,7 +39,7 @@ jobs:
             exit 1
           fi
 
-          if [[ "${{ github.event.inputs.skip_github_check }}" != "true" && "$COMMITTER" != *"noreply@github.com" ]]; then
+          if [[ "${{ github.event.inputs.skip_github_check }}" != "true" && "$COMMITTER" != "noreply@github.com" ]]; then
             echo "❌ Unauthorized committer! Aborting."
             exit 1
           fi
