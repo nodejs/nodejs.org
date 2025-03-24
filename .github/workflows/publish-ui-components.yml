@@ -1,0 +1,76 @@
+name: Publish UI Components Package
+
+on:
+  workflow_run:
+    workflows: ['Linting and Tests']
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      skip_github_check:
+        description: 'Skip GitHub commit author check'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  COMMIT_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+
+jobs:
+  publish:
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Verify commit authenticity
+        run: |
+          COMMIT_DATA=$(gh api repos/${{ github.repository }}/commits/$COMMIT_SHA)
+          VERIFIED=$(echo "$COMMIT_DATA" | jq -r '.commit.verification.verified')
+          COMMITTER=$(echo "$COMMIT_DATA" | jq -r '.commit.committer.email')
+
+          if [[ "$VERIFIED" != "true" ]]; then
+            echo "❌ Unverified commit! Aborting."
+            exit 1
+          fi
+
+          if [[ "${{ github.event.inputs.skip_github_check }}" != "true" && "$COMMITTER" != *"noreply@github.com" ]]; then
+            echo "❌ Unauthorized committer! Aborting."
+            exit 1
+          fi
+
+          echo "✅ Commit is verified and trusted."
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check for UI component changes
+        if: github.event_name != 'workflow_dispatch'
+        id: check_changes
+        run: |
+          if git diff --quiet $COMMIT_SHA~1 $COMMIT_SHA -- packages/ui-components/; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Setup Node.js
+        if: github.event_name == 'workflow_dispatch' || steps.check_changes.outputs.changed == 'true'
+        uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
+        with:
+          cache: npm
+          registry-url: https://npm.pkg.github.com/
+
+      - name: Generate version
+        if: github.event_name == 'workflow_dispatch' || steps.check_changes.outputs.changed == 'true'
+        run: npm version --no-git-tag-version 0.0.0-$COMMIT_SHA --workspace=packages/ui-components
+
+      - name: Publish package
+        if: github.event_name == 'workflow_dispatch' || steps.check_changes.outputs.changed == 'true'
+        run: npm publish --workspace=packages/ui-components
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
