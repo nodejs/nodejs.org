@@ -2,11 +2,8 @@
 
 import ProgressionSidebar from '@node-core/ui-components/Common/ProgressionSidebar';
 import { usePathname } from 'next/navigation';
-import {
-  useLocale,
-  useTranslations,
-  type RichTranslationValues,
-} from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import type { RichTranslationValues } from 'next-intl';
 import type { FC } from 'react';
 
 import Link from '@/components/Link';
