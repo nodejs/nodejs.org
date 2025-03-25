@@ -48,14 +48,14 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className={`${style.container}`}>
+    <nav className={style.container}>
       <div className={style.nodeIconAndMobileItemsToggler}>
         <Component className={style.nodeIconWrapper} href="/" aria-label="Home">
           <Logo />
         </Component>
 
         <Label.Root
-          className={classNames(['peer', style.sidebarItemToggler])}
+          className={style.sidebarItemTogglerLabel}
           htmlFor="sidebarItemToggler"
         >
           {navInteractionIcons[isMenuOpen ? 'close' : 'show']}
