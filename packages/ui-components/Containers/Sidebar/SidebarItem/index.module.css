@@ -1,29 +1,33 @@
-.wrapper {
+.sideBarItem {
   @apply flex
     w-full
-    flex-col
-    items-start
-    gap-8
-    overflow-auto
-    overflow-x-hidden
-    border-r-neutral-200
-    bg-white
-    px-4
-    py-6
-    sm:border-r
-    md:max-w-xs
-    lg:px-6
-    dark:border-r-neutral-900
-    dark:bg-neutral-950;
+    list-none
+    text-neutral-800
+    dark:text-neutral-200;
 
-  > section {
-    @apply hidden
-      sm:flex;
+  a {
+    @apply inline-flex
+      items-center
+      gap-2
+      p-2;
   }
 
-  > span {
-    @apply flex
+  .label {
+    @apply font-regular
       w-full
-      sm:hidden;
+      text-sm;
   }
+
+  .icon {
+    @apply size-3
+      text-neutral-500
+      dark:text-neutral-200;
+  }
+}
+
+.active {
+  @apply rounded
+    bg-green-600
+    text-white
+    dark:text-white;
 }
