@@ -6,6 +6,8 @@ import {
   NVM,
   Devbox,
   Choco,
+  N,
+  Volta,
 } from '@node-core/ui-components/Icons/InstallationMethod';
 import {
   Apple,
@@ -15,7 +17,7 @@ import {
 } from '@node-core/ui-components/Icons/OperatingSystem';
 
 const osIcons = [Apple, Linux, Microsoft, AIX];
-const installMethodIcons = [Docker, Homebrew, NVM, Devbox, Choco];
+const installMethodIcons = [Docker, Homebrew, NVM, Devbox, Choco, N, Volta];
 
 export const PlatformLogos: StoryObj = {
   render: () => (
