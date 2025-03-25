@@ -2,7 +2,11 @@
 
 import ProgressionSidebar from '@node-core/ui-components/Common/ProgressionSidebar';
 import { usePathname } from 'next/navigation';
-import { useTranslations, type RichTranslationValues } from 'next-intl';
+import {
+  useLocale,
+  useTranslations,
+  type RichTranslationValues,
+} from 'next-intl';
 import type { FC } from 'react';
 
 import Link from '@/components/Link';
@@ -21,6 +25,7 @@ const WithProgressionSidebar: FC<WithProgressionSidebarProps> = ({
 }) => {
   const { getSideNavigation } = useSiteNavigation();
   const pathname = usePathname();
+  const locale = useLocale();
   const t = useTranslations();
   const { push } = useRouter();
   const [[, sidebarNavigation]] = getSideNavigation([navKey], context);
@@ -35,7 +40,7 @@ const WithProgressionSidebar: FC<WithProgressionSidebarProps> = ({
   return (
     <ProgressionSidebar
       groups={mappedProgressionSidebarItems}
-      pathname={pathname!}
+      pathname={pathname?.replace(`/${locale}`, '')}
       title={t('components.common.sidebar.title')}
       onSelect={push}
       as={Link}
