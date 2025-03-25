@@ -2,7 +2,8 @@
 
 import Sidebar from '@node-core/ui-components/Containers/Sidebar';
 import { usePathname } from 'next/navigation';
-import { useTranslations, type RichTranslationValues } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import type { RichTranslationValues } from 'next-intl';
 import type { FC } from 'react';
 
 import Link from '@/components/Link';
@@ -18,6 +19,7 @@ type WithSidebarProps = {
 const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context }) => {
   const { getSideNavigation } = useSiteNavigation();
   const pathname = usePathname()!;
+  const locale = useLocale();
   const t = useTranslations();
   const { push } = useRouter();
 
@@ -31,7 +33,7 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context }) => {
   return (
     <Sidebar
       groups={mappedSidebarItems}
-      pathname={pathname}
+      pathname={pathname.replace(`/${locale}`, '')}
       title={t('components.common.sidebar.title')}
       onSelect={value => push(value)}
       as={Link}
