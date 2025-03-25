@@ -9,7 +9,6 @@ const N: FC<SVGProps<SVGSVGElement>> = props => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    // terminal background (with border for on black background)
     <rect
       x="0"
       y="0"
@@ -20,7 +19,6 @@ const N: FC<SVGProps<SVGSVGElement>> = props => (
       strokeWidth="2"
       rx="5"
     />
-    // close, minimize, maximize buttons
     <circle cx="5" cy="5" r="2" fill="#ff5f56" />
     <circle cx="10" cy="5" r="2" fill="#ffbd2e" />
     <circle cx="15" cy="5" r="2" fill="#27c93f" />
