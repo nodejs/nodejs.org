@@ -10,3 +10,4 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import './effects.css';
+@import './base.css';

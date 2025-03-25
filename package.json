@@ -36,6 +36,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@storybook/addon-actions": "^8.6.9",
     "acorn": "^8.14.0",
     "husky": "9.1.7",
     "lint-staged": "15.4.3",
