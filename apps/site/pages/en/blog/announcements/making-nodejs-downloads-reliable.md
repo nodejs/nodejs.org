@@ -44,14 +44,14 @@ _Refs: [Release Overview](https://github.com/nodejs/build/blob/main/doc/release-
 
 ## Growing Pains
 
-Nowadays, the nodejs.org domain sees over 3 billion requests and 2+ petabytes of traffic per month, with the majority of that going towards release assets.
+Nowadays, the nodejs.org domain sees over 2.4 billion requests and 3+ petabytes of traffic per month, with a majority of that going towards release assets.
 
-This averages to about 1,157 requests per second, with an average bandwidth of 771 mb per second.
+This averages to about 925 requests per second and an average bandwidth of 1.2 gb per second.
 
 <details>
-    <summary>Math</summary>
-3,000,000,000 requests per month / 30 days / 24 hours / 60 minutes / 60 seconds = ~1157 requests/second.
-2,000,000,000 mb per month / 30 days / 24 hours / 60 minutes / 60 seconds = 771 mb/second.
+  <summary>Math</summary>
+2,400,000,000 requests per month / 30 days per month / 24 hours per day / 60 minutes per hour / 60 seconds per minute = ~925 requests/second.
+3,000,000,000 mb per month / 30 days per month / 24 hours per day / 60 minutes per hour / 60 seconds per minute = ~1157 mb/second.
 </details>
 
 The origin server does not have enough resources for this, and it struggled to keep up with the demand.
