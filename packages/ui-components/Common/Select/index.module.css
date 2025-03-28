@@ -149,3 +149,32 @@
       rounded;
   }
 }
+
+.scrollBtn {
+  @apply sticky
+    z-10
+    flex
+    w-full
+    cursor-pointer
+    justify-center
+    bg-white
+    p-1
+    transition-colors
+    hover:bg-neutral-100
+    dark:bg-neutral-950
+    dark:hover:bg-neutral-900;
+}
+
+.scrollBtn[data-direction='down'] {
+  bottom: 0;
+}
+
+.scrollBtn[data-direction='up'] {
+  top: 0;
+}
+
+.scrollBtnIcon {
+  @apply size-5
+    text-neutral-600
+    dark:text-neutral-400;
+}
