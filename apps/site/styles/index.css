@@ -7,6 +7,5 @@
 */
 
 @import '@node-core/ui-components/styles/index.css';
-@import './markdown.css';
 @import './effects.css';
 @import './locales.css';
