@@ -119,7 +119,8 @@
             "testRunner": "テストランナー",
             "introduction": "Node.jsのテストランナーの紹介",
             "usingTestRunner": "Node.jsのテストランナーを使用する",
-            "mocking": "テストでのモックの使い方"
+            "mocking": "テストでのモックの使い方",
+            "collectingCodeCoverage": "Node.jsでコードカバレッジを収集する"
           }
         }
       },
@@ -287,6 +288,7 @@
           "choco": "ChocolateyはWIndows用のパッケージマネージャーです。",
           "devbox": "Devboxは隔離された再現可能な開発環境を構築します。",
           "docker": "Dockerはコンテナー化に関するプラットフォームです。",
+          "n": "\"n\"はクロスプラットフォームに対応したNode.jsのバージョンマネージャーです。",
           "volta": "\"Volta\"はクロスプラットフォームに対応したNode.jsのバージョンマネージャーです。"
         }
       }
