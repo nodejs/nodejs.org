@@ -7,15 +7,12 @@ import getDownloadSnippets from '@/next-data/downloadSnippets';
 import getReleaseData from '@/next-data/releaseData';
 import { defaultLocale } from '@/next.locales.mjs';
 import { ReleaseProvider, ReleasesProvider } from '@/providers/releaseProvider';
-import type { DownloadSnippet } from '@/types';
 
 // By default the translated languages do not contain all the download snippets
 // Hence we always merge any translated snippet with the fallbacks for missing snippets
-let fallbackSnippets: Array<DownloadSnippet>;
+const fallbackSnippets = await getDownloadSnippets(defaultLocale.code);
 
 const WithDownloadSection: FC<PropsWithChildren> = async ({ children }) => {
-  fallbackSnippets ??= await getDownloadSnippets(defaultLocale.code);
-
   const locale = await getLocale();
   const releases = await getReleaseData();
   const snippets = await getDownloadSnippets(locale);

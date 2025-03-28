@@ -27,31 +27,23 @@ export const IGNORED_ROUTES = [
  * counterpart route. This is useful for providing routes with matching Layout Names
  * but that do not have Markdown content and a matching file for the route
  *
- * @type {() => Promise<Map<string, import('./types').Layouts>>} A Map of pathname and Layout Name
+ * @type {Map<string, import('./types').Layouts>} A Map of pathname and Layout Name
  */
-export const DYNAMIC_ROUTES = async () => {
-  const blogCategories = await provideBlogCategories();
-
-  const pages = [];
-  for (const c of blogCategories) {
-    const categoryPages = (await provideBlogPosts(c)).pagination.pages;
-    pages.push([c, categoryPages]);
-  }
-
-  return new Map([
-    // Provides Routes for all Blog Categories
-    ...blogCategories.map(c => [`blog/${c}`, 'blog-category']),
-    // Provides Routes for all Blog Categories w/ Pagination
-    ...pages
-      // creates a numeric array for each page and define a pathname for
-      // each page for a category (i.e. blog/all/page/1)
-      .map(([c, t]) => [...Array(t).keys()].map(p => `blog/${c}/page/${p + 1}`))
-      // creates a tuple of each pathname and layout for the route
-      .map(paths => paths.map(path => [path, 'blog-category']))
-      // flattens the array since we have a .map inside another .map
-      .flat(),
-  ]);
-};
+export const DYNAMIC_ROUTES = new Map([
+  // Provides Routes for all Blog Categories
+  ...provideBlogCategories().map(c => [`blog/${c}`, 'blog-category']),
+  // Provides Routes for all Blog Categories w/ Pagination
+  ...provideBlogCategories()
+    // retrieves the amount of pages for each blog category
+    .map(c => [c, provideBlogPosts(c).pagination.pages])
+    // creates a numeric array for each page and define a pathname for
+    // each page for a category (i.e. blog/all/page/1)
+    .map(([c, t]) => [...Array(t).keys()].map(p => `blog/${c}/page/${p + 1}`))
+    // creates a tuple of each pathname and layout for the route
+    .map(paths => paths.map(path => [path, 'blog-category']))
+    // flattens the array since we have a .map inside another .map
+    .flat(),
+]);
 
 /**
  * This is the default Next.js Page Metadata for all pages

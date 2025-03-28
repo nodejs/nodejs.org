@@ -20,11 +20,12 @@ export const GET = async (_: Request, props: StaticParams) => {
 
   const requestedPage = Number(params.page);
 
-  const data = await (requestedPage >= 1
-    ? // This allows us to blindly get all blog posts from a given category
-      // if the page number is 0 or something smaller than 1
-      providePaginatedBlogPosts(params.category, requestedPage)
-    : provideBlogPosts(params.category));
+  const data =
+    requestedPage >= 1
+      ? // This allows us to blindly get all blog posts from a given category
+        // if the page number is 0 or something smaller than 1
+        providePaginatedBlogPosts(params.category, requestedPage)
+      : provideBlogPosts(params.category);
 
   return Response.json(data, { status: data.posts.length ? 200 : 404 });
 };

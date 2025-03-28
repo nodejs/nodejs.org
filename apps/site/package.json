@@ -21,7 +21,7 @@
     "test": "turbo test:unit",
     "build:worker": "npx opennextjs-cloudflare build",
     "postbuild:worker": "node ./.cloudflare/prepare-build.mjs",
-    "cf:preview": "npm run build:worker && npx wrangler dev",
+    "cf:preview": "npm run build:worker && sleep 3 && npx wrangler dev",
     "cf:deploy": "npx wrangler deploy"
   },
   "dependencies": {

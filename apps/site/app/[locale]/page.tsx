@@ -92,7 +92,7 @@ const getPage: FC<DynamicParams> = async props => {
   // Gets the current full pathname for a given path
   const pathname = dynamicRouter.getPathname(path);
 
-  const staticGeneratedLayout = (await DYNAMIC_ROUTES()).get(pathname);
+  const staticGeneratedLayout = DYNAMIC_ROUTES.get(pathname);
 
   // If the current pathname is a statically generated route
   // it means it does not have a Markdown file nor exists under the filesystem

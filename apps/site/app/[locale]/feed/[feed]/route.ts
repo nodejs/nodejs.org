@@ -14,7 +14,7 @@ export const GET = async (_: Request, props: StaticParams) => {
   const params = await props.params;
 
   // Generate the Feed for the given feed type (blog, releases, etc)
-  const websiteFeed = await provideWebsiteFeeds(params.feed);
+  const websiteFeed = provideWebsiteFeeds(params.feed);
 
   return new NextResponse(websiteFeed, {
     headers: { 'Content-Type': 'application/xml' },
