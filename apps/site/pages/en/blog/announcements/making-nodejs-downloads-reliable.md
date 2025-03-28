@@ -9,8 +9,6 @@ author: flakey5
 Last year, we shared [the details behind Node.js' brand new website](https://nodejs.org/en/blog/announcements/diving-into-the-nodejs-website-redesign).
 Today we're back, talking about the new infrastructure serving Node.js' release assets.
 
-<!-- I don't really like this paragraph -->
-
 This blog post goes into what Node.js' web infrastructure looks like, its history, and where it stands today.
 We're also going to be covering what exactly we had in mind and were prioritizing with this infrastructure overhaul.
 
@@ -48,13 +46,10 @@ _Refs: [Release Overview](https://github.com/nodejs/build/blob/main/doc/release-
 
 Nowadays, the nodejs.org domain sees over 3 billion requests and 2+ petabytes of traffic per month, with the majority of that going towards release assets.
 
-<!-- cf dash screenshots? -->
-
 This averages to about 1,157 requests per second, with an average bandwidth of 771 mb per second.
 
 <details>
     <summary>Math</summary>
-<!-- todo double check w/ up to date numbers -->
 3,000,000,000 requests per month / 30 days / 24 hours / 60 minutes / 60 seconds = ~1157 requests/second.
 2,000,000,000 mb per month / 30 days / 24 hours / 60 minutes / 60 seconds = 771 mb/second.
 </details>
