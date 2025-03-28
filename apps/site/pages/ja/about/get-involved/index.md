@@ -5,30 +5,28 @@ layout: about
 
 # 活動への参加
 
-Node.jsのコミュニティーへの参加の仕方にはさまざまな方法があります。Node.jsプロジェクトは大規模で多様なコミュニティーとなっているため、コードを書くこと以外にも貢献する方法はたくさんあります。
+Node.jsのコミュニティへの参加の仕方にはさまざまな方法があります。Node.jsプロジェクトは大規模で多様なコミュニティとなっているため、コードを書くこと以外にも貢献する方法はたくさんあります。
 
 ## コミュニティーでの議論
 
-- [Node.js公式Discordサーバー](/discord)ではNode.js開発者とチャットしたりNode.jsプロジェクトからのニュースを知ることができます。
-- [GitHub issues](https://github.com/nodejs/node/issues)はNode.jsの主機能について議論する場となっています。Node.jsについて疑問がある場合は[github discussions](https://github.com/orgs/nodejs/discussions)も利用できます。
-- [`nodejs/help`](https://github.com/nodejs/help/issues)リポジトリーでもNode.jsに関する質問を受け付けています。
-- Node.jsの公式Twitterアカウントは[nodejs](https://twitter.com/nodejs)です。
+- [`nodejs/node` GitHubリポジトリー](https://github.com/nodejs/node/issues)は、Node.jsのコア機能や問題の報告を行うための場所です。
+- [`nodejs/help` GitHubリポジトリー](https://github.com/nodejs/help/issues)でもNode.jsに関する質問を受け付けています。
+- Node.jsの[公式Discordサーバー](/discord)ではNode.js開発者とチャットしたりNode.jsプロジェクトからのニュースを知ることができます。
 - [Node.jsプロジェクトカレンダー](https://nodejs.org/calendar)では公開されている全ての会議を確認できます。
 
 ## 学習教材
 
 Node.jsについてもっと学びたい場合は、多数のリソースが利用できます。
 
-- Node.jsのウェブサイトに[公式の学習セクション](https://nodejs.org/en/learn/)があります。
-- [公式のAPIリファレンス](https://nodejs.org/api/)
+- Node.jsの[公式学習資料](https://nodejs.org/ja/learn/)。
+- Node.jsの[公式APIリファレンス](https://nodejs.org/api/) 。
 - [NodeSchool.io](https://nodeschool.io/)ではインタラクティブなコマンドラインゲームを通してNode.jsのコンセプトを学べます。
-- [Stack OverflowのNode.jsタグ](https://stackoverflow.com/questions/tagged/node.js)には毎日新しい情報が集まっています。
-- [DEVコミュニティーのNode.jsタグ](https://dev.to/t/node)はNode.jsのプロジェクト、記事、チュートリアルを共有したり、Node.js関連のトピックについてディスカッションしたり、フィードバックを求めたりする場になっています。どんなスキルレベルの方でも参加できます。
-- [Reddit Node.jsコミュニティー](https://www.reddit.com/r/node)はNode.jsのプロジェクト、記事、チュートリアルを共有したり、Node.js関連のトピックについてディスカッションしたり、フィードバックを求めたりする場になっています。どんなスキルレベルの方でも参加できます。
+- [StackOverflowのNode.jsタグ](https://stackoverflow.com/questions/tagged/node.js)には有用なリソースを含んだスレッドがたくさんあります。
+- [The DEV CommunityのNode.jsタグ](https://dev.to/t/node)にはNode.jsに関連した記事やコンテンツがあります。
 
 ## 非公式な議論の場
 
-Node.jsについてより気軽に議論できる場所を探している方のために非公式に議論できる場所がいくつかあります。これらは Node.jsプロジェクトによって公式に承認されたものではないことに注意し、それぞれの行動規範に従ってください。
+Node.jsについてもっと非公式に議論する場所を探しているのであれば、いくつかの非公式の場があります。Node.jsプロジェクトはこれらを公式に承認していないことに注意してください。それぞれの行動規範やルールに従ってください。
 
 - [Node Slackers](https://www.nodeslackers.com/)はNode.jsに特化したSlackコミュニティーです。
 - [OpenJSF Slack](https://slack-invite.openjsf.org/)はOpenJS財団のSlackワークスペースです。Node.jsに関連するチャンネルがいくつかあります。 _(チャンネル名が `#nodejs-` で始まるチャンネル)_
