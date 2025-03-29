@@ -6,7 +6,7 @@ layout: blog-post
 author: flakey5
 ---
 
-Last year, we shared [the details behind Node.js' brand new website](https://nodejs.org/en/blog/announcements/diving-into-the-nodejs-website-redesign).
+Last year, we shared [the details behind Node.js's brand new website](https://nodejs.org/en/blog/announcements/diving-into-the-nodejs-website-redesign).
 Today we're back, talking about the new infrastructure serving Node.js' release assets.
 
 This blog post goes into what Node.js' web infrastructure looks like, its history, and where it stands today.
@@ -23,7 +23,7 @@ After the Node.js and io.js merge in 2015, io.js' VPS (which will be referred to
 A backup server was also created, which acted almost like an exact copy of the origin server.
 It served two main purposes:
 
-1. Serve any traffic that the origin server couldn't handle
+1. Serve any traffic that the origin server couldn't handle.
 2. Serve as a backup for the binaries and documentation in case if something went wrong with the origin server.
 
 The entire architecture looked like this:
@@ -68,7 +68,7 @@ So, everyday at roughly midnight UTC, the origin server got effectively DDoS'ed 
 
 There were also a handful of other issues with the origin server pertaining to its maintenance:
 
-- Documentation of things running on the server was spotty; some things were well documented and others not at all
+- Documentation of things running on the server was spotty; some things were well documented and others not at all.
 - Changes performed in the [nodejs/build](https://github.com/nodejs/build) repository needed to be deployed manually by a Build WG member with access. There was also no guarantee that what's in the build repository is what's actually on the server.
 - There's no staging environment other than a backup instance.
 - Rollbacks could only be done via disk images through the VPS providers' web portal.
@@ -141,7 +141,7 @@ To do this, we implemented four things:
 1. Any request to R2 that fails is retried 3 times (in additon to the retries that Workers already performs).
 2. A "fallback" system. Any request to R2 that fails all retries is rewritten to the old infrastructure.
 3. When an error does happen, it's recorded in [Sentry](https://sentry.io/welcome) and we're notified so we can take appropriate action.
-4. Slack alerts are in place for Sentry and for any critical point of failure in the Release Worker (ex/ deployment failure)
+4. Slack alerts are in place for Sentry and for any critical point of failure in the Release Worker (ex/ deployment failure).
 
 ### The Iterations
 
@@ -195,7 +195,7 @@ We still want to,
 
 - Look into any performance improvements that could be made.
   - This includes looking into integrating [Cloudflare KV](https://developers.cloudflare.com/kv/) for directory listings.
-- Have better tests and a better development environment ([PR!](https://github.com/nodejs/release-cloudflare-worker/pull/252))
+- Have better tests and a better development environment ([PR!](https://github.com/nodejs/release-cloudflare-worker/pull/252)).
 - Metrics to give us more visibility into how the Release Worker is behaving and if there's anything that we can improve.
 
 ## Thanks
