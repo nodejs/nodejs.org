@@ -75,11 +75,6 @@ The Node.js Website is built upon [React][] and [Next.js][] respectively, the UI
 The Website also uses several other Open Source libraries (not limited to) listed below:
 
 - Styling is done with [PostCSS][] and CSS Modules
-  - We use a combination of PostCSS plugins to create a [Sass](https://sass-lang.com/) alike environment
-  - We recommend reading the documentation of our plugins in case of doubt
-    - [PostCSS Mixins](https://github.com/postcss/postcss-mixins)
-    - [PostCSS Import](https://github.com/postcss/postcss-import)
-    - [PostCSS Simple Vars](https://github.com/postcss/postcss-simple-vars)
 - [Tailwind][] is used as our CSS Framework and the Foundation of our Design System
 - [Hero Icons](https://heroicons.com/) is an SVG Icon Library used within our Codebase
 - [Radix UI][] is a collection of customizable UI components
@@ -577,15 +572,11 @@ We currently use a set of PostCSS plugins that create a SCSS-a-like environment.
 
 #### What PostCSS Plugins we use?
 
-- `postcss-mixins`: Allows us to use Sass-like Mixins
-- `postcss-import`: Allows us to use Sass-like Imports
-- `postcss-simple-vars`: Allows us to use Sass-like Variables
-- `postcss-nested`: Allows us to use Sass-like Nesting
 - `postcss-calc`: Strips `calc` expressions and replaces them with the result
+- `@tailwindcss/postcss`: Allows us to use Tailwind within PostCSS
 
 It is important to mention that even though we use SCSS-like syntax, we do not use SCSS, and some of these plugins
 are not 100% compatible with the SCSS syntax.
-For example, `postcss-mixins` does not support `@include` and `@extend` directives (and it uses `@define-mixin` for defining Mixins and `@mixin` for including Mixins).
 
 #### Do we use a CSS Framework?
 

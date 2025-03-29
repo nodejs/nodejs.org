@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .container {
   @apply max-w-full
     flex-1;

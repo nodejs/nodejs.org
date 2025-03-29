@@ -4,12 +4,14 @@ const CUSTOM_AT_RULES = [
   'apply',
   'layer',
   'responsive',
+  'reference',
+  'utility',
+  'theme',
+  'custom-variant',
   'screen',
+  'source',
   'tailwind',
   'variants',
-  // PostCSS-specific at-rules
-  'define-mixin',
-  'mixin',
 ];
 
 // Enforces certain selectors to be only in camelCase notation
@@ -29,7 +31,6 @@ export default {
     'selector-id-pattern': ONLY_ALLOW_CAMEL_CASE_SELECTORS,
     // Allow Tailwind-based CSS Rules
     'at-rule-no-unknown': [true, { ignoreAtRules: CUSTOM_AT_RULES }],
-    'at-rule-no-deprecated': [true, { ignoreAtRules: CUSTOM_AT_RULES }],
     // Allow the Global CSS Selector
     'selector-pseudo-class-no-unknown': [
       true,
@@ -42,5 +43,7 @@ export default {
     'media-feature-range-notation': 'prefix',
     // Adopts the import notation from `postcss-import`
     'import-notation': 'string',
+    // Allow the `@apply` at rule as its part of Tailwind
+    'at-rule-no-deprecated': [true, { ignoreAtRules: CUSTOM_AT_RULES }],
   },
 };

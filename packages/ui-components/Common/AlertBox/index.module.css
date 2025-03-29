@@ -1,9 +1,11 @@
+@reference "../../styles/index.css";
+
 .alertBox {
   @apply flex
     flex-row
     items-center
     gap-2
-    rounded
+    rounded-sm
     px-4
     py-3
     text-sm
@@ -31,7 +33,7 @@
   }
 
   .title {
-    @apply rounded-sm
+    @apply rounded-xs
       px-1.5;
   }
 

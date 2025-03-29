@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .sideBarItem {
   @apply flex
     w-full
@@ -26,7 +28,7 @@
 }
 
 .active {
-  @apply rounded
+  @apply rounded-sm
     bg-green-600
     text-white
     dark:text-white;

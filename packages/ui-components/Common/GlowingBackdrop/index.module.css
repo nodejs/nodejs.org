@@ -1,3 +1,5 @@
+@reference "../../styles/index.css";
+
 .glowingBackdrop {
   @apply absolute
     left-0
@@ -5,20 +7,17 @@
     -z-10
     size-full
     opacity-50
-    md:opacity-100;
-
-  &::after {
-    @apply absolute
-      inset-0
-      m-auto
-      aspect-square
-      w-[300px]
-      rounded-full
-      bg-green-300
-      blur-[120px]
-      content-['']
-      dark:bg-green-700;
-  }
+    after:absolute
+    after:inset-0
+    after:m-auto
+    after:aspect-square
+    after:w-[300px]
+    after:rounded-full
+    after:bg-green-300
+    after:blur-[120px]
+    after:content-['']
+    md:opacity-100
+    dark:after:bg-green-700;
 
   svg {
     @apply absolute

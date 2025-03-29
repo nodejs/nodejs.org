@@ -1,3 +1,5 @@
+@reference "../../styles/index.css";
+
 .button {
   @apply px-4.5
     relative
@@ -25,7 +27,7 @@
   }
 
   &.neutral {
-    @apply rounded
+    @apply rounded-sm
       bg-neutral-900
       text-white
       dark:text-neutral-200;
@@ -45,12 +47,12 @@
   }
 
   &.primary {
-    @apply rounded
+    @apply shadow-xs
+      rounded-sm
       border
       border-green-600
       bg-green-600
-      text-white
-      shadow-sm;
+      text-white;
 
     &:hover:not([aria-disabled='true']) {
       @apply border-green-700
@@ -95,41 +97,35 @@
   }
 
   &.special {
-    @apply rounded-lg
+    @apply before:bg-gradient-glow-backdrop
+      shadow-xs
+      rounded-lg
       border
       border-green-600/30
       bg-green-600/10
       text-white
-      shadow-sm;
-
-    &::before {
-      @apply bg-gradient-glow-backdrop
-        absolute
-        left-0
-        right-0
-        top-0
-        -z-10
-        mx-auto
-        h-full
-        w-full
-        opacity-30
-        content-[''];
-    }
-
-    &::after {
-      @apply absolute
-        -top-px
-        left-0
-        right-0
-        mx-auto
-        h-px
-        w-2/5
-        bg-gradient-to-r
-        from-green-600/0
-        via-green-600
-        to-green-600/0
-        content-[''];
-    }
+      before:absolute
+      before:left-0
+      before:right-0
+      before:top-0
+      before:-z-10
+      before:mx-auto
+      before:h-full
+      before:w-full
+      before:opacity-30
+      before:content-['']
+      after:absolute
+      after:-top-px
+      after:left-0
+      after:right-0
+      after:mx-auto
+      after:h-px
+      after:w-2/5
+      after:bg-gradient-to-r
+      after:from-green-600/0
+      after:via-green-600
+      after:to-green-600/0
+      after:content-[''];
 
     &[aria-disabled='true'] {
       @apply opacity-50;
