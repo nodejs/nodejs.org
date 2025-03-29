@@ -4,9 +4,10 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import * as ScrollPrimitive from '@radix-ui/react-scroll-area';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import classNames from 'classnames';
-import { useEffect, useId, useMemo, useState } from 'react';
+import { useEffect, useId, useMemo, useState, useRef } from 'react';
 import type { ReactElement, ReactNode } from 'react';
 
+import SelectScrollButton from '@node-core/ui-components/Common/Select/SelectScrollButton';
 import Skeleton from '@node-core/ui-components/Common/Skeleton';
 import type { FormattedMessage } from '@node-core/ui-components/types';
 
@@ -59,6 +60,7 @@ const Select = <T extends string>({
 }: SelectProps<T>): ReactNode => {
   const id = useId();
   const [value, setValue] = useState(defaultValue);
+  const SelectContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => setValue(defaultValue), [defaultValue]);
 
@@ -163,6 +165,7 @@ const Select = <T extends string>({
 
           <SelectPrimitive.Portal>
             <SelectPrimitive.Content
+              ref={SelectContentRef}
               position={inline ? 'popper' : 'item-aligned'}
               className={classNames(styles.dropdown, {
                 [styles.inline]: inline,
@@ -178,6 +181,10 @@ const Select = <T extends string>({
                   <ScrollPrimitive.Thumb />
                 </ScrollPrimitive.Scrollbar>
               </ScrollPrimitive.Root>
+              <SelectScrollButton
+                direction="down"
+                selectContentRef={SelectContentRef}
+              />
             </SelectPrimitive.Content>
           </SelectPrimitive.Portal>
         </SelectPrimitive.Root>
