@@ -1,7 +1,5 @@
 {
   "plugins": {
-    "postcss-mixins": {},
-    "postcss-simple-vars": {},
     "postcss-calc": {},
     "@tailwindcss/postcss": {}
   }

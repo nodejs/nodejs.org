@@ -11,9 +11,6 @@ const CUSTOM_AT_RULES = [
   'screen',
   'tailwind',
   'variants',
-  // PostCSS-specific at-rules
-  'define-mixin',
-  'mixin',
 ];
 
 // Enforces certain selectors to be only in camelCase notation
