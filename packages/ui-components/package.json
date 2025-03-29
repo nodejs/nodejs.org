@@ -28,6 +28,7 @@
     "@tailwindcss/postcss": "~4.0.17",
     "@vcarl/remark-headings": "~0.1.0",
     "classnames": "~2.5.1",
+    "postcss-calc": "^10.1.1",
     "tailwindcss": "~4.0.17"
   },
   "devDependencies": {
