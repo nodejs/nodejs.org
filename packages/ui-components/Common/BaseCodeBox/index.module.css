@@ -1,6 +1,8 @@
+@reference "../../styles/index.css";
+
 .root {
   @apply w-full
-    rounded
+    rounded-sm
     border
     border-neutral-900
     bg-neutral-950;
@@ -33,8 +35,8 @@
         }
 
         &:not(:empty:last-child)::after {
-          @apply w-4.5
-            font-ibm-plex-mono
+          @apply font-ibm-plex-mono
+            w-4.5
             absolute
             left-0
             top-0
