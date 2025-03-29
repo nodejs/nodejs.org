@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .group {
   @apply flex
     flex-col
@@ -12,42 +14,34 @@
       -left-1
       flex
       flex-col
-      gap-2;
-
-    &::after {
-      @apply absolute
-        left-[0.45rem]
-        top-0
-        z-10
-        h-full
-        w-px
-        bg-neutral-200
-        content-['']
-        dark:bg-neutral-800;
-    }
+      gap-2
+      after:absolute
+      after:left-[0.45rem]
+      after:top-0
+      after:z-10
+      after:h-full
+      after:w-px
+      after:bg-neutral-200
+      after:content-['']
+      dark:after:bg-neutral-800;
 
     a {
-      &:first-child::before {
-        @apply absolute
-          bottom-[calc(50%+0.25rem)]
-          left-0
-          h-20
-          w-4
-          bg-white
-          content-['']
-          dark:bg-neutral-950;
-      }
-
-      &:last-child::after {
-        @apply absolute
-          left-0
-          top-[calc(50%+0.25rem)]
-          h-20
-          w-4
-          bg-white
-          content-['']
-          dark:bg-neutral-950;
-      }
+      @apply first:before:absolute
+        first:before:bottom-[calc(50%+0.25rem)]
+        first:before:left-0
+        first:before:h-20
+        first:before:w-4
+        first:before:bg-white
+        first:before:content-['']
+        last:after:absolute
+        last:after:left-0
+        last:after:top-[calc(50%+0.25rem)]
+        last:after:h-20
+        last:after:w-4
+        last:after:bg-white
+        last:after:content-['']
+        first:dark:before:bg-neutral-950
+        last:dark:after:bg-neutral-950;
     }
   }
 }

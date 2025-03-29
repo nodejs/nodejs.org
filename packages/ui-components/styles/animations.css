@@ -1,0 +1,47 @@
+@theme {
+  --animate-surf: surf 1s infinite ease-in-out;
+  --animate-pulse: pulse 500ms infinite alternate-reverse;
+  --animate-pulse-dark: pulse-dark 500ms infinite alternate-reverse;
+
+  @keyframes surf {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    25% {
+      transform: translate(0, 6px);
+    }
+
+    50% {
+      transform: translate(0, -6px);
+    }
+
+    75% {
+      transform: translate(0, 3px);
+    }
+
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes pulse {
+    from {
+      background: var(--color-pulse-100);
+    }
+
+    to {
+      background: var(--color-pulse-200);
+    }
+  }
+
+  @keyframes pulse-dark {
+    from {
+      background: var(--color-pulse-300);
+    }
+
+    to {
+      background: var(--color-pulse-400);
+    }
+  }
+}

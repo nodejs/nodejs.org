@@ -1,3 +1,5 @@
+@reference "../../styles/index.css";
+
 .tabsList {
   @apply font-open-sans
     max-xs:hidden

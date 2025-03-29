@@ -70,7 +70,7 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
         aria-label={sidebarItemTogglerAriaLabel}
       />
 
-      <div className={`${style.main} peer-checked:flex`}>
+      <div className={`${style.main} hidden peer-checked:flex`}>
         <div className={style.navItems}>
           {navItems.map(({ text, link, target }) => (
             <NavItem

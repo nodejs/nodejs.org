@@ -1,3 +1,5 @@
+@reference "../../styles/index.css";
+
 .languageDropdown {
   @apply h-9
     w-9
@@ -17,7 +19,7 @@
   @apply max-h-80
     w-48
     overflow-hidden
-    rounded
+    rounded-sm
     border
     border-neutral-200
     bg-white
@@ -32,13 +34,13 @@
 }
 
 .dropDownItem {
-  @apply cursor-pointer
+  @apply outline-hidden
+    cursor-pointer
     px-2.5
     py-1.5
     text-sm
     font-medium
     text-neutral-800
-    outline-none
     data-[highlighted]:bg-green-600
     data-[highlighted]:text-white
     dark:text-white;

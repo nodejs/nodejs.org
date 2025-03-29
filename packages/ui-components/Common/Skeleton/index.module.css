@@ -1,5 +1,8 @@
+@reference "../../styles/index.css";
+
 .skeleton {
-  @apply pointer-events-none
+  @apply outline-hidden
+    pointer-events-none
     animate-pulse
     cursor-default
     select-none
@@ -7,8 +10,7 @@
     border-none
     bg-clip-border
     text-transparent
-    shadow-none
-    outline-none;
+    shadow-none;
 }
 
 .skeleton[data-inline-skeleton] {
