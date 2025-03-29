@@ -1,3 +1,5 @@
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @theme {
   --color-green-100: #edf2eb;
   --color-green-200: #c5e5b4;
