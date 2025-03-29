@@ -1,13 +1,13 @@
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import classNames from 'classnames';
+import { NextIntlClientProvider } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
 
 import BaseLayout from '@/layouts/Base';
 import { VERCEL_ENV } from '@/next.constants.mjs';
 import { IBM_PLEX_MONO, OPEN_SANS } from '@/next.fonts';
 import { availableLocalesMap, defaultLocale } from '@/next.locales.mjs';
-import { LocaleProvider } from '@/providers/localeProvider';
 import { ThemeProvider } from '@/providers/themeProvider';
 
 import '@/styles/index.css';
@@ -29,11 +29,11 @@ const RootLayout: FC<RotLayoutProps> = async ({ children, params }) => {
       suppressHydrationWarning
     >
       <body suppressHydrationWarning>
-        <LocaleProvider>
+        <NextIntlClientProvider>
           <ThemeProvider>
             <BaseLayout>{children}</BaseLayout>
           </ThemeProvider>
-        </LocaleProvider>
+        </NextIntlClientProvider>
 
         <a
           rel="me"
