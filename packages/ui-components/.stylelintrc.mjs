@@ -9,6 +9,7 @@ const CUSTOM_AT_RULES = [
   'theme',
   'custom-variant',
   'screen',
+  'source',
   'tailwind',
   'variants',
 ];
