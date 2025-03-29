@@ -52,9 +52,5 @@
     "eslint-plugin-no-relative-import-paths": "~1.6.1",
     "prettier": "3.5.2",
     "prettier-plugin-tailwindcss": "0.6.11"
-  },
-  "overrides": {
-    "@types/react": "$@types/react",
-    "@types/react-dom": "$@types/react-dom"
   }
 }
