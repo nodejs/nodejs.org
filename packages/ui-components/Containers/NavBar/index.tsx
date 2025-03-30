@@ -68,6 +68,7 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
         type="checkbox"
         onChange={e => setIsMenuOpen(() => e.target.checked)}
         aria-label={sidebarItemTogglerAriaLabel}
+        tabIndex={-1}
       />
 
       <div className={`${style.main} peer-checked:flex`}>
