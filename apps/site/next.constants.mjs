@@ -101,15 +101,6 @@ export const NEXT_DATA_URL = process.env.NEXT_PUBLIC_DATA_URL
     : `http://localhost:${process.env.PORT ?? 3000}/en/next-data/`;
 
 /**
- * This ReGeX is used to remove the `index.md(x)` suffix of a name and to remove
- * the `.md(x)` extensions of a filename.
- *
- * This RegEx is used to transform the file system pathnames into acceptable
- * Route Segments for Next.js Dynamic Routes on `pages/[...path].tsx`
- */
-export const MD_EXTENSION_REGEX = /((\/)?(index))?\.mdx?$/i;
-
-/**
  * This is the default type of blog post type that we use for OG Meta Tags
  */
 export const DEFAULT_CATEGORY_OG_TYPE = 'announcement';
