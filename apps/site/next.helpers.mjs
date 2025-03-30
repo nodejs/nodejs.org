@@ -5,6 +5,15 @@ import { fileURLToPath } from 'node:url';
 import { glob } from 'glob';
 
 /**
+ * We create a locale cache of Glob Promises
+ * to avoid reading the file system multiple times
+ * this is done since we don't need to constantly re-run the glob
+ * query as it is only needed once
+ *
+ * @type {Map<string, Promise<string>>} */
+const globCacheByPath = new Map();
+
+/**
  * This gets the relative path from `import.meta.url`
  *
  * @param {string} path the current import path
