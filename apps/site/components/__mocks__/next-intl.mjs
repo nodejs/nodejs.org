@@ -1,11 +1,5 @@
 'use strict';
 
-export const useMessages = () => ({});
-
-export const useNow = () => new Date();
-
-export const useTimeZone = () => 'Etc/UTC';
-
 export const useTranslations = () => {
   const t = key => key;
 

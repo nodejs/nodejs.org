@@ -9,8 +9,8 @@ layout: home
   <div>
     <h1 className="special">Executar a JavaScript em Toda Parte</h1>
 
-    Node.js® é uma ambiente de execução de JavaScript disponível para várias plataformas,
-    de código aberto e gratuita, que permite os programadores criar servidores, aplicações
+    Node.js® é um ambiente de execução de JavaScript multiplataforma,
+    de código-aberto e gratuita, que permite aos programadores criar servidores, aplicações
     da Web, ferramentas de linha de comando e programas de automação de tarefas.
 
   </div>
@@ -21,9 +21,9 @@ layout: home
         <>
           <DownloadButton release={release}>Descarregar a Node.js (LTS)</DownloadButton>
           <small>
-            Descarregar a Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Descarregar um instalador da Node.js para a nossa plataforma atual">1</sup> com o suporte de longo prazo.
-            A Node.js também pode ser instalada através dos <Link href="/download/package-manager">gestores de pacotes</Link>.
+            Descarrega a Node.js <b>{release.versionWithPrefix}</b>
+            <sup title="Downloads a Node.js installer for your current platform">1</sup> com suporte de longo prazo.
+            A Node.js também pode ser instalada por meio de <Link href="/download">gestores de versão</Link>.
           </small>
         </>
       )}
@@ -32,9 +32,9 @@ layout: home
     <WithNodeRelease status={['Current']}>
       {({ release }) => (
         <small>
-          Se estivermos ansiosos quanto as novas funcionalidades,
-          podemos obter a <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Descarregar um instalador da Node.js para a nossa plataforma atual">1</sup>.
+          Queremos novas funcionalidades mais cedo?
+          Podemos então obter a <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="Descarrega um instalador da Node.js para a nossa plataforma atual">1</sup>.
         </small>
       )}
     </WithNodeRelease>
@@ -130,5 +130,7 @@ layout: home
     ```
 
   </div>
-  Podemos saber mais do que a Node.js é capaz de oferecer com os nossos [materiais de aprendizado](/learn).
+
+É possível saber que mais a Node.js consegue oferecer com os nossos [materiais de estudo](/learn).
+
 </section>

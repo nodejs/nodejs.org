@@ -38,7 +38,7 @@ const isJustineAnAdult = isAdult(justine);
 
 **Step 2:** Install TypeScript locally using a package manager:
 
-In this example we're going to use npm, you can check our [our introduction to the npm package manager](/learn/getting-started/an-introduction-to-the-npm-package-manager) for more information.
+In this example we're going to use npm, you can check [our introduction to the npm package manager](/learn/getting-started/an-introduction-to-the-npm-package-manager) for more information.
 
 ```bash displayName="Install TypeScript locally"
 npm i -D typescript # -D is a shorthand for --save-dev

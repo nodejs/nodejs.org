@@ -12,8 +12,7 @@
       },
       "navBar": {
         "controls": {
-          "open": "Show navigation menu",
-          "close": "Close navigation menu"
+          "toggle": "Toggle navigation menu"
         },
         "links": {
           "about": "About",
@@ -43,6 +42,8 @@
             "nodejsWithWebassembly": "Node.js with WebAssembly",
             "debugging": "Debugging Node.js",
             "profiling": "Profiling Node.js Applications",
+            "fetch": "Fetching data with Node.js",
+            "websocket": "WebSocket client with Node.js",
             "securityBestPractices": "Security Best Practices"
           }
         },
@@ -52,7 +53,8 @@
             "introduction": "Introduction to TypeScript",
             "transpile": "Running TypeScript code using transpilation",
             "run": "Running TypeScript with a runner",
-            "runNatively": "Running TypeScript Natively"
+            "runNatively": "Running TypeScript Natively",
+            "publishingTSPackage": "Publishing a TypeScript package"
           }
         },
         "asynchronousWork": {
@@ -117,7 +119,8 @@
             "testRunner": "Test Runner",
             "introduction": "Discovering Node.js's test runner",
             "usingTestRunner": "Using Node.js's test runner",
-            "mocking": "Mocking in tests"
+            "mocking": "Mocking in tests",
+            "collectingCodeCoverage": "Collecting code coverage in Node.js"
           }
         }
       },
@@ -284,7 +287,9 @@
           "brew": "Homebrew is a package manager for macOS and Linux.",
           "choco": "Chocolatey is a package manager for Windows.",
           "devbox": "Devbox creates isolated, reproducible development environments.",
-          "docker": "Docker is a containerization platform."
+          "docker": "Docker is a containerization platform.",
+          "n": "\"n\" is a cross-platform Node.js version manager.",
+          "volta": "\"Volta\" is a cross-platform Node.js version manager."
         }
       }
     },

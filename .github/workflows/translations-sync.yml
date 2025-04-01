@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
+        uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
         with:
           egress-policy: audit
 
@@ -37,7 +37,7 @@ jobs:
 
         # see all the options at https://github.com/crowdin/github-action
       - name: Crowdin PR
-        uses: crowdin/github-action@2d540f18b0a416b1fbf2ee5be35841bd380fc1da # v2.3.0
+        uses: crowdin/github-action@b811e495831e49ff516e7c801f7c5546879b9ee7 # v2.5.2
         id: crowdin_pr
         with:
           # do not upload anything - this is a one-way operation download
@@ -67,7 +67,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@0080882f6c36860b6ba35c610c98ce87d4e2f26f # v2.10.2
+        uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
         with:
           egress-policy: audit
 
@@ -78,7 +78,7 @@ jobs:
           ref: refs/pull/${{ needs.synchronize-with-crowdin.outputs.pull_request_number }}/head
 
       - name: Restore Lint Cache
-        uses: actions/cache/restore@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4.1.2
+        uses: actions/cache/restore@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
         with:
           path: |
             apps/site/.eslintmdcache
@@ -94,7 +94,7 @@ jobs:
             cache-lint-
 
       - name: Set up Node.js
-        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+        uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
         with:
           # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
@@ -116,14 +116,14 @@ jobs:
         run: npx prettier "apps/site/{pages,i18n}/**/*.{json,md,mdx}" --check --write --cache --cache-strategy=metadata --cache-location=apps/site/.prettiercache
 
       - name: Push Changes back to Pull Request
-        uses: stefanzweifel/git-auto-commit-action@8621497c8c39c72f3e2a999a26b4ca1b5058a842 # v5.0.1
+        uses: stefanzweifel/git-auto-commit-action@e348103e9026cc0eee72ae06630dbe30c8bf7a79 # v5.1.0
         with:
           commit_options: '--no-verify --signoff'
           commit_message: 'chore: automated format of translated files'
           branch: 'chore/crowdin'
 
       - name: Save Lint Cache
-        uses: actions/cache/save@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4.1.2
+        uses: actions/cache/save@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
         with:
           path: |
             apps/site/.eslintmdcache

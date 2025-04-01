@@ -5,10 +5,12 @@ import type { UserOS, UserPlatform } from '@/types/userOS';
 export type InstallationMethod =
   | 'NVM'
   | 'FNM'
+  | 'VOLTA'
   | 'BREW'
   | 'DEVBOX'
   | 'DOCKER'
-  | 'CHOCO';
+  | 'CHOCO'
+  | 'N';
 export type PackageManager = 'NPM' | 'YARN' | 'PNPM';
 
 // Items with a pipe/default value mean that they are auto inferred

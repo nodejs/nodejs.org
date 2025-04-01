@@ -2,12 +2,14 @@
 
 import diffLanguage from 'shiki/langs/diff.mjs';
 import dockerLanguage from 'shiki/langs/docker.mjs';
+import iniLanguage from 'shiki/langs/ini.mjs';
 import javaScriptLanguage from 'shiki/langs/javascript.mjs';
 import jsonLanguage from 'shiki/langs/json.mjs';
 import powershellLanguage from 'shiki/langs/powershell.mjs';
 import shellScriptLanguage from 'shiki/langs/shellscript.mjs';
 import shellSessionLanguage from 'shiki/langs/shellsession.mjs';
 import typeScriptLanguage from 'shiki/langs/typescript.mjs';
+import yamlLanguage from 'shiki/langs/yaml.mjs';
 import shikiNordTheme from 'shiki/themes/nord.mjs';
 
 /**
@@ -22,6 +24,7 @@ export const LANGUAGES = [
     // that are commonly used (non-standard aliases) within our API docs and Blog posts
     aliases: javaScriptLanguage[0].aliases.concat('cjs', 'mjs'),
   },
+  ...iniLanguage,
   ...jsonLanguage,
   ...typeScriptLanguage,
   ...shellScriptLanguage,
@@ -29,6 +32,7 @@ export const LANGUAGES = [
   ...shellSessionLanguage,
   ...dockerLanguage,
   ...diffLanguage,
+  ...yamlLanguage,
 ];
 
 // This is the default theme we use for our Shiki Syntax Highlighter

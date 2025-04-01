@@ -9,6 +9,7 @@ layout: about
 
 ## Обговорення спільноти
 
+- [Офіційний Discord-сервер Node.js](/discord) — це місце для спілкування з іншими розробниками Node.js та отримання офіційних новин проєкту Node.js.
 - [Список issue'ів на GitHub](https://github.com/nodejs/node/issues) — це місце для обговорень основного функціонала Node.js. Якщо у вас виникнуть запитання щодо Node.js, використовуйте [обговорення GitHub](https://github.com/orgs/nodejs/discussions).
 - Репозиторій [`nodejs/help`](https://github.com/nodejs/help/issues) — це місце, де можна запитувати про Node.js.
 - Офіційний Twitter Node.js: [nodejs](https://twitter.com/nodejs).
@@ -32,6 +33,4 @@ layout: about
 
 - [Node Slackers](https://www.nodeslackers.com/) — це спільнота Slack із фокусом на Node.js.
 - [OpenJSF Slack](https://slack-invite.openjsf.org/) — це робочий простір Slack для OpenJS Foundation. Там є кілька каналів, які стосуються Node.js. _(канали з префіксом `#nodejs-` стосуються проєкту)_
-- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) — це дружня спільнота бекенд-розробників Node.js, які підтримують один одного в Discord.
-- [ES Community](https://discord.gg/zJsuc6vvhn) — це Discord-спільнота для французькомовних розробників на JavaScript.
 - Для IRC перейдіть на `irc.libera.chat` у каналі `#node.js` через [клієнт IRC](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) або під'єднайтеся до каналу з веббраузера [через вебклієнт](https://kiwiirc.com/nextclient/).

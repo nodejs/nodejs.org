@@ -1,13 +1,9 @@
+import CodeTabs from '@node-core/ui-components/Common/CodeTabs';
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import type { ComponentProps, FC, ReactElement } from 'react';
+import type { FC, ReactElement } from 'react';
 
-import CodeTabs from '@/components/Common/CodeTabs';
-
-type MDXCodeTabsProps = Pick<
-  ComponentProps<typeof CodeTabs>,
-  'linkText' | 'linkUrl'
-> & {
-  children: Array<ReactElement>;
+type MDXCodeTabsProps = {
+  children: Array<ReactElement<unknown>>;
   languages: string;
   displayNames?: string;
   defaultTab?: string;

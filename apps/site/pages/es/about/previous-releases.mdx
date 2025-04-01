@@ -3,7 +3,7 @@ title: Versiones de Node.js
 layout: about
 ---
 
-Versiones de Node.js
+# Versiones de Node.js
 
 Las versiones principales de Node.js entran en estado de lanzamiento _Actual_ durante seis meses, lo que les da a los autores de bibliotecas tiempo para agregarles manutención.
 Después de seis meses, las versiones impares (9, 11, etc.) dejan de ser compatibles y las versiones pares (10, 12, etc.) pasan al estado _LTS Activo_ y están listas para uso general.
@@ -14,7 +14,7 @@ Las aplicaciones de producción solo deben usar versiones _LTS Activo_ o _LTS en
 
 ![Lanzamientos](https://raw.githubusercontent.com/nodejs/Release/main/schedule.svg?sanitize=true)
 
-Los detalles completos sobre el calendario de lanzamiento de Node.js están disponibles [en GitHub](https://github.com/nodejs/release#release-schedule).
+Los detalles del calendario de lanzamiento de Node.js están disponibles [en GitHub](https://github.com/nodejs/release#release-schedule).
 
 ### Soporte Comercial
 
@@ -23,3 +23,17 @@ El soporte comercial para versiones posteriores a la fase de Mantenimiento está
 ## ¿Buscando las últimas versiones de una rama específica?
 
 <DownloadReleasesTable />
+
+## Oficial versus Comunidad
+
+El sito web de Node.js ofrece varios métodos de instalación que facilitan una instalación de Node.js sin interacción, como por una interfaz de línea de comandos (CLI), gestores de paquetes del OS (como `apt`), o gestores de versiones de Node.js (como `nvm`).
+
+El proyecto Node.js, en un intento de popularizar y anunciar esfuerzos comunitarios, ha introducido una página nueva de Descargas que enumera métodos de instalación Oficial y de la Comunidad, así proveyendo más flexibilidad y opciones para usuarios.
+Como parte de este cambio, hemos introducido el concepto de métodos de instalación "Oficial" y "Comunidad". Para considerarse "Oficial", un método de instalación debe cumplir con los siguientes requisitos:
+
+| Requisitos                                                                                                                                                 |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Lanzamientos nuevos de Node.js deben estar disponible al mismo tiempo que el lanzamiento oficial                                                           |
+| Los mantenedores del proyecto tienen una estrecha relación con Node.js, la cual incluye comunicación directa                                               |
+| El método de instalación descarga los binarios oficiales empaquetados por el proyecto Node.js                                                              |
+| El método de instalación **no** compila desde el código fuente cuando binarios están disponibles, ni modifica los binarios oficiales proveídos por Node.js |

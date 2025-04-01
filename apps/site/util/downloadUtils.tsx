@@ -1,9 +1,9 @@
+import type { SelectValue } from '@node-core/ui-components/Common/Select';
+import * as InstallMethodIcons from '@node-core/ui-components/Icons/InstallationMethod';
+import * as OSIcons from '@node-core/ui-components/Icons/OperatingSystem';
+import * as PackageManagerIcons from '@node-core/ui-components/Icons/PackageManager';
 import satisfies from 'semver/functions/satisfies';
 
-import type { SelectValue } from '@/components/Common/Select';
-import InstallMethodIcons from '@/components/Icons/InstallationMethod';
-import OSIcons from '@/components/Icons/OperatingSystem';
-import PackageManagerIcons from '@/components/Icons/PackageManager';
 import type { NodeReleaseStatus } from '@/types';
 import type * as Types from '@/types/release';
 import type { UserOS, UserPlatform } from '@/types/userOS';
@@ -34,6 +34,8 @@ export enum InstallationMethodLabel {
   CHOCO = 'Chocolatey',
   DEVBOX = 'Devbox',
   DOCKER = 'Docker',
+  N = 'n',
+  VOLTA = 'Volta',
 }
 
 export enum PackageManagerLabel {
@@ -208,6 +210,22 @@ export const INSTALL_METHODS: Array<
     recommended: true,
     url: 'https://docs.docker.com/get-started/get-docker/',
     info: 'layouts.download.codeBox.platformInfo.docker',
+  },
+  {
+    label: InstallationMethodLabel.N,
+    value: 'N',
+    compatibility: { os: ['MAC', 'LINUX'] },
+    iconImage: <InstallMethodIcons.N width={16} height={16} />,
+    url: 'https://github.com/tj/n',
+    info: 'layouts.download.codeBox.platformInfo.n',
+  },
+  {
+    label: InstallationMethodLabel.VOLTA,
+    value: 'VOLTA',
+    compatibility: { os: ['WIN', 'MAC', 'LINUX'] },
+    iconImage: <InstallMethodIcons.Volta width={16} height={16} />,
+    url: 'https://docs.volta.sh/guide/getting-started',
+    info: 'layouts.download.codeBox.platformInfo.volta',
   },
 ];
 

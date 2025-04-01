@@ -1,10 +1,10 @@
 'use client';
 
+import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useContext } from 'react';
 
-import Select from '@/components/Common/Select';
 import { ReleaseContext, ReleasesContext } from '@/providers/releaseProvider';
 
 const getDropDownStatus = (version: string, status: string) => {

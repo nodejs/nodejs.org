@@ -3,10 +3,10 @@ title: À propos de Node.js®
 layout: about
 ---
 
-À propos de Node.js®
+# À propos de Node.js®
 
 En tant que moteur d'exécution JavaScript asynchrone orienté événements, Node.js est conçu pour construire des applications réseau évolutives. Dans l'exemple "hello world" suivant, de nombreuses connexions peuvent être gérées simultanément.
-chaque connexion, la fonction callback est exécutée, mais s'il n'y a pas de travail à faire, Node.js se met en veille.
+À chaque connexion, la fonction callback est exécutée, mais s'il n'y a pas de travail à faire, Node.js se met en veille.
 
 ```cjs
 const { createServer } = require('node:http');
@@ -51,16 +51,15 @@ méthodes synchrones de la bibliothèque standard de Node.js. Comme rien ne se b
 raisonnables à développer en Node.js.
 
 Si ce langage ne vous est pas familier, vous trouverez un article complet sur le site suivant
-[Blocage et non-blocage][].
+[Bloquant et Non-bloquant](/learn/asynchronous-work/overview-of-blocking-vs-non-blocking).
 
 ---
 
-La conception de Node.js est similaire et influencée par des systèmes tels que Ruby [Event Machine][] et Python [Twisted][].
-[Event Machine][] de Ruby et [Twisted][] de Python. Node.js pousse le modèle d'événement un peu plus loin.
-un peu plus loin. Il présente une boucle d'événements comme une construction d'exécution plutôt que comme une bibliothèque. Dans d'autres systèmes,
+La conception de Node.js est similaire et influencée par des systèmes tels que Ruby [Event Machine](https://github.com/eventmachine/eventmachine) et [Twisted](https://twisted.org/) de Python.
+Node.js pousse le modèle d'événement un peu plus loin.
+Il présente une boucle d'événements comme une construction d'exécution et non comme une bibliothèque. Dans d'autres systèmes,
 il y a toujours un appel bloquant pour démarrer la boucle d'événements.
-Généralement, le comportement est défini par des rappels au début d'un script et, à la fin, un serveur est démarré par le biais d'un appel bloquant.
-la fin, un serveur est démarré par un appel bloquant comme `EventMachine::run()`.
+Généralement, le comportement est défini par des rappels au début d'un script et, à la fin, un serveur est démarré par un appel bloquant comme `EventMachine::run()`.
 Dans Node.js, il n'y a pas de tel appel start-the-event-loop. Node.js entre simplement dans la boucle d'événements après avoir exécuté le script d'entrée. Node.js
 quitte la boucle d'événements lorsqu'il n'y a plus de rappels à effectuer. Ce comportement
 est similaire à celui d'un navigateur JavaScript - la boucle d'événements est cachée à l'utilisateur.
@@ -70,14 +69,7 @@ latence. Node.js est donc bien adapté à la création d'une bibliothèque ou d'
 web ou d'un framework.
 
 Le fait que Node.js soit conçu sans threads ne signifie pas que vous ne pouvez pas tirer
-profiter de plusieurs cœurs dans votre environnement. Les processus enfants peuvent être créés en utilisant notre API [`child_process.fork()`][].
-en utilisant notre API [`child_process.fork()`][], et sont conçus pour être faciles à communiquer.
-communiquer avec. Le module [`cluster`][] est construit sur cette même interface,
+profit de plusieurs cœurs dans votre environnement. Les processus enfants peuvent être créés en utilisant notre API [`child_process.fork()`](https://nodejs.org/api/child_process.html), et sont conçus pour être faciles à
+communiquer avec. Le module [`cluster`](https://nodejs.org/api/cluster.html) est construit sur cette même interface,
 qui vous permet de partager des sockets entre les processus afin d'équilibrer la charge
 sur vos cœurs.
-
-[bloquant ou non bloquant]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
-[`child_process.fork()`]: https://nodejs.org/api/child_process.html
-[`cluster`]: https://nodejs.org/api/cluster.html
-[événements machine]: https://github.com/eventmachine/eventmachine
-[tordu]: https://twisted.org/

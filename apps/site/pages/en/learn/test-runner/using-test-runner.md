@@ -64,6 +64,118 @@ Then for each setup, create a dedicated `setup` file (ensuring the base `setup.m
 
 Each example below was taken from real-world projects; they may not be appropriate/applicable to yours, but each demonstrate general concepts that are broadly applicable.
 
+## Dynamically generating test cases
+
+Some times, you may want to dynamically generate test-cases. For instance, you want to test the same thing across a bunch of files. This is possible, albeit slightly arcane. You must use `test` (you cannot use `describe`) + `testContext.test`:
+
+### Simple example
+
+```js displayName="23.8.0 and later"
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+
+import { detectOsInUserAgent } from '…';
+
+const userAgents = [
+  { ua: /* … */, os: 'WIN' },
+  // …
+];
+
+test('Detect OS via user-agent', { concurrency: true }, t => {
+  for (const { os, ua } from userAgents) {
+    t.test(ua, () => assert.equal(detectOsInUserAgent(ua), os));
+  }
+});
+```
+
+```js displayName="prior to 23.8.0"
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+
+import { detectOsInUserAgent } from '…';
+
+const userAgents = [
+  { ua: '…', os: 'WIN' },
+  // …
+];
+
+test('Detect OS via user-agent', { concurrency: true }, async t => {
+  const cases = userAgents.map(({ os, ua }) => {
+    t.test(ua, () => assert.equal(detectOsInUserAgent(ua), os));
+  });
+
+  await Promise.allSettled(cases);
+});
+```
+
+### Advanced example
+
+```js displayName="23.8.0 and later"
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+
+import { getWorkspacePJSONs } from './getWorkspacePJSONs.mjs';
+
+const requiredKeywords = ['node.js', 'sliced bread'];
+
+test('Check package.jsons', { concurrency: true }, async t => {
+  const pjsons = await getWorkspacePJSONs();
+
+  for (const pjson of pjsons) {
+    // ⚠️ `t.test`, NOT `test`
+    t.test(`Ensure fields are properly set: ${pjson.name}`, () => {
+      assert.partialDeepStrictEqual(pjson.keywords, requiredKeywords);
+    });
+  }
+});
+```
+
+```js displayName="prior to 23.8.0"
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+
+import { getWorkspacePJSONs } from './getWorkspacePJSONs.mjs';
+
+const requiredKeywords = ['node.js', 'sliced bread'];
+
+test('Check package.jsons', { concurrency: true }, async t => {
+  const pjsons = await getWorkspacePJSONs();
+
+  const cases = pjsons.map(pjson =>
+    // ⚠️ `t.test`, NOT `test`
+    t.test(`Ensure fields are properly set: ${pjson.name}`, () => {
+      assert.partialDeepStrictEqual(pjson.keywords, requiredKeywords);
+    })
+  );
+
+  // Allow the cases to run concurrently.
+  await Promise.allSettled(cases);
+});
+```
+
+```js displayName="./getWorkspacePJSONs.mjs"
+import { globSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
+// Note: This would be better implemented as an async generator, leveraging fs.glob (instead of fs.globSync);
+// however, generators and especially async generators are much less understood,
+// so this simplified example is provided for easier understanding.
+
+/**
+ * Get all the package.json files, by default 1-level deep within ./workspaces/
+ */
+export function getWorkspacePJSONs(path = './workspaces/*/package.json') {
+  return Promise.all(
+    globSync(
+      // ⚠️ Passing a file URL string, like from import.meta.resolve, causes glob* to fail silently
+      fileURLToPath(import.meta.resolve(path))
+    ).map(path => import(path, { with: { type: 'json' } }))
+  );
+}
+```
+
+> **Note**: Prior to version 23.8.0, the setup is quite different because `testContext.test` was not automatically awaited.
+
 ## ServiceWorker tests
 
 [`ServiceWorkerGlobalScope`](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope) contains very specific APIs that don't exist in other environments, and some of its APIs are seemingly similar to others (ex `fetch`) but have augmented behaviour. You do not want these to spill into unrelated tests.

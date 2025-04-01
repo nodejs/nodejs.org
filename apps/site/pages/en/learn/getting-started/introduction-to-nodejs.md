@@ -83,9 +83,9 @@ In this case with:
 res.statusCode = 200;
 ```
 
-we set the statusCode property to 200, to indicate a successful response.
+we set the `statusCode` property to `200`, to indicate a successful response.
 
-We set the Content-Type header:
+We set the `Content-Type` header:
 
 ```js
 res.setHeader('Content-Type', 'text/plain');

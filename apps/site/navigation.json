@@ -64,19 +64,24 @@
       "alt": "GitHub"
     },
     {
+      "icon": "discord",
+      "link": "https://nodejs.org/discord",
+      "alt": "Discord"
+    },
+    {
       "icon": "mastodon",
       "link": "https://social.lfx.dev/@nodejs",
       "alt": "Mastodon"
     },
     {
-      "icon": "twitter",
-      "link": "https://twitter.com/nodejs",
-      "alt": "Twitter"
-    },
-    {
       "icon": "bluesky",
       "link": "https://bsky.app/profile/nodejs.org",
       "alt": "Bluesky"
+    },
+    {
+      "icon": "twitter",
+      "link": "https://twitter.com/nodejs",
+      "alt": "Twitter"
     },
     {
       "icon": "slack",
@@ -185,6 +190,14 @@
               "link": "/learn/getting-started/profiling",
               "label": "components.navigation.learn.gettingStarted.links.profiling"
             },
+            "fetch": {
+              "link": "/learn/getting-started/fetch",
+              "label": "components.navigation.learn.gettingStarted.links.fetch"
+            },
+            "websocket": {
+              "link": "/learn/getting-started/websocket",
+              "label": "components.navigation.learn.gettingStarted.links.websocket"
+            },
             "securityBestPractices": {
               "link": "/learn/getting-started/security-best-practices",
               "label": "components.navigation.learn.gettingStarted.links.securityBestPractices"
@@ -209,6 +222,10 @@
             "transpile": {
               "link": "/learn/typescript/transpile",
               "label": "components.navigation.learn.typescript.links.transpile"
+            },
+            "publishingTSPackage": {
+              "link": "/learn/typescript/publishing-a-ts-package",
+              "label": "components.navigation.learn.typescript.links.publishingTSPackage"
             }
           }
         },
@@ -379,6 +396,10 @@
             "mocking": {
               "link": "/learn/test-runner/mocking",
               "label": "components.navigation.learn.testRunner.links.mocking"
+            },
+            "collectingCodeCoverage": {
+              "link": "/learn/test-runner/collecting-code-coverage",
+              "label": "components.navigation.learn.testRunner.links.collectingCodeCoverage"
             }
           }
         }
