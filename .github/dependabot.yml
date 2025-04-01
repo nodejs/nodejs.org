@@ -45,7 +45,6 @@ updates:
       next-js:
         patterns:
           - 'next'
-          - 'eslint-config-next'
           - '@next/eslint-plugin-next'
           - 'next-*'
           - '@vercel/*'

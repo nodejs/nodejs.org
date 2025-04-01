@@ -13,22 +13,6 @@ import { glob } from 'glob';
  * @type {Map<string, Promise<string>>} */
 const globCacheByPath = new Map();
 
-export const getMatchingRoutes = (route = '', matches = []) =>
-  matches.some(match => route === match);
-
-/**
- * This method is responsible for reading all immediate subdirectories of a directory
- *
- * @param {string} root the root directory to search from
- * @param {string} cwd the current working directory
- * @returns {Promise<Array<string>>} a promise containing an array of directories
- */
-export const getDirectories = async (root, cwd) => {
-  return glob('*', { root, cwd, withFileTypes: true })
-    .then(d => d.filter(e => e.isDirectory()))
-    .then(d => d.map(e => e.name));
-};
-
 /**
  * This gets the relative path from `import.meta.url`
  *
