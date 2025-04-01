@@ -50,7 +50,7 @@
     "eslint": "~9.21.0",
     "eslint-plugin-import-x": "~4.6.1",
     "eslint-plugin-no-relative-import-paths": "~1.6.1",
-    "prettier": "3.5.2",
+    "prettier": "3.5.3",
     "prettier-plugin-tailwindcss": "0.6.11"
   },
   "overrides": {
