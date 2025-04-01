@@ -58,7 +58,7 @@
     "remark-gfm": "~4.0.1",
     "remark-reading-time": "~2.0.1",
     "semver": "~7.7.1",
-    "shiki": "~3.1.0",
+    "shiki": "~3.2.1",
     "sval": "^0.6.1",
     "tailwindcss": "~3.4.17",
     "unist-util-visit": "~5.0.0",
