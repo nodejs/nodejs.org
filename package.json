@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@eslint/js": "~9.21.0",
-    "@types/node": "22.13.8",
+    "@types/node": "22.13.16",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "cz-conventional-changelog": "3.3.0",
