@@ -1,10 +1,18 @@
 import { cache } from 'react';
 
-import generateBlogData from '@/next-data/generators/blogData.mjs';
 import { BLOG_POSTS_PER_PAGE } from '@/next.constants.mjs';
+import { blogData as rawBlogData } from '@/next.json.mjs';
 import type { BlogCategory, BlogPostsRSC } from '@/types';
 
-const { categories, posts } = await generateBlogData();
+const blogData = {
+  ...rawBlogData,
+  posts: rawBlogData.posts.map(post => ({
+    ...post,
+    date: new Date(post.date),
+  })),
+};
+
+const { categories, posts } = blogData;
 
 export const provideBlogCategories = cache(() => categories);
 
