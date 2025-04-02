@@ -24,8 +24,7 @@
     "build:worker": "npx opennextjs-cloudflare build",
     "postbuild:worker": "node ./.cloudflare/prepare-build.mjs",
     "cf:preview": "npm run build:worker && sleep 3 && npx wrangler dev",
-    "cf:deploy": "npx wrangler deploy",
-    "postinstall": "npm run build-blog-data"
+    "cf:deploy": "npx wrangler deploy"
   },
   "dependencies": {
     "@heroicons/react": "~2.2.0",
