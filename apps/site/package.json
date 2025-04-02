@@ -3,8 +3,8 @@
   "type": "module",
   "scripts": {
     "scripts:release-post": "cross-env NODE_NO_WARNINGS=1 node scripts/release-post/index.mjs",
-    "dev": "npm run build-blog-data -- --watch & cross-env NODE_NO_WARNINGS=1 next dev --turbopack",
-    "serve": "npm run build-blog-data -- --watch & npm run dev",
+    "dev": "npm run build-blog-data:watch & sleep 1 && cross-env NODE_NO_WARNINGS=1 next dev --turbopack",
+    "serve": "npm run build-blog-data:watch & sleep 1 && npm run dev",
     "prebuild": "npm run build-blog-data",
     "build": "cross-env NODE_NO_WARNINGS=1 next build",
     "start": "cross-env NODE_NO_WARNINGS=1 next start",
@@ -18,6 +18,7 @@
     "lint:fix": "turbo run lint:md lint:js lint:css --no-cache -- --fix",
     "sync-orama": "node ./scripts/orama-search/sync-orama-cloud.mjs",
     "build-blog-data": "node ./scripts/blog-data/generate.mjs",
+    "build-blog-data:watch": "node ./scripts/blog-data/generate.mjs --watch",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 jest",
     "test:unit:watch": "npm run test:unit -- --watch",
     "test": "turbo test:unit",
