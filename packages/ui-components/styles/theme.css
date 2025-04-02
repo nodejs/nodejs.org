@@ -81,6 +81,10 @@
   --shadow-lg:
     0px 4px 6px -2px var(--color-shadow, rgba(0, 0, 0 / 3%)),
     0px 12px 16px -4px var(--color-shadow, rgba(0, 0, 0 / 8%));
+
+  /* TODO(@avivkeller): The --font-xyz-xyz variable is assigned by Next.js in apps/site.
+      Ideally, this package shouldn't depend on the consuming application's
+      variables, it should remain self-contained. */
   --font-open-sans: var(--font-open-sans);
   --font-ibm-plex-mono: var(--font-ibm-plex-mono);
   --font-weight-regular: 400;
