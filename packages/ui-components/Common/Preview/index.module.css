@@ -3,7 +3,6 @@
 .root {
   @apply after:bg-gradient-radial
     @container/preview
-    after:@md/preview:aspect-[1.90/1]
     relative
     flex
     aspect-[1.90/1]
