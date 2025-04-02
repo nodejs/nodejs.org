@@ -6,6 +6,7 @@ import { DEFAULT_CATEGORY_OG_TYPE } from '@/next.constants.mjs';
 import { defaultLocale } from '@/next.locales.mjs';
 import { hexToRGBA } from '@/util/hexToRGBA';
 
+// TODO: use CSS variables instead of absolute values
 const CATEGORY_TO_THEME_COLOUR_MAP = {
   announcement: '#1a3f1d',
   release: '#0c7bb3',
