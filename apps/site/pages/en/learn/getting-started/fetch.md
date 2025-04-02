@@ -128,7 +128,7 @@ try {
 
 ## Streaming Responses with Undici
 
-[Streams](https://nodejs.org/docs/v22.14.0/api/stream.html#stream) is a feature in Node.js that allows you to read and write chucks of data.
+[Streams](https://nodejs.org/docs/v22.14.0/api/stream.html#stream) is a feature in Node.js that allows you to read and write chunks of data.
 
 ```js
 import { stream } from 'undici';
