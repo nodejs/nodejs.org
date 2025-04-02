@@ -77,10 +77,10 @@
   --color-transparent: 'transparent';
   --color-shadow: #101828;
   --inherit: 'inherit';
-  --shadow-xs: 0px 1px 2px 0px var(--color-shadow, rgba(0, 0, 0 / 5%));
+  --shadow-xs: 0px 1px 2px 0px --alpha(var(--color-shadow) / 5%);
   --shadow-lg:
-    0px 4px 6px -2px var(--color-shadow, rgba(0, 0, 0 / 3%)),
-    0px 12px 16px -4px var(--color-shadow, rgba(0, 0, 0 / 8%));
+    0px 4px 6px -2px --alpha(var(--color-shadow, #101828) / 3%),
+    0px 12px 16px -4px --alpha(var(--color-shadow, #101828) / 3%);
 
   /* TODO(@avivkeller): The --font-xyz-xyz variable is assigned by Next.js in apps/site.
       Ideally, this package shouldn't depend on the consuming application's
