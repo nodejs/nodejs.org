@@ -63,50 +63,46 @@ const generateBlogData = async () => {
     '**/index.md',
   ]);
 
-  return new Promise(resolve => {
-    const posts = [];
-    const rawFrontmatter = [];
+  const posts = await Promise.all(
+    filenames.map(
+      filename =>
+        new Promise(resolve => {
+          // We create a stream for reading a file instead of reading the files
+          const _stream = createReadStream(join(blogPath, filename));
 
-    filenames.forEach(filename => {
-      // We create a stream for reading a file instead of reading the files
-      const _stream = createReadStream(join(blogPath, filename));
+          // We create a readline interface to read the file line-by-line
+          const _readLine = readline.createInterface({ input: _stream });
 
-      // We create a readline interface to read the file line-by-line
-      const _readLine = readline.createInterface({ input: _stream });
+          let rawFrontmatter = '';
+          let frontmatterSeparatorsEncountered = 0;
 
-      // Creates an array of the metadata based on the filename
-      // This prevents concurrency issues since the for-loop is synchronous
-      // and these event listeners are not
-      rawFrontmatter[filename] = [0, ''];
+          // We read line by line
+          _readLine.on('line', line => {
+            rawFrontmatter += `${line}\n`;
 
-      // We read line by line
-      _readLine.on('line', line => {
-        rawFrontmatter[filename][1] += `${line}\n`;
+            // We observe the frontmatter separators
+            if (line === '---') {
+              frontmatterSeparatorsEncountered++;
+            }
 
-        // We observe the frontmatter separators
-        if (line === '---') {
-          rawFrontmatter[filename][0] += 1;
-        }
+            // Once we have two separators we close the readLine and the stream
+            if (frontmatterSeparatorsEncountered === 2) {
+              _readLine.close();
+              _stream.close();
+            }
+          });
 
-        // Once we have two separators we close the readLine and the stream
-        if (rawFrontmatter[filename][0] === 2) {
-          _readLine.close();
-          _stream.close();
-        }
-      });
+          // Then we parse gray-matter on the frontmatter
+          // This allows us to only read the frontmatter part of each file
+          // and optimise the read-process as we have thousands of markdown files
+          _readLine.on('close', () => {
+            resolve(getFrontMatter(filename, rawFrontmatter));
+          });
+        })
+    )
+  );
 
-      // Then we parse gray-matter on the frontmatter
-      // This allows us to only read the frontmatter part of each file
-      // and optimise the read-process as we have thousands of markdown files
-      _readLine.on('close', () => {
-        posts.push(getFrontMatter(filename, rawFrontmatter[filename][1]));
-
-        if (posts.length === filenames.length) {
-          resolve({ categories: [...blogCategories], posts });
-        }
-      });
-    });
-  });
+  return { categories: [...blogCategories], posts };
 };
 
 export default generateBlogData;
