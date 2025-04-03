@@ -1,5 +1,5 @@
 ---
-date: '2024-12-28T12:00:00.000Z'
+date: '2026-04-03T12:00:00.000Z'
 category: announcements
 title: Making Node.js Downloads Reliable
 layout: blog-post
