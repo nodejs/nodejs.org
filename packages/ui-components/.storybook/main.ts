@@ -1,4 +1,8 @@
+import { createRequire } from 'node:module';
+
 import type { StorybookConfig } from '@storybook/react-webpack5';
+
+const require = createRequire(import.meta.url);
 
 const config: StorybookConfig = {
   stories: ['../**/*.stories.tsx'],
@@ -17,12 +21,20 @@ const config: StorybookConfig = {
       name: '@storybook/addon-styling-webpack',
       options: {
         rules: [
+          // Replaces existing CSS rules to support PostCSS
           {
             test: /\.css$/,
             use: [
               'style-loader',
-              { loader: 'css-loader', options: { url: false } },
-              'postcss-loader',
+              {
+                loader: 'css-loader',
+                options: { importLoaders: 1 },
+              },
+              {
+                // Gets options from `postcss.config.js` in your project root
+                loader: 'postcss-loader',
+                options: { implementation: require.resolve('postcss') },
+              },
             ],
           },
         ],
