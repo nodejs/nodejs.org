@@ -5,6 +5,7 @@
   "compatibility_flags": ["nodejs_compat"],
   "account_id": "8ed4d03ac99f77561d0e8c9cbcc76cb6",
   "minify": true,
+  "keep_names": false,
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS",
