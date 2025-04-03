@@ -63,46 +63,50 @@ const generateBlogData = async () => {
     '**/index.md',
   ]);
 
-  const posts = await Promise.all(
-    filenames.map(
-      filename =>
-        new Promise(resolve => {
-          // We create a stream for reading a file instead of reading the files
-          const _stream = createReadStream(join(blogPath, filename));
+  return new Promise(resolve => {
+    const posts = [];
+    const rawFrontmatter = [];
 
-          // We create a readline interface to read the file line-by-line
-          const _readLine = readline.createInterface({ input: _stream });
+    filenames.forEach(filename => {
+      // We create a stream for reading a file instead of reading the files
+      const _stream = createReadStream(join(blogPath, filename));
 
-          let rawFrontmatter = '';
-          let frontmatterSeparatorsEncountered = 0;
+      // We create a readline interface to read the file line-by-line
+      const _readLine = readline.createInterface({ input: _stream });
 
-          // We read line by line
-          _readLine.on('line', line => {
-            rawFrontmatter += `${line}\n`;
+      // Creates an array of the metadata based on the filename
+      // This prevents concurrency issues since the for-loop is synchronous
+      // and these event listeners are not
+      rawFrontmatter[filename] = [0, ''];
 
-            // We observe the frontmatter separators
-            if (line === '---') {
-              frontmatterSeparatorsEncountered++;
-            }
+      // We read line by line
+      _readLine.on('line', line => {
+        rawFrontmatter[filename][1] += `${line}\n`;
 
-            // Once we have two separators we close the readLine and the stream
-            if (frontmatterSeparatorsEncountered === 2) {
-              _readLine.close();
-              _stream.close();
-            }
-          });
+        // We observe the frontmatter separators
+        if (line === '---') {
+          rawFrontmatter[filename][0] += 1;
+        }
 
-          // Then we parse gray-matter on the frontmatter
-          // This allows us to only read the frontmatter part of each file
-          // and optimise the read-process as we have thousands of markdown files
-          _readLine.on('close', () => {
-            resolve(getFrontMatter(filename, rawFrontmatter));
-          });
-        })
-    )
-  );
+        // Once we have two separators we close the readLine and the stream
+        if (rawFrontmatter[filename][0] === 2) {
+          _readLine.close();
+          _stream.close();
+        }
+      });
 
-  return { categories: [...blogCategories], posts };
+      // Then we parse gray-matter on the frontmatter
+      // This allows us to only read the frontmatter part of each file
+      // and optimise the read-process as we have thousands of markdown files
+      _readLine.on('close', () => {
+        posts.push(getFrontMatter(filename, rawFrontmatter[filename][1]));
+
+        if (posts.length === filenames.length) {
+          resolve({ categories: [...blogCategories], posts });
+        }
+      });
+    });
+  });
 };
 
 export default generateBlogData;
