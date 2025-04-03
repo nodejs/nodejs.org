@@ -1,3 +1,5 @@
+@reference "../../styles/index.css";
+
 .container {
   @apply border-neutral-200
     bg-white
@@ -54,8 +56,7 @@
 }
 
 .main {
-  @apply hidden
-    flex-1
+  @apply flex-1
     flex-col
     justify-between
     gap-4

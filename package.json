@@ -36,25 +36,21 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "acorn": "^8.14.0",
+    "acorn": "^8.14.1",
     "husky": "9.1.7",
-    "lint-staged": "15.4.3",
+    "lint-staged": "15.5.0",
     "turbo": "2.4.4"
   },
   "devDependencies": {
-    "@eslint/js": "~9.21.0",
-    "@types/node": "22.13.8",
-    "@types/react": "^19.0.10",
+    "@eslint/js": "~9.23.0",
+    "@types/node": "22.13.14",
+    "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "~9.21.0",
-    "eslint-plugin-import-x": "~4.6.1",
+    "eslint": "~9.23.0",
+    "eslint-plugin-import-x": "~4.9.4",
     "eslint-plugin-no-relative-import-paths": "~1.6.1",
-    "prettier": "3.5.2",
+    "prettier": "3.5.3",
     "prettier-plugin-tailwindcss": "0.6.11"
-  },
-  "overrides": {
-    "@types/react": "$@types/react",
-    "@types/react-dom": "$@types/react-dom"
   }
 }

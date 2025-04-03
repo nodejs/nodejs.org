@@ -1,30 +1,27 @@
-.turtle {
+@utility turtle {
   @apply animate-surf
     absolute
     z-10
     translate-x-0
-    translate-y-0;
-}
+    translate-y-0
+    after:absolute
+    after:-left-full
+    after:top-[20%]
+    after:-z-10
+    after:block
+    after:h-36
+    after:w-36
+    after:-rotate-90
+    after:select-none
+    after:bg-[url('/static/images/smoke.gif')]
+    after:opacity-[0.15]
+    after:content-['']
+    after:md:-left-1/2
+    after:md:top-1/2;
 
-.turtle img {
-  @apply h-auto
+  & img {
+    @apply h-auto
     w-24
     md:w-48;
-}
-
-.turtle::after {
-  @apply absolute
-    -left-full
-    top-[20%]
-    -z-10
-    block
-    h-36
-    w-36
-    -rotate-90
-    select-none
-    bg-[url('/static/images/smoke.gif')]
-    opacity-[0.15]
-    content-['']
-    md:-left-1/2
-    md:top-1/2;
+  }
 }

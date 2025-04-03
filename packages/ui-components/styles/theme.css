@@ -1,0 +1,172 @@
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@source '../Common';
+@source '../Containers';
+@source '../Icons';
+
+@theme {
+  --color-green-100: #edf2eb;
+  --color-green-200: #c5e5b4;
+  --color-green-300: #99cc7d;
+  --color-green-400: #84ba64;
+  --color-green-500: #5fa04e;
+  --color-green-600: #417e38;
+  --color-green-700: #2c682c;
+  --color-green-800: #2c682c;
+  --color-green-900: #1a3f1d;
+  --color-neutral-100: #f6f7f9;
+  --color-neutral-200: #e9edf0;
+  --color-neutral-300: #d9e1e4;
+  --color-neutral-400: #cbd4d9;
+  --color-neutral-500: #b1bcc2;
+  --color-neutral-600: #929fa5;
+  --color-neutral-700: #6e7b83;
+  --color-neutral-800: #556066;
+  --color-neutral-900: #2c3437;
+  --color-neutral-950: #0d121c;
+  --color-danger-100: #fbf1f0;
+  --color-danger-200: #fad3d4;
+  --color-danger-300: #fab6b7;
+  --color-danger-400: #fa8e8e;
+  --color-danger-500: #f65354;
+  --color-danger-600: #de1a1b;
+  --color-danger-700: #b80c0c;
+  --color-danger-800: #900e0e;
+  --color-danger-900: #661514;
+  --color-warning-100: #fdf3e7;
+  --color-warning-200: #fad9b0;
+  --color-warning-300: #f5bc75;
+  --color-warning-400: #e99c40;
+  --color-warning-500: #d07912;
+  --color-warning-600: #ae5f00;
+  --color-warning-700: #8b4d04;
+  --color-warning-800: #683d08;
+  --color-warning-900: #4d2f0b;
+  --color-info-100: #e9f4fa;
+  --color-info-200: #bce6fc;
+  --color-info-300: #8ed4f8;
+  --color-info-400: #52baed;
+  --color-info-500: #229ad6;
+  --color-info-600: #0c7bb3;
+  --color-info-700: #066291;
+  --color-info-800: #074d71;
+  --color-info-900: #0a3953;
+  --color-accent1-100: #f7f1fb;
+  --color-accent1-200: #ead9fb;
+  --color-accent1-300: #dbbdf9;
+  --color-accent1-400: #c79bf2;
+  --color-accent1-500: #af74e8;
+  --color-accent1-600: #9756d6;
+  --color-accent1-700: #7d3cbe;
+  --color-accent1-800: #642b9e;
+  --color-accent1-900: #361b52;
+  --color-accent2-100: #fbf0f4;
+  --color-accent2-200: #fbd4e6;
+  --color-accent2-300: #fbb4d2;
+  --color-accent2-400: #f68bb7;
+  --color-accent2-500: #ed5393;
+  --color-accent2-600: #d6246e;
+  --color-accent2-700: #b01356;
+  --color-accent2-800: #8b1245;
+  --color-accent2-900: #411526;
+  --color-pulse-100: #0000330f;
+  --color-pulse-200: #00002d17;
+  --color-pulse-300: #ddeaf814;
+  --color-pulse-400: #d3edf81d;
+  --color-white: #fff;
+  --color-transparent: 'transparent';
+  --color-shadow: #101828;
+  --inherit: 'inherit';
+  --shadow-xs: 0px 1px 2px 0px --alpha(var(--color-shadow, #101828) / 5%);
+  --shadow-lg:
+    0px 4px 6px -2px --alpha(var(--color-shadow, #101828) / 3%),
+    0px 12px 16px -4px --alpha(var(--color-shadow, #101828) / 8%);
+
+  /* TODO(@avivkeller): The --font-xyz-xyz variable is assigned by Next.js in apps/site.
+      Ideally, this package shouldn't depend on the consuming application's
+      variables, it should remain self-contained. */
+  --font-open-sans: var(--font-open-sans);
+  --font-ibm-plex-mono: var(--font-ibm-plex-mono);
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-xs: 0.75rem;
+  --font-xs-line-height: 1rem;
+  --font-sm: 0.87rem;
+  --font-sm-line-height: 1.25rem;
+  --font-base: 1rem;
+  --font-base-line-height: 1.5rem;
+  --font-lg: 1.125rem;
+  --font-lg-line-height: 1.75rem;
+  --font-xl: 1.25rem;
+  --font-xl-line-height: 1.875rem;
+  --font-2xl: 1.5rem;
+  --font-2xl-line-height: 2rem;
+  --font-3xl: 1.875rem;
+  --font-3xl-line-height: 2.25rem;
+  --font-4xl: 2.25rem;
+  --font-4xl-line-height: 2.5rem;
+  --font-5xl: 3rem;
+  --font-5xl-line-height: 3rem;
+  --font-6xl: 3.75rem;
+  --font-6xl-line-height: 3.75rem;
+  --font-7xl: 4.5rem;
+  --font-7xl-line-height: 4.5rem;
+  --breakpoint-xs: 670px;
+}
+
+@utility scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+@utility max-w-8xl {
+  max-width: 95rem;
+}
+
+@utility bg-gradient-subtle-dark {
+  background-image: linear-gradient(
+    180deg,
+    --alpha(var(--color-neutral-900) / 50%) 0%,
+    --alpha(var(--color-neutral-900) / 0%) 48.32%
+  );
+}
+
+@utility bg-gradient-subtle {
+  background-image: linear-gradient(
+    180deg,
+    --alpha(var(--color-neutral-100) / 50%) 0%,
+    --alpha(var(--color-neutral-100) / 0%) 48.32%
+  );
+}
+
+@utility bg-gradient-subtle-gray {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-neutral-900) 0%,
+    --alpha(var(--color-neutral-900) / 80%) 100%
+  );
+}
+
+@utility bg-gradient-subtle-white {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-white) 0%,
+    --alpha(var(--color-white) / 80%) 100%
+  );
+}
+
+@utility bg-gradient-glow-backdrop {
+  background-image: radial-gradient(
+    8em circle at calc(50%) 10px,
+    var(--color-green-400),
+    transparent 30%
+  );
+}
+
+@utility bg-gradient-radial {
+  background-image: radial-gradient(
+    var(--tw-gradient-from),
+    var(--tw-gradient-to)
+  );
+}

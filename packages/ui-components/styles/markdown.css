@@ -60,7 +60,7 @@ main {
 
   code {
     @apply font-ibm-plex-mono
-      rounded
+      rounded-xs
       bg-neutral-100
       px-1
       text-base
@@ -105,7 +105,7 @@ main {
       dark:text-white;
 
     li div:has(> pre) {
-      @apply !my-1;
+      @apply my-1!;
     }
   }
 
@@ -117,16 +117,16 @@ main {
       dark:text-white;
 
     li div:has(> pre) {
-      @apply !my-1;
+      @apply my-1!;
     }
   }
 
   table {
-    @apply mb-1
+    @apply rounded-xs
+      mb-1
       w-full
       border-separate
       border-spacing-0
-      rounded
       border
       border-neutral-200
       text-left

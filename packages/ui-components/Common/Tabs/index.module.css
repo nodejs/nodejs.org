@@ -1,3 +1,5 @@
+@reference "../../styles/index.css";
+
 .tabsRoot {
   @apply max-w-full;
 

@@ -4,12 +4,14 @@ const CUSTOM_AT_RULES = [
   'apply',
   'layer',
   'responsive',
+  'reference',
+  'utility',
+  'theme',
+  'custom-variant',
   'screen',
+  'source',
   'tailwind',
   'variants',
-  // PostCSS-specific at-rules
-  'define-mixin',
-  'mixin',
 ];
 
 // Enforces certain selectors to be only in camelCase notation
@@ -42,6 +44,6 @@ export default {
     // Adopts the import notation from `postcss-import`
     'import-notation': 'string',
     // Allow the `@apply` at rule as its part of Tailwind
-    'at-rule-no-deprecated': [true, { ignoreAtRules: ['apply'] }],
+    'at-rule-no-deprecated': [true, { ignoreAtRules: CUSTOM_AT_RULES }],
   },
 };

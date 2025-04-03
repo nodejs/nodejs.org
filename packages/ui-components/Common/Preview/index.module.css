@@ -1,37 +1,35 @@
+@reference "../../styles/index.css";
+
 .root {
-  @apply @container/preview
+  @apply after:bg-gradient-radial
+    @container/preview
     relative
     flex
     aspect-[1.90/1]
     items-center
-    rounded
+    rounded-sm
     border
     border-neutral-900
-    bg-neutral-950;
+    bg-neutral-950
+    after:absolute
+    after:inset-0
+    after:m-auto
+    after:aspect-square
+    after:w-1/3
+    after:rounded-full
+    after:blur-2xl
+    after:content-[''];
 
-  &::after {
-    @apply bg-gradient-radial
-      @md/preview:blur-3xl
-      absolute
-      inset-0
-      m-auto
-      aspect-square
-      w-1/3
-      rounded-full
-      blur-2xl
-      content-[''];
+  &.announcements {
+    @apply after:from-green-700/90;
+  }
 
-    &.announcements {
-      @apply from-green-700/90;
-    }
+  &.release {
+    @apply after:from-info-600/90;
+  }
 
-    &.release {
-      @apply from-info-600/90;
-    }
-
-    &.vulnerability {
-      @apply from-warning-600/90;
-    }
+  &.vulnerability {
+    @apply after:from-warning-600/90;
   }
 
   .container {
