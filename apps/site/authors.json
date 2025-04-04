@@ -59,6 +59,11 @@
     "name": "Danielle Adams",
     "website": "https://github.com/danielleadams"
   },
+  "Daniel Bevenius": {
+    "id": "danbev",
+    "name": "Daniel Bevenius",
+    "webiste": "https://github.com/danbev"
+  },
   "Dave Pacheco": {
     "id": "dave-pacheco",
     "name": "Dave Pacheco"
@@ -138,6 +143,11 @@
     "name": "Node.js Technical Steering Committee",
     "website": "https://github.com/nodejs"
   },
+  "Matteo Collina": {
+    "id": "mcollina",
+    "name": "Matteo Collina",
+    "webiste": "https://github.com/mcollina"
+  },
   "Marco Ippolito": {
     "id": "marco-ippolito",
     "name": "Marco Ippolito",
@@ -177,6 +187,11 @@
     "name": "Myles Borins",
     "website": "https://github.com/mylesborins"
   },
+  "piscisaureus": {
+    "id": "piscisaureus",
+    "name": "Bert Belder",
+    "website": "https://github.com/piscisaureus"
+  },
   "Rafael Gonzaga": {
     "id": "rafaelgss",
     "name": "Rafael Gonzaga",
@@ -206,6 +221,11 @@
     "id": "ry",
     "name": "Ryan Dahl",
     "website": "https://github.com/ry"
+  },
+  "Sam Roberts": {
+    "id": "sam-github",
+    "name": "Sam Roberts",
+    "webiste": "https://github.com/sam-github"
   },
   "Scott Hammond": {
     "id": "scott-hammond",
@@ -249,6 +269,11 @@
     "id": "UlisesGascon",
     "name": "Ulises Gascón",
     "website": "https://github.com/UlisesGascon"
+  },
+  "Vladimir de Turckheim": {
+    "id": "vdeturckheim",
+    "name": "Vladimir de Turckheim",
+    "webiste": "https://github.com/vdeturckheim"
   },
   "Yosuke Furukawa": {
     "id": "yosuke-furukawa",
