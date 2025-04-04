@@ -15,7 +15,7 @@
     "website": "https://github.com/AugustinMauroy"
   },
   "Ben Noordhuis": {
-    "id": "bennoordhuis",
+    "id": "bnoordhuis",
     "name": "Ben Noordhuis",
     "website": "https://github.com/bnoordhuis"
   },
@@ -230,6 +230,11 @@
     "id": "nodejs",
     "name": "The Node.js Project",
     "website": "https://github.com/nodejs"
+  },
+  "Tierney Cyren": {
+    "id": "bnb",
+    "name": "Tierney Cyren",
+    "website": "https://github.com/bnb"
   },
   "Timothy J Fontaine": {
     "id": "tjfontaine",
