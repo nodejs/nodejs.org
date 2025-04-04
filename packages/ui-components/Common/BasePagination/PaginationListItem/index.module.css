@@ -5,8 +5,10 @@
 .listItem:active {
   @apply aria-current:bg-green-600
     aria-current:text-white
+    aria-current:cursor-default
     flex
     size-10
+    cursor-pointer
     items-center
     justify-center
     rounded-sm
@@ -16,7 +18,7 @@
     motion-safe:transition-colors
     dark:text-neutral-200;
 
-  &:hover {
+  &:hover:not([aria-current='page']) {
     @apply bg-neutral-100
       text-neutral-800
       dark:bg-neutral-900
