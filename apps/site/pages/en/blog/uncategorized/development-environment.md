@@ -3,7 +3,7 @@ date: '2011-04-05T03:16:27.000Z'
 category: uncategorized
 title: Development Environment
 layout: blog-post
-author: ryandahl
+author: Ryan Dahl
 ---
 
 If you're compiling a software package because you need a particular version (e.g. the latest), then it requires a little bit more maintenance than using a package manager like `dpkg`. Software that you compile yourself should _not_ go into `/usr`, it should go into your home directory. This is part of being a software developer.
