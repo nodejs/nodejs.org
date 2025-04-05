@@ -30,7 +30,7 @@ permissions:
 
 env:
   # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-  TURBO_ARGS: --force
+  TURBO_FORCE: true
 
 jobs:
   lint:
@@ -99,7 +99,7 @@ jobs:
           (github.event_name == 'pull_request_target' &&
             github.event.pull_request.head.ref != 'chore/crowdin')
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
-        run: npx --package=turbo@latest -- turbo lint check-types prettier ${{ env.TURBO_ARGS }}
+        run: npx --package=turbo@latest -- turbo lint check-types prettier
 
       - name: Save Lint Cache
         # We only want to save caches on `push` events or `pull_request_target` events
@@ -170,7 +170,7 @@ jobs:
         # We want to run Unit Tests in every circumstance, including Crowdin PRs and Dependabot PRs to ensure
         # that changes to dependencies or translations don't break the Unit Tests
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
-        run: npx --package=turbo@latest -- turbo test:unit ${{ env.TURBO_ARGS }} -- --ci --coverage
+        run: npx --package=turbo@latest -- turbo test:unit -- --ci --coverage
 
       - name: Start Visual Regression Tests (Chromatic)
         # This assigns the Environment Deployment for Storybook
