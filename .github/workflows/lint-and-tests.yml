@@ -99,7 +99,6 @@ jobs:
           (github.event_name == 'pull_request_target' &&
             github.event.pull_request.head.ref != 'chore/crowdin')
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
-        # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
         run: npx --package=turbo@latest -- turbo lint check-types prettier ${{ env.TURBO_ARGS }}
 
       - name: Save Lint Cache
