@@ -46,7 +46,6 @@
     "@types/node": "22.14.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.1",
-    "cz-conventional-changelog": "3.3.0",
     "eslint": "~9.23.0",
     "eslint-plugin-import-x": "~4.10.0",
     "eslint-plugin-no-relative-import-paths": "~1.6.1",
