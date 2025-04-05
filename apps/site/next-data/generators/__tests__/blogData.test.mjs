@@ -5,30 +5,22 @@ import generateBlogData from '@/next-data/generators/blogData.mjs';
 
 let files = [];
 
-jest.mock('node:fs', () => {
-  const originalFs = jest.requireActual('node:fs');
-  return {
-    ...originalFs,
-    createReadStream: jest.fn(filename => {
-      const readable = new Readable();
-      const file = files.find(f => filename.endsWith(normalize(f.path)));
-      readable.push(`---\n`);
-      file.frontMatterContent.forEach(line => readable.push(`${line}\n`));
-      readable.push(`---\n`);
-      readable.push(null);
-      readable.close = () => {};
-      return readable;
-    }),
-  };
-});
+jest.mock('node:fs', () => ({
+  createReadStream: jest.fn(filename => {
+    const readable = new Readable();
+    const file = files.find(f => filename.endsWith(normalize(f.path)));
+    readable.push(`---\n`);
+    file.frontMatterContent.forEach(line => readable.push(`${line}\n`));
+    readable.push(`---\n`);
+    readable.push(null);
+    readable.close = () => {};
+    return readable;
+  }),
+}));
 
-jest.mock('../../../next.helpers.mjs', () => {
-  const originalHelpers = jest.requireActual('../../../next.helpers.mjs');
-  return {
-    ...originalHelpers,
-    getMarkdownFiles: () => Promise.resolve(files.map(file => file.path)),
-  };
-});
+jest.mock('../../../next.helpers.mjs', () => ({
+  getMarkdownFiles: () => Promise.resolve(files.map(file => file.path)),
+}));
 
 describe('generateBlogData', () => {
   it('should return zero posts and only the default "all" category is no md file is found', async () => {
