@@ -119,7 +119,8 @@
             "testRunner": "測試執行器",
             "introduction": "探索 Node.js 中的測試執行器",
             "usingTestRunner": "使用 Node.js 中的測試執行器",
-            "mocking": "在測試中模擬物件"
+            "mocking": "在測試中模擬物件",
+            "collectingCodeCoverage": "在 Node.js 中搜集程式碼覆蓋率"
           }
         }
       },
@@ -287,6 +288,7 @@
           "choco": "Chocolatey 是 Windows 的套件管理程式。",
           "devbox": "Devbox 會建立隔離且可重現的開發環境。",
           "docker": "Docker 是一款容器化平台。",
+          "n": "「n」是跨平台的 Node.js 版本管理程式。",
           "volta": "「Volta」是跨平台的 Node.js 版本管理程式。"
         }
       }
