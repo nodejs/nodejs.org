@@ -1,13 +1,9 @@
+import { normalize } from 'node:path';
 import { Readable } from 'node:stream';
 
 import generateBlogData from '@/next-data/generators/blogData.mjs';
 
 let files = [];
-
-jest.mock('node:path', () => ({
-  ...jest.requireActual('node:path'),
-  join: jest.fn((_base, filePath) => filePath),
-}));
 
 jest.mock('node:fs', () => {
   const originalFs = jest.requireActual('node:fs');
@@ -15,7 +11,7 @@ jest.mock('node:fs', () => {
     ...originalFs,
     createReadStream: jest.fn(filename => {
       const readable = new Readable();
-      const file = files.find(f => f.path === filename);
+      const file = files.find(f => filename.endsWith(normalize(f.path)));
       readable.push(`---\n`);
       file.frontMatterContent.forEach(line => readable.push(`${line}\n`));
       readable.push(`---\n`);
