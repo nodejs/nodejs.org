@@ -10,10 +10,9 @@ build
 # Next.js Generated Files
 public/static/documents
 
-# Jest
-coverage
-.swc
+# Test Runner
 junit.xml
+lcov.info
 
 # Storybook
 storybook-static

@@ -1,5 +1,6 @@
 import { render, fireEvent } from '@testing-library/react';
-
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
 import AvatarGroup from '../index';
 
 const names = [
@@ -35,7 +36,7 @@ describe('AvatarGroup', () => {
     );
 
     const showMoreButton = getByText(`+${remaining}`);
-    expect(showMoreButton).toBeInTheDocument();
+    assert.ok(showMoreButton.ownerDocument);
   });
 
   it('displays the rest of the avatars when "show more" button is clicked', () => {
@@ -47,6 +48,6 @@ describe('AvatarGroup', () => {
     fireEvent.click(showMoreButton);
 
     const hideMoreButton = getByText(`-${remaining}`);
-    expect(hideMoreButton).toBeInTheDocument();
+    assert.ok(hideMoreButton.ownerDocument);
   });
 });

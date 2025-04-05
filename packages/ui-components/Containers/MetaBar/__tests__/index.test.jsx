@@ -1,4 +1,6 @@
 import { render } from '@testing-library/react';
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
 
 import MetaBar from '..';
 
@@ -45,16 +47,16 @@ describe('MetaBar', () => {
     );
 
     const h1Element = queryByText('Heading Level 1');
-    expect(h1Element).not.toBeInTheDocument();
+    assert.ok(!h1Element?.ownerDocument);
 
     getByText('Heading Level 2');
     getByText('Heading Level 3');
     getByText('Heading Level 4');
 
     const h5Element = queryByText('Heading Level 5');
-    expect(h5Element).not.toBeInTheDocument();
+    assert.ok(!h5Element?.ownerDocument);
 
     const h6Element = queryByText('Heading Level 6');
-    expect(h6Element).not.toBeInTheDocument();
+    assert.ok(!h6Element?.ownerDocument);
   });
 });

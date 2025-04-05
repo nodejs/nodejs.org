@@ -1,32 +1,36 @@
 # Security Notes
 # Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
 # for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
-# REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
+# REVIEWERS, please always double-check security practices before merging a PR that contains workflow changes!!
 # AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
 
 name: Linting and Tests
+
+# This workflow should run either on `merge_group`, `pull_request`, or `push` events
+# since we want to run lint checks against any changes on pull requests, or the final patch on merge groups
+# or if direct pushes happen to main (or when changes in general land on the `main` (default) branch)
+# Note that the reason why we run this on pushes against `main` is that on rare cases, maintainers might do direct pushes against `main`
 
 on:
   push:
     branches:
       - main
-  pull_request_target:
+  pull_request:
     branches:
       - main
-    types:
-      - labeled
   merge_group:
 
-defaults:
-  run:
-    # This ensures that the working directory is the root of the repository
-    working-directory: ./
-
+# The permissions specified below apply to workflows triggered by `merge_group`, `push`, and `pull_request` events that originate from the same repository (non-fork).
+# However, workflows triggered by `pull_request` events from forked repositories are treated differently for security reasons:
+# - These workflows **do not** have access to any secrets configured in the repository.
+# - They are also **not granted any permissions** to perform actions on the base repository.
+#
+# This is a deliberate security restriction designed to prevent potential abuse through malicious pull requests from forks.
+# For a deeper explanation and best practices for securing your GitHub Actions workflows, particularly against so-called "pwn requests",
+# refer to https://securitylab.github.com/resources/github-actions-preventing-pwn-requests/
 permissions:
   contents: read
   actions: read
-  # This permission is required by `MishaKav/jest-coverage-comment`
-  pull-requests: write
 
 env:
   # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
@@ -34,16 +38,6 @@ env:
 
 jobs:
   lint:
-    # This Job should run either on `merge_groups` or `push` events
-    # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
-    # since we want to run lint checks against any changes on pull requests, or the final patch on merge groups
-    # or if direct pushes happen to main (or when changes in general land on the `main` (default) branch)
-    # Note that the reason why we run this on pushes against `main` is that on rare cases, maintainers might do direct pushes against `main`
-    if: |
-      (github.event_name == 'push' || github.event_name == 'merge_group') ||
-      (github.event_name == 'pull_request_target' &&
-        github.event.label.name == 'github_actions:pull-request')
-
     name: Quality checks
     runs-on: ubuntu-latest
 
@@ -55,9 +49,6 @@ jobs:
 
       - name: Git Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-        with:
-          # Provides the Pull Request commit SHA or the GitHub merge group ref
-          ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || github.ref }}
 
       - name: Restore Lint Cache
         uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
@@ -96,10 +87,8 @@ jobs:
         # Note: Linting and Prettifying of files on Crowdin PRs is handled by the `translations-pr.yml` Workflow
         if: |
           (github.event_name == 'push' || github.event_name == 'merge_group') ||
-          (github.event_name == 'pull_request_target' &&
-            github.event.pull_request.head.ref != 'chore/crowdin')
-        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
-        run: npx --package=turbo@latest -- turbo lint check-types prettier
+          (github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'chore/crowdin')
+        run: npx turbo lint check-types prettier
 
       - name: Save Lint Cache
         # We only want to save caches on `push` events or `pull_request_target` events
@@ -109,7 +98,7 @@ jobs:
         # other Pull Requests and PRs coming from forks
         if: |
           github.event_name == 'push' ||
-          (github.event_name == 'pull_request_target' &&
+          (github.event_name == 'pull_request' &&
             startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
             github.event.pull_request.head.ref != 'chore/crowdin')
         uses: actions/cache/save@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
@@ -123,21 +112,8 @@ jobs:
           key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.turbo/cache/**') }}
 
   tests:
-    # This Job should run either on `merge_groups` or `push` events
-    # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
-    # since we want to run lint checks against any changes on pull requests and on final patches against a pull request.
-    # We don't need to execute the tests again on pushes against (`main`) as the merge group should already handle that
-    if: |
-      (github.event_name == 'push' || github.event_name == 'merge_group') ||
-      (github.event_name == 'pull_request_target' &&
-        github.event.label.name == 'github_actions:pull-request')
-
     name: Tests
     runs-on: ubuntu-latest
-
-    environment:
-      name: Storybook
-      url: ${{ steps.chromatic-deploy.outputs.storybookUrl }}
 
     steps:
       - name: Harden Runner
@@ -147,12 +123,6 @@ jobs:
 
       - name: Git Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-        with:
-          # Provides the Pull Request commit SHA or the GitHub merge group ref
-          ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || github.ref }}
-          # The Chromatic (@chromaui/action) Action requires a full history of the current branch in order to be able to compare
-          # previous changes and previous commits and determine which Storybooks should be tested against and what should be built
-          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.3.0
@@ -169,41 +139,16 @@ jobs:
       - name: Run Unit Tests
         # We want to run Unit Tests in every circumstance, including Crowdin PRs and Dependabot PRs to ensure
         # that changes to dependencies or translations don't break the Unit Tests
-        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
-        run: npx --package=turbo@latest -- turbo test:unit -- --ci --coverage
+        run: npm run test:ci
 
-      - name: Start Visual Regression Tests (Chromatic)
-        # This assigns the Environment Deployment for Storybook
-        id: chromatic-deploy
-        # We only need to run Storybook Builds and Storybook Visual Regression Tests within Pull Requests that actually
-        # introduce changes to the Storybook. Hence, we skip running these on Crowdin PRs and Dependabot PRs
-        if: |
-          github.event_name == 'push' ||
-          (github.event_name == 'pull_request_target' &&
-            startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
-            github.event.pull_request.head.ref != 'chore/crowdin')
-        # sha reference has no stable git tag reference or URL. see https://github.com/chromaui/chromatic-cli/issues/797
-        uses: chromaui/action@c93e0bc3a63aa176e14a75b61a31847cbfdd341c
+      - name: Upload test coverage to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/codecov-action@0565863a31f2c772f9f0395002a31e3f06189574 # v5.4.0
         with:
-          workingDir: packages/ui-components
-          buildScriptName: storybook:build
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          exitOnceUploaded: true
-          onlyChanged: true
+          files: ./apps/site/lcov.info,./packages/ui-components/lcov.info
 
-      - name: Jest Coverage Comment
-        # We don't need to post the Jest Coverage comment on Crowdin PRs and Dependabot PRs
-        # as in general they introduce no changes to the Unit Tests and the Codebase
-        # We reuse the checks from the Chromatic Deploy step as they're the same conditions
-        if: steps.chromatic-deploy.outcome == 'success'
-        # This comments the current Jest Coverage Report containing JUnit XML reports
-        # and a Code Coverage Summary
-        uses: MishaKav/jest-coverage-comment@d74238813c33e6ea20530ff91b5ea37953d11c91 # v1.0.27
+      - name: Upload test results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@f2dba722c67b86c6caa034178c6e4d35335f6706 # v1.1.0
         with:
-          title: 'Unit Test Coverage Report'
-          multiple-junitxml-files: |
-            @node-core/ui-components, ./packages/ui-components/junit.xml
-            @nodejs/website, ./apps/site/junit.xml
-          multiple-files: |
-            @node-core/ui-components, ./packages/ui-components/coverage/coverage-summary.json
-            @nodejs/website, ./apps/site/coverage/coverage-summary.json
+          files: ./apps/site/junit.xml,./packages/ui-components/junit.xml

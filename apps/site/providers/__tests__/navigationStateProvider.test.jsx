@@ -1,4 +1,6 @@
 import { render } from '@testing-library/react';
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
 
 import { NavigationStateProvider } from '@/providers/navigationStateProvider';
 
@@ -10,7 +12,7 @@ describe('NavigationStateProvider', () => {
       </NavigationStateProvider>
     );
 
-    expect(container).toBeDefined();
+    assert.ok(container);
   });
 
   it('should provide navigation state context', () => {
@@ -20,6 +22,6 @@ describe('NavigationStateProvider', () => {
       </NavigationStateProvider>
     );
 
-    expect(getByText('Navigation State')).toBeDefined();
+    assert.ok(getByText('Navigation State'));
   });
 });

@@ -1,5 +1,6 @@
 import { act, render } from '@testing-library/react';
-
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
 import { MatterProvider, MatterContext } from '@/providers/matterProvider';
 
 const mockContext = {
@@ -9,8 +10,6 @@ const mockContext = {
   readingTime: { text: '', minutes: 0, time: 0, words: 0 },
   filename: '',
   os: 'LOADING',
-  architecture: expect.any(String),
-  bitness: expect.any(String),
 };
 
 describe('MatterProvider', () => {
@@ -20,7 +19,9 @@ describe('MatterProvider', () => {
         <MatterProvider os="LOADING">
           <MatterContext.Consumer>
             {value => {
-              expect(value).toEqual(mockContext);
+              assert.partialDeepStrictEqual(value, mockContext);
+              assert.equal(typeof value.architecture, 'string');
+              assert.equal(typeof value.bitness, 'string');
               return null;
             }}
           </MatterContext.Consumer>

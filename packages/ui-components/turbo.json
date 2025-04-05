@@ -23,8 +23,7 @@
       "outputs": ["storybook-static/**"]
     },
     "test:unit": {
-      "inputs": ["**/*.{ts,tsx,mjs}"],
-      "outputs": ["coverage/**", "junit.xml"]
+      "inputs": ["**/*.{ts,tsx,mjs}"]
     }
   }
 }

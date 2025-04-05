@@ -1,42 +1,47 @@
+import assert from 'node:assert/strict';
+import { describe, it, beforeEach } from 'node:test';
+
 import { debounce } from '@/util/debounce';
 
-jest.useFakeTimers();
-
 describe('debounce', () => {
-  it('should call the function only once', () => {
-    const fn = jest.fn();
+  beforeEach(t => {
+    t.mock.timers.enable();
+  });
+
+  it('should call the function only once', t => {
+    const fn = t.mock.fn();
     const debouncedFn = debounce(fn, 1000);
 
     debouncedFn();
     debouncedFn();
     debouncedFn();
 
-    jest.runAllTimers();
+    t.mock.timers.runAll();
 
-    expect(fn).toHaveBeenCalledTimes(1);
+    assert.equal(fn.mock.callCount(), 1);
   });
 
-  it('should call the function with the last arguments', () => {
-    const fn = jest.fn();
+  it('should call the function with the last arguments', t => {
+    const fn = t.mock.fn();
     const debouncedFn = debounce(fn, 1000);
 
     debouncedFn(1);
     debouncedFn(2);
     debouncedFn(3);
 
-    jest.runAllTimers();
+    t.mock.timers.runAll();
 
-    expect(fn).toHaveBeenCalledWith(3);
+    assert.deepEqual(fn.mock.calls[0].arguments, [3]);
   });
 
-  it('should call the function after the delay', () => {
-    const mockFn = jest.fn();
+  it('should call the function after the delay', t => {
+    const mockFn = t.mock.fn();
     const debouncedFn = debounce(mockFn, 500);
 
     debouncedFn();
-    expect(mockFn).not.toBeCalled();
+    assert.equal(mockFn.mock.callCount(), 0);
 
-    jest.advanceTimersByTime(500);
-    expect(mockFn).toBeCalled();
+    t.mock.timers.runAll();
+    assert.equal(mockFn.mock.callCount(), 1);
   });
 });

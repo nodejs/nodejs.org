@@ -39,9 +39,10 @@ updates:
         patterns:
           - '@testing-library/*'
           - '@types/testing-library*'
-          - '@types/jest'
-          - 'jest'
-          - 'jest-*'
+          - 'tsx'
+          - '@reporters/github'
+          - 'jsdom'
+          - 'global-jsdom'
       next-js:
         patterns:
           - 'next'
