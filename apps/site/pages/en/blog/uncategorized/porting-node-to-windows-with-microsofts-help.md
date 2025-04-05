@@ -3,7 +3,7 @@ date: '2011-06-23T22:22:58.000Z'
 category: uncategorized
 title: 'Porting Node to Windows With Microsoft’s Help'
 layout: blog-post
-author: ryandahl
+author: Ryan Dahl
 ---
 
 I'm pleased to announce that Microsoft is partnering with Joyent in formally contributing resources towards porting Node to Windows. As you may have heard in [a talk](/static/documents/nodeconf.pdf) we gave earlier this year, we have started the undertaking of a native port to Windows - targeting the high-performance IOCP API.
