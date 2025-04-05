@@ -16,6 +16,12 @@ on:
     types:
       - labeled
   merge_group:
+  workflow_dispatch:
+    inputs:
+      pr:
+        required: true
+        type: number
+        description: The PR number to comment on
 
 defaults:
   run:
@@ -55,7 +61,7 @@ jobs:
     # or if direct pushes happen to main (or when changes in general land on the `main` (default) branch)
     # Note that the reason why we run this on pushes against `main` is that on rare cases, maintainers might do direct pushes against `main`
     if: |
-      (github.event_name == 'push' || github.event_name == 'merge_group') ||
+      (github.event_name == 'push' || github.event_name == 'merge_group' || github.event_name == 'workflow_dispatch') ||
       (github.event_name == 'pull_request_target' &&
         github.event.label.name == 'github_actions:pull-request')
 
@@ -145,7 +151,7 @@ jobs:
     # since we want to run lint checks against any changes on pull requests and on final patches against a pull request.
     # We don't need to execute the tests again on pushes against (`main`) as the merge group should already handle that
     if: |
-      (github.event_name == 'push' || github.event_name == 'merge_group') ||
+      (github.event_name == 'push' || github.event_name == 'merge_group' || github.event_name == 'workflow_dispatch') ||
       (github.event_name == 'pull_request_target' &&
         github.event.label.name == 'github_actions:pull-request')
 
