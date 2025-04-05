@@ -189,7 +189,7 @@ jobs:
         # that changes to dependencies or translations don't break the Unit Tests
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npx --package=turbo@latest -- turbo test:unit ${{ needs.base.outputs.turbo_args }} -- --ci --coverage
+        run: npx --package=turbo@latest -- turbo test:ci ${{ needs.base.outputs.turbo_args }}
 
       - name: Start Visual Regression Tests (Chromatic)
         # This assigns the Environment Deployment for Storybook
@@ -210,19 +210,10 @@ jobs:
           exitOnceUploaded: true
           onlyChanged: true
 
-      - name: Jest Coverage Comment
-        # We don't need to post the Jest Coverage comment on Crowdin PRs and Dependabot PRs
-        # as in general they introduce no changes to the Unit Tests and the Codebase
-        # We reuse the checks from the Chromatic Deploy step as they're the same conditions
-        if: steps.chromatic-deploy.outcome == 'success'
-        # This comments the current Jest Coverage Report containing JUnit XML reports
-        # and a Code Coverage Summary
-        uses: MishaKav/jest-coverage-comment@d74238813c33e6ea20530ff91b5ea37953d11c91 # v1.0.27
+      - name: Report code coverage
+        uses: zgosalvez/github-actions-report-lcov@df68834145a4a567247d6a3ea8565c4c39d1fd17 # v4.1.23
         with:
-          title: 'Unit Test Coverage Report'
-          multiple-junitxml-files: |
-            @node-core/ui-components, ./packages/ui-components/junit.xml
-            @nodejs/website, ./apps/site/junit.xml
-          multiple-files: |
-            @node-core/ui-components, ./packages/ui-components/coverage/coverage-summary.json
-            @nodejs/website, ./apps/site/coverage/coverage-summary.json
+          coverage-files: '{apps/site,packages/ui-components}/lcov.info'
+          artifact-name: code-coverage-report
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          update-comment: true

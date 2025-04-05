@@ -39,9 +39,6 @@ updates:
         patterns:
           - '@testing-library/*'
           - '@types/testing-library*'
-          - '@types/jest'
-          - 'jest'
-          - 'jest-*'
       next-js:
         patterns:
           - 'next'

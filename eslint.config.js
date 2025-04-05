@@ -11,7 +11,7 @@ export default [
       '.turbo',
       '.next',
       'build',
-      'coverage',
+      'lcov.info',
       'global.d.ts',
       'junit.xml',
       'storybook-static/**',

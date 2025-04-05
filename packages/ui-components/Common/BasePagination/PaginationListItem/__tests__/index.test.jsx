@@ -1,4 +1,7 @@
 import { render, screen } from '@testing-library/react';
+import { isVisible } from '../../../../../../tests/utilities.mjs';
+import { describe, it } from 'node:test';
+import assert from 'node:assert';
 
 import PaginationListItem from '@node-core/ui-components/Common/BasePagination/PaginationListItem';
 
@@ -33,11 +36,17 @@ describe('PaginationListItem', () => {
 
     const listItem = screen.getByRole('listitem');
 
-    expect(listItem).toBeVisible();
-    expect(listItem).toHaveAttribute('aria-posinset', String(pageNumber));
-    expect(listItem).toHaveAttribute('aria-setsize', String(totalPages));
+    assert.ok(isVisible());
+    assert.strictEqual(
+      listItem.getAttribute('aria-posinset'),
+      String(pageNumber)
+    );
+    assert.strictEqual(
+      listItem.getAttribute('aria-setsize'),
+      String(totalPages)
+    );
 
-    expect(screen.getByRole('link')).toHaveAttribute('href', url);
+    assert.strictEqual(screen.getByRole('link').getAttribute('href'), url);
   });
 
   it('Assigns aria-current="page" attribute to the link when the current page is equal to the page number', () => {
@@ -48,6 +57,9 @@ describe('PaginationListItem', () => {
       totalPages: 10,
     });
 
-    expect(screen.getByRole('link')).toHaveAttribute('aria-current', 'page');
+    assert.strictEqual(
+      screen.getByRole('link').getAttribute('aria-current'),
+      'page'
+    );
   });
 });

@@ -7,8 +7,9 @@ build
 # Public Folder
 public
 
-# Jest
-coverage
+# Test Runner
+junit.xml
+lcov.info
 
 # Old Styles
 styles/old

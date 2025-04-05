@@ -130,7 +130,7 @@
         "{app,pages}/**/*.{mdx,md}",
         "*.{md,mdx,json,ts,tsx,mjs,yml}"
       ],
-      "outputs": ["coverage/**", "junit.xml"]
+      "outputs": ["lcov.info", "junit.xml"]
     }
   }
 }
