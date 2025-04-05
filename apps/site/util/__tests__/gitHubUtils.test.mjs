@@ -1,3 +1,6 @@
+import assert from 'node:assert';
+import { describe, it } from 'node:test';
+
 import {
   getGitHubAvatarUrl,
   createGitHubSlugger,
@@ -7,33 +10,34 @@ import {
 
 describe('gitHubUtils', () => {
   it('getGitHubAvatarUrl returns the correct URL', () => {
-    expect(getGitHubAvatarUrl('octocat')).toBe(
+    assert.strictEqual(
+      getGitHubAvatarUrl('octocat'),
       'https://avatars.githubusercontent.com/octocat'
     );
   });
 
   it('createGitHubSlugger returns a slugger', () => {
-    const slugger = createGitHubSlugger();
-    expect(slugger).toBeDefined();
+    assert.notStrictEqual(createGitHubSlugger(), undefined);
   });
 
   it('getGitHubBlobUrl returns the correct URL', () => {
     const result = getGitHubBlobUrl('learn/getting-started/introduction.md');
     const expected =
       'https://github.com/nodejs/nodejs.org/blob/main/apps/site/pages/en/learn/getting-started/introduction.md';
-    expect(result).toBe(expected);
+    assert.strictEqual(result, expected);
   });
 
   it('getGitHubApiDocsUrl returns the correct URL', () => {
     const result = getGitHubApiDocsUrl('assert');
     const expected =
       'https://api.github.com/repos/nodejs/node/contents/doc/api?ref=assert';
-    expect(result).toBe(expected);
+    assert.strictEqual(result, expected);
   });
 
   describe('getGitHubAvatarUrl', () => {
     it('should return a valid GitHub avatar URL', () => {
-      expect(getGitHubAvatarUrl('octocat')).toBe(
+      assert.strictEqual(
+        getGitHubAvatarUrl('octocat'),
         'https://avatars.githubusercontent.com/octocat'
       );
     });
@@ -41,15 +45,18 @@ describe('gitHubUtils', () => {
 
   describe('getGitHubBlobUrl', () => {
     it('should return the correct blob URL', () => {
-      expect(getGitHubBlobUrl('testfile.md')).toContain(
-        'blob/main/apps/site/pages/en/testfile.md'
+      assert.ok(
+        getGitHubBlobUrl('testfile.md').includes(
+          'blob/main/apps/site/pages/en/testfile.md'
+        )
       );
     });
   });
 
   describe('getGitHubApiDocsUrl', () => {
     it('should return the correct API docs URL', () => {
-      expect(getGitHubApiDocsUrl('v18.x')).toBe(
+      assert.strictEqual(
+        getGitHubApiDocsUrl('v18.x'),
         'https://api.github.com/repos/nodejs/node/contents/doc/api?ref=v18.x'
       );
     });

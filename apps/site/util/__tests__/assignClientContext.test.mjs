@@ -1,3 +1,6 @@
+import assert from 'node:assert';
+import { describe, it } from 'node:test';
+
 import { assignClientContext } from '@/util/assignClientContext';
 
 const mockContext = {
@@ -20,27 +23,27 @@ describe('assignClientContext', () => {
   it('should assign properties to the client context', () => {
     const result = assignClientContext(mockContext);
 
-    expect(result.frontmatter).toEqual(mockContext.frontmatter);
-    expect(result.pathname).toEqual(mockContext.pathname);
-    expect(result.headings).toEqual(mockContext.headings);
-    expect(result.readingTime).toEqual(mockContext.readingTime);
-    expect(result.filename).toEqual(mockContext.filename);
+    assert.deepStrictEqual(result.frontmatter, mockContext.frontmatter);
+    assert.strictEqual(result.pathname, mockContext.pathname);
+    assert.deepStrictEqual(result.headings, mockContext.headings);
+    assert.deepStrictEqual(result.readingTime, mockContext.readingTime);
+    assert.strictEqual(result.filename, mockContext.filename);
 
-    expect(result).toEqual(mockContext);
+    assert.deepStrictEqual(result, mockContext);
   });
 
   it('should use default values for missing properties', () => {
     const result = assignClientContext({});
 
-    expect(result.frontmatter).toEqual({});
-    expect(result.pathname).toEqual('');
-    expect(result.headings).toEqual([]);
-    expect(result.readingTime).toEqual({
+    assert.deepStrictEqual(result.frontmatter, {});
+    assert.strictEqual(result.pathname, '');
+    assert.deepStrictEqual(result.headings, []);
+    assert.deepStrictEqual(result.readingTime, {
       text: '',
       minutes: 0,
       time: 0,
       words: 0,
     });
-    expect(result.filename).toEqual('');
+    assert.strictEqual(result.filename, '');
   });
 });

@@ -12,14 +12,14 @@ The following recommendations are in order when adding a new dependency:
   - Some non-code dependencies are required for the bootstrap of the repository. They are either used on basic build scripts or Git Hooks. Examples include `husky`, `lint-staged` and others.
 - A dependency should be a `devDependencies` if it is not invoked anywhere within the codebase.
   - This applies to runtimes, tooling, utility/dev-only commands, type packages and others
-- Sometimes, a dependency should be a `devDependency` even if invoked within the codebase, but only used within a development environment or during a test runner. Examples include `jest`, `storybook` and others.
+- Sometimes, a dependency should be a `devDependency` even if invoked within the codebase, but only used within a development environment or during a test runner. Examples include `storybook` and others.
 - A dependency should be a `peerDependencies` if it is a runtime dependency of the Website, but the Website itself does not install it. Examples include `react`, `react-dom` and others.
 
 ### When pinning dependencies
 
 When adding dependencies, you should consider if that dependency should be saved as an exact dependency (`--save-exact`) or use either a `^` or `~` version range operator. The following guidelines are in order:
 
-- A dependency, in general, should be pinned to its exact dependency if it's either a tooling or a CLI dependency. Examples include `husky`, `prettier`, `jest` and others.
+- A dependency, in general, should be pinned to its exact dependency if it's either a tooling or a CLI dependency. Examples include `husky`, `prettier`, and others.
 - A dependency should generally use `~` if we're interested in patch updates (such as hot-fixes and bug-fixes) and the package is part of the Development or Testing Environment. (Such as `storybook`, for example)
 - A dependency should generally use `^` if they're part of the Website Application itself, such as `react`, `next-intl` etc. This is done because we intentionally want to get these dependencies' latest features and bug-fixes.
   - If we're not interested in getting the latest features and bug fixes, we should consider using `~` instead.

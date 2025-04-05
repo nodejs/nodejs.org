@@ -33,6 +33,7 @@
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run lint:fix && npm run prettier:fix",
     "test": "turbo test:unit",
+    "test:ci": "cross-env NODE_OPTIONS=\"--test-reporter=lcov --test-reporter-destination=lcov.info --test-reporter=junit --test-reporter-destination=junit.xml --test-reporter=@reporters/github --test-reporter-destination=stdout --test-reporter=spec --test-reporter-destination=stdout\" turbo test:unit",
     "prepare": "husky"
   },
   "dependencies": {
@@ -43,6 +44,8 @@
   },
   "devDependencies": {
     "@eslint/js": "~9.23.0",
+    "@reporters/github": "^1.7.2",
+    "@testing-library/react": "~16.3.0",
     "@types/node": "22.14.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.1",
