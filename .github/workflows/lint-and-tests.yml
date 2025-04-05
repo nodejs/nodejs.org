@@ -211,10 +211,10 @@ jobs:
           exitOnceUploaded: true
           onlyChanged: true
 
-      - name: Report code coverage
-        uses: zgosalvez/github-actions-report-lcov@df68834145a4a567247d6a3ea8565c4c39d1fd17 # v4.1.23
-        with:
-          coverage-files: '{apps/site,packages/ui-components}/lcov.info'
-          artifact-name: code-coverage-report
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          update-comment: true
+      # - name: Report code coverage
+      #   uses: zgosalvez/github-actions-report-lcov@df68834145a4a567247d6a3ea8565c4c39d1fd17 # v4.1.23
+      #   with:
+      #     coverage-files: '{apps/site,packages/ui-components}/lcov.info'
+      #     artifact-name: code-coverage-report
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     update-comment: true
