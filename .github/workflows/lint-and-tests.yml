@@ -17,11 +17,6 @@ on:
       - labeled
   merge_group:
   workflow_dispatch:
-    inputs:
-      pr:
-        required: true
-        type: number
-        description: The PR number to comment on
 
 defaults:
   run:
