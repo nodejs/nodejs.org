@@ -33,6 +33,7 @@
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run lint:fix && npm run prettier:fix",
     "test": "turbo test:unit",
+    "test:ci": "cross-env NODE_OPTIONS=\"--test-reporter=lcov --test-reporter-destination=lcov.info --test-reporter=junit --test-reporter-destination=junit.xml --test-reporter=@reporters/github --test-reporter-destination=stdout --test-reporter=spec --test-reporter-destination=stdout\" turbo test:unit",
     "prepare": "husky"
   },
   "dependencies": {
