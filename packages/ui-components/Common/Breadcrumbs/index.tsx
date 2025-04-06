@@ -51,9 +51,13 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
             hideSeparator={isLastItem}
             position={position + +!hideHome}
           >
-            <BreadcrumbLink as={as} href={link.href} active={isLastItem}>
-              {link.label}
-            </BreadcrumbLink>
+            {link.href ? (
+              <BreadcrumbLink as={as} href={link.href} active={isLastItem}>
+                {link.label}
+              </BreadcrumbLink>
+            ) : (
+              <span className="opacity-70">{link.label}</span>
+            )}
           </BreadcrumbItem>
         );
       }),
