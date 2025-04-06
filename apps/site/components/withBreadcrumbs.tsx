@@ -22,7 +22,7 @@ const WithBreadcrumbs: FC<WithBreadcrumbsProps> = ({ navKeys = [] }) => {
 
   const maxLength = isMobileScreen ? 2 : 4;
 
-  const getBreadrumbs = () => {
+  const getBreadcrumbs = () => {
     const navigationTree = getSideNavigation(navKeys);
 
     const pathList = pathname
@@ -62,7 +62,7 @@ const WithBreadcrumbs: FC<WithBreadcrumbsProps> = ({ navKeys = [] }) => {
 
   return (
     <Breadcrumbs
-      links={getBreadrumbs()}
+      links={getBreadcrumbs()}
       maxLength={maxLength}
       as={Link}
       homeLinkAriaLabel={t('components.common.breadcrumbs.navigateToHome')}
