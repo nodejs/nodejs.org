@@ -15,7 +15,7 @@
     "website": "https://github.com/AugustinMauroy"
   },
   "Ben Noordhuis": {
-    "id": "bennoordhuis",
+    "id": "bnoordhuis",
     "name": "Ben Noordhuis",
     "website": "https://github.com/bnoordhuis"
   },
@@ -58,6 +58,11 @@
     "id": "danielleadams",
     "name": "Danielle Adams",
     "website": "https://github.com/danielleadams"
+  },
+  "Daniel Bevenius": {
+    "id": "danbev",
+    "name": "Daniel Bevenius",
+    "webiste": "https://github.com/danbev"
   },
   "Dave Pacheco": {
     "id": "dave-pacheco",
@@ -138,6 +143,16 @@
     "name": "Julián Duque",
     "website": "https://github.com/julianduque"
   },
+  "Node.js Technical Steering Committee": {
+    "id": "nodejs",
+    "name": "Node.js Technical Steering Committee",
+    "website": "https://github.com/nodejs/tsc"
+  },
+  "Matteo Collina": {
+    "id": "mcollina",
+    "name": "Matteo Collina",
+    "webiste": "https://github.com/mcollina"
+  },
   "Marco Ippolito": {
     "id": "marco-ippolito",
     "name": "Marco Ippolito",
@@ -177,9 +192,15 @@
     "name": "Myles Borins",
     "website": "https://github.com/mylesborins"
   },
-  "Node.js Advisory Board": {
-    "id": "advisory-board",
-    "name": "Node.js Advisory Board"
+  "piscisaureus": {
+    "id": "piscisaureus",
+    "name": "Bert Belder",
+    "website": "https://github.com/piscisaureus"
+  },
+  "Rafael Gonzaga": {
+    "id": "rafaelgss",
+    "name": "Rafael Gonzaga",
+    "website": "https://github.com/RafaelGSS"
   },
   "Richard Lau": {
     "id": "richardlau",
@@ -206,6 +227,11 @@
     "name": "Ryan Dahl",
     "website": "https://github.com/ry"
   },
+  "Sam Roberts": {
+    "id": "sam-github",
+    "name": "Sam Roberts",
+    "webiste": "https://github.com/sam-github"
+  },
   "Scott Hammond": {
     "id": "scott-hammond",
     "name": "Scott Hammond"
@@ -230,6 +256,11 @@
     "name": "The Node.js Project",
     "website": "https://github.com/nodejs"
   },
+  "Tierney Cyren": {
+    "id": "bnb",
+    "name": "Tierney Cyren",
+    "website": "https://github.com/bnb"
+  },
   "Timothy J Fontaine": {
     "id": "tjfontaine",
     "name": "Timothy J Fontaine",
@@ -243,6 +274,11 @@
     "id": "UlisesGascon",
     "name": "Ulises Gascón",
     "website": "https://github.com/UlisesGascon"
+  },
+  "Vladimir de Turckheim": {
+    "id": "vdeturckheim",
+    "name": "Vladimir de Turckheim",
+    "webiste": "https://github.com/vdeturckheim"
   },
   "Yosuke Furukawa": {
     "id": "yosuke-furukawa",

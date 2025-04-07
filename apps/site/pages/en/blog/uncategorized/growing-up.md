@@ -3,7 +3,7 @@ date: '2011-12-15T19:59:15.000Z'
 category: uncategorized
 title: Growing up
 layout: blog-post
-author: ryandahl
+author: Ryan Dahl
 ---
 
 This week Microsoft announced [support for Node in Windows Azure](https://www.windowsazure.com/en-us/develop/nodejs/), their cloud computing platform. For the Node core team and the community, this is an important milestone. We've worked hard over the past six months reworking Node's machinery to support IO completion ports and Visual Studio to provide a good native port to Windows. The overarching goal of the port was to expand our user base to the largest number of developers. Happily, this has paid off in the form of being a first class citizen on Azure. Many users who would have never used Node as a pure Unix tool are now up and running on the Windows platform. More users translates into a deeper and better ecosystem of modules, which makes for a better experience for everyone.

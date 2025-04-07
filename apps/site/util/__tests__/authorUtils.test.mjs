@@ -61,10 +61,10 @@ describe('getAuthorWithId', () => {
 
     expect(result).toEqual([
       {
-        name: 'The Node.js Project',
+        name: 'Node.js Technical Steering Committee',
         nickname: 'nodejs',
-        fallback: 'TNJP',
-        url: 'https://github.com/nodejs',
+        fallback: 'NJTSC',
+        url: 'https://github.com/nodejs/tsc',
         image: 'https://avatars.githubusercontent.com/nodejs',
       },
     ]);

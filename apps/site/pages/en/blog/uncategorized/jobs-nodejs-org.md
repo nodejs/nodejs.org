@@ -3,7 +3,7 @@ date: '2011-03-25T06:05:22.000Z'
 category: uncategorized
 title: jobs.nodejs.org
 layout: blog-post
-author: ryandahl
+author: Ryan Dahl
 ---
 
 We are starting an official jobs board for Node. There are two goals for this
