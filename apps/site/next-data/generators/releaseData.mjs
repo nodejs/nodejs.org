@@ -33,35 +33,33 @@ const generateReleaseData = () => {
     // Basically those not in schedule.json
     const majors = Object.values(nodevuOutput).filter(major => !!major.support);
 
-    const nodeReleases = Promise.all(
-      majors.map(async major => {
-        const [latestVersion] = Object.values(major.releases);
+    const nodeReleases = majors.map(major => {
+      const [latestVersion] = Object.values(major.releases);
 
-        const support = {
-          currentStart: major.support.phases.dates.start,
-          ltsStart: major.support.phases.dates.lts,
-          maintenanceStart: major.support.phases.dates.maintenance,
-          endOfLife: major.support.phases.dates.end,
-        };
+      const support = {
+        currentStart: major.support.phases.dates.start,
+        ltsStart: major.support.phases.dates.lts,
+        maintenanceStart: major.support.phases.dates.maintenance,
+        endOfLife: major.support.phases.dates.end,
+      };
 
-        // Get the major release status based on our Release Schedule
-        const status = getNodeReleaseStatus(new Date(), support);
+      // Get the major release status based on our Release Schedule
+      const status = getNodeReleaseStatus(new Date(), support);
 
-        return {
-          ...support,
-          status,
-          major: latestVersion.semver.major,
-          version: latestVersion.semver.raw,
-          versionWithPrefix: `v${latestVersion.semver.raw}`,
-          codename: major.support.codename || '',
-          isLts: status === 'LTS',
-          npm: latestVersion.dependencies.npm || '',
-          v8: latestVersion.dependencies.v8 || '',
-          releaseDate: latestVersion.releaseDate || '',
-          modules: latestVersion.modules.version || '',
-        };
-      })
-    );
+      return {
+        ...support,
+        status,
+        major: latestVersion.semver.major,
+        version: latestVersion.semver.raw,
+        versionWithPrefix: `v${latestVersion.semver.raw}`,
+        codename: major.support.codename || '',
+        isLts: status === 'LTS',
+        npm: latestVersion.dependencies.npm || '',
+        v8: latestVersion.dependencies.v8 || '',
+        releaseDate: latestVersion.releaseDate || '',
+        modules: latestVersion.modules.version || '',
+      };
+    });
 
     // nodevu returns duplicated v0.x versions (v0.12, v0.10, ...).
     // This behavior seems intentional as the case is hardcoded in nodevu,
@@ -69,9 +67,7 @@ const generateReleaseData = () => {
     // This line ignores those duplicated versions and takes the latest
     // v0.x version (v0.12.18). It is also consistent with the legacy
     // nodejs.org implementation.
-    return nodeReleases.then(releases =>
-      releases.filter(r => r.major !== 0 || r.version === '0.12.18')
-    );
+    return nodeReleases.filter(r => r.major !== 0 || r.version === '0.12.18');
   });
 };
 
