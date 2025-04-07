@@ -24,6 +24,25 @@ export const Default: Story = {
   },
 };
 
+export const Linkless: Story = {
+  args: {
+    links: [
+      {
+        label: 'Learn',
+        href: '',
+      },
+      {
+        label: 'Getting Started',
+        href: '',
+      },
+      {
+        label: 'Introduction to Node.js',
+        href: '',
+      },
+    ],
+  },
+};
+
 export const Truncate: Story = {
   args: {
     links: [
