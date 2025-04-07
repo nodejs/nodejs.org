@@ -76,7 +76,6 @@
   --color-white: #fff;
   --color-transparent: 'transparent';
   --color-shadow: #101828;
-  --inherit: 'inherit';
   --shadow-xs: 0px 1px 2px 0px --alpha(var(--color-shadow, #101828) / 5%);
   --shadow-lg:
     0px 4px 6px -2px --alpha(var(--color-shadow, #101828) / 3%),
@@ -95,7 +94,7 @@
   --font-xs-line-height: 1rem;
   --font-sm: 0.87rem;
   --font-sm-line-height: 1.25rem;
-  --font-base: 1rem;
+  --font-base: 0.9rem;
   --font-base-line-height: 1.5rem;
   --font-lg: 1.125rem;
   --font-lg-line-height: 1.75rem;
