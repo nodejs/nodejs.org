@@ -170,3 +170,7 @@
     var(--tw-gradient-to)
   );
 }
+
+@utility text-inherit {
+  color: inherit;
+}
