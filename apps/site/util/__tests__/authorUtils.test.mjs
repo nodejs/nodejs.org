@@ -64,7 +64,7 @@ describe('getAuthorWithId', () => {
         name: 'Node.js Technical Steering Committee',
         nickname: 'nodejs',
         fallback: 'NJTSC',
-        url: 'https://github.com/nodejs',
+        url: 'https://github.com/nodejs/tsc',
         image: 'https://avatars.githubusercontent.com/nodejs',
       },
     ]);
