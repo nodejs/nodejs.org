@@ -51,7 +51,7 @@ export const Headings: StoryObj = {
 };
 
 // Create the behavior of the headings with links
-// in nodejs.org it's happending dude to `rehype-autolink-headings`
+// on nodejs.org, this is happening due to `rehype-autolink-headings`
 export const HeadingsWithLinks: StoryObj = {
   render: () => (
     <main>
