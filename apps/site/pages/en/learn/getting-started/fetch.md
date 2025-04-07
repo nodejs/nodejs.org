@@ -66,9 +66,9 @@ main().catch(console.error);
 Undici allows you to customize the Fetch API by providing options to the `fetch` function. For example, you can set custom headers, set the request method, and set the request body. Here is an example of how you can customize the Fetch API with Undici:
 
 The [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) function takes two arguments: the URL to fetch and an options object. The options object is the [Request](https://undici.nodejs.org/#/docs/api/Dispatcher?id=parameter-requestoptions) object that you can use to customize the request. The function returns a [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) that resolves to a [Response](https://undici.nodejs.org/#/docs/api/Dispatcher?id=parameter-responsedata) object. Some differences between the Fetch API in the browser and the Fetch API in Node.js are that the Node.js version includes the following:
-- Credentials: Node.js does not support the credentials option because it doesn't handle cookies or sessions as browsers do.
+
+- Credentials: Node.js can send credentials (i.e. the Authorization header), and it can handle Cookies, it just doesn't keep a session.
 - Caching: The cache option is not supported in Node.js, as there is no built-in cache mechanism comparable to that in a browser.
-- Referrer and Referrer Policy: The referrer option is not supported in Node.js because it lacks the concept of a referrer that exists in browser environments.
 
 In the following example, we are sending a POST request to the Ollama API with a JSON payload. Ollama is a cli tool that allows you to run LLM's (Large Language Models) on your local machine. You can download it [here](https://ollama.com/download)
 
