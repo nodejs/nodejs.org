@@ -28,26 +28,11 @@ permissions:
   # This permission is required by `MishaKav/jest-coverage-comment`
   pull-requests: write
 
+env:
+  # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
+  TURBO_FORCE: true
+
 jobs:
-  base:
-    name: Base Tasks
-    runs-on: ubuntu-latest
-    outputs:
-      turbo_args: ${{ steps.turborepo_arguments.outputs.turbo_args }}
-
-    steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
-        with:
-          egress-policy: audit
-
-      - name: Provide Turborepo Arguments
-        # This step is responsible for providing a reusable string that can be used within other steps and jobs
-        # that use the `turbo` cli command as a way of easily providing shared arguments to the `turbo` command
-        id: turborepo_arguments
-        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-        run: echo "turbo_args=--force=true" >> "$GITHUB_OUTPUT"
-
   lint:
     # This Job should run either on `merge_groups` or `push` events
     # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
@@ -61,7 +46,6 @@ jobs:
 
     name: Quality checks
     runs-on: ubuntu-latest
-    needs: [base]
 
     steps:
       - name: Harden Runner
@@ -115,8 +99,7 @@ jobs:
           (github.event_name == 'pull_request_target' &&
             github.event.pull_request.head.ref != 'chore/crowdin')
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
-        # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npx --package=turbo@latest -- turbo lint check-types prettier ${{ needs.base.outputs.turbo_args }}
+        run: npx --package=turbo@latest -- turbo lint check-types prettier
 
       - name: Save Lint Cache
         # We only want to save caches on `push` events or `pull_request_target` events
@@ -151,7 +134,6 @@ jobs:
 
     name: Tests
     runs-on: ubuntu-latest
-    needs: [base]
 
     environment:
       name: Storybook
@@ -188,8 +170,7 @@ jobs:
         # We want to run Unit Tests in every circumstance, including Crowdin PRs and Dependabot PRs to ensure
         # that changes to dependencies or translations don't break the Unit Tests
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
-        # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npx --package=turbo@latest -- turbo test:unit ${{ needs.base.outputs.turbo_args }} -- --ci --coverage
+        run: npx --package=turbo@latest -- turbo test:unit -- --ci --coverage
 
       - name: Start Visual Regression Tests (Chromatic)
         # This assigns the Environment Deployment for Storybook
