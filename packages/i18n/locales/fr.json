@@ -11,6 +11,9 @@
         }
       },
       "navBar": {
+        "controls": {
+          "toggle": "Afficher/Fermer le menu de navigation"
+        },
         "links": {
           "about": "À propos",
           "download": "Téléchargement",
@@ -39,6 +42,8 @@
             "nodejsWithWebassembly": "Node.js avec WebAssembly",
             "debugging": "Débogage de Node.js",
             "profiling": "Profilage des applications Node.js",
+            "fetch": "Récupérer des données avec Node.js",
+            "websocket": "Client WebSocket avec Node.js",
             "securityBestPractices": "Meilleures pratiques de sécurité"
           }
         },
@@ -48,7 +53,8 @@
             "introduction": "Introduction à TypeScript",
             "transpile": "Exécution du code TypeScript à l'aide de la transpilation",
             "run": "Exécuter TypeScript avec un runner",
-            "runNatively": "Exécuter TypeScript en mode natif"
+            "runNatively": "Exécuter TypeScript en mode natif",
+            "publishingTSPackage": "Publier un package TypeScript"
           }
         },
         "asynchronousWork": {
@@ -113,7 +119,8 @@
             "testRunner": "Exécuteur de test",
             "introduction": "Découverte de l'exécuteur de tests de Node.js",
             "usingTestRunner": "Utilisation de l'exécuteur de tests de Node.js",
-            "mocking": "Mocking dans les tests"
+            "mocking": "Mocking dans les tests",
+            "collectingCodeCoverage": "Collecter la couverture du code dans Node.js"
           }
         }
       },
@@ -280,9 +287,12 @@
           "brew": "Homebrew est un gestionnaire de paquets pour macOS et Linux.",
           "choco": "Chocolatey est un gestionnaire de paquets pour Windows.",
           "devbox": "Devbox crée des environnements de développement isolés et reproductibles.",
-          "docker": "Docker est une plateforme de conteneurisation."
+          "docker": "Docker est une plateforme de conteneurisation.",
+          "n": "\"n\" est un gestionnaire de versions Node.js multiplateforme.",
+          "volta": "\"Volta\" est un gestionnaire de versions Node.js multiplateforme."
         }
       }
-    }
+    },
+    "logo": "Logo Node.js"
   }
 }
