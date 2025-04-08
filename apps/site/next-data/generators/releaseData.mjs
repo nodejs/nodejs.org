@@ -27,47 +27,58 @@ const getNodeReleaseStatus = (now, support) => {
  *
  * @returns {Promise<Array<import('../../types').NodeRelease>>}
  */
-const generateReleaseData = () => {
-  return nodevu({ fetch: fetch }).then(nodevuOutput => {
-    // Filter out those without documented support
-    // Basically those not in schedule.json
-    const majors = Object.values(nodevuOutput).filter(major => !!major.support);
+const generateReleaseData = async () => {
+  const nodevuOutput = await nodevu({ fetch: fetch });
 
-    const nodeReleases = majors.map(major => {
-      const [latestVersion] = Object.values(major.releases);
+  const majors = Object.entries(nodevuOutput).filter(
+    ([version, { support }]) => {
+      // Filter out those without documented support
+      // Basically those not in schedule.json
+      if (!support) {
+        return false;
+      }
 
-      const support = {
-        currentStart: major.support.phases.dates.start,
-        ltsStart: major.support.phases.dates.lts,
-        maintenanceStart: major.support.phases.dates.maintenance,
-        endOfLife: major.support.phases.dates.end,
-      };
+      // nodevu returns duplicated v0.x versions (v0.12, v0.10, ...).
+      // This behavior seems intentional as the case is hardcoded in nodevu,
+      // see https://github.com/cutenode/nodevu/blob/0c8538c70195fb7181e0a4d1eeb6a28e8ed95698/core/index.js#L24.
+      // This line ignores those duplicated versions and takes the latest
+      // v0.x version (v0.12.18). It is also consistent with the legacy
+      // nodejs.org implementation.
+      if (version.startsWith('v0.') && version !== 'v0.12') {
+        return false;
+      }
 
-      // Get the major release status based on our Release Schedule
-      const status = getNodeReleaseStatus(new Date(), support);
+      return true;
+    }
+  );
 
-      return {
-        ...support,
-        status,
-        major: latestVersion.semver.major,
-        version: latestVersion.semver.raw,
-        versionWithPrefix: `v${latestVersion.semver.raw}`,
-        codename: major.support.codename || '',
-        isLts: status === 'LTS',
-        npm: latestVersion.dependencies.npm || '',
-        v8: latestVersion.dependencies.v8 || '',
-        releaseDate: latestVersion.releaseDate || '',
-        modules: latestVersion.modules.version || '',
-      };
-    });
+  return majors.map(([, major]) => {
+    const [latestVersion] = Object.values(major.releases);
 
-    // nodevu returns duplicated v0.x versions (v0.12, v0.10, ...).
-    // This behavior seems intentional as the case is hardcoded in nodevu,
-    // see https://github.com/cutenode/nodevu/blob/0c8538c70195fb7181e0a4d1eeb6a28e8ed95698/core/index.js#L24.
-    // This line ignores those duplicated versions and takes the latest
-    // v0.x version (v0.12.18). It is also consistent with the legacy
-    // nodejs.org implementation.
-    return nodeReleases.filter(r => r.major !== 0 || r.version === '0.12.18');
+    const support = {
+      currentStart: major.support.phases.dates.start,
+      ltsStart: major.support.phases.dates.lts,
+      maintenanceStart: major.support.phases.dates.maintenance,
+      endOfLife: major.support.phases.dates.end,
+    };
+
+    // Get the major release status based on our Release Schedule
+    const status = getNodeReleaseStatus(new Date(), support);
+
+    return {
+      ...support,
+      status,
+      major: latestVersion.semver.major,
+      version: latestVersion.semver.raw,
+      versionWithPrefix: `v${latestVersion.semver.raw}`,
+      codename: major.support.codename || '',
+      isLts: status === 'LTS',
+      npm: latestVersion.dependencies.npm || '',
+      v8: latestVersion.dependencies.v8 || '',
+      releaseDate: latestVersion.releaseDate || '',
+      modules: latestVersion.modules.version || '',
+      minorVersions: major.releases,
+    };
   });
 };
 
