@@ -98,8 +98,8 @@ main {
 
   ul {
     @apply list-disc
-      pl-9
       pr-5
+      pl-9
       leading-6
       text-neutral-900
       dark:text-white;
@@ -122,11 +122,11 @@ main {
   }
 
   table {
-    @apply rounded-xs
-      mb-1
+    @apply mb-1
       w-full
       border-separate
       border-spacing-0
+      rounded-xs
       border
       border-neutral-200
       text-left
@@ -138,8 +138,8 @@ main {
       @apply max-xs:block
         max-xs:border-l-0
         border
-        border-r-0
         border-t-0
+        border-r-0
         border-neutral-200
         px-4
         py-2

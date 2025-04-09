@@ -3,10 +3,7 @@
 .listItem,
 .listItem:link,
 .listItem:active {
-  @apply aria-current:bg-green-600
-    aria-current:text-white
-    aria-current:cursor-default
-    flex
+  @apply flex
     size-10
     cursor-pointer
     items-center
@@ -15,6 +12,9 @@
     px-3
     py-2.5
     text-neutral-800
+    aria-current:cursor-default
+    aria-current:bg-green-600
+    aria-current:text-white
     motion-safe:transition-colors
     dark:text-neutral-200;
 
