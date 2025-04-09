@@ -36,11 +36,11 @@
 
         &:not(:empty:last-child)::after {
           @apply font-ibm-plex-mono
-            w-4.5
             absolute
-            left-0
             top-0
+            left-0
             mr-4
+            w-4.5
             text-right
             text-neutral-600
             [content:counter(line)]
