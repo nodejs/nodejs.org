@@ -39,4 +39,4 @@ apps/site/public/blog-data.json
 # Ignore worker artifacts
 apps/site/.open-next
 apps/site/.wrangler
-apps/site/.cloudflare/.asset-manifests
+

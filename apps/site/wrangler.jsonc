@@ -14,12 +14,14 @@
     "enabled": true,
     "head_sampling_rate": 1,
   },
+  "build": {
+    "command": "wrangler-build-time-fs-assets-polyfilling --assets pages --assets snippets --assets-output-dir .open-next/assets",
+  },
   "alias": {
-    "server-only": "./.cloudflare/server-only.mjs",
-    "node:fs": "./.cloudflare/node/fs.mjs",
-    "fs": "./.cloudflare/node/fs.mjs",
-    "node:fs/promises": "./.cloudflare/node/fs/promises.mjs",
-    "node:readline": "./.cloudflare/node/readline.ts",
+    "node:fs": "./.wrangler/fs-assets-polyfilling/polyfills/node/fs.ts",
+    "node:fs/promises": "./.wrangler/fs-assets-polyfilling/polyfills/node/fs/promises.ts",
+    "fs": "./.wrangler/fs-assets-polyfilling/polyfills/node/fs.ts",
+    "fs/promises": "./.wrangler/fs-assets-polyfilling/polyfills/node/fs/promises.ts",
   },
   "kv_namespaces": [
     {

@@ -23,8 +23,7 @@
     "test:unit:watch": "npm run test:unit -- --watch",
     "test": "turbo test:unit",
     "build:worker": "npx opennextjs-cloudflare build",
-    "postbuild:worker": "node ./.cloudflare/prepare-build.mjs",
-    "cf:preview": "npm run build:worker && sleep 3 && npx wrangler dev",
+    "cf:preview": "npm run build:worker && npx wrangler dev",
     "cf:deploy": "npx wrangler deploy"
   },
   "dependencies": {
@@ -100,6 +99,7 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "~8.25.0",
     "user-agent-data-types": "0.4.2",
-    "wrangler": "https://prerelease-registry.devprod.cloudflare.dev/workers-sdk/runs/14242618656/npm-package-wrangler-8771"
+    "wrangler": "https://prerelease-registry.devprod.cloudflare.dev/workers-sdk/runs/14242618656/npm-package-wrangler-8771",
+    "@dario-hacking/wrangler-build-time-fs-assets-polyfilling": "^0.0.1"
   }
 }
