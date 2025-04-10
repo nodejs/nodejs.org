@@ -8,7 +8,7 @@ type Meta = MetaObj<typeof ChangelogModal>;
 export const Default: Story = {
   args: {
     open: false,
-    heading: 'Node.js Versions Infomation',
+    heading: 'Node.js Versions Information',
     subheading: 'Get all information about Node.js versions and their changes.',
     children: (
       <>
