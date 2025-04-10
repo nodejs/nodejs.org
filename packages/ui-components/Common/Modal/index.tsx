@@ -6,14 +6,14 @@ import type { FC, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';
 
-type ChangelogModalProps = PropsWithChildren<{
+type ModalProps = PropsWithChildren<{
   heading: string;
   subheading: string;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
 }>;
 
-const ChangelogModal: FC<ChangelogModalProps> = ({
+const Modal: FC<ModalProps> = ({
   heading,
   subheading,
   children,
@@ -43,4 +43,4 @@ const ChangelogModal: FC<ChangelogModalProps> = ({
   </Dialog.Root>
 );
 
-export default ChangelogModal;
+export default Modal;

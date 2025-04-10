@@ -1,9 +1,9 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import ChangelogModal from '@node-core/ui-components/Common/Modal';
+import Modal from '@node-core/ui-components/Common/Modal';
 
-type Story = StoryObj<typeof ChangelogModal>;
-type Meta = MetaObj<typeof ChangelogModal>;
+type Story = StoryObj<typeof Modal>;
+type Meta = MetaObj<typeof Modal>;
 
 export const Default: Story = {
   args: {
@@ -29,4 +29,4 @@ export const Default: Story = {
   },
 };
 
-export default { component: ChangelogModal } as Meta;
+export default { component: Modal } as Meta;
