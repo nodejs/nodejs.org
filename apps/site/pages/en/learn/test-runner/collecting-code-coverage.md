@@ -1,7 +1,7 @@
 ---
 title: Collecting code coverage in Node.js
 layout: learn
-authors: RedYetiDev
+authors: avivkeller
 ---
 
 # Collecting code coverage in Node.js
