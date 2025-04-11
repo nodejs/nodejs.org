@@ -97,10 +97,10 @@ The `--max-semi-space-size` flag controls the size of the **New Space** in the V
 For example:
 
 ```bash
-node --max-semi-space-size=512 app.js
+node --max-semi-space-size=64 app.js
 ```
 
-This increases the New Space to 512 MB (compared to the default, which is typically much smaller). This adjustment can help in high-throughput applications where frequent garbage collection of short-lived objects is adding noticeable overhead.
+This increases the New Space to 64 MB (compared to the default, which is typically much smaller). This adjustment can help in high-throughput applications where frequent garbage collection of short-lived objects is adding noticeable overhead.
 
 ### `--gc-interval`
 
