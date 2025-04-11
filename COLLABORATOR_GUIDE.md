@@ -84,7 +84,6 @@ The Website also uses several other Open Source libraries (not limited to) liste
 - [`next-intl`][] is the i18n Library adopted within the Website
   - It provides an excellent integration with Next.js, But it also supports standalone support for i18n if it eventually migrates from Next.js to something else.
   - Supports React Server Components and Next.js Middlewares
-- [`next-sitemap`](https://www.npmjs.com/package/next-sitemap) is used for Sitemap and `robots.txt` Generation
 - We use [Rehype](https://github.com/rehypejs/rehype) and [Remark](https://github.com/remarkjs/remark) to extend MDX functionality
 - We use [Storybook](https://storybook.js.org/) for Manual Testing and Visual Regression Tests of our React Components
   - Storybook also provides a sandboxed environment, which is very useful whilst for crafting React Components
