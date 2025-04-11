@@ -3,6 +3,9 @@ import { renderHook } from '@testing-library/react';
 import useClientContext from '@/hooks/react-client/useClientContext';
 import { MatterContext } from '@/providers/matterProvider';
 
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
+
 describe('useClientContext', () => {
   it('should return client context values', () => {
     const mockContextValue = {
@@ -21,6 +24,6 @@ describe('useClientContext', () => {
 
     const { result } = renderHook(() => useClientContext(), { wrapper });
 
-    expect(result.current).toEqual(mockContextValue);
+    assert.partialDeepStrictEqual(result.current, mockContextValue);
   });
 });

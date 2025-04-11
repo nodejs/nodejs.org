@@ -1,5 +1,7 @@
-import { isSvgImage } from '@/util/imageUtils';
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
 
+import { isSvgImage } from '@/util/imageUtils';
 describe('isSvgImage', () => {
   const testCases = [
     {
@@ -37,7 +39,7 @@ describe('isSvgImage', () => {
 
   testCases.forEach(({ description, input, expected }) => {
     it(description, () => {
-      expect(isSvgImage(input)).toBe(expected);
+      assert.equal(isSvgImage(input), expected);
     });
   });
 });
@@ -45,10 +47,10 @@ describe('isSvgImage', () => {
 describe('imageUtils', () => {
   describe('isSvgImage', () => {
     it('should detect .svg extension properly', () => {
-      expect(isSvgImage('icon.svg')).toBe(true);
+      assert.equal(isSvgImage('icon.svg'), true);
     });
     it('should return false for non-svg source', () => {
-      expect(isSvgImage('logo.png')).toBe(false);
+      assert.equal(isSvgImage('logo.png'), false);
     });
   });
 });

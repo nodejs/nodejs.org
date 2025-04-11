@@ -1,4 +1,15 @@
-import { formatLighthouseResults } from '..';
+import assert from 'node:assert/strict';
+import { describe, it, beforeEach, afterEach } from 'node:test';
+
+import { formatLighthouseResults } from '../index.mjs';
+
+function checkExpectations({ calls }, expectations) {
+  expectations.forEach(expectation => {
+    const args = calls[0].arguments;
+    assert.equal(args[0], 'comment');
+    assert.ok(args[1].includes(expectation));
+  });
+}
 
 describe('formatLighthouseResults', () => {
   const MOCK_VERCEL_PREVIEW_URL = `https://some.vercel.preview.url`;
@@ -23,8 +34,8 @@ describe('formatLighthouseResults', () => {
 
   let mockCore, originalEnv;
 
-  beforeEach(() => {
-    mockCore = { setOutput: jest.fn() };
+  beforeEach(t => {
+    mockCore = { setOutput: t.mock.fn() };
     originalEnv = process.env;
     process.env = {
       ...process.env,
@@ -41,29 +52,15 @@ describe('formatLighthouseResults', () => {
   it('formats preview urls correctly', () => {
     formatLighthouseResults({ core: mockCore });
 
-    const expectations = [
-      expect.stringContaining(`[/en](${MOCK_VERCEL_PREVIEW_URL}/en)`),
-      expect.stringContaining(
-        `[/en/download](${MOCK_VERCEL_PREVIEW_URL}/en/download)`
-      ),
-    ];
-
-    expectations.forEach(expectation => {
-      expect(mockCore.setOutput).toBeCalledWith('comment', expectation);
-    });
+    checkExpectations(mockCore.setOutput.mock, [
+      `[/en](${MOCK_VERCEL_PREVIEW_URL}/en)`,
+      `[/en/download](${MOCK_VERCEL_PREVIEW_URL}/en/download)`,
+    ]);
   });
 
   it('formats stoplight colors correctly', () => {
     formatLighthouseResults({ core: mockCore });
 
-    const expectations = [
-      expect.stringContaining(`🟢 90`),
-      expect.stringContaining(`🟠 75`),
-      expect.stringContaining(`🔴 49`),
-    ];
-
-    expectations.forEach(expectation => {
-      expect(mockCore.setOutput).toBeCalledWith('comment', expectation);
-    });
+    checkExpectations(mockCore.setOutput.mock, [`🟢 90`, `🟠 75`, `🔴 49`]);
   });
 });

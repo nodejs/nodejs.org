@@ -1,11 +1,16 @@
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
+
 import { renderHook } from '@testing-library/react';
 
 import useMediaQuery from '@/hooks/react-client/useMediaQuery';
 
+const noop = () => {};
+
 describe('useMediaQuery', () => {
   it('should return undefined initially', () => {
     const { result } = renderHook(() => useMediaQuery('media-query-mock'));
-    expect(result.current).toBe(false);
+    assert.equal(result.current, false);
   });
 
   it('should return true for matched query', () => {
@@ -14,13 +19,13 @@ describe('useMediaQuery', () => {
       value: query => ({
         matches: true,
         media: query,
-        addEventListener: jest.fn(),
-        removeEventListener: jest.fn(),
+        addEventListener: noop,
+        removeEventListener: noop,
       }),
     });
 
     const { result } = renderHook(() => useMediaQuery('media-query-mock'));
-    expect(result.current).toBe(true);
+    assert.equal(result.current, true);
   });
 
   it('should return false for not-matched query', () => {
@@ -29,17 +34,17 @@ describe('useMediaQuery', () => {
       value: query => ({
         matches: false,
         media: query,
-        addEventListener: jest.fn(),
-        removeEventListener: jest.fn(),
+        addEventListener: noop,
+        removeEventListener: noop,
       }),
     });
 
     const { result } = renderHook(() => useMediaQuery('media-query-mock'));
-    expect(result.current).toBe(false);
+    assert.equal(result.current, false);
   });
 
-  it('should subscribe for media changes', () => {
-    const listenerMock = jest.fn().mockImplementation((_, handler) => {
+  it('should subscribe for media changes', t => {
+    const listenerMock = t.mock.fn(noop, (_, handler) => {
       handler({ matches: false });
     });
 
@@ -49,11 +54,11 @@ describe('useMediaQuery', () => {
         matches: false,
         media: query,
         addEventListener: listenerMock,
-        removeEventListener: jest.fn(),
+        removeEventListener: noop,
       }),
     });
 
     renderHook(() => useMediaQuery('media-query-mock'));
-    expect(listenerMock).toHaveBeenCalledTimes(1);
+    assert.equal(listenerMock.mock.callCount(), 1);
   });
 });

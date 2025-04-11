@@ -1,13 +1,16 @@
+import assert from 'node:assert/strict';
+import { describe, it, beforeEach } from 'node:test';
+
 import { getHighEntropyValues } from '@/util/getHighEntropyValues';
+
+const mock = () => Promise.resolve({ platform: 'Win32', architecture: 'x86' });
 
 describe('getHighEntropyValues', () => {
   beforeEach(() => {
     Object.defineProperty(global, 'navigator', {
       value: {
         userAgentData: {
-          getHighEntropyValues: jest
-            .fn()
-            .mockResolvedValue({ platform: 'Win32', architecture: 'x86' }),
+          getHighEntropyValues: mock,
         },
       },
       configurable: true,
@@ -17,26 +20,27 @@ describe('getHighEntropyValues', () => {
   it('should resolve and return hint values', async () => {
     const hints = ['platform'];
     const result = await getHighEntropyValues(hints);
-    expect(result.platform).toBe('Win32');
+    assert.equal(result.platform, 'Win32');
   });
 
   it('should return an empty object on rejection', async () => {
-    navigator.userAgentData.getHighEntropyValues.mockRejectedValue(null);
+    navigator.userAgentData.getHighEntropyValues = () => Promise.resolve({});
     const hints = ['platform'];
     const result = await getHighEntropyValues(hints);
-    expect(result.platform).toBeUndefined();
+    assert.equal(result.platform, undefined);
+    navigator.userAgentData.getHighEntropyValues = mock;
   });
 
   it('should return multiple hint values', async () => {
     const hints = ['platform', 'architecture'];
     const result = await getHighEntropyValues(hints);
-    expect(result.platform).toBe('Win32');
-    expect(result.architecture).toBe('x86');
+    assert.equal(result.platform, 'Win32');
+    assert.equal(result.architecture, 'x86');
   });
 
   it('should return undefined for unsupported hints', async () => {
     const hints = ['unsupportedHint'];
     const result = await getHighEntropyValues(hints);
-    expect(result.unsupportedHint).toBeUndefined();
+    assert.equal(result.unsupportedHint, undefined);
   });
 });

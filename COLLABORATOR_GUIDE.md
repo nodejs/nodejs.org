@@ -418,7 +418,7 @@ You can add a PACKAGE_MANAGER the same way as adding an INSTALLATION_METHOD (fro
 ## Unit Tests and Storybooks
 
 Each new feature or bug fix should be accompanied by a unit test (when deemed valuable).
-We use [Jest][] as our test runner and [React Testing Library][] for our React unit tests.
+We use [`node:test`][] as our test runner and [React Testing Library][] for our React unit tests.
 
 We also use [Storybook][] to document our components.
 Components within `packages/ui-components` should have a storybook story that documents the component's usage.
@@ -434,8 +434,6 @@ Unit Tests are fundamental to ensure that code changes do not disrupt the functi
 - Unit Tests should ensure that a given change's functionality is working as expected.
 - When creating unit tests for React components, we recommend that the tests cover all the possible states of the component.
 - We also recommend mocking external dependencies, if unsure about how to mock a particular dependency, raise the question on your Pull Request.
-  - We recommend using [Jest's Mock Functions](https://jestjs.io/docs/en/mock-functions) for mocking dependencies.
-  - We recommend using [Jest's Mock Modules](https://jestjs.io/docs/en/manual-mocks) for mocking dependencies unavailable on the Node.js runtime.
   - Common Providers and Contexts from the lifecycle of our App, such as [`next-intl`][] should not be mocked but given an empty or fake context whenever possible.
 - We recommend reading previous unit tests from the codebase for inspiration and code guidelines.
 
@@ -643,7 +641,7 @@ A lot of the current structure is due to retro-compatibility, keeping a simple a
 
 If you're unfamiliar or curious about something, we recommend opening a Discussion on this GitHub Repository.
 
-[Jest]: https://jestjs.io/
+[`node:test`]: https://nodejs.org/api/test.html
 [React Testing Library]: https://testing-library.com/docs/react-testing-library/intro/
 [Storybook]: https://storybook.js.org/
 [`next-intl`]: https://next-intl-docs.vercel.app

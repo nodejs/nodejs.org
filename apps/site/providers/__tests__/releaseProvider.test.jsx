@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
-
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
 import { ReleaseProvider, ReleasesProvider } from '@/providers/releaseProvider';
 
 describe('ReleaseProvider', () => {
@@ -16,7 +17,7 @@ describe('ReleaseProvider', () => {
       </ReleasesProvider>
     );
 
-    expect(container).toBeDefined();
+    assert.ok(container);
   });
 
   it('should set version from parent provider', () => {
@@ -34,6 +35,6 @@ describe('ReleaseProvider', () => {
       </ReleasesProvider>
     );
 
-    expect(getByText('Child Provider')).toBeDefined();
+    assert.ok(getByText('Child Provider'));
   });
 });

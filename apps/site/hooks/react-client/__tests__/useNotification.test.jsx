@@ -2,6 +2,8 @@ import { render } from '@testing-library/react';
 
 import useNotification from '@/hooks/react-client/useNotification';
 import { NotificationProvider } from '@/providers/notificationProvider';
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
 
 describe('useNotification', () => {
   it('should return the notification dispatch function', () => {
@@ -24,7 +26,7 @@ describe('useNotification', () => {
 
     // Assert
     const result = getByText('Dispatch available');
-    expect(result).toBeInTheDocument();
+    assert.ok(result.ownerDocument);
   });
 
   it('should return null outside NotificationProvider', () => {
@@ -46,6 +48,6 @@ describe('useNotification', () => {
       return element.textContent === 'Dispatch unavailable';
     });
 
-    expect(result).toBeNull();
+    assert.equal(result, null);
   });
 });
