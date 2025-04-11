@@ -27,6 +27,12 @@ export const InlineCode: StoryObj = {
       <p>
         This is an example of <code>inline code block</code>
       </p>
+      <p>
+        This is an example of{' '}
+        <a href="https://nodejs.org/">
+          <code>inline code block inside link</code>
+        </a>
+      </p>
     </main>
   ),
 };
@@ -40,6 +46,33 @@ export const Headings: StoryObj = {
       <h4>HTML Section Heading 4</h4>
       <h5>HTML Section Heading 5</h5>
       <h6>HTML Section Heading 6</h6>
+    </main>
+  ),
+};
+
+// Create the behavior of the headings with links
+// on nodejs.org, this is happening due to `rehype-autolink-headings`
+export const HeadingsWithLinks: StoryObj = {
+  render: () => (
+    <main>
+      <h1 id="heading-1">
+        <a href="#heading-1">HTML Section Heading 1</a>
+      </h1>
+      <h2 id="heading-2">
+        <a href="#heading-2">HTML Section Heading 2</a>
+      </h2>
+      <h3 id="heading-3">
+        <a href="#heading-3">HTML Section Heading 3</a>
+      </h3>
+      <h4 id="heading-4">
+        <a href="#heading-4">HTML Section Heading 4</a>
+      </h4>
+      <h5 id="heading-5">
+        <a href="#heading-5">HTML Section Heading 5</a>
+      </h5>
+      <h6 id="heading-6">
+        <a href="#heading-6">HTML Section Heading 6</a>
+      </h6>
     </main>
   ),
 };

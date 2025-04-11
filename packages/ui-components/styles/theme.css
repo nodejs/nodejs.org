@@ -76,7 +76,6 @@
   --color-white: #fff;
   --color-transparent: 'transparent';
   --color-shadow: #101828;
-  --inherit: 'inherit';
   --shadow-xs: 0px 1px 2px 0px --alpha(var(--color-shadow, #101828) / 5%);
   --shadow-lg:
     0px 4px 6px -2px --alpha(var(--color-shadow, #101828) / 3%),
@@ -169,4 +168,8 @@
     var(--tw-gradient-from),
     var(--tw-gradient-to)
   );
+}
+
+@utility text-inherit {
+  color: inherit;
 }
