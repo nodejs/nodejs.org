@@ -7,7 +7,7 @@ type Meta = MetaObj<typeof Modal>;
 
 export const Default: Story = {
   args: {
-    open: false,
+    open: true,
     heading: 'Node.js Versions Information',
     subheading: 'Get all information about Node.js versions and their changes.',
     children: (
