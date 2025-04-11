@@ -12,8 +12,7 @@
   .content {
     @apply xs:p-6
       relative
-      mx-4
-      my-4
+      m-4
       inline-flex
       w-full
       flex-col
