@@ -14,9 +14,9 @@ At its core, V8 divides memory into several parts, with two primary areas being 
 
 ### The Heap
 
-V8 manages memory using two main areas in the heap:
+V8's memory management is based on the generational hypothesis, the idea that most objects die young, so it separates the heap into generations to optimize garbage collection:
 
-1. **New Space**: This is where new, short-lived objects are allocated. Because objects here are expected to be temporary, garbage collection occurs frequently, allowing memory to be reclaimed quickly.
+1. **New Space**: This is where new, short-lived objects are allocated. Because objects here are expected to "die young", garbage collection occurs frequently, allowing memory to be reclaimed quickly.
 
 2. **Old Space**: Objects that survive several garbage collection cycles in the New Space are moved to the Old Space. Since these objects are more persistent, garbage collection in this space occurs less often but is more resource-intensive when it happens.
 
@@ -131,6 +131,13 @@ global.gc();
 ```
 
 Keep in mind that manually triggering garbage collection **does not disable** the normal GC algorithm. V8 will still perform automatic garbage collection as needed. Manual calls are supplemental and should be used with caution, as overuse can negatively impact performance.
+
+## Additional Resources
+
+To dive deeper into how V8 handles memory, check out these posts by the V8 team:
+
+- [Trash talk: the Orinoco garbage collector](https://v8.dev/blog/trash-talk)
+- [Orinoco: young generation garbage collection](https://v8.dev/blog/orinoco-parallel-scavenger)
 
 ## Putting It All Together
 
