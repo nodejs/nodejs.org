@@ -12,11 +12,6 @@ import { getMarkdownFiles } from '../../next.helpers.mjs';
 const blogPath = join(process.cwd(), 'pages/en/blog');
 
 /**
- * This contains the metadata of all available blog categories
- */
-const blogCategories = new Set(['all']);
-
-/**
  * This method parses the source (raw) Markdown content into Frontmatter
  * and returns basic information for blog posts
  *
@@ -39,12 +34,6 @@ const getFrontMatter = (filename, source) => {
   // all = (all blog posts), publish year and the actual blog category
   const categories = [category, `year-${publishYear}`, 'all'];
 
-  // we add the year to the categories set
-  blogCategories.add(`year-${publishYear}`);
-
-  // we add the category to the categories set
-  blogCategories.add(category);
-
   // this is the url used for the blog post it based on the category and filename
   const slug = `/blog/${category}/${basename(filename, extname(filename))}`;
 
@@ -63,50 +52,58 @@ const generateBlogData = async () => {
     '**/index.md',
   ]);
 
-  return new Promise(resolve => {
-    const posts = [];
-    const rawFrontmatter = [];
+  /**
+   * This contains the metadata of all available blog categories
+   */
+  const blogCategories = new Set(['all']);
 
-    filenames.forEach(filename => {
-      // We create a stream for reading a file instead of reading the files
-      const _stream = createReadStream(join(blogPath, filename));
+  const posts = await Promise.all(
+    filenames.map(
+      filename =>
+        new Promise(resolve => {
+          // We create a stream for reading a file instead of reading the files
+          const _stream = createReadStream(join(blogPath, filename));
 
-      // We create a readline interface to read the file line-by-line
-      const _readLine = readline.createInterface({ input: _stream });
+          // We create a readline interface to read the file line-by-line
+          const _readLine = readline.createInterface({ input: _stream });
 
-      // Creates an array of the metadata based on the filename
-      // This prevents concurrency issues since the for-loop is synchronous
-      // and these event listeners are not
-      rawFrontmatter[filename] = [0, ''];
+          let rawFrontmatter = '';
+          let frontmatterSeparatorsEncountered = 0;
 
-      // We read line by line
-      _readLine.on('line', line => {
-        rawFrontmatter[filename][1] += `${line}\n`;
+          // We read line by line
+          _readLine.on('line', line => {
+            rawFrontmatter += `${line}\n`;
 
-        // We observe the frontmatter separators
-        if (line === '---') {
-          rawFrontmatter[filename][0] += 1;
-        }
+            // We observe the frontmatter separators
+            if (line === '---') {
+              frontmatterSeparatorsEncountered++;
+            }
 
-        // Once we have two separators we close the readLine and the stream
-        if (rawFrontmatter[filename][0] === 2) {
-          _readLine.close();
-          _stream.close();
-        }
-      });
+            // Once we have two separators we close the readLine and the stream
+            if (frontmatterSeparatorsEncountered === 2) {
+              _readLine.close();
+              _stream.close();
+            }
+          });
 
-      // Then we parse gray-matter on the frontmatter
-      // This allows us to only read the frontmatter part of each file
-      // and optimise the read-process as we have thousands of markdown files
-      _readLine.on('close', () => {
-        posts.push(getFrontMatter(filename, rawFrontmatter[filename][1]));
+          // Then we parse gray-matter on the frontmatter
+          // This allows us to only read the frontmatter part of each file
+          // and optimise the read-process as we have thousands of markdown files
+          _readLine.on('close', () => {
+            const frontMatterData = getFrontMatter(filename, rawFrontmatter);
 
-        if (posts.length === filenames.length) {
-          resolve({ categories: [...blogCategories], posts });
-        }
-      });
-    });
-  });
+            frontMatterData.categories.forEach(category => {
+              // we add the category to the categories set
+              blogCategories.add(category);
+            });
+
+            resolve(frontMatterData);
+          });
+        })
+    )
+  );
+
+  return { categories: [...blogCategories], posts };
 };
 
 export default generateBlogData;
