@@ -45,5 +45,7 @@ export default {
     'import-notation': 'string',
     // Allow the `@apply` at rule as its part of Tailwind
     'at-rule-no-deprecated': [true, { ignoreAtRules: CUSTOM_AT_RULES }],
+    // We need complex `:not()` for headings with anchor
+    'selector-not-notation': null,
   },
 };
