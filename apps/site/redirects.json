@@ -9,6 +9,14 @@
       "destination": "/api"
     },
     {
+      "source": "/api/corepack.html",
+      "destination": "https://github.com/nodejs/corepack"
+    },
+    {
+      "source": "/docs/latest/api/corepack.html",
+      "destination": "https://github.com/nodejs/corepack"
+    },
+    {
       "source": "/changelog.html",
       "destination": "https://github.com/nodejs/node/blob/HEAD/CHANGELOG.md"
     },
@@ -343,3 +351,4 @@
   ],
   "internal": []
 }
+
