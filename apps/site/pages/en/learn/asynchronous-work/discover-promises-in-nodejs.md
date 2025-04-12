@@ -181,7 +181,7 @@ In this example, `fs.promises.readFile()` returns a Promise, which we handle usi
 
 JavaScript's `Promise` global provides several powerful methods that help manage multiple asynchronous tasks more effectively:
 
-### **`Promise.all()`**:
+### `Promise.all()`
 
 This method accepts an array of Promises and returns a new Promise that resolves once all the Promises are fulfilled. If any Promise is rejected, `Promise.all()` will immediately reject. However, even if rejection occurs, the Promises continue to execute. When handling a large number of Promises, especially in batch processing, using this function can strain the system's memory.
 
@@ -200,7 +200,7 @@ Promise.all([fetchData1, fetchData2])
   });
 ```
 
-### **`Promise.allSettled()`**:
+### `Promise.allSettled()`
 
 This method waits for all promises to either resolve or reject and returns an array of objects that describe the outcome of each Promise.
 
@@ -216,7 +216,7 @@ Promise.allSettled([promise1, promise2]).then(results => {
 
 Unlike `Promise.all()`, `Promise.allSettled()` does not short-circuit on failure. It waits for all promises to settle, even if some reject. This provides better error handling for batch operations, where you may want to know the status of all tasks, regardless of failure.
 
-### **`Promise.race()`**:
+### `Promise.race()`
 
 This method resolves or rejects as soon as the first Promise settles, whether it resolves or rejects. Regardless of which promise settles first, all promises are fully executed.
 
@@ -231,7 +231,7 @@ Promise.race([task1, task2]).then(result => {
 });
 ```
 
-### **`Promise.any()`**:
+### `Promise.any()`
 
 This method resolves as soon as one of the Promises resolves. If all promises are rejected, it will reject with an `AggregateError`.
 
@@ -251,7 +251,7 @@ Promise.any([api1, api2, api3])
   });
 ```
 
-### **`Promise.reject()` and `Promise.resolve()`**:
+### `Promise.reject()` and `Promise.resolve()`
 
 These methods create a rejected or resolved Promise directly.
 
@@ -261,7 +261,7 @@ Promise.resolve('Resolved immediately').then(result => {
 });
 ```
 
-### **`Promise.try()`**:
+### `Promise.try()`
 
 `Promise.try()` is a method that executes a given function, whether it's synchronous or asynchronous, and wraps the result in a promise. If the function throws an error or returns a rejected promise, `Promise.try()` will return a rejected promise. If the function completes successfully, the returned promise will be fulfilled with its value.
 
@@ -286,7 +286,7 @@ Promise.try(mightThrow)
 
 In this example, `Promise.try()` ensures that if `mightThrow()` throws an error, it will be caught in the `.catch()` block, making it easier to handle both sync and async errors in one place.
 
-### **`Promise.withResolvers()`**:
+### `Promise.withResolvers()`
 
 This method creates a new promise along with its associated resolve and reject functions, and returns them in a convenient object. This is used, for example, when you need to create a promise but resolve or reject it later from outside the executor function.
 
@@ -339,7 +339,7 @@ performTask();
 
 In addition to Promises, Node.js provides several other mechanisms for scheduling tasks in the event loop.
 
-### **`queueMicrotask()`**
+### `queueMicrotask()`
 
 `queueMicrotask()` is used to schedule a microtask, which is a lightweight task that runs after the currently executing script but before any other I/O events or timers. Microtasks include tasks like Promise resolutions and other asynchronous operations that are prioritized over regular tasks.
 
@@ -353,7 +353,7 @@ console.log('Synchronous task is executed');
 
 In the above example, "Microtask is executed" will be logged after "Synchronous task is executed," but before any I/O operations like timers.
 
-### **`process.nextTick()`**
+### `process.nextTick()`
 
 `process.nextTick()` is used to schedule a callback to be executed immediately after the current operation completes. This is useful for situations where you want to ensure that a callback is executed as soon as possible, but still after the current execution context.
 
@@ -365,7 +365,7 @@ process.nextTick(() => {
 console.log('Synchronous task executed');
 ```
 
-### **`setImmediate()`**:
+### `setImmediate()`
 
 `setImmediate()` is used to execute a callback after the current event loop cycle finishes and all I/O events have been processed. This means that `setImmediate()` callbacks run after any I/O callbacks, but before timers.
 
@@ -377,7 +377,7 @@ setImmediate(() => {
 console.log('Synchronous task executed');
 ```
 
-### **When to Use Each**:
+### When to Use Each
 
 - Use `queueMicrotask()` for tasks that need to run immediately after the current script and before any I/O or timer callbacks, typically for Promise resolutions.
 - Use `process.nextTick()` for tasks that should execute before any I/O events, often useful for deferring operations or handling errors synchronously.
