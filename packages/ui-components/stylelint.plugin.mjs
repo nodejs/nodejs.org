@@ -53,7 +53,7 @@ const indentClassNames = rule => {
  */
 const cleanClassNames = params => {
   return params
-    .replace(/\n+/g, '') // Remove new lines
+    .replace(/[\n\r]+/g, '') // Remove new lines
     .replace(/\s+/g, ' ') // Replace multiple spaces with a single space
     .trim(); // Trim leading/trailing spaces
 };
