@@ -1,10 +1,10 @@
 ---
-title: Promises in Node.js
+title: Discover Promises in Node.js
 layout: learn
 authors: avivkeller
 ---
 
-# Promises in Node.js
+# Discover Promises in Node.js
 
 A **Promise** is a special object in JavaScript that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. Think of a Promise as a placeholder for a value that is not yet available but will be in the future.
 
@@ -96,7 +96,7 @@ promise1
 One of the best ways to work with Promises in modern JavaScript is using **async/await**. This allows you to write asynchronous code that looks synchronous, making it much easier to read and maintain.
 
 - `async` is used to define a function that returns a Promise.
-- `await` is used inside an `async` function to pause execution until the Promise is resolved or rejected.
+- `await` is used inside an `async` function to pause execution until a Promise settles. However, in [ECMAScript Modules](https://nodejs.org/api/esm.html), you can use [`await` at the top level](https://nodejs.org/api/esm.html#top-level-await) without needing an `async` function.
 
 ```js
 async function performTasks() {
