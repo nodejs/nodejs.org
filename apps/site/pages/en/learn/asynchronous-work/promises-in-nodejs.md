@@ -73,13 +73,10 @@ myPromise
 One of the great features of Promises is that they allow you to chain multiple asynchronous operations together. When you chain Promises, each `.then()` block waits for the previous one to complete before it runs.
 
 ```js
-const promise1 = new Promise((resolve, reject) => {
-  setTimeout(() => resolve('First task completed'), 1000);
-});
+const { setTimeout: delay } = require('node:timers/promises');
 
-const promise2 = new Promise((resolve, reject) => {
-  setTimeout(() => resolve('Second task completed'), 1000);
-});
+const promise1 = delay(1000).then(() => 'First task completed');
+const promise2 = delay(1000).then(() => 'Second task completed');
 
 promise1
   .then(result => {
@@ -93,11 +90,6 @@ promise1
     console.error(error); // If any Promise is rejected, catch the error
   });
 ```
-
-In this example:
-
-- The first Promise resolves after 1 second, and its result is logged.
-- The second Promise resolves after another second, and its result is logged after the first one finishes.
 
 ## Using Async/Await with Promises
 
@@ -123,6 +115,8 @@ performTasks();
 ```
 
 In the `performTasks` function, the `await` keyword pauses execution until each Promise is settled (resolved or rejected). This leads to a more linear and readable flow of asynchronous code.
+
+Async/await can be much more intricate than the simple examples provided. James Snell, a member of the Node.js Technical Steering Committee, has an [in-depth presentation](https://www.youtube.com/watch?v=XV-u_Ow47s0) that explores the complexities of Promises and async/await.
 
 ## Promise-based Node.js APIs
 
@@ -157,13 +151,13 @@ JavaScript's `Promise` global provides several powerful methods that help manage
 
 This method takes an array of Promises and resolves them all. It only resolves when all Promises are fulfilled. If any of the Promises is rejected, `Promise.all()` will reject immediately.
 
+`Promise.all()` resolves when all Promises are completed. If you have a large number of Promises, especially in situations like batch processing, it could overwhelm the system's memory.
+
 ```js
-const fetchData1 = new Promise(resolve =>
-  setTimeout(() => resolve('Data from API 1'), 1000)
-);
-const fetchData2 = new Promise(resolve =>
-  setTimeout(() => resolve('Data from API 2'), 2000)
-);
+const { setTimeout: delay } = require('node:timers/promises');
+
+const fetchData1 = delay(1000).then(() => 'Data from API 1');
+const fetchData2 = delay(2000).then(() => 'Data from API 2');
 
 Promise.all([fetchData1, fetchData2])
   .then(results => {
@@ -188,17 +182,17 @@ Promise.allSettled([promise1, promise2]).then(results => {
 });
 ```
 
+Unlike `Promise.all()`, `Promise.allSettled()` does not short-circuit on failure. It waits for all promises to settle, even if some reject. This provides better error handling for batch operations, where you may want to know the status of all tasks, regardless of failure.
+
 ### **`Promise.race()`**:
 
 This method resolves or rejects as soon as the first Promise settles, whether it resolves or rejects.
 
 ```js
-const task1 = new Promise(resolve =>
-  setTimeout(() => resolve('Task 1 done'), 2000)
-);
-const task2 = new Promise(resolve =>
-  setTimeout(() => resolve('Task 2 done'), 1000)
-);
+const { setTimeout: delay } = require('node:timers/promises');
+
+const task1 = delay(2000).then(() => 'Task 1 done');
+const task2 = delay(1000).then(() => 'Task 2 done');
 
 Promise.race([task1, task2]).then(result => {
   console.log(result); // 'Task 2 done' (since task2 finishes first)
@@ -210,12 +204,10 @@ Promise.race([task1, task2]).then(result => {
 This method resolves as soon as one of the Promises resolves. If all promises are rejected, it will reject with an `AggregateError`.
 
 ```js
-const api1 = new Promise((_, reject) =>
-  setTimeout(() => reject('API 1 failed'), 1000)
-);
-const api2 = new Promise(resolve =>
-  setTimeout(() => resolve('API 2 success'), 500)
-);
+const { setTimeout: delay } = require('node:timers/promises');
+
+const api1 = delay(2000).then(() => 'API 1 failed');
+const api2 = delay(1000).then(() => 'API 2 success');
 
 Promise.any([api1, api2])
   .then(result => {
@@ -257,8 +249,69 @@ async function performTask() {
     console.log(result);
   } catch (error) {
     console.error(error); // Handles any errors
+  } finally {
+    // This code is executed regardless of failure
+    console.log('performTask() completed');
   }
 }
 
 performTask();
 ```
+
+## Scheduling Tasks in the Event Loop
+
+In addition to Promises, Node.js provides several other mechanisms for scheduling tasks in the event loop.
+
+### **`queueMicrotask()`**
+
+`queueMicrotask()` is used to schedule a microtask, which is a lightweight task that runs after the currently executing script but before any other I/O events or timers. Microtasks include tasks like Promise resolutions and other asynchronous operations that are prioritized over regular tasks.
+
+```js
+queueMicrotask(() => {
+  console.log('Microtask is executed');
+});
+
+console.log('Synchronous task is executed');
+```
+
+In the above example, "Microtask is executed" will be logged after "Synchronous task is executed," but before any I/O operations like timers.
+
+### **`process.nextTick()`**
+
+`process.nextTick()` is used to schedule a callback to be executed after the current operation completes, but before any other event loop phases, such as I/O events, timers, or Promises. This is useful for situations where you want to ensure that a callback is executed as soon as possible, but still after the current execution context.
+
+```js
+process.nextTick(() => {
+  console.log('Next tick callback');
+});
+
+console.log('Synchronous task executed');
+```
+
+### **`setImmediate()`**:
+
+`setImmediate()` is used to execute a callback after the current event loop cycle finishes and all I/O events have been processed. This means that `setImmediate()` callbacks run after any I/O callbacks, but before timers and the next tick queue.
+
+```js
+setImmediate(() => {
+  console.log('Immediate callback');
+});
+
+console.log('Synchronous task executed');
+```
+
+### **When to Use Each**:
+
+- Use `queueMicrotask()` for tasks that need to run immediately after the current script and before any I/O or timer callbacks, typically for Promise resolutions.
+- Use `process.nextTick()` for tasks that should execute before any I/O events, often useful for deferring operations or handling errors synchronously.
+- Use `setImmediate()` for tasks that should run after I/O events but before timers.
+
+In short, the execution order is as follows:
+
+1. **Synchronous code** (e.g., regular function calls and script code)
+2. **`process.nextTick()`** callbacks
+3. **Microtasks** (e.g., Promises, `queueMicrotask()`)
+4. **Timers** (e.g., `setTimeout()`, `setInterval()`)
+5. **I/O callbacks** (e.g., network and file system operations)
+6. **`setImmediate()`** callbacks
+7. **Close callbacks** (e.g., `socket.on('close')`)
