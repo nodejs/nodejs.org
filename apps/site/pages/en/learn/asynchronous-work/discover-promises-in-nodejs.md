@@ -385,17 +385,4 @@ console.log('Synchronous task executed');
 
 Because these tasks execute outside of the current synchronous flow, uncaught exceptions inside these callbacks won't be caught by surrounding `try/catch` blocks and may crash the application if not properly managed (e.g., by attaching `.catch()` to Promises or using global error handlers like `process.on('uncaughtException')`).
 
-In short, the execution order is as follows:
-
-1. **Synchronous code** (e.g., regular function calls and script code)
-2. **`process.nextTick()`** callbacks
-3. **Microtasks** (e.g., Promises, `queueMicrotask()`)
-   If a microtask queues another microtask, the new one is also executed before moving on.
-4. **Timers** (e.g., `setTimeout()`, `setInterval()`)
-5. **I/O callbacks** (e.g., network and file system operations)
-   Some operations, like `close` and `error` events, may use `process.nextTick()` internally and are executed in the next tick.
-6. **`setImmediate()`** callbacks
-
-`process.nextTick()` can execute at any stage in the execution order, as it is not bound by the event loop.
-
-Note that this order, and the `process.nextTick()` functionality, is specific to Node.js, and other runtimes may handle different events at different times.
+For more information on the Event Loop, and the execution order of various phases, please see the related article, [The Node.js Event Loop](/learn/asynchronous-work/event-loop-timers-and-nexttick).
