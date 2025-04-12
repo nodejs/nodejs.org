@@ -261,7 +261,7 @@ Promise.resolve('Resolved immediately').then(result => {
 });
 ```
 
-### **`Promise.try()`**
+### **`Promise.try()`**:
 
 `Promise.try()` is a method that executes a given function, whether it's synchronous or asynchronous, and wraps the result in a promise. If the function throws an error or returns a rejected promise, `Promise.try()` will return a rejected promise. If the function completes successfully, the returned promise will be fulfilled with its value.
 
@@ -285,6 +285,24 @@ Promise.try(mightThrow)
 ```
 
 In this example, `Promise.try()` ensures that if `mightThrow()` throws an error, it will be caught in the `.catch()` block, making it easier to handle both sync and async errors in one place.
+
+### **`Promise.withResolvers()`**:
+
+This method creates a new promise along with its associated resolve and reject functions, and returns them in a convenient object. This is used, for example, when you need to create a promise but resolve or reject it later from outside the executor function.
+
+```js
+const { promise, resolve, reject } = Promise.withResolvers();
+
+setTimeout(() => {
+  resolve('Resolved successfully!');
+}, 1000);
+
+promise.then(value => {
+  console.log('Success:', value);
+});
+```
+
+In this example, `Promise.withResolvers()` gives you full control over when and how the promise is resolved or rejected, without needing to define the executor function inline. This pattern is commonly used in event-driven programming, timeouts, or when integrating with non-promise-based APIs.
 
 ## Error Handling with Promises
 
@@ -375,7 +393,7 @@ In short, the execution order is as follows:
    If a microtask queues another microtask, the new one is also executed before moving on.
 4. **Timers** (e.g., `setTimeout()`, `setInterval()`)
 5. **I/O callbacks** (e.g., network and file system operations)
-   Some operations, like `close` events, may use `process.nextTick()` internally and are executed in the next tick.
+   Some operations, like `close` and `error` events, may use `process.nextTick()` internally and are executed in the next tick.
 6. **`setImmediate()`** callbacks
 
 `process.nextTick()` can execute at any stage in the execution order, as it is not bound by the event loop.
