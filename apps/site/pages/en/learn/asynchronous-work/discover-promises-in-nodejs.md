@@ -6,7 +6,7 @@ authors: avivkeller
 
 # Discover Promises in Node.js
 
-A **Promise** is a special object in JavaScript that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. Think of a Promise as a placeholder for a value that is not yet available but will be in the future.
+A **Promise** is a special object in JavaScript that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. Essentially, a Promise is a placeholder for a value that is not yet available but will be in the future.
 
 Think of a Promise like ordering a pizza: you don't get it right away, but the delivery person promises to bring it to you later. You don't know _exactly_ when, but you know the outcome will either be "pizza delivered" or "something went wrong."
 
@@ -18,11 +18,16 @@ A Promise can be in one of three states:
 - **Fulfilled**: The operation completed successfully, and the Promise is now resolved with a value.
 - **Rejected**: The operation failed, and the Promise is settled with a reason (usually an error).
 
-For example, imagine you're waiting for an email from a friend. You're in the pending state. If your friend replies, you've entered the fulfilled state. If the email bounces back, you are in the rejected state.
+When you order the pizza, You're in the pending state, hungry and hopeful. If the pizza arrives hot and cheesy, you've entered the fulfilled state. But if the restaurant calls to say they've dropped your pizza on floor, you're in the rejected state.
+
+Regardless of whether your dinner ends in joy or disappointment, once there's a final outcome, the Promise is considered **settled**.
 
 ## Basic Syntax of a Promise
 
-A Promise is created using the `new Promise()` constructor. The constructor takes a function with two parameters: `resolve` and `reject`. These functions are used to transition the Promise from the **pending** state to either **fulfilled** or **rejected**.
+One of the most common ways to create a Promise is using the `new Promise()` constructor. The constructor takes a function with two parameters: `resolve` and `reject`. These functions are used to transition the Promise from the **pending** state to either **fulfilled** or **rejected**.
+
+If an error is thrown inside the executor function, the Promise will be rejected with that error.
+The return value of the executor function is ignored: only `resolve` or `reject` should be used to settle the Promise.
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
@@ -41,12 +46,13 @@ In the above example:
 - If the `success` condition is `true`, the Promise is fulfilled and the value `'Operation was successful!'` is passed to the `resolve` function.
 - If the `success` condition is `false`, the Promise is rejected and the error `'Something went wrong.'` is passed to the `reject` function.
 
-## Handling Promises with `.then()` and `.catch()`
+## Handling Promises with `.then()`, `.catch()`, and `.finally()`
 
-Once a Promise is created, you can handle the outcome by using the `.then()` and `.catch()` methods.
+Once a Promise is created, you can handle the outcome by using the `.then()`, `.catch()`, and `.finally()` methods.
 
 - `.then()` is used to handle a fulfilled Promise and access its result.
 - `.catch()` is used to handle a rejected Promise and catch any errors that may occur.
+- `.finally()` is used to handle a settled Promise, regardless of whether the Promise resolved or rejected.
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
@@ -65,6 +71,9 @@ myPromise
   })
   .catch(error => {
     console.error(error); // This will run if the Promise is rejected
+  })
+  .finally(() => {
+    console.log('The promise has completed'); // This will run when the Promise is settled
   });
 ```
 
@@ -75,13 +84,12 @@ One of the great features of Promises is that they allow you to chain multiple a
 ```js
 const { setTimeout: delay } = require('node:timers/promises');
 
-const promise1 = delay(1000).then(() => 'First task completed');
-const promise2 = delay(1000).then(() => 'Second task completed');
+const promise = delay(1000).then(() => 'First task completed');
 
-promise1
+promise
   .then(result => {
     console.log(result); // 'First task completed'
-    return promise2; // Return the second Promise
+    return delay(1000).then(() => 'Second task completed'); // Return a second Promise
   })
   .then(result => {
     console.log(result); // 'Second task completed'
@@ -96,7 +104,7 @@ promise1
 One of the best ways to work with Promises in modern JavaScript is using **async/await**. This allows you to write asynchronous code that looks synchronous, making it much easier to read and maintain.
 
 - `async` is used to define a function that returns a Promise.
-- `await` is used inside an `async` function to pause execution until a Promise settles. However, in [ECMAScript Modules](https://nodejs.org/api/esm.html), you can use [`await` at the top level](https://nodejs.org/api/esm.html#top-level-await) without needing an `async` function.
+- `await` is used inside an `async` function to pause execution until a Promise settles.
 
 ```js
 async function performTasks() {
@@ -114,7 +122,33 @@ async function performTasks() {
 performTasks();
 ```
 
-In the `performTasks` function, the `await` keyword pauses execution until each Promise is settled (resolved or rejected). This leads to a more linear and readable flow of asynchronous code.
+In the `performTasks` function, the `await` keyword ensures that each Promise is settled before moving on to the next statement. This leads to a more linear and readable flow of asynchronous code.
+
+Essentially, the code above will execute the same as if the user wrote:
+
+```js
+promise1
+  .then(function (result1) {
+    console.log(result1);
+    return promise2;
+  })
+  .then(function (result2) {
+    console.log(result2);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+```
+
+### Top-Level Await
+
+When using [ECMAScript Modules](https://nodejs.org/api/esm.html), the module itself is treated as a top-level scope that supports asynchronous operations natively. This means that you can use [`await` at the top level](https://nodejs.org/api/esm.html#top-level-await) without needing an `async` function.
+
+```mjs
+import { setTimeout as delay } from 'node:timers/promises';
+
+await delay(1000);
+```
 
 Async/await can be much more intricate than the simple examples provided. James Snell, a member of the Node.js Technical Steering Committee, has an [in-depth presentation](https://www.youtube.com/watch?v=XV-u_Ow47s0) that explores the complexities of Promises and async/await.
 
@@ -149,9 +183,7 @@ JavaScript's `Promise` global provides several powerful methods that help manage
 
 ### **`Promise.all()`**:
 
-This method takes an array of Promises and resolves them all. It only resolves when all Promises are fulfilled. If any of the Promises is rejected, `Promise.all()` will reject immediately.
-
-`Promise.all()` resolves when all Promises are completed. If you have a large number of Promises, especially in situations like batch processing, it could overwhelm the system's memory.
+This method accepts an array of Promises and returns a new Promise that resolves once all the Promises are fulfilled. If any Promise is rejected, `Promise.all()` will immediately reject. However, even if rejection occurs, the Promises continue to execute. When handling a large number of Promises, especially in batch processing, using this function can strain the system's memory.
 
 ```js
 const { setTimeout: delay } = require('node:timers/promises');
@@ -186,7 +218,7 @@ Unlike `Promise.all()`, `Promise.allSettled()` does not short-circuit on failure
 
 ### **`Promise.race()`**:
 
-This method resolves or rejects as soon as the first Promise settles, whether it resolves or rejects.
+This method resolves or rejects as soon as the first Promise settles, whether it resolves or rejects. Regardless of which promise settles first, all promises are fully executed.
 
 ```js
 const { setTimeout: delay } = require('node:timers/promises');
@@ -206,10 +238,11 @@ This method resolves as soon as one of the Promises resolves. If all promises ar
 ```js
 const { setTimeout: delay } = require('node:timers/promises');
 
-const api1 = delay(2000).then(() => 'API 1 failed');
+const api1 = delay(2000).then(() => 'API 1 success');
 const api2 = delay(1000).then(() => 'API 2 success');
+const api3 = delay(1500).then(() => 'API 3 success');
 
-Promise.any([api1, api2])
+Promise.any([api1, api2, api3])
   .then(result => {
     console.log(result); // 'API 2 success' (since it resolves first)
   })
@@ -228,6 +261,31 @@ Promise.resolve('Resolved immediately').then(result => {
 });
 ```
 
+### **`Promise.try()`**
+
+`Promise.try()` is a method that executes a given function, whether it's synchronous or asynchronous, and wraps the result in a promise. If the function throws an error or returns a rejected promise, `Promise.try()` will return a rejected promise. If the function completes successfully, the returned promise will be fulfilled with its value.
+
+This can be particularly useful for starting promise chains in a consistent way, especially when working with code that might throw errors synchronously.
+
+```js
+function mightThrow() {
+  if (Math.random() > 0.5) {
+    throw new Error('Oops, something went wrong!');
+  }
+  return 'Success!';
+}
+
+Promise.try(mightThrow)
+  .then(result => {
+    console.log('Result:', result);
+  })
+  .catch(err => {
+    console.error('Caught error:', err.message);
+  });
+```
+
+In this example, `Promise.try()` ensures that if `mightThrow()` throws an error, it will be caught in the `.catch()` block, making it easier to handle both sync and async errors in one place.
+
 ## Error Handling with Promises
 
 Handling errors in Promises ensures your application behaves correctly in case of unexpected situations.
@@ -237,7 +295,8 @@ Handling errors in Promises ensures your application behaves correctly in case o
 ```js
 myPromise
   .then(result => console.log(result))
-  .catch(error => console.error(error)); // Handles the rejection
+  .catch(error => console.error(error)) // Handles the rejection
+  .finally(error => console.log('Promise completed')); // Runs regardless of promise resolution
 ```
 
 - Alternatively, when using `async/await`, you can use a `try/catch` block to catch and handle errors.
@@ -278,7 +337,7 @@ In the above example, "Microtask is executed" will be logged after "Synchronous 
 
 ### **`process.nextTick()`**
 
-`process.nextTick()` is used to schedule a callback to be executed after the current operation completes, but before any other event loop phases, such as I/O events, timers, or Promises. This is useful for situations where you want to ensure that a callback is executed as soon as possible, but still after the current execution context.
+`process.nextTick()` is used to schedule a callback to be executed immediately after the current operation completes. This is useful for situations where you want to ensure that a callback is executed as soon as possible, but still after the current execution context.
 
 ```js
 process.nextTick(() => {
@@ -290,7 +349,7 @@ console.log('Synchronous task executed');
 
 ### **`setImmediate()`**:
 
-`setImmediate()` is used to execute a callback after the current event loop cycle finishes and all I/O events have been processed. This means that `setImmediate()` callbacks run after any I/O callbacks, but before timers and the next tick queue.
+`setImmediate()` is used to execute a callback after the current event loop cycle finishes and all I/O events have been processed. This means that `setImmediate()` callbacks run after any I/O callbacks, but before timers.
 
 ```js
 setImmediate(() => {
@@ -306,12 +365,19 @@ console.log('Synchronous task executed');
 - Use `process.nextTick()` for tasks that should execute before any I/O events, often useful for deferring operations or handling errors synchronously.
 - Use `setImmediate()` for tasks that should run after I/O events but before timers.
 
+Because these tasks execute outside of the current synchronous flow, uncaught exceptions inside these callbacks won't be caught by surrounding `try/catch` blocks and may crash the application if not properly managed (e.g., by attaching `.catch()` to Promises or using global error handlers like `process.on('uncaughtException')`).
+
 In short, the execution order is as follows:
 
 1. **Synchronous code** (e.g., regular function calls and script code)
 2. **`process.nextTick()`** callbacks
 3. **Microtasks** (e.g., Promises, `queueMicrotask()`)
+   If a microtask queues another microtask, the new one is also executed before moving on.
 4. **Timers** (e.g., `setTimeout()`, `setInterval()`)
 5. **I/O callbacks** (e.g., network and file system operations)
+   Some operations, like `close` events, may use `process.nextTick()` internally and are executed in the next tick.
 6. **`setImmediate()`** callbacks
-7. **Close callbacks** (e.g., `socket.on('close')`)
+
+`process.nextTick()` can execute at any stage in the execution order, as it is not bound by the event loop.
+
+Note that this order, and the `process.nextTick()` functionality, is specific to Node.js, and other runtimes may handle different events at different times.
