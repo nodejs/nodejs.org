@@ -50,5 +50,7 @@ export default {
     // Allow the `@apply` at rule as its part of Tailwind
     'at-rule-no-deprecated': [true, { ignoreAtRules: CUSTOM_AT_RULES }],
     'nodejs/one-mixin-per-line': true,
+    // We need complex `:not()` for headings with anchor
+    'selector-not-notation': null,
   },
 };

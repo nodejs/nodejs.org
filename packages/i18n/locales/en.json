@@ -108,6 +108,7 @@
           "links": {
             "diagnostics": "Diagnostics",
             "userJourney": "User Journey",
+            "understandingAndTuningMemory": "Understanding and Tuning Memory",
             "memory": "Memory",
             "liveDebugging": "Live Debugging",
             "poorPerformance": "Poor Performance",

@@ -75,7 +75,8 @@ main {
       dark:text-white;
   }
 
-  a,
+  /* link that isn't inside a heading */
+  a:not(h1 > a):not(h2 > a):not(h3 > a):not(h4 > a):not(h5 > a):not(h6 > a),
   .anchor {
     @apply max-xs:font-semibold
       text-green-600
@@ -93,6 +94,10 @@ main {
     &:has(code) {
       @apply max-xs:decoration-neutral-800
         dark:max-xs:decoration-neutral-200;
+
+      code {
+        @apply text-inherit;
+      }
     }
   }
 

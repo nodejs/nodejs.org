@@ -14,6 +14,9 @@ leaks is possible through retainers. As Node.js applications are usually
 multi-tenant, business critical, and long-running, providing an accessible and
 efficient way of finding a memory leak is essential.
 
+You can also fine-tune memory to get specific results. Check out
+[Understanding and Tuning Memory](/learn/diagnostics/memory/understanding-and-tuning-memory) for more details.
+
 ### Symptoms
 
 The user observes continuously increasing memory usage _(can be fast or slow,
