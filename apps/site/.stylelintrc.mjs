@@ -26,7 +26,7 @@ export default {
   plugins: [
     'stylelint-order',
     'stylelint-selector-bem-pattern',
-    '@node-core/ui-components/stylelint/one-mixin-per-line.mjs',
+    '@node-core/ui-components/stylelint/one-utility-class-per-line.mjs',
   ],
   rules: {
     // Enforces Element Class Names to be camelCase
@@ -49,6 +49,6 @@ export default {
     'import-notation': 'string',
     // Allow the `@apply` at rule as its part of Tailwind
     'at-rule-no-deprecated': [true, { ignoreAtRules: CUSTOM_AT_RULES }],
-    'nodejs/one-mixin-per-line': true,
+    'nodejs/one-utility-class-per-line': true,
   },
 };

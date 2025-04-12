@@ -187,14 +187,14 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 #### Guidelines when writing CSS
 
 - We use camelCase for defining CSS classes
-- We use Tailwind's `@apply` selector to apply Tailwind Tokens
+- We use Tailwind's `@apply` selector to apply Tailwind utility classes
   - We discourage the usage of any plain CSS styles and tokens, when in doubt ask for help
-  - We require that you define one Tailwind Token per line, just as shown on the example above, since this improves readability
+  - We require that you define one Tailwind utility class per line, just as shown on the example above, since this improves readability
 - Only write CSS within CSS Modules, avoid writing CSS within JavaScript files
 
 > \[!NOTE]\
 > Tailwind is already configured for this repository. You don't need to import any Tailwind module within your CSS module.\
-> You can apply Tailwind Tokens with Tailwind's `@apply` CSS rule. [Read more about applying Tailwind classes with `@apply`](https://tailwindcss.com/docs/functions-and-directives#apply).
+> You can apply Tailwind utility classes with Tailwind's `@apply` CSS rule. [Read more about applying Tailwind utility classes with `@apply`](https://tailwindcss.com/docs/functions-and-directives#apply).
 
 > \[!IMPORTANT]\
 > When using IDEs such as Visual Studio Code, we recommend installing the official [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)

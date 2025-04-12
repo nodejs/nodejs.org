@@ -7,13 +7,13 @@ const {
   utils: { report, ruleMessages },
 } = stylelint;
 
-const name = 'nodejs/one-mixin-per-line';
+const name = 'nodejs/one-utility-class-per-line';
 
 const messages = ruleMessages(name, {
-  className: tokens =>
-    `Each line should contain only one Tailwind token; "${tokens}"`,
-  spacing: tokens =>
-    `Each class used with @apply should be indented by 2 spaces on a new line; ${tokens}`,
+  className: classNames =>
+    `Each line should contain only one Tailwind utility class; "${classNames}"`,
+  spacing: classNames =>
+    `Each utility class used with @apply should be indented by 2 spaces on a new line; ${classNames}`,
 });
 
 const meta = {
