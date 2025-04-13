@@ -33,13 +33,17 @@ const generateWebsiteFeeds = ({ posts }) => {
 
       const blogFeedEntries = posts
         .filter(post => post.categories.includes(category))
-        .map(post => ({
-          id: post.slug,
-          title: post.title,
-          author: post.author,
-          date: new Date(post.date),
-          link: `${canonicalUrl}${post.slug}`,
-        }));
+        .map(post => {
+          const date = new Date(post.date);
+          return {
+            id: post.slug,
+            title: post.title,
+            author: post.author,
+            date,
+            link: `${canonicalUrl}${post.slug}`,
+            guid: `${post.slug}?${date.getTime()}`,
+          };
+        });
 
       blogFeedEntries.forEach(entry => feed.addItem(entry));
 
