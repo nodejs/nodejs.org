@@ -23,7 +23,11 @@ const ONLY_ALLOW_CAMEL_CASE_SELECTORS = [
 
 export default {
   extends: ['stylelint-config-standard'],
-  plugins: ['stylelint-order', 'stylelint-selector-bem-pattern'],
+  plugins: [
+    'stylelint-order',
+    'stylelint-selector-bem-pattern',
+    '@node-core/ui-components/stylelint/one-utility-class-per-line.mjs',
+  ],
   rules: {
     // Enforces Element Class Names to be camelCase
     'selector-class-pattern': ONLY_ALLOW_CAMEL_CASE_SELECTORS,
@@ -45,5 +49,6 @@ export default {
     'import-notation': 'string',
     // Allow the `@apply` at rule as its part of Tailwind
     'at-rule-no-deprecated': [true, { ignoreAtRules: CUSTOM_AT_RULES }],
+    'nodejs/one-utility-class-per-line': true,
   },
 };

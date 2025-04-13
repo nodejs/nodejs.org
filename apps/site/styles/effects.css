@@ -21,7 +21,7 @@
 
   & img {
     @apply h-auto
-    w-24
-    md:w-48;
+      w-24
+      md:w-48;
   }
 }

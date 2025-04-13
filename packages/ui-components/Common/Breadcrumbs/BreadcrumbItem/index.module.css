@@ -1,20 +1,29 @@
 @reference "../../../styles/index.css";
 
 .item {
-  @apply flex max-w-fit items-center gap-5 truncate text-sm font-medium;
+  @apply flex
+    max-w-fit
+    items-center
+    gap-5
+    truncate
+    text-sm
+    font-medium;
 
   &:last-child {
     @apply w-full;
   }
 
   a {
-    @apply shrink grow;
+    @apply shrink
+      grow;
   }
 
   &,
   > a,
   > a:hover {
-    @apply text-neutral-800 motion-safe:transition-colors dark:text-neutral-200;
+    @apply text-neutral-800
+      motion-safe:transition-colors
+      dark:text-neutral-200;
   }
 
   &.visuallyHidden {
@@ -22,6 +31,11 @@
   }
 
   .separator {
-    @apply size-4 max-w-fit shrink-0 grow text-neutral-600 dark:text-neutral-400;
+    @apply size-4
+      max-w-fit
+      shrink-0
+      grow
+      text-neutral-600
+      dark:text-neutral-400;
   }
 }

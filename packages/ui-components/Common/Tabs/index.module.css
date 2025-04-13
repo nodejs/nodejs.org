@@ -35,7 +35,7 @@
 
         .tabSecondaryLabel {
           @apply text-green-800
-          dark:text-green-600;
+            dark:text-green-600;
         }
       }
     }

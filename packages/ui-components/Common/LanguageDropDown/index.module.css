@@ -29,7 +29,8 @@
 
   > div {
     @apply max-h-80
-      w-48 overflow-y-auto;
+      w-48
+      overflow-y-auto;
   }
 }
 
@@ -47,5 +48,6 @@
 }
 
 .currentDropDown {
-  @apply bg-green-600 text-white;
+  @apply bg-green-600
+    text-white;
 }
