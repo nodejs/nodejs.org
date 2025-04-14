@@ -84,7 +84,6 @@ const nextConfig = {
       '@radix-ui/react-accessible-icon',
       '@radix-ui/react-dropdown-menu',
       '@radix-ui/react-label',
-      '@radix-ui/react-scroll-area',
       '@radix-ui/react-select',
       '@radix-ui/react-slot',
       '@radix-ui/react-tabs',
