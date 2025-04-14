@@ -5,11 +5,15 @@
         "links": {
           "trademarkPolicy": "商标政策",
           "privacyPolicy": "隐私政策",
+          "versionSupport": "版本支持",
           "codeOfConduct": "行为准则",
           "security": "安全政策"
         }
       },
       "navBar": {
+        "controls": {
+          "toggle": "切换导航菜单"
+        },
         "links": {
           "about": "关于",
           "download": "下载",
@@ -18,7 +22,8 @@
           "learn": "学习",
           "security": "安全",
           "certification": "认证",
-          "blog": "博客"
+          "blog": "博客",
+          "contribute": "贡献"
         }
       }
     },
@@ -37,6 +42,8 @@
             "nodejsWithWebassembly": "使用WebAssembly的Node.js",
             "debugging": "调试 Node.js",
             "profiling": "分析 Node.js 应用程序",
+            "fetch": "使用 Node.js 获取数据",
+            "websocket": "使用 Node.js 的 WebSocket 客户端",
             "securityBestPractices": "安全最佳实践"
           }
         },
@@ -46,7 +53,8 @@
             "introduction": "TypeScript 简介",
             "transpile": "使用转译技术运行 TypeScript 代码",
             "run": "使用运行程序运行 TypeScript",
-            "runNatively": "以原生方式运行 TypeScript"
+            "runNatively": "以原生方式运行 TypeScript",
+            "publishingTSPackage": "发布一个 TypeScript 包"
           }
         },
         "asynchronousWork": {
@@ -88,9 +96,11 @@
         "modules": {
           "links": {
             "modules": "模块",
+            "publishingAPackage": "发布包",
             "publishingNodeApiModules": "如何发布一个 Node-API 包",
             "anatomyOfAnHttpTransaction": "HTTP 事务剖析",
             "abiStability": "ABI 稳定性",
+            "howToUseStreams": "如何使用流",
             "backpressuringInStreams": "流处理中的反压机制"
           }
         },
@@ -109,7 +119,8 @@
             "testRunner": "测试运行程序",
             "introduction": "了解 Node.js 测试运行程序",
             "usingTestRunner": "使用 Node.js 测试运行程序",
-            "mocking": "在测试中进行模拟"
+            "mocking": "在测试中进行模拟",
+            "collectingCodeCoverage": "在 Node.js 中收集代码覆盖率"
           }
         }
       },
@@ -133,32 +144,28 @@
         }
       }
     },
-    "downloadList": {
-      "links": {
-        "previousReleases": "Node.js 版本",
-        "packageManager": "使用包管理器安装 Node.js",
-        "shaSums": {
-          "title": "发布文件的签名SHASUMS",
-          "howToVerify": " （如何验证） "
-        },
-        "allDownloads": "所有下载选项",
-        "nightlyReleases": "每日构建",
-        "unofficialBuilds": "非官方构建",
-        "buildingFromSource": "在支持的平台上从源代码构建 Node.js",
-        "installingOnLinux": "通过二进制文件安装 Node.js",
-        "installingOnWsl": "在适用于 Linux 的 Windows 子系统（WSL）上安装 Node. js"
-      }
-    },
     "downloadReleasesTable": {
-      "changelog": "更新日志",
-      "releases": "发行版",
-      "docs": "文档"
+      "version": "Node.js",
+      "nApiVersion": "N-API",
+      "npmVersion": "npm",
+      "codename": "代号",
+      "releaseDate": "发布日期",
+      "actions": {
+        "changelog": "更新日志",
+        "releases": "发行版",
+        "docs": "文档"
+      }
     },
     "pagination": {
       "next": "下一页",
       "previous": "上一页"
     },
     "common": {
+      "alertBox": {
+        "info": "提示",
+        "warning": "警告",
+        "danger": "危险"
+      },
       "breadcrumbs": {
         "navigateToHome": "导航到首页"
       },
@@ -188,11 +195,6 @@
         "label": "切换深色模式"
       }
     },
-    "mdx": {
-      "upcomingEvents": {
-        "defaultTitle": "暂无即将开始的活动"
-      }
-    },
     "metabar": {
       "lastUpdated": "最后更新",
       "readingTime": "阅读时间",
@@ -204,32 +206,9 @@
       "viewAs": "查看为",
       "tableOfContents": "目录"
     },
-    "downloads": {
-      "changelogModal": {
-        "startContributing": "开始贡献"
-      }
-    },
     "search": {
       "searchBox": {
         "placeholder": "请开始输入..."
-      },
-      "seeAll": {
-        "text": "查看所有 {count} 个结果"
-      },
-      "searchError": {
-        "text": "分享时出现错误。请稍后重试。"
-      },
-      "poweredBy": {
-        "text": "Powered by"
-      },
-      "noResults": {
-        "text": "未找到关于 \"{query}\" 的结果。"
-      },
-      "emptyState": {
-        "text": "在此处搜索..."
-      },
-      "searchPage": {
-        "title": "正在搜索: {query}"
       }
     },
     "blog": {
@@ -280,49 +259,40 @@
       "backToHome": "回到首页"
     },
     "download": {
-      "selectCategory": "分类",
-      "categories": {
-        "prebuilt-installer": "预构建安装程序",
-        "prebuilt-binaries": "预构建二进制文件",
-        "package-manager": "包管理器",
-        "source-code": "源代码"
-      },
       "buttons": {
-        "prebuilt": "下载 Node.js {version}",
-        "source": "下载 Node.js {version} 源代码"
+        "installer": "{os} 安装程序(.{extension})",
+        "binary": "独立文件(.{extension})"
       },
       "dropdown": {
-        "bitness": "位",
+        "platform": "平台",
         "os": "操作系统",
         "version": "版本",
-        "platform": "平台"
+        "installMethod": "选择安装方法",
+        "packageManager": "包管理器",
+        "unknown": "未知",
+        "platformGroups": {
+          "official": "推荐（官方）",
+          "unofficial": "社区（非官方）"
+        }
       },
       "codeBox": {
-        "fnmEnvSetup": "配置 fnm 环境",
-        "systemManagerWarning": "不是一个 Node.js 包管理器。请确保您已安装好 {packageManager}。",
-        "communityWarning": "包管理器与它们的安装脚本不由 Node.js 项目维护。",
-        "communityWarningReport": "如果您遇到问题，请联系包管理器的维护者。",
-        "installsNvm": "安装 nvm (Node 版本管理器)",
-        "downloadAndInstallNodejsRestartTerminal": "下载并安装 Node.js（可能需要重启终端）",
-        "verifiesRightNodejsVersion": "验证环境中是否存在正确的 Node.js 版本",
-        "verifiesRightNpmVersion": "验证环境中是否存在正确的 npm 版本",
-        "shouldPrint": "应该打印 `{version}`",
-        "installsFnm": "安装 fnm (快速 Node 管理器)",
-        "downloadAndInstallNodejs": "下载并安装 Node.js",
-        "activateFNM": "激活 fnm",
-        "noteWithColon": "注意：",
-        "dockerIsNotNodejsPackageManager": "Docker 不是 Node.js 包管理器。",
-        "PleaseEndureAlreadyInstallOnSystem": "请确保它已在您的系统上安装。",
-        "dockerInstructions": "请按照官方说明访问 https://docs.docker.com/desktop/",
-        "dockerImagesLink": "Docker 镜像可在 https://github.com/nodejs/docker-node/ 官方提供。",
-        "pullsNodejsDockerImage": "拉取 Node.js Docker 镜像",
-        "homebrewIsNotNodejsPackageManager": "Homebrew 不是 Node.js 包管理器。",
-        "homebrewInstructions": "请按照官方说明访问 https://brew.sh/",
-        "homebrewSupportsIntallingMajorNodejsVersion": "Homebrew 仅支持安装主要的 Node.js 版本，可能不支持来自 {version} 版本线的最新 Node.js 版本。",
-        "chocolateyIsNotNodejsPackageManager": "Chocolatey 不是 Node.js 包管理器。",
-        "chocolateyInstructions": "请按照官方说明访问 https://chocolatey.org/",
-        "chocolateyNotMaintanedByNodejs": "Chocolatey 并非由 Node.js 项目官方维护，可能不支持 {version} 版的 Node.js"
+        "unsupportedVersionWarning": "该版本已停止维护。请使用当前支持的版本。<link>了解 EOL.</link>",
+        "communityPlatformInfo": "涉及社区软件的安装方法由维护该软件的团队提供支持。",
+        "externalSupportInfo": "如果遇到任何问题，请访问 <link>{platform}的网站</link>",
+        "noScriptDetected": "本页面需要 JavaScript。您可以直接访问<link>发布页面</link>在无需 JavaScript 的条件下下载 Node.js。",
+        "platformInfo": {
+          "default": "Node.js 项目不维护 {platform} 及其安装脚本。",
+          "nvm": "\"nvm\" 是一个跨平台的 Node.js 版本管理器。",
+          "fnm": "\"fnm\" 是一个跨平台的 Node.js 版本管理器。",
+          "brew": "Homebrew 是一款适用于 macOS 和 Linux 的软件包管理器。",
+          "choco": "Chocolatey 是一款 Windows 软件包管理器。",
+          "devbox": "Devbox 可创建隔离、可重现的开发环境。",
+          "docker": "Docker 是一个容器化平台。",
+          "n": "\"n\" 是一个跨平台的 Node.js 版本管理器。",
+          "volta": "\"Volta\" 是一个跨平台的 Node.js 版本管理器。"
+        }
       }
-    }
+    },
+    "logo": "Node.js 徽标"
   }
 }
