@@ -9,6 +9,11 @@ import { siteConfig } from '../../next.json.mjs';
 // with English locale (which is where the website feeds run)
 const canonicalUrl = `${BASE_URL}${BASE_PATH}/en`;
 
+// This is April 16th, 2025, which is around the time that https://github.com/nodejs/nodejs.org/pull/7648
+// was merged. This ensures that future article edits are properly timestamped, while also preventing the
+// currently-published article GUIDs from changing
+const guidTimestampStartDate = 1744662623000;
+
 /**
  * This method generates RSS website feeds based on the current website configuration
  * and the current blog data that is available
@@ -35,13 +40,18 @@ const generateWebsiteFeeds = ({ posts }) => {
         .filter(post => post.categories.includes(category))
         .map(post => {
           const date = new Date(post.date);
+          const time = date.getTime();
+
           return {
             id: post.slug,
             title: post.title,
             author: post.author,
             date,
             link: `${canonicalUrl}${post.slug}`,
-            guid: `${post.slug}?${date.getTime()}`,
+            guid:
+              time > guidTimestampStartDate
+                ? `${post.slug}?${date.getTime()}`
+                : post.slug,
           };
         });
 
