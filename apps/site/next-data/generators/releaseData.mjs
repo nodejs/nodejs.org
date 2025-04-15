@@ -77,7 +77,9 @@ const generateReleaseData = async () => {
       v8: latestVersion.dependencies.v8 || '',
       releaseDate: latestVersion.releaseDate || '',
       modules: latestVersion.modules.version || '',
-      minorVersions: major.releases,
+      minorVersions: Object.entries(major.releases).map(
+        ([, release]) => release.semver.raw
+      ),
     };
   });
 };
