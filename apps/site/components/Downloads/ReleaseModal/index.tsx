@@ -7,7 +7,7 @@ import { BASE_CHANGELOG_URL } from '@/next.constants.mjs';
 import type { NodeRelease } from '@/types';
 import { getNodeApiLink } from '@/util/getNodeApiLink';
 
-import { MinorReleasesTable } from './ReleaseModal/MinorReleasesTable';
+import { MinorReleasesTable } from './MinorReleasesTable';
 
 type ReleaseModalProps = {
   isOpen: boolean;
