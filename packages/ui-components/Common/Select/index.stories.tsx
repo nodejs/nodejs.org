@@ -21,6 +21,13 @@ export const WithoutLabel: Story = {
   },
 };
 
+export const WithScrollButtons: Story = {
+  args: {
+    values: Array.from({ length: 100 }, (_, i) => `Item ${i}`),
+    defaultValue: 'Item 50',
+  },
+};
+
 export const DropdownLabel: Story = {
   args: {
     values: [
