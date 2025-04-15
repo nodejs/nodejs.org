@@ -148,14 +148,21 @@
     "downloadReleasesTable": {
       "version": "Node.js",
       "nApiVersion": "N-API",
-      "npmVersion": "npm",
       "codename": "Codename",
       "releaseDate": "Released at",
+      "firstReleased": "First released",
+      "lastUpdated": "Last Updated",
+      "status": "Status",
+      "details": "Details",
       "actions": {
         "changelog": "Changelog",
         "releases": "Releases",
         "docs": "Docs"
       }
+    },
+    "releaseModal": {
+      "releaseAnnouncement": "Release Announcement",
+      "apiDocs": "API Docs"
     },
     "pagination": {
       "next": "Next",

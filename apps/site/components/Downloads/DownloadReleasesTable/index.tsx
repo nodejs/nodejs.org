@@ -1,9 +1,8 @@
 import { getTranslations } from 'next-intl/server';
 import { type FC } from 'react';
 
+import DetailsButton from '@/components/Downloads/DownloadReleasesTable/DetailsButton';
 import getReleaseData from '@/next-data/releaseData';
-
-import DetailsButton from './DetailsButton';
 
 // This is a React Async Server Component
 // Note that Hooks cannot be used in a RSC async component
@@ -20,9 +19,9 @@ const DownloadReleasesTable: FC = async () => {
           <th>{t('components.downloadReleasesTable.version')}</th>
           <th>{t('components.downloadReleasesTable.nApiVersion')}</th>
           <th>{t('components.downloadReleasesTable.codename')}</th>
-          <th> First released</th>
-          <th>Latest Update</th>
-          <th>Status</th>
+          <th>{t('components.downloadReleasesTable.firstReleased')}</th>
+          <th>{t('components.downloadReleasesTable.lastUpdated')}</th>
+          <th>{t('components.downloadReleasesTable.status')}</th>
           <th></th>
         </tr>
       </thead>
@@ -38,7 +37,6 @@ const DownloadReleasesTable: FC = async () => {
             <td data-label="Date">
               <time>{release.releaseDate}</time>
             </td>
-            {/* <td data-label="npm">v{release.npm}</td> */}
             <td data-label="Status">{release.status}</td>
             <td className="download-table-last">
               <DetailsButton versionData={release} />

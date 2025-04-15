@@ -1,8 +1,13 @@
 import Modal from '@node-core/ui-components/Common/Modal';
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import LinkWithArrow from '@/components/LinkWithArrow';
+import { BASE_CHANGELOG_URL } from '@/next.constants.mjs';
 import type { NodeRelease } from '@/types';
+import { getNodeApiLink } from '@/util/getNodeApiLink';
+
+import { MinorReleasesTable } from './ReleaseModal/MinorReleasesTable';
 
 type ReleaseModalProps = {
   isOpen: boolean;
@@ -15,6 +20,8 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
   closeModal,
   release,
 }) => {
+  const t = useTranslations('components.releaseModal');
+
   return (
     <Modal
       heading={`Node.js ${release.major} Release`}
@@ -26,43 +33,25 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
         <LinkWithArrow
           href={`/blog/announcements/v${release.major}-release-announce`}
         >
-          Release Announcement
+          {t('releaseAnnouncement')}
         </LinkWithArrow>
       )}
 
       <LinkWithArrow
-        href={`https://nodejs.org/docs/latest-v${release.major}.x/api/index.html`}
+        href={`https://nodejs.org/download/release/${release.versionWithPrefix}/`}
       >
-        API Docs
+        {t('components.downloadReleasesTable.actions.releases')}
       </LinkWithArrow>
 
-      <h1>Minor</h1>
+      <LinkWithArrow href={`${BASE_CHANGELOG_URL}${release.version}`}>
+        {t('components.downloadReleasesTable.actions.changelog')}
+      </LinkWithArrow>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Version</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {release.minorVersions.map(release => (
-            <tr key={release}>
-              <td>{release}</td>
-              <td>
-                <LinkWithArrow href={`/blog/release/v${release}#commits`}>
-                  View Release
-                </LinkWithArrow>
-                <LinkWithArrow
-                  href={`https://nodejs.org/docs/v${release}/api/`}
-                >
-                  API Docs
-                </LinkWithArrow>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <LinkWithArrow href={getNodeApiLink(release.versionWithPrefix)}>
+        {t('components.downloadReleasesTable.actions.docs')}
+      </LinkWithArrow>
+
+      <MinorReleasesTable releases={release.minorVersions} />
     </Modal>
   );
 };

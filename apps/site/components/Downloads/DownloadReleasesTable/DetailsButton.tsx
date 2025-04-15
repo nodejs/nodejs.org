@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { use, type FC } from 'react';
 
 import LinkWithArrow from '@/components/LinkWithArrow';
@@ -11,11 +12,13 @@ type DetailsButtonProps = {
 };
 
 const DetailsButton: FC<DetailsButtonProps> = ({ versionData }) => {
+  const t = useTranslations('components.downloadReleasesTable');
+
   const { openModal } = use(ReleaseModalContext);
 
   return (
     <LinkWithArrow onClick={() => openModal(versionData)}>
-      Details
+      {t('details')}
     </LinkWithArrow>
   );
 };
