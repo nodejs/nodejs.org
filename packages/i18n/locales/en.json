@@ -153,16 +153,16 @@
       "firstReleased": "First released",
       "lastUpdated": "Last Updated",
       "status": "Status",
-      "details": "Details",
+      "details": "Details"
+    },
+    "releaseModal": {
+      "releaseAnnouncement": "Release Announcement",
+      "apiDocs": "API Docs",
       "actions": {
         "changelog": "Changelog",
         "releases": "Releases",
         "docs": "Docs"
       }
-    },
-    "releaseModal": {
-      "releaseAnnouncement": "Release Announcement",
-      "apiDocs": "API Docs"
     },
     "pagination": {
       "next": "Next",
