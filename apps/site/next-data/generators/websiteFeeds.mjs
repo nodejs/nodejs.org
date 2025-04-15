@@ -12,7 +12,7 @@ const canonicalUrl = `${BASE_URL}${BASE_PATH}/en`;
 // This is April 16th, 2025, which is around the time that https://github.com/nodejs/nodejs.org/pull/7648
 // was merged. This ensures that future article edits are properly timestamped, while also preventing the
 // currently-published article GUIDs from changing
-const guidTimestampStartDate = 1744662623000;
+const guidTimestampStartDate = 1744761600000;
 
 /**
  * This method generates RSS website feeds based on the current website configuration
