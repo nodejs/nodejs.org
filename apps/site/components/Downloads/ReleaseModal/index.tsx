@@ -29,27 +29,29 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
       open={isOpen}
       onOpenChange={closeModal}
     >
-      {release.status !== 'Current' && (
+      <div className="flex flex-row gap-2">
+        {release.status !== 'Current' && (
+          <LinkWithArrow
+            href={`/blog/announcements/v${release.major}-release-announce`}
+          >
+            {t('releaseAnnouncement')}
+          </LinkWithArrow>
+        )}
+
         <LinkWithArrow
-          href={`/blog/announcements/v${release.major}-release-announce`}
+          href={`https://nodejs.org/download/release/${release.versionWithPrefix}/`}
         >
-          {t('releaseAnnouncement')}
+          {t('actions.releases')}
         </LinkWithArrow>
-      )}
 
-      <LinkWithArrow
-        href={`https://nodejs.org/download/release/${release.versionWithPrefix}/`}
-      >
-        {t('components.downloadReleasesTable.actions.releases')}
-      </LinkWithArrow>
+        <LinkWithArrow href={`${BASE_CHANGELOG_URL}${release.version}`}>
+          {t('actions.changelog')}
+        </LinkWithArrow>
 
-      <LinkWithArrow href={`${BASE_CHANGELOG_URL}${release.version}`}>
-        {t('components.downloadReleasesTable.actions.changelog')}
-      </LinkWithArrow>
-
-      <LinkWithArrow href={getNodeApiLink(release.versionWithPrefix)}>
-        {t('components.downloadReleasesTable.actions.docs')}
-      </LinkWithArrow>
+        <LinkWithArrow href={getNodeApiLink(release.versionWithPrefix)}>
+          {t('actions.docs')}
+        </LinkWithArrow>
+      </div>
 
       <MinorReleasesTable releases={release.minorVersions} />
     </Modal>
