@@ -10,6 +10,8 @@ authors: benhalverson, LankyMoose
 
 [Undici](https://undici.nodejs.org) is an HTTP client library that powers the fetch API in Node.js. It was written from scratch and does not rely on the built-in HTTP client in Node.js. It includes a number of features that make it a good choice for high-performance applications.
 
+For information on Undici's specification compliance, see the [Undici documentation](https://undici.nodejs.org/#/?id=specification-compliance-1).
+
 ## Basic GET Usage
 
 ```js
@@ -65,7 +67,7 @@ main().catch(console.error);
 
 Undici allows you to customize the Fetch API by providing options to the `fetch` function. For example, you can set custom headers, set the request method, and set the request body. Here is an example of how you can customize the Fetch API with Undici:
 
-The [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) function takes two arguments: the URL to fetch and an options object. The options object is the [Request](https://undici.nodejs.org/#/docs/api/Dispatcher?id=parameter-requestoptions) object that you can use to customize the request. The function returns a [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) that resolves to a [Response](https://undici.nodejs.org/#/docs/api/Dispatcher?id=parameter-responsedata) object. One difference between the Fetch API in the browser and the Fetch API in Node.js is that the Node.js version does not support
+The [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) function takes two arguments: the URL to fetch and an options object. The options object is the [Request](https://undici.nodejs.org/#/docs/api/Dispatcher?id=parameter-requestoptions) object that you can use to customize the request. The function returns a [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) that resolves to a [Response](https://undici.nodejs.org/#/docs/api/Dispatcher?id=parameter-responsedata) object.
 
 In the following example, we are sending a POST request to the Ollama API with a JSON payload. Ollama is a cli tool that allows you to run LLM's (Large Language Models) on your local machine. You can download it [here](https://ollama.com/download)
 
