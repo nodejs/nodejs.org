@@ -74,7 +74,7 @@ describe('indentClassNames', () => {
 
     assert.deepEqual(result, {
       ...result,
-      params: 'p-4\n    mb-2'
+      params: 'p-4\n    mb-2',
     });
   });
 });
