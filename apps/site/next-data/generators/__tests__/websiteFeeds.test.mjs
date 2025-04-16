@@ -26,7 +26,7 @@ describe('generateWebsiteFeeds', () => {
           slug: '/post-1',
           title: 'Post 1',
           author: 'Author 1',
-          date: '2024-02-18',
+          date: '2025-04-18',
           categories: ['all'],
         },
       ],
@@ -36,6 +36,7 @@ describe('generateWebsiteFeeds', () => {
     expect(result.size).toBe(3);
 
     const blogFeed = result.get('blog.xml');
+    const expectedDate = new Date('2025-04-18');
 
     expect(blogFeed.options.id).toBe('blog.xml');
     expect(blogFeed.options.title).toBe('Node.js Blog');
@@ -45,9 +46,10 @@ describe('generateWebsiteFeeds', () => {
     expect(blogFeed.items.length).toBe(1);
     const feedItem = blogFeed.items[0];
     expect(feedItem.id).toBe('/post-1');
+    expect(feedItem.guid).toBe(`/post-1?${expectedDate.getTime()}`);
     expect(feedItem.title).toBe('Post 1');
     expect(feedItem.author).toBe('Author 1');
-    expect(feedItem.date).toEqual(new Date('2024-02-18'));
+    expect(feedItem.date).toEqual(expectedDate);
     expect(feedItem.link).toBe('https://nodejs.org/en/post-1');
   });
 });
