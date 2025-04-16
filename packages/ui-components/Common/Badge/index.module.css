@@ -1,0 +1,28 @@
+@reference "../../styles/index.css";
+
+.badge {
+  @apply rounded-full
+    border
+    px-2.5
+    py-0.5
+    text-center
+    text-white;
+
+  &.default {
+    @apply border-green-200
+          bg-green-600
+          dark:border-green-600;
+  }
+
+  &.error {
+    @apply border-danger-200
+    bg-danger-600
+    dark:border-danger-600;
+  }
+
+  &.warning {
+    @apply border-warning-200
+    bg-warning-600
+    dark:border-warning-600;
+  }
+}

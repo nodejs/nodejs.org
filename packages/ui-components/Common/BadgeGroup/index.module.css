@@ -17,13 +17,7 @@
   }
 
   .badge {
-    @apply mr-2
-      rounded-full
-      border
-      px-2.5
-      py-0.5
-      text-center
-      text-white;
+    @apply mr-2;
   }
 
   .message {
@@ -39,12 +33,6 @@
     .icon {
       @apply text-green-500
         dark:text-green-300;
-    }
-
-    .badge {
-      @apply border-green-200
-        bg-green-600
-        dark:border-green-600;
     }
 
     .message {
@@ -64,12 +52,6 @@
         dark:text-danger-300;
     }
 
-    .badge {
-      @apply border-danger-200
-        bg-danger-600
-        dark:border-danger-600;
-    }
-
     .message {
       @apply text-danger-700
         dark:text-danger-300;
@@ -85,12 +67,6 @@
     .icon {
       @apply text-warning-500
         dark:text-warning-300;
-    }
-
-    .badge {
-      @apply border-warning-200
-        bg-warning-600
-        dark:border-warning-600;
     }
 
     .message {
