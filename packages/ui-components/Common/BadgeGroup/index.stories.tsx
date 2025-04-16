@@ -1,9 +1,9 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import Badge from '@node-core/ui-components/Common/Badge';
+import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 
-type Story = StoryObj<typeof Badge>;
-type Meta = MetaObj<typeof Badge>;
+type Story = StoryObj<typeof BadgeGroup>;
+type Meta = MetaObj<typeof BadgeGroup>;
 
 export const Default: Story = {
   args: {
@@ -32,4 +32,4 @@ export const Warning: Story = {
   },
 };
 
-export default { component: Badge } as Meta;
+export default { component: BadgeGroup } as Meta;

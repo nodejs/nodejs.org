@@ -5,13 +5,13 @@ import type { LinkLike } from '@node-core/ui-components/types';
 
 import styles from './index.module.css';
 
-type BadgeProps = {
+type BadgeGroupProps = {
   kind?: 'default' | 'warning' | 'error';
   badgeText?: string;
   as: LinkLike;
 } & ComponentProps<LinkLike>;
 
-const Badge: FC<PropsWithChildren<BadgeProps>> = ({
+const BadgeGroup: FC<PropsWithChildren<BadgeGroupProps>> = ({
   kind = 'default',
   badgeText,
   children,
@@ -25,4 +25,4 @@ const Badge: FC<PropsWithChildren<BadgeProps>> = ({
   </Component>
 );
 
-export default Badge;
+export default BadgeGroup;
