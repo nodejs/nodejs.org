@@ -9,7 +9,7 @@
 name: Review Dependencies
 
 on:
-  pull_request_target:
+  pull_request:
     branches:
       - main
 
