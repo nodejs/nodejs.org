@@ -17,7 +17,10 @@ const DetailsButton: FC<DetailsButtonProps> = ({ versionData }) => {
   const { openModal } = use(ReleaseModalContext);
 
   return (
-    <LinkWithArrow href="#" onClick={() => openModal(versionData)}>
+    <LinkWithArrow
+      className="cursor-pointer"
+      onClick={() => openModal(versionData)}
+    >
       {t('details')}
     </LinkWithArrow>
   );
