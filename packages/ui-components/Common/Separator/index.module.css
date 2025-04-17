@@ -5,12 +5,12 @@
     bg-neutral-800;
 
   &.horizontal {
-    @apply h-[1px]
+    @apply h-px
         w-full;
   }
 
   &.vertical {
     @apply h-full
-        w-[1px];
+        w-px;
   }
 }

@@ -1,7 +1,8 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { use, type FC } from 'react';
+import type { FC } from 'react';
+import { use } from 'react';
 
 import LinkWithArrow from '@/components/LinkWithArrow';
 import { ReleaseModalContext } from '@/providers/releaseModalProvider';

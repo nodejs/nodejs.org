@@ -1,4 +1,4 @@
-/* eslint-disable import-x/order */
+import AlertBox from '@node-core/ui-components/Common/AlertBox';
 import Modal from '@node-core/ui-components/Common/Modal';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
@@ -7,8 +7,6 @@ import { MinorReleasesTable } from '@/components/Downloads/MinorReleasesTable';
 import LinkWithArrow from '@/components/LinkWithArrow';
 import type { NodeRelease } from '@/types';
 import { getReleaseAnnounceLink } from '@/util/getReleaseAnnounceLink';
-
-import AlertBox from '@node-core/ui-components/Common/AlertBox';
 
 type ReleaseModalProps = {
   isOpen: boolean;

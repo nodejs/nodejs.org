@@ -1,6 +1,6 @@
 import Badge from '@node-core/ui-components/Common/Badge';
 import { getTranslations } from 'next-intl/server';
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import DetailsButton from '@/components/Downloads/DownloadReleasesTable/DetailsButton';
 import getReleaseData from '@/next-data/releaseData';
