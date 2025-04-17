@@ -16,7 +16,6 @@ on:
     types:
       - labeled
   merge_group:
-  workflow_dispatch:
 
 defaults:
   run:
@@ -37,7 +36,7 @@ jobs:
     # introduce changes to the Storybook. Hence, we skip running these on Crowdin PRs and Dependabot PRs
     # sha reference has no stable git tag reference or URL. see https://github.com/chromaui/chromatic-cli/issues/797
     if: |
-      github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+      github.event_name == 'push' ||
       (
         github.event_name == 'pull_request_target' &&
         startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
