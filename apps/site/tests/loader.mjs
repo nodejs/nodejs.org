@@ -1,33 +1,34 @@
-const mockBaseUrl = new URL('mocks/', import.meta.url);
-
+// Map of module specifier prefixes to their corresponding mock files
 const mockEntries = [
-  ['next-intl', 'next-intl.jsx'],
-  ['next-router', 'next-router.mjs'],
+  ['next-intl', new URL('mocks/next-intl.jsx', import.meta.url).href],
+  ['next-router', new URL('mocks/next-intl.jsx', import.meta.url).href],
 ];
 
+/**
+ * Returns the corresponding mock file for a given module specifier, if matched.
+ *
+ * @param {string} specifier - Module name or path being imported.
+ * @returns {string|null} - File name of the mock module or null if no match.
+ */
 function getMockFile(specifier) {
-  for (let i = 0; i < mockEntries.length; i++) {
-    const [prefix, file] = mockEntries[i];
-    const len = prefix.length;
-    if (
-      specifier === prefix ||
-      (specifier.startsWith(prefix) && specifier[len] === '/')
-    ) {
-      return file;
-    }
-  }
-  return null;
+  const entry = mockEntries.find(
+    ([prefix]) => specifier === prefix || specifier.startsWith(prefix + '/')
+  );
+  return entry?.[1] ?? null;
 }
 
 /**
+ * Node.js custom module resolution hook to inject mock modules.
+ *
  * @type {import('node:module').ResolveHook}
  */
 export async function resolve(specifier, ctx, nextResolve) {
   const mockFile = getMockFile(specifier);
+
   if (mockFile) {
     return {
       format: 'module',
-      url: new URL(mockFile, mockBaseUrl).href,
+      url: mockFile,
       shortCircuit: true,
     };
   }
