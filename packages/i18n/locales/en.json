@@ -158,7 +158,8 @@
     "releaseModal": {
       "title": "Node.js v{version} release",
       "minorVersions": "Minor versions",
-      "releaseAnnouncement": "Release Announcement"
+      "releaseAnnouncement": "Release Announcement",
+      "unsupportedVersionWarning": "This version is out of maintenance. Please use a currently supported version."
     },
     "minorReleasesTable": {
       "version": "Version",

@@ -40,7 +40,7 @@ const DownloadReleasesTable: FC = async () => {
             </td>
             <td data-label="Status">
               <Badge
-                kind={release.status === 'End-of-life' ? 'error' : 'default'}
+                kind={release.status === 'End-of-life' ? 'warning' : 'default'}
               >
                 {release.status}
               </Badge>
