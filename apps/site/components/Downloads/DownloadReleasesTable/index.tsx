@@ -41,6 +41,7 @@ const DownloadReleasesTable: FC = async () => {
             <td data-label="Status">
               <Badge
                 kind={release.status === 'End-of-life' ? 'warning' : 'default'}
+                size="small"
               >
                 {release.status}
               </Badge>

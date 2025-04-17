@@ -3,10 +3,20 @@
 .badge {
   @apply rounded-full
     border
-    px-2.5
-    py-0.5
     text-center
     text-white;
+
+  &.small {
+    @apply px-1.5
+      py-0.5
+      text-xs;
+  }
+
+  &.medium {
+    @apply px-2.5
+      py-0.5
+      text-base;
+  }
 
   &.default {
     @apply border-green-200

@@ -23,4 +23,16 @@ export const Warning: Story = {
   },
 };
 
+export const Small: Story = {
+  args: {
+    size: 'small',
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    size: 'medium',
+  },
+};
+
 export default { component: Badge, args: { children: 'Badge' } } as Meta;
