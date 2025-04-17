@@ -23,19 +23,19 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
 }) => {
   const t = useTranslations();
 
-  const modalHeading = t('components.releaseModal.title', {
+  const modalHeadingKey = release.codename
+    ? 'components.releaseModal.title'
+    : 'components.releaseModal.titleWithoutCodename';
+
+  const modalHeading = t(modalHeadingKey, {
     version: release.major,
+    codename: release.codename ?? '',
   });
 
   const releaseAnnounceLink = getReleaseAnnounceLink(release);
 
   return (
-    <Modal
-      open={isOpen}
-      onOpenChange={closeModal}
-      heading={modalHeading}
-      subheading={release.codename}
-    >
+    <Modal open={isOpen} onOpenChange={closeModal} heading={modalHeading}>
       {releaseAnnounceLink && (
         <LinkWithArrow href={releaseAnnounceLink}>
           {t('components.releaseModal.releaseAnnouncement')}
