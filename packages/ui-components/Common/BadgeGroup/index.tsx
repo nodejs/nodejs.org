@@ -6,8 +6,10 @@ import type { LinkLike } from '@node-core/ui-components/types';
 
 import styles from './index.module.css';
 
+type BadgeGroupKind = 'default' | 'warning' | 'error';
+
 type BadgeGroupProps = {
-  kind?: 'default' | 'warning' | 'error';
+  kind?: BadgeGroupKind;
   badgeText?: string;
   as: LinkLike;
 } & ComponentProps<LinkLike>;

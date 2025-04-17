@@ -3,8 +3,10 @@ import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';
 
+type BadgeKind = 'default' | 'warning' | 'error';
+
 type BadgeProps = HTMLAttributes<HTMLSpanElement> & {
-  kind?: 'default' | 'warning' | 'error';
+  kind?: BadgeKind;
 };
 
 const Badge: FC<PropsWithChildren<BadgeProps>> = ({
