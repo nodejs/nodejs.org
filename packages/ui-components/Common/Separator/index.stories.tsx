@@ -17,4 +17,16 @@ export const Vertical: Story = {
   },
 };
 
-export default { component: Separator } as Meta;
+export default {
+  component: Separator,
+  parameters: {
+    layout: 'centered',
+  },
+  decorators: [
+    Story => (
+      <div className="size-32">
+        <Story />
+      </div>
+    ),
+  ],
+} as Meta;
