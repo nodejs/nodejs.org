@@ -1,3 +1,6 @@
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
+
 import { getNodeApiLink } from '@/util/getNodeApiLink';
 
 describe('getNodeApiLink', () => {
@@ -7,12 +10,12 @@ describe('getNodeApiLink', () => {
 
     const result = getNodeApiLink(version);
 
-    expect(result).toBe(expectedLink);
+    assert.equal(result, expectedLink);
   });
 
   it('should return the correct URL for versions >=0.3.1 and <0.5.1', () => {
     const url = getNodeApiLink('v0.4.10');
-    expect(url).toContain('/api/');
+    assert.ok(url.includes('/api/'));
   });
 
   it('should return the correct API link for versions >=0.1.14 and <0.3.1', () => {
@@ -21,7 +24,7 @@ describe('getNodeApiLink', () => {
 
     const result = getNodeApiLink(version);
 
-    expect(result).toBe(expectedLink);
+    assert.equal(result, expectedLink);
   });
 
   it('should return the correct API link for versions >=1.0.0 and <4.0.0', () => {
@@ -30,12 +33,12 @@ describe('getNodeApiLink', () => {
 
     const result = getNodeApiLink(version);
 
-    expect(result).toBe(expectedLink);
+    assert.equal(result, expectedLink);
   });
 
   it('should form the correct URL for versions >=1.0.0 and <4.0.0', () => {
     const url = getNodeApiLink('v1.2.3');
-    expect(url).toContain('iojs.org/dist/v1.2.3/docs/api/');
+    assert.ok(url.includes('iojs.org/dist/v1.2.3/docs/api/'));
   });
 
   it('should return the correct API link for other versions', () => {
@@ -44,6 +47,6 @@ describe('getNodeApiLink', () => {
 
     const result = getNodeApiLink(version);
 
-    expect(result).toBe(expectedLink);
+    assert.equal(result, expectedLink);
   });
 });

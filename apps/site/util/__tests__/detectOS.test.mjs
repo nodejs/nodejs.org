@@ -1,3 +1,6 @@
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
+
 import { detectOsInUserAgent, detectOS } from '@/util/detectOS';
 
 const userAgentTestCases = [
@@ -27,26 +30,25 @@ const userAgentTestCases = [
 ];
 
 describe('detectOsInUserAgent', () => {
-  it.each(userAgentTestCases)(
-    'should return %s for userAgent %s',
-    (userAgent, expected) => {
-      expect(detectOsInUserAgent(userAgent)).toBe(expected);
-    }
-  );
+  for (const [userAgent, expected] of userAgentTestCases) {
+    it(`should return ${expected} for userAgent ${userAgent}`, () => {
+      assert.equal(detectOsInUserAgent(userAgent), expected);
+    });
+  }
 
   it('should return OTHER if no match is found', () => {
     const result = detectOsInUserAgent('no-match');
-    expect(result).toBe('OTHER');
+    assert.equal(result, 'OTHER');
   });
 
   it('should detect Windows', () => {
     const result = detectOsInUserAgent('Mozilla Win something');
-    expect(result).toBe('WIN');
+    assert.equal(result, 'WIN');
   });
 
   it('should detect Linux', () => {
     const result = detectOsInUserAgent('Mozilla/5.0 (X11; Linux x86_64)');
-    expect(result).toBe('LINUX');
+    assert.equal(result, 'LINUX');
   });
 });
 
@@ -56,7 +58,7 @@ describe('detectOS', () => {
       value: { userAgent: 'Mac' },
       configurable: true,
     });
-    expect(detectOS()).toBe('MAC');
+    assert.equal(detectOS(), 'MAC');
   });
 
   it('should return OTHER if navigator is undefined', () => {
@@ -64,6 +66,6 @@ describe('detectOS', () => {
       value: undefined,
       configurable: true,
     });
-    expect(detectOS()).toBe('OTHER');
+    assert.equal(detectOS(), 'OTHER');
   });
 });

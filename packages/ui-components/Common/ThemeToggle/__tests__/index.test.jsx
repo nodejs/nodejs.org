@@ -1,3 +1,6 @@
+import { describe, it, beforeEach } from 'node:test';
+import assert from 'node:assert/strict';
+
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -22,11 +25,11 @@ describe('ThemeToggle', () => {
   it('switches dark theme to light theme', async () => {
     mockCurrentTheme = 'dark';
     await userEvent.click(toggle);
-    expect(mockCurrentTheme).toBe('light');
+    assert.equal(mockCurrentTheme, 'light');
   });
 
   it('switches light theme to dark theme', async () => {
     await userEvent.click(toggle);
-    expect(mockCurrentTheme).toBe('dark');
+    assert.equal(mockCurrentTheme, 'dark');
   });
 });

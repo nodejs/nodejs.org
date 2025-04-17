@@ -1,24 +1,31 @@
-import { getLanguageDisplayName } from '@/util/getLanguageDisplayName';
+import assert from 'node:assert/strict';
+import { it, describe, mock } from 'node:test';
 
-jest.mock('@/shiki.config.mjs', () => ({
-  LANGUAGES: [
-    { name: 'javascript', aliases: ['js'], displayName: 'JavaScript' },
-    { name: 'typescript', aliases: ['ts'], displayName: 'TypeScript' },
-  ],
-}));
+describe('getLanguageDisplayName', async () => {
+  mock.module('@/shiki.config.mjs', {
+    namedExports: {
+      LANGUAGES: [
+        { name: 'javascript', aliases: ['js'], displayName: 'JavaScript' },
+        { name: 'typescript', aliases: ['ts'], displayName: 'TypeScript' },
+      ],
+    },
+  });
 
-describe('getLanguageDisplayName', () => {
+  const { getLanguageDisplayName } = await import(
+    '@/util/getLanguageDisplayName'
+  );
+
   it('should return the display name for a known language', () => {
-    expect(getLanguageDisplayName('javascript')).toBe('JavaScript');
-    expect(getLanguageDisplayName('js')).toBe('JavaScript');
+    assert.equal(getLanguageDisplayName('javascript'), 'JavaScript');
+    assert.equal(getLanguageDisplayName('js'), 'JavaScript');
   });
 
   it('should return the display name for another known language', () => {
-    expect(getLanguageDisplayName('typescript')).toBe('TypeScript');
-    expect(getLanguageDisplayName('ts')).toBe('TypeScript');
+    assert.equal(getLanguageDisplayName('typescript'), 'TypeScript');
+    assert.equal(getLanguageDisplayName('ts'), 'TypeScript');
   });
 
   it('should return the input language if it is not known', () => {
-    expect(getLanguageDisplayName('unknown')).toBe('unknown');
+    assert.equal(getLanguageDisplayName('unknown'), 'unknown');
   });
 });

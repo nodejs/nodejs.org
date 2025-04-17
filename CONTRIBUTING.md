@@ -160,7 +160,7 @@ This repository contains several scripts and commands for performing numerous ta
 - `npx turbo storybook` starts Storybook's local server
 - `npx turbo storybook:build` builds Storybook as a static web application for publishing
 - `npm run test` runs all tests locally
-  - `npx turbo test:unit` runs jest (unit-tests) locally
+  - `npx turbo test:unit` runs unit-tests locally
 
 </details>
 

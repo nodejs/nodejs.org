@@ -8,10 +8,9 @@ npm-debug.log
 .next
 build
 
-# Jest
-coverage
-.swc
+# Test Runner
 junit.xml
+lcov.info
 
 # Storybook
 storybook-static

@@ -1,4 +1,9 @@
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
+
 import { render, screen } from '@testing-library/react';
+
+import { isVisible } from '../../../../../../tests/utilities.mjs';
 
 import BlogPostCard from '@/components/Blog/BlogPostCard';
 
@@ -29,18 +34,18 @@ describe('BlogPostCard', () => {
     it('Wraps the entire card within an article', () => {
       renderBlogPostCard({});
 
-      expect(screen.getByRole('article')).toBeVisible();
+      assert.ok(isVisible(screen.getByRole('article')));
     });
 
     it('Renders the title prop correctly', () => {
       const { title } = renderBlogPostCard({});
 
-      expect(screen.getAllByText(title).length).toBe(2);
+      assert.equal(screen.getAllByText(title).length, 2);
 
       // title from preview should be ignored as the one from Links
       // and blog card/post are what matter
-      expect(screen.getAllByText(title)[0]).toHaveAttribute(
-        'aria-hidden',
+      assert.equal(
+        screen.getAllByText(title)[0].getAttribute('aria-hidden'),
         'true'
       );
     });
@@ -48,36 +53,19 @@ describe('BlogPostCard', () => {
     it('Renders the description prop correctly', () => {
       const { description } = renderBlogPostCard({});
 
-      expect(screen.getByText(description)).toBeVisible();
+      assert.ok(isVisible(screen.getByText(description)));
     });
 
-    it.each([
+    [
       { label: 'layouts.blog.categories.vulnerability', type: 'vulnerability' },
       { label: 'layouts.blog.categories.announcements', type: 'announcements' },
       { label: 'layouts.blog.categories.release', type: 'release' },
-    ])(
-      'Renders "%label" text when passing it the type "%type"',
-      ({ label, type }) => {
+    ].forEach(({ label, type }) => {
+      it(`Renders "${label} text when passing it the type "${type}`, () => {
         renderBlogPostCard({ type });
 
-        expect(screen.getByText(label)).toBeVisible();
-      }
-    );
-
-    it('Renders all passed authors fullName(s), comma-separated', () => {
-      const authors = ['Jane Doe', 'John Doe'];
-
-      renderBlogPostCard({ authors });
-
-      const fullNames = authors.reduce((prev, curr, index) => {
-        if (index === 0) {
-          return curr;
-        }
-
-        return `${prev}, ${curr}`;
-      }, '');
-
-      expect(screen.getByText(fullNames)).toBeVisible();
+        assert.ok(isVisible(screen.getByText(label)));
+      });
     });
 
     it('Renders all passed authors fullName(s), comma-separated', () => {
@@ -93,7 +81,23 @@ describe('BlogPostCard', () => {
         return `${prev}, ${curr}`;
       }, '');
 
-      expect(screen.getByText(fullNames)).toBeVisible();
+      assert.ok(isVisible(screen.getByText(fullNames)));
+    });
+
+    it('Renders all passed authors fullName(s), comma-separated', () => {
+      const authors = ['Jane Doe', 'John Doe'];
+
+      renderBlogPostCard({ authors });
+
+      const fullNames = authors.reduce((prev, curr, index) => {
+        if (index === 0) {
+          return curr;
+        }
+
+        return `${prev}, ${curr}`;
+      }, '');
+
+      assert.ok(isVisible(screen.getByText(fullNames)));
     });
 
     it('Renders date prop in short format', () => {
@@ -107,7 +111,7 @@ describe('BlogPostCard', () => {
         year: 'numeric',
       });
 
-      expect(screen.getByText(dateTimeFormat.format(date))).toBeVisible();
+      assert.ok(isVisible(screen.getByText(dateTimeFormat.format(date))));
     });
   });
 });

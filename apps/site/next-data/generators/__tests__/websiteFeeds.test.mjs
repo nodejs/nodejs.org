@@ -1,24 +1,14 @@
-import generateWebsiteFeeds from '@/next-data/generators/websiteFeeds';
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
+
+import generateWebsiteFeeds from '@/next-data/generators/websiteFeeds.mjs';
+
+import { BASE_URL, BASE_PATH } from '../../../next.constants.mjs';
+import { siteConfig } from '../../../next.json.mjs';
+
+const base = `${BASE_URL}${BASE_PATH}/en`;
 
 describe('generateWebsiteFeeds', () => {
-  jest.mock('feed');
-  jest.mock('../../../next.constants.mjs', () => ({
-    BASE_URL: 'https://example.com',
-    BASE_PATH: '/example',
-  }));
-  jest.mock('../../../next.json.mjs', () => ({
-    siteConfig: {
-      rssFeeds: [
-        {
-          category: 'all',
-          title: 'Node.js Blog',
-          description: 'Node.js Blog Feed',
-          file: 'blog.xml',
-        },
-      ],
-    },
-  }));
-
   it('generates website feeds with correct data', () => {
     const blogData = {
       posts: [
@@ -33,23 +23,27 @@ describe('generateWebsiteFeeds', () => {
     };
 
     const result = generateWebsiteFeeds(blogData);
-    expect(result.size).toBe(3);
+    assert.equal(result.size, 3);
 
     const blogFeed = result.get('blog.xml');
-    const expectedDate = new Date('2025-04-18');
+    assert.deepEqual(blogFeed.options, {
+      id: siteConfig.rssFeeds[0].file,
+      title: siteConfig.rssFeeds[0].title,
+      language: 'en',
+      link: `${base}/feed/${siteConfig.rssFeeds[0].file}`,
+      description: siteConfig.rssFeeds[0].description,
+    });
 
-    expect(blogFeed.options.id).toBe('blog.xml');
-    expect(blogFeed.options.title).toBe('Node.js Blog');
-    expect(blogFeed.options.language).toBe('en');
-    expect(blogFeed.options.link).toBe('https://nodejs.org/en/feed/blog.xml');
-
-    expect(blogFeed.items.length).toBe(1);
-    const feedItem = blogFeed.items[0];
-    expect(feedItem.id).toBe('/post-1');
-    expect(feedItem.guid).toBe(`/post-1?${expectedDate.getTime()}`);
-    expect(feedItem.title).toBe('Post 1');
-    expect(feedItem.author).toBe('Author 1');
-    expect(feedItem.date).toEqual(expectedDate);
-    expect(feedItem.link).toBe('https://nodejs.org/en/post-1');
+    const date = new Date(blogData.posts[0].date);
+    assert.deepEqual(blogFeed.items, [
+      {
+        author: blogData.posts[0].author,
+        id: blogData.posts[0].slug,
+        title: blogData.posts[0].title,
+        guid: `${blogData.posts[0].slug}?${date.getTime()}`,
+        date,
+        link: `${base}${blogData.posts[0].slug}`,
+      },
+    ]);
   });
 });

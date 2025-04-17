@@ -1,6 +1,9 @@
 import { render } from '@testing-library/react';
-
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
 import Select from '..';
+
+const noop = () => {};
 
 describe('Select', () => {
   const values = ['Option 1', 'Option 2', 'Option 3'];
@@ -8,13 +11,12 @@ describe('Select', () => {
   const placeholder = 'Select an option';
   const dropdownLabel = 'Dropdown label';
   const label = 'Option label';
-  const onChange = jest.fn();
 
-  global.ResizeObserver = jest.fn().mockImplementation(() => ({
-    observe: jest.fn(),
-    unobserve: jest.fn(),
-    disconnect: jest.fn(),
-  }));
+  global.ResizeObserver = class {
+    observe = noop;
+    unobserve = noop;
+    disconnect = noop;
+  };
 
   it('renders the label when provided', () => {
     const { getByLabelText } = render(
@@ -24,12 +26,12 @@ describe('Select', () => {
         placeholder={placeholder}
         dropdownLabel={dropdownLabel}
         label={label}
-        onChange={onChange}
+        onChange={noop}
       />
     );
 
     const element = getByLabelText(label);
-    expect(element).toBeInTheDocument();
+    assert.ok(element.ownerDocument);
   });
 
   it('renders the default value when provided', () => {
@@ -40,12 +42,12 @@ describe('Select', () => {
         placeholder={placeholder}
         dropdownLabel={dropdownLabel}
         label={label}
-        onChange={onChange}
+        onChange={noop}
       />
     );
 
     const element = getByText(defaultValue);
-    expect(element).toBeInTheDocument();
+    assert.ok(element.ownerDocument);
   });
 
   it('renders the placeholder when default value is not provided', () => {
@@ -55,11 +57,11 @@ describe('Select', () => {
         placeholder={placeholder}
         dropdownLabel={dropdownLabel}
         label={label}
-        onChange={onChange}
+        onChange={noop}
       />
     );
 
     const element = getByText(placeholder);
-    expect(element).toBeInTheDocument();
+    assert.ok(element.ownerDocument);
   });
 });

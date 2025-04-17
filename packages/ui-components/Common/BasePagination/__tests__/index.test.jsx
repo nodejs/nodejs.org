@@ -1,4 +1,9 @@
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
+
 import { render, screen } from '@testing-library/react';
+
+import { isVisible } from '../../../../../tests/utilities.mjs';
 
 import BasePagination from '@node-core/ui-components/Common/BasePagination';
 
@@ -41,19 +46,21 @@ describe('Pagination', () => {
     it('Renders the navigation buttons even if no pages are passed to it', () => {
       renderPagination({ currentPage: 0, pages: 0 });
 
-      expect(screen.getByRole('navigation')).toBeVisible();
-
-      expect(
-        screen.getByRole('button', {
-          name: labels.prevAria,
-        })
-      ).toBeVisible();
-
-      expect(
-        screen.getByRole('button', {
-          name: labels.nextAria,
-        })
-      ).toBeVisible();
+      assert.ok(isVisible(screen.getByRole('navigation')));
+      assert.ok(
+        isVisible(
+          screen.getByRole('button', {
+            name: labels.prevAria,
+          })
+        )
+      );
+      assert.ok(
+        isVisible(
+          screen.getByRole('button', {
+            name: labels.nextAria,
+          })
+        )
+      );
     });
 
     it('Renders the passed pages and current page', () => {
@@ -63,14 +70,14 @@ describe('Pagination', () => {
 
       const pageElements = screen.getAllByRole('link');
 
-      expect(pageElements).toHaveLength(parsedPages.length);
+      assert.equal(pageElements.length, parsedPages.length);
 
       pageElements.forEach((page, index) => {
         if (index + 1 === currentPage) {
-          expect(page).toHaveAttribute('aria-current', 'page');
+          assert.strictEqual(page.getAttribute('aria-current'), 'page');
         }
 
-        expect(page).toBeVisible();
+        assert.ok(isVisible(page));
       });
     });
   });
@@ -81,20 +88,14 @@ describe('Pagination', () => {
         pages: 6,
       });
 
-      expect(screen.queryByText('...')).not.toBeInTheDocument();
+      assert.ok(!screen.queryByText('...')?.ownerDocument);
 
       const pageElements = screen.getAllByRole('link');
 
-      expect(pageElements).toHaveLength(6);
-
-      expect(pageElements.map(element => element.textContent)).toEqual([
-        '1',
-        '2',
-        '3',
-        '4',
-        '5',
-        '6',
-      ]);
+      assert.deepEqual(
+        pageElements.map(element => element.textContent),
+        ['1', '2', '3', '4', '5', '6']
+      );
     });
 
     it('Shows left ellipsis when the left sibling of the current page is at least two pages away from the first page', () => {
@@ -103,20 +104,14 @@ describe('Pagination', () => {
         pages: 8,
       });
 
-      expect(screen.getByText('...')).toBeVisible();
+      assert.ok(isVisible(screen.getByText('...')));
 
       const pageElements = screen.getAllByRole('link');
 
-      expect(pageElements).toHaveLength(6);
-
-      expect(pageElements.map(element => element.textContent)).toEqual([
-        '1',
-        '4',
-        '5',
-        '6',
-        '7',
-        '8',
-      ]);
+      assert.deepEqual(
+        pageElements.map(element => element.textContent),
+        ['1', '4', '5', '6', '7', '8']
+      );
     });
 
     it('Shows right ellipsis when the right sibling of the current page is at least two pages away from the last page', () => {
@@ -125,20 +120,14 @@ describe('Pagination', () => {
         pages: 8,
       });
 
-      expect(screen.getByText('...')).toBeVisible();
+      assert.ok(isVisible(screen.getByText('...')));
 
       const pageElements = screen.getAllByRole('link');
 
-      expect(pageElements).toHaveLength(6);
-
-      expect(pageElements.map(element => element.textContent)).toEqual([
-        '1',
-        '2',
-        '3',
-        '4',
-        '5',
-        '8',
-      ]);
+      assert.deepEqual(
+        pageElements.map(element => element.textContent),
+        ['1', '2', '3', '4', '5', '8']
+      );
     });
 
     it('Shows right and left ellipses when the current page siblings are both at least two pages away from the first and last pages', () => {
@@ -147,19 +136,14 @@ describe('Pagination', () => {
         pages: 10,
       });
 
-      expect(screen.getAllByText('...')).toHaveLength(2);
+      assert.equal(screen.getAllByText('...').length, 2);
 
       const pageElements = screen.getAllByRole('link');
 
-      expect(pageElements).toHaveLength(5);
-
-      expect(pageElements.map(element => element.textContent)).toEqual([
-        '1',
-        '4',
-        '5',
-        '6',
-        '10',
-      ]);
+      assert.deepEqual(
+        pageElements.map(element => element.textContent),
+        ['1', '4', '5', '6', '10']
+      );
     });
   });
 
@@ -169,11 +153,13 @@ describe('Pagination', () => {
         pages: 2,
       });
 
-      expect(
-        screen.getByRole('button', {
-          name: labels.prevAria,
-        })
-      ).toHaveAttribute('aria-disabled');
+      assert.ok(
+        screen
+          .getByRole('button', {
+            name: labels.prevAria,
+          })
+          .getAttribute('aria-disabled')
+      );
     });
 
     it('Disables "Next" button when the currentPage is equal to the last page', () => {
@@ -182,11 +168,13 @@ describe('Pagination', () => {
         pages: 2,
       });
 
-      expect(
-        screen.getByRole('button', {
-          name: labels.nextAria,
-        })
-      ).toHaveAttribute('aria-disabled');
+      assert.ok(
+        screen
+          .getByRole('button', {
+            name: labels.nextAria,
+          })
+          .getAttribute('aria-disabled')
+      );
     });
   });
 });

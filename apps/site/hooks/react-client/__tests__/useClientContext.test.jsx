@@ -1,5 +1,8 @@
 import { renderHook } from '@testing-library/react';
 
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
+
 import useClientContext from '@/hooks/react-client/useClientContext';
 import { MatterContext } from '@/providers/matterProvider';
 
@@ -21,6 +24,6 @@ describe('useClientContext', () => {
 
     const { result } = renderHook(() => useClientContext(), { wrapper });
 
-    expect(result.current).toEqual(mockContextValue);
+    assert.partialDeepStrictEqual(result.current, mockContextValue);
   });
 });

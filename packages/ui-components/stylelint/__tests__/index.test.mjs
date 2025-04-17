@@ -1,3 +1,6 @@
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
+
 import {
   indentClassNames,
   cleanClassNames,
@@ -9,18 +12,18 @@ describe('cleanClassNames', () => {
     const input = '  text-xl   \r   font-bold \n\n   text-center  ';
     const expected = 'text-xl font-bold text-center';
 
-    expect(cleanClassNames(input)).toBe(expected);
+    assert.equal(cleanClassNames(input), expected);
   });
 
   it('trims leading and trailing spaces', () => {
     const input = '   mt-4   ';
     const expected = 'mt-4';
 
-    expect(cleanClassNames(input)).toBe(expected);
+    assert.equal(cleanClassNames(input), expected);
   });
 
   it('returns empty string when input is empty', () => {
-    expect(cleanClassNames('')).toBe('');
+    assert.equal(cleanClassNames(''), '');
   });
 });
 
@@ -30,16 +33,16 @@ describe('applyIndentation', () => {
     const indent = '    ';
     const expected = ['text-xl', '    font-bold', '    text-center'].join('\n');
 
-    expect(applyIndentation(input, indent)).toBe(expected);
+    assert.equal(applyIndentation(input, indent), expected);
   });
 });
 
 describe('indentClassNames', () => {
   it('returns null if rule is missing required properties', () => {
-    expect(indentClassNames(null)).toBeNull();
-    expect(indentClassNames({})).toBeNull();
-    expect(indentClassNames({ params: 'foo' })).toBeNull();
-    expect(indentClassNames({ params: 'foo', raws: {} })).toBeNull();
+    assert.equal(indentClassNames(null), null);
+    assert.equal(indentClassNames({}), null);
+    assert.equal(indentClassNames({ params: 'foo' }), null);
+    assert.equal(indentClassNames({ params: 'foo', raws: {} }), null);
   });
 
   it('cleans and indents class names correctly', () => {
@@ -55,7 +58,7 @@ describe('indentClassNames', () => {
       '\n'
     );
 
-    expect(result).toEqual({
+    assert.deepEqual(result, {
       ...rule,
       params: expectedParams,
     });
@@ -69,7 +72,9 @@ describe('indentClassNames', () => {
 
     const result = indentClassNames(rule);
 
-    expect(result).toBe(rule);
-    expect(result.params).toBe('p-4\n    mb-2');
+    assert.deepEqual(result, {
+      ...result,
+      params: 'p-4\n    mb-2',
+    });
   });
 });

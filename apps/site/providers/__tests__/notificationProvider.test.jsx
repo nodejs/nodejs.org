@@ -1,3 +1,6 @@
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
+
 import { render, act, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -6,10 +9,9 @@ import {
   NotificationDispatch,
 } from '@/providers/notificationProvider';
 
-jest.useFakeTimers();
-
 describe('NotificationProvider', () => {
-  it('renders children and shows notification with the provided message', async () => {
+  it('renders children and shows notification with the provided message', async t => {
+    t.mock.timers.enable();
     const testMessage = 'Test Notification';
     const testDuration = 3000;
 
@@ -31,9 +33,11 @@ describe('NotificationProvider', () => {
 
     act(() => {
       userEvent.click(getByText('Show Notification'));
-      jest.advanceTimersByTime(testDuration);
+      t.mock.timers.tick(3000);
     });
 
-    await waitFor(() => expect(getByText(testMessage)).toBeInTheDocument());
+    t.mock.timers.reset();
+
+    await waitFor(() => assert.ok(getByText(testMessage).ownerDocument));
   });
 });
