@@ -1,6 +1,8 @@
-import { act, render } from '@testing-library/react';
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
+
+import { act, render } from '@testing-library/react';
+
 import { MatterProvider, MatterContext } from '@/providers/matterProvider';
 
 const mockContext = {

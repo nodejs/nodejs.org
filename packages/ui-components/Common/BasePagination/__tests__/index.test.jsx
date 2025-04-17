@@ -1,7 +1,10 @@
-import { render, screen } from '@testing-library/react';
-import { isVisible } from '../../../../../tests/utilities.mjs';
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
+
+import { render, screen } from '@testing-library/react';
+
+import { isVisible } from '../../../../../tests/utilities.mjs';
+
 import BasePagination from '@node-core/ui-components/Common/BasePagination';
 
 const getPageLabel = number => number.toString();

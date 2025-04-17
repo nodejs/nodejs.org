@@ -1,6 +1,8 @@
-import { render } from '@testing-library/react';
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
+
+import { render } from '@testing-library/react';
+
 import { ReleaseProvider, ReleasesProvider } from '@/providers/releaseProvider';
 
 describe('ReleaseProvider', () => {

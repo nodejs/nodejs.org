@@ -1,6 +1,8 @@
-import { render, fireEvent } from '@testing-library/react';
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
+
+import { render, fireEvent } from '@testing-library/react';
+
 import AvatarGroup from '../index';
 
 const names = [
