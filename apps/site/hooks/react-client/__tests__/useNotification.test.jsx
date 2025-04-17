@@ -1,9 +1,10 @@
 import { render } from '@testing-library/react';
 
-import useNotification from '@/hooks/react-client/useNotification';
-import { NotificationProvider } from '@/providers/notificationProvider';
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
+
+import useNotification from '@/hooks/react-client/useNotification';
+import { NotificationProvider } from '@/providers/notificationProvider';
 
 describe('useNotification', () => {
   it('should return the notification dispatch function', () => {

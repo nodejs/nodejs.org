@@ -1,6 +1,7 @@
-import { render, screen } from '@testing-library/react';
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
+
+import { render, screen } from '@testing-library/react';
 
 import ActiveLink from '..';
 

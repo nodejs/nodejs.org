@@ -1,8 +1,9 @@
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
+
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { describe, it } from 'node:test';
-import assert from 'node:assert/strict';
 
 import Tabs from '../index';
 

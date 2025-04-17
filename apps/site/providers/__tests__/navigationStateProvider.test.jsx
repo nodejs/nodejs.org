@@ -1,6 +1,7 @@
-import { render } from '@testing-library/react';
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
+
+import { render } from '@testing-library/react';
 
 import { NavigationStateProvider } from '@/providers/navigationStateProvider';
 

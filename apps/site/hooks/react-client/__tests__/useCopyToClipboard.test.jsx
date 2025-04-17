@@ -1,7 +1,8 @@
-import { render, fireEvent, screen } from '@testing-library/react';
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import { setTimeout } from 'node:timers/promises';
+
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import useCopyToClipboard from '@/hooks/react-client/useCopyToClipboard';
 
