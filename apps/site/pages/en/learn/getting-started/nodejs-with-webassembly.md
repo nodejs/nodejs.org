@@ -12,7 +12,7 @@ The WebAssembly specification details two file formats, a binary format called a
 
 ## Key Concepts
 
-- Module - A compiled WebAssembly binary, ie a `.wasm` file.
+- Module - A compiled WebAssembly binary, i.e. a `.wasm` file.
 - Memory - A resizable ArrayBuffer.
 - Table - A resizable typed array of references not stored in Memory.
 - Instance - An instantiation of a Module with its Memory, Table, and variables.
