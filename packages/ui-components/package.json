@@ -1,20 +1,36 @@
 {
   "name": "@node-core/ui-components",
   "type": "module",
+  "exports": {
+    "./Common/*": "./Common/*",
+    "./Common/*/*": "./Common/*/*",
+    "./Containers/*": "./Containers/*",
+    "./Containers/*/*": "./Containers/*/*",
+    "./Icons/*": "./Icons/*",
+    "./Icons/*/*": "./Icons/*/*",
+    "./styles/*": "./styles/*",
+    "./types": "./types.ts",
+    "./stylelint/*": "./stylelint/*"
+  },
+  "files": [
+    "Common",
+    "Containers",
+    "Icons",
+    "styles",
+    "types.ts",
+    "stylelint"
+  ],
   "scripts": {
     "check-types": "tsc --noEmit",
-    "lint:js": "eslint \"**/*.{js,mjs,ts,tsx}\"",
-    "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
     "lint": "turbo run lint:js lint:css",
+    "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
     "lint:fix": "turbo run lint:js lint:css --no-cache -- --fix",
-    "storybook": "cross-env NODE_NO_WARNINGS=1 storybook dev -p 6006 --quiet --no-open",
+    "lint:js": "eslint \"**/*.{js,mjs,ts,tsx}\"",
+    "storybook": "cross-env NODE_NO_WARNINGS=1 storybook dev -p 6006 --quiet",
     "storybook:build": "cross-env NODE_NO_WARNINGS=1 storybook build --quiet --webpack-stats-json",
+    "test": "turbo test:unit",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --test-coverage-exclude=**/*.test.* --enable-source-maps --import=global-jsdom/register --import=tsx --import=../../tests/setup.mjs --test **/*.test.*",
-    "test:unit:watch": "cross-env NODE_OPTIONS=\"--watch\" npm run test:unit",
-    "test": "turbo test:unit"
-  },
-  "engines": {
-    "node": ">=20"
+    "test:unit:watch": "cross-env NODE_OPTIONS=\"--watch\" pnpm test:unit"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -33,19 +49,27 @@
     "tailwindcss": "~4.0.17"
   },
   "devDependencies": {
-    "@node-core/website-i18n": "*",
+    "@node-core/website-i18n": "workspace:*",
     "@storybook/addon-controls": "^8.6.12",
     "@storybook/addon-interactions": "^8.6.12",
     "@storybook/addon-styling-webpack": "^1.0.1",
     "@storybook/addon-themes": "^8.6.12",
     "@storybook/addon-viewport": "^8.6.12",
     "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
+    "@storybook/react": "^8.6.12",
     "@storybook/react-webpack5": "^8.6.12",
     "@testing-library/user-event": "~14.6.1",
+    "@types/node": "22.14.0",
+    "@types/react": "^19.1.0",
+    "cross-env": "7.0.3",
+    "css-loader": "~6.11.0",
     "eslint-plugin-react": "~7.37.4",
     "eslint-plugin-storybook": "~0.12.0",
     "global-jsdom": "^26.0.0",
+    "postcss-loader": "~8.1.1",
+    "react": "19.1.0",
     "storybook": "^8.6.11",
+    "style-loader": "~3.3.4",
     "stylelint": "^16.17.0",
     "stylelint-config-standard": "^37.0.0",
     "stylelint-order": "6.0.4",
@@ -53,5 +77,8 @@
     "tsx": "^4.19.3",
     "typescript": "~5.8.2",
     "typescript-eslint": "~8.29.0"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

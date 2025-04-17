@@ -60,7 +60,6 @@ updates:
           - 'react'
           - 'react-dom'
           - '@types/react'
-          - '@types/react-dom'
       tailwind:
         patterns:
           - '@savvywombat/tailwindcss-grid-areas'

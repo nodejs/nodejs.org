@@ -1,6 +1,5 @@
 import js from '@eslint/js';
 import importX from 'eslint-plugin-import-x';
-import noRelativeImportPaths from 'eslint-plugin-no-relative-import-paths';
 
 export default [
   js.configs.recommended,
@@ -19,9 +18,6 @@ export default [
   },
   {
     files: ['**/*.{js,mjs,ts,tsx}'],
-    plugins: {
-      'no-relative-import-paths': noRelativeImportPaths,
-    },
     rules: {
       'import-x/namespace': 'off',
       'import-x/no-named-as-default-member': 'off',
@@ -43,10 +39,6 @@ export default [
             caseInsensitive: true,
           },
         },
-      ],
-      'no-relative-import-paths/no-relative-import-paths': [
-        'warn',
-        { allowSameFolder: true, prefix: '@' },
       ],
     },
   },

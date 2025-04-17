@@ -10,7 +10,7 @@ const {
   createGitHubSlugger,
   getGitHubBlobUrl,
   getGitHubApiDocsUrl,
-} = await import('@/util/gitHubUtils');
+} = await import('../gitHubUtils');
 
 describe('gitHubUtils', () => {
   it('getGitHubAvatarUrl returns the correct URL', () => {

@@ -4,7 +4,6 @@ import * as mdx from 'eslint-plugin-mdx';
 import react from 'eslint-plugin-react';
 import tseslint from 'typescript-eslint';
 
-// eslint-disable-next-line no-relative-import-paths/no-relative-import-paths
 import baseConfig from '../../eslint.config.js';
 
 const compat = new FlatCompat();
@@ -40,7 +39,7 @@ export default tseslint.config(
   },
   {
     files: ['**/*.{md,mdx}'],
-    extends: [mdx.configs.flat],
+    extends: [mdx.flat],
     rules: {
       'no-irregular-whitespace': 'off',
       '@next/next/no-img-element': 'off',
@@ -77,12 +76,6 @@ export default tseslint.config(
             'Named * React import is not allowed. Please import what you need from React with Named Imports',
         },
       ],
-    },
-  },
-  {
-    files: ['**/*.mjs', '**/*.test.*'],
-    rules: {
-      'no-relative-import-paths/no-relative-import-paths': 'off',
     },
   }
 );

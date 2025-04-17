@@ -26,7 +26,7 @@ You can check the items by adding an `x` between the brackets, like this: `[x]`
 -->
 
 - [ ] I have read the [Contributing Guidelines](https://github.com/nodejs/nodejs.org/blob/main/CONTRIBUTING.md) and made commit messages that follow the guideline.
-- [ ] I have run `npm run format` to ensure the code follows the style guide.
-- [ ] I have run `npm run test` to check if all tests are passing.
-- [ ] I have run `npx turbo build` to check if the website builds without errors.
+- [ ] I have run `pnpm format` to ensure the code follows the style guide.
+- [ ] I have run `pnpm test` to check if all tests are passing.
+- [ ] I have run `pnpm build` to check if the website builds without errors.
 - [ ] I've covered new added functionality with unit tests if necessary.

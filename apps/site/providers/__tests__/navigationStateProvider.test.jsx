@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 
 import { render } from '@testing-library/react';
 
-import { NavigationStateProvider } from '@/providers/navigationStateProvider';
+import { NavigationStateProvider } from '../navigationStateProvider';
 
 describe('NavigationStateProvider', () => {
   it('should render without crashing', () => {

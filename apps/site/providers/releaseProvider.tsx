@@ -9,9 +9,9 @@ import {
   useReducer,
 } from 'react';
 
-import reducer, { getActions, releaseState } from '@/reducers/releaseReducer';
-import type { NodeRelease } from '@/types';
-import type * as Types from '@/types/release';
+import reducer, { getActions, releaseState } from '../reducers/releaseReducer';
+import type { NodeRelease } from '../types';
+import type * as Types from '../types/release';
 
 export const ReleasesContext = createContext<Types.ReleasesContextType>({
   releases: [],

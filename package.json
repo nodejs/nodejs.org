@@ -1,6 +1,5 @@
 {
   "name": "nodejs-website",
-  "type": "module",
   "private": true,
   "description": "Nodejs.org Website",
   "homepage": "https://nodejs.org",
@@ -8,33 +7,28 @@
     "type": "git",
     "url": "git+https://github.com/nodejs/nodejs.org.git"
   },
+  "license": "MIT",
   "author": {
     "name": "Node.js Website Working Group"
   },
-  "license": "MIT",
-  "engines": {
-    "node": "v22"
-  },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "type": "module",
   "scripts": {
-    "dev": "turbo run dev",
     "build": "turbo run build",
-    "storybook": "turbo run storybook",
-    "storybook:build": "turbo run storybook:build",
-    "start": "turbo run start",
     "check-types": "turbo check-types",
-    "scripts:release-post": "turbo run scripts:release-post",
+    "deploy": "turbo run deploy",
+    "dev": "turbo run dev",
+    "format": "pnpm lint:fix && pnpm prettier:fix",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint --force",
+    "prepare": "husky",
     "prettier": "prettier \"**/*.{js,mjs,ts,tsx,md,mdx,json,yml,css}\" --check --cache --cache-strategy=content --cache-location=.prettiercache",
-    "prettier:fix": "npm run prettier -- --write",
-    "format": "npm run lint:fix && npm run prettier:fix",
+    "prettier:fix": "pnpm prettier --write",
+    "scripts:release-post": "turbo run scripts:release-post",
+    "start": "turbo run start",
+    "storybook": "turbo run storybook",
+    "storybook:build": "turbo run storybook:build",
     "test": "turbo test:unit",
-    "test:ci": "cross-env NODE_OPTIONS=\"--test-reporter=lcov --test-reporter-destination=lcov.info --test-reporter=junit --test-reporter-destination=junit.xml --test-reporter=@reporters/github --test-reporter-destination=stdout --test-reporter=spec --test-reporter-destination=stdout\" turbo test:unit",
-    "prepare": "husky"
+    "test:ci": "cross-env NODE_OPTIONS=\"--test-reporter=lcov --test-reporter-destination=lcov.info --test-reporter=junit --test-reporter-destination=junit.xml --test-reporter=@reporters/github --test-reporter-destination=stdout --test-reporter=spec --test-reporter-destination=stdout\" turbo test:unit"
   },
   "dependencies": {
     "acorn": "^8.14.1",
@@ -46,13 +40,20 @@
     "@eslint/js": "~9.23.0",
     "@reporters/github": "^1.7.2",
     "@testing-library/react": "~16.3.0",
-    "@types/node": "22.14.0",
-    "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.1.1",
+    "cross-env": "^7.0.3",
     "eslint": "~9.23.0",
     "eslint-plugin-import-x": "~4.10.0",
-    "eslint-plugin-no-relative-import-paths": "~1.6.1",
     "prettier": "3.5.3",
     "prettier-plugin-tailwindcss": "0.6.11"
+  },
+  "packageManager": "pnpm@10.10.0",
+  "engines": {
+    "node": "v22"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "10.8.0+sha256.29bf2c5ceaea7991ee82eec15fe7162e0fad816d0c4a6b35a16c01d39274bf69"
+    }
   }
 }

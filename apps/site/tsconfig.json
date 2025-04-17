@@ -14,7 +14,10 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "paths": { "@/*": ["./*"] },
+    "paths": {
+      "@/*": ["./*"],
+      "@node-core/ui-components/*": ["../../packages/ui-components/*"]
+    },
     "plugins": [{ "name": "next" }],
     "baseUrl": "."
   },
