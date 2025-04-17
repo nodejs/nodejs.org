@@ -142,13 +142,13 @@ jobs:
         run: npm run test:ci
 
       - name: Upload test coverage to Codecov
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && github.event_name != 'merge_group' }}
         uses: codecov/codecov-action@0565863a31f2c772f9f0395002a31e3f06189574 # v5.4.0
         with:
           files: ./apps/site/lcov.info,./packages/ui-components/lcov.info
 
       - name: Upload test results to Codecov
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && github.event_name != 'merge_group' }}
         uses: codecov/test-results-action@f2dba722c67b86c6caa034178c6e4d35335f6706 # v1.1.0
         with:
           files: ./apps/site/junit.xml,./packages/ui-components/junit.xml
