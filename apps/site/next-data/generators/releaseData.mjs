@@ -4,10 +4,14 @@ import nodevu from '@nodevu/core';
 
 // Gets the appropriate release status for each major release
 const getNodeReleaseStatus = (now, support) => {
-  const { endOfLife, ltsStart, currentStart } = support;
+  const { endOfLife, maintenanceStart, ltsStart, currentStart } = support;
 
   if (endOfLife && now >= new Date(endOfLife)) {
     return 'End-of-life';
+  }
+
+  if (maintenanceStart && now >= new Date(maintenanceStart)) {
+    return 'Maintenance';
   }
 
   if (ltsStart && now >= new Date(ltsStart)) {

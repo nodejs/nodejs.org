@@ -1,4 +1,9 @@
-export type NodeReleaseStatus = 'LTS' | 'Current' | 'End-of-life' | 'Pending';
+export type NodeReleaseStatus =
+  | 'LTS'
+  | 'Maintenance'
+  | 'Current'
+  | 'End-of-life'
+  | 'Pending';
 
 export interface NodeReleaseSource {
   major: number;
