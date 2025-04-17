@@ -1,3 +1,4 @@
+import Badge from '@node-core/ui-components/Common/Badge';
 import { getTranslations } from 'next-intl/server';
 import { type FC } from 'react';
 
@@ -37,7 +38,13 @@ const DownloadReleasesTable: FC = async () => {
             <td data-label="Date">
               <time>{release.releaseDate}</time>
             </td>
-            <td data-label="Status">{release.status}</td>
+            <td data-label="Status">
+              <Badge
+                kind={release.status === 'End-of-life' ? 'error' : 'default'}
+              >
+                {release.status}
+              </Badge>
+            </td>
             <td className="download-table-last">
               <DetailsButton versionData={release} />
             </td>
