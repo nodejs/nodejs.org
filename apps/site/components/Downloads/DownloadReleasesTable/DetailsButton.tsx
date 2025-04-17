@@ -17,7 +17,7 @@ const DetailsButton: FC<DetailsButtonProps> = ({ versionData }) => {
   const { openModal } = use(ReleaseModalContext);
 
   return (
-    <LinkWithArrow onClick={() => openModal(versionData)}>
+    <LinkWithArrow href="#" onClick={() => openModal(versionData)}>
       {t('details')}
     </LinkWithArrow>
   );

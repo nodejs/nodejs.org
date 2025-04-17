@@ -156,11 +156,16 @@
       "details": "Details"
     },
     "releaseModal": {
-      "releaseAnnouncement": "Release Announcement",
-      "apiDocs": "API Docs",
+      "title": "Node.js v{version} release",
+      "minorVersions": "Minor versions",
+      "releaseAnnouncement": "Release Announcement"
+    },
+    "minorReleasesTable": {
+      "version": "Version",
+      "links": "Links",
       "actions": {
+        "release": "Release",
         "changelog": "Changelog",
-        "releases": "Releases",
         "docs": "Docs"
       }
     },

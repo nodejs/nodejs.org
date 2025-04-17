@@ -2,12 +2,10 @@ import Modal from '@node-core/ui-components/Common/Modal';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
+import { MinorReleasesTable } from '@/components/Downloads/MinorReleasesTable';
 import LinkWithArrow from '@/components/LinkWithArrow';
-import { BASE_CHANGELOG_URL } from '@/next.constants.mjs';
 import type { NodeRelease } from '@/types';
-import { getNodeApiLink } from '@/util/getNodeApiLink';
-
-import { MinorReleasesTable } from './MinorReleasesTable';
+import { getReleaseAnnounceLink } from '@/util/getReleaseAnnounceLink';
 
 type ReleaseModalProps = {
   isOpen: boolean;
@@ -22,36 +20,26 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
 }) => {
   const t = useTranslations('components.releaseModal');
 
+  const modalHeading = t('title', {
+    version: release.major,
+  });
+
+  const releaseAnnounceLink = getReleaseAnnounceLink(release);
+
   return (
     <Modal
-      heading={`Node.js ${release.major} Release`}
-      subheading={release?.codename ?? ''}
       open={isOpen}
       onOpenChange={closeModal}
+      heading={modalHeading}
+      subheading={release.codename}
     >
-      <div className="flex flex-row gap-2">
-        {release.status !== 'Current' && (
-          <LinkWithArrow
-            href={`/blog/announcements/v${release.major}-release-announce`}
-          >
-            {t('releaseAnnouncement')}
-          </LinkWithArrow>
-        )}
-
-        <LinkWithArrow
-          href={`https://nodejs.org/download/release/${release.versionWithPrefix}/`}
-        >
-          {t('actions.releases')}
+      {releaseAnnounceLink && (
+        <LinkWithArrow href={releaseAnnounceLink}>
+          {t('releaseAnnouncement')}
         </LinkWithArrow>
+      )}
 
-        <LinkWithArrow href={`${BASE_CHANGELOG_URL}${release.version}`}>
-          {t('actions.changelog')}
-        </LinkWithArrow>
-
-        <LinkWithArrow href={getNodeApiLink(release.versionWithPrefix)}>
-          {t('actions.docs')}
-        </LinkWithArrow>
-      </div>
+      <h3>{t('minorVersions')}</h3>
 
       <MinorReleasesTable releases={release.minorVersions} />
     </Modal>
