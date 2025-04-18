@@ -61,6 +61,7 @@
           "links": {
             "asynchronousWork": "Asynchronous Work",
             "asynchronousFlowControl": "Asynchronous flow control",
+            "discoverPromisesInNodejs": "Discover Promises in Node.js",
             "overviewOfBlockingVsNonBlocking": "Overview of Blocking vs Non-Blocking",
             "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asynchronous Programming and Callbacks",
             "discoverJavascriptTimers": "Discover JavaScript Timers",

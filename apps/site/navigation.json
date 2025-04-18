@@ -244,6 +244,10 @@
               "link": "/learn/asynchronous-work/javascript-asynchronous-programming-and-callbacks",
               "label": "components.navigation.learn.asynchronousWork.links.javascriptAsynchronousProgrammingAndCallbacks"
             },
+            "discoverPromisesInNodejs": {
+              "link": "/learn/asynchronous-work/discover-promises-in-nodejs",
+              "label": "components.navigation.learn.asynchronousWork.links.discoverPromisesInNodejs"
+            },
             "discoverJavascriptTimers": {
               "link": "/learn/asynchronous-work/discover-javascript-timers",
               "label": "components.navigation.learn.asynchronousWork.links.discoverJavascriptTimers"
