@@ -7,6 +7,7 @@
 name: Chromatic
 
 on:
+  merge_group:
   push:
     branches:
       - main
@@ -35,7 +36,7 @@ jobs:
     # introduce changes to the Storybook. Hence, we skip running these on Crowdin PRs and Dependabot PRs
     # sha reference has no stable git tag reference or URL. see https://github.com/chromaui/chromatic-cli/issues/797
     if: |
-      github.event_name == 'push' ||
+      github.event_name == 'push' || github.event_name == 'merge_group' ||
       (
         github.event_name == 'pull_request_target' &&
         github.event.label.name == 'github_actions:pull-request' &&
