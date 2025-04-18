@@ -43,7 +43,7 @@ jobs:
         github.event.pull_request.head.ref != 'chore/crowdin'
       )
 
-    name: Tests
+    name: Chromatic
     runs-on: ubuntu-latest
 
     environment:
