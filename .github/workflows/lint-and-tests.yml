@@ -19,8 +19,11 @@ on:
     branches:
       - main
   merge_group:
+  pull_request_target:
+    types: [labeled]
 
-# The permissions specified below apply to workflows triggered by `merge_group`, `push`, and `pull_request` events that originate from the same repository (non-fork).
+# The permissions specified below apply to workflows triggered by `merge_group`, `push`, `pull_request_target`, and `pull_request` events
+# that originate from the same repository (non-fork).
 # However, workflows triggered by `pull_request` events from forked repositories are treated differently for security reasons:
 # - These workflows **do not** have access to any secrets configured in the repository.
 # - They are also **not granted any permissions** to perform actions on the base repository.
@@ -38,6 +41,12 @@ env:
 
 jobs:
   lint:
+    # This workflow should only be triggered by the pull_request_target event
+    # when the label 'github_actions:pull-request' is added to a crowdin PR.
+    #
+    # We don't need to run Quality checks on Crowdin PRs, so we just skip this
+    # step.
+    if: ${{ github.event_name != 'pull_request_target' }}
     name: Quality checks
     runs-on: ubuntu-latest
 
@@ -82,25 +91,16 @@ jobs:
         run: npm i --no-audit --no-fund --ignore-scripts --userconfig=/dev/null
 
       - name: Run quality checks with `turbo`
-        # We run the ESLint and Prettier commands on all Workflow triggers of the `Lint` job, besides if
-        # the Pull Request comes from a Crowdin Branch, as we don't want to run ESLint and Prettier on Crowdin PRs
-        # Note: Linting and Prettifying of files on Crowdin PRs is handled by the `translations-pr.yml` Workflow
-        if: |
-          (github.event_name == 'push' || github.event_name == 'merge_group') ||
-          (github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'chore/crowdin')
         run: npx turbo lint check-types prettier
 
       - name: Save Lint Cache
         # We only want to save caches on `push` events or `pull_request_target` events
         # and if it is a `pull_request_target` event, we want to avoid saving the cache if the PR comes from Dependabot
-        # or if it comes from an automated Crowdin Pull Request
         # The reason we save caches on `push` is because caches creates on `main` (default) branches can be reused within
         # other Pull Requests and PRs coming from forks
         if: |
           github.event_name == 'push' ||
-          (github.event_name == 'pull_request' &&
-            startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
-            github.event.pull_request.head.ref != 'chore/crowdin')
+          startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
         uses: actions/cache/save@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         with:
           path: |
@@ -114,6 +114,18 @@ jobs:
   tests:
     name: Tests
     runs-on: ubuntu-latest
+    # This condition ensures the job only runs in the following cases:
+    # - The event is *not* pull_request_target, OR
+    # - The event *is* pull_request_target AND all of the following are true:
+    #     - The label added is 'github_actions:pull-request',
+    #     - The PR head branch is 'chore/crowdin' (ensures it's a Crowdin-generated PR).
+    if: |
+      github.event_name != 'pull_request_target' ||
+      (
+        github.event_name == 'pull_request_target' &&
+        github.event.label.name == 'github_actions:pull-request' &&
+        github.event.pull_request.head.ref == 'chore/crowdin'
+      )
 
     steps:
       - name: Harden Runner
@@ -123,6 +135,8 @@ jobs:
 
       - name: Git Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || github.ref }}
 
       - name: Set up Node.js
         uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.3.0
