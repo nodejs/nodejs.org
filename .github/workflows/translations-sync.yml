@@ -32,6 +32,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          token: ${{ secrets.CROWDIN_GITHUB_BOT_TOKEN }}
 
         # see all the options at https://github.com/crowdin/github-action
       - name: Crowdin PR
