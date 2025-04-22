@@ -54,3 +54,42 @@ En Node.js, no existe tal llamada de inicio del ciclo de eventos. Node.js simple
 HTTP es un ciudadano de primera clase en Node.js, diseñado teniendo en cuenta la transmisión y la baja latencia. Esto hace que Node.js sea muy adecuado para la base de una biblioteca o framework web.
 
 Que Node.js esté diseñado sin hilos no significa que no puedas aprovechar múltiples núcleos en tu entorno. Los procesos secundarios se pueden generar utilizando nuestra API [`child_process.fork()`](https://nodejs.org/api/child_process.html) y están diseñados para que sea fácil comunicarse con ellos. Construido sobre esa misma interfaz se encuentra el módulo [`cluster`](https://nodejs.org/api/cluster.html), que le permite compartir sockets entre procesos para permitir el equilibrio de carga en sus núcleos.
+
+## Recursos Oficiales de Node.js
+
+Para asegurar autenticidad y seguridad al usar Node.js, siempre use fuentes oficiales. No confíe en correos electrónicos, binarios, ni descargas de fuentes no oficiales.
+
+### Dominios oficiales de Node.js
+
+Para descargar binarios de Node.js y leer documentación oficial, use solo estos dominios:
+
+- [nodejs.org](https://nodejs.org)
+- [nodejs.dev](https://nodejs.dev) _(Redirige a https://nodejs.org)_
+- [iojs.org](https://iojs.org) _(Redirige a https://nodejs.org)_
+
+### Paquetes oficiales de npm
+
+El equipo de Node.js mantiene los siguientes alcances oficiales de paquetes npm:
+
+- [`@node-core`](https://npmjs.com/~node-core)
+- [`@pkgjs`](https://npmjs.com/~pkgjs)
+
+Además, el equipo de Node.js mantiene los paquetes publicados por la cuenta npm [`nodejs-foundation`](https://npmjs.com/~nodejs-foundation), aunque otros paquetes relacionados con Node.js (como [`undici`](https://www.npmjs.com/package/undici)) también pueden ser mantenidos por colaboradores estrechamente vinculados al proyecto.
+
+Usar paquetes del equipo de Node.js garantiza que estás trabajando con componentes oficialmente soportados de Node.js.
+
+### "Organizaciones oficiales de GitHub"
+
+Node.js y los proyectos relacionados se mantienen bajo estas organizaciones oficiales de GitHub:
+
+- [nodejs](https://github.com/nodejs)
+- [pkgjs](https://github.com/pkgjs)
+
+### Canales oficiales de comunicación
+
+Node.js y la OpenJS Foundation se comunican a través de varios canales oficiales y apoyados por la comunidad. Puedes encontrar detalles sobre cómo involucrarte en la página de [Involúcrate](https://nodejs.org/en/about/get-involved).
+
+### Reportar problemas en el sitio web y tiempo de inactividad
+
+Si encuentras problemas con el sitio web de Node.js, repórtalos en el [repositorio del sitio web de Node.js](https://github.com/nodejs/nodejs.org/issues).
+Para actualizaciones en tiempo real sobre interrupciones, visita la [Página de Estado de Node.js](https://status.nodejs.org).
