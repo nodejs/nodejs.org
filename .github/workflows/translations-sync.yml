@@ -16,9 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  # These permissions required by `crowdin/github-action`
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
   synchronize-with-crowdin:
@@ -34,6 +32,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          token: ${{ secrets.CROWDIN_GITHUB_BOT_TOKEN }}
 
         # see all the options at https://github.com/crowdin/github-action
       - name: Crowdin PR
@@ -51,7 +51,7 @@ jobs:
           pull_request_body: 'New Crowdin translations from the [Node.js Crowdin project](https://crowdin.com/project/nodejs-web)'
           commit_message: 'chore: synced translations from crowdin'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CROWDIN_GITHUB_BOT_TOKEN }}
           # A numeric ID, found at https://crowdin.com/project/nodejs-web/tools/api
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           # Created from https://crowdin.com/settings#api-key logged in using nodejs-crowdin-bot
@@ -76,6 +76,7 @@ jobs:
         with:
           # Use the number from the output of crowdin/github-action
           ref: refs/pull/${{ needs.synchronize-with-crowdin.outputs.pull_request_number }}/head
+          token: ${{ secrets.CROWDIN_GITHUB_BOT_TOKEN }}
 
       - name: Restore Lint Cache
         uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
