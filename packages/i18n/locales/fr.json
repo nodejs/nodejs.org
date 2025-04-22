@@ -61,6 +61,7 @@
           "links": {
             "asynchronousWork": "Travail asynchrone",
             "asynchronousFlowControl": "Contrôle de l'exécution asynchrone",
+            "discoverPromisesInNodejs": "Découvrir les promesses dans Node.js",
             "overviewOfBlockingVsNonBlocking": "Vue d'ensemble des opérations bloquantes vs non bloquantes",
             "javascriptAsynchronousProgrammingAndCallbacks": "Programmation asynchrone en JavaScript et Callbacks",
             "discoverJavascriptTimers": "Découvrez les minuteurs JavaScript",
@@ -108,6 +109,7 @@
           "links": {
             "diagnostics": "Diagnostique",
             "userJourney": "Parcours de l'utilisateur",
+            "understandingAndTuningMemory": "Comprendre et optimiser la mémoire",
             "memory": "Mémoire",
             "liveDebugging": "Débogage en direct",
             "poorPerformance": "Live debugging",

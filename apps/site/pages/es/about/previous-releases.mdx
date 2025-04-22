@@ -24,16 +24,30 @@ El soporte comercial para versiones posteriores a la fase de Mantenimiento está
 
 <DownloadReleasesTable />
 
-## Oficial versus Comunidad
+## Métodos de Instalación Oficial vs. Comunidad
 
-El sito web de Node.js ofrece varios métodos de instalación que facilitan una instalación de Node.js sin interacción, como por una interfaz de línea de comandos (CLI), gestores de paquetes del OS (como `apt`), o gestores de versiones de Node.js (como `nvm`).
+El sito web de Node.js ofrece varios métodos de instalación que facilitan una instalación de Node.js sin interacción, como por una interfaz de línea de comandos (CLI), gestores de paquetes del sistema operativo (OS) (e.g. `brew`), o gestores de versiones de Node.js (e.g. `nvm`).
 
-El proyecto Node.js, en un intento de popularizar y anunciar esfuerzos comunitarios, ha introducido una página nueva de Descargas que enumera métodos de instalación Oficial y de la Comunidad, así proveyendo más flexibilidad y opciones para usuarios.
-Como parte de este cambio, hemos introducido el concepto de métodos de instalación "Oficial" y "Comunidad". Para considerarse "Oficial", un método de instalación debe cumplir con los siguientes requisitos:
+En un intento de anunciar y popularizar esfuerzos comunitarios, el proyecto Node.js ha introducido una página de Descargas actualizada que distingue entre métodos de instalación Oficial y de la Comunidad. Esta presentación provee más flexibilidad y opciones para usuarios. Para evitar confusión, hemos definido requisitos para cada designación.
 
-| Requisitos                                                                                                                                                 |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Lanzamientos nuevos de Node.js deben estar disponible al mismo tiempo que el lanzamiento oficial                                                           |
-| Los mantenedores del proyecto tienen una estrecha relación con Node.js, la cual incluye comunicación directa                                               |
-| El método de instalación descarga los binarios oficiales empaquetados por el proyecto Node.js                                                              |
-| El método de instalación **no** compila desde el código fuente cuando binarios están disponibles, ni modifica los binarios oficiales proveídos por Node.js |
+### Métodos de Instalación Oficiales
+
+Para considerarse "Oficial", métodos de instalación deben cumplir con los siguientes requisitos:
+
+| Requisitos (Métodos de Instalación Oficiales)                                                                                                           |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Lanzamientos nuevos de Node.js deben estar disponible al mismo tiempo que el lanzamiento oficial.                                                       |
+| Los mantenedores del proyecto tienen una estrecha relación con Node.js, la cual incluye comunicación directa.                                           |
+| El método de instalación debe descargar los binarios oficiales empaquetados por el proyecto Node.js.                                                    |
+| El método de instalación no compila desde el código fuente cuando binarios están disponibles, ni modifica los binarios oficiales proveídos por Node.js. |
+
+### Métodos de Instalación de Comunidad
+
+Para ser incluida en la página de descargas (/download), los métodos de instalación de comunidad deben cumplir con unos requisitos mínimos:
+
+- **Apoyo de versiones:** Debe proveer instalaciones de cada versión de Node.js apoyado oficialmente que no ha pasado el fin de su vida útil (EOL).
+- **Compatibilidad con Sistemas Operativos**: Debe operar en uno o más sistemas operativos oficialmente compatible.
+- **Apoyo amplio de Sistemas Operativos:** No se puede limitar a una fracción de distribuciones o versiones del sistema operativo.
+  - Por ejemplo, si un método de instalación declara compatibilidad con "Windows", debe funcionar en cada edición de "Windows 10" y "Windows 11" (incluso versiones para servidores).
+  - De igual manera, un método de instalación que declara compatibilidad con "Linux" debe poder instalarse en cada una de las distribuciones principales de Linux, y no solo una selección reducida. No puede depender de un gestor de paquetes específico a una distribución en particular como `apt` o `dnf`.
+- **Gratis y de Código Abierto:** Debe ser de código abierto que puede usarse gratuitamente y no como producto comercial vendido ni un servicio pagado.
