@@ -1,35 +1,43 @@
+import assert from 'node:assert/strict';
 import { normalize } from 'node:path';
 import { Readable } from 'node:stream';
-
-import generateBlogData from '@/next-data/generators/blogData.mjs';
+import { describe, it, mock } from 'node:test';
 
 let files = [];
 
-jest.mock('node:fs', () => ({
-  createReadStream: jest.fn(filename => {
-    const readable = new Readable();
-    const file = files.find(f => filename.endsWith(normalize(f.path)));
-    readable.push(`---\n`);
-    file.frontMatterContent.forEach(line => readable.push(`${line}\n`));
-    readable.push(`---\n`);
-    readable.push(null);
-    readable.close = () => {};
-    return readable;
-  }),
-}));
+mock.module('node:fs', {
+  namedExports: {
+    createReadStream: filename => {
+      const readable = new Readable();
+      const file = files.find(f => filename.endsWith(normalize(f.path)));
+      readable.push(`---\n`);
+      file.frontMatterContent.forEach(line => readable.push(`${line}\n`));
+      readable.push(`---\n`);
+      readable.push(null);
+      readable.close = () => {};
+      return readable;
+    },
+  },
+});
 
-jest.mock('../../../next.helpers.mjs', () => ({
-  getMarkdownFiles: () => Promise.resolve(files.map(file => file.path)),
-}));
+mock.module('../../../next.helpers.mjs', {
+  namedExports: {
+    getMarkdownFiles: () => {
+      return Promise.resolve(files.map(file => file.path));
+    },
+  },
+});
+
+const generateBlogData = (await import('../blogData.mjs')).default;
 
 describe('generateBlogData', () => {
-  it('should return zero posts and only the default "all" category is no md file is found', async () => {
+  it('should return zero posts and only the default "all" category if no md file is found', async () => {
     files = [];
 
     const blogData = await generateBlogData();
 
-    expect(blogData.categories).toStrictEqual(['all']);
-    expect(blogData.posts).toStrictEqual([]);
+    assert.deepEqual(blogData.categories, ['all']);
+    assert.deepEqual(blogData.posts, []);
   });
 
   it('should collect the data from a single md file if only one is found', async () => {
@@ -46,11 +54,32 @@ describe('generateBlogData', () => {
 
     const blogData = await generateBlogData();
 
-    expect(blogData.posts.length).toBe(1);
+    assert.equal(blogData.posts.length, 1);
     const post = blogData.posts[0];
-    expect(post.title).toEqual('POST 1');
-    expect(post.date).toEqual(new Date('2020-01-01T00:00:00.000Z'));
-    expect(post.author).toEqual('author');
+    assert.equal(post.title, 'POST 1');
+    assert.deepEqual(post.date, new Date('2020-01-01T00:00:00.000Z'));
+    assert.equal(post.author, 'author');
+  });
+
+  it('should collect the data from a single md file if only one is found', async () => {
+    files = [
+      {
+        path: 'pages/en/blog/post1.md',
+        frontMatterContent: [
+          `date: '2020-01-01T00:00:00.000Z'`,
+          `title: POST 1`,
+          `author: author`,
+        ],
+      },
+    ];
+
+    const blogData = await generateBlogData();
+
+    assert.equal(blogData.posts.length, 1);
+    const post = blogData.posts[0];
+    assert.equal(post.title, 'POST 1');
+    assert.deepEqual(post.date, new Date('2020-01-01T00:00:00.000Z'));
+    assert.equal(post.author, 'author');
   });
 
   it('should collect the data from multiple md files', async () => {
@@ -85,22 +114,25 @@ describe('generateBlogData', () => {
 
     const blogData = await generateBlogData();
 
-    expect(blogData.posts.length).toBe(3);
-    expect(blogData.posts[0].title).toEqual('POST 1');
-    expect(blogData.posts[0].date).toEqual(
+    assert(blogData.posts.length, 3);
+    assert.equal(blogData.posts[0].title, 'POST 1');
+    assert.deepEqual(
+      blogData.posts[0].date,
       new Date('2020-01-01T00:00:00.000Z')
     );
-    expect(blogData.posts[0].author).toEqual('author-a');
-    expect(blogData.posts[1].title).toEqual('POST 2');
-    expect(blogData.posts[1].date).toEqual(
+    assert.equal(blogData.posts[0].author, 'author-a');
+    assert.equal(blogData.posts[1].title, 'POST 2');
+    assert.deepEqual(
+      blogData.posts[1].date,
       new Date('2020-01-02T00:00:00.000Z')
     );
-    expect(blogData.posts[1].author).toEqual('author-b');
-    expect(blogData.posts[2].title).toEqual('POST 3');
-    expect(blogData.posts[2].date.setMilliseconds(0)).toEqual(
+    assert.equal(blogData.posts[1].author, 'author-b');
+    assert.equal(blogData.posts[2].title, 'POST 3');
+    assert.equal(
+      blogData.posts[2].date.setMilliseconds(0),
       currentDate.setMilliseconds(0)
     );
-    expect(blogData.posts[2].author).toEqual('author-c');
+    assert.equal(blogData.posts[2].author, 'author-c');
   });
 
   it('should generate categories based on the categories of md files and their years', async () => {
@@ -137,7 +169,7 @@ describe('generateBlogData', () => {
 
     const blogData = await generateBlogData();
 
-    expect(blogData.categories.sort()).toStrictEqual([
+    assert.deepEqual(blogData.categories.sort(), [
       'all',
       'category-a',
       'category-b',
@@ -168,7 +200,7 @@ describe('generateBlogData', () => {
 
     const blogData = await generateBlogData();
 
-    expect(blogData.posts.map(p => p.slug).sort()).toStrictEqual([
+    assert.deepEqual(blogData.posts.map(p => p.slug).sort(), [
       '/blog/category-a/post1',
       '/blog/category-b/post2',
       '/blog/uncategorized/post3',
