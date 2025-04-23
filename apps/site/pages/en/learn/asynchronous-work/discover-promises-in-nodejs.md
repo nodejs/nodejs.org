@@ -381,7 +381,7 @@ console.log('Synchronous task executed');
 
 - Use `queueMicrotask()` for tasks that need to run immediately after the current script and before any I/O or timer callbacks, typically for Promise resolutions.
 - Use `process.nextTick()` for tasks that should execute before any I/O events, often useful for deferring operations or handling errors synchronously.
-– Use `setImmediate()` for tasks that should run after the current event loop's I/O events.
+  – Use `setImmediate()` for tasks that should run after the current event loop's I/O events.
 
 Because these tasks execute outside of the current synchronous flow, uncaught exceptions inside these callbacks won't be caught by surrounding `try/catch` blocks and may crash the application if not properly managed (e.g., by attaching `.catch()` to Promises or using global error handlers like `process.on('uncaughtException')`).
 
