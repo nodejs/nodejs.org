@@ -20,19 +20,19 @@
 
   &.default {
     @apply border-green-200
-          bg-green-600
-          dark:border-green-600;
+      bg-green-600
+      dark:border-green-800;
   }
 
   &.error {
     @apply border-danger-200
-    bg-danger-600
-    dark:border-danger-600;
+      bg-danger-600
+      dark:border-danger-800;
   }
 
   &.warning {
     @apply border-warning-200
-    bg-warning-600
-    dark:border-warning-600;
+      bg-warning-600
+      dark:border-warning-600;
   }
 }
