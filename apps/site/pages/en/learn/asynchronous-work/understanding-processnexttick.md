@@ -54,4 +54,4 @@ Running at order 3 or 4, setTimeout
 
 In that case, `console.log('Hello => number 1');` will first run because event loop only starts after call stack is cleared.The `nextTick` queue is processed before entering the next phase, which is why the `process.nextTick()` callback runs immediately after.
 
-The execution order of `serImmediate` and `setTimeout` can not be determined in the main module. For a detailed explanation, refer to [setImmediate vs setTimeout](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick#setimmediate-vs-settimeout).
+The execution order of `setImmediate()` and `setTimeout()` can very based on the execution contexts. For more information, refer to [`setImmediate()` vs `setTimeout()`](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick#setimmediate-vs-settimeout).
