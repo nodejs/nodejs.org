@@ -18,7 +18,6 @@ const DownloadReleasesTable: FC = async () => {
       <thead>
         <tr>
           <th>{t('components.downloadReleasesTable.version')}</th>
-          <th>{t('components.downloadReleasesTable.nApiVersion')}</th>
           <th>{t('components.downloadReleasesTable.codename')}</th>
           <th>{t('components.downloadReleasesTable.firstReleased')}</th>
           <th>{t('components.downloadReleasesTable.lastUpdated')}</th>
@@ -30,7 +29,6 @@ const DownloadReleasesTable: FC = async () => {
         {releaseData.map(release => (
           <tr key={release.major}>
             <td data-label="Version">v{release.major}</td>
-            <td data-label="Modules">v{release.modules}</td>
             <td data-label="LTS">{release.codename || '-'}</td>
             <td data-label="Date">
               <time>{release.currentStart}</time>

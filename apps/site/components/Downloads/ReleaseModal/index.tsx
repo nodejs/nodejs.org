@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import { MinorReleasesTable } from '@/components/Downloads/MinorReleasesTable';
+import { ReleaseOverview } from '@/components/Downloads/ReleaseOverview';
 import LinkWithArrow from '@/components/LinkWithArrow';
 import type { NodeRelease } from '@/types';
 import { getReleaseAnnounceLink } from '@/util/getReleaseAnnounceLink';
@@ -34,12 +35,6 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
 
   return (
     <Modal open={isOpen} onOpenChange={closeModal} heading={modalHeading}>
-      {releaseAnnounceLink && (
-        <LinkWithArrow href={releaseAnnounceLink}>
-          {t('components.releaseModal.releaseAnnouncement')}
-        </LinkWithArrow>
-      )}
-
       {release.status === 'End-of-life' && (
         <AlertBox
           title={t('components.common.alertBox.warning')}
@@ -50,7 +45,17 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
         </AlertBox>
       )}
 
-      <h3>{t('components.releaseModal.minorVersions')}</h3>
+      {releaseAnnounceLink && (
+        <LinkWithArrow href={releaseAnnounceLink}>
+          {t('components.releaseModal.releaseAnnouncement')}
+        </LinkWithArrow>
+      )}
+
+      <h5>{t('components.releaseModal.overview')}</h5>
+
+      <ReleaseOverview release={release} />
+
+      <h5>{t('components.releaseModal.minorVersions')}</h5>
 
       <MinorReleasesTable releases={release.minorVersions} />
     </Modal>
