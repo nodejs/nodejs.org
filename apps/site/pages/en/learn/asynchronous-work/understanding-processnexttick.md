@@ -31,11 +31,11 @@ Use `nextTick()` when you want to make sure that in the next event loop iteratio
 console.log('Hello => number 1');
 
 setImmediate(() => {
-  console.log('Running before the timeout => number 3');
+  console.log('Running at order 3 or 4, setImmediate');
 });
 
 setTimeout(() => {
-  console.log('The timeout running last => number 4');
+  console.log('Running at order 3 or 4, setTimeout');
 }, 0);
 
 process.nextTick(() => {
@@ -43,13 +43,13 @@ process.nextTick(() => {
 });
 ```
 
-#### Example output:
+#### Example output(possible):
 
 ```bash
 Hello => number 1
 Running at next tick => number 2
-Running before the timeout => number 3
-The timeout running last => number 4
+Running at order 3 or 4, setImmediate
+Running at order 3 or 4, setTimeout
 ```
 
-The exact output may differ from run to run.
+The exact output may differ from run to run. [setImmediate vs setTimeout](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick#setimmediate-vs-settimeout) explain the reason.
