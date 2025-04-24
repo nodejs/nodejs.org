@@ -1,7 +1,6 @@
 'use client';
 
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
-import * as ScrollPrimitive from '@radix-ui/react-scroll-area';
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import classNames from 'classnames';
 import { useEffect, useId, useMemo, useState } from 'react';
@@ -168,16 +167,15 @@ const Select = <T extends string>({
                 [styles.inline]: inline,
               })}
             >
-              <ScrollPrimitive.Root type="auto">
-                <SelectPrimitive.Viewport>
-                  <ScrollPrimitive.Viewport>
-                    {memoizedMappedValues}
-                  </ScrollPrimitive.Viewport>
-                </SelectPrimitive.Viewport>
-                <ScrollPrimitive.Scrollbar orientation="vertical">
-                  <ScrollPrimitive.Thumb />
-                </ScrollPrimitive.Scrollbar>
-              </ScrollPrimitive.Root>
+              <SelectPrimitive.ScrollUpButton>
+                <ChevronUpIcon className={styles.scrollIcon} />
+              </SelectPrimitive.ScrollUpButton>
+              <SelectPrimitive.Viewport>
+                {memoizedMappedValues}
+              </SelectPrimitive.Viewport>
+              <SelectPrimitive.ScrollDownButton>
+                <ChevronDownIcon className={styles.scrollIcon} />
+              </SelectPrimitive.ScrollDownButton>
             </SelectPrimitive.Content>
           </SelectPrimitive.Portal>
         </SelectPrimitive.Root>

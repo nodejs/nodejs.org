@@ -151,3 +151,11 @@
       rounded;
   }
 }
+
+.scrollIcon {
+  @apply mx-auto
+    my-1
+    size-4
+    text-neutral-700
+    dark:text-neutral-200;
+}
