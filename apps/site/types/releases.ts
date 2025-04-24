@@ -14,8 +14,8 @@ export interface NodeReleaseSource {
   maintenanceStart?: string;
   endOfLife: string;
   npm?: string;
-  v8?: string;
-  releaseDate?: string;
+  v8: string;
+  releaseDate: string;
   modules?: string;
 }
 

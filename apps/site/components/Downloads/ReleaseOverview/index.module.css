@@ -22,7 +22,7 @@
       gap-2;
 
     h1 {
-      @apply text-base
+      @apply text-sm
         font-semibold;
     }
 

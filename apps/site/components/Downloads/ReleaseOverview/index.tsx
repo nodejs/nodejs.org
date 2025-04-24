@@ -7,6 +7,7 @@ import {
 import { useTranslations } from 'next-intl';
 import type { FC, ReactNode } from 'react';
 
+import FormattedTime from '@/components/Common/FormattedTime';
 import type { NodeRelease } from '@/types';
 
 import styles from './index.module.css';
@@ -41,16 +42,14 @@ export const ReleaseOverview: FC<ReleaseOverviewProps> = ({ release }) => {
       <div className={styles.container}>
         <Item
           icon={<CalendarIcon />}
-          title={release.currentStart}
+          title={<FormattedTime date={release.currentStart} />}
           subtitle={t('components.releaseOverview.firstReleased')}
         />
-        {release.releaseDate && (
-          <Item
-            icon={<ClockIcon />}
-            title={release.releaseDate}
-            subtitle={t('components.releaseOverview.lastUpdated')}
-          />
-        )}
+        <Item
+          icon={<ClockIcon />}
+          title={<FormattedTime date={release.releaseDate} />}
+          subtitle={t('components.releaseOverview.lastUpdated')}
+        />
         <Item
           icon={<Square3Stack3DIcon />}
           title={release.minorVersions.length}
@@ -70,13 +69,11 @@ export const ReleaseOverview: FC<ReleaseOverviewProps> = ({ release }) => {
             subtitle={t('components.releaseOverview.npmVersion')}
           />
         )}
-        {release.v8 && (
-          <Item
-            icon={<CodeBracketSquareIcon />}
-            title={`v${release.v8}`}
-            subtitle={t('components.releaseOverview.v8Version')}
-          />
-        )}
+        <Item
+          icon={<CodeBracketSquareIcon />}
+          title={`v${release.v8}`}
+          subtitle={t('components.releaseOverview.v8Version')}
+        />
       </div>
     </div>
   );

@@ -83,8 +83,8 @@ const generateReleaseData = async () => {
       codename: major.support.codename || '',
       isLts: status === 'LTS',
       npm: latestVersion.dependencies.npm || '',
-      v8: latestVersion.dependencies.v8 || '',
-      releaseDate: latestVersion.releaseDate || '',
+      v8: latestVersion.dependencies.v8,
+      releaseDate: latestVersion.releaseDate,
       modules: latestVersion.modules.version || '',
       minorVersions,
     };

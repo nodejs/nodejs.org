@@ -2,6 +2,7 @@ import Badge from '@node-core/ui-components/Common/Badge';
 import { getTranslations } from 'next-intl/server';
 import type { FC } from 'react';
 
+import FormattedTime from '@/components/Common/FormattedTime';
 import DetailsButton from '@/components/Downloads/DownloadReleasesTable/DetailsButton';
 import getReleaseData from '@/next-data/releaseData';
 
@@ -31,10 +32,10 @@ const DownloadReleasesTable: FC = async () => {
             <td data-label="Version">v{release.major}</td>
             <td data-label="LTS">{release.codename || '-'}</td>
             <td data-label="Date">
-              <time>{release.currentStart}</time>
+              <FormattedTime date={release.currentStart} />
             </td>
             <td data-label="Date">
-              <time>{release.releaseDate}</time>
+              <FormattedTime date={release.releaseDate} />
             </td>
             <td data-label="Status">
               <Badge
