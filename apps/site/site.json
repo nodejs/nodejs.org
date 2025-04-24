@@ -31,6 +31,7 @@
       "startDate": "2025-04-01T00:00:00.000Z",
       "endDate": "2025-06-01T00:00:00.000Z",
       "text": "Node.js v18 is reaching End-Of-Life on April 30, 2025.",
+      "link": "https://nodejs.org/en/about/previous-releases#release-schedule",
       "type": "warning"
     }
   },
