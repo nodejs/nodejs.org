@@ -21,7 +21,7 @@ export const MinorReleasesTable: FC<MinorReleasesTableProps> = ({
   const t = useTranslations('components.minorReleasesTable');
 
   return (
-    <table>
+    <table className="min-w-md w-fit">
       <thead>
         <tr>
           <th>{t('version')}</th>
