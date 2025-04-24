@@ -1,0 +1,15 @@
+name: "Report an issue on a learn article"
+fields:
+  - type: "input"
+    attributes:
+      label: "Affected URL"
+      description: "Provide the full URL where the issue occurred."
+    validations:
+      required: true
+
+  - type: "textarea"
+    attributes:
+      label: "Issue Description"
+      description: "Clearly describe the issue encountered or the incorrect information found."
+    validations:
+      required: true
