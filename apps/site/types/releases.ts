@@ -19,9 +19,14 @@ export interface NodeReleaseSource {
   modules?: string;
 }
 
+export interface MinorVersion {
+  version: string;
+  releaseDate: string;
+}
+
 export interface NodeRelease extends NodeReleaseSource {
   versionWithPrefix: string;
   isLts: boolean;
   status: NodeReleaseStatus;
-  minorVersions: Array<string>;
+  minorVersions: Array<MinorVersion>;
 }

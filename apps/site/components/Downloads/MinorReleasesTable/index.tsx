@@ -6,12 +6,13 @@ import type { FC } from 'react';
 
 import Link from '@/components/Link';
 import { BASE_CHANGELOG_URL } from '@/next.constants.mjs';
+import type { MinorVersion } from '@/types';
 import { getNodeApiLink } from '@/util/getNodeApiLink';
 
 import styles from './index.module.css';
 
 type MinorReleasesTableProps = {
-  releases: Array<string>;
+  releases: Array<MinorVersion>;
 };
 
 export const MinorReleasesTable: FC<MinorReleasesTableProps> = ({
@@ -29,8 +30,8 @@ export const MinorReleasesTable: FC<MinorReleasesTableProps> = ({
       </thead>
       <tbody>
         {releases.map(release => (
-          <tr key={release}>
-            <td>v{release}</td>
+          <tr key={release.version}>
+            <td>v{release.version}</td>
             <td>
               <div className={styles.links}>
                 <Link

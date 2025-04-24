@@ -69,6 +69,11 @@ const generateReleaseData = async () => {
     // Get the major release status based on our Release Schedule
     const status = getNodeReleaseStatus(new Date(), support);
 
+    const minorVersions = Object.entries(major.releases).map(([, release]) => ({
+      version: release.semver.raw,
+      releaseDate: release.releaseDate,
+    }));
+
     return {
       ...support,
       status,
@@ -81,9 +86,7 @@ const generateReleaseData = async () => {
       v8: latestVersion.dependencies.v8 || '',
       releaseDate: latestVersion.releaseDate || '',
       modules: latestVersion.modules.version || '',
-      minorVersions: Object.entries(major.releases).map(
-        ([, release]) => release.semver.raw
-      ),
+      minorVersions,
     };
   });
 };
