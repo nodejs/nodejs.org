@@ -1,6 +1,6 @@
 name: Report an issue on a Learn article
 description: 'Found an error or something unclear in one of our Learn articles? Let us know!'
-labels: [bug, learn]
+labels: [bug, content, learn]
 body:
   - type: markdown
     attributes:
