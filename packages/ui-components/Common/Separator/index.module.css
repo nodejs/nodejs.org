@@ -6,11 +6,11 @@
 
   &.horizontal {
     @apply h-px
-        w-full;
+      w-full;
   }
 
   &.vertical {
     @apply h-full
-        w-px;
+      w-px;
   }
 }
