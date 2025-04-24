@@ -52,3 +52,42 @@ Node.jsはRubyの[Event Machine](https://github.com/eventmachine/eventmachine)�
 HTTPはNode.jsの中では第一級オブジェクトであり、ストリーミングや低レイテンシーを意識して設計されています。このためNode.jsはウェブのライブラリーやフレームワークの基盤として適しています。
 
 Node.jsはスレッドを用いず設計されていますが、マルチコアを利用できないわけではありません。子プロセスは[`child_process.fork()`](https://nodejs.org/api/child_process.html) APIを使って作成でき、簡単に通信できるように設計されています。これと同じインターフェイスをもとに作られたのが[`cluster`](https://nodejs.org/api/cluster.html)モジュールで、プロセス間でソケットを共有することでコアの負荷分散を行えます。
+
+## Node.js公式の情報源
+
+Node.jsを利用する上で信頼性と安全性を確保するために、常に公式の情報源を確認してください。非公式の情報源からの電子メール、バイナリー、ダウンロード処理といったものを信用しないにしてください。
+
+### Node.js公式のドメイン
+
+Node.jsのダウンロードと公式ドキュメントの参照は次のドメインのみを使用してください：
+
+- [nodejs.org](https://nodejs.org)
+- [nodejs.dev](https://nodejs.dev) _(https://nodejs.org にリダイレクトされます)_
+- [iojs.org](https://iojs.org) _(https://nodejs.org にリダイレクトされます)_
+
+### 公式のnpmパッケージ
+
+Node.jsチームは公式npmパッケージを次のスコープで管理しています：
+
+- [`@node-core`](https://npmjs.com/~node-core)
+- [`@pkgjs`](https://npmjs.com/~pkgjs)
+
+さらにNode.jsチームは[`nodejs-foundation`](https://npmjs.com/~nodejs-foundation)のnpmアカウントで公開されているパッケージを管理しています。
+また、他のNode.js関連パッケージ（[`undici`](https://www.npmjs.com/package/undici)のようなもの）もプロジェクトに密接に関係する貢献者によって管理されているかもしれません。
+
+Node.jsチームのパッケージを利用することで公式にサポートされているNode.jsコンポーネントを利用していることが保証されます。
+
+### 公式GitHub Organization
+
+Node.jsとその関連プロジェクトは次の公式GitHub Organizationで管理されています：
+
+- [nodejs](https://github.com/nodejs)
+- [pkgjs](https://github.com/pkgjs)
+
+### 公式コミュニケーションチャンネル
+
+Node.jsとOpenJS Foundationはさまざまな公式チャネルやコミュニティがサポートするチャネルを通じて連携しています。参加方法の詳細は[活動への参加](https://nodejs.org/ja/about/get-involved)ページにあります。
+
+### ウェブサイトの問題とダウンタイムの報告
+
+Node.jsのウェブサイトで問題が発生した場合は[Node.jsウェブサイトリポジトリー](https://github.com/nodejs/nodejs.org/issues)に報告してください。障害に関するリアルタイムの情報については[Node.js Status Page](https://status.nodejs.org) をご確認ください。
