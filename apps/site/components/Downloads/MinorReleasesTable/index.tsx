@@ -36,16 +36,22 @@ export const MinorReleasesTable: FC<MinorReleasesTableProps> = ({
               <div className={styles.links}>
                 <Link
                   kind="neutral"
-                  href={`https://nodejs.org/download/release/v${release}/`}
+                  href={`https://nodejs.org/download/release/v${release.version}/`}
                 >
                   {t('actions.release')}
                 </Link>
                 <Separator orientation="vertical" />
-                <Link kind="neutral" href={`${BASE_CHANGELOG_URL}${release}`}>
+                <Link
+                  kind="neutral"
+                  href={`${BASE_CHANGELOG_URL}${release.version}`}
+                >
                   {t('actions.changelog')}
                 </Link>
                 <Separator orientation="vertical" />
-                <Link kind="neutral" href={getNodeApiLink(`v${release}`)}>
+                <Link
+                  kind="neutral"
+                  href={getNodeApiLink(`v${release.version}`)}
+                >
                   {t('actions.docs')}
                 </Link>
               </div>
