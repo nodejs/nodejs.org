@@ -77,12 +77,15 @@ import { test } from 'node:test';
 import { detectOsInUserAgent } from '…';
 
 const userAgents = [
-  { ua: /* … */, os: 'WIN' },
+  {
+    ua: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.3',
+    os: 'WIN',
+  },
   // …
 ];
 
 test('Detect OS via user-agent', { concurrency: true }, t => {
-  for (const { os, ua } from userAgents) {
+  for (const { os, ua } of userAgents) {
     t.test(ua, () => assert.equal(detectOsInUserAgent(ua), os));
   }
 });
