@@ -28,5 +28,6 @@ export interface NodeRelease extends NodeReleaseSource {
   versionWithPrefix: string;
   isLts: boolean;
   status: NodeReleaseStatus;
+  releaseAnnounceLink?: string;
   minorVersions: Array<MinorVersion>;
 }

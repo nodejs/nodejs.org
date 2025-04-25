@@ -7,7 +7,6 @@ import { MinorReleasesTable } from '@/components/Downloads/MinorReleasesTable';
 import { ReleaseOverview } from '@/components/Downloads/ReleaseOverview';
 import LinkWithArrow from '@/components/LinkWithArrow';
 import type { NodeRelease } from '@/types';
-import { getReleaseAnnounceLink } from '@/util/getReleaseAnnounceLink';
 
 type ReleaseModalProps = {
   isOpen: boolean;
@@ -31,8 +30,6 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
     codename: release.codename ?? '',
   });
 
-  const releaseAnnounceLink = getReleaseAnnounceLink(release);
-
   return (
     <Modal open={isOpen} onOpenChange={closeModal} heading={modalHeading}>
       {release.status === 'End-of-life' && (
@@ -45,8 +42,8 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
         </AlertBox>
       )}
 
-      {releaseAnnounceLink && (
-        <LinkWithArrow href={releaseAnnounceLink}>
+      {release.releaseAnnounceLink && (
+        <LinkWithArrow href={release.releaseAnnounceLink}>
           {t('components.releaseModal.releaseAnnouncement')}
         </LinkWithArrow>
       )}
