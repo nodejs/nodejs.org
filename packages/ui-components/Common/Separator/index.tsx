@@ -2,13 +2,11 @@
 
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import classNames from 'classnames';
-import type * as React from 'react';
+import type { FC, ComponentProps } from 'react';
 
 import styles from './index.module.css';
 
-const Separator: React.FC<
-  React.ComponentProps<typeof SeparatorPrimitive.Root>
-> = ({
+const Separator: FC<ComponentProps<typeof SeparatorPrimitive.Root>> = ({
   className,
   orientation = 'horizontal',
   decorative = true,

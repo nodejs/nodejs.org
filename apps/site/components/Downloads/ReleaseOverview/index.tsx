@@ -5,7 +5,7 @@ import {
   Square3Stack3DIcon,
 } from '@heroicons/react/24/outline';
 import { useTranslations } from 'next-intl';
-import type { FC, ReactNode } from 'react';
+import type { FC, ReactNode, SVGProps } from 'react';
 
 import FormattedTime from '@/components/Common/FormattedTime';
 import type { NodeRelease } from '@/types';
@@ -13,15 +13,15 @@ import type { NodeRelease } from '@/types';
 import styles from './index.module.css';
 
 type ItemProps = {
-  icon: React.JSX.Element;
+  Icon: FC<SVGProps<SVGSVGElement>>;
   title: ReactNode;
   subtitle: ReactNode;
 };
 
-const Item: FC<ItemProps> = ({ icon, title, subtitle }) => {
+const Item: FC<ItemProps> = ({ Icon, title, subtitle }) => {
   return (
     <div className={styles.item}>
-      {icon}
+      <Icon />
       <div>
         <h2>{subtitle}</h2>
         <h1>{title}</h1>
@@ -41,36 +41,36 @@ export const ReleaseOverview: FC<ReleaseOverviewProps> = ({ release }) => {
     <div className={styles.root}>
       <div className={styles.container}>
         <Item
-          icon={<CalendarIcon />}
+          Icon={CalendarIcon}
           title={<FormattedTime date={release.currentStart} />}
           subtitle={t('components.releaseOverview.firstReleased')}
         />
         <Item
-          icon={<ClockIcon />}
+          Icon={ClockIcon}
           title={<FormattedTime date={release.releaseDate} />}
           subtitle={t('components.releaseOverview.lastUpdated')}
         />
         <Item
-          icon={<Square3Stack3DIcon />}
+          Icon={Square3Stack3DIcon}
           title={release.minorVersions.length}
           subtitle={t('components.releaseOverview.minorVersions')}
         />
         {release.modules && (
           <Item
-            icon={<CodeBracketSquareIcon />}
+            Icon={CodeBracketSquareIcon}
             title={`v${release.modules}`}
             subtitle={t('components.releaseOverview.nApiVersion')}
           />
         )}
         {release.npm && (
           <Item
-            icon={<CodeBracketSquareIcon />}
+            Icon={CodeBracketSquareIcon}
             title={`v${release.npm}`}
             subtitle={t('components.releaseOverview.npmVersion')}
           />
         )}
         <Item
-          icon={<CodeBracketSquareIcon />}
+          Icon={CodeBracketSquareIcon}
           title={`v${release.v8}`}
           subtitle={t('components.releaseOverview.v8Version')}
         />
