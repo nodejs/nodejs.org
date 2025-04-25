@@ -25,33 +25,4 @@ Calling `setTimeout(() => {}, 0)` will execute the function at the end of next t
 
 Use `nextTick()` when you want to make sure that in the next event loop iteration that code is already executed.
 
-#### An Example of the [order of events](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick):
-
-```js
-console.log('Hello => number 1');
-
-setImmediate(() => {
-  console.log('Running at order 3 or 4, setImmediate');
-});
-
-setTimeout(() => {
-  console.log('Running at order 3 or 4, setTimeout');
-}, 0);
-
-process.nextTick(() => {
-  console.log('Running at next tick => number 2');
-});
-```
-
-#### Example output(possible):
-
-```bash
-Hello => number 1
-Running at next tick => number 2
-Running at order 3 or 4, setImmediate
-Running at order 3 or 4, setTimeout
-```
-
-In that case, `console.log('Hello => number 1');` will first run because event loop only starts after call stack is cleared.The `nextTick` queue is processed before entering the next phase, which is why the `process.nextTick()` callback runs immediately after.
-
-The execution order of `setImmediate()` and `setTimeout()` can very based on the execution contexts. For more information, refer to [`setImmediate()` vs `setTimeout()`](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick#setimmediate-vs-settimeout).
+For more details on the order of events, refer to [Event loop](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick).
