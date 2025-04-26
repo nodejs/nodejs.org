@@ -25,4 +25,4 @@ Calling `setTimeout(() => {}, 0)` will execute the function at the end of next t
 
 Use `nextTick()` when you want to make sure that in the next event loop iteration that code is already executed.
 
-To learn more about the order of execution and how the event loop works, check out [the dedicated article](learn/asynchronous-work/event-loop-timers-and-nexttick)
+To learn more about the order of execution and how the event loop works, check out [the dedicated article](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick)
