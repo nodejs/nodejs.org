@@ -1,0 +1,28 @@
+name: Report an issue on a Learn article
+description: 'Found an error or something unclear in one of our Learn articles? Let us know!'
+labels: [bug, content, learn]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to help improve the Node.js learning experience!
+        Before submitting, please check if there's already an existing issue that matches yours.
+
+  - type: input
+    attributes:
+      label: 'Affected URL'
+      placeholder: 'https://nodejs.org/en/learn/some-article'
+      description: 'Please include the full URL of the article where the issue exists.'
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 'Describe the issue in detail:'
+      placeholder: |
+        1. What is wrong or unclear?
+        2. What did you expect to see?
+        3. Any suggestions or corrections?
+      description: 'Tell us what you noticed and how we can improve the article.'
+    validations:
+      required: true
