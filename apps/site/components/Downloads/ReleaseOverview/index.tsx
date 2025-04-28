@@ -4,6 +4,7 @@ import {
   CodeBracketSquareIcon,
   Square3Stack3DIcon,
 } from '@heroicons/react/24/outline';
+import NpmIcon from '@node-core/ui-components/Icons/PackageManager/Npm';
 import { useTranslations } from 'next-intl';
 import type { FC, ReactNode, SVGProps } from 'react';
 
@@ -64,7 +65,7 @@ export const ReleaseOverview: FC<ReleaseOverviewProps> = ({ release }) => {
         )}
         {release.npm && (
           <Item
-            Icon={CodeBracketSquareIcon}
+            Icon={NpmIcon}
             title={`v${release.npm}`}
             subtitle={t('components.releaseOverview.npmVersion')}
           />
