@@ -25,31 +25,4 @@ Calling `setTimeout(() => {}, 0)` will execute the function at the end of next t
 
 Use `nextTick()` when you want to make sure that in the next event loop iteration that code is already executed.
 
-#### An Example of the order of events:
-
-```js
-console.log('Hello => number 1');
-
-setImmediate(() => {
-  console.log('Running before the timeout => number 3');
-});
-
-setTimeout(() => {
-  console.log('The timeout running last => number 4');
-}, 0);
-
-process.nextTick(() => {
-  console.log('Running at next tick => number 2');
-});
-```
-
-#### Example output:
-
-```bash
-Hello => number 1
-Running at next tick => number 2
-Running before the timeout => number 3
-The timeout running last => number 4
-```
-
-The exact output may differ from run to run.
+To learn more about the order of execution and how the event loop works, check out [the dedicated article](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick)
