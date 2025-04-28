@@ -79,9 +79,11 @@ function reportErrors(errors) {
 // Get all markdown files
 const filePaths = await glob('**/*.md', {
   root: process.cwd(),
-  cwd: 'apps/site/pages/en/learn/',
+  cwd: 'pages/en/learn/',
   absolute: true,
 });
+
+console.log(`Found ${filePaths.length} markdown files.`);
 
 // Validate all files and collect errors
 const allErrors = await Promise.all(filePaths.map(validateFile));
