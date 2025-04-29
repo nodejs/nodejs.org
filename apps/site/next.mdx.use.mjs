@@ -2,7 +2,7 @@
 
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
-import WithBadge from './components/withBadge';
+import WithBadgeGroup from './components/withBadgeGroup';
 import WithBanner from './components/withBanner';
 import WithNodeRelease from './components/withNodeRelease';
 
@@ -18,7 +18,7 @@ export const mdxComponents = {
   // HOC for providing Banner Data
   WithBanner: WithBanner,
   // HOC for providing Badge Data
-  WithBadge: WithBadge,
+  WithBadgeGroup: WithBadgeGroup,
   // Renders an container for Upcoming Node.js Meetings
   UpcomingMeetings: UpcomingMeetings,
 };

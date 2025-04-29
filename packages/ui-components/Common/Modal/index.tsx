@@ -8,7 +8,7 @@ import styles from './index.module.css';
 
 type ModalProps = PropsWithChildren<{
   heading: string;
-  subheading: string;
+  subheading?: string;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
 }>;
@@ -30,9 +30,11 @@ const Modal: FC<ModalProps> = ({
 
           <Dialog.Title className={styles.title}>{heading}</Dialog.Title>
 
-          <Dialog.Description className={styles.description}>
-            {subheading}
-          </Dialog.Description>
+          {subheading && (
+            <Dialog.Description className={styles.description}>
+              {subheading}
+            </Dialog.Description>
+          )}
 
           <main className={styles.wrapper}>{children}</main>
 

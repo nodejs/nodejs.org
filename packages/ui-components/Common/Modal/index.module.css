@@ -15,6 +15,7 @@
       m-4
       inline-flex
       w-full
+      max-w-3xl
       flex-col
       overflow-y-auto
       rounded
@@ -24,7 +25,6 @@
       p-8
       focus:outline-none
       sm:my-20
-      lg:max-w-[900px]
       xl:p-12
       dark:bg-neutral-950;
   }

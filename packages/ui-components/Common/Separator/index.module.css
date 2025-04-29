@@ -1,0 +1,16 @@
+@reference "../../styles/index.css";
+
+.root {
+  @apply shrink-0
+    bg-neutral-800;
+
+  &.horizontal {
+    @apply h-px
+      w-full;
+  }
+
+  &.vertical {
+    @apply h-full
+      w-px;
+  }
+}

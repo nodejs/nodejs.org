@@ -1,0 +1,77 @@
+@reference "../../styles/index.css";
+
+.wrapper {
+  @apply flex
+    w-fit
+    items-center
+    rounded-full
+    border
+    py-1
+    pl-1
+    pr-2.5
+    text-sm
+    font-medium;
+
+  .icon {
+    @apply size-4;
+  }
+
+  .badge {
+    @apply mr-2;
+  }
+
+  .message {
+    @apply mr-1;
+  }
+
+  &.default {
+    @apply border-green-200
+      bg-green-100
+      dark:border-green-700
+      dark:bg-neutral-900;
+
+    .icon {
+      @apply text-green-500
+        dark:text-green-300;
+    }
+
+    .message {
+      @apply text-green-700
+        dark:text-green-300;
+    }
+  }
+
+  &.error {
+    @apply border-danger-200
+      bg-danger-100
+      dark:border-danger-700
+      dark:bg-neutral-900;
+
+    .icon {
+      @apply text-danger-500
+        dark:text-danger-300;
+    }
+
+    .message {
+      @apply text-danger-700
+        dark:text-danger-300;
+    }
+  }
+
+  &.warning {
+    @apply border-warning-200
+      bg-warning-100
+      dark:border-warning-700
+      dark:bg-neutral-900;
+
+    .icon {
+      @apply text-warning-500
+        dark:text-warning-300;
+    }
+
+    .message {
+      @apply text-warning-700
+        dark:text-warning-300;
+    }
+  }
+}

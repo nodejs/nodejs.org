@@ -7,29 +7,32 @@ type Meta = MetaObj<typeof Badge>;
 
 export const Default: Story = {
   args: {
-    href: '/',
-    children: 'OpenJS Foundation Certification 2023',
     kind: 'default',
-    badgeText: 'New',
   },
 };
 
 export const Error: Story = {
   args: {
-    href: '/',
-    children: 'OpenJS Foundation Certification 2023',
     kind: 'error',
-    badgeText: 'New',
   },
 };
 
 export const Warning: Story = {
   args: {
-    href: '/',
-    children: 'OpenJS Foundation Certification 2023',
     kind: 'warning',
-    badgeText: 'New',
   },
 };
 
-export default { component: Badge } as Meta;
+export const Small: Story = {
+  args: {
+    size: 'small',
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    size: 'medium',
+  },
+};
+
+export default { component: Badge, args: { children: 'Badge' } } as Meta;

@@ -1,0 +1,8 @@
+@reference "../../../styles/index.css";
+
+.links {
+  @apply flex
+    h-4
+    items-center
+    gap-2;
+}
