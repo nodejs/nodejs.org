@@ -136,7 +136,7 @@ const bar: number = 1 + foo;
 
 TypeScript has warned that the above code will not behave as intended, just like a unit test warns that code does not behave as intended. They are complementary and verify different things—you should have both.
 
-Your editor (eg VS Code) likely has built-in support for TypeScript, displaying errors as you work. If not, and/or you missed those, CI will have your back.
+Your editor (e.g. VS Code) likely has built-in support for TypeScript, displaying errors as you work. If not, and/or you missed those, CI will have your back.
 
 The following [GitHub Action](https://github.com/features/actions) sets up a CI task to automatically check (and require) types pass inspection for a PR into the `main` branch.
 

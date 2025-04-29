@@ -174,7 +174,7 @@ const verifyDownloads = version =>
   Promise.all(downloadsTable(version).map(urlOrComingSoon));
 
 const findAuthorLogin = (version, section) => {
-  // looking for the @author part of the release header, eg:
+  // looking for the @author part of the release header, e.g.:
   // ## 2016-03-08, Version 5.8.0 (Stable). @Fishrock123
   // ## 2015-10-13, Version 4.2.1 'Argon' (LTS), @jasnell
   // ## 2015-09-08, Version 4.0.0 (Stable), @rvagg
