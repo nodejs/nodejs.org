@@ -53,7 +53,7 @@ This command loads all the environment variables from the `.env` file, making th
 Also, you can pass multiple `--env-file` arguments. Subsequent files override pre-existing variables defined in previous files.
 
 ```bash
-node --env-file=.env --env-file=.development.env app.js
+node --env-file=.development.env --env-file=.env app.js
 ```
 
 > Note: if the same variable is defined in the environment and in the file, the value from the environment takes precedence.
