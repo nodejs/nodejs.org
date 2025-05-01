@@ -42,16 +42,16 @@
     "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
     "@storybook/react-webpack5": "^8.6.12",
     "@testing-library/user-event": "~14.6.1",
-    "eslint-plugin-react": "~7.37.4",
+    "eslint-plugin-react": "~7.37.5",
     "eslint-plugin-storybook": "~0.12.0",
     "global-jsdom": "^26.0.0",
     "storybook": "^8.6.11",
-    "stylelint": "^16.17.0",
-    "stylelint-config-standard": "^37.0.0",
-    "stylelint-order": "6.0.4",
+    "stylelint": "^16.19.1",
+    "stylelint-config-standard": "^38.0.0",
+    "stylelint-order": "7.0.0",
     "stylelint-selector-bem-pattern": "4.0.1",
     "tsx": "^4.19.3",
     "typescript": "~5.8.2",
-    "typescript-eslint": "~8.29.0"
+    "typescript-eslint": "~8.31.1"
   }
 }
