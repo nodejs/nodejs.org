@@ -3,7 +3,7 @@ import { describe, it } from 'node:test';
 
 import { renderHook } from '@testing-library/react';
 
-import useMediaQuery from '../useMediaQuery';
+import useMediaQuery from '@/hooks/react-client/useMediaQuery';
 
 const noop = () => {};
 

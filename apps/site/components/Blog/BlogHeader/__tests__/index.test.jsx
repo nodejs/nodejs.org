@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 
 import { render, screen } from '@testing-library/react';
 
-import BlogHeader from '../index';
+import BlogHeader from '@/components/Blog/BlogHeader';
 
 describe('BlogHeader', () => {
   it('should have correct href when category is all', () => {

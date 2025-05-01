@@ -31,7 +31,9 @@ describe('generateReleaseData', () => {
         }),
     });
 
-    const { default: generateReleaseData } = await import('../releaseData.mjs');
+    const { default: generateReleaseData } = await import(
+      '@/next-data/generators/releaseData.mjs'
+    );
 
     const result = await generateReleaseData();
 
