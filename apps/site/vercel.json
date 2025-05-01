@@ -1,4 +1,4 @@
 {
   "buildCommand": "turbo build",
-  "installCommand": "pnpm install --prod"
+  "installCommand": "pnpm install --prod --frozen-lockfile"
 }
