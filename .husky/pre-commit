@@ -1,5 +1,4 @@
 # lint and format staged files
-
 pnpm dlx lint-staged
 
 # verify typescript staged files

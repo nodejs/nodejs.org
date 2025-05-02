@@ -181,9 +181,6 @@ Commits should be signed. You can read more about [Commit Signing][] here.
 
 This project uses [Husky][] for Git pre-commit hooks.
 
-- Some JSON files are generated during Build time with empty files as placeholders. Build time happens when you run `pnpm serve` or `pnpm build`.
-- We don't want to commit those unnecessary changes. Since these files exist in the repository, `.gitignore` won't work for them. As a workaround, we have a pre-commit hook to discard those changes.
-
 ## Pull Request Policy
 
 This policy governs how contributions should land within this repository. The lines below state the checks and policies to be followed before merging and in the act of merging.

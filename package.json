@@ -53,7 +53,7 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "10.8.0+sha256.29bf2c5ceaea7991ee82eec15fe7162e0fad816d0c4a6b35a16c01d39274bf69"
+      "version": "10.10.0"
     }
   }
 }
