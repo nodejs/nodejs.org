@@ -618,7 +618,7 @@ It is important to mention that there are some rules on our Vercel Deployments s
 
 - Branches starting with `dependabot` (Dependabot Automated PRs) or `gh` (GitHub Merge Queues) are not deployed to Vercel.
 - Vercel Deployments are triggered for all other branches during `push` activities.
-- We have a custom install script that executes `npm ci --omit=dev` (the same way we do on our CI Pipelines)
+- We have a custom install script that executes `pnpm install --prod --frozen-lockfile` (the same way we do on our CI Pipelines)
   - Hence if Builds fail unexpectedly, make sure that your dependency that is being used during build-time is on `dependencies` and not `devDependencies`. Checkout out [DEPENDENCY_PINNING.md](./DEPENDENCY_PINNING.md) for more information.
 - Our sponsorship with Vercel is maintained by the OpenJS Foundation
 
@@ -630,10 +630,6 @@ The repository defines an optimized configuration for code editing. This is opti
 - `settings.json` contains some common sense defaults that aide development and enforce consistency across the codebase. For example, we want files formatted on save and we want prettier to be used as the formatter. Without these settings, new contributors may have different authoring experiences when contributing, leading to inconsistent code and CI failures. We also disable VSCode's default CSS parser so PostCSS and Tailwind syntax are respected.
 
 Defining a `.vscode` configuration like this also aides browser-only development using [GitHub's Codespaces feature](https://github.com/features/codespaces). The web-based GUI will read these same configuration files and setup the remote development environment the same way every time.
-
-### Why we have an `.npmrc` file
-
-The npm ecosystem resolution and installation of `peerDependencies` installation [changed in recent versions](https://nodejs.org/en/blog/npm/peer-dependencies#using-peer-dependencies). The project documents what version of `Node.js` and `npm` to use via the [`.nvmrc` file](https://github.com/nodejs/nodejs.org/blob/main/.nvmrc). Not all contributors have tooling to automatically read this file and adhere to the correct version, however. To ensure all contributors install dependencies the same way, a local `.npmrc` file directly configures peerDependency installation behavior.
 
 ## Seeking additional clarification
 

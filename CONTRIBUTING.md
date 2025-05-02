@@ -91,8 +91,8 @@ for getting things done and landing your contribution.
 6. Run the following to install the dependencies and start a local preview of your work.
 
    ```bash
-   npm ci # installs this project's dependencies
-   npm run dev # starts a development environment
+   pnpm install --frozen-lockfile # installs this project's dependencies
+   pnpm dev # starts a development environment
    ```
 
 7. Perform your changes. In case you're unfamiliar with the structure of this repository, we recommend a read on the [Collaborator Guide](./COLLABORATOR_GUIDE.md)
@@ -104,10 +104,10 @@ for getting things done and landing your contribution.
    git merge upstream/main
    ```
 
-9. Run `npm run format` to confirm that linting and formatting are passing.
+9. Run `pnpm format` to confirm that linting and formatting are passing.
 
    ```bash
-   npm run format
+   pnpm format
    ```
 
 10. Once you're happy with your changes, add and commit them to your branch, then push the branch to your fork.
@@ -138,29 +138,30 @@ This repository contains several scripts and commands for performing numerous ta
 <details>
   <summary>Commands for Running & Building the Website</summary>
 
-- `npm run dev` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
-- `npm run build` builds the Application on Production mode. The output is by default within `.next` folder.
+- `pnpm dev` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
+- `pnpm build` builds the Application on Production mode. The output is by default within `.next` folder.
   - This is used for the Node.js Vercel Deployments (Preview & Production)
-- `npx turbo deploy` builds the Application on Export Production Mode. The output is by default within `build` folder.
+- `pnpm deploy` builds the Application on Export Production Mode. The output is by default within `build` folder.
   - This is used for the Node.js Legacy Website Server (DigitalOcean)
-- `npx turbo start` starts a web server running serving the built content from `npm run build`
+- `pnpm start` starts a web server running serving the built content from `pnpm build`
 
 </details>
 
 <details>
   <summary>Commands for Maintenance Tasks and Tests</summary>
 
-- `npm run lint` runs the linter for all files.
-  - `npm run lint:fix` attempts to fix any linting errors
-- `npm run prettier` runs the prettier for all the js files.
-  - `npm run prettier:fix` attempts to fix any style errors
-- `npx turbo format` formats and fixes lints for the whole codebase
-- `npm run scripts:release-post` in the `apps/site` directory generates a release post for the current release
-  - **Usage:** `npm run scripts:release-post -- --version=vXX.X.X --force`
-- `npx turbo storybook` starts Storybook's local server
-- `npx turbo storybook:build` builds Storybook as a static web application for publishing
-- `npm run test` runs all tests locally
-  - `npx turbo test:unit` runs unit-tests locally
+- `pnpm lint` runs the linter for all files.
+  - `pnpm lint:fix` attempts to fix any linting errors
+- `pnpm prettier` runs the prettier for all the js files.
+  - `pnpm prettier:fix` attempts to fix any style errors
+- `pnpm format` formats and fixes lints for the whole codebase
+- `pnpm scripts:release-post` generates a release post for the current release
+  - **Usage:** `pnpm scripts:release-post -- --version=vXX.X.X --force`
+- `pnpm storybook` starts Storybook's local server
+- `pnpm storybook:build` builds Storybook as a static web application for publishing
+- `pnpm test` runs all tests locally
+  - `pnpm test:unit` runs unit-tests locally
+  - `pnpm test:ci` runs tests, and outputs data to be parsed by a CI environment
 
 </details>
 
@@ -179,9 +180,6 @@ Commits should be signed. You can read more about [Commit Signing][] here.
 ### Pre-commit Hooks
 
 This project uses [Husky][] for Git pre-commit hooks.
-
-- Some JSON files are generated during Build time with empty files as placeholders. Build time happens when you run `npx turbo serve` or `npx turbo build`.
-- We don't want to commit those unnecessary changes. Since these files exist in the repository, `.gitignore` won't work for them. As a workaround, we have a pre-commit hook to discard those changes.
 
 ## Pull Request Policy
 

@@ -1,7 +1,11 @@
 # Commonly ignored Node.js files
 node_modules
+
+# npm Compatibility
+# https://github.com/nodejs/nodejs.org/discussions/5334#discussioncomment-12827850
 npm-debug.log
 .npm
+package-lock.json
 
 # Next.js Build Output
 .next
