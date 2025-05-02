@@ -39,7 +39,7 @@
     "@shikijs/core": "^3.2.2",
     "@shikijs/engine-javascript": "^3.2.2",
     "@tailwindcss/postcss": "~4.0.17",
-    "@types/node": "22.14.0",
+    "@types/node": "22.15.3",
     "@types/react": "^19.1.0",
     "@vcarl/remark-headings": "~0.1.0",
     "@vercel/analytics": "~1.5.0",

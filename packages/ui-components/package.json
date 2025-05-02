@@ -59,7 +59,7 @@
     "@storybook/react": "^8.6.12",
     "@storybook/react-webpack5": "^8.6.12",
     "@testing-library/user-event": "~14.6.1",
-    "@types/node": "22.14.0",
+    "@types/node": "22.15.3",
     "@types/react": "^19.1.0",
     "cross-env": "^7.0.3",
     "css-loader": "~6.11.0",
