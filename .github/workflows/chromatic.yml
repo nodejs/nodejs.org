@@ -35,7 +35,7 @@ jobs:
       github.event_name != 'pull_request_target' ||
       (
         github.event.label.name == 'github_actions:pull-request' &&
-        github.actor == 'dependabot[bot]' &&
+        github.actor != 'dependabot[bot]' &&
         github.event.pull_request.head.ref != 'chore/crowdin'
       )
 
