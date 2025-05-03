@@ -39,8 +39,6 @@ const generateReleaseData = async () => {
     absolute: false,
   });
 
-  console.log('Release Announcement:', process.cwd(), releaseAnnouncements);
-
   const nodevuOutput = await nodevu({ fetch: fetch });
 
   const majors = Object.entries(nodevuOutput).filter(
