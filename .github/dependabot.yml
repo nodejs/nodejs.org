@@ -9,6 +9,7 @@ updates:
     commit-message:
       prefix: meta
     open-pull-requests-limit: 10
+
   - package-ecosystem: npm
     directory: '/'
     versioning-strategy: increase
@@ -21,57 +22,74 @@ updates:
     groups:
       lint:
         patterns:
-          - '@typescript-eslint/*'
-          - 'eslint'
-          - 'typescript-eslint'
-          - 'eslint-*'
           - '@eslint/*'
-          - 'stylelint'
-          - 'stylelint-*'
+          - '@typescript-eslint/*'
+          - acorn
+          - eslint
+          - eslint-*
+          - lint-staged
+          - prettier
+          - prettier-*
+          - stylelint
+          - stylelint-*
+          - typescript-eslint
+          - unified
         exclude-patterns:
           - 'eslint-plugin-storybook'
-      storybook:
-        patterns:
-          - 'storybook'
-          - '@storybook/*'
-          - 'eslint-plugin-storybook'
-      testing:
-        patterns:
-          - '@testing-library/*'
-          - '@types/testing-library*'
-          - 'tsx'
-          - '@reporters/github'
-          - 'jsdom'
-          - 'global-jsdom'
-      next-js:
-        patterns:
-          - 'next'
-          - '@next/eslint-plugin-next'
-          - 'next-*'
-          - '@vercel/*'
+          - 'prettier-plugin-tailwindcss'
       mdx:
         patterns:
           - '@vcarl/remark-headings'
+          - '@shikijs/*'
           - '@mdx-js/*'
-          - 'rehype-*'
-          - 'remark-*'
+          - hast-util-*
+          - rehype-*
+          - remark-*
+          - shiki
+          - sval
+          - unist-util-*
+          - vfile
+          - vfile-*
+          - reading-time
+      orama:
+        patterns:
+          - '@orama/*'
+          - '@oramacloud/*'
+      radix:
+        patterns:
+          - '@radix-ui/*'
       react:
         patterns:
           - 'react'
           - 'react-dom'
           - '@types/react'
-      tailwind:
+      storybook:
+        patterns:
+          - 'storybook'
+          - '@storybook/*'
+          - 'eslint-plugin-storybook'
+      styling:
         patterns:
           - '@savvywombat/tailwindcss-grid-areas'
-          - '@tailwindcss/container-queries'
+          - '@tailwindcss/*'
           - 'prettier-plugin-tailwindcss'
           - 'tailwindcss'
-      orama:
+      testing:
         patterns:
-          - '@orama/*'
-          - '@oramacloud/*'
+          - '@testing-library/*'
+          - '@reporters/*'
+          - global-jsdom
+          - jsdom
+          - tsx
+      vercel:
+        patterns:
+          - '@next/*'
+          - '@opentelemetry/*'
+          - '@vercel/*'
+          - next
+          - next-*
+          - turbo
     ignore:
-      # Manually update major versions of @types/node with the version specified within .nvmrc
       - dependency-name: '@types/node'
         update-types: ['version-update:semver-major']
     open-pull-requests-limit: 10
