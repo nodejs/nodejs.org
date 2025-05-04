@@ -76,8 +76,8 @@ importers:
         specifier: ~0.200.0
         version: 0.200.0(@opentelemetry/api@1.9.0)
       '@orama/react-components':
-        specifier: ^0.6.4
-        version: 0.6.4(@orama/core@0.0.10)(@stencil/core@4.27.0)(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^0.7.0
+        version: 0.7.0(@stencil/core@4.27.0)(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@oramacloud/client':
         specifier: ^2.1.4
         version: 2.1.4
@@ -1181,8 +1181,8 @@ packages:
     resolution: {integrity: sha512-s0OpmpQFSfMrmedAn9Lhg4KWJELHCU6uU9dtIJ28N8UGhf9Y55im5X8fEzwhwDwiSqN+ZPSNrDJF7ivf/AuRPQ==}
     engines: {node: '>=14'}
 
-  '@orama/core@0.0.10':
-    resolution: {integrity: sha512-rZ4AHeHoFTxOXMhM0An2coO3OfR+FpL0ejXc1PPrNsGB4p6VNlky7FAGeuqOvS5gUYB5ywJsmDzCxeflPtgk4w==}
+  '@orama/core@0.1.5':
+    resolution: {integrity: sha512-BbRwGSR/rrlsF09sQ931Ee3IH5re3El23VplfmgZUKjiEqd0fjPdSbpybzEMybWDNp/0/UCG3OUs0HIiiFTWEg==}
 
   '@orama/cuid2@2.2.3':
     resolution: {integrity: sha512-Lcak3chblMejdlSHgYU2lS2cdOhDpU6vkfIJH4m+YKvqQyLqs1bB8+w6NT1MG5bO12NUK2GFc34Mn2xshMIQ1g==}
@@ -1194,8 +1194,8 @@ packages:
     resolution: {integrity: sha512-qtSrqCqRU93SjEBedz987tvWao1YQSELjBhGkHYGVP7Dg0lBWP6d+uZEIt5gxTAYio/YWWlhivmRABvRfPLmnQ==}
     engines: {node: '>= 16.0.0'}
 
-  '@orama/react-components@0.6.4':
-    resolution: {integrity: sha512-NY0bN/9FAnqp/wgHUnYI0GdlosSDNLZzxeRPzSfsVJboPXnl2oBdFttjB0eecgDecD599AvJCmDsz167tSfNsg==}
+  '@orama/react-components@0.7.0':
+    resolution: {integrity: sha512-YAUkFwqKqYdL2Lh0VhQM+bQOx3vfZwxUurOX9+fS85/k+KIGPG18l5iDjWMAsA4WC96SEvV1xfSA67XMXEgwrA==}
     peerDependencies:
       react: '>=17.0.0 <20.0.0'
       react-dom: '>=17.0.0 <20.0.0'
@@ -1207,8 +1207,8 @@ packages:
       '@orama/orama': 3.1.6
       '@oramacloud/client': ^2.1.1
 
-  '@orama/wc-components@0.6.4':
-    resolution: {integrity: sha512-FgzIYVVYQV4OPzWwjME2JHNkwh3Sz0vBnUKcrGWHFs4kcGoltl0Ym/dyzArCNZiGQ56NE5E+0xo5ZFbaA8FxBA==}
+  '@orama/wc-components@0.7.0':
+    resolution: {integrity: sha512-PuDxF4evv8al91lFLVDHC9i+ow4m4+p69WGEzCa/UhV5c7sifV4Bd4d7A0yATuyEJTuaQUtEtn4kM3EEfK994g==}
 
   '@oramacloud/client@2.1.4':
     resolution: {integrity: sha512-uNPFs4wq/iOPbggCwTkVNbIr64Vfd7ZS/h+cricXVnzXWocjDTfJ3wLL4lr0qiSu41g8z+eCAGBqJ30RO2O4AA==}
@@ -6526,6 +6526,14 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  zod-to-json-schema@3.24.5:
+    resolution: {integrity: sha512-/AuWwMP+YqiPbsJx5D6TfgRTc4kTLjsh5SOcd4bLsfUg2RcEXrFMJl1DGgdHy2aCfsIA/cr/1JM0xcB2GZji8g==}
+    peerDependencies:
+      zod: ^3.24.1
+
+  zod@3.24.3:
+    resolution: {integrity: sha512-HhY1oqzWCQWuUqvBFnsyrtZRhyPeR7SUGv+C4+MsisMuVfSPx8HpwWqH8tRahSlt6M3PiFAcoeFhZAqIXTxoSg==}
+
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
@@ -7233,10 +7241,12 @@ snapshots:
 
   '@opentelemetry/semantic-conventions@1.32.0': {}
 
-  '@orama/core@0.0.10':
+  '@orama/core@0.1.5':
     dependencies:
       '@orama/cuid2': 2.2.3
       dedent: 1.5.3
+      zod: 3.24.3
+      zod-to-json-schema: 3.24.5(zod@3.24.3)
     transitivePeerDependencies:
       - babel-plugin-macros
 
@@ -7248,28 +7258,29 @@ snapshots:
 
   '@orama/orama@3.1.6': {}
 
-  '@orama/react-components@0.6.4(@orama/core@0.0.10)(@stencil/core@4.27.0)(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@orama/react-components@0.7.0(@stencil/core@4.27.0)(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@orama/wc-components': 0.6.4(@orama/core@0.0.10)
+      '@orama/wc-components': 0.7.0
       '@stencil/react-output-target': 0.8.2(@stencil/core@4.27.0)(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
     transitivePeerDependencies:
-      - '@orama/core'
       - '@stencil/core'
       - '@types/react'
+      - babel-plugin-macros
 
-  '@orama/switch@3.1.6(@orama/core@0.0.10)(@orama/orama@3.1.6)(@oramacloud/client@2.1.4)':
+  '@orama/switch@3.1.6(@orama/core@0.1.5)(@orama/orama@3.1.6)(@oramacloud/client@2.1.4)':
     dependencies:
-      '@orama/core': 0.0.10
+      '@orama/core': 0.1.5
       '@orama/orama': 3.1.6
       '@oramacloud/client': 2.1.4
 
-  '@orama/wc-components@0.6.4(@orama/core@0.0.10)':
+  '@orama/wc-components@0.7.0':
     dependencies:
+      '@orama/core': 0.1.5
       '@orama/highlight': 0.1.9
       '@orama/orama': 3.1.6
-      '@orama/switch': 3.1.6(@orama/core@0.0.10)(@orama/orama@3.1.6)(@oramacloud/client@2.1.4)
+      '@orama/switch': 3.1.6(@orama/core@0.1.5)(@orama/orama@3.1.6)(@oramacloud/client@2.1.4)
       '@oramacloud/client': 2.1.4
       '@phosphor-icons/webcomponents': 2.1.5
       '@stencil/core': 4.27.0
@@ -7282,7 +7293,7 @@ snapshots:
       shiki: 1.29.2
       sse.js: 2.6.0
     transitivePeerDependencies:
-      - '@orama/core'
+      - babel-plugin-macros
 
   '@oramacloud/client@2.1.4':
     dependencies:
@@ -13846,5 +13857,11 @@ snapshots:
   yaml@2.7.1: {}
 
   yocto-queue@0.1.0: {}
+
+  zod-to-json-schema@3.24.5(zod@3.24.3):
+    dependencies:
+      zod: 3.24.3
+
+  zod@3.24.3: {}
 
   zwitch@2.0.4: {}
