@@ -31,12 +31,11 @@ jobs:
   chromatic:
     # We only need to run Storybook Builds and Storybook Visual Regression Tests within Pull Requests that actually
     # introduce changes to the Storybook. Hence, we skip running these on Crowdin PRs and Dependabot PRs
-    # sha reference has no stable git tag reference or URL. see https://github.com/chromaui/chromatic-cli/issues/797
     if: |
       github.event_name != 'pull_request_target' ||
       (
         github.event.label.name == 'github_actions:pull-request' &&
-        startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
+        github.actor != 'dependabot[bot]' &&
         github.event.pull_request.head.ref != 'chore/crowdin'
       )
 
