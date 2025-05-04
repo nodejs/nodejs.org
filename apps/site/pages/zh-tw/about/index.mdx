@@ -43,7 +43,7 @@ server.listen(port, hostname, () => {
 
 這與目前更常見的作業系統多執行緒並行模型形成鮮明對比。執行緒導向的網路效率相對較低且難以使用。此外，Node.js 的使用者也不必擔心死鎖 (deadlock) 問題，因為系統中並沒有上鎖機制。Node.js 中幾乎沒有直接執行 I/O 的函式，所以除了使用 Node.js 標準函式庫的同步方法進行 I/O 外，不會阻塞行程。少了阻塞使得在 Node.js 中開發可擴展的系統變得非常容易。
 
-如果您不熟悉這些術語，可以參考這篇完整的文章[〈阻塞與非阻塞概述〉](/learn/asynchronous-work/overview-of-blocking-vs-non-blocking)。
+如果您不熟悉這些術語，可以參考這篇完整的文章[〈阻塞與非阻塞概述（EN）〉](/learn/asynchronous-work/overview-of-blocking-vs-non-blocking)。
 
 ---
 
@@ -52,3 +52,42 @@ Node.js 在設計上類似於 Ruby 的 [Event Machine](https://github.com/eventm
 HTTP 是 Node.js 中的一等公民，在設計時就考慮到了串流處理和低延遲。這使得 Node.js 非常適合作為 web 函式庫或框架的基礎。
 
 雖然 Node.js 的設計中沒有執行緒，但這並不代表其無法善用多核心環境。透過我們的 [`child_process.fork()`](https://nodejs.org/api/child_process.html) API 可以產生能便利互相溝通的子行程。基於相同介面的 [`cluster`](https://nodejs.org/api/cluster.html) 模組則可讓您在程序間共享 socket，以達成多核心負載平衡。
+
+## 官方 Node.js 資源
+
+為確保您使用真正且安全的 Node.js，請總是使用官方來源。不要信任來自非官方來源的信件、二進位檔、下載連結。
+
+### 官方 Node.js 網域
+
+於下載 Node.js 二進位檔或存取官方文件時，請只使用下列網域：
+
+- [nodejs.org](https://nodejs.org)
+- [nodejs.dev](https://nodejs.dev)_（重新導向至 https://nodejs.org）_
+- [iojs.org](https://iojs.org)_（重新導向至 https://nodejs.org）_
+
+### 官方 npm 套件
+
+Node.js 團隊維護下列的官方 npm 套件範圍：
+
+- [`@node-core`](https://npmjs.com/~node-core)
+- [`@pkgjs`](https://npmjs.com/~pkgjs)
+
+此外，Node.js 團隊維護由 [`nodejs-foundation`](https://npmjs.com/~nodejs-foundation) npm 帳號發布的套件，而其他 Node.js 相關的套件（如： [`undici`](https://www.npmjs.com/package/undici)）可能由與本專案關係密切的貢獻者維護。
+
+使用來自 Node.js 團隊的套件，可確保您使用的是官方支援的 Node.js 元件。
+
+### 官方 GitHub 組織
+
+Node.js 及相關專案是由這些官方 GitHub 組織維護：
+
+- [nodejs](https://github.com/nodejs)
+- [pkgjs](https://github.com/pkgjs)
+
+### 官方交流管道
+
+Node.js 及 OpenJS 基金會會使用數種官方及社群支援的交流管道。您可以在 [加入我們（EN）](https://nodejs.org/en/about/get-involved) 頁面了解詳情。
+
+### 回報網站問題及下線
+
+如果您遇到 Node.js 網站的問題，請在[Node.js 網站儲存庫](https://github.com/nodejs/nodejs.org/issues)回報問題。
+關於網站下線狀況的即時更新，請造訪 [Node.js 狀態頁面](https://status.nodejs.org)。

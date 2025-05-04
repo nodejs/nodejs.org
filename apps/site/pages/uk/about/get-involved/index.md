@@ -11,7 +11,7 @@ layout: about
 
 - [Репозиторій GitHub `nodejs/node`](https://github.com/nodejs/node/issues) — це місце для обговорення основного функціонала Node.js та повідомлення про проблеми.
 - Репозиторій GitHub [`nodejs/help`](https://github.com/nodejs/help/issues) — це офіційне місце, де можна запитувати про Node.js.
-- [Офіційний Discord-сервер Node.js](/discord) — це місце для спілкування з іншими розробниками Node.js та отримання офіційних новин проєкту Node.js.
+- [Офіційний Discord‑сервер Node.js](/discord) — це місце для спілкування з іншими розробниками Node.js та отримання офіційних новин проєкту Node.js.
 - [Календар проєкту](https://nodejs.org/calendar) Node.js з усіма публічними командними зустрічами.
 
 ## Навчальні матеріали

@@ -15,7 +15,7 @@
           "toggle": "メニューを切り替える"
         },
         "links": {
-          "about": "About",
+          "about": "はじめに",
           "download": "ダウンロード",
           "docs": "ドキュメント",
           "guides": "ガイド",
@@ -61,6 +61,7 @@
           "links": {
             "asynchronousWork": "非同期処理",
             "asynchronousFlowControl": "非同期のフロー制御",
+            "discoverPromisesInNodejs": "Node.jsでプロミスを知る",
             "overviewOfBlockingVsNonBlocking": "ブロッキングとノンブロッキングの概要",
             "javascriptAsynchronousProgrammingAndCallbacks": "JavaScriptの非同期プログラミングとコールバック",
             "discoverJavascriptTimers": "JavaScriptのタイマー処理について",
@@ -108,6 +109,7 @@
           "links": {
             "diagnostics": "診断",
             "userJourney": "ユーザージャーニー",
+            "understandingAndTuningMemory": "メモリーのチューニングの理解",
             "memory": "メモリー",
             "liveDebugging": "ライブデバッグ",
             "poorPerformance": "パフォーマンスの低下",
@@ -147,14 +149,37 @@
     "downloadReleasesTable": {
       "version": "Node.js",
       "nApiVersion": "N-API",
-      "npmVersion": "npm",
       "codename": "コードネーム",
       "releaseDate": "でリリース済み",
+      "firstReleased": "最初のリリース",
+      "lastUpdated": "最終更新日",
+      "status": "ステータス",
+      "details": "詳細"
+    },
+    "releaseModal": {
+      "title": "Node.js {version} ({codename})",
+      "titleWithoutCodename": "Node.js {version}",
+      "overview": "概要",
+      "minorVersions": "マイナーバージョン",
+      "releaseAnnouncement": "リリース",
+      "unsupportedVersionWarning": "このバージョンのメンテナンスは終了しています。現在サポートされているバージョンを利用してください。"
+    },
+    "minorReleasesTable": {
+      "version": "バージョン",
+      "links": "リンク",
       "actions": {
+        "release": "リリース",
         "changelog": "変更履歴",
-        "releases": "リリース",
         "docs": "ドキュメント"
       }
+    },
+    "releaseOverview": {
+      "firstReleased": "最初のリリース",
+      "lastUpdated": "最終更新日",
+      "minorVersions": "マイナーバージョン",
+      "nApiVersion": "N-APIのバージョン",
+      "npmVersion": "npmのバージョン",
+      "v8Version": "V8のバージョン"
     },
     "pagination": {
       "next": "次へ",

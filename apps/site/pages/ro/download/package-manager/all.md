@@ -236,7 +236,7 @@ nvm uninstall 8
 
 Managerul de versiuni „nvs” este multiplatformă și poate fi utilizat pe sisteme Windows, macOS și Unix
 
-Pentru a instala `nvs` pe Windows, accesați [pagina de lansare](https://github.com/jasongin/nvs/releases) aici și descărcați fișierul de instalare MSI al celei mai recente ediții.
+Pentru a instala `nvs` pe Windows, accesează aici [pagina de lansare](https://github.com/jasongin/nvs/releases) și descarcă fișierul de instalare MSI al celei mai recente lansări.
 
 De asemenea, puteți folosi `chocolatey` pentru a-l instala:
 

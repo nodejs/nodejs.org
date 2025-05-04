@@ -149,14 +149,37 @@
     "downloadReleasesTable": {
       "version": "Node.js",
       "nApiVersion": "N-API",
-      "npmVersion": "npm",
       "codename": "Nom de code",
       "releaseDate": "Publié le",
+      "firstReleased": "Première publication",
+      "lastUpdated": "Dernière mise à jour",
+      "status": "Statut",
+      "details": "Détails"
+    },
+    "releaseModal": {
+      "title": "Node.js {version} ({codename})",
+      "titleWithoutCodename": "Node.js {version}",
+      "overview": "Vue d'ensemble",
+      "minorVersions": "Versions mineures",
+      "releaseAnnouncement": "Annonce de publication",
+      "unsupportedVersionWarning": "Cette version ne fait plus l'objet d'une maintenance. Veuillez utiliser une version actuellement supportée. Comprendre l'accompagnement de fin de vie."
+    },
+    "minorReleasesTable": {
+      "version": "Version",
+      "links": "Liens",
       "actions": {
+        "release": "Release",
         "changelog": "Journal de modifications",
-        "releases": "Versions",
         "docs": "Documents"
       }
+    },
+    "releaseOverview": {
+      "firstReleased": "Première publication",
+      "lastUpdated": "Dernière mise à jour",
+      "minorVersions": "Versions mineures",
+      "nApiVersion": "Version N-API",
+      "npmVersion": "npm version",
+      "v8Version": "V8 version"
     },
     "pagination": {
       "next": "Suivant",
