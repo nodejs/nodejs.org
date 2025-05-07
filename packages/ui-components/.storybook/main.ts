@@ -28,7 +28,7 @@ const config: StorybookConfig = {
               'style-loader',
               {
                 loader: 'css-loader',
-                options: { importLoaders: 1 },
+                options: { importLoaders: 1, modules: { namedExport: false } },
               },
               {
                 // Gets options from `postcss.config.js` in your project root
