@@ -18,7 +18,7 @@ Programs internally use _interrupts_, a signal that's emitted to the processor t
 
 Let's not go into the internals of this now, but just keep in mind that it's normal for programs to be asynchronous and halt their execution until they need attention, allowing the computer to execute other things in the meantime. When a program is waiting for a response from the network, it cannot halt the processor until the request finishes.
 
-Normally, programming languages are synchronous and some provide a way to manage asynchronicity in the language or through libraries. C, Java, C#, PHP, Go, Ruby, Swift, and Python are all synchronous by default. Some of them handle async operations by using threads, or by spawning a new process.
+Normally, programming languages are synchronous and some provide ways to manage asynchronicity either within the language itself or through libraries. C, Java, C#, PHP, Go, Ruby, Swift, and Python are all synchronous by default. Some of them handle async operations by using threads, or by spawning a new process.
 
 ## JavaScript
 
