@@ -3,10 +3,9 @@ import type { FC } from 'react';
 
 import HexagonGrid from '#Icons/HexagonGrid';
 import JsWhiteIcon from '#Icons/Logos/JsWhite';
+import type { BlogPreviewType } from '#types';
 
 import styles from './index.module.css';
-
-import type { BlogPreviewType } from '#types';
 
 type PreviewProps = {
   title: string;

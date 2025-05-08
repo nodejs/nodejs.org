@@ -6,10 +6,10 @@ import classNames from 'classnames';
 import { useEffect, useId, useMemo, useState } from 'react';
 import type { ReactElement, ReactNode } from 'react';
 
-import styles from './index.module.css';
-
 import Skeleton from '#Common/Skeleton';
 import type { FormattedMessage } from '#types';
+
+import styles from './index.module.css';
 
 export type SelectValue<T extends string> = {
   label: FormattedMessage | string;

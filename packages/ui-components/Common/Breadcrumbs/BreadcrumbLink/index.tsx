@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import type { ComponentProps, FC } from 'react';
 
-import styles from './index.module.css';
-
 import type { LinkLike } from '#types';
+
+import styles from './index.module.css';
 
 type BreadcrumbLinkProps = {
   active?: boolean;

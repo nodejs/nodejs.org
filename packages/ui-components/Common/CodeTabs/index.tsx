@@ -1,8 +1,8 @@
 import type { ComponentProps, FC } from 'react';
 
-import styles from './index.module.css';
-
 import Tabs from '#Common/Tabs';
+
+import styles from './index.module.css';
 
 type CodeTabsProps = Pick<
   ComponentProps<typeof Tabs>,

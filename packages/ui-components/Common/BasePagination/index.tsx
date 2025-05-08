@@ -1,12 +1,11 @@
 import { ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/20/solid';
 import type { FC } from 'react';
 
+import Button from '#Common/BaseButton';
 import { useGetPageElements } from '#Common/BasePagination/useGetPageElements';
+import type { LinkLike } from '#types';
 
 import styles from './index.module.css';
-
-import Button from '#Common/BaseButton';
-import type { LinkLike } from '#types';
 
 type Page = { url: string };
 

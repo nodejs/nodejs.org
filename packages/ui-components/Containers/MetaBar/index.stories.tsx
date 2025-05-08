@@ -1,9 +1,8 @@
 import { CodeBracketIcon } from '@heroicons/react/24/outline';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import GitHubIcon from '#Icons/Social/GitHub';
-
 import MetaBar from '#Containers/MetaBar';
+import GitHubIcon from '#Icons/Social/GitHub';
 
 type Story = StoryObj<typeof MetaBar>;
 type Meta = MetaObj<typeof MetaBar>;

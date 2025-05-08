@@ -2,9 +2,9 @@ import classNames from 'classnames';
 import type { HTMLAttributes, ElementType } from 'react';
 import { forwardRef } from 'react';
 
-import styles from './index.module.css';
-
 import type { LinkLike } from '#types';
+
+import styles from './index.module.css';
 
 export type AvatarProps = {
   image?: string;

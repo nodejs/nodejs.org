@@ -2,11 +2,11 @@
 
 import { useRef, type ComponentProps, type FC } from 'react';
 
-import styles from './index.module.css';
-
 import ProgressionSidebarGroup from '#Common/ProgressionSidebar/ProgressionSidebarGroup';
 import Select from '#Common/Select';
 import type { LinkLike } from '#types';
+
+import styles from './index.module.css';
 
 type ProgressionSidebarProps = {
   groups: Array<ComponentProps<typeof ProgressionSidebarGroup>>;

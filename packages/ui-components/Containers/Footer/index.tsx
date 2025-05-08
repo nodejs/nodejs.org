@@ -2,8 +2,6 @@
 
 import type { FC, SVGProps } from 'react';
 
-import styles from './index.module.css';
-
 import NavItem from '#Containers/NavBar/NavItem';
 import {
   Bluesky,
@@ -15,6 +13,8 @@ import {
   X,
 } from '#Icons/Social';
 import type { LinkLike } from '#types';
+
+import styles from './index.module.css';
 
 const footerSocialIcons: Record<string, React.FC<SVGProps<SVGSVGElement>>> = {
   github: GitHub,

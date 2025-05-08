@@ -1,9 +1,9 @@
 import HomeIcon from '@heroicons/react/24/outline/HomeIcon';
 import type { ComponentProps, FC } from 'react';
 
-import styles from './index.module.css';
-
 import BreadcrumbLink from '#Common/Breadcrumbs/BreadcrumbLink';
+
+import styles from './index.module.css';
 
 type BreadcrumbHomeLinkProps = Omit<
   ComponentProps<typeof BreadcrumbLink>,

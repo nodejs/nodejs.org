@@ -1,10 +1,10 @@
 import ArrowRightIcon from '@heroicons/react/24/solid/ArrowRightIcon';
 import type { ComponentProps, FC, PropsWithChildren } from 'react';
 
-import styles from './index.module.css';
-
 import Badge from '#Common/Badge';
 import type { LinkLike } from '#types';
+
+import styles from './index.module.css';
 
 type BadgeGroupKind = 'default' | 'warning' | 'error';
 

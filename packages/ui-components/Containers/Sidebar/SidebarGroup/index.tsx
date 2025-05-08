@@ -1,9 +1,9 @@
 import type { ComponentProps, FC } from 'react';
 
-import styles from './index.module.css';
-
 import SidebarItem from '#Containers/Sidebar/SidebarItem';
 import type { FormattedMessage, LinkLike } from '#types';
+
+import styles from './index.module.css';
 
 type SidebarGroupProps = {
   groupName: FormattedMessage;

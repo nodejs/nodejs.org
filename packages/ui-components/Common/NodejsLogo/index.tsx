@@ -1,10 +1,9 @@
 import type { FC } from 'react';
 
 import NodejsIcon from '#Icons/Logos/Nodejs';
+import type { LogoVariant } from '#types';
 
 import style from './index.module.css';
-
-import type { LogoVariant } from '#types';
 
 type NodejsLogoProps = {
   variant?: LogoVariant;

@@ -8,10 +8,10 @@ import classNames from 'classnames';
 import type { FC, PropsWithChildren, ReactElement, ReactNode } from 'react';
 import { Fragment, isValidElement, useRef } from 'react';
 
-import styles from './index.module.css';
-
 import BaseButton from '#Common/BaseButton';
 import type { LinkLike } from '#types';
+
+import styles from './index.module.css';
 
 // Transforms a code element with plain text content into a more structured
 // format for rendering with line numbers

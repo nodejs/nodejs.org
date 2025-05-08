@@ -1,9 +1,9 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import styles from './index.module.css';
-
 import Select from '#Common/Select';
 import type { LinkLike } from '#types';
+
+import styles from './index.module.css';
 
 type LinkTab = { key: string; label: string; link: string };
 

@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 
-import styles from './index.module.css';
-
 import type { LinkLike } from '#types';
+
+import styles from './index.module.css';
 
 export type PaginationListItemProps = {
   url: string;

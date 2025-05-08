@@ -1,10 +1,10 @@
 import type { ComponentProps, FC } from 'react';
 
-import styles from './index.module.css';
-
 import Select from '#Common/Select';
 import SidebarGroup from '#Containers/Sidebar/SidebarGroup';
 import type { LinkLike } from '#types';
+
+import styles from './index.module.css';
 
 type SidebarProps = {
   groups: Array<Omit<ComponentProps<typeof SidebarGroup>, 'as' | 'pathname'>>;

@@ -1,10 +1,10 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import type { FC } from 'react';
 
-import styles from './index.module.css';
-
 import ActiveLink from '#Common/BaseActiveLink';
 import type { FormattedMessage, LinkLike } from '#types';
+
+import styles from './index.module.css';
 
 type SidebarItemProps = {
   label: FormattedMessage;

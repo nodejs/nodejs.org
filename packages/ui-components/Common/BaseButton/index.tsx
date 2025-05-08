@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import type { FC, AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 
-import styles from './index.module.css';
-
 import type { LinkLike } from '#types';
+
+import styles from './index.module.css';
 
 export type ButtonProps = (
   | AnchorHTMLAttributes<HTMLAnchorElement>
