@@ -1,15 +1,12 @@
 import type { FC } from 'react';
 import { useMemo } from 'react';
 
-import BreadcrumbHomeLink from '@node-core/ui-components/Common/Breadcrumbs/BreadcrumbHomeLink';
-import BreadcrumbItem from '@node-core/ui-components/Common/Breadcrumbs/BreadcrumbItem';
-import BreadcrumbLink from '@node-core/ui-components/Common/Breadcrumbs/BreadcrumbLink';
-import BreadcrumbRoot from '@node-core/ui-components/Common/Breadcrumbs/BreadcrumbRoot';
-import BreadcrumbTruncatedItem from '@node-core/ui-components/Common/Breadcrumbs/BreadcrumbTruncatedItem';
-import type {
-  FormattedMessage,
-  LinkLike,
-} from '@node-core/ui-components/types';
+import BreadcrumbHomeLink from '#Common/Breadcrumbs/BreadcrumbHomeLink';
+import BreadcrumbItem from '#Common/Breadcrumbs/BreadcrumbItem';
+import BreadcrumbLink from '#Common/Breadcrumbs/BreadcrumbLink';
+import BreadcrumbRoot from '#Common/Breadcrumbs/BreadcrumbRoot';
+import BreadcrumbTruncatedItem from '#Common/Breadcrumbs/BreadcrumbTruncatedItem';
+import type { FormattedMessage, LinkLike } from '#types';
 
 export type BreadcrumbLink = {
   label: FormattedMessage;

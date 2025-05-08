@@ -108,5 +108,16 @@
     "typescript-eslint": "~8.31.1",
     "unified": "^11.0.5",
     "user-agent-data-types": "0.4.2"
+  },
+  "imports": {
+    "#*": [
+      "./*",
+      "./*.tsx",
+      "./*/index.tsx",
+      "./*.ts",
+      "./*/index.ts",
+      "./*.mjs",
+      "./*/index.mjs"
+    ]
   }
 }

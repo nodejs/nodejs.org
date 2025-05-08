@@ -5,11 +5,11 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useEffect, useContext, useMemo } from 'react';
 
-import { useClientContext } from '@/hooks';
-import { ReleaseContext } from '@/providers/releaseProvider';
-import type { UserPlatform } from '@/types/userOS';
-import { PLATFORMS, nextItem, parseCompat } from '@/util/downloadUtils';
-import { getUserPlatform } from '@/util/getUserPlatform';
+import { useClientContext } from '#hooks';
+import { ReleaseContext } from '#providers/releaseProvider';
+import type { UserPlatform } from '#types/userOS';
+import { PLATFORMS, nextItem, parseCompat } from '#util/downloadUtils';
+import { getUserPlatform } from '#util/getUserPlatform';
 
 const PlatformDropdown: FC = () => {
   const { architecture, bitness } = useClientContext();

@@ -12,7 +12,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
-    "paths": { "@/*": ["./*"] },
     "baseUrl": ".",
     "outDir": "dist",
     "rootDir": "."

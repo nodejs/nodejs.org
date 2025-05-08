@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import GlowingBackdrop from '@node-core/ui-components/Common/GlowingBackdrop';
+import GlowingBackdrop from '#Common/GlowingBackdrop';
 
 type Story = StoryObj<typeof GlowingBackdrop>;
 type Meta = MetaObj<typeof GlowingBackdrop>;

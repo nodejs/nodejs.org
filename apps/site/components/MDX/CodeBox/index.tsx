@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import CodeBox from '@/components/Common/CodeBox';
-import { getLanguageDisplayName } from '@/util/getLanguageDisplayName';
+import CodeBox from '#components/Common/CodeBox';
+import { getLanguageDisplayName } from '#util/getLanguageDisplayName';
 
 type CodeBoxProps = { className?: string; showCopyButton?: string };
 

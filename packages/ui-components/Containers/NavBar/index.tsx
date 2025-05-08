@@ -12,13 +12,10 @@ import type {
   ElementType,
 } from 'react';
 
-import NavItem from '@node-core/ui-components/Containers/NavBar/NavItem';
-import type {
-  FormattedMessage,
-  LinkLike,
-} from '@node-core/ui-components/types';
-
 import style from './index.module.css';
+
+import NavItem from '#Containers/NavBar/NavItem';
+import type { FormattedMessage, LinkLike } from '#types';
 
 const navInteractionIcons = {
   show: <Hamburger className={style.navInteractionIcon} />,

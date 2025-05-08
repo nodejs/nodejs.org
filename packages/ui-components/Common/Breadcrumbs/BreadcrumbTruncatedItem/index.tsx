@@ -1,4 +1,4 @@
-import BreadcrumbItem from '@node-core/ui-components/Common/Breadcrumbs/BreadcrumbItem';
+import BreadcrumbItem from '#Common/Breadcrumbs/BreadcrumbItem';
 
 const BreadcrumbTruncatedItem = () => (
   <BreadcrumbItem disableMicrodata>

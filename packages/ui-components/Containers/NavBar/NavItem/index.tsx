@@ -2,10 +2,10 @@ import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import classNames from 'classnames';
 import type { FC, HTMLAttributeAnchorTarget, PropsWithChildren } from 'react';
 
-import BaseActiveLink from '@node-core/ui-components/Common/BaseActiveLink';
-import type { LinkLike } from '@node-core/ui-components/types';
-
 import styles from './index.module.css';
+
+import BaseActiveLink from '#Common/BaseActiveLink';
+import type { LinkLike } from '#types';
 
 type NavItemType = 'nav' | 'footer';
 

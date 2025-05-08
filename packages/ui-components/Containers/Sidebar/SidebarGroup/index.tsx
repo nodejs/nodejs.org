@@ -1,12 +1,9 @@
 import type { ComponentProps, FC } from 'react';
 
-import SidebarItem from '@node-core/ui-components/Containers/Sidebar/SidebarItem';
-import type {
-  FormattedMessage,
-  LinkLike,
-} from '@node-core/ui-components/types';
-
 import styles from './index.module.css';
+
+import SidebarItem from '#Containers/Sidebar/SidebarItem';
+import type { FormattedMessage, LinkLike } from '#types';
 
 type SidebarGroupProps = {
   groupName: FormattedMessage;

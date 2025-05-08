@@ -1,8 +1,8 @@
 import type { ComponentProps, FC } from 'react';
 
-import Tabs from '@node-core/ui-components/Common/Tabs';
-
 import styles from './index.module.css';
+
+import Tabs from '#Common/Tabs';
 
 type CodeTabsProps = Pick<
   ComponentProps<typeof Tabs>,

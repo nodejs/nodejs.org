@@ -1,5 +1,5 @@
-import NPM from '@node-core/ui-components/Icons/PackageManager/Npm';
-import PNPM from '@node-core/ui-components/Icons/PackageManager/Pnpm';
-import YARN from '@node-core/ui-components/Icons/PackageManager/Yarn';
+import NPM from '#Icons/PackageManager/Npm';
+import PNPM from '#Icons/PackageManager/Pnpm';
+import YARN from '#Icons/PackageManager/Yarn';
 
 export { NPM, PNPM, YARN };

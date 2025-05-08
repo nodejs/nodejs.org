@@ -1,12 +1,9 @@
 import type { ComponentProps, FC } from 'react';
 
-import ProgressionSidebarItem from '@node-core/ui-components/Common/ProgressionSidebar/ProgressionSidebarItem';
-import type {
-  FormattedMessage,
-  LinkLike,
-} from '@node-core/ui-components/types';
-
 import styles from './index.module.css';
+
+import ProgressionSidebarItem from '#Common/ProgressionSidebar/ProgressionSidebarItem';
+import type { FormattedMessage, LinkLike } from '#types';
 
 type ProgressionSidebarGroupProps = {
   groupName: FormattedMessage;

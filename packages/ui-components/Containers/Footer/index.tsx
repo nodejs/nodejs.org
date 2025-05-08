@@ -2,7 +2,9 @@
 
 import type { FC, SVGProps } from 'react';
 
-import NavItem from '@node-core/ui-components/Containers/NavBar/NavItem';
+import styles from './index.module.css';
+
+import NavItem from '#Containers/NavBar/NavItem';
 import {
   Bluesky,
   Discord,
@@ -11,10 +13,8 @@ import {
   Mastodon,
   Slack,
   X,
-} from '@node-core/ui-components/Icons/Social';
-import type { LinkLike } from '@node-core/ui-components/types';
-
-import styles from './index.module.css';
+} from '#Icons/Social';
+import type { LinkLike } from '#types';
 
 const footerSocialIcons: Record<string, React.FC<SVGProps<SVGSVGElement>>> = {
   github: GitHub,

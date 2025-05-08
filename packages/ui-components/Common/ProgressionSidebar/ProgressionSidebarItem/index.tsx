@@ -1,13 +1,10 @@
 import type { FC } from 'react';
 
-import BaseActiveLink from '@node-core/ui-components/Common/BaseActiveLink';
-import ProgressionSidebarIcon from '@node-core/ui-components/Common/ProgressionSidebar/ProgressionSidebarIcon';
-import type {
-  FormattedMessage,
-  LinkLike,
-} from '@node-core/ui-components/types';
-
 import styles from './index.module.css';
+
+import BaseActiveLink from '#Common/BaseActiveLink';
+import ProgressionSidebarIcon from '#Common/ProgressionSidebar/ProgressionSidebarIcon';
+import type { FormattedMessage, LinkLike } from '#types';
 
 type ProgressionSidebarItemProps = {
   label: FormattedMessage;

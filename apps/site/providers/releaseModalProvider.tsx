@@ -3,8 +3,8 @@
 import { createContext, useState } from 'react';
 import type { FC, PropsWithChildren } from 'react';
 
-import ReleaseModal from '@/components/Downloads/ReleaseModal';
-import type { NodeRelease } from '@/types';
+import ReleaseModal from '#components/Downloads/ReleaseModal';
+import type { NodeRelease } from '#types';
 
 type ReleaseModalContextType = {
   activeRelease: NodeRelease | null;

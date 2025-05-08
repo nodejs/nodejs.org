@@ -1,13 +1,11 @@
 import classNames from 'classnames';
 import type { FC } from 'react';
 
-import PrevNextArrow from '@node-core/ui-components/Common/BasePagination/PrevNextArrow';
-import type {
-  LinkLike,
-  FormattedMessage,
-} from '@node-core/ui-components/types';
+import PrevNextArrow from '#Common/BasePagination/PrevNextArrow';
 
 import styles from './index.module.css';
+
+import type { LinkLike, FormattedMessage } from '#types';
 
 export type CrossLinkProps = {
   type: 'previous' | 'next';

@@ -1,9 +1,9 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import { getClientContext } from '@/client-context';
-import WithDownloadSection from '@/components/withDownloadSection';
-import WithFooter from '@/components/withFooter';
-import WithNavBar from '@/components/withNavBar';
+import { getClientContext } from '#client-context';
+import WithDownloadSection from '#components/withDownloadSection';
+import WithFooter from '#components/withFooter';
+import WithNavBar from '#components/withNavBar';
 
 import styles from './layouts.module.css';
 

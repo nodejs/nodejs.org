@@ -8,7 +8,7 @@ import {
   Mastodon,
   Slack,
   X,
-} from '@node-core/ui-components/Icons/Social';
+} from '#Icons/Social';
 
 const socialIcons = [
   [GitHub, Mastodon, LinkedIn],

@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import Button from '@/components/Common/Button';
-import GlowingBackdropLayout from '@/layouts/GlowingBackdrop';
+import Button from '#components/Common/Button';
+import GlowingBackdropLayout from '#layouts/GlowingBackdrop';
 
 const NotFoundPage: FC = () => {
   const t = useTranslations();

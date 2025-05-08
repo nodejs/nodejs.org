@@ -2,9 +2,9 @@ import type { Heading } from '@vcarl/remark-headings';
 import { Fragment, useMemo } from 'react';
 import type { FC } from 'react';
 
-import type { LinkLike } from '@node-core/ui-components/types';
-
 import styles from './index.module.css';
+
+import type { LinkLike } from '#types';
 
 type MetaBarProps = {
   items: Partial<Record<string, React.ReactNode>>;

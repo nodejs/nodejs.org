@@ -8,8 +8,8 @@ import NpmIcon from '@node-core/ui-components/Icons/PackageManager/Npm';
 import { useTranslations } from 'next-intl';
 import type { FC, ReactNode, SVGProps } from 'react';
 
-import FormattedTime from '@/components/Common/FormattedTime';
-import type { NodeRelease } from '@/types';
+import FormattedTime from '#components/Common/FormattedTime';
+import type { NodeRelease } from '#types';
 
 import styles from './index.module.css';
 

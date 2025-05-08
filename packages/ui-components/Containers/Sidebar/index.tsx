@@ -1,10 +1,10 @@
 import type { ComponentProps, FC } from 'react';
 
-import Select from '@node-core/ui-components/Common/Select';
-import SidebarGroup from '@node-core/ui-components/Containers/Sidebar/SidebarGroup';
-import type { LinkLike } from '@node-core/ui-components/types';
-
 import styles from './index.module.css';
+
+import Select from '#Common/Select';
+import SidebarGroup from '#Containers/Sidebar/SidebarGroup';
+import type { LinkLike } from '#types';
 
 type SidebarProps = {
   groups: Array<Omit<ComponentProps<typeof SidebarGroup>, 'as' | 'pathname'>>;

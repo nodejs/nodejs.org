@@ -3,10 +3,10 @@ import Modal from '@node-core/ui-components/Common/Modal';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import { MinorReleasesTable } from '@/components/Downloads/MinorReleasesTable';
-import { ReleaseOverview } from '@/components/Downloads/ReleaseOverview';
-import LinkWithArrow from '@/components/LinkWithArrow';
-import type { NodeRelease } from '@/types';
+import { MinorReleasesTable } from '#components/Downloads/MinorReleasesTable';
+import { ReleaseOverview } from '#components/Downloads/ReleaseOverview';
+import LinkWithArrow from '#components/LinkWithArrow';
+import type { NodeRelease } from '#types';
 
 type ReleaseModalProps = {
   isOpen: boolean;

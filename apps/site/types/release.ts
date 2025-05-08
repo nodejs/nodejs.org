@@ -1,6 +1,6 @@
-import type { DownloadSnippet } from '@/types/downloads';
-import type { NodeRelease } from '@/types/releases';
-import type { UserOS, UserPlatform } from '@/types/userOS';
+import type { DownloadSnippet } from '#types/downloads';
+import type { NodeRelease } from '#types/releases';
+import type { UserOS, UserPlatform } from '#types/userOS';
 
 export type InstallationMethod =
   | 'NVM'

@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import BasePagination from '@node-core/ui-components/Common/BasePagination';
+import BasePagination from '#Common/BasePagination';
 
 type Story = StoryObj<typeof BasePagination>;
 type Meta = MetaObj<typeof BasePagination>;

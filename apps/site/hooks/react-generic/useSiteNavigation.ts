@@ -2,12 +2,8 @@ import type { RichTranslationValues } from 'next-intl';
 import { useTranslations } from 'next-intl';
 import type { HTMLAttributeAnchorTarget } from 'react';
 
-import { siteNavigation } from '@/next.json.mjs';
-import type {
-  FormattedMessage,
-  NavigationEntry,
-  NavigationKeys,
-} from '@/types';
+import { siteNavigation } from '#next.json.mjs';
+import type { FormattedMessage, NavigationEntry, NavigationKeys } from '#types';
 
 type Context = Record<string, RichTranslationValues>;
 type Navigation = Record<string, NavigationEntry>;

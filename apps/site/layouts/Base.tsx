@@ -2,8 +2,8 @@
 
 import type { FC, PropsWithChildren } from 'react';
 
-import { NavigationStateProvider } from '@/providers/navigationStateProvider';
-import { NotificationProvider } from '@/providers/notificationProvider';
+import { NavigationStateProvider } from '#providers/navigationStateProvider';
+import { NotificationProvider } from '#providers/notificationProvider';
 
 import styles from './layouts.module.css';
 

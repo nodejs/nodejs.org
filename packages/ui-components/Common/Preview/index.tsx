@@ -1,11 +1,12 @@
 import classNames from 'classnames';
 import type { FC } from 'react';
 
-import HexagonGrid from '@node-core/ui-components/Icons/HexagonGrid';
-import JsWhiteIcon from '@node-core/ui-components/Icons/Logos/JsWhite';
-import type { BlogPreviewType } from '@node-core/ui-components/types';
+import HexagonGrid from '#Icons/HexagonGrid';
+import JsWhiteIcon from '#Icons/Logos/JsWhite';
 
 import styles from './index.module.css';
+
+import type { BlogPreviewType } from '#types';
 
 type PreviewProps = {
   title: string;

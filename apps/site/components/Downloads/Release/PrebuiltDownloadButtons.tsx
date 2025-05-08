@@ -6,13 +6,13 @@ import { useTranslations } from 'next-intl';
 import { useContext } from 'react';
 import type { FC } from 'react';
 
-import Button from '@/components/Common/Button';
-import { ReleaseContext } from '@/providers/releaseProvider';
+import Button from '#components/Common/Button';
+import { ReleaseContext } from '#providers/releaseProvider';
 import {
   OperatingSystemLabel,
   OS_NOT_SUPPORTING_INSTALLERS,
-} from '@/util/downloadUtils';
-import { getNodeDownloadUrl } from '@/util/getNodeDownloadUrl';
+} from '#util/downloadUtils';
+import { getNodeDownloadUrl } from '#util/getNodeDownloadUrl';
 
 // Retrieves the pure extension piece from the input string
 const getExtension = (input: string) => String(input.split('.').slice(-1));

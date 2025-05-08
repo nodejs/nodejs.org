@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import getReleaseData from '@/next-data/releaseData';
-import type { NodeRelease, NodeReleaseStatus } from '@/types';
+import getReleaseData from '#next-data/releaseData';
+import type { NodeRelease, NodeReleaseStatus } from '#types';
 
 type WithNodeReleaseProps = {
   status: Array<NodeReleaseStatus> | NodeReleaseStatus;
