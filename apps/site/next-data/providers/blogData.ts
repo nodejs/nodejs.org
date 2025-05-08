@@ -4,18 +4,16 @@ import { BLOG_POSTS_PER_PAGE } from '@/next.constants.mjs';
 import { blogData } from '@/next.json.mjs';
 import type { BlogCategory, BlogPostsRSC } from '@/types';
 
-function getPosts() {
-  return blogData.posts.map(post => ({
+const blogPosts = cache(() =>
+  blogData.posts.map(post => ({
     ...post,
     date: new Date(post.date),
-  }));
-}
-
-const posts = getPosts();
+  }))
+);
 
 export const provideBlogPosts = cache(
   (category: BlogCategory): BlogPostsRSC => {
-    const categoryPosts = posts
+    const categoryPosts = blogPosts()
       .filter(post => post.categories.includes(category))
       .sort((a, b) => b.date.getTime() - a.date.getTime());
 
