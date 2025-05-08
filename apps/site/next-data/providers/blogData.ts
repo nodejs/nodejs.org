@@ -13,8 +13,6 @@ function getPosts() {
 
 const posts = getPosts();
 
-export const provideBlogCategories = cache(() => blogData.categories);
-
 export const provideBlogPosts = cache(
   (category: BlogCategory): BlogPostsRSC => {
     const categoryPosts = posts
