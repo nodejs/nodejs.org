@@ -1,11 +1,11 @@
 import { useTranslations } from 'next-intl';
 import type { ComponentProps, FC } from 'react';
 
-import BlogPostCard from '@/components/Blog/BlogPostCard';
-import LinkTabs from '@/components/Common/LinkTabs';
-import Pagination from '@/components/Common/Pagination';
-import type { BlogPostsRSC } from '@/types';
-import { mapAuthorToCardAuthors } from '@/util/authorUtils';
+import BlogPostCard from '#site/components/Blog/BlogPostCard';
+import LinkTabs from '#site/components/Common/LinkTabs';
+import Pagination from '#site/components/Common/Pagination';
+import type { BlogPostsRSC } from '#site/types';
+import { mapAuthorToCardAuthors } from '#site/util/authorUtils';
 
 type WithBlogCategoriesProps = {
   categories: ComponentProps<typeof LinkTabs>['tabs'];

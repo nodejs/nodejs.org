@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
-import deepMerge from '@/util/deepMerge';
+import deepMerge from '#site/util/deepMerge';
 
 describe('deepMerge', () => {
   it('should merge nested objects', () => {

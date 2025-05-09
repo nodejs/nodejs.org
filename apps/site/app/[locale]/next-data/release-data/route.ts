@@ -1,5 +1,5 @@
-import provideReleaseData from '@/next-data/providers/releaseData';
-import { defaultLocale } from '@/next.locales.mjs';
+import provideReleaseData from '#site/next-data/providers/releaseData';
+import { defaultLocale } from '#site/next.locales.mjs';
 
 // This is the Route Handler for the `GET` method which handles the request
 // for generating static data related to the Node.js Release Data

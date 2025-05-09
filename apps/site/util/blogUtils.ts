@@ -1,4 +1,4 @@
-import type { BlogPreviewType } from '@/types';
+import type { BlogPreviewType } from '#site/types';
 
 export const mapBlogCategoryToPreviewType = (type: string): BlogPreviewType => {
   switch (type) {

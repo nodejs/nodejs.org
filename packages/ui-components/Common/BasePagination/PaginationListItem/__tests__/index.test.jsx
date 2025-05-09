@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 
 import { isVisible } from '../../../../../../tests/utilities.mjs';
 
-import PaginationListItem from '@node-core/ui-components/Common/BasePagination/PaginationListItem';
+import PaginationListItem from '#ui/Common/BasePagination/PaginationListItem';
 
 function renderPaginationListItem({
   url,

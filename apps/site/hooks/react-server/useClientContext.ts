@@ -1,4 +1,4 @@
-import { getClientContext } from '@/client-context';
+import { getClientContext } from '#site/client-context';
 
 const useClientContext = () => getClientContext();
 

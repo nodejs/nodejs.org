@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it, beforeEach } from 'node:test';
 
-import { getHighEntropyValues } from '@/util/getHighEntropyValues';
+import { getHighEntropyValues } from '#site/util/getHighEntropyValues';
 
 const mock = () => Promise.resolve({ platform: 'Win32', architecture: 'x86' });
 

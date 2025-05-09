@@ -4,11 +4,11 @@ import { CloudArrowDownIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import type { FC, PropsWithChildren } from 'react';
 
-import Button from '@/components/Common/Button';
-import { useClientContext } from '@/hooks';
-import type { NodeRelease } from '@/types';
-import { getNodeDownloadUrl } from '@/util/getNodeDownloadUrl';
-import { getUserPlatform } from '@/util/getUserPlatform';
+import Button from '#site/components/Common/Button';
+import { useClientContext } from '#site/hooks';
+import type { NodeRelease } from '#site/types';
+import { getNodeDownloadUrl } from '#site/util/getNodeDownloadUrl';
+import { getUserPlatform } from '#site/util/getUserPlatform';
 
 import styles from './index.module.css';
 

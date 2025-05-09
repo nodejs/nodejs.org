@@ -1,7 +1,7 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import Select from '@node-core/ui-components/Common/Select';
-import * as OSIcons from '@node-core/ui-components/Icons/OperatingSystem';
+import Select from '#ui/Common/Select';
+import * as OSIcons from '#ui/Icons/OperatingSystem';
 
 type Story = StoryObj<typeof Select>;
 type Meta = MetaObj<typeof Select>;

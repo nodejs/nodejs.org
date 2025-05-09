@@ -1,8 +1,8 @@
 import { cache } from 'react';
 
-import generateBlogData from '@/next-data/generators/blogData.mjs';
-import { BLOG_POSTS_PER_PAGE } from '@/next.constants.mjs';
-import type { BlogCategory, BlogPostsRSC } from '@/types';
+import generateBlogData from '#site/next-data/generators/blogData.mjs';
+import { BLOG_POSTS_PER_PAGE } from '#site/next.constants.mjs';
+import type { BlogCategory, BlogPostsRSC } from '#site/types';
 
 const { categories, posts } = await generateBlogData();
 

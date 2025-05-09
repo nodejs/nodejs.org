@@ -1,5 +1,5 @@
-import { DIST_URL } from '@/next.constants.mjs';
-import type { UserOS, UserPlatform } from '@/types/userOS';
+import { DIST_URL } from '#site/next.constants.mjs';
+import type { UserOS, UserPlatform } from '#site/types/userOS';
 
 export type DownloadKind = 'installer' | 'binary' | 'source';
 

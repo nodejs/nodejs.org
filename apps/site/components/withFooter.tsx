@@ -4,9 +4,9 @@ import Footer from '@node-core/ui-components/Containers/Footer';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import Link from '@/components/Link';
-import { usePathname } from '@/navigation.mjs';
-import { siteNavigation } from '@/next.json.mjs';
+import Link from '#site/components/Link';
+import { usePathname } from '#site/navigation.mjs';
+import { siteNavigation } from '#site/next.json.mjs';
 
 const WithFooter: FC = () => {
   const t = useTranslations();

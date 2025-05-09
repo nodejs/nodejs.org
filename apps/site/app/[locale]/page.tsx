@@ -11,17 +11,20 @@ import { notFound, redirect } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import type { FC } from 'react';
 
-import { setClientContext } from '@/client-context';
-import WithLayout from '@/components/withLayout';
+import { setClientContext } from '#site/client-context';
+import WithLayout from '#site/components/withLayout';
 import {
   ENABLE_STATIC_EXPORT_LOCALE,
   ENABLE_STATIC_EXPORT,
-} from '@/next.constants.mjs';
-import { PAGE_VIEWPORT, DYNAMIC_ROUTES } from '@/next.dynamic.constants.mjs';
-import { dynamicRouter } from '@/next.dynamic.mjs';
-import { allLocaleCodes, availableLocaleCodes } from '@/next.locales.mjs';
-import { defaultLocale } from '@/next.locales.mjs';
-import { MatterProvider } from '@/providers/matterProvider';
+} from '#site/next.constants.mjs';
+import {
+  PAGE_VIEWPORT,
+  DYNAMIC_ROUTES,
+} from '#site/next.dynamic.constants.mjs';
+import { dynamicRouter } from '#site/next.dynamic.mjs';
+import { allLocaleCodes, availableLocaleCodes } from '#site/next.locales.mjs';
+import { defaultLocale } from '#site/next.locales.mjs';
+import { MatterProvider } from '#site/providers/matterProvider';
 
 type DynamicStaticPaths = { path: Array<string>; locale: string };
 type DynamicParams = { params: Promise<DynamicStaticPaths> };

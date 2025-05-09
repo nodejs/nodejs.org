@@ -4,8 +4,8 @@ import BaseLinkTabs from '@node-core/ui-components/Common/BaseLinkTabs';
 import type { LinkTabsProps } from '@node-core/ui-components/Common/BaseLinkTabs';
 import type { FC } from 'react';
 
-import Link from '@/components/Link';
-import { useRouter } from '@/navigation.mjs';
+import Link from '#site/components/Link';
+import { useRouter } from '#site/navigation.mjs';
 
 const LinkTabs: FC<Omit<LinkTabsProps, 'as' | 'onSelect'>> = props => {
   const { push } = useRouter();

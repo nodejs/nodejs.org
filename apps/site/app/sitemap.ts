@@ -4,9 +4,9 @@ import {
   BASE_PATH,
   BASE_URL,
   EXTERNAL_LINKS_SITEMAP,
-} from '@/next.constants.mjs';
-import { dynamicRouter } from '@/next.dynamic.mjs';
-import { availableLocaleCodes, defaultLocale } from '@/next.locales.mjs';
+} from '#site/next.constants.mjs';
+import { dynamicRouter } from '#site/next.dynamic.mjs';
+import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
 
 // This is the combination of the Application Base URL and Base PATH
 const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;

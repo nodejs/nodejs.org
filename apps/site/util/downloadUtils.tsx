@@ -4,9 +4,9 @@ import * as OSIcons from '@node-core/ui-components/Icons/OperatingSystem';
 import * as PackageManagerIcons from '@node-core/ui-components/Icons/PackageManager';
 import satisfies from 'semver/functions/satisfies';
 
-import type { NodeReleaseStatus } from '@/types';
-import type * as Types from '@/types/release';
-import type { UserOS, UserPlatform } from '@/types/userOS';
+import type { NodeReleaseStatus } from '#site/types';
+import type * as Types from '#site/types/release';
+import type { UserOS, UserPlatform } from '#site/types/userOS';
 
 // This is a manual list of OS's that do not support/have a way of being installed
 // with an executable installer. This is used to disable the installer button.

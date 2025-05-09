@@ -1,4 +1,4 @@
-import type { ClientSharedServerContext } from '@/types';
+import type { ClientSharedServerContext } from '#site/types';
 
 export const assignClientContext = <T extends ClientSharedServerContext>(
   props: Partial<T>

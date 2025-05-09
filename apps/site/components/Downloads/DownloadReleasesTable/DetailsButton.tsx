@@ -4,9 +4,9 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { use } from 'react';
 
-import LinkWithArrow from '@/components/LinkWithArrow';
-import { ReleaseModalContext } from '@/providers/releaseModalProvider';
-import type { NodeRelease } from '@/types';
+import LinkWithArrow from '#site/components/LinkWithArrow';
+import { ReleaseModalContext } from '#site/providers/releaseModalProvider';
+import type { NodeRelease } from '#site/types';
 
 type DetailsButtonProps = {
   versionData: NodeRelease;

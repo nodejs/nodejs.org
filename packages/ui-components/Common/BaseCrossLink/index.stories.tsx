@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import BaseCrossLink from '@node-core/ui-components/Common/BaseCrossLink';
+import BaseCrossLink from '#ui/Common/BaseCrossLink';
 
 type Story = StoryObj<typeof BaseCrossLink>;
 type Meta = MetaObj<typeof BaseCrossLink>;

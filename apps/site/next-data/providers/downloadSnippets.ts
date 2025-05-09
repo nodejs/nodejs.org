@@ -1,6 +1,6 @@
 import { cache } from 'react';
 
-import generateDownloadSnippets from '@/next-data/generators/downloadSnippets.mjs';
+import generateDownloadSnippets from '#site/next-data/generators/downloadSnippets.mjs';
 
 const downloadSnippets = await generateDownloadSnippets();
 

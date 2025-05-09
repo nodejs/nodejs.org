@@ -1,7 +1,7 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import BaseButton from '@node-core/ui-components/Common/BaseButton';
+import BaseButton from '#ui/Common/BaseButton';
 
 type Story = StoryObj<typeof BaseButton>;
 type Meta = MetaObj<typeof BaseButton>;

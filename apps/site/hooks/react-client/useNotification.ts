@@ -2,7 +2,7 @@
 
 import { useContext } from 'react';
 
-import { NotificationDispatch } from '@/providers/notificationProvider';
+import { NotificationDispatch } from '#site/providers/notificationProvider';
 
 const useNotification = () => useContext(NotificationDispatch);
 

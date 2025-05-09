@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
+import BadgeGroup from '#ui/Common/BadgeGroup';
 
 type Story = StoryObj<typeof BadgeGroup>;
 type Meta = MetaObj<typeof BadgeGroup>;

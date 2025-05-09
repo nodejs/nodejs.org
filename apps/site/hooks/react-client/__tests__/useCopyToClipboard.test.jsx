@@ -4,7 +4,7 @@ import { setTimeout } from 'node:timers/promises';
 
 import { render, fireEvent, screen } from '@testing-library/react';
 
-import useCopyToClipboard from '@/hooks/react-client/useCopyToClipboard';
+import useCopyToClipboard from '#site/hooks/react-client/useCopyToClipboard';
 
 navigator.clipboard = { writeText: () => {} };
 

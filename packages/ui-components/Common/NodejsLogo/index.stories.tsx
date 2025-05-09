@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import NodejsLogo from '@node-core/ui-components/Common/NodejsLogo';
+import NodejsLogo from '#ui/Common/NodejsLogo';
 
 type Story = StoryObj<typeof NodejsLogo>;
 type Meta = MetaObj<typeof NodejsLogo>;

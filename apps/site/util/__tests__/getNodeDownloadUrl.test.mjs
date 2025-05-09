@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
-import { getNodeDownloadUrl } from '@/util/getNodeDownloadUrl';
+import { getNodeDownloadUrl } from '#site/util/getNodeDownloadUrl';
 
 const version = 'v18.16.0';
 

@@ -2,15 +2,13 @@
   "name": "@node-core/ui-components",
   "type": "module",
   "exports": {
-    "./Common/*": "./Common/*",
-    "./Common/*/*": "./Common/*/*",
-    "./Containers/*": "./Containers/*",
-    "./Containers/*/*": "./Containers/*/*",
-    "./Icons/*": "./Icons/*",
-    "./Icons/*/*": "./Icons/*/*",
-    "./styles/*": "./styles/*",
-    "./types": "./types.ts",
-    "./stylelint/*": "./stylelint/*"
+    "./*": [
+      "./*",
+      "./*.tsx",
+      "./*/index.tsx",
+      "./*.ts",
+      "./*/index.ts"
+    ]
   },
   "files": [
     "Common",
@@ -77,6 +75,15 @@
     "tsx": "^4.19.3",
     "typescript": "~5.8.2",
     "typescript-eslint": "~8.31.1"
+  },
+  "imports": {
+    "#ui/*": [
+      "./*",
+      "./*.tsx",
+      "./*/index.tsx",
+      "./*.ts",
+      "./*/index.ts"
+    ]
   },
   "engines": {
     "node": ">=20"

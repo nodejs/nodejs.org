@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 
 import { isVisible } from '../../../../../tests/utilities.mjs';
 
-import BasePagination from '@node-core/ui-components/Common/BasePagination';
+import BasePagination from '#ui/Common/BasePagination';
 
 const getPageLabel = number => number.toString();
 const labels = {

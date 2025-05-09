@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
-import generateWebsiteFeeds from '@/next-data/generators/websiteFeeds.mjs';
+import generateWebsiteFeeds from '#site/next-data/generators/websiteFeeds.mjs';
 
 import { BASE_URL, BASE_PATH } from '../../../next.constants.mjs';
 import { siteConfig } from '../../../next.json.mjs';

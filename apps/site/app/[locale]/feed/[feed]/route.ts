@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 
-import provideWebsiteFeeds from '@/next-data/providers/websiteFeeds';
-import { siteConfig } from '@/next.json.mjs';
-import { defaultLocale } from '@/next.locales.mjs';
+import provideWebsiteFeeds from '#site/next-data/providers/websiteFeeds';
+import { siteConfig } from '#site/next.json.mjs';
+import { defaultLocale } from '#site/next.locales.mjs';
 
 type DynamicStaticPaths = { locale: string; feed: string };
 type StaticParams = { params: Promise<DynamicStaticPaths> };

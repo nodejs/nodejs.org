@@ -2,7 +2,7 @@ import { importLocale } from '@node-core/website-i18n';
 import defaultMessages from '@node-core/website-i18n/locales/en.json';
 import { getRequestConfig } from 'next-intl/server';
 
-import { availableLocaleCodes, defaultLocale } from '@/next.locales.mjs';
+import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
 
 import deepMerge from './util/deepMerge';
 

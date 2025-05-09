@@ -5,9 +5,13 @@ import { useTranslations } from 'next-intl';
 import { useContext, useEffect, useMemo } from 'react';
 import type { FC } from 'react';
 
-import { ReleaseContext } from '@/providers/releaseProvider';
-import type { InstallationMethod } from '@/types/release';
-import { nextItem, INSTALL_METHODS, parseCompat } from '@/util/downloadUtils';
+import { ReleaseContext } from '#site/providers/releaseProvider';
+import type { InstallationMethod } from '#site/types/release';
+import {
+  nextItem,
+  INSTALL_METHODS,
+  parseCompat,
+} from '#site/util/downloadUtils';
 
 const InstallationMethodDropdown: FC = () => {
   const release = useContext(ReleaseContext);

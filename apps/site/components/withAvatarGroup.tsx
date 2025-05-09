@@ -4,9 +4,9 @@ import AvatarGroup from '@node-core/ui-components/Common/AvatarGroup';
 import Image from 'next/image';
 import type { ComponentProps, FC } from 'react';
 
-import Link from '@/components/Link';
-import type { AuthorProps } from '@/types';
-import { getAuthors } from '@/util/authorUtils';
+import Link from '#site/components/Link';
+import type { AuthorProps } from '#site/types';
+import { getAuthors } from '#site/util/authorUtils';
 
 type WithAvatarGroupProps = Omit<
   ComponentProps<typeof AvatarGroup>,

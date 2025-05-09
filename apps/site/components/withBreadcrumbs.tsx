@@ -5,10 +5,14 @@ import Breadcrumbs from '@node-core/ui-components/Common/Breadcrumbs';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import Link from '@/components/Link';
-import { useClientContext, useMediaQuery, useSiteNavigation } from '@/hooks';
-import type { NavigationKeys } from '@/types';
-import { dashToCamelCase } from '@/util/stringUtils';
+import Link from '#site/components/Link';
+import {
+  useClientContext,
+  useMediaQuery,
+  useSiteNavigation,
+} from '#site/hooks';
+import type { NavigationKeys } from '#site/types';
+import { dashToCamelCase } from '#site/util/stringUtils';
 
 type WithBreadcrumbsProps = {
   navKeys?: Array<NavigationKeys>;

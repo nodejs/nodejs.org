@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import ProgressionSidebar from '@node-core/ui-components/Common/ProgressionSidebar';
+import ProgressionSidebar from '#ui/Common/ProgressionSidebar';
 
 type Story = StoryObj<typeof ProgressionSidebar>;
 type Meta = MetaObj<typeof ProgressionSidebar>;

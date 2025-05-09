@@ -16,7 +16,7 @@ describe('ThemeProvider', () => {
       },
     });
 
-    const { ThemeProvider } = await import('@/providers/themeProvider');
+    const { ThemeProvider } = await import('#site/providers/themeProvider');
 
     const { container } = render(
       <ThemeProvider>

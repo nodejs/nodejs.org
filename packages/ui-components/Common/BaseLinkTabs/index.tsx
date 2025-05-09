@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import Select from '@node-core/ui-components/Common/Select';
-import type { LinkLike } from '@node-core/ui-components/types';
+import Select from '#ui/Common/Select';
+import type { LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 

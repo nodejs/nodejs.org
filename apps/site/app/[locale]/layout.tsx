@@ -4,13 +4,13 @@ import classNames from 'classnames';
 import { NextIntlClientProvider } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
 
-import BaseLayout from '@/layouts/Base';
-import { VERCEL_ENV } from '@/next.constants.mjs';
-import { IBM_PLEX_MONO, OPEN_SANS } from '@/next.fonts';
-import { availableLocalesMap, defaultLocale } from '@/next.locales.mjs';
-import { ThemeProvider } from '@/providers/themeProvider';
+import BaseLayout from '#site/layouts/Base';
+import { VERCEL_ENV } from '#site/next.constants.mjs';
+import { IBM_PLEX_MONO, OPEN_SANS } from '#site/next.fonts';
+import { availableLocalesMap, defaultLocale } from '#site/next.locales.mjs';
+import { ThemeProvider } from '#site/providers/themeProvider';
 
-import '@/styles/index.css';
+import '#site/styles/index.css';
 
 const fontClasses = classNames(IBM_PLEX_MONO.variable, OPEN_SANS.variable);
 

@@ -8,7 +8,7 @@ import {
   NodejsStackedDark,
   NodejsStackedLight,
   NodejsStackedWhite,
-} from '@node-core/ui-components/Icons/Logos';
+} from '#ui/Icons/Logos';
 
 export const HorizontalLogo: StoryObj = {
   render: () => <Nodejs width={267} height={80} />,

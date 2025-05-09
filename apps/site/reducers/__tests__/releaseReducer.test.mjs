@@ -1,7 +1,10 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
-import reducer, { releaseState, getActions } from '@/reducers/releaseReducer';
+import reducer, {
+  releaseState,
+  getActions,
+} from '#site/reducers/releaseReducer';
 
 describe('releaseReducer', () => {
   it('should return the initial state', () => {

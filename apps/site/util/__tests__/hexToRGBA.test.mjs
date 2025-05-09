@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
-import { hexToRGBA } from '@/util/hexToRGBA';
+import { hexToRGBA } from '#site/util/hexToRGBA';
 
 describe('hexToRGBA', () => {
   it('should convert a hex color to an rgba color', () => {

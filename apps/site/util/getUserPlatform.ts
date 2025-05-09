@@ -1,4 +1,4 @@
-import type * as Types from '@/types/userOS';
+import type * as Types from '#site/types/userOS';
 
 // This method is used to retrieve a User's platform based on their architecture and bitness.
 // Note: This is only used for automatic Platform detection for supported platforms by using `useDetectOS`

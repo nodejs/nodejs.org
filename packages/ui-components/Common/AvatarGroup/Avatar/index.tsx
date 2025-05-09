@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import type { HTMLAttributes, ElementType } from 'react';
 import { forwardRef } from 'react';
 
-import type { LinkLike } from '@node-core/ui-components/types';
+import type { LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 

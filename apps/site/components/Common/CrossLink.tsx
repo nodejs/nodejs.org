@@ -3,7 +3,7 @@ import type { CrossLinkProps } from '@node-core/ui-components/Common/BaseCrossLi
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import Link from '@/components/Link';
+import Link from '#site/components/Link';
 
 const CrossLink: FC<Omit<CrossLinkProps, 'as' | 'label'>> = props => {
   const t = useTranslations();

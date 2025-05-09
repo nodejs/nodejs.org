@@ -2,7 +2,7 @@ import type { ImageProps } from 'next/image';
 import Image from 'next/image';
 import type { FC } from 'react';
 
-import { isSvgImage } from '@/util/imageUtils';
+import { isSvgImage } from '#site/util/imageUtils';
 
 const MDXImage: FC<ImageProps> = ({ width, height, alt, src, ...props }) => {
   const isUnoptimizedImage = isSvgImage(src.toString());

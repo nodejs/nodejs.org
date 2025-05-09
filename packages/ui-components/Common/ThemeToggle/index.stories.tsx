@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import ThemeToggle from '@node-core/ui-components/Common/ThemeToggle';
+import ThemeToggle from '#ui/Common/ThemeToggle';
 
 type Story = StoryObj<typeof ThemeToggle>;
 type Meta = MetaObj<typeof ThemeToggle>;

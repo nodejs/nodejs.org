@@ -1,6 +1,6 @@
 import type { FC, HTMLProps } from 'react';
 
-import { Link as LocalizedLink } from '@/navigation.mjs';
+import { Link as LocalizedLink } from '#site/navigation.mjs';
 
 const Link: FC<HTMLProps<HTMLAnchorElement>> = ({
   children,

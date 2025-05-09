@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import Footer from '@node-core/ui-components/Containers/Footer';
+import Footer from '#ui/Containers/Footer';
 
 type Story = StoryObj<typeof Footer>;
 type Meta = MetaObj<typeof Footer>;
