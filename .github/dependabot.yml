@@ -27,7 +27,6 @@ updates:
           - acorn
           - eslint
           - eslint-*
-          - lint-staged
           - prettier
           - prettier-*
           - stylelint
