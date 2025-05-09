@@ -1,0 +1,32 @@
+{
+  "main": ".open-next/worker.js",
+  "name": "nodejs-website",
+  "compatibility_date": "2024-11-07",
+  "compatibility_flags": ["nodejs_compat"],
+  "account_id": "8ed4d03ac99f77561d0e8c9cbcc76cb6",
+  "minify": true,
+  "keep_names": false,
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS",
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+  },
+  "build": {
+    "command": "wrangler-build-time-fs-assets-polyfilling --assets pages --assets snippets --assets-output-dir .open-next/assets",
+  },
+  "alias": {
+    "node:fs": "./.wrangler/fs-assets-polyfilling/polyfills/node/fs.ts",
+    "node:fs/promises": "./.wrangler/fs-assets-polyfilling/polyfills/node/fs/promises.ts",
+    "fs": "./.wrangler/fs-assets-polyfilling/polyfills/node/fs.ts",
+    "fs/promises": "./.wrangler/fs-assets-polyfilling/polyfills/node/fs/promises.ts",
+  },
+  "kv_namespaces": [
+    {
+      "binding": "NEXT_CACHE_WORKERS_KV",
+      "id": "32e8e26d2d2647fd96789baf83209fa9",
+    },
+  ],
+}
