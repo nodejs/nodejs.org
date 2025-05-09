@@ -107,6 +107,10 @@ const resolveDownloads = version => {
     );
   }
 
+  if (semVer.satisfies(version, '>= 24.0.0')) {
+    downloads = downloads.filter(ver => ver.title !== 'ARMv7 32-bit Binary');
+  }
+
   return downloads;
 };
 
