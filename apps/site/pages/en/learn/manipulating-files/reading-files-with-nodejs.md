@@ -91,8 +91,8 @@ In this case, a better option is to read the file content using streams.
 
 ```mjs
 import fs from 'fs';
-import path from 'path';
 import { pipeline } from 'node:stream/promises';
+import path from 'path';
 
 const fileUrl = 'https://www.gutenberg.org/files/2701/2701-0.txt';
 const outputFilePath = path.join(process.cwd(), 'moby.md');

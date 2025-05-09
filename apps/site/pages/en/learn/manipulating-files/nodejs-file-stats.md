@@ -92,7 +92,7 @@ fs.stat('/Users/joe/test.txt', (err, stats) => {
   stats.isFile(); // true
   stats.isDirectory(); // false
   stats.isSymbolicLink(); // false
-  stats.size; // 1024000 //= 1MB
+  console.log(stats.size); // 1024000 //= 1MB
 });
 ```
 
@@ -123,7 +123,7 @@ try {
   stats.isFile(); // true
   stats.isDirectory(); // false
   stats.isSymbolicLink(); // false
-  stats.size; // 1024000 //= 1MB
+  console.log(stats.size); // 1024000 //= 1MB
 } catch (err) {
   console.log(err);
 }

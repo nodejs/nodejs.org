@@ -126,7 +126,7 @@ Example 2: An `O(n)` callback. This callback will run quickly for small `n` and 
 
 ```js
 app.get('/countToN', (req, res) => {
-  let n = req.query.n;
+  const n = req.query.n;
 
   // n iterations before giving someone else a turn
   for (let i = 0; i < n; i++) {
@@ -141,7 +141,7 @@ Example 3: An `O(n^2)` callback. This callback will still run quickly for small 
 
 ```js
 app.get('/countToN2', (req, res) => {
-  let n = req.query.n;
+  const n = req.query.n;
 
   // n^2 iterations before giving someone else a turn
   for (let i = 0; i < n; i++) {
@@ -193,7 +193,7 @@ Here is an example vulnerable regexp exposing its server to REDOS:
 
 ```js
 app.get('/redos-me', (req, res) => {
-  let filePath = req.query.filePath;
+  const filePath = req.query.filePath;
 
   // REDOS
   if (filePath.match(/(\/.+)+$/)) {
@@ -272,28 +272,30 @@ Example: JSON blocking. We create an object `obj` of size 2^21 and `JSON.stringi
 
 ```js
 let obj = { a: 1 };
-let niter = 20;
+const iterations = 20;
 
-let before, str, pos, res, took;
-
-for (let i = 0; i < niter; i++) {
-  obj = { obj1: obj, obj2: obj }; // Doubles in size each iter
+// Expand the object exponentially by nesting it
+for (let i = 0; i < iterations; i++) {
+  obj = { obj1: obj, obj2: obj };
 }
 
-before = process.hrtime();
-str = JSON.stringify(obj);
-took = process.hrtime(before);
-console.log('JSON.stringify took ' + took);
+// Measure time to stringify the object
+let start = process.hrtime();
+const jsonString = JSON.stringify(obj);
+let duration = process.hrtime(start);
+console.log('JSON.stringify took', duration);
 
-before = process.hrtime();
-pos = str.indexOf('nomatch');
-took = process.hrtime(before);
-console.log('Pure indexof took ' + took);
+// Measure time to search a string within the JSON
+start = process.hrtime();
+const index = jsonString.indexOf('nomatch'); // Always -1
+duration = process.hrtime(start);
+console.log('String.indexOf took', duration);
 
-before = process.hrtime();
-res = JSON.parse(str);
-took = process.hrtime(before);
-console.log('JSON.parse took ' + took);
+// Measure time to parse the JSON back to an object
+start = process.hrtime();
+const parsed = JSON.parse(jsonString);
+duration = process.hrtime(start);
+console.log('JSON.parse took', duration);
 ```
 
 There are npm modules that offer asynchronous JSON APIs. See for example:
@@ -317,7 +319,7 @@ Example 1: Un-partitioned average, costs `O(n)`
 
 ```js
 for (let i = 0; i < n; i++) sum += i;
-let avg = sum / n;
+const avg = sum / n;
 console.log('avg: ' + avg);
 ```
 
@@ -341,7 +343,7 @@ function asyncAvg(n, avgCB) {
 
   // Start the helper, with CB to call avgCB.
   help(1, function (sum) {
-    let avg = sum / n;
+    const avg = sum / n;
     avgCB(avg);
   });
 }

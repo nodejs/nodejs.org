@@ -95,8 +95,8 @@ const fileHash = hasher.read();
 
 ```js displayName="Streams Pipeline"
 // streams.mjs
-import { pipeline } from 'node:stream/promises';
 import { createReadStream, createWriteStream } from 'node:fs';
+import { pipeline } from 'node:stream/promises';
 import { createGzip } from 'node:zlib';
 
 // ensure you have a `package.json` file for this test!

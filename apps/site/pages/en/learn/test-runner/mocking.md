@@ -150,7 +150,7 @@ import assert from 'node:assert/strict';
 import { before, describe, it, mock } from 'node:test';
 
 describe('foo', { concurrency: true }, () => {
-  let barMock = mock.fn();
+  const barMock = mock.fn();
   let foo;
 
   before(async () => {
@@ -188,6 +188,7 @@ A little-known fact is that there is a builtin way to mock `fetch`. [`undici`](h
 ```mjs displayName="endpoints.spec.mjs"
 import assert from 'node:assert/strict';
 import { beforeEach, describe, it } from 'node:test';
+
 import { MockAgent, setGlobalDispatcher } from 'undici';
 
 import endpoints from './endpoints.mjs';

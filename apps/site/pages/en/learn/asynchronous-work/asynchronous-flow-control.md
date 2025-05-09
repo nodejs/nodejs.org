@@ -114,7 +114,6 @@ function getSong() {
   let _song = '';
   let i = 100;
   for (i; i > 0; i -= 1) {
-    /* eslint-disable no-loop-func */
     setTimeout(function () {
       _song += `${i} beers on the wall, you take one down and pass it around, ${
         i - 1
@@ -123,7 +122,6 @@ function getSong() {
         _song += "Hey let's get some more beer";
       }
     }, 0);
-    /* eslint-enable no-loop-func */
   }
 
   return _song;

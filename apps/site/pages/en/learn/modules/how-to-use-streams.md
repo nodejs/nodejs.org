@@ -80,29 +80,7 @@ A demonstration of the use of these events can be seen in the following sections
 
 Here's an example of a simple readable stream implementation that generates data dynamically:
 
-```cjs
-const { Readable } = require('node:stream');
-
-class MyStream extends Readable {
-  #count = 0;
-  _read(size) {
-    this.push(':-)');
-    if (++this.#count === 5) {
-      this.push(null);
-    }
-  }
-}
-
-const stream = new MyStream();
-
-stream.on('data', chunk => {
-  console.log(chunk.toString());
-});
-```
-
-```mjs
-import { Readable } from 'node:stream';
-
+```js
 class MyStream extends Readable {
   #count = 0;
   _read(size) {
@@ -126,22 +104,7 @@ In this code, the `MyStream` class extends Readable and overrides the [`_read`][
 
 For even finer control over data flow, the readable event can be used. This event is more complex but provides better performance for certain applications by allowing explicit control over when data is read from the stream:
 
-```cjs
-const stream = new MyStream({
-  highWaterMark: 1,
-});
-
-stream.on('readable', () => {
-  console.count('>> readable event');
-  let chunk;
-  while ((chunk = stream.read()) !== null) {
-    console.log(chunk.toString()); // Process the chunk
-  }
-});
-stream.on('end', () => console.log('>> end event'));
-```
-
-```mjs
+```js
 const stream = new MyStream({
   highWaterMark: 1,
 });
@@ -178,21 +141,7 @@ NOTE: You can try to run the code with `NODE_DEBUG=stream` to see that `emitRead
 
 If we want to see readable events called before each smiley, we can wrap `push` into a `setImmediate` or `process.nextTick` like this:
 
-```cjs
-class MyStream extends Readable {
-  #count = 0;
-  _read(size) {
-    setImmediate(() => {
-      this.push(':-)');
-      if (++this.#count === 5) {
-        return this.push(null);
-      }
-    });
-  }
-}
-```
-
-```mjs
+```js
 class MyStream extends Readable {
   #count = 0;
   _read(size) {
@@ -269,8 +218,8 @@ main().catch(console.error);
 ```
 
 ```mjs
-import { Writable } from 'node:stream';
 import { once } from 'node:events';
+import { Writable } from 'node:stream';
 
 class MyStream extends Writable {
   constructor() {
@@ -691,7 +640,7 @@ import { pipeline } from 'stream/promises';
 await pipeline(
   fs.createReadStream(import.meta.filename),
   async function* (source) {
-    for await (let chunk of source) {
+    for await (const chunk of source) {
       yield chunk.toString().toUpperCase();
     }
   },

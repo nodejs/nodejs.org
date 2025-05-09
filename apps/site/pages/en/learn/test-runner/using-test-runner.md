@@ -269,7 +269,7 @@ function generateSnapshotPath(testFilePath) {
 
 The example below demonstrates snapshot testing with [testing library](https://testing-library.com/) for UI components; note the two different ways of accessing `assert.snapshot`):
 
-```ts
+```js
 import { describe, it } from 'node:test';
 
 import { prettyDOM } from '@testing-library/dom';
@@ -277,16 +277,15 @@ import { render } from '@testing-library/react'; // Any framework (ex svelte)
 
 import { SomeComponent } from './SomeComponent.jsx';
 
-
 describe('<SomeComponent>', () => {
   // For people preferring "fat-arrow" syntax, the following is probably better for consistency
-  it('should render defaults when no props are provided', (t) => {
+  it('should render defaults when no props are provided', t => {
     const component = render(<SomeComponent />).container.firstChild;
 
     t.assert.snapshot(prettyDOM(component));
   });
 
-  it('should consume `foo` when provided', function() {
+  it('should consume `foo` when provided', function () {
     const component = render(<SomeComponent foo="bar" />).container.firstChild;
 
     this.assert.snapshot(prettyDOM(component));
@@ -384,7 +383,7 @@ function globalUIBeforeEach() {
 
 You can have 2 different levels of UI tests: a unit-like (wherein externals & dependencies are mocked) and a more end-to-end (where only externals like IndexedDb are mocked but the rest of the chain is real). The former is generally the purer option, and the latter is generally deferred to a fully end-to-end automated usability test via something like [Playwright](https://playwright.dev/) or [Puppeteer](https://pptr.dev/). Below is an example of the former.
 
-```ts
+```js
 import { before, describe, mock, it } from 'node:test';
 
 import { screen } from '@testing-library/dom';
@@ -392,7 +391,6 @@ import { render } from '@testing-library/react'; // Any framework (ex svelte)
 
 // ⚠️ Note that SomeOtherComponent is NOT a static import;
 // this is necessary in order to facilitate mocking its own imports.
-
 
 describe('<SomeOtherComponent>', () => {
   let SomeOtherComponent;
@@ -402,7 +400,9 @@ describe('<SomeOtherComponent>', () => {
     // ⚠️ Sequence matters: the mock must be set up BEFORE its consumer is imported.
 
     // Requires the `--experimental-test-module-mocks` be set.
-    calcSomeValue = mock.module('./calcSomeValue.js', { calcSomeValue: mock.fn() });
+    calcSomeValue = mock.module('./calcSomeValue.js', {
+      calcSomeValue: mock.fn(),
+    });
 
     ({ SomeOtherComponent } = await import('./SomeOtherComponent.jsx'));
   });
@@ -414,9 +414,11 @@ describe('<SomeOtherComponent>', () => {
     // (and the snapshot would need to be updated for no real value).
 
     it('should fail gracefully by displaying a pretty error', () => {
-      calcSomeValue.mockImplementation(function mock__calcSomeValue() { return null });
+      calcSomeValue.mockImplementation(function mock__calcSomeValue() {
+        return null;
+      });
 
-      render(<SomeOtherComponent>);
+      render(<SomeOtherComponent />);
 
       const errorMessage = screen.queryByText('unable');
 

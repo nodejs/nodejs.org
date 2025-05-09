@@ -248,8 +248,8 @@ Let's modify our script a bit:
 
 ```mjs
 // script-fix.mjs
-import os from 'node:os';
 import fs from 'node:fs/promises';
+import os from 'node:os';
 
 let len = 1_000_000;
 const fileName = `entries-${Date.now()}`;
@@ -366,13 +366,13 @@ You can get GC statistics as [PerformanceEntry][] from the callback in
 
 For example:
 
-```ts
-PerformanceEntry {
-  name: 'gc',
-  entryType: 'gc',
-  startTime: 2820.567669,
-  duration: 1.315709,
-  kind: 1
+```json
+{
+  "name": "gc",
+  "entryType": "gc",
+  "startTime": 2820.567669,
+  "duration": 1.315709,
+  "kind": 1
 }
 ```
 

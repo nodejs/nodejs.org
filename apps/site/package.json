@@ -6,12 +6,11 @@
     "check-types": "tsc --noEmit",
     "deploy": "cross-env NEXT_PUBLIC_STATIC_EXPORT=true NODE_NO_WARNINGS=1 next build",
     "dev": "cross-env NODE_NO_WARNINGS=1 next dev",
-    "lint": "turbo run lint:md lint:snippets lint:js lint:css",
+    "lint": "turbo run lint:md lint:js lint:css",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
     "lint:fix": "turbo run lint:md lint:js lint:css --no-cache -- --fix",
     "lint:js": "eslint \"**/*.{js,mjs,ts,tsx}\"",
     "lint:md": "eslint \"**/*.md?(x)\" --cache --cache-strategy=content --cache-location=.eslintmdcache",
-    "lint:snippets": "node ./scripts/lint-snippets/index.mjs",
     "scripts:release-post": "cross-env NODE_NO_WARNINGS=1 node scripts/release-post/index.mjs",
     "serve": "pnpm dev",
     "start": "cross-env NODE_NO_WARNINGS=1 next start",
@@ -97,7 +96,6 @@
     "remark-lint-no-unused-definitions": "^4.0.2",
     "remark-lint-prohibited-strings": "^4.0.0",
     "remark-lint-unordered-list-marker-style": "^4.0.1",
-    "remark-parse": "11.0.0",
     "remark-preset-lint-node": "5.1.2",
     "stylelint": "16.19.1",
     "stylelint-config-standard": "38.0.0",
@@ -106,7 +104,6 @@
     "tsx": "^4.19.3",
     "typescript": "~5.8.2",
     "typescript-eslint": "~8.31.1",
-    "unified": "^11.0.5",
     "user-agent-data-types": "0.4.2"
   }
 }

@@ -94,8 +94,8 @@ inp.pipe(gzip).pipe(out);
 ```
 
 ```mjs
-import { createGzip } from 'node:zlib';
 import { createReadStream, createWriteStream } from 'node:fs';
+import { createGzip } from 'node:zlib';
 
 const gzip = createGzip();
 
@@ -147,8 +147,8 @@ pipeline(
 ```
 
 ```mjs
-import { pipeline } from 'node:stream';
 import fs from 'node:fs';
+import { pipeline } from 'node:stream';
 import zlib from 'node:zlib';
 
 // Use the pipeline API to easily pipe a series of streams
@@ -191,8 +191,8 @@ async function run() {
 ```
 
 ```mjs
-import { pipeline } from 'node:stream/promises';
 import fs from 'node:fs';
+import { pipeline } from 'node:stream/promises';
 import zlib from 'node:zlib';
 
 async function run() {

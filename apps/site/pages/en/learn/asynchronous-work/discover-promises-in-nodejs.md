@@ -31,7 +31,7 @@ The return value of the executor function is ignored: only `resolve` or `reject`
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
-  let success = true;
+  const success = true;
 
   if (success) {
     resolve('Operation was successful!');
@@ -56,7 +56,7 @@ Once a Promise is created, you can handle the outcome by using the `.then()`, `.
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
-  let success = true;
+  const success = true;
 
   if (success) {
     resolve('Operation was successful!');
