@@ -338,7 +338,7 @@ This philosophy can lead to some potentially problematic situations.
 Take this snippet for example:
 
 ```js
-let bar;
+let bar = null;
 
 // this has an asynchronous signature, but calls callback synchronously
 function someAsyncApiCall(callback) {
@@ -370,7 +370,7 @@ useful for the user to be alerted to an error before the event loop is
 allowed to continue. Here is the previous example using `process.nextTick()`:
 
 ```js
-let bar;
+let bar = null;
 
 function someAsyncApiCall(callback) {
   process.nextTick(callback);
