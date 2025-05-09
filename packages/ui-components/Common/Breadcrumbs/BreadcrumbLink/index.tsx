@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import type { ComponentProps, FC } from 'react';
 
-import type { LinkLike } from '#types';
+import type { LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 

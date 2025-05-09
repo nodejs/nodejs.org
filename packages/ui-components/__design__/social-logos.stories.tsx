@@ -8,7 +8,7 @@ import {
   Mastodon,
   Slack,
   X,
-} from '#Icons/Social';
+} from '#ui/Icons/Social';
 
 const socialIcons = [
   [GitHub, Mastodon, LinkedIn],

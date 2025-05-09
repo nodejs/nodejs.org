@@ -110,7 +110,7 @@
     "user-agent-data-types": "0.4.2"
   },
   "imports": {
-    "#*": [
+    "#site/*": [
       "./*",
       "./*.tsx",
       "./*/index.tsx",

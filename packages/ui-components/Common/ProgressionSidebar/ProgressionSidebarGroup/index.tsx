@@ -1,7 +1,7 @@
 import type { ComponentProps, FC } from 'react';
 
-import ProgressionSidebarItem from '#Common/ProgressionSidebar/ProgressionSidebarItem';
-import type { FormattedMessage, LinkLike } from '#types';
+import ProgressionSidebarItem from '#ui/Common/ProgressionSidebar/ProgressionSidebarItem';
+import type { FormattedMessage, LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 

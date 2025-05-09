@@ -1,4 +1,4 @@
-import BreadcrumbItem from '#Common/Breadcrumbs/BreadcrumbItem';
+import BreadcrumbItem from '#ui/Common/Breadcrumbs/BreadcrumbItem';
 
 const BreadcrumbTruncatedItem = () => (
   <BreadcrumbItem disableMicrodata>

@@ -1,8 +1,8 @@
 import type { ComponentProps, FC } from 'react';
 
-import Select from '#Common/Select';
-import SidebarGroup from '#Containers/Sidebar/SidebarGroup';
-import type { LinkLike } from '#types';
+import Select from '#ui/Common/Select';
+import SidebarGroup from '#ui/Containers/Sidebar/SidebarGroup';
+import type { LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 

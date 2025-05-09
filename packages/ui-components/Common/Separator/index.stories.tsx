@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import Separator from '#Common/Separator';
+import Separator from '#ui/Common/Separator';
 
 type Story = StoryObj<typeof Separator>;
 type Meta = MetaObj<typeof Separator>;

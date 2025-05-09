@@ -1,7 +1,7 @@
 import HomeIcon from '@heroicons/react/24/outline/HomeIcon';
 import type { ComponentProps, FC } from 'react';
 
-import BreadcrumbLink from '#Common/Breadcrumbs/BreadcrumbLink';
+import BreadcrumbLink from '#ui/Common/Breadcrumbs/BreadcrumbLink';
 
 import styles from './index.module.css';
 

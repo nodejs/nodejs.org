@@ -1,8 +1,8 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import type { FC } from 'react';
 
-import ActiveLink from '#Common/BaseActiveLink';
-import type { FormattedMessage, LinkLike } from '#types';
+import ActiveLink from '#ui/Common/BaseActiveLink';
+import type { FormattedMessage, LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 

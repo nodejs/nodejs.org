@@ -3,7 +3,7 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import classNames from 'classnames';
 import type { FC } from 'react';
 
-import type { SimpleLocaleConfig } from '#types';
+import type { SimpleLocaleConfig } from '#ui/types';
 
 import styles from './index.module.css';
 

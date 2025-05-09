@@ -1,10 +1,10 @@
 import type { ComponentProps } from 'react';
 
-import type BasePagination from '#Common/BasePagination';
-import Ellipsis from '#Common/BasePagination/Ellipsis';
-import type { PaginationListItemProps } from '#Common/BasePagination/PaginationListItem';
-import PaginationListItem from '#Common/BasePagination/PaginationListItem';
-import type { LinkLike } from '#types';
+import type BasePagination from '#ui/Common/BasePagination';
+import Ellipsis from '#ui/Common/BasePagination/Ellipsis';
+import type { PaginationListItemProps } from '#ui/Common/BasePagination/PaginationListItem';
+import PaginationListItem from '#ui/Common/BasePagination/PaginationListItem';
+import type { LinkLike } from '#ui/types';
 
 const parsePages = (
   pages: ComponentProps<typeof BasePagination>['pages'],

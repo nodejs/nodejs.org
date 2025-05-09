@@ -8,8 +8,8 @@ import classNames from 'classnames';
 import type { FC, PropsWithChildren, ReactElement, ReactNode } from 'react';
 import { Fragment, isValidElement, useRef } from 'react';
 
-import BaseButton from '#Common/BaseButton';
-import type { LinkLike } from '#types';
+import BaseButton from '#ui/Common/BaseButton';
+import type { LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 

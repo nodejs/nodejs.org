@@ -1,7 +1,7 @@
 import type { ComponentProps, FC } from 'react';
 
-import SidebarItem from '#Containers/Sidebar/SidebarItem';
-import type { FormattedMessage, LinkLike } from '#types';
+import SidebarItem from '#ui/Containers/Sidebar/SidebarItem';
+import type { FormattedMessage, LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 

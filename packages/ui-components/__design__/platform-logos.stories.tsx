@@ -8,8 +8,8 @@ import {
   Choco,
   N,
   Volta,
-} from '#Icons/InstallationMethod';
-import { Apple, Linux, Microsoft, AIX } from '#Icons/OperatingSystem';
+} from '#ui/Icons/InstallationMethod';
+import { Apple, Linux, Microsoft, AIX } from '#ui/Icons/OperatingSystem';
 
 const osIcons = [Apple, Linux, Microsoft, AIX];
 const installMethodIcons = [Docker, Homebrew, NVM, Devbox, Choco, N, Volta];

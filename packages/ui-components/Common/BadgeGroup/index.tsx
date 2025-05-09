@@ -1,8 +1,8 @@
 import ArrowRightIcon from '@heroicons/react/24/solid/ArrowRightIcon';
 import type { ComponentProps, FC, PropsWithChildren } from 'react';
 
-import Badge from '#Common/Badge';
-import type { LinkLike } from '#types';
+import Badge from '#ui/Common/Badge';
+import type { LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 

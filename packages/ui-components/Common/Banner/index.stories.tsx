@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import Banner from '#Common/Banner';
+import Banner from '#ui/Common/Banner';
 
 type Story = StoryObj<typeof Banner>;
 type Meta = MetaObj<typeof Banner>;

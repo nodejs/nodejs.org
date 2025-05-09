@@ -2,9 +2,9 @@
 
 import { useRef, type ComponentProps, type FC } from 'react';
 
-import ProgressionSidebarGroup from '#Common/ProgressionSidebar/ProgressionSidebarGroup';
-import Select from '#Common/Select';
-import type { LinkLike } from '#types';
+import ProgressionSidebarGroup from '#ui/Common/ProgressionSidebar/ProgressionSidebarGroup';
+import Select from '#ui/Common/Select';
+import type { LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 

@@ -12,8 +12,8 @@ import type {
   ElementType,
 } from 'react';
 
-import NavItem from '#Containers/NavBar/NavItem';
-import type { FormattedMessage, LinkLike } from '#types';
+import NavItem from '#ui/Containers/NavBar/NavItem';
+import type { FormattedMessage, LinkLike } from '#ui/types';
 
 import style from './index.module.css';
 

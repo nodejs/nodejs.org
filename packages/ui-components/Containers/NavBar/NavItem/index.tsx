@@ -2,8 +2,8 @@ import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import classNames from 'classnames';
 import type { FC, HTMLAttributeAnchorTarget, PropsWithChildren } from 'react';
 
-import BaseActiveLink from '#Common/BaseActiveLink';
-import type { LinkLike } from '#types';
+import BaseActiveLink from '#ui/Common/BaseActiveLink';
+import type { LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 

@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import type { LinkLike } from '#types';
+import type { LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 

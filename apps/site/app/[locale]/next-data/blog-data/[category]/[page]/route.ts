@@ -1,9 +1,9 @@
 import {
   provideBlogPosts,
   providePaginatedBlogPosts,
-} from '#next-data/providers/blogData';
-import { defaultLocale } from '#next.locales.mjs';
-import type { BlogCategory } from '#types';
+} from '#site/next-data/providers/blogData';
+import { defaultLocale } from '#site/next.locales.mjs';
+import type { BlogCategory } from '#site/types';
 
 type DynamicStaticPaths = {
   locale: string;

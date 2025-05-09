@@ -1,10 +1,10 @@
-import JsGreen from '#Icons/Logos/JsGreen';
-import JsWhite from '#Icons/Logos/JsWhite';
-import Nodejs from '#Icons/Logos/Nodejs';
-import NodejsStackedBlack from '#Icons/Logos/NodejsStackedBlack';
-import NodejsStackedDark from '#Icons/Logos/NodejsStackedDark';
-import NodejsStackedLight from '#Icons/Logos/NodejsStackedLight';
-import NodejsStackedWhite from '#Icons/Logos/NodejsStackedWhite';
+import JsGreen from '#ui/Icons/Logos/JsGreen';
+import JsWhite from '#ui/Icons/Logos/JsWhite';
+import Nodejs from '#ui/Icons/Logos/Nodejs';
+import NodejsStackedBlack from '#ui/Icons/Logos/NodejsStackedBlack';
+import NodejsStackedDark from '#ui/Icons/Logos/NodejsStackedDark';
+import NodejsStackedLight from '#ui/Icons/Logos/NodejsStackedLight';
+import NodejsStackedWhite from '#ui/Icons/Logos/NodejsStackedWhite';
 
 export {
   JsGreen,
