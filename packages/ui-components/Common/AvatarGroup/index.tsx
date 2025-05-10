@@ -4,12 +4,12 @@ import classNames from 'classnames';
 import type { FC, ElementType } from 'react';
 import { useState, useMemo } from 'react';
 
-import type { AvatarProps } from '@node-core/ui-components/Common/AvatarGroup/Avatar';
-import Avatar from '@node-core/ui-components/Common/AvatarGroup/Avatar';
-import avatarstyles from '@node-core/ui-components/Common/AvatarGroup/Avatar/index.module.css';
-import AvatarOverlay from '@node-core/ui-components/Common/AvatarGroup/Overlay';
-import Tooltip from '@node-core/ui-components/Common/Tooltip';
-import type { LinkLike } from '@node-core/ui-components/types';
+import type { AvatarProps } from '#ui/Common/AvatarGroup/Avatar';
+import Avatar from '#ui/Common/AvatarGroup/Avatar';
+import avatarstyles from '#ui/Common/AvatarGroup/Avatar/index.module.css';
+import AvatarOverlay from '#ui/Common/AvatarGroup/Overlay';
+import Tooltip from '#ui/Common/Tooltip';
+import type { LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 

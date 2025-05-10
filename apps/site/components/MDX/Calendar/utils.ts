@@ -1,4 +1,4 @@
-import type { CalendarEvent, ZonedCalendarTime } from '@/types';
+import type { CalendarEvent, ZonedCalendarTime } from '#site/types';
 
 export const isZoned = (d: object): d is ZonedCalendarTime =>
   'dateTime' in d && 'timeZone' in d;

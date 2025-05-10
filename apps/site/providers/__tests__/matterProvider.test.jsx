@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 
 import { act, render } from '@testing-library/react';
 
-import { MatterProvider, MatterContext } from '@/providers/matterProvider';
+import { MatterProvider, MatterContext } from '#site/providers/matterProvider';
 
 const mockContext = {
   frontmatter: {},

@@ -1,6 +1,6 @@
 import semVer from 'semver';
 
-import { DOCS_URL, DIST_URL } from '@/next.constants.mjs';
+import { DOCS_URL, DIST_URL } from '#site/next.constants.mjs';
 
 export const getNodeApiLink = (version: string) => {
   if (semVer.satisfies(version, '>=0.3.1 <0.5.1')) {

@@ -1,7 +1,7 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import type { ComponentProps, FC } from 'react';
 
-import Avatar from '@node-core/ui-components/Common/AvatarGroup/Avatar';
+import Avatar from '#ui/Common/AvatarGroup/Avatar';
 
 import styles from './index.module.css';
 

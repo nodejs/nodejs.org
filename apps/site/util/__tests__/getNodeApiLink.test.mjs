@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
-import { getNodeApiLink } from '@/util/getNodeApiLink';
+import { getNodeApiLink } from '#site/util/getNodeApiLink';
 
 describe('getNodeApiLink', () => {
   it('should return the correct API link for versions >=0.3.1 and <0.5.1', () => {

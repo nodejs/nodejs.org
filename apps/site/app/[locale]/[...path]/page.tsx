@@ -7,13 +7,13 @@
  * dynamic params, which will lead on static export errors and other sort of issues.
  */
 
-import * as basePage from '@/app/[locale]/page';
+import * as basePage from '#site/app/[locale]/page';
 import {
   ENABLE_STATIC_EXPORT_LOCALE,
   ENABLE_STATIC_EXPORT,
-} from '@/next.constants.mjs';
-import { dynamicRouter } from '@/next.dynamic.mjs';
-import { availableLocaleCodes, defaultLocale } from '@/next.locales.mjs';
+} from '#site/next.constants.mjs';
+import { dynamicRouter } from '#site/next.dynamic.mjs';
+import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
 
 // This is the default Viewport Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-viewport#generateviewport-function

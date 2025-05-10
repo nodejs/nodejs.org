@@ -3,8 +3,8 @@
 import type { RefObject } from 'react';
 import { useContext, useEffect } from 'react';
 
-import { NavigationStateContext } from '@/providers/navigationStateProvider';
-import { debounce } from '@/util/debounce';
+import { NavigationStateContext } from '#site/providers/navigationStateProvider';
+import { debounce } from '#site/util/debounce';
 
 const useNavigationState = <T extends HTMLElement>(
   id: string,

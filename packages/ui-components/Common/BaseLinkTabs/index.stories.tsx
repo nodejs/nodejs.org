@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import BaseLinkTabs from '@node-core/ui-components/Common/BaseLinkTabs';
+import BaseLinkTabs from '#ui/Common/BaseLinkTabs';
 
 type Story = StoryObj<typeof BaseLinkTabs>;
 type Meta = MetaObj<typeof BaseLinkTabs>;

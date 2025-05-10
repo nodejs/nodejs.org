@@ -2,9 +2,9 @@ import { deflateSync } from 'node:zlib';
 
 import matter from 'gray-matter';
 
-import { dynamicRouter } from '@/next.dynamic.mjs';
-import { defaultLocale } from '@/next.locales.mjs';
-import { parseRichTextIntoPlainText } from '@/util/stringUtils';
+import { dynamicRouter } from '#site/next.dynamic.mjs';
+import { defaultLocale } from '#site/next.locales.mjs';
+import { parseRichTextIntoPlainText } from '#site/util/stringUtils';
 
 // This is the Route Handler for the `GET` method which handles the request
 // for a digest and metadata of all existing pages on Node.js Website

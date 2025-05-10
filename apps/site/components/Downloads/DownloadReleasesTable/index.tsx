@@ -2,9 +2,9 @@ import Badge from '@node-core/ui-components/Common/Badge';
 import { getTranslations } from 'next-intl/server';
 import type { FC } from 'react';
 
-import FormattedTime from '@/components/Common/FormattedTime';
-import DetailsButton from '@/components/Downloads/DownloadReleasesTable/DetailsButton';
-import getReleaseData from '@/next-data/releaseData';
+import FormattedTime from '#site/components/Common/FormattedTime';
+import DetailsButton from '#site/components/Downloads/DownloadReleasesTable/DetailsButton';
+import getReleaseData from '#site/next-data/releaseData';
 
 const DownloadReleasesTable: FC = async () => {
   const releaseData = await getReleaseData();

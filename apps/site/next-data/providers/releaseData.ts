@@ -1,6 +1,6 @@
 import { cache } from 'react';
 
-import generateReleaseData from '@/next-data/generators/releaseData.mjs';
+import generateReleaseData from '#site/next-data/generators/releaseData.mjs';
 
 const releaseData = await generateReleaseData();
 

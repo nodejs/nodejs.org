@@ -8,7 +8,7 @@ import {
   INSTALL_METHODS,
   PACKAGE_MANAGERS,
   PLATFORMS,
-} from '@/util/downloadUtils';
+} from '#site/util/downloadUtils';
 
 describe('parseCompat', () => {
   it('should handle all OS, install methods, and package managers', () => {

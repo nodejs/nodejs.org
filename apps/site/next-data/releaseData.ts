@@ -2,8 +2,8 @@ import {
   ENABLE_STATIC_EXPORT,
   NEXT_DATA_URL,
   IS_NOT_VERCEL_RUNTIME_ENV,
-} from '@/next.constants.mjs';
-import type { NodeRelease } from '@/types';
+} from '#site/next.constants.mjs';
+import type { NodeRelease } from '#site/types';
 
 const getReleaseData = (): Promise<Array<NodeRelease>> => {
   // When we're using Static Exports the Next.js Server is not running (during build-time)
@@ -11,7 +11,7 @@ const getReleaseData = (): Promise<Array<NodeRelease>> => {
   // the data directly within the current thread, which will anyways be loaded only once
   // We use lazy-imports to prevent `provideBlogData` from executing on import
   if (ENABLE_STATIC_EXPORT || IS_NOT_VERCEL_RUNTIME_ENV) {
-    return import('@/next-data/providers/releaseData').then(
+    return import('#site/next-data/providers/releaseData').then(
       ({ default: provideReleaseData }) => provideReleaseData()
     );
   }

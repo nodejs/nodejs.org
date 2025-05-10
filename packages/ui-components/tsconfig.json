@@ -14,7 +14,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "paths": { "@node-core/ui-components/*": ["./*"] }
+    "baseUrl": "."
   },
   "include": [
     "**/*.ts",

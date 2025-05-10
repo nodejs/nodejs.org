@@ -1,11 +1,8 @@
 import classNames from 'classnames';
 import type { FC } from 'react';
 
-import PrevNextArrow from '@node-core/ui-components/Common/BasePagination/PrevNextArrow';
-import type {
-  LinkLike,
-  FormattedMessage,
-} from '@node-core/ui-components/types';
+import PrevNextArrow from '#ui/Common/BasePagination/PrevNextArrow';
+import type { LinkLike, FormattedMessage } from '#ui/types';
 
 import styles from './index.module.css';
 

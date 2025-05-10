@@ -3,7 +3,7 @@ import type { SlotProps } from '@radix-ui/react-slot';
 import { Slot } from '@radix-ui/react-slot';
 import type { ComponentProps, FC, PropsWithChildren } from 'react';
 
-import Link from '@/components/Link';
+import Link from '#site/components/Link';
 
 type LinkWithArrowProps =
   | ({ asChild?: false } & ComponentProps<typeof Link>)

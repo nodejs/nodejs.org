@@ -1,4 +1,4 @@
-import type { UserOS } from '@/types/userOS';
+import type { UserOS } from '#site/types/userOS';
 
 export const detectOsInUserAgent = (userAgent: string | undefined): UserOS => {
   // Match OS names and convert to uppercase directly if there's a match

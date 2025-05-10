@@ -356,7 +356,7 @@ To add a new download installation method, follow these steps:
    }
    ```
 
-3. **Update `InstallationMethodLabel` and `InstallationMethod` in `@/types/release.ts`:**
+3. **Update `InstallationMethodLabel` and `InstallationMethod` in `apps/site/types/release.ts`:**
 
    - Add the new method to the `InstallationMethodLabel` and `InstallationMethod` types.
 

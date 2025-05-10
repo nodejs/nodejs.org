@@ -1,10 +1,10 @@
-import Choco from '@node-core/ui-components/Icons/InstallationMethod/Choco';
-import Devbox from '@node-core/ui-components/Icons/InstallationMethod/Devbox';
-import Docker from '@node-core/ui-components/Icons/InstallationMethod/Docker';
-import FNM from '@node-core/ui-components/Icons/InstallationMethod/FNM';
-import Homebrew from '@node-core/ui-components/Icons/InstallationMethod/Homebrew';
-import N from '@node-core/ui-components/Icons/InstallationMethod/N';
-import NVM from '@node-core/ui-components/Icons/InstallationMethod/NVM';
-import Volta from '@node-core/ui-components/Icons/InstallationMethod/Volta';
+import Choco from '#ui/Icons/InstallationMethod/Choco';
+import Devbox from '#ui/Icons/InstallationMethod/Devbox';
+import Docker from '#ui/Icons/InstallationMethod/Docker';
+import FNM from '#ui/Icons/InstallationMethod/FNM';
+import Homebrew from '#ui/Icons/InstallationMethod/Homebrew';
+import N from '#ui/Icons/InstallationMethod/N';
+import NVM from '#ui/Icons/InstallationMethod/NVM';
+import Volta from '#ui/Icons/InstallationMethod/Volta';
 
 export { Choco, Devbox, Docker, FNM, Homebrew, N, NVM, Volta };

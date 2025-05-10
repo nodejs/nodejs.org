@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import BaseCodeBox from '@node-core/ui-components/Common/BaseCodeBox';
+import BaseCodeBox from '#ui/Common/BaseCodeBox';
 
 type Story = StoryObj<typeof BaseCodeBox>;
 type Meta = MetaObj<typeof BaseCodeBox>;

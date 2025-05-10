@@ -3,9 +3,9 @@
 import type { FC, PropsWithChildren } from 'react';
 import { useContext } from 'react';
 
-import DownloadLinkBase from '@/components/Downloads/DownloadLink';
-import { ReleaseContext } from '@/providers/releaseProvider';
-import type { DownloadKind } from '@/util/getNodeDownloadUrl';
+import DownloadLinkBase from '#site/components/Downloads/DownloadLink';
+import { ReleaseContext } from '#site/providers/releaseProvider';
+import type { DownloadKind } from '#site/util/getNodeDownloadUrl';
 
 type DownloadLinkProps = { kind?: DownloadKind };
 

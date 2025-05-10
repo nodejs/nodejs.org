@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 
-import CrossLink from '@/components/Common/CrossLink';
-import { useClientContext, useSiteNavigation } from '@/hooks/server';
-import type { NavigationKeys } from '@/types';
+import CrossLink from '#site/components/Common/CrossLink';
+import { useClientContext, useSiteNavigation } from '#site/hooks/server';
+import type { NavigationKeys } from '#site/types';
 
 type WithCrossLinksProps = { navKey: NavigationKeys };
 

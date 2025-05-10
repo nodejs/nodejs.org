@@ -2,8 +2,8 @@ import {
   ENABLE_STATIC_EXPORT,
   NEXT_DATA_URL,
   IS_NOT_VERCEL_RUNTIME_ENV,
-} from '@/next.constants.mjs';
-import type { BlogCategory, BlogPostsRSC } from '@/types';
+} from '#site/next.constants.mjs';
+import type { BlogCategory, BlogPostsRSC } from '#site/types';
 
 const getBlogData = (
   cat: BlogCategory,
@@ -14,7 +14,7 @@ const getBlogData = (
   // the data directly within the current thread, which will anyways be loaded only once
   // We use lazy-imports to prevent `provideBlogData` from executing on import
   if (ENABLE_STATIC_EXPORT || IS_NOT_VERCEL_RUNTIME_ENV) {
-    return import('@/next-data/providers/blogData').then(
+    return import('#site/next-data/providers/blogData').then(
       ({ provideBlogPosts, providePaginatedBlogPosts }) =>
         page ? providePaginatedBlogPosts(cat, page) : provideBlogPosts(cat)
     );

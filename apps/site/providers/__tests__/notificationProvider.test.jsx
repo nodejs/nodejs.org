@@ -7,7 +7,7 @@ import userEvent from '@testing-library/user-event';
 import {
   NotificationProvider,
   NotificationDispatch,
-} from '@/providers/notificationProvider';
+} from '#site/providers/notificationProvider';
 
 describe('NotificationProvider', () => {
   it('renders children and shows notification with the provided message', async t => {

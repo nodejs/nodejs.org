@@ -2,12 +2,12 @@
 
 import type { FC, PropsWithChildren } from 'react';
 
-import LinkWithArrow from '@/components/LinkWithArrow';
-import { useClientContext } from '@/hooks';
-import type { NodeRelease } from '@/types';
-import type { DownloadKind } from '@/util/getNodeDownloadUrl';
-import { getNodeDownloadUrl } from '@/util/getNodeDownloadUrl';
-import { getUserPlatform } from '@/util/getUserPlatform';
+import LinkWithArrow from '#site/components/LinkWithArrow';
+import { useClientContext } from '#site/hooks';
+import type { NodeRelease } from '#site/types';
+import type { DownloadKind } from '#site/util/getNodeDownloadUrl';
+import { getNodeDownloadUrl } from '#site/util/getNodeDownloadUrl';
+import { getUserPlatform } from '#site/util/getUserPlatform';
 
 type DownloadLinkProps = { release: NodeRelease; kind?: DownloadKind };
 

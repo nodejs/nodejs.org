@@ -4,8 +4,8 @@ import BaseCodeBox from '@node-core/ui-components/Common/BaseCodeBox';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 
-import Link from '@/components/Link';
-import { useCopyToClipboard, useNotification } from '@/hooks';
+import Link from '#site/components/Link';
+import { useCopyToClipboard, useNotification } from '#site/hooks';
 
 type CodeBoxProps = {
   language: string;

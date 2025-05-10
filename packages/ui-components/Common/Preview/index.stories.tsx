@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import Preview from '@node-core/ui-components/Common/Preview';
+import Preview from '#ui/Common/Preview';
 
 type Story = StoryObj<typeof Preview>;
 type Meta = MetaObj<typeof Preview>;

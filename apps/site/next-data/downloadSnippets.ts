@@ -2,9 +2,9 @@ import {
   ENABLE_STATIC_EXPORT,
   NEXT_DATA_URL,
   IS_NOT_VERCEL_RUNTIME_ENV,
-} from '@/next.constants.mjs';
-import { availableLocaleCodes } from '@/next.locales.mjs';
-import type { DownloadSnippet } from '@/types';
+} from '#site/next.constants.mjs';
+import { availableLocaleCodes } from '#site/next.locales.mjs';
+import type { DownloadSnippet } from '#site/types';
 
 export default async function getDownloadSnippets(
   lang: string
@@ -21,7 +21,7 @@ export default async function getDownloadSnippets(
   // We use lazy-imports to prevent `provideBlogData` from executing on import
   if (ENABLE_STATIC_EXPORT || IS_NOT_VERCEL_RUNTIME_ENV) {
     const { default: provideDownloadSnippets } = await import(
-      '@/next-data/providers/downloadSnippets'
+      '#site/next-data/providers/downloadSnippets'
     );
     return provideDownloadSnippets(lang)!;
   }
