@@ -79,7 +79,11 @@ XHR requests also accept a callback, in this example by assigning a function to 
 const xhr = new XMLHttpRequest();
 xhr.onreadystatechange = () => {
   if (xhr.readyState === 4) {
-    xhr.status === 200 ? console.log(xhr.responseText) : console.error('error');
+    if (xhr.status === 200) {
+      console.log(xhr.responseText);
+    } else {
+      console.error('error');
+    }
   }
 };
 xhr.open('GET', 'https://yoursite.com');

@@ -20,6 +20,7 @@ const compatConfig = compat.config({
 
 export default tseslint.config(
   ...baseConfig,
+  { ignores: ['pages/en/blog/**/*.{md,mdx}/**'] },
   {
     extends: [
       react.configs.flat['jsx-runtime'],
@@ -40,6 +41,7 @@ export default tseslint.config(
   {
     files: ['**/*.{md,mdx}'],
     extends: [mdx.flat],
+    processor: mdx.createRemarkProcessor({ lintCodeBlocks: true }),
     rules: {
       'no-irregular-whitespace': 'off',
       '@next/next/no-img-element': 'off',
@@ -77,5 +79,6 @@ export default tseslint.config(
         },
       ],
     },
-  }
+  },
+  mdx.flatCodeBlocks
 );
