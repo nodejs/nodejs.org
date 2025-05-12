@@ -1,9 +1,8 @@
 'use strict';
 
-import {
-  provideBlogCategories,
-  provideBlogPosts,
-} from './next-data/providers/blogData';
+import { blogData } from '#site/next.json.mjs';
+
+import { provideBlogPosts } from './next-data/providers/blogData';
 import { BASE_PATH, BASE_URL } from './next.constants.mjs';
 import { siteConfig } from './next.json.mjs';
 import { defaultLocale } from './next.locales.mjs';
@@ -31,9 +30,9 @@ export const IGNORED_ROUTES = [
  */
 export const DYNAMIC_ROUTES = new Map([
   // Provides Routes for all Blog Categories
-  ...provideBlogCategories().map(c => [`blog/${c}`, 'blog-category']),
+  ...blogData.categories.map(c => [`blog/${c}`, 'blog-category']),
   // Provides Routes for all Blog Categories w/ Pagination
-  ...provideBlogCategories()
+  ...blogData.categories
     // retrieves the amount of pages for each blog category
     .map(c => [c, provideBlogPosts(c).pagination.pages])
     // creates a numeric array for each page and define a pathname for

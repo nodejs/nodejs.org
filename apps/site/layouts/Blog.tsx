@@ -11,7 +11,7 @@ import type { BlogCategory } from '#site/types';
 
 import styles from './layouts.module.css';
 
-const getBlogCategory = async (pathname: string) => {
+const getBlogCategory = (pathname: string) => {
   // pathname format can either be: /en/blog/{category}
   // or /en/blog/{category}/page/{page}
   // hence we attempt to interpolate the full /en/blog/{category}/page/{page}
@@ -19,7 +19,7 @@ const getBlogCategory = async (pathname: string) => {
   // note that malformed routes can't happen as they are all statically generated
   const [, , category = 'all', , page = 1] = pathname.split('/');
 
-  const { posts, pagination } = await getBlogData(
+  const { posts, pagination } = getBlogData(
     category as BlogCategory,
     Number(page)
   );
@@ -38,7 +38,7 @@ const BlogLayout: FC = async () => {
       link: `/blog/${category}`,
     }));
 
-  const blogData = await getBlogCategory(pathname);
+  const blogData = getBlogCategory(pathname);
 
   return (
     <>
