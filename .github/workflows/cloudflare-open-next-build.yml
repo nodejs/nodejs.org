@@ -61,4 +61,4 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build Cloudflare Worker
-        run: pnpm exec turbo run --filter=@node-core/website cloudflare:build:worker ${{ env.TURBO_ARGS }}
+        run: pnpm exec turbo run cloudflare:build:worker ${{ env.TURBO_ARGS }}
