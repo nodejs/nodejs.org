@@ -2,11 +2,9 @@
   "name": "@node-core/website",
   "type": "module",
   "scripts": {
-    "prebuild": "pnpm build-blog-data",
     "build": "cross-env NODE_NO_WARNINGS=1 next build",
     "check-types": "tsc --noEmit",
     "deploy": "cross-env NEXT_PUBLIC_STATIC_EXPORT=true NODE_NO_WARNINGS=1 next build",
-    "predev": "pnpm build-blog-data",
     "dev": "cross-env NODE_NO_WARNINGS=1 next dev",
     "lint": "turbo run lint:md lint:js lint:css",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
@@ -23,8 +21,8 @@
     "build-blog-data": "node ./scripts/blog-data/generate.mjs",
     "build-blog-data:watch": "node --watch --watch-path=pages/en/blog ./scripts/blog-data/generate.mjs",
     "cloudflare:build:worker": "opennextjs-cloudflare build",
-    "cloudflare:preview": "pnpm run cloudflare:build:worker && wrangler dev",
-    "cloudflare:deploy": "pnpm run cloudflare:build:worker && wrangler deploy"
+    "cloudflare:preview": "wrangler dev",
+    "cloudflare:deploy": "wrangler deploy"
   },
   "dependencies": {
     "@heroicons/react": "~2.2.0",

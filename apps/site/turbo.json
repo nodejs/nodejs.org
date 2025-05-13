@@ -4,6 +4,7 @@
   "globalEnv": ["NODE_ENV"],
   "tasks": {
     "dev": {
+      "dependsOn": ["build-blog-data"],
       "cache": false,
       "persistent": true,
       "env": [
@@ -24,7 +25,7 @@
       ]
     },
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["build-blog-data", "^build"],
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
         "{app,components,layouts,pages,styles}/**/*.css",
@@ -133,7 +134,19 @@
       "inputs": ["{pages}/**/*.{mdx,md}"],
       "outputs": ["public/blog-data.json"]
     },
+    "cloudflare:build:worker": {
+      "dependsOn": ["build-blog-data"],
+      "inputs": [
+        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
+        "{app,components,layouts,pages,styles}/**/*.css",
+        "{next-data,scripts,i18n}/**/*.{mjs,json}",
+        "{app,pages}/**/*.{mdx,md}",
+        "*.{md,mdx,json,ts,tsx,mjs,yml}"
+      ],
+      "outputs": [".open-next/**"]
+    },
     "cloudflare:preview": {
+      "dependsOn": ["cloudflare:build:worker"],
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
         "{app,components,layouts,pages,styles}/**/*.css",
@@ -144,6 +157,7 @@
       "outputs": [".open-next/**"]
     },
     "cloudflare:deploy": {
+      "dependsOn": ["cloudflare:build:worker"],
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
         "{app,components,layouts,pages,styles}/**/*.css",
