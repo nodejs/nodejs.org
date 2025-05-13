@@ -13,8 +13,6 @@ on:
   pull_request:
     branches:
       - main
-    types:
-      - labeled
 
 defaults:
   run:
@@ -33,7 +31,7 @@ env:
 
 jobs:
   build-cloudflare-worker:
-    name: Build Cloudflare Worker (on ubuntu)
+    name: Build Cloudflare Worker
     runs-on: ubuntu-latest
 
     steps:
