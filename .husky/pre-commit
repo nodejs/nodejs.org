@@ -1,5 +1,5 @@
 # lint and format staged files
-pnpm dlx lint-staged
+pnpm exec lint-staged
 
-# verify typescript staged files
-pnpm --package=typescript dlx tsc --build apps/site
+# verify typescript fully
+pnpm check-types
