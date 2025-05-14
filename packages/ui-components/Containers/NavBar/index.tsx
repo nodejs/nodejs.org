@@ -54,6 +54,7 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
         <Label.Root
           className={style.sidebarItemTogglerLabel}
           htmlFor="sidebarItemToggler"
+          data-testid="mobile-menu-toggle"
         >
           {navInteractionIcons[isMenuOpen ? 'close' : 'show']}
         </Label.Root>
@@ -69,7 +70,7 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
       />
 
       <div className={`${style.main} hidden peer-checked:flex`}>
-        <div className={style.navItems}>
+        <div className={style.navItems} data-testid="nav-links">
           {navItems.map(({ text, link, target }) => (
             <NavItem
               pathname={pathname}

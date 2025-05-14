@@ -62,8 +62,9 @@ const WithNavBar: FC = () => {
         <SearchButton />
 
         <ThemeToggle
+          data-testid="theme-toggle"
           onClick={toggleCurrentTheme}
-          ariaLabel={t('components.common.themeToggle.label')}
+          aria-label={t('components.common.themeToggle.label')}
         />
 
         <LanguageDropdown

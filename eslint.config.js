@@ -16,6 +16,8 @@ export default [
       'storybook-static/**',
       '**/.wrangler',
       '**/.open-next',
+      'test-results',
+      'playwright-report',
     ],
   },
   {
