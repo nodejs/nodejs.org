@@ -337,7 +337,7 @@ Permite-nos **diferenciar versões para diferentes projetos**, **diferenciar ver
 
 Suporta todas as conchas populares (Bash, Zsh, Fish, PowerShell, Clink, Cmder).
 
-Consultar a [Introdução Rápida](https://vfox.lhan.me/guides/quick-start.html) para rapidamente usar o `vfox`, e todos os detalhes de uso.
+Consultar a [Introdução Rápida](https://vfox.dev/guides/quick-start.html) para rapidamente usar o `vfox`, e todos os detalhes de uso.
 
 ## Void Linux
 

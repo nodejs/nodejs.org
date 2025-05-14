@@ -340,7 +340,7 @@ sudo eopkg install nodejs
 
 它支援所有主流的 shell 指令 (Bash、Zsh、Fish、PowerShell、Clink、Cmder)。
 
-請參閱[快速入門](https://vfox.lhan.me/guides/quick-start.html)瞭解 vfox 的所有使用細節。
+請參閱[快速入門](https://vfox.dev/guides/quick-start.html)瞭解 vfox 的所有使用細節。
 
 ## Void Linux
 

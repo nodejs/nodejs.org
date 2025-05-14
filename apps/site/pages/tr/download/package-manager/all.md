@@ -347,7 +347,7 @@ Platformlar arası (Windows, macOS, Linux) ve **genişletilebilir** bir sürüm 
 
 Tüm popüler kabukları (Bash, Zsh, Fish, PowerShell, Clink, Cmder) destekler.
 
-Vfox'u hızlı bir şekilde kullanmak ve tüm kullanım ayrıntıları için [Hızlı Başlangıç](https://vfox.lhan.me/guides/quick-start.html) bölümüne bakın.
+Vfox'u hızlı bir şekilde kullanmak ve tüm kullanım ayrıntıları için [Hızlı Başlangıç](https://vfox.dev/guides/quick-start.html) bölümüne bakın.
 
 ## Void Linux
 

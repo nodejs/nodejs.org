@@ -341,7 +341,7 @@ sudo eopkg install nodejs
 
 Підтримує всі популярні оболонки (Bash, Zsh, Fish, PowerShell, Clink, Cmder).
 
-Перегляньте [швидкий старт](https://vfox.lhan.me/guides/quick-start.html), щоб почати використовувати vfox та дізнатися всі деталі його використання.
+Перегляньте [швидкий старт](https://vfox.dev/guides/quick-start.html), щоб почати використовувати vfox та дізнатися всі деталі його використання.
 
 ## Void Linux
 

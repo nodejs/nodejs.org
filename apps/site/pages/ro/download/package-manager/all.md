@@ -344,7 +344,7 @@ Vă permite să folosiți **versiuni diferite pentru proiecte diferite**, **vers
 
 Este compatibil cu toate shell-urile populare (Bash, Zsh, Fish, PowerShell, Clink, Cmder).
 
-Consultați [Ghidul de început rapid](https://vfox.lhan.me/guides/quick-start.html) pentru a începe rapid să utilizați vfox și pentru toate detaliile de utilizare.
+Consultați [Ghidul de început rapid](https://vfox.dev/guides/quick-start.html) pentru a începe rapid să utilizați vfox și pentru toate detaliile de utilizare.
 
 ## Void Linux
 

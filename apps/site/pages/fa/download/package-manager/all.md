@@ -342,7 +342,7 @@ sudo eopkg install nodejs
 
 این نرم‌افزار تمام پوسته‌های محبوب را پشتیبانی می‌کند (Bash, Zsh, Fish, PowerShell, Clink, Cmder).
 
-به [شروع سریع](https://vfox.lhan.me/guides/quick-start.html) برای استفاده سریع از vfox و تمام جزئیات استفاده مراجعه کنید.
+به [شروع سریع](https://vfox.dev/guides/quick-start.html) برای استفاده سریع از vfox و تمام جزئیات استفاده مراجعه کنید.
 
 ## Void Linux
 

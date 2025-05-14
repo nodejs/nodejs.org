@@ -340,7 +340,7 @@ Windows, macOS, Linux를 위한 **확장 가능한** 크로스 플랫폼 버전 
 
 모든 인기 있는 셸(Bash, Zsh, Fish, PowerShell, Clink, Cmder)을 지원합니다.
 
-vfox를 신속하게 사용하기 위한 [빠른 시작 가이드](https://vfox.lhan.me/guides/quick-start.html)와 모든 사용 세부정보를 확인하세요.
+vfox를 신속하게 사용하기 위한 [빠른 시작 가이드](https://vfox.dev/guides/quick-start.html)와 모든 사용 세부정보를 확인하세요.
 
 ## Void Linux
 
