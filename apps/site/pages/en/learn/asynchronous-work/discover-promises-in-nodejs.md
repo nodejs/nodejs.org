@@ -18,7 +18,7 @@ A Promise can be in one of three states:
 - **Fulfilled**: The operation completed successfully, and the Promise is now resolved with a value.
 - **Rejected**: The operation failed, and the Promise is settled with a reason (usually an error).
 
-When you order the pizza, You're in the pending state, hungry and hopeful. If the pizza arrives hot and cheesy, you've entered the fulfilled state. But if the restaurant calls to say they've dropped your pizza on floor, you're in the rejected state.
+When you order the pizza, you're in the pending state, hungry and hopeful. If the pizza arrives hot and cheesy, you've entered the fulfilled state. But if the restaurant calls to say they've dropped your pizza on floor, you're in the rejected state.
 
 Regardless of whether your dinner ends in joy or disappointment, once there's a final outcome, the Promise is considered **settled**.
 
