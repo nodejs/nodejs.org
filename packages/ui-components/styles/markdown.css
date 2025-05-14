@@ -40,22 +40,18 @@ main {
   h4,
   h5,
   h6 {
+    @apply font-semibold
+      text-neutral-900
+      dark:text-white;
+
     &[id] a {
       @apply text-neutral-900
         dark:text-white;
     }
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
   strong {
-    @apply font-semibold
-      text-neutral-900
-      dark:text-white;
+    @apply font-semibold;
   }
 
   code {
@@ -77,17 +73,14 @@ main {
 
   /* link that isn't inside a heading */
   a:not(h1 > a):not(h2 > a):not(h3 > a):not(h4 > a):not(h5 > a):not(h6 > a),
-  .anchor,
-  a strong,
-  strong a,
-  p a {
+  .anchor {
     @apply max-xs:font-semibold
-      !text-green-600
-      dark:!text-green-400;
+      text-green-600
+      dark:text-green-400;
 
     &:hover {
-      @apply !text-green-900
-        dark:!text-green-300;
+      @apply text-green-900
+        dark:text-green-300;
     }
 
     &[role='button'] {
