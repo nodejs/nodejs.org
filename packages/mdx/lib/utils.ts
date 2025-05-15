@@ -1,4 +1,12 @@
-import { LANGUAGES } from '#site/shiki.config.mjs';
+import GithubSlugger from 'github-slugger';
+
+import { LANGUAGES } from '../shiki.config.mjs';
+
+export const createGitHubSlugger = () => {
+  const githubSlugger = new GithubSlugger();
+
+  return (text: string) => githubSlugger.slug(text);
+};
 
 export const getLanguageDisplayName = (language: string): string => {
   const languageByIdOrAlias = LANGUAGES.find(

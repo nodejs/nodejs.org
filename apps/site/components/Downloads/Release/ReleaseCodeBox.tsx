@@ -1,5 +1,7 @@
 'use client';
 
+import createSval from '@node-core/mdx/evaluator';
+import { highlightToHtml } from '@node-core/mdx/highlighter';
 import AlertBox from '@node-core/ui-components/Common/AlertBox';
 import Skeleton from '@node-core/ui-components/Common/Skeleton';
 import { useTranslations } from 'next-intl';
@@ -9,14 +11,12 @@ import { useContext, useMemo } from 'react';
 import CodeBox from '#site/components/Common/CodeBox';
 import Link from '#site/components/Link';
 import LinkWithArrow from '#site/components/LinkWithArrow';
-import { createSval } from '#site/next.jsx.compiler.mjs';
 import {
   ReleaseContext,
   ReleasesContext,
 } from '#site/providers/releaseProvider';
 import type { ReleaseContextType } from '#site/types/release';
 import { INSTALL_METHODS } from '#site/util/downloadUtils';
-import { highlightToHtml } from '#site/util/getHighlighter';
 
 // Creates a minimal JavaScript interpreter for parsing the JavaScript code from the snippets
 // Note: that the code runs inside a sandboxed environment and cannot interact with any code outside of the sandbox

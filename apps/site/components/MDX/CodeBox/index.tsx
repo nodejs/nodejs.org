@@ -1,7 +1,7 @@
+import { getLanguageDisplayName } from '@node-core/mdx/utils';
 import type { FC, PropsWithChildren } from 'react';
 
 import CodeBox from '#site/components/Common/CodeBox';
-import { getLanguageDisplayName } from '#site/util/getLanguageDisplayName';
 
 type CodeBoxProps = { className?: string; showCopyButton?: string };
 

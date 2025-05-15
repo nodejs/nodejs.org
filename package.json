@@ -28,7 +28,7 @@
     "storybook": "turbo run storybook",
     "storybook:build": "turbo run storybook:build",
     "test": "turbo test:unit",
-    "test:ci": "cross-env NODE_OPTIONS=\"--test-reporter=lcov --test-reporter-destination=lcov.info --test-reporter=junit --test-reporter-destination=junit.xml --test-reporter=@reporters/github --test-reporter-destination=stdout\" turbo test:unit",
+    "test:ci": "cross-env NODE_OPTIONS=\"--test-reporter=lcov --test-reporter-destination=lcov.info --test-reporter=junit --test-reporter-destination=junit.xml --test-reporter=@reporters/github --test-reporter-destination=stdout --test-reporter=spec --test-reporter-destination=stdout\" turbo test:unit",
     "cloudflare:preview": "turbo run cloudflare:preview",
     "cloudflare:deploy": "turbo run cloudflare:deploy"
   },

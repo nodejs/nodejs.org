@@ -3,6 +3,7 @@
 import { readFile } from 'node:fs/promises';
 import { join, normalize, sep } from 'node:path';
 
+import compile from '@node-core/mdx/compiler';
 import matter from 'gray-matter';
 import { cache } from 'react';
 import { VFile } from 'vfile';
@@ -22,7 +23,6 @@ import {
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { siteConfig } from './next.json.mjs';
 import { availableLocaleCodes, defaultLocale } from './next.locales.mjs';
-import { compile } from './next.mdx.compiler.mjs';
 import { MDX_COMPONENTS } from './next.mdx.components.mjs';
 
 // This is the combination of the Application Base URL and Base PATH
