@@ -13,17 +13,20 @@
     {
       "value": "WIN",
       "label": "Windows",
-      "compatibility": {}
+      "compatibility": {},
+      "icon": "Microsoft"
     },
     {
       "value": "MAC",
       "label": "macOS",
-      "compatibility": {}
+      "compatibility": {},
+      "icon": "Apple"
     },
     {
       "value": "LINUX",
       "label": "Linux",
-      "compatibility": {}
+      "compatibility": {},
+      "icon": "Linux"
     },
     {
       "value": "AIX",
@@ -31,7 +34,8 @@
       "compatibility": {
         "installMethod": [""],
         "semver": [">= 6.7.0"]
-      }
+      },
+      "icon": "AIX"
     }
   ],
   "InstallationMethodLabel": {
@@ -188,6 +192,26 @@
     "YARN": "Yarn",
     "PNPM": "pnpm"
   },
+  "packageManagers": [
+    {
+      "key": "NPM",
+      "label": "npm",
+      "value": "NPM",
+      "compatibility": {}
+    },
+    {
+      "key": "YARN",
+      "label": "Yarn",
+      "value": "YARN",
+      "compatibility": { "semver": [">= v14.19.0", ">= v16.9.0"] }
+    },
+    {
+      "key": "PNPM",
+      "label": "pnpm",
+      "value": "PNPM",
+      "compatibility": {}
+    }
+  ],
   "UserPlatform": [
     "arm64",
     "armv7l",

@@ -9,32 +9,21 @@ import type * as Types from '#site/types/release';
 import type { UserPlatform } from '#site/types/userOS';
 import type { UserOS } from '#site/types/userOS';
 
-import downloadConstants from './constants.json';
+import constants from './constants.json';
 
-const { Platforms, InstallationMethodLabel, installMethods } =
-  downloadConstants;
-
-// Here I'm creating the icon mapping for the installation methods
-const installMethodIconsMap = {
-  NVM: <InstallMethodIcons.NVM width={16} height={16} />,
-  FNM: <InstallMethodIcons.FNM width={16} height={16} />,
-  BREW: <InstallMethodIcons.Homebrew width={16} height={16} />,
-  DEVBOX: <InstallMethodIcons.Devbox width={16} height={16} />,
-  CHOCO: <InstallMethodIcons.Choco width={16} height={16} />,
-  DOCKER: <InstallMethodIcons.Docker width={16} height={16} />,
-  N: <InstallMethodIcons.N width={16} height={16} />,
-  VOLTA: <InstallMethodIcons.Volta width={16} height={16} />,
-};
+const {
+  Platforms,
+  InstallationMethodLabel,
+  installMethods,
+  packageManagers,
+  PackageManagerLabel,
+} = constants;
 
 export const {
   OperatingSystems: osConstants,
   OperatingSystemLabel,
   OS_NOT_SUPPORTING_INSTALLERS,
-} = downloadConstants;
-
-// const InstallationMethodLabel = downloadConstants.InstallationMethod;
-// export const OperatingSystemLabel = downloadConstants.OperatingSystem;
-const { PackageManagerLabel } = downloadConstants;
+} = constants;
 
 // This is a manual list of OS's that do not sup
 // port/have a way of being installed
@@ -123,40 +112,30 @@ export const parseCompat = <
 };
 
 // Here the list of Operating System Dropdown items are defined !
-export const OPERATING_SYSTEMS: Array<DownloadDropdownItem<UserOS>> = [
-  {
-    label: osConstants[0].label,
-    value: osConstants[0].value as UserOS,
-    compatibility: osConstants[0].compatibility,
-    iconImage: <OSIcons.Microsoft width={16} height={16} />,
-  },
-  {
-    label: osConstants[1].label,
-    value: osConstants[1].value as UserOS,
-    compatibility: osConstants[1].compatibility,
-    iconImage: <OSIcons.Apple width={16} height={16} />,
-  },
-  {
-    label: osConstants[2].label,
-    value: osConstants[2].value as UserOS,
-    compatibility: osConstants[2].compatibility,
-    iconImage: <OSIcons.Linux width={16} height={16} />,
-  },
-  {
-    label: osConstants[3].label,
-    value: osConstants[3].value as UserOS,
-    compatibility: osConstants[3].compatibility,
-    iconImage: <OSIcons.AIX width={16} height={16} />,
-  },
-];
-// Here the list of Install Method Dropdown items are defined !
+export const OPERATING_SYSTEMS: Array<DownloadDropdownItem<UserOS>> =
+  osConstants.map(os => {
+    const IconComponent = OSIcons[os.icon as keyof typeof OSIcons];
+    return {
+      label: os.label,
+      value: os.value as UserOS,
 
+      compatibility: os.compatibility,
+
+      iconImage: IconComponent ? (
+        <IconComponent width={16} height={16} />
+      ) : undefined,
+    };
+  });
+
+// Here the list of Install Method Dropdown items are defined !
 export const INSTALL_METHODS: Array<
   DownloadDropdownItem<Types.InstallationMethod> &
     Required<
       Pick<DownloadDropdownItem<Types.InstallationMethod>, 'info' | 'url'>
     >
 > = installMethods.map(method => {
+  const IconComponent =
+    InstallMethodIcons[method.key as keyof typeof InstallMethodIcons];
   // Map compatibility.os from string[] to UserOS[] if present
   // Map compatibility.releases from string[] to NodeReleaseStatus[] if present
   const compatibility = {
@@ -175,37 +154,38 @@ export const INSTALL_METHODS: Array<
       InstallationMethodLabel[
         method.key as keyof typeof InstallationMethodLabel
       ] || method.label,
-    iconImage:
-      installMethodIconsMap[method.value as keyof typeof installMethodIconsMap],
+    iconImage: IconComponent ? (
+      <IconComponent width={16} height={16} />
+    ) : undefined,
     info: method.info as IntlMessageKeys, // cast to expected type
     compatibility,
   };
 });
 
 // Here the list of Package Manager  Dropdown items are defined !
-
 export const PACKAGE_MANAGERS: Array<
   DownloadDropdownItem<Types.PackageManager>
-> = [
-  {
-    label: PackageManagerLabel.NPM,
-    value: 'NPM',
-    compatibility: {},
-    iconImage: <PackageManagerIcons.NPM width={16} height={16} />,
-  },
-  {
-    label: PackageManagerLabel.YARN,
-    value: 'YARN',
-    compatibility: { semver: ['>= v14.19.0', '>= v16.9.0'] },
-    iconImage: <PackageManagerIcons.YARN width={16} height={16} />,
-  },
-  {
-    label: PackageManagerLabel.PNPM,
-    value: 'PNPM',
-    compatibility: { semver: ['>= v14.19.0', '>= v16.9.0'] },
-    iconImage: <PackageManagerIcons.PNPM width={16} height={16} />,
-  },
-];
+> = packageManagers.map(manager => {
+  const IconComponent =
+    PackageManagerIcons[manager.key as keyof typeof PackageManagerIcons];
+  return {
+    ...manager,
+    key: manager.key as Types.PackageManager,
+    value: manager.value as Types.PackageManager,
+    label:
+      PackageManagerLabel[manager.key as keyof typeof PackageManagerLabel] ||
+      manager.label,
+    iconImage: IconComponent ? (
+      <IconComponent width={16} height={16} />
+    ) : undefined,
+    compatibility: {
+      ...manager.compatibility,
+      semver: manager.compatibility?.semver?.map(
+        (semver: string) => semver as string
+      ),
+    },
+  };
+});
 
 // Here the list Platform and their specific specification items are defined !
 

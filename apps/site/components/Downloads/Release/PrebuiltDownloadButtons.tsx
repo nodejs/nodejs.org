@@ -8,12 +8,12 @@ import type { FC } from 'react';
 
 import Button from '#site/components/Common/Button';
 import { ReleaseContext } from '#site/providers/releaseProvider';
-import { getNodeDownloadUrl } from '#site/util/getNodeDownloadUrl';
-
 import {
   OS_NOT_SUPPORTING_INSTALLERS,
   OperatingSystemLabel,
-} from '../../../util/downloadUtils/index';
+} from '#site/util/downloadUtils';
+import { getNodeDownloadUrl } from '#site/util/getNodeDownloadUrl';
+
 // Retrieves the pure extension piece from the input string
 const getExtension = (input: string) => String(input.split('.').slice(-1));
 

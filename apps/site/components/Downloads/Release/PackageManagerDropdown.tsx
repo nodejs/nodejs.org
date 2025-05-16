@@ -7,12 +7,11 @@ import type { FC } from 'react';
 
 import { ReleaseContext } from '#site/providers/releaseProvider';
 import type { PackageManager } from '#site/types/release';
-
 import {
   nextItem,
   PACKAGE_MANAGERS,
   parseCompat,
-} from '../../../util/downloadUtils/index';
+} from '#site/util/downloadUtils';
 
 const PackageManagerDropdown: FC = () => {
   const release = useContext(ReleaseContext);
