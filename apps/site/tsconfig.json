@@ -15,7 +15,10 @@
     "jsx": "preserve",
     "incremental": true,
     "plugins": [{ "name": "next" }],
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "#site/*": ["apps/site/*"]
+    }
   },
   "include": [
     "next-env.d.ts",
@@ -23,7 +26,8 @@
     "**/*.mdx",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "util/downloadUtils/index.tsx"
   ],
   "exclude": ["node_modules", ".next"]
 }

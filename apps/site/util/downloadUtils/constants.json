@@ -1,0 +1,203 @@
+{
+  "OperatingSystemLabel": {
+    "WIN": "Windows",
+    "MAC": "macOS",
+    "LINUX": "Linux",
+    "AIX": "AIX",
+    "OTHER": "Other",
+    "LOADING": "N/A"
+  },
+  "OS_NOT_SUPPORTING_INSTALLERS": ["LINUX", "AIX", "OTHER", "LOADING"],
+
+  "OperatingSystems": [
+    {
+      "value": "WIN",
+      "label": "Windows",
+      "compatibility": {}
+    },
+    {
+      "value": "MAC",
+      "label": "macOS",
+      "compatibility": {}
+    },
+    {
+      "value": "LINUX",
+      "label": "Linux",
+      "compatibility": {}
+    },
+    {
+      "value": "AIX",
+      "label": "AIX",
+      "compatibility": {
+        "installMethod": [""],
+        "semver": [">= 6.7.0"]
+      }
+    }
+  ],
+  "InstallationMethodLabel": {
+    "NVM": "nvm",
+    "FNM": "fnm",
+    "BREW": "Brew",
+    "CHOCO": "Chocolatey",
+    "DEVBOX": "Devbox",
+    "DOCKER": "Docker",
+    "N": "n",
+    "VOLTA": "Volta"
+  },
+  "installMethods": [
+    {
+      "key": "NVM",
+      "label": "NVM",
+      "value": "NVM",
+      "compatibility": { "os": ["MAC", "LINUX", "OTHER"] },
+      "recommended": true,
+      "url": "https://github.com/nvm-sh/nvm",
+      "info": "layouts.download.codeBox.platformInfo.nvm"
+    },
+    {
+      "key": "FNM",
+      "label": "FNM",
+      "value": "FNM",
+      "compatibility": { "os": ["MAC", "LINUX", "WIN"] },
+      "recommended": true,
+      "url": "https://github.com/Schniz/fnm",
+      "info": "layouts.download.codeBox.platformInfo.fnm"
+    },
+    {
+      "key": "BREW",
+      "label": "BREW",
+      "value": "BREW",
+      "compatibility": {
+        "os": ["MAC", "LINUX"],
+        "releases": ["Current", "LTS"]
+      },
+      "url": "https://brew.sh/",
+      "info": "layouts.download.codeBox.platformInfo.brew"
+    },
+    {
+      "key": "DEVBOX",
+      "label": "DEVBOX",
+      "value": "DEVBOX",
+      "compatibility": { "os": ["MAC", "LINUX"] },
+      "url": "https://jetify.com/devbox/",
+      "info": "layouts.download.codeBox.platformInfo.devbox"
+    },
+    {
+      "key": "CHOCO",
+      "label": "CHOCO",
+      "value": "CHOCO",
+      "compatibility": { "os": ["WIN"] },
+      "url": "https://chocolatey.org/",
+      "info": "layouts.download.codeBox.platformInfo.choco"
+    },
+    {
+      "key": "DOCKER",
+      "label": "DOCKER",
+      "value": "DOCKER",
+      "compatibility": { "os": ["WIN", "MAC", "LINUX"] },
+      "recommended": true,
+      "url": "https://docs.docker.com/get-started/get-docker/",
+      "info": "layouts.download.codeBox.platformInfo.docker"
+    },
+    {
+      "key": "N",
+      "label": "N",
+      "value": "N",
+      "compatibility": { "os": ["MAC", "LINUX"] },
+      "url": "https://github.com/tj/n",
+      "info": "layouts.download.codeBox.platformInfo.n"
+    },
+    {
+      "key": "VOLTA",
+      "label": "VOLTA",
+      "value": "VOLTA",
+      "compatibility": { "os": ["WIN", "MAC", "LINUX"] },
+      "url": "https://docs.volta.sh/guide/getting-started",
+      "info": "layouts.download.codeBox.platformInfo.volta"
+    }
+  ],
+  "Platforms": {
+    "WIN": [
+      {
+        "label": "x64",
+        "value": "x64",
+        "compatibility": {}
+      },
+      {
+        "label": "x86",
+        "value": "x86",
+        "compatibility": { "semver": ["< 23.0.0"] }
+      },
+      {
+        "label": "ARM64",
+        "value": "arm64",
+        "compatibility": { "semver": [">= 19.9.0"] }
+      }
+    ],
+    "MAC": [
+      {
+        "label": "x64",
+        "value": "x64",
+        "compatibility": {}
+      },
+      {
+        "label": "ARM64",
+        "value": "arm64",
+        "compatibility": { "semver": [">= 19.9.0"] }
+      }
+    ],
+    "LINUX": [
+      {
+        "label": "x64",
+        "value": "x64",
+        "compatibility": {}
+      },
+      {
+        "label": "ARMv7",
+        "value": "armv7l",
+        "compatibility": { "semver": [">= 4.0.0"] }
+      },
+      {
+        "label": "ARM64",
+        "value": "arm64",
+        "compatibility": { "semver": [">= 4.0.0"] }
+      },
+      {
+        "label": "Power LE",
+        "value": "ppc64le",
+        "compatibility": { "semver": [">= 4.4.0"] }
+      },
+      {
+        "label": "System Z",
+        "value": "s390x",
+        "compatibility": { "semver": [">= 6.6.0"] }
+      }
+    ],
+    "AIX": [
+      {
+        "label": "Power",
+        "value": "ppc64",
+        "compatibility": { "semver": [">= 6.7.0"] }
+      }
+    ],
+    "OTHER": [],
+    "LOADING": []
+  },
+  "PackageManagerLabel": {
+    "NPM": "npm",
+    "YARN": "Yarn",
+    "PNPM": "pnpm"
+  },
+  "UserPlatform": [
+    "arm64",
+    "armv7l",
+    "ppc64le",
+    "ppc64",
+    "s390x",
+    "ppc64",
+    "x64",
+    "x86"
+  ],
+  "UserBitness": ["64", "32"],
+  "UserArchitecture": ["arm", "x86"]
+}

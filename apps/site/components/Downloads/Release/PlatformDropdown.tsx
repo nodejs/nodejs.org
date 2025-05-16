@@ -10,7 +10,11 @@ import { ReleaseContext } from '#site/providers/releaseProvider';
 import type { UserPlatform } from '#site/types/userOS';
 import { getUserPlatform } from '#site/util/getUserPlatform';
 
-import { PLATFORMS, nextItem, parseCompat } from '../../../downloadUtils/index';
+import {
+  PLATFORMS,
+  nextItem,
+  parseCompat,
+} from '../../../util/downloadUtils/index';
 
 const PlatformDropdown: FC = () => {
   const { architecture, bitness } = useClientContext();

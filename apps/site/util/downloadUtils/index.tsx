@@ -9,10 +9,29 @@ import type * as Types from '#site/types/release';
 import type { UserPlatform } from '#site/types/userOS';
 import type { UserOS } from '#site/types/userOS';
 
-import downloadConstants from '../../site/downloadUtils/constants.json';
+import downloadConstants from './constants.json';
 
-const { InstallationMethodLabel } = downloadConstants;
-export const { OperatingSystemLabel } = downloadConstants;
+const { Platforms, InstallationMethodLabel, installMethods } =
+  downloadConstants;
+
+// Here I'm creating the icon mapping for the installation methods
+const installMethodIconsMap = {
+  NVM: <InstallMethodIcons.NVM width={16} height={16} />,
+  FNM: <InstallMethodIcons.FNM width={16} height={16} />,
+  BREW: <InstallMethodIcons.Homebrew width={16} height={16} />,
+  DEVBOX: <InstallMethodIcons.Devbox width={16} height={16} />,
+  CHOCO: <InstallMethodIcons.Choco width={16} height={16} />,
+  DOCKER: <InstallMethodIcons.Docker width={16} height={16} />,
+  N: <InstallMethodIcons.N width={16} height={16} />,
+  VOLTA: <InstallMethodIcons.Volta width={16} height={16} />,
+};
+
+export const {
+  OperatingSystems: osConstants,
+  OperatingSystemLabel,
+  OS_NOT_SUPPORTING_INSTALLERS,
+} = downloadConstants;
+
 // const InstallationMethodLabel = downloadConstants.InstallationMethod;
 // export const OperatingSystemLabel = downloadConstants.OperatingSystem;
 const { PackageManagerLabel } = downloadConstants;
@@ -21,16 +40,10 @@ const { PackageManagerLabel } = downloadConstants;
 // port/have a way of being installed
 // with an executable installer. This is used to disable the installer button.
 // Note: Windows has one tiny exception for x64 on Node.js versions < 4.0.0
-export const OS_NOT_SUPPORTING_INSTALLERS: Array<UserOS | 'LOADING'> = [
-  'LINUX',
-  'AIX',
-  'OTHER',
-  'LOADING',
-];
 
 type DownloadCompatibility = {
   os: Array<UserOS | 'LOADING'>;
-  installMethod: Array<Types.InstallationMethod | ''>;
+  installMethod: Array<string>;
   platform: Array<UserPlatform | ''>;
   semver: Array<string>;
   releases: Array<NodeReleaseStatus>;
@@ -112,109 +125,62 @@ export const parseCompat = <
 // Here the list of Operating System Dropdown items are defined !
 export const OPERATING_SYSTEMS: Array<DownloadDropdownItem<UserOS>> = [
   {
-    label: OperatingSystemLabel.WIN,
-    value: 'WIN',
-    compatibility: {},
+    label: osConstants[0].label,
+    value: osConstants[0].value as UserOS,
+    compatibility: osConstants[0].compatibility,
     iconImage: <OSIcons.Microsoft width={16} height={16} />,
   },
   {
-    label: OperatingSystemLabel.MAC,
-    value: 'MAC',
-    compatibility: {},
+    label: osConstants[1].label,
+    value: osConstants[1].value as UserOS,
+    compatibility: osConstants[1].compatibility,
     iconImage: <OSIcons.Apple width={16} height={16} />,
   },
   {
-    label: OperatingSystemLabel.LINUX,
-    value: 'LINUX',
-    compatibility: {},
+    label: osConstants[2].label,
+    value: osConstants[2].value as UserOS,
+    compatibility: osConstants[2].compatibility,
     iconImage: <OSIcons.Linux width={16} height={16} />,
   },
   {
-    label: OperatingSystemLabel.AIX,
-    value: 'AIX',
-    compatibility: { installMethod: [''], semver: ['>= 6.7.0'] },
+    label: osConstants[3].label,
+    value: osConstants[3].value as UserOS,
+    compatibility: osConstants[3].compatibility,
     iconImage: <OSIcons.AIX width={16} height={16} />,
   },
 ];
-
 // Here the list of Install Method Dropdown items are defined !
 
 export const INSTALL_METHODS: Array<
   DownloadDropdownItem<Types.InstallationMethod> &
-    // Since the ReleaseCodeBox requires an info key to be provided, we force this
-    // to be mandatory for install methods
     Required<
       Pick<DownloadDropdownItem<Types.InstallationMethod>, 'info' | 'url'>
     >
-> = [
-  {
-    label: InstallationMethodLabel.NVM,
-    value: 'NVM',
-    compatibility: { os: ['MAC', 'LINUX', 'OTHER'] },
-    iconImage: <InstallMethodIcons.NVM width={16} height={16} />,
-    recommended: true,
-    url: 'https://github.com/nvm-sh/nvm',
-    info: 'layouts.download.codeBox.platformInfo.nvm',
-  },
-  {
-    label: InstallationMethodLabel.FNM,
-    value: 'FNM',
-    compatibility: { os: ['MAC', 'LINUX', 'WIN'] },
-    iconImage: <InstallMethodIcons.FNM width={16} height={16} />,
-    recommended: true,
-    url: 'https://github.com/Schniz/fnm',
-    info: 'layouts.download.codeBox.platformInfo.fnm',
-  },
-  {
-    label: InstallationMethodLabel.BREW,
-    value: 'BREW',
-    compatibility: { os: ['MAC', 'LINUX'], releases: ['Current', 'LTS'] },
-    iconImage: <InstallMethodIcons.Homebrew width={16} height={16} />,
-    url: 'https://brew.sh/',
-    info: 'layouts.download.codeBox.platformInfo.brew',
-  },
-  {
-    label: InstallationMethodLabel.DEVBOX,
-    value: 'DEVBOX',
-    compatibility: { os: ['MAC', 'LINUX'] },
-    iconImage: <InstallMethodIcons.Devbox width={16} height={16} />,
-    url: 'https://jetify.com/devbox/',
-    info: 'layouts.download.codeBox.platformInfo.devbox',
-  },
-  {
-    label: InstallationMethodLabel.CHOCO,
-    value: 'CHOCO',
-    compatibility: { os: ['WIN'] },
-    iconImage: <InstallMethodIcons.Choco width={16} height={16} />,
-    url: 'https://chocolatey.org/',
-    info: 'layouts.download.codeBox.platformInfo.choco',
-  },
-  {
-    label: InstallationMethodLabel.DOCKER,
-    value: 'DOCKER',
-    compatibility: { os: ['WIN', 'MAC', 'LINUX'] },
-    iconImage: <InstallMethodIcons.Docker width={16} height={16} />,
-    recommended: true,
-    url: 'https://docs.docker.com/get-started/get-docker/',
-    info: 'layouts.download.codeBox.platformInfo.docker',
-  },
-  {
-    label: InstallationMethodLabel.N,
-    value: 'N',
-    compatibility: { os: ['MAC', 'LINUX'] },
-    iconImage: <InstallMethodIcons.N width={16} height={16} />,
-    url: 'https://github.com/tj/n',
-    info: 'layouts.download.codeBox.platformInfo.n',
-  },
-  {
-    label: InstallationMethodLabel.VOLTA,
-    value: 'VOLTA',
-    compatibility: { os: ['WIN', 'MAC', 'LINUX'] },
-    iconImage: <InstallMethodIcons.Volta width={16} height={16} />,
-    url: 'https://docs.volta.sh/guide/getting-started',
-    info: 'layouts.download.codeBox.platformInfo.volta',
-  },
-];
+> = installMethods.map(method => {
+  // Map compatibility.os from string[] to UserOS[] if present
+  // Map compatibility.releases from string[] to NodeReleaseStatus[] if present
+  const compatibility = {
+    ...method.compatibility,
+    os: method.compatibility?.os?.map(os => os as UserOS),
+    releases: method.compatibility?.releases?.map(
+      (release: string) => release as NodeReleaseStatus
+    ),
+  };
+  return {
+    ...method,
+    key: method.key as Types.InstallationMethod,
+    value: method.value as Types.InstallationMethod,
+    // optionally override the label if needed by using InstallationMethodLabel from JSON
+    label:
+      InstallationMethodLabel[
+        method.key as keyof typeof InstallationMethodLabel
+      ] || method.label,
+    iconImage:
+      installMethodIconsMap[method.value as keyof typeof installMethodIconsMap],
+    info: method.info as IntlMessageKeys, // cast to expected type
+    compatibility,
+  };
+});
 
 // Here the list of Package Manager  Dropdown items are defined !
 
@@ -246,70 +212,4 @@ export const PACKAGE_MANAGERS: Array<
 export const PLATFORMS: Record<
   UserOS | 'LOADING',
   Array<DownloadDropdownItem<UserPlatform>>
-> = {
-  WIN: [
-    {
-      label: 'x64',
-      value: 'x64',
-      compatibility: {},
-    },
-    {
-      label: 'x86',
-      value: 'x86',
-      compatibility: { semver: ['< 23.0.0'] },
-    },
-    {
-      label: 'ARM64',
-      value: 'arm64',
-      compatibility: { semver: ['>= 19.9.0'] },
-    },
-  ],
-  MAC: [
-    {
-      label: 'x64',
-      value: 'x64',
-      compatibility: {},
-    },
-    {
-      label: 'ARM64',
-      value: 'arm64',
-      compatibility: {},
-    },
-  ],
-  LINUX: [
-    {
-      label: 'x64',
-      value: 'x64',
-      compatibility: {},
-    },
-    {
-      label: 'ARMv7',
-      value: 'armv7l',
-      compatibility: { semver: ['>= 4.0.0'] },
-    },
-    {
-      label: 'ARM64',
-      value: 'arm64',
-      compatibility: { semver: ['>= 4.0.0'] },
-    },
-    {
-      label: 'Power LE',
-      value: 'ppc64le',
-      compatibility: { semver: ['>= 4.4.0'] },
-    },
-    {
-      label: 'System Z',
-      value: 's390x',
-      compatibility: { semver: ['>= 6.6.0'] },
-    },
-  ],
-  AIX: [
-    {
-      label: 'Power',
-      value: 'ppc64',
-      compatibility: { semver: ['>= 6.7.0'] },
-    },
-  ],
-  OTHER: [],
-  LOADING: [],
-};
+> = Platforms;

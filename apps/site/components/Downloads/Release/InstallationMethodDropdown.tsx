@@ -12,7 +12,7 @@ import {
   nextItem,
   INSTALL_METHODS,
   parseCompat,
-} from '../../../downloadUtils/index';
+} from '../../../util/downloadUtils/index';
 
 const InstallationMethodDropdown: FC = () => {
   const release = useContext(ReleaseContext);

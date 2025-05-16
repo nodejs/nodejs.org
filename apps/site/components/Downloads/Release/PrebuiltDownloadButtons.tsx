@@ -13,7 +13,7 @@ import { getNodeDownloadUrl } from '#site/util/getNodeDownloadUrl';
 import {
   OS_NOT_SUPPORTING_INSTALLERS,
   OperatingSystemLabel,
-} from '../../../downloadUtils/index';
+} from '../../../util/downloadUtils/index';
 // Retrieves the pure extension piece from the input string
 const getExtension = (input: string) => String(input.split('.').slice(-1));
 

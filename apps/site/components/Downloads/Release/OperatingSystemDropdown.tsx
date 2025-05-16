@@ -13,7 +13,7 @@ import {
   nextItem,
   OPERATING_SYSTEMS,
   parseCompat,
-} from '../../../downloadUtils/index';
+} from '../../../util/downloadUtils/index';
 
 type OperatingSystemDropdownProps = { exclude?: Array<UserOS> };
 

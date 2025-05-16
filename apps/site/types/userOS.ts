@@ -1,5 +1,5 @@
-import type { OperatingSystemLabel } from '../downloadUtils/constants.json';
-import type downloadConstants from '../downloadUtils/constants.json';
+import type { OperatingSystemLabel } from '../util/downloadUtils/constants.json';
+import type downloadConstants from '../util/downloadUtils/constants.json';
 
 // This infers the keys from OperatingSystemLabel as the UserOS type.
 export type UserOS = keyof typeof OperatingSystemLabel;

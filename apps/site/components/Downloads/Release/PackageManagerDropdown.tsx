@@ -12,7 +12,7 @@ import {
   nextItem,
   PACKAGE_MANAGERS,
   parseCompat,
-} from '../../../downloadUtils/index';
+} from '../../../util/downloadUtils/index';
 
 const PackageManagerDropdown: FC = () => {
   const release = useContext(ReleaseContext);
