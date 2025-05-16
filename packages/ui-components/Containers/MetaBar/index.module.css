@@ -13,10 +13,11 @@
     [overflow-wrap:anywhere]
     lg:sticky
     lg:top-0
-    lg:h-max
-    lg:min-h-screen
+    lg:max-h-screen
     lg:px-6
     dark:border-neutral-900;
+
+  scrollbar-width: none;
 
   dl {
     @apply w-full;
@@ -80,5 +81,19 @@
   [data-on-light] {
     @apply block
       dark:hidden;
+  }
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    max-height: calc(100vh - 4rem);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    position: sticky;
+    top: 4rem;
   }
 }
