@@ -61,6 +61,7 @@
           "links": {
             "asynchronousWork": "非同步工作",
             "asynchronousFlowControl": "非同步流程控制",
+            "discoverPromisesInNodejs": "探索 Node.js 中的 Promise",
             "overviewOfBlockingVsNonBlocking": "阻塞與非阻塞概述",
             "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript 中的非同步程式與回呼函式",
             "discoverJavascriptTimers": "探索 JavaScript 計時器",
@@ -108,6 +109,7 @@
           "links": {
             "diagnostics": "診斷訊息",
             "userJourney": "使用者旅程",
+            "understandingAndTuningMemory": "深入瞭解並調教記憶體",
             "memory": "記憶體",
             "liveDebugging": "即時偵錯",
             "poorPerformance": "低效能",
@@ -147,14 +149,37 @@
     "downloadReleasesTable": {
       "version": "Node.js",
       "nApiVersion": "N-API",
-      "npmVersion": "npm",
       "codename": "代號",
       "releaseDate": "發佈於",
+      "firstReleased": "首次釋出於",
+      "lastUpdated": "上次更新於",
+      "status": "狀態",
+      "details": "詳細資訊"
+    },
+    "releaseModal": {
+      "title": "Node.js {version} ({codename})",
+      "titleWithoutCodename": "Node.js {version}",
+      "overview": "概覽",
+      "minorVersions": "小版本",
+      "releaseAnnouncement": "發行公告",
+      "unsupportedVersionWarning": "此版本已不再維護。請使用現正支援的版本。"
+    },
+    "minorReleasesTable": {
+      "version": "版本",
+      "links": "連結",
       "actions": {
+        "release": "發行版本",
         "changelog": "更新紀錄",
-        "releases": "發行版本",
         "docs": "文件"
       }
+    },
+    "releaseOverview": {
+      "firstReleased": "首次釋出於",
+      "lastUpdated": "上次更新於",
+      "minorVersions": "小版本",
+      "nApiVersion": "N-API 版本",
+      "npmVersion": "npm 版本",
+      "v8Version": "V8 版本"
     },
     "pagination": {
       "next": "下一頁",
