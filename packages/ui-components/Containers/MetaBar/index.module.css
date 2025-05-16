@@ -84,6 +84,4 @@
   }
 }
 
-.wrapper::-webkit-scrollbar {
-  display: none;
-}
+@apply hidden;
