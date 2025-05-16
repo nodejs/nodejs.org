@@ -24,8 +24,6 @@ env:
 jobs:
   sync-translations:
     runs-on: ubuntu-latest
-    outputs:
-      pr_number: ${{ steps.crowdin_pr.outputs.pull_request_number }}
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
@@ -40,7 +38,6 @@ jobs:
       # Downloads translations from Crowdin and creates a PR
       # See all the options at https://github.com/crowdin/github-action
       - name: Download Translations & Create PR
-        id: crowdin_pr
         uses: crowdin/github-action@b8012bd5491b8aa8578b73ab5b5f5e7c94aaa6e2 # v2.7.0
         with:
           upload_sources: false
@@ -125,4 +122,4 @@ jobs:
 
       # Push the changes back to the PR branch
       - name: Push Changes
-        run: git push origin HEAD:$HEAD_REF
+        run: git push origin HEAD:$HEAD_REF --force
