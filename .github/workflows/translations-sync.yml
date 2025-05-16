@@ -69,7 +69,7 @@ jobs:
       - name: Checkout PR Branch
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          ref: refs/pull/${{ needs.sync-translations.outputs.pr_number }}/head
+          ref: ${{ env.HEAD_REF }}
           token: ${{ secrets.CROWDIN_GITHUB_BOT_TOKEN }}
           fetch-depth: 0
 
