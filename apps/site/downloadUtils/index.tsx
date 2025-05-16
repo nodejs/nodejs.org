@@ -6,9 +6,19 @@ import satisfies from 'semver/functions/satisfies';
 
 import type { NodeReleaseStatus } from '#site/types';
 import type * as Types from '#site/types/release';
-import type { UserOS, UserPlatform } from '#site/types/userOS';
+import type { UserPlatform } from '#site/types/userOS';
+import type { UserOS } from '#site/types/userOS';
 
-// This is a manual list of OS's that do not support/have a way of being installed
+import downloadConstants from '../../site/downloadUtils/constants.json';
+
+const { InstallationMethodLabel } = downloadConstants;
+export const { OperatingSystemLabel } = downloadConstants;
+// const InstallationMethodLabel = downloadConstants.InstallationMethod;
+// export const OperatingSystemLabel = downloadConstants.OperatingSystem;
+const { PackageManagerLabel } = downloadConstants;
+
+// This is a manual list of OS's that do not sup
+// port/have a way of being installed
 // with an executable installer. This is used to disable the installer button.
 // Note: Windows has one tiny exception for x64 on Node.js versions < 4.0.0
 export const OS_NOT_SUPPORTING_INSTALLERS: Array<UserOS | 'LOADING'> = [
@@ -17,32 +27,6 @@ export const OS_NOT_SUPPORTING_INSTALLERS: Array<UserOS | 'LOADING'> = [
   'OTHER',
   'LOADING',
 ];
-
-export enum OperatingSystemLabel {
-  WIN = 'Windows',
-  MAC = 'macOS',
-  LINUX = 'Linux',
-  AIX = 'AIX',
-  OTHER = 'Other',
-  LOADING = 'N/A',
-}
-
-export enum InstallationMethodLabel {
-  NVM = 'nvm',
-  FNM = 'fnm',
-  BREW = 'Brew',
-  CHOCO = 'Chocolatey',
-  DEVBOX = 'Devbox',
-  DOCKER = 'Docker',
-  N = 'n',
-  VOLTA = 'Volta',
-}
-
-export enum PackageManagerLabel {
-  NPM = 'npm',
-  YARN = 'Yarn',
-  PNPM = 'pnpm',
-}
 
 type DownloadCompatibility = {
   os: Array<UserOS | 'LOADING'>;
@@ -125,6 +109,7 @@ export const parseCompat = <
   }));
 };
 
+// Here the list of Operating System Dropdown items are defined !
 export const OPERATING_SYSTEMS: Array<DownloadDropdownItem<UserOS>> = [
   {
     label: OperatingSystemLabel.WIN,
@@ -151,6 +136,8 @@ export const OPERATING_SYSTEMS: Array<DownloadDropdownItem<UserOS>> = [
     iconImage: <OSIcons.AIX width={16} height={16} />,
   },
 ];
+
+// Here the list of Install Method Dropdown items are defined !
 
 export const INSTALL_METHODS: Array<
   DownloadDropdownItem<Types.InstallationMethod> &
@@ -229,6 +216,8 @@ export const INSTALL_METHODS: Array<
   },
 ];
 
+// Here the list of Package Manager  Dropdown items are defined !
+
 export const PACKAGE_MANAGERS: Array<
   DownloadDropdownItem<Types.PackageManager>
 > = [
@@ -252,8 +241,10 @@ export const PACKAGE_MANAGERS: Array<
   },
 ];
 
+// Here the list Platform and their specific specification items are defined !
+
 export const PLATFORMS: Record<
-  UserOS,
+  UserOS | 'LOADING',
   Array<DownloadDropdownItem<UserPlatform>>
 > = {
   WIN: [
@@ -320,4 +311,5 @@ export const PLATFORMS: Record<
     },
   ],
   OTHER: [],
+  LOADING: [],
 };

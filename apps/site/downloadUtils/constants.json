@@ -1,0 +1,38 @@
+{
+  "OperatingSystemLabel": {
+    "WIN": "Windows",
+    "MAC": "macOS",
+    "LINUX": "Linux",
+    "AIX": "AIX",
+    "OTHER": "Other",
+    "LOADING": "N/A"
+  },
+
+  "InstallationMethodLabel": {
+    "NVM": "nvm",
+    "FNM": "fnm",
+    "BREW": "Brew",
+    "CHOCO": "Chocolatey",
+    "DEVBOX": "Devbox",
+    "DOCKER": "Docker",
+    "N": "n",
+    "VOLTA": "Volta"
+  },
+  "PackageManagerLabel": {
+    "NPM": "npm",
+    "YARN": "Yarn",
+    "PNPM": "pnpm"
+  },
+  "UserPlatform": [
+    "arm64",
+    "armv7l",
+    "ppc64le",
+    "ppc64",
+    "s390x",
+    "ppc64",
+    "x64",
+    "x86"
+  ],
+  "UserBitness": ["64", "32"],
+  "UserArchitecture": ["arm", "x86"]
+}

@@ -1,15 +1,15 @@
-export type UserOS = 'MAC' | 'WIN' | 'LINUX' | 'AIX' | 'OTHER';
+import type { OperatingSystemLabel } from '../downloadUtils/constants.json';
+import type downloadConstants from '../downloadUtils/constants.json';
 
-export type UserBitness = '64' | '32';
+// This infers the keys from OperatingSystemLabel as the UserOS type.
+export type UserOS = keyof typeof OperatingSystemLabel;
 
-export type UserArchitecture = 'arm' | 'x86';
+// Derive the union type of UserPlatform from the JSON array values.
+export type UserPlatform = (typeof downloadConstants.UserPlatform)[number];
 
-export type UserPlatform =
-  | 'arm64'
-  | 'armv7l'
-  | 'ppc64le'
-  | 'ppc64'
-  | 's390x'
-  | 'ppc64'
-  | 'x64'
-  | 'x86';
+// Derive the union type of UserBitness from the JSON array values.
+export type UserBitness = (typeof downloadConstants.UserBitness)[number];
+
+// Derive the union type of UserArchitecture from the JSON array values.
+export type UserArchitecture =
+  (typeof downloadConstants.UserArchitecture)[number];
