@@ -49,7 +49,7 @@ const MetaBar: FC<MetaBarProps> = ({
               <ol>
                 {filteredHeadings.map(head => (
                   <li
-                    key={head.data.id}
+                    key={head?.data?.id}
                     className={
                       head.depth === 3 ? 'pl-2' : head.depth === 4 ? 'pl-4' : ''
                     }
