@@ -73,6 +73,12 @@ jobs:
           token: ${{ secrets.CROWDIN_GITHUB_BOT_TOKEN }}
           fetch-depth: 0
 
+      # Setup git user for commits
+      - name: Setup Git User
+        run: |
+          git config --global user.name "nodejs-crowdin"
+          git config --global user.email "nodejs-crowdin@users.noreply.github.com"
+
       - name: Restore Lint Cache
         uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         with:
@@ -115,7 +121,7 @@ jobs:
           # according to the configuration in package.json or .lintstagedrc
           pnpm lint-staged
 
-          git commit -m "$COMMIT_MSG" --signoff
+          git commit -m "$COMMIT_MSG" --signoff --no-verify
 
       # Push the changes back to the PR branch
       - name: Push Changes
