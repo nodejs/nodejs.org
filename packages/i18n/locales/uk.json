@@ -61,6 +61,7 @@
           "links": {
             "asynchronousWork": "Асинхронна робота",
             "asynchronousFlowControl": "Асинхронне управління потоком",
+            "discoverPromisesInNodejs": "Проміси в Node.js",
             "overviewOfBlockingVsNonBlocking": "Огляд блокувальних і неблокувальних викликів",
             "javascriptAsynchronousProgrammingAndCallbacks": "Асинхронне програмування і функції зворотного виклику в JavaScript",
             "discoverJavascriptTimers": "Таймери JavaScript",
@@ -108,6 +109,7 @@
           "links": {
             "diagnostics": "Діагностика",
             "userJourney": "Шлях користувача",
+            "understandingAndTuningMemory": "Розуміння та налаштування пам'яті",
             "memory": "Пам’ять",
             "liveDebugging": "Налагодження в реальному часі",
             "poorPerformance": "Низька продуктивність",
@@ -147,14 +149,37 @@
     "downloadReleasesTable": {
       "version": "Node.js",
       "nApiVersion": "N-API",
-      "npmVersion": "npm",
       "codename": "Кодова назва",
       "releaseDate": "Опубліковано",
+      "firstReleased": "Уперше випущено",
+      "lastUpdated": "Востаннє оновлено",
+      "status": "Статус",
+      "details": "Деталі"
+    },
+    "releaseModal": {
+      "title": "Node.js {version} ({codename})",
+      "titleWithoutCodename": "Node.js {version}",
+      "overview": "Огляд",
+      "minorVersions": "Мінорні версії",
+      "releaseAnnouncement": "Оголошення релізу",
+      "unsupportedVersionWarning": "Ця версія більше не супроводжується. Будь ласка, використовуйте підтримувану версію."
+    },
+    "minorReleasesTable": {
+      "version": "Версія",
+      "links": "Посилання",
       "actions": {
+        "release": "Реліз",
         "changelog": "Список змін",
-        "releases": "Релізи",
         "docs": "Документація"
       }
+    },
+    "releaseOverview": {
+      "firstReleased": "Уперше випущено",
+      "lastUpdated": "Востаннє оновлено",
+      "minorVersions": "Мінорних версій",
+      "nApiVersion": "Версія N-API",
+      "npmVersion": "Версія npm",
+      "v8Version": "Версія V8"
     },
     "pagination": {
       "next": "Далі",
