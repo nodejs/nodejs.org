@@ -19,7 +19,6 @@
     "test:unit:watch": "cross-env NODE_OPTIONS=\"--watch\" pnpm test:unit"
   },
   "devDependencies": {
-    "@mdx-js/mdx": "^3.1.0",
     "@types/hast": "^3.0.4",
     "@types/mdx": "^2.0.13",
     "@types/react": "^19.1.0",
@@ -31,10 +30,10 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "~8.31.1",
     "unified": "^11.0.5",
-    "vfile": "~6.0.3",
-    "vfile-matter": "~5.0.1"
+    "vfile": "~6.0.3"
   },
   "dependencies": {
+    "@mdx-js/mdx": "^3.1.0",
     "@shikijs/core": "^3.3.0",
     "@shikijs/engine-javascript": "^3.3.0",
     "classnames": "~2.5.1",
@@ -47,6 +46,7 @@
     "remark-reading-time": "~2.0.1",
     "shiki": "~3.3.0",
     "sval": "^0.6.7",
-    "unist-util-visit": "~5.0.0"
+    "unist-util-visit": "~5.0.0",
+    "vfile-matter": "~5.0.1"
   }
 }
