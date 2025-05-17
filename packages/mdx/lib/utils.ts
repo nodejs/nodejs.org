@@ -1,6 +1,6 @@
 import GithubSlugger from 'github-slugger';
 
-import { LANGUAGES } from '../shiki.config.mjs';
+import { LANGUAGES } from '../shiki.config';
 
 export const createGitHubSlugger = () => {
   const githubSlugger = new GithubSlugger();

@@ -1,5 +1,4 @@
-'use strict';
-
+import type { LanguageRegistration, ThemeRegistration } from 'shiki';
 import diffLanguage from 'shiki/langs/diff.mjs';
 import dockerLanguage from 'shiki/langs/docker.mjs';
 import iniLanguage from 'shiki/langs/ini.mjs';
@@ -14,15 +13,13 @@ import shikiNordTheme from 'shiki/themes/nord.mjs';
 
 /**
  * All languages needed within the Node.js website for syntax highlighting.
- *
- * @type {Array<import('shiki').LanguageRegistration>}
  */
-export const LANGUAGES = [
+export const LANGUAGES: Array<LanguageRegistration> = [
   {
     ...javaScriptLanguage[0],
-    // We path the JavaScript language to include the CommonJS and ES Module aliases
+    // We patch the JavaScript language to include the CommonJS and ES Module aliases
     // that are commonly used (non-standard aliases) within our API docs and Blog posts
-    aliases: javaScriptLanguage[0].aliases.concat('cjs', 'mjs'),
+    aliases: javaScriptLanguage[0].aliases!.concat('cjs', 'mjs'),
   },
   ...iniLanguage,
   ...jsonLanguage,
@@ -36,8 +33,8 @@ export const LANGUAGES = [
 ];
 
 // This is the default theme we use for our Shiki Syntax Highlighter
-export const DEFAULT_THEME = {
-  // We updating this color because the background color and comment text color
+export const DEFAULT_THEME: ThemeRegistration = {
+  // We update this color because the background color and comment text color
   // in the Codebox component do not comply with accessibility standards
   // @see https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html
   colorReplacements: { '#616e88': '#707e99' },

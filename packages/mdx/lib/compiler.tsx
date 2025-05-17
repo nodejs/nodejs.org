@@ -24,10 +24,8 @@ type CompiledMDX = {
   readingTime: ReadTimeResults;
 };
 
-type MDXVFile = VFile & {
-  data: Omit<CompiledMDX, 'frontmatter'> & {
-    matter: Record<string, unknown>;
-  };
+type MDXVFileData = Omit<CompiledMDX, 'frontmatter'> & {
+  matter: Record<string, unknown>;
 };
 
 /**
@@ -42,7 +40,7 @@ type MDXVFile = VFile & {
  * @returns Promise resolving to compiled MDX content and metadata
  */
 export default async function compile(
-  source: MDXVFile,
+  source: VFile,
   fileExtension: 'md' | 'mdx',
   components: MDXComponents = {},
   props: Record<string, unknown> = {}
@@ -77,7 +75,11 @@ export default async function compile(
 
   // Retrieve some parsed data from the VFile metadata
   // such as frontmatter and Markdown headings
-  const { headings = [], matter: frontmatter, readingTime } = source.data || {};
+  const {
+    headings = [],
+    matter: frontmatter,
+    readingTime,
+  } = (source.data || {}) as MDXVFileData;
 
   headings.forEach((heading: Heading) => {
     // we re-sluggify the links to match the GitHub slugger

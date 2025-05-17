@@ -4,7 +4,7 @@ import {
 } from '@shikijs/core';
 import { createJavaScriptRegexEngine } from '@shikijs/engine-javascript';
 
-import { LANGUAGES, DEFAULT_THEME } from '../shiki.config.mjs';
+import { LANGUAGES, DEFAULT_THEME } from '../shiki.config';
 
 // Create a memoized minimal Shiki Syntax Highlighter
 export const shiki = createHighlighterCoreSync({
