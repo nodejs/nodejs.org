@@ -5,13 +5,14 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import readingTime from 'remark-reading-time';
+import type { PluggableList } from 'unified';
 
-import rehypeShikiji from './next.mdx.shiki.mjs';
+import rehypeShikiji from './shiki';
 
 /**
  * Provides all our Rehype Plugins that are used within MDX
  */
-export const REHYPE_PLUGINS = [
+export const REHYPE_PLUGINS: PluggableList = [
   // Generates `id` attributes for headings (H1, ...)
   rehypeSlug,
   // Automatically add anchor links to headings (H1, ...)
@@ -24,7 +25,7 @@ export const REHYPE_PLUGINS = [
 /**
  * Provides all our Remark Plugins that are used within MDX
  */
-export const REMARK_PLUGINS = [
+export const REMARK_PLUGINS: PluggableList = [
   // Support GFM syntax to be used within Markdown
   remarkGfm,
   // Generates metadata regarding headings

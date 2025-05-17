@@ -1,16 +1,8 @@
 import assert from 'node:assert/strict';
-import { describe, it, mock } from 'node:test';
+import { describe, it } from 'node:test';
 
-mock.module('github-slugger', {
-  defaultExport: class {},
-});
-
-const {
-  getGitHubAvatarUrl,
-  createGitHubSlugger,
-  getGitHubBlobUrl,
-  getGitHubApiDocsUrl,
-} = await import('#site/util/gitHubUtils');
+const { getGitHubAvatarUrl, getGitHubBlobUrl, getGitHubApiDocsUrl } =
+  await import('#site/util/gitHubUtils');
 
 describe('gitHubUtils', () => {
   it('getGitHubAvatarUrl returns the correct URL', () => {
@@ -18,10 +10,6 @@ describe('gitHubUtils', () => {
       getGitHubAvatarUrl('octocat'),
       'https://avatars.githubusercontent.com/octocat'
     );
-  });
-
-  it('createGitHubSlugger returns a slugger', () => {
-    assert.notEqual(createGitHubSlugger(), undefined);
   });
 
   it('getGitHubBlobUrl returns the correct URL', () => {
