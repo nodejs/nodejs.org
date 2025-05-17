@@ -1,15 +1,14 @@
-export type UserOS = 'MAC' | 'WIN' | 'LINUX' | 'AIX' | 'OTHER';
+import type constants from '../util/downloadUtils/constants.json';
 
-export type UserBitness = '64' | '32';
+// Extract OS key type from the systems object
+export type UserOS = keyof typeof constants.systems;
 
-export type UserArchitecture = 'arm' | 'x86';
+// Derive the union type of UserPlatform from the userOptions
+export type UserPlatform = (typeof constants.userOptions.platforms)[number];
 
-export type UserPlatform =
-  | 'arm64'
-  | 'armv7l'
-  | 'ppc64le'
-  | 'ppc64'
-  | 's390x'
-  | 'ppc64'
-  | 'x64'
-  | 'x86';
+// Derive the union type of UserBitness from the userOptions
+export type UserBitness = (typeof constants.userOptions.bitness)[number];
+
+// Derive the union type of UserArchitecture from the userOptions
+export type UserArchitecture =
+  (typeof constants.userOptions.architecture)[number];
