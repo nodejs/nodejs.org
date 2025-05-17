@@ -9,8 +9,8 @@ import type { FC } from 'react';
 import Button from '#site/components/Common/Button';
 import { ReleaseContext } from '#site/providers/releaseProvider';
 import {
-  OperatingSystemLabel,
   OS_NOT_SUPPORTING_INSTALLERS,
+  OperatingSystemLabel,
 } from '#site/util/downloadUtils';
 import { getNodeDownloadUrl } from '#site/util/getNodeDownloadUrl';
 
