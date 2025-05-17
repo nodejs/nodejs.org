@@ -23,7 +23,11 @@ const LanguageDropdown: FC<LanguageDropDownProps> = ({
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <button className={styles.languageDropdown} aria-label={ariaLabel}>
+        <button
+          className={styles.languageDropdown}
+          aria-label={ariaLabel}
+          data-testid="language-selector"
+        >
           <LanguageIcon height="20" />
         </button>
       </DropdownMenu.Trigger>
@@ -34,7 +38,7 @@ const LanguageDropdown: FC<LanguageDropDownProps> = ({
           className={styles.dropDownContent}
           sideOffset={5}
         >
-          <div>
+          <div data-testid="language-options">
             {availableLanguages.map(({ name, code, localName }) => (
               <DropdownMenu.Item
                 key={code}

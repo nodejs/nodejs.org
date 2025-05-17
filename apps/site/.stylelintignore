@@ -17,3 +17,7 @@ styles/old
 # Cloudflare Build Output
 .open-next
 .wrangler
+
+# Playwright
+test-results
+playwright-report
