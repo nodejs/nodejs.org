@@ -10,6 +10,7 @@
     border-neutral-200
     px-4
     py-6
+    pb-12
     [overflow-wrap:anywhere]
     lg:sticky
     lg:top-16
@@ -56,6 +57,7 @@
 
     ol {
       @apply flex
+        w-full
         list-none
         flex-col
         gap-1.5
@@ -69,7 +71,8 @@
     }
 
     &:last-child {
-      @apply mb-0;
+      @apply mb-0
+        p-4;
     }
   }
 
@@ -85,3 +88,7 @@
 }
 
 @apply hidden;
+@apply scrollbar;
+@apply scrollbar-thin;
+@apply scrollbar-thumb-neutral-300;
+@apply dark:scrollbar-thumb-neutral-700;
