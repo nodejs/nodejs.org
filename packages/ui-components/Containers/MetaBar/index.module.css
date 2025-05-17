@@ -12,11 +12,12 @@
     py-6
     [overflow-wrap:anywhere]
     lg:sticky
-    lg:top-0
-    lg:h-max
-    lg:min-h-screen
+    lg:top-16
+    lg:max-h-[calc(100vh-4rem)]
     lg:px-6
     dark:border-neutral-900;
+
+  scrollbar-width: none;
 
   dl {
     @apply w-full;
@@ -82,3 +83,5 @@
       dark:hidden;
   }
 }
+
+@apply hidden;
