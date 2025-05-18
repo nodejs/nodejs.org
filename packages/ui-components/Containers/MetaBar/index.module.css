@@ -2,28 +2,29 @@
 
 .wrapper {
   @apply flex
-    h-screen
     w-full
     flex-col
     items-start
     gap-8
-    overflow-y-auto
     border-neutral-200
     px-4
     py-6
-    pb-12
     [overflow-wrap:anywhere]
     lg:sticky
-    lg:bottom-0
     lg:top-16
-    lg:overflow-y-auto
     lg:px-6
     dark:border-neutral-900;
 
-  scrollbar-width: none;
-
   dl {
-    @apply w-full;
+    @apply flex
+      w-full
+      flex-col
+      gap-1.5
+      pb-12
+      [scrollbar-width:none]
+      lg:max-h-[calc(100vh-4rem)]
+      lg:overflow-y-auto
+      [&::-webkit-scrollbar]:hidden;
   }
 
   dt {
@@ -73,7 +74,7 @@
     }
 
     &:last-child {
-      @apply mb-0
+      @apply mb-8
         p-4;
     }
   }
@@ -88,5 +89,3 @@
       dark:hidden;
   }
 }
-
-@apply hidden;
