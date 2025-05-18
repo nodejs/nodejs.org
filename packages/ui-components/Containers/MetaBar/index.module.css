@@ -11,7 +11,8 @@
     py-6
     [overflow-wrap:anywhere]
     lg:sticky
-    lg:top-16
+    lg:top-0
+    lg:max-h-screen
     lg:px-6
     dark:border-neutral-900;
 
@@ -22,7 +23,7 @@
       gap-1.5
       pb-12
       [scrollbar-width:none]
-      lg:max-h-[calc(100vh-4rem)]
+      lg:max-h-[calc(100vh-6rem)]
       lg:overflow-y-auto
       [&::-webkit-scrollbar]:hidden;
   }
@@ -74,7 +75,7 @@
     }
 
     &:last-child {
-      @apply mb-8
+      @apply mb-0
         p-4;
     }
   }
