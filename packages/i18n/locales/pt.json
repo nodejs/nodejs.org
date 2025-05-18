@@ -289,6 +289,11 @@
           "docker": "Docker é uma plataforma de contentorização.",
           "volta": "\"Volta\" é um gestor de versão de Node.js multiplataforma."
         }
+      },
+      "wsl": {
+        "title": "Usa Windows? Experimente o WSL 🦖",
+        "description": "O Subsistema do Windows para Linux (WSL) permite que você execute um ambiente Linux diretamente no Windows sem a necessidade de uma máquina virtual. Isso pode oferecer uma melhor experiência de desenvolvimento para aplicações Node.js.",
+        "learnMore": "Saiba mais sobre o WSL"
       }
     },
     "logo": "Logótipo da Node.js"

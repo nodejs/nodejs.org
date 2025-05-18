@@ -316,6 +316,11 @@
           "n": "\"n\" is a cross-platform Node.js version manager.",
           "volta": "\"Volta\" is a cross-platform Node.js version manager."
         }
+      },
+      "wsl": {
+        "title": "Using Windows?  Try WSL 🦖",
+        "description": "Windows Subsystem for Linux (WSL) allows you to run a Linux environment directly on Windows without the need for Virtual Machine. This can provide a better development experience for Node.js applications.",
+        "learnMore": "Learn more about WSL"
       }
     },
     "logo": "Node.js logo"
