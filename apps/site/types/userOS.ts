@@ -1,3 +1,4 @@
+
 import type { OperatingSystemLabel } from '../util/downloadUtils/constants.json';
 import type downloadConstants from '../util/downloadUtils/constants.json';
 
@@ -13,3 +14,4 @@ export type UserBitness = (typeof downloadConstants.UserBitness)[number];
 // Derive the union type of UserArchitecture from the JSON array values.
 export type UserArchitecture =
   (typeof downloadConstants.UserArchitecture)[number];
+

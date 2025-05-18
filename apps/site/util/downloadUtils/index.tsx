@@ -2,6 +2,8 @@ import type { SelectValue } from '@node-core/ui-components/Common/Select';
 import * as InstallMethodIcons from '@node-core/ui-components/Icons/InstallationMethod';
 import * as OSIcons from '@node-core/ui-components/Icons/OperatingSystem';
 import * as PackageManagerIcons from '@node-core/ui-components/Icons/PackageManager';
+
+
 import satisfies from 'semver/functions/satisfies';
 
 import type { NodeReleaseStatus } from '#site/types';
@@ -56,6 +58,7 @@ type DownloadDropdownItem<T extends string> = {
 // when the current item is disabeld/excluded/not valid
 // And this is useful when a parent release value (i.e. OS) is changed
 // and requires the current dropdown (i.e. Platform) to be updated
+
 export const nextItem = <T extends string>(
   current: T,
   items: Array<DownloadDropdownItem<T>>
@@ -77,6 +80,7 @@ export const nextItem = <T extends string>(
 
 // This function is used to parse the compatibility of the dropdown items
 // In a nice and static way that allows a lot of abstraction and flexibility
+
 export const parseCompat = <
   K extends string,
   T extends DownloadDropdownItem<K>,
@@ -193,3 +197,4 @@ export const PLATFORMS: Record<
   UserOS | 'LOADING',
   Array<DownloadDropdownItem<UserPlatform>>
 > = Platforms;
+
