@@ -321,11 +321,6 @@
         "chocolateyIsNotNodejsPackageManager": "Chocolatey no es un administrador de paquetes de Node.js.",
         "chocolateyInstructions": "Siga las instrucciones oficiales en https://chocolatey.org/",
         "chocolateyNotMaintanedByNodejs": "Chocolatey no es mantenido oficialmente por el proyecto Node.js y puede que no sea compatible con la versión {version} de Node.js"
-      },
-      "wsl": {
-        "title": "¿Usas Windows? ¡Prueba WSL 🦖",
-        "description": "El Subsistema de Windows para Linux (WSL) te permite ejecutar un entorno Linux directamente en Windows sin necesidad de una máquina virtual. Esto puede ofrecer una mejor experiencia de desarrollo para aplicaciones Node.js.",
-        "learnMore": "Aprende más sobre WSL"
       }
     }
   }

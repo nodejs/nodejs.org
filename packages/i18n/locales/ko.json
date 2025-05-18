@@ -282,11 +282,6 @@
           "devbox": "Devbox는 격리되고 재현 가능한 개발 환경을 제공합니다.",
           "docker": "Docker는 컨테이너화 플랫폼입니다. "
         }
-      },
-      "wsl": {
-        "title": "Windows를 사용 중이신가요? WSL을 사용해 보세요 🦖",
-        "description": "Windows Subsystem for Linux (WSL)을 사용하면 가상 머신 없이 Windows에서 직접 Linux 환경을 실행할 수 있습니다. 이는 Node.js 애플리케이션 개발 경험을 향상시킬 수 있습니다.",
-        "learnMore": "WSL에 대해 자세히 알아보기"
       }
     }
   }

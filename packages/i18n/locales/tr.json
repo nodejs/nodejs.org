@@ -322,11 +322,6 @@
         "chocolateyIsNotNodejsPackageManager": "Chocolatey, Node.js paket yöneticisi değildir.",
         "chocolateyInstructions": "Resmi talimatlar için https://chocolatey.org/ adresini takip edin.",
         "chocolateyNotMaintanedByNodejs": "Chocolatey, Node.js projesi tarafından resmi olarak sürdürülmüyor ve Node.js'nin {version} sürümünü desteklemiyor olabilir"
-      },
-      "wsl": {
-        "title": "Windows mu kullanıyorsunuz? WSL’yi deneyin 🦖",
-        "description": "Windows için Linux Alt Sistemi (WSL), sanal makineye ihtiyaç duymadan doğrudan Windows üzerinde bir Linux ortamı çalıştırmanızı sağlar. Bu, Node.js uygulamaları için daha iyi bir geliştirme deneyimi sunabilir.",
-        "learnMore": "WSL hakkında daha fazla bilgi edinin"
       }
     }
   }

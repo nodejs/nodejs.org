@@ -316,11 +316,6 @@
           "n": "\"n\"はクロスプラットフォームに対応したNode.jsのバージョンマネージャーです。",
           "volta": "\"Volta\"はクロスプラットフォームに対応したNode.jsのバージョンマネージャーです。"
         }
-      },
-      "wsl": {
-        "title": "Windows を使用中ですか？WSL を試しましょう 🦖",
-        "description": "Windows Subsystem for Linux (WSL) を使用すると、仮想マシンを使用せずに Windows 上で直接 Linux 環境を実行できます。これは Node.js アプリケーションの開発体験を向上させることができます。",
-        "learnMore": "WSL の詳細はこちら"
       }
     },
     "logo": "Node.jsロゴ"

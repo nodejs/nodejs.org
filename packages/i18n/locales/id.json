@@ -282,11 +282,6 @@
           "devbox": "Devbox menciptakan lingkungan pengembangan yang terisolasi dan dapat direproduksi.",
           "docker": "Docker adalah platform kontainerisasi."
         }
-      },
-      "wsl": {
-        "title": "Menggunakan Windows? Coba WSL 🦖",
-        "description": "Windows Subsystem for Linux (WSL) memungkinkan Anda menjalankan lingkungan Linux langsung di Windows tanpa perlu Mesin Virtual. Ini dapat memberikan pengalaman pengembangan yang lebih baik untuk aplikasi Node.js.",
-        "learnMore": "Pelajari lebih lanjut tentang WSL"
       }
     }
   }

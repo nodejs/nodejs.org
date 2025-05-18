@@ -291,11 +291,6 @@
           "n": "\"n\" 是一个跨平台的 Node.js 版本管理器。",
           "volta": "\"Volta\" 是一个跨平台的 Node.js 版本管理器。"
         }
-      },
-      "wsl": {
-        "title": "使用 Windows？试试 WSL 🦖",
-        "description": "Windows 子系统 Linux（WSL）允许您在无需虚拟机的情况下，直接在 Windows 上运行 Linux 环境。这可以为 Node.js 应用程序提供更好的开发体验。",
-        "learnMore": "了解更多关于 WSL 的信息"
       }
     },
     "logo": "Node.js 徽标"

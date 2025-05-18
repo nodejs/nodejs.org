@@ -316,11 +316,6 @@
           "n": "\"n\" est un gestionnaire de versions Node.js multiplateforme.",
           "volta": "\"Volta\" est un gestionnaire de versions Node.js multiplateforme."
         }
-      },
-      "wsl": {
-        "title": "Vous utilisez Windows ? Essayez WSL 🦖",
-        "description": "Le Sous-système Windows pour Linux (WSL) vous permet d’exécuter un environnement Linux directement sur Windows sans avoir besoin d’une machine virtuelle. Cela peut améliorer l’expérience de développement pour les applications Node.js.",
-        "learnMore": "En savoir plus sur WSL"
       }
     },
     "logo": "Logo Node.js"
