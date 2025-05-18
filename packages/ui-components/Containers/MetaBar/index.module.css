@@ -21,7 +21,6 @@
       w-full
       flex-col
       gap-1.5
-      pb-12
       [scrollbar-width:none]
       lg:max-h-[calc(100vh-6rem)]
       lg:overflow-y-auto
@@ -75,8 +74,7 @@
     }
 
     &:last-child {
-      @apply mb-0
-        p-4;
+      @apply mb-0;
     }
   }
 
