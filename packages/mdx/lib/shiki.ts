@@ -13,16 +13,18 @@ const LANGUAGE_PREFIX = 'language-';
 const CODE_TAG = 'code';
 const PRE_TAG = 'pre';
 
+type Metadata = undefined | { meta: string };
+
 /**
  * Extracts a parameter value from a meta string
  */
 export function getMetaParameter(
-  meta?: string | null,
+  data: Metadata,
   key?: string
 ): string | undefined {
-  if (!meta || !key) return undefined;
+  if (!data?.meta || !key) return undefined;
 
-  const match = meta.match(new RegExp(`${key}="([^"]*)"`));
+  const match = data?.meta.match(new RegExp(`${key}="([^"]*)"`));
   const value = match?.[1];
 
   return value?.length ? value : undefined;
@@ -65,10 +67,10 @@ export function processCodeTabs(tree: Node): void {
 
         // Extract meta information
         const displayName =
-          getMetaParameter(codeElement.data?.meta, 'displayName')?.replaceAll(
-            '|',
-            ''
-          ) || '';
+          getMetaParameter(
+            codeElement.data as Metadata,
+            'displayName'
+          )?.replaceAll('|', '') || '';
         displayNames.push(displayName);
 
         // Extract language from class name
@@ -86,7 +88,9 @@ export function processCodeTabs(tree: Node): void {
         codeTabsChildren.push(preElement);
 
         // Check if this tab should be the default active one
-        if (getMetaParameter(codeElement.data?.meta, 'active') === 'true') {
+        if (
+          getMetaParameter(codeElement.data as Metadata, 'active') === 'true'
+        ) {
           defaultTab = String(codeTabsChildren.length - 1);
         }
 
@@ -155,7 +159,7 @@ export function processCodeHighlighting(tree: Node): void {
 
     // Add copy button if specified
     const showCopyButton = getMetaParameter(
-      codeElement.data?.meta,
+      codeElement.data as Metadata,
       'showCopyButton'
     );
     if (showCopyButton === 'true' || showCopyButton === 'false') {
