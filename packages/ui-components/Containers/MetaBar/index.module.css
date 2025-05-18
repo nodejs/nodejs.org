@@ -2,6 +2,7 @@
 
 .wrapper {
   @apply flex
+    h-screen
     w-full
     flex-col
     items-start
@@ -13,8 +14,9 @@
     pb-12
     [overflow-wrap:anywhere]
     lg:sticky
+    lg:bottom-0
     lg:top-16
-    lg:max-h-[calc(100vh-4rem)]
+    lg:overflow-y-auto
     lg:px-6
     dark:border-neutral-900;
 
