@@ -1,0 +1,18 @@
+{
+  "name": "@node-core/rehype-shiki",
+  "type": "module",
+  "main": "./src/index.mjs",
+  "module": "./src/index.mjs",
+  "scripts": {
+    "lint:js": "eslint \"**/*.mjs\"",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@shikijs/core": "^3.3.0",
+    "@shikijs/engine-javascript": "^3.3.0",
+    "classnames": "~2.5.1",
+    "hast-util-to-string": "^3.0.1",
+    "shiki": "~3.3.0",
+    "unist-util-visit": "^5.0.0"
+  }
+}

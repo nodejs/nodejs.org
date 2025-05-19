@@ -1,0 +1,12 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "lint:js": {
+      "inputs": ["src/**/*.js"]
+    },
+    "test": {
+      "inputs": ["src/**/*.js"]
+    }
+  }
+}
