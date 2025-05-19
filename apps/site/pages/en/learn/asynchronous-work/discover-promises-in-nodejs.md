@@ -367,7 +367,7 @@ console.log('Synchronous task executed');
 
 ### `setImmediate()`
 
-`setImmediate()` is used to execute a callback immediately after all of the current loop's I/O callbacks have completed.
+`setImmediate()` is used to execute a callback after all of the current loop's I/O callbacks have completed.
 
 ```js
 setImmediate(() => {
