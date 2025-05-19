@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { it, describe } from 'node:test';
 
-import { getLanguageDisplayName, LANGUAGES } from '../languages.js';
+import { getLanguageDisplayName, LANGUAGES } from '../languages.mjs';
 
 LANGUAGES.splice(
   0,

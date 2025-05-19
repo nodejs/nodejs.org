@@ -1,5 +1,4 @@
 import baseConfig from '../../eslint.config.js';
-import importX from 'eslint-plugin-import-x';
 
 export default [
   ...baseConfig,
@@ -10,6 +9,9 @@ export default [
         ecmaVersion: 2020,
       },
     },
+    rules: {
+      // Shiki's export isn't named, it's a re-export
+      'import-x/named': 'off',
+    },
   },
-  importX.flatConfigs.typescript,
 ];

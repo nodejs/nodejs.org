@@ -3,10 +3,10 @@
   "extends": ["//"],
   "tasks": {
     "lint:js": {
-      "inputs": ["src/**/*.js"]
+      "inputs": ["src/**/*.mjs"]
     },
     "test": {
-      "inputs": ["src/**/*.js"]
+      "inputs": ["src/**/*.mjs"]
     }
   }
 }
