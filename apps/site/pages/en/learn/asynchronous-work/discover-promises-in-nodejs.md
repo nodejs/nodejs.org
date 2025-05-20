@@ -159,13 +159,13 @@ Node.js provides **Promise-based versions** of many of its core APIs, especially
 For example, the `fs` (file system) module has a Promise-based API under `fs.promises`:
 
 ```js
-const fs = require('node:fs').promises;
+const fs = require('node:fs');
 // Or, you can import the promisified version directly:
 // const fs = require('node:fs/promises');
 
 async function readFile() {
   try {
-    const data = await fs.readFile('example.txt', 'utf8');
+    const data = await fs.promises.readFile('example.txt', 'utf8');
     console.log(data);
   } catch (err) {
     console.error('Error reading file:', err);
