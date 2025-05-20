@@ -3,9 +3,9 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { FC } from 'react';
 
-import Button from '@/components/Common/Button';
-import BaseLayout from '@/layouts/Base';
-import GlowingBackdropLayout from '@/layouts/GlowingBackdrop';
+import Button from '#site/components/Common/Button';
+import BaseLayout from '#site/layouts/Base';
+import GlowingBackdropLayout from '#site/layouts/GlowingBackdrop';
 
 const GlobalErrorPage: FC<{ error: Error }> = () => (
   <html>

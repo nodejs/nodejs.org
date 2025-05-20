@@ -6,8 +6,8 @@ import classNames from 'classnames';
 import { useEffect, useId, useMemo, useState } from 'react';
 import type { ReactElement, ReactNode } from 'react';
 
-import Skeleton from '@node-core/ui-components/Common/Skeleton';
-import type { FormattedMessage } from '@node-core/ui-components/types';
+import Skeleton from '#ui/Common/Skeleton';
+import type { FormattedMessage } from '#ui/types';
 
 import styles from './index.module.css';
 

@@ -5,10 +5,14 @@ import { useTranslations } from 'next-intl';
 import { useContext, useEffect, useMemo } from 'react';
 import type { FC } from 'react';
 
-import { useClientContext } from '@/hooks';
-import { ReleaseContext } from '@/providers/releaseProvider';
-import type { UserOS } from '@/types/userOS';
-import { nextItem, OPERATING_SYSTEMS, parseCompat } from '@/util/downloadUtils';
+import { useClientContext } from '#site/hooks';
+import { ReleaseContext } from '#site/providers/releaseProvider';
+import type { UserOS } from '#site/types/userOS';
+import {
+  nextItem,
+  OPERATING_SYSTEMS,
+  parseCompat,
+} from '#site/util/downloadUtils';
 
 type OperatingSystemDropdownProps = { exclude?: Array<UserOS> };
 

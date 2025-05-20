@@ -2,9 +2,9 @@
 
 import type { FC } from 'react';
 
-import Link from '@/components/Link';
-import type { UserOS } from '@/types/userOS';
-import { OperatingSystemLabel } from '@/util/downloadUtils';
+import Link from '#site/components/Link';
+import type { UserOS } from '#site/types/userOS';
+import { OperatingSystemLabel } from '#site/util/downloadUtils';
 
 type DownloadTable = {
   file: string;

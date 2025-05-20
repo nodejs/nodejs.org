@@ -5,14 +5,14 @@ import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
 import { useFormatter, useLocale, useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import Link from '@/components/Link';
-import WithAvatarGroup from '@/components/withAvatarGroup';
-import { useClientContext } from '@/hooks/react-client';
-import useMediaQuery from '@/hooks/react-client/useMediaQuery';
-import { DEFAULT_DATE_FORMAT } from '@/next.calendar.constants.mjs';
-import { TRANSLATION_URL } from '@/next.constants.mjs';
-import { defaultLocale } from '@/next.locales.mjs';
-import { getGitHubBlobUrl } from '@/util/gitHubUtils';
+import Link from '#site/components/Link';
+import WithAvatarGroup from '#site/components/withAvatarGroup';
+import { useClientContext } from '#site/hooks/react-client';
+import useMediaQuery from '#site/hooks/react-client/useMediaQuery';
+import { DEFAULT_DATE_FORMAT } from '#site/next.calendar.constants.mjs';
+import { TRANSLATION_URL } from '#site/next.constants.mjs';
+import { defaultLocale } from '#site/next.locales.mjs';
+import { getGitHubBlobUrl } from '#site/util/gitHubUtils';
 
 const WithMetaBar: FC = () => {
   const { headings, readingTime, frontmatter, filename } = useClientContext();

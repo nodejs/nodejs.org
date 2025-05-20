@@ -1,5 +1,5 @@
-import provideDownloadSnippets from '@/next-data/providers/downloadSnippets';
-import { defaultLocale } from '@/next.locales.mjs';
+import provideDownloadSnippets from '#site/next-data/providers/downloadSnippets';
+import { defaultLocale } from '#site/next.locales.mjs';
 
 type DynamicStaticPaths = { locale: string };
 type StaticParams = { params: Promise<DynamicStaticPaths> };

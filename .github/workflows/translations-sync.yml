@@ -26,7 +26,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
+        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
         with:
           egress-policy: audit
 
@@ -67,7 +67,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
+        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
         with:
           egress-policy: audit
 
@@ -89,35 +89,38 @@ jobs:
           # as they will only run on files that have changed since the last cached run
           # this might of course lead to certain files not being checked against the linter, but the chances
           # of such situation from happening are very slim as the checksums of both files would need to match
-          key: cache-lint-${{ hashFiles('package-lock.json') }}-
+          key: cache-lint-${{ hashFiles('pnpm-lock.yaml') }}-${{ hashFiles('apps/site/.eslintmdcache') }}
           restore-keys: |
-            cache-lint-${{ hashFiles('package-lock.json') }}-
+            cache-lint-${{ hashFiles('pnpm-lock.yaml') }}-
             cache-lint-
 
+      - name: Set up pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+        with:
+          cache: true
+
       - name: Set up Node.js
-        uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.3.0
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
-          cache: 'npm'
+          cache: 'pnpm'
 
-      - name: Install npm packages
-        # We want to avoid npm from running the Audit Step and Funding messages on a CI environment
-        # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
-        run: npm i --no-audit --no-fund --ignore-scripts --userconfig=/dev/null
+      - name: Install packages
+        run: pnpm install --frozen-lockfile
 
-      - name: Run `npx lint:md --fix`
+      - name: Run `lint:md --fix`
         # This runs a specific version of ESLint with only the Translation Pages Globbing
         # This avoid that unrelated changes get linted/modified within this PR
-        run: npx eslint "apps/site/pages/**/*.md?(x)" --fix --cache --cache-strategy=metadata --cache-file=apps/site/.eslintmdcache --config=apps/site/eslint.config.js
+        run: pnpm exec eslint "apps/site/pages/**/*.md?(x)" --fix --cache --cache-strategy=metadata --cache-file=apps/site/.eslintmdcache --config=apps/site/eslint.config.js
 
-      - name: Run `npx prettier --write`
+      - name: Run `prettier --write`
         # This runs a specific version of Prettier with only the Translation Pages Globbing
         # This avoid that unrelated changes get prettied/modified within this PR
-        run: npx prettier "apps/site/{pages,i18n}/**/*.{json,md,mdx}" --check --write --cache --cache-strategy=metadata --cache-location=apps/site/.prettiercache
+        run: pnpm exec prettier "apps/site/{pages,i18n}/**/*.{json,md,mdx}" --check --write --cache --cache-strategy=metadata --cache-location=apps/site/.prettiercache
 
       - name: Push Changes back to Pull Request
-        uses: stefanzweifel/git-auto-commit-action@e348103e9026cc0eee72ae06630dbe30c8bf7a79 # v5.1.0
+        uses: stefanzweifel/git-auto-commit-action@b863ae1933cb653a53c021fe36dbb774e1fb9403 # v5.2.0
         with:
           commit_options: '--no-verify --signoff'
           commit_message: 'chore: automated format of translated files'
@@ -129,4 +132,4 @@ jobs:
           path: |
             apps/site/.eslintmdcache
             apps/site/.prettiercache
-          key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('apps/site/.eslintmdcache') }}
+          key: cache-lint-${{ hashFiles('pnpm-lock.yaml') }}-${{ hashFiles('apps/site/.eslintmdcache') }}

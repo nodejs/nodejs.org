@@ -1,10 +1,10 @@
-import JsGreen from '@node-core/ui-components/Icons/Logos/JsGreen';
-import JsWhite from '@node-core/ui-components/Icons/Logos/JsWhite';
-import Nodejs from '@node-core/ui-components/Icons/Logos/Nodejs';
-import NodejsStackedBlack from '@node-core/ui-components/Icons/Logos/NodejsStackedBlack';
-import NodejsStackedDark from '@node-core/ui-components/Icons/Logos/NodejsStackedDark';
-import NodejsStackedLight from '@node-core/ui-components/Icons/Logos/NodejsStackedLight';
-import NodejsStackedWhite from '@node-core/ui-components/Icons/Logos/NodejsStackedWhite';
+import JsGreen from '#ui/Icons/Logos/JsGreen';
+import JsWhite from '#ui/Icons/Logos/JsWhite';
+import Nodejs from '#ui/Icons/Logos/Nodejs';
+import NodejsStackedBlack from '#ui/Icons/Logos/NodejsStackedBlack';
+import NodejsStackedDark from '#ui/Icons/Logos/NodejsStackedDark';
+import NodejsStackedLight from '#ui/Icons/Logos/NodejsStackedLight';
+import NodejsStackedWhite from '#ui/Icons/Logos/NodejsStackedWhite';
 
 export {
   JsGreen,

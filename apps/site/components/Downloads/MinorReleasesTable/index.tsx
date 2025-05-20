@@ -4,10 +4,10 @@ import Separator from '@node-core/ui-components/Common/Separator';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import Link from '@/components/Link';
-import { BASE_CHANGELOG_URL } from '@/next.constants.mjs';
-import type { MinorVersion } from '@/types';
-import { getNodeApiLink } from '@/util/getNodeApiLink';
+import Link from '#site/components/Link';
+import { BASE_CHANGELOG_URL } from '#site/next.constants.mjs';
+import type { MinorVersion } from '#site/types';
+import { getNodeApiLink } from '#site/util/getNodeApiLink';
 
 import styles from './index.module.css';
 

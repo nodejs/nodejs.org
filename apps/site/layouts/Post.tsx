@@ -1,14 +1,14 @@
 import Preview from '@node-core/ui-components/Common/Preview';
 import type { FC, PropsWithChildren } from 'react';
 
-import WithAvatarGroup from '@/components/withAvatarGroup';
-import WithBlogCrossLinks from '@/components/withBlogCrossLinks';
-import WithFooter from '@/components/withFooter';
-import WithMetaBar from '@/components/withMetaBar';
-import WithNavBar from '@/components/withNavBar';
-import { useClientContext } from '@/hooks/react-server';
-import { mapAuthorToCardAuthors } from '@/util/authorUtils';
-import { mapBlogCategoryToPreviewType } from '@/util/blogUtils';
+import WithAvatarGroup from '#site/components/withAvatarGroup';
+import WithBlogCrossLinks from '#site/components/withBlogCrossLinks';
+import WithFooter from '#site/components/withFooter';
+import WithMetaBar from '#site/components/withMetaBar';
+import WithNavBar from '#site/components/withNavBar';
+import { useClientContext } from '#site/hooks/react-server';
+import { mapAuthorToCardAuthors } from '#site/util/authorUtils';
+import { mapBlogCategoryToPreviewType } from '#site/util/blogUtils';
 
 import styles from './layouts.module.css';
 

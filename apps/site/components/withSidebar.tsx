@@ -6,10 +6,10 @@ import { useLocale, useTranslations } from 'next-intl';
 import type { RichTranslationValues } from 'next-intl';
 import type { FC } from 'react';
 
-import Link from '@/components/Link';
-import { useSiteNavigation } from '@/hooks/server';
-import { useRouter } from '@/navigation.mjs';
-import type { NavigationKeys } from '@/types';
+import Link from '#site/components/Link';
+import { useSiteNavigation } from '#site/hooks/server';
+import { useRouter } from '#site/navigation.mjs';
+import type { NavigationKeys } from '#site/types';
 
 type WithSidebarProps = {
   navKeys: Array<NavigationKeys>;

@@ -1,9 +1,9 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import WithMetaBar from '@/components/withMetaBar';
-import WithNavBar from '@/components/withNavBar';
-import WithSidebar from '@/components/withSidebar';
-import ArticleLayout from '@/layouts/Article';
+import WithMetaBar from '#site/components/withMetaBar';
+import WithNavBar from '#site/components/withNavBar';
+import WithSidebar from '#site/components/withSidebar';
+import ArticleLayout from '#site/layouts/Article';
 
 const ArticlePageLayout: FC<PropsWithChildren> = ({ children }) => (
   <>

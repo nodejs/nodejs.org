@@ -1,23 +1,17 @@
 import {
   ENABLE_STATIC_EXPORT,
-  IS_DEV_ENV,
   NEXT_DATA_URL,
-  VERCEL_ENV,
-  VERCEL_REGION,
-} from '@/next.constants.mjs';
-import type { NodeRelease } from '@/types';
+  IS_NOT_VERCEL_RUNTIME_ENV,
+} from '#site/next.constants.mjs';
+import type { NodeRelease } from '#site/types';
 
 const getReleaseData = (): Promise<Array<NodeRelease>> => {
-  const IS_NOT_VERCEL_RUNTIME_ENV =
-    (!IS_DEV_ENV && VERCEL_ENV && !VERCEL_REGION) ||
-    (!IS_DEV_ENV && !VERCEL_ENV);
-
   // When we're using Static Exports the Next.js Server is not running (during build-time)
   // hence the self-ingestion APIs will not be available. In this case we want to load
   // the data directly within the current thread, which will anyways be loaded only once
   // We use lazy-imports to prevent `provideBlogData` from executing on import
   if (ENABLE_STATIC_EXPORT || IS_NOT_VERCEL_RUNTIME_ENV) {
-    return import('@/next-data/providers/releaseData').then(
+    return import('#site/next-data/providers/releaseData').then(
       ({ default: provideReleaseData }) => provideReleaseData()
     );
   }

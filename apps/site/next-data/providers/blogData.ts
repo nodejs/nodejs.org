@@ -1,16 +1,19 @@
 import { cache } from 'react';
 
-import generateBlogData from '@/next-data/generators/blogData.mjs';
-import { BLOG_POSTS_PER_PAGE } from '@/next.constants.mjs';
-import type { BlogCategory, BlogPostsRSC } from '@/types';
+import { BLOG_POSTS_PER_PAGE } from '#site/next.constants.mjs';
+import { blogData } from '#site/next.json.mjs';
+import type { BlogCategory, BlogPostsRSC } from '#site/types';
 
-const { categories, posts } = await generateBlogData();
-
-export const provideBlogCategories = cache(() => categories);
+const blogPosts = cache(() =>
+  blogData.posts.map(post => ({
+    ...post,
+    date: new Date(post.date),
+  }))
+);
 
 export const provideBlogPosts = cache(
   (category: BlogCategory): BlogPostsRSC => {
-    const categoryPosts = posts
+    const categoryPosts = blogPosts()
       .filter(post => post.categories.includes(category))
       .sort((a, b) => b.date.getTime() - a.date.getTime());
 

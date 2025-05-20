@@ -4,7 +4,6 @@ import * as mdx from 'eslint-plugin-mdx';
 import react from 'eslint-plugin-react';
 import tseslint from 'typescript-eslint';
 
-// eslint-disable-next-line no-relative-import-paths/no-relative-import-paths
 import baseConfig from '../../eslint.config.js';
 
 const compat = new FlatCompat();
@@ -21,6 +20,7 @@ const compatConfig = compat.config({
 
 export default tseslint.config(
   ...baseConfig,
+  { ignores: ['pages/en/blog/**/*.{md,mdx}/**'] },
   {
     extends: [
       react.configs.flat['jsx-runtime'],
@@ -40,7 +40,8 @@ export default tseslint.config(
   },
   {
     files: ['**/*.{md,mdx}'],
-    extends: [mdx.configs.flat],
+    extends: [mdx.flat],
+    processor: mdx.createRemarkProcessor({ lintCodeBlocks: true }),
     rules: {
       'no-irregular-whitespace': 'off',
       '@next/next/no-img-element': 'off',
@@ -79,10 +80,5 @@ export default tseslint.config(
       ],
     },
   },
-  {
-    files: ['**/*.mjs', '**/*.test.*'],
-    rules: {
-      'no-relative-import-paths/no-relative-import-paths': 'off',
-    },
-  }
+  mdx.flatCodeBlocks
 );

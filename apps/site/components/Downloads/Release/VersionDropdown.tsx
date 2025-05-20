@@ -5,7 +5,10 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useContext } from 'react';
 
-import { ReleaseContext, ReleasesContext } from '@/providers/releaseProvider';
+import {
+  ReleaseContext,
+  ReleasesContext,
+} from '#site/providers/releaseProvider';
 
 const getDropDownStatus = (version: string, status: string) => {
   if (status === 'LTS') {

@@ -2,7 +2,7 @@
 
 import type { FC, SVGProps } from 'react';
 
-import NavItem from '@node-core/ui-components/Containers/NavBar/NavItem';
+import NavItem from '#ui/Containers/NavBar/NavItem';
 import {
   Bluesky,
   Discord,
@@ -11,8 +11,8 @@ import {
   Mastodon,
   Slack,
   X,
-} from '@node-core/ui-components/Icons/Social';
-import type { LinkLike } from '@node-core/ui-components/types';
+} from '#ui/Icons/Social';
+import type { LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 

@@ -16,6 +16,7 @@ on:
     types:
       - labeled
   merge_group:
+  workflow_dispatch:
 
 defaults:
   run:
@@ -26,15 +27,18 @@ permissions:
   contents: read
   actions: read
 
+env:
+  # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
+  TURBO_ARGS: --cache-dir=.turbo/cache
+  # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
+  TURBO_FORCE: true
+
 jobs:
   build:
-    # This Job should run either on `merge_groups` or `push` events
+    # This Job should run either on non-`pull_request_target` events,
     # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
-    # since we want to run Website Builds on all these 3 occasions. As this allows us to be certain the that builds are passing
-    if: |
-      (github.event_name == 'push' || github.event_name == 'merge_group') ||
-      (github.event_name == 'pull_request_target' &&
-        github.event.label.name == 'github_actions:pull-request')
+    # since we want to run Website Builds on all these occasions. As this allows us to be certain the that builds are passing
+    if: github.event_name != 'pull_request_target' || github.event.label.name == 'github_actions:pull-request'
 
     name: Build on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
@@ -46,17 +50,9 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
+        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
         with:
           egress-policy: audit
-
-      - name: Provide Turborepo Arguments
-        # This step is responsible for providing a reusable string that can be used within other steps and jobs
-        # that use the `turbo` cli command as a way of easily providing shared arguments to the `turbo` command
-        id: turborepo_arguments
-        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
-        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-        run: echo "turbo_args=--force=true --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
 
       - name: Use GNU tar instead BSD tar
         # This ensures that we use GNU `tar` which is more efficient for extracting caches's
@@ -78,34 +74,29 @@ jobs:
 
       - uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         with:
-          # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
-          path: |
-            ~/.npm
-            ${{ github.workspace }}/apps/site/.next/cache
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+          path: ${{ github.workspace }}/apps/site/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          restore-keys: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+        with:
+          cache: true
 
       - name: Set up Node.js
-        uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.3.0
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
-          cache: 'npm'
+          cache: 'pnpm'
 
-      - name: Install npm packages
-        # We want to avoid npm from running the Audit Step and Funding messages on a CI environment
-        # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
-        # We also use `--omit=dev` to avoid installing devDependencies as we don't need them during the build step
-        run: npm i --no-audit --no-fund --userconfig=/dev/null --omit=dev
+      - name: Install packages
+        # We only want to install required production packages
+        run: pnpm install --prod --frozen-lockfile
 
       - name: Build Next.js (ISR)
         # We want a ISR build on CI to ensure that regular Next.js builds work as expected.
-        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
-        # the `${{ steps.turborepo_arguments.outputs.turbo_args }}` is a string substitution coming from a previous step
-        run: npx --package=turbo@latest -- turbo build ${{ steps.turborepo_arguments.outputs.turbo_args }}
+        run: pnpm exec turbo build ${{ env.TURBO_ARGS }}
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
           # this should be a last resort in case by any chances the build memory gets too high
@@ -118,9 +109,7 @@ jobs:
         # We only run full static builds within Pull Requests. This step is also used to export
         # static output in all languages, and it only works on `push` events.
         if: github.event_name == 'push'
-        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
-        # the `${{ steps.turborepo_arguments.outputs.turbo_args }}` is a string substitution coming from a previous step
-        run: npx --package=turbo@latest -- turbo deploy ${{ steps.turborepo_arguments.outputs.turbo_args }}
+        run: pnpm exec turbo deploy ${{ env.TURBO_ARGS }}
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
           # this should be a last resort in case by any chances the build memory gets too high
@@ -139,9 +128,7 @@ jobs:
         if: |
           (github.event_name == 'pull_request_target' &&
             github.event.pull_request.head.ref != 'chore/crowdin')
-        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
-        # the `${{ steps.turborepo_arguments.outputs.turbo_args }}` is a string substitution coming from a previous step
-        run: npx --package=turbo@latest -- turbo deploy ${{ steps.turborepo_arguments.outputs.turbo_args }}
+        run: pnpm exec turbo deploy ${{ env.TURBO_ARGS }}
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
           # this should be a last resort in case by any chances the build memory gets too high
@@ -154,14 +141,12 @@ jobs:
 
       - name: Sync Orama Cloud
         # We only want to sync the Orama Cloud production indexes on `push` events.
-        # We also want to sync the Orama Cloud preview (deployment) indexes on `pull_request_target` events.
+        # We also want to sync the Orama Cloud preview (deployment) indexes on `pull_request_target` events (or manual triggers).
         # We also want to ensure that the sync only happens on the `ubuntu-latest` runner to avoid duplicate syncs
         # or Windows-based path issues.
         env:
           ORAMA_INDEX_ID: ${{ github.event_name == 'push' && secrets.ORAMA_PRODUCTION_INDEX_ID || secrets.ORAMA_INDEX_ID }}
           ORAMA_SECRET_KEY: ${{ github.event_name == 'push' && secrets.ORAMA_PRODUCTION_SECRET_KEY || secrets.ORAMA_SECRET_KEY }}
-        if: |
-          (matrix.os == 'ubuntu-latest') &&
-          ((github.event_name == 'push') || (github.event_name == 'pull_request_target'))
-        run: |
-          cd apps/site && npm run sync-orama
+        if: matrix.os == 'ubuntu-latest' && github.event_name != 'merge_group'
+        working-directory: apps/site
+        run: pnpm sync-orama

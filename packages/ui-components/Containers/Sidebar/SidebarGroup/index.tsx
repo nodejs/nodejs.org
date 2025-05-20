@@ -1,10 +1,7 @@
 import type { ComponentProps, FC } from 'react';
 
-import SidebarItem from '@node-core/ui-components/Containers/Sidebar/SidebarItem';
-import type {
-  FormattedMessage,
-  LinkLike,
-} from '@node-core/ui-components/types';
+import SidebarItem from '#ui/Containers/Sidebar/SidebarItem';
+import type { FormattedMessage, LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 

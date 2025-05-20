@@ -7,6 +7,7 @@ Thank you for your interest in contributing to the Node.js Website. Before you p
   - [Becoming a collaborator](#becoming-a-collaborator)
 - [Getting started](#getting-started)
   - [CLI Commands](#cli-commands)
+- [Cloudflare Deployment](#cloudflare-deployment)
 - [Commit Guidelines](#commit-guidelines)
 - [Pull Request Policy](#pull-request-policy)
 - [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin-11)
@@ -91,8 +92,8 @@ for getting things done and landing your contribution.
 6. Run the following to install the dependencies and start a local preview of your work.
 
    ```bash
-   npm ci # installs this project's dependencies
-   npm run dev # starts a development environment
+   pnpm install --frozen-lockfile # installs this project's dependencies
+   pnpm dev # starts a development environment
    ```
 
 7. Perform your changes. In case you're unfamiliar with the structure of this repository, we recommend a read on the [Collaborator Guide](./COLLABORATOR_GUIDE.md)
@@ -104,10 +105,10 @@ for getting things done and landing your contribution.
    git merge upstream/main
    ```
 
-9. Run `npm run format` to confirm that linting and formatting are passing.
+9. Run `pnpm format` to confirm that linting and formatting are passing.
 
    ```bash
-   npm run format
+   pnpm format
    ```
 
 10. Once you're happy with your changes, add and commit them to your branch, then push the branch to your fork.
@@ -138,31 +139,68 @@ This repository contains several scripts and commands for performing numerous ta
 <details>
   <summary>Commands for Running & Building the Website</summary>
 
-- `npm run dev` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
-- `npm run build` builds the Application on Production mode. The output is by default within `.next` folder.
+- `pnpm dev` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
+- `pnpm build` builds the Application on Production mode. The output is by default within `.next` folder.
   - This is used for the Node.js Vercel Deployments (Preview & Production)
-- `npx turbo deploy` builds the Application on Export Production Mode. The output is by default within `build` folder.
+- `pnpm deploy` builds the Application on Export Production Mode. The output is by default within `build` folder.
   - This is used for the Node.js Legacy Website Server (DigitalOcean)
-- `npx turbo start` starts a web server running serving the built content from `npm run build`
+- `pnpm start` starts a web server running serving the built content from `pnpm build`
 
 </details>
 
 <details>
   <summary>Commands for Maintenance Tasks and Tests</summary>
 
-- `npm run lint` runs the linter for all files.
-  - `npm run lint:fix` attempts to fix any linting errors
-- `npm run prettier` runs the prettier for all the js files.
-  - `npm run prettier:fix` attempts to fix any style errors
-- `npx turbo format` formats and fixes lints for the whole codebase
-- `npm run scripts:release-post` in the `apps/site` directory generates a release post for the current release
-  - **Usage:** `npm run scripts:release-post -- --version=vXX.X.X --force`
-- `npx turbo storybook` starts Storybook's local server
-- `npx turbo storybook:build` builds Storybook as a static web application for publishing
-- `npm run test` runs all tests locally
-  - `npx turbo test:unit` runs unit-tests locally
+- `pnpm lint` runs the linter for all files.
+  - `pnpm lint:fix` attempts to fix any linting errors
+- `pnpm prettier` runs the prettier for all the js files.
+  - `pnpm prettier:fix` attempts to fix any style errors
+- `pnpm format` formats and fixes lints for the whole codebase
+- `pnpm scripts:release-post` generates a release post for the current release
+  - **Usage:** `pnpm scripts:release-post -- --version=vXX.X.X --force`
+- `pnpm storybook` starts Storybook's local server
+- `pnpm storybook:build` builds Storybook as a static web application for publishing
+- `pnpm test` runs all tests locally
+  - `pnpm test:unit` runs unit-tests locally
+  - `pnpm test:ci` runs tests, and outputs data to be parsed by a CI environment
 
 </details>
+
+## Cloudflare Deployment
+
+The Node.js Website can be deployed to the [Cloudflare](https://www.cloudflare.com) network using [Cloudflare Workers](https://www.cloudflare.com/en-gb/developer-platform/products/workers/) and the [OpenNext Cloudflare adapter](https://opennext.js.org/cloudflare). This section provides the necessary details for testing and deploying the website on Cloudflare.
+
+### Scripts
+
+Preview and deployment of the website targeting the Cloudflare network is implemented via the following two commands:
+
+- `pnpm cloudflare:preview` builds the website using the OpenNext Cloudflare adapter and runs the website locally in a server simulating the Cloudflare hosting (using the [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/))
+- `pnpm cloudflare:deploy` builds the website using the OpenNext Cloudflare adapter and deploys the website to the Cloudflare network (using the [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/))
+
+### Configurations
+
+There are two key configuration files related to Cloudflare deployment.
+
+#### Wrangler Configuration
+
+This file defines the settings for the Cloudflare Worker, which serves the website.
+
+For more details, refer to the [Wrangler documentation](https://developers.cloudflare.com/workers/wrangler/configuration/).
+
+Key configurations include:
+
+- `main`: Points to the worker generated by the OpenNext adapter.
+- `account_id`: Specifies the Cloudflare account ID. This is not required for local previews but is necessary for deployments. You can obtain an account ID for free by signing up at [dash.cloudflare.com](https://dash.cloudflare.com/login).
+- `build`: Defines the build command to generate Node.js filesystem polyfills required for the application to run on Cloudflare Workers. This uses the [`@flarelabs/wrangler-build-time-fs-assets-polyfilling`](https://github.com/flarelabs-net/wrangler-build-time-fs-assets-polyfilling) package.
+- `alias`: Maps aliases for the Node.js filesystem polyfills generated during the build process.
+- `kv_namespaces`: Contains a single KV binding definition for `NEXT_CACHE_WORKERS_KV`. This is used to implement the Next.js incremental cache. For deployments, you can create a new KV namespace in the Cloudflare dashboard and update the binding ID accordingly.
+
+#### OpenNext Configuration
+
+This is the configuration for the OpenNext Cloudflare adapter, for more details on such configuration please refer to the [official OpenNext documentation](https://opennext.js.org/cloudflare/get-started#4-add-an-open-nextconfigts-file).
+
+The configuration present here is very standard and simply sets up incremental cache via the KV binding
+defined in the wrangler configuration file.
 
 ## Commit Guidelines
 
@@ -179,9 +217,6 @@ Commits should be signed. You can read more about [Commit Signing][] here.
 ### Pre-commit Hooks
 
 This project uses [Husky][] for Git pre-commit hooks.
-
-- Some JSON files are generated during Build time with empty files as placeholders. Build time happens when you run `npx turbo serve` or `npx turbo build`.
-- We don't want to commit those unnecessary changes. Since these files exist in the repository, `.gitignore` won't work for them. As a workaround, we have a pre-commit hook to discard those changes.
 
 ## Pull Request Policy
 

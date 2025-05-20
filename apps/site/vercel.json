@@ -1,4 +1,0 @@
-{
-  "buildCommand": "turbo build",
-  "installCommand": "npm install --omit=dev --include-workspace-root"
-}

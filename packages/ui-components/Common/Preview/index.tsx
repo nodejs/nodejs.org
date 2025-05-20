@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import type { FC } from 'react';
 
-import HexagonGrid from '@node-core/ui-components/Icons/HexagonGrid';
-import JsWhiteIcon from '@node-core/ui-components/Icons/Logos/JsWhite';
-import type { BlogPreviewType } from '@node-core/ui-components/types';
+import HexagonGrid from '#ui/Icons/HexagonGrid';
+import JsWhiteIcon from '#ui/Icons/Logos/JsWhite';
+import type { BlogPreviewType } from '#ui/types';
 
 import styles from './index.module.css';
 

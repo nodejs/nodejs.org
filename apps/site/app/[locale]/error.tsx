@@ -4,8 +4,8 @@ import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import Button from '@/components/Common/Button';
-import GlowingBackdropLayout from '@/layouts/GlowingBackdrop';
+import Button from '#site/components/Common/Button';
+import GlowingBackdropLayout from '#site/layouts/GlowingBackdrop';
 
 const ErrorPage: FC<{ error: Error }> = () => {
   const t = useTranslations();

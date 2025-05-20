@@ -16,6 +16,7 @@ on:
       - main
     types:
       - labeled
+  workflow_dispatch:
 
 defaults:
   run:
@@ -26,21 +27,15 @@ permissions:
   contents: read
   actions: read
 
-env:
-  # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-  TURBO_FORCE: true
-
 jobs:
   chromatic:
     # We only need to run Storybook Builds and Storybook Visual Regression Tests within Pull Requests that actually
     # introduce changes to the Storybook. Hence, we skip running these on Crowdin PRs and Dependabot PRs
-    # sha reference has no stable git tag reference or URL. see https://github.com/chromaui/chromatic-cli/issues/797
     if: |
-      github.event_name == 'push' || github.event_name == 'merge_group' ||
+      github.event_name != 'pull_request_target' ||
       (
-        github.event_name == 'pull_request_target' &&
         github.event.label.name == 'github_actions:pull-request' &&
-        startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
+        github.actor != 'dependabot[bot]' &&
         github.event.pull_request.head.ref != 'chore/crowdin'
       )
 
@@ -53,7 +48,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481 # v2.11.0
+        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
         with:
           egress-policy: audit
 
@@ -66,22 +61,27 @@ jobs:
           # previous changes and previous commits and determine which Storybooks should be tested against and what should be built
           fetch-depth: 0
 
+      - name: Set up pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+        with:
+          cache: true
+
       - name: Set up Node.js
-        uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e # v4.3.0
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
-          cache: 'npm'
+          cache: 'pnpm'
 
-      - name: Install npm packages
-        # We want to avoid npm from running the Audit Step and Funding messages on a CI environment
-        # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
-        run: npm i --no-audit --no-fund --userconfig=/dev/null
+      - name: Install packages
+        run: pnpm install --frozen-lockfile
 
       - name: Start Visual Regression Tests (Chromatic)
         # This assigns the Environment Deployment for Storybook
+        # This action must be manually updated to the latest commit from
+        # https://github.com/chromaui/action
         id: chromatic-deploy
-        uses: chromaui/action@c93e0bc3a63aa176e14a75b61a31847cbfdd341c
+        uses: chromaui/action@e8cc4c31775280b175a3c440076c00d19a9014d7 # v11.28.2
         with:
           workingDir: packages/ui-components
           buildScriptName: storybook:build

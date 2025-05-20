@@ -130,7 +130,7 @@ There are some mechanisms to control this behavior by defining a blocklist with
   `.npmignore`.
   Throughout these files, you can specify which files/folders should not be published.
   The [files property][] in `package.json` allows the inverse operation
-  -- allowed list.
+  \-- allowed list.
 - In case of an exposure, make sure to [unpublish the package][].
 
 ### HTTP Request Smuggling (CWE-444)
@@ -180,6 +180,7 @@ of requests.
 
 - The crypto API exposes a function `timingSafeEqual` to compare actual and
   expected sensitive values using a constant-time algorithm.
+
 - For password comparison, you can use the [scrypt][] available also on the
   native crypto module.
 
@@ -275,7 +276,6 @@ Monkey patching refers to the modification of properties in runtime aiming to
 change the existing behavior. Example:
 
 ```js
-// eslint-disable-next-line no-extend-native
 Array.prototype.push = function (item) {
   // overriding the global [].push
 };
@@ -290,7 +290,6 @@ Therefore, the following snippet **will not** override the default behavior of
 `Array.prototype.push`
 
 ```js
-// eslint-disable-next-line no-extend-native
 Array.prototype.push = function (item) {
   // overriding the global [].push
 };

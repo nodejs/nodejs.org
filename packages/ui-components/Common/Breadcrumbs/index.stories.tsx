@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import Breadcrumbs from '@node-core/ui-components/Common/Breadcrumbs';
+import Breadcrumbs from '#ui/Common/Breadcrumbs';
 
 type Story = StoryObj<typeof Breadcrumbs>;
 type Meta = MetaObj<typeof Breadcrumbs>;
@@ -19,6 +19,25 @@ export const Default: Story = {
       {
         label: 'Introduction to Node.js',
         href: '/learn/getting-started/intro',
+      },
+    ],
+  },
+};
+
+export const Linkless: Story = {
+  args: {
+    links: [
+      {
+        label: 'Learn',
+        href: '',
+      },
+      {
+        label: 'Getting Started',
+        href: '',
+      },
+      {
+        label: 'Introduction to Node.js',
+        href: '',
       },
     ],
   },

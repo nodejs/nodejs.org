@@ -24,6 +24,18 @@ export const VERCEL_ENV = process.env.VERCEL_ENV || undefined;
 export const VERCEL_REGION = process.env.VERCEL_REGION || undefined;
 
 /**
+ * This constant determines if the current environment is NOT a Vercel runtime environment.
+ *
+ * The logic is as follows:
+ * - If we are NOT in a development environment (`!IS_DEV_ENV`) AND:
+ *   - Vercel environment variable (`VERCEL_ENV`) is defined but the Vercel region (`VERCEL_REGION`) is NOT defined, OR
+ *   - Vercel environment variable (`VERCEL_ENV`) is NOT defined at all.
+ * This helps identify cases where the application is running outside of Vercel's runtime environment.
+ */
+export const IS_NOT_VERCEL_RUNTIME_ENV =
+  !IS_DEV_ENV && ((VERCEL_ENV && !VERCEL_REGION) || !VERCEL_ENV);
+
+/**
  * This is used for telling Next.js to do a Static Export Build of the Website
  *
  * This is used for static/without a Node.js server hosting, such as on our

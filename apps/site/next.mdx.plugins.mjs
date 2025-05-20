@@ -10,8 +10,6 @@ import rehypeShikiji from './next.mdx.shiki.mjs';
 
 /**
  * Provides all our Rehype Plugins that are used within MDX
- *
- * @type {Array<import('unified').Plugin>}
  */
 export const REHYPE_PLUGINS = [
   // Generates `id` attributes for headings (H1, ...)
@@ -25,8 +23,6 @@ export const REHYPE_PLUGINS = [
 
 /**
  * Provides all our Remark Plugins that are used within MDX
- *
- * @type {Array<import('unified').Plugin>}
  */
 export const REMARK_PLUGINS = [
   // Support GFM syntax to be used within Markdown

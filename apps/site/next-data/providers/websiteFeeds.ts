@@ -1,7 +1,7 @@
 import { cache } from 'react';
 
-import generateWebsiteFeeds from '@/next-data/generators/websiteFeeds.mjs';
-import { provideBlogPosts } from '@/next-data/providers/blogData';
+import generateWebsiteFeeds from '#site/next-data/generators/websiteFeeds.mjs';
+import { provideBlogPosts } from '#site/next-data/providers/blogData';
 
 const websiteFeeds = generateWebsiteFeeds(provideBlogPosts('all'));
 

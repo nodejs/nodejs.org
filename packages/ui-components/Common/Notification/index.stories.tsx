@@ -1,7 +1,7 @@
 import { CodeBracketIcon } from '@heroicons/react/24/solid';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import Notification from '@node-core/ui-components/Common/Notification';
+import Notification from '#ui/Common/Notification';
 
 type Story = StoryObj<typeof Notification>;
 type Meta = MetaObj<typeof Notification>;

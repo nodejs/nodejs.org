@@ -1,11 +1,8 @@
 import type { FC } from 'react';
 
-import BaseActiveLink from '@node-core/ui-components/Common/BaseActiveLink';
-import ProgressionSidebarIcon from '@node-core/ui-components/Common/ProgressionSidebar/ProgressionSidebarIcon';
-import type {
-  FormattedMessage,
-  LinkLike,
-} from '@node-core/ui-components/types';
+import BaseActiveLink from '#ui/Common/BaseActiveLink';
+import ProgressionSidebarIcon from '#ui/Common/ProgressionSidebar/ProgressionSidebarIcon';
+import type { FormattedMessage, LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 

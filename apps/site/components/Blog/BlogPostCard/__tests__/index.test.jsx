@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 
 import { isVisible } from '../../../../../../tests/utilities.mjs';
 
-import BlogPostCard from '@/components/Blog/BlogPostCard';
+import BlogPostCard from '#site/components/Blog/BlogPostCard';
 
 function renderBlogPostCard({
   title = 'Blog post title',

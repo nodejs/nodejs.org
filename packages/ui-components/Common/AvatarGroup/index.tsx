@@ -1,15 +1,15 @@
 'use client';
 
 import classNames from 'classnames';
-import type { FC, ElementType } from 'react';
+import type { FC } from 'react';
 import { useState, useMemo } from 'react';
 
-import type { AvatarProps } from '@node-core/ui-components/Common/AvatarGroup/Avatar';
-import Avatar from '@node-core/ui-components/Common/AvatarGroup/Avatar';
-import avatarstyles from '@node-core/ui-components/Common/AvatarGroup/Avatar/index.module.css';
-import AvatarOverlay from '@node-core/ui-components/Common/AvatarGroup/Overlay';
-import Tooltip from '@node-core/ui-components/Common/Tooltip';
-import type { LinkLike } from '@node-core/ui-components/types';
+import type { AvatarProps } from '#ui/Common/AvatarGroup/Avatar';
+import Avatar from '#ui/Common/AvatarGroup/Avatar';
+import avatarstyles from '#ui/Common/AvatarGroup/Avatar/index.module.css';
+import AvatarOverlay from '#ui/Common/AvatarGroup/Overlay';
+import Tooltip from '#ui/Common/Tooltip';
+import type { LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 
@@ -20,7 +20,6 @@ type AvatarGroupProps = {
   size?: AvatarProps['size'];
   container?: HTMLElement;
   as?: LinkLike;
-  img?: ElementType | 'img';
 };
 
 const AvatarGroup: FC<AvatarGroupProps> = ({
@@ -30,7 +29,6 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
   size = 'small',
   container,
   as,
-  img,
 }) => {
   const [showMore, setShowMore] = useState(false);
 
@@ -54,7 +52,7 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
           key={avatar.nickname}
           asChild
           container={container}
-          content={<AvatarOverlay {...avatar} as={as} img={img} />}
+          content={<AvatarOverlay {...avatar} as={as} />}
         >
           <Avatar
             {...avatar}
@@ -64,7 +62,6 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
               'pointer-events-none': !avatar.url,
             })}
             as={as}
-            img={img}
           />
         </Tooltip>
       ))}

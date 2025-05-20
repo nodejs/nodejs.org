@@ -77,4 +77,24 @@ export const HeadingsWithLinks: StoryObj = {
   ),
 };
 
+export const BoldAndLinks: StoryObj = {
+  render: () => (
+    <main>
+      <p>
+        <strong>Bold text (should inherit normal text color)</strong>
+      </p>
+      <p>
+        <strong>
+          <a href="#">Bold green link (link inside bold)</a>
+        </strong>
+      </p>
+      <p>
+        <a href="#">
+          <strong>Bold green link (bold inside link)</strong>
+        </a>
+      </p>
+    </main>
+  ),
+};
+
 export default { title: 'Design System' } as MetaObj;

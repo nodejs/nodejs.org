@@ -40,22 +40,18 @@ main {
   h4,
   h5,
   h6 {
+    @apply font-semibold
+      text-neutral-900
+      dark:text-white;
+
     &[id] a {
       @apply text-neutral-900
         dark:text-white;
     }
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
   strong {
-    @apply font-semibold
-      text-neutral-900
-      dark:text-white;
+    @apply font-semibold;
   }
 
   code {

@@ -3,7 +3,10 @@ import assert from 'node:assert/strict';
 
 import { render } from '@testing-library/react';
 
-import { ReleaseProvider, ReleasesProvider } from '@/providers/releaseProvider';
+import {
+  ReleaseProvider,
+  ReleasesProvider,
+} from '#site/providers/releaseProvider';
 
 describe('ReleaseProvider', () => {
   it('should render without crashing', () => {

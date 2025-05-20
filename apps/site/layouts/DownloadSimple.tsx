@@ -1,15 +1,15 @@
 import { getLocale } from 'next-intl/server';
 import type { FC, PropsWithChildren } from 'react';
 
-import { getClientContext, setClientContext } from '@/client-context';
-import WithFooter from '@/components/withFooter';
-import WithMetaBar from '@/components/withMetaBar';
-import WithNavBar from '@/components/withNavBar';
-import WithProgressionSidebar from '@/components/withProgressionSidebar';
-import getReleaseData from '@/next-data/releaseData';
-import { dynamicRouter } from '@/next.dynamic.mjs';
-
 import ArticleLayout from './Article';
+
+import { getClientContext, setClientContext } from '#site/client-context';
+import WithFooter from '#site/components/withFooter';
+import WithMetaBar from '#site/components/withMetaBar';
+import WithNavBar from '#site/components/withNavBar';
+import WithProgressionSidebar from '#site/components/withProgressionSidebar';
+import getReleaseData from '#site/next-data/releaseData';
+import { dynamicRouter } from '#site/next.dynamic.mjs';
 
 const mapSidebarItems = (
   releaseData: Awaited<ReturnType<typeof getReleaseData>>

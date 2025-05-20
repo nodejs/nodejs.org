@@ -2,8 +2,8 @@
 
 import { useContext } from 'react';
 
-import { MatterContext } from '@/providers/matterProvider';
-import type { ClientSharedServerContext } from '@/types';
+import { MatterContext } from '#site/providers/matterProvider';
+import type { ClientSharedServerContext } from '#site/types';
 
 const useClientContext = (): ClientSharedServerContext => {
   const {

@@ -1,7 +1,7 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import type { ComponentProps, FC } from 'react';
 
-import Avatar from '@node-core/ui-components/Common/AvatarGroup/Avatar';
+import Avatar from '#ui/Common/AvatarGroup/Avatar';
 
 import styles from './index.module.css';
 
@@ -16,7 +16,6 @@ const AvatarOverlay: FC<AvatarOverlayProps> = ({
   fallback,
   url,
   as: Component = 'a',
-  img,
 }) => (
   <Component className={styles.overlay} href={url} target="_blank">
     <Avatar
@@ -25,7 +24,6 @@ const AvatarOverlay: FC<AvatarOverlayProps> = ({
       nickname={nickname}
       fallback={fallback}
       size="medium"
-      img={img}
     />
 
     <div className={styles.user}>

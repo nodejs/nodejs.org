@@ -3,8 +3,8 @@
 import type { FC, PropsWithChildren } from 'react';
 import { useContext } from 'react';
 
-import Link from '@/components/Link';
-import { ReleaseContext } from '@/providers/releaseProvider';
+import Link from '#site/components/Link';
+import { ReleaseContext } from '#site/providers/releaseProvider';
 
 const BlogPostLink: FC<PropsWithChildren> = ({ children }) => {
   const { release } = useContext(ReleaseContext);

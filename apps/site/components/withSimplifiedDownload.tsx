@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 
-import { getClientContext } from '@/client-context';
-import getReleaseData from '@/next-data/releaseData';
-import { getDownloadTable } from '@/util/downloadUtils';
+import { getClientContext } from '#site/client-context';
+import getReleaseData from '#site/next-data/releaseData';
+import { getDownloadTable } from '#site/util/downloadUtils';
 
 type DownloadTable = ReturnType<typeof getDownloadTable>;
 

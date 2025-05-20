@@ -13,14 +13,14 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import type { FC } from 'react';
 
-import Link from '@/components/Link';
-import WithBanner from '@/components/withBanner';
-import WithNodejsLogo from '@/components/withNodejsLogo';
-import { useSiteNavigation } from '@/hooks';
-import { useRouter, usePathname } from '@/navigation.mjs';
-import { availableLocales } from '@/next.locales.mjs';
+import Link from '#site/components/Link';
+import WithBanner from '#site/components/withBanner';
+import WithNodejsLogo from '#site/components/withNodejsLogo';
+import { useSiteNavigation } from '#site/hooks';
+import { useRouter, usePathname } from '#site/navigation.mjs';
+import { availableLocales } from '#site/next.locales.mjs';
 
-const SearchButton = dynamic(() => import('@/components/Common/Search'), {
+const SearchButton = dynamic(() => import('#site/components/Common/Search'), {
   ssr: false,
   loading: () => (
     <Skeleton className={styles.searchButtonSkeleton} loading={true} />

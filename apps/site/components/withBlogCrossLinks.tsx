@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 
-import { getClientContext } from '@/client-context';
-import CrossLink from '@/components/Common/CrossLink';
-import getBlogData from '@/next-data/blogData';
-import type { BlogCategory } from '@/types';
+import { getClientContext } from '#site/client-context';
+import CrossLink from '#site/components/Common/CrossLink';
+import getBlogData from '#site/next-data/blogData';
+import type { BlogCategory } from '#site/types';
 
 const WithBlogCrossLinks: FC = async () => {
   const { pathname } = getClientContext();

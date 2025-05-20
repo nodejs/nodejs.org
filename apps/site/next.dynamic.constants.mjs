@@ -1,13 +1,12 @@
 'use strict';
 
-import {
-  provideBlogCategories,
-  provideBlogPosts,
-} from './next-data/providers/blogData';
-import provideReleaseData from './next-data/providers/releaseData';
+import { provideBlogPosts } from './next-data/providers/blogData';
 import { BASE_PATH, BASE_URL } from './next.constants.mjs';
 import { siteConfig } from './next.json.mjs';
 import { defaultLocale } from './next.locales.mjs';
+
+import provideReleaseData from '#site/next-data/providers/releaseData';
+import { blogData } from '#site/next.json.mjs';
 
 /**
  * This is a list of all static routes or pages from the Website that we do not
@@ -37,14 +36,14 @@ export const IGNORED_ROUTES = [
  * @type {Map<string, import('./types').Layouts>} A Map of pathname and Layout Name
  */
 export const DYNAMIC_ROUTES = new Map([
-  // Provides Routes for all Blog Categories
-  ...provideBlogCategories().map(c => [`blog/${c}`, 'blog-category']),
   ...provideReleaseData().map(({ major }) => [
     `download/${major}`,
     'download-simple',
   ]),
+  // Provides Routes for all Blog Categories
+  ...blogData.categories.map(c => [`blog/${c}`, 'blog-category']),
   // Provides Routes for all Blog Categories w/ Pagination
-  ...provideBlogCategories()
+  ...blogData.categories
     // retrieves the amount of pages for each blog category
     .map(c => [c, provideBlogPosts(c).pagination.pages])
     // creates a numeric array for each page and define a pathname for

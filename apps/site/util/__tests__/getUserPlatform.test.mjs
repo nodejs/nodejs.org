@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
-import { getUserPlatform } from '@/util/getUserPlatform';
+import { getUserPlatform } from '#site/util/getUserPlatform';
 
 describe('getUserPlatform', () => {
   it('should return arm64 for arm + 64', () => {

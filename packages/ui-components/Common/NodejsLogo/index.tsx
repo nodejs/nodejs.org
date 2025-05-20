@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import NodejsIcon from '@node-core/ui-components/Icons/Logos/Nodejs';
-import type { LogoVariant } from '@node-core/ui-components/types';
+import NodejsIcon from '#ui/Icons/Logos/Nodejs';
+import type { LogoVariant } from '#ui/types';
 
 import style from './index.module.css';
 

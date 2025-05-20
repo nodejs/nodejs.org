@@ -28,21 +28,21 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2025-04-01T00:00:00.000Z",
-      "endDate": "2025-06-01T00:00:00.000Z",
-      "text": "Node.js v18 is reaching End-Of-Life on April 30, 2025.",
-      "link": "https://nodejs.org/en/about/previous-releases#release-schedule",
+      "startDate": "2025-05-14T03:00:00.000Z",
+      "endDate": "2025-05-21T03:00:00.000Z",
+      "text": "May Security Release is available",
+      "link": "https://nodejs.org/en/blog/vulnerability/may-2025-security-releases",
       "type": "warning"
     }
   },
   "websiteBadges": {
     "index": {
-      "startDate": "2025-04-01T00:00:00.000Z",
-      "endDate": "2025-07-01T00:00:00.000Z",
+      "startDate": "2025-05-06",
+      "endDate": "2025-05-31",
       "kind": "default",
-      "title": "JSConf",
-      "text": "General Admission Tickets are on sale now!",
-      "link": "https://events.linuxfoundation.org/jsconf-north-america"
+      "title": "Next-10 Survey",
+      "text": "We need your feedback to help us shape Node.js",
+      "link": "https://linuxfoundation.research.net/r/2025nodenext10"
     }
   }
 }

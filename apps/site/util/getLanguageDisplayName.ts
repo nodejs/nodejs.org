@@ -1,4 +1,4 @@
-import { LANGUAGES } from '@/shiki.config.mjs';
+import { LANGUAGES } from '#site/shiki.config.mjs';
 
 export const getLanguageDisplayName = (language: string): string => {
   const languageByIdOrAlias = LANGUAGES.find(

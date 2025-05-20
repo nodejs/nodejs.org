@@ -1,0 +1,62 @@
+# Security Notes
+# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
+# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
+# REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
+# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+
+name: Cloudflare OpenNext Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+defaults:
+  run:
+    # This ensures that the working directory is the root of the repository
+    working-directory: ./
+
+permissions:
+  contents: read
+  actions: read
+
+env:
+  # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
+  TURBO_ARGS: --cache-dir=.turbo/cache
+  # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
+  TURBO_FORCE: true
+
+jobs:
+  build-cloudflare-worker:
+    name: Build Cloudflare Worker
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        with:
+          egress-policy: audit
+
+      - name: Git Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+        with:
+          cache: true
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          # We want to ensure that the Node.js version running here respects our supported versions
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Install packages
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Cloudflare Worker
+        run: pnpm exec turbo run cloudflare:build:worker ${{ env.TURBO_ARGS }}

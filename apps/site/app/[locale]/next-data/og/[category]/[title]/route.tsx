@@ -2,9 +2,9 @@ import HexagonGrid from '@node-core/ui-components/Icons/HexagonGrid';
 import JsWhiteIcon from '@node-core/ui-components/Icons/Logos/JsWhite';
 import { ImageResponse } from 'next/og';
 
-import { DEFAULT_CATEGORY_OG_TYPE } from '@/next.constants.mjs';
-import { defaultLocale } from '@/next.locales.mjs';
-import { hexToRGBA } from '@/util/hexToRGBA';
+import { DEFAULT_CATEGORY_OG_TYPE } from '#site/next.constants.mjs';
+import { defaultLocale } from '#site/next.locales.mjs';
+import { hexToRGBA } from '#site/util/hexToRGBA';
 
 // TODO: use CSS variables instead of absolute values
 const CATEGORY_TO_THEME_COLOUR_MAP = {

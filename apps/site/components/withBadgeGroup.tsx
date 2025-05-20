@@ -1,9 +1,9 @@
 import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 import type { FC } from 'react';
 
-import Link from '@/components/Link';
-import { siteConfig } from '@/next.json.mjs';
-import { dateIsBetween } from '@/util/dateUtils';
+import Link from '#site/components/Link';
+import { siteConfig } from '#site/next.json.mjs';
+import { dateIsBetween } from '#site/util/dateUtils';
 
 const WithBadgeGroup: FC<{ section: string }> = ({ section }) => {
   const badge = siteConfig.websiteBadges[section];

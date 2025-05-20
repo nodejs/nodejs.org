@@ -5,14 +5,14 @@ import { useTranslations, useLocale } from 'next-intl';
 import { useTheme } from 'next-themes';
 import type { FC } from 'react';
 
-import { useRouter } from '@/navigation.mjs';
+import { useRouter } from '#site/navigation.mjs';
 import {
   ORAMA_CLOUD_ENDPOINT,
   ORAMA_CLOUD_API_KEY,
   DEFAULT_ORAMA_QUERY_PARAMS,
   DEFAULT_ORAMA_SUGGESTIONS,
   BASE_URL,
-} from '@/next.constants.mjs';
+} from '#site/next.constants.mjs';
 
 type ResultMapDescription = {
   path: string;
