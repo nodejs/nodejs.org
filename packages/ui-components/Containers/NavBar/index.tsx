@@ -54,7 +54,8 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
         <Label.Root
           className={style.sidebarItemTogglerLabel}
           htmlFor="sidebarItemToggler"
-          data-testid="mobile-menu-toggle"
+          role="button"
+          aria-label={sidebarItemTogglerAriaLabel}
         >
           {navInteractionIcons[isMenuOpen ? 'close' : 'show']}
         </Label.Root>

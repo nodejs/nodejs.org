@@ -62,7 +62,6 @@ const WithNavBar: FC = () => {
         <SearchButton />
 
         <ThemeToggle
-          data-testid="theme-toggle"
           onClick={toggleCurrentTheme}
           aria-label={t('components.common.themeToggle.label')}
         />
