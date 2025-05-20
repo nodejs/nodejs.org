@@ -1,8 +1,6 @@
 import { getLocale } from 'next-intl/server';
 import type { FC, PropsWithChildren } from 'react';
 
-import ArticleLayout from './Article';
-
 import { getClientContext, setClientContext } from '#site/client-context';
 import WithFooter from '#site/components/withFooter';
 import WithMetaBar from '#site/components/withMetaBar';
@@ -10,6 +8,8 @@ import WithNavBar from '#site/components/withNavBar';
 import WithProgressionSidebar from '#site/components/withProgressionSidebar';
 import getReleaseData from '#site/next-data/releaseData';
 import { dynamicRouter } from '#site/next.dynamic.mjs';
+
+import ArticleLayout from './Article';
 
 const mapSidebarItems = (
   releaseData: Awaited<ReturnType<typeof getReleaseData>>

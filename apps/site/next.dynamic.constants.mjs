@@ -1,12 +1,12 @@
 'use strict';
 
+import provideReleaseData from '#site/next-data/providers/releaseData';
+import { blogData } from '#site/next.json.mjs';
+
 import { provideBlogPosts } from './next-data/providers/blogData';
 import { BASE_PATH, BASE_URL } from './next.constants.mjs';
 import { siteConfig } from './next.json.mjs';
 import { defaultLocale } from './next.locales.mjs';
-
-import provideReleaseData from '#site/next-data/providers/releaseData';
-import { blogData } from '#site/next.json.mjs';
 
 /**
  * This is a list of all static routes or pages from the Website that we do not
