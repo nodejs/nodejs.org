@@ -332,6 +332,15 @@
             }
           }
         },
+        "migrations": {
+          "label": "components.navigation.learn.migrations.links.migrations",
+          "items": {
+            "introduction": {
+              "link": "/learn/migrations/introduction",
+              "label": "components.navigation.learn.migrations.links.introduction"
+            }
+          }
+        },
         "modules": {
           "label": "components.navigation.learn.modules.links.modules",
           "items": {
