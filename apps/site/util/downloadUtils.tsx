@@ -4,9 +4,13 @@ import * as OSIcons from '@node-core/ui-components/Icons/OperatingSystem';
 import * as PackageManagerIcons from '@node-core/ui-components/Icons/PackageManager';
 import satisfies from 'semver/functions/satisfies';
 
-import type { NodeReleaseStatus } from '@/types';
+import { DIST_URL } from '@/next.constants.mjs';
+import type { NodeRelease, NodeReleaseStatus } from '@/types';
 import type * as Types from '@/types/release';
 import type { UserOS, UserPlatform } from '@/types/userOS';
+
+import type { DownloadKind } from './getNodeDownloadUrl';
+import { getNodeDownloadUrl } from './getNodeDownloadUrl';
 
 // This is a manual list of OS's that do not support/have a way of being installed
 // with an executable installer. This is used to disable the installer button.
@@ -124,6 +128,88 @@ export const parseCompat = <
       !supportsRelease(item.compatibility),
   }));
 };
+
+type ParsedArtifact = {
+  file: string;
+  kind: DownloadKind;
+  os: UserOS;
+  architecture: string;
+  url: string;
+  version: string;
+};
+
+export function generateCompatibleDownloads({
+  platforms = PLATFORMS,
+  exclude = [],
+  version,
+  kind = 'binary',
+}: {
+  platforms?: Record<UserOS, Array<DownloadDropdownItem<UserPlatform>>>;
+  exclude?: Array<UserOS | 'LOADING'>;
+  version: string;
+  kind?: DownloadKind;
+}): Array<ParsedArtifact> {
+  return Object.entries(platforms).reduce<Array<ParsedArtifact>>(
+    (acc, [os, items]) => {
+      if (exclude.includes(os as UserOS)) return acc;
+
+      const operatingSystem = os as UserOS;
+      items.forEach(({ compatibility, value, label }) => {
+        const {
+          os: operatingSystems,
+          platform: platforms,
+          semver: versions,
+        } = compatibility;
+
+        if (
+          (operatingSystems?.includes(operatingSystem) ?? true) &&
+          (platforms?.includes(value) ?? true) &&
+          (versions?.every(r => satisfies(version, r)) ?? true)
+        ) {
+          const url = getNodeDownloadUrl(version, operatingSystem, value, kind);
+
+          acc.push({
+            file: url.replace(`${DIST_URL}${version}/`, ''),
+            kind: kind,
+            os: operatingSystem,
+            architecture: label,
+            url: url,
+            version: version,
+          });
+        }
+      });
+
+      return acc;
+    },
+    []
+  );
+}
+
+export const getDownloadTable = (release: NodeRelease) => ({
+  binaries: generateCompatibleDownloads({
+    version: release.versionWithPrefix,
+    kind: 'binary' as DownloadKind,
+  }),
+  installers: generateCompatibleDownloads({
+    exclude: OS_NOT_SUPPORTING_INSTALLERS,
+    version: release.versionWithPrefix,
+    kind: 'installer' as DownloadKind,
+  }),
+  minors: release.minorVersions
+    .filter(minor => `v${minor.version}` !== release.versionWithPrefix)
+    .map(minor => [
+      generateCompatibleDownloads({
+        version: `v${minor.version}`,
+        kind: 'binary' as DownloadKind,
+      }),
+      generateCompatibleDownloads({
+        exclude: OS_NOT_SUPPORTING_INSTALLERS,
+        version: `v${minor.version}`,
+        kind: 'installer' as DownloadKind,
+      }),
+      `v${minor.version}`,
+    ]),
+});
 
 export const OPERATING_SYSTEMS: Array<DownloadDropdownItem<UserOS>> = [
   {
@@ -260,7 +346,9 @@ export const PLATFORMS: Record<
     {
       label: 'x64',
       value: 'x64',
-      compatibility: {},
+      compatibility: {
+        semver: ['>= 4.0.0'],
+      },
     },
     {
       label: 'x86',
@@ -282,7 +370,9 @@ export const PLATFORMS: Record<
     {
       label: 'ARM64',
       value: 'arm64',
-      compatibility: {},
+      compatibility: {
+        semver: ['>= 16.0.0'],
+      },
     },
   ],
   LINUX: [

@@ -4,6 +4,7 @@ import {
   provideBlogCategories,
   provideBlogPosts,
 } from './next-data/providers/blogData';
+import provideReleaseData from './next-data/providers/releaseData';
 import { BASE_PATH, BASE_URL } from './next.constants.mjs';
 import { siteConfig } from './next.json.mjs';
 import { defaultLocale } from './next.locales.mjs';
@@ -20,6 +21,12 @@ export const IGNORED_ROUTES = [
     locale !== defaultLocale.code && /^blog/.test(pathname),
   // This is used to ignore all pathnames that are empty
   ({ locale, pathname }) => locale.length && !pathname.length,
+  // This is used to ignore all simplified download routes except for the English language
+  ({ locale, pathname }) =>
+    locale !== defaultLocale.code && /^download/.test(pathname),
+  // This is used to ignore all simplified download routes except for the English language
+  ({ locale, pathname }) =>
+    locale !== defaultLocale.code && /^simplified/.test(pathname),
 ];
 
 /**
@@ -32,6 +39,10 @@ export const IGNORED_ROUTES = [
 export const DYNAMIC_ROUTES = new Map([
   // Provides Routes for all Blog Categories
   ...provideBlogCategories().map(c => [`blog/${c}`, 'blog-category']),
+  ...provideReleaseData().map(({ major }) => [
+    `download/${major}`,
+    'download-simple',
+  ]),
   // Provides Routes for all Blog Categories w/ Pagination
   ...provideBlogCategories()
     // retrieves the amount of pages for each blog category

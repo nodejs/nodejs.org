@@ -1,0 +1,86 @@
+---
+title: Download Node.js®
+layout: download-simple
+---
+
+# Download Node.js®
+
+<WithSimplifiedDownload>
+  {({ binaries, version }) => (
+    <>
+      <h2>Node.js® {version} – Binary Downloads</h2>
+      <SimplifiedDownloadTable source={binaries} />
+    </>
+  )}
+</WithSimplifiedDownload>
+
+<WithSimplifiedDownload>
+  {({ installers, version }) => (
+    <>
+      <h2>Node.js® {version} – Installer Packages</h2>
+      <SimplifiedDownloadTable source={installers} />
+    </>
+  )}
+</WithSimplifiedDownload>
+
+Learn more about [Node.js releases](/about/previous-releases), including the release schedule and LTS status.
+
+<WithSimplifiedDownload>
+  {({ version }) => (
+    <p>
+      <LinkWithArrow
+        href={`https://nodejs.org/dist/${version}/SHASUMS256.txt.asc`}
+      >
+        Signed SHASUMS
+      </LinkWithArrow>{' '}
+      for release files. How to{' '}
+      <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">
+        verify
+      </LinkWithArrow>{' '}
+      signed SHASUMS.
+    </p>
+  )}
+</WithSimplifiedDownload>
+
+<WithSimplifiedDownload>
+  {({ version }) => (
+    <p>
+      Download a signed{' '}
+      <LinkWithArrow
+        href={`https://nodejs.org/dist/${version}/node-${version}.tar.gz`}
+      >
+        Node.js {version} source
+      </LinkWithArrow>{' '}
+      tarball.
+    </p>
+  )}
+</WithSimplifiedDownload>
+
+## Other versions
+
+<WithSimplifiedDownload>
+  {({ minors }) =>
+    minors.map(([binaries, installers,version]) => (
+      <details key={version}>
+        <summary><h3>Node.js® {version}</h3></summary>
+       <div>
+        <h4>Binary Downloads</h4>
+        <SimplifiedDownloadTable source={binaries} />
+
+        <h4>Installer Packages</h4>
+        <SimplifiedDownloadTable source={installers} />
+
+        <p>
+          Download a signed{' '}
+          <LinkWithArrow
+            href={`https://nodejs.org/dist/${version}/node-${version}.tar.gz`}
+          >
+            Node.js {version} source
+          </LinkWithArrow>{' '}
+          tarball.
+        </p>
+       </div>
+      </details>
+    ))}
+
+</WithSimplifiedDownload>
