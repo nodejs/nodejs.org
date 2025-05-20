@@ -6,7 +6,7 @@ authors: avivkeller
 
 # Collecting code coverage in Node.js
 
-Node.js provides built-in support for code coverage through its test runner, which can be enabled using the [`--experimental-code-coverage`](https://nodejs.org/api/cli.html#--experimental-test-coverage) flag.
+Node.js provides built-in support for code coverage through its test runner, which can be enabled using the [`--experimental-test-coverage`](https://nodejs.org/api/cli.html#--experimental-test-coverage) flag.
 
 If using the `run()` API, the `coverage` option must be set to `true`. For more information on the `run()` API, see [the `node:test` documentation](https://nodejs.org/docs/latest/api/test.html#runoptions).
 
