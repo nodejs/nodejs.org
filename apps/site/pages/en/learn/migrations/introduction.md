@@ -22,6 +22,7 @@ The cited migration transforms legacy typescript imports to standards-compliant 
 ```ts displayName="before"
 import Foo from './foo';
 ```
+
 ```ts displayName="after"
 import type Foo from './foo/index.ts';
 ```
