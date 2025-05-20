@@ -133,7 +133,7 @@ test.describe('Node.js Website', () => {
     });
   });
 
-  test.describe.only('Navigation', () => {
+  test.describe('Navigation', () => {
     test('should have functioning mobile menu on small screens', async ({
       page,
     }) => {
