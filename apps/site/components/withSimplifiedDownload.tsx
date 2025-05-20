@@ -18,26 +18,31 @@ type WithSimplifiedDownloadProps = {
 const WithSimplifiedDownload: FC<WithSimplifiedDownloadProps> = async ({
   children: Component,
 }) => {
+  const { pathname } = getClientContext();
   const releaseData = await getReleaseData();
 
-  const { pathname } = getClientContext();
-  const major = pathname.split('/').pop();
-  const release = releaseData.find(
-    release =>
-      release.major === Number(major) ||
-      (release.isLts === true && major === 'simplified')
+  const version = pathname.split('/').pop();
+  const matchingRelease = releaseData.find(
+    ({ major, codename, isLts }) =>
+      major === Number(version) ||
+      codename === version ||
+      (isLts === true && version === 'simplified')
   );
 
-  const { binaries, installers, minors } = getDownloadTable(release!);
+  if (matchingRelease !== undefined) {
+    const { binaries, installers, minors } = getDownloadTable(matchingRelease);
 
-  return (
-    <Component
-      version={release?.versionWithPrefix || ''}
-      binaries={binaries}
-      installers={installers}
-      minors={minors}
-    />
-  );
+    return (
+      <Component
+        version={matchingRelease.versionWithPrefix}
+        binaries={binaries}
+        installers={installers}
+        minors={minors}
+      />
+    );
+  }
+
+  return null;
 };
 
 export default WithSimplifiedDownload;
