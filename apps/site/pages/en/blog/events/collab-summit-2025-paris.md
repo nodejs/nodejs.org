@@ -8,7 +8,7 @@ author: joyeecheung
 
 About twice per year, Node.js contributors and community members get together in an unconference called [the Node.js collaboration summit](https://nodejs.org/en/about/get-involved/collab-summit). At the summit, we share knowledge about the project and the ecosystem, brainstorm solutions to technical and non-technical issues, make progress in decision-making discussions, and push forward new initiatives.
 
-This April, the first collaboration summit of 2025 was hosted by Datadog in Paris. In this edition, we welcomed almost 40 in-person participants, and around a dozen more joined remotely.
+This April, the first collaboration summit of 2025 was hosted by [Datadog](https://www.datadoghq.com) in Paris. In this edition, we welcomed almost 40 in-person participants, and around a dozen more joined remotely.
 
 Here is a recap of what happened at the summit.
 
