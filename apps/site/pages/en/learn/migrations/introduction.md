@@ -13,8 +13,8 @@ Official migrations are published under the `@nodejs` namespace within the [code
 A migration alters a project's source-code to apply a new design pattern, like:
 
 ```console
-$ cd path/to/your/project
-$ npx codemod@latest @nodejs/correct-ts-specifiers
+cd path/to/your/project
+npx codemod@latest @nodejs/correct-ts-specifiers
 ```
 
 The cited migration transforms legacy typescript imports to standards-compliant specifiers like:
