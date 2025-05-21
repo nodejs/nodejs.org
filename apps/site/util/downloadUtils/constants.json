@@ -127,10 +127,10 @@
     },
     {
       "id": "FNM",
-      "icon": "NVM",
+      "icon": "FNM",
       "name": "fnm",
       "compatibility": {
-        "os": ["MAC", "LINUX", "WIN"]
+        "os": ["MAC", "LINUX"]
       },
       "recommended": true,
       "url": "https://github.com/Schniz/fnm",
