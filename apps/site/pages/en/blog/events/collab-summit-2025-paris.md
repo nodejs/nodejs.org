@@ -34,7 +34,7 @@ Jacob Smith facilitated a session about mentorship in the project. We reviewed o
 
 ## Improving Collaborator Experience
 
-Jean Burellier facilitated a session using a retrospective board to gather feedback about contributor experience in Node.js core. Many brought up the flaky CI as a significant pain point. One of the main source of flakes is a [deadlock issue](https://github.com/nodejs/node/issues/54918) - fortuntely, after the summit it was allieviated by a [workaround](https://github.com/nodejs/node/pull/58047).
+Jean Burellier facilitated a session using a retrospective board to gather feedback about contributor experience in Node.js core. Many brought up the flaky CI as a significant pain point. One of the main sources of flakes is a [deadlock issue](https://github.com/nodejs/node/issues/54918) - fortunately, after the summit it was alleviated by a [workaround](https://github.com/nodejs/node/pull/58047).
 
 Another issue that many brought up came from the extreme cases of consensus seeking. In Node.js, decision-making is based on the consensus from the 100+ collaborators. When collaborators cannot reach a consensus, the disagreement can be escalated to the TSC, and a vote can be initiated to break the standstill. But often the vote can be started too late, after the conversations have become exhausting, and those summoned to vote may also have a hard time digesting all of the debates. We brainstormed about ideas to improve the process, for example, using emoji votes to test the temperature, using AI to help summarize the arguments, or setting a deadline for conclusions, though the benefits of these ideas are not conclusive.
 
