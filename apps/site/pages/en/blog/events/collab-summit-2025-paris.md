@@ -3,7 +3,7 @@ date: '2025-05-22T00:00:00.000Z'
 category: events
 title: 'Trip report: Node.js collaboration summit (2025 Paris)'
 layout: blog-post
-author: joyeecheung
+author: Joyee Cheung
 ---
 
 About twice per year, Node.js contributors and community members get together in an unconference called [the Node.js collaboration summit](https://nodejs.org/en/about/get-involved/collab-summit). At the summit, we share knowledge about the project and the ecosystem, brainstorm solutions to technical and non-technical issues, make progress in decision-making discussions, and push forward new initiatives.
