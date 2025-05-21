@@ -77,7 +77,6 @@ To support newer protocols, we discussed advertising HTTP/2 via ALPN for HTTPS a
 
 ## Node.js integration with Chrome DevTools
 
-
 In this session we were joined remotely by Simon Zünd and Danil Somsikov from the Chrome DevTools team. Chengzhong Wu went through the concept of Chrome DevTools Frontend and Chrome DevTools Protocol. Node.js implements Chrome DevTools Protocol via V8, providing essential JavaScript debugging features, and extends the protocol to provide additional functionality like performance tracing, Network inspection, and automatic discovery of worker thread targets.
 
 The support for network inspection is still in active development. We discussed collaborative efforts to add side-effect-free observability diagnostic channels to both the `http` built-in module and Undici to support inspecting network traffic sent by `http.request` and `fetch` APIs. Additionally, there are plans to support WebSocket traffic inspection.
