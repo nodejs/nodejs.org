@@ -368,9 +368,6 @@ importers:
         specifier: ~4.0.17
         version: 4.0.17
     devDependencies:
-      '@node-core/website-i18n':
-        specifier: workspace:*
-        version: link:../i18n
       '@storybook/addon-controls':
         specifier: ^8.6.12
         version: 8.6.12(storybook@8.6.12(prettier@3.5.3))
