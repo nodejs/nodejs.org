@@ -149,10 +149,10 @@ jobs:
         if: ${{ !cancelled() && github.event_name != 'merge_group' }}
         uses: codecov/codecov-action@ad3126e916f78f00edff4ed0317cf185271ccc2d # v5.4.2
         with:
-          files: ./apps/site/lcov.info,./packages/ui-components/lcov.info
+          files: ./apps/site/lcov.info,./packages/*/lcov.info
 
       - name: Upload test results to Codecov
         if: ${{ !cancelled() && github.event_name != 'merge_group' }}
         uses: codecov/test-results-action@f2dba722c67b86c6caa034178c6e4d35335f6706 # v1.1.0
         with:
-          files: ./apps/site/junit.xml,./packages/ui-components/junit.xml
+          files: ./apps/site/junit.xml,./packages/*/junit.xml
