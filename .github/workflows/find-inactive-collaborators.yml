@@ -30,6 +30,6 @@ jobs:
         with:
           github-token: ${{ secrets.READ_ONLY_PUBLIC_REPO_TOKEN }}
           script: |
-            const { reportInactiveCollaborators } = await import("${{github.workspace}}/apps/site/scripts/find-inactive-collaborators/index.mjs");
+            const { reportInactiveCollaborators } = await import("${{github.workspace}}/.github/scripts/find-inactive-collaborators.mjs");
 
             await reportInactiveCollaborators(core, github);

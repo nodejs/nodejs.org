@@ -9,7 +9,7 @@ import {
   createOrUpdateInactiveCollaboratorsIssue,
   findInactiveCollaboratorsIssue,
   formatIssueBody,
-} from '../index.mjs';
+} from '../find-inactive-collaborators.mjs';
 
 // Test constants
 const MOCK_DATE = new Date('2025-05-23T14:33:31Z');
@@ -158,7 +158,7 @@ describe('Inactive Collaborators Tests', () => {
         'repo-without-issue'
       );
 
-      assert.equal(existingIssue?.number, 42);
+      assert.equal(existingIssue.number, 42);
       assert.equal(nonExistingIssue, null);
 
       // Test updating existing issues
