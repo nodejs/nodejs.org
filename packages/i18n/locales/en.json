@@ -94,6 +94,12 @@
             "acceptInputFromTheCommandLineInNodejs": "Accept input from the command line in Node.js"
           }
         },
+        "migrations": {
+          "links": {
+            "migrations": "Userland Migrations",
+            "introduction": "Introduction to Userland Migrations"
+          }
+        },
         "modules": {
           "links": {
             "modules": "Modules",
