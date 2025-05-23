@@ -14,7 +14,7 @@ permissions: {}
 
 jobs:
   find:
-    if: github.repository == 'nodejs/node'
+    if: github.repository == 'nodejs/nodejs.org'
     runs-on: ubuntu-latest
 
     steps:
