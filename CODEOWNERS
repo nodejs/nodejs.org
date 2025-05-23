@@ -24,5 +24,4 @@ apps/site/site.json @nodejs/web-infra
 
 # Specific content
 apps/site/pages/en/learn/getting-started/security-best-practices.md @nodejs/security-wg
-apps/site/pages/en/learn/migrations @nodejs/userland-migrations
 apps/site/pages/en/learn/typescript @nodejs/typescript
