@@ -63,7 +63,7 @@ const WithNavBar: FC = () => {
 
         <ThemeToggle
           onClick={toggleCurrentTheme}
-          ariaLabel={t('components.common.themeToggle.label')}
+          aria-label={t('components.common.themeToggle.label')}
         />
 
         <LanguageDropdown

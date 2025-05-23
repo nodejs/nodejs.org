@@ -9,7 +9,9 @@ import localeConfig from '../config.json' with { type: 'json' };
  * @returns {Promise<Record<string, any>>} The imported locale
  */
 export const importLocale = async locale => {
-  return import(`../locales/${locale}.json`).then(f => f.default);
+  return import(`../locales/${locale}.json`, { with: { type: 'json' } }).then(
+    f => f.default
+  );
 };
 
 /**
