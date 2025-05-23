@@ -15,6 +15,8 @@ import ReleasePlatformDropdown from './components/Downloads/Release/PlatformDrop
 import ReleasePrebuiltDownloadButtons from './components/Downloads/Release/PrebuiltDownloadButtons';
 import ReleaseCodeBox from './components/Downloads/Release/ReleaseCodeBox';
 import ReleaseVersionDropdown from './components/Downloads/Release/VersionDropdown';
+import WindowsWSLMessage from './components/Downloads/WindowsWSLMessage';
+import WSLMessage from './components/Downloads/WSLMessage';
 import Link from './components/Link';
 import LinkWithArrow from './components/LinkWithArrow';
 import MDXCodeBox from './components/MDX/CodeBox';
@@ -30,6 +32,9 @@ import { ReleaseProvider } from './providers/releaseProvider';
 export const clientMdxComponents = {
   // Renders MDX CodeTabs
   CodeTabs: MDXCodeTabs,
+  // Renders WindowsWSLMessage
+  WindowsWSLMessage: WindowsWSLMessage,
+
   // Renders a Button Component for `button` tags
   Button: Button,
   // Links with External Arrow
@@ -40,6 +45,9 @@ export const clientMdxComponents = {
   DownloadButton: DownloadButton,
   // Renders a Download Link
   DownloadLink: DownloadLink,
+  // Renders WSL Message
+  WSLMessage: WSLMessage,
+
   // Group of components that enable you to select versions for Node.js
   // releases and download selected versions. Uses `releaseProvider` as a provider
   Release: {
