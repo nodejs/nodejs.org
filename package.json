@@ -27,7 +27,8 @@
     "start": "turbo run start",
     "storybook": "turbo run storybook",
     "storybook:build": "turbo run storybook:build",
-    "test": "turbo test:unit",
+    "test:actions": "node --test \".github/**/*.test.mjs\"",
+    "test": "turbo test:unit && pnpm test:actions",
     "test:ci": "cross-env NODE_OPTIONS=\"--test-reporter=lcov --test-reporter-destination=lcov.info --test-reporter=junit --test-reporter-destination=junit.xml --test-reporter=@reporters/github --test-reporter-destination=stdout\" turbo test:unit",
     "cloudflare:preview": "turbo run cloudflare:preview",
     "cloudflare:deploy": "turbo run cloudflare:deploy"
