@@ -1,0 +1,35 @@
+name: Find inactive collaborators
+
+on:
+  schedule:
+    # Run every Monday at 4:05 AM UTC.
+    - cron: 5 4 * * 1
+
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: lts/*
+
+permissions: {}
+
+jobs:
+  find:
+    if: github.repository == 'nodejs/node'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Create inactive collaborators report
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        with:
+          github-token: ${{ secrets.READ_ONLY_PUBLIC_REPO_TOKEN }}
+          script: |
+            const { reportInactiveCollaborators } = await import("${{github.workspace}}/apps/site/scripts/find-inactive-collaborators/index.mjs");
+
+            await reportInactiveCollaborators(core, github);

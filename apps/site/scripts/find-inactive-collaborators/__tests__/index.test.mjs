@@ -138,9 +138,7 @@ describe('Inactive Collaborators Tests', () => {
     });
 
     it('handles empty inactive members list', () => {
-      const body = formatIssueBody([], CUTOFF_DATE);
-      assert.ok(body.includes('No inactive collaborators were found'));
-      assert.ok(!body.includes('| Login |'));
+      assert.ok(!formatIssueBody([], CUTOFF_DATE));
     });
 
     it('manages issue creation and updates', async () => {
