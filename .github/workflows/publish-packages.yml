@@ -1,0 +1,114 @@
+name: Publish Packages
+
+on:
+  workflow_run:
+    workflows: ['Linting and Tests']
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      package:
+        description: 'Specific package to publish (leave empty for all packages)'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+env:
+  COMMIT_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+
+jobs:
+  detect-packages:
+    runs-on: ubuntu-latest
+    outputs:
+      packages: ${{ steps.find-packages.outputs.packages }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Find packages
+        id: find-packages
+        env:
+          PACKAGE: ${{ github.event.inputs.package }}
+        run: |
+          if [ "$PACKAGE" != "" ]; then
+            echo "packages=[\"$PACKAGE\"]" >> $GITHUB_OUTPUT
+          else
+            PACKAGES=$(ls -d packages/* | xargs -n 1 basename | jq -R -s -c 'split("\n")[:-1]')
+            echo "packages=$PACKAGES" >> $GITHUB_OUTPUT
+          fi
+
+  verify-commit:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Verify commit authenticity
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          COMMIT_DATA=$(gh api repos/${{ github.repository }}/commits/$COMMIT_SHA)
+          VERIFIED=$(echo "$COMMIT_DATA" | jq -r '.commit.verification.verified')
+          COMMITTER=$(echo "$COMMIT_DATA" | jq -r '.commit.committer.email')
+
+          if [[ "$VERIFIED" != "true" ]]; then
+            echo "❌ Unverified commit! Aborting."
+            exit 1
+          fi
+
+          if [[ "$COMMITTER" != "noreply@github.com" ]]; then
+            echo "❌ Not merged with the merge queue! Aborting."
+            exit 1
+          fi
+
+          echo "✅ Commit is verified and trusted."
+
+  publish:
+    needs: [detect-packages, verify-commit]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package: ${{ fromJson(needs.detect-packages.outputs.packages) }}
+      fail-fast: false
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 2
+
+      - name: Check for package changes
+        if: github.event_name != 'workflow_dispatch'
+        id: check_changes
+        env:
+          PACKAGE: ${{ matrix.package }}
+        run: |
+          if git diff --quiet $COMMIT_SHA~1 $COMMIT_SHA -- "packages/$PACKAGE/"; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+        with:
+          cache: true
+
+      - name: Setup Node.js
+        if: github.event_name == 'workflow_dispatch' || steps.check_changes.outputs.changed == 'true'
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: '.nvmrc'
+          registry-url: 'https://registry.npmjs.org'
+          cache: pnpm
+
+      - name: Publish
+        if: github.event_name == 'workflow_dispatch' || steps.check_changes.outputs.changed == 'true'
+        working-directory: packages/${{ matrix.package }}
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: >
+          npm version --no-git-tag-version 0.0.0-$COMMIT_SHA
+          pnpm publish --access public
