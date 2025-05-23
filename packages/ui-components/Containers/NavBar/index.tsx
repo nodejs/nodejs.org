@@ -71,7 +71,7 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
       />
 
       <div className={`${style.main} hidden peer-checked:flex`}>
-        <div className={style.navItems} data-testid="nav-links">
+        <div className={style.navItems}>
           {navItems.map(({ text, link, target }) => (
             <NavItem
               pathname={pathname}

@@ -7,10 +7,9 @@ const englishLocale = await importLocale('en');
 //                    ui-components package, and instead be passed as props.
 const locators = {
   // Navigation elements
-  navLinksTestID: 'nav-links',
   mobileMenuToggleName:
     englishLocale.components.containers.navBar.controls.toggle,
-
+  navLinksLocator: `[aria-label="${englishLocale.components.containers.navBar.controls.toggle}"] + div`,
   // Global UI controls
   languageDropdownName: englishLocale.components.common.languageDropdown.label,
   themeToggleName: englishLocale.components.common.themeToggle.label,
@@ -45,8 +44,8 @@ const verifyTranslation = async (
 
   // Get navigation links and expected translations
   const links = await page
-    .getByTestId(locators.navLinksTestID)
-    .locator('a')
+    .locator(locators.navLinksLocator)
+    .locator('a > span')
     .all();
   const expectedTexts = Object.values(
     localeData.components.containers.navBar.links
@@ -146,7 +145,7 @@ test.describe('Node.js Website', () => {
       });
       await expect(mobileToggle).toBeVisible();
 
-      const navLinks = page.getByTestId(locators.navLinksTestID);
+      const navLinks = page.locator(locators.navLinksLocator);
 
       // Toggle menu open and verify it's visible
       await mobileToggle.click();
