@@ -42,8 +42,6 @@ jobs:
           egress-policy: audit
 
       - name: Verify commit authenticity
-        # Skip verification for manual runs since they're initiated by trusted users
-        if: github.event_name != 'workflow_dispatch'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
