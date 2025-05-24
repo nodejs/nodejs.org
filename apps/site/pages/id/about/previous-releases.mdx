@@ -21,16 +21,30 @@ Dukungan komersial untuk versi yang melewati fase Pemeliharaan tersedia melalui 
 
 <DownloadReleasesTable />
 
-## Resmi vs Komunitas
+## Metode Instalasi Resmi vs. Komunitas
 
-Situs web Node.js menawarkan sejumlah metode instalasi yang memungkinkan Node.js diinstal dengan cara non-interaktif, misalnya, melalui CLI, pengelola paket OS (seperti `apt`), atau pengelola versi Node.js (seperti `nvm`).
+Situs web Node.js menyediakan beberapa metode instalasi non-interaktif, termasuk antarmuka baris perintah (CLI), manajer paket sistem operasi (OS) (misalnya, `brew`), dan manajer versi Node.js (misalnya, `nvm`).
 
-Proyek Node.js, dalam upaya untuk mempopulerkan dan mengiklankan upaya komunitas, telah memperkenalkan halaman Unduhan baru yang mencantumkan metode instalasi Resmi dan Komunitas, yang menyediakan lebih banyak fleksibilitas dan opsi bagi pengguna.
-Dengan perubahan ini, kami memperkenalkan konsep metode instalasi "Resmi" dan "Komunitas". Agar dianggap "Resmi", metode instalasi harus memenuhi persyaratan berikut:
+Untuk menyoroti dan mempromosikan kontribusi komunitas, proyek Node.js memperkenalkan halaman Unduhan yang telah direvisi yang mengkategorikan metode instalasi sebagai "Resmi" atau "Komunitas." Hal ini memberikan fleksibilitas dan pilihan yang lebih besar kepada pengguna. Untuk memastikan kejelasan, kami telah menetapkan kriteria untuk setiap kategori.
 
-| Persyaratan                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------ |
-| Rilis Node.js baru harus tersedia secara bersamaan setelah rilis resmi                                                         |
-| Pengelola proyek memiliki hubungan dekat dengan Node.js, termasuk komunikasi langsung                                          |
-| Metode instalasi mengunduh biner resmi yang dibundel oleh proyek Node.js                                                       |
-| Metode instalasi **tidak** membangun dari sumber ketika biner tersedia, atau mengubah biner resmi yang disediakan oleh Node.js |
+### Metode Instalasi Resmi
+
+Metode instalasi yang ditetapkan sebagai “Resmi” harus memenuhi persyaratan berikut:
+
+| Persyaratan (Metode Instalasi Resmi)                                                                                                 |
+| :----------------------------------------------------------------------------------------------------------------------------------- |
+| Rilis Node.js baru harus tersedia bersamaan dengan rilis resmi.                                                                      |
+| Pengelola proyek harus memiliki hubungan dekat dengan proyek Node.js, termasuk saluran komunikasi langsung.                          |
+| Metode instalasi harus unduhan biner resmi yang dibundel oleh proyek Node.js.                                                        |
+| Metode instalasi tidak boleh dibuild dari sumber, jika biner yang telah dibuild tersedia, dan tidak boleh pula mengubah biner resmi. |
+
+### Metode Instalasi Komunitas
+
+Metode instalasi komunitas yang disertakan pada halaman unduhan swalayan (/download) juga harus mematuhi serangkaian kriteria minimum:
+
+- **Dukungan Versi:** Harus mendukung semua versi Node.js yang saat ini didukung, bukan versi End-of-Life (EOL).
+- **Kompatibilitas OS:** Harus berfungsi pada setidaknya satu Sistem Operasi (OS) yang didukung secara resmi.
+- **Dukungan OS yang Luas:** Tidak dapat dibatasi pada sebagian distribusi atau versi OS.
+  - Misalnya, metode instalasi yang mengklaim kompatibilitas dengan “Windows” harus berfungsi pada “Windows 10”, “Windows 11”, dan semua edisinya (termasuk versi server).
+  - Demikian pula, metode instalasi yang mengklaim kompatibilitas dengan "Linux" harus dapat diinstal pada semua distribusi Linux utama, bukan hanya sebagian kecil saja. Metode ini tidak dapat bergantung pada pengelola paket khusus distribusi seperti `apt` atau `dnf`.
+- **Gratis dan Sumber Terbuka:** Harus gratis digunakan dan bersumber terbuka, tidak boleh dijual sebagai produk komersial, dan tidak boleh menjadi layanan berbayar.
