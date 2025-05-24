@@ -345,7 +345,7 @@ Ini memungkinkan Anda untuk **versi yang berbeda untuk proyek yang berbeda**, **
 
 Dukung semua shell populer (Bash, Zsh, Fish, PowerShell, Clink, Cmder).
 
-Lihat [Panduan Memulai Cepat](https://vfox.lhan.me/guides/quick-start.html) untuk menggunakan vfox dengan cepat, dan semua detail penggunaannya.
+Lihat [Panduan Memulai Cepat](https://vfox.dev/guides/quick-start.html) untuk menggunakan vfox dengan cepat, dan semua detail penggunaannya.
 
 ## Void Linux
 

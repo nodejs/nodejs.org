@@ -11,6 +11,9 @@
         }
       },
       "navBar": {
+        "controls": {
+          "toggle": "Beralih menu navigasi"
+        },
         "links": {
           "about": "Tentang",
           "download": "Unduh",
@@ -39,6 +42,8 @@
             "nodejsWithWebassembly": "Node.js dengan WebAssembly",
             "debugging": "Men-debug Node.js",
             "profiling": "Profilisasi Aplikasi Node.js",
+            "fetch": "Pengambilan data dengan Node.js",
+            "websocket": "Klien WebSocket dengan Node.js",
             "securityBestPractices": "Praktik Keamanan Terbaik"
           }
         },
@@ -48,13 +53,15 @@
             "introduction": "Pengantar TypeScript",
             "transpile": "Menjalankan kode TypeScript menggunakan transpilasi",
             "run": "Menjalankan TypeScript dengan runner",
-            "runNatively": "Menjalankan TypeScript Secara Native"
+            "runNatively": "Menjalankan TypeScript Secara Native",
+            "publishingTSPackage": "Menerbitkan package TypeScript"
           }
         },
         "asynchronousWork": {
           "links": {
             "asynchronousWork": "Pekerjaan Asinkron",
             "asynchronousFlowControl": "Pengendalian alur asinkron",
+            "discoverPromisesInNodejs": "Memahami Promise di Node.js",
             "overviewOfBlockingVsNonBlocking": "Ringkasan Pemblokiran vs Non-Pemblokiran",
             "javascriptAsynchronousProgrammingAndCallbacks": "Pemrograman dan Panggilan Balik Asinkron JavaScript",
             "discoverJavascriptTimers": "Jelajahi Pengatur Waktu JavaScript",
@@ -102,6 +109,7 @@
           "links": {
             "diagnostics": "Diagnostik",
             "userJourney": "Jurnal Pengguna",
+            "understandingAndTuningMemory": "Pemahaman dan Penyetelan Memori",
             "memory": "Memori",
             "liveDebugging": "Pemecahan Masalah Langsung",
             "poorPerformance": "Performa Buruk",
@@ -113,7 +121,8 @@
             "testRunner": "Test Runner",
             "introduction": "Jelajahi Node.js test runner",
             "usingTestRunner": "Menggunakan Node.js's test runner",
-            "mocking": "Mengejek dalam pengujian"
+            "mocking": "Mengejek dalam pengujian",
+            "collectingCodeCoverage": "Pengumpulan cakupan kode di Node.js"
           }
         }
       },
@@ -140,14 +149,37 @@
     "downloadReleasesTable": {
       "version": "Node.js",
       "nApiVersion": "N-API",
-      "npmVersion": "npm",
       "codename": "Kode nama",
       "releaseDate": "Dirilis pada",
+      "firstReleased": "Perilisan Pertama",
+      "lastUpdated": "Pembaruan Terakhir",
+      "status": "Status",
+      "details": "Rincian"
+    },
+    "releaseModal": {
+      "title": "Node.js {version} ({codename})",
+      "titleWithoutCodename": "Node.js {version}",
+      "overview": "Ringkasan",
+      "minorVersions": "Versi minor",
+      "releaseAnnouncement": "Pengumuman Perilisan",
+      "unsupportedVersionWarning": "Versi ini sudah tidak dalam tahap pemeliharaan. Harap gunakan versi yang saat ini didukung."
+    },
+    "minorReleasesTable": {
+      "version": "Versi",
+      "links": "Tautan",
       "actions": {
+        "release": "Rilis",
         "changelog": "Log Perubahan",
-        "releases": "Rilis",
-        "docs": "Dokumen"
+        "docs": "Dokumentasi"
       }
+    },
+    "releaseOverview": {
+      "firstReleased": "Perilisan Pertama",
+      "lastUpdated": "Pembaruan Terakhir",
+      "minorVersions": "Versi minor",
+      "nApiVersion": "Versi N-API",
+      "npmVersion": "versi npm",
+      "v8Version": "V8 versi"
     },
     "pagination": {
       "next": "Berikutnya",
@@ -280,9 +312,12 @@
           "brew": "Homebrew adalah manajer paket untuk macOS dan Linux.",
           "choco": "Chocolatey adalah manajer paket untuk Windows.",
           "devbox": "Devbox menciptakan lingkungan pengembangan yang terisolasi dan dapat direproduksi.",
-          "docker": "Docker adalah platform kontainerisasi."
+          "docker": "Docker adalah platform kontainerisasi.",
+          "n": "\"n\" adalah manajer versi Node.js lintas-platform.",
+          "volta": "\"Volta\" adalah manajer versi Node.js lintas-platform."
         }
       }
-    }
+    },
+    "logo": "Logo Node.js"
   }
 }
