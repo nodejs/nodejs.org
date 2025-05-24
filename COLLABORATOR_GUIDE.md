@@ -20,6 +20,7 @@
   - [General Guidelines for Unit Tests](#general-guidelines-for-unit-tests)
   - [General Guidelines for Playwright E2E Tests](#general-guidelines-for-playwright-e2e-tests)
   - [General Guidelines for Storybooks](#general-guidelines-for-storybooks)
+- [Publishing Packages](#publishing-packages)
 - [Remarks on Technologies used](#remarks-on-technologies-used)
 - [Seeking additional clarification](#seeking-additional-clarification)
 
@@ -486,6 +487,18 @@ export default { component: NameOfComponent } as Meta;
 - Please follow the template above to keep the Storybooks as consistent as possible
 - We recommend reading previous Storybooks from the codebase for inspiration and code guidelines.
 - If you need to decorate/wrap your Component/Story with a Container/Provider, please use [Storybook Decorators](https://storybook.js.org/docs/react/writing-stories/decorators)
+
+## Publishing Packages
+
+The Node.js Website uses a multi-package workspace architecture where individual packages are published to the npm registry. This section outlines the process for publishing packages and the best practices to follow.
+
+The package publishing process is automated through GitHub Actions and can be triggered in two ways:
+
+1. **Automatically after successful tests**:
+   When changes are merged to the main branch, the "Publish Packages" workflow runs after the "Linting and Tests" workflow completes successfully. Commits must come through GitHub's merge queue (committer must be verified from noreply@github.com)
+
+2. **Manually via workflow dispatch**:
+   You can manually trigger publishing for specific packages through the GitHub Actions interface. When manually triggering publishing, ensure the commit hasn't already been published and is safe to do so. In the event of a manual trigger, a Slack notification will be sent to `#nodejs-website`.
 
 ## Remarks on Technologies Used
 
