@@ -10,6 +10,20 @@ type DownloadOptions = {
   kind?: DownloadKind;
 };
 
+/**
+ * Generates a Node.js download URL for the given options.
+ *
+ * @param options - The download options.
+ * @param options.version - The Node.js version string, must include the 'v' prefix (e.g., 'v20.12.2').
+ * @param options.os - The target operating system. Defaults to 'LOADING'.
+ * @param options.platform - The target platform/architecture (e.g., 'x64', 'arm64'). Defaults to 'x64'.
+ * @param options.kind - The type of download artifact. Can be 'installer', 'binary', 'source', or 'shasum'. Defaults to 'installer'.
+ * @returns The fully qualified URL to the requested Node.js artifact.
+ *
+ * @example
+ * getNodeDownloadUrl({ version: 'v20.12.2', os: 'MAC', platform: 'arm64', kind: 'binary' });
+ * // => 'https://nodejs.org/dist/v20.12.2/node-v20.12.2-darwin-arm64.tar.gz'
+ */
 export const getNodeDownloadUrl = ({
   version,
   os = 'LOADING',

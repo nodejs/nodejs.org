@@ -7,40 +7,36 @@ import Link from '#site/components/Link';
 import { OperatingSystemLabel } from '#site/util/downloadUtils';
 import type { ParsedArtifact } from '#site/util/downloadUtils/simple';
 
-type SimplifiedDownloadTableProps = {
+type DownloadsTableProps = {
   source: Array<ParsedArtifact>;
 };
 
-const SimplifiedDownloadTable: FC<SimplifiedDownloadTableProps> = ({
-  source,
-}) => {
+const DownloadsTable: FC<DownloadsTableProps> = ({ source }) => {
   const t = useTranslations();
 
   return (
     <table>
       <thead>
         <tr>
-          <th>{t('components.simpleDownloadTable.fileName')}</th>
+          <th>{t('components.downloadsTable.fileName')}</th>
           <th className="md:w-24">
-            {t('components.simpleDownloadTable.operatingSystem')}
+            {t('components.downloadsTable.operatingSystem')}
           </th>
           <th className="md:w-24">
-            {t('components.simpleDownloadTable.architecture')}
+            {t('components.downloadsTable.architecture')}
           </th>
         </tr>
       </thead>
       <tbody>
         {source.map(release => (
           <tr key={`${release.file}-${release.architecture}`}>
-            <td data-label={t('components.simpleDownloadTable.fileName')}>
+            <td data-label={t('components.downloadsTable.fileName')}>
               <Link href={release.url}>{release.file}</Link>
             </td>
-            <td
-              data-label={t('components.simpleDownloadTable.operatingSystem')}
-            >
+            <td data-label={t('components.downloadsTable.operatingSystem')}>
               {OperatingSystemLabel[release.os]}
             </td>
-            <td data-label={t('components.simpleDownloadTable.architecture')}>
+            <td data-label={t('components.downloadsTable.architecture')}>
               {release.architecture}
             </td>
           </tr>
@@ -50,4 +46,4 @@ const SimplifiedDownloadTable: FC<SimplifiedDownloadTableProps> = ({
   );
 };
 
-export default SimplifiedDownloadTable;
+export default DownloadsTable;

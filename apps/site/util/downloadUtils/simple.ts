@@ -143,8 +143,11 @@ export const buildReleaseArtifacts = ({
 type SidebarGroup = ComponentProps<typeof ProgressionSidebarGroup>;
 
 export const groupReleasesByStatus = (
-  releaseData: Awaited<ReturnType<typeof getReleaseData>>
+  releaseData: Awaited<ReturnType<typeof getReleaseData>>,
+  pathname: string
 ): Array<SidebarGroup> => {
+  let simplified = false;
+
   // Reduce the release data into a record grouped by release status (e.g., 'LTS', 'Current')
   const grouped = releaseData.reduce<Record<string, SidebarGroup>>(
     (acc, release) => {
@@ -156,6 +159,11 @@ export const groupReleasesByStatus = (
           groupName: statusKey,
           items: [],
         };
+
+        // Check if the current pathname indicates a simplified download page
+        if (statusKey === 'LTS' && pathname.endsWith('simplified')) {
+          simplified = true;
+        }
       }
 
       // Build the label: always include major version, optionally codename
@@ -165,10 +173,19 @@ export const groupReleasesByStatus = (
       }
 
       // Add the release to the group's items
-      acc[statusKey].items.push({
-        label: labelParts.join(' '),
-        link: `/download/${release.major}`,
-      });
+      if (simplified) {
+        acc[statusKey].items.push({
+          label: labelParts.join(' '),
+          link: `/download/simplified`,
+        });
+
+        simplified = false;
+      } else {
+        acc[statusKey].items.push({
+          label: labelParts.join(' '),
+          link: `/download/${release.major}`,
+        });
+      }
 
       return acc;
     },

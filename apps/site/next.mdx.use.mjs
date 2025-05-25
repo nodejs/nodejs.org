@@ -1,7 +1,7 @@
 'use strict';
 
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
-import SimplifiedDownloadTable from './components/Downloads/SimplifiedDownloadTable';
+import DownloadsTable from './components/Downloads/DownloadsTable';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
 import WithBadgeGroup from './components/withBadgeGroup';
 import WithBanner from './components/withBanner';
@@ -16,7 +16,7 @@ import WithSimplifiedDownload from './components/withSimplifiedDownload';
 export const mdxComponents = {
   DownloadReleasesTable: DownloadReleasesTable,
   WithSimplifiedDownload: WithSimplifiedDownload,
-  SimplifiedDownloadTable: SimplifiedDownloadTable,
+  DownloadsTable: DownloadsTable,
   // HOC for getting Node.js Release Metadata
   WithNodeRelease: WithNodeRelease,
   // HOC for providing Banner Data

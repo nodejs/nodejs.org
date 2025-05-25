@@ -9,9 +9,9 @@ layout: download-simple
   {({ binaries, installers, version }) => (
     <>
       <h2>Node.js® {version} – Binary Downloads</h2>
-      <SimplifiedDownloadTable source={binaries} />
+      <DownloadsTable source={binaries} />
       <h2>Node.js® {version} – Installer Packages</h2>
-      <SimplifiedDownloadTable source={installers} />
+      <DownloadsTable source={installers} />
     </>
   )}
 </WithSimplifiedDownload>
@@ -56,9 +56,9 @@ Learn more about [Node.js releases](/about/previous-releases), including the rel
             </summary>
             <div>
               <h4>Binary Downloads</h4>
-              <SimplifiedDownloadTable source={binaries} />
+              <DownloadsTable source={binaries} />
               <h4>Installer Packages</h4>
-              <SimplifiedDownloadTable source={installers} />
+              <DownloadsTable source={installers} />
               <p>
                 Read the{' '}
                 <LinkWithArrow href={urls.changelog}>changelog</LinkWithArrow>{' '}
