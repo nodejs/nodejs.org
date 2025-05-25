@@ -1,14 +1,17 @@
+import type ProgressionSidebarGroup from '@node-core/ui-components/Common/ProgressionSidebar/ProgressionSidebarGroup';
+import type { ComponentProps } from 'react';
 import { satisfies } from 'semver';
 
 import type getReleaseData from '#site/next-data/releaseData';
 import type { NodeRelease } from '#site/types/releases';
 import type { UserOS, UserPlatform } from '#site/types/userOS';
-
-import type { DownloadKind } from '../getNodeDownloadUrl';
-import { getNodeDownloadUrl } from '../getNodeDownloadUrl';
-
-import type { DownloadDropdownItem } from '.';
-import { PLATFORMS, OS_NOT_SUPPORTING_INSTALLERS } from '.';
+import type { DownloadDropdownItem } from '#site/util/downloadUtils';
+import {
+  PLATFORMS,
+  OS_NOT_SUPPORTING_INSTALLERS,
+} from '#site/util/downloadUtils';
+import type { DownloadKind } from '#site/util/getNodeDownloadUrl';
+import { getNodeDownloadUrl } from '#site/util/getNodeDownloadUrl';
 
 import { DIST_URL, BASE_CHANGELOG_URL } from '#site/next.constants';
 
@@ -23,64 +26,77 @@ export type ParsedArtifact = {
   version: string;
 };
 
-function generateCompatibleDownloads({
-  platforms = PLATFORMS,
-  exclude = [],
-  version,
-  kind = 'binary',
-}: {
+/**
+ * Checks if a download item is compatible with the given OS, platform, and version.
+ */
+function isCompatible(
+  compatibility: DownloadDropdownItem<UserPlatform>['compatibility'],
+  os: UserOS,
+  platform: UserPlatform,
+  version: string
+): boolean {
+  const {
+    os: osList,
+    platform: platformList,
+    semver: versions,
+  } = compatibility;
+
+  return (
+    (osList?.includes(os) ?? true) &&
+    (platformList?.includes(platform) ?? true) &&
+    (versions?.every(r => satisfies(version, r)) ?? true)
+  );
+}
+
+type CompatibleArtifactOptions = {
   platforms?: Record<UserOS, Array<DownloadDropdownItem<UserPlatform>>>;
   exclude?: Array<string>;
   version: string;
   kind?: DownloadKind;
-}): Array<ParsedArtifact> {
-  return Object.entries(platforms).reduce<Array<ParsedArtifact>>(
-    (acc, [os, items]) => {
-      if (exclude.includes(os as UserOS)) return acc;
+};
 
-      const operatingSystem = os as UserOS;
-      items.forEach(({ compatibility, value, label }) => {
-        const {
-          os: operatingSystems,
-          platform: platforms,
-          semver: versions,
-        } = compatibility;
+/**
+ * Returns a list of compatible artifacts for the given options.
+ */
+function getCompatibleArtifacts({
+  platforms = PLATFORMS,
+  exclude = [],
+  version,
+  kind = 'binary',
+}: CompatibleArtifactOptions): Array<ParsedArtifact> {
+  return Object.entries(platforms).flatMap(([os, items]) => {
+    if (exclude.includes(os as UserOS)) return [];
+    const operatingSystem = os as UserOS;
+    return items
+      .filter(({ compatibility, value }) =>
+        isCompatible(compatibility, operatingSystem, value, version)
+      )
+      .map(({ value, label }) => {
+        const url = getNodeDownloadUrl({
+          version: version,
+          os: operatingSystem,
+          platform: value,
+          kind: kind,
+        });
 
-        if (
-          (operatingSystems?.includes(operatingSystem) ?? true) &&
-          (platforms?.includes(value) ?? true) &&
-          (versions?.every(r => satisfies(version, r)) ?? true)
-        ) {
-          const url = getNodeDownloadUrl({
-            version: version,
-            os: operatingSystem,
-            platform: value,
-            kind: kind,
-          });
-
-          acc.push({
-            file: url.replace(`${DIST_URL}${version}/`, ''),
-            kind: kind,
-            os: operatingSystem,
-            architecture: label,
-            url: url,
-            version: version,
-          });
-        }
+        return {
+          file: url.replace(`${DIST_URL}${version}/`, ''),
+          kind: kind,
+          os: operatingSystem,
+          architecture: label,
+          url: url,
+          version: version,
+        };
       });
-
-      return acc;
-    },
-    []
-  );
+  });
 }
 
-export const getDownloadTable = ({
+export const buildReleaseArtifacts = ({
   versionWithPrefix,
   version,
   minorVersions,
 }: NodeRelease) => ({
-  binaries: generateCompatibleDownloads({
+  binaries: getCompatibleArtifacts({
     version: versionWithPrefix,
     kind: 'binary',
   }),
@@ -90,7 +106,7 @@ export const getDownloadTable = ({
     changelog: `${BASE_CHANGELOG_URL}${version}`,
     blogPost: `${RELEASE_POST_URL}${versionWithPrefix}`,
   },
-  installers: generateCompatibleDownloads({
+  installers: getCompatibleArtifacts({
     exclude: OS_NOT_SUPPORTING_INSTALLERS,
     version: versionWithPrefix,
     kind: 'installer',
@@ -102,11 +118,11 @@ export const getDownloadTable = ({
       const versionWithPrefix = `v${minor.version}`;
 
       return {
-        binaries: generateCompatibleDownloads({
+        binaries: getCompatibleArtifacts({
           version: versionWithPrefix,
           kind: 'binary',
         }),
-        installers: generateCompatibleDownloads({
+        installers: getCompatibleArtifacts({
           exclude: OS_NOT_SUPPORTING_INSTALLERS,
           version: versionWithPrefix,
           kind: 'installer',
@@ -124,19 +140,13 @@ export const getDownloadTable = ({
     }),
 });
 
-export const groupReleasesForSidebar = (
+type k = ComponentProps<typeof ProgressionSidebarGroup>;
+
+export const groupReleasesByStatus = (
   releaseData: Awaited<ReturnType<typeof getReleaseData>>
-): Array<{
-  groupName: string;
-  items: Array<{ label: string; link: string }>;
-}> => {
+): Array<k> => {
   // Reduce the release data into a record grouped by release status (e.g., 'LTS', 'Current')
-  const grouped = releaseData.reduce<
-    Record<
-      string,
-      { groupName: string; items: Array<{ label: string; link: string }> }
-    >
-  >((acc, release) => {
+  const grouped = releaseData.reduce<Record<string, k>>((acc, release) => {
     const statusKey = release.status;
 
     // Initialize the group if it doesn't exist yet

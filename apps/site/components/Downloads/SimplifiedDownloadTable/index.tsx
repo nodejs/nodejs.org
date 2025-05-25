@@ -4,7 +4,6 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import Link from '#site/components/Link';
-import type { UserOS } from '#site/types/userOS';
 import { OperatingSystemLabel } from '#site/util/downloadUtils';
 import type { ParsedArtifact } from '#site/util/downloadUtils/simple';
 
@@ -39,7 +38,7 @@ const SimplifiedDownloadTable: FC<SimplifiedDownloadTableProps> = ({
             <td
               data-label={t('components.simpleDownloadTable.operatingSystem')}
             >
-              {OperatingSystemLabel[release.os as UserOS]}
+              {OperatingSystemLabel[release.os]}
             </td>
             <td data-label={t('components.simpleDownloadTable.architecture')}>
               {release.architecture}
