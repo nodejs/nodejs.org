@@ -140,37 +140,40 @@ export const buildReleaseArtifacts = ({
     }),
 });
 
-type k = ComponentProps<typeof ProgressionSidebarGroup>;
+type SidebarGroup = ComponentProps<typeof ProgressionSidebarGroup>;
 
 export const groupReleasesByStatus = (
   releaseData: Awaited<ReturnType<typeof getReleaseData>>
-): Array<k> => {
+): Array<SidebarGroup> => {
   // Reduce the release data into a record grouped by release status (e.g., 'LTS', 'Current')
-  const grouped = releaseData.reduce<Record<string, k>>((acc, release) => {
-    const statusKey = release.status;
+  const grouped = releaseData.reduce<Record<string, SidebarGroup>>(
+    (acc, release) => {
+      const statusKey = release.status;
 
-    // Initialize the group if it doesn't exist yet
-    if (!acc[statusKey]) {
-      acc[statusKey] = {
-        groupName: statusKey,
-        items: [],
-      };
-    }
+      // Initialize the group if it doesn't exist yet
+      if (!acc[statusKey]) {
+        acc[statusKey] = {
+          groupName: statusKey,
+          items: [],
+        };
+      }
 
-    // Build the label: always include major version, optionally codename
-    const labelParts = [`v${release.major}`];
-    if (release.codename) {
-      labelParts.push(release.codename);
-    }
+      // Build the label: always include major version, optionally codename
+      const labelParts = [`v${release.major}`];
+      if (release.codename) {
+        labelParts.push(release.codename);
+      }
 
-    // Add the release to the group's items
-    acc[statusKey].items.push({
-      label: labelParts.join(' '),
-      link: `/download/${release.major}`,
-    });
+      // Add the release to the group's items
+      acc[statusKey].items.push({
+        label: labelParts.join(' '),
+        link: `/download/${release.major}`,
+      });
 
-    return acc;
-  }, {});
+      return acc;
+    },
+    {}
+  );
 
   // Return the grouped items as an array for sidebar consumption
   return Object.values(grouped);
