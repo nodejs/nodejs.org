@@ -2,40 +2,10 @@ import type { FC } from 'react';
 
 import { getClientContext } from '#site/client-context';
 import getReleaseData from '#site/next-data/releaseData';
-import { getDownloadTable } from '#site/util/downloadUtils';
-
-const mapSidebarItems = (
-  releaseData: Awaited<ReturnType<typeof getReleaseData>>
-) =>
-  Object.values(
-    releaseData.reduce<
-      Record<
-        string,
-        { groupName: string; items: Array<{ label: string; link: string }> }
-      >
-    >((acc, release) => {
-      const key = release.status;
-      if (!acc[key]) {
-        acc[key] = {
-          groupName: key,
-          items: [],
-        };
-      }
-
-      const label = [`v${release.major}`];
-
-      if (release.codename) {
-        label.push(release.codename);
-      }
-
-      acc[key].items.push({
-        label: label.join(' '),
-        link: `/download/${release.major}`,
-      });
-
-      return acc;
-    }, {})
-  );
+import {
+  getDownloadTable,
+  mapSidebarItems,
+} from '#site/util/downloadUtils/simple';
 
 type DownloadTable = ReturnType<typeof getDownloadTable>;
 type Sidebar = ReturnType<typeof mapSidebarItems>;
@@ -47,8 +17,8 @@ type WithSimplifiedDownloadProps = {
 const WithSimplifiedDownload: FC<WithSimplifiedDownloadProps> = async ({
   children: Component,
 }) => {
-  const { pathname } = getClientContext();
   const releaseData = await getReleaseData();
+  const { pathname } = getClientContext();
   const sidebarGroups = mapSidebarItems(releaseData);
 
   const version = pathname.split('/').pop();

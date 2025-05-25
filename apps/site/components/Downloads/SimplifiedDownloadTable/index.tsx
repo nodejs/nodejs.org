@@ -5,8 +5,8 @@ import type { FC } from 'react';
 
 import Link from '#site/components/Link';
 import type { UserOS } from '#site/types/userOS';
-import type { ParsedArtifact } from '#site/util/downloadUtils';
 import { OperatingSystemLabel } from '#site/util/downloadUtils';
+import type { ParsedArtifact } from '#site/util/downloadUtils/simple';
 
 type SimplifiedDownloadTableProps = {
   source: Array<ParsedArtifact>;
