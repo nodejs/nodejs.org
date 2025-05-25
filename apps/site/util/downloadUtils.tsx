@@ -129,7 +129,7 @@ export const parseCompat = <
   }));
 };
 
-type ParsedArtifact = {
+export type ParsedArtifact = {
   file: string;
   kind: DownloadKind;
   os: UserOS;
@@ -185,30 +185,64 @@ export function generateCompatibleDownloads({
   );
 }
 
-export const getDownloadTable = (release: NodeRelease) => ({
+export const getDownloadTable = ({
+  versionWithPrefix,
+  minorVersions,
+}: NodeRelease) => ({
   binaries: generateCompatibleDownloads({
-    version: release.versionWithPrefix,
+    version: versionWithPrefix,
     kind: 'binary' as DownloadKind,
   }),
+  urls: {
+    shasum: getNodeDownloadUrl(
+      versionWithPrefix,
+      'LOADING',
+      'x64',
+      'shasum' as DownloadKind
+    ),
+    source: getNodeDownloadUrl(
+      versionWithPrefix,
+      'LOADING',
+      'x64',
+      'source' as DownloadKind
+    ),
+    changelog: `https://github.com/nodejs/node/releases/tag/${versionWithPrefix}`,
+    blogPost: `/blog/release/${versionWithPrefix}`,
+  },
   installers: generateCompatibleDownloads({
     exclude: OS_NOT_SUPPORTING_INSTALLERS,
-    version: release.versionWithPrefix,
+    version: versionWithPrefix,
     kind: 'installer' as DownloadKind,
   }),
-  minors: release.minorVersions
-    .filter(minor => `v${minor.version}` !== release.versionWithPrefix)
-    .map(minor => [
-      generateCompatibleDownloads({
-        version: `v${minor.version}`,
-        kind: 'binary' as DownloadKind,
-      }),
-      generateCompatibleDownloads({
-        exclude: OS_NOT_SUPPORTING_INSTALLERS,
-        version: `v${minor.version}`,
-        kind: 'installer' as DownloadKind,
-      }),
-      `v${minor.version}`,
-    ]),
+  version: versionWithPrefix,
+  minors: minorVersions
+    .filter(minor => `v${minor.version}` !== versionWithPrefix)
+    .map(minor => {
+      const versionWithPrefix = `v${minor.version}`;
+
+      return {
+        binaries: generateCompatibleDownloads({
+          version: versionWithPrefix,
+          kind: 'binary' as DownloadKind,
+        }),
+        installers: generateCompatibleDownloads({
+          exclude: OS_NOT_SUPPORTING_INSTALLERS,
+          version: versionWithPrefix,
+          kind: 'installer' as DownloadKind,
+        }),
+        version: versionWithPrefix,
+        urls: {
+          source: getNodeDownloadUrl(
+            versionWithPrefix,
+            'LOADING',
+            'x64',
+            'source' as DownloadKind
+          ),
+          changelog: `https://github.com/nodejs/node/releases/tag/${versionWithPrefix}`,
+          blogPost: `/blog/release/${versionWithPrefix}`,
+        },
+      };
+    }),
 });
 
 export const OPERATING_SYSTEMS: Array<DownloadDropdownItem<UserOS>> = [

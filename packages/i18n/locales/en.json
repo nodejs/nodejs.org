@@ -156,6 +156,11 @@
       "status": "Status",
       "details": "Details"
     },
+    "simpleDownloadTable": {
+      "fileName": "File Name",
+      "operatingSystem": "OS",
+      "architecture": "Architecture"
+    },
     "releaseModal": {
       "title": "Node.js {version} ({codename})",
       "titleWithoutCodename": "Node.js {version}",

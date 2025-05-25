@@ -1,7 +1,7 @@
 import { DIST_URL } from '#site/next.constants.mjs';
 import type { UserOS, UserPlatform } from '#site/types/userOS';
 
-export type DownloadKind = 'installer' | 'binary' | 'source';
+export type DownloadKind = 'installer' | 'binary' | 'source' | 'shasum';
 
 export const getNodeDownloadUrl = (
   versionWithPrefix: string,
@@ -13,6 +13,10 @@ export const getNodeDownloadUrl = (
 
   if (kind === 'source') {
     return `${baseURL}/node-${versionWithPrefix}.tar.gz`;
+  }
+
+  if (kind === 'shasum') {
+    return `${baseURL}/SHASUMS256.txt.asc`;
   }
 
   switch (os) {

@@ -7,12 +7,7 @@ import { getDownloadTable } from '#site/util/downloadUtils';
 type DownloadTable = ReturnType<typeof getDownloadTable>;
 
 type WithSimplifiedDownloadProps = {
-  children: FC<{
-    version: string;
-    binaries: DownloadTable['binaries'];
-    installers: DownloadTable['installers'];
-    minors: DownloadTable['minors'];
-  }>;
+  children: FC<DownloadTable>;
 };
 
 const WithSimplifiedDownload: FC<WithSimplifiedDownloadProps> = async ({
@@ -23,23 +18,14 @@ const WithSimplifiedDownload: FC<WithSimplifiedDownloadProps> = async ({
 
   const version = pathname.split('/').pop();
   const matchingRelease = releaseData.find(
-    ({ major, codename, isLts }) =>
-      major === Number(version) ||
-      codename === version ||
-      (isLts === true && version === 'simplified')
+    ({ major, isLts }) =>
+      major === Number(version) || (isLts === true && version === 'simplified')
   );
 
   if (matchingRelease !== undefined) {
-    const { binaries, installers, minors } = getDownloadTable(matchingRelease);
+    const table = getDownloadTable(matchingRelease);
 
-    return (
-      <Component
-        version={matchingRelease.versionWithPrefix}
-        binaries={binaries}
-        installers={installers}
-        minors={minors}
-      />
-    );
+    return <Component {...table} />;
   }
 
   return null;
