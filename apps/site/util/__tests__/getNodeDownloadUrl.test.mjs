@@ -11,7 +11,10 @@ describe('getNodeDownloadUrl', () => {
     const bitness = 86;
     const expectedUrl = 'https://nodejs.org/dist/v18.16.0/node-v18.16.0.pkg';
 
-    assert.equal(getNodeDownloadUrl(version, os, bitness), expectedUrl);
+    assert.equal(
+      getNodeDownloadUrl({ version: version, os: os, platform: bitness }),
+      expectedUrl
+    );
   });
 
   it('should return the correct download URL for Windows (32-bit)', () => {
@@ -20,7 +23,10 @@ describe('getNodeDownloadUrl', () => {
     const expectedUrl =
       'https://nodejs.org/dist/v18.16.0/node-v18.16.0-x86.msi';
 
-    assert.equal(getNodeDownloadUrl(version, os, bitness), expectedUrl);
+    assert.equal(
+      getNodeDownloadUrl({ version: version, os: os, platform: bitness }),
+      expectedUrl
+    );
   });
 
   it('should return the correct download URL for Windows (64-bit)', () => {
@@ -29,7 +35,10 @@ describe('getNodeDownloadUrl', () => {
     const expectedUrl =
       'https://nodejs.org/dist/v18.16.0/node-v18.16.0-x64.msi';
 
-    assert.equal(getNodeDownloadUrl(version, os, bitness), expectedUrl);
+    assert.equal(
+      getNodeDownloadUrl({ version: version, os: os, platform: bitness }),
+      expectedUrl
+    );
   });
 
   it('should return the default download URL for other operating systems', () => {
@@ -37,19 +46,32 @@ describe('getNodeDownloadUrl', () => {
     const bitness = 86;
     const expectedUrl = 'https://nodejs.org/dist/v18.16.0/node-v18.16.0.tar.gz';
 
-    assert.equal(getNodeDownloadUrl(version, os, bitness), expectedUrl);
+    assert.equal(
+      getNodeDownloadUrl({ version: version, os: os, platform: bitness }),
+      expectedUrl
+    );
   });
 
   describe('MAC', () => {
     it('should return .pkg link for installer', () => {
-      const url = getNodeDownloadUrl('v18.0.0', 'MAC', 'x64', 'installer');
+      const url = getNodeDownloadUrl({
+        version: 'v18.0.0',
+        os: 'MAC',
+        platform: 'x64',
+        kind: 'installer',
+      });
       assert.ok(url.includes('.pkg'));
     });
   });
 
   describe('WIN', () => {
     it('should return an MSI link for installer', () => {
-      const url = getNodeDownloadUrl('v18.0.0', 'WIN', 'x64', 'installer');
+      const url = getNodeDownloadUrl({
+        version: 'v18.0.0',
+        os: 'WIN',
+        platform: 'x64',
+        kind: 'installer',
+      });
       assert.ok(url.includes('.msi'));
     });
   });

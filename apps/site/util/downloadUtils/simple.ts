@@ -49,7 +49,12 @@ function generateCompatibleDownloads({
           (platforms?.includes(value) ?? true) &&
           (versions?.every(r => satisfies(version, r)) ?? true)
         ) {
-          const url = getNodeDownloadUrl(version, operatingSystem, value, kind);
+          const url = getNodeDownloadUrl({
+            version: version,
+            os: operatingSystem,
+            platform: value,
+            kind: kind,
+          });
 
           acc.push({
             file: url.replace(`${DIST_URL}${version}/`, ''),
@@ -75,28 +80,18 @@ export const getDownloadTable = ({
 }: NodeRelease) => ({
   binaries: generateCompatibleDownloads({
     version: versionWithPrefix,
-    kind: 'binary' as DownloadKind,
+    kind: 'binary',
   }),
   urls: {
-    shasum: getNodeDownloadUrl(
-      versionWithPrefix,
-      'LOADING',
-      'x64',
-      'shasum' as DownloadKind
-    ),
-    source: getNodeDownloadUrl(
-      versionWithPrefix,
-      'LOADING',
-      'x64',
-      'source' as DownloadKind
-    ),
+    shasum: getNodeDownloadUrl({ version: versionWithPrefix, kind: 'shasum' }),
+    source: getNodeDownloadUrl({ version: versionWithPrefix, kind: 'source' }),
     changelog: `${BASE_CHANGELOG_URL}${version}`,
     blogPost: `/blog/release/${versionWithPrefix}`,
   },
   installers: generateCompatibleDownloads({
     exclude: OS_NOT_SUPPORTING_INSTALLERS,
     version: versionWithPrefix,
-    kind: 'installer' as DownloadKind,
+    kind: 'installer',
   }),
   version: versionWithPrefix,
   minors: minorVersions
@@ -107,21 +102,19 @@ export const getDownloadTable = ({
       return {
         binaries: generateCompatibleDownloads({
           version: versionWithPrefix,
-          kind: 'binary' as DownloadKind,
+          kind: 'binary',
         }),
         installers: generateCompatibleDownloads({
           exclude: OS_NOT_SUPPORTING_INSTALLERS,
           version: versionWithPrefix,
-          kind: 'installer' as DownloadKind,
+          kind: 'installer',
         }),
         version: versionWithPrefix,
         urls: {
-          source: getNodeDownloadUrl(
-            versionWithPrefix,
-            'LOADING',
-            'x64',
-            'source' as DownloadKind
-          ),
+          source: getNodeDownloadUrl({
+            version: versionWithPrefix,
+            kind: 'source',
+          }),
           changelog: `${BASE_CHANGELOG_URL}${minor.version}`,
           blogPost: `/blog/release/${versionWithPrefix}`,
         },
