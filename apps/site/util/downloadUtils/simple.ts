@@ -12,6 +12,8 @@ import { PLATFORMS, OS_NOT_SUPPORTING_INSTALLERS } from '.';
 
 import { DIST_URL, BASE_CHANGELOG_URL } from '#site/next.constants';
 
+const RELEASE_POST_URL = '/blog/release/';
+
 export type ParsedArtifact = {
   file: string;
   kind: DownloadKind;
@@ -86,7 +88,7 @@ export const getDownloadTable = ({
     shasum: getNodeDownloadUrl({ version: versionWithPrefix, kind: 'shasum' }),
     source: getNodeDownloadUrl({ version: versionWithPrefix, kind: 'source' }),
     changelog: `${BASE_CHANGELOG_URL}${version}`,
-    blogPost: `/blog/release/${versionWithPrefix}`,
+    blogPost: `${RELEASE_POST_URL}${versionWithPrefix}`,
   },
   installers: generateCompatibleDownloads({
     exclude: OS_NOT_SUPPORTING_INSTALLERS,
@@ -95,7 +97,7 @@ export const getDownloadTable = ({
   }),
   version: versionWithPrefix,
   minors: minorVersions
-    .filter(minor => `v${minor.version}` !== versionWithPrefix)
+    .filter(minor => `v${minor.version}` !== versionWithPrefix) // Exclude the current version
     .map(minor => {
       const versionWithPrefix = `v${minor.version}`;
 
@@ -116,41 +118,50 @@ export const getDownloadTable = ({
             kind: 'source',
           }),
           changelog: `${BASE_CHANGELOG_URL}${minor.version}`,
-          blogPost: `/blog/release/${versionWithPrefix}`,
+          blogPost: `${RELEASE_POST_URL}${versionWithPrefix}`,
         },
       };
     }),
 });
 
-export const mapSidebarItems = (
+export const groupReleasesForSidebar = (
   releaseData: Awaited<ReturnType<typeof getReleaseData>>
-) =>
-  Object.values(
-    releaseData.reduce<
-      Record<
-        string,
-        { groupName: string; items: Array<{ label: string; link: string }> }
-      >
-    >((acc, release) => {
-      const key = release.status;
-      if (!acc[key]) {
-        acc[key] = {
-          groupName: key,
-          items: [],
-        };
-      }
+): Array<{
+  groupName: string;
+  items: Array<{ label: string; link: string }>;
+}> => {
+  // Reduce the release data into a record grouped by release status (e.g., 'LTS', 'Current')
+  const grouped = releaseData.reduce<
+    Record<
+      string,
+      { groupName: string; items: Array<{ label: string; link: string }> }
+    >
+  >((acc, release) => {
+    const statusKey = release.status;
 
-      const label = [`v${release.major}`];
+    // Initialize the group if it doesn't exist yet
+    if (!acc[statusKey]) {
+      acc[statusKey] = {
+        groupName: statusKey,
+        items: [],
+      };
+    }
 
-      if (release.codename) {
-        label.push(release.codename);
-      }
+    // Build the label: always include major version, optionally codename
+    const labelParts = [`v${release.major}`];
+    if (release.codename) {
+      labelParts.push(release.codename);
+    }
 
-      acc[key].items.push({
-        label: label.join(' '),
-        link: `/download/${release.major}`,
-      });
+    // Add the release to the group's items
+    acc[statusKey].items.push({
+      label: labelParts.join(' '),
+      link: `/download/${release.major}`,
+    });
 
-      return acc;
-    }, {})
-  );
+    return acc;
+  }, {});
+
+  // Return the grouped items as an array for sidebar consumption
+  return Object.values(grouped);
+};

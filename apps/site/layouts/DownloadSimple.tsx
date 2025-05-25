@@ -15,9 +15,9 @@ const DownloadLayout: FC<PropsWithChildren> = async ({ children }) => (
 
     <ArticleLayout>
       <WithSimplifiedDownload>
-        {({ mappedReleases }) => (
+        {({ mappedSidebarItems }) => (
           <>
-            <WithProgressionSidebar groups={mappedReleases} />
+            <WithProgressionSidebar groups={mappedSidebarItems} />
             <div>
               <main>
                 <WithMarkdownContent

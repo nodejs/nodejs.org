@@ -323,6 +323,14 @@
         }
       }
     },
+    "simpleDownload": {
+      "sidebar": {
+        "Current": "Current",
+        "LTS": "LTS",
+        "Maintenance": "Maintenance",
+        "End-of-life": "End of Life"
+      }
+    },
     "logo": "Node.js logo"
   }
 }

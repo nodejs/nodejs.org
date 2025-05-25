@@ -1,17 +1,18 @@
+import { getTranslations } from 'next-intl/server';
 import type { FC } from 'react';
 
 import { getClientContext } from '#site/client-context';
 import getReleaseData from '#site/next-data/releaseData';
 import {
   getDownloadTable,
-  mapSidebarItems,
+  groupReleasesForSidebar,
 } from '#site/util/downloadUtils/simple';
 
 type DownloadTable = ReturnType<typeof getDownloadTable>;
-type Sidebar = ReturnType<typeof mapSidebarItems>;
+type Sidebar = ReturnType<typeof groupReleasesForSidebar>;
 
 type WithSimplifiedDownloadProps = {
-  children: FC<DownloadTable & { mappedReleases: Sidebar }>;
+  children: FC<DownloadTable & { mappedSidebarItems: Sidebar }>;
 };
 
 const WithSimplifiedDownload: FC<WithSimplifiedDownloadProps> = async ({
@@ -19,7 +20,13 @@ const WithSimplifiedDownload: FC<WithSimplifiedDownloadProps> = async ({
 }) => {
   const releaseData = await getReleaseData();
   const { pathname } = getClientContext();
-  const sidebarGroups = mapSidebarItems(releaseData);
+  const t = await getTranslations();
+
+  const mappedSidebarItems = groupReleasesForSidebar(releaseData);
+  const localizedSidebarItems = mappedSidebarItems.map(item => ({
+    ...item,
+    groupName: t(`layouts.simpleDownload.sidebar.${item.groupName}`),
+  }));
 
   const version = pathname.split('/').pop();
   const matchingRelease = releaseData.find(
@@ -30,7 +37,7 @@ const WithSimplifiedDownload: FC<WithSimplifiedDownloadProps> = async ({
   if (matchingRelease !== undefined) {
     const table = getDownloadTable(matchingRelease);
 
-    return <Component {...table} mappedReleases={sidebarGroups} />;
+    return <Component {...table} mappedSidebarItems={localizedSidebarItems} />;
   }
 
   return null;
