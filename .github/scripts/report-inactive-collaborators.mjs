@@ -21,7 +21,7 @@ async function parseCollaborators() {
   const lines = content.split('\n');
   const collaborators = [];
 
-  const startIndex = lines.indexOf(CONFIG.CURRENT_MEMBERS_HEADER) + 1;
+  const startIndex = lines.findIndex(l => l.startsWith(CONFIG.CURRENT_MEMBERS_HEADER)) + 1;
   if (startIndex <= 0) return collaborators;
 
   for (let i = startIndex; i < lines.length; i++) {
