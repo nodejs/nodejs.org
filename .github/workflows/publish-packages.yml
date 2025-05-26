@@ -41,29 +41,29 @@ jobs:
         with:
           egress-policy: audit
 
-      # - name: Verify commit authenticity
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   run: |
-      #     # Get commit data from GitHub API to verify its authenticity
-      #     COMMIT_DATA=$(gh api repos/${{ github.repository }}/commits/$COMMIT_SHA)
-      #     # Check if commit signature is verified (GPG signed)
-      #     VERIFIED=$(echo "$COMMIT_DATA" | jq -r '.commit.verification.verified')
-      #     # Check if commit was made through GitHub's web interface (merge queue)
-      #     COMMITTER=$(echo "$COMMIT_DATA" | jq -r '.commit.committer.email')
+      - name: Verify commit authenticity
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Get commit data from GitHub API to verify its authenticity
+          COMMIT_DATA=$(gh api repos/${{ github.repository }}/commits/$COMMIT_SHA)
+          # Check if commit signature is verified (GPG signed)
+          VERIFIED=$(echo "$COMMIT_DATA" | jq -r '.commit.verification.verified')
+          # Check if commit was made through GitHub's web interface (merge queue)
+          COMMITTER=$(echo "$COMMIT_DATA" | jq -r '.commit.committer.email')
 
-      #     # Security checks to ensure we only publish from verified and trusted sources
-      #     if [[ "$VERIFIED" != "true" ]]; then
-      #       echo "❌ Unverified commit! Aborting."
-      #       exit 1
-      #     fi
+          # Security checks to ensure we only publish from verified and trusted sources
+          if [[ "$VERIFIED" != "true" ]]; then
+            echo "❌ Unverified commit! Aborting."
+            exit 1
+          fi
 
-      #     if [[ "$COMMITTER" != "noreply@github.com" ]]; then
-      #       echo "❌ Not merged with the merge queue! Aborting."
-      #       exit 1
-      #     fi
+          if [[ "$COMMITTER" != "noreply@github.com" ]]; then
+            echo "❌ Not merged with the merge queue! Aborting."
+            exit 1
+          fi
 
-      #     echo "✅ Commit is verified and trusted."
+          echo "✅ Commit is verified and trusted."
 
       - name: Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
