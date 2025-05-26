@@ -15,7 +15,45 @@ The Node.js Website Team is responsible for the day-to-day technical development
 
 The maintainers on the Node.js Website Team are responsible for steering the technical direction of the Node.js Website, and reserve the right to make final decisions on any issues or pull requests, in line with the Contribution Guidelines, Collaborator Guidelines, the Code of Conduct and the overall Governance premises of the Node.js project.
 
-Members of this team are nominated through the guidelines provided in the Collaborator Guidelines within this repository.
+Members of this team are nominated through the guidelines provided in the Collaborator Guidelines within this repository. After a passed nominations, members should submit a PR to add themselves to the list of current members, shown below.
+
+#### Current Members
+
+- [araujogui](https://github.com/araujogui) - **Guilherme Araújo**
+
+- [AugustinMauroy](https://github.com/AugustinMauroy) - **Augustin Mauroy**
+
+- [avivkeller](https://github.com/avivkeller) - **Aviv Keller**
+
+- [aymen94](https://github.com/aymen94) - **Aymen Naghmouchi**
+
+- [benhalverson](https://github.com/benhalverson) - **Ben Halverson**
+
+- [bjohansebas](https://github.com/bjohansebas) - **Sebastian Beltran**
+
+- [bmuenzenmeyer](https://github.com/bmuenzenmeyer) - **Brian Muenzenmeyer**
+
+- [bnb](https://github.com/bnb) - **Tierney Cyren**
+
+- [canerakdas](https://github.com/canerakdas) - **Caner Akdas**
+
+- [dario-piotrowicz](https://github.com/dario-piotrowicz) - **Dario Piotrowicz**
+
+- [Harkunwar](https://github.com/Harkunwar) - **Harkunwar Kochar**
+
+- [HinataKah0](https://github.com/HinataKah0) - **HinataKah0**
+
+- [manishprivet](https://github.com/manishprivet) - **Manish Kumar**
+
+- [mikeesto](https://github.com/mikeesto) - **Michael Esteban**
+
+- [ovflowd](https://github.com/ovflowd) - **Claudio Wunder**
+
+- [rodion-arr](https://github.com/rodion-arr) - **Rodion Abdurakhimov**
+
+- [SEWeiTung](https://github.com/SEWeiTung) - **Wei Tung**
+
+- [shanpriyan](https://github.com/shanpriyan) - **Shanmughapriyan S**
 
 ### Node.js Web Infra Team (`@nodejs/web-infra`)
 

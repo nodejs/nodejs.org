@@ -25,11 +25,10 @@ jobs:
 
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - name: Create inactive collaborators report
+      - name: Report inactive collaborators
+        id: inactive
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
         with:
-          github-token: ${{ secrets.READ_ONLY_PUBLIC_REPO_TOKEN }}
           script: |
-            const { reportInactiveCollaborators } = await import("${{github.workspace}}/.github/scripts/find-inactive-collaborators.mjs");
-
-            await reportInactiveCollaborators(core, github);
+            const report = await import("${{github.workspace}}/.github/scripts/report-inactive-collaborators.mjs");
+            report(github, exec)

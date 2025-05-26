@@ -61,10 +61,7 @@ Once you become a collaborator, you are expected to uphold certain responsibilit
 
 - **Adhere to Policies**: Collaborators must abide by the [Node.js Moderation Policy](https://github.com/nodejs/admin/blob/HEAD/Moderation-Policy.md) and [Code of Conduct](https://github.com/nodejs/node/blob/HEAD/CODE_OF_CONDUCT.md) at all times.
 
-- **Remain Active**: Collaborators are expected to interact with the repository at least once in the past twelve months. This can include:
-  - Reviewing pull requests
-  - Opening or commenting on issues
-  - Contributing commits
+- **Remain Active**: Collaborators are expected to author commits at least once in the past twelve months.
 
 If a collaborator becomes inactive for more than twelve months, they may be removed from the active collaborators list. They can be reinstated upon returning to active participation by going through the full nomination process again.
 
