@@ -126,13 +126,13 @@ jobs:
       - name: Publish
         working-directory: packages/${{ matrix.package }}
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           # Create a unique version using the commit SHA as a prerelease identifier
           # This ensures we can publish multiple times from the same codebase with unique versions
-          npm version --no-git-tag-version 0.0.0-$COMMIT_SHA
+          npm version --no-git-tag-version 1.0.1-$COMMIT_SHA
           # Publish the package to the npm registry with public access flag
-          pnpm publish --access public
+          pnpm publish --access public --no-git-checks
 
       - name: Notify on Manual Release
         if: ${{ github.event_name == 'workflow_dispatch' }}
@@ -142,7 +142,7 @@ jobs:
           SLACK_ICON: https://github.com/nodejs.png?size=48
           SLACK_TITLE: ':rocket: Package Published: ${{ matrix.package }}'
           SLACK_MESSAGE: |
-            :package: *Package*: `${{ matrix.package }}` (<https://www.npmjs.com/package/${{ steps.package-info.outputs.name }}|View on npm>)
+            :package: *Package*: `${{ matrix.package }}` (<https://www.npmjs.com/package/@node-core/${{ matrix.package }}|View on npm>)
             :bust_in_silhouette: *Published by*: ${{ github.triggering_actor }}
             :octocat: *Commit*: <https://github.com/${{ github.repository }}/commit/${{ env.COMMIT_SHA }}|${{ env.COMMIT_SHA }}>
           SLACK_USERNAME: nodejs-bot
