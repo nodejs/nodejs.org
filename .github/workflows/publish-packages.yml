@@ -91,7 +91,7 @@ jobs:
             done
 
             # Format the output for GitHub Actions matrix using jq
-            PACKAGES_JSON=$(printf '%s\n' "${CHANGED_PACKAGES[@]}" | jq -R . | jq -s .)
+            PACKAGES_JSON=$(jq -n '$ARGS.positional' --args "${CHANGED_PACKAGES[@]}" -c)
             echo "matrix={\"package\":$PACKAGES_JSON}" >> $GITHUB_OUTPUT
           fi
 
