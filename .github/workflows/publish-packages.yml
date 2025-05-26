@@ -142,7 +142,7 @@ jobs:
           SLACK_ICON: https://github.com/nodejs.png?size=48
           SLACK_TITLE: ':rocket: Package Published: ${{ matrix.package }}'
           SLACK_MESSAGE: |
-            :package: *Package*: `${{ matrix.package }}` (<https://www.npmjs.com/package/${{ steps.package-info.outputs.name }}|View on npm>)
+            :package: *Package*: `${{ matrix.package }}` (<https://www.npmjs.com/package/${{ matrix.package }}|View on npm>)
             :bust_in_silhouette: *Published by*: ${{ github.triggering_actor }}
             :octocat: *Commit*: <https://github.com/${{ github.repository }}/commit/${{ env.COMMIT_SHA }}|${{ env.COMMIT_SHA }}>
           SLACK_USERNAME: nodejs-bot
