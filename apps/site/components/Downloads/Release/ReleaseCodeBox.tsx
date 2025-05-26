@@ -15,7 +15,7 @@ import {
   ReleaseContext,
   ReleasesContext,
 } from '#site/providers/releaseProvider';
-import type { IntlMessageKeys } from '#site/types/i18n.js';
+import type { IntlMessageKeys } from '#site/types/i18n';
 import type { ReleaseContextType } from '#site/types/release';
 import { INSTALL_METHODS } from '#site/util/downloadUtils';
 
