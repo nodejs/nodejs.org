@@ -6,7 +6,7 @@ import localeConfig from '../config.json' with { type: 'json' };
  * Imports a locale when exists from the locales directory
  *
  * @param {string} locale The locale code to import
- * @returns {Promise<Record<string, any>>} The imported locale
+ * @returns {Promise<import('../types').Locale>} The imported locale
  */
 export const importLocale = async locale => {
   return import(`../locales/${locale}.json`, { with: { type: 'json' } }).then(

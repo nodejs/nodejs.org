@@ -15,6 +15,7 @@ import {
   ReleaseContext,
   ReleasesContext,
 } from '#site/providers/releaseProvider';
+import type { IntlMessageKeys } from '#site/types/i18n.js';
 import type { ReleaseContextType } from '#site/types/release';
 import { INSTALL_METHODS } from '#site/util/downloadUtils';
 
@@ -144,7 +145,7 @@ const ReleaseCodeBox: FC = () => {
 
       <span className="text-center text-xs text-neutral-800 dark:text-neutral-200">
         <Skeleton loading={renderSkeleton} hide={!currentPlatform}>
-          {t(info, { platform: label })}{' '}
+          {t(info as IntlMessageKeys, { platform: label })}{' '}
           {t.rich('layouts.download.codeBox.externalSupportInfo', {
             platform: label,
             link: text => (

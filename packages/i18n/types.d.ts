@@ -1,3 +1,5 @@
+import type EnglishMessages from './locales/en.json';
+
 export interface LocaleConfig {
   code: string;
   localName: string;
@@ -8,3 +10,5 @@ export interface LocaleConfig {
   enabled: boolean;
   default: boolean;
 }
+
+export type Locale = typeof EnglishMessages;

@@ -1,4 +1,5 @@
 import { importLocale } from '@node-core/website-i18n';
+import type { Locale } from '@node-core/website-i18n/types';
 import { test, expect, type Page } from '@playwright/test';
 
 const englishLocale = await importLocale('en');
@@ -34,10 +35,7 @@ const openLanguageMenu = async (page: Page) => {
   return page.locator(selector);
 };
 
-const verifyTranslation = async (
-  page: Page,
-  locale: string | Record<string, unknown>
-) => {
+const verifyTranslation = async (page: Page, locale: Locale | string) => {
   // Load locale data if string code provided (e.g., 'es', 'fr')
   const localeData =
     typeof locale === 'string' ? await importLocale(locale) : locale;
