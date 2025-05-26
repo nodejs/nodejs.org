@@ -126,7 +126,7 @@ jobs:
       - name: Publish
         working-directory: packages/${{ matrix.package }}
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           # Create a unique version using the commit SHA as a prerelease identifier
           # This ensures we can publish multiple times from the same codebase with unique versions
