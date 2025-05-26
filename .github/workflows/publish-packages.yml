@@ -130,7 +130,7 @@ jobs:
         run: |
           # Create a unique version using the commit SHA as a prerelease identifier
           # This ensures we can publish multiple times from the same codebase with unique versions
-          npm version --no-git-tag-version 0.0.0-$COMMIT_SHA
+          npm version --no-git-tag-version 1.0.0-$COMMIT_SHA
           # Publish the package to the npm registry with public access flag
           pnpm publish --access public --no-git-checks
 
