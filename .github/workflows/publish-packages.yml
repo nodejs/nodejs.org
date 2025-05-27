@@ -1,13 +1,11 @@
 name: Publish Packages
 
-# This workflow publishes packages to NPM when changes are merged to main branch or when manually triggered.
-# It runs automatically after successful tests or can be run manually for specific packages.
+# This workflow publishes packages to npm when changes are merged to main branch or when manually triggered.
 
 on:
-  workflow_run:
-    # Only run after linting and tests have passed on main branch
-    workflows: ['Linting and Tests']
-    types: [completed]
+  push:
+    paths:
+      - 'packages/**'
     # For security reasons, this should never be set to anything but `main`
     branches: [main]
   workflow_dispatch:
@@ -21,17 +19,11 @@ permissions:
   contents: read
 
 env:
-  # Use the SHA from the workflow run that triggered this or the current SHA for manual runs
-  COMMIT_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+  COMMIT_SHA: ${{ github.sha }}
 
 jobs:
   prepare-packages:
     runs-on: ubuntu-latest
-    # Only run if manually triggered or if the triggering workflow succeeded from a push event
-    if: github.event_name == 'workflow_dispatch' || (
-      github.event.workflow_run.conclusion == 'success' &&
-      github.event.workflow_run.event == 'push' &&
-      github.repository == 'nodejs/nodejs.org')
     outputs:
       # Output the matrix of packages to publish for use in the publish job
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
