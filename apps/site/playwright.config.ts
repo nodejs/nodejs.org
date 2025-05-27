@@ -14,12 +14,7 @@ export default defineConfig({
     ? {
         webServer: {
           command: process.env.PLAYWRIGHT_WEB_SERVER_COMMAND,
-          url:
-            // TODO: remove the VERCEL_PREVIEW_URL option once
-            // https://github.com/nodejs/nodejs.org/pull/7782 is merged
-            process.env.VERCEL_PREVIEW_URL ||
-            process.env.PLAYWRIGHT_BASE_URL ||
-            'http://127.0.0.1:3000',
+          url: process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:3000',
           timeout: 60_000 * 3,
         },
       }
