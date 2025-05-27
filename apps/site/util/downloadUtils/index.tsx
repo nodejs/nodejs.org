@@ -33,10 +33,10 @@ type DownloadCompatibility = {
 };
 
 type DownloadDropdownItem<T extends string> = {
-  label: string;
+  label: IntlMessageKeys;
   recommended?: boolean;
   url?: string;
-  info?: string;
+  info?: IntlMessageKeys;
   compatibility: DownloadCompatibility;
 } & Omit<SelectValue<T>, 'label'>;
 
@@ -116,7 +116,7 @@ export const INSTALL_METHODS = installMethods.map(method => ({
   iconImage: createIcon(InstallMethodIcons, method.icon),
   recommended: method.recommended,
   url: method.url,
-  info: method.info,
+  info: method.info as IntlMessageKeys,
   compatibility: {
     ...method.compatibility,
     os: method.compatibility?.os?.map(os => os as UserOS),
@@ -143,7 +143,7 @@ export const PLATFORMS = Object.fromEntries(
   Object.entries(systems).map(([key, data]) => [
     key,
     data.platforms.map(platform => ({
-      label: platform.label as IntlMessageKeys,
+      label: platform.label,
       value: platform.value as UserPlatform,
       compatibility: platform.compatibility || {},
     })),
