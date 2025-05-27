@@ -1,5 +1,4 @@
 import { defineConfig, devices } from '@playwright/test';
-import type { PlaywrightTestConfig } from '@playwright/test';
 
 const isCI = !!process.env.CI;
 
@@ -11,34 +10,19 @@ export default defineConfig({
   retries: isCI ? 2 : 0,
   workers: isCI ? 1 : undefined,
   reporter: isCI ? [['html'], ['github']] : [['html']],
-  ...(() => {
-    const use: PlaywrightTestConfig['use'] = {
-      baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:3000',
-      trace: 'on-first-retry',
-    };
-
-    const webServerCommand = process.env.PLAYWRIGHT_WEB_SERVER_COMMAND;
-    const webServerPort = parseInt(
-      process.env.PLAYWRIGHT_WEB_SERVER_PORT ?? ''
-    );
-    if (webServerCommand && !isNaN(webServerPort)) {
-      use.baseURL = `http://127.0.0.1:${webServerPort}`;
-      return {
+  ...(process.env.PLAYWRIGHT_WEB_SERVER_COMMAND
+    ? {
         webServer: {
-          command: webServerCommand,
-          port: webServerPort,
-          stdout: 'pipe',
-          stderr: 'pipe',
+          command: process.env.PLAYWRIGHT_WEB_SERVER_COMMAND,
+          url: process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:3000',
           timeout: 60_000 * 3,
         },
-        use,
-      };
-    }
-
-    return {
-      use,
-    };
-  })(),
+      }
+    : {}),
+  use: {
+    baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:3000',
+    trace: 'on-first-retry',
+  },
   projects: [
     {
       name: 'chromium',

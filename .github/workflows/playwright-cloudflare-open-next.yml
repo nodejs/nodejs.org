@@ -72,7 +72,7 @@ jobs:
         run: pnpm playwright
         env:
           PLAYWRIGHT_WEB_SERVER_COMMAND: pnpm turbo run cloudflare:preview
-          PLAYWRIGHT_WEB_SERVER_PORT: 8787
+          PLAYWRIGHT_BASE_URL: http://127.0.0.1:8787
 
       - name: Upload Playwright test results
         if: always()
