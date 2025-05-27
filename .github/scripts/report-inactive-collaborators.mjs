@@ -21,7 +21,8 @@ async function parseCollaborators() {
   const lines = content.split('\n');
   const collaborators = [];
 
-  const startIndex = lines.findIndex(l => l.startsWith(CONFIG.CURRENT_MEMBERS_HEADER)) + 1;
+  const startIndex =
+    lines.findIndex(l => l.startsWith(CONFIG.CURRENT_MEMBERS_HEADER)) + 1;
   if (startIndex <= 0) return collaborators;
 
   for (let i = startIndex; i < lines.length; i++) {
@@ -105,7 +106,6 @@ async function createOrUpdateIssue(github, context, report) {
 }
 
 export default async function (github, context) {
-  const repo = `${context.repo.owner}/${context.repo.repo}`;
   const cutoffDate = getDateMonthsAgo();
   const collaborators = await parseCollaborators();
 
