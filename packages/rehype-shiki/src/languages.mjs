@@ -1,7 +1,11 @@
 'use strict';
 
+import cLanguage from 'shiki/langs/c.mjs';
+import coffeeScriptLanguage from 'shiki/langs/coffeescript.mjs';
+import cPlusPlusLanguage from 'shiki/langs/cpp.mjs';
 import diffLanguage from 'shiki/langs/diff.mjs';
 import dockerLanguage from 'shiki/langs/docker.mjs';
+import httpLanguage from 'shiki/langs/http.mjs';
 import iniLanguage from 'shiki/langs/ini.mjs';
 import javaScriptLanguage from 'shiki/langs/javascript.mjs';
 import jsonLanguage from 'shiki/langs/json.mjs';
@@ -33,6 +37,10 @@ export const LANGUAGES = [
   ...dockerLanguage,
   ...diffLanguage,
   ...yamlLanguage,
+  ...cLanguage,
+  ...cPlusPlusLanguage,
+  ...httpLanguage,
+  ...coffeeScriptLanguage,
 ];
 
 // This is the default theme we use for our Shiki Syntax Highlighter
