@@ -72,7 +72,7 @@ ${inactiveMembers.map(m => `| @${m} |`).join('\n')}
 
 ## What happens next?
 
-Team maintainers should review this list and contact inactive collaborators to confirm their continued interest in participating in the project.`;
+@nodejs/nodejs-website should review this list and contact inactive collaborators to confirm their continued interest in participating in the project.`;
 }
 
 async function createOrUpdateIssue(github, context, report) {

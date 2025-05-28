@@ -7,9 +7,6 @@ on:
 
   workflow_dispatch:
 
-env:
-  NODE_VERSION: lts/*
-
 permissions: {}
 
 jobs:
@@ -31,4 +28,4 @@ jobs:
         with:
           script: |
             const report = await import("${{github.workspace}}/.github/scripts/report-inactive-collaborators.mjs");
-            report(github, exec)
+            report(github, exec);
