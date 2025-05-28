@@ -18,7 +18,9 @@
   - [Adding a Download Package Manager](#adding-a-download-package-manager)
 - [Unit Tests and Storybooks](#unit-tests-and-storybooks)
   - [General Guidelines for Unit Tests](#general-guidelines-for-unit-tests)
+  - [General Guidelines for Playwright E2E Tests](#general-guidelines-for-playwright-e2e-tests)
   - [General Guidelines for Storybooks](#general-guidelines-for-storybooks)
+- [Publishing Packages](#publishing-packages)
 - [Remarks on Technologies used](#remarks-on-technologies-used)
 - [Seeking additional clarification](#seeking-additional-clarification)
 
@@ -437,6 +439,23 @@ Unit Tests are fundamental to ensure that code changes do not disrupt the functi
   - Common Providers and Contexts from the lifecycle of our App, such as [`next-intl`][] should not be mocked but given an empty or fake context whenever possible.
 - We recommend reading previous unit tests from the codebase for inspiration and code guidelines.
 
+### General Guidelines for Playwright E2E Tests
+
+End-to-end (E2E) tests are essential for ensuring that the entire application works correctly from a user's perspective:
+
+- E2E tests are located in the `apps/site/tests/e2e` directory.
+- We use [Playwright](https://playwright.dev/) as our E2E testing framework.
+- E2E tests should focus on user flows and critical paths through the application.
+- Tests should be written to be resilient to minor UI changes and should prioritize testing functionality over exact visual appearance.
+- When writing E2E tests:
+  - Use meaningful test descriptions that clearly indicate what is being tested.
+  - Group related tests using Playwright's test grouping features.
+  - Use page objects or similar patterns to keep tests maintainable.
+  - Minimize test interdependencies to prevent cascading failures.
+- Tests should run against the built application to accurately reflect the production environment.
+- We recommend reviewing existing E2E tests in the codebase for patterns and best practices.
+- If your feature involves complex user interactions or spans multiple pages, consider adding E2E tests to verify the complete flow.
+
 ### General Guidelines for Storybooks
 
 Storybooks are an essential part of our development process. They help us to document our components and to ensure that the components are working as expected.
@@ -468,6 +487,18 @@ export default { component: NameOfComponent } as Meta;
 - Please follow the template above to keep the Storybooks as consistent as possible
 - We recommend reading previous Storybooks from the codebase for inspiration and code guidelines.
 - If you need to decorate/wrap your Component/Story with a Container/Provider, please use [Storybook Decorators](https://storybook.js.org/docs/react/writing-stories/decorators)
+
+## Publishing Packages
+
+The Node.js Website uses a multi-package workspace architecture where individual packages are published to the npm registry. This section outlines the process for publishing packages and the best practices to follow.
+
+The package publishing process is automated through GitHub Actions and can be triggered in two ways:
+
+1. **Automatically after successful tests**:
+   When changes are merged to the main branch, the "Publish Packages" workflow runs after the "Linting and Tests" workflow completes successfully. Commits must come through GitHub's merge queue (committer must be verified from noreply@github.com)
+
+2. **Manually via workflow dispatch**:
+   You can manually trigger publishing for specific packages through the GitHub Actions interface. When manually triggering publishing, ensure the commit hasn't already been published and is safe to do so. In the event of a manual trigger, a Slack notification will be sent to `#nodejs-website`.
 
 ## Remarks on Technologies Used
 

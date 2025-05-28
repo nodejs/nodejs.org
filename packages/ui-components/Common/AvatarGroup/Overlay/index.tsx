@@ -16,7 +16,6 @@ const AvatarOverlay: FC<AvatarOverlayProps> = ({
   fallback,
   url,
   as: Component = 'a',
-  img,
 }) => (
   <Component className={styles.overlay} href={url} target="_blank">
     <Avatar
@@ -25,7 +24,6 @@ const AvatarOverlay: FC<AvatarOverlayProps> = ({
       nickname={nickname}
       fallback={fallback}
       size="medium"
-      img={img}
     />
 
     <div className={styles.user}>

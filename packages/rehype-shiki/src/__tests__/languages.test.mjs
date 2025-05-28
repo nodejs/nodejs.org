@@ -1,20 +1,16 @@
 import assert from 'node:assert/strict';
-import { it, describe, mock } from 'node:test';
+import { it, describe } from 'node:test';
+
+import { getLanguageDisplayName, LANGUAGES } from '../languages.mjs';
+
+LANGUAGES.splice(
+  0,
+  LANGUAGES.length,
+  { name: 'javascript', aliases: ['js'], displayName: 'JavaScript' },
+  { name: 'typescript', aliases: ['ts'], displayName: 'TypeScript' }
+);
 
 describe('getLanguageDisplayName', async () => {
-  mock.module('#site/shiki.config.mjs', {
-    namedExports: {
-      LANGUAGES: [
-        { name: 'javascript', aliases: ['js'], displayName: 'JavaScript' },
-        { name: 'typescript', aliases: ['ts'], displayName: 'TypeScript' },
-      ],
-    },
-  });
-
-  const { getLanguageDisplayName } = await import(
-    '#site/util/getLanguageDisplayName'
-  );
-
   it('should return the display name for a known language', () => {
     assert.equal(getLanguageDisplayName('javascript'), 'JavaScript');
     assert.equal(getLanguageDisplayName('js'), 'JavaScript');

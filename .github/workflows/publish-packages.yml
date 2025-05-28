@@ -1,0 +1,149 @@
+name: Publish Packages
+
+# This workflow publishes packages to NPM when changes are merged to main branch or when manually triggered.
+# It runs automatically after successful tests or can be run manually for specific packages.
+
+on:
+  workflow_run:
+    # Only run after linting and tests have passed on main branch
+    workflows: ['Linting and Tests']
+    types: [completed]
+    # For security reasons, this should never be set to anything but `main`
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      package:
+        description: 'Specific package to publish (leave empty for all packages)'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+env:
+  # Use the SHA from the workflow run that triggered this or the current SHA for manual runs
+  COMMIT_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+
+jobs:
+  prepare-packages:
+    runs-on: ubuntu-latest
+    # Only run if manually triggered or if the triggering workflow succeeded from a push event
+    if: github.event_name == 'workflow_dispatch' || (
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'push' &&
+      github.repository == 'nodejs/nodejs.org')
+    outputs:
+      # Output the matrix of packages to publish for use in the publish job
+      matrix: ${{ steps.generate-matrix.outputs.matrix }}
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        with:
+          egress-policy: audit
+
+      - name: Verify commit authenticity
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Get commit data from GitHub API to verify its authenticity
+          COMMIT_DATA=$(gh api repos/${{ github.repository }}/commits/$COMMIT_SHA)
+          # Check if commit signature is verified (GPG signed)
+          VERIFIED=$(echo "$COMMIT_DATA" | jq -r '.commit.verification.verified')
+          # Check if commit was made through GitHub's web interface (merge queue)
+          COMMITTER=$(echo "$COMMIT_DATA" | jq -r '.commit.committer.email')
+
+          # Security checks to ensure we only publish from verified and trusted sources
+          if [[ "$VERIFIED" != "true" ]]; then
+            echo "❌ Unverified commit! Aborting."
+            exit 1
+          fi
+
+          if [[ "$COMMITTER" != "noreply@github.com" ]]; then
+            echo "❌ Not merged with the merge queue! Aborting."
+            exit 1
+          fi
+
+          echo "✅ Commit is verified and trusted."
+
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 2 # Need at least 2 commits to detect changes between commits
+
+      - name: Generate package matrix
+        id: generate-matrix
+        env:
+          PACKAGE: ${{ github.event.inputs.package }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ -n "$PACKAGE" ]; then
+            # If a specific package is requested via workflow_dispatch, just publish that one
+            echo "matrix={\"package\":[\"$PACKAGE\"]}" >> $GITHUB_OUTPUT
+          else
+            # Otherwise, identify all packages with changes since the last commit
+            CHANGED_PACKAGES=()
+            for pkg in $(ls -d packages/*); do
+              PKG_NAME=$(basename "$pkg")
+              # For manual runs, include all packages. For automatic runs, only include packages with changes
+              if [ "$EVENT_NAME" == "workflow_dispatch" ] || ! git diff --quiet $COMMIT_SHA~1 $COMMIT_SHA -- "$pkg/"; then
+                CHANGED_PACKAGES+=("$PKG_NAME")
+              fi
+            done
+
+            # Format the output for GitHub Actions matrix using jq
+            PACKAGES_JSON=$(jq -n '$ARGS.positional' --args "${CHANGED_PACKAGES[@]}" -c)
+            echo "matrix={\"package\":$PACKAGES_JSON}" >> $GITHUB_OUTPUT
+          fi
+
+  publish:
+    needs: prepare-packages
+    runs-on: ubuntu-latest
+    # Use the dynamic matrix from prepare-packages job to create parallel jobs for each package
+    strategy:
+      matrix: ${{ fromJson(needs.prepare-packages.outputs.matrix) }}
+      fail-fast: false # Continue publishing other packages even if one fails
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+        with:
+          cache: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: '.nvmrc'
+          registry-url: 'https://registry.npmjs.org'
+          cache: pnpm
+
+      - name: Publish
+        working-directory: packages/${{ matrix.package }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          # Create a unique version using the commit SHA as a prerelease identifier
+          # This ensures we can publish multiple times from the same codebase with unique versions
+          npm version --no-git-tag-version 1.0.1-$COMMIT_SHA
+          # Publish the package to the npm registry with public access flag
+          pnpm publish --access public --no-git-checks
+
+      - name: Notify on Manual Release
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        uses: rtCamp/action-slack-notify@e31e87e03dd19038e411e38ae27cbad084a90661 # 2.3.3
+        env:
+          SLACK_COLOR: '#43853D'
+          SLACK_ICON: https://github.com/nodejs.png?size=48
+          SLACK_TITLE: ':rocket: Package Published: ${{ matrix.package }}'
+          SLACK_MESSAGE: |
+            :package: *Package*: `${{ matrix.package }}` (<https://www.npmjs.com/package/@node-core/${{ matrix.package }}|View on npm>)
+            :bust_in_silhouette: *Published by*: ${{ github.triggering_actor }}
+            :octocat: *Commit*: <https://github.com/${{ github.repository }}/commit/${{ env.COMMIT_SHA }}|${{ env.COMMIT_SHA }}>
+          SLACK_USERNAME: nodejs-bot
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}

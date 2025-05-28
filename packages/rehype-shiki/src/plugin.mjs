@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { toString } from 'hast-util-to-string';
 import { SKIP, visit } from 'unist-util-visit';
 
-import { highlightToHast } from './util/getHighlighter';
+import { highlightToHast } from './highlighter.mjs';
 
 // This is what Remark will use as prefix within a <pre> className
 // to attribute the current language of the <pre> element
@@ -53,7 +53,7 @@ function isCodeBlock(node) {
   );
 }
 
-export default function rehypeShikiji() {
+export function rehypeShikiji() {
   return function (tree) {
     visit(tree, 'element', (_, index, parent) => {
       const languages = [];

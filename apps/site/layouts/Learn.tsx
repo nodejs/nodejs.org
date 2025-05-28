@@ -1,3 +1,4 @@
+import Article from '@node-core/ui-components/Containers/Article';
 import type { FC, PropsWithChildren } from 'react';
 
 import WithBreadcrumbs from '#site/components/withBreadcrumbs';
@@ -6,13 +7,12 @@ import WithMetaBar from '#site/components/withMetaBar';
 import WithNavBar from '#site/components/withNavBar';
 import WithProgressionSidebar from '#site/components/withProgressionSidebar';
 import WithSidebarCrossLinks from '#site/components/withSidebarCrossLinks';
-import ArticleLayout from '#site/layouts/Article';
 
 const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <WithNavBar />
 
-    <ArticleLayout>
+    <Article>
       <WithProgressionSidebar navKey="learn" />
 
       <div>
@@ -26,7 +26,7 @@ const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
       </div>
 
       <WithBreadcrumbs navKeys={['learn']} />
-    </ArticleLayout>
+    </Article>
 
     <WithFooter />
   </>

@@ -43,3 +43,18 @@ export const DEFAULT_THEME = {
   colorReplacements: { '#616e88': '#707e99' },
   ...shikiNordTheme,
 };
+
+/**
+ * Get the display name of a given language
+ * @param {string} language The language ID
+ * @returns {string} The display name of the language, or the input as a fallback
+ */
+export const getLanguageDisplayName = language => {
+  const languageByIdOrAlias = LANGUAGES.find(
+    ({ name, aliases }) =>
+      name.toLowerCase() === language.toLowerCase() ||
+      (aliases !== undefined && aliases.includes(language.toLowerCase()))
+  );
+
+  return languageByIdOrAlias?.displayName ?? language;
+};

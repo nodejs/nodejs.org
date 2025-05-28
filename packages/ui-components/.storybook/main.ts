@@ -1,8 +1,4 @@
-import { createRequire } from 'node:module';
-
 import type { StorybookConfig } from '@storybook/react-webpack5';
-
-const require = createRequire(import.meta.url);
 
 const config: StorybookConfig = {
   stories: ['../**/*.stories.tsx'],
@@ -28,13 +24,12 @@ const config: StorybookConfig = {
               'style-loader',
               {
                 loader: 'css-loader',
-                options: { importLoaders: 1 },
+                options: {
+                  esModule: false,
+                  importLoaders: 1,
+                },
               },
-              {
-                // Gets options from `postcss.config.js` in your project root
-                loader: 'postcss-loader',
-                options: { implementation: require.resolve('postcss') },
-              },
+              'postcss-loader',
             ],
           },
         ],

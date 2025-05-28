@@ -172,7 +172,7 @@ describe('foo', { concurrency: true }, () => {
   });
 
   it('should do the thing', () => {
-    barMock.mockImplementationOnce(function bar_mock() {
+    barMock.mock.mockImplementationOnce(function bar_mock() {
       /* … */
     });
 
