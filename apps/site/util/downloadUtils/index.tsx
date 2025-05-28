@@ -5,7 +5,7 @@ import * as PackageManagerIcons from '@node-core/ui-components/Icons/PackageMana
 import type { ElementType } from 'react';
 import satisfies from 'semver/functions/satisfies';
 
-import type { NodeReleaseStatus } from '#site/types';
+import type { IntlMessageKeys, NodeReleaseStatus } from '#site/types';
 import type * as Types from '#site/types/release';
 import type { UserOS, UserPlatform } from '#site/types/userOS';
 
@@ -33,10 +33,10 @@ type DownloadCompatibility = {
 };
 
 type DownloadDropdownItem<T extends string> = {
-  label: string;
+  label: IntlMessageKeys;
   recommended?: boolean;
   url?: string;
-  info?: string;
+  info?: IntlMessageKeys;
   compatibility: DownloadCompatibility;
 } & Omit<SelectValue<T>, 'label'>;
 
@@ -102,7 +102,7 @@ type ActualSystems = Omit<typeof systems, 'OTHER' | 'LOADING'>;
 export const OPERATING_SYSTEMS = Object.entries(systems as ActualSystems)
   .filter(([key]) => key !== 'LOADING' && key !== 'OTHER')
   .map(([key, data]) => ({
-    label: data.name,
+    label: data.name as IntlMessageKeys,
     value: key as UserOS,
     compatibility: data.compatibility,
     iconImage: createIcon(OSIcons, data.icon),
@@ -112,11 +112,11 @@ export const OPERATING_SYSTEMS = Object.entries(systems as ActualSystems)
 export const INSTALL_METHODS = installMethods.map(method => ({
   key: method.id,
   value: method.id as Types.InstallationMethod,
-  label: method.name,
+  label: method.name as IntlMessageKeys,
   iconImage: createIcon(InstallMethodIcons, method.icon),
   recommended: method.recommended,
   url: method.url,
-  info: method.info,
+  info: method.info as IntlMessageKeys,
   compatibility: {
     ...method.compatibility,
     os: method.compatibility?.os?.map(os => os as UserOS),
@@ -130,7 +130,7 @@ export const INSTALL_METHODS = installMethods.map(method => ({
 export const PACKAGE_MANAGERS = packageManagers.map(manager => ({
   key: manager.id,
   value: manager.id as Types.PackageManager,
-  label: manager.name,
+  label: manager.name as IntlMessageKeys,
   iconImage: createIcon(PackageManagerIcons, manager.id),
   compatibility: {
     ...manager.compatibility,

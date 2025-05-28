@@ -5,6 +5,7 @@ import type { HTMLAttributeAnchorTarget } from 'react';
 import { siteNavigation } from '#site/next.json.mjs';
 import type {
   FormattedMessage,
+  IntlMessageKeys,
   NavigationEntry,
   NavigationKeys,
 } from '#site/types';
