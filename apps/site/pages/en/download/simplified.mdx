@@ -19,14 +19,15 @@ layout: download-simple
 Learn more about [Node.js releases](/about/previous-releases), including the release schedule and LTS status.
 
 <WithSimplifiedDownload>
-  {({ version, urls }) => (
+  {({ version, release }) => (
     <>
       <p>
-        Read the <LinkWithArrow href={urls.changelog}>changelog</LinkWithArrow>{' '}
-        or <Link href={urls.blogPost}>blog post</Link> for this version.
+        Read the{' '}
+        <LinkWithArrow href={release.changelog}>changelog</LinkWithArrow> or{' '}
+        <Link href={release.blogPost}>blog post</Link> for this version.
       </p>
       <p>
-        <LinkWithArrow href={urls.shasum}>Signed SHASUMS</LinkWithArrow> for
+        <LinkWithArrow href={release.shasum}>Signed SHASUMS</LinkWithArrow> for
         release files. How to{' '}
         <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">
           verify
@@ -35,7 +36,7 @@ Learn more about [Node.js releases](/about/previous-releases), including the rel
       </p>
       <p>
         Download a signed{' '}
-        <LinkWithArrow href={urls.source}>
+        <LinkWithArrow href={release.source}>
           Node.js {version} source
         </LinkWithArrow>{' '}
         tarball.
@@ -49,7 +50,7 @@ Learn more about [Node.js releases](/about/previous-releases), including the rel
     minors.length > 0 && (
       <>
         <h2>Other versions</h2>
-        {minors.map(({ binaries, installers, version, urls }) => (
+        {minors.map(({ binaries, installers, version, release }) => (
           <details key={version}>
             <summary>
               <h3>Node.js® {version}</h3>
@@ -61,12 +62,15 @@ Learn more about [Node.js releases](/about/previous-releases), including the rel
               <DownloadsTable source={installers} />
               <p>
                 Read the{' '}
-                <LinkWithArrow href={urls.changelog}>changelog</LinkWithArrow>{' '}
-                or <Link href={urls.blogPost}>blog post</Link> for this version.
+                <LinkWithArrow href={release.changelog}>
+                  changelog
+                </LinkWithArrow>{' '}
+                or <Link href={release.blogPost}>blog post</Link> for this
+                version.
               </p>
               <p>
                 Download a signed{' '}
-                <LinkWithArrow href={urls.source}>
+                <LinkWithArrow href={release.source}>
                   Node.js {version} source
                 </LinkWithArrow>{' '}
                 tarball.

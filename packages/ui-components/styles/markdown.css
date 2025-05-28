@@ -191,7 +191,10 @@ details {
       select-none
       after:float-right
       after:pr-4
-      after:content-['›'];
+      after:text-2xl
+      after:text-neutral-400
+      after:content-['›']
+      dark:after:text-neutral-600;
 
     > * {
       @apply inline;

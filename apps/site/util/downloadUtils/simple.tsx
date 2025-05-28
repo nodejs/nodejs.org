@@ -2,6 +2,7 @@ import type ProgressionSidebarGroup from '@node-core/ui-components/Common/Progre
 import type { ComponentProps } from 'react';
 import { satisfies } from 'semver';
 
+import FormattedTime from '#site/components/Common/FormattedTime';
 import type getReleaseData from '#site/next-data/releaseData';
 import type { NodeRelease } from '#site/types/releases';
 import type { UserOS, UserPlatform } from '#site/types/userOS';
@@ -65,8 +66,10 @@ function getCompatibleArtifacts({
   kind = 'binary',
 }: CompatibleArtifactOptions): Array<ParsedArtifact> {
   return Object.entries(platforms).flatMap(([os, items]) => {
-    if (exclude.includes(os as UserOS)) return [];
+    if (exclude.includes(os)) return [];
+
     const operatingSystem = os as UserOS;
+
     return items
       .filter(({ compatibility, value }) =>
         isCompatible(compatibility, operatingSystem, value, version)
@@ -100,7 +103,7 @@ export const buildReleaseArtifacts = ({
     version: versionWithPrefix,
     kind: 'binary',
   }),
-  urls: {
+  release: {
     shasum: getNodeDownloadUrl({ version: versionWithPrefix, kind: 'shasum' }),
     source: getNodeDownloadUrl({ version: versionWithPrefix, kind: 'source' }),
     changelog: `${BASE_CHANGELOG_URL}${version}`,
@@ -128,7 +131,7 @@ export const buildReleaseArtifacts = ({
           kind: 'installer',
         }),
         version: versionWithPrefix,
-        urls: {
+        release: {
           source: getNodeDownloadUrl({
             version: versionWithPrefix,
             kind: 'source',
@@ -138,6 +141,37 @@ export const buildReleaseArtifacts = ({
         },
       };
     }),
+});
+
+export const buildMetaBarItems = (
+  {
+    codename,
+    status,
+    currentStart,
+    releaseDate,
+    minorVersions,
+    modules,
+    npm,
+    v8,
+  }: NodeRelease,
+  t: (key: string) => string
+) => ({
+  ...(codename && {
+    [t('layouts.simpleDownload.codename')]: codename,
+  }),
+  [t('layouts.simpleDownload.status')]: t(
+    `layouts.simpleDownload.statusNames.${status}`
+  ),
+  [t('layouts.simpleDownload.firstReleased')]: (
+    <FormattedTime date={currentStart} />
+  ),
+  [t('layouts.simpleDownload.lastUpdated')]: (
+    <FormattedTime date={releaseDate} />
+  ),
+  [t('layouts.simpleDownload.minorVersions')]: minorVersions.length,
+  [t('layouts.simpleDownload.nApiVersion')]: modules,
+  [t('layouts.simpleDownload.npmVersion')]: npm,
+  [t('layouts.simpleDownload.v8Version')]: v8,
 });
 
 type SidebarGroup = ComponentProps<typeof ProgressionSidebarGroup>;

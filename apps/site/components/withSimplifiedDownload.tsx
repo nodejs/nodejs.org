@@ -14,18 +14,21 @@
  * </WithSimplifiedDownload>
  */
 
+import type MetaBar from '@node-core/ui-components/Containers/MetaBar/index.jsx';
 import { getTranslations } from 'next-intl/server';
-import type { FC } from 'react';
+import type { ComponentProps, FC } from 'react';
 
 import { getClientContext } from '#site/client-context';
 import getReleaseData from '#site/next-data/releaseData';
 import {
+  buildMetaBarItems,
   buildReleaseArtifacts,
   groupReleasesByStatus,
 } from '#site/util/downloadUtils/simple';
 
 type SimplifiedDownload = ReturnType<typeof buildReleaseArtifacts> & {
-  mappedSidebarItems: ReturnType<typeof groupReleasesByStatus>;
+  sidebarItems: ReturnType<typeof groupReleasesByStatus>;
+  metabarItems: ComponentProps<typeof MetaBar>['items'];
 };
 
 type WithSimplifiedDownloadProps = {
@@ -38,17 +41,17 @@ type WithSimplifiedDownloadProps = {
 const WithSimplifiedDownload: FC<WithSimplifiedDownloadProps> = async ({
   children: Component,
 }) => {
+  const { pathname } = getClientContext();
   const [releaseData, t] = await Promise.all([
     getReleaseData(),
     getTranslations(),
   ]);
-  const { pathname } = getClientContext();
 
   // Group and localize sidebar items
   const mappedSidebarItems = groupReleasesByStatus(releaseData, pathname);
   const localizedSidebarItems = mappedSidebarItems.map(item => ({
     ...item,
-    groupName: t(`layouts.simpleDownload.sidebar.${item.groupName}`),
+    groupName: t(`layouts.simpleDownload.statusNames.${item.groupName}`),
   }));
 
   // Extract version from pathname
@@ -56,18 +59,20 @@ const WithSimplifiedDownload: FC<WithSimplifiedDownloadProps> = async ({
   if (!version) return null;
 
   // Find the matching release
-  const matchingRelease = releaseData.find(
+  const release = releaseData.find(
     ({ major, isLts }) =>
       major === Number(version) || (isLts === true && version === 'simplified')
   );
 
-  if (matchingRelease) {
-    const releaseArtifacts = buildReleaseArtifacts(matchingRelease);
+  if (release) {
+    const releaseArtifacts = buildReleaseArtifacts(release);
+    const metabarItems = buildMetaBarItems(release, t);
 
     return (
       <Component
         {...releaseArtifacts}
-        mappedSidebarItems={localizedSidebarItems}
+        sidebarItems={localizedSidebarItems}
+        metabarItems={metabarItems}
       />
     );
   }

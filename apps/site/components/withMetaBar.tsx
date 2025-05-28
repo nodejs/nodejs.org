@@ -3,7 +3,7 @@
 import MetaBar from '@node-core/ui-components/Containers/MetaBar';
 import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
 import { useFormatter, useLocale, useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import type { ComponentProps, FC } from 'react';
 
 import Link from '#site/components/Link';
 import WithAvatarGroup from '#site/components/withAvatarGroup';
@@ -14,7 +14,11 @@ import { TRANSLATION_URL } from '#site/next.constants.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
 import { getGitHubBlobUrl } from '#site/util/gitHubUtils';
 
-const WithMetaBar: FC = () => {
+type WithMetaBarProps = {
+  items?: ComponentProps<typeof MetaBar>['items'];
+};
+
+const WithMetaBar: FC<WithMetaBarProps> = ({ items }) => {
   const { headings, readingTime, frontmatter, filename } = useClientContext();
   const formatter = useFormatter();
   const lastUpdated = frontmatter.date
@@ -45,8 +49,11 @@ const WithMetaBar: FC = () => {
       heading={t('components.metabar.tableOfContents')}
       as={Link}
       items={{
+        ...items,
         [t('components.metabar.lastUpdated')]: lastUpdated,
-        [t('components.metabar.readingTime')]: readingTimeText,
+        ...(readingTime.minutes >= 1 && {
+          [t('components.metabar.readingTime')]: readingTimeText,
+        }),
         ...(usernames.length && {
           [t(
             `components.metabar.${usernames.length > 1 ? 'authors' : 'author'}`

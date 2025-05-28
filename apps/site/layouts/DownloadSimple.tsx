@@ -1,4 +1,4 @@
-import type { FC, PropsWithChildren } from 'react';
+import type { FC } from 'react';
 
 import WithFooter from '#site/components/withFooter';
 import WithMarkdownContent from '#site/components/withMarkdownContent';
@@ -9,23 +9,20 @@ import WithSimplifiedDownload from '#site/components/withSimplifiedDownload';
 
 import ArticleLayout from './Article';
 
-const DownloadLayout: FC<PropsWithChildren> = async ({ children }) => (
+const DownloadLayout: FC = async () => (
   <>
     <WithNavBar />
 
     <ArticleLayout>
       <WithSimplifiedDownload>
-        {({ mappedSidebarItems }) => (
+        {({ sidebarItems, metabarItems }) => (
           <>
-            <WithProgressionSidebar groups={mappedSidebarItems} />
+            <WithProgressionSidebar groups={sidebarItems} />
             <div>
               <main>
-                <WithMarkdownContent
-                  file={['download', 'simplified']}
-                  fallback={children}
-                />
+                <WithMarkdownContent file={['download', 'simplified']} />
               </main>
-              <WithMetaBar />
+              <WithMetaBar items={metabarItems} />
             </div>
           </>
         )}
