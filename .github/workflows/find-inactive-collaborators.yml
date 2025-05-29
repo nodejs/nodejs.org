@@ -7,7 +7,9 @@ on:
 
   workflow_dispatch:
 
-permissions: {}
+permissions:
+  contents: read
+  issues: write
 
 jobs:
   find:
@@ -27,5 +29,5 @@ jobs:
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
         with:
           script: |
-            const report = await import("${{github.workspace}}/.github/scripts/report-inactive-collaborators.mjs");
-            report(github, exec);
+            const { default: report } = await import("${{github.workspace}}/.github/scripts/report-inactive-collaborators.mjs");
+            report(github, context);
