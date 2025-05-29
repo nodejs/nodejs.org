@@ -15,13 +15,12 @@ import WithSimplifiedDownload from './components/withSimplifiedDownload';
  * @satisfies {import('mdx/types').MDXComponents}
  */
 export const mdxComponents = {
-  // Renders a table with Node.js Releases with diffrent platforms and architectures
   DownloadReleasesTable: DownloadReleasesTable,
   // HOC for providing the Simplified Download Page properties
   WithSimplifiedDownload: WithSimplifiedDownload,
   // Renders a Details Component with a summary and content
   Details: Details,
-  // Renders a table with all Node.js Downloads
+  // Renders a table with Node.js Releases with diffrent platforms and architectures
   DownloadsTable: DownloadsTable,
   // HOC for getting Node.js Release Metadata
   WithNodeRelease: WithNodeRelease,
