@@ -28,4 +28,4 @@ jobs:
         with:
           script: |
             const { default: report } = await import("${{github.workspace}}/.github/scripts/report-inactive-collaborators.mjs");
-            report(github, exec, context);
+            report(github, context);
