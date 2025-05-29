@@ -8,7 +8,10 @@
       "platforms": [
         {
           "label": "x64",
-          "value": "x64"
+          "value": "x64",
+          "compatibility": {
+            "semver": [">= 4.0.0"]
+          }
         },
         {
           "label": "x86",
@@ -40,7 +43,7 @@
           "label": "ARM64",
           "value": "arm64",
           "compatibility": {
-            "semver": [">= 19.9.0"]
+            "semver": [">= 16.0.0"]
           }
         }
       ]
