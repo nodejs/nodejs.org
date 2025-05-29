@@ -51,11 +51,8 @@ Learn more about [Node.js releases](/about/previous-releases), including the rel
       <>
         <h2>Other versions</h2>
         {minors.map(({ binaries, installers, version, release }) => (
-          <details key={version}>
-            <summary>
-              <h3>Node.js® {version}</h3>
-            </summary>
-            <div>
+          <Details key={version} summary={`Node.js® ${version}`}>
+            <>
               <h4>Binary Downloads</h4>
               <DownloadsTable source={binaries} />
               <h4>Installer Packages</h4>
@@ -75,8 +72,8 @@ Learn more about [Node.js releases](/about/previous-releases), including the rel
                 </LinkWithArrow>{' '}
                 tarball.
               </p>
-            </div>
-          </details>
+            </>
+          </Details>
         ))}
       </>
     )
