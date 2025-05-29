@@ -49,8 +49,6 @@ Members of this team are nominated through the guidelines provided in the [Contr
 
 - [ovflowd](https://github.com/ovflowd) - **Claudio Wunder** (they/them)
 
-- [rodion-arr](https://github.com/rodion-arr) - **Rodion Abdurakhimov**
-
 - [SEWeiTung](https://github.com/SEWeiTung) - **Wei Tung**
 
 - [shanpriyan](https://github.com/shanpriyan) - **Shanmughapriyan S**
