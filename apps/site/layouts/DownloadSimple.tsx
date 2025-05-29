@@ -9,7 +9,7 @@ import WithSimplifiedDownload from '#site/components/withSimplifiedDownload';
 
 import ArticleLayout from './Article';
 
-const DownloadLayout: FC = async () => (
+const DownloadSimpleLayout: FC = () => (
   <>
     <WithNavBar />
 
@@ -33,4 +33,4 @@ const DownloadLayout: FC = async () => (
   </>
 );
 
-export default DownloadLayout;
+export default DownloadSimpleLayout;

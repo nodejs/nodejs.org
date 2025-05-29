@@ -14,7 +14,7 @@
  * </WithSimplifiedDownload>
  */
 
-import type MetaBar from '@node-core/ui-components/Containers/MetaBar/index.jsx';
+import type MetaBar from '@node-core/ui-components/Containers/MetaBar';
 import { getTranslations } from 'next-intl/server';
 import type { ComponentProps, FC } from 'react';
 
@@ -23,6 +23,7 @@ import getReleaseData from '#site/next-data/releaseData';
 import {
   buildMetaBarItems,
   buildReleaseArtifacts,
+  extractVersionFromPath,
   groupReleasesByStatus,
 } from '#site/util/downloadUtils/simple';
 
@@ -47,16 +48,12 @@ const WithSimplifiedDownload: FC<WithSimplifiedDownloadProps> = async ({
     getTranslations(),
   ]);
 
-  // Group and localize sidebar items
-  const mappedSidebarItems = groupReleasesByStatus(releaseData, pathname);
-  const localizedSidebarItems = mappedSidebarItems.map(item => ({
-    ...item,
-    groupName: t(`layouts.simpleDownload.statusNames.${item.groupName}`),
-  }));
-
   // Extract version from pathname
-  const version = pathname?.split('/').pop();
-  if (!version) return null;
+  const version = extractVersionFromPath(pathname);
+
+  if (!version) {
+    return null;
+  }
 
   // Find the matching release
   const release = releaseData.find(
@@ -64,20 +61,27 @@ const WithSimplifiedDownload: FC<WithSimplifiedDownloadProps> = async ({
       major === Number(version) || (isLts === true && version === 'simplified')
   );
 
-  if (release) {
-    const releaseArtifacts = buildReleaseArtifacts(release);
-    const metabarItems = buildMetaBarItems(release, t);
-
-    return (
-      <Component
-        {...releaseArtifacts}
-        sidebarItems={localizedSidebarItems}
-        metabarItems={metabarItems}
-      />
-    );
+  if (!release) {
+    return null;
   }
 
-  return null;
+  const releaseArtifacts = buildReleaseArtifacts(release);
+  const metabarItems = buildMetaBarItems(release, t);
+
+  // Group and localize sidebar items
+  const mappedSidebarItems = groupReleasesByStatus(releaseData, pathname);
+  const localizedSidebarItems = mappedSidebarItems.map(item => ({
+    ...item,
+    groupName: t(`layouts.simpleDownload.statusNames.${item.groupName}`),
+  }));
+
+  return (
+    <Component
+      {...releaseArtifacts}
+      sidebarItems={localizedSidebarItems}
+      metabarItems={metabarItems}
+    />
+  );
 };
 
 export default WithSimplifiedDownload;

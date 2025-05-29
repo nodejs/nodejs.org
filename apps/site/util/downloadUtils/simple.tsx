@@ -18,7 +18,7 @@ import { DIST_URL, BASE_CHANGELOG_URL } from '#site/next.constants';
 
 const RELEASE_POST_URL = '/blog/release/';
 
-export type ParsedArtifact = {
+export type NodeDownloadArtifact = {
   file: string;
   kind: DownloadKind;
   os: UserOS;
@@ -59,12 +59,12 @@ type CompatibleArtifactOptions = {
 /**
  * Returns a list of compatible artifacts for the given options.
  */
-function getCompatibleArtifacts({
+const getCompatibleArtifacts = ({
   platforms = PLATFORMS,
   exclude = [],
   version,
   kind = 'binary',
-}: CompatibleArtifactOptions): Array<ParsedArtifact> {
+}: CompatibleArtifactOptions): Array<NodeDownloadArtifact> => {
   return Object.entries(platforms).flatMap(([os, items]) => {
     if (exclude.includes(os)) return [];
 
@@ -92,7 +92,7 @@ function getCompatibleArtifacts({
         };
       });
   });
-}
+};
 
 export const buildReleaseArtifacts = ({
   versionWithPrefix,
@@ -228,4 +228,20 @@ export const groupReleasesByStatus = (
 
   // Return the grouped items as an array for sidebar consumption
   return Object.values(grouped);
+};
+
+export const extractVersionFromPath = (
+  pathname: string | undefined
+): string | null => {
+  if (!pathname) return null;
+
+  const segments = pathname.split('/').filter(Boolean);
+  const version = segments.pop();
+
+  // Check version format (number or 'simplified')
+  if (!version || (!version.match(/^\d+$/) && version !== 'simplified')) {
+    return null;
+  }
+
+  return version;
 };

@@ -6,16 +6,16 @@ import { dynamicRouter } from '#site/next.dynamic';
 const getMarkdownContent = async (locale: string, file: Array<string>) => {
   const filePathname = dynamicRouter.getPathname(file);
 
-  // We retrieve the source of the Markdown file by doing an educated guess
-  // of what possible files could be the source of the page, since the extension
-  // context is lost from `getStaticProps` as a limitation of Next.js itself
+  // Retrieves the Markdown file source content based on the file path and locale
+  // Uses dynamic routing to locate and load the appropriate markdown file
+  // for the given locale and file path segments
   const { source, filename } = await dynamicRouter.getMarkdownFile(
     locale,
     filePathname
   );
 
-  // This parses the source Markdown content and returns a React Component
-  // from the Markdown File
+  // Parses the Markdown/MDX source content and transforms it into a React component
+  // Handles both standard Markdown and MDX files
   const { content } = await dynamicRouter.getMDXContent(source, filename);
 
   return content;

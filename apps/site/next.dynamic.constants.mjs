@@ -20,12 +20,8 @@ export const IGNORED_ROUTES = [
     locale !== defaultLocale.code && /^blog/.test(pathname),
   // This is used to ignore all pathnames that are empty
   ({ locale, pathname }) => locale.length && !pathname.length,
-  // This is used to ignore all simplified download routes except for the English language
-  ({ locale, pathname }) =>
-    locale !== defaultLocale.code && /^download/.test(pathname),
-  // This is used to ignore all simplified download routes except for the English language
-  ({ locale, pathname }) =>
-    locale !== defaultLocale.code && /^simplified/.test(pathname),
+  // This is used to ignore download routes for major versions and simplified download page
+  ({ pathname }) => /^download\/(\d+|simplified)$/.test(pathname),
 ];
 
 /**
@@ -36,6 +32,8 @@ export const IGNORED_ROUTES = [
  * @type {Map<string, import('./types').Layouts>} A Map of pathname and Layout Name
  */
 export const DYNAMIC_ROUTES = new Map([
+  // Creates dynamic routes for simplified download pages for each major version
+  // (e.g., /download/18, /download/20)
   ...provideReleaseData().map(({ major }) => [
     `download/${major}`,
     'download-simple',

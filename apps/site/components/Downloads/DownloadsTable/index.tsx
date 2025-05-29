@@ -5,10 +5,10 @@ import type { FC } from 'react';
 
 import Link from '#site/components/Link';
 import { OperatingSystemLabel } from '#site/util/downloadUtils';
-import type { ParsedArtifact } from '#site/util/downloadUtils/simple';
+import type { NodeDownloadArtifact } from '#site/util/downloadUtils/simple';
 
 type DownloadsTableProps = {
-  source: Array<ParsedArtifact>;
+  source: Array<NodeDownloadArtifact>;
 };
 
 const DownloadsTable: FC<DownloadsTableProps> = ({ source }) => {
