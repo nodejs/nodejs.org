@@ -4,7 +4,8 @@ Thank you for your interest in contributing to the Node.js Website. Before you p
 
 - [Code of Conduct](https://github.com/nodejs/node/blob/HEAD/CODE_OF_CONDUCT.md)
 - [Contributing](#contributing)
-  - [Becoming a collaborator](#becoming-a-collaborator)
+  - [Becoming a Collaborator](#becoming-a-collaborator)
+  - [Maintaining Collaborator Status](#maintaining-collaborator-status)
 - [Getting started](#getting-started)
   - [CLI Commands](#cli-commands)
 - [Cloudflare Deployment](#cloudflare-deployment)
@@ -53,6 +54,18 @@ If you're an active contributor seeking to become a member, we recommend you con
   - Objections from the TSC or Core Collaborators are also counted as valid objections.
 
 </details>
+
+### Maintaining Collaborator Status
+
+Once you become a collaborator, you are expected to uphold certain responsibilities and standards to maintain your status:
+
+- **Adhere to Policies**: Collaborators must abide by the [Node.js Moderation Policy](https://github.com/nodejs/admin/blob/HEAD/Moderation-Policy.md) and [Code of Conduct](https://github.com/nodejs/node/blob/HEAD/CODE_OF_CONDUCT.md) at all times.
+
+- **Remain Active**: Collaborators are expected to author commits at least once in the past twelve months.
+
+If a collaborator becomes inactive for more than twelve months, they may be removed from the active collaborators list. They can be reinstated upon returning to active participation by going through the full nomination process again.
+
+Violations of the Code of Conduct or Moderation Policy may result in immediate removal of collaborator status, depending on the severity of the violation and the decision of the Technical Steering Committee and/or the OpenJS Foundation.
 
 ## Getting started
 
