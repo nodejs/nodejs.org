@@ -11,9 +11,13 @@ on:
   push:
     branches:
       - main
+    paths:
+      - packages/ui-components/**
   pull_request_target:
     branches:
       - main
+    paths:
+      - packages/ui-components/**
     types:
       - labeled
   workflow_dispatch:
