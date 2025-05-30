@@ -10,10 +10,10 @@ export default defineConfig({
   retries: isCI ? 2 : 0,
   workers: isCI ? 1 : undefined,
   reporter: isCI ? [['html'], ['github']] : [['html']],
-  ...(process.env.PLAYWRIGHT_WEB_SERVER_COMMAND
+  ...(process.env.PLAYWRIGHT_RUN_CLOUDFLARE_PREVIEW
     ? {
         webServer: {
-          command: process.env.PLAYWRIGHT_WEB_SERVER_COMMAND,
+          command: 'pnpm turbo run cloudflare:preview',
           url: process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:3000',
           timeout: 60_000 * 3,
         },

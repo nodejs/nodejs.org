@@ -71,7 +71,7 @@ jobs:
         working-directory: apps/site
         run: pnpm playwright
         env:
-          PLAYWRIGHT_WEB_SERVER_COMMAND: pnpm turbo run cloudflare:preview
+          PLAYWRIGHT_RUN_CLOUDFLARE_PREVIEW: true
           PLAYWRIGHT_BASE_URL: http://127.0.0.1:8787
 
       - name: Upload Playwright test results
