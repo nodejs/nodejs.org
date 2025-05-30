@@ -73,12 +73,6 @@
   }
 }
 
-.notification {
-  @apply flex
-    items-center
-    gap-3;
-}
-
 .icon {
   @apply size-4;
 }
