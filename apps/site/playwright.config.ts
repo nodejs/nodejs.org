@@ -1,4 +1,4 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices, type Config } from '@playwright/test';
 
 const isCI = !!process.env.CI;
 
@@ -10,15 +10,7 @@ export default defineConfig({
   retries: isCI ? 2 : 0,
   workers: isCI ? 1 : undefined,
   reporter: isCI ? [['html'], ['github']] : [['html']],
-  ...(process.env.PLAYWRIGHT_RUN_CLOUDFLARE_PREVIEW
-    ? {
-        webServer: {
-          command: 'pnpm turbo run cloudflare:preview',
-          url: process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:3000',
-          timeout: 60_000 * 3,
-        },
-      }
-    : {}),
+  ...getWebServerConfig(),
   use: {
     baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:3000',
     trace: 'on-first-retry',
@@ -38,3 +30,17 @@ export default defineConfig({
     },
   ],
 });
+
+function getWebServerConfig(): Pick<Config, 'webServer'> {
+  if (process.env.PLAYWRIGHT_RUN_CLOUDFLARE_PREVIEW) {
+    return {
+      webServer: {
+        command: 'pnpm turbo run cloudflare:preview',
+        url: process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:3000',
+        timeout: 60_000 * 3,
+      },
+    };
+  }
+
+  return {};
+}
