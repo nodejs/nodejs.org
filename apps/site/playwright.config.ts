@@ -1,5 +1,7 @@
 import { defineConfig, devices, type Config } from '@playwright/test';
 
+import json from './package.json' with { type: 'json' };
+
 const isCI = !!process.env.CI;
 
 // https://playwright.dev/docs/test-configuration
@@ -32,6 +34,10 @@ export default defineConfig({
 });
 
 function getWebServerConfig(): Pick<Config, 'webServer'> {
+  if (!json.scripts['cloudflare:preview']) {
+    throw new Error('cloudflare:preview script not defined');
+  }
+
   if (process.env.PLAYWRIGHT_RUN_CLOUDFLARE_PREVIEW) {
     return {
       webServer: {
