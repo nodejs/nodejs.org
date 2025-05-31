@@ -9,19 +9,16 @@
     text-white;
 
   &.lg {
-    @apply h-12
-      w-12
+    @apply size-12
       text-2xl;
   }
 
   &.md {
-    @apply h-10
-      w-10
+    @apply size-10
       text-xl;
   }
 
   &.sm {
-    @apply h-8
-      w-8;
+    @apply size-8
   }
 }
