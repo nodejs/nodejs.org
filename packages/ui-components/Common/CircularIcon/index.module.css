@@ -19,6 +19,34 @@
   }
 
   &.sm {
-    @apply size-8
+    @apply size-8;
+  }
+
+  &.event {
+    @apply bg-purple-600;
+  }
+
+  &.method {
+    @apply bg-info-600;
+  }
+
+  &.property {
+    @apply bg-green-600;
+  }
+
+  &.class {
+    @apply bg-warning-600;
+  }
+
+  &.module {
+    @apply bg-red-600;
+  }
+
+  &.classMethod {
+    @apply bg-blue-600;
+  }
+
+  &.ctor {
+    @apply bg-pink-600;
   }
 }
