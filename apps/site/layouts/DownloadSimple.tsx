@@ -6,8 +6,7 @@ import WithMetaBar from '#site/components/withMetaBar';
 import WithNavBar from '#site/components/withNavBar';
 import WithProgressionSidebar from '#site/components/withProgressionSidebar';
 import WithSimplifiedDownload from '#site/components/withSimplifiedDownload';
-
-import ArticleLayout from './Article';
+import ArticleLayout from '#site/layouts/Article';
 
 const DownloadSimpleLayout: FC = () => (
   <>
