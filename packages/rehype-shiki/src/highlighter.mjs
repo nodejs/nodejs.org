@@ -17,14 +17,14 @@ const DEFAULT_THEME = {
 export const createHighlighter = options => {
   const shiki = createHighlighterCoreSync({
     themes: [DEFAULT_THEME],
-    langs: [],
     engine: createJavaScriptRegexEngine(),
     ...options,
   });
   const theme = options.themes?.[0] ?? DEFAULT_THEME;
+  const langs = options.langs ?? [];
 
   const getLanguageDisplayName = language => {
-    const languageByIdOrAlias = options.langs.find(
+    const languageByIdOrAlias = langs.find(
       ({ name, aliases }) =>
         name.toLowerCase() === language.toLowerCase() ||
         (aliases !== undefined && aliases.includes(language.toLowerCase()))
