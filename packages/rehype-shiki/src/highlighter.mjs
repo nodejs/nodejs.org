@@ -20,6 +20,7 @@ export const createHighlighter = options => {
     engine: createJavaScriptRegexEngine(),
     ...options,
   });
+
   const theme = options.themes?.[0] ?? DEFAULT_THEME;
   const langs = options.langs ?? [];
 
