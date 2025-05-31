@@ -3,7 +3,7 @@ import { createJavaScriptRegexEngine } from '@shikijs/engine-javascript';
 import shikiNordTheme from 'shiki/themes/nord.mjs';
 
 const DEFAULT_THEME = {
-  // We updating this color because the background color and comment text color
+  // We are updating this color because the background color and comment text color
   // in the Codebox component do not comply with accessibility standards
   // @see https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html
   colorReplacements: { '#616e88': '#707e99' },
