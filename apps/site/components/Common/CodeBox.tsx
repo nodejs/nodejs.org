@@ -22,6 +22,7 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = props => {
 
   const onCopy = (text: string) => {
     copyToClipboard(text);
+
     notify({
       duration: 300,
       message: (
@@ -32,6 +33,7 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = props => {
       ),
     });
   };
+
   return (
     <BaseCodeBox
       as={Link}
