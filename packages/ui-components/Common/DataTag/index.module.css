@@ -23,7 +23,7 @@
   }
 
   &.event {
-    @apply bg-purple-600;
+    @apply bg-accent1-600;
   }
 
   &.method {
@@ -47,6 +47,6 @@
   }
 
   &.ctor {
-    @apply bg-pink-600;
+    @apply bg-accent2-600;
   }
 }

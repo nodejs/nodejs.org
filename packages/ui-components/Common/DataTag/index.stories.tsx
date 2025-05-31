@@ -11,7 +11,11 @@ export const DataTags: Story = {
       {['event', 'method', 'property', 'class', 'module', 'classMethod', 'ctor']
         .map(kind =>
           ['sm', 'md', 'lg'].map(size => (
-            <div key={`${kind}-${size}`} className="flex justify-center">
+            <div
+              key={`${kind}-${size}`}
+              className="flex justify-center"
+              title={kind}
+            >
               <DataTag
                 kind={kind as DataTagProps['kind']}
                 size={size as DataTagProps['size']}
