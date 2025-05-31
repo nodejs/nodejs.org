@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { toString } from 'hast-util-to-string';
 import { SKIP, visit } from 'unist-util-visit';
 
-import { highlightToHast } from '.';
+import { highlightToHast } from './index.mjs';
 
 // This is what Remark will use as prefix within a <pre> className
 // to attribute the current language of the <pre> element

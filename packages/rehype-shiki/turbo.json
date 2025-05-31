@@ -6,7 +6,7 @@
     "lint:js": {
       "inputs": ["src/**/*.mjs"]
     },
-    "test": {
+    "test:unit": {
       "inputs": ["src/**/*.mjs"]
     }
   }
