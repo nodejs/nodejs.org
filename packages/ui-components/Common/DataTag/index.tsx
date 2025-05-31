@@ -2,7 +2,7 @@ import classNames from 'classnames';
 
 import styles from './index.module.css';
 
-export type CircularIconProps = {
+export type DataTagProps = {
   kind:
     | 'event'
     | 'method'
@@ -14,6 +14,9 @@ export type CircularIconProps = {
   size?: 'lg' | 'md' | 'sm';
 };
 
+// These symbols match up with the types used in
+// node core, and the ones defined at
+// https://github.com/nodejs/api-docs-tooling/blob/main/src/types.d.ts#L22 (`HeadingMetadataEntry['type']`)
 const symbolMap = {
   event: 'E',
   method: 'M',
@@ -24,9 +27,9 @@ const symbolMap = {
   ctor: 'C',
 } as const;
 
-export default function CircularIcon({ kind, size = 'md' }: CircularIconProps) {
+export default function DataTag({ kind, size = 'md' }: DataTagProps) {
   return (
-    <div className={classNames(styles.icon, styles[size], styles[kind])}>
+    <div className={classNames(styles.dataTag, styles[size], styles[kind])}>
       <span>{symbolMap[kind]}</span>
     </div>
   );

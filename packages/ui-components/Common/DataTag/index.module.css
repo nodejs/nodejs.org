@@ -1,6 +1,6 @@
 @reference "../../styles/index.css";
 
-.icon {
+.dataTag {
   @apply flex
     items-center
     justify-center
