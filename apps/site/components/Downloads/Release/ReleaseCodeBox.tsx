@@ -1,6 +1,6 @@
 'use client';
 
-import { highlightToHtml } from '@node-core/rehype-shiki';
+import { highlightToHtml } from '@node-core/rehype-shiki/minimal';
 import AlertBox from '@node-core/ui-components/Common/AlertBox';
 import Skeleton from '@node-core/ui-components/Common/Skeleton';
 import { useTranslations } from 'next-intl';

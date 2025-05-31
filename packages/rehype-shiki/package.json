@@ -1,8 +1,10 @@
 {
   "name": "@node-core/rehype-shiki",
   "type": "module",
-  "main": "./src/index.mjs",
-  "module": "./src/index.mjs",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./*": "./src/*.mjs"
+  },
   "scripts": {
     "lint:js": "eslint \"**/*.mjs\"",
     "test": "node --test"
