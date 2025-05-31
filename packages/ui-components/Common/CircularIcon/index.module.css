@@ -1,0 +1,27 @@
+@reference "../../styles/index.css";
+
+.icon {
+  @apply flex
+    items-center
+    justify-center
+    rounded-full
+    font-semibold
+    text-white;
+
+  &.lg {
+    @apply h-12
+      w-12
+      text-2xl;
+  }
+
+  &.md {
+    @apply h-10
+      w-10
+      text-xl;
+  }
+
+  &.sm {
+    @apply h-8
+      w-8;
+  }
+}
