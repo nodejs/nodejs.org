@@ -8,7 +8,7 @@
   "scripts": {
     "lint:js": "eslint \"**/*.mjs\"",
     "test": "turbo test:unit",
-    "test:unit": "node --experimental-test-module-mocks --test \"**/*.test.mjs\""
+    "test:unit": "node --experimental-test-coverage --experimental-test-module-mocks --test \"**/*.test.mjs\""
   },
   "dependencies": {
     "@shikijs/core": "^3.3.0",
