@@ -1,19 +1,3 @@
-/**
- * @fileoverview
- * Higher-order component to provide simplified download data and sidebar items
- * to its child component, based on the current route and release data.
- *
- * - Fetches release data and translations
- * - Determines the current version from the URL
- * - Finds the matching release and builds download artifacts
- * - Localizes sidebar group names
- *
- * Usage:
- * <WithSimplifiedDownload>
- *   {(props) => <YourComponent {...props} />}
- * </WithSimplifiedDownload>
- */
-
 import type MetaBar from '@node-core/ui-components/Containers/MetaBar';
 import { getTranslations } from 'next-intl/server';
 import type { ComponentProps, FC } from 'react';
