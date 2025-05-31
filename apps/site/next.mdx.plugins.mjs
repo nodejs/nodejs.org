@@ -1,6 +1,6 @@
 'use strict';
 
-import rehypeShikiji from '@node-core/rehype-shiki';
+import rehypeShikiji from '@node-core/rehype-shiki/plugin';
 import remarkHeadings from '@vcarl/remark-headings';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';

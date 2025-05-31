@@ -1,11 +1,14 @@
 {
   "name": "@node-core/rehype-shiki",
   "type": "module",
-  "main": "./src/index.mjs",
-  "module": "./src/index.mjs",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./*": "./src/*.mjs"
+  },
   "scripts": {
     "lint:js": "eslint \"**/*.mjs\"",
-    "test": "node --test"
+    "test": "turbo test:unit",
+    "test:unit": "node --experimental-test-coverage --experimental-test-module-mocks --test \"**/*.test.mjs\""
   },
   "dependencies": {
     "@shikijs/core": "^3.3.0",
