@@ -37,7 +37,7 @@
     "@opentelemetry/instrumentation": "~0.200.0",
     "@opentelemetry/resources": "~1.30.1",
     "@opentelemetry/sdk-logs": "~0.200.0",
-    "@orama/react-components": "^0.7.0",
+    "@orama/react-components": "^0.8.0",
     "@oramacloud/client": "^2.1.4",
     "@radix-ui/react-slot": "^1.1.2",
     "@radix-ui/react-tabs": "^1.1.3",
