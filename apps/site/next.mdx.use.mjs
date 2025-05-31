@@ -20,7 +20,7 @@ export const mdxComponents = {
   WithSimplifiedDownload: WithSimplifiedDownload,
   // Renders a Details Component with a summary and content
   Details: Details,
-  // Renders a table with Node.js Releases with diffrent platforms and architectures
+  // Renders a table with Node.js Releases with different platforms and architectures
   DownloadsTable: DownloadsTable,
   // HOC for getting Node.js Release Metadata
   WithNodeRelease: WithNodeRelease,
