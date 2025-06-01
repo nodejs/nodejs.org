@@ -13,7 +13,7 @@
   "dependencies": {
     "@shikijs/core": "^3.3.0",
     "@shikijs/engine-javascript": "^3.3.0",
-    "classnames": "~2.5.1",
+    "classnames": "catalog:",
     "hast-util-to-string": "^3.0.1",
     "shiki": "~3.3.0",
     "unist-util-visit": "^5.0.0"
