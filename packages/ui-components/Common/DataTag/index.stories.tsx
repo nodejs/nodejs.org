@@ -8,7 +8,16 @@ type Meta = MetaObj<typeof DataTag>;
 export const DataTags: Story = {
   render: () => (
     <div className="grid grid-cols-3 gap-6 p-6">
-      {['event', 'method', 'property', 'class', 'module', 'classMethod', 'ctor']
+      {[
+        'event',
+        'method',
+        'property',
+        'class',
+        'module',
+        'classMethod',
+        'ctor',
+        'global',
+      ]
         .map(kind =>
           ['sm', 'md', 'lg'].map(size => (
             <div
