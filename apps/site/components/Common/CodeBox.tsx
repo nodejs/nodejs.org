@@ -1,8 +1,10 @@
 'use client';
 
+import { CodeBracketIcon } from '@heroicons/react/24/outline';
 import BaseCodeBox from '@node-core/ui-components/Common/BaseCodeBox';
+import styles from '@node-core/ui-components/Common/BaseCodeBox/index.module.css';
 import { useTranslations } from 'next-intl';
-import type { FC, PropsWithChildren, ReactNode } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import Link from '#site/components/Link';
 import { useCopyToClipboard, useNotification } from '#site/hooks';
@@ -18,17 +20,26 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = props => {
   const notify = useNotification();
   const t = useTranslations();
 
-  const onCopy = (text: string, message: ReactNode) => {
+  const onCopy = (text: string) => {
     copyToClipboard(text);
-    notify({ duration: 300, message });
+
+    notify({
+      duration: 300,
+      message: (
+        <div className="flex items-center gap-3">
+          <CodeBracketIcon className={styles.icon} />
+          {t('components.common.codebox.copied')}
+        </div>
+      ),
+    });
   };
+
   return (
     <BaseCodeBox
       as={Link}
       onCopy={onCopy}
       {...props}
-      copyText={t('components.common.codebox.copy')}
-      copiedText={t('components.common.codebox.copied')}
+      buttonText={t('components.common.codebox.copy')}
     />
   );
 };
