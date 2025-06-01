@@ -11,6 +11,7 @@ export type DataTagProps = {
     | 'class'
     | 'module'
     | 'classMethod'
+    | 'global'
     | 'ctor';
   size?: 'lg' | 'md' | 'sm';
 };
@@ -25,6 +26,7 @@ const symbolMap = {
   class: 'C',
   module: 'M',
   classMethod: 'S',
+  global: 'G',
   ctor: 'C',
 } as const;
 

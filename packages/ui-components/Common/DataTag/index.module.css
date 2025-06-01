@@ -49,4 +49,8 @@
   &.ctor {
     @apply bg-accent2-600;
   }
+
+  &.global {
+    @apply bg-amber-600;
+  }
 }
