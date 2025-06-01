@@ -13,6 +13,7 @@
   "files": [
     "Common",
     "Containers",
+    "MDX",
     "Icons",
     "styles",
     "types.ts",
