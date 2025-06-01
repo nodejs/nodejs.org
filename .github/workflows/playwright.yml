@@ -97,7 +97,7 @@ jobs:
         working-directory: apps/site
         run: pnpm playwright
         env:
-          VERCEL_PREVIEW_URL: ${{ needs.get-vercel-preview.outputs.url }}
+          PLAYWRIGHT_BASE_URL: ${{ needs.get-vercel-preview.outputs.url }}
 
       - name: Upload Playwright test results
         if: always()
