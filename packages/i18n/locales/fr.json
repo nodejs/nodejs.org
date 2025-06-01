@@ -94,6 +94,12 @@
             "acceptInputFromTheCommandLineInNodejs": "Accepter des données provenant de la ligne de commande dans Node.js"
           }
         },
+        "migrations": {
+          "links": {
+            "migrations": "Migrations des zones d'utilisation",
+            "introduction": "Introduction aux migrations des zones d'utilisation"
+          }
+        },
         "modules": {
           "links": {
             "modules": "Modules",
