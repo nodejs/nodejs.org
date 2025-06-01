@@ -23,7 +23,10 @@ const preview: Preview = {
       defaultTheme: 'light',
       attributeName: 'data-theme',
     }),
-  ],
+    // TODO(@avivkeller): Once storybook fixes their types
+    // this can be removed, since `withThemeByDataAttribute`
+    // will return the same type that is accepted by `Preview`
+  ] as Preview['decorators'],
 };
 
 export default preview;

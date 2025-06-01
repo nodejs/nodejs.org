@@ -49,11 +49,8 @@
     "tailwindcss": "~4.0.17"
   },
   "devDependencies": {
-    "@storybook/addon-controls": "^9.0.3",
-    "@storybook/addon-interactions": "^8.6.14",
-    "@storybook/addon-styling-webpack": "^1.0.1",
     "@storybook/addon-themes": "^9.0.3",
-    "@storybook/addon-viewport": "^9.0.3",
+    "@storybook/addon-styling-webpack": "^1.0.1",
     "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
     "@storybook/react": "^9.0.3",
     "@storybook/react-webpack5": "^9.0.3",
@@ -63,7 +60,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "~7.1.2",
     "eslint-plugin-react": "~7.37.4",
-    "eslint-plugin-storybook": "~0.12.0",
+    "eslint-plugin-storybook": "~9.0.3",
     "global-jsdom": "^26.0.0",
     "postcss-loader": "~8.1.1",
     "react": "^19.1.0",
