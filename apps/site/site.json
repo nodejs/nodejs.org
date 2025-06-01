@@ -37,12 +37,12 @@
   },
   "websiteBadges": {
     "index": {
-      "startDate": "2025-05-06",
-      "endDate": "2025-05-31",
+      "startDate": "2025-04-01T00:00:00.000Z",
+      "endDate": "2025-07-01T00:00:00.000Z",
       "kind": "default",
-      "title": "Next-10 Survey",
-      "text": "We need your feedback to help us shape Node.js",
-      "link": "https://linuxfoundation.research.net/r/2025nodenext10"
+      "title": "JSConf",
+      "text": "Get your tickets now!",
+      "link": "https://events.linuxfoundation.org/jsconf-north-america"
     }
   }
 }
