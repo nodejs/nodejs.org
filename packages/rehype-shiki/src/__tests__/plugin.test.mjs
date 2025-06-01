@@ -196,7 +196,7 @@ describe('rehypeShikiji', { concurrency: true }, async () => {
     );
   });
 
-  it("if itsn't a squence of cjs/esm codeblock, it should not pair them", () => {
+  it("if it isn't a sequence of cjs/esm codeblock, it should not pair them", () => {
     const parent = {
       type: 'root',
       children: [
