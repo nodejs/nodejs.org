@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import type { FC } from 'react';
 
 import styles from './index.module.css';
 
@@ -27,10 +28,10 @@ const symbolMap = {
   ctor: 'C',
 } as const;
 
-export default function DataTag({ kind, size = 'md' }: DataTagProps) {
-  return (
-    <div className={classNames(styles.dataTag, styles[size], styles[kind])}>
-      <span>{symbolMap[kind]}</span>
-    </div>
-  );
-}
+const DataTag: FC<DataTagProps> = ({ kind, size = 'md' }) => (
+  <div className={classNames(styles.dataTag, styles[size], styles[kind])}>
+    <span>{symbolMap[kind]}</span>
+  </div>
+);
+
+export default DataTag;
