@@ -19,7 +19,7 @@ mock.module('shiki/themes/nord.mjs', {
   defaultExport: { name: 'nord', colors: { 'editor.background': '#2e3440' } },
 });
 
-describe('createHighlighter', async () => {
+describe('createHighlighter', { concurrency: true }, async () => {
   const { createHighlighter } = await import('../highlighter.mjs');
 
   describe('getLanguageDisplayName', () => {

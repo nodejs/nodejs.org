@@ -2,7 +2,7 @@
 
 import classNames from 'classnames';
 import { toString } from 'hast-util-to-string';
-import { SKIP, visit } from 'unist-util-visit';
+import { visit } from 'unist-util-visit';
 
 import { highlightToHast } from './index.mjs';
 
@@ -53,143 +53,149 @@ function isCodeBlock(node) {
   );
 }
 
+function getLanguage(codeBlockNode) {
+  if (codeBlockNode?.children[0]?.properties?.className) {
+    return codeBlockNode.children[0].properties.className
+      ?.find(cn => cn.startsWith(languagePrefix))
+      ?.substring(languagePrefix.length);
+  }
+  return undefined;
+}
+
 export default function rehypeShikiji() {
-  return function (tree) {
-    visit(tree, 'element', (_, index, parent) => {
-      const languages = [];
-      const displayNames = [];
-      const codeTabsChildren = [];
+  return tree => {
+    if (!tree || !tree.children) {
+      return tree;
+    }
 
-      let defaultTab = '0';
-      let currentIndex = index;
+    // First pass: Group adjacent code blocks into <CodeTabs>
+    const newChildren = [];
+    let i = 0;
+    while (i < tree.children.length) {
+      const child = tree.children[i];
+      let grouped = false;
 
-      while (isCodeBlock(parent?.children[currentIndex])) {
-        const codeElement = parent?.children[currentIndex].children[0];
+      if (isCodeBlock(child) && i + 1 < tree.children.length) {
+        const nextChild = tree.children[i + 1];
+        if (isCodeBlock(nextChild)) {
+          const lang1 = getLanguage(child);
+          const lang2 = getLanguage(nextChild);
 
-        const displayName = getMetaParameter(
-          codeElement.data?.meta,
-          'displayName'
-        );
+          let canGroup = false;
+          if (
+            (lang1 === 'cjs' && lang2 === 'esm') ||
+            (lang1 === 'esm' && lang2 === 'cjs')
+          ) {
+            canGroup = true;
+            // If a third block exists and breaks the CJS/ESM sequence, do not group the first two.
+            if (i + 2 < tree.children.length) {
+              const thirdChild = tree.children[i + 2];
+              if (isCodeBlock(thirdChild)) {
+                const lang3 = getLanguage(thirdChild);
+                if (
+                  !(
+                    (lang2 === 'cjs' && lang3 === 'esm') ||
+                    (lang2 === 'esm' && lang3 === 'cjs')
+                  )
+                ) {
+                  canGroup = false;
+                }
+              } else {
+                // Third child is not a code block, so the CJS/ESM pair is effectively isolated or at the end.
+                // Allow grouping.
+              }
+            }
+          }
 
-        // We should get the language name from the class name
-        if (codeElement.properties.className?.length) {
-          const className = codeElement.properties.className.join(' ');
-          const matches = className.match(/language-(?<language>.*)/);
+          if (canGroup) {
+            const codeBlocksToGroup = [child, nextChild];
+            const displayNamesArray = codeBlocksToGroup.map(codeElement =>
+              getMetaParameter(
+                codeElement.children[0].data?.meta,
+                'displayName'
+              )
+            );
+            const actualLanguagesArray = [
+              lang1 || 'unknown',
+              lang2 || 'unknown',
+            ];
+            const finalDisplayNames = displayNamesArray
+              .map((dn, idx) => dn || actualLanguagesArray[idx].toUpperCase())
+              .join('|');
 
-          languages.push(matches?.groups.language ?? 'text');
+            const codeTabElement = {
+              type: 'element',
+              tagName: 'CodeTabs',
+              properties: {
+                displayNames: finalDisplayNames,
+                languages: actualLanguagesArray.join('|'),
+              },
+              children: codeBlocksToGroup.map(block =>
+                JSON.parse(JSON.stringify(block))
+              ),
+            };
+            newChildren.push(codeTabElement);
+            i += 2;
+            grouped = true;
+          }
         }
-
-        // Map the display names of each variant for the CodeTab
-        displayNames.push(displayName?.replaceAll('|', '') ?? '');
-
-        codeTabsChildren.push(parent?.children[currentIndex]);
-
-        // If `active="true"` is provided in a CodeBox
-        // then the default selected entry of the CodeTabs will be the desired entry
-        const specificActive = getMetaParameter(
-          codeElement.data?.meta,
-          'active'
-        );
-
-        if (specificActive === 'true') {
-          defaultTab = String(codeTabsChildren.length - 1);
-        }
-
-        const nextNode = parent?.children[currentIndex + 1];
-
-        // If the CodeBoxes are on the root tree the next Element will be
-        // an empty text element so we should skip it
-        currentIndex += nextNode && nextNode?.type === 'text' ? 2 : 1;
       }
 
-      if (codeTabsChildren.length >= 2) {
-        const codeTabElement = {
-          type: 'element',
-          tagName: 'CodeTabs',
-          children: codeTabsChildren,
-          properties: {
-            languages: languages.join('|'),
-            displayNames: displayNames.join('|'),
-            defaultTab,
-          },
-        };
-
-        // This removes all the original Code Elements and adds a new CodeTab Element
-        // at the original start of the first Code Element
-        parent.children.splice(index, currentIndex - index, codeTabElement);
-
-        // Prevent visiting the code block children and for the next N Elements
-        // since all of them belong to this CodeTabs Element
-        return [SKIP];
+      if (!grouped) {
+        newChildren.push(child);
+        i++;
       }
-    });
+    }
+    tree.children = newChildren;
 
+    // Second pass: Process individual <pre> blocks for syntax highlighting
+    // This will also process <pre> blocks inside the children of <CodeTabs>
     visit(tree, 'element', (node, index, parent) => {
-      // We only want to process <pre>...</pre> elements
-      if (!parent || index == null || node.tagName !== 'pre') {
+      if (!parent || typeof index !== 'number' || node.tagName !== 'pre') {
         return;
       }
 
-      // We want the contents of the <pre> element, hence we attempt to get the first child
       const preElement = node.children[0];
-
-      // If thereÄs nothing inside the <pre> element... What are we doing here?
-      if (!preElement || !preElement.properties) {
+      if (
+        !preElement ||
+        preElement.type !== 'element' ||
+        preElement.tagName !== 'code' ||
+        !preElement.properties
+      ) {
         return;
       }
 
-      // Ensure that we're not visiting a <code> element but it's inner contents
-      // (keep iterating further down until we reach where we want)
-      if (preElement.type !== 'element' || preElement.tagName !== 'code') {
-        return;
-      }
+      const lang = preElement.properties.className
+        ?.find(cn => cn.startsWith(languagePrefix))
+        ?.substring(languagePrefix.length);
 
-      // Get the <pre> element class names
-      const preClassNames = preElement.properties.className;
-
-      // The current classnames should be an array and it should have a length
-      if (typeof preClassNames !== 'object' || preClassNames.length === 0) {
-        return;
-      }
-
-      // We want to retrieve the language class name from the class names
-      const codeLanguage = preClassNames.find(
-        c => typeof c === 'string' && c.startsWith(languagePrefix)
-      );
-
-      // If we didn't find any `language-` classname then we shouldn't highlight
-      if (typeof codeLanguage !== 'string') {
-        return;
-      }
-
-      // Retrieve the whole <pre> contents as a parsed DOM string
-      const preElementContents = toString(preElement);
-
-      // Grabs the relevant alias/name of the language
-      const languageId = codeLanguage.slice(languagePrefix.length);
-
-      // Parses the <pre> contents and returns a HAST tree with the highlighted code
-      const { children } = highlightToHast(preElementContents, languageId);
-
-      // Adds the original language back to the <pre> element
-      children[0].properties.class = classNames(
-        children[0].properties.class,
-        codeLanguage
-      );
-
-      const showCopyButton = getMetaParameter(
+      const codeString = toString(preElement);
+      // meta is on the <code> element (preElement)
+      const displayName = getMetaParameter(
         preElement.data?.meta,
-        'showCopyButton'
+        'displayName'
       );
 
-      // Adds a Copy Button to the CodeBox if requested as an additional parameter
-      // And avoids setting the property (overriding) if undefined or invalid value
-      if (showCopyButton && ['true', 'false'].includes(showCopyButton)) {
-        children[0].properties.showCopyButton = showCopyButton;
-      }
+      const hast = highlightToHast(codeString, lang, displayName);
 
-      // Replaces the <pre> element with the updated one
-      parent.children.splice(index, 1, ...children);
+      // Replace the <pre> node's children with the HAST from Shiki
+      node.children = hast.children;
+      // Merge properties from Shiki's <pre> (like style) into our <pre>
+      if (hast.properties) {
+        node.properties = { ...node.properties, ...hast.properties };
+      }
+      // Add the language class if not already there
+      if (
+        lang &&
+        !node.properties.className?.includes(`${languagePrefix}${lang}`)
+      ) {
+        node.properties.className = classNames(
+          node.properties.className,
+          `${languagePrefix}${lang}`
+        );
+      }
     });
+
+    return tree;
   };
 }
