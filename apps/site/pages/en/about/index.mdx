@@ -44,6 +44,14 @@ server.listen(port, hostname, () => {
 });
 ```
 
+```cjs
+const type = 'commonjs';
+```
+
+```mjs
+const type = 'module';
+```
+
 This is in contrast to today's more common concurrency model, in which OS threads
 are employed. Thread-based networking is relatively inefficient and very
 difficult to use. Furthermore, users of Node.js are free from worries of
