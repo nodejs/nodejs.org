@@ -47,14 +47,14 @@
     "prettier": "3.5.3",
     "prettier-plugin-tailwindcss": "0.6.11"
   },
-  "packageManager": "pnpm@10.10.0",
+  "packageManager": "pnpm@10.8.1",
   "engines": {
     "node": "v22"
   },
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "10.10.0"
+      "version": "10.8.1"
     }
   }
 }
