@@ -94,6 +94,12 @@ jobs:
         # We only want to install required production packages
         run: pnpm install --prod --frozen-lockfile
 
+      - name: Install Bundle Analyzer
+        if: ${{ matrix.os == 'ubuntu-latest' && github.event_name != 'merge_group' }}
+        # This is a devDependency, so we manually install it, but only when it's actually
+        # needed
+        run: pnpm install @codecov/nextjs-webpack-plugin --frozen-lockfile
+
       - name: Build Next.js (ISR)
         # We want a ISR build on CI to ensure that regular Next.js builds work as expected.
         run: pnpm exec turbo build ${{ env.TURBO_ARGS }}
