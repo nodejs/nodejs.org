@@ -98,7 +98,7 @@ const nextConfig = {
     ],
   },
   webpack: (config, options) => {
-    if (process.env.ANALYZE) {
+    if (process.env.NEXT_PUBLIC_ANALYZE) {
       config.plugins.push(
         codecovNextJSWebpackPlugin({
           enableBundleAnalysis: true,
