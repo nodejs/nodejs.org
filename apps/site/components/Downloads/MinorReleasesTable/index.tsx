@@ -15,50 +15,67 @@ type MinorReleasesTableProps = {
   releases: Array<MinorVersion>;
 };
 
+const chunkedReleases = (releases: Array<MinorVersion>, size: number) => {
+  const count = Math.ceil(releases.length / size);
+
+  return Array.from({ length: count }, (_, index) =>
+    releases.slice(index * size, (index + 1) * size)
+  );
+};
+
 export const MinorReleasesTable: FC<MinorReleasesTableProps> = ({
   releases,
 }) => {
   const t = useTranslations('components.minorReleasesTable');
+  const releaseGroups = chunkedReleases(releases, 8);
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>{t('version')}</th>
-          <th>{t('links')}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {releases.map(release => (
-          <tr key={release.version}>
-            <td>v{release.version}</td>
-            <td>
-              <div className={styles.links}>
-                <Link
-                  kind="neutral"
-                  href={`https://nodejs.org/download/release/v${release.version}/`}
-                >
-                  {t('actions.release')}
-                </Link>
-                <Separator orientation="vertical" />
-                <Link
-                  kind="neutral"
-                  href={`${BASE_CHANGELOG_URL}${release.version}`}
-                >
-                  {t('actions.changelog')}
-                </Link>
-                <Separator orientation="vertical" />
-                <Link
-                  kind="neutral"
-                  href={getNodeApiLink(`v${release.version}`)}
-                >
-                  {t('actions.docs')}
-                </Link>
-              </div>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <div className={styles.scrollable}>
+      {releaseGroups.map(releases => (
+        <table key={releases[0].version}>
+          <thead>
+            <tr>
+              <th>{t('version')}</th>
+              <th>{t('links')}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {releases.map(release => (
+              <tr key={release.version}>
+                <td>
+                  <Link kind="neutral" href={`/download/v${release.version}`}>
+                    v{release.version}
+                  </Link>
+                </td>
+                <td>
+                  <div className={styles.links}>
+                    <Link
+                      kind="neutral"
+                      href={`https://nodejs.org/download/release/v${release.version}/`}
+                    >
+                      {t('actions.release')}
+                    </Link>
+                    <Separator orientation="vertical" />
+                    <Link
+                      kind="neutral"
+                      href={`${BASE_CHANGELOG_URL}${release.version}`}
+                    >
+                      {t('actions.changelog')}
+                    </Link>
+                    <Separator orientation="vertical" />
+                    <Link
+                      kind="neutral"
+                      href={getNodeApiLink(`v${release.version}`)}
+                    >
+                      {t('actions.docs')}
+                    </Link>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ))}
+    </div>
   );
 };

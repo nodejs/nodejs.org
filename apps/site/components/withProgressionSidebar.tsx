@@ -4,53 +4,39 @@ import ProgressionSidebar from '@node-core/ui-components/Common/ProgressionSideb
 import { usePathname } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import type { RichTranslationValues } from 'next-intl';
-import type { ComponentProps, FC } from 'react';
+import type { FC } from 'react';
 
 import Link from '#site/components/Link';
 import { useSiteNavigation } from '#site/hooks/server';
 import { useRouter } from '#site/navigation.mjs';
 import type { NavigationKeys } from '#site/types';
 
-type Group = ComponentProps<typeof ProgressionSidebar>['groups'][number];
+type WithProgressionSidebarProps = {
+  navKey: NavigationKeys;
+  context?: Record<string, RichTranslationValues>;
+};
 
-type WithProgressionSidebarProps =
-  | {
-      navKey: NavigationKeys;
-      context?: Record<string, RichTranslationValues>;
-      groups?: never;
-    }
-  | {
-      groups: Array<Group>;
-      navKey?: never;
-      context?: never;
-    };
-
-const WithProgressionSidebar: FC<WithProgressionSidebarProps> = props => {
+const WithProgressionSidebar: FC<WithProgressionSidebarProps> = ({
+  navKey,
+  context,
+}) => {
   const { getSideNavigation } = useSiteNavigation();
   const pathname = usePathname();
   const locale = useLocale();
   const t = useTranslations();
   const { push } = useRouter();
+  const [[, sidebarNavigation]] = getSideNavigation([navKey], context);
 
-  let groups: Array<Group> = [];
-
-  if ('navKey' in props && props.navKey) {
-    const [[, sidebarNavigation]] = getSideNavigation(
-      [props.navKey],
-      props.context
-    );
-
-    groups = sidebarNavigation.items.map(([, { label, items }]) => ({
+  const mappedProgressionSidebarItems = sidebarNavigation.items.map(
+    ([, { label, items }]) => ({
       groupName: label,
       items: items.map(([, item]) => item),
-    }));
-  } else if ('groups' in props) {
-    groups = props.groups;
-  }
+    })
+  );
 
   return (
     <ProgressionSidebar
-      groups={groups}
+      groups={mappedProgressionSidebarItems}
       pathname={pathname?.replace(`/${locale}`, '')}
       title={t('components.common.sidebar.title')}
       onSelect={push}

@@ -1,9 +1,5 @@
-import type ProgressionSidebarGroup from '@node-core/ui-components/Common/ProgressionSidebar/ProgressionSidebarGroup';
-import type { ComponentProps } from 'react';
-import { satisfies } from 'semver';
+import semVer from 'semver';
 
-import FormattedTime from '#site/components/Common/FormattedTime';
-import type getReleaseData from '#site/next-data/releaseData';
 import type { NodeRelease } from '#site/types/releases';
 import type { UserOS, UserPlatform } from '#site/types/userOS';
 import type { DownloadDropdownItem } from '#site/util/downloadUtils';
@@ -14,9 +10,7 @@ import {
 import type { DownloadKind } from '#site/util/getNodeDownloadUrl';
 import { getNodeDownloadUrl } from '#site/util/getNodeDownloadUrl';
 
-import { DIST_URL, BASE_CHANGELOG_URL } from '#site/next.constants';
-
-const RELEASE_POST_URL = '/blog/release/';
+import { DIST_URL } from '#site/next.constants';
 
 export type NodeDownloadArtifact = {
   file: string;
@@ -45,7 +39,7 @@ function isCompatible(
   return (
     (osList?.includes(os) ?? true) &&
     (platformList?.includes(platform) ?? true) &&
-    (versions?.every(r => satisfies(version, r)) ?? true)
+    (versions?.every(r => semVer.satisfies(version, r)) ?? true)
   );
 }
 
@@ -94,154 +88,61 @@ const getCompatibleArtifacts = ({
   });
 };
 
-export const buildReleaseArtifacts = ({
-  versionWithPrefix,
-  version,
-  minorVersions,
-}: NodeRelease) => ({
-  binaries: getCompatibleArtifacts({
-    version: versionWithPrefix,
-    kind: 'binary',
-  }),
-  release: {
-    shasum: getNodeDownloadUrl({ version: versionWithPrefix, kind: 'shasum' }),
-    source: getNodeDownloadUrl({ version: versionWithPrefix, kind: 'source' }),
-    changelog: `${BASE_CHANGELOG_URL}${version}`,
-    blogPost: `${RELEASE_POST_URL}${versionWithPrefix}`,
-  },
-  installers: getCompatibleArtifacts({
-    exclude: OS_NOT_SUPPORTING_INSTALLERS,
-    version: versionWithPrefix,
-    kind: 'installer',
-  }),
-  version: versionWithPrefix,
-  minors: minorVersions
-    .filter(minor => `v${minor.version}` !== versionWithPrefix) // Exclude the current version
-    .map(minor => {
-      const versionWithPrefix = `v${minor.version}`;
-
-      return {
-        binaries: getCompatibleArtifacts({
-          version: versionWithPrefix,
-          kind: 'binary',
-        }),
-        installers: getCompatibleArtifacts({
-          exclude: OS_NOT_SUPPORTING_INSTALLERS,
-          version: versionWithPrefix,
-          kind: 'installer',
-        }),
-        version: versionWithPrefix,
-        release: {
-          source: getNodeDownloadUrl({
-            version: versionWithPrefix,
-            kind: 'source',
-          }),
-          changelog: `${BASE_CHANGELOG_URL}${minor.version}`,
-          blogPost: `${RELEASE_POST_URL}${versionWithPrefix}`,
-        },
-      };
-    }),
-});
-
-export const buildMetaBarItems = (
-  {
-    codename,
-    status,
-    currentStart,
-    releaseDate,
-    minorVersions,
-    modules,
-    npm,
-    v8,
-  }: NodeRelease,
-  t: (key: string) => string
-) => ({
-  ...(codename && {
-    [t('layouts.simpleDownload.codename')]: codename,
-  }),
-  [t('layouts.simpleDownload.status')]: t(
-    `layouts.simpleDownload.statusNames.${status}`
-  ),
-  [t('layouts.simpleDownload.firstReleased')]: (
-    <FormattedTime date={currentStart} />
-  ),
-  [t('layouts.simpleDownload.lastUpdated')]: (
-    <FormattedTime date={releaseDate} />
-  ),
-  [t('layouts.simpleDownload.minorVersions')]: minorVersions.length,
-  [t('layouts.simpleDownload.nApiVersion')]: modules,
-  [t('layouts.simpleDownload.npmVersion')]: npm,
-  [t('layouts.simpleDownload.v8Version')]: v8,
-});
-
-type SidebarGroup = ComponentProps<typeof ProgressionSidebarGroup>;
-
-export const groupReleasesByStatus = (
-  releaseData: Awaited<ReturnType<typeof getReleaseData>>,
-  pathname: string
-): Array<SidebarGroup> => {
-  let simplified = false;
-
-  // Reduce the release data into a record grouped by release status (e.g., 'LTS', 'Current')
-  const grouped = releaseData.reduce<Record<string, SidebarGroup>>(
-    (acc, release) => {
-      const statusKey = release.status;
-
-      // Initialize the group if it doesn't exist yet
-      if (!acc[statusKey]) {
-        acc[statusKey] = {
-          groupName: statusKey,
-          items: [],
-        };
-
-        // Check if the current pathname indicates a simplified download page
-        if (statusKey === 'LTS' && pathname.endsWith('simplified')) {
-          simplified = true;
-        }
-      }
-
-      // Build the label: always include major version, optionally codename
-      const labelParts = [`v${release.major}`];
-      if (release.codename) {
-        labelParts.push(release.codename);
-      }
-
-      // Add the release to the group's items
-      if (simplified) {
-        acc[statusKey].items.push({
-          label: labelParts.join(' '),
-          link: `/download/simplified`,
-        });
-
-        simplified = false;
-      } else {
-        acc[statusKey].items.push({
-          label: labelParts.join(' '),
-          link: `/download/${release.major}`,
-        });
-      }
-
-      return acc;
-    },
-    {}
+export const buildReleaseArtifacts = (
+  release: NodeRelease,
+  version: string,
+  majors: Array<string>
+) => {
+  const minorVersion = release.minorVersions.find(
+    ({ versionWithPrefix }) => versionWithPrefix === version
   );
 
-  // Return the grouped items as an array for sidebar consumption
-  return Object.values(grouped);
+  const enrichedRelease = {
+    ...release,
+    ...minorVersion,
+  };
+
+  return {
+    binaries: getCompatibleArtifacts({
+      version: version,
+      kind: 'binary',
+    }),
+    installers: getCompatibleArtifacts({
+      exclude: OS_NOT_SUPPORTING_INSTALLERS,
+      version: version,
+      kind: 'installer',
+    }),
+    sources: {
+      shasum: getNodeDownloadUrl({
+        version: version,
+        kind: 'shasum',
+      }),
+      tarball: getNodeDownloadUrl({
+        version: version,
+        kind: 'source',
+      }),
+    },
+    version: version,
+    minors: enrichedRelease.minorVersions,
+    release: enrichedRelease,
+    majors: majors,
+  };
 };
 
-export const extractVersionFromPath = (
-  pathname: string | undefined
-): string | null => {
+export const extractVersionFromPath = (pathname: string | undefined) => {
   if (!pathname) return null;
 
   const segments = pathname.split('/').filter(Boolean);
   const version = segments.pop();
+  const major = semVer.major(version || '');
 
-  // Check version format (number or 'simplified')
-  if (!version || (!version.match(/^\d+$/) && version !== 'simplified')) {
+  // Check version format like (v22.0.4 or 'simplified')
+  if (
+    !version ||
+    (!version.match(/^v\d+(\.\d+)*$/) && version !== 'simplified')
+  ) {
     return null;
   }
 
-  return version;
+  return { version, major };
 };

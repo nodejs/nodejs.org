@@ -29,7 +29,7 @@ const WithMarkdownContent: FC<WithMarkdownContentProps> = async ({ file }) => {
   const locale = await getLocale();
   const content = await getMarkdownContent(locale, file);
 
-  return content || null;
+  return content;
 };
 
 export default WithMarkdownContent;

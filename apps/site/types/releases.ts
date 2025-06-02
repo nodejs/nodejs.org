@@ -20,8 +20,12 @@ export interface NodeReleaseSource {
 }
 
 export interface MinorVersion {
-  version: string;
+  npm?: string;
+  modules?: string;
   releaseDate: string;
+  v8: string;
+  version: string;
+  versionWithPrefix: string;
 }
 
 export interface NodeRelease extends NodeReleaseSource {

@@ -1,20 +1,13 @@
-import type MetaBar from '@node-core/ui-components/Containers/MetaBar';
-import { getTranslations } from 'next-intl/server';
-import type { ComponentProps, FC } from 'react';
+import type { FC } from 'react';
 
 import { getClientContext } from '#site/client-context';
 import getReleaseData from '#site/next-data/releaseData';
 import {
-  buildMetaBarItems,
   buildReleaseArtifacts,
   extractVersionFromPath,
-  groupReleasesByStatus,
 } from '#site/util/downloadUtils/simple';
 
-type SimplifiedDownload = ReturnType<typeof buildReleaseArtifacts> & {
-  sidebarItems: ReturnType<typeof groupReleasesByStatus>;
-  metabarItems: ComponentProps<typeof MetaBar>['items'];
-};
+type SimplifiedDownload = ReturnType<typeof buildReleaseArtifacts>;
 
 type WithSimplifiedDownloadProps = {
   children: FC<SimplifiedDownload>;
@@ -27,13 +20,10 @@ const WithSimplifiedDownload: FC<WithSimplifiedDownloadProps> = async ({
   children: Component,
 }) => {
   const { pathname } = getClientContext();
-  const [releaseData, t] = await Promise.all([
-    getReleaseData(),
-    getTranslations(),
-  ]);
+  const releaseData = await getReleaseData();
 
   // Extract version from pathname
-  const version = extractVersionFromPath(pathname);
+  const { version, major } = extractVersionFromPath(pathname) || {};
 
   if (!version) {
     return null;
@@ -41,31 +31,23 @@ const WithSimplifiedDownload: FC<WithSimplifiedDownloadProps> = async ({
 
   // Find the matching release
   const release = releaseData.find(
-    ({ major, isLts }) =>
-      major === Number(version) || (isLts === true && version === 'simplified')
+    release =>
+      release.major === major ||
+      (release.isLts === true && version === 'simplified')
   );
 
   if (!release) {
     return null;
   }
 
-  const releaseArtifacts = buildReleaseArtifacts(release);
-  const metabarItems = buildMetaBarItems(release, t);
-
-  // Group and localize sidebar items
-  const mappedSidebarItems = groupReleasesByStatus(releaseData, pathname);
-  const localizedSidebarItems = mappedSidebarItems.map(item => ({
-    ...item,
-    groupName: t(`layouts.simpleDownload.statusNames.${item.groupName}`),
-  }));
-
-  return (
-    <Component
-      {...releaseArtifacts}
-      sidebarItems={localizedSidebarItems}
-      metabarItems={metabarItems}
-    />
+  const majorVersions = releaseData.map(release => release.versionWithPrefix);
+  const releaseArtifacts = buildReleaseArtifacts(
+    release,
+    version,
+    majorVersions
   );
+
+  return <Component {...releaseArtifacts} />;
 };
 
 export default WithSimplifiedDownload;

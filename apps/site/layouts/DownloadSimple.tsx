@@ -2,31 +2,19 @@ import type { FC } from 'react';
 
 import WithFooter from '#site/components/withFooter';
 import WithMarkdownContent from '#site/components/withMarkdownContent';
-import WithMetaBar from '#site/components/withMetaBar';
 import WithNavBar from '#site/components/withNavBar';
-import WithProgressionSidebar from '#site/components/withProgressionSidebar';
-import WithSimplifiedDownload from '#site/components/withSimplifiedDownload';
-import ArticleLayout from '#site/layouts/Article';
+
+import styles from './layouts.module.css';
 
 const DownloadSimpleLayout: FC = () => (
   <>
     <WithNavBar />
 
-    <ArticleLayout>
-      <WithSimplifiedDownload>
-        {({ sidebarItems, metabarItems }) => (
-          <>
-            <WithProgressionSidebar groups={sidebarItems} />
-            <div>
-              <main>
-                <WithMarkdownContent file={['download', 'simplified']} />
-              </main>
-              <WithMetaBar items={metabarItems} />
-            </div>
-          </>
-        )}
-      </WithSimplifiedDownload>
-    </ArticleLayout>
+    <div className={styles.downloadLayout}>
+      <main>
+        <WithMarkdownContent file={['download', 'simplified']} />
+      </main>
+    </div>
 
     <WithFooter />
   </>

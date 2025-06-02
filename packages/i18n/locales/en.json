@@ -172,6 +172,7 @@
     "minorReleasesTable": {
       "version": "Version",
       "links": "Links",
+      "showMore": "Show more",
       "actions": {
         "release": "Release",
         "changelog": "Changelog",
@@ -322,22 +323,6 @@
           "volta": "\"Volta\" is a cross-platform Node.js version manager."
         }
       }
-    },
-    "simpleDownload": {
-      "statusNames": {
-        "Current": "Current",
-        "LTS": "LTS",
-        "Maintenance": "Maintenance",
-        "End-of-life": "End of Life"
-      },
-      "codename": "Codename",
-      "status": "Status",
-      "firstReleased": "First Released",
-      "lastUpdated": "Last Updated",
-      "minorVersions": "Minor Versions",
-      "nApiVersion": "N-API Version",
-      "npmVersion": "npm Version",
-      "v8Version": "V8 Version"
     },
     "logo": "Node.js logo"
   }

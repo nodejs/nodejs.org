@@ -2,13 +2,13 @@
 
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
 import DownloadsTable from './components/Downloads/DownloadsTable';
+import { MinorReleasesTable } from './components/Downloads/MinorReleasesTable';
+import { ReleaseOverview } from './components/Downloads/ReleaseOverview';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
-import Details from './components/MDX/Details';
 import WithBadgeGroup from './components/withBadgeGroup';
 import WithBanner from './components/withBanner';
 import WithNodeRelease from './components/withNodeRelease';
 import WithSimplifiedDownload from './components/withSimplifiedDownload';
-
 /**
  * A full list of React Components that we want to pass through to MDX
  *
@@ -18,8 +18,6 @@ export const mdxComponents = {
   DownloadReleasesTable: DownloadReleasesTable,
   // HOC for providing the Simplified Download Page properties
   WithSimplifiedDownload: WithSimplifiedDownload,
-  // Renders a Details Component with a summary and content
-  Details: Details,
   // Renders a table with Node.js Releases with different platforms and architectures
   DownloadsTable: DownloadsTable,
   // HOC for getting Node.js Release Metadata
@@ -30,4 +28,8 @@ export const mdxComponents = {
   WithBadgeGroup: WithBadgeGroup,
   // Renders an container for Upcoming Node.js Meetings
   UpcomingMeetings: UpcomingMeetings,
+  // Renders the Release Overview for a specified version
+  ReleaseOverview: ReleaseOverview,
+  // Renders a table with all the Minor Releases for a Major Version
+  MinorReleasesTable: MinorReleasesTable,
 };

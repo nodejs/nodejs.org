@@ -19,10 +19,10 @@ const DownloadsTable: FC<DownloadsTableProps> = ({ source }) => {
       <thead>
         <tr>
           <th>{t('components.downloadsTable.fileName')}</th>
-          <th className="md:w-24">
+          <th className="md:w-28">
             {t('components.downloadsTable.operatingSystem')}
           </th>
-          <th className="md:w-24">
+          <th className="md:w-28">
             {t('components.downloadsTable.architecture')}
           </th>
         </tr>

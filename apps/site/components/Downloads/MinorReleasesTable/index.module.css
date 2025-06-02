@@ -6,3 +6,20 @@
     items-center
     gap-2;
 }
+
+.scrollable {
+  @apply scrollbar-thin
+    flex
+    snap-x
+    snap-mandatory
+    overflow-x-auto;
+
+  > table {
+    @apply shrink-0
+      snap-start;
+
+    thead th {
+      @apply last:md:w-56;
+    }
+  }
+}
