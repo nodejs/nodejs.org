@@ -96,7 +96,7 @@ jobs:
 
       - name: Install Bundle Analyzer
         # This is a devDependency, so we manually install it
-        run: pnpm install @codecov/nextjs-webpack-plugin --frozen-lockfile
+        run: pnpm install @codecov/nextjs-webpack-plugin
 
       - name: Build Next.js (ISR)
         # We want a ISR build on CI to ensure that regular Next.js builds work as expected.
