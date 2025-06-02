@@ -6,7 +6,7 @@
     "build": "cross-env NODE_NO_WARNINGS=1 next build --turbo",
     "check-types": "tsc --noEmit",
     "deploy": "cross-env NEXT_PUBLIC_STATIC_EXPORT=true NODE_NO_WARNINGS=1 next build",
-    "dev": "cross-env NODE_NO_WARNINGS=1 next dev",
+    "dev": "cross-env NODE_NO_WARNINGS=1 next dev --turbo",
     "lint": "turbo run lint:md lint:js lint:css",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
     "lint:fix": "turbo run lint:md lint:js lint:css --no-cache -- --fix",
