@@ -95,9 +95,7 @@ jobs:
         run: pnpm install --prod --frozen-lockfile
 
       - name: Install Bundle Analyzer
-        if: ${{ matrix.os == 'ubuntu-latest' && github.event_name != 'merge_group' }}
-        # This is a devDependency, so we manually install it, but only when it's actually
-        # needed
+        # This is a devDependency, so we manually install it
         run: pnpm install @codecov/nextjs-webpack-plugin --frozen-lockfile
 
       - name: Build Next.js (ISR)
