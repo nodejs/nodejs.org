@@ -98,13 +98,10 @@ const nextConfig = {
     ],
   },
   webpack: (config, options) => {
-    if (process.env.NEXT_PUBLIC_ANALYZE) {
+    if (process.env.ANALYZE) {
       config.plugins.push(
         codecovNextJSWebpackPlugin({
           enableBundleAnalysis: true,
-          // If CODECOV_TOKEN isn't specified, a tokenless
-          // upload will work as well.
-          uploadToken: process.env.CODECOV_TOKEN,
           bundleName: '@node-core/website',
           webpack: options.webpack,
           telemetry: false,
