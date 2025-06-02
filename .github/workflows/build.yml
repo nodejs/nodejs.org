@@ -95,6 +95,7 @@ jobs:
         run: pnpm install --prod --frozen-lockfile
 
       - name: Install Bundle Analyzer
+        working-directory: apps/site
         # This is a devDependency, so we manually install it
         run: pnpm install @codecov/nextjs-webpack-plugin
 
