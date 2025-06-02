@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "prebuild": "pnpm build-blog-data",
-    "build": "cross-env NODE_NO_WARNINGS=1 next build",
+    "build": "cross-env NODE_NO_WARNINGS=1 next build --turbo",
     "check-types": "tsc --noEmit",
     "deploy": "cross-env NEXT_PUBLIC_STATIC_EXPORT=true NODE_NO_WARNINGS=1 next build",
     "dev": "cross-env NODE_NO_WARNINGS=1 next dev",
