@@ -1,4 +1,5 @@
 'use strict';
+import { codecovNextJSWebpackPlugin } from '@codecov/nextjs-webpack-plugin';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
@@ -95,6 +96,23 @@ const nextConfig = {
       'tailwindcss',
       'shiki',
     ],
+  },
+  webpack: (config, options) => {
+    if (process.env.ANALYZE) {
+      config.plugins.push(
+        codecovNextJSWebpackPlugin({
+          enableBundleAnalysis: true,
+          // If CODECOV_TOKEN isn't specified, a tokenless
+          // upload will work as well.
+          uploadToken: process.env.CODECOV_TOKEN,
+          bundleName: '@node-core/website',
+          webpack: options.webpack,
+          telemetry: false,
+        })
+      );
+    }
+
+    return config;
   },
 };
 

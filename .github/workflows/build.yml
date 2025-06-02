@@ -104,6 +104,8 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
           # Used for API requests that require GitHub API scopes
           NEXT_GITHUB_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+          # Codecov
+          ANALYZE: ${{ matrix.os == 'ubuntu-latest' && github.event_name != 'merge_group' }}
 
       - name: Build Next.js (Static All Locales)
         # We only run full static builds within Pull Requests. This step is also used to export
