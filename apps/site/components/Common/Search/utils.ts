@@ -41,3 +41,20 @@ export const themeConfig = {
     },
   },
 };
+
+export const translationKeys = [
+  'searchPlaceholder',
+  'chatPlaceholder',
+  'noResultsFoundFor',
+  'suggestions',
+  'seeAll',
+  'addMore',
+  'clearChat',
+  'errorMessage',
+  'disclaimer',
+  'startYourSearch',
+  'initErrorSearch',
+  'initErrorChat',
+  'chatButtonLabel',
+  'searchButtonLabel',
+] as const;

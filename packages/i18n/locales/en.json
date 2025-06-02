@@ -238,9 +238,20 @@
       "tableOfContents": "Table of Contents"
     },
     "search": {
-      "searchBox": {
-        "placeholder": "Start typing..."
-      }
+      "searchPlaceholder": "Start typing...",
+      "chatPlaceholder": "Ask me anything",
+      "noResultsFoundFor": "No results found for",
+      "suggestions": "Suggestions",
+      "seeAll": "See all",
+      "addMore": "Add more",
+      "clearChat": "Clear chat",
+      "errorMessage": "An error occurred while trying to search. Please try again.",
+      "disclaimer": "AI summaries can make mistakes. Please verify the information.",
+      "startYourSearch": "Start your search",
+      "initErrorSearch": "Unable to initialize search service",
+      "initErrorChat": "Unable to initialize chat service",
+      "chatButtonLabel": "Get an AI summary",
+      "searchButtonLabel": "Search"
     },
     "blog": {
       "blogHeader": {
