@@ -246,11 +246,11 @@
       "addMore": "Add more",
       "clearChat": "Clear chat",
       "errorMessage": "An error occurred while trying to search. Please try again.",
-      "disclaimer": "Orama can make mistakes. Please verify the information.",
+      "disclaimer": "AI summaries can make mistakes. Please verify the information.",
       "startYourSearch": "Start your search",
       "initErrorSearch": "Unable to initialize search service",
       "initErrorChat": "Unable to initialize chat service",
-      "chatButtonLabel": "Get a summary",
+      "chatButtonLabel": "Get an AI summary",
       "searchButtonLabel": "Search"
     },
     "blog": {
