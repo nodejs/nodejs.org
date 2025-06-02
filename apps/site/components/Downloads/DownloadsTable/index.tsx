@@ -5,7 +5,7 @@ import type { FC } from 'react';
 
 import Link from '#site/components/Link';
 import { OperatingSystemLabel } from '#site/util/downloadUtils';
-import type { NodeDownloadArtifact } from '#site/util/downloadUtils/simple';
+import type { NodeDownloadArtifact } from '#site/util/downloadUtils/archive';
 
 type DownloadsTableProps = {
   source: Array<NodeDownloadArtifact>;

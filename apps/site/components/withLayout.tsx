@@ -5,7 +5,7 @@ import ArticlePageLayout from '#site/layouts/ArticlePage';
 import BlogLayout from '#site/layouts/Blog';
 import DefaultLayout from '#site/layouts/Default';
 import DownloadLayout from '#site/layouts/Download';
-import DownloadSimpleLayout from '#site/layouts/DownloadSimple';
+import DownloadArchiveLayout from '#site/layouts/DownloadArchive';
 import GlowingBackdropLayout from '#site/layouts/GlowingBackdrop';
 import LearnLayout from '#site/layouts/Learn';
 import PostLayout from '#site/layouts/Post';
@@ -19,7 +19,7 @@ const layouts = {
   'blog-post': PostLayout,
   'blog-category': BlogLayout,
   download: DownloadLayout,
-  'download-simple': DownloadSimpleLayout,
+  'download-archive': DownloadArchiveLayout,
   article: ArticlePageLayout,
 } satisfies Record<Layouts, FC>;
 

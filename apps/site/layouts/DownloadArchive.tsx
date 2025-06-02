@@ -6,13 +6,13 @@ import WithNavBar from '#site/components/withNavBar';
 
 import styles from './layouts.module.css';
 
-const DownloadSimpleLayout: FC = () => (
+const DownloadArchiveLayout: FC = () => (
   <>
     <WithNavBar />
 
     <div className={styles.downloadLayout}>
       <main>
-        <WithMarkdownContent file={['download', 'simplified']} />
+        <WithMarkdownContent file={['download', 'archive']} />
       </main>
     </div>
 
@@ -20,4 +20,4 @@ const DownloadSimpleLayout: FC = () => (
   </>
 );
 
-export default DownloadSimpleLayout;
+export default DownloadArchiveLayout;

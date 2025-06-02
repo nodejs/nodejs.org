@@ -6,5 +6,5 @@ export type Layouts =
   | 'blog-category'
   | 'blog-post'
   | 'download'
-  | 'download-simple'
+  | 'download-archive'
   | 'article';

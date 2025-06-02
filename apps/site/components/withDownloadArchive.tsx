@@ -5,36 +5,32 @@ import getReleaseData from '#site/next-data/releaseData';
 import {
   buildReleaseArtifacts,
   extractVersionFromPath,
-} from '#site/util/downloadUtils/simple';
+  findReleaseByVersion,
+} from '#site/util/downloadUtils/archive';
 
-type SimplifiedDownload = ReturnType<typeof buildReleaseArtifacts>;
+type DownloadArchive = ReturnType<typeof buildReleaseArtifacts>;
 
-type WithSimplifiedDownloadProps = {
-  children: FC<SimplifiedDownload>;
+type WithDownloadArchiveProps = {
+  children: FC<DownloadArchive>;
 };
 
 /**
  * Provides download artifacts and sidebar items to its child component
  */
-const WithSimplifiedDownload: FC<WithSimplifiedDownloadProps> = async ({
+const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
   children: Component,
 }) => {
   const { pathname } = getClientContext();
   const releaseData = await getReleaseData();
 
   // Extract version from pathname
-  const { version, major } = extractVersionFromPath(pathname) || {};
+  const version = extractVersionFromPath(pathname);
 
   if (!version) {
     return null;
   }
 
-  // Find the matching release
-  const release = releaseData.find(
-    release =>
-      release.major === major ||
-      (release.isLts === true && version === 'simplified')
-  );
+  const release = findReleaseByVersion(releaseData, version);
 
   if (!release) {
     return null;
@@ -50,4 +46,4 @@ const WithSimplifiedDownload: FC<WithSimplifiedDownloadProps> = async ({
   return <Component {...releaseArtifacts} />;
 };
 
-export default WithSimplifiedDownload;
+export default WithDownloadArchive;

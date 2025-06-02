@@ -129,20 +129,35 @@ export const buildReleaseArtifacts = (
   };
 };
 
+/**
+ * Extracts the version from the pathname.
+ * It expects the version to be in the format 'v22.0.4' or 'archive'.
+ */
 export const extractVersionFromPath = (pathname: string | undefined) => {
   if (!pathname) return null;
 
   const segments = pathname.split('/').filter(Boolean);
   const version = segments.pop();
-  const major = semVer.major(version || '');
 
-  // Check version format like (v22.0.4 or 'simplified')
-  if (
-    !version ||
-    (!version.match(/^v\d+(\.\d+)*$/) && version !== 'simplified')
-  ) {
+  // Check version format like (v22.0.4 or 'archive')
+  if (!version || (!version.match(/^v\d+(\.\d+)*$/) && version !== 'archive')) {
     return null;
   }
 
-  return { version, major };
+  return version;
+};
+
+/**
+ * Finds the appropriate release based on version, if 'archive' is passed,
+ * it returns the latest LTS release.
+ */
+export const findReleaseByVersion = (
+  releaseData: Array<NodeRelease>,
+  version: string | 'archive'
+) => {
+  if (version === 'archive') {
+    return releaseData.find(release => release.status === 'LTS');
+  }
+
+  return releaseData.find(release => semVer.major(version) === release.major);
 };
