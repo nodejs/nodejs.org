@@ -91,7 +91,6 @@ const nextConfig = {
       '@radix-ui/react-avatar',
       '@orama/highlight',
       '@orama/react-components',
-      '@heroicons/react',
       'tailwindcss',
       'shiki',
     ],
