@@ -13,11 +13,13 @@ on:
       - main
     paths:
       - packages/ui-components/**
+      - .github/workflows/chromatic.yml
   pull_request_target:
     branches:
       - main
     paths:
       - packages/ui-components/**
+      - .github/workflows/chromatic.yml
     types:
       - labeled
   workflow_dispatch:
