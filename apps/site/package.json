@@ -43,7 +43,7 @@
     "@radix-ui/react-tabs": "^1.1.12",
     "@radix-ui/react-toast": "^1.2.14",
     "@radix-ui/react-tooltip": "^1.2.7",
-    "@tailwindcss/postcss": "~4.1.5",
+    "@tailwindcss/postcss": "~4.1.8",
     "@types/node": "22.15.3",
     "@types/react": "^19.1.0",
     "@vcarl/remark-headings": "~0.1.0",
