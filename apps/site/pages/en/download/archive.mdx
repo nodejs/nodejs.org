@@ -4,7 +4,7 @@ layout: download-archive
 ---
 
 <WithDownloadArchive>
-  {({ binaries, installers, version, release, sources, majors }) => (
+  {({ binaries, installers, version, release, sources, majorVersions }) => (
     <>
       <h1>Download Node.js® {version}</h1>
       <ReleaseOverview release={release} />
@@ -41,7 +41,7 @@ layout: download-archive
           <h2 className="inline">Other releases</h2>
         </summary>
         <ul>
-          {majors.map(version => (
+          {majorVersions.map(version => (
             <li key={version}>
               <Link href={`/download/${version}`}>
                 <h3>Node.js {version}</h3>

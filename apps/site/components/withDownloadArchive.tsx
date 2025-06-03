@@ -11,7 +11,7 @@ import {
 type DownloadArchive = ReturnType<typeof buildReleaseArtifacts>;
 
 type WithDownloadArchiveProps = {
-  children: FC<DownloadArchive>;
+  children: FC<DownloadArchive & { majorVersions: Array<string> }>;
 };
 
 /**
@@ -37,13 +37,9 @@ const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
   }
 
   const majorVersions = releaseData.map(release => release.versionWithPrefix);
-  const releaseArtifacts = buildReleaseArtifacts(
-    release,
-    version,
-    majorVersions
-  );
+  const releaseArtifacts = buildReleaseArtifacts(release, version);
 
-  return <Component {...releaseArtifacts} />;
+  return <Component {...releaseArtifacts} majorVersions={majorVersions} />;
 };
 
 export default WithDownloadArchive;

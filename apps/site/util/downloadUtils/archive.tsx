@@ -90,8 +90,7 @@ const getCompatibleArtifacts = ({
 
 export const buildReleaseArtifacts = (
   release: NodeRelease,
-  version: string,
-  majors: Array<string>
+  version: string
 ) => {
   const minorVersion = release.minorVersions.find(
     ({ versionWithPrefix }) => versionWithPrefix === version
@@ -123,9 +122,7 @@ export const buildReleaseArtifacts = (
       }),
     },
     version: version,
-    minors: enrichedRelease.minorVersions,
     release: enrichedRelease,
-    majors: majors,
   };
 };
 
