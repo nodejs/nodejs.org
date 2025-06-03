@@ -9,10 +9,7 @@ const config: StorybookConfig = {
   swc: () => ({ jsc: { transform: { react: { runtime: 'automatic' } } } }),
   addons: [
     '@storybook/addon-webpack5-compiler-swc',
-    '@storybook/addon-controls',
-    '@storybook/addon-interactions',
     '@storybook/addon-themes',
-    '@storybook/addon-viewport',
     {
       name: '@storybook/addon-styling-webpack',
       options: {
