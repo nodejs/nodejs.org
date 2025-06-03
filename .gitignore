@@ -33,7 +33,6 @@ cache
 
 # TypeScript
 tsconfig.tsbuildinfo
-
 dist/
 
 # Ignore the blog-data json that we generate during dev and build
@@ -43,3 +42,7 @@ apps/site/public/blog-data.json
 apps/site/.open-next
 apps/site/.wrangler
 
+
+## Playwright
+test-results
+playwright-report

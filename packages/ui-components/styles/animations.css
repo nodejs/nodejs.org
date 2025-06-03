@@ -1,4 +1,4 @@
-@theme {
+@theme inline {
   --animate-surf: surf 1s infinite ease-in-out;
   --animate-pulse: pulse 500ms infinite alternate-reverse;
   --animate-pulse-dark: pulse-dark 500ms infinite alternate-reverse;

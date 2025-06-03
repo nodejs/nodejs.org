@@ -1,21 +1,21 @@
+import Article from '@node-core/ui-components/Containers/Article';
 import type { FC, PropsWithChildren } from 'react';
 
 import WithFooter from '#site/components/withFooter';
 import WithNavBar from '#site/components/withNavBar';
 import WithSidebar from '#site/components/withSidebar';
-import ArticleLayout from '#site/layouts/Article';
 
 const DefaultLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <WithNavBar />
 
-    <ArticleLayout>
+    <Article>
       <WithSidebar navKeys={[]} />
 
       <div>
         <main>{children}</main>
       </div>
-    </ArticleLayout>
+    </Article>
 
     <WithFooter />
   </>

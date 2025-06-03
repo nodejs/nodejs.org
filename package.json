@@ -34,27 +34,27 @@
   },
   "dependencies": {
     "husky": "9.1.7",
-    "lint-staged": "15.5.1",
-    "turbo": "2.5.2"
+    "lint-staged": "16.1.0",
+    "turbo": "2.5.4"
   },
   "devDependencies": {
-    "@eslint/js": "~9.26.0",
+    "@eslint/js": "~9.28.0",
     "@reporters/github": "^1.7.2",
     "@testing-library/react": "~16.3.0",
     "cross-env": "^7.0.3",
-    "eslint": "~9.26.0",
-    "eslint-plugin-import-x": "~4.11.0",
+    "eslint": "~9.28.0",
+    "eslint-plugin-import-x": "~4.15.0",
     "prettier": "3.5.3",
-    "prettier-plugin-tailwindcss": "0.6.11"
+    "prettier-plugin-tailwindcss": "0.6.12"
   },
-  "packageManager": "pnpm@10.10.0",
+  "packageManager": "pnpm@10.11.1",
   "engines": {
     "node": "v22"
   },
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "10.10.0"
+      "version": "10.11.1"
     }
   }
 }

@@ -94,6 +94,12 @@
             "acceptInputFromTheCommandLineInNodejs": "Node.jsでコマンドラインからの入力を受け取る"
           }
         },
+        "migrations": {
+          "links": {
+            "migrations": "ユーザーランドの移行",
+            "introduction": "ユーザーランドの移行入門"
+          }
+        },
         "modules": {
           "links": {
             "modules": "モジュール",

@@ -2,6 +2,7 @@
 
 .skeleton {
   @apply outline-hidden
+    dark:animate-pulse-dark
     pointer-events-none
     animate-pulse
     cursor-default

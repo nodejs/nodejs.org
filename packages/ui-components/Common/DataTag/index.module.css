@@ -1,0 +1,56 @@
+@reference "../../styles/index.css";
+
+.dataTag {
+  @apply flex
+    items-center
+    justify-center
+    rounded-full
+    font-semibold
+    text-white;
+
+  &.lg {
+    @apply size-12
+      text-2xl;
+  }
+
+  &.md {
+    @apply size-10
+      text-xl;
+  }
+
+  &.sm {
+    @apply size-8;
+  }
+
+  &.event {
+    @apply bg-accent1-600;
+  }
+
+  &.method {
+    @apply bg-info-600;
+  }
+
+  &.property {
+    @apply bg-green-600;
+  }
+
+  &.class {
+    @apply bg-warning-600;
+  }
+
+  &.module {
+    @apply bg-red-600;
+  }
+
+  &.classMethod {
+    @apply bg-blue-600;
+  }
+
+  &.ctor {
+    @apply bg-accent2-600;
+  }
+
+  &.global {
+    @apply bg-amber-600;
+  }
+}

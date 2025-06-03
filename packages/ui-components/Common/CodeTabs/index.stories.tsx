@@ -40,8 +40,7 @@ server.listen(port, hostname, () => {
 
 const boxProps = {
   onCopy: console.log,
-  copyText: '[Copy Text]',
-  copiedText: '[Copied Text]',
+  buttonText: '[Button Text]',
 };
 
 const TabsContent: FC = () => (

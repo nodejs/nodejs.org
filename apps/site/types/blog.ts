@@ -1,3 +1,5 @@
+import type { IntlMessageKeys } from './i18n';
+
 export type BlogPreviewType = 'announcements' | 'release' | 'vulnerability';
 export type BlogCategory = IntlMessageKeys<'layouts.blog.categories'>;
 

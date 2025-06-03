@@ -175,7 +175,7 @@ async function readFile() {
 readFile();
 ```
 
-In this example, `fs.promises.readFile()` returns a Promise, which we handle using `async/await` syntax to read the contents of a file asynchronously.
+In this example, `fs.readFile()` returns a Promise, which we handle using `async/await` syntax to read the contents of a file asynchronously.
 
 ## Advanced Promise Methods
 

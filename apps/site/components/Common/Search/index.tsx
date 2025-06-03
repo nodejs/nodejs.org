@@ -21,7 +21,7 @@ type ResultMapDescription = {
 
 type ResultMapPath = { path: string; siteSection: string };
 
-import { themeConfig } from './utils';
+import { themeConfig, translationKeys } from './utils';
 
 const uppercaseFirst = (word: string) =>
   word.charAt(0).toUpperCase() + word.slice(1);
@@ -63,9 +63,9 @@ const SearchButton: FC = () => {
         style={{ flexGrow: 1 }}
         colorScheme={colorScheme}
         themeConfig={themeConfig}
-        aria-label={t('components.search.searchBox.placeholder')}
+        aria-label={t('components.search.searchPlaceholder')}
       >
-        {t('components.search.searchBox.placeholder')}
+        {t('components.search.searchPlaceholder')}
       </OramaSearchButton>
 
       <OramaSearchBox
@@ -82,6 +82,9 @@ const SearchButton: FC = () => {
           HTMLTag: 'b',
           CSSClass: 'font-bold',
         }}
+        dictionary={Object.fromEntries(
+          translationKeys.map(key => [key, t(`components.search.${key}`)])
+        )}
         searchParams={DEFAULT_ORAMA_QUERY_PARAMS}
         suggestions={DEFAULT_ORAMA_SUGGESTIONS}
         chatMarkdownLinkHref={({ href }) => {

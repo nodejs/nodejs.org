@@ -6,20 +6,26 @@
     flex-col
     items-start
     gap-8
-    overflow-y-auto
     border-neutral-200
     px-4
     py-6
     [overflow-wrap:anywhere]
     lg:sticky
     lg:top-0
-    lg:h-max
-    lg:min-h-screen
+    lg:max-h-screen
     lg:px-6
     dark:border-neutral-900;
 
   dl {
-    @apply w-full;
+    @apply flex
+      w-full
+      flex-col
+      gap-1.5
+      pb-12
+      [scrollbar-width:none]
+      lg:max-h-[calc(100vh-var(--header-height))]
+      lg:overflow-y-auto
+      [&::-webkit-scrollbar]:hidden;
   }
 
   dt {
@@ -55,6 +61,7 @@
 
     ol {
       @apply flex
+        w-full
         list-none
         flex-col
         gap-1.5

@@ -1,4 +1,3 @@
-import type { LocaleConfig } from '@node-core/website-i18n/types';
 import type {
   SVGProps,
   AnchorHTMLAttributes,
@@ -19,7 +18,8 @@ export type FormattedMessage =
   | ReactElement<HTMLElement, string | JSXElementConstructor<HTMLElement>>
   | ReadonlyArray<ReactNode>;
 
-export type SimpleLocaleConfig = Pick<
-  LocaleConfig,
-  'name' | 'code' | 'localName'
->;
+export type SimpleLocaleConfig = {
+  code: string;
+  localName: string;
+  name: string;
+};

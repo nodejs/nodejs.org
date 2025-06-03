@@ -348,7 +348,7 @@ Il vous permet de **différentes versions pour différents projets**, **différe
 
 Il supporte tous les shells populaires (Bash, Zsh, Fish, PowerShell, Clink, Cmder).
 
-Voir le [Démarrage rapide](https://vfox.lhan.me/guides/quick-start.html) pour une utilisation rapide de vfox, et tous les détails d'utilisation.
+Voir le [Démarrage rapide](https://vfox.dev/guides/quick-start.html) pour une utilisation rapide de vfox, et tous les détails d'utilisation.
 
 ## Void Linux
 

@@ -337,7 +337,7 @@ sudo eopkg install nodejs
 
 主要なシェル環境（Bash、Zsh、Fish、PowerShell、Clink、Cmder）をサポートしています。
 
-vfoxを迅速に使用するための[クイックスタート](https://vfox.lhan.me/guides/quick-start.html)を参照し、すべての使用詳細を確認してください。
+[クイックスタート](https://vfox.dev/guides/quick-start.html)や詳しい使い方を確認してください。
 
 ## Void Linux
 

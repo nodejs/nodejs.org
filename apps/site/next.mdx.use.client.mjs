@@ -1,6 +1,7 @@
 'use strict';
 
 import Blockquote from '@node-core/ui-components/Common/Blockquote';
+import MDXCodeTabs from '@node-core/ui-components/MDX/CodeTabs';
 
 import Button from './components/Common/Button';
 import DownloadButton from './components/Downloads/DownloadButton';
@@ -18,7 +19,6 @@ import ReleaseVersionDropdown from './components/Downloads/Release/VersionDropdo
 import Link from './components/Link';
 import LinkWithArrow from './components/LinkWithArrow';
 import MDXCodeBox from './components/MDX/CodeBox';
-import MDXCodeTabs from './components/MDX/CodeTabs';
 import MDXImage from './components/MDX/Image';
 import { ReleaseProvider } from './providers/releaseProvider';
 

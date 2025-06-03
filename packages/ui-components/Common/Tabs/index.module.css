@@ -1,7 +1,8 @@
 @reference "../../styles/index.css";
 
 .tabsRoot {
-  @apply max-w-full;
+  @apply grid
+    max-w-full;
 
   .tabsList {
     @apply font-open-sans
