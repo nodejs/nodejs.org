@@ -52,7 +52,7 @@
     "@vercel/speed-insights": "~1.2.0",
     "classnames": "~2.5.1",
     "cross-env": "7.0.3",
-    "feed": "~4.2.2",
+    "feed": "~5.1.0",
     "github-slugger": "~2.0.0",
     "glob": "~11.0.1",
     "gray-matter": "~4.0.3",
