@@ -1,0 +1,8 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/refs/heads/main/schemas/config.json",
+  "packages": {
+    "packages/rehype-shiki": {},
+    "packages/i18n": {},
+    "packages/ui-components": {}
+  }
+}
