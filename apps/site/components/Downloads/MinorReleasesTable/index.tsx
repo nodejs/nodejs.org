@@ -27,6 +27,8 @@ export const MinorReleasesTable: FC<MinorReleasesTableProps> = ({
   releases,
 }) => {
   const t = useTranslations('components.minorReleasesTable');
+  // Chunk minor releases into groups of 8 for scrollable display.
+  // This is to ensure that the table does not become too wide and remains user-friendly
   const releaseGroups = chunkedReleases(releases, 8);
 
   return (

@@ -20,7 +20,7 @@ export const IGNORED_ROUTES = [
     locale !== defaultLocale.code && /^blog/.test(pathname),
   // This is used to ignore all pathnames that are empty
   ({ locale, pathname }) => locale.length && !pathname.length,
-  // This is used to ignore download routes for major versions and downloads archive page
+  // This is used to ignore download routes for Node.js versions and downloads archive page
   ({ pathname }) => /^download\/(v\d+(\.\d+)*|archive)$/.test(pathname),
 ];
 

@@ -15,7 +15,8 @@ type WithDownloadArchiveProps = {
 };
 
 /**
- * Provides download artifacts and sidebar items to its child component
+ * Higher-order component that extracts version from pathname,
+ * fetches release data, and provides download artifacts to child component
  */
 const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
   children: Component,
@@ -26,10 +27,11 @@ const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
   // Extract version from pathname
   const version = extractVersionFromPath(pathname);
 
-  if (!version) {
+  if (version == null) {
     return null;
   }
 
+  // Find the release data for the given version
   const release = findReleaseByVersion(releaseData, version);
 
   if (!release) {

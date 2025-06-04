@@ -88,6 +88,10 @@ const getCompatibleArtifacts = ({
   });
 };
 
+/**
+ * Builds the release artifacts for a given Node.js release and version.
+ * It retrieves binaries, installers, and source files based on the version.
+ */
 export const buildReleaseArtifacts = (
   release: NodeRelease,
   version: string
