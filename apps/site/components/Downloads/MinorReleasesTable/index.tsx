@@ -7,7 +7,6 @@ import type { FC } from 'react';
 import Link from '#site/components/Link';
 import { BASE_CHANGELOG_URL } from '#site/next.constants.mjs';
 import type { MinorVersion } from '#site/types';
-import { chunk } from '#site/util/arrayUtils';
 import { getNodeApiLink } from '#site/util/getNodeApiLink';
 
 import styles from './index.module.css';
@@ -21,57 +20,45 @@ export const MinorReleasesTable: FC<MinorReleasesTableProps> = ({
 }) => {
   const t = useTranslations('components.minorReleasesTable');
 
-  // Chunk minor releases into groups of 8 for scrollable display.
-  // This is to ensure that the table does not become too wide and remains user-friendly
-  const releaseGroups = chunk(releases, 8);
-
   return (
     <div className={styles.scrollable}>
-      {releaseGroups.map(releases => (
-        <table key={releases[0].version}>
-          <thead>
-            <tr>
-              <th>{t('version')}</th>
-              <th>{t('links')}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {releases.map(release => (
-              <tr key={release.version}>
-                <td>
-                  <Link kind="neutral" href={`/download/v${release.version}`}>
-                    v{release.version}
+      <table>
+        <thead>
+          <tr>
+            <th>{t('version')}</th>
+            <th>{t('links')}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr />
+          {releases.map(release => (
+            <tr key={release.version}>
+              <td>
+                <Link kind="neutral" href={`/download/v${release.version}`}>
+                  v{release.version}
+                </Link>
+              </td>
+              <td>
+                <div className={styles.links}>
+                  <Link
+                    kind="neutral"
+                    href={`${BASE_CHANGELOG_URL}${release.version}`}
+                  >
+                    {t('actions.changelog')}
                   </Link>
-                </td>
-                <td>
-                  <div className={styles.links}>
-                    <Link
-                      kind="neutral"
-                      href={`https://nodejs.org/download/release/v${release.version}/`}
-                    >
-                      {t('actions.release')}
-                    </Link>
-                    <Separator orientation="vertical" />
-                    <Link
-                      kind="neutral"
-                      href={`${BASE_CHANGELOG_URL}${release.version}`}
-                    >
-                      {t('actions.changelog')}
-                    </Link>
-                    <Separator orientation="vertical" />
-                    <Link
-                      kind="neutral"
-                      href={getNodeApiLink(`v${release.version}`)}
-                    >
-                      {t('actions.docs')}
-                    </Link>
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      ))}
+                  <Separator orientation="vertical" />
+                  <Link
+                    kind="neutral"
+                    href={getNodeApiLink(`v${release.version}`)}
+                  >
+                    {t('actions.docs')}
+                  </Link>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

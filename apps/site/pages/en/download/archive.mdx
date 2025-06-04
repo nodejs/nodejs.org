@@ -6,7 +6,11 @@ layout: download-archive
 <WithDownloadArchive>
   {({ binaries, installers, version, release, sources, majorVersions }) => (
     <>
-      <h1>Download Node.js® {version}</h1>
+      <h1>Node.js Download Archive</h1>
+      <h2>
+        {version}
+        {release.codename && ` (${release.codename})`}
+      </h2>
       <ReleaseOverview release={release} />
       <ul>
         <li>

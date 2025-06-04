@@ -10,16 +10,26 @@
 .scrollable {
   @apply scrollbar-thin
     flex
-    snap-x
+    max-h-[21rem]
+    snap-y
     snap-mandatory
-    overflow-x-auto;
+    overflow-y-auto;
 
-  > table {
-    @apply shrink-0
-      snap-start;
+  thead {
+    @apply rounded-t-xs
+      sticky
+      top-px
+      bg-white
+      shadow-[0_-1px_0_0_var(--color-neutral-200)]
+      dark:bg-neutral-950
+      dark:shadow-[0_-1px_0_0_var(--color-neutral-800)];
+  }
 
-    thead th {
-      @apply last:md:w-56;
-    }
+  thead th {
+    @apply last:md:w-56;
+  }
+
+  tr {
+    @apply snap-start;
   }
 }

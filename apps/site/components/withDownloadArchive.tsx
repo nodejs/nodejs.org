@@ -39,7 +39,10 @@ const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
   }
 
   const majorVersions = releaseData.map(release => release.versionWithPrefix);
-  const releaseArtifacts = buildReleaseArtifacts(release, version);
+  const releaseArtifacts = buildReleaseArtifacts(
+    release,
+    version === 'archive' ? release.versionWithPrefix : version
+  );
 
   return <Component {...releaseArtifacts} majorVersions={majorVersions} />;
 };
