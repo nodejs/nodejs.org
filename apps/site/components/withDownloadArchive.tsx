@@ -22,7 +22,6 @@ const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
   children: Component,
 }) => {
   const { pathname } = getClientContext();
-  const releaseData = await getReleaseData();
 
   // Extract version from pathname
   const version = extractVersionFromPath(pathname);
@@ -32,6 +31,7 @@ const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
   }
 
   // Find the release data for the given version
+  const releaseData = await getReleaseData();
   const release = findReleaseByVersion(releaseData, version);
 
   if (!release) {

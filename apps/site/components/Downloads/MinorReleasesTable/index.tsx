@@ -7,6 +7,7 @@ import type { FC } from 'react';
 import Link from '#site/components/Link';
 import { BASE_CHANGELOG_URL } from '#site/next.constants.mjs';
 import type { MinorVersion } from '#site/types';
+import { chunk } from '#site/util/arrayUtils';
 import { getNodeApiLink } from '#site/util/getNodeApiLink';
 
 import styles from './index.module.css';
@@ -15,21 +16,14 @@ type MinorReleasesTableProps = {
   releases: Array<MinorVersion>;
 };
 
-const chunkedReleases = (releases: Array<MinorVersion>, size: number) => {
-  const count = Math.ceil(releases.length / size);
-
-  return Array.from({ length: count }, (_, index) =>
-    releases.slice(index * size, (index + 1) * size)
-  );
-};
-
 export const MinorReleasesTable: FC<MinorReleasesTableProps> = ({
   releases,
 }) => {
   const t = useTranslations('components.minorReleasesTable');
+
   // Chunk minor releases into groups of 8 for scrollable display.
   // This is to ensure that the table does not become too wide and remains user-friendly
-  const releaseGroups = chunkedReleases(releases, 8);
+  const releaseGroups = chunk(releases, 8);
 
   return (
     <div className={styles.scrollable}>

@@ -141,7 +141,7 @@ export const extractVersionFromPath = (pathname: string | undefined) => {
   const version = segments.pop();
 
   // Check version format like (v22.0.4 or 'archive')
-  if (!version || (!version.match(/^v\d+(\.\d+)*$/) && version !== 'archive')) {
+  if (!version || !version.match(/^v\d+(\.\d+)*|archive$/)) {
     return null;
   }
 
