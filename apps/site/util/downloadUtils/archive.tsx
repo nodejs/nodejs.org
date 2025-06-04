@@ -135,7 +135,9 @@ export const buildReleaseArtifacts = (
  * It expects the version to be in the format 'v22.0.4' or 'archive'.
  */
 export const extractVersionFromPath = (pathname: string | undefined) => {
-  if (!pathname) return null;
+  if (!pathname) {
+    return null;
+  }
 
   const segments = pathname.split('/').filter(Boolean);
   const version = segments.pop();
