@@ -71,7 +71,7 @@ The [`--run`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--run) flag allo
   "type": "module",
   "scripts": {
     "start": "node app.js",
-    "dev": "node --run -- --watch",
+    "dev": "node --run start -- --watch",
     "test": "node --test"
   }
 }
