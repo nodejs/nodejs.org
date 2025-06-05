@@ -13,23 +13,25 @@ import type { NodeRelease } from '#site/types';
 
 import styles from './index.module.css';
 
-type ItemProps = {
+type ReleaseOverviewItemProps = {
   Icon: FC<SVGProps<SVGSVGElement>>;
   title: ReactNode;
   subtitle: ReactNode;
 };
 
-const Item: FC<ItemProps> = ({ Icon, title, subtitle }) => {
-  return (
-    <div className={styles.item}>
-      <Icon />
-      <div>
-        <h2>{subtitle}</h2>
-        <h1>{title}</h1>
-      </div>
-    </div>
-  );
-};
+export const ReleaseOverviewItem: FC<ReleaseOverviewItemProps> = ({
+  Icon,
+  title,
+  subtitle,
+}) => (
+  <div className={styles.item}>
+    <Icon />
+    <dl>
+      <dd>{subtitle}</dd>
+      <dt>{title}</dt>
+    </dl>
+  </div>
+);
 
 type ReleaseOverviewProps = {
   release: NodeRelease;
@@ -41,36 +43,36 @@ export const ReleaseOverview: FC<ReleaseOverviewProps> = ({ release }) => {
   return (
     <div className={styles.root}>
       <div className={styles.container}>
-        <Item
+        <ReleaseOverviewItem
           Icon={CalendarIcon}
           title={<FormattedTime date={release.currentStart} />}
           subtitle={t('components.releaseOverview.firstReleased')}
         />
-        <Item
+        <ReleaseOverviewItem
           Icon={ClockIcon}
           title={<FormattedTime date={release.releaseDate} />}
           subtitle={t('components.releaseOverview.lastUpdated')}
         />
-        <Item
+        <ReleaseOverviewItem
           Icon={Square3Stack3DIcon}
           title={release.minorVersions.length}
           subtitle={t('components.releaseOverview.minorVersions')}
         />
         {release.modules && (
-          <Item
+          <ReleaseOverviewItem
             Icon={CodeBracketSquareIcon}
             title={`v${release.modules}`}
             subtitle={t('components.releaseOverview.nApiVersion')}
           />
         )}
         {release.npm && (
-          <Item
+          <ReleaseOverviewItem
             Icon={NpmIcon}
             title={`v${release.npm}`}
             subtitle={t('components.releaseOverview.npmVersion')}
           />
         )}
-        <Item
+        <ReleaseOverviewItem
           Icon={CodeBracketSquareIcon}
           title={`v${release.v8}`}
           subtitle={t('components.releaseOverview.v8Version')}

@@ -1,35 +1,29 @@
 @reference "../../../styles/index.css";
 
-.links {
+.additionalLinks {
   @apply flex
     h-4
     items-center
     gap-2;
 }
 
+.items {
+  @apply flex
+    h-9
+    gap-2;
+}
+
 .scrollable {
   @apply scrollbar-thin
     flex
-    max-h-[21rem]
-    snap-y
-    snap-mandatory
+    max-h-[29rem]
     overflow-y-auto;
+}
 
-  thead {
-    @apply rounded-t-xs
-      sticky
-      top-px
-      bg-white
-      shadow-[0_-1px_0_0_var(--color-neutral-200)]
-      dark:bg-neutral-950
-      dark:shadow-[0_-1px_0_0_var(--color-neutral-800)];
-  }
+.information {
+  @apply md:w-96;
+}
 
-  thead th {
-    @apply last:md:w-56;
-  }
-
-  tr {
-    @apply snap-start;
-  }
+.links {
+  @apply md:w-44;
 }

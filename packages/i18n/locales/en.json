@@ -179,6 +179,7 @@
       "version": "Version",
       "links": "Links",
       "showMore": "Show more",
+      "information": "Version Informations",
       "actions": {
         "release": "Release",
         "changelog": "Changelog",

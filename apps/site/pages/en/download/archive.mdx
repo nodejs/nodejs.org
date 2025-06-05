@@ -34,26 +34,26 @@ layout: download-archive
           tarball.
         </li>
       </ul>
+      <details>
+        <summary>
+          <h3>Other releases</h3>
+        </summary>
+        <ul>
+          {majorVersions.map(version => (
+            <li key={version}>
+              <Link href={`/download/${version}`}>
+                <h4>Node.js {version}</h4>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </details>
       <h2>Binary Downloads</h2>
       <DownloadsTable source={binaries} />
       <h2>Installer Packages</h2>
       <DownloadsTable source={installers} />
       <h2>Minor versions</h2>
       <MinorReleasesTable releases={release.minorVersions} />
-      <details>
-        <summary>
-          <h2 className="inline">Other releases</h2>
-        </summary>
-        <ul>
-          {majorVersions.map(version => (
-            <li key={version}>
-              <Link href={`/download/${version}`}>
-                <h3>Node.js {version}</h3>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </details>
     </>
   )}
 </WithDownloadArchive>
