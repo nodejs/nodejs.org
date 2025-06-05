@@ -1,7 +1,7 @@
 ---
 date: '2025-06-15T12:00:00.000Z'
 category: announcements
-title:Beware of End-of-Life Node.js Versions Upgrade or Seek Post-EOL Support
+title: Beware of End-of-Life Node.js Versions Upgrade or Seek Post-EOL Support
 layout: blog-post
 author: Matteo Collina
 ---
