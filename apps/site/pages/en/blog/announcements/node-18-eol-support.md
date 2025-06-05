@@ -8,7 +8,7 @@ author: Matteo Collina
 
 # **Beware of End-of-Life Node.js Versions _Upgrade or Seek Post-EOL Support_**
 
-The Node.js ecosystem is at a critical juncture. With Node.js 18 becoming unsupported, millions of developers need to make the jump, but they should skip 20 entirely and go straight to Node.js 22\. The numbers tell a compelling story about why this upgrade isn't just recommended, it's essential. If you can’t upgrade, check out our Ecosystem Sustainability Program partner HeroDevs, which offers post End-Of-Life Node.js [support](https://www.herodevs.com/support/node-nes).
+The Node.js ecosystem is at a critical juncture. With Node.js 18 becoming unsupported, millions of developers need to make the jump, but they should skip 20 entirely and go straight to Node.js 22. The numbers tell a compelling story about why this upgrade isn't just recommended, it's essential. If you can’t upgrade, check out our Ecosystem Sustainability Program partner, HeroDevs, which offers [post End-Of-Life Node.js support](https://www.herodevs.com/support/node-nes).
 
 ## **The Support Landscape Has Changed—And Security Issues Are Real**
 
