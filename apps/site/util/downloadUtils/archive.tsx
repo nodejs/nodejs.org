@@ -89,6 +89,17 @@ const getCompatibleArtifacts = ({
 };
 
 /**
+ * Generates the navigation links for the Node.js download archive
+ * It creates a list of links for each major release, formatted with the major
+ * version and codename if available.
+ */
+export const getDownloadArchiveNavigation = (releases: Array<NodeRelease>) =>
+  releases.map(({ major, codename, versionWithPrefix }) => ({
+    label: `Node.js v${major} ${codename ? `(${codename})` : ''}`,
+    href: `/download/${versionWithPrefix}`,
+  }));
+
+/**
  * Builds the release artifacts for a given Node.js release and version.
  * It retrieves binaries, installers, and source files based on the version.
  */

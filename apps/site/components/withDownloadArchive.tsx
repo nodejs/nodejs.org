@@ -6,12 +6,18 @@ import {
   buildReleaseArtifacts,
   extractVersionFromPath,
   findReleaseByVersion,
+  getDownloadArchiveNavigation,
 } from '#site/util/downloadUtils/archive';
 
 type DownloadArchive = ReturnType<typeof buildReleaseArtifacts>;
 
+type Navigation = {
+  label: string;
+  href: string;
+};
+
 type WithDownloadArchiveProps = {
-  children: FC<DownloadArchive & { majorVersions: Array<string> }>;
+  children: FC<DownloadArchive & { navigation: Array<Navigation> }>;
 };
 
 /**
@@ -38,13 +44,13 @@ const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
     return null;
   }
 
-  const majorVersions = releaseData.map(release => release.versionWithPrefix);
+  const navigation = getDownloadArchiveNavigation(releaseData);
   const releaseArtifacts = buildReleaseArtifacts(
     release,
     version === 'archive' ? release.versionWithPrefix : version
   );
 
-  return <Component {...releaseArtifacts} majorVersions={majorVersions} />;
+  return <Component {...releaseArtifacts} navigation={navigation} />;
 };
 
 export default WithDownloadArchive;
