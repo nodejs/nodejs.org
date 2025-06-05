@@ -1,4 +1,3 @@
-import AlertBox from '@node-core/ui-components/Common/AlertBox';
 import Modal from '@node-core/ui-components/Common/Modal';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
@@ -6,6 +5,7 @@ import type { FC } from 'react';
 import { MinorReleasesTable } from '#site/components/Downloads/MinorReleasesTable';
 import { ReleaseOverview } from '#site/components/Downloads/ReleaseOverview';
 import LinkWithArrow from '#site/components/LinkWithArrow';
+import WithReleaseAlertBox from '#site/components/withReleaseAlertBox';
 import type { NodeRelease } from '#site/types';
 
 type ReleaseModalProps = {
@@ -32,15 +32,7 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
 
   return (
     <Modal open={isOpen} onOpenChange={closeModal} heading={modalHeading}>
-      {release.status === 'End-of-life' && (
-        <AlertBox
-          title={t('components.common.alertBox.warning')}
-          level="warning"
-          size="small"
-        >
-          {t('components.releaseModal.unsupportedVersionWarning')}
-        </AlertBox>
-      )}
+      <WithReleaseAlertBox status={release.status} />
 
       {release.releaseAnnounceLink && (
         <LinkWithArrow href={release.releaseAnnounceLink}>

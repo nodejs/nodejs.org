@@ -11,6 +11,7 @@ layout: download-archive
         {version}
         {release.codename && ` (${release.codename})`}
       </h2>
+      <WithReleaseAlertBox status={release.status} />
       <ReleaseOverview release={release} />
       <ul>
         <li>

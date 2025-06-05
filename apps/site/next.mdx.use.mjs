@@ -9,6 +9,7 @@ import WithBadgeGroup from './components/withBadgeGroup';
 import WithBanner from './components/withBanner';
 import WithDownloadArchive from './components/withDownloadArchive';
 import WithNodeRelease from './components/withNodeRelease';
+import WithReleaseAlertBox from './components/withReleaseAlertBox';
 
 /**
  * A full list of React Components that we want to pass through to MDX
@@ -23,6 +24,8 @@ export const mdxComponents = {
   DownloadsTable: DownloadsTable,
   // HOC for getting Node.js Release Metadata
   WithNodeRelease: WithNodeRelease,
+  // Renders an alert box with the given release status
+  WithReleaseAlertBox: WithReleaseAlertBox,
   // HOC for providing Banner Data
   WithBanner: WithBanner,
   // HOC for providing Badge Data
