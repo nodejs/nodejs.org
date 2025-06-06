@@ -1,4 +1,4 @@
-@import '../../../styles/index.css';
+@reference '../../../styles/index.css';
 
 .item {
   @apply flex
