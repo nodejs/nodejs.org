@@ -1,4 +1,4 @@
-import type { ComponentProps, FC } from 'react';
+import type { ComponentProps, FC, PropsWithChildren } from 'react';
 
 import Select from '#ui/Common/Select';
 import SidebarGroup from '#ui/Containers/Sidebar/SidebarGroup';
@@ -17,13 +17,14 @@ type SidebarProps = {
   showProgressionIcons?: boolean;
 };
 
-const SideBar: FC<SidebarProps> = ({
+const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
   groups,
   pathname,
   title,
   onSelect,
   as,
   showProgressionIcons = false,
+  children,
 }) => {
   const selectItems = groups.map(({ items, groupName }) => ({
     label: groupName,
@@ -36,6 +37,8 @@ const SideBar: FC<SidebarProps> = ({
 
   return (
     <aside className={styles.wrapper}>
+      {children}
+
       {selectItems.length > 0 && (
         <Select
           label={title}
