@@ -42,11 +42,7 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
     : undefined;
 
   return (
-    <div
-      className={classNames(styles.avatarGroup, styles[size], {
-        [styles.expandable]: avatars.length > limit,
-      })}
-    >
+    <div className={classNames(styles.avatarGroup, styles[size])}>
       {renderAvatars.map(avatar => (
         <Tooltip
           key={avatar.nickname}
