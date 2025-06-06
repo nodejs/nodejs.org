@@ -33,7 +33,7 @@ const myFunction = (firstParam, secondParam) => {
 setTimeout(myFunction, 2000, firstParam, secondParam);
 ```
 
-`setTimeout` returns the timer id. This is generally not used, but you can store this id, and clear it if you want to delete this scheduled function execution:
+`setTimeout` returns a timer identifier. In Node.js, this is a Timeout object that provides additional functionality, while in browsers it returns a numeric ID. You can store this identifier and use it to cancel the scheduled function execution:
 
 ```js
 const id = setTimeout(() => {
@@ -43,6 +43,12 @@ const id = setTimeout(() => {
 // I changed my mind
 clearTimeout(id);
 ```
+
+In Node.js, the Timeout object provides additional methods:
+
+- `timeout.ref()`: Keeps the Node.js event loop active while the timer is running
+- `timeout.unref()`: Allows the Node.js event loop to exit even if the timer is still running
+- `timeout.refresh()`: Resets the timer's start time to the current time
 
 ### Zero delay
 
@@ -87,6 +93,8 @@ const id = setInterval(() => {
 clearInterval(id);
 ```
 
+Like `setTimeout`, `setInterval` returns a Timeout object in Node.js (and a numeric ID in browsers). This object provides the same additional methods (`ref()`, `unref()`, and `refresh()`).
+
 It's common to call `clearInterval` inside the setInterval callback function, to let it auto-determine if it should run again or stop. For example this code runs something unless App.somethingIWait has the value `arrived`:
 
 ```js
@@ -130,6 +138,6 @@ to achieve this scenario:
 
 ![Recursive setTimeout](/static/images/learn/javascript-timers/recursive-settimeout.png)
 
-`setTimeout` and `setInterval` are available in Node.js, through the [Timers module](https://nodejs.org/api/timers.html).
+`setTimeout` and `setInterval` are available in Node.js, through the [Timers module](https://nodejs.org/api/timers.html). In Node.js, these functions return a Timeout object that provides additional functionality for timer management.
 
 Node.js also provides `setImmediate()`, which is equivalent to using `setTimeout(() => {}, 0)`, mostly used to work with the Node.js Event Loop.
