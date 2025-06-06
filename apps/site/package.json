@@ -2,11 +2,14 @@
   "name": "@node-core/website",
   "type": "module",
   "scripts": {
-    "prebuild": "pnpm build-blog-data",
-    "build": "cross-env NODE_NO_WARNINGS=1 next build",
+    "prebuild": "pnpm build:blog-data",
+    "build": "pnpm build:default --turbo",
+    "build:default": "cross-env NODE_NO_WARNINGS=1 next build",
+    "build:blog-data": "node ./scripts/blog-data/generate.mjs",
+    "build:blog-data:watch": "node --watch --watch-path=pages/en/blog ./scripts/blog-data/generate.mjs",
     "check-types": "tsc --noEmit",
-    "deploy": "cross-env NEXT_PUBLIC_STATIC_EXPORT=true NODE_NO_WARNINGS=1 next build",
-    "dev": "cross-env NODE_NO_WARNINGS=1 next dev",
+    "deploy": "cross-env NEXT_PUBLIC_STATIC_EXPORT=true pnpm build:default",
+    "dev": "cross-env NODE_NO_WARNINGS=1 next dev --turbo",
     "lint": "turbo run lint:md lint:js lint:css",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
     "lint:fix": "turbo run lint:md lint:js lint:css --no-cache -- --fix",
@@ -20,11 +23,9 @@
     "test": "turbo test:unit",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --test-coverage-exclude=**/*.test.* --experimental-test-module-mocks --enable-source-maps --import=global-jsdom/register --import=tsx --import=tests/setup.jsx --test **/*.test.*",
     "test:unit:watch": "cross-env NODE_OPTIONS=\"--watch\" pnpm test:unit",
-    "build-blog-data": "node ./scripts/blog-data/generate.mjs",
-    "build-blog-data:watch": "node --watch --watch-path=pages/en/blog ./scripts/blog-data/generate.mjs",
     "cloudflare:build:worker": "opennextjs-cloudflare build",
-    "cloudflare:preview": "wrangler dev",
-    "cloudflare:deploy": "wrangler deploy"
+    "cloudflare:deploy": "wrangler deploy",
+    "cloudflare:preview": "wrangler dev"
   },
   "dependencies": {
     "@heroicons/react": "~2.2.0",
