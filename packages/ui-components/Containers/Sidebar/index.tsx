@@ -12,6 +12,7 @@ type SidebarProps = {
   title: string;
   onSelect: (value: string) => void;
   as?: LinkLike;
+  showProgressionIcons?: boolean;
 };
 
 const SideBar: FC<SidebarProps> = ({
@@ -20,6 +21,7 @@ const SideBar: FC<SidebarProps> = ({
   title,
   onSelect,
   as,
+  showProgressionIcons = false,
 }) => {
   const selectItems = groups.map(({ items, groupName }) => ({
     label: groupName,
@@ -49,6 +51,7 @@ const SideBar: FC<SidebarProps> = ({
           items={items}
           pathname={pathname}
           as={as}
+          showProgressionIcons={showProgressionIcons}
         />
       ))}
     </aside>

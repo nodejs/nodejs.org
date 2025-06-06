@@ -1,6 +1,6 @@
-@reference "../../../styles/index.css";
+@import '../../../styles/index.css';
 
-.sideBarItem {
+.item {
   @apply flex
     w-full
     list-none
@@ -20,16 +20,33 @@
       text-sm;
   }
 
+  svg {
+    @apply shrink-0
+      fill-neutral-200
+      stroke-white
+      stroke-[4]
+      dark:fill-neutral-800
+      dark:stroke-neutral-950;
+  }
+
   .icon {
     @apply size-3
       text-neutral-500
       dark:text-neutral-200;
   }
-}
 
-.active {
-  @apply rounded-sm
-    bg-green-600
-    text-white
-    dark:text-white;
+  .active {
+    @apply text-neutral-900
+      dark:text-white;
+
+    svg {
+      @apply fill-green-500;
+    }
+  }
+
+  &:not(.progression) > .active {
+    @apply rounded-sm
+      bg-green-600
+      text-white;
+  }
 }

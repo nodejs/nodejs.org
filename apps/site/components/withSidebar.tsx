@@ -14,9 +14,10 @@ import type { NavigationKeys } from '#site/types';
 type WithSidebarProps = {
   navKeys: Array<NavigationKeys>;
   context?: Record<string, RichTranslationValues>;
+  showProgressionIcons?: boolean;
 };
 
-const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context }) => {
+const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
   const { getSideNavigation } = useSiteNavigation();
   const pathname = usePathname()!;
   const locale = useLocale();
@@ -35,8 +36,9 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context }) => {
       groups={mappedSidebarItems}
       pathname={pathname.replace(`/${locale}`, '')}
       title={t('components.common.sidebar.title')}
-      onSelect={value => push(value)}
+      onSelect={push}
       as={Link}
+      {...props}
     />
   );
 };
