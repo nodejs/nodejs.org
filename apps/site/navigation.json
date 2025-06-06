@@ -102,14 +102,6 @@
           "link": "/about",
           "label": "components.navigation.about.links.aboutSide"
         },
-        "branding": {
-          "link": "/about/branding",
-          "label": "components.navigation.about.links.branding"
-        },
-        "governance": {
-          "link": "/about/governance",
-          "label": "components.navigation.about.links.governance"
-        },
         "previousReleases": {
           "link": "/about/previous-releases",
           "label": "components.navigation.about.links.releases"
@@ -117,6 +109,14 @@
         "securityReporting": {
           "link": "/about/security-reporting",
           "label": "components.navigation.about.links.security"
+        },
+        "governance": {
+          "link": "/about/governance",
+          "label": "components.navigation.about.links.governance"
+        },
+        "branding": {
+          "link": "/about/branding",
+          "label": "components.navigation.about.links.branding"
         }
       }
     },
