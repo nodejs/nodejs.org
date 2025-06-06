@@ -26,7 +26,7 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
     : 'components.releaseModal.titleWithoutCodename';
 
   const modalHeading = t(modalHeadingKey, {
-    version: release.major,
+    version: `v${release.major}`,
     codename: release.codename ?? '',
   });
 

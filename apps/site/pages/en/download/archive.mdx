@@ -7,34 +7,38 @@ layout: download-archive
   {({ binaries, installers, version, release, sources, navigation }) => (
     <>
       <h1>Node.js Download Archive</h1>
-      <h2>
+
+      <h2 className="flex items-center gap-2">
+        <img
+          src="/static/images/favicons/favicon.png"
+          alt="Node.js Logo"
+          width="24"
+          height="24"
+        />
         {version}
         {release.codename && ` (${release.codename})`}
       </h2>
+
       <WithReleaseAlertBox status={release.status} />
+
       <ReleaseOverview release={release} />
+
       <ul>
+
         <li>
-          Learn more about{' '}
-          <Link href="/about/previous-releases">Node.js releases</Link>,
-          including the release schedule and LTS status.
+          Learn more about <Link href="/about/previous-releases">Node.js releases</Link>, including the release schedule and LTS status.
         </li>
+
         <li>
-          <LinkWithArrow href={sources.shasum}>Signed SHASUMS</LinkWithArrow>{' '}
-          for release files. How to{' '}
-          <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">
-            verify
-          </LinkWithArrow>{' '}
-          signed SHASUMS.
+          <LinkWithArrow href={sources.shasum}>Signed SHASUMS</LinkWithArrow> for release files. How to <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">verify</LinkWithArrow> signed SHASUMS.
         </li>
+
         <li>
-          Download a signed{' '}
-          <LinkWithArrow href={sources.tarball}>
-            Node.js {version} source
-          </LinkWithArrow>{' '}
-          tarball.
+          Download a signed <LinkWithArrow href={sources.tarball}>Node.js {version} source</LinkWithArrow> tarball.
         </li>
+
       </ul>
+
       <details>
         <summary>
           <h3>Other releases</h3>
@@ -49,12 +53,17 @@ layout: download-archive
           ))}
         </ul>
       </details>
+
       <h2>Binary Downloads</h2>
       <DownloadsTable source={binaries} />
+
       <h2>Installer Packages</h2>
       <DownloadsTable source={installers} />
+
       <h2>Minor versions</h2>
       <MinorReleasesTable releases={release.minorVersions} />
     </>
-  )}
+
+)}
+
 </WithDownloadArchive>
