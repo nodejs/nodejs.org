@@ -238,9 +238,20 @@
       "tableOfContents": "Table des matières"
     },
     "search": {
-      "searchBox": {
-        "placeholder": "Commencer à écrire..."
-      }
+      "searchPlaceholder": "Commencer à écrire...",
+      "chatPlaceholder": "Demande-moi n'importe quoi",
+      "noResultsFoundFor": "Aucun résultat trouvé pour",
+      "suggestions": "Suggestions",
+      "seeAll": "Afficher tout",
+      "addMore": "Plus de détails",
+      "clearChat": "Effacer la conversation",
+      "errorMessage": "Une erreur s'est produite lors de la recherche. Veuillez réessayer.",
+      "disclaimer": "Les résumés d'IA peuvent contenir des erreurs. Veuillez vérifier les informations.",
+      "startYourSearch": "Commencez votre recherche",
+      "initErrorSearch": "Impossible d'initialiser le service de recherche",
+      "initErrorChat": "Impossible d'initialiser le service de chat",
+      "chatButtonLabel": "Obtenir un résumé de l'IA",
+      "searchButtonLabel": "Recherche"
     },
     "blog": {
       "blogHeader": {
