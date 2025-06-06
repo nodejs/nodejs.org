@@ -5,7 +5,7 @@ import WithBreadcrumbs from '#site/components/withBreadcrumbs';
 import WithFooter from '#site/components/withFooter';
 import WithMetaBar from '#site/components/withMetaBar';
 import WithNavBar from '#site/components/withNavBar';
-import WithProgressionSidebar from '#site/components/withProgressionSidebar';
+import WithSideBar from '#site/components/withSidebar';
 import WithSidebarCrossLinks from '#site/components/withSidebarCrossLinks';
 
 const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
@@ -13,7 +13,7 @@ const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
     <WithNavBar />
 
     <Article>
-      <WithProgressionSidebar navKey="learn" />
+      <WithSideBar navKeys={['learn']} showProgressionIcons={true} />
 
       <div>
         <main>
