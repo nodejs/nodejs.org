@@ -4,7 +4,6 @@ import Blockquote from '@node-core/ui-components/Common/Blockquote';
 import MDXCodeTabs from '@node-core/ui-components/MDX/CodeTabs';
 
 import Button from './components/Common/Button';
-import DownloadButton from './components/Downloads/DownloadButton';
 import DownloadLink from './components/Downloads/DownloadLink';
 import BlogPostLink from './components/Downloads/Release/BlogPostLink';
 import ChangelogLink from './components/Downloads/Release/ChangelogLink';
@@ -36,8 +35,6 @@ export const clientMdxComponents = {
   LinkWithArrow: LinkWithArrow,
   // Regular links (without arrow)
   Link: Link,
-  // Renders a Download Button
-  DownloadButton: DownloadButton,
   // Renders a Download Link
   DownloadLink: DownloadLink,
   // Group of components that enable you to select versions for Node.js

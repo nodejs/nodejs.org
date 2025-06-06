@@ -14,19 +14,16 @@ layout: home
 
   </div>
 
-  <div>
-    <WithNodeRelease status={['LTS']}>
-      {({ release }) => (
-        <>
-          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
-          <small>
-            Downloads Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
-            Node.js can also be installed via <Link href="/download">version managers</Link>.
-          </small>
-        </>
-      )}
-    </WithNodeRelease>
+  <div className="flex gap-4">
+
+    <div className="flex flex-col md:flex-row gap-2">
+      <Button kind="special" className="!hidden dark:!block" href="/download">Download Node.js (LTS)</Button>
+
+      <Button kind="primary" className="!block dark:!hidden" href="/download">Download Node.js (LTS)</Button>
+
+      <Button kind="secondary" href="/about/get-involved">Getting Involved</Button>
+
+    </div>
 
     <WithNodeRelease status={['Current']}>
       {({ release }) => (
