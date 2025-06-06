@@ -6,11 +6,11 @@ layout: blog-post
 author: Matteo Collina
 ---
 
-# **Beware of End-of-Life Node.js Versions _Upgrade or Seek Post-EOL Support_**
+# Beware of End-of-Life Node.js Versions _Upgrade or Seek Post-EOL Support_
 
 The Node.js ecosystem is at a critical juncture. With Node.js 18 becoming unsupported, millions of developers need to make the jump, but they should skip 20 entirely and go straight to Node.js 22. The numbers tell a compelling story about why this upgrade isn't just recommended, it's essential. If you can’t upgrade, check out our Ecosystem Sustainability Program partner, HeroDevs, which offers [post End-Of-Life Node.js support](https://www.herodevs.com/support/node-nes).
 
-## **The Support Landscape Has Changed—And Security Issues Are Real**
+## The Support Landscape Has Changed—And Security Issues Are Real
 
 **Node.js 18 and all earlier versions are End-Of-Life. They are now completely unsupported**, meaning they receive no updates, including security patches.
 
@@ -31,7 +31,7 @@ This affects a staggering number of projects. Based on download statistics, Node
 
 \[suggested paragraph on [GitHub \- nodejs/is-my-node-vulnerable: package that checks if your Node.js installation is vulnerable to known security vulnerabilities](https://github.com/nodejs/is-my-node-vulnerable)\]
 
-## **Node.js v22: The Smart Long-Term Choice**
+## Node.js v22: The Smart Long-Term Choice
 
 While Node.js 20 is currently the maintenance LTS release, **Node.js 22 is the smarter upgrade target**. Here's why you should skip 20 and go straight to 22:
 
@@ -40,7 +40,7 @@ While Node.js 20 is currently the maintenance LTS release, **Node.js 22 is the s
 - **New Features**: 22 offers all the latest features of Node.js, including native TypeScript support (behind a flag).
 - **Latest Performance Gains**: 22 includes all the improvements from 20, plus additional optimizations, offering the best performance available.
 
-## **The Migration Numbers Game**
+## The Migration Numbers Game
 
 ![][image2]
 
@@ -63,7 +63,7 @@ The conventional wisdom might suggest upgrading incrementally to Node.js v20 fir
 
 **Upgrade Fatigue Prevention**: Major Node.js upgrades require testing, dependency updates, and potential code changes. By going to v22 now, you avoid another upgrade cycle in 2026-2027.
 
-## **Making the Jump**
+## Making the Jump
 
 **For Development Teams**: Start by auditing your current Node.js usage. Check `node --version` across all your projects and environments. Create a migration timeline that targets 22 directly, skipping the 20 stepping stone.
 
@@ -71,7 +71,7 @@ The conventional wisdom might suggest upgrading incrementally to Node.js v20 fir
 
 **For Open Source Maintainers**: Consider requiring Node.js 22 as your minimum version for new major releases. This positions your project at the forefront of the ecosystem and provides the longest support runway.
 
-## **Can't Upgrade Right Away? Commercial Support is Available**
+## Can't Upgrade Right Away? Commercial Support is Available
 
 We understand that some organizations face constraints that prevent immediate upgrades, such as legacy codebases, compliance requirements, or complex dependency chains. If your company cannot upgrade immediately but needs continued security support for Node.js v18 or earlier versions, [**commercial support**](https://www.herodevs.com/support/node-nes?utm_source=NodeJS+&utm_medium=Link&utm_campaign=Blog_18_eol_support) **is available through HeroDevs**.
 
@@ -79,7 +79,7 @@ As part of the [OpenJS Ecosystem Sustainability Program](https://openjsf.org/par
 
 However, this should be viewed as a temporary solution—the goal should always be to upgrade to actively supported versions like Node.js 22\.
 
-## **The Bottom Line**
+## The Bottom Line
 
 With **hundreds of millions of monthly downloads** across the Node.js ecosystem, the migration to 22 represents a strategic opportunity to future-proof your applications. The security implications alone make upgrading from unsupported versions critical, but the choice between 20 and 22 is about smart long-term planning.
 
