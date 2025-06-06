@@ -2,7 +2,7 @@ import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import classNames from 'classnames';
 import type { FC } from 'react';
 
-import ActiveLink from '#ui/Common/BaseActiveLink';
+import BaseActiveLink from '#ui/Common/BaseActiveLink';
 import type { FormattedMessage, LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
@@ -13,28 +13,31 @@ type SidebarItemProps = {
   link: string;
   as?: LinkLike;
   pathname?: string;
-  showProgressionIcon?: boolean;
+  showProgressionIcons?: boolean;
 };
 
 const SidebarItem: FC<SidebarItemProps> = ({
   label,
   link,
-  showProgressionIcon = false,
+  showProgressionIcons = false,
   ...props
 }) => (
-  <li
+  <BaseActiveLink
     className={classNames({
       [styles.item]: true,
-      [styles.progression]: showProgressionIcon,
+      [styles.progression]: showProgressionIcons,
     })}
+    href={link}
+    activeClassName={styles.active}
+    {...props}
   >
-    <ActiveLink href={link} activeClassName={styles.active} {...props}>
-      {showProgressionIcon && <ProgressionIcon />}
-      <span className={styles.label}>{label}</span>
+    {showProgressionIcons && (
+      <ProgressionIcon className={styles.progressionIcon} />
+    )}
+    <span className={styles.label}>{label}</span>
 
-      {link.startsWith('http') && <ArrowUpRightIcon className={styles.icon} />}
-    </ActiveLink>
-  </li>
+    {link.startsWith('http') && <ArrowUpRightIcon className={styles.icon} />}
+  </BaseActiveLink>
 );
 
 export default SidebarItem;

@@ -23,13 +23,17 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
   const locale = useLocale();
   const t = useTranslations();
   const { push } = useRouter();
+  const sideNavigation = getSideNavigation(navKeys, context);
 
-  const mappedSidebarItems = getSideNavigation(navKeys, context).map(
-    ([, { label, items }]) => ({
-      groupName: label,
-      items: items.map(([, item]) => item),
-    })
-  );
+  const mappedSidebarItems =
+    // If there's only a single navigation key, use it's sub-items
+    // as our navigation.
+    (navKeys.length === 1 ? sideNavigation[0][1].items : sideNavigation).map(
+      ([, { label, items }]) => ({
+        groupName: label,
+        items: items.map(([, item]) => item),
+      })
+    );
 
   return (
     <Sidebar

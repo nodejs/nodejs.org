@@ -7,7 +7,9 @@ import type { LinkLike } from '#ui/types';
 import styles from './index.module.css';
 
 type SidebarProps = {
-  groups: Array<Omit<ComponentProps<typeof SidebarGroup>, 'as' | 'pathname'>>;
+  groups: Array<
+    Pick<ComponentProps<typeof SidebarGroup>, 'items' | 'groupName'>
+  >;
   pathname?: string;
   title: string;
   onSelect: (value: string) => void;
@@ -29,8 +31,7 @@ const SideBar: FC<SidebarProps> = ({
   }));
 
   const currentItem = selectItems
-    .map(item => item.items)
-    .flat()
+    .flatMap(item => item.items)
     .find(item => pathname === item.value);
 
   return (

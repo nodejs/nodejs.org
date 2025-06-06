@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import type { ComponentProps, FC } from 'react';
 
 import SidebarItem from '#ui/Containers/Sidebar/SidebarItem';
@@ -16,10 +17,15 @@ type SidebarGroupProps = {
 const SidebarGroup: FC<SidebarGroupProps> = ({
   groupName,
   items,
-  showProgressionIcons = false,
+  showProgressionIcons,
   ...props
 }) => (
-  <section className={styles.group}>
+  <section
+    className={classNames({
+      [styles.group]: true,
+      [styles.progression]: showProgressionIcons,
+    })}
+  >
     <label className={styles.groupName}>{groupName}</label>
     <ul className={styles.itemList}>
       {items.map(({ label, link }) => (
@@ -27,7 +33,7 @@ const SidebarGroup: FC<SidebarGroupProps> = ({
           key={link}
           label={label}
           link={link}
-          showProgressionIcon={showProgressionIcons}
+          showProgressionIcons={showProgressionIcons}
           {...props}
         />
       ))}

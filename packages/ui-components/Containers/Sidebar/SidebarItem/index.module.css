@@ -1,26 +1,24 @@
 @reference '../../../styles/index.css';
 
 .item {
-  @apply flex
+  @apply font-regular
+    relative
+    z-20
+    flex
     w-full
-    list-none
+    items-center
+    overflow-hidden
+    text-sm
     text-neutral-800
     dark:text-neutral-200;
 
-  a {
-    @apply inline-flex
-      items-center
-      gap-2
-      p-2;
-  }
-
   .label {
     @apply font-regular
-      w-full
+      p-2
       text-sm;
   }
 
-  svg {
+  .progressionIcon {
     @apply shrink-0
       fill-neutral-200
       stroke-white
@@ -35,18 +33,24 @@
       dark:text-neutral-200;
   }
 
-  .active {
-    @apply text-neutral-900
-      dark:text-white;
-
-    svg {
-      @apply fill-green-500;
+  &.progression {
+    .label {
+      @apply p-1;
     }
   }
 
-  &:not(.progression) > .active {
-    @apply rounded-sm
-      bg-green-600
-      text-white;
+  &.active {
+    @apply text-neutral-900
+      dark:text-white;
+
+    .progressionIcon {
+      @apply fill-green-500;
+    }
+
+    &:not(.progression) .label {
+      @apply rounded-sm
+        bg-green-600
+        text-white;
+    }
   }
 }
