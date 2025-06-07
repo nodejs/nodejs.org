@@ -45,6 +45,7 @@ const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
           values={selectItems}
           defaultValue={currentItem?.value}
           onChange={onSelect}
+          className={styles.mobileSelect}
         />
       )}
 
@@ -56,6 +57,7 @@ const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
           pathname={pathname}
           as={as}
           showProgressionIcons={showProgressionIcons}
+          className={styles.navigation}
         />
       ))}
     </aside>
