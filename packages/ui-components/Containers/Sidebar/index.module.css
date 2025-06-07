@@ -17,12 +17,12 @@
     dark:border-neutral-900
     dark:bg-neutral-950;
 
-  > section {
+  .navigation {
     @apply hidden
       sm:flex;
   }
 
-  > span {
+  .mobileSelect {
     @apply flex
       w-full
       sm:hidden;

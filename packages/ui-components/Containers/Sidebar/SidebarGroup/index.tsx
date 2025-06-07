@@ -11,6 +11,7 @@ type SidebarGroupProps = {
   items: Array<Omit<ComponentProps<typeof SidebarItem>, 'as' | 'pathname'>>;
   as?: LinkLike;
   pathname?: string;
+  className: string;
   showProgressionIcons?: boolean;
 };
 
@@ -18,13 +19,17 @@ const SidebarGroup: FC<SidebarGroupProps> = ({
   groupName,
   items,
   showProgressionIcons,
+  className,
   ...props
 }) => (
   <section
-    className={classNames({
-      [styles.group]: true,
-      [styles.progression]: showProgressionIcons,
-    })}
+    className={classNames(
+      {
+        [styles.group]: true,
+        [styles.progression]: showProgressionIcons,
+      },
+      className
+    )}
   >
     <label className={styles.groupName}>{groupName}</label>
     <ul className={styles.itemList}>
