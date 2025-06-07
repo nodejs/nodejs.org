@@ -36,7 +36,7 @@ const SidebarItem: FC<SidebarItemProps> = ({
     )}
     <span className={styles.label}>{label}</span>
 
-    {link.startsWith('http') && <ArrowUpRightIcon className={styles.icon} />}
+    {/^https?:/.test(link) && <ArrowUpRightIcon className={styles.icon} />}
   </BaseActiveLink>
 );
 
