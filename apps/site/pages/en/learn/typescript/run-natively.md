@@ -59,6 +59,29 @@ The Node.js TypeScript loader ([Amaro](https://github.com/nodejs/amaro)) does no
 
 We recommend configuring your editor and `tsc` to reflect Node.js behavior by creating a `tsconfig.json` using the `compilerOptions` listed [here](https://nodejs.org/api/typescript.html#type-stripping), as well as using TypeScript version **5.7 or higher**.
 
+### Monorepo
+
+When working with monorepos, you might need more direct control over how TypeScript files are handled, especially for linked packages. Node.js uses a tool called [Amaro](https://github.com/nodejs/amaro) internally for type stripping. For advanced monorepo setups, you can use the `amaro` package directly.
+
+First, install `amaro` as a dependency:
+
+```bash
+npm install amaro
+```
+
+To run TypeScript files within a monorepo structure, you can invoke Node.js with specific flags to use `amaro`.
+The command is:
+
+```bash
+node --experimental-strip-types --import="amaro/strip" --conditions=typescript ./src/index.ts
+```
+
+For Node.js v23 and later (where type stripping is enabled by default), you can omit the `--experimental-strip-types` flag.
+
+This approach allows Node.js to process linked packages within the monorepo without requiring an explicit, separate build step for each package.
+
+For further details and advanced configurations, refer to the [Amaro documentation](https://github.com/nodejs/amaro).
+
 ## Important notes
 
 Thanks to all the contributors who have made this feature possible. We hope that this feature will be stable and available in the LTS version of Node.js soon.
