@@ -7,7 +7,7 @@ const Link: FC<HTMLProps<HTMLAnchorElement>> = ({
   href,
   ...props
 }) => {
-  if (!href || href.toString().startsWith('http')) {
+  if (!href || /^https?:/.test(href.toString())) {
     return (
       <a href={href} {...props}>
         {children}
