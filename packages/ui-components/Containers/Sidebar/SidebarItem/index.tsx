@@ -1,26 +1,43 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
+import classNames from 'classnames';
 import type { FC } from 'react';
 
-import ActiveLink from '#ui/Common/BaseActiveLink';
+import BaseActiveLink from '#ui/Common/BaseActiveLink';
 import type { FormattedMessage, LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
+import ProgressionIcon from '../ProgressionIcon';
 
 type SidebarItemProps = {
   label: FormattedMessage;
   link: string;
   as?: LinkLike;
   pathname?: string;
+  showProgressionIcons?: boolean;
 };
 
-const SidebarItem: FC<SidebarItemProps> = ({ label, link, ...props }) => (
-  <li className={styles.sideBarItem}>
-    <ActiveLink href={link} activeClassName={styles.active} {...props}>
-      <span className={styles.label}>{label}</span>
+const SidebarItem: FC<SidebarItemProps> = ({
+  label,
+  link,
+  showProgressionIcons = false,
+  ...props
+}) => (
+  <BaseActiveLink
+    className={classNames({
+      [styles.item]: true,
+      [styles.progression]: showProgressionIcons,
+    })}
+    href={link}
+    activeClassName={styles.active}
+    {...props}
+  >
+    {showProgressionIcons && (
+      <ProgressionIcon className={styles.progressionIcon} />
+    )}
+    <span className={styles.label}>{label}</span>
 
-      {link.startsWith('http') && <ArrowUpRightIcon className={styles.icon} />}
-    </ActiveLink>
-  </li>
+    {/^https?:/.test(link) && <ArrowUpRightIcon className={styles.icon} />}
+  </BaseActiveLink>
 );
 
 export default SidebarItem;

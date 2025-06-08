@@ -1,23 +1,30 @@
-@reference "../../../styles/index.css";
+@reference '../../../styles/index.css';
 
-.sideBarItem {
-  @apply flex
+.item {
+  @apply font-regular
+    relative
+    z-20
+    flex
     w-full
-    list-none
+    items-center
+    overflow-hidden
+    text-sm
     text-neutral-800
     dark:text-neutral-200;
 
-  a {
-    @apply inline-flex
-      items-center
-      gap-2
-      p-2;
-  }
-
   .label {
     @apply font-regular
-      w-full
+      p-2
       text-sm;
+  }
+
+  .progressionIcon {
+    @apply shrink-0
+      fill-neutral-200
+      stroke-white
+      stroke-[4]
+      dark:fill-neutral-800
+      dark:stroke-neutral-950;
   }
 
   .icon {
@@ -25,11 +32,25 @@
       text-neutral-500
       dark:text-neutral-200;
   }
-}
 
-.active {
-  @apply rounded-sm
-    bg-green-600
-    text-white
-    dark:text-white;
+  &.progression {
+    .label {
+      @apply p-1;
+    }
+  }
+
+  &.active {
+    @apply text-neutral-900
+      dark:text-white;
+
+    .progressionIcon {
+      @apply fill-green-500;
+    }
+
+    &:not(.progression) .label {
+      @apply rounded-sm
+        bg-green-600
+        text-white;
+    }
+  }
 }

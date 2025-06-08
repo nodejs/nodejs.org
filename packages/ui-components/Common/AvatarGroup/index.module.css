@@ -4,22 +4,18 @@
   @apply flex
     flex-wrap
     items-center;
-
-  &:not(.expandable) {
-    > span {
-      @apply ml-0;
-    }
-  }
 }
 
 .small {
   > span {
-    @apply -ml-2;
+    @apply -ml-2
+      first:ml-0;
   }
 }
 
 .medium {
   > span {
-    @apply -ml-2.5;
+    @apply -ml-2.5
+      first:ml-0;
   }
 }

@@ -1,4 +1,6 @@
 import { defineCloudflareConfig } from '@opennextjs/cloudflare';
 import incrementalCache from '@opennextjs/cloudflare/overrides/incremental-cache/kv-incremental-cache';
 
-export default defineCloudflareConfig({ incrementalCache });
+const cloudflareConfig = defineCloudflareConfig({ incrementalCache });
+
+export default { ...cloudflareConfig, buildCommand: 'pnpm build:default' };

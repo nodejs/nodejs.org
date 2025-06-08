@@ -1,4 +1,4 @@
-import type { ComponentProps, FC } from 'react';
+import type { ComponentProps, FC, PropsWithChildren } from 'react';
 
 import Select from '#ui/Common/Select';
 import SidebarGroup from '#ui/Containers/Sidebar/SidebarGroup';
@@ -7,19 +7,24 @@ import type { LinkLike } from '#ui/types';
 import styles from './index.module.css';
 
 type SidebarProps = {
-  groups: Array<Omit<ComponentProps<typeof SidebarGroup>, 'as' | 'pathname'>>;
+  groups: Array<
+    Pick<ComponentProps<typeof SidebarGroup>, 'items' | 'groupName'>
+  >;
   pathname?: string;
   title: string;
   onSelect: (value: string) => void;
   as?: LinkLike;
+  showProgressionIcons?: boolean;
 };
 
-const SideBar: FC<SidebarProps> = ({
+const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
   groups,
   pathname,
   title,
   onSelect,
   as,
+  showProgressionIcons = false,
+  children,
 }) => {
   const selectItems = groups.map(({ items, groupName }) => ({
     label: groupName,
@@ -27,18 +32,20 @@ const SideBar: FC<SidebarProps> = ({
   }));
 
   const currentItem = selectItems
-    .map(item => item.items)
-    .flat()
+    .flatMap(item => item.items)
     .find(item => pathname === item.value);
 
   return (
     <aside className={styles.wrapper}>
+      {children}
+
       {selectItems.length > 0 && (
         <Select
           label={title}
           values={selectItems}
           defaultValue={currentItem?.value}
           onChange={onSelect}
+          className={styles.mobileSelect}
         />
       )}
 
@@ -49,6 +56,8 @@ const SideBar: FC<SidebarProps> = ({
           items={items}
           pathname={pathname}
           as={as}
+          showProgressionIcons={showProgressionIcons}
+          className={styles.navigation}
         />
       ))}
     </aside>

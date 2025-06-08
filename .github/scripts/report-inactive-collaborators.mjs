@@ -15,6 +15,20 @@ const getDateMonthsAgo = (months = CONFIG.INACTIVE_MONTHS) => {
   return date.toISOString().split('T')[0];
 };
 
+// Check if there's already an open issue
+async function hasOpenIssue(github, context) {
+  const { owner, repo } = context.repo;
+  const { data: issues } = await github.rest.issues.listForRepo({
+    owner,
+    repo,
+    state: 'open',
+    labels: CONFIG.ISSUE_LABELS[1],
+    per_page: 1,
+  });
+
+  return issues.length > 0;
+}
+
 // Parse collaborator usernames from governance file
 async function parseCollaborators() {
   const content = await readFile(CONFIG.GOVERNANCE_FILE, 'utf8');
@@ -41,12 +55,20 @@ async function getInactiveUsers(github, usernames, repo, cutoffDate) {
   const inactiveUsers = [];
 
   for (const username of usernames) {
-    const { data } = await github.rest.search.commits({
+    // Check commits
+    const { data: commits } = await github.rest.search.commits({
       q: `author:${username} repo:${repo} committer-date:>=${cutoffDate}`,
       per_page: 1,
     });
 
-    if (data.total_count === 0) {
+    // Check issues and PRs
+    const { data: issues } = await github.rest.search.issuesAndPullRequests({
+      q: `involves:${username} repo:${repo} updated:>=${cutoffDate}`,
+      per_page: 1,
+    });
+
+    // User is inactive if they have no commits AND no issues/PRs
+    if (commits.total_count === 0 && issues.total_count === 0) {
       inactiveUsers.push(username);
     }
   }
@@ -75,37 +97,25 @@ ${inactiveMembers.map(m => `| @${m} |`).join('\n')}
 @nodejs/nodejs-website should review this list and contact inactive collaborators to confirm their continued interest in participating in the project.`;
 }
 
-async function createOrUpdateIssue(github, context, report) {
+async function createIssue(github, context, report) {
   if (!report) return;
 
   const { owner, repo } = context.repo;
-  const { data: issues } = await github.rest.issues.listForRepo({
+  await github.rest.issues.create({
     owner,
     repo,
-    state: 'open',
-    labels: CONFIG.ISSUE_LABELS[1],
-    per_page: 1,
+    title: CONFIG.ISSUE_TITLE,
+    body: report,
+    labels: CONFIG.ISSUE_LABELS,
   });
-
-  if (issues.total_count > 0) {
-    await github.rest.issues.update({
-      owner,
-      repo,
-      issue_number: issues.items[0].number,
-      body: report,
-    });
-  } else {
-    await github.rest.issues.create({
-      owner,
-      repo,
-      title: CONFIG.ISSUE_TITLE,
-      body: report,
-      labels: CONFIG.ISSUE_LABELS,
-    });
-  }
 }
 
 export default async function (github, context) {
+  // Check for existing open issue first - exit early if one exists
+  if (await hasOpenIssue(github, context)) {
+    return;
+  }
+
   const cutoffDate = getDateMonthsAgo();
   const collaborators = await parseCollaborators();
 
@@ -117,5 +127,5 @@ export default async function (github, context) {
   );
   const report = formatReport(inactiveMembers, cutoffDate);
 
-  await createOrUpdateIssue(github, context, report);
+  await createIssue(github, context, report);
 }

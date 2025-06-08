@@ -375,14 +375,14 @@ To edit an existing article, you need to find the markdown file in the `site/pag
 
 The codebox component is used to display code snippets. If two code snippets follow without any text between them, they will be displayed in the same codebox, but with two tabs.
 
-```md
-'''cjs
+````md
+```cjs
 const http = require('node:http');
-'''
-
-'''mjs
-import http from 'node:http';
-'''
 ```
+
+```mjs
+import http from 'node:http';
+```
+````
 
 `cjs` and `mjs` are variants of `js`, it's just to display the correct language in the codebox (cjs = CommonJS, mjs = ES Module).

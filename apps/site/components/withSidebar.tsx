@@ -14,29 +14,35 @@ import type { NavigationKeys } from '#site/types';
 type WithSidebarProps = {
   navKeys: Array<NavigationKeys>;
   context?: Record<string, RichTranslationValues>;
+  showProgressionIcons?: boolean;
 };
 
-const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context }) => {
+const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
   const { getSideNavigation } = useSiteNavigation();
   const pathname = usePathname()!;
   const locale = useLocale();
   const t = useTranslations();
   const { push } = useRouter();
+  const sideNavigation = getSideNavigation(navKeys, context);
 
-  const mappedSidebarItems = getSideNavigation(navKeys, context).map(
-    ([, { label, items }]) => ({
-      groupName: label,
-      items: items.map(([, item]) => item),
-    })
-  );
+  const mappedSidebarItems =
+    // If there's only a single navigation key, use it's sub-items
+    // as our navigation.
+    (navKeys.length === 1 ? sideNavigation[0][1].items : sideNavigation).map(
+      ([, { label, items }]) => ({
+        groupName: label,
+        items: items.map(([, item]) => item),
+      })
+    );
 
   return (
     <Sidebar
       groups={mappedSidebarItems}
       pathname={pathname.replace(`/${locale}`, '')}
       title={t('components.common.sidebar.title')}
-      onSelect={value => push(value)}
+      onSelect={push}
       as={Link}
+      {...props}
     />
   );
 };

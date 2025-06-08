@@ -5,22 +5,60 @@
     w-full
     flex-col
     gap-2;
-}
 
-.groupName {
-  @apply px-2
-    py-1
-    text-xs
-    font-semibold
-    text-neutral-800
-    dark:text-neutral-600;
-}
+  &:not(.progression) {
+    .groupName {
+      @apply px-2
+        py-1
+        text-xs
+        font-semibold
+        text-neutral-800
+        dark:text-neutral-600;
+    }
+  }
 
-.itemList {
-  @apply m-0
-    flex
-    flex-col
-    items-start
-    gap-0.5
-    p-0;
+  &.progression {
+    @apply flex
+      flex-col
+      gap-4
+      text-sm
+      font-medium
+      text-neutral-800
+      dark:text-neutral-200;
+
+    .itemList {
+      @apply relative
+        -left-1
+        flex
+        flex-col
+        after:absolute
+        after:left-[0.45rem]
+        after:top-0
+        after:z-10
+        after:h-full
+        after:w-px
+        after:bg-neutral-200
+        after:content-['']
+        dark:after:bg-neutral-800;
+
+      a {
+        @apply first:before:absolute
+          first:before:bottom-[calc(50%+0.25rem)]
+          first:before:left-0
+          first:before:h-20
+          first:before:w-4
+          first:before:bg-white
+          first:before:content-['']
+          last:after:absolute
+          last:after:left-0
+          last:after:top-[calc(50%+0.25rem)]
+          last:after:h-20
+          last:after:w-4
+          last:after:bg-white
+          last:after:content-['']
+          first:dark:before:bg-neutral-950
+          last:dark:after:bg-neutral-950;
+      }
+    }
+  }
 }
