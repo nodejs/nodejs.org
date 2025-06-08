@@ -39,7 +39,7 @@ const generateReleaseData = async () => {
     absolute: false,
   });
 
-  const nodevuOutput = await nodevu({ fetch: fetch });
+  const nodevuOutput = await nodevu({ fetch });
 
   const majors = Object.entries(nodevuOutput).filter(
     ([version, { support }]) => {
@@ -91,7 +91,7 @@ const generateReleaseData = async () => {
 
     return {
       ...support,
-      status,
+      status: status,
       major: latestVersion.semver.major,
       version: latestVersion.semver.raw,
       versionWithPrefix: `v${latestVersion.semver.raw}`,
@@ -101,8 +101,8 @@ const generateReleaseData = async () => {
       v8: latestVersion.dependencies.v8,
       releaseDate: latestVersion.releaseDate,
       modules: latestVersion.modules.version || '',
-      releaseAnnounceLink,
-      minorVersions,
+      releaseAnnounceLink: releaseAnnounceLink,
+      minorVersions: minorVersions,
     };
   });
 };

@@ -20,7 +20,10 @@ const WithFooter: FC = () => {
   // Add OpenJS link
   updatedFooterLinks.push(footerLinks.at(-1)!);
 
-  const navigation = { socialLinks, footerLinks: updatedFooterLinks };
+  const navigation = {
+    socialLinks: socialLinks,
+    footerLinks: updatedFooterLinks,
+  };
 
   return <Footer navigation={navigation} as={Link} pathname={pathname} />;
 };

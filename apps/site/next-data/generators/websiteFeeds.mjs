@@ -41,17 +41,18 @@ const generateWebsiteFeeds = ({ posts }) => {
         .map(post => {
           const date = new Date(post.date);
           const time = date.getTime();
+          const guid =
+            time > guidTimestampStartDate
+              ? `${post.slug}?${date.getTime()}`
+              : post.slug;
 
           return {
             id: post.slug,
             title: post.title,
             author: post.author,
-            date,
+            date: date,
             link: `${canonicalUrl}${post.slug}`,
-            guid:
-              time > guidTimestampStartDate
-                ? `${post.slug}?${date.getTime()}`
-                : post.slug,
+            guid: guid,
           };
         });
 

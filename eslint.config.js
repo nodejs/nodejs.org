@@ -1,9 +1,9 @@
 import js from '@eslint/js';
-import importX from 'eslint-plugin-import-x';
+import { flatConfigs } from 'eslint-plugin-import-x';
 
 export default [
   js.configs.recommended,
-  importX.flatConfigs.recommended,
+  flatConfigs.recommended,
   {
     ignores: [
       'node_modules',
@@ -44,6 +44,7 @@ export default [
           },
         },
       ],
+      'object-shorthand': ['error', 'consistent-as-needed'],
     },
   },
 ];
