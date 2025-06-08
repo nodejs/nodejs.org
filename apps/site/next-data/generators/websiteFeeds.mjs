@@ -41,10 +41,6 @@ const generateWebsiteFeeds = ({ posts }) => {
         .map(post => {
           const date = new Date(post.date);
           const time = date.getTime();
-          const guid =
-            time > guidTimestampStartDate
-              ? `${post.slug}?${date.getTime()}`
-              : post.slug;
 
           return {
             id: post.slug,
@@ -52,7 +48,10 @@ const generateWebsiteFeeds = ({ posts }) => {
             author: post.author,
             date: date,
             link: `${canonicalUrl}${post.slug}`,
-            guid: guid,
+            guid:
+              time > guidTimestampStartDate
+                ? `${post.slug}?${date.getTime()}`
+                : post.slug,
           };
         });
 
