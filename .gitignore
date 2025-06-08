@@ -9,8 +9,9 @@ npm-debug.log
 package-lock.json
 
 # Next.js Build Output
-.next
-build
+apps/site/.next
+apps/site/build
+apps/site/public/blog-data.json
 
 # Test Runner
 junit.xml
@@ -35,13 +36,9 @@ cache
 tsconfig.tsbuildinfo
 dist/
 
-# Ignore the blog-data json that we generate during dev and build
-apps/site/public/blog-data.json
-
 # Cloudflare Build Output
 apps/site/.open-next
 apps/site/.wrangler
-
 
 ## Playwright
 test-results

@@ -2,27 +2,16 @@
   "$schema": "https://turbo.build/schema.json",
   "dangerouslyDisablePackageManagerCheck": true,
   "tasks": {
-    "scripts:release-post": {
-      "cache": false
-    },
     "//#prettier": {
       "outputs": [".prettiercache"]
     },
+    "build": {
+      "dependsOn": ["^topo"]
+    },
     "lint": {
-      "dependsOn": [
-        "@node-core/website#lint:md",
-        "@node-core/website#lint:css",
-        "lint:js"
-      ]
+      "dependsOn": ["^topo"]
     },
-    "lint:lint-staged": {
-      "dependsOn": [
-        "@node-core/website#lint:md",
-        "@node-core/website#lint:css",
-        "@node-core/website#lint:js"
-      ]
-    },
-    "check-types": {
+    "test": {
       "dependsOn": ["^topo"]
     },
     "topo": {

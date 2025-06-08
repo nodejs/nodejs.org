@@ -84,7 +84,7 @@ cd nodejs.org
 pnpm install --frozen-lockfile
 
 # Start development server
-pnpm dev
+node --run dev
 ```
 
 For detailed setup instructions, see [Getting Started](./docs/getting-started.md).
@@ -99,13 +99,13 @@ For detailed setup instructions, see [Getting Started](./docs/getting-started.md
 
 ```bash
 # Format and lint code
-pnpm format
+node --run format
 
 # Run tests
-pnpm test
+node --run test
 
 # Test build
-pnpm build
+node --run build
 ```
 
 ### 4. Submit Your Contribution
