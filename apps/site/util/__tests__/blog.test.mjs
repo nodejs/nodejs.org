@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
-import { mapBlogCategoryToPreviewType } from '#site/util/blogUtils';
+import { mapBlogCategoryToPreviewType } from '#site/util/blog';
 
 describe('mapBlogCategoryToPreviewType', () => {
   it('returns the correct preview type for recognized categories', () => {

@@ -1,4 +1,4 @@
-import type constants from '../util/downloadUtils/constants.json';
+import type constants from '../util/download/constants.json';
 
 // Extract OS key type from the systems object
 export type UserOS = keyof typeof constants.systems;

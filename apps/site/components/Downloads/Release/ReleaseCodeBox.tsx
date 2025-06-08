@@ -16,7 +16,7 @@ import {
   ReleasesContext,
 } from '#site/providers/releaseProvider';
 import type { ReleaseContextType } from '#site/types/release';
-import { INSTALL_METHODS } from '#site/util/downloadUtils';
+import { INSTALL_METHODS } from '#site/util/download';
 
 // Creates a minimal JavaScript interpreter for parsing the JavaScript code from the snippets
 // Note: that the code runs inside a sandboxed environment and cannot interact with any code outside of the sandbox

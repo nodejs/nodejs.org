@@ -7,8 +7,8 @@ import type { FC, PropsWithChildren } from 'react';
 import Button from '#site/components/Common/Button';
 import { useClientContext } from '#site/hooks';
 import type { NodeRelease } from '#site/types';
-import { getNodeDownloadUrl } from '#site/util/getNodeDownloadUrl';
-import { getUserPlatform } from '#site/util/getUserPlatform';
+import { getNodeDownloadUrl } from '#site/util/download';
+import { getUserPlatform } from '#site/util/ua';
 
 import styles from './index.module.css';
 
