@@ -27,7 +27,7 @@ If you are looking for additional proof points, here are a few examples of vulne
 - [https://nvd.nist.gov/vuln/detail/CVE-2024-22019](https://nvd.nist.gov/vuln/detail/CVE-2024-22019) affects 16, 14 (llhttp) \- high
 - [https://nvd.nist.gov/vuln/detail/CVE-2021-39135](https://nvd.nist.gov/vuln/detail/CVE-2021-39135) affects 14 (npm) \- high
 
-This affects a staggering number of projects. Based on download statistics, Node.js v18 still accounts for approximately **50 million monthly downloads**, while legacy versions (v18 and below) continue to see **tens of millions of downloads per month**. That represents countless applications running on known vulnerable, unsupported runtime environments.
+This affects a staggering number of projects. Based on download statistics, Node.js v18, the most recent End-of-Life version, still accounts for approximately **50 million monthly downloads**, while earlier legacy versions (v16 and below) continue to see **tens of millions of downloads per month**. That represents countless applications running on known vulnerable, unsupported runtime environments.
 
 You can check if your Node.js installation is vulnerable to known security
 vulnerabilities using the [is-my-node-vulnerable](https://github.com/nodejs/is-my-node-vulnerable)
