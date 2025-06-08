@@ -10,6 +10,7 @@ import { useContext, useMemo } from 'react';
 import CodeBox from '#site/components/Common/CodeBox';
 import Link from '#site/components/Link';
 import LinkWithArrow from '#site/components/LinkWithArrow';
+import WithReleaseAlertBox from '#site/components/withReleaseAlertBox';
 import { createSval } from '#site/next.jsx.compiler.mjs';
 import {
   ReleaseContext,
@@ -114,17 +115,10 @@ const ReleaseCodeBox: FC = () => {
         </AlertBox>
       </noscript>
 
-      {release.status === 'End-of-life' && (
-        <AlertBox
-          title={t('components.common.alertBox.warning')}
-          level="warning"
-          size="small"
-        >
-          {t.rich('layouts.download.codeBox.unsupportedVersionWarning', {
-            link: text => <Link href="/about/previous-releases/">{text}</Link>,
-          })}
-        </AlertBox>
-      )}
+      <WithReleaseAlertBox
+        status={release.status}
+        link="/about/previous-releases"
+      />
 
       {!currentPlatform || currentPlatform.recommended || (
         <AlertBox

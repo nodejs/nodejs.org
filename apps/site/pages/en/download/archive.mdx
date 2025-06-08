@@ -6,7 +6,7 @@ layout: download-archive
 <WithDownloadArchive>
   {({ binaries, installers, version, release, sources, navigation }) => (
     <>
-      <h1>Node.js Download Archive</h1>
+      <h1>Node.js® Download Archive</h1>
 
       <h2 className="flex items-center gap-2">
         <img
@@ -19,11 +19,11 @@ layout: download-archive
         {release.codename && ` (${release.codename})`}
       </h2>
 
-      <WithReleaseAlertBox status={release.status} />
+      <WithReleaseAlertBox status={release.status} link="/about/previous-releases" />
 
       <ReleaseOverview release={release} />
 
-      <ul>
+      <ul className='flex list-none flex-col gap-2 p-0 text-sm'>
 
         <li>
           Learn more about <Link href="/about/previous-releases">Node.js releases</Link>, including the release schedule and LTS status.
