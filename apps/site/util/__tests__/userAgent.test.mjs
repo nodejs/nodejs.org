@@ -6,7 +6,7 @@ import {
   detectOsInUserAgent,
   getHighEntropyValues,
   getUserPlatform,
-} from '#site/util/ua';
+} from '#site/util/userAgent';
 
 const userAgentTestCases = [
   [

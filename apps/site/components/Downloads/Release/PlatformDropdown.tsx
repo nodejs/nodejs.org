@@ -9,7 +9,7 @@ import { useClientContext } from '#site/hooks';
 import { ReleaseContext } from '#site/providers/releaseProvider';
 import type { UserPlatform } from '#site/types/userOS';
 import { PLATFORMS, nextItem, parseCompat } from '#site/util/download';
-import { getUserPlatform } from '#site/util/ua';
+import { getUserPlatform } from '#site/util/userAgent';
 
 const PlatformDropdown: FC = () => {
   const { architecture, bitness } = useClientContext();

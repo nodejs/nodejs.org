@@ -6,7 +6,7 @@ import LinkWithArrow from '#site/components/LinkWithArrow';
 import { useClientContext } from '#site/hooks';
 import type { NodeRelease } from '#site/types';
 import { getNodeDownloadUrl, type DownloadKind } from '#site/util/download';
-import { getUserPlatform } from '#site/util/ua';
+import { getUserPlatform } from '#site/util/userAgent';
 
 type DownloadLinkProps = { release: NodeRelease; kind?: DownloadKind };
 
