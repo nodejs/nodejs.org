@@ -90,5 +90,5 @@ The path forward is clear: **Node.js 22 offers the longest support window, best 
 
 Your applications, your users, and your future self will thank you for making the strategic move to Node.js v22 today.
 
-[image1]: /static/images/blog/announcements/2025-eol-node-graph.png
-[image2]: /static/images/blog/announcements/2025-release-schedule.svg
+[image1]: /static/images/blog/announcements/2025-release-schedule.svg
+[image2]: /static/images/blog/announcements/2025-eol-node-graph.png
