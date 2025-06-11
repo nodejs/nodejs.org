@@ -3,6 +3,7 @@ date: '2025-04-12T12:00:00.000Z'
 category: announcements
 title: In Memory of Mikeal Rogers: A Builder of Communities
 layout: blog-post
+author: Robin Ginn
 ---
 
 ![][mikeal-rogers-image]
