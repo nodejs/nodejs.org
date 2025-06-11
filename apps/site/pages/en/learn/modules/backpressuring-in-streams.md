@@ -559,7 +559,7 @@ class MyReadable extends Readable {
 
 Here is an example of good practice, where the `Readable` stream respects backpressure by checking the return value of `this.push()`:
 
-```javascript
+```js
 class MyReadable extends Readable {
   _read(size) {
     let chunk;
