@@ -14,7 +14,7 @@ A popular way of configuring your application is by using the [twelve factor met
 
 ## Why is NODE_ENV considered an antipattern?
 
-An environment is a digital platform or a system where engineers can build, test, _deploy_, and manage software products. Conventionally, there are four stages or types of environments where our application is run:
+An environment is a digital platform or a system where engineers can build, test, _deploy_, and manage software products. Conventionally, there are four stages or types of environments where our application runs:
 
 - Development
 - Testing
