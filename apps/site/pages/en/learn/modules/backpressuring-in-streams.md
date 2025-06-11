@@ -563,7 +563,7 @@ Here is an example of good practice, where the `Readable` stream respects backpr
 class MyReadable extends Readable {
   _read(size) {
     let chunk;
-		let canPushMore = true;
+    let canPushMore = true;
     while (canPushMore && null !== (chunk = getNextChunk())) {
       canPushMore = this.push(chunk);
     }
