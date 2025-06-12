@@ -14,7 +14,7 @@ on:
     paths:
       - packages/ui-components/**
       - .github/workflows/chromatic.yml
-  pull_request:
+  pull_request_target:
     branches:
       - main
     paths:
@@ -38,7 +38,7 @@ jobs:
     # We only need to run Storybook Builds and Storybook Visual Regression Tests within Pull Requests that actually
     # introduce changes to the Storybook. Hence, we skip running these on Crowdin PRs and Dependabot PRs
     if: |
-      github.event_name != 'pull_request' ||
+      github.event_name != 'pull_request_target' ||
       (
         github.event.label.name == 'github_actions:pull-request' &&
         github.actor != 'dependabot[bot]' &&
@@ -62,7 +62,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           # Provides the Pull Request commit SHA or the GitHub merge group ref
-          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.ref }}
+          ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || github.ref }}
           # The Chromatic (@chromaui/action) Action requires a full history of the current branch in order to be able to compare
           # previous changes and previous commits and determine which Storybooks should be tested against and what should be built
           fetch-depth: 0
