@@ -88,7 +88,7 @@ jobs:
         if: |
           (github.event_name == 'push' || github.event_name == 'merge_group') ||
           (github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'chore/crowdin')
-        run: node_modules/.bin/turbo lint lint:types prettier
+        run: node_modules/.bin/turbo lint lint:types prettier ${{ env.TURBO_ARGS }}
 
       - name: Save Lint Cache
         # We only want to save caches on `push` events or `pull_request_target` events
@@ -139,7 +139,7 @@ jobs:
       - name: Run Unit Tests
         # We want to run Unit Tests in every circumstance, including Crowdin PRs and Dependabot PRs to ensure
         # that changes to dependencies or translations don't break the Unit Tests
-        run: node_modules/.bin/turbo test:ci
+        run: node_modules/.bin/turbo test:ci ${{ env.TURBO_ARGS }}
 
       - name: Upload test coverage to Codecov
         if: ${{ !cancelled() && github.event_name != 'merge_group' }}

@@ -92,7 +92,7 @@ jobs:
 
       - name: Build Next.js (ISR)
         # We want a ISR build on CI to ensure that regular Next.js builds work as expected.
-        run: node_modules/.bin/turbo build -- ${{ env.TURBO_ARGS }}
+        run: node_modules/.bin/turbo build ${{ env.TURBO_ARGS }}
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
           # this should be a last resort in case by any chances the build memory gets too high
@@ -105,7 +105,7 @@ jobs:
         # We only run full static builds within Pull Requests. This step is also used to export
         # static output in all languages, and it only works on `push` events.
         if: github.event_name == 'push'
-        run: node_modules/.bin/turbo deploy -- ${{ env.TURBO_ARGS }}
+        run: node_modules/.bin/turbo deploy ${{ env.TURBO_ARGS }}
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
           # this should be a last resort in case by any chances the build memory gets too high
@@ -124,7 +124,7 @@ jobs:
         if: |
           (github.event_name == 'pull_request' &&
             github.event.pull_request.head.ref != 'chore/crowdin')
-        run: node_modules/.bin/turbo deploy -- ${{ env.TURBO_ARGS }}
+        run: node_modules/.bin/turbo deploy ${{ env.TURBO_ARGS }}
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
           # this should be a last resort in case by any chances the build memory gets too high
