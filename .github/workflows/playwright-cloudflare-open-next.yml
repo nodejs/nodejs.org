@@ -69,7 +69,7 @@ jobs:
 
       - name: Run Playwright tests
         working-directory: apps/site
-        run: node_modules/.bin/turbo playwright
+        run: node --run playwright
         env:
           PLAYWRIGHT_RUN_CLOUDFLARE_PREVIEW: true
           PLAYWRIGHT_BASE_URL: http://127.0.0.1:8787

@@ -95,7 +95,7 @@ jobs:
 
       - name: Run Playwright tests
         working-directory: apps/site
-        run: node_modules/.bin/turbo playwright
+        run: node --run playwright
         env:
           PLAYWRIGHT_BASE_URL: ${{ needs.get-vercel-preview.outputs.url }}
 
