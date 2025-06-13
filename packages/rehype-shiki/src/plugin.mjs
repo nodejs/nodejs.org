@@ -16,7 +16,7 @@ const languagePrefix = 'language-';
  * @example - Returns "CommonJS"
  * getMetaParameter('displayName="CommonJS"', 'displayName');
  *
- * @param {any} meta - The meta parameter.
+ * @param {unknown} meta - The meta parameter.
  * @param {string} key - The key to retrieve the value.
  *
  * @return {string | undefined} - The value related to the given key.
@@ -35,12 +35,6 @@ function getMetaParameter(meta, key) {
 }
 
 /**
- * @typedef {import('unist').Node} Node
- * @property {string} tagName
- * @property {Array<import('unist').Node>} children
- */
-
-/**
  * Checks if the given node is a valid code element.
  *
  * @param {import('unist').Node} node - The node to be verified.
@@ -53,9 +47,28 @@ function isCodeBlock(node) {
   );
 }
 
+/**
+ * @param {string} className - The class name to extract the language from.
+ * @returns {string} - The language extracted from the class name.
+ */
+function getLanguageFromClassName(className) {
+  const matches = className.match(new RegExp(`${languagePrefix}(?<language>.*)`));
+  return matches?.groups.language ?? 'text';
+}
+
+/**
+ * This plugin converts CodeBox elements to CodeTabs and highlights code blocks.
+ * sequence of language should be:
+ * ESM/CJS || CJS/ESM => 1 codeTabs
+ * ESM/CJS/ESM/CJS => 2 codeTabs
+ * TS/JS || JS/TS => 1 codeTabs
+ * TS/ESM/JS || JS/TS/ESM => 1 codeTabs
+ * YAML/JSON/... => 1 codeTabs (n lambda languages)
+ */
 export default function rehypeShikiji() {
   return function (tree) {
-    visit(tree, 'element', (_, index, parent) => {
+    // 1. Convert CodeBox elements to CodeTabs
+    visit(tree, 'element', (element, index, parent) => {
       const languages = [];
       const displayNames = [];
       const codeTabsChildren = [];
@@ -73,10 +86,9 @@ export default function rehypeShikiji() {
 
         // We should get the language name from the class name
         if (codeElement.properties.className?.length) {
-          const className = codeElement.properties.className.join(' ');
-          const matches = className.match(/language-(?<language>.*)/);
-
-          languages.push(matches?.groups.language ?? 'text');
+          languages.push(
+            getLanguageFromClassName(codeElement.properties.className[0])
+          );
         }
 
         // Map the display names of each variant for the CodeTab
@@ -102,6 +114,7 @@ export default function rehypeShikiji() {
         currentIndex += nextNode && nextNode?.type === 'text' ? 2 : 1;
       }
 
+      // @todo(@AugustinMauroy): add logic to handle sequences of languages
       if (codeTabsChildren.length >= 2) {
         const codeTabElement = {
           type: 'element',
@@ -124,6 +137,7 @@ export default function rehypeShikiji() {
       }
     });
 
+    // 2. Convert <pre> elements with a language className to highlighted code
     visit(tree, 'element', (node, index, parent) => {
       // We only want to process <pre>...</pre> elements
       if (!parent || index == null || node.tagName !== 'pre') {
@@ -185,6 +199,9 @@ export default function rehypeShikiji() {
       // Adds a Copy Button to the CodeBox if requested as an additional parameter
       // And avoids setting the property (overriding) if undefined or invalid value
       if (showCopyButton && ['true', 'false'].includes(showCopyButton)) {
+        throw new Error(
+          'The `showCopyButton` meta parameter is deprecated. Use `show-copy-button` instead.'
+        );
         children[0].properties.showCopyButton = showCopyButton;
       }
 
