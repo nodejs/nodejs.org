@@ -85,7 +85,7 @@ jobs:
         # This action must be manually updated to the latest commit from
         # https://github.com/chromaui/action
         id: chromatic-deploy
-        uses: chromaui/action@e8cc4c31775280b175a3c440076c00d19a9014d7 # v11.28.2
+        uses: chromaui/action@d7afd50124cf4f337bcd943e7f45cfa85a5e4476 # v12.0.0
         with:
           workingDir: packages/ui-components
           buildScriptName: storybook:build
