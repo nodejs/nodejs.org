@@ -238,9 +238,20 @@
       "tableOfContents": "目次"
     },
     "search": {
-      "searchBox": {
-        "placeholder": "入力を開始..."
-      }
+      "searchPlaceholder": "入力を開始...",
+      "chatPlaceholder": "なんでも聞いてください",
+      "noResultsFoundFor": "該当する結果が見つかりませんでした",
+      "suggestions": "候補",
+      "seeAll": "すべて表示",
+      "addMore": "さらに追加",
+      "clearChat": "チャットを削除",
+      "errorMessage": "検索中にエラーが起こりました。もう一度試してください。",
+      "disclaimer": "AIの情報は間違っている可能性があります。正しい情報かどうか注意してください。",
+      "startYourSearch": "検索を開始",
+      "initErrorSearch": "検索サービスを開始できません",
+      "initErrorChat": "チャットサービスを開始できません",
+      "chatButtonLabel": "AIの情報を確認する",
+      "searchButtonLabel": "検索"
     },
     "blog": {
       "blogHeader": {
