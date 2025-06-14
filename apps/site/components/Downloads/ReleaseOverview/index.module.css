@@ -15,24 +15,24 @@
       gap-4
       lg:grid-cols-3;
   }
+}
 
-  .item {
-    @apply flex
-      items-center
-      gap-2;
+.item {
+  @apply flex
+    items-center
+    gap-2;
 
-    h1 {
-      @apply text-sm
-        font-semibold;
-    }
+  dt {
+    @apply text-sm
+      font-semibold;
+  }
 
-    h2 {
-      @apply text-xs
-        font-normal;
-    }
+  dd {
+    @apply text-xs
+      font-normal;
+  }
 
-    svg {
-      @apply size-4;
-    }
+  svg {
+    @apply size-4;
   }
 }
