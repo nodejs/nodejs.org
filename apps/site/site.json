@@ -1,6 +1,6 @@
 {
   "title": "Node.js",
-  "description": "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+  "description": "Node.js® is a free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts.",
   "favicon": "/static/images/favicons/favicon.png",
   "accentColor": "#333",
   "logoVariant": "pride",
