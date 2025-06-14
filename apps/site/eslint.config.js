@@ -1,5 +1,5 @@
 import { FlatCompat } from '@eslint/eslintrc';
-import importX from 'eslint-plugin-import-x';
+import { flatConfigs } from 'eslint-plugin-import-x';
 import * as mdx from 'eslint-plugin-mdx';
 import react from 'eslint-plugin-react';
 import tseslint from 'typescript-eslint';
@@ -25,7 +25,7 @@ export default tseslint.config(
     extends: [
       react.configs.flat['jsx-runtime'],
       ...tseslint.configs.recommended,
-      importX.flatConfigs.typescript,
+      flatConfigs.typescript,
       ...compatConfig,
     ],
     files: ['**/*.{js,md,mdx,mjs,ts,tsx}'],

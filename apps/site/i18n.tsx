@@ -35,7 +35,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   }
 
   return {
-    locale,
+    locale: locale,
     // This is the dictionary of messages to be loaded
     messages: await loadLocaleDictionary(locale),
     // We always define the App timezone as UTC

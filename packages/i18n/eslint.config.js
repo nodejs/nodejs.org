@@ -1,4 +1,4 @@
-import importX from 'eslint-plugin-import-x';
+import { flatConfigs } from 'eslint-plugin-import-x';
 import tseslint from 'typescript-eslint';
 
 import baseConfig from '../../eslint.config.js';
@@ -6,7 +6,7 @@ import baseConfig from '../../eslint.config.js';
 export default [
   ...baseConfig,
   ...tseslint.configs.recommended,
-  importX.flatConfigs.typescript,
+  flatConfigs.typescript,
   {
     rules: {
       '@typescript-eslint/array-type': ['error', { default: 'generic' }],

@@ -35,7 +35,7 @@ export const GET = async () => {
       const cleanedContent = parseRichTextIntoPlainText(matter(source).content);
 
       // Deflates a String into a base64 string-encoded (zlib compressed)
-      const deflatedSource = deflateSync(cleanedContent).toString('base64');
+      const content = deflateSync(cleanedContent).toString('base64');
 
       // Returns metadata of each page available on the Website
       return {
@@ -43,7 +43,7 @@ export const GET = async () => {
         pathname,
         title,
         description,
-        content: deflatedSource,
+        content,
       };
     });
 

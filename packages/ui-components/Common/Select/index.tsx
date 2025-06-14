@@ -65,7 +65,10 @@ const Select = <T extends string>({
     let mappedValues = values;
 
     if (isStringArray(mappedValues)) {
-      mappedValues = mappedValues.map(value => ({ label: value, value }));
+      mappedValues = mappedValues.map(value => ({
+        label: value,
+        value: value,
+      }));
     }
 
     if (isValuesArray(mappedValues)) {

@@ -12,13 +12,13 @@ import WithNodeRelease from './components/withNodeRelease';
  * @satisfies {import('mdx/types').MDXComponents}
  */
 export const mdxComponents = {
-  DownloadReleasesTable: DownloadReleasesTable,
+  DownloadReleasesTable,
   // HOC for getting Node.js Release Metadata
-  WithNodeRelease: WithNodeRelease,
+  WithNodeRelease,
   // HOC for providing Banner Data
-  WithBanner: WithBanner,
+  WithBanner,
   // HOC for providing Badge Data
-  WithBadgeGroup: WithBadgeGroup,
+  WithBadgeGroup,
   // Renders an container for Upcoming Node.js Meetings
-  UpcomingMeetings: UpcomingMeetings,
+  UpcomingMeetings,
 };

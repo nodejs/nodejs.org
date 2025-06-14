@@ -41,7 +41,7 @@ describe('generateWebsiteFeeds', () => {
         id: blogData.posts[0].slug,
         title: blogData.posts[0].title,
         guid: `${blogData.posts[0].slug}?${date.getTime()}`,
-        date,
+        date: date,
         link: `${base}${blogData.posts[0].slug}`,
       },
     ]);

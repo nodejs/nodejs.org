@@ -1,4 +1,4 @@
-import importX from 'eslint-plugin-import-x';
+import { flatConfigs } from 'eslint-plugin-import-x';
 import react from 'eslint-plugin-react';
 import storybook from 'eslint-plugin-storybook';
 import tseslint from 'typescript-eslint';
@@ -11,7 +11,7 @@ export default tseslint.config(
     extends: [
       react.configs.flat['jsx-runtime'],
       ...tseslint.configs.recommended,
-      importX.flatConfigs.typescript,
+      flatConfigs.typescript,
     ],
     files: ['**/*.{js,mjs,ts,tsx}'],
     rules: {
