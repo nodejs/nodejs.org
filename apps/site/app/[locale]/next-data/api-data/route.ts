@@ -4,8 +4,8 @@ import provideReleaseData from '#site/next-data/providers/releaseData';
 import { GITHUB_API_KEY } from '#site/next.constants.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
 import type { GitHubApiFile } from '#site/types';
-import { getGitHubApiDocsUrl } from '#site/util/gitHubUtils';
-import { parseRichTextIntoPlainText } from '#site/util/stringUtils';
+import { getGitHubApiDocsUrl } from '#site/util/github';
+import { parseRichTextIntoPlainText } from '#site/util/string';
 
 // Defines if we should use the GitHub API Key for the request
 // based on the environment variable `GITHUB_API_KEY`

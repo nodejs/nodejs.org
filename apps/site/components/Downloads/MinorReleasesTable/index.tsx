@@ -7,7 +7,7 @@ import type { FC } from 'react';
 import Link from '#site/components/Link';
 import { BASE_CHANGELOG_URL } from '#site/next.constants.mjs';
 import type { MinorVersion } from '#site/types';
-import { getNodeApiLink } from '#site/util/getNodeApiLink';
+import { getNodeApiLink } from '#site/util/api';
 
 import styles from './index.module.css';
 

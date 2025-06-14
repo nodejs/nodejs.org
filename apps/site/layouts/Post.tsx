@@ -7,8 +7,8 @@ import WithFooter from '#site/components/withFooter';
 import WithMetaBar from '#site/components/withMetaBar';
 import WithNavBar from '#site/components/withNavBar';
 import { useClientContext } from '#site/hooks/react-server';
-import { mapAuthorToCardAuthors } from '#site/util/authorUtils';
-import { mapBlogCategoryToPreviewType } from '#site/util/blogUtils';
+import { mapAuthorToCardAuthors } from '#site/util/author';
+import { mapBlogCategoryToPreviewType } from '#site/util/blog';
 
 import styles from './layouts.module.css';
 

@@ -5,7 +5,7 @@ import type { FC, PropsWithChildren } from 'react';
 
 import { useDetectOS } from '#site/hooks';
 import type { ClientSharedServerContext } from '#site/types';
-import { assignClientContext } from '#site/util/assignClientContext';
+import { assignClientContext } from '#site/util/context';
 
 export const MatterContext = createContext<ClientSharedServerContext>(
   assignClientContext({})

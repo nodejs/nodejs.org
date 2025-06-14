@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
-import { assignClientContext } from '#site/util/assignClientContext';
+import { assignClientContext } from '#site/util/context';
 
 const mockContext = {
   frontmatter: { title: 'Sample Title' },

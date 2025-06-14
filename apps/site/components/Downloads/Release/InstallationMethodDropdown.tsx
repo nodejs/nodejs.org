@@ -7,11 +7,7 @@ import type { FC } from 'react';
 
 import { ReleaseContext } from '#site/providers/releaseProvider';
 import type { InstallationMethod } from '#site/types/release';
-import {
-  nextItem,
-  INSTALL_METHODS,
-  parseCompat,
-} from '#site/util/downloadUtils';
+import { nextItem, INSTALL_METHODS, parseCompat } from '#site/util/download';
 
 const InstallationMethodDropdown: FC = () => {
   const release = useContext(ReleaseContext);
