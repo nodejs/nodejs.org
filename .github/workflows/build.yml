@@ -30,8 +30,6 @@ permissions:
 env:
   # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
   TURBO_ARGS: --cache-dir=.turbo/cache
-  # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-  TURBO_FORCE: true
 
 jobs:
   build:
@@ -80,8 +78,6 @@ jobs:
 
       - name: Set up pnpm
         uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-        with:
-          cache: true
 
       - name: Set up Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
@@ -96,7 +92,7 @@ jobs:
 
       - name: Build Next.js (ISR)
         # We want a ISR build on CI to ensure that regular Next.js builds work as expected.
-        run: pnpm exec turbo build ${{ env.TURBO_ARGS }}
+        run: node_modules/.bin/turbo build ${{ env.TURBO_ARGS }}
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
           # this should be a last resort in case by any chances the build memory gets too high
@@ -109,7 +105,7 @@ jobs:
         # We only run full static builds within Pull Requests. This step is also used to export
         # static output in all languages, and it only works on `push` events.
         if: github.event_name == 'push'
-        run: pnpm exec turbo deploy ${{ env.TURBO_ARGS }}
+        run: node_modules/.bin/turbo deploy ${{ env.TURBO_ARGS }}
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
           # this should be a last resort in case by any chances the build memory gets too high
@@ -128,7 +124,7 @@ jobs:
         if: |
           (github.event_name == 'pull_request_target' &&
             github.event.pull_request.head.ref != 'chore/crowdin')
-        run: pnpm exec turbo deploy ${{ env.TURBO_ARGS }}
+        run: node_modules/.bin/turbo deploy ${{ env.TURBO_ARGS }}
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
           # this should be a last resort in case by any chances the build memory gets too high
@@ -149,4 +145,4 @@ jobs:
           ORAMA_SECRET_KEY: ${{ github.event_name == 'push' && secrets.ORAMA_PRODUCTION_SECRET_KEY || secrets.ORAMA_SECRET_KEY }}
         if: matrix.os == 'ubuntu-latest' && github.event_name != 'merge_group'
         working-directory: apps/site
-        run: pnpm sync-orama
+        run: node --run sync-orama

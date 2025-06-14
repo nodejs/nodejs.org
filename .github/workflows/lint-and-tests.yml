@@ -33,8 +33,8 @@ permissions:
   actions: read
 
 env:
-  # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-  TURBO_FORCE: true
+  # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
+  TURBO_ARGS: --cache-dir=.turbo/cache
 
 jobs:
   lint:
@@ -70,8 +70,6 @@ jobs:
 
       - name: Set up pnpm
         uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-        with:
-          cache: true
 
       - name: Set up Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
@@ -90,7 +88,7 @@ jobs:
         if: |
           (github.event_name == 'push' || github.event_name == 'merge_group') ||
           (github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'chore/crowdin')
-        run: pnpm exec turbo lint check-types prettier
+        run: node_modules/.bin/turbo lint lint:types prettier ${{ env.TURBO_ARGS }}
 
       - name: Save Lint Cache
         # We only want to save caches on `push` events or `pull_request_target` events
@@ -127,8 +125,6 @@ jobs:
 
       - name: Set up pnpm
         uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-        with:
-          cache: true
 
       - name: Set up Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
@@ -143,7 +139,7 @@ jobs:
       - name: Run Unit Tests
         # We want to run Unit Tests in every circumstance, including Crowdin PRs and Dependabot PRs to ensure
         # that changes to dependencies or translations don't break the Unit Tests
-        run: pnpm test:ci
+        run: node --run test:ci -- ${{ env.TURBO_ARGS }}
 
       - name: Upload test coverage to Codecov
         if: ${{ !cancelled() && github.event_name != 'merge_group' }}

@@ -4,14 +4,18 @@
 # Infrastructure
 .github @nodejs/web-infra
 .husky @nodejs/web-infra
+codecov.yml @nodejs/web-infra
+
+# Dependencies
+pnpm-workspace.yaml @nodejs/nodejs-website @nodejs/web-infra
+pnpm-lock.yaml @nodejs/web-infra
 
 # Framework
 apps/site/next.config.mjs @nodejs/web-infra
 apps/site/next.dynamic.mjs @nodejs/web-infra
-
-# Node.js Release Blog Posts
-apps/site/pages/en/blog/release @nodejs/releasers
-apps/site/pages/en/blog/announcements @nodejs/releasers
+apps/site/middleware.ts @nodejs/web-infra
+apps/site/navigation.mjs @nodejs/web-infra
+apps/site/playwright.config.ts @nodejs/web-infra
 
 # Package Ecosystem
 package.json @nodejs/nodejs-website
@@ -21,6 +25,19 @@ turbo.json @nodejs/nodejs-website @nodejs/web-infra
 crowdin.yml @nodejs/web-infra
 apps/site/redirects.json @nodejs/web-infra
 apps/site/site.json @nodejs/web-infra
+apps/site/wrangler.jsonc @nodejs/web-infra
+apps/site/open-next.config.ts @nodejs/web-infra
+apps/site/redirects.json @nodejs/web-infra
+
+# Critical Documents
+LICENSE @nodejs/tsc
+GOVERNANCE.md @nodejs/tsc
+CONTRIBUTING.md @nodejs/nodejs-website @nodejs/web-infra
+docs @nodejs/nodejs-website @nodejs/web-infra
+
+# Node.js Release Blog Posts
+apps/site/pages/en/blog/release @nodejs/releasers
+apps/site/pages/en/blog/announcements @nodejs/releasers
 
 # Specific content
 apps/site/pages/en/learn/getting-started/security-best-practices.md @nodejs/security-wg

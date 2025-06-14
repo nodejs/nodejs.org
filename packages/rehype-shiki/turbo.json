@@ -2,9 +2,11 @@
   "$schema": "https://turbo.build/schema.json",
   "extends": ["//"],
   "tasks": {
-    "build": {},
     "lint:js": {
       "inputs": ["src/**/*.mjs"]
+    },
+    "lint:fix": {
+      "cache": false
     },
     "test:unit": {
       "inputs": ["src/**/*.mjs"]

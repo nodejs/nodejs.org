@@ -7,7 +7,9 @@ packages:
 # run installation scripts.
 onlyBuiltDependencies:
   - '@swc/core'
+  - '@tailwindcss/oxide'
   - '@vercel/speed-insights'
   - esbuild
   - sharp
   - unrs-resolver
+  - workerd

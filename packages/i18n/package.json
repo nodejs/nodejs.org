@@ -14,13 +14,15 @@
   "module": "./lib/index.mjs",
   "types": "./dist/index.d.mts",
   "files": [
-    "locales",
-    "index.js",
     "config.json",
+    "index.js",
+    "locales",
     "types.d.ts"
   ],
   "scripts": {
-    "lint:js": "eslint \"**/*.{js,mjs,ts}\""
+    "lint": "turbo lint:js",
+    "lint:js": "eslint \"**/*.{js,mjs,ts}\"",
+    "lint:fix": "node --run lint -- -- --fix"
   },
   "devDependencies": {
     "eslint-import-resolver-typescript": "~4.4.2",

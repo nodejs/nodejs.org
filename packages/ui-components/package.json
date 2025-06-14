@@ -13,23 +13,23 @@
   "files": [
     "Common",
     "Containers",
-    "MDX",
     "Icons",
+    "MDX",
+    "stylelint",
     "styles",
-    "types.ts",
-    "stylelint"
+    "types.ts"
   ],
   "scripts": {
-    "check-types": "tsc --noEmit",
     "lint": "turbo run lint:js lint:css",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
-    "lint:fix": "turbo run lint:js lint:css --no-cache -- --fix",
+    "lint:fix": "node --run lint -- -- --fix",
     "lint:js": "eslint \"**/*.{js,mjs,ts,tsx}\"",
+    "lint:types": "tsc --noEmit",
     "storybook": "cross-env NODE_NO_WARNINGS=1 storybook dev -p 6006 --quiet",
     "storybook:build": "cross-env NODE_NO_WARNINGS=1 storybook build --quiet --webpack-stats-json",
-    "test": "turbo test:unit",
+    "test": "node --run test:unit",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --test-coverage-exclude=**/*.test.* --enable-source-maps --import=global-jsdom/register --import=tsx --import=../../tests/setup.mjs --test **/*.test.*",
-    "test:unit:watch": "cross-env NODE_OPTIONS=\"--watch\" pnpm test:unit"
+    "test:unit:watch": "node --run test:unit -- --watch"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -49,8 +49,8 @@
     "tailwindcss": "~4.0.17"
   },
   "devDependencies": {
-    "@storybook/addon-themes": "^9.0.3",
     "@storybook/addon-styling-webpack": "^1.0.1",
+    "@storybook/addon-themes": "^9.0.3",
     "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
     "@storybook/react": "^9.0.3",
     "@storybook/react-webpack5": "^9.0.3",
