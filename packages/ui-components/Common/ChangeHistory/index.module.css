@@ -43,6 +43,12 @@
     dark:bg-neutral-950;
 }
 
+.dropdownContentInner {
+  @apply max-h-80
+    w-52
+    overflow-y-auto;
+}
+
 .dropdownItem {
   @apply outline-hidden
     block
@@ -60,4 +66,18 @@
     @apply bg-green-600
       text-white;
   }
+}
+
+.dropdownLabel {
+  @apply block
+    text-sm
+    font-medium
+    leading-tight;
+}
+
+.dropdownVersions {
+  @apply block
+    text-xs
+    leading-tight
+    opacity-75;
 }
