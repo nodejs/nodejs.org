@@ -162,6 +162,11 @@
       "status": "Status",
       "details": "Details"
     },
+    "downloadsTable": {
+      "fileName": "File Name",
+      "operatingSystem": "OS",
+      "architecture": "Architecture"
+    },
     "releaseModal": {
       "title": "Node.js {version} ({codename})",
       "titleWithoutCodename": "Node.js {version}",
@@ -173,6 +178,8 @@
     "minorReleasesTable": {
       "version": "Version",
       "links": "Links",
+      "showMore": "Show more",
+      "information": "Version Informations",
       "actions": {
         "release": "Release",
         "changelog": "Changelog",
@@ -321,7 +328,7 @@
         "unsupportedVersionWarning": "This version is out of maintenance. Please use a currently supported version. <link>Understand EOL support.</link>",
         "communityPlatformInfo": "Installation methods that involve community software are supported by the teams maintaining that software.",
         "externalSupportInfo": "If you encounter any issues please visit <link>{platform}'s website</link>",
-        "noScriptDetected": "This page requires JavaScript. You can download Node.js without JavaScript by visiting the <link>releases page</link> directly.",
+        "noScriptDetected": "This page requires JavaScript. You can download Node.js without JavaScript by visiting the <link>downloads archive page</link> directly.",
         "platformInfo": {
           "default": "{platform} and their installation scripts are not maintained by the Node.js project.",
           "nvm": "\"nvm\" is a cross-platform Node.js version manager.",
