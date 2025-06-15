@@ -17,11 +17,11 @@ const ChangeHistory: FC<ChangeHistoryProps> = ({
   label = 'History',
   changes = [],
   align = 'right',
-  className = '',
+  className,
   'aria-label': ariaLabel = label,
   ...props
 }) => (
-  <div className={`${styles.changeHistory} ${className}`} {...props}>
+  <div className={`${styles.changeHistory} ${className ?? ''}`} {...props}>
     {changes.length > 0 ? (
       <details className="group">
         <summary className={styles.summary} role="button" aria-haspopup="menu">
