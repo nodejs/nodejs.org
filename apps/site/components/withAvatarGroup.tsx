@@ -21,9 +21,9 @@ const WithAvatarGroup: FC<WithAvatarGroupProps> = ({
 }) => (
   <AvatarGroup
     avatars={getAuthors({
-      usernames: usernames,
-      names: names,
-      clickable: clickable,
+      usernames,
+      names,
+      clickable,
     })}
     as={Link}
     {...props}

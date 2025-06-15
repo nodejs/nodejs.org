@@ -37,7 +37,14 @@ const getFrontMatter = (filename, source) => {
   // this is the url used for the blog post it based on the category and filename
   const slug = `/blog/${category}/${basename(filename, extname(filename))}`;
 
-  return { title, author, username, date: new Date(date), categories, slug };
+  return {
+    title: title,
+    author: author,
+    username: username,
+    date: new Date(date),
+    categories: categories,
+    slug: slug,
+  };
 };
 
 /**
@@ -103,7 +110,7 @@ const generateBlogData = async () => {
     )
   );
 
-  return { categories: [...blogCategories], posts };
+  return { categories: [...blogCategories], posts: posts };
 };
 
 export default generateBlogData;
