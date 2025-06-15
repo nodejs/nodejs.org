@@ -17,7 +17,7 @@ const ChangeHistory: FC<ChangeHistoryProps> = ({
   label = 'History',
   changes = [],
   align = 'right',
-  className,
+  className = '',
   'aria-label': ariaLabel = label,
   ...props
 }) => (
@@ -37,7 +37,7 @@ const ChangeHistory: FC<ChangeHistoryProps> = ({
           aria-label={ariaLabel}
         >
           <div className={styles.dropdownContentInner}>
-            {changes.map((change, index) => {
+            {changes.map(change => {
               const content = (
                 <>
                   <div className={styles.dropdownLabel}>{change.label}</div>
@@ -47,12 +47,14 @@ const ChangeHistory: FC<ChangeHistoryProps> = ({
                 </>
               );
 
+              const ariaLabel = `${change.label}: ${change.versions.join(', ')}`;
+
               const itemProps = {
-                key: index,
+                key: ariaLabel,
                 className: styles.dropdownItem,
                 role: 'menuitem',
                 tabIndex: 0,
-                ['aria-label']: `${change.label}: ${change.versions.join(', ')}`,
+                ['aria-label']: ariaLabel,
               };
 
               return change.url ? (
