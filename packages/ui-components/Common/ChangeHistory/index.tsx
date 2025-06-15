@@ -47,17 +47,20 @@ const ChangeHistory: FC<ChangeHistoryProps> = ({
                 </>
               );
 
-              return (
-                <a
-                  key={index}
-                  href={change.url}
-                  className={styles.dropdownItem}
-                  role="menuitem"
-                  tabIndex={0}
-                  aria-label={`${change.label}: ${change.versions.join(', ')}`}
-                >
+              const itemProps = {
+                key: index,
+                className: styles.dropdownItem,
+                role: 'menuitem',
+                tabIndex: 0,
+                ['aria-label']: `${change.label}: ${change.versions.join(', ')}`,
+              };
+
+              return change.url ? (
+                <a {...itemProps} href={change.url}>
                   {content}
                 </a>
+              ) : (
+                <div {...itemProps}>{content}</div>
               );
             })}
           </div>
