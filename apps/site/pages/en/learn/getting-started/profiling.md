@@ -41,7 +41,7 @@ app.get('/newUser', (req, res) => {
   let username = req.query.username || '';
   const password = req.query.password || '';
 
-  username = username.replace(/[!@#$%^&*]/g, '');
+  username = username.replace(/[^a-zA-Z0-9]/g, '');
 
   if (!username || !password || users[username]) {
     return res.sendStatus(400);
@@ -63,7 +63,7 @@ app.get('/auth', (req, res) => {
   let username = req.query.username || '';
   const password = req.query.password || '';
 
-  username = username.replace(/[!@#$%^&*]/g, '');
+  username = username.replace(/[^a-zA-Z0-9]/g, '');
 
   if (!username || !password || !users[username]) {
     return res.sendStatus(400);
@@ -228,7 +228,7 @@ app.get('/auth', (req, res) => {
   let username = req.query.username || '';
   const password = req.query.password || '';
 
-  username = username.replace(/[!@#$%^&*]/g, '');
+  username = username.replace(/[^a-zA-Z0-9]/g, '');
 
   if (!username || !password || !users[username]) {
     return res.sendStatus(400);
