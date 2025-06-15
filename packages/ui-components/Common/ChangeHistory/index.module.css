@@ -116,13 +116,3 @@
     leading-tight
     opacity-75;
 }
-
-.emptyState {
-  @apply px-2.5
-    py-1.5
-    text-sm
-    font-medium
-    text-neutral-800
-    opacity-75
-    dark:text-white;
-}

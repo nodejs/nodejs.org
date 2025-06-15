@@ -24,10 +24,10 @@ const ChangeHistory: FC<ChangeHistoryProps> = ({
   <div className={`${styles.changeHistory} ${className}`} {...props}>
     {changes.length > 0 ? (
       <details className="group">
-        <summary className={styles.summary} role="button" aria-haspopup="true">
-          <ClockIcon className={styles.icon} aria-hidden="true" />
+        <summary className={styles.summary} role="button" aria-haspopup="menu">
+          <ClockIcon className={styles.icon} />
           <span>{label}</span>
-          <ChevronDownIcon className={styles.chevron} aria-hidden="true" />
+          <ChevronDownIcon className={styles.chevron} />
         </summary>
         <div
           className={`${styles.dropdownContent} ${
@@ -75,7 +75,7 @@ const ChangeHistory: FC<ChangeHistoryProps> = ({
         aria-disabled="true"
       >
         <ClockIcon className={styles.icon} aria-hidden="true" />
-        <span>History</span>
+        <span>{label}</span>
         <ChevronDownIcon className={styles.chevron} aria-hidden="true" />
       </div>
     )}
