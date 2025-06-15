@@ -1,10 +1,5 @@
 @reference "../../styles/index.css";
 
-.changeHistory {
-  @apply relative
-    inline-block;
-}
-
 .summary {
   @apply outline-hidden
     flex
@@ -28,33 +23,11 @@
     @apply bg-neutral-100
       dark:bg-neutral-900;
   }
-
-  &.disabled {
-    @apply cursor-not-allowed
-      opacity-50;
-
-    &:hover,
-    &:focus-visible {
-      @apply bg-transparent
-        dark:bg-transparent;
-    }
-  }
 }
 
-.icon {
-  @apply h-4
-    w-4;
-}
-
-.chevron {
-  @apply h-3
-    w-3
-    group-open:rotate-180
-    motion-safe:transition-transform;
-}
-
-.dropdownContent {
+.dropdownContentWrapper {
   @apply absolute
+    right-0
     top-full
     z-50
     mt-1
@@ -68,20 +41,6 @@
     shadow-lg
     dark:border-neutral-900
     dark:bg-neutral-950;
-}
-
-.dropdownContent.alignLeft {
-  @apply left-0;
-}
-
-.dropdownContent.alignRight {
-  @apply right-0;
-}
-
-.dropdownContentInner {
-  @apply max-h-80
-    w-52
-    overflow-y-auto;
 }
 
 .dropdownItem {
@@ -101,18 +60,4 @@
     @apply bg-green-600
       text-white;
   }
-}
-
-.dropdownLabel {
-  @apply block
-    text-sm
-    font-medium
-    leading-tight;
-}
-
-.dropdownVersions {
-  @apply block
-    text-xs
-    leading-tight
-    opacity-75;
 }

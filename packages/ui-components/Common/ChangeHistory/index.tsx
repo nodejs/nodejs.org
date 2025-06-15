@@ -1,85 +1,78 @@
 import { ChevronDownIcon, ClockIcon } from '@heroicons/react/24/outline';
-import type { FC } from 'react';
+import classNames from 'classnames';
+import type { FC, ComponentProps } from 'react';
 
 import styles from './index.module.css';
 
-type ChangeHistoryProps = React.JSX.IntrinsicElements['div'] & {
+export type HistoryChange = {
+  versions: Array<string>;
   label: string;
-  changes: Array<{
-    versions: Array<string>;
-    label: string;
-    url?: string;
-  }>;
-  align?: 'left' | 'right';
+  url?: string;
+};
+
+type ChangeHistoryProps = ComponentProps<'div'> & {
+  label: string;
+  changes: Array<HistoryChange>;
 };
 
 const ChangeHistory: FC<ChangeHistoryProps> = ({
   label = 'History',
   changes = [],
-  align = 'right',
   className,
   'aria-label': ariaLabel = label,
   ...props
-}) => (
-  <div className={`${styles.changeHistory} ${className ?? ''}`} {...props}>
-    {changes.length > 0 ? (
+}) => {
+  if (changes.length === 0) {
+    return null;
+  }
+  return (
+    <div
+      className={classNames('relative', 'inline-block', className)}
+      {...props}
+    >
       <details className="group">
         <summary className={styles.summary} role="button" aria-haspopup="menu">
-          <ClockIcon className={styles.icon} />
+          <ClockIcon className="h-4 w-4" />
           <span>{label}</span>
-          <ChevronDownIcon className={styles.chevron} />
+          <ChevronDownIcon className="h-3 w-3 group-open:rotate-180 motion-safe:transition-transform" />
         </summary>
         <div
-          className={`${styles.dropdownContent} ${
-            align === 'left' ? styles.alignLeft : styles.alignRight
-          }`}
+          className={styles.dropdownContentWrapper}
           role="menu"
           aria-label={ariaLabel}
         >
-          <div className={styles.dropdownContentInner}>
-            {changes.map(change => {
+          <div className="max-h-80 w-52 overflow-y-auto">
+            {changes.map((change, index) => {
               const content = (
                 <>
-                  <div className={styles.dropdownLabel}>{change.label}</div>
-                  <div className={styles.dropdownVersions}>
+                  <div className="block text-sm font-medium leading-tight">
+                    {change.label}
+                  </div>
+                  <div className="block text-xs leading-tight opacity-75">
                     {change.versions.join(', ')}
                   </div>
                 </>
               );
 
-              const ariaLabel = `${change.label}: ${change.versions.join(', ')}`;
-
-              const itemProps = {
-                key: ariaLabel,
-                className: styles.dropdownItem,
-                role: 'menuitem',
-                tabIndex: 0,
-                ['aria-label']: ariaLabel,
-              };
-
-              return change.url ? (
-                <a {...itemProps} href={change.url}>
+              const MenuItem = change.url ? 'a' : 'div';
+              return (
+                <MenuItem
+                  key={index}
+                  className={styles.dropdownItem}
+                  role={'menuitem'}
+                  tabIndex={0}
+                  aria-label={`${change.label}:${change.versions.join(', ')}`}
+                  href={change.url}
+                >
                   {content}
-                </a>
-              ) : (
-                <div {...itemProps}>{content}</div>
+                </MenuItem>
               );
             })}
           </div>
         </div>
       </details>
-    ) : (
-      <div
-        className={`${styles.summary} ${styles.disabled}`}
-        role="button"
-        aria-disabled="true"
-      >
-        <ClockIcon className={styles.icon} aria-hidden="true" />
-        <span>{label}</span>
-        <ChevronDownIcon className={styles.chevron} aria-hidden="true" />
-      </div>
-    )}
-  </div>
-);
+    </div>
+  );
+};
 
 export default ChangeHistory;

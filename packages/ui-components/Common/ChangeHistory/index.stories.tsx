@@ -107,36 +107,18 @@ const LARGE_SAMPLE_CHANGES = [
 
 export const Default: Story = {
   render: args => (
-    <div className="flex justify-end">
+    <div className="right-0 flex justify-end">
       <ChangeHistory {...args} />
     </div>
   ),
   args: {
-    changes: SAMPLE_CHANGES,
-  },
-};
-
-export const NoChanges: Story = {
-  render: args => (
-    <div className="flex justify-end">
-      <ChangeHistory {...args} />
-    </div>
-  ),
-  args: {
-    changes: [],
-  },
-};
-
-export const LeftAligned: Story = {
-  args: {
-    align: 'left',
     changes: SAMPLE_CHANGES,
   },
 };
 
 export const LargeHistory: Story = {
   render: args => (
-    <div className="flex justify-end">
+    <div className="right-0 flex justify-end">
       <ChangeHistory {...args} />
     </div>
   ),
