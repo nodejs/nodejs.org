@@ -45,7 +45,7 @@ const ChangeHistory: FC<ChangeHistoryProps> = ({
               <MenuItem
                 key={index}
                 className={styles.dropdownItem}
-                role={'menuitem'}
+                role="menuitem"
                 tabIndex={0}
                 aria-label={`${change.label}: ${change.versions.join(', ')}`}
                 href={change.url}
