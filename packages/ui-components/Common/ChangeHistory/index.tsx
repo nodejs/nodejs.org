@@ -31,7 +31,7 @@ const ChangeHistory: FC<ChangeHistoryProps> = ({
       <summary className={styles.summary} role="button" aria-haspopup="menu">
         <ClockIcon className="size-4" />
         <span>{label}</span>
-        <ChevronDownIcon className="h-3 w-3 group-open:rotate-180 motion-safe:transition-transform" />
+        <ChevronDownIcon className="size-3 group-open:rotate-180 motion-safe:transition-transform" />
       </summary>
       <div
         className={styles.dropdownContentWrapper}
