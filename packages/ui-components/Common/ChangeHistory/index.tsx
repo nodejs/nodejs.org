@@ -41,6 +41,7 @@ const ChangeHistory: FC<ChangeHistoryProps> = ({
         <div className={styles.dropdownContentInner}>
           {changes.map((change, index) => {
             const MenuItem = change.url ? As : 'div';
+
             return (
               <MenuItem
                 key={index}
