@@ -29,7 +29,7 @@ const ChangeHistory: FC<ChangeHistoryProps> = ({
   <div className={classNames('relative', 'inline-block', className)} {...props}>
     <details className="group">
       <summary className={styles.summary} role="button" aria-haspopup="menu">
-        <ClockIcon className="h-4 w-4" />
+        <ClockIcon className="size-4" />
         <span>{label}</span>
         <ChevronDownIcon className="h-3 w-3 group-open:rotate-180 motion-safe:transition-transform" />
       </summary>
