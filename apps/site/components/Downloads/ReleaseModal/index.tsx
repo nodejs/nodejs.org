@@ -39,8 +39,6 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
           level="warning"
           size="small"
         >
-          {t('components.releaseModal.unsupportedVersionWarning')}
-
           {t.rich('components.releaseModal.unsupportedVersionWarning', {
             link: text => <Link href="/about/previous-releases/">{text}</Link>,
           })}
