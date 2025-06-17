@@ -7,7 +7,7 @@ import type { RichTranslationValues } from 'next-intl';
 import type { FC } from 'react';
 
 import Link from '#site/components/Link';
-import { useDocumentTitle } from '#site/hooks';
+import { useClientContext } from '#site/hooks';
 import { useSiteNavigation } from '#site/hooks/server';
 import { useRouter } from '#site/navigation.mjs';
 import type { NavigationKeys } from '#site/types';
@@ -24,7 +24,7 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
   const locale = useLocale();
   const t = useTranslations();
   const { push } = useRouter();
-  const pageTitle = useDocumentTitle();
+  const { frontmatter } = useClientContext();
   const sideNavigation = getSideNavigation(navKeys, context);
 
   const mappedSidebarItems =
@@ -42,7 +42,7 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
       groups={mappedSidebarItems}
       pathname={pathname.replace(`/${locale}`, '')}
       title={t('components.common.sidebar.title')}
-      placeholder={pageTitle}
+      placeholder={frontmatter?.title}
       onSelect={push}
       as={Link}
       {...props}
