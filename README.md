@@ -121,5 +121,5 @@ These are maintained in different repositories and we urge users to open **issue
 [content vs code]: https://github.com/nodejs/nodejs.org/blob/main/docs/content-vs-code.md
 [dependency pinning]: https://github.com/nodejs/nodejs.org/blob/main/docs/dependency-pinning.md
 [collaborator guide]: https://github.com/nodejs/nodejs.org/blob/main/docs/collaborator-guide.md
-[figma design]: https://www.figma.com/file/pu1vZPqNIM7BePd6W8APA5/Node.js
+[figma design]: https://www.figma.com/file/8fG0oWFQArJ7C9WbC9n2wa
 [translation guidelines]: https://github.com/nodejs/nodejs.org/blob/main/docs/translation.md
