@@ -73,13 +73,14 @@
 
   &.secondary {
     @apply rounded-lg
+      bg-neutral-900
       text-neutral-800
       dark:text-neutral-200;
 
     &:hover:not([aria-disabled='true']) {
-      @apply bg-neutral-100
+      @apply bg-neutral-200
         text-neutral-800
-        dark:bg-neutral-900
+        dark:bg-neutral-800
         dark:text-neutral-200;
     }
 
