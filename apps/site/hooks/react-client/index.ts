@@ -4,3 +4,4 @@ export { default as useMediaQuery } from './useMediaQuery';
 export { default as useNotification } from './useNotification';
 export { default as useClientContext } from './useClientContext';
 export { default as useNavigationState } from './useNavigationState';
+export { default as useDocumentTitle } from './useDocumentTitle';
