@@ -31,9 +31,10 @@ const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
     items: items.map(({ label, link }) => ({ value: link, label })),
   }));
 
-  const currentItem = selectItems
-    .flatMap(item => item.items)
-    .find(item => pathname === item.value);
+  const currentItem =
+    selectItems
+      .flatMap(item => item.items)
+      .find(item => pathname === item.value) || selectItems[0]?.items[0];
 
   return (
     <aside className={styles.wrapper}>
