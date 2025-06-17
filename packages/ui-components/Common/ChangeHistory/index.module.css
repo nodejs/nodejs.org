@@ -1,0 +1,83 @@
+@reference "../../styles/index.css";
+
+.summary {
+  @apply outline-hidden
+    flex
+    h-9
+    cursor-pointer
+    select-none
+    items-center
+    gap-2
+    rounded-md
+    border
+    border-neutral-200
+    p-2
+    text-sm
+    text-neutral-700
+    motion-safe:transition-colors
+    dark:border-neutral-900
+    dark:text-neutral-300;
+
+  &:hover,
+  &:focus-visible {
+    @apply bg-neutral-100
+      dark:bg-neutral-900;
+  }
+}
+
+.dropdownContentWrapper {
+  @apply absolute
+    right-0
+    top-full
+    z-50
+    mt-1
+    max-h-80
+    w-52
+    overflow-hidden
+    rounded-sm
+    border
+    border-neutral-200
+    bg-white
+    shadow-lg
+    dark:border-neutral-900
+    dark:bg-neutral-950;
+}
+
+.dropdownContentInner {
+  @apply max-h-80
+    w-52
+    overflow-y-auto;
+}
+
+.dropdownItem {
+  @apply outline-hidden
+    block
+    px-2.5
+    py-1.5
+    text-sm
+    font-medium
+    text-neutral-800
+    no-underline
+    motion-safe:transition-colors
+    dark:text-white;
+
+  &:hover,
+  &:focus-visible {
+    @apply bg-green-600
+      text-white;
+  }
+}
+
+.dropdownLabel {
+  @apply block
+    text-sm
+    font-medium
+    leading-tight;
+}
+
+.dropdownVersions {
+  @apply block
+    text-xs
+    leading-tight
+    opacity-75;
+}
