@@ -15,6 +15,7 @@ type SidebarProps = {
   onSelect: (value: string) => void;
   as?: LinkLike;
   showProgressionIcons?: boolean;
+  placeholder?: string;
 };
 
 const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
@@ -25,6 +26,7 @@ const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
   as,
   showProgressionIcons = false,
   children,
+  placeholder,
 }) => {
   const selectItems = groups.map(({ items, groupName }) => ({
     label: groupName,
@@ -44,6 +46,7 @@ const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
           label={title}
           values={selectItems}
           defaultValue={currentItem?.value}
+          placeholder={placeholder}
           onChange={onSelect}
           className={styles.mobileSelect}
         />
