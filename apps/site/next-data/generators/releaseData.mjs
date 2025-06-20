@@ -77,8 +77,12 @@ const generateReleaseData = async () => {
     const status = getNodeReleaseStatus(new Date(), support);
 
     const minorVersions = Object.entries(major.releases).map(([, release]) => ({
-      version: release.semver.raw,
+      modules: release.modules.version || '',
+      npm: release.dependencies.npm || '',
       releaseDate: release.releaseDate,
+      v8: release.dependencies.v8,
+      version: release.semver.raw,
+      versionWithPrefix: `v${release.semver.raw}`,
     }));
 
     const majorVersion = latestVersion.semver.major;

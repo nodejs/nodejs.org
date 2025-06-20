@@ -1,8 +1,29 @@
 @reference "../../../styles/index.css";
 
-.links {
+.additionalLinks {
   @apply flex
     h-4
     items-center
     gap-2;
+}
+
+.items {
+  @apply flex
+    h-9
+    gap-2;
+}
+
+.scrollable {
+  @apply scrollbar-thin
+    flex
+    max-h-[29rem]
+    overflow-y-auto;
+}
+
+.information {
+  @apply md:w-96;
+}
+
+.links {
+  @apply md:w-44;
 }
