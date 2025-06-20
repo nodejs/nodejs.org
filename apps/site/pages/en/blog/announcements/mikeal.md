@@ -1,7 +1,7 @@
 ---
 date: '2025-04-20T15:00:00.000Z'
 category: announcements
-title: In Memory of Mikeal Rogers: A Builder of Communities
+title: 'In Memory of Mikeal Rogers: A Builder of Communities'
 layout: blog-post
 author: Robin Bender Ginn
 ---
