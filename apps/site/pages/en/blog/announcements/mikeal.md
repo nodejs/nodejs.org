@@ -4,6 +4,7 @@ category: announcements
 title: 'In Memory of Mikeal Rogers: A Builder of Communities'
 layout: blog-post
 author: Robin Bender Ginn
+canonical: https://openjsf.org/blog/in-memory-of-mikeal-rogers
 ---
 
 ![][mikeal-rogers-image]
