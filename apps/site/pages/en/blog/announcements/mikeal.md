@@ -18,4 +18,4 @@ This work led to the reunification of io.js and Node.js, under a new, more open 
 
 His passing is a tremendous loss to the Node.js community, to the broader open web, and to everyone who cares about the health and sustainability of open source. We extend our deepest condolences to his family, friends, and the many people around the world who learned from, worked with, and were inspired by him. The best way to honor his work is to continue building the kind of open, welcoming, and resilient communities he spent his life advocating for.
 
-[mikeal-rogers-image]: /static/images/blog/announcements/mikeal.jpg]
+[mikeal-rogers-image]: /static/images/blog/announcements/mikeal.jpg
