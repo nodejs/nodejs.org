@@ -230,7 +230,8 @@ const getDynamicRouter = async () => {
     ];
 
     // Default canonical URL for the page
-    pageMetadata.alternates.canonical = getUrlForPathname(locale, path);
+    pageMetadata.alternates.canonical =
+      data.canonical ?? getUrlForPathname(locale, path);
 
     // Default alternate URL for the page in the default locale
     pageMetadata.alternates.languages['x-default'] = getUrlForPathname(
