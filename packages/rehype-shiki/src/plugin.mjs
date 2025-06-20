@@ -110,7 +110,7 @@ export default function rehypeShikiji() {
           properties: {
             languages: languages.join('|'),
             displayNames: displayNames.join('|'),
-            defaultTab,
+            defaultTab: defaultTab,
           },
         };
 

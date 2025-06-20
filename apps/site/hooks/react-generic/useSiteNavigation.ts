@@ -49,7 +49,7 @@ const useSiteNavigation = () => {
       ] => [
         key,
         {
-          target,
+          target: target,
           label: label ? getFormattedMessage(label, key) : '',
           link: link ? replaceLinkWithContext(link, context[key]) : '',
           items: items ? mapNavigationEntries(items, context) : [],

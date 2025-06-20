@@ -22,12 +22,13 @@ export const releaseState: Types.ReleaseState = {
 export const getActions = (
   dispatch: Dispatch<Types.ReleaseAction>
 ): Types.ReleaseDispatchActions => ({
-  setVersion: payload => dispatch({ type: 'SET_VERSION', payload }),
-  setOS: payload => dispatch({ type: 'SET_OS', payload }),
-  setPlatform: payload => dispatch({ type: 'SET_PLATFORM', payload }),
+  setVersion: payload => dispatch({ type: 'SET_VERSION', payload: payload }),
+  setOS: payload => dispatch({ type: 'SET_OS', payload: payload }),
+  setPlatform: payload => dispatch({ type: 'SET_PLATFORM', payload: payload }),
   setInstallMethod: payload =>
-    dispatch({ type: 'SET_INSTALL_METHOD', payload }),
-  setPackageManager: payload => dispatch({ type: 'SET_MANAGER', payload }),
+    dispatch({ type: 'SET_INSTALL_METHOD', payload: payload }),
+  setPackageManager: payload =>
+    dispatch({ type: 'SET_MANAGER', payload: payload }),
 });
 
 const reducer = (

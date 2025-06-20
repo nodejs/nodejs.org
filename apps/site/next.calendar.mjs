@@ -18,8 +18,8 @@ export const getCalendarEvents = async (calendarId = '', maxResults = 20) => {
   nextWeekDate.setDate(currentDate.getDate() + 7);
 
   const calendarQueryParams = new URLSearchParams({
-    calendarId,
-    maxResults,
+    calendarId: calendarId,
+    maxResults: maxResults,
     singleEvents: true,
     timeZone: 'Etc/Utc',
     key: SHARED_CALENDAR_KEY,
