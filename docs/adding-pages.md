@@ -63,7 +63,7 @@ The frontmatter (YAML block at the top) configures page metadata:
 - `description`: Optional meta description for SEO
 - `authors`: For learn pages, list of GitHub usernames
 
-Where content has been syndicated from another source, you can also include:
+In cases where content has been syndicated from another source, you should also include:
 
 - `canonical`: The original URL of the content
 
