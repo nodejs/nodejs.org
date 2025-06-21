@@ -6,9 +6,14 @@ import type { ElementType } from 'react';
 import satisfies from 'semver/functions/satisfies';
 
 import { DIST_URL } from '#site/next.constants.mjs';
-import type { IntlMessageKeys, NodeReleaseStatus } from '#site/types';
+import type {
+  IntlMessageKeys,
+  NodeReleaseStatus,
+  UserOS,
+  UserPlatform,
+  DownloadKind,
+} from '#site/types';
 import type * as Types from '#site/types/release';
-import type { UserOS, UserPlatform } from '#site/types/userOS';
 
 import constants from './constants.json';
 
@@ -150,8 +155,6 @@ export const PLATFORMS = Object.fromEntries(
     })),
   ])
 ) as Record<UserOS | 'LOADING', Array<DownloadDropdownItem<UserPlatform>>>;
-
-export type DownloadKind = 'installer' | 'binary' | 'source';
 
 export const getNodeDownloadUrl = (
   versionWithPrefix: string,

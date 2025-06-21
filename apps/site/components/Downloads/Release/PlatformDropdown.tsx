@@ -7,7 +7,7 @@ import { useEffect, useContext, useMemo } from 'react';
 
 import { useClientContext } from '#site/hooks';
 import { ReleaseContext } from '#site/providers/releaseProvider';
-import type { UserPlatform } from '#site/types/userOS';
+import type { UserPlatform } from '#site/types/userAgent';
 import { PLATFORMS, nextItem, parseCompat } from '#site/util/download';
 import { getUserPlatform } from '#site/util/userAgent';
 

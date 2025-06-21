@@ -2,7 +2,11 @@
 
 import { useEffect, useState } from 'react';
 
-import type { UserArchitecture, UserBitness, UserOS } from '#site/types/userOS';
+import type {
+  UserArchitecture,
+  UserBitness,
+  UserOS,
+} from '#site/types/userAgent';
 import { getHighEntropyValues, detectOS } from '#site/util/userAgent';
 
 type UserOSState = {

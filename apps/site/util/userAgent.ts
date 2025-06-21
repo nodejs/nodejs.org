@@ -1,7 +1,11 @@
 /// <reference types="user-agent-data-types" />
 
-import type * as Types from '#site/types/userOS';
-import type { UserOS } from '#site/types/userOS';
+import type {
+  UserOS,
+  UserArchitecture,
+  UserBitness,
+  UserPlatform,
+} from '#site/types';
 
 // Constants for better maintainability
 const OS_PATTERNS = /(Win|Mac|Linux|AIX)/;
@@ -30,9 +34,9 @@ export const detectOS = (): UserOS => detectOsInUserAgent(navigator?.userAgent);
  * @see https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/getHighEntropyValues
  */
 export const getUserPlatform = (
-  userArchitecture: Types.UserArchitecture | '',
-  userBitness: Types.UserBitness | ''
-): Types.UserPlatform => {
+  userArchitecture: UserArchitecture | '',
+  userBitness: UserBitness | ''
+): UserPlatform => {
   if (userArchitecture === 'arm' && userBitness === '64') {
     return 'arm64';
   }

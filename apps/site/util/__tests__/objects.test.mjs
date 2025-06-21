@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it, beforeEach } from 'node:test';
 
-import { deepMerge, debounce } from '#site/util/misc';
+import { deepMerge, debounce } from '#site/util/objects';
 
 describe('deepMerge', () => {
   it('should merge nested objects', () => {
