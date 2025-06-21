@@ -2,9 +2,12 @@
 
 import { useEffect, useState } from 'react';
 
-import type { UserArchitecture, UserBitness, UserOS } from '#site/types/userOS';
-import { detectOS } from '#site/util/detectOS';
-import { getHighEntropyValues } from '#site/util/getHighEntropyValues';
+import type {
+  UserArchitecture,
+  UserBitness,
+  UserOS,
+} from '#site/types/userAgent';
+import { getHighEntropyValues, detectOS } from '#site/util/userAgent';
 
 type UserOSState = {
   os: UserOS | 'LOADING';

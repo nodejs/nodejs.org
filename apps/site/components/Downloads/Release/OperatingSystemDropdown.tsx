@@ -7,12 +7,8 @@ import type { FC } from 'react';
 
 import { useClientContext } from '#site/hooks';
 import { ReleaseContext } from '#site/providers/releaseProvider';
-import type { UserOS } from '#site/types/userOS';
-import {
-  nextItem,
-  OPERATING_SYSTEMS,
-  parseCompat,
-} from '#site/util/downloadUtils';
+import type { UserOS } from '#site/types/userAgent';
+import { nextItem, OPERATING_SYSTEMS, parseCompat } from '#site/util/download';
 
 type OperatingSystemDropdownProps = { exclude?: Array<UserOS> };
 

@@ -4,7 +4,7 @@ import type { FC } from 'react';
 
 import Link from '#site/components/Link';
 import { siteConfig } from '#site/next.json.mjs';
-import { dateIsBetween } from '#site/util/dateUtils';
+import { dateIsBetween } from '#site/util/date';
 
 const WithBanner: FC<{ section: string }> = ({ section }) => {
   const banner = siteConfig.websiteBanners[section];

@@ -1,7 +1,12 @@
 import assert from 'node:assert/strict';
-import { describe, it } from 'node:test';
+import { describe, it, beforeEach } from 'node:test';
 
-import { detectOsInUserAgent, detectOS } from '#site/util/detectOS';
+import {
+  detectOS,
+  detectOsInUserAgent,
+  getHighEntropyValues,
+  getUserPlatform,
+} from '#site/util/userAgent';
 
 const userAgentTestCases = [
   [
@@ -28,6 +33,22 @@ const userAgentTestCases = [
   ['OTHERAgent/1.0', 'OTHER'],
   [undefined, 'OTHER'],
 ];
+
+const mock = () => Promise.resolve({ platform: 'Win32', architecture: 'x86' });
+
+describe('getUserPlatform', () => {
+  it('should return arm64 for arm + 64', () => {
+    assert.equal(getUserPlatform('arm', '64'), 'arm64');
+  });
+
+  it('should return x64 for non-arm + 64', () => {
+    assert.equal(getUserPlatform('amd64', '64'), 'x64');
+  });
+
+  it('should return x86 otherwise', () => {
+    assert.equal(getUserPlatform('amd64', '32'), 'x86');
+  });
+});
 
 describe('detectOsInUserAgent', () => {
   for (const [userAgent, expected] of userAgentTestCases) {
@@ -67,5 +88,41 @@ describe('detectOS', () => {
       configurable: true,
     });
     assert.equal(detectOS(), 'OTHER');
+  });
+});
+
+describe('getHighEntropyValues', () => {
+  beforeEach(() => {
+    Object.defineProperty(global, 'navigator', {
+      value: {
+        userAgentData: {
+          getHighEntropyValues: mock,
+        },
+      },
+      configurable: true,
+    });
+  });
+
+  it('should resolve and return hint values', async () => {
+    const result = await getHighEntropyValues(['platform']);
+    assert.equal(result.platform, 'Win32');
+  });
+
+  it('should return an empty object on rejection', async () => {
+    navigator.userAgentData.getHighEntropyValues = () => Promise.resolve({});
+    const result = await getHighEntropyValues(['platform']);
+    assert.equal(result.platform, undefined);
+    navigator.userAgentData.getHighEntropyValues = mock;
+  });
+
+  it('should return multiple hint values', async () => {
+    const result = await getHighEntropyValues(['platform', 'architecture']);
+    assert.equal(result.platform, 'Win32');
+    assert.equal(result.architecture, 'x86');
+  });
+
+  it('should return undefined for unsupported hints', async () => {
+    const result = await getHighEntropyValues(['unsupportedHint']);
+    assert.equal(result.unsupportedHint, undefined);
   });
 });

@@ -12,7 +12,7 @@ import useMediaQuery from '#site/hooks/react-client/useMediaQuery';
 import { DEFAULT_DATE_FORMAT } from '#site/next.calendar.constants.mjs';
 import { TRANSLATION_URL } from '#site/next.constants.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
-import { getGitHubBlobUrl } from '#site/util/gitHubUtils';
+import { getGitHubBlobUrl } from '#site/util/github';
 
 const WithMetaBar: FC = () => {
   const { headings, readingTime, frontmatter, filename } = useClientContext();

@@ -3,3 +3,5 @@ export interface DownloadSnippet {
   language: string;
   content: string;
 }
+
+export type DownloadKind = 'installer' | 'binary' | 'source';
