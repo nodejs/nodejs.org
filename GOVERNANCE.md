@@ -2,12 +2,66 @@
 
 The Node.js Web Team (@nodejs/web) is a team in the Node.js Project that is composed by a set of subteams. Each containing specific responsibilities and goals.
 
-### TSC Oversight
+## Relationship with the TSC
 
-Any website change that expresses a position about a global event or group of people requires explicit
-[TSC](https://github.com/nodejs/TSC/blob/main/TSC-Charter.md#section-4-responsibilities-of-the-tsc)
-approval. This can be obtained by pinging `@nodejs/tsc` and receive no objections after seven days,
-or by sending an email to `tsc@iojs.org` and receive at least one approval and no objections after seven days.
+The Website Team operates with significant autonomy for most website decisions, but must recognize the TSC's ultimate authority on matters affecting Node.js project representation, branding, and strategic partnerships.
+
+### Decision Authority Hierarchy
+
+1. **Website Team Authority**
+
+   - Technical implementation details
+   - User interface and experience design
+   - Content organization and information architecture
+   - Day-to-day maintenance and updates
+
+2. **TSC Authority**
+   - Project-wide policies and governance
+   - Strategic partnerships and representation
+   - Major structural or navigational changes
+   - Content that affects Node.js project positioning
+
+### Content Requiring TSC Approval
+
+- **Statements on Sociopolitical Issues**: Any content expressing positions on political, social, cultural, or humanitarian matters
+- **Commercial Relationships and Endorsements**: Any content establishing or promoting commercial partnerships, vendor preferences, or paid services related to Node.js
+
+Website changes falling under these categories require **formal TSC endorsement** as outlined in the [TSC Charter](https://github.com/nodejs/TSC/blob/main/TSC-Charter.md#section-4-responsibilities-of-the-tsc). Valid approval consists of at least one TSC member's explicit approval with no objections from any TSC members. This endorsement may be secured through either:
+
+- Pinging `@nodejs/tsc` OR
+- Sending an email to `tsc@iojs.org`
+
+### Handling TSC Feedback and Concerns
+
+When TSC members express concerns about proposed changes:
+
+1. **Documentation Requirement**: Document all TSC feedback in the relevant issue or PR
+2. **Hold Period**: Pause implementation until concerns are addressed
+3. **Resolution Process**:
+   - Seek clarification on specific concerns
+   - Propose compromise solutions
+   - Document resolution attempts and outcomes
+
+### Dispute Resolution Process
+
+If disagreements arise between the Website Team and TSC regarding website changes:
+
+1. **Escalation Path**:
+
+   - First attempt: Direct discussion on the PR/issue
+   - Second attempt: Scheduled discussion in TSC meeting
+   - Final resolution: Formal TSC vote if needed
+
+2. **Implementation Requirements**:
+
+   - Changes with unresolved TSC objections must not proceed without formal TSC approval
+   - When in doubt about approval status, seek explicit confirmation
+   - Document the resolution and approval in the PR before merging
+
+3. **Documentation Standard**:
+   - All significant disagreements and their resolutions must be documented
+   - TSC approvals should be explicit and documented in writing
+   - Approval pathways should be clear to all current and future contributors
 
 ### Node.js Website Team (`@nodejs/nodejs-website`)
 
