@@ -5,7 +5,6 @@ import type { FC } from 'react';
 
 import { MinorReleasesTable } from '#site/components/Downloads/MinorReleasesTable';
 import { ReleaseOverview } from '#site/components/Downloads/ReleaseOverview';
-import Link from '#site/components/Link';
 import LinkWithArrow from '#site/components/LinkWithArrow';
 import type { NodeRelease } from '#site/types';
 
@@ -39,21 +38,7 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
           level="warning"
           size="small"
         >
-          {t.rich('components.releaseModal.unsupportedVersionWarning', {
-            link: text => <Link href="/about/previous-releases/">{text}</Link>,
-          })}
-        </AlertBox>
-      )}
-
-      {release.status === 'LTS' && (
-        <AlertBox
-          title={t('components.common.alertBox.info')}
-          level="info"
-          size="small"
-        >
-          {t.rich('components.releaseModal.ltsVersionFeaturesNotice', {
-            link: text => <Link href="/download/current">{text}</Link>,
-          })}
+          {t('components.releaseModal.unsupportedVersionWarning')}
         </AlertBox>
       )}
 

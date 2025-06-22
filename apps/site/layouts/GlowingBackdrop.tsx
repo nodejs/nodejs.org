@@ -16,7 +16,6 @@ const GlowingBackdropLayout: FC<
 > = ({ kind = 'home', children }) => (
   <>
     <WithNavBar />
-
     <div className={styles.centeredLayout}>
       <GlowingBackdrop />
 
