@@ -63,6 +63,10 @@ The frontmatter (YAML block at the top) configures page metadata:
 - `description`: Optional meta description for SEO
 - `authors`: For learn pages, list of GitHub usernames
 
+In cases where content has been syndicated from another source, you should also include:
+
+- `canonical`: The original URL of the content
+
 ### 3. Choose the Appropriate Layout
 
 Available layouts are defined in `apps/site/layouts/`, and mapped in `components/withLayout`.
