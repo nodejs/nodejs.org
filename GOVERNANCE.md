@@ -63,6 +63,8 @@ If disagreements arise between the Website Team and TSC regarding website change
    - TSC approvals should be explicit and documented in writing
    - Approval pathways should be clear to all current and future contributors
 
+## Website Teams
+
 ### Node.js Website Team (`@nodejs/nodejs-website`)
 
 The Node.js Website Team is responsible for the day-to-day technical development of the Node.js Website. This is primarily the development of the website itself, adding new features, pages and components, but also fixing any security issues in the website code, handling operational maintenance, and so on.
