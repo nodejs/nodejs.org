@@ -17,7 +17,7 @@ The scope of projects you worked on expanded, and you started needing to glue to
 
 Your expertise grew, and you realized that the labels you felt so comfortable with no longer adequately describe who you are. You rewrote a class using functional patterns, and found it a clearer expression of your intent. You tried a different language, and found it better able to capture the vision in your mind.
 
-I could rattle off a litany of examples of seismic shifts where new ideas shook what we believed to be true; Rails' influence on Ruby, Docker's influence on executables, CoffeeScript's influence on JavaScript, Electron's influence on desktop apps, Kubernete's influence on systems architecture, React's influence on web development, the Serverless pattern's influence on http request handling. The only constant is change.
+I could rattle off a litany of examples of seismic shifts where new ideas shook what we believed to be true; Rails' influence on Ruby, Docker's influence on executables, CoffeeScript's influence on JavaScript, Electron's influence on desktop apps, Kubernetes' influence on systems architecture, React's influence on web development, the Serverless pattern's influence on http request handling. The only constant is change.
 
 ---
 
@@ -27,7 +27,7 @@ We grow older, and a boy finds they can't stop staring at how another boy moves.
 
 These labels are hard-won knowledge dating back decades, centuries, millenia. Regardless of your moral opinion on the matter, there are indisputable references to queer identity in literature, media, culture, religion, spirituality, dating back thousands of years. Its presence is inarguable.
 
-Even with this cultural legacy, some of us have learned through our lives that these labels too are insufficient. Like open-source, we take what was known and build on it. New labels are created and spread through word of mouth, through writing and videos, through intimiate conversations with our friends and partners. An academic publishes survey results; a TikTok creator's video resonates; a psychologist writes a bestselling book. As advancements in open source inform our profession, evolving language around queer identity informs our self image; indistinct visions gain clarity.
+Even with this cultural legacy, some of us have learned through our lives that these labels too are insufficient. Like open-source, we take what was known and build on it. New labels are created and spread through word of mouth, through writing and videos, through intimate conversations with our friends and partners. An academic publishes survey results; a TikTok creator's video resonates; a psychologist writes a bestselling book. As advancements in open source inform our profession, evolving language around queer identity informs our self image; indistinct visions gain clarity.
 
 ---
 
