@@ -14,10 +14,6 @@ export const HorizontalLogo: StoryObj = {
   render: () => <Nodejs width={267} height={80} />,
 };
 
-export const PrideLogo: StoryObj = {
-  render: () => <Nodejs variant="pride" width={267} height={80} />,
-};
-
 export const StackedLogos: StoryObj = {
   render: () => (
     <div className="flex flex-row gap-4">

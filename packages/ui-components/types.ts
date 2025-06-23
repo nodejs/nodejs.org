@@ -6,7 +6,7 @@ import type {
   ReactNode,
 } from 'react';
 
-export type LogoVariant = 'default' | 'pride';
+export type LogoVariant = 'default';
 export type TailwindSVG = SVGProps<SVGSVGElement> & { tw?: string };
 export type BlogPreviewType = 'announcements' | 'release' | 'vulnerability';
 export type LinkLike =

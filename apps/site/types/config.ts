@@ -13,7 +13,7 @@ export interface OGConfig {
   imgHeight: string;
 }
 
-export type LogoVariant = 'default' | 'pride';
+export type LogoVariant = 'default';
 
 export interface SiteConfig {
   title: string;
