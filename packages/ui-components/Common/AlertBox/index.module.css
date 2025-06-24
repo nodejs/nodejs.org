@@ -78,6 +78,6 @@
     /* Ignore the styles from `markdown.css` */
     all: unset;
 
-    @apply font-mono;
+    @apply font-ibm-plex-mono;
   }
 }
