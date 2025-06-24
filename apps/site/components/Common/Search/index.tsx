@@ -21,18 +21,10 @@ import { SlidingPanel } from '@orama/ui/components/SlidingPanel';
 import Suggestions from '@orama/ui/components/Suggestions';
 import { useScrollableContainer } from '@orama/ui/hooks/useScrollableContainer';
 import classNames from 'classnames';
+import Link from 'next/link';
+import { useLocale } from 'next-intl';
 import { useTranslations } from 'next-intl';
-// import { useTheme } from 'next-themes';
 import { Fragment, useState, type FC, type PropsWithChildren } from 'react';
-
-// import { useRouter } from '#site/navigation.mjs';
-// import {
-//   ORAMA_CLOUD_ENDPOINT,
-//   ORAMA_CLOUD_API_KEY,
-//   DEFAULT_ORAMA_QUERY_PARAMS,
-//   DEFAULT_ORAMA_SUGGESTIONS,
-//   BASE_URL,
-// } from '#site/next.constants.mjs';
 
 import styles from './index.module.css';
 
@@ -41,8 +33,6 @@ const oramaClient = new CollectionManager({
   collectionID: 'dpygf82gs9bvtf6o85fjuj40',
   readAPIKey: '2pj8SUaPGbakScglDBHfJbV5aIuWmT7y',
 });
-
-// import { themeConfig, translationKeys } from './utils';
 
 const uppercaseFirst = (word: string) =>
   word.charAt(0).toUpperCase() + word.slice(1);
@@ -57,11 +47,7 @@ const getFormattedPath = (path: string, title: string) =>
     .join(' > ')} — ${title}`;
 
 const InnerSearchBox: FC<PropsWithChildren> = () => {
-  // const { resolvedTheme } = useTheme();
-  // const t = useTranslations();
-  // const locale = useLocale();
-  // const colorScheme = resolvedTheme as 'light' | 'dark';
-  // const router = useRouter();
+  const locale = useLocale();
   const [displayChat, setDisplayChat] = useState(false);
   const {
     containerRef,
@@ -70,24 +56,9 @@ const InnerSearchBox: FC<PropsWithChildren> = () => {
     recalculateGoToBottomButton,
   } = useScrollableContainer();
 
-  // const sourceMap = {
-  //   title: 'pageSectionTitle',
-  //   description: 'formattedPath',
-  //   path: 'path',
-  // };
-
-  // const resultMap = {
-  //   ...sourceMap,
-  //   description: ({ path, pageSectionTitle }: ResultMapDescription) =>
-  //     getFormattedPath(path, pageSectionTitle),
-  //   path: ({ path, siteSection }: ResultMapPath) =>
-  //     siteSection.toLowerCase() === 'docs' ? `/${path}` : `/${locale}/${path}`,
-  //   section: 'siteSection',
-  // };
-
   return (
     <>
-      <SearchInput.Wrapper className="relative mb-1 flex-shrink-0">
+      <SearchInput.Wrapper className={styles.searchInputWrapper}>
         <SearchInput.Input
           inputId="product-search"
           ariaLabel="Search for products"
@@ -182,30 +153,30 @@ const InnerSearchBox: FC<PropsWithChildren> = () => {
               </h2>
               <SearchResults.GroupList group={group}>
                 {hit => (
-                  <SearchResults.Item
-                    as="a"
-                    href={
-                      typeof hit.document?.path === 'string'
-                        ? hit.document.path
-                        : '#'
-                    }
-                    className="border-b-1 block cursor-pointer border-gray-200 bg-white px-3 py-4 duration-200 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:hover:bg-gray-700"
-                  >
-                    {/* CUSTOM ITEM CONTENT */}
-                    {typeof hit.document?.pageSectionTitle === 'string' && (
-                      <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200">
-                        {hit.document?.pageSectionTitle}
-                      </h3>
-                    )}
-                    {typeof hit.document?.pageSectionTitle === 'string' &&
-                      typeof hit.document?.path === 'string' && (
-                        <p className="overflow-hidden text-ellipsis text-sm text-slate-600 dark:text-slate-400">
-                          {getFormattedPath(
-                            hit.document?.path,
-                            hit.document?.pageSectionTitle
-                          )}
-                        </p>
+                  <SearchResults.Item className="border-b-1 block cursor-pointer border-gray-200 bg-white px-3 py-4 duration-200 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:hover:bg-gray-700">
+                    <Link
+                      href={
+                        (hit.document.siteSection as string).toLowerCase() ===
+                        'docs'
+                          ? `/${hit.document.path}`
+                          : `/${locale}/${hit.document.path}`
+                      }
+                    >
+                      {typeof hit.document?.pageSectionTitle === 'string' && (
+                        <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200">
+                          {hit.document?.pageSectionTitle}
+                        </h3>
                       )}
+                      {typeof hit.document?.pageSectionTitle === 'string' &&
+                        typeof hit.document?.path === 'string' && (
+                          <p className="overflow-hidden text-ellipsis text-sm text-slate-600 dark:text-slate-400">
+                            {getFormattedPath(
+                              hit.document?.path,
+                              hit.document?.pageSectionTitle
+                            )}
+                          </p>
+                        )}
+                    </Link>
                   </SearchResults.Item>
                 )}
               </SearchResults.GroupList>
@@ -213,76 +184,6 @@ const InnerSearchBox: FC<PropsWithChildren> = () => {
           )}
         </SearchResults.GroupsWrapper>
       </div>
-      {/* <OramaSearchBox
-        index={{ api_key: ORAMA_CLOUD_API_KEY, endpoint: ORAMA_CLOUD_ENDPOINT }}
-        colorScheme={colorScheme}
-        themeConfig={themeConfig}
-        sourceBaseUrl={BASE_URL}
-        sourcesMap={sourceMap}
-        resultMap={resultMap}
-        facetProperty="siteSection"
-        linksTarget="_self"
-        highlightTitle={{
-          caseSensitive: false,
-          HTMLTag: 'b',
-          CSSClass: 'font-bold',
-        }}
-        dictionary={Object.fromEntries(
-          translationKeys.map(key => [key, t(`components.search.${key}`)])
-        )}
-        searchParams={DEFAULT_ORAMA_QUERY_PARAMS}
-        suggestions={DEFAULT_ORAMA_SUGGESTIONS}
-        chatMarkdownLinkHref={({ href }) => {
-          if (!href) {
-            return href;
-          }
-
-          const baseURLObject = new URL(BASE_URL);
-          const baseURLHostName = baseURLObject.hostname;
-
-          const searchBoxURLObject = new URL(href);
-          const searchBoxURLHostName = searchBoxURLObject.hostname;
-          const serachBoxURLPathName = searchBoxURLObject.pathname;
-
-          // We do not want to add the locale to the url for external links and docs links
-          if (
-            baseURLHostName !== searchBoxURLHostName ||
-            serachBoxURLPathName.startsWith('/docs/')
-          ) {
-            return href;
-          }
-
-          const URLWithLocale = new URL(
-            `${locale}${searchBoxURLObject.pathname}`,
-            searchBoxURLObject.origin
-          );
-
-          return URLWithLocale.href;
-        }}
-        onAnswerSourceClick={event => {
-          event.preventDefault();
-
-          const baseURLObject = new URL(BASE_URL);
-
-          const { path } = event.detail.source;
-
-          const finalPath = path.startsWith('docs/')
-            ? path
-            : `${locale}/${path}`;
-
-          const finalURL = new URL(finalPath, baseURLObject);
-
-          window.open(finalURL, '_blank');
-        }}
-        onSearchResultClick={event => {
-          event.preventDefault();
-
-          const fullURLObject = new URL(event.detail.result.path, BASE_URL);
-
-          // result.path already contains LOCALE. Locale is set to undefined here so router does not add it once again.
-          router.push(fullURLObject.href, { locale: undefined });
-        }}
-      /> */}
       <SlidingPanel.Wrapper
         open={displayChat}
         onClose={() => setDisplayChat(false)}
@@ -451,6 +352,7 @@ const OramaSearch: FC<PropsWithChildren> = () => {
           <MagnifyingGlassIcon className="h-4 w-4" />
           {t('components.search.searchPlaceholder')}
         </div>
+        <span className={styles.searchButtonShortcut}>⌘ K</span>
       </button>
 
       <Modal.Wrapper

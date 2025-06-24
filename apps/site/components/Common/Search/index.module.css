@@ -1,22 +1,53 @@
 @reference "../../../styles/index.css";
 
-.searchButton {
-  @apply text-accent1-100
-    dark:text-accent1-100
+.searchWrapper {
+  @apply relative
     flex
+    w-full
+    flex-shrink-0;
+}
+
+.searchButton {
+  @apply flex
     grow
     cursor-pointer
     items-center
-    justify-center
-    gap-1;
+    justify-between
+    gap-1
+    rounded-xl
+    border
+    border-neutral-300
+    bg-white
+    p-2
+    text-neutral-900
+    transition-colors
+    duration-300
+    hover:bg-neutral-100
+    dark:border-neutral-900
+    dark:bg-neutral-950
+    dark:text-neutral-200
+    hover:dark:bg-neutral-900;
 }
 
 .searchButtonContent {
   @apply flex
     flex-nowrap
     items-center
-    gap-2
+    gap-1
     text-sm;
+}
+
+.searchButtonShortcut {
+  @apply hidden
+    rounded-md
+    bg-neutral-300
+    px-2
+    py-1
+    text-sm
+    text-neutral-800
+    sm:inline
+    dark:bg-neutral-900
+    dark:text-neutral-400;
 }
 
 .modalWrapper {
@@ -28,7 +59,7 @@
     h-full
     w-full
     bg-white/70
-    dark:bg-neutral-950/70;
+    dark:bg-neutral-950/85;
 }
 
 .modalInner {
