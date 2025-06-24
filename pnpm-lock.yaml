@@ -99,9 +99,15 @@ importers:
       '@opentelemetry/sdk-logs':
         specifier: ~0.202.0
         version: 0.202.0(@opentelemetry/api@1.9.0)
+      '@orama/core':
+        specifier: ^0.1.10
+        version: 0.1.10
       '@orama/react-components':
-        specifier: ^0.8.1
-        version: 0.8.1(@stencil/core@4.30.0)(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^0.8.0
+        version: 0.8.0(@stencil/core@4.30.0)(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@orama/ui':
+        specifier: ^0.0.4
+        version: 0.0.4(@orama/core@0.1.10)(@types/react@19.1.6)(react@19.1.0)
       '@oramacloud/client':
         specifier: ^2.1.4
         version: 2.1.4
@@ -1927,8 +1933,8 @@ packages:
     resolution: {integrity: sha512-aKcOkyrorBGlajjRdVoJWHTxfxO1vCNHLJVlSDaRHDIdjU+pX8IYQPvPDkYiujKLbRnWU+1TBwEt0QRgSm4SGA==}
     engines: {node: '>=14'}
 
-  '@orama/core@0.1.11':
-    resolution: {integrity: sha512-cxs2ZrPlL0qCO91ba1FkFg/CX569v6Pqbo0e7EEvRVObBSOI1N1PIYAQ7lTXBUN7mDjpqHvPgOJ0mUuvotSl+Q==}
+  '@orama/core@0.1.10':
+    resolution: {integrity: sha512-Sqmdg61fE0D1yzKhqosjasgxqP7/9W5uBz9GRFPkt4Q0qTJ3rxm8hCfhFkPbLWNZAZuOANuzXiU3h8nzaFquww==}
 
   '@orama/cuid2@2.2.3':
     resolution: {integrity: sha512-Lcak3chblMejdlSHgYU2lS2cdOhDpU6vkfIJH4m+YKvqQyLqs1bB8+w6NT1MG5bO12NUK2GFc34Mn2xshMIQ1g==}
@@ -1957,8 +1963,14 @@ packages:
       '@orama/orama': 3.1.9
       '@oramacloud/client': ^2.1.1
 
-  '@orama/wc-components@0.8.1':
-    resolution: {integrity: sha512-VLNIbPu9bOwr6bQgvpEmZvifaExf6disF8+zz1f/ipjmcNpZZL+0CWRmkvf5FNg1PHN3WvJrdulrfP01QwLljQ==}
+  '@orama/ui@0.0.4':
+    resolution: {integrity: sha512-dWxTgsY4nm9ytGjuFflz1W8XTcJqZ71FxRsMZmj5qaK+/wdpBbcD8n+FlkWkiULLnAuEnVQ97wTX/RSE+siMrg==}
+    peerDependencies:
+      '@orama/core': ^0.1.8
+      react: ^19
+
+  '@orama/wc-components@0.8.0':
+    resolution: {integrity: sha512-G0PUACezU7atmD8BlydqqUtIznOSfZ2rzf2oJ9jDfTtx4Nrzuo4mWdAOTqcsEZRxzIOjzgZkjLPJLFsOugfjqQ==}
 
   '@oramacloud/client@2.1.4':
     resolution: {integrity: sha512-uNPFs4wq/iOPbggCwTkVNbIr64Vfd7ZS/h+cricXVnzXWocjDTfJ3wLL4lr0qiSu41g8z+eCAGBqJ30RO2O4AA==}
@@ -5028,6 +5040,9 @@ packages:
     resolution: {integrity: sha512-ztqyC3kLto0e9WbNp0aeP+M3kTt+nbaIveGmUxAtZa+8iFgKLUOD4YKM5j+f3QD89bra7UeumolZHKuOXnTmeQ==}
     engines: {node: '>=8'}
 
+  html-url-attributes@3.0.1:
+    resolution: {integrity: sha512-ol6UPyBWqsrO6EJySPz2O7ZSr856WDrEzM5zMqp+FJJLGMW35cLYmmZnl0vztAZxRUoNZJFTCohfjuIJ8I4QBQ==}
+
   html-void-elements@3.0.0:
     resolution: {integrity: sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg==}
 
@@ -6467,6 +6482,11 @@ packages:
   printable-characters@1.0.42:
     resolution: {integrity: sha512-dKp+C4iXWK4vVYZmYSd0KBH5F/h1HoZRsbJ82AVKRO3PEo8L4lBS/vLwhVtpwwuYcoIsVY+1JYKR268yn480uQ==}
 
+  prism-react-renderer@1.3.5:
+    resolution: {integrity: sha512-IJ+MSwBWKG+SM3b2SUfdrhC+gu01QkV2KmRQgREThBfSQRoufqRfxfHUxpG1WcaFjP+kojcFyO9Qqtpgt3qLCg==}
+    peerDependencies:
+      react: '>=0.14.9'
+
   proc-log@4.2.0:
     resolution: {integrity: sha512-g8+OnU/L2v+wyiVK+D5fA34J7EH8jZ8DDlvwhRCMxmMj7UCBvxiO1mGeN+36JXIKF4zevU4kRBd8lVgG9vLelA==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
@@ -6548,6 +6568,12 @@ packages:
 
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
+
+  react-markdown@10.1.0:
+    resolution: {integrity: sha512-qKxVopLT/TyA6BX3Ue5NwabOsAzm0Q7kAPwq6L+wWDwisYs7R8vZ0nRXqq6rkueboxpkjvLGU9fWifiX/ZZFxQ==}
+    peerDependencies:
+      '@types/react': '>=18'
+      react: '>=18'
 
   react-property@2.0.2:
     resolution: {integrity: sha512-+PbtI3VuDV0l6CleQMsx2gtK0JZbZKbpdu5ynr+lbsuvtmgbNcS3VM0tuY2QjFNOcWxvXeHjDpy42RO+4U2rug==}
@@ -9916,7 +9942,7 @@ snapshots:
 
   '@opentelemetry/semantic-conventions@1.34.0': {}
 
-  '@orama/core@0.1.11':
+  '@orama/core@0.1.10':
     dependencies:
       '@orama/cuid2': 2.2.3
       dedent: 1.5.3
@@ -9946,18 +9972,29 @@ snapshots:
       - '@types/react'
       - babel-plugin-macros
 
-  '@orama/switch@3.1.9(@orama/core@0.1.11)(@orama/orama@3.1.9)(@oramacloud/client@2.1.4)':
+  '@orama/switch@3.1.6(@orama/core@0.1.10)(@orama/orama@3.1.6)(@oramacloud/client@2.1.4)':
     dependencies:
-      '@orama/core': 0.1.11
-      '@orama/orama': 3.1.9
+      '@orama/core': 0.1.10
+      '@orama/orama': 3.1.6
       '@oramacloud/client': 2.1.4
 
-  '@orama/wc-components@0.8.1':
+  '@orama/ui@0.0.4(@orama/core@0.1.10)(@types/react@19.1.6)(react@19.1.0)':
     dependencies:
-      '@orama/core': 0.1.11
+      '@orama/core': 0.1.10
+      prism-react-renderer: 1.3.5(react@19.1.0)
+      react: 19.1.0
+      react-markdown: 10.1.0(@types/react@19.1.6)(react@19.1.0)
+      remark-gfm: 4.0.1
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
+  '@orama/wc-components@0.8.0':
+    dependencies:
+      '@orama/core': 0.1.10
       '@orama/highlight': 0.1.9
-      '@orama/orama': 3.1.9
-      '@orama/switch': 3.1.9(@orama/core@0.1.11)(@orama/orama@3.1.9)(@oramacloud/client@2.1.4)
+      '@orama/orama': 3.1.6
+      '@orama/switch': 3.1.6(@orama/core@0.1.10)(@orama/orama@3.1.6)(@oramacloud/client@2.1.4)
       '@oramacloud/client': 2.1.4
       '@phosphor-icons/webcomponents': 2.1.5
       '@stencil/core': 4.30.0
@@ -12866,14 +12903,14 @@ snapshots:
       - bluebird
       - supports-color
 
-  eslint-module-utils@2.12.1(@typescript-eslint/parser@8.35.1(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@9.30.1(jiti@2.4.2)):
+  eslint-module-utils@2.12.0(@typescript-eslint/parser@8.33.1(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@4.4.2(eslint-plugin-import-x@4.15.0(@typescript-eslint/utils@8.33.1(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.28.0(jiti@2.4.2)))(eslint-plugin-import@2.31.0)(eslint@9.28.0(jiti@2.4.2)))(eslint@9.28.0(jiti@2.4.2)):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
       '@typescript-eslint/parser': 8.35.1(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3)
       eslint: 9.30.1(jiti@2.4.2)
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import-x@4.16.1(@typescript-eslint/utils@8.35.1(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.30.1(jiti@2.4.2)))(eslint-plugin-import@2.32.0)(eslint@9.30.1(jiti@2.4.2))
+      eslint-import-resolver-typescript: 4.4.2(eslint-plugin-import-x@4.15.0(@typescript-eslint/utils@8.33.1(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.28.0(jiti@2.4.2)))(eslint-plugin-import@2.31.0)(eslint@9.28.0(jiti@2.4.2))
     transitivePeerDependencies:
       - supports-color
 
@@ -12906,7 +12943,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.30.1(jiti@2.4.2)
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.35.1(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@9.30.1(jiti@2.4.2))
+      eslint-module-utils: 2.12.0(@typescript-eslint/parser@8.33.1(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@4.4.2(eslint-plugin-import-x@4.15.0(@typescript-eslint/utils@8.33.1(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.28.0(jiti@2.4.2)))(eslint-plugin-import@2.31.0)(eslint@9.28.0(jiti@2.4.2)))(eslint@9.28.0(jiti@2.4.2))
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
@@ -13649,6 +13686,8 @@ snapshots:
       '@types/react': 19.1.8
 
   html-tags@3.3.1: {}
+
+  html-url-attributes@3.0.1: {}
 
   html-void-elements@3.0.0: {}
 
@@ -15322,6 +15361,10 @@ snapshots:
 
   printable-characters@1.0.42: {}
 
+  prism-react-renderer@1.3.5(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+
   proc-log@4.2.0: {}
 
   promise-inflight@1.0.1: {}
@@ -15402,6 +15445,24 @@ snapshots:
   react-is@16.13.1: {}
 
   react-is@17.0.2: {}
+
+  react-markdown@10.1.0(@types/react@19.1.6)(react@19.1.0):
+    dependencies:
+      '@types/hast': 3.0.4
+      '@types/mdast': 4.0.4
+      '@types/react': 19.1.6
+      devlop: 1.1.0
+      hast-util-to-jsx-runtime: 2.3.6
+      html-url-attributes: 3.0.1
+      mdast-util-to-hast: 13.2.0
+      react: 19.1.0
+      remark-parse: 11.0.0
+      remark-rehype: 11.1.2
+      unified: 11.0.5
+      unist-util-visit: 5.0.0
+      vfile: 6.0.3
+    transitivePeerDependencies:
+      - supports-color
 
   react-property@2.0.2: {}
 

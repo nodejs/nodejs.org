@@ -1,0 +1,53 @@
+@reference "../../../styles/index.css";
+
+.searchButton {
+  @apply text-accent1-100
+    dark:text-accent1-100
+    flex
+    grow
+    cursor-pointer
+    items-center
+    justify-center
+    gap-1;
+}
+
+.searchButtonContent {
+  @apply flex
+    flex-nowrap
+    items-center
+    gap-2
+    text-sm;
+}
+
+.modalWrapper {
+  @apply fixed
+    left-0
+    top-0
+    z-50
+    flex
+    h-full
+    w-full
+    bg-white/70
+    dark:bg-neutral-950/70;
+}
+
+.modalInner {
+  @apply inset-0
+    flex
+    flex-col
+    justify-between
+    bg-neutral-100
+    sm:bottom-auto
+    sm:top-[5vh]
+    sm:mx-auto
+    sm:max-h-[70vh]
+    sm:min-h-[200px]
+    sm:w-[80%]
+    sm:max-w-[720px]
+    sm:rounded-xl
+    sm:border
+    sm:border-neutral-200
+    sm:p-0
+    dark:bg-neutral-950
+    sm:dark:border-neutral-900;
+}
