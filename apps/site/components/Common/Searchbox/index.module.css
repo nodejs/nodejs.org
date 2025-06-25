@@ -131,6 +131,11 @@
     border-neutral-200
     p-2
     dark:border-neutral-900;
+
+  svg {
+    @apply h-4
+      w-4;
+  }
 }
 
 .chatButton {
@@ -149,6 +154,11 @@
     duration-300
     hover:bg-neutral-300
     dark:hover:bg-neutral-900;
+}
+
+.chatButtonWithSearch {
+  @apply bg-neutral-300
+    dark:bg-neutral-900;
 }
 
 .suggestionsWrapper {
@@ -188,7 +198,141 @@
     overflow-y-auto
     px-5
     pb-6
-    pt-4
+    pt-3
     text-neutral-900
     dark:text-neutral-200;
+}
+
+.noResultsWrapper {
+  @apply flex
+    h-full
+    items-center
+    justify-center
+    py-10
+    text-sm
+    text-neutral-700
+    dark:text-neutral-500;
+}
+
+.facetTabItem {
+  @apply flex
+    cursor-pointer
+    items-center
+    gap-2
+    rounded-3xl
+    border
+    border-neutral-200
+    px-3
+    py-1
+    text-sm
+    transition-colors
+    duration-300
+    dark:border-neutral-900;
+}
+
+.facetTabItemSelected {
+  @apply border-green-600
+    dark:border-green-400;
+}
+
+.facetTabsWrapper {
+  @apply mb-4;
+}
+
+.facetTabsList {
+  @apply flex
+    items-center
+    gap-2;
+}
+
+.facetTabItemCount {
+  @apply text-neutral-700
+    dark:text-neutral-700;
+}
+
+.searchResultsGroupTitle {
+  @apply my-2
+    pl-2
+    text-sm
+    text-neutral-600
+    dark:text-neutral-700;
+}
+
+.searchResultsItem {
+  > a {
+    @apply flex
+      items-center
+      gap-4
+      rounded-lg
+      px-2
+      py-4
+      text-sm
+      outline-none
+      transition-colors
+      duration-300
+      hover:bg-neutral-300
+      focus:bg-white
+      dark:border-neutral-900
+      dark:bg-neutral-950
+      dark:hover:bg-neutral-900
+      dark:focus:bg-neutral-900;
+  }
+
+  svg {
+    @apply h-5
+      w-5;
+  }
+}
+
+.searchResultsItemDescription {
+  @apply text-sm
+    text-neutral-600
+    dark:text-neutral-700;
+}
+
+.footer {
+  @apply flex
+    items-center
+    justify-between
+    rounded-b-xl
+    border-t
+    border-neutral-200
+    bg-neutral-100
+    p-4
+    dark:border-neutral-900
+    dark:bg-neutral-950;
+}
+
+.poweredByLink {
+  @apply flex
+    items-center
+    gap-2
+    text-sm
+    text-neutral-700
+    dark:text-neutral-400;
+}
+
+.shortcutWrapper {
+  @apply flex
+    items-center
+    gap-2;
+}
+
+.shortcutItem {
+  @apply flex
+    items-center
+    gap-2
+    text-xs
+    text-neutral-700
+    dark:text-neutral-700;
+}
+
+.shortcutKey {
+  @apply rounded-md
+    bg-neutral-300
+    p-1
+    font-mono
+    text-xs
+    font-semibold
+    dark:bg-neutral-900;
 }
