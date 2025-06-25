@@ -43,7 +43,7 @@
     "@orama/react-components": "^0.8.1",
     "@oramacloud/client": "^2.1.4",
     "@orama/ui": "^0.0.4",
-    "@orama/core": "^0.1.10",
+    "@orama/core": "^0.1.11",
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tabs": "^1.1.12",
     "@radix-ui/react-toast": "^1.2.14",
