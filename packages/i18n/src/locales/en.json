@@ -252,7 +252,8 @@
       "initErrorSearch": "Unable to initialize search service",
       "initErrorChat": "Unable to initialize chat service",
       "chatButtonLabel": "Get an AI summary",
-      "searchButtonLabel": "Search"
+      "searchButtonLabel": "Search",
+      "poweredBy": "Powered by {provider}"
     },
     "blog": {
       "blogHeader": {

@@ -2,9 +2,7 @@
 
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import { CollectionManager } from '@orama/core';
-import ChatRoot from '@orama/ui/components/ChatRoot';
-import Modal from '@orama/ui/components/Modal';
-import SearchRoot from '@orama/ui/components/SearchRoot';
+import { SearchRoot, ChatRoot, Modal } from '@orama/ui/components';
 import { useTranslations } from 'next-intl';
 import { useState, type FC, type PropsWithChildren } from 'react';
 

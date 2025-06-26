@@ -271,7 +271,7 @@
       transition-colors
       duration-300
       hover:bg-neutral-300
-      focus:bg-white
+      focus:bg-neutral-300
       dark:border-neutral-900
       dark:bg-neutral-950
       dark:hover:bg-neutral-900
@@ -329,10 +329,189 @@
 
 .shortcutKey {
   @apply rounded-md
-    bg-neutral-300
+    bg-neutral-200
     p-1
     font-mono
     text-xs
-    font-semibold
     dark:bg-neutral-900;
+
+  svg {
+    @apply h-4
+      w-4;
+  }
+}
+
+.slidingPanelContent {
+  @apply overflow-hidden
+    rounded-tl-3xl
+    rounded-tr-3xl
+    bg-neutral-100
+    shadow-lg
+    md:max-w-none
+    dark:bg-gray-950;
+}
+
+.slidingPanelTop {
+  @apply mx-auto
+    flex
+    h-full
+    max-w-4xl
+    flex-col
+    justify-between
+    gap-2;
+}
+
+.slidingPanelBottom {
+  @apply relative
+    flex-shrink-0;
+}
+
+.chatContainer {
+  @apply flex
+    min-h-0
+    flex-1
+    flex-col;
+}
+
+.chatInteractionsWrapper {
+  @apply relative
+    h-full
+    items-start
+    overflow-y-auto
+    px-8
+    antialiased
+    md:subpixel-antialiased;
+}
+
+.chatInteraction {
+  @apply pb-4;
+}
+
+.chatUserPrompt {
+  @apply mb-4
+    text-base
+    text-neutral-900
+    dark:text-neutral-200;
+}
+
+.chatAssistantMessage {
+  @apply my-6
+    max-w-full
+    rounded-xl
+    bg-neutral-100
+    px-6
+    py-4
+    text-base
+    text-neutral-900
+    dark:bg-neutral-950
+    dark:text-neutral-200;
+
+  p {
+    @apply font-sm-line-height
+      mb-3;
+  }
+
+  li > pre {
+    @apply my-4;
+
+    > div {
+      @apply rounded-lg
+        p-3
+        text-sm;
+    }
+  }
+}
+
+.chatLoader {
+  @apply my-4;
+}
+
+.chatActionsContainer {
+  @apply flex
+    items-center
+    justify-end
+    pt-2;
+}
+
+.chatActionsList {
+  @apply flex
+    items-center
+    gap-4;
+}
+
+.chatAction {
+  @apply cursor-pointer;
+
+  svg {
+    @apply h-5
+      w-5;
+  }
+}
+
+.chatActionIconSelected {
+  @apply text-green-600
+    dark:text-green-400;
+}
+
+.promptTextAreaWrapper {
+  @apply relative
+    mx-8
+    flex
+    items-center
+    space-x-2
+    rounded-2xl
+    border
+    border-neutral-200
+    bg-transparent
+    py-1
+    text-base
+    text-neutral-900
+    placeholder:text-neutral-500
+    focus:outline-none
+    dark:border-neutral-900
+    dark:bg-neutral-950
+    dark:text-neutral-200
+    dark:placeholder:text-neutral-600;
+}
+
+.promptTextAreaButton {
+  @apply absolute
+    right-2
+    top-1/2
+    -translate-y-1/2
+    cursor-pointer
+    rounded-lg
+    bg-neutral-300
+    p-2
+    text-neutral-800
+    transition-colors
+    duration-300
+    hover:bg-neutral-400
+    disabled:cursor-not-allowed
+    disabled:bg-neutral-200
+    disabled:text-neutral-500
+    dark:bg-green-400
+    dark:text-white
+    dark:hover:bg-green-400
+    dark:disabled:bg-neutral-800
+    dark:disabled:text-neutral-500;
+}
+
+.promptTextAreaField {
+  @apply w-full
+    resize-none
+    border-0
+    bg-transparent
+    px-4
+    py-2
+    focus:outline-none;
+}
+
+.slidingPanelFooter {
+  @apply flex
+    items-center
+    justify-center
+    pt-2
+    text-neutral-700
+    dark:text-neutral-700;
 }

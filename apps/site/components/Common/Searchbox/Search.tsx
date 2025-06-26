@@ -7,10 +7,12 @@ import {
   ArrowDownIcon,
   ArrowUpIcon,
 } from '@heroicons/react/24/solid';
-import FacetTabs from '@orama/ui/components/FacetTabs';
-import SearchInput from '@orama/ui/components/SearchInput';
-import SearchResults from '@orama/ui/components/SearchResults';
-import Suggestions from '@orama/ui/components/Suggestions';
+import {
+  SearchInput,
+  FacetTabs,
+  SearchResults,
+  Suggestions,
+} from '@orama/ui/components';
 import { useSearchContext } from '@orama/ui/context/SearchContext';
 import classNames from 'classnames';
 import Image from 'next/image';
@@ -71,7 +73,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
           )}
           data-focus-on-arrow-nav
         >
-          <SparklesIcon className="h-4 w-4" />
+          <SparklesIcon />
           <span>
             {searchTerm ? `${searchTerm} - ` : ''}
             {t('components.search.chatButtonLabel')}
@@ -86,6 +88,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
               <FacetTabs.Item
                 isSelected={isSelected}
                 group={group}
+                filterBy="siteSection"
                 className={classNames(
                   styles.facetTabItem,
                   isSelected ? styles.facetTabItemSelected : ''
@@ -191,16 +194,16 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
         <div className={styles.shortcutWrapper}>
           <div className={styles.shortcutItem}>
             <kbd className={styles.shortcutKey}>
-              <ArrowTurnDownLeftIcon className="h-4 w-4" />
+              <ArrowTurnDownLeftIcon />
             </kbd>
             <span className={styles.shortcutLabel}>to select</span>
           </div>
           <div className={styles.shortcutItem}>
             <kbd className={styles.shortcutKey}>
-              <ArrowDownIcon className="h-4 w-4" />
+              <ArrowDownIcon />
             </kbd>
             <kbd className={styles.shortcutKey}>
-              <ArrowUpIcon className="h-4 w-4" />
+              <ArrowUpIcon />
             </kbd>
             <span className={styles.shortcutLabel}>to navigate</span>
           </div>
@@ -215,11 +218,12 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.poweredByLink}
+            data-focus-on-arrow-nav
           >
             <small>Powered by</small>
             <Image
               src={oramaLogo}
-              alt="Powered by Orama"
+              alt={t('components.search.poweredBy', { provider: 'Orama' })}
               width="62"
               height={22}
             />
