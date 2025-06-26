@@ -18,6 +18,8 @@ import { useScrollableContainer } from '@orama/ui/hooks/useScrollableContainer';
 // import Link from 'next/link';
 // import { useLocale } from 'next-intl';
 // import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import { useLocale } from 'next-intl';
 import { type FC, type PropsWithChildren } from 'react';
 
 import styles from './index.module.css';
@@ -27,23 +29,11 @@ type SlidingChatPanelProps = PropsWithChildren & {
   onClose: () => void;
 };
 
-// const uppercaseFirst = (word: string) =>
-//   word.charAt(0).toUpperCase() + word.slice(1);
-
-// const getFormattedPath = (path: string, title: string) =>
-//   `${path
-//     .replace(/#.+$/, '')
-//     .split('/')
-//     .map(element => element.replaceAll('-', ' '))
-//     .map(element => uppercaseFirst(element))
-//     .filter(Boolean)
-//     .join(' > ')} — ${title}`;
-
 export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
   open,
   onClose,
 }) => {
-  // const locale = useLocale();
+  const locale = useLocale();
   // const t = useTranslations();
   const {
     containerRef,
@@ -51,12 +41,6 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
     scrollToBottom,
     recalculateGoToBottomButton,
   } = useScrollableContainer();
-
-  if (!open) {
-    return null;
-  }
-
-  console.log('SlidingChatPanel rendered', containerRef, showGoToBottomButton);
 
   return (
     <>
@@ -79,66 +63,80 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
                       <p>{interaction.query}</p>
                     </ChatInteractions.UserPrompt>
 
-                    {interaction.loading && !interaction.response && (
+                    {interaction.loading && !interaction.response ? (
                       <Skeleton className={styles.chatLoader} />
-                    )}
-
-                    {/* <ChatInteractions.Sources
-                      sources={
-                        Array.isArray(interaction.sources)
-                          ? interaction.sources
-                          : []
-                      }
-                      className={`mb-1 mt-2 flex flex-row gap-1 overflow-x-auto`}
-                    >
-                      {(document, index: number) => (
-                        <div
-                          className="flex max-w-xs items-center gap-2"
-                          key={index}
+                    ) : (
+                      <>
+                        <ChatInteractions.Sources
+                          sources={
+                            Array.isArray(interaction.sources)
+                              ? interaction.sources
+                              : []
+                          }
+                          className={styles.chatSources}
+                          itemClassName={styles.chatSourceItem}
                         >
-                          <div className="flex min-w-0 flex-col">
-                            <span className={`text-xs font-semibold`}>
-                              {document?.pageSectionTitle as string}
-                            </span>
-                          </div>
-                        </div>
-                      )}
-                    </ChatInteractions.Sources> */}
-
-                    <div className={styles.chatAssistantMessage}>
-                      <ChatInteractions.AssistantMessage>
-                        {interaction.response}
-                      </ChatInteractions.AssistantMessage>
-
-                      {interaction.response && !interaction.loading && (
-                        <div className={styles.chatActionsContainer}>
-                          <ul className={styles.chatActionsList}>
-                            {index === totalInteractions && (
-                              <li>
-                                <ChatInteractions.RegenerateLatest
-                                  className={styles.chatAction}
-                                >
-                                  <ArrowPathRoundedSquareIcon />
-                                </ChatInteractions.RegenerateLatest>
-                              </li>
-                            )}
-                            <li>
-                              <ChatInteractions.CopyMessage
-                                className={styles.chatAction}
-                                interaction={interaction}
-                                copiedContent={
-                                  <DocumentCheckIcon
-                                    className={styles.chatActionIconSelected}
-                                  />
+                          {(document, index: number) => (
+                            <div className={styles.chatSource} key={index}>
+                              <Link
+                                data-focus-on-arrow-nav
+                                className={styles.chatSourceLink}
+                                href={
+                                  (
+                                    document.siteSection as string
+                                  ).toLowerCase() === 'docs'
+                                    ? `/${document.path}`
+                                    : `/${locale}/${document.path}`
                                 }
                               >
-                                <ClipboardIcon />
-                              </ChatInteractions.CopyMessage>
-                            </li>
-                          </ul>
+                                <span className={styles.chatSourceTitle}>
+                                  {document?.pageSectionTitle as string}
+                                </span>
+                              </Link>
+                            </div>
+                          )}
+                        </ChatInteractions.Sources>
+
+                        <div className={styles.chatAssistantMessageWrapper}>
+                          <ChatInteractions.AssistantMessage
+                            className={styles.chatAssistantMessage}
+                          >
+                            {interaction.response}
+                          </ChatInteractions.AssistantMessage>
+
+                          {!interaction.loading && (
+                            <div className={styles.chatActionsContainer}>
+                              <ul className={styles.chatActionsList}>
+                                {index === totalInteractions && (
+                                  <li>
+                                    <ChatInteractions.RegenerateLatest
+                                      className={styles.chatAction}
+                                    >
+                                      <ArrowPathRoundedSquareIcon />
+                                    </ChatInteractions.RegenerateLatest>
+                                  </li>
+                                )}
+                                <li>
+                                  <ChatInteractions.CopyMessage
+                                    className={styles.chatAction}
+                                    interaction={interaction}
+                                    copiedContent={
+                                      <DocumentCheckIcon
+                                        className={
+                                          styles.chatActionIconSelected
+                                        }
+                                      />
+                                    }
+                                  >
+                                    <ClipboardIcon />
+                                  </ChatInteractions.CopyMessage>
+                                </li>
+                              </ul>
+                            </div>
+                          )}
                         </div>
-                      )}
-                    </div>
+                      </>
+                    )}
                   </>
                 )}
               </ChatInteractions.Wrapper>
@@ -147,7 +145,7 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
               {showGoToBottomButton && (
                 <button
                   onClick={() => scrollToBottom({ animated: true })}
-                  className="absolute -top-10 left-1/2 -translate-x-1/2 cursor-pointer rounded-full bg-purple-500 p-2 text-white shadow-lg transition-colors hover:bg-purple-600"
+                  className={styles.scrollDownButton}
                   aria-label="Scroll to bottom"
                 >
                   <ArrowDownIcon className="h-4 w-4" />

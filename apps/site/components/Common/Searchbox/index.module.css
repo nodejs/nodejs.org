@@ -402,8 +402,59 @@
     dark:text-neutral-200;
 }
 
-.chatAssistantMessage {
-  @apply my-6
+.chatSources {
+  @apply mb-4
+    flex
+    flex-nowrap
+    items-center
+    gap-3
+    overflow-x-scroll
+    scroll-smooth
+    [scrollbar-width:none]
+    [&::-webkit-scrollbar]:hidden;
+}
+
+/* .chatSourceItem {
+  @apply bg-accent1-300;
+} */
+
+.chatSource {
+  @apply flex
+    max-w-xs
+    items-center
+    gap-2
+    text-base;
+}
+
+.chatSourceLink {
+  @apply rounded-xl
+    bg-neutral-100
+    px-4
+    py-2
+    text-neutral-900
+    transition-colors
+    duration-300
+    hover:bg-neutral-200
+    focus:bg-neutral-200
+    dark:bg-neutral-950
+    dark:text-neutral-200
+    hover:dark:bg-neutral-900
+    focus:dark:bg-neutral-900;
+}
+
+.chatSourceTitle {
+  @apply max-w-full
+    overflow-hidden
+    truncate
+    text-ellipsis
+    whitespace-nowrap
+    text-sm
+    font-semibold;
+}
+
+.chatAssistantMessageWrapper {
+  @apply my-4
+    mb-6
     max-w-full
     rounded-xl
     bg-neutral-100
@@ -413,7 +464,9 @@
     text-neutral-900
     dark:bg-neutral-950
     dark:text-neutral-200;
+}
 
+.chatAssistantMessage {
   p {
     @apply font-sm-line-height
       mb-3;
@@ -427,6 +480,25 @@
         p-3
         text-sm;
     }
+  }
+
+  ul {
+    @apply list-disc
+      pl-6;
+
+    li {
+      @apply mb-2;
+    }
+  }
+
+  strong {
+    @apply font-bold;
+  }
+
+  h3 {
+    @apply mb-2
+      text-lg
+      font-bold;
   }
 }
 
@@ -443,16 +515,26 @@
 
 .chatActionsList {
   @apply flex
+    list-none
     items-center
-    gap-4;
+    gap-2
+    p-0;
 }
 
 .chatAction {
-  @apply cursor-pointer;
+  @apply cursor-pointer
+    rounded-full
+    p-2
+    text-neutral-800
+    transition-colors
+    duration-300
+    hover:bg-neutral-300
+    dark:text-neutral-400
+    dark:hover:bg-neutral-900;
 
   svg {
-    @apply h-5
-      w-5;
+    @apply h-4
+      w-4;
   }
 }
 
@@ -482,6 +564,30 @@
     dark:placeholder:text-neutral-600;
 }
 
+.scrollDownButton {
+  @apply absolute
+    -top-8
+    left-1/2
+    -translate-x-1/2
+    -translate-y-1/2
+    cursor-pointer
+    rounded-lg
+    bg-neutral-300
+    p-2
+    text-neutral-800
+    transition-colors
+    duration-300
+    hover:bg-neutral-400
+    dark:bg-neutral-900
+    dark:text-white
+    dark:hover:bg-neutral-800;
+
+  svg {
+    @apply h-4
+      w-4;
+  }
+}
+
 .promptTextAreaButton {
   @apply absolute
     right-2
@@ -501,8 +607,8 @@
     dark:bg-green-400
     dark:text-white
     dark:hover:bg-green-400
-    dark:disabled:bg-neutral-800
-    dark:disabled:text-neutral-500;
+    dark:disabled:bg-neutral-900
+    dark:disabled:text-neutral-700;
 }
 
 .promptTextAreaField {

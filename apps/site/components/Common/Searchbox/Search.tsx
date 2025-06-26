@@ -23,22 +23,11 @@ import { useTheme } from 'next-themes';
 import { type FC, type PropsWithChildren } from 'react';
 
 import styles from './index.module.css';
+import { getFormattedPath } from './utils';
 
 type SearchProps = PropsWithChildren & {
   onChatTrigger: () => void;
 };
-
-const uppercaseFirst = (word: string) =>
-  word.charAt(0).toUpperCase() + word.slice(1);
-
-const getFormattedPath = (path: string, title: string) =>
-  `${path
-    .replace(/#.+$/, '')
-    .split('/')
-    .map(element => element.replaceAll('-', ' '))
-    .map(element => uppercaseFirst(element))
-    .filter(Boolean)
-    .join(' > ')} — ${title}`;
 
 export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   const locale = useLocale();
