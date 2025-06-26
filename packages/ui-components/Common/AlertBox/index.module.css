@@ -73,4 +73,11 @@
       @apply bg-danger-700;
     }
   }
+
+  code {
+    /* Ignore the styles from `markdown.css` */
+    all: unset;
+
+    @apply font-ibm-plex-mono;
+  }
 }

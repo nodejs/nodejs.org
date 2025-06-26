@@ -6,6 +6,12 @@ import AlertBox from '#ui/Common/AlertBox';
 type Story = StoryObj<typeof AlertBox>;
 type Meta = MetaObj<typeof AlertBox>;
 
+const withMain = (args: React.ComponentProps<typeof AlertBox>) => (
+  <main>
+    <AlertBox {...args} />
+  </main>
+);
+
 export const Info: Story = {
   args: {
     level: 'info',
@@ -44,6 +50,23 @@ export const Danger: Story = {
       'Deprecated. The feature may emit warnings. Backward compatibility is not guaranteed.',
     size: 'default',
   },
+};
+
+export const InMarkdown: Story = {
+  args: {
+    level: 'danger',
+    title: '0',
+    children: (
+      <>
+        In a markdown component, <code>Code renders correctly,</code>{' '}
+        <a href="#">
+          <code>even when in a link</code>
+        </a>
+      </>
+    ),
+    size: 'default',
+  },
+  render: withMain,
 };
 
 export const WithIcon: Story = {
