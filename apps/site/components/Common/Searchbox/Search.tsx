@@ -13,7 +13,7 @@ import {
   SearchResults,
   Suggestions,
 } from '@orama/ui/components';
-import { useSearchContext } from '@orama/ui/context/SearchContext';
+import { useSearchContext } from '@orama/ui/contexts';
 import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';

@@ -18,7 +18,9 @@
     border
     border-neutral-300
     bg-white
-    p-2
+    py-1
+    pl-2
+    pr-1
     text-neutral-900
     transition-colors
     duration-300
@@ -90,6 +92,7 @@
 
 .modalContent {
   @apply flex
+    h-full
     flex-col;
 }
 
@@ -349,9 +352,15 @@
     shadow-lg
     md:max-w-none
     dark:bg-gray-950;
+
+  > div {
+    @apply h-full
+      overflow-y-auto
+      p-6;
+  }
 }
 
-.slidingPanelTop {
+.slidingPanelInner {
   @apply mx-auto
     flex
     h-full
@@ -361,16 +370,17 @@
     gap-2;
 }
 
-.slidingPanelBottom {
-  @apply relative
-    flex-shrink-0;
-}
-
-.chatContainer {
+.slidingPanelTop {
   @apply flex
     min-h-0
     flex-1
-    flex-col;
+    flex-col
+    pb-6;
+}
+
+.slidingPanelBottom {
+  @apply relative
+    flex-shrink-0;
 }
 
 .chatInteractionsWrapper {
@@ -378,13 +388,11 @@
     h-full
     items-start
     overflow-y-auto
-    px-8
-    antialiased
-    md:subpixel-antialiased;
-}
+    px-8;
 
-.chatInteraction {
-  @apply pb-4;
+  > div {
+    @apply h-full;
+  }
 }
 
 .chatUserPrompt {
@@ -411,7 +419,7 @@
       mb-3;
   }
 
-  li > pre {
+  pre:not([class*='language-']) {
     @apply my-4;
 
     > div {

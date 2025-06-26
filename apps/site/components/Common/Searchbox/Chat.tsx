@@ -13,7 +13,7 @@ import {
   PromptTextArea,
   SlidingPanel,
 } from '@orama/ui/components';
-import { useScrollableContainer } from '@orama/ui/hooks';
+import { useScrollableContainer } from '@orama/ui/hooks/useScrollableContainer';
 // import classNames from 'classnames';
 // import Link from 'next/link';
 // import { useLocale } from 'next-intl';
@@ -52,12 +52,18 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
     recalculateGoToBottomButton,
   } = useScrollableContainer();
 
+  if (!open) {
+    return null;
+  }
+
+  console.log('SlidingChatPanel rendered', containerRef, showGoToBottomButton);
+
   return (
     <>
       <SlidingPanel.Wrapper open={open} onClose={onClose}>
         <SlidingPanel.Content className={styles.slidingPanelContent}>
-          <div className={styles.slidingPanelTop}>
-            <div className={styles.chatContainer}>
+          <div className={styles.slidingPanelInner}>
+            <div className={styles.slidingPanelTop}>
               <ChatInteractions.Wrapper
                 ref={containerRef}
                 onScroll={recalculateGoToBottomButton}
@@ -66,7 +72,7 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
                 className={styles.chatInteractionsWrapper}
               >
                 {(interaction, index, totalInteractions) => (
-                  <div className={styles.chatInteraction}>
+                  <>
                     <ChatInteractions.UserPrompt
                       className={styles.chatUserPrompt}
                     >
@@ -77,7 +83,7 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
                       <Skeleton className={styles.chatLoader} />
                     )}
 
-                    <ChatInteractions.Sources
+                    {/* <ChatInteractions.Sources
                       sources={
                         Array.isArray(interaction.sources)
                           ? interaction.sources
@@ -97,7 +103,7 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
                           </div>
                         </div>
                       )}
-                    </ChatInteractions.Sources>
+                    </ChatInteractions.Sources> */}
 
                     <div className={styles.chatAssistantMessage}>
                       <ChatInteractions.AssistantMessage>
@@ -133,11 +139,11 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
                         </div>
                       )}
                     </div>
-                  </div>
+                  </>
                 )}
               </ChatInteractions.Wrapper>
             </div>
-            <div className={styles.slidingPanel}>
+            <div className={styles.slidingPanelBottom}>
               {showGoToBottomButton && (
                 <button
                   onClick={() => scrollToBottom({ animated: true })}
@@ -149,7 +155,7 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
               )}
               <PromptTextArea.Wrapper className={styles.promptTextAreaWrapper}>
                 <PromptTextArea.Field
-                  placeholder="Ask me anything"
+                  placeholder="Ask me anything..."
                   rows={1}
                   maxLength={500}
                   autoFocus
