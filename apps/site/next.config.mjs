@@ -95,11 +95,6 @@ const nextConfig = {
       'shiki',
     ],
   },
-
-  webpack: config => ({
-    ...config,
-    experiments: { ...config.experiments, asyncWebAssembly: true },
-  }),
 };
 
 const withNextIntl = createNextIntlPlugin('./i18n.tsx');
