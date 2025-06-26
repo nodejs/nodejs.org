@@ -26,12 +26,12 @@ type StaticParams = {
 export const GET = async (_: Request, props: StaticParams) => {
   const params = await props.params;
 
-  const categoryColor =
+  const categoryColour =
     params.category in CATEGORY_TO_THEME_COLOUR_MAP
       ? CATEGORY_TO_THEME_COLOUR_MAP[params.category]
       : CATEGORY_TO_THEME_COLOUR_MAP[DEFAULT_CATEGORY_OG_TYPE];
 
-  const gridBackground = `radial-gradient(circle, ${categoryColor}, transparent)`;
+  const gridBackground = `radial-gradient(circle, ${categoryColour}, transparent)`;
 
   return new ImageResponse(
     (

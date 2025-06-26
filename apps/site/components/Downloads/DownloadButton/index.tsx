@@ -7,7 +7,7 @@ import type { FC, PropsWithChildren } from 'react';
 import Button from '#site/components/Common/Button';
 import { useClientContext } from '#site/hooks';
 import type { NodeRelease } from '#site/types';
-import { getNodeDownloadUrl } from '#site/util/download';
+import { getNodeDownloadUrl } from '#site/util/url';
 import { getUserPlatform } from '#site/util/userAgent';
 
 import styles from './index.module.css';
