@@ -60,6 +60,6 @@ June is recognized as Pride Month for those of us who have found our truths, or 
 
 Happy Pride.
 
-As part of Pride Month, the OpenJS Foundation is launching a series of blog posts highlighting the voices and work of LGBTQ technologists. If you identify as part of the community and want to share your journey, your projects, or how your identity has shaped your perspective and contributions, we’d love to hear from you, and we invite you to [submit a PR](https://github.com/nodejs/nodejs.org/tree/main/apps/site/pages/en/blog/community) with your answer to the prompt, "how did you come to understand who you are, and what contributions have you made to open source?"
+As part of Pride Month, the Node.js Project is launching a series of blog posts highlighting the voices and work of LGBTQ technologists. If you identify as part of the community and want to share your journey, your projects, or how your identity has shaped your perspective and contributions, we’d love to hear from you, and we invite you to [submit a PR](https://github.com/nodejs/nodejs.org/tree/main/apps/site/pages/en/blog/community) with your answer to the prompt, "how did you come to understand who you are, and what contributions have you made to open source?"
 
 _[Carl Vitullo](https://vcarl.com/) (he/they) is a volunteer comunity leader for [the official Node.js Discord server](https://discord.gg/vUsrbjd)._
