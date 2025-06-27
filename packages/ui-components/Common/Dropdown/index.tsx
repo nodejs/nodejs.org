@@ -5,13 +5,13 @@ import type { LinkLike } from '#ui/types.js';
 
 import styles from './index.module.css';
 
-type StatelessSelectProps = ComponentProps<'div'> & {
+type DropdownProps = ComponentProps<'div'> & {
   label: string;
   values: Array<HTMLProps<HTMLAnchorElement | HTMLDivElement>>;
   as?: LinkLike;
 };
 
-const StatelessSelect: FC<PropsWithChildren<StatelessSelectProps>> = ({
+const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
   values = [],
   className,
   as: As = 'a',
@@ -59,4 +59,4 @@ const StatelessSelect: FC<PropsWithChildren<StatelessSelectProps>> = ({
   </div>
 );
 
-export default StatelessSelect;
+export default Dropdown;

@@ -1,9 +1,9 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import StatelessSelect from '.';
+import Dropdown from '.';
 
-type Story = StoryObj<typeof StatelessSelect>;
-type Meta = MetaObj<typeof StatelessSelect>;
+type Story = StoryObj<typeof Dropdown>;
+type Meta = MetaObj<typeof Dropdown>;
 
 // Basic example with default anchor links
 export const Default: Story = {
@@ -19,7 +19,7 @@ export const Default: Story = {
 };
 
 export default {
-  component: StatelessSelect,
+  component: Dropdown,
   decorators: [
     Story => (
       <div className="flex h-screen items-center justify-center">
