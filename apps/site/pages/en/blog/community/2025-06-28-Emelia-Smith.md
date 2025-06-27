@@ -8,14 +8,13 @@ author: Emelia Smith
 
 # Node.js LGBTQIA+ Stories: Emelia Smith
 
-
 [Carl](https://nodejs.org/en/blog/community/2025-pride) put it rather elegantly in the opening blog post for this series, when he said “When we were young, the rules for many of us were simple.”, and that resonates with my own experiences. I grew up in a very rural part of Australia, it was incredibly hot in the summers, and there wasn't a whole lot to do. Growing up, I knew people could be gay, but didn't know anyone who was actually gay, I knew transgender people existed but didn't know how because society wasn't as accepting then as it is now.
 
 I was always a little bit different, friendly with many of my peers but not truly friends with many people. I knew I had differences to my peers but could never quite place my finger on what was what.
 
 As there was little else to do in that part of Australia, besides play football, I ended up seeking refuge in online communities. Originally I wanted to be a graphic designer, because I loved art, that took me to DeviantART.com, where I found my way into internet chat rooms, one of which was a tech support chat — I liked computers, so why not help people with them? One thing lead to another, and I found myself doing programming and learning all about the web.
 
-It was 2008 when I first realized that maybe this web development stuff could be a career, when a recruiter had seen some blog posts of mine about the chat client I'd been building using XULRunner for DeviantART's chatrooms. I was 15 at the time, and couldn't quite believe it, and ultimately it didn't pan out. The chat client I'd been working on was my first taste of asynchronous network i/o, and I liked it. 
+It was 2008 when I first realized that maybe this web development stuff could be a career, when a recruiter had seen some blog posts of mine about the chat client I'd been building using XULRunner for DeviantART's chatrooms. I was 15 at the time, and couldn't quite believe it, and ultimately it didn't pan out. The chat client I'd been working on was my first taste of asynchronous network i/o, and I liked it.
 
 Fast-forward a year, and Node.js was announced by Ryan at JSConf.eu, once I watched the video, I immediately wanted to try to use it, it seemed so much better than the APIs I was used to working with in XULRunner for network i/o. One thing lead to another, and I began contributing to Node.js, back then, this was pretty easy as the code was still new and there were plenty of bugs to fix. I was there from pretty early on, I saw the birth of npm and package managers for JavaScript, and watched the project grow. It was an exciting time!
 
