@@ -1,10 +1,10 @@
 /// <reference types="user-agent-data-types" />
 
 import type {
-  UserOS,
-  UserArchitecture,
-  UserBitness,
-  UserPlatform,
+  OperatingSystem,
+  Architecture,
+  Bitness,
+  Platform,
 } from '#site/types';
 
 // Constants for better maintainability
@@ -16,9 +16,11 @@ const EMPTY_UA_DATA: UADataValues = {};
  * @param userAgent - The user agent string to parse
  * @returns The detected OS or 'OTHER' if not recognized
  */
-export const detectOsInUserAgent = (userAgent: string | undefined): UserOS => {
+export const detectOsInUserAgent = (
+  userAgent: string | undefined
+): OperatingSystem => {
   const osMatch = userAgent?.match(OS_PATTERNS);
-  return osMatch ? (osMatch[1].toUpperCase() as UserOS) : 'OTHER';
+  return osMatch ? (osMatch[1].toUpperCase() as OperatingSystem) : 'OTHER';
 };
 
 /**
@@ -26,7 +28,8 @@ export const detectOsInUserAgent = (userAgent: string | undefined): UserOS => {
  * Note: navigator.appVersion is deprecated, so we use userAgent instead
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Navigator/appVersion
  */
-export const detectOS = (): UserOS => detectOsInUserAgent(navigator?.userAgent);
+export const detectOS = (): OperatingSystem =>
+  detectOsInUserAgent(navigator?.userAgent);
 
 /**
  * Determines user platform based on architecture and bitness
@@ -34,9 +37,9 @@ export const detectOS = (): UserOS => detectOsInUserAgent(navigator?.userAgent);
  * @see https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/getHighEntropyValues
  */
 export const getUserPlatform = (
-  userArchitecture: UserArchitecture | '',
-  userBitness: UserBitness | ''
-): UserPlatform => {
+  userArchitecture: Architecture | '',
+  userBitness: Bitness | ''
+): Platform => {
   if (userArchitecture === 'arm' && userBitness === '64') {
     return 'arm64';
   }

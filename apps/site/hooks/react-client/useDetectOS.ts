@@ -3,16 +3,16 @@
 import { useEffect, useState } from 'react';
 
 import type {
-  UserArchitecture,
-  UserBitness,
-  UserOS,
+  Architecture,
+  Bitness,
+  OperatingSystem,
 } from '#site/types/userAgent';
 import { getHighEntropyValues, detectOS } from '#site/util/userAgent';
 
 type UserOSState = {
-  os: UserOS | 'LOADING';
-  bitness: UserBitness | '';
-  architecture: UserArchitecture | '';
+  os: OperatingSystem | 'LOADING';
+  bitness: Bitness | '';
+  architecture: Architecture | '';
 };
 
 const useDetectOS = () => {
@@ -45,8 +45,8 @@ const useDetectOS = () => {
       }) => {
         setUserOSState(current => ({
           ...current,
-          bitness: bitness as UserBitness,
-          architecture: architecture as UserArchitecture,
+          bitness: bitness as Bitness,
+          architecture: architecture as Architecture,
         }));
       }
     );

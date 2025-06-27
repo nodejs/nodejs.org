@@ -8,8 +8,8 @@ import satisfies from 'semver/functions/satisfies';
 import type {
   IntlMessageKeys,
   NodeReleaseStatus,
-  UserOS,
-  UserPlatform,
+  OperatingSystem,
+  Platform,
 } from '#site/types';
 import type * as Types from '#site/types/release';
 
@@ -29,9 +29,9 @@ export const OperatingSystemLabel = Object.fromEntries(
 
 // Base types for dropdown functionality
 type DownloadCompatibility = {
-  os?: Array<UserOS | 'LOADING'>;
+  os?: Array<OperatingSystem | 'LOADING'>;
   installMethod?: Array<string>;
-  platform?: Array<UserPlatform | ''>;
+  platform?: Array<Platform | ''>;
   semver?: Array<string>;
   releases?: Array<NodeReleaseStatus>;
 };
@@ -107,7 +107,7 @@ export const OPERATING_SYSTEMS = Object.entries(systems as ActualSystems)
   .filter(([key]) => key !== 'LOADING' && key !== 'OTHER')
   .map(([key, data]) => ({
     label: data.name as IntlMessageKeys,
-    value: key as UserOS,
+    value: key as OperatingSystem,
     compatibility: data.compatibility,
     iconImage: createIcon(OSIcons, data.icon),
   }));
@@ -123,7 +123,7 @@ export const INSTALL_METHODS = installMethods.map(method => ({
   info: method.info as IntlMessageKeys,
   compatibility: {
     ...method.compatibility,
-    os: method.compatibility?.os?.map(os => os as UserOS),
+    os: method.compatibility?.os?.map(os => os as OperatingSystem),
     releases: method.compatibility?.releases?.map(
       release => release as NodeReleaseStatus
     ),
@@ -148,8 +148,8 @@ export const PLATFORMS = Object.fromEntries(
     key,
     data.platforms.map(platform => ({
       label: platform.label,
-      value: platform.value as UserPlatform,
+      value: platform.value as Platform,
       compatibility: platform.compatibility || {},
     })),
   ])
-) as Record<UserOS | 'LOADING', Array<DownloadDropdownItem<UserPlatform>>>;
+) as Record<OperatingSystem | 'LOADING', Array<DownloadDropdownItem<Platform>>>;

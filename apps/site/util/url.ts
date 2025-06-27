@@ -1,7 +1,7 @@
 import { satisfies } from 'semver';
 
 import { DOCS_URL, DIST_URL } from '#site/next.constants.mjs';
-import type { UserOS, UserPlatform, DownloadKind } from '#site/types';
+import type { OperatingSystem, Platform, DownloadKind } from '#site/types';
 
 export const getNodeApiUrl = (version: string) => {
   if (satisfies(version, '>=0.3.1 <0.5.1')) {
@@ -19,8 +19,8 @@ export const getNodeApiUrl = (version: string) => {
 
 export const getNodeDownloadUrl = (
   versionWithPrefix: string,
-  os: UserOS | 'LOADING',
-  platform: UserPlatform = 'x64',
+  os: OperatingSystem | 'LOADING',
+  platform: Platform = 'x64',
   kind: DownloadKind = 'installer'
 ) => {
   const baseURL = `${DIST_URL}${versionWithPrefix}`;
