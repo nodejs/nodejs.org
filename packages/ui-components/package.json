@@ -44,9 +44,9 @@
     "@radix-ui/react-tooltip": "~1.2.7",
     "@tailwindcss/postcss": "~4.1.8",
     "@vcarl/remark-headings": "~0.1.0",
-    "classnames": "~2.5.1",
+    "classnames": "catalog:",
     "postcss-calc": "^10.1.1",
-    "tailwindcss": "~4.0.17"
+    "tailwindcss": "catalog:"
   },
   "devDependencies": {
     "@storybook/addon-styling-webpack": "^1.0.1",
@@ -55,15 +55,15 @@
     "@storybook/react": "^9.0.3",
     "@storybook/react-webpack5": "^9.0.3",
     "@testing-library/user-event": "~14.6.1",
-    "@types/node": "22.15.3",
-    "@types/react": "^19.1.6",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
     "cross-env": "^7.0.3",
     "css-loader": "~7.1.2",
     "eslint-plugin-react": "~7.37.4",
     "eslint-plugin-storybook": "~9.0.3",
     "global-jsdom": "^26.0.0",
     "postcss-loader": "~8.1.1",
-    "react": "^19.1.0",
+    "react": "catalog:",
     "storybook": "^9.0.3",
     "style-loader": "~4.0.0",
     "stylelint": "^16.20.0",
@@ -71,7 +71,7 @@
     "stylelint-order": "7.0.0",
     "stylelint-selector-bem-pattern": "4.0.1",
     "tsx": "^4.19.3",
-    "typescript": "~5.8.2",
+    "typescript": "catalog:",
     "typescript-eslint": "~8.33.1"
   },
   "imports": {

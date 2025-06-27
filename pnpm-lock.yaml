@@ -4,6 +4,27 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    '@types/node':
+      specifier: 22.15.3
+      version: 22.15.3
+    '@types/react':
+      specifier: ^19.1.6
+      version: 19.1.6
+    classnames:
+      specifier: ~2.5.1
+      version: 2.5.1
+    react:
+      specifier: ^19.1.0
+      version: 19.1.0
+    tailwindcss:
+      specifier: ~4.0.17
+      version: 4.0.17
+    typescript:
+      specifier: ~5.8.2
+      version: 5.8.3
+
 importers:
 
   .:
@@ -97,10 +118,10 @@ importers:
         specifier: ~4.1.8
         version: 4.1.8
       '@types/node':
-        specifier: 22.15.3
+        specifier: 'catalog:'
         version: 22.15.3
       '@types/react':
-        specifier: ^19.1.6
+        specifier: 'catalog:'
         version: 19.1.6
       '@vcarl/remark-headings':
         specifier: ~0.1.0
@@ -115,7 +136,7 @@ importers:
         specifier: ~1.2.0
         version: 1.2.0(next@15.3.3(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
       classnames:
-        specifier: ~2.5.1
+        specifier: 'catalog:'
         version: 2.5.1
       cross-env:
         specifier: 7.0.3
@@ -145,7 +166,7 @@ importers:
         specifier: ~10.1.1
         version: 10.1.1(postcss@8.5.3)
       react:
-        specifier: ^19.1.0
+        specifier: 'catalog:'
         version: 19.1.0
       react-dom:
         specifier: ^19.1.0
@@ -172,7 +193,7 @@ importers:
         specifier: ^0.6.3
         version: 0.6.7
       tailwindcss:
-        specifier: ~4.0.17
+        specifier: 'catalog:'
         version: 4.0.17
       vfile:
         specifier: ~6.0.3
@@ -278,7 +299,7 @@ importers:
         specifier: ^4.19.3
         version: 4.19.4
       typescript:
-        specifier: ~5.8.2
+        specifier: 'catalog:'
         version: 5.8.3
       typescript-eslint:
         specifier: ~8.33.1
@@ -296,7 +317,7 @@ importers:
         specifier: ~4.4.2
         version: 4.4.2(eslint-plugin-import-x@4.15.0(@typescript-eslint/utils@8.33.1(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.28.0(jiti@2.4.2)))(eslint-plugin-import@2.31.0)(eslint@9.28.0(jiti@2.4.2))
       typescript:
-        specifier: ~5.8.2
+        specifier: 'catalog:'
         version: 5.8.3
       typescript-eslint:
         specifier: ~8.33.1
@@ -314,7 +335,7 @@ importers:
         specifier: ^3.7.0
         version: 3.7.0
       classnames:
-        specifier: ~2.5.1
+        specifier: 'catalog:'
         version: 2.5.1
       hast-util-to-string:
         specifier: ^3.0.1
@@ -365,13 +386,13 @@ importers:
         specifier: ~0.1.0
         version: 0.1.0
       classnames:
-        specifier: ~2.5.1
+        specifier: 'catalog:'
         version: 2.5.1
       postcss-calc:
         specifier: ^10.1.1
         version: 10.1.1(postcss@8.5.3)
       tailwindcss:
-        specifier: ~4.0.17
+        specifier: 'catalog:'
         version: 4.0.17
     devDependencies:
       '@storybook/addon-styling-webpack':
@@ -393,10 +414,10 @@ importers:
         specifier: ~14.6.1
         version: 14.6.1(@testing-library/dom@10.4.0)
       '@types/node':
-        specifier: 22.15.3
+        specifier: 'catalog:'
         version: 22.15.3
       '@types/react':
-        specifier: ^19.1.6
+        specifier: 'catalog:'
         version: 19.1.6
       cross-env:
         specifier: ^7.0.3
@@ -417,7 +438,7 @@ importers:
         specifier: ~8.1.1
         version: 8.1.1(postcss@8.5.3)(typescript@5.8.3)(webpack@5.99.7(@swc/core@1.11.24)(esbuild@0.25.3))
       react:
-        specifier: ^19.1.0
+        specifier: 'catalog:'
         version: 19.1.0
       storybook:
         specifier: ^9.0.3
@@ -441,7 +462,7 @@ importers:
         specifier: ^4.19.3
         version: 4.19.4
       typescript:
-        specifier: ~5.8.2
+        specifier: 'catalog:'
         version: 5.8.3
       typescript-eslint:
         specifier: ~8.33.1
