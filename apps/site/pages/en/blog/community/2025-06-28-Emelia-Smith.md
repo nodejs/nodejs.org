@@ -1,7 +1,7 @@
 ---
 date: '2025-06-28T13:00:00.000Z'
 category: community
-title: Node.js LGBTQIA+ Stories: Emelia Smith
+title: 'Node.js LGBTQIA+ Stories: Emelia Smith'
 layout: blog-post
 author: Emelia Smith
 ---
