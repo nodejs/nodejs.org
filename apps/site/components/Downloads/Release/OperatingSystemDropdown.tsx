@@ -53,16 +53,18 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = () => {
   );
 
   return (
-    <Select<UserOS>
-      values={parsedOperatingSystems}
-      defaultValue={release.os !== 'LOADING' ? release.os : undefined}
-      loading={release.os === 'LOADING'}
-      placeholder={t('layouts.download.dropdown.unknown')}
-      ariaLabel={t('layouts.download.dropdown.os')}
-      onChange={value => release.setOS(value)}
-      className="min-w-[8.5rem]"
-      inline={true}
-    />
+    <div>
+      <Select<UserOS>
+        values={parsedOperatingSystems}
+        defaultValue={release.os !== 'LOADING' ? release.os : undefined}
+        loading={release.os === 'LOADING'}
+        placeholder={t('layouts.download.dropdown.unknown')}
+        ariaLabel={t('layouts.download.dropdown.os')}
+        onChange={value => release.setOS(value)}
+        className="min-w-[8.5rem]"
+        inline={true}
+      />
+    </div>
   );
 };
 
