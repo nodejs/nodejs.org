@@ -81,7 +81,6 @@ const nextConfig = {
     // @see https://vercel.com/blog/how-we-optimized-package-imports-in-next-js
     optimizePackageImports: [
       '@radix-ui/react-accessible-icon',
-      '@radix-ui/react-dropdown-menu',
       '@radix-ui/react-label',
       '@radix-ui/react-select',
       '@radix-ui/react-slot',
