@@ -1,12 +1,12 @@
 ---
 date: '2025-06-25T09:00:00.000Z'
 category: community
-title: Open-sourced identity
+title: Open sourced identity
 layout: blog-post
 author: Carl Vitullo
 ---
 
-# Open-sourced identity
+# Open sourced identity
 
 This is a post about Pride Month 🌈.
 
