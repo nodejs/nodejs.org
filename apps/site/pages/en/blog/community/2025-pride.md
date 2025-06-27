@@ -1,5 +1,5 @@
 ---
-date: '2025-06-25T09:00:00.000Z'
+date: '2025-06-27T09:00:00.000Z'
 category: community
 title: Open sourced identity
 layout: blog-post
