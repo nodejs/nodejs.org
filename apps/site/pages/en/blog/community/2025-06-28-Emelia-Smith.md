@@ -1,6 +1,13 @@
+---
+date: '2025-06-28T13:00:00.000Z'
+category: community
+title: Node.js LGBTQIA+ Stories: Emelia Smith
+layout: blog-post
+author: Emelia Smith
+---
+
 # Node.js LGBTQIA+ Stories: Emelia Smith
 
-_how did you come to understand who you are, and what contributions have you made to open source?_
 
 [Carl](https://nodejs.org/en/blog/community/2025-pride) put it rather elegantly in the opening blog post for this series, when he said “When we were young, the rules for many of us were simple.”, and that resonates with my own experiences. I grew up in a very rural part of Australia, it was incredibly hot in the summers, and there wasn't a whole lot to do. Growing up, I knew people could be gay, but didn't know anyone who was actually gay, I knew transgender people existed but didn't know how because society wasn't as accepting then as it is now.
 
