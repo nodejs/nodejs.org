@@ -15,6 +15,9 @@ catalogs:
     classnames:
       specifier: ~2.5.1
       version: 2.5.1
+    cross-env:
+      specifier: ^7.0.3
+      version: 7.0.3
     react:
       specifier: ^19.1.0
       version: 19.1.0
@@ -139,7 +142,7 @@ importers:
         specifier: 'catalog:'
         version: 2.5.1
       cross-env:
-        specifier: 7.0.3
+        specifier: 'catalog:'
         version: 7.0.3
       feed:
         specifier: ~5.1.0
@@ -346,6 +349,10 @@ importers:
       unist-util-visit:
         specifier: ^5.0.0
         version: 5.0.0
+    devDependencies:
+      cross-env:
+        specifier: 'catalog:'
+        version: 7.0.3
 
   packages/ui-components:
     dependencies:
@@ -420,7 +427,7 @@ importers:
         specifier: 'catalog:'
         version: 19.1.6
       cross-env:
-        specifier: ^7.0.3
+        specifier: 'catalog:'
         version: 7.0.3
       css-loader:
         specifier: ~7.1.2

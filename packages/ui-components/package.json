@@ -57,7 +57,7 @@
     "@testing-library/user-event": "~14.6.1",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
-    "cross-env": "^7.0.3",
+    "cross-env": "catalog:",
     "css-loader": "~7.1.2",
     "eslint-plugin-react": "~7.37.4",
     "eslint-plugin-storybook": "~9.0.3",
