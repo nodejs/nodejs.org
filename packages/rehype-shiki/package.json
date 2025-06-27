@@ -15,6 +15,7 @@
   "dependencies": {
     "@shikijs/core": "^3.4.2",
     "@shikijs/engine-javascript": "^3.4.2",
+    "@shikijs/engine-oniguruma": "^3.7.0",
     "classnames": "~2.5.1",
     "hast-util-to-string": "^3.0.1",
     "shiki": "~3.4.2",
