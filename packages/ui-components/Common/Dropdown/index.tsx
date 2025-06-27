@@ -6,7 +6,6 @@ import type { LinkLike } from '#ui/types.js';
 import styles from './index.module.css';
 
 type DropdownProps = ComponentProps<'div'> & {
-  label: string;
   values: Array<HTMLProps<HTMLAnchorElement | HTMLDivElement>>;
   as?: LinkLike;
 };
@@ -35,20 +34,20 @@ const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
               return (
                 <As
                   key={index}
-                  className={styles.dropdownItem}
                   role="menuitem"
                   tabIndex={0}
                   {...(value as ComponentProps<LinkLike>)}
+                  className={classNames(styles.dropdownItem, value.className)}
                 />
               );
             } else {
               return (
                 <div
                   key={index}
-                  className={styles.dropdownItem}
                   role="menuitem"
                   tabIndex={0}
                   {...(value as HTMLProps<HTMLDivElement>)}
+                  className={classNames(styles.dropdownItem, value.className)}
                 />
               );
             }

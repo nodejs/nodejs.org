@@ -8,7 +8,6 @@ type Meta = MetaObj<typeof Dropdown>;
 // Basic example with default anchor links
 export const Default: Story = {
   args: {
-    label: 'History',
     values: [
       { href: '#item1', children: 'Item 1' },
       { href: '#item2', children: 'Item 2' },
