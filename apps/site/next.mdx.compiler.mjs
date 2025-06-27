@@ -6,7 +6,7 @@ import { matter } from 'vfile-matter';
 
 import { createSval } from './next.jsx.compiler.mjs';
 import { REHYPE_PLUGINS, REMARK_PLUGINS } from './next.mdx.plugins.mjs';
-import { createGitHubSlugger } from './util/gitHubUtils';
+import { createGitHubSlugger } from './util/github';
 
 // Defines a JSX Fragment and JSX Runtime for the MDX Compiler
 export const reactRuntime = { Fragment, jsx, jsxs };

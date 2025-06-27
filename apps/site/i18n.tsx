@@ -4,7 +4,7 @@ import { getRequestConfig } from 'next-intl/server';
 
 import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
 
-import deepMerge from './util/deepMerge';
+import { deepMerge } from './util/objects';
 
 // Loads the Application Locales/Translations Dynamically
 const loadLocaleDictionary = async (locale: string) => {

@@ -5,7 +5,7 @@ import {
   getAcronymFromString,
   parseRichTextIntoPlainText,
   dashToCamelCase,
-} from '#site/util/stringUtils';
+} from '#site/util/string';
 
 describe('String utils', () => {
   it('getAcronymFromString returns the correct acronym', () => {

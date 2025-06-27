@@ -1,7 +1,7 @@
 import { authors } from '#site/next.json.mjs';
 import type { AuthorProps } from '#site/types';
-import { getGitHubAvatarUrl } from '#site/util/gitHubUtils';
-import { getAcronymFromString } from '#site/util/stringUtils';
+import { getGitHubAvatarUrl } from '#site/util/github';
+import { getAcronymFromString } from '#site/util/string';
 
 export const mapAuthorToCardAuthors = (author: string) => {
   // Clears text in parentheses

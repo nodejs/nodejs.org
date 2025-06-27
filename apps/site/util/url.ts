@@ -1,12 +1,26 @@
-import { DIST_URL } from '#site/next.constants.mjs';
-import type { UserOS, UserPlatform } from '#site/types/userOS';
+import { satisfies } from 'semver';
 
-export type DownloadKind = 'installer' | 'binary' | 'source';
+import { DOCS_URL, DIST_URL } from '#site/next.constants.mjs';
+import type { OperatingSystem, Platform, DownloadKind } from '#site/types';
+
+export const getNodeApiUrl = (version: string) => {
+  if (satisfies(version, '>=0.3.1 <0.5.1')) {
+    return `${DOCS_URL}${version}/api/`;
+  }
+
+  if (satisfies(version, '>=0.1.14 <0.3.1')) {
+    return `${DOCS_URL}${version}/api.html`;
+  }
+
+  return satisfies(version, '>=1.0.0 <4.0.0')
+    ? `https://iojs.org/dist/${version}/docs/api/`
+    : `${DIST_URL}${version}/docs/api/`;
+};
 
 export const getNodeDownloadUrl = (
   versionWithPrefix: string,
-  os: UserOS | 'LOADING',
-  platform: UserPlatform = 'x64',
+  os: OperatingSystem | 'LOADING',
+  platform: Platform = 'x64',
   kind: DownloadKind = 'installer'
 ) => {
   const baseURL = `${DIST_URL}${versionWithPrefix}`;

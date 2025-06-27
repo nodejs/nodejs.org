@@ -1,4 +1,21 @@
-export default function deepMerge<Obj1 extends object, Obj2 extends object>(
+type DebounceFunction<T = unknown> = (...args: Array<T>) => void;
+
+export const debounce = <T extends DebounceFunction>(
+  func: T,
+  delay: number
+): ((...args: Parameters<T>) => void) => {
+  let timeoutId: NodeJS.Timeout;
+
+  return (...args: Parameters<T>) => {
+    clearTimeout(timeoutId);
+
+    timeoutId = setTimeout(() => {
+      func(...args);
+    }, delay);
+  };
+};
+
+export function deepMerge<Obj1 extends object, Obj2 extends object>(
   obj1: Obj1,
   obj2: Obj2
 ): Obj1 & Obj2 {
