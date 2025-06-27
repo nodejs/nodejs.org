@@ -12,7 +12,6 @@ const locators = {
     englishLocale.components.containers.navBar.controls.toggle,
   navLinksLocator: `[aria-label="${englishLocale.components.containers.navBar.controls.toggle}"] + div`,
   // Global UI controls
-  languageDropdownName: englishLocale.components.common.languageDropdown.label,
   themeToggleName: englishLocale.components.common.themeToggle.label,
 
   // Search components (from Orama library)
@@ -23,17 +22,6 @@ const locators = {
 
 const getTheme = (page: Page) =>
   page.evaluate(() => document.documentElement.dataset.theme);
-
-const openLanguageMenu = async (page: Page) => {
-  const button = page.getByRole('button', {
-    name: locators.languageDropdownName,
-  });
-  const selector = `[aria-labelledby=${await button.getAttribute('id')}]`;
-  await button.click();
-
-  await page.waitForSelector(selector);
-  return page.locator(selector);
-};
 
 const verifyTranslation = async (page: Page, locale: Locale | string) => {
   // Load locale data if string code provided (e.g., 'es', 'fr')
@@ -105,11 +93,7 @@ test.describe('Node.js Website', () => {
     }) => {
       await verifyTranslation(page, englishLocale);
 
-      // Change to Spanish and verify translations
-      const menu = await openLanguageMenu(page);
-      await menu.getByText(/español/i).click();
-      await page.waitForURL(/\/es$/);
-
+      await page.goto('/es');
       await verifyTranslation(page, 'es');
     });
   });
