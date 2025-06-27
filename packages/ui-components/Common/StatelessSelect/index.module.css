@@ -67,17 +67,3 @@
       text-white;
   }
 }
-
-.dropdownLabel {
-  @apply block
-    text-sm
-    font-medium
-    leading-tight;
-}
-
-.dropdownVersions {
-  @apply block
-    text-xs
-    leading-tight
-    opacity-75;
-}
