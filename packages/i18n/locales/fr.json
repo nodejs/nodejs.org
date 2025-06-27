@@ -168,7 +168,8 @@
       "overview": "Vue d'ensemble",
       "minorVersions": "Versions mineures",
       "releaseAnnouncement": "Annonce de publication",
-      "unsupportedVersionWarning": "Cette version ne fait plus l'objet d'une maintenance. Veuillez utiliser une version actuellement supportée. Comprendre l'accompagnement de fin de vie."
+      "unsupportedVersionWarning": "Cette version ne fait plus l'objet d'une maintenance. Veuillez utiliser une version actuellement supportée. <link>Comprendre l'accompagnement de fin de vie.</link>",
+      "ltsVersionFeaturesNotice": "Vous voulez de nouvelles fonctionnalités plus tôt ? Téléchargez la <link>dernière version de Node.js</link> à la place et essayez les dernières améliorations !"
     },
     "minorReleasesTable": {
       "version": "Version",
@@ -319,6 +320,7 @@
       },
       "codeBox": {
         "unsupportedVersionWarning": "Cette version ne fait plus l'objet d'une maintenance. Veuillez utiliser une version actuellement supportée. <link>Comprendre l'accompagnement de fin de vie.</link>",
+        "ltsVersionFeaturesNotice": "Vous voulez de nouvelles fonctionnalités plus tôt ? Procurez-vous plutôt la <link>dernière version de Node.js</link> et essayez les dernières améliorations !",
         "communityPlatformInfo": "Les méthodes d'installation qui impliquent des logiciels communautaires sont soutenues par les équipes qui maintiennent ces logiciels.",
         "externalSupportInfo": "Si vous rencontrez des problèmes, veuillez consulter <link>le site web de {platform}</link>",
         "noScriptDetected": "Cette page nécessite JavaScript. Vous pouvez télécharger Node.js sans JavaScript en visitant directement la page <link>page de diffusion</link> directement.",
