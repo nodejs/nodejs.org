@@ -30,6 +30,10 @@ Around the time I was figuring things out, I met some more wonderful queer peopl
 
 Now, I've been out and proud for a decade, I still contribute to Open Source frequently, in fact, a large percent of my work is on Open Source software. I still use Node.js regularly, and contribute to various packages, but not to the core project anymore. My time now is taken up with my own Open Source projects and contributing to [Mastodon](https://github.com/mastodon/mastodon/pulls?q=is%3Amerged+is%3Apr+author%3AThisIsMissEm+), [Hollo](https://github.com/fedify-dev/hollo/pulls?q=is%3Amerged+is%3Apr+author%3AThisIsMissEm+) and helping people with the [Adonis.js Framework](https://adonisjs.com). Chances are, you've probably used software I've contributed to in one way or another. You've almost certainly used code or patterns that LGBTQIA+ individuals have created.
 
-Node.js always has had a strong participation from LGBTQIA+ community members, and without Node.js, I doubt I'd have had the experiences I have had, met half the wonderful people I've met, nor gotten out of that dusty small country town, broadened my horizons and changed to be happy. Node.js is very much so to thank for who I am today.
+Node.js always has had a strong participation from LGBTQIA+ community members. For me, Node.js and DeviantART communities were a refuge for me, when I was living in a world I didn't quite fit into. Without Node.js, I wouldn't have had the experiences I have, I wouldn't have met the wonderful people I have met, nor would I have gotten out of that dusty small country town, broadened my horizons, changed, and found my happiness.
+
+Node.js is very much so to thank for who I am today.
+
+---
 
 You can find me on Mastodon as [@thisismissem@hachyderm.io](https://hachyderm.io/@thisismissem), and support my Open Source work financially at: [https://support.thisismissem.social](https://support.thisismissem.social).
