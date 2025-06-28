@@ -199,7 +199,7 @@ export default function rehypeShikiji() {
       // Adds a Copy Button to the CodeBox if requested as an additional parameter
       // And avoids setting the property (overriding) if undefined or invalid value
       if (showCopyButton && ['true', 'false'].includes(showCopyButton)) {
-        throw new Error(
+        console.warn(
           'The `showCopyButton` meta parameter is deprecated. Use `show-copy-button` instead.'
         );
         children[0].properties.showCopyButton = showCopyButton;
