@@ -168,7 +168,8 @@
       "overview": "概要",
       "minorVersions": "マイナーバージョン",
       "releaseAnnouncement": "リリース",
-      "unsupportedVersionWarning": "このバージョンのメンテナンスは終了しています。現在サポートされているバージョンを利用してください。"
+      "unsupportedVersionWarning": "このバージョンのメンテナンスは終了しています。現在サポートされているバージョンを利用してください。<link>EOLのサポートについて。</link>",
+      "ltsVersionFeaturesNotice": "すぐに最新の機能を試したいですか？<link>最新バージョンのNode.js</link>を代わりにインストールして最新の機能を試してください！"
     },
     "minorReleasesTable": {
       "version": "バージョン",
@@ -319,6 +320,7 @@
       },
       "codeBox": {
         "unsupportedVersionWarning": "このバージョンのメンテナンスは終了しています。現在サポートされているバージョンを利用してください。<link>EOLのサポートについて。</link>",
+        "ltsVersionFeaturesNotice": "すぐに最新の機能を試したいですか？<link>最新バージョンのNode.js</link>を代わりにインストールして最新の機能を試してください！",
         "communityPlatformInfo": "コミュニティーソフトウェアを含むインストール方法はそのソフトウェアを管理しているチームによってサポートされます。",
         "externalSupportInfo": "もし何らかの問題を見つけた場合は<link>{platform}のウェブサイト</link>を参照してください。",
         "noScriptDetected": "このページはJavaScriptが必要です。JavaScriptなしでも<link>リリースページ</link>から直接Node.jsをダウンロードできます。",
