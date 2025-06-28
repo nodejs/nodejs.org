@@ -1,8 +1,8 @@
 import { LanguageIcon } from '@heroicons/react/24/outline';
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import classNames from 'classnames';
 import type { FC } from 'react';
 
+import Dropdown from '#ui/Common/Dropdown';
 import type { SimpleLocaleConfig } from '#ui/types';
 
 import styles from './index.module.css';
@@ -11,45 +11,30 @@ type LanguageDropDownProps = {
   onChange?: (newLocale: SimpleLocaleConfig) => void;
   currentLanguage: string;
   availableLanguages: Array<SimpleLocaleConfig>;
-  ariaLabel: string;
 };
 
 const LanguageDropdown: FC<LanguageDropDownProps> = ({
   onChange = () => {},
   currentLanguage,
   availableLanguages,
-  ariaLabel,
+  ...props
 }) => {
   return (
-    <DropdownMenu.Root>
-      <DropdownMenu.Trigger asChild>
-        <button className={styles.languageDropdown} aria-label={ariaLabel}>
-          <LanguageIcon height="20" />
-        </button>
-      </DropdownMenu.Trigger>
-
-      <DropdownMenu.Portal>
-        <DropdownMenu.Content
-          align="start"
-          className={styles.dropDownContent}
-          sideOffset={5}
-        >
-          <div>
-            {availableLanguages.map(({ name, code, localName }) => (
-              <DropdownMenu.Item
-                key={code}
-                onClick={() => onChange({ name, code, localName })}
-                className={classNames(styles.dropDownItem, {
-                  [styles.currentDropDown]: code === currentLanguage,
-                })}
-              >
-                {localName}
-              </DropdownMenu.Item>
-            ))}
-          </div>
-        </DropdownMenu.Content>
-      </DropdownMenu.Portal>
-    </DropdownMenu.Root>
+    <Dropdown
+      values={availableLanguages.map(({ name, code, localName }) => ({
+        onClick: () => onChange({ name, code, localName }),
+        children: localName,
+        key: code,
+        className: classNames({
+          'cursor-pointer': true,
+          [styles.selected]: currentLanguage === code,
+        }),
+      }))}
+      className={styles.languageDropdown}
+      {...props}
+    >
+      <LanguageIcon height="20" />
+    </Dropdown>
   );
 };
 

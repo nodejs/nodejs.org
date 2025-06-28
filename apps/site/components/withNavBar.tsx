@@ -70,7 +70,7 @@ const WithNavBar: FC = () => {
           onChange={changeLanguage}
           availableLanguages={availableLocales}
           currentLanguage={locale}
-          ariaLabel={t('components.common.languageDropdown.label')}
+          aria-label={t('components.common.languageDropdown.label')}
         />
 
         <Link
