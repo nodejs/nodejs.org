@@ -7,15 +7,11 @@ import type { FC, PropsWithChildren } from 'react';
 import styles from './index.module.css';
 
 type ModalProps = PropsWithChildren<{
-  heading: string;
-  subheading?: string;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
 }>;
 
 const Modal: FC<ModalProps> = ({
-  heading,
-  subheading,
   children,
   open = false,
   onOpenChange = () => {},
@@ -28,15 +24,7 @@ const Modal: FC<ModalProps> = ({
             <XMarkIcon />
           </Dialog.Trigger>
 
-          <Dialog.Title className={styles.title}>{heading}</Dialog.Title>
-
-          {subheading && (
-            <Dialog.Description className={styles.description}>
-              {subheading}
-            </Dialog.Description>
-          )}
-
-          <main className={styles.wrapper}>{children}</main>
+          {children}
 
           <Dialog.Close />
         </Dialog.Content>
@@ -45,4 +33,18 @@ const Modal: FC<ModalProps> = ({
   </Dialog.Root>
 );
 
-export default Modal;
+const Title = ({ children }: PropsWithChildren) => (
+  <Dialog.Title className={styles.title}>{children}</Dialog.Title>
+);
+
+const Description = ({ children }: PropsWithChildren) => (
+  <Dialog.Description className={styles.description}>
+    {children}
+  </Dialog.Description>
+);
+
+const Content = ({ children }: PropsWithChildren) => (
+  <main className={styles.wrapper}>{children}</main>
+);
+
+export { Modal, Title, Description, Content };

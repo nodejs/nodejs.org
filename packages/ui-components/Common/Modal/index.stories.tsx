@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-import Modal from '#ui/Common/Modal';
+import { Modal, Title, Description, Content } from '#ui/Common/Modal';
 
 type Story = StoryObj<typeof Modal>;
 type Meta = MetaObj<typeof Modal>;
@@ -8,10 +8,12 @@ type Meta = MetaObj<typeof Modal>;
 export const Default: Story = {
   args: {
     open: true,
-    heading: 'Node.js Versions Information',
-    subheading: 'Get all information about Node.js versions and their changes.',
     children: (
-      <>
+      <Content>
+        <Title>Node.js Versions Information</Title>
+        <Description>
+          Get all information about Node.js versions and their changes.
+        </Description>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
           atque sint doloremque, sapiente recusandae debitis libero nostrum
@@ -24,7 +26,7 @@ export const Default: Story = {
           amet minus sit architecto blanditiis hic sed odit cumque numquam
           dignissimos delectus.
         </p>
-      </>
+      </Content>
     ),
   },
 };
