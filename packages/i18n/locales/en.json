@@ -163,12 +163,12 @@
       "details": "Details"
     },
     "releaseModal": {
-      "title": "Node.js {version} ({codename})",
-      "titleWithoutCodename": "Node.js {version}",
+      "title": "Node.js v{version} ({codename})",
+      "titleWithoutCodename": "Node.js v{version}",
       "overview": "Overview",
       "minorVersions": "Minor versions",
       "releaseAnnouncement": "Release Announcement",
-      "unsupportedVersionWarning": "This version is out of maintenance. Please use a currently supported version. <link>Understand EOL support.</link>",
+      "unsupportedVersionWarning": "This version is out of maintenance. Please use a supported version. <link>Understand EOL support.</link>",
       "ltsVersionFeaturesNotice": "Want new features sooner? Get the <link>latest Node.js version</link> instead and try the latest improvements!"
     },
     "minorReleasesTable": {

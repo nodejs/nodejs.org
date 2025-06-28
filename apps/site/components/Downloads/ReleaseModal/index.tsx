@@ -1,5 +1,5 @@
 import AlertBox from '@node-core/ui-components/Common/AlertBox';
-import Modal from '@node-core/ui-components/Common/Modal';
+import { Modal, Title, Content } from '@node-core/ui-components/Common/Modal';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
@@ -32,7 +32,7 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
   });
 
   return (
-    <Modal open={isOpen} onOpenChange={closeModal} heading={modalHeading}>
+    <Modal open={isOpen} onOpenChange={closeModal}>
       {release.status === 'End-of-life' && (
         <AlertBox
           title={t('components.common.alertBox.warning')}
@@ -40,7 +40,14 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
           size="small"
         >
           {t.rich('components.releaseModal.unsupportedVersionWarning', {
-            link: text => <Link href="/about/previous-releases/">{text}</Link>,
+            link: text => (
+              <Link
+                onClick={closeModal}
+                href="/about/previous-releases#release-schedule"
+              >
+                {text}
+              </Link>
+            ),
           })}
         </AlertBox>
       )}
@@ -57,19 +64,23 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
         </AlertBox>
       )}
 
-      {release.releaseAnnounceLink && (
-        <LinkWithArrow href={release.releaseAnnounceLink}>
-          {t('components.releaseModal.releaseAnnouncement')}
-        </LinkWithArrow>
-      )}
+      <Title>{modalHeading}</Title>
 
-      <h5>{t('components.releaseModal.overview')}</h5>
+      <Content>
+        {release.releaseAnnounceLink && (
+          <LinkWithArrow href={release.releaseAnnounceLink}>
+            {t('components.releaseModal.releaseAnnouncement')}
+          </LinkWithArrow>
+        )}
 
-      <ReleaseOverview release={release} />
+        <h5>{t('components.releaseModal.overview')}</h5>
 
-      <h5>{t('components.releaseModal.minorVersions')}</h5>
+        <ReleaseOverview release={release} />
 
-      <MinorReleasesTable releases={release.minorVersions} />
+        <h5>{t('components.releaseModal.minorVersions')}</h5>
+
+        <MinorReleasesTable releases={release.minorVersions} />
+      </Content>
     </Modal>
   );
 };

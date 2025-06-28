@@ -17,6 +17,7 @@
       w-full
       max-w-3xl
       flex-col
+      gap-2
       overflow-y-auto
       rounded
       border
@@ -47,8 +48,7 @@
   }
 
   .title {
-    @apply mb-2
-      text-3xl
+    @apply text-3xl
       font-semibold
       text-neutral-900
       dark:text-white;
@@ -56,7 +56,7 @@
 
   .description {
     @apply font-regular
-      mb-4
+      mb-2
       text-lg
       text-neutral-800
       dark:text-neutral-200;
