@@ -1,5 +1,5 @@
 ---
-title: Run JavaScript Everywhere
+title: どこでもJavaScriptを使おう
 layout: home
 ---
 
@@ -7,10 +7,9 @@ layout: home
   <WithBadgeGroup section="index" />
 
   <div>
-    <h1 className="special">Run JavaScript Everywhere</h1>
+    <h1 className="special">どこでもJavaScriptを使おう</h1>
 
-    Node.js® is a free, open-source, cross-platform JavaScript runtime environment
-    that lets developers create servers, web apps, command line tools and scripts.
+    Node.js®はクロスプラットフォームに対応したフリーでオープンソースのJavaScript実行環境です。開発者にサーバー、ウェブアプリ、コマンドラインツール、スクリプトなどを開発する環境を提供します。
 
   </div>
 
@@ -18,11 +17,11 @@ layout: home
     <WithNodeRelease status={['LTS']}>
       {({ release }) => (
         <>
-          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+          <DownloadButton release={release}>Node.js（LTS）をダウンロードする</DownloadButton>
           <small>
-            Downloads Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
-            Node.js can also be installed via <Link href="/download">version managers</Link>.
+            長期サポート版Node.js <b>{release.versionWithPrefix}</b>
+            <sup title="Downloads a Node.js installer for your current platform">1</sup>をダウンロードする。
+            <Link href="/download">バージョンマネージャー</Link>を利用したインストール方法もあります。
           </small>
         </>
       )}
@@ -31,9 +30,9 @@ layout: home
     <WithNodeRelease status={['Current']}>
       {({ release }) => (
         <small>
-          Want new features sooner?
-          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> instead.
+          最新の機能をすぐに試したい場合は
+          <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+          <sup title="Downloads a Node.js installer for your current platform">1</sup>をインストールできます。
         </small>
       )}
     </WithNodeRelease>
@@ -128,5 +127,7 @@ layout: home
     ```
 
   </div>
-  Learn more what Node.js is able to offer with our [Learning materials](/learn).
+
+私たちの[学習教材](/learn)でNode.jsでできることをさらに学んでみましょう。
+
 </section>

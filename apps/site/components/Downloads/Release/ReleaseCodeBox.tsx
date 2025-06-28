@@ -38,7 +38,6 @@ const parseSnippet = (s: string, releaseContext: ReleaseContextType) => {
 
 const ReleaseCodeBox: FC = () => {
   const { snippets } = useContext(ReleasesContext);
-
   const { installMethod, os, packageManager, release } =
     useContext(ReleaseContext);
 
@@ -123,18 +122,6 @@ const ReleaseCodeBox: FC = () => {
         >
           {t.rich('layouts.download.codeBox.unsupportedVersionWarning', {
             link: text => <Link href="/about/previous-releases/">{text}</Link>,
-          })}
-        </AlertBox>
-      )}
-
-      {release.status === 'LTS' && (
-        <AlertBox
-          title={t('components.common.alertBox.info')}
-          level="info"
-          size="small"
-        >
-          {t.rich('layouts.download.codeBox.ltsVersionFeaturesNotice', {
-            link: text => <Link href="/download/current">{text}</Link>,
           })}
         </AlertBox>
       )}

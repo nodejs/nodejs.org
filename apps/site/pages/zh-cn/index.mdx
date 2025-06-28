@@ -1,5 +1,5 @@
 ---
-title: Run JavaScript Everywhere
+title: 在任何地方运行 JavaScript
 layout: home
 ---
 
@@ -7,10 +7,10 @@ layout: home
   <WithBadgeGroup section="index" />
 
   <div>
-    <h1 className="special">Run JavaScript Everywhere</h1>
+    <h1 className="special">在任何地方运行 JavaScript</h1>
 
-    Node.js® is a free, open-source, cross-platform JavaScript runtime environment
-    that lets developers create servers, web apps, command line tools and scripts.
+    Node.js® 是一个免费、开源、跨平台的 JavaScript 运行时环境, 它让开发人员能够创建服务器
+    Web 应用、命令行工具和脚本。
 
   </div>
 
@@ -18,11 +18,11 @@ layout: home
     <WithNodeRelease status={['LTS']}>
       {({ release }) => (
         <>
-          <DownloadButton release={release}>Download Node.js (LTS)</DownloadButton>
+          <DownloadButton release={release}>下载 Node.js (LTS)</DownloadButton>
           <small>
-            Downloads Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads a Node.js installer for your current platform">1</sup> with long-term support.
-            Node.js can also be installed via <Link href="/download">version managers</Link>.
+            下载 Node.js <b>{release.versionWithPrefix}</b>
+            <sup title="Downloads a Node.js installer for your current platform">1</sup> 长期支持版本。
+            Node.js 也可以通过 <Link href="/download/package-manager">软件包管理器</Link> 进行安装。
           </small>
         </>
       )}
@@ -30,11 +30,11 @@ layout: home
 
     <WithNodeRelease status={['Current']}>
       {({ release }) => (
-        <small>
-          Want new features sooner?
-          Get <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> instead.
-        </small>
+      <small>
+      想要更快获得新功能吗？
+      获取 <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
+      <sup title="Downloads a Node.js installer for your current platform">1</sup> 版本吧。
+      </small>
       )}
     </WithNodeRelease>
 
@@ -128,5 +128,5 @@ layout: home
     ```
 
   </div>
-  Learn more what Node.js is able to offer with our [Learning materials](/learn).
+  通过我们的[学习资料](/learn)了解 Node.js 。
 </section>
