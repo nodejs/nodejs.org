@@ -14,12 +14,12 @@ const parsePages = (
   getLabel: (pageNumber: number) => string
 ): Array<PaginationListItemProps> =>
   pages.map(({ url }, index) => ({
-    url,
+    url: url,
     pageNumber: index + 1,
-    currentPage,
-    totalPages,
+    currentPage: currentPage,
+    totalPages: totalPages,
     label: getLabel(index + 1),
-    as,
+    as: as,
   }));
 
 const createPaginationListItems = (

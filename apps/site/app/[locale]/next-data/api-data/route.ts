@@ -48,7 +48,7 @@ export const GET = async () => {
         const deflatedSource = deflateSync(cleanedContent).toString('base64');
 
         return {
-          filename,
+          filename: filename,
           pathname: getPathnameForApiFile(name, versionWithPrefix),
           content: deflatedSource,
         };
