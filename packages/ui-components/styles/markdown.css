@@ -157,7 +157,7 @@ main {
       @apply font-semibold;
     }
 
-    tr:last-child td {
+    tr:last-child > td {
       @apply sm:border-b-0;
 
       &:last-child {
