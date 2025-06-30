@@ -88,7 +88,7 @@ Between each run of the event loop, Node.js checks if it is waiting for
 any asynchronous I/O or timers and shuts down cleanly if there are not
 any.
 
-For a visual explanation of the Event Loop, watch [this video by Bert Belder](https://www.youtube.com/watch?v=PNa9OMajw9w&ab_channel=node.js).
+For a visual walkthrough of the event loop phases, you can watch [this video by Bert Belder](https://www.youtube.com/watch?v=PNa9OMajw9w&ab_channel=node.js).
 
 ## Phases in Detail
 
