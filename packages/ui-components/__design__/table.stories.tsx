@@ -6,7 +6,7 @@ const tableData = [
   ['Data 1', 'Data 2', 'Data 3'],
 ];
 
-export const TableWithSubTableRow: StoryObj = {
+export const Table: StoryObj = {
   render: () => (
     <main>
       <table>
