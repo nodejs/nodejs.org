@@ -10,22 +10,24 @@ import { SlidingChatPanel } from './Chat';
 import styles from './index.module.css';
 import { Search } from './Search';
 
+// TODO: test collection, replace with production collection and env variables
 const oramaClient = new CollectionManager({
-  url: 'https://atlantis.cluster.staging.oramacore.com',
-  collectionID: 'dpygf82gs9bvtf6o85fjuj40',
-  readAPIKey: '2pj8SUaPGbakScglDBHfJbV5aIuWmT7y',
+  url: 'https://atlantis.cluster.oramacore.com',
+  collectionID: 'si0xduw9p7z52s5q91d45d82',
+  readAPIKey: '6O3o7uKE3aoHN6RUWLtKKQbMNNikAupR',
 });
 
 const InnerSearchBox: FC<PropsWithChildren> = () => {
-  const [displayChat, setDisplayChat] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
+  const toggleChatPanel = (): void => {
+    setIsChatOpen(!isChatOpen);
+  };
 
   return (
     <>
-      <Search onChatTrigger={() => setDisplayChat(true)} />
-      <SlidingChatPanel
-        open={displayChat}
-        onClose={() => setDisplayChat(false)}
-      />
+      <Search onChatTrigger={toggleChatPanel} />
+      <SlidingChatPanel open={isChatOpen} onClose={toggleChatPanel} />
     </>
   );
 };
@@ -34,19 +36,19 @@ const OramaSearch: FC<PropsWithChildren> = () => {
   const [open, setOpen] = useState(false);
   const t = useTranslations();
 
-  const openSearchBox = (): void => {
-    setOpen(true);
+  const toggleSearchBox = (): void => {
+    setOpen(!open);
   };
 
   return (
     <>
       <button
         type="button"
-        onClick={openSearchBox}
+        onClick={toggleSearchBox}
         className={styles.searchButton}
       >
         <div className={styles.searchButtonContent}>
-          <MagnifyingGlassIcon className="h-4 w-4" />
+          <MagnifyingGlassIcon />
           {t('components.search.searchPlaceholder')}
         </div>
         <span className={styles.searchButtonShortcut}>⌘ K</span>
@@ -54,7 +56,7 @@ const OramaSearch: FC<PropsWithChildren> = () => {
 
       <Modal.Wrapper
         open={open}
-        onModalClosed={() => setOpen(false)}
+        onModalClosed={toggleSearchBox}
         closeOnOutsideClick={true}
         closeOnEscape={true}
         className={styles.modalWrapper}

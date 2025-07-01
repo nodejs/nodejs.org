@@ -253,7 +253,15 @@
       "initErrorChat": "Unable to initialize chat service",
       "chatButtonLabel": "Get an AI summary",
       "searchButtonLabel": "Search",
-      "poweredBy": "Powered by {provider}"
+      "poweredBy": "Powered by",
+      "suggestionOne": "How to install Node.js?",
+      "suggestionTwo": "How to create an HTTP server?",
+      "suggestionThree": "Upgrading Node.js version",
+      "keyboardShortcuts": {
+        "select": "to select",
+        "navigate": "to navigate",
+        "close": "to close"
+      }
     },
     "blog": {
       "blogHeader": {

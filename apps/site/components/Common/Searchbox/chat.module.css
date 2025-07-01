@@ -1,0 +1,288 @@
+@reference "../../../styles/index.css";
+
+.slidingPanelContent {
+  @apply overflow-hidden
+    rounded-tl-3xl
+    rounded-tr-3xl
+    bg-neutral-100
+    shadow-lg
+    md:max-w-none
+    dark:bg-gray-950;
+
+  > div {
+    @apply h-full
+      overflow-y-auto
+      p-6;
+  }
+}
+
+.slidingPanelInner {
+  @apply mx-auto
+    flex
+    h-full
+    max-w-4xl
+    flex-col
+    justify-between
+    gap-2;
+}
+
+.slidingPanelTop {
+  @apply flex
+    min-h-0
+    flex-1
+    flex-col
+    pb-6;
+}
+
+.slidingPanelBottom {
+  @apply relative
+    flex-shrink-0;
+}
+
+.chatInteractionsWrapper {
+  @apply relative
+    h-full
+    items-start
+    overflow-y-auto
+    px-8;
+
+  > div {
+    @apply h-full;
+  }
+}
+
+.chatUserPrompt {
+  @apply mb-4
+    text-base
+    text-neutral-900
+    dark:text-neutral-200;
+}
+
+.chatSources {
+  @apply mb-4
+    flex
+    flex-nowrap
+    items-center
+    gap-3
+    overflow-x-scroll
+    scroll-smooth
+    [scrollbar-width:none]
+    [&::-webkit-scrollbar]:hidden;
+}
+
+.chatSource {
+  @apply flex
+    max-w-xs
+    items-center
+    gap-2
+    text-base;
+}
+
+.chatSourceLink {
+  @apply rounded-xl
+    bg-neutral-100
+    px-4
+    py-2
+    text-neutral-900
+    transition-colors
+    duration-300
+    hover:bg-neutral-200
+    focus:bg-neutral-200
+    dark:bg-neutral-950
+    dark:text-neutral-200
+    hover:dark:bg-neutral-900
+    focus:dark:bg-neutral-900;
+}
+
+.chatSourceTitle {
+  @apply max-w-full
+    overflow-hidden
+    truncate
+    text-ellipsis
+    whitespace-nowrap
+    text-sm
+    font-semibold;
+}
+
+.chatAssistantMessageWrapper {
+  @apply my-4
+    mb-6
+    max-w-full
+    rounded-xl
+    bg-neutral-100
+    px-6
+    py-4
+    text-base
+    text-neutral-900
+    dark:bg-neutral-950
+    dark:text-neutral-200;
+}
+
+.chatAssistantMessage {
+  p {
+    @apply font-sm-line-height
+      mb-3;
+  }
+
+  pre:not([class*='language-']) {
+    @apply my-4;
+
+    > div {
+      @apply rounded-lg
+        p-3
+        text-sm;
+    }
+  }
+
+  ul {
+    @apply list-disc
+      pl-6;
+
+    li {
+      @apply mb-2;
+    }
+  }
+
+  strong {
+    @apply font-bold;
+  }
+
+  h3 {
+    @apply mb-2
+      text-lg
+      font-bold;
+  }
+}
+
+.chatLoader {
+  @apply my-4;
+}
+
+.chatActionsContainer {
+  @apply flex
+    items-center
+    justify-end
+    pt-2;
+}
+
+.chatActionsList {
+  @apply flex
+    list-none
+    items-center
+    gap-2
+    p-0;
+}
+
+.chatAction {
+  @apply cursor-pointer
+    rounded-full
+    p-2
+    text-neutral-800
+    transition-colors
+    duration-300
+    hover:bg-neutral-300
+    dark:text-neutral-400
+    dark:hover:bg-neutral-900;
+
+  svg {
+    @apply h-4
+      w-4;
+  }
+}
+
+.chatActionIconSelected {
+  @apply text-green-600
+    dark:text-green-400;
+}
+
+.promptTextAreaWrapper {
+  @apply relative
+    mx-8
+    flex
+    items-center
+    space-x-2
+    rounded-2xl
+    border
+    border-neutral-200
+    bg-transparent
+    py-1
+    text-base
+    text-neutral-900
+    placeholder:text-neutral-500
+    focus:outline-none
+    dark:border-neutral-900
+    dark:bg-neutral-950
+    dark:text-neutral-200
+    dark:placeholder:text-neutral-600;
+
+  svg {
+    @apply h-4
+      w-4;
+  }
+}
+
+.scrollDownButton {
+  @apply absolute
+    -top-8
+    left-1/2
+    -translate-x-1/2
+    -translate-y-1/2
+    cursor-pointer
+    rounded-lg
+    bg-neutral-300
+    p-2
+    text-neutral-800
+    transition-colors
+    duration-300
+    hover:bg-neutral-400
+    dark:bg-neutral-900
+    dark:text-white
+    dark:hover:bg-neutral-800;
+
+  svg {
+    @apply h-4
+      w-4;
+  }
+}
+
+.promptTextAreaButton {
+  @apply absolute
+    right-2
+    top-1/2
+    -translate-y-1/2
+    cursor-pointer
+    rounded-lg
+    bg-neutral-300
+    p-2
+    text-neutral-800
+    transition-colors
+    duration-300
+    hover:bg-neutral-400
+    disabled:cursor-not-allowed
+    disabled:bg-neutral-200
+    disabled:text-neutral-500
+    dark:bg-green-400
+    dark:text-white
+    dark:hover:bg-green-400
+    dark:disabled:bg-neutral-900
+    dark:disabled:text-neutral-700;
+}
+
+.promptTextAreaField {
+  @apply w-full
+    resize-none
+    border-0
+    bg-transparent
+    px-4
+    py-2
+    focus:outline-none;
+}
+
+.slidingPanelFooter {
+  @apply flex
+    items-center
+    justify-center
+    pt-2
+    text-neutral-700
+    dark:text-neutral-700;
+}

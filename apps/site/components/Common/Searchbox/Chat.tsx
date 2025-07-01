@@ -6,7 +6,11 @@ import {
   ClipboardIcon,
   DocumentCheckIcon,
 } from '@heroicons/react/24/outline';
-import { ArrowDownIcon, PauseCircleIcon } from '@heroicons/react/24/solid';
+import {
+  ArrowDownIcon,
+  PauseCircleIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/solid';
 import Skeleton from '@node-core/ui-components/Common/Skeleton';
 import {
   ChatInteractions,
@@ -14,15 +18,11 @@ import {
   SlidingPanel,
 } from '@orama/ui/components';
 import { useScrollableContainer } from '@orama/ui/hooks/useScrollableContainer';
-// import classNames from 'classnames';
-// import Link from 'next/link';
-// import { useLocale } from 'next-intl';
-// import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { type FC, type PropsWithChildren } from 'react';
 
-import styles from './index.module.css';
+import styles from './chat.module.css';
 
 type SlidingChatPanelProps = PropsWithChildren & {
   open: boolean;
@@ -45,6 +45,13 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
   return (
     <>
       <SlidingPanel.Wrapper open={open} onClose={onClose}>
+        <SlidingPanel.Backdrop />
+        <SlidingPanel.Close
+          className={styles.slidingPanelCloseButton}
+          aria-label="Close chat panel"
+        >
+          <XMarkIcon className="h-6 w-6" />
+        </SlidingPanel.Close>
         <SlidingPanel.Content className={styles.slidingPanelContent}>
           <div className={styles.slidingPanelInner}>
             <div className={styles.slidingPanelTop}>
@@ -148,7 +155,7 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
                   className={styles.scrollDownButton}
                   aria-label="Scroll to bottom"
                 >
-                  <ArrowDownIcon className="h-4 w-4" />
+                  <ArrowDownIcon />
                 </button>
               )}
               <PromptTextArea.Wrapper className={styles.promptTextAreaWrapper}>
@@ -160,10 +167,10 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
                   className={styles.promptTextAreaField}
                 />
                 <PromptTextArea.Button
-                  abortContent={<PauseCircleIcon className="h-4 w-4" />}
+                  abortContent={<PauseCircleIcon />}
                   className={styles.promptTextAreaButton}
                 >
-                  <ArrowUpIcon className="h-4 w-4" />
+                  <ArrowUpIcon />
                 </PromptTextArea.Button>
               </PromptTextArea.Wrapper>
               <div className={styles.slidingPanelFooter}>

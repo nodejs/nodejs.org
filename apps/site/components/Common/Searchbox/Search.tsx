@@ -22,7 +22,7 @@ import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { type FC, type PropsWithChildren } from 'react';
 
-import styles from './index.module.css';
+import styles from './search.module.css';
 import { getFormattedPath } from './utils';
 
 type SearchProps = PropsWithChildren & {
@@ -104,27 +104,27 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
                   <p className={styles.suggestionsTitle}>
                     {t('components.search.suggestions')}
                   </p>
-                  <Suggestions.List className="mt-1 space-y-1">
+                  <Suggestions.List className={styles.suggestionsList}>
                     <Suggestions.Item
                       onClick={onChatTrigger}
                       itemClassName={styles.suggestionItem}
                     >
-                      <SparklesIcon className="h-4 w-4" />
-                      How to install Node.js?
+                      <SparklesIcon />
+                      {t('components.search.suggestionOne')}
                     </Suggestions.Item>
                     <Suggestions.Item
                       onClick={onChatTrigger}
                       itemClassName={styles.suggestionItem}
                     >
-                      <SparklesIcon className="h-4 w-4" />
-                      How to create an HTTP server?
+                      <SparklesIcon />
+                      {t('components.search.suggestionTwo')}
                     </Suggestions.Item>
                     <Suggestions.Item
                       onClick={onChatTrigger}
                       itemClassName={styles.suggestionItem}
                     >
-                      <SparklesIcon className="h-4 w-4" />
-                      Upgrading Node.js version
+                      <SparklesIcon />
+                      {t('components.search.suggestionThree')}
                     </Suggestions.Item>
                   </Suggestions.List>
                 </Suggestions.Wrapper>
@@ -178,14 +178,15 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
         </SearchResults.GroupsWrapper>
       </div>
 
-      {/* FOOTER */}
       <div className={styles.footer}>
         <div className={styles.shortcutWrapper}>
           <div className={styles.shortcutItem}>
             <kbd className={styles.shortcutKey}>
               <ArrowTurnDownLeftIcon />
             </kbd>
-            <span className={styles.shortcutLabel}>to select</span>
+            <span className={styles.shortcutLabel}>
+              {t('components.search.keyboardShortcuts.select')}
+            </span>
           </div>
           <div className={styles.shortcutItem}>
             <kbd className={styles.shortcutKey}>
@@ -194,11 +195,15 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
             <kbd className={styles.shortcutKey}>
               <ArrowUpIcon />
             </kbd>
-            <span className={styles.shortcutLabel}>to navigate</span>
+            <span className={styles.shortcutLabel}>
+              {t('components.search.keyboardShortcuts.navigate')}
+            </span>
           </div>
           <div className={styles.shortcutItem}>
             <kbd className={styles.shortcutKey}>esc</kbd>
-            <span className={styles.shortcutLabel}>to close</span>
+            <span className={styles.shortcutLabel}>
+              {t('components.search.keyboardShortcuts.close')}
+            </span>
           </div>
         </div>
         <div>
@@ -209,12 +214,12 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
             className={styles.poweredByLink}
             data-focus-on-arrow-nav
           >
-            <small>Powered by</small>
+            <small>{t('components.search.poweredBy')}</small>
             <Image
               src={oramaLogo}
-              alt={t('components.search.poweredBy', { provider: 'Orama' })}
+              alt={t('components.search.poweredBy') + ' Orama'}
               width="62"
-              height={22}
+              height="22"
             />
           </a>
         </div>

@@ -1,11 +1,11 @@
 @reference "../../../styles/index.css";
 
-.searchWrapper {
+/* .searchWrapper {
   @apply relative
     flex
     w-full
     flex-shrink-0;
-}
+} */
 
 .searchButton {
   @apply flex
@@ -38,6 +38,11 @@
     items-center
     gap-1
     text-sm;
+
+  svg {
+    @apply h-4
+      w-4;
+  }
 }
 
 .searchButtonShortcut {
@@ -96,7 +101,7 @@
     flex-col;
 }
 
-.searchInputWrapper {
+/* .searchInputWrapper {
   @apply relative;
 
   svg {
@@ -174,6 +179,11 @@
     dark:text-neutral-200;
 }
 
+.suggestionsList {
+  @apply mt-1
+    space-y-1;
+}
+
 .suggestionsTitle {
   @apply mb-3
     mt-3
@@ -193,6 +203,11 @@
     text-sm
     text-green-600
     dark:text-green-400;
+
+  svg {
+    @apply h-5
+      w-5;
+  }
 }
 
 .searchResultsWrapper {
@@ -414,10 +429,6 @@
     [&::-webkit-scrollbar]:hidden;
 }
 
-/* .chatSourceItem {
-  @apply bg-accent1-300;
-} */
-
 .chatSource {
   @apply flex
     max-w-xs
@@ -562,6 +573,11 @@
     dark:bg-neutral-950
     dark:text-neutral-200
     dark:placeholder:text-neutral-600;
+
+  svg {
+    @apply h-4
+      w-4;
+  }
 }
 
 .scrollDownButton {
@@ -628,4 +644,4 @@
     pt-2
     text-neutral-700
     dark:text-neutral-700;
-}
+} */
