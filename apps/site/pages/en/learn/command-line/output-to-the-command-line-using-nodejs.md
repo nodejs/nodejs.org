@@ -165,7 +165,7 @@ As we saw console.log is great for printing messages in the Console. This is wha
 
 `console.error` prints to the `stderr` stream.
 
-It will not appear in the console, but it will appear in the error log.
+It will appear in the console, but can be handled separately from regular output.
 
 ### Color the output
 
