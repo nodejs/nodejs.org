@@ -6,7 +6,7 @@ const tableData = [
   ['Data 1', 'Data 2', 'Data 3'],
 ];
 
-export const Table: StoryObj = {
+export const TableWithSubTableRow: StoryObj = {
   render: () => (
     <main>
       <table>
@@ -25,24 +25,28 @@ export const Table: StoryObj = {
               ))}
             </tr>
           ))}
-        </tbody>
-      </table>
-    </main>
-  ),
-};
-
-export const HeadlessTable: StoryObj = {
-  render: () => (
-    <main>
-      <table>
-        <tbody>
-          {tableData.map((row, rowIndex) => (
-            <tr key={rowIndex}>
-              {row.map((cell, cellIndex) => (
-                <td key={cellIndex}>{cell}</td>
-              ))}
-            </tr>
-          ))}
+          <tr>
+            <td colSpan={3}>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Sub 1</th>
+                    <th>Sub 2</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sub A</td>
+                    <td>Sub B</td>
+                  </tr>
+                  <tr>
+                    <td>Sub C</td>
+                    <td>Sub D</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
         </tbody>
       </table>
     </main>
