@@ -55,7 +55,17 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
           className={style.sidebarItemTogglerLabel}
           htmlFor="sidebarItemToggler"
           role="button"
+          tabIndex={0}
           aria-label={sidebarItemTogglerAriaLabel}
+          onKeyDown={e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              const input = document.getElementById(
+                'sidebarItemToggler'
+              ) as HTMLInputElement;
+              input?.click(); // Triggers input toggle
+            }
+          }}
         >
           {navInteractionIcons[isMenuOpen ? 'close' : 'show']}
         </Label.Root>
