@@ -113,7 +113,7 @@ node --run build
 1. **Create a branch**: `git checkout -b your-feature-branch`
 2. **Commit changes**: Follow our [commit guidelines](./docs/code-style.md#commit-guidelines)
 3. **Push to your fork**: `git push origin your-feature-branch`
-4. **Open a Pull Request**: Use our [pull request template](.github/pull_request_template.md)
+4. **Open a Pull Request**: Use our [pull request template](.github/PULL_REQUEST_TEMPLATE.md)
 
 ## Documentation Structure
 
