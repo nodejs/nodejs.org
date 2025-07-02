@@ -182,7 +182,7 @@ function final() {
 }
 
 function dispatch(recipient, callback) {
-  // `sendEmail` is a hypothetical SMTP client
+  // `sendMail` is a hypothetical SMTP client
   sendMail(
     {
       subject: 'Dinner tonight',
@@ -227,7 +227,7 @@ const recipients = [
 ];
 
 function dispatch(recipient, callback) {
-  // `sendEmail` is a hypothetical SMTP client
+  // `sendMail` is a hypothetical SMTP client
   sendMail(
     {
       subject: 'Dinner tonight',
