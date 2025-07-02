@@ -8,14 +8,42 @@
     w-full
     items-center
     overflow-hidden
+    rounded-md
     text-sm
     text-neutral-800
+    transition-all
+    duration-200
+    ease-in-out
     dark:text-neutral-200;
+
+  margin-bottom: 1px;
+
+  &:not(.active):hover {
+    @apply bg-neutral-100
+      text-neutral-900
+      shadow-sm
+      dark:bg-neutral-800
+      dark:text-neutral-100;
+
+    .icon {
+      @apply scale-110
+        text-green-600
+        dark:text-green-400;
+    }
+
+    .label {
+      @apply text-neutral-900
+        dark:text-neutral-100;
+    }
+  }
 
   .label {
     @apply font-regular
       p-2
-      text-sm;
+      text-sm
+      transition-colors
+      duration-200
+      ease-in-out;
   }
 
   .progressionIcon {
@@ -23,6 +51,9 @@
       fill-neutral-200
       stroke-white
       stroke-[4]
+      transition-colors
+      duration-200
+      ease-in-out
       dark:fill-neutral-800
       dark:stroke-neutral-950;
   }
@@ -30,12 +61,20 @@
   .icon {
     @apply size-3
       text-neutral-500
+      transition-all
+      duration-200
+      ease-in-out
       dark:text-neutral-200;
   }
 
   &.progression {
     .label {
       @apply p-1;
+    }
+
+    &:not(.active):hover {
+      @apply bg-neutral-50
+        dark:bg-neutral-900;
     }
   }
 
