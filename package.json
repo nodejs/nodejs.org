@@ -46,7 +46,7 @@
     "eslint": "~9.28.0",
     "eslint-plugin-import-x": "~4.15.0",
     "prettier": "3.5.3",
-    "prettier-plugin-tailwindcss": "0.6.12"
+    "prettier-plugin-tailwindcss": "0.6.13"
   },
   "packageManager": "pnpm@10.11.1",
   "devEngines": {
