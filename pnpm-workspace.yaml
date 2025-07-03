@@ -20,7 +20,7 @@ onlyBuiltDependencies:
 # https://pnpm.io/en/catalogs
 catalog:
   '@types/node': 22.15.3
-  '@types/react': ^19.1.6
+  '@types/react': ^19.1.8
   classnames: ~2.5.1
   react: ^19.1.0
   tailwindcss: ~4.0.17
