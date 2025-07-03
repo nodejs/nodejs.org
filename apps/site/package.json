@@ -112,7 +112,7 @@
     "typescript": "catalog:",
     "typescript-eslint": "~8.33.1",
     "user-agent-data-types": "0.4.2",
-    "wrangler": "^4.13.0"
+    "wrangler": "^4.22.0"
   },
   "imports": {
     "#site/*": [
