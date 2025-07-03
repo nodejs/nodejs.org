@@ -17,8 +17,7 @@ import { useSearchContext } from '@orama/ui/contexts';
 import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useLocale } from 'next-intl';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { type FC, type PropsWithChildren } from 'react';
 

@@ -10,7 +10,8 @@
     dark:bg-gray-950;
 
   > div {
-    @apply h-full
+    @apply relative
+      h-full
       overflow-y-auto
       p-6;
   }
@@ -37,6 +38,27 @@
 .slidingPanelBottom {
   @apply relative
     flex-shrink-0;
+}
+
+.slidingPanelCloseButton {
+  @apply absolute
+    right-4
+    top-4
+    z-10
+    cursor-pointer
+    rounded-full
+    p-2
+    text-neutral-800
+    transition-colors
+    duration-300
+    hover:bg-neutral-300
+    dark:text-neutral-400
+    dark:hover:bg-neutral-900;
+
+  svg {
+    @apply h-5
+      w-5;
+  }
 }
 
 .chatInteractionsWrapper {

@@ -19,7 +19,7 @@ import {
 } from '@orama/ui/components';
 import { useScrollableContainer } from '@orama/ui/hooks/useScrollableContainer';
 import Link from 'next/link';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { type FC, type PropsWithChildren } from 'react';
 
 import styles from './chat.module.css';
@@ -34,7 +34,7 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
   onClose,
 }) => {
   const locale = useLocale();
-  // const t = useTranslations();
+  const t = useTranslations();
   const {
     containerRef,
     showGoToBottomButton,
@@ -46,13 +46,13 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
     <>
       <SlidingPanel.Wrapper open={open} onClose={onClose}>
         <SlidingPanel.Backdrop />
-        <SlidingPanel.Close
-          className={styles.slidingPanelCloseButton}
-          aria-label="Close chat panel"
-        >
-          <XMarkIcon className="h-6 w-6" />
-        </SlidingPanel.Close>
         <SlidingPanel.Content className={styles.slidingPanelContent}>
+          <SlidingPanel.Close
+            className={styles.slidingPanelCloseButton}
+            aria-label={t('components.search.closeChat')}
+          >
+            <XMarkIcon />
+          </SlidingPanel.Close>
           <div className={styles.slidingPanelInner}>
             <div className={styles.slidingPanelTop}>
               <ChatInteractions.Wrapper
@@ -153,14 +153,14 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
                 <button
                   onClick={() => scrollToBottom({ animated: true })}
                   className={styles.scrollDownButton}
-                  aria-label="Scroll to bottom"
+                  aria-label={t('components.search.scrollToBottom')}
                 >
                   <ArrowDownIcon />
                 </button>
               )}
               <PromptTextArea.Wrapper className={styles.promptTextAreaWrapper}>
                 <PromptTextArea.Field
-                  placeholder="Ask me anything..."
+                  placeholder={t('components.search.chatPlaceholder')}
                   rows={1}
                   maxLength={500}
                   autoFocus
@@ -174,9 +174,7 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
                 </PromptTextArea.Button>
               </PromptTextArea.Wrapper>
               <div className={styles.slidingPanelFooter}>
-                <small>
-                  AI summaries can make mistakes. Please verify the information.
-                </small>
+                <small>{t('components.search.disclaimer')}</small>
               </div>
             </div>
           </div>
