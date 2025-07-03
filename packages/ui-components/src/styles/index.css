@@ -13,18 +13,18 @@
 @import './base.css' layer(utilities);
 @import './markdown.css' layer(utilities);
 
-/*
-  See https://tailwindcss.com/docs/upgrade-guide#buttons-use-the-default-cursor
-  See https://tailwindcss.com/docs/upgrade-guide#default-border-color
-*/
 @layer base {
-  :root {
-    --header-height: calc(var(--spacing, 0.25rem) * 16);
+  /* See https://tailwindcss.com/docs/upgrade-guide#buttons-use-the-default-cursor */
+  button,
+  [role='button'] {
+    &:not(:disabled) {
+      cursor: pointer;
+    }
   }
 
-  button:not(:disabled),
-  [role="button"]:not(:disabled) {
-    cursor: pointer;
+  /* See https://tailwindcss.com/docs/upgrade-guide#default-border-color */
+  :root {
+    --header-height: calc(var(--spacing, 0.25rem) * 16);
   }
 
   *,
