@@ -8,12 +8,9 @@
     w-full
     items-center
     overflow-hidden
-    rounded-md
     text-sm
     text-neutral-800
     dark:text-neutral-200;
-
-  margin-bottom: 1px;
 
   &:hover {
     &:not(.progression) .label {
@@ -33,11 +30,7 @@
 
   .label {
     @apply font-regular
-      p-2
-      text-sm
-      transition-colors
-      duration-200
-      ease-in-out;
+      p-2;
   }
 
   .progressionIcon {
