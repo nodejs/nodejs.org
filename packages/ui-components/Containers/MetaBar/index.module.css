@@ -51,8 +51,6 @@
         font-semibold
         text-neutral-900
         underline
-        transition-colors
-        duration-200
         dark:text-white;
 
       &:hover {
