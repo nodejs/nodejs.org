@@ -18,22 +18,19 @@
 
   margin-bottom: 1px;
 
-  &:not(.active):hover {
-    @apply bg-neutral-100
-      text-neutral-900
-      shadow-sm
-      dark:bg-neutral-800
-      dark:text-neutral-100;
+  &:hover {
+    &:not(.progression) .label {
+      @apply rounded-sm
+          bg-neutral-100
+          text-neutral-900
+          dark:bg-neutral-800
+          dark:text-neutral-100;
+    }
 
     .icon {
       @apply scale-110
         text-green-600
         dark:text-green-400;
-    }
-
-    .label {
-      @apply text-neutral-900
-        dark:text-neutral-100;
     }
   }
 
@@ -73,7 +70,7 @@
     }
 
     &:not(.active):hover {
-      @apply bg-neutral-50
+      @apply bg-neutral-100
         dark:bg-neutral-900;
     }
   }
