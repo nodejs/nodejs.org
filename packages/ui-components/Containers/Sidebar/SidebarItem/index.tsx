@@ -34,9 +34,12 @@ const SidebarItem: FC<SidebarItemProps> = ({
     {showProgressionIcons && (
       <ProgressionIcon className={styles.progressionIcon} />
     )}
-    <span className={styles.label}>{label}</span>
 
-    {/^https?:/.test(link) && <ArrowUpRightIcon className={styles.icon} />}
+    <div className={`${styles.label} flex items-center gap-1.5`}>
+      <span>{label}</span>
+
+      {/^https?:/.test(link) && <ArrowUpRightIcon className={styles.icon} />}
+    </div>
   </BaseActiveLink>
 );
 
