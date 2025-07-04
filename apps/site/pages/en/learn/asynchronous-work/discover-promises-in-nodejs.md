@@ -367,7 +367,7 @@ console.log('Synchronous task executed');
 
 ### `setImmediate()`
 
-`setImmediate()` schedules a callback to be executed in the check phase of the Node.js event loop, which runs after the poll phase, where most I/O callbacks are processed.
+`setImmediate()` schedules a callback to be executed in the check phase of the Node.js [event loop](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick), which runs after the poll phase, where most I/O callbacks are processed.
 
 ```js
 setImmediate(() => {
