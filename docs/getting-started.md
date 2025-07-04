@@ -69,7 +69,6 @@ This guide will help you set up your development environment and make your first
    ```
 
 2. **Make Your Changes**
-
    - For repository structure guidance, see [Technologies](./technologies.md#structure-of-this-repository)
    - For adding new pages, see [Adding Pages](./adding-pages.md)
    - For component development, see [Creating Components](./creating-components.md)
@@ -100,7 +99,6 @@ This guide will help you set up your development environment and make your first
    > Follow our [commit guidelines](./code-style.md#commit-guidelines) for commit message format.
 
 6. **Create a Pull Request**
-
    - Go to your fork on GitHub
    - Click "New Pull Request"
    - Follow our [pull request guidelines](./collaborator-guide.md#pull-request-policy)
