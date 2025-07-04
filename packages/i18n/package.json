@@ -25,8 +25,8 @@
     "lint:fix": "node --run lint -- -- --fix"
   },
   "devDependencies": {
-    "eslint-import-resolver-typescript": "~4.4.2",
+    "eslint-import-resolver-typescript": "~4.4.4",
     "typescript": "catalog:",
-    "typescript-eslint": "~8.33.1"
+    "typescript-eslint": "~8.35.1"
   }
 }

@@ -174,7 +174,6 @@ scheduled_, one of two things will happen:
 
 - _If the **poll** queue **is empty**_, one of two more things will
   happen:
-
   - If scripts have been scheduled by `setImmediate()`, the event loop
     will end the **poll** phase and continue to the **check** phase to
     execute those scheduled scripts.
