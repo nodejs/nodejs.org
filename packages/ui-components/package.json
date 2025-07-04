@@ -3,22 +3,13 @@
   "type": "module",
   "exports": {
     "./*": [
-      "./*",
-      "./*.tsx",
-      "./*/index.tsx",
-      "./*.ts",
-      "./*/index.ts"
+      "./src/*",
+      "./src/*.tsx",
+      "./src/*/index.tsx",
+      "./src/*.ts",
+      "./src/*/index.ts"
     ]
   },
-  "files": [
-    "Common",
-    "Containers",
-    "Icons",
-    "MDX",
-    "stylelint",
-    "styles",
-    "types.ts"
-  ],
   "scripts": {
     "lint": "turbo run lint:js lint:css",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
@@ -76,11 +67,11 @@
   },
   "imports": {
     "#ui/*": [
-      "./*",
-      "./*.tsx",
-      "./*/index.tsx",
-      "./*.ts",
-      "./*/index.ts"
+      "./src/*",
+      "./src/*.tsx",
+      "./src/*/index.tsx",
+      "./src/*.ts",
+      "./src/*/index.ts"
     ]
   },
   "engines": {

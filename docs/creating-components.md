@@ -40,7 +40,7 @@ The website uses a dual-package architecture for React components:
 Generic UI components should be placed in `@node-core/ui-components`:
 
 ```tsx
-// @node-core/ui-components/Common/Button/index.tsx
+// @node-core/ui-components/src/Common/Button/index.tsx
 import type { FC, ButtonHTMLAttributes } from 'react';
 import styles from './index.module.css';
 

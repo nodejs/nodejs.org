@@ -43,3 +43,6 @@ apps/site/.wrangler
 ## Playwright
 test-results
 playwright-report
+
+## MacOS Ignored Files
+.DS_Store
