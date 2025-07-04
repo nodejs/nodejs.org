@@ -41,6 +41,7 @@ function getWebServerConfig(): Pick<Config, 'webServer'> {
   if (process.env.PLAYWRIGHT_RUN_CLOUDFLARE_PREVIEW) {
     return {
       webServer: {
+        stdout: 'pipe',
         command: '../../node_modules/.bin/turbo cloudflare:preview',
         url: process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:3000',
         timeout: 60_000 * 3,
