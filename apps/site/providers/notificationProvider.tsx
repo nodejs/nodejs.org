@@ -27,23 +27,39 @@ export const NotificationProvider: FC<PropsWithChildren<NotificationProps>> = ({
   children,
 }) => {
   const [notification, dispatch] = useState<NotificationContextType>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => dispatch(null), notification?.duration);
-
-    return () => clearTimeout(timeout);
+    if (notification) {
+      setIsOpen(true);
+      const timeout = setTimeout(() => {
+        setIsOpen(false);
+      }, notification.duration);
+      return () => clearTimeout(timeout);
+    }
   }, [notification]);
+
+  const handleOpenChange = (open: boolean) => {
+    setIsOpen(open);
+    if (!open) {
+      setTimeout(() => {
+        dispatch(null);
+      }, 200); // Match your exit animation duration
+    }
+  };
 
   return (
     <NotificationContext.Provider value={notification}>
       <NotificationDispatch.Provider value={dispatch}>
-        <Toast.Provider>
+        <Toast.Provider swipeDirection="right">
           {children}
-
           <Toast.Viewport className={viewportClassName} />
-
           {notification && (
-            <Notification duration={notification.duration}>
+            <Notification
+              open={isOpen}
+              duration={notification.duration}
+              onChange={handleOpenChange}
+            >
               {notification.message}
             </Notification>
           )}
