@@ -57,7 +57,7 @@
 
       &:hover {
         @apply text-neutral-700
-            dark:text-neutral-600;
+          dark:text-neutral-500;
       }
     }
 
@@ -68,22 +68,6 @@
         flex-col
         gap-1.5
         p-0;
-
-      li {
-        a {
-          @apply font-semibold
-            text-neutral-900
-            underline
-            transition-colors
-            duration-200
-            dark:text-white;
-
-          &:hover {
-            @apply text-neutral-700
-              dark:text-neutral-600;
-          }
-        }
-      }
     }
 
     svg {
