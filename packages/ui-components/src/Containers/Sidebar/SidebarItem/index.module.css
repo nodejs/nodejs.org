@@ -4,10 +4,12 @@
   @apply font-regular
     relative
     z-20
+    mb-px
     flex
     w-full
     items-center
     overflow-hidden
+    rounded-md
     text-sm
     text-neutral-800
     dark:text-neutral-200;
@@ -30,7 +32,11 @@
 
   .label {
     @apply font-regular
-      p-2;
+      flex
+      items-center
+      gap-1.5
+      p-2
+      text-sm;
   }
 
   .progressionIcon {
