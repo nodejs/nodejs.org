@@ -117,7 +117,7 @@ Add your new article to `app/site/navigation.json`:
 Create translation keys for your navigation entries in the appropriate locale files:
 
 ```json
-// packages/i18n/locales/en.json
+// packages/i18n/src/locales/en.json
 {
   "components": {
     "navigation": {

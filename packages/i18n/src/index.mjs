@@ -1,15 +1,15 @@
 'use strict';
 
-import localeConfig from '../config.json' with { type: 'json' };
+import localeConfig from './config.json' with { type: 'json' };
 
 /**
  * Imports a locale when exists from the locales directory
  *
  * @param {string} locale The locale code to import
- * @returns {Promise<import('../types').Locale>} The imported locale
+ * @returns {Promise<import('./types').Locale>} The imported locale
  */
 export const importLocale = async locale => {
-  return import(`../locales/${locale}.json`, { with: { type: 'json' } }).then(
+  return import(`./locales/${locale}.json`, { with: { type: 'json' } }).then(
     f => f.default
   );
 };
@@ -19,7 +19,7 @@ export const importLocale = async locale => {
  * This is used for allowing us to redirect the user to any
  * of the available locales that we have enabled on the website
  *
- * @returns {Array<import('../types').LocaleConfig>}
+ * @returns {Array<import('./types').LocaleConfig>}
  */
 export const getAvailableLocales = () =>
   localeConfig.filter(locale => locale.enabled);

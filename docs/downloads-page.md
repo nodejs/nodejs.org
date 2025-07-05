@@ -133,7 +133,7 @@ The snippet has access to a `props` variable of type `ReleaseContextType`:
 
 ### 5. Add Translation Key
 
-Add descriptive text in `packages/i18n/locales/en.json`:
+Add descriptive text in `packages/i18n/src/locales/en.json`:
 
 ```json
 {

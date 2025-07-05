@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 
 import { render, screen } from '@testing-library/react';
 
-import { isVisible } from '../../../../../../tests/utilities.mjs';
+import { isVisible } from '../../../../../../../tests/utilities.mjs';
 
 import PaginationListItem from '#ui/Common/BasePagination/PaginationListItem';
 

@@ -2,23 +2,16 @@
   "name": "@node-core/website-i18n",
   "type": "module",
   "exports": {
-    ".": "./lib/index.mjs",
-    "./config.json": "./config.json",
-    "./locales/*.json": "./locales/*.json",
-    "./types": {
-      "types": "./types.d.ts",
-      "default": "./types.d.ts"
-    }
+    "./*": [
+      "./src/*",
+      "./src/*.d.ts",
+      "./src/*.mjs",
+      "./src/*.json"
+    ],
+    ".": "./src/index.mjs"
   },
-  "main": "./lib/index.mjs",
-  "module": "./lib/index.mjs",
-  "types": "./dist/index.d.mts",
-  "files": [
-    "config.json",
-    "index.js",
-    "locales",
-    "types.d.ts"
-  ],
+  "main": "./src/index.mjs",
+  "module": "./src/index.mjs",
   "scripts": {
     "lint": "turbo lint:js",
     "lint:js": "eslint \"**/*.{js,mjs,ts}\"",

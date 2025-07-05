@@ -3,7 +3,7 @@
   "extends": ["//"],
   "tasks": {
     "lint:js": {
-      "inputs": ["lib/**/*.{js,mjs,ts}"]
+      "inputs": ["src/**/*.{js,mjs,ts}"]
     },
     "lint:fix": {
       "cache": false
