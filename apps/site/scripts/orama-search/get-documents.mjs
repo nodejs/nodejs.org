@@ -70,7 +70,7 @@ export const siteContent = [...pageData, ...apiData]
       const path = `${pathname}#${slug(section.pageSectionTitle)}`;
 
       return {
-        path,
+        path: path,
         siteSection: uppercaseFirst(siteSection),
         pageTitle: title,
         ...section,
