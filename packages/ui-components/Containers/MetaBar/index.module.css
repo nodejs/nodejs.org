@@ -54,8 +54,8 @@
         dark:text-white;
 
       &:hover {
-        @apply text-neutral-800
-          dark:text-neutral-200;
+        @apply text-neutral-700
+          dark:text-neutral-500;
       }
     }
 
