@@ -4,7 +4,7 @@ import type { Preview, ReactRenderer } from '@storybook/react';
 
 import { STORYBOOK_MODES, STORYBOOK_SIZES } from './constants';
 
-import '../styles/index.css';
+import '#ui/styles/index.css';
 
 const preview: Preview = {
   parameters: {

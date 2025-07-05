@@ -13,8 +13,8 @@ on:
       - 'apps/site/pages/**/*.mdx'
       - '!apps/site/pages/en/**/*.md'
       - '!apps/site/pages/en/**/*.mdx'
-      - 'packages/i18n/locales/*.json'
-      - '!packages/i18n/locales/en.json'
+      - 'packages/i18n/src/locales/*.json'
+      - '!packages/i18n/src/locales/en.json'
       - 'apps/site/snippets/**/*.bash'
       - '!apps/site/snippets/en/**/*.bash'
 
