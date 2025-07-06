@@ -1,17 +1,22 @@
-* {
-  @apply subpixel-antialiased;
-}
+@reference "tailwindcss";
+@reference "./theme.css";
 
-html,
-body {
-  @apply h-full;
-}
+@layer utilities {
+  * {
+    @apply subpixel-antialiased;
+  }
 
-body {
-  @apply font-open-sans
-    bg-white
-    text-neutral-950
-    motion-safe:scroll-smooth
-    dark:bg-neutral-950
-    dark:text-white;
+  html,
+  body {
+    @apply h-full;
+  }
+
+  body {
+    @apply font-open-sans
+      bg-white
+      text-neutral-950
+      motion-safe:scroll-smooth
+      dark:bg-neutral-950
+      dark:text-white;
+  }
 }

@@ -1,3 +1,6 @@
+@reference "tailwindcss";
+@reference "./theme.css";
+
 h1.special {
   @apply bg-gradient-subtle-gray
     dark:bg-gradient-subtle-white

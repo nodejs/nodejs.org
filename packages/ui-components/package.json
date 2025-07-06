@@ -11,6 +11,10 @@
     ]
   },
   "scripts": {
+    "compile:ts": "tsc",
+    "compile:css": "postcss --dir dist --base src \"src/**/*.css\"",
+    "compile": "node --run compile:ts && node --run compile:css",
+    "publish": "node --run compile && node scripts/publish.mjs",
     "lint": "turbo run lint:js lint:css",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
     "lint:fix": "node --run lint -- -- --fix",
@@ -33,13 +37,13 @@
     "@radix-ui/react-tabs": "~1.1.12",
     "@radix-ui/react-toast": "~1.2.14",
     "@radix-ui/react-tooltip": "~1.2.7",
-    "@tailwindcss/postcss": "~4.1.11",
     "@vcarl/remark-headings": "~0.1.0",
-    "classnames": "catalog:",
-    "postcss-calc": "^10.1.1",
-    "tailwindcss": "catalog:"
+    "classnames": "catalog:"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "~4.1.11",
+    "postcss-calc": "^10.1.1",
+    "tailwindcss": "catalog:",
     "@storybook/addon-styling-webpack": "^2.0.0",
     "@storybook/addon-themes": "^9.0.15",
     "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
@@ -53,6 +57,7 @@
     "eslint-plugin-react": "~7.37.4",
     "eslint-plugin-storybook": "~9.0.3",
     "global-jsdom": "^26.0.0",
+    "postcss-cli": "^11.0.1",
     "postcss-loader": "~8.1.1",
     "react": "catalog:",
     "storybook": "^9.0.15",

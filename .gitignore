@@ -17,6 +17,9 @@ apps/site/public/blog-data.json
 junit.xml
 lcov.info
 
+# Distributed Files
+dist
+
 # Storybook
 storybook-static
 build-storybook.log

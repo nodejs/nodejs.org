@@ -10,8 +10,8 @@
 @import './theme.css';
 @import './animations.css';
 @import './effects.css';
-@import './base.css' layer(utilities);
-@import './markdown.css' layer(utilities);
+@import './base.css';
+@import './markdown.css';
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,

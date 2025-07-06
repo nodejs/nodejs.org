@@ -1,3 +1,5 @@
+@reference "@node-core/ui-components/styles/index.css";
+
 @utility turtle {
   @apply animate-surf
     absolute
