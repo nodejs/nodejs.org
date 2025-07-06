@@ -12,7 +12,7 @@
   },
   "scripts": {
     "compile:ts": "tsc",
-    "compile:css": "postcss --dir dist --base src \"src/**/*.css\"",
+    "compile:css": "postcss --dir dist --base src \"src/**/*.module.css\" src/styles/index.css",
     "compile": "node --run compile:ts && node --run compile:css",
     "publish": "node --run compile && node scripts/publish.mjs",
     "lint": "turbo run lint:js lint:css",
