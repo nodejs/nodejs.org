@@ -367,7 +367,7 @@ console.log('Synchronous task executed');
 
 ### `setImmediate()`
 
-`setImmediate()` is used to execute a callback after the current event loop cycle finishes and all I/O events have been processed. This means that `setImmediate()` callbacks run after any I/O callbacks, but before timers.
+`setImmediate()` schedules a callback to be executed in the check phase of the Node.js [event loop](https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick), which runs after the poll phase, where most I/O callbacks are processed.
 
 ```js
 setImmediate(() => {
@@ -381,7 +381,7 @@ console.log('Synchronous task executed');
 
 - Use `queueMicrotask()` for tasks that need to run immediately after the current script and before any I/O or timer callbacks, typically for Promise resolutions.
 - Use `process.nextTick()` for tasks that should execute before any I/O events, often useful for deferring operations or handling errors synchronously.
-- Use `setImmediate()` for tasks that should run after I/O events but before timers.
+- Use `setImmediate()` for tasks that should run after the poll phase, once most I/O callbacks have been processed.
 
 Because these tasks execute outside of the current synchronous flow, uncaught exceptions inside these callbacks won't be caught by surrounding `try/catch` blocks and may crash the application if not properly managed (e.g., by attaching `.catch()` to Promises or using global error handlers like `process.on('uncaughtException')`).
 
