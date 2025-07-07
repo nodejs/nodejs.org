@@ -16,4 +16,6 @@ await writeFile(
   JSON.stringify(cleanedPkg, null, 2),
   'utf8'
 );
+
+// Now, publish the generated `dist` folder
 spawnSync('pnpm', ['publish'], { cwd: 'dist', stdio: 'inherit' });
