@@ -18,4 +18,7 @@ await writeFile(
 );
 
 // Now, publish the generated `dist` folder
-spawnSync('pnpm', ['publish'], { cwd: 'dist', stdio: 'inherit' });
+spawnSync('pnpm', ['publish', '--no-git-checks'], {
+  cwd: 'dist',
+  stdio: 'inherit',
+});
