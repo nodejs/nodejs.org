@@ -118,6 +118,8 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
+          # Install deps
+          pnpm install --frozen-lockfile
           # Create a unique version using the commit SHA as a prerelease identifier
           npm version --no-git-tag-version 1.0.1-$COMMIT_SHA
 
