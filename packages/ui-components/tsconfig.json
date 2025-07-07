@@ -18,5 +18,5 @@
     "outDir": "./dist"
   },
   "include": ["src"],
-  "exclude": ["**/*.test.jsx", "**/*.stories.tsx"]
+  "exclude": ["**/*.test.*", "**/*.stories.tsx"]
 }
