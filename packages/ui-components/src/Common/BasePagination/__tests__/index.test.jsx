@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 
 import { render, screen } from '@testing-library/react';
 
+// @ts-ignore this file is intentionally stored outside of the `rootDir`
 import { isVisible } from '../../../../../../tests/utilities.mjs';
 
 import BasePagination from '#ui/Common/BasePagination';
