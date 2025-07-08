@@ -1,5 +1,5 @@
-import Notification from '@node-core/ui-components/Common/Notification';
 import * as Toast from '@radix-ui/react-toast';
+import { createContext, useContext, useEffect, useState } from 'react';
 import type {
   Dispatch,
   FC,
@@ -7,7 +7,8 @@ import type {
   ReactNode,
   SetStateAction,
 } from 'react';
-import { createContext, useEffect, useState } from 'react';
+
+import Notification from '#ui/Common/Notification';
 
 type NotificationContextType = {
   message: string | ReactNode;
@@ -21,6 +22,8 @@ const NotificationContext = createContext<NotificationContextType>(null);
 export const NotificationDispatch = createContext<
   Dispatch<SetStateAction<NotificationContextType>>
 >(() => {});
+
+export const useNotification = () => useContext(NotificationDispatch);
 
 export const NotificationProvider: FC<PropsWithChildren<NotificationProps>> = ({
   viewportClassName,
