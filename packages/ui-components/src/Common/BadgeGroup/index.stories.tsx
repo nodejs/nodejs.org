@@ -14,6 +14,16 @@ export const Default: Story = {
   },
 };
 
+export const SmallDefault: Story = {
+  args: {
+    href: '/',
+    children: 'OpenJS Foundation Certification 2023',
+    kind: 'default',
+    badgeText: 'New',
+    size: 'small',
+  },
+};
+
 export const Error: Story = {
   args: {
     href: '/',

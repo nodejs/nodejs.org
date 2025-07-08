@@ -35,7 +35,8 @@
         dark:text-green-300;
     }
 
-    .message {
+    .message,
+    .message a:not(:hover) {
       @apply text-green-700
         dark:text-green-300;
     }
@@ -52,7 +53,8 @@
         dark:text-danger-300;
     }
 
-    .message {
+    .message,
+    .message a:not(:hover) {
       @apply text-danger-700
         dark:text-danger-300;
     }
@@ -69,7 +71,8 @@
         dark:text-warning-300;
     }
 
-    .message {
+    .message,
+    .message a:not(:hover) {
       @apply text-warning-700
         dark:text-warning-300;
     }

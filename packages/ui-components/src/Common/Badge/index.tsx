@@ -4,9 +4,10 @@ import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
 import styles from './index.module.css';
 
 type BadgeKind = 'default' | 'warning' | 'error';
+type BadgeSize = 'small' | 'medium';
 
 type BadgeProps = HTMLAttributes<HTMLSpanElement> & {
-  size?: 'small' | 'medium';
+  size?: BadgeSize;
   kind?: BadgeKind;
 };
 

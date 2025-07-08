@@ -26,6 +26,22 @@ layout: home
         <br />
         <small className="!text-xs">for Node.js 18 and below</small>
       </Button>
+
+      <div className="flex flex-row gap-2 justify-center mt-6">
+        <WithNodeRelease status="Current">
+          {({ release }) =>
+            <BadgeGroup as="span" size="small" badgeText={release.versionWithPrefix}>
+              <Link href={`/blog/release/${release.versionWithPrefix}`}>Node.js Current</Link>
+            </BadgeGroup>}
+        </WithNodeRelease>
+
+        <WithNodeRelease status="LTS">
+          {({ release }) =>
+            <BadgeGroup as="span" size="small" kind="warning" badgeText={release.versionWithPrefix}>
+              <Link href={`/blog/release/${release.versionWithPrefix}`}>Node.js LTS</Link>
+            </BadgeGroup>}
+        </WithNodeRelease>
+      </div>
     </div>
 
   </div>
