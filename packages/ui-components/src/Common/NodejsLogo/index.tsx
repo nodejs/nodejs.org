@@ -1,26 +1,11 @@
 import type { FC } from 'react';
 
-import NodejsIcon from '#ui/Icons/Logos/Nodejs';
-import type { LogoVariant } from '#ui/types';
+import NodejsIcon, { type NodeJsLogoProps } from '#ui/Icons/Logos/Nodejs';
 
 import style from './index.module.css';
 
-type NodejsLogoProps = {
-  variant?: LogoVariant;
-  ariaLabel?: string;
-};
-
-const NodejsLogo: FC<NodejsLogoProps> = ({
-  variant = 'default',
-  ariaLabel,
-}) => {
-  return (
-    <NodejsIcon
-      variant={variant}
-      className={style.nodejsLogo}
-      ariaLabel={ariaLabel}
-    />
-  );
+const NodejsLogo: FC<NodeJsLogoProps> = props => {
+  return <NodejsIcon className={style.nodejsLogo} {...props} />;
 };
 
 export default NodejsLogo;

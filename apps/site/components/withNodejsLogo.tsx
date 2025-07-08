@@ -9,7 +9,7 @@ const WithNodejsLogo: FC = () => {
   return (
     <NodejsLogo
       variant={siteConfig.logoVariant}
-      ariaLabel={t('layouts.logo')}
+      aria-label={t('layouts.logo')}
     />
   );
 };
