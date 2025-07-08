@@ -33,15 +33,15 @@ const myFunction = (firstParam, secondParam) => {
 setTimeout(myFunction, 2000, firstParam, secondParam);
 ```
 
-`setTimeout` returns the timer id. This is generally not used, but you can store this id, and clear it if you want to delete this scheduled function execution:
+`setTimeout` returns a [`Timeout`](https://nodejs.org/api/timers.html#class-timeout) instance in Node.js, whereas in browsers it returns a numeric timer ID. This object or ID can be used to cancel the scheduled function execution:
 
 ```js
-const id = setTimeout(() => {
+const timeout = setTimeout(() => {
   // should run after 2 seconds
 }, 2000);
 
 // I changed my mind
-clearTimeout(id);
+clearTimeout(timeout);
 ```
 
 ### Zero delay
@@ -80,11 +80,11 @@ setInterval(() => {
 The function above runs every 2 seconds unless you tell it to stop, using `clearInterval`, passing it the interval id that `setInterval` returned:
 
 ```js
-const id = setInterval(() => {
+const timeout = setInterval(() => {
   // runs every 2 seconds
 }, 2000);
 
-clearInterval(id);
+clearInterval(timeout);
 ```
 
 It's common to call `clearInterval` inside the setInterval callback function, to let it auto-determine if it should run again or stop. For example this code runs something unless App.somethingIWait has the value `arrived`:
