@@ -27,7 +27,7 @@ layout: home
         <small className="!text-xs">for Node.js 18 and below</small>
       </Button>
 
-      <div className="flex flex-row gap-2 justify-center mt-6">
+      <div className="flex flex-row gap-2 justify-center xs:mt-6">
         <WithNodeRelease status="Current">
           {({ release }) =>
             <BadgeGroup as="span" size="small" badgeText={release.versionWithPrefix}>
