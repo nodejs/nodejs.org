@@ -23,6 +23,18 @@ export const Warning: Story = {
   },
 };
 
+export const Info: Story = {
+  args: {
+    kind: 'info',
+  },
+};
+
+export const Neutral: Story = {
+  args: {
+    kind: 'neutral',
+  },
+};
+
 export const Small: Story = {
   args: {
     size: 'small',

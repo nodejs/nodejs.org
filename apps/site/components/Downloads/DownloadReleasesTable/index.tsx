@@ -6,6 +6,22 @@ import FormattedTime from '#site/components/Common/FormattedTime';
 import DetailsButton from '#site/components/Downloads/DownloadReleasesTable/DetailsButton';
 import getReleaseData from '#site/next-data/releaseData';
 
+const BADGE_KIND_MAP = {
+  'End-of-life': 'warning',
+  Maintenance: 'neutral',
+  LTS: 'info',
+  Current: 'default',
+  Pending: 'default',
+} as const;
+
+const BADGE_TEXT_MAP = {
+  'End-of-life': 'End-of-Life (EOL)',
+  Maintenance: 'Maintenance LTS',
+  LTS: 'Active LTS',
+  Current: 'Current',
+  Pending: 'Pending',
+} as const;
+
 const DownloadReleasesTable: FC = async () => {
   const releaseData = await getReleaseData();
 
@@ -35,11 +51,8 @@ const DownloadReleasesTable: FC = async () => {
               <FormattedTime date={release.releaseDate} />
             </td>
             <td data-label="Status">
-              <Badge
-                kind={release.status === 'End-of-life' ? 'warning' : 'default'}
-                size="small"
-              >
-                {release.status}
+              <Badge kind={BADGE_KIND_MAP[release.status]} size="small">
+                {BADGE_TEXT_MAP[release.status]}
               </Badge>
             </td>
             <td className="download-table-last">

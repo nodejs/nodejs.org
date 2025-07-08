@@ -28,17 +28,17 @@ layout: home
       </Button>
 
       <div className="flex flex-row gap-2 justify-center xs:mt-6">
+        <WithNodeRelease status="LTS">
+          {({ release }) =>
+            <BadgeGroup size="small" kind="info" badgeText={release.versionWithPrefix} href={`/blog/release/${release.versionWithPrefix}`}>
+              Node.js LTS
+            </BadgeGroup>}
+        </WithNodeRelease>
+
         <WithNodeRelease status="Current">
           {({ release }) =>
             <BadgeGroup size="small" badgeText={release.versionWithPrefix} href={`/blog/release/${release.versionWithPrefix}`}>
               Node.js Current
-            </BadgeGroup>}
-        </WithNodeRelease>
-
-        <WithNodeRelease status="LTS">
-          {({ release }) =>
-            <BadgeGroup size="small" kind="warning" badgeText={release.versionWithPrefix} href={`/blog/release/${release.versionWithPrefix}`}>
-              Node.js LTS
             </BadgeGroup>}
         </WithNodeRelease>
       </div>

@@ -42,4 +42,22 @@ export const Warning: Story = {
   },
 };
 
+export const Info: Story = {
+  args: {
+    href: '/',
+    children: 'OpenJS Foundation Certification 2023',
+    kind: 'info',
+    badgeText: 'New',
+  },
+};
+
+export const Neutral: Story = {
+  args: {
+    href: '/',
+    children: 'OpenJS Foundation Certification 2023',
+    kind: 'neutral',
+    badgeText: 'New',
+  },
+};
+
 export default { component: BadgeGroup } as Meta;

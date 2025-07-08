@@ -4,7 +4,7 @@ import type { FC, PropsWithChildren } from 'react';
 import styles from './index.module.css';
 
 type AlertBoxProps = PropsWithChildren<{
-  level: 'info' | 'success' | 'warning' | 'danger';
+  level: 'info' | 'success' | 'warning' | 'danger' | 'neutral';
   title: string;
   size?: 'default' | 'small';
 }>;

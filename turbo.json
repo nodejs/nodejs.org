@@ -1,7 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "dangerouslyDisablePackageManagerCheck": true,
-  "ui": "tui",
   "tasks": {
     "//#prettier": {
       "outputs": [".prettiercache"]
