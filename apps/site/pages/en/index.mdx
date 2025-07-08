@@ -17,9 +17,9 @@ layout: home
   <div className="flex gap-4">
 
     <div className="flex flex-col gap-2">
-      <Button kind="special" className="!hidden dark:!block" href="/download">Install Node.js</Button>
+      <Button kind="special" className="!hidden dark:!block" href="/download">Get Node.js</Button>
 
-      <Button kind="primary" className="!block dark:!hidden" href="/download">Install Node.js</Button>
+      <Button kind="primary" className="!block dark:!hidden" href="/download">Get Node.js</Button>
 
       <Button kind="secondary" className="!block" href="/blog/announcements/node-18-eol-support">
         <span>Get security support</span>
@@ -42,6 +42,11 @@ layout: home
             </BadgeGroup>}
         </WithNodeRelease>
       </div>
+
+      <span className="italic text-center text-xs! text-gray-500">
+        <span>"LTS" stands for the long-term support version of Node.js. </span>
+        <span>Learn more about Node.js releases <Link href="/about/previous-releases">here</Link>.</span>
+      </span>
     </div>
 
   </div>
