@@ -30,15 +30,15 @@ layout: home
       <div className="flex flex-row gap-2 justify-center xs:mt-6">
         <WithNodeRelease status="Current">
           {({ release }) =>
-            <BadgeGroup as="span" size="small" badgeText={release.versionWithPrefix}>
-              <Link href={`/blog/release/${release.versionWithPrefix}`}>Node.js Current</Link>
+            <BadgeGroup size="small" badgeText={release.versionWithPrefix} href={`/blog/release/${release.versionWithPrefix}`}>
+              Node.js Current
             </BadgeGroup>}
         </WithNodeRelease>
 
         <WithNodeRelease status="LTS">
           {({ release }) =>
-            <BadgeGroup as="span" size="small" kind="warning" badgeText={release.versionWithPrefix}>
-              <Link href={`/blog/release/${release.versionWithPrefix}`}>Node.js LTS</Link>
+            <BadgeGroup size="small" kind="warning" badgeText={release.versionWithPrefix} href={`/blog/release/${release.versionWithPrefix}`}>
+              Node.js LTS
             </BadgeGroup>}
         </WithNodeRelease>
       </div>
