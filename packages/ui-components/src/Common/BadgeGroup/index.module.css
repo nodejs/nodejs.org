@@ -1,8 +1,9 @@
 @reference "../../styles/index.css";
 
 .wrapper {
-  @apply flex
-    w-fit
+  @apply xs:w-fit
+    flex
+    w-full
     items-center
     rounded-full
     border
