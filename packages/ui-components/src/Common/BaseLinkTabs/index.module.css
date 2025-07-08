@@ -21,6 +21,13 @@
       text-neutral-800
       dark:text-neutral-200;
 
+    &:not([data-state='active']):hover {
+      @apply border-b-neutral-900
+        text-neutral-900
+        dark:border-b-neutral-300
+        dark:text-neutral-300;
+    }
+
     &[data-state='active'] {
       @apply border-b-green-600
         text-green-600
