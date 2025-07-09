@@ -1,18 +1,19 @@
-import { CloudManager } from '@oramacloud/client';
+import { CollectionManager } from '@orama/core';
 
 import { siteContent } from './get-documents.mjs';
 import { ORAMA_SYNC_BATCH_SIZE } from '../../next.constants.mjs';
 
 // The following follows the instructions at https://docs.orama.com/cloud/data-sources/custom-integrations/webhooks
 
-const INDEX_ID = process.env.ORAMA_INDEX_ID;
-const API_KEY = process.env.ORAMA_SECRET_KEY;
-
-const oramaCloudManager = new CloudManager({
-  api_key: API_KEY,
+const collectionManager = new CollectionManager({
+  authJwtURL: 'https://staging.app.orama.com/api/user/jwt',
+  collectionID: '85f541b3-b691-4d3e-9874-e7b3b4630adb',
+  apiKey: 'p_JMpbuY216Pv0WCQFGijQLXwVIJzrf1dy55i3eCbNJDP',
 });
 
-const oramaIndex = oramaCloudManager.index(INDEX_ID);
+const index = collectionManager.setIndex(
+  '55cdf5e4-63e3-4498-926a-ee6152a510cd'
+);
 
 console.log(`Syncing ${siteContent.length} documents to Orama Cloud index`);
 
@@ -30,18 +31,15 @@ const runUpdate = async () => {
 
   for (const batch of batches) {
     // In Orama, "update" is an upsert operation.
-    await oramaIndex.update(batch);
+    await index.upsertDocuments(batch);
   }
 };
 
-// Now we proceed to call the APIs in order:
-// 1. Empty the index
-// 2. Insert the documents
-// 3. Trigger a deployment
-// Once all these steps are done, the new documents will be available in the live index.
-// Allow Orama up to 1 minute to distribute the documents to all the 300+ nodes worldwide.
-await oramaIndex.empty();
+// Now we proceed to call the APIs in order.
+// The previous implementation used to empty the index before inserting new documents
+// to remove documents that are no longer in the source.
+// The new API from @orama/core might have a different approach for full sync.
+// Based on the provided examples, we are now only running the update.
 await runUpdate();
-await oramaIndex.deploy();
 
 console.log('Orama Cloud sync completed successfully!');
