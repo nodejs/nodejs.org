@@ -11,10 +11,12 @@ import styles from './index.module.css';
 import { Search } from './Search';
 
 // TODO: test collection, replace with production collection and env variables
-const oramaClient = new CollectionManager({
-  url: 'https://atlantis.cluster.oramacore.com',
-  collectionID: 'si0xduw9p7z52s5q91d45d82',
-  readAPIKey: '6O3o7uKE3aoHN6RUWLtKKQbMNNikAupR',
+const collectionManager = new CollectionManager({
+  collectionID: '85f541b3-b691-4d3e-9874-e7b3b4630adb',
+  apiKey: 'c1_d2ZKYw9ugj_tyVyWE_o$$Y-RBNf9GcTFfocEufnuRl7rCl3KJlhNJnP2MG-',
+  cluster: {
+    readURL: 'https://staging.collections.orama.com',
+  },
 });
 
 const InnerSearchBox: FC<PropsWithChildren> = () => {
@@ -63,8 +65,8 @@ const OramaSearch: FC<PropsWithChildren> = () => {
       >
         <Modal.Inner className={styles.modalInner}>
           <Modal.Content className={styles.modalContent}>
-            <SearchRoot client={oramaClient}>
-              <ChatRoot client={oramaClient}>
+            <SearchRoot client={collectionManager}>
+              <ChatRoot client={collectionManager}>
                 <InnerSearchBox />
               </ChatRoot>
             </SearchRoot>

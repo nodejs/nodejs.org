@@ -18,7 +18,6 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
-import { useTheme } from 'next-themes';
 import { type FC, type PropsWithChildren } from 'react';
 
 import styles from './search.module.css';
@@ -30,11 +29,8 @@ type SearchProps = PropsWithChildren & {
 
 export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   const locale = useLocale();
-  const { resolvedTheme } = useTheme();
   const t = useTranslations();
   const { searchTerm } = useSearchContext();
-
-  const oramaLogo = `https://website-assets.oramasearch.com/orama-when-${resolvedTheme}.svg`;
 
   return (
     <>
@@ -45,9 +41,6 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
           ariaLabel={t('components.search.searchPlaceholder')}
           placeholder={t('components.search.searchPlaceholder')}
           className={styles.searchInput}
-          searchParams={{
-            groupBy: 'siteSection',
-          }}
         />
       </SearchInput.Wrapper>
 
@@ -215,7 +208,13 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
           >
             <small>{t('components.search.poweredBy')}</small>
             <Image
-              src={oramaLogo}
+              src="/static/logos/orama-logo-icon.svg"
+              alt={t('components.search.poweredBy') + ' Orama'}
+              width="22"
+              height="15"
+            />
+            <Image
+              src="/static/logos/orama-logo.svg"
               alt={t('components.search.poweredBy') + ' Orama'}
               width="62"
               height="22"
