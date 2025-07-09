@@ -46,7 +46,7 @@ const generateWebsiteFeeds = ({ posts }) => {
             id: post.slug,
             title: post.title,
             author: post.author,
-            date,
+            date: date,
             link: `${canonicalUrl}${post.slug}`,
             guid:
               time > guidTimestampStartDate

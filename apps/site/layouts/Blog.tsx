@@ -24,7 +24,12 @@ const getBlogCategory = (pathname: string) => {
     Number(page)
   );
 
-  return { category, posts, pagination, page: Number(page) };
+  return {
+    category: category,
+    posts: posts,
+    pagination: pagination,
+    page: Number(page),
+  };
 };
 
 const BlogLayout: FC = async () => {
