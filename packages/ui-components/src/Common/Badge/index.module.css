@@ -35,4 +35,16 @@
       bg-warning-600
       dark:border-warning-600;
   }
+
+  &.info {
+    @apply border-info-200
+      bg-info-600
+      dark:border-info-800;
+  }
+
+  &.neutral {
+    @apply border-neutral-200
+      bg-neutral-600
+      dark:border-neutral-800;
+  }
 }

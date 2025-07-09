@@ -1,8 +1,9 @@
 @reference "../../styles/index.css";
 
 .wrapper {
-  @apply flex
-    w-fit
+  @apply xs:w-fit
+    flex
+    w-full
     items-center
     rounded-full
     border
@@ -35,7 +36,8 @@
         dark:text-green-300;
     }
 
-    .message {
+    .message,
+    .message a:not(:hover) {
       @apply text-green-700
         dark:text-green-300;
     }
@@ -52,7 +54,8 @@
         dark:text-danger-300;
     }
 
-    .message {
+    .message,
+    .message a:not(:hover) {
       @apply text-danger-700
         dark:text-danger-300;
     }
@@ -69,9 +72,46 @@
         dark:text-warning-300;
     }
 
-    .message {
+    .message,
+    .message a:not(:hover) {
       @apply text-warning-700
         dark:text-warning-300;
+    }
+  }
+
+  &.info {
+    @apply border-info-200
+      bg-info-100
+      dark:border-info-700
+      dark:bg-neutral-900;
+
+    .icon {
+      @apply text-info-500
+        dark:text-info-300;
+    }
+
+    .message,
+    .message a:not(:hover) {
+      @apply text-info-700
+        dark:text-info-300;
+    }
+  }
+
+  &.neutral {
+    @apply border-neutral-200
+      bg-neutral-100
+      dark:border-neutral-700
+      dark:bg-neutral-900;
+
+    .icon {
+      @apply text-neutral-500
+        dark:text-neutral-300;
+    }
+
+    .message,
+    .message a:not(:hover) {
+      @apply text-neutral-700
+        dark:text-neutral-300;
     }
   }
 }

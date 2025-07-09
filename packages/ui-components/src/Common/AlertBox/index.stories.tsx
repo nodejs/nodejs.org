@@ -52,6 +52,16 @@ export const Danger: Story = {
   },
 };
 
+export const Neutral: Story = {
+  args: {
+    level: 'neutral',
+    title: 'Note',
+    children:
+      "This is a neutral informational message that doesn't fit into the other alert categories.",
+    size: 'default',
+  },
+};
+
 export const InMarkdown: Story = {
   args: {
     level: 'danger',

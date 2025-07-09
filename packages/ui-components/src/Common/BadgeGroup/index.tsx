@@ -6,16 +6,16 @@ import type { LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 
-type BadgeGroupKind = 'default' | 'warning' | 'error';
-
 type BadgeGroupProps = {
-  kind?: BadgeGroupKind;
+  kind?: ComponentProps<typeof Badge>['kind'];
+  size?: ComponentProps<typeof Badge>['size'];
   badgeText?: string;
   as: LinkLike;
 } & ComponentProps<LinkLike>;
 
 const BadgeGroup: FC<PropsWithChildren<BadgeGroupProps>> = ({
   kind = 'default',
+  size = 'medium',
   badgeText,
   children,
   as: Component = 'a',
@@ -23,11 +23,13 @@ const BadgeGroup: FC<PropsWithChildren<BadgeGroupProps>> = ({
 }) => (
   <Component className={`${styles.wrapper} ${styles[kind]}`} {...args}>
     {badgeText && (
-      <Badge kind={kind} className={styles.badge}>
+      <Badge kind={kind} size={size} className={styles.badge}>
         {badgeText}
       </Badge>
     )}
+
     <span className={styles.message}>{children}</span>
+
     {args.href && <ArrowRightIcon className={styles.icon} />}
   </Component>
 );

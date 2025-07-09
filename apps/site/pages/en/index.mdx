@@ -17,15 +17,33 @@ layout: home
   <div className="flex gap-4">
 
     <div className="flex flex-col gap-2">
-      <Button kind="special" className="!hidden dark:!block" href="/download">Install Node.js</Button>
+      <Button kind="special" className="!hidden dark:!block" href="/download">Get Node.js®</Button>
 
-      <Button kind="primary" className="!block dark:!hidden" href="/download">Install Node.js</Button>
+      <Button kind="primary" className="!block dark:!hidden" href="/download">Get Node.js®</Button>
 
       <Button kind="secondary" className="!block" href="/blog/announcements/node-18-eol-support">
         <span>Get security support</span>
         <br />
         <small className="!text-xs">for Node.js 18 and below</small>
       </Button>
+
+      <div className="flex flex-col xs:flex-row gap-2 justify-center xs:mt-6">
+        <WithNodeRelease status="LTS">
+          {({ release }) =>
+            <BadgeGroup size="small" kind="info" badgeText={release.versionWithPrefix} href={`/blog/release/${release.versionWithPrefix}`}>
+              Node.js LTS
+            </BadgeGroup>}
+        </WithNodeRelease>
+
+        <WithNodeRelease status="Current">
+          {({ release }) =>
+            <BadgeGroup size="small" badgeText={release.versionWithPrefix} href={`/blog/release/${release.versionWithPrefix}`}>
+              Node.js Current
+            </BadgeGroup>}
+        </WithNodeRelease>
+      </div>
+
+      <span className="italic text-center text-xs! text-neutral-800 dark:text-neutral-600">"LTS" refers to the long-term support version of Node.js. <Link href="/about/previous-releases">Learn more about Node.js releases.</Link></span>
     </div>
 
   </div>

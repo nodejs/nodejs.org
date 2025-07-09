@@ -34,34 +34,38 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
   return (
     <Modal open={isOpen} onOpenChange={closeModal}>
       {release.status === 'End-of-life' && (
-        <AlertBox
-          title={t('components.common.alertBox.warning')}
-          level="warning"
-          size="small"
-        >
-          {t.rich('components.releaseModal.unsupportedVersionWarning', {
-            link: text => (
-              <Link
-                onClick={closeModal}
-                href="/about/previous-releases#release-schedule"
-              >
-                {text}
-              </Link>
-            ),
-          })}
-        </AlertBox>
+        <div className="mb-4">
+          <AlertBox
+            title={t('components.common.alertBox.warning')}
+            level="warning"
+            size="small"
+          >
+            {t.rich('components.releaseModal.unsupportedVersionWarning', {
+              link: text => (
+                <Link
+                  onClick={closeModal}
+                  href="/about/previous-releases#release-schedule"
+                >
+                  {text}
+                </Link>
+              ),
+            })}
+          </AlertBox>
+        </div>
       )}
 
       {release.status === 'LTS' && (
-        <AlertBox
-          title={t('components.common.alertBox.info')}
-          level="info"
-          size="small"
-        >
-          {t.rich('components.releaseModal.ltsVersionFeaturesNotice', {
-            link: text => <Link href="/download/current">{text}</Link>,
-          })}
-        </AlertBox>
+        <div className="mb-4">
+          <AlertBox
+            title={t('components.common.alertBox.info')}
+            level="info"
+            size="small"
+          >
+            {t.rich('components.releaseModal.ltsVersionFeaturesNotice', {
+              link: text => <Link href="/download/current">{text}</Link>,
+            })}
+          </AlertBox>
+        </div>
       )}
 
       <Title>{modalHeading}</Title>
@@ -72,8 +76,6 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
             {t('components.releaseModal.releaseAnnouncement')}
           </LinkWithArrow>
         )}
-
-        <h5>{t('components.releaseModal.overview')}</h5>
 
         <ReleaseOverview release={release} />
 

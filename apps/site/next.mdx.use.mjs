@@ -1,5 +1,7 @@
 'use strict';
 
+import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
+
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
 import WithBadgeGroup from './components/withBadgeGroup';
@@ -19,6 +21,8 @@ export const mdxComponents = {
   WithBanner,
   // HOC for providing Badge Data
   WithBadgeGroup,
+  // Standalone Badge Group
+  BadgeGroup,
   // Renders an container for Upcoming Node.js Meetings
   UpcomingMeetings,
 };
