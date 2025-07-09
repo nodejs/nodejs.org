@@ -382,7 +382,7 @@ To create a new transform stream, we can pass an `options` object to the `Transf
 const { Transform } = require('node:stream');
 
 const upper = new Transform({
-  transform: function (data, enc, cb) {
+  transform(data, enc, cb) {
     this.push(data.toString().toUpperCase());
     cb();
   },
@@ -393,7 +393,7 @@ const upper = new Transform({
 import { Transform } from 'node:stream';
 
 const upper = new Transform({
-  transform: function (data, enc, cb) {
+  transform(data, enc, cb) {
     this.push(data.toString().toUpperCase());
     cb();
   },
@@ -456,7 +456,7 @@ import { Transform } from 'node:stream';
 
 let errorCount = 0;
 const upper = new Transform({
-  transform: function (data, enc, cb) {
+  transform(data, enc, cb) {
     if (errorCount === 10) {
       return cb(new Error('BOOM!'));
     }
@@ -549,7 +549,7 @@ import { Transform, pipeline } from 'node:stream';
 
 let errorCount = 0;
 const upper = new Transform({
-  transform: function (data, enc, cb) {
+  transform(data, enc, cb) {
     if (errorCount === 10) {
       return cb(new Error('BOOM!'));
     }
@@ -671,7 +671,7 @@ import { Readable } from 'node:stream';
 
 const readable = Readable({
   objectMode: true,
-  read() {
+  read: function () {
     this.push({ hello: 'world' });
     this.push(null);
   },

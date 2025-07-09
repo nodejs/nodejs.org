@@ -613,7 +613,7 @@ import { Readable } from 'node:stream';
 // Create a custom Readable stream
 const myReadableStream = new Readable({
   objectMode: true,
-  read(size) {
+  read: function (size) {
     // Push some data onto the stream
     this.push({ message: 'Hello, world!' });
     this.push(null); // Mark the end of the stream
