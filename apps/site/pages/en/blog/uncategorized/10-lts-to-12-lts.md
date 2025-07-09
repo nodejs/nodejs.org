@@ -77,7 +77,6 @@ This section is a highlight of the most notable changes, as selected from all "[
 Additionally, additions to collaborators and TSC:
 
 - **meta**:
-
   - Added [Jiawen Geng](https://github.com/gengjiawen) to collaborators [#28322](https://github.com/nodejs/node/pull/28322).
   - Added [Christian Clauss](https://github.com/cclauss) to collaborators [#27554](https://github.com/nodejs/node/pull/27554).
   - Added [Yongsheng Zhang](https://github.com/ZYSzys) to collaborators [#26730](https://github.com/nodejs/node/pull/26730).

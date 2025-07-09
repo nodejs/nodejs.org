@@ -1,5 +1,7 @@
 # lint and format staged files
-pnpm exec lint-staged
+
+node --run lint:staged
 
 # verify typescript fully
-pnpm check-types
+
+node --run lint:types

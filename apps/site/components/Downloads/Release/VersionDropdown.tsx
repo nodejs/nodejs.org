@@ -1,10 +1,11 @@
 'use client';
 
 import Select from '@node-core/ui-components/Common/Select';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useContext } from 'react';
 
+import { redirect, usePathname } from '#site/navigation';
 import {
   ReleaseContext,
   ReleasesContext,
@@ -26,6 +27,28 @@ const VersionDropdown: FC = () => {
   const { releases } = useContext(ReleasesContext);
   const { release, setVersion } = useContext(ReleaseContext);
   const t = useTranslations();
+  const locale = useLocale();
+  const pathname = usePathname();
+
+  // Allows us to keep the route semantically correct to what the user should expect
+  // from the /current and non /current routes.
+  const setVersionOrNavigate = (version: string) => {
+    const release = releases.find(
+      ({ versionWithPrefix }) => versionWithPrefix === version
+    );
+
+    if (release?.status === 'LTS' && pathname.includes('current')) {
+      redirect({ href: '/download', locale });
+      return;
+    }
+
+    if (release?.status === 'Current' && !pathname.includes('current')) {
+      redirect({ href: '/download/current', locale });
+      return;
+    }
+
+    setVersion(version);
+  };
 
   return (
     <Select
@@ -35,7 +58,7 @@ const VersionDropdown: FC = () => {
         label: getDropDownStatus(versionWithPrefix, status),
       }))}
       defaultValue={release.versionWithPrefix}
-      onChange={setVersion}
+      onChange={setVersionOrNavigate}
       className="min-w-36"
       inline={true}
     />

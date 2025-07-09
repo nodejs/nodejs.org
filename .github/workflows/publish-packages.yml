@@ -29,7 +29,7 @@ jobs:
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           egress-policy: audit
 
@@ -96,7 +96,7 @@ jobs:
       fail-fast: false # Continue publishing other packages even if one fails
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           egress-policy: audit
 
@@ -105,26 +105,30 @@ jobs:
 
       - name: Set up pnpm
         uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-        with:
-          cache: true
 
       - name: Setup Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
+          # Don't use caching here as we never install dependencies in this workflow
           node-version-file: '.nvmrc'
           registry-url: 'https://registry.npmjs.org'
-          cache: pnpm
 
       - name: Publish
         working-directory: packages/${{ matrix.package }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
+          # Install deps
+          pnpm install --frozen-lockfile
           # Create a unique version using the commit SHA as a prerelease identifier
-          # This ensures we can publish multiple times from the same codebase with unique versions
           npm version --no-git-tag-version 1.0.1-$COMMIT_SHA
-          # Publish the package to the npm registry with public access flag
-          pnpm publish --access public --no-git-checks
+
+          # Check if a custom publish script exists in package.json
+          if jq -e '.scripts.publish' package.json > /dev/null; then
+            pnpm run publish
+          else
+            pnpm publish --access public --no-git-checks
+          fi
 
       - name: Notify on Manual Release
         if: ${{ github.event_name == 'workflow_dispatch' }}

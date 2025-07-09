@@ -11,4 +11,5 @@ export * from './server';
 export * from './github';
 export * from './calendar';
 export * from './author';
-export * from './downloads';
+export * from './download';
+export * from './userAgent';

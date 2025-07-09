@@ -11,9 +11,6 @@ package-lock.json
 .next
 build
 
-# Next.js Generated Files
-public/static/documents
-
 # Test Runner
 junit.xml
 lcov.info
@@ -38,6 +35,12 @@ tsconfig.tsbuildinfo
 
 # Metadata Files
 CODEOWNERS
+
+# Public Folders
+apps/site/public
+
+# Distributed Files
+dist
 
 # Prettier's Handlebar parser is limited and chokes on some syntax features
 # https://github.com/prettier/prettier/issues/11834

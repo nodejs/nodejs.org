@@ -1,5 +1,4 @@
 import { createHighlighterCoreSync } from '@shikijs/core';
-import { createJavaScriptRegexEngine } from '@shikijs/engine-javascript';
 import shikiNordTheme from 'shiki/themes/nord.mjs';
 
 const DEFAULT_THEME = {
@@ -17,7 +16,6 @@ const DEFAULT_THEME = {
 export const createHighlighter = options => {
   const shiki = createHighlighterCoreSync({
     themes: [DEFAULT_THEME],
-    engine: createJavaScriptRegexEngine(),
     ...options,
   });
 

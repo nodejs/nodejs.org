@@ -3,33 +3,28 @@
   "type": "module",
   "exports": {
     "./*": [
-      "./*",
-      "./*.tsx",
-      "./*/index.tsx",
-      "./*.ts",
-      "./*/index.ts"
+      "./src/*",
+      "./src/*.tsx",
+      "./src/*/index.tsx",
+      "./src/*.ts",
+      "./src/*/index.ts"
     ]
   },
-  "files": [
-    "Common",
-    "Containers",
-    "MDX",
-    "Icons",
-    "styles",
-    "types.ts",
-    "stylelint"
-  ],
   "scripts": {
-    "check-types": "tsc --noEmit",
+    "compile:ts": "tsc",
+    "compile:css": "postcss --dir dist --base src \"src/**/*.module.css\" src/styles/index.css",
+    "compile": "node --run compile:ts && node --run compile:css",
+    "publish": "node --run compile && node scripts/publish.mjs",
     "lint": "turbo run lint:js lint:css",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
-    "lint:fix": "turbo run lint:js lint:css --no-cache -- --fix",
+    "lint:fix": "node --run lint -- -- --fix",
     "lint:js": "eslint \"**/*.{js,mjs,ts,tsx}\"",
+    "lint:types": "tsc --noEmit",
     "storybook": "cross-env NODE_NO_WARNINGS=1 storybook dev -p 6006 --quiet",
     "storybook:build": "cross-env NODE_NO_WARNINGS=1 storybook build --quiet --webpack-stats-json",
-    "test": "turbo test:unit",
+    "test": "node --run test:unit",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --test-coverage-exclude=**/*.test.* --enable-source-maps --import=global-jsdom/register --import=tsx --import=../../tests/setup.mjs --test **/*.test.*",
-    "test:unit:watch": "cross-env NODE_OPTIONS=\"--watch\" pnpm test:unit"
+    "test:unit:watch": "node --run test:unit -- --watch"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -42,45 +37,46 @@
     "@radix-ui/react-tabs": "~1.1.12",
     "@radix-ui/react-toast": "~1.2.14",
     "@radix-ui/react-tooltip": "~1.2.7",
-    "@tailwindcss/postcss": "~4.1.8",
     "@vcarl/remark-headings": "~0.1.0",
-    "classnames": "~2.5.1",
-    "postcss-calc": "^10.1.1",
-    "tailwindcss": "~4.0.17"
+    "classnames": "catalog:"
   },
   "devDependencies": {
-    "@storybook/addon-themes": "^9.0.3",
-    "@storybook/addon-styling-webpack": "^1.0.1",
+    "@tailwindcss/postcss": "~4.1.11",
+    "postcss-calc": "^10.1.1",
+    "tailwindcss": "catalog:",
+    "@storybook/addon-styling-webpack": "^2.0.0",
+    "@storybook/addon-themes": "^9.0.15",
     "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
-    "@storybook/react": "^9.0.3",
-    "@storybook/react-webpack5": "^9.0.3",
+    "@storybook/react": "^9.0.15",
+    "@storybook/react-webpack5": "^9.0.15",
     "@testing-library/user-event": "~14.6.1",
-    "@types/node": "22.15.3",
-    "@types/react": "^19.1.6",
-    "cross-env": "^7.0.3",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "cross-env": "catalog:",
     "css-loader": "~7.1.2",
     "eslint-plugin-react": "~7.37.4",
     "eslint-plugin-storybook": "~9.0.3",
     "global-jsdom": "^26.0.0",
+    "postcss-cli": "^11.0.1",
     "postcss-loader": "~8.1.1",
-    "react": "^19.1.0",
-    "storybook": "^9.0.3",
+    "react": "catalog:",
+    "storybook": "^9.0.15",
     "style-loader": "~4.0.0",
-    "stylelint": "^16.20.0",
+    "stylelint": "^16.21.1",
     "stylelint-config-standard": "^38.0.0",
     "stylelint-order": "7.0.0",
     "stylelint-selector-bem-pattern": "4.0.1",
-    "tsx": "^4.19.3",
-    "typescript": "~5.8.2",
-    "typescript-eslint": "~8.33.1"
+    "tsx": "^4.20.3",
+    "typescript": "catalog:",
+    "typescript-eslint": "~8.35.1"
   },
   "imports": {
     "#ui/*": [
-      "./*",
-      "./*.tsx",
-      "./*/index.tsx",
-      "./*.ts",
-      "./*/index.ts"
+      "./src/*",
+      "./src/*.tsx",
+      "./src/*/index.tsx",
+      "./src/*.ts",
+      "./src/*/index.ts"
     ]
   },
   "engines": {

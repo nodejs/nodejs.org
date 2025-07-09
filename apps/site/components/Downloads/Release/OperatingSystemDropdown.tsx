@@ -7,14 +7,10 @@ import type { FC } from 'react';
 
 import { useClientContext } from '#site/hooks';
 import { ReleaseContext } from '#site/providers/releaseProvider';
-import type { UserOS } from '#site/types/userOS';
-import {
-  nextItem,
-  OPERATING_SYSTEMS,
-  parseCompat,
-} from '#site/util/downloadUtils';
+import type { OperatingSystem } from '#site/types/userAgent';
+import { nextItem, OPERATING_SYSTEMS, parseCompat } from '#site/util/download';
 
-type OperatingSystemDropdownProps = { exclude?: Array<UserOS> };
+type OperatingSystemDropdownProps = { exclude?: Array<OperatingSystem> };
 
 const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = () => {
   const { os } = useClientContext();
@@ -53,7 +49,7 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = () => {
   );
 
   return (
-    <Select<UserOS>
+    <Select<OperatingSystem>
       values={parsedOperatingSystems}
       defaultValue={release.os !== 'LOADING' ? release.os : undefined}
       loading={release.os === 'LOADING'}

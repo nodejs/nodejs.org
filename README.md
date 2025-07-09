@@ -118,8 +118,8 @@ These are maintained in different repositories and we urge users to open **issue
 
 [code of conduct]: https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md
 [contribution guidelines]: https://github.com/nodejs/nodejs.org/blob/main/CONTRIBUTING.md
-[content vs code]: https://github.com/nodejs/nodejs.org/blob/main/CONTENT_VS_CODE.md
-[dependency pinning]: https://github.com/nodejs/nodejs.org/blob/main/DEPENDENCY_PINNING.md
-[collaborator guide]: https://github.com/nodejs/nodejs.org/blob/main/COLLABORATOR_GUIDE.md
-[figma design]: https://www.figma.com/file/pu1vZPqNIM7BePd6W8APA5/Node.js
-[translation guidelines]: https://github.com/nodejs/nodejs.org/blob/main/TRANSLATION.md
+[content vs code]: https://github.com/nodejs/nodejs.org/blob/main/docs/content-vs-code.md
+[dependency pinning]: https://github.com/nodejs/nodejs.org/blob/main/docs/dependency-pinning.md
+[collaborator guide]: https://github.com/nodejs/nodejs.org/blob/main/docs/collaborator-guide.md
+[figma design]: https://www.figma.com/file/a10cjjw3MzvRQMPT9FP3xz
+[translation guidelines]: https://github.com/nodejs/nodejs.org/blob/main/docs/translation.md

@@ -557,6 +557,20 @@ class MyReadable extends Readable {
 }
 ```
 
+Here is an example of good practice, where the `Readable` stream respects backpressure by checking the return value of `this.push()`:
+
+```js
+class MyReadable extends Readable {
+  _read(size) {
+    let chunk;
+    let canPushMore = true;
+    while (canPushMore && null !== (chunk = getNextChunk())) {
+      canPushMore = this.push(chunk);
+    }
+  }
+}
+```
+
 Additionally, from outside the custom stream, there are pitfalls to ignoring
 backpressure. In this counter-example of good practice, the application's code
 forces data through whenever it is available (signaled by the

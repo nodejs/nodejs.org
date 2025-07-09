@@ -7,7 +7,7 @@ import type { FC } from 'react';
 import Link from '#site/components/Link';
 import { BASE_CHANGELOG_URL } from '#site/next.constants.mjs';
 import type { MinorVersion } from '#site/types';
-import { getNodeApiLink } from '#site/util/getNodeApiLink';
+import { getNodeApiUrl } from '#site/util/url';
 
 import styles from './index.module.css';
 
@@ -50,7 +50,7 @@ export const MinorReleasesTable: FC<MinorReleasesTableProps> = ({
                 <Separator orientation="vertical" />
                 <Link
                   kind="neutral"
-                  href={getNodeApiLink(`v${release.version}`)}
+                  href={getNodeApiUrl(`v${release.version}`)}
                 >
                   {t('actions.docs')}
                 </Link>

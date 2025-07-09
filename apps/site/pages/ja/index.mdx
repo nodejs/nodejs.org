@@ -13,29 +13,20 @@ layout: home
 
   </div>
 
-  <div>
-    <WithNodeRelease status={['LTS']}>
-      {({ release }) => (
-        <>
-          <DownloadButton release={release}>Node.js（LTS）をダウンロードする</DownloadButton>
-          <small>
-            長期サポート版Node.js <b>{release.versionWithPrefix}</b>
-            <sup title="Downloads a Node.js installer for your current platform">1</sup>をダウンロードする。
-            <Link href="/download">バージョンマネージャー</Link>を利用したインストール方法もあります。
-          </small>
-        </>
-      )}
-    </WithNodeRelease>
+  <div className="flex gap-4">
+    <div className="flex flex-col gap-2">
+      <Button kind="special" className="!hidden dark:!block" href="/download">Node.jsをインストールする</Button>
 
-    <WithNodeRelease status={['Current']}>
-      {({ release }) => (
-        <small>
-          最新の機能をすぐに試したい場合は
-          <b>Node.js <DownloadLink release={release}>{release.versionWithPrefix}</DownloadLink></b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup>をインストールできます。
-        </small>
-      )}
-    </WithNodeRelease>
+      <Button kind="primary" className="!block dark:!hidden" href="/download">Node.jsをインストールする</Button>
+
+      <Button kind="secondary" className="!block" href="https://www.herodevs.com/support/node-nes?utm_source=NodeJS+&utm_medium=Link&utm_campaign=Homepage_button">
+        <span>セキュリティサポート</span>
+
+        <br />
+
+        <small className="!text-xs">Node.js 18以下向け</small>
+      </Button>
+    </div>
 
   </div>
 </section>

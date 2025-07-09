@@ -116,6 +116,9 @@
     "lint:fix": {
       "cache": false
     },
+    "lint:types": {
+      "cache": false
+    },
     "format": {
       "cache": false
     },
@@ -166,6 +169,9 @@
         "*.{md,mdx,json,ts,tsx,mjs,yml}"
       ],
       "outputs": [".open-next/**"]
+    },
+    "scripts:release-post": {
+      "cache": false
     }
   }
 }

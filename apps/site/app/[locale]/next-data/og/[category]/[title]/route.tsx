@@ -4,19 +4,21 @@ import { ImageResponse } from 'next/og';
 
 import { DEFAULT_CATEGORY_OG_TYPE } from '#site/next.constants.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
-import { hexToRGBA } from '#site/util/hexToRGBA';
 
 // TODO: use CSS variables instead of absolute values
 const CATEGORY_TO_THEME_COLOUR_MAP = {
-  announcement: '#1a3f1d',
-  release: '#0c7bb3',
-  vulnerability: '#ae5f00',
+  announcement: 'rgb(26, 63, 29)',
+  release: 'rgb(12, 123, 179)',
+  vulnerability: 'rgb(174, 95, 0)',
 };
 
-type Category = keyof typeof CATEGORY_TO_THEME_COLOUR_MAP;
-
-type DynamicStaticPaths = { locale: string; category: Category; title: string };
-type StaticParams = { params: Promise<DynamicStaticPaths> };
+type StaticParams = {
+  params: Promise<{
+    locale: string;
+    category: keyof typeof CATEGORY_TO_THEME_COLOUR_MAP;
+    title: string;
+  }>;
+};
 
 // This is the Route Handler for the `GET` method which handles the request
 // for generating OpenGraph images for Blog Posts and Pages
@@ -29,7 +31,7 @@ export const GET = async (_: Request, props: StaticParams) => {
       ? CATEGORY_TO_THEME_COLOUR_MAP[params.category]
       : CATEGORY_TO_THEME_COLOUR_MAP[DEFAULT_CATEGORY_OG_TYPE];
 
-  const gridBackground = `radial-gradient(circle, ${hexToRGBA(categoryColour)}, transparent)`;
+  const gridBackground = `radial-gradient(circle, ${categoryColour}, transparent)`;
 
   return new ImageResponse(
     (

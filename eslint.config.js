@@ -18,6 +18,7 @@ export default [
       '**/.open-next',
       'test-results',
       'playwright-report',
+      'dist',
     ],
   },
   {

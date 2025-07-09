@@ -5,8 +5,12 @@ export default [
   {
     languageOptions: {
       parserOptions: {
-        // Allow nullish syntax (i.e. "?." or "??")
-        ecmaVersion: 2020,
+        // Allow nullish syntax (i.e. "?." or "??"),
+        // and top-level await
+        ecmaVersion: 'latest',
+      },
+      globals: {
+        globalThis: 'readonly',
       },
     },
     rules: {
