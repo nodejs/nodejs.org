@@ -18,14 +18,14 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
-import { type FC, type PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import styles from './search.module.css';
 import { getFormattedPath } from './utils';
 
-type SearchProps = PropsWithChildren & {
+type SearchProps = PropsWithChildren<{
   onChatTrigger: () => void;
-};
+}>;
 
 export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   const locale = useLocale();
@@ -50,7 +50,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
           onClick={onChatTrigger}
           className={classNames(
             styles.chatButton,
-            searchTerm ? styles.chatButtonWithSearch : ''
+            { [styles.chatButtonWithSearch]: searchTerm }
           )}
           data-focus-on-arrow-nav
         >
