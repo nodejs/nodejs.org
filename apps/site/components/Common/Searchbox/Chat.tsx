@@ -24,10 +24,10 @@ import type { FC, PropsWithChildren } from 'react';
 
 import styles from './chat.module.css';
 
-type SlidingChatPanelProps = PropsWithChildren & {
+type SlidingChatPanelProps = PropsWithChildren<{
   open: boolean;
   onClose: () => void;
-};
+}>;
 
 export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
   open,
