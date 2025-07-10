@@ -30,7 +30,6 @@ const runUpdate = async () => {
   console.log(`Sending ${batches.length} batches of ${batchSize} documents`);
 
   for (const batch of batches) {
-    // In Orama, "update" is an upsert operation.
     await index.upsertDocuments(batch);
   }
 };

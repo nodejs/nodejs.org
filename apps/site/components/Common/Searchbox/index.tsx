@@ -3,6 +3,8 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import { CollectionManager } from '@orama/core';
 import { SearchRoot, ChatRoot, Modal } from '@orama/ui/components';
+import { useSearchContext } from '@orama/ui/contexts';
+import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import { useState, type FC, type PropsWithChildren } from 'react';
 
@@ -34,9 +36,10 @@ const InnerSearchBox: FC<PropsWithChildren> = () => {
   );
 };
 
-const OramaSearch: FC<PropsWithChildren> = () => {
+const SearchWithModal: FC = () => {
   const [open, setOpen] = useState(false);
   const t = useTranslations();
+  const { searchTerm } = useSearchContext();
 
   const toggleSearchBox = (): void => {
     setOpen(!open);
@@ -61,20 +64,26 @@ const OramaSearch: FC<PropsWithChildren> = () => {
         onModalClosed={toggleSearchBox}
         closeOnOutsideClick={true}
         closeOnEscape={true}
-        className={styles.modalWrapper}
+        className={classNames(styles.modalWrapper, {
+          [styles.modalWrapperWithResults]: searchTerm,
+        })}
       >
         <Modal.Inner className={styles.modalInner}>
           <Modal.Content className={styles.modalContent}>
-            <SearchRoot client={collectionManager}>
-              <ChatRoot client={collectionManager}>
-                <InnerSearchBox />
-              </ChatRoot>
-            </SearchRoot>
+            <InnerSearchBox />
           </Modal.Content>
         </Modal.Inner>
       </Modal.Wrapper>
     </>
   );
 };
+
+const OramaSearch: FC<PropsWithChildren> = () => (
+  <SearchRoot client={collectionManager}>
+    <ChatRoot client={collectionManager}>
+      <SearchWithModal />
+    </ChatRoot>
+  </SearchRoot>
+);
 
 export default OramaSearch;

@@ -63,111 +63,118 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
       </div>
 
       <div className={styles.searchResultsWrapper}>
-        <FacetTabs.Wrapper className={styles.facetTabsWrapper}>
-          <FacetTabs.List className={styles.facetTabsList}>
-            {(group, isSelected) => (
-              <FacetTabs.Item
-                isSelected={isSelected}
-                group={group}
-                filterBy="siteSection"
-                className={classNames(
-                  styles.facetTabItem,
-                  isSelected ? styles.facetTabItemSelected : ''
-                )}
-              >
-                {group.name}
-                <span className={styles.facetTabItemCount}>{group.count}</span>
-              </FacetTabs.Item>
-            )}
-          </FacetTabs.List>
-        </FacetTabs.Wrapper>
-
-        <SearchResults.NoResults>
-          {searchTerm => (
-            <>
-              {searchTerm ? (
-                <div className={styles.noResultsWrapper}>
-                  <p className={styles.noResultsText}>
-                    {t('components.search.noResultsFoundFor')} "{searchTerm}"
-                  </p>
-                </div>
-              ) : (
-                <Suggestions.Wrapper className={styles.suggestionsWrapper}>
-                  <p className={styles.suggestionsTitle}>
-                    {t('components.search.suggestions')}
-                  </p>
-                  <Suggestions.List className={styles.suggestionsList}>
-                    <Suggestions.Item
-                      onClick={onChatTrigger}
-                      itemClassName={styles.suggestionItem}
-                    >
-                      <SparklesIcon />
-                      {t('components.search.suggestionOne')}
-                    </Suggestions.Item>
-                    <Suggestions.Item
-                      onClick={onChatTrigger}
-                      itemClassName={styles.suggestionItem}
-                    >
-                      <SparklesIcon />
-                      {t('components.search.suggestionTwo')}
-                    </Suggestions.Item>
-                    <Suggestions.Item
-                      onClick={onChatTrigger}
-                      itemClassName={styles.suggestionItem}
-                    >
-                      <SparklesIcon />
-                      {t('components.search.suggestionThree')}
-                    </Suggestions.Item>
-                  </Suggestions.List>
-                </Suggestions.Wrapper>
+        <SearchResults.Wrapper>
+          <FacetTabs.Wrapper className={styles.facetTabsWrapper}>
+            <FacetTabs.List className={styles.facetTabsList}>
+              {(group, isSelected) => (
+                <FacetTabs.Item
+                  isSelected={isSelected}
+                  group={group}
+                  filterBy="siteSection"
+                  className={classNames(
+                    styles.facetTabItem,
+                    isSelected ? styles.facetTabItemSelected : ''
+                  )}
+                >
+                  {group.name}
+                  <span className={styles.facetTabItemCount}>
+                    {group.count}
+                  </span>
+                </FacetTabs.Item>
               )}
-            </>
-          )}
-        </SearchResults.NoResults>
+            </FacetTabs.List>
+          </FacetTabs.Wrapper>
 
-        <SearchResults.GroupsWrapper
-          className="relative items-start overflow-y-auto"
-          groupBy="siteSection"
-        >
-          {group => (
-            <div key={group.name} className={styles.searchResultsGroup}>
-              <h2 className={styles.searchResultsGroupTitle}>{group.name}</h2>
-              <SearchResults.GroupList group={group}>
-                {hit => (
-                  <SearchResults.Item className={styles.searchResultsItem}>
-                    <Link
-                      data-focus-on-arrow-nav
-                      href={
-                        (hit.document.siteSection as string).toLowerCase() ===
-                        'docs'
-                          ? `/${hit.document.path}`
-                          : `/${locale}/${hit.document.path}`
-                      }
-                    >
-                      <DocumentTextIcon />
-                      <div>
-                        {typeof hit.document?.pageSectionTitle === 'string' && (
-                          <h3 className={styles.searchResultsItemTitle}>
-                            {hit.document?.pageSectionTitle}
-                          </h3>
-                        )}
-                        {typeof hit.document?.pageSectionTitle === 'string' &&
-                          typeof hit.document?.path === 'string' && (
-                            <p className={styles.searchResultsItemDescription}>
-                              {getFormattedPath(
-                                hit.document?.path,
-                                hit.document?.pageSectionTitle
-                              )}
-                            </p>
-                          )}
-                      </div>
-                    </Link>
-                  </SearchResults.Item>
+          <SearchResults.NoResults>
+            {searchTerm => (
+              <>
+                {searchTerm ? (
+                  <div className={styles.noResultsWrapper}>
+                    <p className={styles.noResultsText}>
+                      {t('components.search.noResultsFoundFor')} "{searchTerm}"
+                    </p>
+                  </div>
+                ) : (
+                  <Suggestions.Wrapper className={styles.suggestionsWrapper}>
+                    <p className={styles.suggestionsTitle}>
+                      {t('components.search.suggestions')}
+                    </p>
+                    <Suggestions.List className={styles.suggestionsList}>
+                      <Suggestions.Item
+                        onClick={onChatTrigger}
+                        itemClassName={styles.suggestionItem}
+                      >
+                        <SparklesIcon />
+                        {t('components.search.suggestionOne')}
+                      </Suggestions.Item>
+                      <Suggestions.Item
+                        onClick={onChatTrigger}
+                        itemClassName={styles.suggestionItem}
+                      >
+                        <SparklesIcon />
+                        {t('components.search.suggestionTwo')}
+                      </Suggestions.Item>
+                      <Suggestions.Item
+                        onClick={onChatTrigger}
+                        itemClassName={styles.suggestionItem}
+                      >
+                        <SparklesIcon />
+                        {t('components.search.suggestionThree')}
+                      </Suggestions.Item>
+                    </Suggestions.List>
+                  </Suggestions.Wrapper>
                 )}
-              </SearchResults.GroupList>
-            </div>
-          )}
-        </SearchResults.GroupsWrapper>
+              </>
+            )}
+          </SearchResults.NoResults>
+
+          <SearchResults.GroupsWrapper
+            className="relative items-start overflow-y-auto"
+            groupBy="siteSection"
+          >
+            {group => (
+              <div key={group.name} className={styles.searchResultsGroup}>
+                <h2 className={styles.searchResultsGroupTitle}>{group.name}</h2>
+                <SearchResults.GroupList group={group}>
+                  {hit => (
+                    <SearchResults.Item className={styles.searchResultsItem}>
+                      <Link
+                        data-focus-on-arrow-nav
+                        href={
+                          (hit.document.siteSection as string).toLowerCase() ===
+                          'docs'
+                            ? `/${hit.document.path}`
+                            : `/${locale}/${hit.document.path}`
+                        }
+                      >
+                        <DocumentTextIcon />
+                        <div>
+                          {typeof hit.document?.pageSectionTitle ===
+                            'string' && (
+                            <h3 className={styles.searchResultsItemTitle}>
+                              {hit.document?.pageSectionTitle}
+                            </h3>
+                          )}
+                          {typeof hit.document?.pageSectionTitle === 'string' &&
+                            typeof hit.document?.path === 'string' && (
+                              <p
+                                className={styles.searchResultsItemDescription}
+                              >
+                                {getFormattedPath(
+                                  hit.document?.path,
+                                  hit.document?.pageSectionTitle
+                                )}
+                              </p>
+                            )}
+                        </div>
+                      </Link>
+                    </SearchResults.Item>
+                  )}
+                </SearchResults.GroupList>
+              </div>
+            )}
+          </SearchResults.GroupsWrapper>
+        </SearchResults.Wrapper>
       </div>
 
       <div className={styles.footer}>

@@ -79,7 +79,6 @@
     sm:bottom-auto
     sm:top-[5vh]
     sm:mx-auto
-    sm:max-h-[70vh]
     sm:min-h-[200px]
     sm:w-[80%]
     sm:max-w-[720px]
@@ -90,9 +89,11 @@
     dark:bg-neutral-950
     sm:dark:border-neutral-900;
 
-  > section {
-    @apply h-full;
-  }
+  max-height: 28vh;
+}
+
+.modalWrapper.modalWrapperWithResults .modalInner {
+  max-height: 70vh;
 }
 
 .modalContent {

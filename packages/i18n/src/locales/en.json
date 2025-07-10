@@ -253,7 +253,7 @@
       "initErrorChat": "Unable to initialize chat service",
       "chatButtonLabel": "Get an AI summary",
       "searchButtonLabel": "Search",
-      "poweredBy": "Powered by",
+      "poweredBy": "Powered by Orama",
       "suggestionOne": "How to install Node.js?",
       "suggestionTwo": "How to create an HTTP server?",
       "suggestionThree": "Upgrading Node.js version",
