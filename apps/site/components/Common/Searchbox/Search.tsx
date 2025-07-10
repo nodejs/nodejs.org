@@ -23,9 +23,9 @@ import { type FC, type PropsWithChildren } from 'react';
 import styles from './search.module.css';
 import { getFormattedPath } from './utils';
 
-type SearchProps = PropsWithChildren & {
+type SearchProps = PropsWithChildren<{
   onChatTrigger: () => void;
-};
+}>;
 
 export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   const locale = useLocale();
