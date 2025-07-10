@@ -21,7 +21,7 @@ import { useRouter, usePathname } from '#site/navigation.mjs';
 import { availableLocales } from '#site/next.locales.mjs';
 
 const SearchButton = dynamic(
-  () => import('#site/components/Common/SearchBox'),
+  () => import('#site/components/Common/Searchbox'),
   {
     ssr: false,
     loading: () => (

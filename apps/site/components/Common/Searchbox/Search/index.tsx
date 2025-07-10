@@ -20,7 +20,7 @@ import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
 
-import styles from './search.module.css';
+import styles from './index.module.css';
 import { getFormattedPath } from './utils';
 
 type SearchProps = PropsWithChildren<{
@@ -48,10 +48,9 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
         <button
           type="button"
           onClick={onChatTrigger}
-          className={classNames(
-            styles.chatButton,
-            { [styles.chatButtonWithSearch]: searchTerm }
-          )}
+          className={classNames(styles.chatButton, {
+            [styles.chatButtonWithSearch]: searchTerm,
+          })}
           data-focus-on-arrow-nav
         >
           <SparklesIcon />

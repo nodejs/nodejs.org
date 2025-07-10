@@ -22,7 +22,7 @@ import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
 
-import styles from './chat.module.css';
+import styles from './index.module.css';
 
 type SlidingChatPanelProps = PropsWithChildren<{
   open: boolean;
