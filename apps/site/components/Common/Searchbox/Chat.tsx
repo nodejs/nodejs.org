@@ -20,7 +20,7 @@ import {
 import { useScrollableContainer } from '@orama/ui/hooks/useScrollableContainer';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
-import { type FC, type PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import styles from './chat.module.css';
 
