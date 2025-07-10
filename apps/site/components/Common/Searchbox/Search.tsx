@@ -50,7 +50,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
           onClick={onChatTrigger}
           className={classNames(
             styles.chatButton,
-            searchTerm ? styles.chatButtonWithSearch : ''
+            { [styles.chatButtonWithSearch]: searchTerm }
           )}
           data-focus-on-arrow-nav
         >
