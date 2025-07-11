@@ -16,24 +16,17 @@ layout: home
 
   <div className="flex gap-4">
 
-    <div className="flex flex-col md:flex-row gap-2">
-      <Button kind="special" className="!hidden dark:!block" href="/download">Download Node.js (LTS)</Button>
+    <div className="flex flex-col gap-2">
+      <Button kind="special" className="!hidden dark:!block" href="/download">Install Node.js</Button>
 
-      <Button kind="primary" className="!block dark:!hidden" href="/download">Download Node.js (LTS)</Button>
+      <Button kind="primary" className="!block dark:!hidden" href="/download">Install Node.js</Button>
 
-      <Button kind="secondary" href="/about/get-involved">Getting Involved</Button>
-
+      <Button kind="secondary" className="!block" href="/blog/announcements/node-18-eol-support">
+        <span>Get security support</span>
+        <br />
+        <small className="!text-xs">for Node.js 18 and below</small>
+      </Button>
     </div>
-
-    <WithNodeRelease status={['Current']}>
-      {({ release }) => (
-        <small>
-          Want new features sooner?
-          Get <b>Node.js <Link href="/download/current">{release.versionWithPrefix}</Link></b>
-          <sup title="Downloads a Node.js installer for your current platform">1</sup> instead.
-        </small>
-      )}
-    </WithNodeRelease>
 
   </div>
 </section>

@@ -2,29 +2,24 @@
   "name": "@node-core/website-i18n",
   "type": "module",
   "exports": {
-    ".": "./lib/index.mjs",
-    "./config.json": "./config.json",
-    "./locales/*.json": "./locales/*.json",
-    "./types": {
-      "types": "./types.d.ts",
-      "default": "./types.d.ts"
-    }
+    "./*": [
+      "./src/*",
+      "./src/*.d.ts",
+      "./src/*.mjs",
+      "./src/*.json"
+    ],
+    ".": "./src/index.mjs"
   },
-  "main": "./lib/index.mjs",
-  "module": "./lib/index.mjs",
-  "types": "./dist/index.d.mts",
-  "files": [
-    "locales",
-    "index.js",
-    "config.json",
-    "types.d.ts"
-  ],
+  "main": "./src/index.mjs",
+  "module": "./src/index.mjs",
   "scripts": {
-    "lint:js": "eslint \"**/*.{js,mjs,ts}\""
+    "lint": "turbo lint:js",
+    "lint:js": "eslint \"**/*.{js,mjs,ts}\"",
+    "lint:fix": "node --run lint -- -- --fix"
   },
   "devDependencies": {
-    "eslint-import-resolver-typescript": "~4.4.2",
-    "typescript": "~5.8.2",
-    "typescript-eslint": "~8.33.1"
+    "eslint-import-resolver-typescript": "~4.4.4",
+    "typescript": "catalog:",
+    "typescript-eslint": "~8.35.1"
   }
 }

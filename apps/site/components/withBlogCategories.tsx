@@ -5,7 +5,7 @@ import BlogPostCard from '#site/components/Blog/BlogPostCard';
 import LinkTabs from '#site/components/Common/LinkTabs';
 import Pagination from '#site/components/Common/Pagination';
 import type { BlogPostsRSC } from '#site/types';
-import { mapAuthorToCardAuthors } from '#site/util/authorUtils';
+import { mapAuthorToCardAuthors } from '#site/util/author';
 
 type WithBlogCategoriesProps = {
   categories: ComponentProps<typeof LinkTabs>['tabs'];

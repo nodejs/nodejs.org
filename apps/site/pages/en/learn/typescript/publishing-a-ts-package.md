@@ -11,17 +11,14 @@ This article covers items regarding TypeScript publishing specifically. Publishi
 Some important things to note:
 
 - Everything from [Publishing a package](../modules/publishing-a-package) applies here.
-
   - Fields like `main` operate on _published_ content, so when TypeScript source-code is transpiled to JavaScript, JavaScript is the published content and `main` would point to a JavaScript file with a JavaScript file extension (ex `main.ts` → `"main": "main.js"`).
 
   - Fields like `scripts.test` operate on source-code, so they would use the file extensions of the source code (ex `"test": "node --test './src/**/*.test.ts'`).
 
 - Node runs TypeScript code via a process called "[type stripping](https://nodejs.org/api/typescript.html#type-stripping)", wherein node (via [Amaro](https://github.com/nodejs/amaro)) removes TypeScript-specific syntax, leaving behind vanilla JavaScript (which node already understands). This behaviour is enabled by default as of node version 23.6.0.
-
   - Node does **not** strip types in `node_modules` because it can cause significant performance issues for the official TypeScript compiler (`tsc`) and parts of VS Code, so the TypeScript maintainers would like to discourage people publishing raw TypeScript, at least for now.
 
 - Consuming TypeScript-specific features like `enum` in node still requires a flag ([`--experimental-transform-types`](https://nodejs.org/api/typescript.html#typescript-features)). There are often better alternatives for these anyway.
-
   - To ensure TypeScript-specific features are _not_ present (so your code can just run in node), set the [`erasableSyntaxOnly`](https://devblogs.microsoft.com/typescript/announcing-typescript-5-8-beta/#the---erasablesyntaxonly-option) config option in TypeScript version 5.8+.
 
 - Use [dependabot](https://docs.github.com/en/code-security/dependabot) to keep your dependencies current, including those in github actions. It's a very easy set-and-forget configuration.

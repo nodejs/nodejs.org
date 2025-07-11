@@ -6,16 +6,22 @@
     "./*": "./src/*.mjs"
   },
   "scripts": {
+    "lint": "turbo run lint:js",
     "lint:js": "eslint \"**/*.mjs\"",
-    "test": "turbo test:unit",
-    "test:unit": "node --experimental-test-coverage --experimental-test-module-mocks --test \"**/*.test.mjs\""
+    "lint:fix": "node --run lint -- -- --fix",
+    "test": "node --run test:unit",
+    "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --experimental-test-module-mocks --test \"**/*.test.mjs\""
   },
   "dependencies": {
-    "@shikijs/core": "^3.4.2",
-    "@shikijs/engine-javascript": "^3.4.2",
-    "classnames": "~2.5.1",
+    "@shikijs/core": "^3.7.0",
+    "@shikijs/engine-javascript": "^3.7.0",
+    "@shikijs/engine-oniguruma": "^3.7.0",
+    "classnames": "catalog:",
     "hast-util-to-string": "^3.0.1",
-    "shiki": "~3.4.2",
+    "shiki": "~3.7.0",
     "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "catalog:"
   }
 }

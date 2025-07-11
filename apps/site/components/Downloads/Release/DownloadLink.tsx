@@ -5,7 +5,7 @@ import { useContext } from 'react';
 
 import DownloadLinkBase from '#site/components/Downloads/DownloadLink';
 import { ReleaseContext } from '#site/providers/releaseProvider';
-import type { DownloadKind } from '#site/util/getNodeDownloadUrl';
+import type { DownloadKind } from '#site/types/download';
 
 type DownloadLinkProps = { kind?: DownloadKind };
 

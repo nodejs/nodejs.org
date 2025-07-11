@@ -94,7 +94,6 @@ View the [original article](https://medium.com/@iojs/io-js-and-a-node-js-foundat
 
 - Talks with the Node.js foundation are ongoing.
 - Once the foundation has a technical governance model you will see an issue on io.js’ GitHub about whether io.js should join.
-
   - This will be discussed and voted on openly in a public TC meeting following the governance rules we’ve already built.
 
 > For the community, nothing has changed.

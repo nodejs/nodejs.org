@@ -17,7 +17,7 @@ import {
   ReleasesContext,
 } from '#site/providers/releaseProvider';
 import type { ReleaseContextType } from '#site/types/release';
-import { INSTALL_METHODS } from '#site/util/downloadUtils';
+import { INSTALL_METHODS } from '#site/util/download';
 
 // Creates a minimal JavaScript interpreter for parsing the JavaScript code from the snippets
 // Note: that the code runs inside a sandboxed environment and cannot interact with any code outside of the sandbox
@@ -39,6 +39,7 @@ const parseSnippet = (s: string, releaseContext: ReleaseContextType) => {
 
 const ReleaseCodeBox: FC = () => {
   const { snippets } = useContext(ReleasesContext);
+
   const { installMethod, os, packageManager, release } =
     useContext(ReleaseContext);
 
@@ -119,6 +120,18 @@ const ReleaseCodeBox: FC = () => {
         status={release.status}
         link="/about/previous-releases"
       />
+
+      {release.status === 'LTS' && (
+        <AlertBox
+          title={t('components.common.alertBox.info')}
+          level="info"
+          size="small"
+        >
+          {t.rich('layouts.download.codeBox.ltsVersionFeaturesNotice', {
+            link: text => <Link href="/download/current">{text}</Link>,
+          })}
+        </AlertBox>
+      )}
 
       {!currentPlatform || currentPlatform.recommended || (
         <AlertBox

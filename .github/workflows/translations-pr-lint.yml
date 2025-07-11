@@ -13,8 +13,8 @@ on:
       - 'apps/site/pages/**/*.mdx'
       - '!apps/site/pages/en/**/*.md'
       - '!apps/site/pages/en/**/*.mdx'
-      - 'packages/i18n/locales/*.json'
-      - '!packages/i18n/locales/en.json'
+      - 'packages/i18n/src/locales/*.json'
+      - '!packages/i18n/src/locales/en.json'
       - 'apps/site/snippets/**/*.bash'
       - '!apps/site/snippets/en/**/*.bash'
 
@@ -42,7 +42,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           egress-policy: audit
 
@@ -53,7 +53,7 @@ jobs:
             > Your Pull Request seems to be updating **Translations** of the Node.js Website.
             >
             > Whilst we appreciate your intent; Any Translation update should be done through our [Crowdin Project](https://crowdin.com/project/nodejs-web).
-            > We recommend giving a read on our [Translation Guidelines](https://github.com/nodejs/nodejs.org/blob/main/TRANSLATION.md).
+            > We recommend giving a read on our [Translation Guidelines](https://github.com/nodejs/nodejs.org/blob/main/docs/translation.md).
             >
             > Thank you!
           comment-tag: use_crowdin

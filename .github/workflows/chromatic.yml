@@ -54,7 +54,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           egress-policy: audit
 
@@ -69,8 +69,6 @@ jobs:
 
       - name: Set up pnpm
         uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-        with:
-          cache: true
 
       - name: Set up Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
@@ -87,7 +85,7 @@ jobs:
         # This action must be manually updated to the latest commit from
         # https://github.com/chromaui/action
         id: chromatic-deploy
-        uses: chromaui/action@e8cc4c31775280b175a3c440076c00d19a9014d7 # v11.28.2
+        uses: chromaui/action@b5848056bb67ce5f1cccca8e62a37cbd9dd42871 # v13.0.1
         with:
           workingDir: packages/ui-components
           buildScriptName: storybook:build

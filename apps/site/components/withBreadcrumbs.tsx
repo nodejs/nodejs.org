@@ -12,7 +12,7 @@ import {
   useSiteNavigation,
 } from '#site/hooks';
 import type { NavigationKeys } from '#site/types';
-import { dashToCamelCase } from '#site/util/stringUtils';
+import { dashToCamelCase } from '#site/util/string';
 
 type WithBreadcrumbsProps = {
   navKeys?: Array<NavigationKeys>;

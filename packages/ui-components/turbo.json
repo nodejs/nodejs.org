@@ -3,7 +3,6 @@
   "extends": ["//"],
   "globalEnv": ["NODE_ENV"],
   "tasks": {
-    "build": {},
     "lint:js": {
       "inputs": ["**/*.{json,mjs,js,ts,tsx}"]
     },
@@ -12,6 +11,9 @@
       "outputs": [".stylelintcache"]
     },
     "lint:fix": {
+      "cache": false
+    },
+    "lint:types": {
       "cache": false
     },
     "storybook": {

@@ -11,8 +11,8 @@ import { ReleaseContext } from '#site/providers/releaseProvider';
 import {
   OS_NOT_SUPPORTING_INSTALLERS,
   OperatingSystemLabel,
-} from '#site/util/downloadUtils';
-import { getNodeDownloadUrl } from '#site/util/getNodeDownloadUrl';
+} from '#site/util/download';
+import { getNodeDownloadUrl } from '#site/util/url';
 
 // Retrieves the pure extension piece from the input string
 const getExtension = (input: string) => String(input.split('.').slice(-1));

@@ -7,7 +7,22 @@ packages:
 # run installation scripts.
 onlyBuiltDependencies:
   - '@swc/core'
+  - '@tailwindcss/oxide'
   - '@vercel/speed-insights'
   - esbuild
   - sharp
   - unrs-resolver
+  - workerd
+
+# We use catalog for dependencies that are shared across
+# multiple packages in the monorepo.
+# This allows us to manage versions and updates in one place.
+# https://pnpm.io/en/catalogs
+catalog:
+  '@types/node': 22.15.3
+  '@types/react': ^19.1.8
+  classnames: ~2.5.1
+  react: ^19.1.0
+  tailwindcss: ~4.0.17
+  typescript: ~5.8.2
+  'cross-env': ^7.0.3

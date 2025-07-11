@@ -7,7 +7,7 @@ import {
   extractVersionFromPath,
   findReleaseByVersion,
   getDownloadArchiveNavigation,
-} from '#site/util/downloadUtils/archive';
+} from '#site/util/download/archive';
 
 type DownloadArchive = ReturnType<typeof buildReleaseArtifacts>;
 

@@ -1,0 +1,124 @@
+---
+title: どこでもJavaScriptを使おう
+layout: home
+---
+
+<section>
+  <WithBadgeGroup section="index" />
+
+  <div>
+    <h1 className="special">どこでもJavaScriptを使おう</h1>
+
+    Node.js®はクロスプラットフォームに対応したフリーでオープンソースのJavaScript実行環境です。開発者にサーバー、ウェブアプリ、コマンドラインツール、スクリプトなどを開発する環境を提供します。
+
+  </div>
+
+  <div className="flex gap-4">
+    <div className="flex flex-col gap-2">
+      <Button kind="special" className="!hidden dark:!block" href="/download">Node.jsをインストールする</Button>
+
+      <Button kind="primary" className="!block dark:!hidden" href="/download">Node.jsをインストールする</Button>
+
+      <Button kind="secondary" className="!block" href="https://www.herodevs.com/support/node-nes?utm_source=NodeJS+&utm_medium=Link&utm_campaign=Homepage_button">
+        <span>セキュリティサポート</span>
+
+        <br />
+
+        <small className="!text-xs">Node.js 18以下向け</small>
+      </Button>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div>
+    ```js displayName="Create an HTTP Server"
+    // server.mjs
+    import { createServer } from 'node:http';
+
+    const server = createServer((req, res) => {
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end('Hello World!\n');
+    });
+
+    // starts a simple http server locally on port 3000
+    server.listen(3000, '127.0.0.1', () => {
+      console.log('Listening on 127.0.0.1:3000');
+    });
+
+    // run with `node server.mjs`
+    ```
+
+    ```js displayName="Write Tests"
+    // tests.mjs
+    import assert from 'node:assert';
+    import test from 'node:test';
+
+    test('that 1 is equal 1', () => {
+      assert.strictEqual(1, 1);
+    });
+
+    test('that throws as 1 is not equal 2', () => {
+      // throws an exception because 1 != 2
+      assert.strictEqual(1, 2);
+    });
+
+    // run with `node tests.mjs`
+    ```
+
+    ```js displayName="Read and Hash a File"
+    // crypto.mjs
+    import { createHash } from 'node:crypto';
+    import { readFile } from 'node:fs/promises';
+
+    const hasher = createHash('sha1');
+
+    hasher.setEncoding('hex');
+    // ensure you have a `package.json` file for this test!
+    hasher.write(await readFile('package.json'));
+    hasher.end();
+
+    const fileHash = hasher.read();
+
+    // run with `node crypto.mjs`
+    ```
+
+    ```js displayName="Streams Pipeline"
+    // streams.mjs
+    import { createReadStream, createWriteStream } from 'node:fs';
+    import { pipeline } from 'node:stream/promises';
+    import { createGzip } from 'node:zlib';
+
+    // ensure you have a `package.json` file for this test!
+    await pipeline(
+      createReadStream('package.json'),
+      createGzip(),
+      createWriteStream('package.json.gz')
+    );
+
+    // run with `node streams.mjs`
+    ```
+
+    ```js displayName="Work with Threads"
+    // threads.mjs
+    import { Worker, isMainThread,
+      workerData, parentPort } from 'node:worker_threads';
+
+    if (isMainThread) {
+      const data = 'some data';
+      const worker = new Worker(import.meta.filename, { workerData: data });
+      worker.on('message', msg => console.log('Reply from Thread:', msg));
+    } else {
+      const source = workerData;
+      parentPort.postMessage(btoa(source.toUpperCase()));
+    }
+
+    // run with `node threads.mjs`
+    ```
+
+  </div>
+
+私たちの[学習教材](/learn)でNode.jsでできることをさらに学んでみましょう。
+
+</section>

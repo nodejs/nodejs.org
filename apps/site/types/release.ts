@@ -1,6 +1,6 @@
-import type { DownloadSnippet } from '#site/types/downloads';
+import type { DownloadSnippet } from '#site/types/download';
 import type { NodeRelease } from '#site/types/releases';
-import type { UserOS, UserPlatform } from '#site/types/userOS';
+import type { OperatingSystem, Platform } from '#site/types/userAgent';
 
 export type InstallationMethod =
   | 'NVM'
@@ -17,23 +17,23 @@ export type PackageManager = 'NPM' | 'YARN' | 'PNPM';
 // during runtime and do not have necessarily a consistent initial value
 export interface ReleaseState {
   version: string;
-  os: UserOS | 'LOADING';
-  platform: UserPlatform | '';
+  os: OperatingSystem | 'LOADING';
+  platform: Platform | '';
   installMethod: InstallationMethod | '';
   packageManager: PackageManager;
 }
 
 export type ReleaseAction =
   | { type: 'SET_VERSION'; payload: string }
-  | { type: 'SET_OS'; payload: UserOS }
-  | { type: 'SET_PLATFORM'; payload: UserPlatform }
+  | { type: 'SET_OS'; payload: OperatingSystem }
+  | { type: 'SET_PLATFORM'; payload: Platform }
   | { type: 'SET_INSTALL_METHOD'; payload: InstallationMethod }
   | { type: 'SET_MANAGER'; payload: PackageManager };
 
 export interface ReleaseDispatchActions {
   setVersion: (version: string) => void;
-  setOS: (os: UserOS) => void;
-  setPlatform: (bitness: UserPlatform) => void;
+  setOS: (os: OperatingSystem) => void;
+  setPlatform: (bitness: Platform) => void;
   setInstallMethod: (installMethod: InstallationMethod) => void;
   setPackageManager: (packageManager: PackageManager) => void;
 }

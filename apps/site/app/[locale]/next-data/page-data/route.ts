@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 
 import { dynamicRouter } from '#site/next.dynamic.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
-import { parseRichTextIntoPlainText } from '#site/util/stringUtils';
+import { parseRichTextIntoPlainText } from '#site/util/string';
 
 // This is the Route Handler for the `GET` method which handles the request
 // for a digest and metadata of all existing pages on Node.js Website
