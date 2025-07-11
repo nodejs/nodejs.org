@@ -31,14 +31,15 @@ async1(function (input, result1) {
 Of course, in real life there would most likely be additional lines of code to handle `result1`, `result2`, etc., thus, the length and complexity of this issue usually results in code that looks much more messy than the example above.
 
 ## The Modern Solution: [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+
 To solve callback hell, modern JavaScript introduced async and await. This is syntactic sugar built on top of a concept called Promises, allowing you to write asynchronous code that looks and behaves like synchronous code. It makes complex flows much easier to reason about.
 
-* An async function is a function that implicitly returns a Promise.
+- An async function is a function that implicitly returns a Promise.
 
-* The await keyword can only be used inside an async function. It pauses the function's execution and waits for a Promise to be resolved, then resumes with the resolved value.
-
+- The await keyword can only be used inside an async function. It pauses the function's execution and waits for a Promise to be resolved, then resumes with the resolved value.
 
 Let's rewrite the "callback hell" example using async/await. Notice how flat and readable it becomes:
+
 ```js
 async function performOperations() {
   try {
@@ -54,6 +55,7 @@ async function performOperations() {
   }
 }
 ```
+
 This code is executed sequentially from top to bottom, just like synchronous code, but without blocking the main thread.
 
 **Thinking in Functions**
@@ -75,6 +77,7 @@ Network requests can be incoming requests initiated by a foreign network, by ano
 A middleware function will return another function, and a terminator function will invoke the callback. The following illustrates the flow to network or file system requests. Here the latency is 0 because all these values are available in memory.
 
 Here’s how we can structure a simple flow using async functions. Each function passes its result to the next.
+
 ```js
 async function final(someInput) {
   return `${someInput} and terminated.`;
@@ -86,7 +89,7 @@ async function middleware(someInput) {
 }
 
 async function initiate() {
-  const someInput = 'hello this is a function, ';
+  const someInput = "hello this is a function, ";
   // We await the result of the entire chain.
   const result = await middleware(someInput);
   console.log(result);
@@ -113,7 +116,7 @@ If an object is available in memory, iteration is possible, and there will not b
 
 ```js
 function getSong() {
-  let _song = '';
+  let _song = "";
   let i = 100;
   for (i; i > 0; i -= 1) {
     _song += `${i} beers on the wall, you take one down and pass it around, ${i - 1} bottles of beer on the wall\n`;
@@ -139,7 +142,7 @@ However, if the data exists outside of memory the iteration will no longer work:
 
 ```js
 function getSong() {
-  let _song = '';
+  let _song = "";
   let i = 100;
   for (i; i > 0; i -= 1) {
     setTimeout(function () {
@@ -158,13 +161,13 @@ function singSong(_song) {
   console.log(_song);
 }
 
-const song = getSong('beer');
+const song = getSong("beer");
 // this will not work
 singSong(song);
 // Uncaught Error: song is '' empty, FEED ME A SONG!
 ```
 
-Why did this happen? setTimeout (like file system or network requests) instructs the Node.js event loop to schedule the provided function for execution at a later time. The for loop completes almost instantly, and _song (which is still an empty string) is returned immediately. The functions scheduled by setTimeout run much later, long after singSong has attempted to use the empty _song.
+Why did this happen? setTimeout (like file system or network requests) instructs the Node.js event loop to schedule the provided function for execution at a later time. The for loop completes almost instantly, and \_song (which is still an empty string) is returned immediately. The functions scheduled by setTimeout run much later, long after singSong has attempted to use the empty \_song.
 
 The main thread cannot be blocked indefinitely while waiting for I/O or other asynchronous tasks. Fortunately, Promises and async/await provide the mechanisms to explicitly wait for these operations to complete before continuing, allowing us to manage asynchronous control flow effectively.
 
@@ -174,13 +177,14 @@ You will be able to perform almost all of your operations with the following 3 p
 
 ```js
 // Simulate an asynchronous operation and return a Promise.
-const simulateAsyncOp = (id, durationMs) => new Promise(resolve => {
-  console.log(`[${id}] Starting operation.`);
-  setTimeout(() => {
-    console.log(`[${id}] Finished operation.`);
-    resolve(`Operation ${id} complete.`);
-  }, durationMs);
-});
+const simulateAsyncOp = (id, durationMs) =>
+  new Promise((resolve) => {
+    console.log(`[${id}] Starting operation.`);
+    setTimeout(() => {
+      console.log(`[${id}] Finished operation.`);
+      resolve(`Operation ${id} complete.`);
+    }, durationMs);
+  });
 
 const operations = [
   () => simulateAsyncOp(1, 500),
@@ -202,6 +206,7 @@ async function executeInSeries(asyncFunctions) {
   await executeInSeries(operations);
 })();
 ```
+
 **Applying "In Series": The Beer Song Solution:** The "In Series" pattern is precisely what's needed to fix the song generation, it makes sure that each line is created then added in the correct order.
 
 ```js
@@ -209,7 +214,7 @@ async function getSong() {
   const _songParts = [];
   for (let i = 100; i > 0; i -= 1) {
     // Await for each line.
-    const line = await new Promise(resolve => {
+    const line = await new Promise((resolve) => {
       setTimeout(() => {
         let currentLine = `${i} beers on the wall, you take one down and pass it around, ${
           i - 1
@@ -222,7 +227,7 @@ async function getSong() {
     });
     _songParts.push(line);
   }
-  return _songParts.join('');
+  return _songParts.join("");
 }
 
 function singSong(songContent) {
@@ -242,14 +247,15 @@ function singSong(songContent) {
 
 ```js
 // Simulate an asynchronous task.
-const processItem = (id) => new Promise(resolve => {
-  const delay = Math.random() * 500 + 50;
-  console.log(`[Item ${id}] Starting.`);
-  setTimeout(() => {
-    console.log(`[Item ${id}] Finished.`);
-    resolve(`Item ${id} processed.`);
-  }, delay);
-});
+const processItem = (id) =>
+  new Promise((resolve) => {
+    const delay = Math.random() * 500 + 50;
+    console.log(`[Item ${id}] Starting.`);
+    setTimeout(() => {
+      console.log(`[Item ${id}] Finished.`);
+      resolve(`Item ${id} processed.`);
+    }, delay);
+  });
 
 // An array of samples
 const itemsToProcess = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -259,7 +265,9 @@ async function processLimitedInSeries(items, limit) {
   const queue = [...items];
   const active = new Set(); // Tracks currently running promises.
 
-  console.log(`\n--- Starting Limited In Series Execution (Limit: ${limit}) ---`);
+  console.log(
+    `\n--- Starting Limited In Series Execution (Limit: ${limit}) ---`,
+  );
 
   while (queue.length > 0 || active.size > 0) {
     while (active.size < limit && queue.length > 0) {
@@ -326,8 +334,8 @@ Each has its own use cases, benefits, and issues you can experiment and read abo
 
 ### Choosing the Right Pattern
 
-* **In Series:** Use when order is critical, or when each task depends on the previous one (e.g., chained database operations).
+- **In Series:** Use when order is critical, or when each task depends on the previous one (e.g., chained database operations).
 
-* **Limited in Series:** Use when you need concurrency but must control resource load or adhere to external rate limits (e.g., API calls to a throttled service).
+- **Limited in Series:** Use when you need concurrency but must control resource load or adhere to external rate limits (e.g., API calls to a throttled service).
 
-* **Full Parallel:** Use when operations are independent and can run simultaneously for maximum throughput (e.g., fetching data from multiple unrelated sources).
+- **Full Parallel:** Use when operations are independent and can run simultaneously for maximum throughput (e.g., fetching data from multiple unrelated sources).
