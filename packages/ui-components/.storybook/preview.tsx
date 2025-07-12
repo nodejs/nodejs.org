@@ -1,6 +1,7 @@
-import * as Toast from '@radix-ui/react-toast';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import type { Preview, ReactRenderer } from '@storybook/react';
+
+import { NotificationProvider } from '#ui/Providers/NotificationProvider';
 
 import { STORYBOOK_MODES, STORYBOOK_SIZES } from './constants';
 
@@ -13,10 +14,9 @@ const preview: Preview = {
   },
   decorators: [
     Story => (
-      <Toast.Provider>
+      <NotificationProvider>
         <Story />
-        <Toast.Viewport />
-      </Toast.Provider>
+      </NotificationProvider>
     ),
     withThemeByDataAttribute<ReactRenderer>({
       themes: { light: '', dark: 'dark' },
