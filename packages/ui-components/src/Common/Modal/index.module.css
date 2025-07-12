@@ -27,6 +27,7 @@
       focus:outline-none
       sm:my-20
       xl:p-12
+      dark:border-neutral-800
       dark:bg-neutral-950;
   }
 

@@ -36,7 +36,7 @@ type DownloadCompatibility = {
   releases?: Array<NodeReleaseStatus>;
 };
 
-type DownloadDropdownItem<T extends string> = {
+export type DownloadDropdownItem<T extends string> = {
   label: IntlMessageKeys;
   recommended?: boolean;
   url?: string;
