@@ -302,7 +302,7 @@ server.listen(8080, () => {
 ```
 
 ```mjs
-import { net } from 'node:net';
+import net from 'node:net';
 
 // Create a TCP server
 const server = net.createServer(socket => {
@@ -345,7 +345,7 @@ client.on('end', () => {
 ```
 
 ```mjs
-import { net } from 'node:net';
+import net from 'node:net';
 
 // Connect to the server at localhost:8080
 const client = net.createConnection({ port: 8080 }, () => {
