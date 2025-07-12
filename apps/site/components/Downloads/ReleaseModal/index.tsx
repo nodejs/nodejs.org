@@ -43,8 +43,6 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
           </LinkWithArrow>
         )}
 
-        <h5>{t('components.releaseModal.overview')}</h5>
-
         <ReleaseOverview release={release} />
 
         <h5>{t('components.releaseModal.minorVersions')}</h5>

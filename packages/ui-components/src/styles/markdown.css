@@ -80,7 +80,7 @@ main {
 
     &:hover {
       @apply text-green-900
-        dark:text-green-300;
+        dark:text-green-200;
     }
 
     &[role='button'] {

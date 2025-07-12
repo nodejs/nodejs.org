@@ -134,11 +134,11 @@ const getPage: FC<DynamicParams> = async props => {
 
     // Metadata and shared Context to be available through the lifecycle of the page
     const sharedContext = {
-      frontmatter,
-      headings,
+      frontmatter: frontmatter,
+      headings: headings,
       pathname: `/${pathname}`,
-      readingTime,
-      filename,
+      readingTime: readingTime,
+      filename: filename,
     };
 
     // Defines a shared Server Context for the Client-Side

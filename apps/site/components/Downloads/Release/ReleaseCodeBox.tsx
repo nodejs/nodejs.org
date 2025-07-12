@@ -116,10 +116,7 @@ const ReleaseCodeBox: FC = () => {
         </AlertBox>
       </noscript>
 
-      <WithReleaseAlertBox
-        status={release.status}
-        link="/about/previous-releases"
-      />
+      <WithReleaseAlertBox status={release.status} />
 
       {release.status === 'LTS' && (
         <AlertBox

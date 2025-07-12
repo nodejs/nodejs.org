@@ -36,12 +36,12 @@ export const createHighlighter = options => {
    * Highlights code and returns the inner HTML inside the <code> tag
    *
    * @param {string} code - The code to highlight
-   * @param {string} language - The programming language to use for highlighting
+   * @param {string} lang - The programming language to use for highlighting
    * @returns {string} The inner HTML of the highlighted code
    */
-  const highlightToHtml = (code, language) =>
+  const highlightToHtml = (code, lang) =>
     shiki
-      .codeToHtml(code, { lang: language, theme })
+      .codeToHtml(code, { lang, theme })
       // Shiki will always return the Highlighted code encapsulated in a <pre> and <code> tag
       // since our own CodeBox component handles the <code> tag, we just want to extract
       // the inner highlighted code to the CodeBox
@@ -51,10 +51,10 @@ export const createHighlighter = options => {
    * Highlights code and returns a HAST tree
    *
    * @param {string} code - The code to highlight
-   * @param {string} language - The programming language to use for highlighting
+   * @param {string} lang - The programming language to use for highlighting
    */
-  const highlightToHast = (code, language) =>
-    shiki.codeToHast(code, { lang: language, theme });
+  const highlightToHast = (code, lang) =>
+    shiki.codeToHast(code, { lang, theme });
 
   return {
     shiki,

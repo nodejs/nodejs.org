@@ -45,6 +45,7 @@ export default [
           },
         },
       ],
+      'object-shorthand': ['error', 'consistent-as-needed'],
     },
   },
 ];

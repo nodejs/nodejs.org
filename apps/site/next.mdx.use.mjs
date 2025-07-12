@@ -1,5 +1,7 @@
 'use strict';
 
+import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
+
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
 import DownloadsTable from './components/Downloads/DownloadsTable';
 import { MinorReleasesTable } from './components/Downloads/MinorReleasesTable';
@@ -17,23 +19,25 @@ import WithReleaseAlertBox from './components/withReleaseAlertBox';
  * @satisfies {import('mdx/types').MDXComponents}
  */
 export const mdxComponents = {
-  DownloadReleasesTable: DownloadReleasesTable,
+  DownloadReleasesTable,
   // HOC for providing the Download Archive Page properties
-  WithDownloadArchive: WithDownloadArchive,
+  WithDownloadArchive,
   // Renders a table with Node.js Releases with different platforms and architectures
-  DownloadsTable: DownloadsTable,
+  DownloadsTable,
   // HOC for getting Node.js Release Metadata
-  WithNodeRelease: WithNodeRelease,
+  WithNodeRelease,
   // Renders an alert box with the given release status
-  WithReleaseAlertBox: WithReleaseAlertBox,
+  WithReleaseAlertBox,
   // HOC for providing Banner Data
-  WithBanner: WithBanner,
+  WithBanner,
   // HOC for providing Badge Data
-  WithBadgeGroup: WithBadgeGroup,
-  // Renders an container for Upcoming Node.js Meetings
-  UpcomingMeetings: UpcomingMeetings,
+  WithBadgeGroup,
+  // Standalone Badge Group
+  BadgeGroup,
   // Renders the Release Overview for a specified version
-  ReleaseOverview: ReleaseOverview,
+  ReleaseOverview,
   // Renders a table with all the Minor Releases for a Major Version
-  MinorReleasesTable: MinorReleasesTable,
+  MinorReleasesTable,
+  // Renders an container for Upcoming Node.js Meetings
+  UpcomingMeetings,
 };

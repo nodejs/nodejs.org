@@ -74,6 +74,14 @@
     }
   }
 
+  &.neutral {
+    @apply bg-neutral-600;
+
+    .title {
+      @apply bg-neutral-700;
+    }
+  }
+
   code {
     /* Ignore the styles from `markdown.css` */
     all: unset;

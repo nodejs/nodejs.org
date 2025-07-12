@@ -7,24 +7,10 @@ import type { NodeReleaseStatus } from '#site/types';
 
 type WithReleaseAlertBoxProps = {
   status: NodeReleaseStatus;
-  link?: string;
 };
 
-const WithReleaseAlertBox: FC<WithReleaseAlertBoxProps> = ({
-  status,
-  link,
-}) => {
+const WithReleaseAlertBox: FC<WithReleaseAlertBoxProps> = ({ status }) => {
   const t = useTranslations();
-
-  const getAlertContent = () => {
-    if (link) {
-      return t.rich('layouts.download.codeBox.unsupportedVersionWarning', {
-        link: text => <Link href={link}>{text}</Link>,
-      });
-    }
-
-    return t('components.releaseModal.unsupportedVersionWarning');
-  };
 
   switch (status) {
     case 'End-of-life':
@@ -32,8 +18,27 @@ const WithReleaseAlertBox: FC<WithReleaseAlertBoxProps> = ({
         <AlertBox
           title={t('components.common.alertBox.warning')}
           level="warning"
+          size="small"
         >
-          {getAlertContent()}
+          {t.rich('components.releaseModal.unsupportedVersionWarning', {
+            link: text => (
+              <Link href="/about/previous-releases#release-schedule">
+                {text}
+              </Link>
+            ),
+          })}
+        </AlertBox>
+      );
+    case 'LTS':
+      return (
+        <AlertBox
+          title={t('components.common.alertBox.info')}
+          level="info"
+          size="small"
+        >
+          {t.rich('components.releaseModal.ltsVersionFeaturesNotice', {
+            link: text => <Link href="/download/current">{text}</Link>,
+          })}
         </AlertBox>
       );
     default:
