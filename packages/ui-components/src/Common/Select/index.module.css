@@ -161,16 +161,22 @@
 }
 
 .noscript {
+  @apply relative;
+
   summary {
     @apply flex
       w-full
       justify-between;
   }
 
+  .trigger {
+    @apply block;
+  }
+
   .dropdown {
     @apply absolute
-      left-4
-      mt-6;
+      left-0
+      mt-4;
   }
 
   .text {

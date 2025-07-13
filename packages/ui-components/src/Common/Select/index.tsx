@@ -6,9 +6,9 @@ import classNames from 'classnames';
 import { useEffect, useId, useMemo, useState } from 'react';
 import type { ReactElement, ReactNode } from 'react';
 
-import StatelessSelect from '#ui/Common/Select/StatelessSelect';
 import Skeleton from '#ui/Common/Skeleton';
 import type { FormattedMessage, LinkLike } from '#ui/types';
+import { isStringArray, isValuesArray } from '#ui/util/array';
 
 import styles from './index.module.css';
 
@@ -24,16 +24,6 @@ export type SelectGroup<T extends string> = {
   items: Array<SelectValue<T>>;
 };
 
-export const isStringArray = (
-  values: Array<unknown>
-): values is Array<string> =>
-  Boolean(values[0] && typeof values[0] === 'string');
-
-export const isValuesArray = <T extends string>(
-  values: Array<unknown>
-): values is Array<SelectValue<T>> =>
-  Boolean(values[0] && typeof values[0] === 'object' && 'value' in values[0]);
-
 export type SelectProps<T extends string> = {
   values: Array<SelectGroup<T>> | Array<T> | Array<SelectValue<T>>;
   defaultValue?: T;
@@ -45,6 +35,7 @@ export type SelectProps<T extends string> = {
   ariaLabel?: string;
   loading?: boolean;
   disabled?: boolean;
+  fallbackClass?: string;
   as?: LinkLike | 'div';
 };
 
@@ -59,10 +50,9 @@ const Select = <T extends string>({
   ariaLabel,
   loading = false,
   disabled = false,
-  as,
+  fallbackClass = '',
 }: SelectProps<T>): ReactNode => {
   const id = useId();
-  const uniqueSelectClass = `select-${id.replace(/[^a-zA-Z0-9]/g, '')}`;
   const [value, setValue] = useState(defaultValue);
 
   useEffect(() => setValue(defaultValue), [defaultValue]);
@@ -81,8 +71,8 @@ const Select = <T extends string>({
       return [{ items: mappedValues }];
     }
 
-    return mappedValues as Array<SelectGroup<T>>;
-  }, [values]);
+    return mappedValues;
+  }, [values]) as Array<SelectGroup<T>>;
 
   // We render the actual item slotted to fix/prevent the issue
   // of the tirgger flashing on the initial render
@@ -140,7 +130,7 @@ const Select = <T extends string>({
           styles.select,
           { [styles.inline]: inline },
           className,
-          uniqueSelectClass
+          fallbackClass
         )}
       >
         {label && (
@@ -190,18 +180,6 @@ const Select = <T extends string>({
           </SelectPrimitive.Portal>
         </SelectPrimitive.Root>
       </span>
-      <StatelessSelect
-        values={values}
-        defaultValue={defaultValue}
-        placeholder={placeholder}
-        label={label}
-        inline={inline}
-        className={className}
-        ariaLabel={ariaLabel}
-        disabled={disabled}
-        targetElement={uniqueSelectClass}
-        as={as}
-      />
     </Skeleton>
   );
 };
