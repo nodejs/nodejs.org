@@ -49,6 +49,7 @@ const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
           placeholder={placeholder}
           onChange={onSelect}
           className={styles.mobileSelect}
+          as={as}
         />
       )}
 
