@@ -331,7 +331,7 @@ callback _after_ the rest of the user's code and _before_ the event loop
 is allowed to proceed. To achieve this, the JS call stack is allowed to
 unwind then immediately execute the provided callback which allows a
 person to make recursive calls to `process.nextTick()` without reaching a
-`RangeError: Maximum call stack size exceeded from v8`.
+`RangeError: Maximum call stack size exceeded` from v8.
 
 This philosophy can lead to some potentially problematic situations.
 Take this snippet for example:
