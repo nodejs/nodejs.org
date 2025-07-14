@@ -1,4 +1,5 @@
 'use strict';
+import { getDeploymentId } from '@opennextjs/cloudflare';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
@@ -95,6 +96,16 @@ const nextConfig = {
       'shiki',
     ],
   },
+  // If we're building for the Cloudflare deployment we want to set
+  // an appropriate deploymentId (needed for skew protection)
+  // TODO: The `OPEN_NEXT_CLOUDFLARE` environment variable is being
+  //       defined in the worker building script, ideally the open-next
+  //       adapter should set it itself when it invokes the Next.js build
+  //       process, onces it does that remove the manual `OPEN_NEXT_CLOUDFLARE`
+  //       definition in the package.json script.
+  deploymentId: process.env.OPEN_NEXT_CLOUDFLARE
+    ? getDeploymentId()
+    : undefined,
 };
 
 const withNextIntl = createNextIntlPlugin('./i18n.tsx');

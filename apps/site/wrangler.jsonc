@@ -1,4 +1,5 @@
 {
+  "$schema": "./node_modules/wrangler/config-schema.json",
   "main": ".open-next/worker.js",
   "name": "nodejs-website",
   "compatibility_date": "2024-11-07",
@@ -9,6 +10,15 @@
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS",
+    "run_worker_first": true,
+  },
+  "vars": {
+    // Variables needed for skew protection
+    // Also note that an appropriate CF_WORKERS_SCRIPTS_API_TOKEN secret
+    // needs to be set as well in the Cloudflare dashboard
+    "CF_WORKER_NAME": "nodejs-website",
+    "CF_PREVIEW_DOMAIN": "testing.devprod.cloudflare.dev",
+    "CF_ACCOUNT_ID": "8ed4d03ac99f77561d0e8c9cbcc76cb6",
   },
   "observability": {
     "enabled": true,
