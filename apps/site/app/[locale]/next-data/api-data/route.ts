@@ -23,7 +23,7 @@ const getPathnameForApiFile = (name: string, version: string) =>
 export const GET = async () => {
   const releases = provideReleaseData();
 
-  const { versionWithPrefix } = releases.find(release => release.isLts)!;
+  const { versionWithPrefix } = releases.find(release => release.status === 'Active LTS')!;
 
   const gitHubApiResponse = await fetch(
     getGitHubApiDocsUrl(versionWithPrefix),
