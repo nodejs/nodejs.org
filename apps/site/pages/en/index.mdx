@@ -28,7 +28,7 @@ layout: home
       </Button>
 
       <div className="flex flex-col xs:flex-row gap-2 justify-center xs:mt-6">
-        <WithNodeRelease status="LTS">
+        <WithNodeRelease status="Active LTS">
           {({ release }) =>
             <BadgeGroup size="small" kind="info" badgeText={release.versionWithPrefix} href={`/blog/release/${release.versionWithPrefix}`}>
               Node.js LTS
