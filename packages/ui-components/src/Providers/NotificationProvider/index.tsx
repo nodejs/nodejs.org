@@ -27,25 +27,20 @@ export const useNotification = () => useContext(NotificationDispatch);
 
 export const NotificationProvider: FC<PropsWithChildren> = ({ children }) => {
   const [notification, dispatch] = useState<NotificationContextType>(null);
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if (notification) {
-      setIsOpen(true);
-      const timeout = setTimeout(() => {
-        setIsOpen(false);
-      }, notification.duration);
-      return () => clearTimeout(timeout);
-    }
+    const timeout = setTimeout(() => dispatch(null), notification?.duration);
+
+    return () => clearTimeout(timeout);
   }, [notification]);
 
   return (
     <NotificationContext.Provider value={notification}>
       <NotificationDispatch.Provider value={dispatch}>
-        <Toast.Provider swipeDirection="right">
+        <Toast.Provider>
           {children}
           {notification && (
-            <Notification open={isOpen} duration={notification.duration}>
+            <Notification duration={notification.duration}>
               {notification.message}
             </Notification>
           )}
