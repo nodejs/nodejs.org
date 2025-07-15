@@ -105,7 +105,7 @@ export default {
   },
 } as Meta;
 
-export const SmallWindows: Story = {
+export const SmallContainer: Story = {
   render: args => (
     <div className="w-200">
       <AlertBox {...args} />
