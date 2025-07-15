@@ -25,7 +25,7 @@ const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = props => {
     copyToClipboard(text);
 
     notify({
-      duration: 300,
+      duration: 800,
       message: (
         <div className="flex items-center gap-3">
           <CodeBracketIcon className={styles.icon} />

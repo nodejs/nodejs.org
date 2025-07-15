@@ -39,7 +39,6 @@ export const NotificationProvider: FC<PropsWithChildren> = ({ children }) => {
       <NotificationDispatch.Provider value={dispatch}>
         <Toast.Provider>
           {children}
-
           {notification && (
             <Notification duration={notification.duration}>
               {notification.message}
