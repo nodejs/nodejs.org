@@ -52,7 +52,6 @@
     "@types/react": "catalog:",
     "cross-env": "catalog:",
     "css-loader": "~7.1.2",
-    "cssnano": "^7.1.0",
     "eslint-plugin-react": "~7.37.4",
     "eslint-plugin-storybook": "~9.0.3",
     "global-jsdom": "^26.0.0",
