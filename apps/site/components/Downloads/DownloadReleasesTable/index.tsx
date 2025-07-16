@@ -48,7 +48,7 @@ const DownloadReleasesTable: FC = () => {
               </Badge>
             </td>
             <td className="download-table-last">
-              <DetailsButton versionData={release} />
+              <DetailsButton data={release} />
             </td>
           </tr>
         ))}
