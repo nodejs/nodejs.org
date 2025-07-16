@@ -142,7 +142,7 @@
       "name": "Brew",
       "compatibility": {
         "os": ["MAC", "LINUX"],
-        "releases": ["Current", "LTS"]
+        "releases": ["Current", "Active LTS", "Maintenance LTS"]
       },
       "url": "https://brew.sh/",
       "info": "layouts.download.codeBox.platformInfo.brew"

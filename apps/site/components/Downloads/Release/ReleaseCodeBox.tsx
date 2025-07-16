@@ -127,7 +127,7 @@ const ReleaseCodeBox: FC = () => {
         </AlertBox>
       )}
 
-      {release.status === 'LTS' && (
+      {release.isLts && (
         <AlertBox
           title={t('components.common.alertBox.info')}
           level="info"

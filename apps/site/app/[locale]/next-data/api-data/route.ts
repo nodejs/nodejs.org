@@ -24,7 +24,7 @@ export const GET = async () => {
   const releases = provideReleaseData();
 
   const { versionWithPrefix } = releases.find(
-    release => release.status === 'LTS'
+    release => release.status === 'Active LTS'
   )!;
 
   const gitHubApiResponse = await fetch(

@@ -12,11 +12,11 @@ const getNodeReleaseStatus = (now, support) => {
   }
 
   if (maintenanceStart && now >= new Date(maintenanceStart)) {
-    return 'Maintenance';
+    return 'Maintenance LTS';
   }
 
   if (ltsStart && now >= new Date(ltsStart)) {
-    return 'LTS';
+    return 'Active LTS';
   }
 
   if (currentStart && now >= new Date(currentStart)) {
@@ -96,7 +96,7 @@ const generateReleaseData = async () => {
       version: latestVersion.semver.raw,
       versionWithPrefix: `v${latestVersion.semver.raw}`,
       codename: major.support.codename || '',
-      isLts: status === 'LTS',
+      isLts: status.endsWith('LTS'),
       npm: latestVersion.dependencies.npm || '',
       v8: latestVersion.dependencies.v8,
       releaseDate: latestVersion.releaseDate,

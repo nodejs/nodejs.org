@@ -8,18 +8,10 @@ import getReleaseData from '#site/next-data/releaseData';
 
 const BADGE_KIND_MAP = {
   'End-of-life': 'warning',
-  Maintenance: 'neutral',
-  LTS: 'info',
+  'Maintenance LTS': 'neutral',
+  'Active LTS': 'info',
   Current: 'default',
   Pending: 'default',
-} as const;
-
-const BADGE_TEXT_MAP = {
-  'End-of-life': 'End-of-Life (EOL)',
-  Maintenance: 'Maintenance LTS',
-  LTS: 'Active LTS',
-  Current: 'Current',
-  Pending: 'Pending',
 } as const;
 
 const DownloadReleasesTable: FC = async () => {
@@ -52,7 +44,8 @@ const DownloadReleasesTable: FC = async () => {
             </td>
             <td data-label="Status">
               <Badge kind={BADGE_KIND_MAP[release.status]} size="small">
-                {BADGE_TEXT_MAP[release.status]}
+                {release.status}
+                {release.status === 'End-of-life' ? ' (EoL)' : ''}
               </Badge>
             </td>
             <td className="download-table-last">

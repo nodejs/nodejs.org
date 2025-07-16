@@ -54,7 +54,7 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
         </div>
       )}
 
-      {release.status === 'LTS' && (
+      {release.isLts && (
         <div className="mb-4">
           <AlertBox
             title={t('components.common.alertBox.info')}
