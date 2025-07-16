@@ -61,7 +61,7 @@
 }
 
 .dropdown {
-  @apply max-h-48
+  @apply max-h-56
     max-w-xs
     overflow-hidden
     overflow-y-auto
