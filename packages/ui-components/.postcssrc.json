@@ -1,6 +1,7 @@
 {
   "plugins": {
     "postcss-calc": {},
-    "@tailwindcss/postcss": {}
+    "@tailwindcss/postcss": {},
+    "cssnano": {}
   }
 }
