@@ -80,6 +80,7 @@ const InstallationMethodDropdown: FC = () => {
       ariaLabel={t('layouts.download.dropdown.platform')}
       onChange={platform => platform && release.setInstallMethod(platform)}
       className="min-w-28"
+      dropdownClassName="!max-h-none"
       inline={true}
     />
   );
