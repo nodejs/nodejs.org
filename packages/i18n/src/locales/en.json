@@ -259,6 +259,9 @@
         "subtitle": "The latest Node.js news, case studies, tutorials, and resources.",
         "rssLink": "RSS feed"
       }
+    },
+    "endOfLife": {
+      "intro": "Commercial support for versions past the Maintenance LTS phase is available through our"
     }
   },
   "layouts": {
