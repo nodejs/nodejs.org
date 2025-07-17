@@ -100,10 +100,10 @@ export const NoTitle: Story = {
     level: 'info',
     children: (
       <p>
-        Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Inventore, quasi doloremque. Totam, earum velit, sunt
-        voluptates fugiat beatae praesentium quis magni explicabo repudiandae
-        nam aut molestias ex ad sequi eum!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
+        quasi doloremque. Totam, earum velit, sunt voluptates fugiat beatae
+        praesentium quis magni explicabo repudiandae nam aut molestias ex ad
+        sequi eum!
       </p>
     ),
     size: 'default',
