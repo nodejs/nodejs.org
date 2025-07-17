@@ -5,12 +5,12 @@
     w-full
     flex-col
     gap-8
-    overflow-auto
     border-r-0
     border-neutral-200
     bg-white
     px-4
     py-6
+    sm:overflow-auto
     sm:border-r
     md:max-w-xs
     lg:px-6

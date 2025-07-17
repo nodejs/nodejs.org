@@ -1,6 +1,6 @@
 import type { ComponentProps, FC, PropsWithChildren } from 'react';
 
-import Select from '#ui/Common/Select';
+import WithNoScriptSelect from '#ui/Common/Select/NoScriptSelect';
 import SidebarGroup from '#ui/Containers/Sidebar/SidebarGroup';
 import type { LinkLike } from '#ui/types';
 
@@ -42,13 +42,14 @@ const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
       {children}
 
       {selectItems.length > 0 && (
-        <Select
+        <WithNoScriptSelect
           label={title}
           values={selectItems}
           defaultValue={currentItem?.value}
           placeholder={placeholder}
           onChange={onSelect}
           className={styles.mobileSelect}
+          as={as}
         />
       )}
 
