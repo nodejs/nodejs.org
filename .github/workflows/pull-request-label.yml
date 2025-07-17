@@ -1,41 +1,26 @@
-# Security Notes
-# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
-# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
-# REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
-# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
-
-name: Pull Request CI Label
-
+name: OpenSSF Scorecard Review
 on:
-  pull_request_target:
+  # For Branch-Protection check. Only the default branch is supported. See
+  # https://github.com/ossf/scorecard/blob/main/docs/checks.md#branch-protection
+  branch_protection_rule:
+  # To guarantee that the Maintained check is occasionally updated. See
+  # https://github.com/ossf/scorecard/blob/main/docs/checks.md#maintained
+  schedule:
+    - cron: '20 7 * * 2'
+  push:
     branches:
       - main
-    types:
-      - labeled
 
-defaults:
-  run:
-    # This ensures that the working directory is the root of the repository
-    working-directory: ./
-
-permissions:
-  # This permission is required by `actions-ecosystem/action-remove-label`
-  pull-requests: write
+# Declare default permissions as read only.
+permissions: read-all
 
 jobs:
-  # This Job removes the `github_actions:pull-request` label after it got applied
-  # which allows people with write access to the repository to easily reapply the label if they need to trigger
-  # this Workflow again
-  remove_pull_request_label:
-    name: Remove Pull Request Label
-    runs-on: ubuntu-latest
-    steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
-        with:
-          egress-policy: audit
-
-      - name: Remove GitHub Actions Label
-        uses: actions-ecosystem/action-remove-labels@2ce5d41b4b6aa8503e285553f75ed56e0a40bae0 # v1.3.0
-        with:
-          labels: github_actions:pull-request
+  analysis:
+    permissions:
+      # Needed to upload the results to code-scanning dashboard.
+      security-events: write
+      # Needed to publish results and get a badge (see publish_results below).
+      id-token: write
+      contents: read
+      actions: read
+    uses: nodejs/web-team/.github/workflows/scorecard.yml

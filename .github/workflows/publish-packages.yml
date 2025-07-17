@@ -95,22 +95,10 @@ jobs:
       matrix: ${{ fromJson(needs.prepare-packages.outputs.matrix) }}
       fail-fast: false # Continue publishing other packages even if one fails
     steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
+      - uses: nodejs/web-team/actions/setup-environment@4fe2167f55e4aa670f7f97da16490945bb061d51
         with:
-          egress-policy: audit
-
-      - name: Checkout repository
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-
-      - name: Set up pnpm
-        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
-        with:
-          # Don't use caching here as we never install dependencies in this workflow
-          node-version-file: '.nvmrc'
+          pnpm: true
+          use-version-file: true
           registry-url: 'https://registry.npmjs.org'
 
       - name: Publish
@@ -118,8 +106,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          # Install deps
-          pnpm install --frozen-lockfile
           # Create a unique version using the commit SHA as a prerelease identifier
           npm version --no-git-tag-version 1.0.1-$COMMIT_SHA
 
