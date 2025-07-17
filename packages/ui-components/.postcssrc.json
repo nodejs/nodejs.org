@@ -1,6 +1,8 @@
 {
   "plugins": {
     "postcss-calc": {},
-    "@tailwindcss/postcss": {}
+    "@tailwindcss/postcss": {
+      "optimize": true
+    }
   }
 }

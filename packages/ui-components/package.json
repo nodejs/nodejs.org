@@ -41,14 +41,12 @@
     "classnames": "catalog:"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "~4.1.11",
-    "postcss-calc": "^10.1.1",
-    "tailwindcss": "catalog:",
     "@storybook/addon-styling-webpack": "^2.0.0",
     "@storybook/addon-themes": "^9.0.15",
     "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
     "@storybook/react": "^9.0.15",
     "@storybook/react-webpack5": "^9.0.15",
+    "@tailwindcss/postcss": "~4.1.11",
     "@testing-library/user-event": "~14.6.1",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
@@ -57,6 +55,7 @@
     "eslint-plugin-react": "~7.37.4",
     "eslint-plugin-storybook": "~9.0.3",
     "global-jsdom": "^26.0.0",
+    "postcss-calc": "^10.1.1",
     "postcss-cli": "^11.0.1",
     "postcss-loader": "~8.1.1",
     "react": "catalog:",
@@ -66,6 +65,7 @@
     "stylelint-config-standard": "^38.0.0",
     "stylelint-order": "7.0.0",
     "stylelint-selector-bem-pattern": "4.0.1",
+    "tailwindcss": "catalog:",
     "tsx": "^4.20.3",
     "typescript": "catalog:",
     "typescript-eslint": "~8.35.1"
