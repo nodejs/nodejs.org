@@ -5,23 +5,19 @@ import type { FC } from 'react';
 import { use } from 'react';
 
 import LinkWithArrow from '#site/components/LinkWithArrow';
-import { ReleaseModalContext } from '#site/providers/releaseModalProvider';
-import type { NodeRelease } from '#site/types';
+import { ModalContext } from '#site/providers/modalProvider';
 
 type DetailsButtonProps = {
-  versionData: NodeRelease;
+  data: unknown;
 };
 
-const DetailsButton: FC<DetailsButtonProps> = ({ versionData }) => {
+const DetailsButton: FC<DetailsButtonProps> = ({ data }) => {
   const t = useTranslations('components.downloadReleasesTable');
 
-  const { openModal } = use(ReleaseModalContext);
+  const { openModal } = use(ModalContext);
 
   return (
-    <LinkWithArrow
-      className="cursor-pointer"
-      onClick={() => openModal(versionData)}
-    >
+    <LinkWithArrow className="cursor-pointer" onClick={() => openModal(data)}>
       {t('details')}
     </LinkWithArrow>
   );

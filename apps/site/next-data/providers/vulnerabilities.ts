@@ -1,6 +1,6 @@
 import { cache } from 'react';
 
-interface Vulnerability {
+export interface Vulnerability {
   cve: Array<string>;
   ref?: string;
   vulnerable: string;

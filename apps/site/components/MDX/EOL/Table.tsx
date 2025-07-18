@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import type { FC } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
-import DetailsButton from '#site/components/MDX/EOL/DetailsButton';
+import DetailsButton from '#site/components/Downloads/DownloadReleasesTable/DetailsButton';
 import provideVulnerabilities from '#site/next-data/providers/vulnerabilities';
 import getReleaseData from '#site/next-data/releaseData';
 
@@ -46,7 +46,12 @@ const EOLTable: FC = async () => {
               />
             </td>
             <td className="download-table-last">
-              <DetailsButton versionData={release} />
+              <DetailsButton
+                data={{
+                  release: release,
+                  vulnerabilities: vulnerabilities[release.major],
+                }}
+              />
             </td>
           </tr>
         ))}
