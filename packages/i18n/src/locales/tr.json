@@ -220,7 +220,7 @@
         "text": "Arama sırasında bir hata oluştu. Lütfen daha sonra tekrar deneyin."
       },
       "poweredBy": {
-        "text": "Tarafından desteklenmektedir Orama"
+        "text": "Tarafından desteklenmektedir"
       },
       "noResults": {
         "text": "\"{query}\" için sonuç bulunamadı."
