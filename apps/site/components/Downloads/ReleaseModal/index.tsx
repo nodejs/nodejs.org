@@ -42,10 +42,7 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
           >
             {t.rich('components.releaseModal.unsupportedVersionWarning', {
               link: text => (
-                <Link
-                  onClick={closeModal}
-                  href="/eol"
-                >
+                <Link onClick={closeModal} href="/eol">
                   {text}
                 </Link>
               ),
