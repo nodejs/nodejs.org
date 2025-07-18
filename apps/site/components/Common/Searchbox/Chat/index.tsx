@@ -62,17 +62,18 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
                 onNewInteraction={() => scrollToBottom({ animated: true })}
                 className={styles.chatInteractionsWrapper}
               >
-                {(interaction, index, totalInteractions) => (
-                  <>
-                    <ChatInteractions.UserPrompt
-                      className={styles.chatUserPrompt}
-                    >
-                      <p>{interaction.query}</p>
-                    </ChatInteractions.UserPrompt>
+                {(interaction, index, totalInteractions) =>
+                  interaction && (
+                    <>
+                      <ChatInteractions.UserPrompt
+                        className={styles.chatUserPrompt}
+                      >
+                        <p>{interaction.query}</p>
+                      </ChatInteractions.UserPrompt>
+                      <ChatInteractions.Loading interaction={interaction}>
+                        <Skeleton className={styles.chatLoader} />
+                      </ChatInteractions.Loading>
 
-                    {interaction.loading && !interaction.response ? (
-                      <Skeleton className={styles.chatLoader} />
-                    ) : (
                       <>
                         <ChatInteractions.Sources
                           sources={
@@ -111,13 +112,14 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
                             {interaction.response}
                           </ChatInteractions.AssistantMessage>
 
-                          {!interaction.loading && (
+                          <ChatInteractions.Loading interaction={interaction}>
                             <div className={styles.chatActionsContainer}>
                               <ul className={styles.chatActionsList}>
                                 {index === totalInteractions && (
                                   <li>
                                     <ChatInteractions.RegenerateLatest
                                       className={styles.chatAction}
+                                      interaction={interaction}
                                     >
                                       <ArrowPathRoundedSquareIcon />
                                     </ChatInteractions.RegenerateLatest>
@@ -140,12 +142,12 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
                                 </li>
                               </ul>
                             </div>
-                          )}
+                          </ChatInteractions.Loading>
                         </div>
                       </>
-                    )}
-                  </>
-                )}
+                    </>
+                  )
+                }
               </ChatInteractions.Wrapper>
             </div>
             <div className={styles.slidingPanelBottom}>

@@ -12,10 +12,10 @@ import {
   FacetTabs,
   SearchResults,
   Suggestions,
+  OramaLogo,
 } from '@orama/ui/components';
 import { useSearchContext } from '@orama/ui/contexts';
 import classNames from 'classnames';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
@@ -98,29 +98,27 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
                     <p className={styles.suggestionsTitle}>
                       {t('components.search.suggestions')}
                     </p>
-                    <Suggestions.List className={styles.suggestionsList}>
-                      <Suggestions.Item
-                        onClick={onChatTrigger}
-                        itemClassName={styles.suggestionItem}
-                      >
-                        <SparklesIcon />
-                        {t('components.search.suggestionOne')}
-                      </Suggestions.Item>
-                      <Suggestions.Item
-                        onClick={onChatTrigger}
-                        itemClassName={styles.suggestionItem}
-                      >
-                        <SparklesIcon />
-                        {t('components.search.suggestionTwo')}
-                      </Suggestions.Item>
-                      <Suggestions.Item
-                        onClick={onChatTrigger}
-                        itemClassName={styles.suggestionItem}
-                      >
-                        <SparklesIcon />
-                        {t('components.search.suggestionThree')}
-                      </Suggestions.Item>
-                    </Suggestions.List>
+                    <Suggestions.Item
+                      onClick={onChatTrigger}
+                      className={styles.suggestionItem}
+                    >
+                      <SparklesIcon />
+                      {t('components.search.suggestionOne')}
+                    </Suggestions.Item>
+                    <Suggestions.Item
+                      onClick={onChatTrigger}
+                      className={styles.suggestionItem}
+                    >
+                      <SparklesIcon />
+                      {t('components.search.suggestionTwo')}
+                    </Suggestions.Item>
+                    <Suggestions.Item
+                      onClick={onChatTrigger}
+                      className={styles.suggestionItem}
+                    >
+                      <SparklesIcon />
+                      {t('components.search.suggestionThree')}
+                    </Suggestions.Item>
                   </Suggestions.Wrapper>
                 )}
               </>
@@ -213,18 +211,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
             data-focus-on-arrow-nav
           >
             <small>{t('components.search.poweredBy')}</small>
-            <Image
-              src="/static/logos/orama-logo-icon.svg"
-              alt={t('components.search.poweredBy') + ' Orama'}
-              width="22"
-              height="15"
-            />
-            <Image
-              src="/static/logos/orama-logo.svg"
-              alt={t('components.search.poweredBy') + ' Orama'}
-              width="62"
-              height="22"
-            />
+            <OramaLogo theme="dark" />
           </a>
         </div>
       </div>
