@@ -27,6 +27,11 @@ layout: home
         <small className="!text-xs">for Node.js 18 and below</small>
       </Button>
 
+      <div className='flex flex-row gap-4 items-center'>
+        <PartnersIconList />
+        <Link href="/about/partners">and more...</Link>
+      </div>
+
       <div className="flex flex-col xs:flex-row gap-2 justify-center xs:mt-6">
         <WithNodeRelease status="Active LTS">
           {({ release }) =>
