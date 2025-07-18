@@ -8,7 +8,7 @@ export interface Vulnerability {
   description: string;
   overview: string;
   affectedEnvironments: Array<string>;
-  severity: string;
+  severity: 'critical' | 'high' | 'medium' | 'low' | 'unknown';
 }
 
 interface GroupedVulnerabilities {
