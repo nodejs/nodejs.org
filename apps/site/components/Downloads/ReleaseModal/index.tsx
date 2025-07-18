@@ -44,7 +44,7 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
               link: text => (
                 <Link
                   onClick={closeModal}
-                  href="/about/previous-releases#release-schedule"
+                  href="/eol"
                 >
                   {text}
                 </Link>
