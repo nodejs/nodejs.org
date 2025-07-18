@@ -2,6 +2,7 @@
 
 import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 
+import PartnersIconList from './components/Common/Partners/PartnersIconList';
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
 import WithBadgeGroup from './components/withBadgeGroup';
@@ -21,6 +22,7 @@ export const mdxComponents = {
   WithBanner,
   // HOC for providing Badge Data
   WithBadgeGroup,
+  PartnersIconList,
   // Standalone Badge Group
   BadgeGroup,
   // Renders an container for Upcoming Node.js Meetings
