@@ -35,7 +35,7 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
     const count = occurrences[base] ?? 0;
     occurrences[base] = count + 1;
 
-    const label = count === 0 ? base : `${base} (${count})`;
+    const label = count > 0 ? `${base} (${count + 1})` : base;
 
     return {
       key: `${language}-${index}`,
