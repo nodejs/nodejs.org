@@ -28,6 +28,11 @@
         text-green-600
         dark:text-green-400;
     }
+
+    .progressionIcon {
+      @apply fill-green-200
+        dark:fill-green-300;
+    }
   }
 
   .label {
@@ -59,8 +64,9 @@
       @apply p-1;
     }
 
-    &:not(.active):hover {
-      @apply bg-neutral-100
+    &:not(.active):hover .label {
+      @apply rounded-sm
+        bg-neutral-100
         dark:bg-neutral-900;
     }
   }
