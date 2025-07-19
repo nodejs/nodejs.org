@@ -1,0 +1,46 @@
+---
+title: End-Of-Life
+layout: article
+modal: eol
+---
+
+# End-Of-Life (EOL)
+
+## What is EOL Software?
+
+End-Of-Life software is software that is no longer maintained by its creators. Node.js has releases going back to 2015, and it's simply not feasible to maintain all release lines in perpetuity. Major versions are released, patched, and designated End-Of-Life on a schedule.
+
+[View the Node.js release schedule](/about/releases/).
+
+## Why Using EOL Software is Dangerous
+
+When a version reaches End-Of-Life, it means that it will no longer receive updates, including security patches. This can leave applications running on these versions vulnerable to security issues and bugs that will never be fixed.
+
+**End-Of-Life versions are dangerous. They are now completely unsupported**, meaning they receive no updates, including security patches.
+
+The security implications are immediate and serious. For example, when new security releases reveal issues and patches against major lines, the security advisory notes, "End-of-Life versions are always affected when a security release occurs", meaning **all earlier versions have these same vulnerabilities but will never receive patches**.
+
+## EOL Versions
+
+<EOLTable />
+
+## Commercial Support
+
+We understand that some organizations face constraints that prevent immediate upgrades, such as legacy codebases, compliance requirements, or complex dependency chains. If your company cannot upgrade immediately but needs continued security support for End-Of-Life versions of Node.js, [**commercial support**](https://www.herodevs.com/support/node-nes?utm_source=NodeJS+&utm_medium=Link&utm_campaign=Nodejs_eol_support) **is available through HeroDevs**.
+
+As part of the [OpenJS Ecosystem Sustainability Program](https://openjsf.org/partners) partnership, HeroDevs provides Never-Ending Support (NES) for Node.js versions past their official maintenance phase. This includes security patches, compliance assistance, and technical support to help bridge the gap while you plan your upgrade strategy.
+
+However, this should be viewed as a temporary solution—the goal should always be to upgrade to actively supported versions.
+
+## Upgrade Today
+
+<div className="flex flex-col gap-2">
+  <Button kind="special" className="!hidden dark:!block" href="/download">Get latest Node.js® LTS</Button>
+  <Button kind="primary" className="!block dark:!hidden" href="/download">Get latest Node.js® LTS</Button>
+
+  <Button kind="secondary" className="!block" href="https://www.herodevs.com/support/node-nes?utm_source=NodeJS+&utm_medium=Link&utm_campaign=Nodejs_eol_support">
+    <span>Get security support</span>
+    <br />
+    <small className="!text-xs">for Node.js 18 and below</small>
+  </Button>
+</div>
