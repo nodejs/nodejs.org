@@ -177,6 +177,7 @@
       "vulnerabilitiesMessage": "There are {count}+ known vulnerabilities associated with this Node.js release. Please review their severity and details to understand the potential impact.",
       "noVulnerabilitiesMessage": "There are no known vulnerabilities for this release, but that does not guarantee it is secure. Older or unsupported versions may still contain undiscovered vulnerabilities. We recommend upgrading to a supported release for continued security and stability.",
       "blogLinkText": "Blog",
+      "showUnknownSeverities": "Show vulnerabilities of unknown severity",
       "table": {
         "cves": "CVE(s)",
         "severity": "Severity",
