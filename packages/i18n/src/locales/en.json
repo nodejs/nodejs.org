@@ -8,6 +8,10 @@
           "versionSupport": "Version Support",
           "codeOfConduct": "Code of Conduct",
           "security": "Security Policy"
+        },
+        "releasePills": {
+          "latestLTS": "Latest LTS",
+          "latestRelease": "Latest Release"
         }
       },
       "navBar": {

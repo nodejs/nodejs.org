@@ -37,7 +37,7 @@ const WithFooter: FC = async () => {
             badgeText={release.versionWithPrefix}
             href={`/blog/release/${release.versionWithPrefix}`}
           >
-            Latest LTS
+            {t('components.containers.footer.releasePills.latestLTS')}
           </BadgeGroup>
         )}
       </WithNodeRelease>
@@ -49,7 +49,7 @@ const WithFooter: FC = async () => {
             badgeText={release.versionWithPrefix}
             href={`/blog/release/${release.versionWithPrefix}`}
           >
-            Latest Release
+            {t('components.containers.footer.releasePills.latestRelease')}
           </BadgeGroup>
         )}
       </WithNodeRelease>
