@@ -9,9 +9,14 @@ const WithBlogCrossLinks: FC = () => {
   const { pathname } = getClientContext();
 
   // Extracts from the static URL the components used for the Blog Post slug
-  const [, , category, postname] = pathname.split('/');
+  const [, , category, postname] = pathname.split('/') as [
+    unknown,
+    unknown,
+    BlogCategory,
+    string,
+  ];
 
-  const { posts } = getBlogData(category as BlogCategory);
+  const { posts } = getBlogData(category);
 
   const currentItem = posts.findIndex(
     ({ slug }) => slug === `/blog/${category}/${postname}`
