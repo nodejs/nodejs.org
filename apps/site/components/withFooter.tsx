@@ -1,6 +1,6 @@
 import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 import Footer from '@node-core/ui-components/Containers/Footer';
-import { getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import { getClientContext } from '#site/client-context';
@@ -9,22 +9,15 @@ import { siteNavigation } from '#site/next.json.mjs';
 
 import WithNodeRelease from './withNodeRelease';
 
-const WithFooter: FC = async () => {
-  const t = await getTranslations();
+const WithFooter: FC = () => {
+  const t = useTranslations();
   const { pathname } = getClientContext();
 
   const { socialLinks, footerLinks } = siteNavigation;
 
-  const updatedFooterLinks = footerLinks
-    .slice(0, -1)
-    .map(link => ({ ...link, text: t(link.text) }));
-
-  // Add OpenJS link
-  updatedFooterLinks.push(footerLinks.at(-1)!);
-
   const navigation = {
     socialLinks: socialLinks,
-    footerLinks: updatedFooterLinks,
+    footerLinks: footerLinks.map(link => ({ ...link, text: t(link.text) })),
   };
 
   const primary = (

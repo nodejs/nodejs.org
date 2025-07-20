@@ -3,6 +3,7 @@
     "containers": {
       "footer": {
         "links": {
+          "openJSFoundation": "OpenJS Foundation",
           "trademarkPolicy": "Trademark Policy",
           "privacyPolicy": "Privacy Policy",
           "versionSupport": "Version Support",
