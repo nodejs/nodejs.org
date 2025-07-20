@@ -1,4 +1,4 @@
-import ArrowRightIcon from '@heroicons/react/24/solid/ArrowRightIcon';
+import ArrowUpRightIcon from '@heroicons/react/24/solid/ArrowUpRightIcon';
 import type { ComponentProps, FC, PropsWithChildren } from 'react';
 
 import Badge from '#ui/Common/Badge';
@@ -30,7 +30,7 @@ const BadgeGroup: FC<PropsWithChildren<BadgeGroupProps>> = ({
 
     <span className={styles.message}>{children}</span>
 
-    {args.href && <ArrowRightIcon className={styles.icon} />}
+    {args.target === '_blank' && <ArrowUpRightIcon className={styles.icon} />}
   </Component>
 );
 
