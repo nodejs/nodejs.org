@@ -29,15 +29,15 @@ export const getRelativePath = path => fileURLToPath(new URL('.', path));
  *
  * @param {string} root the root directory to search from
  * @param {string} cwd the given locale code
- * @param {Array<string>} ignore an array of glob patterns to ignore
+ * @param {Array<string>} exclude an array of glob patterns to ignore
  * @returns {Promise<Array<string>>} a promise containing an array of paths
  */
-export const getMarkdownFiles = async (root, cwd, ignore = []) => {
-  const cacheKey = `${root}${cwd}${ignore.join('')}`;
+export const getMarkdownFiles = async (root, cwd, exclude = []) => {
+  const cacheKey = `${root}${cwd}${exclude.join('')}`;
 
   if (!globCacheByPath.has(cacheKey)) {
     const result = Array.fromAsync(
-      glob('**/*.{md,mdx}', { root, cwd, ignore })
+      glob('**/*.{md,mdx}', { root, cwd, exclude })
     );
 
     globCacheByPath.set(cacheKey, result);
