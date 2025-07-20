@@ -31,14 +31,14 @@ layout: home
         <WithNodeRelease status="Active LTS">
           {({ release }) =>
             <BadgeGroup size="small" kind="info" badgeText={release.versionWithPrefix} href={`/blog/release/${release.versionWithPrefix}`}>
-              Node.js LTS
+              Latest LTS
             </BadgeGroup>}
         </WithNodeRelease>
 
         <WithNodeRelease status="Current">
           {({ release }) =>
             <BadgeGroup size="small" badgeText={release.versionWithPrefix} href={`/blog/release/${release.versionWithPrefix}`}>
-              Node.js Current
+              Latest Release
             </BadgeGroup>}
         </WithNodeRelease>
       </div>

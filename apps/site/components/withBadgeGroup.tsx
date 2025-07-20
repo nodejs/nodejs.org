@@ -15,6 +15,9 @@ const WithBadgeGroup: FC<{ section: string }> = ({ section }) => {
         badgeText={badge.title}
         kind={badge.kind}
         href={badge.link}
+        // Ensure that External Links have a target="_blank" and an arrow icon
+        // indicating that the link is external and should open in a new tab
+        target={/^https?:/.test(badge.link) ? '_blank' : undefined}
       >
         {badge.text}
       </BadgeGroup>
