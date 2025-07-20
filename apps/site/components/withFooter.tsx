@@ -28,7 +28,7 @@ const WithFooter: FC = async () => {
   };
 
   const primary = (
-    <>
+    <div className="flex flex-row gap-2">
       <WithNodeRelease status="Active LTS">
         {({ release }) => (
           <BadgeGroup
@@ -53,7 +53,7 @@ const WithFooter: FC = async () => {
           </BadgeGroup>
         )}
       </WithNodeRelease>
-    </>
+    </div>
   );
 
   return (

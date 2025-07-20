@@ -9,7 +9,7 @@ const provideDownloadSnippets = cache((language: string) => {
     return downloadSnippets.get(language)!;
   }
 
-  return undefined;
+  return [];
 });
 
 export default provideDownloadSnippets;

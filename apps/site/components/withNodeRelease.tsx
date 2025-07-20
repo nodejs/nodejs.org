@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import getReleaseData from '#site/next-data/releaseData';
+import provideReleaseData from '#site/next-data/providers/releaseData';
 import type { NodeRelease, NodeReleaseStatus } from '#site/types';
 
 type WithNodeReleaseProps = {
@@ -11,11 +11,11 @@ type WithNodeReleaseProps = {
 // This is a React Async Server Component
 // Note that Hooks cannot be used in a RSC async component
 // Async Components do not get re-rendered at all.
-const WithNodeRelease: FC<WithNodeReleaseProps> = async ({
+const WithNodeRelease: FC<WithNodeReleaseProps> = ({
   status,
   children: Component,
 }) => {
-  const releaseData = await getReleaseData();
+  const releaseData = provideReleaseData();
 
   const matchingRelease = releaseData.find(release =>
     [status].flat().includes(release.status)
