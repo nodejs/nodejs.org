@@ -104,3 +104,24 @@ export default {
     },
   },
 } as Meta;
+
+export const SmallContainer: Story = {
+  render: args => (
+    <div className="w-200">
+      <AlertBox {...args} />
+    </div>
+  ),
+  args: {
+    level: 'info',
+    title: 'Stability: 3',
+    children: (
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
+        quasi doloremque. Totam, earum velit, sunt voluptates fugiat beatae
+        praesentium quis magni explicabo repudiandae nam aut molestias ex ad
+        sequi eum!
+      </p>
+    ),
+    size: 'default',
+  },
+};
