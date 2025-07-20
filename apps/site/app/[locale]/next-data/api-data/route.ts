@@ -32,31 +32,40 @@ export const GET = async () => {
     authorizationHeaders
   );
 
-  return gitHubApiResponse.json().then((apiDocsFiles: Array<GitHubApiFile>) => {
-    // maps over each api file and get the download_url, fetch the content and deflates it
-    const mappedApiFiles = apiDocsFiles.map(
-      async ({ name, path: filename, download_url }) => {
-        const apiFileResponse = await fetch(download_url);
+  // transforms the response into an array of GitHubApiFile
+  const apiDocsFiles: Array<GitHubApiFile> = await gitHubApiResponse.json();
 
-        // Retrieves the content as a raw text string
-        const source = await apiFileResponse.text();
+  // prevent the route from crashing if the response is not an array of GitHubApiFile
+  // and return an empty array instead. This is a fallback for when the GitHub API is not available.
+  if (!Array.isArray(apiDocsFiles)) {
+    return Response.json([]);
+  }
 
-        // Removes empty/blank lines or lines just with spaces and trims each line
-        // from leading and trailing paddings/spaces
-        const cleanedContent = parseRichTextIntoPlainText(source);
+  // maps over each api file and get the download_url, fetch the content and deflates it
+  const mappedApiFiles = apiDocsFiles.map(
+    async ({ name, path: filename, download_url }) => {
+      const apiFileResponse = await fetch(download_url);
 
-        const deflatedSource = deflateSync(cleanedContent).toString('base64');
+      // Retrieves the content as a raw text string
+      const source = await apiFileResponse.text();
 
-        return {
-          filename: filename,
-          pathname: getPathnameForApiFile(name, versionWithPrefix),
-          content: deflatedSource,
-        };
-      }
-    );
+      // Removes empty/blank lines or lines just with spaces and trims each line
+      // from leading and trailing paddings/spaces
+      const cleanedContent = parseRichTextIntoPlainText(source);
 
-    return Promise.all(mappedApiFiles).then(Response.json);
-  });
+      const deflatedSource = deflateSync(cleanedContent).toString('base64');
+
+      return {
+        filename: filename,
+        pathname: getPathnameForApiFile(name, versionWithPrefix),
+        content: deflatedSource,
+      };
+    }
+  );
+
+  const data = await Promise.all(mappedApiFiles);
+
+  return Response.json(data);
 };
 
 // This function generates the static paths that come from the dynamic segments

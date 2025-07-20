@@ -10,44 +10,52 @@ import { parseRichTextIntoPlainText } from '#site/util/string';
 // for a digest and metadata of all existing pages on Node.js Website
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 export const GET = async () => {
+  // Retrieves all available routes for the default locale
   const allAvailbleRoutes = await dynamicRouter.getRoutesByLanguage(
     defaultLocale.code
   );
 
-  const availablePagesMetadata = allAvailbleRoutes
-    .filter(route => !route.startsWith('blog'))
-    .map(async pathname => {
-      const { source, filename } = await dynamicRouter.getMarkdownFile(
-        defaultLocale.code,
-        pathname
-      );
+  // We exclude the blog routes from the available pages metadata
+  // as they are generated separately and are not part of the static pages
+  // and are not part of the static pages metadata
+  const routesExceptBlog = allAvailbleRoutes.filter(
+    route => !route.startsWith('blog')
+  );
 
-      // Gets the title and the Description from the Page Metadata
-      const { title, description } = await dynamicRouter.getPageMetadata(
-        defaultLocale.code,
-        pathname
-      );
+  const availablePagesMetadata = routesExceptBlog.map(async pathname => {
+    const { source, filename } = await dynamicRouter.getMarkdownFile(
+      defaultLocale.code,
+      pathname
+    );
 
-      // Parser the Markdown source with `gray-matter` and then only
-      // grabs the markdown content and cleanses it by removing HTML/JSX tags
-      // removing empty/blank lines or lines just with spaces and trims each line
-      // from leading and trailing paddings/spaces
-      const cleanedContent = parseRichTextIntoPlainText(matter(source).content);
+    // Gets the title and the Description from the Page Metadata
+    const { title, description } = await dynamicRouter.getPageMetadata(
+      defaultLocale.code,
+      pathname
+    );
 
-      // Deflates a String into a base64 string-encoded (zlib compressed)
-      const content = deflateSync(cleanedContent).toString('base64');
+    // Parser the Markdown source with `gray-matter` and then only
+    // grabs the markdown content and cleanses it by removing HTML/JSX tags
+    // removing empty/blank lines or lines just with spaces and trims each line
+    // from leading and trailing paddings/spaces
+    const cleanedContent = parseRichTextIntoPlainText(matter(source).content);
 
-      // Returns metadata of each page available on the Website
-      return {
-        filename,
-        pathname,
-        title,
-        description,
-        content,
-      };
-    });
+    // Deflates a String into a base64 string-encoded (zlib compressed)
+    const content = deflateSync(cleanedContent).toString('base64');
 
-  return Response.json(await Promise.all(availablePagesMetadata));
+    // Returns metadata of each page available on the Website
+    return {
+      filename,
+      pathname,
+      title,
+      description,
+      content,
+    };
+  });
+
+  const data = await Promise.all(availablePagesMetadata);
+
+  return Response.json(data);
 };
 
 // This function generates the static paths that come from the dynamic segments

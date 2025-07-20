@@ -1,3 +1,5 @@
+'use client';
+
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';

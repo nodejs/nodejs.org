@@ -1,10 +1,10 @@
 import Badge from '@node-core/ui-components/Common/Badge';
-import { getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
 import DetailsButton from '#site/components/Downloads/DownloadReleasesTable/DetailsButton';
-import getReleaseData from '#site/next-data/releaseData';
+import provideReleaseData from '#site/next-data/providers/releaseData';
 
 const BADGE_KIND_MAP = {
   'End-of-life': 'warning',
@@ -14,10 +14,9 @@ const BADGE_KIND_MAP = {
   Pending: 'default',
 } as const;
 
-const DownloadReleasesTable: FC = async () => {
-  const releaseData = await getReleaseData();
-
-  const t = await getTranslations();
+const DownloadReleasesTable: FC = () => {
+  const releaseData = provideReleaseData();
+  const t = useTranslations();
 
   return (
     <table id="tbVersions" className="download-table full-width">

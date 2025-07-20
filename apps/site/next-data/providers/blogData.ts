@@ -5,10 +5,7 @@ import { blogData } from '#site/next.json.mjs';
 import type { BlogCategory, BlogPostsRSC } from '#site/types';
 
 const blogPosts = cache(() =>
-  blogData.posts.map(post => ({
-    ...post,
-    date: new Date(post.date),
-  }))
+  blogData.posts.map(post => ({ ...post, date: new Date(post.date) }))
 );
 
 export const provideBlogPosts = cache(

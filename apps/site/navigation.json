@@ -33,6 +33,10 @@
   },
   "footerLinks": [
     {
+      "link": "https://openjsf.org/",
+      "text": "components.containers.footer.links.openJSFoundation"
+    },
+    {
       "link": "https://trademark-policy.openjsf.org/",
       "text": "components.containers.footer.links.trademarkPolicy"
     },
@@ -51,10 +55,6 @@
     {
       "link": "https://github.com/nodejs/node/security/policy",
       "text": "components.containers.footer.links.security"
-    },
-    {
-      "link": "https://openjsf.org/",
-      "text": "OpenJS Foundation"
     }
   ],
   "socialLinks": [
