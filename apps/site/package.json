@@ -56,7 +56,6 @@
     "cross-env": "catalog:",
     "feed": "~5.1.0",
     "github-slugger": "~2.0.0",
-    "glob": "~11.0.1",
     "gray-matter": "~4.0.3",
     "next": "15.3.4",
     "next-intl": "~4.3.4",

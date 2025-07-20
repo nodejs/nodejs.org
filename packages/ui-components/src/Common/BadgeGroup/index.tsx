@@ -10,7 +10,7 @@ type BadgeGroupProps = {
   kind?: ComponentProps<typeof Badge>['kind'];
   size?: ComponentProps<typeof Badge>['size'];
   badgeText?: string;
-  as: LinkLike;
+  as?: LinkLike;
 } & ComponentProps<LinkLike>;
 
 const BadgeGroup: FC<PropsWithChildren<BadgeGroupProps>> = ({

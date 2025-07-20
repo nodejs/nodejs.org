@@ -1,14 +1,12 @@
 import {
   ENABLE_STATIC_EXPORT,
-  NEXT_DATA_URL,
   IS_NOT_VERCEL_RUNTIME_ENV,
+  NEXT_DATA_URL,
 } from '#site/next.constants.mjs';
 import { availableLocaleCodes } from '#site/next.locales.mjs';
 import type { DownloadSnippet } from '#site/types';
 
-export default async function getDownloadSnippets(
-  lang: string
-): Promise<Array<DownloadSnippet>> {
+export default async function getDownloadSnippets(lang: string) {
   // Prevents attempting to retrieve data for an unsupported language as both the generator
   // and the API endpoint will simply return 404. And we want to prevent a 404 response.
   if (!availableLocaleCodes.includes(lang)) {
@@ -39,5 +37,6 @@ export default async function getDownloadSnippets(
   // Note: We do manual JSON.parse after response.text() to prevent React from throwing an Error
   // that does not provide a clear stack trace of which request is failing and what the JSON.parse error is
   const response = await fetch(fetchURL);
-  return JSON.parse(await response.text());
+
+  return JSON.parse(await response.text()) as Array<DownloadSnippet>;
 }
