@@ -1,7 +1,6 @@
 'use strict';
 
 import nodevu from '@nodevu/core';
-import { glob } from 'glob';
 
 // Gets the appropriate release status for each major release
 const getNodeReleaseStatus = (now, support) => {
@@ -33,12 +32,6 @@ const getNodeReleaseStatus = (now, support) => {
  * @returns {Promise<Array<import('../../types').NodeRelease>>}
  */
 const generateReleaseData = async () => {
-  const releaseAnnouncements = await glob('**/*-release-announce.md', {
-    root: process.cwd(),
-    cwd: 'pages/en/blog/announcements/',
-    absolute: false,
-  });
-
   const nodevuOutput = await nodevu({ fetch });
 
   const majors = Object.entries(nodevuOutput).filter(
@@ -81,14 +74,6 @@ const generateReleaseData = async () => {
       releaseDate: release.releaseDate,
     }));
 
-    const majorVersion = latestVersion.semver.major;
-
-    const releaseAnnounceLink = releaseAnnouncements.includes(
-      `v${majorVersion}-release-announce.md`
-    )
-      ? `/blog/announcements/v${majorVersion}-release-announce`
-      : undefined;
-
     return {
       ...support,
       status: status,
@@ -101,7 +86,6 @@ const generateReleaseData = async () => {
       v8: latestVersion.dependencies.v8,
       releaseDate: latestVersion.releaseDate,
       modules: latestVersion.modules.version || '',
-      releaseAnnounceLink: releaseAnnounceLink,
       minorVersions: minorVersions,
     };
   });

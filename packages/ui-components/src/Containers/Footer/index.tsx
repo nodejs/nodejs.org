@@ -1,6 +1,4 @@
-'use client';
-
-import type { FC, SVGProps } from 'react';
+import type { FC, ReactNode, SVGProps } from 'react';
 
 import NavItem from '#ui/Containers/NavBar/NavItem';
 import {
@@ -37,16 +35,31 @@ type Navigation = {
   }>;
 };
 
-const Footer: FC<{
+type ExtraNavigationSlots = {
+  primary?: ReactNode;
+  secondary?: ReactNode;
+};
+
+type FooterProps = {
   pathname: string;
   as: LinkLike;
   navigation: Navigation;
-}> = ({ pathname = '/', as = 'a', navigation }) => {
+  slots?: ExtraNavigationSlots;
+};
+
+const Footer: FC<FooterProps> = ({
+  pathname = '/',
+  as = 'a',
+  navigation,
+  slots,
+}) => {
   const openJSlink = navigation.footerLinks.at(-1)!;
 
   return (
     <footer className={styles.footer}>
       <div className={styles.sectionPrimary}>
+        {slots?.primary}
+
         {navigation.footerLinks.slice(0, -1).map(item => (
           <NavItem
             key={item.link}
@@ -61,6 +74,8 @@ const Footer: FC<{
       </div>
 
       <div className={styles.sectionSecondary}>
+        {slots?.secondary}
+
         <NavItem
           type="footer"
           href={openJSlink.link}
