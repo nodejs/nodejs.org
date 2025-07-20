@@ -28,6 +28,7 @@ const GlowingBackdropLayout: FC<
         {children}
       </main>
     </div>
+
     <WithFooter />
   </>
 );

@@ -1,3 +1,5 @@
+'use client';
+
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { FC } from 'react';
 
