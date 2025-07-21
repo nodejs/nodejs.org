@@ -144,7 +144,8 @@
           "branding": "Branding of Node.js",
           "governance": "Project Governance",
           "releases": "Node.js Releases",
-          "security": "Security Reporting"
+          "security": "Security Reporting",
+          "partners": "Partners"
         }
       },
       "getInvolved": {
