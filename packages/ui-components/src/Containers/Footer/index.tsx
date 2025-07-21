@@ -60,7 +60,7 @@ const Footer: FC<FooterProps> = ({
       <div className={styles.sectionPrimary}>
         {slots?.primary}
 
-        {navigation.footerLinks.slice(0, -1).map((item, index) => (
+        {navigation.footerLinks.slice(0, -1).map(item => (
           <NavItem
             key={item.link}
             type="footer"
@@ -68,7 +68,6 @@ const Footer: FC<FooterProps> = ({
             as={as}
             pathname={pathname}
           >
-            {index === 0 ? '© ' : ''}
             {item.text}
           </NavItem>
         ))}
