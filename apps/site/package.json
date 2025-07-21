@@ -8,7 +8,7 @@
     "build:blog-data:watch": "node --watch --watch-path=pages/en/blog ./scripts/blog-data/generate.mjs",
     "build:default": "cross-env NODE_NO_WARNINGS=1 next build",
     "cloudflare:build:worker": "OPEN_NEXT_CLOUDFLARE=true opennextjs-cloudflare build",
-    "cloudflare:deploy": "wrangler deploy",
+    "cloudflare:deploy": "opennextjs-cloudflare deploy",
     "cloudflare:preview": "wrangler dev",
     "predeploy": "node --run build:blog-data",
     "deploy": "cross-env NEXT_PUBLIC_STATIC_EXPORT=true node --run build:default -- --turbo",
