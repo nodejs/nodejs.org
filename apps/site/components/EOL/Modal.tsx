@@ -44,7 +44,7 @@ const VulnerabilitiesTable: FC<{
                 ? vuln.cve.map(cveId => (
                     <div key={cveId}>
                       <LinkWithArrow
-                        href={`https://cve.mitre.org/cgi-bin/cvename.cgi?name=${cveId}`}
+                        href={`https://www.cve.org/CVERecord?id=${cveId}`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
