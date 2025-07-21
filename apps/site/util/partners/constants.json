@@ -1,0 +1,58 @@
+[
+  {
+    "id": "RACKSPACE",
+    "name": "Rackspace",
+    "href": "https://www.rackspace.com",
+    "threshold": 2,
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "CLOUDFLARE",
+    "name": "Cloudflare",
+    "href": "https://www.cloudflare.com",
+    "threshold": 3,
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "VERCEL",
+    "name": "Vercel",
+    "href": "https://vercel.com",
+    "threshold": 1,
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "SENTRY",
+    "name": "Sentry",
+    "href": "https://sentry.io",
+    "threshold": 3,
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "CROWDIN",
+    "name": "Crowdin",
+    "href": "https://crowdin.com",
+    "threshold": 2,
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "HERODEVS",
+    "name": "HeroDevs",
+    "href": "https://herodevs.com",
+    "threshold": 1,
+    "categories": ["security", "esp partner"]
+  },
+  {
+    "id": "NODESOURCE",
+    "name": "NodeSource",
+    "href": "https://nodesource.com",
+    "threshold": 2,
+    "categories": ["security"]
+  },
+  {
+    "id": "DATADOG",
+    "name": "Datadog",
+    "href": "https://www.datadoghq.com",
+    "threshold": 3,
+    "categories": ["security"]
+  }
+]

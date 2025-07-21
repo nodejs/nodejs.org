@@ -1,0 +1,129 @@
+[
+  {
+    "id": "DIGITALOCEAN",
+    "name": "DigitalOcean",
+    "href": "https://www.digitalocean.com",
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "RACKSPACE",
+    "name": "Rackspace",
+    "href": "https://www.rackspace.com",
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "MICROSOFT",
+    "name": "Microsoft",
+    "href": "https://microsoft.com",
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "MNX",
+    "name": "MNX",
+    "href": "ToDo",
+    "logo": "ToDo",
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "IBM",
+    "name": "IBM",
+    "href": "https://www.ibm.com",
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "SCALEWAY",
+    "name": "Scaleway",
+    "href": "https://www.scaleway.com",
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "CLOUDFLARE",
+    "name": "Cloudflare",
+    "href": "https://www.cloudflare.com",
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "ARM",
+    "name": "ARM",
+    "href": "https://www.arm.com",
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "INTEL",
+    "name": "Intel",
+    "href": "https://www.intel.com",
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "MACSTADIUM",
+    "name": "MacStadium",
+    "href": "https://www.macstadium.com",
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "EQUINIXMETAL",
+    "name": "Equinix Metal",
+    "href": "https://www.equinix.com",
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "CHROMATIC",
+    "name": "Chromatic",
+    "href": "https://www.chromatic.com",
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "VERCEL",
+    "name": "Vercel",
+    "href": "https://vercel.com",
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "SENTRY",
+    "name": "Sentry",
+    "href": "https://sentry.io",
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "CROWDIN",
+    "name": "Crowdin",
+    "href": "https://crowdin.com",
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "ORAMA",
+    "name": "Orama",
+    "href": "https://orama.com",
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "HERODEVS",
+    "name": "HeroDevs",
+    "href": "https://herodevs.com",
+    "categories": ["security", "esp partner"]
+  },
+  {
+    "id": "NODESOURCE",
+    "name": "NodeSource",
+    "href": "https://nodesource.com",
+    "categories": ["security"]
+  },
+  {
+    "id": "PLATFORMATIC",
+    "name": "Platformatic",
+    "href": "https://platformatic.dev",
+    "categories": ["security"]
+  },
+  {
+    "id": "REDHAT",
+    "name": "Red Hat",
+    "href": "https://www.redhat.com",
+    "categories": ["security"]
+  },
+  {
+    "id": "DATADOG",
+    "name": "Datadog",
+    "href": "https://www.datadoghq.com",
+    "categories": ["security"]
+  }
+]
