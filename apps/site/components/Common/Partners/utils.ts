@@ -1,7 +1,7 @@
 import type { PartnerCategory, Partners } from '#site/types/partners.js';
 
 // TODO: Implement no random list
-// TODO: Implement no limit items
+// TODO: Implement no importance of partner
 function randomPartnerList(
   partners: Array<Partners>,
   pick = 4,
@@ -28,12 +28,15 @@ function randomPartnerList(
   const rng = mulberry32(seed);
 
   // Create a copy of the array to avoid modifying the original
-  const shuffled = partners
+  let shuffled = [...partners]
     .filter(partner => !category || partner.categories.includes(category))
-    .slice()
     .sort(() => rng() - 0.5);
 
-  return shuffled.slice(0, pick);
+  if (pick !== null) {
+    shuffled = shuffled.slice(0, pick);
+  }
+
+  return shuffled;
 }
 
 // This function returns a random list of partners based on a fixed time seed
