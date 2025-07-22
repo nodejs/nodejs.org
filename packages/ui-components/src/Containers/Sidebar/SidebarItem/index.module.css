@@ -4,16 +4,42 @@
   @apply font-regular
     relative
     z-20
+    mb-px
     flex
     w-full
     items-center
     overflow-hidden
+    rounded-md
     text-sm
     text-neutral-800
     dark:text-neutral-200;
 
+  &:hover {
+    &:not(.progression) .label {
+      @apply rounded-sm
+        bg-neutral-100
+        text-neutral-900
+        dark:bg-neutral-800
+        dark:text-neutral-100;
+    }
+
+    .icon {
+      @apply scale-110
+        text-green-600
+        dark:text-green-400;
+    }
+
+    .progressionIcon {
+      @apply fill-green-200
+        dark:fill-green-300;
+    }
+  }
+
   .label {
     @apply font-regular
+      flex
+      items-center
+      gap-1.5
       p-2
       text-sm;
   }
@@ -36,6 +62,12 @@
   &.progression {
     .label {
       @apply p-1;
+    }
+
+    &:not(.active):hover .label {
+      @apply rounded-sm
+        bg-neutral-100
+        dark:bg-neutral-900;
     }
   }
 
