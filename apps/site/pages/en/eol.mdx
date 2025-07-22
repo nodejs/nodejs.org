@@ -6,19 +6,18 @@ modal: eol
 
 # End-Of-Life (EOL)
 
-## What is EOL Software?
+## Why and how Node.js releases reach End-Of-Life
 
-End-Of-Life software is software that is no longer maintained by its creators. Node.js has releases going back to 2015, and it's simply not feasible to maintain all release lines in perpetuity. Major versions are released, patched, and designated End-Of-Life on a schedule.
+Major versions of Node.js are released, patched, and designated End-Of-Life on a predictable schedule. As it's not feasible to maintain all release lines in perpetuity, after a planned maintenance period, a Node.js major release line will stop being maintained by the project.
 
-[View the Node.js release schedule](/about/releases/).
-
-## Why Using EOL Software is Dangerous
+## What Happens When a Release Line Reaches EOL
 
 When a version reaches End-Of-Life, it means that it will no longer receive updates, including security patches. This can leave applications running on these versions vulnerable to security issues and bugs that will never be fixed.
 
-**End-Of-Life versions are dangerous. They are now completely unsupported**, meaning they receive no updates, including security patches.
-
-The security implications are immediate and serious. For example, when new security releases reveal issues and patches against major lines, the security advisory notes, "End-of-Life versions are always affected when a security release occurs", meaning **all earlier versions have these same vulnerabilities but will never receive patches**.
+- No more vulnerability fixes: when new security releases reveal issues and patches in newer major lines, even if the same vulnerability affects EOL release lines, there will not be any new releases for them. Users still clinging on to EOL release lines and using affected code paths will be immediately vulnerable to attacks exploiting these disclosed vulnerabilities. 
+- Tool-chain breakage: EOL releases may no longer dynamically link to newer versions of the shared libraries they depend on, blocking or breaking system updates.
+- Ecosystem drift: Many popular user-land packages drop support for EOL Node.js releases over time. When an application has to also cling onto outdated packages, they may suffer from even more unfixed vulnerability and bugs, further drifting away from ecosystem norm.
+- Compliance red flags: Many industry audits forbid unmaintained runtimes.
 
 ## EOL Versions
 
@@ -26,11 +25,11 @@ The security implications are immediate and serious. For example, when new secur
 
 ## Commercial Support
 
-We understand that some organizations face constraints that prevent immediate upgrades, such as legacy codebases, compliance requirements, or complex dependency chains. If your company cannot upgrade immediately but needs continued security support for End-Of-Life versions of Node.js, [**commercial support**](https://www.herodevs.com/support/node-nes?utm_source=NodeJS+&utm_medium=Link&utm_campaign=Nodejs_eol_support) **is available through HeroDevs**.
+Despite the obvious downsides of using EOL releases, in practice, organizations face constraints that prevent immediate upgrades, such as legacy codebases, compliance requirements, or complex dependency chains. For users who cannot upgrade immediately but needs continued security support for End-Of-Life versions of Node.js, commercial support is available through the [OpenJS Ecosystem Sustainability Program](https://openjsf.org/partners) partnership.
 
-As part of the [OpenJS Ecosystem Sustainability Program](https://openjsf.org/partners) partnership, HeroDevs provides Never-Ending Support (NES) for Node.js versions past their official maintenance phase. This includes security patches, compliance assistance, and technical support to help bridge the gap while you plan your upgrade strategy.
+Node.js currently partners up with HeroDevs to provide Never-Ending Support (NES) for Node.js versions past their official maintenance phase. This includes security patches, compliance assistance, and technical support to help bridge the gap while you plan your upgrade strategy. For more detailed information, visit the [**HeroDevs Node.js NES page**](https://www.herodevs.com/support/node-nes?utm_source=NodeJS+&utm_medium=Link&utm_campaign=Nodejs_eol_support).
 
-However, this should be viewed as a temporary solution—the goal should always be to upgrade to actively supported versions.
+Using EOL releases through NES should be viewed as a temporary solution—the goal should always be to upgrade to actively supported versions.
 
 ## Upgrade Today
 
