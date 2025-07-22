@@ -44,7 +44,7 @@ const EOLTable: FC = async () => {
                 vulnerabilities={vulnerabilities[release.major]}
               />
             </td>
-            <td className="download-table-last">
+            <td>
               <DetailsButton
                 data={{
                   release: release,
