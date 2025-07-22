@@ -14,7 +14,7 @@ In September 2022 over 2.1 million packages were reported being listed in the np
 
 It started as a way to download and manage dependencies of Node.js packages, but it has since become a tool used also in frontend JavaScript.
 
-> [**Yarn**](https://yarnpkg.com/en/) and [**pnpm**](https://pnpm.io) are alternatives to npm cli. You can check them out as well.
+> [**Yarn**](https://yarnpkg.com) and [**pnpm**](https://pnpm.io) are alternatives to npm cli. You can check them out as well.
 
 ## Packages
 
