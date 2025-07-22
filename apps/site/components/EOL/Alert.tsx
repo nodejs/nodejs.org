@@ -9,7 +9,7 @@ const EOLAlert = () => {
     <AlertBox level="warning">
       {t('intro')}{' '}
       <Link href="/eol">
-        OpenJS Ecosystem Sustainability Program partner HeroDevs
+        OpenJS Ecosystem Sustainability Program {t('partner')} HeroDevs
       </Link>
     </AlertBox>
   );

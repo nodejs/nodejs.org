@@ -289,6 +289,7 @@
     },
     "endOfLife": {
       "intro": "Commercial support for versions past the Maintenance LTS phase is available through our",
+      "partner": "partner",
       "severity": {
         "unknown": "Unknown",
         "low": "Low",
