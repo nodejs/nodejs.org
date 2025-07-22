@@ -82,7 +82,7 @@ const Footer: FC<FooterProps> = ({
           as={as}
           pathname={pathname}
         >
-          {openJSlink.text}
+          &copy; {openJSlink.text}
         </NavItem>
 
         <div className={styles.social}>
