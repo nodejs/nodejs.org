@@ -17,4 +17,4 @@ export interface Partners {
   threshold: number;
 }
 
-export type PartnerCategory = 'infrastructure' | 'security' | 'esp partner';
+export type PartnerCategory = 'infrastructure' | 'security' | 'esp';

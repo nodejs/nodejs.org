@@ -9,19 +9,23 @@ import type { Partners } from '#site/types';
  * Creates an icon element for a component
  */
 const createIcon = (
-  IconModule: Record<string, ElementType>,
-  iconName: string
+  IconModule: Record<string, Record<string, ElementType>>,
+  iconName: string,
+  type?: 'Logo' | 'Favicon'
 ) => {
-  const IconComponent = IconModule[iconName];
+  const IconComponent = IconModule[iconName][type || 'Favicon'];
   return <IconComponent width={16} height={16} />;
 };
 
 // Package Manager dropdown items
-export const partnersList = (partnerLists: Array<Omit<Partners, 'logo'>>) =>
+export const partnersList = (
+  partnerLists: Array<Omit<Partners, 'logo'>>,
+  type?: 'Logo' | 'Favicon'
+) =>
   partnerLists.map(({ id, ...partner }) => {
     return {
       id: id,
-      logo: createIcon(PartnersLogo, id),
+      logo: createIcon(PartnersLogo, id, type),
       ...partner,
     };
   });

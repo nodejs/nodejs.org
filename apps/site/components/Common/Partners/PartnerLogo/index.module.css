@@ -1,0 +1,19 @@
+@reference "../../../../styles/index.css";
+
+.partnerIcon {
+  @apply flex
+    h-[114px]
+    max-h-[130px]
+    w-auto
+    min-w-12
+    items-center
+    justify-center
+    rounded-lg
+    p-6
+    sm:p-10;
+
+  svg {
+    @apply !h-12
+      !w-auto;
+  }
+}
