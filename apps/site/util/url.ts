@@ -68,7 +68,10 @@ export const getNodeDownloadUrl = (
       // Prepares a downloadable Node.js link for the ARM platforms such as
       // ARMv7 and ARMv8
       if (typeof platform === 'string') {
-        return `${baseURL}/node-${versionWithPrefix}-linux-${platform}.tar.xz`;
+        // For Linux, if platform is 'x86', default to 'x64'.
+        // Since x86 binaries are not available for recent Node.js versions
+        const linuxPlatform = platform === 'x86' ? 'x64' : platform;
+        return `${baseURL}/node-${versionWithPrefix}-linux-${linuxPlatform}.tar.xz`;
       }
 
       // Prepares a downloadable Node.js link for the x64 platform.
