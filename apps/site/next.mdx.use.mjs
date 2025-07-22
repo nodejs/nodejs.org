@@ -4,6 +4,7 @@ import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 
 import Button from './components/Common/Button';
 import PartnersIconList from './components/Common/Partners/PartnersIconList';
+import PartnersLogoList from './components/Common/Partners/PartnersLogoList';
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
 import Link from './components/Link';
 import LinkWithArrow from './components/LinkWithArrow';
@@ -25,8 +26,10 @@ export const mdxComponents = {
   WithBanner,
   // HOC for providing Badge Data
   WithBadgeGroup,
-  // Shows a list of Node.js Partners
+  // Shows a list of Node.js Partners with Icons
   PartnersIconList,
+  // Shows a list of Node.js Partners with Logos
+  PartnersLogoList,
   // Standalone Badge Group
   BadgeGroup,
   // Renders an container for Upcoming Node.js Meetings

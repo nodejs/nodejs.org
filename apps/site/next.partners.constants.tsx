@@ -2,6 +2,10 @@ import type { Partners } from '#site/types';
 import { partnersList } from '#site/util/partners';
 import partners from '#site/util/partners/constants.json' with { type: 'json' };
 
-const PARTNERS = partnersList(partners as Array<Omit<Partners, 'logo'>>);
+const PARTNERS = (type?: 'Logo' | 'Favicon') =>
+  partnersList(partners as Array<Omit<Partners, 'logo'>>, type);
 
-export default PARTNERS as Array<Partners>;
+const ICON_PARTNERS = PARTNERS('Favicon');
+const LOGO_PARTNERS = PARTNERS('Logo');
+
+export { ICON_PARTNERS, LOGO_PARTNERS };

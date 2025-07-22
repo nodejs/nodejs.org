@@ -2,26 +2,26 @@
 
 import { useEffect, useRef, useState, type FC } from 'react';
 
-import { ICON_PARTNERS } from '#site/next.partners.constants';
+import { LOGO_PARTNERS } from '#site/next.partners.constants';
 import type { PartnerCategory, Partners } from '#site/types';
 
-import PartnerIcon from '../PartnerIcon';
+import PartnerLogo from '../PartnerLogo';
 import style from './index.module.css';
 import { randomPartnerList } from '../utils';
 
-type PartnersIconListProps = {
+type PartnersLogoListProps = {
   maxLength?: number;
   categories?: PartnerCategory;
 };
 
-const PartnersIconList: FC<PartnersIconListProps> = ({
-  maxLength = 6,
+const PartnersLogoList: FC<PartnersLogoListProps> = ({
+  maxLength = 3,
   categories,
 }) => {
   const initialRenderer = useRef(true);
 
   const [seedList, setSeedList] = useState<Array<Partners>>(
-    ICON_PARTNERS.slice(0, maxLength)
+    LOGO_PARTNERS.slice(0, maxLength)
   );
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const PartnersIconList: FC<PartnersIconListProps> = ({
     const renderSponsorsAnimation = setTimeout(() => {
       initialRenderer.current = false;
 
-      setSeedList(randomPartnerList(ICON_PARTNERS, maxLength, 1, categories));
+      setSeedList(randomPartnerList(LOGO_PARTNERS, maxLength, 1, categories));
     }, 0);
 
     return () => clearTimeout(renderSponsorsAnimation);
@@ -47,9 +47,9 @@ const PartnersIconList: FC<PartnersIconListProps> = ({
   }, []);
 
   return (
-    <div className={style.partnersIconList}>
+    <div className={style.partnersLogoList}>
       {seedList.map((partner, index) => (
-        <PartnerIcon
+        <PartnerLogo
           {...partner}
           key={index}
           loading={initialRenderer.current}
@@ -59,4 +59,4 @@ const PartnersIconList: FC<PartnersIconListProps> = ({
   );
 };
 
-export default PartnersIconList;
+export default PartnersLogoList;

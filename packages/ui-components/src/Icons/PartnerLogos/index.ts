@@ -1,11 +1,11 @@
-import CLOUDFLARE from './Cloudflare';
-import CROWDIN from './Crowdin';
-import DATADOG from './DataDog';
-import HERODEVS from './HeroDevs';
-import NODESOURCE from './NodeSource';
-import RACKSPACE from './Rackspace';
-import SENTRY from './Sentry';
-import VERCEL from './Vercel';
+import * as CLOUDFLARE from './Cloudflare';
+import * as CROWDIN from './Crowdin';
+import * as DATADOG from './DataDog';
+import * as HERODEVS from './HeroDevs';
+import * as NODESOURCE from './NodeSource';
+import * as RACKSPACE from './Rackspace';
+import * as SENTRY from './Sentry';
+import * as VERCEL from './Vercel';
 
 export {
   CLOUDFLARE,

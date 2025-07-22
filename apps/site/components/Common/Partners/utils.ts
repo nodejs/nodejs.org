@@ -1,5 +1,7 @@
 import type { PartnerCategory, Partners } from '#site/types/partners.js';
 
+// TODO: Implement no random list
+// TODO: Implement no limit items
 function randomPartnerList(
   partners: Array<Partners>,
   pick = 4,
