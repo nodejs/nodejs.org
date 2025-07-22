@@ -18,7 +18,7 @@ const EOLTable: FC = async () => {
   const t = await getTranslations();
 
   return (
-    <table id="tbVulnerabilities" className="download-table full-width">
+    <table id="tbVulnerabilities">
       <thead>
         <tr>
           <th>
