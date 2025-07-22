@@ -1,129 +1,171 @@
 [
   {
-    "id": "DIGITALOCEAN",
-    "name": "DigitalOcean",
-    "href": "https://www.digitalocean.com",
-    "categories": ["infrastructure"]
-  },
-  {
     "id": "RACKSPACE",
     "name": "Rackspace",
     "href": "https://www.rackspace.com",
-    "categories": ["infrastructure"]
-  },
-  {
-    "id": "MICROSOFT",
-    "name": "Microsoft",
-    "href": "https://microsoft.com",
-    "categories": ["infrastructure"]
-  },
-  {
-    "id": "MNX",
-    "name": "MNX",
-    "href": "ToDo",
-    "logo": "ToDo",
-    "categories": ["infrastructure"]
-  },
-  {
-    "id": "IBM",
-    "name": "IBM",
-    "href": "https://www.ibm.com",
-    "categories": ["infrastructure"]
-  },
-  {
-    "id": "SCALEWAY",
-    "name": "Scaleway",
-    "href": "https://www.scaleway.com",
+    "weight": 3,
     "categories": ["infrastructure"]
   },
   {
     "id": "CLOUDFLARE",
     "name": "Cloudflare",
     "href": "https://www.cloudflare.com",
-    "categories": ["infrastructure"]
-  },
-  {
-    "id": "ARM",
-    "name": "ARM",
-    "href": "https://www.arm.com",
-    "categories": ["infrastructure"]
-  },
-  {
-    "id": "INTEL",
-    "name": "Intel",
-    "href": "https://www.intel.com",
-    "categories": ["infrastructure"]
-  },
-  {
-    "id": "MACSTADIUM",
-    "name": "MacStadium",
-    "href": "https://www.macstadium.com",
-    "categories": ["infrastructure"]
-  },
-  {
-    "id": "EQUINIXMETAL",
-    "name": "Equinix Metal",
-    "href": "https://www.equinix.com",
-    "categories": ["infrastructure"]
-  },
-  {
-    "id": "CHROMATIC",
-    "name": "Chromatic",
-    "href": "https://www.chromatic.com",
+    "weight": 3,
     "categories": ["infrastructure"]
   },
   {
     "id": "VERCEL",
     "name": "Vercel",
     "href": "https://vercel.com",
+    "weight": 2,
     "categories": ["infrastructure"]
   },
   {
     "id": "SENTRY",
     "name": "Sentry",
     "href": "https://sentry.io",
+    "weight": 1,
     "categories": ["infrastructure"]
   },
   {
     "id": "CROWDIN",
     "name": "Crowdin",
     "href": "https://crowdin.com",
-    "categories": ["infrastructure"]
-  },
-  {
-    "id": "ORAMA",
-    "name": "Orama",
-    "href": "https://orama.com",
-    "categories": ["infrastructure"]
+    "weight": 1,
+    "categories": ["service"]
   },
   {
     "id": "HERODEVS",
     "name": "HeroDevs",
     "href": "https://herodevs.com",
-    "categories": ["security", "esp partner"]
+    "weight": 3,
+    "categories": ["security", "esp", "release"]
   },
   {
     "id": "NODESOURCE",
     "name": "NodeSource",
     "href": "https://nodesource.com",
-    "categories": ["security"]
-  },
-  {
-    "id": "PLATFORMATIC",
-    "name": "Platformatic",
-    "href": "https://platformatic.dev",
-    "categories": ["security"]
-  },
-  {
-    "id": "REDHAT",
-    "name": "Red Hat",
-    "href": "https://www.redhat.com",
-    "categories": ["security"]
+    "weight": 2,
+    "categories": ["security", "release"]
   },
   {
     "id": "DATADOG",
     "name": "Datadog",
     "href": "https://www.datadoghq.com",
+    "weight": 2,
     "categories": ["security"]
+  },
+  {
+    "id": "DIGITALOCEAN",
+    "name": "DigitalOcean",
+    "href": "https://www.digitalocean.com",
+    "categories": ["infrastructure"],
+    "weight": 3
+  },
+  {
+    "id": "MICROSOFT",
+    "name": "Microsoft",
+    "href": "https://microsoft.com",
+    "categories": ["infrastructure"],
+    "weight": 2
+  },
+  {
+    "id": "MNX",
+    "name": "MNX",
+    "href": "ToDo",
+    "logo": "ToDo",
+    "categories": ["infrastructure"],
+    "weight": 2
+  },
+  {
+    "id": "IBM",
+    "name": "IBM",
+    "href": "https://www.ibm.com",
+    "categories": ["infrastructure", "release"],
+    "weight": 3
+  },
+  {
+    "id": "SCALEWAY",
+    "name": "Scaleway",
+    "href": "https://www.scaleway.com",
+    "categories": ["infrastructure"],
+    "weight": 2
+  },
+  {
+    "id": "ARM",
+    "name": "ARM",
+    "href": "https://www.arm.com",
+    "categories": ["infrastructure"],
+    "weight": 2
+  },
+  {
+    "id": "INTEL",
+    "name": "Intel",
+    "href": "https://www.intel.com",
+    "categories": ["infrastructure"],
+    "weight": 2
+  },
+  {
+    "id": "MACSTADIUM",
+    "name": "MacStadium",
+    "href": "https://www.macstadium.com",
+    "categories": ["infrastructure"],
+    "weight": 2
+  },
+  {
+    "id": "EQUINIXMETAL",
+    "name": "Equinix Metal",
+    "href": "https://www.equinix.com",
+    "categories": ["infrastructure"],
+    "weight": 2
+  },
+  {
+    "id": "CHROMATIC",
+    "name": "Chromatic",
+    "href": "https://www.chromatic.com",
+    "categories": ["service"],
+    "weight": 1
+  },
+  {
+    "id": "ORAMA",
+    "name": "Orama",
+    "href": "https://orama.com",
+    "categories": ["service"],
+    "weight": 1
+  },
+  {
+    "id": "PLATFORMATIC",
+    "name": "Platformatic",
+    "href": "https://platformatic.dev",
+    "categories": ["security"],
+    "weight": 2
+  },
+  {
+    "id": "REDHAT",
+    "name": "Red Hat",
+    "href": "https://www.redhat.com",
+    "categories": ["security"],
+    "weight": 2
+  },
+  {
+    "id": "OPENSSF",
+    "name": "Open SSF",
+    "href": "https://openssf.org/",
+    "weight": 2,
+    "categories": ["security"]
+  },
+  {
+    "id": "VLT",
+    "name": "Vlt",
+    "href": "https://www.vlt.sh",
+    "weight": 2,
+    "categories": ["release"]
+  },
+  {
+    "id": "ZAKODIUM",
+    "name": "zakodium",
+    "href": "https://www.zakodium.com",
+    "weight": 2,
+    "categories": ["release"]
   }
 ]

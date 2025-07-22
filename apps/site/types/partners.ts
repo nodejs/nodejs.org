@@ -14,7 +14,13 @@ export interface Partners {
   categories: Array<PartnerCategory>;
   // An optional description of the partner
   description?: string;
-  threshold: number;
+  // The weight of the partner, used for random selection
+  weight: number;
 }
 
-export type PartnerCategory = 'infrastructure' | 'security' | 'esp';
+export type PartnerCategory =
+  | 'infrastructure'
+  | 'security'
+  | 'esp'
+  | 'release'
+  | 'service';
