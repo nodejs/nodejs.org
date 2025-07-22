@@ -27,9 +27,9 @@ New to contributing? Start here:
 
 ## Additional Resources
 
-- [Translation Guidelines](./translation.md) - Website translation policy
-- [Dependency Pinning](./dependency-pinning.md) - Package management guidelines
-- [Code of Conduct](https://github.com/nodejs/node/blob/HEAD/CODE_OF_CONDUCT.md)
+- **[Translation Guidelines](./translation.md)** - Website translation policy
+- **[Dependency Pinning](./dependency-pinning.md)** - Package management guidelines
+- **[Code of Conduct](https://github.com/nodejs/node/blob/HEAD/CODE_OF_CONDUCT.md)** - Rules for respectful participation in the community
 
 ## Quick Reference
 
