@@ -20,9 +20,14 @@ const PartnersLogoList: FC<PartnersLogoListProps> = ({
 }) => {
   const initialRenderer = useRef(true);
 
-  const [seedList, setSeedList] = useState<Array<Partners>>(
-    LOGO_PARTNERS.slice(0, maxLength)
-  );
+  const [seedList, setSeedList] = useState<Array<Partners>>(() => {
+    if (maxLength === null) {
+      return LOGO_PARTNERS.filter(
+        partner => !categories || partner.categories.includes(categories)
+      );
+    }
+    return LOGO_PARTNERS.slice(0, maxLength);
+  });
 
   useEffect(() => {
     // We intentionally render the initial default "mock" list of sponsors
