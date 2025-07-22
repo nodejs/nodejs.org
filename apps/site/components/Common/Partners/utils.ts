@@ -27,20 +27,26 @@ function randomPartnerList(
   const seed = fixedTime.getTime();
   const rng = mulberry32(seed);
 
+  const weightedPartners = partners.flatMap(partner => {
+    if (category && !partner.categories.includes(category)) return [];
+    const weight = partner.weight;
+    return Array(weight).fill(partner);
+  });
+
   // Create a copy of the array to avoid modifying the original
-  let shuffled = [...partners]
-    .filter(partner => !category || partner.categories.includes(category))
-    .sort(() => rng() - 0.5);
+  const shuffled = [...weightedPartners].sort(() => rng() - 0.5);
+
+  // Remove duplicates while preserving order
+  const unique = Array.from(new Set(shuffled));
 
   if (pick !== null) {
-    shuffled = shuffled.slice(0, pick);
+    return unique.slice(0, pick);
   }
 
-  return shuffled;
+  return unique;
 }
 
 // This function returns a random list of partners based on a fixed time seed
-
 function mulberry32(seed: number) {
   return function () {
     let t = (seed += 0x6d2b79f5);
