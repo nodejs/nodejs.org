@@ -190,6 +190,14 @@
         "details": "Details"
       }
     },
+    "eolTable": {
+      "version": "Version",
+      "codename": "Codename",
+      "releaseDate": "Released at",
+      "lastUpdated": "Last updated",
+      "vulnerabilities": "Vulnerabilities",
+      "details": "Details"
+    },
     "minorReleasesTable": {
       "version": "Version",
       "links": "Links",

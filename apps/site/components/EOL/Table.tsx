@@ -21,14 +21,13 @@ const EOLTable: FC = async () => {
     <table id="tbVulnerabilities" className="download-table full-width">
       <thead>
         <tr>
-          {/* TODO @bmuenzenmeyer change these to new i18n keys */}
           <th>
-            {t('components.downloadReleasesTable.version')} (
-            {t('components.downloadReleasesTable.codename')})
+            {t('components.eolTable.version')} (
+            {t('components.eolTable.codename')})
           </th>
-          <th>{t('components.downloadReleasesTable.lastUpdated')}</th>
-          <th>Vulnerabilities</th>
-          <th>Details</th>
+          <th>{t('components.eolTable.lastUpdated')}</th>
+          <th>{t('components.eolTable.vulnerabilities')}</th>
+          <th>{t('components.eolTable.details')}</th>
         </tr>
       </thead>
       <tbody>
