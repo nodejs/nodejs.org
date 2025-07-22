@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
@@ -8,26 +8,25 @@ import provideVulnerabilities from '#site/next-data/providers/vulnerabilities';
 
 import VulnerabilityChips from './VulnerabilityChips';
 
-const EOLTable: FC = async () => {
+const EOLTable: FC = () => {
   const releaseData = provideReleaseData();
-  const vulnerabilities = await provideVulnerabilities();
+  const vulnerabilities = provideVulnerabilities();
   const EOLReleases = releaseData.filter(
     release => release.status === 'End-of-life'
   );
 
-  const t = await getTranslations();
+  const t = useTranslations('components.eolTable');
 
   return (
     <table id="tbVulnerabilities">
       <thead>
         <tr>
           <th>
-            {t('components.eolTable.version')} (
-            {t('components.eolTable.codename')})
+            {t('version')} ({t('codename')})
           </th>
-          <th>{t('components.eolTable.lastUpdated')}</th>
-          <th>{t('components.eolTable.vulnerabilities')}</th>
-          <th>{t('components.eolTable.details')}</th>
+          <th>{t('lastUpdated')}</th>
+          <th>{t('vulnerabilities')}</th>
+          <th>{t('details')}</th>
         </tr>
       </thead>
       <tbody>
