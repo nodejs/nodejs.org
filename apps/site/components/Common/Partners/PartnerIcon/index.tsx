@@ -14,7 +14,11 @@ const PartnersIcon: FC<ParnetsIconProps> = ({ name, href, logo, loading }) => {
   return (
     <Skeleton loading={loading} className="h-9 w-9 p-2">
       <Tooltip content={name}>
-        <Button kind="secondary" href={href} className={style.partnerIcon}>
+        <Button
+          kind="secondary"
+          href={`${href}/?utm_source=NodeJS&utm_medium=Link`}
+          className={style.partnerIcon}
+        >
           {cloneElement(logo, {
             className: 'h-4 w-auto',
             width: 'auto',
