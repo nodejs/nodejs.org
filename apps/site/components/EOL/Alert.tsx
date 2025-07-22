@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import Link from '#site/components/Link';
 
 const EOLAlert = () => {
-  const t = useTranslations('components.endOfLife');
+  const t = useTranslations('components.eolAlert');
   return (
     <AlertBox level="warning">
       {t('intro')}{' '}
