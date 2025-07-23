@@ -380,12 +380,21 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ~1.2.7
         version: 1.2.7(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@tailwindcss/postcss':
+        specifier: ~4.1.11
+        version: 4.1.11
       '@vcarl/remark-headings':
         specifier: ~0.1.0
         version: 0.1.0
       classnames:
         specifier: 'catalog:'
         version: 2.5.1
+      postcss-calc:
+        specifier: ^10.1.1
+        version: 10.1.1(postcss@8.5.3)
+      tailwindcss:
+        specifier: 'catalog:'
+        version: 4.0.17
     devDependencies:
       '@storybook/addon-styling-webpack':
         specifier: ^2.0.0
@@ -402,9 +411,6 @@ importers:
       '@storybook/react-webpack5':
         specifier: ^9.0.15
         version: 9.0.15(@swc/core@1.11.24)(esbuild@0.25.5)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(storybook@9.0.15(@testing-library/dom@10.4.0)(prettier@3.6.2))(typescript@5.8.3)
-      '@tailwindcss/postcss':
-        specifier: ~4.1.11
-        version: 4.1.11
       '@testing-library/user-event':
         specifier: ~14.6.1
         version: 14.6.1(@testing-library/dom@10.4.0)
@@ -429,9 +435,6 @@ importers:
       global-jsdom:
         specifier: ^26.0.0
         version: 26.0.0(jsdom@26.1.0)
-      postcss-calc:
-        specifier: ^10.1.1
-        version: 10.1.1(postcss@8.5.3)
       postcss-cli:
         specifier: ^11.0.1
         version: 11.0.1(jiti@2.4.2)(postcss@8.5.3)(tsx@4.20.3)
@@ -459,9 +462,6 @@ importers:
       stylelint-selector-bem-pattern:
         specifier: 4.0.1
         version: 4.0.1(stylelint@16.21.1(typescript@5.8.3))
-      tailwindcss:
-        specifier: 'catalog:'
-        version: 4.0.17
       tsx:
         specifier: ^4.20.3
         version: 4.20.3

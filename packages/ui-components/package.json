@@ -37,8 +37,11 @@
     "@radix-ui/react-tabs": "~1.1.12",
     "@radix-ui/react-toast": "~1.2.14",
     "@radix-ui/react-tooltip": "~1.2.7",
+    "@tailwindcss/postcss": "~4.1.11",
     "@vcarl/remark-headings": "~0.1.0",
-    "classnames": "catalog:"
+    "classnames": "catalog:",
+    "postcss-calc": "^10.1.1",
+    "tailwindcss": "catalog:"
   },
   "devDependencies": {
     "@storybook/addon-styling-webpack": "^2.0.0",
@@ -46,7 +49,6 @@
     "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
     "@storybook/react": "^9.0.15",
     "@storybook/react-webpack5": "^9.0.15",
-    "@tailwindcss/postcss": "~4.1.11",
     "@testing-library/user-event": "~14.6.1",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
@@ -55,7 +57,6 @@
     "eslint-plugin-react": "~7.37.4",
     "eslint-plugin-storybook": "~9.0.3",
     "global-jsdom": "^26.0.0",
-    "postcss-calc": "^10.1.1",
     "postcss-cli": "^11.0.1",
     "postcss-loader": "~8.1.1",
     "react": "catalog:",
