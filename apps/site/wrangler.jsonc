@@ -3,7 +3,7 @@
   "main": ".open-next/worker.js",
   "name": "nodejs-website",
   "compatibility_date": "2024-11-07",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "account_id": "fb4a2d0f103c6ff38854ac69eb709272",
   "minify": true,
   "keep_names": false,
