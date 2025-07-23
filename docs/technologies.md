@@ -350,6 +350,6 @@ Benefits:
 
 ### End-to-End Testing
 
-- Playwright for full application testing
+- [Playwright](https://playwright.dev/) for full application testing
 - Critical user journey validation
 - Cross-browser compatibility testing
