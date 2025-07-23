@@ -52,6 +52,13 @@
       "compatibility": {},
       "platforms": [
         {
+          "label": "x86",
+          "value": "x86",
+          "compatibility": {
+            "semver": ["< 10.0.0"]
+          }
+        },
+        {
           "label": "x64",
           "value": "x64"
         },
