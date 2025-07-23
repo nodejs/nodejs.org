@@ -17,7 +17,7 @@
     // Also note that an appropriate CF_WORKERS_SCRIPTS_API_TOKEN secret
     // needs to be set as well in the Cloudflare dashboard
     "CF_WORKER_NAME": "nodejs-website",
-    "CF_PREVIEW_DOMAIN": "nodejsorg.workers.dev",
+    "CF_PREVIEW_DOMAIN": "nodejsorg",
     "CF_ACCOUNT_ID": "fb4a2d0f103c6ff38854ac69eb709272",
   },
   "observability": {
