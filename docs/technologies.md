@@ -66,7 +66,7 @@ We chose Next.js because it is:
 - Versatile and hackable for custom requirements
 - Stable with strong community maintenance
 - Well-suited as a long-term framework choice
-- Capable of supporting static builds (requirement from TSC)
+- Capable of supporting static builds (a requirement from the Node.js Technical Steering Committee)
 
 ### Styling System
 
