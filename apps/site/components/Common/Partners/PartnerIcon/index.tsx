@@ -13,7 +13,7 @@ type ParnetsIconProps = Partners & ComponentProps<typeof Skeleton>;
 const PartnersIcon: FC<ParnetsIconProps> = ({ name, href, logo, loading }) => {
   return (
     <Skeleton loading={loading} className="h-9 w-9 p-2">
-      <Tooltip content={name}>
+      <Tooltip content={<span className="py-6! px-2">{name}</span>}>
         <Button
           kind="secondary"
           href={`${href}/?utm_source=NodeJS&utm_medium=Link`}
