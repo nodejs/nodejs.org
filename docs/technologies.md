@@ -29,7 +29,7 @@ This document provides an overview of the technologies used in the Node.js websi
     - [Layouts System](#layouts-system)
     - [Content Processing Pipeline](#content-processing-pipeline)
   - [Rewrite and Redirect System](#rewrite-and-redirect-system)
-    - [`next.rewrites.mjs`](#nextrwritesmjs)
+    - [`next.rewrites.mjs`](#nextrewritesmjs)
     - [`redirects.json`](#redirectsjson)
 - [Configuration Files](#configuration-files)
   - [`site.json`](#sitejson)
