@@ -174,7 +174,7 @@ This file handles:
 - Discovering all source pages in `apps/site/pages/en`
 - Identifying translated pages
 - Generating localized paths for untranslated content
-- Creating fallback pages with English content but localized navigation
+- Creating fallback pages that show English content with translated menus and UI elements
 
 #### `next.data.mjs` - Build-time Data
 
