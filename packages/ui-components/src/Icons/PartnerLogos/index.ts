@@ -1,19 +1,25 @@
+import * as ARM from './ARM';
 import * as CLOUDFLARE from './Cloudflare';
 import * as CROWDIN from './Crowdin';
 import * as DATADOG from './DataDog';
+import * as DIGITALOCEAN from './DigitalOcean';
 import * as HERODEVS from './HeroDevs';
 import * as NODESOURCE from './NodeSource';
 import * as RACKSPACE from './Rackspace';
 import * as SENTRY from './Sentry';
 import * as VERCEL from './Vercel';
+import * as VLT from './Vlt';
 
 export {
+  ARM,
   CLOUDFLARE,
   CROWDIN,
   DATADOG,
+  DIGITALOCEAN,
   HERODEVS,
   NODESOURCE,
   RACKSPACE,
   SENTRY,
   VERCEL,
+  VLT,
 };
