@@ -52,7 +52,7 @@
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "v22",
+      "version": ">=v22.14.0",
       "onFail": "error"
     },
     "packageManager": {
