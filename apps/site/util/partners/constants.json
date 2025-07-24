@@ -38,7 +38,7 @@
     "id": "HERODEVS",
     "name": "HeroDevs",
     "href": "https://herodevs.com",
-    "weight": 2,
+    "weight": 3,
     "categories": ["security", "esp", "release"]
   },
   {
@@ -54,5 +54,26 @@
     "href": "https://www.datadoghq.com",
     "weight": 2,
     "categories": ["security"]
+  },
+  {
+    "id": "DIGITALOCEAN",
+    "name": "DigitalOcean",
+    "href": "https://www.digitalocean.com",
+    "categories": ["infrastructure"],
+    "weight": 3
+  },
+  {
+    "id": "ARM",
+    "name": "ARM",
+    "href": "https://www.arm.com",
+    "categories": ["infrastructure"],
+    "weight": 2
+  },
+  {
+    "id": "VLT",
+    "name": "Vlt",
+    "href": "https://www.vlt.sh",
+    "weight": 2,
+    "categories": ["release"]
   }
 ]
