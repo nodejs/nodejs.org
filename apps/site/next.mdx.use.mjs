@@ -12,6 +12,7 @@ import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
 import WithBadgeGroup from './components/withBadgeGroup';
 import WithBanner from './components/withBanner';
 import WithNodeRelease from './components/withNodeRelease';
+import WithSupporters from './components/withSupporters';
 
 /**
  * A full list of React Components that we want to pass through to MDX
@@ -26,6 +27,8 @@ export const mdxComponents = {
   WithBanner,
   // HOC for providing Badge Data
   WithBadgeGroup,
+  // HOC for providing Backers Data
+  WithSupporters,
   // Shows a list of Node.js Partners with Icons
   PartnersIconList,
   // Shows a list of Node.js Partners with Logos
