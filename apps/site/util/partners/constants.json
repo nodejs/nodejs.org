@@ -63,11 +63,46 @@
     "weight": 3
   },
   {
+    "id": "MICROSOFT",
+    "name": "Microsoft",
+    "href": "https://microsoft.com",
+    "categories": ["infrastructure"],
+    "weight": 2
+  },
+  {
+    "id": "IBM",
+    "name": "IBM",
+    "href": "https://www.ibm.com",
+    "categories": ["infrastructure", "release"],
+    "weight": 3
+  },
+  {
+    "id": "SCALEWAY",
+    "name": "Scaleway",
+    "href": "https://www.scaleway.com",
+    "categories": ["infrastructure"],
+    "weight": 2
+  },
+  {
     "id": "ARM",
     "name": "ARM",
     "href": "https://www.arm.com",
     "categories": ["infrastructure"],
     "weight": 2
+  },
+  {
+    "id": "EQUINIXMETAL",
+    "name": "Equinix Metal",
+    "href": "https://www.equinix.com",
+    "categories": ["infrastructure"],
+    "weight": 2
+  },
+  {
+    "id": "OPENSSF",
+    "name": "OpenSSF",
+    "href": "https://openssf.org/",
+    "weight": 2,
+    "categories": ["security"]
   },
   {
     "id": "VLT",
