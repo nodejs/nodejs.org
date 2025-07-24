@@ -24,3 +24,10 @@ export type PartnerCategory =
   | 'esp'
   | 'release'
   | 'service';
+
+export interface Supporters {
+  name: string;
+  image: string;
+  url: string;
+  source: 'opencollective' | 'github';
+}
