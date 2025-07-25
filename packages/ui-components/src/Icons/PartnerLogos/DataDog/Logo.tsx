@@ -9,8 +9,7 @@ const DataDog: FC<SVGProps<SVGSVGElement>> = props => (
     y="0px"
     viewBox="0 0 800.5 196.2"
     className={classNames('text-[#632CA6] dark:text-white', props.className)}
-    // @ts-expect-error style is not a valid prop in SVGProps
-    style={{ enableBackground: 'new 0 0 800.55 856.85' }}
+    enableBackground="new 0 0 800.5 856.85"
   >
     <g>
       <g>

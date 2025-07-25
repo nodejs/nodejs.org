@@ -29,12 +29,12 @@ export const mdxComponents = {
   WithBadgeGroup,
   // HOC for providing Backers Data
   WithSupporters,
+  // Standalone Badge Group
+  BadgeGroup,
   // Shows a list of Node.js Partners with Icons
   PartnersIconList,
   // Shows a list of Node.js Partners with Logos
   PartnersLogoList,
-  // Standalone Badge Group
-  BadgeGroup,
   // Renders an container for Upcoming Node.js Meetings
   UpcomingMeetings,
   // Renders a Button Component for `button` tags

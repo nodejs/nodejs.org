@@ -7,7 +7,7 @@ const Microsoft: FC<SVGProps<SVGSVGElement>> = props => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <g clip-path="url(#clip0_1_177)">
+    <g clipPath="url(#clip0_1_177)">
       <path
         d="M0.199951 0.800049H40.2999V40.9H0.199951V0.800049Z"
         fill="#F05225"

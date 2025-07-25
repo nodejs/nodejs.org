@@ -3,8 +3,6 @@ import type { ElementType } from 'react';
 
 import type { Partners } from '#site/types';
 
-// import partners from './constants.json';
-
 /**
  * Creates an icon element for a component
  */
@@ -17,8 +15,8 @@ const createIcon = (
   return <IconComponent width={16} height={16} />;
 };
 
-// Package Manager dropdown items
-export const partnersList = (
+// Creates a list of partners with their respective icons
+export const createPartnersList = (
   partnerLists: Array<Omit<Partners, 'logo'>>,
   type?: 'Logo' | 'Favicon'
 ) =>
