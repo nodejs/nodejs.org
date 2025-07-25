@@ -62,14 +62,14 @@
     "react": "catalog:",
     "storybook": "^9.0.15",
     "style-loader": "~4.0.0",
-    "stylelint": "^16.21.1",
+    "stylelint": "^16.22.0",
     "stylelint-config-standard": "^38.0.0",
     "stylelint-order": "7.0.0",
     "stylelint-selector-bem-pattern": "4.0.1",
     "tailwindcss": "catalog:",
     "tsx": "^4.20.3",
     "typescript": "catalog:",
-    "typescript-eslint": "~8.35.1"
+    "typescript-eslint": "~8.38.0"
   },
   "imports": {
     "#ui/*": [
