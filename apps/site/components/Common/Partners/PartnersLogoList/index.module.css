@@ -1,8 +1,8 @@
 @reference "../../../../styles/index.css";
 
 .partnersLogoList {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  width: 100%;
+  @apply grid
+    w-full
+    grid-cols-[repeat(auto-fill,minmax(240px,1fr))]
+    gap-4;
 }

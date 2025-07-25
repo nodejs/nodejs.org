@@ -3,7 +3,7 @@
 .partnerIcon {
   @apply flex
     h-[114px]
-    max-h-[130px]
+    max-h-[114px]
     w-auto
     min-w-12
     items-center

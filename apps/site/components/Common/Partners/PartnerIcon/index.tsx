@@ -13,14 +13,13 @@ type ParnetsIconProps = Partners & ComponentProps<typeof Skeleton>;
 const PartnersIcon: FC<ParnetsIconProps> = ({ name, href, logo, loading }) => {
   return (
     <Skeleton loading={loading} className="h-9 w-9 p-2">
-      <Tooltip content={<span className="py-6! px-2">{name}</span>}>
+      <Tooltip content={<span className="px-2">{name}</span>}>
         <Button
           kind="secondary"
-          href={`${href}/?utm_source=NodeJS&utm_medium=Link`}
+          href={`${href}/?utm_source=nodejs-website&utm_medium=Link`}
           className={style.partnerIcon}
         >
           {cloneElement(logo, {
-            className: 'h-4 w-auto',
             width: 'auto',
             height: '16px',
           })}

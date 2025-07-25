@@ -42,7 +42,7 @@ const PartnersLogoList: FC<PartnersLogoListProps> = ({
     const renderSponsorsAnimation = setTimeout(() => {
       initialRenderer.current = false;
 
-      setSeedList(randomPartnerList(LOGO_PARTNERS, maxLength, 1, categories));
+      setSeedList(randomPartnerList(LOGO_PARTNERS, maxLength, 5, categories));
     }, 0);
 
     return () => clearTimeout(renderSponsorsAnimation);

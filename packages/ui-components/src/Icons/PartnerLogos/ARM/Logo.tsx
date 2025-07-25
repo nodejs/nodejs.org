@@ -14,8 +14,7 @@ const ARM: FC<SVGProps<SVGSVGElement>> = props => (
     viewBox="0 0 4332.3 1318.7"
     className={classNames('text-[#0D0B21] dark:text-white', props.className)}
     xmlSpace="preserve"
-    // @ts-expect-error style is not a valid prop in SVGProps
-    style={{ enableBackground: 'new 0 0 4332.3 1318.7' }}
+    enableBackground="new 0 0 4332.3 1318.7"
   >
     <g>
       <path

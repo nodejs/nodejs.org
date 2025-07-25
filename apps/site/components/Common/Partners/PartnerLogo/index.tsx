@@ -14,11 +14,10 @@ const PartnersIcon: FC<ParnetsIconProps> = ({ href, logo, loading }) => {
     <Skeleton loading={loading} className="h-[114px] w-full p-2">
       <Button
         kind="secondary"
-        href={`${href}/?utm_source=NodeJS&utm_medium=Link`}
+        href={`${href}/?utm_source=nodejs-website&utm_medium=Link`}
         className={style.partnerIcon}
       >
         {cloneElement(logo, {
-          className: 'h-4 w-auto',
           width: 'auto',
           height: '16px',
         })}

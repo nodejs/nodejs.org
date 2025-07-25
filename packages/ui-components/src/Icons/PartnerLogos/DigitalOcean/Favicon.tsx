@@ -11,8 +11,7 @@ const Crowdin: FC<SVGProps<SVGSVGElement>> = props => (
     y="0px"
     viewBox="65.2 173.5 180 180"
     className={classNames('text-[#0080FF] dark:text-white', props.className)}
-    // @ts-expect-error style is not a valid prop in SVGProps
-    style={{ enableBackground: 'new 65.2 173.5 180 180' }}
+    enableBackground="new 65.2 173.5 180 180"
     xmlSpace="preserve"
   >
     <g id="XMLID_229_">
