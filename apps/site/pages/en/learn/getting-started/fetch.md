@@ -81,7 +81,7 @@ This will download the `mistral` model and run it on your local machine.
 
 With a pool, you can reuse connections to the same server, which can improve performance. Here is an example of how you can use a pool with Undici:
 
-```js
+```mjs
 import { Pool } from 'undici';
 
 const ollamaPool = new Pool('http://localhost:11434', {
@@ -110,8 +110,8 @@ async function streamOllamaCompletion(prompt) {
   }
 
   let partial = '';
-
   const decoder = new TextDecoder();
+
   for await (const chunk of body) {
     partial += decoder.decode(chunk, { stream: true });
     // Note: decoder.decode() with { stream: true } may buffer incomplete UTF-8 chunks.
@@ -121,8 +121,6 @@ async function streamOllamaCompletion(prompt) {
   console.log('Streaming complete.');
 }
 
-// Note: top-level await requires ES modules (".mjs" or "type": "module")
-// Using it outside of an ES module will result in a SyntaxError.
 try {
   await streamOllamaCompletion('What is recursion?');
 } catch (error) {
@@ -131,9 +129,48 @@ try {
   console.log('Closing Ollama pool.');
   ollamaPool.close();
 }
+```
 
-// If you cannot use ES modules, wrap your asynchronous operations in an async IIFE:
-/*
+```cjs
+const { Pool } = require('undici');
+
+const ollamaPool = new Pool('http://localhost:11434', {
+  connections: 10,
+});
+
+/**
+ * Stream the completion of a prompt using the Ollama API.
+ * @param {string} prompt - The prompt to complete.
+ * @link https://github.com/ollama/ollama/blob/main/docs/api.md
+ **/
+async function streamOllamaCompletion(prompt) {
+  const { statusCode, body } = await ollamaPool.request({
+    path: '/api/generate',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ prompt: prompt, model: 'mistral' }),
+  });
+
+  // You can read about HTTP status codes here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+  // 200 means the request was successful.
+  if (statusCode !== 200) {
+    throw new Error(`Ollama request failed with status ${statusCode}`);
+  }
+
+  let partial = '';
+  const decoder = new TextDecoder();
+
+  for await (const chunk of body) {
+    partial += decoder.decode(chunk, { stream: true });
+    // Note: decoder.decode() with { stream: true } may buffer incomplete UTF-8 chunks.
+    console.log(partial);
+  }
+
+  console.log('Streaming complete.');
+}
+
 (async () => {
   try {
     await streamOllamaCompletion('What is recursion?');
@@ -144,16 +181,14 @@ try {
     ollamaPool.close();
   }
 })();
-*/
 ```
 
 ## Streaming Responses with Undici
 
 [Streams](https://nodejs.org/docs/v22.14.0/api/stream.html#stream) is a feature in Node.js that allows you to read and write chunks of data.
 
-```js
+```mjs
 import { Writable } from 'stream';
-
 import { stream } from 'undici';
 
 async function fetchGitHubRepos() {
@@ -198,4 +233,52 @@ async function fetchGitHubRepos() {
 }
 
 fetchGitHubRepos().catch(console.error);
+```
+```cjs
+const { Writable } = require('stream');
+const { stream } = require('undici');
+
+async function fetchGitHubRepos() {
+  const url = 'https://api.github.com/users/nodejs/repos';
+
+  const { statusCode } = await stream(
+    url,
+    {
+      method: 'GET',
+      headers: {
+        'User-Agent': 'undici-stream-example',
+        Accept: 'application/json',
+      },
+    },
+    () => {
+      let buffer = '';
+
+      return new Writable({
+        write(chunk, encoding, callback) {
+          buffer += chunk.toString();
+          callback();
+        },
+        final(callback) {
+          try {
+            const json = JSON.parse(buffer);
+            console.log(
+              'Repository Names:',
+              json.map(repo => repo.name)
+            );
+          } catch (error) {
+            console.error('Error parsing JSON:', error);
+          } finally {
+            console.log('Stream processing completed.');
+            callback();
+          }
+        },
+      });
+    }
+  );
+
+  console.log(`Response status: ${statusCode}`);
+}
+
+fetchGitHubRepos().catch(console.error);
+
 ```
