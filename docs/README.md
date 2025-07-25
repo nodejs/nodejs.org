@@ -20,6 +20,7 @@ New to contributing? Start here:
 - **[Technologies](./technologies.md)** - Overview of the tech stack and architecture decisions
 - **[Downloads Page](./downloads-page.md)** - How to add installation methods and package managers
 - **[Package Publishing](./package-publishing.md)** - Guidelines for publishing packages in our monorepo
+- **[Cloudflare build and deployment](./cloudflare-build-and-deployment.md)** - Overview and useful information about the Cloudflare build and deployment
 
 ## For Collaborators
 
