@@ -114,6 +114,7 @@ async function streamOllamaCompletion(prompt) {
   const decoder = new TextDecoder();
   for await (const chunk of body) {
     partial += decoder.decode(chunk, { stream: true });
+    // Note: decoder.decode() with { stream: true } may buffer incomplete UTF-8 chunks.
     console.log(partial);
   }
 
