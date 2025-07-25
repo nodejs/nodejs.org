@@ -13,4 +13,4 @@ permissions:
 
 jobs:
   analyze:
-    uses: nodejs/web-team/.github/workflows/codeql.yml
+    uses: nodejs/web-team/.github/workflows/codeql.yml@4fe2167f55e4aa670f7f97da16490945bb061d51
