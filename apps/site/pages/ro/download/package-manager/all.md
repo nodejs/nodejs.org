@@ -86,23 +86,23 @@ cave resolve -x node
 
 ## fnm
 
-Un manager de versiuni Node.js rapid și simplu, construit în Rust, folosit pentru a gestiona mai multe versiuni lansate de Node.js. Vă permite să efectuați operațiuni precum instalarea, dezinstalarea, schimbarea automată a versiunilor de Node pe baza directorului curent etc.
-Pentru a instala fnm, utilizați acest [script de instalare](https://github.com/Schniz/fnm#using-a-script-macoslinux).
+Un manager de versiuni Node.js rapid și simplu, construit în Rust, folosit pentru a gestiona mai multe versiuni lansate de Node.js. Îți permite să efectuezi operațiuni precum instalarea, dezinstalarea, schimbarea automată a versiunilor de Node pe baza directorului curent etc.
+Pentru a instala fnm, utilizează acest [script de instalare](https://github.com/Schniz/fnm#using-a-script-macoslinux).
 
-fnm are suport pentru mai multe platforme (macOS, Windows, Linux) și toate shell-urile populare (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
+fnm are suport multiplatformă (macOS, Windows, Linux) și toate shell-urile populare (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
 fnm este construit având în vedere viteza și compatibilitatea cu fișierele `.node-version` și `.nvmrc`.
 
 ## FreeBSD
 
 Cea mai recentă versiune de Node.js este disponibilă prin portul [www/node](https://www.freshports.org/www/node).
 
-Instalați un pachet binar prin [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
+Instalează un pachet binar prin [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
 ```bash
 pkg install node
 ```
 
-Sau compilați-l singur folosind [porturi](https://www.freebsd.org/cgi/man.cgi?ports):
+Sau compilează-l folosind [porturi](https://www.freebsd.org/cgi/man.cgi?ports):
 
 ```bash
 cd /usr/ports/www/node && make install
@@ -120,19 +120,19 @@ emerge nodejs
 
 Versiunile LTS ale Node.js sunt disponibile de la IBM și sunt disponibile prin intermediul [managerul de pachete „yum”](https://ibm.biz/ibmi-rpms). Numele pachetului este `nodejs` urmat de numărul versiunii majore (de exemplu, `nodejs18`, `nodejs20` etc.)
 
-Pentru a instala Node.js 20.x din linia de comandă, rulați următoarele ca utilizator cu autorizare specială \*ALLOBJ:
+Pentru a instala Node.js 20.x din linia de comandă, rulează următoarele ca utilizator cu autorizare specială \*ALLOBJ:
 
 ```bash
 yum install nodejs20
 ```
 
-Node.js poate fi instalat și cu produsul IBM i Access Client Solutions. Consultați [acest document de asistență](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) pentru mai multe detalii
+Node.js poate fi instalat și cu produsul IBM i Access Client Solutions. Consultă [acest document de asistență](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) pentru mai multe detalii
 
 ## macOS
 
-Descărcați [macOS Installer](/#home-downloadhead) direct de pe site-ul web [nodejs.org](https://nodejs.org/).
+Descarcă [instalatorul pentru macOS](/#home-downloadhead) direct de pe site-ul web [nodejs.org](https://nodejs.org/).
 
-_Dacă doriți să descărcați pachetul folosind bash:_
+_Dacă vrei să descarci pachetul folosind bash:_
 
 ```bash
 curl "https://nodejs.org/dist/latest/$(curl -s https://nodejs.org/dist/latest/ | grep "pkg" | cut -d'"' -f 2)" -o "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
@@ -157,7 +157,7 @@ port install nodejs7
 
 Folosind **[pkgsrc](https://pkgsrc.joyent.com/install-on-macos/)**:
 
-Instalați pachetul binar:
+Instalează pachetul binar:
 
 ```bash
 pkgin -y install nodejs
@@ -171,9 +171,9 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## n
 
-`n` este un manager de versiuni Node.js simplu de utilizat pentru Mac și Linux. Specificați versiunea țintă de instalat folosind o sintaxă bogată sau selectați dintr-un meniu de versiuni descărcate anterior. Versiunile sunt instalate la nivel de sistem sau la nivel de utilizator, iar pentru o utilizare mai vizată, puteți rula o versiune direct din descărcările din cache.
+`n` este un manager de versiuni Node.js simplu de utilizat pentru Mac și Linux. Specifică versiunea țintă de instalat folosind o sintaxă bogată sau selectează dintr-un meniu de versiuni descărcate anterior. Versiunile sunt instalate la nivel de sistem sau la nivel de utilizator, iar pentru o utilizare mai vizată, poți rula o versiune direct din descărcările din cache.
 
-Consultați [homepage](https://github.com/tj/n) pentru metode de instalare (bootstrap, npm, Homebrew, terță parte) și toate detaliile de utilizare.
+Consultă [pagina principală](https://github.com/tj/n) pentru metode de instalare (bootstrap, npm, Homebrew, terță parte) și pentru toate detaliile de utilizare.
 
 Dacă aveți deja `npm`, atunci instalați `n` și apoi cea mai nouă versiune LTS `node` este la fel de simplă ca:
 
@@ -190,7 +190,7 @@ Node.js este disponibil în arborele pkgsrc:
 cd /usr/pkgsrc/lang/nodejs && make install
 ```
 
-Sau instalați un pachet binar (dacă este disponibil pentru platforma dvs.) folosind pkgin:
+Sau instalează un pachet binar (dacă este disponibil pentru platforma ta) folosind pkgin:
 
 ```bash
 pkgin -y install nodejs
@@ -198,32 +198,32 @@ pkgin -y install nodejs
 
 ## Nodenv
 
-`nodenv` este un manager de versiuni de nod ușor, similar cu `nvm`. Este simplu și previzibil. Un ecosistem bogat de pluginuri vă permite să îl adaptați nevoilor dvs. Utilizați `nodenv` pentru a alege o versiune Node pentru aplicația dvs. și pentru a garanta că mediul dumneavoastră de dezvoltare se potrivește cu producția.
+`nodenv` este un manager ușor de versiuni pentru node, similar cu `nvm`. Este simplu și previzibil. Un ecosistem bogat de module îți permite să îl adaptezi nevoilor tale. Folosește `nodenv` pentru a alege o versiune Node pentru aplicația ta și pentru a garanta că mediul tău de dezvoltare se potrivește cu producția.
 
-Instrucțiunile de instalare Nodenv sunt menținute [pe pagina sa Github](https://github.com/nodenv/nodenv#installation). Vă rugăm să vizitați pagina respectivă pentru a vă asigura că urmați cea mai recentă versiune a pașilor de instalare.
+Instrucțiunile de instalare Nodenv sunt menținute [pe pagina sa Github](https://github.com/nodenv/nodenv#installation). Te rog să vizitezi pagina respectivă pentru a te asigura că urmărești cea mai recentă versiune a pașilor de instalare.
 
 ## nvm
 
 Node Version Manager este un script bash folosit pentru a gestiona mai multe versiuni Node.js lansate. Permite
-să efectuați operațiuni precum instalarea, dezinstalarea, schimbarea versiunii etc.
-Pentru a instala nvm, utilizați acest [script de instalare](https://github.com/nvm-sh/nvm#install--update-script).
+să efectuezi operațiuni precum instalarea, dezinstalarea, schimbarea versiunii etc.
+Pentru a instala nvm, utilizează acest [script de instalare](https://github.com/nvm-sh/nvm#install--update-script).
 
-Pe sistemele Unix / OS X Node.js construit din sursă poate fi instalat folosind
+Pe sistemele Unix sau OS X, Node.js compilat din sursă poate fi instalat folosind
 [nvm](https://github.com/creationix/nvm) prin instalarea în locația la care se așteaptă nvm:
 
 ```bash
 env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
-După aceasta, puteți folosi `nvm` pentru a comuta între versiunile lansate și versiunile
-construit din sursă.
+După aceasta, poți folosi `nvm` pentru a comuta între versiunile lansate și versiunile
+compilate din sursă.
 De exemplu, dacă versiunea Node.js este v8.0.0-pre:
 
 ```bash
 nvm use 8
 ```
 
-Odată ce lansarea oficială este lansată, veți dori să dezinstalați versiunea construită
+Odată ce este făcută lansarea oficială, vei dori să dezinstalezi versiunea compilată
 din sursa:
 
 ```bash
@@ -238,7 +238,7 @@ Managerul de versiuni „nvs” este multiplatformă și poate fi utilizat pe si
 
 Pentru a instala `nvs` pe Windows, accesează aici [pagina de lansare](https://github.com/jasongin/nvs/releases) și descarcă fișierul de instalare MSI al celei mai recente lansări.
 
-De asemenea, puteți folosi `chocolatey` pentru a-l instala:
+Poți folosi și `chocolatey` pentru a-l instala:
 
 ```bash
 choco install nvs
@@ -250,7 +250,7 @@ Puteți găsi documentația referitoare la pașii de instalare a `nvs` în siste
 
 #### Utilizare
 
-După aceasta, puteți folosi `nvs` pentru a comuta între diferite versiuni de nod.
+După asta, poți folosi `nvs` pentru a comuta între diferite versiuni node.
 
 Pentru a adăuga cea mai recentă versiune a nodului:
 
@@ -264,7 +264,7 @@ Sau pentru a adăuga cea mai recentă versiune LTS a node-ului:
 nvs add lts
 ```
 
-Apoi rulați comanda `nvs use` pentru a adăuga o versiune a nodului la `PATH` pentru shell-ul curent:
+Apoi rulează comanda `nvs use` pentru a adăuga o versiune a nodului la `PATH` pentru shell-ul curent:
 
 ```bash
 $ nvs use lts
@@ -272,7 +272,7 @@ PATH -= %LOCALAPPDATA%\nvs\default
 PATH += %LOCALAPPDATA%\nvs\node\14.17.0\x64
 ```
 
-Pentru a-l adăuga permanent la `PATH`, utilizați `nvs link`:
+Pentru a-l adăuga permanent la `PATH`, folosește `nvs link`:
 
 ```bash
 nvs link lts
@@ -302,7 +302,7 @@ Node.js este disponibil în depozitele principale în următoarele pachete:
   („Modulul Web și Scripting” trebuie să fie [activată](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
 - **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, și `nodejs14` ("Web and Scripting Module" trebuie să fie [activat](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
 
-De exemplu, pentru a instala Node.js 14.x pe openSUSE Leap 15.2, rulați următoarea comandă ca și utilizator root:
+De exemplu, pentru a instala Node.js 14.x pe openSUSE Leap 15.2, rulează următoarea comandă ca utilizator root:
 
 ```bash
 zypper install nodejs14
@@ -312,13 +312,13 @@ Diferite versiune majore de Node pot fi instalate si folosite concomitent.
 
 ## SmartOS și illumos
 
-Imaginile SmartOS vin cu pkgsrc preinstalat. Pe alte distribuții illumos, instalați mai întâi **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, iar apoi puteți instala pachetul binar în mod obișnuit:
+Imaginile SmartOS vin cu pkgsrc preinstalat. Pe alte distribuții illumos, instalează mai întâi **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, iar apoi poți instala pachetul binar în mod obișnuit:
 
 ```bash
 pkgin -y install nodejs
 ```
 
-Sau compilați manual din pkgsrc:
+Sau compilează manual din pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
@@ -344,7 +344,7 @@ Vă permite să folosiți **versiuni diferite pentru proiecte diferite**, **vers
 
 Este compatibil cu toate shell-urile populare (Bash, Zsh, Fish, PowerShell, Clink, Cmder).
 
-Consultați [Ghidul de început rapid](https://vfox.lhan.me/guides/quick-start.html) pentru a începe rapid să utilizați vfox și pentru toate detaliile de utilizare.
+Consultă [inițierea rapidă](https://vfox.dev/guides/quick-start.html) pentru a începe să folosești rapid vfox și pentru toate detaliile de utilizare.
 
 ## Void Linux
 
@@ -356,7 +356,7 @@ xbps-install -Sy nodejs
 
 ## Windows
 
-Descărcați [Instalatorul pentru Windows](/#home-downloadhead) direct de pe website-ul [nodejs.org](https://nodejs.org/).
+Descarcă [instalatorul pentru Windows](/#home-downloadhead) direct de pe site-ul web [nodejs.org](https://nodejs.org/).
 
 ### Alternative
 
@@ -388,7 +388,7 @@ scoop install nodejs-lts
 
 ## z/OS
 
-IBM&reg; SDK pentru Node.js - z/OS&reg; este disponibil în două formate de instalare: SMP/E și PAX. Alegeți formatul de instalare potrivit pentru dvs.:
+IBM&reg; SDK pentru Node.js – z/OS&reg; este disponibil în două formate de instalare: SMP/E și PAX. Alege formatul de instalare potrivit pentru tine:
 
 - [Instalarea și configurarea ediției SMP/E a Node.js pe z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
 - [Instalarea și configurarea ediției PAX a Node.js pe z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)
