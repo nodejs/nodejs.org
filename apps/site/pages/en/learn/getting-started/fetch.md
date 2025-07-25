@@ -120,6 +120,8 @@ async function streamOllamaCompletion(prompt) {
   console.log('Streaming complete.');
 }
 
+// Note: top-level await requires ES modules (".mjs" or "type": "module")
+// Using it outside of an ES module will result in a SyntaxError.
 try {
   await streamOllamaCompletion('What is recursion?');
 } catch (error) {
@@ -128,6 +130,20 @@ try {
   console.log('Closing Ollama pool.');
   ollamaPool.close();
 }
+
+// If you cannot use ES modules, wrap your asynchronous operations in an async IIFE:
+/*
+(async () => {
+  try {
+    await streamOllamaCompletion('What is recursion?');
+  } catch (error) {
+    console.error('Error calling Ollama:', error);
+  } finally {
+    console.log('Closing Ollama pool.');
+    ollamaPool.close();
+  }
+})();
+*/
 ```
 
 ## Streaming Responses with Undici
