@@ -1,5 +1,4 @@
 'use strict';
-import { getDeploymentId } from '@opennextjs/cloudflare';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
@@ -104,7 +103,7 @@ const nextConfig = {
   //       process, onces it does that remove the manual `OPEN_NEXT_CLOUDFLARE`
   //       definition in the package.json script.
   deploymentId: process.env.OPEN_NEXT_CLOUDFLARE
-    ? getDeploymentId()
+    ? (await import('@opennextjs/cloudflare')).getDeploymentId()
     : undefined,
 };
 
