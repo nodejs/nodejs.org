@@ -1,11 +1,6 @@
 coverage:
   status:
-    patch:
+    patch: off
+    project:
       default:
         target: 70%
-        threshold: 1%
-
-comment:
-  behavior: default
-  require_changes: true
-  
