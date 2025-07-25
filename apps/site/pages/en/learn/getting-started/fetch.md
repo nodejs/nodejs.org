@@ -21,6 +21,7 @@ async function main() {
   const data = await response.json();
   console.log(data);
   // returns something like:
+  // [
   //   {
   //   userId: 1,
   //   id: 1,
@@ -30,6 +31,7 @@ async function main() {
   //     'reprehenderit molestiae ut ut quas totam\n' +
   //     'nostrum rerum est autem sunt rem eveniet architecto'
   // }
+  // ]
 }
 
 main().catch(console.error);
