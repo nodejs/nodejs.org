@@ -1,4 +1,4 @@
-import { describe, it } from 'node:test';
+import { describe, it, beforeEach } from 'node:test';
 import assert from 'node:assert/strict';
 import { setTimeout } from 'node:timers/promises';
 
@@ -9,10 +9,10 @@ import useCopyToClipboard from '#site/hooks/react-client/useCopyToClipboard';
 navigator.clipboard = { writeText: () => {} };
 
 await describe('useCopyToClipboard', async () => {
-  await it('should call clipboard API with `test` once', async t => {
-    t.mock.method(navigator.clipboard, 'writeText', () => Promise.resolve());
+  let TestComponent;
 
-    const TestComponent = ({ textToCopy }) => {
+  beforeEach(() => {
+    TestComponent = ({ textToCopy }) => {
       const [copied, copyText] = useCopyToClipboard();
 
       return (
@@ -21,6 +21,10 @@ await describe('useCopyToClipboard', async () => {
         </button>
       );
     };
+  });
+  
+  await it('should call clipboard API with `test` once', async t => {
+    t.mock.method(navigator.clipboard, 'writeText', () => Promise.resolve());
 
     render(<TestComponent textToCopy="test" />);
 
@@ -39,5 +43,30 @@ await describe('useCopyToClipboard', async () => {
     assert.deepEqual(navigator.clipboard.writeText.mock.calls[0].arguments, [
       'test',
     ]);
+  });
+
+  await it('should handle clipboard write text failure', async t => {
+    t.mock.method(navigator.clipboard, 'writeText', () => Promise.reject(new Error("fail")));
+
+    render(<TestComponent textToCopy="fail" />);
+    const button = screen.getByRole('button');
+
+    fireEvent.click(button);
+    assert.ok((await screen.findByText(/copy/i)));
+
+    assert.equal(navigator.clipboard.writeText.mock.callCount(), 1);
+    assert.deepEqual(navigator.clipboard.writeText.mock.calls[0].arguments, [
+      'fail',
+    ]);
+  });
+
+  await it('should not call clipboard API when text is undefined', async t => {
+    t.mock.method(navigator.clipboard, 'writeText', () => Promise.resolve());
+
+    render(<TestComponent textToCopy={undefined} />);
+    const button = screen.getByRole('button');
+    fireEvent.click(button);
+
+    assert.equal(navigator.clipboard.writeText.mock.callCount(), 0);
   });
 });
