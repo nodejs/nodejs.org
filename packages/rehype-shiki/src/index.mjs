@@ -26,7 +26,7 @@ const { shiki, getLanguageDisplayName, highlightToHast, highlightToHtml } =
     // `WebAssembly.instantiate` with custom imports, which Cloudflare doesn't support
     // for security reasons.
     //
-    // TODO(@avivkeller): When available, use `OPEN_NEXT_CLOUDFLARE` environmen
+    // TODO(@avivkeller): When available, use `OPEN_NEXT_CLOUDFLARE` environment
     // variable for detection instead of current method, which will enable better
     // tree-shaking.
     // Reference: https://github.com/nodejs/nodejs.org/pull/7896#issuecomment-3009480615

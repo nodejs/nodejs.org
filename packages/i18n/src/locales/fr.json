@@ -3,11 +3,16 @@
     "containers": {
       "footer": {
         "links": {
+          "openJSFoundation": "Fondation OpenJS",
           "trademarkPolicy": "Politique de Marque",
           "privacyPolicy": "Politique de confidentialité",
           "versionSupport": "Support de la version",
           "codeOfConduct": "Code de conduite",
           "security": "Politique de sécurité"
+        },
+        "releasePills": {
+          "latestLTS": "Dernier LTS",
+          "latestRelease": "Dernière Version"
         }
       },
       "navBar": {
@@ -31,7 +36,7 @@
       "learn": {
         "gettingStarted": {
           "links": {
-            "gettingStarted": "Bien démarrer",
+            "gettingStarted": "Premiers pas",
             "introductionToNodejs": "Introduction à Node.js",
             "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "À quel point avez-vous besoin de connaître JavaScript pour savoir utiliser Node.js ?",
             "differencesBetweenNodejsAndTheBrowser": "Différences entre Node.js et le navigateur",
@@ -75,8 +80,8 @@
         "manipulatingFiles": {
           "links": {
             "manipulatingFiles": "Manipuler des fichiers",
-            "nodejsFileStats": "Attributs de fichier Node.js",
-            "nodejsFilePaths": "Chemins d'accès aux fichiers avec Node.js",
+            "nodejsFileStats": "Statistiques des fichiers Node.js",
+            "nodejsFilePaths": "Chemins d'accès aux fichiers Node.js",
             "workingWithFileDescriptorsInNodejs": "Travailler avec des descripteurs de fichiers dans Node.js",
             "readingFilesWithNodejs": "Lire des fichiers avec Node.js",
             "writingFilesWithNodejs": "Écrire des fichiers avec Node.js",
@@ -104,7 +109,7 @@
           "links": {
             "modules": "Modules",
             "publishingAPackage": "Publication d'un paquet",
-            "publishingNodeApiModules": "Comment publier le paquet N-API",
+            "publishingNodeApiModules": "Comment publier un paquet Node-API",
             "anatomyOfAnHttpTransaction": "Anatomie d'une transaction HTTP",
             "abiStability": "Stabilité de l'ABI",
             "howToUseStreams": "Comment utiliser les flux",
@@ -118,8 +123,8 @@
             "understandingAndTuningMemory": "Comprendre et optimiser la mémoire",
             "memory": "Mémoire",
             "liveDebugging": "Débogage en direct",
-            "poorPerformance": "Live debugging",
-            "flameGraphs": "Flame Graphs"
+            "poorPerformance": "Mauvaise performance",
+            "flameGraphs": "Graphiques de flamme"
           }
         },
         "testRunner": {
@@ -144,7 +149,7 @@
       },
       "getInvolved": {
         "links": {
-          "getInvolved": "S’impliquer",
+          "getInvolved": "S'impliquer",
           "collabSummit": "Sommet des Collaborateurs",
           "upcomingEvents": "Événements à venir",
           "contribute": "Contribuer à Node.js",
@@ -163,8 +168,8 @@
       "details": "Détails"
     },
     "releaseModal": {
-      "title": "Node.js {version} ({codename})",
-      "titleWithoutCodename": "Node.js {version}",
+      "title": "Node.js v{version} ({codename})",
+      "titleWithoutCodename": "Node.js v{version}",
       "overview": "Vue d'ensemble",
       "minorVersions": "Versions mineures",
       "releaseAnnouncement": "Annonce de publication",
@@ -175,7 +180,7 @@
       "version": "Version",
       "links": "Liens",
       "actions": {
-        "release": "Release",
+        "release": "Versions",
         "changelog": "Journal de modifications",
         "docs": "Documents"
       }
@@ -186,7 +191,7 @@
       "minorVersions": "Versions mineures",
       "nApiVersion": "Version N-API",
       "npmVersion": "npm version",
-      "v8Version": "V8 version"
+      "v8Version": "Version V8"
     },
     "pagination": {
       "next": "Suivant",
@@ -276,7 +281,7 @@
       "categories": {
         "all": "Toutes les catégories",
         "announcements": "Annonces",
-        "release": "Sorties",
+        "release": "Versions",
         "vulnerability": "Vulnérabilités",
         "advisory-board": "Conseil consultatif",
         "community": "Communauté",
@@ -293,7 +298,7 @@
     "error": {
       "notFound": {
         "title": "Nous n'avons pas trouvé cette page.",
-        "description": "Désolé, nous n'avons pas trouvé la page que vous cherchez ! Essayez de recommencer à partir de la page d'accueil."
+        "description": "Désolé, nous n'avons pas trouvé la page que vous cherchez ! Essayez à partir de la page d'accueil."
       },
       "internalServerError": {
         "title": "Erreur interne du serveur",

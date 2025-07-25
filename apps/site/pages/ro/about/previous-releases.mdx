@@ -1,0 +1,53 @@
+---
+title: Lansări Node.js
+layout: about
+---
+
+# Lansări Node.js
+
+Versiunile majore de Node.js intră în stadiul de lansare _curent_ pentru șase luni, oferind astfel autorilor de biblioteci timp de asistență.
+După șase luni, versiunile cu număr impar (9, 11 etc.) devin neacceptate, iar versiunile cu număr par (10, 12 etc.) trec în stadiul _Activ LTS_ și sunt pregătite pentru utilizarea generală.
+Stadiul de lansare LTS reprezintă „asistență pe termen lung” și garantează, în general, că problemele critice vor fi remediate pe o perioadă totală de 30 de luni.
+Aplicațiile de producție ar trebui să folosească doar lansările _Activ LTS_ sau _Întreținere LTS_.
+
+## Programul de lansări
+
+![Lansări](https://raw.githubusercontent.com/nodejs/Release/main/schedule.svg?sanitize=true)
+
+Detaliile complete cu privire la programul de lansări Node.js sunt disponibile [pe GitHub](https://github.com/nodejs/release#release-schedule).
+
+### Suport comercial
+
+Asistența comercială pentru versiunile care au depășit faza de întreținere este disponibilă prin intermediul partenerului nostru din cadrul Programului de sustenabilitate a ecosistemului OpenJS [HeroDevs](https://www.herodevs.com/support/node-nes?utm_source=NodeJS+&utm_medium=Link&utm_campaign=Version_support_page).
+
+## Cauți cea mai recentă lansare dintr-o ramură de versiune?
+
+<DownloadReleasesTable />
+
+## Oficial vs. metodele de instalare ale comunității
+
+Site-ul web Node.js oferă mai multe metode de instalare neinteractive, inclusiv interfețe din linia de comandă (CLI), manageri de pachete pentru sistemul de operare (OS) (de exemplu, `brew`) și manageri de versiuni Node.js (de exemplu, `nvm`).
+
+Pentru a evidenția și promova contribuțiile comunității, proiectul Node.js a introdus o pagină de descărcări revizuită, care clasifică metodele de instalare fie ca „Oficiale”, fie ca „Comunitate”. Aceasta oferă utilizatorilor o flexibilitate și o gamă mai mare de opțiuni. Pentru a asigura claritatea, am definit criterii pentru fiecare categorie.
+
+### Metodele oficiale de instalare
+
+Metodele de instalare desemnate ca „oficiale” trebuie să îndeplinească următoarele cerințe:
+
+| Cerințe (metoda oficială de instalare)                                                                                                                         |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Noile versiuni Node.js trebuie să fie disponibile simultan cu lansarea oficială.                                                                               |
+| Responsabilii de întreținerea proiectului trebuie să aibă o relație strânsă cu proiectul Node.js, inclusiv pe canalele de comunicare directă.                  |
+| Metoda de instalare trebuie să descarce fișierele binare oficiale incluse în pachetul proiectului Node.js.                                                     |
+| Metoda de instalare nu trebuie să se compileze de la sursă atunci când sunt disponibile binare pre-compilate și nici nu trebuie să modifice binarele oficiale. |
+
+### Metodele de instalare ale comunității
+
+Metodele de instalare ale comunității, incluse pe pagina de descărcare self-service (/download), trebuie să respecte și un set minim de criterii:
+
+- **Compatibilitate versiune:** Trebuie să fie compatibile cu toate versiunile Node.js care nu sunt la sfârșitul perioadei de viață (EOL) și care sunt acceptate în prezent.
+- **Compatibilitate cu sistemul de operare:** Trebuie să funcționeze pe cel puțin un sistem de operare (OS) acceptat oficial.
+- **Suport extins pentru sisteme de operare:** Nu poate fi limitat la un subset de distribuții sau versiuni de sisteme de operare.
+  - De exemplu, o metodă de instalare care pretinde că este compatibilă cu „Windows” trebuie să funcționeze pe „Windows 10”, „Windows 11” și toate edițiile acestora (inclusiv versiunile de server).
+  - În mod similar, o metodă de instalare care pretinde compatibilitate cu „Linux” trebuie să poată fi instalată pe toate distribuțiile majore de Linux, nu doar pe un subset specific. Nu se poate baza pe manageri de pachete specifici distribuției, cum ar fi `apt` sau `dnf`.
+- **Gratuit și cu sursă deschisă:** Trebuie să fie gratuit și cu sursă deschisă, să nu fie vândut ca produs comercial și să nu fie un serviciu plătit.
