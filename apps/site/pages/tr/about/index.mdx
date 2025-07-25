@@ -3,7 +3,7 @@ title: Node.js® Hakkında
 layout: about
 ---
 
-Node.js® Hakkında
+# Node.js® Hakkında
 
 Asenkron olaya dayalı bir JavaScript çalıştırma ortamı olarak, Node.js, ölçeklenebilir ağ uygulamaları oluşturmak için tasarlanmıştır. Aşağıdaki "merhaba dünya" örneğinde, birçok bağlantı aynı anda işlenebilir. Her bağlantıda geri çağrı tetiklenir, ancak yapılacak iş yoksa, Node.js uyur.
 
@@ -43,18 +43,52 @@ server.listen(port, hostname, () => {
 
 Bu, bugünün daha yaygın olan eş zamanlılık modeline karşı bir durumdur, bu modelde işletim sistemi iş parçacıkları kullanılır. İş parçacığı tabanlı ağ iletişimi nispeten verimsizdir ve çok zor kullanılır. Ayrıca, Node.js kullanıcıları, kilitlenme endişelerinden bağımsızdır, çünkü kilitler yoktur. Node.js'deki neredeyse hiçbir işlev doğrudan G/Ç yapmaz, bu nedenle işlem, Node.js standart kitaplığının senkron yöntemleri kullanılarak G/Ç gerçekleştirildiğinde dışında asla bloke olmaz. Hiçbir şey bloke olmadığı için, ölçeklenebilir sistemlerin Node.js'te geliştirilmesi çok mantıklıdır.
 
-Eğer bu dilin bir kısmı size yabancı geliyorsa, [Blokajlı ve Blokajlı Olmayan][] hakkında tam bir makale bulunmaktadır.
+Eğer burada kullanılan bazı terimler sana yabancı geliyorsa, [Engelleyici (Blocking) ve Engelleyici Olmayan (Non-Blocking)](/learn/asynchronous-work/overview-of-blocking-vs-non-blocking) kavramlarını detaylıca anlatan bir makaleye göz atabilirsiniz.
 
 ---
 
-Node.js, Ruby'nin [Event Machine][] ve Python'un [Twisted][] gibi sistemlere benzer şekilde tasarlanmış ve etkilenmiştir. Node.js, olay modelini biraz daha ileri götürür. Olay döngüsünü bir kütüphane olarak değil, bir çalışma zamanı yapısı olarak sunar. Diğer sistemlerde, olay döngüsünü başlatmak için her zaman bir blokajlı çağrı vardır. Tipik olarak, davranış, betiğin başında geri çağrılar aracılığıyla tanımlanır ve sonunda EventMachine::run() gibi bir blokajlı çağrı ile bir sunucu başlatılır. Node.js'te böyle bir olay-döngüsünü-başlatma çağrısı yoktur. Node.js, girdi betiğini yürüttükten sonra basitçe olay döngüsüne girer. Node.js, yapılacak başka geri çağrı kalmadığında olay döngüsünden çıkar. Bu davranış, tarayıcı JavaScript'iyle benzerdir - olay döngüsü kullanıcıdan gizlenir.
+Node.js, tasarım olarak Ruby’nin [Event Machine](https://github.com/eventmachine/eventmachine) ve Python’un [Twisted](https://twisted.org/) sistemlerine benzer ve bu sistemlerden etkilenmiştir. Ancak Node.js, olay (event) modelini biraz daha ileriye taşır. Olay döngüsünü (event loop) bir kütüphane yerine çalışma zamanı (runtime) yapısı olarak sunar. Diğer sistemlerde ise olay döngüsünü başlatmak için mutlaka engelleyici (blocking) bir çağrı yapılır. Genellikle bir betiğin (script) başında geri çağırma fonksiyonları (callback) tanımlanır, sonunda ise EventMachine::run() gibi engelleyici bir çağrı ile sunucu başlatılır.
+Node.js’te ise böyle bir olay döngüsünü başlatan çağrı yoktur. Node.js, betiği çalıştırdıktan sonra doğrudan olay döngüsüne girer. Yürütülecek başka geri çağırma fonksiyonu kalmadığında ise olay döngüsünden çıkar. Bu davranış, tarayıcıdaki JavaScript’e benzer; olay döngüsü kullanıcıdan gizlenmiştir.
 
 HTTP, Node.js'de birinci sınıf bir vatandaştır ve akış ve düşük gecikme düşünülerek tasarlanmıştır. Bu, Node.js'in bir web kitaplığının veya çerçevesinin temeli için uygun olmasını sağlar.
 
-Node.js'in iş parçacıkları olmadan tasarlanmış olması, çevrenizdeki birden fazla çekirdeği kullanamayacağınız anlamına gelmez. Çocuk süreçler, [child\_process.fork()][] API'si kullanılarak oluşturulabilir ve iletişim kurmak için tasarlanmıştır. Aynı arayüz üzerine inşa edilmiş olan [`cluster`][] modülü, çekirdekleriniz üzerinde yük dengelemeyi etkinleştirmek için süreçler arasında soket paylaşmanıza izin verir.
+Node.js’in iş parçacıkları (thread) olmadan tasarlanmış olması, bulunduğunuz ortamda birden fazla çekirdeğin avantajlarından yararlanamayacağınız anlamına gelmez. [`child_process.fork()`](https://nodejs.org/api/child_process.html) API'sini kullanarak alt işlemler (child process) oluşturabilir ve bu işlemlerle kolayca iletişim kurabilirsiniz. Aynı yapı üzerine inşa edilmiş olan [`cluster`](https://nodejs.org/api/cluster.html) modülü ise, işlemler arasında socket paylaşımı yaparak çekirdekler arasında yük dengelemesi (load balancing) sağlamanıza imkân tanır.
 
-[blokajlı ve Blokajlı Olmayan]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
-[`child_process.fork()`]: https://nodejs.org/api/child_process.html
-[`cluster`]: https://nodejs.org/api/cluster.html
-[event machine]: https://github.com/eventmachine/eventmachine
-[twisted]: https://twisted.org/
+## Resmi Node.js Kaynakları
+
+Node.js ile çalışırken özgünlük ve güvenliği sağlamak için her zaman resmi kaynakları kullanın. Resmi olmayan kaynaklardan gelen e-postalara, ikili dosyalara veya indirmelere güvenmeyin.
+
+### Resmi Node.js Alan Adları
+
+Node.js ikili dosyalarını indirmek ve resmi dokümantasyona erişmek için yalnızca bu alan adlarını kullanın:
+
+- [nodejs.org](https://nodejs.org)
+- [nodejs.dev](https://nodejs.dev) _(https://nodejs.org adresine yönlendirilir)_
+- [iojs.org](https://iojs.org) _(https://nodejs.org adresine yönlendirilir)_
+
+### Resmi npm Paketleri
+
+Node.js ekibi aşağıdaki resmi npm paket kapsamlarını yönetmektedir:
+
+- [`@node-core`](https://npmjs.com/~node-core)
+- [`@pkgjs`](https://npmjs.com/~pkgjs)
+
+Ayrıca, Node.js ekibi [`nodejs-foundation`](https://npmjs.com/~nodejs-foundation) npm hesabı üzerinden yayınlanan paketleri yönetmektedir. Ancak, [`undici`](https://www.npmjs.com/package/undici) gibi diğer Node.js ile ilgili paketler de projeyle yakından bağlantılı katkıda bulunanlar tarafından yönetiliyor olabilir.
+
+Node.js ekibinden gelen paketleri kullanmak, resmi olarak desteklenen Node.js bileşenleriyle çalıştığınızın garantisidir.
+
+### Resmi GitHub Organizasyonları
+
+Node.js ve ilgili projeler, aşağıdaki resmi GitHub organizasyonları altında yönetilmektedir:
+
+- [nodejs](https://github.com/nodejs)
+- [pkgjs](https://github.com/pkgjs)
+
+### Resmi İletişim Kanalları
+
+Node.js ve OpenJS Vakfı, çeşitli resmi ve topluluk destekli kanallar aracılığıyla iletişim kurar. Katılım yollarıyla ilgili detaylara [Katılın](https://nodejs.org/en/about/get-involved) sayfasından ulaşabilirsiniz.
+
+### Web Sitesi Sorunları & Kesintilerini Bildirme
+
+Node.js web sitesinde sorunla karşılaşırsanız, bunları [Node.js web sitesi deposunda](https://github.com/nodejs/nodejs.org/issues) bildirin.\
+Kesintilerle ilgili anlık güncellemeler için [Node.js Durum Sayfasını](https://status.nodejs.org) ziyaret edin.

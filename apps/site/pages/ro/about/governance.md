@@ -15,7 +15,7 @@ Repozitoriul principal GitHub [nodejs/node](https://github.com/nodejs/node) este
 
 Persoanele care aduc contribuții semnificative și valoroase devin colaboratori și primesc acces de tip "commit" la proiect. Aceste persoane sunt identificate de alți colaboratori, iar nominalizarea lor este discutată cu colaboratorii existenți.
 
-Pentru lista curentă de colaboratori, vedeți [README.md](https://github.com/nodejs/node/blob/main/README.md#current-project-team-members).
+Pentru lista curentă de colaboratori vezi [README.md](https://github.com/nodejs/node/blob/main/README.md#current-project-team-members).
 
 Un ghid pentru colaboratori este menținut la [collaborator-guide.md](https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md).
 

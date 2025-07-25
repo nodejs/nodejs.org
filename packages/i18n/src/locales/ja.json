@@ -3,11 +3,16 @@
     "containers": {
       "footer": {
         "links": {
+          "openJSFoundation": "OpenJS財団",
           "trademarkPolicy": "商標ポリシー",
           "privacyPolicy": "プライバシーポリシー",
           "versionSupport": "バージョンサポート",
           "codeOfConduct": "行動規範",
           "security": "セキュリティポリシー"
+        },
+        "releasePills": {
+          "latestLTS": "LTS版",
+          "latestRelease": "最新版"
         }
       },
       "navBar": {
@@ -163,8 +168,8 @@
       "details": "詳細"
     },
     "releaseModal": {
-      "title": "Node.js {version} ({codename})",
-      "titleWithoutCodename": "Node.js {version}",
+      "title": "Node.js v{version} ({codename})",
+      "titleWithoutCodename": "Node.js v{version}",
       "overview": "概要",
       "minorVersions": "マイナーバージョン",
       "releaseAnnouncement": "リリース",

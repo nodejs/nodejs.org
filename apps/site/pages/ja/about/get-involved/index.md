@@ -30,4 +30,5 @@ Node.jsについてもっと非公式に議論する場所を探しているの�
 
 - [Node Slackers](https://www.nodeslackers.com/)はNode.jsに特化したSlackコミュニティーです。
 - [OpenJSF Slack](https://slack-invite.openjsf.org/)はOpenJS財団のSlackワークスペースです。Node.jsに関連するチャンネルがいくつかあります。 _(チャンネル名が `#nodejs-` で始まるチャンネル)_
+- [r/node](https://www.reddit.com/r/node/)はNode.jsに関するサブレディットです。
 - `irc.libera.chat`の`#node.js`は[IRCクライアント](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients)や[ウェブクライアント](https://kiwiirc.com/nextclient/)を使って利用できます。
