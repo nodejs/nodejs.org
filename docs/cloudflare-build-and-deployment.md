@@ -1,6 +1,6 @@
 # Cloudflare Build and Deployment
 
-The Node.js Website can be built using the [OpenNext Cloudflare adapter](https://opennext.js.org/cloudflare). Such build generates a [Cloudflare Worker](https://www.cloudflare.com/en-gb/developer-platform/products/workers/) that can be deployed on the [Cloudflare](https://www.cloudflare.com) network using [Cloudflare Workers](https://www.cloudflare.com/en-gb/developer-platform/products/workers/).
+The Node.js Website can be built using the [OpenNext Cloudflare adapter](https://opennext.js.org/cloudflare). Such build generates a [Cloudflare Worker](https://www.cloudflare.com/en-gb/developer-platform/products/workers/) that can be deployed on the [Cloudflare](https://www.cloudflare.com) network.
 
 ## Configurations
 
