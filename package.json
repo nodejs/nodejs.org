@@ -48,16 +48,16 @@
     "prettier": "3.6.2",
     "prettier-plugin-tailwindcss": "0.6.13"
   },
-  "packageManager": "pnpm@10.11.1",
+  "packageManager": "pnpm@10.13.1",
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "v22",
+      "version": ">=v22.14.0",
       "onFail": "error"
     },
     "packageManager": {
       "name": "pnpm",
-      "version": "10.11.1",
+      "version": "10.13.1",
       "onFail": "error"
     }
   }
