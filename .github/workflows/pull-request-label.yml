@@ -23,4 +23,4 @@ jobs:
       id-token: write
       contents: read
       actions: read
-    uses: nodejs/web-team/.github/workflows/scorecard.yml
+    uses: nodejs/web-team/.github/workflows/scorecard.yml@4fe2167f55e4aa670f7f97da16490945bb061d51
