@@ -173,23 +173,21 @@ async function fetchGitHubRepos() {
       return new Writable({
         write(chunk, encoding, callback) {
           buffer += chunk.toString();
-
+          callback();
+        },
+        final(callback) {
           try {
             const json = JSON.parse(buffer);
             console.log(
               'Repository Names:',
               json.map(repo => repo.name)
             );
-            buffer = '';
           } catch (error) {
             console.error('Error parsing JSON:', error);
+          } finally {
+            console.log('Stream processing completed.');
+            callback();
           }
-
-          callback();
-        },
-        final(callback) {
-          console.log('Stream processing completed.');
-          callback();
         },
       });
     }
