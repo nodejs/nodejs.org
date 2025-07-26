@@ -16,6 +16,12 @@
 
   &:hover {
     &:not(.progression) .label {
+      /*
+        This ensures a consistent hover effect across the website in dark mode (bg-neutral-900) and light mode (bg-neutral-100).
+        See:
+          - src/Containers/NavBar/index.module.css (Navbar hover)
+          - src/Containers/NavBar/NavItem/index.module.css (Footer hover)
+      */
       @apply rounded-sm
         bg-neutral-100
         text-neutral-900
