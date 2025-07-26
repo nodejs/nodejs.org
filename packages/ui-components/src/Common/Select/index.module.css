@@ -159,3 +159,46 @@
     text-neutral-700
     dark:text-neutral-200;
 }
+
+.noscript {
+  @apply relative;
+
+  summary {
+    @apply flex
+      w-full
+      justify-between;
+  }
+
+  .trigger {
+    @apply block;
+  }
+
+  .dropdown {
+    @apply absolute
+      left-0
+      mt-4;
+  }
+
+  .text {
+    @apply hover:outline-hidden
+      block
+      whitespace-normal
+      pl-4
+      text-neutral-800
+      hover:bg-green-500
+      hover:text-white
+      dark:text-neutral-200
+      dark:hover:bg-green-600
+      dark:hover:text-white;
+
+    span {
+      @apply h-auto;
+    }
+  }
+
+  .inline {
+    .text {
+      @apply pl-2.5;
+    }
+  }
+}

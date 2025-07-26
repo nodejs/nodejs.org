@@ -7,7 +7,8 @@ import { useEffect, useId, useMemo, useState } from 'react';
 import type { ReactElement, ReactNode } from 'react';
 
 import Skeleton from '#ui/Common/Skeleton';
-import type { FormattedMessage } from '#ui/types';
+import type { FormattedMessage, LinkLike } from '#ui/types';
+import { isStringArray, isValuesArray } from '#ui/util/array';
 
 import styles from './index.module.css';
 
@@ -23,15 +24,7 @@ export type SelectGroup<T extends string> = {
   items: Array<SelectValue<T>>;
 };
 
-const isStringArray = (values: Array<unknown>): values is Array<string> =>
-  Boolean(values[0] && typeof values[0] === 'string');
-
-const isValuesArray = <T extends string>(
-  values: Array<unknown>
-): values is Array<SelectValue<T>> =>
-  Boolean(values[0] && typeof values[0] === 'object' && 'value' in values[0]);
-
-type SelectProps<T extends string> = {
+export type SelectProps<T extends string> = {
   values: Array<SelectGroup<T>> | Array<T> | Array<SelectValue<T>>;
   defaultValue?: T;
   placeholder?: string;
@@ -48,6 +41,8 @@ type SelectProps<T extends string> = {
   ariaLabel?: string;
   loading?: boolean;
   disabled?: boolean;
+  fallbackClass?: string;
+  as?: LinkLike | 'div';
 };
 
 const Select = <T extends string>({
@@ -62,6 +57,7 @@ const Select = <T extends string>({
   ariaLabel,
   loading = false,
   disabled = false,
+  fallbackClass = '',
 }: SelectProps<T>): ReactNode => {
   const id = useId();
   const [value, setValue] = useState(defaultValue);
@@ -82,8 +78,8 @@ const Select = <T extends string>({
       return [{ items: mappedValues }];
     }
 
-    return mappedValues as Array<SelectGroup<T>>;
-  }, [values]);
+    return mappedValues;
+  }, [values]) as Array<SelectGroup<T>>;
 
   // We render the actual item slotted to fix/prevent the issue
   // of the tirgger flashing on the initial render
@@ -140,7 +136,8 @@ const Select = <T extends string>({
         className={classNames(
           styles.select,
           { [styles.inline]: inline },
-          className
+          className,
+          fallbackClass
         )}
       >
         {label && (
