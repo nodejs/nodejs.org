@@ -1,13 +1,47 @@
 import type { PartnerCategory, Partners } from '#site/types/partners.js';
 
-// TODO: Implement no random list
-// TODO: Implement no importance of partner
 function randomPartnerList(
   partners: Array<Partners>,
-  pick = 4,
-  dateSeed = 5,
-  category?: PartnerCategory
+  config: {
+    /**
+     * Number of partners to pick from the list.
+     * If null, all partners will be returned.
+     */
+    pick?: number | null;
+    /**
+     * Date seed to use for the randomization.
+     * This is used to ensure that the same partners are returned for the same date.
+     */
+    dateSeed?: number;
+    /**
+     * Category of partners to filter by.
+     * If not provided, all partners will be returned.
+     */
+    category?: PartnerCategory;
+    /**
+     * Whether to randomize the partners or not.
+     */
+    sort?: 'name' | 'weight' | null;
+  }
 ) {
+  const { pick = 4, dateSeed = 5, category, sort = 'weight' } = config;
+
+  const filteredPartners = [...partners].filter(partner => {
+    return !category || partner.categories.includes(category);
+  });
+
+  if (sort === null) {
+    return pick !== null ? filteredPartners.slice(0, pick) : filteredPartners;
+  }
+
+  if (sort === 'name') {
+    const shuffled = [...filteredPartners].sort((a, b) =>
+      a.name.localeCompare(b.name)
+    );
+
+    return pick !== null ? shuffled.slice(0, pick) : shuffled;
+  }
+
   const now = new Date();
   const minutes = Math.floor(now.getUTCMinutes() / dateSeed) * dateSeed;
 
@@ -27,8 +61,7 @@ function randomPartnerList(
   const seed = fixedTime.getTime();
   const rng = mulberry32(seed);
 
-  const weightedPartners = partners.flatMap(partner => {
-    if (category && !partner.categories.includes(category)) return [];
+  const weightedPartners = filteredPartners.flatMap(partner => {
     const weight = partner.weight;
     return Array(weight).fill(partner);
   });
