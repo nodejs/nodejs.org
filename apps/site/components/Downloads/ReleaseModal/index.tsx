@@ -6,19 +6,11 @@ import type { FC } from 'react';
 import { MinorReleasesTable } from '#site/components/Downloads/MinorReleasesTable';
 import { ReleaseOverview } from '#site/components/Downloads/ReleaseOverview';
 import Link from '#site/components/Link';
+import type { ModalProps } from '#site/providers/modalProvider';
 import type { NodeRelease } from '#site/types';
 
-type ReleaseModalProps = {
-  isOpen: boolean;
-  closeModal: () => void;
-  release: NodeRelease;
-};
-
-const ReleaseModal: FC<ReleaseModalProps> = ({
-  isOpen,
-  closeModal,
-  release,
-}) => {
+const ReleaseModal: FC<ModalProps> = ({ open, closeModal, data }) => {
+  const release = data as NodeRelease;
   const t = useTranslations();
 
   const modalHeadingKey = release.codename
@@ -31,7 +23,7 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
   });
 
   return (
-    <Modal open={isOpen} onOpenChange={closeModal}>
+    <Modal open={open} onOpenChange={closeModal}>
       {release.status === 'End-of-life' && (
         <div className="mb-4">
           <AlertBox
@@ -41,10 +33,7 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
           >
             {t.rich('components.releaseModal.unsupportedVersionWarning', {
               link: text => (
-                <Link
-                  onClick={closeModal}
-                  href="/about/previous-releases#release-schedule"
-                >
+                <Link onClick={closeModal} href="/eol">
                   {text}
                 </Link>
               ),

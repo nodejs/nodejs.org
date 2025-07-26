@@ -19,7 +19,7 @@ const DownloadReleasesTable: FC = () => {
   const t = useTranslations();
 
   return (
-    <table id="tbVersions" className="download-table full-width">
+    <table id="tbVersions">
       <thead>
         <tr>
           <th>{t('components.downloadReleasesTable.version')}</th>
@@ -47,8 +47,8 @@ const DownloadReleasesTable: FC = () => {
                 {release.status === 'End-of-life' ? ' (EoL)' : ''}
               </Badge>
             </td>
-            <td className="download-table-last">
-              <DetailsButton versionData={release} />
+            <td>
+              <DetailsButton data={release} />
             </td>
           </tr>
         ))}

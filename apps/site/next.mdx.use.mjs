@@ -3,6 +3,8 @@
 import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
+import EOLAlertBox from './components/EOL/Alert';
+import EOLTable from './components/EOL/Table';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
 import WithBadgeGroup from './components/withBadgeGroup';
 import WithBanner from './components/withBanner';
@@ -25,4 +27,8 @@ export const mdxComponents = {
   BadgeGroup,
   // Renders an container for Upcoming Node.js Meetings
   UpcomingMeetings,
+  // Renders an EOL alert
+  EOLAlertBox,
+  // Renders the EOL Table
+  EOLTable,
 };
