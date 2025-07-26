@@ -37,7 +37,13 @@ const PartnersIconList: FC<PartnersIconListProps> = ({
     const renderSponsorsAnimation = setTimeout(() => {
       initialRenderer.current = false;
 
-      setSeedList(randomPartnerList(ICON_PARTNERS, maxLength, 5, categories));
+      setSeedList(
+        randomPartnerList(ICON_PARTNERS, {
+          pick: maxLength,
+          dateSeed: 5,
+          category: categories,
+        })
+      );
     }, 0);
 
     return () => clearTimeout(renderSponsorsAnimation);

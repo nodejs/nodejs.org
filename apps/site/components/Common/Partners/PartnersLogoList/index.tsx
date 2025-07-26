@@ -12,10 +12,12 @@ import { randomPartnerList } from '../utils';
 type PartnersLogoListProps = {
   maxLength?: number;
   categories?: PartnerCategory;
+  sort?: 'name' | 'weight';
 };
 
 const PartnersLogoList: FC<PartnersLogoListProps> = ({
   maxLength = 3,
+  sort = 'weight',
   categories,
 }) => {
   const initialRenderer = useRef(true);
@@ -42,7 +44,14 @@ const PartnersLogoList: FC<PartnersLogoListProps> = ({
     const renderSponsorsAnimation = setTimeout(() => {
       initialRenderer.current = false;
 
-      setSeedList(randomPartnerList(LOGO_PARTNERS, maxLength, 5, categories));
+      setSeedList(
+        randomPartnerList(LOGO_PARTNERS, {
+          pick: maxLength,
+          dateSeed: 5,
+          category: categories,
+          sort: sort,
+        })
+      );
     }, 0);
 
     return () => clearTimeout(renderSponsorsAnimation);
