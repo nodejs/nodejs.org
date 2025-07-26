@@ -9,7 +9,7 @@ const WithSupporters: FC<PropsWithChildren> = () => {
   const supporters = fetchOpenCollectiveData() as Promise<Array<Supporters>>;
 
   return (
-    <div className="flex max-w-full flex-wrap items-center justify-center gap-1">
+    <div className="flex max-w-full flex-wrap items-center gap-1">
       <SupportersList supporters={supporters} />
     </div>
   );
