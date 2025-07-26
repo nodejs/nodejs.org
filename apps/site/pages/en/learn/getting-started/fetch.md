@@ -21,15 +21,17 @@ async function main() {
   const data = await response.json();
   console.log(data);
   // returns something like:
+  // [
   //   {
-  //   userId: 1,
-  //   id: 1,
-  //   title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
-  //   body: 'quia et suscipit\n' +
-  //     'suscipit recusandae consequuntur expedita et cum\n' +
-  //     'reprehenderit molestiae ut ut quas totam\n' +
-  //     'nostrum rerum est autem sunt rem eveniet architecto'
-  // }
+  //     userId: 1,
+  //     id: 1,
+  //     title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
+  //     body: 'quia et suscipit\n' +
+  //       'suscipit recusandae consequuntur expedita et cum\n' +
+  //       'reprehenderit molestiae ut ut quas totam\n' +
+  //       'nostrum rerum est autem sunt rem eveniet architecto'
+  //   }
+  // ]
 }
 
 main().catch(console.error);
@@ -108,10 +110,11 @@ async function streamOllamaCompletion(prompt) {
   }
 
   let partial = '';
-
   const decoder = new TextDecoder();
+
   for await (const chunk of body) {
     partial += decoder.decode(chunk, { stream: true });
+    // Note: decoder.decode() with { stream: true } may buffer incomplete UTF-8 chunks.
     console.log(partial);
   }
 
@@ -134,7 +137,6 @@ try {
 
 ```js
 import { Writable } from 'stream';
-
 import { stream } from 'undici';
 
 async function fetchGitHubRepos() {
@@ -155,23 +157,21 @@ async function fetchGitHubRepos() {
       return new Writable({
         write(chunk, encoding, callback) {
           buffer += chunk.toString();
-
+          callback();
+        },
+        final(callback) {
           try {
             const json = JSON.parse(buffer);
             console.log(
               'Repository Names:',
               json.map(repo => repo.name)
             );
-            buffer = '';
           } catch (error) {
             console.error('Error parsing JSON:', error);
+          } finally {
+            console.log('Stream processing completed.');
+            callback();
           }
-
-          callback();
-        },
-        final(callback) {
-          console.log('Stream processing completed.');
-          callback();
         },
       });
     }
