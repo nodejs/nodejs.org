@@ -39,18 +39,24 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
             <Preview title={frontmatter.title!} type={type} />
 
             {children}
-            {type === 'vulnerability' && (
-              <section className="flex-col! flex w-full gap-4">
-                <h2 className="text-center">Thanks by Our Partners</h2>
-                <p>
-                  We are able to offer security releases proudly due to the
-                  support of these partners
-                  <Link href="/about/partners/"> and more</Link>.
-                </p>
-                <PartnersLogoList categories="security" />
-              </section>
-            )}
+
             <WithBlogCrossLinks />
+            {type === 'vulnerability' && (
+              <div className="mt-3">
+                <hr />
+                <section className="flex-col! mt-4 flex w-full gap-4">
+                  <h2 className="text-center">
+                    These security releases are possible by:
+                  </h2>
+                  <p>
+                    We are able to offer security releases proudly due to the
+                    support of these partners
+                    <Link href="/about/partners/"> and more</Link>.
+                  </p>
+                  <PartnersLogoList categories="security" />
+                </section>
+              </div>
+            )}
           </main>
         </div>
 
