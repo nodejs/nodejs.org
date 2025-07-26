@@ -19,7 +19,7 @@
       @apply rounded-sm
         bg-neutral-100
         text-neutral-900
-        dark:bg-neutral-800
+        dark:bg-neutral-900
         dark:text-neutral-100;
     }
 
