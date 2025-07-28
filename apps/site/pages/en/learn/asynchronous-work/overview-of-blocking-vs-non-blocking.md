@@ -2,6 +2,7 @@
 title: Overview of Blocking vs Non-Blocking
 layout: learn
 authors: ovflowd, HassanBahati
+api: events
 ---
 
 # Overview of Blocking vs Non-Blocking

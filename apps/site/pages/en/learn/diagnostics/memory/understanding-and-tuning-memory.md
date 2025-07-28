@@ -2,6 +2,7 @@
 title: Understanding and Tuning Memory
 layout: learn
 authors: avivkeller
+api: diagnostics
 ---
 
 # Understanding and Tuning Memory

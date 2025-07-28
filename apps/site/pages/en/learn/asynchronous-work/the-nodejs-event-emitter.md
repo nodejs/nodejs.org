@@ -2,6 +2,7 @@
 title: The Node.js Event emitter
 layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, ovflowd
+api: events
 ---
 
 # The Node.js Event emitter

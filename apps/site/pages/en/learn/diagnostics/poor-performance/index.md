@@ -1,6 +1,7 @@
 ---
 title: Poor Performance
 layout: learn
+api: diagnostics
 ---
 
 # Poor Performance

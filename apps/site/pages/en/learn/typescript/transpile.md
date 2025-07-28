@@ -2,6 +2,7 @@
 title: Running TypeScript code using transpilation
 layout: learn
 authors: AugustinMauroy
+api: typescript
 ---
 
 # Running TypeScript code using transpilation

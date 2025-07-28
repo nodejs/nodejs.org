@@ -2,6 +2,7 @@
 title: Introduction to TypeScript
 layout: learn
 authors: sbielenica, ovflowd, vaishnav-mk, AugustinMauroy
+api: typescript
 ---
 
 # Introduction to TypeScript

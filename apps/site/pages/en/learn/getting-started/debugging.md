@@ -1,6 +1,7 @@
 ---
 title: Debugging Node.js
 layout: learn
+api: diagnostics
 ---
 
 # Debugging Node.js

@@ -2,6 +2,7 @@
 title: Using Node.js's test runner
 layout: learn
 authors: JakobJingleheimer
+api: test
 ---
 
 # Using Node.js's test runner

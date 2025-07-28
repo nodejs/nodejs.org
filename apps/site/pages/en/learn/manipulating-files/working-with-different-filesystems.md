@@ -1,6 +1,7 @@
 ---
 title: How to work with Different Filesystems
 layout: learn
+api: fs
 ---
 
 # How to Work with Different Filesystems

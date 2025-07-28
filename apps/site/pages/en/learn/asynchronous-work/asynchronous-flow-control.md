@@ -2,6 +2,7 @@
 title: Asynchronous flow control
 layout: learn
 authors: aug2uag, ovflowd
+api: timers, events
 ---
 
 # Asynchronous flow control

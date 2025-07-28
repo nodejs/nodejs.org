@@ -1,6 +1,7 @@
 ---
 title: Using Inspector
 layout: learn
+api: inspector
 ---
 
 # Using Inspector

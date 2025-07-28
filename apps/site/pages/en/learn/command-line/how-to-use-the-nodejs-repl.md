@@ -2,6 +2,7 @@
 title: How to use the Node.js REPL
 layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, vaishnav-mk, AugustinMauyroy
+api: repl
 ---
 
 # How to use the Node.js REPL

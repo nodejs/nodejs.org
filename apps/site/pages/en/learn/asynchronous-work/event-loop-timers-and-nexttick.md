@@ -1,6 +1,7 @@
 ---
 title: The Node.js Event Loop
 layout: learn
+api: timers, events
 ---
 
 # The Node.js Event Loop

@@ -2,6 +2,7 @@
 title: Understanding setImmediate()
 layout: learn
 authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais, clean99, ovflowd
+api: timers
 ---
 
 # Understanding setImmediate()

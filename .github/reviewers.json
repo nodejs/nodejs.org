@@ -1,0 +1,13 @@
+{
+  "fs": "@nodejs/fs",
+  "timers": "@nodejs/timers",
+  "events": "@nodejs/events",
+  "repl": "@nodejs/repl",
+  "diagnostics": "@nodejs/diagnostics",
+  "undici": "@nodejs/undici",
+  "npm": "@nodejs/npm",
+  "security": "@nodejs/security-wg",
+  "n-api": "@nodejs/addon-api",
+  "test": "@nodejs/test_runner",
+  "typescript": "@nodejs/typescript"
+}

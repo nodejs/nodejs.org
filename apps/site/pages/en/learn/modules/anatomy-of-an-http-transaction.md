@@ -1,6 +1,7 @@
 ---
 title: Anatomy of an HTTP Transaction
 layout: learn
+api: http
 ---
 
 # Anatomy of an HTTP Transaction

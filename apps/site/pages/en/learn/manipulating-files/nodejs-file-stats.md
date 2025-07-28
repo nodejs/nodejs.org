@@ -2,6 +2,7 @@
 title: Node.js file stats
 layout: learn
 authors: flaviocopes, ZYSzys, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, ovflowd, vaishnav-mk
+api: fs
 ---
 
 # Node.js file stats

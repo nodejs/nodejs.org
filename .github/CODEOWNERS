@@ -38,7 +38,3 @@ docs @nodejs/nodejs-website @nodejs/web-infra
 # Node.js Release Blog Posts
 apps/site/pages/en/blog/release @nodejs/releasers
 apps/site/pages/en/blog/announcements @nodejs/releasers
-
-# Specific content
-apps/site/pages/en/learn/getting-started/security-best-practices.md @nodejs/security-wg
-apps/site/pages/en/learn/typescript @nodejs/typescript

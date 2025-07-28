@@ -1,6 +1,7 @@
 ---
 title: How to publish a Node-API package
 layout: learn
+api: n-api
 ---
 
 # How to publish a Node-API version of a package alongside a non-Node-API version

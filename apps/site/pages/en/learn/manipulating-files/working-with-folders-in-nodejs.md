@@ -2,6 +2,7 @@
 title: Working with folders in Node.js
 layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, liangpeili, LaRuaNa, ahmadawais, clean99
+api: fs
 ---
 
 # Working with folders in Node.js
