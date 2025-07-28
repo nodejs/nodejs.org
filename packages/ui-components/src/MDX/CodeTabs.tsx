@@ -1,5 +1,5 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import type { FC, ReactElement } from 'react';
+import { useMemo, type FC, type ReactElement } from 'react';
 
 import CodeTabs from '#ui/Common/CodeTabs';
 
@@ -21,27 +21,32 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
   defaultTab = '0',
   ...props
 }) => {
-  const languages = rawLanguages.split('|');
-  const displayNames = rawDisplayNames?.split('|') ?? [];
-
   const occurrences: Record<string, number> = {};
 
-  const tabs = languages.map((language, index) => {
-    const base =
-      displayNames[index]?.trim() ||
-      NAME_OVERRIDES[language] ||
-      language.toUpperCase();
+  const { tabs, languages } = useMemo(() => {
+    const languages = rawLanguages.split('|');
+    const displayNames = rawDisplayNames?.split('|') ?? [];
 
-    const count = occurrences[base] ?? 0;
-    occurrences[base] = count + 1;
+    const tabs = languages.map((language, index) => {
+      const base =
+        displayNames[index]?.trim() ||
+        NAME_OVERRIDES[language] ||
+        language.toUpperCase();
 
-    const label = count > 0 ? `${base} (${count + 1})` : base;
+      const count = occurrences[base] ?? 0;
 
-    return {
-      key: `${language}-${index}`,
-      label: label,
-    };
-  });
+      occurrences[base] = count + 1;
+
+      const label = count > 0 ? `${base} (${count + 1})` : base;
+
+      return {
+        key: `${language}-${index}`,
+        label: label,
+      };
+    });
+
+    return { tabs, languages };
+  }, [rawLanguages, rawDisplayNames]);
 
   return (
     <CodeTabs

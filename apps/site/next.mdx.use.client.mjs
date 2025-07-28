@@ -3,7 +3,6 @@
 import Blockquote from '@node-core/ui-components/Common/Blockquote';
 import MDXCodeTabs from '@node-core/ui-components/MDX/CodeTabs';
 
-import Button from './components/Common/Button';
 import DownloadButton from './components/Downloads/DownloadButton';
 import DownloadLink from './components/Downloads/DownloadLink';
 import BlogPostLink from './components/Downloads/Release/BlogPostLink';
@@ -17,7 +16,6 @@ import ReleasePrebuiltDownloadButtons from './components/Downloads/Release/Prebu
 import ReleaseCodeBox from './components/Downloads/Release/ReleaseCodeBox';
 import ReleaseVersionDropdown from './components/Downloads/Release/VersionDropdown';
 import Link from './components/Link';
-import LinkWithArrow from './components/LinkWithArrow';
 import MDXCodeBox from './components/MDX/CodeBox';
 import MDXImage from './components/MDX/Image';
 import { ReleaseProvider } from './providers/releaseProvider';
@@ -30,12 +28,6 @@ import { ReleaseProvider } from './providers/releaseProvider';
 export const clientMdxComponents = {
   // Renders MDX CodeTabs
   CodeTabs: MDXCodeTabs,
-  // Renders a Button Component for `button` tags
-  Button: Button,
-  // Links with External Arrow
-  LinkWithArrow: LinkWithArrow,
-  // Regular links (without arrow)
-  Link: Link,
   // Renders a Download Button
   DownloadButton: DownloadButton,
   // Renders a Download Link
