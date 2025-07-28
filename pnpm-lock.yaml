@@ -206,8 +206,8 @@ importers:
         specifier: ~3.3.1
         version: 3.3.1
       '@flarelabs-net/wrangler-build-time-fs-assets-polyfilling':
-        specifier: ^0.0.0
-        version: 0.0.0
+        specifier: ^0.0.1
+        version: 0.0.1
       '@next/eslint-plugin-next':
         specifier: 15.4.4
         version: 15.4.4
@@ -1534,8 +1534,8 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@flarelabs-net/wrangler-build-time-fs-assets-polyfilling@0.0.0':
-    resolution: {integrity: sha512-8Nq96CtZD+NHRbHl9yooHIclCDhQx3Ayg+H6P4OlapdcalZq7NQ7YRN7BIF+UVNX/uFHZiE+IZwdKVr2gR+8mA==}
+  '@flarelabs-net/wrangler-build-time-fs-assets-polyfilling@0.0.1':
+    resolution: {integrity: sha512-uT7N77TaKZqGeb3c/KR+UlUs7xR36iU/g3uPaDflpJsXGRk8XwL2Ol2IpCNmv7ok57teModokqcbb6JT8a018Q==}
     hasBin: true
 
   '@floating-ui/core@1.7.1':
@@ -9733,7 +9733,7 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@flarelabs-net/wrangler-build-time-fs-assets-polyfilling@0.0.0': {}
+  '@flarelabs-net/wrangler-build-time-fs-assets-polyfilling@0.0.1': {}
 
   '@floating-ui/core@1.7.1':
     dependencies:
