@@ -11,7 +11,7 @@ import VulnerabilityChips from './VulnerabilityChips';
 const EOLTable: FC = () => {
   const releaseData = provideReleaseData();
   const vulnerabilities = provideVulnerabilities();
-  const EOLReleases = releaseData.filter(
+  const eolReleases = releaseData.filter(
     release => release.status === 'End-of-life'
   );
 
@@ -31,7 +31,7 @@ const EOLTable: FC = () => {
         </tr>
       </thead>
       <tbody>
-        {EOLReleases.map(release => (
+        {eolReleases.map(release => (
           <tr key={release.major}>
             <td data-label="Version">
               v{release.major} {release.codename ? `(${release.codename})` : ''}
