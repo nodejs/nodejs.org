@@ -15,18 +15,19 @@ const EOLTable: FC = () => {
     release => release.status === 'End-of-life'
   );
 
-  const t = useTranslations('components.eolTable');
+  const t = useTranslations();
 
   return (
     <table id="tbVulnerabilities">
       <thead>
         <tr>
           <th>
-            {t('version')} ({t('codename')})
+            {t('components.eolTable.version')} (
+            {t('components.eolTable.codename')})
           </th>
-          <th>{t('lastUpdated')}</th>
-          <th>{t('vulnerabilities')}</th>
-          <th>{t('details')}</th>
+          <th>{t('components.eolTable.lastUpdated')}</th>
+          <th>{t('components.eolTable.vulnerabilities')}</th>
+          <th>{t('components.eolTable.details')}</th>
         </tr>
       </thead>
       <tbody>

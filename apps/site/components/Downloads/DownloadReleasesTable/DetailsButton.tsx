@@ -12,13 +12,13 @@ type DetailsButtonProps = {
 };
 
 const DetailsButton: FC<DetailsButtonProps> = ({ data }) => {
-  const t = useTranslations('components.downloadReleasesTable');
+  const t = useTranslations();
 
   const { openModal } = use(ModalContext);
 
   return (
     <LinkWithArrow className="cursor-pointer" onClick={() => openModal(data)}>
-      {t('details')}
+      {t('components.downloadReleasesTable.details')}
     </LinkWithArrow>
   );
 };

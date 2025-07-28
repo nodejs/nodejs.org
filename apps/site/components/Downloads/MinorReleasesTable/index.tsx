@@ -18,14 +18,14 @@ type MinorReleasesTableProps = {
 export const MinorReleasesTable: FC<MinorReleasesTableProps> = ({
   releases,
 }) => {
-  const t = useTranslations('components.minorReleasesTable');
+  const t = useTranslations();
 
   return (
     <table>
       <thead>
         <tr>
-          <th>{t('version')}</th>
-          <th>{t('links')}</th>
+          <th>{t('components.minorReleasesTable.version')}</th>
+          <th>{t('components.minorReleasesTable.links')}</th>
         </tr>
       </thead>
       <tbody>
@@ -38,21 +38,21 @@ export const MinorReleasesTable: FC<MinorReleasesTableProps> = ({
                   kind="neutral"
                   href={`https://nodejs.org/download/release/v${release.version}/`}
                 >
-                  {t('actions.release')}
+                  {t('components.minorReleasesTable.actions.release')}
                 </Link>
                 <Separator orientation="vertical" />
                 <Link
                   kind="neutral"
                   href={`${BASE_CHANGELOG_URL}${release.version}`}
                 >
-                  {t('actions.changelog')}
+                  {t('components.minorReleasesTable.actions.changelog')}
                 </Link>
                 <Separator orientation="vertical" />
                 <Link
                   kind="neutral"
                   href={getNodeApiUrl(`v${release.version}`)}
                 >
-                  {t('actions.docs')}
+                  {t('components.minorReleasesTable.actions.docs')}
                 </Link>
               </div>
             </td>

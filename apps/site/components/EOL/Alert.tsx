@@ -4,12 +4,13 @@ import { useTranslations } from 'next-intl';
 import Link from '#site/components/Link';
 
 const EOLAlert = () => {
-  const t = useTranslations('components.eolAlert');
+  const t = useTranslations();
   return (
     <AlertBox level="warning">
-      {t('intro')}{' '}
+      {t('components.eolAlert.intro')}{' '}
       <Link href="/eol">
-        OpenJS Ecosystem Sustainability Program {t('partner')} HeroDevs
+        OpenJS Ecosystem Sustainability Program{' '}
+        {t('components.eolAlert.partner')} HeroDevs
       </Link>
     </AlertBox>
   );

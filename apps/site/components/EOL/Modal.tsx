@@ -24,16 +24,16 @@ const VulnerabilitiesTable: FC<{
   vulnerabilities: Array<Vulnerability>;
   maxWidth?: string;
 }> = ({ vulnerabilities, maxWidth = 'max-w-2xs' }) => {
-  const t = useTranslations('components.eolModal');
+  const t = useTranslations();
 
   return (
     <table className="w-full">
       <thead>
         <tr>
-          <th>{t('table.cves')}</th>
-          <th>{t('table.severity')}</th>
-          <th>{t('table.overview')}</th>
-          <th>{t('table.details')}</th>
+          <th>{t('components.eolModal.table.cves')}</th>
+          <th>{t('components.eolModal.table.severity')}</th>
+          <th>{t('components.eolModal.table.overview')}</th>
+          <th>{t('components.eolModal.table.details')}</th>
         </tr>
       </thead>
       <tbody>
@@ -67,7 +67,7 @@ const VulnerabilitiesTable: FC<{
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {t('blogLinkText')}
+                  {t('components.eolModal.blogLinkText')}
                 </LinkWithArrow>
               ) : (
                 '—'
@@ -84,7 +84,7 @@ const UnknownSeveritySection: FC<{
   vulnerabilities: Array<Vulnerability>;
   hasKnownVulns: boolean;
 }> = ({ vulnerabilities, hasKnownVulns }) => {
-  const t = useTranslations('components.eolModal');
+  const t = useTranslations();
 
   if (!vulnerabilities.length) {
     return null;
@@ -93,7 +93,8 @@ const UnknownSeveritySection: FC<{
   return (
     <details open={!hasKnownVulns}>
       <summary className="cursor-pointer font-semibold">
-        {t('showUnknownSeverities')} ({vulnerabilities.length})
+        {t('components.eolModal.showUnknownSeverities')} (
+        {vulnerabilities.length})
       </summary>
       <div className="mt-4">
         <VulnerabilitiesTable
@@ -107,12 +108,17 @@ const UnknownSeveritySection: FC<{
 
 const EOLModal: FC<ModalProps> = ({ open, closeModal, data }) => {
   const { release, vulnerabilities } = data as EOLModalData;
-  const t = useTranslations('components.eolModal');
+  const t = useTranslations();
 
-  const modalHeading = t(release.codename ? 'title' : 'titleWithoutCodename', {
-    version: release.major,
-    codename: release.codename ?? '',
-  });
+  const modalHeading = t(
+    release.codename
+      ? 'components.eolModal.title'
+      : 'components.eolModal.titleWithoutCodename',
+    {
+      version: release.major,
+      codename: release.codename ?? '',
+    }
+  );
 
   const [knownVulns, unknownVulns] = vulnerabilities.reduce(
     (acc, vuln) => {
@@ -136,7 +142,9 @@ const EOLModal: FC<ModalProps> = ({ open, closeModal, data }) => {
       <Content>
         {vulnerabilities.length > 0 && (
           <p className="m-1">
-            {t('vulnerabilitiesMessage', { count: vulnerabilities.length })}
+            {t('components.eolModal.vulnerabilitiesMessage', {
+              count: vulnerabilities.length,
+            })}
           </p>
         )}
 
@@ -147,7 +155,11 @@ const EOLModal: FC<ModalProps> = ({ open, closeModal, data }) => {
           hasKnownVulns={hasKnownVulns}
         />
 
-        {!hasAnyVulns && <p className="m-1">{t('noVulnerabilitiesMessage')}</p>}
+        {!hasAnyVulns && (
+          <p className="m-1">
+            {t('components.eolModal.noVulnerabilitiesMessage')}
+          </p>
+        )}
       </Content>
     </Modal>
   );
