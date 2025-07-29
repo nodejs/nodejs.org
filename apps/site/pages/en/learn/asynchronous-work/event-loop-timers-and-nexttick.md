@@ -347,7 +347,7 @@ function someAsyncApiCall(callback) {
 // the callback is called before `someAsyncApiCall` completes.
 someAsyncApiCall(() => {
   // since someAsyncApiCall hasn't completed, bar hasn't been assigned any value
-  console.log('bar', bar); // undefined
+  console.log('bar', bar); // null
 });
 
 bar = 1;
