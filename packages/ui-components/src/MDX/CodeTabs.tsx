@@ -1,5 +1,6 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import { useMemo, type FC, type ReactElement } from 'react';
+import type { FC, ReactElement } from 'react';
+import { useMemo } from 'react';
 
 import CodeTabs from '#ui/Common/CodeTabs';
 
