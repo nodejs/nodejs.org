@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      # This permission is required by `thollander/actions-comment-pull-request`
+      # This permission is required to request reviews
       pull-requests: write
 
     steps:
@@ -57,14 +57,6 @@ jobs:
         with:
           script: |
             const { default: reviewers } = await import("${{github.workspace}}/.github/scripts/get-reviewers.mjs");
-            reviewers(core, process.env.PR_FILES);
+            reviewers(github, context, process.env.PR_FILES);
         env:
           PR_FILES: ${{ steps.changed-files.outputs.files }}
-
-      - uses: thollander/actions-comment-pull-request@e2c37e53a7d2227b61585343765f73a9ca57eda9 # v3.0.0
-        if: steps.reviewers.outputs.found == 'true'
-        with:
-          message: |
-            Requesting a review from the following teams:
-            ${{ steps.reviewers.outputs.reviewers }}
-          comment-tag: request_review

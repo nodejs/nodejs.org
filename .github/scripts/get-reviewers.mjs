@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-export default async function (core, filesList) {
+export default async function (github, context, filesList) {
   // Load reviewers mapping
   const reviewersMap = JSON.parse(
     fs.readFileSync('.github/reviewers.json', 'utf8')
@@ -10,7 +10,7 @@ export default async function (core, filesList) {
   const files = filesList.trim().split(' ').filter(Boolean);
 
   // Track reviewers we need to mention
-  const reviewersToMention = new Set();
+  const reviewers = new Set();
 
   // Process each file
   for (const file of files) {
@@ -20,16 +20,19 @@ export default async function (core, filesList) {
     if (apiValues && apiValues.length > 0) {
       for (const apiValue of apiValues) {
         if (reviewersMap[apiValue]) {
-          reviewersToMention.add(`- [ ] ${reviewersMap[apiValue]}`);
+          reviewers.add(reviewersMap[apiValue]);
         }
       }
     }
   }
 
-  // Set outputs
-  const reviewersList = Array.from(reviewersToMention);
-  core.setOutput('found', reviewersList.length > 0);
-  core.setOutput('reviewers', reviewersList.join('\n'));
+  // Request Review
+  github.rest.pulls.requestReviewers({
+    owner: context.repo.owner,
+    repo: context.repo.repo,
+    pull_number: context.pull_request.number,
+    team_reviewers: Array.from(reviewers),
+  });
 }
 
 /**
