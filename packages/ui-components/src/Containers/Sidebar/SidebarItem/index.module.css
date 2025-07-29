@@ -16,10 +16,11 @@
 
   &:hover {
     &:not(.progression) .label {
+      /* @see https://github.com/nodejs/nodejs.org/blob/main/packages/ui-components/src/Containers/NavBar/NavItem/index.module.css#L24 */
       @apply rounded-sm
         bg-neutral-100
         text-neutral-900
-        dark:bg-neutral-800
+        dark:bg-neutral-900
         dark:text-neutral-100;
     }
 
