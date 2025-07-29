@@ -1,7 +1,7 @@
 /**
  * Groups vulnerabilities by major version number extracted from the `vulnerable` string.
  *
- * @param {Array<Promise<import('#site/types/vulnerabilities').Vulnerability>>} vulnerabilities Array of Vulnerability objects
+ * @param {Array<import('#site/types/vulnerabilities').Vulnerability>} vulnerabilities Array of Vulnerability objects
  */
 function groupVulnerabilitiesByMajor(vulnerabilities) {
   const grouped = {};
