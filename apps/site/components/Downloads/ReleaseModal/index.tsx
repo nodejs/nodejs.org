@@ -6,7 +6,6 @@ import type { FC } from 'react';
 import { MinorReleasesTable } from '#site/components/Downloads/MinorReleasesTable';
 import { ReleaseOverview } from '#site/components/Downloads/ReleaseOverview';
 import Link from '#site/components/Link';
-import LinkWithArrow from '#site/components/LinkWithArrow';
 import type { NodeRelease } from '#site/types';
 
 type ReleaseModalProps = {
@@ -54,7 +53,7 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
         </div>
       )}
 
-      {release.status === 'LTS' && (
+      {release.isLts && (
         <div className="mb-4">
           <AlertBox
             title={t('components.common.alertBox.info')}
@@ -71,12 +70,6 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
       <Title>{modalHeading}</Title>
 
       <Content>
-        {release.releaseAnnounceLink && (
-          <LinkWithArrow href={release.releaseAnnounceLink}>
-            {t('components.releaseModal.releaseAnnouncement')}
-          </LinkWithArrow>
-        )}
-
         <ReleaseOverview release={release} />
 
         <h5>{t('components.releaseModal.minorVersions')}</h5>

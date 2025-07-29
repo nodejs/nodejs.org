@@ -1,0 +1,8 @@
+@reference "../../styles/index.css";
+
+.viewport {
+  @apply fixed
+    bottom-0
+    right-0
+    list-none;
+}

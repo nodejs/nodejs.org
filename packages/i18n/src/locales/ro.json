@@ -1,0 +1,347 @@
+{
+  "components": {
+    "containers": {
+      "footer": {
+        "links": {
+          "openJSFoundation": "Fundația OpenJS",
+          "trademarkPolicy": "Politica privind mărcile comerciale",
+          "privacyPolicy": "Politica de confidențialitate",
+          "versionSupport": "Suport pentru versiuni",
+          "codeOfConduct": "Cod de conduită",
+          "security": "Politica de securitate"
+        },
+        "releasePills": {
+          "latestLTS": "Ultima versiune LTS",
+          "latestRelease": "Ultima lansare"
+        }
+      },
+      "navBar": {
+        "controls": {
+          "toggle": "Comută meniul de navigare"
+        },
+        "links": {
+          "about": "Despre",
+          "download": "Descarcă",
+          "docs": "Documentație",
+          "guides": "Ghiduri",
+          "learn": "Învață",
+          "security": "Securitate",
+          "certification": "Certificări",
+          "blog": "Blog",
+          "contribute": "Contribuie"
+        }
+      }
+    },
+    "navigation": {
+      "learn": {
+        "gettingStarted": {
+          "links": {
+            "gettingStarted": "Începe",
+            "introductionToNodejs": "Introducere în Node.js",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Cât de mult JavaScript trebuie să știi pentru a utiliza Node.js?",
+            "differencesBetweenNodejsAndTheBrowser": "Diferențele dintre Node.js și navigator",
+            "theV8JavascriptEngine": "Motorul JavaScript V8",
+            "anIntroductionToTheNpmPackageManager": "O introducere în managerul de pachete npm",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) și versiuni ulterioare",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, diferența dintre dezvoltare și producție",
+            "nodejsWithWebassembly": "Node.js cu WebAssembly",
+            "debugging": "Depanare în Node.js",
+            "profiling": "Analiza performanței aplicațiilor Node.js",
+            "fetch": "Preluarea datelor cu Node.js",
+            "websocket": "Client WebSocket cu Node.js",
+            "securityBestPractices": "Cele mai bune practici pentru securitate"
+          }
+        },
+        "typescript": {
+          "links": {
+            "typescript": "TypeScript",
+            "introduction": "Introducere în TypeScript",
+            "transpile": "Executarea codului TypeScript folosind transpilarea",
+            "run": "Executarea TypeScript cu un executant",
+            "runNatively": "Executarea TypeScript în mod nativ",
+            "publishingTSPackage": "Publicarea unui pachet TypeScript"
+          }
+        },
+        "asynchronousWork": {
+          "links": {
+            "asynchronousWork": "Lucru asincron",
+            "asynchronousFlowControl": "Controlul fluxului asincron",
+            "discoverPromisesInNodejs": "Descoperă Promises în Node.js",
+            "overviewOfBlockingVsNonBlocking": "Prezentare generală a operațiunilor blocante vs non-blocante",
+            "javascriptAsynchronousProgrammingAndCallbacks": "Programare asincronă și apeluri-inverse în JavaScript",
+            "discoverJavascriptTimers": "Descoperă cronometrele JavaScript",
+            "eventLoopTimersAndNexttick": "Bucla de evenimente Node.js",
+            "theNodejsEventEmitter": "Emițătorul de evenimente Node.js",
+            "understandingProcessnexttick": "Cum funcționează process.nextTick()",
+            "understandingSetimmediate": "Cum funcționează setImmediate()",
+            "dontBlockTheEventLoop": "Nu bloca bucla de evenimente"
+          }
+        },
+        "manipulatingFiles": {
+          "links": {
+            "manipulatingFiles": "Manipularea fișierelor",
+            "nodejsFileStats": "Stările fișierelor Node.js",
+            "nodejsFilePaths": "Căile fișierelor Node.js",
+            "workingWithFileDescriptorsInNodejs": "Lucrul cu descriptori de fișiere în Node.js",
+            "readingFilesWithNodejs": "Citirea fișierelor cu Node.js",
+            "writingFilesWithNodejs": "Scrierea fișierelor cu Node.js",
+            "workingWithFoldersInNodejs": "Lucrul cu directoare în Node.js",
+            "workingWithDifferentFilesystems": "Cum să lucrezi cu diferite sisteme de fișiere"
+          }
+        },
+        "commandLine": {
+          "links": {
+            "commandLine": "Linie de comandă",
+            "runNodejsScriptsFromTheCommandLine": "Rulează scripturi Node.js din linia de comandă",
+            "howToReadEnvironmentVariablesFromNodejs": "Cum să citești variabilele de mediu din Node.js",
+            "howToUseTheNodejsRepl": "Cum se utilizează Node.js REPL",
+            "outputToTheCommandLineUsingNodejs": "Ieșirea în linia de comandă folosind Node.js",
+            "acceptInputFromTheCommandLineInNodejs": "Acceptarea intrării din linia de comandă în Node.js"
+          }
+        },
+        "migrations": {
+          "links": {
+            "migrations": "Migrații la nivel de utilizator",
+            "introduction": "Introducere în migrațiile la nivel de utilizator"
+          }
+        },
+        "modules": {
+          "links": {
+            "modules": "Module",
+            "publishingAPackage": "Publicarea unui pachet",
+            "publishingNodeApiModules": "Cum se publică un pachet Node-API",
+            "anatomyOfAnHttpTransaction": "Anatomia unei tranzacții HTTP",
+            "abiStability": "Stabilitatea ABI",
+            "howToUseStreams": "Cum se utilizează fluxurile",
+            "backpressuringInStreams": "Contrapresiunea în fluxuri"
+          }
+        },
+        "diagnostics": {
+          "links": {
+            "diagnostics": "Diagnosticare",
+            "userJourney": "Călătoria utilizatorului",
+            "understandingAndTuningMemory": "Înțelegerea și reglarea memoriei",
+            "memory": "Memorie",
+            "liveDebugging": "Depanare live",
+            "poorPerformance": "Performanță slabă",
+            "flameGraphs": "Grafice Flame"
+          }
+        },
+        "testRunner": {
+          "links": {
+            "testRunner": "Executant de teste",
+            "introduction": "Descoperă executantul de teste Node.js",
+            "usingTestRunner": "Utilizarea executantului de teste Node.js",
+            "mocking": "Simulare în teste",
+            "collectingCodeCoverage": "Colectarea acoperirii codului în Node.js"
+          }
+        }
+      },
+      "about": {
+        "links": {
+          "about": "Despre Node.js",
+          "aboutSide": "Despre Node.js®",
+          "branding": "Brandul Node.js",
+          "governance": "Guvernarea proiectului",
+          "releases": "Lansări Node.js",
+          "security": "Raportare de securitate"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "getInvolved": "Implică-te",
+          "collabSummit": "Summit de colaborare",
+          "upcomingEvents": "Evenimente viitoare",
+          "contribute": "Contribuie la Node.js",
+          "codeOfConduct": "Cod de conduită"
+        }
+      }
+    },
+    "downloadReleasesTable": {
+      "version": "Node.js",
+      "nApiVersion": "N-API",
+      "codename": "Nume de cod",
+      "releaseDate": "Lansat pe",
+      "firstReleased": "Prima lansare",
+      "lastUpdated": "Ultima actualizare",
+      "status": "Stare",
+      "details": "Detalii"
+    },
+    "releaseModal": {
+      "title": "Node.js v{version} ({codename})",
+      "titleWithoutCodename": "Node.js v{version}",
+      "overview": "Prezentare generală",
+      "minorVersions": "Versiuni minore",
+      "releaseAnnouncement": "Anunț de lansare",
+      "unsupportedVersionWarning": "Această versiune nu mai este întreținută. Te rog să folosești o versiune acceptată în prezent. <link>Află mai multe despre suportul la sfârșitul ciclului de viață (EOL).</link>",
+      "ltsVersionFeaturesNotice": "Vrei funcționalități noi mai devreme? Instalează <link>cea mai recentă versiune Node.js</link> și testează cele mai noi îmbunătățiri!"
+    },
+    "minorReleasesTable": {
+      "version": "Versiune",
+      "links": "Legături",
+      "actions": {
+        "release": "Lansare",
+        "changelog": "Istoric de modificări",
+        "docs": "Documentație"
+      }
+    },
+    "releaseOverview": {
+      "firstReleased": "Prima lansare",
+      "lastUpdated": "Ultima actualizare",
+      "minorVersions": "Versiuni minore",
+      "nApiVersion": "Versiune N-API",
+      "npmVersion": "Versiune npm",
+      "v8Version": "Versiune V8"
+    },
+    "pagination": {
+      "next": "Înainte",
+      "previous": "Înapoi"
+    },
+    "common": {
+      "alertBox": {
+        "info": "Informații",
+        "warning": "Avertizare",
+        "danger": "Pericol"
+      },
+      "breadcrumbs": {
+        "navigateToHome": "Navighează la prima pagină"
+      },
+      "crossLink": {
+        "previous": "Înapoi",
+        "next": "Înainte"
+      },
+      "codebox": {
+        "copy": "Copiază în clipbord",
+        "copied": "Copiat în clipbord!"
+      },
+      "pagination": {
+        "prev": "Înapoi",
+        "prevAriaLabel": "Pagina anterioară",
+        "next": "Înainte",
+        "nextAriaLabel": "Pagina următoare",
+        "defaultLabel": "Paginare",
+        "pageLabel": "Mergi la pagina {pageNumber}"
+      },
+      "sidebar": {
+        "title": "Schimbă pagina"
+      },
+      "languageDropdown": {
+        "label": "Alege limba"
+      },
+      "themeToggle": {
+        "label": "Comută modul întunecat"
+      }
+    },
+    "metabar": {
+      "lastUpdated": "Ultima actualizare",
+      "readingTime": "Durată de citire",
+      "addedIn": "Adăugat în",
+      "author": "Autor",
+      "authors": "Autori",
+      "contribute": "Contribuie",
+      "contributeText": "Editează această pagină",
+      "viewAs": "Vezi ca",
+      "tableOfContents": "Cuprins"
+    },
+    "search": {
+      "searchPlaceholder": "Începe să tastezi...",
+      "chatPlaceholder": "Întreabă-mă orice",
+      "noResultsFoundFor": "Niciun rezultat găsit pentru",
+      "suggestions": "Sugestii",
+      "seeAll": "Vezi tot",
+      "addMore": "Adaugă mai multe",
+      "clearChat": "Golește discuția",
+      "errorMessage": "A apărut o eroare la încercarea de căutare. Te rog să încerci din nou.",
+      "disclaimer": "Rezumatele IA pot conține greșeli. Te rog să verifici informațiile.",
+      "startYourSearch": "Începe-ți căutarea",
+      "initErrorSearch": "Nu pot să inițializez serviciul de căutare",
+      "initErrorChat": "Nu pot să inițializez serviciul de discuții",
+      "chatButtonLabel": "Obține un rezumat IA",
+      "searchButtonLabel": "Caută"
+    },
+    "blog": {
+      "blogHeader": {
+        "subtitle": "Cele mai recente știri, studii de caz, tutoriale și resurse Node.js.",
+        "rssLink": "Flux RSS"
+      }
+    }
+  },
+  "layouts": {
+    "blogPost": {
+      "author": {
+        "byLine": "{author, select, null {} other {De {author}, }}"
+      }
+    },
+    "blogIndex": {
+      "categoryName": "{category, select, all {blog} other {{category} articole de blog}}"
+    },
+    "blog": {
+      "title": "Blog",
+      "selectCategory": "Categorii",
+      "categories": {
+        "all": "Toate",
+        "announcements": "Anunțuri",
+        "release": "Lansări",
+        "vulnerability": "Vulnerabilități",
+        "advisory-board": "Consiliul consultativ",
+        "community": "Comunitate",
+        "feature": "Funcționalitate",
+        "module": "Modul",
+        "npm": "npm",
+        "uncategorized": "Fără categorie",
+        "video": "Video",
+        "weekly": "Actualizări săptămânale",
+        "wg": "Grupuri de lucru",
+        "events": "Evenimente"
+      }
+    },
+    "error": {
+      "notFound": {
+        "title": "Pagina nu a putut fi găsită",
+        "description": "Regret, nu am putut găsi pagina pe care o cauți! Încearcă să începi din nou de pe prima pagină."
+      },
+      "internalServerError": {
+        "title": "Eroare internă de server",
+        "description": "Această pagină a generat o eroare nerecuperabilă."
+      },
+      "backToHome": "Înapoi la prima pagină"
+    },
+    "download": {
+      "buttons": {
+        "installer": "Instalator {os} (.{extension})",
+        "binary": "Binar autonom (.{extension})"
+      },
+      "dropdown": {
+        "platform": "Platformă",
+        "os": "Sistem de operare",
+        "version": "Versiune",
+        "installMethod": "Metodă de instalare",
+        "packageManager": "Manager de pachete",
+        "unknown": "Necunoscut",
+        "platformGroups": {
+          "official": "Recomandat (oficial)",
+          "unofficial": "Comunitate (neoficial)"
+        }
+      },
+      "codeBox": {
+        "unsupportedVersionWarning": "Această versiune nu mai este întreținută. Te rog să utilizezi o versiune acceptată în prezent. <link>Află mai multe despre suportul EOL.</link>",
+        "ltsVersionFeaturesNotice": "Vrei funcționalități noi mai devreme? Ia <link>cea mai recentă versiune Node.js</link> și încearcă ultimele îmbunătățiri!",
+        "communityPlatformInfo": "Metodele de instalare care implică software comunitar sunt acceptate de echipele care întrețin acel software.",
+        "externalSupportInfo": "Dacă întâmpini orice problemă, te rog să vizitezi site-ul web <link>{platform}</link>",
+        "noScriptDetected": "Această pagină necesită JavaScript. Poți descărca Node.js fără JavaScript, vizitând direct <link>pagina de lansări</link>.",
+        "platformInfo": {
+          "default": "{platform} și scripturile lor de instalare nu sunt întreținute de proiectul Node.js.",
+          "nvm": "„nvm” este un manager de versiuni Node.js multiplatformă.",
+          "fnm": "„fnm” este un manager de versiuni Node.js multiplatformă.",
+          "brew": "Homebrew este un manager de pachete pentru macOS și Linux.",
+          "choco": "Chocolatey este un manager de pachete pentru Windows.",
+          "devbox": "Devbox creează medii de dezvoltare izolate și reproductibile.",
+          "docker": "Docker este o platformă de containerizare.",
+          "n": "„n” este un manager de versiuni Node.js multiplatformă.",
+          "volta": "„Volta” este un manager de versiuni Node.js multiplatformă."
+        }
+      }
+    },
+    "logo": "Logo-ul Node.js"
+  }
+}

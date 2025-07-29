@@ -10,6 +10,10 @@ type MDXCodeTabsProps = {
   defaultTab?: string;
 };
 
+const NAME_OVERRIDES: Record<string, string | undefined> = {
+  mjs: 'ESM',
+};
+
 const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
   languages: rawLanguages,
   displayNames: rawDisplayNames,
@@ -20,12 +24,22 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
   const languages = rawLanguages.split('|');
   const displayNames = rawDisplayNames?.split('|') ?? [];
 
+  const occurrences: Record<string, number> = {};
+
   const tabs = languages.map((language, index) => {
-    const displayName = displayNames[index];
+    const base =
+      displayNames[index]?.trim() ||
+      NAME_OVERRIDES[language] ||
+      language.toUpperCase();
+
+    const count = occurrences[base] ?? 0;
+    occurrences[base] = count + 1;
+
+    const label = count > 0 ? `${base} (${count + 1})` : base;
 
     return {
       key: `${language}-${index}`,
-      label: displayName?.length ? displayName : language.toUpperCase(),
+      label: label,
     };
   });
 

@@ -31,7 +31,7 @@ type DynamicParams = { params: Promise<DynamicStaticPaths> };
 
 // This is the default Viewport Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-viewport#generateviewport-function
-export const generateViewport = async () => ({ ...PAGE_VIEWPORT });
+export const generateViewport = () => ({ ...PAGE_VIEWPORT });
 
 // This generates each page's HTML Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-metadata

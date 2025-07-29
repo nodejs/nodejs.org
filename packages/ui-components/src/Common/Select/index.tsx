@@ -32,6 +32,12 @@ export type SelectProps<T extends string> = {
   inline?: boolean;
   onChange?: (value: T) => void;
   className?: string;
+  /**
+   * Allows passing custom CSS classes to the dropdown container element.
+   * This is useful for overriding default styles, such as adjusting `max-height`.
+   * The dropdown is rendered within a `Portal`.
+   */
+  dropdownClassName?: string;
   ariaLabel?: string;
   loading?: boolean;
   disabled?: boolean;
@@ -47,6 +53,7 @@ const Select = <T extends string>({
   inline,
   onChange,
   className,
+  dropdownClassName,
   ariaLabel,
   loading = false,
   disabled = false,
@@ -163,9 +170,11 @@ const Select = <T extends string>({
           <SelectPrimitive.Portal>
             <SelectPrimitive.Content
               position={inline ? 'popper' : 'item-aligned'}
-              className={classNames(styles.dropdown, {
-                [styles.inline]: inline,
-              })}
+              className={classNames(
+                styles.dropdown,
+                { [styles.inline]: inline },
+                dropdownClassName
+              )}
             >
               <SelectPrimitive.ScrollUpButton>
                 <ChevronUpIcon className={styles.scrollIcon} />

@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
+        uses: step-security/harden-runner@ec9f2d5744a09debf3a187a3f4f675c53b671911 # v2.13.0
         with:
           egress-policy: audit
 
@@ -37,7 +37,7 @@ jobs:
 
         # see all the options at https://github.com/crowdin/github-action
       - name: Crowdin PR
-        uses: crowdin/github-action@297234bae049541aa48ed268e5de00dee4efa4b4 # v2.8.0
+        uses: crowdin/github-action@9fd07c1c5b36b15f082d1d860dc399f16f849bd7 # v2.9.0
         with:
           # do not upload anything - this is a one-way operation download
           upload_sources: false
@@ -66,7 +66,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
+        uses: step-security/harden-runner@ec9f2d5744a09debf3a187a3f4f675c53b671911 # v2.13.0
         with:
           egress-policy: audit
 

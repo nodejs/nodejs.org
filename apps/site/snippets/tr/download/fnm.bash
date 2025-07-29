@@ -1,0 +1,11 @@
+# fnm'yi indirin ve kurun:
+${props.os === 'WIN' ?
+  'winget install Schniz.fnm' :
+  'curl -o- https://fnm.vercel.app/install | bash'
+}
+
+# Node.js'i indirin ve kurun:
+fnm install ${props.release.major}
+
+# Node.js sürümünü doğrulayın:
+node -v # Şunu yazdırmalı "${props.release.versionWithPrefix}".

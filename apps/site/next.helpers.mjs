@@ -1,8 +1,7 @@
 'use strict';
 
+import { glob } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-
-import { glob } from 'glob';
 
 /**
  * We create a locale cache of Glob Promises
@@ -30,14 +29,18 @@ export const getRelativePath = path => fileURLToPath(new URL('.', path));
  *
  * @param {string} root the root directory to search from
  * @param {string} cwd the given locale code
- * @param {Array<string>} ignore an array of glob patterns to ignore
+ * @param {Array<string>} exclude an array of glob patterns to ignore
  * @returns {Promise<Array<string>>} a promise containing an array of paths
  */
-export const getMarkdownFiles = async (root, cwd, ignore = []) => {
-  const cacheKey = `${root}${cwd}${ignore.join('')}`;
+export const getMarkdownFiles = async (root, cwd, exclude = []) => {
+  const cacheKey = `${root}${cwd}${exclude.join('')}`;
 
   if (!globCacheByPath.has(cacheKey)) {
-    globCacheByPath.set(cacheKey, glob('**/*.{md,mdx}', { root, cwd, ignore }));
+    const result = Array.fromAsync(
+      glob('**/*.{md,mdx}', { root, cwd, exclude })
+    );
+
+    globCacheByPath.set(cacheKey, result);
   }
 
   return globCacheByPath.get(cacheKey);

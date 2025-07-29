@@ -12,7 +12,7 @@ import {
 } from '#site/providers/releaseProvider';
 
 const getDropDownStatus = (version: string, status: string) => {
-  if (status === 'LTS') {
+  if (status.endsWith('LTS')) {
     return `${version} (LTS)`;
   }
 
@@ -37,7 +37,7 @@ const VersionDropdown: FC = () => {
       ({ versionWithPrefix }) => versionWithPrefix === version
     );
 
-    if (release?.status === 'LTS' && pathname.includes('current')) {
+    if (release?.isLts && pathname.includes('current')) {
       redirect({ href: '/download', locale: locale });
       return;
     }

@@ -20,6 +20,7 @@ New to contributing? Start here:
 - **[Technologies](./technologies.md)** - Overview of the tech stack and architecture decisions
 - **[Downloads Page](./downloads-page.md)** - How to add installation methods and package managers
 - **[Package Publishing](./package-publishing.md)** - Guidelines for publishing packages in our monorepo
+- **[Cloudflare build and deployment](./cloudflare-build-and-deployment.md)** - Overview and useful information about the Cloudflare build and deployment
 
 ## For Collaborators
 
@@ -27,9 +28,9 @@ New to contributing? Start here:
 
 ## Additional Resources
 
-- [Translation Guidelines](./translation.md) - Website translation policy
-- [Dependency Pinning](./dependency-pinning.md) - Package management guidelines
-- [Code of Conduct](https://github.com/nodejs/node/blob/HEAD/CODE_OF_CONDUCT.md)
+- **[Translation Guidelines](./translation.md)** - Website translation policy
+- **[Dependency Pinning](./dependency-pinning.md)** - Package management guidelines
+- **[Code of Conduct](https://github.com/nodejs/node/blob/HEAD/CODE_OF_CONDUCT.md)** - Rules for respectful participation in the community
 
 ## Quick Reference
 
