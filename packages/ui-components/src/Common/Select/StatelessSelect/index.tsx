@@ -75,14 +75,17 @@ const StatelessSelect = <T extends string>({
           aria-label={ariaLabel}
           aria-disabled={disabled}
         >
-          {currentItem ? (
-            <span className={styles.selectedValue}>
-              {currentItem.iconImage}
-              <span>{currentItem.label}</span>
-            </span>
-          ) : (
-            <span className={styles.placeholder}>{placeholder}</span>
-          )}
+          <>
+            {currentItem && (
+              <span className={styles.selectedValue}>
+                {currentItem.iconImage}
+                <span>{currentItem.label}</span>
+              </span>
+            )}
+            {currentItem || (
+              <span className={styles.placeholder}>{placeholder}</span>
+            )}
+          </>
           <ChevronDownIcon className={styles.icon} />
         </summary>
 
