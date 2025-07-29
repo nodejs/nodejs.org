@@ -21,9 +21,9 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
   defaultTab = '0',
   ...props
 }) => {
-  const occurrences: Record<string, number> = {};
-
   const { tabs, languages } = useMemo(() => {
+    const occurrences: Record<string, number> = {};
+    
     const languages = rawLanguages.split('|');
     const displayNames = rawDisplayNames?.split('|') ?? [];
 
