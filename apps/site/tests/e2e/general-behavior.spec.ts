@@ -23,7 +23,9 @@ const locators = {
 };
 
 const getTheme = (page: Page) =>
-  page.evaluate(() => document.documentElement.dataset.theme);
+  page.evaluate(
+    () => document.documentElement.dataset.theme as 'light' | 'dark'
+  );
 
 const openLanguageMenu = async (page: Page) => {
   const button = page.getByRole('button', {
@@ -71,11 +73,22 @@ test.describe('Node.js Website', () => {
       await expect(themeToggle).toBeVisible();
 
       const initialTheme = await getTheme(page);
+      const initialAriaLabel = await themeToggle.getAttribute('aria-label');
+      expect(initialAriaLabel).toBe(
+        englishLocale.components.common.themeToggle.label[initialTheme]
+      );
+
       await themeToggle.click();
 
       const newTheme = await getTheme(page);
-      expect(newTheme).not.toEqual(initialTheme);
+      const newAriaLabel = await themeToggle.getAttribute('aria-label');
+
+      expect(newTheme).not.toBe(initialTheme);
       expect(['light', 'dark']).toContain(newTheme);
+
+      expect(newAriaLabel).toBe(
+        englishLocale.components.common.themeToggle.label[newTheme]
+      );
     });
 
     test('should persist theme across page navigation', async ({ page }) => {
