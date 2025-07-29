@@ -230,8 +230,8 @@
       },
       "themeToggle": {
         "label": {
-          "light": "Activate Light Mode",
-          "dark": "Activate Dark Mode"
+          "light": "Toggle Light Mode",
+          "dark": "Toggle Dark Mode"
         }
       }
     },

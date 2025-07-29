@@ -13,7 +13,8 @@ const locators = {
   navLinksLocator: `[aria-label="${englishLocale.components.containers.navBar.controls.toggle}"] + div`,
   // Global UI controls
   languageDropdownName: englishLocale.components.common.languageDropdown.label,
-  themeToggleName: englishLocale.components.common.themeToggle.label,
+  // default light theme
+  themeToggleName: englishLocale.components.common.themeToggle.label.light,
 
   // Search components (from Orama library)
   searchButtonTag: 'orama-button',
