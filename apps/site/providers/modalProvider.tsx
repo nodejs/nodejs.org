@@ -4,7 +4,7 @@ import type { FC, PropsWithChildren, ComponentType } from 'react';
 import { createContext, useState } from 'react';
 
 import ReleaseModal from '../components/Downloads/ReleaseModal';
-import EOLModal from '../components/EOL/Modal';
+import EOLModal from '../components/EOL/EOLModal';
 
 export type ModalProps = {
   open: boolean;

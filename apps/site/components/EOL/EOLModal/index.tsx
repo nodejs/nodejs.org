@@ -9,7 +9,7 @@ import type { ModalProps } from '#site/providers/modalProvider';
 import type { NodeRelease } from '#site/types';
 import type { Vulnerability } from '#site/types/vulnerabilities';
 
-import { SEVERITY_ORDER } from './VulnerabilityChips';
+import { SEVERITY_ORDER } from '../VulnerabilityChips';
 
 type EOLModalData = {
   release: NodeRelease;
