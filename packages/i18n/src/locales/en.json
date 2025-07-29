@@ -229,7 +229,10 @@
         "label": "Choose Language"
       },
       "themeToggle": {
-        "label": "Toggle Dark Mode"
+        "label": {
+          "light": "Activate Light Mode",
+          "dark": "Activate Dark Mode"
+        }
       }
     },
     "metabar": {

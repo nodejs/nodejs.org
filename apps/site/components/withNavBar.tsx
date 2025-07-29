@@ -39,6 +39,11 @@ const WithNavBar: FC = () => {
   const toggleCurrentTheme = () =>
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
 
+  const themeToggleAriaLabel =
+    resolvedTheme === 'dark'
+      ? t('components.common.themeToggle.label.light')
+      : t('components.common.themeToggle.label.dark');
+
   const changeLanguage = (locale: SimpleLocaleConfig) =>
     replace(pathname!, { locale: locale.code });
 
@@ -63,7 +68,7 @@ const WithNavBar: FC = () => {
 
         <ThemeToggle
           onClick={toggleCurrentTheme}
-          aria-label={t('components.common.themeToggle.label')}
+          aria-label={themeToggleAriaLabel}
         />
 
         <LanguageDropdown
