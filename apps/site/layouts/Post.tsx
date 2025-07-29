@@ -1,7 +1,7 @@
 import Preview from '@node-core/ui-components/Common/Preview';
 import type { FC, PropsWithChildren } from 'react';
 
-import EOLAlert from '#site/components/EOL/Alert';
+import EOLAlert from '#site/components/EOL/EOLAlert';
 import WithAvatarGroup from '#site/components/withAvatarGroup';
 import WithBlogCrossLinks from '#site/components/withBlogCrossLinks';
 import WithFooter from '#site/components/withFooter';

@@ -1,15 +1,13 @@
 import { Modal, Title, Content } from '@node-core/ui-components/Common/Modal';
-import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import VulnerabilityChip from '#site/components/EOL/VulnerabilityChips/Chip';
-import LinkWithArrow from '#site/components/LinkWithArrow';
+import UnknownSeveritySection from '#site/components/EOL/UnknownSeveritySection';
+import VulnerabilitiesTable from '#site/components/EOL/VulnerabilitiesTable';
+import { SEVERITY_ORDER } from '#site/components/EOL/VulnerabilityChips';
 import type { ModalProps } from '#site/providers/modalProvider';
 import type { NodeRelease } from '#site/types';
 import type { Vulnerability } from '#site/types/vulnerabilities';
-
-import { SEVERITY_ORDER } from '../VulnerabilityChips';
 
 type EOLModalData = {
   release: NodeRelease;
@@ -18,92 +16,6 @@ type EOLModalData = {
 
 type KnownVulnerability = Vulnerability & {
   severity: (typeof SEVERITY_ORDER)[number];
-};
-
-const VulnerabilitiesTable: FC<{
-  vulnerabilities: Array<Vulnerability>;
-  maxWidth?: string;
-}> = ({ vulnerabilities, maxWidth = 'max-w-2xs' }) => {
-  const t = useTranslations();
-
-  return (
-    <table className="w-full">
-      <thead>
-        <tr>
-          <th>{t('components.eolModal.table.cves')}</th>
-          <th>{t('components.eolModal.table.severity')}</th>
-          <th>{t('components.eolModal.table.overview')}</th>
-          <th>{t('components.eolModal.table.details')}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {vulnerabilities.map((vuln, i) => (
-          <tr key={i}>
-            <td>
-              {vuln.cve.length
-                ? vuln.cve.map(cveId => (
-                    <div key={cveId}>
-                      <LinkWithArrow
-                        href={`https://www.cve.org/CVERecord?id=${cveId}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {cveId}
-                      </LinkWithArrow>
-                    </div>
-                  ))
-                : '-'}
-            </td>
-            <td>
-              <VulnerabilityChip severity={vuln.severity} />
-            </td>
-            <td className={classNames(maxWidth, 'truncate')}>
-              {vuln.description || vuln.overview || '-'}
-            </td>
-            <td>
-              {vuln.ref ? (
-                <LinkWithArrow
-                  href={vuln.ref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t('components.eolModal.blogLinkText')}
-                </LinkWithArrow>
-              ) : (
-                '—'
-              )}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-};
-
-const UnknownSeveritySection: FC<{
-  vulnerabilities: Array<Vulnerability>;
-  hasKnownVulns: boolean;
-}> = ({ vulnerabilities, hasKnownVulns }) => {
-  const t = useTranslations();
-
-  if (!vulnerabilities.length) {
-    return null;
-  }
-
-  return (
-    <details open={!hasKnownVulns}>
-      <summary className="cursor-pointer font-semibold">
-        {t('components.eolModal.showUnknownSeverities')} (
-        {vulnerabilities.length})
-      </summary>
-      <div className="mt-4">
-        <VulnerabilitiesTable
-          vulnerabilities={vulnerabilities}
-          maxWidth={'max-w-3xs'}
-        />
-      </div>
-    </details>
-  );
 };
 
 const EOLModal: FC<ModalProps> = ({ open, closeModal, data }) => {

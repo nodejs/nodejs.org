@@ -6,9 +6,9 @@ import DetailsButton from '#site/components/Downloads/DownloadReleasesTable/Deta
 import provideReleaseData from '#site/next-data/providers/releaseData';
 import provideVulnerabilities from '#site/next-data/providers/vulnerabilities';
 
-import VulnerabilityChips from './VulnerabilityChips';
+import VulnerabilityChips from '../VulnerabilityChips';
 
-const EOLTable: FC = () => {
+const EOLReleaseTable: FC = () => {
   const releaseData = provideReleaseData();
   const vulnerabilities = provideVulnerabilities();
   const eolReleases = releaseData.filter(
@@ -59,4 +59,4 @@ const EOLTable: FC = () => {
   );
 };
 
-export default EOLTable;
+export default EOLReleaseTable;
