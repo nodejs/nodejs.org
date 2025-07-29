@@ -13,17 +13,17 @@ Major versions of Node.js are released, patched, and designated End-Of-Life on a
 [View the Node.js release schedule](/about/releases/).
 
 <div className="flex flex-col items-start gap-4 xl:flex-row xl:items-center">
-  {/* we want to keep the anchor text on the same line else it will be wrapped in a paragraph tag */}
-  {/* prettier-ignore */}
-  <Button kind="primary" href="/download" className="flex-1">Upgrade to the latest LTS Node.js®</Button>
+  <Button kind="primary" href="/download" className="flex-1">
+    <span>Upgrade to the latest LTS Node.js®</span>
+  </Button>
   <span>or</span>
-  {/* we want to keep the anchor text on the same line else it will be wrapped in a paragraph tag */}
-  {/* prettier-ignore */}
   <Button
     kind="warning"
     href="https://nodejs.org/esp/herodevs"
     className="flex-1"
-  >Get security support for EOL versions</Button>
+  >
+    <span>Get security support for EOL versions</span>
+  </Button>
 </div>
 
 ## What Happens When a Release Line Reaches EOL
