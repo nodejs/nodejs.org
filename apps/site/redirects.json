@@ -341,7 +341,7 @@
       "destination": "https://discord.gg/vUsrbjd"
     },
     {
-      "source": "/esp/herodevs",
+      "source": "/:locale/esp/herodevs",
       "destination": "https://www.herodevs.com/support/node-nes?utm_source=NodeJS+&utm_medium=Link&utm_campaign=Nodejs_eol_support"
     }
   ],
