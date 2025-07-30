@@ -2,8 +2,8 @@
 
 .partnerIcon {
   @apply flex
-    h-[114px]
-    max-h-[114px]
+    h-28
+    max-h-28
     w-auto
     min-w-12
     items-center

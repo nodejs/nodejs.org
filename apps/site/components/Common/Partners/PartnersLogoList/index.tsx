@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef, useState, type FC } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import type { FC } from 'react';
 
 import { LOGO_PARTNERS } from '#site/next.partners.constants';
 import type { PartnerCategory, Partners } from '#site/types';
