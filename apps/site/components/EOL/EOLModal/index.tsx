@@ -5,17 +5,12 @@ import type { FC } from 'react';
 import UnknownSeveritySection from '#site/components/EOL/UnknownSeveritySection';
 import VulnerabilitiesTable from '#site/components/EOL/VulnerabilitiesTable';
 import { SEVERITY_ORDER } from '#site/next.constants.mjs';
-import type { ModalProps, NodeRelease } from '#site/types';
-import type { Vulnerability } from '#site/types/vulnerabilities';
-
-type EOLModalData = {
-  release: NodeRelease;
-  vulnerabilities: Array<Vulnerability>;
-};
-
-type KnownVulnerability = Vulnerability & {
-  severity: (typeof SEVERITY_ORDER)[number];
-};
+import type { ModalProps } from '#site/types';
+import type {
+  EOLModalData,
+  KnownVulnerability,
+  Vulnerability,
+} from '#site/types/vulnerabilities';
 
 const EOLModal: FC<ModalProps> = ({ open, closeModal, data }) => {
   const { release, vulnerabilities } = data as EOLModalData;
