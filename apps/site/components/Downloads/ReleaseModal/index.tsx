@@ -6,8 +6,7 @@ import type { FC } from 'react';
 import { MinorReleasesTable } from '#site/components/Downloads/MinorReleasesTable';
 import { ReleaseOverview } from '#site/components/Downloads/ReleaseOverview';
 import Link from '#site/components/Link';
-import type { ModalProps } from '#site/providers/modalProvider';
-import type { NodeRelease } from '#site/types';
+import type { ModalProps, NodeRelease } from '#site/types';
 
 const ReleaseModal: FC<ModalProps> = ({ open, closeModal, data }) => {
   const release = data as NodeRelease;
