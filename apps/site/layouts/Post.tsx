@@ -1,7 +1,7 @@
 import Preview from '@node-core/ui-components/Common/Preview';
 import type { FC, PropsWithChildren } from 'react';
 
-import Link from '#site/components/Link';
+// import Link from '#site/components/Link';
 import WithAvatarGroup from '#site/components/withAvatarGroup';
 import WithBlogCrossLinks from '#site/components/withBlogCrossLinks';
 import WithFooter from '#site/components/withFooter';
@@ -12,7 +12,7 @@ import { mapAuthorToCardAuthors } from '#site/util/author';
 import { mapBlogCategoryToPreviewType } from '#site/util/blog';
 
 import styles from './layouts.module.css';
-import PartnersLogoList from '../components/Common/Partners/PartnersLogoList';
+// import PartnersLogoList from '../components/Common/Partners/PartnersLogoList';
 
 const PostLayout: FC<PropsWithChildren> = ({ children }) => {
   const { frontmatter } = useClientContext();
@@ -41,7 +41,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
             {children}
 
             <WithBlogCrossLinks />
-            {type === 'vulnerability' && (
+            {/* {type === 'vulnerability' && (
               <div className="mt-3">
                 <hr />
                 <section className="flex-col! mt-4 flex w-full gap-4">
@@ -56,7 +56,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
                   <PartnersLogoList categories="security" />
                 </section>
               </div>
-            )}
+            )} */}
           </main>
         </div>
 

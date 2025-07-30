@@ -16,12 +16,7 @@ export interface Partners {
   weight: number;
 }
 
-export type PartnerCategory =
-  | 'infrastructure'
-  | 'security'
-  | 'esp'
-  | 'release'
-  | 'service';
+export type PartnerCategory = 'infrastructure' | 'esp';
 
 export interface Supporters {
   name: string;
