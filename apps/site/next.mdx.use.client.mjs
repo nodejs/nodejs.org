@@ -4,6 +4,7 @@ import Blockquote from '@node-core/ui-components/Common/Blockquote';
 import MDXCodeTabs from '@node-core/ui-components/MDX/CodeTabs';
 
 import Button from './components/Common/Button';
+import LinkWithArrow from './components/Common/LinkWithArrow';
 import DownloadButton from './components/Downloads/DownloadButton';
 import DownloadLink from './components/Downloads/DownloadLink';
 import BlogPostLink from './components/Downloads/Release/BlogPostLink';
@@ -17,7 +18,6 @@ import ReleasePrebuiltDownloadButtons from './components/Downloads/Release/Prebu
 import ReleaseCodeBox from './components/Downloads/Release/ReleaseCodeBox';
 import ReleaseVersionDropdown from './components/Downloads/Release/VersionDropdown';
 import Link from './components/Link';
-import LinkWithArrow from './components/LinkWithArrow';
 import MDXCodeBox from './components/MDX/CodeBox';
 import MDXImage from './components/MDX/Image';
 import { ReleaseProvider } from './providers/releaseProvider';

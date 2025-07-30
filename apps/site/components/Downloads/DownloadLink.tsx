@@ -2,7 +2,7 @@
 
 import type { FC, PropsWithChildren } from 'react';
 
-import LinkWithArrow from '#site/components/LinkWithArrow';
+import LinkWithArrow from '#site/components/Common/LinkWithArrow';
 import { useClientContext } from '#site/hooks';
 import type { DownloadKind, NodeRelease } from '#site/types';
 import { getNodeDownloadUrl } from '#site/util/url';
