@@ -328,12 +328,24 @@
             }
           }
         },
-        "migrations": {
-          "label": "components.navigation.learn.migrations.links.migrations",
+        "userland-migrations": {
+          "label": "components.navigation.learn.userland-migrations.links.userland-migrations",
           "items": {
             "introduction": {
-              "link": "/learn/migrations/introduction",
-              "label": "components.navigation.learn.migrations.links.introduction"
+              "link": "/learn/userland-migrations/introduction",
+              "label": "components.navigation.learn.userland-migrations.links.introduction"
+            },
+            "ecosystem": {
+              "link": "/learn/userland-migrations/ecosystem",
+              "label": "components.navigation.learn.userland-migrations.links.ecosystem"
+            },
+            "v20-to-v22": {
+              "link": "/learn/userland-migrations/v20-to-v22",
+              "label": "components.navigation.learn.userland-migrations.links.v20-to-v22"
+            },
+            "v14-to-v16": {
+              "link": "/learn/userland-migrations/v14-to-v16",
+              "label": "components.navigation.learn.userland-migrations.links.v14-to-v16"
             }
           }
         },
