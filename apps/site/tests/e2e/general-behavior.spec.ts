@@ -14,7 +14,7 @@ const locators = {
   // Global UI controls
   languageDropdownName: englishLocale.components.common.languageDropdown.label,
   // default light theme
-  themeToggleName: englishLocale.components.common.themeToggle.label.light,
+  themeToggleName: englishLocale.components.common.themeToggle.light,
 
   // Search components (from Orama library)
   searchButtonTag: 'orama-button',
@@ -75,7 +75,7 @@ test.describe('Node.js Website', () => {
       const initialTheme = await getTheme(page);
       const initialAriaLabel = await themeToggle.getAttribute('aria-label');
       expect(initialAriaLabel).toBe(
-        englishLocale.components.common.themeToggle.label[initialTheme]
+        englishLocale.components.common.themeToggle[initialTheme]
       );
 
       await themeToggle.click();
@@ -87,7 +87,7 @@ test.describe('Node.js Website', () => {
       expect(['light', 'dark']).toContain(newTheme);
 
       expect(newAriaLabel).toBe(
-        englishLocale.components.common.themeToggle.label[newTheme]
+        englishLocale.components.common.themeToggle[newTheme]
       );
     });
 

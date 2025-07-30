@@ -41,8 +41,8 @@ const WithNavBar: FC = () => {
 
   const themeToggleAriaLabel =
     resolvedTheme === 'dark'
-      ? t('components.common.themeToggle.label.light')
-      : t('components.common.themeToggle.label.dark');
+      ? t('components.common.themeToggle.light')
+      : t('components.common.themeToggle.dark');
 
   const changeLanguage = (locale: SimpleLocaleConfig) =>
     replace(pathname!, { locale: locale.code });
