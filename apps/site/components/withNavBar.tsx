@@ -11,6 +11,7 @@ import type { SimpleLocaleConfig } from '@node-core/ui-components/types';
 import dynamic from 'next/dynamic';
 import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
+import { useState, useEffect } from 'react';
 import type { FC } from 'react';
 
 import Link from '#site/components/Link';
@@ -35,12 +36,16 @@ const WithNavBar: FC = () => {
   const t = useTranslations();
 
   const locale = useLocale();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   const toggleCurrentTheme = () =>
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
 
-  const themeToggleAriaLabel =
-    resolvedTheme === 'dark'
+  const themeToggleAriaLabel = !mounted
+    ? t('components.common.themeToggle.loading')
+    : resolvedTheme === 'dark'
       ? t('components.common.themeToggle.light')
       : t('components.common.themeToggle.dark');
 
