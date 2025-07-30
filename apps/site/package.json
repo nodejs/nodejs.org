@@ -82,6 +82,7 @@
     "@opennextjs/cloudflare": "^1.6.0",
     "@playwright/test": "^1.54.1",
     "@testing-library/user-event": "~14.6.1",
+    "@types/mdx": "^2.0.13",
     "@types/semver": "~7.7.0",
     "eslint-config-next": "15.4.3",
     "eslint-import-resolver-typescript": "~4.4.4",
