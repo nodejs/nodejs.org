@@ -1,9 +1,15 @@
 import type { FC } from 'react';
+import semver from 'semver';
 
 import { getClientContext } from '#site/client-context';
 import CrossLink from '#site/components/Common/CrossLink';
 import getBlogData from '#site/next-data/blogData';
 import type { BlogCategory } from '#site/types';
+
+const extractVersionFromTitle = (title: string): string | null => {
+  const match = title.match(/v(\d+\.\d+\.\d+)/);
+  return match ? match[1] : null;
+};
 
 const WithBlogCrossLinks: FC = () => {
   const { pathname } = getClientContext();
@@ -18,14 +24,34 @@ const WithBlogCrossLinks: FC = () => {
 
   const { posts } = getBlogData(category);
 
-  const currentItem = posts.findIndex(
+  // Sort posts by semver for release category
+  const sortedPosts =
+    category === 'release'
+      ? [...posts].sort((a, b) => {
+          const versionA = extractVersionFromTitle(a.title);
+          const versionB = extractVersionFromTitle(b.title);
+
+          if (versionA && versionB) {
+            // Sort by semver in descending order (newest first)
+            return semver.rcompare(versionA, versionB);
+          }
+
+          // Fallback to date sorting if version extraction fails
+          return b.date.getTime() - a.date.getTime();
+        })
+      : posts;
+
+  const currentItem = sortedPosts.findIndex(
     ({ slug }) => slug === `/blog/${category}/${postname}`
   );
 
-  const [previousCrossLink, nextCrossLink] = [
-    posts[currentItem - 1],
-    posts[currentItem + 1],
-  ];
+  // For release posts sorted by semver (descending):
+  // - Previous should point to an older version (higher index)
+  // - Next should point to a newer version (lower index)
+  const [previousCrossLink, nextCrossLink] =
+    category === 'release'
+      ? [sortedPosts[currentItem + 1], sortedPosts[currentItem - 1]]
+      : [sortedPosts[currentItem - 1], sortedPosts[currentItem + 1]];
 
   return (
     <div className="max-xs:grid-cols-1 mt-4 grid w-full grid-cols-2 gap-4">
