@@ -4,9 +4,8 @@ import type { FC } from 'react';
 
 import UnknownSeveritySection from '#site/components/EOL/UnknownSeveritySection';
 import VulnerabilitiesTable from '#site/components/EOL/VulnerabilitiesTable';
-import { SEVERITY_ORDER } from '#site/components/EOL/VulnerabilityChips';
-import type { ModalProps } from '#site/providers/modalProvider';
-import type { NodeRelease } from '#site/types';
+import { SEVERITY_ORDER } from '#site/next.constants.mjs';
+import type { ModalProps, NodeRelease } from '#site/types';
 import type { Vulnerability } from '#site/types/vulnerabilities';
 
 type EOLModalData = {

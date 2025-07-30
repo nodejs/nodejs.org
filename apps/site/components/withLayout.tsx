@@ -9,7 +9,7 @@ import GlowingBackdropLayout from '#site/layouts/GlowingBackdrop';
 import LearnLayout from '#site/layouts/Learn';
 import PostLayout from '#site/layouts/Post';
 import { ModalProvider } from '#site/providers/modalProvider';
-import type { Layouts } from '#site/types';
+import type { Layouts, ModalType } from '#site/types';
 
 const layouts = {
   about: AboutLayout,
@@ -24,7 +24,7 @@ const layouts = {
 
 type WithLayoutProps<L = Layouts> = PropsWithChildren<{
   layout: L;
-  modal?: string;
+  modal?: ModalType;
 }>;
 
 const WithLayout: FC<WithLayoutProps<Layouts>> = ({

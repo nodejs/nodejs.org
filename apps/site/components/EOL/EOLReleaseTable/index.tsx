@@ -3,16 +3,16 @@ import type { FC } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
 import DetailsButton from '#site/components/Downloads/DownloadReleasesTable/DetailsButton';
+import VulnerabilityChips from '#site/components/EOL/VulnerabilityChips';
 import provideReleaseData from '#site/next-data/providers/releaseData';
 import provideVulnerabilities from '#site/next-data/providers/vulnerabilities';
-
-import VulnerabilityChips from '../VulnerabilityChips';
+import { EOL_VERSION_IDENTIFIER } from '#site/next.constants.mjs';
 
 const EOLReleaseTable: FC = () => {
   const releaseData = provideReleaseData();
   const vulnerabilities = provideVulnerabilities();
   const eolReleases = releaseData.filter(
-    release => release.status === 'End-of-life'
+    release => release.status === EOL_VERSION_IDENTIFIER
   );
 
   const t = useTranslations();

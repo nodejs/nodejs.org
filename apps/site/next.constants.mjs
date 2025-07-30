@@ -174,3 +174,24 @@ export const GITHUB_API_KEY = process.env.NEXT_GITHUB_API_KEY || '';
  */
 export const TRANSLATION_URL =
   'https://github.com/nodejs/nodejs.org/blob/main/TRANSLATION.md#how-to-translate';
+
+/**
+ * Define the order in which vulnerabilities should be sorted
+ */
+export const SEVERITY_ORDER = ['critical', 'high', 'medium', 'low'];
+
+/**
+ * Maps vulnerability severity levels to UI Badge kinds
+ */
+export const SEVERITY_KIND_MAP = {
+  unknown: 'neutral',
+  low: 'default',
+  medium: 'info',
+  high: 'warning',
+  critical: 'error',
+};
+
+/**
+ * Which Node.js versions do we want to display vulnerabilities for?
+ */
+export const EOL_VERSION_IDENTIFIER = 'End-of-life';

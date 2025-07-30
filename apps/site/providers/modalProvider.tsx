@@ -1,22 +1,16 @@
 'use client';
 
-import type { FC, PropsWithChildren, ComponentType } from 'react';
+import type { FC, ComponentType } from 'react';
 import { createContext, useState } from 'react';
 
-import ReleaseModal from '../components/Downloads/ReleaseModal';
-import EOLModal from '../components/EOL/EOLModal';
-
-export type ModalProps = {
-  open: boolean;
-  closeModal: () => void;
-  data: unknown;
-};
-
-type ModalContextType = {
-  data: unknown;
-  openModal: (data: unknown) => void;
-  closeModal: () => void;
-};
+import ReleaseModal from '#site/components/Downloads/ReleaseModal';
+import EOLModal from '#site/components/EOL/EOLModal';
+import type {
+  ModalContextType,
+  ModalProps,
+  ModalProviderProps,
+  ModalType,
+} from '#site/types/modal';
 
 export const ModalContext = createContext<ModalContextType>({
   data: null,
@@ -24,14 +18,10 @@ export const ModalContext = createContext<ModalContextType>({
   closeModal: () => {},
 });
 
-const MODALS: Record<string, ComponentType<ModalProps>> = {
+const MODALS = {
   release: ReleaseModal,
   eol: EOLModal,
-};
-
-type ModalProviderProps = PropsWithChildren<{
-  type: keyof typeof MODALS;
-}>;
+} satisfies Record<ModalType, ComponentType<ModalProps>>;
 
 export const ModalProvider: FC<ModalProviderProps> = ({ type, children }) => {
   const [data, setData] = useState<unknown>(null);
