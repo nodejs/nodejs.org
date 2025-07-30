@@ -27,7 +27,7 @@ const WithBlogCrossLinks: FC = () => {
   // Sort posts by semver for release category
   const sortedPosts =
     category === 'release'
-      ? [...posts].sort((a, b) => {
+      ? posts.toSorted((a, b) => {
           const versionA = extractVersionFromTitle(a.title);
           const versionB = extractVersionFromTitle(b.title);
 
