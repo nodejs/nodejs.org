@@ -13,9 +13,12 @@ const locators = {
   navLinksLocator: `[aria-label="${englishLocale.components.containers.navBar.controls.toggle}"] + div`,
   // Global UI controls
   languageDropdownName: englishLocale.components.common.languageDropdown.label,
-  // default light theme
+  // Initially, the themeToggle's name will be the light mode i18n.
   themeToggleName: englishLocale.components.common.themeToggle.light,
-
+  themeToggleAriaLabels: {
+    light: englishLocale.components.common.themeToggle.light,
+    dark: englishLocale.components.common.themeToggle.dark,
+  },
   // Search components (from Orama library)
   searchButtonTag: 'orama-button',
   searchInputTag: 'orama-input',
@@ -75,7 +78,7 @@ test.describe('Node.js Website', () => {
       const initialTheme = await getTheme(page);
       const initialAriaLabel = await themeToggle.getAttribute('aria-label');
       expect(initialAriaLabel).toBe(
-        englishLocale.components.common.themeToggle[initialTheme]
+        locators.themeToggleAriaLabels[initialTheme]
       );
 
       await themeToggle.click();
@@ -86,9 +89,7 @@ test.describe('Node.js Website', () => {
       expect(newTheme).not.toBe(initialTheme);
       expect(['light', 'dark']).toContain(newTheme);
 
-      expect(newAriaLabel).toBe(
-        englishLocale.components.common.themeToggle[newTheme]
-      );
+      expect(newAriaLabel).toBe(locators.themeToggleAriaLabels[newTheme]);
     });
 
     test('should persist theme across page navigation', async ({ page }) => {
