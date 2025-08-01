@@ -39,11 +39,11 @@
     "turbo": "2.5.5"
   },
   "devDependencies": {
-    "@eslint/js": "~9.31.0",
+    "@eslint/js": "~9.32.0",
     "@reporters/github": "^1.7.2",
     "@testing-library/react": "~16.3.0",
     "cross-env": "^7.0.3",
-    "eslint": "~9.31.0",
+    "eslint": "~9.32.0",
     "eslint-plugin-import-x": "~4.16.1",
     "prettier": "3.6.2",
     "prettier-plugin-tailwindcss": "0.6.14"
