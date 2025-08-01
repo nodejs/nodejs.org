@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { use } from 'react';
 
-import LinkWithArrow from '#site/components/LinkWithArrow';
+import LinkWithArrow from '#site/components/Common/LinkWithArrow';
 import { ReleaseModalContext } from '#site/providers/releaseModalProvider';
 import type { NodeRelease } from '#site/types';
 
@@ -21,7 +21,6 @@ const DetailsButton: FC<DetailsButtonProps> = ({ versionData }) => {
     <LinkWithArrow
       onClick={() => openModal(versionData)}
       aria-label={t('details')}
-      className="cursor-pointer"
     >
       {t('details')}
     </LinkWithArrow>

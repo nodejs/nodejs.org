@@ -3,7 +3,7 @@
 import type { FC, PropsWithChildren } from 'react';
 import { useContext } from 'react';
 
-import LinkWithArrow from '#site/components/LinkWithArrow';
+import LinkWithArrow from '#site/components/Common/LinkWithArrow';
 import { BASE_CHANGELOG_URL } from '#site/next.constants.mjs';
 import { ReleaseContext } from '#site/providers/releaseProvider';
 
