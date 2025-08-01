@@ -9,6 +9,7 @@ import basePreset from './index.mjs';
 import duplicateStabilityNodes from './rules/duplicate-stability-nodes.mjs';
 import hashedSelfReference from './rules/hashed-self-reference.mjs';
 import orderedReferences from './rules/ordered-references.mjs';
+import requiredMetadata from './rules/required-metadata.mjs';
 import yamlComments from './rules/yaml/index.mjs';
 
 export default {
@@ -23,6 +24,7 @@ export default {
     yamlComments,
     hashedSelfReference,
     orderedReferences,
+    requiredMetadata,
     remarkLintNoUnusedDefinitions,
     [remarkLintFencedCodeFlag, { allowEmpty: false }],
     [remarkLintMaximumLineLength, 120],
