@@ -1,6 +1,7 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 import Select from '#ui/Common/Select';
+import StatelessSelect from '#ui/Common/Select/StatelessSelect';
 import * as OSIcons from '#ui/Icons/OperatingSystem';
 
 type Story = StoryObj<typeof Select>;
@@ -106,6 +107,15 @@ export const InlineSelect: Story = {
     defaultValue: 'macos',
     inline: true,
   },
+};
+
+export const WithNoScriptSelect: Story = {
+  render: () => (
+    <StatelessSelect
+      values={Array.from({ length: 100 }, (_, i) => `Item ${i}`)}
+      defaultValue="Item 50"
+    />
+  ),
 };
 
 export default { component: Select } as Meta;
