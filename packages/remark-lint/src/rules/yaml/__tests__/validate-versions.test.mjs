@@ -38,9 +38,7 @@ const testCases = [
     input: {
       removed: ['REPLACEME', 'v1.0.0'],
     },
-    expected: [
-      'In "removed": REPLACEME is invalid',
-    ],
+    expected: ['In "removed": REPLACEME is invalid'],
   },
   {
     name: 'ignores ancient hardcoded versions (e.g. 0.1.0)',
