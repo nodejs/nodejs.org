@@ -30,12 +30,6 @@ import { ReleaseProvider } from './providers/releaseProvider';
 export const clientMdxComponents = {
   // Renders MDX CodeTabs
   CodeTabs: MDXCodeTabs,
-  // Renders a Button Component for `button` tags
-  Button: Button,
-  // Links with External Arrow
-  LinkWithArrow: LinkWithArrow,
-  // Regular links (without arrow)
-  Link: Link,
   // Renders a Download Button
   DownloadButton: DownloadButton,
   // Renders a Download Link
