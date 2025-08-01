@@ -2,7 +2,6 @@
 
 .badge {
   @apply rounded-full
-    border
     text-center
     text-white;
 
@@ -19,32 +18,22 @@
   }
 
   &.default {
-    @apply border-green-200
-      bg-green-600
-      dark:border-green-800;
+    @apply bg-green-600;
   }
 
   &.error {
-    @apply border-danger-200
-      bg-danger-600
-      dark:border-danger-800;
+    @apply bg-danger-600;
   }
 
   &.warning {
-    @apply border-warning-200
-      bg-warning-600
-      dark:border-warning-600;
+    @apply bg-warning-600;
   }
 
   &.info {
-    @apply border-info-200
-      bg-info-600
-      dark:border-info-800;
+    @apply bg-info-600;
   }
 
   &.neutral {
-    @apply border-neutral-200
-      bg-neutral-600
-      dark:border-neutral-800;
+    @apply bg-neutral-600;
   }
 }
