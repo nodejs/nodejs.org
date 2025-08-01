@@ -29,7 +29,7 @@ You can address a simple case of this problem by only depending on specific vers
 
 ## Shrinkwrapping packages
 
-That brings us to [npm shrinkwrap](https://npmjs.com/doc/shrinkwrap.html)<a href="#note1-note" id="note1-top">[1]</a>:
+That brings us to [npm shrinkwrap](https://npmjs.com/doc/shrinkwrap.html)<a href="#note1-note" id="note1-top">\[1]</a>:
 
 ```
 NAME
@@ -85,7 +85,7 @@ A@0.1.0
   └── C@0.0.1
 ```
 
-Then if B\@0.0.2 is published, then a fresh "npm install A" will install:
+Then if B@0.0.2 is published, then a fresh "npm install A" will install:
 
 ```
 A@0.1.0
@@ -93,7 +93,7 @@ A@0.1.0
   └── C@0.0.1
 ```
 
-assuming the new version did not modify B's dependencies. Of course, the new version of B could include a new version of C and any number of new dependencies. As we said before, if A's author doesn't want that, she could specify a dependency on B\@0.0.1. But if A's author and B's author are not the same person, there's no way for A's author to say that she does not want to pull in newly published versions of C when B hasn't changed at all.
+assuming the new version did not modify B's dependencies. Of course, the new version of B could include a new version of C and any number of new dependencies. As we said before, if A's author doesn't want that, she could specify a dependency on B@0.0.1. But if A's author and B's author are not the same person, there's no way for A's author to say that she does not want to pull in newly published versions of C when B hasn't changed at all.
 
 In this case, A's author can use
 
@@ -117,7 +117,7 @@ This generates npm-shrinkwrap.json, which will look something like this:
 }
 ```
 
-The shrinkwrap command has locked down the dependencies based on what's currently installed in node_modules. **When "npm install" installs a package with a npm-shrinkwrap.json file in the package root, the shrinkwrap file (rather than package.json files) completely drives the installation of that package and all of its dependencies (recursively).** So now the author publishes A\@0.1.0, and subsequent installs of this package will use B\@0.0.1 and C\@0.1.0, regardless the dependencies and versions listed in A's, B's, and C's package.json files. If the authors of B and C publish new versions, they won't be used to install A because the shrinkwrap refers to older versions. Even if you generate a new shrinkwrap, it will still reference the older versions, since "npm shrinkwrap" uses what's installed locally rather than what's available in the registry.
+The shrinkwrap command has locked down the dependencies based on what's currently installed in node_modules. **When "npm install" installs a package with a npm-shrinkwrap.json file in the package root, the shrinkwrap file (rather than package.json files) completely drives the installation of that package and all of its dependencies (recursively).** So now the author publishes A@0.1.0, and subsequent installs of this package will use B@0.0.1 and C@0.1.0, regardless the dependencies and versions listed in A's, B's, and C's package.json files. If the authors of B and C publish new versions, they won't be used to install A because the shrinkwrap refers to older versions. Even if you generate a new shrinkwrap, it will still reference the older versions, since "npm shrinkwrap" uses what's installed locally rather than what's available in the registry.
 
 ### Using shrinkwrapped packages
 
@@ -144,14 +144,14 @@ For more details, check out the full docs on [npm shrinkwrap](https://npmjs.com/
 
 ## Why not just check `node_modules` into git?
 
-One previously [proposed solution](http://www.mikealrogers.com/posts/nodemodules-in-git.html) is to "npm install" your dependencies during development and commit the results into source control. Then you deploy your app from a specific git SHA knowing you've got exactly the same bits that you tested in development. This does address the problem, but it has its own issues: for one, binaries are tricky because you need to "npm install" them to get their sources, but this builds the \[system-dependent\] binary too. You can avoid checking in the binaries and use "npm rebuild" at build time, but we've had a lot of difficulty trying to do this.<a href="#note2-note" id="note2-top">[2]</a> At best, this is second-class treatment for binary modules, which are critical for many important types of Node applications.<a href="#note3-note" id="note3-top">[3]</a>
+One previously [proposed solution](http://www.mikealrogers.com/posts/nodemodules-in-git.html) is to "npm install" your dependencies during development and commit the results into source control. Then you deploy your app from a specific git SHA knowing you've got exactly the same bits that you tested in development. This does address the problem, but it has its own issues: for one, binaries are tricky because you need to "npm install" them to get their sources, but this builds the \[system-dependent] binary too. You can avoid checking in the binaries and use "npm rebuild" at build time, but we've had a lot of difficulty trying to do this.<a href="#note2-note" id="note2-top">\[2]</a> At best, this is second-class treatment for binary modules, which are critical for many important types of Node applications.<a href="#note3-note" id="note3-top">\[3]</a>
 
-Besides the issues with binary modules, this approach just felt wrong to many of us. There's a reason we don't check binaries into source control, and it's not just because they're platform-dependent. (After all, we could build and check in binaries for all supported platforms and operating systems.) It's because that approach is error-prone and redundant: error-prone because it introduces a new human failure mode where someone checks in a source change but doesn't regenerate all the binaries, and redundant because the binaries can always be built from the sources alone. An important principle of software version control is that you don't check in files derived directly from other files by a simple transformation.<a href="#note4-note" id="note4-top">[4]</a>
+Besides the issues with binary modules, this approach just felt wrong to many of us. There's a reason we don't check binaries into source control, and it's not just because they're platform-dependent. (After all, we could build and check in binaries for all supported platforms and operating systems.) It's because that approach is error-prone and redundant: error-prone because it introduces a new human failure mode where someone checks in a source change but doesn't regenerate all the binaries, and redundant because the binaries can always be built from the sources alone. An important principle of software version control is that you don't check in files derived directly from other files by a simple transformation.<a href="#note4-note" id="note4-top">\[4]</a>
 Instead, you check in the original sources and automate the transformations via the build process.
 
 Dependencies are just like binaries in this regard: they're files derived from a simple transformation of something else that is (or could easily be) already available: the name and version of the dependency. Checking them in has all the same problems as checking in binaries: people could update package.json without updating the checked-in module (or vice versa). Besides that, adding new dependencies has to be done by hand, introducing more opportunities for error (checking in the wrong files, not checking in certain files, inadvertently changing files, and so on). Our feeling was: why check in this whole dependency tree (and create a mess for binary add-ons) when we could just check in the package name and version and have the build process do the rest?
 
-Finally, the approach of checking in node*modules doesn't really scale for us. We've got at least a dozen repos that will use restify, and it doesn't make sense to check that in everywhere when we could instead just specify which version each one is using. There's another principle at work here, which is **separation of concerns**: each repo specifies \_what* it needs, while the build process figures out _where to get it_.
+Finally, the approach of checking in nod&#x65;_&#x6D;odules doesn't really scale for us. We've got at least a dozen repos that will use restify, and it doesn't make sense to check that in everywhere when we could instead just specify which version each one is using. There's another principle at work here, which is **separation of concerns**: each repo specifies \_what_ it needs, while the build process figures out _where to get it_.
 
 ## What if an author republishes an existing version of a package?
 
