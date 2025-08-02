@@ -3,6 +3,8 @@
 import Blockquote from '@node-core/ui-components/Common/Blockquote';
 import MDXCodeTabs from '@node-core/ui-components/MDX/CodeTabs';
 
+import Button from './components/Common/Button';
+import LinkWithArrow from './components/Common/LinkWithArrow';
 import DownloadButton from './components/Downloads/DownloadButton';
 import DownloadLink from './components/Downloads/DownloadLink';
 import BlogPostLink from './components/Downloads/Release/BlogPostLink';
