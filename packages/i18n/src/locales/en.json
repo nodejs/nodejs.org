@@ -229,7 +229,9 @@
         "label": "Choose Language"
       },
       "themeToggle": {
-        "label": "Toggle Dark Mode"
+        "loading": "Loading theme label...",
+        "light": "Switch to Light Mode",
+        "dark": "Switch to Dark Mode"
       }
     },
     "metabar": {

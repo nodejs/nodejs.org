@@ -13,8 +13,12 @@ const locators = {
   navLinksLocator: `[aria-label="${englishLocale.components.containers.navBar.controls.toggle}"] + div`,
   // Global UI controls
   languageDropdownName: englishLocale.components.common.languageDropdown.label,
-  themeToggleName: englishLocale.components.common.themeToggle.label,
-
+  // Initially, the themeToggle's name will be the light mode i18n.
+  themeToggleName: englishLocale.components.common.themeToggle.loading,
+  themeToggleAriaLabels: {
+    light: englishLocale.components.common.themeToggle.light,
+    dark: englishLocale.components.common.themeToggle.dark,
+  },
   // Search components (from Orama library)
   searchButtonTag: 'orama-button',
   searchInputTag: 'orama-input',
@@ -22,7 +26,9 @@ const locators = {
 };
 
 const getTheme = (page: Page) =>
-  page.evaluate(() => document.documentElement.dataset.theme);
+  page.evaluate(
+    () => document.documentElement.dataset.theme as 'light' | 'dark'
+  );
 
 const openLanguageMenu = async (page: Page) => {
   const button = page.getByRole('button', {
@@ -70,11 +76,20 @@ test.describe('Node.js Website', () => {
       await expect(themeToggle).toBeVisible();
 
       const initialTheme = await getTheme(page);
+      const initialAriaLabel = await themeToggle.getAttribute('aria-label');
+      expect(initialAriaLabel).toBe(
+        locators.themeToggleAriaLabels[initialTheme]
+      );
+
       await themeToggle.click();
 
       const newTheme = await getTheme(page);
-      expect(newTheme).not.toEqual(initialTheme);
+      const newAriaLabel = await themeToggle.getAttribute('aria-label');
+
+      expect(newTheme).not.toBe(initialTheme);
       expect(['light', 'dark']).toContain(newTheme);
+
+      expect(newAriaLabel).toBe(locators.themeToggleAriaLabels[newTheme]);
     });
 
     test('should persist theme across page navigation', async ({ page }) => {
