@@ -1,7 +1,6 @@
 'use strict';
 
 import nodevu from '@nodevu/core';
-import { glob } from 'glob';
 
 // Gets the appropriate release status for each major release
 const getNodeReleaseStatus = (now, support) => {
@@ -12,11 +11,11 @@ const getNodeReleaseStatus = (now, support) => {
   }
 
   if (maintenanceStart && now >= new Date(maintenanceStart)) {
-    return 'Maintenance';
+    return 'Maintenance LTS';
   }
 
   if (ltsStart && now >= new Date(ltsStart)) {
-    return 'LTS';
+    return 'Active LTS';
   }
 
   if (currentStart && now >= new Date(currentStart)) {
@@ -33,12 +32,6 @@ const getNodeReleaseStatus = (now, support) => {
  * @returns {Promise<Array<import('../../types').NodeRelease>>}
  */
 const generateReleaseData = async () => {
-  const releaseAnnouncements = await glob('**/*-release-announce.md', {
-    root: process.cwd(),
-    cwd: 'pages/en/blog/announcements/',
-    absolute: false,
-  });
-
   const nodevuOutput = await nodevu({ fetch });
 
   const majors = Object.entries(nodevuOutput).filter(
@@ -85,14 +78,6 @@ const generateReleaseData = async () => {
       versionWithPrefix: `v${release.semver.raw}`,
     }));
 
-    const majorVersion = latestVersion.semver.major;
-
-    const releaseAnnounceLink = releaseAnnouncements.includes(
-      `v${majorVersion}-release-announce.md`
-    )
-      ? `/blog/announcements/v${majorVersion}-release-announce`
-      : undefined;
-
     return {
       ...support,
       status: status,
@@ -100,12 +85,11 @@ const generateReleaseData = async () => {
       version: latestVersion.semver.raw,
       versionWithPrefix: `v${latestVersion.semver.raw}`,
       codename: major.support.codename || '',
-      isLts: status === 'LTS',
+      isLts: status.endsWith('LTS'),
       npm: latestVersion.dependencies.npm || '',
       v8: latestVersion.dependencies.v8,
       releaseDate: latestVersion.releaseDate,
       modules: latestVersion.modules.version || '',
-      releaseAnnounceLink: releaseAnnounceLink,
       minorVersions: minorVersions,
     };
   });

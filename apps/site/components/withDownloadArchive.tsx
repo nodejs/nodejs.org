@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import { getClientContext } from '#site/client-context';
-import getReleaseData from '#site/next-data/releaseData';
+import provideReleaseData from '#site/next-data/providers/releaseData';
 import {
   buildReleaseArtifacts,
   extractVersionFromPath,
@@ -37,7 +37,7 @@ const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
   }
 
   // Find the release data for the given version
-  const releaseData = await getReleaseData();
+  const releaseData = provideReleaseData();
   const release = findReleaseByVersion(releaseData, version);
 
   if (!release) {

@@ -1,14 +1,24 @@
 {
+  "$schema": "./node_modules/wrangler/config-schema.json",
   "main": ".open-next/worker.js",
   "name": "nodejs-website",
   "compatibility_date": "2024-11-07",
-  "compatibility_flags": ["nodejs_compat"],
-  "account_id": "8ed4d03ac99f77561d0e8c9cbcc76cb6",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "account_id": "fb4a2d0f103c6ff38854ac69eb709272",
   "minify": true,
   "keep_names": false,
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS",
+    "run_worker_first": true,
+  },
+  "vars": {
+    // Variables needed for skew protection
+    // Also note that an appropriate CF_WORKERS_SCRIPTS_API_TOKEN secret
+    // needs to be set as well in the Cloudflare dashboard
+    "CF_WORKER_NAME": "nodejs-website",
+    "CF_PREVIEW_DOMAIN": "nodejsorg",
+    "CF_ACCOUNT_ID": "fb4a2d0f103c6ff38854ac69eb709272",
   },
   "observability": {
     "enabled": true,
@@ -25,8 +35,8 @@
   },
   "kv_namespaces": [
     {
-      "binding": "NEXT_CACHE_WORKERS_KV",
-      "id": "32e8e26d2d2647fd96789baf83209fa9",
+      "binding": "NEXT_INC_CACHE_KV",
+      "id": "69b7422d56dd4244bc0127b69ecdc36f",
     },
   ],
 }

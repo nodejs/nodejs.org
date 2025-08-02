@@ -1,7 +1,7 @@
-# Descărcați și instalați Homebrew
+# Descarcă și instalează Homebrew
 curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
-# Descărcați și instalați Node.js:
+# Descarcă și instalează Node.js:
 brew install node@${props.release.major}
 
 # Verificați versiunea de Node.js:

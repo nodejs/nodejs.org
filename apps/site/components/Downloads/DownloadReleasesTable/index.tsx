@@ -1,32 +1,23 @@
 import Badge from '@node-core/ui-components/Common/Badge';
-import { getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
 import DetailsButton from '#site/components/Downloads/DownloadReleasesTable/DetailsButton';
 import Link from '#site/components/Link';
-import getReleaseData from '#site/next-data/releaseData';
+import provideReleaseData from '#site/next-data/providers/releaseData';
 
 const BADGE_KIND_MAP = {
   'End-of-life': 'warning',
-  Maintenance: 'neutral',
-  LTS: 'info',
+  'Maintenance LTS': 'neutral',
+  'Active LTS': 'info',
   Current: 'default',
   Pending: 'default',
 } as const;
 
-const BADGE_TEXT_MAP = {
-  'End-of-life': 'End-of-Life (EOL)',
-  Maintenance: 'Maintenance LTS',
-  LTS: 'Active LTS',
-  Current: 'Current',
-  Pending: 'Pending',
-} as const;
-
-const DownloadReleasesTable: FC = async () => {
-  const releaseData = await getReleaseData();
-
-  const t = await getTranslations();
+const DownloadReleasesTable: FC = () => {
+  const releaseData = provideReleaseData();
+  const t = useTranslations();
 
   return (
     <table id="tbVersions" className="download-table full-width">
@@ -57,7 +48,8 @@ const DownloadReleasesTable: FC = async () => {
             </td>
             <td data-label="Status">
               <Badge kind={BADGE_KIND_MAP[release.status]} size="small">
-                {BADGE_TEXT_MAP[release.status]}
+                {release.status}
+                {release.status === 'End-of-life' ? ' (EoL)' : ''}
               </Badge>
             </td>
             <td className="download-table-last">

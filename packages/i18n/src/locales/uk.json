@@ -3,11 +3,16 @@
     "containers": {
       "footer": {
         "links": {
+          "openJSFoundation": "OpenJS Foundation",
           "trademarkPolicy": "Політика торгових марок",
           "privacyPolicy": "Політика конфіденційності",
           "versionSupport": "Підтримка версії",
           "codeOfConduct": "Кодекс поведінки",
           "security": "Політика безпеки"
+        },
+        "releasePills": {
+          "latestLTS": "Остання LTS",
+          "latestRelease": "Останній реліз"
         }
       },
       "navBar": {
@@ -94,6 +99,12 @@
             "acceptInputFromTheCommandLineInNodejs": "Зчитування вводу з командного рядка з Node.js"
           }
         },
+        "migrations": {
+          "links": {
+            "migrations": "Користувацькі міграції",
+            "introduction": "Вступ до користувацьких міграцій"
+          }
+        },
         "modules": {
           "links": {
             "modules": "Модулі",
@@ -157,12 +168,13 @@
       "details": "Деталі"
     },
     "releaseModal": {
-      "title": "Node.js {version} ({codename})",
-      "titleWithoutCodename": "Node.js {version}",
+      "title": "Node.js v{version} ({codename})",
+      "titleWithoutCodename": "Node.js v{version}",
       "overview": "Огляд",
       "minorVersions": "Мінорні версії",
       "releaseAnnouncement": "Оголошення релізу",
-      "unsupportedVersionWarning": "Ця версія більше не супроводжується. Будь ласка, використовуйте підтримувану версію."
+      "unsupportedVersionWarning": "Ця версія більше не супроводжується. Будь ласка, використовуйте підтримувану версію. <link>Про кінець підтримки</link>.",
+      "ltsVersionFeaturesNotice": "Бажаєте отримати нові функції швидше? Установіть <link>останню версію Node.js</link> та випробуйте останні покращення!"
     },
     "minorReleasesTable": {
       "version": "Версія",
@@ -199,7 +211,7 @@
         "next": "Далі"
       },
       "codebox": {
-        "copy": "Скопіювати",
+        "copy": "Скопіювати в буфер обміну",
         "copied": "Скопійовано!"
       },
       "pagination": {
@@ -232,9 +244,20 @@
       "tableOfContents": "Зміст"
     },
     "search": {
-      "searchBox": {
-        "placeholder": "Пошук..."
-      }
+      "searchPlaceholder": "Уведіть щось...",
+      "chatPlaceholder": "Спитайте мене про щось",
+      "noResultsFoundFor": "Не знайдено результатів для",
+      "suggestions": "Пропозиції",
+      "seeAll": "Показати все",
+      "addMore": "Додати ще",
+      "clearChat": "Очистити чат",
+      "errorMessage": "Виникла помилка під час пошуку. Спробуйте знову.",
+      "disclaimer": "ШІ може робити помилки. Перевіряйте отриману інформацію.",
+      "startYourSearch": "Почніть пошук",
+      "initErrorSearch": "Не вдалося ініціалізувати пошуковий сервіс",
+      "initErrorChat": "Не вдалося ініціалізувати сервіс чату",
+      "chatButtonLabel": "Отримати результати ШІ",
+      "searchButtonLabel": "Пошук"
     },
     "blog": {
       "blogHeader": {
@@ -246,7 +269,7 @@
   "layouts": {
     "blogPost": {
       "author": {
-        "byLine": "{author, select, null {} other  {Від {author}, }}"
+        "byLine": "{author, select, null {} other {Від {author}, }}"
       }
     },
     "blogIndex": {
@@ -259,11 +282,11 @@
         "all": "Усе",
         "announcements": "Оголошення",
         "release": "Релізи",
-        "vulnerability": "Уразливості",
+        "vulnerability": "Вразливості",
         "advisory-board": "Консультативний комітет",
         "community": "Спільнота",
         "feature": "Функціонал",
-        "module": "Модуль",
+        "module": "Модулі",
         "npm": "npm",
         "uncategorized": "Без категорії",
         "video": "Відео",
@@ -302,6 +325,7 @@
       },
       "codeBox": {
         "unsupportedVersionWarning": "Ця версія більше не супроводжується. Будь ласка, використовуйте підтримувану версію. <link>Про кінець підтримки</link>.",
+        "ltsVersionFeaturesNotice": "Бажаєте отримати нові функції швидше? Установіть <link>останню версію Node.js</link> та випробуйте останні покращення!",
         "communityPlatformInfo": "Методи установки, які включають ПЗ спільноти, підтримуються відповідними супроводжувачами.",
         "externalSupportInfo": "Якщо виявите проблеми, відвідайте <link>вебсайт {platform}</link>",
         "noScriptDetected": "Ця сторінка вимагає JavaScript. Завантажити Node.js без JavaScript можна, безпосередньо відвідавши <link>сторінку релізів</link>.",

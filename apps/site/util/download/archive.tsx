@@ -166,7 +166,7 @@ export const findReleaseByVersion = (
   version: string | 'archive'
 ) => {
   if (version === 'archive') {
-    return releaseData.find(release => release.status === 'LTS');
+    return releaseData.find(release => release.status === 'Active LTS');
   }
 
   return releaseData.find(release => semVer.major(version) === release.major);

@@ -13,13 +13,14 @@
   "main": "./src/index.mjs",
   "module": "./src/index.mjs",
   "scripts": {
-    "lint": "turbo lint:js",
+    "lint": "node --run lint:js",
+    "lint:fix": "node --run lint:js:fix",
     "lint:js": "eslint \"**/*.{js,mjs,ts}\"",
-    "lint:fix": "node --run lint -- -- --fix"
+    "lint:js:fix": "node --run lint:js -- --fix"
   },
   "devDependencies": {
     "eslint-import-resolver-typescript": "~4.4.4",
     "typescript": "catalog:",
-    "typescript-eslint": "~8.35.1"
+    "typescript-eslint": "~8.38.0"
   }
 }

@@ -2,10 +2,10 @@
 
 import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 
+import Button from './components/Common/Button';
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
-import DownloadsTable from './components/Downloads/DownloadsTable';
-import { MinorReleasesTable } from './components/Downloads/MinorReleasesTable';
-import { ReleaseOverview } from './components/Downloads/ReleaseOverview';
+import Link from './components/Link';
+import LinkWithArrow from './components/LinkWithArrow';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
 import WithBadgeGroup from './components/withBadgeGroup';
 import WithBanner from './components/withBanner';
@@ -40,4 +40,10 @@ export const mdxComponents = {
   MinorReleasesTable,
   // Renders an container for Upcoming Node.js Meetings
   UpcomingMeetings,
+  // Renders a Button Component for `button` tags
+  Button,
+  // Regular links (without arrow)
+  Link,
+  // Links with External Arrow
+  LinkWithArrow,
 };

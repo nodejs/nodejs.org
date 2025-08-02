@@ -8,6 +8,8 @@ updates:
       - 'github_actions:pull-request'
     commit-message:
       prefix: meta
+    cooldown:
+      default-days: 3
     open-pull-requests-limit: 10
 
   - package-ecosystem: npm
@@ -19,6 +21,8 @@ updates:
       - 'github_actions:pull-request'
     commit-message:
       prefix: meta
+    cooldown:
+      default-days: 3
     groups:
       lint:
         patterns:

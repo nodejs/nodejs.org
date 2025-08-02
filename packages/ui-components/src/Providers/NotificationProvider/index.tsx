@@ -10,12 +10,12 @@ import type {
 
 import Notification from '#ui/Common/Notification';
 
+import styles from './index.module.css';
+
 type NotificationContextType = {
   message: string | ReactNode;
   duration: number;
 } | null;
-
-type NotificationProps = { viewportClassName?: string };
 
 const NotificationContext = createContext<NotificationContextType>(null);
 
@@ -25,10 +25,7 @@ export const NotificationDispatch = createContext<
 
 export const useNotification = () => useContext(NotificationDispatch);
 
-export const NotificationProvider: FC<PropsWithChildren<NotificationProps>> = ({
-  viewportClassName,
-  children,
-}) => {
+export const NotificationProvider: FC<PropsWithChildren> = ({ children }) => {
   const [notification, dispatch] = useState<NotificationContextType>(null);
 
   useEffect(() => {
@@ -42,14 +39,13 @@ export const NotificationProvider: FC<PropsWithChildren<NotificationProps>> = ({
       <NotificationDispatch.Provider value={dispatch}>
         <Toast.Provider>
           {children}
-
-          <Toast.Viewport className={viewportClassName} />
-
           {notification && (
             <Notification duration={notification.duration}>
               {notification.message}
             </Notification>
           )}
+
+          <Toast.Viewport className={styles.viewport} />
         </Toast.Provider>
       </NotificationDispatch.Provider>
     </NotificationContext.Provider>

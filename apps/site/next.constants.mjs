@@ -15,27 +15,6 @@ export const IS_DEV_ENV = process.env.NODE_ENV === 'development';
 export const VERCEL_ENV = process.env.VERCEL_ENV || undefined;
 
 /**
- * This is used for telling Next.js if we are current during build time or in runtime environment
- *
- * Can be used for conditionally enabling features that we know are Vercel only
- *
- * @see https://vercel.com/docs/projects/environment-variables/system-environment-variables#VERCEL_REGION
- */
-export const VERCEL_REGION = process.env.VERCEL_REGION || undefined;
-
-/**
- * This constant determines if the current environment is NOT a Vercel runtime environment.
- *
- * The logic is as follows:
- * - If we are NOT in a development environment (`!IS_DEV_ENV`) AND:
- *   - Vercel environment variable (`VERCEL_ENV`) is defined but the Vercel region (`VERCEL_REGION`) is NOT defined, OR
- *   - Vercel environment variable (`VERCEL_ENV`) is NOT defined at all.
- * This helps identify cases where the application is running outside of Vercel's runtime environment.
- */
-export const IS_NOT_VERCEL_RUNTIME_ENV =
-  !IS_DEV_ENV && ((VERCEL_ENV && !VERCEL_REGION) || !VERCEL_ENV);
-
-/**
  * This is used for telling Next.js to do a Static Export Build of the Website
  *
  * This is used for static/without a Node.js server hosting, such as on our
@@ -63,6 +42,8 @@ export const ENABLE_STATIC_EXPORT_LOCALE =
  *
  * This variable can either come from the Vercel Deployment as `NEXT_PUBLIC_VERCEL_URL` or from the `NEXT_PUBLIC_BASE_URL` Environment Variable that is manually defined
  * by us if necessary. Otherwise it will fallback to the default Node.js Website URL.
+ *
+ * @TODO: We should get rid of needing to rely on `VERCEL_URL` for deployment URL.
  *
  * @see https://vercel.com/docs/concepts/projects/environment-variables/system-environment-variables#framework-environment-variables
  */
@@ -97,20 +78,6 @@ export const DOCS_URL =
  * Note that this is a custom Environment Variable that can be defined by us when necessary
  */
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
-
-/**
- * This is used for fetching static next-data through the /en/next-data/ endpoint
- *
- * Note this is assumes that the Node.js Website is either running within Vercel Environment
- * or running locally (either production or development) mode
- *
- * Note this variable can be overridden via a manual Environment Variable defined by us if necessary.
- */
-export const NEXT_DATA_URL = process.env.NEXT_PUBLIC_DATA_URL
-  ? process.env.NEXT_PUBLIC_DATA_URL
-  : VERCEL_ENV
-    ? `${BASE_URL}${BASE_PATH}/en/next-data/`
-    : `http://localhost:${process.env.PORT ?? 3000}/en/next-data/`;
 
 /**
  * This is the default type of blog post type that we use for OG Meta Tags

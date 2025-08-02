@@ -7,7 +7,7 @@ import WithNavBar from '#site/components/withNavBar';
 
 import styles from './layouts.module.css';
 
-const DownloadLayout: FC<PropsWithChildren> = async ({ children }) => {
+const DownloadLayout: FC<PropsWithChildren> = ({ children }) => {
   const { frontmatter } = getClientContext();
 
   return (

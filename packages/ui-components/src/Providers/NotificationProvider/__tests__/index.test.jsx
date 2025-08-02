@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { NotificationProvider, useNotification } from '../NotificationProvider';
+import { NotificationProvider, useNotification } from '..';
 
 describe('useNotification', () => {
     it('should return the notification dispatch function', () => {
