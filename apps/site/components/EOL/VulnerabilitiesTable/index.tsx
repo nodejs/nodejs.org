@@ -23,11 +23,11 @@ const VulnerabilitiesTable: FC<{
         </tr>
       </thead>
       <tbody>
-        {vulnerabilities.map((vuln, i) => (
+        {vulnerabilities.map((vulnerability, i) => (
           <tr key={i}>
             <td>
-              {vuln.cve.length
-                ? vuln.cve.map(cveId => (
+              {vulnerability.cve.length
+                ? vulnerability.cve.map(cveId => (
                     <div key={cveId}>
                       <LinkWithArrow
                         href={`https://www.cve.org/CVERecord?id=${cveId}`}
@@ -41,15 +41,15 @@ const VulnerabilitiesTable: FC<{
                 : '-'}
             </td>
             <td>
-              <VulnerabilityChip severity={vuln.severity} />
+              <VulnerabilityChip severity={vulnerability.severity} />
             </td>
             <td className={classNames(maxWidth, 'truncate')}>
-              {vuln.description || vuln.overview || '-'}
+              {vulnerability.description || vulnerability.overview || '-'}
             </td>
             <td>
-              {vuln.ref ? (
+              {vulnerability.ref ? (
                 <LinkWithArrow
-                  href={vuln.ref}
+                  href={vulnerability.ref}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
