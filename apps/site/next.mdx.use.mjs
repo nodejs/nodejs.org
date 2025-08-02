@@ -4,6 +4,9 @@ import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 
 import Button from './components/Common/Button';
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
+import DownloadsTable from './components/Downloads/DownloadsTable';
+import MinorReleasesTable from './components/Downloads/MinorReleasesTable';
+import ReleaseOverview from './components/Downloads/ReleaseOverview';
 import Link from './components/Link';
 import LinkWithArrow from './components/LinkWithArrow';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';

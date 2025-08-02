@@ -19,9 +19,7 @@ type MinorReleasesTableProps = {
   releases: Array<MinorVersion>;
 };
 
-export const MinorReleasesTable: FC<MinorReleasesTableProps> = ({
-  releases,
-}) => {
+const MinorReleasesTable: FC<MinorReleasesTableProps> = ({ releases }) => {
   const t = useTranslations('components');
 
   return (
@@ -97,3 +95,5 @@ export const MinorReleasesTable: FC<MinorReleasesTableProps> = ({
     </div>
   );
 };
+
+export default MinorReleasesTable;
