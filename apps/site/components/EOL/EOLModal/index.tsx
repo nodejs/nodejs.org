@@ -16,15 +16,12 @@ const EOLModal: FC<ModalProps> = ({ open, closeModal, data }) => {
   const { release, vulnerabilities } = data as EOLModalData;
   const t = useTranslations();
 
-  const modalHeading = t(
-    release.codename
-      ? 'components.eolModal.title'
-      : 'components.eolModal.titleWithoutCodename',
-    {
-      version: release.major,
-      codename: release.codename ?? '',
-    }
-  );
+  const modalHeading = release.codename
+    ? t('components.eolModal.title', {
+        version: release.major,
+        codename: release.codename,
+      })
+    : t('components.eolModal.titleWithoutCodename', { version: release.major });
 
   const [knownVulnerabilities, unknownVulnerabilities] = useMemo(
     () =>
