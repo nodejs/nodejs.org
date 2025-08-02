@@ -3,7 +3,7 @@
 import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 
 import Button from './components/Common/Button';
-import LinkWithArrow from './components/common/LinkWithArrow';
+import LinkWithArrow from './components/Common/LinkWithArrow';
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
 import Link from './components/Link';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
