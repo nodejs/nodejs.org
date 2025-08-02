@@ -1,6 +1,6 @@
 import { Modal, Title, Content } from '@node-core/ui-components/Common/Modal';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import { useMemo, type FC } from 'react';
 
 import UnknownSeveritySection from '#site/components/EOL/UnknownSeveritySection';
 import VulnerabilitiesTable from '#site/components/EOL/VulnerabilitiesTable';
@@ -26,21 +26,33 @@ const EOLModal: FC<ModalProps> = ({ open, closeModal, data }) => {
     }
   );
 
-  const [knownVulnerabilities, unknownVulnerabilities] = vulnerabilities.reduce(
-    (acc, vulnerability) => {
-      if (vulnerability.severity === 'unknown') {
-        acc[1].push(vulnerability as UnknownSeverityVulnerability);
-      } else {
-        acc[0].push(vulnerability as KnownVulnerability);
-      }
-      return acc;
-    },
-    [[], []] as [Array<KnownVulnerability>, Array<UnknownSeverityVulnerability>]
+  const [knownVulnerabilities, unknownVulnerabilities] = useMemo(
+    () =>
+      vulnerabilities.reduce(
+        (acc, vulnerability) => {
+          if (vulnerability.severity === 'unknown') {
+            acc[1].push(vulnerability as UnknownSeverityVulnerability);
+          } else {
+            acc[0].push(vulnerability as KnownVulnerability);
+          }
+          return acc;
+        },
+        [[], []] as [
+          Array<KnownVulnerability>,
+          Array<UnknownSeverityVulnerability>,
+        ]
+      ),
+    [vulnerabilities]
   );
 
-  knownVulnerabilities.sort(
-    (a, b) =>
-      SEVERITY_ORDER.indexOf(a.severity) - SEVERITY_ORDER.indexOf(b.severity)
+  useMemo(
+    () =>
+      knownVulnerabilities.sort(
+        (a, b) =>
+          SEVERITY_ORDER.indexOf(a.severity) -
+          SEVERITY_ORDER.indexOf(b.severity)
+      ),
+    [knownVulnerabilities]
   );
 
   const hasKnownVulnerabilities = knownVulnerabilities.length > 0;
