@@ -18,6 +18,16 @@
     flex
     max-h-[29rem]
     overflow-y-auto;
+
+  table {
+    @apply xs:border-t-0
+      border-t;
+  }
+
+  th {
+    @apply xs:border-t
+      border-neutral-200;
+  }
 }
 
 .information {
@@ -26,4 +36,15 @@
 
 .links {
   @apply md:w-44;
+}
+
+.stickyHeader {
+  @apply top-0
+    z-10
+    border-t
+    bg-white
+    text-left
+    font-semibold
+    sm:sticky
+    dark:bg-neutral-950;
 }

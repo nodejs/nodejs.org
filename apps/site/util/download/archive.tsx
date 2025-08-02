@@ -109,7 +109,7 @@ export const getDownloadArchiveNavigation = (releases: Array<NodeRelease>) => {
       }
 
       acc[status].push({
-        label: `Node.js v${major} ${codename ? `(${codename})` : ''}`,
+        label: `Node.js v${major}.x ${codename ? `(${codename})` : ''}`,
         value: `/download/${versionWithPrefix}`,
       });
 
