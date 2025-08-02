@@ -1,6 +1,5 @@
-import BaseButton, {
-  type ButtonProps,
-} from '@node-core/ui-components/Common/BaseButton';
+import BaseButton from '@node-core/ui-components/Common/BaseButton';
+import type { ButtonProps } from '@node-core/ui-components/Common/BaseButton';
 import type { FC, ComponentProps } from 'react';
 
 import Link from '#site/components/Link';

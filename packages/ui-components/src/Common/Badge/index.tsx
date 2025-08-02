@@ -3,7 +3,7 @@ import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';
 
-type BadgeKind = 'default' | 'warning' | 'error' | 'info' | 'neutral';
+export type BadgeKind = 'default' | 'warning' | 'error' | 'info' | 'neutral';
 type BadgeSize = 'small' | 'medium';
 
 type BadgeProps = HTMLAttributes<HTMLSpanElement> & {
