@@ -86,20 +86,44 @@ const getCompatibleArtifacts = ({
 
 /**
  * Generates the navigation links for the Node.js download archive
- * It creates a list of links for each major release, formatted with the major
- * version and codename if available.
+ * It creates a list of links for each major release, grouped by status,
+ * formatted with the major version and codename if available.
  */
 export const getDownloadArchiveNavigation = (releases: Array<NodeRelease>) => {
-  const items = releases.map(({ major, codename, versionWithPrefix }) => ({
-    label: `Node.js v${major} ${codename ? `(${codename})` : ''}`,
-    value: `/download/${versionWithPrefix}`,
-  }));
-
-  return [
-    {
-      items,
-    },
+  // Define status order priority
+  const statusOrder = [
+    'Current',
+    'Active LTS',
+    'Maintenance LTS',
+    'End-of-life',
+    'Pending',
   ];
+
+  // Group releases by status
+  const groupedByStatus = releases.reduce(
+    (acc, release) => {
+      const { status, major, codename, versionWithPrefix } = release;
+
+      if (!acc[status]) {
+        acc[status] = [];
+      }
+
+      acc[status].push({
+        label: `Node.js v${major} ${codename ? `(${codename})` : ''}`,
+        value: `/download/${versionWithPrefix}`,
+      });
+
+      return acc;
+    },
+    {} as Record<string, Array<{ label: string; value: string }>>
+  );
+
+  return statusOrder
+    .filter(status => groupedByStatus[status])
+    .map(status => ({
+      label: status,
+      items: groupedByStatus[status],
+    }));
 };
 
 /**

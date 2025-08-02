@@ -24,6 +24,7 @@ const WithReleaseSelect: FC<WithReleaseSelectProps> = ({ ...props }) => {
       values={navigation}
       as={Link}
       onChange={push}
+      className="w-full md:w-64"
     />
   );
 };
