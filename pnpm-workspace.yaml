@@ -25,4 +25,4 @@ catalog:
   react: ^19.1.1
   tailwindcss: ~4.0.17
   typescript: ~5.8.2
-  'cross-env': ^7.0.3
+  'cross-env': ^10.0.0
