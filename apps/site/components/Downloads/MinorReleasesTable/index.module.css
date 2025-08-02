@@ -26,7 +26,8 @@
 
   th {
     @apply xs:border-t
-      border-neutral-200;
+      border-neutral-200
+      dark:border-neutral-800;
   }
 }
 
