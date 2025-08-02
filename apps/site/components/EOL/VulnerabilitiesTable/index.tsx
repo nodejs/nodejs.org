@@ -27,15 +27,15 @@ const VulnerabilitiesTable: FC<{
           <tr key={i}>
             <td>
               {vulnerability.cve.map(cveId => (
-                  <div key={cveId}>
-                    <LinkWithArrow
-                      href={`https://www.cve.org/CVERecord?id=${cveId}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {cveId}
-                    </LinkWithArrow>
-                  </div>
+                <div key={cveId}>
+                  <LinkWithArrow
+                    href={`https://www.cve.org/CVERecord?id=${cveId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {cveId}
+                  </LinkWithArrow>
+                </div>
               ))}
 
               {vulnerability.cve.length > 0 || '-'}
