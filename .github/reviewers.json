@@ -1,0 +1,13 @@
+{
+  "fs": "fs",
+  "timers": "timers",
+  "events": "events",
+  "repl": "repl",
+  "diagnostics": "diagnostics",
+  "undici": "undici",
+  "npm": "npm",
+  "security": "security-wg",
+  "n-api": "addon-api",
+  "test": "test_runner",
+  "typescript": "typescript"
+}

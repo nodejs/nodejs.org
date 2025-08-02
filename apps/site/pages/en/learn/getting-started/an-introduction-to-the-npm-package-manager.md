@@ -2,6 +2,7 @@
 title: An introduction to the npm package manager
 layout: learn
 authors: flaviocopes, MylesBorins, LaRuaNa, jgb-solutions, amiller-gh, ahmadawais
+api: npm
 ---
 
 # An introduction to the npm package manager

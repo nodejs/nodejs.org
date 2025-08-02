@@ -1,0 +1,62 @@
+name: Request Reviewers
+
+on:
+  pull_request_target:
+    branches:
+      - main
+    types:
+      - opened
+      - reopened
+    paths:
+      - 'apps/site/pages/en/**/*.md'
+      - 'apps/site/pages/en/**/*.mdx'
+
+# Cancel any runs on the same branch
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  actions: read
+
+jobs:
+  request-review:
+    name: Request Review from API Experts
+    runs-on: ubuntu-latest
+
+    permissions:
+      # This permission is required to request reviews
+      pull-requests: write
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
+        with:
+          egress-policy: audit
+
+      - name: Checkout Repo
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: changed-files
+        run: |
+          FILES=$(git diff --name-only $BASE $HEAD | grep -E '^apps/site/pages/en/.*\.(md|mdx)$')
+          echo $FILES
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          echo $FILES >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+
+      - name: Get Reviewers
+        id: reviewers
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        with:
+          script: |
+            const { default: reviewers } = await import("${{github.workspace}}/.github/scripts/get-reviewers.mjs");
+            reviewers(github, context, process.env.PR_FILES);
+        env:
+          PR_FILES: ${{ steps.changed-files.outputs.files }}

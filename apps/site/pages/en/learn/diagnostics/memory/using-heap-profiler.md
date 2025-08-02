@@ -1,6 +1,7 @@
 ---
 title: Using Heap Profiler
 layout: learn
+api: diagnostics
 ---
 
 # Using Heap Profiler

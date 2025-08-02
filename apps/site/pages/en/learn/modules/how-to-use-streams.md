@@ -2,6 +2,7 @@
 title: How to use Streams
 layout: learn
 authors: mcollina, ceres6, simoneb, codyzu
+api: streams
 ---
 
 # How To Use Streams

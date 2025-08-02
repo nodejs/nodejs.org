@@ -2,6 +2,7 @@
 title: Reading files with Node.js
 layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, benhalverson
+api: fs
 ---
 
 # Reading files with Node.js

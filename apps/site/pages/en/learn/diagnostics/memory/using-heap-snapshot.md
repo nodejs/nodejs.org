@@ -1,6 +1,7 @@
 ---
 title: Using Heap Snapshot
 layout: learn
+api: diagnostics, v8
 ---
 
 # Using Heap Snapshot

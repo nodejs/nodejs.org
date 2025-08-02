@@ -2,6 +2,7 @@
 title: Collecting code coverage in Node.js
 layout: learn
 authors: avivkeller
+api: test
 ---
 
 # Collecting code coverage in Node.js

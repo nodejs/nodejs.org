@@ -2,6 +2,7 @@
 title: Security Best Practices
 layout: learn
 authors: RafaelGSS, UlisesGascon, fraxken, facutuesca, mhdawson, arhart, naugtur, anonrig
+api: security
 ---
 
 # Security Best Practices

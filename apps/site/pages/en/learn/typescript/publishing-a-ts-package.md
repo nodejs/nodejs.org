@@ -2,6 +2,7 @@
 title: Publishing a TypeScript package
 layout: learn
 authors: JakobJingleheimer
+api: typescript
 ---
 
 # Publishing a TypeScript package

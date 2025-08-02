@@ -2,6 +2,7 @@
 title: Accept input from the command line in Node.js
 layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais
+api: cli
 ---
 
 # Accept input from the command line in Node.js

@@ -2,6 +2,7 @@
 title: Discovering Node.js's test runner
 layout: learn
 authors: AugustinMauroy
+api: test
 ---
 
 # Discovering Node.js's test runner

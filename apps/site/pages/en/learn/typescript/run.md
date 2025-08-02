@@ -2,6 +2,7 @@
 title: Running TypeScript with a runner
 layout: learn
 authors: AugustinMauroy
+api: typescript
 ---
 
 # Running TypeScript with a runner

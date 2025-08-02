@@ -1,6 +1,7 @@
 ---
 title: Memory
 layout: learn
+api: diagnostics
 ---
 
 # Memory

@@ -2,6 +2,7 @@
 title: Understanding process.nextTick()
 layout: learn
 authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais, ovflowd, marksist300
+api: process
 ---
 
 # Understanding process.nextTick()

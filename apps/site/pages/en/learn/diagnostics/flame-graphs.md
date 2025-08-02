@@ -1,6 +1,7 @@
 ---
 title: Flame Graphs
 layout: learn
+api: diagnostics
 ---
 
 # Flame Graphs

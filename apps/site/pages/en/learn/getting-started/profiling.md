@@ -1,6 +1,7 @@
 ---
 title: Profiling Node.js Applications
 layout: learn
+api: diagnostics
 ---
 
 # Profiling Node.js Applications

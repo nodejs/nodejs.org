@@ -2,6 +2,7 @@
 title: Discover JavaScript Timers
 layout: learn
 authors: flaviocopes, MylesBorins, LaRuaNa, amiller-gh, ahmadawais, ovflowd
+api: timers
 ---
 
 # Discover JavaScript Timers

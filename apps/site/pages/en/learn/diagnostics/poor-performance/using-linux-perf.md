@@ -1,6 +1,7 @@
 ---
 title: Using Linux Perf
 layout: learn
+api: diagnostics
 ---
 
 # Using Linux Perf

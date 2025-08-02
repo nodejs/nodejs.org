@@ -2,6 +2,7 @@
 title: Running TypeScript Natively
 layout: learn
 authors: AugustinMauroy, khaosdoctor, jakebailey, robpalme
+api: typescript
 ---
 
 # Running TypeScript Natively

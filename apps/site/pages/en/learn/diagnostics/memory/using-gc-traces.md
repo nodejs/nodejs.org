@@ -1,6 +1,7 @@
 ---
 title: Tracing garbage collection
 layout: learn
+api: diagnostics
 ---
 
 # Tracing garbage collection

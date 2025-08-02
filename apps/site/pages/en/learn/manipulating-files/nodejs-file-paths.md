@@ -2,6 +2,7 @@
 title: Node.js File Paths
 layout: learn
 authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, amiller-gh, ahmadawais
+api: fs
 ---
 
 # Node.js File Paths
