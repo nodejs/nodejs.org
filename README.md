@@ -90,6 +90,8 @@ These are maintained in different repositories and we urge users to open **issue
 
 [Code of Conduct][]
 
+[Governance Document][]
+
 [Contribution Guidelines][]
 
 [Collaborator Guide][]
@@ -123,3 +125,4 @@ These are maintained in different repositories and we urge users to open **issue
 [collaborator guide]: https://github.com/nodejs/nodejs.org/blob/main/docs/collaborator-guide.md
 [figma design]: https://www.figma.com/file/a10cjjw3MzvRQMPT9FP3xz
 [translation guidelines]: https://github.com/nodejs/nodejs.org/blob/main/docs/translation.md
+[governance document]: https://github.com/nodejs/web-team/blob/main/GOVERNANCE.md
