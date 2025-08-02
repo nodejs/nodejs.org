@@ -35,4 +35,6 @@ export type KnownVulnerability = Vulnerability & {
   severity: (typeof SEVERITY_ORDER)[number];
 };
 
-export type UnknownSeverityVulnerability = Vulnerability & { severity: 'unknown' };
+export type UnknownSeverityVulnerability = Vulnerability & {
+  severity: 'unknown';
+};
