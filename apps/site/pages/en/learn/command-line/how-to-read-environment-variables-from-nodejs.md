@@ -27,7 +27,7 @@ console.log(process.env.USER_KEY); // "foobar"
 
 In the same way you can access any custom environment variable you set.
 
-Node.js 20 introduced **experimental** [support for .env files](https://nodejs.org/dist/latest-v22.x/docs/api/cli.html#--env-fileconfig).
+Node.js 20 introduced **experimental** [support for .env files](https://nodejs.org/docs/v24.5.0/api/environment_variables.html#env-files).
 
 Now, you can use the `--env-file` flag to specify an environment file when running your Node.js application. Here's an example `.env` file and how to access its variables using `process.env`.
 
