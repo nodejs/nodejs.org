@@ -1,3 +1,5 @@
+import { VULNERABILITIES_URL } from '#site/next.constants.mjs';
+
 /**
  * Groups vulnerabilities by major version number extracted from the `vulnerable` string.
  *
@@ -30,9 +32,7 @@ function groupVulnerabilitiesByMajor(vulnerabilities) {
  * @returns {Promise<import('#site/types/vulnerabilities').GroupedVulnerabilities>} Grouped vulnerabilities
  */
 export default async function generateVulnerabilityData() {
-  const response = await fetch(
-    'https://raw.githubusercontent.com/nodejs/security-wg/main/vuln/core/index.json'
-  );
+  const response = await fetch(VULNERABILITIES_URL);
 
   const data = await response.json();
 

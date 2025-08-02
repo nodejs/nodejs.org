@@ -195,3 +195,9 @@ export const SEVERITY_KIND_MAP = {
  * Which Node.js versions do we want to display vulnerabilities for?
  */
 export const EOL_VERSION_IDENTIFIER = 'End-of-life';
+
+/**
+ * The location of the Node.js Security Working Group Vulnerabilities data.
+ */
+export const VULNERABILITIES_URL =
+  'https://raw.githubusercontent.com/nodejs/security-wg/main/vuln/core/index.json';
