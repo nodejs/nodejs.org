@@ -14,7 +14,7 @@ const locators = {
   // Global UI controls
   languageDropdownName: englishLocale.components.common.languageDropdown.label,
   // Initially, the themeToggle's name will be the light mode i18n.
-  themeToggleName: englishLocale.components.common.themeToggle.light,
+  themeToggleName: englishLocale.components.common.themeToggle.loading,
   themeToggleAriaLabels: {
     light: englishLocale.components.common.themeToggle.light,
     dark: englishLocale.components.common.themeToggle.dark,
