@@ -2,12 +2,12 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import VulnerabilitiesTable from '#site/components/EOL/VulnerabilitiesTable';
-import type { Vulnerability } from '#site/types/vulnerabilities';
+import type { UnknownSeverityVulnerability } from '#site/types/vulnerabilities';
 
 const UnknownSeveritySection: FC<{
-  vulnerabilities: Array<Vulnerability>;
-  hasKnownVulns: boolean;
-}> = ({ vulnerabilities, hasKnownVulns }) => {
+  vulnerabilities: Array<UnknownSeverityVulnerability>;
+  hasKnownVulnerabilities: boolean;
+}> = ({ vulnerabilities, hasKnownVulnerabilities }) => {
   const t = useTranslations();
 
   if (!vulnerabilities.length) {
@@ -15,7 +15,7 @@ const UnknownSeveritySection: FC<{
   }
 
   return (
-    <details open={!hasKnownVulns}>
+    <details open={!hasKnownVulnerabilities}>
       <summary className="cursor-pointer font-semibold">
         {t('components.eolModal.showUnknownSeverities')} (
         {vulnerabilities.length})

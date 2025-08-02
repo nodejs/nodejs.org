@@ -9,7 +9,7 @@ import type { ModalProps } from '#site/types';
 import type {
   EOLModalData,
   KnownVulnerability,
-  Vulnerability,
+  UnknownSeverityVulnerability,
 } from '#site/types/vulnerabilities';
 
 const EOLModal: FC<ModalProps> = ({ open, closeModal, data }) => {
@@ -26,21 +26,25 @@ const EOLModal: FC<ModalProps> = ({ open, closeModal, data }) => {
     }
   );
 
-  const [knownVulns, unknownVulns] = vulnerabilities.reduce(
-    (acc, vuln) => {
-      acc[vuln.severity === 'unknown' ? 1 : 0].push(vuln as KnownVulnerability);
+  const [knownVulnerabilities, unknownVulnerabilities] = vulnerabilities.reduce(
+    (acc, vulnerability) => {
+      if (vulnerability.severity === 'unknown') {
+        acc[1].push(vulnerability as UnknownSeverityVulnerability);
+      } else {
+        acc[0].push(vulnerability as KnownVulnerability);
+      }
       return acc;
     },
-    [[], []] as [Array<KnownVulnerability>, Array<Vulnerability>]
+    [[], []] as [Array<KnownVulnerability>, Array<UnknownSeverityVulnerability>]
   );
 
-  knownVulns.sort(
+  knownVulnerabilities.sort(
     (a, b) =>
       SEVERITY_ORDER.indexOf(a.severity) - SEVERITY_ORDER.indexOf(b.severity)
   );
 
-  const hasKnownVulns = knownVulns.length > 0;
-  const hasAnyVulns = hasKnownVulns || unknownVulns.length > 0;
+  const hasKnownVulnerabilities = knownVulnerabilities.length > 0;
+  const hasAnyVulnerabilities = hasKnownVulnerabilities || unknownVulnerabilities.length > 0;
 
   return (
     <Modal open={open} onOpenChange={closeModal}>
@@ -54,14 +58,14 @@ const EOLModal: FC<ModalProps> = ({ open, closeModal, data }) => {
           </p>
         )}
 
-        {hasKnownVulns && <VulnerabilitiesTable vulnerabilities={knownVulns} />}
+        {hasKnownVulnerabilities && <VulnerabilitiesTable vulnerabilities={knownVulnerabilities} />}
 
         <UnknownSeveritySection
-          vulnerabilities={unknownVulns}
-          hasKnownVulns={hasKnownVulns}
+          vulnerabilities={unknownVulnerabilities}
+          hasKnownVulnerabilities={hasKnownVulnerabilities}
         />
 
-        {!hasAnyVulns && (
+        {!hasAnyVulnerabilities && (
           <p className="m-1">
             {t('components.eolModal.noVulnerabilitiesMessage')}
           </p>
