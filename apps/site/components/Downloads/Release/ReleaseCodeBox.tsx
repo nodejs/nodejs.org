@@ -118,18 +118,6 @@ const ReleaseCodeBox: FC = () => {
 
       <WithReleaseAlertBox status={release.status} />
 
-      {release.isLts && (
-        <AlertBox
-          title={t('components.common.alertBox.info')}
-          level="info"
-          size="small"
-        >
-          {t.rich('layouts.download.codeBox.ltsVersionFeaturesNotice', {
-            link: text => <Link href="/download/current">{text}</Link>,
-          })}
-        </AlertBox>
-      )}
-
       {!currentPlatform || currentPlatform.recommended || (
         <AlertBox
           title={t('components.common.alertBox.info')}
