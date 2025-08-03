@@ -229,7 +229,6 @@
         "label": "Choose Language"
       },
       "themeToggle": {
-        "loading": "Loading theme label...",
         "light": "Switch to Light Mode",
         "dark": "Switch to Dark Mode"
       }

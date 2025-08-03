@@ -2,7 +2,6 @@
 
 import LanguageDropdown from '@node-core/ui-components/Common/LanguageDropDown';
 import Skeleton from '@node-core/ui-components/Common/Skeleton';
-import ThemeToggle from '@node-core/ui-components/Common/ThemeToggle';
 import NavBar from '@node-core/ui-components/Containers/NavBar';
 // TODO(@AvivKeller): I don't like that we are importing styles from another module
 import styles from '@node-core/ui-components/Containers/NavBar/index.module.css';
@@ -11,7 +10,6 @@ import type { SimpleLocaleConfig } from '@node-core/ui-components/types';
 import dynamic from 'next/dynamic';
 import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
-import { useState, useEffect } from 'react';
 import type { FC } from 'react';
 
 import Link from '#site/components/Link';
@@ -28,6 +26,16 @@ const SearchButton = dynamic(() => import('#site/components/Common/Search'), {
   ),
 });
 
+const ThemeToggle = dynamic(
+  () => import('@node-core/ui-components/Common/ThemeToggle'),
+  {
+    ssr: false,
+    loading: () => (
+      <Skeleton className={styles.themeToggleSkeleton} loading={true} />
+    ),
+  }
+);
+
 const WithNavBar: FC = () => {
   const { navigationItems } = useSiteNavigation();
   const { resolvedTheme, setTheme } = useTheme();
@@ -36,16 +44,12 @@ const WithNavBar: FC = () => {
   const t = useTranslations();
 
   const locale = useLocale();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
 
   const toggleCurrentTheme = () =>
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
 
-  const themeToggleAriaLabel = !mounted
-    ? t('components.common.themeToggle.loading')
-    : resolvedTheme === 'dark'
+  const themeToggleAriaLabel =
+    resolvedTheme === 'dark'
       ? t('components.common.themeToggle.light')
       : t('components.common.themeToggle.dark');
 

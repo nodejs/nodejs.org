@@ -13,8 +13,6 @@ const locators = {
   navLinksLocator: `[aria-label="${englishLocale.components.containers.navBar.controls.toggle}"] + div`,
   // Global UI controls
   languageDropdownName: englishLocale.components.common.languageDropdown.label,
-  // Initially, the themeToggle's name will be the light mode i18n.
-  themeToggleName: englishLocale.components.common.themeToggle.loading,
   themeToggleAriaLabels: {
     light: englishLocale.components.common.themeToggle.light,
     dark: englishLocale.components.common.themeToggle.dark,
@@ -29,6 +27,11 @@ const getTheme = (page: Page) =>
   page.evaluate(
     () => document.documentElement.dataset.theme as 'light' | 'dark'
   );
+
+const getCurrentAriaLabel = (theme: string) =>
+  theme === 'dark'
+    ? locators.themeToggleAriaLabels.light
+    : locators.themeToggleAriaLabels.dark;
 
 const openLanguageMenu = async (page: Page) => {
   const button = page.getByRole('button', {
@@ -71,30 +74,27 @@ test.describe('Node.js Website', () => {
   test.describe('Theme', () => {
     test('should toggle between light/dark themes', async ({ page }) => {
       const themeToggle = page.getByRole('button', {
-        name: locators.themeToggleName,
+        name: /Switch to (Light|Dark) Mode/i,
       });
-      await expect(themeToggle).toBeVisible();
 
       const initialTheme = await getTheme(page);
-      const initialAriaLabel = await themeToggle.getAttribute('aria-label');
-      expect(initialAriaLabel).toBe(
-        locators.themeToggleAriaLabels[initialTheme]
-      );
+      const initialAriaLabel = getCurrentAriaLabel(initialTheme);
+      let currentAriaLabel = await themeToggle.getAttribute('aria-label');
+      expect(currentAriaLabel).toBe(initialAriaLabel);
 
       await themeToggle.click();
 
       const newTheme = await getTheme(page);
-      const newAriaLabel = await themeToggle.getAttribute('aria-label');
+      const newAriaLabel = getCurrentAriaLabel(newTheme);
+      currentAriaLabel = await themeToggle.getAttribute('aria-label');
 
       expect(newTheme).not.toBe(initialTheme);
-      expect(['light', 'dark']).toContain(newTheme);
-
-      expect(newAriaLabel).toBe(locators.themeToggleAriaLabels[newTheme]);
+      expect(currentAriaLabel).toBe(newAriaLabel);
     });
 
     test('should persist theme across page navigation', async ({ page }) => {
       const themeToggle = page.getByRole('button', {
-        name: locators.themeToggleName,
+        name: /Switch to (Light|Dark) Mode/i,
       });
       await themeToggle.click();
       const selectedTheme = await getTheme(page);
