@@ -41,6 +41,10 @@ SECURITY.md @nodejs/security-wg
 apps/site/pages/en/blog/release @nodejs/releasers
 apps/site/pages/en/blog/announcements @nodejs/releasers
 
-# Specific content
+# The following users DO NOT have write access, and their review is requested
+# via a GitHub action.
+apps/site/pages/en/learn/diagnostics @nodejs/diagnostics
 apps/site/pages/en/learn/getting-started/security-best-practices.md @nodejs/security-wg
+apps/site/pages/en/learn/manipulating-files @nodejs/fs
+apps/site/pages/en/learn/test-runner @nodejs/test_runner
 apps/site/pages/en/learn/typescript @nodejs/typescript
