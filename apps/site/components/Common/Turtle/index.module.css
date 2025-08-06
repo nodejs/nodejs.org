@@ -1,3 +1,5 @@
+@reference "../../../styles/index.css";
+
 .turtle {
   @apply motion-safe:animate-surf
     animate-surf
