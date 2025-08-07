@@ -3,9 +3,10 @@ import { Modal, Title, Content } from '@node-core/ui-components/Common/Modal';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import { MinorReleasesTable } from '#site/components/Downloads/MinorReleasesTable';
-import { ReleaseOverview } from '#site/components/Downloads/ReleaseOverview';
+import MinorReleasesTable from '#site/components/Downloads/MinorReleasesTable';
+import ReleaseOverview from '#site/components/Downloads/ReleaseOverview';
 import Link from '#site/components/Link';
+import WithReleaseAlertBox from '#site/components/withReleaseAlertBox';
 import type { NodeRelease } from '#site/types';
 
 type ReleaseModalProps = {
@@ -26,12 +27,13 @@ const ReleaseModal: FC<ReleaseModalProps> = ({
     : 'components.releaseModal.titleWithoutCodename';
 
   const modalHeading = t(modalHeadingKey, {
-    version: release.major,
+    version: `v${release.major}`,
     codename: release.codename ?? '',
   });
 
   return (
     <Modal open={isOpen} onOpenChange={closeModal}>
+      <WithReleaseAlertBox status={release.status} />
       {release.status === 'End-of-life' && (
         <div className="mb-4">
           <AlertBox

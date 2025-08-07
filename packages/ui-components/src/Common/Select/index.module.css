@@ -161,12 +161,17 @@
 }
 
 .noscript {
-  @apply relative;
+  @apply relative
+    cursor-pointer;
 
   summary {
     @apply flex
       w-full
       justify-between;
+
+    span {
+      @apply pl-0;
+    }
   }
 
   .trigger {

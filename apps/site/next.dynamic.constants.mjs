@@ -1,5 +1,6 @@
 'use strict';
 
+import provideReleaseData from '#site/next-data/providers/releaseData';
 import { blogData } from '#site/next.json.mjs';
 
 import { provideBlogPosts } from './next-data/providers/blogData';
@@ -19,6 +20,8 @@ export const IGNORED_ROUTES = [
     locale !== defaultLocale.code && /^blog/.test(pathname),
   // This is used to ignore all pathnames that are empty
   ({ locale, pathname }) => locale.length && !pathname.length,
+  // This is used to ignore download routes for Node.js versions and downloads archive page
+  ({ pathname }) => /^download\/(v\d+(\.\d+)*|archive)$/.test(pathname),
 ];
 
 /**
@@ -29,6 +32,14 @@ export const IGNORED_ROUTES = [
  * @type {Map<string, import('./types').Layouts>} A Map of pathname and Layout Name
  */
 export const DYNAMIC_ROUTES = new Map([
+  // Creates dynamic routes for downloads archive pages for each version
+  // (e.g., /download/v18.20.8, /download/v20.19.2)
+  ...provideReleaseData()
+    .flatMap(({ minorVersions, versionWithPrefix }) => [
+      `download/${versionWithPrefix}`,
+      ...minorVersions.map(minor => `download/${minor.versionWithPrefix}`),
+    ])
+    .map(version => [version, 'download-archive']),
   // Provides Routes for all Blog Categories
   ...blogData.categories.map(c => [`blog/${c}`, 'blog-category']),
   // Provides Routes for all Blog Categories w/ Pagination
