@@ -1,0 +1,21 @@
+name: Request Codeowner Reviews
+
+on:
+  pull_request_target:
+    types: [opened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  request-reviews:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Request Codeowner Reviews
+        uses: avivkeller/request-codeowner-review@9e110a888cece63c8abfe914a734ec160f5785dc # v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
