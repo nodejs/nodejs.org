@@ -8,8 +8,7 @@ import DownloadLayout from '#site/layouts/Download';
 import GlowingBackdropLayout from '#site/layouts/GlowingBackdrop';
 import LearnLayout from '#site/layouts/Learn';
 import PostLayout from '#site/layouts/Post';
-import { ModalProvider } from '#site/providers/modalProvider';
-import type { Layouts, ModalType } from '#site/types';
+import type { Layouts } from '#site/types';
 
 const layouts = {
   about: AboutLayout,
@@ -24,23 +23,10 @@ const layouts = {
 
 type WithLayoutProps<L = Layouts> = PropsWithChildren<{
   layout: L;
-  modal?: ModalType;
 }>;
 
-const WithLayout: FC<WithLayoutProps<Layouts>> = ({
-  layout,
-  children,
-  modal,
-}) => {
+const WithLayout: FC<WithLayoutProps<Layouts>> = ({ layout, children }) => {
   const LayoutComponent = layouts[layout] ?? DefaultLayout;
-
-  if (modal) {
-    return (
-      <ModalProvider type={modal}>
-        <LayoutComponent>{children}</LayoutComponent>
-      </ModalProvider>
-    );
-  }
 
   return <LayoutComponent>{children}</LayoutComponent>;
 };

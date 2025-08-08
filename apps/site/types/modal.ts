@@ -1,5 +1,3 @@
-import type { PropsWithChildren } from 'react';
-
 export type ModalProps = {
   open: boolean;
   closeModal: () => void;
@@ -11,9 +9,3 @@ export type ModalContextType = {
   openModal: (data: unknown) => void;
   closeModal: () => void;
 };
-
-export type ModalType = 'release' | 'eol';
-
-export type ModalProviderProps = PropsWithChildren<{
-  type: ModalType;
-}>;

@@ -150,9 +150,7 @@ const getPage: FC<DynamicParams> = async props => {
     // within a server-side context
     return (
       <MatterProvider {...sharedContext}>
-        <WithLayout layout={frontmatter.layout} modal={frontmatter.modal}>
-          {content}
-        </WithLayout>
+        <WithLayout layout={frontmatter.layout}>{content}</WithLayout>
       </MatterProvider>
     );
   }
