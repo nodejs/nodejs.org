@@ -4,6 +4,8 @@ import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 
 import Button from './components/Common/Button';
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
+import EOLAlertBox from './components/EOL/EOLAlert';
+import EOLReleaseTable from './components/EOL/EOLReleaseTable';
 import Link from './components/Link';
 import LinkWithArrow from './components/LinkWithArrow';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
@@ -28,6 +30,10 @@ export const mdxComponents = {
   BadgeGroup,
   // Renders an container for Upcoming Node.js Meetings
   UpcomingMeetings,
+  // Renders an EOL alert
+  EOLAlertBox,
+  // Renders the EOL Table
+  EOLReleaseTable,
   // Renders a Button Component for `button` tags
   Button,
   // Regular links (without arrow)
