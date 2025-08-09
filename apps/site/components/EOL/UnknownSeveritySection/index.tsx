@@ -1,32 +1,35 @@
 import { useTranslations } from 'next-intl';
-import type { DetailsHTMLAttributes, FC } from 'react';
+import type { FC } from 'react';
 
 import VulnerabilitiesTable from '#site/components/EOL/VulnerabilitiesTable';
-import type { UnknownSeverityVulnerability } from '#site/types/vulnerabilities';
+import type { Vulnerability } from '#site/types/vulnerabilities';
 
-type UnknownSeveritySectionProps = DetailsHTMLAttributes<HTMLDetailsElement> & {
-  vulnerabilities: Array<UnknownSeverityVulnerability>;
+type UnknownSeveritySectionProps = {
+  vulnerabilities: Array<Vulnerability>;
 };
 
 const UnknownSeveritySection: FC<UnknownSeveritySectionProps> = ({
   vulnerabilities,
-  ...props
 }) => {
   const t = useTranslations();
 
-  if (!vulnerabilities.length) {
+  const unknownVulnerabilities = vulnerabilities.filter(
+    v => v.severity === 'unknown'
+  );
+
+  if (!unknownVulnerabilities.length) {
     return null;
   }
 
   return (
-    <details {...props}>
+    <details open={unknownVulnerabilities.length === vulnerabilities.length}>
       <summary className="cursor-pointer font-semibold">
         {t('components.eolModal.showUnknownSeverities')} (
-        {vulnerabilities.length})
+        {unknownVulnerabilities.length})
       </summary>
       <div className="mt-4">
         <VulnerabilitiesTable
-          vulnerabilities={vulnerabilities}
+          vulnerabilities={unknownVulnerabilities}
           maxWidth={'max-w-3xs'}
         />
       </div>

@@ -6,11 +6,7 @@ import UnknownSeveritySection from '#site/components/EOL/UnknownSeveritySection'
 import VulnerabilitiesTable from '#site/components/EOL/VulnerabilitiesTable';
 import { SEVERITY_ORDER } from '#site/next.constants.mjs';
 import type { ModalProps } from '#site/types';
-import type {
-  EOLModalData,
-  KnownVulnerability,
-  UnknownSeverityVulnerability,
-} from '#site/types/vulnerabilities';
+import type { EOLModalData } from '#site/types/vulnerabilities';
 
 const EOLModal: FC<ModalProps<EOLModalData>> = ({
   open,
@@ -26,33 +22,14 @@ const EOLModal: FC<ModalProps<EOLModalData>> = ({
       })
     : t('components.eolModal.titleWithoutCodename', { version: release.major });
 
-  const [knownVulnerabilities, unknownVulnerabilities] = useMemo(
-    () =>
-      vulnerabilities.reduce(
-        (acc, vulnerability) => {
-          if (vulnerability.severity === 'unknown') {
-            acc[1].push(vulnerability as UnknownSeverityVulnerability);
-          } else {
-            acc[0].push(vulnerability as KnownVulnerability);
-          }
-          return acc;
-        },
-        [[], []] as [
-          Array<KnownVulnerability>,
-          Array<UnknownSeverityVulnerability>,
-        ]
-      ),
-    [vulnerabilities]
-  );
-
   useMemo(
     () =>
-      knownVulnerabilities.sort(
+      vulnerabilities.sort(
         (a, b) =>
           SEVERITY_ORDER.indexOf(a.severity) -
           SEVERITY_ORDER.indexOf(b.severity)
       ),
-    [knownVulnerabilities]
+    [vulnerabilities]
   );
 
   return (
@@ -67,12 +44,13 @@ const EOLModal: FC<ModalProps<EOLModalData>> = ({
           </p>
         )}
 
-        <VulnerabilitiesTable vulnerabilities={knownVulnerabilities} />
-
-        <UnknownSeveritySection
-          vulnerabilities={unknownVulnerabilities}
-          open={knownVulnerabilities.length > 0}
+        <VulnerabilitiesTable
+          vulnerabilities={vulnerabilities.filter(
+            vuln => vuln.severity !== 'unknown'
+          )}
         />
+
+        <UnknownSeveritySection vulnerabilities={vulnerabilities} />
 
         {!vulnerabilities.length && (
           <p className="m-1">

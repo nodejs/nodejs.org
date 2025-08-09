@@ -34,7 +34,3 @@ export type EOLModalData = {
 export type KnownVulnerability = Vulnerability & {
   severity: (typeof SEVERITY_ORDER)[number];
 };
-
-export type UnknownSeverityVulnerability = Vulnerability & {
-  severity: 'unknown';
-};
