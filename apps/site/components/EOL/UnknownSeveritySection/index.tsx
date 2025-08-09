@@ -1,13 +1,17 @@
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import type { DetailsHTMLAttributes, FC } from 'react';
 
 import VulnerabilitiesTable from '#site/components/EOL/VulnerabilitiesTable';
 import type { UnknownSeverityVulnerability } from '#site/types/vulnerabilities';
 
-const UnknownSeveritySection: FC<{
+type UnknownSeveritySectionProps = DetailsHTMLAttributes<HTMLDetailsElement> & {
   vulnerabilities: Array<UnknownSeverityVulnerability>;
-  hasKnownVulnerabilities: boolean;
-}> = ({ vulnerabilities, hasKnownVulnerabilities }) => {
+};
+
+const UnknownSeveritySection: FC<UnknownSeveritySectionProps> = ({
+  vulnerabilities,
+  ...props
+}) => {
   const t = useTranslations();
 
   if (!vulnerabilities.length) {
@@ -15,7 +19,7 @@ const UnknownSeveritySection: FC<{
   }
 
   return (
-    <details open={!hasKnownVulnerabilities}>
+    <details {...props}>
       <summary className="cursor-pointer font-semibold">
         {t('components.eolModal.showUnknownSeverities')} (
         {vulnerabilities.length})

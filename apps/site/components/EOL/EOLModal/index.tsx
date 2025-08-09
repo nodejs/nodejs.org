@@ -55,10 +55,6 @@ const EOLModal: FC<ModalProps<EOLModalData>> = ({
     [knownVulnerabilities]
   );
 
-  const hasKnownVulnerabilities = knownVulnerabilities.length > 0;
-  const hasAnyVulnerabilities =
-    hasKnownVulnerabilities || unknownVulnerabilities.length > 0;
-
   return (
     <Modal open={open} onOpenChange={closeModal}>
       <Title>{modalHeading}</Title>
@@ -71,16 +67,14 @@ const EOLModal: FC<ModalProps<EOLModalData>> = ({
           </p>
         )}
 
-        {hasKnownVulnerabilities && (
-          <VulnerabilitiesTable vulnerabilities={knownVulnerabilities} />
-        )}
+        <VulnerabilitiesTable vulnerabilities={knownVulnerabilities} />
 
         <UnknownSeveritySection
           vulnerabilities={unknownVulnerabilities}
-          hasKnownVulnerabilities={hasKnownVulnerabilities}
+          open={knownVulnerabilities.length > 0}
         />
 
-        {!hasAnyVulnerabilities && (
+        {!vulnerabilities.length && (
           <p className="m-1">
             {t('components.eolModal.noVulnerabilitiesMessage')}
           </p>

@@ -12,6 +12,10 @@ const VulnerabilitiesTable: FC<{
 }> = ({ vulnerabilities, maxWidth = 'max-w-2xs' }) => {
   const t = useTranslations();
 
+  if (!vulnerabilities.length) {
+    return null;
+  }
+
   return (
     <table className="w-full">
       <thead>
