@@ -1,4 +1,3 @@
-import type { SEVERITY_ORDER } from '#site/next.constants.mjs';
 import type { NodeRelease } from '#site/types';
 
 export type Severity = 'unknown' | 'low' | 'medium' | 'high' | 'critical';
@@ -29,8 +28,4 @@ export type VulnerabilityChipProps = {
 export type EOLModalData = {
   release: NodeRelease;
   vulnerabilities: Array<Vulnerability>;
-};
-
-export type KnownVulnerability = Vulnerability & {
-  severity: (typeof SEVERITY_ORDER)[number];
 };
