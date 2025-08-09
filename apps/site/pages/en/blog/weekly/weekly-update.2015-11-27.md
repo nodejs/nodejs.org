@@ -16,9 +16,9 @@ This week we have one release: [Node v0.12.8 (LTS)](/blog/release/v0.12.8/). Com
 
 ### Notable changes
 
-- [[`7d11208f68`](https://github.com/nodejs/node/commit/7d11208f68)] - **build**: backport tools/release.sh (Rod Vagg) [#3642](https://github.com/nodejs/node/pull/3642)
-- [[`6fb0b92fa0`](https://github.com/nodejs/node/commit/6fb0b92fa0)] - **build**: backport config for new CI infrastructure (Rod Vagg) [#3642](https://github.com/nodejs/node/pull/3642)
-- [[`83441616a5`](https://github.com/nodejs/node/commit/83441616a5)] - **build**: fix --without-ssl compile time error (Ben Noordhuis) [#3825](https://github.com/nodejs/node/pull/3825)
+- \[[`7d11208f68`](https://github.com/nodejs/node/commit/7d11208f68)] - **build**: backport tools/release.sh (Rod Vagg) [#3642](https://github.com/nodejs/node/pull/3642)
+- \[[`6fb0b92fa0`](https://github.com/nodejs/node/commit/6fb0b92fa0)] - **build**: backport config for new CI infrastructure (Rod Vagg) [#3642](https://github.com/nodejs/node/pull/3642)
+- \[[`83441616a5`](https://github.com/nodejs/node/commit/83441616a5)] - **build**: fix --without-ssl compile time error (Ben Noordhuis) [#3825](https://github.com/nodejs/node/pull/3825)
 
 ### CVE-2015-8027 Denial of Service Vulnerability / CVE-2015-6764 V8 Out-of-bounds Access Vulnerability
 

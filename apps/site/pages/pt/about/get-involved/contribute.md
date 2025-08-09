@@ -44,4 +44,4 @@ Ao seres um colaborador, os contribuidores podem ter ainda mais impacto no proje
 - participação em grupos de trabalhos
 - outra participação na grande comunidade do Node.js
 
-Se indivíduos que fizeram contribuições valiosas não acreditarem que foram considerados para acesso de commit, eles poderão [registrar um problema](https://github.com/nodejs/TSC/issues) ou [entrar em contato com um membro do TSC](https:// github.com/nodejs/node#tsc-technical-steering-committee) diretamente.
+Se indivíduos que fizeram contribuições valiosas não acreditarem que foram considerados para acesso de commit, eles poderão [registrar um problema](https://github.com/nodejs/TSC/issues) ou \[entrar em contato com um membro do TSC]\(https:// github.com/nodejs/node#tsc-technical-steering-committee) diretamente.
