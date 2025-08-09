@@ -108,6 +108,12 @@ span.searchButtonSkeleton {
   }
 }
 
+span.themeToggleSkeleton {
+  @apply size-9
+    rounded-md
+    py-4;
+}
+
 .ghIconWrapper {
   @apply size-9
     rounded-md
