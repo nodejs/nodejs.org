@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useState } from 'react';
-import type { FC, ComponentType, PropsWithChildren } from 'react';
+import type { ComponentType, PropsWithChildren } from 'react';
 
 import type { ModalContextType, ModalProps } from '#site/types/modal';
 
@@ -11,12 +11,13 @@ export const ModalContext = createContext<ModalContextType>({
   closeModal: () => {},
 });
 
-export const ModalProvider: FC<
-  PropsWithChildren<{ Component: ComponentType<ModalProps> }>
-> = ({ Component, children }) => {
-  const [data, setData] = useState<unknown>(null);
+export const ModalProvider = <T,>({
+  Component,
+  children,
+}: PropsWithChildren<{ Component: ComponentType<ModalProps<T>> }>) => {
+  const [data, setData] = useState<T | null>(null);
 
-  const openModal = (newData: unknown) => {
+  const openModal = (newData: T) => {
     setData(newData);
   };
 
@@ -25,7 +26,9 @@ export const ModalProvider: FC<
   };
 
   return (
-    <ModalContext.Provider value={{ data, openModal, closeModal }}>
+    <ModalContext.Provider
+      value={{ data, openModal, closeModal } as ModalContextType<T>}
+    >
       {children}
       {!!data && (
         <Component open={!!data} closeModal={closeModal} data={data} />

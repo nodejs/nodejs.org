@@ -12,8 +12,11 @@ import type {
   UnknownSeverityVulnerability,
 } from '#site/types/vulnerabilities';
 
-const EOLModal: FC<ModalProps> = ({ open, closeModal, data }) => {
-  const { release, vulnerabilities } = data as EOLModalData;
+const EOLModal: FC<ModalProps<EOLModalData>> = ({
+  open,
+  closeModal,
+  data: { release, vulnerabilities },
+}) => {
   const t = useTranslations();
 
   const modalHeading = release.codename

@@ -8,22 +8,25 @@ import { ReleaseOverview } from '#site/components/Downloads/ReleaseOverview';
 import Link from '#site/components/Link';
 import type { ModalProps, NodeRelease } from '#site/types';
 
-const ReleaseModal: FC<ModalProps> = ({ open, closeModal, data }) => {
-  const release = data as NodeRelease;
+const ReleaseModal: FC<ModalProps<NodeRelease>> = ({
+  open,
+  closeModal,
+  data,
+}) => {
   const t = useTranslations();
 
-  const modalHeadingKey = release.codename
+  const modalHeadingKey = data.codename
     ? 'components.releaseModal.title'
     : 'components.releaseModal.titleWithoutCodename';
 
   const modalHeading = t(modalHeadingKey, {
-    version: release.major,
-    codename: release.codename ?? '',
+    version: data.major,
+    codename: data.codename ?? '',
   });
 
   return (
     <Modal open={open} onOpenChange={closeModal}>
-      {release.status === 'End-of-life' && (
+      {data.status === 'End-of-life' && (
         <div className="mb-4">
           <AlertBox
             title={t('components.common.alertBox.warning')}
@@ -41,7 +44,7 @@ const ReleaseModal: FC<ModalProps> = ({ open, closeModal, data }) => {
         </div>
       )}
 
-      {release.isLts && (
+      {data.isLts && (
         <div className="mb-4">
           <AlertBox
             title={t('components.common.alertBox.info')}
@@ -58,11 +61,11 @@ const ReleaseModal: FC<ModalProps> = ({ open, closeModal, data }) => {
       <Title>{modalHeading}</Title>
 
       <Content>
-        <ReleaseOverview release={release} />
+        <ReleaseOverview release={data} />
 
         <h5>{t('components.releaseModal.minorVersions')}</h5>
 
-        <MinorReleasesTable releases={release.minorVersions} />
+        <MinorReleasesTable releases={data.minorVersions} />
       </Content>
     </Modal>
   );

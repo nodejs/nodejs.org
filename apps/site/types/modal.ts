@@ -1,11 +1,11 @@
-export type ModalProps = {
+export type ModalProps<T = unknown> = {
   open: boolean;
   closeModal: () => void;
-  data: unknown;
+  data: T;
 };
 
-export type ModalContextType = {
-  data: unknown;
+export type ModalContextType<T = unknown> = {
+  data: T;
   openModal: (data: unknown) => void;
   closeModal: () => void;
 };

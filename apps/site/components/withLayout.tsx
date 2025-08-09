@@ -21,9 +21,7 @@ const layouts = {
   article: ArticlePageLayout,
 } satisfies Record<Layouts, FC>;
 
-type WithLayoutProps<L = Layouts> = PropsWithChildren<{
-  layout: L;
-}>;
+type WithLayoutProps<L = Layouts> = PropsWithChildren<{ layout: L }>;
 
 const WithLayout: FC<WithLayoutProps<Layouts>> = ({ layout, children }) => {
   const LayoutComponent = layouts[layout] ?? DefaultLayout;
