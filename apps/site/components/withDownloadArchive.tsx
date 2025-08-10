@@ -27,7 +27,7 @@ const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
   const version = extractVersionFromPath(pathname);
 
   if (version == null) {
-    return null;
+    throw new Error('Version could not be extracted from pathname');
   }
 
   // Find the release data for the given version
