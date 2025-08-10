@@ -51,12 +51,6 @@ jobs:
       - name: Install packages
         run: pnpm install --frozen-lockfile
 
-      - name: Downgrade Next.js
-        # Open-next does not yet support next@15.4, so temporarily in order to have
-        # this workflow working we force install the latest Next.js 15.3 version instead
-        run: pnpm i next@15.3.2
-        working-directory: apps/site
-
       - name: Get Playwright version
         id: playwright-version
         working-directory: apps/site
