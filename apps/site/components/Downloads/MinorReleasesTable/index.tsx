@@ -1,5 +1,3 @@
-'use client';
-
 import { CodeBracketSquareIcon } from '@heroicons/react/24/outline';
 import Separator from '@node-core/ui-components/Common/Separator';
 import NpmIcon from '@node-core/ui-components/Icons/PackageManager/Npm';
@@ -20,18 +18,20 @@ type MinorReleasesTableProps = {
 };
 
 const MinorReleasesTable: FC<MinorReleasesTableProps> = ({ releases }) => {
-  const t = useTranslations('components');
+  const t = useTranslations();
 
   return (
     <div className={styles.scrollable}>
       <table>
         <thead className={styles.stickyHeader}>
           <tr>
-            <th>{t('minorReleasesTable.version')}</th>
+            <th>{t('components.minorReleasesTable.version')}</th>
             <th className={styles.information}>
-              {t('minorReleasesTable.information')}
+              {t('components.minorReleasesTable.information')}
             </th>
-            <th className={styles.links}>{t('minorReleasesTable.links')}</th>
+            <th className={styles.links}>
+              {t('components.minorReleasesTable.links')}
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -49,7 +49,7 @@ const MinorReleasesTable: FC<MinorReleasesTableProps> = ({ releases }) => {
                       <ReleaseOverviewItem
                         Icon={CodeBracketSquareIcon}
                         title={`v${release.modules}`}
-                        subtitle={t('releaseOverview.nApiVersion')}
+                        subtitle={t('components.releaseOverview.nApiVersion')}
                       />
                       <Separator orientation="vertical" />
                     </>
@@ -59,7 +59,7 @@ const MinorReleasesTable: FC<MinorReleasesTableProps> = ({ releases }) => {
                       <ReleaseOverviewItem
                         Icon={NpmIcon}
                         title={`v${release.npm}`}
-                        subtitle={t('releaseOverview.npmVersion')}
+                        subtitle={t('components.releaseOverview.npmVersion')}
                       />
                       <Separator orientation="vertical" />
                     </>
@@ -67,7 +67,7 @@ const MinorReleasesTable: FC<MinorReleasesTableProps> = ({ releases }) => {
                   <ReleaseOverviewItem
                     Icon={CodeBracketSquareIcon}
                     title={`v${release.v8}`}
-                    subtitle={t('releaseOverview.v8Version')}
+                    subtitle={t('components.releaseOverview.v8Version')}
                   />
                 </div>
               </td>
@@ -77,14 +77,14 @@ const MinorReleasesTable: FC<MinorReleasesTableProps> = ({ releases }) => {
                     kind="neutral"
                     href={getNodeApiUrl(`v${release.version}`)}
                   >
-                    {t('minorReleasesTable.actions.docs')}
+                    {t('components.minorReleasesTable.actions.docs')}
                   </Link>
                   <Separator orientation="vertical" />
                   <LinkWithArrow
                     kind="neutral"
                     href={`${BASE_CHANGELOG_URL}${release.version}`}
                   >
-                    {t('minorReleasesTable.actions.changelog')}
+                    {t('components.minorReleasesTable.actions.changelog')}
                   </LinkWithArrow>
                 </div>
               </td>
