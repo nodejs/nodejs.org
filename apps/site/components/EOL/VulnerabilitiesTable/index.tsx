@@ -51,9 +51,9 @@ const VulnerabilitiesTable: FC<{
               {vulnerability.description || vulnerability.overview || '-'}
             </td>
             <td>
-              {vulnerability.ref ? (
+              {vulnerability.url ? (
                 <LinkWithArrow
-                  href={vulnerability.ref}
+                  href={vulnerability.url}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

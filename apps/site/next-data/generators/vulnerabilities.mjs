@@ -9,6 +9,10 @@ export function groupVulnerabilitiesByMajor(vulnerabilities) {
   const grouped = {};
 
   for (const vulnerability of vulnerabilities) {
+    // To avoid future confusion, rename 'ref' to 'url'
+    vulnerability.url = vulnerability.ref;
+    delete vulnerability.ref;
+
     // split on '||' to handle multiple versions and trim whitespace
     const potentialVersions =
       vulnerability.vulnerable?.split('||').map(v => v.trim()) || [];
