@@ -2,7 +2,8 @@
 
 import Badge from '@node-core/ui-components/Common/Badge';
 import { useTranslations } from 'next-intl';
-import { useState, type FC } from 'react';
+import { useState } from 'react';
+import type { FC } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
 import LinkWithArrow from '#site/components/LinkWithArrow';

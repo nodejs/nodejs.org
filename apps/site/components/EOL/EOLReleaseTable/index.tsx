@@ -1,7 +1,8 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useState, type FC } from 'react';
+import { useState } from 'react';
+import type { FC } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
 import VulnerabilityChips from '#site/components/EOL/VulnerabilityChips';
