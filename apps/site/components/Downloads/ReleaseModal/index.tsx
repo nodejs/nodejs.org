@@ -1,32 +1,36 @@
 import AlertBox from '@node-core/ui-components/Common/AlertBox';
 import { Modal, Title, Content } from '@node-core/ui-components/Common/Modal';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import type { ComponentProps, FC } from 'react';
 
 import { MinorReleasesTable } from '#site/components/Downloads/MinorReleasesTable';
 import { ReleaseOverview } from '#site/components/Downloads/ReleaseOverview';
 import Link from '#site/components/Link';
-import type { ModalProps, NodeRelease } from '#site/types';
+import type { NodeRelease } from '#site/types';
 
-const ReleaseModal: FC<ModalProps<NodeRelease>> = ({
-  open,
-  closeModal,
-  data,
+type ReleaseModalProps = ComponentProps<typeof Modal> & {
+  release: NodeRelease;
+};
+
+const ReleaseModal: FC<ReleaseModalProps> = ({
+  release,
+  onOpenChange,
+  ...props
 }) => {
   const t = useTranslations();
 
-  const modalHeadingKey = data.codename
+  const modalHeadingKey = release.codename
     ? 'components.releaseModal.title'
     : 'components.releaseModal.titleWithoutCodename';
 
   const modalHeading = t(modalHeadingKey, {
-    version: data.major,
-    codename: data.codename ?? '',
+    version: release.major,
+    codename: release.codename ?? '',
   });
 
   return (
-    <Modal open={open} onOpenChange={closeModal}>
-      {data.status === 'End-of-life' && (
+    <Modal onOpenChange={onOpenChange} {...props}>
+      {release.status === 'End-of-life' && (
         <div className="mb-4">
           <AlertBox
             title={t('components.common.alertBox.warning')}
@@ -34,17 +38,13 @@ const ReleaseModal: FC<ModalProps<NodeRelease>> = ({
             size="small"
           >
             {t.rich('components.releaseModal.unsupportedVersionWarning', {
-              link: text => (
-                <Link onClick={closeModal} href="/eol">
-                  {text}
-                </Link>
-              ),
+              link: text => <Link href="/eol">{text}</Link>,
             })}
           </AlertBox>
         </div>
       )}
 
-      {data.isLts && (
+      {release.isLts && (
         <div className="mb-4">
           <AlertBox
             title={t('components.common.alertBox.info')}
@@ -61,11 +61,11 @@ const ReleaseModal: FC<ModalProps<NodeRelease>> = ({
       <Title>{modalHeading}</Title>
 
       <Content>
-        <ReleaseOverview release={data} />
+        <ReleaseOverview release={release} />
 
         <h5>{t('components.releaseModal.minorVersions')}</h5>
 
-        <MinorReleasesTable releases={data.minorVersions} />
+        <MinorReleasesTable releases={release.minorVersions} />
       </Content>
     </Modal>
   );

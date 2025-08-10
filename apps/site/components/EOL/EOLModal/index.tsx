@@ -1,17 +1,23 @@
 import { Modal, Title, Content } from '@node-core/ui-components/Common/Modal';
 import { useTranslations } from 'next-intl';
-import { useMemo, type FC } from 'react';
+import { useMemo } from 'react';
+import type { FC, ComponentProps } from 'react';
 
+import KnownSeveritySection from '#site/components/EOL/KnownSeveritySection';
 import UnknownSeveritySection from '#site/components/EOL/UnknownSeveritySection';
-import VulnerabilitiesTable from '#site/components/EOL/VulnerabilitiesTable';
 import { SEVERITY_ORDER } from '#site/next.constants.mjs';
-import type { ModalProps } from '#site/types';
-import type { EOLModalData } from '#site/types/vulnerabilities';
+import type { NodeRelease } from '#site/types/releases';
+import type { Vulnerability } from '#site/types/vulnerabilities';
 
-const EOLModal: FC<ModalProps<EOLModalData>> = ({
-  open,
-  closeModal,
-  data: { release, vulnerabilities },
+type EOLModalProps = ComponentProps<typeof Modal> & {
+  release: NodeRelease;
+  vulnerabilities: Array<Vulnerability>;
+};
+
+const EOLModal: FC<EOLModalProps> = ({
+  release,
+  vulnerabilities,
+  ...props
 }) => {
   const t = useTranslations();
 
@@ -33,7 +39,7 @@ const EOLModal: FC<ModalProps<EOLModalData>> = ({
   );
 
   return (
-    <Modal open={open} onOpenChange={closeModal}>
+    <Modal {...props}>
       <Title>{modalHeading}</Title>
       <Content>
         {vulnerabilities.length > 0 && (
@@ -44,12 +50,7 @@ const EOLModal: FC<ModalProps<EOLModalData>> = ({
           </p>
         )}
 
-        <VulnerabilitiesTable
-          vulnerabilities={vulnerabilities.filter(
-            vuln => vuln.severity !== 'unknown'
-          )}
-        />
-
+        <KnownSeveritySection vulnerabilities={vulnerabilities} />
         <UnknownSeveritySection vulnerabilities={vulnerabilities} />
 
         {!vulnerabilities.length && (

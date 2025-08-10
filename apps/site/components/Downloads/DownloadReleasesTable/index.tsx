@@ -2,12 +2,11 @@
 
 import Badge from '@node-core/ui-components/Common/Badge';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import { useState, type FC } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
-import DetailsButton from '#site/components/Downloads/DownloadReleasesTable/DetailsButton';
+import LinkWithArrow from '#site/components/LinkWithArrow';
 import provideReleaseData from '#site/next-data/providers/releaseData';
-import { ModalProvider } from '#site/providers/modalProvider';
 
 import ReleaseModal from '../ReleaseModal';
 
@@ -23,21 +22,23 @@ const DownloadReleasesTable: FC = () => {
   const releaseData = provideReleaseData();
   const t = useTranslations();
 
+  const [currentModal, setCurrentModal] = useState<string | undefined>();
+
   return (
-    <ModalProvider Component={ReleaseModal}>
-      <table id="tbVersions">
-        <thead>
-          <tr>
-            <th>{t('components.downloadReleasesTable.version')}</th>
-            <th>{t('components.downloadReleasesTable.codename')}</th>
-            <th>{t('components.downloadReleasesTable.firstReleased')}</th>
-            <th>{t('components.downloadReleasesTable.lastUpdated')}</th>
-            <th>{t('components.downloadReleasesTable.status')}</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {releaseData.map(release => (
+    <table id="tbVersions">
+      <thead>
+        <tr>
+          <th>{t('components.downloadReleasesTable.version')}</th>
+          <th>{t('components.downloadReleasesTable.codename')}</th>
+          <th>{t('components.downloadReleasesTable.firstReleased')}</th>
+          <th>{t('components.downloadReleasesTable.lastUpdated')}</th>
+          <th>{t('components.downloadReleasesTable.status')}</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {releaseData.map(release => (
+          <>
             <tr key={release.major}>
               <td data-label="Version">v{release.major}</td>
               <td data-label="LTS">{release.codename || '-'}</td>
@@ -54,13 +55,23 @@ const DownloadReleasesTable: FC = () => {
                 </Badge>
               </td>
               <td>
-                <DetailsButton data={release} />
+                <LinkWithArrow
+                  className="cursor-pointer"
+                  onClick={() => setCurrentModal(release.version)}
+                >
+                  {t('components.downloadReleasesTable.details')}
+                </LinkWithArrow>
               </td>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </ModalProvider>
+            <ReleaseModal
+              release={release}
+              open={currentModal === release.version}
+              onOpenChange={open => open || setCurrentModal(undefined)}
+            />
+          </>
+        ))}
+      </tbody>
+    </table>
   );
 };
 

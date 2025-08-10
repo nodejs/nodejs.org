@@ -1,15 +1,14 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import { useState, type FC } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
-import DetailsButton from '#site/components/Downloads/DownloadReleasesTable/DetailsButton';
 import VulnerabilityChips from '#site/components/EOL/VulnerabilityChips';
+import LinkWithArrow from '#site/components/LinkWithArrow';
 import provideReleaseData from '#site/next-data/providers/releaseData';
 import provideVulnerabilities from '#site/next-data/providers/vulnerabilities';
 import { EOL_VERSION_IDENTIFIER } from '#site/next.constants.mjs';
-import { ModalProvider } from '#site/providers/modalProvider';
 
 import EOLModal from '../EOLModal';
 
@@ -22,22 +21,24 @@ const EOLReleaseTable: FC = () => {
 
   const t = useTranslations();
 
+  const [currentModal, setCurrentModal] = useState<string | undefined>();
+
   return (
-    <ModalProvider Component={EOLModal}>
-      <table id="tbVulnerabilities">
-        <thead>
-          <tr>
-            <th>
-              {t('components.eolTable.version')} (
-              {t('components.eolTable.codename')})
-            </th>
-            <th>{t('components.eolTable.lastUpdated')}</th>
-            <th>{t('components.eolTable.vulnerabilities')}</th>
-            <th>{t('components.eolTable.details')}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {eolReleases.map(release => (
+    <table id="tbVulnerabilities">
+      <thead>
+        <tr>
+          <th>
+            {t('components.eolTable.version')} (
+            {t('components.eolTable.codename')})
+          </th>
+          <th>{t('components.eolTable.lastUpdated')}</th>
+          <th>{t('components.eolTable.vulnerabilities')}</th>
+          <th>{t('components.eolTable.details')}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {eolReleases.map(release => (
+          <>
             <tr key={release.major}>
               <td data-label="Version">
                 v{release.major}{' '}
@@ -52,18 +53,24 @@ const EOLReleaseTable: FC = () => {
                 />
               </td>
               <td>
-                <DetailsButton
-                  data={{
-                    release: release,
-                    vulnerabilities: vulnerabilities[release.major],
-                  }}
-                />
+                <LinkWithArrow
+                  className="cursor-pointer"
+                  onClick={() => setCurrentModal(release.version)}
+                >
+                  {t('components.downloadReleasesTable.details')}
+                </LinkWithArrow>
               </td>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </ModalProvider>
+            <EOLModal
+              release={release}
+              vulnerabilities={vulnerabilities[release.major]}
+              open={currentModal === release.version}
+              onOpenChange={open => open || setCurrentModal(undefined)}
+            />
+          </>
+        ))}
+      </tbody>
+    </table>
   );
 };
 

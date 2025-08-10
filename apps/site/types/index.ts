@@ -4,7 +4,6 @@ export * from './features';
 export * from './frontmatter';
 export * from './i18n';
 export * from './layouts';
-export * from './modal';
 export * from './navigation';
 export * from './releases';
 export * from './redirects';
