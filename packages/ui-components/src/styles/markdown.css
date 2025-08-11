@@ -170,24 +170,4 @@ main {
       @apply sm:border-l-0;
     }
   }
-
-  details {
-    summary * {
-      @apply inline
-        pl-2;
-    }
-
-    a {
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        @apply inline
-          text-green-600
-          dark:text-green-400;
-      }
-    }
-  }
 }
