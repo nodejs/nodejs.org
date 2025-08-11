@@ -1,9 +1,9 @@
 'use strict';
 
-import provideReleaseData from '#site/next-data/providers/releaseData';
 import { blogData } from '#site/next.json.mjs';
 
 import { provideBlogPosts } from './next-data/providers/blogData';
+import provideReleaseVersions from './next-data/providers/releaseVersions';
 import { BASE_PATH, BASE_URL } from './next.constants.mjs';
 import { siteConfig } from './next.json.mjs';
 import { defaultLocale } from './next.locales.mjs';
@@ -20,8 +20,6 @@ export const IGNORED_ROUTES = [
     locale !== defaultLocale.code && /^blog/.test(pathname),
   // This is used to ignore all pathnames that are empty
   ({ locale, pathname }) => locale.length && !pathname.length,
-  // This is used to ignore download routes for Node.js versions and downloads archive page
-  ({ pathname }) => /^download\/(v\d+(\.\d+)*|archive)$/.test(pathname),
 ];
 
 /**
@@ -33,13 +31,11 @@ export const IGNORED_ROUTES = [
  */
 export const DYNAMIC_ROUTES = new Map([
   // Creates dynamic routes for downloads archive pages for each version
-  // (e.g., /download/v18.20.8, /download/v20.19.2)
-  ...provideReleaseData()
-    .flatMap(({ minorVersions, versionWithPrefix }) => [
-      `download/${versionWithPrefix}`,
-      ...minorVersions.map(minor => `download/${minor.versionWithPrefix}`),
-    ])
-    .map(version => [version, 'download-archive']),
+  // (e.g., /download/archive/v18.20.8, /download/archive/v20.19.2)
+  ...provideReleaseVersions().map(version => [
+    `download/archive/${version}`,
+    'download-archive',
+  ]),
   // Provides Routes for all Blog Categories
   ...blogData.categories.map(c => [`blog/${c}`, 'blog-category']),
   // Provides Routes for all Blog Categories w/ Pagination
@@ -53,6 +49,18 @@ export const DYNAMIC_ROUTES = new Map([
     .map(paths => paths.map(path => [path, 'blog-category']))
     // flattens the array since we have a .map inside another .map
     .flat(),
+]);
+
+/**
+ * A Map that stores file paths for Markdown files to be dynamically generated
+ * in a dynamic route, keyed by their corresponding layout names.
+ *
+ * @type {Map<import('./types').Layouts, Array<string>>} A Map of Layout Name and paths
+ */
+export const DYNAMIC_MARKDOWN_ROUTES = new Map([
+  // Pages that use the download-archive layout map to the /{locale}/download/archive/index.mdx
+  // markdown file.
+  ['download-archive', ['download', 'archive']],
 ]);
 
 /**

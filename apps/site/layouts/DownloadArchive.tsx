@@ -1,19 +1,16 @@
-import type { FC } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import WithFooter from '#site/components/withFooter';
-import WithMarkdownContent from '#site/components/withMarkdownContent';
 import WithNavBar from '#site/components/withNavBar';
 
 import styles from './layouts.module.css';
 
-const DownloadArchiveLayout: FC = () => (
+const DownloadArchiveLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <WithNavBar />
 
     <div className={styles.downloadLayout}>
-      <main>
-        <WithMarkdownContent file={['download', 'archive']} />
-      </main>
+      <main>{children}</main>
     </div>
 
     <WithFooter />

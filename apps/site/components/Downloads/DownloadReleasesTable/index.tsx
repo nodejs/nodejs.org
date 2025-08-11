@@ -35,7 +35,7 @@ const DownloadReleasesTable: FC = () => {
         {releaseData.map(release => (
           <tr key={release.major}>
             <td data-label="Version">
-              <Link href={`/download/${release.versionWithPrefix}`}>
+              <Link href={`/download/archive/${release.versionWithPrefix}`}>
                 v{release.major}
               </Link>
             </td>

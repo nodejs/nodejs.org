@@ -38,7 +38,10 @@ const MinorReleasesTable: FC<MinorReleasesTableProps> = ({ releases }) => {
           {releases.map(release => (
             <tr key={release.version}>
               <td>
-                <Link kind="neutral" href={`/download/v${release.version}`}>
+                <Link
+                  kind="neutral"
+                  href={`/download/archive/v${release.version}`}
+                >
                   v{release.version}
                 </Link>
               </td>
