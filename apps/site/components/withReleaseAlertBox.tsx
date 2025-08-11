@@ -34,7 +34,7 @@ const WithReleaseAlertBox: FC<WithReleaseAlertBoxProps> = ({ status }) => {
       return (
         <AlertBox
           title={t('components.common.alertBox.info')}
-          level="info"
+          level="success"
           size="small"
         >
           {t.rich('components.releaseModal.ltsVersionFeaturesNotice', {
