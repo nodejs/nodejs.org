@@ -11,7 +11,7 @@ layout: about
 
 - [`nodejs/node` GitHub 儲存庫](https://github.com/nodejs/node/issues) 是討論 Node.js 核心功能及回報問題的地方。
 - [`nodejs/help` GitHub 儲存庫](https://github.com/nodejs/help/issues) 是專為討論 Node.js 問題的官方地點。
-- Node.js 的 [官方 Discord 伺服器](/discord) 是個可以與其他 Node.js 開發者交流並取得關於 Node.js 專案最新官方資訊的地方。
+- Node.js 的 [官方 Discord 伺服器](https://discord.gg/nodejs) 是個可以與其他 Node.js 開發者交流並取得關於 Node.js 專案最新官方資訊的地方。
 - Node.js 的[專案行事曆](https://nodejs.org/calendar)包含所有公開的團隊會議。
 
 ## 學習資源

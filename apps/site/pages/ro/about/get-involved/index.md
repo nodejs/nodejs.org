@@ -11,7 +11,7 @@ Dacă te interesează implicarea în comunitatea Node.js, există multe modalit�
 
 - [Repozitoriul GitHub `nodejs/node`](https://github.com/nodejs/node/issues) este locul unde poți discuta despre funcționalitățile principale ale Node.js și raportarea problemelor.
 - [Repozitoriul GitHub `nodejs/help`](https://github.com/nodejs/help/issues) este locul oficial unde poți adresa întrebări despre Node.js.
-- [Serverul oficial Discord](/discord) Node.js este un loc unde poți discuta cu alți dezvoltatori Node.js și poți primi știri oficiale despre proiectul Node.js.
+- [Serverul oficial Discord](https://discord.gg/nodejs) Node.js este un loc unde poți discuta cu alți dezvoltatori Node.js și poți primi știri oficiale despre proiectul Node.js.
 - [Calendarul proiectului](https://nodejs.org/calendar) Node.js cu toate întâlnirile publice ale echipei.
 
 ## Materiale de învățare
