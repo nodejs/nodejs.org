@@ -16,6 +16,6 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Request Codeowner Reviews
-        uses: avivkeller/request-codeowner-review@9e110a888cece63c8abfe914a734ec160f5785dc # v1
+        uses: avivkeller/request-codeowner-review@0acf2fd074226a86efc85ff0356242fc35d68b32 # v1.1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
