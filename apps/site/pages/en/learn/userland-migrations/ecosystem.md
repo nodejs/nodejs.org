@@ -12,13 +12,11 @@ Sometimes the ecosystem creates awesome tools or libraries for node.js, but a na
 
 When you want to [run typescript natively in Node.js](/learn/typescript/run-natively), you need to have a correct "specifiers" in your [imports statements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).
 
-To run this codemdod, you have to use this command:
+To run this codemod, you have to use this command:
 
 ```bash
-npx codemod@latest run correct-ts-specifiers
+npx codemod run @nodejs/correct-ts-specifiers
 ```
-
-> **Note:** This codemod use "legacy" codemod CLI, if you wan to undersant more about it, you can read the [new codemod CLI announcement](https://codemod.com/blog/new-codemod-cli).
 
 ## Feedback
 
