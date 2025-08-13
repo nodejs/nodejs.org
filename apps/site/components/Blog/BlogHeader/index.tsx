@@ -21,7 +21,6 @@ const BlogHeader: FC<BlogHeaderProps> = ({ category }) => {
         {t('layouts.blog.title')}
         <Link
           href={`/feed/${currentFile}`}
-          {...{ locale: 'en' }} // RSS feeds only exist in English
           aria-label={t('components.blog.blogHeader.rssLink')}
         >
           <RssIcon />
