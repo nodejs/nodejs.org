@@ -11,7 +11,7 @@ Si estás interesado en colaborar con la comunidad de Node.js, hay muchas manera
 
 - El [repositorio `nodejs/node` en GitHub](https://github.com/nodejs/node/issues) es dónde se debaten las funciones claves de Node.js y dónde se comunican problemas.
 - El [repositorio `nodejs/help` en GitHub](https://github.com/nodejs/help/issues) es el lugar oficial para hacer preguntas sobre Node.js.
-- El [servidor oficial de Discord de Node.js](/discord) es un lugar para charlar con otros desarrolladores de Node.js y recibir noticias oficiales del proyecto Node.js.
+- El [servidor oficial de Discord de Node.js](https://discord.gg/nodejs) es un lugar para charlar con otros desarrolladores de Node.js y recibir noticias oficiales del proyecto Node.js.
 - El [calendario del proyecto de Node.js](https://nodejs.org/calendar) con todas las reuniones públicas del equipo de Node.js.
 
 ## Material de Aprendizaje
