@@ -8,7 +8,7 @@ authors: JakobJingleheimer, AugustinMauroy
 
 # Userland Migrations
 
-Node.js provides migrations for "userland" (what you write vs node's own) source-code to facilitate adoption of new features and upgrading source-code affected by breaking changes. These are done in collaboration with [`codemod`](https://docs.codemod.com/introduction), who also work with other major projects like Next.js, React, and Tailwind. Node.js's migrations live in the [`nodejs/userland-migrations`](https://github.com/nodejs/userland-migrations) repository and are overseen by the `@nodejs/userland-migrations` team.
+Node.js offers migrations for "userland" code (anything outside the node executable) to help adopt new features and handle breaking changes. These are built in collaboration with Codemod, a platform focused on making it easy to build, share, and run codemods.
 
 Official migrations are published under the `@nodejs` scope within the [codemod registry](https://codemod.link/nodejs-official). These have been reviewed and/or authored by Node.js members.
 
