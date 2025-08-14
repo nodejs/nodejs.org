@@ -21,12 +21,14 @@ const EOLModal: FC<EOLModalProps> = ({
 }) => {
   const t = useTranslations();
 
-  const modalHeading = release.codename
+  const { codename, major: version } = release;
+
+  const modalHeading = codename
     ? t('components.eolModal.title', {
-        version: release.major,
-        codename: release.codename,
+        version,
+        codename,
       })
-    : t('components.eolModal.titleWithoutCodename', { version: release.major });
+    : t('components.eolModal.titleWithoutCodename', { version });
 
   useMemo(
     () =>
