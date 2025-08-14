@@ -7,11 +7,9 @@ const EOLAlert = () => {
   const t = useTranslations();
   return (
     <AlertBox level="warning">
-      {t('components.eolAlert.intro')}{' '}
-      <Link href="/eol">
-        OpenJS Ecosystem Sustainability Program{' '}
-        {t('components.eolAlert.partner')} HeroDevs
-      </Link>
+      {t.rich('components.eolAlert.message', {
+        link: text => <Link href="/eol">{text}</Link>,
+      })}
     </AlertBox>
   );
 };
