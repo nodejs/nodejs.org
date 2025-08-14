@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import type { FC } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
@@ -38,8 +38,8 @@ const EOLReleaseTable: FC = () => {
       </thead>
       <tbody>
         {eolReleases.map(release => (
-          <>
-            <tr key={release.major}>
+          <Fragment key={release.major}>
+            <tr>
               <td data-label="Version">
                 v{release.major}{' '}
                 {release.codename ? `(${release.codename})` : ''}
@@ -67,7 +67,7 @@ const EOLReleaseTable: FC = () => {
               open={currentModal === release.version}
               onOpenChange={open => open || setCurrentModal(undefined)}
             />
-          </>
+          </Fragment>
         ))}
       </tbody>
     </table>
