@@ -34,7 +34,7 @@ const useNavigationState = <T extends HTMLElement>(
       return () => element.removeEventListener('scroll', handleScroll);
     }
     // We need this effect to run only on mount
-  });
+  }, []);
 };
 
 export default useNavigationState;
