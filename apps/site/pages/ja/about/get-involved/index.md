@@ -11,7 +11,7 @@ Node.jsのコミュニティへの参加の仕方にはさまざまな方法が�
 
 - [`nodejs/node` GitHubリポジトリー](https://github.com/nodejs/node/issues)は、Node.jsのコア機能や問題の報告を行うための場所です。
 - [`nodejs/help` GitHubリポジトリー](https://github.com/nodejs/help/issues)でもNode.jsに関する質問を受け付けています。
-- Node.jsの[公式Discordサーバー](/discord)ではNode.js開発者とチャットしたりNode.jsプロジェクトからのニュースを知ることができます。
+- Node.jsの[公式Discordサーバー](https://discord.gg/nodejs)ではNode.js開発者とチャットしたりNode.jsプロジェクトからのニュースを知ることができます。
 - [Node.jsプロジェクトカレンダー](https://nodejs.org/calendar)では公開されている全ての会議を確認できます。
 
 ## 学習教材

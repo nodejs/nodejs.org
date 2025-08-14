@@ -334,11 +334,11 @@
     },
     {
       "source": "/discord",
-      "destination": "https://discord.gg/vUsrbjd"
+      "destination": "https://discord.gg/nodejs"
     },
     {
       "source": "/:locale/discord",
-      "destination": "https://discord.gg/vUsrbjd"
+      "destination": "https://discord.gg/nodejs"
     },
     {
       "source": "/:locale/esp/herodevs",

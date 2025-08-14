@@ -1,5 +1,8 @@
-@utility turtle {
-  @apply animate-surf
+@reference "../../../styles/index.css";
+
+.turtle {
+  @apply motion-safe:animate-surf
+    animate-surf
     absolute
     z-10
     translate-x-0
@@ -16,12 +19,13 @@
     after:bg-[url('/static/images/smoke.gif')]
     after:opacity-[0.15]
     after:content-['']
+    motion-reduce:animate-none
     after:md:-left-1/2
     after:md:top-1/2;
+}
 
-  & img {
-    @apply h-auto
-      w-24
-      md:w-48;
-  }
+.image {
+  @apply h-auto
+    w-24
+    md:w-48;
 }
