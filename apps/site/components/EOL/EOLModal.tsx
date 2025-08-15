@@ -15,19 +15,14 @@ type EOLModalProps = ComponentProps<typeof Modal> & {
 };
 
 const EOLModal: FC<EOLModalProps> = ({
-  release,
+  release: { codename, major: version },
   vulnerabilities,
   ...props
 }) => {
   const t = useTranslations();
 
-  const { codename, major: version } = release;
-
   const modalHeading = codename
-    ? t('components.eolModal.title', {
-        version,
-        codename,
-      })
+    ? t('components.eolModal.title', { version, codename })
     : t('components.eolModal.titleWithoutCodename', { version });
 
   useMemo(

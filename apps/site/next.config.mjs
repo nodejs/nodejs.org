@@ -6,6 +6,7 @@ import { redirects, rewrites } from './next.rewrites.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  allowedDevOrigins: ['10.1.1.232'],
   // We don't use trailing slashes on URLs from the Node.js Website
   trailingSlash: false,
   // We don't want to redirect with trailing slashes

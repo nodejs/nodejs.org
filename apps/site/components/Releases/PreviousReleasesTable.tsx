@@ -2,14 +2,14 @@
 
 import Badge from '@node-core/ui-components/Common/Badge';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
 import type { FC } from 'react';
+import { useState } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
 import LinkWithArrow from '#site/components/LinkWithArrow';
 import provideReleaseData from '#site/next-data/providers/releaseData';
 
-import ReleaseModal from '../ReleaseModal';
+import ReleaseModal from './ReleaseModal';
 
 const BADGE_KIND_MAP = {
   'End-of-life': 'warning',
@@ -19,8 +19,9 @@ const BADGE_KIND_MAP = {
   Pending: 'default',
 } as const;
 
-const DownloadReleasesTable: FC = () => {
+const PreviousReleasesTable: FC = () => {
   const releaseData = provideReleaseData();
+
   const t = useTranslations();
 
   const [currentModal, setCurrentModal] = useState<string | undefined>();
@@ -37,24 +38,30 @@ const DownloadReleasesTable: FC = () => {
           <th></th>
         </tr>
       </thead>
+
       <tbody>
         {releaseData.map(release => (
           <>
             <tr key={release.major}>
               <td data-label="Version">v{release.major}</td>
+
               <td data-label="LTS">{release.codename || '-'}</td>
+
               <td data-label="Date">
                 <FormattedTime date={release.currentStart} />
               </td>
+
               <td data-label="Date">
                 <FormattedTime date={release.releaseDate} />
               </td>
+
               <td data-label="Status">
                 <Badge kind={BADGE_KIND_MAP[release.status]} size="small">
                   {release.status}
                   {release.status === 'End-of-life' ? ' (EoL)' : ''}
                 </Badge>
               </td>
+
               <td>
                 <LinkWithArrow
                   className="cursor-pointer"
@@ -64,6 +71,7 @@ const DownloadReleasesTable: FC = () => {
                 </LinkWithArrow>
               </td>
             </tr>
+
             <ReleaseModal
               release={release}
               open={currentModal === release.version}
@@ -76,4 +84,4 @@ const DownloadReleasesTable: FC = () => {
   );
 };
 
-export default DownloadReleasesTable;
+export default PreviousReleasesTable;

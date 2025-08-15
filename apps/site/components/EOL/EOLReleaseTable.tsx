@@ -15,6 +15,7 @@ import { EOL_VERSION_IDENTIFIER } from '#site/next.constants.mjs';
 const EOLReleaseTable: FC = () => {
   const releaseData = provideReleaseData();
   const vulnerabilities = provideVulnerabilities();
+
   const eolReleases = releaseData.filter(
     release => release.status === EOL_VERSION_IDENTIFIER
   );
@@ -36,6 +37,7 @@ const EOLReleaseTable: FC = () => {
           <th>{t('components.eolTable.details')}</th>
         </tr>
       </thead>
+
       <tbody>
         {eolReleases.map(release => (
           <Fragment key={release.major}>
@@ -44,14 +46,17 @@ const EOLReleaseTable: FC = () => {
                 v{release.major}{' '}
                 {release.codename ? `(${release.codename})` : ''}
               </td>
+
               <td data-label="Date">
                 <FormattedTime date={release.releaseDate} />
               </td>
+
               <td>
                 <VulnerabilityChips
                   vulnerabilities={vulnerabilities[release.major]}
                 />
               </td>
+
               <td>
                 <LinkWithArrow
                   className="cursor-pointer"
@@ -61,6 +66,7 @@ const EOLReleaseTable: FC = () => {
                 </LinkWithArrow>
               </td>
             </tr>
+
             <EOLModal
               release={release}
               vulnerabilities={vulnerabilities[release.major]}

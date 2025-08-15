@@ -28,6 +28,7 @@ export const MinorReleasesTable: FC<MinorReleasesTableProps> = ({
           <th>{t('components.minorReleasesTable.links')}</th>
         </tr>
       </thead>
+
       <tbody>
         {releases.map(release => (
           <tr key={release.version}>

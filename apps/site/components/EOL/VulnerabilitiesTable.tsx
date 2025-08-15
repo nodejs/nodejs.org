@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import VulnerabilityChip from '#site/components/EOL/VulnerabilityChips/Chip';
+import VulnerabilityChip from '#site/components/EOL/VulnerabilityChips/VulnerabilityChip';
 import LinkWithArrow from '#site/components/LinkWithArrow';
 import type { Vulnerability } from '#site/types/vulnerabilities';
 
@@ -51,7 +51,7 @@ const VulnerabilitiesTable: FC<{
               {vulnerability.description || vulnerability.overview || '-'}
             </td>
             <td>
-              {vulnerability.url ? (
+              {vulnerability.url && (
                 <LinkWithArrow
                   href={vulnerability.url}
                   target="_blank"
@@ -59,9 +59,9 @@ const VulnerabilitiesTable: FC<{
                 >
                   {t('components.eolModal.blogLinkText')}
                 </LinkWithArrow>
-              ) : (
-                '—'
               )}
+
+              {!!vulnerability.url || '-'}
             </td>
           </tr>
         ))}

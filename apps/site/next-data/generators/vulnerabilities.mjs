@@ -1,71 +1,6 @@
 import { VULNERABILITIES_URL } from '#site/next.constants.mjs';
 
-/**
- * Groups vulnerabilities by major version number extracted from the `vulnerable` string.
- *
- * @param {Array<import('#site/types/vulnerabilities').Vulnerability>} vulnerabilities Array of Vulnerability objects
- */
-export function groupVulnerabilitiesByMajor(vulnerabilities) {
-  const grouped = {};
-
-  vulnerabilities.forEach(vulnerability => {
-    // To avoid future confusion, rename 'ref' to 'url'
-    vulnerability.url = vulnerability.ref;
-    delete vulnerability.ref;
-
-    // split on '||' to handle multiple versions and trim whitespace
-    const potentialVersions =
-      vulnerability.vulnerable?.split('||').map(v => v.trim()) || [];
-
-    potentialVersions.forEach(version => {
-      // handle 0.X versions, which did not follow semver
-      // we don't even capture the minor here.
-      if (/^0\.\d+(\.x)?$/.test(version)) {
-        const majorVersion = '0';
-        if (!grouped[majorVersion]) grouped[majorVersion] = [];
-        grouped[majorVersion].push(vulnerability);
-        return;
-      }
-
-      // handle simple cases, where there is no range
-      // this is something like 12.x
-      if (/^\d+.x/.test(version)) {
-        const majorVersion = version.split('.')[0];
-        if (!grouped[majorVersion]) grouped[majorVersion] = [];
-        grouped[majorVersion].push(vulnerability);
-        return;
-      }
-
-      // detect if there is a range in the values,
-      // which would include a > or < or <= or >=, with spaces
-      const rangeMatch = version.match(/([<>]=?)\s*(\d+)?\.?(\d+)?/);
-      if (rangeMatch) {
-        const operator = rangeMatch[1];
-
-        // if we have equality or greater than, we simply add the current
-        // and assume that other piped sections handle any higher bounds
-        if (operator === '>=' || operator === '>' || operator === '<=') {
-          const majorVersion = rangeMatch[2];
-          if (!grouped[majorVersion]) grouped[majorVersion] = [];
-          grouped[majorVersion].push(vulnerability);
-        }
-
-        // if we only specify (< pr <=) vulnerability,
-        // we need to count down from this to all majors!
-        if (operator === '<' || operator === '<=') {
-          const majorVersion = rangeMatch[2];
-          for (let i = majorVersion - 1; i >= 0; i--) {
-            if (!grouped[i]) grouped[i] = [];
-            grouped[i].push(vulnerability);
-          }
-          return;
-        }
-      }
-    });
-  });
-
-  return grouped;
-}
+const RANGE_REGEX = /([<>]=?)\s*(\d+)(?:\.(\d+))?/;
 
 /**
  * Fetches vulnerability data from the Node.js Security Working Group repository,
@@ -76,7 +11,83 @@ export function groupVulnerabilitiesByMajor(vulnerabilities) {
 export default async function generateVulnerabilityData() {
   const response = await fetch(VULNERABILITIES_URL);
 
-  const data = await response.json();
+  /** @type {Array<import('#site/types/vulnerabilities').RawVulnerability>} */
+  const data = Object.values(await response.json());
 
-  return groupVulnerabilitiesByMajor(Object.values(data));
+  /** @type {Promise<import('#site/types/vulnerabilities').GroupedVulnerabilities> */
+  const grouped = {};
+
+  // Helper function to add vulnerability to a major version group
+  const addToGroup = (majorVersion, vulnerability) => {
+    grouped[majorVersion] ??= [];
+    grouped[majorVersion].push(vulnerability);
+  };
+
+  // Helper function to process version patterns
+  const processVersion = (version, vulnerability) => {
+    // Handle 0.X versions (pre-semver)
+    if (/^0\.\d+(\.x)?$/.test(version)) {
+      addToGroup('0', vulnerability);
+
+      return;
+    }
+
+    // Handle simple major.x patterns (e.g., 12.x)
+    if (/^\d+\.x$/.test(version)) {
+      const majorVersion = version.split('.')[0];
+
+      addToGroup(majorVersion, vulnerability);
+
+      return;
+    }
+
+    // Handle version ranges (>, >=, <, <=)
+    const rangeMatch = RANGE_REGEX.exec(version);
+
+    if (rangeMatch) {
+      const [, operator, majorVersion] = rangeMatch;
+
+      const majorNum = parseInt(majorVersion, 10);
+
+      switch (operator) {
+        case '>=':
+        case '>':
+        case '<=':
+          addToGroup(majorVersion, vulnerability);
+
+          break;
+        case '<':
+          // Add to all major versions below the specified version
+          for (let i = majorNum - 1; i >= 0; i--) {
+            addToGroup(i.toString(), vulnerability);
+          }
+
+          break;
+      }
+    }
+  };
+
+  for (const vulnerability of Object.values(data)) {
+    const parsedVulnerability = {
+      cve: vulnerability.cve,
+      url: vulnerability.ref,
+      vulnerable: vulnerability.vulnerable,
+      patched: vulnerability.patched,
+      description: vulnerability.description,
+      overview: vulnerability.overview,
+      affectedEnvironments: vulnerability.affectedEnvironments,
+      severity: vulnerability.severity,
+    };
+
+    // Process all potential versions from the vulnerable field
+    const versions = parsedVulnerability.vulnerable
+      .split(' || ')
+      .filter(Boolean);
+
+    for (const version of versions) {
+      processVersion(version, parsedVulnerability);
+    }
+  }
+
+  return grouped;
 }
