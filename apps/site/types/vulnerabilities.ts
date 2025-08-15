@@ -1,4 +1,5 @@
 export type Severity = 'unknown' | 'low' | 'medium' | 'high' | 'critical';
+
 export interface Vulnerability {
   cve: Array<string>;
   url?: string;
