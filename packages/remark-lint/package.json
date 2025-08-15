@@ -47,7 +47,7 @@
     "semver": "~7.7.2",
     "unified-lint-rule": "^3.0.1",
     "unist-util-visit": "^5.0.0",
-    "yaml": "^2.8.0"
+    "yaml": "^2.8.1"
   },
   "devDependencies": {
     "cross-env": "catalog:",

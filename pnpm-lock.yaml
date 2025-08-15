@@ -423,8 +423,8 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
       yaml:
-        specifier: ^2.8.0
-        version: 2.8.0
+        specifier: ^2.8.1
+        version: 2.8.1
     devDependencies:
       cross-env:
         specifier: 'catalog:'
@@ -8330,6 +8330,11 @@ packages:
     engines: {node: '>= 14.6'}
     hasBin: true
 
+  yaml@2.8.1:
+    resolution: {integrity: sha512-lcYcMxX2PO9XMGvAJkJ3OsNMw+/7FKes7/hgerGUYWIoWu5j/+YQqcZr5JnPZWzOsEBgMbSbiSTn/dv/69Mkpw==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
+
   yargs-parser@21.1.1:
     resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
     engines: {node: '>=12'}
@@ -10376,7 +10381,7 @@ snapshots:
       express: 5.0.1
       path-to-regexp: 6.3.0
       urlpattern-polyfill: 10.1.0
-      yaml: 2.8.0
+      yaml: 2.8.1
     transitivePeerDependencies:
       - aws-crt
       - supports-color
@@ -15842,7 +15847,7 @@ snapshots:
   postcss-load-config@5.1.0(jiti@2.4.2)(postcss@8.5.3)(tsx@4.20.3):
     dependencies:
       lilconfig: 3.1.3
-      yaml: 2.8.0
+      yaml: 2.8.1
     optionalDependencies:
       jiti: 2.4.2
       postcss: 8.5.3
@@ -17539,7 +17544,7 @@ snapshots:
       vfile-message: 4.0.2
       vfile-reporter: 8.1.1
       vfile-statistics: 3.0.0
-      yaml: 2.8.0
+      yaml: 2.8.1
     transitivePeerDependencies:
       - bluebird
       - supports-color
@@ -18035,6 +18040,8 @@ snapshots:
   yaml@2.7.1: {}
 
   yaml@2.8.0: {}
+
+  yaml@2.8.1: {}
 
   yargs-parser@21.1.1: {}
 
