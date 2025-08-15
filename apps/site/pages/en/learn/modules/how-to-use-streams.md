@@ -98,7 +98,7 @@ stream.on('data', chunk => {
 });
 ```
 
-In this code, the `MyStream` class extends Readable and overrides the [`_read`][] method to push a string ":-)" to the internal buffer. After pushing the string five times, it signals the end of the stream by pushing `null`. The [`on('data')`][] event handler logs each chunk to the console as it is received.
+In this code, the `MyStream` class extends Readable and overrides the [`_read()`][] method to push a string ":-)" to the internal buffer. After pushing the string five times, it signals the end of the stream by pushing `null`. The [`on('data')`][] event handler logs each chunk to the console as it is received.
 
 #### Advanced Control with the readable Event
 
