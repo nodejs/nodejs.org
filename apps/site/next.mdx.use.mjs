@@ -3,6 +3,8 @@
 import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 
 import Button from './components/Common/Button';
+import PartnersIconList from './components/Common/Partners/PartnersIconList';
+import PartnersLogoList from './components/Common/Partners/PartnersLogoList';
 import DownloadReleasesTable from './components/Downloads/DownloadReleasesTable';
 import Link from './components/Link';
 import LinkWithArrow from './components/LinkWithArrow';
@@ -10,6 +12,7 @@ import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
 import WithBadgeGroup from './components/withBadgeGroup';
 import WithBanner from './components/withBanner';
 import WithNodeRelease from './components/withNodeRelease';
+import WithSupporters from './components/withSupporters';
 
 /**
  * A full list of React Components that we want to pass through to MDX
@@ -24,8 +27,14 @@ export const mdxComponents = {
   WithBanner,
   // HOC for providing Badge Data
   WithBadgeGroup,
+  // HOC for providing Backers Data
+  WithSupporters,
   // Standalone Badge Group
   BadgeGroup,
+  // Shows a list of Node.js Partners with Icons
+  PartnersIconList,
+  // Shows a list of Node.js Partners with Logos
+  PartnersLogoList,
   // Renders an container for Upcoming Node.js Meetings
   UpcomingMeetings,
   // Renders a Button Component for `button` tags

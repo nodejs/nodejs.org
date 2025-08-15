@@ -117,6 +117,10 @@
         "branding": {
           "link": "/about/branding",
           "label": "components.navigation.about.links.branding"
+        },
+        "partners": {
+          "link": "/about/partners",
+          "label": "components.navigation.about.links.partners"
         }
       }
     },
