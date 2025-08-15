@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 import provideWebsiteFeeds from '#site/next-data/providers/websiteFeeds';
 import { siteConfig } from '#site/next.json.mjs';
-import { availableLocaleCodes } from '#site/next.locales.mjs';
+import { defaultLocale } from '#site/next.locales.mjs';
 
 type DynamicStaticPaths = { locale: string; feed: string };
 type StaticParams = { params: Promise<DynamicStaticPaths> };
@@ -26,12 +26,10 @@ export const GET = async (_: Request, props: StaticParams) => {
 // `[locale]/feeds/[feed]` and returns an array of all available static paths
 // This is used for ISR static validation and generation
 export const generateStaticParams = async () =>
-  availableLocaleCodes.flatMap(locale =>
-    siteConfig.rssFeeds.map(feed => ({
-      locale: locale,
-      feed: feed.file,
-    }))
-  );
+  siteConfig.rssFeeds.map(feed => ({
+    locale: defaultLocale.code,
+    feed: feed.file,
+  }));
 
 // Enforces that only the paths from `generateStaticParams` are allowed, giving 404 on the contrary
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamicparams
