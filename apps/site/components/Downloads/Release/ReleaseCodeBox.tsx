@@ -122,7 +122,7 @@ const ReleaseCodeBox: FC = () => {
           size="small"
         >
           {t.rich('layouts.download.codeBox.unsupportedVersionWarning', {
-            link: text => <Link href="/about/previous-releases/">{text}</Link>,
+            link: text => <Link href="/eol">{text}</Link>,
           })}
         </AlertBox>
       )}

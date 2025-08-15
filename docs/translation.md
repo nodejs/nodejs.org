@@ -60,6 +60,13 @@ If you're making a new Component and adding Translation Keys for your Component,
   - Translation Keys should be in Camel Case only.
   - The values of each Translation Key should follow the [ICU Message Syntax](https://next-intl-docs.vercel.app/docs/usage/messages#rendering-icu-messages)
 - All new Translation keys should be added at the bottom of the `i18n/locales/en.json` file. Since this makes it easier for Translators to notice that there are new Translation keys to be translated.
+- Reference the full path to the key within your Component. This helps with static analysis, even at the cost of verbosity. For example:
+  ```tsx
+  ❌ const t = useTranslations('components.common.myComponent');
+  ❌ t('copyButton.title');
+  ✅ const t = useTranslations();
+  ✅ t('components.common.myComponent.copyButton.title');
+  ```
 
 #### Notes about Translation Keys
 

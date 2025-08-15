@@ -1,6 +1,7 @@
 import Preview from '@node-core/ui-components/Common/Preview';
 import type { FC, PropsWithChildren } from 'react';
 
+import EOLAlert from '#site/components/EOL/EOLAlert';
 import WithAvatarGroup from '#site/components/withAvatarGroup';
 import WithBlogCrossLinks from '#site/components/withBlogCrossLinks';
 import WithFooter from '#site/components/withFooter';
@@ -26,6 +27,8 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
       <div className={styles.contentLayout}>
         <div className={styles.postLayout}>
           <main>
+            {type === 'vulnerability' && <EOLAlert />}
+
             <h1>{frontmatter.title}</h1>
 
             <section>
