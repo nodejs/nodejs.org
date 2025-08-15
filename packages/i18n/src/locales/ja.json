@@ -3,7 +3,7 @@
     "containers": {
       "footer": {
         "links": {
-          "openJSFoundation": "OpenJS財団",
+          "openJSFoundation": "OpenJS Foundation",
           "trademarkPolicy": "商標ポリシー",
           "privacyPolicy": "プライバシーポリシー",
           "versionSupport": "バージョンサポート",
@@ -229,7 +229,8 @@
         "label": "言語を選択"
       },
       "themeToggle": {
-        "label": "ダークモードに切り替え"
+        "light": "ライトモードに切り替える",
+        "dark": "ダークモードに切り替える"
       }
     },
     "metabar": {

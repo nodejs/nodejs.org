@@ -229,7 +229,8 @@
         "label": "Choisir la langue"
       },
       "themeToggle": {
-        "label": "Basculer en mode sombre"
+        "light": "Basculer en mode clair",
+        "dark": "Basculer en mode nuit"
       }
     },
     "metabar": {
