@@ -4,6 +4,7 @@ import type { FC } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
 import DetailsButton from '#site/components/Downloads/DownloadReleasesTable/DetailsButton';
+import Link from '#site/components/Link';
 import provideReleaseData from '#site/next-data/providers/releaseData';
 
 const BADGE_KIND_MAP = {
@@ -33,7 +34,11 @@ const DownloadReleasesTable: FC = () => {
       <tbody>
         {releaseData.map(release => (
           <tr key={release.major}>
-            <td data-label="Version">v{release.major}</td>
+            <td data-label="Version">
+              <Link href={`/download/archive/${release.versionWithPrefix}`}>
+                v{release.major}
+              </Link>
+            </td>
             <td data-label="LTS">{release.codename || '-'}</td>
             <td data-label="Date">
               <FormattedTime date={release.currentStart} />

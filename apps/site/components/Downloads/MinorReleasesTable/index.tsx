@@ -1,10 +1,12 @@
-'use client';
-
+import { CodeBracketSquareIcon } from '@heroicons/react/24/outline';
 import Separator from '@node-core/ui-components/Common/Separator';
+import NpmIcon from '@node-core/ui-components/Icons/PackageManager/Npm';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
+import { ReleaseOverviewItem } from '#site/components/Downloads/ReleaseOverview';
 import Link from '#site/components/Link';
+import LinkWithArrow from '#site/components/LinkWithArrow';
 import { BASE_CHANGELOG_URL } from '#site/next.constants.mjs';
 import type { MinorVersion } from '#site/types';
 import { getNodeApiUrl } from '#site/util/url';
@@ -15,50 +17,86 @@ type MinorReleasesTableProps = {
   releases: Array<MinorVersion>;
 };
 
-export const MinorReleasesTable: FC<MinorReleasesTableProps> = ({
-  releases,
-}) => {
-  const t = useTranslations('components.minorReleasesTable');
+const MinorReleasesTable: FC<MinorReleasesTableProps> = ({ releases }) => {
+  const t = useTranslations();
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>{t('version')}</th>
-          <th>{t('links')}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {releases.map(release => (
-          <tr key={release.version}>
-            <td>v{release.version}</td>
-            <td>
-              <div className={styles.links}>
-                <Link
-                  kind="neutral"
-                  href={`https://nodejs.org/download/release/v${release.version}/`}
-                >
-                  {t('actions.release')}
-                </Link>
-                <Separator orientation="vertical" />
-                <Link
-                  kind="neutral"
-                  href={`${BASE_CHANGELOG_URL}${release.version}`}
-                >
-                  {t('actions.changelog')}
-                </Link>
-                <Separator orientation="vertical" />
-                <Link
-                  kind="neutral"
-                  href={getNodeApiUrl(`v${release.version}`)}
-                >
-                  {t('actions.docs')}
-                </Link>
-              </div>
-            </td>
+    <div className={styles.scrollable}>
+      <table>
+        <thead className={styles.stickyHeader}>
+          <tr>
+            <th>{t('components.minorReleasesTable.version')}</th>
+            <th className={styles.information}>
+              {t('components.minorReleasesTable.information')}
+            </th>
+            <th className={styles.links}>
+              {t('components.minorReleasesTable.links')}
+            </th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {releases.map(release => (
+            <tr key={release.version}>
+              <td>
+                <Link
+                  kind="neutral"
+                  href={`/download/archive/v${release.version}`}
+                >
+                  v{release.version}
+                </Link>
+              </td>
+              <td>
+                <div className={styles.items}>
+                  {release.modules && (
+                    <>
+                      <ReleaseOverviewItem
+                        Icon={CodeBracketSquareIcon}
+                        title={`v${release.modules}`}
+                        subtitle={t('components.releaseOverview.nApiVersion')}
+                      />
+                      <Separator orientation="vertical" />
+                    </>
+                  )}
+                  {release.npm && (
+                    <>
+                      <ReleaseOverviewItem
+                        Icon={NpmIcon}
+                        title={`v${release.npm}`}
+                        subtitle={t('components.releaseOverview.npmVersion')}
+                      />
+                      <Separator orientation="vertical" />
+                    </>
+                  )}
+                  <ReleaseOverviewItem
+                    Icon={CodeBracketSquareIcon}
+                    title={`v${release.v8}`}
+                    subtitle={t('components.releaseOverview.v8Version')}
+                  />
+                </div>
+              </td>
+              <td>
+                <div className={styles.additionalLinks}>
+                  <Link
+                    kind="neutral"
+                    href={getNodeApiUrl(`v${release.version}`)}
+                  >
+                    {t('components.minorReleasesTable.actions.docs')}
+                  </Link>
+                  <Separator orientation="vertical" />
+                  <LinkWithArrow
+                    kind="neutral"
+                    href={`${BASE_CHANGELOG_URL}${release.version}`}
+                  >
+                    {t('components.minorReleasesTable.actions.changelog')}
+                  </LinkWithArrow>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
+
+export default MinorReleasesTable;

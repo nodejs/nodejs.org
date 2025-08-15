@@ -4,4 +4,4 @@ export interface DownloadSnippet {
   content: string;
 }
 
-export type DownloadKind = 'installer' | 'binary' | 'source';
+export type DownloadKind = 'installer' | 'binary' | 'source' | 'shasum';

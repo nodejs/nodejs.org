@@ -16,6 +16,7 @@ import {
 } from './next.constants.mjs';
 import {
   DYNAMIC_ROUTES,
+  DYNAMIC_MARKDOWN_ROUTES,
   IGNORED_ROUTES,
   PAGE_METADATA,
 } from './next.dynamic.constants.mjs';
@@ -106,6 +107,15 @@ const getDynamicRouter = async () => {
    * @returns {Promise<{ source: string; filename: string }>}
    */
   const _getMarkdownFile = async (locale = '', pathname = '') => {
+    const layout = DYNAMIC_ROUTES.get(pathname);
+
+    if (DYNAMIC_MARKDOWN_ROUTES.has(layout)) {
+      // If the current pathname is a dynamic route that does not have a Markdown
+      // file we simply return the pathname of the dynamic route so that the page
+      //  can be rendered with the correct layout
+      pathname = getPathname(DYNAMIC_MARKDOWN_ROUTES.get(layout));
+    }
+
     const normalizedPathname = normalize(pathname).replace('.', '');
 
     // This verifies if the given pathname actually exists on our Map

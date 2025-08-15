@@ -20,6 +20,7 @@ import {
 import {
   PAGE_VIEWPORT,
   DYNAMIC_ROUTES,
+  DYNAMIC_MARKDOWN_ROUTES,
 } from '#site/next.dynamic.constants.mjs';
 import { dynamicRouter } from '#site/next.dynamic.mjs';
 import { allLocaleCodes, availableLocaleCodes } from '#site/next.locales.mjs';
@@ -97,10 +98,14 @@ const getPage: FC<DynamicParams> = async props => {
 
   const staticGeneratedLayout = DYNAMIC_ROUTES.get(pathname);
 
-  // If the current pathname is a statically generated route
-  // it means it does not have a Markdown file nor exists under the filesystem
-  // but it is a valid route with an assigned layout that should be rendered
-  if (staticGeneratedLayout !== undefined) {
+  // If the current pathname corresponds to a statically generated route but does
+  // not have a dynamic Markdown file, it means there is no Markdown file on the
+  // filesystem for it. However, it is still a valid route with an assigned layout
+  // that should be rendered.
+  if (
+    staticGeneratedLayout !== undefined &&
+    !DYNAMIC_MARKDOWN_ROUTES.has(staticGeneratedLayout)
+  ) {
     // Metadata and shared Context to be available through the lifecycle of the page
     const sharedContext = { pathname: `/${pathname}` };
 
