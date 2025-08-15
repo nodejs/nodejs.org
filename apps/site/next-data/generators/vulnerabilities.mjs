@@ -8,7 +8,7 @@ import { VULNERABILITIES_URL } from '#site/next.constants.mjs';
 export function groupVulnerabilitiesByMajor(vulnerabilities) {
   const grouped = {};
 
-  for (const vulnerability of vulnerabilities) {
+  vulnerabilities.forEach(vulnerability => {
     // To avoid future confusion, rename 'ref' to 'url'
     vulnerability.url = vulnerability.ref;
     delete vulnerability.ref;
@@ -62,7 +62,7 @@ export function groupVulnerabilitiesByMajor(vulnerabilities) {
         }
       }
     });
-  }
+  });
 
   return grouped;
 }
