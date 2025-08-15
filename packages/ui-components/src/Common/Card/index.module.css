@@ -1,0 +1,21 @@
+@reference "../../styles/index.css";
+
+.card {
+  @apply rounded-xs
+    border
+    border-neutral-200
+    bg-transparent
+    p-4
+    dark:border-neutral-800;
+
+  .header {
+    @apply text-sm
+      font-medium
+      text-gray-500
+      dark:text-gray-400;
+  }
+
+  .body {
+    @apply mt-2;
+  }
+}
