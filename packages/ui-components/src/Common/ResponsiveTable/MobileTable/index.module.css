@@ -1,0 +1,25 @@
+@reference "../../../styles/index.css";
+
+.row {
+  @apply flex
+    items-center
+    justify-between
+    border-b
+    border-gray-100
+    py-2
+    last:border-b-0
+    dark:border-neutral-800;
+
+  .header {
+    @apply font-medium
+      text-gray-700
+      dark:text-gray-200;
+  }
+
+  .value {
+    @apply flex
+      text-right
+      text-gray-600
+      dark:text-gray-300;
+  }
+}
