@@ -815,6 +815,7 @@ This work is derived from content published by [Matteo Collina][] in [Platformat
 [`on('close')`]: https://nodejs.org/api/stream.html#event-close_1
 [`on('error')`]: https://nodejs.org/api/stream.html#event-error_1
 [`.read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size
+[`_read()`]: https://nodejs.org/api/stream.html#readable_readsize
 [`.write()`]: https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback
 [`_write`]: https://nodejs.org/api/stream.html#writable_writechunk-encoding-callback
 [`.end()`]: https://nodejs.org/api/stream.html#writableendchunk-encoding-callback
