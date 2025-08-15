@@ -5,7 +5,6 @@ import remarkLintCheckboxContentIndent from 'remark-lint-checkbox-content-indent
 import remarkLintCodeBlockStyle from 'remark-lint-code-block-style';
 import remarkLintDefinitionSpacing from 'remark-lint-definition-spacing';
 import remarkLintFencedCodeMarker from 'remark-lint-fenced-code-marker';
-import remarkLintFileExtension from 'remark-lint-file-extension';
 import remarkLintFinalDefinition from 'remark-lint-final-definition';
 import remarkLintHeadingStyle from 'remark-lint-heading-style';
 import remarkLintNoConsecutiveBlankLines from 'remark-lint-no-consecutive-blank-lines';
@@ -51,7 +50,6 @@ export default {
     [remarkLintStrongMarker, '*'],
 
     // File and filename rules
-    [remarkLintFileExtension, 'md'],
     remarkLintNoFileNameConsecutiveDashes,
     remarkLintNofileNameOuterDashes,
 
