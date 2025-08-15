@@ -18,13 +18,7 @@ const KnownSeveritySection: FC<KnownSeveritySectionProps> = ({
     return null;
   }
 
-  return (
-    <VulnerabilitiesTable
-      vulnerabilities={vulnerabilities.filter(
-        vuln => vuln.severity !== 'unknown'
-      )}
-    />
-  );
+  return <VulnerabilitiesTable vulnerabilities={knownVulnerabilities} />;
 };
 
 export default KnownSeveritySection;
