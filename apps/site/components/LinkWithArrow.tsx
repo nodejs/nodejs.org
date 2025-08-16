@@ -1,12 +1,13 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import type { SlotProps } from '@radix-ui/react-slot';
 import { Slot } from '@radix-ui/react-slot';
-import type { ComponentProps, FC, PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import Link from '#site/components/Link';
+import type { LinkProps } from '#site/components/Link';
 
 type LinkWithArrowProps =
-  | ({ asChild?: false } & ComponentProps<typeof Link>)
+  | ({ asChild?: false } & LinkProps)
   | ({ asChild: true } & SlotProps);
 
 const LinkWithArrow: FC<PropsWithChildren<LinkWithArrowProps>> = ({
@@ -17,7 +18,7 @@ const LinkWithArrow: FC<PropsWithChildren<LinkWithArrowProps>> = ({
   const Comp = asChild ? Slot : Link;
 
   return (
-    <Comp {...props}>
+    <Comp {...(props as SlotProps)}>
       <span>
         {children}
         <ArrowUpRightIcon className="ml-1 inline w-3 fill-neutral-600 dark:fill-white" />
