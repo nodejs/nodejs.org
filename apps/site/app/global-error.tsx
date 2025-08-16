@@ -8,7 +8,7 @@ import BaseLayout from '#site/layouts/Base';
 import GlowingBackdropLayout from '#site/layouts/GlowingBackdrop';
 
 type ErrorProps = {
-error : Error
+  error : Error
 }
 
 const GlobalErrorPage = ({ error }: ErrorProps) => (
