@@ -16,23 +16,3 @@
       lg:grid-cols-3;
   }
 }
-
-.item {
-  @apply flex
-    items-center
-    gap-2;
-
-  dt {
-    @apply text-sm
-      font-semibold;
-  }
-
-  dd {
-    @apply text-xs
-      font-normal;
-  }
-
-  svg {
-    @apply size-4;
-  }
-}

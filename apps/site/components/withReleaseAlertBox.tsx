@@ -20,12 +20,8 @@ const WithReleaseAlertBox: FC<WithReleaseAlertBoxProps> = ({ status }) => {
           level="warning"
           size="small"
         >
-          {t.rich('components.releaseModal.unsupportedVersionWarning', {
-            link: text => (
-              <Link href="/about/previous-releases#release-schedule">
-                {text}
-              </Link>
-            ),
+          {t.rich('layouts.download.codeBox.unsupportedVersionWarning', {
+            link: text => <Link href="/eol">{text}</Link>,
           })}
         </AlertBox>
       );

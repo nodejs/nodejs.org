@@ -229,7 +229,8 @@
         "label": "Alege limba"
       },
       "themeToggle": {
-        "label": "Comută modul întunecat"
+        "light": "Schimbă la modul luminos",
+        "dark": "Schimbă la modul întunecat"
       }
     },
     "metabar": {

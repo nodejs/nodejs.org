@@ -41,10 +41,6 @@
       "text": "components.containers.footer.links.privacyPolicy"
     },
     {
-      "link": "/about/previous-releases",
-      "text": "components.containers.footer.links.versionSupport"
-    },
-    {
       "link": "https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md",
       "text": "components.containers.footer.links.codeOfConduct"
     },
@@ -65,7 +61,7 @@
     },
     {
       "icon": "discord",
-      "link": "https://nodejs.org/discord",
+      "link": "https://discord.gg/nodejs",
       "alt": "Discord"
     },
     {

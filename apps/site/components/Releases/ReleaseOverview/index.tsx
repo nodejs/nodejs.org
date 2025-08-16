@@ -6,32 +6,13 @@ import {
 } from '@heroicons/react/24/outline';
 import NpmIcon from '@node-core/ui-components/Icons/PackageManager/Npm';
 import { useTranslations } from 'next-intl';
-import type { FC, ReactNode, SVGProps } from 'react';
+import type { FC } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
 import type { NodeRelease } from '#site/types';
 
 import styles from './index.module.css';
-
-type ReleaseOverviewItemProps = {
-  Icon: FC<SVGProps<SVGSVGElement>>;
-  title: ReactNode;
-  subtitle: ReactNode;
-};
-
-export const ReleaseOverviewItem: FC<ReleaseOverviewItemProps> = ({
-  Icon,
-  title,
-  subtitle,
-}) => (
-  <div className={styles.item}>
-    <Icon />
-    <dl>
-      <dd>{subtitle}</dd>
-      <dt>{title}</dt>
-    </dl>
-  </div>
-);
+import ReleaseOverviewItem from './ReleaseOverviewItem';
 
 type ReleaseOverviewProps = {
   release: NodeRelease;
@@ -53,11 +34,13 @@ const ReleaseOverview: FC<ReleaseOverviewProps> = ({ release }) => {
           title={<FormattedTime date={release.releaseDate} />}
           subtitle={t('components.releaseOverview.lastUpdated')}
         />
+
         <ReleaseOverviewItem
           Icon={Square3Stack3DIcon}
           title={release.minorVersions.length}
           subtitle={t('components.releaseOverview.minorVersions')}
         />
+
         {release.modules && (
           <ReleaseOverviewItem
             Icon={CodeBracketSquareIcon}
@@ -65,6 +48,7 @@ const ReleaseOverview: FC<ReleaseOverviewProps> = ({ release }) => {
             subtitle={t('components.releaseOverview.nApiVersion')}
           />
         )}
+
         {release.npm && (
           <ReleaseOverviewItem
             Icon={NpmIcon}

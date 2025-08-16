@@ -4,9 +4,9 @@ import NpmIcon from '@node-core/ui-components/Icons/PackageManager/Npm';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
-import { ReleaseOverviewItem } from '#site/components/Downloads/ReleaseOverview';
 import Link from '#site/components/Link';
 import LinkWithArrow from '#site/components/LinkWithArrow';
+import ReleaseOverviewItem from '#site/components/Releases/ReleaseOverview/ReleaseOverviewItem';
 import { BASE_CHANGELOG_URL } from '#site/next.constants.mjs';
 import type { MinorVersion } from '#site/types';
 import { getNodeApiUrl } from '#site/util/url';
