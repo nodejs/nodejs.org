@@ -17,8 +17,8 @@ export const Default: Story = {
       { key: 'name', header: 'Name' },
       { key: 'email', header: 'Email' },
     ],
-    getRowId: row => row.id as string,
-    getRowLabel: row => row.name as string,
+    getRowId: row => String(row.id),
+    getRowLabel: row => String(row.name),
   },
 };
 
