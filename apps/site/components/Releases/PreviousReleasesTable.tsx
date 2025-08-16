@@ -1,6 +1,7 @@
 'use client';
 
 import Badge from '@node-core/ui-components/Common/Badge';
+import ResponsiveTable from '@node-core/ui-components/Common/ResponsiveTable';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useState } from 'react';
@@ -26,61 +27,59 @@ const PreviousReleasesTable: FC = () => {
 
   const [currentModal, setCurrentModal] = useState<string | undefined>();
 
+  const columns = [
+    { key: 'version', header: t('components.downloadReleasesTable.version') },
+    { key: 'codename', header: t('components.downloadReleasesTable.codename') },
+    {
+      key: 'firstReleased',
+      header: t('components.downloadReleasesTable.firstReleased'),
+    },
+    {
+      key: 'lastUpdated',
+      header: t('components.downloadReleasesTable.lastUpdated'),
+    },
+    { key: 'status', header: t('components.downloadReleasesTable.status') },
+    { key: 'details', header: '' },
+  ];
+
+  const data = releaseData.map(release => ({
+    version: `v${release.major}`,
+    codename: release.codename || '-',
+    firstReleased: <FormattedTime date={release.currentStart} />,
+    lastUpdated: <FormattedTime date={release.releaseDate} />,
+    status: (
+      <Badge kind={BADGE_KIND_MAP[release.status]} size="small">
+        {release.status}
+        {release.status === 'End-of-life' ? ' (EoL)' : ''}
+      </Badge>
+    ),
+    details: (
+      <LinkWithArrow
+        className="cursor-pointer"
+        onClick={() => setCurrentModal(release.version)}
+      >
+        {t('components.downloadReleasesTable.details')}
+      </LinkWithArrow>
+    ),
+  }));
+
   return (
-    <table id="tbVersions">
-      <thead>
-        <tr>
-          <th>{t('components.downloadReleasesTable.version')}</th>
-          <th>{t('components.downloadReleasesTable.codename')}</th>
-          <th>{t('components.downloadReleasesTable.firstReleased')}</th>
-          <th>{t('components.downloadReleasesTable.lastUpdated')}</th>
-          <th>{t('components.downloadReleasesTable.status')}</th>
-          <th></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        {releaseData.map(release => (
-          <>
-            <tr key={release.major}>
-              <td data-label="Version">v{release.major}</td>
-
-              <td data-label="LTS">{release.codename || '-'}</td>
-
-              <td data-label="Date">
-                <FormattedTime date={release.currentStart} />
-              </td>
-
-              <td data-label="Date">
-                <FormattedTime date={release.releaseDate} />
-              </td>
-
-              <td data-label="Status">
-                <Badge kind={BADGE_KIND_MAP[release.status]} size="small">
-                  {release.status}
-                  {release.status === 'End-of-life' ? ' (EoL)' : ''}
-                </Badge>
-              </td>
-
-              <td>
-                <LinkWithArrow
-                  className="cursor-pointer"
-                  onClick={() => setCurrentModal(release.version)}
-                >
-                  {t('components.downloadReleasesTable.details')}
-                </LinkWithArrow>
-              </td>
-            </tr>
-
-            <ReleaseModal
-              release={release}
-              open={currentModal === release.version}
-              onOpenChange={open => open || setCurrentModal(undefined)}
-            />
-          </>
-        ))}
-      </tbody>
-    </table>
+    <>
+      <ResponsiveTable
+        data={data}
+        columns={columns}
+        getRowId={data => data.version}
+        getRowLabel={data => data.version}
+      />
+      {releaseData.map(release => (
+        <ReleaseModal
+          key={release.version}
+          release={release}
+          open={currentModal === release.version}
+          onOpenChange={open => open || setCurrentModal(undefined)}
+        />
+      ))}
+    </>
   );
 };
 
