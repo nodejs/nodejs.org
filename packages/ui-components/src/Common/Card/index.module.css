@@ -9,13 +9,10 @@
     dark:border-neutral-800;
 
   .header {
-    @apply text-sm
+    @apply mb-2
+      text-sm
       font-medium
       text-gray-500
       dark:text-gray-400;
-  }
-
-  .body {
-    @apply mt-2;
   }
 }

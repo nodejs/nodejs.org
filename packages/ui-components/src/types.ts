@@ -23,3 +23,10 @@ export type SimpleLocaleConfig = {
   localName: string;
   name: string;
 };
+
+export type TableColumn = {
+  key: string;
+  header: string;
+};
+
+export type TableData = Record<string, React.ReactNode>;

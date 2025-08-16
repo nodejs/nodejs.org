@@ -13,6 +13,6 @@ export const CardHeader: FC<CardProps> = ({ className, ...props }) => {
   return <div className={classNames(styles.header, className)} {...props} />;
 };
 
-export const CardBody: FC<CardProps> = ({ className, ...props }) => {
-  return <div className={classNames(styles.body, className)} {...props} />;
+export const CardBody: FC<CardProps> = props => {
+  return <div {...props} />;
 };

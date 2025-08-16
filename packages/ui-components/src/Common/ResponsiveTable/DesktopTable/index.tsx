@@ -1,4 +1,6 @@
-import type { ResponsiveTableProps, TableData } from '..';
+import type { TableData } from '#ui/types';
+
+import type { ResponsiveTableProps } from '..';
 
 function DesktopTable<T extends TableData>({
   data,
@@ -15,8 +17,8 @@ function DesktopTable<T extends TableData>({
         </tr>
       </thead>
       <tbody>
-        {data.map(row => (
-          <tr key={getRowId(row)}>
+        {data.map((row, index) => (
+          <tr key={getRowId(row, index)}>
             {columns.map(column => (
               <td key={column.key}>{row[column.key]}</td>
             ))}

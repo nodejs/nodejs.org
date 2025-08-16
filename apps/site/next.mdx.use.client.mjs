@@ -2,6 +2,7 @@
 
 import Blockquote from '@node-core/ui-components/Common/Blockquote';
 import MDXCodeTabs from '@node-core/ui-components/MDX/CodeTabs';
+import MDXTable from '@node-core/ui-components/Mdx/Table';
 
 import DownloadButton from './components/Downloads/DownloadButton';
 import BlogPostLink from './components/Downloads/Release/BlogPostLink';
@@ -71,4 +72,5 @@ export const htmlComponents = {
   pre: MDXCodeBox,
   // Renders an Image Component for `img` tags
   img: MDXImage,
+  table: MDXTable,
 };

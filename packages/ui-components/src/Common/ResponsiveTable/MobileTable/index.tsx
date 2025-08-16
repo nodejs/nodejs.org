@@ -1,6 +1,9 @@
-import type { ResponsiveTableProps, TableData } from '..';
+import type { TableData } from '#ui/types';
+
+import type { ResponsiveTableProps } from '..';
 import styles from './index.module.css';
 import { Card, CardBody, CardHeader } from '../../Card';
+
 
 function MobileTable<T extends TableData>({
   data,
@@ -10,9 +13,9 @@ function MobileTable<T extends TableData>({
 }: ResponsiveTableProps<T>) {
   return (
     <div role="table" className="space-y-4">
-      {data.map(row => (
-        <Card role="rowgroup" key={getRowId(row)}>
-          <CardHeader>{getRowLabel(row)}</CardHeader>
+      {data.map((row, index) => (
+        <Card role="rowgroup" key={getRowId(row, index)}>
+          {getRowLabel && <CardHeader>{getRowLabel(row)}</CardHeader>}
 
           <CardBody role="row">
             {columns.map(column => (
