@@ -48,7 +48,11 @@ const PreviousReleasesTable: FC = () => {
     firstReleased: <FormattedTime date={release.currentStart} />,
     lastUpdated: <FormattedTime date={release.releaseDate} />,
     status: (
-      <Badge kind={BADGE_KIND_MAP[release.status]} size="small">
+      <Badge
+        kind={BADGE_KIND_MAP[release.status]}
+        size="small"
+        className="block"
+      >
         {release.status}
         {release.status === 'End-of-life' ? ' (EoL)' : ''}
       </Badge>

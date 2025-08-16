@@ -4,7 +4,6 @@ import type { ResponsiveTableProps } from '..';
 import styles from './index.module.css';
 import { Card, CardBody, CardHeader } from '../../Card';
 
-
 function MobileTable<T extends TableData>({
   data,
   columns,
