@@ -1,6 +1,6 @@
 'use strict';
 
-import nodevu from '@nodevu/core';
+import nodevuData from './nodevuData.mjs';
 
 /**
  * This method is used to generate all Node.js versions
@@ -9,9 +9,7 @@ import nodevu from '@nodevu/core';
  * @returns {Promise<Array<string>>}
  */
 const generateAllVersionsData = async () => {
-  const nodevuOutput = await nodevu({ fetch });
-
-  const majors = Object.entries(nodevuOutput).filter(
+  const majors = Object.entries(await nodevuData).filter(
     ([version, { support }]) => {
       // Filter out those without documented support
       // Basically those not in schedule.json

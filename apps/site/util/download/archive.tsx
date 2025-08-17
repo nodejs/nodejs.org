@@ -58,16 +58,14 @@ const getCompatibleArtifacts = ({
   return Object.entries(platforms).flatMap(([os, items]) => {
     if (exclude.includes(os)) return [];
 
-    const operatingSystem = os as OperatingSystem;
-
     return items
       .filter(({ compatibility, value }) =>
-        isCompatible(compatibility, operatingSystem, value, version)
+        isCompatible(compatibility, os as OperatingSystem, value, version)
       )
       .map(({ value, label }) => {
         const url = getNodeDownloadUrl({
           version: version,
-          os: operatingSystem,
+          os: os as OperatingSystem,
           platform: value,
           kind: kind,
         });
@@ -75,7 +73,7 @@ const getCompatibleArtifacts = ({
         return {
           file: url.replace(`${DIST_URL}${version}/`, ''),
           kind: kind,
-          os: operatingSystem,
+          os: os as OperatingSystem,
           architecture: label,
           url: url,
           version: version,

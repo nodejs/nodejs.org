@@ -17,11 +17,7 @@ import {
   ENABLE_STATIC_EXPORT_LOCALE,
   ENABLE_STATIC_EXPORT,
 } from '#site/next.constants.mjs';
-import {
-  PAGE_VIEWPORT,
-  DYNAMIC_ROUTES,
-  DYNAMIC_MARKDOWN_ROUTES,
-} from '#site/next.dynamic.constants.mjs';
+import { PAGE_VIEWPORT } from '#site/next.dynamic.constants.mjs';
 import { dynamicRouter } from '#site/next.dynamic.mjs';
 import { allLocaleCodes, availableLocaleCodes } from '#site/next.locales.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
@@ -96,33 +92,6 @@ const getPage: FC<DynamicParams> = async props => {
   // Gets the current full pathname for a given path
   const pathname = dynamicRouter.getPathname(path);
 
-  const staticGeneratedLayout = DYNAMIC_ROUTES.get(pathname);
-
-  // If the current pathname corresponds to a statically generated route but does
-  // not have a dynamic Markdown file, it means there is no Markdown file on the
-  // filesystem for it. However, it is still a valid route with an assigned layout
-  // that should be rendered.
-  if (
-    staticGeneratedLayout !== undefined &&
-    !DYNAMIC_MARKDOWN_ROUTES.has(staticGeneratedLayout)
-  ) {
-    // Metadata and shared Context to be available through the lifecycle of the page
-    const sharedContext = { pathname: `/${pathname}` };
-
-    // Defines a shared Server Context for the Client-Side
-    // That is shared for all pages under the dynamic router
-    setClientContext(sharedContext);
-
-    // The Matter Provider allows Client-Side injection of the data
-    // to a shared React Client Provider even though the page is rendered
-    // within a server-side context
-    return (
-      <MatterProvider {...sharedContext}>
-        <WithLayout layout={staticGeneratedLayout} />
-      </MatterProvider>
-    );
-  }
-
   // We retrieve the source of the Markdown file by doing an educated guess
   // of what possible files could be the source of the page, since the extension
   // context is lost from `getStaticProps` as a limitation of Next.js itself
@@ -131,36 +100,36 @@ const getPage: FC<DynamicParams> = async props => {
     pathname
   );
 
-  if (source.length && filename.length) {
-    // This parses the source Markdown content and returns a React Component and
-    // relevant context from the Markdown File
-    const { content, frontmatter, headings, readingTime } =
-      await dynamicRouter.getMDXContent(source, filename);
-
-    // Metadata and shared Context to be available through the lifecycle of the page
-    const sharedContext = {
-      frontmatter: frontmatter,
-      headings: headings,
-      pathname: `/${pathname}`,
-      readingTime: readingTime,
-      filename: filename,
-    };
-
-    // Defines a shared Server Context for the Client-Side
-    // That is shared for all pages under the dynamic router
-    setClientContext(sharedContext);
-
-    // The Matter Provider allows Client-Side injection of the data
-    // to a shared React Client Provider even though the page is rendered
-    // within a server-side context
-    return (
-      <MatterProvider {...sharedContext}>
-        <WithLayout layout={frontmatter.layout}>{content}</WithLayout>
-      </MatterProvider>
-    );
+  if (source === '' && filename === '') {
+    return notFound();
   }
 
-  return notFound();
+  // This parses the source Markdown content and returns a React Component and
+  // relevant context from the Markdown File
+  const { content, frontmatter, headings, readingTime } =
+    await dynamicRouter.getMDXContent(source, filename);
+
+  // Metadata and shared Context to be available through the lifecycle of the page
+  const sharedContext = {
+    frontmatter: frontmatter,
+    headings: headings,
+    pathname: `/${pathname}`,
+    readingTime: readingTime,
+    filename: filename,
+  };
+
+  // Defines a shared Server Context for the Client-Side
+  // That is shared for all pages under the dynamic router
+  setClientContext(sharedContext);
+
+  // The Matter Provider allows Client-Side injection of the data
+  // to a shared React Client Provider even though the page is rendered
+  // within a server-side context
+  return (
+    <MatterProvider {...sharedContext}>
+      <WithLayout layout={frontmatter.layout}>{content}</WithLayout>
+    </MatterProvider>
+  );
 };
 
 // Enforces that this route is used as static rendering
