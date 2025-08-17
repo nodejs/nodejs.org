@@ -17,7 +17,10 @@ import {
   ENABLE_STATIC_EXPORT_LOCALE,
   ENABLE_STATIC_EXPORT,
 } from '#site/next.constants.mjs';
-import { PAGE_VIEWPORT } from '#site/next.dynamic.constants.mjs';
+import {
+  DYNAMIC_ROUTES,
+  PAGE_VIEWPORT,
+} from '#site/next.dynamic.constants.mjs';
 import { dynamicRouter } from '#site/next.dynamic.mjs';
 import { allLocaleCodes, availableLocaleCodes } from '#site/next.locales.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
@@ -100,7 +103,7 @@ const getPage: FC<DynamicParams> = async props => {
     pathname
   );
 
-  if (source === '' && filename === '') {
+  if (source === '' && filename === '' && !DYNAMIC_ROUTES.has(pathname)) {
     return notFound();
   }
 
@@ -118,6 +121,8 @@ const getPage: FC<DynamicParams> = async props => {
     filename: filename,
   };
 
+  const layout = frontmatter.layout || DYNAMIC_ROUTES.get(pathname);
+
   // Defines a shared Server Context for the Client-Side
   // That is shared for all pages under the dynamic router
   setClientContext(sharedContext);
@@ -127,7 +132,7 @@ const getPage: FC<DynamicParams> = async props => {
   // within a server-side context
   return (
     <MatterProvider {...sharedContext}>
-      <WithLayout layout={frontmatter.layout}>{content}</WithLayout>
+      <WithLayout layout={layout}>{content}</WithLayout>
     </MatterProvider>
   );
 };
