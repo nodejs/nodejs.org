@@ -25,6 +25,7 @@ const WithReleaseSelect: FC<WithReleaseSelectProps> = ({ ...props }) => {
       as={Link}
       onChange={push}
       className="w-full md:w-64"
+      ariaLabel={props.defaultValue}
     />
   );
 };
