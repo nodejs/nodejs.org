@@ -18,8 +18,8 @@ import {
   ENABLE_STATIC_EXPORT,
 } from '#site/next.constants.mjs';
 import {
-  DYNAMIC_ROUTES,
   PAGE_VIEWPORT,
+  DYNAMIC_ROUTES,
 } from '#site/next.dynamic.constants.mjs';
 import { dynamicRouter } from '#site/next.dynamic.mjs';
 import { allLocaleCodes, availableLocaleCodes } from '#site/next.locales.mjs';

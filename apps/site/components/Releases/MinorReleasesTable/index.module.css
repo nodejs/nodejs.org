@@ -39,7 +39,7 @@
   @apply md:w-44;
 }
 
-.stickyHeader {
+.header {
   @apply top-0
     z-10
     border-t
