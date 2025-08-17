@@ -9,25 +9,28 @@
 
 import { notFound, redirect } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import { setClientContext } from '#site/client-context';
 import WithLayout from '#site/components/withLayout';
-import {
-  ENABLE_STATIC_EXPORT_LOCALE,
-  ENABLE_STATIC_EXPORT,
-} from '#site/next.constants.mjs';
-import {
-  PAGE_VIEWPORT,
-  DYNAMIC_ROUTES,
-} from '#site/next.dynamic.constants.mjs';
+import { ENABLE_STATIC_EXPORT } from '#site/next.constants.mjs';
+import { ENABLE_STATIC_EXPORT_LOCALE } from '#site/next.constants.mjs';
+import { PAGE_VIEWPORT } from '#site/next.dynamic.constants.mjs';
 import { dynamicRouter } from '#site/next.dynamic.mjs';
 import { allLocaleCodes, availableLocaleCodes } from '#site/next.locales.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
 import { MatterProvider } from '#site/providers/matterProvider';
+import type { Layouts } from '#site/types/layouts';
+import type { ClientSharedServerContext } from '#site/types/server';
 
 type DynamicStaticPaths = { path: Array<string>; locale: string };
 type DynamicParams = { params: Promise<DynamicStaticPaths> };
+
+type DynamicPageRender = {
+  content: ReactNode;
+  layout: Layouts;
+  context: Partial<ClientSharedServerContext>;
+};
 
 // This is the default Viewport Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-viewport#generateviewport-function
@@ -67,11 +70,8 @@ export const generateStaticParams = async () => {
   return routes.flat().sort();
 };
 
-// This method parses the current pathname and does any sort of modifications needed on the route
-// then it proceeds to retrieve the Markdown file and parse the MDX Content into a React Component
-// finally it returns (if the locale and route are valid) the React Component with the relevant context
-// and attached context providers for rendering the current page
-const getPage: FC<DynamicParams> = async props => {
+// This method is used for retrieving the current locale and pathname from the request
+export const getLocaleAndPath = async (props: DynamicParams) => {
   const { path = [], locale = defaultLocale.code } = await props.params;
 
   if (!availableLocaleCodes.includes(locale)) {
@@ -93,31 +93,11 @@ const getPage: FC<DynamicParams> = async props => {
   setRequestLocale(locale);
 
   // Gets the current full pathname for a given path
-  const pathname = dynamicRouter.getPathname(path);
+  return [locale, dynamicRouter.getPathname(path)] as const;
+};
 
-  const staticGeneratedLayout = DYNAMIC_ROUTES.get(pathname);
-
-  // If the current pathname is a statically generated route
-  // it means it does not have a Markdown file nor exists under the filesystem
-  // but it is a valid route with an assigned layout that should be rendered
-  if (staticGeneratedLayout !== undefined) {
-    // Metadata and shared Context to be available through the lifecycle of the page
-    const sharedContext = { pathname: `/${pathname}` };
-
-    // Defines a shared Server Context for the Client-Side
-    // That is shared for all pages under the dynamic router
-    setClientContext(sharedContext);
-
-    // The Matter Provider allows Client-Side injection of the data
-    // to a shared React Client Provider even though the page is rendered
-    // within a server-side context
-    return (
-      <MatterProvider {...sharedContext}>
-        <WithLayout layout={staticGeneratedLayout} />
-      </MatterProvider>
-    );
-  }
-
+// This method is used for retrieving the Markdown content and context
+export const getMarkdownContext = async (locale: string, pathname: string) => {
   // We retrieve the source of the Markdown file by doing an educated guess
   // of what possible files could be the source of the page, since the extension
   // context is lost from `getStaticProps` as a limitation of Next.js itself
@@ -126,33 +106,57 @@ const getPage: FC<DynamicParams> = async props => {
     pathname
   );
 
-  if (source.length && filename.length) {
-    // This parses the source Markdown content and returns a React Component and
-    // relevant context from the Markdown File
-    const { content, frontmatter, headings, readingTime } =
-      await dynamicRouter.getMDXContent(source, filename);
+  // This parses the source Markdown content and returns a React Component and
+  // relevant context from the Markdown File
+  const { content, frontmatter, headings, readingTime } =
+    await dynamicRouter.getMDXContent(source, filename);
 
-    // Metadata and shared Context to be available through the lifecycle of the page
-    const sharedContext = {
-      frontmatter: frontmatter,
-      headings: headings,
-      pathname: `/${pathname}`,
-      readingTime: readingTime,
-      filename: filename,
-    };
+  // Metadata and shared Context to be available through the lifecycle of the page
+  const context = {
+    frontmatter: frontmatter,
+    headings: headings,
+    pathname: `/${pathname}`,
+    readingTime: readingTime,
+    filename: filename,
+  };
 
-    // Defines a shared Server Context for the Client-Side
-    // That is shared for all pages under the dynamic router
-    setClientContext(sharedContext);
+  return [content, context] as const;
+};
 
-    // The Matter Provider allows Client-Side injection of the data
-    // to a shared React Client Provider even though the page is rendered
-    // within a server-side context
-    return (
-      <MatterProvider {...sharedContext}>
-        <WithLayout layout={frontmatter.layout}>{content}</WithLayout>
-      </MatterProvider>
-    );
+// This method is used for rendering the actual page
+export const renderPage: FC<DynamicPageRender> = props => {
+  // Defines a shared Server Context for the Client-Side
+  // That is shared for all pages under the dynamic router
+  setClientContext(props.context);
+
+  // The Matter Provider allows Client-Side injection of the data
+  // to a shared React Client Provider even though the page is rendered
+  // within a server-side context
+  return (
+    <MatterProvider {...props.context}>
+      <WithLayout layout={props.layout}>{props.content}</WithLayout>
+    </MatterProvider>
+  );
+};
+
+// This method parses the current pathname and does any sort of modifications needed on the route
+// then it proceeds to retrieve the Markdown file and parse the MDX Content into a React Component
+// finally it returns (if the locale and route are valid) the React Component with the relevant context
+// and attached context providers for rendering the current page
+const getPage: FC<DynamicParams> = async props => {
+  // Gets the current full pathname for a given path
+  const [locale, pathname] = await getLocaleAndPath(props);
+
+  // Gets the Markdown content and context
+  const [content, context] = await getMarkdownContext(locale, pathname);
+
+  // If we have a filename and layout then we have a page
+  if (context.filename && context.frontmatter.layout) {
+    return renderPage({
+      content: content,
+      layout: context.frontmatter.layout,
+      context: context,
+    });
   }
 
   return notFound();

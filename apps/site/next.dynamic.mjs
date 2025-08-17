@@ -14,11 +14,7 @@ import {
   ENABLE_STATIC_EXPORT,
   IS_DEV_ENV,
 } from './next.constants.mjs';
-import {
-  DYNAMIC_ROUTES,
-  IGNORED_ROUTES,
-  PAGE_METADATA,
-} from './next.dynamic.constants.mjs';
+import { PAGE_METADATA } from './next.dynamic.constants.mjs';
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { siteConfig } from './next.json.mjs';
 import { availableLocaleCodes, defaultLocale } from './next.locales.mjs';
@@ -83,18 +79,13 @@ const getDynamicRouter = async () => {
 
   /**
    * This method returns a list of all routes that exist for a given locale
+   * Note: It will only match routes that have at least one pathname.
    *
    * @param {string} locale
    * @returns {Promise<Array<string>>}
    */
-  const getRoutesByLanguage = async (locale = defaultLocale.code) => {
-    const shouldIgnoreStaticRoute = pathname =>
-      IGNORED_ROUTES.every(e => !e({ pathname, locale }));
-
-    return [...pathnameToFilename.keys()]
-      .filter(shouldIgnoreStaticRoute)
-      .concat([...DYNAMIC_ROUTES.keys()]);
-  };
+  const getRoutesByLanguage = async (locale = defaultLocale.code) =>
+    [...pathnameToFilename.keys()].filter(p => locale.length && p.length);
 
   /**
    * This method attempts to retrieve either a localized Markdown file
