@@ -88,8 +88,8 @@ export const parseTableStructure = (
   const thead = nodes.find(node => isTableElement(node, 'thead'));
   const tbody = nodes.find(node => isTableElement(node, 'tbody'));
 
-  if (!thead) throw new Error('Thead not found');
-  if (!tbody) throw new Error('Tbody not found');
+  if (!thead) throw new Error('Thead element not found');
+  if (!tbody) throw new Error('Tbody element not found');
 
   const columns = extractColumns(thead);
   const data = extractData(tbody, columns);
