@@ -27,12 +27,22 @@ const BLOG_DYNAMIC_ROUTES = blogData.categories.flatMap(category => {
   // Each category can have multiple pages, so we generate a route for each page
   const categoryPages = provideBlogPosts(category).pagination.pages;
 
-  const categoryRoutes = Array.from({ length: categoryPages }, (_, page) => ({
+  const categoryRoute = {
     locale: defaultLocale.code,
-    path: [category, `${category}/page/${page + 1}`],
-  }));
+    path: [category],
+    pathname: `${category}`,
+  };
 
-  return [{ locale: defaultLocale.code, path: [category] }, ...categoryRoutes];
+  const categoryPaginationRoutes = Array.from(
+    { length: categoryPages },
+    (_, page) => ({
+      locale: defaultLocale.code,
+      path: [category, 'page', `${page + 1}`],
+      pathname: `${category}/page/${page + 1}`,
+    })
+  );
+
+  return [categoryRoute, ...categoryPaginationRoutes];
 });
 
 // This is the default Viewport Metadata
@@ -66,7 +76,7 @@ const getPage: FC<DynamicParams> = async props => {
   const [locale, pathname] = await basePage.getLocaleAndPath(props);
 
   const isDynamicRoute = BLOG_DYNAMIC_ROUTES.some(route =>
-    route.path.includes(pathname)
+    route.pathname.includes(pathname)
   );
 
   // Gets the Markdown content and context for Blog pages
