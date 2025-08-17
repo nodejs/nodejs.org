@@ -29,6 +29,7 @@ const ReleaseOverview: FC<ReleaseOverviewProps> = ({ release }) => {
           title={<FormattedTime date={release.currentStart} />}
           subtitle={t('components.releaseOverview.firstReleased')}
         />
+
         <ReleaseOverviewItem
           Icon={ClockIcon}
           title={<FormattedTime date={release.releaseDate} />}
@@ -56,6 +57,7 @@ const ReleaseOverview: FC<ReleaseOverviewProps> = ({ release }) => {
             subtitle={t('components.releaseOverview.npmVersion')}
           />
         )}
+
         <ReleaseOverviewItem
           Icon={CodeBracketSquareIcon}
           title={`v${release.v8}`}
