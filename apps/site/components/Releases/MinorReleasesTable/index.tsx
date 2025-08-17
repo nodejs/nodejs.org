@@ -23,7 +23,7 @@ const MinorReleasesTable: FC<MinorReleasesTableProps> = ({ releases }) => {
   return (
     <div className={styles.scrollable}>
       <table>
-        <thead className={styles.stickyHeader}>
+        <thead className={styles.header}>
           <tr>
             <th>{t('components.minorReleasesTable.version')}</th>
             <th className={styles.information}>
