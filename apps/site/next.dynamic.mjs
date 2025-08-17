@@ -78,14 +78,13 @@ const getDynamicRouter = async () => {
   });
 
   /**
-   * This method returns a list of all routes that exist for a given locale
+   * This method returns a list of all routes that exist
    * Note: It will only match routes that have at least one pathname.
-   *
-   * @param {string} locale
+
    * @returns {Promise<Array<string>>}
    */
-  const getRoutesByLanguage = async (locale = defaultLocale.code) =>
-    [...pathnameToFilename.keys()].filter(p => locale.length && p.length);
+  const getAllRoutes = async () =>
+    [...pathnameToFilename.keys()].filter(pathname => pathname.length);
 
   /**
    * This method attempts to retrieve either a localized Markdown file
@@ -262,7 +261,7 @@ const getDynamicRouter = async () => {
   return {
     mapPathToRoute,
     getPathname,
-    getRoutesByLanguage,
+    getAllRoutes,
     getMDXContent,
     getMarkdownFile,
     getPageMetadata,

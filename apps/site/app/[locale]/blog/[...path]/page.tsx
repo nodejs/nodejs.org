@@ -11,39 +11,12 @@ import { notFound } from 'next/navigation';
 import type { FC } from 'react';
 
 import * as basePage from '#site/app/[locale]/page';
-import { provideBlogPosts } from '#site/next-data/providers/blogData';
 import { ENABLE_STATIC_EXPORT } from '#site/next.constants.mjs';
-import { blogData } from '#site/next.json.mjs';
+import { BLOG_DYNAMIC_ROUTES } from '#site/next.dynamic.constants.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
 
 type DynamicStaticPaths = { path: Array<string>; locale: string };
 type DynamicParams = { params: Promise<DynamicStaticPaths> };
-
-/**
- * This is a list of all static routes or pages from the Website that we do not
- * want to allow to be statically built on our Static Export Build.
- */
-const BLOG_DYNAMIC_ROUTES = blogData.categories.flatMap(category => {
-  // Each category can have multiple pages, so we generate a route for each page
-  const categoryPages = provideBlogPosts(category).pagination.pages;
-
-  const categoryRoute = {
-    locale: defaultLocale.code,
-    path: [category],
-    pathname: `${category}`,
-  };
-
-  const categoryPaginationRoutes = Array.from(
-    { length: categoryPages },
-    (_, page) => ({
-      locale: defaultLocale.code,
-      path: [category, 'page', `${page + 1}`],
-      pathname: `${category}/page/${page + 1}`,
-    })
-  );
-
-  return [categoryRoute, ...categoryPaginationRoutes];
-});
 
 // This is the default Viewport Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-viewport#generateviewport-function
@@ -64,7 +37,10 @@ export const generateStaticParams = async () => {
     return [];
   }
 
-  return BLOG_DYNAMIC_ROUTES;
+  return BLOG_DYNAMIC_ROUTES.map(pathname => ({
+    locale: defaultLocale.code,
+    path: pathname.split('/'),
+  }));
 };
 
 // This method parses the current pathname and does any sort of modifications needed on the route
@@ -75,9 +51,8 @@ const getPage: FC<DynamicParams> = async props => {
   // Gets the current full pathname for a given path
   const [locale, pathname] = await basePage.getLocaleAndPath(props);
 
-  const isDynamicRoute = BLOG_DYNAMIC_ROUTES.some(route =>
-    route.pathname.includes(pathname)
-  );
+  // Verifies if the current route is a dynamic route
+  const isDynamicRoute = BLOG_DYNAMIC_ROUTES.some(r => r.includes(pathname));
 
   // Gets the Markdown content and context for Blog pages
   // otherwise this is likely a blog-category or a blog post

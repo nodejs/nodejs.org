@@ -38,12 +38,11 @@ export const generateStaticParams = async () => {
     return [];
   }
 
-  // Helper function to fetch and map routes for a specific locale
-  const getRoutesForLocale = async (l: string) => {
-    const routes = await dynamicRouter.getRoutesByLanguage(l);
+  const routes = await dynamicRouter.getAllRoutes();
 
-    return routes.map(pathname => dynamicRouter.mapPathToRoute(l, pathname));
-  };
+  // Helper function to fetch and map routes for a specific locale
+  const getRoutesForLocale = async (l: string) =>
+    routes.map(pathname => dynamicRouter.mapPathToRoute(l, pathname));
 
   // Determine which locales to include in the static export
   const locales = ENABLE_STATIC_EXPORT_LOCALE
@@ -51,9 +50,9 @@ export const generateStaticParams = async () => {
     : [defaultLocale.code];
 
   // Generates all possible routes for all available locales
-  const routes = await Promise.all(locales.map(getRoutesForLocale));
+  const routesWithLocales = await Promise.all(locales.map(getRoutesForLocale));
 
-  return routes.flat().sort();
+  return routesWithLocales.flat().sort();
 };
 
 // This method parses the current pathname and does any sort of modifications needed on the route
