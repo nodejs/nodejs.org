@@ -10,10 +10,10 @@
 import { notFound } from 'next/navigation';
 import type { FC } from 'react';
 
-import * as basePage from '#site/app/[locale]/page';
 import { ENABLE_STATIC_EXPORT } from '#site/next.constants.mjs';
 import { ENABLE_STATIC_EXPORT_LOCALE } from '#site/next.constants.mjs';
 import { dynamicRouter } from '#site/next.dynamic.mjs';
+import * as basePage from '#site/next.dynamic.page.mjs';
 import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
 
 type DynamicStaticPaths = { path: Array<string>; locale: string };
@@ -64,10 +64,10 @@ const getPage: FC<DynamicParams> = async props => {
   const [locale, pathname] = await basePage.getLocaleAndPath(props);
 
   // Gets the Markdown content and context
-  const [content, context] = await basePage.getMarkdownContext(
+  const [content, context] = await basePage.getMarkdownContext({
     locale,
-    pathname
-  );
+    pathname,
+  });
 
   // If we have a filename and layout then we have a page
   if (context.filename && context.frontmatter.layout) {
