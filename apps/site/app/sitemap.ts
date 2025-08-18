@@ -1,11 +1,9 @@
 import type { MetadataRoute } from 'next';
 
-import {
-  BASE_PATH,
-  BASE_URL,
-  EXTERNAL_LINKS_SITEMAP,
-} from '#site/next.constants.mjs';
-import { BLOG_DYNAMIC_ROUTES } from '#site/next.dynamic.constants.mjs';
+import { BLOG_DYNAMIC_ROUTES } from '#site/app/[locale]/blog/[...path]/page';
+import { BASE_PATH } from '#site/next.constants.mjs';
+import { BASE_URL } from '#site/next.constants.mjs';
+import { EXTERNAL_LINKS_SITEMAP } from '#site/next.constants.mjs';
 import { dynamicRouter } from '#site/next.dynamic.mjs';
 import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
 
@@ -35,7 +33,7 @@ const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
   });
 
   const staticPaths = routes.map(r => getSitemapEntry(r, nonDefaultLocales));
-  const blogPaths = BLOG_DYNAMIC_ROUTES.map(r => getSitemapEntry(r));
+  const blogPaths = BLOG_DYNAMIC_ROUTES.map(r => getSitemapEntry(`blog/${r}`));
   const externalPaths = EXTERNAL_LINKS_SITEMAP.map(r => getSitemapEntry(r));
 
   return [...staticPaths, ...blogPaths, ...externalPaths];
