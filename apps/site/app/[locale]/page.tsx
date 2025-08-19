@@ -95,6 +95,29 @@ const getPage: FC<DynamicParams> = async props => {
   // Gets the current full pathname for a given path
   const pathname = dynamicRouter.getPathname(path);
 
+  const staticGeneratedLayout = DYNAMIC_ROUTES.get(pathname);
+
+  // If the current pathname is a statically generated route
+  // it means it does not have a Markdown file nor exists under the filesystem
+  // but it is a valid route with an assigned layout that should be rendered
+  if (staticGeneratedLayout !== undefined) {
+    // Metadata and shared Context to be available through the lifecycle of the page
+    const sharedContext = { pathname: `/${pathname}` };
+
+    // Defines a shared Server Context for the Client-Side
+    // That is shared for all pages under the dynamic router
+    setClientContext(sharedContext);
+
+    // The Matter Provider allows Client-Side injection of the data
+    // to a shared React Client Provider even though the page is rendered
+    // within a server-side context
+    return (
+      <MatterProvider {...sharedContext}>
+        <WithLayout layout={staticGeneratedLayout} />
+      </MatterProvider>
+    );
+  }
+
   // We retrieve the source of the Markdown file by doing an educated guess
   // of what possible files could be the source of the page, since the extension
   // context is lost from `getStaticProps` as a limitation of Next.js itself
@@ -103,38 +126,36 @@ const getPage: FC<DynamicParams> = async props => {
     pathname
   );
 
-  if (source === '' && filename === '' && !DYNAMIC_ROUTES.has(pathname)) {
-    return notFound();
+  if (source.length && filename.length) {
+    // This parses the source Markdown content and returns a React Component and
+    // relevant context from the Markdown File
+    const { content, frontmatter, headings, readingTime } =
+      await dynamicRouter.getMDXContent(source, filename);
+
+    // Metadata and shared Context to be available through the lifecycle of the page
+    const sharedContext = {
+      frontmatter: frontmatter,
+      headings: headings,
+      pathname: `/${pathname}`,
+      readingTime: readingTime,
+      filename: filename,
+    };
+
+    // Defines a shared Server Context for the Client-Side
+    // That is shared for all pages under the dynamic router
+    setClientContext(sharedContext);
+
+    // The Matter Provider allows Client-Side injection of the data
+    // to a shared React Client Provider even though the page is rendered
+    // within a server-side context
+    return (
+      <MatterProvider {...sharedContext}>
+        <WithLayout layout={frontmatter.layout}>{content}</WithLayout>
+      </MatterProvider>
+    );
   }
 
-  // This parses the source Markdown content and returns a React Component and
-  // relevant context from the Markdown File
-  const { content, frontmatter, headings, readingTime } =
-    await dynamicRouter.getMDXContent(source, filename);
-
-  // Metadata and shared Context to be available through the lifecycle of the page
-  const sharedContext = {
-    frontmatter: frontmatter,
-    headings: headings,
-    pathname: `/${pathname}`,
-    readingTime: readingTime,
-    filename: filename,
-  };
-
-  const layout = frontmatter.layout || DYNAMIC_ROUTES.get(pathname);
-
-  // Defines a shared Server Context for the Client-Side
-  // That is shared for all pages under the dynamic router
-  setClientContext(sharedContext);
-
-  // The Matter Provider allows Client-Side injection of the data
-  // to a shared React Client Provider even though the page is rendered
-  // within a server-side context
-  return (
-    <MatterProvider {...sharedContext}>
-      <WithLayout layout={layout}>{content}</WithLayout>
-    </MatterProvider>
-  );
+  return notFound();
 };
 
 // Enforces that this route is used as static rendering
