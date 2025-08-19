@@ -17,6 +17,8 @@ on:
 
 permissions:
   contents: read
+  # For npm OIDC (https://docs.npmjs.com/trusted-publishers)
+  id-token: write
 
 env:
   COMMIT_SHA: ${{ github.sha }}
@@ -115,8 +117,6 @@ jobs:
 
       - name: Publish
         working-directory: packages/${{ matrix.package }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           # Install deps
           pnpm install --frozen-lockfile

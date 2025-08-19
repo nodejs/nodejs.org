@@ -34,10 +34,7 @@ const MinorReleasesTable: FC<MinorReleasesTableProps> = ({ releases }) => {
           {releases.map(release => (
             <tr key={release.version}>
               <td>
-                <Link
-                  kind="neutral"
-                  href={`/download/archive/v${release.version}`}
-                >
+                <Link href={`/download/archive/v${release.version}`}>
                   v{release.version}
                 </Link>
               </td>
@@ -72,15 +69,11 @@ const MinorReleasesTable: FC<MinorReleasesTableProps> = ({ releases }) => {
               </td>
               <td>
                 <div className={styles.additionalLinks}>
-                  <Link
-                    kind="neutral"
-                    href={getNodeApiUrl(`v${release.version}`)}
-                  >
+                  <Link href={getNodeApiUrl(`v${release.version}`)}>
                     {t('components.minorReleasesTable.actions.docs')}
                   </Link>
                   <Separator orientation="vertical" />
                   <LinkWithArrow
-                    kind="neutral"
                     href={`${BASE_CHANGELOG_URL}${release.version}`}
                   >
                     {t('components.minorReleasesTable.actions.changelog')}
