@@ -2,9 +2,8 @@ import { notFound } from 'next/navigation';
 import type { FC } from 'react';
 
 import { ENABLE_STATIC_EXPORT } from '#site/next.constants.mjs';
-import { ENABLE_STATIC_EXPORT_LOCALE } from '#site/next.constants.mjs';
+import { BLOG_DYNAMIC_ROUTES } from '#site/next.dynamic.constants.mjs';
 import * as basePage from '#site/next.dynamic.page.mjs';
-import { availableLocaleCodes } from '#site/next.locales.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
 
 type DynamicStaticPaths = { path: Array<string>; locale: string };
@@ -18,31 +17,21 @@ export const generateViewport = basePage.generateViewport;
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 export const generateMetadata = basePage.generateMetadata;
 
-/**
- * Generates all possible static paths based on the locales and environment configuration
- * - Returns an empty array if static export is disabled (`ENABLE_STATIC_EXPORT` is false)
- * - If `ENABLE_STATIC_EXPORT_LOCALE` is true, generates paths for all available locales
- * - Otherwise, generates paths only for the default locale
- *
- * @see https://nextjs.org/docs/app/api-reference/functions/generate-static-params
- */
+// Generates all possible static paths based on the locales and environment configuration
+// - Returns an empty array if static export is disabled (`ENABLE_STATIC_EXPORT` is false)
+// - If `ENABLE_STATIC_EXPORT_LOCALE` is true, generates paths for all available locales
+// - Otherwise, generates paths only for the default locale
+// @see https://nextjs.org/docs/app/api-reference/functions/generate-static-params
 export const generateStaticParams = async () => {
   // Return an empty array if static export is disabled
   if (!ENABLE_STATIC_EXPORT) {
     return [];
   }
 
-  // Determine which locales to include in the static export
-  const locales = ENABLE_STATIC_EXPORT_LOCALE
-    ? availableLocaleCodes
-    : [defaultLocale.code];
-
-  const routes = await Promise.all(
-    // Gets all mapped routes to the Next.js Routing Engine by Locale
-    locales.map(locale => ({ locale }))
-  );
-
-  return routes.flat().sort();
+  return BLOG_DYNAMIC_ROUTES.map(pathname => ({
+    locale: defaultLocale.code,
+    path: pathname.split('/'),
+  }));
 };
 
 // This method parses the current pathname and does any sort of modifications needed on the route
@@ -53,18 +42,23 @@ const getPage: FC<DynamicParams> = async props => {
   // Gets the current full pathname for a given path
   const [locale, pathname] = await basePage.getLocaleAndPath(props);
 
-  // Gets the Markdown content and context
+  // Verifies if the current route is a dynamic route
+  const isDynamicRoute = BLOG_DYNAMIC_ROUTES.some(r => r.includes(pathname));
+
+  // Gets the Markdown content and context for Blog pages
+  // otherwise this is likely a blog-category or a blog post
   const [content, context] = await basePage.getMarkdownContext({
-    locale,
-    pathname,
+    locale: locale,
+    pathname: `blog/${pathname}`,
   });
 
-  // If we have a filename and layout then we have a page
-  if (context.filename && context.frontmatter.layout) {
+  // If this isn't a valid dynamic route for blog post or there's no mardown file
+  // for this, then we fail as not found as there's nothing we can do.
+  if (isDynamicRoute || context.filename) {
     return basePage.renderPage({
       content: content,
-      layout: context.frontmatter.layout,
-      context: context,
+      layout: context.frontmatter.layout ?? 'blog-category',
+      context: { ...context, pathname: `/blog/${pathname}` },
     });
   }
 

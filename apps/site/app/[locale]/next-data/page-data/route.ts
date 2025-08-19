@@ -11,9 +11,7 @@ import { parseRichTextIntoPlainText } from '#site/util/string';
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
 export const GET = async () => {
   // Retrieves all available routes for the default locale
-  const allAvailbleRoutes = await dynamicRouter.getRoutesByLanguage(
-    defaultLocale.code
-  );
+  const allAvailbleRoutes = await dynamicRouter.getAllRoutes();
 
   // We exclude the blog routes from the available pages metadata
   // as they are generated separately and are not part of the static pages
