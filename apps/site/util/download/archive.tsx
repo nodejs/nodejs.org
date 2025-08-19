@@ -3,7 +3,7 @@ import semVer from 'semver';
 import type {
   DownloadDropdownItem,
   DownloadKind,
-  NodeDownloadArtifact,
+  DownloadArtifact,
   OperatingSystem,
   Platform,
 } from '#site/types';
@@ -50,7 +50,7 @@ const getCompatibleArtifacts = ({
   exclude = [],
   version,
   kind = 'binary',
-}: CompatibleArtifactOptions): Array<NodeDownloadArtifact> => {
+}: CompatibleArtifactOptions): Array<DownloadArtifact> => {
   return Object.entries(platforms).flatMap(([os, items]) => {
     if (exclude.includes(os)) return [];
 

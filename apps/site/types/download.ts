@@ -31,7 +31,7 @@ export type DownloadDropdownItem<T extends string> = {
   compatibility: DownloadCompatibility;
 } & Omit<SelectValue<T>, 'label'>;
 
-export type NodeDownloadArtifact = {
+export type DownloadArtifact = {
   file: string;
   kind: DownloadKind;
   os: OperatingSystem;

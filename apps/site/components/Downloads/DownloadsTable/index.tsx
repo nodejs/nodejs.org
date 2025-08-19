@@ -2,11 +2,11 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import Link from '#site/components/Link';
-import type { NodeDownloadArtifact } from '#site/types';
+import type { DownloadArtifact } from '#site/types';
 import { OperatingSystemLabel } from '#site/util/download';
 
 type DownloadsTableProps = {
-  source: Array<NodeDownloadArtifact>;
+  source: Array<DownloadArtifact>;
 };
 
 const DownloadsTable: FC<DownloadsTableProps> = ({ source }) => {
