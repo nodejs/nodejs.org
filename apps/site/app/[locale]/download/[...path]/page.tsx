@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import type { FC } from 'react';
 
 import { ENABLE_STATIC_EXPORT } from '#site/next.constants.mjs';
-import { BLOG_DYNAMIC_ROUTES } from '#site/next.dynamic.constants.mjs';
+import { ARCHIVE_DYNAMIC_ROUTES } from '#site/next.dynamic.constants.mjs';
 import * as basePage from '#site/next.dynamic.page.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
 
@@ -28,7 +28,7 @@ export const generateStaticParams = async () => {
     return [];
   }
 
-  return BLOG_DYNAMIC_ROUTES.map(pathname => ({
+  return ARCHIVE_DYNAMIC_ROUTES.map(pathname => ({
     locale: defaultLocale.code,
     path: pathname.split('/'),
   }));
@@ -43,22 +43,21 @@ const getPage: FC<DynamicParams> = async props => {
   const [locale, pathname] = await basePage.getLocaleAndPath(props);
 
   // Verifies if the current route is a dynamic route
-  const isDynamicRoute = BLOG_DYNAMIC_ROUTES.some(r => r.includes(pathname));
+  const isDynamicRoute = ARCHIVE_DYNAMIC_ROUTES.some(r => r.includes(pathname));
 
-  // Gets the Markdown content and context for Blog pages
-  // otherwise this is likely a blog-category or a blog post
+  // Gets the Markdown content and context for Download Archive pages
   const [content, context] = await basePage.getMarkdownContext({
     locale: locale,
-    pathname: `blog/${pathname}`,
+    pathname: 'download/archive',
   });
 
-  // If this isn't a valid dynamic route for blog post or there's no markdown file
-  // for this, then we fail as not found as there's nothing we can do.
+  // If this isn't a valid dynamic route for archive version or there's no mardown
+  //  file for this, then we fail as not found as there's nothing we can do.
   if (isDynamicRoute || context.filename) {
     return basePage.renderPage({
       content: content,
-      layout: context.frontmatter.layout ?? 'blog-category',
-      context: { ...context, pathname: `/blog/${pathname}` },
+      layout: context.frontmatter.layout ?? 'download-archive',
+      context: { ...context, pathname: `/download/archive/${pathname}` },
     });
   }
 

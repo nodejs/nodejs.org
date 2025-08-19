@@ -31,14 +31,6 @@
   }
 }
 
-.information {
-  @apply md:w-96;
-}
-
-.links {
-  @apply md:w-44;
-}
-
 .header {
   @apply top-0
     z-10

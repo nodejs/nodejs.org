@@ -26,12 +26,8 @@ const MinorReleasesTable: FC<MinorReleasesTableProps> = ({ releases }) => {
         <thead className={styles.header}>
           <tr>
             <th>{t('components.minorReleasesTable.version')}</th>
-            <th className={styles.information}>
-              {t('components.minorReleasesTable.information')}
-            </th>
-            <th className={styles.links}>
-              {t('components.minorReleasesTable.links')}
-            </th>
+            <th>{t('components.minorReleasesTable.information')}</th>
+            <th>{t('components.minorReleasesTable.links')}</th>
           </tr>
         </thead>
         <tbody>
