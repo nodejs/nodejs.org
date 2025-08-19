@@ -173,7 +173,7 @@ export const GITHUB_API_KEY = process.env.NEXT_GITHUB_API_KEY || '';
  * The resource we point people to when discussing internationalization efforts.
  */
 export const TRANSLATION_URL =
-  'https://github.com/nodejs/nodejs.org/blob/main/TRANSLATION.md#how-to-translate';
+  'https://github.com/nodejs/nodejs.org/blob/main/docs/translation.md#how-to-translate';
 
 /**
  * Define the order in which vulnerabilities should be sorted
