@@ -51,7 +51,7 @@ const getPage: FC<DynamicParams> = async props => {
     pathname: 'download/archive',
   });
 
-  // If this isn't a valid dynamic route for archive version or there's no mardown
+  // If this isn't a valid dynamic route for archive version or there's no markdown
   //  file for this, then we fail as not found as there's nothing we can do.
   if (isDynamicRoute || context.filename) {
     return basePage.renderPage({
