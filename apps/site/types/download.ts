@@ -1,3 +1,12 @@
+import type { SelectValue } from '@node-core/ui-components/Common/Select';
+
+import type {
+  IntlMessageKeys,
+  NodeReleaseStatus,
+  OperatingSystem,
+  Platform,
+} from '#site/types';
+
 export interface DownloadSnippet {
   name: string;
   language: string;
@@ -5,3 +14,28 @@ export interface DownloadSnippet {
 }
 
 export type DownloadKind = 'installer' | 'binary' | 'source' | 'shasum';
+
+type DownloadCompatibility = {
+  os?: Array<OperatingSystem | 'LOADING'>;
+  installMethod?: Array<string>;
+  platform?: Array<Platform | ''>;
+  semver?: Array<string>;
+  releases?: Array<NodeReleaseStatus>;
+};
+
+export type DownloadDropdownItem<T extends string> = {
+  label: IntlMessageKeys;
+  recommended?: boolean;
+  url?: string;
+  info?: IntlMessageKeys;
+  compatibility: DownloadCompatibility;
+} & Omit<SelectValue<T>, 'label'>;
+
+export type NodeDownloadArtifact = {
+  file: string;
+  kind: DownloadKind;
+  os: OperatingSystem;
+  architecture: string;
+  url: string;
+  version: string;
+};

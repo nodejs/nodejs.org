@@ -1,21 +1,17 @@
 import semVer from 'semver';
 
-import type { DownloadKind, OperatingSystem, Platform } from '#site/types';
+import type {
+  DownloadDropdownItem,
+  DownloadKind,
+  NodeDownloadArtifact,
+  OperatingSystem,
+  Platform,
+} from '#site/types';
 import type { NodeRelease } from '#site/types/releases';
-import type { DownloadDropdownItem } from '#site/util/download';
 import { OS_NOT_SUPPORTING_INSTALLERS, PLATFORMS } from '#site/util/download';
 import { getNodeDownloadUrl } from '#site/util/url';
 
 import { DIST_URL } from '#site/next.constants';
-
-export type NodeDownloadArtifact = {
-  file: string;
-  kind: DownloadKind;
-  os: OperatingSystem;
-  architecture: string;
-  url: string;
-  version: string;
-};
 
 /**
  * Checks if a download item is compatible with the given OS, platform, and version.

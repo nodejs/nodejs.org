@@ -1,4 +1,3 @@
-import type { SelectValue } from '@node-core/ui-components/Common/Select';
 import * as InstallMethodIcons from '@node-core/ui-components/Icons/InstallationMethod';
 import * as OSIcons from '@node-core/ui-components/Icons/OperatingSystem';
 import * as PackageManagerIcons from '@node-core/ui-components/Icons/PackageManager';
@@ -6,6 +5,7 @@ import type { ElementType } from 'react';
 import satisfies from 'semver/functions/satisfies';
 
 import type {
+  DownloadDropdownItem,
   IntlMessageKeys,
   NodeReleaseStatus,
   OperatingSystem,
@@ -26,23 +26,6 @@ export const OS_NOT_SUPPORTING_INSTALLERS = Object.entries(systems)
 export const OperatingSystemLabel = Object.fromEntries(
   Object.entries(systems).map(([key, data]) => [key, data.name])
 );
-
-// Base types for dropdown functionality
-type DownloadCompatibility = {
-  os?: Array<OperatingSystem | 'LOADING'>;
-  installMethod?: Array<string>;
-  platform?: Array<Platform | ''>;
-  semver?: Array<string>;
-  releases?: Array<NodeReleaseStatus>;
-};
-
-export type DownloadDropdownItem<T extends string> = {
-  label: IntlMessageKeys;
-  recommended?: boolean;
-  url?: string;
-  info?: IntlMessageKeys;
-  compatibility: DownloadCompatibility;
-} & Omit<SelectValue<T>, 'label'>;
 
 /**
  * Gets the next valid item when current item is disabled/excluded
