@@ -106,7 +106,7 @@
     },
     {
       "source": "/documentation/:path*",
-      "destination": "/en/docs/:path*"
+      "destination": "/docs/:path*"
     },
     {
       "source": "/blog/:path*",
@@ -126,7 +126,7 @@
     },
     {
       "source": "/:locale/documentation/:path*",
-      "destination": "/:locale/docs/:path*"
+      "destination": "/docs/:path*"
     },
     {
       "source": "/(atom|feed|rss).xml",
