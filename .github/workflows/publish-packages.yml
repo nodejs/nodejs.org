@@ -108,15 +108,16 @@ jobs:
       - name: Set up pnpm
         uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           # Don't use caching here as we never install dependencies in this workflow
           node-version-file: '.nvmrc'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Setup npm
-        # OIDC requires npm >=11.5.1. pnpm will use the installed version of npm for publishing
+      - name: Re-install npm
+        # TODO: OIDC requires npm >=11.5.1.
+        # Until Node.js v24 is LTS (with npm 11 as the default), we need to bump.
         run: npm install -g npm@11
 
       - name: Publish
