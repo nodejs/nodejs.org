@@ -20,10 +20,10 @@ const DownloadLink: FC<PropsWithChildren<DownloadLinkProps>> = ({
   const platform = getUserPlatform(architecture, bitness);
 
   const downloadLink = getNodeDownloadUrl({
-    version: versionWithPrefix,
-    os: os,
-    platform: platform,
-    kind: kind,
+    versionWithPrefix,
+    os,
+    platform,
+    kind,
   });
 
   return <LinkWithArrow href={downloadLink}>{children}</LinkWithArrow>;

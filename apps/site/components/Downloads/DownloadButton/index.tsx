@@ -15,13 +15,13 @@ import styles from './index.module.css';
 type DownloadButtonProps = { release: NodeRelease };
 
 const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
-  release: { versionWithPrefix: version },
+  release: { versionWithPrefix },
   children,
 }) => {
   const { os, bitness, architecture } = useClientContext();
 
   const platform = getUserPlatform(architecture, bitness);
-  const downloadLink = getNodeDownloadUrl({ version, os, platform });
+  const downloadLink = getNodeDownloadUrl({ versionWithPrefix, os, platform });
 
   return (
     <>

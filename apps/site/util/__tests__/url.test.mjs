@@ -3,7 +3,7 @@ import { describe, it } from 'node:test';
 
 import { getNodeDownloadUrl, getNodeApiUrl } from '../url';
 
-const version = 'v18.16.0';
+const versionWithPrefix = 'v18.16.0';
 
 describe('getNodeApiUrl', () => {
   it('should return the correct API link for versions >=0.3.1 and <0.5.1', () => {
@@ -59,7 +59,10 @@ describe('getNodeDownloadUrl', () => {
     const platform = 86;
     const expectedUrl = 'https://nodejs.org/dist/v18.16.0/node-v18.16.0.pkg';
 
-    assert.equal(getNodeDownloadUrl({ version, os, platform }), expectedUrl);
+    assert.equal(
+      getNodeDownloadUrl({ versionWithPrefix, os, platform }),
+      expectedUrl
+    );
   });
 
   it('should return the correct download URL for Windows (32-bit)', () => {
@@ -68,7 +71,10 @@ describe('getNodeDownloadUrl', () => {
     const expectedUrl =
       'https://nodejs.org/dist/v18.16.0/node-v18.16.0-x86.msi';
 
-    assert.equal(getNodeDownloadUrl({ version, os, platform }), expectedUrl);
+    assert.equal(
+      getNodeDownloadUrl({ versionWithPrefix, os, platform }),
+      expectedUrl
+    );
   });
 
   it('should return the correct download URL for Windows (64-bit)', () => {
@@ -77,7 +83,10 @@ describe('getNodeDownloadUrl', () => {
     const expectedUrl =
       'https://nodejs.org/dist/v18.16.0/node-v18.16.0-x64.msi';
 
-    assert.equal(getNodeDownloadUrl({ version, os, platform }), expectedUrl);
+    assert.equal(
+      getNodeDownloadUrl({ versionWithPrefix, os, platform }),
+      expectedUrl
+    );
   });
 
   it('should return the default download URL for other operating systems', () => {
@@ -85,13 +94,16 @@ describe('getNodeDownloadUrl', () => {
     const platform = 86;
     const expectedUrl = 'https://nodejs.org/dist/v18.16.0/node-v18.16.0.tar.gz';
 
-    assert.equal(getNodeDownloadUrl({ version, os, platform }), expectedUrl);
+    assert.equal(
+      getNodeDownloadUrl({ versionWithPrefix, os, platform }),
+      expectedUrl
+    );
   });
 
   describe('MAC', () => {
     it('should return .pkg link for installer', () => {
       const url = getNodeDownloadUrl({
-        version: 'v18.0.0',
+        versionWithPrefix: 'v18.0.0',
         os: 'MAC',
         platform: 'x64',
         kind: 'installer',
@@ -103,7 +115,7 @@ describe('getNodeDownloadUrl', () => {
   describe('WIN', () => {
     it('should return an MSI link for installer', () => {
       const url = getNodeDownloadUrl({
-        version: 'v18.0.0',
+        versionWithPrefix: 'v18.0.0',
         os: 'WIN',
         platform: 'x64',
         kind: 'installer',

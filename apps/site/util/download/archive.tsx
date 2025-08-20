@@ -38,7 +38,7 @@ function isCompatible(
 type CompatibleArtifactOptions = {
   platforms?: Record<OperatingSystem, Array<DownloadDropdownItem<Platform>>>;
   exclude?: Array<string>;
-  version: string;
+  versionWithPrefix: string;
   kind?: DownloadKind;
 };
 
@@ -48,7 +48,7 @@ type CompatibleArtifactOptions = {
 const getCompatibleArtifacts = ({
   platforms = PLATFORMS,
   exclude = [],
-  version,
+  versionWithPrefix,
   kind = 'binary',
 }: CompatibleArtifactOptions): Array<DownloadArtifact> => {
   return Object.entries(platforms).flatMap(([os, items]) => {
@@ -56,67 +56,31 @@ const getCompatibleArtifacts = ({
 
     return items
       .filter(({ compatibility, value }) =>
-        isCompatible(compatibility, os as OperatingSystem, value, version)
+        isCompatible(
+          compatibility,
+          os as OperatingSystem,
+          value,
+          versionWithPrefix
+        )
       )
       .map(({ value, label }) => {
         const url = getNodeDownloadUrl({
-          version: version,
+          versionWithPrefix: versionWithPrefix,
           os: os as OperatingSystem,
           platform: value,
           kind: kind,
         });
 
         return {
-          file: url.replace(`${DIST_URL}${version}/`, ''),
+          file: url.replace(`${DIST_URL}${versionWithPrefix}/`, ''),
           kind: kind,
           os: os as OperatingSystem,
           architecture: label,
           url: url,
-          version: version,
+          version: versionWithPrefix,
         };
       });
   });
-};
-
-// Define status order priority
-const statusOrder = [
-  'Current',
-  'Active LTS',
-  'Maintenance LTS',
-  'End-of-life',
-  'Pending',
-];
-
-type Navigations = Record<string, Array<{ label: string; value: string }>>;
-
-/**
- * Generates the navigation links for the Node.js download archive
- * It creates a list of links for each major release, grouped by status,
- * formatted with the major version and codename if available.
- */
-export const getDownloadArchiveNavigation = (releases: Array<NodeRelease>) => {
-  // Group releases by status
-  const groupedByStatus = releases.reduce((acc, release) => {
-    const { status, major, codename, versionWithPrefix } = release;
-
-    if (!acc[status]) {
-      acc[status] = [];
-    }
-
-    acc[status].push({
-      label: `Node.js v${major}.x ${codename ? `(${codename})` : ''}`,
-      value: `/download/archive/${versionWithPrefix}`,
-    });
-
-    return acc;
-  }, {} as Navigations);
-
-  return statusOrder
-    .filter(status => groupedByStatus[status])
-    .map(status => ({
-      label: status,
-      items: groupedByStatus[status],
-    }));
 };
 
 /**
@@ -125,10 +89,10 @@ export const getDownloadArchiveNavigation = (releases: Array<NodeRelease>) => {
  */
 export const buildReleaseArtifacts = (
   release: NodeRelease,
-  version: string
+  versionWithPrefix: string
 ) => {
   const minorVersion = release.minorVersions.find(
-    ({ versionWithPrefix }) => versionWithPrefix === version
+    ({ versionWithPrefix: version }) => version === versionWithPrefix
   );
 
   const enrichedRelease = {
@@ -138,25 +102,25 @@ export const buildReleaseArtifacts = (
 
   return {
     binaries: getCompatibleArtifacts({
-      version: version,
+      versionWithPrefix: versionWithPrefix,
       kind: 'binary',
     }),
     installers: getCompatibleArtifacts({
       exclude: OS_NOT_SUPPORTING_INSTALLERS,
-      version: version,
+      versionWithPrefix: versionWithPrefix,
       kind: 'installer',
     }),
     sources: {
       shasum: getNodeDownloadUrl({
-        version: version,
+        versionWithPrefix: versionWithPrefix,
         kind: 'shasum',
       }),
       tarball: getNodeDownloadUrl({
-        version: version,
+        versionWithPrefix: versionWithPrefix,
         kind: 'source',
       }),
     },
-    version: version,
+    version: versionWithPrefix,
     release: enrichedRelease,
   };
 };
