@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import type { FC } from 'react';
 
 import { getClientContext } from '#site/client-context';
@@ -27,7 +28,7 @@ const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
   const version = extractVersionFromPath(pathname);
 
   if (version == null) {
-    throw new Error('Version could not be extracted from pathname');
+    return notFound();
   }
 
   // Find the release data for the given version

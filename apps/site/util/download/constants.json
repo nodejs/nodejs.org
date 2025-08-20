@@ -232,5 +232,12 @@
     "platforms": ["arm64", "armv7l", "ppc64le", "ppc64", "s390x", "x64", "x86"],
     "bitness": ["64", "32"],
     "architecture": ["arm", "x86"]
-  }
+  },
+  "statusOrder": [
+    "Current",
+    "Active LTS",
+    "Maintenance LTS",
+    "End-of-life",
+    "Pending"
+  ]
 }

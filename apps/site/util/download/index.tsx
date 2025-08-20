@@ -15,7 +15,7 @@ import type * as Types from '#site/types/release';
 
 import constants from './constants.json';
 
-const { systems, installMethods, packageManagers } = constants;
+const { systems, installMethods, packageManagers, statusOrder } = constants;
 
 // Extract the non-installer supporting OSes
 export const OS_NOT_SUPPORTING_INSTALLERS = Object.entries(systems)
@@ -136,3 +136,5 @@ export const PLATFORMS = Object.fromEntries(
     })),
   ])
 ) as Record<OperatingSystem | 'LOADING', Array<DownloadDropdownItem<Platform>>>;
+
+export const STATUS_ORDER = statusOrder;
