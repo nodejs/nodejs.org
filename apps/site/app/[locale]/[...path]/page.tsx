@@ -60,8 +60,10 @@ export const generateStaticParams = async () => {
 // finally it returns (if the locale and route are valid) the React Component with the relevant context
 // and attached context providers for rendering the current page
 const getPage: FC<DynamicParams> = async props => {
+  const { path, locale: routeLocale } = await props.params;
+
   // Gets the current full pathname for a given path
-  const [locale, pathname] = await basePage.getLocaleAndPath(props);
+  const [locale, pathname] = basePage.getLocaleAndPath(path, routeLocale);
 
   // Gets the Markdown content and context
   const [content, context] = await basePage.getMarkdownContext({

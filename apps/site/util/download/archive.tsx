@@ -72,7 +72,7 @@ const getCompatibleArtifacts = ({
         });
 
         return {
-          file: url.replace(`${DIST_URL}${versionWithPrefix}/`, ''),
+          fileName: url.replace(`${DIST_URL}${versionWithPrefix}/`, ''),
           kind: kind,
           os: os as OperatingSystem,
           architecture: label,
@@ -154,8 +154,8 @@ export const findReleaseByVersion = (
   version: string | 'archive'
 ) => {
   if (version === 'archive') {
-    return releaseData.find(release => release.status === 'Current');
+    return releaseData.find(release => release.status === 'Current')!;
   }
 
-  return releaseData.find(release => semVer.major(version) === release.major);
+  return releaseData.find(release => semVer.major(version) === release.major)!;
 };

@@ -6,7 +6,7 @@ import { ARCHIVE_DYNAMIC_ROUTES } from '#site/next.dynamic.constants.mjs';
 import * as basePage from '#site/next.dynamic.page.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
 
-type DynamicStaticPaths = { path: Array<string>; locale: string };
+type DynamicStaticPaths = { version: string; locale: string };
 type DynamicParams = { params: Promise<DynamicStaticPaths> };
 
 // This is the default Viewport Metadata
@@ -30,7 +30,7 @@ export const generateStaticParams = async () => {
 
   return ARCHIVE_DYNAMIC_ROUTES.map(pathname => ({
     locale: defaultLocale.code,
-    path: pathname.split('/'),
+    version: pathname,
   }));
 };
 
@@ -39,8 +39,10 @@ export const generateStaticParams = async () => {
 // finally it returns (if the locale and route are valid) the React Component with the relevant context
 // and attached context providers for rendering the current page
 const getPage: FC<DynamicParams> = async props => {
+  const { version, locale: routeLocale } = await props.params;
+
   // Gets the current full pathname for a given path
-  const [locale, pathname] = await basePage.getLocaleAndPath(props);
+  const [locale, pathname] = basePage.getLocaleAndPath(version, routeLocale);
 
   // Verifies if the current route is a dynamic route
   const isDynamicRoute = ARCHIVE_DYNAMIC_ROUTES.some(r => r.includes(pathname));
@@ -53,7 +55,7 @@ const getPage: FC<DynamicParams> = async props => {
 
   // If this isn't a valid dynamic route for archive version or there's no markdown
   //  file for this, then we fail as not found as there's nothing we can do.
-  if (isDynamicRoute || context.filename) {
+  if (isDynamicRoute && context.filename) {
     return basePage.renderPage({
       content: content,
       layout: context.frontmatter.layout ?? 'download-archive',

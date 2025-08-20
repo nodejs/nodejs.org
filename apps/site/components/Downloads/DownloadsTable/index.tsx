@@ -27,9 +27,9 @@ const DownloadsTable: FC<DownloadsTableProps> = ({ source }) => {
       </thead>
       <tbody>
         {source.map(release => (
-          <tr key={`${release.file}-${release.architecture}`}>
+          <tr key={`${release.fileName}-${release.architecture}`}>
             <td data-label={t('components.downloadsTable.fileName')}>
-              <Link href={release.url}>{release.file}</Link>
+              <Link href={release.url}>{release.fileName}</Link>
             </td>
             <td data-label={t('components.downloadsTable.operatingSystem')}>
               {OperatingSystemLabel[release.os]}

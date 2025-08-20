@@ -35,10 +35,6 @@ const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
   const releaseData = provideReleaseData();
   const release = findReleaseByVersion(releaseData, version);
 
-  if (!release) {
-    return null;
-  }
-
   const releaseArtifacts = buildReleaseArtifacts(
     release,
     version === 'archive' ? release.versionWithPrefix : version

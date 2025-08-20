@@ -32,7 +32,7 @@ export type DownloadDropdownItem<T extends string> = {
 } & Omit<SelectValue<T>, 'label'>;
 
 export type DownloadArtifact = {
-  file: string;
+  fileName: string;
   kind: DownloadKind;
   os: OperatingSystem;
   architecture: string;
