@@ -106,7 +106,7 @@
     },
     {
       "source": "/documentation/:path*",
-      "destination": "/en/docs/:path*"
+      "destination": "/docs/:path*"
     },
     {
       "source": "/blog/:path*",
