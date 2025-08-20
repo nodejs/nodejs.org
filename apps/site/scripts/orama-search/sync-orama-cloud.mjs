@@ -1,19 +1,16 @@
-import { CollectionManager } from '@orama/core';
+import { OramaCloud } from '@orama/core';
 
 import { siteContent } from './get-documents.mjs';
 import { ORAMA_SYNC_BATCH_SIZE } from '../../next.constants.mjs';
 
 // The following follows the instructions at https://docs.orama.com/cloud/data-sources/custom-integrations/webhooks
 
-const collectionManager = new CollectionManager({
-  authJwtURL: 'https://staging.app.orama.com/api/user/jwt',
-  collectionID: '85f541b3-b691-4d3e-9874-e7b3b4630adb',
-  apiKey: 'p_JMpbuY216Pv0WCQFGijQLXwVIJzrf1dy55i3eCbNJDP',
+const orama = new OramaCloud({
+  projectId: process.env.ORAMA_PROJECT_ID || '',
+  apiKey: process.env.ORAMA_API_KEY || '',
 });
 
-const index = collectionManager.setIndex(
-  '55cdf5e4-63e3-4498-926a-ee6152a510cd'
-);
+const datasource = orama.dataSource(process.env.ORAMA_DATASOURCE_ID || '');
 
 console.log(`Syncing ${siteContent.length} documents to Orama Cloud index`);
 
@@ -30,7 +27,7 @@ const runUpdate = async () => {
   console.log(`Sending ${batches.length} batches of ${batchSize} documents`);
 
   for (const batch of batches) {
-    await index.upsertDocuments(batch);
+    await datasource.insertDocuments(batch);
   }
 };
 

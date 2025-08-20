@@ -1,7 +1,7 @@
 'use client';
 
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
-import { CollectionManager } from '@orama/core';
+import { OramaCloud } from '@orama/core';
 import { SearchRoot, ChatRoot, Modal } from '@orama/ui/components';
 import { useSearchContext } from '@orama/ui/contexts';
 import classNames from 'classnames';
@@ -13,12 +13,9 @@ import styles from './index.module.css';
 import { Search } from './Search';
 
 // TODO: test collection, replace with production collection and env variables
-const collectionManager = new CollectionManager({
-  collectionID: '85f541b3-b691-4d3e-9874-e7b3b4630adb',
-  apiKey: 'c1_d2ZKYw9ugj_tyVyWE_o$$Y-RBNf9GcTFfocEufnuRl7rCl3KJlhNJnP2MG-',
-  cluster: {
-    readURL: 'https://staging.collections.orama.com',
-  },
+const orama = new OramaCloud({
+  projectId: 'af3273af-bc7b-403a-84cf-10cc0a18b3e3',
+  apiKey: 'c1_El0nYP-1o8B1VcdS-q73ZLpNlx_QRf98gjzGH1hYq_hPqh_qS7$TwrkfGVy',
 });
 
 const InnerSearchBox: FC<PropsWithChildren> = () => {
@@ -79,8 +76,8 @@ const SearchWithModal: FC = () => {
 };
 
 const OramaSearch: FC<PropsWithChildren> = () => (
-  <SearchRoot client={collectionManager}>
-    <ChatRoot client={collectionManager}>
+  <SearchRoot client={orama}>
+    <ChatRoot client={orama}>
       <SearchWithModal />
     </ChatRoot>
   </SearchRoot>

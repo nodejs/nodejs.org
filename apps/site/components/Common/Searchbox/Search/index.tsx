@@ -13,6 +13,7 @@ import {
   SearchResults,
   Suggestions,
   OramaLogo,
+  OramaIcon,
 } from '@orama/ui/components';
 import { useSearchContext } from '@orama/ui/contexts';
 import classNames from 'classnames';
@@ -211,7 +212,8 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
             data-focus-on-arrow-nav
           >
             <small>{t('components.search.poweredBy')}</small>
-            <OramaLogo theme="dark" />
+            <OramaIcon width={16} height={16} theme="dark" />
+            <OramaLogo theme="dark" width={52} />
           </a>
         </div>
       </div>

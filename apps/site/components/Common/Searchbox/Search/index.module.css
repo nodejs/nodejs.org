@@ -110,14 +110,16 @@
 }
 
 .searchResultsWrapper {
-  @apply h-full
-    flex-1
-    overflow-y-auto
+  @apply overflow-y-auto
     px-5
-    pb-6
     pt-3
     text-neutral-900
     dark:text-neutral-200;
+
+  flex: 1 1 auto;
+  max-height: 50vh;
+  min-height: 0;
+  padding-bottom: 0;
 }
 
 .noResultsWrapper {

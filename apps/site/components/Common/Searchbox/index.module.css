@@ -79,7 +79,6 @@
     sm:bottom-auto
     sm:top-[5vh]
     sm:mx-auto
-    sm:min-h-[200px]
     sm:w-[80%]
     sm:max-w-[720px]
     sm:rounded-xl
@@ -89,17 +88,22 @@
     dark:bg-neutral-950
     sm:dark:border-neutral-900;
 
-  max-height: 28vh;
+  max-height: 36vh;
+  min-height: auto !important;
 }
 
 .modalWrapper.modalWrapperWithResults .modalInner {
+  display: flex;
+  flex-direction: column;
   max-height: 70vh;
 }
 
 .modalContent {
   @apply flex
-    h-full
     flex-col;
+
+  height: 100%;
+  min-height: 0;
 }
 
 /* .searchInputWrapper {
@@ -212,14 +216,16 @@
 }
 
 .searchResultsWrapper {
-  @apply h-full
-    flex-1
-    overflow-y-auto
+  @apply overflow-y-auto
     px-5
-    pb-6
     pt-3
     text-neutral-900
     dark:text-neutral-200;
+  
+  min-height: 0;
+  max-height: 50vh;
+  flex: 1 1 auto;
+  padding-bottom: 0;
 }
 
 .noResultsWrapper {
