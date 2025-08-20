@@ -6,11 +6,11 @@ import { ORAMA_SYNC_BATCH_SIZE } from '../../next.constants.mjs';
 // The following follows the instructions at https://docs.orama.com/cloud/data-sources/custom-integrations/webhooks
 
 const orama = new OramaCloud({
-  projectId: process.env.ORAMA_PROJECT_ID || '',
-  apiKey: process.env.ORAMA_API_KEY || '',
+  projectId: process.env.NEW_ORAMA_PROJECT_ID || '',
+  apiKey: process.env.NEW_ORAMA_API_KEY || '',
 });
 
-const datasource = orama.dataSource(process.env.ORAMA_DATASOURCE_ID || '');
+const datasource = orama.dataSource(process.env.NEW_ORAMA_DATASOURCE_ID || '');
 
 console.log(`Syncing ${siteContent.length} documents to Orama Cloud index`);
 
