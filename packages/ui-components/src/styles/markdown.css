@@ -128,23 +128,51 @@ main {
       w-full
       border-separate
       border-spacing-0
-      border
       border-neutral-200
       text-left
       text-sm
+      max-sm:block
+      md:border
       dark:border-neutral-800;
+
+    thead {
+      @apply max-sm:sr-only;
+    }
+
+    tbody {
+      @apply max-sm:block
+        max-sm:space-y-4;
+    }
+
+    tr {
+      @apply max-sm:rounded-xs
+        max-sm:block
+        max-sm:border
+        max-sm:border-neutral-200
+        max-sm:p-4
+        max-sm:before:content-[attr(data-label)]
+        max-sm:dark:border-neutral-800;
+    }
+
+    td {
+      @apply border-b
+        max-sm:flex
+        max-sm:gap-2
+        max-sm:py-2
+        max-sm:before:grow
+        max-sm:before:content-[attr(data-label)]
+        max-sm:last:border-0;
+    }
 
     th,
     td {
-      @apply max-xs:block
-        max-xs:border-l-0
-        border
-        border-r-0
-        border-t-0
-        border-neutral-200
-        px-4
-        py-2
+      @apply border-neutral-200
         text-neutral-900
+        md:border
+        md:border-r-0
+        md:border-t-0
+        md:px-4
+        md:py-2
         dark:border-neutral-800
         dark:text-white;
 
