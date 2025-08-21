@@ -3,7 +3,7 @@
 import Badge from '@node-core/ui-components/Common/Badge';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
 import LinkWithArrow from '#site/components/Common/LinkWithArrow';
@@ -41,21 +41,29 @@ const PreviousReleasesTable: FC = () => {
 
       <tbody>
         {releaseData.map(release => (
-          <>
-            <tr key={release.major}>
-              <td data-label="Version">v{release.major}</td>
+          <Fragment key={release.major}>
+            <tr data-label={release.major}>
+              <td data-label={t('components.downloadReleasesTable.version')}>
+                v{release.major}
+              </td>
 
-              <td data-label="LTS">{release.codename || '-'}</td>
+              <td data-label={t('components.downloadReleasesTable.codename')}>
+                {release.codename || '-'}
+              </td>
 
-              <td data-label="Date">
+              <td
+                data-label={t('components.downloadReleasesTable.firstReleased')}
+              >
                 <FormattedTime date={release.currentStart} />
               </td>
 
-              <td data-label="Date">
+              <td
+                data-label={t('components.downloadReleasesTable.lastUpdated')}
+              >
                 <FormattedTime date={release.releaseDate} />
               </td>
 
-              <td data-label="Status">
+              <td data-label={t('components.downloadReleasesTable.status')}>
                 <Badge kind={BADGE_KIND_MAP[release.status]} size="small">
                   {release.status}
                   {release.status === 'End-of-life' ? ' (EoL)' : ''}
@@ -77,7 +85,7 @@ const PreviousReleasesTable: FC = () => {
               open={currentModal === release.version}
               onOpenChange={open => open || setCurrentModal(undefined)}
             />
-          </>
+          </Fragment>
         ))}
       </tbody>
     </table>
