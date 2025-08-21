@@ -44,7 +44,7 @@ const PreviousReleasesTable: FC = () => {
           <Fragment key={release.major}>
             <tr data-label={release.versionWithPrefix}>
               <td data-label={t('components.downloadReleasesTable.version')}>
-                v{release.major}
+                1{release.major}
               </td>
 
               <td data-label={t('components.downloadReleasesTable.codename')}>
