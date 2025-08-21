@@ -195,6 +195,7 @@ main {
           before:text-neutral-700
           before:content-[attr(data-label)]
           last:border-0
+          dark:border-neutral-900
           dark:text-neutral-300
           dark:before:text-neutral-200;
       }
