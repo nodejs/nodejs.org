@@ -156,10 +156,12 @@ main {
 
     td {
       @apply border-b
-        max-sm:flex
-        max-sm:gap-2
+        max-sm:relative
+        max-sm:block
         max-sm:py-2
-        max-sm:before:grow
+        max-sm:pl-[40%]
+        max-sm:before:absolute
+        max-sm:before:left-0
         max-sm:before:content-[attr(data-label)]
         max-sm:last:border-0;
     }
