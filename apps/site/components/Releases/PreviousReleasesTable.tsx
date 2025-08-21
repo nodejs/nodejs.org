@@ -43,7 +43,7 @@ const PreviousReleasesTable: FC = () => {
       <tbody>
         {releaseData.map(release => (
           <Fragment key={release.major}>
-            <tr data-label={release.major}>
+            <tr data-label={release.versionWithPrefix}>
               <td data-label={t('components.downloadReleasesTable.version')}>
                 <Link href={`/download/archive/${release.versionWithPrefix}`}>
                   v{release.major}
