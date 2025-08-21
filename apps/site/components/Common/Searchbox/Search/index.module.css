@@ -116,8 +116,8 @@
     text-neutral-900
     dark:text-neutral-200;
 
-  flex: 1 1 auto;
-  max-height: 50vh;
+  flex: 0 1 auto;
+  max-height: 40vh;
   min-height: 0;
   padding-bottom: 0;
 }
@@ -169,12 +169,17 @@
     dark:text-neutral-700;
 }
 
+.searchResultsGroup {
+  @apply mb-6;
+}
+
 .searchResultsGroupTitle {
   @apply my-2
     pl-2
     text-sm
+    font-semibold
     text-neutral-600
-    dark:text-neutral-700;
+    dark:text-neutral-400;
 }
 
 .searchResultsItem {

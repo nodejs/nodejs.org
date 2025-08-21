@@ -1,0 +1,87 @@
+.chatUserPrompt {
+  @apply mb-4;
+  @apply text-base;
+  @apply text-neutral-900;
+  @apply dark:text-neutral-200;
+}
+
+.chatLoader {
+  @apply my-4;
+}
+
+.chatAssistantMessageMain {
+  @apply mb-4;
+  @apply text-base;
+  @apply text-neutral-900;
+  @apply dark:text-neutral-200;
+}
+
+.chatAssistantMessageWrapper {
+  /* Styles applied via inline styles for specificity */
+}
+
+.chatAssistantMessage {
+  @apply my-4;
+  @apply mb-6;
+  @apply max-w-full;
+  @apply rounded-xl;
+  @apply px-6;
+  @apply py-4;
+  @apply text-base;
+
+  background: transparent;
+  border: none;
+  color: #fff !important;
+  margin: 0;
+  padding: 0;
+}
+
+.chatAssistantMessage p {
+  @apply font-sm-line-height;
+  @apply mb-3;
+  @apply text-white;
+}
+
+.chatAssistantMessage pre {
+  @apply my-4;
+  @apply rounded-md;
+  @apply bg-black/20;
+  @apply p-4;
+  @apply text-xs;
+  @apply text-white;
+
+  code {
+    @apply rounded-lg;
+    @apply p-3;
+    @apply text-sm;
+  }
+}
+
+.chatAssistantMessage code {
+  @apply rounded;
+  @apply bg-black/30;
+  @apply p-1;
+  @apply text-white;
+}
+
+.chatAssistantMessage ul {
+  @apply list-disc;
+  @apply pl-6;
+}
+
+.chatAssistantMessage ol {
+  @apply list-decimal;
+  @apply pl-6;
+}
+
+.chatAssistantMessage li {
+  @apply mb-1;
+}
+
+.chatAssistantMessage h1,
+.chatAssistantMessage h2,
+.chatAssistantMessage h3 {
+  @apply mb-2;
+  @apply text-lg;
+  @apply font-bold;
+}

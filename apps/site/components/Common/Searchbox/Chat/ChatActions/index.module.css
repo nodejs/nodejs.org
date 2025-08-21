@@ -1,0 +1,36 @@
+.chatActionsContainer {
+  @apply flex;
+  @apply items-center;
+  @apply justify-end;
+  @apply pt-2;
+}
+
+.chatActionsList {
+  @apply flex;
+  @apply list-none;
+  @apply items-center;
+  @apply gap-2;
+  @apply p-0;
+}
+
+.chatAction {
+  @apply cursor-pointer;
+  @apply rounded-full;
+  @apply p-2;
+  @apply text-neutral-800;
+  @apply transition-colors;
+  @apply duration-300;
+  @apply hover:bg-neutral-300;
+  @apply dark:text-neutral-400;
+  @apply dark:hover:bg-neutral-900;
+
+  svg {
+    @apply h-4;
+    @apply w-4;
+  }
+}
+
+.chatActionIconSelected {
+  @apply text-green-600;
+  @apply dark:text-green-400;
+}

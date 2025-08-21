@@ -12,7 +12,6 @@ import { SlidingChatPanel } from './Chat';
 import styles from './index.module.css';
 import { Search } from './Search';
 
-// TODO: test collection, replace with production collection and env variables
 const orama = new OramaCloud({
   projectId: 'af3273af-bc7b-403a-84cf-10cc0a18b3e3',
   apiKey: 'c1_El0nYP-1o8B1VcdS-q73ZLpNlx_QRf98gjzGH1hYq_hPqh_qS7$TwrkfGVy',

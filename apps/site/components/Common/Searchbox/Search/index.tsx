@@ -17,10 +17,10 @@ import {
 } from '@orama/ui/components';
 import { useSearchContext } from '@orama/ui/contexts';
 import classNames from 'classnames';
-import Link from 'next/link';
-import { useLocale, useTranslations } from 'next-intl';
-import type { FC, PropsWithChildren } from 'react';
+import { useTranslations } from 'next-intl';
+import { useMemo, type FC, type PropsWithChildren } from 'react';
 
+import { DocumentLink } from '../DocumentLink';
 import styles from './index.module.css';
 import { getFormattedPath } from './utils';
 
@@ -29,9 +29,38 @@ type SearchProps = PropsWithChildren<{
 }>;
 
 export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
-  const locale = useLocale();
   const t = useTranslations();
-  const { searchTerm } = useSearchContext();
+  const { searchTerm, groupsCount, results } = useSearchContext();
+
+  const generatedGroupsCount = useMemo(() => {
+    if (!results || results.length === 0) {
+      return groupsCount || [];
+    }
+
+    const sectionCounts = new Map<string, number>();
+    let totalCount = 0;
+
+    results.forEach(result => {
+      const siteSection = result.document?.siteSection;
+      if (siteSection && typeof siteSection === 'string') {
+        sectionCounts.set(
+          siteSection,
+          (sectionCounts.get(siteSection) || 0) + 1
+        );
+        totalCount++;
+      }
+    });
+
+    const groups = [{ name: 'All', count: totalCount }];
+
+    Array.from(sectionCounts.entries())
+      .sort(([a], [b]) => a.localeCompare(b))
+      .forEach(([siteSection, count]) => {
+        groups.push({ name: siteSection, count: count });
+      });
+
+    return groups;
+  }, [results, groupsCount]);
 
   return (
     <>
@@ -64,26 +93,37 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
 
       <div className={styles.searchResultsWrapper}>
         <SearchResults.Wrapper>
-          <FacetTabs.Wrapper className={styles.facetTabsWrapper}>
-            <FacetTabs.List className={styles.facetTabsList}>
-              {(group, isSelected) => (
-                <FacetTabs.Item
-                  isSelected={isSelected}
-                  group={group}
-                  filterBy="siteSection"
-                  className={classNames(
-                    styles.facetTabItem,
-                    isSelected ? styles.facetTabItemSelected : ''
-                  )}
-                >
-                  {group.name}
-                  <span className={styles.facetTabItemCount}>
-                    {group.count}
-                  </span>
-                </FacetTabs.Item>
-              )}
-            </FacetTabs.List>
-          </FacetTabs.Wrapper>
+          {generatedGroupsCount.length > 1 && (
+            <div className={styles.facetTabsWrapper}>
+              <ul
+                className={classNames(
+                  styles.facetTabsList,
+                  'flex gap-1 space-x-2'
+                )}
+              >
+                {generatedGroupsCount.map(
+                  (group: { name: string; count: number }) => (
+                    <li key={group.name}>
+                      <FacetTabs.Item
+                        isSelected={group.name === 'All'}
+                        group={group}
+                        filterBy="siteSection"
+                        className={classNames(
+                          'cursor-pointer rounded-lg p-3 text-sm transition-colors duration-200',
+                          group.name === 'All'
+                            ? 'border-green-600 bg-green-600 text-white'
+                            : 'border-neutral-200 bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700',
+                          styles.facetTabItem
+                        )}
+                      >
+                        {group.name} ({group.count})
+                      </FacetTabs.Item>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+          )}
 
           <SearchResults.NoResults>
             {searchTerm => (
@@ -132,18 +172,21 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
           >
             {group => (
               <div key={group.name} className={styles.searchResultsGroup}>
-                <h2 className={styles.searchResultsGroupTitle}>{group.name}</h2>
+                <h2 className={styles.searchResultsGroupTitle}>
+                  {group.name} ({group.count})
+                </h2>
                 <SearchResults.GroupList group={group}>
                   {hit => (
                     <SearchResults.Item className={styles.searchResultsItem}>
-                      <Link
-                        data-focus-on-arrow-nav
-                        href={
-                          (hit.document.siteSection as string).toLowerCase() ===
-                          'docs'
-                            ? `/${hit.document.path}`
-                            : `/${locale}/${hit.document.path}`
+                      <DocumentLink
+                        document={
+                          hit.document as {
+                            path: string;
+                            siteSection: string;
+                            pageSectionTitle?: string;
+                          }
                         }
+                        data-focus-on-arrow-nav
                       >
                         <DocumentTextIcon />
                         <div>
@@ -165,7 +208,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
                               </p>
                             )}
                         </div>
-                      </Link>
+                      </DocumentLink>
                     </SearchResults.Item>
                   )}
                 </SearchResults.GroupList>
@@ -205,7 +248,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
         </div>
         <div>
           <a
-            href="https://www.orama.com/?utm_source=nodejs.org&amp;utm_medium=powered-by"
+            href="https://www.orama.com/?utm_source=nodejs.org&utm_medium=powered-by"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.poweredByLink}
