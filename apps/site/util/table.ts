@@ -24,6 +24,10 @@ export default function remarkTableTitles() {
         row.children.forEach((cell, idx) => {
           cell.data ??= {};
 
+          if (idx > headerLabels.length) {
+            return;
+          }
+
           cell.data.hProperties = {
             'data-label': headerLabels[idx],
           };
