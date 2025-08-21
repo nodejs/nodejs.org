@@ -135,37 +135,7 @@ main {
       md:border
       dark:border-neutral-800;
 
-    thead {
-      @apply max-sm:sr-only;
-    }
-
-    tbody {
-      @apply max-sm:block
-        max-sm:space-y-4;
-    }
-
-    tr {
-      @apply max-sm:rounded-xs
-        max-sm:block
-        max-sm:border
-        max-sm:border-neutral-200
-        max-sm:p-4
-        max-sm:before:content-[attr(data-label)]
-        max-sm:dark:border-neutral-800;
-    }
-
-    td {
-      @apply border-b
-        max-sm:relative
-        max-sm:block
-        max-sm:py-2
-        max-sm:pl-[40%]
-        max-sm:before:absolute
-        max-sm:before:left-0
-        max-sm:before:content-[attr(data-label)]
-        max-sm:last:border-0;
-    }
-
+    /* Common border and text styles */
     th,
     td {
       @apply border-neutral-200
@@ -180,6 +150,41 @@ main {
 
       > a {
         @apply pr-2;
+      }
+    }
+
+    /* Mobile-specific styles */
+    @media (max-width: 40rem) {
+      thead {
+        @apply sr-only;
+      }
+
+      tbody {
+        @apply block
+          space-y-4;
+      }
+
+      tr {
+        @apply rounded-xs
+          block
+          border
+          border-neutral-200
+          p-4
+          dark:border-neutral-800;
+      }
+
+      td {
+        @apply relative
+          block
+          border-b
+          py-2
+          pl-[50%]
+          before:absolute
+          before:left-0
+          before:top-1/2
+          before:-translate-y-1/2
+          before:content-[attr(data-label)]
+          last:border-0;
       }
     }
 
