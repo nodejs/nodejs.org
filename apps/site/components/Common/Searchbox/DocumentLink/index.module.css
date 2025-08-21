@@ -1,25 +1,25 @@
 .documentLink {
-  @apply rounded-xl;
-  @apply bg-neutral-100;
-  @apply px-4;
-  @apply py-2;
-  @apply text-neutral-900;
-  @apply transition-colors;
-  @apply duration-300;
-  @apply hover:bg-neutral-200;
-  @apply focus:bg-neutral-200;
-  @apply dark:bg-neutral-950;
-  @apply dark:text-neutral-200;
-  @apply hover:dark:bg-neutral-900;
-  @apply focus:dark:bg-neutral-900;
+  @apply rounded-xl,
+    bg-neutral-100,
+    px-4,
+    py-2,
+    text-neutral-900,
+    transition-colors,
+    duration-300,
+    hover:bg-neutral-200,
+    focus:bg-neutral-200,
+    dark:bg-neutral-950,
+    dark:text-neutral-200,
+    hover:dark:bg-neutral-900,
+    focus:dark:bg-neutral-900;
 }
 
 .documentTitle {
-  @apply max-w-full;
-  @apply overflow-hidden;
-  @apply truncate;
-  @apply text-ellipsis;
-  @apply whitespace-nowrap;
-  @apply text-sm;
-  @apply font-semibold;
+  @apply max-w-full,
+    overflow-hidden,
+    truncate,
+    text-ellipsis,
+    whitespace-nowrap,
+    text-sm,
+    font-semibold;
 }

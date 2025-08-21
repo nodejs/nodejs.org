@@ -3,6 +3,7 @@
 import { ArrowDownIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import type { Interaction } from '@orama/core';
 import { ChatInteractions, SlidingPanel } from '@orama/ui/components';
+import '@orama/ui/styles.css';
 import { useScrollableContainer } from '@orama/ui/hooks/useScrollableContainer';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
@@ -39,15 +40,7 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
         <SlidingPanel.Backdrop className="fixed inset-0 z-[10018] bg-black/60" />
         <SlidingPanel.Content
           position="bottom"
-          className="fixed bottom-0 left-0 z-[10019] box-border h-[95vh] w-full overflow-hidden p-0"
-          style={{
-            backgroundColor: '#050505',
-            border: '1px solid #2c3437',
-            borderRadius:
-              'var(--radius-m, calc(12rem / var(--orama-base-font-size, 16))) var(--radius-m, calc(12rem / var(--orama-base-font-size, 16))) 0 0',
-            color: '#ffffff',
-            transition: '0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-          }}
+          className={styles.slidingPanelContentWrapper}
         >
           <SlidingPanel.Close
             className={styles.slidingPanelCloseButton}

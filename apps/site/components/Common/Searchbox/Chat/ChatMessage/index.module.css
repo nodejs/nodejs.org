@@ -1,8 +1,8 @@
 .chatUserPrompt {
-  @apply mb-4;
-  @apply text-base;
-  @apply text-neutral-900;
-  @apply dark:text-neutral-200;
+  @apply mb-4,
+    text-base,
+    text-neutral-900,
+    dark:text-neutral-200;
 }
 
 .chatLoader {
@@ -10,10 +10,10 @@
 }
 
 .chatAssistantMessageMain {
-  @apply mb-4;
-  @apply text-base;
-  @apply text-neutral-900;
-  @apply dark:text-neutral-200;
+  @apply mb-4,
+    text-base,
+    text-neutral-900,
+    dark:text-neutral-200;
 }
 
 .chatAssistantMessageWrapper {
@@ -21,57 +21,59 @@
 }
 
 .chatAssistantMessage {
-  @apply my-4;
-  @apply mb-6;
-  @apply max-w-full;
-  @apply rounded-xl;
-  @apply px-6;
-  @apply py-4;
-  @apply text-base;
+  @apply my-4,
+    mb-6,
+    max-w-full,
+    rounded-xl,
+    px-6,
+    py-4,
+    text-base;
 
   background: transparent;
   border: none;
-  color: #fff !important;
+
+  @apply !text-white;
+
   margin: 0;
   padding: 0;
 }
 
 .chatAssistantMessage p {
-  @apply font-sm-line-height;
-  @apply mb-3;
-  @apply text-white;
+  @apply font-sm-line-height,
+    mb-3,
+    text-white;
 }
 
 .chatAssistantMessage pre {
-  @apply my-4;
-  @apply rounded-md;
-  @apply bg-black/20;
-  @apply p-4;
-  @apply text-xs;
-  @apply text-white;
+  @apply my-4,
+    rounded-md,
+    bg-black/20,
+    p-4,
+    text-xs,
+    text-white;
 
   code {
-    @apply rounded-lg;
-    @apply p-3;
-    @apply text-sm;
+    @apply rounded-lg,
+      p-3,
+      text-sm;
   }
 }
 
 .chatAssistantMessage code {
-  @apply rounded;
-  @apply bg-black/30;
-  @apply p-1;
-  @apply text-white;
+  @apply rounded,
+    bg-black/30,
+    p-1,
+    text-white;
 }
 
 .chatAssistantMessage ul {
-  @apply list-disc;
-  @apply pl-6;
+  @apply list-disc,
+    pl-6;
 }
 
 .chatAssistantMessage ol {
-  @apply list-decimal;
-  @apply pl-6;
+  @apply list-decimal,
+    pl-6;
 }
 
 .chatAssistantMessage li {
@@ -81,7 +83,7 @@
 .chatAssistantMessage h1,
 .chatAssistantMessage h2,
 .chatAssistantMessage h3 {
-  @apply mb-2;
-  @apply text-lg;
-  @apply font-bold;
+  @apply mb-2,
+    text-lg,
+    font-bold;
 }

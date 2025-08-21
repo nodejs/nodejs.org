@@ -1,85 +1,86 @@
 .promptWrapperCustom {
-  @apply relative;
-  @apply flex;
-  @apply items-center;
-  @apply rounded-2xl;
-  @apply bg-white;
-  @apply text-base;
-  @apply shadow-sm;
+  @apply relative,
+    flex,
+    items-center,
+    rounded-2xl,
+    bg-white,
+    text-base,
+    shadow-sm,
+    !bg-neutral-900,
+    !border,
+    !border-neutral-700,
+    !text-white;
 
-  background-color: #1a1a1a !important;
-  border: 1px solid #2c3437 !important;
-  color: #fff !important;
   margin: 0 var(--spacing-l, calc(16rem / var(--orama-base-font-size, 16))) !important;
 }
 
 .promptFieldCustom {
-  @apply w-full;
-  @apply resize-none;
-  @apply border-0;
-  @apply px-0;
-  @apply py-0;
-  @apply text-white;
-  @apply placeholder:text-neutral-400;
-  @apply focus:outline-none;
-
-  background: transparent !important;
+  @apply w-full,
+    resize-none,
+    border-0,
+    px-0,
+    py-0,
+    text-white,
+    placeholder:text-neutral-400,
+    focus:outline-none,
+    !bg-transparent;
 }
 
 .promptButtonCustom {
-  @apply cursor-pointer;
-  @apply rounded-lg;
-  @apply p-4;
-  @apply text-white;
-  @apply transition-colors;
-  @apply duration-300;
-  @apply disabled:cursor-not-allowed;
-  @apply disabled:bg-neutral-600;
-  @apply disabled:text-neutral-400;
-
-  background: #22c55e !important;
+  @apply cursor-pointer,
+    rounded-lg,
+    p-4,
+    text-white,
+    transition-colors,
+    duration-300,
+    disabled:cursor-not-allowed,
+    disabled:bg-neutral-600,
+    disabled:text-neutral-400,
+    !bg-green-500;
 }
 
 /* High specificity overrides for Orama textarea components */
 :global(.oramaPromptTextarea) {
-  background-color: #1a1a1a !important;
-  border: 1px solid #2c3437 !important;
-  border-radius: 16px !important;
-  color: #fff !important;
+  @apply !bg-neutral-900,
+    !border,
+    !border-neutral-700,
+    !rounded-2xl,
+    !text-white,
+    !font-normal,
+    !text-base,
+    !leading-normal,
+    !outline-none,
+    !resize-none,
+    !w-full;
+
   font-family: inherit !important;
-  font-size: 16px !important;
-  font-weight: 400 !important;
-  line-height: 1.5 !important;
   margin: 0 var(--spacing-l, calc(16rem / var(--orama-base-font-size, 16))) !important;
-  outline: none !important;
   padding: 12px 16px !important;
-  resize: none !important;
-  width: 100% !important;
 }
 
 :global(.oramaPromptTextarea::placeholder) {
-  color: #9ca3af !important;
+  @apply !text-gray-400;
 }
 
 :global(.oramaPromptTextarea:focus) {
-  border-color: #374151 !important;
-  outline: none !important;
+  @apply !border-gray-600,
+    !outline-none;
 }
 
 /* Responsive font sizes */
 @media (max-width: 768px) {
   :global(.oramaPromptTextarea) {
-    font-size: 16px !important;
+    @apply !text-base;
   }
 }
 
 .slidingPanelFooter {
-  @apply flex;
-  @apply items-center;
-  @apply justify-center;
-  @apply pt-1;
-  @apply text-xs;
-  @apply text-neutral-400;
+  @apply flex,
+    items-center,
+    justify-center,
+    pt-1,
+    text-xs,
+    text-neutral-400;
 
   margin-top: 16px;
 }
