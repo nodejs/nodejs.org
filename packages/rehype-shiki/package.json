@@ -6,6 +6,7 @@
     "./*": "./src/*.mjs"
   },
   "repository": {
+    "type": "git",
     "url": "https://github.com/nodejs/nodejs.org"
   },
   "scripts": {
