@@ -5,6 +5,9 @@
     ".": "./src/index.mjs",
     "./*": "./src/*.mjs"
   },
+  "repository": {
+    "url": "https://github.com/nodejs/nodejs.org"
+  },
   "scripts": {
     "lint": "node --run lint:js",
     "lint:fix": "node --run lint:js:fix",

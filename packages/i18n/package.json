@@ -10,6 +10,9 @@
     ],
     ".": "./src/index.mjs"
   },
+  "repository": {
+    "url": "https://github.com/nodejs/nodejs.org"
+  },
   "main": "./src/index.mjs",
   "module": "./src/index.mjs",
   "scripts": {
