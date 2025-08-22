@@ -3,10 +3,11 @@
 import { ArrowDownIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import type { Interaction } from '@orama/core';
 import { ChatInteractions, SlidingPanel } from '@orama/ui/components';
-import '@orama/ui/styles.css';
+import { useChatDispatch } from '@orama/ui/contexts';
 import { useScrollableContainer } from '@orama/ui/hooks/useScrollableContainer';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
+import { useEffect } from 'react';
 
 import { ChatInput } from './ChatInput';
 import { ChatMessage } from './ChatMessage';
@@ -15,11 +16,15 @@ import styles from './index.module.css';
 type SlidingChatPanelProps = PropsWithChildren<{
   open: boolean;
   onClose: () => void;
+  autoTriggerQuery?: string | null;
+  onAutoTriggerComplete?: () => void;
 }>;
 
 export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
   open,
   onClose,
+  autoTriggerQuery,
+  onAutoTriggerComplete,
 }) => {
   const t = useTranslations();
   const {
@@ -28,6 +33,33 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
     scrollToBottom,
     recalculateGoToBottomButton,
   } = useScrollableContainer();
+  const dispatch = useChatDispatch();
+
+  useEffect(() => {
+    if (open && autoTriggerQuery && dispatch) {
+      const timer = setTimeout(() => {
+        dispatch({
+          type: 'SET_USER_PROMPT',
+          payload: {
+            userPrompt: autoTriggerQuery,
+          },
+        });
+
+        setTimeout(() => {
+          const submitButton = document.querySelector(
+            '.orama-custom-button'
+          ) as HTMLButtonElement;
+          if (submitButton && !submitButton.disabled) {
+            submitButton.click();
+          }
+
+          onAutoTriggerComplete?.();
+        }, 300);
+      }, 500);
+
+      return () => clearTimeout(timer);
+    }
+  }, [open, autoTriggerQuery, onAutoTriggerComplete, dispatch]);
 
   return (
     <>
@@ -40,7 +72,15 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
         <SlidingPanel.Backdrop className="fixed inset-0 z-[10018] bg-black/60" />
         <SlidingPanel.Content
           position="bottom"
-          className={styles.slidingPanelContentWrapper}
+          className="fixed bottom-0 left-0 z-[10019] box-border h-[95vh] w-full overflow-hidden p-0"
+          style={{
+            backgroundColor: '#050505',
+            border: '1px solid #2c3437',
+            borderRadius:
+              'var(--radius-m, calc(12rem / var(--orama-base-font-size, 16))) var(--radius-m, calc(12rem / var(--orama-base-font-size, 16))) 0 0',
+            color: '#ffffff',
+            transition: '0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+          }}
         >
           <SlidingPanel.Close
             className={styles.slidingPanelCloseButton}

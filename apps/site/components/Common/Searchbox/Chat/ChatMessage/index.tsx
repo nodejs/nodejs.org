@@ -1,6 +1,5 @@
 'use client';
 
-import Skeleton from '@node-core/ui-components/Common/Skeleton';
 import type { Interaction } from '@orama/core';
 import { ChatInteractions } from '@orama/ui/components';
 import type { FC } from 'react';
@@ -14,6 +13,14 @@ type ChatMessageProps = {
   index: number;
   totalInteractions: number;
 };
+
+const TypingIndicator: FC = () => (
+  <div className={styles.typingIndicator}>
+    <span className={styles.typingDot}></span>
+    <span className={styles.typingDot}></span>
+    <span className={styles.typingDot}></span>
+  </div>
+);
 
 export const ChatMessage: FC<ChatMessageProps> = ({
   interaction,
@@ -39,7 +46,9 @@ export const ChatMessage: FC<ChatMessageProps> = ({
       </ChatInteractions.UserPrompt>
 
       <ChatInteractions.Loading interaction={interaction}>
-        <Skeleton className={styles.chatLoader} />
+        <div className={styles.chatLoadingWrapper}>
+          <TypingIndicator />
+        </div>
       </ChatInteractions.Loading>
 
       <ChatSources interaction={interaction} />
@@ -62,7 +71,7 @@ export const ChatMessage: FC<ChatMessageProps> = ({
             className={styles.chatAssistantMessage}
             markdownClassnames={{
               p: 'my-3 text-white leading-relaxed',
-              pre: 'rounded-md p-4 my-4 text-sm overflow-x-auto whitespace-pre-wrap hljs',
+              pre: `rounded-md my-4 text-sm overflow-x-auto whitespace-pre-wrap hljs ${styles.markdownPre}`,
               code: 'px-2 py-1 rounded text-sm whitespace-pre-wrap hljs',
               table: 'w-full border-collapse my-4',
               thead: 'bg-white/10',

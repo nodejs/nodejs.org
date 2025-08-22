@@ -9,6 +9,58 @@
   @apply my-4;
 }
 
+.chatLoadingWrapper {
+  align-items: center;
+  background-color: #0d121c;
+  border-radius: var(--radius-m, calc(12rem / var(--orama-base-font-size, 16)));
+  display: flex;
+  justify-content: center;
+  margin: 0 var(--spacing-l, calc(16rem / var(--orama-base-font-size, 16)));
+  margin-bottom: 24px;
+  min-height: 60px;
+  padding: 24px;
+}
+
+.typingIndicator {
+  display: flex;
+  gap: 8px;
+}
+
+.typingDot {
+  animation: typing 1.4s infinite ease-in-out;
+  background-color: #fff;
+  border-radius: 50%;
+  height: 12px;
+  opacity: 0.8;
+  width: 12px;
+}
+
+.typingDot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typingDot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typingDot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%,
+  60%,
+  100% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+}
+
 .chatAssistantMessageMain {
   @apply mb-4,
     text-base,
@@ -86,4 +138,40 @@
   @apply mb-2,
     text-lg,
     font-bold;
+}
+
+.markdownPre {
+  border-radius: 0.5rem !important;
+  border-radius: var(
+    --radius-s,
+    calc(8rem / var(--orama-base-font-size, 16))
+  ) !important;
+  padding: 3px 5px !important;
+}
+
+:global(pre[class*='prism']) {
+  border-radius: 0.5rem !important;
+  border-radius: var(
+    --radius-s,
+    calc(8rem / var(--orama-base-font-size, 16))
+  ) !important;
+  padding: 3px 5px !important;
+}
+
+:global(.chatAssistantMessage pre) {
+  border-radius: 0.5rem !important;
+  border-radius: var(
+    --radius-s,
+    calc(8rem / var(--orama-base-font-size, 16))
+  ) !important;
+  padding: 3px 5px !important;
+}
+
+:global(pre[style*='background-color']) {
+  border-radius: 0.5rem !important;
+  border-radius: var(
+    --radius-s,
+    calc(8rem / var(--orama-base-font-size, 16))
+  ) !important;
+  padding: 3px 5px !important;
 }

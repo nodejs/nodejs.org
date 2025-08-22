@@ -19,15 +19,31 @@ const orama = new OramaCloud({
 
 const InnerSearchBox: FC<PropsWithChildren> = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [shouldAutoTrigger, setShouldAutoTrigger] = useState(false);
+  const { searchTerm } = useSearchContext();
 
   const toggleChatPanel = (): void => {
     setIsChatOpen(!isChatOpen);
+    if (!isChatOpen && searchTerm) {
+      setShouldAutoTrigger(true);
+    }
+  };
+
+  const handleChatOpened = (): void => {
+    setTimeout(() => {
+      setShouldAutoTrigger(false);
+    }, 1000);
   };
 
   return (
     <>
       <Search onChatTrigger={toggleChatPanel} />
-      <SlidingChatPanel open={isChatOpen} onClose={toggleChatPanel} />
+      <SlidingChatPanel
+        open={isChatOpen}
+        onClose={toggleChatPanel}
+        autoTriggerQuery={shouldAutoTrigger ? searchTerm : null}
+        onAutoTriggerComplete={handleChatOpened}
+      />
     </>
   );
 };

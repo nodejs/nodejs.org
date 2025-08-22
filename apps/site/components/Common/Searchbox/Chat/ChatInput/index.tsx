@@ -52,22 +52,26 @@ export const ChatInput: FC = () => {
         />
         <PromptTextArea.Button
           abortContent={<PauseCircleIcon />}
-          className={styles.promptButtonCustom}
+          className={`${styles.promptButtonCustom} orama-custom-button`}
           style={{
             position: 'absolute',
             right: '12px',
             top: '50%',
             transform: 'translateY(-50%)',
-            cursor: 'pointer',
-            borderRadius: '8px',
-            backgroundColor: 'rgb(34 197 94)',
-            padding: '8px',
-            color: 'white',
-            transition: 'background-color 0.3s',
-            border: 'none',
+            backgroundColor: '#2c3437',
+            color: '#838289',
+            padding: 'calc(8rem / 16)',
+            borderRadius:
+              'var(--radius-m, calc(12rem / var(--orama-base-font-size, 16)))',
+            border: '0px',
+            minWidth: '32px',
+            minHeight: '32px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
-          <PaperAirplaneIcon />
+          <PaperAirplaneIcon width={16} height={16} />
         </PromptTextArea.Button>
       </PromptTextArea.Wrapper>
       <div

@@ -26,17 +26,71 @@
     !bg-transparent;
 }
 
-.promptButtonCustom {
-  @apply cursor-pointer,
-    rounded-lg,
-    p-4,
-    text-white,
-    transition-colors,
-    duration-300,
-    disabled:cursor-not-allowed,
-    disabled:bg-neutral-600,
-    disabled:text-neutral-400,
-    !bg-green-500;
+.promptButtonCustom,
+:global(.promptButtonCustom),
+button.promptButtonCustom,
+[class*='promptButtonCustom'] {
+  align-items: center !important;
+  background-color: #2c3437 !important;
+  border-color: initial !important;
+  border-image: initial !important;
+  border-radius: var(
+    --radius-m,
+    calc(12rem / var(--orama-base-font-size, 16))
+  ) !important;
+  border-style: initial !important;
+  border-width: 0 !important;
+  color: #838289 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  font-family: var(--font-primary, inherit) !important;
+  gap: var(
+    --spacing-s,
+    calc(8rem / var(--orama-base-font-size, 16))
+  ) !important;
+  justify-content: center !important;
+  min-height: 32px !important;
+  min-width: 32px !important;
+  padding: calc(8rem / 16) !important;
+  position: absolute !important;
+  right: 12px !important;
+  text-align: left !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  transition:
+    color 0.2s,
+    background-color 0.2s,
+    opacity 0.2s !important;
+  width: auto !important;
+}
+
+:global(button[class*='promptButtonCustom']) {
+  background-color: #2c3437 !important;
+  border-radius: var(
+    --radius-m,
+    calc(12rem / var(--orama-base-font-size, 16))
+  ) !important;
+  color: #838289 !important;
+  padding: calc(8rem / 16) !important;
+  position: absolute !important;
+  right: 12px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+.promptButtonCustom:disabled {
+  background-color: var(--background-color-tertiary, #eee9f6);
+  color: var(--text-color-tertiary, #999);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.promptButtonCustom:hover:not(:disabled) {
+  background-color: var(--button-background-color-primary-hover, #5a3a8a);
+}
+
+.promptButtonCustom:active:not(:disabled) {
+  background-color: var(--button-background-color-primary-active, #3a2560);
 }
 
 /* High specificity overrides for Orama textarea components */

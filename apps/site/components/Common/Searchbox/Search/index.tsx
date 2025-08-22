@@ -18,7 +18,13 @@ import {
 import { useSearchContext } from '@orama/ui/contexts';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import { useMemo, type FC, type PropsWithChildren } from 'react';
+import {
+  useMemo,
+  useState,
+  useEffect,
+  type FC,
+  type PropsWithChildren,
+} from 'react';
 
 import { DocumentLink } from '../DocumentLink';
 import styles from './index.module.css';
@@ -31,6 +37,7 @@ type SearchProps = PropsWithChildren<{
 export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   const t = useTranslations();
   const { searchTerm, groupsCount, results } = useSearchContext();
+  const [facetsEverShown, setFacetsEverShown] = useState<boolean>(false);
 
   const generatedGroupsCount = useMemo(() => {
     if (!results || results.length === 0) {
@@ -61,6 +68,60 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
 
     return groups;
   }, [results, groupsCount]);
+
+  const [allKnownFacets, setAllKnownFacets] = useState<Set<string>>(new Set());
+
+  const displayFacetsList = useMemo(() => {
+    if (!facetsEverShown) {
+      return generatedGroupsCount;
+    }
+
+    const currentCounts = new Map<string, number>();
+    let totalCount = 0;
+
+    generatedGroupsCount.forEach((group: { name: string; count: number }) => {
+      currentCounts.set(group.name, group.count);
+      if (group.name !== 'All') {
+        totalCount += group.count;
+      } else {
+        totalCount = group.count;
+      }
+    });
+    const displayList = [{ name: 'All', count: totalCount }];
+
+    Array.from(allKnownFacets)
+      .filter(facetName => facetName !== 'All')
+      .sort()
+      .forEach(facetName => {
+        displayList.push({
+          name: facetName,
+          count: currentCounts.get(facetName) || 0,
+        });
+      });
+
+    return displayList;
+  }, [generatedGroupsCount, allKnownFacets, facetsEverShown]);
+
+  useEffect(() => {
+    if (generatedGroupsCount.length > 1) {
+      setFacetsEverShown(true);
+
+      const newKnownFacets = new Set(allKnownFacets);
+      generatedGroupsCount.forEach((group: { name: string; count: number }) => {
+        newKnownFacets.add(group.name);
+      });
+
+      if (newKnownFacets.size > allKnownFacets.size) {
+        setAllKnownFacets(newKnownFacets);
+      }
+    }
+  }, [generatedGroupsCount, allKnownFacets]);
+
+  useEffect(() => {
+    if (searchTerm) {
+      setAllKnownFacets(new Set());
+    }
+  }, [searchTerm]);
 
   return (
     <>
@@ -93,7 +154,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
 
       <div className={styles.searchResultsWrapper}>
         <SearchResults.Wrapper>
-          {generatedGroupsCount.length > 1 && (
+          {facetsEverShown && displayFacetsList.length > 1 && (
             <div className={styles.facetTabsWrapper}>
               <ul
                 className={classNames(
@@ -101,18 +162,14 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
                   'flex gap-1 space-x-2'
                 )}
               >
-                {generatedGroupsCount.map(
+                {displayFacetsList.map(
                   (group: { name: string; count: number }) => (
                     <li key={group.name}>
                       <FacetTabs.Item
-                        isSelected={group.name === 'All'}
                         group={group}
                         filterBy="siteSection"
                         className={classNames(
                           'cursor-pointer rounded-lg p-3 text-sm transition-colors duration-200',
-                          group.name === 'All'
-                            ? 'border-green-600 bg-green-600 text-white'
-                            : 'border-neutral-200 bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700',
                           styles.facetTabItem
                         )}
                       >
