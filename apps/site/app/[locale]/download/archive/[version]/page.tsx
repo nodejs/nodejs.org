@@ -28,9 +28,9 @@ export const generateStaticParams = async () => {
     return [];
   }
 
-  return ARCHIVE_DYNAMIC_ROUTES.map(pathname => ({
+  return ARCHIVE_DYNAMIC_ROUTES.map(version => ({
     locale: defaultLocale.code,
-    version: pathname,
+    version: version,
   }));
 };
 
@@ -58,7 +58,7 @@ const getPage: FC<DynamicParams> = async props => {
   if (isDynamicRoute && context.filename) {
     return basePage.renderPage({
       content: content,
-      layout: context.frontmatter.layout ?? 'download-archive',
+      layout: context.frontmatter.layout!,
       context: { ...context, pathname: `/download/archive/${pathname}` },
     });
   }
