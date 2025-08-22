@@ -26,7 +26,7 @@ const testCases = [
   },
 ];
 
-describe('hashed-self-references', () => {
+describe('invalid-type-reference', () => {
   for (const { name, input, expected } of testCases) {
     it(name, () => testRule(invalidTypeReference, input, expected));
   }
