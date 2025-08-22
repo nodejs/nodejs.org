@@ -6,6 +6,11 @@
     ".": "./src/index.mjs",
     "./api": "./src/api.mjs"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodejs/nodejs.org",
+    "directory": "packages/remark-lint"
+  },
   "scripts": {
     "lint": "node --run lint:js",
     "lint:fix": "node --run lint:js:fix",

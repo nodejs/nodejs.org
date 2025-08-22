@@ -5,6 +5,11 @@
     ".": "./src/index.mjs",
     "./*": "./src/*.mjs"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodejs/nodejs.org",
+    "directory": "packages/rehype-shiki"
+  },
   "scripts": {
     "lint": "node --run lint:js",
     "lint:fix": "node --run lint:js:fix",

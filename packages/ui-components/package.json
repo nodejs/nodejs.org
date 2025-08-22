@@ -10,6 +10,11 @@
       "./src/*/index.ts"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodejs/nodejs.org",
+    "directory": "packages/ui-components"
+  },
   "scripts": {
     "compile:ts": "tsc",
     "compile:css": "postcss --dir dist --base src \"src/**/*.module.css\" src/styles/index.css",
