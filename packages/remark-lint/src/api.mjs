@@ -7,6 +7,7 @@ import remarkLintUnorderedListMarkerStyle from 'remark-lint-unordered-list-marke
 import basePreset from './index.mjs';
 import duplicateStabilityNodes from './rules/duplicate-stability-nodes.mjs';
 import hashedSelfReference from './rules/hashed-self-reference.mjs';
+import invalidTypeReference from './rules/invalid-type-reference.mjs';
 import orderedReferences from './rules/ordered-references.mjs';
 import requiredMetadata from './rules/required-metadata.mjs';
 import yamlComments from './rules/yaml/index.mjs';
@@ -34,6 +35,7 @@ export default (options = {}) => ({
       hashedSelfReference,
       orderedReferences,
       requiredMetadata,
+      invalidTypeReference,
     ].map(plugin => [plugin, options]),
 
     // External Rules
@@ -61,6 +63,7 @@ export default (options = {}) => ({
         { yes: 'Unix' },
         { yes: 'Valgrind' },
         { yes: 'V8' },
+        { yes: 'npm' },
       ],
     ],
   ],
