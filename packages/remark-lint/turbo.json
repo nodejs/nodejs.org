@@ -1,0 +1,15 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "lint:js": {
+      "inputs": ["src/**/*.mjs"]
+    },
+    "lint:fix": {
+      "cache": false
+    },
+    "test:unit": {
+      "inputs": ["src/**/*.mjs"]
+    }
+  }
+}

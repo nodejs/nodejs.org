@@ -211,6 +211,9 @@ importers:
       '@next/eslint-plugin-next':
         specifier: 15.5.0
         version: 15.5.0
+      '@node-core/remark-lint':
+        specifier: workspace:*
+        version: link:../../packages/remark-lint
       '@opennextjs/cloudflare':
         specifier: ^1.6.4
         version: 1.6.4(wrangler@4.26.1)
@@ -251,38 +254,8 @@ importers:
         specifier: ^26.0.0
         version: 26.1.0
       remark-frontmatter:
-        specifier: 5.0.0
+        specifier: ^5.0.0
         version: 5.0.0
-      remark-lint-fenced-code-flag:
-        specifier: ^4.2.0
-        version: 4.2.0
-      remark-lint-first-heading-level:
-        specifier: ^4.0.1
-        version: 4.0.1
-      remark-lint-maximum-line-length:
-        specifier: ^4.1.1
-        version: 4.1.1
-      remark-lint-no-file-name-articles:
-        specifier: ^3.0.1
-        version: 3.0.1
-      remark-lint-no-literal-urls:
-        specifier: ^4.0.1
-        version: 4.0.1
-      remark-lint-no-undefined-references:
-        specifier: ^5.0.2
-        version: 5.0.2
-      remark-lint-no-unused-definitions:
-        specifier: ^4.0.2
-        version: 4.0.2
-      remark-lint-prohibited-strings:
-        specifier: ^4.0.0
-        version: 4.0.0
-      remark-lint-unordered-list-marker-style:
-        specifier: ^4.0.1
-        version: 4.0.1
-      remark-preset-lint-node:
-        specifier: 5.1.2
-        version: 5.1.2
       stylelint:
         specifier: 16.23.0
         version: 16.23.0(typescript@5.8.3)
@@ -350,6 +323,124 @@ importers:
       cross-env:
         specifier: 'catalog:'
         version: 10.0.0
+
+  packages/remark-lint:
+    dependencies:
+      remark-gfm:
+        specifier: ^4.0.1
+        version: 4.0.1
+      remark-lint-blockquote-indentation:
+        specifier: ^4.0.1
+        version: 4.0.1
+      remark-lint-checkbox-character-style:
+        specifier: ^5.0.1
+        version: 5.0.1
+      remark-lint-checkbox-content-indent:
+        specifier: ^5.0.1
+        version: 5.0.1
+      remark-lint-code-block-style:
+        specifier: ^4.0.1
+        version: 4.0.1
+      remark-lint-definition-spacing:
+        specifier: ^4.0.1
+        version: 4.0.1
+      remark-lint-fenced-code-flag:
+        specifier: ^4.2.0
+        version: 4.2.0
+      remark-lint-fenced-code-marker:
+        specifier: ^4.0.1
+        version: 4.0.1
+      remark-lint-final-definition:
+        specifier: ^4.0.2
+        version: 4.0.2
+      remark-lint-heading-style:
+        specifier: ^4.0.1
+        version: 4.0.1
+      remark-lint-maximum-line-length:
+        specifier: ^4.1.1
+        version: 4.1.1
+      remark-lint-no-consecutive-blank-lines:
+        specifier: ^5.0.1
+        version: 5.0.1
+      remark-lint-no-file-name-consecutive-dashes:
+        specifier: ^3.0.1
+        version: 3.0.1
+      remark-lint-no-file-name-outer-dashes:
+        specifier: ^3.0.1
+        version: 3.0.1
+      remark-lint-no-heading-indent:
+        specifier: ^5.0.1
+        version: 5.0.1
+      remark-lint-no-literal-urls:
+        specifier: ^4.0.1
+        version: 4.0.1
+      remark-lint-no-multiple-toplevel-headings:
+        specifier: ^4.0.1
+        version: 4.0.1
+      remark-lint-no-shell-dollars:
+        specifier: ^4.0.1
+        version: 4.0.1
+      remark-lint-no-table-indentation:
+        specifier: ^5.0.1
+        version: 5.0.1
+      remark-lint-no-tabs:
+        specifier: ^4.0.1
+        version: 4.0.1
+      remark-lint-no-trailing-spaces:
+        specifier: ^3.0.2
+        version: 3.0.2
+      remark-lint-no-unused-definitions:
+        specifier: ^4.0.2
+        version: 4.0.2
+      remark-lint-prohibited-strings:
+        specifier: ^4.0.0
+        version: 4.0.0
+      remark-lint-rule-style:
+        specifier: ^4.0.1
+        version: 4.0.1
+      remark-lint-strong-marker:
+        specifier: ^4.0.1
+        version: 4.0.1
+      remark-lint-table-cell-padding:
+        specifier: ^5.1.1
+        version: 5.1.1
+      remark-lint-table-pipes:
+        specifier: ^5.0.1
+        version: 5.0.1
+      remark-lint-unordered-list-marker-style:
+        specifier: ^4.0.1
+        version: 4.0.1
+      remark-preset-lint-recommended:
+        specifier: ^7.0.1
+        version: 7.0.1
+      semver:
+        specifier: ^7.7.2
+        version: 7.7.2
+      unified-lint-rule:
+        specifier: ^3.0.1
+        version: 3.0.1
+      unist-util-visit:
+        specifier: ^5.0.0
+        version: 5.0.0
+      yaml:
+        specifier: ^2.8.1
+        version: 2.8.1
+    devDependencies:
+      cross-env:
+        specifier: 'catalog:'
+        version: 10.0.0
+      dedent:
+        specifier: ^1.6.0
+        version: 1.6.0
+      globals:
+        specifier: ^16.3.0
+        version: 16.3.0
+      remark-parse:
+        specifier: ^11.0.0
+        version: 11.0.0
+      unified:
+        specifier: ^11.0.5
+        version: 11.0.5
 
   packages/ui-components:
     dependencies:
@@ -4427,6 +4518,14 @@ packages:
       babel-plugin-macros:
         optional: true
 
+  dedent@1.6.0:
+    resolution: {integrity: sha512-F1Z+5UCFpmQUzJa11agbyPVMbpgT/qA3/SKyJ1jyBgm7dUcUEa8v9JwDkerSQXfakBwFljIxhOJqGkjUwZ9FSA==}
+    peerDependencies:
+      babel-plugin-macros: ^3.1.0
+    peerDependenciesMeta:
+      babel-plugin-macros:
+        optional: true
+
   deep-eql@5.0.2:
     resolution: {integrity: sha512-h5k/5U50IJJFpzfL6nO9jaaumfjO/f2NjK/oYB2Djzm4p9L+3T9qWpZqZ2hAbLPuuYq9wrU08WQyBTL5GbPk5Q==}
     engines: {node: '>=6'}
@@ -5203,6 +5302,10 @@ packages:
 
   globals@14.0.0:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
+    engines: {node: '>=18'}
+
+  globals@16.3.0:
+    resolution: {integrity: sha512-bqWEnJ1Nt3neqx2q5SFfGS8r/ahumIakg3HcwtNlrVlwXIeNumWn/c7Pn/wKzGhf6SaW6H6uWXLqC30STCMchQ==}
     engines: {node: '>=18'}
 
   globalthis@1.0.4:
@@ -7016,9 +7119,6 @@ packages:
   remark-lint-final-newline@3.0.1:
     resolution: {integrity: sha512-q5diKHD6BMbzqWqgvYPOB8AJgLrMzEMBAprNXjcpKoZ/uCRqly+gxjco+qVUMtMWSd+P+KXZZEqoa7Y6QiOudw==}
 
-  remark-lint-first-heading-level@4.0.1:
-    resolution: {integrity: sha512-ZqH476wQU2rk3L2X1Ef/FsdDZJsSkMqTkEjKyeac/hxnwDZ8ZLYYMmm4UKTgVZTtqFUkNYzgGEPAFXtrppHbJA==}
-
   remark-lint-hard-break-spaces@4.1.1:
     resolution: {integrity: sha512-AKDPDt39fvmr3yk38OKZEWJxxCOOUBE+96AsBfs+ExS5LW6oLa9041X5ahFDQHvHGzdoremEIaaElursaPEkNg==}
 
@@ -7042,9 +7142,6 @@ packages:
 
   remark-lint-no-duplicate-definitions@4.0.1:
     resolution: {integrity: sha512-Ek+A/xDkv5Nn+BXCFmf+uOrFSajCHj6CjhsHjtROgVUeEPj726yYekDBoDRA0Y3+z+U30AsJoHgf/9Jj1IFSug==}
-
-  remark-lint-no-file-name-articles@3.0.1:
-    resolution: {integrity: sha512-h31ZDDJV2T6g9WLBrXg1CJ1m8M170O/tlDPAEPGCa/rxwKvMcfum4yicaot0ZKbUZ1uEPjVSUPDeo3sU0zciCQ==}
 
   remark-lint-no-file-name-consecutive-dashes@3.0.1:
     resolution: {integrity: sha512-qGJRZ81sowEjv1dBodbHZ29pDZbrFpxiQQ6gBvkkHkkoYPekdnr8iUxmV38HcqH8+JNW1O4ELr+m71AA9/34Mw==}
@@ -7120,10 +7217,6 @@ packages:
 
   remark-parse@11.0.0:
     resolution: {integrity: sha512-FCxlKLNGknS5ba/1lmpYijMUzX2esxW5xQqjWxw2eHFfS2MSdaHVINFmhjo+qN1WhZhNimq0dZATN9pH0IDrpA==}
-
-  remark-preset-lint-node@5.1.2:
-    resolution: {integrity: sha512-ukBPfLqD05AomGL+Z3tbmBCKTaEM+9Dv8Pn0r/0vok8F95Z0wj/AY70cFhm038ID1vKBD07anky11dvigDAHlw==}
-    engines: {node: '>=18.0.0'}
 
   remark-preset-lint-recommended@7.0.1:
     resolution: {integrity: sha512-j1CY5u48PtZl872BQ40uWSQMT3R4gXKp0FUgevMu5gW7hFMtvaCiDq+BfhzeR8XKKiW9nIMZGfIMZHostz5X4g==}
@@ -8234,6 +8327,11 @@ packages:
 
   yaml@2.8.0:
     resolution: {integrity: sha512-4lLa/EcQCB0cJkyts+FpIRx5G/llPxfP6VQU5KByHEhLxY3IJCH0f0Hy1MHI8sClTvsIb8qwRJ6R/ZdlDJ/leQ==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
+
+  yaml@2.8.1:
+    resolution: {integrity: sha512-lcYcMxX2PO9XMGvAJkJ3OsNMw+/7FKes7/hgerGUYWIoWu5j/+YQqcZr5JnPZWzOsEBgMbSbiSTn/dv/69Mkpw==}
     engines: {node: '>= 14.6'}
     hasBin: true
 
@@ -10283,7 +10381,7 @@ snapshots:
       express: 5.0.1
       path-to-regexp: 6.3.0
       urlpattern-polyfill: 10.1.0
-      yaml: 2.8.0
+      yaml: 2.8.1
     transitivePeerDependencies:
       - aws-crt
       - supports-color
@@ -12912,6 +13010,8 @@ snapshots:
 
   dedent@1.5.3: {}
 
+  dedent@1.6.0: {}
+
   deep-eql@5.0.2: {}
 
   deep-is@0.1.4: {}
@@ -14013,6 +14113,8 @@ snapshots:
       which: 1.3.1
 
   globals@14.0.0: {}
+
+  globals@16.3.0: {}
 
   globalthis@1.0.4:
     dependencies:
@@ -15745,7 +15847,7 @@ snapshots:
   postcss-load-config@5.1.0(jiti@2.4.2)(postcss@8.5.3)(tsx@4.20.3):
     dependencies:
       lilconfig: 3.1.3
-      yaml: 2.8.0
+      yaml: 2.8.1
     optionalDependencies:
       jiti: 2.4.2
       postcss: 8.5.3
@@ -16196,6 +16298,7 @@ snapshots:
       '@types/mdast': 4.0.4
       quotation: 2.0.3
       unified-lint-rule: 3.0.1
+    optional: true
 
   remark-lint-final-definition@4.0.2:
     dependencies:
@@ -16216,15 +16319,6 @@ snapshots:
       devlop: 1.1.0
       unified-lint-rule: 3.0.1
       vfile-location: 5.0.3
-
-  remark-lint-first-heading-level@4.0.1:
-    dependencies:
-      '@types/mdast': 4.0.4
-      mdast-util-mdx: 3.0.0
-      unified-lint-rule: 3.0.1
-      unist-util-visit-parents: 6.0.1
-    transitivePeerDependencies:
-      - supports-color
 
   remark-lint-hard-break-spaces@4.1.1:
     dependencies:
@@ -16305,11 +16399,6 @@ snapshots:
       unified-lint-rule: 3.0.1
       unist-util-visit-parents: 6.0.1
       vfile-message: 4.0.2
-
-  remark-lint-no-file-name-articles@3.0.1:
-    dependencies:
-      '@types/mdast': 4.0.4
-      unified-lint-rule: 3.0.1
 
   remark-lint-no-file-name-consecutive-dashes@3.0.1:
     dependencies:
@@ -16514,45 +16603,6 @@ snapshots:
       mdast-util-from-markdown: 2.0.2
       micromark-util-types: 2.0.2
       unified: 11.0.5
-    transitivePeerDependencies:
-      - supports-color
-
-  remark-preset-lint-node@5.1.2:
-    dependencies:
-      js-yaml: 4.1.0
-      remark-gfm: 4.0.1
-      remark-lint-blockquote-indentation: 4.0.1
-      remark-lint-checkbox-character-style: 5.0.1
-      remark-lint-checkbox-content-indent: 5.0.1
-      remark-lint-code-block-style: 4.0.1
-      remark-lint-definition-spacing: 4.0.1
-      remark-lint-fenced-code-flag: 4.2.0
-      remark-lint-fenced-code-marker: 4.0.1
-      remark-lint-file-extension: 3.0.1
-      remark-lint-final-definition: 4.0.2
-      remark-lint-first-heading-level: 4.0.1
-      remark-lint-heading-style: 4.0.1
-      remark-lint-maximum-line-length: 4.1.1
-      remark-lint-no-consecutive-blank-lines: 5.0.1
-      remark-lint-no-file-name-articles: 3.0.1
-      remark-lint-no-file-name-consecutive-dashes: 3.0.1
-      remark-lint-no-file-name-outer-dashes: 3.0.1
-      remark-lint-no-heading-indent: 5.0.1
-      remark-lint-no-multiple-toplevel-headings: 4.0.1
-      remark-lint-no-shell-dollars: 4.0.1
-      remark-lint-no-table-indentation: 5.0.1
-      remark-lint-no-tabs: 4.0.1
-      remark-lint-no-trailing-spaces: 3.0.2
-      remark-lint-prohibited-strings: 4.0.0
-      remark-lint-rule-style: 4.0.1
-      remark-lint-strong-marker: 4.0.1
-      remark-lint-table-cell-padding: 5.1.1
-      remark-lint-table-pipes: 5.0.1
-      remark-lint-unordered-list-marker-style: 4.0.1
-      remark-preset-lint-recommended: 7.0.1
-      semver: 7.7.2
-      unified-lint-rule: 3.0.1
-      unist-util-visit: 5.0.0
     transitivePeerDependencies:
       - supports-color
 
@@ -17494,7 +17544,7 @@ snapshots:
       vfile-message: 4.0.2
       vfile-reporter: 8.1.1
       vfile-statistics: 3.0.0
-      yaml: 2.8.0
+      yaml: 2.8.1
     transitivePeerDependencies:
       - bluebird
       - supports-color
@@ -17990,6 +18040,8 @@ snapshots:
   yaml@2.7.1: {}
 
   yaml@2.8.0: {}
+
+  yaml@2.8.1: {}
 
   yargs-parser@21.1.1: {}
 
