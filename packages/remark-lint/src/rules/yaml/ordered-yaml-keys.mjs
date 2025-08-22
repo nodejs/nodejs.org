@@ -23,7 +23,7 @@ export default function orderedYamlKeys(
   yaml,
   report,
   _,
-  validKeys,
+  validKeys = DEFAULT_VALID_KEYS,
   prefix = ''
 ) {
   if (!yaml || typeof yaml !== 'object' || Array.isArray(yaml)) return;

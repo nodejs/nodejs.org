@@ -70,7 +70,7 @@ export default function validateChanges({ changes }, report, options) {
       }
 
       // Key validation
-      orderedYamlKeys(change, report, CHANGE_VALID_KEYS, prefix);
+      orderedYamlKeys(change, report, options, CHANGE_VALID_KEYS, prefix);
     }
 
     // Version validation
