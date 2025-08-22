@@ -43,14 +43,44 @@ type CompatibleArtifactOptions = {
 };
 
 /**
- * Returns a list of compatible artifacts for the given options.
+ * Creates a download artifact from platform data
  */
-const getCompatibleArtifacts = ({
-  platforms = PLATFORMS,
-  exclude = [],
-  versionWithPrefix,
-  kind = 'binary',
-}: CompatibleArtifactOptions): Array<DownloadArtifact> => {
+const createDownloadArtifact = (
+  os: OperatingSystem,
+  platform: DownloadDropdownItem<Platform>,
+  versionWithPrefix: string,
+  kind: DownloadKind
+): DownloadArtifact => {
+  const url = getNodeDownloadUrl({
+    versionWithPrefix: versionWithPrefix,
+    os: os,
+    platform: platform.value,
+    kind: kind,
+  });
+
+  return {
+    fileName: url.replace(`${DIST_URL}${versionWithPrefix}/`, ''),
+    kind: kind,
+    os: os,
+    architecture: platform.label,
+    url: url,
+    version: versionWithPrefix,
+  };
+};
+
+type CompatiblePlatforms = Array<{
+  os: OperatingSystem;
+  platform: DownloadDropdownItem<Platform>;
+}>;
+
+/**
+ * Filters platforms by compatibility and exclusions
+ */
+const getCompatiblePlatforms = (
+  platforms: Record<OperatingSystem, Array<DownloadDropdownItem<Platform>>>,
+  exclude: Array<string>,
+  versionWithPrefix: string
+): CompatiblePlatforms => {
   return Object.entries(platforms).flatMap(([os, items]) => {
     if (exclude.includes(os)) return [];
 
@@ -63,24 +93,31 @@ const getCompatibleArtifacts = ({
           versionWithPrefix
         )
       )
-      .map(({ value, label }) => {
-        const url = getNodeDownloadUrl({
-          versionWithPrefix: versionWithPrefix,
-          os: os as OperatingSystem,
-          platform: value,
-          kind: kind,
-        });
-
-        return {
-          fileName: url.replace(`${DIST_URL}${versionWithPrefix}/`, ''),
-          kind: kind,
-          os: os as OperatingSystem,
-          architecture: label,
-          url: url,
-          version: versionWithPrefix,
-        };
-      });
+      .map(platform => ({
+        os: os as OperatingSystem,
+        platform: platform,
+      }));
   });
+};
+
+/**
+ * Returns a list of compatible artifacts for the given options.
+ */
+const getCompatibleArtifacts = ({
+  platforms = PLATFORMS,
+  exclude = [],
+  versionWithPrefix,
+  kind = 'binary',
+}: CompatibleArtifactOptions): Array<DownloadArtifact> => {
+  const compatiblePlatforms = getCompatiblePlatforms(
+    platforms,
+    exclude,
+    versionWithPrefix
+  );
+
+  return compatiblePlatforms.map(({ os, platform }) =>
+    createDownloadArtifact(os, platform, versionWithPrefix, kind)
+  );
 };
 
 /**
