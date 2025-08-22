@@ -17,7 +17,6 @@ type Navigations = Record<string, Array<{ label: string; value: string }>>;
  * formatted with the major version and codename if available.
  */
 const groupReleasesByStatus = (releases: Array<NodeRelease>) => {
-  // Group releases by status
   const groupedByStatus = releases.reduce((acc, release) => {
     const { status, major, codename, versionWithPrefix } = release;
 
