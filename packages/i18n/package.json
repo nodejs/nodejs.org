@@ -12,7 +12,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nodejs/nodejs.org"
+    "url": "https://github.com/nodejs/nodejs.org",
+    "directory": "packages/i18n"
   },
   "main": "./src/index.mjs",
   "module": "./src/index.mjs",
