@@ -264,3 +264,63 @@
       w-4;
   }
 }
+
+@media (max-width: 600px) {
+  .shortcutWrapper {
+    display: none !important;
+  }
+
+  .footer {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .poweredByLink {
+    align-items: center;
+    display: inline-flex;
+    margin: 0 auto;
+  }
+
+  .facetTabsWrapper {
+    margin-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+  }
+
+  .facetTabsList {
+    flex-wrap: nowrap;
+    gap: 0.25rem;
+    min-width: max-content;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+  }
+
+  .facetTabItem {
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    min-width: unset;
+    padding: 0.25rem 0.75rem;
+    white-space: nowrap;
+  }
+
+  .facetTabsWrapper,
+  .facetTabsList,
+  .searchResultsWrapper {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .facetTabsWrapper::-webkit-scrollbar,
+  .facetTabsList::-webkit-scrollbar,
+  .searchResultsWrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .searchResultsWrapper {
+    max-height: 80vh;
+    overflow: auto;
+    padding-bottom: 1rem;
+  }
+}
