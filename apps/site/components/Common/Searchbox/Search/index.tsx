@@ -36,7 +36,9 @@ type SearchProps = PropsWithChildren<{
   onChatTrigger: () => void;
 }>;
 
-type CloudParams = Omit<SearchParams, 'indexes'> & { datasources: Array<string> };
+type CloudParams = Omit<SearchParams, 'indexes'> & {
+  datasources: Array<string>;
+};
 
 type CloudSearchResponse = {
   hits?: Array<Hit>;
@@ -256,8 +258,18 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
                         group={group}
                         filterBy="siteSection"
                         searchParams={{
-                          boost: {},
                           term: searchTerm ?? '',
+                          threshold: 1,
+                          // @ts-expect-error - type error in Orama internal library. Will be fixed in the next version.
+                          boost: {
+                            pageTitle: 12,
+                            pageSectionTitle: 8,
+                          },
+                          properties: [
+                            'pageSectionContent',
+                            'pageSectionTitle',
+                            'pageTitle',
+                          ],
                           facets: defaultFacetsRef.current,
                         }}
                         className={classNames(
