@@ -329,6 +329,19 @@
   }
 }
 
+.chatCustomPanel {
+  background-color: rgb(13 18 28);
+  border-radius: var(--radius-m, calc(12rem / var(--orama-base-font-size, 16)));
+  margin-bottom: 24px;
+  padding: 16px;
+  width: auto;
+}
+
+.chatDesktopContainer {
+  max-width: calc(840rem / var(--orama-base-font-size, 16));
+  width: 80%;
+}
+
 @media (max-width: 768px) {
   .slidingPanelInner {
     @apply px-4;
@@ -337,5 +350,23 @@
   .chatUserPrompt > div,
   .chatAssistantMessage {
     @apply max-w-full;
+  }
+}
+
+@media (max-width: 600px) {
+  .chatMobilePadding {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .chatCustomPanel {
+    overflow: auto;
+  }
+
+  .chatMobileContainer {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
   }
 }

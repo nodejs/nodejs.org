@@ -79,7 +79,6 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
             borderRadius:
               'var(--radius-m, calc(12rem / var(--orama-base-font-size, 16))) var(--radius-m, calc(12rem / var(--orama-base-font-size, 16))) 0 0',
             color: '#ffffff',
-            transition: '0.4s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
         >
           <SlidingPanel.Close
@@ -107,12 +106,12 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
             <XMarkIcon style={{ width: '24px', height: '24px' }} />
           </SlidingPanel.Close>
           <div
-            className="flex h-full flex-col py-4"
+            className={`${styles.chatCustomPanel} ${styles.chatMobileContainer} ${styles.chatDesktopContainer} flex h-full flex-col py-4`}
             style={{
               height: '95vh',
               margin: '0px auto',
               maxWidth: 'calc(840rem / var(--orama-base-font-size, 16))',
-              width: '80%',
+              overflowX: 'hidden',
             }}
           >
             <div
@@ -128,7 +127,7 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
                 onScroll={recalculateGoToBottomButton}
                 onStreaming={recalculateGoToBottomButton}
                 onNewInteraction={() => scrollToBottom({ animated: true })}
-                className="relative h-full items-start overflow-y-auto px-8"
+                className={`${styles.chatMobilePadding} relative h-full items-start overflow-y-auto`}
                 style={{ maxHeight: '100%', overflowY: 'auto' }}
               >
                 {(
