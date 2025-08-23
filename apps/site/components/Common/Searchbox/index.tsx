@@ -1,6 +1,6 @@
 'use client';
 
-import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
+import { MagnifyingGlassIcon, ArrowLeftIcon } from '@heroicons/react/24/solid';
 import { OramaCloud } from '@orama/core';
 import { SearchRoot, ChatRoot, Modal } from '@orama/ui/components';
 import { useSearchContext } from '@orama/ui/contexts';
@@ -17,33 +17,112 @@ const orama = new OramaCloud({
   apiKey: 'c1_dRV3iUW4GpJkKffpYXgCEamhWLf$_X9gfYdiVhZkVD4MCr105K0qb$BiGdg',
 });
 
-const InnerSearchBox: FC<PropsWithChildren> = () => {
+const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
+  onClose,
+}) => {
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [mode, setMode] = useState<'search' | 'chat'>('search');
   const [shouldAutoTrigger, setShouldAutoTrigger] = useState(false);
+  const [autoTriggerValue, setAutoTriggerValue] = useState<string | null>(null);
   const { searchTerm } = useSearchContext();
 
-  const toggleChatPanel = (): void => {
-    setIsChatOpen(!isChatOpen);
-    if (!isChatOpen && searchTerm) {
-      setShouldAutoTrigger(true);
+  const handleSelectMode = (newMode: 'search' | 'chat') => {
+    console.debug('[handleSelectMode] newMode:', newMode);
+    setMode(newMode);
+    if (newMode === 'chat') {
+      setIsChatOpen(true);
     }
+    if (newMode === 'search') {
+      setIsChatOpen(false);
+    }
+    setTimeout(() => {
+      console.debug(
+        '[handleSelectMode] mode:',
+        mode,
+        'isChatOpen:',
+        isChatOpen
+      );
+    }, 0);
   };
 
   const handleChatOpened = (): void => {
+    console.debug('[handleChatOpened] called');
     setTimeout(() => {
       setShouldAutoTrigger(false);
+      setAutoTriggerValue(null);
+      console.debug(
+        '[handleChatOpened] shouldAutoTrigger set to false, autoTriggerValue cleared'
+      );
     }, 1000);
   };
 
+  const MobileTopBar: FC<{
+    isChatOpen: boolean;
+    onClose: () => void;
+    onSelect: (mode: 'search' | 'chat') => void;
+  }> = ({ isChatOpen, onClose, onSelect }) => (
+    <div className={styles.mobileTopBar}>
+      <button
+        className={styles.mobileTopBarArrow}
+        onClick={onClose}
+        aria-label="Close"
+      >
+        <ArrowLeftIcon style={{ color: '#fff', width: 24, height: 24 }} />
+      </button>
+      <div className={styles.mobileTopBarTabs}>
+        <button
+          className={classNames(styles.mobileTopBarTab, {
+            [styles.active]: !isChatOpen,
+          })}
+          onClick={() => onSelect('search')}
+        >
+          Search
+        </button>
+        <button
+          className={classNames(styles.mobileTopBarTab, {
+            [styles.active]: isChatOpen,
+          })}
+          onClick={() => onSelect('chat')}
+        >
+          Ask AI
+        </button>
+      </div>
+    </div>
+  );
+
   return (
     <>
-      <Search onChatTrigger={toggleChatPanel} />
-      <SlidingChatPanel
-        open={isChatOpen}
-        onClose={toggleChatPanel}
-        autoTriggerQuery={shouldAutoTrigger ? searchTerm : null}
-        onAutoTriggerComplete={handleChatOpened}
-      />
+      {/* Only show on mobile */}
+      <div className={styles.mobileOnly}>
+        <MobileTopBar
+          isChatOpen={mode === 'chat'}
+          onClose={onClose}
+          onSelect={handleSelectMode}
+        />
+      </div>
+      {mode === 'search' && (
+        <Search
+          onChatTrigger={() => {
+            setAutoTriggerValue(searchTerm ?? null); // capture the current search term safely
+            setShouldAutoTrigger(true);
+            console.debug(
+              '[onChatTrigger] shouldAutoTrigger set to true, searchTerm:',
+              searchTerm
+            );
+            handleSelectMode('chat');
+          }}
+        />
+      )}
+      {mode === 'chat' && (
+        <>
+          <SlidingChatPanel
+            open={isChatOpen}
+            onClose={() => setIsChatOpen(false)}
+            autoTriggerQuery={shouldAutoTrigger ? autoTriggerValue : null}
+            onAutoTriggerComplete={handleChatOpened}
+          />
+        </>
+      )}
     </>
   );
 };
@@ -73,7 +152,7 @@ const SearchWithModal: FC = () => {
 
       <Modal.Wrapper
         open={open}
-        onModalClosed={toggleSearchBox}
+        onModalClosed={() => setOpen(false)}
         closeOnOutsideClick={true}
         closeOnEscape={true}
         className={classNames(styles.modalWrapper, {
@@ -82,7 +161,7 @@ const SearchWithModal: FC = () => {
       >
         <Modal.Inner className={styles.modalInner}>
           <Modal.Content className={styles.modalContent}>
-            <InnerSearchBox />
+            <InnerSearchBox onClose={() => setOpen(false)} />
           </Modal.Content>
         </Modal.Inner>
       </Modal.Wrapper>

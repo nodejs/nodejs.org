@@ -268,197 +268,204 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
         />
       </SearchInput.Wrapper>
 
-      <div className={styles.chatButtonWrapper}>
-        <button
-          type="button"
-          onClick={onChatTrigger}
-          className={classNames(styles.chatButton, {
-            [styles.chatButtonWithSearch]: searchTerm,
-          })}
-          data-focus-on-arrow-nav
-        >
-          <SparklesIcon />
-          <span>
-            {searchTerm ? `${searchTerm} - ` : ''}
-            {t('components.search.chatButtonLabel')}
-          </span>
-        </button>
-      </div>
-
-      <div className={styles.searchResultsWrapper}>
-        <SearchResults.Wrapper>
-          {facetsEverShown && displayFacetsList.length > 1 && (
-            <div className={styles.facetTabsWrapper}>
-              <ul
-                className={classNames(
-                  styles.facetTabsList,
-                  'flex gap-1 space-x-2'
-                )}
-              >
-                <FacetTabs.Wrapper>
-                  <FacetTabs.List className="mt-4 flex gap-1 space-x-2">
-                    {(group, isSelected) => (
-                      <FacetTabs.Item
-                        isSelected={isSelected}
-                        group={group}
-                        filterBy="siteSection"
-                        searchParams={{
-                          boost: {},
-                          term: searchTerm ?? '',
-                          facets: defaultFacetsRef.current,
-                        }}
-                        className={classNames(
-                          'cursor-pointer rounded-lg border p-3 text-sm transition-colors duration-200 focus-visible:outline-none',
-                          isSelected
-                            ? 'border-[#84ba64] bg-[rgba(132,186,100,0.06)]'
-                            : 'border-transparent',
-                          styles.facetTabItem
-                        )}
-                      >
-                        {group.name}({group.count})
-                      </FacetTabs.Item>
-                    )}
-                  </FacetTabs.List>
-                </FacetTabs.Wrapper>
-              </ul>
-            </div>
-          )}
-
-          <SearchResults.NoResults>
-            {term => (
-              <>
-                {term ? (
-                  <div className={styles.noResultsWrapper}>
-                    <p className={styles.noResultsText}>
-                      {t('components.search.noResultsFoundFor')} "{term}"
-                    </p>
-                  </div>
-                ) : (
-                  <Suggestions.Wrapper className={styles.suggestionsWrapper}>
-                    <p className={styles.suggestionsTitle}>
-                      {t('components.search.suggestions')}
-                    </p>
-                    <Suggestions.Item
-                      onClick={onChatTrigger}
-                      className={styles.suggestionItem}
-                    >
-                      <SparklesIcon />
-                      {t('components.search.suggestionOne')}
-                    </Suggestions.Item>
-                    <Suggestions.Item
-                      onClick={onChatTrigger}
-                      className={styles.suggestionItem}
-                    >
-                      <SparklesIcon />
-                      {t('components.search.suggestionTwo')}
-                    </Suggestions.Item>
-                    <Suggestions.Item
-                      onClick={onChatTrigger}
-                      className={styles.suggestionItem}
-                    >
-                      <SparklesIcon />
-                      {t('components.search.suggestionThree')}
-                    </Suggestions.Item>
-                  </Suggestions.Wrapper>
-                )}
-              </>
-            )}
-          </SearchResults.NoResults>
-
-          <SearchResults.GroupsWrapper
-            className="relative items-start overflow-y-auto"
-            groupBy="siteSection"
-          >
-            {group => (
-              <div key={group.name} className={styles.searchResultsGroup}>
-                {/* header without counts */}
-                <h2 className={styles.searchResultsGroupTitle}>{group.name}</h2>
-                <SearchResults.GroupList group={group}>
-                  {hit => (
-                    <SearchResults.Item className={styles.searchResultsItem}>
-                      <DocumentLink
-                        document={
-                          hit.document as {
-                            path: string;
-                            siteSection: string;
-                            pageSectionTitle?: string;
-                          }
-                        }
-                        data-focus-on-arrow-nav
-                      >
-                        <DocumentTextIcon />
-                        <div>
-                          {typeof hit.document?.pageSectionTitle ===
-                            'string' && (
-                            <h3 className={styles.searchResultsItemTitle}>
-                              {hit.document?.pageSectionTitle}
-                            </h3>
-                          )}
-                          {typeof hit.document?.pageSectionTitle === 'string' &&
-                            typeof hit.document?.path === 'string' && (
-                              <p
-                                className={styles.searchResultsItemDescription}
-                              >
-                                {getFormattedPath(
-                                  hit.document?.path,
-                                  hit.document?.pageSectionTitle
-                                )}
-                              </p>
-                            )}
-                        </div>
-                      </DocumentLink>
-                    </SearchResults.Item>
-                  )}
-                </SearchResults.GroupList>
-              </div>
-            )}
-          </SearchResults.GroupsWrapper>
-        </SearchResults.Wrapper>
-      </div>
-
-      <div className={styles.footer}>
-        <div className={styles.shortcutWrapper}>
-          <div className={styles.shortcutItem}>
-            <kbd className={styles.shortcutKey}>
-              <ArrowTurnDownLeftIcon />
-            </kbd>
-            <span className={styles.shortcutLabel}>
-              {t('components.search.keyboardShortcuts.select')}
-            </span>
-          </div>
-          <div className={styles.shortcutItem}>
-            <kbd className={styles.shortcutKey}>
-              <ArrowDownIcon />
-            </kbd>
-            <kbd className={styles.shortcutKey}>
-              <ArrowUpIcon />
-            </kbd>
-            <span className={styles.shortcutLabel}>
-              {t('components.search.keyboardShortcuts.navigate')}
-            </span>
-          </div>
-          <div className={styles.shortcutItem}>
-            <kbd className={styles.shortcutKey}>esc</kbd>
-            <span className={styles.shortcutLabel}>
-              {t('components.search.keyboardShortcuts.close')}
-            </span>
-          </div>
-        </div>
-        <div>
-          <a
-            href="https://www.orama.com/?utm_source=nodejs.org&utm_medium=powered-by"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.poweredByLink}
+      <div className={styles.searchPanelContainer}>
+        <div className={styles.chatButtonWrapper}>
+          <button
+            type="button"
+            onClick={onChatTrigger}
+            className={classNames(styles.chatButton, {
+              [styles.chatButtonWithSearch]: searchTerm,
+            })}
             data-focus-on-arrow-nav
           >
-            <small>{t('components.search.poweredBy')}</small>
-            <img
-              src="https://website-assets.oramasearch.com/orama-when-dark.svg"
-              alt="Powered by Orama"
-              width="62"
-            />
-          </a>
+            <SparklesIcon />
+            <span>
+              {searchTerm ? `${searchTerm} - ` : ''}
+              {t('components.search.chatButtonLabel')}
+            </span>
+          </button>
+        </div>
+
+        <div className={styles.searchResultsWrapper}>
+          <SearchResults.Wrapper>
+            {facetsEverShown && displayFacetsList.length > 1 && (
+              <div className={styles.facetTabsWrapper}>
+                <ul
+                  className={classNames(
+                    styles.facetTabsList,
+                    'flex gap-1 space-x-2'
+                  )}
+                >
+                  <FacetTabs.Wrapper>
+                    <FacetTabs.List className="mt-4 flex gap-1 space-x-2">
+                      {(group, isSelected) => (
+                        <FacetTabs.Item
+                          isSelected={isSelected}
+                          group={group}
+                          filterBy="siteSection"
+                          searchParams={{
+                            boost: {},
+                            term: searchTerm ?? '',
+                            facets: defaultFacetsRef.current,
+                          }}
+                          className={classNames(
+                            'cursor-pointer rounded-lg border p-3 text-sm transition-colors duration-200 focus-visible:outline-none',
+                            isSelected
+                              ? 'border-[#84ba64] bg-[rgba(132,186,100,0.06)]'
+                              : 'border-transparent',
+                            styles.facetTabItem
+                          )}
+                        >
+                          {group.name}({group.count})
+                        </FacetTabs.Item>
+                      )}
+                    </FacetTabs.List>
+                  </FacetTabs.Wrapper>
+                </ul>
+              </div>
+            )}
+
+            <SearchResults.NoResults>
+              {term => (
+                <>
+                  {term ? (
+                    <div className={styles.noResultsWrapper}>
+                      <p className={styles.noResultsText}>
+                        {t('components.search.noResultsFoundFor')} "{term}"
+                      </p>
+                    </div>
+                  ) : (
+                    <Suggestions.Wrapper className={styles.suggestionsWrapper}>
+                      <p className={styles.suggestionsTitle}>
+                        {t('components.search.suggestions')}
+                      </p>
+                      <Suggestions.Item
+                        onClick={onChatTrigger}
+                        className={styles.suggestionItem}
+                      >
+                        <SparklesIcon />
+                        {t('components.search.suggestionOne')}
+                      </Suggestions.Item>
+                      <Suggestions.Item
+                        onClick={onChatTrigger}
+                        className={styles.suggestionItem}
+                      >
+                        <SparklesIcon />
+                        {t('components.search.suggestionTwo')}
+                      </Suggestions.Item>
+                      <Suggestions.Item
+                        onClick={onChatTrigger}
+                        className={styles.suggestionItem}
+                      >
+                        <SparklesIcon />
+                        {t('components.search.suggestionThree')}
+                      </Suggestions.Item>
+                    </Suggestions.Wrapper>
+                  )}
+                </>
+              )}
+            </SearchResults.NoResults>
+
+            <SearchResults.GroupsWrapper
+              className="relative items-start overflow-y-auto"
+              groupBy="siteSection"
+            >
+              {group => (
+                <div key={group.name} className={styles.searchResultsGroup}>
+                  {/* header without counts */}
+                  <h2 className={styles.searchResultsGroupTitle}>
+                    {group.name}
+                  </h2>
+                  <SearchResults.GroupList group={group}>
+                    {hit => (
+                      <SearchResults.Item className={styles.searchResultsItem}>
+                        <DocumentLink
+                          document={
+                            hit.document as {
+                              path: string;
+                              siteSection: string;
+                              pageSectionTitle?: string;
+                            }
+                          }
+                          data-focus-on-arrow-nav
+                        >
+                          <DocumentTextIcon />
+                          <div>
+                            {typeof hit.document?.pageSectionTitle ===
+                              'string' && (
+                              <h3 className={styles.searchResultsItemTitle}>
+                                {hit.document?.pageSectionTitle}
+                              </h3>
+                            )}
+                            {typeof hit.document?.pageSectionTitle ===
+                              'string' &&
+                              typeof hit.document?.path === 'string' && (
+                                <p
+                                  className={
+                                    styles.searchResultsItemDescription
+                                  }
+                                >
+                                  {getFormattedPath(
+                                    hit.document?.path,
+                                    hit.document?.pageSectionTitle
+                                  )}
+                                </p>
+                              )}
+                          </div>
+                        </DocumentLink>
+                      </SearchResults.Item>
+                    )}
+                  </SearchResults.GroupList>
+                </div>
+              )}
+            </SearchResults.GroupsWrapper>
+          </SearchResults.Wrapper>
+        </div>
+
+        <div className={styles.footer}>
+          <div className={styles.shortcutWrapper}>
+            <div className={styles.shortcutItem}>
+              <kbd className={styles.shortcutKey}>
+                <ArrowTurnDownLeftIcon />
+              </kbd>
+              <span className={styles.shortcutLabel}>
+                {t('components.search.keyboardShortcuts.select')}
+              </span>
+            </div>
+            <div className={styles.shortcutItem}>
+              <kbd className={styles.shortcutKey}>
+                <ArrowDownIcon />
+              </kbd>
+              <kbd className={styles.shortcutKey}>
+                <ArrowUpIcon />
+              </kbd>
+              <span className={styles.shortcutLabel}>
+                {t('components.search.keyboardShortcuts.navigate')}
+              </span>
+            </div>
+            <div className={styles.shortcutItem}>
+              <kbd className={styles.shortcutKey}>esc</kbd>
+              <span className={styles.shortcutLabel}>
+                {t('components.search.keyboardShortcuts.close')}
+              </span>
+            </div>
+          </div>
+          <div>
+            <a
+              href="https://www.orama.com/?utm_source=nodejs.org&utm_medium=powered-by"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.poweredByLink}
+              data-focus-on-arrow-nav
+            >
+              <small>{t('components.search.poweredBy')}</small>
+              <img
+                src="https://website-assets.oramasearch.com/orama-when-dark.svg"
+                alt="Powered by Orama"
+                width="62"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </>

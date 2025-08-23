@@ -37,6 +37,7 @@
     flex-nowrap
     items-center
     gap-1
+    p-2
     text-sm;
 
   svg {
@@ -72,6 +73,10 @@
   align-items: flex-start;
   justify-content: center;
   padding-top: 5vh;
+}
+
+.mobileOnly {
+  display: none;
 }
 
 .modalInner {
@@ -123,5 +128,54 @@
     flex-shrink: 0;
     height: fit-content;
     min-height: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .mobileOnly {
+    display: block;
+  }
+
+  .mobileTopBar {
+    align-items: center;
+    background: #181c23;
+    border-bottom: 1px solid #222;
+    display: flex;
+    padding: 0.5rem 1rem;
+  }
+
+  .mobileTopBarArrow {
+    align-items: center;
+    background: none;
+    border: none;
+    color: #fff;
+    display: flex;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  .mobileTopBarTabs {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .mobileTopBarTab {
+    background: none;
+    border: none;
+    border-radius: 999px;
+    color: #aaa;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition:
+      background 0.2s,
+      color 0.2s;
+  }
+
+  .mobileTopBarTab.active,
+  .mobileTopBarTab:focus {
+    background: #23272f;
+    color: #fff;
   }
 }

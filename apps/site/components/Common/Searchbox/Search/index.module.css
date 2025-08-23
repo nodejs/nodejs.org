@@ -274,7 +274,16 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    margin-top: auto;
     text-align: center;
+    width: 100%;
+  }
+
+  .searchPanelContainer {
+    background-color: #050505;
+    display: flex;
+    flex-direction: column;
+    height: 94vh;
   }
 
   .poweredByLink {
@@ -319,8 +328,9 @@
   }
 
   .searchResultsWrapper {
-    max-height: 80vh;
-    overflow: auto;
-    padding-bottom: 1rem;
+    flex: 1 1 auto;
+    max-height: unset;
+    min-height: 0;
+    overflow-y: auto;
   }
 }
