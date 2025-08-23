@@ -13,8 +13,8 @@ import styles from './index.module.css';
 import { Search } from './Search';
 
 const orama = new OramaCloud({
-  projectId: 'af3273af-bc7b-403a-84cf-10cc0a18b3e3',
-  apiKey: 'c1_El0nYP-1o8B1VcdS-q73ZLpNlx_QRf98gjzGH1hYq_hPqh_qS7$TwrkfGVy',
+  projectId: '939d8d74-dbb7-4098-ac46-00325a783e17',
+  apiKey: 'c1_dRV3iUW4GpJkKffpYXgCEamhWLf$_X9gfYdiVhZkVD4MCr105K0qb$BiGdg',
 });
 
 const InnerSearchBox: FC<PropsWithChildren> = () => {

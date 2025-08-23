@@ -7,6 +7,7 @@ import {
   ArrowDownIcon,
   ArrowUpIcon,
 } from '@heroicons/react/24/solid';
+import type { Hit, SearchParams } from '@orama/core';
 import {
   SearchInput,
   FacetTabs,
@@ -15,13 +16,14 @@ import {
   OramaLogo,
   OramaIcon,
 } from '@orama/ui/components';
-import { useSearchContext } from '@orama/ui/contexts';
+import { useSearchContext, useSearchDispatch } from '@orama/ui/contexts';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import {
   useMemo,
   useState,
   useEffect,
+  useRef,
   type FC,
   type PropsWithChildren,
 } from 'react';
@@ -34,10 +36,93 @@ type SearchProps = PropsWithChildren<{
   onChatTrigger: () => void;
 }>;
 
+type CloudParams = Omit<SearchParams, 'indexes'> & { datasources: Array<string> };
+
+type CloudSearchResponse = {
+  hits?: Array<Hit>;
+  count?: number;
+  facets?: { siteSection?: { values?: Record<string, number> } };
+  aggregations?: { siteSection?: { values?: Record<string, number> } };
+};
+
 export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   const t = useTranslations();
-  const { searchTerm, groupsCount, results } = useSearchContext();
+  const { client, searchTerm, groupsCount, results, selectedFacet } =
+    useSearchContext();
+  const dispatch = useSearchDispatch();
+
   const [facetsEverShown, setFacetsEverShown] = useState<boolean>(false);
+
+  const defaultFacetsRef = useRef<Record<string, unknown>>({
+    siteSection: {},
+  });
+
+  const dataSourcesRef = useRef<Array<string>>([
+    '59bbae6c-07f9-49f7-a062-3de1c7b6e2b6',
+  ]);
+  const lastIssuedSigRef = useRef<string>('');
+
+  useEffect(() => {
+    if (!client) return;
+
+    const term = searchTerm ?? '';
+    const facet = selectedFacet ?? null;
+    const sig = `${term}|||${facet ?? ''}`;
+    if (lastIssuedSigRef.current === sig) return;
+    lastIssuedSigRef.current = sig;
+
+    const id = window.setTimeout(async () => {
+      const where: SearchParams['where'] | undefined =
+        facet && facet !== 'All' ? { siteSection: { eq: facet } } : undefined;
+
+      const params: CloudParams = {
+        term: term,
+        limit: 10,
+        boost: {},
+        facets: defaultFacetsRef.current,
+        datasources: dataSourcesRef.current,
+        ...(where ? { where } : {}),
+      };
+
+      (params as Record<string, unknown>).groupBy = { property: 'siteSection' };
+
+      const raw = await client.search(params);
+      const res = raw as unknown as CloudSearchResponse;
+
+      dispatch({
+        type: 'SET_RESULTS',
+        payload: { results: res.hits ?? [] },
+      });
+      dispatch({
+        type: 'SET_COUNT',
+        payload: { count: res.count ?? 0 },
+      });
+
+      const siteFacetValues: Record<string, number> | undefined =
+        res.facets?.siteSection?.values ??
+        res.aggregations?.siteSection?.values;
+
+      if (siteFacetValues) {
+        const entries = Object.entries(siteFacetValues);
+        const derivedGroups = [
+          { name: 'All', count: res.count ?? 0 },
+          ...entries
+            .map(([name, c]) => {
+              const count = Number(c);
+              return { name, count };
+            })
+            .sort((a, b) => a.name.localeCompare(b.name)),
+        ];
+
+        dispatch({
+          type: 'SET_GROUPS_COUNT',
+          payload: { groupsCount: derivedGroups },
+        });
+      }
+    }, 120);
+
+    return () => window.clearTimeout(id);
+  }, [client, searchTerm, selectedFacet, dispatch]);
 
   const generatedGroupsCount = useMemo(() => {
     if (!results || results.length === 0) {
@@ -54,7 +139,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
           siteSection,
           (sectionCounts.get(siteSection) || 0) + 1
         );
-        totalCount++;
+        totalCount += 1;
       }
     });
 
@@ -72,9 +157,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   const [allKnownFacets, setAllKnownFacets] = useState<Set<string>>(new Set());
 
   const displayFacetsList = useMemo(() => {
-    if (!facetsEverShown) {
-      return generatedGroupsCount;
-    }
+    if (!facetsEverShown) return generatedGroupsCount;
 
     const currentCounts = new Map<string, number>();
     let totalCount = 0;
@@ -87,7 +170,10 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
         totalCount = group.count;
       }
     });
-    const displayList = [{ name: 'All', count: totalCount }];
+
+    const displayList: Array<{ name: string; count: number }> = [
+      { name: 'All', count: totalCount },
+    ];
 
     Array.from(allKnownFacets)
       .filter(facetName => facetName !== 'All')
@@ -95,7 +181,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
       .forEach(facetName => {
         displayList.push({
           name: facetName,
-          count: currentCounts.get(facetName) || 0,
+          count: currentCounts.get(facetName) ?? 0,
         });
       });
 
@@ -107,7 +193,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
       setFacetsEverShown(true);
 
       const newKnownFacets = new Set(allKnownFacets);
-      generatedGroupsCount.forEach((group: { name: string; count: number }) => {
+      generatedGroupsCount.forEach((group: { name: string }) => {
         newKnownFacets.add(group.name);
       });
 
@@ -162,12 +248,18 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
                   'flex gap-1 space-x-2'
                 )}
               >
-                {displayFacetsList.map(
-                  (group: { name: string; count: number }) => (
-                    <li key={group.name}>
+                <FacetTabs.Wrapper>
+                  <FacetTabs.List className="mt-4 flex gap-1 space-x-2">
+                    {(group, isSelected) => (
                       <FacetTabs.Item
+                        isSelected={isSelected}
                         group={group}
                         filterBy="siteSection"
+                        searchParams={{
+                          boost: {},
+                          term: searchTerm ?? '',
+                          facets: defaultFacetsRef.current,
+                        }}
                         className={classNames(
                           'cursor-pointer rounded-lg p-3 text-sm transition-colors duration-200',
                           styles.facetTabItem
@@ -175,20 +267,20 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
                       >
                         {group.name} ({group.count})
                       </FacetTabs.Item>
-                    </li>
-                  )
-                )}
+                    )}
+                  </FacetTabs.List>
+                </FacetTabs.Wrapper>
               </ul>
             </div>
           )}
 
           <SearchResults.NoResults>
-            {searchTerm => (
+            {term => (
               <>
-                {searchTerm ? (
+                {term ? (
                   <div className={styles.noResultsWrapper}>
                     <p className={styles.noResultsText}>
-                      {t('components.search.noResultsFoundFor')} "{searchTerm}"
+                      {t('components.search.noResultsFoundFor')} "{term}"
                     </p>
                   </div>
                 ) : (
