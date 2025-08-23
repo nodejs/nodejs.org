@@ -47,6 +47,8 @@ type CloudSearchResponse = {
   aggregations?: { siteSection?: { values?: Record<string, number> } };
 };
 
+type Group = { name: string; count: number };
+
 export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   const t = useTranslations();
   const { client, searchTerm, groupsCount, results, selectedFacet } =
@@ -62,7 +64,14 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   const dataSourcesRef = useRef<Array<string>>([
     '59bbae6c-07f9-49f7-a062-3de1c7b6e2b6',
   ]);
+
   const lastIssuedSigRef = useRef<string>('');
+
+  const baselineGroupsRef = useRef<Array<Group> | null>(null);
+
+  useEffect(() => {
+    baselineGroupsRef.current = null;
+  }, [searchTerm]);
 
   useEffect(() => {
     if (!client) return;
@@ -106,7 +115,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
 
       if (siteFacetValues) {
         const entries = Object.entries(siteFacetValues);
-        const derivedGroups = [
+        const derivedGroups: Array<Group> = [
           { name: 'All', count: res.count ?? 0 },
           ...entries
             .map(([name, c]) => {
@@ -116,10 +125,26 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
             .sort((a, b) => a.name.localeCompare(b.name)),
         ];
 
-        dispatch({
-          type: 'SET_GROUPS_COUNT',
-          payload: { groupsCount: derivedGroups },
-        });
+        if (!facet || facet === 'All') {
+          baselineGroupsRef.current = derivedGroups;
+          dispatch({
+            type: 'SET_GROUPS_COUNT',
+            payload: { groupsCount: derivedGroups },
+          });
+        } else {
+          const toShow = baselineGroupsRef.current ?? derivedGroups;
+          dispatch({
+            type: 'SET_GROUPS_COUNT',
+            payload: { groupsCount: toShow },
+          });
+        }
+      } else {
+        if (facet && facet !== 'All' && baselineGroupsRef.current) {
+          dispatch({
+            type: 'SET_GROUPS_COUNT',
+            payload: { groupsCount: baselineGroupsRef.current },
+          });
+        }
       }
     }, 120);
 
@@ -145,7 +170,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
       }
     });
 
-    const groups = [{ name: 'All', count: totalCount }];
+    const groups: Array<Group> = [{ name: 'All', count: totalCount }];
 
     Array.from(sectionCounts.entries())
       .sort(([a], [b]) => a.localeCompare(b))
@@ -273,7 +298,10 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
                           facets: defaultFacetsRef.current,
                         }}
                         className={classNames(
-                          'cursor-pointer rounded-lg p-3 text-sm transition-colors duration-200',
+                          'cursor-pointer rounded-lg border p-3 text-sm transition-colors duration-200 focus-visible:outline-none',
+                          isSelected
+                            ? '1px solid border-[#84ba64] bg-[rgba(132,186,100,0.06)]'
+                            : 'border-transparent',
                           styles.facetTabItem
                         )}
                       >
@@ -333,9 +361,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
           >
             {group => (
               <div key={group.name} className={styles.searchResultsGroup}>
-                <h2 className={styles.searchResultsGroupTitle}>
-                  {group.name} ({group.count})
-                </h2>
+                <h2 className={styles.searchResultsGroupTitle}>{group.name}</h2>
                 <SearchResults.GroupList group={group}>
                   {hit => (
                     <SearchResults.Item className={styles.searchResultsItem}>
