@@ -36,7 +36,9 @@ type SearchProps = PropsWithChildren<{
   onChatTrigger: () => void;
 }>;
 
-type CloudParams = Omit<SearchParams, 'indexes'> & { datasources: Array<string> };
+type CloudParams = Omit<SearchParams, 'indexes'> & {
+  datasources: Array<string>;
+};
 
 type CloudSearchResponse = {
   hits?: Array<Hit>;
@@ -73,7 +75,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
 
     const id = window.setTimeout(async () => {
       const where: SearchParams['where'] | undefined =
-        facet && facet !== 'All' ? { siteSection: { eq: facet } } : undefined;
+        facet && facet !== 'All' ? { siteSection: facet } : undefined;
 
       const params: CloudParams = {
         term: term,
