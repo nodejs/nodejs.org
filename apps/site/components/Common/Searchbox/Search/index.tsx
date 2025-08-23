@@ -24,6 +24,7 @@ import {
   useState,
   useEffect,
   useRef,
+  useCallback,
   type FC,
   type PropsWithChildren,
 } from 'react';
@@ -69,6 +70,24 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
 
   const baselineGroupsRef = useRef<Array<Group> | null>(null);
 
+  const clearAll = useCallback(() => {
+    lastIssuedSigRef.current = '';
+    baselineGroupsRef.current = null;
+
+    dispatch({ type: 'SET_SEARCH_TERM', payload: { searchTerm: '' } });
+    dispatch({ type: 'SET_SELECTED_FACET', payload: { selectedFacet: 'All' } });
+    dispatch({ type: 'SET_RESULTS', payload: { results: [] } });
+    dispatch({ type: 'SET_GROUPS_COUNT', payload: { groupsCount: null } });
+    dispatch({ type: 'SET_COUNT', payload: { count: 0 } });
+  }, [dispatch]);
+
+  useEffect(() => {
+    clearAll();
+    return () => {
+      clearAll();
+    };
+  }, [clearAll]);
+
   useEffect(() => {
     baselineGroupsRef.current = null;
   }, [searchTerm]);
@@ -78,6 +97,9 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
 
     const term = searchTerm ?? '';
     const facet = selectedFacet ?? null;
+
+    if (term.trim() === '') return;
+
     const sig = `${term}|||${facet ?? ''}`;
     if (lastIssuedSigRef.current === sig) return;
     lastIssuedSigRef.current = sig;
@@ -283,29 +305,19 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
                         group={group}
                         filterBy="siteSection"
                         searchParams={{
+                          boost: {},
                           term: searchTerm ?? '',
-                          threshold: 1,
-                          // @ts-expect-error - type error in Orama internal library. Will be fixed in the next version.
-                          boost: {
-                            pageTitle: 12,
-                            pageSectionTitle: 8,
-                          },
-                          properties: [
-                            'pageSectionContent',
-                            'pageSectionTitle',
-                            'pageTitle',
-                          ],
                           facets: defaultFacetsRef.current,
                         }}
                         className={classNames(
                           'cursor-pointer rounded-lg border p-3 text-sm transition-colors duration-200 focus-visible:outline-none',
                           isSelected
-                            ? '1px solid border-[#84ba64] bg-[rgba(132,186,100,0.06)]'
+                            ? 'border-[#84ba64] bg-[rgba(132,186,100,0.06)]'
                             : 'border-transparent',
                           styles.facetTabItem
                         )}
                       >
-                        {group.name} ({group.count})
+                        {group.name}({group.count})
                       </FacetTabs.Item>
                     )}
                   </FacetTabs.List>
@@ -361,6 +373,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
           >
             {group => (
               <div key={group.name} className={styles.searchResultsGroup}>
+                {/* header without counts */}
                 <h2 className={styles.searchResultsGroupTitle}>{group.name}</h2>
                 <SearchResults.GroupList group={group}>
                   {hit => (
