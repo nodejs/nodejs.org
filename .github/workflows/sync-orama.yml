@@ -26,6 +26,11 @@ jobs:
     name: Sync Orama Cloud
     runs-on: ubuntu-latest
 
+    # This Job should run either on non-`pull_request_target` events,
+    # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
+    # since we want to run Website Builds on all these occasions. As this allows us to be certain the that builds are passing
+    if: github.event_name != 'pull_request_target' || github.event.label.name == 'github_actions:pull-request'
+
     steps:
       - name: Git Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
