@@ -6,7 +6,6 @@
           "openJSFoundation": "Fondation OpenJS",
           "trademarkPolicy": "Politique de Marque",
           "privacyPolicy": "Politique de confidentialité",
-          "versionSupport": "Support de la version",
           "codeOfConduct": "Code de conduite",
           "security": "Politique de sécurité"
         },
@@ -175,6 +174,40 @@
       "releaseAnnouncement": "Annonce de publication",
       "unsupportedVersionWarning": "Cette version ne fait plus l'objet d'une maintenance. Veuillez utiliser une version actuellement supportée. <link>Comprendre l'accompagnement de fin de vie.</link>",
       "ltsVersionFeaturesNotice": "Vous voulez de nouvelles fonctionnalités plus tôt ? Téléchargez la <link>dernière version de Node.js</link> à la place et essayez les dernières améliorations !"
+    },
+    "eolAlert": {
+      "message": "Une assistance commerciale pour les versions ayant dépassé la phase de maintenance LTS est disponible via notre partenaire <link>HeroDevs, dans le cadre du programme de pérennité de l'écosystème OpenJS</link>"
+    },
+    "eolChip": {
+      "severity": {
+        "unknown": "Inconnu",
+        "low": "Bas",
+        "medium": "Moyen",
+        "high": "Élevée",
+        "critical": "Critique"
+      }
+    },
+    "eolModal": {
+      "title": "Node.js v{version} ({codename}) a atteint sa fin de vie",
+      "titleWithoutCodename": "Node.js v{version} a atteint sa fin de vie",
+      "vulnerabilitiesMessage": "Il existe {count}+ problèmes de sécurité connus (CVE) associés à cette version de Node.js. Les CVE (Common Vulnerabilities and Exposures) sont des identifiants attribués aux failles de sécurité signalées publiquement. En cliquant sur un lien CVE, vous accéderez à des informations techniques plus détaillées, telles que le fonctionnement de la vulnérabilité.",
+      "noVulnerabilitiesMessage": "Il n'existe actuellement aucune vulnérabilité CVE (Common Vulnerabilities and Exposures) connue associée à cette version de Node.js. Cependant, cela ne signifie pas qu'elle est totalement sécurisée : certaines vulnérabilités peuvent ne pas avoir encore été découvertes ou rendues publiques. Si cette version est obsolète ou n'est plus prise en charge, il est tout de même recommandé d'envisager une mise à niveau afin de bénéficier des derniers correctifs et améliorations de sécurité.",
+      "blogLinkText": "Blog",
+      "showUnknownSeverities": "Afficher les vulnérabilités dont la gravité est inconnue",
+      "table": {
+        "cves": "CVE(s)",
+        "severity": "Gravité",
+        "overview": "Aperçu",
+        "details": "Détails"
+      }
+    },
+    "eolTable": {
+      "version": "Version",
+      "codename": "Nom de code",
+      "releaseDate": "Publié le",
+      "lastUpdated": "Dernière mise à jour",
+      "vulnerabilities": "Vulnérabilités",
+      "details": "Détails"
     },
     "minorReleasesTable": {
       "version": "Version",

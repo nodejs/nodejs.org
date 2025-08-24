@@ -6,7 +6,6 @@
           "openJSFoundation": "Fundația OpenJS",
           "trademarkPolicy": "Politică de mărci comerciale",
           "privacyPolicy": "Politică de confidențialitate",
-          "versionSupport": "Suport pentru versiuni",
           "codeOfConduct": "Cod de conduită",
           "security": "Politica de securitate"
         },
@@ -175,6 +174,40 @@
       "releaseAnnouncement": "Anunț de lansare",
       "unsupportedVersionWarning": "Această versiune nu mai este întreținută. Te rog să folosești o versiune acceptată în prezent. <link>Află mai multe despre suportul la sfârșitul ciclului de viață (EOL).</link>",
       "ltsVersionFeaturesNotice": "Vrei funcționalități noi mai devreme? Instalează <link>cea mai recentă versiune Node.js</link> și testează cele mai noi îmbunătățiri!"
+    },
+    "eolAlert": {
+      "message": "Asistența comercială pentru versiunile care au depășit faza de întreținere LTS este disponibilă prin intermediul <link>partenerului nostru HeroDevs din cadrul Programului de sustenabilitate a ecosistemului OpenJS</link>"
+    },
+    "eolChip": {
+      "severity": {
+        "unknown": "Necunoscută",
+        "low": "Scazută",
+        "medium": "Medie",
+        "high": "Ridicată",
+        "critical": "Critică"
+      }
+    },
+    "eolModal": {
+      "title": "Node.js v{version} ({codename}) a ajuns la EOL",
+      "titleWithoutCodename": "Node.js v{version} a ajuns la EOL",
+      "vulnerabilitiesMessage": "Există {count}+ probleme de securitate cunoscute (CVE-uri) asociate cu această versiune de Node.js. CVE-urile (Common Vulnerabilities and Exposures) sunt identificatori pentru vulnerabilități de securitate raportate public. Dacă dai click pe un link CVE, vei fi direcționat către detalii tehnice suplimentare, cum ar fi modul în care funcționează vulnerabilitatea.",
+      "noVulnerabilitiesMessage": "În prezent, nu există CVE-uri (Common Vulnerabilities and Exposures) cunoscute asociate cu această versiune de Node.js. Totuși, asta nu înseamnă că este complet sigură — unele vulnerabilități pot să nu fi fost încă descoperite sau făcute publice. Dacă această versiune este învechită sau nu mai este susținută, este totuși o idee bună să iei în considerare actualizarea pentru a beneficia de cele mai recente remedieri și îmbunătățiri de securitate.",
+      "blogLinkText": "Blog",
+      "showUnknownSeverities": "Afișează vulnerabilități le cu severitate necunoscută",
+      "table": {
+        "cves": "CVE(urile)",
+        "severity": "Gravitate",
+        "overview": "Prezentare generală",
+        "details": "Detalii"
+      }
+    },
+    "eolTable": {
+      "version": "Versiune",
+      "codename": "Nume de cod",
+      "releaseDate": "Lansat pe",
+      "lastUpdated": "Ultima actualizare",
+      "vulnerabilities": "Vulnerabilități",
+      "details": "Detalii"
     },
     "minorReleasesTable": {
       "version": "Versiune",
