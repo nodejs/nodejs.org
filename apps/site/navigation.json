@@ -414,6 +414,10 @@
               "link": "/learn/userland-migrations/ecosystem",
               "label": "components.navigation.learn.userland-migrations.links.ecosystem"
             },
+            "v22-to-v24": {
+              "link": "/learn/userland-migrations/v22-to-v24",
+              "label": "components.navigation.learn.userland-migrations.links.v22-to-v24"
+            },
             "v20-to-v22": {
               "link": "/learn/userland-migrations/v20-to-v22",
               "label": "components.navigation.learn.userland-migrations.links.v20-to-v22"

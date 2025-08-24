@@ -103,6 +103,7 @@
             "userland-migrations": "Userland Migrations",
             "introduction": "Introduction to Userland Migrations",
             "ecosystem": "Ecosystem to Node.js",
+            "v22-to-v24": "Node.js v22 to v24",
             "v20-to-v22": "Node.js v20 to v22",
             "v14-to-v16": "Node.js v14 to v16"
           }
