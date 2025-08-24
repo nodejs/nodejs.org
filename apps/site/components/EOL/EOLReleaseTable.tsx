@@ -5,9 +5,9 @@ import { Fragment, useState } from 'react';
 import type { FC } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
+import LinkWithArrow from '#site/components/Common/LinkWithArrow';
 import EOLModal from '#site/components/EOL/EOLModal';
 import VulnerabilityChips from '#site/components/EOL/VulnerabilityChips';
-import LinkWithArrow from '#site/components/LinkWithArrow';
 import provideReleaseData from '#site/next-data/providers/releaseData';
 import provideVulnerabilities from '#site/next-data/providers/vulnerabilities';
 import { EOL_VERSION_IDENTIFIER } from '#site/next.constants.mjs';
