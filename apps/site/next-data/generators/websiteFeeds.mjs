@@ -32,8 +32,8 @@ const generateWebsiteFeeds = ({ posts }) => {
         id: file,
         title: title,
         language: 'en',
-        link: `${canonicalUrl}/feed/${file}`,
-        description: description,
+        link: canonicalUrl,
+        description: description || '',
       });
 
       const blogFeedEntries = posts
