@@ -3,10 +3,10 @@
 import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 
 import Button from './components/Common/Button';
+import LinkWithArrow from './components/Common/LinkWithArrow';
 import EOLAlertBox from './components/EOL/EOLAlert';
 import EOLReleaseTable from './components/EOL/EOLReleaseTable';
 import Link from './components/Link';
-import LinkWithArrow from './components/LinkWithArrow';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
 import PreviousReleasesTable from './components/Releases/PreviousReleasesTable';
 import WithBadgeGroup from './components/withBadgeGroup';

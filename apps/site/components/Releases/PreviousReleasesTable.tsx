@@ -6,7 +6,7 @@ import type { FC } from 'react';
 import { useState } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
-import LinkWithArrow from '#site/components/LinkWithArrow';
+import LinkWithArrow from '#site/components/Common/LinkWithArrow';
 import provideReleaseData from '#site/next-data/providers/releaseData';
 
 import ReleaseModal from './ReleaseModal';
