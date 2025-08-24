@@ -18,7 +18,13 @@ await writeFile(
 );
 
 // Now, publish the generated `dist` folder
-spawnSync('pnpm', ['publish', '--no-git-checks'], {
+const { status, error } = spawnSync('pnpm', ['publish', '--no-git-checks'], {
   cwd: 'dist',
   stdio: 'inherit',
 });
+
+if (error) {
+  throw error;
+}
+
+process.exitCode = status;

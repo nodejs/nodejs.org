@@ -8,8 +8,8 @@ import type { FC } from 'react';
 import { useContext, useMemo } from 'react';
 
 import CodeBox from '#site/components/Common/CodeBox';
+import LinkWithArrow from '#site/components/Common/LinkWithArrow';
 import Link from '#site/components/Link';
-import LinkWithArrow from '#site/components/LinkWithArrow';
 import WithReleaseAlertBox from '#site/components/withReleaseAlertBox';
 import { createSval } from '#site/next.jsx.compiler.mjs';
 import {

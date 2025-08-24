@@ -31,6 +31,7 @@
         -left-1
         flex
         flex-col
+        gap-px
         after:absolute
         after:left-[0.45rem]
         after:top-0

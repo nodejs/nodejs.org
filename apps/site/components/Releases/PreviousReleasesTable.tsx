@@ -6,8 +6,8 @@ import type { FC } from 'react';
 import { Fragment, useState } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
+import LinkWithArrow from '#site/components/Common/LinkWithArrow';
 import Link from '#site/components/Link';
-import LinkWithArrow from '#site/components/LinkWithArrow';
 import provideReleaseData from '#site/next-data/providers/releaseData';
 
 import ReleaseModal from './ReleaseModal';

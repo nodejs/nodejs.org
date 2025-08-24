@@ -4,7 +4,9 @@
 # Infrastructure
 .github @nodejs/web-infra
 .husky @nodejs/web-infra
+.nvmrc @nodejs/web-infra
 codecov.yml @nodejs/web-infra
+packages/ui-components/scripts/publish.mjs @nodejs/web-infra
 
 # Dependencies
 pnpm-workspace.yaml @nodejs/nodejs-website @nodejs/web-infra

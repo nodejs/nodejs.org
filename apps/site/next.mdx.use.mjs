@@ -3,11 +3,11 @@
 import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 
 import Button from './components/Common/Button';
+import LinkWithArrow from './components/Common/LinkWithArrow';
 import DownloadsTable from './components/Downloads/DownloadsTable';
 import EOLAlertBox from './components/EOL/EOLAlert';
 import EOLReleaseTable from './components/EOL/EOLReleaseTable';
 import Link from './components/Link';
-import LinkWithArrow from './components/LinkWithArrow';
 import UpcomingMeetings from './components/MDX/Calendar/UpcomingMeetings';
 import MinorReleasesTable from './components/Releases/MinorReleasesTable';
 import PreviousReleasesTable from './components/Releases/PreviousReleasesTable';
