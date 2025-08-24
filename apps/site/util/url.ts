@@ -17,16 +17,34 @@ export const getNodeApiUrl = (version: string) => {
     : `${DIST_URL}${version}/docs/api/`;
 };
 
-export const getNodeDownloadUrl = (
-  versionWithPrefix: string,
-  os: OperatingSystem | 'LOADING',
-  platform: Platform = 'x64',
-  kind: DownloadKind = 'installer'
-) => {
+type DownloadOptions = {
+  /** The Node.js version string, must include the 'v' prefix (e.g., 'v20.12.2'). */
+  versionWithPrefix: string;
+  /** The target operating system. Defaults to 'LOADING'. */
+  os?: OperatingSystem | 'LOADING';
+  /** The target platform/architecture (e.g., 'x64', 'arm64'). Defaults to 'x64'. */
+  platform?: Platform;
+  /** The type of download artifact. Can be 'installer', 'binary', 'source', or 'shasum'. Defaults to 'installer'. */
+  kind?: DownloadKind;
+};
+
+/**
+ * Generates a Node.js download URL for the given options
+ */
+export const getNodeDownloadUrl = ({
+  versionWithPrefix,
+  os = 'LOADING',
+  platform = 'x64',
+  kind = 'installer',
+}: DownloadOptions) => {
   const baseURL = `${DIST_URL}${versionWithPrefix}`;
 
   if (kind === 'source') {
     return `${baseURL}/node-${versionWithPrefix}.tar.gz`;
+  }
+
+  if (kind === 'shasum') {
+    return `${baseURL}/SHASUMS256.txt.asc`;
   }
 
   switch (os) {

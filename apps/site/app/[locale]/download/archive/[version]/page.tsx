@@ -2,12 +2,11 @@ import { notFound } from 'next/navigation';
 import type { FC } from 'react';
 
 import { ENABLE_STATIC_EXPORT } from '#site/next.constants.mjs';
-import { ENABLE_STATIC_EXPORT_LOCALE } from '#site/next.constants.mjs';
+import { ARCHIVE_DYNAMIC_ROUTES } from '#site/next.dynamic.constants.mjs';
 import * as basePage from '#site/next.dynamic.page.mjs';
-import { availableLocaleCodes } from '#site/next.locales.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
 
-type DynamicStaticPaths = { path: Array<string>; locale: string };
+type DynamicStaticPaths = { version: string; locale: string };
 type DynamicParams = { params: Promise<DynamicStaticPaths> };
 
 // This is the default Viewport Metadata
@@ -18,31 +17,21 @@ export const generateViewport = basePage.generateViewport;
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 export const generateMetadata = basePage.generateMetadata;
 
-/**
- * Generates all possible static paths based on the locales and environment configuration
- * - Returns an empty array if static export is disabled (`ENABLE_STATIC_EXPORT` is false)
- * - If `ENABLE_STATIC_EXPORT_LOCALE` is true, generates paths for all available locales
- * - Otherwise, generates paths only for the default locale
- *
- * @see https://nextjs.org/docs/app/api-reference/functions/generate-static-params
- */
+// Generates all possible static paths based on the locales and environment configuration
+// - Returns an empty array if static export is disabled (`ENABLE_STATIC_EXPORT` is false)
+// - If `ENABLE_STATIC_EXPORT_LOCALE` is true, generates paths for all available locales
+// - Otherwise, generates paths only for the default locale
+// @see https://nextjs.org/docs/app/api-reference/functions/generate-static-params
 export const generateStaticParams = async () => {
   // Return an empty array if static export is disabled
   if (!ENABLE_STATIC_EXPORT) {
     return [];
   }
 
-  // Determine which locales to include in the static export
-  const locales = ENABLE_STATIC_EXPORT_LOCALE
-    ? availableLocaleCodes
-    : [defaultLocale.code];
-
-  const routes = await Promise.all(
-    // Gets all mapped routes to the Next.js Routing Engine by Locale
-    locales.map(locale => ({ locale }))
-  );
-
-  return routes.flat().sort();
+  return ARCHIVE_DYNAMIC_ROUTES.map(version => ({
+    locale: defaultLocale.code,
+    version: version,
+  }));
 };
 
 // This method parses the current pathname and does any sort of modifications needed on the route
@@ -50,23 +39,27 @@ export const generateStaticParams = async () => {
 // finally it returns (if the locale and route are valid) the React Component with the relevant context
 // and attached context providers for rendering the current page
 const getPage: FC<DynamicParams> = async props => {
-  const { path, locale: routeLocale } = await props.params;
+  const { version, locale: routeLocale } = await props.params;
 
   // Gets the current full pathname for a given path
-  const [locale, pathname] = basePage.getLocaleAndPath(path, routeLocale);
+  const [locale, pathname] = basePage.getLocaleAndPath(version, routeLocale);
 
-  // Gets the Markdown content and context
+  // Verifies if the current route is a dynamic route
+  const isDynamicRoute = ARCHIVE_DYNAMIC_ROUTES.some(r => r.includes(pathname));
+
+  // Gets the Markdown content and context for Download Archive pages
   const [content, context] = await basePage.getMarkdownContext({
-    locale,
-    pathname,
+    locale: locale,
+    pathname: 'download/archive',
   });
 
-  // If we have a filename and layout then we have a page
-  if (context.filename && context.frontmatter.layout) {
+  // If this isn't a valid dynamic route for archive version or there's no markdown
+  //  file for this, then we fail as not found as there's nothing we can do.
+  if (isDynamicRoute && context.filename) {
     return basePage.renderPage({
       content: content,
-      layout: context.frontmatter.layout,
-      context: context,
+      layout: context.frontmatter.layout!,
+      context: { ...context, pathname: `/download/archive/${pathname}` },
     });
   }
 

@@ -39,8 +39,10 @@ export const generateStaticParams = async () => {
 // finally it returns (if the locale and route are valid) the React Component with the relevant context
 // and attached context providers for rendering the current page
 const getPage: FC<DynamicParams> = async props => {
+  const { path, locale: routeLocale } = await props.params;
+
   // Gets the current full pathname for a given path
-  const [locale, pathname] = await basePage.getLocaleAndPath(props);
+  const [locale, pathname] = basePage.getLocaleAndPath(path, routeLocale);
 
   // Verifies if the current route is a dynamic route
   const isDynamicRoute = BLOG_DYNAMIC_ROUTES.some(r => r.includes(pathname));
@@ -52,7 +54,7 @@ const getPage: FC<DynamicParams> = async props => {
     pathname: `blog/${pathname}`,
   });
 
-  // If this isn't a valid dynamic route for blog post or there's no mardown file
+  // If this isn't a valid dynamic route for blog post or there's no markdown file
   // for this, then we fail as not found as there's nothing we can do.
   if (isDynamicRoute || context.filename) {
     return basePage.renderPage({

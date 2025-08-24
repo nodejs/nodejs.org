@@ -37,12 +37,11 @@ export const generateMetadata = async props => {
 /**
  * This method is used for retrieving the current locale and pathname from the request
  *
- * @param {{ params: Promise<{ path: Array<string>; locale: string }> }} props
- * @returns {Promise<[string, string]>} the locale and pathname for the request
+ * @param {string|Array<string>} path
+ * @param {string} locale
+ * @returns {[string, string]} the locale and pathname for the request
  */
-export const getLocaleAndPath = async props => {
-  const { path = [], locale = defaultLocale.code } = await props.params;
-
+export const getLocaleAndPath = (path = [], locale = defaultLocale.code) => {
   if (!availableLocaleCodes.includes(locale)) {
     // Forces the current locale to be the Default Locale
     setRequestLocale(defaultLocale.code);

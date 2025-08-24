@@ -23,7 +23,8 @@ import { MDX_COMPONENTS } from './next.mdx.components.mjs';
 const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
 
 // This is a small utility that allows us to quickly separate locale from the remaining pathname
-const getPathname = (path = []) => path.join('/');
+const getPathname = (path = []) =>
+  Array.isArray(path) ? path.join('/') : path;
 
 // This maps a pathname into an actual route object that can be used
 // we use a platform-specific separator to split the pathname

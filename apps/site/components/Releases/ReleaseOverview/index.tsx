@@ -18,7 +18,7 @@ type ReleaseOverviewProps = {
   release: NodeRelease;
 };
 
-export const ReleaseOverview: FC<ReleaseOverviewProps> = ({ release }) => {
+const ReleaseOverview: FC<ReleaseOverviewProps> = ({ release }) => {
   const t = useTranslations();
 
   return (
@@ -67,3 +67,5 @@ export const ReleaseOverview: FC<ReleaseOverviewProps> = ({ release }) => {
     </div>
   );
 };
+
+export default ReleaseOverview;

@@ -21,7 +21,7 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
   const { os, bitness, architecture } = useClientContext();
 
   const platform = getUserPlatform(architecture, bitness);
-  const downloadLink = getNodeDownloadUrl(versionWithPrefix, os, platform);
+  const downloadLink = getNodeDownloadUrl({ versionWithPrefix, os, platform });
 
   return (
     <>
