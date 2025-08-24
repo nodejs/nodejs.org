@@ -13,28 +13,6 @@ import { getNodeDownloadUrl } from '#site/util/url';
 
 import { DIST_URL } from '#site/next.constants';
 
-/**
- * Checks if a download item is compatible with the given OS, platform, and version.
- */
-function isCompatible(
-  compatibility: DownloadDropdownItem<Platform>['compatibility'],
-  os: OperatingSystem,
-  platform: Platform,
-  version: string
-): boolean {
-  const {
-    os: osList,
-    platform: platformList,
-    semver: versions,
-  } = compatibility;
-
-  return (
-    (osList?.includes(os) ?? true) &&
-    (platformList?.includes(platform) ?? true) &&
-    (versions?.every(r => semVer.satisfies(version, r)) ?? true)
-  );
-}
-
 type CompatibleArtifactOptions = {
   platforms?: Record<OperatingSystem, Array<DownloadDropdownItem<Platform>>>;
   exclude?: Array<string>;
@@ -82,17 +60,23 @@ const getCompatiblePlatforms = (
   versionWithPrefix: string
 ): CompatiblePlatforms => {
   return Object.entries(platforms).flatMap(([os, items]) => {
-    if (exclude.includes(os)) return [];
+    if (exclude.includes(os)) {
+      return [];
+    }
 
     return items
-      .filter(({ compatibility, value }) =>
-        isCompatible(
-          compatibility,
-          os as OperatingSystem,
-          value,
-          versionWithPrefix
-        )
-      )
+      .filter(({ compatibility }) => {
+        // In the download constants file (apps/site/util/download/constants.json),
+        //  if no compatibility is defined as a semver, we treat it as supporting all
+        //  versions by default.
+        if (!compatibility.semver) {
+          return true;
+        }
+
+        return compatibility.semver.every(version =>
+          semVer.satisfies(versionWithPrefix, version)
+        );
+      })
       .map(platform => ({
         os: os as OperatingSystem,
         platform: platform,
@@ -174,7 +158,8 @@ export const extractVersionFromPath = (pathname: string | undefined) => {
   const segments = pathname.split('/').filter(Boolean);
   const version = segments.pop();
 
-  // Check version format like (v22.0.4 or 'archive')
+  // Checks the version prefix + digits + optional dot-separated digits
+  //  (v22, v22.0.4) OR literal "archive"
   if (!version || !version.match(/^v\d+(\.\d+)*|archive$/)) {
     return null;
   }
