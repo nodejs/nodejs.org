@@ -21,13 +21,13 @@ The Node.js Userland Migrations team seeks to help developers migrate their code
 To use a codemod, you can run the following command in your terminal:
 
 ```bash
-npx codemod@next <codemod-name>
+npx codemod <codemod-name>
 ```
 
 Replace `<codemod-name>` with the name of the codemod you want to run. For example, if you want to run the `@nodejs/import-assertions-to-attributes` codemod on your project, you would run:
 
 ```bash
-npx codemod@next @nodejs/import-assertions-to-attributes
+npx codemod @nodejs/import-assertions-to-attributes
 ```
 
 ## Good Practices
