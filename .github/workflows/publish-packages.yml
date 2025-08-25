@@ -81,17 +81,10 @@ jobs:
 
               # Determine if the package has changed (or include all on manual trigger)
               if [ "$EVENT_NAME" == "workflow_dispatch" ] || ! git diff --quiet $COMMIT_SHA~1 $COMMIT_SHA -- "$pkg/"; then
-                HAS_VERSION=$(jq 'has("version")' "$PKG_JSON")
-                if [ "$HAS_VERSION" == "false" ]; then
-                  # Include packages without version field
+                OLD_VERSION=$(git show $COMMIT_SHA~1:$PKG_JSON | jq -r '.version')
+                NEW_VERSION=$(jq -r '.version' "$PKG_JSON")
+                if [ "$OLD_VERSION" != "$NEW_VERSION" ]; then
                   CHANGED_PACKAGES+=("$PKG_NAME")
-                else
-                  # For packages with version field, include only if version changed
-                  OLD_VERSION=$(git show $COMMIT_SHA~1:$PKG_JSON | jq -r '.version')
-                  NEW_VERSION=$(jq -r '.version' "$PKG_JSON")
-                  if [ "$OLD_VERSION" != "$NEW_VERSION" ]; then
-                    CHANGED_PACKAGES+=("$PKG_NAME")
-                  fi
                 fi
               fi
             done
@@ -137,12 +130,6 @@ jobs:
         run: |
           # Install deps
           pnpm install --frozen-lockfile
-
-          HAS_VERSION=$(jq 'has("version")' package.json)
-          if [ "$HAS_VERSION" == "false" ]; then
-            # Only bump version if package has no version field
-            npm version --no-git-tag-version 1.0.1-$COMMIT_SHA
-          fi
 
           # Check if a custom publish script exists in package.json
           if jq -e '.scripts.publish' package.json > /dev/null; then
