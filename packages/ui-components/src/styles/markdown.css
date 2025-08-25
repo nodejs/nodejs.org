@@ -128,28 +128,78 @@ main {
       w-full
       border-separate
       border-spacing-0
-      border
       border-neutral-200
       text-left
       text-sm
+      max-sm:block
+      md:border
       dark:border-neutral-800;
 
+    /* Common border and text styles */
     th,
     td {
-      @apply max-xs:block
-        max-xs:border-l-0
-        border
-        border-r-0
-        border-t-0
-        border-neutral-200
-        px-4
-        py-2
+      @apply border-neutral-200
         text-neutral-900
+        md:border
+        md:border-r-0
+        md:border-t-0
+        md:px-4
+        md:py-2
         dark:border-neutral-800
         dark:text-white;
 
       > a {
         @apply pr-2;
+      }
+    }
+
+    /* Mobile-specific styles */
+    @media (max-width: 40rem) {
+      thead {
+        @apply sr-only;
+      }
+
+      tbody {
+        @apply block
+          space-y-4;
+      }
+
+      tr {
+        @apply rounded-xs
+          block
+          border
+          border-neutral-200
+          p-4
+          before:mb-2
+          before:text-sm
+          before:font-medium
+          before:text-neutral-500
+          before:content-[attr(data-label)]
+          dark:border-neutral-800
+          dark:before:text-neutral-400;
+      }
+
+      td {
+        @apply relative
+          block
+          border-b
+          py-2
+          pl-[50%]
+          text-right
+          text-neutral-600
+          before:absolute
+          before:left-0
+          before:top-1/2
+          before:w-1/2
+          before:-translate-y-1/2
+          before:break-words
+          before:font-medium
+          before:text-neutral-700
+          before:content-[attr(data-label)]
+          last:border-0
+          dark:border-neutral-900
+          dark:text-neutral-300
+          dark:before:text-neutral-200;
       }
     }
 
