@@ -5,12 +5,8 @@ mock.module('github-slugger', {
   defaultExport: class {},
 });
 
-const {
-  getGitHubAvatarUrl,
-  createGitHubSlugger,
-  getGitHubBlobUrl,
-  getGitHubApiDocsUrl,
-} = await import('#site/util/github');
+const { getGitHubAvatarUrl, createGitHubSlugger, getGitHubBlobUrl } =
+  await import('#site/util/github');
 
 describe('gitHubUtils', () => {
   it('getGitHubAvatarUrl returns the correct URL', () => {
@@ -31,13 +27,6 @@ describe('gitHubUtils', () => {
     assert.equal(result, expected);
   });
 
-  it('getGitHubApiDocsUrl returns the correct URL', () => {
-    const result = getGitHubApiDocsUrl('assert');
-    const expected =
-      'https://api.github.com/repos/nodejs/node/contents/doc/api?ref=assert';
-    assert.equal(result, expected);
-  });
-
   describe('getGitHubAvatarUrl', () => {
     it('should return a valid GitHub avatar URL', () => {
       assert.equal(
@@ -53,15 +42,6 @@ describe('gitHubUtils', () => {
         getGitHubBlobUrl('testfile.md').includes(
           'blob/main/apps/site/pages/en/testfile.md'
         )
-      );
-    });
-  });
-
-  describe('getGitHubApiDocsUrl', () => {
-    it('should return the correct API docs URL', () => {
-      assert.equal(
-        getGitHubApiDocsUrl('v18.x'),
-        'https://api.github.com/repos/nodejs/node/contents/doc/api?ref=v18.x'
       );
     });
   });

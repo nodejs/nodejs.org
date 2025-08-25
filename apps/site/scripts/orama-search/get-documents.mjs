@@ -1,80 +1,78 @@
-import { existsSync, readFileSync } from 'node:fs';
-import { join } from 'node:path';
-import zlib from 'node:zlib';
+import { readFile, glob } from 'node:fs/promises';
+import { join, basename } from 'node:path';
 
-import { slug } from 'github-slugger';
+import generateReleaseData from '#site/next-data/generators/releaseData.mjs';
+import { getRelativePath } from '#site/next.helpers.mjs';
 
-import { getRelativePath } from '../../next.helpers.mjs';
+import { processDocument } from './process-documents.mjs';
 
-const currentRoot = getRelativePath(import.meta.url);
-const dataBasePath = join(currentRoot, '../../.next/server/app/en/next-data');
+// If a GitHub token is available, include it for higher rate limits
+const fetchOptions = process.env.GITHUB_TOKEN
+  ? { headers: { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } }
+  : undefined;
 
-if (!existsSync(dataBasePath)) {
-  throw new Error(
-    'The data directory does not exist. Please run `npm run build` first.'
+/**
+ * Fetch Node.js API documentation directly from GitHub
+ * for the current Active LTS version.
+ */
+const getAPIDocs = async () => {
+  // Find the current Active LTS version
+  const releaseData = await generateReleaseData();
+  const version = releaseData.find(
+    r => r.status === 'Active LTS'
+  ).versionWithPrefix;
+
+  // Get list of API docs from the Node.js repo
+  const fetchResponse = await fetch(
+    `https://api.github.com/repos/nodejs/node/contents/doc/api?ref=${version}`,
+    fetchOptions
   );
-}
+  const documents = await fetchResponse.json();
 
-const nextPageData = readFileSync(`${dataBasePath}/page-data.body`, 'utf-8');
-const nextAPIPageData = readFileSync(`${dataBasePath}/api-data.body`, 'utf-8');
+  // Download and return content + metadata for each doc
+  return Promise.all(
+    documents.map(async ({ name, download_url }) => {
+      const res = await fetch(download_url, fetchOptions);
 
-const pageData = JSON.parse(nextPageData);
-const apiData = JSON.parse(nextAPIPageData);
-
-const splitIntoSections = markdownContent => {
-  const lines = markdownContent.split(/\n/gm);
-  const sections = [];
-
-  let section = null;
-
-  for (const line of lines) {
-    if (line.match(/^#{1,6}\s/)) {
-      section = {
-        pageSectionTitle: line.replace(/^#{1,6}\s*/, ''),
-        pageSectionContent: [],
-      };
-
-      sections.push(section);
-    } else if (section) {
-      section.pageSectionContent.push(line);
-    }
-  }
-
-  return sections.map(section => ({
-    ...section,
-    pageSectionContent: section.pageSectionContent.join('\n'),
-  }));
+      return processDocument({
+        content: await res.text(),
+        pathname: `docs/${version}/api/${basename(name, '.md')}.html`,
+      });
+    })
+  );
 };
 
-const uppercaseFirst = string =>
-  string.charAt(0).toUpperCase() + string.slice(1);
+/**
+ * Collect all local markdown/mdx articles under /pages/en,
+ * excluding blog content.
+ */
+const getArticles = async () => {
+  const relativePath = getRelativePath(import.meta.url);
+  const root = join(relativePath, '..', '..', 'pages', 'en');
 
-const getPageTitle = data =>
-  data.title ||
-  data.pathname
-    .split('/')
-    .pop()
-    .replace(/\.html$/, '')
-    .replace(/-/g, ' ');
+  // Find all markdown files (excluding blog)
+  const files = await Array.fromAsync(glob('**/*.{md,mdx}', { cwd: root }));
 
-export const siteContent = [...pageData, ...apiData]
-  .map(data => {
-    const { pathname, title = getPageTitle(data), content } = data;
-    const markdownContent = zlib
-      .inflateSync(Buffer.from(content, 'base64'))
-      .toString('utf-8');
+  // Read content + metadata
+  return Promise.all(
+    files
+      .filter(path => !path.startsWith('blog'))
+      .map(async path =>
+        processDocument(
+          {
+            content: await readFile(join(root, path), 'utf8'),
+            pathname: path.replace(/\.mdx?$/, ''),
+          },
+          true
+        )
+      )
+  );
+};
 
-    const siteSection = pathname.split('/').shift();
-    const subSections = splitIntoSections(markdownContent);
-    return subSections.map(section => {
-      const path = `${pathname}#${slug(section.pageSectionTitle)}`;
-
-      return {
-        path: path,
-        siteSection: uppercaseFirst(siteSection),
-        pageTitle: title,
-        ...section,
-      };
-    });
-  })
-  .flat();
+/**
+ * Aggregate all documents (API docs + local articles).
+ */
+export const getDocuments = async () => {
+  const documentPromises = await Promise.all([getAPIDocs(), getArticles()]);
+  return documentPromises.flatMap(documents => documents.flat());
+};
