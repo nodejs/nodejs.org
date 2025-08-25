@@ -1,5 +1,6 @@
 {
   "name": "@node-core/rehype-shiki",
+  "version": "1.1.0",
   "type": "module",
   "exports": {
     ".": "./src/index.mjs",
