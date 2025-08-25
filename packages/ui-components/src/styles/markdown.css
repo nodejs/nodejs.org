@@ -190,7 +190,9 @@ main {
           before:absolute
           before:left-0
           before:top-1/2
+          before:w-1/2
           before:-translate-y-1/2
+          before:break-words
           before:font-medium
           before:text-neutral-700
           before:content-[attr(data-label)]
