@@ -106,6 +106,22 @@ Metadata can be provided in comments:
 <!-- llm_description= Utilities for working with file paths -->
 ```
 
+### `node-core:invalid-type-reference`
+
+Ensures that all `{type}` references are valid types and formatted correctly.
+
+**Allowed:**
+
+```markdown
+This is usually a {boolean}, but it could also be a {string|number}.
+```
+
+**Not allowed:**
+
+```markdown
+This is an {invalid} type, and so is {string | number}.
+```
+
 ### `node-core:yaml-comments`
 
 Enforces structure and content of YAML comment blocks:
