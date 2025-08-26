@@ -117,7 +117,10 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
         <>
           <SlidingChatPanel
             open={isChatOpen}
-            onClose={() => setIsChatOpen(false)}
+            onClose={() => {
+              setIsChatOpen(false);
+              setMode('search'); // Switch back to search mode on desktop when chat closes
+            }}
             autoTriggerQuery={shouldAutoTrigger ? autoTriggerValue : null}
             onAutoTriggerComplete={handleChatOpened}
           />
