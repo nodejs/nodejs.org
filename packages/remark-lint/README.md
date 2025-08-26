@@ -119,7 +119,7 @@ This is usually a {boolean}, but it could also be a {string|number}.
 **Not allowed:**
 
 ```markdown
-This is an {invalid} type, and so is {string | number}.
+This is an {invalid} type, and so is {string | number} because there should **not** be whitespace around the `|`.
 ```
 
 ### `node-core:yaml-comments`
