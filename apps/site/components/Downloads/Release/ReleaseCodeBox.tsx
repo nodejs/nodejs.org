@@ -108,7 +108,7 @@ const ReleaseCodeBox: FC = () => {
         >
           {t.rich('layouts.download.codeBox.noScriptDetected', {
             link: text => (
-              <Link href="/download/archive">
+              <Link href="/download/archive/current">
                 <b>{text}</b>
               </Link>
             ),

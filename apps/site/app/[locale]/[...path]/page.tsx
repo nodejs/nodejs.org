@@ -15,9 +15,9 @@ import { ENABLE_STATIC_EXPORT_LOCALE } from '#site/next.constants.mjs';
 import { dynamicRouter } from '#site/next.dynamic.mjs';
 import * as basePage from '#site/next.dynamic.page.mjs';
 import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
+import type { DynamicParams } from '#site/types';
 
-type DynamicStaticPaths = { path: Array<string>; locale: string };
-type DynamicParams = { params: Promise<DynamicStaticPaths> };
+type PageParams = DynamicParams<{ path: Array<string> }>;
 
 // This is the default Viewport Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-viewport#generateviewport-function
@@ -59,7 +59,7 @@ export const generateStaticParams = async () => {
 // then it proceeds to retrieve the Markdown file and parse the MDX Content into a React Component
 // finally it returns (if the locale and route are valid) the React Component with the relevant context
 // and attached context providers for rendering the current page
-const getPage: FC<DynamicParams> = async props => {
+const getPage: FC<PageParams> = async props => {
   const { path, locale: routeLocale } = await props.params;
 
   // Gets the current full pathname for a given path

@@ -1,13 +1,14 @@
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import type { FC } from 'react';
 
+import provideReleaseData from '#site/next-data/providers/releaseData';
 import { ENABLE_STATIC_EXPORT } from '#site/next.constants.mjs';
 import { ARCHIVE_DYNAMIC_ROUTES } from '#site/next.dynamic.constants.mjs';
 import * as basePage from '#site/next.dynamic.page.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
+import type { DynamicParams } from '#site/types';
 
-type DynamicStaticPaths = { version: string; locale: string };
-type DynamicParams = { params: Promise<DynamicStaticPaths> };
+type PageParams = DynamicParams<{ version: string }>;
 
 // This is the default Viewport Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-viewport#generateviewport-function
@@ -38,11 +39,19 @@ export const generateStaticParams = async () => {
 // then it proceeds to retrieve the Markdown file and parse the MDX Content into a React Component
 // finally it returns (if the locale and route are valid) the React Component with the relevant context
 // and attached context providers for rendering the current page
-const getPage: FC<DynamicParams> = async props => {
+const getPage: FC<PageParams> = async props => {
   const { version, locale: routeLocale } = await props.params;
 
   // Gets the current full pathname for a given path
   const [locale, pathname] = basePage.getLocaleAndPath(version, routeLocale);
+
+  if (version === 'current') {
+    const releaseData = provideReleaseData();
+
+    const release = releaseData.find(release => release.status === 'Current');
+
+    redirect(`/${locale}/download/archive/${release?.versionWithPrefix}`);
+  }
 
   // Verifies if the current route is a dynamic route
   const isDynamicRoute = ARCHIVE_DYNAMIC_ROUTES.some(r => r.includes(pathname));

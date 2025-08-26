@@ -1,12 +1,12 @@
 import { notFound } from 'next/navigation';
 import type { FC } from 'react';
+import semVer from 'semver';
 
 import { getClientContext } from '#site/client-context';
 import provideReleaseData from '#site/next-data/providers/releaseData';
 import {
   buildReleaseArtifacts,
   extractVersionFromPath,
-  findReleaseByVersion,
 } from '#site/util/download/archive';
 
 type DownloadArchive = ReturnType<typeof buildReleaseArtifacts>;
@@ -33,7 +33,9 @@ const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
 
   // Find the release data for the given version
   const releaseData = provideReleaseData();
-  const release = findReleaseByVersion(releaseData, version);
+  const release = releaseData.find(
+    release => semVer.major(version) === release.major
+  )!;
 
   const releaseArtifacts = buildReleaseArtifacts(
     release,

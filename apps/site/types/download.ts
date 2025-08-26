@@ -39,3 +39,15 @@ export type DownloadArtifact = {
   url: string;
   version: string;
 };
+
+export type CompatibleArtifactOptions = {
+  platforms?: Record<OperatingSystem, Array<DownloadDropdownItem<Platform>>>;
+  exclude?: Array<string>;
+  versionWithPrefix: string;
+  kind?: DownloadKind;
+};
+
+export type CompatiblePlatforms = Array<{
+  os: OperatingSystem;
+  platform: DownloadDropdownItem<Platform>;
+}>;

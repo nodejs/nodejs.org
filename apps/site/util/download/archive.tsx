@@ -6,19 +6,14 @@ import type {
   DownloadArtifact,
   OperatingSystem,
   Platform,
+  CompatiblePlatforms,
+  CompatibleArtifactOptions,
 } from '#site/types';
 import type { NodeRelease } from '#site/types/releases';
 import { OS_NOT_SUPPORTING_INSTALLERS, PLATFORMS } from '#site/util/download';
 import { getNodeDownloadUrl } from '#site/util/url';
 
 import { DIST_URL } from '#site/next.constants';
-
-type CompatibleArtifactOptions = {
-  platforms?: Record<OperatingSystem, Array<DownloadDropdownItem<Platform>>>;
-  exclude?: Array<string>;
-  versionWithPrefix: string;
-  kind?: DownloadKind;
-};
 
 /**
  * Creates a download artifact from platform data
@@ -46,11 +41,6 @@ const createDownloadArtifact = (
   };
 };
 
-type CompatiblePlatforms = Array<{
-  os: OperatingSystem;
-  platform: DownloadDropdownItem<Platform>;
-}>;
-
 /**
  * Filters platforms by compatibility and exclusions
  */
@@ -58,7 +48,7 @@ const getCompatiblePlatforms = (
   platforms: Record<OperatingSystem, Array<DownloadDropdownItem<Platform>>>,
   exclude: Array<string>,
   versionWithPrefix: string
-): CompatiblePlatforms => {
+) => {
   return Object.entries(platforms).flatMap(([os, items]) => {
     if (exclude.includes(os)) {
       return [];
@@ -78,9 +68,9 @@ const getCompatiblePlatforms = (
         );
       })
       .map(platform => ({
-        os: os as OperatingSystem,
-        platform: platform,
-      }));
+        os,
+        platform,
+      })) as CompatiblePlatforms;
   });
 };
 
@@ -148,7 +138,7 @@ export const buildReleaseArtifacts = (
 
 /**
  * Extracts the version from the pathname.
- * It expects the version to be in the format 'v22.0.4' or 'archive'.
+ * It expects the version to be in the format like 'v22.0.4'.
  */
 export const extractVersionFromPath = (pathname: string | undefined) => {
   if (!pathname) {
@@ -159,25 +149,10 @@ export const extractVersionFromPath = (pathname: string | undefined) => {
   const version = segments.pop();
 
   // Checks the version prefix + digits + optional dot-separated digits
-  //  (v22, v22.0.4) OR literal "archive"
-  if (!version || !version.match(/^v\d+(\.\d+)*|archive$/)) {
+  //  (v22, v22.0.4)
+  if (!version || !version.match(/^v\d+(\.\d+)*$/)) {
     return null;
   }
 
   return version;
-};
-
-/**
- * Finds the appropriate release based on version, if 'archive' is passed,
- * it returns the latest LTS release.
- */
-export const findReleaseByVersion = (
-  releaseData: Array<NodeRelease>,
-  version: string | 'archive'
-) => {
-  if (version === 'archive') {
-    return releaseData.find(release => release.status === 'Current')!;
-  }
-
-  return releaseData.find(release => semVer.major(version) === release.major)!;
 };
