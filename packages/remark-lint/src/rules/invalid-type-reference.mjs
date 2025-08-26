@@ -3,7 +3,8 @@ import createQueries from '@nodejs/doc-kit/src/utils/queries/index.mjs';
 import { lintRule } from 'unified-lint-rule';
 import { visit } from 'unist-util-visit';
 
-const SPACED_SEPERATOR_RE = /\s\||\|\s/g;
+const MATCH_RE = /\s\||\|\s/g;
+const REPLACE_RE = /\s*\|\s*/g;
 
 /**
  * Ensures that all type references are valid
@@ -14,17 +15,25 @@ const invalidTypeReference = (tree, vfile) => {
     const types = node.value.match(createQueries.QUERIES.normalizeTypes);
 
     types.forEach(type => {
-      if (type[0] !== '{' || type.at(-1) !== '}') {
+      // Ensure wrapped in {}
+      if (type[0] !== '{' || type[type.length - 1] !== '}') {
         vfile.message(
           `Type reference must be wrapped in "{}"; saw "${type}"`,
           node
         );
+
+        node.value = node.value.replace(type, `{${type.slice(1, -1)}}`);
       }
 
-      if (SPACED_SEPERATOR_RE.test(type)) {
+      // Fix spaces around |
+      if (MATCH_RE.test(type)) {
         vfile.message(
-          `Type reference should be seperated by "|", without spaces; saw "${type}"`
+          `Type reference should be separated by "|", without spaces; saw "${type}"`,
+          node
         );
+
+        const normalized = type.replace(REPLACE_RE, '|');
+        node.value = node.value.replace(type, normalized);
       }
 
       if (transformTypeToReferenceLink(type) === type) {
