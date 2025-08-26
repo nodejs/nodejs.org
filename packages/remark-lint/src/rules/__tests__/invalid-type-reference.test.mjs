@@ -23,7 +23,7 @@ const testCases = [
     name: 'multiple references',
     input: 'Psst, are you a {string | boolean}',
     expected: [
-      'Type reference should be seperated by "|", without spaces; saw "{string | boolean}"',
+      'Type reference should be separated by "|", without spaces; saw "{string | boolean}"',
     ],
   },
   {
