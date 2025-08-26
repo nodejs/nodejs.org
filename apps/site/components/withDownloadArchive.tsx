@@ -37,10 +37,7 @@ const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
     release => semVer.major(version) === release.major
   )!;
 
-  const releaseArtifacts = buildReleaseArtifacts(
-    release,
-    version === 'archive' ? release.versionWithPrefix : version
-  );
+  const releaseArtifacts = buildReleaseArtifacts(release, version);
 
   return <Component {...releaseArtifacts} />;
 };
