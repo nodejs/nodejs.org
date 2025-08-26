@@ -145,7 +145,7 @@ export const DEFAULT_ORAMA_SUGGESTIONS = [
 /**
  * The default batch size to use when syncing Orama Cloud
  */
-export const ORAMA_SYNC_BATCH_SIZE = 50;
+export const ORAMA_SYNC_BATCH_SIZE = 250;
 
 /**
  * The default Orama Cloud endpoint to use when searching with Orama Cloud.
