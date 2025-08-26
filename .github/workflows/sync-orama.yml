@@ -17,6 +17,7 @@ on:
       - main
     types:
       - labeled
+  pull_request:
 
 permissions:
   contents: read

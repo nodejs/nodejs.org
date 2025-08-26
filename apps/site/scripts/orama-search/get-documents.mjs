@@ -1,5 +1,5 @@
 import { readFile, glob } from 'node:fs/promises';
-import { join, basename } from 'node:path';
+import { join, basename, posix, win32 } from 'node:path';
 
 import generateReleaseData from '#site/next-data/generators/releaseData.mjs';
 import { getRelativePath } from '#site/next.helpers.mjs';
@@ -15,16 +15,16 @@ const fetchOptions = process.env.GITHUB_TOKEN
  * Fetch Node.js API documentation directly from GitHub
  * for the current Active LTS version.
  */
-const getAPIDocs = async () => {
+export const getAPIDocs = async () => {
   // Find the current Active LTS version
   const releaseData = await generateReleaseData();
-  const version = releaseData.find(
+  const { versionWithPrefix } = releaseData.find(
     r => r.status === 'Active LTS'
-  ).versionWithPrefix;
+  );
 
   // Get list of API docs from the Node.js repo
   const fetchResponse = await fetch(
-    `https://api.github.com/repos/nodejs/node/contents/doc/api?ref=${version}`,
+    `https://api.github.com/repos/nodejs/node/contents/doc/api?ref=${versionWithPrefix}`,
     fetchOptions
   );
   const documents = await fetchResponse.json();
@@ -34,10 +34,10 @@ const getAPIDocs = async () => {
     documents.map(async ({ name, download_url }) => {
       const res = await fetch(download_url, fetchOptions);
 
-      return processDocument({
+      return {
         content: await res.text(),
-        pathname: `docs/${version}/api/${basename(name, '.md')}.html`,
-      });
+        pathname: `docs/${versionWithPrefix}/api/${basename(name, '.md')}.html`,
+      };
     })
   );
 };
@@ -46,7 +46,7 @@ const getAPIDocs = async () => {
  * Collect all local markdown/mdx articles under /pages/en,
  * excluding blog content.
  */
-const getArticles = async () => {
+export const getArticles = async () => {
   const relativePath = getRelativePath(import.meta.url);
   const root = join(relativePath, '..', '..', 'pages', 'en');
 
@@ -57,15 +57,14 @@ const getArticles = async () => {
   return Promise.all(
     files
       .filter(path => !path.startsWith('blog'))
-      .map(async path =>
-        processDocument(
-          {
-            content: await readFile(join(root, path), 'utf8'),
-            pathname: path.replace(/\.mdx?$/, ''),
-          },
-          true
-        )
-      )
+      .map(async path => ({
+        content: await readFile(join(root, path), 'utf8'),
+        pathname: path
+          // Strip the extension
+          .replace(/\.mdx?$/, '')
+          // Normalize to a POSIX path
+          .replaceAll(win32.sep, posix.sep),
+      }))
   );
 };
 
@@ -74,5 +73,7 @@ const getArticles = async () => {
  */
 export const getDocuments = async () => {
   const documentPromises = await Promise.all([getAPIDocs(), getArticles()]);
-  return documentPromises.flatMap(documents => documents.flat());
+  return documentPromises.flatMap(documents =>
+    documents.flatMap(processDocument)
+  );
 };
