@@ -5,7 +5,6 @@ import matter from 'gray-matter';
 import { fromMarkdown } from 'mdast-util-from-markdown';
 import { toString } from 'mdast-util-to-string';
 
-
 /**
  * Extracts top-level sections from a Markdown AST.
  * Each section starts with a heading (if present) and includes all subsequent nodes
