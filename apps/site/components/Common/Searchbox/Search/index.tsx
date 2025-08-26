@@ -61,7 +61,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   });
 
   const dataSourcesRef = useRef<Array<string>>([
-    '59bbae6c-07f9-49f7-a062-3de1c7b6e2b6',
+    process.env.NEXT_PUBLIC_ORAMA_DATASOURCE_ID || '',
   ]);
 
   const lastIssuedSigRef = useRef<string>('');
