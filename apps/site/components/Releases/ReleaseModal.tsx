@@ -1,11 +1,10 @@
-import AlertBox from '@node-core/ui-components/Common/AlertBox';
 import { Modal, Title, Content } from '@node-core/ui-components/Common/Modal';
 import { useTranslations } from 'next-intl';
 import type { ComponentProps, FC } from 'react';
 
-import Link from '#site/components/Link';
-import { MinorReleasesTable } from '#site/components/Releases/MinorReleasesTable';
-import { ReleaseOverview } from '#site/components/Releases/ReleaseOverview';
+import MinorReleasesTable from '#site/components/Releases/MinorReleasesTable';
+import ReleaseOverview from '#site/components/Releases/ReleaseOverview';
+import WithReleaseAlertBox from '#site/components/withReleaseAlertBox';
 import type { NodeRelease } from '#site/types';
 
 type ReleaseModalProps = ComponentProps<typeof Modal> & {
@@ -26,33 +25,7 @@ const ReleaseModal: FC<ReleaseModalProps> = ({ release, ...props }) => {
 
   return (
     <Modal {...props}>
-      {release.status === 'End-of-life' && (
-        <div className="mb-4">
-          <AlertBox
-            title={t('components.common.alertBox.warning')}
-            level="warning"
-            size="small"
-          >
-            {t.rich('components.releaseModal.unsupportedVersionWarning', {
-              link: text => <Link href="/eol">{text}</Link>,
-            })}
-          </AlertBox>
-        </div>
-      )}
-
-      {release.isLts && (
-        <div className="mb-4">
-          <AlertBox
-            title={t('components.common.alertBox.info')}
-            level="info"
-            size="small"
-          >
-            {t.rich('components.releaseModal.ltsVersionFeaturesNotice', {
-              link: text => <Link href="/download/current">{text}</Link>,
-            })}
-          </AlertBox>
-        </div>
-      )}
+      <WithReleaseAlertBox status={release.status} />
 
       <Title>{modalHeading}</Title>
 

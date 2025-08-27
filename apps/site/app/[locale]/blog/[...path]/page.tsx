@@ -5,9 +5,9 @@ import { ENABLE_STATIC_EXPORT } from '#site/next.constants.mjs';
 import { BLOG_DYNAMIC_ROUTES } from '#site/next.dynamic.constants.mjs';
 import * as basePage from '#site/next.dynamic.page.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
+import type { DynamicParams } from '#site/types';
 
-type DynamicStaticPaths = { path: Array<string>; locale: string };
-type DynamicParams = { params: Promise<DynamicStaticPaths> };
+type PageParams = DynamicParams<{ path: Array<string> }>;
 
 // This is the default Viewport Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-viewport#generateviewport-function
@@ -38,9 +38,11 @@ export const generateStaticParams = async () => {
 // then it proceeds to retrieve the Markdown file and parse the MDX Content into a React Component
 // finally it returns (if the locale and route are valid) the React Component with the relevant context
 // and attached context providers for rendering the current page
-const getPage: FC<DynamicParams> = async props => {
+const getPage: FC<PageParams> = async props => {
+  const { path, locale: routeLocale } = await props.params;
+
   // Gets the current full pathname for a given path
-  const [locale, pathname] = await basePage.getLocaleAndPath(props);
+  const [locale, pathname] = basePage.getLocaleAndPath(path, routeLocale);
 
   // Verifies if the current route is a dynamic route
   const isDynamicRoute = BLOG_DYNAMIC_ROUTES.some(r => r.includes(pathname));
@@ -52,7 +54,7 @@ const getPage: FC<DynamicParams> = async props => {
     pathname: `blog/${pathname}`,
   });
 
-  // If this isn't a valid dynamic route for blog post or there's no mardown file
+  // If this isn't a valid dynamic route for blog post or there's no markdown file
   // for this, then we fail as not found as there's nothing we can do.
   if (isDynamicRoute || context.filename) {
     return basePage.renderPage({

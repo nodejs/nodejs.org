@@ -17,6 +17,7 @@ import ReleaseVersionDropdown from './components/Downloads/Release/VersionDropdo
 import Link from './components/Link';
 import MDXCodeBox from './components/MDX/CodeBox';
 import MDXImage from './components/MDX/Image';
+import WithReleaseSelect from './components/withReleaseSelect';
 import { ReleaseProvider } from './providers/releaseProvider';
 
 /**
@@ -29,6 +30,8 @@ export const clientMdxComponents = {
   CodeTabs: MDXCodeTabs,
   // Renders a Download Button
   DownloadButton: DownloadButton,
+  // Renders a stateless Release Select Component
+  WithReleaseSelect: WithReleaseSelect,
   // Group of components that enable you to select versions for Node.js
   // releases and download selected versions. Uses `releaseProvider` as a provider
   Release: {

@@ -3,10 +3,11 @@
 import Badge from '@node-core/ui-components/Common/Badge';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
 import LinkWithArrow from '#site/components/Common/LinkWithArrow';
+import Link from '#site/components/Link';
 import provideReleaseData from '#site/next-data/providers/releaseData';
 
 import ReleaseModal from './ReleaseModal';
@@ -41,9 +42,13 @@ const PreviousReleasesTable: FC = () => {
 
       <tbody>
         {releaseData.map(release => (
-          <>
+          <Fragment key={release.major}>
             <tr key={release.major}>
-              <td data-label="Version">v{release.major}</td>
+              <td data-label="Version">
+                <Link href={`/download/archive/${release.versionWithPrefix}`}>
+                  v{release.major}
+                </Link>
+              </td>
 
               <td data-label="LTS">{release.codename || '-'}</td>
 
@@ -77,7 +82,7 @@ const PreviousReleasesTable: FC = () => {
               open={currentModal === release.version}
               onOpenChange={open => open || setCurrentModal(undefined)}
             />
-          </>
+          </Fragment>
         ))}
       </tbody>
     </table>

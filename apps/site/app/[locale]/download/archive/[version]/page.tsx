@@ -1,23 +1,14 @@
-/**
- * This file extends on the `page.tsx` file, which is the default file that is used to render
- * the entry points for each locale and then also reused within the [...path] route to render the
- * and contains all logic for rendering our dynamic and static routes within the Node.js Website.
- *
- * Note: that each `page.tsx` should have its own `generateStaticParams` to prevent clash of
- * dynamic params, which will lead on static export errors and other sort of issues.
- */
-
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import type { FC } from 'react';
 
+import provideReleaseData from '#site/next-data/providers/releaseData';
 import { ENABLE_STATIC_EXPORT } from '#site/next.constants.mjs';
-import { ENABLE_STATIC_EXPORT_LOCALE } from '#site/next.constants.mjs';
-import { dynamicRouter } from '#site/next.dynamic.mjs';
+import { ARCHIVE_DYNAMIC_ROUTES } from '#site/next.dynamic.constants.mjs';
 import * as basePage from '#site/next.dynamic.page.mjs';
-import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
+import { defaultLocale } from '#site/next.locales.mjs';
 import type { DynamicParams } from '#site/types';
 
-type PageParams = DynamicParams<{ path: Array<string> }>;
+type PageParams = DynamicParams<{ version: string }>;
 
 // This is the default Viewport Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-viewport#generateviewport-function
@@ -38,21 +29,10 @@ export const generateStaticParams = async () => {
     return [];
   }
 
-  const routes = await dynamicRouter.getAllRoutes();
-
-  // Helper function to fetch and map routes for a specific locale
-  const getRoutesForLocale = async (l: string) =>
-    routes.map(pathname => dynamicRouter.mapPathToRoute(l, pathname));
-
-  // Determine which locales to include in the static export
-  const locales = ENABLE_STATIC_EXPORT_LOCALE
-    ? availableLocaleCodes
-    : [defaultLocale.code];
-
-  // Generates all possible routes for all available locales
-  const routesWithLocales = await Promise.all(locales.map(getRoutesForLocale));
-
-  return routesWithLocales.flat().sort();
+  return ARCHIVE_DYNAMIC_ROUTES.map(version => ({
+    locale: defaultLocale.code,
+    version: version,
+  }));
 };
 
 // This method parses the current pathname and does any sort of modifications needed on the route
@@ -60,23 +40,35 @@ export const generateStaticParams = async () => {
 // finally it returns (if the locale and route are valid) the React Component with the relevant context
 // and attached context providers for rendering the current page
 const getPage: FC<PageParams> = async props => {
-  const { path, locale: routeLocale } = await props.params;
+  const { version, locale: routeLocale } = await props.params;
 
   // Gets the current full pathname for a given path
-  const [locale, pathname] = basePage.getLocaleAndPath(path, routeLocale);
+  const [locale, pathname] = basePage.getLocaleAndPath(version, routeLocale);
 
-  // Gets the Markdown content and context
+  if (version === 'current') {
+    const releaseData = provideReleaseData();
+
+    const release = releaseData.find(release => release.status === 'Current');
+
+    redirect(`/${locale}/download/archive/${release?.versionWithPrefix}`);
+  }
+
+  // Verifies if the current route is a dynamic route
+  const isDynamicRoute = ARCHIVE_DYNAMIC_ROUTES.some(r => r.includes(pathname));
+
+  // Gets the Markdown content and context for Download Archive pages
   const [content, context] = await basePage.getMarkdownContext({
-    locale,
-    pathname,
+    locale: locale,
+    pathname: 'download/archive',
   });
 
-  // If we have a filename and layout then we have a page
-  if (context.filename && context.frontmatter.layout) {
+  // If this isn't a valid dynamic route for archive version or there's no markdown
+  //  file for this, then we fail as not found as there's nothing we can do.
+  if (isDynamicRoute && context.filename) {
     return basePage.renderPage({
       content: content,
-      layout: context.frontmatter.layout,
-      context: context,
+      layout: context.frontmatter.layout!,
+      context: { ...context, pathname: `/download/archive/${pathname}` },
     });
   }
 
