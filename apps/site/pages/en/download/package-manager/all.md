@@ -59,7 +59,7 @@ might differ between fedora and various RHEL releases).
 dnf install nodejs24
 ```
 
-for older CentOS/RHEL releases Node.js is available as a module called `nodejs`.
+For older CentOS/RHEL releases Node.js is available as a module called `nodejs`.
 
 ```bash
 dnf module install nodejs:<stream>
