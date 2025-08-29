@@ -52,7 +52,7 @@ LTS Node.js version.
 dnf install nodejs npm
 ```
 
-Or from a specific stream for alternative, maintained version (maintained versions
+Or from a specific stream for alternative, maintained versions (maintained versions
 might differ between fedora and various RHEL releases).
 
 ```bash
