@@ -1,6 +1,4 @@
-import { notFound } from 'next/navigation';
 import type { FC } from 'react';
-import semVer from 'semver';
 
 import { getClientContext } from '#site/client-context';
 import provideReleaseData from '#site/next-data/providers/releaseData';
@@ -27,14 +25,11 @@ const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
   // Extract version from pathname
   const version = extractVersionFromPath(pathname);
 
-  if (version == null) {
-    return notFound();
-  }
-
   // Find the release data for the given version
   const releaseData = provideReleaseData();
-  const release = releaseData.find(
-    release => semVer.major(version) === release.major
+  const release = releaseData.find(release =>
+    // Match major version only (e.g., v22.x.x for release.major v22)
+    version.startsWith(`v${release.major}`)
   )!;
 
   const releaseArtifacts = buildReleaseArtifacts(release, version);
