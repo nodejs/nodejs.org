@@ -115,13 +115,11 @@ jobs:
 
       - name: Patch version if the files changed
         run: |
-          CHANGED_FILES=$(git diff --name-only $BEFORE HEAD -- packages/website-i18n)
+          CHANGED_FILES=$(git diff --name-only $GITHUB_SHA HEAD -- packages/website-i18n)
           if [ -n "$CHANGED_FILES" ]; then
             cd packages/website-i18n
             pnpm version patch --no-git-tag-version
           fi
-        env:
-          BEFORE: ${{ github.event.before }}
 
       - name: Push Changes back to Pull Request
         uses: stefanzweifel/git-auto-commit-action@778341af668090896ca464160c2def5d1d1a3eb0 # v6.0.1
