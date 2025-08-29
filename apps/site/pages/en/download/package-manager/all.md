@@ -46,7 +46,7 @@ pacman -S nodejs npm
 Node.js and npm packages are available in the main Repository for Fedora and RHEL 10.
 
 It can be installed from a default stream which contains the currently active
-LTS nodejs version.
+LTS Node.js version.
 
 ```bash
 dnf install nodejs npm
