@@ -2,16 +2,16 @@ import type { HTMLAttributeAnchorTarget } from 'react';
 
 import type { IntlMessageKeys } from './i18n';
 
-export interface FooterConfig {
+export type FooterConfig = {
   text: IntlMessageKeys;
   link: string;
-}
+};
 
-export interface SocialConfig {
+export type SocialConfig = {
   icon: string;
   link: string;
   alt?: string;
-}
+};
 
 export type NavigationKeys =
   | 'about'
@@ -22,16 +22,16 @@ export type NavigationKeys =
   | 'learn'
   | 'blog';
 
-export interface NavigationEntry {
+export type NavigationEntry = {
   label?: IntlMessageKeys;
   link?: string;
   items?: Record<string, NavigationEntry>;
   target?: HTMLAttributeAnchorTarget | undefined;
-}
+};
 
-export interface SiteNavigation {
+export type SiteNavigation = {
   topNavigation: Record<NavigationKeys, NavigationEntry>;
   footerLinks: Array<FooterConfig>;
   socialLinks: Array<SocialConfig>;
   sideNavigation: Record<NavigationKeys, NavigationEntry>;
-}
+};

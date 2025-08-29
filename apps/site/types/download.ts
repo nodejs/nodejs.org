@@ -7,11 +7,11 @@ import type {
   Platform,
 } from '#site/types';
 
-export interface DownloadSnippet {
+export type DownloadSnippet = {
   name: string;
   language: string;
   content: string;
-}
+};
 
 export type DownloadKind = 'installer' | 'binary' | 'source' | 'shasum';
 
