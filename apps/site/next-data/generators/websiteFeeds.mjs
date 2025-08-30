@@ -30,7 +30,7 @@ const generateWebsiteFeeds = ({ posts }) => {
     ({ category, title, description, file }) => {
       const feed = new Feed({
         id: file,
-        title: title,
+        title,
         language: 'en',
         link: canonicalUrl,
         description: description || '',
@@ -46,7 +46,7 @@ const generateWebsiteFeeds = ({ posts }) => {
             id: post.slug,
             title: post.title,
             author: post.author,
-            date: date,
+            date,
             link: `${canonicalUrl}${post.slug}`,
             guid:
               time > guidTimestampStartDate

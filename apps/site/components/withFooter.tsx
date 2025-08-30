@@ -16,7 +16,7 @@ const WithFooter: FC = () => {
   const { socialLinks, footerLinks } = siteNavigation;
 
   const navigation = {
-    socialLinks: socialLinks,
+    socialLinks,
     footerLinks: footerLinks.map(link => ({ ...link, text: t(link.text) })),
   };
 

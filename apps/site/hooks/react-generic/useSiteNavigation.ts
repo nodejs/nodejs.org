@@ -13,12 +13,12 @@ import type {
 type Context = Record<string, RichTranslationValues>;
 type Navigation = Record<string, NavigationEntry>;
 
-interface MappedNavigationEntry {
+type MappedNavigationEntry = {
   items: Array<[string, MappedNavigationEntry]>;
   label: FormattedMessage;
   link: string;
   target?: HTMLAttributeAnchorTarget | undefined;
-}
+};
 
 // Provides Context replacement for variables within the Link. This is also something that is not going
 // to happen in the future with `nodejs/nodejs.dev` codebase
@@ -49,7 +49,7 @@ const useSiteNavigation = () => {
       ] => [
         key,
         {
-          target: target,
+          target,
           label: label ? getFormattedMessage(label, key) : '',
           link: link ? replaceLinkWithContext(link, context[key]) : '',
           items: items ? mapNavigationEntries(items, context) : [],

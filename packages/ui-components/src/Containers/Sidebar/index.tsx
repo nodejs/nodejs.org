@@ -30,7 +30,7 @@ const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
 }) => {
   const selectItems = groups.map(({ items, groupName }) => ({
     label: groupName,
-    items: items.map(({ label, link }) => ({ value: link, label: label })),
+    items: items.map(({ label, link }) => ({ value: link, label })),
   }));
 
   const currentItem = selectItems

@@ -30,7 +30,7 @@ const getPathname = (path = []) =>
 // we use a platform-specific separator to split the pathname
 // since we're using filepaths here and not URL paths
 const mapPathToRoute = (locale = defaultLocale.code, path = '') => ({
-  locale: locale,
+  locale,
   path: path.split(sep),
 });
 
@@ -111,7 +111,7 @@ const getDynamicRouter = async () => {
           `${locale}${normalizedPathname}`
         );
 
-        return { source: fileContent, filename: filename };
+        return { source: fileContent, filename };
       }
 
       // Attempts to read a file or simply (and silently) fail, as the file might
@@ -129,7 +129,7 @@ const getDynamicRouter = async () => {
           fileLanguageContent
         );
 
-        return { source: fileLanguageContent, filename: filename };
+        return { source: fileLanguageContent, filename };
       }
 
       // Prevent infinite loops as if at this point the file does not exist with the default locale
@@ -149,7 +149,7 @@ const getDynamicRouter = async () => {
       // of the same locale for this file and improve read performance
       cachedMarkdownFiles.set(`${locale}${normalizedPathname}`, fileContent);
 
-      return { source: fileContent, filename: filename };
+      return { source: fileContent, filename };
     }
 
     return { filename: '', source: '' };

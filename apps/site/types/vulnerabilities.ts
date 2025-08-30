@@ -1,6 +1,6 @@
 export type Severity = 'unknown' | 'low' | 'medium' | 'high' | 'critical';
 
-export interface RawVulnerability {
+export type RawVulnerability = {
   cve: Array<string>;
   ref?: string;
   vulnerable: string;
@@ -9,12 +9,10 @@ export interface RawVulnerability {
   overview: string;
   affectedEnvironments: Array<string>;
   severity: Severity;
-}
+};
 
-export interface Vulnerability extends Omit<RawVulnerability, 'ref'> {
+export type Vulnerability = {
   url?: string;
-}
+} & Omit<RawVulnerability, 'ref'>;
 
-export interface GroupedVulnerabilities {
-  [majorVersion: string]: Array<Vulnerability>;
-}
+export type GroupedVulnerabilities = Record<string, Array<Vulnerability>>;

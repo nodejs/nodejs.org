@@ -186,8 +186,8 @@ And we’ll get:
 Here's an example of creating a writable stream that converts all incoming data to uppercase before writing it to the standard output:
 
 ```cjs
-const { Writable } = require('node:stream');
 const { once } = require('node:events');
+const { Writable } = require('node:stream');
 
 class MyStream extends Writable {
   constructor() {
@@ -418,7 +418,7 @@ const { Transform } = require('node:stream');
 
 let errorCount = 0;
 const upper = new Transform({
-  transform: function (data, enc, cb) {
+  transform(data, enc, cb) {
     if (errorCount === 10) {
       return cb(new Error('BOOM!'));
     }
@@ -510,7 +510,7 @@ const { Transform, pipeline } = require('node:stream');
 
 let errorCount = 0;
 const upper = new Transform({
-  transform: function (data, enc, cb) {
+  transform(data, enc, cb) {
     if (errorCount === 10) {
       return cb(new Error('BOOM!'));
     }
@@ -671,7 +671,7 @@ import { Readable } from 'node:stream';
 
 const readable = Readable({
   objectMode: true,
-  read: function () {
+  read() {
     this.push({ hello: 'world' });
     this.push(null);
   },
