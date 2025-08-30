@@ -7,18 +7,12 @@ import matter from 'gray-matter';
 import { cache } from 'react';
 import { VFile } from 'vfile';
 
-import {
-  BASE_PATH,
-  BASE_URL,
-  DEFAULT_CATEGORY_OG_TYPE,
-  ENABLE_STATIC_EXPORT,
-  IS_DEV_ENV,
-} from './next.constants.mjs';
-import {
-  DYNAMIC_ROUTES,
-  IGNORED_ROUTES,
-  PAGE_METADATA,
-} from './next.dynamic.constants.mjs';
+import { BASE_PATH } from './next.constants.mjs';
+import { BASE_URL } from './next.constants.mjs';
+import { DEFAULT_CATEGORY_OG_TYPE } from './next.constants.mjs';
+import { ENABLE_STATIC_EXPORT } from './next.constants.mjs';
+import { IS_DEV_ENV } from './next.constants.mjs';
+import { PAGE_METADATA } from './next.dynamic.constants.mjs';
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { siteConfig } from './next.json.mjs';
 import { availableLocaleCodes, defaultLocale } from './next.locales.mjs';
@@ -29,7 +23,8 @@ import { MDX_COMPONENTS } from './next.mdx.components.mjs';
 const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
 
 // This is a small utility that allows us to quickly separate locale from the remaining pathname
-const getPathname = (path = []) => path.join('/');
+const getPathname = (path = []) =>
+  Array.isArray(path) ? path.join('/') : path;
 
 // This maps a pathname into an actual route object that can be used
 // we use a platform-specific separator to split the pathname
@@ -82,19 +77,13 @@ const getDynamicRouter = async () => {
   });
 
   /**
-   * This method returns a list of all routes that exist for a given locale
-   *
-   * @param {string} locale
+   * This method returns a list of all routes that exist
+   * Note: It will only match routes that have at least one pathname.
+
    * @returns {Promise<Array<string>>}
    */
-  const getRoutesByLanguage = async (locale = defaultLocale.code) => {
-    const shouldIgnoreStaticRoute = pathname =>
-      IGNORED_ROUTES.every(e => !e({ pathname, locale }));
-
-    return [...pathnameToFilename.keys()]
-      .filter(shouldIgnoreStaticRoute)
-      .concat([...DYNAMIC_ROUTES.keys()]);
-  };
+  const getAllRoutes = async () =>
+    [...pathnameToFilename.keys()].filter(pathname => pathname.length);
 
   /**
    * This method attempts to retrieve either a localized Markdown file
@@ -271,7 +260,7 @@ const getDynamicRouter = async () => {
   return {
     mapPathToRoute,
     getPathname,
-    getRoutesByLanguage,
+    getAllRoutes,
     getMDXContent,
     getMarkdownFile,
     getPageMetadata,

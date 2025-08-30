@@ -29,7 +29,7 @@ This document provides an overview of the technologies used in the Node.js websi
     - [Layouts System](#layouts-system)
     - [Content Processing Pipeline](#content-processing-pipeline)
   - [Rewrite and Redirect System](#rewrite-and-redirect-system)
-    - [`next.rewrites.mjs`](#nextrwritesmjs)
+    - [`next.rewrites.mjs`](#nextrewritesmjs)
     - [`redirects.json`](#redirectsjson)
 - [Configuration Files](#configuration-files)
   - [`site.json`](#sitejson)
@@ -66,7 +66,7 @@ We chose Next.js because it is:
 - Versatile and hackable for custom requirements
 - Stable with strong community maintenance
 - Well-suited as a long-term framework choice
-- Capable of supporting static builds (requirement from TSC)
+- Capable of supporting static builds (a requirement from the Node.js Technical Steering Committee)
 
 ### Styling System
 
@@ -174,7 +174,7 @@ This file handles:
 - Discovering all source pages in `apps/site/pages/en`
 - Identifying translated pages
 - Generating localized paths for untranslated content
-- Creating fallback pages with English content but localized navigation
+- Creating fallback pages that show English content with translated menus and UI elements
 
 #### `next.data.mjs` - Build-time Data
 
@@ -350,6 +350,6 @@ Benefits:
 
 ### End-to-End Testing
 
-- Playwright for full application testing
+- [Playwright](https://playwright.dev/) for full application testing
 - Critical user journey validation
 - Cross-browser compatibility testing

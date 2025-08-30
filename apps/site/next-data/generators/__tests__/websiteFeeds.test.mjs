@@ -30,8 +30,8 @@ describe('generateWebsiteFeeds', () => {
       id: siteConfig.rssFeeds[0].file,
       title: siteConfig.rssFeeds[0].title,
       language: 'en',
-      link: `${base}/feed/${siteConfig.rssFeeds[0].file}`,
-      description: siteConfig.rssFeeds[0].description,
+      link: base,
+      description: siteConfig.rssFeeds[0].description || '',
     });
 
     const date = new Date(blogData.posts[0].date);

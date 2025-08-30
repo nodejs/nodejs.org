@@ -145,7 +145,7 @@ export const DEFAULT_ORAMA_SUGGESTIONS = [
 /**
  * The default batch size to use when syncing Orama Cloud
  */
-export const ORAMA_SYNC_BATCH_SIZE = 50;
+export const ORAMA_SYNC_BATCH_SIZE = 250;
 
 /**
  * The default Orama Cloud endpoint to use when searching with Orama Cloud.
@@ -162,15 +162,34 @@ export const ORAMA_CLOUD_API_KEY =
   process.env.NEXT_PUBLIC_ORAMA_API_KEY || 'qopIuAERiWP2EZOpDjvczjws7WV40yrj';
 
 /**
- * A GitHub Access Token for accessing the GitHub API and not being rate-limited
- * The current token is registered on the "nodejs-vercel" GitHub Account.
- *
- * Note: This has no NEXT_PUBLIC prefix as it should not be exposed to the Browser.
- */
-export const GITHUB_API_KEY = process.env.NEXT_GITHUB_API_KEY || '';
-
-/**
  * The resource we point people to when discussing internationalization efforts.
  */
 export const TRANSLATION_URL =
-  'https://github.com/nodejs/nodejs.org/blob/main/TRANSLATION.md#how-to-translate';
+  'https://github.com/nodejs/nodejs.org/blob/main/docs/translation.md#how-to-translate';
+
+/**
+ * Define the order in which vulnerabilities should be sorted
+ */
+export const SEVERITY_ORDER = ['critical', 'high', 'medium', 'low'];
+
+/**
+ * Maps vulnerability severity levels to UI Badge kinds
+ */
+export const SEVERITY_KIND_MAP = {
+  unknown: 'neutral',
+  low: 'default',
+  medium: 'info',
+  high: 'warning',
+  critical: 'error',
+};
+
+/**
+ * Which Node.js versions do we want to display vulnerabilities for?
+ */
+export const EOL_VERSION_IDENTIFIER = 'End-of-life';
+
+/**
+ * The location of the Node.js Security Working Group Vulnerabilities data.
+ */
+export const VULNERABILITIES_URL =
+  'https://raw.githubusercontent.com/nodejs/security-wg/main/vuln/core/index.json';

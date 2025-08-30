@@ -1,0 +1,45 @@
+---
+title: Sfârșitul perioadei de viață
+layout: article
+---
+
+# Sfârșitul-perioadei-de-viață (EOL)
+
+## De ce și cum versiunile Node.js ajung la sfârșitul duratei de viață (End-Of-Life)
+
+Versiunile majore de Node.js sunt lansate, patch-uite și declarate End-Of-Life conform unui program previzibil. Deoarece nu este fezabil să fie menținute toate liniile de versiuni la nesfârșit, după o perioadă planificată de mentenanță, o linie majoră de versiune Node.js nu va mai fi întreținută de proiect.
+
+<div className="flex flex-col items-start gap-4 xl:flex-row xl:items-center">
+  <Button kind="primary" href="/download" className="flex-1">
+    <span>Actualizează la ultima versiune Node.js® LTS</span>
+  </Button>
+
+<span>sau</span>
+
+  <Button as="a" kind="avertizare" href="/esp/herodevs" className="flex-1">
+    <span>Obține suport de securitate pentru versiunile EOL (End-Of-Life).</span>
+  </Button>
+</div>
+
+[Vizualizează programul de lansări Node.js](/about/releases/)
+
+## Ce se întâmplă atunci când o linie de versiuni ajunge la EOL (End-Of-Life)
+
+Când o versiune ajunge la End-Of-Life, înseamnă că nu va mai primi actualizări, inclusiv patch-uri de securitate. Acest lucru poate lăsa aplicațiile care rulează pe aceste versiuni vulnerabile la probleme de securitate și erori care nu vor fi niciodată remediate.
+
+- **Fără remedieri de vulnerabilități**: Atunci când noile versiuni de securitate dezvăluie probleme și patch-uri în liniile majore mai noi, chiar dacă aceeași vulnerabilitate afectează liniile de versiuni ajunse la EOL, nu vor mai exista noi lansări pentru acestea. Utilizatorii care continuă să folosească linii EOL și coduri afectate vor deveni imediat vulnerabili la atacuri ce exploatează aceste vulnerabilități dezvăluite.
+- **Defecțiuni în lanțul de unelte**: Versiunile EOL s-ar putea să nu mai facă legătura dinamică cu versiunile mai noi ale bibliotecilor partajate de care depind, ceea ce poate bloca sau defecta actualizările de sistem.
+- **Derivă a ecosistemului**: Multe pachete populare din zona user-land își retrag în timp suportul pentru versiunile Node.js ajunse la EOL. Atunci când o aplicație rămâne blocată pe pachete învechite, poate suferi de și mai multe vulnerabilități și erori nereparate, îndepărtându-se și mai mult de normele ecosistemului.
+- **Avertismente de conformitate**: Multe audituri din industrie interzic utilizarea mediilor de rulare care nu mai sunt întreținute.
+
+## Versiuni EOL
+
+<EOLReleaseTable />
+
+## Suport Comercial
+
+În ciuda dezavantajelor evidente ale utilizării versiunilor EOL, în practică, organizațiile se confruntă cu constrângeri care împiedică upgrade-ul imediat, cum ar fi baze de cod vechi, cerințe de conformitate sau lanțuri complexe de dependențe. Pentru utilizatorii care nu pot face upgrade imediat, dar au nevoie de suport de securitate continuu pentru versiunile Node.js ajunse la End-Of-Life, este disponibil suport comercial prin parteneriatul [OpenJS Ecosystem Sustainability Program](https://openjsf.org/blog/ecosystem-sustainability-program)
+
+Node.js colaborează în prezent cu HeroDevs pentru a oferi suport NES (Never-Ending Support) pentru versiunile Node.js care au depășit faza oficială de mentenanță. Acest suport include patch-uri de securitate, asistență pentru conformitate și suport tehnic pentru a ajuta la acoperirea perioadei de tranziție în timp ce îți planifici strategia de upgrade. Pentru informații mai detaliate, vizitează pagina [**HeroDevs Node.js NES page**](https://nodejs.org/esp/herodevs).
+
+Utilizarea versiunilor EOL prin NES ar trebui privită ca o soluție temporară — obiectivul ar trebui să fie întotdeauna trecerea la versiuni aflate în suport activ.

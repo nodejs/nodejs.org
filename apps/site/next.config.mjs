@@ -6,8 +6,7 @@ import { redirects, rewrites } from './next.rewrites.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // We don't use trailing slashes on URLs from the Node.js Website
-  trailingSlash: false,
+  allowedDevOrigins: ['10.1.1.232'],
   // We don't want to redirect with trailing slashes
   skipTrailingSlashRedirect: true,
   // We allow the BASE_PATH to be overridden in case that the Website
@@ -53,7 +52,7 @@ const nextConfig = {
     ],
   },
   // On static export builds we want the output directory to be "build"
-  distDir: ENABLE_STATIC_EXPORT ? 'build' : '.next',
+  distDir: ENABLE_STATIC_EXPORT ? 'build' : undefined,
   // On static export builds we want to enable the export feature
   output: ENABLE_STATIC_EXPORT ? 'export' : undefined,
   // This configures all the Next.js rewrites, which are used for rewriting internal URLs into other internal Endpoints
@@ -64,10 +63,13 @@ const nextConfig = {
   // We don't want to run Type Checking on Production Builds
   // as we already check it on the CI within each Pull Request
   typescript: { ignoreBuildErrors: true },
+  // Enable statically typed links
+  // @see https://nextjs.org/docs/app/api-reference/config/typescript#statically-typed-links
+  typedRoutes: true,
   // We don't want to run ESLint Checking on Production Builds
   // as we already check it on the CI within each Pull Request
-  // we also configure ESLint to run its lint checking on all files (next lint)
-  eslint: { dirs: ['.'], ignoreDuringBuilds: true },
+  // we also configure ESLint to run its lint checking on all files
+  eslint: { ignoreDuringBuilds: true },
   experimental: {
     // Ensure that server-side code is also minified
     serverMinification: true,
@@ -84,7 +86,6 @@ const nextConfig = {
       '@radix-ui/react-dropdown-menu',
       '@radix-ui/react-label',
       '@radix-ui/react-select',
-      '@radix-ui/react-slot',
       '@radix-ui/react-tabs',
       '@radix-ui/react-toast',
       '@radix-ui/react-tooltip',
@@ -95,6 +96,16 @@ const nextConfig = {
       'shiki',
     ],
   },
+  // If we're building for the Cloudflare deployment we want to set
+  // an appropriate deploymentId (needed for skew protection)
+  // TODO: The `OPEN_NEXT_CLOUDFLARE` environment variable is being
+  //       defined in the worker building script, ideally the open-next
+  //       adapter should set it itself when it invokes the Next.js build
+  //       process, onces it does that remove the manual `OPEN_NEXT_CLOUDFLARE`
+  //       definition in the package.json script.
+  deploymentId: process.env.OPEN_NEXT_CLOUDFLARE
+    ? (await import('@opennextjs/cloudflare')).getDeploymentId()
+    : undefined,
 };
 
 const withNextIntl = createNextIntlPlugin('./i18n.tsx');

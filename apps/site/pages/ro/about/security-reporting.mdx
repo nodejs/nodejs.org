@@ -1,0 +1,65 @@
+---
+title: Raportare de securitate
+layout: about
+---
+
+# Raportare de securitate
+
+Pentru mai multe detalii despre politicile de securitate active, consultă [această pagină](https://github.com/nodejs/node/security/policy).
+
+## Raportarea unei probleme în Node.js
+
+Raportează problemele de securitate în Node.js prin [HackerOne](https://hackerone.com/nodejs).
+
+În mod normal, raportul tău va fi confirmat în termen de 5 zile, iar în decurs de 10 zile vei primi un răspuns mai detaliat la raportul tău, care va indica pașii următori pentru gestionarea sesizării. Aceste termene pot fi prelungite atunci când voluntarii noștri de triere sunt în concediu, în special la sfârșitul anului.
+
+După răspunsul inițial la raportarea ta, echipa de securitate va depune eforturi pentru a te ține la curent cu progresul făcut în vederea remedierii și a unei comunicări publice complete. De asemenea, este posibil să ți se solicite informații suplimentare sau îndrumări legate de problema raportată.
+
+### Programul de recompense pentru probleme în Node.js
+
+Proiectul Node.js participă într-un program oficial de recompense pentru probleme identificate, destinat cercetătorilor în securitate și dezvăluirilor publice responsabile. Programul este gestionat prin platforma HackerOne. Vizitează [https://hackerone.com/nodejs](https://hackerone.com/nodejs) pentru mai multe detalii.
+
+## Raportarea unei probleme într-un modul terț
+
+Problemele de securitate din modulele terțe ar trebui raportate direct celor care le întrețin.
+
+## Politica de dezvăluire
+
+Aici se află Politica de dezvăluire a problemelor de securitate pentru Node.js
+
+- Raportul de securitate este primit și este atribuit unui responsabil principal. Această persoană va coordona procesul de remediere și de lansare. Problema este validată pentru toate versiunile de Node.js care sunt încă suportate. Odată confirmată, se stabilește lista tuturor versiunilor afectate. Codul este auditat pentru a identifica eventuale probleme similare. Remedierile sunt pregătite pentru toate versiunile suportate.
+  Aceste remedieri nu sunt adăugate în depozitul public, ci sunt păstrate local până la momentul anunțului oficial.
+
+- Se stabilește o dată limită pentru raportarea publică a acestei vulnerabilități, iar pentru aceasta se solicită un CVE (Vulnerabilități și expuneri comune (CVE®)).
+
+- La data ridicării embargoului, o copie a anunțului este trimisă către lista de discuții de securitate Node.js. Modificările sunt publicate în depozitul public, iar noile build-uri sunt distribuite pe nodejs.org. În termen de 6 ore de la notificarea listei de discuții, o copie a avertizării va fi publicată pe blogul Node.js.
+
+- De obicei, data embargoului va fi stabilită la 72 de ore de la momentul în care este emis CVE-ul. Totuși, aceasta poate varia în funcție de severitatea erorii sau de dificultatea aplicării unei remedieri.
+
+- Acest proces poate dura ceva timp, mai ales atunci când trebuie să ne coordonăm cu întreținătorii altor proiecte. Vom încerca să rezolvăm problema cât mai repede posibil; totuși, trebuie să urmăm procesul de lansare descris mai sus pentru a ne asigura că gestionăm dezvăluirea în mod consecvent.
+
+## Primirea actualizărilor de securitate
+
+Notificările de securitate vor fi distribuite prin următoarele metode.
+
+- [Grupul Google](https://groups.google.com/group/nodejs-sec)
+- [Blogul Node.js](/blog)
+
+## Comentarii referitoare la această politică
+
+Dacă ai sugestii despre cum ar putea fi îmbunătățit acest proces, te rugăm să vizitezi repository-ul [nodejs/security-wg](https://github.com/nodejs/security-wg).
+
+## Recomandări OpenSSF
+
+<a
+  href="https://bestpractices.coreinfrastructure.org/projects/29"
+  style={{ display: 'inline-flex' }}
+>
+  <img
+    alt="Insigna OpenSSF"
+    src="https://bestpractices.coreinfrastructure.org/projects/29/badge"
+    style={{ display: 'inline' }}
+  />
+</a>
+
+[Insigna de Bune Practici](https://github.com/coreinfrastructure/best-practices-badge) a Open Source Security Foundation (OpenSSF) oferă proiectelor Free/Libre și Open Source Software (FLOSS) o modalitate de a demonstra că respectă standardele de bune practici. Proiectele se pot auto-certifica voluntar, indicând modul în care urmează fiecare dintre aceste practici. Utilizatorii pot evalua rapid care proiecte FLOSS respectă bunele practici, ceea ce sugerează o probabilitate mai mare de a produce software securizat și de înaltă calitate.

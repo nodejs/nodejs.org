@@ -20,7 +20,7 @@ const compatConfig = compat.config({
 
 export default tseslint.config(
   ...baseConfig,
-  { ignores: ['pages/en/blog/**/*.{md,mdx}/**', 'public'] },
+  { ignores: ['pages/en/blog/**/*.{md,mdx}/**', 'public', 'next-env.d.ts'] },
   {
     extends: [
       react.configs.flat['jsx-runtime'],

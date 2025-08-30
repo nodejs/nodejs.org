@@ -1,0 +1,43 @@
+@reference "../../../styles/index.css";
+
+.additionalLinks {
+  @apply flex
+    h-4
+    items-center
+    gap-2;
+}
+
+.items {
+  @apply flex
+    h-9
+    gap-2;
+}
+
+.scrollable {
+  @apply scrollbar-thin
+    flex
+    max-h-[29rem]
+    overflow-y-auto;
+
+  table {
+    @apply xs:border-t-0
+      border-t;
+  }
+
+  th {
+    @apply xs:border-t
+      border-neutral-200
+      dark:border-neutral-800;
+  }
+}
+
+.header {
+  @apply top-0
+    z-10
+    border-t
+    bg-white
+    text-left
+    font-semibold
+    sm:sticky
+    dark:bg-neutral-950;
+}

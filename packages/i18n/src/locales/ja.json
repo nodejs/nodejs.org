@@ -3,11 +3,15 @@
     "containers": {
       "footer": {
         "links": {
+          "openJSFoundation": "OpenJS Foundation",
           "trademarkPolicy": "商標ポリシー",
           "privacyPolicy": "プライバシーポリシー",
-          "versionSupport": "バージョンサポート",
           "codeOfConduct": "行動規範",
           "security": "セキュリティポリシー"
+        },
+        "releasePills": {
+          "latestLTS": "LTS版",
+          "latestRelease": "最新版"
         }
       },
       "navBar": {
@@ -163,13 +167,47 @@
       "details": "詳細"
     },
     "releaseModal": {
-      "title": "Node.js {version} ({codename})",
-      "titleWithoutCodename": "Node.js {version}",
+      "title": "Node.js v{version} ({codename})",
+      "titleWithoutCodename": "Node.js v{version}",
       "overview": "概要",
       "minorVersions": "マイナーバージョン",
       "releaseAnnouncement": "リリース",
       "unsupportedVersionWarning": "このバージョンのメンテナンスは終了しています。現在サポートされているバージョンを利用してください。<link>EOLのサポートについて。</link>",
       "ltsVersionFeaturesNotice": "すぐに最新の機能を試したいですか？<link>最新バージョンのNode.js</link>を代わりにインストールして最新の機能を試してください！"
+    },
+    "eolAlert": {
+      "message": "Maintenance LTS期間を終了したバージョンの商用サポートは、私たちの<link>OpenJSエコシステム持続可能性プログラムパートナーであるHeroDevs</link>を通して利用可能です。"
+    },
+    "eolChip": {
+      "severity": {
+        "unknown": "不明",
+        "low": "低",
+        "medium": "中",
+        "high": "高",
+        "critical": "深刻"
+      }
+    },
+    "eolModal": {
+      "title": "Node.js v{version} ({codename})はEOLとなりました",
+      "titleWithoutCodename": "Node.js v{version}はEOLとなりました",
+      "vulnerabilitiesMessage": "このNode.jsのバージョンには{count}件以上の既知のセキュリティ問題（CVE）が関連付けられています。CVE（Common Vulnerabilities and Exposures）は公開されたセキュリティ脆弱性を識別するための識別子です。CVEのリンクをクリックすると脆弱性の詳細な技術情報（脆弱性の動作方法など）を確認できます。",
+      "noVulnerabilitiesMessage": "現在、このNode.jsのバージョンに関連する既知のCVE（Common Vulnerabilities and Exposures）は存在しません。ただし、これが完全に安全であることを意味するわけではありません。一部の脆弱性がまだ発見されていないか、公開されていない可能性があります。このバージョンが古くなっていたり、サポート対象外の場合、最新の修正やセキュリティ強化の恩恵を受けるため、アップグレードを検討することをおすすめします。",
+      "blogLinkText": "ブログ",
+      "showUnknownSeverities": "未知の重大度の脆弱性を表示する",
+      "table": {
+        "cves": "CVE",
+        "severity": "重大度",
+        "overview": "概要",
+        "details": "詳細"
+      }
+    },
+    "eolTable": {
+      "version": "バージョン",
+      "codename": "コードネーム",
+      "releaseDate": "でリリース済み",
+      "lastUpdated": "最終更新日",
+      "vulnerabilities": "脆弱性",
+      "details": "詳細"
     },
     "minorReleasesTable": {
       "version": "バージョン",
@@ -224,7 +262,8 @@
         "label": "言語を選択"
       },
       "themeToggle": {
-        "label": "ダークモードに切り替え"
+        "light": "ライトモードに切り替える",
+        "dark": "ダークモードに切り替える"
       }
     },
     "metabar": {

@@ -1,0 +1,18 @@
+@reference "../../../styles/index.css";
+
+.root {
+  @apply rounded
+    border
+    border-neutral-200
+    p-4
+    text-neutral-900
+    dark:border-neutral-800
+    dark:text-white;
+
+  .container {
+    @apply grid
+      grid-cols-2
+      gap-4
+      lg:grid-cols-3;
+  }
+}

@@ -5,7 +5,7 @@ import styles from './index.module.css';
 
 type AlertBoxProps = PropsWithChildren<{
   level: 'info' | 'success' | 'warning' | 'danger' | 'neutral';
-  title: string;
+  title?: string;
   size?: 'default' | 'small';
 }>;
 

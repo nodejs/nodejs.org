@@ -6,7 +6,6 @@
           "openJSFoundation": "OpenJS Foundation",
           "trademarkPolicy": "Trademark Policy",
           "privacyPolicy": "Privacy Policy",
-          "versionSupport": "Version Support",
           "codeOfConduct": "Code of Conduct",
           "security": "Security Policy"
         },
@@ -167,6 +166,11 @@
       "status": "Status",
       "details": "Details"
     },
+    "downloadsTable": {
+      "fileName": "File Name",
+      "operatingSystem": "OS",
+      "architecture": "Architecture"
+    },
     "releaseModal": {
       "title": "Node.js v{version} ({codename})",
       "titleWithoutCodename": "Node.js v{version}",
@@ -176,9 +180,44 @@
       "unsupportedVersionWarning": "This version is out of maintenance. Please use a supported version. <link>Understand EOL support.</link>",
       "ltsVersionFeaturesNotice": "Want new features sooner? Get the <link>latest Node.js version</link> instead and try the latest improvements!"
     },
+    "eolAlert": {
+      "message": "Commercial support for versions past the Maintenance LTS phase is available through our <link>OpenJS Ecosystem Sustainability Program partner HeroDevs</link>"
+    },
+    "eolChip": {
+      "severity": {
+        "unknown": "Unknown",
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High",
+        "critical": "Critical"
+      }
+    },
+    "eolModal": {
+      "title": "Node.js v{version} ({codename}) has reached EOL",
+      "titleWithoutCodename": "Node.js v{version} has reached EOL",
+      "vulnerabilitiesMessage": "There are {count}+ known security issues (CVEs) associated with this Node.js release. CVEs (Common Vulnerabilities and Exposures) are identifiers for publicly reported security flaws. Clicking a CVE link will take you to more technical details, such as how the vulnerability works.",
+      "noVulnerabilitiesMessage": "There are currently no known CVEs (Common Vulnerabilities and Exposures) associated with this Node.js release. However, that doesn't mean it's completely secure—some vulnerabilities may not yet be discovered or publicly disclosed. If this release is outdated or unsupported, it's still a good idea to consider upgrading to ensure you benefit from the latest fixes and security improvements.",
+      "blogLinkText": "Blog",
+      "showUnknownSeverities": "Show vulnerabilities of unknown severity",
+      "table": {
+        "cves": "CVE(s)",
+        "severity": "Severity",
+        "overview": "Overview",
+        "details": "Details"
+      }
+    },
+    "eolTable": {
+      "version": "Version",
+      "codename": "Codename",
+      "releaseDate": "Released at",
+      "lastUpdated": "Last updated",
+      "vulnerabilities": "Vulnerabilities",
+      "details": "Details"
+    },
     "minorReleasesTable": {
       "version": "Version",
       "links": "Links",
+      "information": "Version Informations",
       "actions": {
         "release": "Release",
         "changelog": "Changelog",
@@ -229,7 +268,8 @@
         "label": "Choose Language"
       },
       "themeToggle": {
-        "label": "Toggle Dark Mode"
+        "light": "Switch to Light Mode",
+        "dark": "Switch to Dark Mode"
       }
     },
     "metabar": {
@@ -328,7 +368,7 @@
         "ltsVersionFeaturesNotice": "Want new features sooner? Get the <link>latest Node.js version</link> instead and try the latest improvements!",
         "communityPlatformInfo": "Installation methods that involve community software are supported by the teams maintaining that software.",
         "externalSupportInfo": "If you encounter any issues please visit <link>{platform}'s website</link>",
-        "noScriptDetected": "This page requires JavaScript. You can download Node.js without JavaScript by visiting the <link>releases page</link> directly.",
+        "noScriptDetected": "This page requires JavaScript. You can download Node.js without JavaScript by visiting the <link>downloads archive page</link> directly.",
         "platformInfo": {
           "default": "{platform} and their installation scripts are not maintained by the Node.js project.",
           "nvm": "\"nvm\" is a cross-platform Node.js version manager.",

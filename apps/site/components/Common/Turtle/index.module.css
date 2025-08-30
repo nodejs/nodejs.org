@@ -1,0 +1,31 @@
+@reference "../../../styles/index.css";
+
+.turtle {
+  @apply motion-safe:animate-surf
+    animate-surf
+    absolute
+    z-10
+    translate-x-0
+    translate-y-0
+    after:absolute
+    after:-left-full
+    after:top-[20%]
+    after:-z-10
+    after:block
+    after:h-36
+    after:w-36
+    after:-rotate-90
+    after:select-none
+    after:bg-[url('/static/images/smoke.gif')]
+    after:opacity-[0.15]
+    after:content-['']
+    motion-reduce:animate-none
+    after:md:-left-1/2
+    after:md:top-1/2;
+}
+
+.image {
+  @apply h-auto
+    w-24
+    md:w-48;
+}
