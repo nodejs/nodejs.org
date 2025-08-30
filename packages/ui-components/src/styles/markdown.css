@@ -128,23 +128,22 @@ main {
       w-full
       border-separate
       border-spacing-0
+      border
       border-neutral-200
       text-left
       text-sm
-      max-sm:block
-      md:border
       dark:border-neutral-800;
 
     /* Common border and text styles */
     th,
     td {
-      @apply border-neutral-200
+      @apply border
+        border-r-0
+        border-t-0
+        border-neutral-200
+        px-4
+        py-2
         text-neutral-900
-        md:border
-        md:border-r-0
-        md:border-t-0
-        md:px-4
-        md:py-2
         dark:border-neutral-800
         dark:text-white;
 
@@ -153,8 +152,30 @@ main {
       }
     }
 
-    /* Mobile-specific styles */
-    @media (max-width: 40rem) {
+    th {
+      @apply font-semibold;
+    }
+
+    tr:last-child > td {
+      @apply sm:border-b-0;
+
+      &:last-child {
+        @apply max-xs:border-b-0;
+      }
+    }
+
+    td:first-child,
+    th:first-child {
+      @apply sm:border-l-0;
+    }
+  }
+
+  /* Mobile-specific styles */
+  @media (max-width: 40rem) {
+    table:not([data-cards='false']) {
+      @apply block
+        border-0;
+
       thead {
         @apply sr-only;
       }
@@ -182,7 +203,9 @@ main {
       td {
         @apply relative
           block
+          border-0
           border-b
+          px-0
           py-2
           pl-[33%]
           text-right
@@ -202,23 +225,6 @@ main {
           dark:text-neutral-300
           dark:before:text-neutral-200;
       }
-    }
-
-    th {
-      @apply font-semibold;
-    }
-
-    tr:last-child > td {
-      @apply sm:border-b-0;
-
-      &:last-child {
-        @apply max-xs:border-b-0;
-      }
-    }
-
-    td:first-child,
-    th:first-child {
-      @apply sm:border-l-0;
     }
   }
 }

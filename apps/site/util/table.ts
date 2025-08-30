@@ -14,6 +14,14 @@ export default function remarkTableTitles() {
 
       const [headerRow, ...dataRows] = table.children;
 
+      if (headerRow.children.length <= 1) {
+        table.data ??= {};
+
+        table.data.hProperties = {
+          'data-cards': 'false',
+        };
+      }
+
       // Extract header labels from the first row
       const headerLabels = headerRow.children.map(headerCell =>
         toString(headerCell.children)
