@@ -32,5 +32,6 @@ export const REMARK_PLUGINS = [
   remarkHeadings,
   // Calculates the reading time of the content
   readingTime,
+  // Adds a `data` attribute to table cells for our custom CSS
   remarkTableTitles,
 ];
