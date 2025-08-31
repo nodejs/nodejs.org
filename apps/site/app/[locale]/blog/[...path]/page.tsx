@@ -50,7 +50,7 @@ const getPage: FC<PageParams> = async props => {
   // Gets the Markdown content and context for Blog pages
   // otherwise this is likely a blog-category or a blog post
   const [content, context] = await basePage.getMarkdownContext({
-    locale: locale,
+    locale,
     pathname: `blog/${pathname}`,
   });
 
@@ -58,7 +58,7 @@ const getPage: FC<PageParams> = async props => {
   // for this, then we fail as not found as there's nothing we can do.
   if (isDynamicRoute || context.filename) {
     return basePage.renderPage({
-      content: content,
+      content,
       layout: context.frontmatter.layout ?? 'blog-category',
       context: { ...context, pathname: `/blog/${pathname}` },
     });

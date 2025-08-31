@@ -24,8 +24,8 @@ const PrebuiltDownloadButtons: FC = () => {
   const installerUrl = platform
     ? getNodeDownloadUrl({
         versionWithPrefix: release.versionWithPrefix,
-        os: os,
-        platform: platform,
+        os,
+        platform,
         kind: 'installer',
       })
     : '';
@@ -33,8 +33,8 @@ const PrebuiltDownloadButtons: FC = () => {
   const binaryUrl = platform
     ? getNodeDownloadUrl({
         versionWithPrefix: release.versionWithPrefix,
-        os: os,
-        platform: platform,
+        os,
+        platform,
         kind: 'binary',
       })
     : '';

@@ -84,8 +84,8 @@ a script that takes Node.js' module [`zlib`][], that wraps around another
 compression tool, [`gzip(1)`][].
 
 ```cjs
-const gzip = require('node:zlib').createGzip();
 const fs = require('node:fs');
+const gzip = require('node:zlib').createGzip();
 
 const inp = fs.createReadStream('The.Matrix.1080p.mkv');
 const out = fs.createWriteStream('The.Matrix.1080p.mkv.gz');
@@ -124,8 +124,8 @@ cleaning up and providing a callback when the pipeline is complete.
 Here is an example of using pipeline:
 
 ```cjs
-const { pipeline } = require('node:stream');
 const fs = require('node:fs');
+const { pipeline } = require('node:stream');
 const zlib = require('node:zlib');
 
 // Use the pipeline API to easily pipe a series of streams
@@ -172,8 +172,8 @@ pipeline(
 You can also use the [`stream/promises`][] module to use pipeline with `async` / `await`:
 
 ```cjs
-const { pipeline } = require('node:stream/promises');
 const fs = require('node:fs');
+const { pipeline } = require('node:stream/promises');
 const zlib = require('node:zlib');
 
 async function run() {
@@ -613,7 +613,7 @@ import { Readable } from 'node:stream';
 // Create a custom Readable stream
 const myReadableStream = new Readable({
   objectMode: true,
-  read: function (size) {
+  read(size) {
     // Push some data onto the stream
     this.push({ message: 'Hello, world!' });
     this.push(null); // Mark the end of the stream

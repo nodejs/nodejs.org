@@ -1,6 +1,6 @@
 import type EnglishMessages from './locales/en.json';
 
-export interface LocaleConfig {
+export type LocaleConfig = {
   code: string;
   localName: string;
   name: string;
@@ -9,6 +9,6 @@ export interface LocaleConfig {
   hrefLang: string;
   enabled: boolean;
   default: boolean;
-}
+};
 
 export type Locale = typeof EnglishMessages;

@@ -29,9 +29,9 @@ export const clientMdxComponents = {
   // Renders MDX CodeTabs
   CodeTabs: MDXCodeTabs,
   // Renders a Download Button
-  DownloadButton: DownloadButton,
+  DownloadButton,
   // Renders a stateless Release Select Component
-  WithReleaseSelect: WithReleaseSelect,
+  WithReleaseSelect,
   // Group of components that enable you to select versions for Node.js
   // releases and download selected versions. Uses `releaseProvider` as a provider
   Release: {
@@ -48,13 +48,13 @@ export const clientMdxComponents = {
     // Renders a drop-down menu to select an operating system
     OperatingSystemDropdown: ReleaseOperatingSystemDropdown,
     // Renders a Blog Post Link for the selected release
-    BlogPostLink: BlogPostLink,
+    BlogPostLink,
     // Renders a Download Button for the selected release
     PrebuiltDownloadButtons: ReleasePrebuiltDownloadButtons,
     // Renders a Release CodeBox
-    ReleaseCodeBox: ReleaseCodeBox,
+    ReleaseCodeBox,
     // Renders a Changelog Link Button
-    ChangelogLink: ChangelogLink,
+    ChangelogLink,
     // Renders a DownloadLink Button
     DownloadLink: ReleaseDownloadLink,
   },
