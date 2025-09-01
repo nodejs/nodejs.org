@@ -166,6 +166,11 @@
       "status": "Stare",
       "details": "Detalii"
     },
+    "downloadsTable": {
+      "fileName": "Nume fișier",
+      "operatingSystem": "Sistem de operare",
+      "architecture": "Arhitectură"
+    },
     "releaseModal": {
       "title": "Node.js v{version} ({codename})",
       "titleWithoutCodename": "Node.js v{version}",
@@ -212,6 +217,7 @@
     "minorReleasesTable": {
       "version": "Versiune",
       "links": "Legături",
+      "information": "Informații versiune",
       "actions": {
         "release": "Lansare",
         "changelog": "Istoric de modificări",
@@ -362,7 +368,7 @@
         "ltsVersionFeaturesNotice": "Vrei funcționalități noi mai devreme? Ia <link>cea mai recentă versiune Node.js</link> și încearcă ultimele îmbunătățiri!",
         "communityPlatformInfo": "Metodele de instalare care implică software comunitar sunt acceptate de echipele care întrețin acel software.",
         "externalSupportInfo": "Dacă întâmpini orice problemă, te rog să vizitezi site-ul web <link>{platform}</link>",
-        "noScriptDetected": "Această pagină necesită JavaScript. Poți descărca Node.js fără JavaScript, vizitând direct <link>pagina de lansări</link>.",
+        "noScriptDetected": "Această pagină necesită JavaScript. Poți descărca Node.js fără JavaScript, vizitând direct <link>pagina arhivei de descărcări</link>.",
         "platformInfo": {
           "default": "{platform} și scripturile lor de instalare nu sunt întreținute de proiectul Node.js.",
           "nvm": "„nvm” este un manager de versiuni Node.js multiplatformă.",

@@ -82,8 +82,8 @@ export const processDocument = ({ pathname, content }) => {
 
   return sections.map(section => ({
     path: `${pathname}#${slug(section.pageSectionTitle)}`,
-    siteSection: siteSection,
-    pageTitle: pageTitle,
+    siteSection,
+    pageTitle,
     ...section,
   }));
 };

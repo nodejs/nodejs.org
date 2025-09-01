@@ -28,9 +28,9 @@ const getBlogCategory = (pathname: string) => {
   const { posts, pagination } = getBlogData(category, Number(page));
 
   return {
-    category: category,
-    posts: posts,
-    pagination: pagination,
+    category,
+    posts,
+    pagination,
     page: Number(page),
   };
 };

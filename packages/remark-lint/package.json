@@ -57,7 +57,6 @@
   "devDependencies": {
     "cross-env": "catalog:",
     "dedent": "^1.6.0",
-    "globals": "^16.3.0",
     "remark-parse": "^11.0.0",
     "unified": "^11.0.5"
   }

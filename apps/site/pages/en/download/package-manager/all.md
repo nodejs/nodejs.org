@@ -43,7 +43,23 @@ pacman -S nodejs npm
 
 ## CentOS, Fedora and Red Hat Enterprise Linux
 
-Node.js is available as a module called `nodejs` in CentOS/RHEL 8 and Fedora.
+Node.js and npm packages are available in the main Repository for Fedora and RHEL 10.
+
+It can be installed from a default stream which contains the currently active
+LTS Node.js version.
+
+```bash
+dnf install nodejs npm
+```
+
+Or from a specific stream for alternative, maintained versions (maintained versions
+might differ between Fedora and various RHEL releases).
+
+```bash
+dnf install nodejs24
+```
+
+For older CentOS/RHEL releases Node.js is available as a module called `nodejs`.
 
 ```bash
 dnf module install nodejs:<stream>

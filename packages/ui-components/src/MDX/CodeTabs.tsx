@@ -42,7 +42,7 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
 
       return {
         key: `${language}-${index}`,
-        label: label,
+        label,
       };
     });
 
