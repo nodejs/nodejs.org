@@ -3,7 +3,8 @@ import type { HTMLAttributeAnchorTarget } from 'react';
 import type { IntlMessageKeys } from './i18n';
 
 export type FooterConfig = {
-  text: IntlMessageKeys;
+  label?: IntlMessageKeys;
+  text?: string;
   link: string;
 };
 

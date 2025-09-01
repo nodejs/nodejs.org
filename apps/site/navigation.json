@@ -34,23 +34,23 @@
   "footerLinks": [
     {
       "link": "https://trademark-policy.openjsf.org/",
-      "text": "components.containers.footer.links.trademarkPolicy"
+      "label": "components.containers.footer.links.trademarkPolicy"
     },
     {
       "link": "https://privacy-policy.openjsf.org/",
-      "text": "components.containers.footer.links.privacyPolicy"
+      "label": "components.containers.footer.links.privacyPolicy"
     },
     {
       "link": "https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md",
-      "text": "components.containers.footer.links.codeOfConduct"
+      "label": "components.containers.footer.links.codeOfConduct"
     },
     {
       "link": "https://github.com/nodejs/node/security/policy",
-      "text": "components.containers.footer.links.security"
+      "label": "components.containers.footer.links.security"
     },
     {
       "link": "https://openjsf.org/",
-      "text": "components.containers.footer.links.openJSFoundation"
+      "text": "OpenJS Foundation"
     }
   ],
   "socialLinks": [
