@@ -1,140 +1,42 @@
 .promptWrapperCustom {
-  @apply relative,
-    flex,
-    items-center,
-    rounded-2xl,
-    bg-white,
-    text-base,
-    shadow-sm,
-    !bg-neutral-900,
-    !border,
-    !border-neutral-700,
-    !text-white;
-
-  margin: 0 var(--spacing-l, calc(16rem / var(--orama-base-font-size, 16))) !important;
+  @apply relative;
 }
 
 .promptFieldCustom {
-  @apply w-full,
-    resize-none,
-    border-0,
-    px-0,
-    py-0,
-    text-white,
-    placeholder:text-neutral-400,
-    focus:outline-none,
-    !bg-transparent;
+  font-family: inherit !important;
 }
 
-.promptButtonCustom,
-:global(.promptButtonCustom),
-button.promptButtonCustom,
-[class*='promptButtonCustom'] {
-  align-items: center !important;
-  background-color: #2c3437 !important;
-  border-color: initial !important;
-  border-image: initial !important;
-  border-radius: var(
-    --radius-m,
-    calc(12rem / var(--orama-base-font-size, 16))
-  ) !important;
-  border-style: initial !important;
-  border-width: 0 !important;
-  color: #838289 !important;
-  cursor: pointer !important;
-  display: flex !important;
-  font-family: var(--font-primary, inherit) !important;
-  gap: var(
-    --spacing-s,
-    calc(8rem / var(--orama-base-font-size, 16))
-  ) !important;
-  justify-content: center !important;
-  min-height: 32px !important;
-  min-width: 32px !important;
-  padding: calc(8rem / 16) !important;
-  position: absolute !important;
-  right: 12px !important;
-  text-align: left !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  transition:
-    color 0.2s,
-    background-color 0.2s,
-    opacity 0.2s !important;
-  width: auto !important;
-}
-
-:global(button[class*='promptButtonCustom']) {
-  background-color: #2c3437 !important;
-  border-radius: var(
-    --radius-m,
-    calc(12rem / var(--orama-base-font-size, 16))
-  ) !important;
-  color: #838289 !important;
-  padding: calc(8rem / 16) !important;
-  position: absolute !important;
-  right: 12px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-}
-
-.promptButtonCustom:disabled {
-  background-color: var(--background-color-tertiary, #eee9f6);
-  color: var(--text-color-tertiary, #999);
-  cursor: not-allowed;
-  opacity: 0.6;
+.promptButtonCustom {
+  @apply absolute;
+  @apply right-3;
+  @apply top-1/2;
+  @apply -translate-y-1/2;
+  @apply border-none;
+  @apply rounded-lg;
+  @apply text-white;
+  @apply cursor-pointer;
+  @apply p-2;
+  @apply transition-colors;
+  @apply duration-300;
+  @apply bg-green-500;
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
+  @apply min-h-8;
+  @apply min-w-8;
 }
 
 .promptButtonCustom:hover:not(:disabled) {
-  background-color: var(--button-background-color-primary-hover, #5a3a8a);
+  @apply bg-green-600;
 }
 
-.promptButtonCustom:active:not(:disabled) {
-  background-color: var(--button-background-color-primary-active, #3a2560);
-}
-
-/* High specificity overrides for Orama textarea components */
-:global(.oramaPromptTextarea) {
-  @apply !bg-neutral-900,
-    !border,
-    !border-neutral-700,
-    !rounded-2xl,
-    !text-white,
-    !font-normal,
-    !text-base,
-    !leading-normal,
-    !outline-none,
-    !resize-none,
-    !w-full;
-
-  font-family: inherit !important;
-  margin: 0 var(--spacing-l, calc(16rem / var(--orama-base-font-size, 16))) !important;
-  padding: 12px 16px !important;
-}
-
-:global(.oramaPromptTextarea::placeholder) {
-  @apply !text-gray-400;
-}
-
-:global(.oramaPromptTextarea:focus) {
-  @apply !border-gray-600,
-    !outline-none;
-}
-
-/* Responsive font sizes */
-@media (max-width: 768px) {
-  :global(.oramaPromptTextarea) {
-    @apply !text-base;
-  }
+.promptButtonCustom:disabled {
+  @apply bg-gray-200;
+  @apply text-gray-500;
+  @apply cursor-not-allowed;
+  @apply opacity-60;
 }
 
 .slidingPanelFooter {
-  @apply flex,
-    items-center,
-    justify-center,
-    pt-1,
-    text-xs,
-    text-neutral-400;
-
-  margin-top: 16px;
+  @apply flex;
 }

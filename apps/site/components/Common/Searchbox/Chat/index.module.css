@@ -331,15 +331,27 @@
 
 .chatCustomPanel {
   background-color: rgb(13 18 28);
-  border-radius: var(--radius-m, calc(12rem / var(--orama-base-font-size, 16)));
-  margin-bottom: 24px;
-  padding: 16px;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
   width: auto;
 }
 
 .chatDesktopContainer {
-  max-width: calc(840rem / var(--orama-base-font-size, 16));
+  max-width: 52.5rem;
   width: 80%;
+}
+
+.chatContentWrapper {
+  display: flex;
+}
+
+.chatMobileContainer {
+  display: block;
+}
+
+.chatMobilePadding {
+  position: relative;
 }
 
 @media (max-width: 768px) {

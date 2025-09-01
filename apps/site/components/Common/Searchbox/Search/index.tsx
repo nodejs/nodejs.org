@@ -27,6 +27,11 @@ import {
   type PropsWithChildren,
 } from 'react';
 
+import {
+  DEFAULT_ORAMA_QUERY_PARAMS,
+  ORAMA_CLOUD_DATASOURCE_ID,
+} from '#site/next.constants.mjs';
+
 import { DocumentLink } from '../DocumentLink';
 import styles from './index.module.css';
 import { getFormattedPath } from './utils';
@@ -34,10 +39,6 @@ import { getFormattedPath } from './utils';
 type SearchProps = PropsWithChildren<{
   onChatTrigger: () => void;
 }>;
-
-type CloudParams = Omit<SearchParams, 'indexes'> & {
-  datasources: Array<string>;
-};
 
 type CloudSearchResponse = {
   hits?: Array<Hit>;
@@ -56,13 +57,11 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
 
   const [facetsEverShown, setFacetsEverShown] = useState<boolean>(false);
 
-  const defaultFacetsRef = useRef<Record<string, unknown>>({
-    siteSection: {},
-  });
+  const defaultFacetsRef = useRef<Record<string, unknown>>(
+    DEFAULT_ORAMA_QUERY_PARAMS.facets
+  );
 
-  const dataSourcesRef = useRef<Array<string>>([
-    process.env.NEXT_PUBLIC_ORAMA_DATASOURCE_ID || '',
-  ]);
+  const dataSourcesRef = useRef<Array<string>>([ORAMA_CLOUD_DATASOURCE_ID]);
 
   const lastIssuedSigRef = useRef<string>('');
 
@@ -106,12 +105,13 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
       const where: SearchParams['where'] | undefined =
         facet && facet !== 'All' ? { siteSection: facet } : undefined;
 
-      const params: CloudParams = {
+      const params = {
         term: term,
-        limit: 10,
-        boost: {},
+        limit: DEFAULT_ORAMA_QUERY_PARAMS.limit,
+        threshold: DEFAULT_ORAMA_QUERY_PARAMS.threshold,
+        boost: DEFAULT_ORAMA_QUERY_PARAMS.boost,
         facets: defaultFacetsRef.current,
-        datasources: dataSourcesRef.current,
+        datasources: dataSourcesRef.current.filter(Boolean),
         ...(where ? { where } : {}),
       };
 
@@ -304,7 +304,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
                           group={group}
                           filterBy="siteSection"
                           searchParams={{
-                            boost: {},
+                            ...DEFAULT_ORAMA_QUERY_PARAMS,
                             term: searchTerm ?? '',
                             facets: defaultFacetsRef.current,
                           }}

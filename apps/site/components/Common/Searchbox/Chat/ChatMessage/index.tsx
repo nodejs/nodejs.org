@@ -32,15 +32,7 @@ export const ChatMessage: FC<ChatMessageProps> = ({
   return (
     <>
       <ChatInteractions.UserPrompt
-        className={styles.chatUserPrompt}
-        style={{
-          padding: '24px',
-          margin:
-            '0 var(--spacing-l, calc(16rem / var(--orama-base-font-size, 16)))',
-          display: 'flex',
-          justifyContent: 'flex-end',
-          marginBottom: '24px',
-        }}
+        className={`${styles.chatUserPrompt} mx-8 mb-6 flex justify-end p-6`}
       >
         <p>{interaction?.query || ''}</p>
       </ChatInteractions.UserPrompt>
@@ -55,17 +47,7 @@ export const ChatMessage: FC<ChatMessageProps> = ({
 
       {interaction && (
         <div
-          className={styles.chatAssistantMessageWrapper}
-          style={{
-            backgroundColor: '#0d121c',
-            borderRadius:
-              'var(--radius-m, calc(12rem / var(--orama-base-font-size, 16)))',
-            margin:
-              '0 var(--spacing-l, calc(16rem / var(--orama-base-font-size, 16)))',
-            padding: '16px',
-            marginBottom: '24px',
-            width: 'auto',
-          }}
+          className={`${styles.chatAssistantMessageWrapper} mx-8 mb-6 w-auto rounded-lg bg-[#0d121c] p-4`}
         >
           <ChatInteractions.AssistantMessage
             className={styles.chatAssistantMessage}

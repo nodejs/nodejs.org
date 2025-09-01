@@ -131,9 +131,13 @@
   }
 }
 
+.active {
+  @apply block;
+}
+
 @media (max-width: 600px) {
   .mobileOnly {
-    display: block;
+    @apply block;
   }
 
   .mobileTopBar {

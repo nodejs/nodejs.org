@@ -7,14 +7,20 @@ import { useSearchContext, useChatDispatch } from '@orama/ui/contexts';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import { useState, type FC, type PropsWithChildren } from 'react';
+import '@orama/ui/styles.css';
+
+import {
+  ORAMA_CLOUD_PROJECT_ID,
+  ORAMA_CLOUD_API_KEY,
+} from '#site/next.constants.mjs';
 
 import { SlidingChatPanel } from './Chat';
 import styles from './index.module.css';
 import { Search } from './Search';
 
 const orama = new OramaCloud({
-  projectId: process.env.NEXT_PUBLIC_ORAMA_PROJECT_ID || '',
-  apiKey: process.env.NEXT_PUBLIC_ORAMA_API_KEY || '',
+  projectId: ORAMA_CLOUD_PROJECT_ID,
+  apiKey: ORAMA_CLOUD_API_KEY,
 });
 
 const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
@@ -55,7 +61,7 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
         onClick={onClose}
         aria-label="Close"
       >
-        <ArrowLeftIcon style={{ color: '#fff', width: 24, height: 24 }} />
+        <ArrowLeftIcon className="h-6 w-6 text-white" />
       </button>
       <div className={styles.mobileTopBarTabs}>
         <button

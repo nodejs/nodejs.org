@@ -1,8 +1,5 @@
 .chatUserPrompt {
-  @apply mb-4,
-    text-base,
-    text-neutral-900,
-    dark:text-neutral-200;
+  @apply block;
 }
 
 .chatLoader {
@@ -10,29 +7,30 @@
 }
 
 .chatLoadingWrapper {
-  align-items: center;
-  background-color: #0d121c;
-  border-radius: var(--radius-m, calc(12rem / var(--orama-base-font-size, 16)));
-  display: flex;
-  justify-content: center;
-  margin: 0 var(--spacing-l, calc(16rem / var(--orama-base-font-size, 16)));
-  margin-bottom: 24px;
-  min-height: 60px;
-  padding: 24px;
+  @apply mx-8;
+  @apply mb-6;
+  @apply flex;
+  @apply min-h-[60px];
+  @apply items-center;
+  @apply justify-center;
+  @apply rounded-xl;
+  @apply p-6;
+  @apply bg-[#0d121c];
 }
 
 .typingIndicator {
-  display: flex;
-  gap: 8px;
+  @apply flex;
+  @apply gap-2;
 }
 
 .typingDot {
+  @apply h-3;
+  @apply w-3;
+  @apply rounded-full;
+  @apply bg-white;
+  @apply opacity-80;
+
   animation: typing 1.4s infinite ease-in-out;
-  background-color: #fff;
-  border-radius: 50%;
-  height: 12px;
-  opacity: 0.8;
-  width: 12px;
 }
 
 .typingDot:nth-child(1) {
@@ -69,7 +67,7 @@
 }
 
 .chatAssistantMessageWrapper {
-  /* Styles applied via inline styles for specificity */
+  @apply block;
 }
 
 .chatAssistantMessage {
@@ -142,36 +140,20 @@
 
 .markdownPre {
   border-radius: 0.5rem !important;
-  border-radius: var(
-    --radius-s,
-    calc(8rem / var(--orama-base-font-size, 16))
-  ) !important;
-  padding: 3px 5px !important;
+  padding: 0.1875rem 0.3125rem !important;
 }
 
 :global(pre[class*='prism']) {
   border-radius: 0.5rem !important;
-  border-radius: var(
-    --radius-s,
-    calc(8rem / var(--orama-base-font-size, 16))
-  ) !important;
-  padding: 3px 5px !important;
+  padding: 0.1875rem 0.3125rem !important;
 }
 
 :global(.chatAssistantMessage pre) {
   border-radius: 0.5rem !important;
-  border-radius: var(
-    --radius-s,
-    calc(8rem / var(--orama-base-font-size, 16))
-  ) !important;
-  padding: 3px 5px !important;
+  padding: 0.1875rem 0.3125rem !important;
 }
 
 :global(pre[style*='background-color']) {
   border-radius: 0.5rem !important;
-  border-radius: var(
-    --radius-s,
-    calc(8rem / var(--orama-base-font-size, 16))
-  ) !important;
-  padding: 3px 5px !important;
+  padding: 0.1875rem 0.3125rem !important;
 }

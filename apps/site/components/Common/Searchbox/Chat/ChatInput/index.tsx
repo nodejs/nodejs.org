@@ -14,77 +14,24 @@ export const ChatInput: FC = () => {
   return (
     <div className="pb-2 pt-6">
       <PromptTextArea.Wrapper
-        className={styles.promptWrapperCustom}
-        style={{
-          position: 'relative',
-          margin: '0 32px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          borderRadius: '16px',
-          border: '1px solid rgb(64 64 64)',
-          backgroundColor: 'rgb(38 38 38)',
-          padding: '12px 16px',
-          fontSize: '16px',
-          color: 'white',
-        }}
+        className={`${styles.promptWrapperCustom} mx-8 flex items-center gap-2 rounded-2xl border border-[rgb(64,64,64)] bg-[rgb(38,38,38)] px-4 py-3 text-base text-white`}
       >
         <PromptTextArea.Field
           placeholder={t('components.search.chatPlaceholder')}
           rows={1}
           maxLength={500}
           autoFocus
-          className={styles.promptFieldCustom}
-          style={{
-            width: '100%',
-            resize: 'none',
-            border: 'none',
-            background: 'transparent',
-            padding: '0',
-            color: 'white',
-            fontFamily: 'inherit',
-            fontSize: '16px',
-            fontWeight: '400',
-            lineHeight: '1.5',
-            margin: '0',
-            outline: 'none',
-          }}
+          className={`${styles.promptFieldCustom} m-0 w-full resize-none border-none bg-transparent p-0 font-normal leading-relaxed text-white outline-none`}
         />
         <PromptTextArea.Button
           abortContent={<PauseCircleIcon />}
           className={`${styles.promptButtonCustom} orama-custom-button`}
-          style={{
-            position: 'absolute',
-            right: '12px',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            backgroundColor: '#2c3437',
-            color: '#838289',
-            padding: 'calc(8rem / 16)',
-            borderRadius:
-              'var(--radius-m, calc(12rem / var(--orama-base-font-size, 16)))',
-            border: '0px',
-            minWidth: '32px',
-            minHeight: '32px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
         >
-          <PaperAirplaneIcon width={16} height={16} />
+          <PaperAirplaneIcon className="h-4 w-4" />
         </PromptTextArea.Button>
       </PromptTextArea.Wrapper>
       <div
-        className={styles.slidingPanelFooter}
-        style={{
-          alignItems: 'center',
-          color: '#a3a3a3',
-          display: 'flex',
-          flexDirection: 'row',
-          fontSize: '12px',
-          justifyContent: 'center',
-          paddingTop: '4px',
-        }}
+        className={`${styles.slidingPanelFooter} flex flex-row items-center justify-center pt-1 text-xs text-neutral-400`}
       >
         <small>{t('components.search.disclaimer')}</small>
       </div>
