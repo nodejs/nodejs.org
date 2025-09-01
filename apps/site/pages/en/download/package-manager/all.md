@@ -53,7 +53,7 @@ dnf install nodejs npm
 ```
 
 Or from a specific stream for alternative, maintained versions (maintained versions
-might differ between fedora and various RHEL releases).
+might differ between Fedora and various RHEL releases).
 
 ```bash
 dnf install nodejs24
