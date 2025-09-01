@@ -58,7 +58,7 @@ const generateReleaseData = async () => {
 
     return {
       ...support,
-      status: status,
+      status,
       major: latestVersion.semver.major,
       version: latestVersion.semver.raw,
       versionWithPrefix: `v${latestVersion.semver.raw}`,
@@ -68,7 +68,7 @@ const generateReleaseData = async () => {
       v8: latestVersion.dependencies.v8,
       releaseDate: latestVersion.releaseDate,
       modules: latestVersion.modules.version || '',
-      minorVersions: minorVersions,
+      minorVersions,
     };
   });
 };

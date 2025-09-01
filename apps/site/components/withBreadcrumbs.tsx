@@ -57,9 +57,7 @@ const WithBreadcrumbs: FC<WithBreadcrumbsProps> = ({ navKeys = [] }) => {
         // Goes deeper on the tree of items if there are any.
         currentNode = items;
 
-        return label
-          ? [...breadcrumbs, { label: label, href: link }]
-          : breadcrumbs;
+        return label ? [...breadcrumbs, { label, href: link }] : breadcrumbs;
       }
 
       return breadcrumbs;

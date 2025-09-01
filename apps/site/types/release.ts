@@ -15,13 +15,13 @@ export type PackageManager = 'NPM' | 'YARN' | 'PNPM';
 
 // Items with a pipe/default value mean that they are auto inferred
 // during runtime and do not have necessarily a consistent initial value
-export interface ReleaseState {
+export type ReleaseState = {
   version: string;
   os: OperatingSystem | 'LOADING';
   platform: Platform | '';
   installMethod: InstallationMethod | '';
   packageManager: PackageManager;
-}
+};
 
 export type ReleaseAction =
   | { type: 'SET_VERSION'; payload: string }
@@ -30,30 +30,29 @@ export type ReleaseAction =
   | { type: 'SET_INSTALL_METHOD'; payload: InstallationMethod }
   | { type: 'SET_MANAGER'; payload: PackageManager };
 
-export interface ReleaseDispatchActions {
+export type ReleaseDispatchActions = {
   setVersion: (version: string) => void;
   setOS: (os: OperatingSystem) => void;
   setPlatform: (bitness: Platform) => void;
   setInstallMethod: (installMethod: InstallationMethod) => void;
   setPackageManager: (packageManager: PackageManager) => void;
-}
+};
 
-export interface ReleasesContextType {
+export type ReleasesContextType = {
   releases: Array<NodeRelease>;
   snippets: Array<DownloadSnippet>;
-}
+};
 
-export interface ReleaseContextType
-  extends ReleaseState,
-    ReleaseDispatchActions {
+export type ReleaseContextType = {
   release: NodeRelease;
-}
+} & ReleaseState &
+  ReleaseDispatchActions;
 
-export interface ReleasesProviderProps {
+export type ReleasesProviderProps = {
   releases: Array<NodeRelease>;
   snippets: Array<DownloadSnippet>;
-}
+};
 
-export interface ReleaseProviderProps {
+export type ReleaseProviderProps = {
   initialRelease?: NodeRelease;
-}
+};

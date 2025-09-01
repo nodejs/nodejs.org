@@ -7,7 +7,7 @@
           "trademarkPolicy": "商標ポリシー",
           "privacyPolicy": "プライバシーポリシー",
           "codeOfConduct": "行動規範",
-          "security": "セキュリティポリシー"
+          "security": "セキュリティーポリシー"
         },
         "releasePills": {
           "latestLTS": "LTS版",
@@ -24,7 +24,7 @@
           "docs": "ドキュメント",
           "guides": "ガイド",
           "learn": "学ぶ",
-          "security": "セキュリティ",
+          "security": "セキュリティー",
           "certification": "認定資格",
           "blog": "ブログ",
           "contribute": "貢献"
@@ -48,7 +48,7 @@
             "profiling": "Node.jsアプリケーションのプロファイリング",
             "fetch": "Node.jsでデータを取得する",
             "websocket": "Node.jsでのWebSocketクライアント",
-            "securityBestPractices": "セキュリティベストプラクティス"
+            "securityBestPractices": "セキュリティーベストプラクティス"
           }
         },
         "typescript": {
@@ -166,6 +166,11 @@
       "status": "ステータス",
       "details": "詳細"
     },
+    "downloadsTable": {
+      "fileName": "ファイル名",
+      "operatingSystem": "OS",
+      "architecture": "アーキテクチャー"
+    },
     "releaseModal": {
       "title": "Node.js v{version} ({codename})",
       "titleWithoutCodename": "Node.js v{version}",
@@ -212,6 +217,7 @@
     "minorReleasesTable": {
       "version": "バージョン",
       "links": "リンク",
+      "information": "バージョン情報",
       "actions": {
         "release": "リリース",
         "changelog": "変更履歴",
@@ -362,7 +368,7 @@
         "ltsVersionFeaturesNotice": "すぐに最新の機能を試したいですか？<link>最新バージョンのNode.js</link>を代わりにインストールして最新の機能を試してください！",
         "communityPlatformInfo": "コミュニティーソフトウェアを含むインストール方法はそのソフトウェアを管理しているチームによってサポートされます。",
         "externalSupportInfo": "もし何らかの問題を見つけた場合は<link>{platform}のウェブサイト</link>を参照してください。",
-        "noScriptDetected": "このページはJavaScriptが必要です。JavaScriptなしでも<link>リリースページ</link>から直接Node.jsをダウンロードできます。",
+        "noScriptDetected": "このページはJavaScriptが必要です。JavaScriptなしでも<link>アーカイブページ</link>から直接Node.jsをダウンロードできます。",
         "platformInfo": {
           "default": "{platform}とそのインストールスクリプトはNode.jsプロジェクトによって管理されていません。",
           "nvm": "\"nvm\"はクロスプラットフォームに対応したNode.jsのバージョンマネージャーです。",

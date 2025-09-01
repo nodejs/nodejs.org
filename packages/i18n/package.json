@@ -1,6 +1,6 @@
 {
   "name": "@node-core/website-i18n",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "exports": {
     "./*": [
@@ -25,8 +25,6 @@
     "lint:js:fix": "node --run lint:js -- --fix"
   },
   "devDependencies": {
-    "eslint-import-resolver-typescript": "~4.4.4",
-    "typescript": "catalog:",
-    "typescript-eslint": "~8.38.0"
+    "typescript": "catalog:"
   }
 }

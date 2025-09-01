@@ -39,7 +39,7 @@ const rule = () => (root, result) => {
       if (classNames.includes('\n')) {
         return report({
           ruleName: name,
-          result: result,
+          result,
           message: messages.spacing(JSON.stringify(rule.params)),
           node: rule,
           fix: indentClassNames(rule),
@@ -48,7 +48,7 @@ const rule = () => (root, result) => {
 
       return report({
         ruleName: name,
-        result: result,
+        result,
         message: messages.className(rule.params),
         node: rule,
         fix: indentClassNames(rule),

@@ -24,7 +24,7 @@ const redirects = async () => {
     // We prevent permanent redirects as in general the redirects are safeguards
     // of legacy or old pages or pages that moved, and in general we don't want permanent redirects
     permanent: false,
-    destination: destination,
+    destination,
   }));
 };
 
@@ -40,7 +40,7 @@ const rewrites = async () => {
   const mappedRewrites = siteRedirects.internal.map(
     ({ source, destination }) => ({
       source: source.replace('/:locale', localesMatch),
-      destination: destination,
+      destination,
     })
   );
 

@@ -31,7 +31,7 @@ export const generateStaticParams = async () => {
 
   return ARCHIVE_DYNAMIC_ROUTES.map(version => ({
     locale: defaultLocale.code,
-    version: version,
+    version,
   }));
 };
 
@@ -58,7 +58,7 @@ const getPage: FC<PageParams> = async props => {
 
   // Gets the Markdown content and context for Download Archive pages
   const [content, context] = await basePage.getMarkdownContext({
-    locale: locale,
+    locale,
     pathname: 'download/archive',
   });
 
@@ -66,7 +66,7 @@ const getPage: FC<PageParams> = async props => {
   //  file for this, then we fail as not found as there's nothing we can do.
   if (isDynamicRoute && context.filename) {
     return basePage.renderPage({
-      content: content,
+      content,
       layout: context.frontmatter.layout!,
       context: { ...context, pathname: `/download/archive/${pathname}` },
     });

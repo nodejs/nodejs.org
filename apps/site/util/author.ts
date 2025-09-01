@@ -27,7 +27,7 @@ export const getAuthorWithId = (usernames: Array<string>, hasUrl: boolean) => {
 
       return {
         image: getGitHubAvatarUrl(id),
-        name: name,
+        name,
         nickname: id,
         fallback: getAcronymFromString(name),
         url: hasUrl ? website : undefined,
@@ -53,7 +53,7 @@ export const getAuthorWithName = (names: Array<string>, hasUrl: boolean) => {
 
         return {
           image: getGitHubAvatarUrl(id),
-          name: name,
+          name,
           nickname: id,
           fallback: getAcronymFromString(name),
           url: hasUrl ? website : undefined,

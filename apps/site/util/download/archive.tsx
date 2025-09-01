@@ -25,18 +25,18 @@ const createDownloadArtifact = (
   kind: DownloadKind
 ): DownloadArtifact => {
   const url = getNodeDownloadUrl({
-    versionWithPrefix: versionWithPrefix,
-    os: os,
+    versionWithPrefix,
+    os,
     platform: platform.value,
-    kind: kind,
+    kind,
   });
 
   return {
     fileName: url.replace(`${DIST_URL}${versionWithPrefix}/`, ''),
-    kind: kind,
-    os: os,
+    kind,
+    os,
     architecture: platform.label,
-    url: url,
+    url,
     version: versionWithPrefix,
   };
 };
@@ -113,21 +113,21 @@ export const buildReleaseArtifacts = (
 
   return {
     binaries: getCompatibleArtifacts({
-      versionWithPrefix: versionWithPrefix,
+      versionWithPrefix,
       kind: 'binary',
     }),
     installers: getCompatibleArtifacts({
       exclude: OS_NOT_SUPPORTING_INSTALLERS,
-      versionWithPrefix: versionWithPrefix,
+      versionWithPrefix,
       kind: 'installer',
     }),
     sources: {
       shasum: getNodeDownloadUrl({
-        versionWithPrefix: versionWithPrefix,
+        versionWithPrefix,
         kind: 'shasum',
       }),
       tarball: getNodeDownloadUrl({
-        versionWithPrefix: versionWithPrefix,
+        versionWithPrefix,
         kind: 'source',
       }),
     },

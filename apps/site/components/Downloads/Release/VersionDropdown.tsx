@@ -38,12 +38,12 @@ const VersionDropdown: FC = () => {
     );
 
     if (release?.isLts && pathname.includes('current')) {
-      redirect({ href: '/download', locale: locale });
+      redirect({ href: '/download', locale });
       return;
     }
 
     if (release?.status === 'Current' && !pathname.includes('current')) {
-      redirect({ href: '/download/current', locale: locale });
+      redirect({ href: '/download/current', locale });
       return;
     }
 

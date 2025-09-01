@@ -63,14 +63,14 @@ const transformCode = <T extends ReactElement<PropsWithChildren>>(
   );
 };
 
-interface CodeBoxProps {
+type CodeBoxProps = {
   language: string;
   className?: string;
   onCopy: (text: string) => void;
   as?: LinkLike;
   buttonText: string;
   showCopyButton?: boolean;
-}
+};
 
 const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   children,
