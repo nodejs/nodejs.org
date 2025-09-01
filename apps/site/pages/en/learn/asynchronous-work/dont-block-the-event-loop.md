@@ -318,7 +318,10 @@ For a simple example, suppose you want to compute the average of the numbers `1`
 Example 1: Un-partitioned average, costs `O(n)`
 
 ```js
-for (let i = 0; i < n; i++) sum += i;
+for (let i = 0; i < n; i++) {
+  sum += i;
+}
+
 const avg = sum / n;
 console.log('avg: ' + avg);
 ```
