@@ -6,7 +6,7 @@ authors: JakobJingleheimer
 
 # Publishing a package
 
-All the provided `package.json` configurations (not specifically marked “does not work”) work in Node.js 12.22.x (v12 latest, the oldest supported line) and 17.2.0 (current latest at the time)[^1], and for grins, with webpack 5.53.0 and 5.63.0 respectively. These are available: [JakobJingleheimer/nodejs-module-config-examples](https://github.com/JakobJingleheimer/nodejs-module-config-examples).
+All the provided `package.json` configurations (not specifically marked “does not work”) work in Node.js 12.22.x (v12 latest, the oldest supported line) and 17.2.0 current latest at the time[^1], and for grins, with webpack 5.53.0 and 5.63.0 respectively. These are available: [JakobJingleheimer/nodejs-module-config-examples](https://github.com/JakobJingleheimer/nodejs-module-config-examples).
 
 For curious cats, [How did we get here](#how-did-we-get-here) and [Down the rabbit-hole](#down-the-rabbit-hole) provide background and deeper explanations.
 
@@ -36,19 +36,23 @@ There are other options available, mostly for historical purposes.
       <td>ESM: consumers <code>import</code> your package</td>
       <td><a href="#cjs-source-and-only-esm-distribution">CJS source and only ESM distribution</a></td>
     </tr>
+
     <tr>
       <td>CJS & ESM: consumers either <code>require()</code> or <code>import</code> your package</td>
       <td><a href="#cjs-source-and-both-cjs-amp-esm-distribution">CJS source and both CJS & ESM distribution</a></td>
     </tr>
+
     <tr>
       <td rowSpan="2">ESM source code using <code>import</code></td>
       <td>CJS: consumers <code>require()</code> your package (and you use top-level <code>await</code>)</td>
       <td><a href="#esm-source-with-only-cjs-distribution">ESM source with only CJS distribution</a></td>
     </tr>
+
     <tr>
       <td>CJS & ESM: consumers either <code>require()</code> or <code>import</code> your package</td>
       <td><a href="#esm-source-and-both-cjs-amp-esm-distribution">ESM source and both CJS & ESM distribution</a></td>
     </tr>
+
   </tbody>
 </table>
 
@@ -523,9 +527,11 @@ The `"engines"` field provides both a human-friendly and a machine-friendly indi
 Specifically in relation to Node.js, there are 4 problems to solve:
 
 - Determining format of source code files (author running their own code)
+
 - Determining format of distribution files (code consumers will receive)
 
 - Publicising distribution code for when it is `require()`’d (consumer expects CJS)
+
 - Publicising distribution code for when it is `import`’d (consumer probably wants ESM)
 
 ⚠️ The first 2 are **independent** of the last 2.

@@ -1,14 +1,21 @@
 {
   "name": "@node-core/rehype-shiki",
+  "version": "1.1.0",
   "type": "module",
   "exports": {
     ".": "./src/index.mjs",
     "./*": "./src/*.mjs"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodejs/nodejs.org",
+    "directory": "packages/rehype-shiki"
+  },
   "scripts": {
-    "lint": "turbo run lint:js",
+    "lint": "node --run lint:js",
+    "lint:fix": "node --run lint:js:fix",
     "lint:js": "eslint \"**/*.mjs\"",
-    "lint:fix": "node --run lint -- -- --fix",
+    "lint:js:fix": "node --run lint:js -- --fix",
     "test": "node --run test:unit",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --experimental-test-module-mocks --test \"**/*.test.mjs\""
   },

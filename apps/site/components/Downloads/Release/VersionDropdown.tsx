@@ -1,6 +1,6 @@
 'use client';
 
-import Select from '@node-core/ui-components/Common/Select';
+import WithNoScriptSelect from '@node-core/ui-components/Common/Select/NoScriptSelect';
 import { useLocale, useTranslations } from 'next-intl';
 import type { FC } from 'react';
 import { useContext } from 'react';
@@ -38,12 +38,12 @@ const VersionDropdown: FC = () => {
     );
 
     if (release?.isLts && pathname.includes('current')) {
-      redirect({ href: '/download', locale: locale });
+      redirect({ href: '/download', locale });
       return;
     }
 
     if (release?.status === 'Current' && !pathname.includes('current')) {
-      redirect({ href: '/download/current', locale: locale });
+      redirect({ href: '/download/current', locale });
       return;
     }
 
@@ -51,7 +51,7 @@ const VersionDropdown: FC = () => {
   };
 
   return (
-    <Select
+    <WithNoScriptSelect
       ariaLabel={t('layouts.download.dropdown.version')}
       values={releases.map(({ status, versionWithPrefix }) => ({
         value: versionWithPrefix,

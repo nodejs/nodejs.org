@@ -6,7 +6,7 @@ layout: blog-post
 author: Carl Vitullo, Claudio Wunder
 ---
 
-First, the news: [The OpenJS Foundation](https://openjsf.org/) and [Reactiflux](https://reactiflux.com/) have collaborated to bring forth an official Discord community for Node.js 🎉 You can [join the Node.js Discord](/discord) now.
+First, the news: [The OpenJS Foundation](https://openjsf.org/) and [Reactiflux](https://reactiflux.com/) have collaborated to bring forth an official Discord community for Node.js 🎉 You can [join the Node.js Discord](https://discord.gg/nodejs) now.
 
 Over the past several years, Discord has become the de-facto platform for communities to connect and communicate. Many Node.js community members already use Discord to discuss Node.js, seek advice, and share their projects. By establishing an official Node.js Discord server, we aim to gather these conversations and provide a safe and well-moderated space for our online community to congregate. Lots of other open-source projects, such as [TypeScript](https://discord.gg/typescript), [Rust](https://discord.gg/rust-lang), and [Python](https://discord.gg/python), have successfully built their communities on Discord.
 
@@ -27,7 +27,7 @@ Reactiflux was one of the first large commuinities on Discord, joining the platf
 
 Now, 7 years on, the Nodeiflux server has joined up with the OpenJS Foundation to serve as the official Node.js Discord server. We are excited to see how our community will thrive in this new environment — the server will be jointly managed by the Node.js project and the Nodeiflux community, with the Node.js Technical Steering Committee (TSC) providing advisory support. The Nodeiflux community will handle the day-to-day administration of the server.
 
-For all intents and purposes, this is an official Node.js space, and we are eager to see how it will grow and evolve. [Join the Node.js Discord](/discord) and become part of our growing community. See you there!
+For all intents and purposes, this is an official Node.js space, and we are eager to see how it will grow and evolve. [Join the Node.js Discord](https://discord.gg/nodejs) and become part of our growing community. See you there!
 
 ### Looking Ahead
 

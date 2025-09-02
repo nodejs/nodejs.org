@@ -1,6 +1,6 @@
 'use strict';
 
-import nodevu from '@nodevu/core';
+import getMajorNodeReleases from './majorNodeReleases.mjs';
 
 // Gets the appropriate release status for each major release
 const getNodeReleaseStatus = (now, support) => {
@@ -32,29 +32,7 @@ const getNodeReleaseStatus = (now, support) => {
  * @returns {Promise<Array<import('../../types').NodeRelease>>}
  */
 const generateReleaseData = async () => {
-  const nodevuOutput = await nodevu({ fetch });
-
-  const majors = Object.entries(nodevuOutput).filter(
-    ([version, { support }]) => {
-      // Filter out those without documented support
-      // Basically those not in schedule.json
-      if (!support) {
-        return false;
-      }
-
-      // nodevu returns duplicated v0.x versions (v0.12, v0.10, ...).
-      // This behavior seems intentional as the case is hardcoded in nodevu,
-      // see https://github.com/cutenode/nodevu/blob/0c8538c70195fb7181e0a4d1eeb6a28e8ed95698/core/index.js#L24.
-      // This line ignores those duplicated versions and takes the latest
-      // v0.x version (v0.12.18). It is also consistent with the legacy
-      // nodejs.org implementation.
-      if (version.startsWith('v0.') && version !== 'v0.12') {
-        return false;
-      }
-
-      return true;
-    }
-  );
+  const majors = await getMajorNodeReleases();
 
   return majors.map(([, major]) => {
     const [latestVersion] = Object.values(major.releases);
@@ -70,13 +48,17 @@ const generateReleaseData = async () => {
     const status = getNodeReleaseStatus(new Date(), support);
 
     const minorVersions = Object.entries(major.releases).map(([, release]) => ({
-      version: release.semver.raw,
+      modules: release.modules.version || '',
+      npm: release.dependencies.npm || '',
       releaseDate: release.releaseDate,
+      v8: release.dependencies.v8,
+      version: release.semver.raw,
+      versionWithPrefix: `v${release.semver.raw}`,
     }));
 
     return {
       ...support,
-      status: status,
+      status,
       major: latestVersion.semver.major,
       version: latestVersion.semver.raw,
       versionWithPrefix: `v${latestVersion.semver.raw}`,
@@ -86,7 +68,7 @@ const generateReleaseData = async () => {
       v8: latestVersion.dependencies.v8,
       releaseDate: latestVersion.releaseDate,
       modules: latestVersion.modules.version || '',
-      minorVersions: minorVersions,
+      minorVersions,
     };
   });
 };

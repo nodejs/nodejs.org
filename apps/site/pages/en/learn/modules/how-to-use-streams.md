@@ -98,7 +98,7 @@ stream.on('data', chunk => {
 });
 ```
 
-In this code, the `MyStream` class extends Readable and overrides the [`_read`][] method to push a string ":-)" to the internal buffer. After pushing the string five times, it signals the end of the stream by pushing `null`. The [`on('data')`][] event handler logs each chunk to the console as it is received.
+In this code, the `MyStream` class extends Readable and overrides the [`_read()`][] method to push a string ":-)" to the internal buffer. After pushing the string five times, it signals the end of the stream by pushing `null`. The [`on('data')`][] event handler logs each chunk to the console as it is received.
 
 #### Advanced Control with the readable Event
 
@@ -186,8 +186,8 @@ And we’ll get:
 Here's an example of creating a writable stream that converts all incoming data to uppercase before writing it to the standard output:
 
 ```cjs
-const { Writable } = require('node:stream');
 const { once } = require('node:events');
+const { Writable } = require('node:stream');
 
 class MyStream extends Writable {
   constructor() {
@@ -418,7 +418,7 @@ const { Transform } = require('node:stream');
 
 let errorCount = 0;
 const upper = new Transform({
-  transform: function (data, enc, cb) {
+  transform(data, enc, cb) {
     if (errorCount === 10) {
       return cb(new Error('BOOM!'));
     }
@@ -510,7 +510,7 @@ const { Transform, pipeline } = require('node:stream');
 
 let errorCount = 0;
 const upper = new Transform({
-  transform: function (data, enc, cb) {
+  transform(data, enc, cb) {
     if (errorCount === 10) {
       return cb(new Error('BOOM!'));
     }
@@ -671,7 +671,7 @@ import { Readable } from 'node:stream';
 
 const readable = Readable({
   objectMode: true,
-  read: function () {
+  read() {
     this.push({ hello: 'world' });
     this.push(null);
   },
@@ -815,6 +815,7 @@ This work is derived from content published by [Matteo Collina][] in [Platformat
 [`on('close')`]: https://nodejs.org/api/stream.html#event-close_1
 [`on('error')`]: https://nodejs.org/api/stream.html#event-error_1
 [`.read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size
+[`_read()`]: https://nodejs.org/api/stream.html#readable_readsize
 [`.write()`]: https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback
 [`_write`]: https://nodejs.org/api/stream.html#writable_writechunk-encoding-callback
 [`.end()`]: https://nodejs.org/api/stream.html#writableendchunk-encoding-callback

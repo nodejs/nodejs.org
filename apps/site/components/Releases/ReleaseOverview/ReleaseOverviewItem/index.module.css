@@ -1,0 +1,21 @@
+@reference "../../../../styles/index.css";
+
+.item {
+  @apply flex
+    items-center
+    gap-2;
+
+  h1 {
+    @apply text-sm
+      font-semibold;
+  }
+
+  h2 {
+    @apply text-xs
+      font-normal;
+  }
+
+  svg {
+    @apply size-4;
+  }
+}

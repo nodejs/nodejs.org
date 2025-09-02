@@ -17,6 +17,8 @@ on:
 
 permissions:
   contents: read
+  # For npm OIDC (https://docs.npmjs.com/trusted-publishers)
+  id-token: write
 
 env:
   COMMIT_SHA: ${{ github.sha }}
@@ -72,13 +74,18 @@ jobs:
             # If a specific package is requested via workflow_dispatch, just publish that one
             echo "matrix={\"package\":[\"$PACKAGE\"]}" >> $GITHUB_OUTPUT
           else
-            # Otherwise, identify all packages with changes since the last commit
             CHANGED_PACKAGES=()
             for pkg in $(ls -d packages/*); do
               PKG_NAME=$(basename "$pkg")
-              # For manual runs, include all packages. For automatic runs, only include packages with changes
+              PKG_JSON="$pkg/package.json"
+
+              # Determine if the package has changed (or include all on manual trigger)
               if [ "$EVENT_NAME" == "workflow_dispatch" ] || ! git diff --quiet $COMMIT_SHA~1 $COMMIT_SHA -- "$pkg/"; then
-                CHANGED_PACKAGES+=("$PKG_NAME")
+                OLD_VERSION=$(git show $COMMIT_SHA~1:$PKG_JSON | jq -r '.version')
+                NEW_VERSION=$(jq -r '.version' "$PKG_JSON")
+                if [ "$OLD_VERSION" != "$NEW_VERSION" ]; then
+                  CHANGED_PACKAGES+=("$PKG_NAME")
+                fi
               fi
             done
 
@@ -113,15 +120,16 @@ jobs:
           node-version-file: '.nvmrc'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Re-install npm
+        # TODO: OIDC requires npm >=11.5.1.
+        # Until Node.js v24 is LTS (with npm 11 as the default), we need to bump.
+        run: npm install -g npm@11
+
       - name: Publish
         working-directory: packages/${{ matrix.package }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           # Install deps
           pnpm install --frozen-lockfile
-          # Create a unique version using the commit SHA as a prerelease identifier
-          npm version --no-git-tag-version 1.0.1-$COMMIT_SHA
 
           # Check if a custom publish script exists in package.json
           if jq -e '.scripts.publish' package.json > /dev/null; then

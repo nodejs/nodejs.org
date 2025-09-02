@@ -3,12 +3,11 @@
     "containers": {
       "footer": {
         "links": {
-          "openJSFoundation": "OpenJS財団",
+          "openJSFoundation": "OpenJS Foundation",
           "trademarkPolicy": "商標ポリシー",
           "privacyPolicy": "プライバシーポリシー",
-          "versionSupport": "バージョンサポート",
           "codeOfConduct": "行動規範",
-          "security": "セキュリティポリシー"
+          "security": "セキュリティーポリシー"
         },
         "releasePills": {
           "latestLTS": "LTS版",
@@ -25,7 +24,7 @@
           "docs": "ドキュメント",
           "guides": "ガイド",
           "learn": "学ぶ",
-          "security": "セキュリティ",
+          "security": "セキュリティー",
           "certification": "認定資格",
           "blog": "ブログ",
           "contribute": "貢献"
@@ -49,7 +48,7 @@
             "profiling": "Node.jsアプリケーションのプロファイリング",
             "fetch": "Node.jsでデータを取得する",
             "websocket": "Node.jsでのWebSocketクライアント",
-            "securityBestPractices": "セキュリティベストプラクティス"
+            "securityBestPractices": "セキュリティーベストプラクティス"
           }
         },
         "typescript": {
@@ -167,6 +166,11 @@
       "status": "ステータス",
       "details": "詳細"
     },
+    "downloadsTable": {
+      "fileName": "ファイル名",
+      "operatingSystem": "OS",
+      "architecture": "アーキテクチャー"
+    },
     "releaseModal": {
       "title": "Node.js v{version} ({codename})",
       "titleWithoutCodename": "Node.js v{version}",
@@ -176,9 +180,44 @@
       "unsupportedVersionWarning": "このバージョンのメンテナンスは終了しています。現在サポートされているバージョンを利用してください。<link>EOLのサポートについて。</link>",
       "ltsVersionFeaturesNotice": "すぐに最新の機能を試したいですか？<link>最新バージョンのNode.js</link>を代わりにインストールして最新の機能を試してください！"
     },
+    "eolAlert": {
+      "message": "Maintenance LTS期間を終了したバージョンの商用サポートは、私たちの<link>OpenJSエコシステム持続可能性プログラムパートナーであるHeroDevs</link>を通して利用可能です。"
+    },
+    "eolChip": {
+      "severity": {
+        "unknown": "不明",
+        "low": "低",
+        "medium": "中",
+        "high": "高",
+        "critical": "深刻"
+      }
+    },
+    "eolModal": {
+      "title": "Node.js v{version} ({codename})はEOLとなりました",
+      "titleWithoutCodename": "Node.js v{version}はEOLとなりました",
+      "vulnerabilitiesMessage": "このNode.jsのバージョンには{count}件以上の既知のセキュリティ問題（CVE）が関連付けられています。CVE（Common Vulnerabilities and Exposures）は公開されたセキュリティ脆弱性を識別するための識別子です。CVEのリンクをクリックすると脆弱性の詳細な技術情報（脆弱性の動作方法など）を確認できます。",
+      "noVulnerabilitiesMessage": "現在、このNode.jsのバージョンに関連する既知のCVE（Common Vulnerabilities and Exposures）は存在しません。ただし、これが完全に安全であることを意味するわけではありません。一部の脆弱性がまだ発見されていないか、公開されていない可能性があります。このバージョンが古くなっていたり、サポート対象外の場合、最新の修正やセキュリティ強化の恩恵を受けるため、アップグレードを検討することをおすすめします。",
+      "blogLinkText": "ブログ",
+      "showUnknownSeverities": "未知の重大度の脆弱性を表示する",
+      "table": {
+        "cves": "CVE",
+        "severity": "重大度",
+        "overview": "概要",
+        "details": "詳細"
+      }
+    },
+    "eolTable": {
+      "version": "バージョン",
+      "codename": "コードネーム",
+      "releaseDate": "でリリース済み",
+      "lastUpdated": "最終更新日",
+      "vulnerabilities": "脆弱性",
+      "details": "詳細"
+    },
     "minorReleasesTable": {
       "version": "バージョン",
       "links": "リンク",
+      "information": "バージョン情報",
       "actions": {
         "release": "リリース",
         "changelog": "変更履歴",
@@ -229,7 +268,8 @@
         "label": "言語を選択"
       },
       "themeToggle": {
-        "label": "ダークモードに切り替え"
+        "light": "ライトモードに切り替える",
+        "dark": "ダークモードに切り替える"
       }
     },
     "metabar": {
@@ -328,7 +368,7 @@
         "ltsVersionFeaturesNotice": "すぐに最新の機能を試したいですか？<link>最新バージョンのNode.js</link>を代わりにインストールして最新の機能を試してください！",
         "communityPlatformInfo": "コミュニティーソフトウェアを含むインストール方法はそのソフトウェアを管理しているチームによってサポートされます。",
         "externalSupportInfo": "もし何らかの問題を見つけた場合は<link>{platform}のウェブサイト</link>を参照してください。",
-        "noScriptDetected": "このページはJavaScriptが必要です。JavaScriptなしでも<link>リリースページ</link>から直接Node.jsをダウンロードできます。",
+        "noScriptDetected": "このページはJavaScriptが必要です。JavaScriptなしでも<link>アーカイブページ</link>から直接Node.jsをダウンロードできます。",
         "platformInfo": {
           "default": "{platform}とそのインストールスクリプトはNode.jsプロジェクトによって管理されていません。",
           "nvm": "\"nvm\"はクロスプラットフォームに対応したNode.jsのバージョンマネージャーです。",

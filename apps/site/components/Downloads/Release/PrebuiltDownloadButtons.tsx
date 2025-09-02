@@ -22,11 +22,21 @@ const PrebuiltDownloadButtons: FC = () => {
   const { release, os, platform } = useContext(ReleaseContext);
 
   const installerUrl = platform
-    ? getNodeDownloadUrl(release.versionWithPrefix, os, platform, 'installer')
+    ? getNodeDownloadUrl({
+        versionWithPrefix: release.versionWithPrefix,
+        os,
+        platform,
+        kind: 'installer',
+      })
     : '';
 
   const binaryUrl = platform
-    ? getNodeDownloadUrl(release.versionWithPrefix, os, platform, 'binary')
+    ? getNodeDownloadUrl({
+        versionWithPrefix: release.versionWithPrefix,
+        os,
+        platform,
+        kind: 'binary',
+      })
     : '';
 
   return (

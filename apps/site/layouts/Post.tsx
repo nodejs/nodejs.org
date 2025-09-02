@@ -2,6 +2,7 @@ import Preview from '@node-core/ui-components/Common/Preview';
 import type { FC, PropsWithChildren } from 'react';
 
 // import Link from '#site/components/Link';
+import EOLAlert from '#site/components/EOL/EOLAlert';
 import WithAvatarGroup from '#site/components/withAvatarGroup';
 import WithBlogCrossLinks from '#site/components/withBlogCrossLinks';
 import WithFooter from '#site/components/withFooter';
@@ -17,9 +18,9 @@ import styles from './layouts.module.css';
 const PostLayout: FC<PropsWithChildren> = ({ children }) => {
   const { frontmatter } = useClientContext();
 
-  const authors = mapAuthorToCardAuthors(frontmatter.author);
+  const authors = mapAuthorToCardAuthors(frontmatter.author!);
 
-  const type = mapBlogCategoryToPreviewType(frontmatter.category);
+  const type = mapBlogCategoryToPreviewType(frontmatter.category!);
 
   return (
     <>
@@ -28,6 +29,8 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
       <div className={styles.contentLayout}>
         <div className={styles.postLayout}>
           <main>
+            {type === 'vulnerability' && <EOLAlert />}
+
             <h1>{frontmatter.title}</h1>
 
             <section>

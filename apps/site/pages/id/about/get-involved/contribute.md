@@ -9,7 +9,7 @@ Terima kasih atas ketertarikan Anda untuk berkontribusi pada Node.js! Ada banyak
 
 ## Meminta Bantuan Umum
 
-Karena tingkat aktivitas di repositori `nodejs/node` sangat tinggi, pertanyaan atau permintaan bantuan umum menggunakan Node.js sebaiknya diarahkan ke [repositori bantuan Node.js](https://github.com/nodejs/ bantuan/masalah).
+Karena tingkat aktivitas di repositori `nodejs/node` sangat tinggi, pertanyaan atau permintaan bantuan umum menggunakan Node.js sebaiknya diarahkan ke [repositori bantuan Node.js](https://github.com/nodejs/bantuan/issues).
 
 ## Melaporkan Masalah
 
@@ -28,7 +28,7 @@ Proyek Node.js saat ini dikelola di sejumlah repositori GitHub terpisah, masing-
 
 ## Kontribusi kode
 
-Jika Anda ingin memperbaiki bug atau menambahkan fitur baru ke Node.js, pastikan Anda membaca [Pedoman Kontribusi Node.js](https://github.com/nodejs/node/blob/main/CONTRIBUTING. md/#pull-permintaan). Proses peninjauan oleh kolaborator yang ada atas semua kontribusi pada proyek juga dijelaskan di sana.
+Jika Anda ingin memperbaiki bug atau menambahkan fitur baru ke Node.js, pastikan Anda membaca [Pedoman Kontribusi Node.js](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). Proses peninjauan oleh kolaborator yang ada atas semua kontribusi pada proyek juga dijelaskan di sana.
 
 Jika Anda bertanya-tanya bagaimana memulainya, Anda dapat memeriksa [Node Todo](https://www.nodetodo.org/) yang mungkin memandu Anda menuju kontribusi pertama Anda.
 
@@ -44,4 +44,4 @@ Dengan menjadi kolaborator, kontributor dapat memberikan dampak yang lebih besar
 - partisipasi dalam kelompok kerja
 - partisipasi lain dalam komunitas Node.js yang lebih luas
 
-Jika individu yang memberikan kontribusi berharga merasa tidak yakin bahwa mereka telah dipertimbangkan untuk akses commit, mereka dapat [mencatat masalah](https://github.com/nodejs/TSC/issues) atau [menghubungi anggota TSC](https:// github.com/nodejs/node#tsc-technical-steering-committee) secara langsung.
+Jika individu yang memberikan kontribusi berharga merasa tidak yakin bahwa mereka telah dipertimbangkan untuk akses commit, mereka dapat [mencatat masalah](https://github.com/nodejs/TSC/issues) atau [menghubungi anggota TSC](https://github.com/nodejs/node#tsc-technical-steering-committee) secara langsung.

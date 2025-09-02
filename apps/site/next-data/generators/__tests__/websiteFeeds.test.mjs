@@ -30,8 +30,8 @@ describe('generateWebsiteFeeds', () => {
       id: siteConfig.rssFeeds[0].file,
       title: siteConfig.rssFeeds[0].title,
       language: 'en',
-      link: `${base}/feed/${siteConfig.rssFeeds[0].file}`,
-      description: siteConfig.rssFeeds[0].description,
+      link: base,
+      description: siteConfig.rssFeeds[0].description || '',
     });
 
     const date = new Date(blogData.posts[0].date);
@@ -41,7 +41,7 @@ describe('generateWebsiteFeeds', () => {
         id: blogData.posts[0].slug,
         title: blogData.posts[0].title,
         guid: `${blogData.posts[0].slug}?${date.getTime()}`,
-        date: date,
+        date,
         link: `${base}${blogData.posts[0].slug}`,
       },
     ]);

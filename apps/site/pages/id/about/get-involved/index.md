@@ -11,7 +11,7 @@ Jika kamu tertarik untuk terlibat dengan komunitas Node.js, ada banyak cara untu
 
 - [Repositori GitHub `nodejs/node`](https://github.com/nodejs/node/issues) adalah tempat diskusi fitur utama Node.js dan melaporkan isu.
 - [Repositori GitHub `nodejs/help`](https://github.com/nodejs/help/issues) adalah tempat resmi untuk mengajukan pertanyaan tentang Node.js.
-- [Discord server resmi](/discord) Node.js adalah tempat berbincang dengan orang pengembang Node.js lain dan mendapatkan kabar resmi dari proyek Node.js.
+- [Discord server resmi](https://discord.gg/nodejs) Node.js adalah tempat berbincang dengan orang pengembang Node.js lain dan mendapatkan kabar resmi dari proyek Node.js.
 - [Kalendar proyek](https://nodejs.org/calendar) Node.js dengan semua pertemuan publik tim Node.js.
 
 ## Materi Pembelajaran

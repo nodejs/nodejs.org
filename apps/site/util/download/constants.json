@@ -8,7 +8,10 @@
       "platforms": [
         {
           "label": "x64",
-          "value": "x64"
+          "value": "x64",
+          "compatibility": {
+            "semver": [">= 4.0.0"]
+          }
         },
         {
           "label": "x86",
@@ -40,7 +43,7 @@
           "label": "ARM64",
           "value": "arm64",
           "compatibility": {
-            "semver": [">= 19.9.0"]
+            "semver": [">= 16.0.0"]
           }
         }
       ]
@@ -229,5 +232,12 @@
     "platforms": ["arm64", "armv7l", "ppc64le", "ppc64", "s390x", "x64", "x86"],
     "bitness": ["64", "32"],
     "architecture": ["arm", "x86"]
-  }
+  },
+  "statusOrder": [
+    "Current",
+    "Active LTS",
+    "Maintenance LTS",
+    "End-of-life",
+    "Pending"
+  ]
 }

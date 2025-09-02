@@ -2,7 +2,7 @@ import { ChevronDownIcon, ClockIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import type { FC, ComponentProps } from 'react';
 
-import type { LinkLike } from '#ui/types.js';
+import type { LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
 

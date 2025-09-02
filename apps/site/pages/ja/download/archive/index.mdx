@@ -1,0 +1,57 @@
+---
+title: Node.js®のダウンロード
+layout: download-archive
+---
+
+<WithDownloadArchive>
+  {({ binaries, installers, version, release, sources }) => (
+    <>
+      <h1>Node.js®アーカイブ</h1>
+
+      <h2 className="flex items-center gap-2">
+        <img
+          src="/static/logos/jsIconGreen.svg"
+          alt="Node.js Logo"
+          width="24"
+          height="24"
+        />
+        {version}
+        {release.codename && ` (${release.codename})`}
+      </h2>
+
+      <WithReleaseAlertBox status={release.status} />
+
+      <ReleaseOverview release={release} />
+
+      <ul className='flex list-none flex-col gap-2 p-0 text-sm'>
+
+        <li>
+          <Link href="/about/previous-releases">Node.jsのリリース</Link>についてリリーススケジュールやLTSステータスを詳しく確認できます。
+        </li>
+
+        <li>
+          リリースファイルの<LinkWithArrow href={sources.shasum}>署名付きSHASUMS</LinkWithArrow>。署名付きSHASUMSの<LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">検証方法</LinkWithArrow>。
+        </li>
+
+        <li>
+          <LinkWithArrow href={sources.tarball}>Node.js {version}</LinkWithArrow>の署名付きソースアーカイブをダウンロード。
+        </li>
+
+      </ul>
+
+      <h2>その他のリリース</h2>
+      <WithReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
+
+      <h2>バイナリーのダウンロード</h2>
+      <DownloadsTable source={binaries} />
+
+      <h2>インストーラー</h2>
+      <DownloadsTable source={installers} />
+
+      <h2>マイナーバージョン</h2>
+      <MinorReleasesTable releases={release.minorVersions} />
+    </>
+
+)}
+
+</WithDownloadArchive>

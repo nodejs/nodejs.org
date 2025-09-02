@@ -1,24 +1,24 @@
-export interface RSSFeed {
+export type RSSFeed = {
   file: string;
   title: string;
   category: string;
   description?: string;
-}
+};
 
-interface WithRange {
+type WithRange = {
   startDate: string;
   endDate: string;
-}
+};
 
-export interface WebsiteBanner extends WithRange {
+export type WebsiteBanner = {
   text: string;
   link?: string;
   type?: 'default' | 'warning' | 'error';
-}
+} & WithRange;
 
-export interface WebsiteBadge extends WithRange {
+export type WebsiteBadge = {
   text: string;
   link: string;
   title?: string;
   kind?: 'default' | 'warning' | 'error';
-}
+} & WithRange;

@@ -1,0 +1,63 @@
+{
+  "name": "@node-core/remark-lint",
+  "type": "module",
+  "version": "1.0.0",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./api": "./src/api.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodejs/nodejs.org",
+    "directory": "packages/remark-lint"
+  },
+  "scripts": {
+    "lint": "node --run lint:js",
+    "lint:fix": "node --run lint:js:fix",
+    "lint:js": "eslint \"**/*.mjs\"",
+    "lint:js:fix": "node --run lint:js -- --fix",
+    "test": "node --run test:unit",
+    "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --test \"**/*.test.mjs\""
+  },
+  "dependencies": {
+    "remark-gfm": "^4.0.1",
+    "remark-lint-blockquote-indentation": "^4.0.1",
+    "remark-lint-checkbox-character-style": "^5.0.1",
+    "remark-lint-checkbox-content-indent": "^5.0.1",
+    "remark-lint-code-block-style": "^4.0.1",
+    "remark-lint-definition-spacing": "^4.0.1",
+    "remark-lint-fenced-code-flag": "^4.2.0",
+    "remark-lint-fenced-code-marker": "^4.0.1",
+    "remark-lint-final-definition": "^4.0.2",
+    "remark-lint-heading-style": "^4.0.1",
+    "remark-lint-maximum-line-length": "^4.1.1",
+    "remark-lint-no-consecutive-blank-lines": "^5.0.1",
+    "remark-lint-no-file-name-consecutive-dashes": "^3.0.1",
+    "remark-lint-no-file-name-outer-dashes": "^3.0.1",
+    "remark-lint-no-heading-indent": "^5.0.1",
+    "remark-lint-no-literal-urls": "^4.0.1",
+    "remark-lint-no-multiple-toplevel-headings": "^4.0.1",
+    "remark-lint-no-shell-dollars": "^4.0.1",
+    "remark-lint-no-table-indentation": "^5.0.1",
+    "remark-lint-no-tabs": "^4.0.1",
+    "remark-lint-no-trailing-spaces": "^3.0.2",
+    "remark-lint-no-unused-definitions": "^4.0.2",
+    "remark-lint-prohibited-strings": "^4.0.0",
+    "remark-lint-rule-style": "^4.0.1",
+    "remark-lint-strong-marker": "^4.0.1",
+    "remark-lint-table-cell-padding": "^5.1.1",
+    "remark-lint-table-pipes": "^5.0.1",
+    "remark-lint-unordered-list-marker-style": "^4.0.1",
+    "remark-preset-lint-recommended": "^7.0.1",
+    "semver": "^7.7.2",
+    "unified-lint-rule": "^3.0.1",
+    "unist-util-visit": "^5.0.0",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "cross-env": "catalog:",
+    "dedent": "^1.6.0",
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.5"
+  }
+}
