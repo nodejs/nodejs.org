@@ -4,6 +4,8 @@ import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 
 import Button from './components/Common/Button';
 import LinkWithArrow from './components/Common/LinkWithArrow';
+import PartnersIconList from './components/Common/Partners/PartnersIconList';
+import PartnersLogoList from './components/Common/Partners/PartnersLogoList';
 import DownloadsTable from './components/Downloads/DownloadsTable';
 import EOLAlertBox from './components/EOL/EOLAlert';
 import EOLReleaseTable from './components/EOL/EOLReleaseTable';
@@ -17,6 +19,7 @@ import WithBanner from './components/withBanner';
 import WithDownloadArchive from './components/withDownloadArchive';
 import WithNodeRelease from './components/withNodeRelease';
 import WithReleaseAlertBox from './components/withReleaseAlertBox';
+import WithSupporters from './components/withSupporters';
 
 /**
  * A full list of React Components that we want to pass through to MDX
@@ -37,8 +40,14 @@ export const mdxComponents = {
   WithBanner,
   // HOC for providing Badge Data
   WithBadgeGroup,
+  // HOC for providing Backers Data
+  WithSupporters,
   // Standalone Badge Group
   BadgeGroup,
+  // Shows a list of Node.js Partners with Icons
+  PartnersIconList,
+  // Shows a list of Node.js Partners with Logos
+  PartnersLogoList,
   // Renders the Release Overview for a specified version
   ReleaseOverview,
   // Renders a table with all the Minor Releases for a Major Version
