@@ -22,7 +22,7 @@ export const createPartnersList = (
 ) =>
   partnerLists.map(({ id, ...partner }) => {
     return {
-      id: id,
+      id,
       logo: createIcon(PartnersLogo, id, type),
       ...partner,
     };

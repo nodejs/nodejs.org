@@ -50,7 +50,7 @@ const PartnersLogoList: FC<PartnersLogoListProps> = ({
           pick: maxLength,
           dateSeed: 5,
           category: categories,
-          sort: sort,
+          sort,
         })
       );
     }, 0);
