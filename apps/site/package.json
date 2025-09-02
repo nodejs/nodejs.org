@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@heroicons/react": "~2.2.0",
-    "@mdx-js/mdx": "^3.1.0",
+    "@mdx-js/mdx": "^3.1.1",
     "@node-core/rehype-shiki": "workspace:*",
     "@node-core/ui-components": "workspace:*",
     "@node-core/website-i18n": "workspace:*",
