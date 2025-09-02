@@ -107,15 +107,10 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
 
       const params = {
         term: term,
-        limit: DEFAULT_ORAMA_QUERY_PARAMS.limit,
-        threshold: DEFAULT_ORAMA_QUERY_PARAMS.threshold,
-        boost: DEFAULT_ORAMA_QUERY_PARAMS.boost,
         facets: defaultFacetsRef.current,
-        datasources: dataSourcesRef.current.filter(Boolean),
+        datasources: dataSourcesRef.current,
         ...(where ? { where } : {}),
       };
-
-      (params as Record<string, unknown>).groupBy = { property: 'siteSection' };
 
       const raw = await client.search(params);
       const res = raw as unknown as CloudSearchResponse;
