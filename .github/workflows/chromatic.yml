@@ -82,10 +82,8 @@ jobs:
 
       - name: Start Visual Regression Tests (Chromatic)
         # This assigns the Environment Deployment for Storybook
-        # This action must be manually updated to the latest commit from
-        # https://github.com/chromaui/action
         id: chromatic-deploy
-        uses: chromaui/action@4d8ebd13658d795114f8051e25c28d66f14886c6 # v13.1.2
+        uses: chromaui/action@d0795df816d05c4a89c80295303970fddd247cce # v13.1.4
         with:
           workingDir: packages/ui-components
           buildScriptName: storybook:build
