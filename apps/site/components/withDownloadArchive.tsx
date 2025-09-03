@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import type { FC } from 'react';
 
 import { getClientContext } from '#site/client-context';
@@ -31,6 +32,10 @@ const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
     // Match major version only (e.g., v22.x.x for release.major v22)
     version.startsWith(`v${release.major}`)
   )!;
+
+  if (!release) {
+    return notFound();
+  }
 
   const releaseArtifacts = buildReleaseArtifacts(release, version);
 

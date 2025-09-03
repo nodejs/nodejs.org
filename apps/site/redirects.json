@@ -333,10 +333,6 @@
       "destination": "/:locale/download/current"
     },
     {
-      "source": "/:locale/download/archive",
-      "destination": "/:locale/download/archive/current"
-    },
-    {
       "source": "/discord",
       "destination": "https://discord.gg/nodejs"
     },
