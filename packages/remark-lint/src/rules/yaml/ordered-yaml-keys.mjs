@@ -26,7 +26,9 @@ export default function orderedYamlKeys(
   validKeys = DEFAULT_VALID_KEYS,
   prefix = ''
 ) {
-  if (!yaml || typeof yaml !== 'object' || Array.isArray(yaml)) return;
+  if (!yaml || typeof yaml !== 'object' || Array.isArray(yaml)) {
+    return;
+  }
 
   const keys = Object.keys(yaml);
 

@@ -79,6 +79,7 @@ export default tseslint.config(
       ],
 
       'object-shorthand': 'error',
+      curly: ['error', 'all'],
     },
   }
 );
