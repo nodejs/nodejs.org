@@ -74,6 +74,7 @@
     "semver": "~7.7.2",
     "sval": "^0.6.3",
     "tailwindcss": "catalog:",
+    "twoslash": "^0.3.4",
     "unist-util-visit": "^5.0.0",
     "vfile": "~6.0.3",
     "vfile-matter": "~5.0.1"
