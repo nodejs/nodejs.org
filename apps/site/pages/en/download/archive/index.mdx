@@ -24,7 +24,9 @@ layout: download-archive
       <ReleaseOverview release={release} />
 
       <ul className='flex list-none flex-col gap-2 p-0 text-sm'>
-
+        <li>
+          Read the <LinkWithArrow href={`https://github.com/nodejs/node/releases/tag/${version}`}>changelog</LinkWithArrow> or <Link href={`/blog/release/${version}`}>blog post</Link> for this version.
+        </li>
         <li>
           Learn more about <Link href="/about/previous-releases">Node.js releases</Link>, including the release schedule and LTS status.
         </li>
