@@ -24,7 +24,7 @@ const { shiki, getLanguageDisplayName, highlightToHast, highlightToHtml } =
       transformerTwoslash({
         langs: ['ts', 'js', 'cjs', 'mjs'],
         // Don't throw on errors on untype-able code
-        // throws: false,
+        throws: false,
       }),
     ],
     // We use the faster WASM engine on the server instead of the web-optimized version.
