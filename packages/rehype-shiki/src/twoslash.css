@@ -6,7 +6,7 @@
   }
 
   .twoslash-popup-code {
-    >span {
+    > span {
       display: inline-block !important;
     }
 
