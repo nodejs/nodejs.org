@@ -55,10 +55,10 @@ const nextConfig = {
   outputFileTracingIncludes: {
     // Twoslash needs TypeScript declarations to function, and, by default,
     // Next.js strips them for brevity. Therefore, they must be explicitly
-    // incldued.
+    // included.
     '/*': [
       '../../node_modules/.pnpm/typescript@*/node_modules/typescript/lib/*.d.ts',
-      '../../node_modules/.pnpm/@types+*/node_modules/**/*.ts',
+      './node_modules/@types/node/**/*',
     ],
   },
   // On static export builds we want the output directory to be "build"
