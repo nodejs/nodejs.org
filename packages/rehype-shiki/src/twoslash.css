@@ -1,20 +1,28 @@
 @import '@shikijs/twoslash/style-rich.css';
 
 .twoslash-popup-container {
-  > :not(.twoslash-popup-code) {
-    display: none !important;
-  }
+  position: fixed !important;
 
   .twoslash-popup-code {
-    > span {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    font-size: small;
+
+    span {
       display: inline-block !important;
     }
 
-    display: flex !important;
-    flex-wrap: wrap !important;
+    :has(.shiki),
+    .shiki,
+    .line::after {
+      all: unset !important;
+    }
 
-    font-size: small;
+    .line {
+      padding: unset !important;
+      font-weight: bold !important;
+      word-wrap: break-word !important;
+      font-size: small !important;
+    }
   }
-
-  position: fixed !important;
 }

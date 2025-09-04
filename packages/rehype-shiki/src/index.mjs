@@ -23,6 +23,10 @@ const { shiki, getLanguageDisplayName, highlightToHast, highlightToHtml } =
     transformers: [
       transformerTwoslash({
         langs: ['ts', 'js', 'cjs', 'mjs'],
+        // Don't show JSDoc
+        rendererRich: {
+          jsdoc: false,
+        },
         // Don't throw on errors on untype-able code
         throws: false,
       }),
