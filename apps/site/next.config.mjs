@@ -58,6 +58,7 @@ const nextConfig = {
     // incldued.
     '/*': [
       '../../node_modules/.pnpm/typescript@*/node_modules/typescript/lib/*.d.ts',
+      '../../node_modules/.pnpm/@types+*/node_modules/**/*.ts',
     ],
   },
   // On static export builds we want the output directory to be "build"
