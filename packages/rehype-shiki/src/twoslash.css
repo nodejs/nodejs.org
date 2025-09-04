@@ -1,0 +1,20 @@
+@import '@shikijs/twoslash/style-rich.css';
+
+.twoslash-popup-container {
+  > :not(.twoslash-popup-code) {
+    display: none !important;
+  }
+
+  .twoslash-popup-code {
+    >span {
+      display: inline-block !important;
+    }
+
+    display: flex !important;
+    flex-wrap: wrap !important;
+
+    font-size: small;
+  }
+
+  position: fixed !important;
+}

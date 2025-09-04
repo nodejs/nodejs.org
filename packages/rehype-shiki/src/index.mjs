@@ -1,5 +1,6 @@
 import { createJavaScriptRegexEngine } from '@shikijs/engine-javascript';
 import { createOnigurumaEngine } from '@shikijs/engine-oniguruma';
+import { transformerTwoslash } from '@shikijs/twoslash';
 import cLanguage from 'shiki/langs/c.mjs';
 import coffeeScriptLanguage from 'shiki/langs/coffeescript.mjs';
 import cPlusPlusLanguage from 'shiki/langs/cpp.mjs';
@@ -19,6 +20,13 @@ import { createHighlighter } from './highlighter.mjs';
 
 const { shiki, getLanguageDisplayName, highlightToHast, highlightToHtml } =
   createHighlighter({
+    transformers: [
+      transformerTwoslash({
+        langs: ['ts', 'js', 'cjs', 'mjs'],
+        // Don't throw on errors on untype-able code
+        // throws: false,
+      }),
+    ],
     // We use the faster WASM engine on the server instead of the web-optimized version.
     //
     // Currently we fall back to the JavaScript RegEx engine
