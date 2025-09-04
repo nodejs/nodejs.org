@@ -3,7 +3,7 @@ import { describe, it, mock } from 'node:test';
 
 // Simplified mocks - only mock what's actually needed
 mock.module('../index.mjs', {
-  namedExports: { highlightToHast: mock.fn(() => ({ children: [] })) },
+  defaultExport: () => ({ highlightToHast: mock.fn(() => ({ children: [] })) }),
 });
 
 mock.module('classnames', {
@@ -23,13 +23,13 @@ describe('rehypeShikiji', async () => {
   const { default: rehypeShikiji } = await import('../plugin.mjs');
   const mockTree = { type: 'root', children: [] };
 
-  it('calls visit twice', () => {
+  it('calls visit twice', async () => {
     mockVisit.mock.resetCalls();
-    rehypeShikiji()(mockTree);
+    await rehypeShikiji()(mockTree);
     assert.strictEqual(mockVisit.mock.calls.length, 2);
   });
 
-  it('creates CodeTabs for multiple code blocks', () => {
+  it('creates CodeTabs for multiple code blocks', async () => {
     const parent = {
       children: [
         {
@@ -61,7 +61,7 @@ describe('rehypeShikiji', async () => {
       }
     });
 
-    rehypeShikiji()(mockTree);
+    await rehypeShikiji()(mockTree);
     assert.ok(parent.children.some(child => child.tagName === 'CodeTabs'));
   });
 });
