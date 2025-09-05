@@ -3,6 +3,3 @@ curl -fsSL https://raw.githubusercontent.com/mklement0/n-install/stable/bin/n-in
 
 # Node.js sudah terpasang ketika n-install, tapi kamu juga bisa memasang secara manual:
 #   n install ${props.release.major}
-
-# Verifikasi versi Node.js:
-node -v # Harus mencetak "${props.release.versionWithPrefix}".

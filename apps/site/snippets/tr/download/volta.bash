@@ -6,6 +6,3 @@ ${props.os === 'WIN' ?
 
 # Node.js indirin ve kurun:
 volta install node@${props.release.major}
-
-# Node.js sürümünüzü doğrulayın:
-node -v # Şunu yazdırmalı "${props.release.versionWithPrefix}".

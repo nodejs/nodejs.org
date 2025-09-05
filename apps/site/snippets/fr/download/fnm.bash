@@ -6,6 +6,3 @@ ${props.os === 'WIN' ?
 
 # Télécharger et installer Node.js :
 fnm install ${props.release.major}
-
-# Vérifier la version de Node.js :
-node -v # Doit afficher "${props.release.versionWithPrefix}".

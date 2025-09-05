@@ -1,12 +1,12 @@
 ---
-title: Node.js®のダウンロード
+title: Télécharger Node.js®
 layout: download-archive
 ---
 
 <WithDownloadArchive>
   {({ binaries, installers, version, release, sources }) => (
     <>
-      <h1>Node.js®アーカイブ</h1>
+      <h1>Archive de téléchargement Node.js®</h1>
 
       <h2 className="flex items-center gap-2">
         <img
@@ -26,29 +26,29 @@ layout: download-archive
       <ul className='flex list-none flex-col gap-2 p-0 text-sm'>
 
         <li>
-          <Link href="/about/previous-releases">Node.jsのリリース</Link>についてリリーススケジュールやLTSステータスを詳しく確認できます。
+           En savoir plus sur <Link href="/about/previous-releases">les versions de Node.js</Link>, y compris le calendrier de publication et le statut LTS.
         </li>
 
         <li>
-          リリースファイルの<LinkWithArrow href={sources.shasum}>署名付きSHASUMS</LinkWithArrow>。署名付きSHASUMSの<LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">検証方法</LinkWithArrow>。
+      <LinkWithArrow href={sources.shasum}>SHASUMS signés</LinkWithArrow> pour les fichiers de publication. Comment <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">vérifier</LinkWithArrow> les SHASUMS signés.
         </li>
 
         <li>
-          <LinkWithArrow href={sources.tarball}>Node.js {version}</LinkWithArrow>の署名付きソースアーカイブをダウンロード。
+           Téléchargez une archive tarball signée <LinkWithArrow href={sources.tarball}>Node.js {version} source</LinkWithArrow>.
         </li>
 
       </ul>
 
-      <h2>その他のリリース</h2>
+      <h2>Autres publications</h2>
       <WithReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
 
-      <h2>バイナリーのダウンロード</h2>
+      <h2>Téléchargements binaires</h2>
       <DownloadsTable source={binaries} />
 
-      <h2>インストーラー</h2>
+      <h2>Packages d'installation</h2>
       <DownloadsTable source={installers} />
 
-      <h2>マイナーバージョン</h2>
+      <h2>Versions mineures</h2>
       <MinorReleasesTable releases={release.minorVersions} />
     </>
 
