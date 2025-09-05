@@ -1,0 +1,30 @@
+@import '@shikijs/twoslash/style-rich.css';
+
+.twoslash-popup-container {
+  position: fixed !important;
+
+  .twoslash-popup-code {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    font-size: small;
+    /* This variable comes from ui-components */
+    background-color: var(--color-neutral-900);
+
+    span {
+      display: inline-block !important;
+    }
+
+    :has(.shiki),
+    .shiki,
+    .line::after {
+      all: unset !important;
+    }
+
+    .line {
+      padding: unset !important;
+      font-weight: bold !important;
+      word-wrap: break-word !important;
+      font-size: small !important;
+    }
+  }
+}
