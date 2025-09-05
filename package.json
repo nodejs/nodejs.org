@@ -18,7 +18,7 @@
     "cloudflare:preview": "turbo cloudflare:preview",
     "deploy": "turbo deploy",
     "dev": "turbo dev",
-    "format": "turbo prettier:fix lint:fix",
+    "format": "turbo //#prettier:fix prettier:fix lint:fix",
     "lint": "turbo lint",
     "lint:fix": "turbo lint:fix",
     "lint:staged": "lint-staged",
