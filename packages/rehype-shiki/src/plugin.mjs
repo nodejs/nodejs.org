@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { toString } from 'hast-util-to-string';
 import { SKIP, visit } from 'unist-util-visit';
 
-import { highlightToHast } from './index.mjs';
+import createHighlighter from './index.mjs';
 
 // This is what Remark will use as prefix within a <pre> className
 // to attribute the current language of the <pre> element
@@ -53,8 +53,15 @@ function isCodeBlock(node) {
   );
 }
 
-export default function rehypeShikiji() {
-  return function (tree) {
+/**
+ * @param {import('./index.mjs').HighlighterOptions} options
+ */
+export default function rehypeShikiji(options) {
+  let highlighter;
+
+  return async function (tree) {
+    highlighter ??= await createHighlighter(options);
+
     visit(tree, 'element', (_, index, parent) => {
       const languages = [];
       const displayNames = [];
@@ -163,7 +170,7 @@ export default function rehypeShikiji() {
       const languageId = codeLanguage.slice(languagePrefix.length);
 
       // Parses the <pre> contents and returns a HAST tree with the highlighted code
-      const { children } = highlightToHast(
+      const { children } = highlighter.highlightToHast(
         preElementContents,
         languageId,
         meta
