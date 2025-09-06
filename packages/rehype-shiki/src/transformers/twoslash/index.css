@@ -1,0 +1,5 @@
+@import '@shikijs/twoslash/style-rich.css';
+
+.twoslash-hover {
+  cursor: text;
+}

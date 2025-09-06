@@ -46,20 +46,12 @@ async function getEngine({ wasm = false }) {
  * Configures and returns transformers based on options
  * @param {HighlighterOptions} options - Configuration options
  */
-async function getTransformers({ twoslash = false }) {
+async function getTransformers({ twoslash: options = false }) {
   const transformers = [];
 
-  if (twoslash) {
-    const { transformerTwoslash } = await import('@shikijs/twoslash');
-
-    transformers.push(
-      transformerTwoslash({
-        langs: ['ts', 'js', 'cjs', 'mjs'],
-        rendererRich: { jsdoc: false },
-        throws: false,
-        ...(typeof twoslash === 'object' ? twoslash : {}),
-      })
-    );
+  if (options) {
+    const { twoslash } = await import('./transformers/twoslash/index.mjs');
+    transformers.push(twoslash(options));
   }
 
   return transformers;

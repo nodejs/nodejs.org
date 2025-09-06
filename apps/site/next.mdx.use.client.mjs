@@ -2,6 +2,11 @@
 
 import Blockquote from '@node-core/ui-components/Common/Blockquote';
 import MDXCodeTabs from '@node-core/ui-components/MDX/CodeTabs';
+import {
+  MDXTooltip,
+  MDXTooltipContent,
+  MDXTooltipTrigger,
+} from '@node-core/ui-components/MDX/Tooltip';
 
 import DownloadButton from './components/Downloads/DownloadButton';
 import BlogPostLink from './components/Downloads/Release/BlogPostLink';
@@ -28,6 +33,10 @@ import { ReleaseProvider } from './providers/releaseProvider';
 export const clientMdxComponents = {
   // Renders MDX CodeTabs
   CodeTabs: MDXCodeTabs,
+  // Renders Tooltips
+  MDXTooltip,
+  MDXTooltipContent,
+  MDXTooltipTrigger,
   // Renders a Download Button
   DownloadButton,
   // Renders a stateless Release Select Component

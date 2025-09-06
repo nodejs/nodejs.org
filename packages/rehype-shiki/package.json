@@ -4,7 +4,7 @@
   "type": "module",
   "exports": {
     ".": "./src/index.mjs",
-    "./twoslash.css": "./src/twoslash.css",
+    "./index.css": "./src/index.css",
     "./*": "./src/*.mjs"
   },
   "repository": {
