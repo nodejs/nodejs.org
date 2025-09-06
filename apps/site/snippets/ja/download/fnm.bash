@@ -6,6 +6,3 @@ ${props.os === 'WIN' ?
 
 # Node.jsをダウンロードしてインストールする：
 fnm install ${props.release.major}
-
-# Node.jsのバージョンを確認する：
-node -v # "${props.release.versionWithPrefix}"が表示される。

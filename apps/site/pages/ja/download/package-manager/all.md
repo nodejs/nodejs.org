@@ -43,7 +43,21 @@ pacman -S nodejs npm
 
 ## CentOS, Fedora and Red Hat Enterprise Linux
 
-CentOS/RHEL 8とFedoraでは`nodejs`というモジュールとしてNode.jsが利用できます。
+Node.jsとnpmパッケージはFedoraとRHEL 10のメインリポジトリで利用可能です。
+
+デフォルトのストリームからインストールできます。このストリームには現在Active LTSのNode.jsバージョンが含まれています。
+
+```bash
+dnf install nodejs npm
+```
+
+または代替となる保守版（Fedoraと各種RHELリリース間で保守版が異なる場合はあります）の特定のストリームからインストールできます。
+
+```bash
+dnf install nodejs24
+```
+
+古いバージョンのCentOSやRHELではNode.jsは `nodejs` というモジュールとして利用可能です。
 
 ```bash
 dnf module install nodejs:<stream>

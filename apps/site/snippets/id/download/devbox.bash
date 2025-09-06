@@ -9,6 +9,3 @@ devbox add node@${props.release.major}
 
 # Buka shell Devbox
 devbox shell
-
-# Verifikasi versi Node.js:
-node -v # Harus mencetak "${props.release.versionWithPrefix}".

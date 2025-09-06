@@ -6,6 +6,3 @@ docker pull node:${props.release.major}-${props.release.major >= 4 ? 'alpine' : 
 
 # Buat kontainer Node.js dan mulai sesi Shell:
 docker run -it --rm --entrypoint sh node:${props.release.major}-${props.release.major >= 4 ? 'alpine' : 'slim'}
-
-# Verifikasi versi Node.js:
-node -v # Harus mencetak "${props.release.versionWithPrefix}".

@@ -6,6 +6,3 @@ ${props.os === 'WIN' ?
 
 # Unduh dan pasang Node.js:
 fnm install ${props.release.major}
-
-# Verifikasi versi Node.js:
-node -v # Harus mencetak "${props.release.versionWithPrefix}".

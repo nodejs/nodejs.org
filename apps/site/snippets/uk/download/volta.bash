@@ -6,6 +6,3 @@ ${props.os === 'WIN' ?
 
 # Завантажує й установлює Node.js:
 volta install node@${props.release.major}
-
-# Перевіряє версію Node.js:
-node -v # Повинно вивести «${props.release.versionWithPrefix}».

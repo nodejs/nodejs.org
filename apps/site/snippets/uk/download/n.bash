@@ -3,6 +3,3 @@ curl -fsSL https://raw.githubusercontent.com/mklement0/n-install/stable/bin/n-in
 
 # Node.js уже встановлюється під час установки n, але її можна встановити вручну:
 #   n install ${props.release.major}
-
-# Перевіряє версію Node.js:
-node -v # Повинно вивести «${props.release.versionWithPrefix}».

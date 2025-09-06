@@ -6,6 +6,3 @@ docker pull node:${props.release.major}-${props.release.major >= 4 ? 'alpine' : 
 
 # Node.jsのコンテナーを作成しシェルを起動する：
 docker run -it --rm --entrypoint sh node:${props.release.major}-${props.release.major >= 4 ? 'alpine' : 'slim'}
-
-# Node.jsのバージョンを確認する：
-node -v # "${props.release.versionWithPrefix}"が表示される。

@@ -6,6 +6,3 @@ docker pull node:${props.release.major}-${props.release.major >= 4 ? 'alpine' : 
 
 # Node.js 컨테이너를 생성하고 쉘 세션을 시작하세요:
 docker run -it --rm --entrypoint sh node:${props.release.major}-${props.release.major >= 4 ? 'alpine' : 'slim'}
-
-# Node.js 버전 확인:
-node -v # "${props.release.versionWithPrefix}"가 출력되어야 합니다.

@@ -6,6 +6,3 @@ ${props.os === 'WIN' ?
 
 # Descarga e instala Node.js:
 volta install node@${props.release.major}
-
-# Verifica la versión de Node.js:
-node -v # Debería mostrar "${props.release.versionWithPrefix}".
