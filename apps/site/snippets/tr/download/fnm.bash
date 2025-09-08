@@ -6,6 +6,3 @@ ${props.os === 'WIN' ?
 
 # Node.js'i indirin ve kurun:
 fnm install ${props.release.major}
-
-# Node.js sürümünü doğrulayın:
-node -v # Şunu yazdırmalı "${props.release.versionWithPrefix}".

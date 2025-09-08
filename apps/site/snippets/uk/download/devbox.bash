@@ -9,6 +9,3 @@ devbox add node@${props.release.major}
 
 # Відкриває оболонку Devbox
 devbox shell
-
-# Перевіряє версію Node.js:
-node -v # Повинно вивести «${props.release.versionWithPrefix}».

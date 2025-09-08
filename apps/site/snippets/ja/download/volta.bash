@@ -6,6 +6,3 @@ ${props.os === 'WIN' ?
 
 # Node.jsをダウンロードしてインストールする：
 volta install node@${props.release.major}
-
-# Node.jsのバージョンを確認する：
-node -v # "${props.release.versionWithPrefix}"が表示される。
