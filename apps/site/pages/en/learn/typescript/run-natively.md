@@ -6,7 +6,7 @@ authors: AugustinMauroy, khaosdoctor, jakebailey, robpalme
 
 # Running TypeScript Natively
 
-Since v22.18.0 and v23.6.0, Node.js enables "type stripping" by default. If you are using v22.18.0, v23.6.0 or later and your source code contains only [erasable typescript syntax](https://devblogs.microsoft.com/typescript/announcing-typescript-5-8-beta/#the---erasablesyntaxonly-option), you do not need this article.
+Since v22.18.0, Node.js enables "type stripping" by default. If you are using v22.18.0 or later and your source code contains only [erasable typescript syntax](https://devblogs.microsoft.com/typescript/announcing-typescript-5-8-beta/#the---erasablesyntaxonly-option), you do not need this article.
 
 ## Running TypeScript code with Node.js
 
@@ -26,7 +26,7 @@ In V22.7.0 this experimental support was extended to transform TypeScript-only s
 node --experimental-transform-types another-example.ts
 ```
 
-From v22.18.0, v23.6.0 onwards, type stripping is enabled by default (you can disable it via [`--no-experimental-strip-types`](https://nodejs.org/docs/latest-v23.x/api/cli.html#--no-experimental-strip-types)), enabling you to run any supported syntax, so running files like the one below with `node file.ts` is supported:
+From v22.18.0 onwards, type stripping is enabled by default (you can disable it via [`--no-experimental-strip-types`](https://nodejs.org/docs/latest-v23.x/api/cli.html#--no-experimental-strip-types)), enabling you to run any supported syntax, so running files like the one below with `node file.ts` is supported:
 
 ```ts
 function foo(bar: number): string {
