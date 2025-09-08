@@ -16,3 +16,10 @@
     display: inline-block;
   }
 }
+
+.twoslash-completion-list {
+  display: block;
+  width: auto;
+  max-height: 100px;
+  overflow-x: auto;
+}

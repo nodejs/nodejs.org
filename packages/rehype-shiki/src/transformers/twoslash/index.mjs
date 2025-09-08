@@ -1,10 +1,10 @@
 import { transformerTwoslash } from '@shikijs/twoslash';
 
-const compose = ({ token, popup }) => [
+const compose = ({ token, cursor, popup }) => [
   {
     type: 'element',
     tagName: 'MDXTooltipTrigger',
-    children: [token],
+    children: [token || cursor],
     properties: { className: ['twoslash-hover'] },
   },
   popup,
@@ -27,6 +27,20 @@ export const twoslash = options =>
         errorToken: { tagName: 'MDXTooltip' },
         errorPopup: { tagName: 'MDXTooltipContent' },
         errorCompose: compose,
+
+        completionToken: {
+          tagName: 'MDXTooltip',
+          properties: {
+            open: true,
+          },
+        },
+        completionPopup: {
+          tagName: 'MDXTooltipContent',
+          properties: {
+            align: 'start',
+          },
+        },
+        completionCompose: compose,
       },
     },
     throws: false,
