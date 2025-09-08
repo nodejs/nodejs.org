@@ -2,9 +2,6 @@
 
 .root {
   @apply w-full
-    translate-x-0
-    translate-y-0
-    transform
     rounded-sm
     border
     border-neutral-900

@@ -3,3 +3,16 @@
 .twoslash-hover {
   cursor: text;
 }
+
+.twoslash-popup-code:not(:has(div)) {
+  max-width: 600px;
+  display: block;
+  width: fit-content;
+  min-width: 100%;
+  padding: 6px 12px;
+  white-space: pre-wrap;
+
+  span {
+    display: inline-block;
+  }
+}
