@@ -31,18 +31,18 @@
   @apply opacity-80;
 
   animation: typing 1.4s infinite ease-in-out;
-}
 
-.typingDot:nth-child(1) {
-  animation-delay: 0s;
-}
+  &:nth-child(1) {
+    animation-delay: 0s;
+  }
 
-.typingDot:nth-child(2) {
-  animation-delay: 0.2s;
-}
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
 
-.typingDot:nth-child(3) {
-  animation-delay: 0.4s;
+  &:nth-child(3) {
+    animation-delay: 0.4s;
+  }
 }
 
 @keyframes typing {
@@ -60,9 +60,9 @@
 }
 
 .chatAssistantMessageMain {
-  @apply mb-4,
-    text-base,
-    text-neutral-900,
+  @apply mb-4
+    text-base
+    text-neutral-900
     dark:text-neutral-200;
 }
 
@@ -71,12 +71,12 @@
 }
 
 .chatAssistantMessage {
-  @apply my-4,
-    mb-6,
-    max-w-full,
-    rounded-xl,
-    px-6,
-    py-4,
+  @apply my-4
+    mb-6
+    max-w-full
+    rounded-xl
+    px-6
+    py-4
     text-base;
 
   background: transparent;
@@ -86,56 +86,56 @@
 
   margin: 0;
   padding: 0;
-}
 
-.chatAssistantMessage p {
-  @apply font-sm-line-height,
-    mb-3,
-    text-white;
-}
+  p {
+    @apply font-sm-line-height
+      mb-3
+      text-white;
+  }
 
-.chatAssistantMessage pre {
-  @apply my-4,
-    rounded-md,
-    bg-black/20,
-    p-4,
-    text-xs,
-    text-white;
+  pre {
+    @apply my-4
+      rounded-md
+      bg-black/20
+      p-4
+      text-xs
+      text-white;
+
+    code {
+      @apply rounded-lg
+        p-3
+        text-sm;
+    }
+  }
 
   code {
-    @apply rounded-lg,
-      p-3,
-      text-sm;
+    @apply rounded
+      bg-black/30
+      p-1
+      text-white;
   }
-}
 
-.chatAssistantMessage code {
-  @apply rounded,
-    bg-black/30,
-    p-1,
-    text-white;
-}
+  ul {
+    @apply list-disc
+      pl-6;
+  }
 
-.chatAssistantMessage ul {
-  @apply list-disc,
-    pl-6;
-}
+  ol {
+    @apply list-decimal
+      pl-6;
+  }
 
-.chatAssistantMessage ol {
-  @apply list-decimal,
-    pl-6;
-}
+  li {
+    @apply mb-1;
+  }
 
-.chatAssistantMessage li {
-  @apply mb-1;
-}
-
-.chatAssistantMessage h1,
-.chatAssistantMessage h2,
-.chatAssistantMessage h3 {
-  @apply mb-2,
-    text-lg,
-    font-bold;
+  h1,
+  h2,
+  h3 {
+    @apply mb-2
+      text-lg
+      font-bold;
+  }
 }
 
 .markdownPre {
@@ -143,16 +143,8 @@
   padding: 0.1875rem 0.3125rem !important;
 }
 
-:global(pre[class*='prism']) {
-  border-radius: 0.5rem !important;
-  padding: 0.1875rem 0.3125rem !important;
-}
-
-:global(.chatAssistantMessage pre) {
-  border-radius: 0.5rem !important;
-  padding: 0.1875rem 0.3125rem !important;
-}
-
+:global(pre[class*='prism']),
+:global(.chatAssistantMessage pre),
 :global(pre[style*='background-color']) {
   border-radius: 0.5rem !important;
   padding: 0.1875rem 0.3125rem !important;

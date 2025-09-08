@@ -1,9 +1,37 @@
+.container {
+  @apply pb-2;
+  @apply pt-6;
+}
+
 .promptWrapperCustom {
   @apply relative;
+  @apply mx-8;
+  @apply flex;
+  @apply items-center;
+  @apply gap-2;
+  @apply rounded-2xl;
+  @apply border;
+  @apply border-[rgb(64,64,64)];
+  @apply bg-[rgb(38,38,38)];
+  @apply px-4;
+  @apply py-3;
+  @apply text-base;
+  @apply text-white;
 }
 
 .promptFieldCustom {
   font-family: inherit !important;
+
+  @apply m-0;
+  @apply w-full;
+  @apply resize-none;
+  @apply border-none;
+  @apply bg-transparent;
+  @apply p-0;
+  @apply font-normal;
+  @apply leading-relaxed;
+  @apply text-white;
+  @apply outline-none;
 }
 
 .promptButtonCustom {
@@ -24,19 +52,25 @@
   @apply justify-center;
   @apply min-h-8;
   @apply min-w-8;
-}
 
-.promptButtonCustom:hover:not(:disabled) {
-  @apply bg-green-600;
-}
+  &:hover:not(:disabled) {
+    @apply bg-green-600;
+  }
 
-.promptButtonCustom:disabled {
-  @apply bg-gray-200;
-  @apply text-gray-500;
-  @apply cursor-not-allowed;
-  @apply opacity-60;
+  &:disabled {
+    @apply bg-gray-200;
+    @apply text-gray-500;
+    @apply cursor-not-allowed;
+    @apply opacity-60;
+  }
 }
 
 .slidingPanelFooter {
   @apply flex;
+  @apply flex-row;
+  @apply items-center;
+  @apply justify-center;
+  @apply pt-1;
+  @apply text-xs;
+  @apply text-neutral-400;
 }

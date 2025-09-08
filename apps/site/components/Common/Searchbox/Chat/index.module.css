@@ -1,20 +1,34 @@
 @reference "../../../styles/index.css";
 
+.slidingPanelWrapper {
+  @apply fixed;
+  @apply inset-0;
+  @apply z-[10019];
+}
+
+.slidingPanelBackdrop {
+  @apply fixed;
+  @apply inset-0;
+  @apply z-[10018];
+  @apply bg-black/60;
+}
+
 .slidingPanelCloseButton {
   @apply absolute;
   @apply right-6;
   @apply top-6;
-  @apply z-20;
+  @apply z-30;
+  @apply flex;
+  @apply h-10;
+  @apply w-10;
   @apply cursor-pointer;
+  @apply items-center;
+  @apply justify-center;
   @apply rounded-full;
-  @apply bg-white/10;
-  @apply p-2;
-  @apply text-white;
-  @apply transition-colors;
+  @apply border;
+  @apply transition-all;
   @apply duration-300;
-  @apply hover:bg-white/20;
-  @apply focus:bg-white/20;
-  @apply focus:outline-none;
+  @apply ease-in-out;
 
   svg {
     @apply h-6;
@@ -43,12 +57,16 @@
 }
 
 .slidingPanelContent {
-  @apply h-[90vh];
-  @apply max-w-[100vw];
+  @apply fixed;
+  @apply bottom-0;
+  @apply left-0;
+  @apply z-[10019];
+  @apply box-border;
+  @apply h-[95vh];
+  @apply w-full;
   @apply overflow-hidden;
-  @apply rounded-xl;
-  @apply p-4;
-  @apply shadow-lg;
+  @apply p-0;
+  @apply text-white;
 }
 
 .slidingPanelInner {
@@ -74,23 +92,23 @@
   @apply items-start;
   @apply overflow-y-auto;
   @apply px-8;
-}
 
-.chatInteractionsWrapper::-webkit-scrollbar {
-  width: 4px;
-}
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
 
-.chatInteractionsWrapper::-webkit-scrollbar-track {
-  background: transparent;
-}
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
-.chatInteractionsWrapper::-webkit-scrollbar-thumb {
-  background: rgb(255 255 255 / 20%);
-  border-radius: 2px;
-}
+  &::-webkit-scrollbar-thumb {
+    background: rgb(255 255 255 / 20%);
+    border-radius: 2px;
 
-.chatInteractionsWrapper::-webkit-scrollbar-thumb:hover {
-  background: rgb(255 255 255 / 30%);
+    &:hover {
+      background: rgb(255 255 255 / 30%);
+    }
+  }
 }
 
 .slidingPanelBottom {
@@ -152,7 +170,10 @@
 
   a {
     @apply text-blue-400;
-    @apply hover:text-blue-300;
+
+    &:hover {
+      @apply text-blue-300;
+    }
   }
 
   code {
@@ -195,12 +216,18 @@
   @apply text-neutral-900;
   @apply transition-colors;
   @apply duration-300;
-  @apply hover:bg-neutral-200;
-  @apply focus:bg-neutral-200;
   @apply dark:bg-neutral-950;
   @apply dark:text-neutral-200;
-  @apply hover:dark:bg-neutral-900;
-  @apply focus:dark:bg-neutral-900;
+
+  &:hover {
+    @apply bg-neutral-200;
+    @apply dark:bg-neutral-900;
+  }
+
+  &:focus {
+    @apply bg-neutral-200;
+    @apply dark:bg-neutral-900;
+  }
 }
 
 .chatSourceTitle {
@@ -235,8 +262,14 @@
   @apply text-white;
   @apply transition-colors;
   @apply duration-300;
-  @apply hover:bg-white/20;
-  @apply focus:bg-white/20;
+
+  &:hover {
+    @apply bg-white/20;
+  }
+
+  &:focus {
+    @apply bg-white/20;
+  }
 
   svg {
     @apply h-4;
@@ -262,7 +295,10 @@
   @apply py-0;
   @apply text-white;
   @apply placeholder:text-neutral-400;
-  @apply focus:outline-none;
+
+  &:focus {
+    @apply outline-none;
+  }
 }
 
 .promptButtonCustom {
@@ -277,10 +313,16 @@
   @apply text-white;
   @apply transition-colors;
   @apply duration-300;
-  @apply hover:bg-green-500;
-  @apply disabled:cursor-not-allowed;
-  @apply disabled:bg-neutral-600;
-  @apply disabled:text-neutral-400;
+
+  &:hover {
+    @apply bg-green-500;
+  }
+
+  &:disabled {
+    @apply cursor-not-allowed;
+    @apply bg-neutral-600;
+    @apply text-neutral-400;
+  }
 
   svg {
     @apply h-4;
@@ -319,9 +361,15 @@
   @apply text-white;
   @apply transition-colors;
   @apply duration-300;
-  @apply hover:bg-white/20;
-  @apply focus:bg-white/20;
-  @apply focus:outline-none;
+
+  &:hover {
+    @apply bg-white/20;
+  }
+
+  &:focus {
+    @apply bg-white/20;
+    @apply outline-none;
+  }
 
   svg {
     @apply h-4;
@@ -337,13 +385,26 @@
   width: auto;
 }
 
+.chatPanelContainer {
+  @apply mx-auto;
+  @apply flex;
+  @apply h-[95vh];
+  @apply flex-col;
+  @apply overflow-x-hidden;
+  @apply py-4;
+}
+
 .chatDesktopContainer {
   max-width: 52.5rem;
   width: 80%;
 }
 
 .chatContentWrapper {
-  display: flex;
+  @apply flex;
+  @apply min-h-0;
+  @apply flex-1;
+  @apply flex-col;
+  @apply pb-6;
 }
 
 .chatMobileContainer {
@@ -351,7 +412,11 @@
 }
 
 .chatMobilePadding {
-  position: relative;
+  @apply relative;
+  @apply h-full;
+  @apply max-h-full;
+  @apply items-start;
+  @apply overflow-y-auto;
 }
 
 @media (max-width: 768px) {
