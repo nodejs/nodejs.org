@@ -49,3 +49,4 @@ playwright-report
 
 ## MacOS Ignored Files
 .DS_Store
+.env
