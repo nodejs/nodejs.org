@@ -67,29 +67,68 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
         open={open}
         onClose={onClose}
         data-sliding-panel="true"
-        className={styles.slidingPanelWrapper}
+        className="fixed inset-0 z-[10019]"
       >
-        <SlidingPanel.Backdrop className={styles.slidingPanelBackdrop} />
+        <SlidingPanel.Backdrop className="fixed inset-0 z-[10018] bg-black/60" />
         <SlidingPanel.Content
           position="bottom"
-          className={styles.slidingPanelContent}
+          className="fixed bottom-0 left-0 z-[10019] box-border h-[95vh] w-full overflow-hidden p-0"
+          style={{
+            backgroundColor: '#050505',
+            border: '1px solid #2c3437',
+            borderRadius:
+              'var(--radius-m, calc(12rem / var(--orama-base-font-size, 16))) var(--radius-m, calc(12rem / var(--orama-base-font-size, 16))) 0 0',
+            color: '#ffffff',
+          }}
         >
           <SlidingPanel.Close
             className={styles.slidingPanelCloseButton}
             aria-label={t('components.search.closeChat')}
+            style={{
+              position: 'absolute',
+              top: '24px',
+              right: '24px',
+              zIndex: 30,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '40px',
+              height: '40px',
+              borderRadius: '50%',
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              color: 'white',
+              cursor: 'pointer',
+              backdropFilter: 'blur(4px)',
+              transition: 'all 0.3s ease',
+            }}
           >
-            <XMarkIcon className="h-6 w-6" />
+            <XMarkIcon style={{ width: '24px', height: '24px' }} />
           </SlidingPanel.Close>
           <div
-            className={`${styles.chatCustomPanel} ${styles.chatMobileContainer} ${styles.chatDesktopContainer} ${styles.chatPanelContainer}`}
+            className={`${styles.chatCustomPanel} ${styles.chatMobileContainer} ${styles.chatDesktopContainer} flex h-full flex-col py-4`}
+            style={{
+              height: '95vh',
+              margin: '0px auto',
+              maxWidth: 'calc(840rem / var(--orama-base-font-size, 16))',
+              overflowX: 'hidden',
+            }}
           >
-            <div className={styles.chatContentWrapper}>
+            <div
+              className="flex min-h-0 flex-1 flex-col pb-6"
+              style={{
+                flex: '1 1 0%',
+                minHeight: '0',
+                maxHeight: 'calc(95vh - 200px)',
+              }}
+            >
               <ChatInteractions.Wrapper
                 ref={containerRef}
                 onScroll={recalculateGoToBottomButton}
                 onStreaming={recalculateGoToBottomButton}
                 onNewInteraction={() => scrollToBottom({ animated: true })}
-                className={styles.chatMobilePadding}
+                className={`${styles.chatMobilePadding} relative h-full items-start overflow-y-auto`}
+                style={{ maxHeight: '100%', overflowY: 'auto' }}
               >
                 {(
                   interaction: Interaction,
