@@ -225,6 +225,10 @@ main {
           dark:text-neutral-300
           dark:before:text-neutral-200;
       }
+
+      td div {
+        @apply justify-end;
+      }
     }
   }
 }
