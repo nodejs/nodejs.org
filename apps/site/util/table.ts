@@ -10,7 +10,9 @@ export default function remarkTableTitles() {
   return (tree: Root) => {
     visit(tree, 'table', table => {
       // Ensure table has at least a header row and one data row
-      if (table.children.length < 2) return;
+      if (table.children.length < 2) {
+        return;
+      }
 
       const [headerRow, ...dataRows] = table.children;
 
