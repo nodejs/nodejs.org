@@ -28,7 +28,7 @@ const VulnerabilitiesTable: FC<{
       <tbody>
         {vulnerabilities.map((vulnerability, i) => (
           <tr key={i}>
-            <td>
+            <td data-label={t('components.eolModal.table.cves')}>
               {vulnerability.cve.map(cveId => (
                 <div key={cveId}>
                   <LinkWithArrow
@@ -43,13 +43,16 @@ const VulnerabilitiesTable: FC<{
 
               {vulnerability.cve.length > 0 || '-'}
             </td>
-            <td>
+            <td data-label={t('components.eolModal.table.severity')}>
               <VulnerabilityChip severity={vulnerability.severity} />
             </td>
-            <td className={maxWidth}>
+            <td
+              data-label={t('components.eolModal.table.overview')}
+              className={maxWidth}
+            >
               {vulnerability.description || vulnerability.overview || '-'}
             </td>
-            <td>
+            <td data-label={t('components.eolModal.table.details')}>
               {vulnerability.url && (
                 <LinkWithArrow
                   href={vulnerability.url}
