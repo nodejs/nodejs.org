@@ -11,7 +11,7 @@ If you are interested in getting involved with the Node.js community, there are 
 
 - The [`nodejs/node` GitHub repository](https://github.com/nodejs/node/issues) is the place to discuss Node.js core features and reporting issues.
 - The [`nodejs/help` GitHub repository](https://github.com/nodejs/help/issues) is the official place to ask questions about Node.js.
-- Node.js's [official Discord server](/discord) is a place to chat with other Node.js developers and get official news from the Node.js project.
+- Node.js's [official Discord server](https://discord.gg/nodejs) is a place to chat with other Node.js developers and get official news from the Node.js project.
 - Node.js's [project calendar](https://nodejs.org/calendar) with all public Node.js team meetings.
 
 ## Learning Materials

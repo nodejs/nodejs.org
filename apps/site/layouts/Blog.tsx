@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import { getClientContext } from '#site/client-context';
@@ -17,24 +17,27 @@ const getBlogCategory = (pathname: string) => {
   // hence we attempt to interpolate the full /en/blog/{category}/page/{page}
   // and in case of course no page argument is provided we define it to 1
   // note that malformed routes can't happen as they are all statically generated
-  const [, , category = 'all', , page = 1] = pathname.split('/');
+  const [, , category = 'all', , page = 1] = pathname.split('/') as [
+    unknown,
+    unknown,
+    BlogCategory,
+    unknown,
+    number,
+  ];
 
-  const { posts, pagination } = getBlogData(
-    category as BlogCategory,
-    Number(page)
-  );
+  const { posts, pagination } = getBlogData(category, Number(page));
 
   return {
-    category: category,
-    posts: posts,
-    pagination: pagination,
+    category,
+    posts,
+    pagination,
     page: Number(page),
   };
 };
 
-const BlogLayout: FC = async () => {
+const BlogLayout: FC = () => {
+  const t = useTranslations();
   const { pathname } = getClientContext();
-  const t = await getTranslations();
 
   const mapCategoriesToTabs = (categories: Array<BlogCategory>) =>
     categories.map(category => ({

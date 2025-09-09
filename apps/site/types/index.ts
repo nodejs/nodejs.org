@@ -13,3 +13,5 @@ export * from './calendar';
 export * from './author';
 export * from './download';
 export * from './userAgent';
+export * from './vulnerabilities';
+export * from './page';

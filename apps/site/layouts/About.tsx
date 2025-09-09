@@ -6,10 +6,9 @@ import WithFooter from '#site/components/withFooter';
 import WithMetaBar from '#site/components/withMetaBar';
 import WithNavBar from '#site/components/withNavBar';
 import WithSidebar from '#site/components/withSidebar';
-import { ReleaseModalProvider } from '#site/providers/releaseModalProvider';
 
 const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
-  <ReleaseModalProvider>
+  <>
     <WithNavBar />
 
     <Article>
@@ -25,7 +24,7 @@ const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
     </Article>
 
     <WithFooter />
-  </ReleaseModalProvider>
+  </>
 );
 
 export default AboutLayout;

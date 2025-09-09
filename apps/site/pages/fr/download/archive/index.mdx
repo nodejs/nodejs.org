@@ -1,0 +1,57 @@
+---
+title: Télécharger Node.js®
+layout: download-archive
+---
+
+<WithDownloadArchive>
+  {({ binaries, installers, version, release, sources }) => (
+    <>
+      <h1>Archive de téléchargement Node.js®</h1>
+
+      <h2 className="flex items-center gap-2">
+        <img
+          src="/static/logos/jsIconGreen.svg"
+          alt="Node.js Logo"
+          width="24"
+          height="24"
+        />
+        {version}
+        {release.codename && ` (${release.codename})`}
+      </h2>
+
+      <WithReleaseAlertBox status={release.status} />
+
+      <ReleaseOverview release={release} />
+
+      <ul className='flex list-none flex-col gap-2 p-0 text-sm'>
+
+        <li>
+           En savoir plus sur <Link href="/about/previous-releases">les versions de Node.js</Link>, y compris le calendrier de publication et le statut LTS.
+        </li>
+
+        <li>
+      <LinkWithArrow href={sources.shasum}>SHASUMS signés</LinkWithArrow> pour les fichiers de publication. Comment <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">vérifier</LinkWithArrow> les SHASUMS signés.
+        </li>
+
+        <li>
+           Téléchargez une archive tarball signée <LinkWithArrow href={sources.tarball}>Node.js {version} source</LinkWithArrow>.
+        </li>
+
+      </ul>
+
+      <h2>Autres publications</h2>
+      <WithReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
+
+      <h2>Téléchargements binaires</h2>
+      <DownloadsTable source={binaries} />
+
+      <h2>Packages d'installation</h2>
+      <DownloadsTable source={installers} />
+
+      <h2>Versions mineures</h2>
+      <MinorReleasesTable releases={release.minorVersions} />
+    </>
+
+)}
+
+</WithDownloadArchive>

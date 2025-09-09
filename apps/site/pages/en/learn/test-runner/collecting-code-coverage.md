@@ -37,8 +37,9 @@ module.exports = { add, isEven, multiply };
 ```
 
 ```cjs displayName="main.test.js"
-const { add, isEven } = require('./main.js');
 const { test } = require('node:test');
+
+const { add, isEven } = require('./main.js');
 
 test('add() should add two numbers', t => {
   t.assert.strictEqual(add(1, 2), 3);

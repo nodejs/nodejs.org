@@ -310,11 +310,12 @@ it doesn't have to be. Take this code snippet for example:
 
 ```js
 function apiCall(arg, callback) {
-  if (typeof arg !== 'string')
+  if (typeof arg !== 'string') {
     return process.nextTick(
       callback,
       new TypeError('argument should be string')
     );
+  }
 }
 ```
 
@@ -331,7 +332,7 @@ callback _after_ the rest of the user's code and _before_ the event loop
 is allowed to proceed. To achieve this, the JS call stack is allowed to
 unwind then immediately execute the provided callback which allows a
 person to make recursive calls to `process.nextTick()` without reaching a
-`RangeError: Maximum call stack size exceeded from v8`.
+`RangeError: Maximum call stack size exceeded` from v8.
 
 This philosophy can lead to some potentially problematic situations.
 Take this snippet for example:
@@ -347,7 +348,7 @@ function someAsyncApiCall(callback) {
 // the callback is called before `someAsyncApiCall` completes.
 someAsyncApiCall(() => {
   // since someAsyncApiCall hasn't completed, bar hasn't been assigned any value
-  console.log('bar', bar); // undefined
+  console.log('bar', bar); // null
 });
 
 bar = 1;

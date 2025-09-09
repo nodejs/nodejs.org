@@ -9,7 +9,7 @@ Obrigado pelo teu interesse em contribuir para o Node.js! Existem várias maneir
 
 ## Pedir Ajuda Geral
 
-Como o nível de atividade no repositório `nodejs/node` é muito alto, perguntas ou solicitações de ajuda gerais usando o Node.js devem ser direcionadas ao [repositório de ajuda do Node.js](https://github.com/nodejs/ajuda/problemas).
+Como o nível de atividade no repositório `nodejs/node` é muito alto, perguntas ou solicitações de ajuda gerais usando o Node.js devem ser direcionadas ao [repositório de ajuda do Node.js](https://github.com/nodejs/node/issues).
 
 ## Reportar um Problema
 
@@ -28,7 +28,7 @@ O projeto Node.js é atualmente administrado em vários repositórios GitHub sep
 
 ## Contribuições de código
 
-Se você quiser corrigir bugs ou adicionar uma nova funcionalidade ao Node.js, consulte as [Diretrizes de contribuição do Node.js](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-solicitações). O processo de revisão por parte dos colaboradores existentes para todas as contribuições para o projeto também é explicado lá.
+Se você quiser corrigir bugs ou adicionar uma nova funcionalidade ao Node.js, consulte as [Diretrizes de contribuição do Node.js](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). O processo de revisão por parte dos colaboradores existentes para todas as contribuições para o projeto também é explicado lá.
 
 Se estivermos em dúvida sobre como começar, podemos consultar a [NodeTodo](https://www.nodetodo.org/) que pode guiar-nos rumo a nossa primeira contribuição.
 
@@ -44,4 +44,4 @@ Ao seres um colaborador, os contribuidores podem ter ainda mais impacto no proje
 - participação em grupos de trabalhos
 - outra participação na grande comunidade do Node.js
 
-Se indivíduos que fizeram contribuições valiosas não acreditarem que foram considerados para acesso de commit, eles poderão [registrar um problema](https://github.com/nodejs/TSC/issues) ou [entrar em contato com um membro do TSC](https:// github.com/nodejs/node#tsc-technical-steering-committee) diretamente.
+Se indivíduos que fizeram contribuições valiosas não acreditarem que foram considerados para acesso de commit, eles poderão [registrar um problema](https://github.com/nodejs/TSC/issues) ou [entrar em contato com um membro do TSC](https://github.com/nodejs/node#tsc-technical-steering-committee) diretamente.

@@ -2,7 +2,6 @@
 
 import LanguageDropdown from '@node-core/ui-components/Common/LanguageDropDown';
 import Skeleton from '@node-core/ui-components/Common/Skeleton';
-import ThemeToggle from '@node-core/ui-components/Common/ThemeToggle';
 import NavBar from '@node-core/ui-components/Containers/NavBar';
 // TODO(@AvivKeller): I don't like that we are importing styles from another module
 import styles from '@node-core/ui-components/Containers/NavBar/index.module.css';
@@ -30,6 +29,16 @@ const SearchButton = dynamic(
   }
 );
 
+const ThemeToggle = dynamic(
+  () => import('@node-core/ui-components/Common/ThemeToggle'),
+  {
+    ssr: false,
+    loading: () => (
+      <Skeleton className={styles.themeToggleSkeleton} loading={true} />
+    ),
+  }
+);
+
 const WithNavBar: FC = () => {
   const { navigationItems } = useSiteNavigation();
   const { resolvedTheme, setTheme } = useTheme();
@@ -42,6 +51,11 @@ const WithNavBar: FC = () => {
   const toggleCurrentTheme = () =>
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
 
+  const themeToggleAriaLabel =
+    resolvedTheme === 'dark'
+      ? t('components.common.themeToggle.light')
+      : t('components.common.themeToggle.dark');
+
   const changeLanguage = (locale: SimpleLocaleConfig) =>
     replace(pathname!, { locale: locale.code });
 
@@ -51,9 +65,9 @@ const WithNavBar: FC = () => {
 
       <NavBar
         navItems={navigationItems.map(([, { label, link, target }]) => ({
-          link: link,
+          link,
           text: label,
-          target: target,
+          target,
         }))}
         pathname={pathname}
         as={Link}
@@ -66,7 +80,7 @@ const WithNavBar: FC = () => {
 
         <ThemeToggle
           onClick={toggleCurrentTheme}
-          aria-label={t('components.common.themeToggle.label')}
+          aria-label={themeToggleAriaLabel}
         />
 
         <LanguageDropdown

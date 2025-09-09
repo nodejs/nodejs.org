@@ -91,7 +91,9 @@ import { db } from 'db';
 export function read(key, all = false) {
   validate(key, val);
 
-  if (all) return db.getAll(key);
+  if (all) {
+    return db.getAll(key);
+  }
 
   return db.getOne(key);
 }

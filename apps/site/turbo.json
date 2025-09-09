@@ -10,7 +10,6 @@
       "env": [
         "VERCEL_ENV",
         "VERCEL_URL",
-        "VERCEL_REGION",
         "NEXT_PUBLIC_STATIC_EXPORT",
         "NEXT_PUBLIC_STATIC_EXPORT_LOCALE",
         "NEXT_PUBLIC_BASE_URL",
@@ -37,7 +36,6 @@
       "env": [
         "VERCEL_ENV",
         "VERCEL_URL",
-        "VERCEL_REGION",
         "NEXT_PUBLIC_STATIC_EXPORT",
         "NEXT_PUBLIC_STATIC_EXPORT_LOCALE",
         "NEXT_PUBLIC_BASE_URL",
@@ -57,7 +55,6 @@
       "env": [
         "VERCEL_ENV",
         "VERCEL_URL",
-        "VERCEL_REGION",
         "NEXT_PUBLIC_STATIC_EXPORT",
         "NEXT_PUBLIC_STATIC_EXPORT_LOCALE",
         "NEXT_PUBLIC_BASE_URL",
@@ -83,7 +80,6 @@
       "env": [
         "VERCEL_ENV",
         "VERCEL_URL",
-        "VERCEL_REGION",
         "NEXT_PUBLIC_STATIC_EXPORT",
         "NEXT_PUBLIC_STATIC_EXPORT_LOCALE",
         "NEXT_PUBLIC_BASE_URL",

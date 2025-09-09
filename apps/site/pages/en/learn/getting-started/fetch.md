@@ -98,7 +98,7 @@ async function streamOllamaCompletion(prompt) {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ prompt: prompt, model: 'mistral' }),
+    body: JSON.stringify({ prompt, model: 'mistral' }),
   });
 
   // You can read about HTTP status codes here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status

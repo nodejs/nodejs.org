@@ -3,9 +3,7 @@
 import Blockquote from '@node-core/ui-components/Common/Blockquote';
 import MDXCodeTabs from '@node-core/ui-components/MDX/CodeTabs';
 
-import Button from './components/Common/Button';
 import DownloadButton from './components/Downloads/DownloadButton';
-import DownloadLink from './components/Downloads/DownloadLink';
 import BlogPostLink from './components/Downloads/Release/BlogPostLink';
 import ChangelogLink from './components/Downloads/Release/ChangelogLink';
 import ReleaseDownloadLink from './components/Downloads/Release/DownloadLink';
@@ -17,9 +15,9 @@ import ReleasePrebuiltDownloadButtons from './components/Downloads/Release/Prebu
 import ReleaseCodeBox from './components/Downloads/Release/ReleaseCodeBox';
 import ReleaseVersionDropdown from './components/Downloads/Release/VersionDropdown';
 import Link from './components/Link';
-import LinkWithArrow from './components/LinkWithArrow';
 import MDXCodeBox from './components/MDX/CodeBox';
 import MDXImage from './components/MDX/Image';
+import WithReleaseSelect from './components/withReleaseSelect';
 import { ReleaseProvider } from './providers/releaseProvider';
 
 /**
@@ -30,16 +28,10 @@ import { ReleaseProvider } from './providers/releaseProvider';
 export const clientMdxComponents = {
   // Renders MDX CodeTabs
   CodeTabs: MDXCodeTabs,
-  // Renders a Button Component for `button` tags
-  Button: Button,
-  // Links with External Arrow
-  LinkWithArrow: LinkWithArrow,
-  // Regular links (without arrow)
-  Link: Link,
   // Renders a Download Button
-  DownloadButton: DownloadButton,
-  // Renders a Download Link
-  DownloadLink: DownloadLink,
+  DownloadButton,
+  // Renders a stateless Release Select Component
+  WithReleaseSelect,
   // Group of components that enable you to select versions for Node.js
   // releases and download selected versions. Uses `releaseProvider` as a provider
   Release: {
@@ -56,13 +48,13 @@ export const clientMdxComponents = {
     // Renders a drop-down menu to select an operating system
     OperatingSystemDropdown: ReleaseOperatingSystemDropdown,
     // Renders a Blog Post Link for the selected release
-    BlogPostLink: BlogPostLink,
+    BlogPostLink,
     // Renders a Download Button for the selected release
     PrebuiltDownloadButtons: ReleasePrebuiltDownloadButtons,
     // Renders a Release CodeBox
-    ReleaseCodeBox: ReleaseCodeBox,
+    ReleaseCodeBox,
     // Renders a Changelog Link Button
-    ChangelogLink: ChangelogLink,
+    ChangelogLink,
     // Renders a DownloadLink Button
     DownloadLink: ReleaseDownloadLink,
   },

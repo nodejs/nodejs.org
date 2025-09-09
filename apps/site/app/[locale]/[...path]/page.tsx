@@ -7,13 +7,17 @@
  * dynamic params, which will lead on static export errors and other sort of issues.
  */
 
-import * as basePage from '#site/app/[locale]/page';
-import {
-  ENABLE_STATIC_EXPORT_LOCALE,
-  ENABLE_STATIC_EXPORT,
-} from '#site/next.constants.mjs';
+import { notFound } from 'next/navigation';
+import type { FC } from 'react';
+
+import { ENABLE_STATIC_EXPORT } from '#site/next.constants.mjs';
+import { ENABLE_STATIC_EXPORT_LOCALE } from '#site/next.constants.mjs';
 import { dynamicRouter } from '#site/next.dynamic.mjs';
+import * as basePage from '#site/next.dynamic.page.mjs';
 import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
+import type { DynamicParams } from '#site/types';
+
+type PageParams = DynamicParams<{ path: Array<string> }>;
 
 // This is the default Viewport Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-viewport#generateviewport-function
@@ -34,14 +38,11 @@ export const generateStaticParams = async () => {
     return [];
   }
 
-  // Helper function to fetch and map routes for a specific locale
-  const getRoutesForLocale = async (locale: string) => {
-    const routes = await dynamicRouter.getRoutesByLanguage(locale);
+  const routes = await dynamicRouter.getAllRoutes();
 
-    return routes.map(pathname =>
-      dynamicRouter.mapPathToRoute(locale, pathname)
-    );
-  };
+  // Helper function to fetch and map routes for a specific locale
+  const getRoutesForLocale = async (l: string) =>
+    routes.map(pathname => dynamicRouter.mapPathToRoute(l, pathname));
 
   // Determine which locales to include in the static export
   const locales = ENABLE_STATIC_EXPORT_LOCALE
@@ -49,9 +50,37 @@ export const generateStaticParams = async () => {
     : [defaultLocale.code];
 
   // Generates all possible routes for all available locales
-  const routes = await Promise.all(locales.map(getRoutesForLocale));
+  const routesWithLocales = await Promise.all(locales.map(getRoutesForLocale));
 
-  return routes.flat().sort();
+  return routesWithLocales.flat().sort();
+};
+
+// This method parses the current pathname and does any sort of modifications needed on the route
+// then it proceeds to retrieve the Markdown file and parse the MDX Content into a React Component
+// finally it returns (if the locale and route are valid) the React Component with the relevant context
+// and attached context providers for rendering the current page
+const getPage: FC<PageParams> = async props => {
+  const { path, locale: routeLocale } = await props.params;
+
+  // Gets the current full pathname for a given path
+  const [locale, pathname] = basePage.getLocaleAndPath(path, routeLocale);
+
+  // Gets the Markdown content and context
+  const [content, context] = await basePage.getMarkdownContext({
+    locale,
+    pathname,
+  });
+
+  // If we have a filename and layout then we have a page
+  if (context.filename && context.frontmatter.layout) {
+    return basePage.renderPage({
+      content,
+      layout: context.frontmatter.layout,
+      context,
+    });
+  }
+
+  return notFound();
 };
 
 // Enforces that this route is used as static rendering
@@ -64,4 +93,4 @@ export const dynamic = 'force-static';
 // @see https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate
 export const revalidate = 300;
 
-export default basePage.default;
+export default getPage;

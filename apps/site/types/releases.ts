@@ -1,11 +1,11 @@
 export type NodeReleaseStatus =
-  | 'LTS'
-  | 'Maintenance'
+  | 'Active LTS'
+  | 'Maintenance LTS'
   | 'Current'
   | 'End-of-life'
   | 'Pending';
 
-export interface NodeReleaseSource {
+export type NodeReleaseSource = {
   major: number;
   version: string;
   codename?: string;
@@ -17,17 +17,20 @@ export interface NodeReleaseSource {
   v8: string;
   releaseDate: string;
   modules?: string;
-}
+};
 
-export interface MinorVersion {
-  version: string;
+export type MinorVersion = {
+  npm?: string;
+  modules?: string;
   releaseDate: string;
-}
+  v8: string;
+  version: string;
+  versionWithPrefix: string;
+};
 
-export interface NodeRelease extends NodeReleaseSource {
+export type NodeRelease = {
   versionWithPrefix: string;
   isLts: boolean;
   status: NodeReleaseStatus;
-  releaseAnnounceLink?: string;
   minorVersions: Array<MinorVersion>;
-}
+} & NodeReleaseSource;

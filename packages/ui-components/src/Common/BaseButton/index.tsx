@@ -9,7 +9,7 @@ export type ButtonProps = (
   | AnchorHTMLAttributes<HTMLAnchorElement>
   | ButtonHTMLAttributes<HTMLButtonElement>
 ) & {
-  kind?: 'neutral' | 'primary' | 'secondary' | 'special';
+  kind?: 'neutral' | 'primary' | 'secondary' | 'special' | 'warning' | 'info';
   size?: 'default' | 'small';
   disabled?: boolean;
   as?: LinkLike;

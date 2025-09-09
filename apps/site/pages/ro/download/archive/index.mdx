@@ -1,0 +1,57 @@
+---
+title: Descarcă Node.js®
+layout: download-archive
+---
+
+<WithDownloadArchive>
+  {({ binaries, installers, version, release, sources }) => (
+    <>
+      <h1>Arhiva de descărcări Node.js®</h1>
+
+      <h2 className="flex items-center gap-2">
+        <img
+          src="/static/logos/jsIconGreen.svg"
+          alt="Node.js Logo"
+          width="24"
+          height="24"
+        />
+        {version}
+        {release.codename && ` (${release.codename})`}
+      </h2>
+
+      <WithReleaseAlertBox status={release.status} />
+
+      <ReleaseOverview release={release} />
+
+      <ul className='flex list-none flex-col gap-2 p-0 text-sm'>
+
+        <li>
+          Află mai multe despre <Link href="/about/previous-releases">lansările Node.js</Link>, inclusiv despre programul de lansare și starea LTS.
+        </li>
+
+        <li>
+          <LinkWithArrow href={sources.shasum}>SHASUM-uri semnate</LinkWithArrow> pentru fișierele de lansare. Cum să <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">verifici</LinkWithArrow> SHASUM-urile semnate.
+        </li>
+
+        <li>
+          Descarcă un tarball semnat pentru <LinkWithArrow href={sources.tarball}>sursa Node.js {version}</LinkWithArrow> tarball.
+        </li>
+
+      </ul>
+
+      <h2>Alte lansări</h2>
+      <WithReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
+
+      <h2>Descărcări binare</h2>
+      <DownloadsTable source={binaries} />
+
+      <h2>Packete pentru instalatori</h2>
+      <DownloadsTable source={installers} />
+
+      <h2>Versiuni minore</h2>
+      <MinorReleasesTable releases={release.minorVersions} />
+    </>
+
+)}
+
+</WithDownloadArchive>

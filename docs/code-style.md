@@ -129,7 +129,9 @@ type MyComponentProps = {
 };
 
 const MyComponent: FC<MyComponentProps> = ({ title, isVisible = true }) => {
-  if (!isVisible) return null;
+  if (!isVisible) {
+    return null;
+  }
 
   return (
     <div className={styles.myComponent}>

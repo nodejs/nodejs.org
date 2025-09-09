@@ -1,0 +1,59 @@
+# Security Notes
+# This workflow uses `pull_request_target`, so will run against all PRs automatically (without approval), be careful with allowing any user-provided code to be run here
+# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
+# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
+# REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
+# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+# MERGE QUEUE NOTE: This Workflow does not run on `merge_group` trigger, as this Workflow is not required for Merge Queue's
+
+name: Sync Orama Cloud
+
+on:
+  push:
+    branches:
+      - main
+  pull_request_target:
+    branches:
+      - main
+    types:
+      - labeled
+
+permissions:
+  contents: read
+
+jobs:
+  sync-orama-cloud:
+    name: Sync Orama Cloud
+    runs-on: ubuntu-latest
+
+    # This Job should run either on non-`pull_request_target` events,
+    # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
+    # since we want to run Website Builds on all these occasions. As this allows us to be certain the that builds are passing
+    if: github.event_name != 'pull_request_target' || github.event.label.name == 'github_actions:pull-request'
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || github.ref }}
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          # We want to ensure that the Node.js version running here respects our supported versions
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Install packages
+        run: pnpm install --frozen-lockfile
+
+      - name: Sync Orama Cloud
+        working-directory: apps/site
+        run: node --run sync-orama
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORAMA_INDEX_ID: ${{ github.event_name == 'push' && secrets.ORAMA_PRODUCTION_INDEX_ID || secrets.ORAMA_INDEX_ID }}
+          ORAMA_SECRET_KEY: ${{ github.event_name == 'push' && secrets.ORAMA_PRODUCTION_SECRET_KEY || secrets.ORAMA_SECRET_KEY }}

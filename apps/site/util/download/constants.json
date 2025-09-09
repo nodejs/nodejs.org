@@ -8,7 +8,10 @@
       "platforms": [
         {
           "label": "x64",
-          "value": "x64"
+          "value": "x64",
+          "compatibility": {
+            "semver": [">= 4.0.0"]
+          }
         },
         {
           "label": "x86",
@@ -40,7 +43,7 @@
           "label": "ARM64",
           "value": "arm64",
           "compatibility": {
-            "semver": [">= 19.9.0"]
+            "semver": [">= 16.0.0"]
           }
         }
       ]
@@ -52,6 +55,13 @@
       "compatibility": {},
       "platforms": [
         {
+          "label": "x86",
+          "value": "x86",
+          "compatibility": {
+            "semver": ["< 10.0.0"]
+          }
+        },
+        {
           "label": "x64",
           "value": "x64"
         },
@@ -59,7 +69,7 @@
           "label": "ARMv7",
           "value": "armv7l",
           "compatibility": {
-            "semver": [">= 4.0.0"]
+            "semver": [">= 4.0.0", "< 24.0.0"]
           }
         },
         {
@@ -142,7 +152,7 @@
       "name": "Brew",
       "compatibility": {
         "os": ["MAC", "LINUX"],
-        "releases": ["Current", "LTS"]
+        "releases": ["Current", "Active LTS", "Maintenance LTS"]
       },
       "url": "https://brew.sh/",
       "info": "layouts.download.codeBox.platformInfo.brew"
@@ -222,5 +232,12 @@
     "platforms": ["arm64", "armv7l", "ppc64le", "ppc64", "s390x", "x64", "x86"],
     "bitness": ["64", "32"],
     "architecture": ["arm", "x86"]
-  }
+  },
+  "statusOrder": [
+    "Current",
+    "Active LTS",
+    "Maintenance LTS",
+    "End-of-life",
+    "Pending"
+  ]
 }
