@@ -147,8 +147,8 @@ main {
         dark:border-neutral-800
         dark:text-white;
 
-      > a {
-        @apply pr-2;
+      a + a {
+        @apply mr-2;
       }
     }
 
