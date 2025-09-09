@@ -203,6 +203,7 @@ main {
       td {
         @apply relative
           block
+          break-words
           border-0
           border-b
           px-0
