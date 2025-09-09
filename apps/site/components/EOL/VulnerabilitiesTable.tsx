@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
@@ -47,7 +46,7 @@ const VulnerabilitiesTable: FC<{
             <td>
               <VulnerabilityChip severity={vulnerability.severity} />
             </td>
-            <td className={classNames(maxWidth, 'truncate')}>
+            <td className={maxWidth}>
               {vulnerability.description || vulnerability.overview || '-'}
             </td>
             <td>
