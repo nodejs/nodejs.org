@@ -6,6 +6,13 @@
     flex-col
     gap-2;
 
+  /* Default item list spacing for non-progression groups */
+  .itemList {
+    @apply flex
+      flex-col
+      gap-1;
+  }
+
   &:not(.progression) {
     .groupName {
       @apply px-2
