@@ -6,7 +6,7 @@ import { SearchRoot, ChatRoot, Modal } from '@orama/ui/components';
 import { useSearchContext, useChatDispatch } from '@orama/ui/contexts';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import { useState, type FC, type PropsWithChildren } from 'react';
+import { useEffect, useState, type FC, type PropsWithChildren } from 'react';
 import '@orama/ui/styles.css';
 
 import {
@@ -129,6 +129,22 @@ const SearchWithModal: FC = () => {
   const toggleSearchBox = (): void => {
     setOpen(!open);
   };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent): void => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setOpen(open => !open);
+      }
+      if (e.key === 'Escape') {
+        setOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   return (
     <>

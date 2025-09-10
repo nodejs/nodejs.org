@@ -188,7 +188,7 @@
 }
 
 .searchResultsGroupTitle {
-  @apply mb-1
+  @apply mb-4
     mt-4
     pl-2
     text-sm
@@ -203,6 +203,8 @@
       items-center
       gap-4
       rounded-lg
+      border
+      border-transparent
       px-2
       py-3
       text-sm
@@ -210,11 +212,10 @@
       transition-colors
       duration-300
       hover:bg-neutral-300
-      focus:bg-neutral-300
-      dark:border-neutral-900
+      focus-visible:border-green-600
+      focus-visible:bg-transparent
       dark:bg-neutral-950
-      dark:hover:bg-neutral-900
-      dark:focus:bg-neutral-900;
+      dark:hover:bg-neutral-900;
   }
 
   svg {
@@ -280,6 +281,7 @@
   }
 }
 
+/* MOBILE */
 @media (max-width: 600px) {
   .shortcutWrapper {
     display: none !important;
