@@ -15,7 +15,9 @@ import {
 } from '@orama/ui/components';
 import { useSearchContext, useSearchDispatch } from '@orama/ui/contexts';
 import classNames from 'classnames';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { useTheme } from 'next-themes';
 import {
   useEffect,
   useRef,
@@ -38,6 +40,7 @@ type Group = { name: string; count: number };
 
 export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   const t = useTranslations();
+  const { resolvedTheme } = useTheme();
   const { searchTerm, selectedFacet } = useSearchContext();
   const dispatch = useSearchDispatch();
 
@@ -108,8 +111,8 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
 
         <div className={styles.searchResultsWrapper}>
           <SearchResults.Wrapper>
-            <FacetTabs.Wrapper>
-              <FacetTabs.List className="mt-4 flex gap-1 space-x-2">
+            <FacetTabs.Wrapper className={styles.facetTabsWrapper}>
+              <FacetTabs.List className={styles.facetTabsList}>
                 {(group, isSelected) => (
                   <>
                     <FacetTabs.Item
@@ -121,10 +124,8 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
                         term: searchTerm ?? '',
                       }}
                       className={classNames(
-                        'cursor-pointer rounded-lg border p-3 text-sm transition-colors duration-200 focus-visible:outline-none',
-                        isSelected
-                          ? 'border-[#84ba64] bg-[rgba(132,186,100,0.06)]'
-                          : 'border-transparent',
+                        'cursor-pointer rounded-lg p-3 text-sm transition-colors duration-200 focus-visible:outline-none',
+                        isSelected && styles.facetTabItemSelected,
                         styles.facetTabItem
                       )}
                     >
@@ -268,10 +269,11 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
               data-focus-on-arrow-nav
             >
               <small>{t('components.search.poweredBy')}</small>
-              <img
-                src="https://website-assets.oramasearch.com/orama-when-dark.svg"
+              <Image
+                src={`https://website-assets.oramasearch.com/orama-when-${resolvedTheme}.svg`}
                 alt="Powered by Orama"
                 width="62"
+                height="62"
               />
             </a>
           </div>

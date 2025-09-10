@@ -74,6 +74,7 @@
     flex-1
     flex-col
     overflow-y-auto
+    pb-4
     text-neutral-900
     dark:text-neutral-200;
 }
@@ -133,6 +134,10 @@
     dark:text-neutral-500;
 }
 
+.facetTabsWrapper {
+  @apply mb-2;
+}
+
 .facetTabItem {
   @apply flex
     cursor-pointer
@@ -150,12 +155,9 @@
 }
 
 .facetTabItemSelected {
-  @apply border-green-600
+  @apply border-2
+    border-green-600
     dark:border-green-400;
-}
-
-.facetTabsWrapper {
-  @apply mb-4;
 }
 
 .facetTabsList {
@@ -174,7 +176,8 @@
 }
 
 .searchResultsGroupTitle {
-  @apply my-2
+  @apply mb-1
+    mt-4
     pl-2
     text-sm
     font-semibold
@@ -189,7 +192,7 @@
       gap-4
       rounded-lg
       px-2
-      py-4
+      py-3
       text-sm
       outline-none
       transition-colors
