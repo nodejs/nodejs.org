@@ -8,7 +8,7 @@ import type { Vulnerability } from '#site/types/vulnerabilities';
 const VulnerabilitiesTable: FC<{
   vulnerabilities: Array<Vulnerability>;
   maxWidth?: string;
-}> = ({ vulnerabilities, maxWidth = 'max-w-2xs' }) => {
+}> = ({ vulnerabilities, maxWidth = 'md:max-w-2xs' }) => {
   const t = useTranslations();
 
   if (!vulnerabilities.length) {

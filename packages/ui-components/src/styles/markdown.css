@@ -137,7 +137,8 @@ main {
     /* Common border and text styles */
     th,
     td {
-      @apply border
+      @apply break-words
+        border
         border-r-0
         border-t-0
         border-neutral-200
@@ -203,7 +204,6 @@ main {
       td {
         @apply relative
           block
-          break-words
           border-0
           border-b
           px-0
