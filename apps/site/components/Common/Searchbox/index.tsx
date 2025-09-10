@@ -11,7 +11,7 @@ import '@orama/ui/styles.css';
 
 import {
   ORAMA_CLOUD_PROJECT_ID,
-  ORAMA_CLOUD_API_KEY,
+  ORAMA_CLOUD_READ_API_KEY,
 } from '#site/next.constants.mjs';
 
 import { SlidingChatPanel } from './Chat';
@@ -20,7 +20,7 @@ import { Search } from './Search';
 
 const orama = new OramaCloud({
   projectId: ORAMA_CLOUD_PROJECT_ID,
-  apiKey: ORAMA_CLOUD_API_KEY,
+  apiKey: ORAMA_CLOUD_READ_API_KEY,
 });
 
 const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({

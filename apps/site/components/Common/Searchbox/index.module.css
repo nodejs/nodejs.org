@@ -1,12 +1,5 @@
 @reference "../../../styles/index.css";
 
-/* .searchWrapper {
-  @apply relative
-    flex
-    w-full
-    flex-shrink-0;
-} */
-
 .searchButton {
   @apply flex
     grow
@@ -64,23 +57,26 @@
     left-0
     top-0
     z-50
+    mx-auto
+    my-0
     flex
     h-full
     w-full
+    items-start
+    justify-center
     bg-white/70
+    pt-[5vh]
     dark:bg-neutral-950/85;
-
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 5vh;
 }
 
 .mobileOnly {
-  display: none;
+  @apply hidden;
 }
 
 .modalInner {
-  @apply flex
+  @apply mx-auto
+    my-0
+    flex
     flex-col
     bg-neutral-100
     dark:bg-neutral-950;
@@ -92,7 +88,6 @@
 
   /* Desktop styles */
   @media (min-width: 640px) {
-    border: 1px solid rgb(229 229 229);
     border-radius: 12px;
     height: auto;
     max-height: none;
@@ -101,10 +96,6 @@
     padding: 0;
     position: static;
     width: 80%;
-  }
-
-  @media (min-width: 640px) and (prefers-color-scheme: dark) {
-    border-color: rgb(38 38 38);
   }
 }
 
@@ -116,7 +107,11 @@
 
 .modalContent {
   @apply flex
-    flex-col;
+    flex-col
+    rounded-xl
+    border
+    border-neutral-200
+    dark:border-neutral-900;
 
   /* Mobile full height */
   height: 100%;

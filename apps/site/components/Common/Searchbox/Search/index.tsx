@@ -7,7 +7,6 @@ import {
   ArrowDownIcon,
   ArrowUpIcon,
 } from '@heroicons/react/24/solid';
-import type { Hit, SearchParams } from '@orama/core';
 import {
   SearchInput,
   FacetTabs,
@@ -18,8 +17,6 @@ import { useSearchContext, useSearchDispatch } from '@orama/ui/contexts';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import {
-  useMemo,
-  useState,
   useEffect,
   useRef,
   useCallback,
@@ -27,10 +24,7 @@ import {
   type PropsWithChildren,
 } from 'react';
 
-import {
-  DEFAULT_ORAMA_QUERY_PARAMS,
-  ORAMA_CLOUD_DATASOURCE_ID,
-} from '#site/next.constants.mjs';
+import { DEFAULT_ORAMA_QUERY_PARAMS } from '#site/next.constants.mjs';
 
 import { DocumentLink } from '../DocumentLink';
 import styles from './index.module.css';
@@ -40,28 +34,12 @@ type SearchProps = PropsWithChildren<{
   onChatTrigger: () => void;
 }>;
 
-type CloudSearchResponse = {
-  hits?: Array<Hit>;
-  count?: number;
-  facets?: { siteSection?: { values?: Record<string, number> } };
-  aggregations?: { siteSection?: { values?: Record<string, number> } };
-};
-
 type Group = { name: string; count: number };
 
 export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   const t = useTranslations();
-  const { client, searchTerm, groupsCount, results, selectedFacet } =
-    useSearchContext();
+  const { searchTerm, selectedFacet } = useSearchContext();
   const dispatch = useSearchDispatch();
-
-  const [facetsEverShown, setFacetsEverShown] = useState<boolean>(false);
-
-  const defaultFacetsRef = useRef<Record<string, unknown>>(
-    DEFAULT_ORAMA_QUERY_PARAMS.facets
-  );
-
-  const dataSourcesRef = useRef<Array<string>>([ORAMA_CLOUD_DATASOURCE_ID]);
 
   const lastIssuedSigRef = useRef<string>('');
 
@@ -89,168 +67,6 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
     baselineGroupsRef.current = null;
   }, [searchTerm]);
 
-  useEffect(() => {
-    if (!client) return;
-
-    const term = searchTerm ?? '';
-    const facet = selectedFacet ?? null;
-
-    if (term.trim() === '') return;
-
-    const sig = `${term}|||${facet ?? ''}`;
-    if (lastIssuedSigRef.current === sig) return;
-    lastIssuedSigRef.current = sig;
-
-    const id = window.setTimeout(async () => {
-      const where: SearchParams['where'] | undefined =
-        facet && facet !== 'All' ? { siteSection: facet } : undefined;
-
-      const params = {
-        term: term,
-        facets: defaultFacetsRef.current,
-        datasources: dataSourcesRef.current,
-        ...(where ? { where } : {}),
-      };
-
-      const raw = await client.search(params);
-      const res = raw as unknown as CloudSearchResponse;
-
-      dispatch({
-        type: 'SET_RESULTS',
-        payload: { results: res.hits ?? [] },
-      });
-      dispatch({
-        type: 'SET_COUNT',
-        payload: { count: res.count ?? 0 },
-      });
-
-      const siteFacetValues: Record<string, number> | undefined =
-        res.facets?.siteSection?.values ??
-        res.aggregations?.siteSection?.values;
-
-      if (siteFacetValues) {
-        const entries = Object.entries(siteFacetValues);
-        const derivedGroups: Array<Group> = [
-          { name: 'All', count: res.count ?? 0 },
-          ...entries
-            .map(([name, c]) => {
-              const count = Number(c);
-              return { name, count };
-            })
-            .sort((a, b) => a.name.localeCompare(b.name)),
-        ];
-
-        if (!facet || facet === 'All') {
-          baselineGroupsRef.current = derivedGroups;
-          dispatch({
-            type: 'SET_GROUPS_COUNT',
-            payload: { groupsCount: derivedGroups },
-          });
-        } else {
-          const toShow = baselineGroupsRef.current ?? derivedGroups;
-          dispatch({
-            type: 'SET_GROUPS_COUNT',
-            payload: { groupsCount: toShow },
-          });
-        }
-      } else {
-        if (facet && facet !== 'All' && baselineGroupsRef.current) {
-          dispatch({
-            type: 'SET_GROUPS_COUNT',
-            payload: { groupsCount: baselineGroupsRef.current },
-          });
-        }
-      }
-    }, 120);
-
-    return () => window.clearTimeout(id);
-  }, [client, searchTerm, selectedFacet, dispatch]);
-
-  const generatedGroupsCount = useMemo(() => {
-    if (!results || results.length === 0) {
-      return groupsCount || [];
-    }
-
-    const sectionCounts = new Map<string, number>();
-    let totalCount = 0;
-
-    results.forEach(result => {
-      const siteSection = result.document?.siteSection;
-      if (siteSection && typeof siteSection === 'string') {
-        sectionCounts.set(
-          siteSection,
-          (sectionCounts.get(siteSection) || 0) + 1
-        );
-        totalCount += 1;
-      }
-    });
-
-    const groups: Array<Group> = [{ name: 'All', count: totalCount }];
-
-    Array.from(sectionCounts.entries())
-      .sort(([a], [b]) => a.localeCompare(b))
-      .forEach(([siteSection, count]) => {
-        groups.push({ name: siteSection, count: count });
-      });
-
-    return groups;
-  }, [results, groupsCount]);
-
-  const [allKnownFacets, setAllKnownFacets] = useState<Set<string>>(new Set());
-
-  const displayFacetsList = useMemo(() => {
-    if (!facetsEverShown) return generatedGroupsCount;
-
-    const currentCounts = new Map<string, number>();
-    let totalCount = 0;
-
-    generatedGroupsCount.forEach((group: { name: string; count: number }) => {
-      currentCounts.set(group.name, group.count);
-      if (group.name !== 'All') {
-        totalCount += group.count;
-      } else {
-        totalCount = group.count;
-      }
-    });
-
-    const displayList: Array<{ name: string; count: number }> = [
-      { name: 'All', count: totalCount },
-    ];
-
-    Array.from(allKnownFacets)
-      .filter(facetName => facetName !== 'All')
-      .sort()
-      .forEach(facetName => {
-        displayList.push({
-          name: facetName,
-          count: currentCounts.get(facetName) ?? 0,
-        });
-      });
-
-    return displayList;
-  }, [generatedGroupsCount, allKnownFacets, facetsEverShown]);
-
-  useEffect(() => {
-    if (generatedGroupsCount.length > 1) {
-      setFacetsEverShown(true);
-
-      const newKnownFacets = new Set(allKnownFacets);
-      generatedGroupsCount.forEach((group: { name: string }) => {
-        newKnownFacets.add(group.name);
-      });
-
-      if (newKnownFacets.size > allKnownFacets.size) {
-        setAllKnownFacets(newKnownFacets);
-      }
-    }
-  }, [generatedGroupsCount, allKnownFacets]);
-
-  useEffect(() => {
-    if (searchTerm) {
-      setAllKnownFacets(new Set());
-    }
-  }, [searchTerm]);
-
   return (
     <>
       <SearchInput.Wrapper className={styles.searchInputWrapper}>
@@ -260,6 +76,15 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
           ariaLabel={t('components.search.searchPlaceholder')}
           placeholder={t('components.search.searchPlaceholder')}
           className={styles.searchInput}
+          searchParams={{
+            ...DEFAULT_ORAMA_QUERY_PARAMS,
+            groupBy: {
+              properties: ['siteSection'],
+            },
+            facets: {
+              siteSection: {},
+            },
+          }}
         />
       </SearchInput.Wrapper>
 
@@ -283,42 +108,32 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
 
         <div className={styles.searchResultsWrapper}>
           <SearchResults.Wrapper>
-            {facetsEverShown && displayFacetsList.length > 1 && (
-              <div className={styles.facetTabsWrapper}>
-                <ul
-                  className={classNames(
-                    styles.facetTabsList,
-                    'flex gap-1 space-x-2'
-                  )}
-                >
-                  <FacetTabs.Wrapper>
-                    <FacetTabs.List className="mt-4 flex gap-1 space-x-2">
-                      {(group, isSelected) => (
-                        <FacetTabs.Item
-                          isSelected={isSelected}
-                          group={group}
-                          filterBy="siteSection"
-                          searchParams={{
-                            ...DEFAULT_ORAMA_QUERY_PARAMS,
-                            term: searchTerm ?? '',
-                            facets: defaultFacetsRef.current,
-                          }}
-                          className={classNames(
-                            'cursor-pointer rounded-lg border p-3 text-sm transition-colors duration-200 focus-visible:outline-none',
-                            isSelected
-                              ? 'border-[#84ba64] bg-[rgba(132,186,100,0.06)]'
-                              : 'border-transparent',
-                            styles.facetTabItem
-                          )}
-                        >
-                          {group.name}({group.count})
-                        </FacetTabs.Item>
+            <FacetTabs.Wrapper>
+              <FacetTabs.List className="mt-4 flex gap-1 space-x-2">
+                {(group, isSelected) => (
+                  <>
+                    <FacetTabs.Item
+                      isSelected={group.name === selectedFacet}
+                      group={group}
+                      filterBy="siteSection"
+                      searchParams={{
+                        ...DEFAULT_ORAMA_QUERY_PARAMS,
+                        term: searchTerm ?? '',
+                      }}
+                      className={classNames(
+                        'cursor-pointer rounded-lg border p-3 text-sm transition-colors duration-200 focus-visible:outline-none',
+                        isSelected
+                          ? 'border-[#84ba64] bg-[rgba(132,186,100,0.06)]'
+                          : 'border-transparent',
+                        styles.facetTabItem
                       )}
-                    </FacetTabs.List>
-                  </FacetTabs.Wrapper>
-                </ul>
-              </div>
-            )}
+                    >
+                      {group.name}({group.count})
+                    </FacetTabs.Item>
+                  </>
+                )}
+              </FacetTabs.List>
+            </FacetTabs.Wrapper>
 
             <SearchResults.NoResults>
               {term => (
@@ -367,7 +182,6 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
             >
               {group => (
                 <div key={group.name} className={styles.searchResultsGroup}>
-                  {/* header without counts */}
                   <h2 className={styles.searchResultsGroupTitle}>
                     {group.name}
                   </h2>

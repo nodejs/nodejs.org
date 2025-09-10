@@ -128,9 +128,9 @@ export const DEFAULT_ORAMA_QUERY_PARAMS = {
     pageSectionContent: 2.5,
     pageTitle: 1.5,
   },
-  facets: {
-    siteSection: {},
-  },
+  // facets: {
+  //   siteSection: {},
+  // },
 };
 
 /**
@@ -158,8 +158,9 @@ export const ORAMA_CLOUD_ENDPOINT =
  * The default Orama Cloud API Key to use when searching with Orama Cloud.
  * This is a public API key and can be shared publicly on the frontend.
  */
-export const ORAMA_CLOUD_API_KEY =
-  process.env.NEXT_PUBLIC_ORAMA_API_KEY || 'qopIuAERiWP2EZOpDjvczjws7WV40yrj';
+export const ORAMA_CLOUD_READ_API_KEY =
+  process.env.NEXT_PUBLIC_ORAMA_PUBLIC_API_KEY ||
+  'qopIuAERiWP2EZOpDjvczjws7WV40yrj';
 
 /**
  * The default Orama Cloud Datasource ID to use when searching with Orama Cloud.
@@ -171,7 +172,7 @@ export const ORAMA_CLOUD_DATASOURCE_ID =
  * The default Orama Cloud Project ID to use when initializing Orama Cloud.
  */
 export const ORAMA_CLOUD_PROJECT_ID =
-  process.env.NEXT_PUBLIC_ORAMA_PROJECT_ID || '';
+  process.env.NEXT_PUBLIC_ORAMA_PUBLIC_PROJECT_ID || '';
 
 /**
  * A GitHub Access Token for accessing the GitHub API and not being rate-limited
