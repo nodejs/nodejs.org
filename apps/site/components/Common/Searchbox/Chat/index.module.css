@@ -1,79 +1,80 @@
-@reference "../../../styles/index.css";
+@reference "../../../../styles/index.css";
 
 .slidingPanelCloseButton {
-  @apply absolute;
-  @apply right-6;
-  @apply top-6;
-  @apply z-20;
-  @apply cursor-pointer;
-  @apply rounded-full;
-  @apply bg-white/10;
-  @apply p-2;
-  @apply text-white;
-  @apply transition-colors;
-  @apply duration-300;
-  @apply hover:bg-white/20;
-  @apply focus:bg-white/20;
-  @apply focus:outline-none;
+  @apply absolute
+    right-6
+    top-6
+    z-20
+    cursor-pointer
+    rounded-full
+    bg-white/10
+    p-2
+    text-white
+    transition-colors
+    duration-300
+    hover:bg-white/20
+    focus:bg-white/20
+    focus:outline-none;
 
   svg {
-    @apply h-6;
-    @apply w-6;
+    @apply h-6
+      w-6;
   }
 }
 
 .slidingPanelContentWrapper {
-  @apply fixed,
-    bottom-0,
-    left-0,
-    z-[10019],
-    box-border,
-    h-[95vh],
-    w-full,
-    overflow-hidden,
-    p-0,
-    !bg-neutral-950,
-    !border,
-    !border-neutral-700,
-    !text-white;
+  @apply fixed
+    bottom-0
+    left-0
+    z-[10019]
+    box-border
+    h-[95vh]
+    w-full
+    overflow-hidden
+    border
+    border-neutral-700
+    bg-black
+    bg-neutral-950
+    p-0
+    text-white;
 
-  border-radius: var(--radius-m, calc(12rem / var(--orama-base-font-size, 16)))
+  /* border-radius: var(--radius-m calc(12rem / var(--orama-base-font-size, 16)))
     var(--radius-m, calc(12rem / var(--orama-base-font-size, 16))) 0 0;
-  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .slidingPanelContent {
-  @apply h-[90vh];
-  @apply max-w-[100vw];
-  @apply overflow-hidden;
-  @apply rounded-xl;
-  @apply p-4;
-  @apply shadow-lg;
+  @apply h-[90vh]
+    max-w-[100vw]
+    overflow-hidden
+    rounded-xl
+    p-4
+    shadow-lg;
 }
 
 .slidingPanelInner {
-  @apply mx-auto;
-  @apply flex;
-  @apply h-full;
-  @apply max-w-4xl;
-  @apply flex-col;
-  @apply justify-between;
+  @apply mx-auto
+    flex
+    h-full
+    max-w-4xl
+    flex-col
+    justify-between;
 }
 
 .slidingPanelTop {
-  @apply flex;
-  @apply min-h-0;
-  @apply flex-1;
-  @apply flex-col;
-  @apply pb-6;
+  @apply flex
+    min-h-0
+    flex-1
+    flex-col
+    pb-6;
 }
 
 .chatInteractionsWrapper {
-  @apply relative;
-  @apply h-full;
-  @apply items-start;
-  @apply overflow-y-auto;
-  @apply px-8;
+  @apply relative
+    h-full
+    items-start
+    overflow-y-auto
+    px-8;
 }
 
 .chatInteractionsWrapper::-webkit-scrollbar {
@@ -94,56 +95,56 @@
 }
 
 .slidingPanelBottom {
-  @apply relative;
-  @apply flex-shrink-0;
+  @apply relative
+    flex-shrink-0;
 }
 
 .chatUserPrompt {
-  @apply mb-6;
-  @apply flex;
-  @apply justify-end;
+  @apply mb-6
+    flex
+    justify-end;
 
   p {
-    @apply max-w-2xl;
-    @apply rounded-xl;
-    @apply bg-white;
-    @apply px-4;
-    @apply py-3;
-    @apply text-black;
+    @apply max-w-2xl
+      rounded-xl
+      bg-white
+      px-4
+      py-3
+      text-black;
   }
 }
 
 .chatLoader {
-  @apply mb-6;
-  @apply flex;
-  @apply items-center;
-  @apply space-x-2;
-  @apply text-white;
+  @apply mb-6
+    flex
+    items-center
+    space-x-2
+    text-white;
 
   span {
-    @apply h-2;
-    @apply w-2;
-    @apply animate-pulse;
-    @apply rounded-full;
-    @apply bg-white;
+    @apply h-2
+      w-2
+      animate-pulse
+      rounded-full
+      bg-white;
   }
 
   p {
-    @apply text-sm;
-    @apply text-white/70;
+    @apply text-sm
+      text-white/70;
   }
 }
 
 .chatAssistantMessageWrapper {
-  @apply mb-6;
-  @apply w-full;
+  @apply mb-6
+    w-full;
 }
 
 .chatAssistantMessage {
-  @apply prose;
-  @apply prose-invert;
-  @apply max-w-none;
-  @apply text-white;
+  @apply prose
+    prose-invert
+    max-w-none
+    text-white;
 
   p {
     color: white;
@@ -151,36 +152,36 @@
   }
 
   a {
-    @apply text-blue-400;
-    @apply hover:text-blue-300;
+    @apply text-blue-400
+      hover:text-blue-300;
   }
 
   code {
-    @apply rounded;
-    @apply bg-white/10;
-    @apply px-1;
-    @apply py-0.5;
-    @apply text-sm;
-    @apply text-white;
+    @apply rounded
+      bg-white/10
+      px-1
+      py-0.5
+      text-sm
+      text-white;
   }
 
   pre {
-    @apply rounded-lg;
-    @apply bg-gray-900;
-    @apply p-4;
+    @apply rounded-lg
+      bg-gray-900
+      p-4;
 
     code {
-      @apply bg-transparent;
-      @apply p-0;
+      @apply bg-transparent
+        p-0;
     }
   }
 }
 
 .chatSources {
-  @apply mb-4;
-  @apply flex;
-  @apply flex-wrap;
-  @apply gap-2;
+  @apply mb-4
+    flex
+    flex-wrap
+    gap-2;
 }
 
 .chatSource {
@@ -188,59 +189,59 @@
 }
 
 .chatSourceLink {
-  @apply rounded-xl;
-  @apply bg-neutral-100;
-  @apply px-4;
-  @apply py-2;
-  @apply text-neutral-900;
-  @apply transition-colors;
-  @apply duration-300;
-  @apply hover:bg-neutral-200;
-  @apply focus:bg-neutral-200;
-  @apply dark:bg-neutral-950;
-  @apply dark:text-neutral-200;
-  @apply hover:dark:bg-neutral-900;
-  @apply focus:dark:bg-neutral-900;
+  @apply rounded-xl
+    bg-neutral-100
+    px-4
+    py-2
+    text-neutral-900
+    transition-colors
+    duration-300
+    hover:bg-neutral-200
+    focus:bg-neutral-200
+    dark:bg-neutral-950
+    dark:text-neutral-200
+    hover:dark:bg-neutral-900
+    focus:dark:bg-neutral-900;
 }
 
 .chatSourceTitle {
-  @apply max-w-full;
-  @apply overflow-hidden;
-  @apply truncate;
-  @apply text-ellipsis;
-  @apply whitespace-nowrap;
-  @apply text-sm;
-  @apply font-semibold;
+  @apply max-w-full
+    overflow-hidden
+    truncate
+    text-ellipsis
+    whitespace-nowrap
+    text-sm
+    font-semibold;
 }
 
 .chatActionsContainer {
-  @apply mb-4;
-  @apply flex;
-  @apply justify-end;
+  @apply mb-4
+    flex
+    justify-end;
 }
 
 .chatActionsList {
-  @apply flex;
-  @apply space-x-2;
+  @apply flex
+    space-x-2;
 }
 
 .chatAction {
-  @apply flex;
-  @apply h-8;
-  @apply w-8;
-  @apply items-center;
-  @apply justify-center;
-  @apply rounded-full;
-  @apply bg-white/10;
-  @apply text-white;
-  @apply transition-colors;
-  @apply duration-300;
-  @apply hover:bg-white/20;
-  @apply focus:bg-white/20;
+  @apply flex
+    h-8
+    w-8
+    items-center
+    justify-center
+    rounded-full
+    bg-white/10
+    text-white
+    transition-colors
+    duration-300
+    hover:bg-white/20
+    focus:bg-white/20;
 
   svg {
-    @apply h-4;
-    @apply w-4;
+    @apply h-4
+      w-4;
   }
 }
 
@@ -249,42 +250,42 @@
 }
 
 .promptWrapperCustom {
-  @apply relative;
-  @apply flex-shrink-0;
+  @apply relative
+    flex-shrink-0;
 }
 
 .promptFieldCustom {
-  @apply w-full;
-  @apply resize-none;
-  @apply border-0;
-  @apply bg-transparent;
-  @apply px-0;
-  @apply py-0;
-  @apply text-white;
-  @apply placeholder:text-neutral-400;
-  @apply focus:outline-none;
+  @apply w-full
+    resize-none
+    border-0
+    bg-transparent
+    px-0
+    py-0
+    text-white
+    placeholder:text-neutral-400
+    focus:outline-none;
 }
 
 .promptButtonCustom {
-  @apply absolute;
-  @apply right-3;
-  @apply top-1/2;
-  @apply -translate-y-1/2;
-  @apply cursor-pointer;
-  @apply rounded-lg;
-  @apply bg-green-600;
-  @apply p-2;
-  @apply text-white;
-  @apply transition-colors;
-  @apply duration-300;
-  @apply hover:bg-green-500;
-  @apply disabled:cursor-not-allowed;
-  @apply disabled:bg-neutral-600;
-  @apply disabled:text-neutral-400;
+  @apply absolute
+    right-3
+    top-1/2
+    -translate-y-1/2
+    cursor-pointer
+    rounded-lg
+    bg-green-600
+    p-2
+    text-white
+    transition-colors
+    duration-300
+    hover:bg-green-500
+    disabled:cursor-not-allowed
+    disabled:bg-neutral-600
+    disabled:text-neutral-400;
 
   svg {
-    @apply h-4;
-    @apply w-4;
+    @apply h-4
+      w-4;
   }
 }
 
@@ -306,40 +307,40 @@
 }
 
 .scrollDownButton {
-  @apply absolute;
-  @apply -top-12;
-  @apply right-4;
-  @apply flex;
-  @apply h-8;
-  @apply w-8;
-  @apply items-center;
-  @apply justify-center;
-  @apply rounded-full;
-  @apply bg-white/10;
-  @apply text-white;
-  @apply transition-colors;
-  @apply duration-300;
-  @apply hover:bg-white/20;
-  @apply focus:bg-white/20;
-  @apply focus:outline-none;
+  @apply absolute
+    -top-12
+    right-4
+    flex
+    h-8
+    w-8
+    items-center
+    justify-center
+    rounded-full
+    bg-white/10
+    text-white
+    transition-colors
+    duration-300
+    hover:bg-white/20
+    focus:bg-white/20
+    focus:outline-none;
 
   svg {
-    @apply h-4;
-    @apply w-4;
+    @apply h-4
+      w-4;
   }
 }
 
 .chatCustomPanel {
-  background-color: rgb(13 18 28);
-  border-radius: 0.75rem;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  width: auto;
+  @apply bg-red-500;
 }
 
 .chatDesktopContainer {
-  max-width: 52.5rem;
-  width: 80%;
+  @apply mx-auto
+    my-8
+    hidden
+    max-w-xl
+    px-4
+    md:block;
 }
 
 .chatContentWrapper {

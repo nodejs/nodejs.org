@@ -6,11 +6,11 @@ import { ChatInteractions, SlidingPanel } from '@orama/ui/components';
 import { useChatDispatch } from '@orama/ui/contexts';
 import { useScrollableContainer } from '@orama/ui/hooks/useScrollableContainer';
 import { useTranslations } from 'next-intl';
-import type { FC, PropsWithChildren } from 'react';
 import { useEffect } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
-import { ChatInput } from './ChatInput';
-import { ChatMessage } from './ChatMessage';
+import { ChatInput } from './../Chat/ChatInput';
+import { ChatMessage } from './../Chat/ChatMessage';
 import styles from './index.module.css';
 
 type SlidingChatPanelProps = PropsWithChildren<{
@@ -63,16 +63,11 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
 
   return (
     <>
-      <p className={styles.myClass}>PIPPO</p>
-      <SlidingPanel.Wrapper
-        open={open}
-        onClose={onClose}
-        className={styles.myClass}
-      >
+      <SlidingPanel.Wrapper open={open} onClose={onClose}>
         <SlidingPanel.Backdrop />
         <SlidingPanel.Content
           position="bottom"
-          className={`h-[95vh] w-full bg-black duration-300 ease-in-out`}
+          className={styles.slidingPanelContentWrapper}
         >
           <SlidingPanel.Close
             className={styles.slidingPanelCloseButton}
@@ -80,9 +75,7 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
           >
             <XMarkIcon />
           </SlidingPanel.Close>
-          <div
-            className={`${styles.chatCustomPanel} ${styles.chatMobileContainer} ${styles.chatDesktopContainer} flex h-full flex-col py-4`}
-          >
+          <div className={styles.slidingPanelInner}>
             <div className="flex min-h-0 flex-1 flex-col pb-6">
               <ChatInteractions.Wrapper
                 ref={containerRef}

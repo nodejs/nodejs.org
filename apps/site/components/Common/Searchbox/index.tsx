@@ -14,14 +14,48 @@ import {
   ORAMA_CLOUD_READ_API_KEY,
 } from '#site/next.constants.mjs';
 
-import { SlidingChatPanel } from './Chat';
 import styles from './index.module.css';
 import { Search } from './Search';
+import { SlidingChatPanel } from './SlidingChatPanel';
 
 const orama = new OramaCloud({
   projectId: ORAMA_CLOUD_PROJECT_ID,
   apiKey: ORAMA_CLOUD_READ_API_KEY,
 });
+
+const MobileTopBar: FC<{
+  isChatOpen: boolean;
+  onClose: () => void;
+  onSelect: (mode: 'search' | 'chat') => void;
+}> = ({ isChatOpen, onClose, onSelect }) => (
+  <div className={styles.mobileTopBar}>
+    <button
+      className={styles.mobileTopBarArrow}
+      onClick={onClose}
+      aria-label="Close"
+    >
+      <ArrowLeftIcon className="h-6 w-6 text-white" />
+    </button>
+    <div className={styles.mobileTopBarTabs}>
+      <button
+        className={classNames(styles.mobileTopBarTab, {
+          [styles.active]: !isChatOpen,
+        })}
+        onClick={() => onSelect('search')}
+      >
+        Search
+      </button>
+      <button
+        className={classNames(styles.mobileTopBarTab, {
+          [styles.active]: isChatOpen,
+        })}
+        onClick={() => onSelect('chat')}
+      >
+        Ask AI
+      </button>
+    </div>
+  </div>
+);
 
 const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
   onClose,
@@ -50,40 +84,6 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
     }, 1000);
   };
 
-  const MobileTopBar: FC<{
-    isChatOpen: boolean;
-    onClose: () => void;
-    onSelect: (mode: 'search' | 'chat') => void;
-  }> = ({ isChatOpen, onClose, onSelect }) => (
-    <div className={styles.mobileTopBar}>
-      <button
-        className={styles.mobileTopBarArrow}
-        onClick={onClose}
-        aria-label="Close"
-      >
-        <ArrowLeftIcon className="h-6 w-6 text-white" />
-      </button>
-      <div className={styles.mobileTopBarTabs}>
-        <button
-          className={classNames(styles.mobileTopBarTab, {
-            [styles.active]: !isChatOpen,
-          })}
-          onClick={() => onSelect('search')}
-        >
-          Search
-        </button>
-        <button
-          className={classNames(styles.mobileTopBarTab, {
-            [styles.active]: isChatOpen,
-          })}
-          onClick={() => onSelect('chat')}
-        >
-          Ask AI
-        </button>
-      </div>
-    </div>
-  );
-
   return (
     <>
       {/* Only show on mobile */}
@@ -94,29 +94,23 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
           onSelect={handleSelectMode}
         />
       </div>
-      {mode === 'search' && (
-        <Search
-          onChatTrigger={() => {
-            setAutoTriggerValue(searchTerm ?? null);
-            handleSelectMode('chat');
-          }}
-        />
-      )}
-      {mode === 'chat' && (
-        <>
-          <SlidingChatPanel
-            open={isChatOpen}
-            onClose={() => {
-              setIsChatOpen(false);
-              setMode('search');
-              dispatch({ type: 'CLEAR_INTERACTIONS' });
-              dispatch({ type: 'CLEAR_USER_PROMPT' });
-            }}
-            autoTriggerQuery={shouldAutoTrigger ? autoTriggerValue : null}
-            onAutoTriggerComplete={handleChatOpened}
-          />
-        </>
-      )}
+      <Search
+        onChatTrigger={() => {
+          setAutoTriggerValue(searchTerm ?? null);
+          handleSelectMode('chat');
+        }}
+      />
+      <SlidingChatPanel
+        open={isChatOpen}
+        onClose={() => {
+          setIsChatOpen(false);
+          setMode('search');
+          dispatch({ type: 'CLEAR_INTERACTIONS' });
+          dispatch({ type: 'CLEAR_USER_PROMPT' });
+        }}
+        autoTriggerQuery={shouldAutoTrigger ? autoTriggerValue : null}
+        onAutoTriggerComplete={handleChatOpened}
+      />
     </>
   );
 };

@@ -12,31 +12,24 @@ import {
   FacetTabs,
   SearchResults,
   Suggestions,
+  SlidingPanel,
 } from '@orama/ui/components';
 import { useSearchContext, useSearchDispatch } from '@orama/ui/contexts';
 import classNames from 'classnames';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
-import {
-  useEffect,
-  useRef,
-  useCallback,
-  type FC,
-  type PropsWithChildren,
-} from 'react';
+import { useEffect, useCallback, type FC, type PropsWithChildren } from 'react';
 
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '#site/next.constants.mjs';
 
-import { DocumentLink } from '../DocumentLink';
 import styles from './index.module.css';
 import { getFormattedPath } from './utils';
+import { DocumentLink } from '../Chat/DocumentLink';
 
 type SearchProps = PropsWithChildren<{
   onChatTrigger: () => void;
 }>;
-
-type Group = { name: string; count: number };
 
 export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   const t = useTranslations();
@@ -44,14 +37,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   const { searchTerm, selectedFacet } = useSearchContext();
   const dispatch = useSearchDispatch();
 
-  const lastIssuedSigRef = useRef<string>('');
-
-  const baselineGroupsRef = useRef<Array<Group> | null>(null);
-
   const clearAll = useCallback(() => {
-    lastIssuedSigRef.current = '';
-    baselineGroupsRef.current = null;
-
     dispatch({ type: 'SET_SEARCH_TERM', payload: { searchTerm: '' } });
     dispatch({ type: 'SET_SELECTED_FACET', payload: { selectedFacet: 'All' } });
     dispatch({ type: 'SET_RESULTS', payload: { results: [] } });
@@ -65,10 +51,6 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
       clearAll();
     };
   }, [clearAll]);
-
-  useEffect(() => {
-    baselineGroupsRef.current = null;
-  }, [searchTerm]);
 
   return (
     <>
@@ -93,12 +75,12 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
 
       <div className={styles.searchPanelContainer}>
         <div className={styles.chatButtonWrapper}>
-          <button
-            type="button"
+          <SlidingPanel.Trigger
             onClick={onChatTrigger}
             className={classNames(styles.chatButton, {
               [styles.chatButtonWithSearch]: searchTerm,
             })}
+            initialPrompt={searchTerm || undefined}
             data-focus-on-arrow-nav
           >
             <SparklesIcon />
@@ -106,7 +88,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
               {searchTerm ? `${searchTerm} - ` : ''}
               {t('components.search.chatButtonLabel')}
             </span>
-          </button>
+          </SlidingPanel.Trigger>
         </div>
 
         <div className={styles.searchResultsWrapper}>
@@ -128,7 +110,10 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
                         styles.facetTabItem
                       )}
                     >
-                      {group.name}({group.count})
+                      {group.name}
+                      <span className={styles.facetTabItemCount}>
+                        ({group.count})
+                      </span>
                     </FacetTabs.Item>
                   </>
                 )}
