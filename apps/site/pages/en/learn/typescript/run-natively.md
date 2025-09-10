@@ -45,8 +45,6 @@ enum MyEnum {
 console.log(MyEnum.A);
 ```
 
-Future versions of Node.js will include support for TypeScript without the need for a command line flag.
-
 ## Limitations
 
 At the time of writing, the experimental support for TypeScript in Node.js has some limitations.
