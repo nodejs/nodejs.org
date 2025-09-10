@@ -208,9 +208,9 @@ const getDynamicRouter = async () => {
       ? `${siteConfig.title} — ${data.title}`
       : siteConfig.title;
 
-    if (data.description) {
-      pageMetadata.description = data.description;
-    }
+    pageMetadata.description = data.description
+      ? data.description
+      : siteConfig.description;
 
     // Default Twitter Title for the page
     pageMetadata.twitter.title = pageMetadata.title;
