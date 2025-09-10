@@ -124,7 +124,6 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
                         term: searchTerm ?? '',
                       }}
                       className={classNames(
-                        'cursor-pointer rounded-lg p-3 text-sm transition-colors duration-200 focus-visible:outline-none',
                         isSelected && styles.facetTabItemSelected,
                         styles.facetTabItem
                       )}
@@ -266,7 +265,6 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.poweredByLink}
-              data-focus-on-arrow-nav
             >
               <small>{t('components.search.poweredBy')}</small>
               <Image
