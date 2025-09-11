@@ -65,7 +65,7 @@
   @apply flex
     w-full
     flex-wrap
-    gap-3;
+    gap-6;
 
   > div {
     @apply w-full;

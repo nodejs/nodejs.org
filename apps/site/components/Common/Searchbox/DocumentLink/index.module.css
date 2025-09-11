@@ -1,3 +1,5 @@
+@reference "../../../../styles/index.css";
+
 .documentLink {
   @apply rounded-xl,
     bg-neutral-100,

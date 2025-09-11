@@ -16,6 +16,22 @@
     rounded-xl
     bg-neutral-100
     p-3
+    empty:hidden
     dark:bg-neutral-950
     dark:text-neutral-300;
+}
+
+.typingIndicator {
+  @apply flex
+    items-center
+    gap-1;
+}
+
+.typingDot {
+  @apply h-1
+    w-1
+    animate-bounce
+    rounded-full
+    bg-neutral-500
+    dark:bg-neutral-400;
 }

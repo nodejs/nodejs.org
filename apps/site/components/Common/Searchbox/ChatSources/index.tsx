@@ -5,7 +5,7 @@ import { ChatInteractions } from '@orama/ui/components';
 import type { FC } from 'react';
 
 import styles from './index.module.css';
-import { DocumentLink } from '../../DocumentLink';
+import { DocumentLink } from '../DocumentLink';
 
 type DocumentSource = {
   path: string;
@@ -28,6 +28,7 @@ export const ChatSources: FC<ChatSourcesProps> = ({ interaction }) => {
       interaction={interaction}
       className={styles.chatSources}
       itemClassName={styles.chatSourceItem}
+      // itemClassName="bg-red-500"
     >
       {(document: AnyObject, index: number) => (
         <div className={styles.chatSource} key={index}>

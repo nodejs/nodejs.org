@@ -26,15 +26,16 @@
 
 .textareaButton {
   @apply cursor-pointer
-    rounded-full
+    rounded-xl
+    bg-neutral-300
     p-3
     text-neutral-800
     transition-colors
     duration-300
-    hover:bg-neutral-300
     disabled:cursor-not-allowed
-    dark:text-neutral-400
-    dark:hover:bg-neutral-900;
+    disabled:opacity-60
+    dark:bg-neutral-900
+    dark:text-neutral-400;
 
   svg {
     @apply h-4
@@ -42,6 +43,9 @@
   }
 }
 
-.slidingPanelFooter {
-  @apply flex;
+.textareaFooter {
+  @apply pt-1
+    text-center
+    text-neutral-800
+    dark:text-neutral-500;
 }

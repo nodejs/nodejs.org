@@ -1,0 +1,45 @@
+@reference "../../../../styles/index.css";
+
+.chatSources {
+  @apply mb-4
+    flex
+    flex-nowrap
+    items-center
+    gap-3
+    overflow-x-scroll
+    scroll-smooth;
+}
+
+.chatSource {
+  @apply flex
+    max-w-xs
+    items-center
+    gap-2
+    text-base;
+}
+
+.chatSourceLink {
+  @apply rounded-xl
+    bg-neutral-100
+    px-4
+    py-2
+    text-neutral-900
+    transition-colors
+    duration-300
+    hover:bg-neutral-200
+    focus:bg-neutral-200
+    dark:bg-neutral-950
+    dark:text-neutral-200
+    hover:dark:bg-neutral-900
+    focus:dark:bg-neutral-900;
+}
+
+.chatSourceTitle {
+  @apply max-w-full
+    overflow-hidden
+    truncate
+    text-ellipsis
+    whitespace-nowrap
+    text-sm
+    font-semibold;
+}
