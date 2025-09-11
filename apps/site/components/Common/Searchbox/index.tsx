@@ -86,7 +86,6 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
 
   return (
     <>
-      {/* Only show on mobile */}
       <div className={styles.mobileOnly}>
         <MobileTopBar
           isChatOpen={mode === 'chat'}

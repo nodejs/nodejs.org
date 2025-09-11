@@ -5,7 +5,7 @@ import { ChatInteractions } from '@orama/ui/components';
 import type { FC } from 'react';
 
 import styles from './index.module.css';
-import { DocumentLink } from '../DocumentLink';
+import { DocumentLink } from '../../DocumentLink';
 
 type DocumentSource = {
   path: string;

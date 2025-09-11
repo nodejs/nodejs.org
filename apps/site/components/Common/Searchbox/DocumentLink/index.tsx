@@ -27,7 +27,7 @@ export const DocumentLink: FC<DocumentLinkProps> = ({
   const locale = useLocale();
 
   const href =
-    document.siteSection.toLowerCase() === 'docs'
+    document.siteSection?.toLowerCase() === 'docs'
       ? `/${document.path}`
       : `/${locale}/${document.path}`;
 

@@ -27,7 +27,9 @@ export const ChatMessage: FC<ChatMessageProps> = ({
   index,
   totalInteractions,
 }) => {
-  if (!interaction) return null;
+  // if (!interaction) {
+  //   return null;
+  // }
 
   return (
     <>

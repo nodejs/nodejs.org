@@ -3,10 +3,8 @@
 import { ArrowDownIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import type { Interaction } from '@orama/core';
 import { ChatInteractions, SlidingPanel } from '@orama/ui/components';
-import { useChatDispatch } from '@orama/ui/contexts';
 import { useScrollableContainer } from '@orama/ui/hooks/useScrollableContainer';
 import { useTranslations } from 'next-intl';
-import { useEffect } from 'react';
 import type { FC, PropsWithChildren } from 'react';
 
 import { ChatInput } from './../Chat/ChatInput';
@@ -23,8 +21,6 @@ type SlidingChatPanelProps = PropsWithChildren<{
 export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
   open,
   onClose,
-  autoTriggerQuery,
-  onAutoTriggerComplete,
 }) => {
   const t = useTranslations();
   const {
@@ -33,33 +29,6 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
     scrollToBottom,
     recalculateGoToBottomButton,
   } = useScrollableContainer();
-  const dispatch = useChatDispatch();
-
-  useEffect(() => {
-    if (open && autoTriggerQuery && dispatch) {
-      const timer = setTimeout(() => {
-        dispatch({
-          type: 'SET_USER_PROMPT',
-          payload: {
-            userPrompt: autoTriggerQuery,
-          },
-        });
-
-        setTimeout(() => {
-          const submitButton = document.querySelector(
-            '.orama-custom-button'
-          ) as HTMLButtonElement;
-          if (submitButton && !submitButton.disabled) {
-            submitButton.click();
-          }
-
-          onAutoTriggerComplete?.();
-        }, 300);
-      }, 500);
-
-      return () => clearTimeout(timer);
-    }
-  }, [open, autoTriggerQuery, onAutoTriggerComplete, dispatch]);
 
   return (
     <>
@@ -75,15 +44,14 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
           >
             <XMarkIcon />
           </SlidingPanel.Close>
+
           <div className={styles.slidingPanelInner}>
-            <div className="flex min-h-0 flex-1 flex-col pb-6">
+            <div ref={containerRef} className={styles.chatInteractionsWrapper}>
               <ChatInteractions.Wrapper
-                ref={containerRef}
                 onScroll={recalculateGoToBottomButton}
                 onStreaming={recalculateGoToBottomButton}
                 onNewInteraction={() => scrollToBottom({ animated: true })}
-                className={`${styles.chatMobilePadding} relative h-full items-start overflow-y-auto`}
-                // style={{ maxHeight: '100%', overflowY: 'auto' }}
+                className={`${styles.chatMobilePadding}`}
               >
                 {(
                   interaction: Interaction,

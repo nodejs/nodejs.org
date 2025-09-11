@@ -25,7 +25,7 @@ import { DEFAULT_ORAMA_QUERY_PARAMS } from '#site/next.constants.mjs';
 
 import styles from './index.module.css';
 import { getFormattedPath } from './utils';
-import { DocumentLink } from '../Chat/DocumentLink';
+import { DocumentLink } from '../DocumentLink';
 
 type SearchProps = PropsWithChildren<{
   onChatTrigger: () => void;
@@ -37,12 +37,12 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   const { searchTerm, selectedFacet } = useSearchContext();
   const dispatch = useSearchDispatch();
 
+  const oramaLogo = `https://website-assets.oramasearch.com/orama-when-${resolvedTheme}.svg`;
+
   const clearAll = useCallback(() => {
     dispatch({ type: 'SET_SEARCH_TERM', payload: { searchTerm: '' } });
     dispatch({ type: 'SET_SELECTED_FACET', payload: { selectedFacet: 'All' } });
     dispatch({ type: 'SET_RESULTS', payload: { results: [] } });
-    dispatch({ type: 'SET_GROUPS_COUNT', payload: { groupsCount: null } });
-    dispatch({ type: 'SET_COUNT', payload: { count: 0 } });
   }, [dispatch]);
 
   useEffect(() => {
@@ -253,7 +253,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
             >
               <small>{t('components.search.poweredBy')}</small>
               <Image
-                src={`https://website-assets.oramasearch.com/orama-when-${resolvedTheme}.svg`}
+                src={oramaLogo}
                 alt="Powered by Orama"
                 width="62"
                 height="62"
