@@ -12,27 +12,25 @@ export const ChatInput: FC = () => {
   const t = useTranslations();
 
   return (
-    <div className="pb-2 pt-6">
-      <PromptTextArea.Wrapper
-        className={`${styles.promptWrapperCustom} mx-8 flex items-center gap-2 rounded-2xl border border-[rgb(64,64,64)] bg-[rgb(38,38,38)] px-4 py-3 text-base text-white`}
-      >
+    <div className={styles.textareaContainer}>
+      <PromptTextArea.Wrapper className={styles.textareaWrapper}>
         <PromptTextArea.Field
+          id="chat-input"
+          name="chat-input"
           placeholder={t('components.search.chatPlaceholder')}
           rows={1}
           maxLength={500}
           autoFocus
-          className={`${styles.promptFieldCustom} m-0 w-full resize-none border-none bg-transparent p-0 font-normal leading-relaxed text-white outline-none`}
+          className={styles.textareaField}
         />
         <PromptTextArea.Button
           abortContent={<PauseCircleIcon />}
-          className={`${styles.promptButtonCustom} orama-custom-button`}
+          className={styles.textareaButton}
         >
-          <PaperAirplaneIcon className="h-4 w-4" />
+          <PaperAirplaneIcon />
         </PromptTextArea.Button>
       </PromptTextArea.Wrapper>
-      <div
-        className={`${styles.slidingPanelFooter} flex flex-row items-center justify-center pt-1 text-xs text-neutral-400`}
-      >
+      <div className={styles.textareaFooter}>
         <small>{t('components.search.disclaimer')}</small>
       </div>
     </div>

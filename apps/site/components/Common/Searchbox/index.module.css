@@ -1,5 +1,11 @@
 @reference "../../../styles/index.css";
 
+.searchboxContainer {
+  * {
+    @apply antialiased;
+  }
+}
+
 .searchButton {
   @apply flex
     grow

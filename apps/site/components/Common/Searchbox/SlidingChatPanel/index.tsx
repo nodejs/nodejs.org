@@ -7,8 +7,8 @@ import { useScrollableContainer } from '@orama/ui/hooks/useScrollableContainer';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
 
-import { ChatInput } from './../Chat/ChatInput';
-import { ChatMessage } from './../Chat/ChatMessage';
+import { ChatInput } from '../ChatInput';
+import { ChatMessage } from '../ChatMessage';
 import styles from './index.module.css';
 
 type SlidingChatPanelProps = PropsWithChildren<{
@@ -33,7 +33,6 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
   return (
     <>
       <SlidingPanel.Wrapper open={open} onClose={onClose}>
-        <SlidingPanel.Backdrop />
         <SlidingPanel.Content
           position="bottom"
           className={styles.slidingPanelContentWrapper}
@@ -46,12 +45,15 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
           </SlidingPanel.Close>
 
           <div className={styles.slidingPanelInner}>
-            <div ref={containerRef} className={styles.chatInteractionsWrapper}>
+            <div
+              ref={containerRef}
+              className={styles.chatInteractionsContainer}
+            >
               <ChatInteractions.Wrapper
                 onScroll={recalculateGoToBottomButton}
                 onStreaming={recalculateGoToBottomButton}
                 onNewInteraction={() => scrollToBottom({ animated: true })}
-                className={`${styles.chatMobilePadding}`}
+                className={`${styles.chatInteractionsWrapper}`}
               >
                 {(
                   interaction: Interaction,

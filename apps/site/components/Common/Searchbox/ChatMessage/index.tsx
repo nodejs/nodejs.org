@@ -4,9 +4,9 @@ import type { Interaction } from '@orama/core';
 import { ChatInteractions } from '@orama/ui/components';
 import type { FC } from 'react';
 
-import { ChatActions } from '../ChatActions';
-import { ChatSources } from '../ChatSources';
 import styles from './index.module.css';
+import { ChatActions } from '../Chat/ChatActions';
+import { ChatSources } from '../Chat/ChatSources';
 
 type ChatMessageProps = {
   interaction: Interaction;
@@ -27,15 +27,13 @@ export const ChatMessage: FC<ChatMessageProps> = ({
   index,
   totalInteractions,
 }) => {
-  // if (!interaction) {
-  //   return null;
-  // }
+  if (!interaction) {
+    return null;
+  }
 
   return (
     <>
-      <ChatInteractions.UserPrompt
-        className={`${styles.chatUserPrompt} mx-8 mb-6 flex justify-end p-6`}
-      >
+      <ChatInteractions.UserPrompt className={styles.chatUserPrompt}>
         <p>{interaction?.query || ''}</p>
       </ChatInteractions.UserPrompt>
 
@@ -48,29 +46,27 @@ export const ChatMessage: FC<ChatMessageProps> = ({
       <ChatSources interaction={interaction} />
 
       {interaction && (
-        <div
-          className={`${styles.chatAssistantMessageWrapper} mx-8 mb-6 w-auto rounded-lg bg-[#0d121c] p-4`}
-        >
+        <div className={styles.chatAssistantMessageWrapper}>
           <ChatInteractions.AssistantMessage
             className={styles.chatAssistantMessage}
             markdownClassnames={{
-              p: 'my-3 text-white leading-relaxed',
-              pre: `rounded-md my-4 text-sm overflow-x-auto whitespace-pre-wrap hljs ${styles.markdownPre}`,
+              p: 'mb-4 leading-relaxed last-of-type:mb-0',
+              pre: `my-4 text-md overflow-x-auto hljs [&_pre]:text-sm [&_pre]:rounded-md [&_pre]:p-4 [&_pre]:my-3 [&_pre]:whitespace-break-spaces wrap-break-word`,
               code: 'px-2 py-1 rounded text-sm whitespace-pre-wrap hljs',
               table: 'w-full border-collapse my-4',
               thead: 'bg-white/10',
-              th: 'border border-white/20 px-3 py-2 text-left text-white font-semibold',
-              td: 'border border-white/20 px-3 py-2 text-white',
+              th: 'border border-white/20 px-3 py-2 text-left font-semibold',
+              td: 'border border-white/20 px-3 py-2',
               tr: 'border-b border-white/10',
-              h1: 'text-2xl font-bold text-white mb-4 mt-6',
-              h2: 'text-xl font-bold text-white mb-3 mt-5',
-              h3: 'text-lg font-bold text-white mb-2 mt-4',
-              ul: 'list-disc pl-6 my-3 text-white',
-              ol: 'list-decimal pl-6 my-3 text-white',
-              li: 'mb-1 text-white',
-              blockquote:
-                'border-l-4 border-white/30 pl-4 my-4 italic text-white/90',
-              a: 'text-blue-400 hover:text-blue-300 underline',
+              h1: 'text-2xl font-bold mb-4 mt-6',
+              h2: 'text-xl font-bold mb-3 mt-5',
+              h3: 'text-lg font-extrabold mb-6 mt-3',
+              ul: 'list-disc pl-8 my-4',
+              ol: 'list-decimal pl-4 my-4',
+              li: 'mb-1',
+              hr: 'border-t border-white/20 my-6',
+              blockquote: 'border-l-4 border-white/30 pl-4 my-4 italic',
+              a: 'underline',
             }}
           >
             {interaction.response || ''}

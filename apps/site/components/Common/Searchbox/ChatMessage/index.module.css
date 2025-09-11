@@ -1,0 +1,21 @@
+@reference "../../../../styles/index.css";
+
+.chatUserPrompt {
+  @apply py-2;
+
+  p {
+    @apply max-w-2xl
+      rounded-xl
+      text-sm
+      text-white;
+  }
+}
+
+.chatAssistantMessageWrapper {
+  @apply my-2
+    rounded-xl
+    bg-neutral-100
+    p-3
+    dark:bg-neutral-950
+    dark:text-neutral-300;
+}

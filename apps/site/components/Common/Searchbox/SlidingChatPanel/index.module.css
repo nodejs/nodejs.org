@@ -32,13 +32,13 @@
     rounded-lg
     border
     border-neutral-300
-    bg-neutral-100
+    bg-white
     p-0
     text-white
     duration-300
     ease-in-out
     dark:border-neutral-900
-    dark:bg-neutral-950;
+    dark:bg-zinc-950;
 }
 
 .slidingPanelInner {
@@ -47,19 +47,32 @@
     h-full
     max-w-4xl
     flex-col
-    justify-between;
+    justify-between
+    py-6;
 }
 
-.chatInteractionsWrapper {
+.chatInteractionsContainer {
   @apply relative
+    mb-6
     h-full
     flex-1
     items-start
     overflow-y-auto
-    px-8;
+    px-4;
 }
 
-/* .chatInteractionsWrapper::-webkit-scrollbar {
+.chatInteractionsWrapper {
+  @apply flex
+    w-full
+    flex-wrap
+    gap-3;
+
+  > div {
+    @apply w-full;
+  }
+}
+
+.chatInteractionsWrapper::-webkit-scrollbar {
   width: 4px;
 }
 
@@ -74,7 +87,7 @@
 
 .chatInteractionsWrapper::-webkit-scrollbar-thumb:hover {
   background: rgb(255 255 255 / 30%);
-} */
+}
 
 .slidingPanelBottom {
   @apply relative;

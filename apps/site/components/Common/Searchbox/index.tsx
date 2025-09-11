@@ -140,7 +140,7 @@ const SearchWithModal: FC = () => {
   }, []);
 
   return (
-    <>
+    <div className={styles.searchboxContainer}>
       <button
         type="button"
         onClick={toggleSearchBox}
@@ -168,7 +168,7 @@ const SearchWithModal: FC = () => {
           </Modal.Content>
         </Modal.Inner>
       </Modal.Wrapper>
-    </>
+    </div>
   );
 };
 

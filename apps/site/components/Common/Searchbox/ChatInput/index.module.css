@@ -1,0 +1,47 @@
+@reference "../../../../styles/index.css";
+
+.textareaContainer {
+  @apply px-4;
+}
+
+.textareaWrapper {
+  @apply flex
+    items-center
+    rounded-2xl
+    border
+    border-neutral-300
+    bg-neutral-100
+    p-1
+    pl-3
+    dark:border-neutral-900
+    dark:bg-neutral-950;
+}
+
+.textareaField {
+  @apply flex-1
+    border-0
+    bg-transparent
+    focus:outline-none;
+}
+
+.textareaButton {
+  @apply cursor-pointer
+    rounded-full
+    p-3
+    text-neutral-800
+    transition-colors
+    duration-300
+    hover:bg-neutral-300
+    disabled:cursor-not-allowed
+    dark:text-neutral-400
+    dark:hover:bg-neutral-900;
+
+  svg {
+    @apply h-4
+      w-4;
+  }
+}
+
+.slidingPanelFooter {
+  @apply flex;
+}
