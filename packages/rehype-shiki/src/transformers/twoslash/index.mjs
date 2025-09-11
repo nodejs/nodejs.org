@@ -44,5 +44,5 @@ export const twoslash = options =>
       },
     },
     throws: false,
-    ...(typeof options === 'object' ? twoslash : {}),
+    ...(typeof options === 'object' ? options : {}),
   });

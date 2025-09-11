@@ -30,16 +30,16 @@ import createHighlighter, { getLanguageByName } from './highlighter.mjs';
  */
 async function getEngine({ wasm = false }) {
   if (wasm) {
-    const { createJavaScriptRegexEngine } = await import(
-      '@shikijs/engine-javascript'
+    const { createOnigurumaEngine } = await import('@shikijs/engine-oniguruma');
+    return createOnigurumaEngine(
+      typeof wasm === 'boolean' ? await import('shiki/wasm') : wasm
     );
-    return createJavaScriptRegexEngine();
   }
 
-  const { createOnigurumaEngine } = await import('@shikijs/engine-oniguruma');
-  return createOnigurumaEngine(
-    typeof wasm === 'boolean' ? await import('shiki/wasm') : wasm
+  const { createJavaScriptRegexEngine } = await import(
+    '@shikijs/engine-javascript'
   );
+  return createJavaScriptRegexEngine();
 }
 
 /**
