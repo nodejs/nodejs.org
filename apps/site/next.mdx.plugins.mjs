@@ -17,7 +17,24 @@ export const REHYPE_PLUGINS = [
   [rehypeAutolinkHeadings, { behavior: 'wrap' }],
   // Transforms sequential code elements into code tabs and
   // adds our syntax highlighter (Shikiji) to Codeboxes
-  rehypeShikiji,
+  [
+    rehypeShikiji,
+    {
+      twoslash: true,
+      // We use the faster WASM engine on the server instead of the web-optimized version.
+      //
+      // Currently we fall back to the JavaScript RegEx engine
+      // on Cloudflare workers because `shiki/wasm` requires loading via
+      // `WebAssembly.instantiate` with custom imports, which Cloudflare doesn't support
+      // for security reasons.
+      //
+      // TODO(@avivkeller): When available, use `OPEN_NEXT_CLOUDFLARE` environment
+      // variable for detection instead of current method, which will enable better
+      // tree-shaking.
+      // Reference: https://github.com/nodejs/nodejs.org/pull/7896#issuecomment-3009480615
+      wasm: !('Cloudflare' in global),
+    },
+  ],
 ];
 
 /**
