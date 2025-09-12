@@ -7,6 +7,8 @@ import matter from 'gray-matter';
 import { cache } from 'react';
 import { VFile } from 'vfile';
 
+import compile from './mdx/compiler.mjs';
+import mdxComponents from './mdx/components.mjs';
 import { BASE_PATH } from './next.constants.mjs';
 import { BASE_URL } from './next.constants.mjs';
 import { DEFAULT_CATEGORY_OG_TYPE } from './next.constants.mjs';
@@ -16,8 +18,6 @@ import { PAGE_METADATA } from './next.dynamic.constants.mjs';
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { siteConfig } from './next.json.mjs';
 import { availableLocaleCodes, defaultLocale } from './next.locales.mjs';
-import { compile } from './next.mdx.compiler.mjs';
-import { MDX_COMPONENTS } from './next.mdx.components.mjs';
 
 // This is the combination of the Application Base URL and Base PATH
 const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
@@ -177,7 +177,7 @@ const getDynamicRouter = async () => {
 
     // This compiles our MDX source (VFile) into a final MDX-parsed VFile
     // that then is passed as a string to the MDXProvider which will run the MDX Code
-    return compile(sourceAsVirtualFile, fileExtension, MDX_COMPONENTS);
+    return compile(sourceAsVirtualFile, fileExtension, mdxComponents);
   };
 
   // Creates a Cached Version of the MDX Compiler
