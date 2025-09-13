@@ -23,9 +23,11 @@
       border
       border-neutral-200
       bg-white
-      p-8
+      p-4
       focus:outline-none
       sm:my-20
+      md:p-6
+      lg:p-8
       xl:p-12
       dark:border-neutral-800
       dark:bg-neutral-950;

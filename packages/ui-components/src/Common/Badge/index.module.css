@@ -1,7 +1,8 @@
 @reference "../../styles/index.css";
 
 .badge {
-  @apply rounded-full
+  @apply whitespace-nowrap
+    rounded-full
     text-center
     text-white;
 
