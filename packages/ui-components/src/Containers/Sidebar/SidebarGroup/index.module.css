@@ -55,14 +55,14 @@
           first:before:left-0
           first:before:h-20
           first:before:w-4
-          first:before:bg-white
+          first:before:bg-transparent
           first:before:content-['']
           last:after:absolute
           last:after:left-0
           last:after:top-[calc(50%+0.25rem)]
           last:after:h-20
           last:after:w-4
-          last:after:bg-white
+          last:after:bg-transparent
           last:after:content-['']
           first:dark:before:bg-transparent
           last:dark:after:bg-transparent;

@@ -17,7 +17,7 @@
 
   &:not(.active):hover {
     /* Apply hover background to the full item width */
-    @apply bg-neutral-100
+    @apply bg-neutral-200
       dark:bg-neutral-900;
 
     /* Ensure text colors contrast with hover background */
@@ -33,7 +33,7 @@
     }
 
     .progressionIcon {
-      @apply fill-green-200
+      @apply fill-green-400
         dark:fill-green-300;
     }
   }
@@ -49,8 +49,8 @@
 
   .progressionIcon {
     @apply shrink-0
-      fill-neutral-200
-      stroke-white
+      fill-neutral-600
+      stroke-neutral-300
       stroke-[4]
       dark:fill-neutral-800
       dark:stroke-neutral-950;
@@ -69,7 +69,7 @@
 
     /* On hover, use full-width background on the item (set above) */
     &:not(.active):hover {
-      @apply bg-neutral-100
+      @apply bg-neutral-200
         dark:bg-neutral-900;
     }
 

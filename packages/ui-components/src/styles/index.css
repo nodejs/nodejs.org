@@ -39,7 +39,15 @@
 @custom-variant aria-current (&[aria-current="page"]);
 
 * {
-  scrollbar-color: var(--color-green-600, #417e38) var(--color-neutral-900, #2c3437); /* thumb color, track color */
-
+  scrollbar-color: var(--color-green-600, #417e38)
+    var(--color-neutral-400, #2c3437); /* thumb color, track color */
   scrollbar-width: thin;
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    scrollbar-color: var(--color-green-600, #417e38)
+      var(--color-neutral-900, #2c3437); /* thumb color, track color */
+    scrollbar-width: thin;
+  }
 }
