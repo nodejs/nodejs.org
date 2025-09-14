@@ -18,14 +18,14 @@ import {
 import type { DownloadSnippet } from '#site/types/download';
 import type { ReleaseContextType } from '#site/types/release';
 import { INSTALL_METHODS } from '#site/util/download';
-import { createEvaluator } from '#site/util/evaluator';
+import createInterpreter from '#site/util/interpreter';
 
 // Creates a minimal JavaScript interpreter for parsing the JavaScript code from the snippets
 // Note: that the code runs inside a sandboxed environment and cannot interact with any code outside of the sandbox
 // It also does not have access to any Global or Window objects, nor it can execute code on the end-user's browser
 // It also only allows a return statement for a string and it forces the return value to also be a string and only be used
 // by Shiki to render the highlighted syntax. Hence XSS attacks or JavaScript injections are not possible.
-const interpreter = createEvaluator({}, 'script');
+const interpreter = createInterpreter({}, 'script');
 
 /**
  * Parses a snippet string using the interpreter with the given release context

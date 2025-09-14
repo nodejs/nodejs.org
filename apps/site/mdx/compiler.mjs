@@ -5,8 +5,8 @@ import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
 import { matter } from 'vfile-matter';
 
 import { rehypePlugins, remarkPlugins } from './plugins.mjs';
-import { createEvaluator } from '../util/evaluator';
 import { createGitHubSlugger } from '../util/github';
+import createInterpreter from '../util/interpreter';
 
 // Defines a JSX Fragment and JSX Runtime for the MDX Compiler
 const reactRuntime = { Fragment, jsx, jsxs };
@@ -47,7 +47,7 @@ export default async function compile(
     format: fileExtension,
   });
 
-  const interpreter = createEvaluator({
+  const interpreter = createInterpreter({
     ...components,
     'react/jsx-runtime': reactRuntime,
   });

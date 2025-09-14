@@ -7,7 +7,7 @@ import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import readingTime from 'remark-reading-time';
 
-import remarkTableTitles from './util/table';
+import remarkTableTitles from '../util/table';
 
 /**
  * Provides all our Rehype Plugins that are used within MDX

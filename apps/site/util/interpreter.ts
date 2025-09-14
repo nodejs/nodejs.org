@@ -2,7 +2,7 @@
 
 import Sval from 'sval';
 
-export const createEvaluator = (
+export default (
   dependencies: Record<string, unknown> = {},
   mode: 'module' | 'script' = 'module'
 ) => {
