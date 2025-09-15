@@ -11,8 +11,9 @@
     border
     border-neutral-300
     bg-neutral-100
-    p-1
+    py-2
     pl-3
+    pr-1
     dark:border-neutral-900
     dark:bg-neutral-950;
 }
@@ -30,7 +31,7 @@
   @apply cursor-pointer
     rounded-xl
     bg-green-600
-    p-3
+    p-2
     text-white
     transition-colors
     duration-300

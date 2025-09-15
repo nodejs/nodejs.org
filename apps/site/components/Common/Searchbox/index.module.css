@@ -1,6 +1,8 @@
 @reference "../../../styles/index.css";
 
 .searchboxContainer {
+  @apply w-full;
+
   * {
     @apply antialiased;
   }
@@ -8,6 +10,7 @@
 
 .searchButton {
   @apply flex
+    w-full
     grow
     cursor-pointer
     items-center

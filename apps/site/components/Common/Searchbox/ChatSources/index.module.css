@@ -8,18 +8,26 @@
     gap-3
     overflow-x-scroll
     scroll-smooth;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .chatSource {
   @apply flex
-    max-w-xs
+    max-w-full
     items-center
     gap-2
     text-base;
 }
 
 .chatSourceLink {
-  @apply rounded-xl
+  @apply w-3xs
+    rounded-xl
     bg-neutral-100
     px-4
     py-2

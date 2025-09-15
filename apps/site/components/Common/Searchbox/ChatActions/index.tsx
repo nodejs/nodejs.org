@@ -22,7 +22,9 @@ export const ChatActions: FC<ChatActionsProps> = ({
   index,
   totalInteractions,
 }) => {
-  if (!interaction.response) {return null;}
+  if (!interaction.response) {
+    return null;
+  }
 
   return (
     <div className={styles.chatActionsContainer}>

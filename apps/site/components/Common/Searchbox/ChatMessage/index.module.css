@@ -28,7 +28,11 @@
 .typingIndicator {
   @apply flex
     items-center
-    gap-1;
+    gap-1
+    rounded-xl
+    bg-neutral-200
+    p-4
+    dark:bg-neutral-950;
 }
 
 .typingDot {

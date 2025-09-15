@@ -37,13 +37,13 @@ export const ChatMessage: FC<ChatMessageProps> = ({
         <p>{interaction?.query}</p>
       </ChatInteractions.UserPrompt>
 
+      <ChatSources interaction={interaction} />
+
       <ChatInteractions.Loading interaction={interaction}>
         <div className={styles.chatLoadingWrapper}>
           <TypingIndicator />
         </div>
       </ChatInteractions.Loading>
-
-      <ChatSources interaction={interaction} />
 
       {interaction && interaction.response && (
         <div className={styles.chatAssistantMessageWrapper}>
