@@ -32,33 +32,51 @@ const MobileTopBar: FC<{
   isChatOpen: boolean;
   onClose: () => void;
   onSelect: (mode: 'search' | 'chat') => void;
-}> = ({ isChatOpen, onClose, onSelect }) => (
-  <div className={styles.topBar}>
-    <button className={styles.topBarArrow} onClick={onClose} aria-label="Close">
-      <ArrowLeftIcon />
-    </button>
-    <div className={styles.topBarTabs}>
+}> = ({ isChatOpen, onClose, onSelect }) => {
+  const [animated, setAnimated] = useState(false);
+
+  function selectMode(mode: 'search' | 'chat') {
+    onSelect(mode);
+
+    if (!animated) {
+      setAnimated(true);
+    }
+  }
+
+  return (
+    <div className={styles.topBar}>
       <button
-        className={classNames(styles.topBarTab, {
-          [styles.topBarTabActive]: !isChatOpen,
-        })}
-        onClick={() => onSelect('search')}
+        className={styles.topBarArrow}
+        onClick={onClose}
+        aria-label="Close"
       >
-        <span>Search</span>
-        <MagnifyingGlassIcon />
+        <ArrowLeftIcon />
       </button>
-      <button
-        className={classNames(styles.topBarTab, {
-          [styles.topBarTabActive]: isChatOpen,
-        })}
-        onClick={() => onSelect('chat')}
-      >
-        <SparklesIcon />
-        <span>Ask AI</span>
-      </button>
+      <div className={styles.topBarTabs}>
+        <button
+          className={classNames(styles.topBarTab, {
+            [styles.topBarTabActive]: !isChatOpen,
+            [styles.topBarTabAnimated]: animated,
+          })}
+          onClick={() => selectMode('search')}
+        >
+          <span>Search</span>
+          <MagnifyingGlassIcon />
+        </button>
+        <button
+          className={classNames(styles.topBarTab, {
+            [styles.topBarTabActive]: isChatOpen,
+            [styles.topBarTabAnimated]: animated,
+          })}
+          onClick={() => selectMode('chat')}
+        >
+          <SparklesIcon />
+          <span>Ask AI</span>
+        </button>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
   onClose,

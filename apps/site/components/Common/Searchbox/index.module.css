@@ -165,11 +165,11 @@
     before:bg-white
     dark:text-neutral-900;
 
-  &:first-of-type {
+  &.topBarTabAnimated:first-of-type {
     @apply before:animate-slide-to-left;
   }
 
-  &:last-of-type {
+  &.topBarTabAnimated:last-of-type {
     @apply before:animate-slide-to-right;
   }
 }
