@@ -28,19 +28,23 @@ export const ChatSources: FC<ChatSourcesProps> = ({ interaction }) => {
       interaction={interaction}
       className={styles.chatSources}
       itemClassName={styles.chatSourceItem}
-      // itemClassName="bg-red-500"
     >
       {(document: AnyObject, index: number) => (
         <div className={styles.chatSource} key={index}>
-          <DocumentLink
-            document={document as DocumentSource}
-            className={styles.chatSourceLink}
-            data-focus-on-arrow-nav
-          >
-            <span className={styles.chatSourceTitle}>
-              {document.pageSectionTitle as string}
-            </span>
-          </DocumentLink>
+          {typeof document.pageSectionTitle === 'string' && (
+            <DocumentLink
+              document={document as DocumentSource}
+              className={styles.chatSourceLink}
+              data-focus-on-arrow-nav
+            >
+              <span className={styles.chatSourceTitle}>
+                {document.pageSectionTitle &&
+                document.pageSectionTitle.length > 25
+                  ? `${document.pageSectionTitle.substring(0, 25)}...`
+                  : document.pageSectionTitle}
+              </span>
+            </DocumentLink>
+          )}
         </div>
       )}
     </ChatInteractions.Sources>
