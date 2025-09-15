@@ -36,10 +36,18 @@
 }
 
 .typingDot {
-  @apply h-1
+  @apply animate-dot-move
+    h-1
     w-1
-    animate-bounce
     rounded-full
     bg-neutral-500
     dark:bg-neutral-400;
+
+  &:nth-child(2) {
+    @apply animate-dot-move-delay-200;
+  }
+
+  &:nth-child(3) {
+    @apply animate-dot-move-delay-400;
+  }
 }
