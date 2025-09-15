@@ -1,7 +1,7 @@
 @reference "../../../styles/index.css";
 
 .searchboxContainer {
-  @apply w-full;
+  @apply grow;
 
   * {
     @apply antialiased;
@@ -56,7 +56,7 @@
     py-1
     text-sm
     text-neutral-800
-    sm:inline
+    lg:inline
     dark:bg-neutral-900
     dark:text-neutral-400;
 }
@@ -74,116 +74,102 @@
     items-start
     justify-center
     bg-white/70
-    pt-[5vh]
+    lg:pt-[5vh]
     dark:bg-zinc-950/70;
 }
 
-.mobileOnly {
-  @apply hidden;
-}
-
 .modalInner {
-  @apply mx-auto
+  @apply fixed
+    mx-auto
     my-0
     flex
+    h-screen
+    max-w-none
     flex-col
-    bg-neutral-100
-    dark:bg-neutral-950;
-
-  inset: 0;
-
-  /* Mobile styles */
-  position: fixed;
-
-  /* Desktop styles */
-  @media (min-width: 640px) {
-    border-radius: 12px;
-    height: auto;
-    max-height: none;
-    max-width: 720px;
-    min-height: auto;
-    padding: 0;
-    position: static;
-    width: 80%;
-  }
-}
-
-.modalWrapper.modalWrapperWithResults .modalInner {
-  display: flex;
-  flex-direction: column;
-  max-height: 70vh;
+    bg-white
+    lg:h-auto
+    lg:max-h-[70vh]
+    lg:max-w-3xl
+    lg:bg-neutral-100
+    dark:bg-zinc-950
+    lg:dark:bg-neutral-950;
 }
 
 .modalContent {
   @apply flex
+    h-screen
     flex-col
-    rounded-xl
-    border
     border-neutral-200
+    lg:h-auto
+    lg:rounded-xl
+    lg:border
     dark:border-neutral-900;
+}
 
-  /* Mobile full height */
-  height: 100%;
-  min-height: 0;
-  overflow: hidden;
+.topBar {
+  @apply relative
+    flex
+    justify-center
+    p-4
+    lg:hidden;
+}
 
-  /* Desktop auto height - fit content exactly */
-  @media (min-width: 640px) {
-    flex-shrink: 0;
-    height: fit-content;
-    min-height: 0;
+.topBarArrow {
+  @apply absolute
+    left-4
+    top-1/2
+    -translate-y-1/2
+    text-neutral-900
+    dark:text-neutral-200;
+
+  svg {
+    @apply h-4
+      w-4;
   }
 }
 
-.active {
-  @apply block;
+.topBarTabs {
+  @apply rounded-4xl
+    flex
+    bg-neutral-900
+    px-1
+    py-1
+    text-sm
+    text-neutral-900
+    dark:bg-neutral-900
+    dark:text-neutral-200;
 }
 
-@media (max-width: 600px) {
-  .mobileOnly {
-    @apply block;
+.topBarTab {
+  @apply flex
+    items-center
+    gap-1
+    px-4
+    py-1;
+
+  svg {
+    @apply h-4
+      w-4;
+  }
+}
+
+.topBarTabActive {
+  @apply before:rounded-4xl
+    relative
+    z-10
+    text-neutral-200
+    transition-colors
+    before:absolute
+    before:inset-0
+    before:z-[-1]
+    before:bg-white
+    dark:text-neutral-900;
+
+  &:first-of-type {
+    @apply before:animate-slide-to-left;
   }
 
-  .mobileTopBar {
-    align-items: center;
-    background: #181c23;
-    border-bottom: 1px solid #222;
-    display: flex;
-    padding: 0.5rem 1rem;
-  }
-
-  .mobileTopBarArrow {
-    align-items: center;
-    background: none;
-    border: none;
-    color: #fff;
-    display: flex;
-    font-size: 1.5rem;
-    margin-right: 1rem;
-  }
-
-  .mobileTopBarTabs {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-  }
-
-  .mobileTopBarTab {
-    background: none;
-    border: none;
-    border-radius: 999px;
-    color: #aaa;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    transition:
-      background 0.2s,
-      color 0.2s;
-  }
-
-  .mobileTopBarTab.active,
-  .mobileTopBarTab:focus {
-    background: #23272f;
-    color: #fff;
+  &:last-of-type {
+    @apply before:animate-slide-to-right;
   }
 }

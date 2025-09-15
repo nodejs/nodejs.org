@@ -71,7 +71,6 @@ export const ChatMessage: FC<ChatMessageProps> = ({
           >
             {interaction.response || ''}
           </ChatInteractions.AssistantMessage>
-
           <ChatInteractions.Loading interaction={interaction}>
             <ChatActions
               interaction={interaction}

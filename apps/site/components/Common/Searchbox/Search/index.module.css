@@ -1,5 +1,16 @@
 @reference "../../../../styles/index.css";
 
+.searchContainer {
+  @apply flex
+    h-full
+    grow
+    flex-col;
+}
+
+.searchResultsContainer {
+  @apply grow;
+}
+
 .searchInputWrapper {
   @apply relative;
 
@@ -34,9 +45,11 @@
 }
 
 .chatButtonWrapper {
-  @apply border-b
+  @apply hidden
+    border-b
     border-neutral-200
     p-2
+    lg:block
     dark:border-neutral-900;
 
   svg {
@@ -214,8 +227,8 @@
       hover:bg-neutral-300
       focus-visible:border-green-600
       focus-visible:bg-transparent
-      dark:bg-neutral-950
-      dark:hover:bg-neutral-900;
+      dark:hover:bg-neutral-900
+      lg:dark:bg-neutral-950;
   }
 
   svg {
@@ -232,13 +245,14 @@
 
 .footer {
   @apply flex
-    items-center
-    justify-between
-    rounded-b-xl
+    justify-center
     border-t
     border-neutral-200
     bg-neutral-100
     p-4
+    align-baseline
+    lg:justify-between
+    lg:rounded-b-xl
     dark:border-neutral-900
     dark:bg-neutral-950;
 }
@@ -253,9 +267,10 @@
 }
 
 .shortcutWrapper {
-  @apply flex
+  @apply hidden
     items-center
-    gap-2;
+    gap-2
+    lg:flex;
 }
 
 .shortcutItem {
@@ -278,76 +293,5 @@
   svg {
     @apply h-4
       w-4;
-  }
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-  .shortcutWrapper {
-    display: none !important;
-  }
-
-  .footer {
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: auto;
-    text-align: center;
-    width: 100%;
-  }
-
-  .searchPanelContainer {
-    background-color: #050505;
-    display: flex;
-    flex-direction: column;
-    height: 94vh;
-  }
-
-  .poweredByLink {
-    align-items: center;
-    display: inline-flex;
-    margin: 0 auto;
-  }
-
-  .facetTabsWrapper {
-    margin-bottom: 0.5rem;
-    -webkit-overflow-scrolling: touch;
-    overflow-x: auto;
-  }
-
-  .facetTabsList {
-    flex-wrap: nowrap;
-    gap: 0.25rem;
-    min-width: max-content;
-    -webkit-overflow-scrolling: touch;
-    overflow-x: auto;
-  }
-
-  .facetTabItem {
-    border-radius: 1rem;
-    font-size: 0.85rem;
-    min-width: unset;
-    padding: 0.25rem 0.75rem;
-    white-space: nowrap;
-  }
-
-  .facetTabsWrapper,
-  .facetTabsList,
-  .searchResultsWrapper {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-
-  .facetTabsWrapper::-webkit-scrollbar,
-  .facetTabsList::-webkit-scrollbar,
-  .searchResultsWrapper::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
-  }
-
-  .searchResultsWrapper {
-    flex: 1 1 auto;
-    max-height: unset;
-    min-height: 0;
-    overflow-y: auto;
   }
 }

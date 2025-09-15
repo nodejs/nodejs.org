@@ -53,7 +53,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   }, [clearAll]);
 
   return (
-    <>
+    <div className={styles.searchContainer}>
       <SearchInput.Wrapper className={styles.searchInputWrapper}>
         <MagnifyingGlassIcon />
         <SearchInput.Input
@@ -73,7 +73,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
         />
       </SearchInput.Wrapper>
 
-      <div className={styles.searchPanelContainer}>
+      <div className={styles.searchResultsContainer}>
         <div className={styles.chatButtonWrapper}>
           <SlidingPanel.Trigger
             onClick={onChatTrigger}
@@ -256,12 +256,12 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
                 src={oramaLogo}
                 alt="Powered by Orama"
                 width="62"
-                height="62"
+                height="12"
               />
             </a>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

@@ -1,12 +1,17 @@
 'use client';
 
-import { MagnifyingGlassIcon, ArrowLeftIcon } from '@heroicons/react/24/solid';
+import {
+  MagnifyingGlassIcon,
+  ArrowLeftIcon,
+  SparklesIcon,
+} from '@heroicons/react/24/solid';
 import { OramaCloud } from '@orama/core';
 import { SearchRoot, ChatRoot, Modal } from '@orama/ui/components';
 import { useSearchContext, useChatDispatch } from '@orama/ui/contexts';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState, type FC, type PropsWithChildren } from 'react';
+
 import '@orama/ui/styles.css';
 
 import {
@@ -28,30 +33,28 @@ const MobileTopBar: FC<{
   onClose: () => void;
   onSelect: (mode: 'search' | 'chat') => void;
 }> = ({ isChatOpen, onClose, onSelect }) => (
-  <div className={styles.mobileTopBar}>
-    <button
-      className={styles.mobileTopBarArrow}
-      onClick={onClose}
-      aria-label="Close"
-    >
-      <ArrowLeftIcon className="h-6 w-6 text-white" />
+  <div className={styles.topBar}>
+    <button className={styles.topBarArrow} onClick={onClose} aria-label="Close">
+      <ArrowLeftIcon />
     </button>
-    <div className={styles.mobileTopBarTabs}>
+    <div className={styles.topBarTabs}>
       <button
-        className={classNames(styles.mobileTopBarTab, {
-          [styles.active]: !isChatOpen,
+        className={classNames(styles.topBarTab, {
+          [styles.topBarTabActive]: !isChatOpen,
         })}
         onClick={() => onSelect('search')}
       >
-        Search
+        <span>Search</span>
+        <MagnifyingGlassIcon />
       </button>
       <button
-        className={classNames(styles.mobileTopBarTab, {
-          [styles.active]: isChatOpen,
+        className={classNames(styles.topBarTab, {
+          [styles.topBarTabActive]: isChatOpen,
         })}
         onClick={() => onSelect('chat')}
       >
-        Ask AI
+        <SparklesIcon />
+        <span>Ask AI</span>
       </button>
     </div>
   </div>
@@ -66,6 +69,18 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
   const [shouldAutoTrigger, setShouldAutoTrigger] = useState(false);
   const [autoTriggerValue, setAutoTriggerValue] = useState<string | null>(null);
   const { searchTerm } = useSearchContext();
+  const [isMobileScreen, setIsMobileScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobileScreen(window.innerWidth < 1024);
+    };
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => {
+      window.removeEventListener('resize', checkScreenSize);
+    };
+  }, []);
 
   const handleSelectMode = (newMode: 'search' | 'chat') => {
     setMode(newMode);
@@ -86,30 +101,32 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
 
   return (
     <>
-      <div className={styles.mobileOnly}>
+      {isMobileScreen && (
         <MobileTopBar
           isChatOpen={mode === 'chat'}
           onClose={onClose}
           onSelect={handleSelectMode}
         />
-      </div>
+      )}
       <Search
         onChatTrigger={() => {
           setAutoTriggerValue(searchTerm ?? null);
           handleSelectMode('chat');
         }}
       />
-      <SlidingChatPanel
-        open={isChatOpen}
-        onClose={() => {
-          setIsChatOpen(false);
-          setMode('search');
-          dispatch({ type: 'CLEAR_INTERACTIONS' });
-          dispatch({ type: 'CLEAR_USER_PROMPT' });
-        }}
-        autoTriggerQuery={shouldAutoTrigger ? autoTriggerValue : null}
-        onAutoTriggerComplete={handleChatOpened}
-      />
+      {!isMobileScreen && (
+        <SlidingChatPanel
+          open={isChatOpen}
+          onClose={() => {
+            setIsChatOpen(false);
+            setMode('search');
+            dispatch({ type: 'CLEAR_INTERACTIONS' });
+            dispatch({ type: 'CLEAR_USER_PROMPT' });
+          }}
+          autoTriggerQuery={shouldAutoTrigger ? autoTriggerValue : null}
+          onAutoTriggerComplete={handleChatOpened}
+        />
+      )}
     </>
   );
 };
@@ -117,7 +134,6 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
 const SearchWithModal: FC = () => {
   const [open, setOpen] = useState(false);
   const t = useTranslations();
-  const { searchTerm } = useSearchContext();
 
   const toggleSearchBox = (): void => {
     setOpen(!open);
@@ -158,9 +174,7 @@ const SearchWithModal: FC = () => {
         onModalClosed={() => setOpen(false)}
         closeOnOutsideClick={true}
         closeOnEscape={true}
-        className={classNames(styles.modalWrapper, {
-          [styles.modalWrapperWithResults]: searchTerm,
-        })}
+        className={styles.modalWrapper}
       >
         <Modal.Inner className={styles.modalInner}>
           <Modal.Content className={styles.modalContent}>
