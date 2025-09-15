@@ -1,13 +1,15 @@
 @reference "../../../../styles/index.css";
 
 .chatUserPrompt {
-  @apply py-2;
+  @apply pb-3
+    pt-2;
 
   p {
     @apply max-w-2xl
       rounded-xl
       text-sm
-      text-white;
+      text-neutral-900
+      dark:text-neutral-200;
   }
 }
 
@@ -15,10 +17,12 @@
   @apply my-2
     rounded-xl
     bg-neutral-100
-    p-3
+    px-4
+    py-4
+    text-neutral-900
     empty:hidden
     dark:bg-neutral-950
-    dark:text-neutral-300;
+    dark:text-neutral-200;
 }
 
 .typingIndicator {

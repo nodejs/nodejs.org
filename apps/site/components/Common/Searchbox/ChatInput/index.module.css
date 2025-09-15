@@ -21,21 +21,25 @@
   @apply flex-1
     border-0
     bg-transparent
-    focus:outline-none;
+    text-neutral-900
+    focus:outline-none
+    dark:text-neutral-200;
 }
 
 .textareaButton {
   @apply cursor-pointer
     rounded-xl
-    bg-neutral-300
+    bg-green-600
     p-3
-    text-neutral-800
+    text-white
     transition-colors
     duration-300
     disabled:cursor-not-allowed
-    disabled:opacity-60
-    dark:bg-neutral-900
-    dark:text-neutral-400;
+    disabled:bg-neutral-200/60
+    disabled:text-neutral-800
+    dark:bg-green-400
+    dark:text-neutral-400
+    disabled:dark:bg-neutral-900/60;
 
   svg {
     @apply h-4
