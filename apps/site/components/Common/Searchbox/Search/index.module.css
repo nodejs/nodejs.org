@@ -2,13 +2,16 @@
 
 .searchContainer {
   @apply flex
-    h-full
     grow
-    flex-col;
+    flex-col
+    overflow-hidden;
 }
 
 .searchResultsContainer {
-  @apply grow;
+  @apply flex
+    grow
+    flex-col
+    overflow-y-auto;
 }
 
 .searchInputWrapper {
@@ -133,16 +136,14 @@
 }
 
 .searchResultsWrapper {
-  @apply overflow-y-auto
+  @apply grow
+    overflow-y-auto
     px-5
     pt-3
     text-neutral-900
+    lg:min-h-[40vh]
+    lg:grow-0
     dark:text-neutral-200;
-
-  flex: 0 1 auto;
-  max-height: 40vh;
-  min-height: 0;
-  padding-bottom: 0;
 }
 
 .noResultsWrapper {

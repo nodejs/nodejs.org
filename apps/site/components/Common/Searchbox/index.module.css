@@ -88,7 +88,6 @@
     flex-col
     bg-white
     lg:h-auto
-    lg:max-h-[70vh]
     lg:max-w-3xl
     lg:bg-neutral-100
     dark:bg-zinc-950
@@ -101,6 +100,7 @@
     flex-col
     border-neutral-200
     lg:h-auto
+    lg:max-h-[70vh]
     lg:rounded-xl
     lg:border
     dark:border-neutral-900;
