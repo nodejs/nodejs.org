@@ -10,8 +10,6 @@ import { ChatSources } from '../ChatSources';
 
 type ChatMessageProps = {
   interaction: Interaction;
-  index: number;
-  totalInteractions: number;
 };
 
 const TypingIndicator: FC = () => (
@@ -22,11 +20,7 @@ const TypingIndicator: FC = () => (
   </div>
 );
 
-export const ChatMessage: FC<ChatMessageProps> = ({
-  interaction,
-  index,
-  totalInteractions,
-}) => {
+export const ChatMessage: FC<ChatMessageProps> = ({ interaction }) => {
   if (!interaction) {
     return null;
   }
@@ -71,13 +65,7 @@ export const ChatMessage: FC<ChatMessageProps> = ({
           >
             {interaction.response || ''}
           </ChatInteractions.AssistantMessage>
-          <ChatInteractions.Loading interaction={interaction}>
-            <ChatActions
-              interaction={interaction}
-              index={index}
-              totalInteractions={totalInteractions}
-            />
-          </ChatInteractions.Loading>
+          <ChatActions interaction={interaction} />
         </div>
       )}
     </>

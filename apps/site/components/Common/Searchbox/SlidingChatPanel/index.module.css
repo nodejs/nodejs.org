@@ -42,7 +42,8 @@
 }
 
 .slidingPanelInner {
-  @apply mx-auto
+  @apply relative
+    mx-auto
     flex
     h-full
     max-w-4xl
@@ -91,28 +92,4 @@
 
 .slidingPanelBottom {
   @apply relative;
-}
-
-.scrollDownButton {
-  @apply absolute
-    -top-12
-    left-1/2
-    flex
-    -translate-x-1/2
-    items-center
-    justify-center
-    rounded-xl
-    bg-neutral-200
-    p-2
-    text-neutral-900
-    transition-colors
-    duration-300
-    focus:outline-none
-    dark:bg-neutral-900
-    dark:text-neutral-200;
-
-  svg {
-    @apply h-4
-      w-4;
-  }
 }

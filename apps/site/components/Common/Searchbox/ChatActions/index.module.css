@@ -35,3 +35,8 @@
   @apply text-green-600
     dark:text-green-400;
 }
+
+.chatActionDisaliked {
+  @apply text-neutral-900
+    dark:text-neutral-800;
+}

@@ -1,0 +1,64 @@
+@reference "../../../../styles/index.css";
+
+.chatInteractionsContainer {
+  @apply relative
+    mb-6
+    h-full
+    flex-1
+    items-start
+    overflow-y-auto
+    px-4;
+}
+
+.chatInteractionsWrapper {
+  @apply flex
+    w-full
+    flex-wrap
+    gap-6;
+
+  > div {
+    @apply w-full;
+  }
+}
+
+.chatInteractionsWrapper::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chatInteractionsWrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chatInteractionsWrapper::-webkit-scrollbar-thumb {
+  background: rgb(255 255 255 / 20%);
+  border-radius: 2px;
+}
+
+.chatInteractionsWrapper::-webkit-scrollbar-thumb:hover {
+  background: rgb(255 255 255 / 30%);
+}
+
+.scrollDownButton {
+  @apply bottom-38
+    absolute
+    left-1/2
+    inline-flex
+    -translate-x-1/2
+    items-center
+    justify-center
+    rounded-xl
+    bg-neutral-200
+    p-2
+    text-neutral-900
+    transition-colors
+    duration-300
+    focus:outline-none
+    lg:bottom-28
+    dark:bg-neutral-900
+    dark:text-neutral-200;
+
+  svg {
+    @apply h-4
+      w-4;
+  }
+}

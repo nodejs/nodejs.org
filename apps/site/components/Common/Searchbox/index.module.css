@@ -131,7 +131,7 @@
 .topBarTabs {
   @apply rounded-4xl
     flex
-    bg-neutral-900
+    bg-neutral-200
     px-1
     py-1
     text-sm
@@ -157,13 +157,14 @@
   @apply before:rounded-4xl
     relative
     z-10
-    text-neutral-200
+    text-white
     transition-colors
     before:absolute
     before:inset-0
     before:z-[-1]
-    before:bg-white
-    dark:text-neutral-900;
+    before:bg-black
+    dark:text-neutral-900
+    dark:before:bg-white;
 
   &.topBarTabAnimated:first-of-type {
     @apply before:animate-slide-to-left;
@@ -172,4 +173,22 @@
   &.topBarTabAnimated:last-of-type {
     @apply before:animate-slide-to-right;
   }
+}
+
+.mobileChatContainer {
+  @apply flex
+    grow
+    flex-col
+    overflow-hidden
+    px-4
+    pb-4;
+}
+
+.mobileChatTop {
+  @apply grow
+    overflow-y-auto;
+}
+
+.mobileChatBottom {
+  @apply mt-4;
 }

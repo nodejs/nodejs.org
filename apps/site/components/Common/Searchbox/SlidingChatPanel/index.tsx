@@ -1,15 +1,13 @@
 'use client';
 
-import { ArrowDownIcon, XMarkIcon } from '@heroicons/react/24/solid';
-import type { Interaction } from '@orama/core';
-import { ChatInteractions, SlidingPanel } from '@orama/ui/components';
-import { useScrollableContainer } from '@orama/ui/hooks/useScrollableContainer';
+import { XMarkIcon } from '@heroicons/react/24/solid';
+import { SlidingPanel } from '@orama/ui/components';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
 
 import { ChatInput } from '../ChatInput';
-import { ChatMessage } from '../ChatMessage';
 import styles from './index.module.css';
+import { ChatInteractionsContainer } from '../ChatInteractions';
 
 type SlidingChatPanelProps = PropsWithChildren<{
   open: boolean;
@@ -23,12 +21,6 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
   onClose,
 }) => {
   const t = useTranslations();
-  const {
-    containerRef,
-    showGoToBottomButton,
-    scrollToBottom,
-    recalculateGoToBottomButton,
-  } = useScrollableContainer();
 
   return (
     <>
@@ -45,39 +37,8 @@ export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({
           </SlidingPanel.Close>
 
           <div className={styles.slidingPanelInner}>
-            <div
-              ref={containerRef}
-              className={styles.chatInteractionsContainer}
-            >
-              <ChatInteractions.Wrapper
-                onScroll={recalculateGoToBottomButton}
-                onStreaming={recalculateGoToBottomButton}
-                onNewInteraction={() => scrollToBottom({ animated: true })}
-                className={`${styles.chatInteractionsWrapper}`}
-              >
-                {(
-                  interaction: Interaction,
-                  index?: number,
-                  totalInteractions?: number
-                ) => (
-                  <ChatMessage
-                    interaction={interaction}
-                    index={index ?? 0}
-                    totalInteractions={totalInteractions ?? 1}
-                  />
-                )}
-              </ChatInteractions.Wrapper>
-            </div>
+            <ChatInteractionsContainer />
             <div className={styles.slidingPanelBottom}>
-              {showGoToBottomButton && (
-                <button
-                  onClick={() => scrollToBottom({ animated: true })}
-                  className={styles.scrollDownButton}
-                  aria-label={t('components.search.scrollToBottom')}
-                >
-                  <ArrowDownIcon />
-                </button>
-              )}
               <ChatInput />
             </div>
           </div>

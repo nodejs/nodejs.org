@@ -4,24 +4,26 @@ import {
   DocumentCheckIcon,
   ClipboardIcon,
   ArrowPathIcon,
+  HandThumbDownIcon,
 } from '@heroicons/react/24/solid';
 import type { Interaction } from '@orama/core';
 import { ChatInteractions } from '@orama/ui/components';
-import type { FC } from 'react';
+import classNames from 'classnames';
+import { useState, type FC } from 'react';
 
 import styles from './index.module.css';
 
 type ChatActionsProps = {
   interaction: Interaction;
-  index: number;
-  totalInteractions: number;
 };
 
-export const ChatActions: FC<ChatActionsProps> = ({
-  interaction,
-  index,
-  totalInteractions,
-}) => {
+export const ChatActions: FC<ChatActionsProps> = ({ interaction }) => {
+  const [isDisliked, setIsDisliked] = useState(false);
+
+  const dislikeMessage = () => {
+    setIsDisliked(!isDisliked);
+  };
+
   if (!interaction.response) {
     return null;
   }
@@ -29,16 +31,14 @@ export const ChatActions: FC<ChatActionsProps> = ({
   return (
     <div className={styles.chatActionsContainer}>
       <ul className={styles.chatActionsList}>
-        {index === totalInteractions - 1 && (
-          <li>
-            <ChatInteractions.RegenerateLatest
-              className={styles.chatAction}
-              interaction={interaction}
-            >
-              <ArrowPathIcon />
-            </ChatInteractions.RegenerateLatest>
-          </li>
-        )}
+        <li>
+          <ChatInteractions.RegenerateLatest
+            className={styles.chatAction}
+            interaction={interaction}
+          >
+            <ArrowPathIcon />
+          </ChatInteractions.RegenerateLatest>
+        </li>
         <li>
           <ChatInteractions.CopyMessage
             className={styles.chatAction}
@@ -53,6 +53,18 @@ export const ChatActions: FC<ChatActionsProps> = ({
             }
           </ChatInteractions.CopyMessage>
         </li>
+        {!interaction.loading && interaction.response && (
+          <li>
+            <button
+              className={classNames(styles.chatAction, {
+                [styles.chatActionDisaliked]: isDisliked,
+              })}
+              onClick={dislikeMessage}
+            >
+              <HandThumbDownIcon />
+            </button>
+          </li>
+        )}
       </ul>
     </div>
   );

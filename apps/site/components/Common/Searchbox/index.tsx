@@ -12,13 +12,16 @@ import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState, type FC, type PropsWithChildren } from 'react';
 
-import '@orama/ui/styles.css';
-
 import {
   ORAMA_CLOUD_PROJECT_ID,
   ORAMA_CLOUD_READ_API_KEY,
 } from '#site/next.constants.mjs';
 
+import '@orama/ui/styles.css';
+
+import { ChatInput } from './ChatInput';
+import { ChatInteractionsContainer } from './ChatInteractions';
+import { Footer } from './Footer';
 import styles from './index.module.css';
 import { Search } from './Search';
 import { SlidingChatPanel } from './SlidingChatPanel';
@@ -89,6 +92,9 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
   const { searchTerm } = useSearchContext();
   const [isMobileScreen, setIsMobileScreen] = useState(false);
 
+  const displaySearch =
+    !isMobileScreen || (isMobileScreen && mode === 'search');
+
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMobileScreen(window.innerWidth < 1024);
@@ -126,12 +132,25 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
           onSelect={handleSelectMode}
         />
       )}
-      <Search
-        onChatTrigger={() => {
-          setAutoTriggerValue(searchTerm ?? null);
-          handleSelectMode('chat');
-        }}
-      />
+      {displaySearch && (
+        <Search
+          onChatTrigger={() => {
+            setAutoTriggerValue(searchTerm ?? null);
+            handleSelectMode('chat');
+          }}
+        />
+      )}
+      {isMobileScreen && mode === 'chat' && (
+        <div className={styles.mobileChatContainer}>
+          <div className={styles.mobileChatTop}>
+            <ChatInteractionsContainer />
+          </div>
+          <div className={styles.mobileChatBottom}>
+            <ChatInput />
+          </div>
+        </div>
+      )}
+      <Footer />
       {!isMobileScreen && (
         <SlidingChatPanel
           open={isChatOpen}
