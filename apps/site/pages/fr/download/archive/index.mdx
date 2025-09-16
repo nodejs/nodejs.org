@@ -24,17 +24,19 @@ layout: download-archive
       <ReleaseOverview release={release} />
 
       <ul className='flex list-none flex-col gap-2 p-0 text-sm'>
-
         <li>
-           En savoir plus sur <Link href="/about/previous-releases">les versions de Node.js</Link>, y compris le calendrier de publication et le statut LTS.
+          Consultez le <LinkWithArrow href={`https://github.com/nodejs/node/releases/tag/${version}`}>journal des modifications</LinkWithArrow> ou l'<Link href={`/blog/release/${version}`}>article de blog</Link> correspondant à cette version.
+        </li>
+        <li>
+          En savoir plus sur <Link href="/about/previous-releases">les versions de Node.js</Link>, y compris le calendrier de publication et le statut LTS.
         </li>
 
         <li>
-      <LinkWithArrow href={sources.shasum}>SHASUMS signés</LinkWithArrow> pour les fichiers de publication. Comment <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">vérifier</LinkWithArrow> les SHASUMS signés.
+         <LinkWithArrow href={sources.shasum}>SHASUMS signés</LinkWithArrow> pour les fichiers de publication. Comment <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">vérifier</LinkWithArrow> les SHASUMS signés.
         </li>
 
         <li>
-           Téléchargez une archive tarball signée <LinkWithArrow href={sources.tarball}>Node.js {version} source</LinkWithArrow>.
+          Téléchargez une archive tarball signée <LinkWithArrow href={sources.tarball}>Node.js {version} source</LinkWithArrow>.
         </li>
 
       </ul>

@@ -1,0 +1,60 @@
+---
+title: Завантажити Node.js®
+layout: download-archive
+---
+
+<WithDownloadArchive>
+  {({ binaries, installers, version, release, sources }) => (
+    <>
+      <h1>Архів завантажень Node.js®</h1>
+
+      <h2 className="flex items-center gap-2">
+        <img
+          src="/static/logos/jsIconGreen.svg"
+          alt="Node.js Logo"
+          width="24"
+          height="24"
+        />
+        {version}
+        {release.codename && ` (${release.codename})`}
+      </h2>
+
+      <WithReleaseAlertBox status={release.status} />
+
+      <ReleaseOverview release={release} />
+
+      <ul className='flex list-none flex-col gap-2 p-0 text-sm'>
+
+        <li>
+          Читайте <LinkWithArrow href={`https://github.com/nodejs/node/releases/tag/${version}`}>список змін</LinkWithArrow> або <Link href={`/blog/release/${version}`}>публікацію в блозі</Link> щодо цієї версії.
+        </li>
+        <li>
+          Дізнайтеся більше про <Link href="/about/previous-releases">релізи Node.js</Link>, включно з розкладом релізів та статусом підтримки.
+        </li>
+
+        <li>
+          <LinkWithArrow href={sources.shasum}>Підписані SHASUMS</LinkWithArrow> для файлів релізу. Як <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">перевірити</LinkWithArrow> підписані SHASUMS.
+        </li>
+
+        <li>
+          Завантажте підписаний tar-архів із <LinkWithArrow href={sources.tarball}>вихідним кодом Node.js {version}</LinkWithArrow>.
+        </li>
+
+      </ul>
+
+      <h2>Інші релізи</h2>
+      <WithReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
+
+      <h2>Завантаження бінарних файлів</h2>
+      <DownloadsTable source={binaries} />
+
+      <h2>Пакети інсталяторів</h2>
+      <DownloadsTable source={installers} />
+
+      <h2>Мінорні версії</h2>
+      <MinorReleasesTable releases={release.minorVersions} />
+    </>
+
+)}
+
+</WithDownloadArchive>

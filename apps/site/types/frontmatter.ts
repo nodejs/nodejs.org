@@ -9,4 +9,5 @@ export type Frontmatter = {
   author?: string;
   authors?: string;
   category?: string;
+  description?: string;
 };

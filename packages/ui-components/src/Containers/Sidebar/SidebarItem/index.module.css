@@ -7,19 +7,21 @@
     flex
     w-full
     items-center
+    gap-1
     overflow-hidden
     rounded-md
     text-sm
     text-neutral-800
     dark:text-neutral-200;
 
-  &:hover {
-    &:not(.progression) .label {
-      /* @see https://github.com/nodejs/nodejs.org/blob/main/packages/ui-components/src/Containers/NavBar/NavItem/index.module.css#L24 */
-      @apply rounded-sm
-        bg-neutral-100
-        text-neutral-900
-        dark:bg-neutral-900
+  &:not(.active):hover {
+    /* Apply hover background to the full item width */
+    @apply bg-neutral-100
+      dark:bg-neutral-900;
+
+    /* Ensure text colors contrast with hover background */
+    .label {
+      @apply text-neutral-900
         dark:text-neutral-100;
     }
 
@@ -64,25 +66,38 @@
       @apply p-1;
     }
 
-    &:not(.active):hover .label {
-      @apply rounded-sm
-        bg-neutral-100
+    /* On hover, use full-width background on the item (set above) */
+    &:not(.active):hover {
+      @apply bg-neutral-100
         dark:bg-neutral-900;
+    }
+
+    /* Avoid extra pill background on the label when hovering */
+    &:not(.active):hover .label {
+      @apply rounded-none
+        bg-transparent;
     }
   }
 
   &.active {
-    @apply text-neutral-900
-      dark:text-white;
+    /* Full-width active background and readable text */
+    @apply bg-green-600
+      text-white;
 
     .progressionIcon {
       @apply fill-green-500;
     }
 
-    &:not(.progression) .label {
-      @apply rounded-sm
-        bg-green-600
+    /* Remove pill background on the label; keep full-width bg on the item */
+    .label {
+      @apply rounded-none
+        bg-transparent
         text-white;
+    }
+
+    /* Preserve active background on hover */
+    &:hover {
+      @apply bg-green-600;
     }
   }
 }

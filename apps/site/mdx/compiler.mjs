@@ -4,12 +4,12 @@ import { compile as mdxCompile } from '@mdx-js/mdx';
 import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
 import { matter } from 'vfile-matter';
 
-import { createSval } from './next.jsx.compiler.mjs';
-import { REHYPE_PLUGINS, REMARK_PLUGINS } from './next.mdx.plugins.mjs';
-import { createGitHubSlugger } from './util/github';
+import { rehypePlugins, remarkPlugins } from './plugins.mjs';
+import { createGitHubSlugger } from '../util/github';
+import createInterpreter from '../util/interpreter';
 
 // Defines a JSX Fragment and JSX Runtime for the MDX Compiler
-export const reactRuntime = { Fragment, jsx, jsxs };
+const reactRuntime = { Fragment, jsx, jsxs };
 
 /**
  * This is our custom simple MDX Compiler that is used to compile Markdown and MDX
@@ -27,7 +27,7 @@ export const reactRuntime = { Fragment, jsx, jsxs };
  *   readingTime: import('reading-time').ReadTimeResults;
  * }>}
  */
-export async function compile(
+export default async function compile(
   source,
   fileExtension,
   components = {},
@@ -42,12 +42,12 @@ export async function compile(
 
   // Compiles the MDX/Markdown source into a serializable VFile
   const compiled = await mdxCompile(source, {
-    rehypePlugins: REHYPE_PLUGINS,
-    remarkPlugins: REMARK_PLUGINS,
+    rehypePlugins,
+    remarkPlugins,
     format: fileExtension,
   });
 
-  const interpreter = createSval({
+  const interpreter = createInterpreter({
     ...components,
     'react/jsx-runtime': reactRuntime,
   });
