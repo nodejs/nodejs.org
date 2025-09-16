@@ -80,13 +80,16 @@
 
 .modalInner {
   @apply fixed
+    bottom-0
+    top-0
     mx-auto
     my-0
     flex
-    h-screen
+    h-full
     max-w-none
-    flex-col
     bg-white
+    lg:bottom-auto
+    lg:top-auto
     lg:h-auto
     lg:max-w-3xl
     lg:bg-neutral-100
@@ -96,7 +99,7 @@
 
 .modalContent {
   @apply flex
-    h-screen
+    h-full
     flex-col
     border-neutral-200
     lg:h-auto
@@ -186,7 +189,7 @@
 
 .mobileChatTop {
   @apply grow
-    overflow-y-auto;
+    overflow-hidden;
 }
 
 .mobileChatBottom {

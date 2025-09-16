@@ -3,11 +3,13 @@
 .chatInteractionsContainer {
   @apply relative
     mb-6
+    flex
     h-full
     flex-1
+    flex-col
     items-start
     overflow-y-auto
-    px-4;
+    px-1;
 }
 
 .chatInteractionsWrapper {
@@ -22,9 +24,9 @@
 }
 
 .scrollDownButton {
-  @apply bottom-38
-    scrollbar-thin
+  @apply scrollbar-thin
     absolute
+    bottom-36
     left-1/2
     inline-flex
     -translate-x-1/2

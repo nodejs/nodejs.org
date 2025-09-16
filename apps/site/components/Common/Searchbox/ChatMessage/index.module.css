@@ -2,12 +2,11 @@
 
 .chatUserPrompt {
   @apply pb-3
-    pt-2;
+    pt-3;
 
   p {
     @apply max-w-2xl
       rounded-xl
-      text-sm
       text-neutral-900
       dark:text-neutral-200;
   }
@@ -18,7 +17,7 @@
     rounded-xl
     bg-neutral-100
     px-4
-    py-4
+    py-1
     text-neutral-900
     empty:hidden
     dark:bg-neutral-950
