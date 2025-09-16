@@ -9,7 +9,7 @@ import type { Partners } from '#site/types';
 const createIcon = (
   IconModule: Record<string, Record<string, ElementType>>,
   iconName: string,
-  type?: 'Logo' | 'Favicon'
+  type: 'Logo' | 'Favicon' = 'Favicon'
 ) => {
   const IconComponent = IconModule[iconName][type || 'Favicon'];
   return <IconComponent width={16} height={16} />;
@@ -20,10 +20,8 @@ export const createPartnersList = (
   partnerLists: Array<Omit<Partners, 'logo'>>,
   type?: 'Logo' | 'Favicon'
 ) =>
-  partnerLists.map(({ id, ...partner }) => {
-    return {
-      id,
-      logo: createIcon(PartnersLogo, id, type),
-      ...partner,
-    };
-  });
+  partnerLists.map(({ id, ...partner }) => ({
+    id,
+    logo: createIcon(PartnersLogo, id, type),
+    ...partner,
+  }));
