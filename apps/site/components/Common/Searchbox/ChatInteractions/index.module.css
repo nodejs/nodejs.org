@@ -21,25 +21,9 @@
   }
 }
 
-.chatInteractionsWrapper::-webkit-scrollbar {
-  width: 4px;
-}
-
-.chatInteractionsWrapper::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.chatInteractionsWrapper::-webkit-scrollbar-thumb {
-  background: rgb(255 255 255 / 20%);
-  border-radius: 2px;
-}
-
-.chatInteractionsWrapper::-webkit-scrollbar-thumb:hover {
-  background: rgb(255 255 255 / 30%);
-}
-
 .scrollDownButton {
   @apply bottom-38
+    scrollbar-thin
     absolute
     left-1/2
     inline-flex
@@ -61,4 +45,22 @@
     @apply h-4
       w-4;
   }
+}
+
+.chatInteractionsContainer::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.chatInteractionsContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chatInteractionsContainer::-webkit-scrollbar-thumb {
+  background-color: var(--color-neutral-800);
+  border-radius: 6px;
+}
+
+.chatInteractionsContainer::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-neutral-700);
 }
