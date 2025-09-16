@@ -143,6 +143,19 @@
     text-neutral-900
     lg:grow-0
     dark:text-neutral-200;
+
+  &::-webkit-scrollbar {
+    width: 0.3em;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #b2b2b285;
+    border-radius: 6px;
+  }
 }
 
 .noResultsWrapper {

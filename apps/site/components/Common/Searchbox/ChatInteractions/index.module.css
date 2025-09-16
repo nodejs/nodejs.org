@@ -10,6 +10,19 @@
     items-start
     overflow-y-auto
     px-1;
+
+  &::-webkit-scrollbar {
+    width: 0.3em;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #b2b2b285;
+    border-radius: 6px;
+  }
 }
 
 .chatInteractionsWrapper {
@@ -47,22 +60,4 @@
     @apply h-4
       w-4;
   }
-}
-
-.chatInteractionsContainer::-webkit-scrollbar {
-  height: 6px;
-  width: 6px;
-}
-
-.chatInteractionsContainer::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.chatInteractionsContainer::-webkit-scrollbar-thumb {
-  background-color: var(--color-neutral-800);
-  border-radius: 6px;
-}
-
-.chatInteractionsContainer::-webkit-scrollbar-thumb:hover {
-  background-color: var(--color-neutral-700);
 }
