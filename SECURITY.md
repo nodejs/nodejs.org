@@ -3,7 +3,7 @@
 ## Reporting a vulnerability to Node.js Website
 
 Please report security issues **privately** using the **GitHub Security Advisory**
-workflow (Security → “Report a vulnerability”).
+workflow ([Security → “Report a vulnerability”](https://github.com/nodejs/nodejs.org/security/advisories/new)).
 
 Do **not** open a public GitHub issue for security problems.
 
