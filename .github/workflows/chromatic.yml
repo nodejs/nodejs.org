@@ -59,7 +59,7 @@ jobs:
           egress-policy: audit
 
       - name: Git Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           # Provides the Pull Request commit SHA or the GitHub merge group ref
           ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || github.ref }}
@@ -82,10 +82,8 @@ jobs:
 
       - name: Start Visual Regression Tests (Chromatic)
         # This assigns the Environment Deployment for Storybook
-        # This action must be manually updated to the latest commit from
-        # https://github.com/chromaui/action
         id: chromatic-deploy
-        uses: chromaui/action@4d8ebd13658d795114f8051e25c28d66f14886c6 # v13.1.2
+        uses: chromaui/action@d0795df816d05c4a89c80295303970fddd247cce # v13.1.4
         with:
           workingDir: packages/ui-components
           buildScriptName: storybook:build

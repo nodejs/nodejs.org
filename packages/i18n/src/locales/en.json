@@ -218,7 +218,9 @@
     "minorReleasesTable": {
       "version": "Version",
       "links": "Links",
-      "information": "Version Informations",
+      "nApiVersion": "N-API version",
+      "npmVersion": "npm version",
+      "v8Version": "V8 version",
       "actions": {
         "release": "Release",
         "changelog": "Changelog",

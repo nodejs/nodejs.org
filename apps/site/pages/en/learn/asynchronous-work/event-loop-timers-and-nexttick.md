@@ -88,6 +88,11 @@ Between each run of the event loop, Node.js checks if it is waiting for
 any asynchronous I/O or timers and shuts down cleanly if there are not
 any.
 
+Starting with libuv 1.45.0 (Node.js 20), the event loop behavior
+changed to run timers only after the **poll** phase, instead of both before and after
+as in earlier versions. This change can affect the timing of `setImmediate()` callbacks
+and how they interact with timers in certain scenarios.
+
 ## Phases in Detail
 
 ### timers
@@ -310,11 +315,12 @@ it doesn't have to be. Take this code snippet for example:
 
 ```js
 function apiCall(arg, callback) {
-  if (typeof arg !== 'string')
+  if (typeof arg !== 'string') {
     return process.nextTick(
       callback,
       new TypeError('argument should be string')
     );
+  }
 }
 ```
 

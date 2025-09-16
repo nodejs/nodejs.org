@@ -6,6 +6,3 @@ docker pull node:${props.release.major}-${props.release.major >= 4 ? 'alpine' : 
 
 # Create a Node.js container and start a Shell session:
 docker run -it --rm --entrypoint sh node:${props.release.major}-${props.release.major >= 4 ? 'alpine' : 'slim'}
-
-# Verify the Node.js version:
-node -v # Should print "${props.release.versionWithPrefix}".

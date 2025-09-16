@@ -658,15 +658,23 @@ However, when we want to use a [`Writable`][] directly, we must respect the
 // there is a great chance multiple callbacks will be called.
 class MyWritable extends Writable {
   _write(chunk, encoding, callback) {
-    if (chunk.toString().indexOf('a') >= 0) callback();
-    else if (chunk.toString().indexOf('b') >= 0) callback();
+    if (chunk.toString().indexOf('a') >= 0) {
+      callback();
+    } else if (chunk.toString().indexOf('b') >= 0) {
+      callback();
+    }
     callback();
   }
 }
 
 // The proper way to write this would be:
-if (chunk.contains('a')) return callback();
-if (chunk.contains('b')) return callback();
+if (chunk.contains('a')) {
+  return callback();
+}
+
+if (chunk.contains('b')) {
+  return callback();
+}
 callback();
 ```
 

@@ -6,6 +6,3 @@ docker pull node:${props.release.major}-${props.release.major >= 4 ? 'alpine' : 
 
 # 建立 Node.js 容器並啟動 Shell 工作階段：
 docker run -it --rm --entrypoint sh node:${props.release.major}-${props.release.major >= 4 ? 'alpine' : 'slim'}
-
-# 核對 Node.js 版本：
-node -v # 應會印出 "${props.release.versionWithPrefix}"。

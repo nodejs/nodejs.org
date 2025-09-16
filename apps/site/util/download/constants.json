@@ -69,7 +69,7 @@
           "label": "ARMv7",
           "value": "armv7l",
           "compatibility": {
-            "semver": [">= 4.0.0"]
+            "semver": [">= 4.0.0", "< 24.0.0"]
           }
         },
         {

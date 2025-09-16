@@ -51,7 +51,9 @@ And here is an equivalent **asynchronous** example:
 const fs = require('node:fs');
 
 fs.readFile('/file.md', (err, data) => {
-  if (err) throw err;
+  if (err) {
+    throw err;
+  }
 });
 ```
 
@@ -78,7 +80,10 @@ And here is a similar, but not equivalent asynchronous example:
 const fs = require('node:fs');
 
 fs.readFile('/file.md', (err, data) => {
-  if (err) throw err;
+  if (err) {
+    throw err;
+  }
+
   console.log(data);
 });
 moreWork(); // will run before console.log
@@ -117,7 +122,10 @@ at an example:
 const fs = require('node:fs');
 
 fs.readFile('/file.md', (err, data) => {
-  if (err) throw err;
+  if (err) {
+    throw err;
+  }
+
   console.log(data);
 });
 fs.unlinkSync('/file.md');
@@ -132,10 +140,16 @@ execute in the correct order is:
 const fs = require('node:fs');
 
 fs.readFile('/file.md', (readFileErr, data) => {
-  if (readFileErr) throw readFileErr;
+  if (readFileErr) {
+    throw readFileErr;
+  }
+
   console.log(data);
+
   fs.unlink('/file.md', unlinkErr => {
-    if (unlinkErr) throw unlinkErr;
+    if (unlinkErr) {
+      throw unlinkErr;
+    }
   });
 });
 ```
