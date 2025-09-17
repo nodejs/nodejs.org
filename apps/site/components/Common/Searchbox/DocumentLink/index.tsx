@@ -1,0 +1,48 @@
+'use client';
+
+import Link from 'next/link';
+import { useLocale } from 'next-intl';
+import type { FC } from 'react';
+
+import styles from './index.module.css';
+
+type DocumentLinkProps = {
+  document: {
+    path: string;
+    siteSection: string;
+    pageSectionTitle?: string;
+  };
+  className?: string;
+  children?: React.ReactNode;
+  'data-focus-on-arrow-nav'?: boolean;
+};
+
+export const DocumentLink: FC<DocumentLinkProps> = ({
+  document,
+  className = styles.documentLink,
+  children,
+  'data-focus-on-arrow-nav': dataFocusOnArrowNav,
+  ...props
+}) => {
+  const locale = useLocale();
+
+  const href =
+    document.siteSection.toLowerCase() === 'docs'
+      ? `/${document.path}`
+      : `/${locale}/${document.path}`;
+
+  return (
+    <Link
+      href={href}
+      className={className}
+      data-focus-on-arrow-nav={dataFocusOnArrowNav}
+      {...props}
+    >
+      {children || (
+        <span className={styles.documentTitle}>
+          {document.pageSectionTitle}
+        </span>
+      )}
+    </Link>
+  );
+};

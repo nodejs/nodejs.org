@@ -162,6 +162,26 @@ export const ORAMA_CLOUD_API_KEY =
   process.env.NEXT_PUBLIC_ORAMA_API_KEY || 'qopIuAERiWP2EZOpDjvczjws7WV40yrj';
 
 /**
+ * The default Orama Cloud Datasource ID to use when searching with Orama Cloud.
+ */
+export const ORAMA_CLOUD_DATASOURCE_ID =
+  process.env.NEXT_PUBLIC_ORAMA_DATASOURCE_ID || '';
+
+/**
+ * The default Orama Cloud Project ID to use when initializing Orama Cloud.
+ */
+export const ORAMA_CLOUD_PROJECT_ID =
+  process.env.NEXT_PUBLIC_ORAMA_PROJECT_ID || '';
+
+/**
+ * A GitHub Access Token for accessing the GitHub API and not being rate-limited
+ * The current token is registered on the "nodejs-vercel" GitHub Account.
+ *
+ * Note: This has no NEXT_PUBLIC prefix as it should not be exposed to the Browser.
+ */
+export const GITHUB_API_KEY = process.env.NEXT_GITHUB_API_KEY || '';
+
+/**
  * The resource we point people to when discussing internationalization efforts.
  */
 export const TRANSLATION_URL =

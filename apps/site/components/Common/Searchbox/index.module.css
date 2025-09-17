@@ -1,0 +1,185 @@
+@reference "../../../styles/index.css";
+
+/* .searchWrapper {
+  @apply relative
+    flex
+    w-full
+    flex-shrink-0;
+} */
+
+.searchButton {
+  @apply flex
+    grow
+    cursor-pointer
+    items-center
+    justify-between
+    gap-1
+    rounded-xl
+    border
+    border-neutral-300
+    bg-white
+    py-1
+    pl-2
+    pr-1
+    text-neutral-900
+    transition-colors
+    duration-300
+    hover:bg-neutral-100
+    dark:border-neutral-900
+    dark:bg-neutral-950
+    dark:text-neutral-200
+    hover:dark:bg-neutral-900;
+}
+
+.searchButtonContent {
+  @apply relative
+    flex
+    flex-nowrap
+    items-center
+    gap-1
+    p-2
+    text-sm;
+
+  svg {
+    @apply h-4
+      w-4;
+  }
+}
+
+.searchButtonShortcut {
+  @apply hidden
+    rounded-md
+    bg-neutral-300
+    px-2
+    py-1
+    text-sm
+    text-neutral-800
+    sm:inline
+    dark:bg-neutral-900
+    dark:text-neutral-400;
+}
+
+.modalWrapper {
+  @apply fixed
+    left-0
+    top-0
+    z-50
+    flex
+    h-full
+    w-full
+    bg-white/70
+    dark:bg-neutral-950/85;
+
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 5vh;
+}
+
+.mobileOnly {
+  display: none;
+}
+
+.modalInner {
+  @apply flex
+    flex-col
+    bg-neutral-100
+    dark:bg-neutral-950;
+
+  inset: 0;
+
+  /* Mobile styles */
+  position: fixed;
+
+  /* Desktop styles */
+  @media (min-width: 640px) {
+    border: 1px solid rgb(229 229 229);
+    border-radius: 12px;
+    height: auto;
+    max-height: none;
+    max-width: 720px;
+    min-height: auto;
+    padding: 0;
+    position: static;
+    width: 80%;
+  }
+
+  @media (min-width: 640px) and (prefers-color-scheme: dark) {
+    border-color: rgb(38 38 38);
+  }
+}
+
+.modalWrapper.modalWrapperWithResults .modalInner {
+  display: flex;
+  flex-direction: column;
+  max-height: 70vh;
+}
+
+.modalContent {
+  @apply flex
+    flex-col;
+
+  /* Mobile full height */
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+
+  /* Desktop auto height - fit content exactly */
+  @media (min-width: 640px) {
+    flex-shrink: 0;
+    height: fit-content;
+    min-height: 0;
+  }
+}
+
+.active {
+  @apply block;
+}
+
+@media (max-width: 600px) {
+  .mobileOnly {
+    @apply block;
+  }
+
+  .mobileTopBar {
+    align-items: center;
+    background: #181c23;
+    border-bottom: 1px solid #222;
+    display: flex;
+    padding: 0.5rem 1rem;
+  }
+
+  .mobileTopBarArrow {
+    align-items: center;
+    background: none;
+    border: none;
+    color: #fff;
+    display: flex;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  .mobileTopBarTabs {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .mobileTopBarTab {
+    background: none;
+    border: none;
+    border-radius: 999px;
+    color: #aaa;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition:
+      background 0.2s,
+      color 0.2s;
+  }
+
+  .mobileTopBarTab.active,
+  .mobileTopBarTab:focus {
+    background: #23272f;
+    color: #fff;
+  }
+}
