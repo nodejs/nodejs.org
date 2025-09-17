@@ -6,6 +6,8 @@ import MDXCodeTabs from '@node-core/ui-components/MDX/CodeTabs';
 
 import Button from '#site/components/Common/Button';
 import LinkWithArrow from '#site/components/Common/LinkWithArrow';
+import PartnersIconList from '#site/components/Common/Partners/PartnersIconList';
+import PartnersLogoList from '#site/components/Common/Partners/PartnersLogoList';
 import DownloadButton from '#site/components/Downloads/DownloadButton';
 import DownloadsTable from '#site/components/Downloads/DownloadsTable';
 import BlogPostLink from '#site/components/Downloads/Release/BlogPostLink';
@@ -33,6 +35,7 @@ import WithDownloadArchive from '#site/components/withDownloadArchive';
 import WithNodeRelease from '#site/components/withNodeRelease';
 import WithReleaseAlertBox from '#site/components/withReleaseAlertBox';
 import WithReleaseSelect from '#site/components/withReleaseSelect';
+import WithSupporters from '#site/components/withSupporters';
 import { ReleaseProvider } from '#site/providers/releaseProvider';
 
 /**
@@ -67,6 +70,10 @@ export default {
     ChangelogLink,
     DownloadLink: ReleaseDownloadLink,
   },
+  // Shows a list of Node.js Partners with Icons
+  PartnersIconList,
+  // Shows a list of Node.js Partners with Logos
+  PartnersLogoList,
   // HOC for providing the Download Archive Page properties
   WithDownloadArchive,
   DownloadsTable,
@@ -75,6 +82,8 @@ export default {
   WithReleaseAlertBox,
   WithBanner,
   WithBadgeGroup,
+  // HOC for providing Backers Data
+  WithSupporters,
   BadgeGroup,
   ReleaseOverview,
   MinorReleasesTable,
