@@ -113,6 +113,10 @@
         "branding": {
           "link": "/about/branding",
           "label": "components.navigation.about.links.branding"
+        },
+        "eol": {
+          "link": "/about/eol",
+          "label": "components.navigation.about.links.eol"
         }
       }
     },
