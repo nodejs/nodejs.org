@@ -8,7 +8,7 @@ const EOLAlert = () => {
   return (
     <AlertBox level="warning">
       {t.rich('components.eolAlert.message', {
-        link: text => <Link href="/eol">{text}</Link>,
+        link: text => <Link href="/about/eol">{text}</Link>,
       })}
     </AlertBox>
   );

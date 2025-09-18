@@ -21,7 +21,7 @@ const WithReleaseAlertBox: FC<WithReleaseAlertBoxProps> = ({ status }) => {
           size="small"
         >
           {t.rich('layouts.download.codeBox.unsupportedVersionWarning', {
-            link: text => <Link href="/eol">{text}</Link>,
+            link: text => <Link href="/about/eol">{text}</Link>,
           })}
         </AlertBox>
       );

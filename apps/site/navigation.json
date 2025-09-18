@@ -115,7 +115,7 @@
           "label": "components.navigation.about.links.branding"
         },
         "eol": {
-          "link": "/eol",
+          "link": "/about/eol",
           "label": "components.navigation.about.links.eol"
         }
       }
