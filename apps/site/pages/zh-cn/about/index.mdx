@@ -3,7 +3,7 @@ title: 关于 Node.js®
 layout: about
 ---
 
-关于 Node.js®
+# 关于 Node.js®
 
 作为一个异步事件驱动的 JavaScript 运行库，Node.js 旨在构建可扩展的网络应用程序。在下面的 "hello world" 示例中，可以同时处理许多连接。每次连接时，回调函数被触发，但如果没有工作要做，Node.js 将进入睡眠状态。
 
@@ -43,18 +43,50 @@ server.listen(port, hostname, () => {
 
 这与当今更常见的使用操作系统线程并发模型形成对比。基于线程的网络编程效率相对低效，而且非常难以使用。此外，Node.js 的用户不必担心死锁进程，因为没有锁。Node.js 几乎没有任何函数直接执行 I/O 操作，除非使用 Node.js 标准库的同步方法执行 I/O，否则进程永远不会阻塞。由于没有任何阻塞，因此在 Node.js 中开发可扩展的系统非常合理。
 
-如果对其中一些语言不熟悉，可以阅读关于 [Blocking vs. Non-Blocking][] 的完整文章。
+如果对其中一些语言不熟悉，可参阅以下完整文章[阻塞与非阻塞](/learn/asynchronous-work/overview-of-blocking-vs-non-blocking)。
 
 ---
 
-Node.js 在设计上受到了诸如 Ruby 的 [Event Machine][] 和 Python 的 [Twisted][] 等系统的影响。Node.js 将事件模型推进了一步。它将事件循环呈现为运行时构造而不是库。在其他系统中，始终存在一个阻塞调用来启动事件循环。通常，行为是通过脚本开头的回调函数定义的，并且在脚本末尾通过像 `EventMachine::run()` 这样的阻塞调用启动服务器。在 Node.js 中，没有这样的启动事件循环调用。Node.js 在执行输入脚本后简单地进入事件循环。当没有更多的回调要执行时，Node.js 退出事件循环。这种行为类似于浏览器 JavaScript —— 事件循环对用户是隐藏的。
+Node.js 在设计上受到了诸如 Ruby 的 [Event Machine](https://github.com/eventmachine/eventmachine) 和 Python 的 [Twisted](https://twisted.org/) 等系统的影响。Node.js 将事件模型推进了一步。它将事件循环呈现为运行时构造而不是库。在其他系统中，始终存在一个阻塞调用来启动事件循环。通常，行为是通过脚本开头的回调函数定义的，并且在脚本末尾通过像 `EventMachine::run()` 这样的阻塞调用启动服务器。在 Node.js 中，没有这样的启动事件循环调用。Node.js 在执行输入脚本后简单地进入事件循环。当没有更多的回调要执行时，Node.js 退出事件循环。这种行为类似于浏览器 JavaScript —— 事件循环对用户是隐藏的。
 
 HTTP 在 Node.js 中是第一类公民，设计时考虑了流式传输和低延迟。这使得 Node.js 非常适合作为 Web 库或框架的基础。
 
-Node.js 的设计没有线程并不意味着您不能利用环境中的多个核心。可以使用我们的 [child_process.fork()](https://nodejs.org/docs/latest/api/child_process.html#child_processforkmodulepath-args-options) API 来生成子进程，并且设计得易于通信。建立在同一接口之上的是 [cluster](https://nodejs.org/docs/latest/api/cluster.html) 模块，它允许您在进程之间共享套接字，从而实现对核心的负载均衡。
+Node.js 的设计虽然没有使用线程，但这并不意味着你无法利用环境中的多核处理器。可以使用我们的[`child_process.fork()`](https://nodejs.org/api/child_process.html) API 来生成子进程， 并且这些子进程之间的通信非常简单。在此接口的基础上，还构建了[`cluster`](https://nodejs.org/api/cluster.html) 模块，它允许多个进程之间共享套接字，从而实现在多个核心上的负载均衡。
 
-[blocking vs. non-blocking]: /learn/asynchronous-work/overview-of-blocking-vs-non-blocking
-[`child_process.fork()`]: https://nodejs.org/api/child_process.html
-[`cluster`]: https://nodejs.org/api/cluster.html
-[event machine]: https://github.com/eventmachine/eventmachine
-[twisted]: https://twisted.org/
+## Node.js 官方资源
+
+为确保在使用 Node.js 时的真实性与安全性，请始终使用官方来源。避免信任来自非官方来源的邮件、可执行文件或下载内容。
+
+### Node.js 官方域名
+
+下载 Node.js 可执行文件和访问官方文档时，请仅使用以下域名：
+
+- [nodejs.org](https://nodejs.org)
+- [nodejs.dev](https://nodejs.dev) _(重定向至 https://nodejs.org)_
+- [iojs.org](https://iojs.org) _(重定向至 https://nodejs.org)_
+
+### 官方 npm 包
+
+Node.js 团队维护以下范围的官方 npm 包：
+
+- [`@node-core`](https://npmjs.com/~node-core)
+- [`@pkgjs`](https://npmjs.com/~pkgjs)
+
+此外，Node.js 团队还维护由 [`nodejs-foundation`](https://npmjs.com/~nodejs-foundation) npm 账号发布的包，不过其他与 Node.js 相关的包（例如 [`undici`](https://www.npmjs.com/package/undici)）也可能由与该项目关系密切的贡献者维护。
+
+使用来自 Node.js 团队的包可确保你使用的是官方支持的 Node.js 组件。
+
+### 官方 GitHub 组织
+
+Node.js 及相关项目在以下官方 GitHub 组织下维护：
+
+- [nodejs](https://github.com/nodejs)
+- [pkgjs\`](https://github.com/pkgjs)
+
+### 官方沟通渠道
+
+Node.js 和 OpenJS 基金会通过各种官方和社区支持的渠道进行沟通。你可以在 [Get Involved](https://nodejs.org/en/about/get-involved) 页面找到如何参与的详细信息。
+
+### 报告网站问题与停机时间
+
+如果你遇到 Node.js 网站的问题，请在 [Node.js 网站仓库](https://github.com/nodejs/nodejs.org/issues) 上报告。欲了解停机的实时更新，请访问 [Node.js 状态页面](https://status.nodejs.org)。

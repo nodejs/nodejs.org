@@ -43,7 +43,21 @@ pacman -S nodejs npm
 
 ## CentOS、Fedora 和 Red Hat Enterprise Linux
 
-Node.js 在 CentOS/RHEL 8 和 Fedora 中作为一个名为 `nodejs` 的模块可用。
+Node.js 和 npm 软件包在 Fedora 和 RHEL 10 的主仓库上可用。
+
+可以通过当前活跃的长期支持 Node.js 版本的默认流安装。
+
+```bash
+dnf install nodejs npm
+```
+
+或者从特定的流获取替代维护版本（维护版本可能在 Fedora 和不同的 RHEL 版本之间有所不同）。
+
+```bash
+dnf install nodejs24
+```
+
+对于较老的 CentOS/RHEL 发行版，Node.js 以模块 `nodejs` 的形式可用。
 
 ```bash
 dnf module install nodejs:<stream>
@@ -339,7 +353,7 @@ sudo eopkg install nodejs
 
 它支持所有主流的Shell（Bash、Zsh、Fish、PowerShell、Clink、Cmder）。
 
-查看[快速入门](https://vfox.lhan.me/guides/quick-start.html)，了解vfox如何上手及所有使用细节。
+查看[快速入门](https://vfox.dev/guides/quick-start.html)，了解vfox如何上手及所有使用细节。
 
 ## Void Linux
 

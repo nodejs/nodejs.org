@@ -217,7 +217,9 @@
     "minorReleasesTable": {
       "version": "Версія",
       "links": "Посилання",
-      "information": "Інформація про версії",
+      "nApiVersion": "Версія N-API",
+      "npmVersion": "Версія npm",
+      "v8Version": "Версія V8",
       "actions": {
         "release": "Реліз",
         "changelog": "Список змін",

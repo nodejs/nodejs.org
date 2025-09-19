@@ -217,7 +217,9 @@
     "minorReleasesTable": {
       "version": "バージョン",
       "links": "リンク",
-      "information": "バージョン情報",
+      "nApiVersion": "N-APIのバージョン",
+      "npmVersion": "npmのバージョン",
+      "v8Version": "V8のバージョン",
       "actions": {
         "release": "リリース",
         "changelog": "変更履歴",
