@@ -14,16 +14,25 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [{ "name": "next" }],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "baseUrl": "."
   },
-  "mdx": { "checkMdx": true },
+  "mdx": {
+    "checkMdx": true
+  },
   "include": [
-    "next-env.d.ts",
-    "global.d.ts",
+    "**/*.js",
+    "**/*.jsx",
     "**/*.mdx",
+    "**/*.mjs",
     "**/*.ts",
     "**/*.tsx",
+    // Explicitly include since the globs won't match the `.`
+    ".stylelintrc.mjs",
     ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules", ".next"]

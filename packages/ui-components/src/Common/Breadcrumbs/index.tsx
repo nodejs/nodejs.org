@@ -62,7 +62,7 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
           </BreadcrumbItem>
         );
       }),
-    [hideHome, isOverflow, lengthOffset, links]
+    [as, hideHome, isOverflow, lengthOffset, links]
   );
 
   return (

@@ -25,18 +25,18 @@ const createDownloadArtifact = (
   kind: DownloadKind
 ): DownloadArtifact => {
   const url = getNodeDownloadUrl({
-    versionWithPrefix: versionWithPrefix,
-    os: os,
+    versionWithPrefix,
+    os,
     platform: platform.value,
-    kind: kind,
+    kind,
   });
 
   return {
     fileName: url.replace(`${DIST_URL}${versionWithPrefix}/`, ''),
-    kind: kind,
-    os: os,
+    kind,
+    os,
     architecture: platform.label,
-    url: url,
+    url,
     version: versionWithPrefix,
   };
 };
@@ -113,21 +113,21 @@ export const buildReleaseArtifacts = (
 
   return {
     binaries: getCompatibleArtifacts({
-      versionWithPrefix: versionWithPrefix,
+      versionWithPrefix,
       kind: 'binary',
     }),
     installers: getCompatibleArtifacts({
       exclude: OS_NOT_SUPPORTING_INSTALLERS,
-      versionWithPrefix: versionWithPrefix,
+      versionWithPrefix,
       kind: 'installer',
     }),
     sources: {
       shasum: getNodeDownloadUrl({
-        versionWithPrefix: versionWithPrefix,
+        versionWithPrefix,
         kind: 'shasum',
       }),
       tarball: getNodeDownloadUrl({
-        versionWithPrefix: versionWithPrefix,
+        versionWithPrefix,
         kind: 'source',
       }),
     },
@@ -140,19 +140,10 @@ export const buildReleaseArtifacts = (
  * Extracts the version from the pathname.
  * It expects the version to be in the format like 'v22.0.4'.
  */
-export const extractVersionFromPath = (pathname: string | undefined) => {
-  if (!pathname) {
-    return null;
-  }
-
+export const extractVersionFromPath = (pathname: string) => {
   const segments = pathname.split('/').filter(Boolean);
-  const version = segments.pop();
-
-  // Checks the version prefix + digits + optional dot-separated digits
-  //  (v22, v22.0.4)
-  if (!version || !version.match(/^v\d+(\.\d+)*$/)) {
-    return null;
-  }
+  // The version is expected to be the last segment in the path
+  const version = segments.pop()!;
 
   return version;
 };

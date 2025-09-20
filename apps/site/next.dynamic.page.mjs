@@ -86,11 +86,11 @@ export const getMarkdownContext = async props => {
 
   // Metadata and shared Context to be available through the lifecycle of the page
   const context = {
-    frontmatter: frontmatter,
-    headings: headings,
+    frontmatter,
+    headings,
     pathname: `/${props.pathname}`,
-    readingTime: readingTime,
-    filename: filename,
+    readingTime,
+    filename,
   };
 
   return [content, context];

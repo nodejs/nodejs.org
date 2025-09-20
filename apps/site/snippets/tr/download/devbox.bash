@@ -9,6 +9,3 @@ devbox add node@${props.release.major}
 
 Bir Devbox shell açın
 debox shell
-
-# Node.js sürümünüzü doğrulayın:
-node -v # Şunu yazdırmalı "${props.release.versionWithPrefix}".

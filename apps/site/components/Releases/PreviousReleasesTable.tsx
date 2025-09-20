@@ -43,24 +43,30 @@ const PreviousReleasesTable: FC = () => {
       <tbody>
         {releaseData.map(release => (
           <Fragment key={release.major}>
-            <tr key={release.major}>
-              <td data-label="Version">
+            <tr data-label={release.versionWithPrefix}>
+              <td data-label={t('components.downloadReleasesTable.version')}>
                 <Link href={`/download/archive/${release.versionWithPrefix}`}>
                   v{release.major}
                 </Link>
               </td>
 
-              <td data-label="LTS">{release.codename || '-'}</td>
+              <td data-label={t('components.downloadReleasesTable.codename')}>
+                {release.codename || '-'}
+              </td>
 
-              <td data-label="Date">
+              <td
+                data-label={t('components.downloadReleasesTable.firstReleased')}
+              >
                 <FormattedTime date={release.currentStart} />
               </td>
 
-              <td data-label="Date">
+              <td
+                data-label={t('components.downloadReleasesTable.lastUpdated')}
+              >
                 <FormattedTime date={release.releaseDate} />
               </td>
 
-              <td data-label="Status">
+              <td data-label={t('components.downloadReleasesTable.status')}>
                 <Badge kind={BADGE_KIND_MAP[release.status]} size="small">
                   {release.status}
                   {release.status === 'End-of-life' ? ' (EoL)' : ''}

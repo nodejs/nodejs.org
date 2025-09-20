@@ -62,9 +62,9 @@ const WithNavBar: FC = () => {
 
       <NavBar
         navItems={navigationItems.map(([, { label, link, target }]) => ({
-          link: link,
+          link,
           text: label,
-          target: target,
+          target,
         }))}
         pathname={pathname}
         as={Link}

@@ -34,7 +34,10 @@ const Avatar = forwardRef<
     },
     ref
   ) => {
-    if (!url) Component = 'div';
+    if (!url) {
+      Component = 'div';
+    }
+
     return (
       <RadixAvatar.Root
         {...props}

@@ -70,7 +70,7 @@ const Select = <T extends string>({
     if (isStringArray(mappedValues)) {
       mappedValues = mappedValues.map(value => ({
         label: value,
-        value: value,
+        value,
       }));
     }
 
@@ -119,6 +119,7 @@ const Select = <T extends string>({
     ));
     // We explicitly want to recalculate these values only when the values themselves changed
     // This is to prevent re-rendering and re-calcukating the values on every render
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [JSON.stringify(values)]);
 
   // Both change the internal state and emit the change event

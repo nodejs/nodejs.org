@@ -27,7 +27,9 @@ const hashedSelfReference = (tree, vfile) => {
   for (const node of getLinksRecursively(tree)) {
     const { url } = node;
 
-    if (!url || url[0] === '#') continue;
+    if (!url || url[0] === '#') {
+      continue;
+    }
 
     const targetURL = new URL(url, currentFileURL);
 

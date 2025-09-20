@@ -6,6 +6,3 @@ ${props.os === 'WIN' ?
 
 # Unduh dan pasang Node.js:
 volta install node@${props.release.major}
-
-# Verifikasi versi Node.js:
-node -v # Harusnya mencetak "${props.release.versionWithPrefix}".

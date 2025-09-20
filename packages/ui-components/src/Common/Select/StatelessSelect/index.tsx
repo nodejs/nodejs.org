@@ -34,7 +34,7 @@ const StatelessSelect = <T extends string>({
     if (isStringArray(mappedValues)) {
       mappedValues = mappedValues.map(value => ({
         label: value,
-        value: value,
+        value,
       }));
     }
 

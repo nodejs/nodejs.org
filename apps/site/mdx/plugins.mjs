@@ -7,10 +7,12 @@ import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import readingTime from 'remark-reading-time';
 
+import remarkTableTitles from '../util/table';
+
 /**
  * Provides all our Rehype Plugins that are used within MDX
  */
-export const REHYPE_PLUGINS = [
+export const rehypePlugins = [
   // Generates `id` attributes for headings (H1, ...)
   rehypeSlug,
   // Automatically add anchor links to headings (H1, ...)
@@ -23,11 +25,12 @@ export const REHYPE_PLUGINS = [
 /**
  * Provides all our Remark Plugins that are used within MDX
  */
-export const REMARK_PLUGINS = [
+export const remarkPlugins = [
   // Support GFM syntax to be used within Markdown
   remarkGfm,
   // Generates metadata regarding headings
   remarkHeadings,
   // Calculates the reading time of the content
   readingTime,
+  remarkTableTitles,
 ];

@@ -5,6 +5,9 @@
     "//#prettier": {
       "outputs": [".prettiercache"]
     },
+    "//#prettier:fix": {
+      "outputs": [".prettiercache"]
+    },
     "build": {
       "dependsOn": ["^topo"]
     },

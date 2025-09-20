@@ -74,9 +74,9 @@ const getPage: FC<PageParams> = async props => {
   // If we have a filename and layout then we have a page
   if (context.filename && context.frontmatter.layout) {
     return basePage.renderPage({
-      content: content,
+      content,
       layout: context.frontmatter.layout,
-      context: context,
+      context,
     });
   }
 

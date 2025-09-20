@@ -98,7 +98,10 @@ function getSong() {
 }
 
 function singSong(_song) {
-  if (!_song) throw new Error("song is '' empty, FEED ME A SONG!");
+  if (!_song) {
+    throw new Error("song is '' empty, FEED ME A SONG!");
+  }
+
   console.log(_song);
 }
 
@@ -128,7 +131,10 @@ function getSong() {
 }
 
 function singSong(_song) {
-  if (!_song) throw new Error("song is '' empty, FEED ME A SONG!");
+  if (!_song) {
+    throw new Error("song is '' empty, FEED ME A SONG!");
+  }
+
   console.log(_song);
 }
 
@@ -161,7 +167,10 @@ function executeFunctionWithArgs(operation, callback) {
 }
 
 function serialProcedure(operation) {
-  if (!operation) process.exit(0); // finished
+  if (!operation) {
+    process.exit(0); // finished
+  }
+
   executeFunctionWithArgs(operation, function (result) {
     // continue AFTER callback
     serialProcedure(operations.shift());
@@ -195,12 +204,20 @@ function dispatch(recipient, callback) {
 
 function sendOneMillionEmailsOnly() {
   getListOfTenMillionGreatEmails(function (err, bigList) {
-    if (err) throw err;
+    if (err) {
+      throw err;
+    }
 
     function serial(recipient) {
-      if (!recipient || successCount >= 1000000) return final();
+      if (!recipient || successCount >= 1000000) {
+        return final();
+      }
+
       dispatch(recipient, function (_err) {
-        if (!_err) successCount += 1;
+        if (!_err) {
+          successCount += 1;
+        }
+
         serial(bigList.pop());
       });
     }
@@ -241,9 +258,10 @@ function dispatch(recipient, callback) {
 function final(result) {
   console.log(`Result: ${result.count} attempts \
       & ${result.success} succeeded emails`);
-  if (result.failed.length)
+  if (result.failed.length) {
     console.log(`Failed to send to: \
         \n${result.failed.join('\n')}\n`);
+  }
 }
 
 recipients.forEach(function (recipient) {

@@ -9,6 +9,3 @@ devbox add node@${props.release.major}
 
 # 啟動 Devbox shell
 devbox shell
-
-# 核對 Node.js 版本：
-node -v # 應會印出 "${props.release.versionWithPrefix}"。
