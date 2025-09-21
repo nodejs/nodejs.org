@@ -20,7 +20,7 @@
     "compile:ts": "tsc",
     "compile:css": "postcss --dir dist --base src \"src/**/*.module.css\" src/styles/index.css",
     "compile": "node --run compile:ts && node --run compile:css",
-    "publish": "node --run compile && node scripts/publish.mjs",
+    "release": "node --run compile && node scripts/publish.mjs",
     "lint": "node --run lint:js && node --run lint:css",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
     "lint:css:fix": "node --run lint:css -- --fix",
