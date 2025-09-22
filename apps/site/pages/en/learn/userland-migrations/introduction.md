@@ -16,7 +16,7 @@ Official migrations are published under the `@nodejs` scope within the [Codemod 
 
 The Node.js Userland Migrations team seeks to help developers migrate their codebases to the latest Node.js versions, making it easier to handle deprecations, new features, and breaking changes.
 
-## How to use a Codemod
+## How to use a codemod
 
 To use a codemod, you can run the following command in your terminal:
 
@@ -36,6 +36,11 @@ npx codemod @nodejs/import-assertions-to-attributes
 - **Review changes**: After running a migration, review the changes made to your codebase. Ensure that the migration has not introduced any unintended side effects or issues.
 - **Test your code**: After running a migration, it is important to test your code to ensure that everything is working as expected. Run your test suite and check for any errors or failures
 - **Format and or lint your code**: After running a migration, it is a good practice to format and lint your code. This ensures that your code follows the project's coding standards and is easier to read and maintain.
+
+## Understanding Codemods Registry
+
+The [Codemod registry](https://codemod.link/nodejs-official) provides a list of available codemods for Node.js.
+Some codemods may not be included in the following resources but are still available because they are not related to a specific migration to a Node.js version. Since we only list codemods for EoL deprecations, you may need to explore the registry for other codemods that could be useful for your migrations.
 
 ## Feedback
 
