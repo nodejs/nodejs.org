@@ -225,7 +225,11 @@ const SearchWithModal: FC = () => {
 
 const OramaSearch: FC<PropsWithChildren> = () => (
   <SearchRoot client={orama}>
-    <ChatRoot client={orama}>
+    <ChatRoot
+      client={orama}
+      askOptions={{ throttle_delay: 50 }}
+      onAskStart={options => console.log('Starting:', options)}
+    >
       <SearchWithModal />
     </ChatRoot>
   </SearchRoot>

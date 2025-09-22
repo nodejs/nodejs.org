@@ -8,15 +8,17 @@
     flex-1
     flex-col
     items-start
-    overflow-y-auto
+    overflow-auto
     px-1;
 
   &::-webkit-scrollbar {
+    height: 0.3em;
     width: 0.3em;
   }
 
   &::-webkit-scrollbar-track {
-    background: transparent;
+    background-color: transparent;
+    border-radius: 6px;
   }
 
   &::-webkit-scrollbar-thumb {

@@ -2,7 +2,7 @@
 
 .documentLink {
   @apply rounded-xl
-    bg-neutral-100
+    bg-white
     px-4
     py-2
     text-neutral-900
@@ -10,10 +10,16 @@
     duration-300
     hover:bg-neutral-200
     focus:bg-neutral-200
+    lg:bg-neutral-100
     dark:bg-neutral-950
     dark:text-neutral-200
     hover:dark:bg-neutral-900
     focus:dark:bg-neutral-900;
+
+  svg {
+    @apply h-5
+      w-5;
+  }
 }
 
 .documentTitle {

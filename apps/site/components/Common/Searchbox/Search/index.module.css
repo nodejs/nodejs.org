@@ -170,7 +170,12 @@
 }
 
 .facetTabsWrapper {
-  @apply mb-2;
+  @apply mb-2
+    overflow-x-auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .facetTabItem {
@@ -201,7 +206,8 @@
 .facetTabsList {
   @apply flex
     items-center
-    gap-2;
+    gap-2
+    overflow-x-auto;
 }
 
 .facetTabItemCount {
@@ -212,7 +218,8 @@
 .searchResultsGroup {
   @apply mb-3
     border-t
-    border-neutral-900;
+    border-neutral-200
+    dark:border-neutral-900;
 }
 
 .searchResultsGroup:first-of-type {
@@ -253,7 +260,8 @@
 
   svg {
     @apply h-5
-      w-5;
+      w-5
+      shrink-0;
   }
 }
 
