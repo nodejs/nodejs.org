@@ -36,6 +36,7 @@ LICENSE @nodejs/tsc
 GOVERNANCE.md @nodejs/tsc
 CONTRIBUTING.md @nodejs/nodejs-website @nodejs/web-infra
 docs @nodejs/nodejs-website @nodejs/web-infra
+SECURITY.md @nodejs/security-wg
 
 # Node.js Release Blog Posts
 apps/site/pages/en/blog/release @nodejs/releasers
