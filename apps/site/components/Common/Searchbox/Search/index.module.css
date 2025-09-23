@@ -159,11 +159,12 @@
 }
 
 .noResultsWrapper {
-  @apply flex
+  @apply pb-31
+    flex
     h-full
     items-center
     justify-center
-    py-10
+    pt-10
     text-sm
     text-neutral-700
     dark:text-neutral-500;
@@ -213,6 +214,12 @@
 .facetTabItemCount {
   @apply text-neutral-700
     dark:text-neutral-700;
+}
+
+.searchResultsGroupWrapper {
+  @apply relative
+    items-start
+    overflow-y-auto;
 }
 
 .searchResultsGroup {
@@ -269,4 +276,46 @@
   @apply text-sm
     text-neutral-600
     dark:text-neutral-700;
+}
+
+.skeletonWrapper {
+  @apply flex
+    flex-col
+    gap-5
+    py-6;
+}
+
+.skeletonItem {
+  @apply flex
+    items-center
+    gap-4;
+}
+
+.skeletonAnim {
+  @apply dark:animate-pulse-dark
+    animate-pulse
+    rounded-md;
+}
+
+.skeletonAvatar {
+  @apply h-6
+    w-5
+    shrink-0;
+}
+
+.skeletonText {
+  @apply flex
+    flex-1
+    flex-col
+    gap-2;
+}
+
+.skeletonLineShort {
+  @apply h-3
+    w-1/3;
+}
+
+.skeletonLineLong {
+  @apply h-3
+    w-2/3;
 }

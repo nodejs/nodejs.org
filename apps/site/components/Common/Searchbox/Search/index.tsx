@@ -9,7 +9,6 @@ import {
   Suggestions,
   SlidingPanel,
 } from '@orama/ui/components';
-import { useSearchContext } from '@orama/ui/contexts';
 import { useSearch } from '@orama/ui/hooks/useSearch';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
@@ -27,8 +26,10 @@ type SearchProps = PropsWithChildren<{
 
 export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   const t = useTranslations();
-  const { searchTerm, selectedFacet } = useSearchContext();
-  const { dispatch } = useSearch();
+  const {
+    dispatch,
+    context: { searchTerm, selectedFacet },
+  } = useSearch();
 
   const clearAll = useCallback(() => {
     dispatch({ type: 'SET_SEARCH_TERM', payload: { searchTerm: '' } });
@@ -111,6 +112,35 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
               </FacetTabs.List>
             </FacetTabs.Wrapper>
 
+            <SearchResults.Loading>
+              <div className={styles.skeletonWrapper}>
+                {[...Array(3)].map((_, index) => (
+                  <div key={index} className={styles.skeletonItem}>
+                    <div
+                      className={classNames(
+                        styles.skeletonAnim,
+                        styles.skeletonAvatar
+                      )}
+                    />
+                    <div className={styles.skeletonText}>
+                      <div
+                        className={classNames(
+                          styles.skeletonAnim,
+                          styles.skeletonLineShort
+                        )}
+                      />
+                      <div
+                        className={classNames(
+                          styles.skeletonAnim,
+                          styles.skeletonLineLong
+                        )}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </SearchResults.Loading>
+
             <SearchResults.NoResults>
               {term => (
                 <>
@@ -153,7 +183,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
             </SearchResults.NoResults>
 
             <SearchResults.GroupsWrapper
-              className="relative items-start overflow-y-auto"
+              className={styles.searchResultsGroupWrapper}
               groupBy="siteSection"
             >
               {group => (
