@@ -18,7 +18,7 @@ import { DEFAULT_ORAMA_QUERY_PARAMS } from '#site/next.constants.mjs';
 
 import styles from './index.module.css';
 import { getFormattedPath } from './utils';
-import { DocumentLink } from '../DocumentLink';
+import { DocumentLink, type Document } from '../DocumentLink';
 
 type SearchProps = PropsWithChildren<{
   onChatTrigger: () => void;
@@ -195,13 +195,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
                     {hit => (
                       <SearchResults.Item className={styles.searchResultsItem}>
                         <DocumentLink
-                          document={
-                            hit.document as {
-                              path: string;
-                              siteSection: string;
-                              pageSectionTitle?: string;
-                            }
-                          }
+                          document={hit.document as Document}
                           data-focus-on-arrow-nav
                         >
                           <DocumentTextIcon />

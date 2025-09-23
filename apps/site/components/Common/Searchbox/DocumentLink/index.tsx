@@ -6,12 +6,14 @@ import type { FC } from 'react';
 
 import styles from './index.module.css';
 
+export type Document = {
+  path: string;
+  siteSection: string;
+  pageSectionTitle?: string;
+};
+
 type DocumentLinkProps = {
-  document: {
-    path: string;
-    siteSection: string;
-    pageSectionTitle?: string;
-  };
+  document: Document;
   className?: string;
   children?: React.ReactNode;
   'data-focus-on-arrow-nav'?: boolean;
