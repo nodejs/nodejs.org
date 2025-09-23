@@ -6,7 +6,7 @@ layout: download-archive
 <WithDownloadArchive>
   {({ binaries, installers, version, release, sources }) => (
     <>
-      <h1>Node.js®アーカイブ</h1>
+      <h1>Node.js®ダウンロードアーカイブ</h1>
 
       <h2 className="flex items-center gap-2">
         <img
@@ -24,17 +24,19 @@ layout: download-archive
       <ReleaseOverview release={release} />
 
       <ul className='flex list-none flex-col gap-2 p-0 text-sm'>
-
         <li>
-          <Link href="/about/previous-releases">Node.jsのリリース</Link>についてリリーススケジュールやLTSステータスを詳しく確認できます。
+          このバージョンの<LinkWithArrow href={`https://github.com/nodejs/node/releases/tag/${version}`}>変更点</LinkWithArrow>や<Link href={`/blog/release/${version}`}>ブログ記事</Link>を確認できます。
+        </li>
+        <li>
+          リリーススケジュールやLTSの情報などさらに詳しい内容は<Link href="/about/previous-releases">Node.jsリリース</Link>で確認できます。
         </li>
 
         <li>
-          リリースファイルの<LinkWithArrow href={sources.shasum}>署名付きSHASUMS</LinkWithArrow>。署名付きSHASUMSの<LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">検証方法</LinkWithArrow>。
+          リリースファイルの<LinkWithArrow href={sources.shasum}>署名済みSHASUMS</LinkWithArrow>と、署名済みSHASUMSの<LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">検証</LinkWithArrow>について確認できます。
         </li>
 
         <li>
-          <LinkWithArrow href={sources.tarball}>Node.js {version}</LinkWithArrow>の署名付きソースアーカイブをダウンロード。
+          署名済み<LinkWithArrow href={sources.tarball}>Node.js {version}のソースコード</LinkWithArrow>のアーカイブをダウンロードできます。
         </li>
 
       </ul>
@@ -45,7 +47,7 @@ layout: download-archive
       <h2>バイナリーのダウンロード</h2>
       <DownloadsTable source={binaries} />
 
-      <h2>インストーラー</h2>
+      <h2>インストーラーパッケージ</h2>
       <DownloadsTable source={installers} />
 
       <h2>マイナーバージョン</h2>

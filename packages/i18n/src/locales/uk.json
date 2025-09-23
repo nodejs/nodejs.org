@@ -6,7 +6,6 @@
           "openJSFoundation": "OpenJS Foundation",
           "trademarkPolicy": "Політика торгових марок",
           "privacyPolicy": "Політика конфіденційності",
-          "versionSupport": "Підтримка версії",
           "codeOfConduct": "Кодекс поведінки",
           "security": "Політика безпеки"
         },
@@ -167,6 +166,11 @@
       "status": "Статус",
       "details": "Деталі"
     },
+    "downloadsTable": {
+      "fileName": "Назва файлу",
+      "operatingSystem": "ОС",
+      "architecture": "Архітектура"
+    },
     "releaseModal": {
       "title": "Node.js v{version} ({codename})",
       "titleWithoutCodename": "Node.js v{version}",
@@ -176,9 +180,46 @@
       "unsupportedVersionWarning": "Ця версія більше не супроводжується. Будь ласка, використовуйте підтримувану версію. <link>Про кінець підтримки</link>.",
       "ltsVersionFeaturesNotice": "Бажаєте отримати нові функції швидше? Установіть <link>останню версію Node.js</link> та випробуйте останні покращення!"
     },
+    "eolAlert": {
+      "message": "Комерційна підтримка для версій після фази Maintenance LTS доступна з нашим партнером програми OpenJS Ecosystem Sustainability <link>HeroDevs</link>"
+    },
+    "eolChip": {
+      "severity": {
+        "unknown": "Невідома",
+        "low": "Низька",
+        "medium": "Середня",
+        "high": "Висока",
+        "critical": "Критична"
+      }
+    },
+    "eolModal": {
+      "title": "Node.js v{version} ({codename}) досягла кінця підтримки (EOL)",
+      "titleWithoutCodename": "Node.js v{version} досягла кінця підтримки (EOL)",
+      "vulnerabilitiesMessage": "Існує {count}+ відомих проблем із безпекою (CVE), пов'язаних із цим релізом Node.js. CVE (Common Vulnerabilities and Exposures) є ідентифікаторами для повідомлених публічно проблем із безпекою. Натиснувши на посилання CVE, ви дізнаєтеся її технічні деталі, наприклад, як працює вразливість.",
+      "noVulnerabilitiesMessage": "Наразі немає відомих CVE (Common Vulnerabilities and Exposures), пов'язані з цим релізом Node.js. Однак це не означає, що реліз повністю безпечний: деякі вразливості можуть бути невиявленими або неоголошеними публічно. Якщо цей реліз застарілий або непідтримуваний, краще оновити версію, щоб використовувати останні виправлення та покращення безпеки.",
+      "blogLinkText": "Блог",
+      "showUnknownSeverities": "Показати вразливості невідомої серйозності",
+      "table": {
+        "cves": "CVE(и)",
+        "severity": "Серйозність",
+        "overview": "Огляд",
+        "details": "Деталі"
+      }
+    },
+    "eolTable": {
+      "version": "Версія",
+      "codename": "Кодова назва",
+      "releaseDate": "Опубліковано",
+      "lastUpdated": "Востаннє оновлено",
+      "vulnerabilities": "Уразливості",
+      "details": "Деталі"
+    },
     "minorReleasesTable": {
       "version": "Версія",
       "links": "Посилання",
+      "nApiVersion": "Версія N-API",
+      "npmVersion": "Версія npm",
+      "v8Version": "Версія V8",
       "actions": {
         "release": "Реліз",
         "changelog": "Список змін",
@@ -229,7 +270,8 @@
         "label": "Обрати мову"
       },
       "themeToggle": {
-        "label": "Перемкнути темний режим"
+        "light": "Увімкнути світлу тему",
+        "dark": "Увімкнути темну тему"
       }
     },
     "metabar": {
@@ -282,7 +324,7 @@
         "all": "Усе",
         "announcements": "Оголошення",
         "release": "Релізи",
-        "vulnerability": "Вразливості",
+        "vulnerability": "Уразливості",
         "advisory-board": "Консультативний комітет",
         "community": "Спільнота",
         "feature": "Функціонал",
@@ -328,7 +370,7 @@
         "ltsVersionFeaturesNotice": "Бажаєте отримати нові функції швидше? Установіть <link>останню версію Node.js</link> та випробуйте останні покращення!",
         "communityPlatformInfo": "Методи установки, які включають ПЗ спільноти, підтримуються відповідними супроводжувачами.",
         "externalSupportInfo": "Якщо виявите проблеми, відвідайте <link>вебсайт {platform}</link>",
-        "noScriptDetected": "Ця сторінка вимагає JavaScript. Завантажити Node.js без JavaScript можна, безпосередньо відвідавши <link>сторінку релізів</link>.",
+        "noScriptDetected": "Ця сторінка вимагає JavaScript. Завантажити Node.js без JavaScript можна, безпосередньо відвідавши <link>сторінку архівних завантажень</link>.",
         "platformInfo": {
           "default": "{platform} та його скрипти установки не супроводжуються проєктом Node.js.",
           "nvm": "«nvm» — це кросплатформний менеджер версій Node.js.",

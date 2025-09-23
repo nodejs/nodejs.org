@@ -159,6 +159,9 @@ importers:
       gray-matter:
         specifier: ~4.0.3
         version: 4.0.3
+      mdast-util-to-string:
+        specifier: ^4.0.0
+        version: 4.0.0
       next:
         specifier: 15.5.2
         version: 15.5.2(@opentelemetry/api@1.9.0)(@playwright/test@1.54.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -201,6 +204,9 @@ importers:
       tailwindcss:
         specifier: 'catalog:'
         version: 4.0.17
+      unist-util-visit:
+        specifier: ^5.0.0
+        version: 5.0.0
       vfile:
         specifier: ~6.0.3
         version: 6.0.3
@@ -226,6 +232,9 @@ importers:
       '@testing-library/user-event':
         specifier: ~14.6.1
         version: 14.6.1(@testing-library/dom@10.4.0)
+      '@types/mdast':
+        specifier: ^4.0.4
+        version: 4.0.4
       '@types/mdx':
         specifier: ^2.0.13
         version: 2.0.13

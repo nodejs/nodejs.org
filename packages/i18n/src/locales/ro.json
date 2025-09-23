@@ -217,7 +217,9 @@
     "minorReleasesTable": {
       "version": "Versiune",
       "links": "Legături",
-      "information": "Informații versiune",
+      "nApiVersion": "Versiune N-API",
+      "npmVersion": "Versiune npm",
+      "v8Version": "Versiune V8",
       "actions": {
         "release": "Lansare",
         "changelog": "Istoric de modificări",
