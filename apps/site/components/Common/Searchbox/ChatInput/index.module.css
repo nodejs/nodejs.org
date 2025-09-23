@@ -68,7 +68,7 @@
     lg:justify-center;
 
   &::-webkit-scrollbar {
-    display: none;
+    @apply hidden;
   }
 }
 

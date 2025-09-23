@@ -145,16 +145,16 @@
     dark:text-neutral-200;
 
   &::-webkit-scrollbar {
-    width: 0.3em;
+    @apply scrollbar-thin;
   }
 
   &::-webkit-scrollbar-track {
-    background: transparent;
+    @apply bg-transparent;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #b2b2b285;
-    border-radius: 6px;
+    @apply rounded-md
+      bg-neutral-300;
   }
 }
 

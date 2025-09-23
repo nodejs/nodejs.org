@@ -12,18 +12,17 @@
     px-1;
 
   &::-webkit-scrollbar {
-    height: 0.3em;
-    width: 0.3em;
+    @apply scrollbar-thin;
   }
 
   &::-webkit-scrollbar-track {
-    background-color: transparent;
-    border-radius: 6px;
+    @apply rounded-md
+      bg-transparent;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #b2b2b285;
-    border-radius: 6px;
+    @apply rounded-md
+      bg-neutral-300;
   }
 }
 
