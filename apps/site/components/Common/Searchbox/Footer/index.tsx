@@ -72,7 +72,7 @@ export const Footer = () => {
           <small>{t('components.search.poweredBy')}</small>
           <Image
             src={oramaLogo}
-            alt="Powered by Orama"
+            alt={t('components.search.poweredBy')}
             width="62"
             height="12"
           />
