@@ -9,7 +9,8 @@ import {
   Suggestions,
   SlidingPanel,
 } from '@orama/ui/components';
-import { useSearchContext, useSearchDispatch } from '@orama/ui/contexts';
+import { useSearchContext } from '@orama/ui/contexts';
+import { useSearch } from '@orama/ui/hooks/useSearch';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import { useEffect, useCallback, type FC, type PropsWithChildren } from 'react';
@@ -27,7 +28,7 @@ type SearchProps = PropsWithChildren<{
 export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
   const t = useTranslations();
   const { searchTerm, selectedFacet } = useSearchContext();
-  const dispatch = useSearchDispatch();
+  const { dispatch } = useSearch();
 
   const clearAll = useCallback(() => {
     dispatch({ type: 'SET_SEARCH_TERM', payload: { searchTerm: '' } });
