@@ -159,8 +159,7 @@ export const ORAMA_CLOUD_ENDPOINT =
  * This is a public API key and can be shared publicly on the frontend.
  */
 export const ORAMA_CLOUD_READ_API_KEY =
-  process.env.NEXT_PUBLIC_NEW_ORAMA_API_KEY ||
-  'qopIuAERiWP2EZOpDjvczjws7WV40yrj';
+  process.env.NEXT_PUBLIC_NEW_ORAMA_API_KEY || '';
 
 /**
  * The default Orama Cloud Datasource ID to use when searching with Orama Cloud.
