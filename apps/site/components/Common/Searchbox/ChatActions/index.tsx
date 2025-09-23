@@ -20,9 +20,7 @@ type ChatActionsProps = {
 export const ChatActions: FC<ChatActionsProps> = ({ interaction }) => {
   const [isDisliked, setIsDisliked] = useState(false);
 
-  const dislikeMessage = () => {
-    setIsDisliked(!isDisliked);
-  };
+  const dislikeMessage = () => setIsDisliked(!isDisliked);
 
   if (!interaction.response) {
     return null;

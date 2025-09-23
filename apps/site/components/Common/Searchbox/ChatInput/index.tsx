@@ -21,7 +21,7 @@ export const ChatInput: FC = () => {
     context: { interactions },
   } = useChat();
 
-  const hasInteractions = interactions && interactions.length > 0;
+  const hasInteractions = !!interactions?.length;
 
   return (
     <>
