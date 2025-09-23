@@ -9,17 +9,17 @@ import type { FC } from 'react';
 
 import styles from './index.module.css';
 
-const suggestions = [
-  'How to install Node.js?',
-  'How to create an HTTP server?',
-  'Upgrading Node.js versions',
-];
-
 export const ChatInput: FC = () => {
   const t = useTranslations();
   const {
     context: { interactions },
   } = useChat();
+
+  const suggestions = [
+    t('components.search.suggestionOne'),
+    t('components.search.suggestionTwo'),
+    t('components.search.suggestionThree'),
+  ];
 
   const hasInteractions = !!interactions?.length;
 
