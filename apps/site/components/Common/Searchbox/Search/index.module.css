@@ -145,7 +145,7 @@
     dark:text-neutral-200;
 
   &::-webkit-scrollbar {
-    @apply scrollbar-thin;
+    @apply size-1.5;
   }
 
   &::-webkit-scrollbar-track {
@@ -154,7 +154,7 @@
 
   &::-webkit-scrollbar-thumb {
     @apply rounded-md
-      bg-neutral-300;
+      bg-neutral-900;
   }
 }
 

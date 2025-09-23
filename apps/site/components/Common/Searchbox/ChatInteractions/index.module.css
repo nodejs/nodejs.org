@@ -12,7 +12,7 @@
     px-1;
 
   &::-webkit-scrollbar {
-    @apply scrollbar-thin;
+    @apply size-1.5;
   }
 
   &::-webkit-scrollbar-track {
@@ -22,7 +22,7 @@
 
   &::-webkit-scrollbar-thumb {
     @apply rounded-md
-      bg-neutral-300;
+      bg-neutral-900;
   }
 }
 
@@ -38,8 +38,7 @@
 }
 
 .scrollDownButton {
-  @apply scrollbar-thin
-    absolute
+  @apply absolute
     bottom-36
     left-1/2
     inline-flex
