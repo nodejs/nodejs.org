@@ -10,7 +10,8 @@ import { SearchRoot, ChatRoot, Modal } from '@orama/ui/components';
 import { useSearchContext, useChatDispatch } from '@orama/ui/contexts';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import { useEffect, useState, type FC, type PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+import { useEffect, useState } from 'react';
 
 import {
   ORAMA_CLOUD_PROJECT_ID,

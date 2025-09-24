@@ -9,7 +9,8 @@ import {
 import type { Interaction } from '@orama/core';
 import { ChatInteractions } from '@orama/ui/components';
 import classNames from 'classnames';
-import { useState, type FC } from 'react';
+import type { FC } from 'react';
+import { useState } from 'react';
 
 import styles from './index.module.css';
 

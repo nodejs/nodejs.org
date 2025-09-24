@@ -12,7 +12,8 @@ import {
 import { useSearch } from '@orama/ui/hooks/useSearch';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
-import { useEffect, useCallback, type FC, type PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+import { useEffect, useCallback } from 'react';
 
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '#site/next.constants.mjs';
 
