@@ -27,10 +27,13 @@ import styles from './index.module.css';
 import { Search } from './Search';
 import { SlidingChatPanel } from './SlidingChatPanel';
 
-const orama = new OramaCloud({
-  projectId: ORAMA_CLOUD_PROJECT_ID,
-  apiKey: ORAMA_CLOUD_READ_API_KEY,
-});
+const orama =
+  ORAMA_CLOUD_PROJECT_ID && ORAMA_CLOUD_READ_API_KEY
+    ? new OramaCloud({
+        projectId: ORAMA_CLOUD_PROJECT_ID,
+        apiKey: ORAMA_CLOUD_READ_API_KEY,
+      })
+    : null;
 
 const MobileTopBar: FC<{
   isChatOpen: boolean;
@@ -205,6 +208,7 @@ const SearchWithModal: FC = () => {
       <button
         type="button"
         onClick={toggleSearchBox}
+        disabled={!orama}
         className={styles.searchButton}
       >
         <div className={styles.searchButtonContent}>
