@@ -35,15 +35,14 @@
     items-center
     gap-2
     text-xs
-    text-neutral-700
-    dark:text-neutral-700;
+    text-neutral-700;
 }
 
 .shortcutKey {
-  @apply rounded-md
+  @apply font-ibm-plex-mono
+    rounded-md
     bg-neutral-200
     p-1
-    font-mono
     text-xs
     dark:bg-neutral-900;
 

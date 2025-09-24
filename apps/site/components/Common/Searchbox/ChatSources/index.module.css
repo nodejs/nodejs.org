@@ -7,10 +7,9 @@
     items-center
     gap-3
     overflow-x-scroll
-    scroll-smooth;
-
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+    scroll-smooth
+    [-ms-overflow-style:none]
+    [scrollbar-width:none];
 
   &::-webkit-scrollbar {
     @apply hidden;

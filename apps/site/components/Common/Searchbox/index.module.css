@@ -20,9 +20,7 @@
     border
     border-neutral-300
     bg-white
-    py-1
-    pl-2
-    pr-1
+    p-1.5
     text-neutral-900
     duration-300
     hover:bg-neutral-100
@@ -39,7 +37,6 @@
     flex-nowrap
     items-center
     gap-1
-    p-2
     text-sm;
 
   svg {
@@ -68,8 +65,7 @@
     mx-auto
     my-0
     flex
-    h-full
-    w-full
+    size-full
     items-start
     justify-center
     bg-white/70
@@ -133,8 +129,7 @@
   @apply rounded-4xl
     flex
     bg-neutral-200
-    px-1
-    py-1
+    p-1
     text-sm
     text-neutral-900
     dark:bg-neutral-900

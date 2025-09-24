@@ -5,14 +5,8 @@ import { ChatInteractions } from '@orama/ui/components';
 import type { FC } from 'react';
 
 import styles from './index.module.css';
+import type { Document } from '../DocumentLink';
 import { DocumentLink } from '../DocumentLink';
-
-type DocumentSource = {
-  path: string;
-  siteSection: string;
-  pageSectionTitle?: string;
-  [key: string]: unknown;
-};
 
 type ChatSourcesProps = {
   interaction: Interaction;
@@ -33,7 +27,7 @@ export const ChatSources: FC<ChatSourcesProps> = ({ interaction }) => {
         <div className={styles.chatSource} key={index}>
           {typeof document.pageSectionTitle === 'string' && (
             <DocumentLink
-              document={document as DocumentSource}
+              document={document as Document}
               className={styles.chatSourceLink}
               data-focus-on-arrow-nav
             >

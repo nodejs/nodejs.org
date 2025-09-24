@@ -35,7 +35,7 @@
     p-0
     text-white
     duration-300
-    ease-in-out
+    motion-safe:ease-in-out
     dark:border-neutral-900
     dark:bg-zinc-950;
 }

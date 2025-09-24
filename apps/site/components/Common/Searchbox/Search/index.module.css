@@ -30,7 +30,6 @@
 
 .searchInput {
   @apply w-full
-    border-0
     border-b
     border-neutral-200
     bg-transparent
@@ -102,8 +101,7 @@
 }
 
 .suggestionsTitle {
-  @apply mb-3
-    mt-3
+  @apply my-3
     text-xs
     font-semibold
     uppercase
