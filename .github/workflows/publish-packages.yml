@@ -132,8 +132,8 @@ jobs:
           pnpm install --frozen-lockfile
 
           # Check if a custom publish script exists in package.json
-          if jq -e '.scripts.publish' package.json > /dev/null; then
-            pnpm run publish
+          if jq -e '.scripts.release' package.json > /dev/null; then
+            pnpm run release
           else
             pnpm publish --access public --no-git-checks
           fi
