@@ -1,8 +1,7 @@
 @reference "../../../../styles/index.css";
 
 .chatUserPrompt {
-  @apply pb-3
-    pt-3;
+  @apply py-3;
 
   p {
     @apply max-w-2xl

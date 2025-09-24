@@ -54,7 +54,7 @@ export const ChatMessage: FC<ChatMessageProps> = ({ interaction }) => {
               tr: 'border-b border-white/10',
               h1: 'text-2xl font-bold mb-4 mt-6',
               h2: 'text-xl font-bold mb-3 mt-5',
-              h3: 'text-lg font-extrabold mb-3 mt-3',
+              h3: 'text-lg font-extrabold my-3',
               ul: 'list-disc pl-10 my-4',
               ol: 'list-decimal pl-4 my-4',
               li: 'mb-0 [&_p]:mb-0',
