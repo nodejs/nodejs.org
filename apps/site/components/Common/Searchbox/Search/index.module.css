@@ -73,11 +73,11 @@
     bg-transparent
     p-3
     text-sm
-    transition-colors
     duration-300
     hover:bg-neutral-300
     focus-visible:border-green-600
     focus-visible:outline-none
+    motion-safe:transition-colors
     dark:hover:bg-neutral-900
     dark:focus-visible:border-green-400;
 }
@@ -190,10 +190,10 @@
     px-3
     py-1
     text-sm
-    transition-colors
     duration-300
     focus:outline-none
     focus-visible:bg-neutral-300
+    motion-safe:transition-colors
     dark:border-neutral-900
     dark:focus-visible:bg-neutral-900;
 }
@@ -255,11 +255,11 @@
       py-3
       text-sm
       outline-none
-      transition-colors
       duration-300
       hover:bg-neutral-300
       focus-visible:border-green-600
       focus-visible:bg-transparent
+      motion-safe:transition-colors
       dark:bg-zinc-950
       dark:hover:bg-neutral-900
       lg:dark:bg-neutral-950;

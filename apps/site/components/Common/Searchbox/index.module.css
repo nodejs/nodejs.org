@@ -24,9 +24,9 @@
     pl-2
     pr-1
     text-neutral-900
-    transition-colors
     duration-300
     hover:bg-neutral-100
+    motion-safe:transition-colors
     dark:border-neutral-900
     dark:bg-neutral-950
     dark:text-neutral-200
@@ -161,11 +161,11 @@
     relative
     z-10
     text-white
-    transition-colors
     before:absolute
     before:inset-0
     before:z-[-1]
     before:bg-black
+    motion-safe:transition-colors
     dark:text-neutral-900
     dark:before:bg-white;
 

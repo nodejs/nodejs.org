@@ -33,11 +33,11 @@
     bg-green-600
     p-2
     text-white
-    transition-colors
     duration-300
     disabled:cursor-not-allowed
     disabled:bg-neutral-200/60
     disabled:text-neutral-800
+    motion-safe:transition-colors
     dark:bg-green-400
     dark:text-neutral-400
     disabled:dark:bg-neutral-900/60;
@@ -84,9 +84,9 @@
     px-3
     py-1
     text-neutral-900
-    transition-colors
     duration-300
     hover:bg-neutral-300
+    motion-safe:transition-colors
     dark:border-neutral-900
     dark:bg-neutral-950
     dark:text-neutral-200
