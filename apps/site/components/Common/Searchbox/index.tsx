@@ -134,30 +134,37 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
         />
       )}
       {displaySearch && (
-        <Search
-          onChatTrigger={() => {
-            setAutoTriggerValue(searchTerm ?? null);
-            handleSelectMode('chat');
-          }}
-        />
+        <>
+          <Search
+            mode={mode}
+            onChatTrigger={() => {
+              setAutoTriggerValue(searchTerm ?? null);
+              handleSelectMode('chat');
+            }}
+          />
+        </>
       )}
       {isMobileScreen && mode === 'chat' && (
-        <div className={styles.mobileChatContainer}>
-          <div className={styles.mobileChatTop}>
-            <ChatInteractionsContainer />
+        <>
+          <div className={styles.mobileChatContainer}>
+            <div className={styles.mobileChatTop}>
+              <ChatInteractionsContainer />
+            </div>
+            <div className={styles.mobileChatBottom}>
+              <ChatInput />
+            </div>
           </div>
-          <div className={styles.mobileChatBottom}>
-            <ChatInput />
-          </div>
-        </div>
+          <Footer />
+        </>
       )}
-      <Footer />
-      {!isMobileScreen && (
+      {!isMobileScreen && mode === 'chat' && (
         <SlidingChatPanel
           open={isChatOpen}
           onClose={() => {
             setIsChatOpen(false);
             setMode('search');
+            const searchInput = document.getElementById('orama-doc-search');
+            searchInput?.focus();
             dispatch({ type: 'CLEAR_INTERACTIONS' });
             dispatch({ type: 'CLEAR_USER_PROMPT' });
           }}
@@ -210,8 +217,8 @@ const SearchWithModal: FC = () => {
       <Modal.Wrapper
         open={open}
         onModalClosed={() => setOpen(false)}
-        closeOnOutsideClick={true}
-        closeOnEscape={true}
+        closeOnOutsideClick
+        closeOnEscape
         className={styles.modalWrapper}
       >
         <Modal.Inner className={styles.modalInner}>

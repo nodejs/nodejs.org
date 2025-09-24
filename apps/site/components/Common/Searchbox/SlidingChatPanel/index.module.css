@@ -11,6 +11,7 @@
     text-neutral-700
     duration-300
     hover:bg-white/20
+    focus:bg-white/20
     focus:outline-none
     motion-safe:transition-colors
     dark:text-white;

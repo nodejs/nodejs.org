@@ -6,6 +6,7 @@ import { PromptTextArea, Suggestions } from '@orama/ui/components';
 import { useChat } from '@orama/ui/hooks';
 import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
+import { useEffect, useRef } from 'react';
 
 import styles from './index.module.css';
 
@@ -14,6 +15,7 @@ export const ChatInput: FC = () => {
   const {
     context: { interactions },
   } = useChat();
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const suggestions = [
     t('components.search.suggestionOne'),
@@ -22,6 +24,12 @@ export const ChatInput: FC = () => {
   ];
 
   const hasInteractions = !!interactions?.length;
+
+  useEffect(() => {
+    setTimeout(() => {
+      textareaRef.current?.focus();
+    }, 100);
+  }, []);
 
   return (
     <>
@@ -40,12 +48,13 @@ export const ChatInput: FC = () => {
       <div className={styles.textareaContainer}>
         <PromptTextArea.Wrapper className={styles.textareaWrapper}>
           <PromptTextArea.Field
-            id="chat-input"
+            id="orama-chat-input"
             name="chat-input"
             placeholder={t('components.search.chatPlaceholder')}
             rows={1}
             maxLength={500}
             autoFocus
+            ref={textareaRef}
             className={styles.textareaField}
           />
           <PromptTextArea.Button

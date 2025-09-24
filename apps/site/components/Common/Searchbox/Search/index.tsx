@@ -13,24 +13,28 @@ import { useSearch } from '@orama/ui/hooks/useSearch';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useRef } from 'react';
 
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '#site/next.constants.mjs';
 
 import styles from './index.module.css';
 import { getFormattedPath } from './utils';
-import { DocumentLink, type Document } from '../DocumentLink';
+import { DocumentLink } from '../DocumentLink';
+import type { Document } from '../DocumentLink';
+import { Footer } from '../Footer';
 
 type SearchProps = PropsWithChildren<{
   onChatTrigger: () => void;
+  mode?: 'search' | 'chat';
 }>;
 
-export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
+export const Search: FC<SearchProps> = ({ onChatTrigger, mode = 'search' }) => {
   const t = useTranslations();
   const {
     dispatch,
     context: { searchTerm, selectedFacet },
   } = useSearch();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const clearAll = useCallback(() => {
     dispatch({ type: 'SET_SEARCH_TERM', payload: { searchTerm: '' } });
@@ -45,12 +49,28 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
     };
   }, [clearAll]);
 
+  useEffect(() => {
+    const interactiveElements = containerRef.current?.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+
+    if (mode === 'search') {
+      interactiveElements?.forEach(el => {
+        el.removeAttribute('tabindex');
+      });
+    } else {
+      interactiveElements?.forEach(el => {
+        el.setAttribute('tabindex', '-1');
+      });
+    }
+  }, [mode]);
+
   return (
-    <div className={styles.searchContainer}>
+    <div className={styles.searchContainer} ref={containerRef}>
       <SearchInput.Wrapper className={styles.searchInputWrapper}>
         <MagnifyingGlassIcon />
         <SearchInput.Input
-          inputId="doc-search"
+          inputId="orama-doc-search"
           ariaLabel={t('components.search.searchPlaceholder')}
           placeholder={t('components.search.searchPlaceholder')}
           className={styles.searchInput}
@@ -232,6 +252,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger }) => {
           </SearchResults.Wrapper>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -34,12 +34,15 @@
     p-2
     text-white
     duration-300
+    focus:bg-green-600/75
+    focus:outline-none
     disabled:cursor-not-allowed
     disabled:bg-neutral-200/60
     disabled:text-neutral-800
     motion-safe:transition-colors
     dark:bg-green-400
     dark:text-neutral-400
+    focus:dark:bg-green-400/75
     disabled:dark:bg-neutral-900/60;
 
   svg {
@@ -85,9 +88,12 @@
     text-neutral-900
     duration-300
     hover:bg-neutral-300
+    focus:bg-neutral-300
+    focus:outline-none
     motion-safe:transition-colors
     dark:border-neutral-900
     dark:bg-neutral-950
     dark:text-neutral-200
-    dark:hover:bg-neutral-900;
+    dark:hover:bg-neutral-900
+    dark:focus:bg-neutral-900;
 }

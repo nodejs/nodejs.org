@@ -105,7 +105,7 @@
     text-xs
     font-semibold
     uppercase
-    text-neutral-700
+    text-neutral-800
     dark:text-neutral-500;
 }
 
@@ -161,7 +161,7 @@
     justify-center
     pt-10
     text-sm
-    text-neutral-700
+    text-neutral-800
     dark:text-neutral-500;
 }
 
@@ -170,7 +170,7 @@
     overflow-x-auto;
 
   &::-webkit-scrollbar {
-    display: none;
+    @apply hidden;
   }
 }
 
@@ -204,11 +204,14 @@
     items-center
     gap-2
     overflow-x-auto;
+
+  &::-webkit-scrollbar {
+    @apply hidden;
+  }
 }
 
 .facetTabItemCount {
-  @apply text-neutral-700
-    dark:text-neutral-700;
+  @apply text-neutral-700;
 }
 
 .searchResultsGroupWrapper {
