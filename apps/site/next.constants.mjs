@@ -128,9 +128,6 @@ export const DEFAULT_ORAMA_QUERY_PARAMS = {
     pageSectionContent: 2.5,
     pageTitle: 1.5,
   },
-  // facets: {
-  //   siteSection: {},
-  // },
 };
 
 /**
