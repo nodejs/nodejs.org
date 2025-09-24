@@ -43,8 +43,7 @@
     text-sm;
 
   svg {
-    @apply h-4
-      w-4;
+    @apply size-4;
   }
 }
 
@@ -126,8 +125,7 @@
     dark:text-neutral-200;
 
   svg {
-    @apply h-4
-      w-4;
+    @apply size-4;
   }
 }
 
@@ -151,8 +149,7 @@
     py-1;
 
   svg {
-    @apply h-4
-      w-4;
+    @apply size-4;
   }
 }
 

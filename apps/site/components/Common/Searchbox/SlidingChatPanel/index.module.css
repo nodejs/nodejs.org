@@ -16,8 +16,7 @@
     dark:text-white;
 
   svg {
-    @apply h-5
-      w-5;
+    @apply size-5;
   }
 }
 

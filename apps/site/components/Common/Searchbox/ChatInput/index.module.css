@@ -43,8 +43,7 @@
     disabled:dark:bg-neutral-900/60;
 
   svg {
-    @apply h-4
-      w-4;
+    @apply size-4;
   }
 }
 

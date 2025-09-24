@@ -36,8 +36,7 @@
 
 .typingDot {
   @apply animate-dot-move
-    h-1
-    w-1
+    size-1
     rounded-full
     bg-neutral-500
     dark:bg-neutral-400;
