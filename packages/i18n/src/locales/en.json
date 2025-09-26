@@ -48,7 +48,8 @@
             "profiling": "Profiling Node.js Applications",
             "fetch": "Fetching data with Node.js",
             "websocket": "WebSocket client with Node.js",
-            "securityBestPractices": "Security Best Practices"
+            "securityBestPractices": "Security Best Practices",
+            "userlandMigrations": "Introduction to Userland Migrations"
           }
         },
         "typescript": {
@@ -96,16 +97,6 @@
             "howToUseTheNodejsRepl": "How to use the Node.js REPL",
             "outputToTheCommandLineUsingNodejs": "Output to the command line using Node.js",
             "acceptInputFromTheCommandLineInNodejs": "Accept input from the command line in Node.js"
-          }
-        },
-        "userland-migrations": {
-          "links": {
-            "userland-migrations": "Userland Migrations",
-            "introduction": "Introduction to Userland Migrations",
-            "ecosystem": "Ecosystem to Node.js",
-            "v22-to-v24": "Node.js v22 to v24",
-            "v20-to-v22": "Node.js v20 to v22",
-            "v14-to-v16": "Node.js v14 to v16"
           }
         },
         "modules": {
@@ -338,6 +329,7 @@
         "video": "Video",
         "weekly": "Weekly Updates",
         "wg": "Working Groups",
+        "migrations": "Migrations guides",
         "events": "Events"
       }
     },

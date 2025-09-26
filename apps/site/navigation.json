@@ -197,6 +197,10 @@
             "securityBestPractices": {
               "link": "/learn/getting-started/security-best-practices",
               "label": "components.navigation.learn.gettingStarted.links.securityBestPractices"
+            },
+            "userlandMigrations": {
+              "link": "/learn/getting-started/userland-migrations",
+              "label": "components.navigation.learn.gettingStarted.links.userlandMigrations"
             }
           }
         },
