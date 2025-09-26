@@ -1,6 +1,5 @@
 'use strict';
 
-import AlertBox from '@node-core/ui-components/Common/AlertBox/index.js';
 import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 
 import Button from './components/Common/Button';
@@ -20,7 +19,6 @@ import WithNodeRelease from './components/withNodeRelease';
  * @satisfies {import('mdx/types').MDXComponents}
  */
 export const mdxComponents = {
-  AlertBox,
   PreviousReleasesTable,
   // HOC for getting Node.js Release Metadata
   WithNodeRelease,
