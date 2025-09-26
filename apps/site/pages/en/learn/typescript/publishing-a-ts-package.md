@@ -126,9 +126,9 @@ A note about directory organisation: There are a few common practices for placin
 The purpose of types is to warn an implementation will not work:
 
 ```ts
+// @errors: 2322
 const foo = 'a';
 const bar: number = 1 + foo;
-//    ^^^ Type 'string' is not assignable to type 'number'.
 ```
 
 TypeScript has warned that the above code will not behave as intended, just like a unit test warns that code does not behave as intended. They are complementary and verify different things—you should have both.
