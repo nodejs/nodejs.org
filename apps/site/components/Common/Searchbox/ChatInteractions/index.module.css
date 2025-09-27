@@ -1,0 +1,64 @@
+@reference "../../../../styles/index.css";
+
+.chatInteractionsContainer {
+  @apply relative
+    mb-6
+    flex
+    h-full
+    flex-1
+    flex-col
+    items-start
+    overflow-auto
+    px-1;
+
+  &::-webkit-scrollbar {
+    @apply size-1.5;
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply rounded-md
+      bg-transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply rounded-md
+      bg-neutral-900;
+  }
+}
+
+.chatInteractionsWrapper {
+  @apply flex
+    w-full
+    flex-wrap
+    gap-6;
+
+  > div {
+    @apply w-full;
+  }
+}
+
+.scrollDownButton {
+  @apply absolute
+    bottom-36
+    left-1/2
+    inline-flex
+    -translate-x-1/2
+    items-center
+    justify-center
+    rounded-xl
+    bg-neutral-200
+    p-2
+    text-neutral-900
+    duration-300
+    focus:bg-neutral-300
+    focus:outline-none
+    motion-safe:transition-colors
+    lg:bottom-28
+    dark:bg-neutral-900
+    dark:text-neutral-200
+    focus:dark:bg-neutral-800;
+
+  svg {
+    @apply size-4;
+  }
+}
