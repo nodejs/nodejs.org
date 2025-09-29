@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import type { FC, SVGProps } from 'react';
 
-const Crowdin: FC<SVGProps<SVGSVGElement>> = props => (
+const DigitalOcean: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
     version="1.1"
     id="Layer_1"
@@ -24,27 +24,20 @@ const Crowdin: FC<SVGProps<SVGSVGElement>> = props => (
                   id="XMLID_49_"
                   fill="currentColor"
                   d="M155.2,351.7v-34.2c36.2,0,64.3-35.9,50.4-74c-5.1-14.1-16.4-25.4-30.5-30.5
-
-							c-38.1-13.8-74,14.2-74,50.4l0,0H67c0-57.7,55.8-102.7,116.3-83.8c26.4,8.3,47.5,29.3,55.7,55.7
-
-							C257.9,295.9,213,351.7,155.2,351.7z"
+                  c-38.1-13.8-74,14.2-74,50.4l0,0H67c0-57.7,55.8-102.7,116.3-83.8c26.4,8.3,47.5,29.3,55.7,55.7
+                  C257.9,295.9,213,351.7,155.2,351.7z"
                 />
               </g>
-
               <polygon
                 id="XMLID_47_"
                 fill="currentColor"
-                points="155.3,317.6 121.3,317.6 121.3,283.6 121.3,283.6 155.3,283.6 155.3,283.6
-
-						"
+                points="155.3,317.6 121.3,317.6 121.3,283.6 121.3,283.6 155.3,283.6 155.3,283.6"
               />
-
               <polygon
                 id="XMLID_46_"
                 fill="currentColor"
-                points="121.3,343.8 95.1,343.8 95.1,343.8 95.1,317.6 121.3,317.6 					"
+                points="121.3,343.8 95.1,343.8 95.1,343.8 95.1,317.6 121.3,317.6"
               />
-
               <path
                 id="XMLID_45_"
                 fill="currentColor"
@@ -58,4 +51,4 @@ const Crowdin: FC<SVGProps<SVGSVGElement>> = props => (
   </svg>
 );
 
-export default Crowdin;
+export default DigitalOcean;
