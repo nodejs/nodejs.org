@@ -19,7 +19,7 @@ const PartnersIcon: FC<PartnersIconProps> = ({ name, href, logo, loading }) => (
         className={style.partnerIcon}
       >
         {cloneElement(logo, {
-          width: 'auto',
+          width: '100%',
           height: '16px',
         })}
       </Button>
