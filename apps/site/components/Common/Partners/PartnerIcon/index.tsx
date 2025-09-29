@@ -12,7 +12,11 @@ type PartnersIconProps = Partners & ComponentProps<typeof Skeleton>;
 
 const PartnersIcon: FC<PartnersIconProps> = ({ name, href, logo, loading }) => (
   <Skeleton loading={loading} className="size-9 p-2">
-    <Tooltip content={<span className="px-2">{name}</span>}>
+    <Tooltip
+      content={
+        <div className="p-2 text-neutral-900 dark:text-neutral-200">{name}</div>
+      }
+    >
       <Button
         kind="secondary"
         href={`${href}/?utm_source=nodejs-website&utm_medium=Link`}
