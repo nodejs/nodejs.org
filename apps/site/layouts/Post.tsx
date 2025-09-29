@@ -1,7 +1,6 @@
 import Preview from '@node-core/ui-components/Common/Preview';
 import type { FC, PropsWithChildren } from 'react';
 
-// import Link from '#site/components/Link';
 import EOLAlert from '#site/components/EOL/EOLAlert';
 import WithAvatarGroup from '#site/components/withAvatarGroup';
 import WithBlogCrossLinks from '#site/components/withBlogCrossLinks';
@@ -13,7 +12,6 @@ import { mapAuthorToCardAuthors } from '#site/util/author';
 import { mapBlogCategoryToPreviewType } from '#site/util/blog';
 
 import styles from './layouts.module.css';
-// import PartnersLogoList from '../components/Common/Partners/PartnersLogoList';
 
 const PostLayout: FC<PropsWithChildren> = ({ children }) => {
   const { frontmatter } = useClientContext();
@@ -44,22 +42,6 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
             {children}
 
             <WithBlogCrossLinks />
-            {/* {type === 'vulnerability' && (
-              <div className="mt-3">
-                <hr />
-                <section className="flex-col! mt-4 flex w-full gap-4">
-                  <h2 className="text-center">
-                    These security releases are possible by:
-                  </h2>
-                  <p>
-                    We are able to offer security releases proudly due to the
-                    support of these partners
-                    <Link href="/about/partners/"> and more</Link>.
-                  </p>
-                  <PartnersLogoList categories="security" />
-                </section>
-              </div>
-            )} */}
           </main>
         </div>
 
