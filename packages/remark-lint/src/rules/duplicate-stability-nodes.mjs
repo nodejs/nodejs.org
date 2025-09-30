@@ -16,17 +16,23 @@ const duplicateStabilityNodes = (tree, vfile) => {
       // Update heading depth and clear deeper recorded stabilities
       currentHeadingDepth = node.depth;
       for (const depth of stabilityByDepth.keys()) {
-        if (depth >= currentHeadingDepth) stabilityByDepth.delete(depth);
+        if (depth >= currentHeadingDepth) {
+          stabilityByDepth.delete(depth);
+        }
       }
       return;
     }
 
     // Handle blockquotes: extract text from paragraph > text structure
     const text = node.children?.[0]?.children?.[0]?.value;
-    if (!text) return;
+    if (!text) {
+      return;
+    }
 
     const match = createQueries.QUERIES.stabilityIndexPrefix.exec(text); // Match "Stability: X"
-    if (!match) return;
+    if (!match) {
+      return;
+    }
 
     const stability = match[1];
     // Report if a duplicate stability exists in a parent heading depth
