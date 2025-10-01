@@ -1,4 +1,5 @@
 'use server';
+
 import type { FC, PropsWithChildren } from 'react';
 
 import SupportersList from './Common/Supporters';
