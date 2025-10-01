@@ -19,12 +19,11 @@ const usePartnersList = ({
   const initialRenderer = useRef(true);
 
   const [seedList, setSeedList] = useState<Array<Partners>>(() => {
-    if (maxLength === null) {
-      return logos.filter(
-        partner => !categories || partner.categories.includes(categories)
-      );
-    }
-    return logos.slice(0, maxLength);
+    const filteredLogos = logos.filter(
+      partner => !categories || partner.categories.includes(categories)
+    );
+
+    return filteredLogos.slice(0, maxLength || filteredLogos.length);
   });
 
   useEffect(() => {
