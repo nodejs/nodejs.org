@@ -1,6 +1,6 @@
+import partners from '#site/public/static/partners/constants.json' with { type: 'json' };
 import type { Partners } from '#site/types';
 import { createPartnersList } from '#site/util/partners';
-import partners from '#site/util/partners/constants.json' with { type: 'json' };
 
 const getPartnersByType = (type?: 'Logo' | 'Favicon') =>
   createPartnersList(partners as Array<Omit<Partners, 'logo'>>, type);
