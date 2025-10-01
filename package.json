@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@eslint/js": "~9.34.0",
-    "@reporters/github": "^1.10.0",
+    "@reporters/github": "^1.11.0",
     "@testing-library/react": "~16.3.0",
     "cross-env": "^10.0.0",
     "eslint": "~9.34.0",
