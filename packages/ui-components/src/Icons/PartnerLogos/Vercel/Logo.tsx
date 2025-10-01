@@ -8,8 +8,8 @@ const Vercel: FC<SVGProps<SVGSVGElement>> = props => (
     viewBox="0 0 2048 407"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className={classNames('text-black dark:text-white', props.className)}
     {...props}
+    className={classNames('text-black dark:text-white', props.className)}
   >
     <path
       fillRule="evenodd"

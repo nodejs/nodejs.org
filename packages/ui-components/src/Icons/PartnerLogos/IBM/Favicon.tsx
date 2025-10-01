@@ -100,7 +100,7 @@ const IBM: FC<SVGProps<SVGSVGElement>> = props => (
           id="Shape_21_"
           fill="currentColor"
           d="M444.433,134.509h87.163c2.476-8.914,3.764-18.324,3.764-27.932h-90.927L444.433,134.509
-			L444.433,134.509z"
+          L444.433,134.509z"
         />
         <polygon
           id="Rectangle-path_9_"

@@ -1,4 +1,3 @@
-// https://www.cloudflare.com/logo/
 import type { FC, SVGProps } from 'react';
 
 const Cloudflare: FC<SVGProps<SVGSVGElement>> = props => (

@@ -12,9 +12,9 @@ const ARM: FC<SVGProps<SVGSVGElement>> = props => (
     width="4332.3px"
     height="1318.7px"
     viewBox="0 0 4332.3 1318.7"
-    className={classNames('text-[#0D0B21] dark:text-white', props.className)}
     xmlSpace="preserve"
     enableBackground="new 0 0 4332.3 1318.7"
+    className={classNames('text-[#0D0B21] dark:text-white', props.className)}
   >
     <g>
       <path

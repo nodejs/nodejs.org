@@ -8,8 +8,8 @@ const DataDog: FC<SVGProps<SVGSVGElement>> = props => (
     x="0px"
     y="0px"
     viewBox="0 0 800.5 196.2"
-    className={classNames('text-[#632CA6] dark:text-white', props.className)}
     enableBackground="new 0 0 800.5 856.85"
+    className={classNames('text-[#632CA6] dark:text-white', props.className)}
   >
     <g>
       <g>
