@@ -1,12 +1,12 @@
+'use server';
 import type { FC, PropsWithChildren } from 'react';
-
-import { fetchOpenCollectiveData } from '#site/next-data/generators/supportersData.mjs';
-import type { Supporters } from '#site/types';
 
 import SupportersList from './Common/Supporters';
 
+import provideSupporters from '#site/next-data/providers/supportersData';
+
 const WithSupporters: FC<PropsWithChildren> = () => {
-  const supporters = fetchOpenCollectiveData() as Promise<Array<Supporters>>;
+  const supporters = provideSupporters();
 
   return (
     <div className="flex max-w-full flex-wrap items-center gap-1">
