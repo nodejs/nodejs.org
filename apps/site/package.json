@@ -87,7 +87,7 @@
     "@testing-library/user-event": "~14.6.1",
     "@types/mdast": "^4.0.4",
     "@types/mdx": "^2.0.13",
-    "@types/semver": "~7.7.0",
+    "@types/semver": "~7.7.1",
     "dedent": "^1.6.0",
     "eslint-config-next": "15.5.2",
     "eslint-plugin-mdx": "~3.6.2",
