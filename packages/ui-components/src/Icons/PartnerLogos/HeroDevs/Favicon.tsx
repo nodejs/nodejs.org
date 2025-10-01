@@ -2,11 +2,11 @@ import type { FC, SVGProps } from 'react';
 
 const HeroDevs: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
+    xmlns="http://www.w3.org/2000/svg"
     width="484"
     height="500"
     viewBox="0 0 484 500"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
     <path

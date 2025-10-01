@@ -3,10 +3,7 @@ import type { FC, SVGProps } from 'react';
 
 const DataDog: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
-    version="1.1"
     xmlns="http://www.w3.org/2000/svg"
-    x="0px"
-    y="0px"
     viewBox="0 0 800.5 196.2"
     enableBackground="new 0 0 800.5 856.85"
     className={classNames('text-[#632CA6] dark:text-white', props.className)}

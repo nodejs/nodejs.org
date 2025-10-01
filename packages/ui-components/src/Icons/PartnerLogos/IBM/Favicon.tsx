@@ -3,17 +3,11 @@ import type { FC, SVGProps } from 'react';
 
 const IBM: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
-    version="1.1"
-    id="Livello_1"
     xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
-    x="0px"
-    y="0px"
+    viewBox="0 0 1000 401.149"
     width="1000px"
     height="401.149px"
-    viewBox="0 0 1000 401.149"
     enableBackground="new 0 0 1000 401.149"
-    xmlSpace="preserve"
     className={classNames('text-[#1F70C1] dark:text-white', props.className)}
   >
     <g>

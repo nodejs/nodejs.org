@@ -3,11 +3,11 @@ import type { FC, SVGProps } from 'react';
 
 const Vercel: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 2048 407"
     width="2048"
     height="407"
-    viewBox="0 0 2048 407"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
     {...props}
     className={classNames('text-black dark:text-white', props.className)}
   >

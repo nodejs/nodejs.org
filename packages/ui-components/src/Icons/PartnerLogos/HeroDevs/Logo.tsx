@@ -3,11 +3,11 @@ import type { FC, SVGProps } from 'react';
 
 const HeroDevs: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 600 144"
     width="600"
     height="144"
-    viewBox="0 0 600 144"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
     {...props}
     className={classNames('text-black dark:text-white', props.className)}
   >

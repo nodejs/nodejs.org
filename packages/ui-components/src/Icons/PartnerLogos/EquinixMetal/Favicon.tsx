@@ -3,16 +3,10 @@ import type { FC, SVGProps } from 'react';
 
 const EquinixMetal: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
-    version="1.1"
-    id="Layer_1"
     xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
-    x="0px"
-    y="0px"
     viewBox="0 0 855.18 470.45"
     enableBackground="new 0 0 855.18 470.45"
     className={classNames('text-[#E91C24] dark:text-white', props.className)}
-    xmlSpace="preserve"
   >
     <polygon
       fill="currentColor"

@@ -3,11 +3,11 @@ import type { FC, SVGProps } from 'react';
 
 const Scaleway: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 410 80"
     width="410"
     height="80"
-    viewBox="0 0 410 80"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
     className={classNames('text-[#521094] dark:text-white', props.className)}
   >
     <path

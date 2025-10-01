@@ -3,8 +3,8 @@ import type { FC, SVGProps } from 'react';
 
 const Rackspace: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
-    viewBox="0 0 400 124"
     xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 400 124"
     {...props}
     className={classNames('text-[#eb0000] dark:text-white', props.className)}
   >

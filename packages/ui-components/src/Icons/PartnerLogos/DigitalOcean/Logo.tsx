@@ -3,16 +3,10 @@ import type { FC, SVGProps } from 'react';
 
 const DigitalOcean: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
-    version="1.1"
-    id="Layer_1"
     xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
-    x="0px"
-    y="0px"
     viewBox="0 0 603 103"
-    className={classNames('text-[#0080FF] dark:text-white', props.className)}
     enableBackground="new 0 0 603 103"
-    xmlSpace="preserve"
+    className={classNames('text-[#0080FF] dark:text-white', props.className)}
   >
     <g id="XMLID_2369_">
       <g id="XMLID_2638_">

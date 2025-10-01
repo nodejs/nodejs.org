@@ -3,16 +3,10 @@ import type { FC, SVGProps } from 'react';
 
 const ARM: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
-    version="1.1"
-    id="Layer_1"
     xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
-    x="0px"
-    y="0px"
+    viewBox="0 0 4332.3 1318.7"
     width="4332.3px"
     height="1318.7px"
-    viewBox="0 0 4332.3 1318.7"
-    xmlSpace="preserve"
     enableBackground="new 0 0 4332.3 1318.7"
     className={classNames('text-[#0D0B21] dark:text-white', props.className)}
   >

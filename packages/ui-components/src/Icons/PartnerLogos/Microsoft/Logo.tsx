@@ -2,11 +2,11 @@ import type { FC, SVGProps } from 'react';
 
 const Microsoft: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 396 86"
     width="396"
     height="86"
-    viewBox="0 0 396 86"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
     <g clipPath="url(#clip0_1_177)">

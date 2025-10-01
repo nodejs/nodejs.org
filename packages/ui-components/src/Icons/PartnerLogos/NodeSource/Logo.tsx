@@ -3,7 +3,6 @@ import type { FC, SVGProps } from 'react';
 
 const NodeSource: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
-    id="outlined"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 350 58.656"
     className={classNames('text-[#89a19d] dark:text-white', props.className)}
