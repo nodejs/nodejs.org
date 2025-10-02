@@ -289,6 +289,10 @@
       "destination": "/:locale/about/previous-releases"
     },
     {
+      "source": "/:locale/eol",
+      "destination": "/:locale/about/eol"
+    },
+    {
       "source": "/:locale/blog/weekly-updates/:path*",
       "destination": "/:locale/blog/weekly/:path*"
     },
