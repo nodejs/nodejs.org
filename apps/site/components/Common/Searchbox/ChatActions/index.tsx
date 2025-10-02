@@ -52,7 +52,7 @@ export const ChatActions: FC<ChatActionsProps> = ({ interaction }) => {
             }
           </ChatInteractions.CopyMessage>
         </li>
-        {!interaction.loading && interaction.response && (
+        {!interaction.loading && (
           <li>
             <button
               className={classNames(styles.chatAction, {

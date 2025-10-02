@@ -1,5 +1,3 @@
-'use client';
-
 import type { Interaction, AnyObject } from '@orama/core';
 import { ChatInteractions } from '@orama/ui/components';
 import type { FC } from 'react';
@@ -12,7 +10,7 @@ type ChatSourcesProps = {
   interaction: Interaction;
 };
 
-export const ChatSources: FC<ChatSourcesProps> = ({ interaction }) => {
+const ChatSources: FC<ChatSourcesProps> = ({ interaction }) => {
   if (!interaction?.sources) {
     return null;
   }
@@ -44,3 +42,5 @@ export const ChatSources: FC<ChatSourcesProps> = ({ interaction }) => {
     </ChatInteractions.Sources>
   );
 };
+
+export default ChatSources;

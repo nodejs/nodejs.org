@@ -25,7 +25,7 @@ export const ChatInteractionsContainer = () => {
           onScroll={recalculateGoToBottomButton}
           onStreaming={recalculateGoToBottomButton}
           onNewInteraction={() => scrollToBottom({ animated: true })}
-          className={`${styles.chatInteractionsWrapper}`}
+          className={styles.chatInteractionsWrapper}
         >
           {(interaction: Interaction) => (
             <ChatMessage interaction={interaction} />

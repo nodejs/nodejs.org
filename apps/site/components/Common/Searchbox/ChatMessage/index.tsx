@@ -1,12 +1,10 @@
-'use client';
-
 import type { Interaction } from '@orama/core';
 import { ChatInteractions } from '@orama/ui/components';
 import type { FC } from 'react';
 
 import styles from './index.module.css';
 import { ChatActions } from '../ChatActions';
-import { ChatSources } from '../ChatSources';
+import ChatSources from '../ChatSources';
 
 type ChatMessageProps = {
   interaction: Interaction;
@@ -39,13 +37,13 @@ export const ChatMessage: FC<ChatMessageProps> = ({ interaction }) => {
         </div>
       </ChatInteractions.Loading>
 
-      {interaction && interaction.response && (
+      {interaction.response && (
         <div className={styles.chatAssistantMessageWrapper}>
           <ChatInteractions.AssistantMessage
             className={styles.chatAssistantMessage}
             markdownClassnames={{
               p: 'my-2 leading-relaxed',
-              pre: `my-6 text-md overflow-x-auto hljs [&_pre]:bg-neutral-900! [&_pre]:text-sm [&_pre]:rounded-md [&_pre]:p-4 [&_pre]:whitespace-break-spaces wrap-break-word`,
+              pre: 'my-6 text-md overflow-x-auto hljs [&_pre]:bg-neutral-900! [&_pre]:text-sm [&_pre]:rounded-md [&_pre]:p-4 [&_pre]:whitespace-break-spaces wrap-break-word',
               code: 'px-2 py-1 rounded text-sm whitespace-pre-wrap hljs bg-neutral-300 dark:bg-neutral-900',
               table: 'w-full border-collapse my-6',
               thead: 'dark:bg-neutral-900',
