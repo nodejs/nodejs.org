@@ -23,7 +23,4 @@ async function fetchOpenCollectiveData() {
   return members;
 }
 
-// TODO: implement github sponsors data fetching
-// TODO: implement ramdomizing of supporters
-
 export { fetchOpenCollectiveData };
