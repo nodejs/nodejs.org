@@ -19,14 +19,11 @@ function randomPartnerList(
     ? partners.filter(p => p.categories.includes(category))
     : partners;
 
-  // Remove duplicate partners
-  const unique = Array.from(new Set(filtered));
-
   // Create a hash from the seed to use for consistent randomization
   const hash = crypto.createHash('sha256').update(String(seed)).digest();
 
   // Sort partners using the hash to ensure same results for the same seed
-  const sorted = [...unique].sort(
+  const sorted = filtered.sort(
     (a, b) => hash[a.name.charCodeAt(0) % 32] - hash[b.name.charCodeAt(0) % 32]
   );
 
