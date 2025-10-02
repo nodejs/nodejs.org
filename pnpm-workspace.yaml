@@ -3,7 +3,7 @@ packages:
   - apps/*
 
 catalog:
-  '@types/node': 22.18.0
+  '@types/node': 22.18.6
   '@types/react': ^19.1.12
   classnames: ~2.5.1
   cross-env: ^10.0.0

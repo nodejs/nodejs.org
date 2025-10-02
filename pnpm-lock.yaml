@@ -7,8 +7,8 @@ settings:
 catalogs:
   default:
     '@types/node':
-      specifier: 22.18.0
-      version: 22.18.0
+      specifier: 22.18.6
+      version: 22.18.6
     '@types/react':
       specifier: ^19.1.12
       version: 19.1.12
@@ -128,7 +128,7 @@ importers:
         version: 4.1.12
       '@types/node':
         specifier: 'catalog:'
-        version: 22.18.0
+        version: 22.18.6
       '@types/react':
         specifier: 'catalog:'
         version: 19.1.12
@@ -268,9 +268,6 @@ importers:
       mdast-util-from-markdown:
         specifier: ^2.0.2
         version: 2.0.2
-      mdast-util-to-string:
-        specifier: ^4.0.0
-        version: 4.0.0
       nock:
         specifier: ^14.0.10
         version: 14.0.10
@@ -522,7 +519,7 @@ importers:
         version: 14.6.1(@testing-library/dom@10.4.0)
       '@types/node':
         specifier: 'catalog:'
-        version: 22.18.0
+        version: 22.18.6
       '@types/react':
         specifier: 'catalog:'
         version: 19.1.12
@@ -3331,8 +3328,8 @@ packages:
   '@types/node@18.19.121':
     resolution: {integrity: sha512-bHOrbyztmyYIi4f1R0s17QsPs1uyyYnGcXeZoGEd227oZjry0q6XQBQxd82X1I57zEfwO8h9Xo+Kl5gX1d9MwQ==}
 
-  '@types/node@22.18.0':
-    resolution: {integrity: sha512-m5ObIqwsUp6BZzyiy4RdZpzWGub9bqLJMvZDD0QMXhxjqMHMENlj+SqF5QxoUwaQNFe+8kz8XM8ZQhqkQPTgMQ==}
+  '@types/node@22.18.6':
+    resolution: {integrity: sha512-r8uszLPpeIWbNKtvWRt/DbVi5zbqZyj1PTmhRMqBMvDnaz1QpmSKujUtJLrqGZeoM8v72MfYggDceY4K1itzWQ==}
 
   '@types/parse-json@4.0.2':
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
@@ -11723,7 +11720,7 @@ snapshots:
 
   '@types/concat-stream@2.0.3':
     dependencies:
-      '@types/node': 22.18.0
+      '@types/node': 22.18.6
 
   '@types/debug@4.1.12':
     dependencies:
@@ -11775,14 +11772,14 @@ snapshots:
 
   '@types/node-fetch@2.6.13':
     dependencies:
-      '@types/node': 22.18.0
+      '@types/node': 22.18.6
       form-data: 4.0.4
 
   '@types/node@18.19.121':
     dependencies:
       undici-types: 5.26.5
 
-  '@types/node@22.18.0':
+  '@types/node@22.18.6':
     dependencies:
       undici-types: 6.21.0
 
@@ -14405,7 +14402,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.18.0
+      '@types/node': 22.18.6
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -17362,7 +17359,7 @@ snapshots:
       '@types/concat-stream': 2.0.3
       '@types/debug': 4.1.12
       '@types/is-empty': 1.2.3
-      '@types/node': 22.18.0
+      '@types/node': 22.18.6
       '@types/unist': 3.0.3
       concat-stream: 2.0.0
       debug: 4.4.1
