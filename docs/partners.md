@@ -8,7 +8,7 @@ All partners must be approved by the Node.js Marketing Team and the Node.js Tech
 
 To add or remove a partner:
 
-1. Modify the `apps/site/util/partners/constants.json` file. This file contains an array of partner objects, each with the following fields:
+1. Modify the `apps/site/public/static/partners/constants.json` file. This file contains an array of partner objects, each with the following fields:
    - `id`: A unique identifier for the partner (used for logo import).
    - `name`: The display name of the partner.
    - `href`: A URL linking to the partner’s website.
