@@ -24,3 +24,25 @@ export type Supporters = {
   url: string;
   source: 'opencollective' | 'github';
 };
+
+export type RandomPartnerListConfig = {
+  /**
+   * Number of partners to pick from the list.
+   * If null, all partners will be returned.
+   */
+  pick?: number | null;
+  /**
+   * Date seed to use for the randomization.
+   * This is used to ensure that the same partners are returned for the same date.
+   */
+  dateSeed?: number;
+  /**
+   * Category of partners to filter by.
+   * If not provided, all partners will be returned.
+   */
+  category?: PartnerCategory;
+  /**
+   * Whether to randomize the partners or not.
+   */
+  sort?: 'name' | 'weight' | null;
+};
