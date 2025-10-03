@@ -143,7 +143,8 @@
           "branding": "Brandul Node.js",
           "governance": "Guvernarea proiectului",
           "releases": "Lansări Node.js",
-          "security": "Raportare de securitate"
+          "security": "Raportare de securitate",
+          "eol": "End-of-Life (EOL)"
         }
       },
       "getInvolved": {

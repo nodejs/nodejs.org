@@ -143,7 +143,8 @@
           "branding": "Брендинг Node.js",
           "governance": "Управління проєктом",
           "releases": "Релізи Node.js",
-          "security": "Звітність про безпеку"
+          "security": "Звітність про безпеку",
+          "eol": "Кінець підтримки (EOL)"
         }
       },
       "getInvolved": {
