@@ -1,0 +1,29 @@
+@import '@shikijs/twoslash/style-rich.css';
+
+.twoslash-hover {
+  cursor: text;
+}
+
+.twoslash-popup-code {
+  max-width: 600px;
+  display: block;
+  width: fit-content;
+}
+
+.twoslash-popup-code:not(:has(div)) {
+  min-width: 100%;
+  padding: 6px 12px;
+  white-space: pre-wrap;
+  background-color: var(--color-neutral-950);
+
+  span {
+    display: inline-block;
+  }
+}
+
+.twoslash-completion-list {
+  display: block;
+  width: auto;
+  max-height: 100px;
+  overflow-x: auto;
+}
