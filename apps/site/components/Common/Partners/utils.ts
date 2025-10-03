@@ -1,4 +1,4 @@
-import crypto from 'node:crypto';
+import { createHash } from 'node:crypto';
 
 import type {
   RandomPartnerListConfig,
@@ -8,7 +8,7 @@ import type {
 // Fisher-Yates shuffle algorithm with a seed for deterministic results
 function shuffle(array: Array<Partners>, seed: number): Array<Partners> {
   const shuffled = [...array];
-  const hash = crypto.createHash('sha256').update(String(seed)).digest();
+  const hash = createHash('sha256').update(String(seed)).digest();
 
   for (let i = shuffled.length - 1; i > 0; i--) {
     // Use hash bytes to generate deterministic "random" index
