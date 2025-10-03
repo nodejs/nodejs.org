@@ -12,19 +12,13 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import type { FC } from 'react';
 
+import SearchButton from '#site/components/Common/Searchbox';
 import Link from '#site/components/Link';
 import WithBanner from '#site/components/withBanner';
 import WithNodejsLogo from '#site/components/withNodejsLogo';
 import { useSiteNavigation } from '#site/hooks';
 import { useRouter, usePathname } from '#site/navigation.mjs';
 import { availableLocales } from '#site/next.locales.mjs';
-
-const SearchButton = dynamic(() => import('#site/components/Common/Search'), {
-  ssr: false,
-  loading: () => (
-    <Skeleton className={styles.searchButtonSkeleton} loading={true} />
-  ),
-});
 
 const ThemeToggle = dynamic(
   () => import('@node-core/ui-components/Common/ThemeToggle'),
