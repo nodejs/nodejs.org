@@ -347,6 +347,10 @@
     {
       "source": "/:locale/esp/herodevs",
       "destination": "https://www.herodevs.com/support/node-nes?utm_source=NodeJS+&utm_medium=Link&utm_campaign=Nodejs_eol_support"
+    },
+    {
+      "source": "/:locale/download/package-manager/all",
+      "destination": "/:locale/download/archive/current"
     }
   ],
   "internal": []
