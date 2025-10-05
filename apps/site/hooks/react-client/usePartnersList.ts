@@ -36,11 +36,11 @@ const usePartnersList = ({
     // Although whilst we are deployed on Vercel or other environment that supports ISR
     // (Incremental Static Generation) whose would invalidate the cache every 5 minutes
     // We want to ensure that this feature is compatible on a full-static environment
-    const renderSponsorsAnimation = setTimeout(() => {
+    const renderSponsorsAnimation = setTimeout(async () => {
       initialRenderer.current = false;
 
       setSeedList(
-        randomPartnerList(logos, {
+        await randomPartnerList(logos, {
           pick: maxLength,
           dateSeed: 1,
           category: categories,

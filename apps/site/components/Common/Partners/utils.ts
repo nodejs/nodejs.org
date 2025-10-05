@@ -1,14 +1,18 @@
-import { createHash } from 'node:crypto';
-
 import type {
   RandomPartnerListConfig,
   Partners,
 } from '#site/types/partners.js';
 
 // Fisher-Yates shuffle algorithm with a seed for deterministic results
-function shuffle(array: Array<Partners>, seed: number): Array<Partners> {
+async function shuffle(
+  array: Array<Partners>,
+  seed: number
+): Promise<Array<Partners>> {
   const shuffled = [...array];
-  const hash = createHash('sha256').update(String(seed)).digest();
+  const encoder = new TextEncoder();
+  const buffer = encoder.encode(String(seed));
+  const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
+  const hash = new Uint8Array(hashBuffer);
 
   for (let i = shuffled.length - 1; i > 0; i--) {
     // Use hash bytes to generate deterministic "random" index
@@ -23,10 +27,10 @@ function shuffle(array: Array<Partners>, seed: number): Array<Partners> {
   return shuffled;
 }
 
-function randomPartnerList(
+async function randomPartnerList(
   partners: Array<Partners>,
   config: RandomPartnerListConfig
-) {
+): Promise<Array<Partners>> {
   const { pick = 4, dateSeed = 5, category } = config;
 
   // Generate a deterministic seed based on current time that changes every X minutes
@@ -37,7 +41,9 @@ function randomPartnerList(
     ? partners.filter(p => p.categories.includes(category))
     : partners;
 
-  return shuffle(filtered, seed).slice(0, pick ?? filtered.length);
+  const shuffled = await shuffle(filtered, seed);
+
+  return shuffled.slice(0, pick ?? filtered.length);
 }
 
 export { randomPartnerList };
