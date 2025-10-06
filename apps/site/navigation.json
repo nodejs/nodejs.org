@@ -110,6 +110,10 @@
           "link": "/about/governance",
           "label": "components.navigation.about.links.governance"
         },
+        "partners": {
+          "link": "/about/partners",
+          "label": "components.navigation.about.links.partners"
+        },
         "branding": {
           "link": "/about/branding",
           "label": "components.navigation.about.links.branding"
