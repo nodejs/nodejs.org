@@ -207,6 +207,7 @@ const SearchWithModal: FC = () => {
     <div className={styles.searchboxContainer}>
       <button
         type="button"
+        data-testid="orama-button"
         onClick={toggleSearchBox}
         disabled={!orama}
         className={styles.searchButton}

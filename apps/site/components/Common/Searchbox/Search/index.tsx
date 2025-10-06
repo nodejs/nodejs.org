@@ -70,6 +70,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger, mode = 'search' }) => {
       <SearchInput.Wrapper className={styles.searchInputWrapper}>
         <MagnifyingGlassIcon />
         <SearchInput.Input
+          data-testid="orama-input"
           inputId="orama-doc-search"
           ariaLabel={t('components.search.searchPlaceholder')}
           placeholder={t('components.search.searchPlaceholder')}
@@ -212,7 +213,10 @@ export const Search: FC<SearchProps> = ({ onChatTrigger, mode = 'search' }) => {
                   <h2 className={styles.searchResultsGroupTitle}>
                     {group.name}
                   </h2>
-                  <SearchResults.GroupList group={group}>
+                  <SearchResults.GroupList
+                    group={group}
+                    data-testid="orama-search-results"
+                  >
                     {hit => (
                       <SearchResults.Item className={styles.searchResultsItem}>
                         <DocumentLink

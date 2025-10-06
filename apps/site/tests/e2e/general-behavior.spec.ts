@@ -18,9 +18,9 @@ const locators = {
     dark: englishLocale.components.common.themeToggle.dark,
   },
   // Search components (from Orama library)
-  searchButtonTag: 'orama-button',
-  searchInputTag: 'orama-input',
-  searchResultsTag: 'orama-search-results',
+  searchButtonTag: '[data-testid="orama-button"]',
+  searchInputTag: '[data-testid="orama-input"]',
+  searchResultsTag: '[data-testid="orama-search-results"]',
 };
 
 const getTheme = (page: Page) =>
