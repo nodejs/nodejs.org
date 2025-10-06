@@ -31,9 +31,7 @@ const SidebarItem: FC<SidebarItemProps> = ({
     activeClassName={styles.active}
     {...props}
   >
-    {showProgressionIcons && (
-      <ProgressionIcon className={styles.progressionIcon} />
-    )}
+    {showProgressionIcons && <ProgressionIcon className={styles.hexagonIcon} />}
 
     <div className={styles.label}>
       <span>{label}</span>
