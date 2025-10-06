@@ -1,6 +1,6 @@
 import { OramaCloud } from '@orama/core';
 
-import { siteContent } from './get-documents.mjs';
+import { getDocuments } from './get-documents.mjs';
 import { ORAMA_SYNC_BATCH_SIZE } from '../../next.constants.mjs';
 
 // The following follows the instructions at https://docs.orama.com/cloud/data-sources/custom-integrations/webhooks
@@ -12,7 +12,7 @@ const orama = new OramaCloud({
 
 const datasource = orama.dataSource(process.env.NEW_ORAMA_DATASOURCE_ID || '');
 
-console.log(`Syncing ${siteContent.length} documents to Orama Cloud index`);
+console.log(`Syncing ${getDocuments.length} documents to Orama Cloud index`);
 
 // Orama allows to send several documents at once, so we batch them in groups of 50.
 // This is not strictly necessary, but it makes the process faster.
@@ -20,8 +20,8 @@ const runUpdate = async () => {
   const batchSize = ORAMA_SYNC_BATCH_SIZE;
   const batches = [];
 
-  for (let i = 0; i < siteContent.length; i += batchSize) {
-    batches.push(siteContent.slice(i, i + batchSize));
+  for (let i = 0; i < getDocuments.length; i += batchSize) {
+    batches.push(getDocuments.slice(i, i + batchSize));
   }
 
   console.log(`Sending ${batches.length} batches of ${batchSize} documents`);
