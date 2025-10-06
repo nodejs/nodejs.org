@@ -65,7 +65,7 @@
     "eslint-plugin-react": "~7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-storybook": "~9.0.3",
-    "global-jsdom": "^26.0.0",
+    "global-jsdom": "^27.0.0",
     "postcss-cli": "^11.0.1",
     "postcss-loader": "~8.2.0",
     "react": "catalog:",
@@ -76,7 +76,7 @@
     "stylelint-order": "7.0.0",
     "stylelint-selector-bem-pattern": "4.0.1",
     "tailwindcss": "catalog:",
-    "tsx": "^4.20.5",
+    "tsx": "^4.20.6",
     "typescript": "catalog:"
   },
   "imports": {
