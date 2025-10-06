@@ -7,7 +7,7 @@
 async function fetchOpenCollectiveData() {
   const endpoint = 'https://opencollective.com/nodejs/members/all.json';
 
-  const response = await fetch(endpoint, { method: 'GET' });
+  const response = await fetch(endpoint);
 
   const payload = await response.json();
 
