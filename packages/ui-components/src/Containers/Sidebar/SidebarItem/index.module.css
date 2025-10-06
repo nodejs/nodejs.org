@@ -30,6 +30,15 @@
   }
 
   &.progression {
+    &.active {
+      @apply text-neutral-900
+        dark:text-white;
+
+      .hexagonIcon {
+        @apply fill-green-500;
+      }
+    }
+
     .label {
       @apply p-1;
     }
@@ -42,10 +51,6 @@
         dark:fill-neutral-800
         dark:stroke-neutral-950;
     }
-  }
-
-  &.active .hexagonIcon {
-    @apply fill-green-500;
   }
 
   &:not(.active):not(.progression):hover {
