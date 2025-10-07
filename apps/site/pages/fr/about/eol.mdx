@@ -1,0 +1,46 @@
+---
+title: Fin de vie (EOL)
+layout: about
+description: Comprendre la fin de vie de Node.js, ce que cela signifie pour la sécurité, les outils et la conformité, ainsi que les détails de la version EOL et les options d'assistance commerciale.
+---
+
+# Fin de vie (EOL)
+
+## Pourquoi et comment les versions de Node.js arrivent en fin de vie
+
+Les versions majeures de Node.js sont publiées, corrigées et déclarées en fin de vie selon un calendrier prévisible. Comme il n'est pas possible de maintenir toutes les versions à perpétuité, après une période de maintenance planifiée, une version majeure de Node.js ne sera plus prise en charge par le projet.
+
+<div className="flex flex-col items-start gap-4 xl:flex-row xl:items-center">
+  <Button kind="primary" href="/download" className="flex-1">
+    <span>Mettez à niveau vers la dernière version LTS de Node.js®.</span>
+  </Button>
+
+<span>ou</span>
+
+  <Button as="a" kind="warning" href="/esp/herodevs" className="flex-1">
+    <span>Obtenez une assistance en matière de sécurité pour les versions en fin de vie (EOL)</span>
+  </Button>
+</div>
+
+[Consultez le calendrier des versions de Node.js](/about/releases/).
+
+## Que se passe-t-il lorsqu'une ligne de versions arrive en fin de vie ?
+
+Lorsqu'une version arrive en fin de vie, cela signifie qu'elle ne recevra plus de mises à jour, y compris les correctifs de sécurité. Cela peut rendre les applications fonctionnant sur ces versions vulnérables à des problèmes de sécurité et à des bogues qui ne seront jamais corrigés.
+
+- **Plus aucune correction de vulnérabilité** : lorsque de nouvelles versions de sécurité révèlent des problèmes et des correctifs dans les versions majeures plus récentes, même si la même vulnérabilité affecte les versions en fin de vie (EOL), aucune nouvelle version ne sera publiée pour celles-ci. Les utilisateurs qui continuent à utiliser les versions EOL et les chemins d'accès au code affectés seront immédiatement exposés aux attaques exploitant ces vulnérabilités divulguées.
+- **Rupture de la chaîne d'outils** : les versions en fin de vie (EOL) peuvent ne plus être liées dynamiquement aux versions plus récentes des bibliothèques partagées dont elles dépendent, ce qui bloque ou interrompt les mises à jour du système.
+- **Dérive de l'écosystème** : de nombreux paquets populaires destinés aux utilisateurs cessent progressivement de prendre en charge les versions EOL de Node.js. Lorsqu'une application continue d'utiliser des paquets obsolètes, elle peut souffrir d'un nombre encore plus important de vulnérabilités et de bogues non corrigés, s'éloignant ainsi davantage de la norme de l'écosystème.
+- **Signaux d'alerte en matière de conformité** : de nombreux audits sectoriels interdisent les environnements d'exécution non maintenus.
+
+## Versions en fin de vie
+
+<EOLReleaseTable />
+
+## Support Commercial
+
+Malgré les inconvénients évidents liés à l'utilisation des versions en fin de vie, dans la pratique, les organisations sont confrontées à des contraintes qui les empêchent de procéder à des mises à niveau immédiates, telles que les bases de code héritées, les exigences de conformité ou les chaînes de dépendances complexes. Pour les utilisateurs qui ne peuvent pas procéder à une mise à niveau immédiate mais qui ont besoin d'une assistance continue en matière de sécurité pour les versions en fin de vie de Node.js, une assistance commerciale est disponible dans le cadre du partenariat [OpenJS Ecosystem Sustainability Program](https://openjsf.org/blog/ecosystem-sustainability-program).
+
+Node.js s'est associé à HeroDevs pour fournir une assistance permanente (NES) pour les versions de Node.js qui ont dépassé leur phase de maintenance officielle. Cela comprend des correctifs de sécurité, une aide à la conformité et une assistance technique pour vous aider à combler le fossé pendant que vous planifiez votre stratégie de mise à niveau. Pour plus d'informations, consultez la [**page HeroDevs Node.js NES**](https://nodejs.org/esp/herodevs).
+
+L'utilisation des versions EOL(fin de vie) via NES doit être considérée comme une solution temporaire. L'objectif doit toujours être de passer à des versions activement prises en charge.
