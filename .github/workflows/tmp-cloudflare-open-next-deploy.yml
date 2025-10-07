@@ -60,5 +60,5 @@ jobs:
         working-directory: apps/site
         run: node --run cloudflare:deploy
         env:
-          CF_WORKERS_SCRIPTS_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN_FOR_OPEN_NEXT_SITE }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN_FOR_OPEN_NEXT_SITE }}
+          CF_WORKERS_SCRIPTS_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
