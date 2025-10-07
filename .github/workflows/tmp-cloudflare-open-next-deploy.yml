@@ -11,6 +11,7 @@
 name: Deploy the Cloudflare OpenNext test version of the site (https://node-test.org)
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
