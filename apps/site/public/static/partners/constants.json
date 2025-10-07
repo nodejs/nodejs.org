@@ -1,0 +1,37 @@
+[
+  {
+    "id": "CLOUDFLARE",
+    "name": "Cloudflare",
+    "href": "https://www.cloudflare.com",
+    "weight": 3,
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "VERCEL",
+    "name": "Vercel",
+    "href": "https://vercel.com",
+    "weight": 2,
+    "categories": ["infrastructure"]
+  },
+  {
+    "id": "HERODEVS",
+    "name": "HeroDevs",
+    "href": "https://herodevs.com",
+    "weight": 3,
+    "categories": ["security", "esp", "release"]
+  },
+  {
+    "id": "DIGITALOCEAN",
+    "name": "DigitalOcean",
+    "href": "https://www.digitalocean.com",
+    "categories": ["infrastructure"],
+    "weight": 3
+  },
+  {
+    "id": "MICROSOFT",
+    "name": "Microsoft Azure",
+    "href": "https://microsoft.com",
+    "categories": ["infrastructure"],
+    "weight": 2
+  }
+]
