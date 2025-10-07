@@ -9,6 +9,7 @@
 name: Sync Orama Cloud
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
