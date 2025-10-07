@@ -207,16 +207,14 @@ export const Search: FC<SearchProps> = ({ onChatTrigger, mode = 'search' }) => {
             <SearchResults.GroupsWrapper
               className={styles.searchResultsGroupWrapper}
               groupBy="siteSection"
+              data-testid="orama-search-results"
             >
               {group => (
                 <div key={group.name} className={styles.searchResultsGroup}>
                   <h2 className={styles.searchResultsGroupTitle}>
                     {group.name}
                   </h2>
-                  <SearchResults.GroupList
-                    group={group}
-                    data-testid="orama-search-results"
-                  >
+                  <SearchResults.GroupList group={group}>
                     {hit => (
                       <SearchResults.Item className={styles.searchResultsItem}>
                         <DocumentLink
