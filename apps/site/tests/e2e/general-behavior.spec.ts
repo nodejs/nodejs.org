@@ -132,6 +132,8 @@ test.describe('Node.js Website', () => {
   test.describe('Search', () => {
     test('should show and operate search functionality', async ({ page }) => {
       // Open search dialog
+      const searchButton = page.locator(locators.searchButtonTag);
+      await expect(searchButton).toBeVisible();
       await page.locator(locators.searchButtonTag).click();
 
       // Verify search input is visible and enter a search term

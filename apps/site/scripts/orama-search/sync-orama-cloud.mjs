@@ -7,7 +7,7 @@ import { ORAMA_SYNC_BATCH_SIZE } from '../../next.constants.mjs';
 
 const orama = new OramaCloud({
   projectId: process.env.NEW_ORAMA_PROJECT_ID || '',
-  apiKey: process.env.NEW_ORAMA_API_KEY || '',
+  apiKey: process.env.NEW_ORAMA_PRIVATE_API_KEY || '',
 });
 
 const datasource = orama.dataSource(process.env.NEW_ORAMA_DATASOURCE_ID || '');
