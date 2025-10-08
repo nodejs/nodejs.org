@@ -3,7 +3,8 @@
 .select {
   @apply inline-flex
     flex-col
-    gap-1.5;
+    gap-1.5
+    align-middle;
 
   .label {
     @apply block
