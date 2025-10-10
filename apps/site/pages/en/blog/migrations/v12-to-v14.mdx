@@ -1,5 +1,5 @@
 ---
-date: '2025-09-26T12:00:00.000Z'
+date: '2025-10-10T12:00:00.000Z'
 category: migrations
 title: Node.js v12 to v14
 layout: blog-post
@@ -20,10 +20,10 @@ This page provides a list of codemods to help you migrate your code from Node.js
 
 This recipe transforms calls of various now-deprecated `node:util` log functions into the modern alternative, `console.log` and `console.error`:
 
-- ([DEP0026](https://nodejs.org/api/deprecations.html#DEP0026)) [`util.print`](https://nodejs.org/api/util.html#util_util_print) - `console.log`
-- ([DEP0027](https://nodejs.org/api/deprecations.html#DEP0027)) [`util.puts`](https://nodejs.org/api/util.html#util_util_puts) - `console.log`
-- ([DEP0028](https://nodejs.org/api/deprecations.html#DEP0028)) [`util.debug`](https://nodejs.org/api/util.html#util_util_debug) - `console.error`
-- ([DEP0029](https://nodejs.org/api/deprecations.html#DEP0029)) [`util.error`](https://nodejs.org/api/util.html#util_util_error) - `console.error`
+- [DEP0026](https://nodejs.org/api/deprecations.html#DEP0026): `util.print` ➜ `console.log`
+- [DEP0027](https://nodejs.org/api/deprecations.html#DEP0027): `util.puts` ➜ `console.log`
+- [DEP0028](https://nodejs.org/api/deprecations.html#DEP0028): `util.debug` ➜ `console.error`
+- [DEP0029](https://nodejs.org/api/deprecations.html#DEP0029): `util.error` ➜ `console.error`
 
 ```bash
 npx codemod run @nodejs/create-require-from-path
@@ -46,3 +46,11 @@ console.log('Hello world');
 console.error('Hello world');
 console.error('Hello world');
 ```
+
+### Source Code
+
+The source code for this codemod can be found in the [util-print-to-console-log directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/util-print-to-console-log).
+
+### Registry Link
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/util-print-to-console-log).

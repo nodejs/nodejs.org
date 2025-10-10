@@ -42,6 +42,8 @@ npx codemod @nodejs/import-assertions-to-attributes
 The [Codemod registry](https://codemod.link/nodejs-official) provides a list of available codemods for Node.js.
 Some codemods may not be included in the following resources but are still available because they are not related to a specific migration to a Node.js version. Since we only list codemods for EoL deprecations, you may need to explore the registry for other codemods that could be useful for your migrations.
 
+> Please note that if you are logged into the Codemod platform, you can like these posts. This shows us that our work is valuable.
+
 ## Feedback
 
 If you have any feedback or suggestions for improvements, please open an issue on the [Node.js Userland Migrations repository](https://github.com/nodejs/userland-migrations/issues).
@@ -55,3 +57,9 @@ This board tracks:
 - Codemod kind (deprecation, breaking change, ecosystem)
 - Node.js version
 - Status (backlog, todo, in progress, done, not planned) _If you want to contribute, please check the "todo" column_
+
+## Migrations guides
+
+You can find all migrations guide on the [migration guides section](/blog/migrations).
+
+Please also note that migration guides for major-major releases only contain end-of-life [deprecations](https://nodejs.org/docs/latest/api/deprecations.html) and breaking changes.

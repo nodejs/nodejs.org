@@ -1,5 +1,5 @@
 ---
-date: '2025-09-26T12:00:00.000Z'
+date: '2025-10-10T12:00:00.000Z'
 category: migrations
 title: Node.js v14 to v16
 layout: blog-post
@@ -8,10 +8,11 @@ author: AugustinMauroy
 
 # Node.js v14 to v16
 
-<AlertBox
-  level="warning"
-  title="This article cover a part of the migration from Node.js v14 to v16. The userland migrations team is working on more codemods to help you with the migration."
-/>
+<AlertBox level="warning" title="!">
+  This article cover a part of the migration from Node.js v14 to v16. The
+  userland migrations team is working on more codemods to help you with the
+  migration.
+</AlertBox>
 
 This page provides a list of codemods to help you migrate your code from Node.js v14 to v16.
 
@@ -38,6 +39,14 @@ import { createRequire } from 'node:module';
 const require = createRequire('/path/to/module');
 const myModule = require('./myModule.cjs');
 ```
+
+### Source Code
+
+The source code for this codemod can be found in the [create-require-from-path directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/create-require-from-path).
+
+### Registry Link
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/create-require-from-path).
 
 ## `process-main-module`
 
@@ -66,6 +75,14 @@ if (require.main === 'mod.js') {
   // module thing
 }
 ```
+
+### Source Code
+
+The source code for this codemod can be found in the [process-main-module directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/process-main-module).
+
+### Registry Link
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/process-main-module).
 
 ## `process-mainModule-to-require-main`
 
@@ -123,6 +140,14 @@ fs.rmSync(path, { recursive: true, force: true });
 fs.promises.rm(path, { recursive: true, force: true });
 ```
 
+### Source Code
+
+The source code for this codemod can be found in the [rmdir directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/rmdir).
+
+### Registry Link
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/rmdir).
+
 ## `tmpDir-to-tmpdir`
 
 The `tmpDir` function was renamed to `tmpdir` in Node.js v16. This codemod will help you replace all instances of `tmpDir` with `tmpdir`.
@@ -146,3 +171,11 @@ import { tmpdir } from 'node:os';
 
 const foo = tmpdir();
 ```
+
+### Source Code
+
+The source code for this codemod can be found in the [tmpdir-to-tmpdir directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/tmpdir-to-tmpdir).
+
+### Registry Link
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/tmpDir-to-tmpdir).
