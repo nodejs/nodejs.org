@@ -53,3 +53,107 @@ util.log('Hello world');
 ```js displayName="After"
 console.log(new Date().toLocaleString(), 'Hello world');
 ```
+
+## `zlib-bytesRead-to-bytesWritten`
+
+The [`zlib.bytesRead`](https://nodejs.org/api/zlib.html#zlib_bytesread) property was deprecated ([DEP0108](https://nodejs.org/api/deprecations.html#DEP0108)) in favor of [`zlib.bytesWritten`](https://nodejs.org/api/zlib.html#zlib_byteswritten). This codemod replaces `zlib.bytesRead` with `zlib.bytesWritten` for consistent stream property naming. It handles both CommonJS and ESM imports.
+
+```bash
+npx codemod run @nodejs/zlib-bytesRead-to-bytesWritten
+```
+
+### Example:
+
+```js displayName="Before"
+const zlib = require('node:zlib');
+const gzip = zlib.createGzip();
+gzip.on('end', () => {
+  console.log('Bytes processed:', gzip.bytesRead);
+});
+```
+
+```js displayName="After"
+const zlib = require('node:zlib');
+const gzip = zlib.createGzip();
+gzip.on('end', () => {
+  console.log('Bytes processed:', gzip.bytesWritten);
+});
+```
+
+## `fs-truncate-to-ftruncate`
+
+The [`fs.truncate`](https://nodejs.org/api/fs.html#fs_fs_truncate_path_len_callback) function was deprecated ([DEP0081](https://nodejs.org/api/deprecations.html#DEP0081)) when used with a file descriptor. Use [`fs.ftruncate`](https://nodejs.org/api/fs.html#fs_fs_ftruncate_fd_len_callback) instead.
+
+```bash
+npx codemod run @nodejs/fs-truncate-to-ftruncate
+```
+
+### Example:
+
+```js displayName="Before"
+const { truncate, open, close } = require('node:fs');
+
+open('file.txt', 'w', (err, fd) => {
+  if (err) throw err;
+  truncate(fd, 10, err => {
+    if (err) throw err;
+    close(fd, () => {});
+  });
+});
+```
+
+```js displayName="After"
+const { ftruncate, open, close } = require('node:fs');
+
+open('file.txt', 'w', (err, fd) => {
+  if (err) throw err;
+  ftruncate(fd, 10, err => {
+    if (err) throw err;
+    close(fd, () => {});
+  });
+});
+```
+
+## `crypto-rsa-pss-update`
+
+Codemod to handle Node.js crypto deprecation [DEP0154](https://nodejs.org/docs/latest/api/deprecations.html#DEP0154) by transforming deprecated RSA-PSS key generation options.
+
+```bash
+npx codemod run @nodejs/crypto-rsa-pss-update
+```
+
+### Example:
+
+```js displayName="Before"
+const crypto = require('node:crypto');
+
+crypto.generateKeyPair(
+  'rsa-pss',
+  {
+    modulusLength: 2048,
+    hash: 'sha256',
+    mgf1Hash: 'sha1',
+    saltLength: 32,
+  },
+  (err, publicKey, privateKey) => {
+    // callback
+  }
+);
+```
+
+```js displayName="After"
+const crypto = require('crypto');
+
+crypto.generateKeyPair(
+  'rsa-pss',
+  {
+    modulusLength: 2048,
+    hashAlgorithm: 'sha256',
+    mgf1HashAlgorithm: 'sha1',
+    saltLength: 32,
+  },
+  (err, publicKey, privateKey) => {
+    // callback
+  }
+);
+```

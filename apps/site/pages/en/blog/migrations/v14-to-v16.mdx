@@ -17,9 +17,7 @@ This page provides a list of codemods to help you migrate your code from Node.js
 
 ## `create-require-from-path`
 
-In Node.js v16, the `createRequire` function was introduced to allow you to create a `require` function that can be used in ESM modules. This codemod will help you replace the old `createRequireFromPath` function with the new `createRequire` function.
-
-So this codemod handle [DEP0130](https://nodejs.org/api/deprecations.html#DEP0130).
+Node.js v16 replaced the [`createRequireFromPath`](https://nodejs.org/api/module.html#module_module_createrequirefrompath) function, deprecated in [DEP0148](https://nodejs.org/api/deprecations.html#DEP0148), with the modern [`createRequire`](https://nodejs.org/api/module.html#module_module_createrequire) function. This codemod replaces calls of the deprecated function with the modern alternative mentioned.
 
 ```bash
 npx codemod run @nodejs/create-require-from-path
@@ -30,7 +28,6 @@ npx codemod run @nodejs/create-require-from-path
 ```js displayName="Before"
 import { createRequireFromPath } from 'node:module';
 
-// Using createRequireFromPath
 const requireFromPath = createRequireFromPath('/path/to/module');
 const myModule = requireFromPath('./myModule.cjs');
 ```
@@ -38,7 +35,6 @@ const myModule = requireFromPath('./myModule.cjs');
 ```js displayName="After"
 import { createRequire } from 'node:module';
 
-// Using createRequire with a specific path
 const require = createRequire('/path/to/module');
 const myModule = require('./myModule.cjs');
 ```
@@ -68,6 +64,28 @@ if (require.main === 'mod.js') {
   // cli thing
 } else {
   // module thing
+}
+```
+
+## `process-mainModule-to-require-main`
+
+The [`process.mainModule`](https://nodejs.org/api/process.html#process_process_mainmodule) property was deprecated ([DEP0144](https://nodejs.org/api/deprecations.html#DEP0144)) in favor of [`require.main`](https://nodejs.org/api/modules.html#modules_accessing_the_main_module). This codemod replaces calls of the deprecated property with the modern alternative mentioned.
+
+```bash
+npx codemod run @nodejs/process-mainModule-to-require-main
+```
+
+### Example:
+
+```js displayName="Before"
+if (process.mainModule) {
+  console.log('This script is the main module');
+}
+```
+
+```js displayName="After"
+if (require.main === module) {
+  console.log('This script is the main module');
 }
 ```
 

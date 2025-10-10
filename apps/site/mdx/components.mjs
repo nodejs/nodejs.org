@@ -47,7 +47,7 @@ export default {
   blockquote: Blockquote,
   pre: MDXCodeBox,
   img: MDXImage,
-  // Allow the writter to use an pretty alert box
+  // Renders a CSS-enhanced Alert Box
   AlertBox,
   // Renders MDX CodeTabs
   CodeTabs: MDXCodeTabs,
