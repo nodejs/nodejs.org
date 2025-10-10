@@ -5,7 +5,6 @@ import {
   ArrowLeftIcon,
   SparklesIcon,
 } from '@heroicons/react/24/solid';
-import { OramaCloud } from '@orama/core';
 import { SearchRoot, ChatRoot, Modal } from '@orama/ui/components';
 import { useChatDispatch } from '@orama/ui/contexts';
 import classNames from 'classnames';
@@ -13,27 +12,15 @@ import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
 import { useEffect, useState } from 'react';
 
-import {
-  ORAMA_CLOUD_PROJECT_ID,
-  ORAMA_CLOUD_READ_API_KEY,
-} from '#site/next.constants.mjs';
-
 import '@orama/ui/styles.css';
 
 import { ChatInput } from './ChatInput';
 import { ChatInteractionsContainer } from './ChatInteractions';
 import { Footer } from './Footer';
 import styles from './index.module.css';
+import { OramaProvider, useOrama } from './OramaProvider';
 import { Search } from './Search';
 import { SlidingChatPanel } from './SlidingChatPanel';
-
-const orama =
-  ORAMA_CLOUD_PROJECT_ID && ORAMA_CLOUD_READ_API_KEY
-    ? new OramaCloud({
-        projectId: ORAMA_CLOUD_PROJECT_ID,
-        apiKey: ORAMA_CLOUD_READ_API_KEY,
-      })
-    : null;
 
 const MobileTopBar: FC<{
   isChatOpen: boolean;
@@ -168,6 +155,7 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
 
 const SearchWithModal: FC = () => {
   const [open, setOpen] = useState(false);
+  const orama = useOrama();
   const t = useTranslations();
 
   const toggleSearchBox = (): void => {
@@ -223,16 +211,24 @@ const SearchWithModal: FC = () => {
   );
 };
 
-const OramaSearch: FC<PropsWithChildren> = () => (
-  <SearchRoot client={orama}>
-    <ChatRoot
-      client={orama}
-      askOptions={{ throttle_delay: 50 }}
-      onAskStart={options => console.log('Starting:', options)}
-    >
-      <SearchWithModal />
-    </ChatRoot>
-  </SearchRoot>
-);
+const OramaSearch: FC<PropsWithChildren> = () => {
+  const orama = useOrama();
 
-export default OramaSearch;
+  return (
+    <SearchRoot client={orama}>
+      <ChatRoot client={orama} askOptions={{ throttle_delay: 50 }}>
+        <SearchWithModal />
+      </ChatRoot>
+    </SearchRoot>
+  );
+};
+
+const OramaSearchWrapper = () => {
+  return (
+    <OramaProvider>
+      <OramaSearch />
+    </OramaProvider>
+  );
+};
+
+export default OramaSearchWrapper;
