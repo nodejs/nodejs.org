@@ -35,6 +35,7 @@ const hashedSelfReference = (tree, vfile) => {
 
     if (targetURL.pathname === currentFileURL.pathname) {
       const expected = url.includes('#') ? url.slice(url.indexOf('#')) : '#';
+      node.url = expected;
 
       vfile.message(
         `Self-reference must start with hash (expected "${expected}", got "${url}")`,
