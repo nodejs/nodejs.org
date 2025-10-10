@@ -5,33 +5,17 @@ import {
   ArrowDownIcon,
   ArrowUpIcon,
 } from '@heroicons/react/24/solid';
-import { useSearchDispatch } from '@orama/ui/contexts';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
-import { useEffect, useCallback } from 'react';
 
 import styles from './index.module.css';
 
 export const Footer = () => {
   const t = useTranslations();
   const { resolvedTheme } = useTheme();
-  const dispatch = useSearchDispatch();
 
   const oramaLogo = `https://website-assets.oramasearch.com/orama-when-${resolvedTheme}.svg`;
-
-  const clearAll = useCallback(() => {
-    dispatch({ type: 'SET_SEARCH_TERM', payload: { searchTerm: '' } });
-    dispatch({ type: 'SET_SELECTED_FACET', payload: { selectedFacet: 'All' } });
-    dispatch({ type: 'SET_RESULTS', payload: { results: [] } });
-  }, [dispatch]);
-
-  useEffect(() => {
-    clearAll();
-    return () => {
-      clearAll();
-    };
-  }, [clearAll]);
 
   return (
     <div className={styles.footer}>

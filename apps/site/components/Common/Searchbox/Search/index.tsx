@@ -26,9 +26,14 @@ import { Footer } from '../Footer';
 type SearchProps = PropsWithChildren<{
   onChatTrigger: () => void;
   mode?: 'search' | 'chat';
-}>;
+}> &
+  React.RefAttributes<HTMLInputElement>;
 
-export const Search: FC<SearchProps> = ({ onChatTrigger, mode = 'search' }) => {
+export const Search: FC<SearchProps> = ({
+  onChatTrigger,
+  mode = 'search',
+  ref,
+}) => {
   const t = useTranslations();
   const {
     dispatch,
@@ -70,6 +75,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger, mode = 'search' }) => {
               siteSection: {},
             },
           }}
+          ref={ref}
         />
       </SearchInput.Wrapper>
 

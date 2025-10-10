@@ -6,19 +6,23 @@ import {
   SparklesIcon,
 } from '@heroicons/react/24/solid';
 import { SearchRoot, ChatRoot, Modal } from '@orama/ui/components';
-import { useChatDispatch } from '@orama/ui/contexts';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useState, useRef } from 'react';
 
 import '@orama/ui/styles.css';
+
+import { OramaProvider, useOrama } from '#site/providers/oramaProvider';
+import searchboxReducer, {
+  searchboxState,
+  getActions,
+} from '#site/reducers/searchboxReducer';
 
 import { ChatInput } from './ChatInput';
 import { ChatInteractionsContainer } from './ChatInteractions';
 import { Footer } from './Footer';
 import styles from './index.module.css';
-import { OramaProvider, useOrama } from './OramaProvider';
 import { Search } from './Search';
 import { SlidingChatPanel } from './SlidingChatPanel';
 
@@ -75,13 +79,13 @@ const MobileTopBar: FC<{
 const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
   onClose,
 }) => {
-  const [isChatOpen, setIsChatOpen] = useState(false);
-  const dispatch = useChatDispatch();
-  const [mode, setMode] = useState<'search' | 'chat'>('search');
+  const [state, dispatch] = useReducer(searchboxReducer, searchboxState);
+  const actions = getActions(dispatch);
   const [isMobileScreen, setIsMobileScreen] = useState(false);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   const displaySearch =
-    !isMobileScreen || (isMobileScreen && mode === 'search');
+    !isMobileScreen || (isMobileScreen && state.mode === 'search');
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -94,36 +98,25 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
     };
   }, []);
 
-  const handleSelectMode = (newMode: 'search' | 'chat') => {
-    setMode(newMode);
-    if (newMode === 'chat') {
-      setIsChatOpen(true);
-    }
-    if (newMode === 'search') {
-      setIsChatOpen(false);
-    }
-  };
-
   return (
     <>
       {isMobileScreen && (
         <MobileTopBar
-          isChatOpen={mode === 'chat'}
+          isChatOpen={state.mode === 'chat'}
           onClose={onClose}
-          onSelect={handleSelectMode}
+          onSelect={actions.switchTo}
         />
       )}
       {displaySearch && (
         <>
           <Search
-            mode={mode}
-            onChatTrigger={() => {
-              handleSelectMode('chat');
-            }}
+            mode={state.mode}
+            onChatTrigger={() => actions.switchTo('chat')}
+            ref={searchInputRef}
           />
         </>
       )}
-      {isMobileScreen && mode === 'chat' && (
+      {isMobileScreen && state.mode === 'chat' && (
         <>
           <div className={styles.mobileChatContainer}>
             <div className={styles.mobileChatTop}>
@@ -136,16 +129,13 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
           <Footer />
         </>
       )}
-      {!isMobileScreen && mode === 'chat' && (
+      {!isMobileScreen && state.mode === 'chat' && (
         <SlidingChatPanel
-          open={isChatOpen}
+          open={state.isChatOpen}
           onClose={() => {
-            setIsChatOpen(false);
-            setMode('search');
-            const searchInput = document.getElementById('orama-doc-search');
-            searchInput?.focus();
-            dispatch({ type: 'CLEAR_INTERACTIONS' });
-            dispatch({ type: 'CLEAR_USER_PROMPT' });
+            actions.closeChatAndReset(() => {
+              searchInputRef.current?.focus();
+            });
           }}
         />
       )}
@@ -154,36 +144,33 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
 };
 
 const SearchWithModal: FC = () => {
-  const [open, setOpen] = useState(false);
+  const [state, dispatch] = useReducer(searchboxReducer, searchboxState);
+  const actions = getActions(dispatch);
   const orama = useOrama();
   const t = useTranslations();
-
-  const toggleSearchBox = (): void => {
-    setOpen(!open);
-  };
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent): void => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
-        setOpen(open => !open);
+        actions.toggleModal();
       }
       if (e.key === 'Escape') {
-        setOpen(false);
+        actions.closeModal();
       }
     };
     document.addEventListener('keydown', handleKeyDown);
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [actions]);
 
   return (
     <div className={styles.searchboxContainer}>
       <button
         type="button"
         data-testid="orama-button"
-        onClick={toggleSearchBox}
+        onClick={actions.toggleModal}
         disabled={!orama}
         className={styles.searchButton}
       >
@@ -195,15 +182,15 @@ const SearchWithModal: FC = () => {
       </button>
 
       <Modal.Wrapper
-        open={open}
-        onModalClosed={() => setOpen(false)}
+        open={state.isOpen}
+        onModalClosed={actions.closeModal}
         closeOnOutsideClick
         closeOnEscape
         className={styles.modalWrapper}
       >
         <Modal.Inner className={styles.modalInner}>
           <Modal.Content className={styles.modalContent}>
-            <InnerSearchBox onClose={() => setOpen(false)} />
+            <InnerSearchBox onClose={actions.closeModal} />
           </Modal.Content>
         </Modal.Inner>
       </Modal.Wrapper>
