@@ -17,7 +17,7 @@ type DocumentLinkProps = {
   className?: string;
   children?: React.ReactNode;
   'data-focus-on-arrow-nav'?: boolean;
-};
+} & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export const DocumentLink: FC<DocumentLinkProps> = ({
   document,

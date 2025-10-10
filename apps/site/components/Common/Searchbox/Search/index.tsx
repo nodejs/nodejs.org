@@ -13,7 +13,7 @@ import { useSearch } from '@orama/ui/hooks/useSearch';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
-import { useEffect, useCallback, useRef } from 'react';
+import { useEffect, useCallback } from 'react';
 
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '#site/next.constants.mjs';
 
@@ -34,7 +34,7 @@ export const Search: FC<SearchProps> = ({ onChatTrigger, mode = 'search' }) => {
     dispatch,
     context: { searchTerm, selectedFacet },
   } = useSearch();
-  const containerRef = useRef<HTMLDivElement>(null);
+  const isSearchMode = mode === 'search';
 
   const clearAll = useCallback(() => {
     dispatch({ type: 'SET_SEARCH_TERM', payload: { searchTerm: '' } });
@@ -49,24 +49,8 @@ export const Search: FC<SearchProps> = ({ onChatTrigger, mode = 'search' }) => {
     };
   }, [clearAll]);
 
-  useEffect(() => {
-    const interactiveElements = containerRef.current?.querySelectorAll(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    );
-
-    if (mode === 'search') {
-      interactiveElements?.forEach(el => {
-        el.removeAttribute('tabindex');
-      });
-    } else {
-      interactiveElements?.forEach(el => {
-        el.setAttribute('tabindex', '-1');
-      });
-    }
-  }, [mode]);
-
   return (
-    <div className={styles.searchContainer} ref={containerRef}>
+    <div className={styles.searchContainer}>
       <SearchInput.Wrapper className={styles.searchInputWrapper}>
         <MagnifyingGlassIcon />
         <SearchInput.Input
@@ -74,6 +58,8 @@ export const Search: FC<SearchProps> = ({ onChatTrigger, mode = 'search' }) => {
           inputId="orama-doc-search"
           ariaLabel={t('components.search.searchPlaceholder')}
           placeholder={t('components.search.searchPlaceholder')}
+          tabIndex={isSearchMode ? 0 : -1}
+          aria-hidden={!isSearchMode}
           className={styles.searchInput}
           searchParams={{
             ...DEFAULT_ORAMA_QUERY_PARAMS,
@@ -94,6 +80,8 @@ export const Search: FC<SearchProps> = ({ onChatTrigger, mode = 'search' }) => {
             className={classNames(styles.chatButton, {
               [styles.chatButtonWithSearch]: searchTerm,
             })}
+            tabIndex={isSearchMode ? 0 : -1}
+            aria-hidden={!isSearchMode}
             initialPrompt={searchTerm || undefined}
             data-focus-on-arrow-nav
           >
@@ -119,6 +107,8 @@ export const Search: FC<SearchProps> = ({ onChatTrigger, mode = 'search' }) => {
                         ...DEFAULT_ORAMA_QUERY_PARAMS,
                         term: searchTerm ?? '',
                       }}
+                      tabIndex={isSearchMode ? 0 : -1}
+                      aria-hidden={!isSearchMode}
                       className={classNames(
                         isSelected && styles.facetTabItemSelected,
                         styles.facetTabItem
@@ -179,6 +169,8 @@ export const Search: FC<SearchProps> = ({ onChatTrigger, mode = 'search' }) => {
                       </p>
                       <Suggestions.Item
                         onClick={onChatTrigger}
+                        tabIndex={isSearchMode ? 0 : -1}
+                        aria-hidden={!isSearchMode}
                         className={styles.suggestionItem}
                       >
                         <SparklesIcon />
@@ -186,12 +178,16 @@ export const Search: FC<SearchProps> = ({ onChatTrigger, mode = 'search' }) => {
                       </Suggestions.Item>
                       <Suggestions.Item
                         onClick={onChatTrigger}
+                        tabIndex={isSearchMode ? 0 : -1}
+                        aria-hidden={!isSearchMode}
                         className={styles.suggestionItem}
                       >
                         <SparklesIcon />
                         {t('components.search.suggestionTwo')}
                       </Suggestions.Item>
                       <Suggestions.Item
+                        tabIndex={isSearchMode ? 0 : -1}
+                        aria-hidden={!isSearchMode}
                         onClick={onChatTrigger}
                         className={styles.suggestionItem}
                       >
@@ -219,6 +215,8 @@ export const Search: FC<SearchProps> = ({ onChatTrigger, mode = 'search' }) => {
                       <SearchResults.Item className={styles.searchResultsItem}>
                         <DocumentLink
                           document={hit.document as Document}
+                          tabIndex={isSearchMode ? 0 : -1}
+                          aria-hidden={!isSearchMode}
                           data-focus-on-arrow-nav
                         >
                           <DocumentTextIcon />
