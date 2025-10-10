@@ -12,8 +12,6 @@ import { ChatInteractionsContainer } from '../ChatInteractions';
 type SlidingChatPanelProps = PropsWithChildren<{
   open: boolean;
   onClose: () => void;
-  autoTriggerQuery?: string | null;
-  onAutoTriggerComplete?: () => void;
 }>;
 
 export const SlidingChatPanel: FC<SlidingChatPanelProps> = ({

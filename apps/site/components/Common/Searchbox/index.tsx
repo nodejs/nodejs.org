@@ -7,7 +7,7 @@ import {
 } from '@heroicons/react/24/solid';
 import { OramaCloud } from '@orama/core';
 import { SearchRoot, ChatRoot, Modal } from '@orama/ui/components';
-import { useSearchContext, useChatDispatch } from '@orama/ui/contexts';
+import { useChatDispatch } from '@orama/ui/contexts';
 import classNames from 'classnames';
 import { useTranslations } from 'next-intl';
 import type { FC, PropsWithChildren } from 'react';
@@ -91,9 +91,6 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
   const [isChatOpen, setIsChatOpen] = useState(false);
   const dispatch = useChatDispatch();
   const [mode, setMode] = useState<'search' | 'chat'>('search');
-  const [shouldAutoTrigger, setShouldAutoTrigger] = useState(false);
-  const [autoTriggerValue, setAutoTriggerValue] = useState<string | null>(null);
-  const { searchTerm } = useSearchContext();
   const [isMobileScreen, setIsMobileScreen] = useState(false);
 
   const displaySearch =
@@ -120,13 +117,6 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
     }
   };
 
-  const handleChatOpened = (): void => {
-    setTimeout(() => {
-      setShouldAutoTrigger(false);
-      setAutoTriggerValue(null);
-    }, 1000);
-  };
-
   return (
     <>
       {isMobileScreen && (
@@ -141,7 +131,6 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
           <Search
             mode={mode}
             onChatTrigger={() => {
-              setAutoTriggerValue(searchTerm ?? null);
               handleSelectMode('chat');
             }}
           />
@@ -171,8 +160,6 @@ const InnerSearchBox: FC<PropsWithChildren<{ onClose: () => void }>> = ({
             dispatch({ type: 'CLEAR_INTERACTIONS' });
             dispatch({ type: 'CLEAR_USER_PROMPT' });
           }}
-          autoTriggerQuery={shouldAutoTrigger ? autoTriggerValue : null}
-          onAutoTriggerComplete={handleChatOpened}
         />
       )}
     </>
