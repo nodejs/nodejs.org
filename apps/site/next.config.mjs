@@ -80,6 +80,7 @@ const nextConfig = {
   // we also configure ESLint to run its lint checking on all files
   eslint: { ignoreDuringBuilds: true },
   experimental: {
+    useCache: true,
     // Ensure that server-side code is also minified
     serverMinification: true,
     // Use Workers and Threads for webpack compilation

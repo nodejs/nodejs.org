@@ -5,7 +5,6 @@ import type { ComponentProps, FC } from 'react';
 
 import Link from '#site/components/Link';
 import { useRouter } from '#site/navigation.mjs';
-import provideReleaseData from '#site/next-data/providers/releaseData';
 import type { NodeRelease } from '#site/types';
 import { STATUS_ORDER } from '#site/util/download';
 
@@ -44,9 +43,9 @@ type WithReleaseSelectProps = Omit<
 >;
 
 const WithReleaseSelect: FC<WithReleaseSelectProps> = ({ ...props }) => {
-  const releaseData = provideReleaseData();
+  // const releaseData = provideReleaseData();
   const { push } = useRouter();
-  const navigation = groupReleasesByStatus(releaseData);
+  const navigation = groupReleasesByStatus([]); // fix later
 
   return (
     <WithNoScriptSelect
