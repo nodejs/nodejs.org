@@ -10,7 +10,7 @@ const compose = ({ token, cursor, popup }) => [
   popup,
 ];
 
-export const twoslash = options =>
+export const twoslash = (options = {}) =>
   transformerTwoslash({
     langs: ['ts', 'js', 'cjs', 'mjs'],
     rendererRich: {
@@ -44,5 +44,5 @@ export const twoslash = options =>
       },
     },
     throws: false,
-    ...(typeof options === 'object' ? options : {}),
+    ...options,
   });

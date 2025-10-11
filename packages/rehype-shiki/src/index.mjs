@@ -18,8 +18,9 @@ import createHighlighter, { getLanguageByName } from './highlighter.mjs';
 
 /**
  * @typedef {Object} HighlighterOptions
- * @property {boolean|Object} [wasm=false] - WebAssembly options for the regex engine
- * @property {boolean|import('@shikijs/twoslash').TransformerTwoslashIndexOptions} [twoslash=false] - Twoslash configuration options
+ * @property {boolean} [wasm=false] - Enable WebAssembly for the regex engine
+ * @property {boolean} [twoslash=false] - Enable twoslash
+ * @property {import('@shikijs/twoslash').TransformerTwoslashIndexOptions} [twoslashOptions] - Twoslash configuration options
  * @param {import('@shikijs/core').HighlighterCoreOptions} [coreOptions] - Core options for the highlighter.
  * @param {import('@shikijs/core').CodeToHastOptions} [highlighterOptions] - Additional options for highlighting.
  */
@@ -31,9 +32,7 @@ import createHighlighter, { getLanguageByName } from './highlighter.mjs';
 async function getEngine({ wasm = false }) {
   if (wasm) {
     const { createOnigurumaEngine } = await import('@shikijs/engine-oniguruma');
-    return createOnigurumaEngine(
-      typeof wasm === 'boolean' ? await import('shiki/wasm') : wasm
-    );
+    return createOnigurumaEngine(await import('shiki/wasm'));
   }
 
   const { createJavaScriptRegexEngine } = await import(
@@ -46,12 +45,12 @@ async function getEngine({ wasm = false }) {
  * Configures and returns transformers based on options
  * @param {HighlighterOptions} options - Configuration options
  */
-async function getTransformers({ twoslash: options = false }) {
+async function getTransformers({ twoslash = false, twoslashOptions }) {
   const transformers = [];
 
-  if (options) {
+  if (twoslash) {
     const { twoslash } = await import('./transformers/twoslash/index.mjs');
-    transformers.push(twoslash(options));
+    transformers.push(twoslash(twoslashOptions));
   }
 
   return transformers;

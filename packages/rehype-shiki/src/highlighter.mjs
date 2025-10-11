@@ -9,12 +9,14 @@ const DEFAULT_THEME = {
   ...shikiNordTheme,
 };
 
-export const getLanguageByName = (language, langs) =>
-  langs.find(
+export const getLanguageByName = (language, langs) => {
+  const normalized = language.toLowerCase();
+
+  return langs.find(
     ({ name, aliases }) =>
-      name.toLowerCase() === language.toLowerCase() ||
-      (aliases !== undefined && aliases.includes(language.toLowerCase()))
+      name.toLowerCase() === normalized || aliases?.includes(normalized)
   );
+};
 
 /**
  * Factory function to create a syntax highlighter instance with utility methods.
