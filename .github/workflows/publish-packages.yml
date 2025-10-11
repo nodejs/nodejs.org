@@ -102,22 +102,10 @@ jobs:
       matrix: ${{ fromJson(needs.prepare-packages.outputs.matrix) }}
       fail-fast: false # Continue publishing other packages even if one fails
     steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
+      - uses: nodejs/web-team/actions/setup-environment@2c2897a93eb99b4cdca270729100bc0887c758d9
         with:
-          egress-policy: audit
-
-      - name: Checkout repository
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-
-      - name: Set up pnpm
-        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
-        with:
-          # Don't use caching here as we never install dependencies in this workflow
-          node-version-file: '.nvmrc'
+          pnpm: true
+          use-version-file: true
           registry-url: 'https://registry.npmjs.org'
 
       - name: Re-install npm
@@ -128,9 +116,6 @@ jobs:
       - name: Publish
         working-directory: packages/${{ matrix.package }}
         run: |
-          # Install deps
-          pnpm install --frozen-lockfile
-
           # Check if a custom publish script exists in package.json
           if jq -e '.scripts.release' package.json > /dev/null; then
             pnpm run release
