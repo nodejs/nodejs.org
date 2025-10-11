@@ -20,10 +20,9 @@ const cloudflareConfig = defineCloudflareConfig({
 
 const openNextConfig: OpenNextConfig = {
   ...cloudflareConfig,
+  buildCommand: 'pnpm build --webpack',
   cloudflare: {
-    skewProtection: {
-      enabled: true,
-    },
+    skewProtection: { enabled: true },
   },
 };
 
