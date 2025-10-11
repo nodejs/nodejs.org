@@ -1,6 +1,5 @@
 'use client';
 
-import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import type { FC } from 'react';
 
 import Button from '#site/components/Common/Button';
@@ -20,10 +19,7 @@ const GlobalErrorPage: FC<{ error: Error }> = () => (
             This page has thrown a non-recoverable error.
           </p>
 
-          <Button href="/">
-            Back to Home
-            <ArrowRightIcon />
-          </Button>
+          <Button href="/">Back to Home</Button>
         </GlowingBackdropLayout>
       </BaseLayout>
     </body>
