@@ -1,0 +1,167 @@
+---
+date: '2025-10-10T12:00:00.000Z'
+category: migrations
+title: Node.js v22 to v24
+layout: blog-post
+author: AugustinMauroy
+---
+
+# Node.js v22 to v24
+
+<AlertBox level="warning" title="!">
+  This article cover a part of the migration from Node.js v22 to v24. The
+  userland migrations team is working on more codemods to help you with the
+  migration.
+</AlertBox>
+
+This page provides a list of codemods to help you migrate your code from Node.js v22 to v24.
+
+## `fs-access-mode-constants`
+
+In Node.js 24, the `fs` module introduced a runtime deprecation for `F_OK`, `R_OK`, `W_OK`, and `X_OK` getters exposed directly on `node:fs`. Get them from `fs.constants` or `fs.promises.constants` instead.
+
+So this codemod handle [DEP0176](https://nodejs.org/api/deprecations.html#DEP0176).
+
+```js displayName="Before"
+const fs = require('node:fs');
+
+fs.access('/path/to/file', fs.F_OK, callback);
+fs.access('/path/to/file', fs.R_OK | fs.W_OK, callback);
+```
+
+```js displayName="After"
+const fs = require('node:fs');
+
+fs.access('/path/to/file', fs.constants.F_OK, callback);
+fs.access('/path/to/file', fs.constants.R_OK | fs.constants.W_OK, callback);
+```
+
+## `util-log-to-console-log`
+
+In Node.js v23, the `util.log` function was deprecated in favor of using `console.log` directly. Because it's an unmaintained legacy API that was exposed to user land by accident
+
+So this codemod handle [DEP0059](https://nodejs.org/api/deprecations.html#DEP0059).
+
+### Example:
+
+```js displayName="Before"
+const util = require('node:util');
+
+util.log('Hello world');
+```
+
+```js displayName="After"
+console.log(new Date().toLocaleString(), 'Hello world');
+```
+
+## `zlib-bytesRead-to-bytesWritten`
+
+The [`zlib.bytesRead`](https://nodejs.org/api/zlib.html#zlib_bytesread) property was deprecated ([DEP0108](https://nodejs.org/api/deprecations.html#DEP0108)) in favor of [`zlib.bytesWritten`](https://nodejs.org/api/zlib.html#zlib_byteswritten). This codemod replaces `zlib.bytesRead` with `zlib.bytesWritten` for consistent stream property naming. It handles both CommonJS and ESM imports.
+
+```bash
+npx codemod run @nodejs/zlib-bytesRead-to-bytesWritten
+```
+
+### Example:
+
+```js displayName="Before"
+const zlib = require('node:zlib');
+const gzip = zlib.createGzip();
+gzip.on('end', () => {
+  console.log('Bytes processed:', gzip.bytesRead);
+});
+```
+
+```js displayName="After"
+const zlib = require('node:zlib');
+const gzip = zlib.createGzip();
+gzip.on('end', () => {
+  console.log('Bytes processed:', gzip.bytesWritten);
+});
+```
+
+## `fs-truncate-to-ftruncate`
+
+The [`fs.truncate`](https://nodejs.org/api/fs.html#fs_fs_truncate_path_len_callback) function was deprecated ([DEP0081](https://nodejs.org/api/deprecations.html#DEP0081)) when used with a file descriptor. Use [`fs.ftruncate`](https://nodejs.org/api/fs.html#fs_fs_ftruncate_fd_len_callback) instead.
+
+```bash
+npx codemod run @nodejs/fs-truncate-to-ftruncate
+```
+
+### Example:
+
+```js displayName="Before"
+const { truncate, open, close } = require('node:fs');
+
+open('file.txt', 'w', (err, fd) => {
+  if (err) throw err;
+  truncate(fd, 10, err => {
+    if (err) throw err;
+    close(fd, () => {});
+  });
+});
+```
+
+```js displayName="After"
+const { ftruncate, open, close } = require('node:fs');
+
+open('file.txt', 'w', (err, fd) => {
+  if (err) throw err;
+  ftruncate(fd, 10, err => {
+    if (err) throw err;
+    close(fd, () => {});
+  });
+});
+```
+
+## `crypto-rsa-pss-update`
+
+Codemod to handle Node.js crypto deprecation [DEP0154](https://nodejs.org/docs/latest/api/deprecations.html#DEP0154) by transforming deprecated RSA-PSS key generation options.
+
+```bash
+npx codemod run @nodejs/crypto-rsa-pss-update
+```
+
+### Example:
+
+```js displayName="Before"
+const crypto = require('node:crypto');
+
+crypto.generateKeyPair(
+  'rsa-pss',
+  {
+    modulusLength: 2048,
+    hash: 'sha256',
+    mgf1Hash: 'sha1',
+    saltLength: 32,
+  },
+  (err, publicKey, privateKey) => {
+    // callback
+  }
+);
+```
+
+```js displayName="After"
+const crypto = require('crypto');
+
+crypto.generateKeyPair(
+  'rsa-pss',
+  {
+    modulusLength: 2048,
+    hashAlgorithm: 'sha256',
+    mgf1HashAlgorithm: 'sha1',
+    saltLength: 32,
+  },
+  (err, publicKey, privateKey) => {
+    // callback
+  }
+);
+```
+
+### Source Code
+
+The source code for this codemod can be found in the [crypto-rsa-pss-update directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/crypto-rsa-pss-update).
+
+### Registry Link
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/crypto-rsa-pss-update).
