@@ -3,6 +3,11 @@
 import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 import Blockquote from '@node-core/ui-components/Common/Blockquote';
 import MDXCodeTabs from '@node-core/ui-components/MDX/CodeTabs';
+import {
+  MDXTooltip,
+  MDXTooltipContent,
+  MDXTooltipTrigger,
+} from '@node-core/ui-components/MDX/Tooltip';
 
 import Button from '#site/components/Common/Button';
 import LinkWithArrow from '#site/components/Common/LinkWithArrow';
@@ -51,6 +56,10 @@ export default {
   img: MDXImage,
   // Renders MDX CodeTabs
   CodeTabs: MDXCodeTabs,
+  // Renders Tooltips
+  MDXTooltip,
+  MDXTooltipContent,
+  MDXTooltipTrigger,
   // Renders a Download Button
   DownloadButton,
   // Renders a stateless Release Select Component
