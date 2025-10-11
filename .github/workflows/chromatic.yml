@@ -57,6 +57,7 @@ jobs:
         with:
           pnpm: true
           use-version-file: true
+          fetch-depth: 0
 
       - name: Start Visual Regression Tests (Chromatic)
         # This assigns the Environment Deployment for Storybook
