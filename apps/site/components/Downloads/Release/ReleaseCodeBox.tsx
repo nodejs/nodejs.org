@@ -162,7 +162,7 @@ const ReleaseCodeBox: FC = () => {
 
       {/* Code display with skeleton loading */}
       <Skeleton loading={isLoading}>
-        <CodeBox language={displayLanguage} className="min-h-[16.5rem]">
+        <CodeBox language={displayLanguage} className="min-h-[19rem]">
           <code dangerouslySetInnerHTML={{ __html: parsedSnippets }} />
         </CodeBox>
       </Skeleton>
