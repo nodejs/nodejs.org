@@ -46,7 +46,7 @@ const getPage: FC<PageParams> = async props => {
   const [locale, pathname] = basePage.getLocaleAndPath(version, routeLocale);
 
   if (version === 'current') {
-    const releaseData = provideReleaseData();
+    const releaseData = await provideReleaseData();
 
     const release = releaseData.find(release => release.status === 'Current');
 
