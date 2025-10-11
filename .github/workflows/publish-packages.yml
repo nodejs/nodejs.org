@@ -5,13 +5,13 @@ name: Publish Packages
 on:
   push:
     paths:
-      - "packages/**"
+      - 'packages/**'
     # For security reasons, this should never be set to anything but `main`
     branches: [main]
   workflow_dispatch:
     inputs:
       package:
-        description: "Specific package to publish (leave empty for all packages)"
+        description: 'Specific package to publish (leave empty for all packages)'
         required: false
         type: string
 
@@ -106,7 +106,7 @@ jobs:
         with:
           pnpm: true
           use-version-file: true
-          registry-url: "https://registry.npmjs.org"
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Re-install npm
         # TODO: OIDC requires npm >=11.5.1.
@@ -127,9 +127,9 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' }}
         uses: rtCamp/action-slack-notify@e31e87e03dd19038e411e38ae27cbad084a90661 # 2.3.3
         env:
-          SLACK_COLOR: "#43853D"
+          SLACK_COLOR: '#43853D'
           SLACK_ICON: https://github.com/nodejs.png?size=48
-          SLACK_TITLE: ":rocket: Package Published: ${{ matrix.package }}"
+          SLACK_TITLE: ':rocket: Package Published: ${{ matrix.package }}'
           SLACK_MESSAGE: |
             :package: *Package*: `${{ matrix.package }}` (<https://www.npmjs.com/package/@node-core/${{ matrix.package }}|View on npm>)
             :bust_in_silhouette: *Published by*: ${{ github.triggering_actor }}

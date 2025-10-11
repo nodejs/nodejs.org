@@ -65,6 +65,6 @@ jobs:
           # We want to ensure we have enough RAM allocated to the Node.js process
           # this should be a last resort in case by any chances the build memory gets too high
           # but in general this should never happen
-          NODE_OPTIONS: "--max_old_space_size=4096"
+          NODE_OPTIONS: '--max_old_space_size=4096'
           # We want to ensure that static exports for all locales do not occur on `pull_request` events
           NEXT_PUBLIC_STATIC_EXPORT_LOCALE: ${{ github.event_name == 'push' }}

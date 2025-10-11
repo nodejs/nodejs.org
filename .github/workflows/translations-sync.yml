@@ -8,7 +8,7 @@ name: Crowdin Download
 on:
   workflow_dispatch: # Allow running when we want to, for events such as urgent translation mistakes or 100% completed languages
   schedule:
-    - cron: "0 5 * * 5" # At 05:00 on Fridays. This guarantees that we have the 72 hour weekend time to review translations.
+    - cron: '0 5 * * 5' # At 05:00 on Fridays. This guarantees that we have the 72 hour weekend time to review translations.
 
 # Cancel any runs on the same branch
 concurrency:
@@ -46,9 +46,9 @@ jobs:
           download_translations: true
           localization_branch_name: ${{ env.BRANCH_NAME }}
           create_pull_request: true
-          pull_request_title: "[automated]: crowdin sync"
-          pull_request_body: "New Crowdin translations from the [Node.js Crowdin project](https://crowdin.com/project/nodejs-web)"
-          commit_message: "chore: synced translations from crowdin"
+          pull_request_title: '[automated]: crowdin sync'
+          pull_request_body: 'New Crowdin translations from the [Node.js Crowdin project](https://crowdin.com/project/nodejs-web)'
+          commit_message: 'chore: synced translations from crowdin'
         env:
           GITHUB_TOKEN: ${{ secrets.CROWDIN_GITHUB_BOT_TOKEN }}
           # A numeric ID, found at https://crowdin.com/project/nodejs-web/tools/api
@@ -107,8 +107,8 @@ jobs:
       - name: Push Changes back to Pull Request
         uses: stefanzweifel/git-auto-commit-action@778341af668090896ca464160c2def5d1d1a3eb0 # v6.0.1
         with:
-          commit_options: "--no-verify --signoff"
-          commit_message: "chore: automated format of translated files"
+          commit_options: '--no-verify --signoff'
+          commit_message: 'chore: automated format of translated files'
           branch: ${{ env.BRANCH_NAME }}
 
       - name: Save Lint Cache
