@@ -1,9 +1,10 @@
 {
   "name": "@node-core/rehype-shiki",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "exports": {
     ".": "./src/index.mjs",
+    "./index.css": "./src/index.css",
     "./*": "./src/*.mjs"
   },
   "repository": {
@@ -23,6 +24,7 @@
     "@shikijs/core": "^3.13.0",
     "@shikijs/engine-javascript": "^3.13.0",
     "@shikijs/engine-oniguruma": "^3.13.0",
+    "@shikijs/twoslash": "^3.13.0",
     "classnames": "catalog:",
     "hast-util-to-string": "^3.0.1",
     "shiki": "~3.13.0",
