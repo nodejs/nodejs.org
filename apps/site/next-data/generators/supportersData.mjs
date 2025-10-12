@@ -13,9 +13,7 @@ async function fetchOpenCollectiveData() {
 
   const members = payload
     .filter(({ role, isActive }) => role === 'BACKER' && isActive)
-    .sort((a, b) => {
-      return b.totalAmountDonated - a.totalAmountDonated; //descending
-    })
+    .sort((a, b) => b.totalAmountDonated - a.totalAmountDonated)
     .map(({ name, website, image, profile }) => ({
       name,
       image,
