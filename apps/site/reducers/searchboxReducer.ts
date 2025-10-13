@@ -55,7 +55,7 @@ const reducer = (
       return {
         ...state,
         mode: action.payload,
-        isChatOpen: action.payload === 'chat' ? true : false,
+        isChatOpen: action.payload === 'chat',
       };
     default:
       return state;

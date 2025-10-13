@@ -1,0 +1,59 @@
+@reference "../../../../styles/index.css";
+
+.suggestionsWrapper {
+  @apply flex
+    min-h-0
+    flex-1
+    flex-col
+    overflow-y-auto
+    pb-4
+    text-neutral-900
+    dark:text-neutral-200;
+}
+
+.suggestionsList {
+  @apply mt-1
+    space-y-1;
+}
+
+.suggestionsTitle {
+  @apply my-3
+    text-xs
+    font-semibold
+    uppercase
+    text-neutral-800
+    dark:text-neutral-500;
+}
+
+.suggestionItem {
+  @apply flex
+    cursor-pointer
+    items-center
+    gap-2
+    rounded-lg
+    border
+    border-transparent
+    py-2
+    text-sm
+    text-green-600
+    focus-visible:border-green-600
+    focus-visible:outline-none
+    dark:text-green-400
+    dark:focus-visible:border-green-400;
+
+  svg {
+    @apply size-5;
+  }
+}
+
+.noResultsWrapper {
+  @apply pb-31
+    flex
+    h-full
+    items-center
+    justify-center
+    pt-10
+    text-sm
+    text-neutral-800
+    dark:text-neutral-500;
+}

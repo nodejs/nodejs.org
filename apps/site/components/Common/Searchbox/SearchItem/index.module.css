@@ -1,0 +1,35 @@
+@reference "../../../../styles/index.css";
+
+.searchResultsItem {
+  > a {
+    @apply flex
+      items-center
+      gap-4
+      rounded-lg
+      border
+      border-transparent
+      px-2
+      py-3
+      text-sm
+      outline-none
+      duration-300
+      hover:bg-neutral-300
+      focus-visible:border-green-600
+      focus-visible:bg-transparent
+      motion-safe:transition-colors
+      dark:bg-zinc-950
+      dark:hover:bg-neutral-900
+      lg:dark:bg-neutral-950;
+  }
+
+  svg {
+    @apply size-5
+      shrink-0;
+  }
+}
+
+.searchResultsItemDescription {
+  @apply text-sm
+    text-neutral-600
+    dark:text-neutral-700;
+}
