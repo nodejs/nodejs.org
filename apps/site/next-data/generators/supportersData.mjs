@@ -13,10 +13,12 @@ async function fetchOpenCollectiveData() {
 
   const members = payload
     .filter(({ role, isActive }) => role === 'BACKER' && isActive)
-    .map(({ name, website, image }) => ({
+    .sort((a, b) => b.totalAmountDonated - a.totalAmountDonated)
+    .map(({ name, website, image, profile }) => ({
       name,
       image,
       url: website,
+      profile,
       source: 'opencollective',
     }));
 
