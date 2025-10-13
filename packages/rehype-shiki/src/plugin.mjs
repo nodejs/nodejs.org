@@ -4,34 +4,34 @@ import classNames from 'classnames';
 import { toString } from 'hast-util-to-string';
 import { SKIP, visit } from 'unist-util-visit';
 
-import { highlightToHast } from './index.mjs';
+import createHighlighter from './index.mjs';
 
 // This is what Remark will use as prefix within a <pre> className
 // to attribute the current language of the <pre> element
 const languagePrefix = 'language-';
 
+// The regex to match metadata
+const rMeta = /(\w+)(?:=(?:"([^"]+)"|(\S+)))?/g;
+
 /**
- * Retrieve the value for the given meta key.
- *
- * @example - Returns "CommonJS"
- * getMetaParameter('displayName="CommonJS"', 'displayName');
- *
- * @param {any} meta - The meta parameter.
- * @param {string} key - The key to retrieve the value.
- *
- * @return {string | undefined} - The value related to the given key.
+ * Parses a fenced code block metadata string into a JavaScript object.
+ * @param {string} meta - The metadata string from a Markdown code fence.
+ * @returns {Record<string, string|boolean>} An object representing the metadata.
  */
-function getMetaParameter(meta, key) {
-  if (typeof meta !== 'string') {
-    return;
+function parseMeta(meta) {
+  const obj = { __raw: meta };
+
+  if (!meta) {
+    return obj;
   }
 
-  const matches = meta.match(new RegExp(`${key}="(?<parameter>[^"]*)"`));
-  const parameter = matches?.groups.parameter;
+  let match;
 
-  return parameter !== undefined && parameter.length > 0
-    ? parameter
-    : undefined;
+  while ((match = rMeta.exec(meta)) !== null) {
+    obj[match[1]] = match[2] ?? match[3] ?? true;
+  }
+
+  return obj;
 }
 
 /**
@@ -53,8 +53,15 @@ function isCodeBlock(node) {
   );
 }
 
-export default function rehypeShikiji() {
-  return function (tree) {
+/**
+ * @param {import('./index.mjs').HighlighterOptions} options
+ */
+export default function rehypeShikiji(options) {
+  let highlighter;
+
+  return async function (tree) {
+    highlighter ??= await createHighlighter(options);
+
     visit(tree, 'element', (_, index, parent) => {
       const languages = [];
       const displayNames = [];
@@ -65,11 +72,7 @@ export default function rehypeShikiji() {
 
       while (isCodeBlock(parent?.children[currentIndex])) {
         const codeElement = parent?.children[currentIndex].children[0];
-
-        const displayName = getMetaParameter(
-          codeElement.data?.meta,
-          'displayName'
-        );
+        const meta = parseMeta(codeElement.data?.meta);
 
         // We should get the language name from the class name
         if (codeElement.properties.className?.length) {
@@ -80,18 +83,13 @@ export default function rehypeShikiji() {
         }
 
         // Map the display names of each variant for the CodeTab
-        displayNames.push(displayName?.replaceAll('|', '') ?? '');
+        displayNames.push(meta.displayName?.replaceAll('|', '') ?? '');
 
         codeTabsChildren.push(parent?.children[currentIndex]);
 
         // If `active="true"` is provided in a CodeBox
         // then the default selected entry of the CodeTabs will be the desired entry
-        const specificActive = getMetaParameter(
-          codeElement.data?.meta,
-          'active'
-        );
-
-        if (specificActive === 'true') {
+        if (meta.active === 'true') {
           defaultTab = String(codeTabsChildren.length - 1);
         }
 
@@ -162,6 +160,9 @@ export default function rehypeShikiji() {
         return;
       }
 
+      // Get the metadata
+      const meta = parseMeta(preElement.data?.meta);
+
       // Retrieve the whole <pre> contents as a parsed DOM string
       const preElementContents = toString(preElement);
 
@@ -169,7 +170,11 @@ export default function rehypeShikiji() {
       const languageId = codeLanguage.slice(languagePrefix.length);
 
       // Parses the <pre> contents and returns a HAST tree with the highlighted code
-      const { children } = highlightToHast(preElementContents, languageId);
+      const { children } = highlighter.highlightToHast(
+        preElementContents,
+        languageId,
+        meta
+      );
 
       // Adds the original language back to the <pre> element
       children[0].properties.class = classNames(
@@ -177,15 +182,13 @@ export default function rehypeShikiji() {
         codeLanguage
       );
 
-      const showCopyButton = getMetaParameter(
-        preElement.data?.meta,
-        'showCopyButton'
-      );
-
       // Adds a Copy Button to the CodeBox if requested as an additional parameter
       // And avoids setting the property (overriding) if undefined or invalid value
-      if (showCopyButton && ['true', 'false'].includes(showCopyButton)) {
-        children[0].properties.showCopyButton = showCopyButton;
+      if (
+        meta.showCopyButton &&
+        ['true', 'false'].includes(meta.showCopyButton)
+      ) {
+        children[0].properties.showCopyButton = meta.showCopyButton;
       }
 
       // Replaces the <pre> element with the updated one
