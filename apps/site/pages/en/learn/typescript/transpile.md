@@ -71,6 +71,7 @@ If you have type errors in your TypeScript code, the TypeScript compiler will ca
 We will modify our code like this, to voluntarily introduce a type error:
 
 ```ts
+// @errors: 2322 2554
 type User = {
   name: string;
   age: number;
@@ -86,33 +87,6 @@ const justine: User = {
 };
 
 const isJustineAnAdult: string = isAdult(justine, "I shouldn't be here!");
-```
-
-And this is what TypeScript has to say about this:
-
-```console
-example.ts:12:5 - error TS2322: Type 'string' is not assignable to type 'number'.
-
-12     age: 'Secret!',
-       ~~~
-
-  example.ts:3:5
-    3     age: number;
-          ~~~
-    The expected type comes from property 'age' which is declared here on type 'User'
-
-example.ts:15:7 - error TS2322: Type 'boolean' is not assignable to type 'string'.
-
-15 const isJustineAnAdult: string = isAdult(justine, "I shouldn't be here!");
-         ~~~~~~~~~~~~~~~~
-
-example.ts:15:51 - error TS2554: Expected 1 arguments, but got 2.
-
-15 const isJustineAnAdult: string = isAdult(justine, "I shouldn't be here!");
-                                                     ~~~~~~~~~~~~~~~~~~~~~~
-
-
-Found 3 errors in the same file, starting at: example.ts:12
 ```
 
 As you can see, TypeScript is very helpful in catching bugs before they even happen. This is one of the reasons why TypeScript is so popular among developers.

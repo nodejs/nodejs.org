@@ -1,7 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "extends": ["//"],
-  "globalEnv": ["NODE_ENV"],
   "tasks": {
     "lint:js": {
       "inputs": ["**/*.{json,mjs,js,ts,tsx}"]

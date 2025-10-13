@@ -14,7 +14,46 @@
     text-neutral-800
     dark:text-neutral-200;
 
-  &:not(.active):hover {
+  .label {
+    @apply font-regular
+      flex
+      items-center
+      gap-1.5
+      p-2
+      text-sm;
+  }
+
+  .icon {
+    @apply size-3
+      text-neutral-500
+      dark:text-neutral-200;
+  }
+
+  &.progression {
+    &.active {
+      @apply text-neutral-900
+        dark:text-white;
+
+      .hexagonIcon {
+        @apply fill-green-500;
+      }
+    }
+
+    .label {
+      @apply p-1;
+    }
+
+    .hexagonIcon {
+      @apply shrink-0
+        fill-neutral-200
+        stroke-white
+        stroke-[4]
+        dark:fill-neutral-800
+        dark:stroke-neutral-950;
+    }
+  }
+
+  &:not(.active):not(.progression):hover {
     /* Apply hover background to the full item width */
     @apply bg-neutral-100
       dark:bg-neutral-900;
@@ -30,63 +69,12 @@
         text-green-600
         dark:text-green-400;
     }
-
-    .progressionIcon {
-      @apply fill-green-200
-        dark:fill-green-300;
-    }
   }
 
-  .label {
-    @apply font-regular
-      flex
-      items-center
-      gap-1.5
-      p-2
-      text-sm;
-  }
-
-  .progressionIcon {
-    @apply shrink-0
-      fill-neutral-200
-      stroke-white
-      stroke-[4]
-      dark:fill-neutral-800
-      dark:stroke-neutral-950;
-  }
-
-  .icon {
-    @apply size-3
-      text-neutral-500
-      dark:text-neutral-200;
-  }
-
-  &.progression {
-    .label {
-      @apply p-1;
-    }
-
-    /* On hover, use full-width background on the item (set above) */
-    &:not(.active):hover {
-      @apply bg-neutral-100
-        dark:bg-neutral-900;
-    }
-
-    /* Avoid extra pill background on the label when hovering */
-    &:not(.active):hover .label {
-      @apply rounded-none
-        bg-transparent;
-    }
-  }
-
-  &.active {
+  &.active:not(.progression) {
     /* Full-width active background and readable text */
     @apply bg-green-600
       text-white;
-
-    .progressionIcon {
-      @apply fill-green-500;
-    }
 
     /* Remove pill background on the label; keep full-width bg on the item */
     .label {

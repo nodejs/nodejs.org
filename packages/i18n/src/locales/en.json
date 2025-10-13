@@ -138,7 +138,9 @@
           "branding": "Branding of Node.js",
           "governance": "Project Governance",
           "releases": "Node.js Releases",
-          "security": "Security Reporting"
+          "security": "Security Reporting",
+          "partners": "Partners & Supporters",
+          "eol": "End-of-Life (EOL)"
         }
       },
       "getInvolved": {

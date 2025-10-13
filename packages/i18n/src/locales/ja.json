@@ -143,7 +143,9 @@
           "branding": "Node.jsのブランド",
           "governance": "プロジェクトの管理体制",
           "releases": "Node.js リリース",
-          "security": "セキュリティーレポート"
+          "security": "セキュリティーレポート",
+          "partners": "パートナーとサポーター",
+          "eol": "サポート終了（EOL）"
         }
       },
       "getInvolved": {

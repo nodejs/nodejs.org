@@ -20,33 +20,7 @@ mock.module('shiki/themes/nord.mjs', {
 });
 
 describe('createHighlighter', async () => {
-  const { createHighlighter } = await import('../highlighter.mjs');
-
-  describe('getLanguageDisplayName', () => {
-    it('returns display name for known languages', () => {
-      const langs = [
-        { name: 'javascript', displayName: 'JavaScript', aliases: ['js'] },
-      ];
-      const highlighter = createHighlighter({ langs });
-
-      assert.strictEqual(
-        highlighter.getLanguageDisplayName('javascript'),
-        'JavaScript'
-      );
-      assert.strictEqual(
-        highlighter.getLanguageDisplayName('js'),
-        'JavaScript'
-      );
-    });
-
-    it('returns original name for unknown languages', () => {
-      const highlighter = createHighlighter({ langs: [] });
-      assert.strictEqual(
-        highlighter.getLanguageDisplayName('unknown'),
-        'unknown'
-      );
-    });
-  });
+  const { default: createHighlighter } = await import('../highlighter.mjs');
 
   describe('highlightToHtml', () => {
     it('extracts inner HTML from code tag', () => {

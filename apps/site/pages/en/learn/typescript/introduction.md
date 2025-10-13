@@ -70,16 +70,11 @@ npm add --save-dev @types/node
 
 These type definitions allow TypeScript to understand Node.js APIs and provide proper type checking and autocompletion when you use functions like `fs.readFile` or `http.createServer`. For example:
 
-```js
-import * as fs from 'fs';
+```ts
+// @errors: 2345
+import { resolve } from 'node:path';
 
-fs.readFile('example.txt', 'foo', (err, data) => {
-  //                          ^^^ Argument of type '"foo"' is not assignable to parameter of type …
-  if (err) {
-    throw err;
-  }
-  console.log(data);
-});
+resolve(123, 456);
 ```
 
 Many popular JavaScript libraries have their type definitions available under the `@types` namespace, maintained by the DefinitelyTyped community. This enables seamless integration of existing JavaScript libraries with TypeScript projects.
