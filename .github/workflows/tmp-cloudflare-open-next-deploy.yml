@@ -24,7 +24,7 @@ permissions:
   contents: read
 
 jobs:
-  playwright:
+  deploy:
     name: Deploy Open-Next site
     runs-on: ubuntu-latest
 
