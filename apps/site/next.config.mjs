@@ -78,8 +78,6 @@ const nextConfig = {
   typedRoutes: true,
   // Experimental Flags
   experimental: {
-    // Enables global not-found without intl.
-    globalNotFound: true,
     // Ensure that server-side code is also minified
     serverMinification: true,
     // Use Workers and Threads for webpack compilation
