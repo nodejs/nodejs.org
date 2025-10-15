@@ -37,7 +37,7 @@
   {
     "id": "NODESOURCE",
     "name": "NodeSource",
-    "href": "https://nodesource.com/",
+    "href": "https://nodesource.com",
     "weight": 3,
     "categories": ["security", "esp", "release"]
   }
