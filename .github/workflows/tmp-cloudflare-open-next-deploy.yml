@@ -50,6 +50,10 @@ jobs:
       - name: Install packages
         run: pnpm install --frozen-lockfile
 
+      - name: Build blog data
+        working-directory: apps/site
+        run: node --run build:blog-data
+
       - name: Deploy open-next site
         working-directory: apps/site
         run: node --run cloudflare:deploy
