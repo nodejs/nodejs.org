@@ -1,10 +1,10 @@
 # Security Notes
-# This workflow uses `pull_request_target`, so will run against all PRs automatically (without approval), be careful with allowing any user-provided code to be run here
+# This workflow uses `pull_request`, so will run against PRs in their own context; be careful with allowing any user-provided code to be run here
 # Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
 # for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
 # REVIEWERS, please always double-check security practices before merging a PR that contains workflow changes!!
 # AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
-# MERGE QUEUE NOTE: This workflow runs on both `pull_request_target` and `merge_group` to ensure blog post dates are validated before merging
+# MERGE QUEUE NOTE: This workflow runs on `pull_request` to ensure blog post dates are validated before merging
 
 name: Check Blog Post Publish Dates
 

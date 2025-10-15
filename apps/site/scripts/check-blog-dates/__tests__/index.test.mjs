@@ -3,6 +3,16 @@ import { describe, it, beforeEach, afterEach } from 'node:test';
 
 import { checkBlogDates, checkAndFormatBlogDates } from '../index.mjs';
 
+const OLD_ENV = process.env;
+
+beforeEach(() => {
+  process.env = { ...OLD_ENV };
+});
+
+afterEach(() => {
+  process.env = OLD_ENV;
+});
+
 describe('checkBlogDates', () => {
   const mockBlogData = {
     posts: [
@@ -154,10 +164,6 @@ describe('checkAndFormatBlogDates', () => {
         },
       },
     };
-  });
-
-  afterEach(() => {
-    process.env = {};
   });
 
   it('should skip when not in PR context (no github)', async () => {

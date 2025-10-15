@@ -8,6 +8,16 @@ import {
   COMMENT_IDENTIFIER,
 } from '../create-review.mjs';
 
+const OLD_ENV = process.env;
+
+beforeEach(() => {
+  process.env = { ...OLD_ENV };
+});
+
+afterEach(() => {
+  process.env = OLD_ENV;
+});
+
 describe('buildCommentBody', () => {
   it('should return resolved message when no future posts', () => {
     const result = buildCommentBody([]);
@@ -135,8 +145,7 @@ describe('createReviewForFutureDates', () => {
   };
 
   beforeEach(t => {
-    process.env = {};
-
+    delete process.env.FUTURE_POSTS_JSON;
     mockGithub = {
       rest: {
         issues: {
@@ -164,7 +173,7 @@ describe('createReviewForFutureDates', () => {
   });
 
   afterEach(() => {
-    process.env = {};
+    delete process.env.FUTURE_POSTS_JSON;
   });
 
   it('should skip when no future posts in env', async () => {

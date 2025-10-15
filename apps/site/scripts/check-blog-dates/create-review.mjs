@@ -140,7 +140,7 @@ export async function createReviewForFutureDates({ github, context, core }) {
 
   // Filter out posts that are resolved (post date <= current date)
   const unresolvedPosts = allFuturePosts.filter(
-    post => new Date(post.date) > new Date()
+    post => new Date(post.date) > currentDate
   );
 
   core.info(
