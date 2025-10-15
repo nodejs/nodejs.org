@@ -1,0 +1,70 @@
+# Security Notes
+# This workflow uses `pull_request_target`, so will run against all PRs automatically (without approval), be careful with allowing any user-provided code to be run here
+# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
+# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
+# REVIEWERS, please always double-check security practices before merging a PR that contains workflow changes!!
+# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+# MERGE QUEUE NOTE: This workflow runs on both `pull_request_target` and `merge_group` to ensure blog post dates are validated before merging
+
+name: Check Blog Post Publish Dates
+
+on:
+  pull_request:
+    paths:
+      - 'apps/site/pages/en/blog/**/*.md'
+
+defaults:
+  run:
+    working-directory: ./
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check-dates:
+    name: Check for future blog post dates
+    runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: write
+      contents: read
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
+        with:
+          egress-policy: audit
+
+      - name: Git Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v5.0.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check blog post publish dates
+        # Scan all blog posts for future publish dates
+        id: check-dates
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            process.chdir('${{github.workspace}}/apps/site');
+            const { checkAndFormatBlogDates } = await import('${{github.workspace}}/apps/site/scripts/check-blog-dates/index.mjs');
+            await checkAndFormatBlogDates({core, github, context});
+
+      - name: Create PR review comments
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        env:
+          FUTURE_POSTS_JSON: ${{ steps.check-dates.outputs.FUTURE_POSTS_JSON }}
+        with:
+          script: |
+            const { createReviewForFutureDates } = await import('${{github.workspace}}/apps/site/scripts/check-blog-dates/create-review.mjs')
+            await createReviewForFutureDates({github, context, core})
