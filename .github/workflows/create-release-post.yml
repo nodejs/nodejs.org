@@ -1,0 +1,50 @@
+# Security Notes
+# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
+# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
+# REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
+# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+
+name: Create Release Blog Post
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+
+defaults:
+  run:
+    # This ensures that the working directory is the root of the repository
+    working-directory: ./
+
+permissions:
+  contents: write
+
+jobs:
+  create-post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: nodejs/web-team/actions/setup-environment@2c2897a93eb99b4cdca270729100bc0887c758d9
+        with:
+          pnpm: true
+          use-version-file: true
+
+      - id: create-release-post
+        working-directory: apps/site
+        run: node --run scripts:release-post ${{ inputs.version }} >> $GITHUB_OUTPUT
+
+      - name: Open pull request
+        uses: gr2m/create-or-update-pull-request-action@b65137ca591da0b9f43bad7b24df13050ea45d1b # v1.10.1
+        # Creates a PR or update the Action's existing PR, or
+        # no-op if the base branch is already up-to-date.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_USER_TOKEN }}
+        with:
+          author: Node.js GitHub Bot <github-bot@iojs.org>
+          branch: release-${{ steps.create-release-post.output.version }}
+          body: This PR was generated automatically.
+          commit-message: 'feat(blog): create post for ${{ steps.create-release-post.output.version }}'
+          labels: fast-track
+          title: 'feat(blog): create post for ${{ steps.create-release-post.output.version }}'
+          update-pull-request-title-and-body: true
