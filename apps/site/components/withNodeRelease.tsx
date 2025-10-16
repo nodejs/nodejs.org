@@ -1,3 +1,5 @@
+'use server';
+
 import type { FC } from 'react';
 
 import provideReleaseData from '#site/next-data/providers/releaseData';

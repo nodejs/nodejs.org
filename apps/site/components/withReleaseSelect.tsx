@@ -40,12 +40,16 @@ const groupReleasesByStatus = (releases: Array<NodeRelease>) => {
 type WithReleaseSelectProps = Omit<
   ComponentProps<typeof WithNoScriptSelect>,
   'values' | 'as' | 'onChange'
->;
+> & {
+  releases: Array<NodeRelease>;
+};
 
-const WithReleaseSelect: FC<WithReleaseSelectProps> = ({ ...props }) => {
-  // const releaseData = provideReleaseData();
+const WithReleaseSelect: FC<WithReleaseSelectProps> = ({
+  releases,
+  ...props
+}) => {
+  const navigation = groupReleasesByStatus(releases);
   const { push } = useRouter();
-  const navigation = groupReleasesByStatus([]); // fix later
 
   return (
     <WithNoScriptSelect
