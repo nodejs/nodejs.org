@@ -1,7 +1,7 @@
 ---
 title: How to read environment variables from Node.js
 layout: learn
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, manishprivet, nikhilbhatt
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, manishprivet, nikhilbhatt, ycmjason
 ---
 
 # How to read environment variables from Node.js
