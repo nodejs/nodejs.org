@@ -64,3 +64,42 @@ throwing an error if the file is missing using the `--env-file-if-exists` flag.
 ```bash
 node --env-file-if-exists=.env app.js
 ```
+
+## Loading `.env` files programmatically with `process.loadEnvFile(path)`
+
+As of **Node.js v21.7.0** (and **v20.12.0** for Node 20 LTS), Node.js provides a built-in API to load `.env` files directly from your code: [`process.loadEnvFile(path)`](https://nodejs.org/api/process.html#processloadenvfilepath).
+
+This method loads variables from a `.env` file into `process.env`, similar to how the `--env-file` flag works — but can be invoked programmatically.
+
+### Example
+
+```js
+const { loadEnvFile } = require('node:process');
+
+// Loads environment variables from the default .env file
+loadEnvFile();
+
+console.log(process.env.PORT);
+```
+
+You can also specify a custom path:
+
+```js
+const { loadEnvFile } = require('node:process');
+loadEnvFile('./config/.env');
+```
+
+### Notes
+
+- **Parameters:**
+  `path` can be a string, `URL`, `Buffer`, or `undefined`.
+  Default: `'./.env'`.
+
+- **Version history:**
+  - Added in: `v21.7.0`, `v20.12.0`
+  - No longer experimental as of `v24.10.0`
+
+- **Behaviour:**
+  Values from `.env` are merged into `process.env`.
+  Environment variables already set in the process take precedence.
+  Variables like `NODE_OPTIONS` inside `.env` have no effect on Node.js startup behavior.
