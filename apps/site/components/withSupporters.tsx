@@ -6,8 +6,8 @@ import SupportersList from './Common/Supporters';
 
 import provideSupporters from '#site/next-data/providers/supportersData';
 
-const WithSupporters: FC<PropsWithChildren> = async () => {
-  const supporters = await provideSupporters();
+const WithSupporters: FC<PropsWithChildren> = () => {
+  const supporters = provideSupporters();
 
   return (
     <div className="flex max-w-full flex-wrap items-center gap-1">

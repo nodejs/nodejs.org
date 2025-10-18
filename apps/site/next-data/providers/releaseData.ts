@@ -1,5 +1,7 @@
 'use cache';
 
-import provideReleaseData from '#site/next-data/generators/releaseData.mjs';
+import generateReleaseData from '#site/next-data/generators/releaseData.mjs';
+
+const provideReleaseData = async () => generateReleaseData();
 
 export default provideReleaseData;

@@ -1,5 +1,9 @@
-'use cache';
+import { cache } from 'react';
 
-import { fetchOpenCollectiveData as provideSupporters } from '#site/next-data/generators/supportersData.mjs';
+import { fetchOpenCollectiveData } from '#site/next-data/generators/supportersData.mjs';
+
+const openCollectiveSupporters = await fetchOpenCollectiveData();
+
+const provideSupporters = cache(() => openCollectiveSupporters);
 
 export default provideSupporters;

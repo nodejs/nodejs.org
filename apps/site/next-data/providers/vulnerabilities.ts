@@ -1,5 +1,9 @@
-'use cache';
+import { cache } from 'react';
 
-import provideVulnerabilities from '#site/next-data/generators/vulnerabilities.mjs';
+import generateVulnerabilities from '#site/next-data/generators/vulnerabilities.mjs';
+
+const vulnerabilities = await generateVulnerabilities();
+
+const provideVulnerabilities = cache(() => vulnerabilities);
 
 export default provideVulnerabilities;
