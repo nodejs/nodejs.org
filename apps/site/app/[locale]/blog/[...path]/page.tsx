@@ -7,7 +7,7 @@ import * as basePage from '#site/next.dynamic.page.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
 import type { DynamicParams } from '#site/types';
 
-type PageParams = DynamicParams<{ path: Array<string>; locale: string }>;
+type PageParams = DynamicParams<{ path: Array<string> }>;
 
 // This is the default Viewport Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-viewport#generateviewport-function
