@@ -73,6 +73,10 @@ This method loads variables from a `.env` file into `process.env`, similar to ho
 
 ### Example
 
+```env
+PORT=1234
+```
+
 ```js
 const { loadEnvFile } = require('node:process');
 
