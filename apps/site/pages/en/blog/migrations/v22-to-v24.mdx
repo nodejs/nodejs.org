@@ -20,7 +20,7 @@ This page provides a list of codemods to help you migrate your code from Node.js
 
 In Node.js 24, the `fs` module introduced a runtime deprecation for `F_OK`, `R_OK`, `W_OK`, and `X_OK` getters exposed directly on `node:fs`. Get them from `fs.constants` or `fs.promises.constants` instead.
 
-So this codemod handle [DEP0176](https://nodejs.org/api/deprecations.html#DEP0176).
+This codemod handles [DEP0176](https://nodejs.org/api/deprecations.html#DEP0176).
 
 ```js displayName="Before"
 const fs = require('node:fs');
