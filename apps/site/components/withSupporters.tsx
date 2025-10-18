@@ -6,7 +6,6 @@ import provideSupporters from '#site/next-data/providers/supportersData';
 
 import SupportersList from './Common/Supporters';
 
-
 const WithSupporters: FC<PropsWithChildren> = async () => {
   const supporters = await provideSupporters();
 
