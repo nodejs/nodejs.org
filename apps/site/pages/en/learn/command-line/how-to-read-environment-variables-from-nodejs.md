@@ -71,6 +71,8 @@ Node.js provides a built-in API to load `.env` files directly from your code: [`
 
 This method loads variables from a `.env` file into `process.env`, similar to how the `--env-file` flag works — but can be invoked programmatically.
 
+Because this method is invoked post-initialization, the setting of startup-related environment variables (i.e. `NODE_OPTIONS`) has no effect on the process (however, these variables can still be accessed via `process.env`).
+
 ### Example
 
 ```env
