@@ -70,7 +70,7 @@ socket.addEventListener('message', event => {
 });
 ```
 
-The `json` code above demonstrates sending and receiving [JSON](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON) data, which is common in WebSocket applications. It uses [JSON.stringify()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) to convert JavaScript objects to JSON strings before sending. And converts the received string back to a JavaScript object with [JSON.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse). Finally, it includes error handling for JSON parsing.
+The `javascript` code above demonstrates sending and receiving [JSON](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON) data, which is common in WebSocket applications. It uses [JSON.stringify()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) to convert JavaScript objects to JSON strings before sending. And converts the received string back to a JavaScript object with [JSON.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse). Finally, it includes error handling for JSON parsing.
 
 This offers reduced dependency management and improved compatibility. Developers can avoid installing and maintaining additional WebSocket client libraries. The built-in implementation aligns with modern web standards, ensuring better interoperability. The enhancement focuses on the client-side of WebSocket communication, enabling Node.js to act as a WebSocket client.
 
