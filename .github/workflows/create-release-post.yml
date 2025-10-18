@@ -42,12 +42,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_USER_TOKEN }}
         with:
           author: Node.js GitHub Bot <github-bot@iojs.org>
-          branch: release-${{ steps.create-release-post.output.version }}
+          branch: release-${{ steps.create-release-post.outputs.version }}
           body: |
-            Creates a new blog post for ${{ steps.create-release-post.output.version }}.
+            Creates a new blog post for ${{ steps.create-release-post.outputs.version }}.
 
             Check this workflow's logs at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
-          commit-message: 'feat(blog): create post for ${{ steps.create-release-post.output.version }}'
+          commit-message: 'feat(blog): create post for ${{ steps.create-release-post.outputs.version }}'
           labels: fast-track
-          title: 'feat(blog): create post for ${{ steps.create-release-post.output.version }}'
+          title: 'feat(blog): create post for ${{ steps.create-release-post.outputs.version }}'
           update-pull-request-title-and-body: true
