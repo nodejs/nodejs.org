@@ -7,7 +7,7 @@ import * as basePage from '#site/next.dynamic.page.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
 import type { DynamicParams } from '#site/types';
 
-type PageParams = DynamicParams<{ path: Array<string> }>;
+type PageParams = DynamicParams<{ path: Array<string>; locale: string }>;
 
 // This is the default Viewport Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-viewport#generateviewport-function
@@ -15,9 +15,7 @@ export const generateViewport = basePage.generateViewport;
 
 // This generates each page's HTML Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-metadata
-export const generateMetadata = ({
-  params,
-}: PageProps<'/[locale]/blog/[...path]'>) =>
+export const generateMetadata = ({ params }: PageParams) =>
   basePage.generateMetadata({ params, prefix: 'blog' });
 
 // Generates all possible static paths based on the locales and environment configuration
