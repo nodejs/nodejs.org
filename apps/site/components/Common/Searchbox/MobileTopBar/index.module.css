@@ -1,0 +1,67 @@
+@reference "../../../../styles/index.css";
+
+.topBar {
+  @apply relative
+    flex
+    justify-center
+    p-4
+    lg:hidden;
+}
+
+.topBarArrow {
+  @apply absolute
+    left-4
+    top-1/2
+    -translate-y-1/2
+    text-neutral-900
+    dark:text-neutral-200;
+
+  svg {
+    @apply size-4;
+  }
+}
+
+.topBarTabs {
+  @apply rounded-4xl
+    flex
+    bg-neutral-200
+    p-1
+    text-sm
+    text-neutral-900
+    dark:bg-neutral-900
+    dark:text-neutral-200;
+}
+
+.topBarTab {
+  @apply flex
+    items-center
+    gap-1
+    px-4
+    py-1;
+
+  svg {
+    @apply size-4;
+  }
+}
+
+.topBarTabActive {
+  @apply before:rounded-4xl
+    relative
+    z-10
+    text-white
+    before:absolute
+    before:inset-0
+    before:z-[-1]
+    before:bg-black
+    motion-safe:transition-colors
+    dark:text-neutral-900
+    dark:before:bg-white;
+
+  &.topBarTabAnimated:first-of-type {
+    @apply before:animate-slide-to-left;
+  }
+
+  &.topBarTabAnimated:last-of-type {
+    @apply before:animate-slide-to-right;
+  }
+}

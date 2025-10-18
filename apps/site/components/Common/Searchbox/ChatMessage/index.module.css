@@ -1,0 +1,50 @@
+@reference "../../../../styles/index.css";
+
+.chatUserPrompt {
+  @apply py-3;
+
+  p {
+    @apply max-w-2xl
+      rounded-xl
+      text-neutral-900
+      dark:text-neutral-200;
+  }
+}
+
+.chatAssistantMessageWrapper {
+  @apply my-2
+    rounded-xl
+    bg-neutral-100
+    px-4
+    py-1
+    text-neutral-900
+    empty:hidden
+    dark:bg-neutral-950
+    dark:text-neutral-200;
+}
+
+.typingIndicator {
+  @apply flex
+    items-center
+    gap-1
+    rounded-xl
+    bg-neutral-200
+    p-4
+    dark:bg-neutral-950;
+}
+
+.typingDot {
+  @apply animate-dot-move
+    size-1
+    rounded-full
+    bg-neutral-500
+    dark:bg-neutral-400;
+
+  &:nth-child(2) {
+    @apply animate-dot-move-delay-200;
+  }
+
+  &:nth-child(3) {
+    @apply animate-dot-move-delay-400;
+  }
+}
