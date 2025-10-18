@@ -83,7 +83,7 @@ const { loadEnvFile } = require('node:process');
 // Loads environment variables from the default .env file
 loadEnvFile();
 
-console.log(process.env.PORT);
+console.log(process.env.PORT); // Logs '1234'
 ```
 
 You can also specify a custom path:
