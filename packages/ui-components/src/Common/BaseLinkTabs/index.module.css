@@ -38,13 +38,5 @@
 }
 
 .tabsSelect {
-  @apply sm:visible
-    md:hidden;
-
-  > span {
-    @apply max-xs:flex
-      my-6
-      hidden
-      w-full;
-  }
+  @apply md:hidden;
 }

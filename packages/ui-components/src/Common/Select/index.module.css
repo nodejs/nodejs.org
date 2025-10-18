@@ -180,7 +180,8 @@
   }
 
   .dropdown {
-    @apply absolute
+    @apply z-99
+      absolute
       left-0
       mt-4;
   }
