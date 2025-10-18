@@ -15,7 +15,11 @@ export const generateViewport = basePage.generateViewport;
 
 // This generates each page's HTML Metadata
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-metadata
-export const generateMetadata = basePage.generateBlogMetadata;
+export const generateMetadata = ({
+  params,
+}: {
+  params: Promise<{ path: Array<string>; locale: string }>;
+}) => basePage.generateMetadata({ params, prefix: 'blog' });
 
 // Generates all possible static paths based on the locales and environment configuration
 // - Returns an empty array if static export is disabled (`ENABLE_STATIC_EXPORT` is false)
