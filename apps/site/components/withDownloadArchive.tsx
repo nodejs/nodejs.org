@@ -3,15 +3,12 @@ import type { FC } from 'react';
 
 import { getClientContext } from '#site/client-context';
 import provideReleaseData from '#site/next-data/providers/releaseData';
-import type { NodeRelease } from '#site/types';
 import {
   buildReleaseArtifacts,
   extractVersionFromPath,
 } from '#site/util/download/archive';
 
-type DownloadArchive = ReturnType<typeof buildReleaseArtifacts> & {
-  releases: Array<NodeRelease>;
-};
+type DownloadArchive = ReturnType<typeof buildReleaseArtifacts>;
 
 type WithDownloadArchiveProps = {
   children: FC<DownloadArchive>;
@@ -42,7 +39,7 @@ const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
 
   const releaseArtifacts = buildReleaseArtifacts(release, version);
 
-  return <Component {...releaseArtifacts} releases={releaseData} />;
+  return <Component {...releaseArtifacts} />;
 };
 
 export default WithDownloadArchive;

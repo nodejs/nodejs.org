@@ -1,10 +1,10 @@
-'use client';
+'use server';
 
-import WithNoScriptSelect from '@node-core/ui-components/Common/Select/NoScriptSelect';
+import StatelessSelect from '@node-core/ui-components/Common/Select/StatelessSelect';
 import type { ComponentProps, FC } from 'react';
 
 import Link from '#site/components/Link';
-import { useRouter } from '#site/navigation.mjs';
+import provideReleaseData from '#site/next-data/providers/releaseData';
 import type { NodeRelease } from '#site/types';
 import { STATUS_ORDER } from '#site/util/download';
 
@@ -38,25 +38,19 @@ const groupReleasesByStatus = (releases: Array<NodeRelease>) => {
 };
 
 type WithReleaseSelectProps = Omit<
-  ComponentProps<typeof WithNoScriptSelect>,
-  'values' | 'as' | 'onChange'
-> & {
-  releases: Array<NodeRelease>;
-};
+  ComponentProps<typeof StatelessSelect>,
+  'values' | 'as'
+>;
 
-const WithReleaseSelect: FC<WithReleaseSelectProps> = ({
-  releases,
-  ...props
-}) => {
-  const navigation = groupReleasesByStatus(releases);
-  const { push } = useRouter();
+const WithReleaseSelect: FC<WithReleaseSelectProps> = async ({ ...props }) => {
+  const releaseData = await provideReleaseData();
+  const navigation = groupReleasesByStatus(releaseData);
 
   return (
-    <WithNoScriptSelect
+    <StatelessSelect
       {...props}
       values={navigation}
       as={Link}
-      onChange={push}
       className="w-full md:w-64"
       ariaLabel={props.defaultValue}
     />
