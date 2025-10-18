@@ -4,7 +4,7 @@ layout: learn
 authors: JakobJingleheimer, AugustinMauroy
 ---
 
-![Node.js Userland Migrations](https://raw.githubusercontent.com/nodejs/userland-migrations/main/.github/assets/Userland-Migration-Tagline.png)
+![Node.js Userland Migrations](https://raw.githubusercontent.com/nodejs/userland-migrations/8fd9c141a118c4b64cc37eed8e663005cbc819ac/.github/assets/Userland-Migration-Tagline.png)
 
 # Userland Migrations
 
