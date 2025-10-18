@@ -10,6 +10,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
+        description: The version to generate a blog post for. If none provided, use the latest release.
         type: string
 
 defaults:
@@ -32,7 +33,7 @@ jobs:
 
       - id: create-release-post
         working-directory: apps/site
-        run: node --run scripts:release-post ${{ inputs.version }} >> $GITHUB_OUTPUT
+        run: node --run scripts:release-post ${{ inputs.version }}
 
       - name: Open pull request
         uses: gr2m/create-or-update-pull-request-action@b65137ca591da0b9f43bad7b24df13050ea45d1b # v1.10.1
@@ -47,7 +48,7 @@ jobs:
             Creates a new blog post for ${{ steps.create-release-post.outputs.version }}.
 
             Check this workflow's logs at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
-          commit-message: 'feat(blog): create post for ${{ steps.create-release-post.outputs.version }}'
+          commit-message: "feat(blog): create post for ${{ steps.create-release-post.outputs.version }}"
           labels: fast-track
-          title: 'feat(blog): create post for ${{ steps.create-release-post.outputs.version }}'
+          title: "feat(blog): create post for ${{ steps.create-release-post.outputs.version }}"
           update-pull-request-title-and-body: true

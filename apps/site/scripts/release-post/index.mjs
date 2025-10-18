@@ -21,7 +21,7 @@
 'use strict';
 
 import { existsSync, readFileSync } from 'node:fs';
-import { writeFile } from 'node:fs/promises';
+import { writeFile, appendFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 import handlebars from 'handlebars';
@@ -263,10 +263,13 @@ if (import.meta.url.startsWith('file:')) {
       .then(formatPost)
       .then(writeToFile)
       .then(
-        ([filepath, { version }]) => {
-          console.error('Release post created:', filepath);
+        async ([filepath, { version }]) => {
+          console.log('Release post created:', filepath);
           if (process.env.GITHUB_OUTPUT) {
-            console.log(`version=v${version}`);
+            await appendFile(
+              process.env.GITHUB_OUTPUT,
+              `version=v${version}\n`
+            );
           }
         },
         error => console.error('Some error occurred here!', error.stack)
