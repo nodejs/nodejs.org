@@ -89,17 +89,3 @@ const { loadEnvFile } = require('node:process');
 loadEnvFile('./config/.env');
 ```
 
-### Notes
-
-- **Parameters:**
-  `path` can be a string, `URL`, `Buffer`, or `undefined`.
-  Default: `'./.env'`.
-
-- **Version history:**
-  - Added in: `v21.7.0`, `v20.12.0`
-  - No longer experimental as of `v24.10.0`
-
-- **Behavior:**
-  Values from `.env` are merged into `process.env`.
-  Environment variables already set in the process take precedence.
-  Variables like `NODE_OPTIONS` inside `.env` have no effect on Node.js startup behavior.
