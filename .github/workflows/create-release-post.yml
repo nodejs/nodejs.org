@@ -45,7 +45,7 @@ jobs:
           branch: release-${{ steps.create-release-post.output.version }}
           body: |
             Creates a new blog post for ${{ steps.create-release-post.output.version }}.
-            
+
             Check this workflow's logs at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
           commit-message: 'feat(blog): create post for ${{ steps.create-release-post.output.version }}'
           labels: fast-track
