@@ -25,4 +25,4 @@ async function fetchOpenCollectiveData() {
   return members;
 }
 
-export { fetchOpenCollectiveData };
+export default fetchOpenCollectiveData;
