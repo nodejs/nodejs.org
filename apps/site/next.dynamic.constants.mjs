@@ -38,7 +38,7 @@ export const BLOG_DYNAMIC_ROUTES = [
 export const ARCHIVE_DYNAMIC_ROUTES = [
   // Creates dynamic routes for downloads archive pages for each version
   // (e.g., /download/archive/v18.20.8, /download/archive/v20.19.2)
-  ...provideReleaseVersions(),
+  ...(await provideReleaseVersions()),
 ];
 
 /**

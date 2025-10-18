@@ -9,7 +9,7 @@ import EOLReleaseTableBody from './TableBody';
 
 const EOLReleaseTable: FC = async () => {
   const releaseData = await provideReleaseData();
-  const vulnerabilities = provideVulnerabilities();
+  const vulnerabilities = await provideVulnerabilities();
 
   const eolReleases = releaseData.filter(
     release => release.status === EOL_VERSION_IDENTIFIER
