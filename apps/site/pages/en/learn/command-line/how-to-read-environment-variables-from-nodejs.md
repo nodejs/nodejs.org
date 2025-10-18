@@ -67,7 +67,7 @@ node --env-file-if-exists=.env app.js
 
 ## Loading `.env` files programmatically with `process.loadEnvFile(path)`
 
-As of **Node.js v21.7.0** (and **v20.12.0** for Node 20 LTS), Node.js provides a built-in API to load `.env` files directly from your code: [`process.loadEnvFile(path)`](https://nodejs.org/api/process.html#processloadenvfilepath).
+Node.js provides a built-in API to load `.env` files directly from your code: [`process.loadEnvFile(path)`](https://nodejs.org/api/process.html#processloadenvfilepath).
 
 This method loads variables from a `.env` file into `process.env`, similar to how the `--env-file` flag works — but can be invoked programmatically.
 
