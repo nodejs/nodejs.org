@@ -75,7 +75,7 @@ Because this method is invoked post-initialization, the setting of startup-relat
 
 ### Example
 
-```env
+```txt
 PORT=1234
 ```
 
