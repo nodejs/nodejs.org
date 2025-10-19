@@ -1,0 +1,104 @@
+name: Compare Bundle Size
+
+on:
+  workflow_run:
+    workflows: ["Build"]
+    types: [completed]
+
+permissions:
+  contents: read
+  actions: read
+  # To create the comment
+  pull-requests: write
+
+jobs:
+  compare:
+    name: Compare Bundle Stats
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
+        with:
+          egress-policy: audit
+
+      - name: Download PR artifact (head)
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.payload.workflow_run.id,
+            });
+
+            const artifact = artifacts.data.artifacts.find(a => a.name === 'webpack-stats');
+
+            if (!artifact) {
+              throw new Error('No artifact found!');
+            }
+
+            const download = await github.rest.actions.downloadArtifact({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              artifact_id: artifact.id,
+              archive_format: 'zip',
+            });
+
+            fs.mkdirSync('head-stats', { recursive: true });
+            fs.writeFileSync('head-stats/stats.zip', Buffer.from(download.data));
+
+      - name: Download main branch artifact (base)
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            const fs = require('fs');
+
+            const runs = await github.rest.actions.listWorkflowRuns({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: context.payload.workflow_run.workflow_id,
+              branch: 'main',
+              status: 'completed',
+              per_page: 1,
+            });
+
+            if (runs.length < 1) {
+              throw new Error('No runs found!');
+            }
+
+            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: runs.data.workflow_runs[0].id,
+            });
+
+            const artifact = artifacts.data.artifacts.find(a => a.name === 'webpack-stats');
+
+            if (!artifact) {
+              throw new Error('No artifact found!');
+            }
+
+            const download = await github.rest.actions.downloadArtifact({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              artifact_id: artifact.id,
+              archive_format: 'zip',
+            });
+
+            fs.mkdirSync('base-stats', { recursive: true });
+            fs.writeFileSync('base-stats/stats.zip', Buffer.from(download.data));
+
+      - name: Unzip artifacts
+        run: |
+          unzip -o head-stats/stats.zip -d head-stats
+          unzip -o base-stats/stats.zip -d base-stats
+
+      - uses: github/webpack-bundlesize-compare-action@89161bb25577f08577ce053c3264c0e3b7d7558f # v2.1.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          current-stats-json-path: ./head-stats/webpack-stats.json
+          base-stats-json-path: ./base-stats/webpack-stats.json
