@@ -1,10 +1,10 @@
 'use strict';
 
-import { provideBlogPosts } from '#site/next-data/providers/blogData';
 import { blogData } from '#site/next.json.mjs';
 
 import { BASE_PATH, BASE_URL } from './next.constants.mjs';
 import { siteConfig } from './next.json.mjs';
+import { getBlogPosts } from './util/blog';
 
 /**
  * This constant is used to create static routes on-the-fly that do not have a file-system
@@ -19,7 +19,7 @@ export const BLOG_DYNAMIC_ROUTES = [
   // Provides Routes for all Blog Categories w/ Pagination
   ...blogData.categories
     // retrieves the amount of pages for each blog category
-    .map(c => [c, provideBlogPosts(c).pagination.pages])
+    .map(c => [c, getBlogPosts(c).pagination.pages])
     // creates a numeric array for each page and define a pathname for
     // each page for a category (i.e. blog/all/page/1)
     .map(([c, t]) => [...Array(t).keys()].map(p => `${c}/page/${p + 1}`))

@@ -6,8 +6,8 @@ import BlogHeader from '#site/components/Blog/BlogHeader';
 import WithBlogCategories from '#site/components/withBlogCategories';
 import WithFooter from '#site/components/withFooter';
 import WithNavBar from '#site/components/withNavBar';
-import getBlogData from '#site/next-data/blogData';
 import type { BlogCategory } from '#site/types';
+import { getBlogData } from '#site/util/blog';
 
 import styles from './layouts.module.css';
 

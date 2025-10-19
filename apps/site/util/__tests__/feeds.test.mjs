@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
-import generateWebsiteFeeds from '#site/next-data/generators/websiteFeeds.mjs';
+import { BASE_URL, BASE_PATH } from '#site/next.constants.mjs';
+import { siteConfig } from '#site/next.json.mjs';
 
-import { BASE_URL, BASE_PATH } from '../../../next.constants.mjs';
-import { siteConfig } from '../../../next.json.mjs';
+import { generateWebsiteFeeds } from '../feeds';
 
 const base = `${BASE_URL}${BASE_PATH}/en`;
 
@@ -15,7 +15,7 @@ describe('generateWebsiteFeeds', () => {
         {
           slug: '/post-1',
           title: 'Post 1',
-          author: 'Author 1',
+          author: [{ name: 'Author 1' }],
           date: '2025-04-18',
           categories: ['all'],
         },
@@ -37,7 +37,7 @@ describe('generateWebsiteFeeds', () => {
     const date = new Date(blogData.posts[0].date);
     assert.deepEqual(blogFeed.items, [
       {
-        author: blogData.posts[0].author,
+        author: [{ name: blogData.posts[0].author }],
         id: blogData.posts[0].slug,
         title: blogData.posts[0].title,
         guid: `${blogData.posts[0].slug}?${date.getTime()}`,

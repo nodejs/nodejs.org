@@ -1,9 +1,13 @@
 'use strict';
 
+import type { FeedOptions } from 'feed';
 import { Feed } from 'feed';
 
-import { BASE_URL, BASE_PATH } from '../../next.constants.mjs';
-import { siteConfig } from '../../next.json.mjs';
+import { BASE_URL, BASE_PATH } from '#site/next.constants.mjs';
+import { siteConfig } from '#site/next.json.mjs';
+import type { BlogCategory, BlogPostsRSC } from '#site/types';
+
+import { getBlogPosts } from './blog';
 
 // This is the Base URL for the Node.js Website
 // with English locale (which is where the website feeds run)
@@ -17,16 +21,12 @@ const guidTimestampStartDate = 1744761600000;
 /**
  * This method generates RSS website feeds based on the current website configuration
  * and the current blog data that is available
- *
- * @param {import('../../types').BlogPostsRSC} blogData
  */
-const generateWebsiteFeeds = ({ posts }) => {
+export const generateWebsiteFeeds = ({ posts }: BlogPostsRSC) => {
   /**
    * This generates all the Website RSS Feeds that are used for the website
-   *
-   * @type {Array<[string, Feed]>}
    */
-  const websiteFeeds = siteConfig.rssFeeds.map(
+  const websiteFeeds: Array<[string, Feed]> = siteConfig.rssFeeds.map(
     ({ category, title, description, file }) => {
       const feed = new Feed({
         id: file,
@@ -34,18 +34,16 @@ const generateWebsiteFeeds = ({ posts }) => {
         language: 'en',
         link: canonicalUrl,
         description: description || '',
-      });
+      } as FeedOptions);
 
       const blogFeedEntries = posts
-        .filter(post => post.categories.includes(category))
+        .filter(post => post.categories.includes(category as BlogCategory))
         .map(post => {
           const date = new Date(post.date);
           const time = date.getTime();
 
           return {
-            id: post.slug,
             title: post.title,
-            author: post.author,
             date,
             link: `${canonicalUrl}${post.slug}`,
             guid:
@@ -64,4 +62,13 @@ const generateWebsiteFeeds = ({ posts }) => {
   return new Map(websiteFeeds);
 };
 
-export default generateWebsiteFeeds;
+export const getFeeds = (feed: string) => {
+  const blogPosts = getBlogPosts('all');
+  const websiteFeeds = generateWebsiteFeeds(blogPosts);
+
+  if (feed.includes('.xml') && websiteFeeds.has(feed)) {
+    return websiteFeeds.get(feed)!.rss2();
+  }
+
+  return undefined;
+};
