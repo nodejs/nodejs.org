@@ -95,4 +95,3 @@ You can also specify a custom path:
 const { loadEnvFile } = require('node:process');
 loadEnvFile('./config/.env');
 ```
-
