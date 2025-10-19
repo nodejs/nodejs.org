@@ -1,0 +1,50 @@
+name: Compare Bundle Size
+
+on:
+  workflow_run:
+    workflows: ['Build']
+    types: [completed]
+
+permissions:
+  contents: read
+  actions: read
+  # To create the comment
+  pull-requests: write
+
+jobs:
+  compare:
+    name: Compare Bundle Stats
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
+        with:
+          egress-policy: audit
+
+      - name: Download Stats (HEAD)
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          name: webpack-stats
+          path: head-stats
+
+      - name: Get Run ID from BASE
+        id: base-run
+        env:
+          WORKFLOW_ID: ${{ github.event.workflow_run.workflow_id }}
+        run: |
+          ID=$(gh run list -c $GITHUB_SHA -w $WORKFLOW_ID -L 1 --json databaseId --jq ".[].databaseId")
+          echo "run_id=$ID" >> $GITHUB_OUTPUT
+
+      - name: Download Stats (BASE)
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          name: webpack-stats
+          path: base-stats
+          run_id: ${{ steps.base-run.outputs.run_id }}
+
+      - uses: github/webpack-bundlesize-compare-action@89161bb25577f08577ce053c3264c0e3b7d7558f # v2.1.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          current-stats-json-path: ./head-stats/webpack-stats.json
+          base-stats-json-path: ./base-stats/webpack-stats.json
