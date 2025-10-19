@@ -27,7 +27,6 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const path = require('path');
 
             const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
               owner: context.repo.owner,
