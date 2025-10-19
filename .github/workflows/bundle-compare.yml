@@ -2,7 +2,7 @@ name: Compare Bundle Size
 
 on:
   workflow_run:
-    workflows: ["Build"]
+    workflows: ['Build']
     types: [completed]
 
 permissions:
