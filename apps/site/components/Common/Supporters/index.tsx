@@ -1,5 +1,3 @@
-'use client';
-
 import Avatar from '@node-core/ui-components/Common/AvatarGroup/Avatar';
 import type { FC } from 'react';
 
