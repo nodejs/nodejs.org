@@ -65,7 +65,7 @@ jobs:
               per_page: 1,
             });
 
-            if (runs.length < 1) {
+            if (runs.data.workflow_runs.length < 1) {
               throw new Error('No runs found!');
             }
 
