@@ -16,3 +16,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: nodejs/web-team/actions/notify-on-push@2c2897a93eb99b4cdca270729100bc0887c758d9
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK }}
