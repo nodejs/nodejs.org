@@ -19,12 +19,18 @@ const WithNodeRelease: FC<WithNodeReleaseProps> = async ({
 }) => {
   const releaseData = await provideReleaseData();
 
-  const matchingRelease = releaseData.find(release =>
-    [status].flat().includes(release.status)
-  );
+  let matchingRelease: NodeRelease | undefined;
+  for (const statusItem of Array.isArray(status) ? status : [status]) {
+    matchingRelease = releaseData.find(
+      release => release.status === statusItem
+    );
+    if (matchingRelease) {
+      break;
+    }
+  }
 
-  if (matchingRelease !== undefined) {
-    return <Component release={matchingRelease!} />;
+  if (matchingRelease) {
+    return <Component release={matchingRelease} />;
   }
 
   return null;

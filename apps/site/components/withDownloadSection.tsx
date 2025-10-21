@@ -38,7 +38,7 @@ const WithDownloadSection: FC<WithDownloadSectionProps> = ({
   // Decides which initial release to use based on the current pathname
   const initialRelease = pathname.endsWith('/current')
     ? 'Current'
-    : 'Active LTS';
+    : ['Active LTS' as const, 'Maintenance LTS' as const];
 
   return (
     <WithNodeRelease status={initialRelease}>
