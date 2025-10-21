@@ -22,7 +22,7 @@ const WithFooter: FC = () => {
 
   const primary = (
     <div className="flex flex-row gap-2">
-      <WithNodeRelease status="Active LTS">
+      <WithNodeRelease status={['Active LTS', 'Maintenance LTS']}>
         {({ release }) => (
           <BadgeGroup
             size="small"
