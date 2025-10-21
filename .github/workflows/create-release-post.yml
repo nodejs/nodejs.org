@@ -10,8 +10,9 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: The version to generate a blog post for. If none provided, use the latest release.
+        description: The version to generate a blog post for.
         type: string
+        required: true
 
 defaults:
   run:
@@ -31,24 +32,22 @@ jobs:
           pnpm: true
           use-version-file: true
 
-      - id: create-release-post
-        working-directory: apps/site
-        run: node --run scripts:release-post ${{ inputs.version }}
+      - run: node --run scripts:release-post "$VERSION"
+        env:
+          VERSION: ${{ inputs.version }}
 
       - name: Open pull request
         uses: gr2m/create-or-update-pull-request-action@b65137ca591da0b9f43bad7b24df13050ea45d1b # v1.10.1
         # Creates a PR or update the Action's existing PR, or
         # no-op if the base branch is already up-to-date.
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_USER_TOKEN }}
         with:
-          author: Node.js GitHub Bot <github-bot@iojs.org>
-          branch: release-${{ steps.create-release-post.outputs.version }}
+          update-pull-request-title-and-body: true
+          branch: release-${{ inputs.version }}
           body: |
-            Creates a new blog post for ${{ steps.create-release-post.outputs.version }}.
+            Creates a new blog post for ${{ inputs.version }}
 
             Check this workflow's logs at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
-          commit-message: 'feat(blog): create post for ${{ steps.create-release-post.outputs.version }}'
+          commit-message: 'feat(blog): create post for ${{ inputs.version }}'
           labels: fast-track
-          title: 'feat(blog): create post for ${{ steps.create-release-post.outputs.version }}'
-          update-pull-request-title-and-body: true
+          title: 'feat(blog): create post for ${{ inputs.version }}'
+          draft: true

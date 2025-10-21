@@ -21,7 +21,7 @@
 'use strict';
 
 import { existsSync, readFileSync } from 'node:fs';
-import { writeFile, appendFile } from 'node:fs/promises';
+import { writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 import handlebars from 'handlebars';
@@ -234,7 +234,7 @@ const writeToFile = results => {
     }
 
     writeFile(blogPostPath, results.content)
-      .then(() => resolve([blogPostPath, results]))
+      .then(() => resolve(blogPostPath))
       .catch(error => reject(ERRORS.FAILED_FILE_CREATION(error.message)));
   });
 };
@@ -263,15 +263,7 @@ if (import.meta.url.startsWith('file:')) {
       .then(formatPost)
       .then(writeToFile)
       .then(
-        async ([filepath, { version }]) => {
-          console.log('Release post created:', filepath);
-          if (process.env.GITHUB_OUTPUT) {
-            await appendFile(
-              process.env.GITHUB_OUTPUT,
-              `version=v${version}\n`
-            );
-          }
-        },
+        filepath => console.log('Release post created:', filepath),
         error => console.error('Some error occurred here!', error.stack)
       );
   }
