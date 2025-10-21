@@ -18,13 +18,17 @@ const fetchOptions = process.env.GITHUB_TOKEN
 export const getAPIDocs = async () => {
   // Find the current Active LTS version
   const releaseData = await generateReleaseData();
-  const { versionWithPrefix } = releaseData.find(
-    r => r.status === 'Active LTS'
-  );
+  const ltsRelease =
+    releaseData.find(r => r.status === 'Active LTS') ||
+    releaseData.find(r => r.status === 'Maintenance LTS');
+
+  if (!ltsRelease) {
+    throw new Error('No Active LTS or Maintenance LTS release found');
+  }
 
   // Get list of API docs from the Node.js repo
   const fetchResponse = await fetch(
-    `https://api.github.com/repos/nodejs/node/contents/doc/api?ref=${versionWithPrefix}`,
+    `https://api.github.com/repos/nodejs/node/contents/doc/api?ref=${ltsRelease.versionWithPrefix}`,
     fetchOptions
   );
   const documents = await fetchResponse.json();
@@ -36,7 +40,7 @@ export const getAPIDocs = async () => {
 
       return {
         content: await res.text(),
-        pathname: `docs/${versionWithPrefix}/api/${basename(name, '.md')}.html`,
+        pathname: `docs/${ltsRelease.versionWithPrefix}/api/${basename(name, '.md')}.html`,
       };
     })
   );
