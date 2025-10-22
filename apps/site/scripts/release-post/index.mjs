@@ -23,6 +23,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { parseArgs } from 'node:util';
 
 import handlebars from 'handlebars';
 import { format } from 'prettier';
@@ -58,10 +59,20 @@ const ERRORS = {
     new Error(`Failed to write Release post: Reason: ${reason}`),
 };
 
+const parsedArgs = parseArgs({
+  options: {
+    force: {
+      type: 'boolean',
+      short: 'f',
+    },
+  },
+  allowPositionals: true,
+});
+
 const ARGS = {
   CURRENT_PATH: process.argv[1],
-  SPECIFIC_VERSION: process.argv[2] && process.argv[2].replace('--force', ''),
-  SHOULD_FORCE: (process.argv[3] || process.argv[2]) === '--force',
+  SPECIFIC_VERSION: parsedArgs.positionals[0]?.replace(/^v/, ''),
+  SHOULD_FORCE: Boolean(parsedArgs.values.force),
 };
 
 // this allows us to get the current module working directory
@@ -262,9 +273,6 @@ if (import.meta.url.startsWith('file:')) {
       .then(renderPost)
       .then(formatPost)
       .then(writeToFile)
-      .then(
-        filepath => console.log('Release post created:', filepath),
-        error => console.error('Some error occurred here!', error.stack)
-      );
+      .then(filepath => console.log('Release post created:', filepath));
   }
 }
