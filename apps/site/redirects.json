@@ -338,11 +338,11 @@
     },
     {
       "source": "/discord",
-      "destination": "https://discord.gg/nodejs"
+      "destination": "DISCORD_INVITE_PLACEHOLDER"
     },
     {
       "source": "/:locale/discord",
-      "destination": "https://discord.gg/nodejs"
+      "destination": "DISCORD_INVITE_PLACEHOLDER"
     },
     {
       "source": "/:locale/esp/herodevs",

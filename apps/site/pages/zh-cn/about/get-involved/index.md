@@ -11,7 +11,7 @@ layout: about
 
 - [`nodejs/node` GitHub 代码库](https://github.com/nodejs/node/issues)是讨论 Node.js 核心功能和报告问题的地方。
 - [`nodejs/help` GitHub 代码库](https://github.com/nodejs/node/issues)是咨询 Node.js 问题的官方场所。
-- Node.js 的[官方 Discord 服务器](https://discord.gg/nodejs)是与其他 Node.js 开发人员聊天并获取 Node.js 项目官方新闻的地方。
+- Node.js 的[官方 Discord 服务器](DISCORD_INVITE_PLACEHOLDER)是与其他 Node.js 开发人员聊天并获取 Node.js 项目官方新闻的地方。
 - Node.js 的[项目日历](https://nodejs.org/calendar)包含所有公开的 Node.js 团队会议。
 
 ## 学习材料
