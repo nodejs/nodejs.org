@@ -115,42 +115,63 @@ threads may be created to handle concurrent work.
 
 ## Dangers of Mixing Blocking and Non-Blocking Code
 
-There are some patterns that should be avoided when dealing with I/O. Let's look
-at an example:
+There are some patterns that should be avoided when dealing with I/O. Let's look at an example:
 
 ```js
 const fs = require('node:fs');
+const path = require('node:path');
 
-fs.readFile('/file.md', (err, data) => {
-  if (err) {
-    throw err;
+// Create and use a temporary file
+const tempFile = path.join(__dirname, 'temp.md');
+try {
+  fs.writeFileSync(tempFile, 'Temporary content');
+
+  // Perform blocking delete first
+  fs.unlinkSync(tempFile);
+
+  // Attempt asynchronous read afterward
+  fs.readFile(tempFile, (err, data) => {
+    if (err) {
+      console.log('Error: Read failed with', err.code, 'as expected due to prior deletion.');
+    } else {
+      console.log('Unexpected success:', data.toString());
+    }
+  });
+  // Note: The callback may not log immediately; the process exits before I/O completes.
+} finally {
+  // Cleanup (though file is already deleted)
+  if (fs.existsSync(tempFile)) {
+    fs.unlinkSync(tempFile);
   }
-
-  console.log(data);
-});
-fs.unlinkSync('/file.md');
+}
 ```
 
-In the above example, `fs.unlinkSync()` is likely to be run before the asynchronous `fs.readFile()` operation completes, introducing a race condition. Depending on system load and timing, this may delete `file.md` before it is opened, causing the read to fail (e.g., with an ENOENT error). However, if the file is opened before deletion, the read may still succeed due to platform-specific behaviors—such as files being marked for deletion on Windows while remaining accessible via open handles.
+In the above example, fs.unlinkSync() is run before the asynchronous fs.readFile() operation, which deletes temp.md before the read can occur. This results in a failure (e.g., ENOENT error), demonstrating the danger of mixing blocking and non-blocking calls without proper sequencing. The try-finally block ensures the file is managed, though the read failure is the key lesson here. To avoid such issues, ensure operations are ordered correctly...
+
+
+>**Note**: Due to the asynchronous nature of `fs.readFile`, the `console.log` may not execute immediately. You might need to add a `setTimeout` or keep the process alive (e.g., with `process.stdin.resume()`) to see the output.
 
 ```js
 const fs = require('node:fs');
+const path = require('node:path');
 
-fs.readFile('/file.md', (readFileErr, data) => {
+const tempFile = path.join(__dirname, 'temp.md');
+fs.writeFileSync(tempFile, 'Temporary content');
+
+fs.readFile(tempFile, (readFileErr, data) => {
   if (readFileErr) {
     throw readFileErr;
   }
 
   console.log(data);
 
-  fs.unlink('/file.md', unlinkErr => {
+  fs.unlink(tempFile, unlinkErr => {
     if (unlinkErr) {
       throw unlinkErr;
     }
   });
 });
 ```
-
 The above places a **non-blocking** call to `fs.unlink()` within the callback of
 `fs.readFile()` which guarantees the correct order of operations.
 
