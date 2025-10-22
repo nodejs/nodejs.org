@@ -33,7 +33,6 @@ apps/site/redirects.json @nodejs/web-infra
 
 # Critical Documents
 LICENSE @nodejs/tsc
-GOVERNANCE.md @nodejs/tsc
 CONTRIBUTING.md @nodejs/nodejs-website @nodejs/web-infra
 docs @nodejs/nodejs-website @nodejs/web-infra
 SECURITY.md @nodejs/security-wg
