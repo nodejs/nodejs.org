@@ -131,10 +131,7 @@ fs.readFile('/file.md', (err, data) => {
 fs.unlinkSync('/file.md');
 ```
 
-In the above example, `fs.unlinkSync()` is likely to be run before
-`fs.readFile()`, which would delete `file.md` before it is actually read. A
-better way to write this, which is completely **non-blocking** and guaranteed to
-execute in the correct order is:
+In the above example, `fs.unlinkSync()` is likely to be run before the asynchronous `fs.readFile()` operation completes, introducing a race condition. Depending on system load and timing, this may delete `file.md` before it is opened, causing the read to fail (e.g., with an ENOENT error). However, if the file is opened before deletion, the read may still succeed due to platform-specific behaviors—such as files being marked for deletion on Windows while remaining accessible via open handles.
 
 ```js
 const fs = require('node:fs');
