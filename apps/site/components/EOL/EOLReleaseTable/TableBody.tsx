@@ -33,7 +33,7 @@ const EOLReleaseTableBody: FC<EOLReleaseTableBodyProps> = ({
   return (
     <>
       <Switch
-        label={'Hide Non-LTS Releases'}
+        label={t('components.eolTable.hideNonLts')}
         checked={hideNonLts}
         onCheckedChange={() => setHideNonLts(!hideNonLts)}
       />
