@@ -173,7 +173,7 @@ importers:
         version: 0.4.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       postcss-calc:
         specifier: ~10.1.1
-        version: 10.1.1(postcss@8.5.6)
+        version: 10.1.1(postcss@8.5.3)
       react:
         specifier: 'catalog:'
         version: 19.2.0
@@ -261,13 +261,13 @@ importers:
         version: 5.2.0(eslint@9.36.0(jiti@2.6.1))
       global-jsdom:
         specifier: ^27.0.0
-        version: 27.0.0(jsdom@27.0.0(postcss@8.5.6))
+        version: 27.0.0(jsdom@27.0.0(postcss@8.5.3))
       handlebars:
         specifier: 4.7.8
         version: 4.7.8
       jsdom:
         specifier: ^27.0.0
-        version: 27.0.0(postcss@8.5.6)
+        version: 27.0.0(postcss@8.5.3)
       mdast-util-from-markdown:
         specifier: ^2.0.2
         version: 2.0.2
@@ -484,7 +484,7 @@ importers:
         specifier: ~1.1.7
         version: 1.1.7(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@radix-ui/react-switch':
-        specifier: ^1.2.6
+        specifier: ~1.2.6
         version: 1.2.6(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@radix-ui/react-tabs':
         specifier: ~1.1.13
@@ -9829,10 +9829,6 @@ snapshots:
     dependencies:
       postcss: 8.5.3
 
-  '@csstools/css-syntax-patches-for-csstree@1.0.14(postcss@8.5.6)':
-    dependencies:
-      postcss: 8.5.6
-
   '@csstools/css-tokenizer@3.0.4': {}
 
   '@csstools/media-query-list-parser@4.0.3(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)':
@@ -13484,14 +13480,6 @@ snapshots:
     transitivePeerDependencies:
       - postcss
 
-  cssstyle@5.3.1(postcss@8.5.6):
-    dependencies:
-      '@asamuzakjp/css-color': 4.0.5
-      '@csstools/css-syntax-patches-for-csstree': 1.0.14(postcss@8.5.6)
-      css-tree: 3.1.0
-    transitivePeerDependencies:
-      - postcss
-
   csstype@3.1.3: {}
 
   damerau-levenshtein@1.0.8: {}
@@ -14670,10 +14658,6 @@ snapshots:
     dependencies:
       jsdom: 27.0.0(postcss@8.5.3)
 
-  global-jsdom@27.0.0(jsdom@27.0.0(postcss@8.5.6)):
-    dependencies:
-      jsdom: 27.0.0(postcss@8.5.6)
-
   global-modules@2.0.0:
     dependencies:
       global-prefix: 3.0.0
@@ -15255,34 +15239,6 @@ snapshots:
     dependencies:
       '@asamuzakjp/dom-selector': 6.6.1
       cssstyle: 5.3.1(postcss@8.5.3)
-      data-urls: 6.0.0
-      decimal.js: 10.6.0
-      html-encoding-sniffer: 4.0.0
-      http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.6
-      is-potential-custom-element-name: 1.0.1
-      parse5: 7.3.0
-      rrweb-cssom: 0.8.0
-      saxes: 6.0.0
-      symbol-tree: 3.2.4
-      tough-cookie: 6.0.0
-      w3c-xmlserializer: 5.0.0
-      webidl-conversions: 8.0.0
-      whatwg-encoding: 3.1.1
-      whatwg-mimetype: 4.0.0
-      whatwg-url: 15.1.0
-      ws: 8.18.3
-      xml-name-validator: 5.0.0
-    transitivePeerDependencies:
-      - bufferutil
-      - postcss
-      - supports-color
-      - utf-8-validate
-
-  jsdom@27.0.0(postcss@8.5.6):
-    dependencies:
-      '@asamuzakjp/dom-selector': 6.6.1
-      cssstyle: 5.3.1(postcss@8.5.6)
       data-urls: 6.0.0
       decimal.js: 10.6.0
       html-encoding-sniffer: 4.0.0
