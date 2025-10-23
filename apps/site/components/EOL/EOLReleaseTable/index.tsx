@@ -4,7 +4,7 @@ import provideReleaseData from '#site/next-data/providers/releaseData';
 import provideVulnerabilities from '#site/next-data/providers/vulnerabilities';
 import { EOL_VERSION_IDENTIFIER } from '#site/next.constants.mjs';
 
-import EOLReleaseTableInner from './TableBody';
+import EOLReleaseTableClient from './TableClient';
 
 const EOLReleaseTable: FC = async () => {
   const releaseData = await provideReleaseData();
@@ -15,7 +15,7 @@ const EOLReleaseTable: FC = async () => {
   );
 
   return (
-    <EOLReleaseTableInner
+    <EOLReleaseTableClient
       eolReleases={eolReleases}
       vulnerabilities={vulnerabilities}
     />
