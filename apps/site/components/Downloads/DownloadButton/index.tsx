@@ -1,11 +1,9 @@
-'use client';
-
 import { CloudArrowDownIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import type { FC, PropsWithChildren } from 'react';
 
+import { getClientContext } from '#site/client-context';
 import Button from '#site/components/Common/Button';
-import { useClientContext } from '#site/hooks';
 import type { NodeRelease } from '#site/types';
 import { getNodeDownloadUrl } from '#site/util/url';
 import { getUserPlatform } from '#site/util/userAgent';
@@ -18,7 +16,7 @@ const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
   release: { versionWithPrefix },
   children,
 }) => {
-  const { os, bitness, architecture } = useClientContext();
+  const { os, bitness, architecture } = getClientContext();
 
   const platform = getUserPlatform(architecture, bitness);
   const downloadLink = getNodeDownloadUrl({ versionWithPrefix, os, platform });

@@ -2,8 +2,8 @@ import { notFound, redirect } from 'next/navigation';
 import type { FC } from 'react';
 
 import provideReleaseData from '#site/next-data/providers/releaseData';
+import provideReleaseVersions from '#site/next-data/providers/releaseVersions';
 import { ENABLE_STATIC_EXPORT } from '#site/next.constants.mjs';
-import { ARCHIVE_DYNAMIC_ROUTES } from '#site/next.dynamic.constants.mjs';
 import * as basePage from '#site/next.dynamic.page.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
 import type { DynamicParams } from '#site/types';
@@ -29,7 +29,9 @@ export const generateStaticParams = async () => {
     return [];
   }
 
-  return ARCHIVE_DYNAMIC_ROUTES.map(version => ({
+  const versions = await provideReleaseVersions();
+
+  return versions.map(version => ({
     locale: defaultLocale.code,
     version,
   }));
@@ -46,15 +48,17 @@ const getPage: FC<PageParams> = async props => {
   const [locale, pathname] = basePage.getLocaleAndPath(version, routeLocale);
 
   if (version === 'current') {
-    const releaseData = provideReleaseData();
+    const releaseData = await provideReleaseData();
 
     const release = releaseData.find(release => release.status === 'Current');
 
     redirect(`/${locale}/download/archive/${release?.versionWithPrefix}`);
   }
 
+  const versions = await provideReleaseVersions();
+
   // Verifies if the current route is a dynamic route
-  const isDynamicRoute = ARCHIVE_DYNAMIC_ROUTES.some(r => r.includes(pathname));
+  const isDynamicRoute = versions.some(r => r.includes(pathname));
 
   // Gets the Markdown content and context for Download Archive pages
   const [content, context] = await basePage.getMarkdownContext({

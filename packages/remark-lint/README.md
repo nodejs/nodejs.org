@@ -65,6 +65,22 @@ Prevents redundant stability markers in nested sections.
 > Stability: 2 - Stable <!-- Redundant! -->
 ```
 
+### `node-core:invalid-type-reference`
+
+Ensures that all `{type}` references are valid types and formatted correctly.
+
+**Allowed:**
+
+```markdown
+This is usually a {boolean}, but it could also be a {string|number}.
+```
+
+**Not allowed:**
+
+```markdown
+This is an {invalid} type, and so is {string | number} because there should **not** be whitespace around the `|`.
+```
+
 ### `node-core:hashed-self-reference`
 
 Ensures self-references use fragment-only links.

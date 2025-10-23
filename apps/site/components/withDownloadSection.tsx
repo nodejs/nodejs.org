@@ -4,20 +4,27 @@ import type { FC, PropsWithChildren } from 'react';
 import { getClientContext } from '#site/client-context';
 import WithNodeRelease from '#site/components/withNodeRelease';
 import provideDownloadSnippets from '#site/next-data/providers/downloadSnippets';
-import provideReleaseData from '#site/next-data/providers/releaseData';
 import { defaultLocale } from '#site/next.locales.mjs';
 import {
   ReleaseProvider,
   ReleasesProvider,
 } from '#site/providers/releaseProvider';
 
+import type { NodeRelease } from '../types';
+
 // By default the translated languages do not contain all the download snippets
 // Hence we always merge any translated snippet with the fallbacks for missing snippets
 const fallbackSnippets = provideDownloadSnippets(defaultLocale.code);
 
-const WithDownloadSection: FC<PropsWithChildren> = ({ children }) => {
+type WithDownloadSectionProps = PropsWithChildren<{
+  releases: Array<NodeRelease>;
+}>;
+
+const WithDownloadSection: FC<WithDownloadSectionProps> = ({
+  releases,
+  children,
+}) => {
   const locale = useLocale();
-  const releases = provideReleaseData();
 
   const snippets = provideDownloadSnippets(locale);
   const { pathname } = getClientContext();
@@ -31,7 +38,7 @@ const WithDownloadSection: FC<PropsWithChildren> = ({ children }) => {
   // Decides which initial release to use based on the current pathname
   const initialRelease = pathname.endsWith('/current')
     ? 'Current'
-    : 'Active LTS';
+    : ['Active LTS' as const, 'Maintenance LTS' as const];
 
   return (
     <WithNodeRelease status={initialRelease}>
