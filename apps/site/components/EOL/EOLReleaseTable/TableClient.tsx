@@ -17,7 +17,7 @@ type EOLReleaseTableBodyProps = {
   vulnerabilities: GroupedVulnerabilities;
 };
 
-const EOLReleaseTableBody: FC<EOLReleaseTableBodyProps> = ({
+const EOLReleaseTableClient: FC<EOLReleaseTableBodyProps> = ({
   eolReleases,
   vulnerabilities,
 }) => {
@@ -93,4 +93,4 @@ const EOLReleaseTableBody: FC<EOLReleaseTableBodyProps> = ({
   );
 };
 
-export default EOLReleaseTableBody;
+export default EOLReleaseTableClient;
