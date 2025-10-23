@@ -8,7 +8,7 @@ type SwitchProps = SwitchPrimitive.SwitchProps & {
   label?: string;
   checked?: boolean;
   onCheckedChange?: (checked: boolean) => void;
-  thumbClassname?: string;
+  thumbClassName?: string;
 };
 
 const Switch: FC<PropsWithChildren<SwitchProps>> = ({
@@ -16,7 +16,7 @@ const Switch: FC<PropsWithChildren<SwitchProps>> = ({
   checked,
   onCheckedChange,
   className,
-  thumbClassname,
+  thumbClassName,
   ...props
 }) => {
   const id = useId();
@@ -36,7 +36,7 @@ const Switch: FC<PropsWithChildren<SwitchProps>> = ({
         {...props}
       >
         <SwitchPrimitive.Thumb
-          className={classNames(styles.thumb, thumbClassname)}
+          className={classNames(styles.thumb, thumbClassName)}
         />
       </SwitchPrimitive.Root>
     </div>
