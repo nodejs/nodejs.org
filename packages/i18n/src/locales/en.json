@@ -183,7 +183,7 @@
       "ltsVersionFeaturesNotice": "Want new features sooner? Get the <link>latest Node.js version</link> instead and try the latest improvements!"
     },
     "eolAlert": {
-      "message": "Commercial support for versions past the Maintenance LTS phase is available through our <link>OpenJS Ecosystem Sustainability Program partner HeroDevs</link>"
+      "message": "Commercial support for versions past the Maintenance LTS phase is available through our <link>OpenJS Ecosystem Sustainability Program partners</link>"
     },
     "eolChip": {
       "severity": {

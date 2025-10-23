@@ -1,3 +1,5 @@
+import { join } from 'node:path';
+
 import { notFound, redirect } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 
@@ -23,15 +25,19 @@ export const generateViewport = () => ({ ...PAGE_VIEWPORT });
  *
  * @see https://nextjs.org/docs/app/api-reference/functions/generate-metadata
  *
- * @param {{ params: Promise<{ path: Array<string>; locale: string }> }} props
+ * @param {{ params: Promise<{ path: Array<string>; locale: string }>, prefix?: string }} props
  * @returns {Promise<import('next').Metadata>} the metadata for the page
  */
-export const generateMetadata = async props => {
-  const { path = [], locale = defaultLocale.code } = await props.params;
+export const generateMetadata = async ({ params, prefix }) => {
+  const { path = [], locale = defaultLocale.code } = await params;
 
   const pathname = dynamicRouter.getPathname(path);
 
-  return dynamicRouter.getPageMetadata(locale, pathname);
+  return dynamicRouter.getPageMetadata(
+    locale,
+    // If there's a prefix, `join` it with the pathname
+    prefix ? join(prefix, pathname) : pathname
+  );
 };
 
 /**

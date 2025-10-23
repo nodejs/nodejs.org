@@ -1,7 +1,6 @@
 'use strict';
 
 import { provideBlogPosts } from '#site/next-data/providers/blogData';
-import provideReleaseVersions from '#site/next-data/providers/releaseVersions';
 import { blogData } from '#site/next.json.mjs';
 
 import { BASE_PATH, BASE_URL } from './next.constants.mjs';
@@ -26,19 +25,6 @@ export const BLOG_DYNAMIC_ROUTES = [
     .map(([c, t]) => [...Array(t).keys()].map(p => `${c}/page/${p + 1}`))
     // flattens the array since we have a .map inside another .map
     .flat(),
-];
-
-/**
- * This constant is used to create static routes on-the-fly that do not have a file-system
- * counterpart route. This is useful for providing routes with matching Layout Names
- * but that do not have Markdown content and a matching file for the route
- *
- * @type {Array<string>} A Map of pathname and Layout Name
- */
-export const ARCHIVE_DYNAMIC_ROUTES = [
-  // Creates dynamic routes for downloads archive pages for each version
-  // (e.g., /download/archive/v18.20.8, /download/archive/v20.19.2)
-  ...provideReleaseVersions(),
 ];
 
 /**

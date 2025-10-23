@@ -27,7 +27,7 @@ const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
   const version = extractVersionFromPath(pathname);
 
   // Find the release data for the given version
-  const releaseData = provideReleaseData();
+  const releaseData = await provideReleaseData();
   const release = releaseData.find(release =>
     // Match major version only (e.g., v22.x.x for release.major v22)
     version.startsWith(`v${release.major}`)

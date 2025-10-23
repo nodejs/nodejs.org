@@ -34,6 +34,7 @@ export type Supporters = {
   name: string;
   image: string;
   url: string;
+  profile: string;
   source: 'opencollective' | 'github';
 };
 

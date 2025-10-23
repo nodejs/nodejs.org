@@ -128,7 +128,7 @@ Our documentation is organized in the [`docs/`](./docs/) directory, so check out
 
 ## Project Maintainers
 
-This project is maintained by the [Node.js Website Team](https://github.com/nodejs/nodejs.org#readme). For questions about governance or high-level project direction, you can:
+This project is maintained by the [Node.js Website Team](https://github.com/nodejs/web-team/blob/main/MEMBERS.md#nodejs-website-team-nodejsnodejs-website). For questions about governance or high-level project direction, you can:
 
 - Mention `@nodejs/nodejs-website` in issues or PRs
 - Contact team members directly for guidance
