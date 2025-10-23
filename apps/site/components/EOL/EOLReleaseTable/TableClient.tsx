@@ -35,7 +35,7 @@ const EOLReleaseTableClient: FC<EOLReleaseTableBodyProps> = ({
       <Switch
         label={t('components.eolTable.hideNonLts')}
         checked={hideNonLts}
-        onCheckedChange={() => setHideNonLts(!hideNonLts)}
+        onCheckedChange={setHideNonLts}
       />
       <table id="tbVulnerabilities">
         <thead>
