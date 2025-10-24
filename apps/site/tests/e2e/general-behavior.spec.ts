@@ -18,9 +18,9 @@ const locators = {
     dark: englishLocale.components.common.themeToggle.dark,
   },
   // Search components (from Orama library)
-  searchButtonTag: 'orama-button',
-  searchInputTag: 'orama-input',
-  searchResultsTag: 'orama-search-results',
+  searchButtonTag: '[data-testid="orama-button"]',
+  searchInputTag: '[data-testid="orama-input"]',
+  searchResultsTag: '[data-testid="orama-search-results"]',
 };
 
 const getTheme = (page: Page) =>
@@ -132,6 +132,8 @@ test.describe('Node.js Website', () => {
   test.describe('Search', () => {
     test('should show and operate search functionality', async ({ page }) => {
       // Open search dialog
+      const searchButton = page.locator(locators.searchButtonTag);
+      await expect(searchButton).toBeVisible();
       await page.locator(locators.searchButtonTag).click();
 
       // Verify search input is visible and enter a search term
