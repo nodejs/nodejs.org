@@ -214,7 +214,8 @@
       "releaseDate": "Released at",
       "lastUpdated": "Last updated",
       "vulnerabilities": "Vulnerabilities",
-      "details": "Details"
+      "details": "Details",
+      "hideNonLts": "Hide non-LTS versions"
     },
     "minorReleasesTable": {
       "version": "Version",

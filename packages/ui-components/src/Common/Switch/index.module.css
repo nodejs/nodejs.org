@@ -1,0 +1,59 @@
+@reference "../../styles/index.css";
+
+.switch {
+  @apply inline-flex
+    justify-end
+    gap-3;
+
+  .label {
+    @apply cursor-pointer
+      select-none
+      text-sm
+      font-medium
+      text-neutral-800
+      dark:text-neutral-200;
+  }
+
+  .root {
+    @apply w-10.5
+      relative
+      inline-flex
+      h-6
+      cursor-pointer
+      items-center
+      rounded-full
+      bg-black
+      transition-colors
+      duration-100
+      ease-out
+      focus:outline-none
+      focus-visible:ring-2
+      focus-visible:ring-green-500
+      focus-visible:ring-offset-2
+      focus-visible:ring-offset-neutral-900
+      dark:bg-neutral-700
+      dark:focus-visible:ring-green-400;
+  }
+
+  .root[data-state='checked'] {
+    @apply bg-green-600;
+  }
+
+  .thumb {
+    @apply pointer-events-none
+      block
+      h-5
+      w-5
+      translate-x-0.5
+      rounded-full
+      bg-white
+      ring-0
+      transition-transform
+      duration-100
+      ease-out;
+  }
+
+  .thumb[data-state='checked'] {
+    @apply translate-x-5;
+  }
+}

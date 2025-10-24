@@ -346,7 +346,7 @@ importers:
     dependencies:
       '@nodejs/doc-kit':
         specifier: github:nodejs/doc-kit
-        version: https://codeload.github.com/nodejs/doc-kit/tar.gz/f132fcb2f50adc32ce24e8517dcf616b757153df(@types/react@19.2.0)(eslint@9.36.0(jiti@2.6.1))(postcss@8.5.6)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.8.3)
+        version: https://codeload.github.com/nodejs/doc-kit/tar.gz/8375d8c700711dc567e7ef9303221fc3aed2fb66(@types/react@19.2.0)(eslint@9.36.0(jiti@2.6.1))(postcss@8.5.6)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.8.3)
       remark-gfm:
         specifier: ^4.0.1
         version: 4.0.1
@@ -483,6 +483,9 @@ importers:
       '@radix-ui/react-separator':
         specifier: ~1.1.7
         version: 1.1.7(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@radix-ui/react-switch':
+        specifier: ~1.2.6
+        version: 1.2.6(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@radix-ui/react-tabs':
         specifier: ~1.1.13
         version: 1.1.13(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -2012,8 +2015,8 @@ packages:
     resolution: {integrity: sha512-csY4qcR7jUwiZmkreNTJhcypQfts2aY2CK+a+rXgXUImZiZiySh0FvwHjRnlqWKvg+y6ae9lHFzDRjBTmqlTIQ==}
     engines: {node: '>=16.0.0'}
 
-  '@nodejs/doc-kit@https://codeload.github.com/nodejs/doc-kit/tar.gz/f132fcb2f50adc32ce24e8517dcf616b757153df':
-    resolution: {tarball: https://codeload.github.com/nodejs/doc-kit/tar.gz/f132fcb2f50adc32ce24e8517dcf616b757153df}
+  '@nodejs/doc-kit@https://codeload.github.com/nodejs/doc-kit/tar.gz/8375d8c700711dc567e7ef9303221fc3aed2fb66':
+    resolution: {tarball: https://codeload.github.com/nodejs/doc-kit/tar.gz/8375d8c700711dc567e7ef9303221fc3aed2fb66}
     version: 0.0.0
     hasBin: true
 
@@ -2480,6 +2483,19 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
     peerDependenciesMeta:
       '@types/react':
+        optional: true
+
+  '@radix-ui/react-switch@1.2.6':
+    resolution: {integrity: sha512-bByzr1+ep1zk4VubeEVViV592vu2lHE2BZY5OnzehZqOOgogN80+mNtCqPkhn2gklJqOpxWgPoYTSnhBCqpOXQ==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
         optional: true
 
   '@radix-ui/react-tabs@1.1.13':
@@ -10584,7 +10600,7 @@ snapshots:
     dependencies:
       gzip-size: 6.0.0
 
-  '@nodejs/doc-kit@https://codeload.github.com/nodejs/doc-kit/tar.gz/f132fcb2f50adc32ce24e8517dcf616b757153df(@types/react@19.2.0)(eslint@9.36.0(jiti@2.6.1))(postcss@8.5.6)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.8.3)':
+  '@nodejs/doc-kit@https://codeload.github.com/nodejs/doc-kit/tar.gz/8375d8c700711dc567e7ef9303221fc3aed2fb66(@types/react@19.2.0)(eslint@9.36.0(jiti@2.6.1))(postcss@8.5.6)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(typescript@5.8.3)':
     dependencies:
       '@actions/core': 1.11.1
       '@clack/prompts': 0.11.0
@@ -11172,6 +11188,20 @@ snapshots:
     dependencies:
       '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.2.0)(react@19.2.0)
       react: 19.2.0
+    optionalDependencies:
+      '@types/react': 19.2.0
+
+  '@radix-ui/react-switch@1.2.6(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+    dependencies:
+      '@radix-ui/primitive': 1.1.3
+      '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.2.0)(react@19.2.0)
+      '@radix-ui/react-context': 1.1.2(@types/react@19.2.0)(react@19.2.0)
+      '@radix-ui/react-primitive': 2.1.3(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      '@radix-ui/react-use-controllable-state': 1.2.2(@types/react@19.2.0)(react@19.2.0)
+      '@radix-ui/react-use-previous': 1.1.1(@types/react@19.2.0)(react@19.2.0)
+      '@radix-ui/react-use-size': 1.1.1(@types/react@19.2.0)(react@19.2.0)
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
     optionalDependencies:
       '@types/react': 19.2.0
 
