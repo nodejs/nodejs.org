@@ -21,6 +21,7 @@ defaults:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   create-post:
@@ -33,6 +34,7 @@ jobs:
           use-version-file: true
 
       - run: node --run scripts:release-post "$VERSION"
+        working-directory: apps/site
         env:
           VERSION: ${{ inputs.version }}
 
@@ -40,6 +42,8 @@ jobs:
         uses: gr2m/create-or-update-pull-request-action@b65137ca591da0b9f43bad7b24df13050ea45d1b # v1.10.1
         # Creates a PR or update the Action's existing PR, or
         # no-op if the base branch is already up-to-date.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           update-pull-request-title-and-body: true
           branch: release-${{ inputs.version }}
