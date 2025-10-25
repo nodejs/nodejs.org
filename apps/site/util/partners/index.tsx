@@ -1,7 +1,23 @@
-import * as PartnersLogo from '@node-core/ui-components/Icons/PartnerLogos';
+import {
+  CLOUDFLARE,
+  DIGITALOCEAN,
+  MICROSOFT,
+  HERODEVS,
+  NODESOURCE,
+  VERCEL,
+} from '@node-core/ui-components/Icons/PartnerLogos';
 import type { ElementType } from 'react';
 
 import type { Partners } from '#site/types';
+
+const PartnersLogo: Record<string, Record<string, ElementType>> = {
+  CLOUDFLARE,
+  DIGITALOCEAN,
+  MICROSOFT,
+  HERODEVS,
+  NODESOURCE,
+  VERCEL,
+};
 
 /**
  * Creates an icon element for a component
