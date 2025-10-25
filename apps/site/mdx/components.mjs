@@ -1,5 +1,6 @@
 'use strict';
 
+import AlertBox from '@node-core/ui-components/Common/AlertBox';
 import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 import Blockquote from '@node-core/ui-components/Common/Blockquote';
 import MDXCodeTabs from '@node-core/ui-components/MDX/CodeTabs';
@@ -54,6 +55,8 @@ export default {
   blockquote: Blockquote,
   pre: MDXCodeBox,
   img: MDXImage,
+  // Renders a CSS-enhanced Alert Box
+  AlertBox,
   // Renders MDX CodeTabs
   CodeTabs: MDXCodeTabs,
   // Renders Tooltips

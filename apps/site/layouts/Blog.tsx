@@ -63,6 +63,7 @@ const BlogLayout: FC = () => {
               'announcements',
               'release',
               'vulnerability',
+              'migrations',
               'events',
             ])}
           />
