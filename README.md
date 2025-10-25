@@ -94,6 +94,8 @@ These are maintained in different repositories and we urge users to open **issue
 
 [Collaborator Guide][]
 
+[Governance Document][]
+
 [Figma Design][]
 
 [Content vs Code][]
@@ -121,5 +123,6 @@ These are maintained in different repositories and we urge users to open **issue
 [content vs code]: https://github.com/nodejs/nodejs.org/blob/main/docs/content-vs-code.md
 [dependency pinning]: https://github.com/nodejs/nodejs.org/blob/main/docs/dependency-pinning.md
 [collaborator guide]: https://github.com/nodejs/nodejs.org/blob/main/docs/collaborator-guide.md
+[governance document]: https://github.com/nodejs/web-team/blob/main/GOVERNANCE.md
 [figma design]: https://www.figma.com/file/a10cjjw3MzvRQMPT9FP3xz
 [translation guidelines]: https://github.com/nodejs/nodejs.org/blob/main/docs/translation.md
