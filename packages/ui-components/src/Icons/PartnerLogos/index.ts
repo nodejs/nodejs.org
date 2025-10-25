@@ -1,5 +1,6 @@
 import * as ARM from './ARM';
 import * as CLOUDFLARE from './Cloudflare';
+import * as CODEMOD from './Codemod';
 import * as CROWDIN from './Crowdin';
 import * as DATADOG from './DataDog';
 import * as DIGITALOCEAN from './DigitalOcean';
@@ -18,6 +19,7 @@ import * as VLT from './Vlt';
 export {
   ARM,
   CLOUDFLARE,
+  CODEMOD,
   CROWDIN,
   DATADOG,
   DIGITALOCEAN,
