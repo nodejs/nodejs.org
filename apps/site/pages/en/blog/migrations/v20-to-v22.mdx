@@ -24,6 +24,10 @@ So in [node.js v22](https://nodejs.org/fr/blog/release/v22.0.0#other-notable-cha
 
 Also note that the `with` keyword as been introduce in [node.js v18.20](https://nodejs.org/fr/blog/release/v18.20.0#added-support-for-import-attributes) but it was not mandatory until v22.
 
+The source code for this codemod can be found in the [import-assertions-to-attributes directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/import-assertions-to-attributes).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/import-assertions-to-attributes).
+
 ```bash
 npx codemod run @nodejs/import-assertions-to-attributes
 ```
@@ -37,11 +41,3 @@ import jsonData from './data.json' assert { type: 'json' };
 ```js displayName="After"
 import jsonData from './data.json' with { type: 'json' };
 ```
-
-### Source Code
-
-The source code for this codemod can be found in the [import-assertions-to-attributes directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/import-assertions-to-attributes).
-
-### Registry Link
-
-You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/import-assertions-to-attributes).

@@ -20,6 +20,10 @@ This page provides a list of codemods to help you migrate your code from Node.js
 
 Node.js v16 replaced the [`createRequireFromPath`](https://nodejs.org/api/module.html#module_module_createrequirefrompath) function, deprecated in [DEP0148](https://nodejs.org/api/deprecations.html#DEP0148), with the modern [`createRequire`](https://nodejs.org/api/module.html#module_module_createrequire) function. This codemod replaces calls of the deprecated function with the modern alternative mentioned.
 
+The source code for this codemod can be found in the [create-require-from-path directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/create-require-from-path).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/create-require-from-path).
+
 ```bash
 npx codemod run @nodejs/create-require-from-path
 ```
@@ -40,19 +44,15 @@ const require = createRequire('/path/to/module');
 const myModule = require('./myModule.cjs');
 ```
 
-### Source Code
-
-The source code for this codemod can be found in the [create-require-from-path directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/create-require-from-path).
-
-### Registry Link
-
-You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/create-require-from-path).
-
 ## `process-main-module`
 
 The `process.mainModule` property was deprecated in favor of `require.main`. This codemod will help you replace the old `process.mainModule` usage with the new `require.main` usage.
 
 So the codemod handle [DEP0138](https://nodejs.org/api/deprecations.html#DEP0138).
+
+The source code for this codemod can be found in the [process-main-module directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/process-main-module).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/process-main-module).
 
 ```bash
 npx codemod run @nodejs/process-main-module
@@ -76,17 +76,13 @@ if (require.main === 'mod.js') {
 }
 ```
 
-### Source Code
-
-The source code for this codemod can be found in the [process-main-module directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/process-main-module).
-
-### Registry Link
-
-You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/process-main-module).
-
 ## `process-mainModule-to-require-main`
 
 The [`process.mainModule`](https://nodejs.org/api/process.html#process_process_mainmodule) property was deprecated ([DEP0144](https://nodejs.org/api/deprecations.html#DEP0144)) in favor of [`require.main`](https://nodejs.org/api/modules.html#modules_accessing_the_main_module). This codemod replaces calls of the deprecated property with the modern alternative mentioned.
+
+The source code for this codemod can be found in the [process-mainModule-to-require-main directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/process-main-module).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/process-mainModule-to-require-main).
 
 ```bash
 npx codemod run @nodejs/process-mainModule-to-require-main
@@ -111,6 +107,10 @@ if (require.main === module) {
 The `fs.rmdir` function was deprecated in favor of `fs.rm` with the `{ recursive: true }` option. This codemod will help you replace the old `fs.rmdir` function with the new `fs.rm` function.
 
 so this codemod handle [DEP0147](https://nodejs.org/api/deprecations.html#DEP0147).
+
+The source code for this codemod can be found in the [rmdir directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/rmdir).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/rmdir).
 
 ```bash
 npx codemod run @nodejs/rmdir
@@ -140,19 +140,15 @@ fs.rmSync(path, { recursive: true, force: true });
 fs.promises.rm(path, { recursive: true, force: true });
 ```
 
-### Source Code
-
-The source code for this codemod can be found in the [rmdir directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/rmdir).
-
-### Registry Link
-
-You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/rmdir).
-
 ## `tmpDir-to-tmpdir`
 
 The `tmpDir` function was renamed to `tmpdir` in Node.js v16. This codemod will help you replace all instances of `tmpDir` with `tmpdir`.
 
 So the codemod handles [DEP0022](https://nodejs.org/docs/latest/api/deprecations.html#dep0022-ostmpdir).
+
+The source code for this codemod can be found in the [tmpdir-to-tmpdir directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/tmpdir-to-tmpdir).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/tmpDir-to-tmpdir).
 
 ```bash
 npx codemod run @nodejs/tmpDir-to-tmpdir
@@ -171,11 +167,3 @@ import { tmpdir } from 'node:os';
 
 const foo = tmpdir();
 ```
-
-### Source Code
-
-The source code for this codemod can be found in the [tmpdir-to-tmpdir directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/tmpdir-to-tmpdir).
-
-### Registry Link
-
-You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/tmpDir-to-tmpdir).

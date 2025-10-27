@@ -25,6 +25,10 @@ This recipe transforms calls of various now-deprecated `node:util` log functions
 - [DEP0028](https://nodejs.org/api/deprecations.html#DEP0028): `util.debug` → `console.error`
 - [DEP0029](https://nodejs.org/api/deprecations.html#DEP0029): `util.error` → `console.error`
 
+The source code for this codemod can be found in the [util-print-to-console-log directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/util-print-to-console-log).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/util-print-to-console-log).
+
 ```bash
 npx codemod run @nodejs/create-require-from-path
 ```
@@ -46,11 +50,3 @@ console.log('Hello world');
 console.error('Hello world');
 console.error('Hello world');
 ```
-
-### Source Code
-
-The source code for this codemod can be found in the [util-print-to-console-log directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/util-print-to-console-log).
-
-### Registry Link
-
-You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/util-print-to-console-log).

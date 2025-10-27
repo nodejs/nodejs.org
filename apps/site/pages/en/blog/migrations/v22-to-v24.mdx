@@ -12,15 +12,78 @@ author: AugustinMauroy
   This article cover a part of the migration from Node.js v22 to v24. The
   userland migrations team is working on more codemods to help you with the
   migration.
+
+Missing codemods will be added over time. If you have specific needs.
+
+  <a href="https://github.com/nodejs/userland-migrations/issues/239">
+    Read this issue to learn where we are in the process. And how to manually migrate your code.
+  </a>
 </AlertBox>
 
-This page provides a list of codemods to help you migrate your code from Node.js v22 to v24.
+With the release of [Node.js 24.11.0](https://nodejs.org/blog/release/v24.11.0), the Node.js 24 release line has entered Long-Term Support (LTS) and will continue to receive updates through to the end of April 2028.
 
-## `fs-access-mode-constants`
+If you are migrating from Node.js 22 LTS, the following summarizes the breaking changes that came in [Node.js 23.0.0](https://nodejs.org/blog/release/v23.0.0) and [Node.js 24.0.0](https://nodejs.org/blog/release/v24.0.0).
+
+### Platform support
+
+Node.js no longer provides [pre-built binaries](https://nodejs.org/en/download) for:
+
+- 32-bit Windows (x86) as of Node.js 23.0.0.
+- 32-bit Linux on armv7 as of Node.js 24.0.0.
+
+Pre-built binaries for macOS now require a minimum of macOS 13.5.
+
+Pre-built binaries for Linux on arm64, ppc64le, s390x and x64 continue to be compatible with glibc 2.28 and above (no change from Node.js 22).
+
+Please refer to [additional notes if you are building Node.js from source](#building-nodejs-from-source).
+
+### Breaking changes
+
+### OpenSSL 3.5
+
+Pre-built binaries of Node.js 24 LTS, or builds using the default build configuration options, include OpenSSL 3.5. Node.js 24 LTS uses the default security level from OpenSSL 3.5 of `2`, which means that:
+
+- RSA, DSA and DH keys shorter than 2048 bits and ECC keys shorter than 224 bits are prohibited.
+- Any cipher suite using RC4 is also prohibited.
+
+If you rely on older keys or weak ciphers, test your workloads against Node.js 24 builds (or adjust key/cipher choices) before upgrading.
+
+### Other behavioral changes and argument validation
+
+The release includes a number of behavior and validation changes (stricter `fetch()` compliance, AbortSignal validation, stream/pipe errors now throwing, changes to Buffer behavior, path handling fixes on Windows, test runner defaults, and more). See the full list below.
+
+### C/C++ addons
+
+Addons linking against V8 APIs may need updates for V8 13.6; C++20 support may be required where previously C++17 was used. Where possible, prefer NODE-API to reduce rebuild churn.
+
+### Building Node.js from source
+
+If you are building Node.js from source, you may need to update your compiler toolchain:
+
+- For AIX and Linux platforms, the minimum supported version of [gcc](https://gcc.gnu.org/) is 12.2.
+- For macOS the minimum supported version of [Xcode](https://developer.apple.com/xcode/) is 16.1.
+
+Node.js' `configure` script will warn if you attempt to build Node.js with a compiler toolchain that does not meet the minimum supported version but will not actively prevent you from trying.
+
+## Available Codemods
+
+Some breaking changes or End of Life deprecations in Node.js 23 and 24 have associated codemods to help you update your codebase. Below is a list of the available codemods for this migration:
+
+### `fs-access-mode-constants`
 
 In Node.js 24, the `fs` module introduced a runtime deprecation for `F_OK`, `R_OK`, `W_OK`, and `X_OK` getters exposed directly on `node:fs`. Get them from `fs.constants` or `fs.promises.constants` instead.
 
 This codemod handles [DEP0176](https://nodejs.org/api/deprecations.html#DEP0176).
+
+The source code for this codemod can be found in the [fs-access-mode-constants directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/fs-access-mode-constants).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/fs-access-mode-constants).
+
+```bash
+npx codemod run @nodejs/fs-access-mode-constants
+```
+
+#### Example:
 
 ```js displayName="Before"
 const fs = require('node:fs');
@@ -36,11 +99,15 @@ fs.access('/path/to/file', fs.constants.F_OK, callback);
 fs.access('/path/to/file', fs.constants.R_OK | fs.constants.W_OK, callback);
 ```
 
-## `util-log-to-console-log`
+### `util-log-to-console-log`
 
 In Node.js v23, the `util.log` function was deprecated in favor of using `console.log` directly. Because it's an unmaintained legacy API that was exposed to user land by accident
 
 So this codemod handle [DEP0059](https://nodejs.org/api/deprecations.html#DEP0059).
+
+```bash
+npx codemod run @nodejs/util-log-to-console-log
+```
 
 ### Example:
 
@@ -54,15 +121,19 @@ util.log('Hello world');
 console.log(new Date().toLocaleString(), 'Hello world');
 ```
 
-## `zlib-bytesRead-to-bytesWritten`
+### `zlib-bytesRead-to-bytesWritten`
 
 The [`zlib.bytesRead`](https://nodejs.org/api/zlib.html#zlib_bytesread) property was deprecated ([DEP0108](https://nodejs.org/api/deprecations.html#DEP0108)) in favor of [`zlib.bytesWritten`](https://nodejs.org/api/zlib.html#zlib_byteswritten). This codemod replaces `zlib.bytesRead` with `zlib.bytesWritten` for consistent stream property naming. It handles both CommonJS and ESM imports.
 
+The source code for this codemod can be found in the [zlib-bytesRead-to-bytesWritten directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/zlib-bytesread-to-byteswritten).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/zlib-bytesread-to-byteswritten).
+
 ```bash
-npx codemod run @nodejs/zlib-bytesRead-to-bytesWritten
+npx codemod run @nodejs/zlib-bytesread-to-byteswritten
 ```
 
-### Example:
+#### Example:
 
 ```js displayName="Before"
 const zlib = require('node:zlib');
@@ -80,15 +151,19 @@ gzip.on('end', () => {
 });
 ```
 
-## `fs-truncate-to-ftruncate`
+### `fs-truncate-to-ftruncate`
 
 The [`fs.truncate`](https://nodejs.org/api/fs.html#fs_fs_truncate_path_len_callback) function was deprecated ([DEP0081](https://nodejs.org/api/deprecations.html#DEP0081)) when used with a file descriptor. Use [`fs.ftruncate`](https://nodejs.org/api/fs.html#fs_fs_ftruncate_fd_len_callback) instead.
+
+The source code for this codemod can be found in the [fs-truncate-fd-deprecation directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/fs-truncate-fd-deprecation).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/fs-truncate-to-ftruncate).
 
 ```bash
 npx codemod run @nodejs/fs-truncate-to-ftruncate
 ```
 
-### Example:
+#### Example:
 
 ```js displayName="Before"
 const { truncate, open, close } = require('node:fs');
@@ -114,15 +189,19 @@ open('file.txt', 'w', (err, fd) => {
 });
 ```
 
-## `crypto-rsa-pss-update`
+### `crypto-rsa-pss-update`
 
 Codemod to handle Node.js crypto deprecation [DEP0154](https://nodejs.org/docs/latest/api/deprecations.html#DEP0154) by transforming deprecated RSA-PSS key generation options.
+
+The source code for this codemod can be found in the [crypto-rsa-pss-update directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/crypto-rsa-pss-update).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/crypto-rsa-pss-update).
 
 ```bash
 npx codemod run @nodejs/crypto-rsa-pss-update
 ```
 
-### Example:
+#### Example:
 
 ```js displayName="Before"
 const crypto = require('node:crypto');
@@ -157,11 +236,3 @@ crypto.generateKeyPair(
   }
 );
 ```
-
-### Source Code
-
-The source code for this codemod can be found in the [crypto-rsa-pss-update directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/crypto-rsa-pss-update).
-
-### Registry Link
-
-You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/crypto-rsa-pss-update).
