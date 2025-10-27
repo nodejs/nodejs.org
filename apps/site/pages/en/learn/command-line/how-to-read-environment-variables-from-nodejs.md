@@ -1,7 +1,7 @@
 ---
 title: How to read environment variables from Node.js
 layout: learn
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, manishprivet, nikhilbhatt
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, manishprivet, nikhilbhatt, ycmjason
 ---
 
 # How to read environment variables from Node.js
@@ -63,4 +63,35 @@ throwing an error if the file is missing using the `--env-file-if-exists` flag.
 
 ```bash
 node --env-file-if-exists=.env app.js
+```
+
+## Loading `.env` files programmatically with `process.loadEnvFile(path)`
+
+Node.js provides a built-in API to load `.env` files directly from your code: [`process.loadEnvFile(path)`](https://nodejs.org/api/process.html#processloadenvfilepath).
+
+This method loads variables from a `.env` file into `process.env`, similar to how the `--env-file` flag works — but can be invoked programmatically.
+
+Because this method is invoked post-initialization, the setting of startup-related environment variables (i.e. `NODE_OPTIONS`) has no effect on the process (however, these variables can still be accessed via `process.env`).
+
+### Example
+
+```txt
+// .env file
+PORT=1234
+```
+
+```js
+const { loadEnvFile } = require('node:process');
+
+// Loads environment variables from the default .env file
+loadEnvFile();
+
+console.log(process.env.PORT); // Logs '1234'
+```
+
+You can also specify a custom path:
+
+```js
+const { loadEnvFile } = require('node:process');
+loadEnvFile('./config/.env');
 ```

@@ -1,9 +1,5 @@
-import { cache } from 'react';
+'use cache';
 
-import generateAllVersionsData from '#site/next-data/generators/releaseVersions.mjs';
-
-const releaseVersions = await generateAllVersionsData();
-
-const provideReleaseVersions = cache(() => releaseVersions);
+import provideReleaseVersions from '#site/next-data/generators/releaseVersions.mjs';
 
 export default provideReleaseVersions;

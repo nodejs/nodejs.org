@@ -1,9 +1,9 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import Select from '#ui/Common/Select';
 import type { LinkLike } from '#ui/types';
 
 import styles from './index.module.css';
+import StatelessSelect from '../Select/StatelessSelect';
 
 type LinkTab = { key: string; label: string; link: string };
 
@@ -12,7 +12,6 @@ export type LinkTabsProps = PropsWithChildren<{
   tabs: Array<LinkTab>;
   activeTab: string;
   as?: LinkLike;
-  onSelect: (value: string) => void;
 }>;
 
 const BaseLinkTabs: FC<LinkTabsProps> = ({
@@ -21,7 +20,6 @@ const BaseLinkTabs: FC<LinkTabsProps> = ({
   activeTab,
   children,
   as: Component = 'a',
-  onSelect,
 }) => (
   <>
     <div className={styles.tabsList}>
@@ -37,14 +35,12 @@ const BaseLinkTabs: FC<LinkTabsProps> = ({
       ))}
     </div>
 
-    <div className={styles.tabsSelect}>
-      <Select
-        label={label}
-        defaultValue={tabs.find(tab => tab.key === activeTab)?.link}
-        values={tabs.map(tab => ({ label: tab.label, value: tab.link }))}
-        onChange={onSelect}
-      />
-    </div>
+    <StatelessSelect
+      label={label}
+      className={styles.tabsSelect}
+      defaultValue={tabs.find(tab => tab.key === activeTab)?.link}
+      values={tabs.map(tab => ({ label: tab.label, value: tab.link }))}
+    />
 
     {children}
   </>
