@@ -38,5 +38,5 @@
 }
 
 .tabsSelect {
-  @apply md:hidden;
+  @apply !md:hidden;
 }
