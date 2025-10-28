@@ -1,9 +1,10 @@
 name: Compare Bundle Size
 
 on:
-  workflow_run:
-    workflows: ['Build']
-    types: [completed]
+  pull_request:
+  # workflow_run:
+  #   workflows: ['Build']
+  #   types: [completed]
 
 permissions:
   contents: read
@@ -27,13 +28,14 @@ jobs:
         with:
           name: webpack-stats
           path: head-stats
+          run_id: 18859999262
 
       - name: Get Run ID from BASE
         id: base-run
         env:
-          WORKFLOW_ID: ${{ github.event.workflow_run.workflow_id }}
+          WORKFLOW_ID: ${{ github.event.workflow_run.workflow_id || 64771488 }}
         run: |
-          ID=$(gh run list -c $GITHUB_SHA -w $WORKFLOW_ID -L 1 --json databaseId --jq ".[].databaseId")
+          ID=$(gh run list -c 95f43b01b7790b2af237d3dd6f015d2212dd495f -w $WORKFLOW_ID -L 1 --json databaseId --jq ".[].databaseId")
           echo "run_id=$ID" >> $GITHUB_OUTPUT
 
       - name: Download Stats (BASE)
