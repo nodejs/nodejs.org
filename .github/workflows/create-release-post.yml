@@ -33,7 +33,7 @@ jobs:
           pnpm: true
           use-version-file: true
 
-      - run: node --run scripts:release-post "$VERSION"
+      - run: node --run scripts:release-post -- "$VERSION"
         working-directory: apps/site
         env:
           VERSION: ${{ inputs.version }}
