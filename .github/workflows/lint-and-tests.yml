@@ -40,7 +40,6 @@ env:
 jobs:
   lint:
     name: Quality checks
-    if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
 
     steps:
@@ -98,7 +97,6 @@ jobs:
 
   tests:
     name: Tests
-    if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
 
     steps:

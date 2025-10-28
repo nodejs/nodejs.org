@@ -32,7 +32,6 @@ env:
 jobs:
   build:
     name: Build on ${{ matrix.os }}
-    if: github.event.pull_request.draft == false
     runs-on: ${{ matrix.os }}
 
     strategy:
