@@ -351,6 +351,14 @@
     {
       "source": "/:locale/download/package-manager/all",
       "destination": "/:locale/download/archive/current"
+    },
+    {
+      "source": "/404",
+      "destination": "/"
+    },
+    {
+      "source": "/500",
+      "destination": "/"
     }
   ],
   "internal": []
