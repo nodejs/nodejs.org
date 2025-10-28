@@ -6,11 +6,9 @@ const cloudflareConfig = defineCloudflareConfig({ incrementalCache });
 
 const openNextConfig: OpenNextConfig = {
   ...cloudflareConfig,
-  buildCommand: 'pnpm build:default',
+  buildCommand: 'pnpm build:default --webpack',
   cloudflare: {
-    skewProtection: {
-      enabled: true,
-    },
+    skewProtection: { enabled: true },
   },
 };
 
