@@ -35,6 +35,7 @@ jobs:
         id: base-run
         env:
           WORKFLOW_ID: ${{ github.event.workflow_run.workflow_id || 64771488 }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           ID=$(gh run list -c 95f43b01b7790b2af237d3dd6f015d2212dd495f -w $WORKFLOW_ID -L 1 --json databaseId --jq ".[].databaseId")
           echo "run_id=$ID" >> $GITHUB_OUTPUT
@@ -45,6 +46,7 @@ jobs:
           name: webpack-stats
           path: base-stats
           run-id: ${{ steps.base-run.outputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: github/webpack-bundlesize-compare-action@89161bb25577f08577ce053c3264c0e3b7d7558f # v2.1.0
         with:
