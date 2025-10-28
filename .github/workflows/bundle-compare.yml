@@ -37,7 +37,7 @@ jobs:
           WORKFLOW_ID: ${{ github.event.workflow_run.workflow_id || 64771488 }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          ID=$(gh run list -c 95f43b01b7790b2af237d3dd6f015d2212dd495f -w $WORKFLOW_ID -L 1 --json databaseId --jq ".[].databaseId")
+          ID=$(gh run list --repo $GITHUB_REPOSITORY -c 95f43b01b7790b2af237d3dd6f015d2212dd495f -w $WORKFLOW_ID -L 1 --json databaseId --jq ".[].databaseId")
           echo "run_id=$ID" >> $GITHUB_OUTPUT
 
       - name: Download Stats (BASE)
