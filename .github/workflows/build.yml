@@ -13,6 +13,7 @@ on:
   pull_request:
     branches:
       - main
+    types: [opened, synchronize, reopened, ready_for_review]
   merge_group:
 
 defaults:
@@ -31,6 +32,7 @@ env:
 jobs:
   build:
     name: Build on ${{ matrix.os }}
+    if: github.event.pull_request.draft == fals
     runs-on: ${{ matrix.os }}
 
     strategy:
