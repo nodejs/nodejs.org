@@ -9,7 +9,7 @@ const Codemod: FC<SVGProps<SVGSVGElement>> = props => (
     fill="none"
     {...props}
   >
-    <g clip-path="url(#clip0_985_1597)">
+    <g clipPath="url(#clip0_985_1597)">
       <rect width="100" height="100" rx="17" fill="#D6FF62" />
       <mask
         id="mask0_985_1597"
