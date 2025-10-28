@@ -28,7 +28,7 @@ jobs:
         with:
           name: webpack-stats
           path: head-stats
-          run_id: 18859999262
+          run-id: 18859999262
 
       - name: Get Run ID from BASE
         id: base-run
@@ -43,7 +43,7 @@ jobs:
         with:
           name: webpack-stats
           path: base-stats
-          run_id: ${{ steps.base-run.outputs.run_id }}
+          run-id: ${{ steps.base-run.outputs.run_id }}
 
       - uses: github/webpack-bundlesize-compare-action@89161bb25577f08577ce053c3264c0e3b7d7558f # v2.1.0
         with:
