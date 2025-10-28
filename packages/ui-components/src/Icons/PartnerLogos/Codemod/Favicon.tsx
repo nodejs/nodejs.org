@@ -13,7 +13,7 @@ const Codemod: FC<SVGProps<SVGSVGElement>> = props => (
       <rect width="100" height="100" rx="17" fill="#D6FF62" />
       <mask
         id="mask0_985_1597"
-        style="mask-type:luminance"
+        style={{ maskType: 'luminance' }}
         maskUnits="userSpaceOnUse"
         x="15"
         y="19"
