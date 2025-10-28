@@ -29,6 +29,7 @@ jobs:
           name: webpack-stats
           path: head-stats
           run-id: 18860058714
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Get Run ID from BASE
         id: base-run
