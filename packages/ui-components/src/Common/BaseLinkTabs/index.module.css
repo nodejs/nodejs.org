@@ -2,13 +2,13 @@
 
 .tabsList {
   @apply font-open-sans
-    max-xs:hidden
     mb-6
     mt-10
     flex
     gap-2
     border-b
     border-b-neutral-200
+    max-md:hidden
     dark:border-b-neutral-800;
 
   .tabsTrigger {
