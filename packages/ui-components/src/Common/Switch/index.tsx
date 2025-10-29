@@ -1,3 +1,5 @@
+'use client';
+
 import * as SwitchPrimitive from '@radix-ui/react-switch';
 import classNames from 'classnames';
 import { FC, PropsWithChildren, useId } from 'react';
