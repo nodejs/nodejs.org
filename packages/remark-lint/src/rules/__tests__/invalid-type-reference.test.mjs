@@ -31,10 +31,22 @@ const testCases = [
     input: 'This is {invalid}.',
     expected: ['Invalid type reference: {invalid}'],
   },
+  {
+    name: 'custom references',
+    input: 'This is a {custom} type.',
+    expected: [],
+    options: {
+      typeMap: {
+        custom: '...',
+      },
+    },
+  },
 ];
 
 describe('invalid-type-reference', () => {
-  for (const { name, input, expected } of testCases) {
-    it(name, () => testRule(invalidTypeReference, input, expected));
+  for (const { name, input, expected, options } of testCases) {
+    it(name, () =>
+      testRule(invalidTypeReference, input, expected, {}, options)
+    );
   }
 });
