@@ -300,7 +300,7 @@
     },
     "blog": {
       "blogHeader": {
-        "subtitle": "The latest Node.js news, migrations guides and events summaries",
+        "subtitle": "The latest Node.js news, migration guides and events summaries",
         "rssLink": "RSS feed"
       }
     }
@@ -331,7 +331,7 @@
         "video": "Video",
         "weekly": "Weekly Updates",
         "wg": "Working Groups",
-        "migrations": "Migrations Guides",
+        "migrations": "Migration Guides",
         "events": "Events"
       }
     },
