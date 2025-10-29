@@ -7,7 +7,13 @@ import { unified } from 'unified';
 /**
  * Tests a markdown rule against a markdown string
  */
-export const testRule = (rule, markdown, expected, vfileOptions = {}) => {
+export const testRule = (
+  rule,
+  markdown,
+  expected,
+  vfileOptions = {},
+  ruleOptions = {}
+) => {
   // Parse the markdown once
   const tree = unified().use(remarkParse).parse(markdown);
 
@@ -19,7 +25,7 @@ export const testRule = (rule, markdown, expected, vfileOptions = {}) => {
   };
 
   // Execute the rule
-  rule()(tree, vfile, () => {});
+  rule(ruleOptions)(tree, vfile, () => {});
 
   // Assert that the expected messages were reported
   assert.deepEqual(

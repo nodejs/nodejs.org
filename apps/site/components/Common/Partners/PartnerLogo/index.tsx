@@ -14,6 +14,8 @@ const PartnersLogo: FC<PartnersLogoProps> = ({ href, logo, loading }) => (
     <Button
       kind="secondary"
       href={`${href}/?utm_source=nodejs-website&utm_medium=Link`}
+      rel="sponsored noopener"
+      target="_blank"
       className={style.partnerIcon}
     >
       {cloneElement(logo, {
