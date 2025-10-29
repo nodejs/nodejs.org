@@ -8,9 +8,9 @@ const REPLACE_RE = /\s*\|\s*/g;
 
 /**
  * Ensures that all type references are valid
- * @type {import('unified-lint-rule').Rule}
+ * @type {import('unified-lint-rule').Rule<, import('../api.mjs').Options>}
  */
-const invalidTypeReference = (tree, vfile) => {
+const invalidTypeReference = (tree, vfile, { typeMap = {} }) => {
   visit(tree, createQueries.UNIST.isTextWithType, node => {
     const types = node.value.match(createQueries.QUERIES.normalizeTypes);
 
@@ -36,7 +36,7 @@ const invalidTypeReference = (tree, vfile) => {
         node.value = node.value.replace(type, normalized);
       }
 
-      if (transformTypeToReferenceLink(type) === type) {
+      if (transformTypeToReferenceLink(type, typeMap) === type) {
         vfile.message(`Invalid type reference: ${type}`, node);
       }
     });
