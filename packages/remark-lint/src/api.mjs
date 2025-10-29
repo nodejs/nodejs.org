@@ -15,6 +15,7 @@ import yamlComments from './rules/yaml/index.mjs';
 /**
  * @typedef {Object} Options
  * @property {Array<string>} releasedVersions The released versions, for validating the YAML
+ * @property {Record<string, string>} typeMap The type map
  */
 
 /**

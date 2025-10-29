@@ -35,10 +35,24 @@
     "weight": 2
   },
   {
+    "id": "MACSTADIUM",
+    "name": "MacStadium",
+    "href": "https://macstadium.com",
+    "categories": ["infrastructure"],
+    "weight": 2
+  },
+  {
     "id": "NODESOURCE",
     "name": "NodeSource",
     "href": "https://nodesource.com",
     "weight": 3,
     "categories": ["security", "esp", "release"]
+  },
+  {
+    "id": "CODEMOD",
+    "name": "Codemod",
+    "href": "https://codemod.com",
+    "weight": 1,
+    "categories": []
   }
 ]
