@@ -45,6 +45,9 @@
             "debugging": "Debugging Node.js",
             "fetch": "Fetching data with Node.js",
             "websocket": "WebSocket client with Node.js",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
+            "profiling": "Profiling Node.js Applications",
+            "nodejsWithWebassembly": "Node.js with WebAssembly",
             "securityBestPractices": "Security Best Practices",
             "userlandMigrations": "Introduction to Userland Migrations"
           }
@@ -86,6 +89,16 @@
             "dontBlockTheEventLoop": "Don't Block the Event Loop"
           }
         },
+        "typescript": {
+          "links": {
+            "typescript": "TypeScript",
+            "introduction": "Introduction to TypeScript",
+            "runNatively": "Running TypeScript Natively",
+            "transpile": "Running TypeScript code using transpilation",
+            "run": "Running TypeScript with a runner",
+            "publishingTSPackage": "Publishing a TypeScript package"
+          }
+        },
         "modules": {
           "links": {
             "modules": "Modules",
@@ -115,12 +128,6 @@
             "usingTestRunner": "Using Node.js's test runner",
             "mocking": "Mocking in tests",
             "collectingCodeCoverage": "Collecting code coverage in Node.js"
-          }
-        },
-        "migrations": {
-          "links": {
-            "migrations": "Userland Migrations",
-            "introduction": "Introduction to Userland Migrations"
           }
         }
       },
