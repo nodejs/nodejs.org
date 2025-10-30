@@ -76,32 +76,6 @@ if (require.main === 'mod.js') {
 }
 ```
 
-## `process-mainModule-to-require-main`
-
-The [`process.mainModule`](https://nodejs.org/api/process.html#process_process_mainmodule) property was deprecated ([DEP0144](https://nodejs.org/api/deprecations.html#DEP0144)) in favor of [`require.main`](https://nodejs.org/api/modules.html#modules_accessing_the_main_module). This codemod replaces calls of the deprecated property with the modern alternative mentioned.
-
-The source code for this codemod can be found in the [process-mainModule-to-require-main directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/process-main-module).
-
-You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/process-mainModule-to-require-main).
-
-```bash
-npx codemod run @nodejs/process-mainModule-to-require-main
-```
-
-### Example:
-
-```js displayName="Before"
-if (process.mainModule) {
-  console.log('This script is the main module');
-}
-```
-
-```js displayName="After"
-if (require.main === module) {
-  console.log('This script is the main module');
-}
-```
-
 ## `rmdir`
 
 The `fs.rmdir` function was deprecated in favor of `fs.rm` with the `{ recursive: true }` option. This codemod will help you replace the old `fs.rmdir` function with the new `fs.rm` function.
@@ -119,6 +93,8 @@ npx codemod run @nodejs/rmdir
 ### Example:
 
 ```js displayName="Before"
+const fs = require('node:fs');
+
 // Using fs.rmdir with the recursive option
 fs.rmdir(path, { recursive: true }, callback);
 
@@ -130,6 +106,8 @@ fs.promises.rmdir(path, { recursive: true });
 ```
 
 ```js displayName="After"
+const fs = require('node:fs');
+
 // Using fs.rm with recursive and force options
 fs.rm(path, { recursive: true, force: true }, callback);
 
