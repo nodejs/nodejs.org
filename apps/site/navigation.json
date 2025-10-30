@@ -205,6 +205,10 @@
             "securityBestPractices": {
               "link": "/learn/getting-started/security-best-practices",
               "label": "components.navigation.learn.gettingStarted.links.securityBestPractices"
+            },
+            "userlandMigrations": {
+              "link": "/learn/getting-started/userland-migrations",
+              "label": "components.navigation.learn.gettingStarted.links.userlandMigrations"
             }
           }
         },
@@ -351,6 +355,15 @@
               "link": "/learn/modules/backpressuring-in-streams",
               "label": "components.navigation.learn.modules.links.backpressuringInStreams"
             },
+            "acceptInputFromTheCommandLineInNodejs": {
+              "link": "/learn/command-line/accept-input-from-the-command-line-in-nodejs",
+              "label": "components.navigation.learn.commandLine.links.acceptInputFromTheCommandLineInNodejs"
+            }
+          }
+        },
+        "modules": {
+          "label": "components.navigation.learn.modules.links.modules",
+          "items": {
             "publishingAPackage": {
               "link": "/learn/modules/publishing-a-package",
               "label": "components.navigation.learn.modules.links.publishingAPackage"

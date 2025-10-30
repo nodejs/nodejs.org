@@ -45,10 +45,8 @@
             "debugging": "Debugging Node.js",
             "fetch": "Fetching data with Node.js",
             "websocket": "WebSocket client with Node.js",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
-            "profiling": "Profiling Node.js Applications",
-            "nodejsWithWebassembly": "Node.js with WebAssembly",
-            "securityBestPractices": "Security Best Practices"
+            "securityBestPractices": "Security Best Practices",
+            "userlandMigrations": "Introduction to Userland Migrations"
           }
         },
         "commandLine": {
@@ -86,16 +84,6 @@
             "understandingProcessnexttick": "Understanding process.nextTick()",
             "understandingSetimmediate": "Understanding setImmediate()",
             "dontBlockTheEventLoop": "Don't Block the Event Loop"
-          }
-        },
-        "typescript": {
-          "links": {
-            "typescript": "TypeScript",
-            "introduction": "Introduction to TypeScript",
-            "runNatively": "Running TypeScript Natively",
-            "transpile": "Running TypeScript code using transpilation",
-            "run": "Running TypeScript with a runner",
-            "publishingTSPackage": "Publishing a TypeScript package"
           }
         },
         "modules": {
@@ -305,7 +293,7 @@
     },
     "blog": {
       "blogHeader": {
-        "subtitle": "The latest Node.js news, case studies, tutorials, and resources.",
+        "subtitle": "The latest Node.js news, migration guides and events summaries",
         "rssLink": "RSS feed"
       }
     }
@@ -336,6 +324,7 @@
         "video": "Video",
         "weekly": "Weekly Updates",
         "wg": "Working Groups",
+        "migrations": "Migration Guides",
         "events": "Events"
       }
     },
