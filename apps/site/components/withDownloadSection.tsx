@@ -1,4 +1,4 @@
-import { useLocale } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 import type { FC, PropsWithChildren } from 'react';
 
 import { getClientContext } from '#site/client-context';
@@ -12,21 +12,22 @@ import {
 
 import type { NodeRelease } from '../types';
 
-// By default the translated languages do not contain all the download snippets
-// Hence we always merge any translated snippet with the fallbacks for missing snippets
-const fallbackSnippets = provideDownloadSnippets(defaultLocale.code);
-
 type WithDownloadSectionProps = PropsWithChildren<{
   releases: Array<NodeRelease>;
 }>;
 
-const WithDownloadSection: FC<WithDownloadSectionProps> = ({
+const WithDownloadSection: FC<WithDownloadSectionProps> = async ({
   releases,
   children,
 }) => {
-  const locale = useLocale();
+  const locale = await getLocale();
 
-  const snippets = provideDownloadSnippets(locale);
+  const snippets = await provideDownloadSnippets(locale);
+
+  // By default the translated languages do not contain all the download snippets
+  // Hence we always merge any translated snippet with the fallbacks for missing snippets
+  const fallbackSnippets = await provideDownloadSnippets(defaultLocale.code);
+
   const { pathname } = getClientContext();
 
   // Some available translations do not have download snippets translated or have them partially translated

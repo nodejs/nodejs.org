@@ -15,7 +15,7 @@ type BlogPostCardProps = {
   category: BlogCategory;
   description?: string;
   authors?: Array<string>;
-  date?: Date;
+  date?: string | Date;
   slug?: string;
 };
 

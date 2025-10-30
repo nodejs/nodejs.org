@@ -1,15 +1,15 @@
-import { cache } from 'react';
+'use cache';
 
 import generateDownloadSnippets from '#site/next-data/generators/downloadSnippets.mjs';
 
-const downloadSnippets = await generateDownloadSnippets();
+const provideDownloadSnippets = async (language: string) => {
+  const downloadSnippets = await generateDownloadSnippets();
 
-const provideDownloadSnippets = cache((language: string) => {
   if (downloadSnippets.has(language)) {
     return downloadSnippets.get(language)!;
   }
 
   return [];
-});
+};
 
 export default provideDownloadSnippets;
