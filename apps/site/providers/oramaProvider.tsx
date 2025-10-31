@@ -1,3 +1,5 @@
+'use client';
+
 import { OramaCloud } from '@orama/core';
 import { createContext, useContext, useMemo } from 'react';
 
@@ -6,7 +8,7 @@ import {
   ORAMA_CLOUD_READ_API_KEY,
 } from '#site/next.constants.mjs';
 
-const OramaContext = createContext<OramaCloud | null>(null);
+const OramaContext = createContext<OramaCloud | undefined>(undefined);
 
 export const OramaProvider = ({ children }: { children: React.ReactNode }) => {
   const instance = useMemo(() => {
@@ -16,7 +18,6 @@ export const OramaProvider = ({ children }: { children: React.ReactNode }) => {
         apiKey: ORAMA_CLOUD_READ_API_KEY,
       });
     }
-    return null;
   }, []);
   return (
     <OramaContext.Provider value={instance}>{children}</OramaContext.Provider>

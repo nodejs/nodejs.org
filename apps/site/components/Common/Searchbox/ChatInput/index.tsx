@@ -26,9 +26,13 @@ export const ChatInput: FC = () => {
   const hasInteractions = !!interactions?.length;
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       textareaRef.current?.focus();
     }, 100);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (

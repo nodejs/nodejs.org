@@ -109,7 +109,6 @@ export const SearchResultsWrapper: FC = () => {
           <SearchResults.GroupsWrapper
             className={styles.searchResultsGroupWrapper}
             groupBy="siteSection"
-            data-testid="orama-search-results"
           >
             {group => (
               <div key={group.name} className={styles.searchResultsGroup}>

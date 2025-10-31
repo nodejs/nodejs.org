@@ -24,7 +24,6 @@ export const Search: FC<SearchProps> = ({ ref }) => {
       <SearchInput.Wrapper className={styles.searchInputWrapper}>
         <MagnifyingGlassIcon />
         <SearchInput.Input
-          data-testid="orama-input"
           inputId="orama-doc-search"
           ariaLabel={t('components.search.searchPlaceholder')}
           placeholder={t('components.search.searchPlaceholder')}
