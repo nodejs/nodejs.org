@@ -1,6 +1,7 @@
+'use client';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import classNames from 'classnames';
-import { useId, useMemo } from 'react';
+import { useId, useMemo, useRef, useEffect } from 'react';
 
 import type { SelectGroup, SelectProps } from '#ui/Common/Select';
 import type { LinkLike } from '#ui/types';
@@ -24,9 +25,9 @@ const StatelessSelect = <T extends string>({
   className,
   ariaLabel,
   disabled = false,
-  as: Component = 'div',
 }: StatelessSelectProps<T>) => {
   const id = useId();
+  const detailsRef = useRef<HTMLDetailsElement | null>(null);
 
   const mappedValues = useMemo(() => {
     let mappedValues = values;
@@ -54,6 +55,20 @@ const StatelessSelect = <T extends string>({
     [mappedValues, defaultValue]
   );
 
+  // closing behaviour for outside click
+  useEffect(() => {
+    const handleOutside = (e: MouseEvent) => {
+      if (
+        detailsRef.current &&
+        !detailsRef.current.contains(e.target as Node)
+      ) {
+        detailsRef.current.open = false;
+      }
+    };
+    document.addEventListener('pointerdown', handleOutside);
+    return () => document.removeEventListener('pointerdown', handleOutside);
+  }, []);
+
   return (
     <div
       className={classNames(
@@ -69,7 +84,7 @@ const StatelessSelect = <T extends string>({
         </label>
       )}
 
-      <details className={styles.trigger} id={id}>
+      <details className={styles.trigger} id={id} ref={detailsRef}>
         <summary
           className={styles.summary}
           aria-label={ariaLabel}
@@ -103,7 +118,7 @@ const StatelessSelect = <T extends string>({
 
               {items.map(
                 ({ value, label, iconImage, disabled: itemDisabled }) => (
-                  <Component
+                  <a
                     key={value}
                     href={value}
                     className={classNames(styles.item, styles.text, {
@@ -111,10 +126,26 @@ const StatelessSelect = <T extends string>({
                       [styles.selected]: value === defaultValue,
                     })}
                     aria-disabled={itemDisabled || disabled}
+                    onClick={e => {
+                      // Allow ctrl/cmd/middle click to open new tab
+                      if (e.metaKey || e.ctrlKey || e.button === 1) {
+                        return;
+                      }
+                      e.preventDefault();
+
+                      if (detailsRef.current) {
+                        detailsRef.current.open = false;
+                      }
+
+                      // Client-side navigation for internal links
+                      if (typeof window !== 'undefined') {
+                        window.location.href = value;
+                      }
+                    }}
                   >
                     {iconImage}
                     <span>{label}</span>
-                  </Component>
+                  </a>
                 )
               )}
             </div>

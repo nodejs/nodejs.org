@@ -34,7 +34,7 @@ const BaseLinkTabs: FC<LinkTabsProps> = ({
         </Component>
       ))}
     </div>
-
+    {/* StatelessSelect now handles client-side navigation internally  */}
     <StatelessSelect
       label={label}
       className={styles.tabsSelect}
