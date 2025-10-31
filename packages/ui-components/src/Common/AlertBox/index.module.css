@@ -16,7 +16,7 @@
     text-white;
 
   p {
-    color: white !important;
+    @apply text-white;
   }
 
   a {
@@ -51,7 +51,7 @@
   }
 
   &.info {
-    @apply bg-info-400;
+    @apply bg-info-600;
 
     .title {
       @apply bg-info-700;
