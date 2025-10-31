@@ -6,64 +6,54 @@ import { useTranslations } from 'next-intl';
 import type { FC } from 'react';
 
 import '@orama/ui/styles.css';
-
-import { OramaProvider, useOrama } from '#site/providers/oramaProvider';
 import { SearchboxProvider } from '#site/providers/searchboxProvider';
 
 import styles from './index.module.css';
 import { InnerSearchboxModal } from './InnerSearchboxModal';
+import { oramaClient } from './orama-client';
 
 const Searchbox: FC = () => {
-  const orama = useOrama();
   const t = useTranslations();
 
   return (
-    <div className={styles.searchboxContainer}>
-      <Modal.Root>
-        <Modal.Trigger
-          type="button"
-          disabled={!orama}
-          enableCmdK
-          className={styles.searchButton}
-        >
-          <div className={styles.searchButtonContent}>
-            <MagnifyingGlassIcon />
-            {t('components.search.searchPlaceholder')}
-          </div>
-          <span className={styles.searchButtonShortcut}>⌘ K</span>
-        </Modal.Trigger>
+    <SearchboxProvider>
+      <div className={styles.searchboxContainer}>
+        <Modal.Root>
+          <Modal.Trigger
+            type="button"
+            disabled={!oramaClient}
+            enableCmdK
+            className={styles.searchButton}
+          >
+            <div className={styles.searchButtonContent}>
+              <MagnifyingGlassIcon />
+              {t('components.search.searchPlaceholder')}
+            </div>
+            <span className={styles.searchButtonShortcut}>⌘ K</span>
+          </Modal.Trigger>
 
-        <Modal.Wrapper
-          closeOnOutsideClick
-          closeOnEscape
-          className={styles.modalWrapper}
-        >
-          <SearchRoot client={orama ?? null}>
-            <ChatRoot
-              client={orama ?? null}
-              askOptions={{ throttle_delay: 50 }}
-            >
-              <Modal.Inner className={styles.modalInner}>
-                <Modal.Content className={styles.modalContent}>
-                  <InnerSearchboxModal />
-                </Modal.Content>
-              </Modal.Inner>
-            </ChatRoot>
-          </SearchRoot>
-        </Modal.Wrapper>
-      </Modal.Root>
-    </div>
+          <Modal.Wrapper
+            closeOnOutsideClick
+            closeOnEscape
+            className={styles.modalWrapper}
+          >
+            <SearchRoot client={oramaClient}>
+              <ChatRoot
+                client={oramaClient}
+                askOptions={{ throttle_delay: 50 }}
+              >
+                <Modal.Inner className={styles.modalInner}>
+                  <Modal.Content className={styles.modalContent}>
+                    <InnerSearchboxModal />
+                  </Modal.Content>
+                </Modal.Inner>
+              </ChatRoot>
+            </SearchRoot>
+          </Modal.Wrapper>
+        </Modal.Root>
+      </div>
+    </SearchboxProvider>
   );
 };
 
-const OramaSearchWrapper = () => {
-  return (
-    <OramaProvider>
-      <SearchboxProvider>
-        <Searchbox />
-      </SearchboxProvider>
-    </OramaProvider>
-  );
-};
-
-export default OramaSearchWrapper;
+export default Searchbox;
