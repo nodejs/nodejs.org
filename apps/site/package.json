@@ -83,7 +83,7 @@
     "@flarelabs-net/wrangler-build-time-fs-assets-polyfilling": "^0.0.1",
     "@next/eslint-plugin-next": "15.5.4",
     "@node-core/remark-lint": "workspace:*",
-    "@opennextjs/cloudflare": "^1.6.4",
+    "@opennextjs/cloudflare": "^1.11.0",
     "@playwright/test": "^1.56.1",
     "@testing-library/user-event": "~14.6.1",
     "@types/mdast": "^4.0.4",
@@ -108,7 +108,7 @@
     "typescript": "catalog:",
     "typescript-eslint": "~8.45.0",
     "user-agent-data-types": "0.4.2",
-    "wrangler": "^4.33.1"
+    "wrangler": "^4.45.3"
   },
   "imports": {
     "#site/*": [
