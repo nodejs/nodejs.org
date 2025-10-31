@@ -9,6 +9,7 @@ const cloudflareConfig = defineCloudflareConfig({
     mode: 'long-lived',
   }),
   queue: doQueue,
+  enableCacheInterception: true,
 });
 
 const openNextConfig: OpenNextConfig = {
