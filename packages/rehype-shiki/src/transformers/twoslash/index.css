@@ -2,6 +2,7 @@
 
 .twoslash-hover {
   cursor: text;
+  user-select: text;
 }
 
 .twoslash-popup-code {
