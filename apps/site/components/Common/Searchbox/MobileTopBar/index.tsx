@@ -5,6 +5,7 @@ import {
   ArrowLeftIcon,
   SparklesIcon,
 } from '@heroicons/react/24/solid';
+import { Modal } from '@orama/ui/components/Modal';
 import classNames from 'classnames';
 import type { FC } from 'react';
 import { useState } from 'react';
@@ -15,9 +16,8 @@ import styles from './index.module.css';
 
 export const MobileTopBar: FC<{
   isChatOpen: boolean;
-  onClose: () => void;
   onSelect: (mode: 'search' | 'chat') => void;
-}> = ({ isChatOpen, onClose, onSelect }) => {
+}> = ({ isChatOpen, onSelect }) => {
   const [animated, setAnimated] = useState(false);
 
   function selectMode(mode: 'search' | 'chat') {
@@ -30,13 +30,12 @@ export const MobileTopBar: FC<{
 
   return (
     <div className={styles.topBar}>
-      <button
+      <Modal.Close
         className={styles.topBarArrow}
-        onClick={onClose}
-        aria-label="Close"
+        aria-label="Close search modal"
       >
         <ArrowLeftIcon />
-      </button>
+      </Modal.Close>
       <div className={styles.topBarTabs}>
         <button
           className={classNames(styles.topBarTab, {

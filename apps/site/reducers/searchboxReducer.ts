@@ -3,8 +3,6 @@ import type { Dispatch } from 'react';
 import type * as Types from '#site/types/searchbox';
 
 export const searchboxState: Types.SearchboxState = {
-  // The modal starts closed
-  isOpen: false,
   // Default mode is search
   mode: 'search',
   // Chat panel starts closed
@@ -14,9 +12,6 @@ export const searchboxState: Types.SearchboxState = {
 export const getActions = (
   dispatch: Dispatch<Types.SearchboxAction>
 ): Types.SearchboxDispatchActions => ({
-  openModal: () => dispatch({ type: 'OPEN_MODAL' }),
-  closeModal: () => dispatch({ type: 'CLOSE_MODAL' }),
-  toggleModal: () => dispatch({ type: 'TOGGLE_MODAL' }),
   setMode: payload => dispatch({ type: 'SET_MODE', payload }),
   setChatOpen: payload => dispatch({ type: 'SET_CHAT_OPEN', payload }),
   closeChatAndReset: (onComplete?: () => void) =>
@@ -32,12 +27,6 @@ const reducer = (
   action: Types.SearchboxAction
 ): Types.SearchboxState => {
   switch (action.type) {
-    case 'OPEN_MODAL':
-      return { ...state, isOpen: true };
-    case 'CLOSE_MODAL':
-      return { ...state, isOpen: false };
-    case 'TOGGLE_MODAL':
-      return { ...state, isOpen: !state.isOpen };
     case 'SET_MODE':
       return { ...state, mode: action.payload };
     case 'SET_CHAT_OPEN':

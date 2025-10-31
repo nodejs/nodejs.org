@@ -1,3 +1,5 @@
+@reference "../../../../styles/index.css";
+
 .mobileChatContainer {
   @apply flex
     grow

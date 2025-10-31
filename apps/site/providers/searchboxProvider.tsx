@@ -1,14 +1,7 @@
 'use client';
 
-import { useSearchDispatch } from '@orama/ui/contexts';
 import type { FC, PropsWithChildren } from 'react';
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-  useCallback,
-} from 'react';
+import { createContext, useContext, useReducer } from 'react';
 
 import searchboxReducer, {
   searchboxState,
@@ -17,36 +10,17 @@ import searchboxReducer, {
 import type * as Types from '#site/types/searchbox';
 
 type SearchboxContextType = Types.SearchboxState &
-  Types.SearchboxDispatchActions & {
-    clearAll: () => void;
-  };
+  Types.SearchboxDispatchActions;
 
 const SearchboxContext = createContext<SearchboxContextType | null>(null);
 
 export const SearchboxProvider: FC<PropsWithChildren> = ({ children }) => {
   const [state, dispatch] = useReducer(searchboxReducer, searchboxState);
   const actions = getActions(dispatch);
-  const searchDispatch = useSearchDispatch();
-
-  const clearAll = useCallback(() => {
-    searchDispatch({ type: 'SET_SEARCH_TERM', payload: { searchTerm: '' } });
-    searchDispatch({
-      type: 'SET_SELECTED_FACET',
-      payload: { selectedFacet: 'All' },
-    });
-    searchDispatch({ type: 'SET_RESULTS', payload: { results: [] } });
-  }, [searchDispatch]);
-
-  useEffect(() => {
-    if (!state.isOpen) {
-      clearAll();
-    }
-  }, [state.isOpen, clearAll]);
 
   const contextValue: SearchboxContextType = {
     ...state,
     ...actions,
-    clearAll,
   };
 
   return (

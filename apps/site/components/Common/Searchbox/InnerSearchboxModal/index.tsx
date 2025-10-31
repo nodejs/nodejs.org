@@ -7,14 +7,12 @@ import { useSearchbox } from '#site/providers/searchboxProvider';
 import { ChatInput } from '../ChatInput';
 import { ChatInteractionsContainer } from '../ChatInteractions';
 import { Footer } from '../Footer';
-import styles from '../index.module.css';
+import styles from './index.module.css';
 import { MobileTopBar } from '../MobileTopBar';
 import { Search } from '../Search';
 import { SlidingChatPanel } from '../SlidingChatPanel';
 
-export const InnerSearchboxModal: FC<
-  PropsWithChildren<{ onClose: () => void }>
-> = ({ onClose }) => {
+export const InnerSearchboxModal: FC<PropsWithChildren> = () => {
   const searchbox = useSearchbox();
   const [isMobileScreen, setIsMobileScreen] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -38,7 +36,6 @@ export const InnerSearchboxModal: FC<
       {isMobileScreen && (
         <MobileTopBar
           isChatOpen={searchbox.mode === 'chat'}
-          onClose={onClose}
           onSelect={searchbox.switchTo}
         />
       )}
