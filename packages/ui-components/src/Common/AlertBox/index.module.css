@@ -15,7 +15,9 @@
     text-sm
     text-white;
 
-  p {
+  p,
+  span,
+  div {
     @apply text-white;
   }
 
