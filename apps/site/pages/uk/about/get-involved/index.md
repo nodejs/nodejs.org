@@ -5,7 +5,7 @@ layout: about
 
 # Долучитися
 
-Якщо ви зацікавлені в участі в спільноті Node.js, ви можете долучитися до нас різними способами. Проєкт Node.js — це велика і різноманітна спільнота, якій можна допомогти не лише кодом.
+Якщо ви зацікавлені в участі в спільноті Node.js, ви можете долучитися до нас різними способами. Проєкт Node.js — це велика й різноманітна спільнота, якій можна допомагати не лише кодом.
 
 ## Обговорення спільноти
 
@@ -31,5 +31,5 @@ layout: about
 
 - [Node Slackers](https://www.nodeslackers.com/) — це спільнота Slack із фокусом на Node.js.
 - [OpenJSF Slack](https://slack-invite.openjsf.org/) — це робочий простір Slack для OpenJS Foundation. Там є кілька каналів, які стосуються Node.js. _(канали з префіксом `#nodejs-` стосуються проєкту)_
-- [r/node](https://www.reddit.com/r/node/) — це сабреддіт із фокусом на Node.js.
+- [r/node](https://www.reddit.com/r/node/) — це сабредит із фокусом на Node.js.
 - Для IRC перейдіть на `irc.libera.chat` у каналі `#node.js` через [клієнт IRC](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) або під'єднайтеся до каналу з веббраузера [через вебклієнт](https://kiwiirc.com/nextclient/).

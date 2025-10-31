@@ -1,12 +1,12 @@
 ---
-title: Descarcă Node.js®
+title: 下载 Node.js®
 layout: download-archive
 ---
 
 <WithDownloadArchive>
   {({ binaries, installers, version, release, sources }) => (
     <>
-      <h1>Arhiva de descărcări Node.js®</h1>
+      <h1>Node.js® 历史版本下载</h1>
 
       <h2 className="flex items-center gap-2">
         <img
@@ -25,32 +25,32 @@ layout: download-archive
 
       <ul className='flex list-none flex-col gap-2 p-0 text-sm'>
         <li>
-          Citește <LinkWithArrow href={`https://github.com/nodejs/node/releases/tag/${version}`}>jurnalul de modificări</LinkWithArrow> sau <Link href={`/blog/release/${version}`}>articolul din bloc</Link> pentru această versiune.
+          阅读该版本的 <LinkWithArrow href={`https://github.com/nodejs/node/releases/tag/${version}`}>变更日志</LinkWithArrow> 或 <Link href={`/blog/release/${version}`}>博客</Link>。
         </li>
         <li>
-          Află mai multe despre <Link href="/about/previous-releases">lansările Node.js</Link>, inclusiv despre programul de lansare și starea LTS.
-        </li>
-
-        <li>
-          <LinkWithArrow href={sources.shasum}>SHASUM-uri semnate</LinkWithArrow> pentru fișierele de lansare. Cum să <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">verifici</LinkWithArrow> SHASUM-urile semnate.
+          了解关于 <Link href="/about/previous-releases">Node.js 版本</Link> 的更多信息，包括发版计划和LTS状态。
         </li>
 
         <li>
-          Descarcă un tarball semnat pentru <LinkWithArrow href={sources.tarball}>sursa Node.js {version}</LinkWithArrow> tarball.
+          文件 <LinkWithArrow href={sources.shasum}>签名SHASUMS</LinkWithArrow> 。 如何 <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">校验</LinkWithArrow> 签名SHASUMS.
+        </li>
+
+        <li>
+          下载签名的  <LinkWithArrow href={sources.tarball}>Node.js {version} 源码</LinkWithArrow> 压缩包。
         </li>
 
       </ul>
 
-      <h2>Alte lansări</h2>
+      <h2>其他版本</h2>
       <WithReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
 
-      <h2>Descărcări binare</h2>
+      <h2>二进制文件</h2>
       <DownloadsTable source={binaries} />
 
-      <h2>Packete pentru instalatori</h2>
+      <h2>安装包</h2>
       <DownloadsTable source={installers} />
 
-      <h2>Versiuni minore</h2>
+      <h2>子版本</h2>
       <MinorReleasesTable releases={release.minorVersions} />
     </>
 
