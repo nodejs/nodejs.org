@@ -47,7 +47,7 @@
   }
 
   &.info {
-    @apply bg-info-600;
+    @apply bg-info-400;
 
     .title {
       @apply bg-info-700;
