@@ -17,7 +17,10 @@ const WithFooter: FC = () => {
 
   const navigation = {
     socialLinks,
-    footerLinks: footerLinks.map(link => ({ ...link, text: t(link.text) })),
+    footerLinks: footerLinks.map(link => ({
+      ...link,
+      text: link.label ? t(link.label) : (link.text as string),
+    })),
   };
 
   const primary = (
