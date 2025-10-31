@@ -18,7 +18,7 @@ This guide will help you set up your development environment and make your first
 ## Prerequisites
 
 - Node.js (latest LTS version recommended)
-- pnpm package manager
+- [pnpm](https://pnpm.io/installation) package manager
 - Git
 - A GitHub account
 
