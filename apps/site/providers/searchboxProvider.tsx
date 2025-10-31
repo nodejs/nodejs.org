@@ -9,10 +9,11 @@ import searchboxReducer, {
 } from '#site/reducers/searchboxReducer';
 import type * as Types from '#site/types/searchbox';
 
-type SearchboxContextType = Types.SearchboxState &
-  Types.SearchboxDispatchActions;
+type SearchboxContextType =
+  | (Types.SearchboxState & Types.SearchboxDispatchActions)
+  | null;
 
-const SearchboxContext = createContext<SearchboxContextType | null>(null);
+const SearchboxContext = createContext<SearchboxContextType>(null);
 
 export const SearchboxProvider: FC<PropsWithChildren> = ({ children }) => {
   const [state, dispatch] = useReducer(searchboxReducer, searchboxState);
@@ -32,8 +33,5 @@ export const SearchboxProvider: FC<PropsWithChildren> = ({ children }) => {
 
 export const useSearchbox = (): SearchboxContextType => {
   const context = useContext(SearchboxContext);
-  if (!context) {
-    throw new Error('useSearchbox must be used within a SearchboxProvider');
-  }
   return context;
 };

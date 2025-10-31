@@ -17,7 +17,7 @@ type SearchProps = PropsWithChildren & React.RefAttributes<HTMLInputElement>;
 export const Search: FC<SearchProps> = ({ ref }) => {
   const t = useTranslations();
   const searchbox = useSearchbox();
-  const isSearchMode = searchbox.mode === 'search';
+  const isSearchMode = searchbox?.mode === 'search';
 
   return (
     <div className={styles.searchContainer}>

@@ -12,7 +12,7 @@ import styles from './index.module.css';
 export const EmptyResults: FC = () => {
   const t = useTranslations();
   const searchbox = useSearchbox();
-  const isSearchMode = searchbox.mode === 'search';
+  const isSearchMode = searchbox?.mode === 'search';
 
   return (
     <SearchResults.NoResults>
@@ -30,7 +30,7 @@ export const EmptyResults: FC = () => {
                 {t('components.search.suggestions')}
               </p>
               <Suggestions.Item
-                onClick={() => searchbox.switchTo('chat')}
+                onClick={() => searchbox?.switchTo('chat')}
                 tabIndex={isSearchMode ? 0 : -1}
                 aria-hidden={!isSearchMode}
                 className={styles.suggestionItem}
@@ -39,7 +39,7 @@ export const EmptyResults: FC = () => {
                 {t('components.search.suggestionOne')}
               </Suggestions.Item>
               <Suggestions.Item
-                onClick={() => searchbox.switchTo('chat')}
+                onClick={() => searchbox?.switchTo('chat')}
                 tabIndex={isSearchMode ? 0 : -1}
                 aria-hidden={!isSearchMode}
                 className={styles.suggestionItem}
@@ -50,7 +50,7 @@ export const EmptyResults: FC = () => {
               <Suggestions.Item
                 tabIndex={isSearchMode ? 0 : -1}
                 aria-hidden={!isSearchMode}
-                onClick={() => searchbox.switchTo('chat')}
+                onClick={() => searchbox?.switchTo('chat')}
                 className={styles.suggestionItem}
               >
                 <SparklesIcon />

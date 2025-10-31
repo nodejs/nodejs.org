@@ -16,12 +16,12 @@ import styles from './index.module.css';
 
 export const MobileTopBar: FC<{
   isChatOpen: boolean;
-  onSelect: (mode: 'search' | 'chat') => void;
+  onSelect?: (mode: 'search' | 'chat') => void;
 }> = ({ isChatOpen, onSelect }) => {
   const [animated, setAnimated] = useState(false);
 
   function selectMode(mode: 'search' | 'chat') {
-    onSelect(mode);
+    onSelect?.(mode);
 
     if (!animated) {
       setAnimated(true);

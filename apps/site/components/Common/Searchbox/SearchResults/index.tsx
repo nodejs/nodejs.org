@@ -21,13 +21,13 @@ export const SearchResultsWrapper: FC = () => {
     context: { searchTerm, selectedFacet },
   } = useSearch();
   const searchbox = useSearchbox();
-  const isSearchMode = searchbox.mode === 'search';
+  const isSearchMode = searchbox?.mode === 'search';
 
   return (
     <div className={styles.searchResultsContainer}>
       <div className={styles.chatButtonWrapper}>
         <SlidingPanel.Trigger
-          onClick={() => searchbox.switchTo('chat')}
+          onClick={() => searchbox?.switchTo('chat')}
           className={classNames(styles.chatButton, {
             [styles.chatButtonWithSearch]: searchTerm,
           })}

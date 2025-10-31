@@ -18,7 +18,7 @@ export const InnerSearchboxModal: FC<PropsWithChildren> = () => {
   const searchInputRef = useRef<HTMLInputElement>(null);
 
   const displaySearch =
-    !isMobileScreen || (isMobileScreen && searchbox.mode === 'search');
+    !isMobileScreen || (isMobileScreen && searchbox?.mode === 'search');
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -35,12 +35,12 @@ export const InnerSearchboxModal: FC<PropsWithChildren> = () => {
     <>
       {isMobileScreen && (
         <MobileTopBar
-          isChatOpen={searchbox.mode === 'chat'}
-          onSelect={searchbox.switchTo}
+          isChatOpen={searchbox?.mode === 'chat'}
+          onSelect={searchbox?.switchTo}
         />
       )}
       {displaySearch && <Search ref={searchInputRef} />}
-      {isMobileScreen && searchbox.mode === 'chat' && (
+      {isMobileScreen && searchbox?.mode === 'chat' && (
         <>
           <div className={styles.mobileChatContainer}>
             <div className={styles.mobileChatTop}>
@@ -53,11 +53,11 @@ export const InnerSearchboxModal: FC<PropsWithChildren> = () => {
           <Footer />
         </>
       )}
-      {!isMobileScreen && searchbox.mode === 'chat' && (
+      {!isMobileScreen && searchbox?.mode === 'chat' && (
         <SlidingChatPanel
-          open={searchbox.isChatOpen}
+          open={searchbox?.isChatOpen}
           onClose={() => {
-            searchbox.closeChatAndReset(() => {
+            searchbox?.closeChatAndReset(() => {
               searchInputRef.current?.focus();
             });
           }}
