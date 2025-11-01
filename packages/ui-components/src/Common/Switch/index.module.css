@@ -47,9 +47,9 @@
       rounded-full
       bg-white
       ring-0
-      transition-transform
-      duration-100
-      ease-out;
+      motion-safe:transition-transform
+      motion-safe:duration-100
+      motion-safe:ease-out;
   }
 
   .thumb[data-state='checked'] {
