@@ -101,7 +101,7 @@ fs.access('/path/to/file', fs.constants.R_OK | fs.constants.W_OK, callback);
 
 ### `util-log-to-console-log`
 
-The `util.log` function was deprecated in favor of using `console.log` directly. Because it's an unmaintained legacy API that was exposed to user land by accident
+The `util.log` function was deprecated in favor of using `console.log` directly, because it's an unmaintained legacy API that was exposed to user land by accident.
 
 So this codemod handle [DEP0059](https://nodejs.org/api/deprecations.html#DEP0059).
 
@@ -191,7 +191,7 @@ open('file.txt', 'w', (err, fd) => {
 
 ### `crypto-rsa-pss-update`
 
-The `generateKeyPair` and `generateKeyPairSync` methods in the `crypto` module deprecated in [DEP0154](https://nodejs.org/docs/latest/api/deprecations.html#DEP0154), the `hash`, `mgf1Hash`, and `saltLength` options for the `'rsa-pss'` key type in favor of `hashAlgorithm`, `mgf1HashAlgorithm`, and `saltLength` respectively.
+In [DEP0154](https://nodejs.org/docs/latest/api/deprecations.html#DEP0154), the `generateKeyPair` and `generateKeyPairSync` methods in the `crypto` module deprecated the `hash`, `mgf1Hash`, and `saltLength` options for the `'rsa-pss'` key type in favor of `hashAlgorithm`, `mgf1HashAlgorithm`, and `saltLength` respectively.
 
 The source code for this codemod can be found in the [crypto-rsa-pss-update directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/crypto-rsa-pss-update).
 
