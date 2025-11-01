@@ -3,7 +3,7 @@ date: '2025-10-28T00:03:00.000Z'
 category: migrations
 title: Node.js v22 to v24
 layout: blog-post
-author: AugustinMauroy
+author: AugustinMauroy, Richard Lau
 ---
 
 # Node.js v22 to v24
@@ -67,11 +67,11 @@ Node.js' `configure` script will warn if you attempt to build Node.js with a com
 
 ## Available Codemods
 
-Some breaking changes or End of Life deprecations in Node.js 23 and 24 have associated codemods to help you update your codebase. Below is a list of the available codemods for this migration:
+Some breaking changes or End of Life (EOL) deprecations in Node.js 23 and 24 have associated codemods to help you update your codebase. Below is a list of the available codemods for this migration:
 
 ### `fs-access-mode-constants`
 
-In Node.js 24, the `fs` module introduced a runtime deprecation for `F_OK`, `R_OK`, `W_OK`, and `X_OK` getters exposed directly on `node:fs`. Get them from `fs.constants` or `fs.promises.constants` instead.
+The `fs` module introduced a runtime deprecation for `F_OK`, `R_OK`, `W_OK`, and `X_OK` getters exposed directly on `node:fs`. Get them from `fs.constants` or `fs.promises.constants` instead.
 
 This codemod handles [DEP0176](https://nodejs.org/api/deprecations.html#DEP0176).
 
@@ -101,7 +101,7 @@ fs.access('/path/to/file', fs.constants.R_OK | fs.constants.W_OK, callback);
 
 ### `util-log-to-console-log`
 
-In Node.js v23, the `util.log` function was deprecated in favor of using `console.log` directly. Because it's an unmaintained legacy API that was exposed to user land by accident
+The `util.log` function was deprecated in favor of using `console.log` directly, because it's an unmaintained legacy API that was exposed to user land by accident.
 
 So this codemod handle [DEP0059](https://nodejs.org/api/deprecations.html#DEP0059).
 
@@ -109,7 +109,7 @@ So this codemod handle [DEP0059](https://nodejs.org/api/deprecations.html#DEP005
 npx codemod run @nodejs/util-log-to-console-log
 ```
 
-### Example:
+#### Example:
 
 ```js displayName="Before"
 const util = require('node:util');
@@ -191,7 +191,7 @@ open('file.txt', 'w', (err, fd) => {
 
 ### `crypto-rsa-pss-update`
 
-Codemod to handle Node.js crypto deprecation [DEP0154](https://nodejs.org/docs/latest/api/deprecations.html#DEP0154) by transforming deprecated RSA-PSS key generation options.
+In [DEP0154](https://nodejs.org/docs/latest/api/deprecations.html#DEP0154), the `generateKeyPair` and `generateKeyPairSync` methods in the `crypto` module deprecated the `hash`, `mgf1Hash`, and `saltLength` options for the `'rsa-pss'` key type in favor of `hashAlgorithm`, `mgf1HashAlgorithm`, and `saltLength` respectively.
 
 The source code for this codemod can be found in the [crypto-rsa-pss-update directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/crypto-rsa-pss-update).
 
@@ -221,7 +221,7 @@ crypto.generateKeyPair(
 ```
 
 ```js displayName="After"
-const crypto = require('crypto');
+const crypto = require('node:crypto');
 
 crypto.generateKeyPair(
   'rsa-pss',
