@@ -2,7 +2,8 @@
 
 import * as SwitchPrimitive from '@radix-ui/react-switch';
 import classNames from 'classnames';
-import { FC, PropsWithChildren, useId } from 'react';
+import { useId } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';
 
