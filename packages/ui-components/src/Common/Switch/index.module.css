@@ -23,9 +23,9 @@
       items-center
       rounded-full
       bg-black
-      transition-colors
-      duration-100
-      ease-out
+      motion-safe:transition-colors
+      motion-safe:duration-100
+      motion-safe:ease-out
       focus:outline-none
       focus-visible:ring-2
       focus-visible:ring-green-500
