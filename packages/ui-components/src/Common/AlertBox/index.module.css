@@ -15,6 +15,10 @@
     text-sm
     text-white;
 
+  * {
+    @apply text-white;
+  }
+
   a {
     @apply font-bold
       text-white
