@@ -1,0 +1,99 @@
+@reference "../../../../styles/index.css";
+
+.textareaContainer {
+  @apply px-1;
+}
+
+.textareaWrapper {
+  @apply flex
+    items-center
+    rounded-2xl
+    border
+    border-neutral-300
+    bg-neutral-100
+    py-2
+    pl-3
+    pr-1
+    dark:border-neutral-900
+    dark:bg-neutral-950;
+}
+
+.textareaField {
+  @apply flex-1
+    border-0
+    bg-transparent
+    text-neutral-900
+    focus:outline-none
+    dark:text-neutral-200;
+}
+
+.textareaButton {
+  @apply cursor-pointer
+    rounded-xl
+    bg-green-600
+    p-2
+    text-white
+    duration-300
+    focus:bg-green-600/75
+    focus:outline-none
+    disabled:cursor-not-allowed
+    disabled:bg-neutral-200/60
+    disabled:text-neutral-800
+    motion-safe:transition-colors
+    dark:bg-green-400
+    dark:text-neutral-400
+    focus:dark:bg-green-400/75
+    disabled:dark:bg-neutral-900/60;
+
+  svg {
+    @apply size-4;
+  }
+}
+
+.textareaFooter {
+  @apply pt-1
+    text-center
+    text-xs
+    text-neutral-800
+    sm:text-sm
+    dark:text-neutral-500;
+}
+
+.suggestionsWrapper {
+  @apply mb-4
+    flex
+    items-center
+    gap-2
+    overflow-x-auto
+    px-1
+    text-sm
+    lg:justify-center;
+
+  &::-webkit-scrollbar {
+    @apply hidden;
+  }
+}
+
+.suggestionsItem {
+  @apply flex
+    size-max
+    cursor-pointer
+    whitespace-nowrap
+    rounded-full
+    border
+    border-neutral-300
+    bg-neutral-200
+    px-3
+    py-1
+    text-neutral-900
+    duration-300
+    hover:bg-neutral-300
+    focus:bg-neutral-300
+    focus:outline-none
+    motion-safe:transition-colors
+    dark:border-neutral-900
+    dark:bg-neutral-950
+    dark:text-neutral-200
+    dark:hover:bg-neutral-900
+    dark:focus:bg-neutral-900;
+}

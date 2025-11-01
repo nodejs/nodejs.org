@@ -17,10 +17,6 @@ const locators = {
     light: englishLocale.components.common.themeToggle.light,
     dark: englishLocale.components.common.themeToggle.dark,
   },
-  // Search components (from Orama library)
-  searchButtonTag: 'orama-button',
-  searchInputTag: 'orama-input',
-  searchResultsTag: 'orama-search-results',
 };
 
 const getTheme = (page: Page) =>
@@ -126,22 +122,6 @@ test.describe('Node.js Website', () => {
       await page.waitForURL(/\/es$/);
 
       await verifyTranslation(page, 'es');
-    });
-  });
-
-  test.describe('Search', () => {
-    test('should show and operate search functionality', async ({ page }) => {
-      // Open search dialog
-      await page.locator(locators.searchButtonTag).click();
-
-      // Verify search input is visible and enter a search term
-      const searchInput = page.locator(locators.searchInputTag);
-      await expect(searchInput).toBeVisible();
-      await searchInput.pressSequentially('express');
-
-      // Verify search results appear
-      const searchResults = page.locator(locators.searchResultsTag);
-      await expect(searchResults).toBeVisible();
     });
   });
 
