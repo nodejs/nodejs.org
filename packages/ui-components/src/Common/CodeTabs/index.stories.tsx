@@ -1,5 +1,5 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import type { Meta as MetaObj, StoryObj } from '@storybook/react';
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 import type { FC } from 'react';
 
 import BaseCodeBox from '#ui/Common/BaseCodeBox';

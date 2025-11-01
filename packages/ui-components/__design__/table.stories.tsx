@@ -1,4 +1,4 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react';
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 const tableData = [
   ['Data 1', 'Data 2', 'Data 3'],

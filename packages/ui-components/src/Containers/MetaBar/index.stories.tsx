@@ -1,5 +1,5 @@
 import { CodeBracketIcon } from '@heroicons/react/24/outline';
-import type { Meta as MetaObj, StoryObj } from '@storybook/react';
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 import MetaBar from '#ui/Containers/MetaBar';
 import GitHubIcon from '#ui/Icons/Social/GitHub';
