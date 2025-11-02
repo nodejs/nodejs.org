@@ -54,14 +54,13 @@ function isCodeBlock(node) {
 }
 
 /**
- * @param {import('./index.mjs').HighlighterOptions} options
+ * @param {import('./index.mjs').HighlighterOptions & { highlighter: import('./highlighter.mjs').SyntaxHighlighter }} options
  */
-export default function rehypeShikiji(options) {
-  let highlighter;
+export default async function rehypeShikiji(options) {
+  const highlighter =
+    options?.highlighter ?? (await createHighlighter(options));
 
-  return async function (tree) {
-    highlighter ??= await createHighlighter(options);
-
+  return function (tree) {
     visit(tree, 'element', (_, index, parent) => {
       const languages = [];
       const displayNames = [];
