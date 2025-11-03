@@ -19,11 +19,19 @@ export const getLanguageByName = (language, langs) => {
 };
 
 /**
+ * @typedef {Object} SyntaxHighlighter
+ * @property {import('@shikijs/core').HighlighterCoreSync} shiki - The underlying shiki core instance.
+ * @property {(code: string, lang: string, meta?: Record<string, any>) => string} highlightToHtml - Highlights code and returns inner HTML of the <code> tag.
+ * @property {(code: string, lang: string, meta?: Record<string, any>) => any} highlightToHast - Highlights code and returns a HAST tree.
+ */
+
+/**
  * Factory function to create a syntax highlighter instance with utility methods.
  *
  * @param {Object} params - Parameters for highlighter creation.
  * @param {import('@shikijs/core').HighlighterCoreOptions} [params.coreOptions] - Core options for the highlighter.
  * @param {import('@shikijs/core').CodeToHastOptions} [params.highlighterOptions] - Additional options for highlighting.
+ * @returns {SyntaxHighlighter}
  */
 const createHighlighter = ({ coreOptions = {}, highlighterOptions = {} }) => {
   const options = {

@@ -21,8 +21,8 @@ import createHighlighter, { getLanguageByName } from './highlighter.mjs';
  * @property {boolean} [wasm=false] - Enable WebAssembly for the regex engine
  * @property {boolean} [twoslash=false] - Enable twoslash
  * @property {import('@shikijs/twoslash').TransformerTwoslashIndexOptions} [twoslashOptions] - Twoslash configuration options
- * @param {import('@shikijs/core').HighlighterCoreOptions} [coreOptions] - Core options for the highlighter.
- * @param {import('@shikijs/core').CodeToHastOptions} [highlighterOptions] - Additional options for highlighting.
+ * @property {import('@shikijs/core').HighlighterCoreOptions} [coreOptions] - Core options for the highlighter.
+ * @property {import('@shikijs/core').CodeToHastOptions} [highlighterOptions] - Additional options for highlighting.
  */
 
 /**

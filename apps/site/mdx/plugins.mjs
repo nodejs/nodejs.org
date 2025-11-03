@@ -15,6 +15,20 @@ import remarkTableTitles from '../util/table';
 // Reference: https://github.com/nodejs/nodejs.org/pull/7896#issuecomment-3009480615
 const OPEN_NEXT_CLOUDFLARE = 'Cloudflare' in global;
 
+// Shiki is created out here to avoid an async rehype plugin
+const singletonShiki = await rehypeShikiji({
+  // We use the faster WASM engine on the server instead of the web-optimized version.
+  //
+  // Currently we fall back to the JavaScript RegEx engine
+  // on Cloudflare workers because `shiki/wasm` requires loading via
+  // `WebAssembly.instantiate` with custom imports, which Cloudflare doesn't support
+  // for security reasons.
+  wasm: !OPEN_NEXT_CLOUDFLARE,
+
+  // TODO(@avivkeller): Find a way to enable Twoslash w/ a VFS on Cloudflare
+  twoslash: !OPEN_NEXT_CLOUDFLARE,
+});
+
 /**
  * Provides all our Rehype Plugins that are used within MDX
  */
@@ -25,21 +39,7 @@ export const rehypePlugins = [
   [rehypeAutolinkHeadings, { behavior: 'wrap' }],
   // Transforms sequential code elements into code tabs and
   // adds our syntax highlighter (Shikiji) to Codeboxes
-  [
-    rehypeShikiji,
-    {
-      // We use the faster WASM engine on the server instead of the web-optimized version.
-      //
-      // Currently we fall back to the JavaScript RegEx engine
-      // on Cloudflare workers because `shiki/wasm` requires loading via
-      // `WebAssembly.instantiate` with custom imports, which Cloudflare doesn't support
-      // for security reasons.
-      wasm: !OPEN_NEXT_CLOUDFLARE,
-
-      // TODO(@avivkeller): Find a way to enable Twoslash w/ a VFS on Cloudflare
-      twoslash: !OPEN_NEXT_CLOUDFLARE,
-    },
-  ],
+  () => singletonShiki,
 ];
 
 /**
