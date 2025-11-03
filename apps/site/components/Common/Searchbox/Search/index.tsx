@@ -3,14 +3,14 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import { SearchInput } from '@orama/ui/components';
 import { useTranslations } from 'next-intl';
-import { type FC, type PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '#site/next.constants.mjs';
 import { useSearchbox } from '#site/providers/searchboxProvider';
 
-import styles from './index.module.css';
 import { Footer } from '../Footer';
 import { SearchResultsWrapper } from '../SearchResults';
+import styles from './index.module.css';
 
 type SearchProps = PropsWithChildren & React.RefAttributes<HTMLInputElement>;
 

@@ -3,8 +3,8 @@
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext, useReducer } from 'react';
 
-import searchboxReducer, {
-  searchboxState,
+import searchReducer, {
+  searchState,
   getActions,
 } from '#site/reducers/searchboxReducer';
 import type * as Types from '#site/types/searchbox';
@@ -16,7 +16,7 @@ type SearchboxContextType =
 const SearchboxContext = createContext<SearchboxContextType>(null);
 
 export const SearchboxProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [state, dispatch] = useReducer(searchboxReducer, searchboxState);
+  const [state, dispatch] = useReducer(searchReducer, searchState);
   const actions = getActions(dispatch);
 
   const contextValue: SearchboxContextType = {

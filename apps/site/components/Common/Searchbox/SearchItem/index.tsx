@@ -4,21 +4,19 @@ import { DocumentTextIcon } from '@heroicons/react/24/outline';
 import { SearchResults } from '@orama/ui/components';
 import { useReducer, type FC } from 'react';
 
-import searchboxReducer, {
-  searchboxState,
-} from '#site/reducers/searchboxReducer';
+import searchReducer, { searchState } from '#site/reducers/searchboxReducer';
 
 import { DocumentLink } from '../DocumentLink';
+import type { Document } from '../DocumentLink';
 import styles from './index.module.css';
 import { getFormattedPath } from './utils';
-import type { Document } from '../DocumentLink';
 
 type SearchItemProps = {
   document: Document;
 };
 
 export const SearchItem: FC<SearchItemProps> = ({ document }) => {
-  const [state] = useReducer(searchboxReducer, searchboxState);
+  const [state] = useReducer(searchReducer, searchState);
   const isSearchMode = state.mode === 'search';
   return (
     <SearchResults.Item className={styles.searchResultsItem}>

@@ -2,7 +2,7 @@ import type { Dispatch } from 'react';
 
 import type * as Types from '#site/types/searchbox';
 
-export const searchboxState: Types.SearchboxState = {
+export const searchState: Types.SearchboxState = {
   // Default mode is search
   mode: 'search',
   // Chat panel starts closed

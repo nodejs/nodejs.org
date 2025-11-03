@@ -2,9 +2,9 @@ import type { Interaction } from '@orama/core';
 import { ChatInteractions } from '@orama/ui/components';
 import type { FC } from 'react';
 
-import styles from './index.module.css';
 import { ChatActions } from '../ChatActions';
 import ChatSources from '../ChatSources';
+import styles from './index.module.css';
 
 type ChatMessageProps = {
   interaction: Interaction;

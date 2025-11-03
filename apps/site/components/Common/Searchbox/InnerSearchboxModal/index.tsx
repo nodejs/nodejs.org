@@ -7,10 +7,10 @@ import { useSearchbox } from '#site/providers/searchboxProvider';
 import { ChatInput } from '../ChatInput';
 import { ChatInteractionsContainer } from '../ChatInteractions';
 import { Footer } from '../Footer';
-import styles from './index.module.css';
 import { MobileTopBar } from '../MobileTopBar';
 import { Search } from '../Search';
 import { SlidingChatPanel } from '../SlidingChatPanel';
+import styles from './index.module.css';
 
 export const InnerSearchboxModal: FC<PropsWithChildren> = () => {
   const searchbox = useSearchbox();
