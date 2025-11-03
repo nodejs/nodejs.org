@@ -23,16 +23,17 @@
       items-center
       rounded-full
       bg-black
-      motion-safe:transition-colors
-      motion-safe:duration-100
-      motion-safe:ease-out
       focus:outline-none
       focus-visible:ring-2
       focus-visible:ring-green-500
       focus-visible:ring-offset-2
-      focus-visible:ring-offset-neutral-900
+      focus-visible:ring-offset-neutral-100
+      motion-safe:transition-colors
+      motion-safe:duration-100
+      motion-safe:ease-out
       dark:bg-neutral-700
-      dark:focus-visible:ring-green-400;
+      dark:focus-visible:ring-green-400
+      dark:focus-visible:ring-offset-neutral-900;
   }
 
   .root[data-state='checked'] {
