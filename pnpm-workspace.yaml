@@ -4,7 +4,7 @@ packages:
 
 catalog:
   '@types/node': 22.18.6
-  '@types/react': ^19.2.0
+  '@types/react': ^19.2.2
   classnames: ~2.5.1
   cross-env: ^10.0.0
   react: ^19.2.0
