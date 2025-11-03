@@ -1,0 +1,43 @@
+---
+date: '2025-10-28T00:02:00.000Z'
+category: migrations
+title: Node.js v20 to v22
+layout: blog-post
+author: AugustinMauroy
+---
+
+# Node.js v20 to v22
+
+<AlertBox level="info" title="!">
+  This article covers a part of the migration from Node.js v20 to v22. The
+  userland migrations team is working on more codemods to help you with the
+  migration.
+</AlertBox>
+
+This page provides a list of codemods to help you migrate your code from Node.js v20 to v22.
+
+## `import-assertions-to-attributes`
+
+During the process of TC39 standardization, the `import assert` feature was introduced to allow importing [JSON modules](https://tc39.es/proposal-json-modules/), but during the transition to stage 4, the `assert` keyword was replaced with the `with` attribute on the `import` statement.
+
+So in [node.js v22](https://nodejs.org/fr/blog/release/v22.0.0#other-notable-changes), the `import assert` feature was removed and the `with` attribute is required instead.
+
+Also note that the `with` keyword was introduced in [node.js v18.20](https://nodejs.org/fr/blog/release/v18.20.0#added-support-for-import-attributes) but it was not mandatory until v22.
+
+The source code for this codemod can be found in the [import-assertions-to-attributes directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/import-assertions-to-attributes).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/import-assertions-to-attributes).
+
+```bash
+npx codemod run @nodejs/import-assertions-to-attributes
+```
+
+### Example:
+
+```js displayName="Before"
+import jsonData from './data.json' assert { type: 'json' };
+```
+
+```js displayName="After"
+import jsonData from './data.json' with { type: 'json' };
+```

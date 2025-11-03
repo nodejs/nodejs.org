@@ -32,11 +32,10 @@ export default function remarkTableTitles() {
       // Assign data-label to each cell in data rows
       dataRows.forEach(row => {
         row.children.forEach((cell, idx) => {
-          cell.data ??= {};
-
-          if (idx > headerLabels.length) {
+          if (idx > headerLabels.length - 1) {
             return;
           }
+          cell.data ??= {};
 
           cell.data.hProperties = {
             'data-label': headerLabels[idx],

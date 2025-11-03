@@ -178,21 +178,9 @@
               "link": "/learn/getting-started/ecmascript-2015-es6-and-beyond",
               "label": "components.navigation.learn.gettingStarted.links.ecmascript2015Es6AndBeyond"
             },
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": {
-              "link": "/learn/getting-started/nodejs-the-difference-between-development-and-production",
-              "label": "components.navigation.learn.gettingStarted.links.nodejsTheDifferenceBetweenDevelopmentAndProduction"
-            },
-            "nodejsWithWebassembly": {
-              "link": "/learn/getting-started/nodejs-with-webassembly",
-              "label": "components.navigation.learn.gettingStarted.links.nodejsWithWebassembly"
-            },
             "debugging": {
               "link": "/learn/getting-started/debugging",
               "label": "components.navigation.learn.gettingStarted.links.debugging"
-            },
-            "profiling": {
-              "link": "/learn/getting-started/profiling",
-              "label": "components.navigation.learn.gettingStarted.links.profiling"
             },
             "fetch": {
               "link": "/learn/getting-started/fetch",
@@ -202,51 +190,105 @@
               "link": "/learn/getting-started/websocket",
               "label": "components.navigation.learn.gettingStarted.links.websocket"
             },
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": {
+              "link": "/learn/getting-started/nodejs-the-difference-between-development-and-production",
+              "label": "components.navigation.learn.gettingStarted.links.nodejsTheDifferenceBetweenDevelopmentAndProduction"
+            },
+            "profiling": {
+              "link": "/learn/getting-started/profiling",
+              "label": "components.navigation.learn.gettingStarted.links.profiling"
+            },
+            "nodejsWithWebassembly": {
+              "link": "/learn/getting-started/nodejs-with-webassembly",
+              "label": "components.navigation.learn.gettingStarted.links.nodejsWithWebassembly"
+            },
             "securityBestPractices": {
               "link": "/learn/getting-started/security-best-practices",
               "label": "components.navigation.learn.gettingStarted.links.securityBestPractices"
+            },
+            "userlandMigrations": {
+              "link": "/learn/getting-started/userland-migrations",
+              "label": "components.navigation.learn.gettingStarted.links.userlandMigrations"
             }
           }
         },
-        "typescript": {
-          "label": "components.navigation.learn.typescript.links.typescript",
+        "commandLine": {
+          "label": "components.navigation.learn.commandLine.links.commandLine",
           "items": {
-            "introduction": {
-              "link": "/learn/typescript/introduction",
-              "label": "components.navigation.learn.typescript.links.introduction"
+            "runNodejsScriptsFromTheCommandLine": {
+              "link": "/learn/command-line/run-nodejs-scripts-from-the-command-line",
+              "label": "components.navigation.learn.commandLine.links.runNodejsScriptsFromTheCommandLine"
             },
-            "runNatively": {
-              "link": "/learn/typescript/run-natively",
-              "label": "components.navigation.learn.typescript.links.runNatively"
+            "howToUseTheNodejsRepl": {
+              "link": "/learn/command-line/how-to-use-the-nodejs-repl",
+              "label": "components.navigation.learn.commandLine.links.howToUseTheNodejsRepl"
             },
-            "run": {
-              "link": "/learn/typescript/run",
-              "label": "components.navigation.learn.typescript.links.run"
+            "outputToTheCommandLineUsingNodejs": {
+              "link": "/learn/command-line/output-to-the-command-line-using-nodejs",
+              "label": "components.navigation.learn.commandLine.links.outputToTheCommandLineUsingNodejs"
             },
-            "transpile": {
-              "link": "/learn/typescript/transpile",
-              "label": "components.navigation.learn.typescript.links.transpile"
+            "acceptInputFromTheCommandLineInNodejs": {
+              "link": "/learn/command-line/accept-input-from-the-command-line-in-nodejs",
+              "label": "components.navigation.learn.commandLine.links.acceptInputFromTheCommandLineInNodejs"
             },
-            "publishingTSPackage": {
-              "link": "/learn/typescript/publishing-a-ts-package",
-              "label": "components.navigation.learn.typescript.links.publishingTSPackage"
+            "howToReadEnvironmentVariablesFromNodejs": {
+              "link": "/learn/command-line/how-to-read-environment-variables-from-nodejs",
+              "label": "components.navigation.learn.commandLine.links.howToReadEnvironmentVariablesFromNodejs"
+            }
+          }
+        },
+        "http": {
+          "label": "components.navigation.learn.http.links.http",
+          "items": {
+            "anatomyOfAnHttpTransaction": {
+              "link": "/learn/http/anatomy-of-an-http-transaction",
+              "label": "components.navigation.learn.http.links.anatomyOfAnHttpTransaction"
+            }
+          }
+        },
+        "manipulatingFiles": {
+          "label": "components.navigation.learn.manipulatingFiles.links.manipulatingFiles",
+          "items": {
+            "nodejsFileStats": {
+              "link": "/learn/manipulating-files/nodejs-file-stats",
+              "label": "components.navigation.learn.manipulatingFiles.links.nodejsFileStats"
+            },
+            "nodejsFilePaths": {
+              "link": "/learn/manipulating-files/nodejs-file-paths",
+              "label": "components.navigation.learn.manipulatingFiles.links.nodejsFilePaths"
+            },
+            "readingFilesWithNodejs": {
+              "link": "/learn/manipulating-files/reading-files-with-nodejs",
+              "label": "components.navigation.learn.manipulatingFiles.links.readingFilesWithNodejs"
+            },
+            "writingFilesWithNodejs": {
+              "link": "/learn/manipulating-files/writing-files-with-nodejs",
+              "label": "components.navigation.learn.manipulatingFiles.links.writingFilesWithNodejs"
+            },
+            "workingWithFileDescriptorsInNodejs": {
+              "link": "/learn/manipulating-files/working-with-file-descriptors-in-nodejs",
+              "label": "components.navigation.learn.manipulatingFiles.links.workingWithFileDescriptorsInNodejs"
+            },
+            "workingWithFoldersInNodejs": {
+              "link": "/learn/manipulating-files/working-with-folders-in-nodejs",
+              "label": "components.navigation.learn.manipulatingFiles.links.workingWithFoldersInNodejs"
+            },
+            "workingWithDifferentFilesystems": {
+              "link": "/learn/manipulating-files/working-with-different-filesystems",
+              "label": "components.navigation.learn.manipulatingFiles.links.workingWithDifferentFilesystems"
             }
           }
         },
         "asynchronousWork": {
           "label": "components.navigation.learn.asynchronousWork.links.asynchronousWork",
           "items": {
-            "asynchronousFlowControl": {
-              "link": "/learn/asynchronous-work/asynchronous-flow-control",
-              "label": "components.navigation.learn.asynchronousWork.links.asynchronousFlowControl"
-            },
-            "overviewOfBlockingVsNonBlocking": {
-              "link": "/learn/asynchronous-work/overview-of-blocking-vs-non-blocking",
-              "label": "components.navigation.learn.asynchronousWork.links.overviewOfBlockingVsNonBlocking"
-            },
             "javascriptAsynchronousProgrammingAndCallbacks": {
               "link": "/learn/asynchronous-work/javascript-asynchronous-programming-and-callbacks",
               "label": "components.navigation.learn.asynchronousWork.links.javascriptAsynchronousProgrammingAndCallbacks"
+            },
+            "asynchronousFlowControl": {
+              "link": "/learn/asynchronous-work/asynchronous-flow-control",
+              "label": "components.navigation.learn.asynchronousWork.links.asynchronousFlowControl"
             },
             "discoverPromisesInNodejs": {
               "link": "/learn/asynchronous-work/discover-promises-in-nodejs",
@@ -255,6 +297,10 @@
             "discoverJavascriptTimers": {
               "link": "/learn/asynchronous-work/discover-javascript-timers",
               "label": "components.navigation.learn.asynchronousWork.links.discoverJavascriptTimers"
+            },
+            "overviewOfBlockingVsNonBlocking": {
+              "link": "/learn/asynchronous-work/overview-of-blocking-vs-non-blocking",
+              "label": "components.navigation.learn.asynchronousWork.links.overviewOfBlockingVsNonBlocking"
             },
             "eventLoopTimersAndNexttick": {
               "link": "/learn/asynchronous-work/event-loop-timers-and-nexttick",
@@ -278,76 +324,42 @@
             }
           }
         },
-        "manipulatingFiles": {
-          "label": "components.navigation.learn.manipulatingFiles.links.manipulatingFiles",
-          "items": {
-            "nodejsFileStats": {
-              "link": "/learn/manipulating-files/nodejs-file-stats",
-              "label": "components.navigation.learn.manipulatingFiles.links.nodejsFileStats"
-            },
-            "nodejsFilePaths": {
-              "link": "/learn/manipulating-files/nodejs-file-paths",
-              "label": "components.navigation.learn.manipulatingFiles.links.nodejsFilePaths"
-            },
-            "workingWithFileDescriptorsInNodejs": {
-              "link": "/learn/manipulating-files/working-with-file-descriptors-in-nodejs",
-              "label": "components.navigation.learn.manipulatingFiles.links.workingWithFileDescriptorsInNodejs"
-            },
-            "readingFilesWithNodejs": {
-              "link": "/learn/manipulating-files/reading-files-with-nodejs",
-              "label": "components.navigation.learn.manipulatingFiles.links.readingFilesWithNodejs"
-            },
-            "writingFilesWithNodejs": {
-              "link": "/learn/manipulating-files/writing-files-with-nodejs",
-              "label": "components.navigation.learn.manipulatingFiles.links.writingFilesWithNodejs"
-            },
-            "workingWithFoldersInNodejs": {
-              "link": "/learn/manipulating-files/working-with-folders-in-nodejs",
-              "label": "components.navigation.learn.manipulatingFiles.links.workingWithFoldersInNodejs"
-            },
-            "workingWithDifferentFilesystems": {
-              "link": "/learn/manipulating-files/working-with-different-filesystems",
-              "label": "components.navigation.learn.manipulatingFiles.links.workingWithDifferentFilesystems"
-            }
-          }
-        },
-        "commandLine": {
-          "label": "components.navigation.learn.commandLine.links.commandLine",
-          "items": {
-            "runNodejsScriptsFromTheCommandLine": {
-              "link": "/learn/command-line/run-nodejs-scripts-from-the-command-line",
-              "label": "components.navigation.learn.commandLine.links.runNodejsScriptsFromTheCommandLine"
-            },
-            "howToReadEnvironmentVariablesFromNodejs": {
-              "link": "/learn/command-line/how-to-read-environment-variables-from-nodejs",
-              "label": "components.navigation.learn.commandLine.links.howToReadEnvironmentVariablesFromNodejs"
-            },
-            "howToUseTheNodejsRepl": {
-              "link": "/learn/command-line/how-to-use-the-nodejs-repl",
-              "label": "components.navigation.learn.commandLine.links.howToUseTheNodejsRepl"
-            },
-            "outputToTheCommandLineUsingNodejs": {
-              "link": "/learn/command-line/output-to-the-command-line-using-nodejs",
-              "label": "components.navigation.learn.commandLine.links.outputToTheCommandLineUsingNodejs"
-            },
-            "acceptInputFromTheCommandLineInNodejs": {
-              "link": "/learn/command-line/accept-input-from-the-command-line-in-nodejs",
-              "label": "components.navigation.learn.commandLine.links.acceptInputFromTheCommandLineInNodejs"
-            }
-          }
-        },
-        "migrations": {
-          "label": "components.navigation.learn.migrations.links.migrations",
+        "typescript": {
+          "label": "components.navigation.learn.typescript.links.typescript",
           "items": {
             "introduction": {
-              "link": "/learn/migrations/introduction",
-              "label": "components.navigation.learn.migrations.links.introduction"
+              "link": "/learn/typescript/introduction",
+              "label": "components.navigation.learn.typescript.links.introduction"
+            },
+            "runNatively": {
+              "link": "/learn/typescript/run-natively",
+              "label": "components.navigation.learn.typescript.links.runNatively"
+            },
+            "transpile": {
+              "link": "/learn/typescript/transpile",
+              "label": "components.navigation.learn.typescript.links.transpile"
+            },
+            "run": {
+              "link": "/learn/typescript/run",
+              "label": "components.navigation.learn.typescript.links.run"
+            },
+            "publishingTSPackage": {
+              "link": "/learn/typescript/publishing-a-ts-package",
+              "label": "components.navigation.learn.typescript.links.publishingTSPackage"
             }
           }
         },
         "modules": {
           "label": "components.navigation.learn.modules.links.modules",
           "items": {
+            "howToUseStreams": {
+              "link": "/learn/modules/how-to-use-streams",
+              "label": "components.navigation.learn.modules.links.howToUseStreams"
+            },
+            "backpressuringInStreams": {
+              "link": "/learn/modules/backpressuring-in-streams",
+              "label": "components.navigation.learn.modules.links.backpressuringInStreams"
+            },
             "publishingAPackage": {
               "link": "/learn/modules/publishing-a-package",
               "label": "components.navigation.learn.modules.links.publishingAPackage"
@@ -356,21 +368,9 @@
               "link": "/learn/modules/publishing-node-api-modules",
               "label": "components.navigation.learn.modules.links.publishingNodeApiModules"
             },
-            "anatomyOfAnHttpTransaction": {
-              "link": "/learn/modules/anatomy-of-an-http-transaction",
-              "label": "components.navigation.learn.modules.links.anatomyOfAnHttpTransaction"
-            },
             "abiStability": {
               "link": "/learn/modules/abi-stability",
               "label": "components.navigation.learn.modules.links.abiStability"
-            },
-            "howToUseStreams": {
-              "link": "/learn/modules/how-to-use-streams",
-              "label": "components.navigation.learn.modules.links.howToUseStreams"
-            },
-            "backpressuringInStreams": {
-              "link": "/learn/modules/backpressuring-in-streams",
-              "label": "components.navigation.learn.modules.links.backpressuringInStreams"
             }
           }
         },

@@ -48,7 +48,8 @@
             "profiling": "Profilage des applications Node.js",
             "fetch": "Récupérer des données avec Node.js",
             "websocket": "Client WebSocket avec Node.js",
-            "securityBestPractices": "Meilleures pratiques de sécurité"
+            "securityBestPractices": "Meilleures pratiques de sécurité",
+            "userlandMigrations": "Introduction à Userland Migrations"
           }
         },
         "typescript": {
@@ -98,12 +99,6 @@
             "acceptInputFromTheCommandLineInNodejs": "Accepter des données provenant de la ligne de commande dans Node.js"
           }
         },
-        "migrations": {
-          "links": {
-            "migrations": "Migrations des zones d'utilisation",
-            "introduction": "Introduction aux migrations des zones d'utilisation"
-          }
-        },
         "modules": {
           "links": {
             "modules": "Modules",
@@ -144,6 +139,7 @@
           "governance": "Gouvernance du Projet",
           "releases": "Versions de Node.js",
           "security": "Rapport de sécurité",
+          "partners": "Partenaires et soutiens",
           "eol": "Fin de vie (EOL)"
         }
       },
@@ -304,7 +300,7 @@
     },
     "blog": {
       "blogHeader": {
-        "subtitle": "Les dernières nouvelles de Node.js, des études de cas, des tutoriels et des ressources.",
+        "subtitle": "Les dernières actualités Node.js, les guides de migration et les résumés d'événements",
         "rssLink": "Flux RSS"
       }
     }
@@ -335,6 +331,7 @@
         "video": "Vidéo",
         "weekly": "Mises à jour hebdomadaire",
         "wg": "Groupes de travail",
+        "migrations": "Guides de migration",
         "events": "Événements"
       }
     },
