@@ -45,7 +45,7 @@
     "@radix-ui/react-tabs": "~1.1.13",
     "@radix-ui/react-toast": "~1.2.15",
     "@radix-ui/react-tooltip": "~1.2.8",
-    "@tailwindcss/postcss": "~4.1.14",
+    "@tailwindcss/postcss": "~4.1.16",
     "@vcarl/remark-headings": "~0.1.0",
     "classnames": "catalog:",
     "postcss-calc": "^10.1.1",
