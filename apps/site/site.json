@@ -37,12 +37,12 @@
   },
   "websiteBadges": {
     "index": {
-      "startDate": "2025-04-01T00:00:00.000Z",
-      "endDate": "2025-07-01T00:00:00.000Z",
+      "startDate": "2025-10-30T00:00:00.000Z",
+      "endDate": "2025-11-15T00:00:00.000Z",
       "kind": "default",
-      "title": "JSConf",
-      "text": "Get your tickets now!",
-      "link": "https://events.linuxfoundation.org/jsconf-north-america"
+      "title": "Discover",
+      "text": "New migration guides",
+      "link": "https://nodejs.org/en/blog/migrations"
     }
   }
 }

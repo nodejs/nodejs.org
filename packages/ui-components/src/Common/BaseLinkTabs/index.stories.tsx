@@ -27,7 +27,6 @@ export const Default: Story = {
     ],
     activeTab: 'prebuilt',
     children: <p>Tab content goes here</p>,
-    onSelect: console.log,
   },
 };
 

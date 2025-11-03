@@ -2,12 +2,14 @@
 
 .twoslash-hover {
   cursor: text;
+  user-select: text;
 }
 
 .twoslash-popup-code {
   max-width: 600px;
   display: block;
   width: fit-content;
+  user-select: none;
 }
 
 .twoslash-popup-code:not(:has(div)) {

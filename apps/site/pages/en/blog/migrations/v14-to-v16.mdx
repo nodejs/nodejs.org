@@ -1,0 +1,147 @@
+---
+date: '2025-10-28T00:01:00.000Z'
+category: migrations
+title: Node.js v14 to v16
+layout: blog-post
+author: AugustinMauroy
+---
+
+# Node.js v14 to v16
+
+<AlertBox level="info" title="!">
+  This article covers a part of the migration from Node.js v14 to v16. The
+  userland migrations team is working on more codemods to help you with the
+  migration.
+</AlertBox>
+
+This page provides a list of codemods to help you migrate your code from Node.js v14 to v16.
+
+## `create-require-from-path`
+
+Node.js v16 replaced the [`createRequireFromPath`](https://nodejs.org/api/module.html#module_module_createrequirefrompath) function, deprecated in [DEP0148](https://nodejs.org/api/deprecations.html#DEP0148), with the modern [`createRequire`](https://nodejs.org/api/module.html#module_module_createrequire) function. This codemod replaces calls of the deprecated function with the modern alternative mentioned.
+
+The source code for this codemod can be found in the [create-require-from-path directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/create-require-from-path).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/create-require-from-path).
+
+```bash
+npx codemod run @nodejs/create-require-from-path
+```
+
+### Example:
+
+```js displayName="Before"
+import { createRequireFromPath } from 'node:module';
+
+const requireFromPath = createRequireFromPath('/path/to/module');
+const myModule = requireFromPath('./myModule.cjs');
+```
+
+```js displayName="After"
+import { createRequire } from 'node:module';
+
+const require = createRequire('/path/to/module');
+const myModule = require('./myModule.cjs');
+```
+
+## `process-main-module`
+
+The `process.mainModule` property was deprecated in favor of `require.main`. This codemod will help you replace the old `process.mainModule` usage with the new `require.main` usage.
+
+So the codemod handle [DEP0138](https://nodejs.org/api/deprecations.html#DEP0138).
+
+The source code for this codemod can be found in the [process-main-module directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/process-main-module).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/process-main-module).
+
+```bash
+npx codemod run @nodejs/process-main-module
+```
+
+### Example:
+
+```js displayName="Before"
+if (process.mainModule === 'mod.js') {
+  // cli thing
+} else {
+  // module thing
+}
+```
+
+```js displayName="After"
+if (require.main === 'mod.js') {
+  // cli thing
+} else {
+  // module thing
+}
+```
+
+## `rmdir`
+
+The `fs.rmdir` function was deprecated in favor of `fs.rm` with the `{ recursive: true }` option. This codemod will help you replace the old `fs.rmdir` function with the new `fs.rm` function.
+
+so this codemod handle [DEP0147](https://nodejs.org/api/deprecations.html#DEP0147).
+
+The source code for this codemod can be found in the [rmdir directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/rmdir).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/rmdir).
+
+```bash
+npx codemod run @nodejs/rmdir
+```
+
+### Example:
+
+```js displayName="Before"
+const fs = require('node:fs');
+
+// Using fs.rmdir with the recursive option
+fs.rmdir(path, { recursive: true }, callback);
+
+// Using fs.rmdirSync with the recursive option
+fs.rmdirSync(path, { recursive: true });
+
+// Using fs.promises.rmdir with the recursive option
+fs.promises.rmdir(path, { recursive: true });
+```
+
+```js displayName="After"
+const fs = require('node:fs');
+
+// Using fs.rm with recursive and force options
+fs.rm(path, { recursive: true, force: true }, callback);
+
+// Using fs.rmSync with recursive and force options
+fs.rmSync(path, { recursive: true, force: true });
+
+// Using fs.promises.rm with recursive and force options
+fs.promises.rm(path, { recursive: true, force: true });
+```
+
+## `tmpDir-to-tmpdir`
+
+The `tmpDir` function was renamed to `tmpdir` in Node.js v16. This codemod will help you replace all instances of `tmpDir` with `tmpdir`.
+
+So the codemod handles [DEP0022](https://nodejs.org/docs/latest/api/deprecations.html#dep0022-ostmpdir).
+
+The source code for this codemod can be found in the [tmpdir-to-tmpdir directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/tmpdir-to-tmpdir).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/tmpDir-to-tmpdir).
+
+```bash
+npx codemod run @nodejs/tmpDir-to-tmpdir
+```
+
+### Example:
+
+```js displayName="Before"
+import { tmpDir } from 'node:os';
+
+const foo = tmpDir();
+```
+
+```js displayName="After"
+import { tmpdir } from 'node:os';
+
+const foo = tmpdir();
+```

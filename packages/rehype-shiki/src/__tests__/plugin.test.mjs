@@ -25,7 +25,7 @@ describe('rehypeShikiji', async () => {
 
   it('calls visit twice', async () => {
     mockVisit.mock.resetCalls();
-    await rehypeShikiji()(mockTree);
+    (await rehypeShikiji())(mockTree);
     assert.strictEqual(mockVisit.mock.calls.length, 2);
   });
 
@@ -61,7 +61,7 @@ describe('rehypeShikiji', async () => {
       }
     });
 
-    await rehypeShikiji()(mockTree);
+    (await rehypeShikiji())(mockTree);
     assert.ok(parent.children.some(child => child.tagName === 'CodeTabs'));
   });
 });

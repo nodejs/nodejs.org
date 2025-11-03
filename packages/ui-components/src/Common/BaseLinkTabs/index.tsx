@@ -40,6 +40,7 @@ const BaseLinkTabs: FC<LinkTabsProps> = ({
       className={styles.tabsSelect}
       defaultValue={tabs.find(tab => tab.key === activeTab)?.link}
       values={tabs.map(tab => ({ label: tab.label, value: tab.link }))}
+      as={Component}
     />
 
     {children}
