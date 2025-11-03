@@ -104,6 +104,8 @@ async function streamOllamaCompletion(prompt) {
   // You can read about HTTP status codes here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
   // 200 means the request was successful.
   if (statusCode !== 200) {
+    // consuming the response body is mandatory: https://undici.nodejs.org/#/?id=garbage-collection
+    await body.dump();
     throw new Error(`Ollama request failed with status ${statusCode}`);
   }
 
