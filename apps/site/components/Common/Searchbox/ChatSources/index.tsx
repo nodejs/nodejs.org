@@ -23,20 +23,21 @@ const ChatSources: FC<ChatSourcesProps> = ({ interaction }) => {
     >
       {(document: AnyObject, index: number) => (
         <div className={styles.chatSource} key={index}>
-          {typeof document.pageSectionTitle === 'string' && (
-            <DocumentLink
-              document={document as Document}
-              className={styles.chatSourceLink}
-              data-focus-on-arrow-nav
-            >
-              <span className={styles.chatSourceTitle}>
-                {document.pageSectionTitle &&
-                document.pageSectionTitle.length > 25
-                  ? `${document.pageSectionTitle.substring(0, 25)}...`
-                  : document.pageSectionTitle}
-              </span>
-            </DocumentLink>
-          )}
+          {!!document.pageSectionTitle &&
+            typeof document.pageSectionTitle === 'string' && (
+              <DocumentLink
+                document={document as Document}
+                className={styles.chatSourceLink}
+                data-focus-on-arrow-nav
+              >
+                <span className={styles.chatSourceTitle}>
+                  {document.pageSectionTitle &&
+                  document.pageSectionTitle.length > 25
+                    ? `${document.pageSectionTitle.substring(0, 25)}...`
+                    : document.pageSectionTitle}
+                </span>
+              </DocumentLink>
+            )}
         </div>
       )}
     </ChatInteractions.Sources>
