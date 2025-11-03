@@ -84,7 +84,7 @@
     "@next/eslint-plugin-next": "15.5.4",
     "@node-core/remark-lint": "workspace:*",
     "@opennextjs/cloudflare": "^1.6.4",
-    "@playwright/test": "^1.54.1",
+    "@playwright/test": "^1.56.1",
     "@testing-library/user-event": "~14.6.1",
     "@types/mdast": "^4.0.4",
     "@types/mdx": "^2.0.13",
