@@ -86,7 +86,7 @@ function getImagesConfig() {
     //
     return {
       loader: 'custom',
-      loaderFile: './cloudflare-image-loader.ts',
+      loaderFile: './cloudflare/image-loader.ts',
     };
   }
 
