@@ -1,7 +1,11 @@
 'use strict';
 import createNextIntlPlugin from 'next-intl/plugin';
 
-import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
+import {
+  BASE_PATH,
+  ENABLE_STATIC_EXPORT,
+  OPEN_NEXT_CLOUDFLARE,
+} from './next.constants.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 
 /** @type {import('next').NextConfig} */
@@ -20,12 +24,7 @@ const nextConfig = {
     //            (https://developers.cloudflare.com/images/transform-images/sources/)
     //            in the Cloudflare dashboard itself instead (to the exact same values present in `remotePatterns` below).
     //
-    // TODO: The `OPEN_NEXT_CLOUDFLARE` environment variable is being
-    //       defined in the worker building script, ideally the open-next
-    //       adapter should set it itself when it invokes the Next.js build
-    //       process, once it does that remove the manual `OPEN_NEXT_CLOUDFLARE`
-    //       definition in the package.json script.
-    process.env.OPEN_NEXT_CLOUDFLARE
+    OPEN_NEXT_CLOUDFLARE
       ? {
           loader: 'custom',
           loaderFile: './cloudflare-image-loader.ts',
@@ -100,12 +99,7 @@ const nextConfig = {
   },
   // If we're building for the Cloudflare deployment we want to set
   // an appropriate deploymentId (needed for skew protection)
-  // TODO: The `OPEN_NEXT_CLOUDFLARE` environment variable is being
-  //       defined in the worker building script, ideally the open-next
-  //       adapter should set it itself when it invokes the Next.js build
-  //       process, once it does that remove the manual `OPEN_NEXT_CLOUDFLARE`
-  //       definition in the package.json script.
-  deploymentId: process.env.OPEN_NEXT_CLOUDFLARE
+  deploymentId: OPEN_NEXT_CLOUDFLARE
     ? (await import('@opennextjs/cloudflare')).getDeploymentId()
     : undefined,
 };
