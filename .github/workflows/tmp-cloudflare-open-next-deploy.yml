@@ -68,4 +68,4 @@ jobs:
           # Note the R2_* env variables below are useful for speeding up the assets upload
           # process, see: https://opennext.js.org/cloudflare/cli#populatecache-command
           R2_ACCESS_KEY_ID: ${{ env.R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY`: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
