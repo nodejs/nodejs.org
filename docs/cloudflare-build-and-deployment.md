@@ -19,8 +19,9 @@ Key configurations include:
   - This is currently set to `fb4a2d0f103c6ff38854ac69eb709272`, which is the ID of a Cloudflare account controlled by Node.js, and used for testing.
 - `build`: Defines the build command to generate the Node.js filesystem polyfills required for the application to run on Cloudflare Workers. This uses the [`@flarelabs/wrangler-build-time-fs-assets-polyfilling`](https://github.com/flarelabs-net/wrangler-build-time-fs-assets-polyfilling) package.
 - `alias`: Maps aliases for the Node.js filesystem polyfills generated during the build process.
-- `kv_namespaces`: Contains a single KV binding definition for `NEXT_INC_CACHE_KV`. This is used to implement the Next.js incremental cache.
-  - This is currently set up to a KV in the aforementioned Cloudflare testing account.
+- `r2_buckets`: Contains a single R2 binding definition for `NEXT_INC_CACHE_R2_BUCKET`. This is used to implement the Next.js incremental cache.
+  - This is currently set up to a R2 bucket in the aforementioned Cloudflare testing account.
+- `durable_objects`: Contains a single DurableObject binding definition for `NEXT_CACHE_DO_QUEUE`. This is used to implement the Open-next cache queue.
 
 ### OpenNext Configuration
 
