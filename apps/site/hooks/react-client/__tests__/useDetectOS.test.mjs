@@ -72,7 +72,7 @@ describe('useDetectOS', () => {
       assert.deepEqual(result.current, {
         os: 'MAC',
         bitness: '32',
-        architecture: 'x86',
+        architecture: 'arm64',
       });
     });
   });
