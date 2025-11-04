@@ -166,6 +166,7 @@ async function fetchGitHubRepos() {
           } catch (error) {
             console.error('Error parsing JSON:', error);
           }
+          console.log('Stream processing completed.');
           console.log(`Response status: ${res.statusCode}`);
           callback();
         },
