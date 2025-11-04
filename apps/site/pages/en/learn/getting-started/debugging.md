@@ -89,7 +89,7 @@ See [Chrome DevTools Frontend](https://github.com/ChromeDevTools/devtools-fronte
 - In the Debug panel, click the settings icon to open `.vscode/launch.json`.
   Select "Node.js" for initial setup.
 
-See https://github.com/microsoft/vscode for more information.
+See https://code.visualstudio.com/docs/nodejs/nodejs-debugging for more information.
 
 ### Visual Studio 2017+
 
