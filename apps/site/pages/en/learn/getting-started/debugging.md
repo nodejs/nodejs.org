@@ -71,13 +71,18 @@ Several commercial and open source tools can also connect to the Node.js Inspect
 
 ### Chrome DevTools 55+, Microsoft Edge
 
-- **Option 1**: Open `chrome://inspect` in a Chromium-based
-  browser or `edge://inspect` in Edge. Click the Configure button and ensure your target host and port
-  are listed.
-- **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
-  (see above) or the --inspect hint text and paste into Chrome.
+#### Option 1: Use the built-in DevTools UI
 
-See https://github.com/ChromeDevTools/devtools-frontend, https://www.microsoftedgeinsider.com for more information.
+- Open `chrome://inspect` (`edge://inspect` in Microsoft Edge) in your browser.
+- Click the Configure button and ensure your target host and port are listed.
+- Your Node.js application should appear in the Remote Target list.
+
+#### Option 2: Connect manually
+
+- Visit `http://localhost:<inspect-port>/json/list`. It should return a JSON object containing a `devtoolsFrontendUrl`.
+- Paste the URL directly into your browser's address bar
+
+See [Chrome DevTools Frontend](https://github.com/ChromeDevTools/devtools-frontend) and [Microsoft Edge DevTools Guide](https://learn.microsoft.com/microsoft-edge/devtools-guide-chromium/) for more information.
 
 ### Visual Studio Code 1.10+
 
