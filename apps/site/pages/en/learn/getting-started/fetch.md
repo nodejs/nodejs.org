@@ -133,7 +133,8 @@ try {
 [Streams](https://nodejs.org/docs/v22.14.0/api/stream.html#stream) is a feature in Node.js that allows you to read and write chunks of data.
 
 ```js
-import { Writable } from 'stream';
+import { Writable } from 'node:stream';
+
 import { stream } from 'undici';
 
 async function fetchGitHubRepos() {
