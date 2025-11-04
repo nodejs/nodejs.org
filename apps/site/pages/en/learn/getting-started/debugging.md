@@ -109,18 +109,12 @@ See https://github.com/microsoft/vscode for more information.
 
 See https://github.com/cyrus-and/chrome-remote-interface for more information.
 
-### Gitpod
-
-- Start a Node.js debug configuration from the `Debug` view or hit `F5`. [Detailed instructions](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
-
-See https://www.gitpod.io for more information.
-
 ### Eclipse IDE with Eclipse Wild Web Developer extension
 
 - From a .js file, choose "Debug As... > Node program", or
 - Create a Debug Configuration to attach debugger to running Node.js application (already started with `--inspect`).
 
-See https://eclipse.org/eclipseide for more information.
+See https://eclipseide.org/ for more information.
 
 ## Command-line options
 
