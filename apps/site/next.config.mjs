@@ -109,7 +109,7 @@ async function getDeploymentId() {
   if (OPEN_NEXT_CLOUDFLARE) {
     // If we're building for the Cloudflare deployment we want to set
     // an appropriate deploymentId (needed for skew protection)
-    return await import('@opennextjs/cloudflare').getDeploymentId();
+    return (await import('@opennextjs/cloudflare')).getDeploymentId();
   }
 
   return undefined;
