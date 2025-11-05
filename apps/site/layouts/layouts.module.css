@@ -114,7 +114,7 @@
 }
 
 .downloadLayout {
-  section:nth-last-child(1) {
+  section:nth-last-child(3) {
     @apply flex
       flex-col
       gap-2;
@@ -124,7 +124,7 @@
     }
   }
 
-  section:nth-last-child(2) p {
+  section:nth-last-child(4) p {
     @apply flex
       flex-row
       flex-wrap
