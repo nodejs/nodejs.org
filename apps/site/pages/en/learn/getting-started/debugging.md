@@ -80,7 +80,7 @@ Several commercial and open source tools can also connect to the Node.js Inspect
 #### Option 2: Connect manually
 
 - Visit `http://localhost:<inspect-port>/json/list`. It should return a JSON object containing a `devtoolsFrontendUrl`.
-- Paste the URL directly into your browser's address bar
+- Paste the URL directly into your browser's address bar.
 
 See [Chrome DevTools Frontend](https://github.com/ChromeDevTools/devtools-frontend) and [Microsoft Edge DevTools Guide](https://learn.microsoft.com/microsoft-edge/devtools-guide-chromium/) for more information.
 
