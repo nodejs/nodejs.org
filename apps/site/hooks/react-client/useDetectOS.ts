@@ -15,6 +15,37 @@ type UserOSState = {
   architecture: Architecture | '';
 };
 
+// taken from https://github.com/faisalman/ua-parser-js/issues/732#issue-2348848266
+function isAppleSilicon() {
+  try {
+    // Best guess if the device uses Apple Silicon: https://stackoverflow.com/a/65412357
+    const webglContext = document.createElement('canvas').getContext('webgl');
+    if (webglContext == null) {
+      return false;
+    }
+    const debugInfo = webglContext.getExtension('WEBGL_debug_renderer_info');
+    const renderer =
+      (debugInfo &&
+        webglContext.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL)) ||
+      '';
+    if (renderer.match(/Apple/) && !renderer.match(/Apple GPU/)) {
+      return true;
+    }
+
+    if (
+      webglContext
+        .getSupportedExtensions()
+        ?.includes('WEBGL_compressed_texture_s3tc_srgb')
+    ) {
+      return true;
+    }
+  } catch {
+    /**/
+  }
+
+  return false;
+}
+
 const useDetectOS = () => {
   const [userOSState, setUserOSState] = useState<UserOSState>({
     os: 'LOADING',
@@ -41,7 +72,7 @@ const useDetectOS = () => {
         // If there is no getHighEntropyValues API on the Browser or it failed to resolve
         // we attempt to fallback to what the User Agent indicates
         bitness = uaIndicates64 ? '64' : '32',
-        architecture = 'x86',
+        architecture = isAppleSilicon() ? 'arm' : 'x86',
       }) => {
         setUserOSState(current => ({
           ...current,
