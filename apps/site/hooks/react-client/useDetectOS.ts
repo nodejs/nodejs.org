@@ -46,8 +46,6 @@ const useDetectOS = () => {
         // we assume that MacOS has moved to arm64 by default now
         architecture = os === 'MAC' ? 'arm' : 'x86',
       }) => {
-        console.log({ bitness, architecture });
-
         setUserOSState(current => ({
           ...current,
           bitness: bitness as Bitness,
