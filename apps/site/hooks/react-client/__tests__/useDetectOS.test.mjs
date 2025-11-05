@@ -71,8 +71,8 @@ describe('useDetectOS', () => {
     await waitFor(() => {
       assert.deepEqual(result.current, {
         os: 'MAC',
-        bitness: '32',
-        architecture: 'arm64',
+        bitness: '64',
+        architecture: 'arm',
       });
     });
   });
