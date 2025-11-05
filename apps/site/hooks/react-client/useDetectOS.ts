@@ -7,7 +7,7 @@ import type {
   Bitness,
   OperatingSystem,
 } from '#site/types/userAgent';
-import { getHighEntropyValues, detectOS } from '#site/util/userAgent';
+import { detectOS, getHighEntropyValues } from '#site/util/userAgent';
 
 type UserOSState = {
   os: OperatingSystem | 'LOADING';
@@ -42,10 +42,12 @@ const useDetectOS = () => {
       ({
         // If there is no getHighEntropyValues API on the Browser or it failed to resolve
         // we attempt to fallback to what the User Agent indicates
-        bitness = uaIndicates64 ? '64' : '32',
+        bitness = os === 'MAC' || uaIndicates64 ? '64' : '32',
         // we assume that MacOS has moved to arm64 by default now
-        architecture = os === 'MAC' ? 'arm64' : 'x86',
+        architecture = os === 'MAC' ? 'arm' : 'x86',
       }) => {
+        console.log({ bitness, architecture });
+
         setUserOSState(current => ({
           ...current,
           bitness: bitness as Bitness,
