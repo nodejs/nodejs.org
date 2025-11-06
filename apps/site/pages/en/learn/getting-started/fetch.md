@@ -149,7 +149,7 @@ async function fetchGitHubRepos() {
         Accept: 'application/json',
       },
     },
-    (res) => {
+    res => {
       let buffer = '';
 
       return new Writable({
