@@ -101,6 +101,8 @@ async function downloadFile(url, outputPath) {
   const response = await fetch(url);
 
   if (!response.ok || !response.body) {
+    // consuming the response body is mandatory: https://undici.nodejs.org/#/?id=garbage-collection
+    await response.body?.cancel();
     throw new Error(`Failed to fetch ${url}. Status: ${response.status}`);
   }
 
