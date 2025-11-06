@@ -71,20 +71,25 @@ Several commercial and open source tools can also connect to the Node.js Inspect
 
 ### Chrome DevTools 55+, Microsoft Edge
 
-- **Option 1**: Open `chrome://inspect` in a Chromium-based
-  browser or `edge://inspect` in Edge. Click the Configure button and ensure your target host and port
-  are listed.
-- **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
-  (see above) or the --inspect hint text and paste into Chrome.
+#### Option 1: Use the built-in DevTools UI
 
-See https://github.com/ChromeDevTools/devtools-frontend, https://www.microsoftedgeinsider.com for more information.
+- Open `chrome://inspect` (`edge://inspect` in Microsoft Edge) in your browser.
+- Click the Configure button and ensure your target host and port are listed.
+- Your Node.js application should appear in the Remote Target list.
+
+#### Option 2: Connect manually
+
+- Visit `http://localhost:<inspect-port>/json/list`. It should return a JSON object containing a `devtoolsFrontendUrl`.
+- Copy the `devtoolsFrontendUrl` value from the response and paste it into your browser's address bar.
+
+See [Chrome DevTools Frontend](https://github.com/ChromeDevTools/devtools-frontend) and [Microsoft Edge DevTools Guide](https://learn.microsoft.com/microsoft-edge/devtools-guide-chromium/) for more information.
 
 ### Visual Studio Code 1.10+
 
 - In the Debug panel, click the settings icon to open `.vscode/launch.json`.
   Select "Node.js" for initial setup.
 
-See https://github.com/microsoft/vscode for more information.
+See https://code.visualstudio.com/docs/nodejs/nodejs-debugging for more information.
 
 ### Visual Studio 2017+
 
@@ -104,18 +109,12 @@ See https://github.com/microsoft/vscode for more information.
 
 See https://github.com/cyrus-and/chrome-remote-interface for more information.
 
-### Gitpod
-
-- Start a Node.js debug configuration from the `Debug` view or hit `F5`. [Detailed instructions](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
-
-See https://www.gitpod.io for more information.
-
 ### Eclipse IDE with Eclipse Wild Web Developer extension
 
 - From a .js file, choose "Debug As... > Node program", or
 - Create a Debug Configuration to attach debugger to running Node.js application (already started with `--inspect`).
 
-See https://eclipse.org/eclipseide for more information.
+See https://eclipseide.org/ for more information.
 
 ## Command-line options
 
