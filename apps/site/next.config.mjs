@@ -19,36 +19,11 @@ const nextConfig = {
     // We add it to the remote pattern for the static images we use from multiple sources
     // to be marked as safe sources (these come from Markdown files)
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'avatars.githubusercontent.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'bestpractices.coreinfrastructure.org',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'raw.githubusercontent.com',
-        port: '',
-        pathname: '/nodejs/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'user-images.githubusercontent.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'website-assets.oramasearch.com',
-        port: '',
-        pathname: '/**',
-      },
+      new URL('https://avatars.githubusercontent.com/**'),
+      new URL('https://bestpractices.coreinfrastructure.org/**'),
+      new URL('https://raw.githubusercontent.com/nodejs/**'),
+      new URL('https://user-images.githubusercontent.com/**'),
+      new URL('https://website-assets.oramasearch.com/**'),
     ],
   },
   serverExternalPackages: ['twoslash'],
