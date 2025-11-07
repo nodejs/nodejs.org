@@ -1,12 +1,12 @@
 ---
-title: Descarcă Node.js®
+title: Unduh Node.js®
 layout: download-archive
 ---
 
 <WithDownloadArchive>
   {({ binaries, installers, version, release, sources }) => (
     <>
-      <h1>Arhiva de descărcări Node.js®</h1>
+      <h1>Arsip Unduhan Node.js®</h1>
 
       <h2 className="flex items-center gap-2">
         <img
@@ -25,34 +25,33 @@ layout: download-archive
 
       <ul className='flex list-none flex-col gap-2 p-0 text-sm'>
         <li>
-          Citește <LinkWithArrow href={`https://github.com/nodejs/node/releases/tag/${version}`}>jurnalul de modificări</LinkWithArrow> sau <Link href={`/blog/release/${version}`}>articolul din bloc</Link> pentru această versiune.
+          Baca <LinkWithArrow href={`https://github.com/nodejs/node/releases/tag/${version}`}>catatan perubahan (changelog)</LinkWithArrow> atau <Link href={`/blog/release/${version}`}>artikel blog</Link> untuk versi ini.
         </li>
         <li>
-          Află mai multe despre <Link href="/about/previous-releases">lansările Node.js</Link>, inclusiv despre programul de lansare și starea LTS.
-        </li>
-
-        <li>
-          <LinkWithArrow href={sources.shasum}>SHASUM-uri semnate</LinkWithArrow> pentru fișierele de lansare. Cum să <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">verifici</LinkWithArrow> SHASUM-urile semnate.
+          Pelajari lebih lanjut tentang <Link href="/about/previous-releases">rilis Node.js</Link>, termasuk jadwal rilis dan status LTS.
         </li>
 
         <li>
-          Descarcă un tarball semnat pentru <LinkWithArrow href={sources.tarball}>sursa Node.js {version}</LinkWithArrow> tarball.
+          <LinkWithArrow href={sources.shasum}>SHASUMS bertanda tangan</LinkWithArrow> untuk berkas rilis. Cara <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">memverifikasi</LinkWithArrow> SHASUMS bertanda tangan.
+        </li>
+
+        <li>
+          Unduh berkas tarball sumber <LinkWithArrow href={sources.tarball}>Node.js {version}</LinkWithArrow> yang telah ditandatangani.
         </li>
 
       </ul>
 
-      <h2>Alte lansări</h2>
+      <h2>Rilis lainnya</h2>
       <WithReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
 
-      <h2>Descărcări binare</h2>
+      <h2>Unduhan Biner</h2>
       <DownloadsTable source={binaries} />
 
-      <h2>Packete pentru instalatori</h2>
+      <h2>Paket Installer</h2>
       <DownloadsTable source={installers} />
 
-      <h2>Versiuni minore</h2>
+      <h2>Versi Minor</h2>
       <MinorReleasesTable releases={release.minorVersions} />
     </>
-
   )}
 </WithDownloadArchive>

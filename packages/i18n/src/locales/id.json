@@ -3,11 +3,15 @@
     "containers": {
       "footer": {
         "links": {
+          "openJSFoundation": "OpenJS Foundation",
           "trademarkPolicy": "Kebijakan Merek Dagang",
           "privacyPolicy": "Kebijakan Privasi",
-          "versionSupport": "Dukungan Versi",
           "codeOfConduct": "Pedoman Perilaku",
           "security": "Kebijakan Keamanan"
+        },
+        "releasePills": {
+          "latestLTS": "LTS Terbaru",
+          "latestRelease": "Versi Terbaru"
         }
       },
       "navBar": {
@@ -33,43 +37,35 @@
           "links": {
             "gettingStarted": "Memulai",
             "introductionToNodejs": "Pengantar Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Seberapa banyak JavaScript yang anda perlu tahu untuk menggunakan Node.js?",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Seberapa banyak JavaScript yang perlu kamu tahu untuk menggunakan Node.js?",
             "differencesBetweenNodejsAndTheBrowser": "Perbedaan Node.js dengan Browser",
             "theV8JavascriptEngine": "V8 JavaScript Engine",
             "anIntroductionToTheNpmPackageManager": "Perkenalan package manager npm",
             "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) dan seterusnya",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, perbedaan antara development dan production",
-            "nodejsWithWebassembly": "Node.js dengan WebAssembly",
             "debugging": "Men-debug Node.js",
-            "profiling": "Profilisasi Aplikasi Node.js",
             "fetch": "Pengambilan data dengan Node.js",
             "websocket": "Klien WebSocket dengan Node.js",
-            "securityBestPractices": "Praktik Keamanan Terbaik"
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, perbedaan antara development dan production",
+            "profiling": "Profilisasi Aplikasi Node.js",
+            "nodejsWithWebassembly": "Node.js dengan WebAssembly",
+            "securityBestPractices": "Praktik Keamanan Terbaik",
+            "userlandMigrations": "Pengenalan Migrasi di Userland"
           }
         },
-        "typescript": {
+        "commandLine": {
           "links": {
-            "typescript": "TypeScript",
-            "introduction": "Pengantar TypeScript",
-            "transpile": "Menjalankan kode TypeScript menggunakan transpilasi",
-            "run": "Menjalankan TypeScript dengan runner",
-            "runNatively": "Menjalankan TypeScript Secara Native",
-            "publishingTSPackage": "Menerbitkan package TypeScript"
+            "commandLine": "Baris Perintah",
+            "runNodejsScriptsFromTheCommandLine": "Menjalankan skrip Node.js dari baris perintah",
+            "howToUseTheNodejsRepl": "Cara menggunakan Node.js REPL",
+            "outputToTheCommandLineUsingNodejs": "Output ke baris perintah menggunakan Node.js",
+            "acceptInputFromTheCommandLineInNodejs": "Menerima input dari baris perintah di Node.js",
+            "howToReadEnvironmentVariablesFromNodejs": "Membaca environment variable dari Node.js"
           }
         },
-        "asynchronousWork": {
+        "http": {
           "links": {
-            "asynchronousWork": "Pekerjaan Asinkron",
-            "asynchronousFlowControl": "Pengendalian alur asinkron",
-            "discoverPromisesInNodejs": "Memahami Promise di Node.js",
-            "overviewOfBlockingVsNonBlocking": "Ringkasan Pemblokiran vs Non-Pemblokiran",
-            "javascriptAsynchronousProgrammingAndCallbacks": "Pemrograman dan Panggilan Balik Asinkron JavaScript",
-            "discoverJavascriptTimers": "Jelajahi Pengatur Waktu JavaScript",
-            "eventLoopTimersAndNexttick": "Node.js Event Loop",
-            "theNodejsEventEmitter": "Node.js Event Emitter",
-            "understandingProcessnexttick": "Memahami process.nextTick()",
-            "understandingSetimmediate": "Memahami setImmediate()",
-            "dontBlockTheEventLoop": "Jangan blokir Event Loop"
+            "http": "HTTP",
+            "anatomyOfAnHttpTransaction": "Anatomi Transaksi HTTP"
           }
         },
         "manipulatingFiles": {
@@ -77,40 +73,54 @@
             "manipulatingFiles": "Manipulasi File",
             "nodejsFileStats": "Statistik berkas Node.js",
             "nodejsFilePaths": "Path Berkas Node.js",
-            "workingWithFileDescriptorsInNodejs": "Bekerja dengan file descriptors di Node.js",
             "readingFilesWithNodejs": "Membaca file dengan Node.js",
             "writingFilesWithNodejs": "Menulis file dengan Node.js",
+            "workingWithFileDescriptorsInNodejs": "Bekerja dengan file descriptors di Node.js",
             "workingWithFoldersInNodejs": "Bekerja dengan folder di Node.js",
             "workingWithDifferentFilesystems": "Bekerja dengan Sistem file yang berbeda"
           }
         },
-        "commandLine": {
+        "asynchronousWork": {
           "links": {
-            "commandLine": "Baris Perintah",
-            "runNodejsScriptsFromTheCommandLine": "Menjalankan skrip Node.js dari baris perintah",
-            "howToReadEnvironmentVariablesFromNodejs": "Membaca environment variable dari Node.js",
-            "howToUseTheNodejsRepl": "Cara menggunakan Node.js REPL",
-            "outputToTheCommandLineUsingNodejs": "Output ke baris perintah menggunakan Node.js",
-            "acceptInputFromTheCommandLineInNodejs": "Menerima input dari baris perintah di Node.js"
+            "asynchronousWork": "Pekerjaan Asinkron",
+            "javascriptAsynchronousProgrammingAndCallbacks": "Pemrograman dan Panggilan Balik Asinkron JavaScript",
+            "asynchronousFlowControl": "Pengendalian alur asinkron",
+            "discoverPromisesInNodejs": "Memahami Promise di Node.js",
+            "discoverJavascriptTimers": "Jelajahi Pengatur Waktu JavaScript",
+            "overviewOfBlockingVsNonBlocking": "Ringkasan Pemblokiran vs Non-Pemblokiran",
+            "eventLoopTimersAndNexttick": "Node.js Event Loop",
+            "theNodejsEventEmitter": "Node.js Event Emitter",
+            "understandingProcessnexttick": "Memahami process.nextTick()",
+            "understandingSetimmediate": "Memahami setImmediate()",
+            "dontBlockTheEventLoop": "Jangan blokir Event Loop"
+          }
+        },
+        "typescript": {
+          "links": {
+            "typescript": "TypeScript",
+            "introduction": "Pengantar TypeScript",
+            "runNatively": "Menjalankan TypeScript Secara Native",
+            "transpile": "Menjalankan kode TypeScript menggunakan transpilasi",
+            "run": "Menjalankan TypeScript dengan runner",
+            "publishingTSPackage": "Menerbitkan package TypeScript"
           }
         },
         "modules": {
           "links": {
             "modules": "Module",
+            "howToUseStreams": "Cara menggunakan stream",
+            "backpressuringInStreams": "Backpressuring dalam aliran (streams)",
             "publishingAPackage": "Menerbitkan Paket",
             "publishingNodeApiModules": "Cara mempublikasikan paket Node-API",
-            "anatomyOfAnHttpTransaction": "Anatomi Transaksi HTTP",
-            "abiStability": "Stabilitas ABI",
-            "howToUseStreams": "Cara menggunakan stream",
-            "backpressuringInStreams": "Backpressuring dalam aliran (streams)"
+            "abiStability": "Stabilitas ABI"
           }
         },
         "diagnostics": {
           "links": {
             "diagnostics": "Diagnostik",
             "userJourney": "Jurnal Pengguna",
-            "understandingAndTuningMemory": "Pemahaman dan Penyetelan Memori",
             "memory": "Memori",
+            "understandingAndTuningMemory": "Pemahaman dan Penyetelan Memori",
             "liveDebugging": "Pemecahan Masalah Langsung",
             "poorPerformance": "Performa Buruk",
             "flameGraphs": "Flame Graph"
@@ -133,7 +143,9 @@
           "branding": "Pencitraan Node.js",
           "governance": "Tata Kelola Proyek",
           "releases": "Rilisan Node.js",
-          "security": "Pelaporan Keamanan"
+          "security": "Pelaporan Keamanan",
+          "partners": "Mitra & Pendukung",
+          "eol": "Akhir Masa Dukungan (EOL)"
         }
       },
       "getInvolved": {
@@ -156,17 +168,60 @@
       "status": "Status",
       "details": "Rincian"
     },
+    "downloadsTable": {
+      "fileName": "Nama Berkas",
+      "operatingSystem": "OS",
+      "architecture": "Arsitektur"
+    },
     "releaseModal": {
-      "title": "Node.js {version} ({codename})",
-      "titleWithoutCodename": "Node.js {version}",
+      "title": "Node.js v{version} ({codename})",
+      "titleWithoutCodename": "Node.js v{version}",
       "overview": "Ringkasan",
       "minorVersions": "Versi minor",
       "releaseAnnouncement": "Pengumuman Perilisan",
-      "unsupportedVersionWarning": "Versi ini sudah tidak dalam tahap pemeliharaan. Harap gunakan versi yang saat ini didukung."
+      "unsupportedVersionWarning": "Versi ini sudah tidak dalam tahap pemeliharaan. Harap gunakan versi yang didukung. <link>Pahami dukungan EOL.</link>",
+      "ltsVersionFeaturesNotice": "Ingin mencoba fitur baru lebih cepat? Dapatkan <link>versi Node.js terbaru</link> dan coba peningkatan terbarunya!"
+    },
+    "eolAlert": {
+      "message": "Dukungan komersial untuk versi yang telah melewati fase Maintenance LTS tersedia melalui para mitra dalam <link>Program Keberlanjutan Ekosistem OpenJS</link>"
+    },
+    "eolChip": {
+      "severity": {
+        "unknown": "Tak diketahui",
+        "low": "Rendah",
+        "medium": "Sedang",
+        "high": "Tinggi",
+        "critical": "Kritis"
+      }
+    },
+    "eolModal": {
+      "title": "Dukungan resmi untuk Node.js v{version} ({codename}) telah berakhir",
+      "titleWithoutCodename": "Dukungan resmi untuk Node.js v{version} telah berakhir",
+      "vulnerabilitiesMessage": "Terdapat lebih dari {count} masalah keamanan (CVE) yang diketahui terkait dengan rilis Node.js ini.\nCVE (Common Vulnerabilities and Exposures) adalah pengidentifikasi untuk kerentanan keamanan yang dilaporkan secara publik.\nMengklik tautan CVE akan membawa mu ke detail teknis yang lebih lengkap, seperti bagaimana kerentanan tersebut bekerja.",
+      "noVulnerabilitiesMessage": "Saat ini tidak ada CVE (Common Vulnerabilities and Exposures) yang diketahui terkait dengan rilis Node.js ini.\nNamun, hal tersebut tidak berarti rilis ini sepenuhnya aman—beberapa kerentanan mungkin belum ditemukan atau belum dipublikasikan secara terbuka.\nJika rilis ini sudah usang atau tidak lagi didukung, tetap disarankan untuk mempertimbangkan pembaruan agar Anda mendapatkan perbaikan dan peningkatan keamanan terbaru.",
+      "blogLinkText": "Artikel",
+      "showUnknownSeverities": "Tampilkan kerentanan dengan tingkat keparahan tidak diketahui",
+      "table": {
+        "cves": "CVE",
+        "severity": "Tingkat keparahan",
+        "overview": "Ringkasan",
+        "details": "Rincian"
+      }
+    },
+    "eolTable": {
+      "version": "Versi",
+      "codename": "Kode nama",
+      "releaseDate": "Dirilis pada",
+      "lastUpdated": "Pembaruan Terakhir",
+      "vulnerabilities": "Kerentanan",
+      "details": "Rincian"
     },
     "minorReleasesTable": {
       "version": "Versi",
       "links": "Tautan",
+      "nApiVersion": "Versi N-API",
+      "npmVersion": "versi npm",
+      "v8Version": "V8 versi",
       "actions": {
         "release": "Rilis",
         "changelog": "Log Perubahan",
@@ -217,7 +272,8 @@
         "label": "Pilih Bahasa"
       },
       "themeToggle": {
-        "label": "Aktifkan Mode Gelap"
+        "light": "Beralih ke Mode Terang",
+        "dark": "Beralih ke Mode Gelap"
       }
     },
     "metabar": {
@@ -232,13 +288,24 @@
       "tableOfContents": "Daftar isi"
     },
     "search": {
-      "searchBox": {
-        "placeholder": "Mulai mengetik..."
-      }
+      "searchPlaceholder": "Mulai mengetik...",
+      "chatPlaceholder": "Tanya saya apa saja",
+      "noResultsFoundFor": "Tidak ada hasil ditemukan untuk",
+      "suggestions": "Saran",
+      "seeAll": "Lihat semua",
+      "addMore": "Tambahkan lebih banyak",
+      "clearChat": "Bersihkan obrolan",
+      "errorMessage": "Terjadi kesalahan saat melakukan pencarian. Silakan coba lagi.",
+      "disclaimer": "Ringkasan berbasis AI dapat mengandung kesalahan. Harap verifikasi informasi tersebut.",
+      "startYourSearch": "Mulai pencarian anda",
+      "initErrorSearch": "Tidak dapat memulai layanan pencarian",
+      "initErrorChat": "Tidak dapat memulai layanan obrolan",
+      "chatButtonLabel": "Dapatkan ringkasan AI",
+      "searchButtonLabel": "Pencarian"
     },
     "blog": {
       "blogHeader": {
-        "subtitle": "Berita terbaru Node.js, studi kasus, tutorial, dan sumber.",
+        "subtitle": "Berita terbaru seputar Node.js, panduan migrasi, dan ringkasan acara",
         "rssLink": "RSS feed"
       }
     }
@@ -269,13 +336,14 @@
         "video": "Video",
         "weekly": "Pembaruan mingguan",
         "wg": "Kelompok Kerja",
+        "migrations": "Panduan Migrasi",
         "events": "Event"
       }
     },
     "error": {
       "notFound": {
         "title": "Halaman tidak dapat ditemukan",
-        "description": "Maaf, kami tidak dapat menemukan halaman yang anda cari! Coba memulai kembali dari halaman beranda."
+        "description": "Maaf, kami tidak dapat menemukan halaman yang kamu cari! Coba memulai kembali dari halaman beranda."
       },
       "internalServerError": {
         "title": "Kesalahan Server Internal",
@@ -293,7 +361,7 @@
         "os": "Sistem Operasi",
         "version": "Versi",
         "installMethod": "Cara pasang",
-        "packageManager": "Package manager",
+        "packageManager": "Manajer paket",
         "unknown": "Tak diketahui",
         "platformGroups": {
           "official": "Direkomendasikan (Resmi)",
@@ -302,9 +370,10 @@
       },
       "codeBox": {
         "unsupportedVersionWarning": "Versi ini sudah tidak dalam tahap pemeliharaan. Harap gunakan versi yang saat ini didukung. <link>Pahami dukungan EOL.</link>",
+        "ltsVersionFeaturesNotice": "Ingin mencoba fitur baru lebih cepat? Dapatkan <link>versi Node.js terbaru</link> dan coba peningkatan terbarunya!",
         "communityPlatformInfo": "Metode instalasi yang melibatkan perangkat lunak komunitas didukung oleh tim yang memelihara perangkat lunak tersebut.",
-        "externalSupportInfo": "Jika Anda mengalami masalah, silakan kunjungi situs web <link>{platform}</link>",
-        "noScriptDetected": "Halaman ini memerlukan JavaScript. Anda dapat mengunduh Node.js tanpa JavaScript dengan mengunjungi <link>halaman rilis</link> secara langsung.",
+        "externalSupportInfo": "Jika kamu mengalami masalah, silakan kunjungi situs web <link>{platform}</link>",
+        "noScriptDetected": "Halaman ini memerlukan JavaScript.\nKamu tetap dapat mengunduh Node.js tanpa mengaktifkan JavaScript dengan langsung mengunjungi <link>halaman arsip unduhan</link>.",
         "platformInfo": {
           "default": "{platform} dan skrip instalasinya tidak dikelola oleh proyek Node.js.",
           "nvm": "\"nvm\" adalah manajer versi Node.js lintas-platform.",
