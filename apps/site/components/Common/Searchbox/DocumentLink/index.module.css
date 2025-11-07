@@ -23,10 +23,10 @@
 
 .documentTitle {
   @apply max-w-full
-    overflow-hidden
     truncate
-    text-ellipsis
-    whitespace-nowrap
+    overflow-hidden
     text-sm
-    font-semibold;
+    font-semibold
+    text-ellipsis
+    whitespace-nowrap;
 }
