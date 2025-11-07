@@ -59,8 +59,8 @@
 
 .modalWrapper {
   @apply fixed
-    left-0
     top-0
+    left-0
     z-50
     mx-auto
     my-0
@@ -75,16 +75,16 @@
 
 .modalInner {
   @apply fixed
-    bottom-0
     top-0
+    bottom-0
     mx-auto
     my-0
     flex
     h-full
     max-w-none
     bg-white
-    lg:bottom-auto
     lg:top-auto
+    lg:bottom-auto
     lg:h-auto
     lg:max-w-3xl
     lg:bg-neutral-100

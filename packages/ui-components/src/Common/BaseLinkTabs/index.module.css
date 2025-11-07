@@ -2,8 +2,8 @@
 
 .tabsList {
   @apply font-open-sans
-    mb-6
     mt-10
+    mb-6
     flex
     gap-2
     border-b

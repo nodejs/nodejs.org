@@ -10,8 +10,8 @@
 
 .topBarArrow {
   @apply absolute
-    left-4
     top-1/2
+    left-4
     -translate-y-1/2
     text-neutral-900
     dark:text-neutral-200;
@@ -22,8 +22,8 @@
 }
 
 .topBarTabs {
-  @apply rounded-4xl
-    flex
+  @apply flex
+    rounded-4xl
     bg-neutral-200
     p-1
     text-sm
@@ -45,13 +45,13 @@
 }
 
 .topBarTabActive {
-  @apply before:rounded-4xl
-    relative
+  @apply relative
     z-10
     text-white
     before:absolute
     before:inset-0
     before:z-[-1]
+    before:rounded-4xl
     before:bg-black
     motion-safe:transition-colors
     dark:text-neutral-900

@@ -12,8 +12,8 @@
     border-neutral-300
     bg-neutral-100
     py-2
-    pl-3
     pr-1
+    pl-3
     dark:border-neutral-900
     dark:bg-neutral-950;
 }
@@ -78,13 +78,13 @@
   @apply flex
     size-max
     cursor-pointer
-    whitespace-nowrap
     rounded-full
     border
     border-neutral-300
     bg-neutral-200
     px-3
     py-1
+    whitespace-nowrap
     text-neutral-900
     duration-300
     hover:bg-neutral-300

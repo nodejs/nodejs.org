@@ -11,8 +11,8 @@
       px-2
       py-3
       text-sm
-      outline-none
       duration-300
+      outline-none
       hover:bg-neutral-300
       focus-visible:border-green-600
       focus-visible:bg-transparent

@@ -16,9 +16,7 @@
   }
 
   .trigger {
-    @apply shadow-xs
-      outline-hidden
-      inline-flex
+    @apply inline-flex
       h-11
       w-full
       min-w-[17rem]
@@ -35,6 +33,8 @@
       text-base
       font-medium
       text-neutral-900
+      shadow-xs
+      outline-hidden
       focus:border-neutral-500
       focus:ring-1
       focus:ring-neutral-500
@@ -75,19 +75,19 @@
     dark:bg-neutral-950;
 
   .item {
-    @apply select-none
-      truncate
+    @apply truncate
       px-2.5
       py-1.5
       text-sm
-      font-medium;
+      font-medium
+      select-none;
   }
 
   .text {
-    @apply data-[highlighted]:outline-hidden
-      text-neutral-800
+    @apply text-neutral-800
       data-[highlighted]:bg-green-500
       data-[highlighted]:text-white
+      data-[highlighted]:outline-hidden
       dark:text-neutral-200
       dark:data-[highlighted]:bg-green-600
       dark:data-[highlighted]:text-white;
@@ -137,12 +137,12 @@
 
   .text {
     @apply text-neutral-900
-      data-[highlighted]:bg-neutral-100
       data-[disabled]:text-neutral-600
+      data-[highlighted]:bg-neutral-100
       data-[highlighted]:text-neutral-900
       dark:text-white
-      dark:data-[highlighted]:bg-neutral-900
       dark:data-[disabled]:text-neutral-700
+      dark:data-[highlighted]:bg-neutral-900
       dark:data-[highlighted]:text-white;
   }
 
@@ -180,20 +180,20 @@
   }
 
   .dropdown {
-    @apply z-99
-      absolute
+    @apply absolute
       left-0
+      z-99
       mt-4;
   }
 
   .text {
-    @apply hover:outline-hidden
-      block
-      whitespace-normal
+    @apply block
       pl-4
+      whitespace-normal
       text-neutral-800
       hover:bg-green-500
       hover:text-white
+      hover:outline-hidden
       dark:text-neutral-200
       dark:hover:bg-green-600
       dark:hover:text-white;

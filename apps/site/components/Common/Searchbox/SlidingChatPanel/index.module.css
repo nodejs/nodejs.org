@@ -2,8 +2,8 @@
 
 .slidingPanelCloseButton {
   @apply absolute
-    right-6
     top-2
+    right-6
     z-20
     cursor-pointer
     rounded-full
