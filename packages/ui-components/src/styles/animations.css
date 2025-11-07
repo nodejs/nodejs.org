@@ -2,6 +2,11 @@
   --animate-surf: surf 1s infinite ease-in-out;
   --animate-pulse: pulse 500ms infinite alternate-reverse;
   --animate-pulse-dark: pulse-dark 500ms infinite alternate-reverse;
+  --animate-dot-move: dot-move 1.2s infinite ease-in-out 0ms;
+  --animate-dot-move-delay-200: dot-move 1.2s infinite ease-in-out 200ms;
+  --animate-dot-move-delay-400: dot-move 1.2s infinite ease-in-out 400ms;
+  --animate-slide-to-left: slide-to-left 300ms ease-in-out;
+  --animate-slide-to-right: slide-to-right 300ms ease-in-out;
 
   @keyframes surf {
     0% {
@@ -42,6 +47,43 @@
 
     to {
       background: var(--color-pulse-400);
+    }
+  }
+
+  @keyframes dot-move {
+    0% {
+      opacity: 0.6;
+      transform: translateY(0);
+    }
+
+    50% {
+      opacity: 1;
+      transform: translateY(-3px);
+    }
+
+    100% {
+      opacity: 0.6;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-to-left {
+    from {
+      transform: translateX(100%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-to-right {
+    from {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(0);
     }
   }
 }

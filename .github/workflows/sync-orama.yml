@@ -43,5 +43,6 @@ jobs:
         run: node --run sync-orama
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ORAMA_INDEX_ID: ${{ github.event_name == 'push' && secrets.ORAMA_PRODUCTION_INDEX_ID || secrets.ORAMA_INDEX_ID }}
-          ORAMA_SECRET_KEY: ${{ github.event_name == 'push' && secrets.ORAMA_PRODUCTION_SECRET_KEY || secrets.ORAMA_SECRET_KEY }}
+          NEW_ORAMA_PROJECT_ID: ${{ github.event_name == 'push' && secrets.NEW_ORAMA_PRODUCTION_PROJECT_ID || secrets.NEW_ORAMA_PROJECT_ID }}
+          NEW_ORAMA_PRIVATE_API_KEY: ${{ github.event_name == 'push' && secrets.NEW_ORAMA_PRODUCTION_PRIVATE_API_KEY || secrets.NEW_ORAMA_PRIVATE_API_KEY }}
+          NEW_ORAMA_DATASOURCE_ID: ${{ github.event_name == 'push' && secrets.NEW_ORAMA_PRODUCTION_DATASOURCE_ID || secrets.NEW_ORAMA_DATASOURCE_ID }}

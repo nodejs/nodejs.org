@@ -301,7 +301,18 @@
       "initErrorSearch": "Unable to initialize search service",
       "initErrorChat": "Unable to initialize chat service",
       "chatButtonLabel": "Get an AI summary",
-      "searchButtonLabel": "Search"
+      "searchButtonLabel": "Search",
+      "poweredBy": "Powered by",
+      "suggestionOne": "How to install Node.js?",
+      "suggestionTwo": "How to create an HTTP server?",
+      "suggestionThree": "Upgrading Node.js version",
+      "scrollToBottom": "Scroll to bottom",
+      "closeChat": "Close chat",
+      "keyboardShortcuts": {
+        "select": "to select",
+        "navigate": "to navigate",
+        "close": "to close"
+      }
     },
     "blog": {
       "blogHeader": {

@@ -1,0 +1,19 @@
+@reference "../../../../styles/index.css";
+
+.mobileChatContainer {
+  @apply flex
+    grow
+    flex-col
+    overflow-hidden
+    px-4
+    pb-4;
+}
+
+.mobileChatTop {
+  @apply grow
+    overflow-hidden;
+}
+
+.mobileChatBottom {
+  @apply mt-4;
+}
