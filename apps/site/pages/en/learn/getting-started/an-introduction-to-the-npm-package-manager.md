@@ -90,7 +90,27 @@ You can install a specific version of a package, by running
 ```bash
 npm install <package-name>@<version>
 ```
+## Uninstalling packages
 
+To remove a package from your project, you can run:
+
+```bash
+npm uninstall <package-name>
+
+```
+it will install everything the project needs, in the node_modules folder, creating it if it's not existing already.
+Similar to installation, you can use flags to specify which dependency section to remove from:
+```bash
+npm uninstall --save-dev <package-name>    # Remove from devDependencies
+npm uninstall --save-optional <package-name>  # Remove from optionalDependencies
+```
+Examples
+```bash
+npm uninstall lodash              # Remove from dependencies
+npm uninstall -D jest             # Remove from devDependencies  
+npm uninstall --save-optional chalk  # Remove from optionalDependencies
+
+```
 ## Running Tasks
 
 The package.json file supports a format for specifying command line tasks that can be run by using
