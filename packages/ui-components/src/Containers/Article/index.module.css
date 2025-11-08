@@ -30,12 +30,12 @@
     > *:first-child {
       @apply sm:bg-gradient-subtle
         sm:dark:bg-gradient-subtle-dark
-        xl:px-18
         p-4
         [grid-area:main]
         motion-safe:scroll-smooth
         sm:bg-fixed
-        sm:p-12;
+        sm:p-12
+        xl:px-18;
     }
 
     > *:last-child {
@@ -46,8 +46,8 @@
         lg:sticky
         lg:top-0
         lg:max-w-xs
-        lg:border-l
-        lg:border-t-0;
+        lg:border-t-0
+        lg:border-l;
     }
   }
 

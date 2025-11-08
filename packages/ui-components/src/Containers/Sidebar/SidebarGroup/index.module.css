@@ -40,8 +40,8 @@
         flex-col
         gap-px
         after:absolute
-        after:left-[0.45rem]
         after:top-0
+        after:left-[0.45rem]
         after:z-10
         after:h-full
         after:w-px
@@ -58,8 +58,8 @@
           first:before:bg-white
           first:before:content-['']
           last:after:absolute
-          last:after:left-0
           last:after:top-[calc(50%+0.25rem)]
+          last:after:left-0
           last:after:h-20
           last:after:w-4
           last:after:bg-white

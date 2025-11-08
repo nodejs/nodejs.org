@@ -1,12 +1,12 @@
 @reference "../../styles/index.css";
 
 .button {
-  @apply px-4.5
-    relative
+  @apply relative
     inline-flex
     items-center
     justify-center
     gap-2
+    px-4.5
     py-2.5
     text-center
     font-semibold
@@ -47,12 +47,12 @@
   }
 
   &.primary {
-    @apply shadow-xs
-      rounded-sm
+    @apply rounded-sm
       border
       border-green-600
       bg-green-600
-      text-white;
+      text-white
+      shadow-xs;
 
     &:hover:not([aria-disabled='true']) {
       @apply border-green-700
@@ -101,16 +101,16 @@
 
   &.special {
     @apply before:bg-gradient-glow-backdrop
-      shadow-xs
       rounded-lg
       border
       border-green-600/30
       bg-green-600/10
       text-white
+      shadow-xs
       before:absolute
-      before:left-0
-      before:right-0
       before:top-0
+      before:right-0
+      before:left-0
       before:-z-10
       before:mx-auto
       before:h-full
@@ -119,8 +119,8 @@
       before:content-['']
       after:absolute
       after:-top-px
-      after:left-0
       after:right-0
+      after:left-0
       after:mx-auto
       after:h-px
       after:w-2/5
@@ -144,12 +144,12 @@
   }
 
   &.warning {
-    @apply shadow-xs
-      border-warning-600
+    @apply border-warning-600
       bg-warning-600
       rounded-sm
       border
-      text-white;
+      text-white
+      shadow-xs;
 
     &:hover:not([aria-disabled='true']) {
       @apply border-warning-700
@@ -169,12 +169,12 @@
   }
 
   &.info {
-    @apply shadow-xs
-      border-info-600
+    @apply border-info-600
       bg-info-600
       rounded-sm
       border
-      text-white;
+      text-white
+      shadow-xs;
 
     &:hover:not([aria-disabled='true']) {
       @apply border-info-700

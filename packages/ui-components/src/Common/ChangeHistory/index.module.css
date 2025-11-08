@@ -1,11 +1,9 @@
 @reference "../../styles/index.css";
 
 .summary {
-  @apply outline-hidden
-    flex
+  @apply flex
     h-9
     cursor-pointer
-    select-none
     items-center
     gap-2
     rounded-md
@@ -14,6 +12,8 @@
     p-2
     text-sm
     text-neutral-700
+    outline-hidden
+    select-none
     motion-safe:transition-colors
     dark:border-neutral-900
     dark:text-neutral-300;
@@ -27,8 +27,8 @@
 
 .dropdownContentWrapper {
   @apply absolute
-    right-0
     top-full
+    right-0
     z-50
     mt-1
     max-h-80
@@ -50,14 +50,14 @@
 }
 
 .dropdownItem {
-  @apply outline-hidden
-    block
+  @apply block
     px-2.5
     py-1.5
     text-sm
     font-medium
     text-neutral-800
     no-underline
+    outline-hidden
     motion-safe:transition-colors
     dark:text-white;
 
@@ -71,8 +71,8 @@
 .dropdownLabel {
   @apply block
     text-sm
-    font-medium
-    leading-tight;
+    leading-tight
+    font-medium;
 }
 
 .dropdownVersions {

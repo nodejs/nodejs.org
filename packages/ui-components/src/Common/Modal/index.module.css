@@ -35,17 +35,17 @@
 
   .close {
     @apply absolute
-      right-3
       top-3
+      right-3
       block
       size-7
       cursor-pointer
       rounded-sm
       p-1
       hover:bg-neutral-100
-      focus:outline-none
       focus:ring-2
       focus:ring-neutral-200
+      focus:outline-none
       dark:hover:bg-neutral-900
       dark:focus:ring-neutral-900;
   }
