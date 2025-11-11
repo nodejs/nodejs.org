@@ -128,7 +128,7 @@ const ReleaseCodeBox: FC = () => {
   const isLoading = context.os === 'LOADING' || context.installMethod === '';
 
   return (
-    <div className="mb-6 mt-4 flex flex-col gap-2">
+    <div className="mt-4 mb-6 flex flex-col gap-2">
       {/* NoScript warning */}
       <noscript>
         <AlertBox

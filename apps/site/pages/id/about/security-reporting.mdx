@@ -11,9 +11,9 @@ For more details on active Security Policies, checkout [this page](https://githu
 
 Laporkan bug keamanan di Node.js melalui [HackerOne](https://hackerone.com/nodejs).
 
-Laporan Anda akan diterima dalam waktu 5 hari, dan Anda akan menerima tanggapan yang lebih rinci terhadap laporan Anda dalam waktu 10 hari yang menunjukkan langkah selanjutnya dalam menangani kiriman Anda.
+Biasanya, laporan mu akan diakui dalam waktu 5 hari, dan Anda akan menerima tanggapan yang lebih detail dalam waktu 10 hari yang menjelaskan langkah selanjutnya dalam penanganan laporan tersebut. Waktu ini dapat lebih lama jika para relawan triase sedang berlibur, terutama di akhir tahun.
 
-Setelah balasan awal atas laporan Anda, tim keamanan akan berusaha memberi Anda informasi tentang kemajuan yang dicapai menuju pengumuman perbaikan dan lengkap, dan mungkin meminta informasi atau panduan tambahan seputar masalah yang dilaporkan.
+Setelah balasan awal atas laporan mu, tim keamanan akan berusaha memberi mu informasi tentang kemajuan yang dicapai menuju pengumuman perbaikan dan lengkap, dan mungkin meminta informasi atau panduan tambahan seputar masalah yang dilaporkan.
 
 ### Program hadiah bug Node.js
 
@@ -27,15 +27,24 @@ Bug keamanan di modul pihak ketiga harus dilaporkan ke pengelola masing-masing.
 
 Berikut adalah kebijakan pengungkapan keamanan untuk Node.js
 
-- Laporan keamanan diterima dan ditetapkan sebagai penangan utama. Orang ini akan mengoordinasikan proses perbaikan dan pelepasan. Masalahnya telah dikonfirmasi dan daftar semua versi yang terpengaruh telah ditentukan. Kode diaudit untuk menemukan potensi masalah serupa. Perbaikan disiapkan untuk semua rilis yang masih dalam pemeliharaan. Perbaikan ini tidak dilakukan pada repositori publik melainkan disimpan secara lokal sambil menunggu pengumuman.
+- Laporan keamanan diterima dan ditugaskan ke penanggung jawab utama.
+  Orang ini akan mengoordinasikan proses perbaikan dan rilis.
+  Masalah tersebut divalidasi pada semua versi Node.js yang masih didukung.
+  Setelah dikonfirmasi, ditentukan daftar semua versi yang terdampak.
+  Kode kemudian diaudit untuk menemukan potensi masalah serupa.
+  Perbaikan disiapkan untuk semua rilis yang masih didukung.Perbaikan ini tidak langsung dikomit ke repositori publik, tetapi disimpan secara lokal sampai pengumuman dilakukan.
 
 - Tanggal embargo yang disarankan untuk kerentanan ini dipilih dan CVE (Common Vulnerabilities and Exposures (CVE®)) diminta untuk kerentanan tersebut.
 
-- Pada tanggal embargo, salinan pengumuman dikirim ke milis keamanan Node.js. Perubahan tersebut dikirim ke repositori publik dan versi baru disebarkan ke nodejs.org. Dalam waktu 6 jam setelah milis diberitahukan, salinan nasihat akan dipublikasikan di blog Node.js.
+- Pada tanggal embargo, salinan pengumuman dikirim ke daftar surel keamanan Node.js.
+  Perubahan kemudian dipush ke repositori publik dan build baru dirilis di nodejs.org.
+  Dalam waktu maksimal 6 jam setelah daftar surel menerima pemberitahuan, salinan advis tersebut akan dipublikasikan di blog Node.js.
 
-- Biasanya tanggal embargo akan ditetapkan 72 jam sejak CVE diterbitkan. Namun, hal ini dapat bervariasi tergantung pada tingkat keparahan bug atau kesulitan dalam menerapkan perbaikan.
+- Biasanya, tanggal embargo akan ditetapkan 72 jam sejak CVE diterbitkan.
+  Namun, hal ini bisa berubah tergantung tingkat keparahan bug atau kesulitan dalam menerapkan perbaikan.
 
-- Proses ini dapat memakan waktu, terutama bila diperlukan koordinasi dengan pengelola proyek lain. Segala upaya akan dilakukan untuk menangani bug tersebut secepat mungkin; namun, penting bagi kami untuk mengikuti proses rilis di atas untuk memastikan bahwa pengungkapan ditangani secara konsisten.
+- Proses ini bisa memakan waktu, terutama jika perlu koordinasi dengan para maintainer proyek lain.
+  Kami akan berusaha menangani bug secepat mungkin; namun, kami tetap harus mengikuti proses rilis di atas untuk memastikan penanganan pengungkapan dilakukan secara konsisten.
 
 ## Menerima pembaruan keamanan
 
@@ -46,7 +55,7 @@ Pemberitahuan keamanan akan didistribusikan melalui metode berikut.
 
 ## Komentar tentang kebijakan ini
 
-Jika Anda memiliki saran tentang bagaimana proses ini dapat ditingkatkan, silakan kirimkan [permintaan penarikan](https://github.com/nodejs/nodejs.org) atau [ajukan masalah](https://github.com/nodejs/security-wg/issues/new) untuk didiskusikan.
+Kalau kamu punya saran tentang bagaimana proses ini dapat ditingkatkan, silakan kunjungi repositori [nodejs/security-wg](https://github.com/nodejs/security-wg).
 
 ## Praktik Terbaik OpenSSF
 

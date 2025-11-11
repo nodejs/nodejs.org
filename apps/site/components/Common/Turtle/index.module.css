@@ -8,20 +8,20 @@
     translate-x-0
     translate-y-0
     after:absolute
-    after:-left-full
     after:top-[20%]
+    after:-left-full
     after:-z-10
     after:block
     after:h-36
     after:w-36
     after:-rotate-90
-    after:select-none
     after:bg-[url('/static/images/smoke.gif')]
     after:opacity-[0.15]
     after:content-['']
+    after:select-none
     motion-reduce:animate-none
-    after:md:-left-1/2
-    after:md:top-1/2;
+    after:md:top-1/2
+    after:md:-left-1/2;
 }
 
 .image {

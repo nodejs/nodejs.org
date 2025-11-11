@@ -42,38 +42,30 @@
             "theV8JavascriptEngine": "V8 JavaScriptエンジン",
             "anIntroductionToTheNpmPackageManager": "npmパッケージマネージャーの紹介",
             "ecmascript2015Es6AndBeyond": "ECMAScript 2015（ES6）とそれ以降のバージョン",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.jsにおける開発環境と本番環境の違い",
-            "nodejsWithWebassembly": "Node.jsとWebAssembly",
             "debugging": "Node.jsのデバッグ",
-            "profiling": "Node.jsアプリケーションのプロファイリング",
             "fetch": "Node.jsでデータを取得する",
             "websocket": "Node.jsでのWebSocketクライアント",
-            "securityBestPractices": "セキュリティーベストプラクティス"
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.jsにおける開発環境と本番環境の違い",
+            "profiling": "Node.jsアプリケーションのプロファイリング",
+            "nodejsWithWebassembly": "Node.jsとWebAssembly",
+            "securityBestPractices": "セキュリティーベストプラクティス",
+            "userlandMigrations": "ユーザーランドコード移行の概要"
           }
         },
-        "typescript": {
+        "commandLine": {
           "links": {
-            "typescript": "TypeScript",
-            "introduction": "TypeScriptの導入",
-            "transpile": "トランスパイルを用いたTypeScriptの実行",
-            "run": "実行ツールを用いたTypeScriptの実行",
-            "runNatively": "TypeScriptをネイティブに実行する",
-            "publishingTSPackage": "TypeScriptパッケージを公開する"
+            "commandLine": "コマンドライン",
+            "runNodejsScriptsFromTheCommandLine": "コマンドラインからNode.jsスクリプトを実行する",
+            "howToUseTheNodejsRepl": "Node.js REPLの使用方法",
+            "outputToTheCommandLineUsingNodejs": "Node.jsを使用してコマンドラインに出力する",
+            "acceptInputFromTheCommandLineInNodejs": "Node.jsでコマンドラインからの入力を受け取る",
+            "howToReadEnvironmentVariablesFromNodejs": "Node.jsから環境変数を読み込む方法"
           }
         },
-        "asynchronousWork": {
+        "http": {
           "links": {
-            "asynchronousWork": "非同期処理",
-            "asynchronousFlowControl": "非同期のフロー制御",
-            "discoverPromisesInNodejs": "Node.jsでプロミスを知る",
-            "overviewOfBlockingVsNonBlocking": "ブロッキングとノンブロッキングの概要",
-            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScriptの非同期プログラミングとコールバック",
-            "discoverJavascriptTimers": "JavaScriptのタイマー処理について",
-            "eventLoopTimersAndNexttick": "Node.jsのイベントループ",
-            "theNodejsEventEmitter": "Node.jsのイベントエミッター",
-            "understandingProcessnexttick": "process.nextTick()について",
-            "understandingSetimmediate": "setImmediate()について",
-            "dontBlockTheEventLoop": "イベントループをブロックしない"
+            "http": "HTTP",
+            "anatomyOfAnHttpTransaction": "HTTPトランザクションの構成"
           }
         },
         "manipulatingFiles": {
@@ -81,46 +73,54 @@
             "manipulatingFiles": "ファイルの操作",
             "nodejsFileStats": "Node.jsでのファイル情報",
             "nodejsFilePaths": "Node.jsでのファイルパス",
-            "workingWithFileDescriptorsInNodejs": "Node.jsでのファイルディスクリプターの操作",
             "readingFilesWithNodejs": "Node.jsを使用したファイルの読み込み",
             "writingFilesWithNodejs": "Node.jsを使用したファイルの書き込み",
+            "workingWithFileDescriptorsInNodejs": "Node.jsでのファイルディスクリプターの操作",
             "workingWithFoldersInNodejs": "Node.jsでのフォルダーの操作",
             "workingWithDifferentFilesystems": "異なるファイルシステムを扱う方法"
           }
         },
-        "commandLine": {
+        "asynchronousWork": {
           "links": {
-            "commandLine": "コマンドライン",
-            "runNodejsScriptsFromTheCommandLine": "コマンドラインからNode.jsスクリプトを実行する",
-            "howToReadEnvironmentVariablesFromNodejs": "Node.jsから環境変数を読み込む方法",
-            "howToUseTheNodejsRepl": "Node.js REPLの使用方法",
-            "outputToTheCommandLineUsingNodejs": "Node.jsを使用してコマンドラインに出力する",
-            "acceptInputFromTheCommandLineInNodejs": "Node.jsでコマンドラインからの入力を受け取る"
+            "asynchronousWork": "非同期処理",
+            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScriptの非同期プログラミングとコールバック",
+            "asynchronousFlowControl": "非同期のフロー制御",
+            "discoverPromisesInNodejs": "Node.jsでプロミスを知る",
+            "discoverJavascriptTimers": "JavaScriptのタイマー処理について",
+            "overviewOfBlockingVsNonBlocking": "ブロッキングとノンブロッキングの概要",
+            "eventLoopTimersAndNexttick": "Node.jsのイベントループ",
+            "theNodejsEventEmitter": "Node.jsのイベントエミッター",
+            "understandingProcessnexttick": "process.nextTick()について",
+            "understandingSetimmediate": "setImmediate()について",
+            "dontBlockTheEventLoop": "イベントループをブロックしない"
           }
         },
-        "migrations": {
+        "typescript": {
           "links": {
-            "migrations": "ユーザーランドの移行",
-            "introduction": "ユーザーランドの移行入門"
+            "typescript": "TypeScript",
+            "introduction": "TypeScriptの導入",
+            "runNatively": "TypeScriptをネイティブに実行する",
+            "transpile": "トランスパイルを用いたTypeScriptの実行",
+            "run": "実行ツールを用いたTypeScriptの実行",
+            "publishingTSPackage": "TypeScriptパッケージを公開する"
           }
         },
         "modules": {
           "links": {
             "modules": "モジュール",
+            "howToUseStreams": "ストリームの使い方",
+            "backpressuringInStreams": "ストリーム内のバックプレッシャー",
             "publishingAPackage": "パッケージの公開",
             "publishingNodeApiModules": "Node-APIパッケージを公開する方法",
-            "anatomyOfAnHttpTransaction": "HTTPトランザクションの構成",
-            "abiStability": "ABIの安定性",
-            "howToUseStreams": "ストリームの使い方",
-            "backpressuringInStreams": "ストリーム内のバックプレッシャー"
+            "abiStability": "ABIの安定性"
           }
         },
         "diagnostics": {
           "links": {
             "diagnostics": "診断",
             "userJourney": "ユーザージャーニー",
-            "understandingAndTuningMemory": "メモリーのチューニングの理解",
             "memory": "メモリー",
+            "understandingAndTuningMemory": "メモリーのチューニングの理解",
             "liveDebugging": "ライブデバッグ",
             "poorPerformance": "パフォーマンスの低下",
             "flameGraphs": "フレームグラフ"
@@ -183,7 +183,7 @@
       "ltsVersionFeaturesNotice": "すぐに最新の機能を試したいですか？<link>最新バージョンのNode.js</link>を代わりにインストールして最新の機能を試してください！"
     },
     "eolAlert": {
-      "message": "Maintenance LTS期間を終了したバージョンの商用サポートは、私たちの<link>OpenJSエコシステム持続可能性プログラムパートナーであるHeroDevs</link>を通して利用可能です。"
+      "message": "Maintenance LTS期間を過ぎたバージョンの商用サポートは<link>OpenJSエコシステム持続可能性プログラムパートナー</link>を通して利用できます。"
     },
     "eolChip": {
       "severity": {
@@ -305,7 +305,7 @@
     },
     "blog": {
       "blogHeader": {
-        "subtitle": "最新のNode.jsのニュース、ケーススタディ、チュートリアル、リソース。",
+        "subtitle": "最新のNode.jsニュース、移行ガイド、イベント概要",
         "rssLink": "RSSフィード"
       }
     }
@@ -336,6 +336,7 @@
         "video": "ビデオ",
         "weekly": "週間更新",
         "wg": "作業グループ",
+        "migrations": "移行ガイド",
         "events": "イベント"
       }
     },

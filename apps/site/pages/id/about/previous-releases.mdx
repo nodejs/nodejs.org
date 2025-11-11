@@ -1,0 +1,48 @@
+---
+title: Rilisan Node.js
+layout: about
+---
+
+# Rilisan Node.js
+
+<EOLAlertBox />
+
+Versi Node.js utama memasuki status rilis saat ini selama enam bulan, yang memberikan waktu bagi penulis perpustakaan untuk menambahkan dukungan untuk versi tersebut. Setelah enam bulan, rilis bernomor ganjil (9, 11, dst.) menjadi tidak didukung, dan rilis bernomor genap (10, 12, dst.) berpindah ke status LTS Aktif dan siap untuk penggunaan umum. Status rilis LTS adalah "dukungan jangka panjang", yang biasanya menjamin bahwa bug kritis akan diperbaiki selama total 30 bulan. Aplikasi produksi hanya boleh menggunakan rilis LTS Aktif atau LTS Pemeliharaan.
+
+## Release Schedule
+
+![Releases](https://raw.githubusercontent.com/nodejs/Release/main/schedule.svg?sanitize=true)
+
+Detail lengkap mengenai jadwal rilis Node.js tersedia [di GitHub](https://github.com/nodejs/release#release-schedule).
+
+## Mencari rilis terbaru dari cabang versi?
+
+<PreviousReleasesTable />
+
+## Metode Instalasi Resmi vs. Komunitas
+
+Situs web Node.js menyediakan beberapa metode instalasi non-interaktif, termasuk antarmuka baris perintah (CLI), manajer paket sistem operasi (OS) (misalnya, `brew`), dan manajer versi Node.js (misalnya, `nvm`).
+
+Untuk menyoroti dan mempromosikan kontribusi komunitas, proyek Node.js memperkenalkan halaman Unduhan yang telah direvisi yang mengkategorikan metode instalasi sebagai "Resmi" atau "Komunitas." Hal ini memberikan fleksibilitas dan pilihan yang lebih besar kepada pengguna. Untuk memastikan kejelasan, kami telah menetapkan kriteria untuk setiap kategori.
+
+### Metode Instalasi Resmi
+
+Metode instalasi yang ditetapkan sebagai “Resmi” harus memenuhi persyaratan berikut:
+
+| Persyaratan (Metode Instalasi Resmi)                                                                                                 |
+| :----------------------------------------------------------------------------------------------------------------------------------- |
+| Rilis Node.js baru harus tersedia bersamaan dengan rilis resmi.                                                                      |
+| Pengelola proyek harus memiliki hubungan dekat dengan proyek Node.js, termasuk saluran komunikasi langsung.                          |
+| Metode instalasi harus unduhan biner resmi yang dibundel oleh proyek Node.js.                                                        |
+| Metode instalasi tidak boleh dibuild dari sumber, jika biner yang telah dibuild tersedia, dan tidak boleh pula mengubah biner resmi. |
+
+### Metode Instalasi Komunitas
+
+Metode instalasi komunitas yang disertakan pada halaman unduhan swalayan (/download) juga harus mematuhi serangkaian kriteria minimum:
+
+- **Dukungan Versi:** Harus mendukung semua versi Node.js yang saat ini didukung, bukan versi End-of-Life (EOL).
+- **Kompatibilitas OS:** Harus berfungsi pada setidaknya satu Sistem Operasi (OS) yang didukung secara resmi.
+- **Dukungan OS yang Luas:** Tidak dapat dibatasi pada sebagian distribusi atau versi OS.
+  - Misalnya, metode instalasi yang mengklaim kompatibilitas dengan “Windows” harus berfungsi pada “Windows 10”, “Windows 11”, dan semua edisinya (termasuk versi server).
+  - Demikian pula, metode instalasi yang mengklaim kompatibilitas dengan "Linux" harus dapat diinstal pada semua distribusi Linux utama, bukan hanya sebagian kecil saja. Metode ini tidak dapat bergantung pada pengelola paket khusus distribusi seperti `apt` atau `dnf`.
+- **Gratis dan Sumber Terbuka:** Harus gratis digunakan dan bersumber terbuka, tidak boleh dijual sebagai produk komersial, dan tidak boleh menjadi layanan berbayar.

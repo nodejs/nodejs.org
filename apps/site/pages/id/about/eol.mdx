@@ -1,0 +1,46 @@
+---
+title: End-Of-Life
+layout: about
+description: Memahami End-of-Life Node.js, apa dampaknya pada keamanan, toolchain, dan kepatuhan, serta detail versi EOL dan opsi dukungan komersial.
+---
+
+# End-Of-Life (EOL)
+
+## Mengapa dan bagaimana rilis Node.js mencapai End-Of-Life
+
+Versi mayor Node.js dirilis, diperbaiki, dan ditetapkan sebagai End-Of-Life mengikuti jadwal yang dapat diprediksi. Karena tidak memungkinkan untuk memelihara semua lini rilis selamanya, setelah periode pemeliharaan yang direncanakan, lini rilis mayor Node.js akan berhenti dipelihara oleh proyek.
+
+<div className="flex flex-col items-start gap-4 xl:flex-row xl:items-center">
+  <Button kind="primary" href="/download" className="flex-1">
+    <span>Tingkatkan ke Node.js® LTS terbaru</span>
+  </Button>
+
+<span>atau</span>
+
+  <Button as="a" kind="warning" href="#commercial-support" className="flex-1">
+    <span>Dapatkan dukungan keamanan untuk versi EOL</span>
+  </Button>
+</div>
+
+[Lihat jadwal rilis Node.js](/about/releases/).
+
+## Apa yang Terjadi Ketika Suatu Lini Rilis Mencapai EOL
+
+Saat suatu versi mencapai End-Of-Life, artinya versi tersebut tidak lagi menerima pembaruan, termasuk tambalan keamanan. Ini dapat membuat aplikasi yang berjalan pada versi tersebut rentan terhadap masalah keamanan dan bug yang tidak akan pernah diperbaiki.
+
+- **Tidak ada lagi perbaikan kerentanan**: Ketika rilis keamanan baru mengungkap masalah dan tambalan pada lini mayor yang lebih baru, meskipun kerentanan yang sama memengaruhi versi EOL, tidak akan ada rilis baru untuk mereka. Pengguna yang tetap bertahan di versi EOL dan menggunakan jalur kode yang terdampak akan langsung rentan terhadap serangan yang memanfaatkan kerentanan tersebut.
+- **Kerusakan pada toolchain**: Versi EOL mungkin tidak lagi dapat melakukan dynamic linking dengan versi pustaka bersama yang lebih baru yang menjadi dependensinya, yang dapat menghambat atau merusak pembaruan sistem.
+- **Perubahan ekosistem**: Banyak paket user-land populer menghentikan dukungan untuk versi Node.js yang sudah EOL dari waktu ke waktu. Ketika suatu aplikasi tetap menggunakan paket yang sudah kedaluwarsa, aplikasi tersebut dapat mengalami lebih banyak kerentanan dan bug yang tidak diperbaiki, semakin menjauhi standar ekosistem.
+- **Masalah kepatuhan**: Banyak audit industri melarang penggunaan runtime yang tidak dipelihara.
+
+## Versi EOL
+
+<EOLReleaseTable />
+
+## Dukungan Komersial
+
+Meskipun penggunaan versi EOL memiliki banyak kelemahan, dalam praktiknya banyak organisasi menghadapi batasan yang mencegah peningkatan versi secara langsung, seperti kode warisan (legacy), kebutuhan kepatuhan, atau rantai dependensi yang kompleks. Melalui [OpenJS Foundation Ecosystem Sustainability Program](https://openjsf.org/blog/ecosystem-sustainability-program), Node.js mendapatkan dukungan dari HeroDevs dan NodeSource untuk menyediakan layanan komersial dalam bentuk perbaikan keamanan.
+
+HeroDevs menyediakan [Never-Ending Support (NES)](https://nodejs.org/esp/herodevs) untuk versi Node.js yang telah melewati fase pemeliharaan resmi. Ini mencakup tambalan keamanan, bantuan kepatuhan, dan dukungan teknis untuk menjembatani kebutuhanmu sambil kamu merencanakan strategi peningkatan.
+
+Menggunakan versi EOL melalui dukungan komersial harus dianggap sebagai solusi sementara — tujuan utama tetap untuk meningkatkan ke versi yang masih didukung secara aktif.

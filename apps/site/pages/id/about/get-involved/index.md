@@ -31,4 +31,5 @@ Perlu diperhatikan bahwa proyek Node.js tidak secara resmi mendukung forum-forum
 
 - [Node Slackers](https://www.nodeslackers.com/) adalah komunitas Slack yang berfokus pada Node.js.
 - [OpenJSF Slack](https://slack-invite.openjsf.org/) adalah ruang kerja Slack untuk OpenJS Foundation. Ada beberapa saluran yang terkait dengan Node.js. _(saluran yang diawali dengan `#nodejs-` terkait dengan proyek)_
+- [r/node](https://www.reddit.com/r/node/) adalah subreddit yang berfokus pada Node.js.
 - Untuk IRC, buka `irc.libera.chat` di saluran `#node.js` dengan [klien IRC](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) atau sambungkan di browser web Anda ke saluran menggunakan [klien web](https://kiwiirc.com/nextclient/).

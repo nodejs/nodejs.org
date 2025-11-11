@@ -35,13 +35,13 @@
 }
 
 .dropDownItem {
-  @apply outline-hidden
-    cursor-pointer
+  @apply cursor-pointer
     px-2.5
     py-1.5
     text-sm
     font-medium
     text-neutral-800
+    outline-hidden
     data-[highlighted]:bg-green-600
     data-[highlighted]:text-white
     dark:text-white;

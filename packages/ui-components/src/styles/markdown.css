@@ -99,8 +99,8 @@ main {
 
   ul {
     @apply list-disc
-      pl-9
       pr-5
+      pl-9
       leading-6
       text-neutral-900
       dark:text-white;
@@ -123,11 +123,11 @@ main {
   }
 
   table {
-    @apply rounded-xs
-      mb-1
+    @apply mb-1
       w-full
       border-separate
       border-spacing-0
+      rounded-xs
       border
       border-neutral-200
       text-left
@@ -137,13 +137,13 @@ main {
     /* Common border and text styles */
     th,
     td {
-      @apply break-words
-        border
-        border-r-0
+      @apply border
         border-t-0
+        border-r-0
         border-neutral-200
         px-4
         py-2
+        break-words
         text-neutral-900
         dark:border-neutral-800
         dark:text-white;
@@ -187,8 +187,8 @@ main {
       }
 
       tr {
-        @apply rounded-xs
-          block
+        @apply block
+          rounded-xs
           border
           border-neutral-200
           p-4
@@ -212,13 +212,13 @@ main {
           text-right
           text-neutral-600
           before:absolute
-          before:left-0
           before:top-1/2
+          before:left-0
           before:w-1/3
           before:-translate-y-1/2
-          before:break-words
           before:text-left
           before:font-medium
+          before:break-words
           before:text-neutral-700
           before:content-[attr(data-label)]
           last:border-0
