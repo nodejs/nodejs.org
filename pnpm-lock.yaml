@@ -227,8 +227,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/remark-lint
       '@opennextjs/cloudflare':
-        specifier: ^1.11.0
-        version: 1.11.0(wrangler@4.45.3)
+        specifier: ^1.12.0
+        version: 1.12.0(wrangler@4.45.3)
       '@playwright/test':
         specifier: ^1.56.1
         version: 1.56.1
@@ -2075,8 +2075,8 @@ packages:
     resolution: {integrity: sha512-elpMb0fJZc0a1VtymedFa7P1lYcyOmt+Pwqyacpq2C/SvbETIeBlW/Xle/vY95ICtccKUxITI8MtonrCo2+2/Q==}
     hasBin: true
 
-  '@opennextjs/cloudflare@1.11.0':
-    resolution: {integrity: sha512-2QVZLjCr3hPwkcGEetLarTZvlNIHsGV3j2+i+KNsjFIBgvsnxhmRqJbT0u8J9cVMFKNh19hSOTOmUKs1T3DWig==}
+  '@opennextjs/cloudflare@1.12.0':
+    resolution: {integrity: sha512-vTw8N9tEISI2smkB0mvVVR1DOimE942DKOxzzwaQ0RrWgLSF97qf+4rnk8wwss2RAnF41pPDHzPO1AupnJmm3Q==}
     hasBin: true
     peerDependencies:
       wrangler: ^4.38.0
@@ -7014,6 +7014,7 @@ packages:
   rclone.js@0.6.6:
     resolution: {integrity: sha512-Dxh34cab/fNjFq5SSm0fYLNkGzG2cQSBy782UW9WwxJCEiVO4cGXkvaXcNlgv817dK8K8PuQ+NHUqSAMMhWujQ==}
     engines: {node: '>=12'}
+    cpu: [arm, arm64, mips, mipsel, x32, x64]
     os: [darwin, freebsd, linux, openbsd, sunos, win32]
     hasBin: true
 
@@ -10652,7 +10653,7 @@ snapshots:
       - aws-crt
       - supports-color
 
-  '@opennextjs/cloudflare@1.11.0(wrangler@4.45.3)':
+  '@opennextjs/cloudflare@1.12.0(wrangler@4.45.3)':
     dependencies:
       '@dotenvx/dotenvx': 1.31.0
       '@opennextjs/aws': 3.8.5
