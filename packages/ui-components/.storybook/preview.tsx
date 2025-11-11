@@ -1,5 +1,5 @@
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
-import type { Preview, ReactRenderer } from '@storybook/react';
+import type { Preview, ReactRenderer } from '@storybook/react-webpack5';
 
 import { NotificationProvider } from '#ui/Providers/NotificationProvider';
 
@@ -10,8 +10,11 @@ import '#ui/styles/index.css';
 const preview: Preview = {
   parameters: {
     chromatic: { modes: STORYBOOK_MODES },
-    viewport: { defaultViewport: 'large', viewports: STORYBOOK_SIZES },
+    viewport: {
+      options: STORYBOOK_SIZES,
+    },
   },
+
   decorators: [
     Story => (
       <NotificationProvider>
@@ -27,6 +30,13 @@ const preview: Preview = {
     // this can be removed, since `withThemeByDataAttribute`
     // will return the same type that is accepted by `Preview`
   ] as Preview['decorators'],
+
+  initialGlobals: {
+    viewport: {
+      value: 'large',
+      isRotated: false,
+    },
+  },
 };
 
 export default preview;

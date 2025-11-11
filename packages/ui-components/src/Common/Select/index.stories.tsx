@@ -1,4 +1,4 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react';
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 import Select from '#ui/Common/Select';
 import StatelessSelect from '#ui/Common/Select/StatelessSelect';
