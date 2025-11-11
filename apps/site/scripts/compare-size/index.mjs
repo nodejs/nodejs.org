@@ -6,7 +6,9 @@ import { readFile } from 'node:fs/promises';
  * @returns {string} Formatted string (e.g., "1.5 KB")
  */
 const formatBytes = bytes => {
-  if (bytes === 0) {return '0 B';}
+  if (bytes === 0) {
+    return '0 B';
+  }
   const units = ['B', 'KB', 'MB', 'GB'];
   const index = Math.floor(Math.log(Math.abs(bytes)) / Math.log(1024));
   return (bytes / Math.pow(1024, index)).toFixed(2) + ' ' + units[index];
@@ -58,7 +60,9 @@ const categorizeChanges = (oldAssets, newAssets) => {
  * Builds a collapsible table section
  */
 const tableSection = (title, items, columns, icon) => {
-  if (!items.length) {return '';}
+  if (!items.length) {
+    return '';
+  }
   const header = `| ${columns.map(c => c.label).join(' | ')} |\n`;
   const separator = `| ${columns.map(() => '---').join(' | ')} |\n`;
   const rows = items
