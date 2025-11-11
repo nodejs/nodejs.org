@@ -88,3 +88,12 @@ As seen above, the different teams under the Node.js Web Team umbrella are respo
 Following this line of thought, the Web Infra Team is responsible for the technical aspects of the Node.js Website (Infrastructure, Framework, CI/CD, etc); The Website Team is responsible for the day-to-day development of the Node.js Website; The UX and Design Team advise on Design Matters and the Web Standards Team advise on best-practices for Web APIs and Web Technologies/Standards.
 
 But above all, the Web Team should work together to better the Web Experience for Node.js, aiming to provide the best experience for Node.js users.
+
+## Blog post publishing guidelines
+
+The following guidelines apply to all blog posts except minor or patch release announcements:
+
+1. each blog post _must_ have a target publishing date and time. If scheduled publishing is not possible, _the author_ (if privileged enough) or another delegated member would be responsible for landing.
+2. each blog post _must_ be approved by @nodejs/tsc members _and_ OpenJS Foundation marketing staff.
+
+For minor/patch release announcements, the members of `@nodejs/releasers` can land as they see fit.
