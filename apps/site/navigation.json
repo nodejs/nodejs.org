@@ -243,6 +243,10 @@
             "anatomyOfAnHttpTransaction": {
               "link": "/learn/http/anatomy-of-an-http-transaction",
               "label": "components.navigation.learn.http.links.anatomyOfAnHttpTransaction"
+            },
+            "understandingHttpStatusCodes": {
+              "link": "/learn/http/understanding-http-status-codes",
+              "label": "components.navigation.learn.http.links.understandingHttpStatusCodes"
             }
           }
         },
