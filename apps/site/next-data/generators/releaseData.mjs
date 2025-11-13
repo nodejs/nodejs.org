@@ -63,7 +63,7 @@ const generateReleaseData = async () => {
       version: latestVersion.semver.raw,
       versionWithPrefix: `v${latestVersion.semver.raw}`,
       codename: major.support.codename || '',
-      isLts: status.endsWith('LTS'),
+      isLts: support.ltsStart !== undefined,
       npm: latestVersion.dependencies.npm || '',
       v8: latestVersion.dependencies.v8,
       releaseDate: latestVersion.releaseDate,
