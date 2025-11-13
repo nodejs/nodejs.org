@@ -28,7 +28,7 @@ mock.module('../../../next.helpers.mjs', {
   },
 });
 
-const generateBlogData = (await import('../blogData.mjs')).default;
+const generateBlogData = (await import('../generate.mjs')).default;
 
 describe('generateBlogData', () => {
   it('should return zero posts and only the default "all" category if no md file is found', async () => {
@@ -112,27 +112,31 @@ describe('generateBlogData', () => {
       },
     ];
 
+    // The posts are sorted by date
     const blogData = await generateBlogData();
 
-    assert(blogData.posts.length, 3);
-    assert.equal(blogData.posts[0].title, 'POST 1');
-    assert.deepEqual(
-      blogData.posts[0].date,
-      new Date('2020-01-01T00:00:00.000Z')
+    assert.equal(blogData.posts.length, 3);
+
+    assert.equal(blogData.posts[0].title, 'POST 3');
+    assert.equal(
+      blogData.posts[0].date.setMilliseconds(0),
+      currentDate.setMilliseconds(0)
     );
-    assert.equal(blogData.posts[0].author, 'author-a');
+    assert.equal(blogData.posts[0].author, 'author-c');
+
     assert.equal(blogData.posts[1].title, 'POST 2');
     assert.deepEqual(
       blogData.posts[1].date,
       new Date('2020-01-02T00:00:00.000Z')
     );
     assert.equal(blogData.posts[1].author, 'author-b');
-    assert.equal(blogData.posts[2].title, 'POST 3');
-    assert.equal(
-      blogData.posts[2].date.setMilliseconds(0),
-      currentDate.setMilliseconds(0)
+
+    assert.equal(blogData.posts[2].title, 'POST 1');
+    assert.deepEqual(
+      blogData.posts[2].date,
+      new Date('2020-01-01T00:00:00.000Z')
     );
-    assert.equal(blogData.posts[2].author, 'author-c');
+    assert.equal(blogData.posts[2].author, 'author-a');
   });
 
   it('should generate categories based on the categories of md files and their years', async () => {
