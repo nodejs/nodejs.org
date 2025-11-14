@@ -10,6 +10,7 @@ package-lock.json
 # Next.js Build Output
 .next
 build
+next-env.d.ts
 
 # Test Runner
 junit.xml
