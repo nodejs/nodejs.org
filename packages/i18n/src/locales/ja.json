@@ -301,7 +301,18 @@
       "initErrorSearch": "検索サービスを開始できません",
       "initErrorChat": "チャットサービスを開始できません",
       "chatButtonLabel": "AIの情報を確認する",
-      "searchButtonLabel": "検索"
+      "searchButtonLabel": "検索",
+      "poweredBy": "Powered by",
+      "suggestionOne": "Node.jsをインストールするには？",
+      "suggestionTwo": "HTTPサーバーを作成するには？",
+      "suggestionThree": "Node.jsのバージョンアップ",
+      "scrollToBottom": "最下部へスクロール",
+      "closeChat": "チャットを閉じる",
+      "keyboardShortcuts": {
+        "select": "選ぶ",
+        "navigate": "移動",
+        "close": "閉じる"
+      }
     },
     "blog": {
       "blogHeader": {
