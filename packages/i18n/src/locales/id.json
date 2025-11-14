@@ -301,7 +301,18 @@
       "initErrorSearch": "Tidak dapat memulai layanan pencarian",
       "initErrorChat": "Tidak dapat memulai layanan obrolan",
       "chatButtonLabel": "Dapatkan ringkasan AI",
-      "searchButtonLabel": "Pencarian"
+      "searchButtonLabel": "Pencarian",
+      "poweredBy": "Diberdayakan oleh",
+      "suggestionOne": "Instruksi Pemasangan Node.js?",
+      "suggestionTwo": "Bagaimana cara membuat server HTTP?",
+      "suggestionThree": "Meningkatkan versi Node.js",
+      "scrollToBottom": "Gulir ke bawah",
+      "closeChat": "Tutup obrolan",
+      "keyboardShortcuts": {
+        "select": "memilih",
+        "navigate": "untuk menavigasi",
+        "close": "untuk menutup"
+      }
     },
     "blog": {
       "blogHeader": {
