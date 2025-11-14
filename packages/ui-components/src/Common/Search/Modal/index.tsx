@@ -1,0 +1,47 @@
+'use client';
+
+import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
+import type { OramaCloud } from '@orama/core';
+import { SearchRoot, ChatRoot, Modal } from '@orama/ui/components';
+import type { FC, PropsWithChildren } from 'react';
+
+import styles from './index.module.css';
+
+const SearchModal: FC<
+  PropsWithChildren<{ client: OramaCloud | null; placeholder: string }>
+> = ({ children, client, placeholder }) => (
+  <div className={styles.searchboxContainer}>
+    <Modal.Root>
+      <Modal.Trigger
+        type="button"
+        disabled={!client}
+        enableCmdK
+        className={styles.searchButton}
+      >
+        <div className={styles.searchButtonContent}>
+          <MagnifyingGlassIcon />
+          {placeholder}
+        </div>
+        <span className={styles.searchButtonShortcut}>⌘ K</span>
+      </Modal.Trigger>
+
+      <Modal.Wrapper
+        closeOnOutsideClick
+        closeOnEscape
+        className={styles.modalWrapper}
+      >
+        <SearchRoot client={client}>
+          <ChatRoot client={client} askOptions={{ throttle_delay: 50 }}>
+            <Modal.Inner className={styles.modalInner}>
+              <Modal.Content className={styles.modalContent}>
+                {children}
+              </Modal.Content>
+            </Modal.Inner>
+          </ChatRoot>
+        </SearchRoot>
+      </Modal.Wrapper>
+    </Modal.Root>
+  </div>
+);
+
+export default SearchModal;

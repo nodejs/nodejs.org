@@ -1,8 +1,8 @@
+import ChatActions from '@node-core/ui-components/Common/Search/Chat/Actions';
 import type { Interaction } from '@orama/core';
 import { ChatInteractions } from '@orama/ui/components';
 import type { FC } from 'react';
 
-import { ChatActions } from '../ChatActions';
 import ChatSources from '../ChatSources';
 import styles from './index.module.css';
 

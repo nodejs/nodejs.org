@@ -18,7 +18,7 @@ type ChatActionsProps = {
   interaction: Interaction;
 };
 
-export const ChatActions: FC<ChatActionsProps> = ({ interaction }) => {
+const ChatActions: FC<ChatActionsProps> = ({ interaction }) => {
   const [isDisliked, setIsDisliked] = useState(false);
 
   const dislikeMessage = () => setIsDisliked(!isDisliked);
@@ -68,3 +68,5 @@ export const ChatActions: FC<ChatActionsProps> = ({ interaction }) => {
     </div>
   );
 };
+
+export default ChatActions;

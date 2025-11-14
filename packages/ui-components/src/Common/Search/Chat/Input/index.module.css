@@ -63,11 +63,11 @@
   @apply mb-4
     flex
     items-center
+    justify-center
     gap-2
     overflow-x-auto
     px-1
-    text-sm
-    lg:justify-center;
+    text-sm;
 
   &::-webkit-scrollbar {
     @apply hidden;

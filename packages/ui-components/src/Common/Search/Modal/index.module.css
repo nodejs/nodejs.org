@@ -45,14 +45,13 @@
 }
 
 .searchButtonShortcut {
-  @apply hidden
+  @apply inline
     rounded-md
     bg-neutral-300
     px-2
     py-1
     text-sm
     text-neutral-800
-    lg:inline
     dark:bg-neutral-900
     dark:text-neutral-400;
 }
@@ -69,37 +68,30 @@
     items-start
     justify-center
     bg-white/70
-    lg:pt-[5vh]
+    pt-[5vh]
     dark:bg-zinc-950/70;
 }
 
 .modalInner {
   @apply fixed
-    top-0
-    bottom-0
+    top-auto
+    bottom-auto
     mx-auto
     my-0
     flex
-    h-full
-    max-w-none
-    bg-white
-    lg:top-auto
-    lg:bottom-auto
-    lg:h-auto
-    lg:max-w-3xl
-    lg:bg-neutral-100
-    dark:bg-zinc-950
-    lg:dark:bg-neutral-950;
+    h-auto
+    max-w-3xl
+    bg-neutral-100
+    dark:bg-neutral-950;
 }
 
 .modalContent {
   @apply flex
-    h-full
+    h-auto
+    max-h-[70vh]
     flex-col
+    rounded-xl
+    border
     border-neutral-200
-    lg:h-auto
-    lg:max-h-[70vh]
-    lg:rounded-xl
-    lg:border
     dark:border-neutral-900;
 }

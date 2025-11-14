@@ -1,58 +1,56 @@
 'use client';
 
-import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
-import { SearchRoot, ChatRoot, Modal } from '@orama/ui/components';
+import Search from '@node-core/ui-components/Common/Search';
+import SearchModal from '@node-core/ui-components/Common/Search/Modal';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
+import { useState, type FC } from 'react';
 
-import '@orama/ui/styles.css';
-import { SearchboxProvider } from '#site/providers/searchboxProvider';
+import { DEFAULT_ORAMA_QUERY_PARAMS } from '#site/next.constants.mjs';
 
-import styles from './index.module.css';
-import { InnerSearchboxModal } from './InnerSearchboxModal';
+import type { Document } from './DocumentLink';
+import { Footer } from './Footer';
 import { oramaClient } from './orama-client';
+import { SearchItem } from './SearchItem';
+import { SlidingChatPanel } from './SlidingChatPanel';
 
 const Searchbox: FC = () => {
   const t = useTranslations();
+  const [mode, setMode] = useState<'chat' | 'search'>('search');
 
   return (
-    <SearchboxProvider>
-      <div className={styles.searchboxContainer}>
-        <Modal.Root>
-          <Modal.Trigger
-            type="button"
-            disabled={!oramaClient}
-            enableCmdK
-            className={styles.searchButton}
-          >
-            <div className={styles.searchButtonContent}>
-              <MagnifyingGlassIcon />
-              {t('components.search.searchPlaceholder')}
-            </div>
-            <span className={styles.searchButtonShortcut}>⌘ K</span>
-          </Modal.Trigger>
-
-          <Modal.Wrapper
-            closeOnOutsideClick
-            closeOnEscape
-            className={styles.modalWrapper}
-          >
-            <SearchRoot client={oramaClient}>
-              <ChatRoot
-                client={oramaClient}
-                askOptions={{ throttle_delay: 50 }}
-              >
-                <Modal.Inner className={styles.modalInner}>
-                  <Modal.Content className={styles.modalContent}>
-                    <InnerSearchboxModal />
-                  </Modal.Content>
-                </Modal.Inner>
-              </ChatRoot>
-            </SearchRoot>
-          </Modal.Wrapper>
-        </Modal.Root>
-      </div>
-    </SearchboxProvider>
+    <SearchModal
+      client={oramaClient}
+      placeholder={t('components.search.searchPlaceholder')}
+    >
+      <Search
+        input={{
+          placeholder: t('components.search.searchPlaceholder'),
+          ariaLabel: t('components.search.searchPlaceholder'),
+        }}
+        results={{
+          suggestions: [
+            t('components.search.suggestionOne'),
+            t('components.search.suggestionTwo'),
+            t('components.search.suggestionThree'),
+          ],
+          suggestionsTitle: t('components.search.suggestions'),
+          noResultsTitle: t('components.search.noResultsFoundFor'),
+          chatLabel: t('components.search.chatButtonLabel'),
+          onChat: () => setMode('chat'),
+          onHit: hit => (
+            <SearchItem document={hit.document as Document} mode={mode} />
+          ),
+        }}
+        tabIndex={mode === 'search' ? 0 : -1}
+        aria-hidden={mode === 'chat'}
+        searchParams={DEFAULT_ORAMA_QUERY_PARAMS}
+      />
+      <Footer />
+      <SlidingChatPanel
+        open={mode === 'chat'}
+        onClose={() => setMode('search')}
+      />
+    </SearchModal>
   );
 };
 
