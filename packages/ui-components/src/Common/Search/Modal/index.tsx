@@ -3,13 +3,21 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import type { OramaCloud } from '@orama/core';
 import { SearchRoot, ChatRoot, Modal } from '@orama/ui/components';
-import type { FC, PropsWithChildren } from 'react';
+import type { ComponentProps, FC, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';
+import SearchInput from '../Input';
 
-const SearchModal: FC<
-  PropsWithChildren<{ client: OramaCloud | null; placeholder: string }>
-> = ({ children, client, placeholder }) => (
+type SearchModalProps = {
+  client: OramaCloud | null;
+  placeholder: string;
+} & ComponentProps<typeof SearchInput>;
+
+const SearchModal: FC<PropsWithChildren<SearchModalProps>> = ({
+  children,
+  client,
+  placeholder,
+}) => (
   <div className={styles.searchboxContainer}>
     <Modal.Root>
       <Modal.Trigger
@@ -34,6 +42,10 @@ const SearchModal: FC<
           <ChatRoot client={client} askOptions={{ throttle_delay: 50 }}>
             <Modal.Inner className={styles.modalInner}>
               <Modal.Content className={styles.modalContent}>
+                <SearchInput
+                  placeholder={placeholder}
+                  ariaLabel={placeholder}
+                />
                 {children}
               </Modal.Content>
             </Modal.Inner>

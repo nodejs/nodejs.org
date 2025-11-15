@@ -1,0 +1,8 @@
+@reference "../../../styles/index.css";
+
+.searchResultsContainer {
+  @apply flex
+    grow
+    flex-col
+    overflow-y-auto;
+}
