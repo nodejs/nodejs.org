@@ -80,9 +80,14 @@
     my-0
     flex
     h-auto
+    w-full
     max-w-3xl
     bg-neutral-100
     dark:bg-neutral-950;
+
+  > section {
+    @apply w-full;
+  }
 }
 
 .modalContent {
