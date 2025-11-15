@@ -1,5 +1,3 @@
-'use client';
-
 import { SearchResults } from '@orama/ui/components';
 import { useSearch } from '@orama/ui/hooks/useSearch';
 import type { ComponentProps, FC } from 'react';

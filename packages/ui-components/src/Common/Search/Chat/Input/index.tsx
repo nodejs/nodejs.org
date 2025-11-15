@@ -1,5 +1,3 @@
-'use client';
-
 import { PaperAirplaneIcon } from '@heroicons/react/20/solid';
 import { PauseCircleIcon } from '@heroicons/react/24/solid';
 import { PromptTextArea, Suggestions } from '@orama/ui/components';
