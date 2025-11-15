@@ -16,4 +16,3 @@ export * from './download';
 export * from './userAgent';
 export * from './vulnerabilities';
 export * from './page';
-export * from './searchbox';

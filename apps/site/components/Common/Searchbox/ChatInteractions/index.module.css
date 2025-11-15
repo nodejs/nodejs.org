@@ -39,7 +39,7 @@
 
 .scrollDownButton {
   @apply absolute
-    bottom-36
+    bottom-28
     left-1/2
     inline-flex
     -translate-x-1/2
@@ -53,7 +53,6 @@
     focus:bg-neutral-300
     focus:outline-none
     motion-safe:transition-colors
-    lg:bottom-28
     dark:bg-neutral-900
     dark:text-neutral-200
     focus:dark:bg-neutral-800;

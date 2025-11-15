@@ -1,0 +1,50 @@
+@reference "../../../../styles/index.css";
+
+.facetTabsWrapper {
+  @apply mb-2
+    overflow-x-auto;
+
+  &::-webkit-scrollbar {
+    @apply hidden;
+  }
+}
+
+.facetTabItem {
+  @apply flex
+    cursor-pointer
+    items-center
+    gap-2
+    rounded-3xl
+    border
+    border-neutral-200
+    px-3
+    py-1
+    text-sm
+    duration-300
+    focus:outline-none
+    focus-visible:bg-neutral-300
+    motion-safe:transition-colors
+    dark:border-neutral-900
+    dark:focus-visible:bg-neutral-900;
+}
+
+.facetTabItemSelected {
+  @apply border-2
+    border-green-600
+    dark:border-green-400;
+}
+
+.facetTabsList {
+  @apply flex
+    items-center
+    gap-2
+    overflow-x-auto;
+
+  &::-webkit-scrollbar {
+    @apply hidden;
+  }
+}
+
+.facetTabItemCount {
+  @apply text-neutral-700;
+}

@@ -1,0 +1,50 @@
+@reference "../../../styles/index.css";
+
+.searchResultsWrapper {
+  @apply grow-0
+    overflow-y-auto
+    px-5
+    pt-3
+    text-neutral-900
+    dark:text-neutral-200;
+
+  &::-webkit-scrollbar {
+    @apply size-1.5;
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply rounded-md
+      bg-neutral-900;
+  }
+}
+
+.searchResultsGroupWrapper {
+  @apply relative
+    items-start
+    overflow-y-auto;
+}
+
+.searchResultsGroup {
+  @apply mb-3
+    border-t
+    border-neutral-200
+    dark:border-neutral-900;
+}
+
+.searchResultsGroup:first-of-type {
+  @apply border-0;
+}
+
+.searchResultsGroupTitle {
+  @apply mt-4
+    mb-3
+    pl-2
+    text-sm
+    font-semibold
+    text-neutral-600
+    dark:text-neutral-600;
+}
