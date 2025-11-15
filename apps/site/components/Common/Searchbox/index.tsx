@@ -5,7 +5,8 @@ import SearchModal from '@node-core/ui-components/Common/Search/Modal';
 import SearchResults from '@node-core/ui-components/Common/Search/Results';
 import SearchSuggestions from '@node-core/ui-components/Common/Search/Suggestions';
 import { useTranslations } from 'next-intl';
-import { useState, type FC } from 'react';
+import { useState } from 'react';
+import type { FC } from 'react';
 
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '#site/next.constants.mjs';
 

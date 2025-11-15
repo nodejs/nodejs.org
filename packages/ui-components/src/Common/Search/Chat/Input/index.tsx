@@ -5,8 +5,9 @@ import { useChat } from '@orama/ui/hooks';
 import type { FC, PropsWithChildren } from 'react';
 import { useEffect, useRef } from 'react';
 
+import SearchSuggestions from '#ui/Common/Search/Suggestions';
+
 import styles from './index.module.css';
-import SearchSuggestions from '../../Suggestions';
 
 type ChatInputProps = {
   suggestions: Array<string>;
