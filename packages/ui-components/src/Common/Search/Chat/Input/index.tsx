@@ -1,11 +1,12 @@
 import { PaperAirplaneIcon } from '@heroicons/react/20/solid';
 import { PauseCircleIcon } from '@heroicons/react/24/solid';
-import { PromptTextArea, Suggestions } from '@orama/ui/components';
+import { PromptTextArea } from '@orama/ui/components';
 import { useChat } from '@orama/ui/hooks';
 import type { FC, PropsWithChildren } from 'react';
 import { useEffect, useRef } from 'react';
 
 import styles from './index.module.css';
+import SearchSuggestions from '../../Suggestions';
 
 type ChatInputProps = {
   suggestions: Array<string>;
@@ -36,15 +37,7 @@ const ChatInput: FC<PropsWithChildren<ChatInputProps>> = ({
 
   return (
     <>
-      {!!interactions?.length && (
-        <Suggestions.Wrapper className={styles.suggestionsWrapper}>
-          {suggestions.map(suggestion => (
-            <Suggestions.Item className={styles.suggestionsItem}>
-              {suggestion}
-            </Suggestions.Item>
-          ))}
-        </Suggestions.Wrapper>
-      )}
+      {!interactions?.length && <SearchSuggestions suggestions={suggestions} />}
       <div className={styles.textareaContainer}>
         <PromptTextArea.Wrapper className={styles.textareaWrapper}>
           <PromptTextArea.Field

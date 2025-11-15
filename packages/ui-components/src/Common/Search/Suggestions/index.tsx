@@ -6,7 +6,7 @@ import styles from './index.module.css';
 
 type SearchSuggestionsProps = {
   suggestions: Array<string>;
-  label: string;
+  label?: string;
 } & Omit<ComponentProps<typeof Suggestions.Item>, 'children'>;
 
 const SearchSuggestions: FC<SearchSuggestionsProps> = ({
@@ -15,9 +15,9 @@ const SearchSuggestions: FC<SearchSuggestionsProps> = ({
   ...props
 }) => (
   <Suggestions.Wrapper className={styles.suggestionsWrapper}>
-    <p className={styles.suggestionsTitle}>{label}</p>
-    {suggestions.map(suggestion => (
-      <Suggestions.Item {...props} className={styles.suggestionItem}>
+    {label && <p className={styles.suggestionsTitle}>{label}</p>}
+    {suggestions.map((suggestion, i) => (
+      <Suggestions.Item {...props} key={i} className={styles.suggestionItem}>
         <SparklesIcon />
         {suggestion}
       </Suggestions.Item>
