@@ -30,7 +30,7 @@ export const getBlogPosts = (category: BlogCategory): BlogPostsRSC => {
       next: null,
       // In case the division results on a remainder we need
       // to have an extra page containing the remainder entries
-      pages: Math.floor(total % 1 === 0 ? total : total + 1),
+      pages: Math.ceil(total),
       total: categoryPosts.length,
     },
   };
