@@ -301,7 +301,18 @@
       "initErrorSearch": "Не вдалося ініціалізувати пошуковий сервіс",
       "initErrorChat": "Не вдалося ініціалізувати сервіс чату",
       "chatButtonLabel": "Отримати результати ШІ",
-      "searchButtonLabel": "Пошук"
+      "searchButtonLabel": "Пошук",
+      "poweredBy": "За підтримки",
+      "suggestionOne": "Як установити Node.js?",
+      "suggestionTwo": "Як створити HTTP-сервер?",
+      "suggestionThree": "Оновлення версії Node.js",
+      "scrollToBottom": "Прогорнути донизу",
+      "closeChat": "Закрити чат",
+      "keyboardShortcuts": {
+        "select": ", щоб обрати",
+        "navigate": ", щоб гортати",
+        "close": ", щоб закрити"
+      }
     },
     "blog": {
       "blogHeader": {
