@@ -1,7 +1,9 @@
+import type { BlogCategory } from './blog';
+
 export type RSSFeed = {
   file: string;
   title: string;
-  category: string;
+  category: BlogCategory;
   description?: string;
 };
 

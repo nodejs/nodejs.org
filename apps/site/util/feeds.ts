@@ -5,7 +5,7 @@ import { Feed } from 'feed';
 
 import { BASE_URL, BASE_PATH } from '#site/next.constants.mjs';
 import { siteConfig } from '#site/next.json.mjs';
-import type { BlogCategory, BlogPostsRSC } from '#site/types';
+import type { BlogPostsRSC } from '#site/types';
 
 import { getBlogPosts } from './blog';
 
@@ -37,7 +37,7 @@ export const generateWebsiteFeeds = ({ posts }: BlogPostsRSC) => {
       } as FeedOptions);
 
       const blogFeedEntries = posts
-        .filter(post => post.categories.includes(category as BlogCategory))
+        .filter(post => post.categories.includes(category))
         .map(post => {
           const date = new Date(post.date);
           const time = date.getTime();
