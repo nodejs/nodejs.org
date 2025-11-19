@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 
-import provideWebsiteFeeds from '#site/next-data/providers/websiteFeeds';
 import { siteConfig } from '#site/next.json.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
+import { getFeeds } from '#site/util/feeds';
 
 type DynamicStaticPaths = { locale: string; feed: string };
 type StaticParams = { params: Promise<DynamicStaticPaths> };
@@ -14,7 +14,7 @@ export const GET = async (_: Request, props: StaticParams) => {
   const params = await props.params;
 
   // Generate the Feed for the given feed type (blog, releases, etc)
-  const websiteFeed = provideWebsiteFeeds(params.feed);
+  const websiteFeed = getFeeds(params.feed);
 
   return new NextResponse(websiteFeed, {
     headers: { 'Content-Type': 'application/xml' },
