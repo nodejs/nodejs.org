@@ -43,7 +43,7 @@ describe('generateReleaseData', () => {
       version: '14.0.0',
       versionWithPrefix: 'v14.0.0',
       codename: '',
-      isLts: true,
+      isLts: false,
       npm: '6.14.10',
       v8: '8.0.276.20',
       releaseDate: '2021-04-20',
