@@ -1,48 +1,29 @@
-'use client';
-
-import * as SwitchPrimitive from '@radix-ui/react-switch';
 import classNames from 'classnames';
-import { useId } from 'react';
-import type { FC, PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren, InputHTMLAttributes } from 'react';
 
 import styles from './index.module.css';
 
-type SwitchProps = SwitchPrimitive.SwitchProps & {
+type SwitchProps = InputHTMLAttributes<HTMLInputElement> & {
+  id: string;
   label?: string;
-  checked?: boolean;
-  onCheckedChange?: (checked: boolean) => void;
   thumbClassName?: string;
 };
 
 const Switch: FC<PropsWithChildren<SwitchProps>> = ({
   label,
-  checked,
-  onCheckedChange,
   className,
   thumbClassName,
+  id,
   ...props
 }) => {
-  const id = useId();
-
   return (
-    <div className={styles.switch}>
-      {label && (
-        <label className={styles.label} htmlFor={id}>
-          {label}
-        </label>
-      )}
-      <SwitchPrimitive.Root
-        id={id}
-        className={classNames(styles.root, className)}
-        checked={checked}
-        onCheckedChange={onCheckedChange}
-        {...props}
-      >
-        <SwitchPrimitive.Thumb
-          className={classNames(styles.thumb, thumbClassName)}
-        />
-      </SwitchPrimitive.Root>
-    </div>
+    <label className={styles.switch}>
+      {label && <span className={styles.label}>{label}</span>}
+      <input id={id} type="checkbox" className={styles.input} {...props} />
+      <div className={classNames(styles.root, className)}>
+        <div className={classNames(styles.thumb, thumbClassName)} />
+      </div>
+    </label>
   );
 };
 

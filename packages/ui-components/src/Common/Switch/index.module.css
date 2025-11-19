@@ -14,6 +14,10 @@
       dark:text-neutral-200;
   }
 
+  .input {
+    @apply sr-only;
+  }
+
   .root {
     @apply w-10.5
       relative
@@ -23,20 +27,22 @@
       items-center
       rounded-full
       bg-black
-      focus:outline-none
-      focus-visible:ring-2
-      focus-visible:ring-green-500
-      focus-visible:ring-offset-2
-      focus-visible:ring-offset-neutral-100
       motion-safe:transition-colors
       motion-safe:duration-100
       motion-safe:ease-out
-      dark:bg-neutral-700
-      dark:focus-visible:ring-green-400
-      dark:focus-visible:ring-offset-neutral-900;
+      dark:bg-neutral-700;
   }
 
-  .root[data-state='checked'] {
+  .input:focus-visible + .root {
+    @apply ring-2
+      ring-green-500
+      ring-offset-2
+      ring-offset-neutral-100
+      dark:ring-green-400
+      dark:ring-offset-neutral-900;
+  }
+
+  .input:checked + .root {
     @apply bg-green-600;
   }
 
@@ -53,7 +59,7 @@
       motion-safe:ease-out;
   }
 
-  .thumb[data-state='checked'] {
+  .input:checked + .root .thumb {
     @apply translate-x-5;
   }
 }

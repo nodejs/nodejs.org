@@ -28,7 +28,7 @@ const EOLReleaseTableBody: FC<EOLReleaseTableBodyProps> = ({
     <tbody>
       {eolReleases.map(release => (
         <Fragment key={release.major}>
-          <tr>
+          <tr data-lts={!!release.codename}>
             <td data-label="Version">
               v{release.major} {release.codename ? `(${release.codename})` : ''}
             </td>

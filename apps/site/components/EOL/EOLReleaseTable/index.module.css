@@ -1,0 +1,9 @@
+@reference "../../../styles/index.css";
+
+.eolTableWrapper {
+  @apply contents;
+}
+
+.eolTableWrapper:has(input[type='checkbox']:checked) tr[data-lts='false'] {
+  @apply hidden;
+}
