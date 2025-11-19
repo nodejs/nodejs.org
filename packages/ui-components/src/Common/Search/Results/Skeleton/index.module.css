@@ -1,0 +1,43 @@
+@reference "../../../../styles/index.css";
+
+.skeletonWrapper {
+  @apply flex
+    flex-col
+    gap-5
+    py-6;
+}
+
+.skeletonItem {
+  @apply flex
+    items-center
+    gap-4;
+}
+
+.skeletonAnim {
+  @apply dark:animate-pulse-dark
+    animate-pulse
+    rounded-md;
+}
+
+.skeletonAvatar {
+  @apply h-6
+    w-5
+    shrink-0;
+}
+
+.skeletonText {
+  @apply flex
+    flex-1
+    flex-col
+    gap-2;
+}
+
+.skeletonLineShort {
+  @apply h-3
+    w-1/3;
+}
+
+.skeletonLineLong {
+  @apply h-3
+    w-2/3;
+}

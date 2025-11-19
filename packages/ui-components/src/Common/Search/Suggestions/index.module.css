@@ -1,4 +1,4 @@
-@reference "../../../../styles/index.css";
+@reference "../../../styles/index.css";
 
 .suggestionsWrapper {
   @apply flex
@@ -44,16 +44,4 @@
   svg {
     @apply size-5;
   }
-}
-
-.noResultsWrapper {
-  @apply flex
-    h-full
-    items-center
-    justify-center
-    pt-10
-    pb-31
-    text-sm
-    text-neutral-800
-    dark:text-neutral-500;
 }

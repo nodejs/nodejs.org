@@ -17,9 +17,8 @@
       focus-visible:border-green-600
       focus-visible:bg-transparent
       motion-safe:transition-colors
-      dark:bg-zinc-950
-      dark:hover:bg-neutral-900
-      lg:dark:bg-neutral-950;
+      dark:bg-neutral-950
+      dark:hover:bg-neutral-900;
   }
 
   svg {
