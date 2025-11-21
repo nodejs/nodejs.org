@@ -301,7 +301,18 @@
       "initErrorSearch": "Impossible d'initialiser le service de recherche",
       "initErrorChat": "Impossible d'initialiser le service de chat",
       "chatButtonLabel": "Obtenir un résumé de l'IA",
-      "searchButtonLabel": "Recherche"
+      "searchButtonLabel": "Recherche",
+      "poweredBy": "Produit par",
+      "suggestionOne": "Comment installer Node.js?",
+      "suggestionTwo": "Comment créer un serveur HTTP ?",
+      "suggestionThree": "Mise à niveau de la version Node.js",
+      "scrollToBottom": "Défiler vers le bas",
+      "closeChat": "Fermer la discussion",
+      "keyboardShortcuts": {
+        "select": "sélectionner",
+        "navigate": "naviguer",
+        "close": "fermer"
+      }
     },
     "blog": {
       "blogHeader": {
