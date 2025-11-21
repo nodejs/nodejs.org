@@ -1,6 +1,6 @@
 # Node.js UI Components
 
-This package is compromised of UI components for use in the Node.js website, documentation,
+This package is comprised of UI components for use in the Node.js website, documentation,
 and other aspects of the project.
 
 The components are based on [this design file](https://www.figma.com/design/a10cjjw3MzvRQMPT9FP3xz/Node.js).
