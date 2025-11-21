@@ -1,5 +1,5 @@
 import { spawnSync } from 'node:child_process';
-import { writeFile } from 'node:fs/promises';
+import { writeFile, copyFile } from 'node:fs/promises';
 
 import pkg from '../package.json' with { type: 'json' };
 
@@ -16,6 +16,8 @@ await writeFile(
   JSON.stringify(cleanedPkg, null, 2),
   'utf8'
 );
+
+await copyFile('README.md', 'dist/README.md');
 
 // Now, publish the generated `dist` folder
 const { status, error } = spawnSync('pnpm', ['publish', '--no-git-checks'], {
