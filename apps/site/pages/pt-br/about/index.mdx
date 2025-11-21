@@ -1,0 +1,92 @@
+---
+title: Sobre o Node.js®
+layout: about
+---
+
+# Sobre o Node.js®
+
+Como um ambiente de execução JavaScript assíncrono orientado a eventos, o Node.js é projetado para criar aplicações de rede escaláveis. No exemplo de "hello world" abaixo, muitas conexões podem ser tratadas simultaneamente. A cada conexão, a função callback é acionada, mas se não houver trabalho a ser feito, o Node.js entra em modo de espera.
+
+```cjs
+const { createServer } = require('node:http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+```mjs
+import { createServer } from 'node:http';
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+Isso contrasta com o modelo de concorrência mais comum hoje em dia, no qual os threads do sistema operacional são empregados. O uso de threads para redes é relativamente ineficiente e muito difícil de utilizar. Além disso, os usuários do Node.js não precisam se preocupar com deadlocks no processo, já que não existem bloqueios. Quase nenhuma função no Node.js realiza operações de I/O diretamente, portanto, o processo nunca bloqueia, exceto quando o I/O é realizada utilizando métodos síncronos da biblioteca padrão do Node.js. Como nada bloqueia, sistemas escaláveis são muito viáveis de serem desenvolvidos em Node.js.
+
+Se algum desses termos for desconhecido, há um artigo completo sobre chamadas [Bloqueantes vs. Não Bloqueante](/learn/asynchronous-work/overview-of-blocking-vs-non-blocking).
+
+---
+
+O Node.js é semelhante em design a sistemas como o [Event Machine](https://github.com/eventmachine/eventmachine) do Ruby e o [Twisted](https://twisted.org/) do Python, e foi influenciado por esses sistemas. O Node.js leva o modelo de eventos um pouco além. Ele apresenta um loop de eventos como uma estrutura do ambiente de execução, em vez de como uma biblioteca. Em outros sistemas, sempre há uma chamada bloqueante para iniciar o loop de eventos. Normalmente, o comportamento é definido por meio de callbacks no início de um script, e no final, um servidor é iniciado por meio de uma chamada bloqueante como `EventMachine::run()`. No Node.js, não existe tal chamada para iniciar o loop de eventos. O Node.js simplesmente entra no loop de eventos após executar o script de entrada. O Node.js sai do loop de eventos quando não há mais callbacks a serem executados. Esse comportamento é semelhante ao JavaScript do navegador — o loop de eventos é oculto do usuário.
+
+O HTTP é um recurso de primeira classe no Node.js, projetado com foco em streaming e baixa latência em mente. Isso torna o Node.js muito adequado para servir a base de uma biblioteca ou framework web.
+
+O Node.js, embora projetado sem threads, não significa que você não possa aproveitar múltiplos núcleos no seu ambiente. Processos filhos podem ser gerados usando nossa API [`child_process.fork()`](https://nodejs.org/api/child_process.html), e são projetados para facilitar a comunicação. Baseado nessa mesma interface, está o módulo [`cluster`](https://nodejs.org/api/cluster.html), que permite compartilhar sockets entre processos para habilitar balanceamento de carga entre seus núcleos.
+
+## Recursos do Node.js Oficiais
+
+Para garantir autenticidade e segurança ao trabalhar com Node.js, sempre use recursos oficiais. Evite confiar em emails, binários, ou downloads de fontes não oficiais.
+
+### Domínios do Node.js Oficiais
+
+Para baixar os binários Node.js e acessar a documentação oficial, use apenas estes domínios:
+
+- [nodejs.org](https://nodejs.org)
+- [nodejs.dev](https://nodejs.dev) _(Direciona para https://nodejs.org)_
+- [iojs.org](https://iojs.org) _(Direciona para https://nodejs.org)_
+
+### Pacotes do npm Oficiais
+
+A equipe do Node.js mantém os seguintes escopos oficiais do pacote npm:
+
+- [`@node-core`](https://npmjs.com/~node-core)
+- [`@pkgjs`](https://npmjs.com/~pkgjs)
+
+Além disso, a equipe do Node.js mantém pacotes publicados pela conta npm [`nodejs-foundation`](https://npmjs.com/~nodejs-foundation), embora outros pacotes relacionados ao Node.js como ([`undici`](https://www.npmjs.com/package/undici)) também possam ser mantidos por colaboradores intimamente ligados ao projeto.
+
+Usar pacotes da equipe do Node.js garante que você está trabalhando com componentes Node.js oficialmente suportados.
+
+### Organizações do Github Oficiais
+
+Node.js e projetos relacionados são mantidos nestas organizações oficiais no Github:
+
+- [nodejs](https://github.com/nodejs)
+- [pkgjs](https://github.com/pkgjs)
+
+### Canais Oficiais de Comunicação
+
+Node.js e a Fundação OpenJS se comunicam através de vários canais oficiais e apoiados pela comunidade. Você pode encontrar detalhes de como se envolver na página [Participe](https://nodejs.org/en/about/get-involved).
+
+### Relatando problemas e indisponibilidade do site
+
+Se você encontrar problemas com o site do Node.js, reporte-os no [site do repositório do Node.js](https://github.com/nodejs/nodejs.org/issues). Para atualizações em tempo real sobre indisponibilidade, visite a [Página de status do Node.js](https://status.nodejs.org).
