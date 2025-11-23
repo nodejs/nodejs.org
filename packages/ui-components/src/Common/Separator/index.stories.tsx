@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import Separator from '#ui/Common/Separator';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof Separator>;
 type Meta = MetaObj<typeof Separator>;

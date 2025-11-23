@@ -1,5 +1,4 @@
 import { getLocale } from 'next-intl/server';
-import type { FC, PropsWithChildren } from 'react';
 
 import { getClientContext } from '#site/client-context';
 import WithNodeRelease from '#site/components/withNodeRelease';
@@ -11,6 +10,7 @@ import {
 } from '#site/providers/releaseProvider';
 
 import type { NodeRelease } from '../types';
+import type { FC, PropsWithChildren } from 'react';
 
 type WithDownloadSectionProps = PropsWithChildren<{
   releases: Array<NodeRelease>;

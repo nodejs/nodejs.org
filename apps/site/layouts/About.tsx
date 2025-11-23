@@ -1,11 +1,12 @@
 import Article from '@node-core/ui-components/Containers/Article';
-import type { FC, PropsWithChildren } from 'react';
 
 import WithBreadcrumbs from '#site/components/withBreadcrumbs';
 import WithFooter from '#site/components/withFooter';
 import WithMetaBar from '#site/components/withMetaBar';
 import WithNavBar from '#site/components/withNavBar';
 import WithSidebar from '#site/components/withSidebar';
+
+import type { FC, PropsWithChildren } from 'react';
 
 const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
   <>

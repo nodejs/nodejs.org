@@ -8,14 +8,15 @@
  */
 
 import { notFound } from 'next/navigation';
-import type { FC } from 'react';
 
 import { ENABLE_STATIC_EXPORT } from '#site/next.constants.mjs';
 import { ENABLE_STATIC_EXPORT_LOCALE } from '#site/next.constants.mjs';
 import { dynamicRouter } from '#site/next.dynamic.mjs';
 import * as basePage from '#site/next.dynamic.page.mjs';
 import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
+
 import type { DynamicParams } from '#site/types';
+import type { FC } from 'react';
 
 type PageParams = DynamicParams<{ path: Array<string> }>;
 

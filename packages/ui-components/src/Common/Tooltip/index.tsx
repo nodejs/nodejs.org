@@ -1,5 +1,6 @@
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import classNames from 'classnames';
+
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 
 import styles from './index.module.css';

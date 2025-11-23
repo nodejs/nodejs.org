@@ -1,8 +1,9 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import type { FC, ReactElement } from 'react';
 import { useMemo } from 'react';
 
 import CodeTabs from '#ui/Common/CodeTabs';
+
+import type { FC, ReactElement } from 'react';
 
 type MDXCodeTabsProps = {
   children: Array<ReactElement<unknown>>;

@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import { JsWhite, Nodejs } from '#ui/Icons/Logos';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 export const NodejsLogos: StoryObj = {
   render: () => (

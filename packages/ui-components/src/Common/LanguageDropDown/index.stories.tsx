@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import LanguageDropDown from '#ui/Common/LanguageDropDown';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof LanguageDropDown>;
 type Meta = MetaObj<typeof LanguageDropDown>;

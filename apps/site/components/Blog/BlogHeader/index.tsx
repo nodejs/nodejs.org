@@ -1,9 +1,10 @@
 import { RssIcon } from '@heroicons/react/24/solid';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
 
 import Link from '#site/components/Link';
 import { siteConfig } from '#site/next.json.mjs';
+
+import type { FC } from 'react';
 
 import styles from './index.module.css';
 

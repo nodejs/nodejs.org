@@ -1,7 +1,7 @@
 import Avatar from '@node-core/ui-components/Common/AvatarGroup/Avatar';
-import type { FC } from 'react';
 
 import type { Supporters } from '#site/types';
+import type { FC } from 'react';
 
 type SupportersListProps = {
   supporters: Array<Supporters>;

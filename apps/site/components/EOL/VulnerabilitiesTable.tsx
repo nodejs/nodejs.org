@@ -1,9 +1,10 @@
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
 
 import LinkWithArrow from '#site/components/Common/LinkWithArrow';
 import VulnerabilityChip from '#site/components/EOL/VulnerabilityChips/VulnerabilityChip';
+
 import type { Vulnerability } from '#site/types/vulnerabilities';
+import type { FC } from 'react';
 
 const VulnerabilitiesTable: FC<{
   vulnerabilities: Array<Vulnerability>;

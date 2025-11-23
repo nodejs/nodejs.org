@@ -1,5 +1,6 @@
 import * as ToastPrimitive from '@radix-ui/react-toast';
 import classNames from 'classnames';
+
 import type { FC } from 'react';
 
 import styles from './index.module.css';

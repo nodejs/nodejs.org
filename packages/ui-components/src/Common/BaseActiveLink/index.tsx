@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import type { ComponentProps, FC } from 'react';
 
 import type { LinkLike } from '#ui/types';
+import type { ComponentProps, FC } from 'react';
 
 export type ActiveLocalizedLinkProps = ComponentProps<LinkLike> & {
   activeClassName?: string;

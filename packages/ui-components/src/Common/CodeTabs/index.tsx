@@ -1,6 +1,6 @@
-import type { ComponentProps, FC } from 'react';
-
 import Tabs from '#ui/Common/Tabs';
+
+import type { ComponentProps, FC } from 'react';
 
 import styles from './index.module.css';
 

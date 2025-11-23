@@ -1,6 +1,5 @@
-import type { FC } from 'react';
-
 import type { TailwindSVG } from '#ui/types';
+import type { FC } from 'react';
 
 const JsWhiteIcon: FC<TailwindSVG> = props => (
   <svg

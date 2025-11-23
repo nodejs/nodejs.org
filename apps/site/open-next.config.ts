@@ -1,6 +1,7 @@
-import type { OpenNextConfig } from '@opennextjs/cloudflare';
 import { defineCloudflareConfig } from '@opennextjs/cloudflare';
 import incrementalCache from '@opennextjs/cloudflare/overrides/incremental-cache/kv-incremental-cache';
+
+import type { OpenNextConfig } from '@opennextjs/cloudflare';
 
 const cloudflareConfig = defineCloudflareConfig({ incrementalCache });
 

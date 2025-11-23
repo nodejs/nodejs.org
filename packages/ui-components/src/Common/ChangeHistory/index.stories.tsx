@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import ChangeHistory from '#ui/Common/ChangeHistory';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof ChangeHistory>;
 type Meta = MetaObj<typeof ChangeHistory>;

@@ -2,14 +2,15 @@
 
 import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
 import { useEffect, useContext, useMemo } from 'react';
 
 import { useClientContext } from '#site/hooks';
 import { ReleaseContext } from '#site/providers/releaseProvider';
-import type { Platform } from '#site/types/userAgent';
 import { PLATFORMS, nextItem, parseCompat } from '#site/util/download';
 import { getUserPlatform } from '#site/util/userAgent';
+
+import type { Platform } from '#site/types/userAgent';
+import type { FC } from 'react';
 
 const PlatformDropdown: FC = () => {
   const { architecture, bitness } = useClientContext();

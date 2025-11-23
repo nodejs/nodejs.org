@@ -1,10 +1,11 @@
 'use client';
 
 import { ArrowDownIcon } from '@heroicons/react/24/solid';
-import type { Interaction } from '@orama/core';
 import { ChatInteractions } from '@orama/ui/components';
 import { useScrollableContainer } from '@orama/ui/hooks/useScrollableContainer';
 import { useTranslations } from 'next-intl';
+
+import type { Interaction } from '@orama/core';
 
 import { ChatMessage } from '../ChatMessage';
 

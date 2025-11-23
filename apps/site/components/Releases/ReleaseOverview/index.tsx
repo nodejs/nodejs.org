@@ -6,10 +6,11 @@ import {
 } from '@heroicons/react/24/outline';
 import NpmIcon from '@node-core/ui-components/Icons/PackageManager/Npm';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
+
 import type { NodeRelease } from '#site/types';
+import type { FC } from 'react';
 
 import ReleaseOverviewItem from './ReleaseOverviewItem';
 

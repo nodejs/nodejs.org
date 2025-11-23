@@ -1,8 +1,9 @@
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
 
 import VulnerabilitiesTable from '#site/components/EOL/VulnerabilitiesTable';
+
 import type { Vulnerability } from '#site/types/vulnerabilities';
+import type { FC } from 'react';
 
 type UnknownSeveritySectionProps = {
   vulnerabilities: Array<Vulnerability>;

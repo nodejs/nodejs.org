@@ -1,4 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
+
 import type { FC, SVGAttributes } from 'react';
 
 type PrevNextArrowProps = {

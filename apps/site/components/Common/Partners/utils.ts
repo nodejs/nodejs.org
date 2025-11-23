@@ -1,5 +1,6 @@
-import type { RandomPartnerListConfig, Partners } from '#site/types';
 import { shuffle } from '#site/util/array';
+
+import type { RandomPartnerListConfig, Partners } from '#site/types';
 
 async function randomPartnerList(
   partners: Array<Partners>,

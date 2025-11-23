@@ -1,6 +1,5 @@
-import type { Dispatch } from 'react';
-
 import type * as Types from '#site/types/release';
+import type { Dispatch } from 'react';
 
 export const releaseState: Types.ReleaseState = {
   // The selected Node.js version to be downloaded

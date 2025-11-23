@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import NavBar from '#ui/Containers/NavBar';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof NavBar>;
 type Meta = MetaObj<typeof NavBar>;

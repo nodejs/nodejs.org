@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import BaseLinkTabs from '#ui/Common/BaseLinkTabs';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof BaseLinkTabs>;
 type Meta = MetaObj<typeof BaseLinkTabs>;

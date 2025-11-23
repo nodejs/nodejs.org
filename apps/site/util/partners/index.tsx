@@ -1,7 +1,7 @@
 import * as PartnersLogo from '@node-core/ui-components/Icons/PartnerLogos';
-import type { ElementType } from 'react';
 
 import type { Partners } from '#site/types';
+import type { ElementType } from 'react';
 
 /**
  * Creates an icon element for a component

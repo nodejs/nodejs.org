@@ -1,5 +1,6 @@
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import classNames from 'classnames';
+
 import type { FC, ComponentProps } from 'react';
 
 import styles from './index.module.css';

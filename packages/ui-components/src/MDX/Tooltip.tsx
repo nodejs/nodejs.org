@@ -1,8 +1,9 @@
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import classNames from 'classnames';
-import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
 
 import styles from '#ui/Common/Tooltip/index.module.css';
+
+import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
 
 export const MDXTooltip: FC<PropsWithChildren> = ({ children, ...props }) => (
   <TooltipPrimitive.Provider delayDuration={100}>

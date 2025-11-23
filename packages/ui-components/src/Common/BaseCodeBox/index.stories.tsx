@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import BaseCodeBox from '#ui/Common/BaseCodeBox';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof BaseCodeBox>;
 type Meta = MetaObj<typeof BaseCodeBox>;

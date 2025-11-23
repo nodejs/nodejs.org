@@ -2,6 +2,7 @@ import { SparklesIcon } from '@heroicons/react/24/outline';
 import { SlidingPanel } from '@orama/ui/components/SlidingPanel';
 import { useSearch } from '@orama/ui/hooks/useSearch';
 import classNames from 'classnames';
+
 import type { ComponentProps, FC } from 'react';
 
 import styles from './index.module.css';

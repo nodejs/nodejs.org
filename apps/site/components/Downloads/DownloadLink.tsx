@@ -1,10 +1,10 @@
-import type { FC, PropsWithChildren } from 'react';
-
 import { getClientContext } from '#site/client-context';
 import LinkWithArrow from '#site/components/Common/LinkWithArrow';
-import type { DownloadKind, NodeRelease } from '#site/types';
 import { getNodeDownloadUrl } from '#site/util/url';
 import { getUserPlatform } from '#site/util/userAgent';
+
+import type { DownloadKind, NodeRelease } from '#site/types';
+import type { FC, PropsWithChildren } from 'react';
 
 type DownloadLinkProps = { release: NodeRelease; kind?: DownloadKind };
 

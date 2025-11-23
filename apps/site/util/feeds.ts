@@ -1,11 +1,12 @@
 'use strict';
 
-import type { FeedOptions } from 'feed';
 import { Feed } from 'feed';
 
 import { BASE_URL, BASE_PATH } from '#site/next.constants.mjs';
 import { siteConfig } from '#site/next.json.mjs';
+
 import type { BlogPostsRSC } from '#site/types';
+import type { FeedOptions } from 'feed';
 
 import { getBlogPosts } from './blog';
 

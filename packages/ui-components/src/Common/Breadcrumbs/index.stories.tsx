@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import Breadcrumbs from '#ui/Common/Breadcrumbs';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof Breadcrumbs>;
 type Meta = MetaObj<typeof Breadcrumbs>;

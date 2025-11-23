@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import AvatarOverlay from '#ui/Common/AvatarGroup/Overlay';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof AvatarOverlay>;
 type Meta = MetaObj<typeof AvatarOverlay>;

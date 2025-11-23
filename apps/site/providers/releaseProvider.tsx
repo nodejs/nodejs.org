@@ -1,6 +1,5 @@
 'use client';
 
-import type { PropsWithChildren, FC } from 'react';
 import {
   createContext,
   useContext,
@@ -13,8 +12,10 @@ import reducer, {
   getActions,
   releaseState,
 } from '#site/reducers/releaseReducer';
+
 import type { NodeRelease } from '#site/types';
 import type * as Types from '#site/types/release';
+import type { PropsWithChildren, FC } from 'react';
 
 export const ReleasesContext = createContext<Types.ReleasesContextType>({
   releases: [],

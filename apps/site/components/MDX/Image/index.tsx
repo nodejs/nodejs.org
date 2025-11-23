@@ -1,5 +1,6 @@
-import type { ImageProps } from 'next/image';
 import Image from 'next/image';
+
+import type { ImageProps } from 'next/image';
 import type { FC } from 'react';
 
 const MDXImage: FC<ImageProps> = ({ width, height, alt, src, ...props }) => {

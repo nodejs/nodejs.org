@@ -1,8 +1,8 @@
-import type { ComponentProps, FC, PropsWithChildren } from 'react';
-
 import WithNoScriptSelect from '#ui/Common/Select/NoScriptSelect';
 import SidebarGroup from '#ui/Containers/Sidebar/SidebarGroup';
+
 import type { LinkLike } from '#ui/types';
+import type { ComponentProps, FC, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';
 

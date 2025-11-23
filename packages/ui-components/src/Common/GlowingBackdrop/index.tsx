@@ -1,6 +1,6 @@
-import type { FC } from 'react';
-
 import HexagonGrid from '#ui/Icons/HexagonGrid';
+
+import type { FC } from 'react';
 
 import styles from './index.module.css';
 

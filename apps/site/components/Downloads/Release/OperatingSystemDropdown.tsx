@@ -3,12 +3,13 @@
 import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
 import { useContext, useEffect, useMemo } from 'react';
-import type { FC } from 'react';
 
 import { useClientContext } from '#site/hooks';
 import { ReleaseContext } from '#site/providers/releaseProvider';
-import type { OperatingSystem } from '#site/types/userAgent';
 import { nextItem, OPERATING_SYSTEMS, parseCompat } from '#site/util/download';
+
+import type { OperatingSystem } from '#site/types/userAgent';
+import type { FC } from 'react';
 
 type OperatingSystemDropdownProps = { exclude?: Array<OperatingSystem> };
 

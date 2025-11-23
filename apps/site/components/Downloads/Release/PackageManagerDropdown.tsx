@@ -3,11 +3,12 @@
 import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
 import { useContext, useEffect, useMemo } from 'react';
-import type { FC } from 'react';
 
 import { ReleaseContext } from '#site/providers/releaseProvider';
-import type { PackageManager } from '#site/types/release';
 import { nextItem, PACKAGE_MANAGERS, parseCompat } from '#site/util/download';
+
+import type { PackageManager } from '#site/types/release';
+import type { FC } from 'react';
 
 const PackageManagerDropdown: FC = () => {
   const release = useContext(ReleaseContext);

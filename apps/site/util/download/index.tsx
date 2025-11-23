@@ -1,7 +1,6 @@
 import * as InstallMethodIcons from '@node-core/ui-components/Icons/InstallationMethod';
 import * as OSIcons from '@node-core/ui-components/Icons/OperatingSystem';
 import * as PackageManagerIcons from '@node-core/ui-components/Icons/PackageManager';
-import type { ElementType } from 'react';
 import satisfies from 'semver/functions/satisfies';
 
 import type {
@@ -12,6 +11,7 @@ import type {
   Platform,
 } from '#site/types';
 import type * as Types from '#site/types/release';
+import type { ElementType } from 'react';
 
 import constants from './constants.json';
 

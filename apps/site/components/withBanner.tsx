@@ -1,10 +1,11 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import Banner from '@node-core/ui-components/Common/Banner';
-import type { FC } from 'react';
 
 import Link from '#site/components/Link';
 import { siteConfig } from '#site/next.json.mjs';
 import { dateIsBetween } from '#site/util/date';
+
+import type { FC } from 'react';
 
 const WithBanner: FC<{ section: string }> = ({ section }) => {
   const banner = siteConfig.websiteBanners[section];

@@ -1,5 +1,6 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import { SearchInput } from '@orama/ui/components';
+
 import type { ComponentProps, FC } from 'react';
 
 import styles from './index.module.css';

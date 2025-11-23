@@ -1,13 +1,14 @@
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
 
 import { getClientContext } from '#site/client-context';
 import BlogHeader from '#site/components/Blog/BlogHeader';
 import WithBlogCategories from '#site/components/withBlogCategories';
 import WithFooter from '#site/components/withFooter';
 import WithNavBar from '#site/components/withNavBar';
-import type { BlogCategory } from '#site/types';
 import { getBlogData } from '#site/util/blog';
+
+import type { BlogCategory } from '#site/types';
+import type { FC } from 'react';
 
 import styles from './layouts.module.css';
 

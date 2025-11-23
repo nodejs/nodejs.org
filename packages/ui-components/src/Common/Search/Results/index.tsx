@@ -1,10 +1,11 @@
 import { SearchResults } from '@orama/ui/components';
 import { useSearch } from '@orama/ui/hooks/useSearch';
-import type { ComponentProps, FC } from 'react';
 
 import SearchResultsEmpty from '#ui/Common/Search/Results/Empty';
 import SearchResultsSkeleton from '#ui/Common/Search/Results/Skeleton';
 import Tabs from '#ui/Common/Search/Results/Tabs';
+
+import type { ComponentProps, FC } from 'react';
 
 import styles from './index.module.css';
 

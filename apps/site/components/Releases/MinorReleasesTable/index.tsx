@@ -2,14 +2,15 @@ import { CodeBracketSquareIcon } from '@heroicons/react/24/outline';
 import Separator from '@node-core/ui-components/Common/Separator';
 import NpmIcon from '@node-core/ui-components/Icons/PackageManager/Npm';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
 
 import LinkWithArrow from '#site/components/Common/LinkWithArrow';
 import Link from '#site/components/Link';
 import ReleaseOverviewItem from '#site/components/Releases/ReleaseOverview/ReleaseOverviewItem';
 import { BASE_CHANGELOG_URL } from '#site/next.constants.mjs';
-import type { MinorVersion } from '#site/types';
 import { getNodeApiUrl } from '#site/util/url';
+
+import type { MinorVersion } from '#site/types';
+import type { FC } from 'react';
 
 import styles from './index.module.css';
 

@@ -1,11 +1,12 @@
 import { Modal, Title, Content } from '@node-core/ui-components/Common/Modal';
 import { useTranslations } from 'next-intl';
-import type { ComponentProps, FC } from 'react';
 
 import MinorReleasesTable from '#site/components/Releases/MinorReleasesTable';
 import ReleaseOverview from '#site/components/Releases/ReleaseOverview';
 import WithReleaseAlertBox from '#site/components/withReleaseAlertBox';
+
 import type { NodeRelease } from '#site/types';
+import type { ComponentProps, FC } from 'react';
 
 type ReleaseModalProps = ComponentProps<typeof Modal> & {
   release: NodeRelease;

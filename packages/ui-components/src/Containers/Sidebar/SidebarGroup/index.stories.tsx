@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import SidebarGroup from '#ui/Containers/Sidebar/SidebarGroup';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof SidebarGroup>;
 type Meta = MetaObj<typeof SidebarGroup>;

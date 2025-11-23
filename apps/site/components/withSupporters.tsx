@@ -1,8 +1,8 @@
 'use server';
 
-import type { FC, PropsWithChildren } from 'react';
-
 import provideSupporters from '#site/next-data/providers/supportersData';
+
+import type { FC, PropsWithChildren } from 'react';
 
 import SupportersList from './Common/Supporters';
 

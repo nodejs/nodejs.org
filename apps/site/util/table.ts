@@ -1,6 +1,7 @@
-import type { Root } from 'mdast';
 import { toString } from 'mdast-util-to-string';
 import { visit } from 'unist-util-visit';
+
+import type { Root } from 'mdast';
 
 /**
  * Remark plugin that adds data-label attributes to table cells (td)

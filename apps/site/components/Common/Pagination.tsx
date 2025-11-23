@@ -1,9 +1,10 @@
 import BasePagination from '@node-core/ui-components/Common/BasePagination';
-import type { PaginationProps } from '@node-core/ui-components/Common/BasePagination';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
 
 import Link from '#site/components/Link';
+
+import type { PaginationProps } from '@node-core/ui-components/Common/BasePagination';
+import type { FC } from 'react';
 
 const Pagination: FC<
   Omit<PaginationProps, 'as' | 'labels' | 'getPageLabel'>

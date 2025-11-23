@@ -1,8 +1,9 @@
-import type { Interaction, AnyObject } from '@orama/core';
 import { ChatInteractions } from '@orama/ui/components';
-import type { FC } from 'react';
 
 import type { Document } from '../DocumentLink';
+import type { Interaction, AnyObject } from '@orama/core';
+import type { FC } from 'react';
+
 import { DocumentLink } from '../DocumentLink';
 
 import styles from './index.module.css';

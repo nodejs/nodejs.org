@@ -1,11 +1,12 @@
 import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 import Footer from '@node-core/ui-components/Containers/Footer';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
 
 import { getClientContext } from '#site/client-context';
 import Link from '#site/components/Link';
 import { siteNavigation } from '#site/next.json.mjs';
+
+import type { FC } from 'react';
 
 import WithNodeRelease from './withNodeRelease';
 

@@ -3,15 +3,16 @@ import XMark from '@heroicons/react/24/solid/XMarkIcon';
 import * as Label from '@radix-ui/react-label';
 import classNames from 'classnames';
 import { useState } from 'react';
+
+import NavItem from '#ui/Containers/NavBar/NavItem';
+
+import type { FormattedMessage, LinkLike } from '#ui/types';
 import type {
   FC,
   HTMLAttributeAnchorTarget,
   PropsWithChildren,
   ElementType,
 } from 'react';
-
-import NavItem from '#ui/Containers/NavBar/NavItem';
-import type { FormattedMessage, LinkLike } from '#ui/types';
 
 import style from './index.module.css';
 

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
+
 import type { FC } from 'react';
 
 import styles from './index.module.css';

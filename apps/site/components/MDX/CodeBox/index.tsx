@@ -1,7 +1,8 @@
 import { getLanguageDisplayName } from '@node-core/rehype-shiki';
-import type { FC, PropsWithChildren } from 'react';
 
 import CodeBox from '#site/components/Common/CodeBox';
+
+import type { FC, PropsWithChildren } from 'react';
 
 type CodeBoxProps = { className?: string; showCopyButton?: string };
 

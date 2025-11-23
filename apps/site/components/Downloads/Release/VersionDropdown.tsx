@@ -2,7 +2,6 @@
 
 import WithNoScriptSelect from '@node-core/ui-components/Common/Select/NoScriptSelect';
 import { useLocale, useTranslations } from 'next-intl';
-import type { FC } from 'react';
 import { useContext } from 'react';
 
 import { redirect, usePathname } from '#site/navigation';
@@ -10,6 +9,8 @@ import {
   ReleaseContext,
   ReleasesContext,
 } from '#site/providers/releaseProvider';
+
+import type { FC } from 'react';
 
 const getDropDownStatus = (version: string, status: string) => {
   if (status.endsWith('LTS')) {

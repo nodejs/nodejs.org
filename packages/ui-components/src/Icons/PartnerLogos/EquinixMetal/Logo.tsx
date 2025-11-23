@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+
 import type { FC, SVGProps } from 'react';
 
 const EquinixMetal: FC<SVGProps<SVGSVGElement>> = props => (

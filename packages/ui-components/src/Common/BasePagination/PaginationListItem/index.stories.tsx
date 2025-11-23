@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import PaginationListItem from '#ui/Common/BasePagination/PaginationListItem';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof PaginationListItem>;
 type Meta = MetaObj<typeof PaginationListItem>;

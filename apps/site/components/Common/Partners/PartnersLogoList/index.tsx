@@ -1,10 +1,10 @@
 'use client';
 
-import type { FC } from 'react';
-
 import usePartnersList from '#site/hooks/react-client/usePartnersList';
 import { LOGO_PARTNERS } from '#site/next.partners.constants';
+
 import type { PartnerCategory } from '#site/types';
+import type { FC } from 'react';
 
 import PartnerLogo from '../PartnerLogo';
 

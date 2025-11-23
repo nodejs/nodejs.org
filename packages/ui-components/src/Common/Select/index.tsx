@@ -4,11 +4,12 @@ import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import classNames from 'classnames';
 import { useEffect, useId, useMemo, useState } from 'react';
-import type { ReactElement, ReactNode } from 'react';
 
 import Skeleton from '#ui/Common/Skeleton';
-import type { FormattedMessage, LinkLike } from '#ui/types';
 import { isStringArray, isValuesArray } from '#ui/util/array';
+
+import type { FormattedMessage, LinkLike } from '#ui/types';
+import type { ReactElement, ReactNode } from 'react';
 
 import styles from './index.module.css';
 

@@ -6,11 +6,12 @@ import SearchResults from '@node-core/ui-components/Common/Search/Results';
 import SearchSuggestions from '@node-core/ui-components/Common/Search/Suggestions';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
-import type { FC } from 'react';
 
 import { DEFAULT_ORAMA_QUERY_PARAMS } from '#site/next.constants.mjs';
 
 import type { Document } from './DocumentLink';
+import type { FC } from 'react';
+
 import { Footer } from './Footer';
 import { oramaClient } from './orama-client';
 import { SearchItem } from './SearchItem';

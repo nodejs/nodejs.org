@@ -1,5 +1,8 @@
 import * as Toast from '@radix-ui/react-toast';
 import { createContext, useContext, useEffect, useState } from 'react';
+
+import Notification from '#ui/Common/Notification';
+
 import type {
   Dispatch,
   FC,
@@ -7,8 +10,6 @@ import type {
   ReactNode,
   SetStateAction,
 } from 'react';
-
-import Notification from '#ui/Common/Notification';
 
 import styles from './index.module.css';
 

@@ -2,10 +2,11 @@
 
 import { DocumentTextIcon } from '@heroicons/react/24/outline';
 import { SearchResults } from '@orama/ui/components';
+
+import type { Document } from '../DocumentLink';
 import type { FC } from 'react';
 
 import { DocumentLink } from '../DocumentLink';
-import type { Document } from '../DocumentLink';
 import { getFormattedPath } from './utils';
 
 import styles from './index.module.css';

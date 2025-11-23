@@ -1,8 +1,9 @@
 import { useId } from 'react';
 
 import Select from '#ui/Common/Select';
-import type { StatelessSelectProps } from '#ui/Common/Select/StatelessSelect';
 import StatelessSelect from '#ui/Common/Select/StatelessSelect';
+
+import type { StatelessSelectProps } from '#ui/Common/Select/StatelessSelect';
 
 const WithNoScriptSelect = <T extends string>({
   as,

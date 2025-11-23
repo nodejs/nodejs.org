@@ -1,11 +1,10 @@
-import type { SelectValue } from '@node-core/ui-components/Common/Select';
-
 import type {
   IntlMessageKeys,
   NodeReleaseStatus,
   OperatingSystem,
   Platform,
 } from '#site/types';
+import type { SelectValue } from '@node-core/ui-components/Common/Select';
 
 export type DownloadSnippet = {
   name: string;

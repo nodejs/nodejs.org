@@ -1,5 +1,6 @@
 import { SparklesIcon } from '@heroicons/react/24/outline';
 import { Suggestions } from '@orama/ui/components/Suggestions';
+
 import type { ComponentProps, FC } from 'react';
 
 import styles from './index.module.css';
