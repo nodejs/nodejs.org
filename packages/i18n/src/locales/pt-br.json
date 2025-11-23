@@ -1,0 +1,403 @@
+{
+  "components": {
+    "containers": {
+      "footer": {
+        "links": {
+          "openJSFoundation": "Fundação OpenJS",
+          "trademarkPolicy": "Política de Marca Registrada",
+          "privacyPolicy": "Política de Privacidade",
+          "codeOfConduct": "Código de Conduta",
+          "security": "Política de Segurança"
+        },
+        "releasePills": {
+          "latestLTS": "LTS Mais Recente",
+          "latestRelease": "Versão Mais Recente"
+        }
+      },
+      "navBar": {
+        "controls": {
+          "toggle": "Alternar menu de navegação"
+        },
+        "links": {
+          "about": "Sobre",
+          "download": "Baixar",
+          "docs": "Documentação",
+          "guides": "Guias",
+          "learn": "Aprenda",
+          "security": "Segurança",
+          "certification": "Certificação",
+          "blog": "Blog",
+          "contribute": "Contribua"
+        }
+      }
+    },
+    "navigation": {
+      "learn": {
+        "gettingStarted": {
+          "links": {
+            "gettingStarted": "Primeiros passos",
+            "introductionToNodejs": "Introdução ao Node.js",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Quanto de JavaScript você precisa entender para usar Node.js?",
+            "differencesBetweenNodejsAndTheBrowser": "Diferenças entre Node.js e o Navegador",
+            "theV8JavascriptEngine": "O Motor JavaScript V8",
+            "anIntroductionToTheNpmPackageManager": "Uma introdução ao gerenciador de pacotes npm",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) e além",
+            "debugging": "Depuração no Node.js",
+            "fetch": "Buscando dados com Node.js",
+            "websocket": "Cliente WebSocket com Node.js",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, a diferença entre desenvolvimento e produção",
+            "profiling": "Análise de Desempenho de Aplicações Node.js",
+            "nodejsWithWebassembly": "Node.js com WebAssembly",
+            "securityBestPractices": "Melhores Práticas de Segurança",
+            "userlandMigrations": "Introdução às Migrações Userland"
+          }
+        },
+        "commandLine": {
+          "links": {
+            "commandLine": "Linha de Comando",
+            "runNodejsScriptsFromTheCommandLine": "Execute scripts Node.js pela linha de comando",
+            "howToUseTheNodejsRepl": "Como usar o REPL do Node.js",
+            "outputToTheCommandLineUsingNodejs": "Saída para a linha de comando usando Node.js",
+            "acceptInputFromTheCommandLineInNodejs": "Aceitar entrada da linha de comando no Node.js",
+            "howToReadEnvironmentVariablesFromNodejs": "Como ler variáveis de ambiente no Node.js"
+          }
+        },
+        "http": {
+          "links": {
+            "http": "HTTP",
+            "anatomyOfAnHttpTransaction": "Anatomia de uma Transação HTTP"
+          }
+        },
+        "manipulatingFiles": {
+          "links": {
+            "manipulatingFiles": "Manipulando Arquivos",
+            "nodejsFileStats": "Estatísticas de arquivos no Node.js",
+            "nodejsFilePaths": "Caminhos de Arquivo no Node.js",
+            "readingFilesWithNodejs": "Lendo arquivos com Node.js",
+            "writingFilesWithNodejs": "Escrevendo arquivos com Node.js",
+            "workingWithFileDescriptorsInNodejs": "Trabalhando com descritores de arquivo no Node.js",
+            "workingWithFoldersInNodejs": "Trabalhando com pastas no Node.js",
+            "workingWithDifferentFilesystems": "Como trabalhar com Diferentes Sistemas de Arquivos"
+          }
+        },
+        "asynchronousWork": {
+          "links": {
+            "asynchronousWork": "Trabalho Assíncrono",
+            "javascriptAsynchronousProgrammingAndCallbacks": "Programação Assíncrona em JavaScript e Callbacks",
+            "asynchronousFlowControl": "Controle de fluxo assíncrono",
+            "discoverPromisesInNodejs": "Descubra Promises no Node.js",
+            "discoverJavascriptTimers": "Descubra os Temporizadores JavaScript",
+            "overviewOfBlockingVsNonBlocking": "Visão Geral de chamadas Bloqueante vs Não-Bloqueante",
+            "eventLoopTimersAndNexttick": "O Event Loop do Node.js",
+            "theNodejsEventEmitter": "O Event Emitter do Node.js",
+            "understandingProcessnexttick": "Entendendo process.nextTick()",
+            "understandingSetimmediate": "Entendendo setImmediate()",
+            "dontBlockTheEventLoop": "Não Bloqueie o Event Loop"
+          }
+        },
+        "typescript": {
+          "links": {
+            "typescript": "TypeScript",
+            "introduction": "Introdução ao TypeScript",
+            "runNatively": "Executando TypeScript Nativamente",
+            "transpile": "Executando código TypeScript usando transpilação",
+            "run": "Executando TypeScript com um executor",
+            "publishingTSPackage": "Publicando um pacote TypeScript"
+          }
+        },
+        "modules": {
+          "links": {
+            "modules": "Módulos",
+            "howToUseStreams": "Como usar streams",
+            "backpressuringInStreams": "Backpressuring em Streams",
+            "publishingAPackage": "Publicando um pacote",
+            "publishingNodeApiModules": "Como publicar um pacote Node-API",
+            "abiStability": "Estabilidade ABI"
+          }
+        },
+        "diagnostics": {
+          "links": {
+            "diagnostics": "Diagnósticos",
+            "userJourney": "Jornada do Usuário",
+            "memory": "Memória",
+            "understandingAndTuningMemory": "Entendendo e Ajustando Memória",
+            "liveDebugging": "Depuração ao Vivo",
+            "poorPerformance": "Desempenho Ruim",
+            "flameGraphs": "Gráficos de Chama"
+          }
+        },
+        "testRunner": {
+          "links": {
+            "testRunner": "Executor de Testes",
+            "introduction": "Descobrindo o executor de testes do Node.js",
+            "usingTestRunner": "Usando o executor de testes do Node.js",
+            "mocking": "Mocking em testes",
+            "collectingCodeCoverage": "Coletando cobertura de código no Node.js"
+          }
+        }
+      },
+      "about": {
+        "links": {
+          "about": "Sobre o Node.js",
+          "aboutSide": "Sobre o Node.js®",
+          "branding": "Marca do Node.js",
+          "governance": "Governança do Projeto",
+          "releases": "Versões do Node.js",
+          "security": "Relatório de Segurança",
+          "partners": "Parceiros e Apoiadores",
+          "eol": "Fim de Vida Útil (EOL)"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "getInvolved": "Participe",
+          "collabSummit": "Cúpula de Colaboração",
+          "upcomingEvents": "Próximos Eventos",
+          "contribute": "Contribuir para o Node.js",
+          "codeOfConduct": "Código de Conduta"
+        }
+      }
+    },
+    "downloadReleasesTable": {
+      "version": "Node.js",
+      "nApiVersion": "N-API",
+      "codename": "Codinome",
+      "releaseDate": "Lançado em",
+      "firstReleased": "Primeiro lançamento",
+      "lastUpdated": "Última atualização",
+      "status": "Status",
+      "details": "Detalhes"
+    },
+    "downloadsTable": {
+      "fileName": "Nome do Arquivo",
+      "operatingSystem": "SO",
+      "architecture": "Arquitetura"
+    },
+    "releaseModal": {
+      "title": "Node.js v{version} ({codename})",
+      "titleWithoutCodename": "Node.js v{version}",
+      "overview": "Visão Geral",
+      "minorVersions": "Versões menores",
+      "releaseAnnouncement": "Anúncio do Lançamento",
+      "unsupportedVersionWarning": "Esta versão não está sendo mantida. Por favor, use uma versão com suporte. <link>Entenda o suporte EOL.</link>",
+      "ltsVersionFeaturesNotice": "Quer novos recursos mais cedo? Obtenha a <link>versão mais recente do Node.js</link> e experimente as últimas melhorias!"
+    },
+    "eolAlert": {
+      "message": "Suporte comercial para versões após a fase de LTS de Manutenção está disponível através dos nossos <link>parceiros do Programa de Sustentabilidade do Ecossistema OpenJS</link>"
+    },
+    "eolChip": {
+      "severity": {
+        "unknown": "Desconhecida",
+        "low": "Baixa",
+        "medium": "Média",
+        "high": "Alta",
+        "critical": "Crítica"
+      }
+    },
+    "eolModal": {
+      "title": "Node.js v{version} ({codename}) atingiu EOL",
+      "titleWithoutCodename": "Node.js v{version} atingiu EOL",
+      "vulnerabilitiesMessage": "Existem {count}+ problemas de segurança conhecidos (Common Vulnerabilities and Exposures ou CVEs) associados a esta versão do Node.js. CVEs são identificadores para falhas de segurança relatadas publicamente. Clicar em um link CVE levará você a detalhes mais técnicos, como o funcionamento da vulnerabilidade.",
+      "noVulnerabilitiesMessage": "Atualmente não há CVEs (Common Vulnerabilities and Exposures) conhecidas associadas a esta versão do Node.js. No entanto, isso não significa que seja completamente segura - algumas vulnerabilidades podem ainda não ter sido descobertas ou divulgadas publicamente. Se esta versão estiver desatualizada ou sem suporte, ainda é uma boa ideia considerar a atualização para garantir que você se beneficie das últimas correções e melhorias de segurança.",
+      "blogLinkText": "Blog",
+      "showUnknownSeverities": "Mostrar vulnerabilidades de gravidade desconhecida",
+      "table": {
+        "cves": "CVE(s)",
+        "severity": "Severidade",
+        "overview": "Visão geral",
+        "details": "Detalhes"
+      }
+    },
+    "eolTable": {
+      "version": "Versão",
+      "codename": "Codinome",
+      "releaseDate": "Lançado em",
+      "lastUpdated": "Última atualização",
+      "vulnerabilities": "Vulnerabilidades",
+      "details": "Detalhes"
+    },
+    "minorReleasesTable": {
+      "version": "Versão",
+      "links": "Links",
+      "nApiVersion": "Versão N-API",
+      "npmVersion": "Versão npm",
+      "v8Version": "Versão V8",
+      "actions": {
+        "release": "Lançamento",
+        "changelog": "Changelog",
+        "docs": "Documentação"
+      }
+    },
+    "releaseOverview": {
+      "firstReleased": "Primeiro lançamento",
+      "lastUpdated": "Última atualização",
+      "minorVersions": "Versões menores",
+      "nApiVersion": "Versão N-API",
+      "npmVersion": "Versão npm",
+      "v8Version": "Versão V8"
+    },
+    "pagination": {
+      "next": "Próximo",
+      "previous": "Anterior"
+    },
+    "common": {
+      "alertBox": {
+        "info": "Informação",
+        "warning": "Aviso",
+        "danger": "Perigo"
+      },
+      "breadcrumbs": {
+        "navigateToHome": "Navegar para a Página Inicial"
+      },
+      "crossLink": {
+        "previous": "Anterior",
+        "next": "Próximo"
+      },
+      "codebox": {
+        "copy": "Copiar para a área de transferência",
+        "copied": "Copiado para a área de transferência!"
+      },
+      "pagination": {
+        "prev": "Anterior",
+        "prevAriaLabel": "Página anterior",
+        "next": "Próximo",
+        "nextAriaLabel": "Próxima página",
+        "defaultLabel": "Paginação",
+        "pageLabel": "Ir para a página {pageNumber}"
+      },
+      "sidebar": {
+        "title": "Mudar de página"
+      },
+      "languageDropdown": {
+        "label": "Escolher Idioma"
+      },
+      "themeToggle": {
+        "light": "Mudar para Modo Claro",
+        "dark": "Mudar para Modo Escuro"
+      }
+    },
+    "metabar": {
+      "lastUpdated": "Última Atualização",
+      "readingTime": "Tempo de Leitura",
+      "addedIn": "Adicionado Em",
+      "author": "Autor",
+      "authors": "Autores",
+      "contribute": "Contribuir",
+      "contributeText": "Editar esta página",
+      "viewAs": "Visualizar como",
+      "tableOfContents": "Índice"
+    },
+    "search": {
+      "searchPlaceholder": "Comece a digitar...",
+      "chatPlaceholder": "Me pergunte qualquer coisa",
+      "noResultsFoundFor": "Nenhum resultado encontrado para",
+      "suggestions": "Sugestões",
+      "seeAll": "Ver tudo",
+      "addMore": "Adicionar mais",
+      "clearChat": "Limpar chat",
+      "errorMessage": "Ocorreu um erro ao tentar pesquisar. Por favor, tente novamente.",
+      "disclaimer": "Resumos de IA podem cometer erros. Por favor, verifique as informações.",
+      "startYourSearch": "Inicie sua pesquisa",
+      "initErrorSearch": "Não foi possível inicializar o serviço de pesquisa",
+      "initErrorChat": "Não foi possível inicializar o serviço de chat",
+      "chatButtonLabel": "Obter um resumo de IA",
+      "searchButtonLabel": "Pesquisar",
+      "poweredBy": "Fornecido por",
+      "suggestionOne": "Como instalar Node.js?",
+      "suggestionTwo": "Como criar um servidor HTTP?",
+      "suggestionThree": "Atualizando a versão do Node.js",
+      "scrollToBottom": "Rolar para o final",
+      "closeChat": "Fechar chat",
+      "keyboardShortcuts": {
+        "select": "para selecionar",
+        "navigate": "para navegar",
+        "close": "para fechar"
+      }
+    },
+    "blog": {
+      "blogHeader": {
+        "subtitle": "As últimas notícias do Node.js, guias de migração e resumos de eventos",
+        "rssLink": "Feed RSS"
+      }
+    }
+  },
+  "layouts": {
+    "blogPost": {
+      "author": {
+        "byLine": "{author, select, null {} other {Por {author}, }}"
+      }
+    },
+    "blogIndex": {
+      "categoryName": "{category, select, all {Blog} other {Posts do Blog de {category}}}"
+    },
+    "blog": {
+      "title": "Blog",
+      "selectCategory": "Categorias",
+      "categories": {
+        "all": "Tudo",
+        "announcements": "Anúncios",
+        "release": "Lançamentos",
+        "vulnerability": "Vulnerabilidades",
+        "advisory-board": "Conselho Consultivo",
+        "community": "Comunidade",
+        "feature": "Feature",
+        "module": "Módulo",
+        "npm": "npm",
+        "uncategorized": "Sem Categoria",
+        "video": "Vídeo",
+        "weekly": "Atualizações Semanais",
+        "wg": "Grupos de Trabalho",
+        "migrations": "Guias de Migração",
+        "events": "Eventos"
+      }
+    },
+    "error": {
+      "notFound": {
+        "title": "Página não encontrada",
+        "description": "Desculpe, não conseguimos encontrar a página que você procura! Tente começar novamente pela página inicial."
+      },
+      "internalServerError": {
+        "title": "Erro Interno do Servidor",
+        "description": "Esta página lançou um erro não recuperável."
+      },
+      "backToHome": "Voltar para a Página Inicial"
+    },
+    "download": {
+      "buttons": {
+        "installer": "Instalador {os} (.{extension})",
+        "binary": "Binário Independente (.{extension})"
+      },
+      "dropdown": {
+        "platform": "Plataforma",
+        "os": "Sistema Operacional",
+        "version": "Versão",
+        "installMethod": "Método de Instalação",
+        "packageManager": "Gerenciador de Pacotes",
+        "unknown": "Desconhecido",
+        "platformGroups": {
+          "official": "Recomendado (Oficial)",
+          "unofficial": "Comunidade (Não Oficial)"
+        }
+      },
+      "codeBox": {
+        "unsupportedVersionWarning": "Esta versão não está sendo mantida. Por favor, use uma versão com suporte. <link>Entenda o suporte EOL.</link>",
+        "ltsVersionFeaturesNotice": "Quer novos recursos mais cedo? Obtenha a <link>versão mais recente do Node.js</link> e experimente as últimas melhorias!",
+        "communityPlatformInfo": "Métodos de instalação que envolvem software da comunidade são suportados pelas equipes que mantêm esse software.",
+        "externalSupportInfo": "Se você encontrar algum problema, por favor visite <link>o site do {platform}</link>",
+        "noScriptDetected": "Esta página requer JavaScript. Você pode baixar o Node.js sem JavaScript visitando diretamente a <link>página de arquivo de downloads</link>.",
+        "platformInfo": {
+          "default": "{platform} e seus scripts de instalação não são mantidos pelo projeto Node.js.",
+          "nvm": "\"nvm\" é um gerenciador de versões do Node.js multiplataforma.",
+          "fnm": "\"fnm\" é um gerenciador de versões do Node.js multiplataforma.",
+          "brew": "Homebrew é um gerenciador de pacotes para macOS e Linux.",
+          "choco": "Chocolatey é um gerenciador de pacotes para Windows.",
+          "devbox": "Devbox cria ambientes de desenvolvimento isolados e reproduzíveis.",
+          "docker": "Docker é uma plataforma de conteinerização.",
+          "n": "\"n\" é um gerenciador de versões do Node.js multiplataforma.",
+          "volta": "\"Volta\" é um gerenciador de versões do Node.js multiplataforma."
+        }
+      }
+    },
+    "logo": "Logo do Node.js"
+  }
+}
