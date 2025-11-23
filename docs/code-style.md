@@ -115,6 +115,7 @@ We use [PostCSS](https://postcss.org/) and [Tailwind CSS](https://tailwindcss.co
 - Prefix prop types with the component name
 - Always use default exports for React components
 - Avoid direct DOM/Web API access in components - use hooks or utilities instead
+- CSS imports should always be the last import in the file
 
 ### Example Component Structure
 

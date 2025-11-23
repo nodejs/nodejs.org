@@ -11,8 +11,9 @@ import type { FC } from 'react';
 import FormattedTime from '#site/components/Common/FormattedTime';
 import type { NodeRelease } from '#site/types';
 
-import styles from './index.module.css';
 import ReleaseOverviewItem from './ReleaseOverviewItem';
+
+import styles from './index.module.css';
 
 type ReleaseOverviewProps = {
   release: NodeRelease;

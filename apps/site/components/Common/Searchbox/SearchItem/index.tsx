@@ -6,8 +6,9 @@ import type { FC } from 'react';
 
 import { DocumentLink } from '../DocumentLink';
 import type { Document } from '../DocumentLink';
-import styles from './index.module.css';
 import { getFormattedPath } from './utils';
+
+import styles from './index.module.css';
 
 type SearchItemProps = {
   document: Document;

@@ -42,6 +42,7 @@ Generic UI components should be placed in `@node-core/ui-components`:
 ```tsx
 // @node-core/ui-components/src/Common/Button/index.tsx
 import type { FC, ButtonHTMLAttributes } from 'react';
+
 import styles from './index.module.css';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -108,6 +109,7 @@ ComponentName/
 
 ```tsx
 import type { FC } from 'react';
+
 import styles from './index.module.css';
 
 type MyComponentProps = {
@@ -138,6 +140,7 @@ export default MyComponent;
 
 ```tsx
 import type { FC, PropsWithChildren } from 'react';
+
 import styles from './index.module.css';
 
 type CardProps = PropsWithChildren<{

@@ -7,6 +7,7 @@ import { LOGO_PARTNERS } from '#site/next.partners.constants';
 import type { PartnerCategory } from '#site/types';
 
 import PartnerLogo from '../PartnerLogo';
+
 import style from './index.module.css';
 
 type PartnersLogoListProps = {

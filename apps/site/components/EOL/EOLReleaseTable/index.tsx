@@ -6,8 +6,9 @@ import provideReleaseData from '#site/next-data/providers/releaseData';
 import provideVulnerabilities from '#site/next-data/providers/vulnerabilities';
 import { EOL_VERSION_IDENTIFIER } from '#site/next.constants.mjs';
 
-import styles from './index.module.css';
 import EOLReleaseTableBody from './TableBody';
+
+import styles from './index.module.css';
 
 const EOLReleaseTable: FC = async () => {
   const releaseData = await provideReleaseData();

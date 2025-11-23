@@ -5,8 +5,9 @@ import type { FC } from 'react';
 import BaseActiveLink from '#ui/Common/BaseActiveLink';
 import type { FormattedMessage, LinkLike } from '#ui/types';
 
-import styles from './index.module.css';
 import ProgressionIcon from '../ProgressionIcon';
+
+import styles from './index.module.css';
 
 type SidebarItemProps = {
   label: FormattedMessage;

@@ -7,10 +7,10 @@
 
   .label {
     @apply cursor-pointer
-      select-none
       text-sm
       font-medium
       text-neutral-800
+      select-none
       dark:text-neutral-200;
   }
 
@@ -19,10 +19,10 @@
   }
 
   .root {
-    @apply w-10.5
-      relative
+    @apply relative
       inline-flex
       h-6
+      w-10.5
       cursor-pointer
       items-center
       rounded-full

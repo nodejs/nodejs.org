@@ -4,6 +4,7 @@ import { ChatInteractions } from '@orama/ui/components';
 import type { FC } from 'react';
 
 import ChatSources from '../ChatSources';
+
 import styles from './index.module.css';
 
 type ChatMessageProps = {

@@ -2,9 +2,10 @@ import type { Interaction, AnyObject } from '@orama/core';
 import { ChatInteractions } from '@orama/ui/components';
 import type { FC } from 'react';
 
-import styles from './index.module.css';
 import type { Document } from '../DocumentLink';
 import { DocumentLink } from '../DocumentLink';
+
+import styles from './index.module.css';
 
 type ChatSourcesProps = {
   interaction: Interaction;

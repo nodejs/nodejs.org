@@ -7,6 +7,7 @@ import { ICON_PARTNERS } from '#site/next.partners.constants';
 import type { PartnerCategory } from '#site/types';
 
 import PartnerIcon from '../PartnerIcon';
+
 import style from './index.module.css';
 
 type PartnersIconListProps = {

@@ -7,6 +7,7 @@ import { useScrollableContainer } from '@orama/ui/hooks/useScrollableContainer';
 import { useTranslations } from 'next-intl';
 
 import { ChatMessage } from '../ChatMessage';
+
 import styles from './index.module.css';
 
 export const ChatInteractionsContainer = () => {
