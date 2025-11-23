@@ -19,7 +19,8 @@
         "NEXT_PUBLIC_ORAMA_ENDPOINT",
         "NEXT_PUBLIC_DATA_URL",
         "TURBO_CACHE",
-        "TURBO_TELEMETRY_DISABLED"
+        "TURBO_TELEMETRY_DISABLED",
+        "TURBOPACK_STATS"
       ]
     },
     "build": {
@@ -45,7 +46,8 @@
         "NEXT_PUBLIC_ORAMA_ENDPOINT",
         "NEXT_PUBLIC_DATA_URL",
         "TURBO_CACHE",
-        "TURBO_TELEMETRY_DISABLED"
+        "TURBO_TELEMETRY_DISABLED",
+        "TURBOPACK_STATS"
       ]
     },
     "start": {
@@ -64,7 +66,8 @@
         "NEXT_PUBLIC_ORAMA_ENDPOINT",
         "NEXT_PUBLIC_DATA_URL",
         "TURBO_CACHE",
-        "TURBO_TELEMETRY_DISABLED"
+        "TURBO_TELEMETRY_DISABLED",
+        "TURBOPACK_STATS"
       ]
     },
     "deploy": {
@@ -89,7 +92,8 @@
         "NEXT_PUBLIC_ORAMA_ENDPOINT",
         "NEXT_PUBLIC_DATA_URL",
         "TURBO_CACHE",
-        "TURBO_TELEMETRY_DISABLED"
+        "TURBO_TELEMETRY_DISABLED",
+        "TURBOPACK_STATS"
       ]
     },
     "lint:js": {

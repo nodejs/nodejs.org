@@ -69,3 +69,11 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
           # We want to ensure that static exports for all locales do not occur on `pull_request` events
           NEXT_PUBLIC_STATIC_EXPORT_LOCALE: ${{ github.event_name == 'push' }}
+          # See https://github.com/vercel/next.js/pull/81318
+          TURBOPACK_STATS: ${{ matrix.os == 'ubuntu-latest' }}
+
+      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        if: matrix.os == 'ubuntu-latest'
+        with:
+          name: webpack-stats
+          path: apps/site/.next/server/webpack-stats.json
