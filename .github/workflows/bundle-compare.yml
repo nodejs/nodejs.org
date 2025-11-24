@@ -30,7 +30,7 @@ jobs:
         with:
           name: webpack-stats
           path: head-stats
-          run-id: ${{ github.event.workflow_run.workflow_id }}
+          run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Get Run ID from BASE
