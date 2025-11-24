@@ -2,7 +2,7 @@
 * @nodejs/nodejs-website
 
 # Infrastructure
-.github @nodejs/web-infra
+.github @nodejs/web-infra @nodejs/web-admins
 .husky @nodejs/web-infra
 .nvmrc @nodejs/web-infra
 codecov.yml @nodejs/web-infra
