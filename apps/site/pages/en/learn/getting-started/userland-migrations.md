@@ -4,8 +4,6 @@ layout: learn
 authors: JakobJingleheimer, AugustinMauroy
 ---
 
-![Node.js Userland Migrations](https://raw.githubusercontent.com/nodejs/userland-migrations/8fd9c141a118c4b64cc37eed8e663005cbc819ac/.github/assets/Userland-Migration-Tagline.png)
-
 # Userland Migrations
 
 Node.js offers migrations for "userland" code (anything outside the node executable) to help adopt new features and handle breaking changes. These are built in collaboration with [Codemod](https://codemod.com), a platform focused on making it easy to build, share, and run codemods.
