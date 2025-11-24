@@ -67,3 +67,4 @@ jobs:
         with:
           comment-tag: 'compare_bundle_size'
           message: ${{ steps.compare-bundle-size.outputs.comment }}
+          pr-number: ${{ github.event.workflow_run.pull_requests[0].number }}
