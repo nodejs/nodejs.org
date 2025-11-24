@@ -8,7 +8,7 @@ authors: AugustinMauroy, khaosdoctor, jakebailey, robpalme
 
 You can write code that's valid TypeScript directly in Node.js without the need to transpile it first.
 
-If you are using v22.18.0 or later and your source code contains only [erasable TypeScript syntax](https://devblogs.microsoft.com/typescript/announcing-typescript-5-8-beta/#the---erasablesyntaxonly-option), can you just run directly without any flag.
+If you are using v22.18.0 or later and your source code contains only [erasable TypeScript syntax](https://devblogs.microsoft.com/typescript/announcing-typescript-5-8-beta/#the---erasablesyntaxonly-option), you can just run directly without any flag.
 
 ```bash
 node example.ts
