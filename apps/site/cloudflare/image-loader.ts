@@ -13,10 +13,21 @@ export default function cloudflareLoader({
     // Serve the original image when using `next dev`
     return src;
   }
-  const params = [`width=${width}`];
-  if (quality) {
-    params.push(`quality=${quality}`);
+
+  // Sets the requested width by next/image
+  const params = new Map<string, string>();
+
+  if (width > 0) {
+    params.set('width', `${width}`);
   }
-  const paramsString = params.join(',');
-  return `/cdn-cgi/image/${paramsString}/${normalizeSrc(src)}`;
+
+  if (quality && quality > 0) {
+    params.set('quality', `${quality}`);
+  }
+
+  const pathParams = [...params]
+    .map(([key, value]) => `${key}=${value}`)
+    .join(',');
+
+  return `/cdn-cgi/image/${pathParams}/${normalizeSrc(src)}`;
 }
