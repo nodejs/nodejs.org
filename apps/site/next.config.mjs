@@ -10,7 +10,9 @@ const getDeploymentId = async () => {
   if (OPEN_NEXT_CLOUDFLARE) {
     // If we're building for the Cloudflare deployment we want to set
     // an appropriate deploymentId (needed for skew protection)
-    return (await import('@opennextjs/cloudflare')).getDeploymentId();
+    const openNextAdapter = await import('@opennextjs/cloudflare');
+
+    return openNextAdapter.getDeploymentId();
   }
 
   return undefined;
