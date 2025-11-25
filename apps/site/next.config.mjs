@@ -1,11 +1,8 @@
 'use strict';
 import createNextIntlPlugin from 'next-intl/plugin';
 
-import {
-  BASE_PATH,
-  ENABLE_STATIC_EXPORT,
-  OPEN_NEXT_CLOUDFLARE,
-} from './next.constants.mjs';
+import { OPEN_NEXT_CLOUDFLARE } from './next.constants.cloudflare.mjs';
+import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 import { getImagesConfig } from './next.image.config.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 

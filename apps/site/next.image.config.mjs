@@ -1,7 +1,5 @@
-import {
-  ENABLE_STATIC_EXPORT,
-  OPEN_NEXT_CLOUDFLARE,
-} from './next.constants.mjs';
+import { OPEN_NEXT_CLOUDFLARE } from './next.constants.cloudflare.mjs';
+import { ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 
 const remotePatterns = [
   'https://avatars.githubusercontent.com/**',
