@@ -1,6 +1,7 @@
 import { satisfies } from 'semver';
 
 import { DOCS_URL, DIST_URL } from '#site/next.constants.mjs';
+
 import type { OperatingSystem, Platform, DownloadKind } from '#site/types';
 
 export const getNodeApiUrl = (version: string) => {

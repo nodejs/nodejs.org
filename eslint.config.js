@@ -50,9 +50,10 @@ export default tseslint.config(
             'builtin',
             'external',
             'internal',
+            'object',
+            'type',
             ['sibling', 'parent'],
             'index',
-            'unknown',
           ],
           pathGroups: [
             {

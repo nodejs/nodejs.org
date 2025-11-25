@@ -1,6 +1,6 @@
-import type { FC, AnchorHTMLAttributes, ComponentProps } from 'react';
-
 import { Link as LocalizedLink } from '#site/navigation.mjs';
+
+import type { FC, AnchorHTMLAttributes, ComponentProps } from 'react';
 
 export type LinkProps =
   | AnchorHTMLAttributes<HTMLAnchorElement>

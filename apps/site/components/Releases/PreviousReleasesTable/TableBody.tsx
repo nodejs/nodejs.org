@@ -2,13 +2,14 @@
 
 import Badge from '@node-core/ui-components/Common/Badge';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
 import { Fragment, useState } from 'react';
 
 import FormattedTime from '#site/components/Common/FormattedTime';
 import LinkWithArrow from '#site/components/Common/LinkWithArrow';
 import Link from '#site/components/Link';
+
 import type { NodeRelease } from '#site/types/releases.js';
+import type { FC } from 'react';
 
 import ReleaseModal from '../ReleaseModal';
 

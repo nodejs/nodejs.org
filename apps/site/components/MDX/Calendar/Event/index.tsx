@@ -1,9 +1,9 @@
-import type { FC } from 'react';
-
 import FormattedTime from '#site/components/Common/FormattedTime';
 import Link from '#site/components/Link';
 import { getZoomLink, isZoned } from '#site/components/MDX/Calendar/utils';
+
 import type { CalendarEvent } from '#site/types';
+import type { FC } from 'react';
 
 import styles from './index.module.css';
 

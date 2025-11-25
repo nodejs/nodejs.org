@@ -2,9 +2,10 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import classNames from 'classnames';
 import { useId, useMemo } from 'react';
 
+import { isStringArray, isValuesArray } from '#ui/util/array';
+
 import type { SelectGroup, SelectProps } from '#ui/Common/Select';
 import type { LinkLike } from '#ui/types';
-import { isStringArray, isValuesArray } from '#ui/util/array';
 
 import styles from '../index.module.css';
 

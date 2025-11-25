@@ -1,13 +1,14 @@
 import { Modal, Title, Content } from '@node-core/ui-components/Common/Modal';
 import { useTranslations } from 'next-intl';
 import { useMemo } from 'react';
-import type { FC, ComponentProps } from 'react';
 
 import KnownSeveritySection from '#site/components/EOL/KnownSeveritySection';
 import UnknownSeveritySection from '#site/components/EOL/UnknownSeveritySection';
 import { SEVERITY_ORDER } from '#site/next.constants.mjs';
+
 import type { NodeRelease } from '#site/types/releases';
 import type { Vulnerability } from '#site/types/vulnerabilities';
+import type { FC, ComponentProps } from 'react';
 
 type EOLModalProps = ComponentProps<typeof Modal> & {
   release: NodeRelease;

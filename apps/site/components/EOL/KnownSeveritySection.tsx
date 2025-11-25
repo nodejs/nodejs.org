@@ -1,7 +1,7 @@
-import type { FC } from 'react';
-
 import VulnerabilitiesTable from '#site/components/EOL/VulnerabilitiesTable';
+
 import type { Vulnerability } from '#site/types/vulnerabilities';
+import type { FC } from 'react';
 
 type KnownSeveritySectionProps = {
   vulnerabilities: Array<Vulnerability>;

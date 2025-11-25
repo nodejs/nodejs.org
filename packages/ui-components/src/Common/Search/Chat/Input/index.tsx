@@ -2,10 +2,11 @@ import { PaperAirplaneIcon } from '@heroicons/react/20/solid';
 import { PauseCircleIcon } from '@heroicons/react/24/solid';
 import { PromptTextArea } from '@orama/ui/components';
 import { useChat } from '@orama/ui/hooks';
-import type { FC, PropsWithChildren } from 'react';
 import { useEffect, useRef } from 'react';
 
 import SearchSuggestions from '#ui/Common/Search/Suggestions';
+
+import type { FC, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';
 

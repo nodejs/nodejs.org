@@ -1,10 +1,11 @@
 import Switch from '@node-core/ui-components/Common/Switch';
 import { getTranslations } from 'next-intl/server';
-import type { FC } from 'react';
 
 import provideReleaseData from '#site/next-data/providers/releaseData';
 import provideVulnerabilities from '#site/next-data/providers/vulnerabilities';
 import { EOL_VERSION_IDENTIFIER } from '#site/next.constants.mjs';
+
+import type { FC } from 'react';
 
 import EOLReleaseTableBody from './TableBody';
 

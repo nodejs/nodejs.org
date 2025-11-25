@@ -1,11 +1,12 @@
 'use client';
 
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
-import type { FC } from 'react';
 
 import Button from '#site/components/Common/Button';
 import BaseLayout from '#site/layouts/Base';
 import GlowingBackdropLayout from '#site/layouts/GlowingBackdrop';
+
+import type { FC } from 'react';
 
 const GlobalErrorPage: FC<{ error: Error }> = () => (
   <html>

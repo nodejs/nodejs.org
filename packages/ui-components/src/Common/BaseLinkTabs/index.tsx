@@ -1,6 +1,5 @@
-import type { FC, PropsWithChildren } from 'react';
-
 import type { LinkLike } from '#ui/types';
+import type { FC, PropsWithChildren } from 'react';
 
 import StatelessSelect from '../Select/StatelessSelect';
 

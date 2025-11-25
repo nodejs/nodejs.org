@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import BadgeGroup from '#ui/Common/BadgeGroup';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof BadgeGroup>;
 type Meta = MetaObj<typeof BadgeGroup>;

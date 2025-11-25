@@ -1,8 +1,7 @@
-import type { Heading } from '@vcarl/remark-headings';
-import type { ReadTimeResults } from 'reading-time';
-
 import type { useDetectOS } from '#site/hooks';
 import type { Frontmatter } from '#site/types/frontmatter';
+import type { Heading } from '@vcarl/remark-headings';
+import type { ReadTimeResults } from 'reading-time';
 
 export type ClientSharedServerContext = {
   frontmatter: Frontmatter;

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import type { FC, AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 
 import type { LinkLike } from '#ui/types';
+import type { FC, AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 
 import styles from './index.module.css';
 

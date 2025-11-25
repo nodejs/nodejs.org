@@ -1,11 +1,12 @@
 'use client';
 
-import type { FC, PropsWithChildren } from 'react';
 import { useContext } from 'react';
 
 import DownloadLinkBase from '#site/components/Downloads/DownloadLink';
 import { ReleaseContext } from '#site/providers/releaseProvider';
+
 import type { DownloadKind } from '#site/types/download';
+import type { FC, PropsWithChildren } from 'react';
 
 type DownloadLinkProps = { kind?: DownloadKind };
 

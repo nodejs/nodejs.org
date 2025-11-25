@@ -1,10 +1,11 @@
 import Skeleton from '@node-core/ui-components/Common/Skeleton';
 import Tooltip from '@node-core/ui-components/Common/Tooltip';
-import type { ComponentProps, FC } from 'react';
 import { cloneElement } from 'react';
 
 import Button from '#site/components/Common/Button';
+
 import type { Partners } from '#site/types';
+import type { ComponentProps, FC } from 'react';
 
 import style from './index.module.css';
 

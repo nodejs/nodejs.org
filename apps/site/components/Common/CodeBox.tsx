@@ -5,10 +5,11 @@ import BaseCodeBox from '@node-core/ui-components/Common/BaseCodeBox';
 import styles from '@node-core/ui-components/Common/BaseCodeBox/index.module.css';
 import { useNotification } from '@node-core/ui-components/Providers/NotificationProvider';
 import { useTranslations } from 'next-intl';
-import type { FC, PropsWithChildren } from 'react';
 
 import Link from '#site/components/Link';
 import { useCopyToClipboard } from '#site/hooks';
+
+import type { FC, PropsWithChildren } from 'react';
 
 type CodeBoxProps = {
   language: string;

@@ -3,14 +3,15 @@
 import Sidebar from '@node-core/ui-components/Containers/Sidebar';
 import { usePathname } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
-import type { RichTranslationValues } from 'next-intl';
-import type { FC } from 'react';
 
 import Link from '#site/components/Link';
 import { useClientContext } from '#site/hooks';
 import { useSiteNavigation } from '#site/hooks/server';
 import { useRouter } from '#site/navigation.mjs';
+
 import type { NavigationKeys } from '#site/types';
+import type { RichTranslationValues } from 'next-intl';
+import type { FC } from 'react';
 
 type WithSidebarProps = {
   navKeys: Array<NavigationKeys>;

@@ -1,8 +1,9 @@
 import classNames from 'classnames';
-import type { ComponentProps, FC } from 'react';
 
 import SidebarItem from '#ui/Containers/Sidebar/SidebarItem';
+
 import type { FormattedMessage, LinkLike } from '#ui/types';
+import type { ComponentProps, FC } from 'react';
 
 import styles from './index.module.css';
 

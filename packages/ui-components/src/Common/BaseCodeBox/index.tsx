@@ -2,11 +2,12 @@
 
 import { DocumentDuplicateIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
-import type { FC, PropsWithChildren, ReactElement } from 'react';
 import { Fragment, isValidElement, useRef } from 'react';
 
 import BaseButton from '#ui/Common/BaseButton';
+
 import type { LinkLike } from '#ui/types';
+import type { FC, PropsWithChildren, ReactElement } from 'react';
 
 import styles from './index.module.css';
 

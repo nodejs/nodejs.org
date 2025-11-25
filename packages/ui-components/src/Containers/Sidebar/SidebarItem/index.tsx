@@ -1,9 +1,10 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import classNames from 'classnames';
-import type { FC } from 'react';
 
 import BaseActiveLink from '#ui/Common/BaseActiveLink';
+
 import type { FormattedMessage, LinkLike } from '#ui/types';
+import type { FC } from 'react';
 
 import ProgressionIcon from '../ProgressionIcon';
 

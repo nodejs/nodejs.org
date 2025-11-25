@@ -3,11 +3,12 @@
 import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
 import { useContext, useEffect, useMemo } from 'react';
-import type { FC } from 'react';
 
 import { ReleaseContext } from '#site/providers/releaseProvider';
-import type { InstallationMethod } from '#site/types/release';
 import { nextItem, INSTALL_METHODS, parseCompat } from '#site/util/download';
+
+import type { InstallationMethod } from '#site/types/release';
+import type { FC } from 'react';
 
 const InstallationMethodDropdown: FC = () => {
   const release = useContext(ReleaseContext);

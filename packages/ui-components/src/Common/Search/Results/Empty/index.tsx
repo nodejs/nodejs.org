@@ -1,4 +1,5 @@
 import { SearchResults, Suggestions } from '@orama/ui/components';
+
 import type { ComponentProps, FC, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';

@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import Tooltip from '#ui/Common/Tooltip';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof Tooltip>;
 type Meta = MetaObj<typeof Tooltip>;

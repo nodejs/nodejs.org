@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useRef } from 'react';
+
 import type { FC, PropsWithChildren } from 'react';
 
 type NavigationStateContextType = Record<string, { x: number; y: number }>;

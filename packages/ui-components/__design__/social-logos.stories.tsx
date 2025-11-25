@@ -1,5 +1,3 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import {
   Bluesky,
   Discord,
@@ -9,6 +7,8 @@ import {
   Slack,
   X,
 } from '#ui/Icons/Social';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 const socialIcons = [
   [GitHub, Mastodon, LinkedIn],

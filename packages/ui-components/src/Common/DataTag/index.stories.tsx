@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import DataTag, { type DataTagProps } from '#ui/Common/DataTag';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof DataTag>;
 type Meta = MetaObj<typeof DataTag>;

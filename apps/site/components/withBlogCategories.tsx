@@ -1,11 +1,12 @@
 import { useTranslations } from 'next-intl';
-import type { ComponentProps, FC } from 'react';
 
 import BlogPostCard from '#site/components/Blog/BlogPostCard';
 import LinkTabs from '#site/components/Common/LinkTabs';
 import Pagination from '#site/components/Common/Pagination';
-import type { BlogPostsRSC } from '#site/types';
 import { mapAuthorToCardAuthors } from '#site/util/author';
+
+import type { BlogPostsRSC } from '#site/types';
+import type { ComponentProps, FC } from 'react';
 
 type WithBlogCategoriesProps = {
   categories: ComponentProps<typeof LinkTabs>['tabs'];

@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import BaseCrossLink from '#ui/Common/BaseCrossLink';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof BaseCrossLink>;
 type Meta = MetaObj<typeof BaseCrossLink>;

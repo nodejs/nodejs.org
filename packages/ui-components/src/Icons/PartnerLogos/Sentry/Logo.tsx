@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+
 import type { FC, SVGProps } from 'react';
 
 const Sentry: FC<SVGProps<SVGSVGElement>> = props => (

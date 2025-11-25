@@ -1,6 +1,7 @@
 import { importLocale } from '@node-core/website-i18n';
-import type { Locale } from '@node-core/website-i18n/types';
 import { test, expect, type Page } from '@playwright/test';
+
+import type { Locale } from '@node-core/website-i18n/types';
 
 const englishLocale = await importLocale('en');
 

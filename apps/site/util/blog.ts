@@ -1,5 +1,6 @@
 import { BLOG_POSTS_PER_PAGE } from '#site/next.constants.mjs';
 import { blogData } from '#site/next.json.mjs';
+
 import type { BlogCategory, BlogPostsRSC, BlogPreviewType } from '#site/types';
 
 export const mapBlogCategoryToPreviewType = (type: string): BlogPreviewType => {

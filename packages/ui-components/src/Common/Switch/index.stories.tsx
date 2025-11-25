@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react';
-
 import Switch from '#ui/Common/Switch';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 type Story = StoryObj<typeof Switch>;
 type Meta = MetaObj<typeof Switch>;

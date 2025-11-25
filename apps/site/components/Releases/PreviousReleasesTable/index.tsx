@@ -1,7 +1,8 @@
 import { getTranslations } from 'next-intl/server';
-import type { FC } from 'react';
 
 import provideReleaseData from '#site/next-data/providers/releaseData';
+
+import type { FC } from 'react';
 
 import PreviousReleasesTableBody from './TableBody';
 

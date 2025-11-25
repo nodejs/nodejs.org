@@ -4,7 +4,6 @@ import { highlightToHtml } from '@node-core/rehype-shiki/minimal';
 import AlertBox from '@node-core/ui-components/Common/AlertBox';
 import Skeleton from '@node-core/ui-components/Common/Skeleton';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
 import { useContext, useMemo } from 'react';
 
 import CodeBox from '#site/components/Common/CodeBox';
@@ -15,10 +14,12 @@ import {
   ReleaseContext,
   ReleasesContext,
 } from '#site/providers/releaseProvider';
-import type { DownloadSnippet } from '#site/types/download';
-import type { ReleaseContextType } from '#site/types/release';
 import { INSTALL_METHODS } from '#site/util/download';
 import createInterpreter from '#site/util/interpreter';
+
+import type { DownloadSnippet } from '#site/types/download';
+import type { ReleaseContextType } from '#site/types/release';
+import type { FC } from 'react';
 
 // Creates a minimal JavaScript interpreter for parsing the JavaScript code from the snippets
 // Note: that the code runs inside a sandboxed environment and cannot interact with any code outside of the sandbox

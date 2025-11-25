@@ -1,7 +1,8 @@
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
-import type { Preview, ReactRenderer } from '@storybook/react-webpack5';
 
 import { NotificationProvider } from '#ui/Providers/NotificationProvider';
+
+import type { Preview, ReactRenderer } from '@storybook/react-webpack5';
 
 import { STORYBOOK_MODES, STORYBOOK_SIZES } from './constants';
 

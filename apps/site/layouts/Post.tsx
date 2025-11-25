@@ -1,5 +1,4 @@
 import Preview from '@node-core/ui-components/Common/Preview';
-import type { FC, PropsWithChildren } from 'react';
 
 import EOLAlert from '#site/components/EOL/EOLAlert';
 import WithAvatarGroup from '#site/components/withAvatarGroup';
@@ -10,6 +9,8 @@ import WithNavBar from '#site/components/withNavBar';
 import { useClientContext } from '#site/hooks/react-server';
 import { mapAuthorToCardAuthors } from '#site/util/author';
 import { mapBlogCategoryToPreviewType } from '#site/util/blog';
+
+import type { FC, PropsWithChildren } from 'react';
 
 import styles from './layouts.module.css';
 

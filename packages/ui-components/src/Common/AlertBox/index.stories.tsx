@@ -1,7 +1,8 @@
 import { ExclamationCircleIcon } from '@heroicons/react/24/solid';
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 import AlertBox from '#ui/Common/AlertBox';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof AlertBox>;
 type Meta = MetaObj<typeof AlertBox>;

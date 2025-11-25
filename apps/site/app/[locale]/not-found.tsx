@@ -2,11 +2,12 @@
 
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import { getTranslations } from 'next-intl/server';
-import type { FC } from 'react';
 
 import Button from '#site/components/Common/Button';
 import Turtle from '#site/components/Common/Turtle';
 import GlowingBackdropLayout from '#site/layouts/GlowingBackdrop';
+
+import type { FC } from 'react';
 
 const NotFoundPage: FC = async () => {
   const t = await getTranslations();

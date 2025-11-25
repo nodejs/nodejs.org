@@ -1,9 +1,9 @@
 'use server';
 
-import type { FC } from 'react';
-
 import provideReleaseData from '#site/next-data/providers/releaseData';
+
 import type { NodeRelease, NodeReleaseStatus } from '#site/types';
+import type { FC } from 'react';
 
 type WithNodeReleaseProps = {
   status: Array<NodeReleaseStatus> | NodeReleaseStatus;

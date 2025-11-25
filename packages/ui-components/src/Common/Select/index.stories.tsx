@@ -1,8 +1,8 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import Select from '#ui/Common/Select';
 import StatelessSelect from '#ui/Common/Select/StatelessSelect';
 import * as OSIcons from '#ui/Icons/OperatingSystem';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof Select>;
 type Meta = MetaObj<typeof Select>;

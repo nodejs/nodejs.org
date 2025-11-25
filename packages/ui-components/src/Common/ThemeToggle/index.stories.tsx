@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import ThemeToggle from '#ui/Common/ThemeToggle';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof ThemeToggle>;
 type Meta = MetaObj<typeof ThemeToggle>;

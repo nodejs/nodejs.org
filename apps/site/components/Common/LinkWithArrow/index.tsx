@@ -1,13 +1,14 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import classNames from 'classnames';
+
+import Link from '#site/components/Link';
+
 import type {
   ButtonHTMLAttributes,
   ComponentProps,
   FC,
   PropsWithChildren,
 } from 'react';
-
-import Link from '#site/components/Link';
 
 import styles from './index.module.css';
 

@@ -1,8 +1,8 @@
-import type { Heading } from '@vcarl/remark-headings';
 import { Fragment, useMemo } from 'react';
-import type { FC } from 'react';
 
 import type { LinkLike } from '#ui/types';
+import type { Heading } from '@vcarl/remark-headings';
+import type { FC } from 'react';
 
 import styles from './index.module.css';
 

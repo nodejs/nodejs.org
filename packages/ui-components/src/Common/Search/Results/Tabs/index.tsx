@@ -1,5 +1,6 @@
 import { FacetTabs } from '@orama/ui/components';
 import classNames from 'classnames';
+
 import type { ComponentProps, FC } from 'react';
 
 import styles from './index.module.css';

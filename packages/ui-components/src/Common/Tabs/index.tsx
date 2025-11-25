@@ -1,5 +1,6 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 import classNames from 'classnames';
+
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 
 import styles from './index.module.css';

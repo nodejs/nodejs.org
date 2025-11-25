@@ -1,5 +1,8 @@
 import semVer from 'semver';
 
+import { OS_NOT_SUPPORTING_INSTALLERS, PLATFORMS } from '#site/util/download';
+import { getNodeDownloadUrl } from '#site/util/url';
+
 import type {
   DownloadDropdownItem,
   DownloadKind,
@@ -10,8 +13,6 @@ import type {
   CompatibleArtifactOptions,
 } from '#site/types';
 import type { NodeRelease } from '#site/types/releases';
-import { OS_NOT_SUPPORTING_INSTALLERS, PLATFORMS } from '#site/util/download';
-import { getNodeDownloadUrl } from '#site/util/url';
 
 import { DIST_URL } from '#site/next.constants';
 

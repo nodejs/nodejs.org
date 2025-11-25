@@ -1,6 +1,6 @@
-import type { FC } from 'react';
-
 import NodejsIcon, { type NodeJsLogoProps } from '#ui/Icons/Logos/Nodejs';
+
+import type { FC } from 'react';
 
 import style from './index.module.css';
 

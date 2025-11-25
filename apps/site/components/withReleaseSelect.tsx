@@ -1,12 +1,13 @@
 'use server';
 
 import StatelessSelect from '@node-core/ui-components/Common/Select/StatelessSelect';
-import type { ComponentProps, FC } from 'react';
 
 import Link from '#site/components/Link';
 import provideReleaseData from '#site/next-data/providers/releaseData';
-import type { NodeRelease } from '#site/types';
 import { STATUS_ORDER } from '#site/util/download';
+
+import type { NodeRelease } from '#site/types';
+import type { ComponentProps, FC } from 'react';
 
 type Navigations = Record<string, Array<{ label: string; value: string }>>;
 

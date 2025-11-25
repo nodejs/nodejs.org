@@ -1,5 +1,4 @@
 import { notFound } from 'next/navigation';
-import type { FC } from 'react';
 
 import { getClientContext } from '#site/client-context';
 import provideReleaseData from '#site/next-data/providers/releaseData';
@@ -7,6 +6,8 @@ import {
   buildReleaseArtifacts,
   extractVersionFromPath,
 } from '#site/util/download/archive';
+
+import type { FC } from 'react';
 
 type DownloadArchive = ReturnType<typeof buildReleaseArtifacts>;
 

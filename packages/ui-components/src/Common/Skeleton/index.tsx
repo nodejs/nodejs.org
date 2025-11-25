@@ -1,6 +1,7 @@
 import classNames from 'classnames';
-import type { FC, PropsWithChildren } from 'react';
 import { isValidElement } from 'react';
+
+import type { FC, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';
 

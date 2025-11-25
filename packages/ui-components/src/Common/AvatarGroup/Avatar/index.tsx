@@ -1,9 +1,9 @@
 import * as RadixAvatar from '@radix-ui/react-avatar';
 import classNames from 'classnames';
-import type { HTMLAttributes } from 'react';
 import { forwardRef } from 'react';
 
 import type { LinkLike } from '#ui/types';
+import type { HTMLAttributes } from 'react';
 
 import styles from './index.module.css';
 

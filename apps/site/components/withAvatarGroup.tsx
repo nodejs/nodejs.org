@@ -1,11 +1,12 @@
 'use client';
 
 import AvatarGroup from '@node-core/ui-components/Common/AvatarGroup';
-import type { ComponentProps, FC } from 'react';
 
 import Link from '#site/components/Link';
-import type { AuthorProps } from '#site/types';
 import { getAuthors } from '#site/util/author';
+
+import type { AuthorProps } from '#site/types';
+import type { ComponentProps, FC } from 'react';
 
 type WithAvatarGroupProps = Omit<
   ComponentProps<typeof AvatarGroup>,

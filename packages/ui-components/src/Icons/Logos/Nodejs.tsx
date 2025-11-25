@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import type { FC, SVGProps } from 'react';
 
 import type { LogoVariant } from '#ui/types';
+import type { FC, SVGProps } from 'react';
 
 export type NodeJsLogoProps = SVGProps<SVGSVGElement> & {
   variant?: LogoVariant;

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { randomPartnerList } from '#site/components/Common/Partners/utils';
+
 import type { PartnerCategory, Partners } from '#site/types/partners';
 
 const usePartnersList = ({

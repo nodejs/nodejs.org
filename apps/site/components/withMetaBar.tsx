@@ -3,7 +3,6 @@
 import MetaBar from '@node-core/ui-components/Containers/MetaBar';
 import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
 import { useFormatter, useLocale, useTranslations } from 'next-intl';
-import type { FC } from 'react';
 
 import Link from '#site/components/Link';
 import WithAvatarGroup from '#site/components/withAvatarGroup';
@@ -13,6 +12,8 @@ import { DEFAULT_DATE_FORMAT } from '#site/next.calendar.constants.mjs';
 import { TRANSLATION_URL } from '#site/next.constants.mjs';
 import { defaultLocale } from '#site/next.locales.mjs';
 import { getGitHubBlobUrl } from '#site/util/github';
+
+import type { FC } from 'react';
 
 const WithMetaBar: FC = () => {
   const { headings, readingTime, frontmatter, filename } = useClientContext();

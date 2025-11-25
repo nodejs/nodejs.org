@@ -1,9 +1,7 @@
 'use client';
 
-import type { BreadcrumbLink } from '@node-core/ui-components/Common/Breadcrumbs';
 import Breadcrumbs from '@node-core/ui-components/Common/Breadcrumbs';
 import { useTranslations } from 'next-intl';
-import type { FC } from 'react';
 
 import Link from '#site/components/Link';
 import {
@@ -11,8 +9,11 @@ import {
   useMediaQuery,
   useSiteNavigation,
 } from '#site/hooks';
-import type { NavigationKeys } from '#site/types';
 import { dashToCamelCase } from '#site/util/string';
+
+import type { NavigationKeys } from '#site/types';
+import type { BreadcrumbLink } from '@node-core/ui-components/Common/Breadcrumbs';
+import type { FC } from 'react';
 
 type WithBreadcrumbsProps = {
   navKeys?: Array<NavigationKeys>;

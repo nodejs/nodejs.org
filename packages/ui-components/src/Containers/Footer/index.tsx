@@ -1,5 +1,3 @@
-import type { FC, ReactNode, SVGProps } from 'react';
-
 import NavItem from '#ui/Containers/NavBar/NavItem';
 import {
   Bluesky,
@@ -10,7 +8,9 @@ import {
   Slack,
   X,
 } from '#ui/Icons/Social';
+
 import type { LinkLike } from '#ui/types';
+import type { FC, ReactNode, SVGProps } from 'react';
 
 import styles from './index.module.css';
 

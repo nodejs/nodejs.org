@@ -1,5 +1,6 @@
 import ChevronRightIcon from '@heroicons/react/24/outline/ChevronRightIcon';
 import classNames from 'classnames';
+
 import type { ComponentProps, FC, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';

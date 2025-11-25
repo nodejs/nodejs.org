@@ -2,6 +2,7 @@
 
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import * as Dialog from '@radix-ui/react-dialog';
+
 import type { FC, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';

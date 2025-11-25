@@ -1,15 +1,16 @@
 'use client';
 
 import classNames from 'classnames';
-import type { FC } from 'react';
 import { useState, useMemo } from 'react';
 
-import type { AvatarProps } from '#ui/Common/AvatarGroup/Avatar';
 import Avatar from '#ui/Common/AvatarGroup/Avatar';
 import avatarstyles from '#ui/Common/AvatarGroup/Avatar/index.module.css';
 import AvatarOverlay from '#ui/Common/AvatarGroup/Overlay';
 import Tooltip from '#ui/Common/Tooltip';
+
+import type { AvatarProps } from '#ui/Common/AvatarGroup/Avatar';
 import type { LinkLike } from '#ui/types';
+import type { FC } from 'react';
 
 import styles from './index.module.css';
 

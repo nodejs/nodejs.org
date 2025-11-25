@@ -1,6 +1,6 @@
-import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-
 import NodejsLogo from '#ui/Common/NodejsLogo';
+
+import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 type Story = StoryObj<typeof NodejsLogo>;
 type Meta = MetaObj<typeof NodejsLogo>;

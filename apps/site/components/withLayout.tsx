@@ -1,5 +1,3 @@
-import type { FC, PropsWithChildren } from 'react';
-
 import AboutLayout from '#site/layouts/About';
 import ArticlePageLayout from '#site/layouts/ArticlePage';
 import BlogLayout from '#site/layouts/Blog';
@@ -9,7 +7,9 @@ import DownloadArchiveLayout from '#site/layouts/DownloadArchive';
 import GlowingBackdropLayout from '#site/layouts/GlowingBackdrop';
 import LearnLayout from '#site/layouts/Learn';
 import PostLayout from '#site/layouts/Post';
+
 import type { Layouts } from '#site/types';
+import type { FC, PropsWithChildren } from 'react';
 
 const layouts = {
   about: AboutLayout,
