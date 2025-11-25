@@ -46,6 +46,14 @@ The OpenNext skew protection requires the following environment variables to be 
 
 Additionally, when deploying, an extra `CF_WORKERS_SCRIPTS_API_TOKEN` environment variable needs to be set to an API token that has the `Workers Scripts:Read` permission available on the Worker's account.
 
+### Image loader
+
+When deployed on the Cloudflare network a custom image loader is required. We set such loader in the Next.js config file when the `OPEN_NEXT_CLOUDFLARE` environment variable is set (which indicates that we're building the application for the Cloudflare deployment).
+
+The custom loader can be found at [`site/cloudflare/image-loader.ts`](../apps/site/cloudflare/image-loader.ts).
+
+For more details on this see: https://developers.cloudflare.com/images/transform-images/integrate-with-frameworks/#global-loader
+
 ## Scripts
 
 Preview and deployment of the website targeting the Cloudflare network is implemented via the following two commands:
