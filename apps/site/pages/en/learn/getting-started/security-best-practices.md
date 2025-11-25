@@ -27,9 +27,9 @@ guidelines on how to secure a Node.js application.
 ## Threat List
 
 The Node.js [threat model][] defines what is or is not considered a
-*vulnerability in Node.js itself*. Some of the topics below are not
+_vulnerability in Node.js itself_. Some of the topics below are not
 vulnerabilities in Node.js core according to that model, but they are still
-important *application-level* threats that you should account for when building
+important _application-level_ threats that you should account for when building
 and operating Node.js software.
 
 ### Denial of Service of HTTP server (CWE-400)
@@ -198,7 +198,7 @@ According to the Node.js [threat model][], scenarios that require a malicious
 third-party module are **not** considered vulnerabilities in Node.js core,
 because Node.js treats the code it is asked to run (including dependencies)
 as trusted. However, malicious or compromised dependencies remain one of the
-most critical *application-level* risks for Node.js users and should be
+most critical _application-level_ risks for Node.js users and should be
 treated as such.
 
 Currently, in Node.js, any package can access powerful resources such as
@@ -416,27 +416,11 @@ Assuming the following directory structure:
 If server.js uses `require('./auth')` it will follow the module resolution
 algorithm and load _auth_ instead of _auth.js_.
 
-**Mitigations**
-
-Using the [policy mechanism with integrity checking][] can avoid the above
-threat. Configure a policy manifest that:
-
-- Pins the expected integrity of the modules your application should load.
-- Maps resolution of dependencies (for example, ensuring `./auth` resolves to
-  the exact `auth.js` file you expect).
-
-With such a policy enabled, attempts to load unexpected files or files whose
-content has changed will fail integrity checks instead of being silently
-accepted.
-
-Note, it's always recommended the use of `--policy-integrity` to avoid policy mutations.
-
 ## Node.js Permission Model
 
 Node.js provides a **permission model**
 that can be used to restrict what a given process is allowed to do at runtime.
-This model complements the Node.js [threat model][] and the policy mechanism
-described above by enforcing least-privilege at the runtime level.
+This model complements the Node.js [threat model][].
 
 When enabled (for example, using the `--permission` flag), the
 permission model lets you selectively allow or deny access to sensitive
@@ -452,7 +436,7 @@ untrusted configuration, or unexpected behavior in your own code, since even
 trusted code will be prevented from performing actions outside the permissions
 you have explicitly granted.
 
-Refer to the Node.js permissions documentation for up-to-date flags and
+Refer to the [Node.js permissions documentation][] for up-to-date flags and
 options.
 
 ## Experimental Features in Production
@@ -484,6 +468,7 @@ You can also collaborate with other projects and security experts through the [O
 [unpublish the package]: https://docs.npmjs.com/unpublishing-packages-from-the-registry
 [CWE-444]: https://cwe.mitre.org/data/definitions/444.html
 [RFC7230]: https://datatracker.ietf.org/doc/html/rfc7230#section-3
+[Node.js permissions documentation]: https://nodejs.org/api/permissions.html#permission-model
 [policy mechanism]: https://nodejs.org/api/permissions.html#policies
 [typosquatting]: https://en.wikipedia.org/wiki/Typosquatting
 [Mitigations for lockfile poisoning]: https://blog.ulisesgascon.com/lockfile-posioned
@@ -496,7 +481,6 @@ You can also collaborate with other projects and security experts through the [O
 [CVE-2018-16487]: https://www.cve.org/CVERecord?id=CVE-2018-16487
 [scrypt]: https://nodejs.org/api/crypto.html#cryptoscryptpassword-salt-keylen-options-callback
 [Module Resolution Algorithm]: https://nodejs.org/api/modules.html#modules_all_together
-[policy mechanism with integrity checking]: https://nodejs.org/api/permissions.html#integrity-checks
 [experimental-features]: #experimental-features-in-production
 [`Socket`]: https://socket.dev/
 [OpenSSF]: https://openssf.org/
