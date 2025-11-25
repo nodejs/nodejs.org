@@ -3,15 +3,14 @@
   "type": "module",
   "scripts": {
     "prebuild": "node --run build:blog-data",
-    "build": "node --run build:default -- --turbo",
+    "build": "cross-env NODE_NO_WARNINGS=1 next build --turbo",
     "build:blog-data": "cross-env NODE_NO_WARNINGS=1 node ./scripts/blog-data/index.mjs",
     "build:blog-data:watch": "node --watch --watch-path=pages/en/blog ./scripts/blog-data/index.mjs",
-    "build:default": "cross-env NODE_NO_WARNINGS=1 next build",
     "cloudflare:build:worker": "OPEN_NEXT_CLOUDFLARE=true opennextjs-cloudflare build",
     "cloudflare:deploy": "opennextjs-cloudflare deploy",
     "cloudflare:preview": "wrangler dev",
     "predeploy": "node --run build:blog-data",
-    "deploy": "cross-env NEXT_PUBLIC_STATIC_EXPORT=true node --run build:default -- --turbo",
+    "deploy": "cross-env NEXT_PUBLIC_STATIC_EXPORT=true node --run build",
     "predev": "node --run build:blog-data",
     "dev": "cross-env NODE_NO_WARNINGS=1 next dev --turbo",
     "lint": "node --run lint:js && node --run lint:css && node --run lint:md",
@@ -83,7 +82,7 @@
     "@flarelabs-net/wrangler-build-time-fs-assets-polyfilling": "^0.0.1",
     "@next/eslint-plugin-next": "15.5.4",
     "@node-core/remark-lint": "workspace:*",
-    "@opennextjs/cloudflare": "^1.6.4",
+    "@opennextjs/cloudflare": "^1.13.1",
     "@playwright/test": "^1.56.1",
     "@testing-library/user-event": "~14.6.1",
     "@types/mdast": "^4.0.4",
@@ -108,7 +107,7 @@
     "typescript": "catalog:",
     "typescript-eslint": "~8.45.0",
     "user-agent-data-types": "0.4.2",
-    "wrangler": "^4.33.1"
+    "wrangler": "^4.45.3"
   },
   "imports": {
     "#site/*": [

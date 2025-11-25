@@ -1,8 +1,22 @@
 'use strict';
 import createNextIntlPlugin from 'next-intl/plugin';
 
+import { OPEN_NEXT_CLOUDFLARE } from './next.constants.cloudflare.mjs';
 import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
+import { getImagesConfig } from './next.image.config.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
+
+const getDeploymentId = async () => {
+  if (OPEN_NEXT_CLOUDFLARE) {
+    // If we're building for the Cloudflare deployment we want to set
+    // an appropriate deploymentId (needed for skew protection)
+    const openNextAdapter = await import('@opennextjs/cloudflare');
+
+    return openNextAdapter.getDeploymentId();
+  }
+
+  return undefined;
+};
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -13,19 +27,7 @@ const nextConfig = {
   // is being built on a subdirectory (e.g. /nodejs-website)
   basePath: BASE_PATH,
   // Vercel/Next.js Image Optimization Settings
-  images: {
-    // We disable image optimisation during static export builds
-    unoptimized: ENABLE_STATIC_EXPORT,
-    // We add it to the remote pattern for the static images we use from multiple sources
-    // to be marked as safe sources (these come from Markdown files)
-    remotePatterns: [
-      new URL('https://avatars.githubusercontent.com/**'),
-      new URL('https://bestpractices.coreinfrastructure.org/**'),
-      new URL('https://raw.githubusercontent.com/nodejs/**'),
-      new URL('https://user-images.githubusercontent.com/**'),
-      new URL('https://website-assets.oramasearch.com/**'),
-    ],
-  },
+  images: getImagesConfig(),
   serverExternalPackages: ['twoslash'],
   outputFileTracingIncludes: {
     // Twoslash needs TypeScript declarations to function, and, by default, Next.js
@@ -81,16 +83,7 @@ const nextConfig = {
       'shiki',
     ],
   },
-  // If we're building for the Cloudflare deployment we want to set
-  // an appropriate deploymentId (needed for skew protection)
-  // TODO: The `OPEN_NEXT_CLOUDFLARE` environment variable is being
-  //       defined in the worker building script, ideally the open-next
-  //       adapter should set it itself when it invokes the Next.js build
-  //       process, onces it does that remove the manual `OPEN_NEXT_CLOUDFLARE`
-  //       definition in the package.json script.
-  deploymentId: process.env.OPEN_NEXT_CLOUDFLARE
-    ? (await import('@opennextjs/cloudflare')).getDeploymentId()
-    : undefined,
+  deploymentId: await getDeploymentId(),
 };
 
 const withNextIntl = createNextIntlPlugin('./i18n.tsx');
