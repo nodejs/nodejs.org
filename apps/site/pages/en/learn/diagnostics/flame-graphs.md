@@ -34,9 +34,9 @@ Now let's get to work.
 2. Try running `perf` - it might complain about missing kernel modules, install them too
 3. Run node with perf enabled (see [perf output issues](#perf-output-issues) for tips specific to Node.js versions)
 
-   ```
-   perf record -e cycles:u -g -- node --perf-basic-prof --interpreted-frames-native-stack app.js
-   ```
+```bash
+perf record -e cycles:u -g -- node --perf-basic-prof --interpreted-frames-native-stack app.js
+```
 
 4. Disregard warnings unless they're saying you can't run perf due to missing packages; you may get some warnings about not being able to access kernel module samples which you're not after anyway.
 5. Run `perf script > perfs.out` to generate the data file you'll visualize in a moment. It's useful to [apply some cleanup](#filtering-out-nodejs-internal-functions) for a more readable graph
