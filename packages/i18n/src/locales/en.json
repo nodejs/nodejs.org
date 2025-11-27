@@ -237,10 +237,6 @@
       "npmVersion": "npm version",
       "v8Version": "V8 version"
     },
-    "pagination": {
-      "next": "Next",
-      "previous": "Previous"
-    },
     "common": {
       "alertBox": {
         "info": "Info",

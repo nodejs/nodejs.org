@@ -16,9 +16,9 @@ const Pagination: FC<
       labels={{
         aria: t('components.common.pagination.defaultLabel'),
         prevAria: t('components.common.pagination.prevAriaLabel'),
-        prev: t('components.pagination.previous'),
+        prev: t('components.common.pagination.prev'),
         nextAria: t('components.common.pagination.nextAriaLabel'),
-        next: t('components.pagination.next'),
+        next: t('components.common.pagination.next'),
       }}
       getPageLabel={pageNumber =>
         t('components.common.pagination.pageLabel', { pageNumber })
