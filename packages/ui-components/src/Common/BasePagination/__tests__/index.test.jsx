@@ -11,9 +11,9 @@ import BasePagination from '#ui/Common/BasePagination';
 const getPageLabel = number => number.toString();
 const labels = {
   aria: 'Aria',
-  prevAria: 'Previous Aria',
-  prev: 'Previous',
-  nextAria: 'Next Aria',
+  previousAriaLabel: 'Previous Aria',
+  previous: 'Previous',
+  nextAriaLabel: 'Next Aria',
   next: 'Next',
 };
 
@@ -51,14 +51,14 @@ describe('Pagination', () => {
       assert.ok(
         isVisible(
           screen.getByRole('button', {
-            name: labels.prevAria,
+            name: labels.previousAriaLabel,
           })
         )
       );
       assert.ok(
         isVisible(
           screen.getByRole('button', {
-            name: labels.nextAria,
+            name: labels.nextAriaLabel,
           })
         )
       );
@@ -157,7 +157,7 @@ describe('Pagination', () => {
       assert.ok(
         screen
           .getByRole('button', {
-            name: labels.prevAria,
+            name: labels.previousAriaLabel,
           })
           .getAttribute('aria-disabled')
       );
@@ -172,7 +172,7 @@ describe('Pagination', () => {
       assert.ok(
         screen
           .getByRole('button', {
-            name: labels.nextAria,
+            name: labels.nextAriaLabel,
           })
           .getAttribute('aria-disabled')
       );

@@ -13,9 +13,9 @@ export const Default: Story = {
     getPageLabel: value => `Page: ${value}`,
     labels: {
       aria: 'Aria',
-      prevAria: 'Previous Aria',
-      prev: 'Previous',
-      nextAria: 'Next Aria',
+      previousAriaLabel: 'Previous Aria',
+      previous: 'Previous',
+      nextAriaLabel: 'Next Aria',
       next: 'Next',
     },
   },

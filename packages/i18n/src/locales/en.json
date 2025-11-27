@@ -237,10 +237,6 @@
       "npmVersion": "npm version",
       "v8Version": "V8 version"
     },
-    "pagination": {
-      "next": "Next",
-      "previous": "Previous"
-    },
     "common": {
       "alertBox": {
         "info": "Info",
@@ -250,17 +246,13 @@
       "breadcrumbs": {
         "navigateToHome": "Navigate to Home"
       },
-      "crossLink": {
-        "previous": "Prev",
-        "next": "Next"
-      },
       "codebox": {
         "copy": "Copy to clipboard",
         "copied": "Copied to clipboard!"
       },
       "pagination": {
-        "prev": "Previous",
-        "prevAriaLabel": "Previous page",
+        "previous": "Previous",
+        "previousAriaLabel": "Previous page",
         "next": "Next",
         "nextAriaLabel": "Next page",
         "defaultLabel": "Pagination",

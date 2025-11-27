@@ -10,7 +10,7 @@ const CrossLink: FC<Omit<CrossLinkProps, 'as' | 'label'>> = props => {
   const t = useTranslations();
   return (
     <BaseCrossLink
-      label={t(`components.common.crossLink.${props.type}`)}
+      label={t(`components.common.pagination.${props.type}`)}
       as={Link}
       {...props}
     />
