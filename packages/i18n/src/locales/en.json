@@ -246,17 +246,13 @@
       "breadcrumbs": {
         "navigateToHome": "Navigate to Home"
       },
-      "crossLink": {
-        "previous": "Previous",
-        "next": "Next"
-      },
       "codebox": {
         "copy": "Copy to clipboard",
         "copied": "Copied to clipboard!"
       },
       "pagination": {
-        "prev": "Previous",
-        "prevAriaLabel": "Previous page",
+        "previous": "Previous",
+        "previousAriaLabel": "Previous page",
         "next": "Next",
         "nextAriaLabel": "Next page",
         "defaultLabel": "Pagination",
