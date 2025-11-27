@@ -81,8 +81,5 @@ const args = {
 };
 
 export const Default: Story = { args };
-export const Progression: Story = {
-  args: { ...args, showProgressionIcons: true },
-};
 
 export default { component: Sidebar } as Meta;

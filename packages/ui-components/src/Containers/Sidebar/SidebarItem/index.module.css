@@ -29,31 +29,7 @@
       dark:text-neutral-200;
   }
 
-  &.progression {
-    &.active {
-      @apply text-neutral-900
-        dark:text-white;
-
-      .hexagonIcon {
-        @apply fill-green-500;
-      }
-    }
-
-    .label {
-      @apply p-1;
-    }
-
-    .hexagonIcon {
-      @apply shrink-0
-        fill-neutral-200
-        stroke-white
-        stroke-[4]
-        dark:fill-neutral-800
-        dark:stroke-neutral-950;
-    }
-  }
-
-  &:not(.active):not(.progression):hover {
+  &:not(.active):hover {
     /* Apply hover background to the full item width */
     @apply bg-neutral-100
       dark:bg-neutral-900;
@@ -71,7 +47,7 @@
     }
   }
 
-  &.active:not(.progression) {
+  &.active {
     /* Full-width active background and readable text */
     @apply bg-green-600
       text-white;

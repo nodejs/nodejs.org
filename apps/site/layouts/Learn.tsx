@@ -14,7 +14,7 @@ const LearnLayout: FC<PropsWithChildren> = ({ children }) => (
     <WithNavBar />
 
     <Article>
-      <WithSideBar navKeys={['learn']} showProgressionIcons={true} />
+      <WithSideBar navKeys={['learn']} />
 
       <div>
         <main>

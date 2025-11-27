@@ -16,7 +16,6 @@ import type { FC } from 'react';
 type WithSidebarProps = {
   navKeys: Array<NavigationKeys>;
   context?: Record<string, RichTranslationValues>;
-  showProgressionIcons?: boolean;
 };
 
 const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
