@@ -6,8 +6,6 @@ import BaseActiveLink from '#ui/Common/BaseActiveLink';
 import type { FormattedMessage, LinkLike } from '#ui/types';
 import type { FC } from 'react';
 
-import ProgressionIcon from '../ProgressionIcon';
-
 import styles from './index.module.css';
 
 type SidebarItemProps = {
@@ -15,26 +13,17 @@ type SidebarItemProps = {
   link: string;
   as?: LinkLike;
   pathname?: string;
-  showProgressionIcons?: boolean;
 };
 
-const SidebarItem: FC<SidebarItemProps> = ({
-  label,
-  link,
-  showProgressionIcons = false,
-  ...props
-}) => (
+const SidebarItem: FC<SidebarItemProps> = ({ label, link, ...props }) => (
   <BaseActiveLink
     className={classNames({
       [styles.item]: true,
-      [styles.progression]: showProgressionIcons,
     })}
     href={link}
     activeClassName={styles.active}
     {...props}
   >
-    {showProgressionIcons && <ProgressionIcon className={styles.hexagonIcon} />}
-
     <div className={styles.label}>
       <span>{label}</span>
 

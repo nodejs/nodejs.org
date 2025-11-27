@@ -13,13 +13,11 @@ type SidebarGroupProps = {
   as?: LinkLike;
   pathname?: string;
   className: string;
-  showProgressionIcons?: boolean;
 };
 
 const SidebarGroup: FC<SidebarGroupProps> = ({
   groupName,
   items,
-  showProgressionIcons,
   className,
   ...props
 }) => (
@@ -27,7 +25,6 @@ const SidebarGroup: FC<SidebarGroupProps> = ({
     className={classNames(
       {
         [styles.group]: true,
-        [styles.progression]: showProgressionIcons,
       },
       className
     )}
@@ -35,13 +32,7 @@ const SidebarGroup: FC<SidebarGroupProps> = ({
     <label className={styles.groupName}>{groupName}</label>
     <ul className={styles.itemList}>
       {items.map(({ label, link }) => (
-        <SidebarItem
-          key={link}
-          label={label}
-          link={link}
-          showProgressionIcons={showProgressionIcons}
-          {...props}
-        />
+        <SidebarItem key={link} label={label} link={link} {...props} />
       ))}
     </ul>
   </section>
