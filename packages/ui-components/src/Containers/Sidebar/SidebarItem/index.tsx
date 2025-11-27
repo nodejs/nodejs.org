@@ -1,5 +1,4 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
-import classNames from 'classnames';
 
 import BaseActiveLink from '#ui/Common/BaseActiveLink';
 
@@ -17,9 +16,7 @@ type SidebarItemProps = {
 
 const SidebarItem: FC<SidebarItemProps> = ({ label, link, ...props }) => (
   <BaseActiveLink
-    className={classNames({
-      [styles.item]: true,
-    })}
+    className={styles.item}
     href={link}
     activeClassName={styles.active}
     {...props}

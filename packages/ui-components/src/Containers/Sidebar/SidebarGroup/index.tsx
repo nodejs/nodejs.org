@@ -21,14 +21,7 @@ const SidebarGroup: FC<SidebarGroupProps> = ({
   className,
   ...props
 }) => (
-  <section
-    className={classNames(
-      {
-        [styles.group]: true,
-      },
-      className
-    )}
-  >
+  <section className={classNames(styles.group, className)}>
     <label className={styles.groupName}>{groupName}</label>
     <ul className={styles.itemList}>
       {items.map(({ label, link }) => (
