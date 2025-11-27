@@ -26,6 +26,12 @@ guidelines on how to secure a Node.js application.
 
 ## Threat List
 
+The Node.js [threat model][] defines what is or is not considered a
+_vulnerability in Node.js itself_. Some of the topics below are not
+vulnerabilities in Node.js core according to that model, but they are still
+important _application-level_ threats that you should account for when building
+and operating Node.js software.
+
 ### Denial of Service of HTTP server (CWE-400)
 
 This is an attack where the application becomes unavailable for the purpose it
@@ -188,6 +194,13 @@ of requests.
 
 ### Malicious Third-Party Modules (CWE-1357)
 
+According to the Node.js [threat model][], scenarios that require a malicious
+third-party module are **not** considered vulnerabilities in Node.js core,
+because Node.js treats the code it is asked to run (including dependencies)
+as trusted. However, malicious or compromised dependencies remain one of the
+most critical _application-level_ risks for Node.js users and should be
+treated as such.
+
 Currently, in Node.js, any package can access powerful resources such as
 network access.
 Furthermore, because they also have access to the file system, they can send
@@ -198,9 +211,17 @@ arbitrary code by using `eval()`(or its equivalents).
 All code with file system write access may achieve the same thing by writing to
 new or existing files that are loaded.
 
-Node.js has an experimental[¹][experimental-features]
-[policy mechanism][] to declare the loaded resource as untrusted or trusted.
-However, this policy is not enabled by default.
+**Examples**
+
+- An attacker compromises the maintainer account of a popular logging library
+  and ships a new minor version that exfiltrates environment variables
+  (for example, database passwords or access tokens) to a remote server when
+  the logger is initialized.
+- A typosquatting package with a name similar to a well-known framework is
+  published to the npm registry. When installed, it runs a postinstall script
+  that sends SSH keys from the developer's machine to an attacker-controlled
+  endpoint.
+
 Be sure to pin dependency versions and run automatic checks for vulnerabilities
 using common workflows or npm scripts.
 Before installing a package make sure that this package is maintained and
@@ -314,6 +335,13 @@ be replaced.
 
 ### Prototype Pollution Attacks (CWE-1321)
 
+Per the Node.js [threat model][], prototype pollution that relies on an
+attacker controlling user input is **not** considered a vulnerability in
+Node.js core, because Node.js trusts the inputs provided by application code.
+Nonetheless, prototype pollution is a serious class of vulnerabilities for
+Node.js applications and third-party libraries, and you should implement
+defenses at the application and dependency level.
+
 Prototype pollution refers to the possibility of modifying or injecting properties
 into Javascript language items by abusing the usage of \_\_proto\__,
 \_constructor_, _prototype_, and other properties inherited from built-in
@@ -342,6 +370,17 @@ language.
 - [CVE-2022-21824][] (Node.js)
 - [CVE-2018-3721][] (3rd Party library: Lodash)
 
+Additional scenarios include:
+
+- A web API merges untrusted JSON request bodies into a shared configuration
+  object without validation. By sending a payload with a `__proto__` property,
+  an attacker adds unexpected properties to many objects in the process,
+  leading to logic bugs or denial of service.
+- A template rendering service accepts user-controlled options and passes them
+  directly into a deep merge utility. By polluting `Object.prototype`, an
+  attacker causes all future templates to behave unexpectedly, potentially
+  bypassing security checks that rely on object property presence.
+
 **Mitigations**
 
 - Avoid [insecure recursive merges][], see [CVE-2018-16487][].
@@ -354,6 +393,13 @@ language.
 - Avoid using methods from `Object.prototype`.
 
 ### Uncontrolled Search Path Element (CWE-427)
+
+The Node.js [threat model][] considers the file system in the environment
+accessible to Node.js as trusted. As a result, issues that rely solely on
+controlling files in those locations are **not** considered vulnerabilities in
+Node.js core. They are, however, relevant to the security of your overall
+deployment and supply chain, so you should harden your environment and use
+the mechanisms below to reduce risk.
 
 Node.js loads modules following the [Module Resolution Algorithm][].
 Therefore, it assumes the directory in which a module is requested
@@ -370,53 +416,28 @@ Assuming the following directory structure:
 If server.js uses `require('./auth')` it will follow the module resolution
 algorithm and load _auth_ instead of _auth.js_.
 
-**Mitigations**
+## Node.js Permission Model
 
-Using the experimental[¹][experimental-features]
-[policy mechanism with integrity checking][] can avoid the above threat.
-For the directory described above, one can use the following `policy.json`
+Node.js provides a **permission model**
+that can be used to restrict what a given process is allowed to do at runtime.
+This model complements the Node.js [threat model][].
 
-```json
-{
-  "resources": {
-    "./app/auth.js": {
-      "integrity": "sha256-iuGZ6SFVFpMuHUcJciQTIKpIyaQVigMZlvg9Lx66HV8="
-    },
-    "./app/server.js": {
-      "dependencies": {
-        "./auth": "./app/auth.js"
-      },
-      "integrity": "sha256-NPtLCQ0ntPPWgfVEgX46ryTNpdvTWdQPoZO3kHo0bKI="
-    }
-  }
-}
-```
+When enabled (for example, using the `--permission` flag), the
+permission model lets you selectively allow or deny access to sensitive
+capabilities such as:
 
-Therefore, when requiring the _auth_ module, the system will validate the
-integrity and throw an error if doesn’t match the expected one.
+- File system reads and writes.
+- Network access (inbound and outbound).
+- Child process creation.
+- Use of native addons and other powerful APIs.
 
-```console
-» node --experimental-policy=policy.json app/server.js
-node:internal/policy/sri:65
-      throw new ERR_SRI_PARSE(str, str[prevIndex], prevIndex);
-      ^
+This can help contain the impact of malicious or compromised dependencies,
+untrusted configuration, or unexpected behavior in your own code, since even
+trusted code will be prevented from performing actions outside the permissions
+you have explicitly granted.
 
-SyntaxError [ERR_SRI_PARSE]: Subresource Integrity string "sha256-iuGZ6SFVFpMuHUcJciQTIKpIyaQVigMZlvg9Lx66HV8=%" had an unexpected "%" at position 51
-    at new NodeError (node:internal/errors:393:5)
-    at Object.parse (node:internal/policy/sri:65:13)
-    at processEntry (node:internal/policy/manifest:581:38)
-    at Manifest.assertIntegrity (node:internal/policy/manifest:588:32)
-    at Module._compile (node:internal/modules/cjs/loader:1119:21)
-    at Module._extensions..js (node:internal/modules/cjs/loader:1213:10)
-    at Module.load (node:internal/modules/cjs/loader:1037:32)
-    at Module._load (node:internal/modules/cjs/loader:878:12)
-    at Module.require (node:internal/modules/cjs/loader:1061:19)
-    at require (node:internal/modules/cjs/helpers:99:18) {
-  code: 'ERR_SRI_PARSE'
-}
-```
-
-Note, it's always recommended the use of `--policy-integrity` to avoid policy mutations.
+Refer to the [Node.js permissions documentation][] for up-to-date flags and
+options.
 
 ## Experimental Features in Production
 
@@ -430,6 +451,8 @@ The [OpenSSF][] is leading several initiatives that can be very useful, especial
 
 - [OpenSSF Scorecard][] Scorecard evaluates open source projects using a series of automated security risk checks. You can use it to proactively assess vulnerabilities and dependencies in your code base and make informed decisions about accepting vulnerabilities.
 - [OpenSSF Best Practices Badge Program][] Projects can voluntarily self-certify by describing how they comply with each best practice. This will generate a badge that can be added to the project.
+
+You can also collaborate with other projects and security experts through the [OpenJS Security Collaboration Space][].
 
 [threat model]: https://github.com/nodejs/node/security/policy#the-nodejs-threat-model
 [security guidance issue]: https://github.com/nodejs/security-wg/issues/488
@@ -445,6 +468,7 @@ The [OpenSSF][] is leading several initiatives that can be very useful, especial
 [unpublish the package]: https://docs.npmjs.com/unpublishing-packages-from-the-registry
 [CWE-444]: https://cwe.mitre.org/data/definitions/444.html
 [RFC7230]: https://datatracker.ietf.org/doc/html/rfc7230#section-3
+[Node.js permissions documentation]: https://nodejs.org/api/permissions.html#permission-model
 [policy mechanism]: https://nodejs.org/api/permissions.html#policies
 [typosquatting]: https://en.wikipedia.org/wiki/Typosquatting
 [Mitigations for lockfile poisoning]: https://blog.ulisesgascon.com/lockfile-posioned
@@ -457,9 +481,9 @@ The [OpenSSF][] is leading several initiatives that can be very useful, especial
 [CVE-2018-16487]: https://www.cve.org/CVERecord?id=CVE-2018-16487
 [scrypt]: https://nodejs.org/api/crypto.html#cryptoscryptpassword-salt-keylen-options-callback
 [Module Resolution Algorithm]: https://nodejs.org/api/modules.html#modules_all_together
-[policy mechanism with integrity checking]: https://nodejs.org/api/permissions.html#integrity-checks
 [experimental-features]: #experimental-features-in-production
 [`Socket`]: https://socket.dev/
 [OpenSSF]: https://openssf.org/
 [OpenSSF Scorecard]: https://securityscorecards.dev/
 [OpenSSF Best Practices Badge Program]: https://bestpractices.coreinfrastructure.org/en
+[OpenJS Security Collaboration Space]: https://github.com/openjs-foundation/security-collab-space
