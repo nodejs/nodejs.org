@@ -1,0 +1,51 @@
+---
+title: Lançamentos do Node.js
+layout: about
+---
+
+# Lançamentos do Node.js
+
+<EOLAlertBox />
+
+As versões principais do Node.js entram no status de versão _Current_ por seis meses, o que dá tempo para os autores de bibliotecas adicionarem suporte a elas.
+Após seis meses, as versões com números ímpares (9, 11, etc.) param de receber suporte, e as versões com números pares (10, 12, etc.) passam para o status _Active LTS_ e ficam prontas para uso geral.
+O status de versão _LTS_ significa "suporte de longo prazo" (long-term support), o que normalmente garante que bugs críticos serão corrigidos por um total de 30 meses.
+Aplicações em produção devem usar apenas versões _Active LTS_ ou _Maintenance LTS_.
+
+## Cronograma de lançamentos
+
+![Lançamentos](https://raw.githubusercontent.com/nodejs/Release/main/schedule.svg?sanitize=true)
+
+Todos os detalhes sobre o cronograma de lançamentos do Node.js estão disponíveis [no GitHub](https://github.com/nodejs/release#release-schedule).
+
+## Procurando pelo último lançamento de um _branch_ de versão?
+
+<PreviousReleasesTable />
+
+## Métodos de Instalação Oficiais vs. da Comunidade
+
+O site do Node.js fornece diversos métodos de instalação não interativos, incluindo interfaces de linha de comando (_Command-Line Interfaces_ ou _CLIs_), gerenciadores de pacotes do sistema operacional (OS) (ex., `brew`), e gerenciadores de versão do Node.js (ex., `nvm`).
+
+Para destacar e promover as contribuições da comunidade, o projeto Node.js introduziu uma página de Downloads revisada, categorizando os métodos de instalação como "Oficial" ou "Comunidade". Isso proporciona aos usuários maior flexibilidade e escolha. Para garantir clareza, definimos critérios para cada categoria.
+
+### Métodos de Instalação Oficial
+
+Métodos de instalação indicados como "Oficial" devem seguir os seguintes requisitos:
+
+| Requisitos (Métodos de Instalação Oficiais)                                                                                                                         |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Novos lançamentos do Node.js devem estar disponíveis simultaneamente com o lançamento oficial.                                                                      |
+| Os mantenedores do projeto devem ter um relacionamento próximo com o projeto Node.js, incluindo canais de comunicação direta.                                       |
+| O método de instalação deve baixar os binários oficiais incluídos no projeto Node.js.                                                                               |
+| O método de instalação não deve ser compilado a partir do código-fonte quando binários pré-compilados estiverem disponíveis, nem deve alterar os binários oficiais. |
+
+### Métodos de Instalação da Comunidade
+
+Os métodos de instalação da comunidade incluídos na página de download de serviços próprios(/download) também devem obedecer a um conjunto mínimo de critérios:
+
+- **Suporte de versão:** deve oferecer suporte a todas as versões do Node.js atualmente suportadas e que não estejam em fim de vida útil (EOL).
+- **Compatibilidade do OS:** Deve funcionar em pelo menos um Sistema Operacional (OS) oficialmente suportado.
+- **Amplo suporte a sistemas operacionais:** Não pode ser limitado a um subconjunto de distribuições ou versões de sistemas operacionais.
+  - Por exemplo, um método de instalação que alega compatibilidade com o “Windows” deve funcionar no “Windows 10”, “Windows 11” e todas as suas edições (incluindo versões de servidor).
+  - Da mesma forma, um método de instalação que alega compatibilidade com o "Linux" deve ser instalável em todas as principais distribuições Linux, não apenas em um subconjunto específico. Ele não pode depender de gerenciadores de pacotes específicos de cada distribuição, como `apt` ou `dnf`.
+- **Gratuito e de código aberto:** Deve ser gratuito e de código aberto, não deve ser vendido como um produto comercial e não deve ser um serviço pago.
