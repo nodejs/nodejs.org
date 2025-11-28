@@ -65,7 +65,8 @@
         "http": {
           "links": {
             "http": "HTTP",
-            "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction"
+            "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction",
+            "understandingHttpStatusCodes": "Understanding HTTP Status Codes"
           }
         },
         "manipulatingFiles": {
