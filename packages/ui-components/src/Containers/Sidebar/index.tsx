@@ -14,7 +14,6 @@ type SidebarProps = {
   title: string;
   onSelect: (value: string) => void;
   as?: LinkLike;
-  showProgressionIcons?: boolean;
   placeholder?: string;
 };
 
@@ -24,7 +23,6 @@ const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
   title,
   onSelect,
   as,
-  showProgressionIcons = false,
   children,
   placeholder,
 }) => {
@@ -60,7 +58,6 @@ const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
           items={items}
           pathname={pathname}
           as={as}
-          showProgressionIcons={showProgressionIcons}
           className={styles.navigation}
         />
       ))}
