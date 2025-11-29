@@ -1,0 +1,70 @@
+---
+title: Relatório de Segurança
+layout: about
+---
+
+# Relatório de Segurança
+
+Para mais detalhes sobre as Políticas de Segurança ativas, consulte [esta página](https://github.com/nodejs/node/security/policy).
+
+## Relatando um bug no Node.js
+
+Relate bugs de segurança no Node.js através do [HackerOne](https://hackerone.com/nodejs).
+
+Normalmente, seu relatório será confirmado em até 5 dias, e você receberá uma resposta mais detalhada em até 10 dias indicando os próximos passos no tratamento do seu envio. Esses prazos podem se estender quando nossos voluntários de triagem estiverem em período de férias, principalmente no final do ano.
+
+Após a resposta inicial ao seu relatório, a equipe de segurança se esforçará para
+mantê-lo informado do progresso em direção a uma correção e um anúncio completo,
+e poderá solicitar informações adicionais ou orientações sobre o problema relatado.
+
+### Programa de recompensa por bugs do Node.js
+
+O projeto Node.js mantém um programa oficial de recompensa por bugs (bug bounty) para pesquisadores
+de segurança e divulgações públicas responsáveis. O programa é gerenciado pela plataforma HackerOne.
+Consulte [https://hackerone.com/nodejs](https://hackerone.com/nodejs) para mais detalhes.
+
+## Relatando um bug em um módulo de terceiros
+
+Bugs de segurança em módulos de terceiros devem ser relatados aos seus
+respectivos mantenedores.
+
+## Política de Divulgação
+
+Aqui está a política de divulgação de segurança do Node.js:
+
+- O relatório de segurança é recebido e um responsável principal é designado. Essa pessoa coordenará o processo de correção e publicação da versão. O problema é validado em todas as versões do Node.js com suporte. Uma vez confirmado, é determinada uma lista de todas as versões afetadas. O código é auditado para encontrar quaisquer problemas similares em potencial. As correções são preparadas para todas as versões com suporte. Essas correções não são enviadas ao repositório público, mas mantidas localmente até o anúncio.
+
+- Uma data de divulgação sugerida para esta vulnerabilidade é escolhida e uma CVE (Common
+  Vulnerabilities and Exposures - CVE®) é solicitada para a vulnerabilidade.
+
+- Na data de divulgação, uma cópia do anúncio é enviada para a lista de e-mails de segurança do Node.js. As alterações são enviadas ao repositório público e novas builds são disponibilizadas em nodejs.org. Dentro de 6 horas após a notificação da lista de e-mails, uma cópia do comunicado será publicada no blog do Node.js.
+
+- Normalmente, a data de divulgação será definida 72 horas após a emissão do CVE. No entanto, isso pode variar dependendo da gravidade da vulnerabilidade ou da dificuldade em aplicar uma correção.
+
+- Este processo pode levar algum tempo, especialmente quando precisamos coordenar com mantenedores de outros projetos. Faremos o possível para tratar a vulnerabilidade o mais rápido possível; no entanto, devemos seguir o processo de publicação descrito acima para garantir que lidamos com a divulgação de forma consistente.
+
+## Recebendo atualizações de segurança
+
+As notificações de segurança serão distribuídas pelos seguintes métodos.
+
+- [Google Groups](https://groups.google.com/group/nodejs-sec)
+- [Blog Oficial do Node.js](/blog)
+
+## Comentários sobre esta política
+
+Se você tiver sugestões sobre como este processo pode ser melhorado, visite o repositório [nodejs/security-wg](https://github.com/nodejs/security-wg).
+
+## Melhores Práticas da OpenSSF
+
+<a
+  href="https://bestpractices.coreinfrastructure.org/projects/29"
+  style={{ display: 'inline-flex' }}
+>
+  <img
+    alt="Selo da OpenSSF"
+    src="https://bestpractices.coreinfrastructure.org/projects/29/badge"
+    style={{ display: 'inline' }}
+  />
+</a>
+
+O selo de Melhores Práticas da Open Source Security Foundation (OpenSSF) permite que projetos de Software Livre e de Código Aberto (_Free/Libre and Open Source Software_ ou _FLOSS_) comprovem que seguem boas práticas de desenvolvimento. Os projetos podem se autocertificar voluntariamente, indicando como cumprem cada prática. Usuários do selo podem rapidamente verificar quais projetos _FLOSS_ adotam boas práticas e, consequentemente, tendem a produzir software seguro e de maior qualidade.
