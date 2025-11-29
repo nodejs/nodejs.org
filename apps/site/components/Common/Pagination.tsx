@@ -15,10 +15,10 @@ const Pagination: FC<
       as={Link}
       labels={{
         aria: t('components.common.pagination.defaultLabel'),
-        prevAria: t('components.common.pagination.prevAriaLabel'),
-        prev: t('components.pagination.previous'),
-        nextAria: t('components.common.pagination.nextAriaLabel'),
-        next: t('components.pagination.next'),
+        previousAriaLabel: t('components.common.pagination.previousAriaLabel'),
+        previous: t('components.common.pagination.previous'),
+        nextAriaLabel: t('components.common.pagination.nextAriaLabel'),
+        next: t('components.common.pagination.next'),
       }}
       getPageLabel={pageNumber =>
         t('components.common.pagination.pageLabel', { pageNumber })
