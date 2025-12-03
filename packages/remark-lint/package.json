@@ -41,7 +41,7 @@
     "remark-lint-no-shell-dollars": "^4.0.1",
     "remark-lint-no-table-indentation": "^5.0.1",
     "remark-lint-no-tabs": "^4.0.1",
-    "remark-lint-no-trailing-spaces": "^3.0.2",
+    "remark-lint-no-trailing-spaces": "^4.0.3",
     "remark-lint-no-unused-definitions": "^4.0.2",
     "remark-lint-prohibited-strings": "^4.0.0",
     "remark-lint-rule-style": "^4.0.1",
