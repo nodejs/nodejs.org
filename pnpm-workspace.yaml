@@ -7,7 +7,7 @@ catalog:
   '@types/react': ^19.2.2
   classnames: ~2.5.1
   cross-env: ^10.0.0
-  react: ^19.2.0
+  react: ^19.2.1
   tailwindcss: ~4.0.17
   typescript: 5.8.3
 
