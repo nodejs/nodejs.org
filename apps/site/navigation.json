@@ -243,6 +243,10 @@
             "anatomyOfAnHttpTransaction": {
               "link": "/learn/http/anatomy-of-an-http-transaction",
               "label": "components.navigation.learn.http.links.anatomyOfAnHttpTransaction"
+            },
+            "enterpriseNetworkConfiguration": {
+              "link": "/learn/http/enterprise-network-configuration",
+              "label": "components.navigation.learn.http.links.enterpriseNetworkConfiguration"
             }
           }
         },
