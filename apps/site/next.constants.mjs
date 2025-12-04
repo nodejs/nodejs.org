@@ -213,3 +213,9 @@ export const EOL_VERSION_IDENTIFIER = 'End-of-life';
  */
 export const VULNERABILITIES_URL =
   'https://raw.githubusercontent.com/nodejs/security-wg/main/vuln/core/index.json';
+
+/**
+ * The location of the OpenCollective data
+ */
+export const OPENCOLLECTIVE_MEMBERS_URL =
+  'https://opencollective.com/nodejs/members/all.json';
