@@ -74,32 +74,42 @@ To override the agent on a per-request basis, use the `agent` option for `http.r
 const https = require('node:https');
 
 // Creating a custom agent with custom proxy support.
-const agent = new https.Agent({ proxyEnv: { HTTPS_PROXY: 'http://proxy.company.com:8080' } });
-
-https.request({
-  hostname: 'www.external.com',
-  port: 443,
-  path: '/',
-  agent,
-}, (res) => {
-  // This request will be proxied through proxy.company.com:8080 using the HTTP protocol.
+const agent = new https.Agent({
+  proxyEnv: { HTTPS_PROXY: 'http://proxy.company.com:8080' },
 });
+
+https.request(
+  {
+    hostname: 'www.external.com',
+    port: 443,
+    path: '/',
+    agent,
+  },
+  res => {
+    // This request will be proxied through proxy.company.com:8080 using the HTTP protocol.
+  }
+);
 ```
 
 ```mjs
 import https from 'node:https';
 
 // Creating a custom agent with custom proxy support.
-const agent = new https.Agent({ proxyEnv: { HTTPS_PROXY: 'http://proxy.company.com:8080' } });
-
-https.request({
-  hostname: 'www.external.com',
-  port: 443,
-  path: '/',
-  agent,
-}, (res) => {
-  // This request will be proxied through proxy.company.com:8080 using the HTTP protocol.
+const agent = new https.Agent({
+  proxyEnv: { HTTPS_PROXY: 'http://proxy.company.com:8080' },
 });
+
+https.request(
+  {
+    hostname: 'www.external.com',
+    port: 443,
+    path: '/',
+    agent,
+  },
+  res => {
+    // This request will be proxied through proxy.company.com:8080 using the HTTP protocol.
+  }
+);
 ```
 
 To override the agent globally, reset `http.globalAgent` and `https.globalAgent`:
@@ -112,24 +122,40 @@ To override the agent globally, reset `http.globalAgent` and `https.globalAgent`
 const http = require('node:http');
 const https = require('node:https');
 
-http.globalAgent = new http.Agent({ proxyEnv: { HTTP_PROXY: 'http://proxy.company.com:8080' } });
-https.globalAgent = new https.Agent({ proxyEnv: { HTTPS_PROXY: 'http://proxy.company.com:8080' } });
+http.globalAgent = new http.Agent({
+  proxyEnv: { HTTP_PROXY: 'http://proxy.company.com:8080' },
+});
+https.globalAgent = new https.Agent({
+  proxyEnv: { HTTPS_PROXY: 'http://proxy.company.com:8080' },
+});
 
 // Subsequent requests will all use the configured proxies, unless they override the agent option.
-http.request('http://external.com', (res) => { /* ... */ });
-https.request('https://external.com', (res) => { /* ... */ });
+http.request('http://external.com', res => {
+  /* ... */
+});
+https.request('https://external.com', res => {
+  /* ... */
+});
 ```
 
 ```mjs
 import http from 'node:http';
 import https from 'node:https';
 
-http.globalAgent = new http.Agent({ proxyEnv: { HTTP_PROXY: 'http://proxy.company.com:8080' } });
-https.globalAgent = new https.Agent({ proxyEnv: { HTTPS_PROXY: 'http://proxy.company.com:8080' } });
+http.globalAgent = new http.Agent({
+  proxyEnv: { HTTP_PROXY: 'http://proxy.company.com:8080' },
+});
+https.globalAgent = new https.Agent({
+  proxyEnv: { HTTPS_PROXY: 'http://proxy.company.com:8080' },
+});
 
 // Subsequent requests will all use the configured proxies, unless they override the agent option.
-http.request('http://external.com', (res) => { /* ... */ });
-https.request('https://external.com', (res) => { /* ... */ });
+http.request('http://external.com', res => {
+  /* ... */
+});
+https.request('https://external.com', res => {
+  /* ... */
+});
 ```
 
 ### Using Proxies with Authentication
@@ -146,13 +172,13 @@ export HTTPS_PROXY=http://username:password@proxy.company.com:8080
 
 The `NO_PROXY` variable supports:
 
-* `*` - Bypass proxy for all hosts
-* `company.com` - Exact host name match
-* `.company.com` - Domain suffix match (matches `sub.company.com`)
-* `*.company.com` - Wildcard domain match
-* `192.168.1.100` - Exact IP address match
-* `192.168.1.1-192.168.1.100` - IP address range
-* `company.com:8080` - Hostname with specific port
+- `*` - Bypass proxy for all hosts
+- `company.com` - Exact host name match
+- `.company.com` - Domain suffix match (matches `sub.company.com`)
+- `*.company.com` - Wildcard domain match
+- `192.168.1.100` - Exact IP address match
+- `192.168.1.1-192.168.1.100` - IP address range
+- `company.com:8080` - Hostname with specific port
 
 If a target matches `NO_PROXY`, the request bypasses the proxy.
 
@@ -218,8 +244,12 @@ const systemCerts = tls.getCACertificates('system');
 tls.setDefaultCACertificates([...currentCerts, ...systemCerts]);
 
 // Subsequent requests use system certificates during verification.
-https.get('https://internal.company.com', (res) => { /* ... */ });
-fetch('https://internal.company.com').then((res) => { /* ... */ });
+https.get('https://internal.company.com', res => {
+  /* ... */
+});
+fetch('https://internal.company.com').then(res => {
+  /* ... */
+});
 ```
 
 ```mjs
@@ -230,8 +260,12 @@ const systemCerts = tls.getCACertificates('system');
 tls.setDefaultCACertificates([...currentCerts, ...systemCerts]);
 
 // Subsequent requests use system certificates during verification.
-https.get('https://internal.company.com', (res) => { /* ... */ });
-fetch('https://internal.company.com').then((res) => { /* ... */ });
+https.get('https://internal.company.com', res => {
+  /* ... */
+});
+fetch('https://internal.company.com').then(res => {
+  /* ... */
+});
 ```
 
 #### Configure CA Certificates for Individual Requests
@@ -241,25 +275,35 @@ To override CA certificates per request, use the `ca` option. This is currently 
 ```cjs
 const https = require('node:https');
 const specialCerts = ['-----BEGIN CERTIFICATE-----\n...'];
-https.get({
-  hostname: 'internal.company.com',
-  port: 443,
-  path: '/',
-  method: 'GET',
-  // The `ca` option replaces defaults; concatenate bundled certs if needed.
-  ca: specialCerts,
-}, (res) => { /* ... */ });
+https.get(
+  {
+    hostname: 'internal.company.com',
+    port: 443,
+    path: '/',
+    method: 'GET',
+    // The `ca` option replaces defaults; concatenate bundled certs if needed.
+    ca: specialCerts,
+  },
+  res => {
+    /* ... */
+  }
+);
 ```
 
 ```mjs
 import https from 'node:https';
 const specialCerts = ['-----BEGIN CERTIFICATE-----\n...'];
-https.get({
-  hostname: 'internal.company.com',
-  port: 443,
-  path: '/',
-  method: 'GET',
-  // The `ca` option replaces defaults; concatenate bundled certs if needed.
-  ca: specialCerts,
-}, (res) => { /* ... */ });
+https.get(
+  {
+    hostname: 'internal.company.com',
+    port: 443,
+    path: '/',
+    method: 'GET',
+    // The `ca` option replaces defaults; concatenate bundled certs if needed.
+    ca: specialCerts,
+  },
+  res => {
+    /* ... */
+  }
+);
 ```
