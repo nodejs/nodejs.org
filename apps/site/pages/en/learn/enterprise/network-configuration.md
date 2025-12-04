@@ -13,7 +13,7 @@ Enterprise environments often require applications to operate behind corporate p
 This guide covers how to configure Node.js applications to work in enterprise network environments:
 
 - Configuring proxies via the `NODE_USE_ENV_PROXY` environment variable or the `--use-env-proxy` flag
-- Adding certificate authorities from system storage via the `NODE_USE_SYSTEM_CA` environment variable or the `--use-system-ca` flag.
+- Adding certificate authorities from system store via the `NODE_USE_SYSTEM_CA` environment variable or the `--use-system-ca` flag.
 
 ## Proxy Configuration
 
