@@ -237,8 +237,8 @@ With both enabled, Node.js trusts bundled CAs, system CAs, and the additional ce
 Use [`tls.getCACertificates()`](https://nodejs.org/api/tls.html#tlsgetcacertificatestype) and [`tls.setDefaultCACertificates()`](https://nodejs.org/api/tls.html#tlssetdefaultcacertificatescerts) to configure global CA certificates. For example, to add system certificates into the default store:
 
 ```cjs
-const tls = require('node:tls');
 const https = require('node:https');
+const tls = require('node:tls');
 const currentCerts = tls.getCACertificates('default');
 const systemCerts = tls.getCACertificates('system');
 tls.setDefaultCACertificates([...currentCerts, ...systemCerts]);
@@ -253,8 +253,8 @@ fetch('https://internal.company.com').then(res => {
 ```
 
 ```mjs
-import tls from 'node:tls';
 import https from 'node:https';
+import tls from 'node:tls';
 const currentCerts = tls.getCACertificates('default');
 const systemCerts = tls.getCACertificates('system');
 tls.setDefaultCACertificates([...currentCerts, ...systemCerts]);
