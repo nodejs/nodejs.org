@@ -14,7 +14,7 @@ import type { FC } from 'react';
 
 import { Footer } from './Footer';
 import { oramaClient } from './orama-client';
-import { SearchItem } from './SearchItem';
+import SearchItem from './SearchItem';
 import { SlidingChatPanel } from './SlidingChatPanel';
 
 import styles from './index.module.css';
