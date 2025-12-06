@@ -1,10 +1,12 @@
 import SearchHit from '@node-core/ui-components/Common/Search/Results/Hit';
+import Link from 'next/link';
 import { useLocale } from 'next-intl';
 
 import type { Document } from '../DocumentLink';
+import type { LinkLike } from '@node-core/ui-components/types';
 import type { ComponentProps, FC } from 'react';
 
-import { getFormattedPath } from './utils';
+import { getDocumentHref, getFormattedPath } from './utils';
 
 type SearchItemProps = Omit<
   ComponentProps<typeof SearchHit>,
@@ -16,11 +18,6 @@ type SearchItemProps = Omit<
 const SearchItem: FC<SearchItemProps> = ({ document, ...props }) => {
   const locale = useLocale();
 
-  const href =
-    document.siteSection?.toLowerCase() === 'docs'
-      ? `/${document.path}`
-      : `/${locale}/${document.path}`;
-
   return (
     <SearchHit
       document={{
@@ -28,8 +25,9 @@ const SearchItem: FC<SearchItemProps> = ({ document, ...props }) => {
         description:
           document.pageSectionTitle &&
           getFormattedPath(document.path, document.pageSectionTitle),
-        href,
+        href: getDocumentHref(document, locale),
       }}
+      as={Link as LinkLike}
       {...props}
     />
   );

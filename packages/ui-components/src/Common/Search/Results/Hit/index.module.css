@@ -1,41 +1,23 @@
 @reference "../../../../styles/index.css";
 
-.hit {
-  > a {
-    @apply flex
-      items-center
-      gap-4
-      rounded-lg
-      border
-      border-transparent
-      px-2
-      py-3
-      text-sm
-      duration-300
-      outline-none
-      hover:bg-neutral-300
-      focus-visible:border-green-600
-      focus-visible:bg-transparent
-      motion-safe:transition-colors
-      dark:bg-neutral-950
-      dark:hover:bg-neutral-900;
-  }
-
-  svg {
-    @apply size-5
-      shrink-0;
-  }
-}
-
 .link {
-  @apply rounded-xl
+  @apply flex
+    items-center
+    gap-4
+    rounded-xl
+    border
+    border-transparent
     bg-neutral-100
     px-4
     py-2
+    text-sm
     text-neutral-900
     duration-300
+    outline-none
     hover:bg-neutral-200
     focus:bg-neutral-200
+    focus-visible:border-green-600
+    focus-visible:bg-transparent
     motion-safe:transition-colors
     dark:bg-neutral-950
     dark:text-neutral-200

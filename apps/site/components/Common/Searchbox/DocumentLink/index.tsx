@@ -6,6 +6,8 @@ import { useLocale } from 'next-intl';
 
 import type { FC } from 'react';
 
+import { getDocumentHref } from '../SearchItem/utils';
+
 export type Document = {
   path: string;
   siteSection: string;
@@ -28,14 +30,9 @@ export const DocumentLink: FC<DocumentLinkProps> = ({
 }) => {
   const locale = useLocale();
 
-  const href =
-    document.siteSection?.toLowerCase() === 'docs'
-      ? `/${document.path}`
-      : `/${locale}/${document.path}`;
-
   return (
     <Link
-      href={href}
+      href={getDocumentHref(document, locale)}
       className={className}
       data-focus-on-arrow-nav={dataFocusOnArrowNav}
       {...props}

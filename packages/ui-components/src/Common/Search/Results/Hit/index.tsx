@@ -17,7 +17,7 @@ type HitProps = {
 };
 
 const Hit: FC<HitProps> = ({ document, mode = 'search', as: Link = 'a' }) => (
-  <SearchResults.Item className={styles.hit}>
+  <SearchResults.Item>
     <Link
       href={document.href}
       tabIndex={mode === 'search' ? 0 : -1}
