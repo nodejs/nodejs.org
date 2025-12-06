@@ -237,10 +237,6 @@
       "npmVersion": "npmのバージョン",
       "v8Version": "V8のバージョン"
     },
-    "pagination": {
-      "next": "次へ",
-      "previous": "前へ"
-    },
     "common": {
       "alertBox": {
         "info": "補足",
@@ -250,17 +246,13 @@
       "breadcrumbs": {
         "navigateToHome": "ホームに移動する"
       },
-      "crossLink": {
-        "previous": "前へ",
-        "next": "次へ"
-      },
       "codebox": {
         "copy": "クリップボードにコピー",
         "copied": "クリップボードにコピーされました！"
       },
       "pagination": {
-        "prev": "前へ",
-        "prevAriaLabel": "前のページ",
+        "previous": "前へ",
+        "previousAriaLabel": "前のページ",
         "next": "次へ",
         "nextAriaLabel": "次のページ",
         "defaultLabel": "ページネーション",
