@@ -21,13 +21,13 @@
     "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --experimental-test-module-mocks --test \"**/*.test.mjs\""
   },
   "dependencies": {
-    "@shikijs/core": "^3.14.0",
-    "@shikijs/engine-javascript": "^3.14.0",
-    "@shikijs/engine-oniguruma": "^3.14.0",
-    "@shikijs/twoslash": "^3.14.0",
+    "@shikijs/core": "^3.19.0",
+    "@shikijs/engine-javascript": "^3.19.0",
+    "@shikijs/engine-oniguruma": "^3.19.0",
+    "@shikijs/twoslash": "^3.19.0",
     "classnames": "catalog:",
     "hast-util-to-string": "^3.0.1",
-    "shiki": "~3.14.0",
+    "shiki": "~3.19.0",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
