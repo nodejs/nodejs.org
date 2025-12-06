@@ -7,8 +7,8 @@ settings:
 catalogs:
   default:
     '@types/node':
-      specifier: 22.18.6
-      version: 22.18.6
+      specifier: ^24.10.1
+      version: 24.10.1
     '@types/react':
       specifier: ^19.2.2
       version: 19.2.2
@@ -128,7 +128,7 @@ importers:
         version: 4.1.16
       '@types/node':
         specifier: 'catalog:'
-        version: 22.18.6
+        version: 24.10.1
       '@types/react':
         specifier: 'catalog:'
         version: 19.2.2
@@ -173,7 +173,7 @@ importers:
         version: 0.4.6(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       postcss-calc:
         specifier: ~10.1.1
-        version: 10.1.1(postcss@8.5.3)
+        version: 10.1.1(postcss@8.5.6)
       react:
         specifier: 'catalog:'
         version: 19.2.1
@@ -261,13 +261,13 @@ importers:
         version: 5.2.0(eslint@9.36.0(jiti@2.6.1))
       global-jsdom:
         specifier: ^27.0.0
-        version: 27.0.0(jsdom@27.1.0(postcss@8.5.3))
+        version: 27.0.0(jsdom@27.1.0(postcss@8.5.6))
       handlebars:
         specifier: 4.7.8
         version: 4.7.8
       jsdom:
         specifier: ^27.1.0
-        version: 27.1.0(postcss@8.5.3)
+        version: 27.1.0(postcss@8.5.6)
       mdast-util-from-markdown:
         specifier: ^2.0.2
         version: 2.0.2
@@ -506,7 +506,7 @@ importers:
         version: 2.5.1
       postcss-calc:
         specifier: ^10.1.1
-        version: 10.1.1(postcss@8.5.3)
+        version: 10.1.1(postcss@8.5.6)
       tailwindcss:
         specifier: 'catalog:'
         version: 4.0.17
@@ -531,7 +531,7 @@ importers:
         version: 14.6.1(@testing-library/dom@10.4.0)
       '@types/node':
         specifier: 'catalog:'
-        version: 22.18.6
+        version: 24.10.1
       '@types/react':
         specifier: 'catalog:'
         version: 19.2.2
@@ -552,13 +552,13 @@ importers:
         version: 10.0.7(eslint@9.36.0(jiti@2.6.1))(storybook@10.0.7(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(typescript@5.8.3)
       global-jsdom:
         specifier: ^27.0.0
-        version: 27.0.0(jsdom@27.1.0(postcss@8.5.3))
+        version: 27.0.0(jsdom@27.1.0(postcss@8.5.6))
       postcss-cli:
         specifier: ^11.0.1
-        version: 11.0.1(jiti@2.6.1)(postcss@8.5.3)(tsx@4.20.6)
+        version: 11.0.1(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)
       postcss-loader:
         specifier: ~8.2.0
-        version: 8.2.0(postcss@8.5.3)(typescript@5.8.3)(webpack@5.102.0(@swc/core@1.13.5))
+        version: 8.2.0(postcss@8.5.6)(typescript@5.8.3)(webpack@5.102.0(@swc/core@1.13.5))
       react:
         specifier: 'catalog:'
         version: 19.2.1
@@ -3580,6 +3580,9 @@ packages:
 
   '@types/node@22.18.6':
     resolution: {integrity: sha512-r8uszLPpeIWbNKtvWRt/DbVi5zbqZyj1PTmhRMqBMvDnaz1QpmSKujUtJLrqGZeoM8v72MfYggDceY4K1itzWQ==}
+
+  '@types/node@24.10.1':
+    resolution: {integrity: sha512-GNWcUTRBgIRJD5zj+Tq0fKOJ5XZajIiBroOF0yvj2bSU1WvNdYS/dn9UxwsujGW4JX06dnHyjV2y9rRaybH0iQ==}
 
   '@types/react@19.2.2':
     resolution: {integrity: sha512-6mDvHUFSjyT2B2yeNx2nUgMxh9LtOWvkhIU3uePn2I2oyNymUAX1NIsdgviM4CH+JSrp2D2hsMvJOkxY+0wNRA==}
@@ -8037,6 +8040,9 @@ packages:
   undici-types@6.21.0:
     resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
 
+  undici-types@7.16.0:
+    resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
+
   undici@5.29.0:
     resolution: {integrity: sha512-raqeBD6NQK4SkWhQzeYKd1KmIG6dllBOTt55Rmkt4HtI9mwdWtJljnrXjAFUBLTSN67HWrOIZ3EPF4kjUw80Bg==}
     engines: {node: '>=14.0'}
@@ -9691,9 +9697,9 @@ snapshots:
     dependencies:
       '@csstools/css-tokenizer': 3.0.4
 
-  '@csstools/css-syntax-patches-for-csstree@1.0.14(postcss@8.5.3)':
+  '@csstools/css-syntax-patches-for-csstree@1.0.14(postcss@8.5.6)':
     dependencies:
-      postcss: 8.5.3
+      postcss: 8.5.6
 
   '@csstools/css-tokenizer@3.0.4': {}
 
@@ -12316,7 +12322,7 @@ snapshots:
 
   '@types/concat-stream@2.0.3':
     dependencies:
-      '@types/node': 22.18.6
+      '@types/node': 24.10.1
 
   '@types/debug@4.1.12':
     dependencies:
@@ -12368,7 +12374,7 @@ snapshots:
 
   '@types/node-fetch@2.6.13':
     dependencies:
-      '@types/node': 22.18.6
+      '@types/node': 24.10.1
       form-data: 4.0.4
 
   '@types/node@18.19.121':
@@ -12378,6 +12384,10 @@ snapshots:
   '@types/node@22.18.6':
     dependencies:
       undici-types: 6.21.0
+
+  '@types/node@24.10.1':
+    dependencies:
+      undici-types: 7.16.0
 
   '@types/react@19.2.2':
     dependencies:
@@ -13287,10 +13297,10 @@ snapshots:
 
   cssesc@3.0.0: {}
 
-  cssstyle@5.3.2(postcss@8.5.3):
+  cssstyle@5.3.2(postcss@8.5.6):
     dependencies:
       '@asamuzakjp/css-color': 4.0.5
-      '@csstools/css-syntax-patches-for-csstree': 1.0.14(postcss@8.5.3)
+      '@csstools/css-syntax-patches-for-csstree': 1.0.14(postcss@8.5.6)
       css-tree: 3.1.0
     transitivePeerDependencies:
       - postcss
@@ -14452,9 +14462,9 @@ snapshots:
       minipass: 4.2.8
       path-scurry: 1.11.1
 
-  global-jsdom@27.0.0(jsdom@27.1.0(postcss@8.5.3)):
+  global-jsdom@27.0.0(jsdom@27.1.0(postcss@8.5.6)):
     dependencies:
-      jsdom: 27.1.0(postcss@8.5.3)
+      jsdom: 27.1.0(postcss@8.5.6)
 
   global-modules@2.0.0:
     dependencies:
@@ -15006,7 +15016,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.18.6
+      '@types/node': 24.10.1
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -15023,11 +15033,11 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  jsdom@27.1.0(postcss@8.5.3):
+  jsdom@27.1.0(postcss@8.5.6):
     dependencies:
       '@acemir/cssom': 0.9.19
       '@asamuzakjp/dom-selector': 6.7.4
-      cssstyle: 5.3.2(postcss@8.5.3)
+      cssstyle: 5.3.2(postcss@8.5.6)
       data-urls: 6.0.0
       decimal.js: 10.6.0
       html-encoding-sniffer: 4.0.0
@@ -16215,27 +16225,21 @@ snapshots:
       postcss: 8.5.3
       postcss-resolve-nested-selector: 0.1.6
 
-  postcss-calc@10.1.1(postcss@8.5.3):
-    dependencies:
-      postcss: 8.5.3
-      postcss-selector-parser: 7.1.0
-      postcss-value-parser: 4.2.0
-
   postcss-calc@10.1.1(postcss@8.5.6):
     dependencies:
       postcss: 8.5.6
       postcss-selector-parser: 7.1.0
       postcss-value-parser: 4.2.0
 
-  postcss-cli@11.0.1(jiti@2.6.1)(postcss@8.5.3)(tsx@4.20.6):
+  postcss-cli@11.0.1(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6):
     dependencies:
       chokidar: 3.6.0
       dependency-graph: 1.0.0
       fs-extra: 11.3.0
       picocolors: 1.1.1
-      postcss: 8.5.3
-      postcss-load-config: 5.1.0(jiti@2.6.1)(postcss@8.5.3)(tsx@4.20.6)
-      postcss-reporter: 7.1.0(postcss@8.5.3)
+      postcss: 8.5.6
+      postcss-load-config: 5.1.0(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)
+      postcss-reporter: 7.1.0(postcss@8.5.6)
       pretty-hrtime: 1.0.3
       read-cache: 1.0.0
       slash: 5.1.0
@@ -16245,20 +16249,20 @@ snapshots:
       - jiti
       - tsx
 
-  postcss-load-config@5.1.0(jiti@2.6.1)(postcss@8.5.3)(tsx@4.20.6):
+  postcss-load-config@5.1.0(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6):
     dependencies:
       lilconfig: 3.1.3
       yaml: 2.8.1
     optionalDependencies:
       jiti: 2.6.1
-      postcss: 8.5.3
+      postcss: 8.5.6
       tsx: 4.20.6
 
-  postcss-loader@8.2.0(postcss@8.5.3)(typescript@5.8.3)(webpack@5.102.0(@swc/core@1.13.5)):
+  postcss-loader@8.2.0(postcss@8.5.6)(typescript@5.8.3)(webpack@5.102.0(@swc/core@1.13.5)):
     dependencies:
       cosmiconfig: 9.0.0(typescript@5.8.3)
       jiti: 2.6.1
-      postcss: 8.5.3
+      postcss: 8.5.6
       semver: 7.7.2
     optionalDependencies:
       webpack: 5.102.0(@swc/core@1.13.5)
@@ -16286,10 +16290,10 @@ snapshots:
       icss-utils: 5.1.0(postcss@8.5.3)
       postcss: 8.5.3
 
-  postcss-reporter@7.1.0(postcss@8.5.3):
+  postcss-reporter@7.1.0(postcss@8.5.6):
     dependencies:
       picocolors: 1.1.1
-      postcss: 8.5.3
+      postcss: 8.5.6
       thenby: 1.3.4
 
   postcss-resolve-nested-selector@0.1.6: {}
@@ -17987,6 +17991,8 @@ snapshots:
   undici-types@5.26.5: {}
 
   undici-types@6.21.0: {}
+
+  undici-types@7.16.0: {}
 
   undici@5.29.0:
     dependencies:
