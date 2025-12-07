@@ -77,7 +77,7 @@
     "stylelint-order": "7.0.0",
     "stylelint-selector-bem-pattern": "4.0.1",
     "tailwindcss": "catalog:",
-    "tsx": "^4.20.6",
+    "tsx": "^4.21.0",
     "typescript": "catalog:"
   },
   "imports": {
