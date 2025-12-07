@@ -237,10 +237,6 @@
       "npmVersion": "Versão npm",
       "v8Version": "Versão V8"
     },
-    "pagination": {
-      "next": "Próximo",
-      "previous": "Anterior"
-    },
     "common": {
       "alertBox": {
         "info": "Informação",
@@ -250,17 +246,13 @@
       "breadcrumbs": {
         "navigateToHome": "Navegar para a Página Inicial"
       },
-      "crossLink": {
-        "previous": "Anterior",
-        "next": "Próximo"
-      },
       "codebox": {
         "copy": "Copiar para a área de transferência",
         "copied": "Copiado para a área de transferência!"
       },
       "pagination": {
-        "prev": "Anterior",
-        "prevAriaLabel": "Página anterior",
+        "previous": "Anterior",
+        "previousAriaLabel": "Página anterior",
         "next": "Próximo",
         "nextAriaLabel": "Próxima página",
         "defaultLabel": "Paginação",

@@ -25,7 +25,7 @@
           "guides": "Посібники",
           "learn": "Навчання",
           "security": "Безпека",
-          "certification": "Сертифікація",
+          "certification": "Курси",
           "blog": "Блог",
           "contribute": "Долучитися"
         }
@@ -214,7 +214,8 @@
       "releaseDate": "Опубліковано",
       "lastUpdated": "Востаннє оновлено",
       "vulnerabilities": "Уразливості",
-      "details": "Деталі"
+      "details": "Деталі",
+      "hideNonLts": "Показати лише LTS-версії"
     },
     "minorReleasesTable": {
       "version": "Версія",
@@ -236,10 +237,6 @@
       "npmVersion": "Версія npm",
       "v8Version": "Версія V8"
     },
-    "pagination": {
-      "next": "Далі",
-      "previous": "Назад"
-    },
     "common": {
       "alertBox": {
         "info": "Інформація",
@@ -249,17 +246,13 @@
       "breadcrumbs": {
         "navigateToHome": "До головної"
       },
-      "crossLink": {
-        "previous": "Назад",
-        "next": "Далі"
-      },
       "codebox": {
         "copy": "Скопіювати в буфер обміну",
         "copied": "Скопійовано!"
       },
       "pagination": {
-        "prev": "Назад",
-        "prevAriaLabel": "Попередня сторінка",
+        "previous": "Назад",
+        "previousAriaLabel": "Попередня сторінка",
         "next": "Далі",
         "nextAriaLabel": "Наступна сторінка",
         "defaultLabel": "Нумерація сторінок",
