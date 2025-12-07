@@ -4,6 +4,7 @@ import {
   BASE_CALENDAR_URL,
   SHARED_CALENDAR_KEY,
 } from './next.calendar.constants.mjs';
+import { fetchWithRetry } from './util/fetch';
 
 /**
  *
@@ -33,7 +34,7 @@ export const getCalendarEvents = async (calendarId = '', maxResults = 20) => {
     calendarQueryUrl.searchParams.append(key, value)
   );
 
-  return fetch(calendarQueryUrl)
+  return fetchWithRetry(calendarQueryUrl)
     .then(response => response.json())
     .then(calendar => calendar.items ?? []);
 };

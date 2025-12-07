@@ -1,4 +1,5 @@
 import { OPENCOLLECTIVE_MEMBERS_URL } from '#site/next.constants.mjs';
+import { fetchWithRetry } from '#site/util/fetch';
 
 /**
  * Fetches supporters data from Open Collective API, filters active backers,
@@ -7,7 +8,7 @@ import { OPENCOLLECTIVE_MEMBERS_URL } from '#site/next.constants.mjs';
  * @returns {Promise<Array<import('#site/types/supporters').OpenCollectiveSupporter>>} Array of supporters
  */
 export default () =>
-  fetch(OPENCOLLECTIVE_MEMBERS_URL)
+  fetchWithRetry(OPENCOLLECTIVE_MEMBERS_URL)
     .then(response => response.json())
     .then(payload =>
       payload
@@ -20,5 +21,4 @@ export default () =>
           profile,
           source: 'opencollective',
         }))
-    )
-    .catch(() => []);
+    );

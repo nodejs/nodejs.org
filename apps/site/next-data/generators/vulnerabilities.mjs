@@ -1,6 +1,9 @@
 import { VULNERABILITIES_URL } from '#site/next.constants.mjs';
+import { fetchWithRetry } from '#site/util/fetch';
 
 const RANGE_REGEX = /([<>]=?)\s*(\d+)(?:\.(\d+))?/;
+const V0_REGEX = /^0\.\d+(\.x)?$/;
+const VER_REGEX = /^\d+\.x$/;
 
 /**
  * Fetches vulnerability data from the Node.js Security Working Group repository,
@@ -9,7 +12,7 @@ const RANGE_REGEX = /([<>]=?)\s*(\d+)(?:\.(\d+))?/;
  * @returns {Promise<import('#site/types/vulnerabilities').GroupedVulnerabilities>} Grouped vulnerabilities
  */
 export default () =>
-  fetch(VULNERABILITIES_URL)
+  fetchWithRetry(VULNERABILITIES_URL)
     .then(response => response.json())
     .then(payload => {
       /** @type {Array<import('#site/types/vulnerabilities').RawVulnerability>} */
@@ -27,14 +30,14 @@ export default () =>
       // Helper function to process version patterns
       const processVersion = (version, vulnerability) => {
         // Handle 0.X versions (pre-semver)
-        if (/^0\.\d+(\.x)?$/.test(version)) {
+        if (V0_REGEX.test(version)) {
           addToGroup('0', vulnerability);
 
           return;
         }
 
         // Handle simple major.x patterns (e.g., 12.x)
-        if (/^\d+\.x$/.test(version)) {
+        if (VER_REGEX.test(version)) {
           const majorVersion = version.split('.')[0];
 
           addToGroup(majorVersion, vulnerability);
@@ -79,5 +82,4 @@ export default () =>
       }
 
       return grouped;
-    })
-    .catch(() => ({}));
+    });
