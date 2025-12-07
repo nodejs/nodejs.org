@@ -141,7 +141,8 @@
         "VERCEL_URL",
         "TURBO_CACHE",
         "TURBO_TELEMETRY_DISABLED",
-        "TURBOPACK_STATS"
+        "TURBOPACK_STATS",
+        "ENABLE_EXPERIMENTAL_COREPACK"
       ]
     },
     "cloudflare:build:worker": {
