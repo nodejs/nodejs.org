@@ -47,7 +47,8 @@
         "NEXT_PUBLIC_DATA_URL",
         "TURBO_CACHE",
         "TURBO_TELEMETRY_DISABLED",
-        "TURBOPACK_STATS"
+        "TURBOPACK_STATS",
+        "ENABLE_EXPERIMENTAL_COREPACK"
       ]
     },
     "start": {
@@ -134,7 +135,14 @@
     },
     "build:blog-data": {
       "inputs": ["{pages}/**/*.{mdx,md}"],
-      "outputs": ["public/blog-data.json"]
+      "outputs": ["public/blog-data.json"],
+      "env": [
+        "VERCEL_ENV",
+        "VERCEL_URL",
+        "TURBO_CACHE",
+        "TURBO_TELEMETRY_DISABLED",
+        "TURBOPACK_STATS"
+      ]
     },
     "cloudflare:build:worker": {
       "dependsOn": ["build:blog-data"],

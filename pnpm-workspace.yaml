@@ -8,7 +8,7 @@ catalog:
   classnames: ~2.5.1
   cross-env: ^10.0.0
   react: ^19.2.1
-  tailwindcss: ~4.0.17
+  tailwindcss: ~4.1.17
   typescript: 5.8.3
 
 onlyBuiltDependencies:
@@ -16,6 +16,7 @@ onlyBuiltDependencies:
   - '@tailwindcss/oxide'
   - '@vercel/speed-insights'
   - esbuild
+  - rclone.js
   - sharp
   - unrs-resolver
   - workerd

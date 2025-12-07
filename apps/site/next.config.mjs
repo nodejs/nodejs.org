@@ -20,7 +20,8 @@ const getDeploymentId = async () => {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  allowedDevOrigins: ['10.1.1.232'],
+  // Full Support of React 18 SSR and Streaming
+  reactCompiler: true,
   // We don't want to redirect with trailing slashes
   skipTrailingSlashRedirect: true,
   // We allow the BASE_PATH to be overridden in case that the Website
@@ -52,10 +53,7 @@ const nextConfig = {
   // Enable statically typed links
   // @see https://nextjs.org/docs/app/api-reference/config/typescript#statically-typed-links
   typedRoutes: true,
-  // We don't want to run ESLint Checking on Production Builds
-  // as we already check it on the CI within each Pull Request
-  // we also configure ESLint to run its lint checking on all files
-  eslint: { ignoreDuringBuilds: true },
+  // Experimental Flags
   experimental: {
     useCache: true,
     // Ensure that server-side code is also minified
@@ -82,6 +80,8 @@ const nextConfig = {
       'tailwindcss',
       'shiki',
     ],
+    // Faster Development Servers with Turbopack
+    turbopackFileSystemCacheForDev: true,
   },
   deploymentId: await getDeploymentId(),
 };

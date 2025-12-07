@@ -12,7 +12,7 @@ export default baseConfig.concat([
 
   react.configs.flat['jsx-runtime'],
   hooks.configs['recommended-latest'],
-  next.flatConfig.coreWebVitals,
+  next.configs['core-web-vitals'],
   mdx.flatCodeBlocks,
 
   // Type-checking

@@ -1,6 +1,5 @@
 'use client';
 
-import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import { useTranslations } from 'next-intl';
 
 import Button from '#site/components/Common/Button';
@@ -13,17 +12,17 @@ const ErrorPage: FC<{ error: Error }> = () => {
 
   return (
     <GlowingBackdropLayout kind="default">
-      500
+      <span>500</span>
+
       <h1 className="special -mt-4 text-center">
         {t('layouts.error.internalServerError.title')}
       </h1>
+
       <p className="-mt-4 max-w-sm text-center text-lg">
         {t('layouts.error.internalServerError.description')}
       </p>
-      <Button href="/">
-        {t('layouts.error.backToHome')}
-        <ArrowRightIcon />
-      </Button>
+
+      <Button href="/">{t('layouts.error.backToHome')}</Button>
     </GlowingBackdropLayout>
   );
 };

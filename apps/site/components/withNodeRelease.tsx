@@ -14,20 +14,15 @@ type WithNodeReleaseProps = {
 // Note that Hooks cannot be used in a RSC async component
 // Async Components do not get re-rendered at all.
 const WithNodeRelease: FC<WithNodeReleaseProps> = async ({
-  status,
+  status: statuses,
   children: Component,
 }) => {
-  const releaseData = await provideReleaseData();
+  const releases = await provideReleaseData();
 
-  let matchingRelease: NodeRelease | undefined;
-  for (const statusItem of Array.isArray(status) ? status : [status]) {
-    matchingRelease = releaseData.find(
-      release => release.status === statusItem
-    );
-    if (matchingRelease) {
-      break;
-    }
-  }
+  const matchingRelease = [statuses]
+    .flat()
+    .map(status => releases.find(release => release.status === status))
+    .find(Boolean);
 
   if (matchingRelease) {
     return <Component release={matchingRelease} />;
