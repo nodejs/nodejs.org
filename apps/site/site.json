@@ -28,10 +28,10 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2025-07-15T00:00:00.000Z",
-      "endDate": "2025-07-22T00:00:00.000Z",
-      "text": "July Security Release is available",
-      "link": "https://nodejs.org/en/blog/vulnerability/july-2025-security-releases",
+      "startDate": "2025-12-08T23:00:00.000Z",
+      "endDate": "2025-12-15T23:00:00.000Z",
+      "text": "New security releases to be made available Monday, December 15, 2025",
+      "link": "https://nodejs.org/en/blog/vulnerability/december-2025-security-releases",
       "type": "warning"
     }
   },
