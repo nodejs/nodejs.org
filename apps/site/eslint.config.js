@@ -1,7 +1,7 @@
 import next from '@next/eslint-plugin-next';
 import * as mdx from 'eslint-plugin-mdx';
 import react from 'eslint-plugin-react';
-import * as hooks from 'eslint-plugin-react-hooks';
+import reactHooks from 'eslint-plugin-react-hooks';
 
 import baseConfig from '../../eslint.config.js';
 
@@ -11,7 +11,7 @@ export default baseConfig.concat([
   },
 
   react.configs.flat['jsx-runtime'],
-  hooks.configs['recommended-latest'],
+  reactHooks.configs.flat['recommended-latest'],
   next.configs['core-web-vitals'],
   mdx.flatCodeBlocks,
 

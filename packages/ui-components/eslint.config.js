@@ -1,12 +1,12 @@
 import react from 'eslint-plugin-react';
-import * as hooks from 'eslint-plugin-react-hooks';
+import reactHooks from 'eslint-plugin-react-hooks';
 import storybook from 'eslint-plugin-storybook';
 
 import baseConfig from '../../eslint.config.js';
 
 export default baseConfig.concat([
   react.configs.flat['jsx-runtime'],
-  hooks.configs['recommended-latest'],
+  reactHooks.configs.flat['recommended-latest'],
   ...storybook.configs['flat/recommended'],
 
   // Type-checking
