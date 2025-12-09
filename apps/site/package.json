@@ -93,7 +93,7 @@
     "eslint-config-next": "16.0.7",
     "eslint-plugin-mdx": "~3.6.2",
     "eslint-plugin-react": "~7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-hooks": "^7.0.1",
     "global-jsdom": "^27.0.0",
     "handlebars": "4.7.8",
     "jsdom": "^27.2.0",
