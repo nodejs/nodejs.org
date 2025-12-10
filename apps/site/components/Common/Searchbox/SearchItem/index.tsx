@@ -1,41 +1,36 @@
-'use client';
-
-import { DocumentTextIcon } from '@heroicons/react/24/outline';
-import { SearchResults } from '@orama/ui/components';
+import SearchHit from '@node-core/ui-components/Common/Search/Results/Hit';
+import Link from 'next/link';
+import { useLocale } from 'next-intl';
 
 import type { Document } from '../DocumentLink';
-import type { FC } from 'react';
+import type { LinkLike } from '@node-core/ui-components/types';
+import type { ComponentProps, FC } from 'react';
 
-import { DocumentLink } from '../DocumentLink';
-import { getFormattedPath } from './utils';
+import { getDocumentHref, getFormattedPath } from './utils';
 
-import styles from './index.module.css';
-
-type SearchItemProps = {
+type SearchItemProps = Omit<
+  ComponentProps<typeof SearchHit>,
+  'document' | 'as'
+> & {
   document: Document;
-  mode?: 'search' | 'chat';
 };
 
-export const SearchItem: FC<SearchItemProps> = ({ document, mode }) => (
-  <SearchResults.Item className={styles.searchResultsItem}>
-    <DocumentLink
-      document={document as Document}
-      tabIndex={mode === 'search' ? 0 : -1}
-      aria-hidden={mode === 'chat'}
-      data-focus-on-arrow-nav
-    >
-      <DocumentTextIcon />
-      <div>
-        {typeof document?.pageSectionTitle === 'string' && (
-          <h3>{document.pageSectionTitle}</h3>
-        )}
-        {typeof document?.pageSectionTitle === 'string' &&
-          typeof document?.path === 'string' && (
-            <p className={styles.searchResultsItemDescription}>
-              {getFormattedPath(document.path, document.pageSectionTitle)}
-            </p>
-          )}
-      </div>
-    </DocumentLink>
-  </SearchResults.Item>
-);
+const SearchItem: FC<SearchItemProps> = ({ document, ...props }) => {
+  const locale = useLocale();
+
+  return (
+    <SearchHit
+      document={{
+        title: document.pageSectionTitle,
+        description:
+          document.pageSectionTitle &&
+          getFormattedPath(document.path, document.pageSectionTitle),
+        href: getDocumentHref(document, locale),
+      }}
+      as={Link as LinkLike}
+      {...props}
+    />
+  );
+};
+
+export default SearchItem;
