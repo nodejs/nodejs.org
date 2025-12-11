@@ -64,7 +64,7 @@
     "cross-env": "catalog:",
     "css-loader": "~7.1.2",
     "eslint-plugin-react": "~7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-storybook": "~10.0.2",
     "global-jsdom": "^27.0.0",
     "postcss-cli": "^11.0.1",
