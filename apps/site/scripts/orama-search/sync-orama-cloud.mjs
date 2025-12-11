@@ -3,7 +3,7 @@ import { OramaCloud } from '@orama/core';
 import { getDocuments } from './get-documents.mjs';
 import { ORAMA_SYNC_BATCH_SIZE } from '../../next.constants.mjs';
 
-// The following follows the instructions at https://docs.orama.com/cloud/data-sources/custom-integrations/webhooks
+// The following follows the instructions at https://docs.oramasearch.com/docs/cloud/data-sources/rest-APIs/using-rest-apis
 
 const orama = new OramaCloud({
   projectId: process.env.NEW_ORAMA_PROJECT_ID || '',
@@ -11,6 +11,9 @@ const orama = new OramaCloud({
 });
 
 const datasource = orama.dataSource(process.env.NEW_ORAMA_DATASOURCE_ID || '');
+
+// Create a temporary index to perform the insertions
+const temporary = await datasource.createTemporaryIndex();
 const documents = await getDocuments();
 
 console.log(`Syncing ${documents.length} documents to Orama Cloud index`);
@@ -27,16 +30,15 @@ const runUpdate = async () => {
 
   console.log(`Sending ${batches.length} batches of ${batchSize} documents`);
 
+  // Insert documents batch by batch into the temporary index
   for (const batch of batches) {
-    await datasource.insertDocuments(batch);
+    await temporary.insertDocuments(batch);
   }
+
+  // Once all documents are inserted into the temporary index, we swap it with the live one atomically.
+  await temporary.swap();
 };
 
-// Now we proceed to call the APIs in order.
-// The previous implementation used to empty the index before inserting new documents
-// to remove documents that are no longer in the source.
-// The new API from @orama/core might have a different approach for full sync.
-// Based on the provided examples, we are now only running the update.
 await runUpdate();
 
 console.log('Orama Cloud sync completed successfully!');
