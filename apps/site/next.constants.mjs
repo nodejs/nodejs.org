@@ -131,25 +131,9 @@ export const DEFAULT_ORAMA_QUERY_PARAMS = {
 };
 
 /**
- * The initial Orama Cloud chat suggestions visible in the empty state of the search box.
- */
-export const DEFAULT_ORAMA_SUGGESTIONS = [
-  'How to install Node.js?',
-  'How to create an HTTP server?',
-  'Upgrading Node.js version',
-];
-
-/**
  * The default batch size to use when syncing Orama Cloud
  */
 export const ORAMA_SYNC_BATCH_SIZE = 250;
-
-/**
- * The default Orama Cloud endpoint to use when searching with Orama Cloud.
- */
-export const ORAMA_CLOUD_ENDPOINT =
-  process.env.NEXT_PUBLIC_ORAMA_ENDPOINT ||
-  'https://cloud.orama.run/v1/indexes/nodejs-org-dev-hhqrzv';
 
 /**
  * The default Orama Cloud API Key to use when searching with Orama Cloud.
@@ -158,13 +142,6 @@ export const ORAMA_CLOUD_ENDPOINT =
 export const ORAMA_CLOUD_READ_API_KEY =
   process.env.NEXT_PUBLIC_NEW_ORAMA_API_KEY ||
   'c1__KPYDQNEFr$nFgrTgFTVLHf8BuNf08COBqBUzk65AYJEmSsJONPsO$_cihl';
-
-/**
- * The default Orama Cloud Datasource ID to use when searching with Orama Cloud.
- */
-export const ORAMA_CLOUD_DATASOURCE_ID =
-  process.env.NEXT_PUBLIC_NEW_ORAMA_DATASOURCE_ID ||
-  '6044121f-53c3-46af-aaf0-f498e3c548f2';
 
 /**
  * The default Orama Cloud Project ID to use when initializing Orama Cloud.
