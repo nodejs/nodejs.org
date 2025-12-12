@@ -65,7 +65,8 @@
         "http": {
           "links": {
             "http": "HTTP",
-            "anatomyOfAnHttpTransaction": "Анатомія HTTP-транзакції"
+            "anatomyOfAnHttpTransaction": "Анатомія HTTP-транзакції",
+            "enterpriseNetworkConfiguration": "Конфігурація підприємницької мережі"
           }
         },
         "manipulatingFiles": {
