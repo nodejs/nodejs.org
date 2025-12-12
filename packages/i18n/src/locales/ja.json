@@ -65,7 +65,8 @@
         "http": {
           "links": {
             "http": "HTTP",
-            "anatomyOfAnHttpTransaction": "HTTPトランザクションの構成"
+            "anatomyOfAnHttpTransaction": "HTTPトランザクションの構成",
+            "enterpriseNetworkConfiguration": "エンタープライズ用のネットワーク設定"
           }
         },
         "manipulatingFiles": {
