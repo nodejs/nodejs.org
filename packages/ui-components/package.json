@@ -53,7 +53,7 @@
     "tailwindcss": "catalog:"
   },
   "devDependencies": {
-    "@orama/core": "^1.2.13",
+    "@orama/core": "^1.2.14",
     "@storybook/addon-styling-webpack": "^3.0.0",
     "@storybook/addon-themes": "^10.1.4",
     "@storybook/addon-webpack5-compiler-swc": "^4.0.2",
