@@ -214,6 +214,23 @@ Use CSS Modules for component styling:
 }
 ```
 
+### Accessibility
+
+- Use semantic elements for interactive controls (`button`, `a`, `input`).
+- Avoid non-semantic elements like `div` or `span` for interactivity.
+- If unavoidable, add `role="button"`, `tabIndex={0}`, and keyboard handlers for Enter/Space.
+
+```tsx
+<div
+  role="button"
+  tabIndex={0}
+  onClick={handleClick}
+  onKeyDown={e => {
+    if (e.key === 'Enter' || e.key === ' ') handleClick();
+  }}
+/>
+```
+
 ## TypeScript Best Practices
 
 ### Prop Types

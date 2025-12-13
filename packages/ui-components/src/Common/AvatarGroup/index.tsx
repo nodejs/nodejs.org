@@ -65,7 +65,14 @@ const AvatarGroup: FC<AvatarGroupProps> = ({
 
       {avatars.length > limit && (
         <span
+          role="button"
+          tabIndex={0}
           onClick={handleShowMoreClick}
+          onKeyDown={e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              handleShowMoreClick?.();
+            }
+          }}
           className={classNames(
             avatarstyles.avatar,
             avatarstyles[size],
