@@ -1,7 +1,7 @@
 import { spawnSync } from 'node:child_process';
 import { writeFile, copyFile } from 'node:fs/promises';
 
-import pkg from '../package.json' with { type: 'json' };
+import pkg from '../package.json' assert { type: 'json' };
 
 // Strip the devDependencies, since they aren't needed for publish
 // Strip the exports, since we don't want to reference './src'
@@ -9,6 +9,8 @@ import pkg from '../package.json' with { type: 'json' };
 const { devDependencies, exports, ...cleanedPkg } = pkg;
 // Change `#ui` to `./` from `./src`, since we are publishing
 // from the same directory as the source code (rather, the compiled code).
+// to ensure imports exists
+cleanedPkg.imports = cleanedPkg.imports || {};
 cleanedPkg.imports['#ui/*'] = ['./*'];
 
 await writeFile(
@@ -25,8 +27,8 @@ const { status, error } = spawnSync('pnpm', ['publish', '--no-git-checks'], {
   stdio: 'inherit',
 });
 
-if (error) {
-  throw error;
-}
+
+if (error) throw error;
+if (status !== 0) process.exit(status);
 
 process.exitCode = status;
