@@ -16,6 +16,7 @@ export const NavigationStateProvider: FC<PropsWithChildren> = ({
   const navigationState = useRef<NavigationStateContextType>({});
 
   return (
+    // eslint-disable-next-line react-hooks/refs
     <NavigationStateContext.Provider value={navigationState.current}>
       {children}
     </NavigationStateContext.Provider>

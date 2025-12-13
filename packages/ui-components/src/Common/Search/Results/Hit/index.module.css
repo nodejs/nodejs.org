@@ -1,14 +1,23 @@
 @reference "../../../../styles/index.css";
 
-.documentLink {
-  @apply rounded-xl
+.link {
+  @apply flex
+    items-center
+    gap-4
+    rounded-xl
+    border
+    border-transparent
     bg-neutral-100
     px-4
     py-2
+    text-sm
     text-neutral-900
     duration-300
+    outline-none
     hover:bg-neutral-200
     focus:bg-neutral-200
+    focus-visible:border-green-600
+    focus-visible:bg-transparent
     motion-safe:transition-colors
     dark:bg-neutral-950
     dark:text-neutral-200
@@ -20,12 +29,8 @@
   }
 }
 
-.documentTitle {
-  @apply max-w-full
-    truncate
-    overflow-hidden
-    text-sm
-    font-semibold
-    text-ellipsis
-    whitespace-nowrap;
+.hitDescription {
+  @apply text-sm
+    text-neutral-600
+    dark:text-neutral-700;
 }

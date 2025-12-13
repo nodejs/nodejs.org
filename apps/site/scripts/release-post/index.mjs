@@ -20,7 +20,7 @@
 
 'use strict';
 
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, appendFileSync } from 'node:fs';
 import { writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { parseArgs } from 'node:util';
@@ -125,7 +125,15 @@ const fetchAuthor = version => {
   return fetchChangelog(version)
     .then(section => findAuthorLogin(version, section))
     .then(author => request({ url: URLS.GITHUB_PROFILE(author), json: true }))
-    .then(githubRes => githubRes.name);
+    .then(({ name, login }) => {
+      if (process.env.GITHUB_OUTPUT) {
+        // If we are running in a GitHub runner, we need to store the username
+        // so that the PR can be assigned to them
+        appendFileSync(process.env.GITHUB_OUTPUT, `author=${login}\n`);
+      }
+
+      return name;
+    });
 };
 
 const fetchChangelog = version => {

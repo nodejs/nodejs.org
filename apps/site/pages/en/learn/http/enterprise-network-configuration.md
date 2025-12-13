@@ -1,7 +1,7 @@
 ---
 title: Enterprise Network Configuration
 layout: learn
-authors: Joyee Cheung
+authors: joyeecheung
 ---
 
 # Enterprise Network Configuration

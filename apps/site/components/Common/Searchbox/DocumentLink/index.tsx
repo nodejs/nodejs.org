@@ -1,11 +1,12 @@
 'use client';
 
+import styles from '@node-core/ui-components/Common/Search/Results/Hit/index.module.css';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
 
 import type { FC } from 'react';
 
-import styles from './index.module.css';
+import { getDocumentHref } from '../SearchItem/utils';
 
 export type Document = {
   path: string;
@@ -22,30 +23,21 @@ type DocumentLinkProps = {
 
 export const DocumentLink: FC<DocumentLinkProps> = ({
   document,
-  className = styles.documentLink,
+  className = styles.link,
   children,
   'data-focus-on-arrow-nav': dataFocusOnArrowNav,
   ...props
 }) => {
   const locale = useLocale();
 
-  const href =
-    document.siteSection?.toLowerCase() === 'docs'
-      ? `/${document.path}`
-      : `/${locale}/${document.path}`;
-
   return (
     <Link
-      href={href}
+      href={getDocumentHref(document, locale)}
       className={className}
       data-focus-on-arrow-nav={dataFocusOnArrowNav}
       {...props}
     >
-      {children || (
-        <span className={styles.documentTitle}>
-          {document.pageSectionTitle}
-        </span>
-      )}
+      {children}
     </Link>
   );
 };
