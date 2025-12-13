@@ -65,7 +65,8 @@
         "http": {
           "links": {
             "http": "HTTP",
-            "anatomyOfAnHttpTransaction": "Anatomia de uma Transação HTTP"
+            "anatomyOfAnHttpTransaction": "Anatomia de uma Transação HTTP",
+            "enterpriseNetworkConfiguration": "Configuração de Rede para Ambientes Enterprise"
           }
         },
         "manipulatingFiles": {
@@ -151,7 +152,7 @@
       "getInvolved": {
         "links": {
           "getInvolved": "Participe",
-          "collabSummit": "Cúpula de Colaboração",
+          "collabSummit": "Encontro de Colaboradores",
           "upcomingEvents": "Próximos Eventos",
           "contribute": "Contribuir para o Node.js",
           "codeOfConduct": "Código de Conduta"

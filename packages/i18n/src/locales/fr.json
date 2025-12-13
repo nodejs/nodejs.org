@@ -25,7 +25,7 @@
           "guides": "Guides",
           "learn": "Apprendre",
           "security": "Sécurité",
-          "certification": "Certification",
+          "certification": "Cours",
           "blog": "Blog",
           "contribute": "Contribuer"
         }
@@ -65,7 +65,8 @@
         "http": {
           "links": {
             "http": "HTTP",
-            "anatomyOfAnHttpTransaction": "Anatomie d'une transaction HTTP"
+            "anatomyOfAnHttpTransaction": "Anatomie d'une transaction HTTP",
+            "enterpriseNetworkConfiguration": "Configuration du réseau d'entreprise"
           }
         },
         "manipulatingFiles": {
@@ -214,7 +215,8 @@
       "releaseDate": "Publié le",
       "lastUpdated": "Dernière mise à jour",
       "vulnerabilities": "Vulnérabilités",
-      "details": "Détails"
+      "details": "Détails",
+      "hideNonLts": "Masquer les versions non LTS"
     },
     "minorReleasesTable": {
       "version": "Version",
@@ -236,10 +238,6 @@
       "npmVersion": "npm version",
       "v8Version": "Version V8"
     },
-    "pagination": {
-      "next": "Suivant",
-      "previous": "Précédent"
-    },
     "common": {
       "alertBox": {
         "info": "Information",
@@ -249,17 +247,13 @@
       "breadcrumbs": {
         "navigateToHome": "Naviguer à l'accueil"
       },
-      "crossLink": {
-        "previous": "Préc.",
-        "next": "Suiv."
-      },
       "codebox": {
         "copy": "Copier dans le Presse-papier",
         "copied": "Copié dans le presse-papiers!"
       },
       "pagination": {
-        "prev": "Précédent",
-        "prevAriaLabel": "Page précédente",
+        "previous": "Précédent",
+        "previousAriaLabel": "Page précédente",
         "next": "Suivant",
         "nextAriaLabel": "Page suivante",
         "defaultLabel": "Pagination",
