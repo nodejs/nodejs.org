@@ -2,9 +2,6 @@ import createMiddleware from 'next-intl/middleware';
 
 import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
 
-// The middleware file convention is deprecated and has been renamed to proxy
-// See: https://nextjs.org/docs/messages/middleware-to-proxy
-
 export const proxy = createMiddleware({
   // A list of all locales that are supported
   locales: availableLocaleCodes,
