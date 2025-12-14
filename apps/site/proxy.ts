@@ -2,7 +2,11 @@ import createMiddleware from 'next-intl/middleware';
 
 import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
 
-export default createMiddleware({
+// Migrated from middleware.ts to proxy.ts as per Next.js 16 deprecation
+// The middleware file convention is deprecated and has been renamed to proxy
+// See: https://nextjs.org/docs/messages/middleware-to-proxy
+
+export const proxy = createMiddleware({
   // A list of all locales that are supported
   locales: availableLocaleCodes,
 
@@ -17,6 +21,6 @@ export default createMiddleware({
   alternateLinks: false,
 });
 
-// We only want the middleware to run on the `/` route
+// We only want the proxy to run on the `/` route
 // to redirect users to their preferred locale
 export const config = { matcher: ['/'] };
