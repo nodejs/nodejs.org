@@ -2,7 +2,6 @@ import createMiddleware from 'next-intl/middleware';
 
 import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
 
-// Migrated from middleware.ts to proxy.ts as per Next.js 16 deprecation
 // The middleware file convention is deprecated and has been renamed to proxy
 // See: https://nextjs.org/docs/messages/middleware-to-proxy
 
