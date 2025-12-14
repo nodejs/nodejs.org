@@ -15,7 +15,7 @@ pnpm-lock.yaml @nodejs/web-infra
 # Framework
 apps/site/next.config.mjs @nodejs/web-infra
 apps/site/next.dynamic.mjs @nodejs/web-infra
-apps/site/middleware.ts @nodejs/web-infra
+apps/site/proxy.ts @nodejs/web-infra
 apps/site/navigation.mjs @nodejs/web-infra
 apps/site/playwright.config.ts @nodejs/web-infra
 
