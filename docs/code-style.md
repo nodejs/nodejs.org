@@ -36,7 +36,7 @@ This project follows the [Conventional Commits](https://www.conventionalcommits.
 ### Commit Message Format
 
 - Commit messages must include a "type" as described in Conventional Commits
-- Commit messages **must** start with a capital letter
+- Commit messages **must** be written in lowercase, except proper nouns
 - Commit messages **must not** end with a period `.`
 
 ### Commit Signing
@@ -48,9 +48,9 @@ Commits should be signed. You can read more about [Commit Signing](https://docs.
 ✅ **Good commit messages:**
 
 ```
-feat: Add new component for download statistics
-fix: Resolve navigation menu accessibility issue
-docs: Update contributing guidelines
+feat: add new component for download statistics
+fix: resolve navigation menu accessibility issue
+docs: update contributing guidelines
 ```
 
 ❌ **Bad commit messages:**
