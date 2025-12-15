@@ -81,7 +81,7 @@ You can find this codemod in the [Codemod Registry](https://app.codemod.com/regi
 npx codemod run @nodejs/crypto-rsa-pss-update
 ```
 
-#### Example:
+#### Example
 
 ```js displayName="Before"
 const crypto = require('node:crypto');
@@ -181,7 +181,7 @@ You can find this codemod in the [Codemod Registry](https://app.codemod.com/regi
 npx codemod run @nodejs/fs-access-mode-constants
 ```
 
-#### Example:
+#### Example
 
 ```js displayName="Before"
 const fs = require('node:fs');
@@ -209,7 +209,7 @@ You can find this codemod in the [Codemod Registry](https://app.codemod.com/regi
 npx codemod run @nodejs/fs-truncate-fd-deprecation
 ```
 
-#### Example:
+#### Example
 
 ```js displayName="Before"
 const { truncate, open, close } = require('node:fs');
@@ -247,7 +247,7 @@ You can find this codemod in the [Codemod Registry](https://app.codemod.com/regi
 npx codemod run @nodejs/process-assert-to-node-assert
 ```
 
-## Example
+#### Example
 
 ```js displayName="Before"
 process.assert(condition, 'Assertion failed');
@@ -258,56 +258,6 @@ import assert from 'node:assert';
 assert(condition, 'Assertion failed');
 ```
 
-## Additional Notes
+#### Additional Notes
 
 This codemod use [`fs` capability](https://docs.codemod.com/jssg/security) to read the `package.json` file and determine if the project is using ES modules or CommonJS. Based on this information, it adds the appropriate import statement for the `assert` module.
-
-#### `dirent-path-to-parent-path`
-
-This codemod transforms the usage of `dirent.path` to use `dirent.parentPath`.
-
-See [DEP0178](https://nodejs.org/api/deprecations.html#DEP0178).
-
-You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/dirent-path-to-parent-path).
-
-```bash
-npx codemod run @nodejs/dirent-path-to-parent-path
-```
-
-#### Examples
-
-##### readdir
-
-```js displayName="Before"
-const { readdir } = require('node:fs/promises');
-const entries = await readdir('/some/path', { withFileTypes: true });
-for (const dirent of entries) {
-  console.log(dirent.path);
-}
-```
-
-```js displayName="After"
-const { readdir } = require('node:fs/promises');
-const entries = await readdir('/some/path', { withFileTypes: true });
-for (const dirent of entries) {
-  console.log(dirent.parentPath);
-}
-```
-
-##### opendir
-
-```js displayName="Before"
-import { opendir } from 'node:fs/promises';
-const dir = await opendir('./');
-for await (const dirent of dir) {
-  console.log(`Found ${dirent.name} in ${dirent.path}`);
-}
-```
-
-```js displayName="After"
-import { opendir } from 'node:fs/promises';
-const dir = await opendir('./');
-for await (const dirent of dir) {
-  console.log(`Found ${dirent.name} in ${dirent.parentPath}`);
-}
-```
