@@ -48,3 +48,5 @@ apps/site/pages/en/learn/getting-started/security-best-practices.md @nodejs/secu
 apps/site/pages/en/learn/manipulating-files @nodejs/fs
 apps/site/pages/en/learn/test-runner @nodejs/test_runner
 apps/site/pages/en/learn/typescript @nodejs/typescript
+apps/site/pages/en/learn/getting-started/userland-migrations.md @nodejs/userland-migrations
+apps/site/pages/en/blog/migrations @nodejs/userland-migrations
