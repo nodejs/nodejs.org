@@ -28,8 +28,7 @@ export const fetchWithRetry = async (
         throw e;
       }
 
-      await setTimeout(delay);
-      continue;
+      await setTimeout(delay * i);
     }
   }
 };
