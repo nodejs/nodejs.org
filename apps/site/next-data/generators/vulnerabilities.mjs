@@ -11,75 +11,75 @@ const VER_REGEX = /^\d+\.x$/;
  *
  * @returns {Promise<import('#site/types/vulnerabilities').GroupedVulnerabilities>} Grouped vulnerabilities
  */
-export default () =>
-  fetchWithRetry(VULNERABILITIES_URL)
-    .then(response => response.json())
-    .then(payload => {
-      /** @type {Array<import('#site/types/vulnerabilities').RawVulnerability>} */
-      const data = Object.values(payload);
+export default async function generateVulnerabilityData() {
+  const response = await fetchWithRetry(VULNERABILITIES_URL);
 
-      /** @type {Promise<import('#site/types/vulnerabilities').GroupedVulnerabilities> */
-      const grouped = {};
+  /** @type {Array<import('#site/types/vulnerabilities').RawVulnerability>} */
+  const data = Object.values(await response.json());
 
-      // Helper function to add vulnerability to a major version group
-      const addToGroup = (majorVersion, vulnerability) => {
-        grouped[majorVersion] ??= [];
-        grouped[majorVersion].push(vulnerability);
-      };
+  /** @type {Promise<import('#site/types/vulnerabilities').GroupedVulnerabilities> */
+  const grouped = {};
 
-      // Helper function to process version patterns
-      const processVersion = (version, vulnerability) => {
-        // Handle 0.X versions (pre-semver)
-        if (V0_REGEX.test(version)) {
-          addToGroup('0', vulnerability);
+  // Helper function to add vulnerability to a major version group
+  const addToGroup = (majorVersion, vulnerability) => {
+    grouped[majorVersion] ??= [];
+    grouped[majorVersion].push(vulnerability);
+  };
 
-          return;
-        }
+  // Helper function to process version patterns
+  const processVersion = (version, vulnerability) => {
+    // Handle 0.X versions (pre-semver)
+    if (V0_REGEX.test(version)) {
+      addToGroup('0', vulnerability);
 
-        // Handle simple major.x patterns (e.g., 12.x)
-        if (VER_REGEX.test(version)) {
-          const majorVersion = version.split('.')[0];
+      return;
+    }
 
+    // Handle simple major.x patterns (e.g., 12.x)
+    if (VER_REGEX.test(version)) {
+      const majorVersion = version.split('.')[0];
+
+      addToGroup(majorVersion, vulnerability);
+
+      return;
+    }
+
+    // Handle version ranges (>, >=, <, <=)
+    const rangeMatch = RANGE_REGEX.exec(version);
+
+    if (rangeMatch) {
+      const [, operator, majorVersion] = rangeMatch;
+
+      const majorNum = parseInt(majorVersion, 10);
+
+      switch (operator) {
+        case '>=':
+        case '>':
+        case '<=':
           addToGroup(majorVersion, vulnerability);
 
-          return;
-        }
-
-        // Handle version ranges (>, >=, <, <=)
-        const rangeMatch = RANGE_REGEX.exec(version);
-
-        if (rangeMatch) {
-          const [, operator, majorVersion] = rangeMatch;
-
-          const majorNum = parseInt(majorVersion, 10);
-
-          switch (operator) {
-            case '>=':
-            case '>':
-            case '<=':
-              addToGroup(majorVersion, vulnerability);
-
-              break;
-            case '<':
-              // Add to all major versions below the specified version
-              for (let i = majorNum - 1; i >= 0; i--) {
-                addToGroup(i.toString(), vulnerability);
-              }
-
-              break;
+          break;
+        case '<':
+          // Add to all major versions below the specified version
+          for (let i = majorNum - 1; i >= 0; i--) {
+            addToGroup(i.toString(), vulnerability);
           }
-        }
-      };
 
-      for (const { ref, ...vulnerability } of Object.values(data)) {
-        vulnerability.url = ref;
-        // Process all potential versions from the vulnerable field
-        const versions = vulnerability.vulnerable.split(' || ').filter(Boolean);
-
-        for (const version of versions) {
-          processVersion(version, vulnerability);
-        }
+          break;
       }
+    }
+  };
 
-      return grouped;
-    });
+  for (const { ref, ...vulnerability } of Object.values(data)) {
+    vulnerability.url = ref;
+
+    // Process all potential versions from the vulnerable field
+    const versions = vulnerability.vulnerable.split(' || ').filter(Boolean);
+
+    for (const version of versions) {
+      processVersion(version, vulnerability);
+    }
+  }
+
+  return grouped;
+}

@@ -5,6 +5,12 @@ type RetryOptions = RequestInit & {
   delay?: number;
 };
 
+type FetchError = {
+  cause: {
+    code: string;
+  };
+};
+
 export const fetchWithRetry = async (
   url: string,
   { maxRetry = 3, delay = 100, ...options }: RetryOptions = {}
@@ -13,7 +19,12 @@ export const fetchWithRetry = async (
     try {
       return fetch(url, options);
     } catch (e) {
-      if (i === maxRetry) {
+      console.debug(
+        `fetch of ${url} failed at ${Date.now()}, attempt ${i}/${maxRetry}`,
+        e
+      );
+
+      if (i === maxRetry || (e as FetchError).cause.code !== 'ETIMEDOUT') {
         throw e;
       }
 
