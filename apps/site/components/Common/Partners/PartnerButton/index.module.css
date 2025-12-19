@@ -1,6 +1,6 @@
 @reference "../../../../styles/index.css";
 
-.partnerIcon {
+.large {
   @apply flex
     h-28
     max-h-28
@@ -15,5 +15,16 @@
   svg {
     @apply !h-12
       !w-auto;
+  }
+}
+
+.small {
+  @apply h-9
+    w-auto
+    min-w-9;
+
+  svg {
+    @apply h-4
+      w-auto;
   }
 }
