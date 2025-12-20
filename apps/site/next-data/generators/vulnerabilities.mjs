@@ -1,6 +1,9 @@
 import { VULNERABILITIES_URL } from '#site/next.constants.mjs';
+import { fetchWithRetry } from '#site/util/fetch';
 
 const RANGE_REGEX = /([<>]=?)\s*(\d+)(?:\.(\d+))?/;
+const V0_REGEX = /^0\.\d+(\.x)?$/;
+const VER_REGEX = /^\d+\.x$/;
 
 /**
  * Fetches vulnerability data from the Node.js Security Working Group repository,
@@ -9,7 +12,7 @@ const RANGE_REGEX = /([<>]=?)\s*(\d+)(?:\.(\d+))?/;
  * @returns {Promise<import('#site/types/vulnerabilities').GroupedVulnerabilities>} Grouped vulnerabilities
  */
 export default async function generateVulnerabilityData() {
-  const response = await fetch(VULNERABILITIES_URL);
+  const response = await fetchWithRetry(VULNERABILITIES_URL);
 
   /** @type {Array<import('#site/types/vulnerabilities').RawVulnerability>} */
   const data = Object.values(await response.json());
@@ -26,14 +29,14 @@ export default async function generateVulnerabilityData() {
   // Helper function to process version patterns
   const processVersion = (version, vulnerability) => {
     // Handle 0.X versions (pre-semver)
-    if (/^0\.\d+(\.x)?$/.test(version)) {
+    if (V0_REGEX.test(version)) {
       addToGroup('0', vulnerability);
 
       return;
     }
 
     // Handle simple major.x patterns (e.g., 12.x)
-    if (/^\d+\.x$/.test(version)) {
+    if (VER_REGEX.test(version)) {
       const majorVersion = version.split('.')[0];
 
       addToGroup(majorVersion, vulnerability);
@@ -67,25 +70,14 @@ export default async function generateVulnerabilityData() {
     }
   };
 
-  for (const vulnerability of Object.values(data)) {
-    const parsedVulnerability = {
-      cve: vulnerability.cve,
-      url: vulnerability.ref,
-      vulnerable: vulnerability.vulnerable,
-      patched: vulnerability.patched,
-      description: vulnerability.description,
-      overview: vulnerability.overview,
-      affectedEnvironments: vulnerability.affectedEnvironments,
-      severity: vulnerability.severity,
-    };
+  for (const { ref, ...vulnerability } of Object.values(data)) {
+    vulnerability.url = ref;
 
     // Process all potential versions from the vulnerable field
-    const versions = parsedVulnerability.vulnerable
-      .split(' || ')
-      .filter(Boolean);
+    const versions = vulnerability.vulnerable.split(' || ').filter(Boolean);
 
     for (const version of versions) {
-      processVersion(version, parsedVulnerability);
+      processVersion(version, vulnerability);
     }
   }
 
