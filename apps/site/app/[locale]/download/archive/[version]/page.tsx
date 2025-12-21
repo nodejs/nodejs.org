@@ -24,7 +24,7 @@ export const generateMetadata = basePage.generateMetadata;
 // - If `ENABLE_STATIC_EXPORT_LOCALE` is true, generates paths for all available locales
 // - Otherwise, generates paths only for the default locale
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-static-params
-export const generateStaticParams = () => {
+export const generateStaticParams = async () => {
   // Return an empty array if static export is disabled
   if (!ENABLE_STATIC_EXPORT) {
     return [];
