@@ -1,5 +1,3 @@
-'use server';
-
 import StatelessSelect from '@node-core/ui-components/Common/Select/StatelessSelect';
 
 import Link from '#site/components/Link';
@@ -43,8 +41,8 @@ type WithReleaseSelectProps = Omit<
   'values' | 'as'
 >;
 
-const WithReleaseSelect: FC<WithReleaseSelectProps> = async ({ ...props }) => {
-  const releaseData = await provideReleaseData();
+const WithReleaseSelect: FC<WithReleaseSelectProps> = ({ ...props }) => {
+  const releaseData = provideReleaseData();
   const navigation = groupReleasesByStatus(releaseData);
 
   return (

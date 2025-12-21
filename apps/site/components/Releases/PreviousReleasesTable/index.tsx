@@ -7,7 +7,7 @@ import type { FC } from 'react';
 import PreviousReleasesTableBody from './TableBody';
 
 const PreviousReleasesTable: FC = async () => {
-  const releaseData = await provideReleaseData();
+  const releaseData = provideReleaseData();
 
   const t = await getTranslations();
 

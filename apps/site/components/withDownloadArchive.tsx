@@ -19,7 +19,7 @@ type WithDownloadArchiveProps = {
  * Higher-order component that extracts version from pathname,
  * fetches release data, and provides download artifacts to child component
  */
-const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
+const WithDownloadArchive: FC<WithDownloadArchiveProps> = ({
   children: Component,
 }) => {
   const { pathname } = getClientContext();
@@ -28,7 +28,7 @@ const WithDownloadArchive: FC<WithDownloadArchiveProps> = async ({
   const version = extractVersionFromPath(pathname);
 
   // Find the release data for the given version
-  const releaseData = await provideReleaseData();
+  const releaseData = provideReleaseData();
   const release = releaseData.find(release =>
     // Match major version only (e.g., v22.x.x for release.major v22)
     version.startsWith(`v${release.major}`)

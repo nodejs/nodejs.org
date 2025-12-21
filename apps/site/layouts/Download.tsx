@@ -8,10 +8,10 @@ import type { FC, PropsWithChildren } from 'react';
 
 import styles from './layouts.module.css';
 
-const DownloadLayout: FC<PropsWithChildren> = async ({ children }) => {
+const DownloadLayout: FC<PropsWithChildren> = ({ children }) => {
   const { frontmatter } = getClientContext();
 
-  const releases = await provideReleaseData();
+  const releases = provideReleaseData();
 
   return (
     <>

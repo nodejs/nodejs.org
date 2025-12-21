@@ -55,7 +55,6 @@ const nextConfig = {
   typedRoutes: true,
   // Experimental Flags
   experimental: {
-    useCache: true,
     // Ensure that server-side code is also minified
     serverMinification: true,
     // Use Workers and Threads for webpack compilation

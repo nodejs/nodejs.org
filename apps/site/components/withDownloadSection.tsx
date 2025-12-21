@@ -22,11 +22,11 @@ const WithDownloadSection: FC<WithDownloadSectionProps> = async ({
 }) => {
   const locale = await getLocale();
 
-  const snippets = await provideDownloadSnippets(locale);
+  const snippets = provideDownloadSnippets(locale);
 
   // By default the translated languages do not contain all the download snippets
   // Hence we always merge any translated snippet with the fallbacks for missing snippets
-  const fallbackSnippets = await provideDownloadSnippets(defaultLocale.code);
+  const fallbackSnippets = provideDownloadSnippets(defaultLocale.code);
 
   const { pathname } = getClientContext();
 

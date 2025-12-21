@@ -24,13 +24,13 @@ export const generateMetadata = basePage.generateMetadata;
 // - If `ENABLE_STATIC_EXPORT_LOCALE` is true, generates paths for all available locales
 // - Otherwise, generates paths only for the default locale
 // @see https://nextjs.org/docs/app/api-reference/functions/generate-static-params
-export const generateStaticParams = async () => {
+export const generateStaticParams = () => {
   // Return an empty array if static export is disabled
   if (!ENABLE_STATIC_EXPORT) {
     return [];
   }
 
-  const versions = await provideReleaseVersions();
+  const versions = provideReleaseVersions();
 
   return versions.map(version => ({
     locale: defaultLocale.code,
@@ -49,14 +49,14 @@ const getPage: FC<PageParams> = async props => {
   const [locale, pathname] = basePage.getLocaleAndPath(version, routeLocale);
 
   if (version === 'current') {
-    const releaseData = await provideReleaseData();
+    const releaseData = provideReleaseData();
 
     const release = releaseData.find(release => release.status === 'Current');
 
     redirect(`/${locale}/download/archive/${release?.versionWithPrefix}`);
   }
 
-  const versions = await provideReleaseVersions();
+  const versions = provideReleaseVersions();
 
   // Verifies if the current route is a dynamic route
   const isDynamicRoute = versions.some(r => r.includes(pathname));

@@ -12,8 +12,8 @@ import EOLReleaseTableBody from './TableBody';
 import styles from './index.module.css';
 
 const EOLReleaseTable: FC = async () => {
-  const releaseData = await provideReleaseData();
-  const vulnerabilities = await provideVulnerabilities();
+  const releaseData = provideReleaseData();
+  const vulnerabilities = provideVulnerabilities();
 
   const eolReleases = releaseData.filter(
     release => release.status === EOL_VERSION_IDENTIFIER
