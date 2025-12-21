@@ -67,8 +67,6 @@ jobs:
           # this should be a last resort in case by any chances the build memory gets too high
           # but in general this should never happen
           NODE_OPTIONS: '--max_old_space_size=4096'
-          # We want to ensure that static exports for all locales do not occur on `pull_request` events
-          NEXT_PUBLIC_STATIC_EXPORT_LOCALE: ${{ github.event_name == 'push' }}
           # See https://github.com/vercel/next.js/pull/81318
           TURBOPACK_STATS: ${{ matrix.os == 'ubuntu-latest' }}
 
@@ -77,3 +75,14 @@ jobs:
         with:
           name: webpack-stats
           path: apps/site/.next/server/webpack-stats.json
+
+      - name: Build Next.js (Static Default Locale)
+        # We want to generate a static build, as it is a requirement of our website.
+        run: node_modules/.bin/turbo deploy ${{ env.TURBO_ARGS }}
+        env:
+          # We want to ensure we have enough RAM allocated to the Node.js process
+          # this should be a last resort in case by any chances the build memory gets too high
+          # but in general this should never happen
+          NODE_OPTIONS: '--max_old_space_size=4096'
+          # We want to ensure that static exports for all locales do not occur on `pull_request` events
+          NEXT_PUBLIC_STATIC_EXPORT_LOCALE: ${{ github.event_name == 'push' }}
