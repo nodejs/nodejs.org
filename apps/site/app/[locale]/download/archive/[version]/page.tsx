@@ -30,7 +30,7 @@ export const generateStaticParams = async () => {
     return [];
   }
 
-  const versions = provideReleaseVersions();
+  const versions = await provideReleaseVersions();
 
   return versions.map(version => ({
     locale: defaultLocale.code,
@@ -49,14 +49,14 @@ const getPage: FC<PageParams> = async props => {
   const [locale, pathname] = basePage.getLocaleAndPath(version, routeLocale);
 
   if (version === 'current') {
-    const releaseData = provideReleaseData();
+    const releaseData = await provideReleaseData();
 
     const release = releaseData.find(release => release.status === 'Current');
 
     redirect(`/${locale}/download/archive/${release?.versionWithPrefix}`);
   }
 
-  const versions = provideReleaseVersions();
+  const versions = await provideReleaseVersions();
 
   // Verifies if the current route is a dynamic route
   const isDynamicRoute = versions.some(r => r.includes(pathname));

@@ -41,8 +41,8 @@ type WithReleaseSelectProps = Omit<
   'values' | 'as'
 >;
 
-const WithReleaseSelect: FC<WithReleaseSelectProps> = ({ ...props }) => {
-  const releaseData = provideReleaseData();
+const WithReleaseSelect: FC<WithReleaseSelectProps> = async ({ ...props }) => {
+  const releaseData = await provideReleaseData();
   const navigation = groupReleasesByStatus(releaseData);
 
   return (

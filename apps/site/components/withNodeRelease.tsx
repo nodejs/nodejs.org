@@ -10,11 +10,11 @@ type WithNodeReleaseProps = {
 
 // This is a React Server Component
 // Note that Hooks cannot be used in a React Server Component
-const WithNodeRelease: FC<WithNodeReleaseProps> = ({
+const WithNodeRelease: FC<WithNodeReleaseProps> = async ({
   status: statuses,
   children: Component,
 }) => {
-  const releases = provideReleaseData();
+  const releases = await provideReleaseData();
 
   const matchingRelease = [statuses]
     .flat()
