@@ -1,5 +1,3 @@
-'use server';
-
 import { getTranslations } from 'next-intl/server';
 
 import Button from '#site/components/Common/Button';

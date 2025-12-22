@@ -1,5 +1,3 @@
-'use server';
-
 import StatelessSelect from '@node-core/ui-components/Common/Select/StatelessSelect';
 
 import Link from '#site/components/Link';
