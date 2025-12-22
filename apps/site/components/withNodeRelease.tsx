@@ -8,8 +8,9 @@ type WithNodeReleaseProps = {
   children: FC<{ release: NodeRelease }>;
 };
 
-// This is a React Server Component
-// Note that Hooks cannot be used in a React Server Component
+// This is a React Async Server Component
+// Note that Hooks cannot be used in a RSC async component
+// Async Components do not get re-rendered at all.
 const WithNodeRelease: FC<WithNodeReleaseProps> = async ({
   status: statuses,
   children: Component,
