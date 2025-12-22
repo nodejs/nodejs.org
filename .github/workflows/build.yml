@@ -85,4 +85,5 @@ jobs:
           # but in general this should never happen
           NODE_OPTIONS: '--max_old_space_size=4096'
           # We want to ensure that static exports for all locales do not occur on `pull_request` events
-          NEXT_PUBLIC_STATIC_EXPORT_LOCALE: ${{ github.event_name == 'push' }}
+          # TODO: The output of this is too large, and it crashes the GitHub Runner
+          NEXT_PUBLIC_STATIC_EXPORT_LOCALE: false # ${{ github.event_name == 'push' }}
