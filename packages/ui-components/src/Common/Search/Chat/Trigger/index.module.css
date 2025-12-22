@@ -24,7 +24,6 @@
     bg-transparent
     p-3
     text-sm
-    duration-300
     hover:bg-neutral-300
     focus-visible:border-green-600
     focus-visible:outline-none

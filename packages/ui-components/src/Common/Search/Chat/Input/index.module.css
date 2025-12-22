@@ -33,7 +33,6 @@
     bg-green-600
     p-2
     text-white
-    duration-300
     focus:bg-green-600/75
     focus:outline-none
     disabled:cursor-not-allowed
@@ -57,4 +56,42 @@
     text-neutral-800
     sm:text-sm
     dark:text-neutral-500;
+}
+
+.suggestionsWrapper {
+  @apply mb-4
+    flex
+    items-center
+    gap-2
+    overflow-x-auto
+    px-1
+    text-sm
+    lg:justify-center;
+
+  &::-webkit-scrollbar {
+    @apply hidden;
+  }
+}
+
+.suggestionsItem {
+  @apply flex
+    size-max
+    cursor-pointer
+    rounded-full
+    border
+    border-neutral-300
+    bg-neutral-200
+    px-3
+    py-1
+    whitespace-nowrap
+    text-neutral-900
+    hover:bg-neutral-300
+    focus:bg-neutral-300
+    focus:outline-none
+    motion-safe:transition-colors
+    dark:border-neutral-900
+    dark:bg-neutral-950
+    dark:text-neutral-200
+    dark:hover:bg-neutral-900
+    dark:focus:bg-neutral-900;
 }
