@@ -84,4 +84,6 @@ jobs:
           # this should be a last resort in case by any chances the build memory gets too high
           # but in general this should never happen
           NODE_OPTIONS: '--max_old_space_size=4096'
-          # TODO: All locales takes waaaay to much space
+          # We want to ensure that static exports for all locales do not occur on `pull_request` events
+          # TODO: The output of this is too large, and it crashes the GitHub Runner
+          NEXT_PUBLIC_STATIC_EXPORT_LOCALE: false # ${{ github.event_name == 'push' }}
