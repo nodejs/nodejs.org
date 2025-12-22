@@ -76,7 +76,7 @@ jobs:
           name: webpack-stats
           path: apps/site/.next/server/webpack-stats.json
 
-      - name: Build Next.js (Static Default Locale)
+      - name: Build Next.js (Static Export)
         # We want to generate a static build, as it is a requirement of our website.
         run: node_modules/.bin/turbo deploy ${{ env.TURBO_ARGS }}
         env:
