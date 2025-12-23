@@ -22,13 +22,21 @@
     bg-white
     p-1.5
     text-neutral-900
-    duration-300
-    hover:bg-neutral-100
-    motion-safe:transition-colors
     dark:border-neutral-900
     dark:bg-neutral-950
-    dark:text-neutral-200
-    hover:dark:bg-neutral-900;
+    dark:text-neutral-200;
+
+  &:hover {
+    @apply bg-neutral-100
+      motion-safe:transition-colors
+      motion-safe:duration-300
+      dark:bg-neutral-900;
+
+    .searchButtonShortcut {
+      @apply bg-neutral-200
+        dark:bg-neutral-800;
+    }
+  }
 }
 
 .searchButtonContent {
@@ -36,7 +44,8 @@
     flex
     flex-nowrap
     items-center
-    gap-1
+    gap-2
+    pl-1
     text-sm;
 
   svg {
@@ -45,13 +54,14 @@
 }
 
 .searchButtonShortcut {
-  @apply inline
+  @apply hidden
     rounded-md
     bg-neutral-300
     px-2
     py-1
     text-sm
     text-neutral-800
+    md:inline
     dark:bg-neutral-900
     dark:text-neutral-400;
 }
