@@ -10,6 +10,7 @@
 
 .searchButton {
   @apply flex
+    min-h-10
     w-full
     grow
     cursor-pointer
