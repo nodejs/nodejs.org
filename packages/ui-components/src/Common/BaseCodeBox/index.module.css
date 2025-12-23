@@ -3,7 +3,7 @@
 .root {
   @apply w-full
     max-w-full
-    overflow-hidden
+    overflow-x-clip
     rounded-sm
     border
     border-neutral-900
