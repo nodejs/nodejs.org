@@ -12,8 +12,7 @@ import {
 
 import Button from '#site/components/Common/Button';
 import LinkWithArrow from '#site/components/Common/LinkWithArrow';
-import PartnersIconList from '#site/components/Common/Partners/PartnersIconList';
-import PartnersLogoList from '#site/components/Common/Partners/PartnersLogoList';
+import PartnersList from '#site/components/Common/Partners';
 import DownloadButton from '#site/components/Downloads/DownloadButton';
 import DownloadsTable from '#site/components/Downloads/DownloadsTable';
 import BlogPostLink from '#site/components/Downloads/Release/BlogPostLink';
@@ -82,10 +81,8 @@ export default {
     ChangelogLink,
     DownloadLink: ReleaseDownloadLink,
   },
-  // Shows a list of Node.js Partners with Icons
-  PartnersIconList,
-  // Shows a list of Node.js Partners with Logos
-  PartnersLogoList,
+  // Shows a list of Node.js Partners
+  PartnersList,
   // HOC for providing the Download Archive Page properties
   WithDownloadArchive,
   DownloadsTable,

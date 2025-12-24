@@ -1,0 +1,22 @@
+@reference "../../../styles/index.css";
+
+.small {
+  @apply flex
+    flex-row
+    flex-wrap
+    items-center
+    gap-2;
+}
+
+.large {
+  @apply grid
+    w-full
+    grid-cols-[repeat(auto-fill,minmax(240px,1fr))]
+    gap-4;
+}
+
+.tooltip {
+  @apply p-2
+    text-neutral-900
+    dark:text-neutral-200;
+}

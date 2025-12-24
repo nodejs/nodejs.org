@@ -1,10 +1,10 @@
 import Avatar from '@node-core/ui-components/Common/AvatarGroup/Avatar';
 
-import type { Supporters } from '#site/types';
+import type { Supporter } from '#site/types';
 import type { FC } from 'react';
 
 type SupportersListProps = {
-  supporters: Array<Supporters>;
+  supporters: Array<Supporter<'opencollective'>>;
 };
 
 const SupportersList: FC<SupportersListProps> = ({ supporters }) => (
