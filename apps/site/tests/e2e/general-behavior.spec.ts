@@ -43,7 +43,11 @@ const verifyTranslation = async (page: Page, locale: Locale | string) => {
   // Load locale data if string code provided (e.g., 'es', 'fr')
   const localeData: Locale =
     typeof locale === 'string'
-      ? await import(`@node-core/website-i18n/locales/${locale}.json`)
+      ? (
+          await import(`@node-core/website-i18n/locales/${locale}.json`, {
+            with: { type: 'json' },
+          })
+        ).default
       : locale;
 
   // Get navigation links and expected translations

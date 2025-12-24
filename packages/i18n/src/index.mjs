@@ -7,7 +7,7 @@ import localeConfig from './config.json' with { type: 'json' };
  * This is used for allowing us to redirect the user to any
  * of the available locales that we have enabled on the website
  *
- * @returns {Array<import('./types').LocaleConfig>}
+ * @type {Array<import('./types').LocaleConfig>}
  */
 export const availableLocales = localeConfig.filter(locale => locale.enabled);
 

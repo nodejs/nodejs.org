@@ -1,7 +1,10 @@
 import { join } from 'node:path';
 
-import { allLocaleCodes, availableLocaleCodes } from '@node-core/website-i18n';
-import { defaultLocale } from '@node-core/website-i18n';
+import {
+  allLocaleCodes,
+  defaultLocale,
+  availableLocaleCodes,
+} from '@node-core/website-i18n';
 import { notFound, redirect } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 
