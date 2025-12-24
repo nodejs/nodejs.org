@@ -1,4 +1,4 @@
-import englishLocale from '@node-core/website-i18n/locales/en.json';
+import englishLocale from '@node-core/website-i18n/locales/en.json' with { type: 'json' };
 import { test, expect, type Page } from '@playwright/test';
 
 import type { Locale } from '@node-core/website-i18n/types';
