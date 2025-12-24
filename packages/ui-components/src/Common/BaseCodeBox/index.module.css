@@ -33,7 +33,7 @@
         @apply relative
           min-w-0
           pl-8
-          [overflow-wrap:anywhere];
+          [overflow-wrap:break-word];
 
         &:not(:empty:last-child)::before {
           @apply inline-block
