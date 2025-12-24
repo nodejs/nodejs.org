@@ -1,10 +1,10 @@
+import { defaultLocale } from '@node-core/website-i18n';
 import { notFound, redirect } from 'next/navigation';
 
 import provideReleaseData from '#site/next-data/providers/releaseData';
 import provideReleaseVersions from '#site/next-data/providers/releaseVersions';
 import { ENABLE_STATIC_EXPORT } from '#site/next.constants.mjs';
 import * as basePage from '#site/next.dynamic.page.mjs';
-import { defaultLocale } from '#site/next.locales.mjs';
 
 import type { DynamicParams } from '#site/types';
 import type { FC } from 'react';

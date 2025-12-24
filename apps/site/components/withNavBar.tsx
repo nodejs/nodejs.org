@@ -6,6 +6,7 @@ import NavBar from '@node-core/ui-components/Containers/NavBar';
 // TODO(@AvivKeller): I don't like that we are importing styles from another module
 import styles from '@node-core/ui-components/Containers/NavBar/index.module.css';
 import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
+import { availableLocales } from '@node-core/website-i18n';
 import dynamic from 'next/dynamic';
 import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
@@ -16,7 +17,6 @@ import WithBanner from '#site/components/withBanner';
 import WithNodejsLogo from '#site/components/withNodejsLogo';
 import { useSiteNavigation } from '#site/hooks';
 import { useRouter, usePathname } from '#site/navigation.mjs';
-import { availableLocales } from '#site/next.locales.mjs';
 
 import type { SimpleLocaleConfig } from '@node-core/ui-components/types';
 import type { FC } from 'react';
