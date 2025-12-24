@@ -5,9 +5,11 @@
     mb-6
     flex
     h-full
+    w-[95%]
     flex-1
     flex-col
     items-start
+    self-center
     overflow-auto
     px-1;
 
@@ -39,7 +41,7 @@
 
 .scrollDownButton {
   @apply absolute
-    bottom-28
+    bottom-36
     left-1/2
     inline-flex
     -translate-x-1/2
@@ -49,10 +51,10 @@
     bg-neutral-200
     p-2
     text-neutral-900
-    duration-300
     focus:bg-neutral-300
     focus:outline-none
     motion-safe:transition-colors
+    lg:bottom-28
     dark:bg-neutral-900
     dark:text-neutral-200
     focus:dark:bg-neutral-800;

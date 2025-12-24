@@ -27,15 +27,15 @@
 .chatSourceLink {
   @apply w-3xs
     rounded-xl
-    bg-neutral-100
+    bg-white
     px-4
     py-2
     text-neutral-900
-    duration-300
     hover:bg-neutral-200
     focus:bg-neutral-200
     focus:outline-none
     motion-safe:transition-colors
+    lg:bg-neutral-100
     dark:bg-neutral-950
     dark:text-neutral-200
     hover:dark:bg-neutral-900

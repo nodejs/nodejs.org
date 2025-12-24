@@ -52,6 +52,7 @@ const Searchbox: FC = () => {
               t('components.search.suggestionThree'),
             ]}
             label={t('components.search.suggestions')}
+            onClick={() => setMode('chat')}
           />
         </SearchResults>
       </div>

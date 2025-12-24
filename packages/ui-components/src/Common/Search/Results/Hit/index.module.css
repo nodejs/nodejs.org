@@ -12,17 +12,16 @@
     py-2
     text-sm
     text-neutral-900
-    duration-300
     outline-none
     hover:bg-neutral-200
     focus:bg-neutral-200
     focus-visible:border-green-600
     focus-visible:bg-transparent
     motion-safe:transition-colors
-    dark:bg-neutral-950
+    dark:bg-zinc-950
     dark:text-neutral-200
-    hover:dark:bg-neutral-900
-    focus:dark:bg-neutral-900;
+    dark:hover:bg-neutral-900
+    lg:dark:bg-neutral-950;
 
   svg {
     @apply size-5;
