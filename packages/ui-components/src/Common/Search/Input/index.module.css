@@ -22,10 +22,11 @@
     py-4
     pr-4
     pl-9
-    text-sm
+    text-base
     text-neutral-900
     placeholder:text-neutral-500
     focus:outline-none
+    md:text-sm
     dark:border-neutral-900
     dark:text-neutral-200
     dark:placeholder:text-neutral-600;

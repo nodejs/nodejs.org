@@ -46,6 +46,7 @@ const SearchModal: FC<PropsWithChildren<SearchModalProps>> = ({
                   placeholder={placeholder}
                   ariaLabel={placeholder}
                 />
+                <Modal.Close className={styles.modalCloseButton} />
                 {children}
               </Modal.Content>
             </Modal.Inner>
