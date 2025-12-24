@@ -3,7 +3,7 @@
 .root {
   @apply w-full
     max-w-full
-    overflow-x-clip
+    overflow-x-hidden
     rounded-sm
     border
     border-neutral-900
@@ -20,6 +20,7 @@
         scrollbar-thin
         grid
         max-w-full
+        [grid-template-columns:minmax(0,1fr)]
         overflow-x-auto
         bg-transparent
         p-0
@@ -31,7 +32,8 @@
       & > [class='line'] {
         @apply relative
           min-w-0
-          pl-8;
+          pl-8
+          [overflow-wrap:anywhere];
 
         &:not(:empty:last-child)::before {
           @apply inline-block
