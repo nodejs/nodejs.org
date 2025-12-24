@@ -18,8 +18,12 @@ const SearchSuggestions: FC<SearchSuggestionsProps> = ({
   <Suggestions.Wrapper className={styles.suggestionsWrapper}>
     {label && <p className={styles.suggestionsTitle}>{label}</p>}
     {suggestions.map((suggestion, i) => (
-      <Suggestions.Item {...props} key={i} className={styles.suggestionItem}>
-        <SparklesIcon />
+      <Suggestions.Item
+        {...props}
+        key={`suggestion-${i}`}
+        className={styles.suggestionItem}
+      >
+        <SparklesIcon key={`suggestion-icon-${i}`} />
         {suggestion}
       </Suggestions.Item>
     ))}
