@@ -5,9 +5,11 @@
     mb-6
     flex
     h-full
+    w-[95%]
     flex-1
     flex-col
     items-start
+    self-center
     overflow-auto
     px-1;
 
