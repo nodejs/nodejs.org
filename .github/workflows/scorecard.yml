@@ -25,3 +25,15 @@ jobs:
       id-token: write
       contents: read
       actions: read
+      artifact-metadata: read
+      attestations: read
+      checks: read
+      deployments: read
+      discussions: read
+      issues: read
+      models: read
+      packages: read
+      pages: read
+      pull-requests: read
+      repository-projects: read
+      statuses: read
