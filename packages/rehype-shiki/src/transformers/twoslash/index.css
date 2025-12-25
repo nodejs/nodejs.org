@@ -6,10 +6,11 @@
 }
 
 .twoslash-popup-code {
-  max-width: 600px;
+  max-width: min(600px, 90vw);
   display: block;
   width: fit-content;
   user-select: none;
+  overflow-wrap: break-word;
 }
 
 .twoslash-popup-code:not(:has(div)) {
