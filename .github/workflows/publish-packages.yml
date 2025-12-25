@@ -98,7 +98,7 @@ jobs:
     needs: prepare-packages
     runs-on: ubuntu-latest
     # Skip if no packages need to be published
-    if: ${{ fromJson(needs.prepare-packages.outputs.matrix).package[0] != null }}
+    if: fromJson(needs.prepare-packages.outputs.matrix).package[0] != null
     # Use the dynamic matrix from prepare-packages job to create parallel jobs for each package
     strategy:
       matrix: ${{ fromJson(needs.prepare-packages.outputs.matrix) }}
