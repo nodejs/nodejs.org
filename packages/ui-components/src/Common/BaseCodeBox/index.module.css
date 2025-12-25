@@ -76,7 +76,3 @@
 .icon {
   @apply size-4;
 }
-
-div[data-state='active'] .root pre {
-  height: 19rem;
-}
