@@ -132,7 +132,7 @@ main {
       border-neutral-200
       text-left
       text-sm
-      dark:border-neutral-800;
+      dark:border-neutral-900;
 
     /* Common border and text styles */
     th,
@@ -145,7 +145,7 @@ main {
         py-2
         break-words
         text-neutral-900
-        dark:border-neutral-800
+        dark:border-neutral-900
         dark:text-white;
 
       a + a {
@@ -197,7 +197,7 @@ main {
           before:font-medium
           before:text-neutral-500
           before:content-[attr(data-label)]
-          dark:border-neutral-800
+          dark:border-neutral-900
           dark:before:text-neutral-400;
       }
 
