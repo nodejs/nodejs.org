@@ -15,6 +15,6 @@ jobs:
       github.actor != 'github-merge-queue[bot]'
     runs-on: ubuntu-latest
     steps:
-      - uses: nodejs/web-team/actions/notify-on-push@2c2897a93eb99b4cdca270729100bc0887c758d9
+      - uses: nodejs/web-team/actions/notify-on-push@9f3c83af227d721768d9dbb63009a47ed4f4282f
         with:
           webhook: ${{ secrets.SLACK_WEBHOOK }}
