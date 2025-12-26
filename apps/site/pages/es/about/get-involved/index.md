@@ -31,4 +31,5 @@ Ten en cuenta que el proyecto Node.js no respalda oficialmente estas áreas. Por
 
 - [Node Slackers](https://www.nodeslackers.com/) es una comunidad de slack enfocada en Node.js.
 - [OpenJSF Slack](https://slack-invite.openjsf.org/) es un espacio de trabajo en Slack para la Fundación OpenJS. Hay varios canales relacionados con Node.js. _(los canales con el prefijo `#nodejs-` están relacionados con el proyecto)_
+- [r/node](https://www.reddit.com/r/node/) es un subreddit que se enfoca en Node.js.
 - `irc.libera.chat` en el canal `#node.js` con un [cliente IRC](https://es.wikipedia.org/wiki/Comparaci%C3%B3n_de_clientes_de_Internet_Relay_Chat) o conéctate en tu navegador web al canal usando [un cliente web](https://kiwiirc.com/nextclient/).

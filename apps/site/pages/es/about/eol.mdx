@@ -1,0 +1,46 @@
+---
+title: Fin de Vida Útil
+layout: about
+description: Entender la fase fin de vida útil de Node.js, su significado para seguridad, herramientas, y cumplimiento, junto con detalles de las versiones EOL y opciones para soporte comercial.
+---
+
+# Fin de Vida Útil (EOL)
+
+## Cómo y por qué los lanzamientos de Node.js tienen un fin de vida útil
+
+Existe un horario regular para lanzar, remendar, y pasar al fin de vida útil las versiones principales de Node.js. No es posible mantener cada versión principal para siempre, entonces una vez pasado un período predeterminado, el proyecto Node.js dejará de mantener una versión principal.
+
+<div className="flex flex-col items-start gap-4 xl:flex-row xl:items-center">
+  <Button kind="primary" href="/download" className="flex-1">
+    <span>Actualizar a la LTS más reciente de Node.js®</span>
+  </Button>
+
+<span>o</span>
+
+  <Button as="a" kind="warning" href="#commercial-support" className="flex-1">
+    <span>Obtener soporte de seguridad para versiones EOL</span>
+  </Button>
+</div>
+
+[Ve el calendario de lanzamientos de Node.js](/about/releases/).
+
+## Que sucede cuando un lanzamiento pasa su fin de vida útil
+
+Cuando una versión pasa su fin de vida útil (EOL), deja de recibir actualizaciones como remiendas de seguridad. Como resultado, las aplicaciones que usan estas versiones pueden volver vulnerables a defectos de seguridad y otros errores que nunca serán arreglados.
+
+- **No más correcciones de vulnerabilidades**: Cuando se publiquen nuevas versiones de seguridad que revelen problemas y parches en líneas principales más recientes, no habrá nuevas versiones para líneas de lanzamiento EOL, incluso si la misma vulnerabilidad afecta a líneas de lanzamiento EOL. Los usuarios que aún se aferran a líneas de lanzamiento EOL y utilizan rutas de código afectadas serán inmediatamente vulnerables a ataques que exploten estas vulnerabilidades divulgadas.
+- **Errores en la cadena de herramientas**: Los lanzamientos EOL pueden dejar de vincular con versiones nuevas de dependencias externas, el cual podría impedir actualizaciones futuras.
+- **Cambios en el ecosistema**: Varios paquetes populares dejan de funcionar con versiones EOL de Node.js. Cuando una aplicación depende de paquetes anticuados, puede sufrir de más vulnerabilidades y fallos, volviéndose más difícil de reconciliar con el ecosistema actual.
+- **Incumplimiento**: A menudo, las auditorías prohíben sistemas de runtime no mantenidos.
+
+## Versiones EOL
+
+<EOLReleaseTable />
+
+## Soporte Comercial
+
+A pesar de las desventajas obvias de usar versiones EOL, en la práctica, las organizaciones enfrentan restricciones que impiden actualizaciones inmediatas, como bases de código heredadas, requisitos de cumplimiento o cadenas de dependencias complejas. A través del [Programa de Sostenibilidad del Ecosistema de la Fundación OpenJS](https://openjsf.org/blog/ecosystem-sustainability-program), Node.js cuenta con el apoyo de HeroDevs y NodeSource para proporcionar servicios comerciales para correcciones de seguridad.
+
+HeroDevs ofrece un [Soporte Interminable (NES)](https://nodejs.org/esp/herodevs) para versiones de Node.js que ya no tienen soporte oficial. Esto incluye parches de seguridad, ayuda con cumplimiento y soporte técnico para darte tiempo mientras planificas tu actualización.
+
+Usar versiones EOL con soporte comercial debería verse como una solución temporal, el objetivo siempre debería ser actualizar a versiones con soporte activo.
