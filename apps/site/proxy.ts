@@ -2,7 +2,7 @@ import createMiddleware from 'next-intl/middleware';
 
 import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
 
-export default createMiddleware({
+export const proxy = createMiddleware({
   // A list of all locales that are supported
   locales: availableLocaleCodes,
 
@@ -17,6 +17,6 @@ export default createMiddleware({
   alternateLinks: false,
 });
 
-// We only want the middleware to run on the `/` route
+// We only want the proxy to run on the `/` route
 // to redirect users to their preferred locale
 export const config = { matcher: ['/'] };
