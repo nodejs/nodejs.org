@@ -7,13 +7,13 @@
  * dynamic params, which will lead on static export errors and other sort of issues.
  */
 
+import { availableLocaleCodes, defaultLocale } from '@node-core/website-i18n';
 import { notFound } from 'next/navigation';
 
 import { ENABLE_STATIC_EXPORT } from '#site/next.constants.mjs';
 import { ENABLE_STATIC_EXPORT_LOCALE } from '#site/next.constants.mjs';
 import { dynamicRouter } from '#site/next.dynamic.mjs';
 import * as basePage from '#site/next.dynamic.page.mjs';
-import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
 
 import type { DynamicParams } from '#site/types';
 import type { FC } from 'react';
