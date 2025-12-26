@@ -3,6 +3,7 @@
 import { DocumentDuplicateIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import { Fragment, isValidElement, useRef } from 'react';
+import { CheckIcon } from '@heroicons/react/24/outline';
 
 import BaseButton from '#ui/Common/BaseButton';
 
@@ -71,6 +72,7 @@ type CodeBoxProps = {
   as?: LinkLike;
   buttonText: string;
   showCopyButton?: boolean;
+  copied?: boolean;
 };
 
 const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
@@ -81,6 +83,7 @@ const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   buttonText,
   as = 'a',
   showCopyButton = true,
+  copied = false,
 }: PropsWithChildren<CodeBoxProps>) => {
   const containerRef = useRef<HTMLPreElement>(null);
 
@@ -110,7 +113,11 @@ const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
               kind="neutral"
               onClick={handleCopy}
             >
-              <DocumentDuplicateIcon className={styles.icon} />
+              {copied ? (
+                <CheckIcon className={styles.icon} />
+              ) : (
+                <DocumentDuplicateIcon className={styles.icon} />
+              )}
               {buttonText}
             </BaseButton>
           )}
