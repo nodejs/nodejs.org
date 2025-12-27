@@ -250,6 +250,16 @@
     "default": false
   },
   {
+    "code": "ta",
+    "localName": "தமிழ்",
+    "name": "Tamil",
+    "langDir": "ltr",
+    "dateFormat": "DD-MM-YYYY",
+    "hrefLang": "ta",
+    "enabled": false,
+    "default": false
+  },
+  {
     "code": "tr",
     "localName": "Türkçe",
     "name": "Turkish",
