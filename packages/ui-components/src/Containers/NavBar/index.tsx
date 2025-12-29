@@ -22,7 +22,7 @@ const navInteractionIcons = {
 };
 
 type NavbarProps = {
-  navItems: Array<{
+  navItems?: Array<{
     text: FormattedMessage;
     link: string;
     target?: HTMLAttributeAnchorTarget | undefined;
@@ -61,7 +61,7 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
       </div>
 
       <input
-        className={classNames(['peer', style.sidebarItemToggler])}
+        className={classNames('peer', style.sidebarItemToggler)}
         id="sidebarItemToggler"
         type="checkbox"
         onChange={e => setIsMenuOpen(() => e.target.checked)}
@@ -69,21 +69,22 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
         tabIndex={-1}
       />
 
-      <div className={`${style.main} hidden peer-checked:flex`}>
-        <div className={style.navItems}>
-          {navItems.map(({ text, link, target }) => (
-            <NavItem
-              pathname={pathname}
-              as={Component}
-              key={link}
-              href={link}
-              target={target}
-            >
-              {text}
-            </NavItem>
-          ))}
-        </div>
-
+      <div className={classNames(style.main, `hidden peer-checked:flex`)}>
+        {navItems && (
+          <div className={style.navItems}>
+            {navItems.map(({ text, link, target }) => (
+              <NavItem
+                pathname={pathname}
+                as={Component}
+                key={link}
+                href={link}
+                target={target}
+              >
+                {text}
+              </NavItem>
+            ))}
+          </div>
+        )}
         <div className={style.actionsWrapper}>{children}</div>
       </div>
     </nav>
