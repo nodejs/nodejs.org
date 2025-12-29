@@ -38,9 +38,11 @@ const renderSmallPartner = (partner: Partner) => {
   return (
     <Tooltip
       key={partner.id}
+      asChild
+      aria-label={partner.name}
       content={<div className={style.tooltip}>{partner.name}</div>}
     >
-      <PartnerButton size="small" href={partner.href}>
+      <PartnerButton aria-label={partner.name} size="small" href={partner.href}>
         <Logo.Favicon />
       </PartnerButton>
     </Tooltip>
@@ -51,7 +53,12 @@ const renderLargePartner = (partner: Partner) => {
   const Logo = PartnerLogos[partner.id];
 
   return (
-    <PartnerButton key={partner.id} size="large" href={partner.href}>
+    <PartnerButton
+      aria-label={partner.name}
+      key={partner.id}
+      size="large"
+      href={partner.href}
+    >
       <Logo.Logo />
     </PartnerButton>
   );
