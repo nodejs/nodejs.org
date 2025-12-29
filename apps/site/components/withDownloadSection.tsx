@@ -1,9 +1,9 @@
+import { defaultLocale } from '@node-core/website-i18n';
 import { getLocale } from 'next-intl/server';
 
 import { getClientContext } from '#site/client-context';
 import WithNodeRelease from '#site/components/withNodeRelease';
 import provideDownloadSnippets from '#site/next-data/providers/downloadSnippets';
-import { defaultLocale } from '#site/next.locales.mjs';
 import {
   ReleaseProvider,
   ReleasesProvider,

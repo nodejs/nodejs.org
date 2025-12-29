@@ -1,10 +1,9 @@
+import { defaultLocale, availableLocaleCodes } from '@node-core/website-i18n';
 import { notFound } from 'next/navigation';
 
 import { ENABLE_STATIC_EXPORT } from '#site/next.constants.mjs';
 import { ENABLE_STATIC_EXPORT_LOCALE } from '#site/next.constants.mjs';
 import * as basePage from '#site/next.dynamic.page.mjs';
-import { availableLocaleCodes } from '#site/next.locales.mjs';
-import { defaultLocale } from '#site/next.locales.mjs';
 
 import type { DynamicParams } from '#site/types';
 import type { FC } from 'react';

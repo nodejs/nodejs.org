@@ -1,9 +1,10 @@
+import { availableLocaleCodes, defaultLocale } from '@node-core/website-i18n';
+
 import { BASE_PATH } from '#site/next.constants.mjs';
 import { BASE_URL } from '#site/next.constants.mjs';
 import { EXTERNAL_LINKS_SITEMAP } from '#site/next.constants.mjs';
 import { BLOG_DYNAMIC_ROUTES } from '#site/next.dynamic.constants.mjs';
 import { dynamicRouter } from '#site/next.dynamic.mjs';
-import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
 
 import type { MetadataRoute } from 'next';
 
