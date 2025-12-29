@@ -5,14 +5,17 @@ import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 type Story = StoryObj<typeof NavBar>;
 type Meta = MetaObj<typeof NavBar>;
 
+const common = {
+  as: 'a',
+  Logo: 'a',
+  pathname: '/',
+
+  children: <a>Some other child</a>,
+} as const;
+
 export const Default: Story = {
   args: {
-    as: 'a',
-    Logo: 'a',
-    pathname: '/',
-
-    children: <a>Some other child</a>,
-
+    ...common,
     navItems: [
       {
         text: 'Learn',
@@ -41,5 +44,7 @@ export const Default: Story = {
     ],
   },
 };
+
+export const NoNavItems: Story = { args: common };
 
 export default { component: NavBar } as Meta;
