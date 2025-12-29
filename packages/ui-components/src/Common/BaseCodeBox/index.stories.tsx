@@ -20,19 +20,10 @@ server.listen(port, hostname, () => {
   console.log(\`Server running at http://\${hostname}:\${port}/\`);
 });`;
 
-const args = {
-  language: 'JavaScript (CJS)',
-  children: <code>{content}</code>,
-};
-
 export const Default: Story = {
-  args,
-};
-
-export const WithCopyButton: Story = {
   args: {
-    ...args,
-    showCopyButton: true,
+    language: 'JavaScript (CJS)',
+    children: <code>{content}</code>,
   },
 };
 

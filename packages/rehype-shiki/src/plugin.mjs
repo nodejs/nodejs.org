@@ -181,15 +181,6 @@ export default async function rehypeShikiji(options) {
         codeLanguage
       );
 
-      // Adds a Copy Button to the CodeBox if requested as an additional parameter
-      // And avoids setting the property (overriding) if undefined or invalid value
-      if (
-        meta.showCopyButton &&
-        ['true', 'false'].includes(meta.showCopyButton)
-      ) {
-        children[0].properties.showCopyButton = meta.showCopyButton;
-      }
-
       // Replaces the <pre> element with the updated one
       parent.children.splice(index, 1, ...children);
     });
