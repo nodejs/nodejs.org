@@ -35,9 +35,8 @@ async function getEngine({ wasm = false }) {
     return createOnigurumaEngine(await import('shiki/wasm'));
   }
 
-  const { createJavaScriptRegexEngine } = await import(
-    '@shikijs/engine-javascript'
-  );
+  const { createJavaScriptRegexEngine } =
+    await import('@shikijs/engine-javascript');
   return createJavaScriptRegexEngine();
 }
 
