@@ -197,16 +197,6 @@
       },
       "url": "https://github.com/tj/n",
       "info": "layouts.download.codeBox.platformInfo.n"
-    },
-    {
-      "id": "VOLTA",
-      "icon": "Volta",
-      "name": "Volta",
-      "compatibility": {
-        "os": ["WIN", "MAC", "LINUX"]
-      },
-      "url": "https://docs.volta.sh/guide/getting-started",
-      "info": "layouts.download.codeBox.platformInfo.volta"
     }
   ],
   "packageManagers": [

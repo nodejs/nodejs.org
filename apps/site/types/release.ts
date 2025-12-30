@@ -5,7 +5,6 @@ import type { OperatingSystem, Platform } from '#site/types/userAgent';
 export type InstallationMethod =
   | 'NVM'
   | 'FNM'
-  | 'VOLTA'
   | 'BREW'
   | 'DEVBOX'
   | 'DOCKER'
