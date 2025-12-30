@@ -71,7 +71,7 @@
     "remark-gfm": "~4.0.1",
     "remark-reading-time": "~2.0.2",
     "semver": "~7.7.2",
-    "sval": "^0.6.3",
+    "sval": "^0.6.8",
     "tailwindcss": "catalog:",
     "twoslash": "^0.3.6",
     "unist-util-visit": "^5.0.0",
