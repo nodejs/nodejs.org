@@ -17,7 +17,7 @@ permissions: read-all
 jobs:
   analysis:
     name: Scorecard analysis
-    uses: nodejs/web-team/.github/workflows/scorecard.yml@2c2897a93eb99b4cdca270729100bc0887c758d9
+    uses: nodejs/web-team/.github/workflows/scorecard.yml@9f3c83af227d721768d9dbb63009a47ed4f4282f
     permissions:
       # Needed to upload the results to code-scanning dashboard.
       security-events: write

@@ -3,7 +3,7 @@
 import { readFile, glob } from 'node:fs/promises';
 import { basename, extname, join } from 'node:path';
 
-import { availableLocaleCodes } from '../../next.locales.mjs';
+import { availableLocaleCodes } from '@node-core/website-i18n';
 
 /**
  * This method is used to generate the Node.js Website Download Snippets

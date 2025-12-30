@@ -1,5 +1,5 @@
-'use cache';
+import { cache } from 'react';
 
-import provideSupporters from '#site/next-data/generators/supportersData.mjs';
+import generateSupporters from '#site/next-data/generators/supportersData.mjs';
 
-export default provideSupporters;
+export default cache(generateSupporters);

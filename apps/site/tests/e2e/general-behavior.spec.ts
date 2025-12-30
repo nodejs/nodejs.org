@@ -1,9 +1,7 @@
-import { importLocale } from '@node-core/website-i18n';
+import englishLocale from '@node-core/website-i18n/locales/en.json' with { type: 'json' };
 import { test, expect, type Page } from '@playwright/test';
 
 import type { Locale } from '@node-core/website-i18n/types';
-
-const englishLocale = await importLocale('en');
 
 // TODO(@avivkeller): It would be ideal for all the Test IDs to not exist in the
 //                    ui-components package, and instead be passed as props.
@@ -43,8 +41,14 @@ const openLanguageMenu = async (page: Page) => {
 
 const verifyTranslation = async (page: Page, locale: Locale | string) => {
   // Load locale data if string code provided (e.g., 'es', 'fr')
-  const localeData =
-    typeof locale === 'string' ? await importLocale(locale) : locale;
+  const localeData: Locale =
+    typeof locale === 'string'
+      ? (
+          await import(`@node-core/website-i18n/locales/${locale}.json`, {
+            with: { type: 'json' },
+          })
+        ).default
+      : locale;
 
   // Get navigation links and expected translations
   const links = await page

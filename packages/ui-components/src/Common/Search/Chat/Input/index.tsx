@@ -39,7 +39,13 @@ const ChatInput: FC<PropsWithChildren<ChatInputProps>> = ({
 
   return (
     <>
-      {!interactions?.length && <SearchSuggestions suggestions={suggestions} />}
+      {!interactions?.length && (
+        <SearchSuggestions
+          suggestions={suggestions}
+          wrapper={styles.suggestionsWrapper}
+          className={styles.suggestionsItem}
+        />
+      )}
       <div className={styles.textareaContainer}>
         <PromptTextArea.Wrapper className={styles.textareaWrapper}>
           <PromptTextArea.Field

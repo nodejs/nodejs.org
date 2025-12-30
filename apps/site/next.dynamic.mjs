@@ -3,6 +3,7 @@
 import { readFile } from 'node:fs/promises';
 import { join, normalize, sep } from 'node:path';
 
+import { availableLocaleCodes, defaultLocale } from '@node-core/website-i18n';
 import matter from 'gray-matter';
 import { cache } from 'react';
 import { VFile } from 'vfile';
@@ -17,7 +18,6 @@ import { IS_DEV_ENV } from './next.constants.mjs';
 import { PAGE_METADATA } from './next.dynamic.constants.mjs';
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { siteConfig } from './next.json.mjs';
-import { availableLocaleCodes, defaultLocale } from './next.locales.mjs';
 
 // This is the combination of the Application Base URL and Base PATH
 const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;

@@ -1,5 +1,3 @@
-'use server';
-
 import provideReleaseData from '#site/next-data/providers/releaseData';
 
 import type { NodeRelease, NodeReleaseStatus } from '#site/types';

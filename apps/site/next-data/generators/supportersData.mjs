@@ -1,13 +1,14 @@
+import { OPENCOLLECTIVE_MEMBERS_URL } from '#site/next.constants.mjs';
+import { fetchWithRetry } from '#site/util/fetch';
+
 /**
  * Fetches supporters data from Open Collective API, filters active backers,
  * and maps it to the Supporters type.
  *
- * @returns {Promise<Array<import('#site/types/supporters')>>} Array of supporters
+ * @returns {Promise<Array<import('#site/types/supporters').OpenCollectiveSupporter>>} Array of supporters
  */
 async function fetchOpenCollectiveData() {
-  const endpoint = 'https://opencollective.com/nodejs/members/all.json';
-
-  const response = await fetch(endpoint);
+  const response = await fetchWithRetry(OPENCOLLECTIVE_MEMBERS_URL);
 
   const payload = await response.json();
 

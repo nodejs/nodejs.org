@@ -2,6 +2,7 @@
 
 import MetaBar from '@node-core/ui-components/Containers/MetaBar';
 import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
+import { defaultLocale } from '@node-core/website-i18n';
 import { useFormatter, useLocale, useTranslations } from 'next-intl';
 
 import Link from '#site/components/Link';
@@ -10,7 +11,6 @@ import { useClientContext } from '#site/hooks/react-client';
 import useMediaQuery from '#site/hooks/react-client/useMediaQuery';
 import { DEFAULT_DATE_FORMAT } from '#site/next.calendar.constants.mjs';
 import { TRANSLATION_URL } from '#site/next.constants.mjs';
-import { defaultLocale } from '#site/next.locales.mjs';
 import { getGitHubBlobUrl } from '#site/util/github';
 
 import type { FC } from 'react';

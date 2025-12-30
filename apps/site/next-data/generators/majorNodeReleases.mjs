@@ -2,12 +2,12 @@
 
 import nodevu from '@nodevu/core';
 
-const nodevuData = await nodevu({ fetch });
-
 /**
  * Filters Node.js release data to return only major releases with documented support.
  */
 export default async function getMajorNodeReleases() {
+  const nodevuData = await nodevu({ fetch });
+
   return Object.entries(nodevuData).filter(([version, { support }]) => {
     // Filter out those without documented support
     // Basically those not in schedule.json
