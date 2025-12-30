@@ -1,13 +1,12 @@
 'use client';
 
-import { DocumentDuplicateIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import { Fragment, isValidElement, useRef } from 'react';
 
 import BaseButton from '#ui/Common/BaseButton';
 
 import type { LinkLike } from '#ui/types';
-import type { FC, PropsWithChildren, ReactElement } from 'react';
+import type { FC, PropsWithChildren, ReactElement, ReactNode } from 'react';
 
 import styles from './index.module.css';
 
@@ -69,8 +68,7 @@ type CodeBoxProps = {
   className?: string;
   onCopy: (text: string) => void;
   as?: LinkLike;
-  buttonText: string;
-  showCopyButton?: boolean;
+  buttonContent: ReactNode;
 };
 
 const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
@@ -78,9 +76,8 @@ const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   language,
   className,
   onCopy,
-  buttonText,
+  buttonContent,
   as = 'a',
-  showCopyButton = true,
 }: PropsWithChildren<CodeBoxProps>) => {
   const containerRef = useRef<HTMLPreElement>(null);
 
@@ -103,17 +100,14 @@ const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
       {language && (
         <div className={styles.footer}>
           <span className={styles.language}>{language}</span>
-          {showCopyButton && (
-            <BaseButton
-              as={as}
-              className={styles.action}
-              kind="neutral"
-              onClick={handleCopy}
-            >
-              <DocumentDuplicateIcon className={styles.icon} />
-              {buttonText}
-            </BaseButton>
-          )}
+          <BaseButton
+            as={as}
+            className={styles.action}
+            kind="neutral"
+            onClick={handleCopy}
+          >
+            {buttonContent}
+          </BaseButton>
         </div>
       )}
     </div>

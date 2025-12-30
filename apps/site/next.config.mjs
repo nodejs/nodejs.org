@@ -71,7 +71,6 @@ const nextConfig = {
       '@radix-ui/react-label',
       '@radix-ui/react-select',
       '@radix-ui/react-tabs',
-      '@radix-ui/react-toast',
       '@radix-ui/react-tooltip',
       '@radix-ui/react-avatar',
       '@orama/highlight',
