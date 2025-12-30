@@ -39,7 +39,6 @@ const renderSmallPartner = (partner: Partner) => {
     <Tooltip
       key={partner.id}
       asChild
-      aria-label={partner.name}
       content={<div className={style.tooltip}>{partner.name}</div>}
     >
       <PartnerButton aria-label={partner.name} size="small" href={partner.href}>
