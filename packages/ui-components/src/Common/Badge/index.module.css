@@ -35,6 +35,6 @@
   }
 
   &.neutral {
-    @apply bg-neutral-600;
+    @apply bg-neutral-800;
   }
 }
