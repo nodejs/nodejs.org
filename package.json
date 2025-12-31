@@ -41,7 +41,7 @@
   "devDependencies": {
     "@eslint/js": "~9.36.0",
     "@reporters/github": "^1.11.0",
-    "@testing-library/react": "~16.3.0",
+    "@testing-library/react": "~16.3.1",
     "cross-env": "^10.1.0",
     "eslint": "~9.36.0",
     "eslint-import-resolver-typescript": "~4.4.4",
