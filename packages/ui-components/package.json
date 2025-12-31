@@ -55,9 +55,9 @@
   "devDependencies": {
     "@orama/core": "^1.2.15",
     "@storybook/addon-styling-webpack": "^3.0.0",
-    "@storybook/addon-themes": "^10.1.4",
+    "@storybook/addon-themes": "^10.1.10",
     "@storybook/addon-webpack5-compiler-swc": "^4.0.2",
-    "@storybook/react-webpack5": "^10.1.4",
+    "@storybook/react-webpack5": "^10.1.10",
     "@testing-library/user-event": "~14.6.1",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
