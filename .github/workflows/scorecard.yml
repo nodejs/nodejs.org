@@ -10,7 +10,6 @@ on:
   push:
     branches:
       - main
-      - fix/scorecard
 
 # Declare default permissions as read only.
 permissions: read-all
