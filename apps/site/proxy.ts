@@ -17,7 +17,6 @@ export const proxy = createMiddleware({
   alternateLinks: false,
 });
 
-// Export as proxy function (required by Next.js 16+)
 export default proxy;
 // We only want the proxy to run on the `/` route
 // to redirect users to their preferred locale
