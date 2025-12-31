@@ -7,8 +7,8 @@ settings:
 catalogs:
   default:
     '@types/node':
-      specifier: ^24.10.1
-      version: 24.10.1
+      specifier: ^18.19.130
+      version: 18.19.130
     '@types/react':
       specifier: ^19.2.7
       version: 19.2.7
@@ -128,7 +128,7 @@ importers:
         version: 4.1.17
       '@types/node':
         specifier: 'catalog:'
-        version: 24.10.1
+        version: 18.19.130
       '@types/react':
         specifier: 'catalog:'
         version: 19.2.7
@@ -534,7 +534,7 @@ importers:
         version: 14.6.1(@testing-library/dom@10.4.0)
       '@types/node':
         specifier: 'catalog:'
-        version: 24.10.1
+        version: 18.19.130
       '@types/react':
         specifier: 'catalog:'
         version: 19.2.7
@@ -3928,14 +3928,11 @@ packages:
   '@types/node-fetch@2.6.13':
     resolution: {integrity: sha512-QGpRVpzSaUs30JBSGPjOg4Uveu384erbHBoT1zeONvyCfwQxIkUshLAOqN/k9EjGviPRmWTTe6aH2qySWKTVSw==}
 
-  '@types/node@18.19.121':
-    resolution: {integrity: sha512-bHOrbyztmyYIi4f1R0s17QsPs1uyyYnGcXeZoGEd227oZjry0q6XQBQxd82X1I57zEfwO8h9Xo+Kl5gX1d9MwQ==}
+  '@types/node@18.19.130':
+    resolution: {integrity: sha512-GRaXQx6jGfL8sKfaIDD6OupbIHBr9jv7Jnaml9tB7l4v068PAOXqfcujMMo5PhbIs6ggR1XODELqahT2R8v0fg==}
 
   '@types/node@22.18.6':
     resolution: {integrity: sha512-r8uszLPpeIWbNKtvWRt/DbVi5zbqZyj1PTmhRMqBMvDnaz1QpmSKujUtJLrqGZeoM8v72MfYggDceY4K1itzWQ==}
-
-  '@types/node@24.10.1':
-    resolution: {integrity: sha512-GNWcUTRBgIRJD5zj+Tq0fKOJ5XZajIiBroOF0yvj2bSU1WvNdYS/dn9UxwsujGW4JX06dnHyjV2y9rRaybH0iQ==}
 
   '@types/react@19.2.7':
     resolution: {integrity: sha512-MWtvHrGZLFttgeEj28VXHxpmwYbor/ATPYbBfSFZEIRK0ecCFLl2Qo55z52Hss+UV9CRN7trSeq1zbgx7YDWWg==}
@@ -8545,9 +8542,6 @@ packages:
   undici-types@6.21.0:
     resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
 
-  undici-types@7.16.0:
-    resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
-
   undici@5.29.0:
     resolution: {integrity: sha512-raqeBD6NQK4SkWhQzeYKd1KmIG6dllBOTt55Rmkt4HtI9mwdWtJljnrXjAFUBLTSN67HWrOIZ3EPF4kjUw80Bg==}
     engines: {node: '>=14.0'}
@@ -13021,7 +13015,7 @@ snapshots:
 
   '@types/concat-stream@2.0.3':
     dependencies:
-      '@types/node': 24.10.1
+      '@types/node': 18.19.130
 
   '@types/debug@4.1.12':
     dependencies:
@@ -13073,20 +13067,16 @@ snapshots:
 
   '@types/node-fetch@2.6.13':
     dependencies:
-      '@types/node': 24.10.1
+      '@types/node': 18.19.130
       form-data: 4.0.4
 
-  '@types/node@18.19.121':
+  '@types/node@18.19.130':
     dependencies:
       undici-types: 5.26.5
 
   '@types/node@22.18.6':
     dependencies:
       undici-types: 6.21.0
-
-  '@types/node@24.10.1':
-    dependencies:
-      undici-types: 7.16.0
 
   '@types/react@19.2.7':
     dependencies:
@@ -13954,7 +13944,7 @@ snapshots:
 
   cloudflare@4.5.0:
     dependencies:
-      '@types/node': 18.19.121
+      '@types/node': 18.19.130
       '@types/node-fetch': 2.6.13
       abort-controller: 3.0.0
       agentkeepalive: 4.6.0
@@ -15925,7 +15915,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 24.10.1
+      '@types/node': 18.19.130
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -18946,8 +18936,6 @@ snapshots:
   undici-types@5.26.5: {}
 
   undici-types@6.21.0: {}
-
-  undici-types@7.16.0: {}
 
   undici@5.29.0:
     dependencies:
