@@ -6,7 +6,7 @@
 
   &.active {
     @apply rounded
-      bg-green-600
+      bg-green-800
       px-2
       py-1
       font-semibold
