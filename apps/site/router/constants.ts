@@ -2,16 +2,19 @@
 
 import { blogData } from '#site/next.json.mjs';
 
-import { BASE_PATH, BASE_URL } from './next.constants.mjs';
-import { siteConfig } from './next.json.mjs';
-import { getBlogPosts } from './util/blog';
+import { BASE_PATH, BASE_URL } from '../next.constants.mjs';
+import { siteConfig } from '../next.json.mjs';
+import { getBlogPosts } from '../util/blog';
+
+/**
+ * This the pattern of index.mdx? files in a given directory
+ */
+export const INDEX_PATTERN = /((\/)?(index))?\.mdx?$/i;
 
 /**
  * This constant is used to create static routes on-the-fly that do not have a file-system
  * counterpart route. This is useful for providing routes with matching Layout Names
  * but that do not have Markdown content and a matching file for the route
- *
- * @type {Array<string>} A Map of pathname and Layout Name
  */
 export const BLOG_DYNAMIC_ROUTES = [
   // Provides Routes for all Blog Categories
@@ -25,12 +28,10 @@ export const BLOG_DYNAMIC_ROUTES = [
     .map(([c, t]) => [...Array(t).keys()].map(p => `${c}/page/${p + 1}`))
     // flattens the array since we have a .map inside another .map
     .flat(),
-];
+] as const;
 
 /**
  * This is the default Next.js Page Metadata for all pages
- *
- * @type {import('next').Metadata}
  */
 export const PAGE_METADATA = {
   metadataBase: new URL(`${BASE_URL}${BASE_PATH}`),
@@ -39,7 +40,7 @@ export const PAGE_METADATA = {
   robots: { index: true, follow: true },
   twitter: {
     card: siteConfig.twitter.card,
-    title: siteConfig.twitter.title,
+    title: siteConfig.title,
     creator: siteConfig.twitter.username,
     images: {
       url: siteConfig.twitter.img,
@@ -48,13 +49,13 @@ export const PAGE_METADATA = {
   },
   alternates: {
     canonical: '',
-    languages: { 'x-default': '' },
+    languages: { 'x-default': '' } as Record<string, string>,
     types: {
       'application/rss+xml': `${BASE_URL}${BASE_PATH}/en/feed/blog.xml`,
     },
   },
   icons: { icon: siteConfig.favicon },
-  openGraph: { images: siteConfig.twitter.img },
+  openGraph: { images: [siteConfig.twitter.img] },
 };
 
 /**
@@ -76,4 +77,4 @@ export const PAGE_VIEWPORT = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 2,
-};
+} as const;

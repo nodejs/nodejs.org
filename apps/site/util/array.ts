@@ -1,3 +1,5 @@
+import { join } from 'node:path';
+
 // Fisher-Yates shuffle algorithm with a seed for deterministic results
 export const shuffle = async <T>(
   array: Array<T>,
@@ -21,3 +23,8 @@ export const shuffle = async <T>(
 
   return shuffled;
 };
+
+// Join the arguments like a path
+export const joinNested = (
+  ...args: Array<string | Array<string> | undefined>
+) => join(...(args.filter(Boolean) as Array<string>).flat());
