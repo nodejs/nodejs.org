@@ -447,8 +447,8 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
       yaml:
-        specifier: ^2.8.1
-        version: 2.8.1
+        specifier: ^2.8.2
+        version: 2.8.2
     devDependencies:
       cross-env:
         specifier: 'catalog:'
@@ -8913,11 +8913,6 @@ packages:
     engines: {node: '>= 14'}
     hasBin: true
 
-  yaml@2.8.1:
-    resolution: {integrity: sha512-lcYcMxX2PO9XMGvAJkJ3OsNMw+/7FKes7/hgerGUYWIoWu5j/+YQqcZr5JnPZWzOsEBgMbSbiSTn/dv/69Mkpw==}
-    engines: {node: '>= 14.6'}
-    hasBin: true
-
   yaml@2.8.2:
     resolution: {integrity: sha512-mplynKqc1C2hTVYxd0PU2xQAc22TI1vShAYGksCCfxbn/dFwnHTNi1bvYsBTkhdUNtGIf5xNOg938rrSSYvS9A==}
     engines: {node: '>= 14.6'}
@@ -11185,7 +11180,7 @@ snapshots:
       unist-util-select: 5.1.0
       unist-util-visit: 5.0.0
       vfile: 6.0.3
-      yaml: 2.8.1
+      yaml: 2.8.2
     transitivePeerDependencies:
       - '@stencil/core'
       - '@types/react'
@@ -19488,8 +19483,6 @@ snapshots:
   yallist@3.1.1: {}
 
   yaml@2.7.1: {}
-
-  yaml@2.8.1: {}
 
   yaml@2.8.2: {}
 
