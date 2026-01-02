@@ -71,8 +71,8 @@ The [`--run`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--run) flag allo
   "type": "module",
   "scripts": {
     "start": "node app.js",
-    "dev": "node --run start -- --watch",
-    "test": "node --test"
+    "test": "node --test",
+    "test:junit": "node --run test -- --test-reporter=\"junit\""
   }
 }
 ```
@@ -85,12 +85,13 @@ node --run test
 
 ### Passing arguments to the command
 
-Let's explain the `dev` key in the `scripts` object of the `package.json` file.
+Let's explain the `test:junit` key in the `scripts` object of the `package.json` file.
 
-The syntax `-- --another-argument` is used to pass arguments to the command. In this case, the `--watch` argument is passed to the `dev` script.
+The syntax `-- --another-argument` is used to pass arguments to the command. In this case, the `--test-reporter` argument is passed to the `node --test` command defined by the `test` script.
 
 ```bash
-node --run dev
+# Executes: node --test --test-reporter="junit"
+node --run test:junit
 ```
 
 ### Environment variables
