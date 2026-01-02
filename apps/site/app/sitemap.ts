@@ -3,7 +3,7 @@ import { availableLocaleCodes, defaultLocale } from '@node-core/website-i18n';
 import { BASE_PATH } from '#site/next.constants.mjs';
 import { BASE_URL } from '#site/next.constants.mjs';
 import { EXTERNAL_LINKS_SITEMAP } from '#site/next.constants.mjs';
-import { BLOG_DYNAMIC_ROUTES } from '#site/router/constants.js';
+import { BLOG_DYNAMIC_ROUTES } from '#site/router/constants';
 
 import type { MetadataRoute } from 'next';
 
