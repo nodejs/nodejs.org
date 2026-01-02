@@ -82,7 +82,7 @@
     "@flarelabs-net/wrangler-build-time-fs-assets-polyfilling": "^0.0.1",
     "@next/eslint-plugin-next": "16.0.7",
     "@node-core/remark-lint": "workspace:*",
-    "@opennextjs/cloudflare": "^1.14.4",
+    "@opennextjs/cloudflare": "^1.14.7",
     "@playwright/test": "^1.57.0",
     "@testing-library/user-event": "~14.6.1",
     "@types/mdast": "^4.0.4",
