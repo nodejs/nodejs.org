@@ -15,7 +15,7 @@ import SearchButton from '#site/components/Common/Searchbox';
 import Link from '#site/components/Link';
 import WithBanner from '#site/components/withBanner';
 import WithNodejsLogo from '#site/components/withNodejsLogo';
-import { useSiteNavigation } from '#site/hooks';
+import { useSiteNavigation } from '#site/hooks/generic';
 import { useRouter, usePathname } from '#site/navigation.mjs';
 
 import type { SimpleLocaleConfig } from '@node-core/ui-components/types';

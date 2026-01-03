@@ -6,7 +6,7 @@ import WithBlogCrossLinks from '#site/components/withBlogCrossLinks';
 import WithFooter from '#site/components/withFooter';
 import WithMetaBar from '#site/components/withMetaBar';
 import WithNavBar from '#site/components/withNavBar';
-import { useClientContext } from '#site/hooks/react-server';
+import { useClientContext } from '#site/hooks/server';
 import { mapAuthorToCardAuthors } from '#site/util/author';
 import { mapBlogCategoryToPreviewType } from '#site/util/blog';
 

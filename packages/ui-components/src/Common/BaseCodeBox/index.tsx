@@ -1,9 +1,14 @@
 'use client';
 
+import {
+  DocumentDuplicateIcon,
+  CodeBracketIcon,
+} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import { Fragment, isValidElement, useRef } from 'react';
 
 import BaseButton from '#ui/Common/BaseButton';
+import useCopy from '#ui/hooks/useCopy';
 
 import type { LinkLike } from '#ui/types';
 import type { FC, PropsWithChildren, ReactElement, ReactNode } from 'react';
@@ -66,27 +71,25 @@ const transformCode = <T extends ReactElement<PropsWithChildren>>(
 type CodeBoxProps = {
   language: string;
   className?: string;
-  onCopy: (text: string) => void;
   as?: LinkLike;
-  buttonContent: ReactNode;
+  copyButtonLabel: ReactNode;
+  copiedButtonLabel: ReactNode;
 };
 
 const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   children,
   language,
   className,
-  onCopy,
-  buttonContent,
+  copyButtonLabel,
+  copiedButtonLabel,
   as = 'a',
 }: PropsWithChildren<CodeBoxProps>) => {
+  const [copied, copy] = useCopy();
+
   const containerRef = useRef<HTMLPreElement>(null);
 
-  const handleCopy = (): void => {
-    const text = containerRef.current?.textContent;
-    if (text) {
-      onCopy(text);
-    }
-  };
+  const handleCopy = () => copy(containerRef.current?.textContent);
+  const ButtonIcon = copied ? DocumentDuplicateIcon : CodeBracketIcon;
 
   return (
     <div className={styles.root}>
@@ -106,7 +109,8 @@ const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
             kind="neutral"
             onClick={handleCopy}
           >
-            {buttonContent}
+            <ButtonIcon className="size-4" />
+            {copied ? copiedButtonLabel : copyButtonLabel}
           </BaseButton>
         </div>
       )}

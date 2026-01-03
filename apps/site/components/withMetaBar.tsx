@@ -7,8 +7,7 @@ import { useFormatter, useLocale, useTranslations } from 'next-intl';
 
 import Link from '#site/components/Link';
 import WithAvatarGroup from '#site/components/withAvatarGroup';
-import { useClientContext } from '#site/hooks/react-client';
-import useMediaQuery from '#site/hooks/react-client/useMediaQuery';
+import { useClientContext, useMediaQuery } from '#site/hooks/client';
 import { DEFAULT_DATE_FORMAT } from '#site/next.calendar.constants.mjs';
 import { TRANSLATION_URL } from '#site/next.constants.mjs';
 import { getGitHubBlobUrl } from '#site/util/github';

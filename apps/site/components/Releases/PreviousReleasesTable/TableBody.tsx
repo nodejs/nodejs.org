@@ -8,7 +8,7 @@ import FormattedTime from '#site/components/Common/FormattedTime';
 import LinkWithArrow from '#site/components/Common/LinkWithArrow';
 import Link from '#site/components/Link';
 
-import type { NodeRelease } from '#site/types/releases.js';
+import type { NodeRelease } from '#site/types';
 import type { FC } from 'react';
 
 import ReleaseModal from '../ReleaseModal';

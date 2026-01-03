@@ -5,8 +5,8 @@ import { usePathname } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 
 import Link from '#site/components/Link';
-import { useClientContext } from '#site/hooks';
-import { useSiteNavigation } from '#site/hooks/server';
+import { useClientContext } from '#site/hooks/client';
+import { useSiteNavigation } from '#site/hooks/generic';
 import { useRouter } from '#site/navigation.mjs';
 
 import type { NavigationKeys } from '#site/types';

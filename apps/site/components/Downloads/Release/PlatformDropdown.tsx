@@ -4,7 +4,7 @@ import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
 import { useEffect, useContext, useMemo } from 'react';
 
-import { useClientContext } from '#site/hooks';
+import { useClientContext } from '#site/hooks/client';
 import { ReleaseContext } from '#site/providers/releaseProvider';
 import { PLATFORMS, nextItem, parseCompat } from '#site/util/download';
 import { getUserPlatform } from '#site/util/userAgent';
