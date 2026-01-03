@@ -46,7 +46,7 @@ import { ReleaseProvider } from '#site/providers/releaseProvider';
 /**
  * A full list of React Components that we want to pass through to MDX
  *
- * @satisfies {import('mdx/types').MDXComponents}
+ * @type {import('mdx/types').MDXComponents}
  */
 export default {
   // HTML overrides

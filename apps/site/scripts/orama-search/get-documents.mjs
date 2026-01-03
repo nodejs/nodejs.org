@@ -1,8 +1,10 @@
-import { readFile, glob } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 import { join, basename, posix, win32 } from 'node:path';
 
+import { defaultLocale } from '@node-core/website-i18n/index.mjs';
+
 import generateReleaseData from '#site/next-data/generators/releaseData.mjs';
-import { getRelativePath } from '#site/next.helpers.mjs';
+import { CONTENT_ROOT, getMarkdownFiles } from '#site/next.helpers.mjs';
 
 import { processDocument } from './process-documents.mjs';
 
@@ -47,22 +49,22 @@ export const getAPIDocs = async () => {
 };
 
 /**
- * Collect all local markdown/mdx articles under /pages/en,
+ * Collect all local markdown/mdx articles,
  * excluding blog content.
  */
 export const getArticles = async () => {
-  const relativePath = getRelativePath(import.meta.url);
-  const root = join(relativePath, '..', '..', 'pages', 'en');
-
   // Find all markdown files (excluding blog)
-  const files = await Array.fromAsync(glob('**/*.{md,mdx}', { cwd: root }));
+  const files = await getMarkdownFiles();
 
   // Read content + metadata
   return Promise.all(
     files
       .filter(path => !path.startsWith('blog'))
       .map(async path => ({
-        content: await readFile(join(root, path), 'utf8'),
+        content: await readFile(
+          join(CONTENT_ROOT, defaultLocale.code, path),
+          'utf8'
+        ),
         pathname: path
           // Strip the extension
           .replace(/\.mdx?$/, '')

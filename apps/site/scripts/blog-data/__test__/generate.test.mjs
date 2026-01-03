@@ -3,6 +3,8 @@ import { normalize } from 'node:path';
 import { Readable } from 'node:stream';
 import { describe, it, mock } from 'node:test';
 
+import { CONTENT_ROOT } from '#site/next.helpers.mjs';
+
 let files = [];
 
 mock.module('node:fs', {
@@ -20,8 +22,9 @@ mock.module('node:fs', {
   },
 });
 
-mock.module('../../../next.helpers.mjs', {
+mock.module('#site/next.helpers.mjs', {
   namedExports: {
+    CONTENT_ROOT,
     getMarkdownFiles: () => {
       return Promise.resolve(files.map(file => file.path));
     },

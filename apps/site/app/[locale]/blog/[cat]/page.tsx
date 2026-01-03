@@ -1,16 +1,16 @@
 import { defaultLocale } from '@node-core/website-i18n';
-import { notFound, redirect } from 'next/navigation';
+import { notFound } from 'next/navigation';
 
-import provideReleaseData from '#site/next-data/providers/releaseData';
-import provideReleaseVersions from '#site/next-data/providers/releaseVersions';
 import { ENABLE_STATIC_EXPORT } from '#site/next.constants.mjs';
+import { blogData } from '#site/next.json.mjs';
 import { getMarkdownFile } from '#site/router';
+import { BLOG_DYNAMIC_ROUTES } from '#site/router/constants';
 import { renderPage } from '#site/router/render';
 
 import type { DynamicParams } from '#site/types';
 import type { FC } from 'react';
 
-type PageParams = DynamicParams<{ version: string }>;
+type PageParams = DynamicParams<{ cat: string }>;
 
 // Generates all possible static paths based on the locales and environment configuration
 // - Returns an empty array if static export is disabled (`ENABLE_STATIC_EXPORT` is false)
@@ -23,11 +23,9 @@ export const generateStaticParams = async () => {
     return [];
   }
 
-  const versions = await provideReleaseVersions();
-
-  return versions.map(version => ({
+  return blogData.categories.map(cat => ({
     locale: defaultLocale.code,
-    version,
+    cat,
   }));
 };
 
@@ -36,32 +34,20 @@ export const generateStaticParams = async () => {
 // finally it returns (if the locale and route are valid) the React Component with the relevant context
 // and attached context providers for rendering the current page
 const getPage: FC<PageParams> = async props => {
-  const { version, locale } = await props.params;
-
-  if (version === 'current') {
-    const releaseData = await provideReleaseData();
-
-    const release = releaseData.find(release => release.status === 'Current');
-
-    redirect(`/${locale}/download/archive/${release?.versionWithPrefix}`);
-  }
-
-  const versions = await provideReleaseVersions();
+  const { cat, locale } = await props.params;
 
   // Verifies if the current route is a dynamic route
-  const isDynamicRoute = versions.some(r => r.includes(version));
+  const isDynamicRoute = BLOG_DYNAMIC_ROUTES.some(r => r.includes(cat));
 
-  // If this isn't a valid dynamic route for archive version or there's no markdown
-  //  file for this, then we fail as not found as there's nothing we can do.
   if (isDynamicRoute) {
-    const markdown = (await getMarkdownFile(locale, 'download/archive'))!;
-    markdown.pathname = `/download/archive/${version}`;
+    const file = (await getMarkdownFile(locale, 'blog'))!;
+    file.pathname = `/blog/${cat}`;
 
-    return renderPage(markdown);
+    return renderPage(file);
   }
 
   return notFound();
 };
 
+export * from '../../page';
 export default getPage;
-export * from '#site/router/page';

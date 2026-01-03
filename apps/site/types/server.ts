@@ -1,12 +1,14 @@
 import type { useDetectOS } from '#site/hooks';
-import type { Frontmatter } from '#site/types/frontmatter';
-import type { Heading } from '@vcarl/remark-headings';
+import type { Frontmatter } from '#site/types/markdown';
 import type { ReadTimeResults } from 'reading-time';
 
-export type ClientSharedServerContext = {
+export type ServerContext = {
   frontmatter: Frontmatter;
-  headings: Array<Heading>;
+  headings: Array<{ depth: number; value: string }>;
   pathname: string;
   filename: string;
   readingTime: ReadTimeResults;
-} & ReturnType<typeof useDetectOS>;
+};
+
+export type ClientSharedServerContext = ServerContext &
+  ReturnType<typeof useDetectOS>;

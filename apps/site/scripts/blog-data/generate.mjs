@@ -4,12 +4,13 @@ import { createReadStream } from 'node:fs';
 import { basename, extname, join } from 'node:path';
 import readline from 'node:readline';
 
+import { defaultLocale } from '@node-core/website-i18n/index.mjs';
 import graymatter from 'gray-matter';
 
-import { getMarkdownFiles } from '#site/next.helpers.mjs';
+import { CONTENT_ROOT, getMarkdownFiles } from '#site/next.helpers.mjs';
 
 // gets the current blog path based on local module path
-const blogPath = join(process.cwd(), 'pages/en/blog');
+const blogPath = join(CONTENT_ROOT, defaultLocale.code, 'blog');
 
 /**
  * This method parses the source (raw) Markdown content into Frontmatter
@@ -55,9 +56,10 @@ const getFrontMatter = (filename, source) => {
  */
 const generateBlogData = async () => {
   // We retrieve the full pathnames of all Blog Posts to read each file individually
-  const filenames = await getMarkdownFiles(process.cwd(), 'pages/en/blog', [
-    '**/index.md',
-  ]);
+  const filenames = await getMarkdownFiles({
+    cwd: blogPath,
+    exclude: ['**/index.md'],
+  });
 
   /**
    * This contains the metadata of all available blog categories
