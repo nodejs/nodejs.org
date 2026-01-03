@@ -4,16 +4,14 @@ import { setTimeout } from 'node:timers/promises';
 
 import { render, fireEvent, screen } from '@testing-library/react';
 
-import useCopyToClipboard from '#site/hooks/react-client/useCopyToClipboard';
+import useCopy from '../useCopy';
 
-navigator.clipboard = { writeText: () => {} };
+navigator.clipboard = { writeText: () => Promise.resolve() };
 
 await describe('useCopyToClipboard', async () => {
   await it('should call clipboard API with `test` once', async t => {
-    t.mock.method(navigator.clipboard, 'writeText', () => Promise.resolve());
-
     const TestComponent = ({ textToCopy }) => {
-      const [copied, copyText] = useCopyToClipboard();
+      const [copied, copyText] = useCopy();
 
       return (
         <button onClick={() => copyText(textToCopy)} type="button">
