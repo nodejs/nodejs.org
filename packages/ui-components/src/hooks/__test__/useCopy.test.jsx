@@ -6,10 +6,12 @@ import { render, fireEvent, screen } from '@testing-library/react';
 
 import useCopy from '../useCopy';
 
-navigator.clipboard = { writeText: () => Promise.resolve() };
+navigator.clipboard = { writeText: () => {} };
 
 await describe('useCopyToClipboard', async () => {
   await it('should call clipboard API with `test` once', async t => {
+    t.mock.method(navigator.clipboard, 'writeText', () => Promise.resolve());
+
     const TestComponent = ({ textToCopy }) => {
       const [copied, copyText] = useCopy();
 
