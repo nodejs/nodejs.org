@@ -56,7 +56,9 @@ const WithNavBar: FC = () => {
     <div>
       <WithBanner section="index" />
 
-      <SkipToContentButton label={t('components.common.skipToContent')} />
+      <SkipToContentButton>
+        {t('components.common.skipToContent')}
+      </SkipToContentButton>
 
       <NavBar
         navItems={navigationItems.map(([, { label, link, target }]) => ({

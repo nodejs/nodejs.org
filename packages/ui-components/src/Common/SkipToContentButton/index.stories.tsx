@@ -7,7 +7,7 @@ type Meta = MetaObj<typeof SkipToContentButton>;
 
 export const Default: Story = {
   args: {
-    label: 'Skip to content',
+    children: 'Skip to content',
   },
 };
 

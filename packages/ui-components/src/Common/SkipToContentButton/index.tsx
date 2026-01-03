@@ -1,19 +1,19 @@
-import type { FC, AnchorHTMLAttributes } from 'react';
+import type { FC, AnchorHTMLAttributes, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';
 
-type SkipToContentButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
-  label: string;
-};
+type SkipToContentButtonProps = PropsWithChildren<
+  AnchorHTMLAttributes<HTMLAnchorElement>
+>;
 
 const SkipToContentButton: FC<SkipToContentButtonProps> = ({
-  label,
+  children,
   href = '#main',
   ...props
 }) => {
   return (
     <a href={href} className={styles.skipToContent} {...props}>
-      {label}
+      {children}
     </a>
   );
 };
