@@ -1,4 +1,4 @@
-@reference "../styles/index.css";
+@reference "../../styles/index.css";
 
 .skipToContent {
   @apply sr-only
@@ -13,6 +13,7 @@
     focus:py-2
     focus:text-white
     focus:ring-2
-    focus:ring-green-400
-    focus:outline-none;
+    focus:ring-green-500
+    focus:outline-none
+    dark:focus:ring-green-400;
 }

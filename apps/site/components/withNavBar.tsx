@@ -2,9 +2,10 @@
 
 import LanguageDropdown from '@node-core/ui-components/Common/LanguageDropDown';
 import Skeleton from '@node-core/ui-components/Common/Skeleton';
+import SkipToContentButton from '@node-core/ui-components/Common/SkipToContentButton';
 import NavBar from '@node-core/ui-components/Containers/NavBar';
 // TODO(@AvivKeller): I don't like that we are importing styles from another module
-import navBarStyles from '@node-core/ui-components/Containers/NavBar/index.module.css';
+import styles from '@node-core/ui-components/Containers/NavBar/index.module.css';
 import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
 import { availableLocales } from '@node-core/website-i18n';
 import dynamic from 'next/dynamic';
@@ -21,14 +22,12 @@ import { useRouter, usePathname } from '#site/navigation.mjs';
 import type { SimpleLocaleConfig } from '@node-core/ui-components/types';
 import type { FC } from 'react';
 
-import styles from './withNavBar.module.css';
-
 const ThemeToggle = dynamic(
   () => import('@node-core/ui-components/Common/ThemeToggle'),
   {
     ssr: false,
     loading: () => (
-      <Skeleton className={navBarStyles.themeToggleSkeleton} loading={true} />
+      <Skeleton className={styles.themeToggleSkeleton} loading={true} />
     ),
   }
 );
@@ -57,9 +56,7 @@ const WithNavBar: FC = () => {
     <div>
       <WithBanner section="index" />
 
-      <a href="#main" className={styles.skipToContent}>
-        {t('components.common.skipToContent')}
-      </a>
+      <SkipToContentButton label={t('components.common.skipToContent')} />
 
       <NavBar
         navItems={navigationItems.map(([, { label, link, target }]) => ({
@@ -91,7 +88,7 @@ const WithNavBar: FC = () => {
         <Link
           href="https://github.com/nodejs/node"
           aria-label="Node.js Github"
-          className={navBarStyles.ghIconWrapper}
+          className={styles.ghIconWrapper}
         >
           <GitHubIcon />
         </Link>
