@@ -15,7 +15,9 @@ const ArticlePageLayout: FC<PropsWithChildren> = ({ children }) => (
       <WithSidebar navKeys={[]} />
 
       <div>
-        <main>{children}</main>
+        <main id="main" tabIndex={-1}>
+          {children}
+        </main>
 
         <WithMetaBar />
       </div>

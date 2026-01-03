@@ -2,6 +2,7 @@
 
 import LanguageDropdown from '@node-core/ui-components/Common/LanguageDropDown';
 import Skeleton from '@node-core/ui-components/Common/Skeleton';
+import SkipToContentButton from '@node-core/ui-components/Common/SkipToContentButton';
 import NavBar from '@node-core/ui-components/Containers/NavBar';
 // TODO(@AvivKeller): I don't like that we are importing styles from another module
 import styles from '@node-core/ui-components/Containers/NavBar/index.module.css';
@@ -54,6 +55,10 @@ const WithNavBar: FC = () => {
   return (
     <div>
       <WithBanner section="index" />
+
+      <SkipToContentButton>
+        {t('components.common.skipToContent')}
+      </SkipToContentButton>
 
       <NavBar
         navItems={navigationItems.map(([, { label, link, target }]) => ({

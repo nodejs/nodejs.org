@@ -54,7 +54,7 @@ const BlogLayout: FC = () => {
       <WithNavBar />
 
       <div className={styles.blogLayout}>
-        <main>
+        <main id="main" tabIndex={-1}>
           <BlogHeader category={blogData.category} />
 
           <WithBlogCategories

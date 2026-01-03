@@ -10,7 +10,9 @@ const DownloadArchiveLayout: FC<PropsWithChildren> = ({ children }) => (
     <WithNavBar />
 
     <div className={styles.downloadLayout}>
-      <main>{children}</main>
+      <main id="main" tabIndex={-1}>
+        {children}
+      </main>
     </div>
 
     <WithFooter />
