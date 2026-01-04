@@ -7,7 +7,7 @@ import baseConfig from '../../eslint.config.js';
 
 export default baseConfig.concat([
   {
-    ignores: ['pages/en/blog/**/*.{md,mdx}/**', 'public', 'next-env.d.ts'],
+    ignores: ['app/en/blog/**/page.{md,mdx}/**', 'public', 'next-env.d.ts'],
   },
 
   react.configs.flat['jsx-runtime'],
@@ -57,7 +57,7 @@ export default baseConfig.concat([
       ...mdx.flat.rules,
       'no-irregular-whitespace': 'off',
       '@next/next/no-img-element': 'off',
-      '@next/next/no-html-link-for-pages': ['error', 'apps/site/pages/'],
+      '@next/next/no-html-link-for-pages': ['error', 'apps/site/app'],
     },
   },
 ]);

@@ -10,4 +10,4 @@ export const createGitHubSlugger = () => {
 };
 
 export const getGitHubBlobUrl = (filename: string) =>
-  `https://github.com/nodejs/nodejs.org/blob/main/apps/site/pages/en/${filename}`;
+  `https://github.com/nodejs/nodejs.org/blob/main/apps/site/app/en/${filename}`;

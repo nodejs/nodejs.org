@@ -1,45 +1,20 @@
 'use strict';
 
-import rehypeShikiji from '@node-core/rehype-shiki/plugin';
-import remarkHeadings from '@vcarl/remark-headings';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeSlug from 'rehype-slug';
-import remarkGfm from 'remark-gfm';
-import readingTime from 'remark-reading-time';
+import { createRequire } from 'node:module';
 
-import remarkTableTitles from '../util/table';
-
-// TODO(@avivkeller): When available, use `OPEN_NEXT_CLOUDFLARE` environment
-// variable for detection instead of current method, which will enable better
-// tree-shaking.
-// Reference: https://github.com/nodejs/nodejs.org/pull/7896#issuecomment-3009480615
-const OPEN_NEXT_CLOUDFLARE = 'Cloudflare' in global;
-
-// Shiki is created out here to avoid an async rehype plugin
-const singletonShiki = await rehypeShikiji({
-  // We use the faster WASM engine on the server instead of the web-optimized version.
-  //
-  // Currently we fall back to the JavaScript RegEx engine
-  // on Cloudflare workers because `shiki/wasm` requires loading via
-  // `WebAssembly.instantiate` with custom imports, which Cloudflare doesn't support
-  // for security reasons.
-  wasm: !OPEN_NEXT_CLOUDFLARE,
-
-  // TODO(@avivkeller): Find a way to enable Twoslash w/ a VFS on Cloudflare
-  twoslash: !OPEN_NEXT_CLOUDFLARE,
-});
+const require = createRequire(import.meta.url);
 
 /**
  * Provides all our Rehype Plugins that are used within MDX
  */
 export const rehypePlugins = [
   // Generates `id` attributes for headings (H1, ...)
-  rehypeSlug,
+  'rehype-slug',
   // Automatically add anchor links to headings (H1, ...)
-  [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+  ['rehype-autolink-headings', { behavior: 'wrap' }],
   // Transforms sequential code elements into code tabs and
   // adds our syntax highlighter (Shikiji) to Codeboxes
-  () => singletonShiki,
+  require.resolve('./plugins/shiki.mjs'),
 ];
 
 /**
@@ -47,10 +22,17 @@ export const rehypePlugins = [
  */
 export const remarkPlugins = [
   // Support GFM syntax to be used within Markdown
-  remarkGfm,
+  'remark-gfm',
+  // Frontmatter
+  'remark-frontmatter',
+  'remark-mdx-frontmatter',
   // Generates metadata regarding headings
-  remarkHeadings,
+  '@vcarl/remark-headings',
   // Calculates the reading time of the content
-  readingTime,
-  remarkTableTitles,
+  'remark-reading-time',
+  'remark-reading-time/mdx',
+  // Tables
+  require.resolve('./plugins/table.mjs'),
+  // MDX Layout Injector
+  require.resolve('./plugins/layout.mjs'),
 ];

@@ -24,15 +24,6 @@
     "enabled": true,
     "head_sampling_rate": 1,
   },
-  "build": {
-    "command": "wrangler-build-time-fs-assets-polyfilling --assets pages --assets snippets --assets-output-dir .open-next/assets",
-  },
-  "alias": {
-    "node:fs": "./.wrangler/fs-assets-polyfilling/polyfills/node/fs.ts",
-    "node:fs/promises": "./.wrangler/fs-assets-polyfilling/polyfills/node/fs/promises.ts",
-    "fs": "./.wrangler/fs-assets-polyfilling/polyfills/node/fs.ts",
-    "fs/promises": "./.wrangler/fs-assets-polyfilling/polyfills/node/fs/promises.ts",
-  },
   "r2_buckets": [
     {
       "binding": "NEXT_INC_CACHE_R2_BUCKET",

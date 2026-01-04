@@ -23,7 +23,7 @@ describe('gitHubUtils', () => {
   it('getGitHubBlobUrl returns the correct URL', () => {
     const result = getGitHubBlobUrl('learn/getting-started/introduction.md');
     const expected =
-      'https://github.com/nodejs/nodejs.org/blob/main/apps/site/pages/en/learn/getting-started/introduction.md';
+      'https://github.com/nodejs/nodejs.org/blob/main/apps/site/app/en/learn/getting-started/introduction.md';
     assert.equal(result, expected);
   });
 
@@ -40,7 +40,7 @@ describe('gitHubUtils', () => {
     it('should return the correct blob URL', () => {
       assert.ok(
         getGitHubBlobUrl('testfile.md').includes(
-          'blob/main/apps/site/pages/en/testfile.md'
+          'blob/main/apps/site/app/en/testfile.md'
         )
       );
     });

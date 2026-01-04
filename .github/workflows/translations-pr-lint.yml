@@ -9,10 +9,10 @@ on:
     branches:
       - main
     paths:
-      - 'apps/site/pages/**/*.md'
-      - 'apps/site/pages/**/*.mdx'
-      - '!apps/site/pages/en/**/*.md'
-      - '!apps/site/pages/en/**/*.mdx'
+      - 'apps/site/app/**/*.md'
+      - 'apps/site/app/**/*.mdx'
+      - '!apps/site/app/en/**/*.md'
+      - '!apps/site/app/en/**/*.mdx'
       - 'packages/i18n/src/locales/*.json'
       - '!packages/i18n/src/locales/en.json'
       - 'apps/site/snippets/**/*.bash'

@@ -3,7 +3,7 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import classNames from 'classnames';
-import { useEffect, useId, useMemo, useState } from 'react';
+import { useId, useMemo, useState } from 'react';
 
 import Skeleton from '#ui/Common/Skeleton';
 
@@ -64,8 +64,6 @@ const Select = <T extends string>({
   const id = useId();
   const [value, setValue] = useState(defaultValue);
 
-  useEffect(() => setValue(defaultValue), [defaultValue]);
-
   const mappedValues = useMemo(() => mapValues(values), [values]) as Array<
     SelectGroup<T>
   >;
@@ -106,10 +104,7 @@ const Select = <T extends string>({
         ))}
       </SelectPrimitive.Group>
     ));
-    // We explicitly want to recalculate these values only when the values themselves changed
-    // This is to prevent re-rendering and re-calcukating the values on every render
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [JSON.stringify(values)]);
+  }, [mappedValues]);
 
   // Both change the internal state and emit the change event
   const handleChange = (value: T) => {

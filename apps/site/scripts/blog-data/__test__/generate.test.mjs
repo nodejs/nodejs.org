@@ -20,7 +20,7 @@ mock.module('node:fs', {
   },
 });
 
-mock.module('../../../next.helpers.mjs', {
+mock.module('#site/utils/router.mjs', {
   namedExports: {
     getMarkdownFiles: () => {
       return Promise.resolve(files.map(file => file.path));

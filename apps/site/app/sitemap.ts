@@ -3,10 +3,11 @@ import { availableLocaleCodes, defaultLocale } from '@node-core/website-i18n';
 import { BASE_PATH } from '#site/next.constants.mjs';
 import { BASE_URL } from '#site/next.constants.mjs';
 import { EXTERNAL_LINKS_SITEMAP } from '#site/next.constants.mjs';
-import { BLOG_DYNAMIC_ROUTES } from '#site/next.dynamic.constants.mjs';
-import { dynamicRouter } from '#site/next.dynamic.mjs';
+import { getBlogSitemapData } from '#site/util/blog';
 
 import type { MetadataRoute } from 'next';
+
+import { getAllRoutes } from '#site/util/router';
 
 // This is the combination of the Application Base URL and Base PATH
 const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
@@ -21,20 +22,19 @@ const getAlternatePath = (r: string, locales: Array<string>) =>
 
 // This allows us to generate a `sitemap.xml` file dynamically based on the needs of the Node.js Website
 const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
-  // Gets a list of all statically available routes
-  const routes = await dynamicRouter.getAllRoutes();
+  const routes = await getAllRoutes();
 
   const currentDate = new Date().toISOString();
 
   const getSitemapEntry = (r: string, locales: Array<string> = []) => ({
-    url: `${baseUrlAndPath}/${defaultLocale.code}/${r}`,
+    url: `${baseUrlAndPath}/${defaultLocale.code}${r}`,
     lastModified: currentDate,
     changeFrequency: 'always' as const,
     alternates: { languages: getAlternatePath(r, locales) },
   });
 
   const staticPaths = routes.map(r => getSitemapEntry(r, nonDefaultLocales));
-  const blogPaths = BLOG_DYNAMIC_ROUTES.map(r => getSitemapEntry(`blog/${r}`));
+  const blogPaths = getBlogSitemapData().map(r => getSitemapEntry(`blog/${r}`));
   const externalPaths = EXTERNAL_LINKS_SITEMAP.map(r => getSitemapEntry(r));
 
   return [...staticPaths, ...blogPaths, ...externalPaths];

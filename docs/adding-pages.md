@@ -41,7 +41,7 @@ This guide explains how to create new pages and content for the Node.js website.
 
 ### 1. Create the Page Content
 
-Create a new markdown file in `apps/site/pages/en/` with the appropriate subdirectory structure.
+Create a new markdown file in `apps/site/app/en/` with the appropriate subdirectory structure.
 
 ```markdown
 ---
@@ -82,12 +82,12 @@ The Learn section has special requirements and structure.
 ### Learn Page Structure
 
 ```
-apps/site/pages/en/learn/
+apps/site/app/en/learn/
 ├── category-name/
-│   ├── article-name.md
-│   └── another-article.md
+│   ├── article-name/page.md
+│   └── another-article/page.md
 └── another-category/
-    └── article.md
+    └── article/page.mdx
 ```
 
 ### Update Learn Navigation
@@ -184,7 +184,7 @@ import vm from 'node:vm';
 ### Content Structure
 
 ```
-apps/site/pages/
+apps/site/app/
 ├── en/                    # English content (source)
 │   ├── learn/            # Learn section
 │   ├── blog/             # Blog posts
@@ -204,8 +204,8 @@ apps/site/pages/
 
 ### Translation Process
 
-1. Create the English version first in `apps/site/pages/en/`
-2. Translators will create localized versions in `apps/site/pages/{locale}/`
+1. Create the English version first in `apps/site/app/en/`
+2. Translators will create localized versions in `apps/site/app/{locale}/`
 3. Non-translated pages automatically fall back to English content with localized navigation
 
 ### Translation Guidelines

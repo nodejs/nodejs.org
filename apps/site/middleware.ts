@@ -10,12 +10,8 @@ export default createMiddleware({
 
   // Always use a Locale as a prefix for routing
   localePrefix: 'always',
-
-  // We already have our own way of providing alternate links
-  // generated on `next.dynamic.mjs`
-  alternateLinks: false,
 });
 
 // We only want the middleware to run on the `/` route
 // to redirect users to their preferred locale
-export const config = { matcher: ['/'] };
+export const config = { matcher: '/((?!api|trpc|_next|_vercel|.*\\..*).*)' };

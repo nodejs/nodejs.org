@@ -1,6 +1,9 @@
 'use strict';
+
+import createMDX from '@next/mdx';
 import createNextIntlPlugin from 'next-intl/plugin';
 
+import { rehypePlugins, remarkPlugins } from './mdx/plugins.mjs';
 import { OPEN_NEXT_CLOUDFLARE } from './next.constants.cloudflare.mjs';
 import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 import { getImagesConfig } from './next.image.config.mjs';
@@ -20,6 +23,8 @@ const getDeploymentId = async () => {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // We need to include _all_ our page extensions here
+  pageExtensions: ['md', 'mdx', 'ts', 'tsx'],
   // Full Support of React 18 SSR and Streaming
   reactCompiler: true,
   // We don't want to redirect with trailing slashes
@@ -85,4 +90,12 @@ const nextConfig = {
 };
 
 const withNextIntl = createNextIntlPlugin('./i18n.tsx');
-export default withNextIntl(nextConfig);
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins,
+    rehypePlugins,
+  },
+});
+
+export default withNextIntl(withMDX(nextConfig));
