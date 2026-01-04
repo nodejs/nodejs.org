@@ -54,11 +54,11 @@ const WithNavBar: FC = () => {
 
   return (
     <div>
-      <WithBanner section="index" />
-
       <SkipToContentButton>
         {t('components.common.skipToContent')}
       </SkipToContentButton>
+
+      <WithBanner section="index" />
 
       <NavBar
         navItems={navigationItems.map(([, { label, link, target }]) => ({
