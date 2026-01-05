@@ -2,7 +2,7 @@
 
 import { createContext } from 'react';
 
-import { useDetectOS } from '#site/hooks';
+import { useDetectOS } from '#site/hooks/client';
 import { assignClientContext } from '#site/util/context';
 
 import type { ClientSharedServerContext } from '#site/types';

@@ -2,10 +2,10 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import classNames from 'classnames';
 import { useId, useMemo } from 'react';
 
-import { isStringArray, isValuesArray } from '#ui/util/array';
-
 import type { SelectGroup, SelectProps } from '#ui/Common/Select';
 import type { LinkLike } from '#ui/types';
+
+import { mapValues } from '../utils';
 
 import styles from '../index.module.css';
 
@@ -29,23 +29,9 @@ const StatelessSelect = <T extends string>({
 }: StatelessSelectProps<T>) => {
   const id = useId();
 
-  const mappedValues = useMemo(() => {
-    let mappedValues = values;
-
-    if (isStringArray(mappedValues)) {
-      mappedValues = mappedValues.map(value => ({
-        label: value,
-        value,
-      }));
-    }
-
-    if (isValuesArray(mappedValues)) {
-      return [{ items: mappedValues }];
-    }
-
-    return mappedValues as Array<SelectGroup<T>>;
-  }, [values]) as Array<SelectGroup<T>>;
-
+  const mappedValues = useMemo(() => mapValues(values), [values]) as Array<
+    SelectGroup<T>
+  >;
   // Find the current/default item to display in summary
   const currentItem = useMemo(
     () =>

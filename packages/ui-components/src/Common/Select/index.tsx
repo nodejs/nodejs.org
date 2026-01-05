@@ -6,10 +6,11 @@ import classNames from 'classnames';
 import { useEffect, useId, useMemo, useState } from 'react';
 
 import Skeleton from '#ui/Common/Skeleton';
-import { isStringArray, isValuesArray } from '#ui/util/array';
 
 import type { FormattedMessage, LinkLike } from '#ui/types';
 import type { ReactElement, ReactNode } from 'react';
+
+import { mapValues } from './utils';
 
 import styles from './index.module.css';
 
@@ -65,22 +66,9 @@ const Select = <T extends string>({
 
   useEffect(() => setValue(defaultValue), [defaultValue]);
 
-  const mappedValues = useMemo(() => {
-    let mappedValues = values;
-
-    if (isStringArray(mappedValues)) {
-      mappedValues = mappedValues.map(value => ({
-        label: value,
-        value,
-      }));
-    }
-
-    if (isValuesArray(mappedValues)) {
-      return [{ items: mappedValues }];
-    }
-
-    return mappedValues;
-  }, [values]) as Array<SelectGroup<T>>;
+  const mappedValues = useMemo(() => mapValues(values), [values]) as Array<
+    SelectGroup<T>
+  >;
 
   // We render the actual item slotted to fix/prevent the issue
   // of the tirgger flashing on the initial render

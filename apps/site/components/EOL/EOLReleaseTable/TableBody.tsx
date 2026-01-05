@@ -8,8 +8,7 @@ import LinkWithArrow from '#site/components/Common/LinkWithArrow';
 import EOLModal from '#site/components/EOL/EOLModal';
 import VulnerabilityChips from '#site/components/EOL/VulnerabilityChips';
 
-import type { NodeRelease } from '#site/types/releases.js';
-import type { GroupedVulnerabilities } from '#site/types/vulnerabilities.js';
+import type { GroupedVulnerabilities, NodeRelease } from '#site/types';
 import type { FC } from 'react';
 
 type EOLReleaseTableBodyProps = {
