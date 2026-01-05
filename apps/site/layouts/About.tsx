@@ -16,7 +16,9 @@ const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
       <WithSidebar navKeys={['about', 'getInvolved']} />
 
       <div>
-        <main>{children}</main>
+        <main id="main" tabIndex={-1}>
+          {children}
+        </main>
 
         <WithMetaBar />
       </div>

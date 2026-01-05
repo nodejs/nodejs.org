@@ -27,7 +27,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
 
       <div className={styles.contentLayout}>
         <div className={styles.postLayout}>
-          <main>
+          <main id="main" tabIndex={-1}>
             {type === 'vulnerability' && <EOLAlert />}
 
             <h1>{frontmatter.title}</h1>

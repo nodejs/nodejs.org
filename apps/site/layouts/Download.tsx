@@ -18,7 +18,7 @@ const DownloadLayout: FC<PropsWithChildren> = async ({ children }) => {
       <WithNavBar />
 
       <div className={styles.downloadLayout}>
-        <main>
+        <main id="main" tabIndex={-1}>
           <h1>{frontmatter.title}</h1>
 
           <WithDownloadSection releases={releases}>
