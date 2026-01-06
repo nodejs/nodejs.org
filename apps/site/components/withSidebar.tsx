@@ -36,7 +36,7 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
   useNavigationState('sidebar', sidebarRef);
 
   const mappedSidebarItems =
-    // If there's only a single navigation key, use it's sub-items
+    // If there's only a single navigation key, use its sub-items
     // as our navigation.
     (navKeys.length === 1 ? sideNavigation[0][1].items : sideNavigation).map(
       ([, { label, items }]) => ({

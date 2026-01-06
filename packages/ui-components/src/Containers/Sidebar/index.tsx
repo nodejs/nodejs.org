@@ -61,4 +61,6 @@ const SideBar = forwardRef<HTMLElement, PropsWithChildren<SidebarProps>>(
   }
 );
 
+SideBar.displayName = 'SideBar';
+
 export default SideBar;
