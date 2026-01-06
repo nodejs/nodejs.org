@@ -28,6 +28,15 @@ This codemod aims to help you reduce external dependencies by transforming chalk
 - Template literal syntax (chalk...``)
 - Advanced modifiers with limited terminal support (overline, blink, etc.)
 
+### Prerequisites:
+
+#### Node.js Version Requirements
+
+- Node.js v20.12.0 or later (for util.styleText)
+- `util.styleText` became stable in Node.js v22.13.0 (and v23.5.0)
+
+### Usage:
+
 The source code for this codemod can be found in the [chalk-to-util-styletext directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/chalk-to-util-styletext).
 
 You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/chalk-to-util-styletext).
