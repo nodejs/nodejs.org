@@ -6,14 +6,14 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useRef } from 'react';
 
 import Link from '#site/components/Link';
+import { useClientContext } from '#site/hooks/client';
+import { useNavigationState } from '#site/hooks/client';
+import { useSiteNavigation } from '#site/hooks/generic';
 import { useRouter } from '#site/navigation.mjs';
 
 import type { NavigationKeys } from '#site/types';
 import type { RichTranslationValues } from 'next-intl';
 import type { FC } from 'react';
-
-import { useClientContext, useNavigationState } from '../hooks/client';
-import { useSiteNavigation } from '../hooks/generic';
 
 type WithSidebarProps = {
   navKeys: Array<NavigationKeys>;
