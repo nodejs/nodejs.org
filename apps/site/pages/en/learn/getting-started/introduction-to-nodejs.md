@@ -22,7 +22,7 @@ In Node.js the new ECMAScript standards can be used without problems, as you don
 
 ## An Example Node.js Application
 
-The most common example Hello World of Node.js is a web server:
+The most common example Hello World of Node.js is a web server. You can choose between two versions of this example: one using the CommonJS (CJS) module system, using the filename extension `.js` or `.cjs`, and another using the ES Modules (ESM) system, using the filename extension `.mjs`. For more information, see [Understanding MJS and CJS](https://rgbstudios.org/blog/modules-explained-mjs-cjs).
 
 ```cjs
 const { createServer } = require('node:http');
