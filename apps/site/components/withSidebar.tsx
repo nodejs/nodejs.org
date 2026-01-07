@@ -1,15 +1,13 @@
 'use client';
 
 import Sidebar from '@node-core/ui-components/Containers/Sidebar';
-import { usePathname } from 'next/navigation';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { useRef } from 'react';
 
 import Link from '#site/components/Link';
-import { useClientContext } from '#site/hooks/client';
-import { useNavigationState } from '#site/hooks/client';
+import { useClientContext, useNavigationState } from '#site/hooks/client';
 import { useSiteNavigation } from '#site/hooks/generic';
-import { useRouter } from '#site/navigation.mjs';
+import { useRouter, usePathname } from '#site/navigation.mjs';
 
 import type { NavigationKeys } from '#site/types';
 import type { RichTranslationValues } from 'next-intl';
@@ -23,14 +21,11 @@ type WithSidebarProps = {
 const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
   const { getSideNavigation } = useSiteNavigation();
   const pathname = usePathname()!;
-  const locale = useLocale();
   const t = useTranslations();
   const { push } = useRouter();
   const { frontmatter } = useClientContext();
   const sidebarRef = useRef<HTMLElement>(null);
   const sideNavigation = getSideNavigation(navKeys, context);
-
-  const localePathname = pathname.replace(`/${locale}`, '');
 
   // Preserve sidebar scroll position across navigations
   useNavigationState('sidebar', sidebarRef);
@@ -49,7 +44,7 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
     <Sidebar
       ref={sidebarRef}
       groups={mappedSidebarItems}
-      pathname={localePathname}
+      pathname={pathname}
       title={t('components.common.sidebar.title')}
       placeholder={frontmatter?.title}
       onSelect={push}
