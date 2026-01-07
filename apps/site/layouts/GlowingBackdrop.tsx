@@ -22,6 +22,8 @@ const GlowingBackdropLayout: FC<
       <GlowingBackdrop />
 
       <main
+        id="main"
+        tabIndex={-1}
         className={classNames({
           [styles.homeLayout]: kind === 'home',
         })}

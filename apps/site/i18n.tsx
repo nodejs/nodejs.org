@@ -1,8 +1,6 @@
-import { importLocale } from '@node-core/website-i18n';
+import { availableLocaleCodes, defaultLocale } from '@node-core/website-i18n';
 import defaultMessages from '@node-core/website-i18n/locales/en.json';
 import { getRequestConfig } from 'next-intl/server';
-
-import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
 
 import { deepMerge } from './util/objects';
 
@@ -15,7 +13,9 @@ const loadLocaleDictionary = async (locale: string) => {
   if (availableLocaleCodes.includes(locale)) {
     // Other languages don't really require HMR as they
     // will never be development languages so we can load them dynamically
-    const messages = await importLocale(locale);
+    const { default: messages } = await import(
+      `@node-core/website-i18n/locales/${locale}.json`
+    );
 
     // Use default messages as fallback
     return deepMerge(defaultMessages, messages);

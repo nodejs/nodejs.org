@@ -1,10 +1,8 @@
-import type { Partners } from '#site/types';
-
 // Fisher-Yates shuffle algorithm with a seed for deterministic results
-export const shuffle = async (
-  array: Array<Partners>,
+export const shuffle = async <T>(
+  array: Array<T>,
   seed: number
-): Promise<Array<Partners>> => {
+): Promise<Array<T>> => {
   const shuffled = [...array];
   const encoder = new TextEncoder();
   const buffer = encoder.encode(String(seed));

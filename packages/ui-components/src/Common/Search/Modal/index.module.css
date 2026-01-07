@@ -118,3 +118,18 @@
     lg:border
     dark:border-neutral-900;
 }
+
+.modalCloseButton {
+  @apply absolute
+    top-2
+    right-4
+    z-10
+    cursor-pointer
+    bg-white
+    px-2
+    text-2xl
+    text-neutral-950
+    md:hidden
+    dark:bg-black
+    dark:text-neutral-200;
+}

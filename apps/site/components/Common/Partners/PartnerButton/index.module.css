@@ -1,0 +1,30 @@
+@reference "../../../../styles/index.css";
+
+.large {
+  @apply flex
+    h-28
+    max-h-28
+    w-auto
+    min-w-12
+    items-center
+    justify-center
+    rounded-lg
+    p-6
+    sm:p-10;
+
+  svg {
+    @apply !h-12
+      !w-auto;
+  }
+}
+
+.small {
+  @apply h-9
+    w-auto
+    min-w-9;
+
+  svg {
+    @apply h-4
+      w-auto;
+  }
+}

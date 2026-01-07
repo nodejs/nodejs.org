@@ -1,7 +1,7 @@
+import { defaultLocale } from '@node-core/website-i18n';
 import { NextResponse } from 'next/server';
 
 import { siteConfig } from '#site/next.json.mjs';
-import { defaultLocale } from '#site/next.locales.mjs';
 import { getFeeds } from '#site/util/feeds';
 
 type DynamicStaticPaths = { locale: string; feed: string };

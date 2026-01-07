@@ -82,7 +82,7 @@ function reportDiff({ assets: oldAssets }, { assets: newAssets }) {
   const totalDelta = newTotal - oldTotal;
 
   // Summary table
-  let report = `# 📦 Build Size Comparison\n\n## Summary\n\n| Metric | Value |\n|--------|-------|\n`;
+  let report = `## 📦 Build Size Comparison\n\n### Summary\n\n| Metric | Value |\n|--------|-------|\n`;
   report += `| Old Total Size | ${formatBytes(oldTotal)} |\n`;
   report += `| New Total Size | ${formatBytes(newTotal)} |\n`;
   report += `| Delta | ${formatBytes(totalDelta)} (${formatPercent(

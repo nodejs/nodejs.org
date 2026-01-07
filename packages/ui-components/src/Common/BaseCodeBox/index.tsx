@@ -1,13 +1,17 @@
 'use client';
 
-import { DocumentDuplicateIcon } from '@heroicons/react/24/outline';
+import {
+  DocumentDuplicateIcon,
+  CodeBracketIcon,
+} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import { Fragment, isValidElement, useRef } from 'react';
 
 import BaseButton from '#ui/Common/BaseButton';
+import useCopy from '#ui/hooks/useCopy';
 
 import type { LinkLike } from '#ui/types';
-import type { FC, PropsWithChildren, ReactElement } from 'react';
+import type { FC, PropsWithChildren, ReactElement, ReactNode } from 'react';
 
 import styles from './index.module.css';
 
@@ -67,29 +71,25 @@ const transformCode = <T extends ReactElement<PropsWithChildren>>(
 type CodeBoxProps = {
   language: string;
   className?: string;
-  onCopy: (text: string) => void;
   as?: LinkLike;
-  buttonText: string;
-  showCopyButton?: boolean;
+  copyButtonLabel: ReactNode;
+  copiedButtonLabel: ReactNode;
 };
 
 const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   children,
   language,
   className,
-  onCopy,
-  buttonText,
+  copyButtonLabel,
+  copiedButtonLabel,
   as = 'a',
-  showCopyButton = true,
 }: PropsWithChildren<CodeBoxProps>) => {
+  const [copied, copy] = useCopy();
+
   const containerRef = useRef<HTMLPreElement>(null);
 
-  const handleCopy = (): void => {
-    const text = containerRef.current?.textContent;
-    if (text) {
-      onCopy(text);
-    }
-  };
+  const handleCopy = () => copy(containerRef.current?.textContent);
+  const ButtonIcon = copied ? DocumentDuplicateIcon : CodeBracketIcon;
 
   return (
     <div className={styles.root}>
@@ -103,17 +103,15 @@ const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
       {language && (
         <div className={styles.footer}>
           <span className={styles.language}>{language}</span>
-          {showCopyButton && (
-            <BaseButton
-              as={as}
-              className={styles.action}
-              kind="neutral"
-              onClick={handleCopy}
-            >
-              <DocumentDuplicateIcon className={styles.icon} />
-              {buttonText}
-            </BaseButton>
-          )}
+          <BaseButton
+            as={as}
+            className={styles.action}
+            kind="neutral"
+            onClick={handleCopy}
+          >
+            <ButtonIcon className="size-4" />
+            {copied ? copiedButtonLabel : copyButtonLabel}
+          </BaseButton>
         </div>
       )}
     </div>

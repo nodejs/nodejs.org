@@ -2,6 +2,8 @@
 
 .root {
   @apply w-full
+    max-w-full
+    overflow-x-hidden
     rounded-sm
     border
     border-neutral-900
@@ -9,6 +11,7 @@
 
   .content {
     @apply m-0
+      min-w-0
       p-4;
 
     & > code {
@@ -16,6 +19,8 @@
         font-regular
         scrollbar-thin
         grid
+        max-w-full
+        [grid-template-columns:minmax(0,1fr)]
         overflow-x-auto
         bg-transparent
         p-0
@@ -27,7 +32,8 @@
       & > [class='line'] {
         @apply relative
           min-w-0
-          pl-8;
+          pl-8
+          [overflow-wrap:break-word];
 
         &:not(:empty:last-child)::before {
           @apply inline-block
@@ -71,8 +77,4 @@
         font-medium;
     }
   }
-}
-
-.icon {
-  @apply size-4;
 }

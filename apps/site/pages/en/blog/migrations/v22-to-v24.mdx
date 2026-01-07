@@ -69,126 +69,6 @@ Node.js' `configure` script will warn if you attempt to build Node.js with a com
 
 Some breaking changes or End of Life (EOL) deprecations in Node.js 23 and 24 have associated codemods to help you update your codebase. Below is a list of the available codemods for this migration:
 
-### `fs-access-mode-constants`
-
-The `fs` module introduced a runtime deprecation for `F_OK`, `R_OK`, `W_OK`, and `X_OK` getters exposed directly on `node:fs`. Get them from `fs.constants` or `fs.promises.constants` instead.
-
-This codemod handles [DEP0176](https://nodejs.org/api/deprecations.html#DEP0176).
-
-The source code for this codemod can be found in the [fs-access-mode-constants directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/fs-access-mode-constants).
-
-You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/fs-access-mode-constants).
-
-```bash
-npx codemod run @nodejs/fs-access-mode-constants
-```
-
-#### Example:
-
-```js displayName="Before"
-const fs = require('node:fs');
-
-fs.access('/path/to/file', fs.F_OK, callback);
-fs.access('/path/to/file', fs.R_OK | fs.W_OK, callback);
-```
-
-```js displayName="After"
-const fs = require('node:fs');
-
-fs.access('/path/to/file', fs.constants.F_OK, callback);
-fs.access('/path/to/file', fs.constants.R_OK | fs.constants.W_OK, callback);
-```
-
-### `util-log-to-console-log`
-
-The `util.log` function was deprecated in favor of using `console.log` directly, because it's an unmaintained legacy API that was exposed to user land by accident.
-
-So this codemod handle [DEP0059](https://nodejs.org/api/deprecations.html#DEP0059).
-
-```bash
-npx codemod run @nodejs/util-log-to-console-log
-```
-
-#### Example:
-
-```js displayName="Before"
-const util = require('node:util');
-
-util.log('Hello world');
-```
-
-```js displayName="After"
-console.log(new Date().toLocaleString(), 'Hello world');
-```
-
-### `zlib-bytesRead-to-bytesWritten`
-
-The [`zlib.bytesRead`](https://nodejs.org/api/zlib.html#zlib_bytesread) property was deprecated ([DEP0108](https://nodejs.org/api/deprecations.html#DEP0108)) in favor of [`zlib.bytesWritten`](https://nodejs.org/api/zlib.html#zlib_byteswritten). This codemod replaces `zlib.bytesRead` with `zlib.bytesWritten` for consistent stream property naming. It handles both CommonJS and ESM imports.
-
-The source code for this codemod can be found in the [zlib-bytesRead-to-bytesWritten directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/zlib-bytesread-to-byteswritten).
-
-You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/zlib-bytesread-to-byteswritten).
-
-```bash
-npx codemod run @nodejs/zlib-bytesread-to-byteswritten
-```
-
-#### Example:
-
-```js displayName="Before"
-const zlib = require('node:zlib');
-const gzip = zlib.createGzip();
-gzip.on('end', () => {
-  console.log('Bytes processed:', gzip.bytesRead);
-});
-```
-
-```js displayName="After"
-const zlib = require('node:zlib');
-const gzip = zlib.createGzip();
-gzip.on('end', () => {
-  console.log('Bytes processed:', gzip.bytesWritten);
-});
-```
-
-### `fs-truncate-to-ftruncate`
-
-The [`fs.truncate`](https://nodejs.org/api/fs.html#fs_fs_truncate_path_len_callback) function was deprecated ([DEP0081](https://nodejs.org/api/deprecations.html#DEP0081)) when used with a file descriptor. Use [`fs.ftruncate`](https://nodejs.org/api/fs.html#fs_fs_ftruncate_fd_len_callback) instead.
-
-The source code for this codemod can be found in the [fs-truncate-fd-deprecation directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/fs-truncate-fd-deprecation).
-
-You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/fs-truncate-fd-deprecation).
-
-```bash
-npx codemod run @nodejs/fs-truncate-fd-deprecation
-```
-
-#### Example:
-
-```js displayName="Before"
-const { truncate, open, close } = require('node:fs');
-
-open('file.txt', 'w', (err, fd) => {
-  if (err) throw err;
-  truncate(fd, 10, err => {
-    if (err) throw err;
-    close(fd, () => {});
-  });
-});
-```
-
-```js displayName="After"
-const { ftruncate, open, close } = require('node:fs');
-
-open('file.txt', 'w', (err, fd) => {
-  if (err) throw err;
-  ftruncate(fd, 10, err => {
-    if (err) throw err;
-    close(fd, () => {});
-  });
-});
-```
-
 ### `crypto-rsa-pss-update`
 
 In [DEP0154](https://nodejs.org/docs/latest/api/deprecations.html#DEP0154), the `generateKeyPair` and `generateKeyPairSync` methods in the `crypto` module deprecated the `hash`, `mgf1Hash`, and `saltLength` options for the `'rsa-pss'` key type in favor of `hashAlgorithm`, `mgf1HashAlgorithm`, and `saltLength` respectively.
@@ -201,7 +81,7 @@ You can find this codemod in the [Codemod Registry](https://app.codemod.com/regi
 npx codemod run @nodejs/crypto-rsa-pss-update
 ```
 
-#### Example:
+#### Example
 
 ```js displayName="Before"
 const crypto = require('node:crypto');
@@ -236,3 +116,148 @@ crypto.generateKeyPair(
   }
 );
 ```
+
+### `dirent-path-to-parent-path`
+
+This codemod transforms the usage of `dirent.path` to use `dirent.parentPath`.
+
+See [DEP0178](https://nodejs.org/api/deprecations.html#DEP0178).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/dirent-path-to-parent-path).
+
+```bash
+npx codemod run @nodejs/dirent-path-to-parent-path
+```
+
+#### Examples
+
+##### readdir
+
+```js displayName="Before"
+const { readdir } = require('node:fs/promises');
+const entries = await readdir('/some/path', { withFileTypes: true });
+for (const dirent of entries) {
+  console.log(dirent.path);
+}
+```
+
+```js displayName="After"
+const { readdir } = require('node:fs/promises');
+const entries = await readdir('/some/path', { withFileTypes: true });
+for (const dirent of entries) {
+  console.log(dirent.parentPath);
+}
+```
+
+##### opendir
+
+```js displayName="Before"
+import { opendir } from 'node:fs/promises';
+const dir = await opendir('./');
+for await (const dirent of dir) {
+  console.log(`Found ${dirent.name} in ${dirent.path}`);
+}
+```
+
+```js displayName="After"
+import { opendir } from 'node:fs/promises';
+const dir = await opendir('./');
+for await (const dirent of dir) {
+  console.log(`Found ${dirent.name} in ${dirent.parentPath}`);
+}
+```
+
+### `fs-access-mode-constants`
+
+The `fs` module introduced a runtime deprecation for `F_OK`, `R_OK`, `W_OK`, and `X_OK` getters exposed directly on `node:fs`. Get them from `fs.constants` or `fs.promises.constants` instead.
+
+This codemod handles [DEP0176](https://nodejs.org/api/deprecations.html#DEP0176).
+
+The source code for this codemod can be found in the [fs-access-mode-constants directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/fs-access-mode-constants).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/fs-access-mode-constants).
+
+```bash
+npx codemod run @nodejs/fs-access-mode-constants
+```
+
+#### Example
+
+```js displayName="Before"
+const fs = require('node:fs');
+
+fs.access('/path/to/file', fs.F_OK, callback);
+fs.access('/path/to/file', fs.R_OK | fs.W_OK, callback);
+```
+
+```js displayName="After"
+const fs = require('node:fs');
+
+fs.access('/path/to/file', fs.constants.F_OK, callback);
+fs.access('/path/to/file', fs.constants.R_OK | fs.constants.W_OK, callback);
+```
+
+### `fs-truncate-to-ftruncate`
+
+The [`fs.truncate`](https://nodejs.org/api/fs.html#fs_fs_truncate_path_len_callback) function was deprecated ([DEP0081](https://nodejs.org/api/deprecations.html#DEP0081)) when used with a file descriptor. Use [`fs.ftruncate`](https://nodejs.org/api/fs.html#fs_fs_ftruncate_fd_len_callback) instead.
+
+The source code for this codemod can be found in the [fs-truncate-fd-deprecation directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/fs-truncate-fd-deprecation).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/fs-truncate-fd-deprecation).
+
+```bash
+npx codemod run @nodejs/fs-truncate-fd-deprecation
+```
+
+#### Example
+
+```js displayName="Before"
+const { truncate, open, close } = require('node:fs');
+
+open('file.txt', 'w', (err, fd) => {
+  if (err) throw err;
+  truncate(fd, 10, err => {
+    if (err) throw err;
+    close(fd, () => {});
+  });
+});
+```
+
+```js displayName="After"
+const { ftruncate, open, close } = require('node:fs');
+
+open('file.txt', 'w', (err, fd) => {
+  if (err) throw err;
+  ftruncate(fd, 10, err => {
+    if (err) throw err;
+    close(fd, () => {});
+  });
+});
+```
+
+### `process-assert-to-node-assert`
+
+This recipe transforms the usage of `process.assert` to use `node:assert` module.
+
+See [DEP0100](https://nodejs.org/api/deprecations.html#DEP0100).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/process-assert-to-node-assert).
+
+```bash
+npx codemod run @nodejs/process-assert-to-node-assert
+```
+
+#### Example
+
+```js displayName="Before"
+process.assert(condition, 'Assertion failed');
+```
+
+```js displayName="After"
+import assert from 'node:assert';
+assert(condition, 'Assertion failed');
+```
+
+#### Additional Notes
+
+This codemod use [`fs` capability](https://docs.codemod.com/jssg/security) to read the `package.json` file and determine if the project is using ES modules or CommonJS. Based on this information, it adds the appropriate import statement for the `assert` module.

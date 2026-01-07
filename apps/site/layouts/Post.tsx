@@ -6,7 +6,7 @@ import WithBlogCrossLinks from '#site/components/withBlogCrossLinks';
 import WithFooter from '#site/components/withFooter';
 import WithMetaBar from '#site/components/withMetaBar';
 import WithNavBar from '#site/components/withNavBar';
-import { useClientContext } from '#site/hooks/react-server';
+import { useClientContext } from '#site/hooks/server';
 import { mapAuthorToCardAuthors } from '#site/util/author';
 import { mapBlogCategoryToPreviewType } from '#site/util/blog';
 
@@ -27,7 +27,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
 
       <div className={styles.contentLayout}>
         <div className={styles.postLayout}>
-          <main>
+          <main id="main" tabIndex={-1}>
             {type === 'vulnerability' && <EOLAlert />}
 
             <h1>{frontmatter.title}</h1>

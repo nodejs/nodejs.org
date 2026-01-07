@@ -26,18 +26,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@95d9a5deda9de15063e7595e9719c11c38c90ae2 # v2.13.2
+        uses: step-security/harden-runner@20cf305ff2072d973412fa9b1e3a4f227bda3c76 # v2.14.0
         with:
           egress-policy: audit
 
       - name: Checkout
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           token: ${{ secrets.CROWDIN_GITHUB_BOT_TOKEN }}
 
         # see all the options at https://github.com/crowdin/github-action
       - name: Crowdin PR
-        uses: crowdin/github-action@08713f00a50548bfe39b37e8f44afb53e7a802d4 # v2.12.0
+        uses: crowdin/github-action@60debf382ee245b21794321190ad0501db89d8c1 # v2.13.0
         with:
           # do not upload anything - this is a one-way operation download
           upload_sources: false
@@ -65,7 +65,7 @@ jobs:
       contents: write
 
     steps:
-      - uses: nodejs/web-team/actions/setup-environment@2c2897a93eb99b4cdca270729100bc0887c758d9
+      - uses: nodejs/web-team/actions/setup-environment@9f3c83af227d721768d9dbb63009a47ed4f4282f
         with:
           pnpm: true
           use-version-file: true
@@ -74,7 +74,7 @@ jobs:
           fetch-depth: 2
 
       - name: Restore Lint Cache
-        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
         with:
           path: |
             apps/site/.eslintmdcache
@@ -105,14 +105,14 @@ jobs:
         run: node --run prettier:fix
 
       - name: Push Changes back to Pull Request
-        uses: stefanzweifel/git-auto-commit-action@28e16e81777b558cc906c8750092100bbb34c5e3 # v7.0.0
+        uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
         with:
           commit_options: '--no-verify --signoff'
           commit_message: 'chore: automated format of translated files'
           branch: ${{ env.BRANCH_NAME }}
 
       - name: Save Lint Cache
-        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
         with:
           path: |
             apps/site/.eslintmdcache

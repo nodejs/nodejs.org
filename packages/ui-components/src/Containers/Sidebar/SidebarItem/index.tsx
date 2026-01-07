@@ -15,18 +15,20 @@ type SidebarItemProps = {
 };
 
 const SidebarItem: FC<SidebarItemProps> = ({ label, link, ...props }) => (
-  <BaseActiveLink
-    className={styles.item}
-    href={link}
-    activeClassName={styles.active}
-    {...props}
-  >
-    <div className={styles.label}>
-      <span>{label}</span>
+  <li>
+    <BaseActiveLink
+      className={styles.item}
+      href={link}
+      activeClassName={styles.active}
+      {...props}
+    >
+      <div className={styles.label}>
+        <span>{label}</span>
 
-      {/^https?:/.test(link) && <ArrowUpRightIcon className={styles.icon} />}
-    </div>
-  </BaseActiveLink>
+        {/^https?:/.test(link) && <ArrowUpRightIcon className={styles.icon} />}
+      </div>
+    </BaseActiveLink>
+  </li>
 );
 
 export default SidebarItem;

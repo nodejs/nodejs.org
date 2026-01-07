@@ -15,4 +15,4 @@ permissions:
 
 jobs:
   dependency-review:
-    uses: nodejs/web-team/.github/workflows/dependency-review.yml@2c2897a93eb99b4cdca270729100bc0887c758d9
+    uses: nodejs/web-team/.github/workflows/dependency-review.yml@9f3c83af227d721768d9dbb63009a47ed4f4282f

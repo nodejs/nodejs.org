@@ -43,13 +43,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: nodejs/web-team/actions/setup-environment@2c2897a93eb99b4cdca270729100bc0887c758d9
+      - uses: nodejs/web-team/actions/setup-environment@9f3c83af227d721768d9dbb63009a47ed4f4282f
         with:
           pnpm: true
           use-version-file: true
 
       - name: Restore Lint Cache
-        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
         with:
           path: |
             .turbo/cache
@@ -86,7 +86,7 @@ jobs:
           (github.event_name == 'pull_request' &&
             startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
             github.event.pull_request.head.ref != 'chore/crowdin')
-        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
         with:
           path: |
             .turbo/cache
@@ -100,7 +100,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: nodejs/web-team/actions/setup-environment@2c2897a93eb99b4cdca270729100bc0887c758d9
+      - uses: nodejs/web-team/actions/setup-environment@9f3c83af227d721768d9dbb63009a47ed4f4282f
         with:
           pnpm: true
           use-version-file: true
@@ -112,12 +112,13 @@ jobs:
 
       - name: Upload test coverage to Codecov
         if: ${{ !cancelled() && github.event_name != 'merge_group' }}
-        uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5.5.1
+        uses: codecov/codecov-action@671740ac38dd9b0130fbe1cec585b89eea48d3de # v5.5.2
         with:
           files: ./apps/site/lcov.info,./packages/*/lcov.info
 
       - name: Upload test results to Codecov
         if: ${{ !cancelled() && github.event_name != 'merge_group' }}
-        uses: codecov/test-results-action@47f89e9acb64b76debcd5ea40642d25a4adced9f # v1.1.1
+        uses: codecov/codecov-action@671740ac38dd9b0130fbe1cec585b89eea48d3de # v5.5.2
         with:
+          report_type: test_results
           files: ./apps/site/junit.xml,./packages/*/junit.xml

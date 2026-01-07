@@ -1,6 +1,5 @@
+import { availableLocaleCodes, defaultLocale } from '@node-core/website-i18n';
 import createMiddleware from 'next-intl/middleware';
-
-import { availableLocaleCodes, defaultLocale } from '#site/next.locales.mjs';
 
 export default createMiddleware({
   // A list of all locales that are supported

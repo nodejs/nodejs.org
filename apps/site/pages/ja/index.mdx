@@ -28,7 +28,7 @@ layout: home
       </Button>
 
       <div className="flex justify-center xs:mt-3">
-        <PartnersIconList />
+        <PartnersList sort="weight" />
       </div>
 
       <span className="text-center text-sm! text-neutral-800 dark:text-neutral-600 text-balance">Node.jsは上記パートナー企業など<Link href="/about/partners">数多くの企業</Link>からご支援いただいています。</span>
@@ -102,6 +102,7 @@ layout: home
       createGzip(),
       createWriteStream('package.json.gz')
     );
+
 
     // run with `node streams.mjs`
     ```

@@ -31,7 +31,7 @@ jobs:
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@95d9a5deda9de15063e7595e9719c11c38c90ae2 # v2.13.2
+        uses: step-security/harden-runner@20cf305ff2072d973412fa9b1e3a4f227bda3c76 # v2.14.0
         with:
           egress-policy: audit
 
@@ -60,7 +60,7 @@ jobs:
           echo "✅ Commit is verified and trusted."
 
       - name: Checkout repository
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           fetch-depth: 2 # Need at least 2 commits to detect changes between commits
 
@@ -97,12 +97,14 @@ jobs:
   publish:
     needs: prepare-packages
     runs-on: ubuntu-latest
+    # Skip if no packages need to be published
+    if: fromJson(needs.prepare-packages.outputs.matrix).package[0] != null
     # Use the dynamic matrix from prepare-packages job to create parallel jobs for each package
     strategy:
       matrix: ${{ fromJson(needs.prepare-packages.outputs.matrix) }}
       fail-fast: false # Continue publishing other packages even if one fails
     steps:
-      - uses: nodejs/web-team/actions/setup-environment@2c2897a93eb99b4cdca270729100bc0887c758d9
+      - uses: nodejs/web-team/actions/setup-environment@9f3c83af227d721768d9dbb63009a47ed4f4282f
         with:
           pnpm: true
           use-version-file: true

@@ -33,7 +33,6 @@ This document provides an overview of the technologies used in the Node.js websi
     - [`redirects.json`](#redirectsjson)
 - [Configuration Files](#configuration-files)
   - [`site.json`](#sitejson)
-  - [`next.locales.mjs`](#nextlocalesmjs)
 - [Development Environment](#development-environment)
   - [VSCode Configuration](#vscode-configuration)
   - [Build and Deployment](#build-and-deployment)
@@ -266,14 +265,6 @@ Website metadata configuration:
 - Social media information
 - Build-time metadata
 - Uses JSON format for easy collaboration
-
-### `next.locales.mjs`
-
-Locale configuration and management:
-
-- Supported locale definitions
-- Locale-specific settings
-- Page availability per locale
 
 ## Development Environment
 

@@ -29,7 +29,7 @@ layout: home
       </Button>
 
       <div className="flex justify-center xs:mt-3">
-        <PartnersIconList />
+        <PartnersList sort="weight" />
       </div>
 
       <span className="text-center text-sm! text-neutral-800 dark:text-neutral-600 text-balance">Node.js підтримується партнерами вище <Link href="/about/partners">і не тільки</Link>.</span>
@@ -103,6 +103,7 @@ layout: home
       createGzip(),
       createWriteStream('package.json.gz')
     );
+
 
     // run with `node streams.mjs`
     ```

@@ -55,6 +55,7 @@ updates:
           - vfile
           - vfile-*
           - reading-time
+          - twoslash
       orama:
         patterns:
           - '@orama/*'

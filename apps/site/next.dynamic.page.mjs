@@ -1,5 +1,10 @@
 import { join } from 'node:path';
 
+import {
+  allLocaleCodes,
+  defaultLocale,
+  availableLocaleCodes,
+} from '@node-core/website-i18n';
 import { notFound, redirect } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 
@@ -7,8 +12,6 @@ import { setClientContext } from '#site/client-context';
 import WithLayout from '#site/components/withLayout';
 import { PAGE_VIEWPORT } from '#site/next.dynamic.constants.mjs';
 import { dynamicRouter } from '#site/next.dynamic.mjs';
-import { allLocaleCodes, availableLocaleCodes } from '#site/next.locales.mjs';
-import { defaultLocale } from '#site/next.locales.mjs';
 import { MatterProvider } from '#site/providers/matterProvider';
 
 /**

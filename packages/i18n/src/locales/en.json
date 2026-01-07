@@ -268,7 +268,8 @@
       "themeToggle": {
         "light": "Switch to Light Mode",
         "dark": "Switch to Dark Mode"
-      }
+      },
+      "skipToContent": "Skip to content"
     },
     "metabar": {
       "lastUpdated": "Last Updated",

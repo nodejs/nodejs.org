@@ -50,14 +50,14 @@
     "remark-lint-table-pipes": "^5.0.1",
     "remark-lint-unordered-list-marker-style": "^4.0.1",
     "remark-preset-lint-recommended": "^7.0.1",
-    "semver": "^7.7.2",
+    "semver": "^7.7.3",
     "unified-lint-rule": "^3.0.1",
     "unist-util-visit": "^5.0.0",
-    "yaml": "^2.8.1"
+    "yaml": "^2.8.2"
   },
   "devDependencies": {
     "cross-env": "catalog:",
-    "dedent": "^1.7.0",
+    "dedent": "^1.7.1",
     "remark-parse": "^11.0.0",
     "unified": "^11.0.5"
   }
