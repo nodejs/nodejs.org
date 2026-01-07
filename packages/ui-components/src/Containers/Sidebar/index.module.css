@@ -10,7 +10,10 @@
     bg-white
     px-4
     py-6
-    sm:overflow-auto
+    sm:sticky
+    sm:top-16
+    sm:max-h-[calc(100vh-6.5rem)]
+    sm:overflow-y-auto
     sm:border-r
     md:max-w-xs
     lg:px-6
