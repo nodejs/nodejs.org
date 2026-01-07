@@ -35,7 +35,7 @@ const useScrollToElement = <T extends HTMLElement>(
   // Save scroll position on scroll
   const handleScroll = useCallback(
     (position: { x: number; y: number }) => {
-      // Direct mutation is safe here as navigationState is a ref's .current value
+      // Save the current scroll position in the navigation state
       const state = navigationState as Record<string, { x: number; y: number }>;
       state[id] = position;
     },
