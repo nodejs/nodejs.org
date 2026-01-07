@@ -110,6 +110,7 @@
     w-screen
     flex-col
     border-neutral-200
+    md:max-w-[42rem]
     lg:h-auto
     lg:max-h-[70vh]
     lg:w-auto
