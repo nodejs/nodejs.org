@@ -1,42 +1,49 @@
 'use client';
 
-import { useContext, useEffect, useRef } from 'react';
-
-import { NavigationStateContext } from '#site/providers/navigationStateProvider';
+import { useEffect, useRef } from 'react';
 
 import type { RefObject } from 'react';
 
-const useNavigationState = <T extends HTMLElement>(
-  id: string,
+type ScrollPosition = {
+  x: number;
+  y: number;
+};
+
+type UseScrollOptions = {
+  debounceTime?: number;
+  onScroll?: (position: ScrollPosition) => void;
+};
+
+// Custom hook to handle scroll events with optional debouncing
+const useScroll = <T extends HTMLElement>(
   ref: RefObject<T | null>,
-  debounceTime = 300
+  { debounceTime = 300, onScroll }: UseScrollOptions = {}
 ) => {
-  const navigationState = useContext(NavigationStateContext);
   const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   useEffect(() => {
+    // Get the current element
     const element = ref.current;
-    if (!element) {
-      return;
-    }
 
-    // Restore scroll position if saved state exists
-    if (navigationState[id] && navigationState[id].y !== element.scrollTop) {
-      element.scroll({ top: navigationState[id].y, behavior: 'auto' });
+    // Return early if no element or onScroll callback is provided
+    if (!element || !onScroll) {
+      return;
     }
 
     // Debounced scroll handler
     const handleScroll = () => {
+      // Clear existing timeout
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
 
+      // Set new timeout to call onScroll after debounceTime
       timeoutRef.current = setTimeout(() => {
         if (element) {
-          navigationState[id] = {
+          onScroll({
             x: element.scrollLeft,
             y: element.scrollTop,
-          };
+          });
         }
       }, debounceTime);
     };
@@ -50,9 +57,7 @@ const useNavigationState = <T extends HTMLElement>(
         clearTimeout(timeoutRef.current);
       }
     };
-    // We need this effect to run only on mount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [ref, onScroll, debounceTime]);
 };
 
-export default useNavigationState;
+export default useScroll;

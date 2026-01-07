@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useRef } from 'react';
 
 import Link from '#site/components/Link';
-import { useClientContext, useNavigationState } from '#site/hooks/client';
+import { useClientContext, useScrollToElement } from '#site/hooks/client';
 import { useSiteNavigation } from '#site/hooks/generic';
 import { useRouter, usePathname } from '#site/navigation.mjs';
 
@@ -28,7 +28,7 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
   const sideNavigation = getSideNavigation(navKeys, context);
 
   // Preserve sidebar scroll position across navigations
-  useNavigationState('sidebar', sidebarRef);
+  useScrollToElement('sidebar', sidebarRef);
 
   const mappedSidebarItems =
     // If there's only a single navigation key, use its sub-items
