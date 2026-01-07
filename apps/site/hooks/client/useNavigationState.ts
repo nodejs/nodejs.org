@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useContext, useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 
 import { NavigationStateContext } from '#site/providers/navigationStateProvider';
 
@@ -12,41 +12,44 @@ const useNavigationState = <T extends HTMLElement>(
   debounceTime = 300
 ) => {
   const navigationState = useContext(NavigationStateContext);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  const handleScroll = useCallback(() => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
-    timeoutRef.current = setTimeout(() => {
-      if (ref.current) {
-        navigationState[id] = {
-          x: ref.current.scrollLeft,
-          y: ref.current.scrollTop,
-        };
-      }
-    }, debounceTime);
-  }, [id, ref, navigationState, debounceTime]);
+  const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   useEffect(() => {
     const element = ref.current;
-    if (element) {
-      if (navigationState[id] && navigationState[id].y !== element.scrollTop) {
-        element.scroll({ top: navigationState[id].y, behavior: 'auto' });
+    if (!element) {
+      return;
+    }
+
+    // Restore scroll position if saved state exists
+    if (navigationState[id] && navigationState[id].y !== element.scrollTop) {
+      element.scroll({ top: navigationState[id].y, behavior: 'auto' });
+    }
+
+    // Debounced scroll handler
+    const handleScroll = () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
       }
 
-      element.addEventListener('scroll', handleScroll, { passive: true });
-
-      return () => {
-        element.removeEventListener('scroll', handleScroll);
-        // Clear any pending debounced calls
-        if (timeoutRef.current) {
-          clearTimeout(timeoutRef.current);
-          timeoutRef.current = null;
+      timeoutRef.current = setTimeout(() => {
+        if (element) {
+          navigationState[id] = {
+            x: element.scrollLeft,
+            y: element.scrollTop,
+          };
         }
-      };
-    }
+      }, debounceTime);
+    };
+
+    element.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      element.removeEventListener('scroll', handleScroll);
+      // Clear any pending debounced calls
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
     // We need this effect to run only on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
