@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 
 import { NavigationStateContext } from '#site/providers/navigationStateProvider';
 
@@ -29,18 +29,17 @@ const useScrollToElement = <T extends HTMLElement>(
     if (savedState && savedState.y !== element.scrollTop) {
       element.scroll({ top: savedState.y, behavior: 'auto' });
     }
+    // navigationState is intentionally excluded
+    // it's a stable object reference that doesn't need to trigger re-runs
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, ref]);
 
   // Save scroll position on scroll
-  const handleScroll = useCallback(
-    (position: { x: number; y: number }) => {
-      // Save the current scroll position in the navigation state
-      const state = navigationState as Record<string, { x: number; y: number }>;
-      state[id] = position;
-    },
-    [id, navigationState]
-  );
+  const handleScroll = (position: { x: number; y: number }) => {
+    // Save the current scroll position in the navigation state
+    const state = navigationState as Record<string, { x: number; y: number }>;
+    state[id] = position;
+  };
 
   // Use the useScroll hook to handle scroll events with debouncing
   useScroll(ref, { debounceTime, onScroll: handleScroll });
