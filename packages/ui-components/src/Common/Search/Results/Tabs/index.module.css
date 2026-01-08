@@ -35,6 +35,7 @@
 
 .facetTabsList {
   @apply flex
+    w-max
     items-center
     gap-2
     overflow-x-auto;

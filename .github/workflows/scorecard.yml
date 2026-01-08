@@ -11,13 +11,12 @@ on:
     branches:
       - main
 
-# Declare default permissions as read only.
-permissions: read-all
+permissions: {}
 
 jobs:
   analysis:
     name: Scorecard analysis
-    uses: nodejs/web-team/.github/workflows/scorecard.yml@9f3c83af227d721768d9dbb63009a47ed4f4282f
+    uses: nodejs/web-team/.github/workflows/scorecard.yml@b62c434f5e530041c288a40280567849449e74be
     permissions:
       # Needed to upload the results to code-scanning dashboard.
       security-events: write
