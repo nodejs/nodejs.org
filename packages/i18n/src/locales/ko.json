@@ -279,7 +279,6 @@
           "fnm": "\"fnm\"은 플랫폼 간 Node.js 버전 관리자입니다.",
           "brew": "Homebrew는 macOS와 Linux용 패키지 관리자입니다.",
           "choco": "Chocolatey는 Windows용 패키지 관리자입니다.",
-          "devbox": "Devbox는 격리되고 재현 가능한 개발 환경을 제공합니다.",
           "docker": "Docker는 컨테이너화 플랫폼입니다. "
         }
       }

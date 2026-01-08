@@ -378,7 +378,6 @@
           "fnm": "„fnm” este un manager de versiuni Node.js multiplatformă.",
           "brew": "Homebrew este un manager de pachete pentru macOS și Linux.",
           "choco": "Chocolatey este un manager de pachete pentru Windows.",
-          "devbox": "Devbox creează medii de dezvoltare izolate și reproductibile.",
           "docker": "Docker este o platformă de containerizare.",
           "n": "„n” este un manager de versiuni Node.js multiplatformă.",
           "volta": "„Volta” este un manager de versiuni Node.js multiplatformă."

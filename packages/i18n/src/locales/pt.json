@@ -285,7 +285,6 @@
           "fnm": "\"fnm\" é um gestor de versão de Node.js multiplataforma.",
           "brew": "Homebrew é um gestor de pacote para macOS e Linux.",
           "choco": "Chocolatey é um gestor de pacote para Windows.",
-          "devbox": "Devbox cria ambientes de desenvolvimentos isolados e reprodutíveis.",
           "docker": "Docker é uma plataforma de contentorização.",
           "volta": "\"Volta\" é um gestor de versão de Node.js multiplataforma."
         }

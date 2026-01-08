@@ -391,7 +391,6 @@
           "fnm": "\"fnm\" adalah manajer versi Node.js lintas-platform.",
           "brew": "Homebrew adalah manajer paket untuk macOS dan Linux.",
           "choco": "Chocolatey adalah manajer paket untuk Windows.",
-          "devbox": "Devbox menciptakan lingkungan pengembangan yang terisolasi dan dapat direproduksi.",
           "docker": "Docker adalah platform kontainerisasi.",
           "n": "\"n\" adalah manajer versi Node.js lintas-platform.",
           "volta": "\"Volta\" adalah manajer versi Node.js lintas-platform."
