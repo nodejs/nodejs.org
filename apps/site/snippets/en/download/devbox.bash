@@ -5,7 +5,7 @@ curl -fsSL https://get.jetify.com/devbox | bash
 devbox init
 
 # Download and install Node.js:
-devbox add node@${props.release.major}
+devbox add nodejs@${props.release.major}
 
 # Open a Devbox shell
 devbox shell
