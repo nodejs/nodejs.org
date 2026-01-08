@@ -24,12 +24,20 @@
     lg:dark:bg-neutral-950;
 
   svg {
-    @apply size-5;
+    @apply size-5
+      shrink-0;
+  }
+
+  > div {
+    @apply min-w-0;
   }
 }
 
 .hitDescription {
-  @apply text-sm
+  @apply overflow-hidden
+    text-sm
+    text-ellipsis
+    whitespace-nowrap
     text-neutral-600
     dark:text-neutral-700;
 }
