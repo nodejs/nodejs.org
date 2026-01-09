@@ -1,7 +1,7 @@
 'use client';
 
 import Sidebar from '@node-core/ui-components/Containers/Sidebar';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useRef } from 'react';
 
 import Link from '#site/components/Link';
@@ -21,6 +21,7 @@ type WithSidebarProps = {
 const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
   const { getSideNavigation } = useSiteNavigation();
   const pathname = usePathname()!;
+  const locale = useLocale();
   const t = useTranslations();
   const { push } = useRouter();
   const { frontmatter } = useClientContext();
@@ -44,7 +45,7 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
     <Sidebar
       ref={sidebarRef}
       groups={mappedSidebarItems}
-      pathname={pathname}
+      pathname={pathname.replace(`/${locale}`, '')}
       title={t('components.common.sidebar.title')}
       placeholder={frontmatter?.title}
       onSelect={push}

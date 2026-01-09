@@ -17,8 +17,7 @@ const useScrollToElement = <T extends HTMLElement>(
 
   // Restore scroll position on mount
   useEffect(() => {
-    const element = ref.current;
-    if (!element) {
+    if (!ref.current) {
       return;
     }
 
@@ -26,8 +25,8 @@ const useScrollToElement = <T extends HTMLElement>(
     const savedState = navigationState[id];
 
     // Scroll only if the saved position differs from current
-    if (savedState && savedState.y !== element.scrollTop) {
-      element.scroll({ top: savedState.y, behavior: 'auto' });
+    if (savedState && savedState.y !== ref.current.scrollTop) {
+      ref.current.scroll({ top: savedState.y, behavior: 'auto' });
     }
     // navigationState is intentionally excluded
     // it's a stable object reference that doesn't need to trigger re-runs
