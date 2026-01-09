@@ -50,12 +50,11 @@ jobs:
           update-pull-request-title-and-body: true
           branch: chore/update-pnpm
           body: |
-            Updates pnpm from ${{ steps.update-pnpm.outputs.old }} to version ${{ steps.update-pnpm.outputs.new }}
+            Updates pnpm from ${{ steps.update-pnpm.outputs.old }} to ${{ steps.update-pnpm.outputs.new }}
 
             cc @nodejs/web-infra
 
             Check this workflow's logs at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
-          commit-message: 'chore: update pnpm to ${{ steps.update-pnpm.outputs.new }}'
-          labels: fast-track
-          title: 'chore: update pnpm to ${{ steps.update-pnpm.outputs.new }}'
+          commit-message: 'meta: update pnpm from ${{ steps.update-pnpm.outputs.old }} to ${{ steps.update-pnpm.outputs.new }}'
+          title: 'meta: update pnpm from ${{ steps.update-pnpm.outputs.old }} to ${{ steps.update-pnpm.outputs.new }}'
           draft: true
