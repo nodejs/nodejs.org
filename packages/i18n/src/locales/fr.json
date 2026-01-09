@@ -268,7 +268,8 @@
       "themeToggle": {
         "light": "Basculer en mode clair",
         "dark": "Basculer en mode nuit"
-      }
+      },
+      "skipToContent": "Accéder au contenu"
     },
     "metabar": {
       "lastUpdated": "Dernière Mise à jour",
