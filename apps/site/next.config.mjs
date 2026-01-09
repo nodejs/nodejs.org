@@ -5,7 +5,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 import { rehypePlugins, remarkPlugins } from './mdx/plugins.mjs';
 import { OPEN_NEXT_CLOUDFLARE } from './next.constants.cloudflare.mjs';
-import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
+import { BASE_PATH } from './next.constants.mjs';
 import { getImagesConfig } from './next.image.config.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 
@@ -43,15 +43,11 @@ const nextConfig = {
       './node_modules/@types/node/**/*',
     ],
   },
-  // On static export builds we want the output directory to be "build"
-  distDir: ENABLE_STATIC_EXPORT ? 'build' : undefined,
-  // On static export builds we want to enable the export feature
-  output: ENABLE_STATIC_EXPORT ? 'export' : undefined,
   // This configures all the Next.js rewrites, which are used for rewriting internal URLs into other internal Endpoints
   // This feature is not supported within static export builds, hence we pass an empty array if static exports are enabled
-  rewrites: ENABLE_STATIC_EXPORT ? undefined : rewrites,
+  rewrites,
   // This configures all Next.js redirects
-  redirects: ENABLE_STATIC_EXPORT ? undefined : redirects,
+  redirects,
   // We don't want to run Type Checking on Production Builds
   // as we already check it on the CI within each Pull Request
   typescript: { ignoreBuildErrors: true },
@@ -60,6 +56,7 @@ const nextConfig = {
   typedRoutes: true,
   // Experimental Flags
   experimental: {
+    webpackMemoryOptimizations: true,
     // Ensure that server-side code is also minified
     serverMinification: true,
     // Use Workers and Threads for webpack compilation

@@ -10,7 +10,6 @@
     "cloudflare:deploy": "opennextjs-cloudflare deploy",
     "cloudflare:preview": "wrangler dev",
     "predeploy": "node --run build:blog-data",
-    "deploy": "cross-env NEXT_PUBLIC_STATIC_EXPORT=true node --run build",
     "predev": "node --run build:blog-data",
     "dev": "cross-env NODE_NO_WARNINGS=1 next dev",
     "lint": "node --run lint:js && node --run lint:css && node --run lint:md",
