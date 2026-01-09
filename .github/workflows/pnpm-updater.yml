@@ -9,7 +9,7 @@ name: PNPM updater
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 1 * *"
+    - cron: '0 0 1 * *'
 
 permissions:
   contents: write
@@ -55,7 +55,7 @@ jobs:
             cc @nodejs/web-infra
 
             Check this workflow's logs at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
-          commit-message: "chore: update pnpm to ${{ steps.update-pnpm.outputs.new }}"
+          commit-message: 'chore: update pnpm to ${{ steps.update-pnpm.outputs.new }}'
           labels: fast-track
-          title: "chore: update pnpm to ${{ steps.update-pnpm.outputs.new }}"
+          title: 'chore: update pnpm to ${{ steps.update-pnpm.outputs.new }}'
           draft: true
