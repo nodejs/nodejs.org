@@ -1,5 +1,5 @@
 import { cache } from 'react';
 
-import fetchReleaseSchedule from '#site/next-data/generators/releaseSchedule.mjs';
+import generateReleaseSchdule from '#site/next-data/generators/releaseSchedule.mjs';
 
-export default cache(fetchReleaseSchedule);
+export default cache(generateReleaseSchdule);
