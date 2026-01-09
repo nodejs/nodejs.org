@@ -1,5 +1,3 @@
-'use client';
-
 import { forwardRef } from 'react';
 
 import WithNoScriptSelect from '#ui/Common/Select/NoScriptSelect';
