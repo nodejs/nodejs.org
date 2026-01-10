@@ -311,7 +311,6 @@
           "fnm": "「fnm」是跨平台的 Node.js 版本管理程式。",
           "brew": "Homebrew 是 macOS 及 Linux 的套件管理程式。",
           "choco": "Chocolatey 是 Windows 的套件管理程式。",
-          "devbox": "Devbox 會建立隔離且可重現的開發環境。",
           "docker": "Docker 是一款容器化平台。",
           "n": "「n」是跨平台的 Node.js 版本管理程式。",
           "volta": "「Volta」是跨平台的 Node.js 版本管理程式。"

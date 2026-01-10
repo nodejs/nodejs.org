@@ -6,7 +6,6 @@ export type InstallationMethod =
   | 'NVM'
   | 'FNM'
   | 'BREW'
-  | 'DEVBOX'
   | 'DOCKER'
   | 'CHOCO'
   | 'N';

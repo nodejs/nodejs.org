@@ -158,16 +158,6 @@
       "info": "layouts.download.codeBox.platformInfo.brew"
     },
     {
-      "id": "DEVBOX",
-      "icon": "Devbox",
-      "name": "Devbox",
-      "compatibility": {
-        "os": ["MAC", "LINUX"]
-      },
-      "url": "https://jetify.com/devbox/",
-      "info": "layouts.download.codeBox.platformInfo.devbox"
-    },
-    {
       "id": "CHOCO",
       "icon": "Choco",
       "name": "Chocolatey",
