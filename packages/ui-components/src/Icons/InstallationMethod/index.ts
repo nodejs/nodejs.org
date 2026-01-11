@@ -1,3 +1,4 @@
+import ASDF from '#ui/Icons/InstallationMethod/ASDF';
 import Choco from '#ui/Icons/InstallationMethod/Choco';
 import Docker from '#ui/Icons/InstallationMethod/Docker';
 import FNM from '#ui/Icons/InstallationMethod/FNM';
@@ -6,4 +7,4 @@ import N from '#ui/Icons/InstallationMethod/N';
 import NVM from '#ui/Icons/InstallationMethod/NVM';
 import Volta from '#ui/Icons/InstallationMethod/Volta';
 
-export { Choco, Docker, FNM, Homebrew, N, NVM, Volta };
+export { ASDF, Choco, Docker, FNM, Homebrew, N, NVM, Volta };
