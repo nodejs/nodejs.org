@@ -8,7 +8,8 @@ export type InstallationMethod =
   | 'BREW'
   | 'DOCKER'
   | 'CHOCO'
-  | 'N';
+  | 'N'
+  | 'ASDF';
 export type PackageManager = 'NPM' | 'YARN' | 'PNPM';
 
 // Items with a pipe/default value mean that they are auto inferred

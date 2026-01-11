@@ -1,5 +1,4 @@
 import {
-  ASDF,
   Docker,
   Homebrew,
   NVM,
@@ -12,7 +11,7 @@ import { Apple, Linux, Microsoft, AIX } from '#ui/Icons/OperatingSystem';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 const osIcons = [Apple, Linux, Microsoft, AIX];
-const installMethodIcons = [ASDF, Docker, Homebrew, NVM, Choco, N, Volta];
+const installMethodIcons = [Docker, Homebrew, NVM, Choco, N, Volta];
 
 export const PlatformLogos: StoryObj = {
   render: () => (

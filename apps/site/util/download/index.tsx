@@ -78,9 +78,11 @@ export const parseCompat = <
  */
 const createIcon = (
   IconModule: Record<string, ElementType>,
-  iconName: string
+  iconName?: string
 ) => {
+  if (!iconName) {return undefined;}
   const IconComponent = IconModule[iconName];
+  if (!IconComponent) {return undefined;}
   return <IconComponent width={16} height={16} />;
 };
 

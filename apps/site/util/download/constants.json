@@ -190,7 +190,6 @@
     },
     {
       "id": "ASDF",
-      "icon": "ASDF",
       "name": "asdf",
       "compatibility": {
         "os": ["MAC", "LINUX"]
