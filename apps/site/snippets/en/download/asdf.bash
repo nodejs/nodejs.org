@@ -1,7 +1,7 @@
 # asdf has specific installation instructions for each operating system.
 # Please refer to the official documentation at https://asdf-vm.com/guide/getting-started.html.
 #
-# The following is for MacOS and Linux systems with Homebrew installed using ZSH:
+# The following is for macOS and Linux systems with Homebrew installed using ZSH:
 brew install asdf
 
 # Add asdf's shims directory to your shell configuration:
