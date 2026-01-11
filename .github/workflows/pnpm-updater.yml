@@ -1,0 +1,60 @@
+# Security Notes
+# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
+# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
+# REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
+# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+
+name: PNPM updater
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 1 * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-pnpm:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@20cf305ff2072d973412fa9b1e3a4f227bda3c76 # v2.14.0
+        with:
+          egress-policy: audit
+
+      - name: Git Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+
+      - name: Update pnpm and package.json
+        id: update-pnpm
+        run: |
+          echo "old=$(pnpm --version)" >> $GITHUB_OUTPUT
+          pnpm self-update
+          echo "new=$(pnpm --version)" >> $GITHUB_OUTPUT
+          cat <<< $(jq '.devEngines.packageManager.version = (.packageManager | split("@")[1])' package.json) > package.json
+
+      - name: Open pull request
+        if: steps.update-pnpm.outputs.old != steps.update-pnpm.outputs.new
+        uses: gr2m/create-or-update-pull-request-action@b65137ca591da0b9f43bad7b24df13050ea45d1b # v1.10.1
+        # Creates a PR or update the Action's existing PR, or
+        # no-op if the base branch is already up-to-date.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          update-pull-request-title-and-body: true
+          branch: chore/update-pnpm
+          body: |
+            Updates pnpm from ${{ steps.update-pnpm.outputs.old }} to ${{ steps.update-pnpm.outputs.new }}
+
+            cc @nodejs/web-infra
+
+            Check this workflow's logs at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
+          commit-message: 'meta: update pnpm from ${{ steps.update-pnpm.outputs.old }} to ${{ steps.update-pnpm.outputs.new }}'
+          title: 'meta: update pnpm from ${{ steps.update-pnpm.outputs.old }} to ${{ steps.update-pnpm.outputs.new }}'
+          draft: true
