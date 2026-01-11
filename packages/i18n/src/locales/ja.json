@@ -268,7 +268,8 @@
       "themeToggle": {
         "light": "ライトモードに切り替える",
         "dark": "ダークモードに切り替える"
-      }
+      },
+      "skipToContent": "コンテンツにスキップ"
     },
     "metabar": {
       "lastUpdated": "最終更新日",
