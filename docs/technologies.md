@@ -18,10 +18,6 @@ This document provides an overview of the technologies used in the Node.js websi
 - [Repository Structure](#repository-structure)
 - [Architecture Decisions](#architecture-decisions)
   - [Static Build Support](#static-build-support)
-  - [Custom Page Rendering](#custom-page-rendering)
-    - [`[...path].tsx` - Dynamic Route Handler](#pathts---dynamic-route-handler)
-    - [`next.dynamic.mjs` - Page Generation](#nextdynamicmjs---page-generation)
-    - [`next.data.mjs` - Build-time Data](#nextdatamjs---build-time-data)
   - [Internationalization Strategy](#internationalization-strategy)
     - [Why Not Next.js Built-in i18n?](#why-not-nextjs-built-in-i18n)
     - [Locale Detection and Routing](#locale-detection-and-routing)
@@ -123,7 +119,7 @@ nodejs.org/
 │   └── site/                    # Main website application
 │       ├── components/          # Website-specific React components
 │       ├── layouts/             # Page layout templates
-│       ├── pages/               # Content pages (Markdown/MDX)
+│       ├── app/                 # Content pages (Markdown/MDX)
 │       │   ├── en/              # English content (source)
 │       │   └── {locale}/        # Translated content
 │       ├── public/              # Static assets
@@ -156,34 +152,6 @@ The website supports fully static builds to ensure independence from third-party
 - Content can be served without external dependencies
 - Maintains availability even if hosting providers change
 
-### Custom Page Rendering
-
-The website uses a custom rendering system instead of Next.js default routing:
-
-#### `[...path].tsx` - Dynamic Route Handler
-
-- Catches all routes and renders them through a custom system
-- Enables dynamic page generation from Markdown files
-- Supports incremental static generation (ISG)
-
-#### `next.dynamic.mjs` - Page Generation
-
-This file handles:
-
-- Discovering all source pages in `apps/site/pages/en`
-- Identifying translated pages
-- Generating localized paths for untranslated content
-- Creating fallback pages that show English content with translated menus and UI elements
-
-#### `next.data.mjs` - Build-time Data
-
-Responsible for:
-
-- Node.js release data fetching
-- Blog post metadata generation
-- RSS feed creation
-- Build-time indexing
-
 ### Internationalization Strategy
 
 #### Why Not Next.js Built-in i18n?
@@ -191,7 +159,7 @@ Responsible for:
 We use a custom i18n solution because:
 
 - Need comprehensive locale and page listing capabilities
-- Use subfolder content structure (`/pages/en/`, `/pages/fr/`) vs. extension-based (`file.en.md`)
+- Use subfolder content structure (`/en/`, `/fr/`) vs. extension-based (`file.en.md`)
 - Maintain consistency with previous website structure
 - Ensure long-term maintainability
 

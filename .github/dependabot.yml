@@ -47,13 +47,12 @@ updates:
           - '@shikijs/*'
           - '@mdx-js/*'
           - hast-util-*
+          - estree-util-*
           - rehype-*
           - remark-*
           - shiki
           - sval
           - unist-util-*
-          - vfile
-          - vfile-*
           - reading-time
           - twoslash
       orama:

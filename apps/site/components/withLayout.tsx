@@ -21,14 +21,24 @@ const layouts = {
   download: DownloadLayout,
   'download-archive': DownloadArchiveLayout,
   article: ArticlePageLayout,
-} satisfies Record<Layouts, FC>;
+} satisfies Record<Layouts, FC<LayoutComponentProps>>;
 
-type WithLayoutProps<L = Layouts> = PropsWithChildren<{ layout: L }>;
+export type LayoutComponentProps = PropsWithChildren<{
+  params: unknown;
+}>;
 
-const WithLayout: FC<WithLayoutProps<Layouts>> = ({ layout, children }) => {
-  const LayoutComponent = layouts[layout] ?? DefaultLayout;
+type WithLayoutProps<L = Layouts> = LayoutComponentProps & {
+  layout?: L;
+};
 
-  return <LayoutComponent>{children}</LayoutComponent>;
+const WithLayout: FC<WithLayoutProps<Layouts>> = ({
+  layout,
+  children,
+  ...props
+}) => {
+  const LayoutComponent = layouts[layout as Layouts] ?? DefaultLayout;
+
+  return <LayoutComponent {...props}>{children}</LayoutComponent>;
 };
 
 export default WithLayout;

@@ -1,32 +1,24 @@
 import { useTranslations } from 'next-intl';
 
-import { getClientContext } from '#site/client-context';
 import BlogHeader from '#site/components/Blog/BlogHeader';
 import WithBlogCategories from '#site/components/withBlogCategories';
 import WithFooter from '#site/components/withFooter';
 import WithNavBar from '#site/components/withNavBar';
 import { getBlogData } from '#site/util/blog';
 
+import type { LayoutComponentProps } from '#site/components/withLayout.js';
 import type { BlogCategory } from '#site/types';
 import type { FC } from 'react';
 
 import styles from './layouts.module.css';
 
-const getBlogCategory = (pathname: string) => {
-  // pathname format can either be: /en/blog/{category}
-  // or /en/blog/{category}/page/{page}
-  // hence we attempt to interpolate the full /en/blog/{category}/page/{page}
-  // and in case of course no page argument is provided we define it to 1
-  // note that malformed routes can't happen as they are all statically generated
-  const [, , category = 'all', , page = 1] = pathname.split('/') as [
-    unknown,
-    unknown,
-    BlogCategory,
-    unknown,
-    number,
-  ];
+type Params = { category: string; page: string };
 
-  const { posts, pagination } = getBlogData(category, Number(page));
+const getBlogCategory = ({ category = 'all', page }: Params) => {
+  const { posts, pagination } = getBlogData(
+    category as BlogCategory,
+    Number(page)
+  );
 
   return {
     category,
@@ -36,9 +28,8 @@ const getBlogCategory = (pathname: string) => {
   };
 };
 
-const BlogLayout: FC = () => {
+const BlogLayout: FC<LayoutComponentProps> = ({ params }) => {
   const t = useTranslations();
-  const { pathname } = getClientContext();
 
   const mapCategoriesToTabs = (categories: Array<BlogCategory>) =>
     categories.map(category => ({
@@ -47,7 +38,7 @@ const BlogLayout: FC = () => {
       link: `/blog/${category}`,
     }));
 
-  const blogData = getBlogCategory(pathname);
+  const blogData = getBlogCategory(params as Params);
 
   return (
     <>

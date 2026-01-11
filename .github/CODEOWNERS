@@ -38,23 +38,17 @@ docs @nodejs/nodejs-website @nodejs/web-infra
 SECURITY.md @nodejs/security-wg
 
 # Node.js Release Blog Posts
-apps/site/pages/en/blog/release @nodejs/releasers
-apps/site/pages/en/blog/announcements @nodejs/releasers
+apps/site/app/en/blog/release @nodejs/releasers
+apps/site/app/en/blog/announcements @nodejs/releasers
 
 # The following users DO NOT have write access, and their review is requested
 # via a GitHub action.
-apps/site/pages/en/learn/diagnostics @nodejs/diagnostics
-
-apps/site/pages/en/learn/getting-started/security-best-practices.md @nodejs/security-wg
-
-apps/site/pages/en/learn/manipulating-files @nodejs/fs
-
-apps/site/pages/en/learn/test-runner @nodejs/test_runner
-
-apps/site/pages/en/learn/typescript @nodejs/typescript
-
-apps/site/pages/en/about/partners.mdx @nodejs/marketing
-apps/site/pages/en/about/branding.mdx @nodejs/marketing
-
-apps/site/pages/en/learn/getting-started/userland-migrations.md @nodejs/userland-migrations
-apps/site/pages/en/blog/migrations @nodejs/userland-migrations
+apps/site/app/en/learn/diagnostics @nodejs/diagnostics
+apps/site/app/en/learn/getting-started/security-best-practices/page.md @nodejs/security-wg
+apps/site/app/en/learn/manipulating-files @nodejs/fs
+apps/site/app/en/learn/test-runner @nodejs/test_runner
+apps/site/app/en/learn/typescript @nodejs/typescript
+apps/site/app/en/about/partners/page.mdx @nodejs/marketing
+apps/site/app/en/about/branding/page.mdx @nodejs/marketing
+apps/site/app/en/learn/getting-started/userland-migrations/page.md @nodejs/userland-migrations
+apps/site/app/en/blog/migrations @nodejs/userland-migrations

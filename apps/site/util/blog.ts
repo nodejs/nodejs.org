@@ -78,3 +78,17 @@ export const getBlogData = (cat: BlogCategory, page?: number): BlogPostsRSC => {
 
   return page && page >= 1 ? paginateBlogPosts(posts, page) : posts;
 };
+
+export const getBlogSitemapData = () => [
+  // Provides Routes for all Blog Categories
+  ...blogData.categories,
+  // Provides Routes for all Blog Categories w/ Pagination
+  ...blogData.categories
+    // retrieves the amount of pages for each blog category
+    .map(c => [c, getBlogPosts(c).pagination.pages])
+    // creates a numeric array for each page and define a pathname for
+    // each page for a category (i.e. blog/all/page/1)
+    .map(([c, t]) => [...Array(t).keys()].map(p => `${c}/page/${p + 1}`))
+    // flattens the array since we have a .map inside another .map
+    .flat(),
+];

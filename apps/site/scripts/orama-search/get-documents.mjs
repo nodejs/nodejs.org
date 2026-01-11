@@ -1,8 +1,12 @@
-import { readFile, glob } from 'node:fs/promises';
-import { join, basename, posix, win32 } from 'node:path';
+import { readFile } from 'node:fs/promises';
+import { join, basename } from 'node:path';
 
 import generateReleaseData from '#site/next-data/generators/releaseData.mjs';
-import { getRelativePath } from '#site/next.helpers.mjs';
+import {
+  DEFAULT_LOCALE_ROOT,
+  getAllPages,
+  pathToRoute,
+} from '#site/util/router.mjs';
 
 import { processDocument } from './process-documents.mjs';
 
@@ -51,23 +55,16 @@ export const getAPIDocs = async () => {
  * excluding blog content.
  */
 export const getArticles = async () => {
-  const relativePath = getRelativePath(import.meta.url);
-  const root = join(relativePath, '..', '..', 'pages', 'en');
-
   // Find all markdown files (excluding blog)
-  const files = await Array.fromAsync(glob('**/*.{md,mdx}', { cwd: root }));
+  const files = await getAllPages();
 
   // Read content + metadata
   return Promise.all(
     files
       .filter(path => !path.startsWith('blog'))
       .map(async path => ({
-        content: await readFile(join(root, path), 'utf8'),
-        pathname: path
-          // Strip the extension
-          .replace(/\.mdx?$/, '')
-          // Normalize to a POSIX path
-          .replaceAll(win32.sep, posix.sep),
+        content: await readFile(join(DEFAULT_LOCALE_ROOT, path), 'utf8'),
+        pathname: pathToRoute(path),
       }))
   );
 };

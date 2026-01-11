@@ -15,29 +15,6 @@ export const IS_DEV_ENV = process.env.NODE_ENV === 'development';
 export const VERCEL_ENV = process.env.VERCEL_ENV || undefined;
 
 /**
- * This is used for telling Next.js to do a Static Export Build of the Website
- *
- * This is used for static/without a Node.js server hosting, such as on our
- * legacy Website Build Environment on Node.js's DigitalOcean Droplet.
- *
- * Note that this is a manual Environment Variable defined by us during `npm run deploy`
- */
-export const ENABLE_STATIC_EXPORT =
-  process.env.NEXT_PUBLIC_STATIC_EXPORT === 'true' ||
-  process.env.NEXT_PUBLIC_STATIC_EXPORT === true;
-
-/**
- * This is used to ensure that pages are Static Export for all locales or only
- * in the default (`en`) locale.
- *
- * Note that this is a manual Environment Variable defined by us during the
- * build process in CI.
- */
-export const ENABLE_STATIC_EXPORT_LOCALE =
-  process.env.NEXT_PUBLIC_STATIC_EXPORT_LOCALE === 'true' ||
-  process.env.NEXT_PUBLIC_STATIC_EXPORT_LOCALE === true;
-
-/**
  * This is used for any place that requires the full canonical URL path for the Node.js Website (and its deployment), such as for example, the Node.js RSS Feed.
  *
  * This variable can either come from the Vercel Deployment as `NEXT_PUBLIC_VERCEL_URL` or from the `NEXT_PUBLIC_BASE_URL` Environment Variable that is manually defined
