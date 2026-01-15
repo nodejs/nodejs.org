@@ -31,7 +31,7 @@ const MetaBar: FC<MetaBarProps> = ({
   );
 
   return (
-    <div className={styles.wrapper}>
+    <aside className={styles.wrapper} aria-label="Article metadata">
       <dl>
         {Object.entries(items)
           .filter(([, value]) => !!value)
@@ -65,7 +65,7 @@ const MetaBar: FC<MetaBarProps> = ({
           </>
         )}
       </dl>
-    </div>
+    </aside>
   );
 };
 

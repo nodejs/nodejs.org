@@ -10,9 +10,13 @@ const Banner: FC<PropsWithChildren<BannerProps>> = ({
   type = 'default',
   children,
 }) => (
-  <div className={`${styles.banner} ${styles[type] || styles.default}`}>
+  <section
+    className={`${styles.banner} ${styles[type] || styles.default}`}
+    role="region"
+    aria-label="Announcement"
+  >
     {children}
-  </div>
+  </section>
 );
 
 export default Banner;
