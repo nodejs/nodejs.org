@@ -12,7 +12,6 @@ const Banner: FC<PropsWithChildren<BannerProps>> = ({
 }) => (
   <section
     className={`${styles.banner} ${styles[type] || styles.default}`}
-    role="region"
     aria-label="Announcement"
   >
     {children}
