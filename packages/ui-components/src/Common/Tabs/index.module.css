@@ -23,8 +23,15 @@
         dark:text-neutral-200;
 
       .tabSecondaryLabel {
-        @apply pl-1
+        @apply ml-1
+          rounded
+          border
+          border-neutral-500
+          px-1
+          py-0.5
+          text-xs
           text-neutral-500
+          dark:border-neutral-800
           dark:text-neutral-800;
       }
 
@@ -35,7 +42,9 @@
           dark:text-green-400;
 
         .tabSecondaryLabel {
-          @apply text-green-800
+          @apply border-green-800
+            text-green-800
+            dark:border-green-600
             dark:text-green-600;
         }
       }
