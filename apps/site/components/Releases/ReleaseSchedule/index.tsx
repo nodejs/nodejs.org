@@ -4,16 +4,16 @@ import provideReleaseSchedule from '#site/next-data/providers/releaseSchedule';
 
 import type { FC } from 'react';
 
+const MONTH = 30 * 24 * 3_600_000;
+
 const ReleaseSchedule: FC = async () => {
   const schedule = await provideReleaseSchedule();
 
-  const now = new Date();
+  // eslint-disable-next-line react-hooks/purity
+  const now = Date.now();
 
-  const threeMonthsAgo = new Date(now);
-  threeMonthsAgo.setMonth(now.getMonth() - 3);
-
-  const sixMonthsFromNow = new Date();
-  sixMonthsFromNow.setMonth(now.getMonth() + 6);
+  const threeMonthsAgo = new Date(now - 3 * MONTH);
+  const sixMonthsFromNow = new Date(now + 6 * MONTH);
 
   const svg = create({
     data: schedule,
