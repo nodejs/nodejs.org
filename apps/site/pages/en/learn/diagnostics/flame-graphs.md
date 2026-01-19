@@ -52,7 +52,7 @@ perf record -e cycles:u -g -- node --perf-basic-prof --interpreted-frames-native
 
 Once the flame graph is rendered, inspect the most saturated orange bars first. They're likely to represent CPU heavy functions.
 
-Worth mentioning - if you click an element of a flame graph a it will zoom-in on the section you clicked.
+Worth mentioning - if you click an element of a flame graph it will zoom-in on the section you clicked.
 
 ### Using `perf` to sample a running process
 
