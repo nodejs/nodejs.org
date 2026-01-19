@@ -1,5 +1,5 @@
 ---
-date: '2025-12-19T00:00:00.000Z'
+date: '2026-01-19T00:00:00.000Z'
 category: migrations
 title: Chalk to Node.js util styleText
 layout: blog-post
@@ -10,7 +10,7 @@ author: richiemccoll
 
 ## `chalk-to-util-styletext`
 
-This codemod aims to help you reduce external dependencies by transforming chalk method calls to use the native Node.js styling functionality. It will also handle automatic removal of the `chalk` package from the package.json.
+This codemod aims to help you reduce external dependencies by transforming chalk method calls to use the native Node.js styling functionality. It will also handle automatic removal of the [`chalk`](https://github.com/chalk/chalk) package from the package.json.
 
 ### Compatible Features:
 
@@ -34,6 +34,8 @@ This codemod aims to help you reduce external dependencies by transforming chalk
 
 - Node.js v20.12.0 or later (for util.styleText)
 - `util.styleText` became stable in Node.js v22.13.0 (and v23.5.0)
+
+> If your package supports a version earlier than 22, this creates a breaking change, which means you must bump the major version of your package.
 
 ### Usage:
 
@@ -74,3 +76,7 @@ console.log(red('Error'));
 const boldBlue = text => styleText(['blue', 'bold'], text);
 console.log(boldBlue('Info'));
 ```
+
+## Recognition
+
+We would like to thank the maintainers of [`chalk`](https://github.com/chalk/chalk) for their support of the package over time and for its contributions to the ecosystem.
