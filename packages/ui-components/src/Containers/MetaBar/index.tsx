@@ -2,7 +2,7 @@ import { Fragment, useMemo } from 'react';
 
 import type { LinkLike } from '#ui/types';
 import type { Heading } from '@vcarl/remark-headings';
-import type { FC } from 'react';
+import type { FC, HTMLAttributes } from 'react';
 
 import styles from './index.module.css';
 
@@ -14,13 +14,14 @@ type MetaBarProps = {
   };
   as?: LinkLike;
   heading: string;
-};
+} & HTMLAttributes<HTMLElement>;
 
 const MetaBar: FC<MetaBarProps> = ({
   items,
   headings,
   as: Component = 'a',
   heading,
+  ...props
 }) => {
   // The default depth of headings to display in the table of contents.
   const { minDepth = 2, items: headingItems = [] } = headings || {};
@@ -31,7 +32,7 @@ const MetaBar: FC<MetaBarProps> = ({
   );
 
   return (
-    <div className={styles.wrapper}>
+    <aside className={styles.wrapper} {...props}>
       <dl>
         {Object.entries(items)
           .filter(([, value]) => !!value)
@@ -65,7 +66,7 @@ const MetaBar: FC<MetaBarProps> = ({
           </>
         )}
       </dl>
-    </div>
+    </aside>
   );
 };
 

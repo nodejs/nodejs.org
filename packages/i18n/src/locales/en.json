@@ -280,7 +280,13 @@
       "contribute": "Contribute",
       "contributeText": "Edit this page",
       "viewAs": "View as",
-      "tableOfContents": "Table of Contents"
+      "tableOfContents": "Table of Contents",
+      "metadata": "Article metadata"
+    },
+    "banner": {
+      "default": "Announcement",
+      "warning": "Warning notification",
+      "error": "Error notification"
     },
     "search": {
       "searchPlaceholder": "Start typing...",

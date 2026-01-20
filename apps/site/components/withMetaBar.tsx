@@ -44,6 +44,7 @@ const WithMetaBar: FC = () => {
     <MetaBar
       heading={t('components.metabar.tableOfContents')}
       as={Link}
+      aria-label={t('components.metabar.metadata')}
       items={{
         [t('components.metabar.lastUpdated')]: lastUpdated,
         [t('components.metabar.readingTime')]: readingTimeText,
