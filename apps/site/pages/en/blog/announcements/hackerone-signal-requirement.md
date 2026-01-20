@@ -21,16 +21,18 @@ submissions.
 
 ## What This Means for You
 
-- **Researchers with Signal >= 1.0**: You can continue reporting vulnerabilities through HackerOne as usual
+- **Researchers with [signal][Signal] >= 1.0**: You can continue reporting vulnerabilities through HackerOne as usual
 - **New researchers or those below the threshold**: You can still reach the security team through the
   [OpenJS Foundation Slack](https://slack-invite.openjsf.org/). Contact us there to discuss potential
   vulnerabilities
 
 ## About HackerOne Signal
 
-Signal is HackerOne's reputation metric that reflects the quality of a researcher's past submissions.
+[Signal][] is HackerOne's reputation metric that reflects the quality of a researcher's past submissions.
 A higher Signal indicates a history of valid, impactful reports. This requirement helps us prioritize
 reports from researchers with demonstrated expertise while reducing the burden of triaging invalid
 submissions.
 
 We appreciate the security community's understanding and continued collaboration in keeping Node.js secure.
+
+[Signal]: https://docs.hackerone.com/en/articles/8369891-signal-impact
