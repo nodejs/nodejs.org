@@ -13,17 +13,13 @@ const WithBanner: FC<{ section: string }> = ({ section }) => {
   const t = useTranslations();
 
   if (banner && dateIsBetween(banner.startDate, banner.endDate)) {
-    const ariaLabels = {
-      default: t('components.banner.announcement'),
-      warning: t('components.banner.warning'),
-      error: t('components.banner.error'),
-    } as const;
-
-    // Fallback to 'default' if no type is specified
     const bannerType = banner.type || 'default';
 
     return (
-      <Banner type={banner.type} aria-label={ariaLabels[bannerType]}>
+      <Banner
+        type={banner.type}
+        aria-label={t(`components.banner.${bannerType}`)}
+      >
         {banner.link ? (
           <Link href={banner.link}>{banner.text}</Link>
         ) : (
