@@ -1,5 +1,5 @@
 ---
-date: 2026-01-20T12:00:00.000Z
+date: 2026-01-21T12:00:00.000Z
 category: announcements
 title: New HackerOne Signal Requirement for Vulnerability Reports
 layout: blog-post
