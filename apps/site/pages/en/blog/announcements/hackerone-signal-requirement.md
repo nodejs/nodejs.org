@@ -11,9 +11,10 @@ higher** to submit vulnerability reports to the Node.js project.
 
 ## Why This Change
 
-The Node.js security team has experienced a significant increase in low-quality, AI-generated vulnerability
-reports. Triaging these reports consumes time and energy that could be spent on legitimate security work.
-We consider this volume of noise a denial-of-service against the project's security process.
+The Node.js security team has experienced a significant increase in low-quality reports.
+This trend has been increasing over the years, and over the holidays it crossed the threshold
+that we can actually handle. Between December 15th and January 15th, we received over 30 reports.
+Triaging these reports consumes time and energy that could be spent on legitimate security work.
 
 By requiring a minimum Signal score, we ensure that reporters have a proven track record of submitting
 valid security reports, while still allowing newer researchers to participate with a limited number of
@@ -21,8 +22,8 @@ submissions.
 
 ## What This Means for You
 
-- **Researchers with [signal][Signal] >= 1.0**: You can continue reporting vulnerabilities through HackerOne as usual
-- **New researchers or those below the threshold**: You can still reach the security team through the
+- **New researchers or researchers with [signal][Signal] >= 1.0**: You can continue reporting vulnerabilities through HackerOne as usual
+- **Those below the threshold**: You can still reach the security team through the
   [OpenJS Foundation Slack](https://slack-invite.openjsf.org/). Contact us there to discuss potential
   vulnerabilities
 
