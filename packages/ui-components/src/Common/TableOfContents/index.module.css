@@ -1,0 +1,39 @@
+@reference "../../styles/index.css";
+
+.details {
+  @apply my-2
+    block
+    rounded-md
+    bg-neutral-200
+    lg:hidden
+    dark:bg-neutral-900;
+
+  .summary {
+    @apply px-4
+      py-2;
+  }
+
+  .list {
+    @apply space-y-1
+      px-4
+      pb-2;
+  }
+
+  .link {
+    @apply text-sm
+      font-semibold
+      text-neutral-900
+      underline
+      hover:text-neutral-700
+      dark:text-white
+      dark:hover:text-neutral-500;
+  }
+
+  .depthThree {
+    @apply pl-2;
+  }
+
+  .depthFour {
+    @apply pl-4;
+  }
+}
