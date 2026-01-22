@@ -1,5 +1,7 @@
 import classNames from 'classnames';
 
+import { LinkLike } from '#ui/types.js';
+
 import type { Heading } from '@vcarl/remark-headings';
 import type { FC } from 'react';
 
@@ -9,12 +11,14 @@ type TableOfContentsProps = {
   headings: Array<Heading>;
   minDepth?: number;
   maxDepth?: number;
+  as?: LinkLike;
 };
 
 const TableOfContents: FC<TableOfContentsProps> = ({
   headings,
   minDepth = 2,
   maxDepth = 4,
+  as: Component = 'a',
 }) => {
   const filteredHeadings = headings.filter(
     ({ depth }) => depth >= minDepth && depth <= maxDepth
@@ -26,7 +30,7 @@ const TableOfContents: FC<TableOfContentsProps> = ({
       <ul className={styles.list}>
         {filteredHeadings.map((head, index) => (
           <li key={head.data?.id ?? index}>
-            <a
+            <Component
               href={head.data?.id && `#${head.data?.id}`}
               className={classNames(
                 styles.link,
@@ -35,7 +39,7 @@ const TableOfContents: FC<TableOfContentsProps> = ({
               )}
             >
               {head.value}
-            </a>
+            </Component>
           </li>
         ))}
       </ul>
