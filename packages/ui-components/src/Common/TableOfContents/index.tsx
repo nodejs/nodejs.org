@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-import { LinkLike } from '#ui/types.js';
+import { LinkLike } from '#ui/types';
 
 import type { Heading } from '@vcarl/remark-headings';
 import type { FC } from 'react';
@@ -31,7 +31,7 @@ const TableOfContents: FC<TableOfContentsProps> = ({
         {filteredHeadings.map((head, index) => (
           <li key={head.data?.id ?? index}>
             <Component
-              href={head.data?.id && `#${head.data?.id}`}
+              href={head.data?.id && `#${head.data.id}`}
               className={classNames(
                 styles.link,
                 head.depth === 3 && styles.depthThree,
