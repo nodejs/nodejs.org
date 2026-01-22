@@ -17,6 +17,8 @@ export const CustomDepth: Story = {
 export default {
   component: TableOfContents,
   args: {
+    ariaLabel: 'Table of Contents',
+    summaryTitle: 'On this page',
     headings: [
       {
         value: 'OpenSSL update assessment, and Node.js project plans',

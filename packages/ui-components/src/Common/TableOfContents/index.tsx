@@ -9,6 +9,8 @@ import styles from './index.module.css';
 
 type TableOfContentsProps = {
   headings: Array<Heading>;
+  ariaLabel: string;
+  summaryTitle: string;
   minDepth?: number;
   maxDepth?: number;
   as?: LinkLike;
@@ -16,6 +18,8 @@ type TableOfContentsProps = {
 
 const TableOfContents: FC<TableOfContentsProps> = ({
   headings,
+  ariaLabel,
+  summaryTitle,
   minDepth = 2,
   maxDepth = 4,
   as: Component = 'a',
@@ -25,8 +29,8 @@ const TableOfContents: FC<TableOfContentsProps> = ({
   );
 
   return (
-    <details className={styles.details} aria-label="Table of Contents">
-      <summary className={styles.summary}>On this page</summary>
+    <details className={styles.details} aria-label={ariaLabel}>
+      <summary className={styles.summary}>{summaryTitle}</summary>
       <ul className={styles.list}>
         {filteredHeadings.map((head, index) => (
           <li key={head.data?.id ?? index}>
