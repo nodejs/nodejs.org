@@ -21,13 +21,13 @@ const TableOfContents: FC<TableOfContentsProps> = ({
   );
 
   return (
-    <details className={styles.details}>
+    <details className={styles.details} aria-label="Table of Contents">
       <summary className={styles.summary}>On this page</summary>
       <ul className={styles.list}>
-        {filteredHeadings.map(head => (
-          <li key={head.data?.id}>
+        {filteredHeadings.map((head, index) => (
+          <li key={head.data?.id ?? index}>
             <a
-              href={`#${head.data?.id}`}
+              href={head.data?.id && `#${head.data?.id}`}
               className={classNames(
                 styles.link,
                 head.depth === 3 && styles.depthThree,
