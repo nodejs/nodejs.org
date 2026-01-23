@@ -14,9 +14,7 @@ We know the availability and overall health of The npm Registry is paramount to 
 
 The root cause of these downtime was insufficient resources: both hardware and human. This is a full post-mortem where we will be look at how npmjs.org works, what went wrong, how we changed the previous architecture of The npm Registry to fix it, as well next steps we are taking to prevent this from happening again.
 
-All of the next steps require additional expenditure from Nodejitsu: both servers and labor. This is why along with this post-mortem we are announcing our [crowdfunding campaign: scalenpm.org](https://scalenpm.org)! Our goal is to raise enough funds so that Nodejitsu can continue to run The npm Registry as a free service for _you, the community._
-
-Please take a minute now to donate at [https://scalenpm.org](https://scalenpm.org)!
+All of the next steps require additional expenditure from Nodejitsu: both servers and labor. This is why along with this post-mortem we are announcing our crowdfunding campaign! Our goal is to raise enough funds so that Nodejitsu can continue to run The npm Registry as a free service for _you, the community._
 
 ## How does npmjs.org work?
 
@@ -72,8 +70,6 @@ When these new infrastructure components are in-place The npm Registry will look
 The npm Registry has had a 10x year. In November 2012 there were 13.5 million downloads. In October 2013 there were **114.6 million package downloads.** We're honored to have been a part of sustaining this growth for the community and we want to see it continue to grow to a billion package downloads a month and beyond.
 
 _**But we need your help!**_ All of these necessary improvements require more servers, more time from Nodejitsu staff and an overall increase to what we spend maintaining the public npm registry as a free service for the Node.js community.
-
-Please take a minute now to donate at [https://scalenpm.org](https://scalenpm.org)!
 
 [browserify]: http://browserify.org/
 [dotc]: https://github.com/substack/dotc
