@@ -1,5 +1,5 @@
 ---
-date: '2026-01-19T00:00:00.000Z'
+date: '2026-01-23T00:00:00.000Z'
 category: migrations
 title: Chalk to Node.js util styleText
 layout: blog-post
@@ -21,7 +21,7 @@ This codemod aims to help you reduce external dependencies by transforming chalk
 - Style chaining via array syntax
 - Environment variable support (NO_COLOR, NODE_DISABLE_COLORS, FORCE_COLOR)
 
-### Non-Compatible Features:
+### Incompatible Features:
 
 - Custom RGB colors (chalk.rgb(), chalk.hex())
 - 256-color palette (chalk.ansi256())
@@ -35,7 +35,8 @@ This codemod aims to help you reduce external dependencies by transforming chalk
 - Node.js v20.12.0 or later (for util.styleText)
 - `util.styleText` became stable in Node.js v22.13.0 (and v23.5.0)
 
-> If your package supports a version earlier than 22, this creates a breaking change, which means you must bump the major version of your package.
+> If your package currently supports Node.js versions earlier than v20.12.0, you cannot migrate to util.styleText without dropping support for those versions.
+> This requires bumping the major version of your package AND updating the engines field in your package.json to require Node.js >= v20.12.0.
 
 ### Usage:
 
