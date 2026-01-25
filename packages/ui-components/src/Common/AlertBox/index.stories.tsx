@@ -111,16 +111,6 @@ export const NoTitle: Story = {
   },
 };
 
-export default {
-  component: AlertBox,
-  argTypes: {
-    size: {
-      options: ['default', 'small'],
-      control: { type: 'radio' },
-    },
-  },
-} as Meta;
-
 export const SmallContainer: Story = {
   render: args => (
     <div className="w-200">
@@ -141,3 +131,58 @@ export const SmallContainer: Story = {
     size: 'default',
   },
 };
+
+export const WithLongContent: Story = {
+  args: {
+    level: 'warning',
+    title: 'Stability: 1',
+    children: (
+      <span>
+        Experimental. Please migrate away from this API, if you can. We do not
+        recommend using the{' '}
+        <a href="#async_hookscreatehookcallbacks">
+          <code>createHook</code>
+        </a>
+        ,{' '}
+        <a href="#class-asynchook">
+          <code>AsyncHook</code>
+        </a>
+        , and
+        <a href="#async_hooksexecutionasyncresource">
+          <code>executionAsyncResource</code>
+        </a>{' '}
+        APIs as they have usability issues, safety risks, and performance
+        implications. Async context tracking use cases are better served by the
+        stable{' '}
+        <a href="async_context.html#class-asynclocalstorage">
+          <code>AsyncLocalStorage</code>
+        </a>{' '}
+        API. If you have a use case for
+        <code>createHook</code>, <code>AsyncHook</code>, or{' '}
+        <code>executionAsyncResource</code> beyond the context tracking need
+        solved by{' '}
+        <a href="async_context.html#class-asynclocalstorage">
+          <code>AsyncLocalStorage</code>
+        </a>{' '}
+        or diagnostics data currently provided by{' '}
+        <a href="diagnostics_channel.html">Diagnostics Channel</a>, please open
+        an issue at{' '}
+        <a href="https://github.com/nodejs/node/issues">
+          https://github.com/nodejs/node/issues
+        </a>{' '}
+        describing your use case so we can create a more purpose-focused API.
+      </span>
+    ),
+    size: 'default',
+  },
+};
+
+export default {
+  component: AlertBox,
+  argTypes: {
+    size: {
+      options: ['default', 'small'],
+      control: { type: 'radio' },
+    },
+  },
+} as Meta;

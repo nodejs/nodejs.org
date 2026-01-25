@@ -60,6 +60,11 @@ export default {
         depth: 5, // h5s do not get shown
         data: { id: 'node-website' },
       },
+      {
+        value: 'ERR_DUPLICATE_STARTUP_SNAPSHOT_MAIN_FUNCTION',
+        depth: 3,
+        data: { id: 'err_duplicate_startup_snapshot_main_function' },
+      },
     ],
   },
 } as Meta;
