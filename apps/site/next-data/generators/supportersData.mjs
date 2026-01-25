@@ -1,4 +1,8 @@
-import { OPENCOLLECTIVE_MEMBERS_URL } from '#site/next.constants.mjs';
+import {
+  OPENCOLLECTIVE_MEMBERS_URL,
+  GITHUB_GRAPHQL_URL,
+  GITHUB_API_KEY,
+} from '#site/next.constants.mjs';
 import { fetchWithRetry } from '#site/util/fetch';
 
 /**
@@ -26,4 +30,156 @@ async function fetchOpenCollectiveData() {
   return members;
 }
 
-export default fetchOpenCollectiveData;
+/**
+ * Fetches supporters data from Github API, filters active backers,
+ * and maps it to the Supporters type.
+ *
+ * @returns {Promise<Array<import('#site/types/supporters').GithubSponsorSupporter>>} Array of supporters
+ */
+async function fetchGithubSponsorsData() {
+  if (!GITHUB_API_KEY) {
+    return [];
+  }
+
+  const sponsors = [];
+
+  // Fetch sponsorship pages
+  let cursor = null;
+
+  while (true) {
+    const query = sponsorshipsQuery(cursor);
+    const data = await graphql(query);
+
+    if (data.errors) {
+      throw new Error(JSON.stringify(data.errors));
+    }
+
+    const nodeRes = data.data.user?.sponsorshipsAsMaintainer;
+    if (!nodeRes) {
+      break;
+    }
+
+    const { nodes, pageInfo } = nodeRes;
+    const mapped = nodes.map(n => {
+      const s = n.sponsor || n.sponsorEntity || n.sponsorEntity; // support different field names
+      return {
+        id: s?.id || null,
+        login: s?.login || null,
+        name: s?.name || s?.login || null,
+        avatar: s?.avatarUrl || null,
+        url: s?.websiteUrl || s?.url || null,
+      };
+    });
+
+    sponsors.push(...mapped);
+
+    if (!pageInfo.hasNextPage) {
+      break;
+    }
+
+    cursor = pageInfo.endCursor;
+  }
+  return sponsors;
+}
+
+function sponsorshipsQuery(cursor = null) {
+  return `
+    query {
+        organization(login: "nodejs") {
+            sponsorshipsAsMaintainer (first: 100, includePrivate: false, after: "${cursor}") {
+                nodes {
+                    sponsor: sponsorEntity {
+                        ...on User {
+                            id: databaseId,
+                            name,
+                            login,
+                            avatarUrl,
+                            url,
+                            websiteUrl
+                        }
+                        ...on Organization {
+                            id: databaseId,
+                            name,
+                            login,
+                            avatarUrl,
+                            url,
+                            websiteUrl
+                        }
+                    },
+                }
+                pageInfo {
+                    endCursor
+                    startCursor
+                    hasNextPage
+                    hasPreviousPage
+                }
+            }
+        }
+    }`;
+}
+
+// function donationsQuery(cursor = null) {
+//   return `
+//       query {
+//           organization(login: "nodejs") {
+//               sponsorsActivities (first: 100, includePrivate: false, after: "${cursor}") {
+//                   nodes {
+//                       id
+//                       sponsor {
+//                           ...on User {
+//                               id: databaseId,
+//                               name,
+//                               login,
+//                               avatarUrl,
+//                               url,
+//                               websiteUrl
+//                           }
+//                           ...on Organization {
+//                               id: databaseId,
+//                               name,
+//                               login,
+//                               avatarUrl,
+//                               url,
+//                               websiteUrl
+//                           }
+//                       },
+//                       timestamp
+//                   }
+//               }
+//           }
+//       }`;
+// }
+
+const graphql = async (query, variables = {}) => {
+  const res = await fetch(GITHUB_GRAPHQL_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${GITHUB_API_KEY}`,
+    },
+    body: JSON.stringify({ query, variables }),
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`GitHub API error: ${res.status} ${text}`);
+  }
+
+  return res.json();
+};
+
+/**
+ * Fetches supporters data from Open Collective API and GitHub Sponsors, filters active backers,
+ * and maps it to the Supporters type.
+ *
+ * @returns {Promise<Array<import('#site/types/supporters').OpenCollectiveSupporter | import('#site/types/supporters').GithubSponsorSupporter>>} Array of supporters
+ */
+async function sponsorsData() {
+  const sponsors = await Promise.all([
+    fetchGithubSponsorsData(),
+    fetchOpenCollectiveData(),
+  ]);
+  return sponsors.flat();
+}
+
+export default sponsorsData;

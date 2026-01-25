@@ -4,7 +4,7 @@ import type { Supporter } from '#site/types';
 import type { FC } from 'react';
 
 type SupportersListProps = {
-  supporters: Array<Supporter<'opencollective'>>;
+  supporters: Array<Supporter<'opencollective' | 'github'>>;
 };
 
 const SupportersList: FC<SupportersListProps> = ({ supporters }) => (
