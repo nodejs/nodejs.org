@@ -1,6 +1,6 @@
 {
   "name": "@node-core/ui-components",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "type": "module",
   "exports": {
     "./*": [

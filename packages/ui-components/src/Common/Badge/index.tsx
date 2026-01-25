@@ -10,17 +10,25 @@ type BadgeSize = 'small' | 'medium';
 type BadgeProps = HTMLAttributes<HTMLSpanElement> & {
   size?: BadgeSize;
   kind?: BadgeKind;
+  circular?: boolean;
 };
 
 const Badge: FC<PropsWithChildren<BadgeProps>> = ({
   kind = 'default',
   size = 'medium',
+  circular = false,
   className,
   children,
   ...props
 }) => (
   <span
-    className={classNames(styles.badge, styles[kind], styles[size], className)}
+    className={classNames(
+      styles.badge,
+      styles[kind],
+      styles[size],
+      { [styles.circular]: circular },
+      className
+    )}
     {...props}
   >
     {children}

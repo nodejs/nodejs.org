@@ -8,19 +8,39 @@
     lg:hidden
     dark:bg-neutral-900;
 
+  &[open] {
+    .icon {
+      @apply rotate-90;
+    }
+  }
+
   .summary {
-    @apply px-4
-      py-2;
+    @apply flex
+      list-none
+      items-center
+      gap-1
+      px-3.5
+      py-2.5;
+
+    &::-webkit-details-marker {
+      @apply hidden;
+    }
+
+    .icon {
+      @apply size-5;
+    }
   }
 
   .list {
     @apply space-y-1
       px-4
-      pb-2;
+      pb-2
+      wrap-anywhere;
   }
 
   .link {
-    @apply text-sm
+    @apply inline-block
+      text-sm
       font-semibold
       text-neutral-900
       underline

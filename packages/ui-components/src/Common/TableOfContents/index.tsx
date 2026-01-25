@@ -1,3 +1,4 @@
+import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 
 import { LinkLike } from '#ui/types';
@@ -35,7 +36,9 @@ const TableOfContents: FC<TableOfContentsProps> = ({
 
   return (
     <details className={classNames(styles.details, className)} {...props}>
-      <summary className={styles.summary}>{summaryTitle}</summary>
+      <summary className={styles.summary}>
+        <ChevronRightIcon className={styles.icon} /> {summaryTitle}
+      </summary>
       <ul className={styles.list}>
         {filteredHeadings.map((head, index) => (
           <li key={head.data?.id ?? index}>
