@@ -67,8 +67,8 @@ export default {
     children: <TabsContent />,
     defaultValue: 'mjs',
     tabs: [
-      { key: 'mjs', label: 'Example', secondaryLabel: 'MJS' },
-      { key: 'cjs', label: 'Example', secondaryLabel: 'CJS' },
+      { key: 'mjs', label: 'Example', extension: 'MJS' },
+      { key: 'cjs', label: 'Example', extension: 'CJS' },
     ],
   },
 } as Meta;
