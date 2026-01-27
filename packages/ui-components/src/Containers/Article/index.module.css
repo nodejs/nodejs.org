@@ -18,8 +18,8 @@
   > *:nth-child(1) {
     @apply [grid-area:sidebar]
       lg:sticky
-      lg:top-0
-      lg:max-h-[calc(100vh-var(--header-height,0))]
+      lg:top-[var(--header-height,0)]
+      lg:h-[calc(100vh-var(--header-height,0))]
       lg:overflow-y-auto;
   }
 
