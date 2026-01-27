@@ -49,7 +49,6 @@ export const Medium: Story = {
 
 export const Circular: Story = {
   args: {
-    circular: true,
     children: 'D',
     size: 'small',
     kind: 'error',
@@ -58,7 +57,6 @@ export const Circular: Story = {
 
 export const MediumCircular: Story = {
   args: {
-    circular: true,
     children: 'E',
     kind: 'warning',
   },
