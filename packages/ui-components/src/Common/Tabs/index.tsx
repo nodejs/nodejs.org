@@ -38,9 +38,9 @@ const Tabs: FC<PropsWithChildren<TabsProps>> = ({
           className={classNames(styles.tabsTrigger, triggerClassName)}
         >
           {tab.label}
-          {tab.extension ? (
+          {tab.extension && (
             <span className={styles.tabExtension}>{tab.extension}</span>
-          ) : null}
+          )}
           {tab.secondaryLabel ? (
             <span className={styles.tabSecondaryLabel}>
               {tab.secondaryLabel}

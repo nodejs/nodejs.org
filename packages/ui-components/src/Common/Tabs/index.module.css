@@ -27,11 +27,11 @@
           rounded-xs
           border
           border-neutral-200
-          p-0.5
-          text-[10px]
+          px-1
+          py-0.5
+          text-xs
           font-normal
-          text-neutral-800
-          dark:text-neutral-200;
+          text-neutral-200;
       }
 
       .tabSecondaryLabel {
@@ -47,10 +47,8 @@
           dark:text-green-400;
 
         .tabExtension {
-          @apply border-green-600
-            text-green-600
-            dark:border-green-400
-            dark:text-green-400;
+          @apply border-green-400
+            text-green-400;
         }
 
         .tabSecondaryLabel {
