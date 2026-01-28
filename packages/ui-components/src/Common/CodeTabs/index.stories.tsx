@@ -61,6 +61,15 @@ const TabsContent: FC = () => (
 
 export const Default: Story = {};
 
+export const WithExtension: Story = {
+  args: {
+    tabs: [
+      { key: 'mjs', label: 'Example', extension: 'MJS' },
+      { key: 'cjs', label: 'Example', extension: 'CJS' },
+    ],
+  },
+};
+
 export default {
   component: CodeTabs,
   args: {
