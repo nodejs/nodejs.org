@@ -61,14 +61,23 @@ const TabsContent: FC = () => (
 
 export const Default: Story = {};
 
+export const WithExtension: Story = {
+  args: {
+    tabs: [
+      { key: 'mjs', label: 'Example', extension: 'MJS' },
+      { key: 'cjs', label: 'Example', extension: 'CJS' },
+    ],
+  },
+};
+
 export default {
   component: CodeTabs,
   args: {
     children: <TabsContent />,
     defaultValue: 'mjs',
     tabs: [
-      { key: 'mjs', label: 'Example', extension: 'MJS' },
-      { key: 'cjs', label: 'Example', extension: 'CJS' },
+      { key: 'mjs', label: 'Example' },
+      { key: 'cjs', label: 'Example' },
     ],
   },
 } as Meta;
