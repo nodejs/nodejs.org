@@ -3,6 +3,7 @@
 .footer {
   @apply flex
     justify-center
+    gap-4
     border-t
     border-neutral-200
     bg-neutral-100
@@ -12,6 +13,11 @@
     lg:rounded-b-xl
     dark:border-neutral-900
     dark:bg-neutral-950;
+}
+
+.poweredByContainer {
+  @apply flex
+    justify-center;
 }
 
 .poweredByLink {
