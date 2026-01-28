@@ -19,7 +19,8 @@
     @apply [grid-area:sidebar]
       lg:sticky
       lg:top-0
-      lg:h-[100vh]
+      lg:max-h-screen
+      lg:self-stretch
       lg:overflow-y-auto;
   }
 
