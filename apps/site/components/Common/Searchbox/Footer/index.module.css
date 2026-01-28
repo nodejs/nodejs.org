@@ -53,9 +53,8 @@
 }
 
 .poweredByWrapper {
-  @apply flex
+  @apply ml-8
+    flex
     items-center
     justify-end;
-
-  margin-left: 2rem;
 }
