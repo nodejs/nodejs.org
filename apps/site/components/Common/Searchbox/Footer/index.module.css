@@ -51,3 +51,10 @@
     @apply size-4;
   }
 }
+
+.poweredByWrapper {
+  @apply ml-8
+    flex
+    items-center
+    justify-end;
+}
