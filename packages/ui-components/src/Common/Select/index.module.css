@@ -112,12 +112,12 @@
 }
 
 .dropdown:has(.label) .text > span {
-  &:has(svg) > svg {
+  &:has(svg) {
     @apply ml-3;
   }
 
-  &:not(&:has(svg)) > span {
-    @apply ml-3;
+  &:not(:has(svg)) > span {
+    @apply ml-[2.25rem];
   }
 }
 
