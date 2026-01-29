@@ -10,6 +10,7 @@ type Tab = {
   label: string;
   secondaryLabel?: string;
   value?: string;
+  extension?: string;
 };
 
 type TabsProps = TabsPrimitive.TabsProps & {
@@ -37,6 +38,9 @@ const Tabs: FC<PropsWithChildren<TabsProps>> = ({
           className={classNames(styles.tabsTrigger, triggerClassName)}
         >
           {tab.label}
+          {tab.extension && (
+            <span className={styles.tabExtension}>{tab.extension}</span>
+          )}
           {tab.secondaryLabel ? (
             <span className={styles.tabSecondaryLabel}>
               {tab.secondaryLabel}
