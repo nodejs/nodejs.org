@@ -1,0 +1,83 @@
+---
+date: '2026-01-23T00:00:00.000Z'
+category: migrations
+title: Chalk to Node.js util styleText
+layout: blog-post
+author: richiemccoll
+---
+
+# Migrate from Chalk to Node.js util styleText
+
+## `chalk-to-util-styletext`
+
+This codemod aims to help you reduce external dependencies by transforming chalk method calls to use the native Node.js styling functionality. It will also handle automatic removal of the [`chalk`](https://github.com/chalk/chalk) package from the package.json.
+
+### Compatible Features:
+
+- Basic colors (red, green, blue, yellow, etc.)
+- Bright colors (redBright, greenBright, etc.)
+- Background colors (bgRed, bgGreen, etc.)
+- Text modifiers (bold, dim, italic, underline, strikethrough, etc.)
+- Style chaining via array syntax
+- Environment variable support (NO_COLOR, NODE_DISABLE_COLORS, FORCE_COLOR)
+
+### Incompatible Features:
+
+- Custom RGB colors (chalk.rgb(), chalk.hex())
+- 256-color palette (chalk.ansi256())
+- Template literal syntax (chalk...``)
+- Advanced modifiers with limited terminal support (overline, blink, etc.)
+
+### Prerequisites:
+
+#### Node.js Version Requirements
+
+- Node.js v20.12.0 or later (for util.styleText)
+- `util.styleText` became stable in Node.js v22.13.0 (and v23.5.0)
+
+> If your package currently supports Node.js versions earlier than v20.12.0, you cannot migrate to util.styleText without dropping support for those versions.
+> This requires bumping the major version of your package AND updating the engines field in your package.json to require Node.js >= v20.12.0.
+
+### Usage:
+
+The source code for this codemod can be found in the [chalk-to-util-styletext directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/chalk-to-util-styletext).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/chalk-to-util-styletext).
+
+```bash
+npx codemod @nodejs/chalk-to-util-styletext
+```
+
+### Example:
+
+```js displayName="Before"
+import chalk from 'chalk';
+
+console.log(chalk.red('Error message'));
+
+console.log(chalk.red.bold('Important error'));
+
+const red = chalk.red;
+console.log(red('Error'));
+
+const boldBlue = chalk.blue.bold;
+console.log(boldBlue('Info'));
+```
+
+```js displayName="After"
+import { styleText } from 'node:util';
+
+console.log(styleText('red', 'Error message'));
+
+console.log(styleText(['red', 'bold'], 'Important error'));
+
+const red = text => styleText('red', text);
+console.log(red('Error'));
+
+const boldBlue = text => styleText(['blue', 'bold'], text);
+console.log(boldBlue('Info'));
+```
+
+## Recognition
+
+We would like to thank the maintainers of [`chalk`](https://github.com/chalk/chalk) for their support of the package over time and for its contributions to the ecosystem.
