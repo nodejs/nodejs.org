@@ -280,7 +280,13 @@
       "contribute": "編集への協力",
       "contributeText": "このページを編集",
       "viewAs": "表示方法",
-      "tableOfContents": "目次"
+      "tableOfContents": "目次",
+      "metadata": "記事のメタデータ"
+    },
+    "banner": {
+      "default": "お知らせ",
+      "warning": "警告通知",
+      "error": "エラー通知"
     },
     "search": {
       "searchPlaceholder": "入力を開始...",
