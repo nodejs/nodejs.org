@@ -280,7 +280,13 @@
       "contribute": "Contribuer",
       "contributeText": "Éditer cette page",
       "viewAs": "Afficher en tant que",
-      "tableOfContents": "Table des matières"
+      "tableOfContents": "Table des matières",
+      "metadata": "Métadonnées de l'article"
+    },
+    "banner": {
+      "default": "Annonce",
+      "warning": "Avertissement",
+      "error": "Notification d'erreur"
     },
     "search": {
       "searchPlaceholder": "Commencer à écrire...",
