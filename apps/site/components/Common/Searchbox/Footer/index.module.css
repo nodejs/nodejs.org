@@ -53,8 +53,10 @@
 }
 
 .poweredByWrapper {
-  @apply ml-8
-    flex
+  @apply flex
     items-center
-    justify-end;
+    justify-end
+    ml-0
+    lg:ml-8
+    ;
 }
