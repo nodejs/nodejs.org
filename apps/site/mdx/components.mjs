@@ -34,6 +34,7 @@ import MDXImage from '#site/components/MDX/Image';
 import MinorReleasesTable from '#site/components/Releases/MinorReleasesTable';
 import PreviousReleasesTable from '#site/components/Releases/PreviousReleasesTable';
 import ReleaseOverview from '#site/components/Releases/ReleaseOverview';
+import ReleaseSchedule from '#site/components/Releases/ReleaseSchedule';
 import WithBadgeGroup from '#site/components/withBadgeGroup';
 import WithBanner from '#site/components/withBanner';
 import WithDownloadArchive from '#site/components/withDownloadArchive';
@@ -96,6 +97,7 @@ export default {
   BadgeGroup,
   ReleaseOverview,
   MinorReleasesTable,
+  ReleaseSchedule,
   UpcomingMeetings,
   EOLAlertBox,
   EOLReleaseTable,

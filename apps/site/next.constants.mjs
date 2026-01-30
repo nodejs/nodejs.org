@@ -219,3 +219,9 @@ export const VULNERABILITIES_URL =
  */
 export const OPENCOLLECTIVE_MEMBERS_URL =
   'https://opencollective.com/nodejs/members/all.json';
+
+/**
+ * The location of the Node.js release schedule JSON.
+ */
+export const RELEASE_SCHEDULE_URL =
+  'https://raw.githubusercontent.com/nodejs/Release/refs/heads/main/schedule.json';
