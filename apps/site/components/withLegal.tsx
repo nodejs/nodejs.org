@@ -54,7 +54,7 @@ const WithLegal: FC<LegalProps> = ({ footerLinks }) => {
       );
       return acc;
     },
-    {} as Record<string, (text: React.ReactNode) => JSX.Element>
+    {} as Record<string, (text: React.ReactNode) => React.ReactNode>
   );
 
   return (
