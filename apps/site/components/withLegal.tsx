@@ -18,7 +18,7 @@ type LegalProps = {
  * - used directly to find the passed links from navigation.footerLinks
  */
 const RICH_TRANSLATION_KEYS = [
-  'openjsf',
+  'foundationName',
   'trademarkPolicy',
   'trademarkList',
   'termsOfUse',
@@ -36,7 +36,7 @@ const WithLegal: FC<LegalProps> = ({ footerLinks }) => {
    *
    * Example:     {
       "link": "https://openjsf.org/",
-      "text": "components.containers.footer.links.openjsf"
+      "text": "components.containers.footer.links.foundationName"
     },
    *
    *

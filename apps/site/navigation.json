@@ -34,7 +34,7 @@
   "footerLinks": [
     {
       "link": "https://openjsf.org/",
-      "text": "components.containers.footer.links.openjsf"
+      "text": "components.containers.footer.links.foundationName"
     },
     {
       "link": "https://terms-of-use.openjsf.org/",
