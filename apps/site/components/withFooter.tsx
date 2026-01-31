@@ -8,6 +8,7 @@ import { siteNavigation } from '#site/next.json.mjs';
 
 import type { FC } from 'react';
 
+import WithLegal from './withLegal';
 import WithNodeRelease from './withNodeRelease';
 
 const WithFooter: FC = () => {
@@ -50,12 +51,14 @@ const WithFooter: FC = () => {
     </div>
   );
 
+  const legal = <WithLegal footerLinks={navigation.footerLinks} />;
+
   return (
     <Footer
       navigation={navigation}
       as={Link}
       pathname={pathname}
-      slots={{ primary }}
+      slots={{ primary, legal }}
     />
   );
 };
