@@ -8,6 +8,7 @@ type LegalProps = {
   footerLinks: Array<{
     text: string;
     link: string;
+    translation: string;
   }>;
 };
 
@@ -64,7 +65,7 @@ const WithLegal: FC<LegalProps> = ({ footerLinks }) => {
       <p>
         {footerLinks.map((link, index) => (
           <span key={link.link}>
-            <Link href={link.link}>{link.text}</Link>
+            <Link href={link.link}>{link.translation}</Link>
             {index < footerLinks.length - 1 && ' | '}
           </span>
         ))}
