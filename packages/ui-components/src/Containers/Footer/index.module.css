@@ -67,14 +67,14 @@
 
     p {
       @apply text-center
-          text-sm
-          text-neutral-800
-          dark:text-neutral-500;
+        text-sm
+        text-neutral-800
+        dark:text-neutral-500;
     }
 
     a {
       @apply text-green-600
-          dark:text-green-400;
+        dark:text-green-400;
     }
   }
 }
