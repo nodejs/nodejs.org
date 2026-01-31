@@ -9,7 +9,7 @@ authors: flaviocopes, MylesBorins, LaRuaNa, ahmadawais, ovflowd, marksist300
 As you try to understand the Node.js event loop, one important part of it is `process.nextTick()`.
 Every time the runtime calls back into JavaScript for an event, we call it a tick.
 
-When we pass a function to `process.nextTick()`, we instruct the engine to invoke this function immediately after the current operation completes, before moving to the next phase in the event loop:
+When we pass a function to `process.nextTick()`, we schedule it to run immediately after the current call stack completes, before the event loop continues and before any other queued tasks or phases are processed:
 
 ```js
 process.nextTick(() => {
