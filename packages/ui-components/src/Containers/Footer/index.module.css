@@ -73,8 +73,15 @@
     }
 
     a {
-      @apply text-green-600
+      @apply max-xs:font-semibold
+        text-green-600
         dark:text-green-400;
+
+      &:hover {
+        @apply cursor-pointer
+          text-green-900
+          dark:text-green-200;
+      }
     }
   }
 }
