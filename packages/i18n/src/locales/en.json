@@ -2,11 +2,16 @@
   "components": {
     "containers": {
       "footer": {
+        "legal": "Copyright <foundationName>OpenJS Foundation</foundationName> and Node.js contributors. All rights reserved. The <foundationName>OpenJS Foundation</foundationName> has registered trademarks and uses trademarks.  For a list of trademarks of the <foundationName>OpenJS Foundation</foundationName>, please see our <trademarkPolicy>Trademark Policy</trademarkPolicy> and <trademarkList>Trademark List</trademarkList>.  Trademarks and logos not indicated on the <trademarkList>list of OpenJS Foundation trademarks</trademarkList> are trademarks™ or registered® trademarks of their respective holders. Use of them does not imply any affiliation with or endorsement by them.",
         "links": {
-          "openJSFoundation": "OpenJS Foundation",
-          "trademarkPolicy": "Trademark Policy",
+          "foundationName": "OpenJS Foundation",
+          "termsOfUse": "Terms of Use",
           "privacyPolicy": "Privacy Policy",
+          "bylaws": "Bylaws",
           "codeOfConduct": "Code of Conduct",
+          "trademarkPolicy": "Trademark Policy",
+          "trademarkList": "Trademark List",
+          "cookiePolicy": "Cookie Policy",
           "security": "Security Policy"
         },
         "releasePills": {

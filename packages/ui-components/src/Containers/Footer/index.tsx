@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+
 import NavItem from '#ui/Containers/NavBar/NavItem';
 import {
   Bluesky,
@@ -38,6 +40,7 @@ type Navigation = {
 type ExtraNavigationSlots = {
   primary?: ReactNode;
   secondary?: ReactNode;
+  legal?: ReactNode;
 };
 
 type FooterProps = {
@@ -53,56 +56,34 @@ const Footer: FC<FooterProps> = ({
   navigation,
   slots,
 }) => {
-  const openJSlink = navigation.footerLinks.at(-1)!;
-
   return (
     <footer className={styles.footer}>
-      <div className={styles.sectionPrimary}>
-        {slots?.primary}
+      <div className={styles.row}>
+        <div className={styles.sectionPrimary}>{slots?.primary}</div>
 
-        {navigation.footerLinks.slice(0, -1).map(item => (
-          <NavItem
-            key={item.link}
-            type="footer"
-            href={item.link}
-            as={as}
-            pathname={pathname}
-          >
-            {item.text}
-          </NavItem>
-        ))}
-      </div>
+        <div className={styles.sectionSecondary}>
+          {slots?.secondary}
 
-      <div className={styles.sectionSecondary}>
-        {slots?.secondary}
+          <div className={styles.social}>
+            {navigation.socialLinks.map(link => {
+              const SocialIcon = footerSocialIcons[link.icon];
 
-        <NavItem
-          type="footer"
-          href={openJSlink.link}
-          as={as}
-          pathname={pathname}
-        >
-          &copy; {openJSlink.text}
-        </NavItem>
-
-        <div className={styles.social}>
-          {navigation.socialLinks.map(link => {
-            const SocialIcon = footerSocialIcons[link.icon];
-
-            return (
-              <NavItem
-                key={link.icon}
-                href={link.link}
-                type="footer"
-                as={as}
-                pathname={pathname}
-              >
-                <SocialIcon width={20} height={20} aria-label={link.link} />
-              </NavItem>
-            );
-          })}
+              return (
+                <NavItem
+                  key={link.icon}
+                  href={link.link}
+                  type="footer"
+                  as={as}
+                  pathname={pathname}
+                >
+                  <SocialIcon width={20} height={20} aria-label={link.link} />
+                </NavItem>
+              );
+            })}
+          </div>
         </div>
       </div>
+      <div className={classNames(styles.row, styles.legal)}>{slots?.legal}</div>
     </footer>
   );
 };
