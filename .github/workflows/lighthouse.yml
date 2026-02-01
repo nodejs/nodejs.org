@@ -40,7 +40,7 @@ jobs:
     steps:
       - name: Capture Vercel Preview
         id: check_deployment
-        uses: patrickedqvist/wait-for-vercel-preview@06c79330064b0e6ef7a2574603b62d3c98789125 # v1.3.2
+        uses: patrickedqvist/wait-for-vercel-preview@d7982701e6fcd3ae073bff929e408e004404d38d # v1.3.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 300 # timeout after 5 minutes
