@@ -12,6 +12,12 @@
     "binding": "ASSETS",
     "run_worker_first": true,
   },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "nodejs-website",
+    },
+  ],
   "vars": {
     // Variables needed for skew protection
     // Also note that an appropriate CF_WORKERS_SCRIPTS_API_TOKEN secret
