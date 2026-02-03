@@ -1,3 +1,4 @@
+import NavItem from '@node-core/ui-components/Containers/NavBar/NavItem';
 import { useTranslations } from 'next-intl';
 
 import Link from '#site/components/Link';
@@ -63,11 +64,16 @@ const WithLegal: FC<LegalProps> = ({ footerLinks }) => {
       <p>{t.rich('components.containers.footer.legal', richComponents)}</p>
 
       <p>
-        {footerLinks.map((link, index) => (
-          <span key={link.link}>
-            <Link href={link.link}>{link.translation}</Link>
-            {index < footerLinks.length - 1 && ' | '}
-          </span>
+        {footerLinks.map(link => (
+          <NavItem
+            key={link.link}
+            type="footer"
+            href={link.link}
+            as={Link}
+            pathname={'/'}
+          >
+            {link.translation}
+          </NavItem>
         ))}
       </p>
     </>
