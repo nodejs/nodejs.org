@@ -33,24 +33,40 @@
   },
   "footerLinks": [
     {
-      "link": "https://trademark-policy.openjsf.org/",
-      "text": "components.containers.footer.links.trademarkPolicy"
+      "link": "https://openjsf.org/",
+      "text": "components.containers.footer.links.foundationName"
+    },
+    {
+      "link": "https://terms-of-use.openjsf.org/",
+      "text": "components.containers.footer.links.termsOfUse"
     },
     {
       "link": "https://privacy-policy.openjsf.org/",
       "text": "components.containers.footer.links.privacyPolicy"
     },
     {
+      "link": "https://bylaws.openjsf.org/",
+      "text": "components.containers.footer.links.bylaws"
+    },
+    {
       "link": "https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md",
       "text": "components.containers.footer.links.codeOfConduct"
     },
     {
-      "link": "https://github.com/nodejs/node/security/policy",
-      "text": "components.containers.footer.links.security"
+      "link": "https://trademark-policy.openjsf.org/",
+      "text": "components.containers.footer.links.trademarkPolicy"
     },
     {
-      "link": "https://openjsf.org/",
-      "text": "components.containers.footer.links.openJSFoundation"
+      "link": "https://trademark-list.openjsf.org/",
+      "text": "components.containers.footer.links.trademarkList"
+    },
+    {
+      "link": "https://www.linuxfoundation.org/cookies/",
+      "text": "components.containers.footer.links.cookiePolicy"
+    },
+    {
+      "link": "https://github.com/nodejs/node/security/policy",
+      "text": "components.containers.footer.links.security"
     }
   ],
   "socialLinks": [
