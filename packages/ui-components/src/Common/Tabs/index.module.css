@@ -22,6 +22,18 @@
         text-neutral-800
         dark:text-neutral-200;
 
+      .tabExtension {
+        @apply ml-1
+          rounded-xs
+          border
+          border-neutral-200
+          px-1
+          py-0.5
+          text-xs
+          font-normal
+          text-neutral-200;
+      }
+
       .tabSecondaryLabel {
         @apply pl-1
           text-neutral-500
@@ -33,6 +45,11 @@
           text-green-600
           dark:border-b-green-400
           dark:text-green-400;
+
+        .tabExtension {
+          @apply border-green-400
+            text-green-400;
+        }
 
         .tabSecondaryLabel {
           @apply text-green-800

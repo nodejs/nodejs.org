@@ -46,7 +46,7 @@ export const Footer = () => {
           </span>
         </div>
       </div>
-      <div>
+      <div className={styles.poweredByWrapper}>
         <a
           href="https://www.orama.com/?utm_source=nodejs.org&utm_medium=powered-by"
           target="_blank"
