@@ -19,15 +19,14 @@
     py-6
     sm:overflow-auto
     sm:border-r
-    sm:pb-16
     md:max-w-xs
     lg:px-6
     dark:border-neutral-900
     dark:bg-neutral-950;
 
   .navigation {
-    @apply ml:flex
-      hidden;
+    @apply hidden
+      sm:flex;
 
     &:last-child {
       @apply pb-12;
