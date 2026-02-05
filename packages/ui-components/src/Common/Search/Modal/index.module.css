@@ -99,9 +99,14 @@
     lg:bottom-auto
     lg:h-auto
     lg:max-w-3xl
+    lg:min-w-lg
     lg:bg-neutral-100
     dark:bg-zinc-950
     lg:dark:bg-neutral-950;
+
+  > section {
+    @apply lg:min-w-lg;
+  }
 }
 
 .modalContent {
