@@ -5,6 +5,13 @@
 @source '../Icons';
 
 @theme {
+  --container-8xl: 88rem;
+  --container-9xl: 96rem;
+  --container-10xl: 104rem;
+  --container-11xl: 112rem;
+  --container-12xl: 120rem;
+  --breakpoint-ml: 896px;
+  --breakpoint-3xl: 120rem;
   --color-green-100: #edf2eb;
   --color-green-200: #c5e5b4;
   --color-green-300: #99cc7d;
@@ -112,15 +119,10 @@
   --font-6xl-line-height: 3.75rem;
   --font-7xl: 4.5rem;
   --font-7xl-line-height: 4.5rem;
-  --breakpoint-xs: 670px;
 }
 
 @utility scrollbar-thin {
   scrollbar-width: thin;
-}
-
-@utility max-w-8xl {
-  max-width: 95rem;
 }
 
 @utility bg-gradient-subtle-dark {
