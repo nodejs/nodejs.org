@@ -38,13 +38,13 @@
       focus:border-neutral-500
       focus:ring-1
       focus:ring-neutral-500
-      data-[placeholder]:text-neutral-800
+      data-placeholder:text-neutral-800
       dark:border-neutral-800
       dark:bg-neutral-950
       dark:text-white
       dark:focus:border-neutral-600
       dark:focus:ring-neutral-600
-      dark:data-[placeholder]:text-neutral-200;
+      dark:data-placeholder:text-neutral-200;
   }
 
   .trigger span {
@@ -85,12 +85,12 @@
 
   .text {
     @apply text-neutral-800
-      data-[highlighted]:bg-green-500
-      data-[highlighted]:text-white
-      data-[highlighted]:outline-hidden
+      data-highlighted:bg-green-500
+      data-highlighted:text-white
+      data-highlighted:outline-hidden
       dark:text-neutral-200
-      dark:data-[highlighted]:bg-green-600
-      dark:data-[highlighted]:text-white;
+      dark:data-highlighted:bg-green-600
+      dark:data-highlighted:text-white;
   }
 
   .text > span {
@@ -137,13 +137,13 @@
 
   .text {
     @apply text-neutral-900
-      data-[disabled]:text-neutral-600
-      data-[highlighted]:bg-neutral-100
-      data-[highlighted]:text-neutral-900
+      data-disabled:text-neutral-600
+      data-highlighted:bg-neutral-100
+      data-highlighted:text-neutral-900
       dark:text-white
-      dark:data-[disabled]:text-neutral-700
-      dark:data-[highlighted]:bg-neutral-900
-      dark:data-[highlighted]:text-white;
+      dark:data-disabled:text-neutral-700
+      dark:data-highlighted:bg-neutral-900
+      dark:data-highlighted:text-white;
   }
 
   &.dropdown {
@@ -182,7 +182,7 @@
   .dropdown {
     @apply absolute
       left-0
-      z-99
+      z-999
       mt-4;
   }
 
