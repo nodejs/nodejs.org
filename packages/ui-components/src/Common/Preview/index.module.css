@@ -6,6 +6,7 @@
     relative
     flex
     aspect-[1.90/1]
+    max-w-[660px]
     items-center
     rounded-sm
     border

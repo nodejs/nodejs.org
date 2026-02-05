@@ -134,64 +134,9 @@
   }
 }
 
-.contentLayout {
-  @apply max-w-8xl
-    max-xs:m-0
-    max-xs:block
-    mx-auto
-    grid
-    w-full
-    grid-rows-[1fr]
-    sm:grid-cols-[1fr_theme(spacing.52)]
-    xl:grid-cols-[1fr_theme(spacing.80)];
-
-  > *:nth-child(1) {
-    @apply bg-gradient-subtle
-      dark:bg-gradient-subtle-dark
-      max-xs:border-l-0
-      max-xs:bg-none
-      max-xs:pb-4
-      max-xs:dark:bg-none
-      flex
-      w-full
-      justify-center
-      border-l
-      border-l-neutral-200
-      px-4
-      py-14
-      md:px-14
-      lg:px-28
-      dark:border-l-neutral-900;
-
-    main {
-      @apply max-w-[660px]
-        gap-4
-        [overflow-wrap:_anywhere];
-    }
-  }
-
-  > *:nth-child(2) {
-    @apply xs:mt-0
-      xs:max-w-xs
-      xs:border-l
-      xs:border-t-0
-      mt-8
-      border-t;
-  }
-}
-
-.postLayout {
-  main {
-    > section {
-      @apply flex
-        flex-row
-        items-center
-        gap-4;
-    }
-
-    > div:nth-of-type(1) {
-      @apply mt-2
-        mb-4;
-    }
-  }
+.postAuthors {
+  @apply flex
+    flex-row
+    items-center
+    gap-4;
 }

@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
 
 import WithNoScriptSelect from '#ui/Common/Select/NoScriptSelect';
+import Separator from '#ui/Common/Separator/index';
 import SidebarGroup from '#ui/Containers/Sidebar/SidebarGroup';
 
 import type { LinkLike } from '#ui/types';
@@ -33,6 +34,7 @@ const SideBar = forwardRef<HTMLElement, PropsWithChildren<SidebarProps>>(
     return (
       <aside ref={ref} className={styles.wrapper}>
         {children}
+        {children && selectItems.length > 0 && <Separator />}
 
         {selectItems.length > 0 && (
           <WithNoScriptSelect

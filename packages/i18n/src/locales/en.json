@@ -265,7 +265,15 @@
         "pageLabel": "Go to page {pageNumber}"
       },
       "sidebar": {
-        "title": "Change page"
+        "title": "Change page",
+        "lastUpdated": "Last Updated",
+        "readingTime": "Reading Time",
+        "addedIn": "Added In",
+        "author": "Author",
+        "authors": "Authors",
+        "contribute": "Contribute",
+        "contributeText": "Edit this page",
+        "viewAs": "View as"
       },
       "languageDropdown": {
         "label": "Choose Language"
@@ -274,19 +282,8 @@
         "light": "Switch to Light Mode",
         "dark": "Switch to Dark Mode"
       },
-      "skipToContent": "Skip to content"
-    },
-    "metabar": {
-      "lastUpdated": "Last Updated",
-      "readingTime": "Reading Time",
-      "addedIn": "Added In",
-      "author": "Author",
-      "authors": "Authors",
-      "contribute": "Contribute",
-      "contributeText": "Edit this page",
-      "viewAs": "View as",
-      "tableOfContents": "Table of Contents",
-      "metadata": "Article metadata"
+      "skipToContent": "Skip to content",
+      "onThisPage": "On this page"
     },
     "banner": {
       "default": "Announcement",

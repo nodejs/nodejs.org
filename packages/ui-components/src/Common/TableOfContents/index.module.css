@@ -1,11 +1,14 @@
 @reference "../../styles/index.css";
 
 .details {
-  @apply my-2
+  @apply sticky
+    top-4
+    z-50
+    mb-6
     block
     rounded-md
     bg-neutral-200
-    lg:hidden
+    shadow-lg
     dark:bg-neutral-900;
 
   &[open] {
