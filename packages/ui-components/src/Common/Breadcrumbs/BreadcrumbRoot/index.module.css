@@ -1,7 +1,7 @@
 @reference "../../../styles/index.css";
 
 .list {
-  @apply xs:w-full
+  @apply ml:w-full
     flex
     w-screen
     gap-5

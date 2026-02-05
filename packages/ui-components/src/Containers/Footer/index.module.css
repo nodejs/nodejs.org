@@ -73,7 +73,7 @@
     }
 
     a {
-      @apply max-xs:font-semibold
+      @apply max-ml:font-semibold
         text-green-600
         dark:text-green-400;
 

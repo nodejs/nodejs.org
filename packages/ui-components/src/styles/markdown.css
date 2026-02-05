@@ -74,7 +74,7 @@ main {
   /* link that isn't inside a heading */
   a:not(h1 > a):not(h2 > a):not(h3 > a):not(h4 > a):not(h5 > a):not(h6 > a),
   .anchor {
-    @apply max-xs:font-semibold
+    @apply max-ml:font-semibold
       text-green-600
       dark:text-green-400;
 
@@ -84,12 +84,12 @@ main {
     }
 
     &[role='button'] {
-      @apply max-xs:font-regular;
+      @apply max-ml:font-regular;
     }
 
     &:has(code) {
-      @apply max-xs:decoration-neutral-800
-        dark:max-xs:decoration-neutral-200;
+      @apply max-ml:decoration-neutral-800
+        dark:max-ml:decoration-neutral-200;
 
       code {
         @apply text-inherit;
@@ -161,7 +161,7 @@ main {
       @apply sm:border-b-0;
 
       &:last-child {
-        @apply max-xs:border-b-0;
+        @apply max-ml:border-b-0;
       }
     }
 

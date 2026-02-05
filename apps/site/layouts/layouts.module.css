@@ -53,7 +53,7 @@
         }
 
         small {
-          @apply max-xs:text-xs
+          @apply max-ml:text-xs
             text-center
             text-sm
             text-neutral-600
@@ -97,8 +97,8 @@
 .downloadLayout {
   @apply bg-gradient-subtle
     dark:bg-gradient-subtle-dark
-    max-xs:bg-none
-    max-xs:dark:bg-none
+    max-ml:bg-none
+    max-ml:dark:bg-none
     flex
     w-full
     justify-center;
@@ -136,22 +136,22 @@
 
 .contentLayout {
   @apply max-w-8xl
-    max-xs:m-0
-    max-xs:block
+    max-ml:m-0
+    max-ml:block
     mx-auto
     grid
     w-full
     grid-rows-[1fr]
-    sm:grid-cols-[1fr_theme(spacing.52)]
-    xl:grid-cols-[1fr_theme(spacing.80)];
+    sm:grid-cols-[1fr_--spacing(52)]
+    xl:grid-cols-[1fr_--spacing(80)];
 
   > *:nth-child(1) {
     @apply bg-gradient-subtle
       dark:bg-gradient-subtle-dark
-      max-xs:border-l-0
-      max-xs:bg-none
-      max-xs:pb-4
-      max-xs:dark:bg-none
+      max-ml:border-l-0
+      max-ml:bg-none
+      max-ml:pb-4
+      max-ml:dark:bg-none
       flex
       w-full
       justify-center
@@ -166,15 +166,15 @@
     main {
       @apply max-w-[660px]
         gap-4
-        [overflow-wrap:_anywhere];
+        wrap-anywhere;
     }
   }
 
   > *:nth-child(2) {
-    @apply xs:mt-0
-      xs:max-w-xs
-      xs:border-l
-      xs:border-t-0
+    @apply ml:mt-0
+      ml:max-w-xs
+      ml:border-l
+      ml:border-t-0
       mt-8
       border-t;
   }

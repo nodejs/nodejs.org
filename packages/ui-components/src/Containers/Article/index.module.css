@@ -1,53 +1,54 @@
 @reference "../../styles/index.css";
 
 .articleLayout {
-  @apply max-w-8xl
+  @apply max-w-10xl
+    ml:grid
+    ml:grid-cols-[--spacing(52)_1fr]
+    ml:grid-rows-[1fr]
+    ml:overflow-visible
+    ml:[grid-template-areas:'sidebar_main''sidebar_footer']
     mx-auto
     block
     w-full
-    sm:grid
-    sm:grid-cols-[theme(spacing.52)_1fr]
-    sm:grid-rows-[1fr]
-    sm:overflow-visible
-    sm:[grid-template-areas:'sidebar_main''sidebar_footer']
-    md:grid-cols-[theme(spacing.64)_1fr]
-    lg:grid-cols-[theme(spacing.52)_1fr_theme(spacing.52)]
-    lg:[grid-template-areas:'sidebar_main_metabar''sidebar_footer_metabar']
-    xl:grid-cols-[theme(spacing.80)_1fr_theme(spacing.80)];
+    xl:grid-cols-[--spacing(52)_1fr_--spacing(52)]
+    xl:[grid-template-areas:'sidebar_main_metabar''sidebar_footer_metabar']
+    2xl:grid-cols-[--spacing(80)_1fr_--spacing(80)];
 
   > *:nth-child(1) {
     @apply [grid-area:sidebar]
-      lg:sticky
-      lg:top-0
-      lg:h-[100vh]
-      lg:overflow-y-auto;
+      xl:sticky
+      xl:top-0
+      xl:h-screen
+      xl:overflow-y-auto;
   }
 
   > *:nth-child(2) {
-    @apply contents
-      sm:max-lg:block;
+    @apply ml:max-xl:block
+      contents;
 
     > *:first-child {
-      @apply sm:bg-gradient-subtle
-        sm:dark:bg-gradient-subtle-dark
+      @apply ml:bg-gradient-subtle
+        ml:dark:bg-gradient-subtle-dark
+        3xl:px-18
+        ml:bg-fixed
+        ml:p-8
+        min-w-0
         p-4
         [grid-area:main]
         motion-safe:scroll-smooth
-        sm:bg-fixed
-        sm:p-12
-        xl:px-18;
+        xl:p-12;
     }
 
     > *:last-child {
-      @apply mt-8
+      @apply ml:mt-0
+        mt-8
         border-t
         [grid-area:metabar]
-        sm:mt-0
-        lg:sticky
-        lg:top-0
-        lg:max-w-xs
-        lg:border-t-0
-        lg:border-l;
+        xl:sticky
+        xl:top-0
+        xl:max-w-xs
+        xl:border-t-0
+        xl:border-l;
     }
   }
 

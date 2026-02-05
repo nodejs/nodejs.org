@@ -3,13 +3,13 @@
 .container {
   @apply border-neutral-200
     bg-white
-    lg:flex
-    lg:h-16
-    lg:flex-row
-    lg:items-center
-    lg:gap-8
-    lg:border-b
-    lg:px-8
+    xl:flex
+    xl:h-16
+    xl:flex-row
+    xl:items-center
+    xl:gap-8
+    xl:border-b
+    xl:px-8
     dark:border-neutral-900
     dark:bg-neutral-950;
 }
@@ -22,11 +22,11 @@
     border-b
     border-neutral-200
     px-4
-    lg:flex
-    lg:h-full
-    lg:items-center
-    lg:border-0
-    lg:px-0
+    xl:flex
+    xl:h-full
+    xl:items-center
+    xl:border-0
+    xl:px-0
     dark:border-neutral-900;
 }
 
@@ -52,7 +52,7 @@
 .sidebarItemTogglerLabel {
   @apply block
     cursor-pointer
-    lg:hidden;
+    xl:hidden;
 }
 
 .main {
@@ -60,9 +60,9 @@
     flex-col
     justify-between
     gap-4
-    lg:flex
-    lg:flex-row
-    lg:items-center;
+    xl:flex
+    xl:flex-row
+    xl:items-center;
 }
 
 .navItems {
@@ -72,11 +72,11 @@
     border-b
     border-neutral-200
     p-4
-    lg:flex-1
-    lg:flex-row
-    lg:gap-1
-    lg:border-0
-    lg:p-0
+    xl:flex-1
+    xl:flex-row
+    xl:gap-1
+    xl:border-0
+    xl:p-0
     dark:border-neutral-900;
 }
 
@@ -91,9 +91,9 @@
     border-neutral-200
     p-4
     sm:flex-nowrap
-    lg:basis-96
-    lg:border-0
-    lg:p-0
+    xl:basis-96
+    xl:border-0
+    xl:p-0
     dark:border-neutral-900;
 }
 

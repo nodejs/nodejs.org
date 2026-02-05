@@ -74,6 +74,5 @@ export const PAGE_VIEWPORT = {
     },
   ],
   width: 'device-width',
-  initialScale: 1,
-  maximumScale: 2,
+  initialScale: '1.0',
 };
