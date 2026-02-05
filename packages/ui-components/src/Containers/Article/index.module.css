@@ -1,8 +1,7 @@
 @reference "../../styles/index.css";
 
 .articleLayout {
-  @apply max-w-8xl
-    mx-auto
+  @apply mx-auto
     block
     w-full
     sm:grid
