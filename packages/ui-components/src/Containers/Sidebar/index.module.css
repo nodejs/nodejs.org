@@ -4,6 +4,7 @@
   @apply flex
     w-full
     flex-col
+    items-start
     gap-8
     border-r-0
     border-neutral-200
@@ -12,7 +13,6 @@
     py-6
     sm:overflow-auto
     sm:border-r
-    sm:pb-16
     md:max-w-xs
     lg:px-6
     dark:border-neutral-900
@@ -21,6 +21,10 @@
   .navigation {
     @apply hidden
       sm:flex;
+
+    &:last-child {
+      @apply pb-12;
+    }
   }
 
   .mobileSelect {
