@@ -3,11 +3,12 @@ type RetryOptions = RequestInit & {
   delay?: number;
 };
 
-type FetchError = {
-  cause: {
-    code: string;
-  };
-};
+const isTimeoutError = (e: unknown): boolean =>
+  e instanceof Error &&
+  typeof e.cause === 'object' &&
+  e.cause !== null &&
+  'code' in e.cause &&
+  e.cause.code === 'ETIMEDOUT';
 
 export const fetchWithRetry = async (
   url: string,
@@ -22,7 +23,7 @@ export const fetchWithRetry = async (
         e
       );
 
-      if (i === maxRetry || (e as FetchError).cause.code !== 'ETIMEDOUT') {
+      if (i === maxRetry || !isTimeoutError(e)) {
         throw e;
       }
 
