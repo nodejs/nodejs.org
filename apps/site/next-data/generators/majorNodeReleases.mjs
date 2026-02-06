@@ -2,11 +2,13 @@
 
 import nodevu from '@nodevu/core';
 
+import { fetchWithRetry } from '#site/util/fetch';
+
 /**
  * Filters Node.js release data to return only major releases with documented support.
  */
 export default async function getMajorNodeReleases() {
-  const nodevuData = await nodevu({ fetch });
+  const nodevuData = await nodevu({ fetch: fetchWithRetry });
 
   return Object.entries(nodevuData).filter(([version, { support }]) => {
     // Filter out those without documented support
