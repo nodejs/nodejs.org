@@ -15,7 +15,7 @@ export const fetchWithRetry = async (
 ) => {
   for (let i = 1; i <= maxRetry; i++) {
     try {
-      return fetch(url, options);
+      return await fetch(url, options);
     } catch (e) {
       console.debug(
         `fetch of ${url} failed at ${Date.now()}, attempt ${i}/${maxRetry}`,
