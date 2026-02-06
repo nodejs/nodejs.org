@@ -28,7 +28,7 @@ const WithBlogCrossLinks: FC = () => {
   ];
 
   return (
-    <div className="max-xs:grid-cols-1 mt-4 grid w-full grid-cols-2 gap-4">
+    <div className="max-ml:grid-cols-1 mt-4 grid w-full grid-cols-2 gap-4">
       {(previousCrossLink && (
         <CrossLink
           type="previous"

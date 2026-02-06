@@ -10,7 +10,7 @@
     dark:bg-neutral-950/40;
 
   .content {
-    @apply xs:p-6
+    @apply ml:p-6
       relative
       m-4
       inline-flex

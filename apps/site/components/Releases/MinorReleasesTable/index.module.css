@@ -20,12 +20,12 @@
     overflow-y-auto;
 
   table {
-    @apply xs:border-t-0
+    @apply ml:border-t-0
       border-t;
   }
 
   th {
-    @apply xs:border-t
+    @apply ml:border-t
       border-neutral-200
       dark:border-neutral-800;
   }

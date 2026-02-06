@@ -9,7 +9,7 @@
     border-neutral-200
     px-4
     py-6
-    [overflow-wrap:anywhere]
+    wrap-anywhere
     lg:sticky
     lg:top-0
     lg:max-h-screen
@@ -46,8 +46,8 @@
       dark:text-white;
 
     a {
-      @apply max-xs:inline-block
-        max-xs:py-1
+      @apply max-ml:inline-block
+        max-ml:py-1
         font-semibold
         text-neutral-900
         underline
