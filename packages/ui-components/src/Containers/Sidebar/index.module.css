@@ -1,32 +1,71 @@
 @reference "../../styles/index.css";
 
 .wrapper {
-  @apply scrollbar-thin
-    ml:max-w-xs
-    ml:overflow-auto
+  @apply ml:max-w-xs
     ml:border-r
+    ml:overflow-visible!
+    relative
     z-0
     flex
     w-full
     flex-col
-    gap-8
     border-r-0
     border-neutral-200
     bg-white
-    px-4
-    py-6
-    2xl:px-6
+    transition-transform
+    duration-220
+    ease-out
     dark:border-neutral-900
     dark:bg-neutral-950;
 
-  .navigation {
-    @apply ml:flex
-      hidden;
-  }
+  &[data-collapsed='true'] {
+    transform: translateX(-100%);
 
-  .mobileSelect {
-    @apply ml:hidden
-      flex
-      w-full;
+    .content {
+      @apply invisible;
+    }
   }
+}
+
+.content {
+  @apply scrollbar-thin
+    flex
+    h-full
+    flex-col
+    gap-8
+    overflow-y-auto
+    px-4
+    py-6
+    2xl:px-6;
+}
+
+.navigation {
+  @apply ml:flex
+    hidden;
+}
+
+.mobileSelect {
+  @apply ml:hidden
+    flex
+    w-full;
+}
+
+.toggleButton {
+  @apply absolute
+    top-1/2
+    left-full
+    z-50
+    flex
+    h-12
+    w-6
+    -translate-y-1/2
+    cursor-pointer
+    items-center
+    justify-center
+    bg-green-600
+    text-white
+    outline-none
+    max-xl:hidden;
+
+  clip-path: polygon(0 0, 100% 25%, 100% 75%, 0 100%);
 }
