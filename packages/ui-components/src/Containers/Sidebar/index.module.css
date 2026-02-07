@@ -1,9 +1,9 @@
 @reference "../../styles/index.css";
 
 .wrapper {
-  @apply ml:max-w-xs
-    ml:border-r
+  @apply ml:border-r
     ml:overflow-visible!
+    ml:max-w-[clamp(200px,20vw,320px)]
     relative
     z-0
     flex
@@ -12,14 +12,15 @@
     border-r-0
     border-neutral-200
     bg-white
-    transition-transform
+    transition-[transform,width]
     duration-220
     ease-out
     dark:border-neutral-900
     dark:bg-neutral-950;
 
   &[data-collapsed='true'] {
-    transform: translateX(-100%);
+    @apply ml:w-0
+      overflow-hidden;
 
     .content {
       @apply invisible;
@@ -36,6 +37,7 @@
     overflow-y-auto
     px-4
     py-6
+    2xl:min-w-80
     2xl:px-6;
 }
 

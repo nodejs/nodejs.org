@@ -3,16 +3,15 @@
 .articleLayout {
   @apply max-w-10xl
     ml:grid
-    ml:grid-cols-[--spacing(52)_1fr]
+    ml:grid-cols-[auto_1fr]
     ml:grid-rows-[1fr]
     ml:overflow-visible
     ml:[grid-template-areas:'sidebar_main''sidebar_footer']
     mx-auto
     block
     w-full
-    xl:grid-cols-[--spacing(52)_1fr_--spacing(52)]
-    xl:[grid-template-areas:'sidebar_main_metabar''sidebar_footer_metabar']
-    2xl:grid-cols-[--spacing(80)_1fr_--spacing(80)];
+    xl:grid-cols-[auto_1fr_auto]
+    xl:[grid-template-areas:'sidebar_main_metabar''sidebar_footer_metabar'];
 
   > *:nth-child(1) {
     @apply [grid-area:sidebar]
