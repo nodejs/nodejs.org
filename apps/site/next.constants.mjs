@@ -221,6 +221,6 @@ export const OPENCOLLECTIVE_MEMBERS_URL =
   'https://opencollective.com/nodejs/members/all.json';
 
 /**
- * The location of Github Graphql API
+ * The location of the GitHub GraphQL API
  */
 export const GITHUB_GRAPHQL_URL = 'https://api.github.com/graphql';
