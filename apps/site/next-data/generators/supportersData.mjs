@@ -87,6 +87,9 @@ async function fetchGithubSponsorsData() {
   }
 
   const nodeRes = data.data.organization?.sponsorsActivities;
+  if (!nodeRes) {
+    return sponsors;
+  }
 
   const { nodes } = nodeRes;
   const mapped = nodes.map(n => {
