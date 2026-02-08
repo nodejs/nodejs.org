@@ -54,7 +54,7 @@ async function fetchGithubSponsorsData() {
       throw new Error(JSON.stringify(data.errors));
     }
 
-    const nodeRes = data.data.user?.sponsorshipsAsMaintainer;
+    const nodeRes = data.data.organization?.sponsorshipsAsMaintainer;
     if (!nodeRes) {
       break;
     }
@@ -79,6 +79,7 @@ async function fetchGithubSponsorsData() {
 
     cursor = pageInfo.endCursor;
   }
+
   return sponsors;
 }
 
