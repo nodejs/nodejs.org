@@ -3,6 +3,7 @@ import {
   GITHUB_GRAPHQL_URL,
   GITHUB_API_KEY,
 } from '#site/next.constants.mjs';
+import { shuffle } from '#site/util/array';
 import { fetchWithRetry } from '#site/util/fetch';
 
 /**
@@ -200,12 +201,17 @@ const graphql = async (query, variables = {}) => {
  * @returns {Promise<Array<import('#site/types/supporters').OpenCollectiveSupporter | import('#site/types/supporters').GithubSponsorSupporter>>} Array of supporters
  */
 async function sponsorsData() {
+  const seconds = 300; // Change every 5 minutes
+  const seed = Math.floor(Date.now() / (seconds * 1000));
+
   const sponsors = await Promise.all([
     fetchGithubSponsorsData(),
     fetchOpenCollectiveData(),
   ]);
 
-  return sponsors.flat();
+  const shuffled = await shuffle(sponsors.flat(), seed);
+
+  return shuffled;
 }
 
 export default sponsorsData;
