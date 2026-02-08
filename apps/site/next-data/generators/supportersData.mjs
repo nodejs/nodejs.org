@@ -107,7 +107,7 @@ function sponsorshipsQuery(cursor = null) {
   return `
     query {
         organization(login: "nodejs") {
-            sponsorshipsAsMaintainer (first: 100, includePrivate: false, after: "${cursor}") {
+            sponsorshipsAsMaintainer (first: 100, includePrivate: false, after: "${cursor}", activeOnly: false) {
                 nodes {
                     sponsor: sponsorEntity {
                         ...on User {
