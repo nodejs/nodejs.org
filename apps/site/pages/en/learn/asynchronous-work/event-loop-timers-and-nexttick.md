@@ -29,10 +29,12 @@ order of operations.
 
 ```
    ┌───────────────────────────┐
-┌─>│           timers          │
-│  └─────────────┬─────────────┘
-│  ┌─────────────┴─────────────┐
-│  │     pending callbacks     │
+   │           timers          │
+   └─────────────┬─────────────┘
+                 │
+                 v
+   ┌───────────────────────────┐
+┌─>│     pending callbacks     │
 │  └─────────────┬─────────────┘
 │  ┌─────────────┴─────────────┐
 │  │       idle, prepare       │
@@ -44,7 +46,10 @@ order of operations.
 │  │           check           │
 │  └─────────────┬─────────────┘
 │  ┌─────────────┴─────────────┐
-└──┤      close callbacks      │
+│  │      close callbacks      │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+└──┤           timers          │
    └───────────────────────────┘
 ```
 
@@ -73,8 +78,6 @@ longer than a timer's threshold. See the [**timers**](#timers) and
 
 ## Phases Overview
 
-- **timers**: this phase executes callbacks scheduled by `setTimeout()`
-  and `setInterval()`.
 - **pending callbacks**: executes I/O callbacks deferred to the next loop
   iteration.
 - **idle, prepare**: only used internally.
@@ -82,7 +85,10 @@ longer than a timer's threshold. See the [**timers**](#timers) and
   all with the exception of close callbacks, the ones scheduled by timers,
   and `setImmediate()`); node will block here when appropriate.
 - **check**: `setImmediate()` callbacks are invoked here.
-- **close callbacks**: some close callbacks, e.g. `socket.on('close', ...)`.
+- **close callbacks**: some close callbacks, e.g. `socket.on('close', ...)`
+- **timers**: this phase executes callbacks scheduled by `setTimeout()`
+  and `setInterval()`. Additionally, these callbacks can execute before entering the event loop.
+This sometimes happens for setTimeout(() => { ... }, 0) outside the I/O loop.
 
 Between each run of the event loop, Node.js checks if it is waiting for
 any asynchronous I/O or timers and shuts down cleanly if there are not
@@ -94,66 +100,6 @@ as in earlier versions. This change can affect the timing of `setImmediate()` ca
 and how they interact with timers in certain scenarios.
 
 ## Phases in Detail
-
-### timers
-
-A timer specifies the **threshold** _after which_ a provided callback
-_may be executed_ rather than the **exact** time a person _wants it to
-be executed_. Timers callbacks will run as early as they can be
-scheduled after the specified amount of time has passed; however,
-Operating System scheduling or the running of other callbacks may delay
-them.
-
-> Technically, the [**poll** phase](#poll) controls when timers are executed.
-
-For example, say you schedule a timeout to execute after a 100 ms
-threshold, then your script starts asynchronously reading a file which
-takes 95 ms:
-
-```js
-const fs = require('node:fs');
-
-function someAsyncOperation(callback) {
-  // Assume this takes 95ms to complete
-  fs.readFile('/path/to/file', callback);
-}
-
-const timeoutScheduled = Date.now();
-
-setTimeout(() => {
-  const delay = Date.now() - timeoutScheduled;
-
-  console.log(`${delay}ms have passed since I was scheduled`);
-}, 100);
-
-// do someAsyncOperation which takes 95 ms to complete
-someAsyncOperation(() => {
-  const startCallback = Date.now();
-
-  // do something that will take 10ms...
-  while (Date.now() - startCallback < 10) {
-    // do nothing
-  }
-});
-```
-
-When the event loop enters the **poll** phase, it has an empty queue
-(`fs.readFile()` has not completed), so it will wait for the number of ms
-remaining until the soonest timer's threshold is reached. While it is
-waiting 95 ms pass, `fs.readFile()` finishes reading the file and its
-callback which takes 10 ms to complete is added to the **poll** queue and
-executed. When the callback finishes, there are no more callbacks in the
-queue, so the event loop will see that the threshold of the soonest
-timer has been reached then wrap back to the **timers** phase to execute
-the timer's callback. In this example, you will see that the total delay
-between the timer being scheduled and its callback being executed will
-be 105ms.
-
-> To prevent the **poll** phase from starving the event loop, [libuv][]
-> (the C library that implements the Node.js
-> event loop and all of the asynchronous behaviors of the platform)
-> also has a hard maximum (system dependent) before it stops polling for
-> more events.
 
 ### pending callbacks
 
@@ -214,6 +160,66 @@ and the **poll** phase becomes idle, it will end and continue to the
 If a socket or handle is closed abruptly (e.g. `socket.destroy()`), the
 `'close'` event will be emitted in this phase. Otherwise it will be
 emitted via `process.nextTick()`.
+
+### timers
+
+A timer specifies the **threshold** _after which_ a provided callback
+_may be executed_ rather than the **exact** time a person _wants it to
+be executed_. Timers callbacks will run as early as they can be
+scheduled after the specified amount of time has passed; however,
+Operating System scheduling or the running of other callbacks may delay
+them.
+
+> Technically, the [**poll** phase](#poll) controls when timers are executed.
+
+For example, say you schedule a timeout to execute after a 100 ms
+threshold, then your script starts asynchronously reading a file which
+takes 95 ms:
+
+```js
+const fs = require('node:fs');
+
+function someAsyncOperation(callback) {
+  // Assume this takes 95ms to complete
+  fs.readFile('/path/to/file', callback);
+}
+
+const timeoutScheduled = Date.now();
+
+setTimeout(() => {
+  const delay = Date.now() - timeoutScheduled;
+
+  console.log(`${delay}ms have passed since I was scheduled`);
+}, 100);
+
+// do someAsyncOperation which takes 95 ms to complete
+someAsyncOperation(() => {
+  const startCallback = Date.now();
+
+  // do something that will take 10ms...
+  while (Date.now() - startCallback < 10) {
+    // do nothing
+  }
+});
+```
+
+When the event loop enters the **poll** phase, it has an empty queue
+(`fs.readFile()` has not completed), so it will wait for the number of ms
+remaining until the soonest timer's threshold is reached. While it is
+waiting 95 ms pass, `fs.readFile()` finishes reading the file and its
+callback which takes 10 ms to complete is added to the **poll** queue and
+executed. When the callback finishes, there are no more callbacks in the
+queue, so the event loop will see that the threshold of the soonest
+timer has been reached then wrap back to the **timers** phase to execute
+the timer's callback. In this example, you will see that the total delay
+between the timer being scheduled and its callback being executed will
+be 105ms.
+
+> To prevent the **poll** phase from starving the event loop, [libuv][]
+> (the C library that implements the Node.js
+> event loop and all of the asynchronous behaviors of the platform)
+> also has a hard maximum (system dependent) before it stops polling for
+> more events.
 
 ## `setImmediate()` vs `setTimeout()`
 
