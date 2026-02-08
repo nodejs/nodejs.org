@@ -19,11 +19,10 @@ async function fetchOpenCollectiveData() {
   const members = payload
     .filter(({ role, isActive }) => role === 'BACKER' && isActive)
     .sort((a, b) => b.totalAmountDonated - a.totalAmountDonated)
-    .map(({ name, website, image, profile }) => ({
+    .map(({ name, image, profile }) => ({
       name,
       image,
-      url: website,
-      profile,
+      url: profile,
       source: 'opencollective',
     }));
 
@@ -66,8 +65,9 @@ async function fetchGithubSponsorsData() {
         id: s?.id || null,
         login: s?.login || null,
         name: s?.name || s?.login || null,
-        avatar: s?.avatarUrl || null,
-        url: s?.websiteUrl || s?.url || null,
+        image: s?.avatarUrl || null,
+        url: s?.url || null,
+        source: 'github',
       };
     });
 
@@ -79,6 +79,28 @@ async function fetchGithubSponsorsData() {
 
     cursor = pageInfo.endCursor;
   }
+
+  const query = donationsQuery();
+  const data = await graphql(query);
+
+  if (data.errors) {
+    throw new Error(JSON.stringify(data.errors));
+  }
+
+  const nodeRes = data.data.organization?.sponsorsActivities;
+
+  const { nodes } = nodeRes;
+  const mapped = nodes.map(n => {
+    const s = n.sponsor || n.sponsorEntity || n.sponsorEntity; // support different field names
+    return {
+      name: s?.name || s?.login || null,
+      image: s?.avatarUrl || null,
+      url: s?.url || null,
+      source: 'github',
+    };
+  });
+
+  sponsors.push(...mapped);
 
   return sponsors;
 }
@@ -119,37 +141,41 @@ function sponsorshipsQuery(cursor = null) {
     }`;
 }
 
-// function donationsQuery(cursor = null) {
-//   return `
-//       query {
-//           organization(login: "nodejs") {
-//               sponsorsActivities (first: 100, includePrivate: false, after: "${cursor}") {
-//                   nodes {
-//                       id
-//                       sponsor {
-//                           ...on User {
-//                               id: databaseId,
-//                               name,
-//                               login,
-//                               avatarUrl,
-//                               url,
-//                               websiteUrl
-//                           }
-//                           ...on Organization {
-//                               id: databaseId,
-//                               name,
-//                               login,
-//                               avatarUrl,
-//                               url,
-//                               websiteUrl
-//                           }
-//                       },
-//                       timestamp
-//                   }
-//               }
-//           }
-//       }`;
-// }
+function donationsQuery() {
+  return `
+       query {
+            organization(login: "nodejs") {
+                sponsorsActivities (first: 100, includePrivate: false) {
+                    nodes {
+                        id
+                        sponsor {
+                            ...on User {
+                                id: databaseId,
+                                name,
+                                login,
+                                avatarUrl,
+                                url,
+                                websiteUrl
+                            }
+                            ...on Organization {
+                                id: databaseId,
+                                name,
+                                login,
+                                avatarUrl,
+                                url,
+                                websiteUrl
+                            }
+                        },
+                        timestamp
+                        tier: sponsorsTier {
+                            monthlyPriceInDollars,
+                            isOneTime
+                        }
+                    }
+                }
+            }
+        }`;
+}
 
 const graphql = async (query, variables = {}) => {
   const res = await fetch(GITHUB_GRAPHQL_URL, {
@@ -180,6 +206,7 @@ async function sponsorsData() {
     fetchGithubSponsorsData(),
     fetchOpenCollectiveData(),
   ]);
+
   return sponsors.flat();
 }
 

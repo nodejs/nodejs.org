@@ -9,13 +9,8 @@ type SupportersListProps = {
 
 const SupportersList: FC<SupportersListProps> = ({ supporters }) => (
   <div className="flex max-w-full flex-wrap items-center justify-center gap-1">
-    {supporters.map(({ name, image, profile }, i) => (
-      <Avatar
-        nickname={name}
-        image={image}
-        key={`${name}-${i}`}
-        url={profile}
-      />
+    {supporters.map(({ name, image, url }, i) => (
+      <Avatar nickname={name} image={image} key={`${name}-${i}`} url={url} />
     ))}
   </div>
 );
