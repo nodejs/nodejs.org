@@ -62,8 +62,6 @@ async function fetchGithubSponsorsData() {
     const mapped = nodes.map(n => {
       const s = n.sponsor || n.sponsorEntity || n.sponsorEntity; // support different field names
       return {
-        id: s?.id || null,
-        login: s?.login || null,
         name: s?.name || s?.login || null,
         image: s?.avatarUrl || null,
         url: s?.url || null,
