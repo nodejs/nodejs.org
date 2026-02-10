@@ -2,7 +2,7 @@
 
 import nodevu from '@nodevu/core';
 
-import { fetchWithRetry } from '#site/util/fetch';
+import { fetchWithRetry } from '#site/next.fetch.mjs';
 
 /**
  * Filters Node.js release data to return only major releases with documented support.
