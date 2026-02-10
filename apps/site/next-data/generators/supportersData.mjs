@@ -1,5 +1,5 @@
 import { OPENCOLLECTIVE_MEMBERS_URL } from '#site/next.constants.mjs';
-import { fetchWithRetry } from '#site/util/fetch';
+import { fetchWithRetry } from '#site/next.fetch.mjs';
 
 /**
  * Fetches supporters data from Open Collective API, filters active backers,
