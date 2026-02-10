@@ -2,11 +2,16 @@
   "components": {
     "containers": {
       "footer": {
+        "legal": "Copyright <foundationName>OpenJS Foundation</foundationName> and Node.js contributors. All rights reserved. The <foundationName>OpenJS Foundation</foundationName> has registered trademarks and uses trademarks.  For a list of trademarks of the <foundationName>OpenJS Foundation</foundationName>, please see our <trademarkPolicy>Trademark Policy</trademarkPolicy> and <trademarkList>Trademark List</trademarkList>.  Trademarks and logos not indicated on the <trademarkList>list of OpenJS Foundation trademarks</trademarkList> are trademarks™ or registered® trademarks of their respective holders. Use of them does not imply any affiliation with or endorsement by them.",
         "links": {
-          "openJSFoundation": "OpenJS Foundation",
-          "trademarkPolicy": "商標ポリシー",
+          "foundationName": "OpenJS Foundation",
+          "termsOfUse": "利用規約",
           "privacyPolicy": "プライバシーポリシー",
+          "bylaws": "定款",
           "codeOfConduct": "行動規範",
+          "trademarkPolicy": "商標ポリシー",
+          "trademarkList": "商標リスト",
+          "cookiePolicy": "クッキーポリシー",
           "security": "セキュリティーポリシー"
         },
         "releasePills": {
@@ -280,7 +285,13 @@
       "contribute": "編集への協力",
       "contributeText": "このページを編集",
       "viewAs": "表示方法",
-      "tableOfContents": "目次"
+      "tableOfContents": "目次",
+      "metadata": "記事のメタデータ"
+    },
+    "banner": {
+      "default": "お知らせ",
+      "warning": "警告通知",
+      "error": "エラー通知"
     },
     "search": {
       "searchPlaceholder": "入力を開始...",
