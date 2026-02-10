@@ -13,6 +13,7 @@ catalog:
 
 onlyBuiltDependencies:
   - '@nodejs/doc-kit'
+  - '@parcel/watcher'
   - '@swc/core'
   - '@tailwindcss/oxide'
   - '@vercel/speed-insights'
