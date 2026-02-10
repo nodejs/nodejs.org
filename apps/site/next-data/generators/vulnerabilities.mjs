@@ -1,5 +1,5 @@
 import { VULNERABILITIES_URL } from '#site/next.constants.mjs';
-import { fetchWithRetry } from '#site/util/fetch';
+import { fetchWithRetry } from '#site/next.fetch.mjs';
 
 const RANGE_REGEX = /([<>]=?)\s*(\d+)(?:\.(\d+))?/;
 const V0_REGEX = /^0\.\d+(\.x)?$/;

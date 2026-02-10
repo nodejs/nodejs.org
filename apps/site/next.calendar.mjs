@@ -4,7 +4,7 @@ import {
   BASE_CALENDAR_URL,
   SHARED_CALENDAR_KEY,
 } from './next.calendar.constants.mjs';
-import { fetchWithRetry } from './util/fetch';
+import { fetchWithRetry } from './next.fetch.mjs';
 
 /**
  *
