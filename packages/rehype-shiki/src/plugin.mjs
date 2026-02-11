@@ -168,7 +168,7 @@ export default async function rehypeShikiji(options) {
       const meta = parseMeta(preElement.data?.meta);
 
       // Retrieve the whole <pre> contents as a parsed DOM string
-      const preElementContents = toString(preElement);
+      const preElementContents = toString(preElement).replace(/\n$/, '');
 
       const lineCount = getLineCount(preElementContents);
 
