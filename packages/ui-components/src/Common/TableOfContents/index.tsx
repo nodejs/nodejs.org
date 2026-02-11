@@ -1,8 +1,9 @@
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 
-import { LinkLike } from '#ui/types';
+import { CODE_LIKE_TYPES } from '#ui/constants';
 
+import type { LinkLike } from '#ui/types';
 import type { Heading } from '@vcarl/remark-headings';
 import type { ComponentProps, FC } from 'react';
 
@@ -12,8 +13,6 @@ const depthClasses: Record<number, string> = {
   3: styles.depthThree,
   4: styles.depthFour,
 };
-
-const CODE_LIKE_TYPES = new Set(['method', 'classMethod', 'function', 'ctor']);
 
 type TableOfContentsProps = ComponentProps<'details'> & {
   headings: Array<Heading>;
@@ -46,12 +45,9 @@ const TableOfContents: FC<TableOfContentsProps> = ({
           <li key={head.data?.id ?? index}>
             <Component
               href={head.data?.id && `#${head.data.id}`}
-              className={classNames(
-                styles.link,
-                depthClasses[head.depth],
-                CODE_LIKE_TYPES.has((head.data?.type as string) ?? '') &&
-                  styles.codeLink
-              )}
+              className={classNames(styles.link, depthClasses[head.depth], {
+                [styles.codeLink]: CODE_LIKE_TYPES.has(head.data?.type ?? ''),
+              })}
             >
               {head.value}
             </Component>

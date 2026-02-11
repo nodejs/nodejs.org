@@ -1,12 +1,13 @@
+import classNames from 'classnames';
 import { Fragment, useMemo } from 'react';
+
+import { CODE_LIKE_TYPES } from '#ui/constants';
 
 import type { LinkLike } from '#ui/types';
 import type { Heading } from '@vcarl/remark-headings';
 import type { FC, HTMLAttributes } from 'react';
 
 import styles from './index.module.css';
-
-const CODE_LIKE_TYPES = new Set(['method', 'classMethod', 'function', 'ctor']);
 
 type MetaBarProps = {
   items: Partial<Record<string, React.ReactNode>>;
@@ -59,13 +60,12 @@ const MetaBar: FC<MetaBarProps> = ({
                   >
                     <Component
                       href={`#${head.data?.id}`}
-                      className={
-                        CODE_LIKE_TYPES.has((head.data?.type as string) ?? '')
-                          ? styles.codeLink
-                          : undefined
-                      }
+                      className={classNames({
+                        [styles.codeLink]: CODE_LIKE_TYPES.has(
+                          head.data?.type ?? ''
+                        ),
+                      })}
                     >
-                      {' '}
                       {head.value}
                     </Component>
                   </li>
