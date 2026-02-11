@@ -9,61 +9,6 @@
     font-semibold
     text-white;
 
-  &[data-tooltip] {
-    @apply relative
-      cursor-help;
-  }
-
-  &[data-tooltip]::after {
-    @apply pointer-events-none
-      absolute
-      top-full
-      left-1/2
-      z-10
-      mt-2
-      w-max
-      -translate-x-1/2
-      rounded-md
-      bg-neutral-900
-      px-2.5
-      py-1.5
-      text-xs
-      font-medium
-      text-white
-      opacity-0
-      transition-opacity
-      dark:bg-neutral-100
-      dark:text-neutral-900;
-
-    content: attr(data-tooltip);
-  }
-
-  &[data-tooltip]::before {
-    @apply pointer-events-none
-      absolute
-      top-full
-      left-1/2
-      z-10
-      mt-1
-      h-2
-      w-2
-      -translate-x-1/2
-      rotate-45
-      bg-neutral-900
-      opacity-0
-      transition-opacity
-      dark:bg-neutral-100;
-
-    content: '';
-  }
-
-  &[data-tooltip]:hover::after,
-  &[data-tooltip]:hover::before,
-  &[data-tooltip]:focus-visible::after,
-  &[data-tooltip]:focus-visible::before {
-    @apply opacity-100;
-  }
-
   &.lg {
     @apply size-12
       text-2xl;

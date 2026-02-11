@@ -40,7 +40,7 @@ const renderSmallPartner = (partner: Partner) => {
       key={partner.id}
       size="small"
       href={partner.href}
-      title={partner.name}
+      data-tooltip={partner.name}
     >
       <Logo.Favicon />
     </PartnerButton>
