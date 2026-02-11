@@ -96,8 +96,23 @@ How do you handle errors with callbacks? One very common strategy is to use what
 
 If there is no error, the object is `null`. If there is an error, it contains some description of the error and other information.
 
-```js
+```cjs
 const fs = require('node:fs');
+
+fs.readFile('/file.json', (err, data) => {
+  if (err) {
+    // handle error
+    console.log(err);
+    return;
+  }
+
+  // no errors, process data
+  console.log(data);
+});
+```
+
+```mjs
+import fs from 'node:fs';
 
 fs.readFile('/file.json', (err, data) => {
   if (err) {

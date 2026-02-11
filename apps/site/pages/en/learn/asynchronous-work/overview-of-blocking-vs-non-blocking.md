@@ -39,16 +39,32 @@ execute **asynchronously**.
 
 Using the File System module as an example, this is a **synchronous** file read:
 
-```js
+```cjs
 const fs = require('node:fs');
+
+const data = fs.readFileSync('/file.md'); // blocks here until file is read
+```
+
+```mjs
+import fs from 'node:fs';
 
 const data = fs.readFileSync('/file.md'); // blocks here until file is read
 ```
 
 And here is an equivalent **asynchronous** example:
 
-```js
+```cjs
 const fs = require('node:fs');
+
+fs.readFile('/file.md', (err, data) => {
+  if (err) {
+    throw err;
+  }
+});
+```
+
+```mjs
+import fs from 'node:fs';
 
 fs.readFile('/file.md', (err, data) => {
   if (err) {
@@ -66,8 +82,16 @@ shown.
 
 Let's expand our example a little bit:
 
-```js
+```cjs
 const fs = require('node:fs');
+
+const data = fs.readFileSync('/file.md'); // blocks here until file is read
+console.log(data);
+moreWork(); // will run after console.log
+```
+
+```mjs
+import fs from 'node:fs';
 
 const data = fs.readFileSync('/file.md'); // blocks here until file is read
 console.log(data);
@@ -76,8 +100,21 @@ moreWork(); // will run after console.log
 
 And here is a similar, but not equivalent asynchronous example:
 
-```js
+```cjs
 const fs = require('node:fs');
+
+fs.readFile('/file.md', (err, data) => {
+  if (err) {
+    throw err;
+  }
+
+  console.log(data);
+});
+moreWork(); // will run before console.log
+```
+
+```mjs
+import fs from 'node:fs';
 
 fs.readFile('/file.md', (err, data) => {
   if (err) {
@@ -118,8 +155,21 @@ threads may be created to handle concurrent work.
 There are some patterns that should be avoided when dealing with I/O. Let's look
 at an example:
 
-```js
+```cjs
 const fs = require('node:fs');
+
+fs.readFile('/file.md', (err, data) => {
+  if (err) {
+    throw err;
+  }
+
+  console.log(data);
+});
+fs.unlinkSync('/file.md');
+```
+
+```mjs
+import fs from 'node:fs';
 
 fs.readFile('/file.md', (err, data) => {
   if (err) {
@@ -136,8 +186,26 @@ In the above example, `fs.unlinkSync()` is likely to be run before
 better way to write this, which is completely **non-blocking** and guaranteed to
 execute in the correct order is:
 
-```js
+```cjs
 const fs = require('node:fs');
+
+fs.readFile('/file.md', (readFileErr, data) => {
+  if (readFileErr) {
+    throw readFileErr;
+  }
+
+  console.log(data);
+
+  fs.unlink('/file.md', unlinkErr => {
+    if (unlinkErr) {
+      throw unlinkErr;
+    }
+  });
+});
+```
+
+```mjs
+import fs from 'node:fs';
 
 fs.readFile('/file.md', (readFileErr, data) => {
   if (readFileErr) {

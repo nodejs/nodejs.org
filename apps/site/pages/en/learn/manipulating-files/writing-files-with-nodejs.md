@@ -10,8 +10,22 @@ authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, ovf
 
 The easiest way to write to files in Node.js is to use the `fs.writeFile()` API.
 
-```js
+```cjs
 const fs = require('node:fs');
+
+const content = 'Some content!';
+
+fs.writeFile('/Users/joe/test.txt', content, err => {
+  if (err) {
+    console.error(err);
+  } else {
+    // file written successfully
+  }
+});
+```
+
+```mjs
+import fs from 'node:fs';
 
 const content = 'Some content!';
 
@@ -28,8 +42,21 @@ fs.writeFile('/Users/joe/test.txt', content, err => {
 
 Alternatively, you can use the synchronous version `fs.writeFileSync()`:
 
-```js
+```cjs
 const fs = require('node:fs');
+
+const content = 'Some content!';
+
+try {
+  fs.writeFileSync('/Users/joe/test.txt', content);
+  // file written successfully
+} catch (err) {
+  console.error(err);
+}
+```
+
+```mjs
+import fs from 'node:fs';
 
 const content = 'Some content!';
 
@@ -43,7 +70,7 @@ try {
 
 You can also use the promise-based `fsPromises.writeFile()` method offered by the `fs/promises` module:
 
-```js
+```cjs
 const fs = require('node:fs/promises');
 
 async function example() {
@@ -56,6 +83,17 @@ async function example() {
 }
 
 example();
+```
+
+```mjs
+import fs from 'node:fs/promises';
+
+try {
+  const content = 'Some content!';
+  await fs.writeFile('/Users/joe/test.txt', content);
+} catch (err) {
+  console.log(err);
+}
 ```
 
 By default, this API will **replace the contents of the file** if it does already exist.
@@ -85,8 +123,22 @@ Appending to files is handy when you don't want to overwrite a file with new con
 
 A handy method to append content to the end of a file is `fs.appendFile()` (and its `fs.appendFileSync()` counterpart):
 
-```js
+```cjs
 const fs = require('node:fs');
+
+const content = 'Some content!';
+
+fs.appendFile('file.log', content, err => {
+  if (err) {
+    console.error(err);
+  } else {
+    // done!
+  }
+});
+```
+
+```mjs
+import fs from 'node:fs';
 
 const content = 'Some content!';
 
@@ -103,7 +155,7 @@ fs.appendFile('file.log', content, err => {
 
 Here is a `fsPromises.appendFile()` example:
 
-```js
+```cjs
 const fs = require('node:fs/promises');
 
 async function example() {
@@ -116,4 +168,15 @@ async function example() {
 }
 
 example();
+```
+
+```mjs
+import fs from 'node:fs/promises';
+
+try {
+  const content = 'Some content!';
+  await fs.appendFile('/Users/joe/test.txt', content);
+} catch (err) {
+  console.log(err);
+}
 ```
