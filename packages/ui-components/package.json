@@ -3,13 +3,20 @@
   "version": "1.5.10",
   "type": "module",
   "exports": {
-    "./*": [
-      "./src/*",
-      "./src/*.tsx",
-      "./src/*/index.tsx",
-      "./src/*.ts",
-      "./src/*/index.ts"
-    ]
+    "./*": {
+      "rolldown": [
+        "./dist/*",
+        "./dist/*.js",
+        "./dist/*/index.js"
+      ],
+      "default": [
+        "./src/*",
+        "./src/*.tsx",
+        "./src/*/index.tsx",
+        "./src/*.ts",
+        "./src/*/index.ts"
+      ]
+    }
   },
   "repository": {
     "type": "git",
@@ -20,7 +27,8 @@
     "compile:ts": "tsc",
     "compile:css": "postcss --dir dist --base src \"src/**/*.module.css\" src/styles/index.css",
     "compile": "node --run compile:ts && node --run compile:css",
-    "release": "node --run compile && node scripts/publish.mjs",
+    "compile:watch": "node --run compile:ts -- --watch & node --run compile:css -- --watch",
+    "release": "node --run compile",
     "lint": "node --run lint:js && node --run lint:css",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
     "lint:css:fix": "node --run lint:css -- --fix",
@@ -80,14 +88,25 @@
     "typescript": "catalog:"
   },
   "imports": {
-    "#ui/*": [
-      "./src/*",
-      "./src/*.tsx",
-      "./src/*/index.tsx",
-      "./src/*.ts",
-      "./src/*/index.ts"
-    ]
+    "#ui/*": {
+      "rolldown": [
+        "./dist/*",
+        "./dist/*.js",
+        "./dist/*/index.js"
+      ],
+      "default": [
+        "./src/*",
+        "./src/*.tsx",
+        "./src/*/index.tsx",
+        "./src/*.ts",
+        "./src/*/index.ts"
+      ]
+    }
   },
+  "files": [
+    "dist/**",
+    "README.md"
+  ],
   "engines": {
     "node": ">=20"
   }

@@ -5,7 +5,7 @@
     block
     rounded-md
     bg-neutral-200
-    lg:hidden
+    xl:hidden
     dark:bg-neutral-900;
 
   &[open] {
@@ -47,6 +47,11 @@
       hover:text-neutral-700
       dark:text-white
       dark:hover:text-neutral-500;
+  }
+
+  .codeLink {
+    @apply font-ibm-plex-mono
+      font-medium;
   }
 
   .depthThree {

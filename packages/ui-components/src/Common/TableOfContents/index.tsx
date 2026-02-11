@@ -13,6 +13,8 @@ const depthClasses: Record<number, string> = {
   4: styles.depthFour,
 };
 
+const CODE_LIKE_TYPES = new Set(['method', 'classMethod', 'function', 'ctor']);
+
 type TableOfContentsProps = ComponentProps<'details'> & {
   headings: Array<Heading>;
   summaryTitle: string;
@@ -44,7 +46,12 @@ const TableOfContents: FC<TableOfContentsProps> = ({
           <li key={head.data?.id ?? index}>
             <Component
               href={head.data?.id && `#${head.data.id}`}
-              className={classNames(styles.link, depthClasses[head.depth])}
+              className={classNames(
+                styles.link,
+                depthClasses[head.depth],
+                CODE_LIKE_TYPES.has((head.data?.type as string) ?? '') &&
+                  styles.codeLink
+              )}
             >
               {head.value}
             </Component>

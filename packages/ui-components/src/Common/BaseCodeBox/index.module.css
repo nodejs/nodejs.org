@@ -53,6 +53,19 @@
             [counter-increment:line];
         }
       }
+
+      &[class*='plain-text'] {
+        @apply font-mono;
+      }
+    }
+
+    &[class*='no-line-numbers'] > code > [class='line'] {
+      @apply pl-0;
+
+      &:not(:empty:last-child)::after {
+        @apply content-none
+          [counter-reset:none];
+      }
     }
   }
 
@@ -62,8 +75,8 @@
       justify-between
       border-t
       border-t-neutral-900
-      px-4
-      py-3
+      px-3
+      py-2
       text-sm
       font-medium;
 
@@ -72,9 +85,15 @@
     }
 
     & > .action {
-      @apply px-3
-        py-1.5
+      @apply px-2.5
+        py-1
+        text-xs
         font-medium;
+
+      > svg {
+        @apply h-4
+          w-4;
+      }
     }
   }
 }

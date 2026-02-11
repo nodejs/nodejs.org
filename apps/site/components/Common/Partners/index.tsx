@@ -1,4 +1,3 @@
-import Tooltip from '@node-core/ui-components/Common/Tooltip';
 import * as PartnerLogos from '@node-core/ui-components/Icons/PartnerLogos';
 
 import providePartners from '#site/next-data/providers/partners';
@@ -36,15 +35,15 @@ const renderSmallPartner = (partner: Partner) => {
   const Logo = PartnerLogos[partner.id];
 
   return (
-    <Tooltip
+    <PartnerButton
+      aria-label={partner.name}
       key={partner.id}
-      asChild
-      content={<div className={style.tooltip}>{partner.name}</div>}
+      size="small"
+      href={partner.href}
+      title={partner.name}
     >
-      <PartnerButton aria-label={partner.name} size="small" href={partner.href}>
-        <Logo.Favicon />
-      </PartnerButton>
-    </Tooltip>
+      <Logo.Favicon />
+    </PartnerButton>
   );
 };
 

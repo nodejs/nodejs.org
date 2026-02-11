@@ -59,6 +59,11 @@
       }
     }
 
+    a.codeLink {
+      @apply font-ibm-plex-mono
+        font-medium;
+    }
+
     ol {
       @apply flex
         w-full

@@ -1,12 +1,12 @@
 @reference "../styles/index.css";
 
 .baseLayout {
-  @apply grid
+  @apply ml:grid
+    ml:grid-cols-[1fr]
+    ml:grid-rows-[auto_1fr_auto]
     h-max
     min-h-full
-    w-full
-    grid-cols-[1fr]
-    grid-rows-[auto_1fr_auto];
+    w-full;
 }
 
 .centeredLayout {
