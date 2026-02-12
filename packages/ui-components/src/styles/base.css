@@ -17,8 +17,7 @@ body {
 }
 
 [data-tooltip] {
-  @apply relative
-    cursor-help;
+  @apply relative;
 
   &::after {
     @apply pointer-events-none

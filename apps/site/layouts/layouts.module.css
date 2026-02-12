@@ -164,8 +164,7 @@
       dark:border-l-neutral-900;
 
     main {
-      @apply max-w-[660px]
-        gap-4
+      @apply gap-4
         wrap-anywhere;
     }
   }
