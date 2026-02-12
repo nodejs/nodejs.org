@@ -48,15 +48,14 @@ This model follows a pattern similar to Ubuntu's release cycle: predictable Apri
 
 ### About the Alpha Channel
 
-The Alpha channel replaces odd-numbered releases.
+The Alpha channel replaces odd-numbered releases. During this period, only [nightly builds](https://nodejs.org/download/nightly/) are available for early testing.
 
 **Who it's for:** Library authors and CI pipelines testing compatibility with upcoming breaking changes. Not intended for production use.
 
 **What to expect:**
 - Semver-major changes land during this phase
 - No security patches (only stable releases receive security fixes)
-- API may change between Alpha releases
-- ABI stability guarantees are still being defined and will be documented separately
+- API may change between builds
 
 **Why:** Provides early feedback on breaking changes without maintaining another full release line. Also allows landing V8 updates earlier in the cycle, so we don't ship a single V8 version per year.
 
@@ -90,6 +89,21 @@ The Alpha channel replaces odd-numbered releases.
 | End of Life | March 2030 |
 
 `v27` is the first release under the new schedule.
+
+### The Next 10 Years
+
+| Version | Alpha    | Release  | LTS      | End of Life |
+|---------|----------|----------|----------|-------------|
+| v27     | Oct 2026 | Apr 2027 | Oct 2027 | Mar 2030    |
+| v28     | Oct 2027 | Apr 2028 | Oct 2028 | Mar 2031    |
+| v29     | Oct 2028 | Apr 2029 | Oct 2029 | Mar 2032    |
+| v30     | Oct 2029 | Apr 2030 | Oct 2030 | Mar 2033    |
+| v31     | Oct 2030 | Apr 2031 | Oct 2031 | Mar 2034    |
+| v32     | Oct 2031 | Apr 2032 | Oct 2032 | Mar 2035    |
+| v33     | Oct 2032 | Apr 2033 | Oct 2033 | Mar 2036    |
+| v34     | Oct 2033 | Apr 2034 | Oct 2034 | Mar 2037    |
+| v35     | Oct 2034 | Apr 2035 | Oct 2035 | Mar 2038    |
+| v36     | Oct 2035 | Apr 2036 | Oct 2036 | Mar 2039    |
 
 ## Thank You
 
