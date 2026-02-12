@@ -163,7 +163,11 @@ export default async function rehypeShikiji(options) {
       const meta = parseMeta(preElement.data?.meta);
 
       // Retrieve the whole <pre> contents as a parsed DOM string
-      const preElementContents = toString(preElement);
+      const preElementContents = toString(preElement).replace(/\n$/, '');
+
+      // Since we removed the trailing newline, we can easily count the
+      // amount of lines without worrying about an extra empty line at the end of the code block
+      const lineCount = preElementContents.split('\n').length;
 
       // Grabs the relevant alias/name of the language
       const languageId = codeLanguage.slice(languagePrefix.length);
@@ -178,7 +182,8 @@ export default async function rehypeShikiji(options) {
       // Adds the original language back to the <pre> element
       children[0].properties.class = classNames(
         children[0].properties.class,
-        codeLanguage
+        codeLanguage,
+        { 'no-line-numbers': lineCount < 5, 'no-footer': lineCount === 1 }
       );
 
       // Replaces the <pre> element with the updated one

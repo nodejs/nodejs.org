@@ -6,8 +6,7 @@
     gap-2
     rounded-sm
     px-3
-    py-2
-    motion-safe:transition-colors;
+    py-2;
 
   .label {
     @apply text-base

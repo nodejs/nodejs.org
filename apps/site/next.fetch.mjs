@@ -26,7 +26,7 @@ export const fetchWithRetry = async (
   const backoff = Math.max(0, Number(delay) || 0);
 
   const attemptFetch = attempt =>
-    fetch(url, options).catch(e => {
+    fetch(url, { ...options, signal: AbortSignal.timeout(30000) }).catch(e => {
       if (attempt === retries || !isTimeoutError(e)) {
         throw e;
       }

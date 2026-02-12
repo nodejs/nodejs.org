@@ -39,31 +39,27 @@ const transformCode = <T extends ReactElement<PropsWithChildren>>(
   // being an empty string, so we need to remove it
   const lines = content.split('\n');
 
-  const extraStyle = language.length === 0 ? { fontFamily: 'monospace' } : {};
+  const extraClasses = classNames({ 'plain-text': language.length === 0 });
 
   return (
-    <code style={extraStyle}>
-      {lines
-        .flatMap((line, lineIndex) => {
-          const columns = line.split(' ');
+    <code className={extraClasses}>
+      {lines.flatMap((line, lineIndex) => {
+        const columns = line.split(' ');
 
-          return [
-            <span key={lineIndex} className="line">
-              {columns.map((column, columnIndex) => (
-                <Fragment key={columnIndex}>
-                  <span>{column}</span>
-                  {columnIndex < columns.length - 1 && <span> </span>}
-                </Fragment>
-              ))}
-            </span>,
-            // Add a break line so the text content is formatted correctly
-            // when copying to clipboard
-            '\n',
-          ];
-        })
-        // Here we remove that empty line from before and
-        // the last flatMap entry which is an `\n`
-        .slice(0, -2)}
+        return [
+          <span key={lineIndex} className="line">
+            {columns.map((column, columnIndex) => (
+              <Fragment key={columnIndex}>
+                <span>{column}</span>
+                {columnIndex < columns.length - 1 && <span> </span>}
+              </Fragment>
+            ))}
+          </span>,
+          // Add a break line so the text content is formatted correctly
+          // when copying to clipboard
+          '\n',
+        ];
+      })}
     </code>
   );
 };
@@ -89,7 +85,10 @@ const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   const containerRef = useRef<HTMLPreElement>(null);
 
   const handleCopy = () => copy(containerRef.current?.textContent);
+
   const ButtonIcon = copied ? DocumentDuplicateIcon : CodeBracketIcon;
+
+  const hideFooter = className?.includes('no-footer');
 
   return (
     <div className={styles.root}>
@@ -100,9 +99,11 @@ const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
       >
         {transformCode(children as ReactElement<PropsWithChildren>, language)}
       </pre>
-      {language && (
+
+      {!language || hideFooter || (
         <div className={styles.footer}>
           <span className={styles.language}>{language}</span>
+
           <BaseButton
             as={as}
             className={styles.action}

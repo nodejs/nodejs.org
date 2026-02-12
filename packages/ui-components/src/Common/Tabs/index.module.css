@@ -15,7 +15,8 @@
       @apply border-b-2
         border-b-transparent
         px-1
-        pb-[11px]
+        pt-0
+        pb-2
         text-sm
         font-semibold
         whitespace-nowrap
@@ -28,7 +29,7 @@
           border
           border-neutral-200
           px-1
-          py-0.5
+          py-0
           text-xs
           font-normal
           text-neutral-200;
