@@ -1,12 +1,12 @@
 @reference "../styles/index.css";
 
 .baseLayout {
-  @apply grid
+  @apply ml:grid
+    ml:grid-cols-[1fr]
+    ml:grid-rows-[auto_1fr_auto]
     h-max
     min-h-full
-    w-full
-    grid-cols-[1fr]
-    grid-rows-[auto_1fr_auto];
+    w-full;
 }
 
 .centeredLayout {
@@ -104,7 +104,7 @@
     justify-center;
 
   main {
-    @apply max-w-5xl
+    @apply max-w-7xl
       gap-4
       px-4
       py-12
@@ -135,17 +135,19 @@
 }
 
 .contentLayout {
-  @apply max-w-8xl
+  @apply max-w-10xl
     max-ml:m-0
-    max-ml:block
+    3xl:grid-cols-[--spacing(80)_1fr_--spacing(80)]
+    ml:grid-cols-[0_1fr_--spacing(56)]
+    ml:grid
     mx-auto
-    grid
+    block
     w-full
     grid-rows-[1fr]
-    sm:grid-cols-[1fr_--spacing(52)]
-    xl:grid-cols-[1fr_--spacing(80)];
+    xl:grid-cols-[--spacing(56)_1fr_--spacing(64)]
+    2xl:grid-cols-[--spacing(72)_1fr_--spacing(72)];
 
-  > *:nth-child(1) {
+  > *:nth-child(2) {
     @apply bg-gradient-subtle
       dark:bg-gradient-subtle-dark
       max-ml:border-l-0
@@ -164,13 +166,12 @@
       dark:border-l-neutral-900;
 
     main {
-      @apply max-w-[660px]
-        gap-4
+      @apply gap-4
         wrap-anywhere;
     }
   }
 
-  > *:nth-child(2) {
+  > *:nth-child(3) {
     @apply ml:mt-0
       ml:max-w-xs
       ml:border-l

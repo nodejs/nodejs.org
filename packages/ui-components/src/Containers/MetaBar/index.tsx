@@ -1,4 +1,7 @@
+import classNames from 'classnames';
 import { Fragment, useMemo } from 'react';
+
+import { CODE_LIKE_TYPES } from '#ui/constants';
 
 import type { LinkLike } from '#ui/types';
 import type { Heading } from '@vcarl/remark-headings';
@@ -55,8 +58,14 @@ const MetaBar: FC<MetaBarProps> = ({
                       head.depth === 3 ? 'pl-2' : head.depth === 4 ? 'pl-4' : ''
                     }
                   >
-                    <Component href={`#${head.data?.id}`}>
-                      {' '}
+                    <Component
+                      href={`#${head.data?.id}`}
+                      className={classNames({
+                        [styles.codeLink]: CODE_LIKE_TYPES.has(
+                          head.data?.type ?? ''
+                        ),
+                      })}
+                    >
                       {head.value}
                     </Component>
                   </li>

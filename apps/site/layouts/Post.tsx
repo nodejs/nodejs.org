@@ -26,6 +26,8 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
       <WithNavBar />
 
       <div className={styles.contentLayout}>
+        <div></div>
+
         <div className={styles.postLayout}>
           <main id="main" tabIndex={-1}>
             {type === 'vulnerability' && <EOLAlert />}
