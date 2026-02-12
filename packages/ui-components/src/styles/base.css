@@ -40,9 +40,8 @@ body {
       text-neutral-900
       opacity-0
       shadow-lg
-      transition-opacity;
-
-    content: attr(data-tooltip);
+      transition-opacity
+      content-[attr(data-tooltip)];
   }
 
   &::before {
@@ -61,9 +60,8 @@ body {
       border-neutral-200
       bg-white
       opacity-0
-      transition-opacity;
-
-    content: '';
+      transition-opacity
+      content-[''];
   }
 
   &:hover::after,
