@@ -13,11 +13,6 @@ const languagePrefix = 'language-';
 // The regex to match metadata
 const rMeta = /(\w+)(?:=(?:"([^"]+)"|(\S+)))?/g;
 
-const getLineCount = value =>
-  value
-    .split('\n')
-    .filter((_, i, arr) => !(i === arr.length - 1 && arr[i] === '')).length;
-
 /**
  * Parses a fenced code block metadata string into a JavaScript object.
  * @param {string} meta - The metadata string from a Markdown code fence.
@@ -170,7 +165,9 @@ export default async function rehypeShikiji(options) {
       // Retrieve the whole <pre> contents as a parsed DOM string
       const preElementContents = toString(preElement).replace(/\n$/, '');
 
-      const lineCount = getLineCount(preElementContents);
+      // Since we removed the trailing newline, we can easily count the
+      // amount of lines without worrying about an extra empty line at the end of the code block
+      const lineCount = preElementContents.split('\n').length;
 
       // Grabs the relevant alias/name of the language
       const languageId = codeLanguage.slice(languagePrefix.length);
