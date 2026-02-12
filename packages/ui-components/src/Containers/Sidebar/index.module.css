@@ -9,6 +9,7 @@
     flex
     w-full
     flex-col
+    items-start
     gap-8
     border-r-0
     border-neutral-200
@@ -22,6 +23,10 @@
   .navigation {
     @apply ml:flex
       hidden;
+
+    &:last-child {
+      @apply pb-12;
+    }
   }
 
   .mobileSelect {
