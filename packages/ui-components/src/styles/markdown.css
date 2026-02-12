@@ -66,9 +66,8 @@ main {
         text-neutral-400
         opacity-0
         transition-opacity
+        content-['#']
         dark:text-neutral-500;
-
-      content: '#';
     }
 
     &[id]:hover .anchor::after,
