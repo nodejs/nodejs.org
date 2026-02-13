@@ -74,7 +74,7 @@
     "eslint-plugin-react": "~7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-storybook": "~10.0.2",
-    "global-jsdom": "^27.0.0",
+    "global-jsdom": "^28.0.0",
     "postcss-cli": "^11.0.1",
     "postcss-loader": "~8.2.0",
     "react": "catalog:",
