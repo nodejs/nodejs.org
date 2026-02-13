@@ -1,0 +1,408 @@
+{
+  "components": {
+    "containers": {
+      "footer": {
+        "legal": "பதிப்புரிமை <foundationName>OpenJS நிறுவனம்</foundationName> மற்றும் Node.js பங்களிப்பாளர்கள். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை. <foundationName>OpenJS நிறுவனம்</foundationName> பதிவுசெய்யப்பட்ட வர்த்தக முத்திரைகளைக் கொண்டுள்ளது மற்றும் வர்த்தக முத்திரைகளைப் பயன்படுத்துகிறது. <foundationName>OpenJS நிறுவனம்</foundationName>-ன் வர்த்தக முத்திரைகளின் பட்டியலுக்கு, தயவுசெய்து எங்களது <trademarkPolicy>வர்த்தக முத்திரை கொள்கை</trademarkPolicy> மற்றும் <trademarkList>வர்த்தக முத்திரை பட்டியல் </trademarkList>-ஐப் பார்க்கவும்.<trademarkList>OpenJS Foundation வர்த்தக முத்திரைகளின் பட்டியலில்</trademarkList> குறிப்பிடப்படாத வர்த்தக முத்திரைகள் மற்றும் லோகோக்கள், அந்தந்த உரிமையாளர்களின் வர்த்தக முத்திரைகள்™ அல்லது பதிவுசெய்யப்பட்ட® வர்த்தக முத்திரைகள் ஆகும். அவற்றைப் பயன்படுத்துவது அவர்களுடனான எந்தவொரு தொடர்பையோ அல்லது அவர்களது அங்கீகாரத்தையோ குறிக்காது.",
+        "links": {
+          "foundationName": "OpenJS நிறுவனம்",
+          "termsOfUse": "பயன்பாட்டு விதிமுறைகள்",
+          "privacyPolicy": "தனியுரிமை கொள்கை",
+          "bylaws": "துணை விதிகள்",
+          "codeOfConduct": "நடத்தை விதிமுறை",
+          "trademarkPolicy": "வர்த்தக குறிக்கொள்கை",
+          "trademarkList": "வர்த்தக முத்திரை பட்டியல்",
+          "cookiePolicy": "குக்கீ கொள்கை",
+          "security": "பாதுகாப்புக் கொள்கை"
+        },
+        "releasePills": {
+          "latestLTS": "சமீபத்திய LTS",
+          "latestRelease": "சமீபத்திய வெளியீடு"
+        }
+      },
+      "navBar": {
+        "controls": {
+          "toggle": "வழிசெலுத்தல் மெனுவை மாற்று"
+        },
+        "links": {
+          "about": "இதைப் பற்றி",
+          "download": "பதிவிறக்கவும்",
+          "docs": "ஆவணங்கள்",
+          "guides": "வழிகாட்டிகள்",
+          "learn": "கற்க",
+          "security": "பாதுகாப்பு",
+          "certification": "பாடப்பிரிவுகள்",
+          "blog": "வலைப்பதிவு",
+          "contribute": "பங்களியுங்கள்"
+        }
+      }
+    },
+    "navigation": {
+      "learn": {
+        "gettingStarted": {
+          "links": {
+            "gettingStarted": "தொடங்குதல்",
+            "introductionToNodejs": "Node.js அறிமுகம்",
+            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Node.js பயன்படுத்த எவ்வளவு JavaScript தெரிந்திருக்க வேண்டும்?",
+            "differencesBetweenNodejsAndTheBrowser": "Node.js மற்றும் உலாவி இடையேயான வேறுபாடுகள்",
+            "theV8JavascriptEngine": "V8 JavaScript என்ஜின்",
+            "anIntroductionToTheNpmPackageManager": "npm தொகுப்பு மேலாளர் அறிமுகம்",
+            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) மற்றும் அதற்குப் பிறகு",
+            "debugging": "Node.js பிழைத்திருத்தம்",
+            "fetch": "Node.js மூலம் தரவு பெறுதல்",
+            "websocket": "Node.js மூலம் WebSocket கிளையண்ட்",
+            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js: வளர்ச்சி மற்றும் உற்பத்தி இடையிலான வேறுபாடு",
+            "profiling": "Node.js செயலி சுயவிவரப்படுத்தல்",
+            "nodejsWithWebassembly": "WebAssembly உடன் Node.js",
+            "securityBestPractices": "பாதுகாப்பு சிறந்த நடைமுறைகள்",
+            "userlandMigrations": "Userland மாற்றங்களின் அறிமுகம்"
+          }
+        },
+        "commandLine": {
+          "links": {
+            "commandLine": "கட்டளை வரி",
+            "runNodejsScriptsFromTheCommandLine": "கட்டளை வரிகளில் Node.js ஸ்கிரிப்டுகளை இயக்குதல்",
+            "howToUseTheNodejsRepl": "Node.js REPL பயன்படுத்துவது எப்படி",
+            "outputToTheCommandLineUsingNodejs": "Node.js மூலம் கமாண்டு லைனுக்கு வெளி எழுதுதல்",
+            "acceptInputFromTheCommandLineInNodejs": "Node.js இல் கட்டளை வரிகளிருந்து உள்ளீடு பெறுதல்",
+            "howToReadEnvironmentVariablesFromNodejs": "Node.js இலிருந்து என்வைரன்மென்ட் வேரியபிள்களை எப்படி படிப்பது"
+          }
+        },
+        "http": {
+          "links": {
+            "http": "HTTP",
+            "anatomyOfAnHttpTransaction": "HTTP பரிவர்த்தனையின் அமைப்பு",
+            "enterpriseNetworkConfiguration": "பெருநிறுவன வலையமைப்பு அமைப்பமைவு"
+          }
+        },
+        "manipulatingFiles": {
+          "links": {
+            "manipulatingFiles": "கோப்புகளை நிர்வகித்தல்",
+            "nodejsFileStats": "Node.js கோப்பு புள்ளிவிவரங்கள்",
+            "nodejsFilePaths": "Node.js கோப்புப் பாதைகள்",
+            "readingFilesWithNodejs": "Node.js மூலம் கோப்புகளைப் படித்தல்",
+            "writingFilesWithNodejs": "Node.js மூலம் கோப்புகளை எழுதுதல்",
+            "workingWithFileDescriptorsInNodejs": "Node.js இல் கோப்பு விவரிகளில் பணிபுரிதல்",
+            "workingWithFoldersInNodejs": "Node.js இல் கோப்புறைகளில் பணிபுரிதல்",
+            "workingWithDifferentFilesystems": "பல்வேறு கோப்பு முறைமைகளில் பணிபுரிவது எப்படி"
+          }
+        },
+        "asynchronousWork": {
+          "links": {
+            "asynchronousWork": "ஒத்திசைவற்ற நிரலாக்கம் செயல்",
+            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript இல் ஒத்திசைவற்ற நிரலாக்கம் மற்றும் திரும்ப அழைப்புச் செயல்பாடுகள்",
+            "asynchronousFlowControl": "ஒத்திசைவற்ற நிரலாக்கம் ஓட்டம் கட்டுப்பாடு",
+            "discoverPromisesInNodejs": "Node.js இல் Promises கண்டறிதல்",
+            "discoverJavascriptTimers": "JavaScript நேரக்கணக்கிகளை அறிதல்",
+            "overviewOfBlockingVsNonBlocking": "Blocking vs Non-Blocking - ஒரு முன்னோக்கு",
+            "eventLoopTimersAndNexttick": "Node.js நிகழ்வுச் சுழல்",
+            "theNodejsEventEmitter": "Node.js நிகழ்வு உமிழ்ப்பான்",
+            "understandingProcessnexttick": "process.nextTick() புரிதல்",
+            "understandingSetimmediate": "setImmediate() புரிதல்",
+            "dontBlockTheEventLoop": "Event Loop-ஐ தடுக்காதீர்கள்"
+          }
+        },
+        "typescript": {
+          "links": {
+            "typescript": "TypeScript",
+            "introduction": "TypeScript அறிமுகம்",
+            "runNatively": "TypeScript-ஐ நேரடியாக இயக்குதல்",
+            "transpile": "Transpilation மூலம் TypeScript இயக்குதல்",
+            "run": "Runner மூலம் TypeScript இயக்குதல்",
+            "publishingTSPackage": "TypeScript தொகுப்பு வெளியிடுதல்"
+          }
+        },
+        "modules": {
+          "links": {
+            "modules": "கூறுகள்",
+            "howToUseStreams": "ஸ்ட்ரீம்களைப் பயன்படுத்துவது எப்படி",
+            "backpressuringInStreams": "ஸ்ட்ரீம்களில் Backpressure",
+            "publishingAPackage": "தொகுப்பு வெளியிடுதல்",
+            "publishingNodeApiModules": "Node-API தொகுப்பு வெளியிடுவது எப்படி",
+            "abiStability": "ABI நிலைத்தன்மை"
+          }
+        },
+        "diagnostics": {
+          "links": {
+            "diagnostics": "ஆய்வு",
+            "userJourney": "பயனர் பயணம்",
+            "memory": "நினைவகம்",
+            "understandingAndTuningMemory": "நினைவகத்தை புரிந்து மாற்றம் செய்வது",
+            "liveDebugging": "நேரடி பிழைத்திருத்தம்",
+            "poorPerformance": "சராசரி செயல்திறன்",
+            "flameGraphs": "Flame Graphs"
+          }
+        },
+        "testRunner": {
+          "links": {
+            "testRunner": "டெஸ்ட் ரன்னர்",
+            "introduction": "Node.js டெஸ்ட் ரன்னர் அறிமுகம்",
+            "usingTestRunner": "Node.js டெஸ்ட் ரன்னர் பயன்படுத்துதல்",
+            "mocking": "டெஸ்ட்களில் Mocking",
+            "collectingCodeCoverage": "Node.js இல் Code Coverage சேகரித்தல்"
+          }
+        }
+      },
+      "about": {
+        "links": {
+          "about": "Node.js பற்றி",
+          "aboutSide": "Node.js® பற்றி",
+          "branding": "Node.js பிராண்டிங்",
+          "governance": "திட்ட நிர்வாகம்",
+          "releases": "Node.js வெளியீடுகள்",
+          "security": "பாதுகாப்பு அறிக்கை",
+          "partners": "கூட்டாளர்கள் & ஆதரவாளர்கள்",
+          "eol": "காலாவதி நிலை (EOL)"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "getInvolved": "ஈடுபடுங்கள்",
+          "collabSummit": "கூட்டு முயற்சி மாநாடு",
+          "upcomingEvents": "வரவிருக்கும் நிகழ்வுகள்",
+          "contribute": "Node.js-க்கு பங்களி",
+          "codeOfConduct": "நடத்தை விதிமுறை"
+        }
+      }
+    },
+    "downloadReleasesTable": {
+      "version": "Node.js",
+      "nApiVersion": "N-API",
+      "codename": "குறியீடு பெயர்",
+      "releaseDate": "வெளியிடப்பட்ட தேதி",
+      "firstReleased": "முதலில் வெளியிடப்பட்டது",
+      "lastUpdated": "கடைசியாகப் புதுப்பிக்கப்பட்டது",
+      "status": "நிலை",
+      "details": "விவரங்கள்"
+    },
+    "downloadsTable": {
+      "fileName": "கோப்புப் பெயர்",
+      "operatingSystem": "OS",
+      "architecture": "வமைப்பு"
+    },
+    "releaseModal": {
+      "title": "Node.js v{version} ({codename})",
+      "titleWithoutCodename": "Node.js v{version}",
+      "overview": "மேலும் விவரம்",
+      "minorVersions": "சிறு பதிப்புகள்",
+      "releaseAnnouncement": "வெளியீட்டு அறிவிப்பு",
+      "unsupportedVersionWarning": "இந்தப் பதிப்பு பராமரிப்பில் இல்லை. தயவுசெய்து ஆதரிக்கப்படும் பதிப்பைப் பயன்படுத்தவும். <link>EOL ஆதரவைக் புரிந்துகொள்ளவும்.</link>",
+      "ltsVersionFeaturesNotice": "புதிய அம்சங்களைச் சீக்கிரமே வேண்டுமா? <link>சமீபத்திய Node.js பதிப்பு</link> பயன்படுத்தி முயற்சிக்கவும்!"
+    },
+    "eolAlert": {
+      "message": "பராமரிப்பு LTS நிலையைக் கடந்த பதிப்புகளுக்கு எங்கள் <link>OpenJS சூழல் நிலைத்தன்மை திட்டக் கூட்டாளர்கள்</link> மூலம் வணிக ஆதரவு கிடைக்கும்"
+    },
+    "eolChip": {
+      "severity": {
+        "unknown": "தெரியாதது",
+        "low": "குறைந்தது",
+        "medium": "நடுத்தரம்",
+        "high": "உயர்",
+        "critical": "அத்தியாவசியம்"
+      }
+    },
+    "eolModal": {
+      "title": "Node.js v{version} ({codename}) EOL-ஐ சென்றடைந்தது",
+      "titleWithoutCodename": "Node.js v{version} EOL-ஐ சென்றடைந்தது",
+      "vulnerabilitiesMessage": "இந்த Node.js பதிப்போடு தொடர்புடைய {count}+ அறியப்பட்ட பாதுகாப்புச் சிக்கல்கள் (CVEs) உள்ளன. CVEs (Common Vulnerabilities and Exposures) என்பது பகிரங்கமாக அறிவிக்கப்பட்ட பாதுகாப்பு குறைபாடுகளுக்கான தனித்துவமான அடையாளங்கள் ஆகும். ஏதேனும் ஒரு CVE இணைப்பைக் கிளிக் செய்வதன் மூலம், அந்தப் பாதுகாப்பு குறைபாடு எவ்வாறு செயல்படுகிறது என்பது போன்ற கூடுதல் தொழில்நுட்ப விவரங்களை நீங்கள் அறியலாம்.",
+      "noVulnerabilitiesMessage": "தற்போது இந்த Node.js பதிப்போடு தொடர்புடைய அறியப்பட்ட பாதுகாப்பு குறைபாடுகள் (CVEs) ஏதுமில்லை. இருப்பினும், இது முற்றிலும் பாதுகாப்பானது என்று அர்த்தமல்ல—சில பாதுகாப்பு ஓட்டைகள் இன்னும் கண்டறியப்படாமல் இருக்கலாம் அல்லது பகிரங்கமாக அறிவிக்கப்படாமல் இருக்கலாம். இந்த பதிப்பு பழையதாகவோ அல்லது அதிகாரப்பூர்வ ஆதரவு அற்றதாகவோ இருந்தால், சமீபத்திய திருத்தங்கள் மற்றும் பாதுகாப்பு மேம்பாடுகளைப் பெறுவதற்கு, புதிய பதிப்பிற்கு மாறுவதே சிறந்த முடிவாகும்.",
+      "blogLinkText": "வலைப்பதிவு",
+      "showUnknownSeverities": "தெரியாத தீவிரம் உள்ளவற்றைக் காட்டவும்",
+      "table": {
+        "cves": "CVE(கள்)",
+        "severity": "தீவிரம்",
+        "overview": "மேலும் விவரம்",
+        "details": "விவரங்கள்"
+      }
+    },
+    "eolTable": {
+      "version": "பதிப்பு",
+      "codename": "குறியீடு பெயர்",
+      "releaseDate": "வெளியிடப்பட்டது",
+      "lastUpdated": "கடைசியாகப் புதுப்பிக்கப்பட்டது",
+      "vulnerabilities": "பாதுகாப்பு குறைபாடுகள்",
+      "details": "விவரங்கள்",
+      "hideNonLts": "LTS அல்லாத பதிப்புகளை மறை"
+    },
+    "minorReleasesTable": {
+      "version": "பதிப்பு",
+      "links": "இணைப்புகள்",
+      "nApiVersion": "N-API பதிப்பு",
+      "npmVersion": "npm பதிப்பு",
+      "v8Version": "V8 பதிப்பு",
+      "actions": {
+        "release": "வெளியீடு",
+        "changelog": "மாற்றப்பட்ட பதிவுகள்",
+        "docs": "ஆவணங்கள்"
+      }
+    },
+    "releaseOverview": {
+      "firstReleased": "முதல் வெளியீடு",
+      "lastUpdated": "கடைசி புதுப்பிப்பு",
+      "minorVersions": "சிறு பதிப்புகள்",
+      "nApiVersion": "N-API பதிப்பு",
+      "npmVersion": "npm பதிப்பு",
+      "v8Version": "V8 பதிப்பு"
+    },
+    "common": {
+      "alertBox": {
+        "info": "தகவல்",
+        "warning": "எச்சரிக்கை",
+        "danger": "ஆபத்து"
+      },
+      "breadcrumbs": {
+        "navigateToHome": "முகப்பிற்கு செல்லவும்"
+      },
+      "codebox": {
+        "copy": "கிளிப்போர்டிற்கு நகலெடு",
+        "copied": "கிளிப்போர்டில் நகலெடுக்கப்பட்டது!"
+      },
+      "pagination": {
+        "previous": "முந்தையது",
+        "previousAriaLabel": "முந்தைய பக்கம்",
+        "next": "அடுத்தது",
+        "nextAriaLabel": "அடுத்த பக்கம்",
+        "defaultLabel": "பக்க எண்கள்",
+        "pageLabel": "{pageNumber} ஆவது பக்கத்திற்குச் செல்லவும்"
+      },
+      "sidebar": {
+        "title": "பக்கத்தை மாற்று"
+      },
+      "languageDropdown": {
+        "label": "மொழி தேர்வு"
+      },
+      "themeToggle": {
+        "light": "Switch to Light Mode",
+        "dark": "Switch to Dark Mode"
+      },
+      "skipToContent": "உள்ளடக்கத்திற்குச் செல்லவும்"
+    },
+    "metabar": {
+      "lastUpdated": "கடைசியாகப் புதுப்பிக்கப்பட்டது",
+      "readingTime": "படிக்கும் நேரம்",
+      "addedIn": "சேர்க்கப்பட்டது",
+      "author": "ஆசிரியர்",
+      "authors": "ஆசிரியர்கள்",
+      "contribute": "பங்களி",
+      "contributeText": "இந்தப் பக்கத்தைத் திருத்து",
+      "viewAs": "இப்படியாகப் பார்",
+      "tableOfContents": "உள்ளடக்கப் பட்டியல்",
+      "metadata": "கட்டுரை மெட்டாடேட்டா"
+    },
+    "banner": {
+      "default": "அறிவிப்புகள்",
+      "warning": "எச்சரிக்கை அறிவிப்பு",
+      "error": "பிழை செய்தி"
+    },
+    "search": {
+      "searchPlaceholder": "Type செய்யத் தொடங்கவும்...",
+      "chatPlaceholder": "எதையும் கேளுங்கள்",
+      "noResultsFoundFor": "இதற்கான முடிவுகள் இல்லை",
+      "suggestions": "பரிந்துரைகள்",
+      "seeAll": "அனைத்தையும் பார்க்கவும்",
+      "addMore": "மேலும் சேர்க்கவும்",
+      "clearChat": "Chat-யை அழிக்கவும்",
+      "errorMessage": "தேடும்போது பிழை ஏற்பட்டது. மீண்டும் முயற்சிக்கவும்.",
+      "disclaimer": "AI சுருக்கங்கள் சில நேரங்களில் தவறாக இருக்கலாம். தயவுசெய்து சரிபார்க்கவும்.",
+      "startYourSearch": "உங்கள் தேடலைத் தொடங்கவும்",
+      "initErrorSearch": "தேடல் சேவை தொடங்க முடியவில்லை",
+      "initErrorChat": "Chat சேவை தொடங்க முடியவில்லை",
+      "chatButtonLabel": "AI சுருக்கம் பெற",
+      "searchButtonLabel": "தேடல்",
+      "poweredBy": "Powered by",
+      "suggestionOne": "Node.js எப்படி நிறுவுவது?",
+      "suggestionTwo": "HTTP சர்வர் உருவாக்குவது எப்படி?",
+      "suggestionThree": "Node.js பதிப்பு மேம்படுத்துதல்",
+      "scrollToBottom": "கீழே செல்லவும்",
+      "closeChat": "Chat-யை மூடு",
+      "keyboardShortcuts": {
+        "select": "தேர்வு செய்ய",
+        "navigate": "navigate செய்ய",
+        "close": "close செய்ய"
+      }
+    },
+    "blog": {
+      "blogHeader": {
+        "subtitle": "சமீபத்திய Node.js செய்திகள், மாற்று வழிகாட்டிகள் மற்றும் நிகழ்வுச் சுருக்கங்கள்",
+        "rssLink": "RSS feed"
+      }
+    }
+  },
+  "layouts": {
+    "blogPost": {
+      "author": {
+        "byLine": "{author, select, null {} other {{author} எழுதியது, }}"
+      }
+    },
+    "blogIndex": {
+      "categoryName": "{category, select, all {வலைப்பதிவு} other {{category} பதிவுகள்}}"
+    },
+    "blog": {
+      "title": "வலைப்பதிவு",
+      "selectCategory": "பிரிவுகள்",
+      "categories": {
+        "all": "அனைத்தும்",
+        "announcements": "அனைத்தும்",
+        "release": "அனைத்தும்",
+        "vulnerability": "பாதுகாப்பு பிரச்சினைகள்",
+        "advisory-board": "ஆலோசனை குழு",
+        "community": "சமூகம்",
+        "feature": "அம்சம்",
+        "module": "மொடியூல்",
+        "npm": "npm",
+        "uncategorized": "வகைப்படுத்தப்படாதது",
+        "video": "வீடியோ",
+        "weekly": "வாராந்திர புதுப்பிப்புகள்",
+        "wg": "பணிக்குழுக்கள்",
+        "migrations": "மாற்று வழிகாட்டிகள்",
+        "events": "நிகழ்வுகள்"
+      }
+    },
+    "error": {
+      "notFound": {
+        "title": "பக்கம் கிடைக்கவில்லை",
+        "description": "மன்னிக்கவும்! நீங்கள் தேடும் பக்கத்தைக் காண முடியவில்லை. முகப்புப் பக்கத்திலிருந்து மீண்டும் முயற்சிக்கவும்."
+      },
+      "internalServerError": {
+        "title": "உள் சேவையக பிழை",
+        "description": "இந்தப் பக்கத்தில் சரிசெய்ய முடியாத பிழை ஏற்பட்டது."
+      },
+      "backToHome": "முகப்பிற்கு திரும்பவும்"
+    },
+    "download": {
+      "buttons": {
+        "installer": "{os} நிறுவி (.{extension})",
+        "binary": "Standalone பைனரி (.{extension})"
+      },
+      "dropdown": {
+        "platform": "பிளாட்ஃபார்ம்",
+        "os": "இயங்கு தளம்",
+        "version": "பதிப்பு",
+        "installMethod": "நிறுவும் முறை",
+        "packageManager": "பேக்கேஜ் மேலாளர்",
+        "unknown": "தெரியவில்லை",
+        "platformGroups": {
+          "official": "பரிந்துரைக்கப்படும் (அதிகாரப்பூர்வமானது)",
+          "unofficial": "சமூகம் (அதிகாரப்பூர்வமற்றது)"
+        }
+      },
+      "codeBox": {
+        "unsupportedVersionWarning": "இந்தப் பதிப்பு பராமரிப்பில் இல்லை. ஆதரிக்கப்படும் பதிப்பைப் பயன்படுத்தவும். <link>EOL ஆதரவு குறித்து அறிய</link>",
+        "ltsVersionFeaturesNotice": "புதிய அம்சங்களைச் சீக்கிரமே வேண்டுமா? <link>சமீபத்திய Node.js பதிப்பை</link> முயற்சிக்கவும்!",
+        "communityPlatformInfo": "சமூகத்தின் சாப்ட்வேர் மூலம் வழங்கப்படும் Installation முறைகளுக்கு அவர்கள் தான் பொறுப்பு.",
+        "externalSupportInfo": "பிரச்சினைகள் இருந்தால் <link>{platform} இணையதளத்தில்</link> பார்த்தறியவும்",
+        "noScriptDetected": "இந்தப் பக்கத்திற்கு JavaScript தேவை. நீங்கள் நேரடியாக <link>பதிவிறக்க ஆவணக் காப்பகப் பக்கத்திற்குச்</link> சென்று ஜாவாஸ்கிரிப்ட் இல்லாமல் Node.js ஐ பதிவிறக்கம் செய்யலாம்.",
+        "platformInfo": {
+          "default": "{platform} மற்றும் அதன் ஸ்கிரிப்ட்கள் Node.js குழுவால் பராமரிக்கப்படுவதில்லை.",
+          "nvm": "\"nvm\" ஒரு குறுக்கு-பிளாட்ஃபார்ம் Node.js பதிப்பு மேலாளர்.",
+          "fnm": "\"fnm\" ஒரு குறுக்கு-பிளாட்ஃபார்ம் Node.js பதிப்பு மேலாளர்.",
+          "brew": "Homebrew என்பது macOS மற்றும் Linux இற்கான பேக்கேஜ் மேலாளர்.",
+          "choco": "Chocolatey என்பது Windows இற்கான பேக்கேஜ் மேலாளர்.",
+          "docker": "Docker என்பது containerization தளம்.",
+          "n": "\"n\" குறுக்கு-பிளாட்ஃபார்ம் Node பதிப்பு மேலாளர்.",
+          "volta": "\"Volta\" விரைந்து வேலை செய்யும் Node மேலாளர்."
+        }
+      }
+    },
+    "logo": "Node.js சின்னம்"
+  }
+}
