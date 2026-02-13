@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "Bundler",
-    "customConditions": ["default"],
+    "customConditions": ["uncompiled"],
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
