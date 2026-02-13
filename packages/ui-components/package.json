@@ -4,12 +4,12 @@
   "type": "module",
   "exports": {
     "./*": {
-      "rolldown": [
+      "default": [
         "./dist/*",
         "./dist/*.js",
         "./dist/*/index.js"
       ],
-      "default": [
+      "uncompiled": [
         "./src/*",
         "./src/*.tsx",
         "./src/*/index.tsx",
@@ -28,7 +28,6 @@
     "compile:css": "postcss --dir dist --base src \"src/**/*.module.css\" src/styles/index.css",
     "compile": "node --run compile:ts && node --run compile:css",
     "compile:watch": "concurrently -k \"node --run compile:ts -- --watch\" \"node --run compile:css -- --watch\"",
-    "release": "node --run compile",
     "lint": "node --run lint:js && node --run lint:css",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
     "lint:css:fix": "node --run lint:css -- --fix",
@@ -90,12 +89,12 @@
   },
   "imports": {
     "#ui/*": {
-      "rolldown": [
+      "default": [
         "./dist/*",
         "./dist/*.js",
         "./dist/*/index.js"
       ],
-      "default": [
+      "uncompiled": [
         "./src/*",
         "./src/*.tsx",
         "./src/*/index.tsx",

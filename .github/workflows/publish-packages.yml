@@ -114,8 +114,8 @@ jobs:
         working-directory: packages/${{ matrix.package }}
         run: |
           # Check if a custom publish script exists in package.json
-          if jq -e '.scripts.release' package.json > /dev/null; then
-            pnpm run release
+          if jq -e '.scripts.compile' package.json > /dev/null; then
+            pnpm run compile
           fi
 
           # Then publish the package to npm
