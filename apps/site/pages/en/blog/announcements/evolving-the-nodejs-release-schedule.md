@@ -6,7 +6,7 @@ layout: blog-post
 author: The Node.js Release Team
 ---
 
-Starting with `v27`, Node.js will move from two major releases per year to one. This post explains what's changing, why, and what it means for users.
+Starting with `27.x`, Node.js will move from two major releases per year to one. This post explains what's changing, why, and what it means for users.
 
 ## Why This Change
 
@@ -26,21 +26,21 @@ Managing security releases across four or five active release lines has become d
 
 ## What's Changing
 
-Starting with `v27` in 2027:
+Starting with `27.x` in 2027:
 
 - **One major release per year** (April), with LTS promotion in October
 - **Every release becomes LTS**. No more odd/even distinction.
 - **Alpha channel replaces odd-numbered releases** for early testing
-- **Version numbers align with years**: `v27` in 2027, `v28` in 2028
+- **Version numbers align with years**: `27.x` in 2027, `28.x` in 2028
 - **Maximum 3 active release lines** (down from 5)
 
 ### New Schedule
 
-| Phase | Duration | Description |
-|-------|----------|-------------|
-| Alpha | 5 months | Oct to Mar. Early testing, semver-major allowed |
-| Current | 6 months | Apr to Oct. Stabilization |
-| LTS | 29 months | Long-term support with security fixes |
+| Phase   | Duration  | Description                                     |
+| ------- | --------- | ----------------------------------------------- |
+| Alpha   | 5 months  | Oct to Mar. Early testing, semver-major allowed |
+| Current | 6 months  | Apr to Oct. Stabilization                       |
+| LTS     | 29 months | Long-term support with security fixes           |
 
 Total support: 35 months from release to End of Life.
 
@@ -53,6 +53,7 @@ The Alpha channel replaces odd-numbered releases. During this period, only [nigh
 **Who it's for:** Library authors and CI pipelines testing compatibility with upcoming breaking changes. Not intended for production use.
 
 **What to expect:**
+
 - Semver-major changes land during this phase
 - No security patches (only stable releases receive security fixes)
 - API may change between builds
@@ -68,42 +69,42 @@ The Alpha channel replaces odd-numbered releases. During this period, only [nigh
 
 ## Timeline
 
-### `v26` (Current Schedule)
+### `26.x` (Current Schedule)
 
-| Milestone | Date |
-|-----------|------|
-| Release | April 2026 |
-| Enters LTS | October 2026 |
+| Milestone   | Date         |
+| ----------- | ------------ |
+| Release     | April 2026   |
+| Enters LTS  | October 2026 |
 | Maintenance | October 2027 |
-| End of Life | April 2029 |
+| End of Life | April 2029   |
 
-`v26` follows the existing schedule. This is the last release under the current model.
+`26.x` follows the existing schedule. This is the last release under the current model.
 
-### `v27` (New Schedule)
+### `27.x` (New Schedule)
 
-| Milestone | Date |
-|-----------|------|
+| Milestone    | Date         |
+| ------------ | ------------ |
 | Alpha begins | October 2026 |
-| Release | April 2027 |
-| Enters LTS | October 2027 |
-| End of Life | March 2030 |
+| Release      | April 2027   |
+| Enters LTS   | October 2027 |
+| End of Life  | March 2030   |
 
-`v27` is the first release under the new schedule.
+`27.x` is the first release under the new schedule.
 
 ### The Next 10 Years
 
 | Version | Alpha    | Release  | LTS      | End of Life |
-|---------|----------|----------|----------|-------------|
-| v27     | Oct 2026 | Apr 2027 | Oct 2027 | Mar 2030    |
-| v28     | Oct 2027 | Apr 2028 | Oct 2028 | Mar 2031    |
-| v29     | Oct 2028 | Apr 2029 | Oct 2029 | Mar 2032    |
-| v30     | Oct 2029 | Apr 2030 | Oct 2030 | Mar 2033    |
-| v31     | Oct 2030 | Apr 2031 | Oct 2031 | Mar 2034    |
-| v32     | Oct 2031 | Apr 2032 | Oct 2032 | Mar 2035    |
-| v33     | Oct 2032 | Apr 2033 | Oct 2033 | Mar 2036    |
-| v34     | Oct 2033 | Apr 2034 | Oct 2034 | Mar 2037    |
-| v35     | Oct 2034 | Apr 2035 | Oct 2035 | Mar 2038    |
-| v36     | Oct 2035 | Apr 2036 | Oct 2036 | Mar 2039    |
+| ------- | -------- | -------- | -------- | ----------- |
+| 27.x    | Oct 2026 | Apr 2027 | Oct 2027 | Mar 2030    |
+| 28.x    | Oct 2027 | Apr 2028 | Oct 2028 | Mar 2031    |
+| 29.x    | Oct 2028 | Apr 2029 | Oct 2029 | Mar 2032    |
+| 30.x    | Oct 2029 | Apr 2030 | Oct 2030 | Mar 2033    |
+| 31.x    | Oct 2030 | Apr 2031 | Oct 2031 | Mar 2034    |
+| 32.x    | Oct 2031 | Apr 2032 | Oct 2032 | Mar 2035    |
+| 33.x    | Oct 2032 | Apr 2033 | Oct 2033 | Mar 2036    |
+| 34.x    | Oct 2033 | Apr 2034 | Oct 2034 | Mar 2037    |
+| 35.x    | Oct 2034 | Apr 2035 | Oct 2035 | Mar 2038    |
+| 36.x    | Oct 2035 | Apr 2036 | Oct 2036 | Mar 2039    |
 
 ## Thank You
 
