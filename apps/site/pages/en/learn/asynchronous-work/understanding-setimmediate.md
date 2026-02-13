@@ -20,7 +20,7 @@ How is `setImmediate()` different from `setTimeout(() => {}, 0)` (passing a 0ms 
 
 A function passed to `process.nextTick()` is going to be executed on the current iteration of the event loop, after the current operation ends. This means it will always execute before `setTimeout` and `setImmediate`.
 
-A `setTimeout()` callback with a 0ms delay is very similar to `setImmediate()`. The execution order will depend on various factors, but they will be both run in the next iteration of the event loop.
+A `setTimeout()` callback with a 0ms delay is very similar to `setImmediate()`. The execution order will depend on various factors, but they will be both run in the next iteration (the first one) of the event loop when called from the main module. When scheduled inside an I/O callback, setImmediate is guaranteed to run in the current iteration's Check phase, while setTimeout must wait for the Timers phase of the subsequent iteration.
 
 A `process.nextTick` callback is added to `process.nextTick queue`. A `Promise.then()` callback is added to `promises microtask queue`. A `setTimeout`, `setImmediate` callback is added to `macrotask queue`.
 
