@@ -68,6 +68,8 @@ The Alpha channel replaces odd-numbered releases. Alpha releases are signed, tag
 
 ## Timeline
 
+![New Node.js Release Schedule](/static/images/blog/announcements/2026-new-release-schedule.svg)
+
 ### `26.x` (Current Schedule)
 
 | Milestone   | Date         |
