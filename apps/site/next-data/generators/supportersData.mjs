@@ -19,7 +19,8 @@ async function fetchOpenCollectiveData() {
       name,
       image,
       url: website,
-      profile,
+      // If profile starts with 'guest-', it's a non-existing account
+      profile: profile.includes('guest-') ? null : profile,
       source: 'opencollective',
     }));
 
