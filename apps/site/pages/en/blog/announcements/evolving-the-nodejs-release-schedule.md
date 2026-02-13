@@ -48,17 +48,16 @@ This model follows a pattern similar to Ubuntu's release cycle: predictable Apri
 
 ### About the Alpha Channel
 
-The Alpha channel replaces odd-numbered releases. During this period, only [nightly builds](https://nodejs.org/download/nightly/) are available for early testing.
+The Alpha channel replaces odd-numbered releases. Alpha releases are signed, tagged, and tested through CITGM. This is different from [nightly builds](https://nodejs.org/download/nightly/), which remain available as automated untested builds from main.
 
 **Who it's for:** Library authors and CI pipelines testing compatibility with upcoming breaking changes. Not intended for production use.
 
 **What to expect:**
-
 - Semver-major changes land during this phase
-- No security patches (only stable releases receive security fixes)
-- API may change between builds
+- Releases are signed and tagged (unlike nightly)
+- API may change between releases
 
-**Why:** Provides early feedback on breaking changes without maintaining another full release line. Also allows landing V8 updates earlier in the cycle, so we don't ship a single V8 version per year.
+**Why:** Provides early feedback on breaking changes with quality gates that nightly builds lack. Also allows landing V8 updates earlier in the cycle.
 
 ## What's NOT Changing
 
