@@ -187,6 +187,15 @@
       },
       "url": "https://github.com/tj/n",
       "info": "layouts.download.codeBox.platformInfo.n"
+    },
+    {
+      "id": "ASDF",
+      "name": "asdf",
+      "compatibility": {
+        "os": ["MAC", "LINUX"]
+      },
+      "url": "https://asdf-vm.com/guide/getting-started.html",
+      "info": "layouts.download.codeBox.platformInfo.asdf"
     }
   ],
   "packageManagers": [
