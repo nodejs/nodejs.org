@@ -359,6 +359,33 @@ obs.observe({ entryTypes: ['gc'] });
 obs.disconnect();
 ```
 
+```mjs
+import { PerformanceObserver } from 'node:perf_hooks';
+
+// Create a performance observer
+const obs = new PerformanceObserver(list => {
+  const entry = list.getEntries()[0];
+  /*
+  The entry is an instance of PerformanceEntry containing
+  metrics of a single garbage collection event.
+  For example:
+  PerformanceEntry {
+    name: 'gc',
+    entryType: 'gc',
+    startTime: 2820.567669,
+    duration: 1.315709,
+    kind: 1
+  }
+  */
+});
+
+// Subscribe to notifications of GCs
+obs.observe({ entryTypes: ['gc'] });
+
+// Stop subscription
+obs.disconnect();
+```
+
 ### Examining a trace with performance hooks
 
 You can get GC statistics as [PerformanceEntry][] from the callback in
