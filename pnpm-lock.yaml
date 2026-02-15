@@ -337,6 +337,9 @@ importers:
       shiki:
         specifier: ~3.22.0
         version: 3.22.0
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
       unist-util-visit:
         specifier: ^5.1.0
         version: 5.1.0
@@ -344,9 +347,6 @@ importers:
       cross-env:
         specifier: 'catalog:'
         version: 10.1.0
-      typescript:
-        specifier: 'catalog:'
-        version: 5.9.3
 
   packages/remark-lint:
     dependencies:
@@ -471,6 +471,9 @@ importers:
       '@heroicons/react':
         specifier: ^2.2.0
         version: 2.2.0(react@19.2.4)
+      '@orama/core':
+        specifier: ^1.2.16
+        version: 1.2.16
       '@orama/ui':
         specifier: ^1.5.4
         version: 1.5.4(@orama/core@1.2.16)(@types/react@19.2.14)(react@19.2.4)
@@ -501,6 +504,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: ~4.1.18
         version: 4.1.18
+      '@types/react':
+        specifier: 'catalog:'
+        version: 19.2.14
       '@vcarl/remark-headings':
         specifier: ~0.1.0
         version: 0.1.0
@@ -510,13 +516,19 @@ importers:
       postcss-calc:
         specifier: ^10.1.1
         version: 10.1.1(postcss@8.5.6)
+      postcss-cli:
+        specifier: ^11.0.1
+        version: 11.0.1(jiti@2.6.1)(postcss@8.5.6)(tsx@4.21.0)
+      react:
+        specifier: 'catalog:'
+        version: 19.2.4
       tailwindcss:
         specifier: 'catalog:'
         version: 4.1.18
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
     devDependencies:
-      '@orama/core':
-        specifier: ^1.2.16
-        version: 1.2.16
       '@storybook/addon-styling-webpack':
         specifier: ^3.0.0
         version: 3.0.0(storybook@10.2.6(@testing-library/dom@10.4.0)(prettier@3.8.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(webpack@5.105.0(@swc/core@1.15.3))
@@ -535,9 +547,6 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 24.10.1
-      '@types/react':
-        specifier: 'catalog:'
-        version: 19.2.14
       concurrently:
         specifier: ^8.2.2
         version: 8.2.2
@@ -559,15 +568,9 @@ importers:
       global-jsdom:
         specifier: ^27.0.0
         version: 27.0.0(jsdom@27.4.0)
-      postcss-cli:
-        specifier: ^11.0.1
-        version: 11.0.1(jiti@2.6.1)(postcss@8.5.6)(tsx@4.21.0)
       postcss-loader:
         specifier: ~8.2.0
         version: 8.2.0(postcss@8.5.6)(typescript@5.9.3)(webpack@5.105.0(@swc/core@1.15.3))
-      react:
-        specifier: 'catalog:'
-        version: 19.2.4
       storybook:
         specifier: ^10.2.6
         version: 10.2.6(@testing-library/dom@10.4.0)(prettier@3.8.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -586,12 +589,6 @@ importers:
       stylelint-selector-bem-pattern:
         specifier: 4.0.1
         version: 4.0.1(stylelint@17.1.1(typescript@5.9.3))
-      tsx:
-        specifier: ^4.21.0
-        version: 4.21.0
-      typescript:
-        specifier: 'catalog:'
-        version: 5.9.3
 
 packages:
 

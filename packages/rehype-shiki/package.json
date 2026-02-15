@@ -39,11 +39,11 @@
     "classnames": "catalog:",
     "hast-util-to-string": "^3.0.1",
     "shiki": "~3.22.0",
+    "typescript": "catalog:",
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
-    "cross-env": "catalog:",
-    "typescript": "catalog:"
+    "cross-env": "catalog:"
   },
   "imports": {
     "#rs/*": [

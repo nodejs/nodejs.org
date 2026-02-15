@@ -12,7 +12,7 @@
       "dependsOn": ["^topo"]
     },
     "build": {
-      "dependsOn": ["^topo"]
+      "dependsOn": ["compile", "^topo"]
     },
     "lint": {
       "dependsOn": ["^topo"]
