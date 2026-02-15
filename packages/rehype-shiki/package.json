@@ -8,16 +8,16 @@
       "types": "./dist/index.d.mts",
       "default": "./src/index.mjs"
     },
-    "./index.css": "./src/index.css",
-    "./*": "./src/*.mjs"
+    "./*": {
+      "types": "./dist/*.d.mts",
+      "default": "./src/*.mjs"
+    },
+    "./index.css": "./src/index.css"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/nodejs/nodejs.org",
     "directory": "packages/rehype-shiki"
-  },
-  "imports": {
-    "#rs/*": "./src/*"
   },
   "scripts": {
     "compile:ts": "tsc",
@@ -44,5 +44,14 @@
   "devDependencies": {
     "cross-env": "catalog:",
     "typescript": "catalog:"
+  },
+  "imports": {
+    "#rs/*": [
+      "./src/*",
+      "./src/*.mjs"
+    ]
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
