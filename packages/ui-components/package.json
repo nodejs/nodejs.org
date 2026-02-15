@@ -84,7 +84,8 @@
     "stylelint": "^17.1.1",
     "stylelint-config-standard": "^40.0.0",
     "stylelint-order": "7.0.1",
-    "stylelint-selector-bem-pattern": "4.0.1"
+    "stylelint-selector-bem-pattern": "4.0.1",
+    "tsx": "^4.21.0"
   },
   "imports": {
     "#ui/*": {
