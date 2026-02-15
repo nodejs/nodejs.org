@@ -3,129 +3,135 @@
 .container {
   @apply border-neutral-200
     bg-white
-    xl:flex
     xl:h-16
-    xl:flex-row
-    xl:items-center
-    xl:gap-8
     xl:border-b
     xl:px-8
     dark:border-neutral-900
     dark:bg-neutral-950;
-}
 
-.nodeIconAndMobileItemsToggler {
-  @apply flex
-    h-16
-    shrink-0
-    items-center
-    border-b
-    border-neutral-200
-    px-4
-    xl:flex
-    xl:h-full
-    xl:items-center
-    xl:border-0
-    xl:px-0
-    dark:border-neutral-900;
-}
+  .innerContainer {
+    @apply max-w-10xl
+      xl:mx-auto
+      xl:flex
+      xl:h-16
+      xl:flex-row
+      xl:items-center
+      xl:gap-8;
 
-.sidebarItemToggler {
-  @apply absolute
-    right-4
-    -z-10
-    -translate-y-[200%]
-    appearance-none
-    opacity-0;
-}
+    .nodeIconAndMobileItemsToggler {
+      @apply flex
+        h-16
+        shrink-0
+        items-center
+        border-b
+        border-neutral-200
+        px-4
+        xl:flex
+        xl:h-full
+        xl:items-center
+        xl:border-0
+        xl:px-0
+        dark:border-neutral-900;
 
-.nodeIconWrapper {
-  @apply h-[30px]
-    flex-1;
-}
+      .nodeIconWrapper {
+        @apply h-[30px]
+          flex-1;
+      }
 
-.navInteractionIcon,
-.sidebarItemToggler {
-  @apply size-6;
-}
+      .sidebarItemTogglerLabel {
+        @apply block
+          cursor-pointer
+          xl:hidden;
 
-.sidebarItemTogglerLabel {
-  @apply block
-    cursor-pointer
-    xl:hidden;
-}
+        .navInteractionIcon {
+          @apply size-6;
+        }
+      }
+    }
 
-.main {
-  @apply flex-1
-    flex-col
-    justify-between
-    gap-4
-    xl:flex
-    xl:flex-row
-    xl:items-center;
-}
+    .sidebarItemToggler {
+      @apply absolute
+        right-4
+        -z-10
+        size-6
+        -translate-y-[200%]
+        appearance-none
+        opacity-0;
+    }
 
-.navItems {
-  @apply flex
-    flex-col
-    gap-0
-    border-b
-    border-neutral-200
-    p-4
-    xl:flex-1
-    xl:flex-row
-    xl:gap-1
-    xl:border-0
-    xl:p-0
-    dark:border-neutral-900;
-}
+    .main {
+      @apply flex-1
+        flex-col
+        justify-between
+        gap-4
+        xl:flex
+        xl:flex-row
+        xl:items-center;
+    }
 
-.actionsWrapper {
-  @apply flex
-    flex-row
-    flex-wrap
-    items-center
-    justify-between
-    gap-2
-    border-b
-    border-neutral-200
-    p-4
-    sm:flex-nowrap
-    xl:basis-96
-    xl:border-0
-    xl:p-0
-    dark:border-neutral-900;
-}
+    .navItems {
+      @apply flex
+        flex-col
+        gap-0
+        border-b
+        border-neutral-200
+        p-4
+        xl:flex-1
+        xl:flex-row
+        xl:gap-1
+        xl:border-0
+        xl:p-0
+        dark:border-neutral-900;
+    }
 
-span.searchButtonSkeleton {
-  @apply my-px
-    mr-2
-    flex-grow
-    rounded-xl;
+    .actionsWrapper {
+      @apply flex
+        flex-row
+        flex-wrap
+        items-center
+        justify-between
+        gap-2
+        border-b
+        border-neutral-200
+        p-4
+        sm:flex-nowrap
+        xl:basis-96
+        xl:border-0
+        xl:p-0
+        dark:border-neutral-900;
 
-  &:empty {
-    @apply h-10;
-  }
-}
+      span.searchButtonSkeleton {
+        @apply my-px
+          mr-2
+          grow
+          rounded-xl;
 
-span.themeToggleSkeleton {
-  @apply size-9
-    rounded-md
-    py-4;
-}
+        &:empty {
+          @apply h-10;
+        }
+      }
 
-.ghIconWrapper {
-  @apply size-9
-    rounded-md
-    p-2;
+      span.themeToggleSkeleton {
+        @apply size-9
+          rounded-md
+          py-4;
+      }
 
-  svg {
-    @apply fill-neutral-700
-      dark:fill-neutral-300;
-  }
+      .ghIconWrapper {
+        @apply size-9
+          rounded-md
+          p-2;
 
-  &:hover {
-    @apply bg-neutral-100
-      dark:bg-neutral-900;
+        svg {
+          @apply fill-neutral-700
+            dark:fill-neutral-300;
+        }
+
+        &:hover {
+          @apply bg-neutral-100
+            dark:bg-neutral-900;
+        }
+      }
+    }
   }
 }

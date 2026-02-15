@@ -55,9 +55,9 @@ const Footer: FC<FooterProps> = ({
   as = 'a',
   navigation,
   slots,
-}) => {
-  return (
-    <footer className={styles.footer}>
+}) => (
+  <footer className={styles.container}>
+    <div className={styles.innerContainer}>
       <div className={styles.row}>
         <div className={styles.sectionPrimary}>{slots?.primary}</div>
 
@@ -83,9 +83,10 @@ const Footer: FC<FooterProps> = ({
           </div>
         </div>
       </div>
+
       <div className={classNames(styles.row, styles.legal)}>{slots?.legal}</div>
-    </footer>
-  );
-};
+    </div>
+  </footer>
+);
 
 export default Footer;

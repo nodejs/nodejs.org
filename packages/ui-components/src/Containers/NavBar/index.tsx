@@ -14,11 +14,11 @@ import type {
   ElementType,
 } from 'react';
 
-import style from './index.module.css';
+import styles from './index.module.css';
 
 const navInteractionIcons = {
-  show: <Hamburger className={style.navInteractionIcon} />,
-  close: <XMark className={style.navInteractionIcon} />,
+  show: <Hamburger className={styles.navInteractionIcon} />,
+  close: <XMark className={styles.navInteractionIcon} />,
 };
 
 type NavbarProps = {
@@ -44,48 +44,54 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className={style.container}>
-      <div className={style.nodeIconAndMobileItemsToggler}>
-        <Component className={style.nodeIconWrapper} href="/" aria-label="Home">
-          <Logo />
-        </Component>
+    <nav className={styles.container}>
+      <div className={styles.innerContainer}>
+        <div className={styles.nodeIconAndMobileItemsToggler}>
+          <Component
+            className={styles.nodeIconWrapper}
+            href="/"
+            aria-label="Home"
+          >
+            <Logo />
+          </Component>
 
-        <Label.Root
-          className={style.sidebarItemTogglerLabel}
-          htmlFor="sidebarItemToggler"
-          role="button"
+          <Label.Root
+            className={styles.sidebarItemTogglerLabel}
+            htmlFor="sidebarItemToggler"
+            role="button"
+            aria-label={sidebarItemTogglerAriaLabel}
+          >
+            {navInteractionIcons[isMenuOpen ? 'close' : 'show']}
+          </Label.Root>
+        </div>
+
+        <input
+          className={classNames('peer', styles.sidebarItemToggler)}
+          id="sidebarItemToggler"
+          type="checkbox"
+          onChange={e => setIsMenuOpen(() => e.target.checked)}
           aria-label={sidebarItemTogglerAriaLabel}
-        >
-          {navInteractionIcons[isMenuOpen ? 'close' : 'show']}
-        </Label.Root>
-      </div>
+          tabIndex={-1}
+        />
 
-      <input
-        className={classNames('peer', style.sidebarItemToggler)}
-        id="sidebarItemToggler"
-        type="checkbox"
-        onChange={e => setIsMenuOpen(() => e.target.checked)}
-        aria-label={sidebarItemTogglerAriaLabel}
-        tabIndex={-1}
-      />
-
-      <div className={classNames(style.main, `hidden peer-checked:flex`)}>
-        {navItems && (
-          <div className={style.navItems}>
-            {navItems.map(({ text, link, target }) => (
-              <NavItem
-                pathname={pathname}
-                as={Component}
-                key={link}
-                href={link}
-                target={target}
-              >
-                {text}
-              </NavItem>
-            ))}
-          </div>
-        )}
-        <div className={style.actionsWrapper}>{children}</div>
+        <div className={classNames(styles.main, `hidden peer-checked:flex`)}>
+          {navItems && (
+            <div className={styles.navItems}>
+              {navItems.map(({ text, link, target }) => (
+                <NavItem
+                  pathname={pathname}
+                  as={Component}
+                  key={link}
+                  href={link}
+                  target={target}
+                >
+                  {text}
+                </NavItem>
+              ))}
+            </div>
+          )}
+          <div className={styles.actionsWrapper}>{children}</div>
+        </div>
       </div>
     </nav>
   );
