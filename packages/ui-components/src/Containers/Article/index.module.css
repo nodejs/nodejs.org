@@ -3,23 +3,24 @@
 .articleLayout {
   @apply max-w-10xl
     ml:grid
-    ml:grid-cols-[--spacing(52)_1fr]
+    ml:grid-cols-[--spacing(56)_1fr]
     ml:grid-rows-[1fr]
     ml:overflow-visible
     ml:[grid-template-areas:'sidebar_main''sidebar_footer']
+    3xl:grid-cols-[--spacing(80)_1fr_--spacing(80)]
     mx-auto
     block
     w-full
-    xl:grid-cols-[--spacing(52)_1fr_--spacing(52)]
+    xl:grid-cols-[--spacing(56)_1fr_--spacing(64)]
     xl:[grid-template-areas:'sidebar_main_metabar''sidebar_footer_metabar']
-    2xl:grid-cols-[--spacing(80)_1fr_--spacing(80)];
+    2xl:grid-cols-[--spacing(72)_1fr_--spacing(72)];
 
   > *:nth-child(1) {
-    @apply [grid-area:sidebar]
-      xl:sticky
-      xl:top-0
-      xl:h-screen
-      xl:overflow-y-auto;
+    @apply ml:sticky
+      ml:top-0
+      ml:h-svh
+      ml:overflow-y-auto
+      [grid-area:sidebar];
   }
 
   > *:nth-child(2) {
@@ -36,7 +37,8 @@
         p-4
         [grid-area:main]
         motion-safe:scroll-smooth
-        xl:p-12;
+        xl:p-10
+        2xl:p-12;
     }
 
     > *:last-child {
@@ -46,7 +48,7 @@
         [grid-area:metabar]
         xl:sticky
         xl:top-0
-        xl:max-w-xs
+        xl:max-w-none
         xl:border-t-0
         xl:border-l;
     }

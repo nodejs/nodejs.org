@@ -73,8 +73,13 @@ For details, see the latest documentation of [heapsnapshot-signal flag][].
 If you need a snapshot from a working process, like an application running on a
 server, you can implement getting it using:
 
-```js
-require('v8').writeHeapSnapshot();
+```cjs
+require('node:v8').writeHeapSnapshot();
+```
+
+```mjs
+import { writeHeapSnapshot } from 'node:v8';
+writeHeapSnapshot();
 ```
 
 Check [`writeHeapSnapshot` docs][] for file name options.

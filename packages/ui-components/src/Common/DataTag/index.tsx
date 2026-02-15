@@ -31,8 +31,24 @@ const symbolMap = {
   ctor: 'C',
 } as const;
 
+const labelMap = {
+  event: 'Event',
+  method: 'Method',
+  property: 'Property',
+  class: 'Class',
+  module: 'Module',
+  classMethod: 'Class method',
+  global: 'Global',
+  ctor: 'Constructor',
+} as const;
+
 const DataTag: FC<DataTagProps> = ({ kind, size = 'md' }) => (
-  <div className={classNames(styles.dataTag, styles[size], styles[kind])}>
+  <div
+    className={classNames(styles.dataTag, styles[size], styles[kind])}
+    data-tooltip={labelMap[kind]}
+    aria-label={labelMap[kind]}
+    tabIndex={0}
+  >
     <span>{symbolMap[kind]}</span>
   </div>
 );

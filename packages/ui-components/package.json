@@ -1,15 +1,22 @@
 {
   "name": "@node-core/ui-components",
-  "version": "1.5.10",
+  "version": "1.6.0",
   "type": "module",
   "exports": {
-    "./*": [
-      "./src/*",
-      "./src/*.tsx",
-      "./src/*/index.tsx",
-      "./src/*.ts",
-      "./src/*/index.ts"
-    ]
+    "./*": {
+      "rolldown": [
+        "./dist/*",
+        "./dist/*.js",
+        "./dist/*/index.js"
+      ],
+      "default": [
+        "./src/*",
+        "./src/*.tsx",
+        "./src/*/index.tsx",
+        "./src/*.ts",
+        "./src/*/index.ts"
+      ]
+    }
   },
   "repository": {
     "type": "git",
@@ -20,7 +27,8 @@
     "compile:ts": "tsc",
     "compile:css": "postcss --dir dist --base src \"src/**/*.module.css\" src/styles/index.css",
     "compile": "node --run compile:ts && node --run compile:css",
-    "release": "node --run compile && node scripts/publish.mjs",
+    "compile:watch": "concurrently -k \"node --run compile:ts -- --watch\" \"node --run compile:css -- --watch\"",
+    "release": "node --run compile",
     "lint": "node --run lint:js && node --run lint:css",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
     "lint:css:fix": "node --run lint:css -- --fix",
@@ -54,13 +62,14 @@
   "devDependencies": {
     "@orama/core": "^1.2.16",
     "@storybook/addon-styling-webpack": "^3.0.0",
-    "@storybook/addon-themes": "^10.1.11",
+    "@storybook/addon-themes": "^10.2.6",
     "@storybook/addon-webpack5-compiler-swc": "^4.0.2",
-    "@storybook/react-webpack5": "^10.1.11",
+    "@storybook/react-webpack5": "^10.2.6",
     "@testing-library/user-event": "~14.6.1",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "cross-env": "catalog:",
+    "concurrently": "^8.2.2",
     "css-loader": "~7.1.2",
     "eslint-plugin-react": "~7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
@@ -69,10 +78,10 @@
     "postcss-cli": "^11.0.1",
     "postcss-loader": "~8.2.0",
     "react": "catalog:",
-    "storybook": "^10.1.11",
+    "storybook": "^10.2.6",
     "style-loader": "~4.0.0",
-    "stylelint": "^16.26.1",
-    "stylelint-config-standard": "^39.0.1",
+    "stylelint": "^17.1.1",
+    "stylelint-config-standard": "^40.0.0",
     "stylelint-order": "7.0.1",
     "stylelint-selector-bem-pattern": "4.0.1",
     "tailwindcss": "catalog:",
@@ -80,14 +89,25 @@
     "typescript": "catalog:"
   },
   "imports": {
-    "#ui/*": [
-      "./src/*",
-      "./src/*.tsx",
-      "./src/*/index.tsx",
-      "./src/*.ts",
-      "./src/*/index.ts"
-    ]
+    "#ui/*": {
+      "rolldown": [
+        "./dist/*",
+        "./dist/*.js",
+        "./dist/*/index.js"
+      ],
+      "default": [
+        "./src/*",
+        "./src/*.tsx",
+        "./src/*/index.tsx",
+        "./src/*.ts",
+        "./src/*/index.ts"
+      ]
+    }
   },
+  "files": [
+    "dist/**",
+    "README.md"
+  ],
   "engines": {
     "node": ">=20"
   }

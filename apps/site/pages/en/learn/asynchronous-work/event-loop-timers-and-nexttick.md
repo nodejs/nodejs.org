@@ -176,8 +176,35 @@ For example, say you schedule a timeout to execute after a 100 ms
 threshold, then your script starts asynchronously reading a file which
 takes 95 ms:
 
-```js
+```cjs
 const fs = require('node:fs');
+
+function someAsyncOperation(callback) {
+  // Assume this takes 95ms to complete
+  fs.readFile('/path/to/file', callback);
+}
+
+const timeoutScheduled = Date.now();
+
+setTimeout(() => {
+  const delay = Date.now() - timeoutScheduled;
+
+  console.log(`${delay}ms have passed since I was scheduled`);
+}, 100);
+
+// do someAsyncOperation which takes 95 ms to complete
+someAsyncOperation(() => {
+  const startCallback = Date.now();
+
+  // do something that will take 10ms...
+  while (Date.now() - startCallback < 10) {
+    // do nothing
+  }
+});
+```
+
+```mjs
+import fs from 'node:fs';
 
 function someAsyncOperation(callback) {
   // Assume this takes 95ms to complete
@@ -220,6 +247,7 @@ be 105ms.
 > event loop and all of the asynchronous behaviors of the platform)
 > also has a hard maximum (system dependent) before it stops polling for
 > more events.
+
 
 ## `setImmediate()` vs `setTimeout()`
 
@@ -265,11 +293,25 @@ timeout
 However, if you move the two calls within an I/O cycle, the immediate
 callback is always executed first:
 
-```js
+```cjs
 // timeout_vs_immediate.js
 const fs = require('node:fs');
 
 fs.readFile(__filename, () => {
+  setTimeout(() => {
+    console.log('timeout');
+  }, 0);
+  setImmediate(() => {
+    console.log('immediate');
+  });
+});
+```
+
+```mjs
+// timeout_vs_immediate.js
+import fs from 'node:fs';
+
+fs.readFile(import.meta.filename, () => {
   setTimeout(() => {
     console.log('timeout');
   }, 0);
@@ -459,7 +501,7 @@ allowing the connection event to be fired before the listening event.
 Another example is extending an `EventEmitter` and emitting an
 event from within the constructor:
 
-```js
+```cjs
 const EventEmitter = require('node:events');
 
 class MyEmitter extends EventEmitter {
@@ -475,14 +517,51 @@ myEmitter.on('event', () => {
 });
 ```
 
+```mjs
+import EventEmitter from 'node:events';
+
+class MyEmitter extends EventEmitter {
+  constructor() {
+    super();
+    this.emit('event');
+  }
+}
+
+const myEmitter = new MyEmitter();
+myEmitter.on('event', () => {
+  console.log('an event occurred!');
+});
+```
+
 You can't emit an event from the constructor immediately
+
 because the script will not have processed to the point where the user
 assigns a callback to that event. So, within the constructor itself,
 you can use `process.nextTick()` to set a callback to emit the event
 after the constructor has finished, which provides the expected results:
 
-```js
+```cjs
 const EventEmitter = require('node:events');
+
+class MyEmitter extends EventEmitter {
+  constructor() {
+    super();
+
+    // use nextTick to emit the event once a handler is assigned
+    process.nextTick(() => {
+      this.emit('event');
+    });
+  }
+}
+
+const myEmitter = new MyEmitter();
+myEmitter.on('event', () => {
+  console.log('an event occurred!');
+});
+```
+
+```mjs
+import EventEmitter from 'node:events';
 
 class MyEmitter extends EventEmitter {
   constructor() {
