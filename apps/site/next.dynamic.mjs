@@ -105,7 +105,7 @@ const getDynamicRouter = async () => {
     // meaning that the route exists on the website and can be rendered
     if (pathnameToFilename.has(normalizedPathname)) {
       const filename = pathnameToFilename.get(normalizedPathname);
-      const filepath = `${pagesDirectory}/${locale}/${filename}`;
+      const filepath = normalize(`${pagesDirectory}/${locale}/${filename}`);
 
       // We verify if our Markdown cache already has a cache entry for a localized
       // version of this file, because if not, it means that either
