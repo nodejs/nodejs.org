@@ -1,9 +1,13 @@
 {
   "name": "@node-core/rehype-shiki",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "type": "module",
+  "types": "./dist/index.d.mts",
   "exports": {
-    ".": "./src/index.mjs",
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./src/index.mjs"
+    },
     "./index.css": "./src/index.css",
     "./*": "./src/*.mjs"
   },
@@ -12,11 +16,18 @@
     "url": "https://github.com/nodejs/nodejs.org",
     "directory": "packages/rehype-shiki"
   },
+  "imports": {
+    "#rs/*": "./src/*"
+  },
   "scripts": {
+    "compile:ts": "tsc",
+    "compile": "node --run compile:ts",
+    "release": "node --run compile",
     "lint": "node --run lint:js",
     "lint:fix": "node --run lint:js:fix",
     "lint:js": "eslint \"**/*.mjs\"",
     "lint:js:fix": "node --run lint:js -- --fix",
+    "lint:types": "tsc --noEmit",
     "test": "node --run test:unit",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --experimental-test-module-mocks --test \"**/*.test.mjs\""
   },
@@ -31,6 +42,7 @@
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
-    "cross-env": "catalog:"
+    "cross-env": "catalog:",
+    "typescript": "catalog:"
   }
 }

@@ -9,11 +9,10 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
-    "customConditions": ["default"],
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "jsx": "react-jsx",
     "declaration": true,
+    "emitDeclarationOnly": true,
     "baseUrl": "./src",
     "rootDir": "./src",
     "outDir": "./dist"
