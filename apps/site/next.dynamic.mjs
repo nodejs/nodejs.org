@@ -55,6 +55,10 @@ const getDynamicRouter = async () => {
   // Keeps the map of pathnames to filenames
   const pathnameToFilename = new Map();
 
+  // Pre-compute the pages directory path to avoid Turbopack's overly broad
+  // file pattern analysis when using path.join() with dynamic segments
+  const pagesDirectory = join(process.cwd(), 'pages');
+
   const websitePages = await getMarkdownFiles(
     process.cwd(),
     `pages/${defaultLocale.code}`
@@ -101,7 +105,7 @@ const getDynamicRouter = async () => {
     // meaning that the route exists on the website and can be rendered
     if (pathnameToFilename.has(normalizedPathname)) {
       const filename = pathnameToFilename.get(normalizedPathname);
-      const filepath = join(process.cwd(), 'pages', locale, filename);
+      const filepath = normalize(`${pagesDirectory}/${locale}/${filename}`);
 
       // We verify if our Markdown cache already has a cache entry for a localized
       // version of this file, because if not, it means that either
