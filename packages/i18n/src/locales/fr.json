@@ -2,11 +2,16 @@
   "components": {
     "containers": {
       "footer": {
+        "legal": "Copyright © <foundationName>OpenJS Foundation</foundationName> et les contributeurs Node.js. Tous droits réservés.\nLa <foundationName>OpenJS Foundation</foundationName> détient des marques déposées et utilise des marques commerciales.\nPour consulter la liste des marques de la <foundationName>OpenJS Foundation</foundationName>, veuillez vous référer à notre <trademarkPolicy>Politique relative aux marques</trademarkPolicy> ainsi qu’à la <trademarkList>Liste des marques</trademarkList>.\nLes marques et logos qui ne figurent pas dans la <trademarkList>liste des marques de la OpenJS Foundation</trademarkList> sont des marques commerciales™ ou des marques déposées® appartenant à leurs détenteurs respectifs. Leur utilisation n’implique aucune affiliation ni approbation de leur part.",
         "links": {
-          "openJSFoundation": "Fondation OpenJS",
-          "trademarkPolicy": "Politique de Marque",
+          "foundationName": "Fondation OpenJS",
+          "termsOfUse": "Conditions d’utilisation",
           "privacyPolicy": "Politique de confidentialité",
+          "bylaws": "Statuts et règlements",
           "codeOfConduct": "Code de conduite",
+          "trademarkPolicy": "Politique de Marque",
+          "trademarkList": "Liste des marques déposées",
+          "cookiePolicy": "Politique des cookies",
           "security": "Politique de sécurité"
         },
         "releasePills": {
@@ -280,7 +285,13 @@
       "contribute": "Contribuer",
       "contributeText": "Éditer cette page",
       "viewAs": "Afficher en tant que",
-      "tableOfContents": "Table des matières"
+      "tableOfContents": "Table des matières",
+      "metadata": "Métadonnées de l'article"
+    },
+    "banner": {
+      "default": "Annonce",
+      "warning": "Avertissement",
+      "error": "Notification d'erreur"
     },
     "search": {
       "searchPlaceholder": "Commencer à écrire...",
