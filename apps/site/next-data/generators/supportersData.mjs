@@ -19,7 +19,10 @@ async function fetchOpenCollectiveData() {
       name,
       image,
       url: website,
-      profile,
+      // If profile starts with the guest- prefix, it's a non-existing account
+      profile: profile.startsWith('https://opencollective.com/guest-')
+        ? undefined
+        : profile,
       source: 'opencollective',
     }));
 
