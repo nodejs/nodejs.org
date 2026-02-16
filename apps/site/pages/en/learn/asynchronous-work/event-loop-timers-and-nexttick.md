@@ -29,10 +29,12 @@ order of operations.
 
 ```
    ┌───────────────────────────┐
-┌─>│           timers          │
-│  └─────────────┬─────────────┘
-│  ┌─────────────┴─────────────┐
-│  │     pending callbacks     │
+   │           timers          │
+   └─────────────┬─────────────┘
+                 │
+                 v
+   ┌───────────────────────────┐
+┌─>│     pending callbacks     │
 │  └─────────────┬─────────────┘
 │  ┌─────────────┴─────────────┐
 │  │       idle, prepare       │
@@ -44,7 +46,10 @@ order of operations.
 │  │           check           │
 │  └─────────────┬─────────────┘
 │  ┌─────────────┴─────────────┐
-└──┤      close callbacks      │
+│  │      close callbacks      │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+└──┤           timers          │
    └───────────────────────────┘
 ```
 
@@ -73,8 +78,6 @@ longer than a timer's threshold. See the [**timers**](#timers) and
 
 ## Phases Overview
 
-- **timers**: this phase executes callbacks scheduled by `setTimeout()`
-  and `setInterval()`.
 - **pending callbacks**: executes I/O callbacks deferred to the next loop
   iteration.
 - **idle, prepare**: only used internally.
@@ -82,7 +85,10 @@ longer than a timer's threshold. See the [**timers**](#timers) and
   all with the exception of close callbacks, the ones scheduled by timers,
   and `setImmediate()`); node will block here when appropriate.
 - **check**: `setImmediate()` callbacks are invoked here.
-- **close callbacks**: some close callbacks, e.g. `socket.on('close', ...)`.
+- **close callbacks**: some close callbacks, e.g. `socket.on('close', ...)`
+- **timers**: this phase executes callbacks scheduled by `setTimeout()`
+  and `setInterval()`. Additionally, these callbacks can execute before entering the event loop.
+This sometimes happens for setTimeout(() => { ... }, 0) outside the I/O loop.
 
 Between each run of the event loop, Node.js checks if it is waiting for
 any asynchronous I/O or timers and shuts down cleanly if there are not
@@ -94,6 +100,66 @@ as in earlier versions. This change can affect the timing of `setImmediate()` ca
 and how they interact with timers in certain scenarios.
 
 ## Phases in Detail
+
+### pending callbacks
+
+This phase executes callbacks for some system operations such as types
+of TCP errors. For example if a TCP socket receives `ECONNREFUSED` when
+attempting to connect, some \*nix systems want to wait to report the
+error. This will be queued to execute in the **pending callbacks** phase.
+
+### poll
+
+The **poll** phase has two main functions:
+
+1. Calculating how long it should block and poll for I/O, then
+2. Processing events in the **poll** queue.
+
+When the event loop enters the **poll** phase _and there are no timers
+scheduled_, one of two things will happen:
+
+- _If the **poll** queue **is not empty**_, the event loop will iterate
+  through its queue of callbacks executing them synchronously until
+  either the queue has been exhausted, or the system-dependent hard limit
+  is reached.
+
+- _If the **poll** queue **is empty**_, one of two more things will
+  happen:
+  - If scripts have been scheduled by `setImmediate()`, the event loop
+    will end the **poll** phase and continue to the **check** phase to
+    execute those scheduled scripts.
+
+  - If scripts **have not** been scheduled by `setImmediate()`, the
+    event loop will wait for callbacks to be added to the queue, then
+    execute them immediately.
+
+Once the **poll** queue is empty the event loop will check for timers
+_whose time thresholds have been reached_. If one or more timers are
+ready, the event loop will wrap back to the **timers** phase to execute
+those timers' callbacks.
+
+### check
+
+This phase allows the event loop to execute callbacks immediately after the
+**poll** phase has completed. If the **poll** phase becomes idle and
+scripts have been queued with `setImmediate()`, the event loop may
+continue to the **check** phase rather than waiting.
+
+`setImmediate()` is actually a special timer that runs in a separate
+phase of the event loop. It uses a libuv API that schedules callbacks to
+execute after the **poll** phase has completed.
+
+Generally, as the code is executed, the event loop will eventually hit
+the **poll** phase where it will wait for an incoming connection, request,
+etc. However, if a callback has been scheduled with `setImmediate()`
+and the **poll** phase becomes idle, it will end and continue to the
+**check** phase rather than waiting for **poll** events.
+
+### close callbacks
+
+If a socket or handle is closed abruptly (e.g. `socket.destroy()`), the
+`'close'` event will be emitted in this phase. Otherwise it will be
+emitted via `process.nextTick()`.
 
 ### timers
 
@@ -182,65 +248,6 @@ be 105ms.
 > also has a hard maximum (system dependent) before it stops polling for
 > more events.
 
-### pending callbacks
-
-This phase executes callbacks for some system operations such as types
-of TCP errors. For example if a TCP socket receives `ECONNREFUSED` when
-attempting to connect, some \*nix systems want to wait to report the
-error. This will be queued to execute in the **pending callbacks** phase.
-
-### poll
-
-The **poll** phase has two main functions:
-
-1. Calculating how long it should block and poll for I/O, then
-2. Processing events in the **poll** queue.
-
-When the event loop enters the **poll** phase _and there are no timers
-scheduled_, one of two things will happen:
-
-- _If the **poll** queue **is not empty**_, the event loop will iterate
-  through its queue of callbacks executing them synchronously until
-  either the queue has been exhausted, or the system-dependent hard limit
-  is reached.
-
-- _If the **poll** queue **is empty**_, one of two more things will
-  happen:
-  - If scripts have been scheduled by `setImmediate()`, the event loop
-    will end the **poll** phase and continue to the **check** phase to
-    execute those scheduled scripts.
-
-  - If scripts **have not** been scheduled by `setImmediate()`, the
-    event loop will wait for callbacks to be added to the queue, then
-    execute them immediately.
-
-Once the **poll** queue is empty the event loop will check for timers
-_whose time thresholds have been reached_. If one or more timers are
-ready, the event loop will wrap back to the **timers** phase to execute
-those timers' callbacks.
-
-### check
-
-This phase allows the event loop to execute callbacks immediately after the
-**poll** phase has completed. If the **poll** phase becomes idle and
-scripts have been queued with `setImmediate()`, the event loop may
-continue to the **check** phase rather than waiting.
-
-`setImmediate()` is actually a special timer that runs in a separate
-phase of the event loop. It uses a libuv API that schedules callbacks to
-execute after the **poll** phase has completed.
-
-Generally, as the code is executed, the event loop will eventually hit
-the **poll** phase where it will wait for an incoming connection, request,
-etc. However, if a callback has been scheduled with `setImmediate()`
-and the **poll** phase becomes idle, it will end and continue to the
-**check** phase rather than waiting for **poll** events.
-
-### close callbacks
-
-If a socket or handle is closed abruptly (e.g. `socket.destroy()`), the
-`'close'` event will be emitted in this phase. Otherwise it will be
-emitted via `process.nextTick()`.
 
 ## `setImmediate()` vs `setTimeout()`
 
