@@ -1,7 +1,7 @@
 ---
 title: Understanding and Tuning Memory
 layout: learn
-authors: avivkeller
+authors: avivkeller, nitin-is-me
 ---
 
 # Understanding and Tuning Memory

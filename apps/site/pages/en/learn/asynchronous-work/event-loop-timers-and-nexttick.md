@@ -1,6 +1,7 @@
 ---
 title: The Node.js Event Loop
 layout: learn
+authors: nitin-is-me
 ---
 
 # The Node.js Event Loop

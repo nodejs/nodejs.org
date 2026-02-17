@@ -1,7 +1,7 @@
 ---
 title: JavaScript Asynchronous Programming and Callbacks
 layout: learn
-authors: flaviocopes, MylesBorins, LaRuaNa, amiller-gh, ahmadawais, ovflowd
+authors: flaviocopes, MylesBorins, LaRuaNa, amiller-gh, ahmadawais, ovflowd, nitin-is-me
 ---
 
 # JavaScript Asynchronous Programming and Callbacks

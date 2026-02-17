@@ -1,7 +1,7 @@
 ---
 title: Overview of Blocking vs Non-Blocking
 layout: learn
-authors: ovflowd, HassanBahati
+authors: ovflowd, HassanBahati, nitin-is-me
 ---
 
 # Overview of Blocking vs Non-Blocking

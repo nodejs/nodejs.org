@@ -1,7 +1,7 @@
 ---
 title: Writing files with Node.js
 layout: learn
-authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, ovflowd, vaishnav-mk
+authors: flaviocopes, MylesBorins, fhemberger, LaRuaNa, ahmadawais, clean99, ovflowd, vaishnav-mk, nitin-is-me
 ---
 
 # Writing files with Node.js

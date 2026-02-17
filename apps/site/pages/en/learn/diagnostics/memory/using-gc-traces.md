@@ -1,6 +1,7 @@
 ---
 title: Tracing garbage collection
 layout: learn
+authors: nitin-is-me
 ---
 
 # Tracing garbage collection
