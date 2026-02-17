@@ -8,8 +8,11 @@
     "//#prettier:fix": {
       "outputs": [".prettiercache"]
     },
-    "build": {
+    "compile": {
       "dependsOn": ["^topo"]
+    },
+    "build": {
+      "dependsOn": ["compile", "^topo"]
     },
     "lint": {
       "dependsOn": ["^topo"]

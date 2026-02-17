@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { toString } from 'hast-util-to-string';
 import { SKIP, visit } from 'unist-util-visit';
 
-import createHighlighter from './index.mjs';
+import createHighlighter from '#rs/index.mjs';
 
 // This is what Remark will use as prefix within a <pre> className
 // to attribute the current language of the <pre> element
@@ -54,7 +54,7 @@ function isCodeBlock(node) {
 }
 
 /**
- * @param {import('./index.mjs').HighlighterOptions & { highlighter: import('./highlighter.mjs').SyntaxHighlighter }} options
+ * @param {import('#rs/index.mjs').HighlighterOptions & { highlighter: import('#rs/highlighter.mjs').SyntaxHighlighter }} options
  */
 export default async function rehypeShikiji(options) {
   const highlighter =

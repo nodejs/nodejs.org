@@ -8,6 +8,9 @@
     "lint:fix": {
       "cache": false
     },
+    "lint:types": {
+      "cache": false
+    },
     "test:unit": {
       "inputs": ["src/**/*.mjs"]
     }

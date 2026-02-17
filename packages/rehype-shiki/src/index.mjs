@@ -14,7 +14,7 @@ import shellSessionLanguage from 'shiki/langs/shellsession.mjs';
 import typeScriptLanguage from 'shiki/langs/typescript.mjs';
 import yamlLanguage from 'shiki/langs/yaml.mjs';
 
-import createHighlighter, { getLanguageByName } from './highlighter.mjs';
+import createHighlighter, { getLanguageByName } from '#rs/highlighter.mjs';
 
 /**
  * @typedef {Object} HighlighterOptions
@@ -48,7 +48,7 @@ async function getTransformers({ twoslash = false, twoslashOptions }) {
   const transformers = [];
 
   if (twoslash) {
-    const { twoslash } = await import('./transformers/twoslash/index.mjs');
+    const { twoslash } = await import('#rs/transformers/twoslash/index.mjs');
     transformers.push(twoslash(twoslashOptions));
   }
 

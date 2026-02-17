@@ -13,6 +13,7 @@
     "name": "Node.js Website Team and Contributors"
   },
   "scripts": {
+    "compile": "turbo compile",
     "build": "turbo build",
     "cloudflare:deploy": "turbo cloudflare:deploy",
     "cloudflare:preview": "turbo cloudflare:preview",
