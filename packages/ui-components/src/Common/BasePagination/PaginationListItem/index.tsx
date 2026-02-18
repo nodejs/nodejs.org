@@ -22,7 +22,12 @@ const PaginationListItem: FC<PaginationListItemProps> = ({
   label,
 }) => {
   return (
-    <li key={pageNumber} aria-setsize={totalPages} aria-posinset={pageNumber}>
+    <li
+      key={pageNumber}
+      aria-setsize={totalPages}
+      aria-posinset={pageNumber}
+      className={styles.listItemWrapper}
+    >
       <Component
         href={url}
         aria-label={label}
