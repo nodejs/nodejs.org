@@ -66,13 +66,13 @@ version of Node.js, which can let us detect ecosystem breakage and notify the
 package authors ahead of the release.
 
 This is different from [Nightly builds](https://nodejs.org/download/nightly/), which remain
-available as automated untested builds from `main` – Alpha release may not contain all changes from
+available as automated untested builds from `main` – Alpha releases may not contain all changes from
 `main`, a change may be not included in an Alpha release if:
 
 - during Pull Request review, reviewers add a label requesting the change to not be backported
   (e.g. if an API is getting runtime deprecated in an Alpha release, the change actually removing
   that API should not land until the next release line).
-- during the Alpha release preparation, the releaser ultimately which commits actually makes the
+- during the Alpha release preparation, the releaser ultimately decides which commits actually make the
   release (e.g. if a dependency update contains a major bug).
 
 **Who it's for:** Library authors and CI pipelines testing compatibility with
