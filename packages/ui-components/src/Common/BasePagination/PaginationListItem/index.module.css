@@ -1,7 +1,7 @@
 @reference "../../../styles/index.css";
 
 .listItemWrapper {
-  @apply mt-0!;
+  @apply mt-0;
 }
 
 .listItem,

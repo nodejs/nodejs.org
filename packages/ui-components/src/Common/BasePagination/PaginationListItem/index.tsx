@@ -23,7 +23,6 @@ const PaginationListItem: FC<PaginationListItemProps> = ({
 }) => {
   return (
     <li
-      key={pageNumber}
       aria-setsize={totalPages}
       aria-posinset={pageNumber}
       className={styles.listItemWrapper}
