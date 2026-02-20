@@ -2,11 +2,16 @@
   "components": {
     "containers": {
       "footer": {
+        "legal": "Авторські права <foundationName>OpenJS Foundation</foundationName> та учасників спільноти Node.js. Усі права захищено. <foundationName>OpenJS Foundation</foundationName> має зареєстровані торговельні марки та використовує торговельні марки. Аби побачити список торговельних марок <foundationName>OpenJS Foundation</foundationName>, перегляньте нашу <trademarkPolicy>політику торговельних марок</trademarkPolicy> та <trademarkList>список торговельних марок</trademarkList>. Торговельні марки та логотипи, не зазначені в <trademarkList>списку торговельних марок OpenJS Foundation</trademarkList>, є торговельними марками™ або зареєстрованими® торговельними марками їхніх відповідних власників. Їхнє використання не означає певну приналежність чи схвалення ними.",
         "links": {
-          "openJSFoundation": "OpenJS Foundation",
-          "trademarkPolicy": "Політика торгових марок",
+          "foundationName": "OpenJS Foundation",
+          "termsOfUse": "Умови використання",
           "privacyPolicy": "Політика конфіденційності",
+          "bylaws": "Статути",
           "codeOfConduct": "Кодекс поведінки",
+          "trademarkPolicy": "Політика торговельних марок",
+          "trademarkList": "Список торговельних марок",
+          "cookiePolicy": "Політика cookie",
           "security": "Політика безпеки"
         },
         "releasePills": {
@@ -268,7 +273,8 @@
       "themeToggle": {
         "light": "Увімкнути світлу тему",
         "dark": "Увімкнути темну тему"
-      }
+      },
+      "skipToContent": "Перейти до вмісту"
     },
     "metabar": {
       "lastUpdated": "Востаннє оновлено",
@@ -279,7 +285,13 @@
       "contribute": "Долучитися",
       "contributeText": "Редагувати цю сторінку",
       "viewAs": "Переглянути як",
-      "tableOfContents": "Зміст"
+      "tableOfContents": "Зміст",
+      "metadata": "Метадані статті"
+    },
+    "banner": {
+      "default": "Оголошення",
+      "warning": "Попередження",
+      "error": "Помилка"
     },
     "search": {
       "searchPlaceholder": "Уведіть щось...",
