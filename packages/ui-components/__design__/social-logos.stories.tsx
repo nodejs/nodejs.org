@@ -3,7 +3,6 @@ import {
   Discord,
   GitHub,
   LinkedIn,
-  Mastodon,
   Slack,
   X,
 } from '#ui/Icons/Social';
@@ -11,7 +10,7 @@ import {
 import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 const socialIcons = [
-  [GitHub, Mastodon, LinkedIn],
+  [GitHub, LinkedIn],
   [Slack, X, Bluesky],
   [Discord],
 ];
