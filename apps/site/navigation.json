@@ -81,11 +81,6 @@
       "alt": "Discord"
     },
     {
-      "icon": "mastodon",
-      "link": "https://social.lfx.dev/@nodejs",
-      "alt": "Mastodon"
-    },
-    {
       "icon": "bluesky",
       "link": "https://bsky.app/profile/nodejs.org",
       "alt": "Bluesky"
