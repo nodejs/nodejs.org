@@ -6,7 +6,6 @@ import {
   Discord,
   GitHub,
   LinkedIn,
-  Mastodon,
   Slack,
   X,
 } from '#ui/Icons/Social';
@@ -18,7 +17,6 @@ import styles from './index.module.css';
 
 const footerSocialIcons: Record<string, React.FC<SVGProps<SVGSVGElement>>> = {
   github: GitHub,
-  mastodon: Mastodon,
   twitter: X,
   slack: Slack,
   linkedin: LinkedIn,
