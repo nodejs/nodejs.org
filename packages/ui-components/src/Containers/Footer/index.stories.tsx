@@ -14,7 +14,6 @@ export const Default: Story = {
       ],
       socialLinks: [
         { icon: 'github', link: 'https://github.com' },
-        { icon: 'mastodon', link: 'https://mastodon.social' },
         { icon: 'twitter', link: 'https://twitter.com' },
         { icon: 'slack', link: 'https://slack.com' },
         { icon: 'linkedin', link: 'https://linkedin.com' },
