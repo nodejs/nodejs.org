@@ -110,7 +110,7 @@ Nightly builds lack. Also allows landing V8 updates earlier in the cycle.
 
 Node.js 26 follows the existing schedule. This is the last release line under the current model.
 
-### Node.js 27 Schedule (new one)
+### Node.js 27 Schedule (new model)
 
 | Milestone    | Date         |
 | ------------ | ------------ |
