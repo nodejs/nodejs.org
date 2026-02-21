@@ -7,7 +7,12 @@ author: The Node.js Release Team
 ---
 
 Starting with 27.x, Node.js will move from two major releases per year to one.
-This post explains what's changing, why, and what it means for users.
+This post explains what's changing, why, and what it means for users. For the
+full discussion and background, see [nodejs/Release#1113](https://github.com/nodejs/Release/issues/1113).
+
+**TL;DR:** If you already upgrade between LTS versions, little changes beyond
+version numbering. LTS support windows remain similar, and the upgrade path
+stays the same.
 
 ## Why This Change
 
@@ -20,6 +25,10 @@ We now have a decade of data showing how people actually use Node.js:
 - Odd-numbered releases see minimal adoption. Most users wait for Long-Term Support.
 - The odd/even distinction confuses newcomers.
 - Many organizations skip odd releases entirely, upgrading only between LTS versions.
+
+We also recognize that enterprises need predictability. The new schedule is
+designed to be well-defined, so teams can plan upgrades and allocate resources
+accordingly.
 
 ### Volunteer Sustainability
 
@@ -79,12 +88,18 @@ available as automated untested builds from `main` – Alpha releases may not co
 upcoming breaking changes. Not intended for production use.
 
 **What to expect:**
+
 - Semver-major changes may land during this phase
 - Releases are signed and tagged (unlike nightly)
 - API may change between releases
+- The release cadence is flexible; the Release Team will determine the timing
+  and frequency of Alpha releases based on the volume of changes and project needs
 
 **Why:** Provides early feedback on breaking changes with quality gates that
 Nightly builds lack. Also allows landing V8 updates earlier in the cycle.
+
+The rules for shipping semver-major commits in Alpha versions will be defined by
+the Release Team and documented in the [Release repository](https://github.com/nodejs/Release).
 
 ## What's NOT Changing
 
@@ -144,6 +159,7 @@ record of the support claims from the project.
 
 This change is the result of discussions across GitHub issues, Release Working Group meetings, and
 [the Collaboration Summit Chesapeake 2025](https://youtu.be/ppi87YjU9x0?si=NFF5WKIGDJE_U-_V&t=6524).
+We will continue discussing this topic at the upcoming Collaboration Summit in London.
 We thank everyone who contributed feedback.
 
 For questions or comments, see [nodejs/Release#1113](https://github.com/nodejs/Release/issues/1113).
