@@ -93,7 +93,7 @@ Nightly builds lack. Also allows landing V8 updates earlier in the cycle.
 - **Quality standards unchanged**. Same testing, same CITGM, same security process.
 - **Predictable schedule**. April releases, October LTS promotion.
 - **V8 adoption cycle**. Node.js latest releases will still include a version of
-  V8 that's at most about 6-month old.
+  V8 that's at most about 6 months old.
 
 ## Timeline
 
