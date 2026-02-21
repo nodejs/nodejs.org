@@ -38,7 +38,7 @@ As of October 2026:
 
 - **One major release per year** (April), with LTS promotion in October
 - **Every release becomes LTS**. No more odd/even distinction.
-- **Alpha channel replaces odd-numbered releases** for early testing (for librairies)
+- **Alpha channel replaces odd-numbered releases** for early testing
 - **Version numbers align with years**: 27.0.0 in 2027, 28.0.0 in 2028
 - **Reduced Releasers burden**
 
