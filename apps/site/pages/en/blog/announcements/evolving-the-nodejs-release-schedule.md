@@ -99,7 +99,7 @@ Nightly builds lack. Also allows landing V8 updates earlier in the cycle.
 
 ![New Node.js Release Schedule](/static/images/blog/announcements/2026-new-release-schedule.svg)
 
-### Node.js 26 Schedule (exiting one)
+### Node.js 26 Schedule (existing model)
 
 | Milestone   | Date         |
 | ----------- | ------------ |
