@@ -49,7 +49,7 @@ As of October 2026:
 - **Every release becomes LTS**. No more odd/even distinction - Node.js 27 will be LTS.
 - **Alpha channel replaces odd-numbered releases** for early testing
 - **Version numbers align with years**: 27.0.0 in 2027, 28.0.0 in 2028
-- **Reduced Releasers burden**
+- **Reduced Releasers' burden**
 
 ### New Schedule
 
