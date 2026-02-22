@@ -3,7 +3,7 @@ date: '2026-04-01T00:00:00.000Z'
 category: announcements
 title: Evolving the Node.js Release Schedule
 layout: blog-post
-author: The Node.js Release Team
+author: Node.js Releasers
 ---
 
 Starting with 27.x, Node.js will move from two major releases per year to one.
@@ -60,7 +60,7 @@ As of October 2026:
 | LTS     | 29 months | Long-term support with security fixes           |
 | EOL     | Infinity  | The project no longer provides any support      |
 
-Total support: 35 months from release to End of Life.
+Total support: 35 months from release to [End of Life (EOL)](https://nodejs.org/en/about/eol).
 
 We took some inspiration from Ubuntu's release cycle: predictable
 April/October anchors, with Interim releases for testing and LTS releases for
@@ -69,7 +69,7 @@ production.
 ### About the Alpha Channel
 
 The Alpha channel replaces odd-numbered releases. Alpha releases are signed,
-tagged, and tested through CITGM. CITGM (Canary in the Goldmine) is a tool we
+tagged, and tested through [CITGM](https://github.com/nodejs/citgm). CITGM (Canary in the Goldmine) is a tool we
 maintain that runs the test suite of major open-source packages on the upcoming
 version of Node.js, which can let us detect ecosystem breakage and notify the
 package authors ahead of the release.
