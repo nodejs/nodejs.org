@@ -1,7 +1,7 @@
 # Docker her işletim sistemi için özelleştirilmiş kurulum kılavuzu sunar.
 # Lütfen https://docker.com/get-started/ adresinde bulunan resmi belgelere göz atın.
 
-Node.js Docker imajını (kalıbını) çekin:
+# Node.js Docker imajını (kalıbını) çekin:
 docker pull node:${props.release.major}-${props.release.major >= 4 ? 'alpine' : 'slim'}
 
 # Bir Node.js konteyneri oluşturun ve bir Shell oturumu başlatın:
