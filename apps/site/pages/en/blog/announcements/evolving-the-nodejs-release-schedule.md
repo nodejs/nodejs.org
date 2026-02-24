@@ -11,8 +11,8 @@ This post explains what's changing, why, and what it means for users. For the
 full discussion and background, see [nodejs/Release#1113](https://github.com/nodejs/Release/issues/1113).
 
 **TL;DR:** If you already upgrade between LTS versions, little changes beyond
-version numbering. LTS support windows remain similar, and the upgrade path
-stays the same.
+version numbering. LTS support windows remain similar, and now every release
+becomes LTS.
 
 ## Why This Change
 
