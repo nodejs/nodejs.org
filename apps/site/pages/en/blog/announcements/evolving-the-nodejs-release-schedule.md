@@ -52,7 +52,7 @@ As of October 2026:
 - **One major release per year** (April), with LTS promotion in October.
 - **Every release becomes LTS**. No more odd/even distinction - Node.js 27 will become LTS.
 - **Alpha channel replaces odd-numbered releases** for early testing.
-- **Version numbers align with the year of the first Interim release and transition to LTS**: 27.0.0 in 2027, 28.0.0 in 2028.
+- **Version numbers align with the year of the first Current release and transition to LTS**: 27.0.0 in 2027, 28.0.0 in 2028.
 - **Reduced Releasers' burden**.
 
 ### New Schedule
@@ -60,7 +60,7 @@ As of October 2026:
 | Phase   | Duration  | Description                                     |
 | ------- | --------- | ----------------------------------------------- |
 | Alpha   | 5 months  | Oct to Mar. Early testing, semver-major allowed |
-| Interim | 6 months  | Apr to Oct. Stabilization                       |
+| Current | 6 months  | Apr to Oct. Stabilization                       |
 | LTS     | 29 months | Long-term support with security fixes           |
 | EOL     | Infinity  | The project no longer provides any support      |
 
@@ -138,7 +138,7 @@ Node.js 27 is the first release line under the new schedule.
 
 ### The Next 10 Years
 
-| Version | Alpha    | Interim  | LTS      | End of Life |
+| Version | Alpha    | Current  | LTS      | End of Life |
 | ------- | -------- | -------- | -------- | ----------- |
 | 27.x    | Oct 2026 | Apr 2027 | Oct 2027 | Mar 2030    |
 | 28.x    | Oct 2027 | Apr 2028 | Oct 2028 | Mar 2031    |
