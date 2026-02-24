@@ -10,9 +10,13 @@ Starting with 27.x, Node.js will move from two major releases per year to one.
 This post explains what's changing, why, and what it means for users. For the
 full discussion and background, see [nodejs/Release#1113](https://github.com/nodejs/Release/issues/1113).
 
-**TL;DR:** If you already upgrade between LTS versions, little changes beyond
+**TL;DR:** If you already only upgrade to LTS versions, little changes beyond
 version numbering. LTS support windows remain similar, and now every release
 becomes LTS.
+
+**Library authors:** Please integrate Alpha releases to your CI as early as possible;
+if you only test on LTS releases, you will not be able to report bugs before they
+affect your users.
 
 ## Why This Change
 
@@ -24,7 +28,7 @@ We now have a decade of data showing how people actually use Node.js:
 
 - Odd-numbered releases see minimal adoption. Most users wait for Long-Term Support.
 - The odd/even distinction confuses newcomers.
-- Many organizations skip odd releases entirely, upgrading only between LTS versions.
+- Many organizations skip odd releases entirely, upgrading only to LTS versions.
 
 We also recognize that enterprises need predictability. The new schedule is
 designed to be well-defined, so teams can plan upgrades and allocate resources
@@ -45,11 +49,11 @@ supporting the releases people actually use.
 
 As of October 2026:
 
-- **One major release per year** (April), with LTS promotion in October
-- **Every release becomes LTS**. No more odd/even distinction - Node.js 27 will be LTS.
-- **Alpha channel replaces odd-numbered releases** for early testing
-- **Version numbers align with the year of the first Interim release and transition to LTS**: 27.0.0 in 2027, 28.0.0 in 2028
-- **Reduced Releasers' burden**
+- **One major release per year** (April), with LTS promotion in October.
+- **Every release becomes LTS**. No more odd/even distinction - Node.js 27 will become LTS.
+- **Alpha channel replaces odd-numbered releases** for early testing.
+- **Version numbers align with the year of the first Interim release and transition to LTS**: 27.0.0 in 2027, 28.0.0 in 2028.
+- **Reduced Releasers' burden**.
 
 ### New Schedule
 
@@ -61,10 +65,6 @@ As of October 2026:
 | EOL     | Infinity  | The project no longer provides any support      |
 
 Total support: 35 months from release to [End of Life (EOL)](https://nodejs.org/en/about/eol).
-
-We took some inspiration from Ubuntu's release cycle: predictable
-April/October anchors, with Interim releases for testing and LTS releases for
-production.
 
 ### About the Alpha Channel
 
@@ -89,11 +89,11 @@ upcoming breaking changes. Not intended for production use.
 
 **What to expect:**
 
-- Semver-major changes may land during this phase
-- Releases are signed and tagged (unlike nightly)
-- API may change between releases
+- Semver-major changes may land during this phase.
+- Releases are signed and tagged (unlike nightly).
+- API may change between releases.
 - The release cadence is flexible; the Release Team will determine the timing
-  and frequency of Alpha releases based on the volume of changes and project needs
+  and frequency of Alpha releases based on the volume of changes and project needs.
 
 **Why:** Provides early feedback on breaking changes with quality gates that
 Nightly builds lack. Also allows landing V8 updates earlier in the cycle.
@@ -103,7 +103,7 @@ the Release Team and documented in the [Release repository](https://github.com/n
 
 ## What's NOT Changing
 
-- **Long-Term Support duration** remains similar (29 months)
+- **Long-Term Support duration** remains similar (29 months).
 - **Migration windows preserved**. Overlap between LTS versions remains.
 - **Quality standards unchanged**. Same testing, same CITGM, same security process.
 - **Predictable schedule**. April releases, October LTS promotion.
