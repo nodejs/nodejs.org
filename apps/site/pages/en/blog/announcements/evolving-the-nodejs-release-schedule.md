@@ -51,7 +51,7 @@ As of October 2026:
 
 - **One major release per year** (April), with LTS promotion in October.
 - **Every release becomes LTS**. No more odd/even distinction - Node.js 27 will become LTS.
-- **Alpha channel replaces odd-numbered releases** for early testing.
+- **Alpha channel for early testing** with semver-major changes allowed.
 - **Version numbers align with the year of the first Current release and transition to LTS**: 27.0.0 in 2027, 28.0.0 in 2028.
 - **Reduced Releasers' burden**.
 
@@ -68,7 +68,7 @@ Total support: 35 months from release to [End of Life (EOL)](https://nodejs.org/
 
 ### About the Alpha Channel
 
-The Alpha channel replaces odd-numbered releases. Alpha releases are signed,
+The Alpha channel fills the early-testing role that odd-numbered releases once served, but with a key difference: semver-major changes are allowed during Alpha. Alpha releases are signed,
 tagged, and tested through [CITGM](https://github.com/nodejs/citgm). CITGM (Canary in the Goldmine) is a tool we
 maintain that runs the test suite of major open-source packages on the upcoming
 version of Node.js, which can let us detect ecosystem breakage and notify the
