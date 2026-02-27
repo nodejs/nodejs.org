@@ -5,10 +5,45 @@
     rounded-md
     p-2
     text-neutral-700
+    motion-safe:transition-colors
     dark:text-neutral-300;
 
   &:hover {
     @apply bg-neutral-100
       dark:bg-neutral-900;
   }
+}
+
+.dropDownContent {
+  @apply max-h-80
+    w-36
+    overflow-hidden
+    rounded-sm
+    border
+    border-neutral-200
+    bg-white
+    shadow-lg
+    dark:border-neutral-900
+    dark:bg-neutral-950;
+}
+
+.dropDownItem {
+  @apply flex
+    cursor-pointer
+    items-center
+    gap-2
+    px-2.5
+    py-1.5
+    text-sm
+    font-medium
+    text-neutral-800
+    outline-hidden
+    data-highlighted:bg-green-600
+    data-highlighted:text-white
+    dark:text-white;
+}
+
+.activeItem {
+  @apply bg-green-600
+    text-white;
 }
