@@ -1,5 +1,13 @@
 {
   "components": {
+    "header": {
+      "buttons": {
+        "theme": "Select theme",
+        "themeSystem": "System",
+        "themeLightMode": "Light",
+        "themeDarkMode": "Dark"
+      }
+    },
     "containers": {
       "footer": {
         "legal": "Copyright <foundationName>OpenJS Foundation</foundationName> and Node.js contributors. All rights reserved. The <foundationName>OpenJS Foundation</foundationName> has registered trademarks and uses trademarks.  For a list of trademarks of the <foundationName>OpenJS Foundation</foundationName>, please see our <trademarkPolicy>Trademark Policy</trademarkPolicy> and <trademarkList>Trademark List</trademarkList>.  Trademarks and logos not indicated on the <trademarkList>list of OpenJS Foundation trademarks</trademarkList> are trademarks™ or registered® trademarks of their respective holders. Use of them does not imply any affiliation with or endorsement by them.",
@@ -269,10 +277,6 @@
       },
       "languageDropdown": {
         "label": "Choose Language"
-      },
-      "themeToggle": {
-        "light": "Switch to Light Mode",
-        "dark": "Switch to Dark Mode"
       },
       "skipToContent": "Skip to content"
     },
