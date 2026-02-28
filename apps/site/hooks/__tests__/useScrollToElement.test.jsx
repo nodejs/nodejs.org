@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react';
 import { afterEach, beforeEach, describe, it, mock } from 'node:test';
 import assert from 'node:assert/strict';
 
-import useScrollToElement from '#site/hooks/useScrollToElement.js';
+import useScrollToElement from '#site/hooks/useScrollToElement';
 import { NavigationStateContext } from '#site/providers/navigationStateProvider';
 
 describe('useScrollToElement', () => {

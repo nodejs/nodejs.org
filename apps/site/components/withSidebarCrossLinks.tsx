@@ -1,4 +1,4 @@
-import { getClientContext } from '#site/client-context.js';
+import { getClientContext } from '#site/client-context';
 import CrossLink from '#site/components/Common/CrossLink';
 import useSiteNavigation from '#site/hooks/useSiteNavigation';
 
