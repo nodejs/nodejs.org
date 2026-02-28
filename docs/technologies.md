@@ -293,7 +293,7 @@ Benefits:
 #### Vercel Integration
 
 - Automatic deployments for branches (excluding `dependabot/*` and `gh/*`)
-- Custom install script: `pnpm install --prod --frozen-lockfile`
+- Custom install script: `pnpm install --frozen-lockfile`
 - Dependency management: Build-time dependencies must be in `dependencies`, not `devDependencies`
 - Sponsorship maintained by OpenJS Foundation
 
