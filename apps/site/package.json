@@ -74,6 +74,7 @@
     "sval": "^0.6.8",
     "tailwindcss": "catalog:",
     "twoslash": "^0.3.6",
+    "typescript": "catalog:",
     "unist-util-visit": "^5.1.0",
     "vfile": "~6.0.3",
     "vfile-matter": "~5.0.1"
@@ -105,7 +106,6 @@
     "stylelint-order": "7.0.1",
     "stylelint-selector-bem-pattern": "4.0.1",
     "tsx": "^4.21.0",
-    "typescript": "catalog:",
     "typescript-eslint": "~8.54.0",
     "user-agent-data-types": "0.4.2",
     "wrangler": "^4.63.0"
