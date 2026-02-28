@@ -36,22 +36,22 @@
   },
   "dependencies": {
     "husky": "9.1.7",
-    "lint-staged": "16.2.7",
+    "lint-staged": "16.4.0",
     "turbo": "2.8.17"
   },
   "devDependencies": {
-    "@eslint/js": "~9.39.2",
+    "@eslint/js": "~10.0.1",
     "@reporters/github": "^1.12.0",
     "@testing-library/react": "~16.3.2",
     "cross-env": "^10.1.0",
-    "eslint": "~9.39.2",
+    "eslint": "~10.1.0",
     "eslint-import-resolver-typescript": "~4.4.4",
-    "eslint-plugin-import-x": "~4.16.1",
+    "eslint-plugin-import-x": "~4.16.2",
     "globals": "^17.4.0",
     "prettier": "3.8.1",
     "prettier-plugin-tailwindcss": "0.7.2",
     "typescript": "catalog:",
-    "typescript-eslint": "~8.54.0"
+    "typescript-eslint": "~8.57.2"
   },
   "packageManager": "pnpm@10.33.0",
   "devEngines": {

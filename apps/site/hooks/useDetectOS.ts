@@ -34,6 +34,7 @@ const useDetectOS = () => {
     // We immediately set the OS to LOADING, and then we update it with the detected OS.
     // This is due to that initial render set within the state will indicate a mismatch from
     // the server-side rendering versus what the initial state is from the client-side
+    // eslint-disable-next-line @eslint-react/set-state-in-effect
     setUserOSState(current => ({ ...current, os }));
 
     // We attempt to get the high entropy values from the Browser and set the User OS State

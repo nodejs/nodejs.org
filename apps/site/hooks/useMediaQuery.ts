@@ -12,19 +12,17 @@ const useMediaQuery = (query: string) => {
   });
 
   useEffect(() => {
-    const { addEventListener, removeEventListener } = window.matchMedia?.(
-      query
-    ) ?? {
-      matches: false,
-      addEventListener: () => {},
-      removeEventListener: () => {},
-    };
+    const mediaQueryList = window.matchMedia?.(query);
+
+    if (!mediaQueryList) {
+      return;
+    }
 
     const handler = (event: MediaQueryListEvent) => setMatches(event.matches);
 
-    addEventListener('change', handler);
+    mediaQueryList.addEventListener('change', handler);
 
-    return () => removeEventListener('change', handler);
+    return () => mediaQueryList.removeEventListener('change', handler);
   }, [query]);
 
   return matches;

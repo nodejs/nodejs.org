@@ -4,7 +4,7 @@ import { highlightToHtml } from '@node-core/rehype-shiki/minimal';
 import AlertBox from '@node-core/ui-components/Common/AlertBox';
 import Skeleton from '@node-core/ui-components/Common/Skeleton';
 import { useTranslations } from 'next-intl';
-import { useContext, useMemo } from 'react';
+import { use, useMemo } from 'react';
 
 import CodeBox from '#site/components/Common/CodeBox';
 import LinkWithArrow from '#site/components/Common/LinkWithArrow';
@@ -114,8 +114,8 @@ const usePlatformInfo = (installMethod: string) => {
  * ReleaseCodeBox component displays installation instructions based on platform and context
  */
 const ReleaseCodeBox: FC = () => {
-  const { snippets } = useContext(ReleasesContext);
-  const context = useContext(ReleaseContext);
+  const { snippets } = use(ReleasesContext);
+  const context = use(ReleaseContext);
   const t = useTranslations();
 
   // Process platform information
@@ -164,6 +164,7 @@ const ReleaseCodeBox: FC = () => {
       {/* Code display with skeleton loading */}
       <Skeleton loading={isLoading}>
         <CodeBox language={displayLanguage} className="min-h-[19rem]">
+          {/* eslint-disable-next-line @eslint-react/dom/no-dangerously-set-innerhtml */}
           <code dangerouslySetInnerHTML={{ __html: parsedSnippets }} />
         </CodeBox>
       </Skeleton>

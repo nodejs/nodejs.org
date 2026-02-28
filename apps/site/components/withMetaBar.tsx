@@ -7,7 +7,8 @@ import { useFormatter, useLocale, useTranslations } from 'next-intl';
 
 import Link from '#site/components/Link';
 import WithAvatarGroup from '#site/components/withAvatarGroup';
-import { useClientContext, useMediaQuery } from '#site/hooks/client';
+import useClientContext from '#site/hooks/useClientContext';
+import useMediaQuery from '#site/hooks/useMediaQuery';
 import { DEFAULT_DATE_FORMAT } from '#site/next.calendar.constants.mjs';
 import { TRANSLATION_URL } from '#site/next.constants.mjs';
 import { getGitHubBlobUrl } from '#site/util/github';
@@ -18,7 +19,9 @@ const WithMetaBar: FC = () => {
   const { headings, readingTime, frontmatter, filename } = useClientContext();
   const formatter = useFormatter();
   const lastUpdated = frontmatter.date
-    ? formatter.dateTime(new Date(frontmatter.date), DEFAULT_DATE_FORMAT)
+    ? // "frontmatter.date" is deterministic
+      // eslint-disable-next-line @eslint-react/purity
+      formatter.dateTime(new Date(frontmatter.date), DEFAULT_DATE_FORMAT)
     : undefined;
   const readingTimeText = formatter.number(readingTime.minutes, {
     style: 'unit',

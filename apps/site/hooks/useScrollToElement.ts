@@ -1,6 +1,6 @@
 'use client';
 
-import { useContext, useEffect } from 'react';
+import { use, useEffect } from 'react';
 
 import { NavigationStateContext } from '#site/providers/navigationStateProvider';
 
@@ -13,7 +13,7 @@ const useScrollToElement = <T extends HTMLElement>(
   ref: RefObject<T | null>,
   debounceTime = 300
 ) => {
-  const navigationState = useContext(NavigationStateContext);
+  const navigationState = use(NavigationStateContext);
 
   // Restore scroll position on mount
   useEffect(() => {
@@ -30,7 +30,7 @@ const useScrollToElement = <T extends HTMLElement>(
     }
     // navigationState is intentionally excluded
     // it's a stable object reference that doesn't need to trigger re-runs
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line @eslint-react/exhaustive-deps
   }, [id, ref]);
 
   // Save scroll position on scroll

@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react';
 import { afterEach, beforeEach, describe, it, mock } from 'node:test';
 import assert from 'node:assert/strict';
 
-import useScrollToElement from '#site/hooks/client/useScrollToElement.js';
+import useScrollToElement from '#site/hooks/useScrollToElement';
 import { NavigationStateContext } from '#site/providers/navigationStateProvider';
 
 describe('useScrollToElement', () => {
@@ -12,7 +12,7 @@ describe('useScrollToElement', () => {
 
   beforeEach(() => {
     navigationState = {};
-    
+
     mockElement = {
       scrollTop: 0,
       scrollLeft: 0,
@@ -37,7 +37,10 @@ describe('useScrollToElement', () => {
 
     // Should restore scroll position on mount if saved state exists
     navigationState.sidebar = { x: 100, y: 200 };
-    const { unmount: unmount1 } = renderHook(() => useScrollToElement('sidebar', mockRef), { wrapper });
+    const { unmount: unmount1 } = renderHook(
+      () => useScrollToElement('sidebar', mockRef),
+      { wrapper }
+    );
 
     assert.equal(mockElement.scroll.mock.callCount(), 1);
     assert.deepEqual(mockElement.scroll.mock.calls[0].arguments, [
@@ -50,7 +53,10 @@ describe('useScrollToElement', () => {
 
     // Should not restore if no saved state exists
     navigationState = {};
-    const { unmount: unmount2 } = renderHook(() => useScrollToElement('sidebar', mockRef), { wrapper });
+    const { unmount: unmount2 } = renderHook(
+      () => useScrollToElement('sidebar', mockRef),
+      { wrapper }
+    );
     assert.equal(mockElement.scroll.mock.callCount(), 0);
 
     unmount2();
@@ -60,7 +66,10 @@ describe('useScrollToElement', () => {
     // Should not restore if current position matches saved state
     navigationState.sidebar = { x: 0, y: 0 };
     mockElement.scrollTop = 0;
-    const { unmount: unmount3 } = renderHook(() => useScrollToElement('sidebar', mockRef), { wrapper });
+    const { unmount: unmount3 } = renderHook(
+      () => useScrollToElement('sidebar', mockRef),
+      { wrapper }
+    );
     assert.equal(mockElement.scroll.mock.callCount(), 0);
 
     unmount3();
@@ -86,9 +95,13 @@ describe('useScrollToElement', () => {
     );
 
     // First render: user scrolls to position 800
-    const { unmount } = renderHook(() => useScrollToElement('sidebar', mockRef), { wrapper });
+    const { unmount } = renderHook(
+      () => useScrollToElement('sidebar', mockRef),
+      { wrapper }
+    );
 
-    const scrollHandler = mockElement.addEventListener.mock.calls[0].arguments[1];
+    const scrollHandler =
+      mockElement.addEventListener.mock.calls[0].arguments[1];
     mockElement.scrollTop = 800;
     mockElement.scrollLeft = 0;
     scrollHandler();
@@ -127,7 +140,8 @@ describe('useScrollToElement', () => {
     renderHook(() => useScrollToElement('sidebar', mockRef), { wrapper });
 
     // Get the scroll handler that was registered
-    const scrollHandler2 = mockElement.addEventListener.mock.calls[0].arguments[1];
+    const scrollHandler2 =
+      mockElement.addEventListener.mock.calls[0].arguments[1];
 
     // Simulate scroll
     mockElement.scrollTop = 150;
