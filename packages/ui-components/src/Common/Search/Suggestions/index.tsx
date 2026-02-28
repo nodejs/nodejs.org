@@ -21,7 +21,7 @@ const SearchSuggestions: FC<SearchSuggestionsProps> = ({
   <Suggestions.Wrapper className={wrapper}>
     {label && <p className={styles.suggestionsTitle}>{label}</p>}
     {suggestions.map((suggestion, i) => (
-      <Suggestions.Item {...props} key={i} className={className}>
+      <Suggestions.Item key={i} {...props} className={className}>
         <SparklesIcon />
         {suggestion}
       </Suggestions.Item>

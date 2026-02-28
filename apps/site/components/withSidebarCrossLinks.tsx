@@ -1,6 +1,6 @@
+import { getClientContext } from '#site/client-context.js';
 import CrossLink from '#site/components/Common/CrossLink';
-import { useSiteNavigation } from '#site/hooks/generic';
-import { useClientContext } from '#site/hooks/server';
+import useSiteNavigation from '#site/hooks/useSiteNavigation';
 
 import type { NavigationKeys } from '#site/types';
 import type { FC } from 'react';
@@ -9,7 +9,7 @@ type WithCrossLinksProps = { navKey: NavigationKeys };
 
 const WithSidebarCrossLinks: FC<WithCrossLinksProps> = ({ navKey }) => {
   const { getSideNavigation } = useSiteNavigation();
-  const { pathname } = useClientContext();
+  const { pathname } = getClientContext();
 
   const [[, sidebarNavigation]] = getSideNavigation([navKey]);
 

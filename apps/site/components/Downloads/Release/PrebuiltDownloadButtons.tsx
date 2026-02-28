@@ -3,7 +3,7 @@
 import { CloudArrowDownIcon } from '@heroicons/react/24/outline';
 import Skeleton from '@node-core/ui-components/Common/Skeleton';
 import { useTranslations } from 'next-intl';
-import { useContext } from 'react';
+import { use } from 'react';
 
 import Button from '#site/components/Common/Button';
 import { ReleaseContext } from '#site/providers/releaseProvider';
@@ -20,7 +20,7 @@ const getExtension = (input: string) => String(input.split('.').slice(-1));
 
 const PrebuiltDownloadButtons: FC = () => {
   const t = useTranslations();
-  const { release, os, platform } = useContext(ReleaseContext);
+  const { release, os, platform } = use(ReleaseContext);
 
   const installerUrl = platform
     ? getNodeDownloadUrl({

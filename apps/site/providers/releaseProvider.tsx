@@ -1,12 +1,6 @@
 'use client';
 
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useReducer,
-} from 'react';
+import { createContext, use, useEffect, useMemo, useReducer } from 'react';
 
 import reducer, {
   getActions,
@@ -31,16 +25,14 @@ export const ReleaseContext = createContext<Types.ReleaseContextType>({
 export const ReleasesProvider: FC<
   PropsWithChildren<Types.ReleasesProviderProps>
 > = ({ children, releases, snippets }) => (
-  <ReleasesContext.Provider value={{ releases, snippets }}>
-    {children}
-  </ReleasesContext.Provider>
+  <ReleasesContext value={{ releases, snippets }}>{children}</ReleasesContext>
 );
 
 export const ReleaseProvider: FC<
   PropsWithChildren<Types.ReleaseProviderProps>
 > = ({ children, initialRelease }) => {
-  const { releases } = useContext(ReleasesContext);
-  const parentProvider = useContext(ReleaseContext);
+  const { releases } = use(ReleasesContext);
+  const parentProvider = use(ReleaseContext);
 
   const [state, dispatch] = useReducer(reducer, {
     ...releaseState,
@@ -60,19 +52,17 @@ export const ReleaseProvider: FC<
       actions.setVersion(parentProvider.version);
     }
     // We should only react if the parentProvider changes
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [actions, parentProvider]);
 
   const release = useMemo(
     () => releases.find(r => r.versionWithPrefix === state.version)!,
     // Memoizes the release based on the version
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [state.version]
   );
 
   return (
-    <ReleaseContext.Provider value={{ ...state, ...actions, release }}>
+    <ReleaseContext value={{ ...state, ...actions, release }}>
       {children}
-    </ReleaseContext.Provider>
+    </ReleaseContext>
   );
 };

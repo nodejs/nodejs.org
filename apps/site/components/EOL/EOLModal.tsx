@@ -34,7 +34,6 @@ const EOLModal: FC<EOLModalProps> = ({
           SEVERITY_ORDER.indexOf(b.severity)
       ),
     // Only change when the vulnerabilities change
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [vulnerabilities.length]
   );
 

@@ -40,18 +40,18 @@
     "turbo": "2.8.3"
   },
   "devDependencies": {
-    "@eslint/js": "~9.39.2",
+    "@eslint/js": "~10.0.1",
     "@reporters/github": "^1.12.0",
     "@testing-library/react": "~16.3.2",
     "cross-env": "^10.1.0",
-    "eslint": "~9.39.2",
+    "eslint": "~10.0.2",
     "eslint-import-resolver-typescript": "~4.4.4",
     "eslint-plugin-import-x": "~4.16.1",
-    "globals": "^16.5.0",
+    "globals": "^17.3.0",
     "prettier": "3.8.1",
     "prettier-plugin-tailwindcss": "0.7.2",
     "typescript": "catalog:",
-    "typescript-eslint": "~8.54.0"
+    "typescript-eslint": "~8.56.1"
   },
   "packageManager": "pnpm@10.28.2",
   "devEngines": {
