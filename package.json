@@ -37,7 +37,7 @@
   "dependencies": {
     "husky": "9.1.7",
     "lint-staged": "16.2.7",
-    "turbo": "2.8.3"
+    "turbo": "2.8.11"
   },
   "devDependencies": {
     "@eslint/js": "~9.39.2",
