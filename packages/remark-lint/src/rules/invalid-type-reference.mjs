@@ -3,8 +3,8 @@ import createQueries from '@nodejs/doc-kit/src/utils/queries/index.mjs';
 import { lintRule } from 'unified-lint-rule';
 import { visit } from 'unist-util-visit';
 
-const MATCH_RE = /\s\||\|\s/g;
-const REPLACE_RE = /\s*\|\s*/g;
+const MATCH_RE = /\s\||\| /g;
+const REPLACE_RE = /\s*\| */g;
 
 /**
  * Ensures that all type references are valid
