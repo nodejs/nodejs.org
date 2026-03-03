@@ -97,7 +97,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "global-jsdom": "^28.0.0",
     "handlebars": "4.7.8",
-    "jsdom": "^28.0.0",
+    "jsdom": "^28.1.0",
     "mdast-util-from-markdown": "^2.0.2",
     "nock": "^14.0.10",
     "remark-frontmatter": "^5.0.0",
