@@ -13,12 +13,11 @@ export const NavigationStateContext = createContext<NavigationStateContextType>(
 export const NavigationStateProvider: FC<PropsWithChildren> = ({
   children,
 }) => {
-  const navigationState = useRef<NavigationStateContextType>({});
+  const navigationStateRef = useRef<NavigationStateContextType>({});
 
   return (
-    // eslint-disable-next-line react-hooks/refs
-    <NavigationStateContext.Provider value={navigationState.current}>
+    <NavigationStateContext value={navigationStateRef.current}>
       {children}
-    </NavigationStateContext.Provider>
+    </NavigationStateContext>
   );
 };

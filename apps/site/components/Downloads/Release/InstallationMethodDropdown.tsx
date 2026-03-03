@@ -2,7 +2,7 @@
 
 import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
-import { useContext, useEffect, useMemo } from 'react';
+import { use, useEffect, useMemo } from 'react';
 
 import { ReleaseContext } from '#site/providers/releaseProvider';
 import { nextItem, INSTALL_METHODS, parseCompat } from '#site/util/download';
@@ -11,14 +11,13 @@ import type { InstallationMethod } from '#site/types/release';
 import type { FC } from 'react';
 
 const InstallationMethodDropdown: FC = () => {
-  const release = useContext(ReleaseContext);
+  const release = use(ReleaseContext);
   const t = useTranslations();
 
   // We parse the compatibility of the dropdown items
   const parsedInstallMethods = useMemo(
     () => parseCompat(INSTALL_METHODS, release),
     // We only want to react on the change of the OS and Version
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [release.os, release.version]
   );
 
@@ -36,7 +35,6 @@ const InstallationMethodDropdown: FC = () => {
       },
     ],
     // We only want to react on the change of the parsedPlatforms
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [parsedInstallMethods]
   );
 
@@ -55,7 +53,6 @@ const InstallationMethodDropdown: FC = () => {
       // when the OS has finished loading for a given installation method
       release.setInstallMethod(installationMethod as InstallationMethod);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [parsedInstallMethods, release.installMethod, release.os]);
 
   // We set the Platform to the next available platform when the current
@@ -69,7 +66,6 @@ const InstallationMethodDropdown: FC = () => {
       }
     },
     // We only want to react on the change of the OS and Version
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [release.os, release.version]
   );
 

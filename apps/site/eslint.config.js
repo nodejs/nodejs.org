@@ -1,7 +1,6 @@
+import eslintReact from '@eslint-react/eslint-plugin';
 import next from '@next/eslint-plugin-next';
 import * as mdx from 'eslint-plugin-mdx';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
 
 import baseConfig from '../../eslint.config.js';
 
@@ -10,10 +9,17 @@ export default baseConfig.concat([
     ignores: ['pages/en/blog/**/*.{md,mdx}/**', 'public', 'next-env.d.ts'],
   },
 
-  react.configs.flat['jsx-runtime'],
-  reactHooks.configs.flat['recommended-latest'],
-  next.configs['core-web-vitals'],
+  eslintReact.configs['recommended-typescript'],
+  next.configs.recommended,
   mdx.flatCodeBlocks,
+
+  // React
+  {
+    rules: {
+      '@eslint-react/no-array-index-key': 'off',
+      '@eslint-react/web-api/no-leaked-event-listener': 'off',
+    },
+  },
 
   // Type-checking
   {
@@ -27,20 +33,6 @@ export default baseConfig.concat([
     rules: {
       '@typescript-eslint/consistent-type-imports': 'error',
     },
-  },
-
-  {
-    rules: {
-      'react/no-unescaped-entities': 'off',
-      'react/function-component-definition': [
-        'error',
-        {
-          namedComponents: 'arrow-function',
-          unnamedComponents: 'arrow-function',
-        },
-      ],
-    },
-    settings: { react: { version: 'detect' } },
   },
 
   {

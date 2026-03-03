@@ -2,7 +2,7 @@
 
 import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
-import { useContext, useEffect, useMemo } from 'react';
+import { use, useEffect, useMemo } from 'react';
 
 import { ReleaseContext } from '#site/providers/releaseProvider';
 import { nextItem, PACKAGE_MANAGERS, parseCompat } from '#site/util/download';
@@ -11,14 +11,13 @@ import type { PackageManager } from '#site/types/release';
 import type { FC } from 'react';
 
 const PackageManagerDropdown: FC = () => {
-  const release = useContext(ReleaseContext);
+  const release = use(ReleaseContext);
   const t = useTranslations();
 
   // We parse the compatibility of the dropdown items
   const parsedPackageManagers = useMemo(
     () => parseCompat(PACKAGE_MANAGERS, release),
     // We only want to react on the change of the Version
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [release.version]
   );
 
@@ -30,7 +29,6 @@ const PackageManagerDropdown: FC = () => {
         nextItem(release.packageManager, parsedPackageManagers)
       ),
     // We only want to react on the change of the Version
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [release.version, release.packageManager]
   );
 

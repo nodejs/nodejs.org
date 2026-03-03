@@ -35,7 +35,7 @@ const MAXIMUM_AMOUNT_OF_ELLIPSES = 2;
 // The logic of this custom hook has taken the internal logic of
 // React MUI's Pagination component as reference. More info here:
 // https://github.com/mui/material-ui/blob/master/packages/mui-material/src/usePagination/usePagination.js
-export const useGetPageElements = (
+export const getPageElements = (
   currentPage: ComponentProps<typeof BasePagination>['currentPage'],
   pages: ComponentProps<typeof BasePagination>['pages'],
   currentPageSiblingsCount: number,
