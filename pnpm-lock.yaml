@@ -112,11 +112,11 @@ importers:
         specifier: ~0.212.0
         version: 0.212.0(@opentelemetry/api@1.9.0)
       '@orama/core':
-        specifier: ^1.2.16
-        version: 1.2.16
+        specifier: ^1.2.19
+        version: 1.2.19
       '@orama/ui':
         specifier: ^1.5.4
-        version: 1.5.4(@orama/core@1.2.16)(@types/react@19.2.14)(react@19.2.4)
+        version: 1.5.4(@orama/core@1.2.19)(@types/react@19.2.14)(react@19.2.4)
       '@radix-ui/react-tabs':
         specifier: ^1.1.13
         version: 1.1.13(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -472,11 +472,11 @@ importers:
         specifier: ^2.2.0
         version: 2.2.0(react@19.2.4)
       '@orama/core':
-        specifier: ^1.2.16
-        version: 1.2.16
+        specifier: ^1.2.19
+        version: 1.2.19
       '@orama/ui':
         specifier: ^1.5.4
-        version: 1.5.4(@orama/core@1.2.16)(@types/react@19.2.14)(react@19.2.4)
+        version: 1.5.4(@orama/core@1.2.19)(@types/react@19.2.14)(react@19.2.4)
       '@radix-ui/react-avatar':
         specifier: ^1.1.11
         version: 1.1.11(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -2338,8 +2338,8 @@ packages:
   '@orama/core@0.1.11':
     resolution: {integrity: sha512-cxs2ZrPlL0qCO91ba1FkFg/CX569v6Pqbo0e7EEvRVObBSOI1N1PIYAQ7lTXBUN7mDjpqHvPgOJ0mUuvotSl+Q==}
 
-  '@orama/core@1.2.16':
-    resolution: {integrity: sha512-YVVc+7iD6KlKf37Nv8phwZJluZi+1WzvcPs8eiBQyGTL/RrykMMrJ6vGiFaLQZAKLzSg6nBLP7kgb2ifGyIRgw==}
+  '@orama/core@1.2.19':
+    resolution: {integrity: sha512-AVEI0eG/a1RUQK+tBloRMppQf46Ky4kIYKEVjo0V0VfIGZHdLOE2PJR4v949kFwiTnfSJCUaxgwM74FCA1uHUA==}
 
   '@orama/cuid2@2.2.3':
     resolution: {integrity: sha512-Lcak3chblMejdlSHgYU2lS2cdOhDpU6vkfIJH4m+YKvqQyLqs1bB8+w6NT1MG5bO12NUK2GFc34Mn2xshMIQ1g==}
@@ -11506,12 +11506,10 @@ snapshots:
     transitivePeerDependencies:
       - babel-plugin-macros
 
-  '@orama/core@1.2.16':
+  '@orama/core@1.2.19':
     dependencies:
       '@orama/cuid2': 2.2.3
       '@orama/oramacore-events-parser': 0.0.5
-      zod: 3.24.3
-      zod-to-json-schema: 3.24.5(zod@3.24.3)
 
   '@orama/cuid2@2.2.3':
     dependencies:
@@ -11542,9 +11540,9 @@ snapshots:
       '@orama/orama': 3.1.16
       '@oramacloud/client': 2.1.4
 
-  '@orama/ui@1.5.4(@orama/core@1.2.16)(@types/react@19.2.14)(react@19.2.4)':
+  '@orama/ui@1.5.4(@orama/core@1.2.19)(@types/react@19.2.14)(react@19.2.4)':
     dependencies:
-      '@orama/core': 1.2.16
+      '@orama/core': 1.2.19
       '@orama/stopwords': 3.1.16
       prism-react-renderer: 1.3.5(react@19.2.4)
       react-markdown: 10.1.0(@types/react@19.2.14)(react@19.2.4)
