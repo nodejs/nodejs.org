@@ -30,7 +30,7 @@ const SignatureHeader: FC<SignatureHeaderProps> = ({
             [styles.longName]: name.length > 16,
           })}
         >
-          {name}:
+          {name}
           {optional && (
             <span
               role="img"
@@ -41,6 +41,7 @@ const SignatureHeader: FC<SignatureHeaderProps> = ({
               ?
             </span>
           )}
+          :
         </span>
       </span>
     )}
