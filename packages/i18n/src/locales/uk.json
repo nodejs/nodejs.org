@@ -1,5 +1,13 @@
 {
   "components": {
+    "header": {
+      "buttons": {
+        "theme": "Обрати тему",
+        "themeSystem": "Системна",
+        "themeLightMode": "Світла",
+        "themeDarkMode": "Темна"
+      }
+    },
     "containers": {
       "footer": {
         "legal": "Авторські права <foundationName>OpenJS Foundation</foundationName> та учасників спільноти Node.js. Усі права захищено. <foundationName>OpenJS Foundation</foundationName> має зареєстровані торговельні марки та використовує торговельні марки. Аби побачити список торговельних марок <foundationName>OpenJS Foundation</foundationName>, перегляньте нашу <trademarkPolicy>політику торговельних марок</trademarkPolicy> та <trademarkList>список торговельних марок</trademarkList>. Торговельні марки та логотипи, не зазначені в <trademarkList>списку торговельних марок OpenJS Foundation</trademarkList>, є торговельними марками™ або зареєстрованими® торговельними марками їхніх відповідних власників. Їхнє використання не означає певну приналежність чи схвалення ними.",
@@ -269,10 +277,6 @@
       },
       "languageDropdown": {
         "label": "Обрати мову"
-      },
-      "themeToggle": {
-        "light": "Увімкнути світлу тему",
-        "dark": "Увімкнути темну тему"
       },
       "skipToContent": "Перейти до вмісту"
     },
