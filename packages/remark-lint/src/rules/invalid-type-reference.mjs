@@ -1,5 +1,5 @@
-import { transformTypeToReferenceLink } from '@nodejs/doc-kit/src/utils/parser/index.mjs';
-import createQueries from '@nodejs/doc-kit/src/utils/queries/index.mjs';
+import { transformTypeToReferenceLink } from '@node-core/doc-kit/src/utils/parser/index.mjs';
+import createQueries from '@node-core/doc-kit/src/utils/queries/index.mjs';
 import { lintRule } from 'unified-lint-rule';
 import { visit } from 'unist-util-visit';
 
