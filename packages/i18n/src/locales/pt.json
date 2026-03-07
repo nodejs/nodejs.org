@@ -1,5 +1,13 @@
 {
   "components": {
+    "header": {
+      "buttons": {
+        "theme": "Selecionar tema",
+        "themeSystem": "Sistema",
+        "themeLightMode": "Claro",
+        "themeDarkMode": "Escuro"
+      }
+    },
     "containers": {
       "footer": {
         "links": {
