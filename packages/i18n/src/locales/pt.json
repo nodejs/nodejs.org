@@ -166,11 +166,10 @@
       "npmVersion": "npm",
       "codename": "Nome de código",
       "releaseDate": "Lançado em",
-      "actions": {
-        "changelog": "Registo de alterações",
-        "releases": "Lançamentos",
-        "docs": "Documentação"
-      }
+      "firstReleased": "Primeiro lançamento",
+      "lastUpdated": "Última atualização",
+      "status": "Estado",
+      "details": "Detalhes"
     },
     "pagination": {
       "next": "Próxima",
