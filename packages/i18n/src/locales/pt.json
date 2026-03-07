@@ -158,7 +158,9 @@
           "branding": "Marca da Node.js",
           "governance": "Gestão do Projeto",
           "releases": "Lançamentos da Node.js",
-          "security": "Relatórios de Segurança"
+          "security": "Relatórios de Segurança",
+          "partners": "Parceiros e Apoiadores",
+          "eol": "Fim de Vida Útil (EOL)"
         }
       },
       "getInvolved": {
@@ -369,6 +371,7 @@
         "video": "Vídeo",
         "weekly": "Atualizações Semanais",
         "wg": "Grupos de Trabalho",
+        "migrations": "Guias de Migração",
         "events": "Eventos"
       }
     },
