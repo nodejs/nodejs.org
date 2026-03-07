@@ -290,7 +290,13 @@
       "contribute": "Colaborar",
       "contributeText": "Editar esta página",
       "viewAs": "Ver como",
-      "tableOfContents": "Índice"
+      "tableOfContents": "Índice",
+      "metadata": "Metadados do Artigo"
+    },
+    "banner": {
+      "default": "Anúncio",
+      "warning": "Alerta",
+      "error": "Erro"
     },
     "search": {
       "searchBox": {
