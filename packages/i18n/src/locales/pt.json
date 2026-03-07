@@ -171,6 +171,20 @@
       "status": "Estado",
       "details": "Detalhes"
     },
+    "downloadsTable": {
+      "fileName": "Nome do Ficheiro",
+      "operatingSystem": "SO",
+      "architecture": "Arquitetura"
+    },
+    "releaseModal": {
+      "title": "Node.js v{version} ({codename})",
+      "titleWithoutCodename": "Node.js v{version}",
+      "overview": "Visão Geral",
+      "minorVersions": "Versões menores",
+      "releaseAnnouncement": "Anúncio do Lançamento",
+      "unsupportedVersionWarning": "Esta versão está fora de manutenção. Por favor, use uma versão com suporte. <link>Entender o Suporte EOL.</link>",
+      "ltsVersionFeaturesNotice": "Quer novos recursos mais cedo? Obtenha a <link>versão mais recente do Node.js</link> e experimente as últimas melhorias!"
+    },
     "pagination": {
       "next": "Próxima",
       "previous": "Anterior"
