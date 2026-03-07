@@ -220,6 +220,26 @@
       "details": "Detalhes",
       "hideNonLts": "Esconder versões que não são LTS"
     },
+    "minorReleasesTable": {
+      "version": "Versão",
+      "links": "Links",
+      "nApiVersion": "Versão N-API",
+      "npmVersion": "Versão npm",
+      "v8Version": "Versão V8",
+      "actions": {
+        "release": "Lançamento",
+        "changelog": "Registo de alterações",
+        "docs": "Documentação"
+      }
+    },
+    "releaseOverview": {
+      "firstReleased": "Primeiro lançamento",
+      "lastUpdated": "Última atualização",
+      "minorVersions": "Versões menores",
+      "nApiVersion": "Versão N-API",
+      "npmVersion": "Versão npm",
+      "v8Version": "Versão V8"
+    },
     "pagination": {
       "next": "Próxima",
       "previous": "Anterior"
