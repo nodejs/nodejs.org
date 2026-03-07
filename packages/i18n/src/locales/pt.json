@@ -61,7 +61,8 @@
             "profiling": "Definição de Perfis de Aplicações de Node.js",
             "fetch": "Obter dados com a Node.js",
             "websocket": "Cliente de WebSocket com a Node.js",
-            "securityBestPractices": "Boas Práticas de Segurança"
+            "securityBestPractices": "Boas Práticas de Segurança",
+            "userlandMigrations": "Introdução às Migrações Userland"
           }
         },
         "typescript": {
@@ -77,10 +78,11 @@
         "asynchronousWork": {
           "links": {
             "asynchronousWork": "Trabalho Assíncrono",
-            "asynchronousFlowControl": "Controlo do Fluxo Assíncrono",
-            "overviewOfBlockingVsNonBlocking": "Visão Geral de Bloqueante vs Não Bloqueante",
             "javascriptAsynchronousProgrammingAndCallbacks": "Programação Assíncrona de JavaScript e Funções de Resposta",
+            "asynchronousFlowControl": "Controlo do Fluxo Assíncrono",
+            "discoverPromisesInNodejs": "Descobrir Promises no Node.js",
             "discoverJavascriptTimers": "Descobrir os Temporizadores da JavaScript",
+            "overviewOfBlockingVsNonBlocking": "Visão Geral de Bloqueante vs Não Bloqueante",
             "eventLoopTimersAndNexttick": "O Ciclo de Evento da Node.js",
             "theNodejsEventEmitter": "O Emissor de Evento da Node.js",
             "understandingProcessnexttick": "Entendendo o process.nextTick()",
@@ -104,10 +106,17 @@
           "links": {
             "commandLine": "Linha de Comando",
             "runNodejsScriptsFromTheCommandLine": "Execute scripts de Node.js através da linha de comandos",
-            "howToReadEnvironmentVariablesFromNodejs": "Como Ler Variáveis de Ambiente no Node.js",
             "howToUseTheNodejsRepl": "Como Usar o REPL do Node.js",
             "outputToTheCommandLineUsingNodejs": "Saída para a linha de comando usando o Node.js",
-            "acceptInputFromTheCommandLineInNodejs": "Aceitar entrada na linha de comando no Node.js"
+            "acceptInputFromTheCommandLineInNodejs": "Aceitar entrada na linha de comando no Node.js",
+            "howToReadEnvironmentVariablesFromNodejs": "Como Ler Variáveis de Ambiente no Node.js"
+          }
+        },
+        "http": {
+          "links": {
+            "http": "HTTP",
+            "anatomyOfAnHttpTransaction": "Anatomia de uma Transação HTTP",
+            "enterpriseNetworkConfiguration": "Configuração de Rede para Ambientes Empresariais"
           }
         },
         "modules": {
@@ -126,6 +135,7 @@
             "diagnostics": "Diagnósticos",
             "userJourney": "Jornada do Utilizador",
             "memory": "Memória",
+            "understandingAndTuningMemory": "Compreender e Ajustar Memória",
             "liveDebugging": "Depuração em Direto",
             "poorPerformance": "Desempenho Deficiente",
             "flameGraphs": "Gráficos de Chamas"
@@ -136,7 +146,8 @@
             "testRunner": "Executor de Teste",
             "introduction": "Descobrir o executor de teste da Node.js",
             "usingTestRunner": "Usar o executor de teste da Node.js",
-            "mocking": "Simulação em Testes"
+            "mocking": "Simulação em Testes",
+            "collectingCodeCoverage": "Recolher cobertura de código no Node.js"
           }
         }
       },
