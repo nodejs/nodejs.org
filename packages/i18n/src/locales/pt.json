@@ -10,12 +10,21 @@
     },
     "containers": {
       "footer": {
+        "legal": "Copyright <foundationName>OpenJS Foundation</foundationName> e colaboradores do Node.js. Todos os direitos reservados. A <foundationName>OpenJS Foundation</foundationName> possui e utiliza marcas registadas. Para consultar a lista de marcas registadas da <foundationName>OpenJS Foundation</foundationName>, aceda à nossa <trademarkPolicy>Política de Marcas Registadas</trademarkPolicy> e à <trademarkList>Lista de Marcas Registadas</trademarkList>. Marcas registadas e logótipos não indicados na <trademarkList>lista de marcas registadas da OpenJS Foundation</trademarkList> são marcas comerciais™ ou marcas registadas® dos respetivos titulares. O uso dessas marcas não implica qualquer vínculo ou endosso por parte dos respetivos titulares.",
         "links": {
-          "trademarkPolicy": "Política da Marca Comercial",
+          "foundationName": "OpenJS Foundation",
+          "termsOfUse": "Termos de Uso",
           "privacyPolicy": "Política de Privacidade",
-          "versionSupport": "Suporte da Versão",
+          "bylaws": "Estatutos",
           "codeOfConduct": "Código de Conduta",
+          "trademarkPolicy": "Política de Marca Registada",
+          "trademarkList": "Lista de Marcas Registadas",
+          "cookiePolicy": "Política de Cookies",
           "security": "Política de Segurança"
+        },
+        "releasePills": {
+          "latestLTS": "LTS Mais Recente",
+          "latestRelease": "Versão Mais Recente"
         }
       },
       "navBar": {
