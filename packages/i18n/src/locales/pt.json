@@ -185,6 +185,41 @@
       "unsupportedVersionWarning": "Esta versão está fora de manutenção. Por favor, use uma versão com suporte. <link>Entender o Suporte EOL.</link>",
       "ltsVersionFeaturesNotice": "Quer novos recursos mais cedo? Obtenha a <link>versão mais recente do Node.js</link> e experimente as últimas melhorias!"
     },
+    "eolAlert": {
+      "message": "Suporte comercial para versões após a fase de LTS de Manutenção está disponível através dos nossos <link>parceiros do Programa de Sustentabilidade do Ecossistema OpenJS</link>"
+    },
+    "eolChip": {
+      "severity": {
+        "unknown": "Desconhecida",
+        "low": "Baixa",
+        "medium": "Média",
+        "high": "Alta",
+        "critical": "Crítica"
+      }
+    },
+    "eolModal": {
+      "title": "Node.js v{version} ({codename}) atingiu EOL",
+      "titleWithoutCodename": "Node.js v{version} atingiu EOL",
+      "vulnerabilitiesMessage": "Existem {count}+ problemas de segurança conhecidos (Common Vulnerabilities and Exposures ou CVEs) associados a esta versão do Node.js. CVEs são identificadores para falhas de segurança relatadas publicamente. Clicar num link CVE levará a detalhes mais técnicos, como o funcionamento da vulnerabilidade.",
+      "noVulnerabilitiesMessage": "Atualmente não há CVEs (Common Vulnerabilities and Exposures) conhecidas associadas a esta versão do Node.js. No entanto, isso não significa que seja completamente segura - algumas vulnerabilidades podem ainda não ter sido descobertas ou divulgadas publicamente. Se esta versão estiver desatualizada ou sem suporte, ainda é uma boa ideia considerar a atualização para garantir que se beneficia das últimas correções e melhorias de segurança.",
+      "blogLinkText": "Blogue",
+      "showUnknownSeverities": "Mostrar vulnerabilidades de gravidade desconhecida",
+      "table": {
+        "cves": "CVE(s)",
+        "severity": "Severidade",
+        "overview": "Visão geral",
+        "details": "Detalhes"
+      }
+    },
+    "eolTable": {
+      "version": "Versão",
+      "codename": "Nome de código",
+      "releaseDate": "Lançado em",
+      "lastUpdated": "Última atualização",
+      "vulnerabilities": "Vulnerabilidades",
+      "details": "Detalhes",
+      "hideNonLts": "Esconder versões que não são LTS"
+    },
     "pagination": {
       "next": "Próxima",
       "previous": "Anterior"
