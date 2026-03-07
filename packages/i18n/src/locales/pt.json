@@ -276,8 +276,10 @@
         "label": "Selecionar o idioma"
       },
       "themeToggle": {
-        "label": "Alternar Modo Escuro"
-      }
+        "light": "Mudar para Modo Claro",
+        "dark": "Mudar para Modo Escuro"
+      },
+      "skipToContent": "Saltar para o conteúdo"
     },
     "metabar": {
       "lastUpdated": "Última Atualização",
