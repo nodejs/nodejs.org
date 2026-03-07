@@ -299,8 +299,30 @@
       "error": "Erro"
     },
     "search": {
-      "searchBox": {
-        "placeholder": "Pesquisar..."
+      "searchPlaceholder": "Comece a digitar...",
+      "chatPlaceholder": "Pergunte-me qualquer coisa",
+      "noResultsFoundFor": "Nenhum resultado encontrado para",
+      "suggestions": "Sugestões",
+      "seeAll": "Ver tudo",
+      "addMore": "Adicionar mais",
+      "clearChat": "Limpar chat",
+      "errorMessage": "Ocorreu um erro ao tentar pesquisar. Por favor, tente novamente.",
+      "disclaimer": "Resumos de IA podem cometer erros. Por favor, verifique as informações.",
+      "startYourSearch": "Inicie a sua pesquisa",
+      "initErrorSearch": "Não foi possível inicializar o serviço de pesquisa",
+      "initErrorChat": "Não foi possível inicializar o serviço de chat",
+      "chatButtonLabel": "Obter um resumo de IA",
+      "searchButtonLabel": "Pesquisar",
+      "poweredBy": "Fornecido por",
+      "suggestionOne": "Como instalar Node.js?",
+      "suggestionTwo": "Como criar um servidor HTTP?",
+      "suggestionThree": "Atualizar a versão do Node.js",
+      "scrollToBottom": "Rolar para o final",
+      "closeChat": "Fechar chat",
+      "keyboardShortcuts": {
+        "select": "para selecionar",
+        "navigate": "para navegar",
+        "close": "para fechar"
       }
     },
     "blog": {
