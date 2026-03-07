@@ -405,6 +405,7 @@
       },
       "codeBox": {
         "unsupportedVersionWarning": "Esta versão está fora de manutenção. Usar uma versão suportada atualmente. <link>Entender o Suporte do Fim da Vida.</link>",
+        "ltsVersionFeaturesNotice": "Quer novos recursos mais cedo? Obtenha a <link>versão mais recente do Node.js</link> e experimente as últimas melhorias!",
         "communityPlatformInfo": "Os métodos de instalação que envolvem software da comunidade são apoiados pelas equipas que mantêm esse software.",
         "externalSupportInfo": "Se encontrarmos quaisquer problemas, podemos visitar o <link>sítio da {platform}</link>",
         "noScriptDetected": "Esta página requer JavaScript. Nós podemos descarregar a Node.js sem JavaScript ao visitar diretamente a <link>página de lançamentos</link>.",
