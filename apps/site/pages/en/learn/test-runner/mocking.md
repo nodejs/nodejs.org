@@ -260,7 +260,7 @@ describe('whatever', { concurrency: true }, async () => {
 
   const { default: ago } = await import('./ago.mjs');
 
-  it('should choose "minutes" when that\'s the closet unit', () => {
+  it('should choose "minutes" when that\'s the closest unit', () => {
     const t = ago('1999-12-01T23:59:59Z');
 
     assert.equal(t, '2 minutes ago');
