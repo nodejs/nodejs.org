@@ -20,7 +20,6 @@ jobs:
         with:
           egress-policy: audit
 
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - uses: nodejs/web-team/actions/auto-merge-prs@b087df186d25f8792fb85cc7794f68718726b8ee
         with:
           merge-method: queue
