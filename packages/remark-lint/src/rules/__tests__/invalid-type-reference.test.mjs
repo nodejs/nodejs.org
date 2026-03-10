@@ -27,6 +27,11 @@ const testCases = [
     ],
   },
   {
+    name: 'newline, multiple references',
+    input: 'Psst, are you a {string|\nboolean}',
+    expected: [],
+  },
+  {
     name: 'invalid references',
     input: 'This is {invalid}.',
     expected: ['Invalid type reference: {invalid}'],

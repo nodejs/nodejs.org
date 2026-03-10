@@ -80,8 +80,17 @@ Because this method is invoked post-initialization, the setting of startup-relat
 PORT=1234
 ```
 
-```js
+```cjs
 const { loadEnvFile } = require('node:process');
+
+// Loads environment variables from the default .env file
+loadEnvFile();
+
+console.log(process.env.PORT); // Logs '1234'
+```
+
+```mjs
+import { loadEnvFile } from 'node:process';
 
 // Loads environment variables from the default .env file
 loadEnvFile();
@@ -91,7 +100,12 @@ console.log(process.env.PORT); // Logs '1234'
 
 You can also specify a custom path:
 
-```js
+```cjs
 const { loadEnvFile } = require('node:process');
+loadEnvFile('./config/.env');
+```
+
+```mjs
+import { loadEnvFile } from 'node:process';
 loadEnvFile('./config/.env');
 ```

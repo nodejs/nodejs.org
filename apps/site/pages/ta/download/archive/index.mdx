@@ -1,0 +1,54 @@
+---
+title: Node.js®-ஐ பதிவிறக்கவும்
+layout: download-archive
+---
+
+<WithDownloadArchive>
+  {({ binaries, installers, version, release, sources }) => (
+    <>
+      <h1>Node.js® பதிவிறக்கக் காப்பகம்</h1>
+      <h2 className="flex items-center gap-2">
+        <img
+          src="/static/logos/jsIconGreen.svg"
+          alt="Node.js லோகோ"
+          width="24"
+          height="24"
+        />
+        {version}
+        {release.codename && ` (${release.codename})`}
+      </h2>
+
+      <WithReleaseAlertBox status={release.status} />
+      <ReleaseOverview release={release} />
+
+      <ul className='flex list-none flex-col gap-2 p-0 text-sm'>
+        <li>
+          இந்தப் பதிப்பிற்கான<LinkWithArrow href={`https://github.com/nodejs/node/releases/tag/${version}`}>மாற்றங்களின் தொகுப்பை</LinkWithArrow> அல்லது <Link href={`/blog/release/${version}`}>வலைப்பதிவு இடுகையை</Link> வாசிக்கவும்.
+        </li>
+        <li>
+          வெளியீட்டு கால அட்டவணை மற்றும் LTS நிலை உட்பட <Link href="/about/previous-releases">Node.js வெளியீடுகள்</Link> பற்றி மேலும் தெரிந்துகொள்ளுங்கள்.
+        </li>
+        <li>
+          வெளியீட்டுக் கோப்புகளுக்கான <LinkWithArrow href={sources.shasum}>கையொப்பமிடப்பட்ட SHASUMS</LinkWithArrow>. கையொப்பமிடப்பட்ட SHASUMS-களை எவ்வாறு <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">சரிபார்ப்பது</LinkWithArrow> என்பது குறித்த விவரம்.
+        </li>
+        <li>
+          கையொப்பமிடப்பட்ட <LinkWithArrow href={sources.tarball}>Node.js {version} மூலக் குறியீடு</LinkWithArrow> டார்பால் கோப்பைப் பதிவிறக்கவும்.
+        </li>
+      </ul>
+
+      <h2>பிற வெளியீடுகள்</h2>
+      <WithReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
+
+      <h2>பைனரி பதிவிறக்கங்கள்</h2>
+      <DownloadsTable source={binaries} />
+
+      <h2>நிறுவி தொகுப்புகள்</h2>
+      <DownloadsTable source={installers} />
+
+      <h2>துணைப் பதிப்புகள்</h2>
+      <MinorReleasesTable releases={release.minorVersions} />
+    </>
+
+)}
+
+</WithDownloadArchive>

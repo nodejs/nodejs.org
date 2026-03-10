@@ -1,5 +1,7 @@
 import Avatar from '@node-core/ui-components/Common/AvatarGroup/Avatar';
 
+import { getAcronymFromString } from '#site/util/string';
+
 import type { Supporter } from '#site/types';
 import type { FC } from 'react';
 
@@ -12,6 +14,7 @@ const SupportersList: FC<SupportersListProps> = ({ supporters }) => (
     {supporters.map(({ name, image, profile }, i) => (
       <Avatar
         nickname={name}
+        fallback={getAcronymFromString(name)}
         image={image}
         key={`${name}-${i}`}
         url={profile}

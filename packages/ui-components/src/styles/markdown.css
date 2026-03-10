@@ -1,5 +1,6 @@
 main {
-  @apply flex
+  @apply max-ml:gap-4
+    flex
     w-full
     flex-col
     gap-6;
@@ -48,6 +49,31 @@ main {
       @apply text-neutral-900
         dark:text-white;
     }
+
+    &[id] {
+      scroll-margin-top: calc(
+        var(--header-height) + var(--spacing, 0.25rem) * 6
+      );
+    }
+
+    &[id] .anchor {
+      @apply text-inherit
+        no-underline;
+    }
+
+    &[id] .anchor::after {
+      @apply ml-2
+        text-neutral-400
+        opacity-0
+        transition-opacity
+        content-['#']
+        dark:text-neutral-500;
+    }
+
+    &[id]:hover .anchor::after,
+    &[id]:focus-within .anchor::after {
+      @apply opacity-100;
+    }
   }
 
   strong {
@@ -72,8 +98,7 @@ main {
   }
 
   /* link that isn't inside a heading */
-  a:not(h1 > a):not(h2 > a):not(h3 > a):not(h4 > a):not(h5 > a):not(h6 > a),
-  .anchor {
+  a:not(h1 > a):not(h2 > a):not(h3 > a):not(h4 > a):not(h5 > a):not(h6 > a) {
     @apply max-ml:font-semibold
       text-green-600
       dark:text-green-400;
@@ -98,12 +123,18 @@ main {
   }
 
   ul {
-    @apply list-disc
-      pr-5
-      pl-9
+    @apply max-ml:pr-3
+      max-ml:pl-5
+      list-disc
+      pr-4
+      pl-6
       leading-6
       text-neutral-900
       dark:text-white;
+
+    li + li {
+      @apply mt-2;
+    }
 
     li div:has(> pre) {
       @apply my-1!;
@@ -111,11 +142,18 @@ main {
   }
 
   ol {
-    @apply list-decimal
-      px-5
+    @apply max-ml:pr-3
+      max-ml:pl-5
+      list-decimal
+      pr-4
+      pl-6
       leading-6
       text-neutral-900
       dark:text-white;
+
+    li + li {
+      @apply mt-2;
+    }
 
     li div:has(> pre) {
       @apply my-1!;
@@ -137,13 +175,15 @@ main {
     /* Common border and text styles */
     th,
     td {
-      @apply border
+      @apply max-ml:px-3
+        max-ml:py-1.5
+        border
         border-t-0
         border-r-0
         border-neutral-200
         px-4
         py-2
-        break-words
+        wrap-break-word
         text-neutral-900
         dark:border-neutral-900
         dark:text-white;
@@ -218,7 +258,7 @@ main {
           before:-translate-y-1/2
           before:text-left
           before:font-medium
-          before:break-words
+          before:wrap-break-word
           before:text-neutral-700
           before:content-[attr(data-label)]
           last:border-0

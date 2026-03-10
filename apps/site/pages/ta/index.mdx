@@ -1,0 +1,131 @@
+---
+title: JavaScript ஐ எங்கும் இயக்க
+layout: home
+---
+
+<section>
+  <WithBadgeGroup section="index" />
+
+  <div>
+    <h1 className="special">JavaScript ஐ எங்கும் இயக்க</h1>
+
+    Node.js® என்பது ஒரு இலவச, திறந்த மூல மென்பொருளாகும். இது பல்வேறு இயக்கத் தளங்களில் JavaScript ஐ இயக்க உதவும் சூழலாகும். இதன் மூலம் டெவலப்பர்கள் சர்வர்கள், வெப் பயன்பாடுகள், கட்டளை வரி கருவிகள் மற்றும் ஸ்கிரிப்ட்களை உருவாக்க முடியும்.
+
+  </div>
+
+  <div className="flex gap-4">
+    <div className="flex flex-col gap-2">
+      <Button kind="special" className="!hidden dark:!block" href="/download">Node.js® ஐ பதிவிறக்கம் செய்யுங்கள்</Button>
+
+      <Button kind="primary" className="!block dark:!hidden" href="/download">Node.js® ஐ பதிவிறக்கம் செய்யுங்கள்</Button>
+
+      <Button kind="secondary" className="!block" href="/about/eol">
+        <span>பாதுகாப்பு உதவியைப் பெறுங்கள்</span>
+
+        <br />
+
+        <small className="!text-xs">EOL Node.js பதிப்புகளுக்கு</small>
+      </Button>
+
+      <div className="flex justify-center ml:mt-3">
+        <PartnersList sort="weight" />
+      </div>
+
+      <span className="text-center text-sm! text-neutral-800 dark:text-neutral-600 text-balance">Node.js பெருமையுடன் மேலே உள்ள கூட்டாளர்களால் ஆதரிக்கப்படுகிறது <Link href="/about/partners">மற்றும் பலர்</Link>.</span>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div>
+    ```js displayName="Create an HTTP Server"
+    // server.mjs
+    import { createServer } from 'node:http';
+
+    const server = createServer((req, res) => {
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end('Hello World!\n');
+    });
+
+    // starts a simple http server locally on port 3000
+    server.listen(3000, '127.0.0.1', () => {
+      console.log('Listening on 127.0.0.1:3000');
+    });
+
+    // run with `node server.mjs`
+    ```
+
+    ```js displayName="Write Tests"
+    // tests.mjs
+    import assert from 'node:assert';
+    import test from 'node:test';
+
+    test('that 1 is equal 1', () => {
+      assert.strictEqual(1, 1);
+    });
+
+    test('that throws as 1 is not equal 2', () => {
+      // throws an exception because 1 != 2
+      assert.strictEqual(1, 2);
+    });
+
+    // run with `node tests.mjs`
+    ```
+
+    ```js displayName="Read and Hash a File"
+    // crypto.mjs
+    import { createHash } from 'node:crypto';
+    import { readFile } from 'node:fs/promises';
+
+    const hasher = createHash('sha1');
+
+    hasher.setEncoding('hex');
+    // ensure you have a `package.json` file for this test!
+    hasher.write(await readFile('package.json'));
+    hasher.end();
+
+    const fileHash = hasher.read();
+
+    // run with `node crypto.mjs`
+    ```
+
+    ```js displayName="Streams Pipeline"
+    // streams.mjs
+    import { createReadStream, createWriteStream } from 'node:fs';
+    import { pipeline } from 'node:stream/promises';
+    import { createGzip } from 'node:zlib';
+
+    // ensure you have a `package.json` file for this test!
+    await pipeline(
+      createReadStream('package.json'),
+      createGzip(),
+      createWriteStream('package.json.gz')
+    );
+
+
+    // run with `node streams.mjs`
+    ```
+
+    ```js displayName="Work with Threads"
+    // threads.mjs
+    import { Worker, isMainThread,
+      workerData, parentPort } from 'node:worker_threads';
+
+    if (isMainThread) {
+      const data = 'some data';
+      const worker = new Worker(import.meta.filename, { workerData: data });
+      worker.on('message', msg => console.log('Reply from Thread:', msg));
+    } else {
+      const source = workerData;
+      parentPort.postMessage(btoa(source.toUpperCase()));
+    }
+
+    // run with `node threads.mjs`
+    ```
+
+  </div>
+
+Node.js என்ன செய்ய முடியும் என்பதை எங்கள் கற்றல் வளங்கள்மூலம் மேலும் [தெரிந்து கொள்ளுங்கள்](/learn).
+
+</section>

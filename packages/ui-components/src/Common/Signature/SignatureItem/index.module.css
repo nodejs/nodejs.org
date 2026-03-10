@@ -1,0 +1,50 @@
+@reference "../../../styles/index.css";
+
+.item {
+  @apply flex
+    flex-col
+    gap-1;
+}
+
+.return {
+  @apply rounded-sm
+    bg-green-100
+    px-4
+    py-3
+    dark:bg-neutral-900/40;
+}
+
+.children {
+  @apply relative
+    flex
+    flex-col
+    rounded-sm
+    border
+    border-neutral-200
+    dark:border-neutral-900;
+
+  &:has(> .return:only-child) {
+    @apply border-0;
+  }
+
+  &:not(:has(.return:only-child)) .return {
+    @apply mx-4
+      mb-3;
+  }
+
+  .item:not(.return) {
+    @apply mx-4
+      py-3;
+  }
+
+  .item:not(:last-child, :has(+ .return)) {
+    @apply border-b
+      border-neutral-200
+      dark:border-neutral-900;
+  }
+}
+
+.description {
+  @apply text-sm
+    break-all;
+}

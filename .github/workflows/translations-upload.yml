@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@e3f713f2d8f53843e71c69a996d56f51aa9adfb9 # v2.14.1
+        uses: step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b # v2.15.0
         with:
           egress-policy: audit
 
@@ -27,7 +27,7 @@ jobs:
 
         # see all the options at https://github.com/crowdin/github-action
       - name: crowdin action
-        uses: crowdin/github-action@b4b468cffefb50bdd99dd83e5d2eaeb63c880380 # v2.14.0
+        uses: crowdin/github-action@8818ff65bfc4322384f983ea37e3926948c11745 # v2.15.0
         with:
           # only upload sources, ensuring this is a one-way operation
           upload_sources: true

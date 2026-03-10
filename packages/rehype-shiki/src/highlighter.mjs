@@ -9,6 +9,12 @@ const DEFAULT_THEME = {
   ...shikiNordTheme,
 };
 
+/**
+ * @template {{ name: string; aliases?: string[] }} T
+ * @param {string} language
+ * @param {ReadonlyArray<T>} langs
+ * @returns {T | undefined}
+ */
 export const getLanguageByName = (language, langs) => {
   const normalized = language.toLowerCase();
 
@@ -20,7 +26,7 @@ export const getLanguageByName = (language, langs) => {
 
 /**
  * @typedef {Object} SyntaxHighlighter
- * @property {import('@shikijs/core').HighlighterCoreSync} shiki - The underlying shiki core instance.
+ * @property {import('@shikijs/core').HighlighterCore} shiki - The underlying shiki core instance.
  * @property {(code: string, lang: string, meta?: Record<string, any>) => string} highlightToHtml - Highlights code and returns inner HTML of the <code> tag.
  * @property {(code: string, lang: string, meta?: Record<string, any>) => any} highlightToHast - Highlights code and returns a HAST tree.
  */

@@ -14,9 +14,3 @@
     grid-cols-[repeat(auto-fill,minmax(240px,1fr))]
     gap-4;
 }
-
-.tooltip {
-  @apply p-2
-    text-neutral-900
-    dark:text-neutral-200;
-}

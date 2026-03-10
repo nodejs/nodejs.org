@@ -35,11 +35,7 @@ const WithMetaBar: FC = () => {
   // Since we cannot show the same number of avatars in Mobile / Tablet
   // resolution as we do on desktop and there is overflow, we are adjusting
   // the number of avatars manually for the resolutions below
-  const isMobileResolution = useMediaQuery('(max-width: 890px)');
-
-  const isTabletResolution = useMediaQuery(
-    '(min-width: 890px) and (max-width: 1280px)'
-  );
+  const isSmallerThanDesktop = useMediaQuery('(max-width: 1280px)');
 
   return (
     <MetaBar
@@ -55,7 +51,7 @@ const WithMetaBar: FC = () => {
           )]: (
             <WithAvatarGroup
               usernames={usernames}
-              limit={isMobileResolution ? 7 : isTabletResolution ? 5 : 9}
+              limit={isSmallerThanDesktop ? 5 : 8}
             />
           ),
         }),

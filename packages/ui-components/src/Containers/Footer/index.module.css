@@ -1,86 +1,90 @@
 @reference "../../styles/index.css";
 
-.footer {
-  @apply flex
-    flex-col
-    items-center
-    gap-6
-    border-t
+.container {
+  @apply border-t
     border-neutral-200
     bg-white
     py-4
     text-neutral-500
     sm:px-8
-    md:justify-between
     md:py-5
     dark:border-neutral-900
     dark:bg-neutral-950;
 
-  .row {
-    @apply flex
+  .innerContainer {
+    @apply max-w-10xl
+      mx-auto
+      flex
       flex-col
       items-center
       gap-6
-      md:flex-row
-      md:justify-between
-      md:gap-0
-      md:self-stretch;
-  }
+      md:justify-between;
 
-  .sectionPrimary {
-    @apply flex
-      flex-wrap
-      content-start
-      items-center
-      justify-center
-      gap-1
-      self-stretch;
-
-    a {
-      @apply whitespace-nowrap;
-    }
-  }
-
-  .sectionSecondary {
-    @apply flex
-      flex-col
-      items-center
-      gap-1
-      md:flex-row;
-
-    .social {
+    .row {
       @apply flex
+        flex-col
         items-center
-        gap-1;
-    }
-  }
+        gap-6
+        md:flex-row
+        md:justify-between
+        md:gap-0
+        md:self-stretch;
 
-  .legal {
-    @apply flex
-      flex-col
-      gap-2
-      px-4
-      text-center
-      text-xs
-      text-balance
-      md:px-14;
+      .sectionPrimary {
+        @apply flex
+          flex-wrap
+          content-start
+          items-center
+          justify-center
+          gap-1
+          self-stretch;
 
-    p {
-      @apply text-center
-        text-sm
-        text-neutral-800
-        dark:text-neutral-500;
-    }
+        a {
+          @apply whitespace-nowrap;
+        }
+      }
 
-    a {
-      @apply max-ml:font-semibold
-        text-green-600
-        dark:text-green-400;
+      .sectionSecondary {
+        @apply flex
+          flex-col
+          items-center
+          gap-1
+          md:flex-row;
 
-      &:hover {
-        @apply cursor-pointer
-          text-green-900
-          dark:text-green-200;
+        .social {
+          @apply flex
+            items-center
+            gap-1;
+        }
+      }
+
+      &.legal {
+        @apply flex
+          flex-col
+          gap-2
+          px-4
+          text-center
+          text-xs
+          text-balance;
+
+        p {
+          @apply text-center
+            text-sm
+            text-neutral-800
+            dark:text-neutral-500;
+        }
+
+        a {
+          @apply max-ml:font-semibold
+            text-green-600
+            dark:text-green-400;
+
+          &:hover {
+            @apply cursor-pointer
+              text-green-900
+              dark:text-green-200;
+          }
+        }
       }
     }
   }

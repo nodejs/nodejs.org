@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { toString } from 'hast-util-to-string';
 import { SKIP, visit } from 'unist-util-visit';
 
-import createHighlighter from './index.mjs';
+import createHighlighter from '#rs/index.mjs';
 
 // This is what Remark will use as prefix within a <pre> className
 // to attribute the current language of the <pre> element
@@ -54,7 +54,7 @@ function isCodeBlock(node) {
 }
 
 /**
- * @param {import('./index.mjs').HighlighterOptions & { highlighter: import('./highlighter.mjs').SyntaxHighlighter }} options
+ * @param {import('#rs/index.mjs').HighlighterOptions & { highlighter: import('#rs/highlighter.mjs').SyntaxHighlighter }} options
  */
 export default async function rehypeShikiji(options) {
   const highlighter =
@@ -163,7 +163,11 @@ export default async function rehypeShikiji(options) {
       const meta = parseMeta(preElement.data?.meta);
 
       // Retrieve the whole <pre> contents as a parsed DOM string
-      const preElementContents = toString(preElement);
+      const preElementContents = toString(preElement).replace(/\n$/, '');
+
+      // Since we removed the trailing newline, we can easily count the
+      // amount of lines without worrying about an extra empty line at the end of the code block
+      const lineCount = preElementContents.split('\n').length;
 
       // Grabs the relevant alias/name of the language
       const languageId = codeLanguage.slice(languagePrefix.length);
@@ -178,7 +182,8 @@ export default async function rehypeShikiji(options) {
       // Adds the original language back to the <pre> element
       children[0].properties.class = classNames(
         children[0].properties.class,
-        codeLanguage
+        codeLanguage,
+        { 'no-line-numbers': lineCount < 5, 'no-footer': lineCount === 1 }
       );
 
       // Replaces the <pre> element with the updated one

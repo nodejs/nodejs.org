@@ -24,14 +24,12 @@
     p-1.5
     text-neutral-900
     hover:bg-neutral-100
-    motion-safe:transition-colors
     dark:border-neutral-900
     dark:bg-neutral-950
     dark:text-neutral-200;
 
   &:hover {
     @apply bg-neutral-100
-      motion-safe:transition-colors
       motion-safe:duration-300
       dark:bg-neutral-900;
 

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "baseUrl": "./src",
+    "rootDir": "./src",
+    "outDir": "./dist"
+  },
+  "include": ["src"],
+  "exclude": ["**/*.test.*", "**/*.stories.tsx"]
+}

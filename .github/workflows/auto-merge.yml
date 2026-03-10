@@ -1,0 +1,25 @@
+name: Auto-merge PRs
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  auto-merge:
+    if: github.repository == 'nodejs/nodejs.org'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b # v2.15.0
+        with:
+          egress-policy: audit
+
+      - uses: nodejs/web-team/actions/auto-merge-prs@b087df186d25f8792fb85cc7794f68718726b8ee
+        with:
+          merge-method: queue

@@ -9,8 +9,7 @@
     px-4.5
     py-2.5
     text-center
-    font-semibold
-    motion-safe:transition-colors;
+    font-semibold;
 
   svg {
     @apply size-5;
@@ -124,7 +123,7 @@
       after:mx-auto
       after:h-px
       after:w-2/5
-      after:bg-gradient-to-r
+      after:bg-linear-to-r
       after:from-green-600/0
       after:via-green-600
       after:to-green-600/0

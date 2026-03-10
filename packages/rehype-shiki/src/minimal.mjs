@@ -2,7 +2,7 @@ import { createJavaScriptRegexEngine } from '@shikijs/engine-javascript';
 import powershellLanguage from 'shiki/langs/powershell.mjs';
 import shellScriptLanguage from 'shiki/langs/shellscript.mjs';
 
-import createHighlighter, { getLanguageByName } from './highlighter.mjs';
+import createHighlighter, { getLanguageByName } from '#rs/highlighter.mjs';
 
 export const LANGS = [...powershellLanguage, ...shellScriptLanguage];
 

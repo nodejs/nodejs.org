@@ -1,7 +1,7 @@
 {
   "name": "@node-core/remark-lint",
   "type": "module",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "exports": {
     ".": "./src/index.mjs",
     "./api": "./src/api.mjs"
@@ -20,7 +20,7 @@
     "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --test \"**/*.test.mjs\""
   },
   "dependencies": {
-    "@nodejs/doc-kit": "github:nodejs/doc-kit#be7fc307395005ea362d035c43e3818650bf075f",
+    "@node-core/doc-kit": "^1.0.0",
     "remark-gfm": "^4.0.1",
     "remark-lint-blockquote-indentation": "^4.0.1",
     "remark-lint-checkbox-character-style": "^5.0.1",
