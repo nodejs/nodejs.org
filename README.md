@@ -49,7 +49,7 @@ pnpm dev
 
 This project adopts the Node.js [Code of Conduct][].
 
-Anyone who wants to contribute to the website is welcome. Please read [Contribution Guidelines][] and see the [Figma Design][] to understand better the structure of this repository.
+Anyone who wants to contribute to the website is welcome! Please read [Contribution Guidelines][] and see the [Figma Design][] to understand better the structure of this repository.
 
 > \[!IMPORTANT]\
 > Please read our [Translation Guidelines][] before contributing to Translation and Localization of the Website
