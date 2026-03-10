@@ -22,4 +22,5 @@ export type SimpleLocaleConfig = {
   code: string;
   localName: string;
   name: string;
+  hrefLang: string;
 };
