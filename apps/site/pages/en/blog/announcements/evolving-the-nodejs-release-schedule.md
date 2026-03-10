@@ -22,7 +22,7 @@ affect your users.
 
 The current release schedule is 10 years old. It was created during the io.js
 merger to balance the needs of a growing ecosystem. As one contributor put it at
-the time, it was "a guess of what enterprises would need."
+the time, it was "an educated guess of what enterprises would need."
 
 We now have a decade of data showing how people actually use Node.js:
 
