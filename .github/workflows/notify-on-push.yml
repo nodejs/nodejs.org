@@ -13,7 +13,8 @@ jobs:
     if: >
       github.repository == 'nodejs/nodejs.org' &&
       github.actor != 'github-merge-queue[bot]'
-    runs-on: ubuntu-latest
+    # cannot use ubuntu-slim here because rtCamp/action-slack-notify is dockerized
+    runs-on: ubuntu-24.04-arm
     steps:
       - uses: nodejs/web-team/actions/notify-on-push@9f3c83af227d721768d9dbb63009a47ed4f4282f
         with:

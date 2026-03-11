@@ -37,8 +37,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest]
-
+        os: [ubuntu-slim, windows-latest]
+        event-name: ${{ github.event_name }}
+        repo: ${{ github.repository }}
+        exclude:
+          - os: windows-latest
+            # Skipping the Windows build on the merge queue to speed it up
+            event-name: merge_group
+          - os: windows-latest
+            # Skipping the Windows build on the private repo to save on costs
+            repo: nodejs-private/nodejs.org-private
+        
     steps:
       - uses: nodejs/web-team/actions/setup-environment@9f3c83af227d721768d9dbb63009a47ed4f4282f
         with:
@@ -68,10 +77,10 @@ jobs:
           # but in general this should never happen
           NODE_OPTIONS: '--max_old_space_size=4096'
           # See https://github.com/vercel/next.js/pull/81318
-          TURBOPACK_STATS: ${{ matrix.os == 'ubuntu-latest' }}
+          TURBOPACK_STATS: ${{ matrix.os == 'ubuntu-slim' }}
 
       - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
-        if: matrix.os == 'ubuntu-latest'
+        if: matrix.os == 'ubuntu-slim'
         with:
           name: webpack-stats
           path: apps/site/.next/server/webpack-stats.json

@@ -34,7 +34,7 @@ jobs:
       (github.event.pull_request.head.repo.full_name == 'nodejs/nodejs.org' && github.event.pull_request.head.ref != 'chore/crowdin')
 
     name: Comment on Translation PR
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
 
     permissions:
       # This permission is required by `thollander/actions-comment-pull-request`

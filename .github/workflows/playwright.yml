@@ -23,7 +23,7 @@ permissions:
 jobs:
   get-vercel-preview:
     name: Get Vercel Preview
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     outputs:
       deployment_found: ${{ steps.set_outputs.outputs.deployment_found }}
       url: ${{ steps.set_outputs.outputs.url }}
@@ -51,7 +51,7 @@ jobs:
     needs: get-vercel-preview
     if: needs.get-vercel-preview.outputs.deployment_found == 'true'
     name: Playwright Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
 
     steps:
       - uses: nodejs/web-team/actions/setup-environment@9f3c83af227d721768d9dbb63009a47ed4f4282f
