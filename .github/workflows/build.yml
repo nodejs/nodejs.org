@@ -79,7 +79,7 @@ jobs:
   build-windows:
     name: Build on Windows
     runs-on: windows-latest
-    
+
     if: github.event_name != 'merge_group' || github.repository == 'nodejs/nodejs.org'
 
     steps:
