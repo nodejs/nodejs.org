@@ -47,7 +47,7 @@ jobs:
           - os: windows-latest
             # Skipping the Windows build on the private repo to save on costs
             repo: nodejs-private/nodejs.org-private
-        
+
     steps:
       - uses: nodejs/web-team/actions/setup-environment@9f3c83af227d721768d9dbb63009a47ed4f4282f
         with:
