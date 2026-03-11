@@ -57,7 +57,7 @@ jobs:
           # but in general this should never happen
           NODE_OPTIONS: '--max_old_space_size=4096'
           # See https://github.com/vercel/next.js/pull/81318
-          TURBOPACK_STATS: ${{ matrix.os == 'ubuntu-slim' }}
+          TURBOPACK_STATS: true
 
       - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
@@ -110,7 +110,7 @@ jobs:
           # but in general this should never happen
           NODE_OPTIONS: '--max_old_space_size=4096'
           # See https://github.com/vercel/next.js/pull/81318
-          TURBOPACK_STATS: ${{ matrix.os == 'ubuntu-slim' }}
+          TURBOPACK_STATS: false
 
       - name: Build Next.js (Static Export)
         # We want to generate a static build, as it is a requirement of our website.
