@@ -35,8 +35,7 @@
 </p>
 
 ## What is this repo?
-
-[Nodejs.org](https://nodejs.org/) by the [OpenJS Foundation](https://openjsf.org/) is the official website for the Node.js® JavaScript runtime. This repo is the source code for the website. It is built using [Next.js](https://nextjs.org), a React Framework.
+[Nodejs.org](https://nodejs.org/), maintained by the [OpenJS Foundation](https://openjsf.org/) is the official website for the Node.js® JavaScript runtime. This repo is the source code for the website. It is built using [Next.js](https://nextjs.org), a React Framework.
 
 ```bash
 pnpm install --frozen-lockfile
@@ -49,7 +48,7 @@ pnpm dev
 
 This project adopts the Node.js [Code of Conduct][].
 
-Any person who wants to contribute to the Website is welcome! Please read [Contribution Guidelines][] and see the [Figma Design][] to understand better the structure of this repository.
+Anyone who wants to contribute to the website is welcome. Please read [Contribution Guidelines][] and see the [Figma Design][] to understand better the structure of this repository.
 
 > \[!IMPORTANT]\
 > Please read our [Translation Guidelines][] before contributing to Translation and Localization of the Website
