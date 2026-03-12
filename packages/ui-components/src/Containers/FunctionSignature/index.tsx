@@ -43,7 +43,9 @@ const FunctionSignature: FC<FunctionSignatureProps> = ({ title, items }) => {
         </Signature>
         {returnTypes.length > 0 && (
           <Signature>
-            {returnTypes.map((param, i) => renderSignature(param, i))}
+            {returnTypes.map((param, i) =>
+              renderSignature(param, attributes.length + i)
+            )}
           </Signature>
         )}
       </>
