@@ -149,29 +149,26 @@ This leverages [`mock`](https://nodejs.org/api/test.html#class-mocktracker) from
 
 ```mjs
 import assert from 'node:assert/strict';
-import { before, describe, it, mock } from 'node:test';
+import { describe, it, mock } from 'node:test';
 
-describe('foo', { concurrency: true }, () => {
+describe('foo', { concurrency: true }, async () => {
   const barMock = mock.fn();
-  let foo;
 
-  before(async () => {
-    const barNamedExports = await import('./bar.mjs')
-      // discard the original default export
-      .then(({ default: _, ...rest }) => rest);
+  const barNamedExports = await import('./bar.mjs')
+    // discard the original default export
+    .then(({ default: _, ...rest }) => rest);
 
-    // It's usually not necessary to manually call restore() after each
-    // nor reset() after all (node does this automatically).
-    mock.module('./bar.mjs', {
-      defaultExport: barMock,
-      // Keep the other exports that you don't want to mock.
-      namedExports: barNamedExports,
-    });
-
-    // This MUST be a dynamic import because that is the only way to ensure the
-    // import starts after the mock has been set up.
-    ({ foo } = await import('./foo.mjs'));
+  // It's usually not necessary to manually call restore() after each
+  // nor reset() after all (node does this automatically).
+  mock.module('./bar.mjs', {
+    defaultExport: barMock,
+    // Keep the other exports that you don't want to mock.
+    namedExports: barNamedExports,
   });
+
+  // This MUST be a dynamic import because that is the only way to ensure the
+  // import starts after the mock has been set up.
+  const { foo } = await import('./foo.mjs');
 
   it('should do the thing', () => {
     barMock.mock.mockImplementationOnce(function bar_mock() {
@@ -258,17 +255,19 @@ Note the use of time-zone here (`Z` in the time-stamps). Neglecting to include a
 import assert from 'node:assert/strict';
 import { describe, it, mock } from 'node:test';
 
-import ago from './ago.mjs';
+describe('whatever', { concurrency: true }, async () => {
+  mock.timers.enable({ now: new Date('2000-01-01T00:02:02Z') });
 
-describe('whatever', { concurrency: true }, () => {
-  it('should choose "minutes" when that\'s the closet unit', () => {
-    mock.timers.enable({ now: new Date('2000-01-01T00:02:02Z') });
+  const { default: ago } = await import('./ago.mjs');
 
+  it('should choose "minutes" when that\'s the closest unit', () => {
     const t = ago('1999-12-01T23:59:59Z');
 
     assert.equal(t, '2 minutes ago');
   });
 });
 ```
+
+`ago` **must** be imported dynamically _after_ `mock.timers` is enabled. As with all module dependency mocking, this is necessary so that the `ago` module receives the mock before the `ago` module is executed (if the mocking does not occur before, it will be too late).
 
 This is especially useful when comparing against a static fixture (that is checked into a repository), such as in [snapshot testing](https://nodejs.org/api/test.html#snapshot-testing).
