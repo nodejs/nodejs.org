@@ -2,7 +2,7 @@
 
 `apps/site/site.json` is a manually maintained JSON file that controls global site metadata, RSS feeds, and time-sensitive UI elements (banners and badges).
 
-It is imported via `apps/site/next.json.mjs` and exposed as a read-only API endpoint at `/api/site.json`.
+It is imported via `apps/site/next.json.mjs` and exposed as a read-only API endpoint at `/site.json`.
 
 This endpoint is also consumed externally by the [doc-kit](https://github.com/nodejs/doc-kit) to display dynamic banners inside the API docs, for example security announcements or EOL notices, without requiring a doc-kit release.
 
@@ -117,7 +117,7 @@ A map of page slugs to badge definitions. Badges appear as small promotional lab
 The full contents of `site.json` are available at:
 
 ```
-GET /api/site.json
+GET /site.json
 ```
 
 The response is `application/json` and is statically cached at build time. It refreshes on each deployment.
