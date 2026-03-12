@@ -29,10 +29,24 @@ const renderSignature = (param: SignatureDefinition, index: number) => (
 
 const FunctionSignature: FC<FunctionSignatureProps> = ({ title, items }) => {
   if (title) {
+    const attributes: Array<SignatureDefinition> = [];
+    const returnTypes: Array<SignatureDefinition> = [];
+
+    for (const item of items) {
+      (item.kind === 'return' ? returnTypes : attributes).push(item);
+    }
+
     return (
-      <Signature title={title}>
-        {items.map((param, i) => renderSignature(param, i))}
-      </Signature>
+      <>
+        <Signature title={title}>
+          {attributes.map((param, i) => renderSignature(param, i))}
+        </Signature>
+        {returnTypes.length > 0 && (
+          <Signature>
+            {returnTypes.map((param, i) => renderSignature(param, i))}
+          </Signature>
+        )}
+      </>
     );
   }
 

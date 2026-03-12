@@ -12,7 +12,8 @@
 }
 
 .root {
-  @apply flex
+  @apply mb-1
+    flex
     flex-col
     gap-4
     rounded-sm

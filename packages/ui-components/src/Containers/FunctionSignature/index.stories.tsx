@@ -118,6 +118,17 @@ export const Nested: Story = {
           },
         ],
       },
+      {
+        name: 'Returns',
+        kind: 'return',
+        description: 'description',
+        type: (
+          <>
+            <a href="#">&lt;Promise&gt;</a>|
+            <a href="#">&lt;AsyncIterable&gt;</a>
+          </>
+        ),
+      },
     ],
   },
 };
