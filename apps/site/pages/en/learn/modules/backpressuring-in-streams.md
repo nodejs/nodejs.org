@@ -678,7 +678,7 @@ if (chunk.contains('b')) {
 callback();
 ```
 
-There are also some things to look out for when implementing [`._writev()`][].
+There are also some things to look out for when implementing [`._write()`][].
 The function is coupled with [`.cork()`][], but there is a common mistake when
 writing:
 
