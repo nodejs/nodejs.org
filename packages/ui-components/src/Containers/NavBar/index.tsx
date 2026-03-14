@@ -74,7 +74,7 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
           tabIndex={-1}
         />
         <div className={classNames(styles.main, `hidden peer-checked:flex`)}>
-          {navItems && navItems.length > 0 &&(
+          {navItems && navItems.length > 0 && (
             <div className={styles.navItems}>
               {navItems.map(({ text, link, target }) => (
                 <NavItem
