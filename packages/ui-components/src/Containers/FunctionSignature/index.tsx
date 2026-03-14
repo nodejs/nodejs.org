@@ -33,7 +33,9 @@ const FunctionSignature: FC<FunctionSignatureProps> = ({ title, items }) => {
     const returnTypes: Array<SignatureDefinition> = [];
 
     for (const item of items) {
-      (item.kind === 'return' ? returnTypes : attributes).push(item);
+      const target = item.kind === 'return' ? returnTypes : attributes;
+
+      target.push(item);
     }
 
     return (
