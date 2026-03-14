@@ -73,7 +73,6 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
           aria-label={sidebarItemTogglerAriaLabel}
           tabIndex={-1}
         />
-        
         <div className={classNames(styles.main, `hidden peer-checked:flex`)}>
           {navItems && navItems.length > 0 &&(
             <div className={styles.navItems}>
