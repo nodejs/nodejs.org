@@ -23,7 +23,7 @@ env:
 
 jobs:
   synchronize-with-crowdin:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b # v2.15.0
@@ -58,7 +58,7 @@ jobs:
 
   format_crowdin_pull_request:
     needs: synchronize-with-crowdin
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
 
     permissions:
       # This permission is required by `stefanzweifel/git-auto-commit-action`

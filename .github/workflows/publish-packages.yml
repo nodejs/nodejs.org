@@ -25,7 +25,7 @@ env:
 
 jobs:
   prepare-packages:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     outputs:
       # Output the matrix of packages to publish for use in the publish job
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
@@ -96,7 +96,8 @@ jobs:
 
   publish:
     needs: prepare-packages
-    runs-on: ubuntu-latest
+    # cannot use ubuntu-slim here because rtCamp/action-slack-notify is dockerized
+    runs-on: ubuntu-24.04-arm
     # Skip if no packages need to be published
     if: fromJson(needs.prepare-packages.outputs.matrix).package[0] != null
     # Use the dynamic matrix from prepare-packages job to create parallel jobs for each package

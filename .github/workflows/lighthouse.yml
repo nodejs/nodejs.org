@@ -33,7 +33,7 @@ jobs:
       startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
       github.event.label.name == 'github_actions:pull-request'
     name: Get Vercel Preview
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     outputs:
       deployment_found: ${{ steps.set_outputs.outputs.deployment_found }}
       url: ${{ steps.set_outputs.outputs.url }}
@@ -61,7 +61,7 @@ jobs:
     needs: get-vercel-preview
     if: needs.get-vercel-preview.outputs.deployment_found == 'true'
     name: Lighthouse Report
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
 
     steps:
       - name: Harden Runner
