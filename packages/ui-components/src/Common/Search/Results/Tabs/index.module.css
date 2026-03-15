@@ -2,7 +2,8 @@
 
 .facetTabsWrapper {
   @apply mb-2
-    overflow-x-auto;
+    overflow-x-auto
+    pt-2;
 
   &::-webkit-scrollbar {
     @apply hidden;
