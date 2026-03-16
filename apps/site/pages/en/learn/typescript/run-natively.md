@@ -9,13 +9,11 @@ authors: AugustinMauroy, khaosdoctor, jakebailey, robpalme
 You can write code that's valid TypeScript directly in Node.js without the need to transpile it first.
 
 If you are using v22.18.0 or later and your source code contains only [erasable TypeScript syntax](https://devblogs.microsoft.com/typescript/announcing-typescript-5-8-beta/#the---erasablesyntaxonly-option), you can execute TypeScript code without any flags.
-
 ```bash
 node example.ts
 ```
 
 If you are using a version less than v22.18.0, you can use the `--experimental-strip-types` flag to run TypeScript files directly in Node.js.
-
 ```bash
 node --experimental-strip-types example.ts
 ```
@@ -23,22 +21,43 @@ node --experimental-strip-types example.ts
 And that's it! You can now run TypeScript code directly in Node.js without the need to transpile it first, and use TypeScript to catch type-related errors.
 
 You can disable it via [`--no-experimental-strip-types`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--no-experimental-strip-types) flag if needed.
-
 ```bash
 node --no-experimental-strip-types example.ts
 ```
 
 In v22.7.0 the flag [`--experimental-transform-types`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--experimental-transform-types) was added to enable TypeScript-only syntax that requires transformation, like `enum`s and `namespace`. Enabling `--experimental-transform-types` automatically implies that `--experimental-strip-types` is enabled, so there's no need to use both flags in the same command:
-
 ```bash
 node --experimental-transform-types another-example.ts
 ```
 
 This flag is opt-in, and you should only use it if your code requires it.
 
+## What is Type Stripping?
+
+Type stripping is the mechanism Node.js uses to run certain TypeScript files directly. Instead of compiling TypeScript into JavaScript, Node.js removes type annotations before execution. The runtime behaviour of the program remains unchanged — only TypeScript-specific syntax is erased.
+
+This differs from traditional transpilation, which may transform syntax, change language targets, or introduce runtime helpers. Type stripping performs none of that — it only removes types, leaving your code otherwise identical.
+
+Because type stripping does not perform type checking, it is recommended to run the TypeScript compiler separately (for example using `tsc --noEmit`) during development or CI to detect type errors.
+
+## Version Support
+
+| Feature | Minimum Node.js version |
+| --- | --- |
+| `--experimental-strip-types` flag | v22.6.0 |
+| `--experimental-transform-types` flag | v22.7.0 |
+| Type stripping without flags (v22 LTS) | v22.18.0 |
+| Type stripping enabled by default | v23.6.0 |
+
 ## Constraints
 
 The support for TypeScript in Node.js has some constraints to keep in mind:
+
+- **No type checking** — Node.js does not validate types at runtime. Use `tsc --noEmit` to detect type errors.
+- **No JSX or TSX support** — `.jsx` and `.tsx` files are not supported natively.
+- **No `paths` resolution** — module path aliases defined in `tsconfig.json` are not resolved.
+- **Declaration files cannot be executed** — `.d.ts` files are not runnable.
+- **Some syntax requires transformation** — features such as `enum`s and `namespace`s require the `--experimental-transform-types` flag.
 
 You can get more information on the [API docs](https://nodejs.org/docs/latest-v22.x/api/typescript.html#typescript-features).
 
