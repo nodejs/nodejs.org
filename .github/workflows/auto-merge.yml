@@ -5,14 +5,22 @@ on:
     - cron: '*/15 * * * *'
   workflow_dispatch:
 
-permissions:
-  pull-requests: write
-  contents: write
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+permissions: {}
 
 jobs:
   auto-merge:
+    name: Auto-merge
     if: github.repository == 'nodejs/nodejs.org'
     runs-on: ubuntu-latest
+    permissions:
+      # Required to approve and merge pull requests
+      pull-requests: write
+      # Required to merge pull requests via merge queue
+      contents: write
 
     steps:
       - name: Harden Runner

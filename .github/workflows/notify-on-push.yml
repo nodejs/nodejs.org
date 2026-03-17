@@ -7,6 +7,10 @@ name: Notify on Push
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.sha }}
+  cancel-in-progress: false
+
 jobs:
   notify_on_push:
     name: Notify on any direct push to `main`

@@ -23,8 +23,7 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-permissions:
-  actions: read
+permissions: {}
 
 jobs:
   comment_on_translation_pr:
