@@ -33,7 +33,9 @@ const ThemeToggle: FC<ThemeToggleProps> = ({
   ariaLabel,
   themeLabels = { system: 'System', light: 'Light', dark: 'Dark' },
 }) => {
-  const TriggerIcon = themeIcons[currentTheme];
+  const normalizedTheme: Theme =
+    currentTheme in themeIcons ? currentTheme : 'system';
+  const TriggerIcon = themeIcons[normalizedTheme];
 
   return (
     <DropdownMenu.Root>
@@ -60,7 +62,7 @@ const ThemeToggle: FC<ThemeToggleProps> = ({
                 key={theme}
                 onClick={() => onChange(theme)}
                 className={classNames(styles.dropDownItem, {
-                  [styles.activeItem]: theme === currentTheme,
+                  [styles.activeItem]: theme === normalizedTheme,
                 })}
               >
                 <Icon height="16" />
