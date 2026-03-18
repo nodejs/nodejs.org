@@ -103,7 +103,7 @@ jobs:
     needs: prepare-packages
     runs-on: ubuntu-latest
     permissions:
-      # Required for npm OIDC (https://docs.npmjs.com/trusted-publishers)
+      # Required for npm OIDC publishing (https://docs.npmjs.com/trusted-publishers)
       id-token: write
     # Skip if no packages need to be published
     if: fromJson(needs.prepare-packages.outputs.matrix).package[0] != null
