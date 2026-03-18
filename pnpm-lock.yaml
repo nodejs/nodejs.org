@@ -196,8 +196,8 @@ importers:
         specifier: ~2.0.2
         version: 2.0.2
       semver:
-        specifier: ~7.7.3
-        version: 7.7.3
+        specifier: ~7.7.4
+        version: 7.7.4
       sval:
         specifier: ^0.6.8
         version: 0.6.8
@@ -441,8 +441,8 @@ importers:
         specifier: ^7.0.1
         version: 7.0.1
       semver:
-        specifier: ^7.7.3
-        version: 7.7.3
+        specifier: ^7.7.4
+        version: 7.7.4
       unified-lint-rule:
         specifier: ^3.0.1
         version: 3.0.1
@@ -7280,11 +7280,6 @@ packages:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
 
-  semver@7.7.3:
-    resolution: {integrity: sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   semver@7.7.4:
     resolution: {integrity: sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==}
     engines: {node: '>=10'}
@@ -10113,7 +10108,7 @@ snapshots:
     dependencies:
       '@nodevu/parsefiles': 0.0.3
       luxon: 3.6.1
-      semver: 7.7.3
+      semver: 7.7.4
 
   '@nodevu/parsefiles@0.0.3': {}
 
@@ -13149,7 +13144,7 @@ snapshots:
       eslint-import-context: 0.1.9(unrs-resolver@1.11.1)
       is-glob: 4.0.3
       minimatch: 10.1.1
-      semver: 7.7.3
+      semver: 7.7.4
       stable-hash-x: 0.2.0
       unrs-resolver: 1.11.1
     optionalDependencies:
@@ -13167,7 +13162,7 @@ snapshots:
       eslint-import-context: 0.1.9(unrs-resolver@1.11.1)
       is-glob: 4.0.3
       minimatch: 10.1.1
-      semver: 7.7.3
+      semver: 7.7.4
       stable-hash-x: 0.2.0
       unrs-resolver: 1.11.1
     optionalDependencies:
@@ -16540,8 +16535,6 @@ snapshots:
       kind-of: 6.0.3
 
   semver@6.3.1: {}
-
-  semver@7.7.3: {}
 
   semver@7.7.4: {}
 
