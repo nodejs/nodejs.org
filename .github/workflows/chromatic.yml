@@ -46,7 +46,7 @@ jobs:
       )
 
     name: Chromatic
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
 
     environment:
       name: Storybook

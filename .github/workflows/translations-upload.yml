@@ -14,7 +14,8 @@ concurrency:
 
 jobs:
   upload-to-crowdin:
-    runs-on: ubuntu-latest
+    # cannot use ubuntu-slim here because crowdin/github-action is dockerized
+    runs-on: ubuntu-24.04-arm
 
     steps:
       - name: Harden Runner

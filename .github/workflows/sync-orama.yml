@@ -25,7 +25,7 @@ permissions:
 jobs:
   sync-orama-cloud:
     name: Sync Orama Cloud
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
 
     # This Job should run either on non-`pull_request_target` events,
     # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
