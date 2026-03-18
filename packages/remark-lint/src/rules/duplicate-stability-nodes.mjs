@@ -1,4 +1,4 @@
-import createQueries from '@node-core/doc-kit/src/utils/queries/index.mjs';
+import { QUERIES } from '@node-core/doc-kit/src/utils/queries/index.mjs';
 import { lintRule } from 'unified-lint-rule';
 import { visit } from 'unist-util-visit';
 
@@ -29,7 +29,7 @@ const duplicateStabilityNodes = (tree, vfile) => {
       return;
     }
 
-    const match = createQueries.QUERIES.stabilityIndexPrefix.exec(text); // Match "Stability: X"
+    const match = QUERIES.stabilityIndexPrefix.exec(text); // Match "Stability: X"
     if (!match) {
       return;
     }
