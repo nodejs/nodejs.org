@@ -29,6 +29,10 @@ defaults:
     # This ensures that the working directory is the root of the repository
     working-directory: ./
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name != 'push' }}
+
 permissions:
   contents: read
   actions: read

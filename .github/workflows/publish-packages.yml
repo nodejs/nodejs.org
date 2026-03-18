@@ -17,14 +17,17 @@ on:
 
 permissions:
   contents: read
-  # For npm OIDC (https://docs.npmjs.com/trusted-publishers)
-  id-token: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 env:
   COMMIT_SHA: ${{ github.sha }}
 
 jobs:
   prepare-packages:
+    name: Prepare Packages
     runs-on: ubuntu-latest
     outputs:
       # Output the matrix of packages to publish for use in the publish job
@@ -63,6 +66,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 2 # Need at least 2 commits to detect changes between commits
+          persist-credentials: false
 
       - name: Generate package matrix
         id: generate-matrix
@@ -95,8 +99,12 @@ jobs:
           fi
 
   publish:
+    name: Publish
     needs: prepare-packages
     runs-on: ubuntu-latest
+    permissions:
+      # Required for npm OIDC publishing (https://docs.npmjs.com/trusted-publishers)
+      id-token: write
     # Skip if no packages need to be published
     if: fromJson(needs.prepare-packages.outputs.matrix).package[0] != null
     # Use the dynamic matrix from prepare-packages job to create parallel jobs for each package

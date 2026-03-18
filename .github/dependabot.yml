@@ -9,7 +9,7 @@ updates:
     commit-message:
       prefix: meta
     cooldown:
-      default-days: 3
+      default-days: 7
     open-pull-requests-limit: 10
 
   - package-ecosystem: npm
@@ -22,7 +22,7 @@ updates:
     commit-message:
       prefix: meta
     cooldown:
-      default-days: 3
+      default-days: 7
     groups:
       lint:
         patterns:
