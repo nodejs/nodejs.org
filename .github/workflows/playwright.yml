@@ -22,6 +22,8 @@ permissions:
 
 jobs:
   playwright:
+    # We want to skip on Dependabot PRs
+    if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
     name: Playwright Tests
     runs-on: ubuntu-latest
 
