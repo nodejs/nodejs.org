@@ -81,9 +81,9 @@
     "postcss-loader": "8.2.1",
     "storybook": "~10.2.19",
     "style-loader": "4.0.0",
-    "stylelint": "17.1.1",
+    "stylelint": "17.4.0",
     "stylelint-config-standard": "40.0.0",
-    "stylelint-order": "7.0.1",
+    "stylelint-order": "8.1.0",
     "stylelint-selector-bem-pattern": "4.0.1",
     "tsx": "4.21.0"
   },
