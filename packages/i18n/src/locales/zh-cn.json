@@ -256,7 +256,6 @@
         "title": "服务器内部错误",
         "description": "该页面出现了不可恢复的错误。"
       },
-      "details": "详细信息",
       "backToHome": "回到首页"
     },
     "download": {

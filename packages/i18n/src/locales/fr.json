@@ -370,7 +370,6 @@
         "title": "Erreur interne du serveur",
         "description": "Cette page a généré une erreur irrécupérable."
       },
-      "details": "Détails",
       "backToHome": "Retourner à l'accueil"
     },
     "download": {

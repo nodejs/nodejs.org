@@ -275,7 +275,6 @@
         "title": "Error interno del servidor",
         "description": "Esta página ha generado un error no recuperable."
       },
-      "details": "Detalles",
       "backToHome": "Volver al inicio"
     },
     "download": {

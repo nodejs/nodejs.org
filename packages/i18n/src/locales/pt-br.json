@@ -366,7 +366,6 @@
         "title": "Erro Interno do Servidor",
         "description": "Esta página lançou um erro não recuperável."
       },
-      "details": "Detalhes",
       "backToHome": "Voltar para a Página Inicial"
     },
     "download": {
