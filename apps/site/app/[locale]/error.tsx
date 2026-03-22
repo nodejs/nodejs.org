@@ -36,7 +36,7 @@ const ErrorPage: FC<ErrorPageProps> = ({ error }) => {
       {SHOW_ERROR_DETAILS && errorDetails && (
         <details className="max-w-2xl rounded-lg border border-neutral-300 bg-neutral-950/90 px-4 py-3 text-left text-neutral-50">
           <summary className="cursor-pointer font-medium">
-            {t('components.downloadReleasesTable.details')}
+            {t('layouts.error.details')}
           </summary>
 
           <pre className="mt-3 overflow-x-auto font-mono text-xs leading-6 break-words whitespace-pre-wrap">

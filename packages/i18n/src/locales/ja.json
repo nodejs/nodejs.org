@@ -370,6 +370,7 @@
         "title": "内部サーバーエラー",
         "description": "このページで回復不可能なエラーが発生しました。"
       },
+      "details": "詳細",
       "backToHome": "ホームに戻る"
     },
     "download": {

@@ -360,6 +360,7 @@
         "title": "Kesalahan Server Internal",
         "description": "Halaman ini mengalami error yang tidak dapat diperbaiki."
       },
+      "details": "Rincian",
       "backToHome": "Kembali ke Beranda"
     },
     "download": {

@@ -281,6 +281,7 @@
         "title": "內部伺服器錯誤",
         "description": "此頁面發生了無法恢復的錯誤。"
       },
+      "details": "詳細資訊",
       "backToHome": "回到首頁"
     },
     "download": {

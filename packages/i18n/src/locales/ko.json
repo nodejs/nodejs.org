@@ -249,6 +249,7 @@
         "title": "Internal Server Error",
         "description": "이 페이지에서 복구할 수 없는 오류가 발생했습니다."
       },
+      "details": "세부정보",
       "backToHome": "홈으로 돌아가기"
     },
     "download": {

@@ -370,6 +370,7 @@
         "title": "Internal Server Error",
         "description": "This page has thrown a non-recoverable error."
       },
+      "details": "Details",
       "backToHome": "Back to Home"
     },
     "download": {

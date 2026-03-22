@@ -255,6 +255,7 @@
         "title": "Erro Interno do Servidor",
         "description": "Esta página registou um erro irrecuperável."
       },
+      "details": "Detalhes",
       "backToHome": "Voltar à Página Inicial"
     },
     "download": {

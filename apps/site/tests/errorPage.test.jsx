@@ -4,7 +4,7 @@ import { describe, it } from 'node:test';
 import { render, screen } from '@testing-library/react';
 
 describe('ErrorPage', () => {
-  it('renders technical details in preview environments', async t => {
+  const setupErrorPage = async (t, showErrorDetails, suffix = '') => {
     t.mock.module('#site/components/Common/Button', {
       defaultExport: ({ children, href }) => <a href={href}>{children}</a>,
     });
@@ -15,11 +15,15 @@ describe('ErrorPage', () => {
 
     t.mock.module('#site/next.constants.mjs', {
       namedExports: {
-        SHOW_ERROR_DETAILS: true,
+        SHOW_ERROR_DETAILS: showErrorDetails,
       },
     });
 
-    const { default: ErrorPage } = await import('../app/[locale]/error.tsx');
+    return import(`../app/[locale]/error.tsx${suffix}`);
+  };
+
+  it('renders technical details in preview environments', async t => {
+    const { default: ErrorPage } = await setupErrorPage(t, true);
 
     render(
       <ErrorPage
@@ -38,8 +42,8 @@ describe('ErrorPage', () => {
       'layouts.error.backToHome'
     );
     assert.equal(
-      screen.getByText('components.downloadReleasesTable.details').textContent,
-      'components.downloadReleasesTable.details'
+      screen.getByText('layouts.error.details').textContent,
+      'layouts.error.details'
     );
     assert.match(
       screen.getByText(/Preview deployment failed/).textContent,
@@ -49,5 +53,25 @@ describe('ErrorPage', () => {
       screen.getByText(/digest: abc123/i).textContent,
       /digest: abc123/i
     );
+  });
+
+  it('hides technical details when the flag is disabled', async t => {
+    const { default: ErrorPage } = await setupErrorPage(
+      t,
+      false,
+      '?show-error-details-disabled'
+    );
+
+    render(
+      <ErrorPage
+        error={Object.assign(new Error('Production should stay generic'), {
+          digest: 'hidden123',
+        })}
+      />
+    );
+
+    assert.equal(screen.queryByText('layouts.error.details'), null);
+    assert.equal(screen.queryByText(/Production should stay generic/), null);
+    assert.equal(screen.queryByText(/digest: hidden123/i), null);
   });
 });

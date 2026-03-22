@@ -29,6 +29,10 @@ const nextConfig = {
   basePath: BASE_PATH,
   // Vercel/Next.js Image Optimization Settings
   images: getImagesConfig(),
+  env: {
+    NEXT_PUBLIC_VERCEL_ENV:
+      process.env.NEXT_PUBLIC_VERCEL_ENV || process.env.VERCEL_ENV,
+  },
   serverExternalPackages: ['twoslash'],
   outputFileTracingIncludes: {
     // Twoslash needs TypeScript declarations to function, and, by default, Next.js

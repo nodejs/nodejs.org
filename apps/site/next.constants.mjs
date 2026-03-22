@@ -15,11 +15,16 @@ export const IS_DEV_ENV = process.env.NODE_ENV === 'development';
 export const VERCEL_ENV = process.env.VERCEL_ENV || undefined;
 
 /**
+ * Public-facing Vercel environment, safe to use in client-side code.
+ */
+export const PUBLIC_VERCEL_ENV =
+  process.env.NEXT_PUBLIC_VERCEL_ENV || VERCEL_ENV;
+
+/**
  * Error details should only be exposed in local development or Vercel preview
  * deployments, never in production.
  */
-export const SHOW_ERROR_DETAILS =
-  process.env.NODE_ENV === 'development' || VERCEL_ENV === 'preview';
+export const SHOW_ERROR_DETAILS = IS_DEV_ENV || PUBLIC_VERCEL_ENV === 'preview';
 
 /**
  * This is used for telling Next.js to do a Static Export Build of the Website

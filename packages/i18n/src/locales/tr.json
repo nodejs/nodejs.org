@@ -277,6 +277,7 @@
         "title": "Dahili Sunucu Hatası",
         "description": "Bu sayfa kurtarılamaz bir hata verdi."
       },
+      "details": "Ayrıntılar",
       "backToHome": "Ana Sayfaya Geri Dön"
     },
     "download": {
