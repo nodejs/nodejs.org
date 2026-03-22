@@ -6,6 +6,7 @@ updates:
       interval: monthly
     labels:
       - 'github_actions:pull-request'
+      - 'auto-merge'
     commit-message:
       prefix: meta
     cooldown:
@@ -19,6 +20,7 @@ updates:
       interval: monthly
     labels:
       - 'github_actions:pull-request'
+      - 'auto-merge'
     commit-message:
       prefix: meta
     cooldown:
