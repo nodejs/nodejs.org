@@ -18,7 +18,7 @@ If you are interested in getting involved with the Node.js community, there are 
 
 If you are looking to learn more about Node.js, there are many resources available to you.
 
-- Node.js's [official learning materials](https://nodejs.org/en/learn/).
+- Node.js's [official learning materials](https://learn.nodejs.org/).
 - Node.js's [official API reference documentation](https://nodejs.org/api/).
 - [NodeSchool.io](https://nodeschool.io/) teaches Node.js concepts via interactive command-line games.
 - [StackOverflow's Node.js tag](https://stackoverflow.com/questions/tagged/node.js) contains a large number of threads with helpful resources.
