@@ -14,12 +14,7 @@ type ErrorPageProps = {
 
 const ErrorPage: FC<ErrorPageProps> = ({ error }) => {
   const t = useTranslations();
-  const errorDetails = [
-    error.message,
-    error.digest && `digest: ${error.digest}`,
-  ]
-    .filter(Boolean)
-    .join('\n');
+  const hasErrorDetails = Boolean(error.message || error.digest);
 
   return (
     <GlowingBackdropLayout kind="default">
@@ -33,14 +28,17 @@ const ErrorPage: FC<ErrorPageProps> = ({ error }) => {
         {t('layouts.error.internalServerError.description')}
       </p>
 
-      {SHOW_ERROR_DETAILS && errorDetails && (
+      {SHOW_ERROR_DETAILS && hasErrorDetails && (
         <details className="max-w-2xl rounded-lg border border-neutral-300 bg-neutral-950/90 px-4 py-3 text-left text-neutral-50">
           <summary className="cursor-pointer font-medium">
             {t('layouts.error.details')}
           </summary>
 
           <pre className="mt-3 overflow-x-auto font-mono text-xs leading-6 break-words whitespace-pre-wrap">
-            {errorDetails}
+            {error.message}
+            {error.digest
+              ? `${error.message ? '\n' : ''}digest: ${error.digest}`
+              : ''}
           </pre>
         </details>
       )}
