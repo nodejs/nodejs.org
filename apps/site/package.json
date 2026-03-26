@@ -90,7 +90,7 @@
     "@types/mdx": "^2.0.13",
     "@types/semver": "~7.7.1",
     "babel-plugin-react-compiler": "^1.0.0",
-    "dedent": "^1.7.1",
+    "dedent": "^1.7.2",
     "eslint-config-next": "16.1.6",
     "eslint-plugin-mdx": "~3.6.2",
     "eslint-plugin-react": "~7.37.5",
