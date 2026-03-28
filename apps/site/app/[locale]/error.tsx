@@ -4,7 +4,6 @@ import { useTranslations } from 'next-intl';
 
 import Button from '#site/components/Common/Button';
 import GlowingBackdropLayout from '#site/layouts/GlowingBackdrop';
-import { SHOW_ERROR_DETAILS } from '#site/next.constants.mjs';
 
 import type { FC } from 'react';
 
@@ -14,7 +13,6 @@ type ErrorPageProps = {
 
 const ErrorPage: FC<ErrorPageProps> = ({ error }) => {
   const t = useTranslations();
-  const hasErrorDetails = Boolean(error.message || error.digest);
 
   return (
     <GlowingBackdropLayout kind="default">
@@ -28,7 +26,7 @@ const ErrorPage: FC<ErrorPageProps> = ({ error }) => {
         {t('layouts.error.internalServerError.description')}
       </p>
 
-      {SHOW_ERROR_DETAILS && hasErrorDetails && (
+      {(error.message || error.digest) && (
         <details className="max-w-2xl rounded-lg border border-neutral-300 bg-neutral-950/90 px-4 py-3 text-left text-neutral-50">
           <summary className="cursor-pointer font-medium">
             {t('layouts.error.details')}
@@ -36,9 +34,7 @@ const ErrorPage: FC<ErrorPageProps> = ({ error }) => {
 
           <pre className="mt-3 overflow-x-auto font-mono text-xs leading-6 break-words whitespace-pre-wrap">
             {error.message}
-            {error.digest
-              ? `${error.message ? '\n' : ''}digest: ${error.digest}`
-              : ''}
+            {error.digest && `digest: ${error.digest}`}
           </pre>
         </details>
       )}
