@@ -1,5 +1,5 @@
 ---
-date: '2026-03-30T12:00:00.000Z'
+date: '2026-04-02T12:00:00.000Z'
 category: announcements
 title: Security Bug Bounty Program Paused Due to Loss of Funding
 layout: blog-post
