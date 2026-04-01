@@ -53,7 +53,7 @@
     "typescript": "catalog:",
     "typescript-eslint": "~8.54.0"
   },
-  "packageManager": "pnpm@10.30.3",
+  "packageManager": "pnpm@10.33.0",
   "devEngines": {
     "runtime": {
       "name": "node",
@@ -62,7 +62,7 @@
     },
     "packageManager": {
       "name": "pnpm",
-      "version": "10.30.3",
+      "version": "10.33.0",
       "onFail": "error"
     }
   }
