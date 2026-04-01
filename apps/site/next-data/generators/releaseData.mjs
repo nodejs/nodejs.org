@@ -3,18 +3,23 @@
 import getMajorNodeReleases from './majorNodeReleases.mjs';
 
 // Gets the appropriate release status for each major release
-const getNodeReleaseStatus = (now, support) => {
+const getNodeReleaseStatus = (latest, support) => {
+  const now = new Date();
   const { endOfLife, maintenanceStart, ltsStart, currentStart } = support;
 
   if (endOfLife && now >= new Date(endOfLife)) {
     return 'End-of-life';
   }
 
-  if (maintenanceStart && now >= new Date(maintenanceStart)) {
+  if (
+    latest.lts.isLts &&
+    maintenanceStart &&
+    now >= new Date(maintenanceStart)
+  ) {
     return 'Maintenance LTS';
   }
 
-  if (ltsStart && now >= new Date(ltsStart)) {
+  if (latest.lts.isLts && ltsStart && now >= new Date(ltsStart)) {
     return 'Active LTS';
   }
 
@@ -45,7 +50,7 @@ const generateReleaseData = async () => {
     };
 
     // Get the major release status based on our Release Schedule
-    const status = getNodeReleaseStatus(new Date(), support);
+    const status = getNodeReleaseStatus(latestVersion, support);
 
     const minorVersions = Object.entries(major.releases).map(([, release]) => ({
       modules: release.modules.version || '',
