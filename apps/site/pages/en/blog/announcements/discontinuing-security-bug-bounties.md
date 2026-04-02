@@ -3,7 +3,7 @@ date: '2026-04-02T12:00:00.000Z'
 category: announcements
 title: Security Bug Bounty Program Paused Due to Loss of Funding
 layout: blog-post
-author: Rafael Gonzaga
+author: The Node.js Project
 ---
 
 The Node.js project's security bug bounty program is being paused due to the
