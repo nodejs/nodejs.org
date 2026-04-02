@@ -110,11 +110,11 @@
     },
     {
       "source": "/learn/:path*",
-      "destination": "https://learn.nodejs.org/:path*"
+      "destination": "https://nodejs.org/learn/:path*"
     },
     {
       "source": "/:locale/learn/:path*",
-      "destination": "https://learn.nodejs.org/:path*"
+      "destination": "https://nodejs.org/learn/:path*"
     },
     {
       "source": "/:locale/community",
