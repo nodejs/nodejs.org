@@ -1,7 +1,7 @@
 {
   "topNavigation": {
     "learn": {
-      "link": "https://learn.nodejs.org",
+      "link": "https://nodejs.org/learn",
       "label": "components.containers.navBar.links.learn"
     },
     "about": {
