@@ -61,7 +61,7 @@ By contributing to this project, I certify that:
 
 - **Report Issues**: Found a bug or have a feature request? [Open an issue](https://github.com/nodejs/nodejs.org/issues/new/choose)
 - **Improve Documentation**: Help make our docs clearer and more comprehensive
-- **Add Content**: Create new learn articles, blog posts, or improve existing content
+- **Add Content**: Create new articles, blog posts, or improve existing content
 - **Fix Bugs**: Look for issues labeled [`good first issue`](https://github.com/nodejs/nodejs.org/labels/good%20first%20issue)
 - **Translate Content**: Help make Node.js documentation accessible worldwide
 
