@@ -11,6 +11,10 @@
 .large {
   @apply grid
     w-full
-    grid-cols-[repeat(auto-fill,minmax(240px,1fr))]
-    gap-4;
+    gap-6
+    sm:grid-cols-[repeat(auto-fill,minmax(240px,1fr))]
+    sm:gap-4
+    lg:grid-cols-[repeat(auto-fit,minmax(240px,260px))]
+    lg:justify-center
+    lg:gap-6;
 }
