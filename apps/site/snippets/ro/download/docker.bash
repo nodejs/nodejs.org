@@ -2,7 +2,7 @@
 # Te rog să consulți documentația oficială disponibilă la https://docker.com/get-started/
 
 # Trage imaginea Docker pentru Node.js:
-docker pull node:${props.release.major}-${props.release.major >= 4 ? 'alpine' : 'slim'}
+docker pull node:${props.release.major}-slim
 
 # Creează un container Node.js și pornește o sesiune Shell:
-docker run -it --rm --entrypoint sh node:${props.release.major}-${props.release.major >= 4 ? 'alpine' : 'slim'}
+docker run -it --rm --entrypoint sh node:${props.release.major}-slim

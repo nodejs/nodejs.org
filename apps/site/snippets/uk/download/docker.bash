@@ -2,7 +2,7 @@
 # Будь ласка, перегляньте офіційну документацію на https://docker.com/get-started/
 
 # Завантажує образ Docker Node.js:
-docker pull node:${props.release.major}-${props.release.major >= 4 ? 'alpine' : 'slim'}
+docker pull node:${props.release.major}-slim
 
 # Створює контейнер Node.js та розпочинає сесію в Shell:
-docker run -it --rm --entrypoint sh node:${props.release.major}-${props.release.major >= 4 ? 'alpine' : 'slim'}
+docker run -it --rm --entrypoint sh node:${props.release.major}-slim
