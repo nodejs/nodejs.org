@@ -20,7 +20,7 @@
     "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --test \"**/*.test.mjs\""
   },
   "dependencies": {
-    "@node-core/doc-kit": "^1.0.2",
+    "@node-core/doc-kit": "^1.2.0",
     "remark-gfm": "^4.0.1",
     "remark-lint-blockquote-indentation": "^4.0.1",
     "remark-lint-checkbox-character-style": "^5.0.1",
