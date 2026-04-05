@@ -47,6 +47,20 @@ describe('parseCompat', () => {
   });
 
   describe('extended tests', () => {
+    it('should keep nvm available for AIX', () => {
+      const nvm = INSTALL_METHODS.find(({ value }) => value === 'NVM');
+
+      const [result] = parseCompat([nvm], {
+        os: 'AIX',
+        installMethod: 'NVM',
+        platform: 'ppc64',
+        version: 'v24.14.0',
+        release: { status: 'Current' },
+      });
+
+      assert.equal(result.disabled, false);
+    });
+
     it('should disable items if OS is not supported', () => {
       const items = [
         {
