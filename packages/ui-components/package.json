@@ -65,18 +65,11 @@
     "typescript": "catalog:"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "@storybook/addon-styling-webpack": "~3.0.1",
     "@storybook/addon-themes": "~10.3.3",
     "@storybook/addon-webpack5-compiler-swc": "~4.0.3",
     "@storybook/react-webpack5": "~10.3.3",
-=======
     "@eslint-react/eslint-plugin": "~3.0.0",
-    "@storybook/addon-styling-webpack": "~3.0.0",
-    "@storybook/addon-themes": "~10.2.19",
-    "@storybook/addon-webpack5-compiler-swc": "~4.0.2",
-    "@storybook/react-webpack5": "~10.2.19",
->>>>>>> 2c417d27c (chore(eslint): update to v10)
     "@testing-library/user-event": "~14.6.1",
     "@types/node": "catalog:",
     "cross-env": "catalog:",
