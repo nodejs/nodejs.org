@@ -21,4 +21,51 @@
       text-neutral-800
       dark:text-neutral-600;
   }
+
+  .subGroup {
+    @apply flex
+      w-full
+      flex-col
+      gap-1;
+  }
+
+  .summary {
+    @apply flex
+      cursor-pointer
+      items-center
+      justify-between
+      rounded-md
+      px-2
+      py-1
+      text-sm
+      font-semibold
+      text-neutral-800
+      select-none
+      hover:bg-neutral-100
+      dark:text-neutral-200
+      hover:dark:bg-neutral-900;
+
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  .subGroup[open] .summary {
+    @apply text-green-600
+      dark:text-green-400;
+  }
+
+  .subItemList {
+    @apply mt-1
+      ml-2
+      flex
+      flex-col
+      gap-1
+      border-l
+      border-neutral-200
+      pl-2
+      dark:border-neutral-800;
+  }
 }
