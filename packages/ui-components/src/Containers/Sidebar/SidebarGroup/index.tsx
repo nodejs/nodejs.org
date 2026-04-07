@@ -40,7 +40,7 @@ const renderItems = (
 ) => {
   return items.map(({ label, link, items: subItems }) => {
     if (subItems && subItems.length > 0) {
-      const isOpen = hasActivePath(subItems, pathname);
+      const isOpen = link === pathname || hasActivePath(subItems, pathname);
       return (
         <li key={link}>
           <details className={styles.subGroup} open={isOpen}>
