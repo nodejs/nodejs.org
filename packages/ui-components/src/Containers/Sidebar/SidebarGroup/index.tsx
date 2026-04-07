@@ -42,16 +42,14 @@ const renderItems = (
     if (subItems && subItems.length > 0) {
       const isOpen = hasActivePath(subItems, pathname);
       return (
-        <details
-          key={label as string}
-          className={styles.subGroup}
-          open={isOpen || undefined}
-        >
-          <summary className={styles.summary}>{label}</summary>
-          <ul className={styles.subItemList}>
-            {renderItems(subItems, props, pathname)}
-          </ul>
-        </details>
+        <li key={link}>
+          <details className={styles.subGroup} open={isOpen}>
+            <summary className={styles.summary}>{label}</summary>
+            <ul className={styles.subItemList}>
+              {renderItems(subItems, props, pathname)}
+            </ul>
+          </details>
+        </li>
       );
     }
     return (
