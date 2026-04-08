@@ -52,7 +52,7 @@
     }
   }
 
-  .subGroup[open] .summary {
+  .subGroup[open] > .summary {
     @apply text-green-600
       dark:text-green-400;
   }
