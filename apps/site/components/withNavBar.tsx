@@ -8,6 +8,7 @@ import NavBar from '@node-core/ui-components/Containers/NavBar';
 import styles from '@node-core/ui-components/Containers/NavBar/index.module.css';
 import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
 import { availableLocales } from '@node-core/website-i18n';
+import classNames from 'classnames';
 import dynamic from 'next/dynamic';
 import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
@@ -16,6 +17,7 @@ import SearchButton from '#site/components/Common/Searchbox';
 import Link from '#site/components/Link';
 import WithBanner from '#site/components/withBanner';
 import WithNodejsLogo from '#site/components/withNodejsLogo';
+import { useScrollDirection } from '#site/hooks/client';
 import { useSiteNavigation } from '#site/hooks/generic';
 import { useRouter, usePathname } from '#site/navigation.mjs';
 
@@ -42,11 +44,17 @@ const WithNavBar: FC = () => {
 
   const locale = useLocale();
 
+  const scrollDirection = useScrollDirection();
+
   const changeLanguage = (locale: SimpleLocaleConfig) =>
     replace(pathname!, { locale: locale.code });
 
   return (
-    <div>
+    <div
+      className={classNames(styles.navBarWrapper, {
+        [styles.hidden]: scrollDirection === 'down',
+      })}
+    >
       <SkipToContentButton>
         {t('components.common.skipToContent')}
       </SkipToContentButton>

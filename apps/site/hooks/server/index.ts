@@ -1,3 +1,4 @@
 export { default as useClientContext } from './useClientContext';
 export { default as useScrollToElement } from './useScrollToElement';
 export { default as useScroll } from './useScroll';
+export { default as useScrollDirection } from './useScrollDirection';

@@ -135,3 +135,16 @@
     }
   }
 }
+
+.navBarWrapper {
+  @apply xl:sticky
+    xl:top-0
+    xl:z-50
+    xl:transition-transform
+    xl:duration-300
+    xl:ease-in-out;
+}
+
+.navBarWrapper.hidden {
+  @apply xl:-translate-y-full;
+}
