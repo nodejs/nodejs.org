@@ -2,9 +2,9 @@
 
 import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
-import { useContext, useEffect, useMemo } from 'react';
+import { use, useEffect, useMemo } from 'react';
 
-import { useClientContext } from '#site/hooks/client';
+import useClientContext from '#site/hooks/useClientContext';
 import { ReleaseContext } from '#site/providers/releaseProvider';
 import { nextItem, OPERATING_SYSTEMS, parseCompat } from '#site/util/download';
 
@@ -15,7 +15,7 @@ type OperatingSystemDropdownProps = { exclude?: Array<OperatingSystem> };
 
 const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = () => {
   const { os } = useClientContext();
-  const release = useContext(ReleaseContext);
+  const release = use(ReleaseContext);
   const t = useTranslations();
 
   useEffect(() => {
@@ -25,14 +25,14 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = () => {
     // Reacts on Client Context change of OS
     // Only this Hook is allowed to bypass the `setOS` from above
     // As this Hook is what defined the initial OS state
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line @eslint-react/exhaustive-deps
   }, [os]);
 
   // We parse the compatibility of the dropdown items
   const parsedOperatingSystems = useMemo(
     () => parseCompat(OPERATING_SYSTEMS, release),
     // We only want to react on the change of the Install Method and Version
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line @eslint-react/exhaustive-deps
     [release.installMethod, release.version]
   );
 
@@ -45,7 +45,7 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = () => {
       }
     },
     // We only want to react on the change of the Version, Install Method and OS
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line @eslint-react/exhaustive-deps
     [release.installMethod, release.version, release.os]
   );
 

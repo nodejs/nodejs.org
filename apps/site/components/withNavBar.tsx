@@ -16,7 +16,7 @@ import SearchButton from '#site/components/Common/Searchbox';
 import Link from '#site/components/Link';
 import WithBanner from '#site/components/withBanner';
 import WithNodejsLogo from '#site/components/withNodejsLogo';
-import { useSiteNavigation } from '#site/hooks/generic';
+import useSiteNavigation from '#site/hooks/useSiteNavigation';
 import { useRouter, usePathname } from '#site/navigation.mjs';
 
 import type { Theme } from '@node-core/ui-components/Common/ThemeToggle';

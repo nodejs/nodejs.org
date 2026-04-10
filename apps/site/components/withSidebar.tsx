@@ -5,8 +5,9 @@ import { useTranslations } from 'next-intl';
 import { useRef } from 'react';
 
 import Link from '#site/components/Link';
-import { useClientContext, useScrollToElement } from '#site/hooks/client';
-import { useSiteNavigation } from '#site/hooks/generic';
+import useClientContext from '#site/hooks/useClientContext';
+import useScrollToElement from '#site/hooks/useScrollToElement';
+import useSiteNavigation from '#site/hooks/useSiteNavigation';
 import { useRouter, usePathname } from '#site/navigation.mjs';
 
 import type { NavigationKeys } from '#site/types';
