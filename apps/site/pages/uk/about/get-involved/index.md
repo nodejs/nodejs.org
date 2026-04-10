@@ -18,7 +18,7 @@ layout: about
 
 Якщо ви хочете дізнатися більше про Node.js, використовуйте наступні ресурси:
 
-- [Офіційні навчальні матеріали](https://nodejs.org/en/learn/) Node.js.
+- [Офіційні навчальні матеріали](https://nodejs.org/learn/) Node.js.
 - [Офіційна документація з API](https://nodejs.org/api/) Node.js.
 - [NodeSchool.io](https://nodeschool.io/) навчить вас концепцій Node.js за допомогою інтерактивних ігор у командному рядку.
 - [Тег Node.js у Stack Overflow](https://stackoverflow.com/questions/tagged/node.js) містить велику кількість гілок із корисними ресурсами.
