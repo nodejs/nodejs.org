@@ -22,22 +22,30 @@ const InstallationMethodDropdown: FC = () => {
     [release.os, release.version]
   );
 
+  const enabledInstallMethods = useMemo(
+    () => parsedInstallMethods.filter(({ disabled }) => !disabled),
+    [parsedInstallMethods]
+  );
+
   // We group Platforms on the Platform Dropdown to provide the User
   // understanding of what is recommended/official and what is not.
   const grouppedMethods = useMemo(
-    () => [
-      {
-        label: t('layouts.download.dropdown.platformGroups.official'),
-        items: parsedInstallMethods.filter(({ recommended }) => recommended),
-      },
-      {
-        label: t('layouts.download.dropdown.platformGroups.unofficial'),
-        items: parsedInstallMethods.filter(({ recommended }) => !recommended),
-      },
-    ],
+    () =>
+      [
+        {
+          label: t('layouts.download.dropdown.platformGroups.official'),
+          items: enabledInstallMethods.filter(({ recommended }) => recommended),
+        },
+        {
+          label: t('layouts.download.dropdown.platformGroups.unofficial'),
+          items: enabledInstallMethods.filter(
+            ({ recommended }) => !recommended
+          ),
+        },
+      ].filter(({ items }) => items.length > 0),
     // We only want to react on the change of the parsedPlatforms
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [parsedInstallMethods]
+    [enabledInstallMethods]
   );
 
   useEffect(() => {
@@ -49,14 +57,14 @@ const InstallationMethodDropdown: FC = () => {
         // Sets either the utmost recommended platform or the first non-disabled one
         // Note that the first item of groupped platforms is always the recommended one
         nextItem<InstallationMethod | ''>('', grouppedMethods[0].items) ||
-        nextItem<InstallationMethod | ''>('', parsedInstallMethods);
+        nextItem<InstallationMethod | ''>('', enabledInstallMethods);
 
       // This will never return an empty string as there should always be an item
       // when the OS has finished loading for a given installation method
       release.setInstallMethod(installationMethod as InstallationMethod);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [parsedInstallMethods, release.installMethod, release.os]);
+  }, [enabledInstallMethods, release.installMethod, release.os]);
 
   // We set the Platform to the next available platform when the current
   // one is not valid anymore due to OS or Version changes
@@ -64,13 +72,13 @@ const InstallationMethodDropdown: FC = () => {
     () => {
       if (release.os !== 'LOADING' && release.installMethod !== '') {
         release.setInstallMethod(
-          nextItem(release.installMethod, parsedInstallMethods)
+          nextItem(release.installMethod, enabledInstallMethods)
         );
       }
     },
     // We only want to react on the change of the OS and Version
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [release.os, release.version]
+    [enabledInstallMethods, release.os, release.version]
   );
 
   return (
