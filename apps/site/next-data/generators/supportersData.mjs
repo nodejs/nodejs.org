@@ -46,6 +46,25 @@ async function fetchGithubSponsorsData() {
   }
 
   const sponsors = [];
+  const seenSponsorKeys = new Set();
+
+  const addSponsor = node => {
+    const s = node.sponsor || node.sponsorEntity; // support different field names
+    const key = s?.id ?? s?.login ?? s?.url ?? s?.name ?? s?.avatarUrl;
+    if (key && seenSponsorKeys.has(key)) {
+      return;
+    }
+    if (key) {
+      seenSponsorKeys.add(key);
+    }
+
+    sponsors.push({
+      name: s?.name || s?.login || null,
+      image: s?.avatarUrl || null,
+      url: s?.url || null,
+      source: 'github',
+    });
+  };
 
   // Fetch sponsorship pages
   let cursor = null;
@@ -64,17 +83,7 @@ async function fetchGithubSponsorsData() {
     }
 
     const { nodes, pageInfo } = nodeRes;
-    const mapped = nodes.map(n => {
-      const s = n.sponsor || n.sponsorEntity || n.sponsorEntity; // support different field names
-      return {
-        name: s?.name || s?.login || null,
-        image: s?.avatarUrl || null,
-        url: s?.url || null,
-        source: 'github',
-      };
-    });
-
-    sponsors.push(...mapped);
+    nodes.forEach(addSponsor);
 
     if (!pageInfo.hasNextPage) {
       break;
@@ -96,17 +105,7 @@ async function fetchGithubSponsorsData() {
   }
 
   const { nodes } = nodeRes;
-  const mapped = nodes.map(n => {
-    const s = n.sponsor || n.sponsorEntity || n.sponsorEntity; // support different field names
-    return {
-      name: s?.name || s?.login || null,
-      image: s?.avatarUrl || null,
-      url: s?.url || null,
-      source: 'github',
-    };
-  });
-
-  sponsors.push(...mapped);
+  nodes.forEach(addSponsor);
 
   return sponsors;
 }
@@ -115,7 +114,7 @@ function sponsorshipsQuery(cursor = null) {
   return `
     query {
         organization(login: "nodejs") {
-            sponsorshipsAsMaintainer (first: 100, includePrivate: false, after: "${cursor}", activeOnly: false) {
+            sponsorshipsAsMaintainer (first: 100, includePrivate: false, after: ${JSON.stringify(cursor)}, activeOnly: false) {
                 nodes {
                     sponsor: sponsorEntity {
                         ...on User {
