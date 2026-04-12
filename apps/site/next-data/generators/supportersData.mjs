@@ -20,12 +20,11 @@ async function fetchOpenCollectiveData() {
   const members = payload
     .filter(({ role, isActive }) => role === 'BACKER' && isActive)
     .sort((a, b) => b.totalAmountDonated - a.totalAmountDonated)
-    .map(({ name, image, profile, website }) => ({
+    .map(({ name, image, profile }) => ({
       name,
       image,
-      url: website,
       // If profile starts with the guest- prefix, it's a non-existing account
-      profile: profile.startsWith('https://opencollective.com/guest-')
+      url: profile.startsWith('https://opencollective.com/guest-')
         ? undefined
         : profile,
       source: 'opencollective',
