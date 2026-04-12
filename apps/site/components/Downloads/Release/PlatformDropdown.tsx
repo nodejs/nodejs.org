@@ -2,9 +2,9 @@
 
 import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
-import { useEffect, useContext, useMemo } from 'react';
+import { useEffect, use, useMemo } from 'react';
 
-import { useClientContext } from '#site/hooks/client';
+import useClientContext from '#site/hooks/useClientContext';
 import { ReleaseContext } from '#site/providers/releaseProvider';
 import { PLATFORMS, nextItem, parseCompat } from '#site/util/download';
 import { getUserPlatform } from '#site/util/userAgent';
@@ -15,7 +15,7 @@ import type { FC } from 'react';
 const PlatformDropdown: FC = () => {
   const { architecture, bitness } = useClientContext();
 
-  const release = useContext(ReleaseContext);
+  const release = use(ReleaseContext);
   const t = useTranslations();
 
   useEffect(
@@ -27,7 +27,7 @@ const PlatformDropdown: FC = () => {
       }
     },
     // Only react on the change of the Client Context Architecture and Bitness
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line @eslint-react/exhaustive-deps
     [architecture, bitness]
   );
 
@@ -40,7 +40,7 @@ const PlatformDropdown: FC = () => {
         ? parseCompat(PLATFORMS[release.os], release)
         : [],
     // We only want to react on the change of the OS, Platform, and Version
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line @eslint-react/exhaustive-deps
     [release.os, release.version]
   );
 
@@ -53,7 +53,7 @@ const PlatformDropdown: FC = () => {
       }
     },
     // We only want to react on the change of the OS and Version
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line @eslint-react/exhaustive-deps
     [release.os, release.version, release.platform]
   );
 
@@ -63,7 +63,7 @@ const PlatformDropdown: FC = () => {
       defaultValue={release.platform !== '' ? release.platform : undefined}
       loading={release.os === 'LOADING' || release.platform === ''}
       placeholder={t('layouts.download.dropdown.unknown')}
-      ariaLabel={t('layouts.download.dropdown.installMethod')}
+      ariaLabel={t('layouts.download.dropdown.platform')}
       onChange={platform => platform && release.setPlatform(platform)}
       className="min-w-28"
       inline={true}

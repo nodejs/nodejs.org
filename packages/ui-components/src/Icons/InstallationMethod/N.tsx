@@ -22,7 +22,6 @@ const N: FC<SVGProps<SVGSVGElement>> = props => (
     <circle cx="5" cy="5" r="2" fill="#ff5f56" />
     <circle cx="10" cy="5" r="2" fill="#ffbd2e" />
     <circle cx="15" cy="5" r="2" fill="#27c93f" />
-    // text with outline
     <text x="6" y="24" fontFamily="monospace" fontSize="14" fill="#00ff00">
       $n
     </text>

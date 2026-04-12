@@ -17,21 +17,24 @@ on:
 
 permissions:
   contents: read
-  # For npm OIDC (https://docs.npmjs.com/trusted-publishers)
-  id-token: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 env:
   COMMIT_SHA: ${{ github.sha }}
 
 jobs:
   prepare-packages:
+    name: Prepare Packages
     runs-on: ubuntu-latest
     outputs:
       # Output the matrix of packages to publish for use in the publish job
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@20cf305ff2072d973412fa9b1e3a4f227bda3c76 # v2.14.0
+        uses: step-security/harden-runner@fa2e9d605c4eeb9fcad4c99c224cee0c6c7f3594 # v2.16.0
         with:
           egress-policy: audit
 
@@ -60,9 +63,10 @@ jobs:
           echo "✅ Commit is verified and trusted."
 
       - name: Checkout repository
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 2 # Need at least 2 commits to detect changes between commits
+          persist-credentials: false
 
       - name: Generate package matrix
         id: generate-matrix
@@ -95,8 +99,12 @@ jobs:
           fi
 
   publish:
+    name: Publish
     needs: prepare-packages
     runs-on: ubuntu-latest
+    permissions:
+      # Required for npm OIDC publishing (https://docs.npmjs.com/trusted-publishers)
+      id-token: write
     # Skip if no packages need to be published
     if: fromJson(needs.prepare-packages.outputs.matrix).package[0] != null
     # Use the dynamic matrix from prepare-packages job to create parallel jobs for each package
@@ -116,9 +124,10 @@ jobs:
           # Check if a custom publish script exists in package.json
           if jq -e '.scripts.release' package.json > /dev/null; then
             pnpm run release
-          else
-            pnpm publish --access public --no-git-checks
           fi
+
+          # Then publish the package to npm
+          pnpm publish --access public --no-git-checks
 
       - name: Notify on Manual Release
         if: ${{ github.event_name == 'workflow_dispatch' }}

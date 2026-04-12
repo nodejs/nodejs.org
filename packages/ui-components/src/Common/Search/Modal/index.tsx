@@ -30,6 +30,7 @@ const SearchModal: FC<PropsWithChildren<SearchModalProps>> = ({
           <MagnifyingGlassIcon />
           {placeholder}
         </div>
+
         <span className={styles.searchButtonShortcut}>⌘ K</span>
       </Modal.Trigger>
 

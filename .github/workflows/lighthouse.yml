@@ -23,57 +23,43 @@ defaults:
 permissions:
   contents: read
   actions: read
-  # This permission is required by `thollander/actions-comment-pull-request`
-  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 jobs:
-  get-vercel-preview:
+  lighthouse-ci:
     # We want to skip our lighthouse analysis on Dependabot PRs
     if: |
       startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
       github.event.label.name == 'github_actions:pull-request'
-    name: Get Vercel Preview
+    name: Lighthouse Report
     runs-on: ubuntu-latest
-    outputs:
-      deployment_found: ${{ steps.set_outputs.outputs.deployment_found }}
-      url: ${{ steps.set_outputs.outputs.url }}
+    permissions:
+      # Required by `thollander/actions-comment-pull-request`
+      pull-requests: write
+
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@fa2e9d605c4eeb9fcad4c99c224cee0c6c7f3594 # v2.16.0
+        with:
+          egress-policy: audit
+
       - name: Capture Vercel Preview
-        id: check_deployment
-        uses: patrickedqvist/wait-for-vercel-preview@06c79330064b0e6ef7a2574603b62d3c98789125 # v1.3.2
+        id: deployment
+        uses: patrickedqvist/wait-for-vercel-preview@d7982701e6fcd3ae073bff929e408e004404d38d # v1.3.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 300 # timeout after 5 minutes
           check_interval: 10 # check every 10 seconds
-        continue-on-error: true
-      - name: Set Outputs
-        if: always()
-        id: set_outputs
-        run: |
-          if [[ -z "${{ steps.check_deployment.outputs.url }}" ]]; then
-            echo "deployment_found=false" >> $GITHUB_OUTPUT
-          else
-            echo "deployment_found=true" >> $GITHUB_OUTPUT
-            echo "url=${{ steps.check_deployment.outputs.url }}" >> $GITHUB_OUTPUT
-          fi
-
-  lighthouse-ci:
-    needs: get-vercel-preview
-    if: needs.get-vercel-preview.outputs.deployment_found == 'true'
-    name: Lighthouse Report
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@20cf305ff2072d973412fa9b1e3a4f227bda3c76 # v2.14.0
-        with:
-          egress-policy: audit
 
       - name: Git Checkout
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           # Provides the Pull Request commit SHA or the GitHub merge group ref
           ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || github.ref }}
+          persist-credentials: false
 
       - name: Add Comment to PR
         # Signal that a lighthouse run is about to start
@@ -87,18 +73,18 @@ jobs:
       - name: Audit Preview URL with Lighthouse
         # Conduct the lighthouse audit
         id: lighthouse_audit
-        uses: treosh/lighthouse-ci-action@fcd65974f7c4c2bf0ee9d09b84d2489183c29726 # v12.6.1
+        uses: treosh/lighthouse-ci-action@3e7e23fb74242897f95c0ba9cabad3d0227b9b18 # v12.6.2
         with:
           # Defines the settings and assertions to audit
           configPath: './.lighthouserc.json'
           # These URLS capture critical pages / site functionality.
           urls: |
-            ${{ needs.get-vercel-preview.outputs.url }}/en
-            ${{ needs.get-vercel-preview.outputs.url }}/en/about
-            ${{ needs.get-vercel-preview.outputs.url }}/en/about/previous-releases
-            ${{ needs.get-vercel-preview.outputs.url }}/en/download
-            ${{ needs.get-vercel-preview.outputs.url }}/en/download/archive/current
-            ${{ needs.get-vercel-preview.outputs.url }}/en/blog
+            ${{ steps.deployment.outputs.url }}/en
+            ${{ steps.deployment.outputs.url }}/en/about
+            ${{ steps.deployment.outputs.url }}/en/about/previous-releases
+            ${{ steps.deployment.outputs.url }}/en/download
+            ${{ steps.deployment.outputs.url }}/en/download/archive/current
+            ${{ steps.deployment.outputs.url }}/en/blog
           uploadArtifacts: true # save results as a action artifacts
           temporaryPublicStorage: true # upload lighthouse report to the temporary storage
 
@@ -111,7 +97,7 @@ jobs:
           # see https://github.com/actions/github-script#use-env-as-input
           LIGHTHOUSE_RESULT: ${{ steps.lighthouse_audit.outputs.manifest }}
           LIGHTHOUSE_LINKS: ${{ steps.lighthouse_audit.outputs.links }}
-          VERCEL_PREVIEW_URL: ${{ needs.get-vercel-preview.outputs.url }}
+          VERCEL_PREVIEW_URL: ${{ steps.deployment.outputs.url }}
         with:
           # Run as a separate file so we do not have to inline all of our formatting logic.
           # See https://github.com/actions/github-script#run-a-separate-file for more info.

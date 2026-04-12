@@ -1,0 +1,45 @@
+@reference "../../../styles/index.css";
+
+.header {
+  @apply flex
+    items-start
+    gap-1;
+}
+
+.attribute {
+  @apply font-ibm-plex-mono
+    inline-flex
+    flex-wrap
+    items-center
+    gap-1
+    text-sm
+    font-semibold;
+
+  .longName {
+    @apply break-all
+      sm:break-keep;
+  }
+
+  &.return {
+    @apply font-open-sans
+      shrink-0;
+
+    svg {
+      @apply size-4;
+    }
+  }
+}
+
+.type {
+  @apply font-ibm-plex-mono
+    inline-flex
+    flex-wrap
+    gap-0.5
+    text-sm
+    break-all;
+
+  a {
+    @apply text-green-700
+      dark:text-green-400;
+  }
+}

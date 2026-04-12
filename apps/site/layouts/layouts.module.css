@@ -1,12 +1,12 @@
 @reference "../styles/index.css";
 
 .baseLayout {
-  @apply grid
+  @apply ml:grid
+    ml:grid-cols-[1fr]
+    ml:grid-rows-[auto_1fr_auto]
     h-max
     min-h-full
-    w-full
-    grid-cols-[1fr]
-    grid-rows-[auto_1fr_auto];
+    w-full;
 }
 
 .centeredLayout {
@@ -53,7 +53,7 @@
         }
 
         small {
-          @apply max-xs:text-xs
+          @apply max-ml:text-xs
             text-center
             text-sm
             text-neutral-600
@@ -97,14 +97,14 @@
 .downloadLayout {
   @apply bg-gradient-subtle
     dark:bg-gradient-subtle-dark
-    max-xs:bg-none
-    max-xs:dark:bg-none
+    max-ml:bg-none
+    max-ml:dark:bg-none
     flex
     w-full
     justify-center;
 
   main {
-    @apply max-w-5xl
+    @apply max-w-7xl
       gap-4
       px-4
       py-12
@@ -135,23 +135,25 @@
 }
 
 .contentLayout {
-  @apply max-w-8xl
-    max-xs:m-0
-    max-xs:block
+  @apply max-w-10xl
+    max-ml:m-0
+    3xl:grid-cols-[--spacing(80)_1fr_--spacing(80)]
+    ml:grid-cols-[0_1fr_--spacing(56)]
+    ml:grid
     mx-auto
-    grid
+    block
     w-full
     grid-rows-[1fr]
-    sm:grid-cols-[1fr_theme(spacing.52)]
-    xl:grid-cols-[1fr_theme(spacing.80)];
+    xl:grid-cols-[--spacing(56)_1fr_--spacing(64)]
+    2xl:grid-cols-[--spacing(72)_1fr_--spacing(72)];
 
-  > *:nth-child(1) {
+  > *:nth-child(2) {
     @apply bg-gradient-subtle
       dark:bg-gradient-subtle-dark
-      max-xs:border-l-0
-      max-xs:bg-none
-      max-xs:pb-4
-      max-xs:dark:bg-none
+      max-ml:border-l-0
+      max-ml:bg-none
+      max-ml:pb-4
+      max-ml:dark:bg-none
       flex
       w-full
       justify-center
@@ -164,17 +166,16 @@
       dark:border-l-neutral-900;
 
     main {
-      @apply max-w-[660px]
-        gap-4
-        [overflow-wrap:_anywhere];
+      @apply gap-4
+        wrap-anywhere;
     }
   }
 
-  > *:nth-child(2) {
-    @apply xs:mt-0
-      xs:max-w-xs
-      xs:border-l
-      xs:border-t-0
+  > *:nth-child(3) {
+    @apply ml:mt-0
+      ml:max-w-xs
+      ml:border-l
+      ml:border-t-0
       mt-8
       border-t;
   }

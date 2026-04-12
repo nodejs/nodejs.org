@@ -60,6 +60,8 @@ export const getArticles = async () => {
   // Read content + metadata
   return Promise.all(
     files
+      // Exclude blog posts: they tend to surface in feature searches and
+      // direct users to a release announcement rather than the actual docs.
       .filter(path => !path.startsWith('blog'))
       .map(async path => ({
         content: await readFile(join(root, path), 'utf8'),

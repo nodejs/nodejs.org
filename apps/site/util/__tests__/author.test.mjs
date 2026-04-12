@@ -55,10 +55,10 @@ describe('getAuthorWithId', () => {
     const result = getAuthorWithId(['nodejs'], true);
     assert.deepEqual(result, [
       {
-        name: 'Node.js Technical Steering Committee',
+        name: 'Node.js Release Working Group',
         nickname: 'nodejs',
-        fallback: 'NJTSC',
-        url: 'https://github.com/nodejs/tsc',
+        fallback: 'NJRWG',
+        url: 'https://github.com/nodejs/release',
         image: 'https://avatars.githubusercontent.com/nodejs',
       },
     ]);

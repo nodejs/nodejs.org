@@ -47,4 +47,19 @@ export const Medium: Story = {
   },
 };
 
+export const Circular: Story = {
+  args: {
+    children: 'D',
+    size: 'small',
+    kind: 'error',
+  },
+};
+
+export const MediumCircular: Story = {
+  args: {
+    children: 'E',
+    kind: 'warning',
+  },
+};
+
 export default { component: Badge, args: { children: 'Badge' } } as Meta;

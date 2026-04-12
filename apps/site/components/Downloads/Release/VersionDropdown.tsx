@@ -2,7 +2,7 @@
 
 import WithNoScriptSelect from '@node-core/ui-components/Common/Select/NoScriptSelect';
 import { useLocale, useTranslations } from 'next-intl';
-import { useContext } from 'react';
+import { use } from 'react';
 
 import { redirect, usePathname } from '#site/navigation';
 import {
@@ -25,8 +25,8 @@ const getDropDownStatus = (version: string, status: string) => {
 };
 
 const VersionDropdown: FC = () => {
-  const { releases } = useContext(ReleasesContext);
-  const { release, setVersion } = useContext(ReleaseContext);
+  const { releases } = use(ReleasesContext);
+  const { release, setVersion } = use(ReleaseContext);
   const t = useTranslations();
   const locale = useLocale();
   const pathname = usePathname();

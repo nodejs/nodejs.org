@@ -31,7 +31,7 @@ const WithBlogCategories: FC<WithBlogCategoriesProps> = ({
         tabs={categories}
         activeTab={blogData.category}
       >
-        <div className="max-xs:grid-cols-[1fr] grid grid-cols-[repeat(auto-fill,minmax(--spacing(80),1fr))] [grid-gap:--spacing(12)_--spacing(8)]">
+        <div className="max-ml:grid-cols-[1fr] grid grid-cols-[repeat(auto-fill,minmax(--spacing(80),1fr))] [grid-gap:--spacing(12)_--spacing(8)]">
           {blogData.posts.map(post => (
             <BlogPostCard
               key={post.slug}

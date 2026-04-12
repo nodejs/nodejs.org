@@ -50,6 +50,10 @@
       size-5;
   }
 
+  .content {
+    @apply wrap-anywhere;
+  }
+
   &.info {
     @apply bg-info-600;
 

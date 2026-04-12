@@ -21,35 +21,9 @@ permissions:
   actions: read
 
 jobs:
-  get-vercel-preview:
-    name: Get Vercel Preview
-    runs-on: ubuntu-latest
-    outputs:
-      deployment_found: ${{ steps.set_outputs.outputs.deployment_found }}
-      url: ${{ steps.set_outputs.outputs.url }}
-    steps:
-      - name: Capture Vercel Preview
-        id: check_deployment
-        uses: patrickedqvist/wait-for-vercel-preview@06c79330064b0e6ef7a2574603b62d3c98789125 # v1.3.2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          max_timeout: 300 # timeout after 5 minutes
-          check_interval: 10 # check every 10 seconds
-        continue-on-error: true
-      - name: Set Outputs
-        if: always()
-        id: set_outputs
-        run: |
-          if [[ -z "${{ steps.check_deployment.outputs.url }}" ]]; then
-            echo "deployment_found=false" >> $GITHUB_OUTPUT
-          else
-            echo "deployment_found=true" >> $GITHUB_OUTPUT
-            echo "url=${{ steps.check_deployment.outputs.url }}" >> $GITHUB_OUTPUT
-          fi
-
   playwright:
-    needs: get-vercel-preview
-    if: needs.get-vercel-preview.outputs.deployment_found == 'true'
+    # We want to skip on Dependabot PRs
+    if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
     name: Playwright Tests
     runs-on: ubuntu-latest
 
@@ -60,6 +34,14 @@ jobs:
           use-version-file: true
           fetch-depth: 2
 
+      - name: Capture Vercel Preview
+        id: deployment
+        uses: patrickedqvist/wait-for-vercel-preview@d7982701e6fcd3ae073bff929e408e004404d38d # v1.3.3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 300 # timeout after 5 minutes
+          check_interval: 10 # check every 10 seconds
+
       - name: Get Playwright version
         id: playwright-version
         working-directory: apps/site
@@ -67,7 +49,7 @@ jobs:
 
       - name: Cache Playwright browsers
         id: playwright-cache
-        uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}
@@ -80,11 +62,11 @@ jobs:
         working-directory: apps/site
         run: node --run playwright
         env:
-          PLAYWRIGHT_BASE_URL: ${{ needs.get-vercel-preview.outputs.url }}
+          PLAYWRIGHT_BASE_URL: ${{ steps.deployment.outputs.url }}
 
       - name: Upload Playwright test results
         if: always()
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
           name: playwright-report
           path: apps/site/playwright-report/

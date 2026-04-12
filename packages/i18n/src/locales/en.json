@@ -1,12 +1,26 @@
 {
   "components": {
+    "header": {
+      "buttons": {
+        "theme": "Select theme",
+        "themeSystem": "System",
+        "themeLightMode": "Light",
+        "themeDarkMode": "Dark"
+      }
+    },
     "containers": {
       "footer": {
+        "legal": "Copyright <foundationName>OpenJS Foundation</foundationName> and Node.js contributors. All rights reserved. The <foundationName>OpenJS Foundation</foundationName> has registered trademarks and uses trademarks.  For a list of trademarks of the <foundationName>OpenJS Foundation</foundationName>, please see our <trademarkPolicy>Trademark Policy</trademarkPolicy> and <trademarkList>Trademark List</trademarkList>.  Trademarks and logos not indicated on the <trademarkList>list of OpenJS Foundation trademarks</trademarkList> are trademarks™ or registered® trademarks of their respective holders. Use of them does not imply any affiliation with or endorsement by them.",
         "links": {
-          "openJSFoundation": "OpenJS Foundation",
-          "trademarkPolicy": "Trademark Policy",
+          "foundationName": "OpenJS Foundation",
+          "aiCodingAssistantsPolicy": "AI Coding Assistants Policy",
+          "termsOfUse": "Terms of Use",
           "privacyPolicy": "Privacy Policy",
+          "bylaws": "Bylaws",
           "codeOfConduct": "Code of Conduct",
+          "trademarkPolicy": "Trademark Policy",
+          "trademarkList": "Trademark List",
+          "cookiePolicy": "Cookie Policy",
           "security": "Security Policy"
         },
         "releasePills": {
@@ -32,111 +46,6 @@
       }
     },
     "navigation": {
-      "learn": {
-        "gettingStarted": {
-          "links": {
-            "gettingStarted": "Getting Started",
-            "introductionToNodejs": "Introduction to Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "How much JavaScript do you need to know to use Node.js?",
-            "differencesBetweenNodejsAndTheBrowser": "Differences between Node.js and the Browser",
-            "theV8JavascriptEngine": "The V8 JavaScript Engine",
-            "anIntroductionToTheNpmPackageManager": "An introduction to the npm package manager",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) and beyond",
-            "debugging": "Debugging Node.js",
-            "fetch": "Fetching data with Node.js",
-            "websocket": "WebSocket client with Node.js",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, the difference between development and production",
-            "profiling": "Profiling Node.js Applications",
-            "nodejsWithWebassembly": "Node.js with WebAssembly",
-            "securityBestPractices": "Security Best Practices",
-            "userlandMigrations": "Introduction to Userland Migrations"
-          }
-        },
-        "commandLine": {
-          "links": {
-            "commandLine": "Command Line",
-            "runNodejsScriptsFromTheCommandLine": "Run Node.js scripts from the command line",
-            "howToUseTheNodejsRepl": "How to use the Node.js REPL",
-            "outputToTheCommandLineUsingNodejs": "Output to the command line using Node.js",
-            "acceptInputFromTheCommandLineInNodejs": "Accept input from the command line in Node.js",
-            "howToReadEnvironmentVariablesFromNodejs": "How to read environment variables from Node.js"
-          }
-        },
-        "http": {
-          "links": {
-            "http": "HTTP",
-            "anatomyOfAnHttpTransaction": "Anatomy of an HTTP Transaction",
-            "enterpriseNetworkConfiguration": "Enterprise Network Configuration"
-          }
-        },
-        "manipulatingFiles": {
-          "links": {
-            "manipulatingFiles": "Manipulating Files",
-            "nodejsFileStats": "Node.js file stats",
-            "nodejsFilePaths": "Node.js File Paths",
-            "readingFilesWithNodejs": "Reading files with Node.js",
-            "writingFilesWithNodejs": "Writing files with Node.js",
-            "workingWithFileDescriptorsInNodejs": "Working with file descriptors in Node.js",
-            "workingWithFoldersInNodejs": "Working with folders in Node.js",
-            "workingWithDifferentFilesystems": "How to work with Different Filesystems"
-          }
-        },
-        "asynchronousWork": {
-          "links": {
-            "asynchronousWork": "Asynchronous Work",
-            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript Asynchronous Programming and Callbacks",
-            "asynchronousFlowControl": "Asynchronous flow control",
-            "discoverPromisesInNodejs": "Discover Promises in Node.js",
-            "discoverJavascriptTimers": "Discover JavaScript Timers",
-            "overviewOfBlockingVsNonBlocking": "Overview of Blocking vs Non-Blocking",
-            "eventLoopTimersAndNexttick": "The Node.js Event Loop",
-            "theNodejsEventEmitter": "The Node.js Event Emitter",
-            "understandingProcessnexttick": "Understanding process.nextTick()",
-            "understandingSetimmediate": "Understanding setImmediate()",
-            "dontBlockTheEventLoop": "Don't Block the Event Loop"
-          }
-        },
-        "typescript": {
-          "links": {
-            "typescript": "TypeScript",
-            "introduction": "Introduction to TypeScript",
-            "runNatively": "Running TypeScript Natively",
-            "transpile": "Running TypeScript code using transpilation",
-            "run": "Running TypeScript with a runner",
-            "publishingTSPackage": "Publishing a TypeScript package"
-          }
-        },
-        "modules": {
-          "links": {
-            "modules": "Modules",
-            "howToUseStreams": "How to use streams",
-            "backpressuringInStreams": "Backpressuring in Streams",
-            "publishingAPackage": "Publishing a package",
-            "publishingNodeApiModules": "How to publish a Node-API package",
-            "abiStability": "ABI Stability"
-          }
-        },
-        "diagnostics": {
-          "links": {
-            "diagnostics": "Diagnostics",
-            "userJourney": "User Journey",
-            "memory": "Memory",
-            "understandingAndTuningMemory": "Understanding and Tuning Memory",
-            "liveDebugging": "Live Debugging",
-            "poorPerformance": "Poor Performance",
-            "flameGraphs": "Flame Graphs"
-          }
-        },
-        "testRunner": {
-          "links": {
-            "testRunner": "Test Runner",
-            "introduction": "Discovering Node.js's test runner",
-            "usingTestRunner": "Using Node.js's test runner",
-            "mocking": "Mocking in tests",
-            "collectingCodeCoverage": "Collecting code coverage in Node.js"
-          }
-        }
-      },
       "about": {
         "links": {
           "about": "About Node.js",
@@ -264,10 +173,6 @@
       },
       "languageDropdown": {
         "label": "Choose Language"
-      },
-      "themeToggle": {
-        "light": "Switch to Light Mode",
-        "dark": "Switch to Dark Mode"
       },
       "skipToContent": "Skip to content"
     },

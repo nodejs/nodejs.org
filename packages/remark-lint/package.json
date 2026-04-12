@@ -1,7 +1,7 @@
 {
   "name": "@node-core/remark-lint",
   "type": "module",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "exports": {
     ".": "./src/index.mjs",
     "./api": "./src/api.mjs"
@@ -20,7 +20,7 @@
     "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --test \"**/*.test.mjs\""
   },
   "dependencies": {
-    "@nodejs/doc-kit": "github:nodejs/doc-kit#be7fc307395005ea362d035c43e3818650bf075f",
+    "@node-core/doc-kit": "^1.2.0",
     "remark-gfm": "^4.0.1",
     "remark-lint-blockquote-indentation": "^4.0.1",
     "remark-lint-checkbox-character-style": "^5.0.1",
@@ -50,14 +50,14 @@
     "remark-lint-table-pipes": "^5.0.1",
     "remark-lint-unordered-list-marker-style": "^4.0.1",
     "remark-preset-lint-recommended": "^7.0.1",
-    "semver": "^7.7.3",
+    "semver": "^7.7.4",
     "unified-lint-rule": "^3.0.1",
-    "unist-util-visit": "^5.0.0",
-    "yaml": "^2.8.2"
+    "unist-util-visit": "^5.1.0",
+    "yaml": "^2.8.3"
   },
   "devDependencies": {
     "cross-env": "catalog:",
-    "dedent": "^1.7.1",
+    "dedent": "^1.7.2",
     "remark-parse": "^11.0.0",
     "unified": "^11.0.5"
   }

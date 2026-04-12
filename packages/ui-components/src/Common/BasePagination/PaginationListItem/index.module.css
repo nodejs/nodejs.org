@@ -1,5 +1,9 @@
 @reference "../../../styles/index.css";
 
+.listItemWrapper {
+  @apply mt-0;
+}
+
 .listItem,
 .listItem:link,
 .listItem:active {

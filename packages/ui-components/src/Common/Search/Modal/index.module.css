@@ -24,14 +24,12 @@
     p-1.5
     text-neutral-900
     hover:bg-neutral-100
-    motion-safe:transition-colors
     dark:border-neutral-900
     dark:bg-neutral-950
     dark:text-neutral-200;
 
   &:hover {
     @apply bg-neutral-100
-      motion-safe:transition-colors
       motion-safe:duration-300
       dark:bg-neutral-900;
 
@@ -99,9 +97,14 @@
     lg:bottom-auto
     lg:h-auto
     lg:max-w-3xl
+    lg:min-w-lg
     lg:bg-neutral-100
     dark:bg-zinc-950
     lg:dark:bg-neutral-950;
+
+  > section {
+    @apply lg:min-w-lg;
+  }
 }
 
 .modalContent {
@@ -110,7 +113,6 @@
     w-screen
     flex-col
     border-neutral-200
-    md:max-w-[42rem]
     lg:h-auto
     lg:max-h-[70vh]
     lg:w-auto

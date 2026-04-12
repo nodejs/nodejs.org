@@ -5,11 +5,14 @@ updates:
     schedule:
       interval: monthly
     labels:
+      - 'dependencies'
+      - 'github_actions'
       - 'github_actions:pull-request'
+      - 'auto-merge'
     commit-message:
       prefix: meta
     cooldown:
-      default-days: 3
+      default-days: 7
     open-pull-requests-limit: 10
 
   - package-ecosystem: npm
@@ -18,11 +21,14 @@ updates:
     schedule:
       interval: monthly
     labels:
+      - 'dependencies'
+      - 'javascript'
       - 'github_actions:pull-request'
+      - 'auto-merge'
     commit-message:
       prefix: meta
     cooldown:
-      default-days: 3
+      default-days: 7
     groups:
       lint:
         patterns:

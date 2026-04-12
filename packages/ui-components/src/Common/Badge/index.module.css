@@ -37,4 +37,20 @@
   &.neutral {
     @apply bg-neutral-800;
   }
+
+  &.circular {
+    @apply font-ibm-plex-mono
+      inline-flex
+      items-center
+      justify-center
+      p-0;
+
+    &.small {
+      @apply size-5;
+    }
+
+    &.medium {
+      @apply size-7;
+    }
+  }
 }

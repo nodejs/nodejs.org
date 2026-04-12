@@ -1,7 +1,9 @@
+import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 
-import { LinkLike } from '#ui/types';
+import { CODE_LIKE_TYPES } from '#ui/constants';
 
+import type { LinkLike } from '#ui/types';
 import type { Heading } from '@vcarl/remark-headings';
 import type { ComponentProps, FC } from 'react';
 
@@ -35,13 +37,17 @@ const TableOfContents: FC<TableOfContentsProps> = ({
 
   return (
     <details className={classNames(styles.details, className)} {...props}>
-      <summary className={styles.summary}>{summaryTitle}</summary>
+      <summary className={styles.summary}>
+        <ChevronRightIcon className={styles.icon} /> {summaryTitle}
+      </summary>
       <ul className={styles.list}>
         {filteredHeadings.map((head, index) => (
           <li key={head.data?.id ?? index}>
             <Component
               href={head.data?.id && `#${head.data.id}`}
-              className={classNames(styles.link, depthClasses[head.depth])}
+              className={classNames(styles.link, depthClasses[head.depth], {
+                [styles.codeLink]: CODE_LIKE_TYPES.has(head.data?.type ?? ''),
+              })}
             >
               {head.value}
             </Component>

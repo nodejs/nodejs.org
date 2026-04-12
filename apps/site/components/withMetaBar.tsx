@@ -7,7 +7,8 @@ import { useFormatter, useLocale, useTranslations } from 'next-intl';
 
 import Link from '#site/components/Link';
 import WithAvatarGroup from '#site/components/withAvatarGroup';
-import { useClientContext, useMediaQuery } from '#site/hooks/client';
+import useClientContext from '#site/hooks/useClientContext';
+import useMediaQuery from '#site/hooks/useMediaQuery';
 import { DEFAULT_DATE_FORMAT } from '#site/next.calendar.constants.mjs';
 import { TRANSLATION_URL } from '#site/next.constants.mjs';
 import { getGitHubBlobUrl } from '#site/util/github';
@@ -18,7 +19,9 @@ const WithMetaBar: FC = () => {
   const { headings, readingTime, frontmatter, filename } = useClientContext();
   const formatter = useFormatter();
   const lastUpdated = frontmatter.date
-    ? formatter.dateTime(new Date(frontmatter.date), DEFAULT_DATE_FORMAT)
+    ? // "frontmatter.date" is deterministic
+      // eslint-disable-next-line @eslint-react/purity
+      formatter.dateTime(new Date(frontmatter.date), DEFAULT_DATE_FORMAT)
     : undefined;
   const readingTimeText = formatter.number(readingTime.minutes, {
     style: 'unit',
@@ -35,10 +38,7 @@ const WithMetaBar: FC = () => {
   // Since we cannot show the same number of avatars in Mobile / Tablet
   // resolution as we do on desktop and there is overflow, we are adjusting
   // the number of avatars manually for the resolutions below
-  const isMobileResolution = useMediaQuery('(max-width: 670px)');
-  const isTabletResolution = useMediaQuery(
-    '(min-width: 670px) and (max-width: 1280px)'
-  );
+  const isSmallerThanDesktop = useMediaQuery('(max-width: 1280px)');
 
   return (
     <MetaBar
@@ -54,7 +54,7 @@ const WithMetaBar: FC = () => {
           )]: (
             <WithAvatarGroup
               usernames={usernames}
-              limit={isMobileResolution ? 7 : isTabletResolution ? 5 : 9}
+              limit={isSmallerThanDesktop ? 5 : 8}
             />
           ),
         }),

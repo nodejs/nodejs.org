@@ -2,7 +2,7 @@
 
 import { createContext } from 'react';
 
-import { useDetectOS } from '#site/hooks/client';
+import useDetectOS from '#site/hooks/useDetectOS';
 import { assignClientContext } from '#site/util/context';
 
 import type { ClientSharedServerContext } from '#site/types';
@@ -23,8 +23,8 @@ export const MatterProvider: FC<MatterProviderProps> = ({
   const os = useDetectOS();
 
   return (
-    <MatterContext.Provider value={assignClientContext({ ...os, ...data })}>
+    <MatterContext value={assignClientContext({ ...os, ...data })}>
       {children}
-    </MatterContext.Provider>
+    </MatterContext>
   );
 };

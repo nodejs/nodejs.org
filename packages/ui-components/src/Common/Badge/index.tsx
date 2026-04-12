@@ -20,7 +20,16 @@ const Badge: FC<PropsWithChildren<BadgeProps>> = ({
   ...props
 }) => (
   <span
-    className={classNames(styles.badge, styles[kind], styles[size], className)}
+    className={classNames(
+      styles.badge,
+      styles[kind],
+      styles[size],
+      {
+        [styles.circular]:
+          typeof children === 'string' && children.length === 1,
+      },
+      className
+    )}
     {...props}
   >
     {children}

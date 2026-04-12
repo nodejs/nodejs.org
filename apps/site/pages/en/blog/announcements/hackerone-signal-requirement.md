@@ -1,9 +1,13 @@
 ---
-date: 2026-01-21T12:00:00.000Z
+date: 2026-02-19T12:00:00.000Z
 category: announcements
 title: New HackerOne Signal Requirement for Vulnerability Reports
 layout: blog-post
 author: The Node.js Project
+---
+
+**UPDATE 2026-02-19**: New researchers without signal can no longer submit reports through HackerOne. If you are a new researcher and would like to report a potential vulnerability, please reach out to the [Node.js security release stewards](https://github.com/nodejs/node?tab=readme-ov-file#security-release-stewards) through the [OpenJS Foundation Slack](https://slack-invite.openjsf.org/).
+
 ---
 
 We have updated our [HackerOne program](https://hackerone.com/nodejs) to require a **Signal of 1.0 or
@@ -24,8 +28,7 @@ submissions.
 
 - **New researchers or researchers with [signal][Signal] >= 1.0**: You can continue reporting vulnerabilities through HackerOne as usual
 - **Those below the threshold**: You can still reach the security team through the
-  [OpenJS Foundation Slack](https://slack-invite.openjsf.org/). Contact us there to discuss potential
-  vulnerabilities
+  [OpenJS Foundation Slack](https://slack-invite.openjsf.org/) (channel: `#nodejs-security-wg` for help). Contact us directly using direct messages there to discuss potential vulnerabilities. You can find the users listed in [security release stewards](https://github.com/nodejs/node#security-release-stewards).
 
 ## About HackerOne Signal
 

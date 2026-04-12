@@ -33,9 +33,9 @@ permissions:
   contents: read
   actions: read
 
-env:
-  # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
-  TURBO_ARGS: --cache-dir=.turbo/cache
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   lint:
@@ -49,7 +49,7 @@ jobs:
           use-version-file: true
 
       - name: Restore Lint Cache
-        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+        uses: actions/cache/restore@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: |
             .turbo/cache
@@ -73,7 +73,7 @@ jobs:
         if: |
           (github.event_name == 'push' || github.event_name == 'merge_group') ||
           (github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'chore/crowdin')
-        run: node_modules/.bin/turbo lint lint:types prettier ${{ env.TURBO_ARGS }}
+        run: node_modules/.bin/turbo lint lint:types prettier --cache-dir=.turbo/cache
 
       - name: Save Lint Cache
         # We only want to save caches on `push` events or `pull_request_target` events
@@ -86,7 +86,7 @@ jobs:
           (github.event_name == 'pull_request' &&
             startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
             github.event.pull_request.head.ref != 'chore/crowdin')
-        uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+        uses: actions/cache/save@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: |
             .turbo/cache
@@ -108,7 +108,7 @@ jobs:
       - name: Run Unit Tests
         # We want to run Unit Tests in every circumstance, including Crowdin PRs and Dependabot PRs to ensure
         # that changes to dependencies or translations don't break the Unit Tests
-        run: node --run test:ci -- ${{ env.TURBO_ARGS }}
+        run: node --run test:ci -- --cache-dir=.turbo/cache
 
       - name: Upload test coverage to Codecov
         if: ${{ !cancelled() && github.event_name != 'merge_group' }}

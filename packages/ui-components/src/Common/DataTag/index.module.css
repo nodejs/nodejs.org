@@ -1,7 +1,8 @@
 @reference "../../styles/index.css";
 
 .dataTag {
-  @apply flex
+  @apply font-ibm-plex-mono
+    flex
     items-center
     justify-center
     rounded-full

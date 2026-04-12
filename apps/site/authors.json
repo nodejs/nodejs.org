@@ -158,6 +158,11 @@
     "name": "Julián Duque",
     "website": "https://github.com/julianduque"
   },
+  "Node.js Releasers": {
+    "id": "nodejs",
+    "name": "Node.js Release Working Group",
+    "website": "https://github.com/nodejs/release"
+  },
   "Node.js Technical Steering Committee": {
     "id": "nodejs",
     "name": "Node.js Technical Steering Committee",
@@ -221,6 +226,11 @@
     "id": "richardlau",
     "name": "Richard Lau",
     "website": "https://github.com/richardlau"
+  },
+  "Richie McColl": {
+    "id": "richiemccoll",
+    "name": "Richie McColl",
+    "website": "https://github.com/richiemccoll"
   },
   "Robin Bender Ginn": {
     "id": "rginn",

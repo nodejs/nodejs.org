@@ -107,6 +107,7 @@ export const THEME_STORAGE_KEY = 'theme';
  * @see https://github.com/nodejs/nodejs.org/issues/5813 for more context
  */
 export const EXTERNAL_LINKS_SITEMAP = [
+  'https://ai-coding-assistants-policy.openjsf.org/',
   'https://terms-of-use.openjsf.org/',
   'https://privacy-policy.openjsf.org/',
   'https://bylaws.openjsf.org/',

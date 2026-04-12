@@ -16,9 +16,10 @@ import SearchButton from '#site/components/Common/Searchbox';
 import Link from '#site/components/Link';
 import WithBanner from '#site/components/withBanner';
 import WithNodejsLogo from '#site/components/withNodejsLogo';
-import { useSiteNavigation } from '#site/hooks/generic';
+import useSiteNavigation from '#site/hooks/useSiteNavigation';
 import { useRouter, usePathname } from '#site/navigation.mjs';
 
+import type { Theme } from '@node-core/ui-components/Common/ThemeToggle';
 import type { SimpleLocaleConfig } from '@node-core/ui-components/types';
 import type { FC } from 'react';
 
@@ -34,20 +35,12 @@ const ThemeToggle = dynamic(
 
 const WithNavBar: FC = () => {
   const { navigationItems } = useSiteNavigation();
-  const { resolvedTheme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const { replace } = useRouter();
   const pathname = usePathname();
   const t = useTranslations();
 
   const locale = useLocale();
-
-  const toggleCurrentTheme = () =>
-    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
-
-  const themeToggleAriaLabel =
-    resolvedTheme === 'dark'
-      ? t('components.common.themeToggle.light')
-      : t('components.common.themeToggle.dark');
 
   const changeLanguage = (locale: SimpleLocaleConfig) =>
     replace(pathname!, { locale: locale.code });
@@ -76,8 +69,14 @@ const WithNavBar: FC = () => {
         <SearchButton />
 
         <ThemeToggle
-          onClick={toggleCurrentTheme}
-          aria-label={themeToggleAriaLabel}
+          onChange={setTheme}
+          currentTheme={(theme as Theme) ?? 'system'}
+          ariaLabel={t('components.header.buttons.theme')}
+          themeLabels={{
+            system: t('components.header.buttons.themeSystem'),
+            light: t('components.header.buttons.themeLightMode'),
+            dark: t('components.header.buttons.themeDarkMode'),
+          }}
         />
 
         <LanguageDropdown

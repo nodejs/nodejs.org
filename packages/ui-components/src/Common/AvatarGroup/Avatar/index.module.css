@@ -1,8 +1,8 @@
 @reference "../../../styles/index.css";
 
 .item {
-  @apply xs:max-h-10
-    xs:max-w-10
+  @apply ml:max-h-10
+    ml:max-w-10
     flex
     h-full
     max-h-12
@@ -25,13 +25,13 @@
   @apply size-8;
 
   .wrapper {
-    @apply max-xs:block
-      max-xs:py-0;
+    @apply max-ml:block
+      max-ml:py-0;
   }
 }
 
 .small {
-  @apply xs:size-8
+  @apply ml:size-8
     size-10;
 }
 

@@ -3,8 +3,8 @@ import {
   GITHUB_GRAPHQL_URL,
   GITHUB_API_KEY,
 } from '#site/next.constants.mjs';
+import { fetchWithRetry } from '#site/next.fetch.mjs';
 import { shuffle } from '#site/util/array';
-import { fetchWithRetry } from '#site/util/fetch';
 
 /**
  * Fetches supporters data from Open Collective API, filters active backers,
@@ -20,10 +20,14 @@ async function fetchOpenCollectiveData() {
   const members = payload
     .filter(({ role, isActive }) => role === 'BACKER' && isActive)
     .sort((a, b) => b.totalAmountDonated - a.totalAmountDonated)
-    .map(({ name, image, profile }) => ({
+    .map(({ name, image, profile, website }) => ({
       name,
       image,
-      url: profile,
+      url: website,
+      // If profile starts with the guest- prefix, it's a non-existing account
+      profile: profile.startsWith('https://opencollective.com/guest-')
+        ? undefined
+        : profile,
       source: 'opencollective',
     }));
 

@@ -20,11 +20,21 @@ const testCases = [
     expected: ['Type reference must be wrapped in "{}"; saw "<number>"'],
   },
   {
+    name: 'miswrapped reference inside link',
+    input: '[<number>]()',
+    expected: ['Type reference must be wrapped in "{}"; saw "<number>"'],
+  },
+  {
     name: 'multiple references',
     input: 'Psst, are you a {string | boolean}',
     expected: [
       'Type reference should be separated by "|", without spaces; saw "{string | boolean}"',
     ],
+  },
+  {
+    name: 'newline, multiple references',
+    input: 'Psst, are you a {string|\nboolean}',
+    expected: [],
   },
   {
     name: 'invalid references',
