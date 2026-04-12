@@ -112,7 +112,7 @@ async function fetchOpenCollectiveData() {
  * Fetches supporters data from Github API, filters active backers,
  * and maps it to the Supporters type.
  *
- * @returns {Promise<Array<import('#site/types/supporters').GithubSponsorSupporter>>} Array of supporters
+ * @returns {Promise<Array<import('#site/types/supporters').GitHubSponsorSupporter>>} Array of supporters
  */
 async function fetchGithubSponsorsData() {
   if (!GITHUB_READ_API_KEY) {
@@ -215,18 +215,27 @@ const graphql = async (query, variables = {}) => {
  * Fetches supporters data from Open Collective API and GitHub Sponsors, filters active backers,
  * and maps it to the Supporters type.
  *
- * @returns {Promise<Array<import('#site/types/supporters').OpenCollectiveSupporter | import('#site/types/supporters').GithubSponsorSupporter>>} Array of supporters
+ * @returns {Promise<Array<import('#site/types/supporters').OpenCollectiveSupporter | import('#site/types/supporters').GitHubSponsorSupporter>>} Array of supporters
  */
 async function sponsorsData() {
   const seconds = 300; // Change every 5 minutes
   const seed = Math.floor(Date.now() / (seconds * 1000));
 
-  const sponsors = await Promise.all([
+  const sponsorsResults = await Promise.allSettled([
     fetchGithubSponsorsData(),
     fetchOpenCollectiveData(),
   ]);
 
-  const shuffled = await shuffle(sponsors.flat(), seed);
+  const sponsors = sponsorsResults.flatMap(result => {
+    if (result.status === 'fulfilled') {
+      return result.value;
+    }
+
+    console.error('Supporters data source failed:', result.reason);
+    return [];
+  });
+
+  const shuffled = await shuffle(sponsors, seed);
 
   return shuffled;
 }

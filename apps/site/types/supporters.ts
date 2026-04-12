@@ -7,4 +7,4 @@ export type Supporter<T extends string> = {
 };
 
 export type OpenCollectiveSupporter = Supporter<'opencollective'>;
-export type GithubSponsorSupporter = Supporter<'github'>;
+export type GitHubSponsorSupporter = Supporter<'github'>;
