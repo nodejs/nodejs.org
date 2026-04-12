@@ -56,7 +56,6 @@ jobs:
         env:
           PLAYWRIGHT_RUN_CLOUDFLARE_PREVIEW: true
           PLAYWRIGHT_BASE_URL: http://127.0.0.1:8787
-          GITHUB_READ_API_KEY: ${{ secrets.GITHUB_READ_API_KEY }}
 
       - name: Upload Playwright test results
         if: always()
