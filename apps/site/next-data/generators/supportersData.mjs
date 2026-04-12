@@ -1,7 +1,7 @@
 import {
   OPENCOLLECTIVE_MEMBERS_URL,
   GITHUB_GRAPHQL_URL,
-  GITHUB_API_KEY,
+  GITHUB_READ_API_KEY,
 } from '#site/next.constants.mjs';
 import { fetchWithRetry } from '#site/next.fetch.mjs';
 import { shuffle } from '#site/util/array';
@@ -41,7 +41,7 @@ async function fetchOpenCollectiveData() {
  * @returns {Promise<Array<import('#site/types/supporters').GithubSponsorSupporter>>} Array of supporters
  */
 async function fetchGithubSponsorsData() {
-  if (!GITHUB_API_KEY) {
+  if (!GITHUB_READ_API_KEY) {
     return [];
   }
 
@@ -188,7 +188,7 @@ const graphql = async (query, variables = {}) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${GITHUB_API_KEY}`,
+      Authorization: `Bearer ${GITHUB_READ_API_KEY}`,
     },
     body: JSON.stringify({ query, variables }),
   });

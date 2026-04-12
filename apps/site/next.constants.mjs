@@ -180,7 +180,7 @@ export const ORAMA_CLOUD_PROJECT_ID =
  *
  * Note: This has no NEXT_PUBLIC prefix as it should not be exposed to the Browser.
  */
-export const GITHUB_API_KEY = process.env.NEXT_GITHUB_API_KEY || '';
+export const GITHUB_READ_API_KEY = process.env.NEXT_GITHUB_READ_API_KEY || '';
 
 /**
  * The resource we point people to when discussing internationalization efforts.
