@@ -119,9 +119,16 @@ async function fetchGithubSponsorsData() {
     return [];
   }
 
-  const sponsors = [];
+  const [sponsorships, donations] = await Promise.all([
+    fetchSponsorshipsQuery(),
+    fetchDonationsQuery(),
+  ]);
 
-  // Fetch sponsorship pages
+  return [...sponsorships, ...donations];
+}
+
+async function fetchSponsorshipsQuery() {
+  const sponsors = [];
   let cursor = null;
 
   while (true) {
@@ -156,6 +163,10 @@ async function fetchGithubSponsorsData() {
     cursor = pageInfo.endCursor;
   }
 
+  return sponsors;
+}
+
+async function fetchDonationsQuery() {
   const data = await graphql(DONATIONS_QUERY);
 
   if (data.errors) {
@@ -164,11 +175,11 @@ async function fetchGithubSponsorsData() {
 
   const nodeRes = data.data.organization?.sponsorsActivities;
   if (!nodeRes) {
-    return sponsors;
+    return [];
   }
 
   const { nodes } = nodeRes;
-  const mapped = nodes.map(n => {
+  return nodes.map(n => {
     const s = n.sponsor || n.sponsorEntity || n.sponsorEntity; // support different field names
     return {
       name: s?.name || s?.login || null,
@@ -177,10 +188,6 @@ async function fetchGithubSponsorsData() {
       source: 'github',
     };
   });
-
-  sponsors.push(...mapped);
-
-  return sponsors;
 }
 
 const graphql = async (query, variables = {}) => {
