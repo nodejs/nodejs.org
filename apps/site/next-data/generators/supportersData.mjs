@@ -132,7 +132,10 @@ async function fetchSponsorshipsQuery() {
   let cursor = null;
 
   while (true) {
-    const data = await graphql(SPONSORSHIPS_QUERY, { cursor });
+    const data = await graphql(
+      SPONSORSHIPS_QUERY,
+      cursor ? { cursor } : undefined
+    );
 
     if (data.errors) {
       throw new Error(JSON.stringify(data.errors));
@@ -145,7 +148,7 @@ async function fetchSponsorshipsQuery() {
 
     const { nodes, pageInfo } = nodeRes;
     const mapped = nodes.map(n => {
-      const s = n.sponsor || n.sponsorEntity || n.sponsorEntity; // support different field names
+      const s = n.sponsor || n.sponsorEntity; // support different field names
       return {
         name: s?.name || s?.login || null,
         image: s?.avatarUrl || null,
@@ -180,7 +183,7 @@ async function fetchDonationsQuery() {
 
   const { nodes } = nodeRes;
   return nodes.map(n => {
-    const s = n.sponsor || n.sponsorEntity || n.sponsorEntity; // support different field names
+    const s = n.sponsor || n.sponsorEntity; // support different field names
     return {
       name: s?.name || s?.login || null,
       image: s?.avatarUrl || null,
@@ -191,7 +194,7 @@ async function fetchDonationsQuery() {
 }
 
 const graphql = async (query, variables = {}) => {
-  const res = await fetch(GITHUB_GRAPHQL_URL, {
+  const res = await fetchWithRetry(GITHUB_GRAPHQL_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
