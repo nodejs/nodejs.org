@@ -6,6 +6,81 @@ import {
 import { fetchWithRetry } from '#site/next.fetch.mjs';
 import { shuffle } from '#site/util/array';
 
+const SPONSORSHIPS_QUERY = `
+  query ($cursor: String) {
+    organization(login: "nodejs") {
+      sponsorshipsAsMaintainer(
+        first: 100
+        includePrivate: false
+        after: $cursor
+        activeOnly: false
+      ) {
+        nodes {
+          sponsor: sponsorEntity {
+            ...on User {
+              id: databaseId
+              name
+              login
+              avatarUrl
+              url
+              websiteUrl
+            }
+            ...on Organization {
+              id: databaseId
+              name
+              login
+              avatarUrl
+              url
+              websiteUrl
+            }
+          }
+        }
+        pageInfo {
+          endCursor
+          startCursor
+          hasNextPage
+          hasPreviousPage
+        }
+      }
+    }
+  }
+`;
+
+const DONATIONS_QUERY = `
+  query {
+    organization(login: "nodejs") {
+      sponsorsActivities(first: 100, includePrivate: false) {
+        nodes {
+          id
+          sponsor {
+            ...on User {
+              id: databaseId
+              name
+              login
+              avatarUrl
+              url
+              websiteUrl
+            }
+            ...on Organization {
+              id: databaseId
+              name
+              login
+              avatarUrl
+              url
+              websiteUrl
+            }
+          }
+          timestamp
+          tier: sponsorsTier {
+            monthlyPriceInDollars
+            isOneTime
+          }
+        }
+      }
+    }
+  }
+`;
+
 /**
  * Fetches supporters data from Open Collective API, filters active backers,
  * and maps it to the Supporters type.
@@ -50,8 +125,7 @@ async function fetchGithubSponsorsData() {
   let cursor = null;
 
   while (true) {
-    const query = sponsorshipsQuery(cursor);
-    const data = await graphql(query);
+    const data = await graphql(SPONSORSHIPS_QUERY, { cursor });
 
     if (data.errors) {
       throw new Error(JSON.stringify(data.errors));
@@ -82,8 +156,7 @@ async function fetchGithubSponsorsData() {
     cursor = pageInfo.endCursor;
   }
 
-  const query = donationsQuery();
-  const data = await graphql(query);
+  const data = await graphql(DONATIONS_QUERY);
 
   if (data.errors) {
     throw new Error(JSON.stringify(data.errors));
@@ -108,78 +181,6 @@ async function fetchGithubSponsorsData() {
   sponsors.push(...mapped);
 
   return sponsors;
-}
-
-function sponsorshipsQuery(cursor = null) {
-  return `
-    query {
-        organization(login: "nodejs") {
-            sponsorshipsAsMaintainer (first: 100, includePrivate: false, after: "${cursor}", activeOnly: false) {
-                nodes {
-                    sponsor: sponsorEntity {
-                        ...on User {
-                            id: databaseId,
-                            name,
-                            login,
-                            avatarUrl,
-                            url,
-                            websiteUrl
-                        }
-                        ...on Organization {
-                            id: databaseId,
-                            name,
-                            login,
-                            avatarUrl,
-                            url,
-                            websiteUrl
-                        }
-                    },
-                }
-                pageInfo {
-                    endCursor
-                    startCursor
-                    hasNextPage
-                    hasPreviousPage
-                }
-            }
-        }
-    }`;
-}
-
-function donationsQuery() {
-  return `
-       query {
-            organization(login: "nodejs") {
-                sponsorsActivities (first: 100, includePrivate: false) {
-                    nodes {
-                        id
-                        sponsor {
-                            ...on User {
-                                id: databaseId,
-                                name,
-                                login,
-                                avatarUrl,
-                                url,
-                                websiteUrl
-                            }
-                            ...on Organization {
-                                id: databaseId,
-                                name,
-                                login,
-                                avatarUrl,
-                                url,
-                                websiteUrl
-                            }
-                        },
-                        timestamp
-                        tier: sponsorsTier {
-                            monthlyPriceInDollars,
-                            isOneTime
-                        }
-                    }
-                }
-            }
-        }`;
 }
 
 const graphql = async (query, variables = {}) => {
