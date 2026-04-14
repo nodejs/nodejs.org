@@ -7,17 +7,12 @@ import { Fragment, useState } from 'react';
 import FormattedTime from '#site/components/Common/FormattedTime';
 import LinkWithArrow from '#site/components/Common/LinkWithArrow';
 import Link from '#site/components/Link';
+import { STATUS_KIND_MAP } from '#site/next.constants.mjs';
 
 import type { NodeRelease } from '#site/types';
 import type { FC } from 'react';
 
 import ReleaseModal from '../ReleaseModal';
-
-const BADGE_KIND_MAP = {
-  'End-of-life': 'warning',
-  LTS: 'info',
-  Current: 'default',
-} as const;
 
 type PreviousReleasesTableBodyProps = {
   releaseData: Array<NodeRelease>;
@@ -56,9 +51,8 @@ const PreviousReleasesTableBody: FC<PreviousReleasesTableBodyProps> = ({
             </td>
 
             <td data-label={t('components.downloadReleasesTable.status')}>
-              <Badge kind={BADGE_KIND_MAP[release.status]} size="small">
+              <Badge kind={STATUS_KIND_MAP[release.status]} size="small">
                 {release.status}
-                {release.status === 'End-of-life' ? ' (EoL)' : ''}
               </Badge>
             </td>
 

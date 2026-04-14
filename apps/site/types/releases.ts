@@ -1,4 +1,4 @@
-export type NodeReleaseStatus = 'LTS' | 'Current' | 'End-of-life';
+export type NodeReleaseStatus = 'LTS' | 'Current' | 'EOL';
 
 export type NodeReleaseSource = {
   major: number;

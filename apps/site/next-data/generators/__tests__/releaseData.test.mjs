@@ -19,7 +19,7 @@ describe('generateReleaseData', () => {
     return generateReleaseData();
   };
 
-  it('returns End-of-life when release is on or past EOL date', async t => {
+  it('returns EOL when release is on or past EOL date', async t => {
     const result = await runWithNodevuData(t, '2024-10-18', {
       14: {
         releases: {
@@ -54,7 +54,7 @@ describe('generateReleaseData', () => {
       releaseDate: '2021-04-20',
       initialDate: '2021-04-20',
       modules: '83',
-      status: 'End-of-life',
+      status: 'EOL',
     });
   });
 

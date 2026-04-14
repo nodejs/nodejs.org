@@ -7,7 +7,7 @@ const getNodeReleaseStatus = (latest, eol) => {
   const now = new Date();
 
   if (eol && now >= new Date(eol)) {
-    return 'End-of-life';
+    return 'EOL';
   }
 
   if (latest.lts.isLts) {

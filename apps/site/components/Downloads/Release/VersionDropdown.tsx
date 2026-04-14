@@ -5,36 +5,13 @@ import { useLocale, useTranslations } from 'next-intl';
 import { use } from 'react';
 
 import { redirect, usePathname } from '#site/navigation';
+import { STATUS_KIND_MAP } from '#site/next.constants.mjs';
 import {
   ReleaseContext,
   ReleasesContext,
 } from '#site/providers/releaseProvider';
 
-import type { NodeReleaseStatus } from '#site/types/releases.js';
 import type { FC } from 'react';
-
-const getDropDownStatus = (status: NodeReleaseStatus) => {
-  if (status === 'LTS') {
-    return {
-      label: 'LTS',
-      kind: 'info' as const,
-    };
-  }
-
-  if (status === 'Current') {
-    return {
-      label: 'Current',
-      kind: 'default' as const,
-    };
-  }
-
-  if (status === 'End-of-life') {
-    return {
-      label: 'EoL',
-      kind: 'warning' as const,
-    };
-  }
-};
 
 const VersionDropdown: FC = () => {
   const { releases } = use(ReleasesContext);
@@ -69,7 +46,7 @@ const VersionDropdown: FC = () => {
       values={releases.map(({ status, versionWithPrefix }) => ({
         value: versionWithPrefix,
         label: versionWithPrefix,
-        badge: getDropDownStatus(status),
+        badge: { label: status, kind: STATUS_KIND_MAP[status] },
       }))}
       defaultValue={release.versionWithPrefix}
       onChange={setVersionOrNavigate}
