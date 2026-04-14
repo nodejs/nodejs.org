@@ -13,20 +13,27 @@ import {
 import type { NodeReleaseStatus } from '#site/types/releases.js';
 import type { FC } from 'react';
 
-const getDropDownStatus = (version: string, status: NodeReleaseStatus) => {
+const getDropDownStatus = (status: NodeReleaseStatus) => {
   if (status === 'LTS') {
-    return `${version} (LTS)`;
+    return {
+      label: 'LTS',
+      kind: 'info' as const,
+    };
   }
 
   if (status === 'Current') {
-    return `${version} (Current)`;
+    return {
+      label: 'Current',
+      kind: 'default' as const,
+    };
   }
 
   if (status === 'End-of-life') {
-    return `${version} (EoL)`;
+    return {
+      label: 'EoL',
+      kind: 'warning' as const,
+    };
   }
-
-  return version;
 };
 
 const VersionDropdown: FC = () => {
@@ -61,7 +68,8 @@ const VersionDropdown: FC = () => {
       ariaLabel={t('layouts.download.dropdown.version')}
       values={releases.map(({ status, versionWithPrefix }) => ({
         value: versionWithPrefix,
-        label: getDropDownStatus(versionWithPrefix, status),
+        label: versionWithPrefix,
+        badge: getDropDownStatus(status),
       }))}
       defaultValue={release.versionWithPrefix}
       onChange={setVersionOrNavigate}

@@ -5,6 +5,7 @@ import * as SelectPrimitive from '@radix-ui/react-select';
 import classNames from 'classnames';
 import { useEffect, useId, useMemo, useState } from 'react';
 
+import Badge, { type BadgeKind } from '#ui/Common/Badge';
 import Skeleton from '#ui/Common/Skeleton';
 
 import type { FormattedMessage, LinkLike } from '#ui/types';
@@ -18,6 +19,10 @@ export type SelectValue<T extends string> = {
   label: FormattedMessage | string;
   value: T;
   iconImage?: ReactElement<SVGSVGElement>;
+  badge?: {
+    label: FormattedMessage | string;
+    kind?: BadgeKind;
+  };
   disabled?: boolean;
 };
 
@@ -91,7 +96,7 @@ const Select = <T extends string>({
           </SelectPrimitive.Label>
         )}
 
-        {items.map(({ value, label, iconImage, disabled }) => (
+        {items.map(({ value, label, iconImage, badge, disabled }) => (
           <SelectPrimitive.Item
             key={value}
             value={value}
@@ -101,6 +106,11 @@ const Select = <T extends string>({
             <SelectPrimitive.ItemText>
               {iconImage}
               <span>{label}</span>
+              {badge && (
+                <Badge size="small" kind={badge.kind} className={styles.badge}>
+                  {badge.label}
+                </Badge>
+              )}
             </SelectPrimitive.ItemText>
           </SelectPrimitive.Item>
         ))}
@@ -151,6 +161,15 @@ const Select = <T extends string>({
                 <>
                   {currentItem.iconImage}
                   <span>{currentItem.label}</span>
+                  {currentItem.badge && (
+                    <Badge
+                      size="small"
+                      kind={currentItem.badge.kind}
+                      className={styles.badge}
+                    >
+                      {currentItem.badge.label}
+                    </Badge>
+                  )}
                 </>
               )}
             </SelectPrimitive.Value>
