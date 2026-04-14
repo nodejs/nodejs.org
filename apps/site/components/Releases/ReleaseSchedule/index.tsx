@@ -9,7 +9,6 @@ const MONTH = 30 * 24 * 3_600_000;
 const ReleaseSchedule: FC = async () => {
   const schedule = await provideReleaseSchedule();
 
-  // eslint-disable-next-line react-hooks/purity
   const now = Date.now();
 
   const threeMonthsAgo = new Date(now - 3 * MONTH);
