@@ -37,7 +37,7 @@ const PackageManagerDropdown: FC = () => {
   return (
     <Select<PackageManager>
       values={parsedPackageManagers}
-      defaultValue={release.packageManager}
+      value={release.packageManager}
       loading={release.os === 'LOADING' || release.installMethod === ''}
       ariaLabel={t('layouts.download.dropdown.packageManager')}
       onChange={manager => release.setPackageManager(manager)}

@@ -3,7 +3,7 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import classNames from 'classnames';
-import { useEffect, useId, useMemo, useState } from 'react';
+import { useId, useMemo } from 'react';
 
 import Badge, { type BadgeKind } from '#ui/Common/Badge';
 import Skeleton from '#ui/Common/Skeleton';
@@ -33,7 +33,7 @@ export type SelectGroup<T extends string> = {
 
 export type SelectProps<T extends string> = {
   values: Array<SelectGroup<T>> | Array<T> | Array<SelectValue<T>>;
-  defaultValue?: T;
+  value?: T;
   placeholder?: string;
   label?: string;
   inline?: boolean;
@@ -54,7 +54,7 @@ export type SelectProps<T extends string> = {
 
 const Select = <T extends string>({
   values = [],
-  defaultValue,
+  value,
   placeholder,
   label,
   inline,
@@ -67,9 +67,6 @@ const Select = <T extends string>({
   fallbackClass = '',
 }: SelectProps<T>): ReactNode => {
   const id = useId();
-  const [value, setValue] = useState(defaultValue);
-
-  useEffect(() => setValue(defaultValue), [defaultValue]);
 
   const mappedValues = useMemo(() => mapValues(values), [values]) as Array<
     SelectGroup<T>
@@ -121,10 +118,7 @@ const Select = <T extends string>({
     // eslint-disable-next-line @eslint-react/exhaustive-deps
   }, [JSON.stringify(values)]);
 
-  // Both change the internal state and emit the change event
   const handleChange = (value: T) => {
-    setValue(value);
-
     if (typeof onChange === 'function') {
       onChange(value);
     }

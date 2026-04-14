@@ -60,7 +60,7 @@ const PlatformDropdown: FC = () => {
   return (
     <Select<Platform>
       values={parsedPlatforms}
-      defaultValue={release.platform !== '' ? release.platform : undefined}
+      value={release.platform !== '' ? release.platform : undefined}
       loading={release.os === 'LOADING' || release.platform === ''}
       placeholder={t('layouts.download.dropdown.unknown')}
       ariaLabel={t('layouts.download.dropdown.platform')}

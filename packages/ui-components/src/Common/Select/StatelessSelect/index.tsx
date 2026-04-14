@@ -15,8 +15,13 @@ type StatelessSelectConfig = {
   as?: LinkLike | 'div';
 };
 
-export type StatelessSelectProps<T extends string> = SelectProps<T> &
-  StatelessSelectConfig;
+export type StatelessSelectProps<T extends string> = Omit<
+  SelectProps<T>,
+  'value'
+> &
+  StatelessSelectConfig & {
+    defaultValue?: T;
+  };
 
 const StatelessSelect = <T extends string>({
   values = [],

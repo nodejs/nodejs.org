@@ -52,7 +52,7 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = () => {
   return (
     <Select<OperatingSystem>
       values={parsedOperatingSystems}
-      defaultValue={release.os !== 'LOADING' ? release.os : undefined}
+      value={release.os !== 'LOADING' ? release.os : undefined}
       loading={release.os === 'LOADING'}
       placeholder={t('layouts.download.dropdown.unknown')}
       ariaLabel={t('layouts.download.dropdown.os')}

@@ -76,7 +76,7 @@ const InstallationMethodDropdown: FC = () => {
   return (
     <Select<InstallationMethod | ''>
       values={grouppedMethods}
-      defaultValue={release.installMethod}
+      value={release.installMethod}
       loading={release.os === 'LOADING' || release.installMethod === ''}
       ariaLabel={t('layouts.download.dropdown.platform')}
       onChange={platform => platform && release.setInstallMethod(platform)}
