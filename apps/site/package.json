@@ -21,7 +21,7 @@
     "lint:js:fix": "node --run lint:js -- --fix",
     "lint:md": "eslint \"**/*.md?(x)\" --cache --cache-strategy=content --cache-location=.eslintmdcache",
     "lint:md:fix": "node --run lint:md -- --fix",
-    "lint:types": "tsc --noEmit",
+    "lint:types": "next typegen && tsc --noEmit",
     "playwright": "playwright test",
     "scripts:release-post": "cross-env NODE_NO_WARNINGS=1 node scripts/release-post/index.mjs",
     "serve": "node --run dev",
