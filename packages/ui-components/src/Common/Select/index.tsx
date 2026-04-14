@@ -3,7 +3,7 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import classNames from 'classnames';
-import { useId, useMemo, useState } from 'react';
+import { useEffect, useId, useMemo, useState } from 'react';
 
 import Skeleton from '#ui/Common/Skeleton';
 
@@ -63,6 +63,8 @@ const Select = <T extends string>({
 }: SelectProps<T>): ReactNode => {
   const id = useId();
   const [value, setValue] = useState(defaultValue);
+
+  useEffect(() => setValue(defaultValue), [defaultValue]);
 
   const mappedValues = useMemo(() => mapValues(values), [values]) as Array<
     SelectGroup<T>
