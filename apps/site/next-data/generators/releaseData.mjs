@@ -3,31 +3,18 @@
 import getMajorNodeReleases from './majorNodeReleases.mjs';
 
 // Gets the appropriate release status for each major release
-const getNodeReleaseStatus = (latest, support) => {
+const getNodeReleaseStatus = (latest, eol) => {
   const now = new Date();
-  const { endOfLife, maintenanceStart, ltsStart, currentStart } = support;
 
-  if (endOfLife && now >= new Date(endOfLife)) {
+  if (eol && now >= new Date(eol)) {
     return 'End-of-life';
   }
 
-  if (
-    latest.lts.isLts &&
-    maintenanceStart &&
-    now >= new Date(maintenanceStart)
-  ) {
-    return 'Maintenance LTS';
+  if (latest.lts.isLts) {
+    return 'LTS';
   }
 
-  if (latest.lts.isLts && ltsStart && now >= new Date(ltsStart)) {
-    return 'Active LTS';
-  }
-
-  if (currentStart && now >= new Date(currentStart)) {
-    return 'Current';
-  }
-
-  return 'Pending';
+  return 'Current';
 };
 
 /**
@@ -40,17 +27,15 @@ const generateReleaseData = async () => {
   const majors = await getMajorNodeReleases();
 
   return majors.map(([, major]) => {
-    const [latestVersion] = Object.values(major.releases);
-
-    const support = {
-      currentStart: major.support.phases.dates.start,
-      ltsStart: major.support.phases.dates.lts,
-      maintenanceStart: major.support.phases.dates.maintenance,
-      endOfLife: major.support.phases.dates.end,
-    };
+    const versions = Object.values(major.releases);
+    const latestVersion = versions[0];
+    const initialVersion = versions[versions.length - 1];
 
     // Get the major release status based on our Release Schedule
-    const status = getNodeReleaseStatus(latestVersion, support);
+    const status = getNodeReleaseStatus(
+      latestVersion,
+      major.support.phases.dates.end
+    );
 
     const minorVersions = Object.entries(major.releases).map(([, release]) => ({
       modules: release.modules.version || '',
@@ -62,16 +47,15 @@ const generateReleaseData = async () => {
     }));
 
     return {
-      ...support,
       status,
       major: latestVersion.semver.major,
       version: latestVersion.semver.raw,
       versionWithPrefix: `v${latestVersion.semver.raw}`,
       codename: major.support.codename || '',
-      isLts: status.endsWith('LTS'),
       npm: latestVersion.dependencies.npm || '',
       v8: latestVersion.dependencies.v8,
       releaseDate: latestVersion.releaseDate,
+      initialDate: initialVersion.releaseDate,
       modules: latestVersion.modules.version || '',
       minorVersions,
     };

@@ -1,21 +1,13 @@
-export type NodeReleaseStatus =
-  | 'Active LTS'
-  | 'Maintenance LTS'
-  | 'Current'
-  | 'End-of-life'
-  | 'Pending';
+export type NodeReleaseStatus = 'LTS' | 'Current' | 'End-of-life';
 
 export type NodeReleaseSource = {
   major: number;
   version: string;
   codename?: string;
-  currentStart: string;
-  ltsStart?: string;
-  maintenanceStart?: string;
-  endOfLife: string;
   npm?: string;
   v8: string;
   releaseDate: string;
+  initialDate: string;
   modules?: string;
 };
 
@@ -30,7 +22,6 @@ export type MinorVersion = {
 
 export type NodeRelease = {
   versionWithPrefix: string;
-  isLts: boolean;
   status: NodeReleaseStatus;
   minorVersions: Array<MinorVersion>;
 } & NodeReleaseSource;

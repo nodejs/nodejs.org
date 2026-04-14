@@ -26,8 +26,7 @@ const WithReleaseAlertBox: FC<WithReleaseAlertBoxProps> = ({ status }) => {
           })}
         </AlertBox>
       );
-    case 'Active LTS':
-    case 'Maintenance LTS':
+    case 'LTS':
       return (
         <AlertBox
           title={t('components.common.alertBox.info')}

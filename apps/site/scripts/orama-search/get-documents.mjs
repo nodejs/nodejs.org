@@ -13,17 +13,15 @@ const fetchOptions = process.env.GITHUB_TOKEN
 
 /**
  * Fetch Node.js API documentation directly from GitHub
- * for the current Active LTS version.
+ * for the current LTS version.
  */
 export const getAPIDocs = async () => {
   // Find the current Active LTS version
   const releaseData = await generateReleaseData();
-  const ltsRelease =
-    releaseData.find(r => r.status === 'Active LTS') ||
-    releaseData.find(r => r.status === 'Maintenance LTS');
+  const ltsRelease = releaseData.find(r => r.status === 'LTS');
 
   if (!ltsRelease) {
-    throw new Error('No Active LTS or Maintenance LTS release found');
+    throw new Error('No LTS release found');
   }
 
   // Get list of API docs from the Node.js repo

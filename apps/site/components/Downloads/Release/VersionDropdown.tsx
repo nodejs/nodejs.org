@@ -10,15 +10,20 @@ import {
   ReleasesContext,
 } from '#site/providers/releaseProvider';
 
+import type { NodeReleaseStatus } from '#site/types/releases.js';
 import type { FC } from 'react';
 
-const getDropDownStatus = (version: string, status: string) => {
-  if (status.endsWith('LTS')) {
+const getDropDownStatus = (version: string, status: NodeReleaseStatus) => {
+  if (status === 'LTS') {
     return `${version} (LTS)`;
   }
 
   if (status === 'Current') {
     return `${version} (Current)`;
+  }
+
+  if (status === 'End-of-life') {
+    return `${version} (EoL)`;
   }
 
   return version;
@@ -38,7 +43,7 @@ const VersionDropdown: FC = () => {
       ({ versionWithPrefix }) => versionWithPrefix === version
     );
 
-    if (release?.isLts && pathname.includes('current')) {
+    if (release?.status === 'LTS' && pathname.includes('current')) {
       redirect({ href: '/download', locale });
       return;
     }

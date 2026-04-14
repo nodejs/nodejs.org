@@ -152,7 +152,7 @@
       "name": "Brew",
       "compatibility": {
         "os": ["MAC", "LINUX"],
-        "releases": ["Current", "Active LTS", "Maintenance LTS"]
+        "releases": ["Current", "LTS"]
       },
       "url": "https://brew.sh/",
       "info": "layouts.download.codeBox.platformInfo.brew"
@@ -213,11 +213,5 @@
     "bitness": ["64", "32"],
     "architecture": ["arm", "x86"]
   },
-  "statusOrder": [
-    "Current",
-    "Active LTS",
-    "Maintenance LTS",
-    "End-of-life",
-    "Pending"
-  ]
+  "statusOrder": ["Current", "LTS", "End-of-life"]
 }

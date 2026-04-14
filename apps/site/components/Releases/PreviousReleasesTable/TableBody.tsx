@@ -15,10 +15,8 @@ import ReleaseModal from '../ReleaseModal';
 
 const BADGE_KIND_MAP = {
   'End-of-life': 'warning',
-  'Maintenance LTS': 'neutral',
-  'Active LTS': 'info',
+  LTS: 'info',
   Current: 'default',
-  Pending: 'default',
 } as const;
 
 type PreviousReleasesTableBodyProps = {
@@ -50,7 +48,7 @@ const PreviousReleasesTableBody: FC<PreviousReleasesTableBodyProps> = ({
             <td
               data-label={t('components.downloadReleasesTable.firstReleased')}
             >
-              <FormattedTime date={release.currentStart} />
+              <FormattedTime date={release.initialDate} />
             </td>
 
             <td data-label={t('components.downloadReleasesTable.lastUpdated')}>
