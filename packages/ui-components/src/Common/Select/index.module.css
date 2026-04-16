@@ -161,6 +161,10 @@
     dark:text-neutral-200;
 }
 
+.badge {
+  @apply ml-auto;
+}
+
 .noscript {
   @apply relative
     cursor-pointer;

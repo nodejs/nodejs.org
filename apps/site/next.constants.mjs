@@ -205,9 +205,15 @@ export const SEVERITY_KIND_MAP = {
 };
 
 /**
- * Which Node.js versions do we want to display vulnerabilities for?
+ * Maps Node.js version status to UI Badge kinds
+ *
+ * @type {Record<import('./types/releases').NodeReleaseStatus, import('@node-core/ui-components/Common/Badge').BadgeKind>}
  */
-export const EOL_VERSION_IDENTIFIER = 'End-of-life';
+export const STATUS_KIND_MAP = {
+  EOL: 'warning',
+  LTS: 'info',
+  Current: 'default',
+};
 
 /**
  * The location of the Node.js Security Working Group Vulnerabilities data.
