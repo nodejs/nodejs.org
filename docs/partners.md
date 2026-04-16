@@ -14,7 +14,7 @@ To add or remove a partner:
    - `href`: A URL linking to the partner’s website.
    - `categories`: An array of categories the partner belongs to. These are used to filter partners on the Partners and Downloads pages. Valid categories include:
      - `infrastructure`: Partners providing infrastructure for the Node.js project.
-     - `esp`: Partners offering support for EOL Node.js versions through the Ecosystem Sustainability Program (ESP).
+     - `esp`: Partners offering support for EoL Node.js versions through the Ecosystem Sustainability Program (ESP).
    - `weight`: A number representing the partner's visibility weight. This is used in the randomization algorithm — higher values increase the partner's likelihood of being shown.
 
 2. Add the partner's logo to the `packages/ui-components/icons/PartnersLogos/` directory.

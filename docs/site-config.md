@@ -4,7 +4,7 @@
 
 It is imported via `apps/site/next.json.mjs` and exposed as a read-only API endpoint at `/site.json`.
 
-This endpoint is also consumed externally by the [doc-kit](https://github.com/nodejs/doc-kit) to display dynamic banners inside the API docs, for example security announcements or EOL notices, without requiring a doc-kit release.
+This endpoint is also consumed externally by the [doc-kit](https://github.com/nodejs/doc-kit) to display dynamic banners inside the API docs, for example security announcements or EoL notices, without requiring a doc-kit release.
 
 ## Structure
 
@@ -124,4 +124,4 @@ The response is `application/json` and is statically cached at build time. It re
 
 ### External consumers
 
-The [doc-kit](https://github.com/nodejs/doc-kit) fetches this endpoint asynchronously on page load to inject banners into the Node.js API documentation site. This allows publishing announcements (security releases, EOL notices, etc.) that appear in the API docs without requiring a doc-kit release or a rebuild of the static documentation.
+The [doc-kit](https://github.com/nodejs/doc-kit) fetches this endpoint asynchronously on page load to inject banners into the Node.js API documentation site. This allows publishing announcements (security releases, EoL notices, etc.) that appear in the API docs without requiring a doc-kit release or a rebuild of the static documentation.

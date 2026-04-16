@@ -37,7 +37,7 @@ export const Secondary: Story = {
 export const Warning: Story = {
   args: {
     kind: 'warning',
-    children: 'Get security support for EOL versions ',
+    children: 'Get security support for EoL versions',
     disabled: false,
     size: 'default',
   },

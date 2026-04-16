@@ -213,5 +213,5 @@
     "bitness": ["64", "32"],
     "architecture": ["arm", "x86"]
   },
-  "statusOrder": ["Current", "LTS", "EOL"]
+  "statusOrder": ["Current", "LTS", "EoL"]
 }

@@ -1,10 +1,10 @@
 ---
 title: End-Of-Life
 layout: about
-description: Understand Node.js End-of-Life, what it means for security, tooling, and compliance, plus EOL version details and commercial support options.
+description: Understand Node.js End-of-Life, what it means for security, tooling, and compliance, plus EoL version details and commercial support options.
 ---
 
-# End-Of-Life (EOL)
+# End-Of-Life (EoL)
 
 ## Why and how Node.js releases reach End-Of-Life
 
@@ -16,29 +16,29 @@ Major versions of Node.js are released, patched, and designated End-Of-Life on a
   </Button>
   <span>or</span>
   <Button as="a" kind="warning" href="#commercial-support" className="flex-1">
-    <span>Get security support for EOL versions</span>
+    <span>Get security support for EoL versions</span>
   </Button>
 </div>
 
 [View the Node.js release schedule](/about/releases/).
 
-## What Happens When a Release Line Reaches EOL
+## What Happens When a Release Line Reaches EoL
 
 When a version reaches End-Of-Life, it means that it will no longer receive updates, including security patches. This can leave applications running on these versions vulnerable to security issues and bugs that will never be fixed.
 
-- **No more vulnerability fixes**: When new security releases reveal issues and patches in newer major lines, even if the same vulnerability affects EOL release lines, there will not be any new releases for them. Users still clinging on to EOL release lines and using affected code paths will be immediately vulnerable to attacks exploiting these disclosed vulnerabilities.
-- **Tool-chain breakage**: EOL releases may no longer dynamically link to newer versions of the shared libraries they depend on, blocking or breaking system updates.
-- **Ecosystem drift**: Many popular user-land packages drop support for EOL Node.js releases over time. When an application clings onto outdated packages, it may suffer from even more unfixed vulnerabilities and bugs, further drifting away from ecosystem norm.
+- **No more vulnerability fixes**: When new security releases reveal issues and patches in newer major lines, even if the same vulnerability affects EoL release lines, there will not be any new releases for them. Users still clinging on to EoL release lines and using affected code paths will be immediately vulnerable to attacks exploiting these disclosed vulnerabilities.
+- **Tool-chain breakage**: EoL releases may no longer dynamically link to newer versions of the shared libraries they depend on, blocking or breaking system updates.
+- **Ecosystem drift**: Many popular user-land packages drop support for EoL Node.js releases over time. When an application clings onto outdated packages, it may suffer from even more unfixed vulnerabilities and bugs, further drifting away from ecosystem norm.
 - **Compliance red flags**: Many industry audits forbid unmaintained runtimes.
 
-## EOL Versions
+## EoL Versions
 
 <EOLReleaseTable />
 
 ## Commercial Support
 
-Despite the obvious downsides of using EOL releases, in practice, organizations face constraints that prevent immediate upgrades, such as legacy codebases, compliance requirements, or complex dependency chains. Through the [OpenJS Foundation Ecosystem Sustainability Program](https://openjsf.org/blog/ecosystem-sustainability-program), Node.js is supported by HeroDevs and NodeSource to provide commercial services for security fixes.
+Despite the obvious downsides of using EoL releases, in practice, organizations face constraints that prevent immediate upgrades, such as legacy codebases, compliance requirements, or complex dependency chains. Through the [OpenJS Foundation Ecosystem Sustainability Program](https://openjsf.org/blog/ecosystem-sustainability-program), Node.js is supported by HeroDevs and NodeSource to provide commercial services for security fixes.
 
 HeroDevs provides [Never-Ending Support (NES)](https://nodejs.org/esp/herodevs) for Node.js versions past their official maintenance phase. This includes security patches, compliance assistance, and technical support to help bridge the gap while you plan your upgrade strategy.
 
-Using EOL releases through commercial support should be viewed as a temporary solution—the goal should always be to upgrade to actively supported versions.
+Using EoL releases through commercial support should be viewed as a temporary solution—the goal should always be to upgrade to actively supported versions.

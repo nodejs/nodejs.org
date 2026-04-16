@@ -14,7 +14,7 @@ const WithReleaseAlertBox: FC<WithReleaseAlertBoxProps> = ({ status }) => {
   const t = useTranslations();
 
   switch (status) {
-    case 'EOL':
+    case 'EoL':
       return (
         <AlertBox
           title={t('components.common.alertBox.warning')}

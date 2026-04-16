@@ -14,7 +14,7 @@ const EOLReleaseTable: FC = async () => {
   const releaseData = await provideReleaseData();
   const vulnerabilities = await provideVulnerabilities();
 
-  const eolReleases = releaseData.filter(release => release.status === 'EOL');
+  const eolReleases = releaseData.filter(release => release.status === 'EoL');
 
   const t = await getTranslations();
 

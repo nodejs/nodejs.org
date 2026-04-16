@@ -19,7 +19,7 @@ describe('generateReleaseData', () => {
     return generateReleaseData();
   };
 
-  it('returns EOL when release is on or past EOL date', async t => {
+  it('returns EoL when release is on or past EoL date', async t => {
     const result = await runWithNodevuData(t, '2024-10-18', {
       14: {
         releases: {
@@ -43,10 +43,10 @@ describe('generateReleaseData', () => {
       },
     });
 
-    assert.equal(result[0]?.status, 'EOL');
+    assert.equal(result[0]?.status, 'EoL');
   });
 
-  it('returns Current when release is not EOL and latest is not LTS', async t => {
+  it('returns Current when release is not EoL and latest is not LTS', async t => {
     const result = await runWithNodevuData(t, '2026-04-14', {
       20: {
         releases: {
@@ -74,7 +74,7 @@ describe('generateReleaseData', () => {
     assert.equal(result[0]?.status, 'Current');
   });
 
-  it('returns LTS when release is not EOL and latest is flagged as LTS', async t => {
+  it('returns LTS when release is not EoL and latest is flagged as LTS', async t => {
     const result = await runWithNodevuData(t, '2026-04-14', {
       22: {
         releases: {
@@ -102,7 +102,7 @@ describe('generateReleaseData', () => {
     assert.equal(result[0]?.status, 'LTS');
   });
 
-  it('returns Current when release is not EOL and LTS date has passed but latest is not LTS', async t => {
+  it('returns Current when release is not EoL and LTS date has passed but latest is not LTS', async t => {
     const result = await runWithNodevuData(t, '2026-04-14', {
       24: {
         releases: {
