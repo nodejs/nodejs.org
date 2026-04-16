@@ -269,7 +269,7 @@
         }
       },
       "codeBox": {
-        "unsupportedVersionWarning": "이 버전은 유지 관리가 종료되었습니다. 현재 지원되는 버전을 사용하세요. <link>EOL 지원 이해하기</link>",
+        "unsupportedVersionWarning": "이 버전은 유지 관리가 종료되었습니다. 현재 지원되는 버전을 사용하세요. <link>EoL 지원 이해하기</link>",
         "communityPlatformInfo": "커뮤니티 소프트웨어를 사용하는 설치 방법은 해당 소프트웨어를 유지 관리하는 팀에서 지원합니다.",
         "externalSupportInfo": "문제가 발생하면 <link>{platform}'s 웹사이트</link>를 방문하세요.",
         "noScriptDetected": "이 페이지는 JavaScript가 필요합니다. JavaScript 없이 Node.js를 다운로드하려면 <link>릴리스 페이지</link>를 직접 방문하세요.",

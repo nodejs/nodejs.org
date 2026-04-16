@@ -54,7 +54,7 @@
           "releases": "Versions de Node.js",
           "security": "Rapport de sécurité",
           "partners": "Partenaires et soutiens",
-          "eol": "Fin de vie (EOL)"
+          "eol": "Fin de vie (EoL)"
         }
       },
       "getInvolved": {

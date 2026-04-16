@@ -301,7 +301,7 @@
         }
       },
       "codeBox": {
-        "unsupportedVersionWarning": "此版本已不再維護，請改用現正支援的版本。<link>了解更新終止 (EOL) 支援</link>。",
+        "unsupportedVersionWarning": "此版本已不再維護，請改用現正支援的版本。<link>了解更新終止 (EoL) 支援</link>。",
         "communityPlatformInfo": "涉及社群軟體的安裝方式由其維護團隊提供支援。",
         "externalSupportInfo": "若您遇到任何問題，請造訪 <link>{platform} 網站</link>",
         "noScriptDetected": "此網頁需要使用 JavaScript。您可以直接造訪 <link>發行網頁</link> 以下載 Node.js，無需 JavaScript。",

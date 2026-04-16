@@ -144,7 +144,7 @@
           "governance": "Guvernarea proiectului",
           "releases": "Lansări Node.js",
           "security": "Raportare de securitate",
-          "eol": "End-of-Life (EOL)"
+          "eol": "End-of-Life (EoL)"
         }
       },
       "getInvolved": {
@@ -178,7 +178,7 @@
       "overview": "Prezentare generală",
       "minorVersions": "Versiuni minore",
       "releaseAnnouncement": "Anunț de lansare",
-      "unsupportedVersionWarning": "Această versiune nu mai este întreținută. Te rog să folosești o versiune acceptată în prezent. <link>Află mai multe despre suportul la sfârșitul ciclului de viață (EOL).</link>",
+      "unsupportedVersionWarning": "Această versiune nu mai este întreținută. Te rog să folosești o versiune acceptată în prezent. <link>Află mai multe despre suportul la sfârșitul ciclului de viață (EoL).</link>",
       "ltsVersionFeaturesNotice": "Vrei funcționalități noi mai devreme? Instalează <link>cea mai recentă versiune Node.js</link> și testează cele mai noi îmbunătățiri!"
     },
     "eolAlert": {
@@ -194,8 +194,8 @@
       }
     },
     "eolModal": {
-      "title": "Node.js v{version} ({codename}) a ajuns la EOL",
-      "titleWithoutCodename": "Node.js v{version} a ajuns la EOL",
+      "title": "Node.js v{version} ({codename}) a ajuns la EoL",
+      "titleWithoutCodename": "Node.js v{version} a ajuns la EoL",
       "vulnerabilitiesMessage": "Există {count}+ probleme de securitate cunoscute (CVE-uri) asociate cu această versiune de Node.js. CVE-urile (Common Vulnerabilities and Exposures) sunt identificatori pentru vulnerabilități de securitate raportate public. Dacă dai click pe un link CVE, vei fi direcționat către detalii tehnice suplimentare, cum ar fi modul în care funcționează vulnerabilitatea.",
       "noVulnerabilitiesMessage": "În prezent, nu există CVE-uri (Common Vulnerabilities and Exposures) cunoscute asociate cu această versiune de Node.js. Totuși, asta nu înseamnă că este complet sigură — unele vulnerabilități pot să nu fi fost încă descoperite sau făcute publice. Dacă această versiune este învechită sau nu mai este susținută, este totuși o idee bună să iei în considerare actualizarea pentru a beneficia de cele mai recente remedieri și îmbunătățiri de securitate.",
       "blogLinkText": "Blog",
@@ -367,7 +367,7 @@
         }
       },
       "codeBox": {
-        "unsupportedVersionWarning": "Această versiune nu mai este întreținută. Te rog să utilizezi o versiune acceptată în prezent. <link>Află mai multe despre suportul EOL.</link>",
+        "unsupportedVersionWarning": "Această versiune nu mai este întreținută. Te rog să utilizezi o versiune acceptată în prezent. <link>Află mai multe despre suportul EoL.</link>",
         "ltsVersionFeaturesNotice": "Vrei funcționalități noi mai devreme? Ia <link>cea mai recentă versiune Node.js</link> și încearcă ultimele îmbunătățiri!",
         "communityPlatformInfo": "Metodele de instalare care implică software comunitar sunt acceptate de echipele care întrețin acel software.",
         "externalSupportInfo": "Dacă întâmpini orice problemă, te rog să vizitezi site-ul web <link>{platform}</link>",

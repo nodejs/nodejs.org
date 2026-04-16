@@ -151,7 +151,7 @@
           "releases": "Versões do Node.js",
           "security": "Relatório de Segurança",
           "partners": "Parceiros e Apoiadores",
-          "eol": "Fim de Vida Útil (EOL)"
+          "eol": "Fim de Vida Útil (EoL)"
         }
       },
       "getInvolved": {
@@ -185,7 +185,7 @@
       "overview": "Visão Geral",
       "minorVersions": "Versões menores",
       "releaseAnnouncement": "Anúncio do Lançamento",
-      "unsupportedVersionWarning": "Esta versão não está sendo mantida. Por favor, use uma versão com suporte. <link>Entenda o suporte EOL.</link>",
+      "unsupportedVersionWarning": "Esta versão não está sendo mantida. Por favor, use uma versão com suporte. <link>Entenda o suporte EoL.</link>",
       "ltsVersionFeaturesNotice": "Quer novos recursos mais cedo? Obtenha a <link>versão mais recente do Node.js</link> e experimente as últimas melhorias!"
     },
     "eolAlert": {
@@ -201,8 +201,8 @@
       }
     },
     "eolModal": {
-      "title": "Node.js v{version} ({codename}) atingiu EOL",
-      "titleWithoutCodename": "Node.js v{version} atingiu EOL",
+      "title": "Node.js v{version} ({codename}) atingiu EoL",
+      "titleWithoutCodename": "Node.js v{version} atingiu EoL",
       "vulnerabilitiesMessage": "Existem {count}+ problemas de segurança conhecidos (Common Vulnerabilities and Exposures ou CVEs) associados a esta versão do Node.js. CVEs são identificadores para falhas de segurança relatadas publicamente. Clicar em um link CVE levará você a detalhes mais técnicos, como o funcionamento da vulnerabilidade.",
       "noVulnerabilitiesMessage": "Atualmente não há CVEs (Common Vulnerabilities and Exposures) conhecidas associadas a esta versão do Node.js. No entanto, isso não significa que seja completamente segura - algumas vulnerabilidades podem ainda não ter sido descobertas ou divulgadas publicamente. Se esta versão estiver desatualizada ou sem suporte, ainda é uma boa ideia considerar a atualização para garantir que você se beneficie das últimas correções e melhorias de segurança.",
       "blogLinkText": "Blog",
@@ -386,7 +386,7 @@
         }
       },
       "codeBox": {
-        "unsupportedVersionWarning": "Esta versão não está sendo mantida. Por favor, use uma versão com suporte. <link>Entenda o suporte EOL.</link>",
+        "unsupportedVersionWarning": "Esta versão não está sendo mantida. Por favor, use uma versão com suporte. <link>Entenda o suporte EoL.</link>",
         "ltsVersionFeaturesNotice": "Quer novos recursos mais cedo? Obtenha a <link>versão mais recente do Node.js</link> e experimente as últimas melhorias!",
         "communityPlatformInfo": "Métodos de instalação que envolvem software da comunidade são suportados pelas equipes que mantêm esse software.",
         "externalSupportInfo": "Se você encontrar algum problema, por favor visite <link>o site do {platform}</link>",

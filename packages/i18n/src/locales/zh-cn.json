@@ -276,7 +276,7 @@
         }
       },
       "codeBox": {
-        "unsupportedVersionWarning": "该版本已停止维护。请使用当前支持的版本。<link>了解 EOL.</link>",
+        "unsupportedVersionWarning": "该版本已停止维护。请使用当前支持的版本。<link>了解 EoL.</link>",
         "communityPlatformInfo": "涉及社区软件的安装方法由维护该软件的团队提供支持。",
         "externalSupportInfo": "如果遇到任何问题，请访问 <link>{platform}的网站</link>",
         "noScriptDetected": "本页面需要 JavaScript。您可以直接访问<link>发布页面</link>在无需 JavaScript 的条件下下载 Node.js。",

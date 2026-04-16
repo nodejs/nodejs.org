@@ -54,7 +54,7 @@
           "releases": "Node.js リリース",
           "security": "セキュリティーレポート",
           "partners": "パートナーとサポーター",
-          "eol": "サポート終了（EOL）"
+          "eol": "サポート終了（EoL）"
         }
       },
       "getInvolved": {
@@ -88,7 +88,7 @@
       "overview": "概要",
       "minorVersions": "マイナーバージョン",
       "releaseAnnouncement": "リリース",
-      "unsupportedVersionWarning": "このバージョンのメンテナンスは終了しています。現在サポートされているバージョンを利用してください。<link>EOLのサポートについて。</link>",
+      "unsupportedVersionWarning": "このバージョンのメンテナンスは終了しています。現在サポートされているバージョンを利用してください。<link>EoLのサポートについて。</link>",
       "ltsVersionFeaturesNotice": "すぐに最新の機能を試したいですか？<link>最新バージョンのNode.js</link>を代わりにインストールして最新の機能を試してください！"
     },
     "eolAlert": {
@@ -104,8 +104,8 @@
       }
     },
     "eolModal": {
-      "title": "Node.js v{version} ({codename})はEOLとなりました",
-      "titleWithoutCodename": "Node.js v{version}はEOLとなりました",
+      "title": "Node.js v{version} ({codename})はEoLとなりました",
+      "titleWithoutCodename": "Node.js v{version}はEoLとなりました",
       "vulnerabilitiesMessage": "このNode.jsのバージョンには{count}件以上の既知のセキュリティ問題（CVE）が関連付けられています。CVE（Common Vulnerabilities and Exposures）は公開されたセキュリティ脆弱性を識別するための識別子です。CVEのリンクをクリックすると脆弱性の詳細な技術情報（脆弱性の動作方法など）を確認できます。",
       "noVulnerabilitiesMessage": "現在、このNode.jsのバージョンに関連する既知のCVE（Common Vulnerabilities and Exposures）は存在しません。ただし、これが完全に安全であることを意味するわけではありません。一部の脆弱性がまだ発見されていないか、公開されていない可能性があります。このバージョンが古くなっていたり、サポート対象外の場合、最新の修正やセキュリティ強化の恩恵を受けるため、アップグレードを検討することをおすすめします。",
       "blogLinkText": "ブログ",
@@ -285,7 +285,7 @@
         }
       },
       "codeBox": {
-        "unsupportedVersionWarning": "このバージョンのメンテナンスは終了しています。現在サポートされているバージョンを利用してください。<link>EOLのサポートについて。</link>",
+        "unsupportedVersionWarning": "このバージョンのメンテナンスは終了しています。現在サポートされているバージョンを利用してください。<link>EoLのサポートについて。</link>",
         "ltsVersionFeaturesNotice": "すぐに最新の機能を試したいですか？<link>最新バージョンのNode.js</link>を代わりにインストールして最新の機能を試してください！",
         "communityPlatformInfo": "コミュニティーソフトウェアを含むインストール方法はそのソフトウェアを管理しているチームによってサポートされます。",
         "externalSupportInfo": "もし何らかの問題を見つけた場合は<link>{platform}のウェブサイト</link>を参照してください。",

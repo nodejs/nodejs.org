@@ -54,7 +54,7 @@
           "releases": "Релізи Node.js",
           "security": "Звітність про безпеку",
           "partners": "Партнери й підтримувачі",
-          "eol": "Кінець підтримки (EOL)"
+          "eol": "Кінець підтримки (EoL)"
         }
       },
       "getInvolved": {
@@ -104,8 +104,8 @@
       }
     },
     "eolModal": {
-      "title": "Node.js v{version} ({codename}) досягла кінця підтримки (EOL)",
-      "titleWithoutCodename": "Node.js v{version} досягла кінця підтримки (EOL)",
+      "title": "Node.js v{version} ({codename}) досягла кінця підтримки (EoL)",
+      "titleWithoutCodename": "Node.js v{version} досягла кінця підтримки (EoL)",
       "vulnerabilitiesMessage": "Існує {count}+ відомих проблем із безпекою (CVE), пов'язаних із цим релізом Node.js. CVE (Common Vulnerabilities and Exposures) є ідентифікаторами для повідомлених публічно проблем із безпекою. Натиснувши на посилання CVE, ви дізнаєтеся її технічні деталі, наприклад, як працює вразливість.",
       "noVulnerabilitiesMessage": "Наразі немає відомих CVE (Common Vulnerabilities and Exposures), пов'язані з цим релізом Node.js. Однак це не означає, що реліз повністю безпечний: деякі вразливості можуть бути невиявленими або неоголошеними публічно. Якщо цей реліз застарілий або непідтримуваний, краще оновити версію, щоб використовувати останні виправлення та покращення безпеки.",
       "blogLinkText": "Блог",

@@ -145,7 +145,7 @@
           "releases": "Rilisan Node.js",
           "security": "Pelaporan Keamanan",
           "partners": "Mitra & Pendukung",
-          "eol": "Akhir Masa Dukungan (EOL)"
+          "eol": "Akhir Masa Dukungan (EoL)"
         }
       },
       "getInvolved": {
@@ -179,7 +179,7 @@
       "overview": "Ringkasan",
       "minorVersions": "Versi minor",
       "releaseAnnouncement": "Pengumuman Perilisan",
-      "unsupportedVersionWarning": "Versi ini sudah tidak dalam tahap pemeliharaan. Harap gunakan versi yang didukung. <link>Pahami dukungan EOL.</link>",
+      "unsupportedVersionWarning": "Versi ini sudah tidak dalam tahap pemeliharaan. Harap gunakan versi yang didukung. <link>Pahami dukungan EoL.</link>",
       "ltsVersionFeaturesNotice": "Ingin mencoba fitur baru lebih cepat? Dapatkan <link>versi Node.js terbaru</link> dan coba peningkatan terbarunya!"
     },
     "eolAlert": {
@@ -380,7 +380,7 @@
         }
       },
       "codeBox": {
-        "unsupportedVersionWarning": "Versi ini sudah tidak dalam tahap pemeliharaan. Harap gunakan versi yang saat ini didukung. <link>Pahami dukungan EOL.</link>",
+        "unsupportedVersionWarning": "Versi ini sudah tidak dalam tahap pemeliharaan. Harap gunakan versi yang saat ini didukung. <link>Pahami dukungan EoL.</link>",
         "ltsVersionFeaturesNotice": "Ingin mencoba fitur baru lebih cepat? Dapatkan <link>versi Node.js terbaru</link> dan coba peningkatan terbarunya!",
         "communityPlatformInfo": "Metode instalasi yang melibatkan perangkat lunak komunitas didukung oleh tim yang memelihara perangkat lunak tersebut.",
         "externalSupportInfo": "Jika kamu mengalami masalah, silakan kunjungi situs web <link>{platform}</link>",
