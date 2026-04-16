@@ -1,3 +1,5 @@
+import { BASE_URL } from '#site/next.constants.mjs';
+
 import type { MetadataRoute } from 'next';
 
 // This allows us to generate a `robots.txt` file dynamically based on the needs of the Node.js Website
@@ -10,6 +12,7 @@ const robots = (): MetadataRoute.Robots => ({
       allow: ['/dist/latest/', '/dist/latest/docs/api/', '/api/'],
     },
   ],
+  sitemap: [`${BASE_URL}/sitemap.xml`, `${BASE_URL}/learn/sitemap.xml`],
 });
 
 export default robots;
