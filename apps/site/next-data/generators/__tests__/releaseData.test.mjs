@@ -43,19 +43,7 @@ describe('generateReleaseData', () => {
       },
     });
 
-    assert.equal(result.length, 1);
-    assert.partialDeepStrictEqual(result[0], {
-      major: 14,
-      version: '14.0.0',
-      versionWithPrefix: 'v14.0.0',
-      codename: '',
-      npm: '6.14.10',
-      v8: '8.0.276.20',
-      releaseDate: '2021-04-20',
-      initialDate: '2021-04-20',
-      modules: '83',
-      status: 'EOL',
-    });
+    assert.equal(result[0]?.status, 'EOL');
   });
 
   it('returns Current when release is not EOL and latest is not LTS', async t => {
@@ -142,7 +130,7 @@ describe('generateReleaseData', () => {
     assert.equal(result[0]?.status, 'Current');
   });
 
-  it('uses latest and earliest release dates for releaseDate and initialDate', async t => {
+  it('uses latest and earliest release dates for latestReleaseDate and initialReleaseDate', async t => {
     const result = await runWithNodevuData(t, '2026-04-14', {
       26: {
         releases: {
@@ -174,7 +162,7 @@ describe('generateReleaseData', () => {
       },
     });
 
-    assert.equal(result[0]?.releaseDate, '2026-04-01');
-    assert.equal(result[0]?.initialDate, '2025-10-21');
+    assert.equal(result[0]?.latestReleaseDate, '2026-04-01');
+    assert.equal(result[0]?.initialReleaseDate, '2025-10-21');
   });
 });

@@ -54,8 +54,8 @@ const generateReleaseData = async () => {
       codename: major.support.codename || '',
       npm: latestVersion.dependencies.npm || '',
       v8: latestVersion.dependencies.v8,
-      releaseDate: latestVersion.releaseDate,
-      initialDate: initialVersion.releaseDate,
+      latestReleaseDate: latestVersion.releaseDate,
+      initialReleaseDate: initialVersion.releaseDate,
       modules: latestVersion.modules.version || '',
       minorVersions,
     };

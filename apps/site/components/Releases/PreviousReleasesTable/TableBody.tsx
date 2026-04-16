@@ -43,11 +43,11 @@ const PreviousReleasesTableBody: FC<PreviousReleasesTableBodyProps> = ({
             <td
               data-label={t('components.downloadReleasesTable.firstReleased')}
             >
-              <FormattedTime date={release.initialDate} />
+              <FormattedTime date={release.initialReleaseDate} />
             </td>
 
             <td data-label={t('components.downloadReleasesTable.lastUpdated')}>
-              <FormattedTime date={release.releaseDate} />
+              <FormattedTime date={release.latestReleaseDate} />
             </td>
 
             <td data-label={t('components.downloadReleasesTable.status')}>

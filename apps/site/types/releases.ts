@@ -6,8 +6,8 @@ export type NodeReleaseSource = {
   codename?: string;
   npm?: string;
   v8: string;
-  releaseDate: string;
-  initialDate: string;
+  latestReleaseDate: string;
+  initialReleaseDate: string;
   modules?: string;
 };
 
