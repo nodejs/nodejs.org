@@ -63,9 +63,9 @@ As of October 2026:
 | Alpha   | 6 months  | Oct to Mar. Early testing, semver-major allowed |
 | Current | 6 months  | Apr to Oct. Stabilization                       |
 | LTS     | 30 months | Long-term support with security fixes           |
-| EOL     | Infinity  | The project no longer provides any support      |
+| EoL     | Infinity  | The project no longer provides any support      |
 
-Total support: 36 months from first Current release to [End of Life (EOL)](https://nodejs.org/en/about/eol).
+Total support: 36 months from first Current release to [End of Life (EoL)](https://nodejs.org/en/about/eol).
 
 ### About the Alpha Channel
 
