@@ -12,7 +12,6 @@ import dynamic from 'next/dynamic';
 import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 
-import SearchButton from '#site/components/Common/Searchbox';
 import Link from '#site/components/Link';
 import WithBanner from '#site/components/withBanner';
 import WithNodejsLogo from '#site/components/withNodejsLogo';
@@ -66,7 +65,7 @@ const WithNavBar: FC = () => {
           'components.containers.navBar.controls.toggle'
         )}
       >
-        <SearchButton />
+        {/* <SearchButton /> */}
 
         <ThemeToggle
           onChange={setTheme}
