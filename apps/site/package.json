@@ -107,7 +107,9 @@
     "typescript": "catalog:",
     "typescript-eslint": "~8.57.2",
     "user-agent-data-types": "0.4.2",
-    "wrangler": "^4.77.0"
+    "wrangler": "^4.77.0",
+    "@cloudflare/workers-types": "^4.20260418.1",
+    "@sentry/cloudflare": "^10.49.0"
   },
   "imports": {
     "#site/*": [
