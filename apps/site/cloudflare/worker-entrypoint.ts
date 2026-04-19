@@ -1,5 +1,5 @@
 // Note: this custom worker-entrypoint is used so that the worker can include sentry support
-//       and it has been written be following:
+//       and it has been written by following:
 //        - the official open-next docs: https://opennext.js.org/cloudflare/howtos/custom-worker
 //        - the official sentry docs: https://docs.sentry.io/platforms/javascript/guides/cloudflare
 
