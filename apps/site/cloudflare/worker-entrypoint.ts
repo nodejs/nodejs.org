@@ -3,13 +3,13 @@
 //        - the official open-next docs: https://opennext.js.org/cloudflare/howtos/custom-worker
 //        - the official sentry docs: https://docs.sentry.io/platforms/javascript/guides/cloudflare
 
-import * as Sentry from '@sentry/cloudflare';
+import { withSentry } from '@sentry/cloudflare';
 
 import type { ExecutionContext } from '@cloudflare/workers-types';
 
 import { default as handler } from '../.open-next/worker.js';
 
-export default Sentry.withSentry(
+export default withSentry(
   () => ({
     dsn: 'https://examplePublicKey@o0.ingest.sentry.io/0',
     // Adds request headers and IP for users, for more info visit:
