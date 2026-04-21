@@ -10,8 +10,14 @@ import type { ExecutionContext } from '@cloudflare/workers-types';
 import { default as handler } from '../.open-next/worker.js';
 
 export default withSentry(
-  () => ({
-    dsn: 'https://examplePublicKey@o0.ingest.sentry.io/0',
+  (env: {
+    /**
+     * Sentry DSN, used for error monitoring
+     * If missing, Sentry isn't used
+     */
+    SENTRY_DSN?: string;
+  }) => ({
+    dsn: env.SENTRY_DSN,
     // Adds request headers and IP for users, for more info visit:
     // https://docs.sentry.io/platforms/javascript/guides/cloudflare/configuration/options/#sendDefaultPii
     sendDefaultPii: true,
