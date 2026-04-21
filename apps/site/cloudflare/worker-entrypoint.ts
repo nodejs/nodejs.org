@@ -17,10 +17,10 @@ export default withSentry(
     sendDefaultPii: true,
     // Enable logs to be sent to Sentry
     enableLogs: true,
-    // Set tracesSampleRate to 1.0 to capture 100% of spans for tracing.
+    // Set tracesSampleRate to 0.05 to capture 5% of spans for tracing.
     // Learn more at
     // https://docs.sentry.io/platforms/javascript/guides/cloudflare/configuration/options/#tracesSampleRate
-    tracesSampleRate: 1.0,
+    tracesSampleRate: 0.05,
   }),
   {
     async fetch(
