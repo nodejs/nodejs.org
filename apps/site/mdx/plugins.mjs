@@ -25,8 +25,7 @@ const singletonShiki = await rehypeShikiji({
   // for security reasons.
   wasm: !OPEN_NEXT_CLOUDFLARE,
 
-  // TODO(@avivkeller): Find a way to enable Twoslash w/ a VFS on Cloudflare
-  twoslash: !OPEN_NEXT_CLOUDFLARE,
+  twoslash: true,
 });
 
 /**
