@@ -51,11 +51,6 @@ export default function useOrama(path: string): OramaCloud | null {
 
     // TODO(@avivkeller): Orama might need to be replaced
     db.search = async (options: SearchOptions): Promise<unknown> => {
-      try {
-        search(db, options);
-      } catch (e) {
-        console.error(e);
-      }
       await ensureLoaded();
       return search(db, options);
     };

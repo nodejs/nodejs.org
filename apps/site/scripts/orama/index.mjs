@@ -17,15 +17,11 @@ const prefixDocs = (db, prefix) => ({
   },
 });
 
-// Load both URLs and sort by size, larger first
+// Load both URLs and prefix the hrefs with the appropriate path
 const loaded = await Promise.all([
-  await fetch(LEARN_ORAMA_DB_URL).then(res => res.json()),
-  await fetch(BETA_DOCS_ORAMA_DB_URL).then(res => res.json()),
-]).then(([a, b]) =>
-  [prefixDocs(a, '/learn'), prefixDocs(b, '/api')].sort(
-    (a, b) => b.docs.length - a.docs.length
-  )
-);
+  fetch(LEARN_ORAMA_DB_URL).then(res => res.json()),
+  fetch(BETA_DOCS_ORAMA_DB_URL).then(res => res.json()),
+]).then(([a, b]) => [prefixDocs(a, '/learn'), prefixDocs(b, '/api')]);
 
 const orama = create({ schema: {} });
 load(orama, loaded.shift());
