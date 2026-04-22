@@ -169,3 +169,11 @@ export const VULNERABILITIES_URL =
  */
 export const OPENCOLLECTIVE_MEMBERS_URL =
   'https://opencollective.com/nodejs/members/all.json';
+
+/**
+ * Orama DB URLs for the Learn and API sections of the website
+ */
+export const ORAMA_DB_URLS = {
+  learn: 'https://nodejs.org/learn/orama-db.json',
+  api: 'https://beta.docs.nodejs.org/orama-db.json',
+};

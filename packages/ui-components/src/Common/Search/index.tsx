@@ -7,29 +7,28 @@ import {
 import SearchModal from '#ui/Common/Search/Modal';
 import SearchResults from '#ui/Common/Search/Results';
 import SearchHit from '#ui/Common/Search/Results/Hit';
-import useOrama from '#ui/hooks/useOrama';
+
+import type { OramaCloud } from '@orama/core';
 
 import styles from './index.module.css';
 
 type SearchBoxProps = {
+  client: OramaCloud;
   closeShortcutLabel?: string;
   navigateShortcutLabel?: string;
   noResultsTitle?: string;
-  path: string;
   placeholder?: string;
   selectShortcutLabel?: string;
 };
 
 const SearchBox: React.FC<SearchBoxProps> = ({
-  path,
+  client,
   placeholder = 'Start typing...',
   noResultsTitle = 'No results found for',
   closeShortcutLabel = 'to close',
   navigateShortcutLabel = 'to navigate',
   selectShortcutLabel = 'to select',
 }) => {
-  const client = useOrama(path);
-
   return (
     <SearchModal client={client} placeholder={placeholder}>
       <div className={styles.searchResultsContainer}>

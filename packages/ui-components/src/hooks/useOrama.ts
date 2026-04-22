@@ -1,24 +1,20 @@
-import { create, search, load } from '@orama/orama';
-import { useState, useEffect, useRef } from 'react';
+import { create, search, load, type RawData } from '@orama/orama';
+import { useMemo, useRef } from 'react';
 
 import type { OramaCloud } from '@orama/core';
 
-type SearchOptions = Record<string, unknown>;
-type SearchClient = Awaited<ReturnType<typeof create>> & {
-  search: (options: SearchOptions) => Promise<unknown>;
-};
-
 /**
- * Hook for initializing and managing Orama search database.
- * The search data is lazily fetched on the first search call.
+ * Hook for initializing and managing an Orama search database.
+ * Search data is loaded lazily on the first search call and reused thereafter.
  *
- * @param pathname - Path to orama database
+ * @param loadData Function returning the serialized Orama database payload.
  */
-export default function useOrama(path: string): OramaCloud | null {
-  const [client, setClient] = useState<SearchClient | null>(null);
-  const ref = useRef<Promise<void> | null>(null);
+export default function useOrama(loadData: () => Promise<RawData>): OramaCloud {
+  const loadPromiseRef = useRef<Promise<void> | null>(null);
 
-  useEffect(() => {
+  const client = useMemo(() => {
+    loadPromiseRef.current = null;
+
     const db = create({
       schema: {
         title: 'string',
@@ -26,37 +22,27 @@ export default function useOrama(path: string): OramaCloud | null {
         href: 'string',
         siteSection: 'string',
       },
-    }) as unknown as SearchClient;
+    });
 
-    /**
-     * Ensures the search data is loaded.
-     */
     const ensureLoaded = (): Promise<void> => {
-      if (!ref.current) {
-        ref.current = fetch(path)
-          .then(response => (response.ok ? response.json() : undefined))
-          .then(data => {
-            if (data) {
-              return load(db, data);
-            }
-          })
-          .then(() => undefined)
-          .catch(() => {
-            ref.current = null;
-          });
+      if (!loadPromiseRef.current) {
+        loadPromiseRef.current = loadData().then(data => {
+          load(db, data);
+        });
       }
 
-      return ref.current;
+      return loadPromiseRef.current;
     };
 
     // TODO(@avivkeller): Orama might need to be replaced
-    db.search = async (options: SearchOptions): Promise<unknown> => {
+    // @ts-expect-error - We are overriding the search method
+    db.search = async options => {
       await ensureLoaded();
       return search(db, options);
     };
 
-    setClient(db);
-  }, [path]);
+    return db;
+  }, [loadData]);
 
   return client as unknown as OramaCloud;
 }
