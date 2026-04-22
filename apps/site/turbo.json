@@ -24,7 +24,7 @@
       ]
     },
     "build": {
-      "dependsOn": ["build:blog-data", "^build"],
+      "dependsOn": ["build:blog-data", "build:twoslash-fsmap", "^build"],
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
         "{app,components,layouts,pages,styles}/**/*.css",
@@ -145,8 +145,12 @@
         "ENABLE_EXPERIMENTAL_COREPACK"
       ]
     },
+    "build:twoslash-fsmap": {
+      "inputs": ["scripts/twoslash-fsmap/**", "../../pnpm-lock.yaml"],
+      "outputs": ["generated/twoslash-fsmap.json"]
+    },
     "cloudflare:build:worker": {
-      "dependsOn": ["build:blog-data"],
+      "dependsOn": ["build:blog-data", "build:twoslash-fsmap"],
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
         "{app,components,layouts,pages,styles}/**/*.css",
