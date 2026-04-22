@@ -111,6 +111,9 @@ importers:
       '@opentelemetry/sdk-logs':
         specifier: ~0.213.0
         version: 0.213.0(@opentelemetry/api@1.9.1)
+      '@orama/orama':
+        specifier: ^3.1.18
+        version: 3.1.18
       '@radix-ui/react-tabs':
         specifier: ^1.1.13
         version: 1.1.13(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -232,9 +235,6 @@ importers:
       '@opennextjs/cloudflare':
         specifier: ^1.19.3
         version: 1.19.3(next@16.2.4(@opentelemetry/api@1.9.1)(@playwright/test@1.58.2)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(wrangler@4.77.0(@cloudflare/workers-types@4.20260422.1))
-      '@orama/orama':
-        specifier: ^3.1.18
-        version: 3.1.18
       '@playwright/test':
         specifier: ^1.58.2
         version: 1.58.2
