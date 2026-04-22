@@ -37,5 +37,14 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", ".next"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    ".open-next",
+    // The worker entrypoint is bundled by wrangler (not tsc). Its imports of
+    // @sentry/cloudflare and .open-next/worker.js trigger an infinite-recursion
+    // crash in the TypeScript compiler (v5.9) during type resolution of
+    // @cloudflare/workers-types, so we exclude it from type checking.
+    "cloudflare/worker-entrypoint.ts"
+  ]
 }
