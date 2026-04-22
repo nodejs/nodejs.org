@@ -111,12 +111,6 @@ importers:
       '@opentelemetry/sdk-logs':
         specifier: ~0.213.0
         version: 0.213.0(@opentelemetry/api@1.9.1)
-      '@orama/core':
-        specifier: ^1.2.19
-        version: 1.2.19
-      '@orama/ui':
-        specifier: ^1.5.4
-        version: 1.5.4(@orama/core@1.2.19)(@types/react@19.2.14)(react@19.2.4)
       '@radix-ui/react-tabs':
         specifier: ^1.1.13
         version: 1.1.13(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -238,6 +232,9 @@ importers:
       '@opennextjs/cloudflare':
         specifier: ^1.19.3
         version: 1.19.3(next@16.2.4(@opentelemetry/api@1.9.1)(@playwright/test@1.58.2)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(wrangler@4.77.0(@cloudflare/workers-types@4.20260422.1))
+      '@orama/orama':
+        specifier: ^3.1.18
+        version: 3.1.18
       '@playwright/test':
         specifier: ^1.58.2
         version: 1.58.2
@@ -471,9 +468,9 @@ importers:
       '@heroicons/react':
         specifier: ^2.2.0
         version: 2.2.0(react@19.2.4)
-      '@orama/core':
-        specifier: ^1.2.19
-        version: 1.2.19
+      '@orama/orama':
+        specifier: ^3.1.18
+        version: 3.1.18
       '@orama/ui':
         specifier: ^1.5.4
         version: 1.5.4(@orama/core@1.2.19)(@types/react@19.2.14)(react@19.2.4)
@@ -532,6 +529,9 @@ importers:
       '@eslint-react/eslint-plugin':
         specifier: ~3.0.0
         version: 3.0.0(eslint@10.1.0(jiti@2.6.1))(typescript@5.9.3)
+      '@orama/core':
+        specifier: ^1.2.19
+        version: 1.2.19
       '@storybook/addon-styling-webpack':
         specifier: ~3.0.1
         version: 3.0.1(storybook@10.3.3(@testing-library/dom@10.4.0)(prettier@3.8.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(webpack@5.105.4(@swc/core@1.15.21))

@@ -1,0 +1,75 @@
+@reference "../../styles/index.css";
+
+.searchResultsContainer {
+  @apply flex
+    grow
+    flex-col
+    overflow-y-auto;
+}
+
+.footer {
+  @apply flex
+    items-baseline
+    justify-center
+    border-t
+    border-neutral-200
+    bg-neutral-100
+    p-4;
+
+  :where([data-theme='dark'], [data-theme='dark'] *) & {
+    @apply border-neutral-900
+      bg-neutral-950;
+  }
+
+  @media (min-width: 1024px) {
+    @apply justify-between
+      rounded-b-xl;
+  }
+}
+
+.shortcutWrapper {
+  @apply hidden
+    items-center
+    gap-2;
+
+  @media (min-width: 1024px) {
+    @apply flex;
+  }
+}
+
+.shortcutItem {
+  @apply flex
+    items-center
+    gap-2
+    text-xs
+    text-neutral-800;
+
+  :where([data-theme='dark'], [data-theme='dark'] *) & {
+    @apply text-neutral-600;
+  }
+}
+
+.shortcutKey {
+  @apply rounded-md
+    bg-neutral-200
+    p-1
+    font-mono
+    text-xs;
+
+  :where([data-theme='dark'], [data-theme='dark'] *) & {
+    @apply bg-neutral-900;
+  }
+
+  svg {
+    @apply h-4
+      w-4;
+  }
+}
+
+.shortcutLabel {
+  @apply text-neutral-800;
+
+  :where([data-theme='dark'], [data-theme='dark'] *) & {
+    @apply text-neutral-600;
+  }
+}
