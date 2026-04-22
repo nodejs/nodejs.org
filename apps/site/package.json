@@ -2,10 +2,11 @@
   "name": "@node-core/website",
   "type": "module",
   "scripts": {
-    "prebuild": "node --run build:blog-data",
+    "prebuild": "node --run build:blog-data && node --run build:twoslash-fsmap",
     "build": "cross-env NODE_NO_WARNINGS=1 next build",
     "build:blog-data": "cross-env NODE_NO_WARNINGS=1 node ./scripts/blog-data/index.mjs",
     "build:blog-data:watch": "node --watch --watch-path=pages/en/blog ./scripts/blog-data/index.mjs",
+    "build:twoslash-fsmap": "node ./scripts/twoslash-fsmap/index.mjs",
     "cloudflare:build:worker": "OPEN_NEXT_CLOUDFLARE=true opennextjs-cloudflare build",
     "cloudflare:deploy": "opennextjs-cloudflare deploy",
     "cloudflare:preview": "wrangler dev",
