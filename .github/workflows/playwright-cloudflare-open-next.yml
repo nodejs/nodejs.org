@@ -50,6 +50,13 @@ jobs:
         working-directory: apps/site
         run: node_modules/.bin/playwright install --with-deps
 
+      - name: Build open-next site
+        working-directory: apps/cloudflare
+        run: node --run cloudflare:build:worker
+        env:
+          NEXT_PUBLIC_DEPLOY_TARGET: cloudflare
+          NODE_OPTIONS: --conditions=cloudflare
+
       - name: Run Playwright tests
         working-directory: apps/site
         run: node --run playwright

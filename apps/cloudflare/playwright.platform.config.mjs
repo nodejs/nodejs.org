@@ -12,7 +12,7 @@ export default {
   webServer: {
     stdout: 'pipe',
     command:
-      '../../node_modules/.bin/turbo cloudflare:preview --filter=@node-core/platform-cloudflare',
+      '../../node_modules/.bin/wrangler dev --config ../cloudflare/wrangler.jsonc',
     url: 'http://127.0.0.1:8787',
     timeout: 60_000 * 3,
   },
