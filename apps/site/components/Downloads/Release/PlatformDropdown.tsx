@@ -2,7 +2,7 @@
 
 import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
-import { useEffect, use, useMemo } from 'react';
+import { useEffect, use, useMemo, useRef } from 'react';
 
 import useClientContext from '#site/hooks/useClientContext';
 import { ReleaseContext } from '#site/providers/releaseProvider';
@@ -24,9 +24,15 @@ const PlatformDropdown: FC = () => {
   const currentPlatform =
     architecture && bitness ? getUserPlatform(architecture, bitness) : null;
 
+  // Track whether the user has manually selected a platform via the dropdown.
+  // When true the OS/version effect will respect their choice instead of
+  // resetting to the auto-detected value.
+  const userSelectedPlatformRef = useRef(false);
+
   useEffect(
     () => {
       if (currentPlatform) {
+        userSelectedPlatformRef.current = false;
         release.setPlatform(currentPlatform);
       }
     },
@@ -53,9 +59,14 @@ const PlatformDropdown: FC = () => {
   useEffect(
     () => {
       if (release.os !== 'LOADING' && release.platform !== '') {
-        // Use the current platform if available, otherwise fall back to the current release platform
-        const currentTargetPlatform = currentPlatform ?? release.platform;
-        release.setPlatform(nextItem(currentTargetPlatform, parsedPlatforms));
+        // If the user has not manually selected a platform and there is a currently
+        // auto-detected one then use it otherwise fallback to the current release platform
+        const basePlatform =
+          !userSelectedPlatformRef.current && currentPlatform
+            ? currentPlatform
+            : release.platform;
+
+        release.setPlatform(nextItem(basePlatform, parsedPlatforms));
       }
     },
     // We only want to react on the change of the OS and Version
@@ -70,7 +81,12 @@ const PlatformDropdown: FC = () => {
       loading={release.os === 'LOADING' || release.platform === ''}
       placeholder={t('layouts.download.dropdown.unknown')}
       ariaLabel={t('layouts.download.dropdown.platform')}
-      onChange={platform => platform && release.setPlatform(platform)}
+      onChange={platform => {
+        if (platform) {
+          userSelectedPlatformRef.current = true;
+          release.setPlatform(platform);
+        }
+      }}
       className="min-w-28"
       inline={true}
     />
