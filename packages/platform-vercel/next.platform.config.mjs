@@ -25,4 +25,10 @@ export default {
     '@platform/analytics': '@node-core/platform-vercel/analytics',
     '@platform/instrumentation': '@node-core/platform-vercel/instrumentation',
   },
+  mdx: {
+    // Vercel supports the fast Oniguruma WASM engine and twoslash transforms,
+    // so keep parity with the default standalone config.
+    wasm: true,
+    twoslash: true,
+  },
 };
