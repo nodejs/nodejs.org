@@ -30,8 +30,6 @@
   "dependencies": {
     "@heroicons/react": "~2.2.0",
     "@mdx-js/mdx": "^3.1.1",
-    "@node-core/platform-cloudflare": "workspace:*",
-    "@node-core/platform-vercel": "workspace:*",
     "@node-core/rehype-shiki": "workspace:*",
     "@node-core/ui-components": "workspace:*",
     "@node-core/website-i18n": "workspace:*",
@@ -98,6 +96,18 @@
     "typescript": "catalog:",
     "typescript-eslint": "~8.57.2",
     "user-agent-data-types": "0.4.2"
+  },
+  "peerDependencies": {
+    "@node-core/platform-cloudflare": "workspace:*",
+    "@node-core/platform-vercel": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@node-core/platform-cloudflare": {
+      "optional": true
+    },
+    "@node-core/platform-vercel": {
+      "optional": true
+    }
   },
   "imports": {
     "#site/*": [

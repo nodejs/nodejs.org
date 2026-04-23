@@ -82,6 +82,43 @@ importers:
         specifier: ~8.57.2
         version: 8.57.2(eslint@10.1.0(jiti@2.6.1))(typescript@5.9.3)
 
+  apps/cloudflare:
+    dependencies:
+      '@flarelabs-net/wrangler-build-time-fs-assets-polyfilling':
+        specifier: ^0.0.1
+        version: 0.0.1
+      '@opennextjs/cloudflare':
+        specifier: ^1.19.3
+        version: 1.19.3(next@16.2.4(@opentelemetry/api@1.9.1)(@playwright/test@1.58.2)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(wrangler@4.77.0(@cloudflare/workers-types@4.20260422.1))
+      '@sentry/cloudflare':
+        specifier: ^10.49.0
+        version: 10.49.0(@cloudflare/workers-types@4.20260422.1)
+      next:
+        specifier: 'catalog:'
+        version: 16.2.4(@opentelemetry/api@1.9.1)(@playwright/test@1.58.2)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react:
+        specifier: 'catalog:'
+        version: 19.2.4
+      wrangler:
+        specifier: ^4.77.0
+        version: 4.77.0(@cloudflare/workers-types@4.20260422.1)
+    devDependencies:
+      '@cloudflare/workers-types':
+        specifier: ^4.20260418.1
+        version: 4.20260422.1
+      '@playwright/test':
+        specifier: ^1.58.2
+        version: 1.58.2
+      '@types/node':
+        specifier: 'catalog:'
+        version: 24.10.1
+      '@types/react':
+        specifier: 'catalog:'
+        version: 19.2.14
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+
   apps/site:
     dependencies:
       '@heroicons/react':
@@ -92,10 +129,10 @@ importers:
         version: 3.1.1
       '@node-core/platform-cloudflare':
         specifier: workspace:*
-        version: link:../../packages/platform-cloudflare
+        version: link:../cloudflare
       '@node-core/platform-vercel':
         specifier: workspace:*
-        version: link:../../packages/platform-vercel
+        version: link:../vercel
       '@node-core/rehype-shiki':
         specifier: workspace:*
         version: link:../../packages/rehype-shiki
@@ -281,50 +318,7 @@ importers:
         specifier: 0.4.2
         version: 0.4.2
 
-  packages/i18n:
-    devDependencies:
-      typescript:
-        specifier: 'catalog:'
-        version: 5.9.3
-
-  packages/platform-cloudflare:
-    dependencies:
-      '@flarelabs-net/wrangler-build-time-fs-assets-polyfilling':
-        specifier: ^0.0.1
-        version: 0.0.1
-      '@opennextjs/cloudflare':
-        specifier: ^1.19.3
-        version: 1.19.3(next@16.2.4(@opentelemetry/api@1.9.1)(@playwright/test@1.58.2)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(wrangler@4.77.0(@cloudflare/workers-types@4.20260422.1))
-      '@sentry/cloudflare':
-        specifier: ^10.49.0
-        version: 10.49.0(@cloudflare/workers-types@4.20260422.1)
-      next:
-        specifier: 'catalog:'
-        version: 16.2.4(@opentelemetry/api@1.9.1)(@playwright/test@1.58.2)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      react:
-        specifier: 'catalog:'
-        version: 19.2.4
-      wrangler:
-        specifier: ^4.77.0
-        version: 4.77.0(@cloudflare/workers-types@4.20260422.1)
-    devDependencies:
-      '@cloudflare/workers-types':
-        specifier: ^4.20260418.1
-        version: 4.20260422.1
-      '@playwright/test':
-        specifier: ^1.58.2
-        version: 1.58.2
-      '@types/node':
-        specifier: 'catalog:'
-        version: 24.10.1
-      '@types/react':
-        specifier: 'catalog:'
-        version: 19.2.14
-      typescript:
-        specifier: 'catalog:'
-        version: 5.9.3
-
-  packages/platform-vercel:
+  apps/vercel:
     dependencies:
       '@opentelemetry/api-logs':
         specifier: ~0.213.0
@@ -360,6 +354,12 @@ importers:
       '@types/react':
         specifier: 'catalog:'
         version: 19.2.14
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+
+  packages/i18n:
+    devDependencies:
       typescript:
         specifier: 'catalog:'
         version: 5.9.3

@@ -11,7 +11,7 @@ import type {
   Request,
 } from '@cloudflare/workers-types';
 
-import { default as handler } from '../../../apps/site/.open-next/worker.js';
+import { default as handler } from '../../site/.open-next/worker.js';
 
 export default withSentry(
   (env: {
@@ -50,4 +50,4 @@ export default withSentry(
   }
 );
 
-export { DOQueueHandler } from '../../../apps/site/.open-next/worker.js';
+export { DOQueueHandler } from '../../site/.open-next/worker.js';

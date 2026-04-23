@@ -307,13 +307,13 @@ Benefits:
 
 `NEXT_PUBLIC_DEPLOY_TARGET` selects which platform adapter contributes its Next.js config, MDX flags, image loader, analytics, and Playwright webServer. It is consumed at build time by [`apps/site/next.config.mjs`](../apps/site/next.config.mjs), [`apps/site/mdx/plugins.mjs`](../apps/site/mdx/plugins.mjs), and [`apps/site/playwright.config.ts`](../apps/site/playwright.config.ts) via a dynamic import of `@node-core/platform-${target}/next.platform.config`.
 
-| Value        | Adapter                                                                                                                                                                                                         | Set by                                                                                                  |
-| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `vercel`     | [`@node-core/platform-vercel`](../packages/platform-vercel)                                                                                                                                                     | [`apps/site/vercel.json`](../apps/site/vercel.json) build env                                           |
-| `cloudflare` | [`@node-core/platform-cloudflare`](../packages/platform-cloudflare)                                                                                                                                             | OpenNext `buildCommand` in [`open-next.config.ts`](../packages/platform-cloudflare/open-next.config.ts) |
-| _(unset)_    | Falls back to the no-op defaults in [`apps/site/next.platform.config.mjs`](../apps/site/next.platform.config.mjs) and [`apps/site/playwright.platform.config.mjs`](../apps/site/playwright.platform.config.mjs) | Plain `pnpm dev` / `pnpm build` / `pnpm deploy`                                                         |
+| Value        | Adapter                                                                                                                                                                                                         | Set by                                                                                     |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| `vercel`     | [`@node-core/platform-vercel`](../apps/vercel)                                                                                                                                                                  | [`apps/site/vercel.json`](../apps/site/vercel.json) build env                              |
+| `cloudflare` | [`@node-core/platform-cloudflare`](../apps/cloudflare)                                                                                                                                                          | OpenNext `buildCommand` in [`open-next.config.ts`](../apps/cloudflare/open-next.config.ts) |
+| _(unset)_    | Falls back to the no-op defaults in [`apps/site/next.platform.config.mjs`](../apps/site/next.platform.config.mjs) and [`apps/site/playwright.platform.config.mjs`](../apps/site/playwright.platform.config.mjs) | Plain `pnpm dev` / `pnpm build` / `pnpm deploy`                                            |
 
-Each adapter exports a default `{ nextConfig, aliases, images, mdx }` shape (any field optional). See [`packages/platform-vercel/next.platform.config.mjs`](../packages/platform-vercel/next.platform.config.mjs) and [`packages/platform-cloudflare/next.platform.config.mjs`](../packages/platform-cloudflare/next.platform.config.mjs) for reference.
+Each adapter exports a default `{ nextConfig, aliases, images, mdx }` shape (any field optional). See [`apps/vercel/next.platform.config.mjs`](../apps/vercel/next.platform.config.mjs) and [`apps/cloudflare/next.platform.config.mjs`](../apps/cloudflare/next.platform.config.mjs) for reference.
 
 #### Vercel Integration
 
@@ -325,7 +325,7 @@ Each adapter exports a default `{ nextConfig, aliases, images, mdx }` shape (any
 #### Cloudflare Integration
 
 - OpenNext adapter builds a [Cloudflare Worker](https://www.cloudflare.com/en-gb/developer-platform/products/workers/) artifact from the Next.js build
-- All Cloudflare-specific files (Wrangler config, OpenNext config, custom worker entrypoint, image loader) live in [`packages/platform-cloudflare`](../packages/platform-cloudflare)
+- All Cloudflare-specific files (Wrangler config, OpenNext config, custom worker entrypoint, image loader) live in [`apps/cloudflare`](../apps/cloudflare)
 - See [Cloudflare build and deployment](./cloudflare-build-and-deployment.md) for details
 
 ### Package Management

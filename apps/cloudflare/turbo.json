@@ -8,13 +8,13 @@
         "open-next.config.ts",
         "wrangler.jsonc",
         "src/**/*.ts",
-        "../../apps/site/{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
-        "../../apps/site/{app,components,layouts,pages,styles}/**/*.css",
-        "../../apps/site/{next-data,scripts,i18n}/**/*.{mjs,json}",
-        "../../apps/site/{app,pages}/**/*.{mdx,md}",
-        "../../apps/site/*.{md,mdx,json,ts,tsx,mjs,yml}"
+        "../site/{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
+        "../site/{app,components,layouts,pages,styles}/**/*.css",
+        "../site/{next-data,scripts,i18n}/**/*.{mjs,json}",
+        "../site/{app,pages}/**/*.{mdx,md}",
+        "../site/*.{md,mdx,json,ts,tsx,mjs,yml}"
       ],
-      "outputs": ["../../apps/site/.open-next/**"],
+      "outputs": ["../site/.open-next/**"],
       "env": [
         "NEXT_PUBLIC_DEPLOY_TARGET",
         "NEXT_PUBLIC_BASE_URL",
