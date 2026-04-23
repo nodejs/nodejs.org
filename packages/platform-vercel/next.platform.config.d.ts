@@ -1,14 +1,11 @@
 import type { NextConfig } from 'next';
 
-type PlatformMdxConfig = {
-  wasm?: boolean;
-  twoslash?: boolean;
-};
+type PlatformMdxConfig = Pick<
+  import('@node-core/rehype-shiki').HighlighterOptions,
+  'wasm' | 'twoslash'
+>;
 
-type PlatformNextConfig = {
-  deploymentId?: string;
-  env?: NextConfig['env'];
-};
+type PlatformNextConfig = Pick<NextConfig, 'deploymentId' | 'env'>;
 
 export type PlatformConfig = {
   aliases?: Record<string, string>;

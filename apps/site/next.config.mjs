@@ -21,16 +21,6 @@ const { default: platform } = DEPLOY_TARGET
   ? await import(`@node-core/platform-${DEPLOY_TARGET}/next.platform.config`)
   : await import('./next.platform.config.mjs');
 
-/**
- * Apply only an explicit allowlist of Next.js config keys from platform
- * packages so critical core config (e.g. `webpack`, `turbopack`) cannot be
- * overridden accidentally.
- */
-const platformNextConfigOverrides = {
-  env: platform.nextConfig?.env,
-  deploymentId: platform.nextConfig?.deploymentId,
-};
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Full Support of React 18 SSR and Streaming
@@ -106,7 +96,7 @@ const nextConfig = {
     ...config,
     resolve: { ...resolve, alias: { ...resolve.alias, ...platform.aliases } },
   }),
-  ...platformNextConfigOverrides,
+  ...platform.nextConfig,
 };
 
 const withNextIntl = createNextIntlPlugin('./i18n.tsx');
