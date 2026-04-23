@@ -27,7 +27,7 @@
     "@vercel/speed-insights": "~2.0.0"
   },
   "peerDependencies": {
-    "next": "16.2.4",
+    "next": "catalog:",
     "react": "catalog:"
   },
   "devDependencies": {

@@ -29,7 +29,7 @@
     "wrangler": "^4.77.0"
   },
   "peerDependencies": {
-    "next": "16.2.4",
+    "next": "catalog:",
     "react": "catalog:"
   },
   "devDependencies": {
