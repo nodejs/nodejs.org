@@ -22,7 +22,7 @@ describe('Select', () => {
     const { getByLabelText } = render(
       <Select
         values={values}
-        defaultValue={defaultValue}
+        value={defaultValue}
         placeholder={placeholder}
         dropdownLabel={dropdownLabel}
         label={label}
@@ -38,7 +38,7 @@ describe('Select', () => {
     const { getByText } = render(
       <Select
         values={values}
-        defaultValue={defaultValue}
+        value={defaultValue}
         placeholder={placeholder}
         dropdownLabel={dropdownLabel}
         label={label}
