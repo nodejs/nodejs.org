@@ -4,10 +4,9 @@ import { NextIntlClientProvider } from 'next-intl';
 
 import BaseLayout from '#site/layouts/Base';
 import { IBM_PLEX_MONO, OPEN_SANS } from '#site/next.fonts';
-import BodyEnd from '#site/platform/body-end';
 import { ThemeProvider } from '#site/providers/themeProvider';
 
-import type { FC, PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren, ReactNode } from 'react';
 
 import '#site/styles/index.css';
 
@@ -15,9 +14,14 @@ const fontClasses = classNames(IBM_PLEX_MONO.variable, OPEN_SANS.variable);
 
 type RootLayoutProps = PropsWithChildren<{
   params: Promise<{ locale: string }>;
+  analytics: ReactNode;
 }>;
 
-const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
+const RootLayout: FC<RootLayoutProps> = async ({
+  children,
+  analytics,
+  params,
+}) => {
   const { locale } = await params;
 
   const { langDir, hrefLang } =
@@ -44,7 +48,7 @@ const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
           href="https://social.lfx.dev/@nodejs"
         />
 
-        <BodyEnd />
+        {analytics}
       </body>
     </html>
   );

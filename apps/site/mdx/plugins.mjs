@@ -7,21 +7,19 @@ import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import readingTime from 'remark-reading-time';
 
+import { DEPLOY_TARGET } from '../next.constants.mjs';
 import remarkTableTitles from '../util/table';
 
-// Shiki is created out here to avoid an async rehype plugin
-const singletonShiki = await rehypeShikiji({
-  // We use the faster WASM engine on the server instead of the web-optimized version.
-  //
-  // Currently we fall back to the JavaScript RegEx engine
-  // on Cloudflare workers because `shiki/wasm` requires loading via
-  // `WebAssembly.instantiate` with custom imports, which Cloudflare doesn't support
-  // for security reasons.
-  wasm: process.env.NEXT_PUBLIC_DEPLOY_TARGET !== 'cloudflare',
+// Load MDX overrides contributed by the active deployment target. Keeps
+// this module free of platform-specific branches — each platform owns
+// its own `{ wasm, twoslash }` defaults via `next.platform.config.mjs`,
+// with the in-repo default config serving as the standalone fallback.
+const { default: platform } = DEPLOY_TARGET
+  ? await import(`@node-core/platform-${DEPLOY_TARGET}/next.platform.config`)
+  : await import('../next.platform.config.mjs');
 
-  // TODO(@avivkeller): Find a way to enable Twoslash w/ a VFS on Cloudflare
-  twoslash: process.env.NEXT_PUBLIC_DEPLOY_TARGET !== 'cloudflare',
-});
+// Shiki is created out here to avoid an async rehype plugin
+const singletonShiki = await rehypeShikiji(platform.mdx);
 
 /**
  * Provides all our Rehype Plugins that are used within MDX

@@ -1,4 +1,5 @@
 'use strict';
+
 import createNextIntlPlugin from 'next-intl/plugin';
 
 import {
@@ -9,17 +10,16 @@ import {
 import { getImagesConfig } from './next.image.config.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 
-const getDeploymentId = async () => {
-  if (DEPLOY_TARGET !== 'cloudflare') {
-    return undefined;
-  }
-
-  // If we're building for the Cloudflare deployment we want to set
-  // an appropriate deploymentId (needed for skew protection)
-  const openNextAdapter = await import('@opennextjs/cloudflare');
-
-  return openNextAdapter.getDeploymentId();
-};
+/**
+ * Loads the deployment platform's `next.platform.config.mjs` — falling back
+ * to the local no-op when no platform is active. Each platform package
+ * (`@node-core/platform-<target>`) owns its own file and contributes
+ * `{ nextConfig, aliases, images }`. Adding a new platform only means
+ * creating a new `@node-core/platform-<target>` package.
+ */
+const { default: platform } = DEPLOY_TARGET
+  ? await import(`@node-core/platform-${DEPLOY_TARGET}/next.platform.config`)
+  : await import('./next.platform.config.mjs');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -30,9 +30,14 @@ const nextConfig = {
   // We allow the BASE_PATH to be overridden in case that the Website
   // is being built on a subdirectory (e.g. /nodejs-website)
   basePath: BASE_PATH,
-  // Vercel/Next.js Image Optimization Settings
-  images: getImagesConfig(),
+  images: getImagesConfig(platform.images),
   serverExternalPackages: ['twoslash'],
+  // Transpile platform packages' TSX/TS sources when they're pulled in via
+  // the `@platform/*` aliases from the active `next.platform.config.mjs`.
+  transpilePackages: [
+    '@node-core/platform-vercel',
+    '@node-core/platform-cloudflare',
+  ],
   outputFileTracingIncludes: {
     // Twoslash needs TypeScript declarations to function, and, by default, Next.js
     // strips them for brevity. Therefore, they must be explicitly included.
@@ -84,8 +89,16 @@ const nextConfig = {
     // Faster Development Servers with Turbopack
     turbopackFileSystemCacheForDev: true,
   },
-  deploymentId: await getDeploymentId(),
+  // Provide Turbopack Aliases for Platform Resolution
+  turbopack: { resolveAlias: platform.aliases },
+  // Provide Webpack Aliases for Platform Resolution
+  webpack: ({ resolve, ...config }) => ({
+    ...config,
+    resolve: { ...resolve, alias: { ...resolve.alias, ...platform.aliases } },
+  }),
+  ...platform.nextConfig,
 };
 
 const withNextIntl = createNextIntlPlugin('./i18n.tsx');
+
 export default withNextIntl(nextConfig);

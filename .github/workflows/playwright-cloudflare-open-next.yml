@@ -54,7 +54,7 @@ jobs:
         working-directory: apps/site
         run: node --run playwright
         env:
-          PLAYWRIGHT_RUN_CLOUDFLARE_PREVIEW: true
+          NEXT_PUBLIC_DEPLOY_TARGET: cloudflare
           PLAYWRIGHT_BASE_URL: http://127.0.0.1:8787
 
       - name: Upload Playwright test results

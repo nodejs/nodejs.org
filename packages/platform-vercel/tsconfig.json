@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "Bundler",
+    "customConditions": ["default"],
+    "isolatedModules": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src",
+    "next.platform.config.mjs",
+    "playwright.platform.config.mjs",
+    "playwright.platform.config.d.ts"
+  ]
+}

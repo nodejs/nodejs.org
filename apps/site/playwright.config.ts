@@ -1,6 +1,19 @@
-import { defineConfig, devices, type Config } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
 
-import json from './package.json' with { type: 'json' };
+import { DEPLOY_TARGET } from './next.constants.mjs';
+
+/**
+ * Load Playwright overrides contributed by the active deployment target.
+ *
+ * Mirrors how `next.config.mjs` loads `next.platform.config` from the
+ * matching `@node-core/platform-<target>` package. Each platform owns
+ * its own webServer / baseURL wiring so this file stays platform-neutral.
+ */
+const { default: platform } = DEPLOY_TARGET
+  ? await import(
+      `@node-core/platform-${DEPLOY_TARGET}/playwright.platform.config`
+    )
+  : await import('./playwright.platform.config.mjs');
 
 const isCI = !!process.env.CI;
 
@@ -12,9 +25,12 @@ export default defineConfig({
   retries: isCI ? 2 : 0,
   workers: isCI ? 1 : undefined,
   reporter: isCI ? [['html'], ['github']] : [['html']],
-  ...getWebServerConfig(),
+  ...(platform.webServer ? { webServer: platform.webServer } : {}),
   use: {
-    baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:3000',
+    baseURL:
+      process.env.PLAYWRIGHT_BASE_URL ||
+      platform.baseURL ||
+      'http://127.0.0.1:3000',
     trace: 'on-first-retry',
   },
   projects: [
@@ -32,22 +48,3 @@ export default defineConfig({
     },
   ],
 });
-
-function getWebServerConfig(): Pick<Config, 'webServer'> {
-  if (!json.scripts['cloudflare:preview']) {
-    throw new Error('cloudflare:preview script not defined');
-  }
-
-  if (process.env.PLAYWRIGHT_RUN_CLOUDFLARE_PREVIEW) {
-    return {
-      webServer: {
-        stdout: 'pipe',
-        command: '../../node_modules/.bin/turbo cloudflare:preview',
-        url: process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:3000',
-        timeout: 60_000 * 3,
-      },
-    };
-  }
-
-  return {};
-}

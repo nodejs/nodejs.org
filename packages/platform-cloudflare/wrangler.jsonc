@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "main": "./cloudflare/worker-entrypoint.ts",
+  "main": "./src/worker-entrypoint.ts",
   "name": "nodejs-website",
   "compatibility_date": "2024-11-07",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
@@ -8,7 +8,7 @@
   "minify": true,
   "keep_names": false,
   "assets": {
-    "directory": ".open-next/assets",
+    "directory": "../../apps/site/.open-next/assets",
     "binding": "ASSETS",
     "run_worker_first": true,
   },
@@ -31,13 +31,16 @@
     "head_sampling_rate": 1,
   },
   "build": {
+    // Run the asset polyfiller from apps/site so that `pages`, `snippets`, and
+    // the `.open-next` output directory resolve against the Next.js app.
+    "cwd": "../../apps/site",
     "command": "wrangler-build-time-fs-assets-polyfilling --assets pages --assets snippets --assets-output-dir .open-next/assets",
   },
   "alias": {
-    "node:fs": "./.wrangler/fs-assets-polyfilling/polyfills/node/fs.ts",
-    "node:fs/promises": "./.wrangler/fs-assets-polyfilling/polyfills/node/fs/promises.ts",
-    "fs": "./.wrangler/fs-assets-polyfilling/polyfills/node/fs.ts",
-    "fs/promises": "./.wrangler/fs-assets-polyfilling/polyfills/node/fs/promises.ts",
+    "node:fs": "../../apps/site/.wrangler/fs-assets-polyfilling/polyfills/node/fs.ts",
+    "node:fs/promises": "../../apps/site/.wrangler/fs-assets-polyfilling/polyfills/node/fs/promises.ts",
+    "fs": "../../apps/site/.wrangler/fs-assets-polyfilling/polyfills/node/fs.ts",
+    "fs/promises": "../../apps/site/.wrangler/fs-assets-polyfilling/polyfills/node/fs/promises.ts",
   },
   "r2_buckets": [
     {

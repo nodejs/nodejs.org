@@ -1,4 +1,4 @@
-import { DEPLOY_TARGET, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
+import { ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 
 const remotePatterns = [
   'https://avatars.githubusercontent.com/**',
@@ -8,18 +8,16 @@ const remotePatterns = [
   'https://website-assets.oramasearch.com/**',
 ];
 
-export const getImagesConfig = () => {
-  if (DEPLOY_TARGET === 'cloudflare') {
-    // If we're building for the Cloudflare deployment we want to use the custom cloudflare image loader
-    //
-    // Important: The custom loader ignores `remotePatterns` as those are configured as allowed source origins
-    //            (https://developers.cloudflare.com/images/transform-images/sources/)
-    //            in the Cloudflare dashboard itself instead (to the exact same values present in `remotePatterns` above).
-    //
-    return {
-      loader: 'custom',
-      loaderFile: './cloudflare/image-loader.ts',
-    };
+/**
+ * Returns the Next.js `images` configuration, preferring any platform-provided
+ * override (e.g. Cloudflare's custom loader) over the default remotePatterns +
+ * static-export unoptimized defaults.
+ *
+ * @param {import('next').NextConfig['images']} [platformImagesOverride]
+ */
+export const getImagesConfig = platformImagesOverride => {
+  if (platformImagesOverride) {
+    return platformImagesOverride;
   }
 
   return {

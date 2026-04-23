@@ -1,0 +1,41 @@
+{
+  "name": "@node-core/platform-vercel",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./analytics": "./src/analytics.tsx",
+    "./instrumentation": "./src/instrumentation.ts",
+    "./next.platform.config": "./next.platform.config.mjs",
+    "./playwright.platform.config": "./playwright.platform.config.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodejs/nodejs.org",
+    "directory": "packages/platform-vercel"
+  },
+  "scripts": {
+    "lint:types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@opentelemetry/api-logs": "~0.213.0",
+    "@opentelemetry/instrumentation": "~0.213.0",
+    "@opentelemetry/resources": "~1.30.1",
+    "@opentelemetry/sdk-logs": "~0.213.0",
+    "@vercel/analytics": "~2.0.1",
+    "@vercel/otel": "~2.1.1",
+    "@vercel/speed-insights": "~2.0.0"
+  },
+  "peerDependencies": {
+    "next": "16.2.4",
+    "react": "catalog:"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/react": "catalog:",
+    "typescript": "catalog:"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

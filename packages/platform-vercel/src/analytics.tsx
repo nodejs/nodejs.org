@@ -1,11 +1,11 @@
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-const VercelBodyEnd = () => (
+const VercelAnalytics = () => (
   <>
     <Analytics />
     <SpeedInsights />
   </>
 );
 
-export default VercelBodyEnd;
+export default VercelAnalytics;

@@ -27,8 +27,10 @@ turbo.json @nodejs/nodejs-website @nodejs/web-infra
 crowdin.yml @nodejs/web-infra
 apps/site/redirects.json @nodejs/web-infra
 apps/site/site.json @nodejs/web-infra
-apps/site/wrangler.jsonc @nodejs/web-infra
-apps/site/open-next.config.ts @nodejs/web-infra
+packages/platform-cloudflare/wrangler.jsonc @nodejs/web-infra
+packages/platform-cloudflare/open-next.config.ts @nodejs/web-infra
+packages/platform-cloudflare/next.platform.config.mjs @nodejs/web-infra
+packages/platform-vercel/next.platform.config.mjs @nodejs/web-infra
 apps/site/redirects.json @nodejs/web-infra
 
 # Critical Documents
