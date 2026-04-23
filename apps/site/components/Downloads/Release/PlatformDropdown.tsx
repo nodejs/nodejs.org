@@ -16,14 +16,18 @@ const PlatformDropdown: FC = () => {
   const { architecture, bitness } = useClientContext();
 
   const release = use(ReleaseContext);
+
   const t = useTranslations();
+
+  // Compute the platform during render so it's available to both `useEffect` calls below in the same cycle
+  // (avoiding race conditions when architecture detection and OS detection arrive in the same batch)
+  const currentPlatform =
+    architecture && bitness ? getUserPlatform(architecture, bitness) : null;
 
   useEffect(
     () => {
-      if (architecture && bitness) {
-        const autoDetectedPlatform = getUserPlatform(architecture, bitness);
-
-        release.setPlatform(autoDetectedPlatform);
+      if (currentPlatform) {
+        release.setPlatform(currentPlatform);
       }
     },
     // Only react on the change of the Client Context Architecture and Bitness
@@ -49,12 +53,14 @@ const PlatformDropdown: FC = () => {
   useEffect(
     () => {
       if (release.os !== 'LOADING' && release.platform !== '') {
-        release.setPlatform(nextItem(release.platform, parsedPlatforms));
+        // Use the current platform if available, otherwise fall back to the current release platform
+        const currentTargetPlatform = currentPlatform ?? release.platform;
+        release.setPlatform(nextItem(currentTargetPlatform, parsedPlatforms));
       }
     },
     // We only want to react on the change of the OS and Version
     // eslint-disable-next-line @eslint-react/exhaustive-deps
-    [release.os, release.version, release.platform]
+    [release.os, release.version]
   );
 
   return (
