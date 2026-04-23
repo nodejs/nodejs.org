@@ -31,8 +31,6 @@
     "head_sampling_rate": 1,
   },
   "build": {
-    // Run the asset polyfiller from apps/site so that `pages`, `snippets`, and
-    // the `.open-next` output directory resolve against the Next.js app.
     "cwd": "../site",
     "command": "wrangler-build-time-fs-assets-polyfilling --assets pages --assets snippets --assets-output-dir .open-next/assets",
   },
