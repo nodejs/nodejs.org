@@ -2,7 +2,7 @@
 
 import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
-import { useEffect, use, useMemo, useRef } from 'react';
+import { useEffect, use, useMemo, useState } from 'react';
 
 import useClientContext from '#site/hooks/useClientContext';
 import { ReleaseContext } from '#site/providers/releaseProvider';
@@ -27,12 +27,13 @@ const PlatformDropdown: FC = () => {
   // Track whether the user has manually selected a platform via the dropdown.
   // When true the OS/version effect will respect their choice instead of
   // resetting to the auto-detected value.
-  const userSelectedPlatformRef = useRef(false);
+  const [userHasSelectedPlatform, setUserHasSelectedPlatform] = useState(false);
 
   useEffect(
     () => {
       if (currentPlatform) {
-        userSelectedPlatformRef.current = false;
+        // eslint-disable-next-line @eslint-react/set-state-in-effect
+        setUserHasSelectedPlatform(false);
         release.setPlatform(currentPlatform);
       }
     },
@@ -62,7 +63,7 @@ const PlatformDropdown: FC = () => {
         // If the user has not manually selected a platform and there is a currently
         // auto-detected one then use it otherwise fallback to the current release platform
         const basePlatform =
-          !userSelectedPlatformRef.current && currentPlatform
+          !userHasSelectedPlatform && currentPlatform
             ? currentPlatform
             : release.platform;
 
@@ -82,7 +83,7 @@ const PlatformDropdown: FC = () => {
       placeholder={t('layouts.download.dropdown.unknown')}
       ariaLabel={t('layouts.download.dropdown.platform')}
       onChange={platform => {
-        userSelectedPlatformRef.current = true;
+        setUserHasSelectedPlatform(true);
         release.setPlatform(platform);
       }}
       className="min-w-28"
