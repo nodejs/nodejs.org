@@ -1,1 +1,1 @@
-export function register() {}
+export const register = () => {};

@@ -1,5 +1,3 @@
 import { registerOTel } from '@vercel/otel';
 
-export function register() {
-  registerOTel({ serviceName: 'nodejs-org' });
-}
+export const register = () => registerOTel({ serviceName: 'nodejs-org' });

@@ -7,16 +7,13 @@ import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import readingTime from 'remark-reading-time';
 
-import { DEPLOY_TARGET } from '../next.constants.mjs';
-import remarkTableTitles from '../util/table';
+// MDX overrides contributed by the active deployment target. Resolved via
+// the `#platform/next.platform.config` import map in `package.json`; each
+// platform owns its own `{ wasm, twoslash }` defaults and the in-repo
+// default file acts as the standalone fallback.
+import platform from '#platform/next.platform.config';
 
-// Load MDX overrides contributed by the active deployment target. Keeps
-// this module free of platform-specific branches — each platform owns
-// its own `{ wasm, twoslash }` defaults via `next.platform.config.mjs`,
-// with the in-repo default config serving as the standalone fallback.
-const { default: platform } = DEPLOY_TARGET
-  ? await import(`@node-core/platform-${DEPLOY_TARGET}/next.platform.config`)
-  : await import('../next.platform.config.mjs');
+import remarkTableTitles from '../util/table';
 
 // Shiki is created out here to avoid an async rehype plugin
 const singletonShiki = await rehypeShikiji(platform.mdx);

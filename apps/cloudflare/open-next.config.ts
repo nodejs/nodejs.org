@@ -21,7 +21,7 @@ const cloudflareConfig = defineCloudflareConfig({
 const openNextConfig: OpenNextConfig = {
   ...cloudflareConfig,
   buildCommand:
-    'cross-env NEXT_PUBLIC_DEPLOY_TARGET=cloudflare pnpm build --webpack',
+    'cross-env NEXT_PUBLIC_DEPLOY_TARGET=cloudflare NODE_OPTIONS=--conditions=cloudflare pnpm build --webpack',
   cloudflare: {
     skewProtection: { enabled: true },
   },

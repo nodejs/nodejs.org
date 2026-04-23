@@ -5,9 +5,9 @@
  * Must export a default `{ nextConfig, aliases, images }` shape — any of
  * which may be omitted when the platform has nothing to contribute.
  *
- * @type {import('@node-core/platform-vercel/next.platform.config').PlatformConfig}
+ * @type {import('../site/next.platform.config').PlatformConfig}
  */
-const vercelDeploymentUrl = process.env.VERCEL_URL
+const VERCEL_URL = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : undefined;
 
@@ -18,7 +18,7 @@ export default {
     // canonical env var. A manually-set `NEXT_PUBLIC_BASE_URL` wins.
     env: {
       NEXT_PUBLIC_BASE_URL:
-        process.env.NEXT_PUBLIC_BASE_URL || vercelDeploymentUrl || '',
+        process.env.NEXT_PUBLIC_BASE_URL || VERCEL_URL || '',
     },
   },
   aliases: {

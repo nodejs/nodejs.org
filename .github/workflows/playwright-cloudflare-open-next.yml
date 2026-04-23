@@ -55,7 +55,7 @@ jobs:
         run: node --run playwright
         env:
           NEXT_PUBLIC_DEPLOY_TARGET: cloudflare
-          PLAYWRIGHT_BASE_URL: http://127.0.0.1:8787
+          NODE_OPTIONS: --conditions=cloudflare
 
       - name: Upload Playwright test results
         if: always()

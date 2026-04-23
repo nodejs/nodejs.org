@@ -1,12 +1,13 @@
+import type { HighlighterOptions } from '@node-core/rehype-shiki';
 import type { NextConfig } from 'next';
 
-type PlatformMdxConfig = Pick<
-  import('@node-core/rehype-shiki').HighlighterOptions,
-  'wasm' | 'twoslash'
->;
-
+type PlatformMdxConfig = Pick<HighlighterOptions, 'wasm' | 'twoslash'>;
 type PlatformNextConfig = Pick<NextConfig, 'deploymentId' | 'env'>;
 
+/**
+ * Shared platform-config contract consumed by `apps/site/next.config.mjs`
+ * and implemented by each `@node-core/platform-<target>` package.
+ */
 export type PlatformConfig = {
   aliases?: Record<string, string>;
   images?: NextConfig['images'];

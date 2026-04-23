@@ -6,6 +6,6 @@
  * `playwright.platform.config.mjs` that overrides these values. Keep
  * this file free of any platform-specific code.
  *
- * @type {{ baseURL?: string; webServer?: import('@playwright/test').Config['webServer'] }}
+ * @type {import('./playwright.platform.config').PlatformPlaywrightConfig}
  */
 export default {};

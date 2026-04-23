@@ -9,6 +9,8 @@
  * Alias values are project-relative strings (not absolute paths) so
  * Turbopack resolves them correctly — Turbopack treats absolute paths
  * as server-relative and rejects them.
+ *
+ * @type {import('./next.platform.config').PlatformConfig}
  */
 export default {
   aliases: {

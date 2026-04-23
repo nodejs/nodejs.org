@@ -12,7 +12,7 @@ const require = createRequire(import.meta.url);
  * Must export a default `{ nextConfig, aliases, images }` shape — any of
  * which may be omitted when the platform has nothing to contribute.
  *
- * @type {import('@node-core/platform-cloudflare/next.platform.config').PlatformConfig}
+ * @type {import('../site/next.platform.config').PlatformConfig}
  */
 export default {
   nextConfig: {

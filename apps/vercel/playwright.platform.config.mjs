@@ -6,6 +6,6 @@
  * the deployment. Left intentionally empty so `apps/site/playwright.config.ts`
  * falls back to its default baseURL.
  *
- * @type {import('./playwright.platform.config').PlatformPlaywrightConfig}
+ * @type {import('../site/playwright.platform.config').PlatformPlaywrightConfig}
  */
 export default {};

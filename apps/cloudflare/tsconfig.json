@@ -16,8 +16,7 @@
   "include": [
     "src",
     "next.platform.config.mjs",
-    "playwright.platform.config.mjs",
-    "playwright.platform.config.d.ts"
+    "playwright.platform.config.mjs"
   ],
   "exclude": ["src/worker-entrypoint.ts"]
 }

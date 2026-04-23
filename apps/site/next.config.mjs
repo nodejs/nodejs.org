@@ -2,24 +2,11 @@
 
 import createNextIntlPlugin from 'next-intl/plugin';
 
-import {
-  BASE_PATH,
-  DEPLOY_TARGET,
-  ENABLE_STATIC_EXPORT,
-} from './next.constants.mjs';
+import platform from '#platform/next.platform.config';
+
+import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 import { getImagesConfig } from './next.image.config.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
-
-/**
- * Loads the deployment platform's `next.platform.config.mjs` — falling back
- * to the local no-op when no platform is active. Each platform package
- * (`@node-core/platform-<target>`) owns its own file and contributes
- * `{ nextConfig, aliases, images }`. Adding a new platform only means
- * creating a new `@node-core/platform-<target>` package.
- */
-const { default: platform } = DEPLOY_TARGET
-  ? await import(`@node-core/platform-${DEPLOY_TARGET}/next.platform.config`)
-  : await import('./next.platform.config.mjs');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

@@ -1,19 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
-import { DEPLOY_TARGET } from './next.constants.mjs';
-
-/**
- * Load Playwright overrides contributed by the active deployment target.
- *
- * Mirrors how `next.config.mjs` loads `next.platform.config` from the
- * matching `@node-core/platform-<target>` package. Each platform owns
- * its own webServer / baseURL wiring so this file stays platform-neutral.
- */
-const { default: platform } = DEPLOY_TARGET
-  ? await import(
-      `@node-core/platform-${DEPLOY_TARGET}/playwright.platform.config`
-    )
-  : await import('./playwright.platform.config.mjs');
+import platform from '#platform/playwright.platform.config';
 
 const isCI = !!process.env.CI;
 

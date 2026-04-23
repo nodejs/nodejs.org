@@ -118,7 +118,17 @@
       "./*/index.ts",
       "./*.mjs",
       "./*/index.mjs"
-    ]
+    ],
+    "#platform/next.platform.config": {
+      "cloudflare": "@node-core/platform-cloudflare/next.platform.config",
+      "vercel": "@node-core/platform-vercel/next.platform.config",
+      "default": "./next.platform.config.mjs"
+    },
+    "#platform/playwright.platform.config": {
+      "cloudflare": "@node-core/platform-cloudflare/playwright.platform.config",
+      "vercel": "@node-core/platform-vercel/playwright.platform.config",
+      "default": "./playwright.platform.config.mjs"
+    }
   },
   "engines": {
     "node": "24.x"
