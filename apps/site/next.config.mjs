@@ -4,7 +4,11 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 import platform from '#platform/next.platform.config';
 
-import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
+import {
+  BASE_PATH,
+  ENABLE_STATIC_EXPORT,
+  DEPLOY_TARGET,
+} from './next.constants.mjs';
 import { getImagesConfig } from './next.image.config.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 
@@ -17,7 +21,7 @@ const nextConfig = {
   // We allow the BASE_PATH to be overridden in case that the Website
   // is being built on a subdirectory (e.g. /nodejs-website)
   basePath: BASE_PATH,
-  images: getImagesConfig(platform.images),
+  images: getImagesConfig(await platform.images?.()),
   serverExternalPackages: ['twoslash'],
   // Transpile platform packages' TSX/TS sources when they're pulled in via
   // the `@platform/*` aliases from the active `next.platform.config.mjs`.
@@ -78,12 +82,21 @@ const nextConfig = {
   },
   // Provide Turbopack Aliases for Platform Resolution
   turbopack: { resolveAlias: platform.aliases },
-  // Provide Webpack Aliases for Platform Resolution
+  // Provide Webpack Aliases for Platform Resolution. The active deployment
+  // target is also surfaced to the resolver via `conditionNames` so that
+  // `#platform/*` subpath imports in `package.json` pick the matching
+  // branch when webpack bundles server code.
   webpack: ({ resolve, ...config }) => ({
     ...config,
-    resolve: { ...resolve, alias: { ...resolve.alias, ...platform.aliases } },
+    resolve: {
+      ...resolve,
+      alias: { ...resolve.alias, ...platform.aliases },
+      conditionNames: resolve.conditionNames
+        .concat(DEPLOY_TARGET)
+        .filter(Boolean),
+    },
   }),
-  ...platform.nextConfig,
+  ...(await platform.nextConfig?.()),
 };
 
 const withNextIntl = createNextIntlPlugin('./i18n.tsx');
