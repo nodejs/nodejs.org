@@ -82,10 +82,8 @@ const PlatformDropdown: FC = () => {
       placeholder={t('layouts.download.dropdown.unknown')}
       ariaLabel={t('layouts.download.dropdown.platform')}
       onChange={platform => {
-        if (platform) {
-          userSelectedPlatformRef.current = true;
-          release.setPlatform(platform);
-        }
+        userSelectedPlatformRef.current = true;
+        release.setPlatform(platform);
       }}
       className="min-w-28"
       inline={true}
