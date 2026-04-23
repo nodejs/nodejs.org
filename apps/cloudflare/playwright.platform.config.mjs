@@ -11,8 +11,7 @@ export default {
   baseURL: 'http://127.0.0.1:8787',
   webServer: {
     stdout: 'pipe',
-    command:
-      '../../node_modules/.bin/wrangler dev --config ../cloudflare/wrangler.jsonc',
+    command: 'pnpm --filter=@node-core/platform-cloudflare cloudflare:preview',
     url: 'http://127.0.0.1:8787',
     timeout: 60_000 * 3,
   },
