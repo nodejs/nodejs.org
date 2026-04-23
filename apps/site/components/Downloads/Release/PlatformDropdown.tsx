@@ -2,7 +2,7 @@
 
 import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
-import { useEffect, use, useMemo } from 'react';
+import { useEffect, use, useMemo, useState } from 'react';
 
 import useClientContext from '#site/hooks/useClientContext';
 import { ReleaseContext } from '#site/providers/releaseProvider';
@@ -16,14 +16,25 @@ const PlatformDropdown: FC = () => {
   const { architecture, bitness } = useClientContext();
 
   const release = use(ReleaseContext);
+
   const t = useTranslations();
+
+  // Compute the platform during render so it's available to both `useEffect` calls below in the same cycle
+  // (avoiding race conditions when architecture detection and OS detection arrive in the same batch)
+  const currentPlatform =
+    architecture && bitness ? getUserPlatform(architecture, bitness) : null;
+
+  // Track whether the user has manually selected a platform via the dropdown.
+  // When true the OS/version effect will respect their choice instead of
+  // resetting to the auto-detected value.
+  const [userHasSelectedPlatform, setUserHasSelectedPlatform] = useState(false);
 
   useEffect(
     () => {
-      if (architecture && bitness) {
-        const autoDetectedPlatform = getUserPlatform(architecture, bitness);
-
-        release.setPlatform(autoDetectedPlatform);
+      if (currentPlatform) {
+        // eslint-disable-next-line @eslint-react/set-state-in-effect
+        setUserHasSelectedPlatform(false);
+        release.setPlatform(currentPlatform);
       }
     },
     // Only react on the change of the Client Context Architecture and Bitness
@@ -49,12 +60,19 @@ const PlatformDropdown: FC = () => {
   useEffect(
     () => {
       if (release.os !== 'LOADING' && release.platform !== '') {
-        release.setPlatform(nextItem(release.platform, parsedPlatforms));
+        // If the user has not manually selected a platform and there is a currently
+        // auto-detected one then use it otherwise fallback to the current release platform
+        const basePlatform =
+          !userHasSelectedPlatform && currentPlatform
+            ? currentPlatform
+            : release.platform;
+
+        release.setPlatform(nextItem(basePlatform, parsedPlatforms));
       }
     },
     // We only want to react on the change of the OS and Version
     // eslint-disable-next-line @eslint-react/exhaustive-deps
-    [release.os, release.version, release.platform]
+    [release.os, release.version]
   );
 
   return (
@@ -64,7 +82,10 @@ const PlatformDropdown: FC = () => {
       loading={release.os === 'LOADING' || release.platform === ''}
       placeholder={t('layouts.download.dropdown.unknown')}
       ariaLabel={t('layouts.download.dropdown.platform')}
-      onChange={platform => platform && release.setPlatform(platform)}
+      onChange={platform => {
+        setUserHasSelectedPlatform(true);
+        release.setPlatform(platform);
+      }}
       className="min-w-28"
       inline={true}
     />
