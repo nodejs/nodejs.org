@@ -49,7 +49,7 @@ Additionally, when deploying, an extra `CF_WORKERS_SCRIPTS_API_TOKEN` environmen
 
 ### Image loader
 
-When deployed on the Cloudflare network a custom image loader is required. We set such loader in the Next.js config file when the `OPEN_NEXT_CLOUDFLARE` environment variable is set (which indicates that we're building the application for the Cloudflare deployment).
+When deployed on the Cloudflare network a custom image loader is required. We set such loader in the Next.js config file when `NEXT_PUBLIC_DEPLOY_TARGET=cloudflare` (which indicates that we're building the application for the Cloudflare deployment; the variable is set by the OpenNext `buildCommand` in [`open-next.config.ts`](../apps/site/open-next.config.ts)).
 
 The custom loader can be found at [`site/cloudflare/image-loader.ts`](../apps/site/cloudflare/image-loader.ts).
 

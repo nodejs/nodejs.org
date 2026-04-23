@@ -1,21 +1,24 @@
 'use strict';
 import createNextIntlPlugin from 'next-intl/plugin';
 
-import { OPEN_NEXT_CLOUDFLARE } from './next.constants.cloudflare.mjs';
-import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
+import {
+  BASE_PATH,
+  DEPLOY_TARGET,
+  ENABLE_STATIC_EXPORT,
+} from './next.constants.mjs';
 import { getImagesConfig } from './next.image.config.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 
 const getDeploymentId = async () => {
-  if (OPEN_NEXT_CLOUDFLARE) {
-    // If we're building for the Cloudflare deployment we want to set
-    // an appropriate deploymentId (needed for skew protection)
-    const openNextAdapter = await import('@opennextjs/cloudflare');
-
-    return openNextAdapter.getDeploymentId();
+  if (DEPLOY_TARGET !== 'cloudflare') {
+    return undefined;
   }
 
-  return undefined;
+  // If we're building for the Cloudflare deployment we want to set
+  // an appropriate deploymentId (needed for skew protection)
+  const openNextAdapter = await import('@opennextjs/cloudflare');
+
+  return openNextAdapter.getDeploymentId();
 };
 
 /** @type {import('next').NextConfig} */

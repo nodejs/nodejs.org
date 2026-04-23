@@ -1,5 +1,4 @@
-import { OPEN_NEXT_CLOUDFLARE } from './next.constants.cloudflare.mjs';
-import { ENABLE_STATIC_EXPORT } from './next.constants.mjs';
+import { DEPLOY_TARGET, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 
 const remotePatterns = [
   'https://avatars.githubusercontent.com/**',
@@ -10,7 +9,7 @@ const remotePatterns = [
 ];
 
 export const getImagesConfig = () => {
-  if (OPEN_NEXT_CLOUDFLARE) {
+  if (DEPLOY_TARGET === 'cloudflare') {
     // If we're building for the Cloudflare deployment we want to use the custom cloudflare image loader
     //
     // Important: The custom loader ignores `remotePatterns` as those are configured as allowed source origins

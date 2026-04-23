@@ -6,13 +6,18 @@
 export const IS_DEV_ENV = process.env.NODE_ENV === 'development';
 
 /**
- * This is used for telling Next.js if the Website is deployed on Vercel
+ * Identifies the deployment platform the site is being built for.
  *
- * Can be used for conditionally enabling features that we know are Vercel only
+ * Set by the deployment wrapper at build time: `vercel.json`'s `buildCommand`
+ * sets `vercel`, `open-next.config.ts`'s `buildCommand` sets `cloudflare`.
+ * Unset for standalone builds (local dev, static export).
  *
- * @see https://vercel.com/docs/projects/environment-variables/system-environment-variables#VERCEL_ENV
+ * The `NEXT_PUBLIC_` prefix makes Next.js inline the value at build time,
+ * enabling dead-code elimination of platform-specific branches.
+ *
+ * @type {'vercel' | 'cloudflare' | undefined}
  */
-export const VERCEL_ENV = process.env.VERCEL_ENV || undefined;
+export const DEPLOY_TARGET = process.env.NEXT_PUBLIC_DEPLOY_TARGET;
 
 /**
  * This is used for telling Next.js to do a Static Export Build of the Website
