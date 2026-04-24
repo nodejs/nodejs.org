@@ -69,9 +69,8 @@ const WithSearch: FC = () => {
     // bottleneck here, so serializing these would waste ~N× round-trip time.
     const indexes = await Promise.all(
       Object.entries(ORAMA_DB_URLS).map(async ([key, url]) => {
-        const fetchedDb = (await fetch(url).then(res =>
-          res.json()
-        )) as SerializedOramaDb;
+        const response = await fetch(url);
+        const fetchedDb = (await response.json()) as SerializedOramaDb;
         return addPrefixToDocs(fetchedDb, `/${key}`);
       })
     );
