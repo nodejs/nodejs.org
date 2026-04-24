@@ -16,7 +16,7 @@ Key configurations include:
 
 - `main`: Points to a custom worker entry point ([`site/cloudflare/worker-entrypoint.ts`](../apps/site/cloudflare/worker-entrypoint.ts)) that wraps the OpenNext-generated worker (see [Custom Worker Entry Point](#custom-worker-entry-point) and [Sentry](#sentry) below).
 - `account_id`: Specifies the Cloudflare account ID. This is not required for local previews but is necessary for deployments. You can obtain an account ID for free by signing up at [dash.cloudflare.com](https://dash.cloudflare.com/login).
-  - This is currently set to `fb4a2d0f103c6ff38854ac69eb709272`, which is the ID of a Cloudflare account controlled by Node.js, and used for testing.
+  - This is set to `07be8d2fbc940503ca1be344714cb0d1`, which is the ID of a Cloudflare account controlled by Node.js.
 - `build`: Defines the build command to generate the Node.js filesystem polyfills required for the application to run on Cloudflare Workers. This uses the [`@flarelabs/wrangler-build-time-fs-assets-polyfilling`](https://github.com/flarelabs-net/wrangler-build-time-fs-assets-polyfilling) package.
 - `alias`: Maps aliases for the Node.js filesystem polyfills generated during the build process.
 - `r2_buckets`: Contains a single R2 binding definition for `NEXT_INC_CACHE_R2_BUCKET`. This is used to implement the Next.js incremental cache.
