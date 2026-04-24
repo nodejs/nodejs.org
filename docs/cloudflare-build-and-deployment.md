@@ -20,7 +20,7 @@ Key configurations include:
 - `build`: Defines the build command to generate the Node.js filesystem polyfills required for the application to run on Cloudflare Workers. This uses the [`@flarelabs/wrangler-build-time-fs-assets-polyfilling`](https://github.com/flarelabs-net/wrangler-build-time-fs-assets-polyfilling) package.
 - `alias`: Maps aliases for the Node.js filesystem polyfills generated during the build process.
 - `r2_buckets`: Contains a single R2 binding definition for `NEXT_INC_CACHE_R2_BUCKET`. This is used to implement the Next.js incremental cache.
-  - This is currently set up to a R2 bucket in the aforementioned Cloudflare testing account.
+  - This is set up to a R2 bucket in the aforementioned Cloudflare account.
 - `durable_objects`: Contains a single DurableObject binding definition for `NEXT_CACHE_DO_QUEUE`. This is used to implement the Open-next cache queue.
 - `version_metadata`: Contains a binding for `CF_VERSION_METADATA`, used for Sentry release configuration (see [Sentry](#sentry) below).
 
