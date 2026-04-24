@@ -49,38 +49,35 @@ export const addPrefixToDocs = <T extends SerializedOramaDb>(
   };
 };
 
+const loadOrama = async () => {
+  const db = create({
+    schema: {
+      title: 'string',
+      description: 'string',
+      href: 'string',
+      siteSection: 'string',
+    },
+  });
+
+  const indexes = await Promise.all(
+    Object.entries(ORAMA_DB_URLS).map(async ([key, url]) => {
+      const response = await fetch(url);
+      const fetchedDb = (await response.json()) as SerializedOramaDb;
+      return addPrefixToDocs(fetchedDb, `/${key}`);
+    })
+  );
+
+  for (const index of indexes) {
+    await insertMultiple(db, Object.values(index.docs.docs) as Array<never>);
+  }
+
+  return save(db);
+};
+
 const WithSearch: FC = () => {
   const t = useTranslations();
 
-  // `useOrama` expects an initializer that returns serialized RawData.
-  // We build a temporary DB, populate it from every configured index, then
-  // serialize it so the hook can `load()` it into its own client instance.
-  const client = useOrama(async () => {
-    const db = create({
-      schema: {
-        title: 'string',
-        description: 'string',
-        href: 'string',
-        siteSection: 'string',
-      },
-    });
-
-    // Kick off every fetch concurrently — network latency, not CPU, is the
-    // bottleneck here, so serializing these would waste ~N× round-trip time.
-    const indexes = await Promise.all(
-      Object.entries(ORAMA_DB_URLS).map(async ([key, url]) => {
-        const response = await fetch(url);
-        const fetchedDb = (await response.json()) as SerializedOramaDb;
-        return addPrefixToDocs(fetchedDb, `/${key}`);
-      })
-    );
-
-    for (const index of indexes) {
-      await insertMultiple(db, Object.values(index.docs.docs) as Array<never>);
-    }
-
-    return save(db);
-  });
+  const client = useOrama(loadOrama);
 
   return (
     <SearchBox

@@ -14,27 +14,18 @@
     border-t
     border-neutral-200
     bg-neutral-100
-    p-4;
-
-  :where([data-theme='dark'], [data-theme='dark'] *) & {
-    @apply border-neutral-900
-      bg-neutral-950;
-  }
-
-  @media (min-width: 1024px) {
-    @apply justify-between
-      rounded-b-xl;
-  }
+    p-4
+    lg:justify-between
+    lg:rounded-b-xl
+    dark:border-neutral-900
+    dark:bg-neutral-950;
 }
 
 .shortcutWrapper {
   @apply hidden
     items-center
-    gap-2;
-
-  @media (min-width: 1024px) {
-    @apply flex;
-  }
+    gap-2
+    lg:flex;
 }
 
 .shortcutItem {
@@ -42,11 +33,8 @@
     items-center
     gap-2
     text-xs
-    text-neutral-800;
-
-  :where([data-theme='dark'], [data-theme='dark'] *) & {
-    @apply text-neutral-600;
-  }
+    text-neutral-800
+    dark:text-neutral-600;
 }
 
 .shortcutKey {
@@ -54,22 +42,15 @@
     bg-neutral-200
     p-1
     font-mono
-    text-xs;
-
-  :where([data-theme='dark'], [data-theme='dark'] *) & {
-    @apply bg-neutral-900;
-  }
+    text-xs
+    dark:bg-neutral-900;
 
   svg {
-    @apply h-4
-      w-4;
+    @apply size-4;
   }
 }
 
 .shortcutLabel {
-  @apply text-neutral-800;
-
-  :where([data-theme='dark'], [data-theme='dark'] *) & {
-    @apply text-neutral-600;
-  }
+  @apply text-neutral-800
+    dark:text-neutral-600;
 }
