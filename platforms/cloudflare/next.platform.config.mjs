@@ -8,7 +8,7 @@
  * `apps/site/mdx/plugins.mjs` reads `.mdx` — never drags them into the
  * worker runtime.
  *
- * @type {import('../site/next.platform.config').PlatformConfig}
+ * @type {import('../../apps/site/next.platform.config').PlatformConfig}
  */
 export default {
   aliases: {
@@ -25,16 +25,19 @@ export default {
   },
   nextConfig: async () => {
     const { getDeploymentId } = await import('@opennextjs/cloudflare');
+
     return {
       // Skew protection: Cloudflare routes requests by deploymentId so that
       // a client and the worker stay in sync across rolling deploys.
-      deploymentId: await getDeploymentId(),
+      deploymentId: getDeploymentId(),
     };
   },
   images: async () => {
     const { createRequire } = await import('node:module');
     const { relative } = await import('node:path');
+
     const require = createRequire(import.meta.url);
+
     return {
       // Route optimized images through Cloudflare's Images service via the
       // custom loader. `remotePatterns` do NOT apply here — Cloudflare

@@ -14,12 +14,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/nodejs/nodejs.org",
-    "directory": "apps/cloudflare"
+    "directory": "platforms/cloudflare"
   },
   "scripts": {
-    "cloudflare:build:worker": "pnpm --filter=@node-core/website exec opennextjs-cloudflare build --openNextConfigPath ../cloudflare/open-next.config.ts --config ../cloudflare/wrangler.jsonc",
-    "cloudflare:deploy": "pnpm --filter=@node-core/website exec opennextjs-cloudflare deploy --openNextConfigPath ../cloudflare/open-next.config.ts --config ../cloudflare/wrangler.jsonc",
-    "cloudflare:preview": "pnpm --filter=@node-core/website exec wrangler dev --config ../cloudflare/wrangler.jsonc",
+    "cloudflare:build:worker": "pnpm --filter=@node-core/website exec opennextjs-cloudflare build --openNextConfigPath ../../platforms/cloudflare/open-next.config.ts --config ../../platforms/cloudflare/wrangler.jsonc",
+    "cloudflare:deploy": "pnpm --filter=@node-core/website exec opennextjs-cloudflare deploy --openNextConfigPath ../../platforms/cloudflare/open-next.config.ts --config ../../platforms/cloudflare/wrangler.jsonc",
+    "cloudflare:preview": "pnpm --filter=@node-core/website exec wrangler dev --config ../../platforms/cloudflare/wrangler.jsonc",
     "lint:types": "tsc --noEmit"
   },
   "dependencies": {

@@ -1,6 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "pnpm install --prod --frozen-lockfile --filter=@node-core/website... --filter=@node-core/platform-vercel...",
-  "buildCommand": "cross-env NEXT_PUBLIC_DEPLOY_TARGET=vercel NODE_OPTIONS=--conditions=vercel pnpm build",
+  "buildCommand": "pnpm --filter=@node-core/website build",
+  "outputDirectory": "../../apps/site/.next",
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_DEPLOY_TARGET": "vercel",
+      "NODE_OPTIONS": "--conditions=vercel"
+    }
+  },
   "ignoreCommand": "[[ \"$VERCEL_GIT_COMMIT_REF\" =~ \"^dependabot/.*\" || \"$VERCEL_GIT_COMMIT_REF\" =~ \"^gh-readonly-queue/.*\" ]]"
 }

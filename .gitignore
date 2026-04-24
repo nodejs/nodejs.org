@@ -43,7 +43,7 @@ dist/
 # Cloudflare Build Output
 apps/site/.open-next
 apps/site/.wrangler
-apps/cloudflare/.wrangler
+platforms/cloudflare/.wrangler
 
 ## Playwright
 test-results

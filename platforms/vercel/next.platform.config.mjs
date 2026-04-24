@@ -8,7 +8,7 @@
  * the Node server runtime (keeps bundles lean and parity with
  * Cloudflare's contract).
  *
- * @type {import('../site/next.platform.config').PlatformConfig}
+ * @type {import('../../apps/site/next.platform.config').PlatformConfig}
  */
 export default {
   aliases: {
@@ -25,6 +25,7 @@ export default {
     const VERCEL_URL = process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}`
       : undefined;
+
     return {
       // Expose Vercel's auto-assigned deployment URL as a platform-agnostic
       // `NEXT_PUBLIC_BASE_URL` so `apps/site` consumers can read a single

@@ -5,7 +5,7 @@
  * loader. Spins up the wrangler preview so E2E runs against the
  * OpenNext worker artifact rather than `next dev`.
  *
- * @type {import('../site/playwright.platform.config').PlatformPlaywrightConfig}
+ * @type {import('../../apps/site/playwright.platform.config').PlatformPlaywrightConfig}
  */
 export default {
   baseURL: 'http://127.0.0.1:8787',

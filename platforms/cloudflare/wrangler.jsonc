@@ -8,7 +8,7 @@
   "minify": true,
   "keep_names": false,
   "assets": {
-    "directory": "../site/.open-next/assets",
+    "directory": "../../apps/site/.open-next/assets",
     "binding": "ASSETS",
     "run_worker_first": true,
   },
@@ -31,14 +31,14 @@
     "head_sampling_rate": 1,
   },
   "build": {
-    "cwd": "../site",
+    "cwd": "../../apps/site",
     "command": "wrangler-build-time-fs-assets-polyfilling --assets pages --assets snippets --assets-output-dir .open-next/assets",
   },
   "alias": {
-    "node:fs": "../site/.wrangler/fs-assets-polyfilling/polyfills/node/fs.ts",
-    "node:fs/promises": "../site/.wrangler/fs-assets-polyfilling/polyfills/node/fs/promises.ts",
-    "fs": "../site/.wrangler/fs-assets-polyfilling/polyfills/node/fs.ts",
-    "fs/promises": "../site/.wrangler/fs-assets-polyfilling/polyfills/node/fs/promises.ts",
+    "node:fs": "../../apps/site/.wrangler/fs-assets-polyfilling/polyfills/node/fs.ts",
+    "node:fs/promises": "../../apps/site/.wrangler/fs-assets-polyfilling/polyfills/node/fs/promises.ts",
+    "fs": "../../apps/site/.wrangler/fs-assets-polyfilling/polyfills/node/fs.ts",
+    "fs/promises": "../../apps/site/.wrangler/fs-assets-polyfilling/polyfills/node/fs/promises.ts",
   },
   "r2_buckets": [
     {

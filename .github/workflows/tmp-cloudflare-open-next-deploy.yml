@@ -57,13 +57,18 @@ jobs:
         run: node --run build:blog-data
 
       - name: Build open-next site
-        working-directory: apps/cloudflare
+        working-directory: platforms/cloudflare
         run: node --run cloudflare:build:worker
+        env:
+          NEXT_PUBLIC_DEPLOY_TARGET: cloudflare
+          NODE_OPTIONS: --conditions=cloudflare
 
       - name: Deploy open-next site
-        working-directory: apps/cloudflare
+        working-directory: platforms/cloudflare
         run: node --run cloudflare:deploy
         env:
+          NEXT_PUBLIC_DEPLOY_TARGET: cloudflare
+          NODE_OPTIONS: --conditions=cloudflare
           CF_WORKERS_SCRIPTS_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: fb4a2d0f103c6ff38854ac69eb709272

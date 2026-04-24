@@ -1,6 +1,7 @@
 packages:
   - packages/*
   - apps/*
+  - platforms/*
 
 catalog:
   '@types/node': ^24.10.1
