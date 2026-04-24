@@ -10,7 +10,7 @@ import useScrollToElement from '#site/hooks/useScrollToElement';
 import useSiteNavigation from '#site/hooks/useSiteNavigation';
 import { useRouter, usePathname } from '#site/navigation.mjs';
 
-import type { NavigationKeys } from '#site/types';
+import type { FormattedMessage, NavigationKeys } from '#site/types';
 import type { RichTranslationValues } from 'next-intl';
 import type { FC } from 'react';
 
@@ -18,6 +18,27 @@ type WithSidebarProps = {
   navKeys: Array<NavigationKeys>;
   context?: Record<string, RichTranslationValues>;
 };
+
+type MappedItem = {
+  label: FormattedMessage;
+  link: string;
+  target?: string;
+  items?: Array<[string, MappedItem]>;
+};
+
+type SidebarMappedEntry = {
+  label: FormattedMessage;
+  link: string;
+  target?: string;
+  items?: Array<SidebarMappedEntry>;
+};
+
+const mapItem = ([, item]: [string, MappedItem]): SidebarMappedEntry => ({
+  label: item.label,
+  link: item.link,
+  target: item.target,
+  items: item.items ? item.items.map(mapItem) : [],
+});
 
 const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
   const { getSideNavigation } = useSiteNavigation();
@@ -35,9 +56,9 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
     // If there's only a single navigation key, use its sub-items
     // as our navigation.
     (navKeys.length === 1 ? sideNavigation[0][1].items : sideNavigation).map(
-      ([, { label, items }]) => ({
+      ([, { label, items }]: [string, MappedItem]) => ({
         groupName: label,
-        items: items.map(([, item]) => item),
+        items: items ? items.map(mapItem) : [],
       })
     );
 
