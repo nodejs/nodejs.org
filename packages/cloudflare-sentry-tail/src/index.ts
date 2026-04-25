@@ -1,4 +1,8 @@
-import * as Sentry from '@sentry/cloudflare';
+import {
+  type Event,
+  type SeverityLevel,
+  captureEvent,
+} from '@sentry/cloudflare';
 
 export type SentryTailWorkerOptions = {
   samplingRate: number;
@@ -32,14 +36,16 @@ function processTraceItem(
     return;
   }
 
-  const event: Sentry.Event = {
+  const event: Event = {
     level: severityLevel,
     timestamp: item.eventTimestamp ?? Date.now(),
     logger: '@node-core/cloudflare-sentry-tail',
     message: workerOutcomeToEventMessage(item.outcome),
     fingerprint: [],
     breadcrumbs: [],
-    exception: {},
+    exception: {
+      values: [],
+    },
     tags: {
       outcome: item.outcome,
       script_name: item.scriptName,
@@ -64,12 +70,10 @@ function processTraceItem(
     return a.timestamp - b.timestamp;
   });
 
-  Sentry.captureEvent(event);
+  captureEvent(event);
 }
 
-function determineSeverityLevel(
-  item: TraceItem
-): Sentry.SeverityLevel | undefined {
+function determineSeverityLevel(item: TraceItem): SeverityLevel | undefined {
   // Two scenarios where we want to report back to Sentry:
   // 1. Trace item outcome isn't 'ok'
   // 2. We have a status code >= 500
@@ -99,7 +103,7 @@ function determineSeverityLevel(
 function handleTraceItemEvent(
   options: SentryTailWorkerOptions,
   item: TraceItem,
-  sentryEvent: Sentry.Event
+  sentryEvent: Event
 ): void {
   if (!item.event) {
     return;
@@ -113,7 +117,7 @@ function handleTraceItemEvent(
     for (let [key, value] of Object.entries(request.headers)) {
       key = key.toLowerCase();
 
-      if (options.headersToRedact && key in options.headersToRedact) {
+      if (options.headersToRedact && options.headersToRedact.includes(key)) {
         value = 'redacted';
       }
 
@@ -189,7 +193,7 @@ function handleTraceItemEvent(
   }
 }
 
-function addRemainingBreadcrumbs(item: TraceItem, sentryEvent: Sentry.Event) {
+function addRemainingBreadcrumbs(item: TraceItem, sentryEvent: Event) {
   if (!sentryEvent.breadcrumbs) {
     return;
   }
@@ -257,8 +261,8 @@ function shouldSampleTraceItem(sampleRate: number) {
   return random <= sampleRate;
 }
 
-function workerOutcomeToSeverityLevel(outcome: string): Sentry.SeverityLevel {
-  const map: Record<string, Sentry.SeverityLevel> = {
+function workerOutcomeToSeverityLevel(outcome: string): SeverityLevel {
+  const map: Record<string, SeverityLevel> = {
     exceededCpu: 'fatal',
     exceededMemory: 'fatal',
     exception: 'error',
@@ -280,8 +284,8 @@ function workerOutcomeToEventMessage(outcome: string): string {
   return map[outcome] ?? 'Internal';
 }
 
-function consoleLogLevelToSentryLevel(logLevel: string): Sentry.SeverityLevel {
-  const map: Record<string, Sentry.SeverityLevel> = {
+function consoleLogLevelToSentryLevel(logLevel: string): SeverityLevel {
+  const map: Record<string, SeverityLevel> = {
     debug: 'debug',
     log: 'info',
     error: 'error',
