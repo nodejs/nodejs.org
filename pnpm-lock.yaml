@@ -87,6 +87,9 @@ importers:
       '@mdx-js/mdx':
         specifier: ^3.1.1
         version: 3.1.1
+      '@node-core/cloudflare-sentry-tail':
+        specifier: workspace:*
+        version: link:../../packages/cloudflare-sentry-tail
       '@node-core/rehype-shiki':
         specifier: workspace:*
         version: link:../../packages/rehype-shiki
@@ -308,6 +311,16 @@ importers:
         specifier: ^4.77.0
         version: 4.77.0(@cloudflare/workers-types@4.20260422.1)
 
+  packages/cloudflare-sentry-tail:
+    dependencies:
+      '@sentry/cloudflare':
+        specifier: ^10.49.0
+        version: 10.49.0(@cloudflare/workers-types@4.20260422.1)
+    devDependencies:
+      '@cloudflare/workers-types':
+        specifier: ^4.20260422.1
+        version: 4.20260422.1
+
   packages/i18n:
     devDependencies:
       typescript:
@@ -352,7 +365,7 @@ importers:
     dependencies:
       '@node-core/doc-kit':
         specifier: ^1.2.0
-        version: 1.2.0(@orama/core@1.2.19)(@types/react@19.2.14)(jiti@2.6.1)(postcss@8.5.8)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        version: 1.2.0(@orama/core@1.2.19)(@types/react@19.2.14)(jiti@2.6.1)(postcss@8.5.8)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(tsx@4.21.0)
       remark-gfm:
         specifier: ^4.0.1
         version: 4.0.1
@@ -10343,13 +10356,13 @@ snapshots:
 
   '@noble/hashes@1.8.0': {}
 
-  '@node-core/doc-kit@1.2.0(@orama/core@1.2.19)(@types/react@19.2.14)(jiti@2.6.1)(postcss@8.5.8)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@node-core/doc-kit@1.2.0(@orama/core@1.2.19)(@types/react@19.2.14)(jiti@2.6.1)(postcss@8.5.8)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(tsx@4.21.0)':
     dependencies:
       '@actions/core': 3.0.0
       '@heroicons/react': 2.2.0(react@19.2.4)
       '@minify-html/wasm': 0.18.1
       '@node-core/rehype-shiki': 1.4.1
-      '@node-core/ui-components': 1.6.3(jiti@2.6.1)(postcss@8.5.8)(react-dom@19.2.4(react@19.2.4))
+      '@node-core/ui-components': 1.6.3(jiti@2.6.1)(postcss@8.5.8)(react-dom@19.2.4(react@19.2.4))(tsx@4.21.0)
       '@orama/orama': 3.1.18
       '@orama/ui': 1.5.4(@orama/core@1.2.19)(@types/react@19.2.14)(react@19.2.4)
       '@rollup/plugin-virtual': 3.0.2
@@ -10417,7 +10430,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@node-core/ui-components@1.6.3(jiti@2.6.1)(postcss@8.5.8)(react-dom@19.2.4(react@19.2.4))':
+  '@node-core/ui-components@1.6.3(jiti@2.6.1)(postcss@8.5.8)(react-dom@19.2.4(react@19.2.4))(tsx@4.21.0)':
     dependencies:
       '@heroicons/react': 2.2.0(react@19.2.4)
       '@orama/core': 1.2.19
