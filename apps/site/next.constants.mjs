@@ -182,6 +182,6 @@ export const OPENCOLLECTIVE_MEMBERS_URL =
  * Orama DB URLs for the Learn and API sections of the website
  */
 export const ORAMA_DB_URLS = {
-  [LEARN_URL]: 'https://nodejs.org/learn/orama-db.json',
-  [DOCS_URL]: 'https://beta.docs.nodejs.org/orama-db.json',
+  [LEARN_URL.slice(0, -1)]: 'https://nodejs.org/learn/orama-db.json',
+  [`${DOCS_URL}latest/api`]: 'https://beta.docs.nodejs.org/orama-db.json',
 };
