@@ -20,10 +20,13 @@
     dark:border-neutral-900
     dark:bg-neutral-950;
 
-  .navigation {
-    @apply ml:flex
+   .navigation {
+     @apply ml:flex
+      flex-1
+      overflow-y-auto
+      scroll-smooth
       hidden;
-  }
+   }
 
   .mobileSelect {
     @apply ml:hidden
