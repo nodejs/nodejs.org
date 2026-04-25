@@ -41,7 +41,7 @@ const loadOrama = async (db: AnyOrama): Promise<void> => {
       const response = await fetch(url);
       const fetchedDb = (await response.json()) as SerializedOramaDb;
 
-      return addPrefixToDocs(fetchedDb, `/${key}`);
+      return addPrefixToDocs(fetchedDb, key);
     })
   );
 

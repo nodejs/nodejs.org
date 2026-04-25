@@ -70,6 +70,14 @@ export const DOCS_URL =
   process.env.NEXT_PUBLIC_DOCS_URL || 'https://nodejs.org/docs/';
 
 /**
+ * This is used for any place that requires the Node.js Learn URL (which by default is nodejs.org/learn)
+ *
+ * Note that this is a custom Environment Variable that can be defined by us when necessary
+ */
+export const LEARN_URL =
+  process.env.NEXT_PUBLIC_LEARN_URL || 'https://nodejs.org/learn/';
+
+/**
  * Supports a manual override of the base path of the Website
  *
  * This is useful when running the deployment on a subdirectory
@@ -174,6 +182,6 @@ export const OPENCOLLECTIVE_MEMBERS_URL =
  * Orama DB URLs for the Learn and API sections of the website
  */
 export const ORAMA_DB_URLS = {
-  learn: 'https://nodejs.org/learn/orama-db.json',
-  api: 'https://beta.docs.nodejs.org/orama-db.json',
+  [LEARN_URL]: 'https://nodejs.org/learn/orama-db.json',
+  [DOCS_URL]: 'https://beta.docs.nodejs.org/orama-db.json',
 };
