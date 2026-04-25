@@ -78,12 +78,15 @@
     "vfile-matter": "~5.0.1"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260418.1",
     "@eslint-react/eslint-plugin": "~3.0.0",
     "@flarelabs-net/wrangler-build-time-fs-assets-polyfilling": "^0.0.1",
     "@next/eslint-plugin-next": "16.2.1",
     "@node-core/remark-lint": "workspace:*",
     "@opennextjs/cloudflare": "^1.19.3",
+    "@orama/core": "^1.2.19",
     "@playwright/test": "^1.58.2",
+    "@sentry/cloudflare": "^10.49.0",
     "@testing-library/user-event": "~14.6.1",
     "@types/mdast": "^4.0.4",
     "@types/mdx": "^2.0.13",
@@ -105,9 +108,7 @@
     "typescript": "catalog:",
     "typescript-eslint": "~8.57.2",
     "user-agent-data-types": "0.4.2",
-    "wrangler": "^4.77.0",
-    "@cloudflare/workers-types": "^4.20260418.1",
-    "@sentry/cloudflare": "^10.49.0"
+    "wrangler": "^4.77.0"
   },
   "imports": {
     "#site/*": [

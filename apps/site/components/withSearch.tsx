@@ -1,44 +1,30 @@
 'use client';
 
 import SearchBox from '@node-core/ui-components/Common/Search';
-import useOrama from '@node-core/ui-components/hooks/useOrama';
-import { create, insertMultiple, save } from '@orama/orama';
+import { create, insertMultiple, search } from '@orama/orama';
 import { useTranslations } from 'next-intl';
+import { useMemo, useRef } from 'react';
 
 import { ORAMA_DB_URLS } from '#site/next.constants.mjs';
 
+import type { OramaCloud } from '@orama/core';
+import type { AnyOrama } from '@orama/orama';
 import type { FC } from 'react';
 
-/**
- * Shape of a single Orama document entry.
- * `href` is required (we prefix it); other fields are passthrough.
- */
 type OramaDoc = { href: string } & Record<string, unknown>;
 
-/**
- * Shape of a serialized Orama database snapshot (from `save()` on the server
- * side, fetched as JSON on the client). We only type the parts we touch.
- */
 type SerializedOramaDb = {
   docs: {
     docs: Record<string, OramaDoc>;
   };
 };
 
-/**
- * Each locale/section of the site ships its own prebuilt Orama index, but the
- * hrefs inside those indexes are relative to that section's root. When we
- * merge multiple indexes into a single client-side DB, we need to re-scope
- * those hrefs so clicks route to the correct top-level path.
- */
 export const addPrefixToDocs = <T extends SerializedOramaDb>(
   db: T,
   prefix: string
 ): T => {
   const prefixedDocs: Record<string, OramaDoc> = {};
 
-  // Object.entries + Object.fromEntries would also work, but a single pass
-  // with a plain loop avoids the intermediate array allocations
   for (const [id, doc] of Object.entries(db.docs.docs)) {
     prefixedDocs[id] = { ...doc, href: `${prefix}${doc.href}` };
   }
@@ -49,20 +35,12 @@ export const addPrefixToDocs = <T extends SerializedOramaDb>(
   };
 };
 
-const loadOrama = async () => {
-  const db = create({
-    schema: {
-      title: 'string',
-      description: 'string',
-      href: 'string',
-      siteSection: 'string',
-    },
-  });
-
+const loadOrama = async (db: AnyOrama): Promise<void> => {
   const indexes = await Promise.all(
     Object.entries(ORAMA_DB_URLS).map(async ([key, url]) => {
       const response = await fetch(url);
       const fetchedDb = (await response.json()) as SerializedOramaDb;
+
       return addPrefixToDocs(fetchedDb, `/${key}`);
     })
   );
@@ -70,14 +48,34 @@ const loadOrama = async () => {
   for (const index of indexes) {
     await insertMultiple(db, Object.values(index.docs.docs) as Array<never>);
   }
+};
 
-  return save(db);
+export const useOrama = () => {
+  const loadPromiseRef = useRef<Promise<void> | null>(null);
+
+  return useMemo(() => {
+    const db = create({
+      schema: {
+        title: 'string',
+        description: 'string',
+        href: 'string',
+        siteSection: 'string',
+      },
+    });
+
+    // @ts-expect-error We are overriding a method, an error is expected.
+    db.search = async options => {
+      await (loadPromiseRef.current ??= loadOrama(db));
+      return search(db, options);
+    };
+
+    return db;
+  }, []) as unknown as OramaCloud;
 };
 
 const WithSearch: FC = () => {
   const t = useTranslations();
-
-  const client = useOrama(loadOrama);
+  const client = useOrama();
 
   return (
     <SearchBox

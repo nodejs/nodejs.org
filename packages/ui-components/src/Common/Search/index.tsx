@@ -28,46 +28,42 @@ const SearchBox: React.FC<SearchBoxProps> = ({
   closeShortcutLabel = 'to close',
   navigateShortcutLabel = 'to navigate',
   selectShortcutLabel = 'to select',
-}) => {
-  return (
-    <SearchModal client={client} placeholder={placeholder}>
-      <div className={styles.searchResultsContainer}>
-        <SearchResults
-          noResultsTitle={noResultsTitle}
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          onHit={hit => <SearchHit document={hit.document as any} />}
-        />
-      </div>
+}) => (
+  <SearchModal client={client} placeholder={placeholder}>
+    <div className={styles.searchResultsContainer}>
+      <SearchResults
+        noResultsTitle={noResultsTitle}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        onHit={hit => <SearchHit document={hit.document as any} />}
+      />
+    </div>
 
-      <div className={styles.footer}>
-        <div className={styles.shortcutWrapper}>
-          <div className={styles.shortcutItem}>
-            <kbd className={styles.shortcutKey}>
-              <ArrowTurnDownLeftIcon />
-            </kbd>
-            <span className={styles.shortcutLabel}>{selectShortcutLabel}</span>
-          </div>
+    <div className={styles.footer}>
+      <div className={styles.shortcutWrapper}>
+        <div className={styles.shortcutItem}>
+          <kbd className={styles.shortcutKey}>
+            <ArrowTurnDownLeftIcon />
+          </kbd>
+          <span className={styles.shortcutLabel}>{selectShortcutLabel}</span>
+        </div>
 
-          <div className={styles.shortcutItem}>
-            <kbd className={styles.shortcutKey}>
-              <ArrowDownIcon />
-            </kbd>
-            <kbd className={styles.shortcutKey}>
-              <ArrowUpIcon />
-            </kbd>
-            <span className={styles.shortcutLabel}>
-              {navigateShortcutLabel}
-            </span>
-          </div>
+        <div className={styles.shortcutItem}>
+          <kbd className={styles.shortcutKey}>
+            <ArrowDownIcon />
+          </kbd>
+          <kbd className={styles.shortcutKey}>
+            <ArrowUpIcon />
+          </kbd>
+          <span className={styles.shortcutLabel}>{navigateShortcutLabel}</span>
+        </div>
 
-          <div className={styles.shortcutItem}>
-            <kbd className={styles.shortcutKey}>esc</kbd>
-            <span className={styles.shortcutLabel}>{closeShortcutLabel}</span>
-          </div>
+        <div className={styles.shortcutItem}>
+          <kbd className={styles.shortcutKey}>esc</kbd>
+          <span className={styles.shortcutLabel}>{closeShortcutLabel}</span>
         </div>
       </div>
-    </SearchModal>
-  );
-};
+    </div>
+  </SearchModal>
+);
 
 export default SearchBox;
