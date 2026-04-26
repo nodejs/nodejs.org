@@ -7,7 +7,7 @@
       "inputs": [
         "open-next.config.ts",
         "wrangler.jsonc",
-        "src/**/*.ts",
+        "*.ts",
         "../../apps/site/{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
         "../../apps/site/{app,components,layouts,pages,styles}/**/*.css",
         "../../apps/site/{next-data,scripts,i18n}/**/*.{mjs,json}",

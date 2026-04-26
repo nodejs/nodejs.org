@@ -32,7 +32,6 @@ platforms/cloudflare/open-next.config.ts @nodejs/web-infra
 platforms/cloudflare/next.platform.config.mjs @nodejs/web-infra
 platforms/vercel/vercel.json @nodejs/web-infra
 platforms/vercel/next.platform.config.mjs @nodejs/web-infra
-apps/site/redirects.json @nodejs/web-infra
 
 # Critical Documents
 LICENSE @nodejs/tsc
