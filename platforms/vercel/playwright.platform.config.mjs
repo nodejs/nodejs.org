@@ -3,9 +3,10 @@
  *
  * Vercel builds run on external preview URLs, so no local webServer is
  * started — the CI workflow provides `PLAYWRIGHT_BASE_URL` pointing at
- * the deployment. Left intentionally empty so `apps/site/playwright.config.ts`
- * falls back to its default baseURL.
+ * the deployment.
  *
  * @type {import('../../apps/site/playwright.platform.config').PlatformPlaywrightConfig}
  */
-export default {};
+export default {
+  use: { baseURL: process.env.PLAYWRIGHT_BASE_URL },
+};

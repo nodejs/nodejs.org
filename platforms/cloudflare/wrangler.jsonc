@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "main": "./src/worker-entrypoint.ts",
+  "main": "./worker-entrypoint.ts",
   "name": "nodejs-website",
   "compatibility_date": "2024-11-07",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],

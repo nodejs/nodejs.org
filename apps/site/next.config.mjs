@@ -2,15 +2,19 @@
 
 import createNextIntlPlugin from 'next-intl/plugin';
 
-import platform from '#platform/next.platform.config';
+import platform from '#platform/next.platform.config.mjs';
 
-import {
-  BASE_PATH,
-  ENABLE_STATIC_EXPORT,
-  DEPLOY_TARGET,
-} from './next.constants.mjs';
+import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 import { getImagesConfig } from './next.image.config.mjs';
+import { DEPLOY_TARGET } from './next.platform.constants.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
+
+const platformImages = await platform.images?.();
+const platformNextConfig = await platform.nextConfig?.();
+
+const transpilePackages = DEPLOY_TARGET
+  ? [`@node-core/platform-${DEPLOY_TARGET}`]
+  : [];
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -21,14 +25,9 @@ const nextConfig = {
   // We allow the BASE_PATH to be overridden in case that the Website
   // is being built on a subdirectory (e.g. /nodejs-website)
   basePath: BASE_PATH,
-  images: getImagesConfig(await platform.images?.()),
+  images: getImagesConfig(platformImages),
   serverExternalPackages: ['twoslash'],
-  // Transpile platform packages' TSX/TS sources when they're pulled in via
-  // the `@platform/*` aliases from the active `next.platform.config.mjs`.
-  transpilePackages: [
-    '@node-core/platform-vercel',
-    '@node-core/platform-cloudflare',
-  ],
+  transpilePackages,
   outputFileTracingIncludes: {
     // Twoslash needs TypeScript declarations to function, and, by default, Next.js
     // strips them for brevity. Therefore, they must be explicitly included.
@@ -96,7 +95,7 @@ const nextConfig = {
         .filter(Boolean),
     },
   }),
-  ...(await platform.nextConfig?.()),
+  ...platformNextConfig,
 };
 
 const withNextIntl = createNextIntlPlugin('./i18n.tsx');

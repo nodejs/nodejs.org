@@ -1,3 +1,5 @@
+const BASE_URL = process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:8787';
+
 /**
  * Playwright overrides contributed by the Cloudflare deployment target.
  *
@@ -8,11 +10,11 @@
  * @type {import('../../apps/site/playwright.platform.config').PlatformPlaywrightConfig}
  */
 export default {
-  baseURL: 'http://127.0.0.1:8787',
+  use: { baseURL: BASE_URL },
   webServer: {
     stdout: 'pipe',
     command: 'pnpm --filter=@node-core/platform-cloudflare cloudflare:preview',
-    url: 'http://127.0.0.1:8787',
+    url: BASE_URL,
     timeout: 60_000 * 3,
   },
 };

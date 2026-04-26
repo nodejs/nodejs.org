@@ -129,25 +129,28 @@ We chose Next.js because it is:
 ```
 nodejs.org/
 ├── apps/
-│   ├── site/                    # Main website application
-│   │   ├── components/          # Website-specific React components
-│   │   ├── layouts/             # Page layout templates
-│   │   ├── pages/               # Content pages (Markdown/MDX)
-│   │   │   ├── en/              # English content (source)
-│   │   │   └── {locale}/        # Translated content
-│   │   ├── public/              # Static assets
-│   │   │   └── static/          # Images, documents, etc.
-│   │   ├── hooks/               # React hooks
-│   │   ├── providers/           # React context providers
-│   │   ├── types/               # TypeScript definitions
-│   │   ├── next-data/           # Build-time data fetching
-│   │   ├── scripts/             # Utility scripts
-│   │   ├── snippets/            # Code snippets for download page
-│   │   └── tests/               # Test files
-│   │       └── e2e/             # End-to-end tests
-│   ├── vercel/                  # Vercel deployment adapter
+│   └── site/                    # Main website application (platform-agnostic)
+│       ├── components/          # Website-specific React components
+│       ├── layouts/             # Page layout templates
+│       ├── pages/               # Content pages (Markdown/MDX)
+│       │   ├── en/              # English content (source)
+│       │   └── {locale}/        # Translated content
+│       ├── public/              # Static assets
+│       │   └── static/          # Images, documents, etc.
+│       ├── platform/            # No-op platform stubs (resolved via
+│       │                        #   `@platform/*` when no DEPLOY_TARGET set)
+│       ├── hooks/               # React hooks
+│       ├── providers/           # React context providers
+│       ├── types/               # TypeScript definitions
+│       ├── next-data/           # Build-time data fetching
+│       ├── scripts/             # Utility scripts
+│       ├── snippets/            # Code snippets for download page
+│       └── tests/               # Test files
+│           └── e2e/             # End-to-end tests
+├── platforms/                   # Deployment-target adapters
+│   ├── vercel/                  # Vercel adapter — @node-core/platform-vercel
 │   │                            #   (analytics, instrumentation, vercel.json)
-│   └── cloudflare/              # Cloudflare deployment adapter
+│   └── cloudflare/              # Cloudflare adapter — @node-core/platform-cloudflare
 │                                #   (worker entrypoint, image loader,
 │                                #    open-next.config.ts, wrangler.jsonc)
 └── packages/

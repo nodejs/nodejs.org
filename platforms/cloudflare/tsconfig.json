@@ -13,10 +13,6 @@
     "isolatedModules": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src",
-    "next.platform.config.mjs",
-    "playwright.platform.config.mjs"
-  ],
-  "exclude": ["src/worker-entrypoint.ts"]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.mjs"],
+  "exclude": ["node_modules", "worker-entrypoint.ts"]
 }

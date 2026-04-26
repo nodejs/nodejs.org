@@ -1,6 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
-import platform from '#platform/playwright.platform.config';
+import platform from '#platform/playwright.platform.config.mjs';
 
 const isCI = !!process.env.CI;
 
@@ -12,12 +12,9 @@ export default defineConfig({
   retries: isCI ? 2 : 0,
   workers: isCI ? 1 : undefined,
   reporter: isCI ? [['html'], ['github']] : [['html']],
-  ...(platform.webServer ? { webServer: platform.webServer } : {}),
+  ...platform,
   use: {
-    baseURL:
-      process.env.PLAYWRIGHT_BASE_URL ||
-      platform.baseURL ||
-      'http://127.0.0.1:3000',
+    ...platform.use,
     trace: 'on-first-retry',
   },
   projects: [

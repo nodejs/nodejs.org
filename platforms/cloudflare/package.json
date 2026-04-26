@@ -4,12 +4,7 @@
   "private": true,
   "type": "module",
   "exports": {
-    "./analytics": "./src/analytics.tsx",
-    "./image-loader": "./src/image-loader.ts",
-    "./instrumentation": "./src/instrumentation.ts",
-    "./next.platform.config": "./next.platform.config.mjs",
-    "./playwright.platform.config": "./playwright.platform.config.mjs",
-    "./worker-entrypoint": "./src/worker-entrypoint.ts"
+    "./*": "./*"
   },
   "repository": {
     "type": "git",
@@ -40,6 +35,6 @@
     "typescript": "catalog:"
   },
   "engines": {
-    "node": ">=20"
+    "node": "24.x"
   }
 }

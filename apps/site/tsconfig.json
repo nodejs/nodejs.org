@@ -22,8 +22,7 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@platform/analytics": ["./platform/analytics.tsx"],
-      "@platform/instrumentation": ["./platform/instrumentation.ts"]
+      "@platform/*": ["./platform/*"]
     }
   },
   "mdx": {

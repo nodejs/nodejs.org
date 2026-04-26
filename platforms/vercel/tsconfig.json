@@ -13,9 +13,6 @@
     "isolatedModules": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src",
-    "next.platform.config.mjs",
-    "playwright.platform.config.mjs"
-  ]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.mjs"],
+  "exclude": ["node_modules"]
 }

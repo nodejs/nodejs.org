@@ -7,11 +7,7 @@ import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import readingTime from 'remark-reading-time';
 
-// MDX overrides contributed by the active deployment target. Resolved via
-// the `#platform/next.platform.config` import map in `package.json`; each
-// platform owns its own `{ wasm, twoslash }` defaults and the in-repo
-// default file acts as the standalone fallback.
-import platform from '#platform/next.platform.config';
+import platform from '#platform/next.platform.config.mjs';
 
 import remarkTableTitles from '../util/table';
 

@@ -49,7 +49,7 @@ export default {
       // which webpack rewrites as an asset reference and mangles at runtime.
       loaderFile: relative(
         process.cwd(),
-        require.resolve('@node-core/platform-cloudflare/image-loader')
+        require.resolve('@node-core/platform-cloudflare/image-loader.ts')
       ),
     };
   },
