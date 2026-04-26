@@ -59,3 +59,10 @@
     justify-end
     lg:ml-8;
 }
+
+.oramaLogo {
+  @apply h-3
+    w-auto
+    text-neutral-900
+    dark:text-neutral-100;
+}

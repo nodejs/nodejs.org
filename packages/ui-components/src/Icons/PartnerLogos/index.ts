@@ -11,6 +11,7 @@ import * as MACSTADIUM from './MacStadium';
 import * as MICROSOFT from './Microsoft';
 import * as NODESOURCE from './NodeSource';
 import * as OPENSSF from './OpenSSF';
+import * as ORAMA from './Orama';
 import * as RACKSPACE from './Rackspace';
 import * as SCALEWAY from './Scaleway';
 import * as SENTRY from './Sentry';
@@ -31,6 +32,7 @@ export {
   MICROSOFT,
   NODESOURCE,
   OPENSSF,
+  ORAMA,
   RACKSPACE,
   SCALEWAY,
   SENTRY,

@@ -33,6 +33,11 @@ const getPartners = async (
 
 const renderSmallPartner = (partner: Partner) => {
   const Logo = PartnerLogos[partner.id];
+  const PartnerIcon = 'Favicon' in Logo ? Logo.Favicon : null;
+
+  if (!PartnerIcon) {
+    return null;
+  }
 
   return (
     <PartnerButton
@@ -42,7 +47,7 @@ const renderSmallPartner = (partner: Partner) => {
       href={partner.href}
       data-tooltip={partner.name}
     >
-      <Logo.Favicon />
+      <PartnerIcon />
     </PartnerButton>
   );
 };
