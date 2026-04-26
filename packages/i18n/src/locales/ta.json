@@ -399,6 +399,7 @@
           "choco": "Chocolatey என்பது Windows இற்கான பேக்கேஜ் மேலாளர்.",
           "docker": "Docker என்பது containerization தளம்.",
           "n": "\"n\" குறுக்கு-பிளாட்ஃபார்ம் Node பதிப்பு மேலாளர்.",
+          "asdf": "ASDF is a cross-platform version manager.",
           "volta": "\"Volta\" விரைந்து வேலை செய்யும் Node மேலாளர்."
         }
       }

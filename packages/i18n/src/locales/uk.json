@@ -298,6 +298,7 @@
           "choco": "Chocolatey — це менеджер пакетів для Windows.",
           "docker": "Docker — це платформа контейнеризації.",
           "n": "«n» — це кросплатформний менеджер версій Node.js.",
+          "asdf": "ASDF is a cross-platform version manager.",
           "volta": "«Volta» — це кросплатформний менеджер версій Node.js."
         }
       }

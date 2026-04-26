@@ -299,6 +299,7 @@
           "choco": "Chocolatey is a package manager for Windows.",
           "docker": "Docker is a containerization platform.",
           "n": "\"n\" is a cross-platform Node.js version manager.",
+          "asdf": "ASDF is a cross-platform version manager.",
           "volta": "\"Volta\" is a cross-platform Node.js version manager."
         }
       }

@@ -380,6 +380,7 @@
           "choco": "Chocolatey este un manager de pachete pentru Windows.",
           "docker": "Docker este o platformă de containerizare.",
           "n": "„n” este un manager de versiuni Node.js multiplatformă.",
+          "asdf": "ASDF is a cross-platform version manager.",
           "volta": "„Volta” este un manager de versiuni Node.js multiplatformă."
         }
       }

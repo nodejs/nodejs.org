@@ -399,6 +399,7 @@
           "choco": "Chocolatey é um gerenciador de pacotes para Windows.",
           "docker": "Docker é uma plataforma de conteinerização.",
           "n": "\"n\" é um gerenciador de versões do Node.js multiplataforma.",
+          "asdf": "ASDF is a cross-platform version manager.",
           "volta": "\"Volta\" é um gerenciador de versões do Node.js multiplataforma."
         }
       }

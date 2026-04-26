@@ -188,6 +188,16 @@
       "url": "https://github.com/tj/n",
       "info": "layouts.download.codeBox.platformInfo.n"
     }
+     ,{
+       "id": "ASDF",
+       "icon": "asdf",
+       "name": "ASDF",
+       "compatibility": {
+         "os": ["MAC", "LINUX", "WIN"]
+       },
+       "url": "https://github.com/asdf-vm/asdf",
+       "info": "layouts.download.codeBox.platformInfo.asdf"
+     }
   ],
   "packageManagers": [
     {

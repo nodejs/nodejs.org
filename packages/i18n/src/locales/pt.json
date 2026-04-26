@@ -286,7 +286,8 @@
           "brew": "Homebrew é um gestor de pacote para macOS e Linux.",
           "choco": "Chocolatey é um gestor de pacote para Windows.",
           "docker": "Docker é uma plataforma de contentorização.",
-          "volta": "\"Volta\" é um gestor de versão de Node.js multiplataforma."
+          "volta": "\"Volta\" é um gestor de versão de Node.js multiplataforma.",
+          "asdf": "ASDF is a cross-platform version manager."
         }
       }
     },
