@@ -1,7 +1,7 @@
 @reference "../../styles/index.css";
 
 .wrapper {
-  @apply ml:max-w-xs
+   @apply ml:max-w-xs
     ml:overflow-auto
     ml:border-r
     scrollbar-thin
@@ -16,18 +16,21 @@
     bg-white
     px-4
     pt-6
-    2xl:px-6
+     2xl:px-6
     dark:border-neutral-900
     dark:bg-neutral-950;
 
-  .navigation {
-    @apply ml:flex
+   .navigation {
+     @apply ml:flex
+      flex-1
+      overflow-y-auto
+      scroll-smooth
       hidden;
-  }
+    }
 
-  .mobileSelect {
-    @apply ml:hidden
+   .mobileSelect {
+     @apply ml:hidden
       flex
       w-full;
-  }
+    }
 }
