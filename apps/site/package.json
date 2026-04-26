@@ -34,8 +34,7 @@
     "@node-core/ui-components": "workspace:*",
     "@node-core/website-i18n": "workspace:*",
     "@nodevu/core": "0.3.0",
-    "@orama/core": "^1.2.19",
-    "@orama/ui": "^1.5.4",
+    "@orama/orama": "^3.1.18",
     "@radix-ui/react-tabs": "^1.1.13",
     "@radix-ui/react-tooltip": "^1.2.8",
     "@tailwindcss/postcss": "~4.2.2",
@@ -69,12 +68,11 @@
     "vfile-matter": "~5.0.1"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20260418.1",
     "@eslint-react/eslint-plugin": "~3.0.0",
     "@next/eslint-plugin-next": "16.2.1",
     "@node-core/remark-lint": "workspace:*",
+    "@orama/core": "^1.2.19",
     "@playwright/test": "^1.58.2",
-    "@sentry/cloudflare": "^10.49.0",
     "@testing-library/user-event": "~14.6.1",
     "@types/mdast": "^4.0.4",
     "@types/mdx": "^2.0.13",
