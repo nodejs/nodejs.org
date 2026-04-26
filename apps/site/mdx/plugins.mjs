@@ -1,13 +1,12 @@
 'use strict';
 
 import rehypeShikiji from '@node-core/rehype-shiki/plugin';
+import platform from '@platform/next.config.mjs';
 import remarkHeadings from '@vcarl/remark-headings';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import readingTime from 'remark-reading-time';
-
-import platform from '#platform/next.platform.config.mjs';
 
 import remarkTableTitles from '../util/table';
 

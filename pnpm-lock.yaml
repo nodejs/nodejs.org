@@ -93,6 +93,9 @@ importers:
       '@node-core/platform-cloudflare':
         specifier: workspace:*
         version: link:../../platforms/cloudflare
+      '@node-core/platform-default':
+        specifier: workspace:*
+        version: link:../../platforms/default
       '@node-core/platform-vercel':
         specifier: workspace:*
         version: link:../../platforms/vercel
@@ -605,6 +608,28 @@ importers:
       '@types/react':
         specifier: 'catalog:'
         version: 19.2.14
+      cross-env:
+        specifier: 'catalog:'
+        version: 10.1.0
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+
+  platforms/default:
+    dependencies:
+      next:
+        specifier: 'catalog:'
+        version: 16.2.4(@opentelemetry/api@1.9.1)(@playwright/test@1.58.2)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react:
+        specifier: 'catalog:'
+        version: 19.2.4
+    devDependencies:
+      '@playwright/test':
+        specifier: ^1.58.2
+        version: 1.58.2
+      '@types/react':
+        specifier: 'catalog:'
+        version: 19.2.14
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -645,6 +670,9 @@ importers:
       '@types/react':
         specifier: 'catalog:'
         version: 19.2.14
+      cross-env:
+        specifier: 'catalog:'
+        version: 10.1.0
       typescript:
         specifier: 'catalog:'
         version: 5.9.3

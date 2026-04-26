@@ -137,8 +137,6 @@ nodejs.org/
 │       │   └── {locale}/        # Translated content
 │       ├── public/              # Static assets
 │       │   └── static/          # Images, documents, etc.
-│       ├── platform/            # No-op platform stubs (resolved via
-│       │                        #   `@platform/*` when no DEPLOY_TARGET set)
 │       ├── hooks/               # React hooks
 │       ├── providers/           # React context providers
 │       ├── types/               # TypeScript definitions
@@ -148,6 +146,8 @@ nodejs.org/
 │       └── tests/               # Test files
 │           └── e2e/             # End-to-end tests
 ├── platforms/                   # Deployment-target adapters
+│   ├── default/                 # No-op fallback — @node-core/platform-default
+│   │                            #   (resolved when NEXT_PUBLIC_DEPLOY_TARGET unset)
 │   ├── vercel/                  # Vercel adapter — @node-core/platform-vercel
 │   │                            #   (analytics, instrumentation, vercel.json)
 │   └── cloudflare/              # Cloudflare adapter — @node-core/platform-cloudflare
@@ -305,20 +305,22 @@ Benefits:
 - **`pnpm build`**: Production build for Vercel
 - **`pnpm deploy`**: Export build for legacy servers
 - **`pnpm dev`**: Development server
-- **`pnpm cloudflare:preview`**: Local preview of the Cloudflare (OpenNext) worker build
-- **`pnpm cloudflare:deploy`**: Deploy the Cloudflare (OpenNext) worker build
+- **`pnpm --filter=@node-core/platform-cloudflare build:cloudflare`**: Build the website using the Cloudflare (OpenNext) adapter
+- **`pnpm --filter=@node-core/platform-cloudflare dev:cloudflare`**: Local preview of the Cloudflare (OpenNext) worker build
+- **`pnpm --filter=@node-core/platform-cloudflare deploy:cloudflare`**: Deploy the Cloudflare (OpenNext) worker build
+- **`pnpm --filter=@node-core/platform-vercel build:vercel`**: Production website build with the Vercel deployment conditions applied
 
 #### Deploy Target Selection (`NEXT_PUBLIC_DEPLOY_TARGET`)
 
-`NEXT_PUBLIC_DEPLOY_TARGET` selects which platform adapter contributes its Next.js config, MDX flags, image loader, analytics, and Playwright webServer. It is consumed at build time by [`apps/site/next.config.mjs`](../apps/site/next.config.mjs), [`apps/site/mdx/plugins.mjs`](../apps/site/mdx/plugins.mjs), and [`apps/site/playwright.config.ts`](../apps/site/playwright.config.ts) via a dynamic import of `@node-core/platform-${target}/next.platform.config`.
+`NEXT_PUBLIC_DEPLOY_TARGET` selects which platform adapter contributes its Next.js config, MDX flags, image loader, analytics, and Playwright webServer. It is consumed at build time by [`apps/site/next.config.mjs`](../apps/site/next.config.mjs), [`apps/site/mdx/plugins.mjs`](../apps/site/mdx/plugins.mjs), and [`apps/site/playwright.config.ts`](../apps/site/playwright.config.ts) via a dynamic import of `@node-core/platform-${target}/next.config.mjs`.
 
-| Value        | Adapter                                                                                                                                                                                                         | Set by                                                                                          |
-| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `vercel`     | [`@node-core/platform-vercel`](../platforms/vercel)                                                                                                                                                             | [`platforms/vercel/vercel.json`](../platforms/vercel/vercel.json) build env                     |
-| `cloudflare` | [`@node-core/platform-cloudflare`](../platforms/cloudflare)                                                                                                                                                     | OpenNext `buildCommand` in [`open-next.config.ts`](../platforms/cloudflare/open-next.config.ts) |
-| _(unset)_    | Falls back to the no-op defaults in [`apps/site/next.platform.config.mjs`](../apps/site/next.platform.config.mjs) and [`apps/site/playwright.platform.config.mjs`](../apps/site/playwright.platform.config.mjs) | Plain `pnpm dev` / `pnpm build` / `pnpm deploy`                                                 |
+| Value        | Adapter                                                     | Set by                                                                                          |
+| ------------ | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `vercel`     | [`@node-core/platform-vercel`](../platforms/vercel)         | [`platforms/vercel/vercel.json`](../platforms/vercel/vercel.json) build env                     |
+| `cloudflare` | [`@node-core/platform-cloudflare`](../platforms/cloudflare) | OpenNext `buildCommand` in [`open-next.config.ts`](../platforms/cloudflare/open-next.config.ts) |
+| _(unset)_    | [`@node-core/platform-default`](../platforms/default)       | Plain `pnpm dev` / `pnpm build` / `pnpm deploy`                                                 |
 
-Each adapter exports a default `{ nextConfig, aliases, images, mdx }` shape (any field optional). See [`platforms/vercel/next.platform.config.mjs`](../platforms/vercel/next.platform.config.mjs) and [`platforms/cloudflare/next.platform.config.mjs`](../platforms/cloudflare/next.platform.config.mjs) for reference.
+Each adapter exports a default `{ nextConfig, aliases, images, mdx }` shape (any field optional). See [`platforms/vercel/next.config.mjs`](../platforms/vercel/next.config.mjs) and [`platforms/cloudflare/next.config.mjs`](../platforms/cloudflare/next.config.mjs) for reference.
 
 #### Vercel Integration
 

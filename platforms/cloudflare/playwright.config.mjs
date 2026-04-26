@@ -13,7 +13,7 @@ export default {
   use: { baseURL: BASE_URL },
   webServer: {
     stdout: 'pipe',
-    command: 'pnpm --filter=@node-core/platform-cloudflare cloudflare:preview',
+    command: 'pnpm --filter=@node-core/platform-cloudflare dev:cloudflare',
     url: BASE_URL,
     timeout: 60_000 * 3,
   },

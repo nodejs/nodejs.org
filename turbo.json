@@ -17,6 +17,9 @@
     "lint": {
       "dependsOn": ["^topo"]
     },
+    "lint:types": {
+      "cache": false
+    },
     "prettier": {
       "inputs": ["**/*.{js,mjs,ts,tsx,md,mdx,json,yml,css}"],
       "outputs": [".prettiercache"]

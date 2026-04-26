@@ -32,7 +32,7 @@ export const ENABLE_STATIC_EXPORT_LOCALE =
  * The full canonical URL of the deployed Website (used e.g. for the RSS feed).
  *
  * Platform-specific base URLs (such as Vercel's `VERCEL_URL`) are inlined into
- * `NEXT_PUBLIC_BASE_URL` at build time by each platform's `next.platform.config.mjs`,
+ * `NEXT_PUBLIC_BASE_URL` at build time by each platform's `next.config.mjs`,
  * keeping this module free of platform-specific branches.
  */
 export const BASE_URL =

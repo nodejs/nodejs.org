@@ -1,19 +1,14 @@
 /**
  * Platform config contributed by the Vercel deployment target.
  *
- * Consumed by `apps/site/next.config.mjs` via the `#platform/*` import
- * map. Heavy, Node-only bits live inside async thunks so that webpack —
- * which bundles the top level of this module into the server output
- * when `apps/site/mdx/plugins.mjs` reads `.mdx` — never drags them into
- * the Node server runtime (keeps bundles lean and parity with
- * Cloudflare's contract).
- *
  * @type {import('../../apps/site/next.platform.config').PlatformConfig}
  */
 export default {
   aliases: {
-    '@platform/analytics': '@node-core/platform-vercel/analytics',
-    '@platform/instrumentation': '@node-core/platform-vercel/instrumentation',
+    '@platform/analytics': '@node-core/platform-vercel/analytics.tsx',
+    '@platform/instrumentation':
+      '@node-core/platform-vercel/instrumentation.ts',
+    '@platform/next.config.mjs': '@node-core/platform-vercel/next.config.mjs',
   },
   mdx: {
     // Vercel supports the fast Oniguruma WASM engine and twoslash transforms,

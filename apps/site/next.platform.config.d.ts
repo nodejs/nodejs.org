@@ -8,6 +8,11 @@ type PlatformNextConfig = Pick<NextConfig, 'deploymentId' | 'env'>;
  * Shared platform-config contract consumed by `apps/site/next.config.mjs`
  * and implemented by each `@node-core/platform-<target>` package.
  *
+ * `aliases` are surfaced as Turbopack/webpack aliases so that
+ * `@platform/*` imports in bundled code (e.g. the `@analytics/`
+ * parallel-route slot, `instrumentation.ts`, `mdx/plugins.mjs`) resolve
+ * to the active platform's files.
+ *
  * `nextConfig` and `images` are async thunks so that platform modules
  * that depend on Node-only tooling (e.g. `@opennextjs/cloudflare`,
  * `require.resolve`) can keep those imports out of the module's

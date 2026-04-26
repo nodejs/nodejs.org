@@ -5,7 +5,7 @@
  * `PLAYWRIGHT_BASE_URL` override for CI), so consumers just spread
  * `platform.use` into their `defineConfig` call.
  *
- * @type {import('../playwright.platform.config').PlatformPlaywrightConfig}
+ * @type {import('../../apps/site/playwright.platform.config').PlatformPlaywrightConfig}
  */
 export default {
   use: { baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:3000' },

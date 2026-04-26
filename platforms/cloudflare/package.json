@@ -12,9 +12,9 @@
     "directory": "platforms/cloudflare"
   },
   "scripts": {
-    "cloudflare:build:worker": "pnpm --filter=@node-core/website exec opennextjs-cloudflare build --openNextConfigPath ../../platforms/cloudflare/open-next.config.ts --config ../../platforms/cloudflare/wrangler.jsonc",
-    "cloudflare:deploy": "pnpm --filter=@node-core/website exec opennextjs-cloudflare deploy --openNextConfigPath ../../platforms/cloudflare/open-next.config.ts --config ../../platforms/cloudflare/wrangler.jsonc",
-    "cloudflare:preview": "pnpm --filter=@node-core/website exec wrangler dev --config ../../platforms/cloudflare/wrangler.jsonc",
+    "build:cloudflare": "cross-env NEXT_PUBLIC_DEPLOY_TARGET=cloudflare pnpm --filter=@node-core/website exec opennextjs-cloudflare build --openNextConfigPath ../../platforms/cloudflare/open-next.config.ts --config ../../platforms/cloudflare/wrangler.jsonc",
+    "deploy:cloudflare": "cross-env NEXT_PUBLIC_DEPLOY_TARGET=cloudflare pnpm --filter=@node-core/website exec opennextjs-cloudflare deploy --openNextConfigPath ../../platforms/cloudflare/open-next.config.ts --config ../../platforms/cloudflare/wrangler.jsonc",
+    "dev:cloudflare": "pnpm --filter=@node-core/website exec wrangler dev --config ../../platforms/cloudflare/wrangler.jsonc",
     "lint:types": "tsc --noEmit"
   },
   "dependencies": {
@@ -32,6 +32,7 @@
     "@playwright/test": "^1.58.2",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
+    "cross-env": "catalog:",
     "typescript": "catalog:"
   },
   "engines": {

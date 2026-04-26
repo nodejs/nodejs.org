@@ -1,20 +1,15 @@
 /**
  * Platform config contributed by the Cloudflare deployment target.
  *
- * Consumed by `apps/site/next.config.mjs` via the `#platform/*` import
- * map. Heavy, Node-only bits (`@opennextjs/cloudflare`, `createRequire`,
- * `require.resolve`) live inside async thunks so that webpack — which
- * bundles the top level of this module into the server output when
- * `apps/site/mdx/plugins.mjs` reads `.mdx` — never drags them into the
- * worker runtime.
- *
  * @type {import('../../apps/site/next.platform.config').PlatformConfig}
  */
 export default {
   aliases: {
-    '@platform/analytics': '@node-core/platform-cloudflare/analytics',
+    '@platform/analytics': '@node-core/platform-cloudflare/analytics.tsx',
     '@platform/instrumentation':
-      '@node-core/platform-cloudflare/instrumentation',
+      '@node-core/platform-cloudflare/instrumentation.ts',
+    '@platform/next.config.mjs':
+      '@node-core/platform-cloudflare/next.config.mjs',
   },
   mdx: {
     // Cloudflare workers can't load `shiki/wasm` via `WebAssembly.instantiate`

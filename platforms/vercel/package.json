@@ -12,6 +12,8 @@
     "directory": "platforms/vercel"
   },
   "scripts": {
+    "build:vercel": "cross-env NEXT_PUBLIC_DEPLOY_TARGET=vercel pnpm --filter=@node-core/website build",
+    "dev:vercel": "cross-env NEXT_PUBLIC_DEPLOY_TARGET=vercel pnpm --filter=@node-core/website dev",
     "lint:types": "tsc --noEmit"
   },
   "dependencies": {
@@ -30,6 +32,7 @@
   "devDependencies": {
     "@playwright/test": "^1.58.2",
     "@types/react": "catalog:",
+    "cross-env": "catalog:",
     "typescript": "catalog:"
   },
   "engines": {

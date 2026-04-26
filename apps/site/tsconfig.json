@@ -11,18 +11,20 @@
     "module": "esnext",
     "moduleResolution": "Bundler",
     "customConditions": ["default"],
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "plugins": [{ "name": "next" }],
     "baseUrl": ".",
     "paths": {
-      "@platform/*": ["./platform/*"]
+      "@platform/*": [
+        "../../platforms/default/*",
+        "../../platforms/default/*.ts",
+        "../../platforms/default/*.tsx",
+        "../../platforms/default/*.mjs"
+      ]
     }
   },
   "mdx": {

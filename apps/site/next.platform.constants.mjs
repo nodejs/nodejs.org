@@ -10,6 +10,6 @@
  * The `NEXT_PUBLIC_` prefix makes Next.js inline the value at build time,
  * enabling dead-code elimination of platform-specific branches.
  *
- * @type {'vercel' | 'cloudflare' | undefined}
+ * @type {'vercel' | 'cloudflare' | 'default'}
  */
-export const DEPLOY_TARGET = process.env.NEXT_PUBLIC_DEPLOY_TARGET;
+export const DEPLOY_TARGET = process.env.NEXT_PUBLIC_DEPLOY_TARGET ?? 'default';

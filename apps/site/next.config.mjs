@@ -2,19 +2,21 @@
 
 import createNextIntlPlugin from 'next-intl/plugin';
 
-import platform from '#platform/next.platform.config.mjs';
-
 import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 import { getImagesConfig } from './next.image.config.mjs';
 import { DEPLOY_TARGET } from './next.platform.constants.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 
+// Loaded by Node directly (Next.js doesn't bundle `next.config.mjs`), so
+// we resolve the active platform via a dynamic import keyed on
+// `DEPLOY_TARGET` rather than a `@platform/*` alias (those only resolve
+// inside Turbopack/webpack).
+const { default: platform } = await import(
+  `@node-core/platform-${DEPLOY_TARGET}/next.config.mjs`
+);
+
 const platformImages = await platform.images?.();
 const platformNextConfig = await platform.nextConfig?.();
-
-const transpilePackages = DEPLOY_TARGET
-  ? [`@node-core/platform-${DEPLOY_TARGET}`]
-  : [];
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -27,7 +29,7 @@ const nextConfig = {
   basePath: BASE_PATH,
   images: getImagesConfig(platformImages),
   serverExternalPackages: ['twoslash'],
-  transpilePackages,
+  transpilePackages: [`@node-core/platform-${DEPLOY_TARGET}`],
   outputFileTracingIncludes: {
     // Twoslash needs TypeScript declarations to function, and, by default, Next.js
     // strips them for brevity. Therefore, they must be explicitly included.
@@ -81,10 +83,7 @@ const nextConfig = {
   },
   // Provide Turbopack Aliases for Platform Resolution
   turbopack: { resolveAlias: platform.aliases },
-  // Provide Webpack Aliases for Platform Resolution. The active deployment
-  // target is also surfaced to the resolver via `conditionNames` so that
-  // `#platform/*` subpath imports in `package.json` pick the matching
-  // branch when webpack bundles server code.
+  // Provide Webpack Aliases for Platform Resolution.
   webpack: ({ resolve, ...config }) => ({
     ...config,
     resolve: {
