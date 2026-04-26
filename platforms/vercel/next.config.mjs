@@ -14,7 +14,6 @@ export default {
     const VERCEL_URL = process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}`
       : undefined;
-    const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || VERCEL_URL;
 
     return {
       // Expose Vercel's auto-assigned deployment URL as a platform-agnostic
@@ -23,7 +22,9 @@ export default {
       // contribute the entry when a value is actually present so downstream
       // truthiness vs. existence checks behave the same as if the var were
       // never set.
-      env: NEXT_PUBLIC_BASE_URL ? { NEXT_PUBLIC_BASE_URL } : undefined,
+      env: {
+        NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL || VERCEL_URL,
+      },
     };
   },
 };
