@@ -1,5 +1,0 @@
-{
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "pnpm install --prod --frozen-lockfile",
-  "ignoreCommand": "[[ \"$VERCEL_GIT_COMMIT_REF\" =~ \"^dependabot/.*\" || \"$VERCEL_GIT_COMMIT_REF\" =~ \"^gh-readonly-queue/.*\" ]]"
-}

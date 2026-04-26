@@ -7,8 +7,8 @@
       "cache": false,
       "persistent": true,
       "env": [
-        "VERCEL_ENV",
         "VERCEL_URL",
+        "NEXT_PUBLIC_DEPLOY_TARGET",
         "NEXT_PUBLIC_STATIC_EXPORT",
         "NEXT_PUBLIC_STATIC_EXPORT_LOCALE",
         "NEXT_PUBLIC_BASE_URL",
@@ -32,8 +32,8 @@
       ],
       "outputs": [".next/**", "!.next/cache/**"],
       "env": [
-        "VERCEL_ENV",
         "VERCEL_URL",
+        "NEXT_PUBLIC_DEPLOY_TARGET",
         "NEXT_PUBLIC_STATIC_EXPORT",
         "NEXT_PUBLIC_STATIC_EXPORT_LOCALE",
         "NEXT_PUBLIC_BASE_URL",
@@ -51,8 +51,8 @@
       "cache": false,
       "persistent": true,
       "env": [
-        "VERCEL_ENV",
         "VERCEL_URL",
+        "NEXT_PUBLIC_DEPLOY_TARGET",
         "NEXT_PUBLIC_STATIC_EXPORT",
         "NEXT_PUBLIC_STATIC_EXPORT_LOCALE",
         "NEXT_PUBLIC_BASE_URL",
@@ -75,8 +75,8 @@
       ],
       "outputs": [".next/**", "!.next/cache/**"],
       "env": [
-        "VERCEL_ENV",
         "VERCEL_URL",
+        "NEXT_PUBLIC_DEPLOY_TARGET",
         "NEXT_PUBLIC_STATIC_EXPORT",
         "NEXT_PUBLIC_STATIC_EXPORT_LOCALE",
         "NEXT_PUBLIC_BASE_URL",
@@ -129,46 +129,12 @@
       "inputs": ["{pages}/**/*.{mdx,md}"],
       "outputs": ["public/blog-data.json"],
       "env": [
-        "VERCEL_ENV",
         "VERCEL_URL",
         "TURBO_CACHE",
         "TURBO_TELEMETRY_DISABLED",
         "TURBOPACK_STATS",
         "ENABLE_EXPERIMENTAL_COREPACK"
       ]
-    },
-    "cloudflare:build:worker": {
-      "dependsOn": ["build:blog-data"],
-      "inputs": [
-        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
-        "{app,components,layouts,pages,styles}/**/*.css",
-        "{next-data,scripts,i18n}/**/*.{mjs,json}",
-        "{app,pages}/**/*.{mdx,md}",
-        "*.{md,mdx,json,ts,tsx,mjs,yml}"
-      ],
-      "outputs": [".open-next/**"]
-    },
-    "cloudflare:preview": {
-      "dependsOn": ["cloudflare:build:worker"],
-      "inputs": [
-        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
-        "{app,components,layouts,pages,styles}/**/*.css",
-        "{next-data,scripts,i18n}/**/*.{mjs,json}",
-        "{app,pages}/**/*.{mdx,md}",
-        "*.{md,mdx,json,ts,tsx,mjs,yml}"
-      ],
-      "outputs": [".open-next/**"]
-    },
-    "cloudflare:deploy": {
-      "dependsOn": ["cloudflare:build:worker"],
-      "inputs": [
-        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
-        "{app,components,layouts,pages,styles}/**/*.css",
-        "{next-data,scripts,i18n}/**/*.{mjs,json}",
-        "{app,pages}/**/*.{mdx,md}",
-        "*.{md,mdx,json,ts,tsx,mjs,yml}"
-      ],
-      "outputs": [".open-next/**"]
     },
     "scripts:release-post": {
       "cache": false

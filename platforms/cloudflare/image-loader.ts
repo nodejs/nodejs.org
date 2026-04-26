@@ -1,8 +1,7 @@
 import type { ImageLoaderProps } from 'next/image';
 
-const normalizeSrc = (src: string) => {
-  return src.startsWith('/') ? src.slice(1) : src;
-};
+const normalizeSrc = (src: string) =>
+  src.startsWith('/') ? src.slice(1) : src;
 
 export default function cloudflareLoader({
   src,

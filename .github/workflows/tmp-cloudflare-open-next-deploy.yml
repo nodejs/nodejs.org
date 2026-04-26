@@ -50,19 +50,19 @@ jobs:
           cache: 'pnpm'
 
       - name: Install packages
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --filter=@node-core/website... --filter=@node-core/platform-cloudflare...
 
       - name: Build blog data
         working-directory: apps/site
         run: node --run build:blog-data
 
       - name: Build open-next site
-        working-directory: apps/site
-        run: node --run cloudflare:build:worker
+        working-directory: platforms/cloudflare
+        run: node --run build:cloudflare
 
       - name: Deploy open-next site
-        working-directory: apps/site
-        run: node --run cloudflare:deploy
+        working-directory: platforms/cloudflare
+        run: node --run deploy:cloudflare
         env:
           CF_WORKERS_SCRIPTS_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

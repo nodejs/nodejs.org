@@ -38,7 +38,9 @@ This document provides an overview of the technologies used in the Node.js websi
   - [VSCode Configuration](#vscode-configuration)
   - [Build and Deployment](#build-and-deployment)
     - [Multiple Build Targets](#multiple-build-targets)
+    - [Deploy Target Selection (`NEXT_PUBLIC_DEPLOY_TARGET`)](#deploy-target-selection-next_public_deploy_target)
     - [Vercel Integration](#vercel-integration)
+    - [Cloudflare Integration](#cloudflare-integration)
   - [Package Management](#package-management)
     - [Multi-package Workspace](#multi-package-workspace)
     - [Publishing Process](#publishing-process)
@@ -127,7 +129,7 @@ We chose Next.js because it is:
 ```
 nodejs.org/
 ├── apps/
-│   └── site/                    # Main website application
+│   └── site/                    # Main website application (platform-agnostic)
 │       ├── components/          # Website-specific React components
 │       ├── layouts/             # Page layout templates
 │       ├── pages/               # Content pages (Markdown/MDX)
@@ -143,6 +145,14 @@ nodejs.org/
 │       ├── snippets/            # Code snippets for download page
 │       └── tests/               # Test files
 │           └── e2e/             # End-to-end tests
+├── platforms/                   # Deployment-target adapters
+│   ├── default/                 # No-op fallback — @node-core/platform-default
+│   │                            #   (resolved when NEXT_PUBLIC_DEPLOY_TARGET unset)
+│   ├── vercel/                  # Vercel adapter — @node-core/platform-vercel
+│   │                            #   (analytics, instrumentation, vercel.json)
+│   └── cloudflare/              # Cloudflare adapter — @node-core/platform-cloudflare
+│                                #   (worker entrypoint, image loader,
+│                                #    open-next.config.ts, wrangler.jsonc)
 └── packages/
     ├── ui-components/           # Reusable UI components
     │   ├── styles/             # Global stylesheets
@@ -150,8 +160,7 @@ nodejs.org/
     ├── i18n/                # Internationalization
     │   ├── locales/         # Translation files
     │   └── config.json      # Locale configuration
-    ├── rehype-shiki/        # Syntax highlighting plugin
-   ...
+    └── rehype-shiki/        # Syntax highlighting plugin
 ```
 
 ## Architecture Decisions
@@ -296,13 +305,35 @@ Benefits:
 - **`pnpm build`**: Production build for Vercel
 - **`pnpm deploy`**: Export build for legacy servers
 - **`pnpm dev`**: Development server
+- **`pnpm --filter=@node-core/platform-cloudflare build:cloudflare`**: Build the website using the Cloudflare (OpenNext) adapter
+- **`pnpm --filter=@node-core/platform-cloudflare dev:cloudflare`**: Local preview of the Cloudflare (OpenNext) worker build
+- **`pnpm --filter=@node-core/platform-cloudflare deploy:cloudflare`**: Deploy the Cloudflare (OpenNext) worker build
+- **`pnpm --filter=@node-core/platform-vercel build:vercel`**: Production website build with the Vercel deployment conditions applied
+
+#### Deploy Target Selection (`NEXT_PUBLIC_DEPLOY_TARGET`)
+
+`NEXT_PUBLIC_DEPLOY_TARGET` selects which platform adapter contributes its Next.js config, MDX flags, image loader, analytics, and Playwright webServer. It is consumed at build time by [`apps/site/next.config.mjs`](../apps/site/next.config.mjs), [`apps/site/mdx/plugins.mjs`](../apps/site/mdx/plugins.mjs), and [`apps/site/playwright.config.ts`](../apps/site/playwright.config.ts) via a dynamic import of `@node-core/platform-${target}/next.config.mjs`.
+
+| Value        | Adapter                                                     | Set by                                                                                          |
+| ------------ | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `vercel`     | [`@node-core/platform-vercel`](../platforms/vercel)         | [`platforms/vercel/vercel.json`](../platforms/vercel/vercel.json) build env                     |
+| `cloudflare` | [`@node-core/platform-cloudflare`](../platforms/cloudflare) | OpenNext `buildCommand` in [`open-next.config.ts`](../platforms/cloudflare/open-next.config.ts) |
+| _(unset)_    | [`@node-core/platform-default`](../platforms/default)       | Plain `pnpm dev` / `pnpm build` / `pnpm deploy`                                                 |
+
+Each adapter exports a default `{ nextConfig, aliases, images, mdx }` shape (any field optional). See [`platforms/vercel/next.config.mjs`](../platforms/vercel/next.config.mjs) and [`platforms/cloudflare/next.config.mjs`](../platforms/cloudflare/next.config.mjs) for reference.
 
 #### Vercel Integration
 
 - Automatic deployments for branches (ignoring automated branches)
-- Custom install + ignore scripts ([see `vercel.json`](../apps/site/vercel.json))
+- Custom install + ignore scripts ([see `vercel.json`](../platforms/vercel/vercel.json))
 - Build-time dependencies must be in `dependencies`, not `devDependencies`
 - Sponsorship maintained by OpenJS Foundation
+
+#### Cloudflare Integration
+
+- OpenNext adapter builds a [Cloudflare Worker](https://www.cloudflare.com/en-gb/developer-platform/products/workers/) artifact from the Next.js build
+- All Cloudflare-specific files (Wrangler config, OpenNext config, custom worker entrypoint, image loader) live in [`platforms/cloudflare`](../platforms/cloudflare)
+- See [Cloudflare build and deployment](./cloudflare-build-and-deployment.md) for details
 
 ### Package Management
 

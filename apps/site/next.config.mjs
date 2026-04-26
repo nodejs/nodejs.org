@@ -1,22 +1,30 @@
 'use strict';
+
 import createNextIntlPlugin from 'next-intl/plugin';
 
-import { OPEN_NEXT_CLOUDFLARE } from './next.constants.cloudflare.mjs';
 import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 import { getImagesConfig } from './next.image.config.mjs';
+import { DEPLOY_TARGET, PLATFORM_ALIAS } from './next.platform.constants.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 
-const getDeploymentId = async () => {
-  if (OPEN_NEXT_CLOUDFLARE) {
-    // If we're building for the Cloudflare deployment we want to set
-    // an appropriate deploymentId (needed for skew protection)
-    const openNextAdapter = await import('@opennextjs/cloudflare');
+/**
+ * Loaded by Node directly (Next.js doesn't bundle `next.config.mjs`), so
+ * we resolve the active platform via a dynamic import keyed on
+ * `DEPLOY_TARGET` rather than a `@platform/*` alias (those only resolve
+ * inside Turbopack/webpack).
+ *
+ * @type {{ default: import('./next.platform.config.d.ts').PlatformConfig }}
+ */
+const { default: platform } = await import(`${PLATFORM_ALIAS}/next.config.mjs`);
 
-    return openNextAdapter.getDeploymentId();
-  }
+const platformImages = await platform.images?.();
+const platformNextConfig = await platform.nextConfig?.();
 
-  return undefined;
-};
+// Turbopack's `resolveAlias` requires explicit `*` wildcards; webpack's
+// `resolve.alias` matches the bare prefix and the `/*` form is invalid,
+// so the two bundlers need different shapes for the same mapping.
+const turbopackPlatformAliases = { '@platform/*': `${PLATFORM_ALIAS}/*` };
+const webpackPlatformAliases = { '@platform': PLATFORM_ALIAS };
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -27,9 +35,9 @@ const nextConfig = {
   // We allow the BASE_PATH to be overridden in case that the Website
   // is being built on a subdirectory (e.g. /nodejs-website)
   basePath: BASE_PATH,
-  // Vercel/Next.js Image Optimization Settings
-  images: getImagesConfig(),
+  images: getImagesConfig(platformImages),
   serverExternalPackages: ['twoslash'],
+  transpilePackages: [PLATFORM_ALIAS],
   outputFileTracingIncludes: {
     // Twoslash needs TypeScript declarations to function, and, by default, Next.js
     // strips them for brevity. Therefore, they must be explicitly included.
@@ -81,8 +89,22 @@ const nextConfig = {
     // Faster Development Servers with Turbopack
     turbopackFileSystemCacheForDev: true,
   },
-  deploymentId: await getDeploymentId(),
+  // Provide Turbopack Aliases for Platform Resolution
+  turbopack: { resolveAlias: turbopackPlatformAliases },
+  // Provide Webpack Aliases for Platform Resolution.
+  webpack: ({ resolve, ...config }) => ({
+    ...config,
+    resolve: {
+      ...resolve,
+      alias: { ...resolve.alias, ...webpackPlatformAliases },
+      conditionNames: resolve.conditionNames
+        .concat(DEPLOY_TARGET)
+        .filter(Boolean),
+    },
+  }),
+  ...platformNextConfig,
 };
 
 const withNextIntl = createNextIntlPlugin('./i18n.tsx');
+
 export default withNextIntl(nextConfig);

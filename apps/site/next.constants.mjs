@@ -6,15 +6,6 @@
 export const IS_DEV_ENV = process.env.NODE_ENV === 'development';
 
 /**
- * This is used for telling Next.js if the Website is deployed on Vercel
- *
- * Can be used for conditionally enabling features that we know are Vercel only
- *
- * @see https://vercel.com/docs/projects/environment-variables/system-environment-variables#VERCEL_ENV
- */
-export const VERCEL_ENV = process.env.VERCEL_ENV || undefined;
-
-/**
  * This is used for telling Next.js to do a Static Export Build of the Website
  *
  * This is used for static/without a Node.js server hosting, such as on our
@@ -38,20 +29,14 @@ export const ENABLE_STATIC_EXPORT_LOCALE =
   process.env.NEXT_PUBLIC_STATIC_EXPORT_LOCALE === true;
 
 /**
- * This is used for any place that requires the full canonical URL path for the Node.js Website (and its deployment), such as for example, the Node.js RSS Feed.
+ * The full canonical URL of the deployed Website (used e.g. for the RSS feed).
  *
- * This variable can either come from the Vercel Deployment as `NEXT_PUBLIC_VERCEL_URL` or from the `NEXT_PUBLIC_BASE_URL` Environment Variable that is manually defined
- * by us if necessary. Otherwise it will fallback to the default Node.js Website URL.
- *
- * @TODO: We should get rid of needing to rely on `VERCEL_URL` for deployment URL.
- *
- * @see https://vercel.com/docs/concepts/projects/environment-variables/system-environment-variables#framework-environment-variables
+ * Platform-specific base URLs (such as Vercel's `VERCEL_URL`) are inlined into
+ * `NEXT_PUBLIC_BASE_URL` at build time by each platform's `next.config.mjs`,
+ * keeping this module free of platform-specific branches.
  */
-export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
-  ? process.env.NEXT_PUBLIC_BASE_URL
-  : process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : 'https://nodejs.org';
+export const BASE_URL =
+  process.env.NEXT_PUBLIC_BASE_URL || 'https://nodejs.org';
 
 /**
  * This is used for any place that requires the Node.js distribution URL (which by default is nodejs.org/dist)
