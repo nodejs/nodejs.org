@@ -15,6 +15,7 @@ import { useTheme } from 'next-themes';
 import Link from '#site/components/Link';
 import WithBanner from '#site/components/withBanner';
 import WithNodejsLogo from '#site/components/withNodejsLogo';
+import WithSearch from '#site/components/withSearch';
 import useSiteNavigation from '#site/hooks/useSiteNavigation';
 import { useRouter, usePathname } from '#site/navigation.mjs';
 
@@ -65,7 +66,7 @@ const WithNavBar: FC = () => {
           'components.containers.navBar.controls.toggle'
         )}
       >
-        {/* <SearchButton /> */}
+        <WithSearch />
 
         <ThemeToggle
           onChange={setTheme}
