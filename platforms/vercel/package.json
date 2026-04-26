@@ -14,7 +14,8 @@
   "scripts": {
     "build:vercel": "cross-env NEXT_PUBLIC_DEPLOY_TARGET=vercel pnpm --filter=@node-core/website build",
     "dev:vercel": "cross-env NEXT_PUBLIC_DEPLOY_TARGET=vercel pnpm --filter=@node-core/website dev",
-    "lint:types": "tsc --noEmit"
+    "lint:types": "tsc --noEmit",
+    "playwright": "cross-env NEXT_PUBLIC_DEPLOY_TARGET=vercel pnpm --filter=@node-core/website playwright"
   },
   "dependencies": {
     "@opentelemetry/api-logs": "~0.213.0",
@@ -23,7 +24,8 @@
     "@opentelemetry/sdk-logs": "~0.213.0",
     "@vercel/analytics": "~2.0.1",
     "@vercel/otel": "~2.1.1",
-    "@vercel/speed-insights": "~2.0.0"
+    "@vercel/speed-insights": "~2.0.0",
+    "cross-env": "catalog:"
   },
   "peerDependencies": {
     "next": "catalog:",
@@ -32,7 +34,6 @@
   "devDependencies": {
     "@playwright/test": "^1.58.2",
     "@types/react": "catalog:",
-    "cross-env": "catalog:",
     "typescript": "catalog:"
   },
   "engines": {

@@ -4,13 +4,6 @@
  * @type {import('../../apps/site/next.platform.config').PlatformConfig}
  */
 export default {
-  aliases: {
-    '@platform/analytics': '@node-core/platform-cloudflare/analytics.tsx',
-    '@platform/instrumentation':
-      '@node-core/platform-cloudflare/instrumentation.ts',
-    '@platform/next.config.mjs':
-      '@node-core/platform-cloudflare/next.config.mjs',
-  },
   mdx: {
     // Cloudflare workers can't load `shiki/wasm` via `WebAssembly.instantiate`
     // with custom imports (blocked for security), so fall back to the

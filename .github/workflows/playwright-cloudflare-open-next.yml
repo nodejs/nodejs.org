@@ -55,10 +55,8 @@ jobs:
         run: node --run build:cloudflare
 
       - name: Run Playwright tests
-        working-directory: apps/site
+        working-directory: platforms/cloudflare
         run: node --run playwright
-        env:
-          NEXT_PUBLIC_DEPLOY_TARGET: cloudflare
 
       - name: Upload Playwright test results
         if: always()

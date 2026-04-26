@@ -4,12 +4,6 @@
  * @type {import('../../apps/site/next.platform.config').PlatformConfig}
  */
 export default {
-  aliases: {
-    '@platform/analytics': '@node-core/platform-vercel/analytics.tsx',
-    '@platform/instrumentation':
-      '@node-core/platform-vercel/instrumentation.ts',
-    '@platform/next.config.mjs': '@node-core/platform-vercel/next.config.mjs',
-  },
   mdx: {
     // Vercel supports the fast Oniguruma WASM engine and twoslash transforms,
     // so keep parity with the default standalone config.

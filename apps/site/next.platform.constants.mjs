@@ -13,3 +13,10 @@
  * @type {'vercel' | 'cloudflare' | 'default'}
  */
 export const DEPLOY_TARGET = process.env.NEXT_PUBLIC_DEPLOY_TARGET ?? 'default';
+
+/**
+ * The alias for the platform.
+ *
+ * @type {string}
+ */
+export const PLATFORM_ALIAS = `@node-core/platform-${DEPLOY_TARGET}`;

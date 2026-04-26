@@ -4,19 +4,27 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
 import { getImagesConfig } from './next.image.config.mjs';
-import { DEPLOY_TARGET } from './next.platform.constants.mjs';
+import { DEPLOY_TARGET, PLATFORM_ALIAS } from './next.platform.constants.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
 
-// Loaded by Node directly (Next.js doesn't bundle `next.config.mjs`), so
-// we resolve the active platform via a dynamic import keyed on
-// `DEPLOY_TARGET` rather than a `@platform/*` alias (those only resolve
-// inside Turbopack/webpack).
-const { default: platform } = await import(
-  `@node-core/platform-${DEPLOY_TARGET}/next.config.mjs`
-);
+/**
+ * Loaded by Node directly (Next.js doesn't bundle `next.config.mjs`), so
+ * we resolve the active platform via a dynamic import keyed on
+ * `DEPLOY_TARGET` rather than a `@platform/*` alias (those only resolve
+ * inside Turbopack/webpack).
+ *
+ * @type {{ default: import('./next.platform.config.d.ts').PlatformConfig }}
+ */
+const { default: platform } = await import(`${PLATFORM_ALIAS}/next.config.mjs`);
 
 const platformImages = await platform.images?.();
 const platformNextConfig = await platform.nextConfig?.();
+
+// Single wildcard alias: `@platform/<file>` resolves to
+// `@node-core/platform-${DEPLOY_TARGET}/<file>` so each deploy target's
+// files (analytics slot, instrumentation, MDX/Shiki config) are picked
+// up automatically without per-file mappings.
+const platformAliases = { '@platform': PLATFORM_ALIAS };
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -29,7 +37,7 @@ const nextConfig = {
   basePath: BASE_PATH,
   images: getImagesConfig(platformImages),
   serverExternalPackages: ['twoslash'],
-  transpilePackages: [`@node-core/platform-${DEPLOY_TARGET}`],
+  transpilePackages: [PLATFORM_ALIAS],
   outputFileTracingIncludes: {
     // Twoslash needs TypeScript declarations to function, and, by default, Next.js
     // strips them for brevity. Therefore, they must be explicitly included.
@@ -82,13 +90,13 @@ const nextConfig = {
     turbopackFileSystemCacheForDev: true,
   },
   // Provide Turbopack Aliases for Platform Resolution
-  turbopack: { resolveAlias: platform.aliases },
+  turbopack: { resolveAlias: platformAliases },
   // Provide Webpack Aliases for Platform Resolution.
   webpack: ({ resolve, ...config }) => ({
     ...config,
     resolve: {
       ...resolve,
-      alias: { ...resolve.alias, ...platform.aliases },
+      alias: { ...resolve.alias, ...platformAliases },
       conditionNames: resolve.conditionNames
         .concat(DEPLOY_TARGET)
         .filter(Boolean),

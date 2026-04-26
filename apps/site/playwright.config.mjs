@@ -1,12 +1,16 @@
 import { defineConfig, devices } from '@playwright/test';
 
-import { DEPLOY_TARGET } from './next.platform.constants.mjs';
+import { PLATFORM_ALIAS } from './next.platform.constants.mjs';
 
-// Playwright loads this config via Node, so resolve the active platform
-// via a dynamic import keyed on `DEPLOY_TARGET` rather than a
-// `@platform/*` alias (those only resolve inside Turbopack/webpack).
+/**
+ * Playwright loads this config via Node, so resolve the active platform
+ * via a dynamic import keyed on `DEPLOY_TARGET` rather than a
+ * `@platform/*` alias (those only resolve inside Turbopack/webpack).
+ *
+ * @type {{ default: import('./playwright.platform.config.d.ts').PlatformPlaywrightConfig }}
+ */
 const { default: platform } = await import(
-  `@node-core/platform-${DEPLOY_TARGET}/playwright.config.mjs`
+  `${PLATFORM_ALIAS}/playwright.config.mjs`
 );
 
 const isCI = !!process.env.CI;

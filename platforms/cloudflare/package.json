@@ -15,7 +15,8 @@
     "build:cloudflare": "cross-env NEXT_PUBLIC_DEPLOY_TARGET=cloudflare pnpm --filter=@node-core/website exec opennextjs-cloudflare build --openNextConfigPath ../../platforms/cloudflare/open-next.config.ts --config ../../platforms/cloudflare/wrangler.jsonc",
     "deploy:cloudflare": "cross-env NEXT_PUBLIC_DEPLOY_TARGET=cloudflare pnpm --filter=@node-core/website exec opennextjs-cloudflare deploy --openNextConfigPath ../../platforms/cloudflare/open-next.config.ts --config ../../platforms/cloudflare/wrangler.jsonc",
     "dev:cloudflare": "pnpm --filter=@node-core/website exec wrangler dev --config ../../platforms/cloudflare/wrangler.jsonc",
-    "lint:types": "tsc --noEmit"
+    "lint:types": "tsc --noEmit",
+    "playwright": "cross-env NEXT_PUBLIC_DEPLOY_TARGET=cloudflare pnpm --filter=@node-core/website playwright"
   },
   "dependencies": {
     "@flarelabs-net/wrangler-build-time-fs-assets-polyfilling": "^0.0.1",
