@@ -20,10 +20,6 @@ const { default: platform } = await import(`${PLATFORM_ALIAS}/next.config.mjs`);
 const platformImages = await platform.images?.();
 const platformNextConfig = await platform.nextConfig?.();
 
-// Single wildcard alias: `@platform/<file>` resolves to
-// `@node-core/platform-${DEPLOY_TARGET}/<file>` so each deploy target's
-// files (analytics slot, instrumentation, MDX/Shiki config) are picked
-// up automatically without per-file mappings.
 const platformAliases = { '@platform': PLATFORM_ALIAS };
 
 /** @type {import('next').NextConfig} */

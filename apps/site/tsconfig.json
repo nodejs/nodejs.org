@@ -17,15 +17,7 @@
     "jsx": "react-jsx",
     "incremental": true,
     "plugins": [{ "name": "next" }],
-    "baseUrl": ".",
-    "paths": {
-      "@platform/*": [
-        "../../platforms/default/*",
-        "../../platforms/default/*.ts",
-        "../../platforms/default/*.tsx",
-        "../../platforms/default/*.mjs"
-      ]
-    }
+    "baseUrl": "."
   },
   "mdx": {
     "checkMdx": true
