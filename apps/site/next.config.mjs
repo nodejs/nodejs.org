@@ -20,7 +20,11 @@ const { default: platform } = await import(`${PLATFORM_ALIAS}/next.config.mjs`);
 const platformImages = await platform.images?.();
 const platformNextConfig = await platform.nextConfig?.();
 
-const platformAliases = { '@platform': PLATFORM_ALIAS };
+// Turbopack's `resolveAlias` requires explicit `*` wildcards; webpack's
+// `resolve.alias` matches the bare prefix and the `/*` form is invalid,
+// so the two bundlers need different shapes for the same mapping.
+const turbopackPlatformAliases = { '@platform/*': `${PLATFORM_ALIAS}/*` };
+const webpackPlatformAliases = { '@platform': PLATFORM_ALIAS };
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -86,13 +90,13 @@ const nextConfig = {
     turbopackFileSystemCacheForDev: true,
   },
   // Provide Turbopack Aliases for Platform Resolution
-  turbopack: { resolveAlias: platformAliases },
+  turbopack: { resolveAlias: turbopackPlatformAliases },
   // Provide Webpack Aliases for Platform Resolution.
   webpack: ({ resolve, ...config }) => ({
     ...config,
     resolve: {
       ...resolve,
-      alias: { ...resolve.alias, ...platformAliases },
+      alias: { ...resolve.alias, ...webpackPlatformAliases },
       conditionNames: resolve.conditionNames
         .concat(DEPLOY_TARGET)
         .filter(Boolean),
