@@ -12,7 +12,7 @@
       "footer": {
         "legal": "Copyright © <foundationName>OpenJS Foundation</foundationName> et les contributeurs Node.js. Tous droits réservés.\nLa <foundationName>OpenJS Foundation</foundationName> détient des marques déposées et utilise des marques commerciales.\nPour consulter la liste des marques de la <foundationName>OpenJS Foundation</foundationName>, veuillez vous référer à notre <trademarkPolicy>Politique relative aux marques</trademarkPolicy> ainsi qu’à la <trademarkList>Liste des marques</trademarkList>.\nLes marques et logos qui ne figurent pas dans la <trademarkList>liste des marques de la OpenJS Foundation</trademarkList> sont des marques commerciales™ ou des marques déposées® appartenant à leurs détenteurs respectifs. Leur utilisation n’implique aucune affiliation ni approbation de leur part.",
         "links": {
-          "foundationName": "Fondation OpenJS",
+          "foundationName": "OpenJS Foundation",
           "aiCodingAssistantsPolicy": "Politique relative aux assistants de codage basés sur l'IA",
           "termsOfUse": "Conditions d’utilisation",
           "privacyPolicy": "Politique de confidentialité",
