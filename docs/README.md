@@ -6,7 +6,7 @@ This directory contains documentation for contributing to the Node.js website pr
 
 New to contributing? Start here:
 
-- **[Getting Started](./getting-started.md)** - Set up your development environment and make your first contribution
+- **[Getting Started](./getting-started.md)** - Set up your development environment and submit your first contribution
 - **[Adding Pages](./adding-pages.md)** - Learn how to create new pages and content
 
 ## Development Guidelines
