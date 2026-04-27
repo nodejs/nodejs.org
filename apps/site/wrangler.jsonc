@@ -4,7 +4,7 @@
   "name": "nodejs-website",
   "compatibility_date": "2024-11-07",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
-  "account_id": "fb4a2d0f103c6ff38854ac69eb709272",
+  "account_id": "07be8d2fbc940503ca1be344714cb0d1",
   "minify": true,
   "keep_names": false,
   "assets": {
@@ -24,7 +24,7 @@
     // needs to be set as well in the Cloudflare dashboard
     "CF_WORKER_NAME": "nodejs-website",
     "CF_PREVIEW_DOMAIN": "nodejsorg",
-    "CF_ACCOUNT_ID": "fb4a2d0f103c6ff38854ac69eb709272",
+    "CF_ACCOUNT_ID": "07be8d2fbc940503ca1be344714cb0d1",
   },
   "observability": {
     "enabled": true,
