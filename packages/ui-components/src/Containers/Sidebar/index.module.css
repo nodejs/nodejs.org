@@ -5,7 +5,6 @@
     ml:overflow-auto
     ml:border-r
     scrollbar-thin
-    ml:pb-[var(--header-height)]
     z-0
     flex
     w-full
