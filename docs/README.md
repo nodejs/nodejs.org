@@ -6,7 +6,7 @@ This directory contains documentation for contributing to the Node.js website pr
 
 New to contributing? Start here:
 
-- **[Getting Started](./getting-started.md)** - Set up your development environment and make your first contribution
+- **[Getting Started](./getting-started.md)** - Set up your development environment and submit your first contribution
 - **[Adding Pages](./adding-pages.md)** - Learn how to create new pages and content
 
 ## Development Guidelines
@@ -18,14 +18,14 @@ New to contributing? Start here:
 ## Technical Documentation
 
 - **[Technologies](./technologies.md)** - Overview of the tech stack and architecture decisions
-- **[Site Configuration](./site-config.md)** - How to update `site.json` (banners, badges, RSS feeds, metadata)
+- **[Site Configuration](./site-config.md)** - How to update 'site.json' (banners, badges, RSS feeds, metadata)
 - **[Downloads Page](./downloads-page.md)** - How to add installation methods and package managers
 - **[Package Publishing](./package-publishing.md)** - Guidelines for publishing packages in our monorepo
-- **[Cloudflare build and deployment](./cloudflare-build-and-deployment.md)** - Overview and useful information about the Cloudflare build and deployment
+- **[Cloudflare build and deployment](./cloudflare-build-and-deployment.md)** - Overview and useful information about the Cloudflare building and deployment
 
 ## For Collaborators
 
-- **[Collaborator Guide](./collaborator-guide.md)** - Guidelines specific to project collaborators with write access
+- **[Collaborator Guide](./collaborator-guide.md)** - Specific guidelines to project collaborators with write access
 
 ## Additional Resources
 
