@@ -47,6 +47,19 @@ describe('parseCompat', () => {
   });
 
   describe('extended tests', () => {
+    it('should keep asdf available for macOS', () => {
+      const asdf = INSTALL_METHODS.find(({ value }) => value === 'ASDF');
+
+      const [result] = parseCompat([asdf], {
+        os: 'MAC',
+        installMethod: 'ASDF',
+        platform: 'arm64',
+        version: 'v24.14.0',
+        release: { status: 'Current' },
+      });
+
+      assert.equal(result.disabled, false);
+    });
     it('should disable items if OS is not supported', () => {
       const items = [
         {
