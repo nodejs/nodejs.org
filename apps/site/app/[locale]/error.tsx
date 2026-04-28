@@ -7,7 +7,11 @@ import GlowingBackdropLayout from '#site/layouts/GlowingBackdrop';
 
 import type { FC } from 'react';
 
-const ErrorPage: FC<{ error: Error }> = () => {
+type ErrorPageProps = {
+  error: Error & { digest?: string };
+};
+
+const ErrorPage: FC<ErrorPageProps> = ({ error }) => {
   const t = useTranslations();
 
   return (
@@ -21,6 +25,19 @@ const ErrorPage: FC<{ error: Error }> = () => {
       <p className="-mt-4 max-w-sm text-center text-lg">
         {t('layouts.error.internalServerError.description')}
       </p>
+
+      {(error.message || error.digest) && (
+        <details className="max-w-2xl rounded-lg border border-neutral-300 bg-neutral-950/90 px-4 py-3 text-left text-neutral-50">
+          <summary className="cursor-pointer font-medium">
+            {t('layouts.error.details')}
+          </summary>
+
+          <pre className="mt-3 overflow-x-auto font-mono text-xs leading-6 break-words whitespace-pre-wrap">
+            {error.message}
+            {error.digest && `digest: ${error.digest}`}
+          </pre>
+        </details>
+      )}
 
       <Button href="/">{t('layouts.error.backToHome')}</Button>
     </GlowingBackdropLayout>
