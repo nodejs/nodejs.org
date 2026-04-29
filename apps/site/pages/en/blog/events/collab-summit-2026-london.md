@@ -76,7 +76,7 @@ Joyee also presented [a new design for the vm Module APIs](https://github.com/no
 
 [Santiago Gimeno][] shared that after more than a decade on version 1, there is a renewed push to launch libuv [v2](https://github.com/libuv/libuv/issues/4622), which introduces necessary breaking changes to clean up the codebase, remove legacy APIs, and improve cross-platform consistency—capabilities already being leveraged by [Julia](https://julialang.org/).
 
-As migrating to libuv v2 can break the ABI, we discussed ideas on how to mitigate it, for example by leveraging [Node-API](https://nodejs.org/api/n-api.html), and the nuances in this approach e.g. [`napi_get_uv_event_loop`](https://nodejs.org/api/n-api.html#napi-get-uv-event-loop) can still be impacted by libuv ABI changes, though its use is limited and its ABI stability is warned in the documentation.
+As migrating to libuv v2 can break the ABI, we discussed ideas on how to mitigate it, for example by leveraging [Node-API](https://nodejs.org/api/n-api.html), and the nuances in this approach e.g. [`napi_get_uv_event_loop`](https://nodejs.org/api/n-api.html#napi-get-uv-event-loop) can still be impacted by libuv ABI changes, though its use is limited and its ABI stability is warned in the documentation. We also discussed getting help to maintain v1 with security patches for a limited timespan, how to bring back `io_uring`, and which Node.js can start to ship libuv v2 (a very tentative timeline could be in 27).
 
 ### Node.js Virtual File System
 
