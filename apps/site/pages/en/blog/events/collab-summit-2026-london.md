@@ -12,7 +12,7 @@ Here is a recap of what happened at the summit.
 
 ### Next 10
 
-In this session, [Jacob Smith][] started an on-site review of the questions that would be asked in the [Next-10 survey for 2026](https://github.com/nodejs/next-10/issues/369), including suggestions to existing questions, questions and options to add or remove, and recent AI discussions.
+In this session, [Jacob Smith][] reviewed results from the Collaborator Health survey and compared health numbers between 2025 and 2026, as well as some key highlights from the 2025 user survey (including new areas, which have generally different usage); he and [Marco Ippolito][] led an on-site review of the questions that would be asked in the [Next-10 survey for 2026](https://github.com/nodejs/next-10/issues/369), including suggestions to existing questions, questions and options to add or remove, and recent AI discussions.
 
 ### New Release Schedule
 
@@ -87,7 +87,11 @@ In this session, Matteo walked the audience through the motivation of this featu
 
 ### Node.js Security - State of the Ecosystem & What's Next
 
-[Rafael Gonzaga][] shared that the security team has recently advanced the ecosystem through a refined threat model, improved permission models, and enhanced release automation, but these efforts are currently being overshadowed by a massive influx of AI-generated vulnerability reports. This industry-wide surge, driven largely by users seeking CVE attribution and financial bounties, has severely strained maintainer capacity with high-noise, duplicative submissions that often lack reproduction steps or misclassify standard bugs as severe security threats. Despite attempted mitigations like pausing bug bounties, raising HackerOne signal requirements, and clarifying guidelines, the overwhelming volume has significantly driven up resolution times. To combat this bottleneck, the team is exploring strategies such as securing early access for proactive testing, attempting to alter reporting agent behaviors, and adopting a public security flow to bypass embargoes and speed up CI testing.
+[Rafael Gonzaga][] shared that the security team has recently advanced the ecosystem through a refined threat model, improved permission models, and enhanced release automation, and the new VEX (Vulnerability Exploitability eXchange) files that the security team is working on to reduce false positives for security scanners.
+
+These efforts are currently being overshadowed by a massive influx of AI-generated vulnerability reports. This industry-wide surge, driven largely by users seeking CVE attribution and financial bounties, has severely strained maintainer capacity with high-noise, duplicative submissions that often lack reproduction steps or misclassify standard bugs as severe security threats. Despite attempted mitigations like pausing bug bounties, raising HackerOne signal requirements, and clarifying guidelines, the overwhelming volume has significantly driven up resolution times. To combat this bottleneck, the team is exploring strategies such as securing early access for proactive testing, attempting to alter reporting agent behaviors, and adopting a public security flow to bypass embargoes and speed up CI testing.
+
+In the session we revisited a thought-provoking proposal of making the security triage and bugfix process completely public to prevent a false sense of security in the age of AI, and to get rid of the CI embargo that has made testing inefficient. We discussed a few middle ground solutions, including keeping extending the visibility to more members in the organization, handling vulnerabilities of different severity with different visibility settings, and creating better documentations to drive AI agents away from generating false positive reports.
 
 ## Thanks
 
