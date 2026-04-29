@@ -33,4 +33,27 @@ export const EmptyGroup: Story = {
   },
 };
 
+export const NestedGroup: Story = {
+  args: {
+    groupName: 'Nested Group',
+    pathname: '/nested/folder-b/leaf-2',
+    items: [
+      { label: 'Flat Item', link: '/nested/flat' },
+      {
+        label: 'Folder A',
+        link: '/nested/folder-a',
+        items: [{ label: 'Leaf A.1', link: '/nested/folder-a/leaf-1' }],
+      },
+      {
+        label: 'Folder B',
+        link: '/nested/folder-b',
+        items: [
+          { label: 'Leaf B.1', link: '/nested/folder-b/leaf-1' },
+          { label: 'Leaf B.2 (Active)', link: '/nested/folder-b/leaf-2' },
+        ],
+      },
+    ],
+  },
+};
+
 export default { component: SidebarGroup } as Meta;

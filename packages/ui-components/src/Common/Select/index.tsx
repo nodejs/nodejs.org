@@ -3,8 +3,9 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import classNames from 'classnames';
-import { useId, useMemo, useState } from 'react';
+import { useId, useMemo } from 'react';
 
+import Badge, { type BadgeKind } from '#ui/Common/Badge';
 import Skeleton from '#ui/Common/Skeleton';
 
 import type { FormattedMessage, LinkLike } from '#ui/types';
@@ -18,6 +19,10 @@ export type SelectValue<T extends string> = {
   label: FormattedMessage | string;
   value: T;
   iconImage?: ReactElement<SVGSVGElement>;
+  badge?: {
+    label: FormattedMessage | string;
+    kind?: BadgeKind;
+  };
   disabled?: boolean;
 };
 
@@ -28,7 +33,7 @@ export type SelectGroup<T extends string> = {
 
 export type SelectProps<T extends string> = {
   values: Array<SelectGroup<T>> | Array<T> | Array<SelectValue<T>>;
-  defaultValue?: T;
+  value?: T;
   placeholder?: string;
   label?: string;
   inline?: boolean;
@@ -49,7 +54,7 @@ export type SelectProps<T extends string> = {
 
 const Select = <T extends string>({
   values = [],
-  defaultValue,
+  value,
   placeholder,
   label,
   inline,
@@ -62,7 +67,6 @@ const Select = <T extends string>({
   fallbackClass = '',
 }: SelectProps<T>): ReactNode => {
   const id = useId();
-  const [value, setValue] = useState(defaultValue);
 
   const mappedValues = useMemo(() => mapValues(values), [values]) as Array<
     SelectGroup<T>
@@ -89,7 +93,7 @@ const Select = <T extends string>({
           </SelectPrimitive.Label>
         )}
 
-        {items.map(({ value, label, iconImage, disabled }) => (
+        {items.map(({ value, label, iconImage, badge, disabled }) => (
           <SelectPrimitive.Item
             key={value}
             value={value}
@@ -99,6 +103,11 @@ const Select = <T extends string>({
             <SelectPrimitive.ItemText>
               {iconImage}
               <span>{label}</span>
+              {badge && (
+                <Badge size="small" kind={badge.kind} className={styles.badge}>
+                  {badge.label}
+                </Badge>
+              )}
             </SelectPrimitive.ItemText>
           </SelectPrimitive.Item>
         ))}
@@ -109,10 +118,7 @@ const Select = <T extends string>({
     // eslint-disable-next-line @eslint-react/exhaustive-deps
   }, [JSON.stringify(values)]);
 
-  // Both change the internal state and emit the change event
   const handleChange = (value: T) => {
-    setValue(value);
-
     if (typeof onChange === 'function') {
       onChange(value);
     }
@@ -149,6 +155,15 @@ const Select = <T extends string>({
                 <>
                   {currentItem.iconImage}
                   <span>{currentItem.label}</span>
+                  {currentItem.badge && (
+                    <Badge
+                      size="small"
+                      kind={currentItem.badge.kind}
+                      className={styles.badge}
+                    >
+                      {currentItem.badge.label}
+                    </Badge>
+                  )}
                 </>
               )}
             </SelectPrimitive.Value>

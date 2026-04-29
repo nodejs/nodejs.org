@@ -2,6 +2,8 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import classNames from 'classnames';
 import { useId, useMemo } from 'react';
 
+import Badge from '#ui/Common/Badge';
+
 import type { SelectGroup, SelectProps } from '#ui/Common/Select';
 import type { LinkLike } from '#ui/types';
 
@@ -13,8 +15,13 @@ type StatelessSelectConfig = {
   as?: LinkLike | 'div';
 };
 
-export type StatelessSelectProps<T extends string> = SelectProps<T> &
-  StatelessSelectConfig;
+export type StatelessSelectProps<T extends string> = Omit<
+  SelectProps<T>,
+  'value'
+> &
+  StatelessSelectConfig & {
+    defaultValue?: T;
+  };
 
 const StatelessSelect = <T extends string>({
   values = [],
@@ -66,6 +73,15 @@ const StatelessSelect = <T extends string>({
             <span className={styles.selectedValue}>
               {currentItem.iconImage}
               <span>{currentItem.label}</span>
+              {currentItem.badge && (
+                <Badge
+                  size="small"
+                  kind={currentItem.badge.kind}
+                  className={styles.badge}
+                >
+                  {currentItem.badge.label}
+                </Badge>
+              )}
             </span>
           )}
           {!currentItem && (
@@ -89,7 +105,13 @@ const StatelessSelect = <T extends string>({
               )}
 
               {items.map(
-                ({ value, label, iconImage, disabled: itemDisabled }) => (
+                ({
+                  value,
+                  label,
+                  iconImage,
+                  badge,
+                  disabled: itemDisabled,
+                }) => (
                   <Component
                     key={value}
                     href={value}
@@ -101,6 +123,15 @@ const StatelessSelect = <T extends string>({
                   >
                     {iconImage}
                     <span>{label}</span>
+                    {badge && (
+                      <Badge
+                        size="small"
+                        kind={badge.kind}
+                        className={styles.badge}
+                      >
+                        {badge.label}
+                      </Badge>
+                    )}
                   </Component>
                 )
               )}

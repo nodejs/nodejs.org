@@ -18,7 +18,7 @@ Dacă te interesează implicarea în comunitatea Node.js, există multe modalit�
 
 Dacă vrei să aprofundezi cunoștințele despre Node.js, ai la dispoziție numeroase resurse.
 
-- [Materialele oficiale de învățare](https://nodejs.org/en/learn/) Node.js.
+- [Materialele oficiale de învățare](https://nodejs.org/learn/) Node.js.
 - [Documentația oficială de referință pentru API](https://nodejs.org/api/) Node.js.
 - [NodeSchool.io](https://nodeschool.io/) te învață conceptele Node.js prin intermediul jocurilor interactive în linia de comandă.
 - [Eticheta Node.js de pe StackOverflow](https://stackoverflow.com/questions/tagged/node.js) conține un număr mare de articole cu resurse utile.
