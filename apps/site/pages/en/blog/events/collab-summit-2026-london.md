@@ -62,7 +62,7 @@ We also brainstormed how to adapt open-source governance for the modern era. Str
 
 ### Userland migrations
 
-[Jacob Smith][] and [Marco Ippolito][] presented increased usage of userland migrations. Codemods for Node.js 22 to 24 are almost complete. For Node.js 25.9.0, a codemod was published the same day as the deprecation was introduced.
+[Jacob Smith][] and [Bruno Rodrigues][] presented increased usage of userland migrations. Migrations for Node.js 22.x to 24.x deprecations are almost complete. For Node.js 25.9.0, a codemod was published along side the deprecation introduced.
 
 ### Stabilization of module customization hooks and vm.Modules
 
