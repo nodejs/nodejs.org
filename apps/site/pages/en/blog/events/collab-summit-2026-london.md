@@ -83,7 +83,7 @@ As migrating to libuv v2 can break the ABI, we discussed ideas on how to mitigat
 
 [Matteo Collina][] presented the proposal for a Node.js built-in Virtual File System. By taking concepts previously explored in userland libraries (like `@platformatic/vfs`) and standardizing them into a core `node:vfs` module, Node.js can intercept standard filesystem calls and route them through a virtualized, memory-based layer. Developers can define specific data sources in memory (providers) and "mount" them so the runtime treats them exactly like local directories. The proposal also provides the ability to layer virtual filesystems on top of one another, or place a virtual layer directly over the physical disk to safely mock or override files.
 
-Userland VFS implementations require massive monkey-patching; moving it to core provides deep integration and supports more use cases like SEA.
+In this session, Matteo walked the audience through the motivation of this feature: making file system virtualization easier for single-executable applications and testing, and replaces existing brittle practices that achieve this through user-land monkey-patching. Following a brief overview of the implementation architecture and the design choices, we collected more feedback on the PR, including stack trace visibility, observability, security, worker thread propagation, the ability to toggle it in specific paths, and support in native code. We'll continue iterating on this PR in GitHub.
 
 ### Node.js Security - State of the Ecosystem & What's Next
 
