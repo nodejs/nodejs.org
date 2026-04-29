@@ -21,6 +21,7 @@ Rafael Gonzaga announced a [new release schedule](https://nodejs.org/en/blog/ann
 This is a reflection of the current Node.js volunteer-based maintenance and an effort to keep the Node.js project sustainable in the long run. When it comes to security vulnerabilities, managing security releases across four or five active release lines has become difficult to sustain in the current Node.js voluntary work model. By reducing the number of concurrent release lines, the project can focus on better supporting the releases people actually use.
 
 What's important is what's not changed with the new release schedule:
+
 - **The Long-Term Support duration** remains similar (30 months).
 - **Migration windows** preserved. Overlap between LTS versions remains.
 - **Quality standards** unchanged. Same testing, same CITGM, same security process.
