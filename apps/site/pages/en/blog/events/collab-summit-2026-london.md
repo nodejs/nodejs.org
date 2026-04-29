@@ -97,14 +97,15 @@ A big thanks as well to Thomas Chetwin ([@tchetwin](https://bsky.app/profile/tch
 
 The Node.js Collaboration Summit recordings are now available at [YouTube](https://www.youtube.com/playlist?list=PLfMzBWSH11xZhA93H_9ulECtLVWtSm6zy).
 
-[Jacob Smith]: https://github.com/JakobJingleheimer
-[Rafael Gonzaga]: https://github.com/RafaelGSS
-[Chengzhong Wu]: https://github.com/legendecas
-[Joyee Cheung]: https://github.com/joyeecheung
-[Matteo Collina]: https://github.com/mcollina
-[Stephen Belanger]: https://github.com/Qard
-[James Snell]: https://github.com/jasnell
-[Santiago Gimeno]: https://github.com/santigimeno
-[Bryan English]: https://github.com/bengl
-[Marco Ippolito]: https://github.com/marco-ippolito
 [Bloomberg]: https://www.bloomberg.com/company/values/tech-at-bloomberg/
+[Bruno Rodrigues]: https://github.com/brunocroh
+[Bryan English]: https://github.com/bengl
+[Chengzhong Wu]: https://github.com/legendecas
+[Jacob Smith]: https://github.com/JakobJingleheimer
+[James Snell]: https://github.com/jasnell
+[Joyee Cheung]: https://github.com/joyeecheung
+[Marco Ippolito]: https://github.com/marco-ippolito
+[Matteo Collina]: https://github.com/mcollina
+[Rafael Gonzaga]: https://github.com/RafaelGSS
+[Santiago Gimeno]: https://github.com/santigimeno
+[Stephen Belanger]: https://github.com/Qard
