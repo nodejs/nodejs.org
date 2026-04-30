@@ -8,7 +8,7 @@ author: Chengzhong Wu, Joyee Cheung
 
 This April, the first [Node.js Collaboration Summit](https://nodejs.org/en/about/get-involved/collab-summit) of 2026 was hosted by [Bloomberg][] in London. In this edition, we welcomed over 40 in-person participants, and around a dozen more joined remotely.
 
-Here is a recap of what happened at the summit.
+The recording of the summit is available in [this playlist](https://www.youtube.com/playlist?list=PLfMzBWSH11xZhA93H_9ulECtLVWtSm6zy). Here is a recap of what happened at the summit.
 
 ### Next 10
 
@@ -16,17 +16,12 @@ In this session, [Jacob Smith][] reviewed results from the Collaborator Health s
 
 ### New Release Schedule
 
-Rafael Gonzaga announced a [new release schedule](https://nodejs.org/en/blog/announcements/evolving-the-nodejs-release-schedule) going into effect starting with Node.js v27. TL;DR, starting with Node.js v27, the Node.js version numbers align with the calendar year of their initial Current release!
+Rafael Gonzaga walked the audience through the new release schedule that will go into effect starting with Node.js v27. TL;DR, starting with Node.js v27, the Node.js version numbers align with the calendar year of their initial Current release!
 
 This is a reflection of the current Node.js volunteer-based maintenance and an effort to keep the Node.js project sustainable in the long run. When it comes to security vulnerabilities, managing security releases across four or five active release lines has become difficult to sustain in the current Node.js voluntary work model. By reducing the number of concurrent release lines, the project can focus on better supporting the releases people actually use.
 
-What's important is what's not changed with the new release schedule:
+Read more about the new release schedule in [this blog post](https://nodejs.org/en/blog/announcements/evolving-the-nodejs-release-schedule).
 
-- **The Long-Term Support duration** remains similar (30 months).
-- **Migration windows** preserved. Overlap between LTS versions remains.
-- **Quality standards** unchanged. Same testing, same CITGM, same security process.
-- **Predictable schedule**. April releases, October LTS promotion.
-- **V8 adoption cycle**. Node.js latest releases will still include a version of V8 that's at most about 6 months old.
 
 ### New Streams API
 
@@ -36,13 +31,13 @@ The Web Streams API has significant promise and allocation overhead. It was desi
 
 The proposed New Streams API takes advantage of modern JavaScript Async Iteration, treats streams natively as async iterables, leaning heavily into `async/await` and `for await...of` loops, which is how modern developers naturally write code. Handling a filled data buffer has historically been a confusing black box. The new API also proposes forcing developers to explicitly choose a backpressure strategy when a buffer is full.
 
-At the summit, we collected feedback on the design, compatibility with existing stream APIs, performance implications, additional use cases, whether the new proposal can help address some common issues in the existing APIs, and discussed whether the new Streams API can be implemented on the Web.
+The new [`stream/iter`](https://nodejs.org/docs/latest-v25.x/api/stream_iter.html) API has landed in Node.js core and shipped in v25.9.0 as an experimental feature. At the summit, we collected feedback on the design, compatibility with existing stream APIs, performance implications, additional use cases, whether the new proposal can help address some common issues in the existing APIs, and discussed whether the new Streams API can be implemented on the Web.
 
 ### Node.js Collaboratorship
 
 [Jacob Smith][] led the session on exploring ways to lower the barrier to entry for developers who want to contribute to the Node.js core, ensuring the project remains accessible to new talent.
 
-Triaging issues and reviewing pull requests takes a massive amount of maintainer bandwidth. At the session we discussed ideas to enforce code ownership to encourage collaborators to take over more review work. Since in the Node.js voluntary work model, this can come with difficulties, we also brainstormed ideas about decoupling collaboratorship from the commit bits and extending reviewership to working group/team members, in order to encourage non-collaborators to review and build trust.
+Triaging issues and reviewing pull requests takes a massive amount of maintainer bandwidth. At the session, we discussed ideas to enforce code ownership to encourage collaborators to take over more review work. Since in the Node.js voluntary work model, this can come with difficulties, we also brainstormed ideas about decoupling collaboratorship from the commit bits and extending reviewership to working group/team members, in order to encourage non-collaborators to review and build trust. We'll continue the discussions on GitHub.
 
 ### OpenTelemetry
 
@@ -59,7 +54,7 @@ A few weeks before the summit, a large pull request implementing VFS in Node.js 
 
 We then started listing pros & cons, concerns and thoughts about the use of AI in Node.js core using a retrospective board. There were a lot of diverse opinions about this topic. At the session, we discussed the challenges from reviewer bandwidth exacerbated by the use of AI, the ethical concerns about AI, whether a ban is feasible or desirable, whether a disclosure on the use of AI may help or draw further legal and ethical concerns, how AI may help maintenance and lower barrier of entry, and ideas on reducing the amount of noise caused by the use of AI.
 
-We also brainstormed how to adapt open-source governance for the modern era. Strategies discussed include enforcing a process that requires lightweight design documents, RFCs, explicit maintainer buy-in before a large PR, and pledge from the human contributor submitting the code who should take full responsibility for its quality, security, and integration.
+We also brainstormed how to adapt open-source governance for the modern era. Strategies discussed include enforcing a process that requires lightweight design documents, RFCs, explicit maintainer buy-in before a large PR, and pledge from the human contributor submitting the code who should take full responsibility for its quality, security, and integration. We'll continue the discussions and iteration of the policy documents on GitHub.
 
 ### Userland migrations
 
@@ -71,7 +66,7 @@ We also brainstormed how to adapt open-source governance for the modern era. Str
 
 As `module.register()` is set to be [doc-deprecated for 25 and below](https://github.com/nodejs/node/pull/62395) and [runtime-deprecated for 26 and above](https://github.com/nodejs/node/pull/62401) due to [maintenance issues](https://nodejs.org/docs/latest-v25.x/api/module.html#caveats-of-asynchronous-customization-hooks), we are looking into helping the ecosystem migrate to the `module.registerHooks()` API. Ideas include providing a [userland ponyfill](https://github.com/joyeecheung/module-register-ponyfill) that re-implements most of the `module.register()` functionality using `module.registerHooks()`, and having some [userland-migration](https://github.com/nodejs/userland-migrations) automation tools to help facilitate migration.
 
-Joyee also presented [a new design for the vm Module APIs](https://github.com/nodejs/node/issues/62720) that have been experimental for 9 years in order to address known issues and finally bring it to stabilization. We collected feedback on how to integrate it with WebAssembly modules to ensure it's future-proof with ongoing ESM integration proposals in standardization bodies.
+Joyee also presented [a new design for the vm Module APIs](https://github.com/nodejs/node/issues/62720) that have been experimental for 9 years in order to address known issues and finally bring it to stabilization. We collected feedback on how to integrate it with WebAssembly modules to ensure it's future-proof with ongoing ESM integration proposals in standardization bodies. We'll continue iterating on the design in the GitHub issue.
 
 ### Libuv v2
 
