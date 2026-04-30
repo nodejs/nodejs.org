@@ -131,7 +131,7 @@ export const EXTERNAL_LINKS_SITEMAP = [
  *
  * Note: This has no NEXT_PUBLIC prefix as it should not be exposed to the Browser.
  */
-export const GITHUB_API_KEY = process.env.NEXT_GITHUB_API_KEY || '';
+export const GITHUB_READ_API_KEY = process.env.NEXT_GITHUB_READ_API_KEY || '';
 
 /**
  * The resource we point people to when discussing internationalization efforts.
@@ -177,6 +177,11 @@ export const VULNERABILITIES_URL =
  */
 export const OPENCOLLECTIVE_MEMBERS_URL =
   'https://opencollective.com/nodejs/members/all.json';
+
+/**
+ * The location of the GitHub GraphQL API
+ */
+export const GITHUB_GRAPHQL_URL = 'https://api.github.com/graphql';
 
 /**
  * Orama DB URLs for the Learn and API sections of the website
