@@ -12,19 +12,12 @@ type HitProps = {
     description?: string;
     href: string;
   };
-  mode?: 'search' | 'chat';
   as?: LinkLike;
 };
 
-const Hit: FC<HitProps> = ({ document, mode = 'search', as: Link = 'a' }) => (
+const Hit: FC<HitProps> = ({ document, as: Link = 'a' }) => (
   <SearchResults.Item>
-    <Link
-      href={document.href}
-      tabIndex={mode === 'search' ? 0 : -1}
-      aria-hidden={mode === 'chat'}
-      data-focus-on-arrow-nav
-      className={styles.link}
-    >
+    <Link href={document.href} data-focus-on-arrow-nav className={styles.link}>
       <DocumentTextIcon />
       <div>
         {typeof document?.title === 'string' && <h3>{document.title}</h3>}

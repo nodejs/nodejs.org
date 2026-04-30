@@ -70,6 +70,14 @@ export const DOCS_URL =
   process.env.NEXT_PUBLIC_DOCS_URL || 'https://nodejs.org/docs/';
 
 /**
+ * This is used for any place that requires the Node.js Learn URL (which by default is nodejs.org/learn)
+ *
+ * Note that this is a custom Environment Variable that can be defined by us when necessary
+ */
+export const LEARN_URL =
+  process.env.NEXT_PUBLIC_LEARN_URL || 'https://nodejs.org/learn/';
+
+/**
  * Supports a manual override of the base path of the Website
  *
  * This is useful when running the deployment on a subdirectory
@@ -116,63 +124,6 @@ export const EXTERNAL_LINKS_SITEMAP = [
   'https://trademark-list.openjsf.org/',
   'https://www.linuxfoundation.org/cookies',
 ];
-
-/**
- * These are the default Orama Query Parameters that are used by the Website
- * @see https://docs.oramasearch.com/open-source/usage/search/introduction
- */
-export const DEFAULT_ORAMA_QUERY_PARAMS = {
-  limit: 25,
-  threshold: 0,
-  boost: {
-    pageSectionTitle: 4,
-    pageSectionContent: 2.5,
-    pageTitle: 1.5,
-  },
-};
-
-/**
- * The initial Orama Cloud chat suggestions visible in the empty state of the search box.
- */
-export const DEFAULT_ORAMA_SUGGESTIONS = [
-  'How to install Node.js?',
-  'How to create an HTTP server?',
-  'Upgrading Node.js version',
-];
-
-/**
- * The default batch size to use when syncing Orama Cloud
- */
-export const ORAMA_SYNC_BATCH_SIZE = 250;
-
-/**
- * The default Orama Cloud endpoint to use when searching with Orama Cloud.
- */
-export const ORAMA_CLOUD_ENDPOINT =
-  process.env.NEXT_PUBLIC_ORAMA_ENDPOINT ||
-  'https://cloud.orama.run/v1/indexes/nodejs-org-dev-hhqrzv';
-
-/**
- * The default Orama Cloud API Key to use when searching with Orama Cloud.
- * This is a public API key and can be shared publicly on the frontend.
- */
-export const ORAMA_CLOUD_READ_API_KEY =
-  process.env.NEXT_PUBLIC_NEW_ORAMA_API_KEY ||
-  'c1__KPYDQNEFr$nFgrTgFTVLHf8BuNf08COBqBUzk65AYJEmSsJONPsO$_cihl';
-
-/**
- * The default Orama Cloud Datasource ID to use when searching with Orama Cloud.
- */
-export const ORAMA_CLOUD_DATASOURCE_ID =
-  process.env.NEXT_PUBLIC_NEW_ORAMA_DATASOURCE_ID ||
-  '6044121f-53c3-46af-aaf0-f498e3c548f2';
-
-/**
- * The default Orama Cloud Project ID to use when initializing Orama Cloud.
- */
-export const ORAMA_CLOUD_PROJECT_ID =
-  process.env.NEXT_PUBLIC_NEW_ORAMA_PROJECT_ID ||
-  '2eac5680-790b-44b7-8640-359608f104bd';
 
 /**
  * A GitHub Access Token for accessing the GitHub API and not being rate-limited
@@ -226,3 +177,11 @@ export const VULNERABILITIES_URL =
  */
 export const OPENCOLLECTIVE_MEMBERS_URL =
   'https://opencollective.com/nodejs/members/all.json';
+
+/**
+ * Orama DB URLs for the Learn and API sections of the website
+ */
+export const ORAMA_DB_URLS = {
+  [LEARN_URL.slice(0, -1)]: 'https://nodejs.org/learn/orama-db.json',
+  [`${DOCS_URL}latest/api`]: 'https://beta.docs.nodejs.org/orama-db.json',
+};

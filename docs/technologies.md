@@ -11,6 +11,7 @@ This document provides an overview of the technologies used in the Node.js websi
     - [PostCSS Plugins](#postcss-plugins)
   - [Content Management](#content-management)
     - [Content Processing Plugins](#content-processing-plugins)
+  - [Search](#search)
   - [UI Components](#ui-components)
     - [Why Radix UI?](#why-radix-ui)
   - [Internationalization](#internationalization)
@@ -90,6 +91,12 @@ We chose Next.js because it is:
 - `remark-headings`: Generates metadata for table of contents
 - `rehype-autolink-headings`: Automatic anchor links for headings
 - `rehype-slug`: Automatic ID generation for headings
+
+### Search
+
+- **[Orama](https://orama.com/)**: Local full-text search engine used for site search
+- Prebuilt Learn and API documentation indexes are fetched client-side and merged into a single local search database
+- Search remains self-contained in the site deployment without depending on Orama Cloud at runtime
 
 ### UI Components
 
