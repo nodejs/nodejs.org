@@ -14,6 +14,9 @@ apps/site/build
 apps/site/public/blog-data.json
 apps/site/next-env.d.ts
 
+# Generated Build Artifacts
+apps/site/generated
+
 # Test Runner
 junit.xml
 lcov.info
