@@ -4,6 +4,7 @@
 //        - the official sentry docs: https://docs.sentry.io/platforms/javascript/guides/cloudflare
 
 import { setTags, withSentry } from '@sentry/cloudflare';
+import { createSentryTail } from '@node-core/cloudflare-sentry-tail';
 
 import type {
   ExecutionContext,
@@ -47,6 +48,16 @@ export default withSentry(
 
       return handler.fetch(request, env, ctx);
     },
+    tail: createSentryTail({
+      samplingRate: 1,
+      headersToRedact: [
+        'authorization',
+        'cookie',
+        'cf-connecting-ip',
+        'x-forwarded-for',
+        'x-real-ip',
+      ],
+    }),
   }
 );
 
