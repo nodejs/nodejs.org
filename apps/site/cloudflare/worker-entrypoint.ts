@@ -50,7 +50,13 @@ export default withSentry(
     },
     tail: createSentryTail({
       samplingRate: 1,
-      headersToRedact: ['authorization', 'cookie'],
+      headersToRedact: [
+        'authorization',
+        'cookie',
+        'cf-connecting-ip',
+        'x-forwarded-for',
+        'x-real-ip',
+      ],
     }),
   }
 );
