@@ -22,7 +22,6 @@ This is a reflection of the current Node.js volunteer-based maintenance and an e
 
 Read more about the new release schedule in [this blog post](https://nodejs.org/en/blog/announcements/evolving-the-nodejs-release-schedule).
 
-
 ### New Streams API
 
 [James Snell][] presented a new, more unified Streams API for the Web and Node.js. Historically, Node.js has relied on the highly optimized `node:stream`. In recent years, Node.js has also implemented WHATWG Web Streams to ensure cross-platform compatibility with browsers, Deno, Bun, and edge environments (like Cloudflare Workers). However, managing two different stream ecosystems has created friction for developers.
