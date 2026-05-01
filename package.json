@@ -47,7 +47,7 @@
     "eslint": "~10.1.0",
     "eslint-import-resolver-typescript": "~4.4.4",
     "eslint-plugin-import-x": "~4.16.2",
-    "globals": "^17.4.0",
+    "globals": "^17.5.0",
     "prettier": "3.8.1",
     "prettier-plugin-tailwindcss": "0.7.2",
     "typescript": "catalog:",
