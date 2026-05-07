@@ -1,0 +1,62 @@
+---
+date: '2025-10-28T00:02:00.000Z'
+category: migrations
+title: Node.js v16 to v18
+layout: blog-post
+author: AugustinMauroy
+---
+
+# Node.js v16 to v18
+
+<AlertBox level="info" title="!">
+  This article covers a part of the migration from Node.js v16 to v18. The
+  userland migrations team is working on more codemods to help you with the
+  migration.
+</AlertBox>
+
+This page provides a list of codemods to help you migrate your code from Node.js v16 to v18.
+
+## `err-invalid-callback`
+
+In Node.js v18, the [DEP0159](https://nodejs.org/api/deprecations.html#DEP0159) deprecation was introduced, which deprecated the `ERR_INVALID_CALLBACK` error code in favor of `ERR_INVALID_ARG_TYPE`. This codemod will help you replace any references to the old error code with the new one.
+
+The source code for this codemod can be found in the [err-invalid-callback directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/err-invalid-callback).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/err-invalid-callback).
+
+```bash
+npx codemod run @nodejs/err-invalid-callback
+```
+
+### Example:
+
+```js displayName="Before"
+try {
+  fs.readFile('file.txt', 'invalid-callback');
+} catch (err) {
+  if (err.code === 'ERR_INVALID_CALLBACK') {
+    console.error('Invalid callback provided');
+  }
+}
+```
+
+```js displayName="After"
+try {
+  fs.readFile('file.txt', 'invalid-callback');
+} catch (err) {
+  if (err.code === 'ERR_INVALID_ARG_TYPE') {
+    console.error('Invalid callback provided');
+  }
+}
+```
+
+Also handles deduplication when both codes were already checked:
+
+```js displayName="Before"
+const isCallbackError =
+  err.code === 'ERR_INVALID_CALLBACK' || err.code === 'ERR_INVALID_ARG_TYPE';
+```
+
+```js displayName="After"
+const isCallbackError = err.code === 'ERR_INVALID_ARG_TYPE';
+```

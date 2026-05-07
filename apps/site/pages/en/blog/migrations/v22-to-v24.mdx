@@ -1,5 +1,5 @@
 ---
-date: '2025-10-28T00:03:00.000Z'
+date: '2025-10-28T00:04:00.000Z'
 category: migrations
 title: Node.js v22 to v24
 layout: blog-post
@@ -13,7 +13,7 @@ author: AugustinMauroy, Richard Lau
   userland migrations team is working on more codemods to help you with the
   migration.
 
-Missing codemods will be added over time. If you have specific needs.
+  Missing codemods will be added over time. If you have specific needs.
 
   <a href="https://github.com/nodejs/userland-migrations/issues/239">
     Read this issue to learn where we are in the process. And how to manually migrate your code.
@@ -235,6 +235,65 @@ open('file.txt', 'w', (err, fd) => {
 });
 ```
 
+### `http2-priority-removal`
+
+This recipe removes HTTP/2 priority-related options and methods since priority signaling has been deprecated.
+
+See [DEP0194](https://nodejs.org/api/deprecations.html#DEP0194).
+
+The source code for this codemod can be found in the [http2-priority-removal directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/http2-priority-removal).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/http2-priority-removal).
+
+```bash
+npx codemod run @nodejs/http2-priority-removal
+```
+
+## What this codemod does
+
+- Removes the `priority` property from `http2.connect()` call options
+- Removes the `priority` property from `session.request()` call options
+- Removes entire `stream.priority()` method call statements
+- Removes the `priority` property from `client.settings()` call options
+- Handles both CommonJS (`require()`) and ESM (`import`) imports
+
+## Examples
+
+**Before:**
+
+```js displayName="Before"
+// CommonJS usage
+const http2 = require('node:http2');
+const session = http2.connect('https://example.com', {
+  priority: { weight: 16, parent: 0, exclusive: false },
+});
+const stream = session.request({
+  ':path': '/api/data',
+  priority: { weight: 32 },
+});
+stream.priority({ exclusive: true, parent: 0, weight: 128 });
+
+// ESM usage
+import http2 from 'node:http2';
+const client = http2.connect('https://example.com');
+client.settings({ enablePush: false, priority: true });
+```
+
+```js displayName="After"
+// CommonJS usage
+const http2 = require('node:http2');
+const session = http2.connect('https://example.com');
+const stream = session.request({
+  ':path': '/api/data',
+});
+// stream.priority() removed
+
+// ESM usage
+import http2 from 'node:http2';
+const client = http2.connect('https://example.com');
+client.settings({ enablePush: false });
+```
+
 ### `process-assert-to-node-assert`
 
 This recipe transforms the usage of `process.assert` to use `node:assert` module.
@@ -261,3 +320,25 @@ assert(condition, 'Assertion failed');
 #### Additional Notes
 
 This codemod use [`fs` capability](https://docs.codemod.com/jssg/security) to read the `package.json` file and determine if the project is using ES modules or CommonJS. Based on this information, it adds the appropriate import statement for the `assert` module.
+
+### `tls-createSecurePair-deprecation`
+
+# `tls.createSecurePair` deprecation DEP0064
+
+This recipe transforms the usage from the deprecated `createSecurePair()` to `TLSSocket()`.
+
+See [DEP0064](https://nodejs.org/api/deprecations.html#dep0064-tlscreatesecurepair).
+
+## Examples
+
+```js displayName="Before"
+const { createSecurePair, createServer } = require('node:tls');
+const pair = createSecurePair(credentials);
+const server = createServer(options);
+```
+
+```js displayName="After"
+const { TLSSocket, createServer } = require('node:tls');
+const socket = new TLSSocket(underlyingSocket, { secureContext: credentials });
+const server = createServer(options);
+```
