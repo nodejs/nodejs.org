@@ -83,38 +83,29 @@ npx codemod run @nodejs/crypto-rsa-pss-update
 
 #### Example
 
-```js displayName="Before"
-const crypto = require('node:crypto');
+```diff
+const crypto = require("node:crypto");
 
 crypto.generateKeyPair(
-  'rsa-pss',
-  {
-    modulusLength: 2048,
-    hash: 'sha256',
-    mgf1Hash: 'sha1',
-    saltLength: 32,
-  },
-  (err, publicKey, privateKey) => {
-    // callback
-  }
+	"rsa-pss",
+	{
+		modulusLength: 2048,
+-		hash: "sha256",
+-		mgf1Hash: "sha1",
++		hashAlgorithm: "sha256",
++		mgf1HashAlgorithm: "sha1",
+		saltLength: 32,
+	},
+	(err, publicKey, privateKey) => {
+		// callback
+	},
 );
-```
 
-```js displayName="After"
-const crypto = require('node:crypto');
-
-crypto.generateKeyPair(
-  'rsa-pss',
-  {
-    modulusLength: 2048,
-    hashAlgorithm: 'sha256',
-    mgf1HashAlgorithm: 'sha1',
-    saltLength: 32,
-  },
-  (err, publicKey, privateKey) => {
-    // callback
-  }
-);
+crypto.generateKeyPairSync("rsa-pss", {
+	modulusLength: 2048,
+-	hash: "sha256",
++	hashAlgorithm: "sha256",
+});
 ```
 
 ### `dirent-path-to-parent-path`
@@ -131,40 +122,26 @@ npx codemod run @nodejs/dirent-path-to-parent-path
 
 #### Examples
 
-##### readdir
+### readdir
 
-```js displayName="Before"
-const { readdir } = require('node:fs/promises');
-const entries = await readdir('/some/path', { withFileTypes: true });
-for (const dirent of entries) {
-  console.log(dirent.path);
-}
+```diff
+  const { readdir } = require('node:fs/promises');
+  const entries = await readdir('/some/path', { withFileTypes: true });
+  for (const dirent of entries) {
+-   console.log(dirent.path);
++   console.log(dirent.parentPath);
+  }
 ```
 
-```js displayName="After"
-const { readdir } = require('node:fs/promises');
-const entries = await readdir('/some/path', { withFileTypes: true });
-for (const dirent of entries) {
-  console.log(dirent.parentPath);
-}
-```
+### opendir
 
-##### opendir
-
-```js displayName="Before"
-import { opendir } from 'node:fs/promises';
-const dir = await opendir('./');
-for await (const dirent of dir) {
-  console.log(`Found ${dirent.name} in ${dirent.path}`);
-}
-```
-
-```js displayName="After"
-import { opendir } from 'node:fs/promises';
-const dir = await opendir('./');
-for await (const dirent of dir) {
-  console.log(`Found ${dirent.name} in ${dirent.parentPath}`);
-}
+```diff
+  import { opendir } from 'node:fs/promises';
+  const dir = await opendir('./');
+  for await (const dirent of dir) {
+-   console.log(`Found ${dirent.name} in ${dirent.path}`);
++   console.log(`Found ${dirent.name} in ${dirent.parentPath}`);
+  }
 ```
 
 ### `fs-access-mode-constants`
@@ -183,18 +160,13 @@ npx codemod run @nodejs/fs-access-mode-constants
 
 #### Example
 
-```js displayName="Before"
-const fs = require('node:fs');
+```diff
+  const fs = require('node:fs');
 
-fs.access('/path/to/file', fs.F_OK, callback);
-fs.access('/path/to/file', fs.R_OK | fs.W_OK, callback);
-```
-
-```js displayName="After"
-const fs = require('node:fs');
-
-fs.access('/path/to/file', fs.constants.F_OK, callback);
-fs.access('/path/to/file', fs.constants.R_OK | fs.constants.W_OK, callback);
+- fs.access('/path/to/file', fs.F_OK, callback);
++ fs.access('/path/to/file', fs.constants.F_OK, callback);
+- fs.access('/path/to/file', fs.R_OK | fs.W_OK, callback);
++ fs.access('/path/to/file', fs.constants.R_OK | fs.constants.W_OK, callback);
 ```
 
 ### `fs-truncate-to-ftruncate`
@@ -211,28 +183,18 @@ npx codemod run @nodejs/fs-truncate-fd-deprecation
 
 #### Example
 
-```js displayName="Before"
-const { truncate, open, close } = require('node:fs');
+```diff
+- const { truncate, open, close } = require('node:fs');
++ const { ftruncate, open, close } = require('node:fs');
 
-open('file.txt', 'w', (err, fd) => {
-  if (err) throw err;
-  truncate(fd, 10, err => {
+  open('file.txt', 'w', (err, fd) => {
     if (err) throw err;
-    close(fd, () => {});
+-   truncate(fd, 10, (err) => {
++   ftruncate(fd, 10, (err) => {
+      if (err) throw err;
+      close(fd, () => {});
+    });
   });
-});
-```
-
-```js displayName="After"
-const { ftruncate, open, close } = require('node:fs');
-
-open('file.txt', 'w', (err, fd) => {
-  if (err) throw err;
-  ftruncate(fd, 10, err => {
-    if (err) throw err;
-    close(fd, () => {});
-  });
-});
 ```
 
 ### `http2-priority-removal`
@@ -259,46 +221,29 @@ npx codemod run @nodejs/http2-priority-removal
 
 ## Examples
 
-**Before:**
+```diff
+import http2 from "node:http2";
 
-```js displayName="Before"
-// CommonJS usage
-const http2 = require('node:http2');
-const session = http2.connect('https://example.com', {
-  priority: { weight: 16, parent: 0, exclusive: false },
+const session = http2.connect("https://example.com", {
+- priority: { weight: 16, parent: 0, exclusive: false }
 });
+
 const stream = session.request({
-  ':path': '/api/data',
-  priority: { weight: 32 },
+	":path": "/api/data",
+- priority: { weight: 32 }
 });
-stream.priority({ exclusive: true, parent: 0, weight: 128 });
+- stream.priority({ exclusive: true, parent: 0, weight: 128 });
 
-// ESM usage
-import http2 from 'node:http2';
-const client = http2.connect('https://example.com');
-client.settings({ enablePush: false, priority: true });
-```
-
-```js displayName="After"
-// CommonJS usage
-const http2 = require('node:http2');
-const session = http2.connect('https://example.com');
-const stream = session.request({
-  ':path': '/api/data',
-});
-// stream.priority() removed
-
-// ESM usage
-import http2 from 'node:http2';
-const client = http2.connect('https://example.com');
-client.settings({ enablePush: false });
+const client = http2.connect("https://example.com");
+-client.settings({ enablePush: false, priority: true });
++client.settings({ enablePush: false });
 ```
 
 ### `process-assert-to-node-assert`
 
-This recipe transforms the usage of `process.assert` to use `node:assert` module.
+In Node.js v23 the [DEP0100](https://nodejs.org/api/deprecations.html#DEP0100) deprecation was grantted to End of Life, and `process.assert` was removed in favor of using the `assert` module directly. This codemod will help you replace any references to `process.assert` with the appropriate import of the `assert` module and usage of `assert()`.
 
-See [DEP0100](https://nodejs.org/api/deprecations.html#DEP0100).
+The source code for this codemod can be found in the [process-assert-to-node-assert directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/process-assert-to-node-assert).
 
 You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/process-assert-to-node-assert).
 
@@ -308,37 +253,41 @@ npx codemod run @nodejs/process-assert-to-node-assert
 
 #### Example
 
-```js displayName="Before"
-process.assert(condition, 'Assertion failed');
-```
-
-```js displayName="After"
-import assert from 'node:assert';
-assert(condition, 'Assertion failed');
+```diff
++ import assert from "node:assert";
+- process.assert(condition, "Assertion failed");
++ assert(condition, "Assertion failed");
 ```
 
 #### Additional Notes
 
 This codemod use [`fs` capability](https://docs.codemod.com/jssg/security) to read the `package.json` file and determine if the project is using ES modules or CommonJS. Based on this information, it adds the appropriate import statement for the `assert` module.
 
-### `tls-createSecurePair-deprecation`
-
-# `tls.createSecurePair` deprecation DEP0064
+### `tls-create-secure-pair-to-tls-socket`
 
 This recipe transforms the usage from the deprecated `createSecurePair()` to `TLSSocket()`.
 
 See [DEP0064](https://nodejs.org/api/deprecations.html#dep0064-tlscreatesecurepair).
 
-## Examples
+The source code for this codemod can be found in the [tls-create-secure-pair-to-tls-socket directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/tls-create-secure-pair-to-tls-socket).
 
-```js displayName="Before"
-const { createSecurePair, createServer } = require('node:tls');
-const pair = createSecurePair(credentials);
-const server = createServer(options);
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/tls-create-secure-pair-to-tls-socket).
+
+```bash
+npx codemod run @nodejs/tls-create-secure-pair-to-tls
 ```
 
-```js displayName="After"
-const { TLSSocket, createServer } = require('node:tls');
-const socket = new TLSSocket(underlyingSocket, { secureContext: credentials });
-const server = createServer(options);
+## Examples
+
+```diff
+-const { createSecurePair } = require('node:tls');
++const { TLSSocket } = require('node:tls');
+
+-const pair = createSecurePair(credentials, true, true, false);
++const socket = new TLSSocket(underlyingSocket, {
++  secureContext: credentials,
++  isServer: true,
++  requestCert: true,
++  rejectUnauthorized: false
++});
 ```

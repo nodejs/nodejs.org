@@ -50,31 +50,21 @@ npx codemod @nodejs/chalk-to-util-styletext
 
 ### Example:
 
-```js displayName="Before"
-import chalk from 'chalk';
+```diff
+- import chalk from 'chalk';
++ import { styleText } from 'node:util';
 
-console.log(chalk.red('Error message'));
+- console.log(chalk.red('Error message'));
++ console.log(styleText('red', 'Error message'));
 
-console.log(chalk.red.bold('Important error'));
+- console.log(chalk.green.underline('Success with emphasis'));
++ console.log(styleText(['green', 'underline'], 'Success with emphasis'));
 
-const red = chalk.red;
+- const red = chalk.red;
++ const red = (text) => styleText('red', text);
+- const boldBlue = chalk.blue.bold;
++ const boldBlue = (text) => styleText(['blue', 'bold'], text);
 console.log(red('Error'));
-
-const boldBlue = chalk.blue.bold;
-console.log(boldBlue('Info'));
-```
-
-```js displayName="After"
-import { styleText } from 'node:util';
-
-console.log(styleText('red', 'Error message'));
-
-console.log(styleText(['red', 'bold'], 'Important error'));
-
-const red = text => styleText('red', text);
-console.log(red('Error'));
-
-const boldBlue = text => styleText(['blue', 'bold'], text);
 console.log(boldBlue('Info'));
 ```
 

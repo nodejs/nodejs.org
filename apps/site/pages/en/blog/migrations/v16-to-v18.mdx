@@ -30,33 +30,22 @@ npx codemod run @nodejs/err-invalid-callback
 
 ### Example:
 
-```js displayName="Before"
-try {
-  fs.readFile('file.txt', 'invalid-callback');
-} catch (err) {
-  if (err.code === 'ERR_INVALID_CALLBACK') {
-    console.error('Invalid callback provided');
+```diff
+  try {
+    fs.readFile("file.txt", "invalid-callback");
+  } catch (err) {
+-   if (err.code === "ERR_INVALID_CALLBACK") {
++   if (err.code === "ERR_INVALID_ARG_TYPE") {
+      console.error("Invalid callback provided");
+    }
   }
-}
-```
-
-```js displayName="After"
-try {
-  fs.readFile('file.txt', 'invalid-callback');
-} catch (err) {
-  if (err.code === 'ERR_INVALID_ARG_TYPE') {
-    console.error('Invalid callback provided');
-  }
-}
 ```
 
 Also handles deduplication when both codes were already checked:
 
-```js displayName="Before"
-const isCallbackError =
-  err.code === 'ERR_INVALID_CALLBACK' || err.code === 'ERR_INVALID_ARG_TYPE';
-```
-
-```js displayName="After"
-const isCallbackError = err.code === 'ERR_INVALID_ARG_TYPE';
+```diff
+  const isCallbackError =
+-   err.code === "ERR_INVALID_CALLBACK" ||
+-   err.code === "ERR_INVALID_ARG_TYPE";
++   err.code === "ERR_INVALID_ARG_TYPE";
 ```

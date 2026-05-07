@@ -34,12 +34,9 @@ npx codemod run @nodejs/import-assertions-to-attributes
 
 ### Example:
 
-```js displayName="Before"
-import jsonData from './data.json' assert { type: 'json' };
-```
-
-```js displayName="After"
-import jsonData from './data.json' with { type: 'json' };
+```diff
+- import data from './data.json' assert { type: 'json' };
++ import data from './data.json' with { type: 'json' };
 ```
 
 ## `crypto-createcipheriv-migration`
@@ -65,18 +62,15 @@ npx codemod run @nodejs/crypto-createcipheriv-migration
 
 ### Example
 
-```js displayName="Before"
-const cipher = crypto.createCipher(algorithm, password);
-```
-
-```js displayName="After"
-const cipher = (() => {
-  const __dep0106Salt = crypto.randomBytes(16);
-  const __dep0106Key = crypto.scryptSync(password, __dep0106Salt, 32);
-  const __dep0106Iv = crypto.randomBytes(16);
-  // DEP0106: Persist __dep0106Salt and __dep0106Iv alongside the ciphertext so it can be decrypted later.
-  return crypto.createCipheriv(algorithm, __dep0106Key, __dep0106Iv);
-})();
+```diff
+-const cipher = crypto.createCipher(algorithm, password);
++const cipher = (() => {
++	const __dep0106Salt = crypto.randomBytes(16);
++	const __dep0106Key = crypto.scryptSync(password, __dep0106Salt, 32);
++	const __dep0106Iv = crypto.randomBytes(16);
++	// DEP0106: Persist __dep0106Salt and __dep0106Iv alongside the ciphertext so it can be decrypted later.
++	return crypto.createCipheriv(algorithm, __dep0106Key, __dep0106Iv);
++})();
 ```
 
 ### Important notes
