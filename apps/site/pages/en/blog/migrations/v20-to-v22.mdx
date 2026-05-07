@@ -63,14 +63,14 @@ npx codemod run @nodejs/crypto-createcipheriv-migration
 ### Example
 
 ```diff
--const cipher = crypto.createCipher(algorithm, password);
-+const cipher = (() => {
-+	const __dep0106Salt = crypto.randomBytes(16);
-+	const __dep0106Key = crypto.scryptSync(password, __dep0106Salt, 32);
-+	const __dep0106Iv = crypto.randomBytes(16);
-+	// DEP0106: Persist __dep0106Salt and __dep0106Iv alongside the ciphertext so it can be decrypted later.
-+	return crypto.createCipheriv(algorithm, __dep0106Key, __dep0106Iv);
-+})();
+- const cipher = crypto.createCipher(algorithm, password);
++ const cipher = (() => {
++   const __dep0106Salt = crypto.randomBytes(16);
++   const __dep0106Key = crypto.scryptSync(password, __dep0106Salt, 32);
++   const __dep0106Iv = crypto.randomBytes(16);
++   // DEP0106: Persist __dep0106Salt and __dep0106Iv alongside the ciphertext so it can be decrypted later.
++   return crypto.createCipheriv(algorithm, __dep0106Key, __dep0106Iv);
++ })();
 ```
 
 ### Important notes

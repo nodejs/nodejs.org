@@ -13,7 +13,7 @@ author: AugustinMauroy, Richard Lau
   userland migrations team is working on more codemods to help you with the
   migration.
 
-  Missing codemods will be added over time. If you have specific needs.
+Missing codemods will be added over time. If you have specific needs.
 
   <a href="https://github.com/nodejs/userland-migrations/issues/239">
     Read this issue to learn where we are in the process. And how to manually migrate your code.
@@ -87,24 +87,24 @@ npx codemod run @nodejs/crypto-rsa-pss-update
 const crypto = require("node:crypto");
 
 crypto.generateKeyPair(
-	"rsa-pss",
-	{
-		modulusLength: 2048,
--		hash: "sha256",
--		mgf1Hash: "sha1",
-+		hashAlgorithm: "sha256",
-+		mgf1HashAlgorithm: "sha1",
-		saltLength: 32,
-	},
-	(err, publicKey, privateKey) => {
-		// callback
-	},
+  "rsa-pss",
+  {
+    modulusLength: 2048,
+-   hash: "sha256",
+-   mgf1Hash: "sha1",
++   hashAlgorithm: "sha256",
++   mgf1HashAlgorithm: "sha1",
+    saltLength: 32,
+  },
+  (err, publicKey, privateKey) => {
+    // callback
+  },
 );
 
 crypto.generateKeyPairSync("rsa-pss", {
-	modulusLength: 2048,
--	hash: "sha256",
-+	hashAlgorithm: "sha256",
+  modulusLength: 2048,
+- hash: "sha256",
++ hashAlgorithm: "sha256",
 });
 ```
 
@@ -128,8 +128,8 @@ npx codemod run @nodejs/dirent-path-to-parent-path
   const { readdir } = require('node:fs/promises');
   const entries = await readdir('/some/path', { withFileTypes: true });
   for (const dirent of entries) {
--   console.log(dirent.path);
-+   console.log(dirent.parentPath);
+- console.log(dirent.path);
++ console.log(dirent.parentPath);
   }
 ```
 
@@ -229,7 +229,7 @@ const session = http2.connect("https://example.com", {
 });
 
 const stream = session.request({
-	":path": "/api/data",
+  ":path": "/api/data",
 - priority: { weight: 32 }
 });
 - stream.priority({ exclusive: true, parent: 0, weight: 128 });

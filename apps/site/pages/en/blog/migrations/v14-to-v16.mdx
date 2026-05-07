@@ -60,9 +60,9 @@ npx codemod run @nodejs/process-main-module
 ```diff
 - if (process.mainModule === "mod.js") {
 + if (require.main === "mod.js") {
-  	// cli thing
+    // cli thing
   } else {
-  	// module thing
+    // module thing
   }
 ```
 

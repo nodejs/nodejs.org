@@ -46,18 +46,18 @@ The codemod supports the following Axios methods and converts them to their Fetc
 ### GET Request
 
 ```diff
- const base = 'https://dummyjson.com/todos';
+const base = 'https://dummyjson.com/todos';
 
 - const all = await axios.get(base);
 + const all = await fetch(base).then(async (res) => Object.assign(res, { data: await res.json() })).catch(() => null);
-	console.log('\nGET /todos ->', all.status);
-	console.log(`Preview: ${all.data.todos.length} todos`);
+  console.log('\nGET /todos ->', all.status);
+  console.log(`Preview: ${all.data.todos.length} todos`);
 ```
 
 ### POST Request
 
 ```diff
- const base = 'https://dummyjson.com/todos';
+const base = 'https://dummyjson.com/todos';
 
 - const created = await axios.post(
 -     `${base}/add`, {
@@ -77,14 +77,14 @@ The codemod supports the following Axios methods and converts them to their Fetc
 +         userId: 5,
 +     }),
 + }).then(async (res) => Object.assign(res, { data: await res.json() }));
-	console.log('\nPOST /todos/add ->', created.status);
-	console.log('Preview:', created.data?.id ? `created id ${created.data.id}` : JSON.stringify(created.data).slice(0,200));
+  console.log('\nPOST /todos/add ->', created.status);
+  console.log('Preview:', created.data?.id ? `created id ${created.data.id}` : JSON.stringify(created.data).slice(0,200));
 ```
 
 ### POST Form Request
 
 ```diff
- const formEndpoint = '/submit';
+const formEndpoint = '/submit';
 
 - const created = await axios.postForm(formEndpoint, {
 -     title: 'Form Demo',
@@ -97,13 +97,13 @@ The codemod supports the following Axios methods and converts them to their Fetc
 +         completed: false,
 +     }),
 + }).then(async (res) => Object.assign(res, { data: await res.json() }));
-	 console.log('Preview:', created.data);
+  console.log('Preview:', created.data);
 ```
 
 ### PUT Request
 
 ```diff
- const base = 'https://dummyjson.com/todos';
+const base = 'https://dummyjson.com/todos';
 
 - const updatedPut = await axios.put(
 -     `${base}/1`,
@@ -115,26 +115,26 @@ The codemod supports the following Axios methods and converts them to their Fetc
 +     headers: { 'Content-Type': 'application/json' },
 +     body: JSON.stringify({ completed: false }),
 + }).then(async (res) => Object.assign(res, { data: await res.json() }));
-	console.log('\nPUT /todos/1 ->', updatedPut.status);
-	console.log('Preview:', updatedPut.data?.completed !== undefined ? `completed=${updatedPut.data.completed}` : JSON.stringify(updatedPut.data).slice(0,200));
+  console.log('\nPUT /todos/1 ->', updatedPut.status);
+  console.log('Preview:', updatedPut.data?.completed !== undefined ? `completed=${updatedPut.data.completed}` : JSON.stringify(updatedPut.data).slice(0,200));
 ```
 
 ### DELETE Request
 
 ```diff
- const base = 'https://dummyjson.com/todos';
+const base = 'https://dummyjson.com/todos';
 
 - const deleted = await axios.delete(`${base}/1`);
 + const deleted = await fetch(`${base}/1`, { method: 'DELETE' })
 + .then(async (res) => Object.assign(res, { data: await res.json() }));
-	console.log('\nDELETE /todos/1 ->', deleted.status);
-	console.log('Preview:', deleted.data ? JSON.stringify(deleted.data).slice(0,200) : typeof deleted.data);
+  console.log('\nDELETE /todos/1 ->', deleted.status);
+  console.log('Preview:', deleted.data ? JSON.stringify(deleted.data).slice(0,200) : typeof deleted.data);
 ```
 
 ### `request` Axios Method
 
 ```diff
- const base = 'https://dummyjson.com/todos';
+const base = 'https://dummyjson.com/todos';
 
 - const customRequest = await axios.request({
 -     url: `${base}/1`,
@@ -147,8 +147,8 @@ The codemod supports the following Axios methods and converts them to their Fetc
 +     headers: { 'Content-Type': 'application/json' },
 +     body: JSON.stringify({ completed: true }),
 + }).then(async (res) => Object.assign(res, { data: await res.json() }));
- console.log('\nPATCH /todos/1 ->', customRequest.status);
- console.log('Preview:', customRequest.data?.completed !== undefined ? `completed=${customRequest.data.completed}` : JSON.stringify(customRequest.data).slice(0,200));
+console.log('\nPATCH /todos/1 ->', customRequest.status);
+console.log('Preview:', customRequest.data?.completed !== undefined ? `completed=${customRequest.data.completed}` : JSON.stringify(customRequest.data).slice(0,200));
 ```
 
 ## Unsupported APIs
