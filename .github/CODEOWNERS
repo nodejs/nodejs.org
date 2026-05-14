@@ -30,6 +30,7 @@ apps/site/site.json @nodejs/web-infra
 apps/site/wrangler.jsonc @nodejs/web-infra
 apps/site/open-next.config.ts @nodejs/web-infra
 apps/site/redirects.json @nodejs/web-infra
+packages/cloudflare-sentry-tail @nodejs/web-infra
 
 # Critical Documents
 LICENSE @nodejs/tsc
