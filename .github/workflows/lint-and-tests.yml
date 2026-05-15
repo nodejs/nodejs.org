@@ -49,7 +49,7 @@ jobs:
           use-version-file: true
 
       - name: Restore Lint Cache
-        uses: actions/cache/restore@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
+        uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: |
             .turbo/cache
@@ -86,7 +86,7 @@ jobs:
           (github.event_name == 'pull_request' &&
             startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
             github.event.pull_request.head.ref != 'chore/crowdin')
-        uses: actions/cache/save@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
+        uses: actions/cache/save@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: |
             .turbo/cache
@@ -112,13 +112,13 @@ jobs:
 
       - name: Upload test coverage to Codecov
         if: ${{ !cancelled() && github.event_name != 'merge_group' }}
-        uses: codecov/codecov-action@671740ac38dd9b0130fbe1cec585b89eea48d3de # v5.5.2
+        uses: codecov/codecov-action@57e3a136b779b570ffcdbf80b3bdc90e7fab3de2 # v6.0.0
         with:
           files: ./apps/site/lcov.info,./packages/*/lcov.info
 
       - name: Upload test results to Codecov
         if: ${{ !cancelled() && github.event_name != 'merge_group' }}
-        uses: codecov/codecov-action@671740ac38dd9b0130fbe1cec585b89eea48d3de # v5.5.2
+        uses: codecov/codecov-action@57e3a136b779b570ffcdbf80b3bdc90e7fab3de2 # v6.0.0
         with:
           report_type: test_results
           files: ./apps/site/junit.xml,./packages/*/junit.xml
