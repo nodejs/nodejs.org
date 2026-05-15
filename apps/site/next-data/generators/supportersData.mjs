@@ -94,6 +94,7 @@ async function fetchOpenCollectiveData() {
 
   const members = payload
     .filter(({ role, isActive }) => role === 'BACKER' && isActive)
+    .filter(({ name, image }) => name || image) // Ensure we have a name or image for the supporter
     .sort((a, b) => b.totalAmountDonated - a.totalAmountDonated)
     .map(({ name, image, profile }) => ({
       name,
