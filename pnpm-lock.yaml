@@ -6331,9 +6331,6 @@ packages:
   lodash.truncate@4.4.2:
     resolution: {integrity: sha512-jttmRe7bRse52OsWIMDLaXxWqRAmtIUccAQ3garviCqJjafXOfNMO0yMfNpdD6zbGaTU0P5Nz7e7gAT6cKmJRw==}
 
-  lodash@4.17.21:
-    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-
   lodash@4.18.1:
     resolution: {integrity: sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==}
 
@@ -15626,8 +15623,6 @@ snapshots:
 
   lodash.truncate@4.4.2: {}
 
-  lodash@4.17.21: {}
-
   lodash@4.18.1: {}
 
   log-update@6.1.0:
@@ -18041,7 +18036,7 @@ snapshots:
 
   stylelint-selector-bem-pattern@4.0.1(stylelint@17.9.1(typescript@5.9.3)):
     dependencies:
-      lodash: 4.17.21
+      lodash: 4.18.1
       postcss: 8.5.6
       postcss-bem-linter: 4.0.1(postcss@8.5.6)
       stylelint: 17.9.1(typescript@5.9.3)
