@@ -45,20 +45,6 @@
       "bucket_name": "next-cache-r2-for-open-next-website",
     },
   ],
-  "durable_objects": {
-    "bindings": [
-      {
-        "name": "NEXT_CACHE_DO_QUEUE",
-        "class_name": "DOQueueHandler",
-      },
-    ],
-  },
-  "migrations": [
-    {
-      "tag": "v1",
-      "new_sqlite_classes": ["DOQueueHandler"],
-    },
-  ],
   "version_metadata": {
     // CF_VERSION_METADATA used for sentry
     // See: https://docs.sentry.io/platforms/javascript/guides/cloudflare/#release-configuration-optional
