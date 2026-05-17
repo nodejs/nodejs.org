@@ -30,23 +30,20 @@ The source code for this codemod can be found in the [util-print-to-console-log 
 You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/util-print-to-console-log).
 
 ```bash
-npx codemod run @nodejs/create-require-from-path
+npx codemod run @nodejs/util-print-to-console-log
 ```
 
 ### Example:
 
-```js displayName="Before"
-const util = require('node:util');
+```diff
+- const util = require("node:util");
 
-util.print('Hello world');
-util.puts('Hello world');
-util.debug('Hello world');
-util.error('Hello world');
-```
-
-```js displayName="After"
-console.log('Hello world');
-console.log('Hello world');
-console.error('Hello world');
-console.error('Hello world');
+- util.print("Hello world");
++ console.log("Hello world");
+- util.puts("Hello world");
++ console.log("Hello world");
+- util.debug("Hello world");
++ console.error("Hello world");
+- util.error("Hello world");
++ console.error("Hello world");
 ```
