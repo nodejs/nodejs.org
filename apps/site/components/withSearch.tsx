@@ -3,7 +3,7 @@
 import SearchBox from '@node-core/ui-components/Common/Search';
 import { create, insertMultiple, search } from '@orama/orama';
 import { useTranslations } from 'next-intl';
-import { useMemo, useRef } from 'react';
+import { useMemo } from 'react';
 
 import { ORAMA_DB_URLS } from '#site/next.constants.mjs';
 
@@ -17,6 +17,13 @@ type SerializedOramaDb = {
   docs: {
     docs: Record<string, OramaDoc>;
   };
+};
+
+type OramaUrls = typeof ORAMA_DB_URLS;
+
+type OramaClient = {
+  client: OramaCloud;
+  warmup: () => Promise<void>;
 };
 
 export const addPrefixToDocs = <T extends SerializedOramaDb>(
@@ -35,9 +42,12 @@ export const addPrefixToDocs = <T extends SerializedOramaDb>(
   };
 };
 
-const loadOrama = async (db: AnyOrama): Promise<void> => {
+const loadOrama = async (
+  db: AnyOrama,
+  urls: OramaUrls = ORAMA_DB_URLS
+): Promise<void> => {
   const indexes = await Promise.all(
-    Object.entries(ORAMA_DB_URLS).map(async ([key, url]) => {
+    Object.entries(urls).map(async ([key, url]) => {
       const response = await fetch(url);
       const fetchedDb = (await response.json()) as SerializedOramaDb;
 
@@ -50,36 +60,43 @@ const loadOrama = async (db: AnyOrama): Promise<void> => {
   }
 };
 
-export const useOrama = () => {
-  const loadPromiseRef = useRef<Promise<void> | null>(null);
+export const createOramaClient = (
+  urls: OramaUrls = ORAMA_DB_URLS
+): OramaClient => {
+  const db = create({
+    schema: {
+      title: 'string',
+      description: 'string',
+      href: 'string',
+      siteSection: 'string',
+    },
+  });
 
-  return useMemo(() => {
-    const db = create({
-      schema: {
-        title: 'string',
-        description: 'string',
-        href: 'string',
-        siteSection: 'string',
-      },
-    });
+  let loadPromise: Promise<void> | null = null;
+  const warmup = () => (loadPromise ??= loadOrama(db, urls));
 
-    // @ts-expect-error We are overriding a method, an error is expected.
-    db.search = async options => {
-      await (loadPromiseRef.current ??= loadOrama(db));
-      return search(db, options);
-    };
+  // @ts-expect-error We are overriding a method, an error is expected.
+  db.search = async options => {
+    await warmup();
+    return search(db, options);
+  };
 
-    return db;
-  }, []) as unknown as OramaCloud;
+  return {
+    client: db as unknown as OramaCloud,
+    warmup,
+  };
 };
+
+export const useOrama = () => useMemo(() => createOramaClient(), []);
 
 const WithSearch: FC = () => {
   const t = useTranslations();
-  const client = useOrama();
+  const { client, warmup } = useOrama();
 
   return (
     <SearchBox
       client={client}
+      onWarmup={warmup}
       closeShortcutLabel={t('components.search.keyboardShortcuts.close')}
       navigateShortcutLabel={t('components.search.keyboardShortcuts.navigate')}
       noResultsTitle={t('components.search.noResultsFoundFor')}
