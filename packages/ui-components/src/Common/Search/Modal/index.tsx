@@ -22,7 +22,18 @@ const SearchModal: FC<PropsWithChildren<SearchModalProps>> = ({
   placeholder,
 }) => {
   const warmup = useCallback(() => {
-    onWarmup?.();
+    if (!onWarmup) {
+      return;
+    }
+
+    try {
+      const result = onWarmup();
+      Promise.resolve(result).catch((error) => {
+        console.error('Search warmup failed', error);
+      });
+    } catch (error) {
+      console.error('Search warmup failed', error);
+    }
   }, [onWarmup]);
 
   useEffect(() => {
