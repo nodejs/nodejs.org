@@ -17,6 +17,7 @@ type SearchBoxProps = {
   closeShortcutLabel?: string;
   navigateShortcutLabel?: string;
   noResultsTitle?: string;
+  onWarmup?: () => Promise<void> | void;
   placeholder?: string;
   selectShortcutLabel?: string;
 };
@@ -27,9 +28,10 @@ const SearchBox: React.FC<SearchBoxProps> = ({
   noResultsTitle = 'No results found for',
   closeShortcutLabel = 'to close',
   navigateShortcutLabel = 'to navigate',
+  onWarmup,
   selectShortcutLabel = 'to select',
 }) => (
-  <SearchModal client={client} placeholder={placeholder}>
+  <SearchModal client={client} placeholder={placeholder} onWarmup={onWarmup}>
     <div className={styles.searchResultsContainer}>
       <SearchResults
         noResultsTitle={noResultsTitle}
