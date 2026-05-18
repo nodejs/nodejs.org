@@ -39,13 +39,6 @@ const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
           </ThemeProvider>
         </NextIntlClientProvider>
 
-        <a
-          rel="me"
-          aria-hidden="true"
-          className="hidden"
-          href="https://social.lfx.dev/@nodejs"
-        />
-
         {VERCEL_ENV && (
           <>
             <Analytics />
