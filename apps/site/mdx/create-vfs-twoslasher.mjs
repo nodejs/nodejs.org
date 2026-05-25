@@ -8,13 +8,11 @@
  * generated at build time by `scripts/twoslash-fsmap/index.mjs`.
  */
 export async function createVfsTwoslasher() {
-  const [{ createTwoslasher }, ts, fsMapJson] = await Promise.all([
-    import('twoslash/core'),
-    import('typescript').then(m => m.default),
-    import('../generated/twoslash-fsmap.json', { with: { type: 'json' } }).then(
-      m => m.default
-    ),
-  ]);
+  const { createTwoslasher } = await import('twoslash/core');
+  const ts = (await import('typescript')).default;
+  const fsMapJson = (
+    await import('../generated/twoslash-fsmap.json', { with: { type: 'json' } })
+  ).default;
 
   const fsMap = new Map(Object.entries(fsMapJson));
 
