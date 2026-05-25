@@ -12,4 +12,4 @@ const outputPath = new URL(
 );
 
 mkdirSync(new URL('.', outputPath), { recursive: true });
-writeFileSync(outputPath, JSON.stringify(fsMap), 'utf8');
+writeFileSync(outputPath, JSON.stringify(Object.fromEntries(fsMap)), 'utf8');

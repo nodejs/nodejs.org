@@ -2,14 +2,17 @@
 
 import { readdirSync, readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
-import { dirname, join, resolve } from 'node:path';
+import { join, resolve } from 'node:path';
+
+import { createDefaultMapFromNodeModules } from '@typescript/vfs';
+import ts from 'typescript';
 
 const require = createRequire(import.meta.url);
 
 /**
  * Recursively collects all `.d.ts` files from a directory into the fsMap.
  *
- * @param {Record<string, string>} fsMap The map to populate
+ * @param {Map<string, string>} fsMap The map to populate
  * @param {string} dir The directory to walk
  * @param {string} virtualPrefix The virtual path prefix (e.g., "/node_modules/@types/node")
  * @param {string} baseDir The base directory for computing relative paths
@@ -28,7 +31,7 @@ function collectDtsFiles(fsMap, dir, virtualPrefix, baseDir) {
       const relativePath = fullPath.slice(baseDir.length).replace(/\\/g, '/');
       const virtualPath = `${virtualPrefix}${relativePath}`;
 
-      fsMap[virtualPath] = readFileSync(fullPath, 'utf8');
+      fsMap.set(virtualPath, readFileSync(fullPath, 'utf8'));
     }
   }
 }
@@ -38,22 +41,12 @@ function collectDtsFiles(fsMap, dir, virtualPrefix, baseDir) {
  * declaration files and `@types/node` declarations needed for Twoslash
  * to run without real filesystem access (e.g., on Cloudflare Workers).
  *
- * @returns {Record<string, string>} A map of virtual paths to file contents
+ * @returns {Map<string, string>} A map of virtual paths to file contents
  */
 export default function generateTwoslashFsMap() {
-  const fsMap = {};
-
-  // 1. Collect TypeScript lib .d.ts files
-  //    These are keyed as "/lib.es5.d.ts", "/lib.dom.d.ts", etc.
-  //    (matching the convention used by @typescript/vfs)
-  const tsLibDir = dirname(require.resolve('typescript/lib/lib.d.ts'));
-  const tsLibFiles = readdirSync(tsLibDir)
-    .filter(f => f.startsWith('lib.') && /\.d\.([^.]+\.)?[cm]?ts$/i.test(f))
-    .sort();
-
-  for (const file of tsLibFiles) {
-    fsMap[`/${file}`] = readFileSync(join(tsLibDir, file), 'utf8');
-  }
+  // 1. Collect TypeScript lib .d.ts files using @typescript/vfs
+  //    This returns a Map keyed as "/lib.es5.d.ts", "/lib.dom.d.ts", etc.
+  const fsMap = createDefaultMapFromNodeModules({}, ts);
 
   // 2. Collect @types/node .d.ts files
   //    These are keyed as "/node_modules/@types/node/index.d.ts", etc.
