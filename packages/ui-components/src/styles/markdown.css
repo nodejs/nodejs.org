@@ -100,12 +100,12 @@ main {
   /* link that isn't inside a heading */
   a:not(h1 > a):not(h2 > a):not(h3 > a):not(h4 > a):not(h5 > a):not(h6 > a) {
     @apply max-ml:font-semibold
-      text-green-600
-      dark:text-green-400;
+      text-brand-600
+      dark:text-brand-400;
 
     &:hover {
-      @apply text-green-900
-        dark:text-green-200;
+      @apply text-brand-900
+        dark:text-brand-200;
     }
 
     &[role='button'] {
@@ -137,7 +137,8 @@ main {
     }
 
     li div:has(> pre) {
-      @apply my-1!;
+      @apply !
+        my-1;
     }
   }
 
@@ -156,7 +157,8 @@ main {
     }
 
     li div:has(> pre) {
-      @apply my-1!;
+      @apply !
+        my-1;
     }
   }
 

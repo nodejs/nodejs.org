@@ -63,7 +63,7 @@
 
   &:hover,
   &:focus-visible {
-    @apply bg-green-600
+    @apply bg-brand-600
       text-white;
   }
 }

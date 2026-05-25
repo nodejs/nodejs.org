@@ -23,8 +23,8 @@
         text-neutral-200;
 
       &[data-state='active'] {
-        @apply border-b-green-400
-          text-green-400;
+        @apply border-b-brand-400
+          text-brand-400;
       }
     }
 

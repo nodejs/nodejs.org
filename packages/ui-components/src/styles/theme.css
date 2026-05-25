@@ -12,15 +12,15 @@
   --container-12xl: 120rem;
   --breakpoint-ml: 896px;
   --breakpoint-3xl: 120rem;
-  --color-green-100: #edf2eb;
-  --color-green-200: #c5e5b4;
-  --color-green-300: #99cc7d;
-  --color-green-400: #84ba64;
-  --color-green-500: #5fa04e;
-  --color-green-600: #417e38;
-  --color-green-700: #2c682c;
-  --color-green-800: #2c682c;
-  --color-green-900: #1a3f1d;
+  --color-brand-100: #edf2eb;
+  --color-brand-200: #c5e5b4;
+  --color-brand-300: #99cc7d;
+  --color-brand-400: #84ba64;
+  --color-brand-500: #5fa04e;
+  --color-brand-600: #417e38;
+  --color-brand-700: #2c682c;
+  --color-brand-800: #2c682c;
+  --color-brand-900: #1a3f1d;
   --color-neutral-100: #f6f7f9;
   --color-neutral-200: #e9edf0;
   --color-neutral-300: #d9e1e4;
@@ -160,7 +160,7 @@
 @utility bg-gradient-glow-backdrop {
   background-image: radial-gradient(
     8em circle at calc(50%) 10px,
-    var(--color-green-400),
+    var(--color-brand-400),
     transparent 30%
   );
 }
