@@ -137,8 +137,7 @@ main {
     }
 
     li div:has(> pre) {
-      @apply !
-        my-1;
+      @apply my-1!;
     }
   }
 
@@ -157,8 +156,7 @@ main {
     }
 
     li div:has(> pre) {
-      @apply !
-        my-1;
+      @apply my-1!;
     }
   }
 
