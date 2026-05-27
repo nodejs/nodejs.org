@@ -26,7 +26,8 @@
     "@sentry/cloudflare": "^10.49.0",
     "@typescript/vfs": "^1.6.4",
     "twoslash": "^0.3.8",
-    "wrangler": "^4.77.0"
+    "wrangler": "^4.77.0",
+    "typescript": "catalog:"
   },
   "peerDependencies": {
     "next": "catalog:",
@@ -36,8 +37,7 @@
     "@cloudflare/workers-types": "^4.20260418.1",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
-    "cross-env": "catalog:",
-    "typescript": "catalog:"
+    "cross-env": "catalog:"
   },
   "engines": {
     "node": "24.x"
