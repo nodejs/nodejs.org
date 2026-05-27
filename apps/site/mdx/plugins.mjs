@@ -1,5 +1,6 @@
 'use strict';
 
+import { shikiOptions } from '#platform/mdx.mjs';
 import rehypeShikiji from '@node-core/rehype-shiki/plugin';
 import remarkHeadings from '@vcarl/remark-headings';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -7,35 +8,10 @@ import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import readingTime from 'remark-reading-time';
 
-import { createVfsTwoslasher } from './create-vfs-twoslasher.mjs';
 import remarkTableTitles from '../util/table';
 
-// TODO(@avivkeller): When available, use `OPEN_NEXT_CLOUDFLARE` environment
-// variable for detection instead of current method, which will enable better
-// tree-shaking.
-// Reference: https://github.com/nodejs/nodejs.org/pull/7896#issuecomment-3009480615
-const OPEN_NEXT_CLOUDFLARE = 'Cloudflare' in global;
-
 // Shiki is created out here to avoid an async rehype plugin
-const singletonShiki = await rehypeShikiji({
-  // We use the faster WASM engine on the server instead of the web-optimized version.
-  //
-  // Currently we fall back to the JavaScript RegEx engine
-  // on Cloudflare workers because `shiki/wasm` requires loading via
-  // `WebAssembly.instantiate` with custom imports, which Cloudflare doesn't support
-  // for security reasons.
-  wasm: !OPEN_NEXT_CLOUDFLARE,
-
-  twoslash: true,
-
-  // On Cloudflare Workers, the default filesystem-backed Twoslash cannot work
-  // because there is no real filesystem. Instead, we provide a custom twoslasher
-  // backed by an in-memory VFS pre-populated at build time with TypeScript
-  // lib declarations and @types/node.
-  twoslashOptions: OPEN_NEXT_CLOUDFLARE
-    ? { twoslasher: await createVfsTwoslasher() }
-    : undefined,
-});
+const singletonShiki = await rehypeShikiji(shikiOptions);
 
 /**
  * Provides all our Rehype Plugins that are used within MDX

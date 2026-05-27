@@ -1,25 +1,14 @@
 'use strict';
+
+import platform from '#platform/next.config.mjs';
 import createNextIntlPlugin from 'next-intl/plugin';
 
-import { OPEN_NEXT_CLOUDFLARE } from './next.constants.cloudflare.mjs';
 import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
-import { getImagesConfig } from './next.image.config.mjs';
 import { redirects, rewrites } from './next.rewrites.mjs';
-
-const getDeploymentId = async () => {
-  if (OPEN_NEXT_CLOUDFLARE) {
-    // If we're building for the Cloudflare deployment we want to set
-    // an appropriate deploymentId (needed for skew protection)
-    const openNextAdapter = await import('@opennextjs/cloudflare');
-
-    return openNextAdapter.getDeploymentId();
-  }
-
-  return undefined;
-};
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  ...platform,
   // Full Support of React 18 SSR and Streaming
   reactCompiler: true,
   // We don't want to redirect with trailing slashes
@@ -27,8 +16,6 @@ const nextConfig = {
   // We allow the BASE_PATH to be overridden in case that the Website
   // is being built on a subdirectory (e.g. /nodejs-website)
   basePath: BASE_PATH,
-  // Vercel/Next.js Image Optimization Settings
-  images: getImagesConfig(),
   serverExternalPackages: ['twoslash'],
   outputFileTracingIncludes: {
     // Twoslash needs TypeScript declarations to function, and, by default, Next.js
@@ -81,7 +68,6 @@ const nextConfig = {
     // Faster Development Servers with Turbopack
     turbopackFileSystemCacheForDev: true,
   },
-  deploymentId: await getDeploymentId(),
 };
 
 const withNextIntl = createNextIntlPlugin('./i18n.tsx');
