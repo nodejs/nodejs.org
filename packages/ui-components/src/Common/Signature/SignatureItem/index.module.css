@@ -7,8 +7,8 @@
 }
 
 .return {
-  @apply rounded-sm
-    bg-green-100
+  @apply bg-brand-100
+    rounded-sm
     px-4
     py-3
     dark:bg-neutral-900/40;

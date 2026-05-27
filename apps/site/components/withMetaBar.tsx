@@ -20,7 +20,7 @@ const WithMetaBar: FC = () => {
   const formatter = useFormatter();
   const lastUpdated = frontmatter.date
     ? // "frontmatter.date" is deterministic
-      // eslint-disable-next-line @eslint-react/purity
+
       formatter.dateTime(new Date(frontmatter.date), DEFAULT_DATE_FORMAT)
     : undefined;
   const readingTimeText = formatter.number(readingTime.minutes, {

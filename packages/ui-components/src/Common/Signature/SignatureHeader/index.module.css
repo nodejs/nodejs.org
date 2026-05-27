@@ -39,7 +39,7 @@
     break-all;
 
   a {
-    @apply text-green-700
-      dark:text-green-400;
+    @apply text-brand-700
+      dark:text-brand-400;
   }
 }

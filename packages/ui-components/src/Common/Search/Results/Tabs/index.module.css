@@ -29,9 +29,9 @@
 }
 
 .facetTabItemSelected {
-  @apply border-2
-    border-green-600
-    dark:border-green-400;
+  @apply border-brand-600
+    dark:border-brand-400
+    border-2;
 }
 
 .facetTabsList {
