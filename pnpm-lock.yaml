@@ -595,6 +595,9 @@ importers:
       twoslash:
         specifier: ^0.3.8
         version: 0.3.8(typescript@5.9.3)
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
       wrangler:
         specifier: ^4.77.0
         version: 4.77.0(@cloudflare/workers-types@4.20260422.1)
@@ -611,9 +614,6 @@ importers:
       cross-env:
         specifier: 'catalog:'
         version: 10.1.0
-      typescript:
-        specifier: 'catalog:'
-        version: 5.9.3
 
   platforms/default:
     dependencies:
