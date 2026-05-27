@@ -78,14 +78,9 @@ export const parseCompat = <
  */
 const createIcon = (
   IconModule: Record<string, ElementType>,
-  iconName?: string
+  iconName: string
 ) => {
-  if (!iconName) {
-    return undefined;
-  }
-
   const IconComponent = IconModule[iconName];
-
   return <IconComponent width={16} height={16} />;
 };
 
@@ -105,7 +100,9 @@ export const INSTALL_METHODS = installMethods.map(method => ({
   key: method.id,
   value: method.id as Types.InstallationMethod,
   label: method.name as IntlMessageKeys,
-  iconImage: createIcon(InstallMethodIcons, method.icon),
+  iconImage: method.icon
+    ? createIcon(InstallMethodIcons, method.icon)
+    : undefined,
   recommended: method.recommended,
   url: method.url,
   info: method.info as IntlMessageKeys,
