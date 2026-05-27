@@ -41,8 +41,8 @@ tsconfig.tsbuildinfo
 dist/
 
 # Cloudflare Build Output
-apps/site/.open-next
-apps/site/.wrangler
+.open-next
+.wrangler
 
 ## Playwright
 test-results

@@ -19,12 +19,10 @@ const cloudflareConfig = defineCloudflareConfig({
   enableCacheInterception: true,
 });
 
-const openNextConfig: OpenNextConfig = {
+export default {
   ...cloudflareConfig,
   buildCommand: 'pnpm build --webpack',
   cloudflare: {
     skewProtection: { enabled: true },
   },
-};
-
-export default openNextConfig;
+} as OpenNextConfig;

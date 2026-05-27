@@ -6,15 +6,7 @@ import baseConfig from '../../eslint.config.js';
 
 export default baseConfig.concat([
   {
-    ignores: [
-      'pages/en/blog/**/*.{md,mdx}/**',
-      'public',
-      'next-env.d.ts',
-      // The worker entrypoint is bundled by wrangler, not tsc. Its imports
-      // trigger a tsc crash (see tsconfig.json), so it is excluded from both
-      // type checking and ESLint's type-aware linting.
-      'cloudflare/worker-entrypoint.ts',
-    ],
+    ignores: ['pages/en/blog/**/*.{md,mdx}/**', 'public', 'next-env.d.ts'],
   },
 
   eslintReact.configs['recommended-typescript'],

@@ -15,8 +15,6 @@
   "scripts": {
     "compile": "turbo compile",
     "build": "turbo build",
-    "cloudflare:deploy": "turbo cloudflare:deploy",
-    "cloudflare:preview": "turbo cloudflare:preview",
     "deploy": "turbo deploy",
     "dev": "turbo dev",
     "format": "turbo //#prettier:fix prettier:fix lint:fix",
