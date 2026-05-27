@@ -11,7 +11,7 @@ export async function createVfsTwoslasher() {
   const { createTwoslasher } = await import('twoslash/core');
   const ts = (await import('typescript')).default;
   const fsMapJson = (
-    await import('../generated/twoslash-fsmap.json', { with: { type: 'json' } })
+    await import('./generated/twoslash-fsmap.json', { with: { type: 'json' } })
   ).default;
 
   const fsMap = new Map(Object.entries(fsMapJson));

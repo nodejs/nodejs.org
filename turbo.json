@@ -11,9 +11,6 @@
     "compile": {
       "dependsOn": ["^topo"]
     },
-    "build": {
-      "dependsOn": ["^topo"]
-    },
     "lint": {
       "dependsOn": ["^topo"]
     },

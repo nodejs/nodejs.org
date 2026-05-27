@@ -50,12 +50,12 @@ jobs:
         working-directory: apps/site
         run: node_modules/.bin/playwright install --with-deps
 
+      - name: Build OpenNext worker
+        run: pnpm --filter=@node-core/platform-cloudflare build:cloudflare
+
       - name: Run Playwright tests
-        working-directory: apps/site
+        working-directory: platforms/cloudflare
         run: node --run playwright
-        env:
-          PLAYWRIGHT_RUN_CLOUDFLARE_PREVIEW: true
-          PLAYWRIGHT_BASE_URL: http://127.0.0.1:8787
 
       - name: Upload Playwright test results
         if: always()

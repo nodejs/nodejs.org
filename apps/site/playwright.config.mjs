@@ -1,6 +1,5 @@
-import { defineConfig, devices, type Config } from '@playwright/test';
-
-import json from './package.json' with { type: 'json' };
+import platform from '#platform/playwright.config.mjs';
+import { defineConfig, devices } from '@playwright/test';
 
 const isCI = !!process.env.CI;
 
@@ -12,10 +11,11 @@ export default defineConfig({
   retries: isCI ? 2 : 0,
   workers: isCI ? 1 : undefined,
   reporter: isCI ? [['html'], ['github']] : [['html']],
-  ...getWebServerConfig(),
+  ...platform,
   use: {
     baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:3000',
     trace: 'on-first-retry',
+    ...platform.use,
   },
   projects: [
     {
@@ -32,22 +32,3 @@ export default defineConfig({
     },
   ],
 });
-
-function getWebServerConfig(): Pick<Config, 'webServer'> {
-  if (!json.scripts['cloudflare:preview']) {
-    throw new Error('cloudflare:preview script not defined');
-  }
-
-  if (process.env.PLAYWRIGHT_RUN_CLOUDFLARE_PREVIEW) {
-    return {
-      webServer: {
-        stdout: 'pipe',
-        command: '../../node_modules/.bin/turbo cloudflare:preview',
-        url: process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:3000',
-        timeout: 60_000 * 3,
-      },
-    };
-  }
-
-  return {};
-}

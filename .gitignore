@@ -15,7 +15,7 @@ apps/site/public/blog-data.json
 apps/site/next-env.d.ts
 
 # Generated Build Artifacts
-apps/site/generated
+platforms/cloudflare/generated
 
 # Test Runner
 junit.xml
@@ -44,8 +44,8 @@ tsconfig.tsbuildinfo
 dist/
 
 # Cloudflare Build Output
-apps/site/.open-next
-apps/site/.wrangler
+.open-next
+.wrangler
 
 ## Playwright
 test-results
