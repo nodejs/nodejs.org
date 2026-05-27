@@ -14,7 +14,7 @@ const FormattedTime: FC<FormattedTimeProps> = ({ date, format }) => {
   const formatter = useFormatter();
 
   // "date" is deterministic
-  // eslint-disable-next-line @eslint-react/purity
+
   const dateObject = new Date(date);
 
   return (

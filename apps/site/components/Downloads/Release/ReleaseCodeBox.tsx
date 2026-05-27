@@ -164,7 +164,7 @@ const ReleaseCodeBox: FC = () => {
       {/* Code display with skeleton loading */}
       <Skeleton loading={isLoading}>
         <CodeBox language={displayLanguage} className="min-h-[19rem]">
-          {/* eslint-disable-next-line @eslint-react/dom/no-dangerously-set-innerhtml */}
+          {/* eslint-disable-next-line @eslint-react/dom-no-dangerously-set-innerhtml */}
           <code dangerouslySetInnerHTML={{ __html: parsedSnippets }} />
         </CodeBox>
       </Skeleton>
