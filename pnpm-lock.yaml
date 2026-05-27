@@ -129,6 +129,9 @@ importers:
       '@types/react':
         specifier: 'catalog:'
         version: 19.2.14
+      '@typescript/vfs':
+        specifier: ^1.6.4
+        version: 1.6.4(typescript@5.9.3)
       '@vcarl/remark-headings':
         specifier: ~0.1.0
         version: 0.1.0

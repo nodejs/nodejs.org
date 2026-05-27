@@ -7,6 +7,7 @@ import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import readingTime from 'remark-reading-time';
 
+import { createVfsTwoslasher } from './create-vfs-twoslasher.mjs';
 import remarkTableTitles from '../util/table';
 
 // TODO(@avivkeller): When available, use `OPEN_NEXT_CLOUDFLARE` environment
@@ -25,8 +26,15 @@ const singletonShiki = await rehypeShikiji({
   // for security reasons.
   wasm: !OPEN_NEXT_CLOUDFLARE,
 
-  // TODO(@avivkeller): Find a way to enable Twoslash w/ a VFS on Cloudflare
-  twoslash: !OPEN_NEXT_CLOUDFLARE,
+  twoslash: true,
+
+  // On Cloudflare Workers, the default filesystem-backed Twoslash cannot work
+  // because there is no real filesystem. Instead, we provide a custom twoslasher
+  // backed by an in-memory VFS pre-populated at build time with TypeScript
+  // lib declarations and @types/node.
+  twoslashOptions: OPEN_NEXT_CLOUDFLARE
+    ? { twoslasher: await createVfsTwoslasher() }
+    : undefined,
 });
 
 /**
