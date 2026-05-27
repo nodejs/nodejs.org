@@ -32,7 +32,7 @@
     }
 
     &.active {
-      @apply bg-green-600;
+      @apply bg-brand-600;
 
       .label {
         @apply text-white;

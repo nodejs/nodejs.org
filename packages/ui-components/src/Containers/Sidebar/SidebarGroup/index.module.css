@@ -53,8 +53,8 @@
   }
 
   .subGroup[open] > .summary {
-    @apply text-green-600
-      dark:text-green-400;
+    @apply text-brand-600
+      dark:text-brand-400;
   }
 
   .subItemList {

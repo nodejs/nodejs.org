@@ -84,12 +84,12 @@
   }
 
   .text {
-    @apply text-neutral-800
-      data-highlighted:bg-green-500
+    @apply data-highlighted:bg-brand-500
+      dark:data-highlighted:bg-brand-600
+      text-neutral-800
       data-highlighted:text-white
       data-highlighted:outline-hidden
       dark:text-neutral-200
-      dark:data-highlighted:bg-green-600
       dark:data-highlighted:text-white;
   }
 
@@ -191,15 +191,15 @@
   }
 
   .text {
-    @apply block
+    @apply hover:bg-brand-500
+      dark:hover:bg-brand-600
+      block
       pl-4
       whitespace-normal
       text-neutral-800
-      hover:bg-green-500
       hover:text-white
       hover:outline-hidden
       dark:text-neutral-200
-      dark:hover:bg-green-600
       dark:hover:text-white;
 
     span {
