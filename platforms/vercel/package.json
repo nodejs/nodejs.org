@@ -22,11 +22,11 @@
   },
   "peerDependencies": {
     "next": "catalog:",
-    "react": "catalog:"
+    "react": "catalog:",
+    "cross-env": "catalog:"
   },
   "devDependencies": {
     "@types/react": "catalog:",
-    "cross-env": "catalog:",
     "typescript": "catalog:"
   },
   "engines": {

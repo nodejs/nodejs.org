@@ -9,7 +9,9 @@ import { getDeploymentId } from '@opennextjs/cloudflare';
 // asset reference and mangles at runtime.
 const imageLoaderFile = relative(
   process.cwd(),
-  require.resolve('@node-core/platform-cloudflare/image-loader.ts')
+  createRequire(import.meta.url).resolve(
+    '@node-core/platform-cloudflare/image-loader.ts'
+  )
 );
 
 /** @type {Partial<import('next').NextConfig>} */
