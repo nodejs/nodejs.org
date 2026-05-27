@@ -8,4 +8,4 @@ asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf install nodejs ${props.release.version}
 
 # Set Node.js as the global default:
-asdf set -u nodejs ${props.release.version}
+asdf global nodejs ${props.release.version}

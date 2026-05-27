@@ -86,10 +86,6 @@ const createIcon = (
 
   const IconComponent = IconModule[iconName];
 
-  if (!IconComponent) {
-    return undefined;
-  }
-
   return <IconComponent width={16} height={16} />;
 };
 
