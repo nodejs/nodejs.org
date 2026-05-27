@@ -9,7 +9,7 @@
     "directory": "platforms/vercel"
   },
   "scripts": {
-    "build": "cross-env NODE_OPTIONS=--conditions=vercel pnpm --filter=@node-core/website build"
+    "build:vercel": "cross-env NODE_OPTIONS=--conditions=vercel pnpm --filter=@node-core/website build"
   },
   "dependencies": {
     "@opentelemetry/api-logs": "~0.215.0",

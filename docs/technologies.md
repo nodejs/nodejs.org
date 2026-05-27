@@ -293,14 +293,14 @@ Benefits:
 
 #### Multiple Build Targets
 
-- **`pnpm build`**: Production build for Vercel
+- **`pnpm build`**: Production build for the default platform
 - **`pnpm deploy`**: Export build for legacy servers
 - **`pnpm dev`**: Development server
 
 #### Vercel Integration
 
 - Automatic deployments for branches (ignoring automated branches)
-- Custom install + ignore scripts ([see `vercel.json`](../apps/site/vercel.json))
+- Custom install + ignore scripts ([see `vercel.json`](../platforms/vercel/vercel.json))
 - Build-time dependencies must be in `dependencies`, not `devDependencies`
 - Sponsorship maintained by OpenJS Foundation
 

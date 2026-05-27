@@ -21,7 +21,13 @@
       ]
     },
     "build": {
-      "dependsOn": ["build:blog-data", "^build"],
+      "dependsOn": [
+        "build:blog-data",
+        "@node-core/platform-default#topo",
+        "@node-core/rehype-shiki#topo",
+        "@node-core/ui-components#topo",
+        "@node-core/website-i18n#topo"
+      ],
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
         "{app,components,layouts,pages,styles}/**/*.css",

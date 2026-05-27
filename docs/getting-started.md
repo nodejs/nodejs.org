@@ -108,7 +108,7 @@ This guide will help you set up your development environment and make your first
 ### Development Commands
 
 - `pnpm dev` - Start local development server
-- `pnpm build` - Build for production (Vercel deployments)
+- `pnpm build` - Build for production (default platform)
 - `pnpm deploy` - Build for export (Legacy server)
 - `pnpm start` - Start server with built content
 

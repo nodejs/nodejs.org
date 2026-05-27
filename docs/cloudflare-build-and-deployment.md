@@ -75,7 +75,8 @@ For more details, refer to the [Sentry Cloudflare guide](https://docs.sentry.io/
 
 ## Scripts
 
-Preview and deployment of the website targeting the Cloudflare network is implemented via the following two commands:
+Preview and deployment of the website targeting the Cloudflare network is implemented via the following commands:
 
-- `pnpm cloudflare:preview` builds the website using the OpenNext Cloudflare adapter and runs the website locally in a server simulating the Cloudflare hosting (using the [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/))
-- `pnpm cloudflare:deploy` builds the website using the OpenNext Cloudflare adapter and deploys the website to the Cloudflare network (using the [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/))
+- `pnpm --filter=@node-core/platform-cloudflare build:cloudflare` builds the website using the OpenNext Cloudflare adapter
+- `pnpm --filter=@node-core/platform-cloudflare dev` runs the website locally in a server simulating the Cloudflare hosting (using the [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/))
+- `pnpm --filter=@node-core/platform-cloudflare deploy` builds the website using the OpenNext Cloudflare adapter and deploys the website to the Cloudflare network (using the [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/))

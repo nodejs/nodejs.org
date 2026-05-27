@@ -12,8 +12,8 @@
     "directory": "platforms/cloudflare"
   },
   "scripts": {
-    "prebuild": "node ./scripts/twoslash-fsmap/index.mjs",
-    "build": "cross-env NODE_OPTIONS=--conditions=cloudflare pnpm --filter=@node-core/website exec opennextjs-cloudflare build --openNextConfigPath ../../platforms/cloudflare/open-next.config.ts --config ../../platforms/cloudflare/wrangler.jsonc",
+    "prebuild:cloudflare": "node ./scripts/twoslash-fsmap/index.mjs",
+    "build:cloudflare": "cross-env NODE_OPTIONS=--conditions=cloudflare pnpm --filter=@node-core/website exec opennextjs-cloudflare build --openNextConfigPath ../../platforms/cloudflare/open-next.config.ts --config ../../platforms/cloudflare/wrangler.jsonc",
     "predeploy": "node ./scripts/twoslash-fsmap/index.mjs",
     "deploy": "cross-env NODE_OPTIONS=--conditions=cloudflare pnpm --filter=@node-core/website exec opennextjs-cloudflare deploy --openNextConfigPath ../../platforms/cloudflare/open-next.config.ts --config ../../platforms/cloudflare/wrangler.jsonc",
     "predev": "node ./scripts/twoslash-fsmap/index.mjs",

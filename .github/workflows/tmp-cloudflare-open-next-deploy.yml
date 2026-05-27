@@ -57,8 +57,7 @@ jobs:
         run: node --run build:blog-data
 
       - name: Build open-next site
-        working-directory: platforms/cloudflare
-        run: node --run build
+        run: pnpm --filter=@node-core/platform-cloudflare build:cloudflare
 
       - name: Deploy open-next site
         working-directory: platforms/cloudflare
