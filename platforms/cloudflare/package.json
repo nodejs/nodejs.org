@@ -12,11 +12,8 @@
     "directory": "platforms/cloudflare"
   },
   "scripts": {
-    "prebuild:cloudflare": "node ./scripts/twoslash-fsmap/index.mjs",
     "build:cloudflare": "cross-env NODE_OPTIONS=--conditions=cloudflare pnpm --filter=@node-core/website exec opennextjs-cloudflare build --openNextConfigPath ../../platforms/cloudflare/open-next.config.ts --config ../../platforms/cloudflare/wrangler.jsonc",
-    "predeploy": "node ./scripts/twoslash-fsmap/index.mjs",
     "deploy": "cross-env NODE_OPTIONS=--conditions=cloudflare pnpm --filter=@node-core/website exec opennextjs-cloudflare deploy --openNextConfigPath ../../platforms/cloudflare/open-next.config.ts --config ../../platforms/cloudflare/wrangler.jsonc",
-    "predev": "node ./scripts/twoslash-fsmap/index.mjs",
     "dev": "pnpm --filter=@node-core/website exec wrangler dev --config ../../platforms/cloudflare/wrangler.jsonc",
     "playwright": "cross-env NODE_OPTIONS=--conditions=cloudflare pnpm --filter=@node-core/website playwright"
   },
@@ -24,8 +21,6 @@
     "@flarelabs-net/wrangler-build-time-fs-assets-polyfilling": "^0.0.1",
     "@opennextjs/cloudflare": "^1.19.3",
     "@sentry/cloudflare": "^10.49.0",
-    "@typescript/vfs": "^1.6.4",
-    "twoslash": "^0.3.8",
     "wrangler": "^4.77.0",
     "typescript": "catalog:"
   },

@@ -583,18 +583,12 @@ importers:
       '@sentry/cloudflare':
         specifier: ^10.49.0
         version: 10.49.0(@cloudflare/workers-types@4.20260422.1)
-      '@typescript/vfs':
-        specifier: ^1.6.4
-        version: 1.6.4(typescript@5.9.3)
       next:
         specifier: 'catalog:'
         version: 16.3.0-canary.30(@opentelemetry/api@1.9.1)(@playwright/test@1.59.1)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       react:
         specifier: 'catalog:'
         version: 19.2.6
-      twoslash:
-        specifier: ^0.3.8
-        version: 0.3.8(typescript@5.9.3)
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
