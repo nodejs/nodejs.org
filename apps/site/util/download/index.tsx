@@ -100,7 +100,9 @@ export const INSTALL_METHODS = installMethods.map(method => ({
   key: method.id,
   value: method.id as Types.InstallationMethod,
   label: method.name as IntlMessageKeys,
-  iconImage: createIcon(InstallMethodIcons, method.icon),
+  iconImage: method.icon
+    ? createIcon(InstallMethodIcons, method.icon)
+    : undefined,
   recommended: method.recommended,
   url: method.url,
   info: method.info as IntlMessageKeys,
