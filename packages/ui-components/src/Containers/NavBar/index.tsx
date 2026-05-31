@@ -1,6 +1,7 @@
+'use client';
+
 import Hamburger from '@heroicons/react/24/solid/Bars3Icon';
 import XMark from '@heroicons/react/24/solid/XMarkIcon';
-import * as Label from '@radix-ui/react-label';
 import classNames from 'classnames';
 import { useState } from 'react';
 
@@ -20,6 +21,8 @@ const navInteractionIcons = {
   show: <Hamburger className={styles.navInteractionIcon} />,
   close: <XMark className={styles.navInteractionIcon} />,
 };
+
+const navMenuId = 'navbar-menu';
 
 type NavbarProps = {
   navItems?: Array<{
@@ -55,25 +58,25 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
             <Logo />
           </Component>
 
-          <Label.Root
-            className={styles.sidebarItemTogglerLabel}
-            htmlFor="sidebarItemToggler"
-            role="button"
+          <button
+            className={styles.sidebarItemTogglerButton}
+            type="button"
             aria-label={sidebarItemTogglerAriaLabel}
+            aria-controls={navMenuId}
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen(isOpen => !isOpen)}
           >
             {navInteractionIcons[isMenuOpen ? 'close' : 'show']}
-          </Label.Root>
+          </button>
         </div>
 
-        <input
-          className={classNames('peer', styles.sidebarItemToggler)}
-          id="sidebarItemToggler"
-          type="checkbox"
-          onChange={e => setIsMenuOpen(() => e.target.checked)}
-          aria-label={sidebarItemTogglerAriaLabel}
-          tabIndex={-1}
-        />
-        <div className={classNames(styles.main, `hidden peer-checked:flex`)}>
+        <div
+          id={navMenuId}
+          className={classNames(
+            styles.main,
+            isMenuOpen ? 'flex' : 'hidden xl:flex'
+          )}
+        >
           {navItems && navItems.length > 0 && (
             <div className={styles.navItems}>
               {navItems.map(({ text, link, target }) => (

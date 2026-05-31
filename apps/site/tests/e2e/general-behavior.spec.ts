@@ -9,7 +9,7 @@ const locators = {
   // Navigation elements
   mobileMenuToggleName:
     englishLocale.components.containers.navBar.controls.toggle,
-  navLinksLocator: `[aria-label="${englishLocale.components.containers.navBar.controls.toggle}"] + div`,
+  navLinksLocator: '#navbar-menu',
   // Global UI controls
   languageDropdownName: englishLocale.components.common.languageDropdown.label,
   themeToggleName: englishLocale.components.header.buttons.theme,
@@ -160,6 +160,14 @@ test.describe('Node.js Website', () => {
 
       // Toggle menu closed and verify it's hidden
       await mobileToggle.click();
+      await expect(navLinks.first()).not.toBeVisible();
+
+      // Toggle menu with keyboard and verify it's accessible
+      await mobileToggle.focus();
+      await page.keyboard.press('Enter');
+      await expect(navLinks.first()).toBeVisible();
+
+      await page.keyboard.press('Space');
       await expect(navLinks.first()).not.toBeVisible();
     });
   });

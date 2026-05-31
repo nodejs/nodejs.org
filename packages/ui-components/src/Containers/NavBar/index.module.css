@@ -38,25 +38,22 @@
           flex-1;
       }
 
-      .sidebarItemTogglerLabel {
-        @apply block
+      .sidebarItemTogglerButton {
+        @apply focus-visible:ring-brand-500
+          block
           cursor-pointer
+          appearance-none
+          border-0
+          bg-transparent
+          p-0
+          focus-visible:ring-2
+          focus-visible:outline-none
           xl:hidden;
 
         .navInteractionIcon {
           @apply size-6;
         }
       }
-    }
-
-    .sidebarItemToggler {
-      @apply absolute
-        right-4
-        -z-10
-        size-6
-        -translate-y-[200%]
-        appearance-none
-        opacity-0;
     }
 
     .main {
