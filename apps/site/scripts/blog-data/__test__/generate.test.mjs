@@ -13,6 +13,7 @@ mock.module('node:fs', {
       readable.push(`---\n`);
       file.frontMatterContent.forEach(line => readable.push(`${line}\n`));
       readable.push(`---\n`);
+      file.content?.forEach(line => readable.push(`${line}\n`));
       readable.push(null);
       readable.close = () => {};
       return readable;
@@ -59,6 +60,125 @@ describe('generateBlogData', () => {
     assert.equal(post.title, 'POST 1');
     assert.deepEqual(post.date, new Date('2020-01-01T00:00:00.000Z'));
     assert.equal(post.author, 'author');
+  });
+
+  it('should generate a description from the first content paragraph', async () => {
+    files = [
+      {
+        path: 'pages/en/blog/post1.md',
+        frontMatterContent: [
+          `date: '2020-01-01T00:00:00.000Z'`,
+          `title: POST 1`,
+          `author: author`,
+        ],
+        content: [
+          '',
+          '## Summary',
+          '',
+          'Read the [Node.js release notes](https://nodejs.org/) for',
+          '**runtime** updates and `security` fixes.',
+          '',
+          'This is the second paragraph.',
+        ],
+      },
+    ];
+
+    const blogData = await generateBlogData();
+
+    assert.equal(
+      blogData.posts[0].description,
+      'Read the Node.js release notes for runtime updates and security fixes.'
+    );
+  });
+
+  it('should use only the first list item for description previews', async () => {
+    files = [
+      {
+        path: 'pages/en/blog/post1.md',
+        frontMatterContent: [
+          `date: '2020-01-01T00:00:00.000Z'`,
+          `title: POST 1`,
+          `author: author`,
+        ],
+        content: [
+          '',
+          '### Notable Changes',
+          '',
+          '- \\[[`abc123def4`](https://github.com/nodejs/node/commit/abc123def4)] - **crypto**: update `randomUUID()` [#12345](https://github.com/nodejs/node/pull/12345)',
+          '- **fs**: this should not be included',
+          '',
+        ],
+      },
+    ];
+
+    const blogData = await generateBlogData();
+
+    assert.equal(
+      blogData.posts[0].description,
+      'crypto: update randomUUID() #12345'
+    );
+  });
+
+  it('should skip category-only list items for description previews', async () => {
+    files = [
+      {
+        path: 'pages/en/blog/post1.md',
+        frontMatterContent: [
+          `date: '2020-01-01T00:00:00.000Z'`,
+          `title: POST 1`,
+          `author: author`,
+        ],
+        content: [
+          '',
+          '### Notable Changes',
+          '',
+          '- **console**:',
+          '  - \\[[`abc123def4`](https://github.com/nodejs/node/commit/abc123def4)] - **console**: add color mode [#12345](https://github.com/nodejs/node/pull/12345)',
+          '- **fs**',
+          '  - **fs**: this should not be included',
+          '',
+        ],
+      },
+    ];
+
+    const blogData = await generateBlogData();
+
+    assert.equal(
+      blogData.posts[0].description,
+      'console: add color mode #12345'
+    );
+  });
+
+  it('should ignore markup blocks when generating description previews', async () => {
+    files = [
+      {
+        path: 'pages/en/blog/post1.md',
+        frontMatterContent: [
+          `date: '2020-01-01T00:00:00.000Z'`,
+          `title: POST 1`,
+          `author: author`,
+        ],
+        content: [
+          '',
+          '<div className="note">',
+          'This lowercase HTML block should be ignored.',
+          '</div>',
+          '<AlertBox type="warning">',
+          'This JSX block should be ignored too.',
+          '</AlertBox>',
+          '<BlogImage />',
+          '',
+          'This is the first real paragraph.',
+        ],
+      },
+    ];
+
+    const blogData = await generateBlogData();
+
+    assert.equal(
+      blogData.posts[0].description,
+      'This is the first real paragraph.'
+    );
   });
 
   it('should collect the data from a single md file if only one is found', async () => {

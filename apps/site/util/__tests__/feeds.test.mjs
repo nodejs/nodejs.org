@@ -16,6 +16,7 @@ describe('generateWebsiteFeeds', () => {
           slug: '/post-1',
           title: 'Post 1',
           date: '2025-04-18',
+          description: 'This is the first paragraph.',
           categories: ['all'],
         },
       ],
@@ -40,6 +41,7 @@ describe('generateWebsiteFeeds', () => {
         guid: `${blogData.posts[0].slug}?${date.getTime()}`,
         date,
         link: `${base}${blogData.posts[0].slug}`,
+        description: blogData.posts[0].description,
       },
     ]);
   });

@@ -8,6 +8,7 @@ export type BlogPost = {
   author: string;
   username: string;
   date: string;
+  description?: string;
   categories: Array<BlogCategory>;
   slug: string;
 };

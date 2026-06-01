@@ -11,14 +11,71 @@ import { getMarkdownFiles } from '#site/next.helpers.mjs';
 // gets the current blog path based on local module path
 const blogPath = join(process.cwd(), 'pages/en/blog');
 
+const escapeRegExp = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+const getMarkupBlockTag = line => {
+  const match = /^<([A-Za-z][\w.-]*)(?:\s|>|\/>|$)/.exec(line);
+
+  if (!match) {
+    return undefined;
+  }
+
+  const tag = match[1];
+  const closingTag = new RegExp(`</${escapeRegExp(tag)}>\\s*$`);
+
+  return {
+    tag,
+    isClosed: /\/>\s*$/.test(line) || closingTag.test(line),
+  };
+};
+
+const isNonParagraphLine = line =>
+  line.startsWith('#') ||
+  line.startsWith('![') ||
+  line.startsWith('```') ||
+  line.startsWith('~~~') ||
+  line.startsWith('---') ||
+  line.startsWith('</') ||
+  /^\[[^\]]+\]:/.test(line) ||
+  /^<!--.*-->$/.test(line);
+
+const listItemMarker = /^\s*([-*]|\d+\.)\s+/;
+
+const stripMarkdownMarkup = paragraph =>
+  paragraph
+    .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\[([^\]]+)\]\[[^\]]*\]/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/__([^_]+)__/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1')
+    .replace(/_([^_]+)_/g, '$1')
+    .replace(/\\([[\]_*`])/g, '$1')
+    .replace(/^\[[a-f0-9]{7,12}\]\s+-\s+/i, '')
+    .replace(/<\/?[^>]+>/g, '')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+const isCategoryOnlyListItem = item => {
+  const strippedItem = stripMarkdownMarkup(item);
+
+  return (
+    /^(\*\*[^*]+\*\*|`[^`]+`):?$/.test(item) ||
+    /^[\w ./-]+:$/.test(strippedItem)
+  );
+};
+
 /**
  * This method parses the source (raw) Markdown content into Frontmatter
  * and returns basic information for blog posts
  *
  * @param {string} filename the filename related to the blogpost
  * @param {string} source the source markdown content of the blog post
+ * @param {string} paragraph the first paragraph of the blog post
  */
-const getFrontMatter = (filename, source) => {
+const getFrontMatter = (filename, source, paragraph) => {
   const {
     title = 'Untitled',
     author = 'The Node.js Project',
@@ -42,6 +99,7 @@ const getFrontMatter = (filename, source) => {
     author,
     username,
     date: new Date(date),
+    description: stripMarkdownMarkup(paragraph) || undefined,
     categories,
     slug,
   };
@@ -76,28 +134,93 @@ const generateBlogData = async () => {
 
           let rawFrontmatter = '';
           let frontmatterSeparatorsEncountered = 0;
+          let ignoredMarkupTag;
+          const paragraphLines = [];
 
           // We read line by line
           _readLine.on('line', line => {
-            rawFrontmatter += `${line}\n`;
-
             // We observe the frontmatter separators
-            if (line === '---') {
-              frontmatterSeparatorsEncountered++;
+            if (frontmatterSeparatorsEncountered < 2) {
+              rawFrontmatter += `${line}\n`;
+
+              if (line === '---') {
+                frontmatterSeparatorsEncountered++;
+              }
+
+              return;
             }
 
-            // Once we have two separators we close the readLine and the stream
-            if (frontmatterSeparatorsEncountered === 2) {
+            const trimmedLine = line.trim();
+
+            if (ignoredMarkupTag) {
+              const closingTag = new RegExp(
+                `</${escapeRegExp(ignoredMarkupTag)}>\\s*$`
+              );
+
+              if (closingTag.test(trimmedLine)) {
+                ignoredMarkupTag = undefined;
+              }
+
+              return;
+            }
+
+            if (!trimmedLine) {
+              if (paragraphLines.length > 0) {
+                _readLine.close();
+                _stream.close();
+              }
+
+              return;
+            }
+
+            const markupBlockTag = getMarkupBlockTag(trimmedLine);
+
+            if (markupBlockTag) {
+              if (!markupBlockTag.isClosed) {
+                ignoredMarkupTag = markupBlockTag.tag;
+              }
+
+              return;
+            }
+
+            if (listItemMarker.test(line)) {
+              if (paragraphLines.length === 0) {
+                const listItem = line.replace(listItemMarker, '').trim();
+
+                if (isCategoryOnlyListItem(listItem)) {
+                  return;
+                }
+
+                paragraphLines.push(listItem);
+              }
+
               _readLine.close();
               _stream.close();
+
+              return;
             }
+
+            if (isNonParagraphLine(trimmedLine)) {
+              if (paragraphLines.length > 0) {
+                _readLine.close();
+                _stream.close();
+              }
+
+              return;
+            }
+
+            paragraphLines.push(trimmedLine);
           });
 
           // Then we parse gray-matter on the frontmatter
-          // This allows us to only read the frontmatter part of each file
-          // and optimise the read-process as we have thousands of markdown files
+          // This allows us to read only the frontmatter and the first useful
+          // preview line instead of loading every blog post in full.
           _readLine.on('close', () => {
-            const frontMatterData = getFrontMatter(filename, rawFrontmatter);
+            const frontMatterData = getFrontMatter(
+              filename,
+              rawFrontmatter,
+              paragraphLines.join(' ')
+            );
 
             frontMatterData.categories.forEach(category => {
               // we add the category to the categories set

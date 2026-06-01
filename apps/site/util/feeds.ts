@@ -47,6 +47,7 @@ export const generateWebsiteFeeds = ({ posts }: BlogPostsRSC) => {
             title: post.title,
             date,
             link: `${canonicalUrl}${post.slug}`,
+            ...(post.description && { description: post.description }),
             guid:
               time > guidTimestampStartDate
                 ? `${post.slug}?${date.getTime()}`
