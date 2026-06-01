@@ -21,7 +21,9 @@ const Signature: FC<PropsWithChildren<SignatureProps>> = ({
   title,
   children,
 }) => {
-  if (title) {
+  // A Signature without its own name or type is the grouping container, with
+  // an optional title. Everything else renders as an individual item.
+  if (!name && !type) {
     return <SignatureRoot title={title}>{children}</SignatureRoot>;
   }
 

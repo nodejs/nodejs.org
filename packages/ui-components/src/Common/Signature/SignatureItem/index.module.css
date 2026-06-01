@@ -14,6 +14,20 @@
     dark:bg-neutral-900/40;
 }
 
+/*
+ * A top-level return (not nested inside a `.children` group) attaches to the
+ * items above it as a full-bleed footer: it bleeds past the container padding
+ * and is separated by a divider rather than floating on its own.
+ */
+.return:not(:first-child, .children .return) {
+  @apply -mx-4
+    -mb-3
+    rounded-t-none
+    border-t
+    border-neutral-200
+    dark:border-neutral-900;
+}
+
 .children {
   @apply relative
     flex

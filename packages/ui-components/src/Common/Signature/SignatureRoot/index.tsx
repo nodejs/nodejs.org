@@ -14,10 +14,15 @@ const SignatureRoot: FC<PropsWithChildren<SignatureRootProps>> = ({
   const titleId = useId();
 
   return (
-    <section className={styles.container} aria-labelledby={titleId}>
-      <div className={styles.title} id={titleId}>
-        {title}
-      </div>
+    <section
+      className={styles.container}
+      aria-labelledby={title ? titleId : undefined}
+    >
+      {title && (
+        <div className={styles.title} id={titleId}>
+          {title}
+        </div>
+      )}
       <div className={styles.root}>{children}</div>
     </section>
   );
