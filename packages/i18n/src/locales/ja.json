@@ -296,7 +296,7 @@
           "nvm": "\"nvm\"はクロスプラットフォームに対応したNode.jsのバージョンマネージャーです。",
           "fnm": "\"fnm\"はクロスプラットフォームに対応したNode.jsのバージョンマネージャーです。",
           "brew": "HomebrewはmacOS用およびLinux用のパッケージマネージャーです。",
-          "choco": "ChocolateyはWIndows用のパッケージマネージャーです。",
+          "choco": "ChocolateyはWindows用のパッケージマネージャーです。",
           "docker": "Dockerはコンテナー化に関するプラットフォームです。",
           "n": "\"n\"はクロスプラットフォームに対応したNode.jsのバージョンマネージャーです。",
           "volta": "\"Volta\"はクロスプラットフォームに対応したNode.jsのバージョンマネージャーです。"
