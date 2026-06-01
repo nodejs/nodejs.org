@@ -64,4 +64,39 @@ describe('rehypeShikiji', async () => {
     (await rehypeShikiji())(mockTree);
     assert.ok(parent.children.some(child => child.tagName === 'CodeTabs'));
   });
+
+  it('splits adjacent CodeTabs when a language repeats', async () => {
+    const createCodeBlock = language => ({
+      tagName: 'pre',
+      children: [
+        {
+          tagName: 'code',
+          data: { meta: `displayName="${language}"` },
+          properties: { className: [`language-${language}`] },
+        },
+      ],
+    });
+
+    const parent = {
+      children: [
+        createCodeBlock('cjs'),
+        createCodeBlock('esm'),
+        createCodeBlock('cjs'),
+        createCodeBlock('esm'),
+      ],
+    };
+
+    mockVisit.mock.mockImplementation((tree, selector, visitor) => {
+      if (selector === 'element') {
+        visitor(parent.children[0], 0, parent);
+      }
+    });
+
+    (await rehypeShikiji())(mockTree);
+
+    assert.equal(parent.children[0].tagName, 'CodeTabs');
+    assert.equal(parent.children[0].children.length, 2);
+    assert.equal(parent.children[1].tagName, 'pre');
+    assert.equal(parent.children[2].tagName, 'pre');
+  });
 });

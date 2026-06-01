@@ -53,6 +53,17 @@ function isCodeBlock(node) {
   );
 }
 
+const getCodeLanguage = codeElement => {
+  if (!codeElement.properties.className?.length) {
+    return 'text';
+  }
+
+  const className = codeElement.properties.className.join(' ');
+  const matches = className.match(/language-(?<language>.*)/);
+
+  return matches?.groups.language ?? 'text';
+};
+
 /**
  * @param {import('#rs/index.mjs').HighlighterOptions & { highlighter: import('#rs/highlighter.mjs').SyntaxHighlighter }} options
  */
@@ -72,14 +83,13 @@ export default async function rehypeShikiji(options) {
       while (isCodeBlock(parent?.children[currentIndex])) {
         const codeElement = parent?.children[currentIndex].children[0];
         const meta = parseMeta(codeElement.data?.meta);
+        const language = getCodeLanguage(codeElement);
 
-        // We should get the language name from the class name
-        if (codeElement.properties.className?.length) {
-          const className = codeElement.properties.className.join(' ');
-          const matches = className.match(/language-(?<language>.*)/);
-
-          languages.push(matches?.groups.language ?? 'text');
+        if (languages.includes(language)) {
+          break;
         }
+
+        languages.push(language);
 
         // Map the display names of each variant for the CodeTab
         displayNames.push(meta.displayName?.replaceAll('|', '') ?? '');
