@@ -3,6 +3,7 @@ import { describe, it } from 'node:test';
 
 import {
   parseCompat,
+  availableItems,
   nextItem,
   OPERATING_SYSTEMS,
   INSTALL_METHODS,
@@ -145,6 +146,19 @@ describe('nextItem', () => {
   });
 });
 
+describe('availableItems', () => {
+  it('should filter disabled items out of dropdown options', () => {
+    const items = [
+      { value: 'invalid', disabled: true },
+      { value: 'valid', disabled: false },
+    ];
+
+    assert.deepEqual(availableItems(items), [
+      { value: 'valid', disabled: false },
+    ]);
+  });
+});
+
 describe('INSTALL_METHODS', () => {
   it('should create icons only when an icon is configured', () => {
     const nvmMethod = INSTALL_METHODS.find(method => method.value === 'NVM');
@@ -152,5 +166,19 @@ describe('INSTALL_METHODS', () => {
 
     assert.ok(nvmMethod?.iconImage);
     assert.equal(asdfMethod?.iconImage, undefined);
+  });
+
+  it('should recommend nvm on AIX', () => {
+    const aixMethods = availableItems(
+      parseCompat(INSTALL_METHODS, {
+        os: 'AIX',
+        installMethod: '',
+        platform: 'ppc64',
+        version: 'v24.0.0',
+        release: { status: 'LTS' },
+      })
+    );
+
+    assert.ok(aixMethods.some(method => method.value === 'NVM'));
   });
 });

@@ -5,7 +5,12 @@ import { useTranslations } from 'next-intl';
 import { use, useEffect, useMemo } from 'react';
 
 import { ReleaseContext } from '#site/providers/releaseProvider';
-import { nextItem, PACKAGE_MANAGERS, parseCompat } from '#site/util/download';
+import {
+  availableItems,
+  nextItem,
+  PACKAGE_MANAGERS,
+  parseCompat,
+} from '#site/util/download';
 
 import type { PackageManager } from '#site/types/release';
 import type { FC } from 'react';
@@ -16,7 +21,7 @@ const PackageManagerDropdown: FC = () => {
 
   // We parse the compatibility of the dropdown items
   const parsedPackageManagers = useMemo(
-    () => parseCompat(PACKAGE_MANAGERS, release),
+    () => availableItems(parseCompat(PACKAGE_MANAGERS, release)),
     // We only want to react on the change of the Version
     // eslint-disable-next-line @eslint-react/exhaustive-deps
     [release.version]

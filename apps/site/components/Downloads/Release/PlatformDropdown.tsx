@@ -6,7 +6,12 @@ import { useEffect, use, useMemo, useState } from 'react';
 
 import useClientContext from '#site/hooks/useClientContext';
 import { ReleaseContext } from '#site/providers/releaseProvider';
-import { PLATFORMS, nextItem, parseCompat } from '#site/util/download';
+import {
+  availableItems,
+  PLATFORMS,
+  nextItem,
+  parseCompat,
+} from '#site/util/download';
 import { getUserPlatform } from '#site/util/userAgent';
 
 import type { Platform } from '#site/types/userAgent';
@@ -48,7 +53,7 @@ const PlatformDropdown: FC = () => {
       // We only want to parse the compatibility when the OS has finished loading
       // Otherwise, we would be parsing the compatibility of an empty array
       release.os !== 'LOADING'
-        ? parseCompat(PLATFORMS[release.os], release)
+        ? availableItems(parseCompat(PLATFORMS[release.os], release))
         : [],
     // We only want to react on the change of the OS, Platform, and Version
     // eslint-disable-next-line @eslint-react/exhaustive-deps

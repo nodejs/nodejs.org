@@ -73,6 +73,13 @@ export const parseCompat = <
   }));
 };
 
+export const availableItems = <
+  K extends string,
+  T extends DownloadDropdownItem<K>,
+>(
+  items: Array<T>
+): Array<T> => items.filter(({ disabled }) => !disabled);
+
 /**
  * Creates an icon element for a component
  */

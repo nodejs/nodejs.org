@@ -5,7 +5,12 @@ import { useTranslations } from 'next-intl';
 import { use, useEffect, useMemo } from 'react';
 
 import { ReleaseContext } from '#site/providers/releaseProvider';
-import { nextItem, INSTALL_METHODS, parseCompat } from '#site/util/download';
+import {
+  availableItems,
+  nextItem,
+  INSTALL_METHODS,
+  parseCompat,
+} from '#site/util/download';
 
 import type { InstallationMethod } from '#site/types/release';
 import type { FC } from 'react';
@@ -16,7 +21,7 @@ const InstallationMethodDropdown: FC = () => {
 
   // We parse the compatibility of the dropdown items
   const parsedInstallMethods = useMemo(
-    () => parseCompat(INSTALL_METHODS, release),
+    () => availableItems(parseCompat(INSTALL_METHODS, release)),
     // We only want to react on the change of the OS and Version
     // eslint-disable-next-line @eslint-react/exhaustive-deps
     [release.os, release.version]
@@ -25,16 +30,17 @@ const InstallationMethodDropdown: FC = () => {
   // We group Platforms on the Platform Dropdown to provide the User
   // understanding of what is recommended/official and what is not.
   const grouppedMethods = useMemo(
-    () => [
-      {
-        label: t('layouts.download.dropdown.platformGroups.official'),
-        items: parsedInstallMethods.filter(({ recommended }) => recommended),
-      },
-      {
-        label: t('layouts.download.dropdown.platformGroups.unofficial'),
-        items: parsedInstallMethods.filter(({ recommended }) => !recommended),
-      },
-    ],
+    () =>
+      [
+        {
+          label: t('layouts.download.dropdown.platformGroups.official'),
+          items: parsedInstallMethods.filter(({ recommended }) => recommended),
+        },
+        {
+          label: t('layouts.download.dropdown.platformGroups.unofficial'),
+          items: parsedInstallMethods.filter(({ recommended }) => !recommended),
+        },
+      ].filter(({ items }) => items.length > 0),
     // We only want to react on the change of the parsedPlatforms
     // eslint-disable-next-line @eslint-react/exhaustive-deps
     [parsedInstallMethods]
@@ -46,10 +52,11 @@ const InstallationMethodDropdown: FC = () => {
     // `detectOS` has finished running and decided what platform we are running on.
     if (release.os !== 'LOADING' && release.installMethod === '') {
       const installationMethod =
-        // Sets either the utmost recommended platform or the first non-disabled one
-        // Note that the first item of groupped platforms is always the recommended one
-        nextItem<InstallationMethod | ''>('', grouppedMethods[0].items) ||
-        nextItem<InstallationMethod | ''>('', parsedInstallMethods);
+        // Sets either the utmost recommended method or the first available one
+        nextItem<InstallationMethod | ''>(
+          '',
+          grouppedMethods[0]?.items ?? []
+        ) || nextItem<InstallationMethod | ''>('', parsedInstallMethods);
 
       // This will never return an empty string as there should always be an item
       // when the OS has finished loading for a given installation method

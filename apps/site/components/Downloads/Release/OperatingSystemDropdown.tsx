@@ -6,7 +6,12 @@ import { use, useEffect, useMemo } from 'react';
 
 import useClientContext from '#site/hooks/useClientContext';
 import { ReleaseContext } from '#site/providers/releaseProvider';
-import { nextItem, OPERATING_SYSTEMS, parseCompat } from '#site/util/download';
+import {
+  availableItems,
+  nextItem,
+  OPERATING_SYSTEMS,
+  parseCompat,
+} from '#site/util/download';
 
 import type { OperatingSystem } from '#site/types/userAgent';
 import type { FC } from 'react';
@@ -30,7 +35,7 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = () => {
 
   // We parse the compatibility of the dropdown items
   const parsedOperatingSystems = useMemo(
-    () => parseCompat(OPERATING_SYSTEMS, release),
+    () => availableItems(parseCompat(OPERATING_SYSTEMS, release)),
     // We only want to react on the change of the Install Method and Version
     // eslint-disable-next-line @eslint-react/exhaustive-deps
     [release.installMethod, release.version]
