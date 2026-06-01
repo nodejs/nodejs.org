@@ -208,7 +208,7 @@
       "initErrorChat": "チャットサービスを開始できません",
       "chatButtonLabel": "AIの情報を確認する",
       "searchButtonLabel": "検索",
-      "poweredBy": "Powered by",
+      "poweredBy": "提供元",
       "suggestionOne": "Node.jsをインストールするには？",
       "suggestionTwo": "HTTPサーバーを作成するには？",
       "suggestionThree": "Node.jsのバージョンアップ",
