@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "husky": "9.1.7",
-    "lint-staged": "16.4.0",
+    "lint-staged": "17.0.5",
     "turbo": "2.9.14"
   },
   "devDependencies": {
@@ -44,14 +44,14 @@
     "@reporters/github": "^1.13.1",
     "@testing-library/react": "~16.3.2",
     "cross-env": "^10.1.0",
-    "eslint": "~10.2.1",
+    "eslint": "~10.4.0",
     "eslint-import-resolver-typescript": "~4.4.4",
     "eslint-plugin-import-x": "~4.16.2",
     "globals": "^17.5.0",
     "prettier": "3.8.3",
     "prettier-plugin-tailwindcss": "0.8.0",
     "typescript": "catalog:",
-    "typescript-eslint": "~8.59.1"
+    "typescript-eslint": "~8.60.0"
   },
   "packageManager": "pnpm@10.33.2",
   "devEngines": {
