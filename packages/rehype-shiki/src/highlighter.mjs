@@ -1,4 +1,4 @@
-import { createHighlighterCoreSync } from '@shikijs/core';
+import { createHighlighterCoreSync, isSpecialLang } from '@shikijs/core';
 import shikiNordTheme from 'shiki/themes/nord.mjs';
 
 const DEFAULT_THEME = {
@@ -9,6 +9,8 @@ const DEFAULT_THEME = {
   ...shikiNordTheme,
 };
 
+const FALLBACK_LANGUAGE = 'text';
+
 /**
  * @template {{ name: string; aliases?: string[] }} T
  * @param {string} language
@@ -17,7 +19,6 @@ const DEFAULT_THEME = {
  */
 export const getLanguageByName = (language, langs) => {
   const normalized = language.toLowerCase();
-
   return langs.find(
     ({ name, aliases }) =>
       name.toLowerCase() === normalized || aliases?.includes(normalized)
@@ -27,6 +28,7 @@ export const getLanguageByName = (language, langs) => {
 /**
  * @typedef {Object} SyntaxHighlighter
  * @property {import('@shikijs/core').HighlighterCore} shiki - The underlying shiki core instance.
+ * @property {(languageId?: string) => string} resolveLanguage - Resolves a language id to a loaded language, falling back to plain text.
  * @property {(code: string, lang: string, meta?: Record<string, any>) => string} highlightToHtml - Highlights code and returns inner HTML of the <code> tag.
  * @property {(code: string, lang: string, meta?: Record<string, any>) => any} highlightToHast - Highlights code and returns a HAST tree.
  */
@@ -44,10 +46,33 @@ const createHighlighter = ({ coreOptions = {}, highlighterOptions = {} }) => {
     themes: [DEFAULT_THEME],
     ...coreOptions,
   };
-
   const shiki = createHighlighterCoreSync(options);
-
   const theme = options.themes[0];
+
+  const loadedLanguages = new Set(
+    shiki.getLoadedLanguages().map(lang => lang.toLowerCase())
+  );
+
+  /**
+   * Resolves a language id to one this highlighter can handle.
+   * Falls back to plain text for unknown/unloaded languages so
+   * highlighting never throws on unrecognized code fences.
+   *
+   * @param {string} [languageId]
+   * @returns {string}
+   */
+  const resolveLanguage = languageId => {
+    const normalized = languageId?.toLowerCase();
+
+    if (
+      normalized &&
+      (isSpecialLang(normalized) || loadedLanguages.has(normalized))
+    ) {
+      return languageId;
+    }
+
+    return FALLBACK_LANGUAGE;
+  };
 
   /**
    * Highlights code and returns the inner HTML inside the <code> tag
@@ -59,7 +84,12 @@ const createHighlighter = ({ coreOptions = {}, highlighterOptions = {} }) => {
    */
   const highlightToHtml = (code, lang, meta = {}) =>
     shiki
-      .codeToHtml(code, { lang, theme, meta, ...highlighterOptions })
+      .codeToHtml(code, {
+        lang: resolveLanguage(lang),
+        theme,
+        meta,
+        ...highlighterOptions,
+      })
       // Shiki will always return the Highlighted code encapsulated in a <pre> and <code> tag
       // since our own CodeBox component handles the <code> tag, we just want to extract
       // the inner highlighted code to the CodeBox
@@ -73,10 +103,16 @@ const createHighlighter = ({ coreOptions = {}, highlighterOptions = {} }) => {
    * @param {Record<string, any>} meta - Metadata
    */
   const highlightToHast = (code, lang, meta = {}) =>
-    shiki.codeToHast(code, { lang, theme, meta, ...highlighterOptions });
+    shiki.codeToHast(code, {
+      lang: resolveLanguage(lang),
+      theme,
+      meta,
+      ...highlighterOptions,
+    });
 
   return {
     shiki,
+    resolveLanguage,
     highlightToHtml,
     highlightToHast,
   };
