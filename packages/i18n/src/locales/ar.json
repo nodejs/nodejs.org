@@ -1,0 +1,309 @@
+{
+  "components": {
+    "header": {
+      "buttons": {
+        "theme": "اختر السمة",
+        "themeSystem": "النظام",
+        "themeLightMode": "فاتح",
+        "themeDarkMode": "داكن"
+      }
+    },
+    "containers": {
+      "footer": {
+        "legal": "حقوق النشر محفوظة لـ <foundationName>OpenJS Foundation</foundationName> ومساهمي Node.js. جميع الحقوق محفوظة. لدى <foundationName>OpenJS Foundation</foundationName> علامات تجارية مسجلة وتستخدم علامات تجارية. للاطلاع على قائمة العلامات التجارية الخاصة بـ <foundationName>OpenJS Foundation</foundationName>، راجع <trademarkPolicy>سياسة العلامات التجارية</trademarkPolicy> و<trademarkList>قائمة العلامات التجارية</trademarkList>. العلامات التجارية والشعارات غير المذكورة في <trademarkList>قائمة العلامات التجارية الخاصة بـ OpenJS Foundation</trademarkList> هي علامات تجارية™ أو علامات تجارية مسجلة® لمالكيها. لا يعني استخدامها وجود أي ارتباط بها أو تأييد منها.",
+        "links": {
+          "foundationName": "OpenJS Foundation",
+          "aiCodingAssistantsPolicy": "سياسة مساعدي البرمجة بالذكاء الاصطناعي (AI Coding Assistants)",
+          "termsOfUse": "شروط الاستخدام",
+          "privacyPolicy": "سياسة الخصوصية",
+          "bylaws": "اللوائح الداخلية",
+          "codeOfConduct": "مدونة قواعد السلوك",
+          "trademarkPolicy": "سياسة العلامات التجارية",
+          "trademarkList": "قائمة العلامات التجارية",
+          "cookiePolicy": "سياسة ملفات تعريف الارتباط",
+          "security": "سياسة الأمان"
+        },
+        "releasePills": {
+          "latestLTS": "أحدث LTS",
+          "latestRelease": "أحدث إصدار"
+        }
+      },
+      "navBar": {
+        "controls": {
+          "toggle": "تبديل قائمة التنقل"
+        },
+        "links": {
+          "about": "حول",
+          "download": "تنزيل",
+          "docs": "التوثيق",
+          "guides": "الأدلة",
+          "learn": "تعلّم",
+          "security": "الأمان",
+          "certification": "الدورات",
+          "blog": "المدونة",
+          "contribute": "المساهمة"
+        }
+      }
+    },
+    "navigation": {
+      "about": {
+        "links": {
+          "about": "حول Node.js",
+          "aboutSide": "حول Node.js®",
+          "branding": "هوية Node.js",
+          "governance": "حوكمة المشروع",
+          "releases": "إصدارات Node.js",
+          "security": "الإبلاغ الأمني",
+          "partners": "الشركاء والداعمون",
+          "eol": "نهاية الدعم (EOL)"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "getInvolved": "شارك معنا",
+          "collabSummit": "القمة التعاونية",
+          "upcomingEvents": "الأحداث القادمة",
+          "contribute": "المساهمة في Node.js",
+          "codeOfConduct": "مدونة قواعد السلوك"
+        }
+      }
+    },
+    "downloadReleasesTable": {
+      "version": "Node.js",
+      "nApiVersion": "N-API",
+      "codename": "الاسم الرمزي",
+      "releaseDate": "تاريخ الإصدار",
+      "firstReleased": "أول إصدار",
+      "lastUpdated": "آخر تحديث",
+      "status": "الحالة",
+      "details": "التفاصيل"
+    },
+    "downloadsTable": {
+      "fileName": "اسم الملف",
+      "operatingSystem": "نظام التشغيل",
+      "architecture": "المعمارية"
+    },
+    "releaseModal": {
+      "title": "Node.js v{version} ({codename})",
+      "titleWithoutCodename": "Node.js v{version}",
+      "overview": "نظرة عامة",
+      "minorVersions": "الإصدارات الفرعية",
+      "releaseAnnouncement": "إعلان الإصدار",
+      "unsupportedVersionWarning": "هذا الإصدار خارج مرحلة الصيانة. يرجى استخدام إصدار مدعوم. <link>تعرّف على دعم EOL.</link>",
+      "ltsVersionFeaturesNotice": "هل تريد الميزات الجديدة في وقت أقرب؟ استخدم <link>أحدث إصدار من Node.js</link> بدلًا من ذلك وجرب أحدث التحسينات!"
+    },
+    "eolAlert": {
+      "message": "يتوفر الدعم التجاري للإصدارات التي تجاوزت مرحلة الصيانة LTS عبر <link>شركائنا في OpenJS Ecosystem Sustainability Program</link>"
+    },
+    "eolChip": {
+      "severity": {
+        "unknown": "غير معروف",
+        "low": "منخفض",
+        "medium": "متوسط",
+        "high": "عالٍ",
+        "critical": "حرج"
+      }
+    },
+    "eolModal": {
+      "title": "وصل Node.js v{version} ({codename}) إلى EOL",
+      "titleWithoutCodename": "وصل Node.js v{version} إلى EOL",
+      "vulnerabilitiesMessage": "توجد {count}+ مشكلة أمان معروفة (CVEs) مرتبطة بهذا الإصدار من Node.js. تُستخدم CVEs (Common Vulnerabilities and Exposures) كمعرّفات للثغرات الأمنية المبلغ عنها علنًا. عند الضغط على رابط CVE ستنتقل إلى تفاصيل تقنية أكثر، مثل طريقة عمل الثغرة.",
+      "noVulnerabilitiesMessage": "لا توجد حاليًا CVEs (Common Vulnerabilities and Exposures) معروفة مرتبطة بهذا الإصدار من Node.js. لكن هذا لا يعني أنه آمن بالكامل، فقد توجد ثغرات لم تُكتشف بعد أو لم يُفصح عنها علنًا. إذا كان هذا الإصدار قديمًا أو غير مدعوم، فمن الأفضل التفكير في الترقية للاستفادة من أحدث الإصلاحات والتحسينات الأمنية.",
+      "blogLinkText": "المدونة",
+      "showUnknownSeverities": "إظهار الثغرات ذات الخطورة غير المعروفة",
+      "table": {
+        "cves": "CVE(s)",
+        "severity": "الخطورة",
+        "overview": "نظرة عامة",
+        "details": "التفاصيل"
+      }
+    },
+    "eolTable": {
+      "version": "الإصدار",
+      "codename": "الاسم الرمزي",
+      "releaseDate": "تاريخ الإصدار",
+      "lastUpdated": "آخر تحديث",
+      "vulnerabilities": "الثغرات",
+      "details": "التفاصيل",
+      "hideNonLts": "إخفاء الإصدارات غير LTS"
+    },
+    "minorReleasesTable": {
+      "version": "الإصدار",
+      "links": "الروابط",
+      "nApiVersion": "إصدار N-API",
+      "npmVersion": "إصدار npm",
+      "v8Version": "إصدار V8",
+      "actions": {
+        "release": "الإصدار",
+        "changelog": "سجل التغييرات",
+        "docs": "التوثيق"
+      }
+    },
+    "releaseOverview": {
+      "firstReleased": "أول إصدار",
+      "lastUpdated": "آخر تحديث",
+      "minorVersions": "الإصدارات الفرعية",
+      "nApiVersion": "إصدار N-API",
+      "npmVersion": "إصدار npm",
+      "v8Version": "إصدار V8"
+    },
+    "common": {
+      "alertBox": {
+        "info": "معلومة",
+        "warning": "تحذير",
+        "danger": "خطر"
+      },
+      "breadcrumbs": {
+        "navigateToHome": "الانتقال إلى الصفحة الرئيسية"
+      },
+      "codebox": {
+        "copy": "نسخ إلى الحافظة",
+        "copied": "تم النسخ إلى الحافظة!"
+      },
+      "pagination": {
+        "previous": "السابق",
+        "previousAriaLabel": "الصفحة السابقة",
+        "next": "التالي",
+        "nextAriaLabel": "الصفحة التالية",
+        "defaultLabel": "ترقيم الصفحات",
+        "pageLabel": "الانتقال إلى الصفحة {pageNumber}"
+      },
+      "sidebar": {
+        "title": "تغيير الصفحة"
+      },
+      "languageDropdown": {
+        "label": "اختر اللغة"
+      },
+      "skipToContent": "تخطي إلى المحتوى"
+    },
+    "metabar": {
+      "lastUpdated": "آخر تحديث",
+      "readingTime": "مدة القراءة",
+      "addedIn": "أضيف في",
+      "author": "المؤلف",
+      "authors": "المؤلفون",
+      "contribute": "المساهمة",
+      "contributeText": "عدّل هذه الصفحة",
+      "viewAs": "عرض كـ",
+      "tableOfContents": "جدول المحتويات",
+      "metadata": "بيانات المقال"
+    },
+    "banner": {
+      "default": "إعلان",
+      "warning": "إشعار تحذيري",
+      "error": "إشعار خطأ"
+    },
+    "search": {
+      "searchPlaceholder": "ابدأ الكتابة...",
+      "chatPlaceholder": "اسألني عن أي شيء",
+      "noResultsFoundFor": "لم يتم العثور على نتائج لـ",
+      "suggestions": "اقتراحات",
+      "seeAll": "عرض الكل",
+      "addMore": "إضافة المزيد",
+      "clearChat": "مسح المحادثة",
+      "errorMessage": "حدث خطأ أثناء محاولة البحث. يرجى المحاولة مرة أخرى.",
+      "disclaimer": "قد تخطئ ملخصات AI. يرجى التحقق من المعلومات.",
+      "startYourSearch": "ابدأ البحث",
+      "initErrorSearch": "تعذّر تهيئة خدمة البحث",
+      "initErrorChat": "تعذّر تهيئة خدمة الدردشة",
+      "chatButtonLabel": "الحصول على ملخص AI",
+      "searchButtonLabel": "بحث",
+      "poweredBy": "مدعوم من",
+      "suggestionOne": "كيف أثبّت Node.js؟",
+      "suggestionTwo": "كيف أنشئ خادم HTTP؟",
+      "suggestionThree": "ترقية إصدار Node.js",
+      "scrollToBottom": "التمرير إلى الأسفل",
+      "closeChat": "إغلاق الدردشة",
+      "keyboardShortcuts": {
+        "select": "للاختيار",
+        "navigate": "للتنقل",
+        "close": "للإغلاق"
+      }
+    },
+    "blog": {
+      "blogHeader": {
+        "subtitle": "آخر أخبار Node.js وأدلة الترحيل وملخصات الأحداث",
+        "rssLink": "تغذية RSS"
+      }
+    }
+  },
+  "layouts": {
+    "blogPost": {
+      "author": {
+        "byLine": "{author, select, null {} other {بواسطة {author}، }}"
+      }
+    },
+    "blogIndex": {
+      "categoryName": "{category, select, all {المدونة} other {منشورات مدونة {category}}}"
+    },
+    "blog": {
+      "title": "المدونة",
+      "selectCategory": "التصنيفات",
+      "categories": {
+        "all": "الكل",
+        "announcements": "الإعلانات",
+        "release": "الإصدارات",
+        "vulnerability": "الثغرات",
+        "advisory-board": "المجلس الاستشاري",
+        "community": "المجتمع",
+        "feature": "ميزة",
+        "module": "الوحدات",
+        "npm": "npm",
+        "uncategorized": "غير مصنف",
+        "video": "فيديو",
+        "weekly": "التحديثات الأسبوعية",
+        "wg": "مجموعات العمل",
+        "migrations": "أدلة الترحيل",
+        "events": "الأحداث"
+      }
+    },
+    "error": {
+      "notFound": {
+        "title": "تعذّر العثور على الصفحة",
+        "description": "عذرًا، لم نتمكن من العثور على الصفحة التي تبحث عنها. حاول البدء من الصفحة الرئيسية."
+      },
+      "internalServerError": {
+        "title": "خطأ داخلي في الخادم",
+        "description": "حدث في هذه الصفحة خطأ لا يمكن التعافي منه."
+      },
+      "backToHome": "العودة إلى الصفحة الرئيسية"
+    },
+    "download": {
+      "buttons": {
+        "installer": "مثبّت {os} (.{extension})",
+        "binary": "ملف ثنائي مستقل (.{extension})"
+      },
+      "dropdown": {
+        "platform": "المنصة",
+        "os": "نظام التشغيل",
+        "version": "الإصدار",
+        "installMethod": "طريقة التثبيت",
+        "packageManager": "مدير الحزم",
+        "unknown": "غير معروف",
+        "platformGroups": {
+          "official": "موصى به (رسمي)",
+          "unofficial": "المجتمع (غير رسمي)"
+        }
+      },
+      "codeBox": {
+        "unsupportedVersionWarning": "هذا الإصدار خارج مرحلة الصيانة. يرجى استخدام إصدار مدعوم حاليًا. <link>تعرّف على دعم EOL.</link>",
+        "ltsVersionFeaturesNotice": "هل تريد الميزات الجديدة في وقت أقرب؟ استخدم <link>أحدث إصدار من Node.js</link> بدلًا من ذلك وجرب أحدث التحسينات!",
+        "communityPlatformInfo": "طرق التثبيت التي تعتمد على برمجيات المجتمع تدعمها الفرق المسؤولة عن صيانة تلك البرمجيات.",
+        "externalSupportInfo": "إذا واجهت أي مشاكل، يرجى زيارة <link>موقع {platform}</link>",
+        "noScriptDetected": "تتطلب هذه الصفحة JavaScript. يمكنك تنزيل Node.js بدون JavaScript عبر زيارة <link>صفحة أرشيف التنزيلات</link> مباشرة.",
+        "platformInfo": {
+          "default": "لا تتم صيانة {platform} وسكريبتات التثبيت الخاصة به من قبل مشروع Node.js.",
+          "nvm": "\"nvm\" هو مدير إصدارات Node.js متعدد المنصات.",
+          "fnm": "\"fnm\" هو مدير إصدارات Node.js متعدد المنصات.",
+          "brew": "Homebrew هو مدير حزم لـ macOS وLinux.",
+          "choco": "Chocolatey هو مدير حزم لـ Windows.",
+          "docker": "Docker هو منصة للحاويات.",
+          "n": "\"n\" هو مدير إصدارات Node.js متعدد المنصات.",
+          "asdf": "\"asdf\" هو مدير إصدارات يعمل على عدة أنظمة تشغيل ويدعم عدة لغات برمجية.",
+          "volta": "\"Volta\" هو مدير إصدارات Node.js متعدد المنصات."
+        }
+      }
+    },
+    "logo": "شعار Node.js"
+  }
+}
