@@ -2,6 +2,14 @@ packages:
   - packages/*
   - apps/*
 
+allowBuilds:
+  "@parcel/watcher": true
+  "@swc/core": true
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+  workerd: true
+
 catalog:
   '@types/node': ^24.10.1
   '@types/react': ^19.2.15
@@ -10,15 +18,3 @@ catalog:
   react: ^19.2.6
   tailwindcss: ~4.1.17
   typescript: 5.9.3
-
-onlyBuiltDependencies:
-  - '@nodejs/doc-kit'
-  - '@parcel/watcher'
-  - '@swc/core'
-  - '@tailwindcss/oxide'
-  - '@vercel/speed-insights'
-  - esbuild
-  - rclone.js
-  - sharp
-  - unrs-resolver
-  - workerd
