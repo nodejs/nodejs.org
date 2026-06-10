@@ -7,7 +7,7 @@
 */
 
 @import 'tailwindcss';
-@import '../node_modules/@node-core/ui-components/src/styles/index.css';
+@import '@node-core/ui-components/src/styles/index.css';
 @import '@node-core/rehype-shiki/index.css';
 
 /**
