@@ -20,9 +20,9 @@
     "directory": "packages/rehype-shiki"
   },
   "scripts": {
-    "compile:ts": "tsc",
-    "compile": "node --run compile:ts",
-    "release": "node --run compile",
+    "build:ts": "tsc",
+    "build": "node --run build:ts",
+    "release": "node --run build",
     "lint": "node --run lint:js",
     "lint:fix": "node --run lint:js:fix",
     "lint:js": "eslint \"**/*.mjs\"",
