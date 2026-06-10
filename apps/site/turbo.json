@@ -142,7 +142,7 @@
       "outputs": ["generated/twoslash-fsmap.json"]
     },
     "cloudflare:build:worker": {
-      "dependsOn": ["build:blog-data", "build:twoslash-fsmap"],
+      "dependsOn": ["build:blog-data", "build:twoslash-fsmap", "^build"],
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
         "{app,components,layouts,pages,styles}/**/*.css",

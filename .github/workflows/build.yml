@@ -44,8 +44,6 @@ jobs:
         with:
           pnpm: true
           use-version-file: true
-          # We only want to install required production packages
-          install-flags: --prod
 
       - name: Use GNU tar instead BSD tar
         # This ensures that we use GNU `tar` which is more efficient for extracting caches's

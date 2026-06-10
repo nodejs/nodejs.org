@@ -3,10 +3,26 @@
   "version": "1.7.1",
   "type": "module",
   "exports": {
-    "./*": [
-      "./dist/*",
-      "./dist/*.js",
-      "./dist/*/index.js"
+    "./*": {
+      "types": [
+        "./src/*",
+        "./src/*.tsx",
+        "./src/*/index.tsx",
+        "./src/*.ts",
+        "./src/*/index.ts"
+      ],
+      "default": [
+        "./dist/*",
+        "./dist/*.js",
+        "./dist/*/index.js"
+      ]
+    },
+    "./src/*": [
+      "./src/*",
+      "./src/*.tsx",
+      "./src/*/index.tsx",
+      "./src/*.ts",
+      "./src/*/index.ts"
     ]
   },
   "repository": {
