@@ -3,7 +3,7 @@
   "extends": ["//"],
   "tasks": {
     "dev": {
-      "dependsOn": ["build:blog-data"],
+      "dependsOn": ["build:blog-data", "build:twoslash-fsmap", "^build"],
       "cache": false,
       "persistent": true,
       "env": [
