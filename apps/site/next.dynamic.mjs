@@ -40,7 +40,7 @@ const createCachedMarkdownCache = () => {
   if (IS_DEV_ENV) {
     return {
       has: () => false,
-      set: () => {},
+      set: () => { },
       get: () => null,
     };
   }
@@ -203,6 +203,7 @@ const getDynamicRouter = async () => {
     const { source = '' } = await getMarkdownFile(locale, path);
 
     const { data } = matter(source);
+    const { data, content } = matter(source);
 
     const getUrlForPathname = (l, p) =>
       `${baseUrlAndPath}/${l}${p ? `/${p}` : ''}`;
@@ -215,6 +216,19 @@ const getDynamicRouter = async () => {
     pageMetadata.description = data.description
       ? data.description
       : siteConfig.description;
+
+    const excerpt = content
+      .trim()
+      .replace(/<[^>]*>?/gm, '')
+      .replace(/^#+\s+.+$/gm, '')
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+      .replace(/[*_`~]/g, '')
+      .split('\n')
+      .find(line => line.length > 0)
+      ?.slice(0, 157);
+
+    pageMetadata.description =
+      data.description || (excerpt ? `${excerpt}...` : siteConfig.description);
 
     // Default Twitter Title for the page
     pageMetadata.twitter.title = pageMetadata.title;
