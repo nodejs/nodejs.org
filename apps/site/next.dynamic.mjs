@@ -202,7 +202,6 @@ const getDynamicRouter = async () => {
 
     const { source = '' } = await getMarkdownFile(locale, path);
 
-    const { data } = matter(source);
     const { data, content } = matter(source);
 
     const getUrlForPathname = (l, p) =>
