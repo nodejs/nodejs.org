@@ -40,6 +40,7 @@ SECURITY.md @nodejs/security-wg
 # Node.js Release Blog Posts
 apps/site/pages/en/blog/release @nodejs/releasers
 apps/site/pages/en/blog/announcements @nodejs/releasers
+apps/site/pages/en/blog/vulnerability @nodejs/releasers
 
 # Marketing
 apps/site/pages/en/about/partners.mdx @nodejs/marketing
