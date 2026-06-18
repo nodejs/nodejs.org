@@ -29,10 +29,10 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2026-03-24T03:00:00.000Z",
-      "endDate": "2026-03-31T03:00:00.000Z",
-      "text": "March Security Release is available",
-      "link": "https://nodejs.org/en/blog/vulnerability/march-2026-security-releases",
+      "startDate": "2026-06-16T22:00:00.000Z",
+      "endDate": "2026-06-23T22:00:00.000Z",
+      "text": "June Security Release is available",
+      "link": "https://nodejs.org/en/blog/vulnerability/june-2026-security-releases",
       "type": "warning"
     }
   },
