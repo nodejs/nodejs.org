@@ -1,22 +1,29 @@
 {
   "name": "@node-core/ui-components",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "type": "module",
   "exports": {
     "./*": {
-      "rolldown": [
-        "./dist/*",
-        "./dist/*.js",
-        "./dist/*/index.js"
-      ],
-      "default": [
+      "types": [
         "./src/*",
         "./src/*.tsx",
         "./src/*/index.tsx",
         "./src/*.ts",
         "./src/*/index.ts"
+      ],
+      "default": [
+        "./dist/*",
+        "./dist/*.js",
+        "./dist/*/index.js"
       ]
-    }
+    },
+    "./src/*": [
+      "./src/*",
+      "./src/*.tsx",
+      "./src/*/index.tsx",
+      "./src/*.ts",
+      "./src/*/index.ts"
+    ]
   },
   "repository": {
     "type": "git",
@@ -24,11 +31,10 @@
     "directory": "packages/ui-components"
   },
   "scripts": {
-    "compile:ts": "tsc",
-    "compile:css": "postcss --dir dist --base src \"src/**/*.module.css\" src/styles/index.css",
-    "compile": "node --run compile:ts && node --run compile:css",
-    "compile:watch": "concurrently -k \"node --run compile:ts -- --watch\" \"node --run compile:css -- --watch\"",
-    "release": "node --run compile",
+    "build": "node --run build:ts && node --run build:css",
+    "build:css": "postcss --dir dist --base src \"src/**/*.module.css\" src/styles/index.css",
+    "build:ts": "tsc",
+    "build:watch": "concurrently -k \"node --run build:ts -- --watch\" \"node --run build:css -- --watch\"",
     "lint": "node --run lint:js && node --run lint:css",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache --cache-strategy=content --cache-location=.stylelintcache",
     "lint:css:fix": "node --run lint:css -- --fix",
@@ -36,6 +42,7 @@
     "lint:js": "eslint \"**/*.{js,mjs,ts,tsx}\"",
     "lint:js:fix": "node --run lint:js -- --fix",
     "lint:types": "tsc --noEmit",
+    "release": "node --run build",
     "storybook": "cross-env NODE_NO_WARNINGS=1 storybook dev -p 6006 --quiet",
     "storybook:build": "cross-env NODE_NO_WARNINGS=1 storybook build --quiet --webpack-stats-json",
     "test": "node --run test:unit",
@@ -54,15 +61,9 @@
     "@radix-ui/react-separator": "^1.1.8",
     "@radix-ui/react-tabs": "^1.1.13",
     "@radix-ui/react-tooltip": "^1.2.8",
-    "@tailwindcss/postcss": "~4.3.0",
-    "@types/react": "catalog:",
     "@vcarl/remark-headings": "~0.1.0",
     "classnames": "catalog:",
-    "postcss-calc": "10.1.1",
-    "postcss-cli": "11.0.1",
-    "react": "catalog:",
-    "tailwindcss": "catalog:",
-    "typescript": "catalog:"
+    "react": "catalog:"
   },
   "devDependencies": {
     "@eslint-react/eslint-plugin": "~5.8.6",
@@ -71,8 +72,10 @@
     "@storybook/addon-themes": "~10.4.1",
     "@storybook/addon-webpack5-compiler-swc": "~4.0.3",
     "@storybook/react-webpack5": "~10.4.1",
+    "@tailwindcss/postcss": "~4.3.0",
     "@testing-library/user-event": "~14.6.1",
     "@types/node": "catalog:",
+    "@types/react": "catalog:",
     "concurrently": "9.2.1",
     "cross-env": "catalog:",
     "css-loader": "7.1.4",
@@ -80,6 +83,8 @@
     "eslint-plugin-react-hooks": "7.1.1",
     "eslint-plugin-storybook": "10.3.3",
     "global-jsdom": "29.0.0",
+    "postcss-calc": "~10.1.1",
+    "postcss-cli": "^11.0.1",
     "postcss-loader": "8.2.1",
     "storybook": "~10.4.1",
     "style-loader": "4.0.0",
@@ -87,7 +92,9 @@
     "stylelint-config-standard": "40.0.0",
     "stylelint-order": "8.1.1",
     "stylelint-selector-bem-pattern": "4.0.1",
-    "tsx": "4.22.3"
+    "tailwindcss": "catalog:",
+    "tsx": "4.22.3",
+    "typescript": "catalog:"
   },
   "imports": {
     "#ui/*": {
