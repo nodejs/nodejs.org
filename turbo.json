@@ -9,7 +9,8 @@
       "outputs": [".prettiercache"]
     },
     "build": {
-      "dependsOn": ["^topo"]
+      "dependsOn": ["^topo"],
+      "outputs": ["dist/**"]
     },
     "lint": {
       "dependsOn": ["^topo"]
