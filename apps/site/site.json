@@ -29,11 +29,11 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2026-06-16T22:00:00.000Z",
-      "endDate": "2026-06-23T22:00:00.000Z",
-      "text": "June Security Release is available",
-      "link": "https://nodejs.org/en/blog/vulnerability/june-2026-security-releases",
-      "type": "warning"
+      "startDate": "2026-06-24T00:00:00.000Z",
+      "endDate": "2026-08-14T00:00:00.000Z",
+      "text": "Don't miss Node.js Interactive at RenderATL, August 12–13!",
+      "link": "https://www.renderatl.com/tickets",
+      "type": "default"
     }
   },
   "websiteBadges": {
