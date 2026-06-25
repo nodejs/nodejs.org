@@ -9,7 +9,10 @@ const TuxCare: FC<SVGProps<SVGSVGElement>> = props => (
     height="1080"
     viewBox="0 0 1920 1080"
     {...props}
-    className={classNames('text-[#231f20] dark:text-white', props.className)}
+    className={classNames(
+      'h-[80px]! text-[#231f20] dark:text-white',
+      props.className
+    )}
   >
     <g>
       <path
