@@ -57,7 +57,7 @@ const NodejsIcon: FC<NodeJsLogoProps> = ({
         />
         <g transform="translate(53.428, 28.628)">
           {variant === 'pride' && (
-            <g clip-path="url(#d)">
+            <g clipPath="url(#d)">
               <rect fill="#E40303" x="0" y="0" width="44" height="8.333" />
               <rect fill="#FF8C00" x="0" y="8.333" width="44" height="8.333" />
               <rect fill="#FFED00" x="0" y="16.666" width="44" height="8.333" />
@@ -144,8 +144,8 @@ const NodejsIcon: FC<NodeJsLogoProps> = ({
               dx="0"
               dy="0"
               stdDeviation="2"
-              flood-color="#000000"
-              flood-opacity="0.5"
+              floodColor="#000000"
+              floodOpacity="0.5"
             />
           </filter>
         )}

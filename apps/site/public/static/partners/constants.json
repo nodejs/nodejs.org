@@ -49,6 +49,13 @@
     "categories": ["security", "esp", "release"]
   },
   {
+    "id": "TUXCARE",
+    "name": "TuxCare",
+    "href": "https://tuxcare.com",
+    "weight": 2,
+    "categories": ["esp"]
+  },
+  {
     "id": "CODEMOD",
     "name": "Codemod",
     "href": "https://codemod.com",
