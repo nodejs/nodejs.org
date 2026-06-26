@@ -1,8 +1,8 @@
-# Télécharger et installer nvm :
+# تحميل و تثبيت nvm:
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
 
-# au lieu de redémarrer le shell
+# بدلاً من إعادة تشغيل shell
 \. "$HOME/.nvm/nvm.sh"
 
-# Télécharger et installer Node.js :
+# تحميل و تثبيت Node.js:
 nvm install ${props.release.major}
