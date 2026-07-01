@@ -1,5 +1,7 @@
 # Security Notes
-# This workflow uses `pull_request_target`, so will run against all PRs automatically (without approval), be careful with allowing any user-provided code to be run here
+# This Workflow runs in the untrusted `pull_request` context and therefore must not rely on any
+# repository secrets. It does not comment on the Pull Request itself; instead it uploads a
+# `pr-comment` artifact which the trusted `Leave Comment` Workflow posts once this Workflow completes.
 # Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
 # for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
 # REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
@@ -9,7 +11,7 @@
 name: Lighthouse
 
 on:
-  pull_request_target:
+  pull_request:
     branches:
       - main
     types:
@@ -36,9 +38,6 @@ jobs:
       github.event.label.name == 'github_actions:pull-request'
     name: Lighthouse Report
     runs-on: ubuntu-latest
-    permissions:
-      # Required by `thollander/actions-comment-pull-request`
-      pull-requests: write
 
     steps:
       - name: Harden Runner
@@ -55,20 +54,10 @@ jobs:
           check_interval: 10 # check every 10 seconds
 
       - name: Git Checkout
+        # Only needed for the Lighthouse formatting script; no credentials are persisted.
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          # Provides the Pull Request commit SHA or the GitHub merge group ref
-          ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || github.ref }}
           persist-credentials: false
-
-      - name: Add Comment to PR
-        # Signal that a lighthouse run is about to start
-        uses: thollander/actions-comment-pull-request@e2c37e53a7d2227b61585343765f73a9ca57eda9 # v3.0.0
-        with:
-          message: |
-            Running Lighthouse audit...
-          # Used later to edit the existing comment
-          comment-tag: 'lighthouse_audit'
 
       - name: Audit Preview URL with Lighthouse
         # Conduct the lighthouse audit
@@ -105,11 +94,16 @@ jobs:
             const { formatLighthouseResults } = await import('${{github.workspace}}/apps/site/scripts/lighthouse/index.mjs')
             await formatLighthouseResults({core})
 
-      - name: Add Comment to PR
-        # Replace the previous message with our formatted lighthouse results
-        uses: thollander/actions-comment-pull-request@e2c37e53a7d2227b61585343765f73a9ca57eda9 # v3.0.0
+      - name: Prepare Comment
+        env:
+          COMMENT: ${{ steps.format_lighthouse_score.outputs.comment }}
+        run: |
+          mkdir -p pr-comment
+          printf '%s' "$COMMENT" > pr-comment/comment.md
+          printf '%s' 'lighthouse_audit' > pr-comment/tag.txt
+
+      - name: Upload Comment
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          # Reference the previously created comment
-          comment-tag: 'lighthouse_audit'
-          message: |
-            ${{ steps.format_lighthouse_score.outputs.comment }}
+          name: pr-comment
+          path: pr-comment/

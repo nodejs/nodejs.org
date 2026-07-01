@@ -14,14 +14,12 @@ on:
     paths:
       - packages/ui-components/**
       - .github/workflows/chromatic.yml
-  pull_request_target:
+  pull_request:
     branches:
       - main
     paths:
       - packages/ui-components/**
       - .github/workflows/chromatic.yml
-    types:
-      - labeled
   workflow_dispatch:
 
 defaults:
@@ -42,9 +40,8 @@ jobs:
     # We only need to run Storybook Builds and Storybook Visual Regression Tests within Pull Requests that actually
     # introduce changes to the Storybook. Hence, we skip running these on Crowdin PRs and Dependabot PRs
     if: |
-      github.event_name != 'pull_request_target' ||
+      github.event_name != 'pull_request' ||
       (
-        github.event.label.name == 'github_actions:pull-request' &&
         github.actor != 'dependabot[bot]' &&
         github.event.pull_request.head.ref != 'chore/crowdin'
       )
@@ -70,6 +67,6 @@ jobs:
         with:
           workingDir: packages/ui-components
           buildScriptName: storybook:build
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          projectToken: ${{ vars.CHROMATIC_PROJECT_TOKEN }}
           exitOnceUploaded: true
           onlyChanged: true
