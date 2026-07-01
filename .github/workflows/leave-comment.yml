@@ -1,0 +1,89 @@
+name: Leave Comment
+
+on:
+  workflow_run:
+    # Any Workflow that uploads a `pr-comment` artifact should be listed here
+    workflows: ['Build', 'Lighthouse']
+    types: [completed]
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.workflow_run.id }}
+  cancel-in-progress: true
+
+jobs:
+  leave-comment:
+    name: Leave Comment
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
+        with:
+          egress-policy: audit
+
+      - name: Download Comment Artifact
+        # The Workflow may not have produced a comment (e.g. the comparison was skipped), so this is
+        # allowed to fail and every subsequent step is gated on it having succeeded.
+        id: download
+        continue-on-error: true
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: pr-comment
+          path: pr-comment
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Resolve Pull Request Number
+        id: pr
+        if: steps.download.outcome == 'success'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          script: |
+            const run = context.payload.workflow_run;
+
+            // 1. For same-repo Pull Requests the run is already linked to its PR(s).
+            if (run.pull_requests && run.pull_requests.length) {
+              core.setOutput('number', run.pull_requests[0].number);
+              return;
+            }
+
+            // 2. For forks that list is empty, so find the open Pull Request whose HEAD SHA matches
+            // the commit that triggered the run.
+            const pulls = await github.paginate(github.rest.pulls.list, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100,
+            });
+
+            const match = pulls.find(pull => pull.head.sha === run.head_sha);
+
+            if (!match) {
+              core.info(`No open pull request found for HEAD ${run.head_sha}`);
+              return;
+            }
+
+            core.setOutput('number', match.number);
+
+      - name: Read Comment Tag
+        id: meta
+        if: steps.download.outcome == 'success'
+        run: |
+          tag="$(tr -cd 'A-Za-z0-9_-' < pr-comment/tag.txt)"
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+
+      - name: Add Comment to PR
+        # The comment body is untrusted markdown, so it is passed as a file (data) rather than
+        # interpolated into an expression or shell command.
+        if: steps.download.outcome == 'success' && steps.pr.outputs.number != ''
+        uses: thollander/actions-comment-pull-request@e2c37e53a7d2227b61585343765f73a9ca57eda9 # v3.0.0
+        with:
+          file-path: pr-comment/comment.md
+          comment-tag: ${{ steps.meta.outputs.tag }}
+          pr-number: ${{ steps.pr.outputs.number }}
