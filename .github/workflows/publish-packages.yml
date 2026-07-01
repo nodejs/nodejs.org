@@ -131,7 +131,7 @@ jobs:
 
       - name: Notify on Manual Release
         if: ${{ github.event_name == 'workflow_dispatch' }}
-        uses: rtCamp/action-slack-notify@e31e87e03dd19038e411e38ae27cbad084a90661 # 2.3.3
+        uses: rtCamp/action-slack-notify@33ca3be66c6f378fe1610fd1d5258632dbed5e58 # v2.4.0
         env:
           SLACK_COLOR: '#43853D'
           SLACK_ICON: https://github.com/nodejs.png?size=48
