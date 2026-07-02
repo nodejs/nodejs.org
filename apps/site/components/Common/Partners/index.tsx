@@ -70,7 +70,7 @@ const PartnersList: FC<PartnersListProps> = async ({
 }) => {
   const isSmall = size === 'small';
 
-  const SMALL_PARTNER_LIMIT = 6;
+  const SMALL_PARTNER_LIMIT = 12;
 
   const partners = await getPartners(
     length ?? (isSmall ? SMALL_PARTNER_LIMIT : undefined),

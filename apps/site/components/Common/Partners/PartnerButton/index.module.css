@@ -25,6 +25,7 @@
 
   svg {
     @apply h-4
-      w-auto;
+      w-auto
+      max-w-4;
   }
 }
