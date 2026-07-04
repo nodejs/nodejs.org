@@ -65,14 +65,14 @@ jobs:
           # this should be a last resort in case by any chances the build memory gets too high
           # but in general this should never happen
           NODE_OPTIONS: '--max_old_space_size=4096'
-          # See https://github.com/vercel/next.js/pull/81318
+          # See https://github.com/vercel/next.js/pull/90949
           TURBOPACK_STATS: ${{ matrix.os == 'ubuntu-latest' }}
 
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         if: matrix.os == 'ubuntu-latest'
         with:
           name: webpack-stats
-          path: apps/site/.next/server/webpack-stats.json
+          path: apps/site.next/diagnostics/route-bundle-stats.json
 
       - name: Build Next.js (Static Export)
         # We want to generate a static build, as it is a requirement of our website.
@@ -133,8 +133,8 @@ jobs:
         if: steps.base-stats.outcome == 'success'
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
-          HEAD_STATS_PATH: ./head-stats/webpack-stats.json
-          BASE_STATS_PATH: ./base-stats/webpack-stats.json
+          HEAD_STATS_PATH: ./head-stats/route-bundle-stats.json
+          BASE_STATS_PATH: ./base-stats/route-bundle-stats.json
         with:
           script: |
             const { compare } = await import('${{github.workspace}}/apps/site/scripts/compare-size/index.mjs')
