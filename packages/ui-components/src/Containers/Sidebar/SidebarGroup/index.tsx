@@ -1,3 +1,4 @@
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 
 import SidebarItem from '#ui/Containers/Sidebar/SidebarItem';
@@ -44,7 +45,10 @@ const renderItems = (
       return (
         <li key={link}>
           <details className={styles.subGroup} open={isOpen}>
-            <summary className={styles.summary}>{label}</summary>
+            <summary className={styles.summary}>
+              {label}
+              <ChevronDownIcon className={styles.chevron} />
+            </summary>
             <ul className={styles.subItemList}>
               {renderItems(subItems, props, pathname)}
             </ul>
