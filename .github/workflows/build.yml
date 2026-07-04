@@ -72,7 +72,7 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         with:
           name: webpack-stats
-          path: apps/site.next/diagnostics/route-bundle-stats.json
+          path: apps/site/.next/diagnostics/route-bundle-stats.json
 
       - name: Build Next.js (Static Export)
         # We want to generate a static build, as it is a requirement of our website.
