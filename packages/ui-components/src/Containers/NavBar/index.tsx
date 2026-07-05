@@ -21,6 +21,18 @@ const navInteractionIcons = {
   close: <XMark className={styles.navInteractionIcon} />,
 };
 
+// Picks the longest nav link that prefixes the current path, so `/about` and `/about/sponsors` never highlight together.
+export const getActiveNavLink = (
+  navItems: Array<{ link: string }>,
+  pathname: string
+): string =>
+  navItems.reduce((longest, { link }) => {
+    const isMatch =
+      link.startsWith('/') &&
+      (pathname === link || pathname.startsWith(`${link}/`));
+    return isMatch && link.length > longest.length ? link : longest;
+  }, '');
+
 type NavbarProps = {
   navItems?: Array<{
     text: FormattedMessage;
@@ -42,6 +54,8 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
   sidebarItemTogglerAriaLabel,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const activeLink = getActiveNavLink(navItems ?? [], pathname);
 
   return (
     <nav className={styles.container}>
@@ -79,6 +93,7 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
               {navItems.map(({ text, link, target }) => (
                 <NavItem
                   pathname={pathname}
+                  active={link === activeLink}
                   as={Component}
                   key={link}
                   href={link}
