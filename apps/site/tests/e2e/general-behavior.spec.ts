@@ -51,7 +51,9 @@ const verifyTranslation = async (page: Page, locale: Locale | string) => {
     .all();
   const expectedTexts = Object.values(
     localeData.components.containers.navBar.links
-  );
+  )
+    // Filter out 'Beta Docs' link as it is not present in the navigation for some locales
+    .filter(entry => entry !== 'Beta Docs');
 
   // Verify each navigation link text matches an expected translation
   for (const link of links) {
