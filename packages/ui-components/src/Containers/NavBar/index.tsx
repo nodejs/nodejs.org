@@ -26,6 +26,7 @@ type NavbarProps = {
     text: FormattedMessage;
     link: string;
     target?: HTMLAttributeAnchorTarget | undefined;
+    accent?: boolean;
   }>;
   Logo: ElementType;
   as: LinkLike;
@@ -76,13 +77,14 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
         <div className={classNames(styles.main, `hidden peer-checked:flex`)}>
           {navItems && navItems.length > 0 && (
             <div className={styles.navItems}>
-              {navItems.map(({ text, link, target }) => (
+              {navItems.map(({ text, link, target, accent }) => (
                 <NavItem
                   pathname={pathname}
                   as={Component}
                   key={link}
                   href={link}
                   target={target}
+                  accent={accent}
                 >
                   {text}
                 </NavItem>

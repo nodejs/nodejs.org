@@ -45,6 +45,30 @@
     }
   }
 
+  &.accent {
+    @apply bg-brand-100
+      ring-brand-600/20
+      dark:bg-brand-600/15
+      dark:ring-brand-400/20
+      ring-1
+      ring-inset;
+
+    .label {
+      @apply text-brand-700
+        dark:text-brand-400;
+    }
+
+    .icon {
+      @apply text-brand-600
+        dark:text-brand-400;
+    }
+
+    &:hover {
+      @apply bg-brand-200
+        dark:bg-brand-600/25;
+    }
+  }
+
   &.footer {
     .label {
       @apply text-neutral-800

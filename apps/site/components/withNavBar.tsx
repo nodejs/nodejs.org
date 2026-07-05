@@ -54,11 +54,14 @@ const WithNavBar: FC = () => {
       <WithBanner section="index" />
 
       <NavBar
-        navItems={navigationItems.map(([, { label, link, target }]) => ({
-          link,
-          text: label,
-          target,
-        }))}
+        navItems={navigationItems.map(
+          ([, { label, link, target, accent }]) => ({
+            link,
+            text: label,
+            target,
+            accent,
+          })
+        )}
         pathname={pathname}
         as={Link}
         Logo={WithNodejsLogo}
