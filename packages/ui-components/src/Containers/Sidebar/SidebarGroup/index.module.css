@@ -50,11 +50,25 @@
     &::-webkit-details-marker {
       display: none;
     }
+
+    .chevron {
+      @apply size-3
+        shrink-0
+        text-neutral-500
+        motion-safe:transition-transform
+        dark:text-neutral-200;
+    }
   }
 
   .subGroup[open] > .summary {
     @apply text-brand-600
       dark:text-brand-400;
+
+    .chevron {
+      @apply text-brand-600
+        dark:text-brand-400
+        rotate-180;
+    }
   }
 
   .subItemList {
