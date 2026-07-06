@@ -18,7 +18,7 @@
     "name": "HeroDevs",
     "href": "https://herodevs.com",
     "weight": 3,
-    "categories": ["security", "esp", "release"]
+    "categories": ["esp"]
   },
   {
     "id": "DIGITALOCEAN",
@@ -46,7 +46,7 @@
     "name": "NodeSource",
     "href": "https://nodesource.com",
     "weight": 3,
-    "categories": ["security", "esp", "release"]
+    "categories": ["esp"]
   },
   {
     "id": "TUXCARE",
