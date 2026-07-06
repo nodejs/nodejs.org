@@ -60,16 +60,17 @@ jobs:
               return;
             }
 
-            // 2. For forks that list is empty, so find the open Pull Request whose HEAD SHA matches
-            // the commit that triggered the run.
-            const pulls = await github.paginate(github.rest.pulls.list, {
+            // 2. For forks that list is empty, so find the open Pull Request who has the
+            // correct branch information
+            const match = await github.rest.pulls.list({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              state: 'open',
-              per_page: 100,
-            });
-
-            const match = pulls.find(pull => pull.head.sha === run.head_sha);
+              state: "open",
+              head: `${context.payload.workflow_run.head_repository.owner.login}:${context.payload.workflow_run.head_branch}`,
+              sort: "updated",
+              direction: "desc",
+              per_page: 1,
+            }).then(r => r.data[0]);
 
             if (!match) {
               core.info(`No open pull request found for HEAD ${run.head_sha}`);
