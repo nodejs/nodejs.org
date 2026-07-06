@@ -65,10 +65,10 @@ jobs:
             const match = await github.rest.pulls.list({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              state: "open",
+              state: 'open',
               head: `${context.payload.workflow_run.head_repository.owner.login}:${context.payload.workflow_run.head_branch}`,
-              sort: "updated",
-              direction: "desc",
+              sort: 'updated',
+              direction: 'desc',
               per_page: 1,
             }).then(r => r.data[0]);
 
