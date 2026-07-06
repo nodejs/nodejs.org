@@ -1,7 +1,14 @@
 name: Leave Comment
 
 on:
-  workflow_run:
+  workflow_run: # zizmor: ignore[dangerous-triggers]
+    # While it's true (as reported by Zizmor) that many `workflow_run`
+    # workflows are unsafe, we are using it purely to paste a code comment
+    # on a pull request. If an attacker were to attempt to modify the _only_
+    # file of data we collect from their unsafe code, the worst they could do
+    # is leave a comment on their own PR, which has no harmful impact
+    # whatsover.
+    #
     # Any Workflow that uploads a `pr-comment` artifact should be listed here
     workflows: ['Build', 'Lighthouse']
     types: [completed]
