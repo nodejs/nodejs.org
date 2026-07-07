@@ -17,6 +17,7 @@ type NavItemProps = {
   target?: HTMLAttributeAnchorTarget | undefined;
 
   pathname: string;
+  active?: boolean;
   as: LinkLike;
 };
 
