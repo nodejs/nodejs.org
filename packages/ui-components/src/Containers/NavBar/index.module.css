@@ -39,14 +39,15 @@
       }
 
       .sidebarItemTogglerLabel {
-        @apply block
+        @apply ml-auto
+          block
           cursor-pointer
-          xl:hidden;
-
-        .navInteractionIcon {
-          @apply size-6;
-        }
+          xl:hidden; /* Push toggler to the right if Logo exists */
       }
+    }
+
+    .navInteractionIcon {
+      @apply size-6;
     }
 
     .sidebarItemToggler {
@@ -62,11 +63,11 @@
     .main {
       @apply flex-1
         flex-col
-        justify-between
         gap-4
         xl:flex
         xl:flex-row
-        xl:items-center;
+        xl:items-center
+        xl:justify-between;
     }
 
     .navItems {
@@ -86,6 +87,7 @@
 
     .actionsWrapper {
       @apply flex
+        w-full
         flex-row
         flex-wrap
         items-center
