@@ -6,11 +6,11 @@ layout: blog-post
 author: Guilherme Araújo
 ---
 
-We've been rebuilding how Node.js generates and presents its API documentation, and a preview is now live at [beta.docs.nodejs.org](https://beta.docs.nodejs.org/). Before it becomes the default, we want as many people as possible to use it for real work and tell us what's their feeedback.
+We've been rebuilding how Node.js generates and presents its API documentation, and a preview is now live at [beta.docs.nodejs.org](https://beta.docs.nodejs.org/). Before it becomes the default, we want as many people as possible to use it for real work and tell us what you think.
 
 ## What's different for readers
 
-The content itself hasn't changed: every page is generated from the same Markdown files in the [nodejs/node](https://github.com/nodejs/node) repository that power the current docs. The features you rely on today made the trip too: light and dark themes, ESM/CJS switching on code examples, copy buttons on snippets, stability badges, and version history.
+The content itself hasn't changed: every page is generated from the same Markdown files in the [nodejs/node](https://github.com/nodejs/node) repository that power the current docs. The features you rely on today made the trip too: light and dark themes, ESM/CJS switching and copy buttons on snippets, stability badges, and version history.
 
 The redesign goes deeper than visuals, though: navigation, layout, and readability were all reworked so that finding and understanding an API takes less effort. On top of that, the beta adds things the current docs have never had:
 
@@ -24,7 +24,9 @@ We also care about the needs of every user, and we pay attention to the ones tha
 
 ## Same content, new tooling
 
-Under the hood, the beta is built with [doc-kit](https://github.com/nodejs/doc-kit), a standalone tool built to replace the current documentation generator, which has lived inside Node.js core for years. It parses the existing Markdown files and can produce several outputs from them: the redesigned web pages you see on the beta, plus the legacy HTML, JSON, man-page formats etc. Existing consumers of those formats keep working during the transition, and contributors keep editing the same Markdown files they always have.
+Under the hood, the beta is built with [doc-kit](https://github.com/nodejs/doc-kit), a standalone tool built to replace the current documentation generator, which has lived inside Node.js core for years.
+
+It parses the existing Markdown files and can produce several outputs from them: the redesigned web pages you see on the beta, plus the legacy HTML, JSON, man-page formats etc. Existing consumers of those formats keep working during the transition, and contributors keep editing the same Markdown files they always have.
 
 There's a broader goal here too: any project can pick up doc-kit for its own documentation, inside or outside the Node.js ecosystem. And that's already happening. The [undici docs](https://undici.nodejs.org/) are built with doc-kit today, and [webpack is migrating](https://github.com/webpack/webpack-doc-kit) its API documentation as well.
 
@@ -35,3 +37,7 @@ If you're curious about the design and progress of the effort, the tracking issu
 This is a beta, and we're publishing it early because we want people using it and giving us feedback, so we can iterate before the new docs replace the current ones. If you spend time in the API docs, try spending it on [beta.docs.nodejs.org](https://beta.docs.nodejs.org/) for a while and let us know how it goes.
 
 Please open an issue on the [nodejs/doc-kit](https://github.com/nodejs/doc-kit/issues) repository with anything you find, big or small. The current documentation remains in place in the meantime, so nothing changes for you today — but with your help, the new docs will be ready to take over soon.
+
+## Acknowledgments
+
+None of this would exist without the [Node.js Web Team](https://github.com/nodejs/web-team/blob/main/MEMBERS.md), whose members designed, built, and reviewed everything described in this post. Thanks as well to the Node.js community and the collaborators who have already helped by reviewing, testing, and making suggestions along the way. Thank you all for making this possible.
