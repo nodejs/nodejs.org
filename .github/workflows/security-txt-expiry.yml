@@ -1,0 +1,66 @@
+# Keeps apps/site/public/.well-known/security.txt from silently expiring:
+# once the Expires field is within 30 days, this opens a PR bumping it a year
+# out. A human must confirm the contact/policy are still valid before merging.
+name: Refresh security.txt Expires
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8 1 * *' # monthly, 1st at 08:00 UTC
+
+permissions: {}
+
+jobs:
+  refresh-expires:
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'nodejs'
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Check security.txt expiry
+        id: expiry
+        env:
+          SECURITY_TXT: apps/site/public/.well-known/security.txt
+        run: |
+          set -euo pipefail
+          expires=$(grep -i '^Expires:' "$SECURITY_TXT" | sed 's/^[^:]*:[[:space:]]*//')
+          if [ "$(date -u -d "$expires" +%s)" -le "$(date -u -d '+30 days' +%s)" ]; then
+            echo "bump=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Bump Expires (+1 year)
+        if: steps.expiry.outputs.bump == 'true'
+        env:
+          SECURITY_TXT: apps/site/public/.well-known/security.txt
+        run: |
+          set -euo pipefail
+          new=$(date -u -d '+365 days' +%Y-%m-%dT23:59:59.000Z)
+          sed -i "s/^Expires:.*/Expires: ${new}/I" "$SECURITY_TXT"
+
+      - name: Create Pull Request
+        if: steps.expiry.outputs.bump == 'true'
+        uses: gr2m/create-or-update-pull-request-action@b65137ca591da0b9f43bad7b24df13050ea45d1b # v1.10.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          commit-message: 'chore: refresh security.txt Expires'
+          title: 'chore: refresh security.txt Expires'
+          body: |
+            The `Expires` field in `apps/site/public/.well-known/security.txt` is within 30 days, so this PR
+            extends it by one year.
+
+            **Before merging, please confirm the rest of the file is still accurate:**
+            - The `Contact` (HackerOne) is still the correct, actively-monitored channel
+            - The linked `Policy` is still the intended vulnerability-disclosure path
+
+            If anything has changed, update it in this PR before extending the expiration.
+
+            cc: @nodejs/security-wg
+          labels: security
+          branch: automated/security-txt-expiry
