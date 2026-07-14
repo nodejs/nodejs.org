@@ -22,7 +22,9 @@ const Banner: FC<PropsWithChildren<BannerProps>> = ({
   ...props
 }) => {
   const [dismissed, setDismissed] = useState(false);
-  if (dismissed) {return null;}
+  if (dismissed) {
+    return null;
+  }
 
   return (
     <section
