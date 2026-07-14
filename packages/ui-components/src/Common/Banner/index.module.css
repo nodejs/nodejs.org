@@ -1,7 +1,8 @@
 @reference "../../styles/index.css";
 
 .banner {
-  @apply flex
+  @apply relative
+    flex
     w-full
     flex-row
     items-center
@@ -39,4 +40,16 @@
 
 .warning {
   @apply bg-warning-600;
+}
+
+.closeButton {
+  @apply absolute
+    right-4
+    text-lg;
+
+  span {
+    @apply text-white/60
+      transition-colors
+      hover:text-white;
+  }
 }
