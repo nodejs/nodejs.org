@@ -1,13 +1,11 @@
 @reference "../../styles/index.css";
 
 .banner {
-  @apply relative
-    flex
+  @apply animate-fade-and-slide-down
+    relative
+    grid
     w-full
-    flex-row
-    items-center
-    justify-center
-    gap-2
+    grid-rows-1
     px-8
     py-3
     text-sm;
@@ -28,6 +26,15 @@
     @apply size-4
       text-white/50;
   }
+}
+
+.bannerContent {
+  @apply flex
+    min-h-0
+    flex-row
+    items-center
+    justify-center
+    gap-2;
 }
 
 .default {

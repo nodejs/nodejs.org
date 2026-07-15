@@ -7,6 +7,8 @@
   --animate-dot-move-delay-400: dot-move 1.2s infinite ease-in-out 400ms;
   --animate-slide-to-left: slide-to-left 300ms ease-in-out;
   --animate-slide-to-right: slide-to-right 300ms ease-in-out;
+  --animate-fade-and-slide-down: fade-and-slide-down 300ms ease-out 400ms
+    backwards;
 
   @keyframes surf {
     0% {
@@ -84,6 +86,20 @@
 
     to {
       transform: translateX(0);
+    }
+  }
+
+  @keyframes fade-and-slide-down {
+    from {
+      grid-template-rows: 0fr;
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    to {
+      grid-template-rows: 1fr;
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }

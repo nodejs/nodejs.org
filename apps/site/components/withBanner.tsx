@@ -17,28 +17,28 @@ const WithBanner: FC<{ section: string }> = ({ section }) => {
   const banner = siteConfig.websiteBanners[section];
   const t = useTranslations();
 
-  const [dismissed, setDismissed] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  // localStorage is only available on the client, so the banner is always
-  // rendered on the server and hidden after hydration if previously dismissed
   useEffect(() => {
     if (banner) {
-      setDismissed(localStorage.getItem(STORAGE_KEY) === banner.text);
+      // eslint-disable-next-line @eslint-react/set-state-in-effect
+      setOpen(localStorage.getItem(STORAGE_KEY) !== banner.text);
     }
   }, [banner]);
 
-  if (banner && !dismissed && dateIsBetween(banner.startDate, banner.endDate)) {
+  if (banner && open && dateIsBetween(banner.startDate, banner.endDate)) {
     const bannerType = banner.type || 'default';
 
     const onClose = () => {
       localStorage.setItem(STORAGE_KEY, banner.text);
-      setDismissed(true);
+      setOpen(false);
     };
 
     return (
       <Banner
         type={banner.type}
         aria-label={t(`components.banner.${bannerType}`)}
+        closeButtonAriaLabel={t('components.banner.close')}
         onClose={onClose}
       >
         {banner.link ? (

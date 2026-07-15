@@ -11,11 +11,13 @@ import styles from './index.module.css';
 
 export type BannerProps = {
   type?: 'default' | 'warning' | 'error';
+  closeButtonAriaLabel?: string;
   onClose?: MouseEventHandler<HTMLButtonElement>;
 } & HTMLAttributes<HTMLElement>;
 
 const Banner: FC<PropsWithChildren<BannerProps>> = ({
   type = 'default',
+  closeButtonAriaLabel = 'Close banner',
   onClose,
   children,
   ...props
@@ -24,17 +26,19 @@ const Banner: FC<PropsWithChildren<BannerProps>> = ({
     className={classNames(styles.banner, styles[type] || styles.default)}
     {...props}
   >
-    {children}
-    {onClose && (
-      <button
-        type="button"
-        className={styles.closeButton}
-        aria-label="Close banner"
-        onClick={onClose}
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
-    )}
+    <div className={styles.bannerContent}>
+      {children}
+      {onClose && (
+        <button
+          type="button"
+          className={styles.closeButton}
+          aria-label={closeButtonAriaLabel}
+          onClick={onClose}
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      )}
+    </div>
   </section>
 );
 

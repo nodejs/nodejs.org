@@ -191,7 +191,8 @@
     "banner": {
       "default": "Announcement",
       "warning": "Warning notification",
-      "error": "Error notification"
+      "error": "Error notification",
+      "close": "Close banner"
     },
     "search": {
       "searchPlaceholder": "Start typing...",
