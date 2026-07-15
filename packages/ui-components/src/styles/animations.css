@@ -93,12 +93,14 @@
     from {
       grid-template-rows: 0fr;
       opacity: 0;
+      padding-block: 0;
       transform: translateY(-100%);
     }
 
     to {
       grid-template-rows: 1fr;
       opacity: 1;
+      padding-block: calc(var(--spacing, 0.25rem) * 3);
       transform: translateY(0);
     }
   }
