@@ -10,6 +10,10 @@
 @import '@node-core/ui-components/src/styles/index.css';
 @import '@node-core/rehype-shiki/index.css';
 
+html[data-banner-dismissed='true'] [data-dismissible-banner] {
+  display: none;
+}
+
 /**
  * To enhance readability for Korean users, line spacing is increased,
  * line breaks in the middle of words are prevented, and long words are
