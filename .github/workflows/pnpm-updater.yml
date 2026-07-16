@@ -47,7 +47,7 @@ jobs:
           echo "old=$(pnpm --version)" >> $GITHUB_OUTPUT
           pnpm self-update
           echo "new=$(pnpm --version)" >> $GITHUB_OUTPUT
-          cat <<< $(jq '.devEngines.packageManager.version = (.packageManager | split("@")[1])' package.json) > package.json
+          cat <<< $(jq --arg ver "$(pnpm --version)" '.devEngines.packageManager.version = $ver' package.json) > package.json
 
       - name: Open pull request
         if: steps.update-pnpm.outputs.old != steps.update-pnpm.outputs.new
