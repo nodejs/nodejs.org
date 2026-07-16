@@ -52,7 +52,6 @@
     "typescript": "catalog:",
     "typescript-eslint": "~8.59.1"
   },
-  "packageManager": "pnpm@11.9.0",
   "devEngines": {
     "runtime": {
       "name": "node",
