@@ -39,7 +39,7 @@ type NavbarProps = {
     link: string;
     target?: HTMLAttributeAnchorTarget | undefined;
   }>;
-  Logo: ElementType;
+  Logo?: ElementType;
   as: LinkLike;
   pathname: string;
   sidebarItemTogglerAriaLabel: string;
@@ -61,13 +61,15 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
     <nav className={styles.container}>
       <div className={styles.innerContainer}>
         <div className={styles.nodeIconAndMobileItemsToggler}>
-          <Component
-            className={styles.nodeIconWrapper}
-            href="/"
-            aria-label="Home"
-          >
-            <Logo />
-          </Component>
+          {Logo && (
+            <Component
+              className={styles.nodeIconWrapper}
+              href="/"
+              aria-label="Home"
+            >
+              <Logo />
+            </Component>
+          )}
 
           <Label.Root
             className={styles.sidebarItemTogglerLabel}
