@@ -16,6 +16,7 @@ The redesign goes deeper than visuals, though: navigation, layout, and readabili
 
 - **Search**: For the first time, the API docs have built-in search. A search box on every page, with a keyboard shortcut, lets you jump anywhere in the API without a detour through a search engine.
 - **One design across the project**: The API docs now share the design system of the nodejs.org website, with a persistent sidebar listing every module, an always-visible per-page table of contents, and a layout that works on small screens.
+- **llms.txt**: We've already shipped [llms.txt](https://nodejs.org/llms.txt), giving AI tools a clean, structured entry point to the API reference.
 
 And that's not the whole list: the beta also ships features like reading times and announcement bars.
 
