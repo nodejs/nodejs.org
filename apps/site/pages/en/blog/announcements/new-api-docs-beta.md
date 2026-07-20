@@ -1,7 +1,7 @@
 ---
 date: '2026-07-12T12:00:00.000Z'
 category: announcements
-title: Try the New Node.js API Documentation Beta
+title: Check out the New Node.js API Documentation Preview
 layout: blog-post
 author: Guilherme Araújo
 ---
@@ -17,25 +17,19 @@ The redesign goes deeper than visuals, though: navigation, layout, and readabili
 - **Search**: For the first time, the API docs have built-in search. A search box on every page, with a keyboard shortcut, lets you jump anywhere in the API without a detour through a search engine.
 - **One design across the project**: The API docs now share the design system of the nodejs.org website, with a persistent sidebar listing every module, an always-visible per-page table of contents, and a layout that works on small screens.
 
-And that's not the whole list: the beta also ships features like reading times, announcement bars, [llms.txt](https://nodejs.org/llms.txt) etc.
+And that's not the whole list: the beta also ships features like reading times and announcement bars.
 
 We also care about the needs of every user, and we pay attention to the ones that are easy to overlook. Every page stays usable even with JavaScript disabled and offline.
 
-## Same content, new tooling
+## Under-the-hood
 
-Under the hood, the beta is built with [doc-kit](https://github.com/nodejs/doc-kit), a standalone tool built to replace the current documentation generator, which has lived inside Node.js core for years.
+The redesigned documentation is built with [doc-kit](https://github.com/nodejs/doc-kit), a standalone tool developed by the Node.js Project to replace the previous, legacy, documentation generator.
 
-It parses the existing Markdown files and can produce several outputs from them: the redesigned web pages you see on the beta, plus the legacy HTML, JSON, man-page formats etc. Existing consumers of those formats keep working during the transition, and contributors keep editing the same Markdown files they always have.
-
-There's a broader goal here too: any project can pick up doc-kit for its own documentation, inside or outside the Node.js ecosystem. And that's already happening. The [undici docs](https://undici.nodejs.org/) are built with doc-kit today, and [webpack is migrating](https://github.com/webpack/webpack-doc-kit) its API documentation as well.
-
-If you're curious about the design and progress of the effort, the tracking issue at [nodejs/node#52343](https://github.com/nodejs/node/issues/52343) has the full picture.
+For more information on doc-kit, and its capabilities for other projects, please refer to [its repository](https://github.com/nodejs/doc-kit). This will also be the place where any and all bug reports, feature requests, and other tasks should be tracked.
 
 ## We need your feedback
 
-This is a beta, and we're publishing it early because we want people using it and giving us feedback, so we can iterate before the new docs replace the current ones. If you spend time in the API docs, try spending it on [beta.docs.nodejs.org](https://beta.docs.nodejs.org/) for a while and let us know how it goes.
-
-Please open an issue on the [nodejs/doc-kit](https://github.com/nodejs/doc-kit/issues) repository with anything you find, big or small. The current documentation remains in place in the meantime, so nothing changes for you today — but with your help, the new docs will be ready to take over soon.
+While we are proud to state that the redesigned documentation is entering its final stage of development, feedback is still a crucial part of this migration, and we'd love to hear your thoughts on this process. Please open an issue on the [nodejs/doc-kit](https://github.com/nodejs/doc-kit/issues) repository with anything you find, big or small.
 
 ## Acknowledgments
 
