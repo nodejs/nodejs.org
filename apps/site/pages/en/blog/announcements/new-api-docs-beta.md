@@ -10,13 +10,12 @@ We've been rebuilding how Node.js generates and presents its API documentation, 
 
 ## What's different for readers
 
-The content itself hasn't changed: every page is generated from the same Markdown files in the [nodejs/node](https://github.com/nodejs/node) repository that power the current docs. The features you rely on today made the trip too: light and dark themes, ESM/CJS switching and copy buttons on snippets, stability badges, and version history.
+The content itself hasn't changed: every page is generated from the same Markdown files in the [nodejs/node](https://github.com/nodejs/node) repository that power the current docs. The features you rely on today made the trip too: light and dark themes, ESM/CJS switching and copy buttons on snippets, stability badges, version history, and the Markdown version of every page.
 
 The redesign goes deeper than visuals, though: navigation, layout, and readability were all reworked so that finding and understanding an API takes less effort. On top of that, the beta adds things the current docs have never had:
 
 - **Search**: For the first time, the API docs have built-in search. A search box on every page, with a keyboard shortcut, lets you jump anywhere in the API without a detour through a search engine.
 - **One design across the project**: The API docs now share the design system of the nodejs.org website, with a persistent sidebar listing every module, an always-visible per-page table of contents, and a layout that works on small screens.
-- **Docs as Markdown**: Every page can now be viewed as plain Markdown, a format that AI tools like Claude Code and Codex can work with natively. Point them at a page and they can read it as is, with no HTML scraping in between.
 
 And that's not the whole list: the beta also ships features like reading times, announcement bars, [llms.txt](https://nodejs.org/llms.txt) etc.
 
