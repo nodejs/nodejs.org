@@ -28,11 +28,11 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2026-06-24T00:00:00.000Z",
-      "endDate": "2026-08-14T00:00:00.000Z",
-      "text": "Don't miss Node.js Interactive at RenderATL, August 12–13!",
-      "link": "https://www.renderatl.com/node",
-      "type": "default"
+      "startDate": "2026-07-21T03:00:00.000Z",
+      "endDate": "2026-07-28T03:00:00.000Z",
+      "text": "New security releases to be made available Monday, July 27, 2026",
+      "link": "https://nodejs.org/en/blog/vulnerability/july-2026-security-releases",
+      "type": "warning"
     }
   },
   "websiteBadges": {
