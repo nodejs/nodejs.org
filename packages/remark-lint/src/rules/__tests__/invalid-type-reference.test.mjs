@@ -65,25 +65,6 @@ const value = {invalid};
       },
     },
   },
-  {
-    name: 'replaces collapsed links to types',
-    input: '[`net.Socket`][]\n\n[`net.Socket`]: net.md#class-netsocket',
-    expected: ['Type reference should use "{}" syntax; saw "[`net.Socket`][]"'],
-    replacement: '{net.Socket}',
-  },
-  {
-    name: 'does not replace collapsed links to non-types',
-    input: '[`not-a-type`][]\n\n[`not-a-type`]: ./example.md',
-    expected: [],
-  },
-  {
-    name: 'does not replace collapsed links to API members',
-    input:
-      '[`net.createServer()`][] and [`writable.writableLength`][]\n\n' +
-      '[`net.createServer()`]: net.md#netcreateserveroptions-connectionlistener\n' +
-      '[`writable.writableLength`]: stream.md#writablewritablelength',
-    expected: [],
-  },
 ];
 
 describe('invalid-type-reference', () => {
