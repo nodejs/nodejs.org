@@ -32,6 +32,8 @@ export const testRule = (
     vfile.message.mock.calls.map(call => call.arguments[0]),
     expected
   );
+
+  return tree;
 };
 
 /**
