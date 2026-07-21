@@ -23,6 +23,7 @@ import remarkLintStrongMarker from 'remark-lint-strong-marker';
 import remarkLintTableCellPadding from 'remark-lint-table-cell-padding';
 import remarkLintTablePipes from 'remark-lint-table-pipes';
 import remarkPresetLintRecommended from 'remark-preset-lint-recommended';
+import remarkValidateLinks from 'remark-validate-links';
 
 export default {
   settings: {
@@ -54,6 +55,7 @@ export default {
     remarkLintNofileNameOuterDashes,
 
     // Heading and link rules
+    remarkValidateLinks,
     remarkLintFinalDefinition,
     [remarkLintNoUnusedDefinitions, false],
     [remarkLintNoLiteralURLs, false],
