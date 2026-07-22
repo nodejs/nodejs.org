@@ -38,6 +38,7 @@ This project follows the [Conventional Commits](https://www.conventionalcommits.
 - Commit messages must include a "type" as described in Conventional Commits
 - Commit messages **must** be written in lowercase, except proper nouns
 - Commit messages **must not** end with a period `.`
+- Pull request titles must use the same format and pass the `Conventional commits` check in the `Pull Request Policy` workflow
 
 ### Commit Signing
 

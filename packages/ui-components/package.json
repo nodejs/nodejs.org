@@ -42,7 +42,6 @@
     "lint:js": "eslint \"**/*.{js,mjs,ts,tsx}\"",
     "lint:js:fix": "node --run lint:js -- --fix",
     "lint:types": "tsc --noEmit",
-    "release": "node --run build",
     "storybook": "cross-env NODE_NO_WARNINGS=1 storybook dev -p 6006 --quiet",
     "storybook:build": "cross-env NODE_NO_WARNINGS=1 storybook build --quiet --webpack-stats-json",
     "test": "node --run test:unit",
