@@ -20,6 +20,12 @@
       "link": "https://nodejs.org/docs/latest/api/",
       "label": "components.containers.navBar.links.docs"
     },
+    "betaDocs": {
+      "link": "https://beta.docs.nodejs.org/",
+      "label": "components.containers.navBar.links.betaDocs",
+      "target": "_blank",
+      "accent": true
+    },
     "contribute": {
       "link": "https://github.com/nodejs/node/blob/main/CONTRIBUTING.md",
       "label": "components.containers.navBar.links.contribute",

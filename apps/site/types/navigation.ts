@@ -16,6 +16,7 @@ export type NavigationKeys =
   | 'about'
   | 'download'
   | 'docs'
+  | 'betaDocs'
   | 'getInvolved'
   | 'certification'
   | 'learn'
@@ -26,6 +27,7 @@ export type NavigationEntry = {
   link?: string;
   items?: Record<string, NavigationEntry>;
   target?: HTMLAttributeAnchorTarget | undefined;
+  accent?: boolean;
 };
 
 export type SiteNavigation = {

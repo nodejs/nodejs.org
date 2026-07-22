@@ -6,7 +6,8 @@
     gap-2
     rounded-sm
     px-3
-    py-2;
+    py-2
+    motion-safe:transition-colors;
 
   .label {
     @apply text-base
@@ -42,6 +43,19 @@
         @apply text-white
           opacity-50;
       }
+    }
+  }
+
+  &.accent {
+    @apply bg-transparent
+      ring-1
+      ring-neutral-200
+      ring-inset
+      dark:ring-neutral-900;
+
+    &:hover {
+      @apply bg-neutral-200
+        dark:bg-neutral-900;
     }
   }
 

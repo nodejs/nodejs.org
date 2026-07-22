@@ -19,6 +19,7 @@ type MappedNavigationEntry = {
   label: FormattedMessage;
   link: string;
   target?: HTMLAttributeAnchorTarget | undefined;
+  accent?: boolean;
 };
 
 // Provides Context replacement for variables within the Link. This is also something that is not going
@@ -44,13 +45,14 @@ const useSiteNavigation = () => {
       t.rich(label, context[key] || {}) as FormattedMessage;
 
     return Object.entries(entries).map(
-      ([key, { label, link, items, target }]): [
+      ([key, { label, link, items, target, accent }]): [
         string,
         MappedNavigationEntry,
       ] => [
         key,
         {
           target,
+          accent,
           label: label ? getFormattedMessage(label, key) : '',
           link: link ? replaceLinkWithContext(link, context[key]) : '',
           items: items ? mapNavigationEntries(items, context) : [],

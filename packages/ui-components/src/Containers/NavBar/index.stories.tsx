@@ -27,6 +27,12 @@ export const Default: Story = {
         link: '/docs',
       },
       {
+        text: 'Beta Docs',
+        link: 'https://beta.docs.nodejs.org/',
+        target: '_blank',
+        accent: true,
+      },
+      {
         text: 'Download',
         link: '/download',
       },

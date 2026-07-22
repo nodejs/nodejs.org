@@ -10,6 +10,9 @@ const locators = {
   mobileMenuToggleName:
     englishLocale.components.containers.navBar.controls.toggle,
   navLinksLocator: `[aria-label="${englishLocale.components.containers.navBar.controls.toggle}"] + div`,
+  // The Beta Docs link renders untranslated (English) across locales, so we
+  // match on its English label to skip it during translation checks.
+  betaDocsName: englishLocale.components.containers.navBar.links.betaDocs,
   // Global UI controls
   languageDropdownName: englishLocale.components.common.languageDropdown.label,
   themeToggleName: englishLocale.components.header.buttons.theme,
@@ -55,8 +58,14 @@ const verifyTranslation = async (page: Page, locale: Locale | string) => {
 
   // Verify each navigation link text matches an expected translation
   for (const link of links) {
-    const linkText = await link.textContent();
-    expect(expectedTexts).toContain(linkText!.trim());
+    const linkText = (await link.textContent())!.trim();
+    // Skip the Beta Docs link: it renders untranslated (English) across
+    // locales and has no translation entry in most locale files, so it
+    // won't appear in `expectedTexts` for non-English locales (e.g. es).
+    if (linkText === locators.betaDocsName) {
+      continue;
+    }
+    expect(expectedTexts).toContain(linkText);
   }
 };
 
