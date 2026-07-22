@@ -48,9 +48,9 @@ jobs:
           download_translations: true
           localization_branch_name: ${{ env.BRANCH_NAME }}
           create_pull_request: true
-          pull_request_title: '[automated]: crowdin sync'
+          pull_request_title: 'chore(i18n): sync translations from crowdin'
           pull_request_body: 'New Crowdin translations from the [Node.js Crowdin project](https://crowdin.com/project/nodejs-web)'
-          commit_message: 'chore: synced translations from crowdin'
+          commit_message: 'chore(i18n): sync translations from crowdin'
         env:
           GITHUB_TOKEN: ${{ secrets.CROWDIN_GITHUB_BOT_TOKEN }}
           # A numeric ID, found at https://crowdin.com/project/nodejs-web/tools/api
@@ -92,12 +92,17 @@ jobs:
             cache-lint-${{ hashFiles('pnpm-lock.yaml') }}-
             cache-lint-
 
-      - name: Patch version if the files changed
-        working-directory: packages/i18n
+      - name: Add changeset if the files changed
         run: |
           CHANGED_FILES=$(git diff --name-only HEAD^1 HEAD)
           if [ -n "$CHANGED_FILES" ]; then
-            pnpm version patch --no-git-tag-version
+            cat > .changeset/crowdin-translations.md <<'EOF'
+          ---
+          '@node-core/website-i18n': patch
+          ---
+
+          Update translations from Crowdin.
+          EOF
           fi
 
       - name: Run ESLint
@@ -111,7 +116,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
         with:
           commit_options: '--no-verify --signoff'
-          commit_message: 'chore: automated format of translated files'
+          commit_message: 'chore(i18n): format translated files'
           branch: ${{ env.BRANCH_NAME }}
 
       - name: Save Lint Cache

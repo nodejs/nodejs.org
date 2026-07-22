@@ -14,6 +14,8 @@
   },
   "scripts": {
     "build": "turbo build",
+    "changeset": "changeset",
+    "changeset:version": "changeset version",
     "cloudflare:deploy": "turbo cloudflare:deploy",
     "cloudflare:preview": "turbo cloudflare:preview",
     "deploy": "turbo deploy",
@@ -26,6 +28,7 @@
     "prepare": "husky",
     "prettier": "prettier \"**/*.{js,mjs,ts,tsx,md,mdx,json,yml,css}\" --check --cache --cache-strategy=content --cache-location=.prettiercache",
     "prettier:fix": "node --run prettier -- --write",
+    "release": "pnpm --filter './packages/*' --if-present run build && changeset publish",
     "scripts:release-post": "turbo scripts:release-post",
     "start": "turbo start",
     "storybook": "turbo storybook",
@@ -39,6 +42,8 @@
     "turbo": "2.9.16"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.7.0",
+    "@changesets/cli": "^2.31.1",
     "@eslint/js": "~10.0.1",
     "@reporters/github": "^2.0.0",
     "@testing-library/react": "~16.3.2",

@@ -1,0 +1,52 @@
+# Security Notes
+# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
+# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
+# REVIEWERS, please always double-check security practices before merging a PR that contains workflow changes!!
+# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+
+name: Pull Request Policy
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [opened, edited, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  changesets:
+    name: Changesets
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'pull_request' &&
+      !(github.event.pull_request.head.repo.full_name == github.repository &&
+        github.event.pull_request.head.ref == 'changeset-release/main')
+    steps:
+      - uses: nodejs/web-team/actions/setup-environment@9f3c83af227d721768d9dbb63009a47ed4f4282f
+        with:
+          pnpm: true
+          use-version-file: true
+          fetch-depth: 0
+
+      - run: pnpm changeset status --since origin/main
+
+  conventional-commits:
+    name: Conventional commits
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR Title Format
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          REGEX="^[a-z][a-z0-9-]*(\([a-z0-9_.\/-]+\))?!?: .+"
+
+          if [[ ! "$PR_TITLE" =~ $REGEX || "$PR_TITLE" == *. ]]; then
+            echo 'PR titles must use <type>[optional scope][!]: <description> and must not end with a period.'
+            exit 1
+          fi
