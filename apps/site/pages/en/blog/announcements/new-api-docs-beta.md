@@ -24,9 +24,9 @@ We also care about the needs of every user, and we pay attention to the ones tha
 
 ## Under-the-hood
 
-The redesigned documentation is built with [doc-kit](https://github.com/nodejs/doc-kit), a standalone tool developed by the Node.js Project to replace the previous, legacy, documentation generator.
+The redesigned documentation is built with [doc-kit](https://github.com/nodejs/doc-kit), a standalone tool developed by the Node.js Project to replace the previous legacy documentation generator.
 
-For more information on doc-kit, and its capabilities for other projects, please refer to [its repository](https://github.com/nodejs/doc-kit). This will also be the place where any and all bug reports, feature requests, and other tasks should be tracked.
+For more information on doc-kit and its capabilities for other projects, please refer to [its repository](https://github.com/nodejs/doc-kit). This will also be the place where bug reports, feature requests, and other tasks should be tracked.
 
 ## We need your feedback
 
