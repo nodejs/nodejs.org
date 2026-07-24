@@ -1,0 +1,59 @@
+---
+title: تحميل ®Node.js
+layout: download-archive
+---
+
+<WithDownloadArchive>
+  {({ binaries, installers, version, release, sources }) => (
+    <>
+      <h1>أرشيف تحميلات Node.js®</h1>
+
+      <h2 className="flex items-center gap-2">
+        <img
+          src="/static/logos/jsIconGreen.svg"
+          alt="Node.js Logo"
+          width="24"
+          height="24"
+        />
+        {version}
+        {release.codename && ` (${release.codename})`}
+      </h2>
+
+      <WithReleaseAlertBox status={release.status} />
+
+      <ReleaseOverview release={release} />
+
+      <ul className='flex list-none flex-col gap-2 p-0 text-sm'>
+        <li>
+          اقرأ <LinkWithArrow href={`https://github.com/nodejs/node/releases/tag/${version}`}>سجل التغييرات (changelog)</LinkWithArrow> أو <Link href={`/blog/release/${version}`}>المقالة</Link> الخاصة بهذا الإصدار.
+        </li>
+        <li>
+          تعرّف أكثر على <Link href="/about/previous-releases">إصدارات Node.js</Link>، بما في ذلك جدول الإصدارات وحالة دعم LTS.
+        </li>
+
+        <li>
+          ملفات <LinkWithArrow href={sources.shasum}>SHASUMS الموقعة</LinkWithArrow> للتحقق من ملفات الإصدار. كيفية <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">التحقق</LinkWithArrow> من ملفات SHASUMS الموقعة.
+        </li>
+
+        <li>
+          تحميل ملف <LinkWithArrow href={sources.tarball}>الكود المصدري لـ Node.js {version}</LinkWithArrow> كمستند tarball موقّع.
+        </li>
+
+      </ul>
+
+      <h2>إصدارات أخرى</h2>
+      <WithReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
+
+      <h2>تحميل Binary</h2>
+      <DownloadsTable source={binaries} />
+
+      <h2>حزم التثبيت (Installers)</h2>
+      <DownloadsTable source={installers} />
+
+      <h2>الإصدارات الفرعية (Minor versions)</h2>
+      <MinorReleasesTable releases={release.minorVersions} />
+    </>
+
+)}
+
+</WithDownloadArchive>

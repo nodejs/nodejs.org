@@ -191,7 +191,8 @@
     "banner": {
       "default": "إعلان",
       "warning": "إشعار تحذيري",
-      "error": "إشعار خطأ"
+      "error": "إشعار خطأ",
+      "close": "إغلاق"
     },
     "search": {
       "searchPlaceholder": "ابدأ الكتابة...",
