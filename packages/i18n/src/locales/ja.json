@@ -191,7 +191,8 @@
     "banner": {
       "default": "お知らせ",
       "warning": "警告通知",
-      "error": "エラー通知"
+      "error": "エラー通知",
+      "close": "バナーを閉じる"
     },
     "search": {
       "searchPlaceholder": "入力を開始...",

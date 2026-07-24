@@ -1,5 +1,5 @@
 # nvmをダウンロードしてインストールする：
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.6/install.sh | bash
 
 # シェルを再起動する代わりに実行する
 \. "$HOME/.nvm/nvm.sh"

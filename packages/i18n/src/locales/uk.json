@@ -191,7 +191,8 @@
     "banner": {
       "default": "Оголошення",
       "warning": "Попередження",
-      "error": "Помилка"
+      "error": "Помилка",
+      "close": "Закрити банер"
     },
     "search": {
       "searchPlaceholder": "Уведіть щось...",
