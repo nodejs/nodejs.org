@@ -43,6 +43,8 @@ export default baseConfig.concat([
   },
 
   {
+    // TODO: Enable validate-links for translations once their routes and
+    // anchors are kept in sync with the English content.
     ...mdx.flat,
     processor: mdx.createRemarkProcessor({ lintCodeBlocks: true }),
     rules: {
