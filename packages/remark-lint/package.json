@@ -4,8 +4,7 @@
   "version": "1.4.0",
   "exports": {
     ".": "./src/index.mjs",
-    "./api": "./src/api.mjs",
-    "./validate-links": "./src/rules/validate-links.mjs"
+    "./api": "./src/api.mjs"
   },
   "repository": {
     "type": "git",
