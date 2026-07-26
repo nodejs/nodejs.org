@@ -1,0 +1,65 @@
+# Security Notes
+# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
+# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
+# REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
+# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+
+name: Bump security.txt Expiry
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8 1 1 *' # once a year, Jan 1 at 08:00 UTC
+
+permissions: {}
+
+jobs:
+  bump-expiry:
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'nodejs'
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Bump the Expires year
+        id: update-expiry
+        env:
+          SECURITY_TXT: apps/site/public/.well-known/security.txt
+        run: |
+          set -euo pipefail
+          old=$(sed -n 's/^Expires: *//p' "$SECURITY_TXT")
+          year=${old%%-*}
+          new="$((year + 1))${old#"$year"}"
+          sed -i "s|^Expires: .*|Expires: ${new}|" "$SECURITY_TXT"
+          {
+            echo "old=${old}"
+            echo "new=${new}"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Open pull request
+        uses: gr2m/create-or-update-pull-request-action@b65137ca591da0b9f43bad7b24df13050ea45d1b # v1.10.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          update-pull-request-title-and-body: true
+          branch: chore/update-security-txt
+          body: |
+            Updates the `Expiry` on our [`security.txt`](https://nodejs.org/.well-known/security.txt) from ${{ steps.update-expiry.outputs.old }} to ${{ steps.update-expiry.outputs.new }}
+
+            Before merging, please explicitly confirm that:
+            - The security contact listed is still correct and actively monitored
+            - The linked security policy is still accurate
+            - The project's preferred vulnerability disclosure path has not changed
+
+            cc @nodejs/security-wg
+
+            Check this workflow's logs at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
+          commit-message: 'meta: update security `Expiry` from ${{ steps.update-expiry.outputs.old }} to ${{ steps.update-expiry.outputs.new }}'
+          title: 'meta: update security `Expiry` from ${{ steps.update-expiry.outputs.old }} to ${{ steps.update-expiry.outputs.new }}'
+          draft: true
+          labels: security
