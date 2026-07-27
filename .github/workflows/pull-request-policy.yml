@@ -10,6 +10,8 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - packages/**
     types: [opened, edited, synchronize, reopened, ready_for_review]
 
 permissions:
