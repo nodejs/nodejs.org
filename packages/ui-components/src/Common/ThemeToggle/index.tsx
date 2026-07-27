@@ -30,7 +30,7 @@ const themes: Array<Theme> = ['system', 'light', 'dark'];
 const ThemeToggle: FC<ThemeToggleProps> = ({
   onChange = () => {},
   currentTheme = 'system',
-  ariaLabel,
+  ariaLabel = 'Toggle light/dark theme',
   themeLabels = { system: 'System', light: 'Light', dark: 'Dark' },
 }) => {
   const TriggerIcon = themeIcons[currentTheme];
