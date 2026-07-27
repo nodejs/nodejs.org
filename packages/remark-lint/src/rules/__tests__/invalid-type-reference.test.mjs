@@ -1,3 +1,4 @@
+import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
 import { testRule } from './utils.mjs';
@@ -23,6 +24,19 @@ const testCases = [
     name: 'miswrapped reference inside link',
     input: '[<number>]()',
     expected: ['Type reference must be wrapped in "{}"; saw "<number>"'],
+  },
+  {
+    name: 'ignores references in non-prose nodes',
+    input: `<!-- {invalid} -->
+
+\`{invalid}\`
+
+\`\`\`js
+const value = {invalid};
+\`\`\`
+
+<div>{invalid}</div>`,
+    expected: [],
   },
   {
     name: 'multiple references',
@@ -54,9 +68,13 @@ const testCases = [
 ];
 
 describe('invalid-type-reference', () => {
-  for (const { name, input, expected, options } of testCases) {
-    it(name, () =>
-      testRule(invalidTypeReference, input, expected, {}, options)
-    );
+  for (const { name, input, expected, options, replacement } of testCases) {
+    it(name, () => {
+      const tree = testRule(invalidTypeReference, input, expected, {}, options);
+
+      if (replacement) {
+        assert.equal(tree.children[0].children[0].value, replacement);
+      }
+    });
   }
 });

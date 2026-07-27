@@ -109,6 +109,16 @@ Enforces alphabetical sorting of reference-style link definitions.
 [info]: https://example.com/info
 ```
 
+### `node-core:validate-links`
+
+Checks that local links point to existing files and that fragment-only links
+point to headings in the current document. Root-relative website routes are
+mapped to the configured content and public directories, and route targets do
+not need to include a file extension. Directory routes resolve to `index.*`.
+
+For example, `/about/previous-releases` resolves to
+`pages/en/about/previous-releases.mdx`.
+
 ### `node-core:required-metadata`
 
 Requires essential metadata for documentation:
