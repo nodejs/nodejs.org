@@ -17,11 +17,17 @@
   min-width: 100%;
   padding: 6px 12px;
   white-space: pre-wrap;
-  background-color: var(--color-neutral-950);
+  color: var(--color-neutral-900);
+  background-color: var(--color-neutral-100);
 
   span {
     display: inline-block;
   }
+}
+
+[data-theme='dark'] .twoslash-popup-code:not(:has(div)) {
+  color: var(--color-white);
+  background-color: var(--color-neutral-950);
 }
 
 .twoslash-completion-list {

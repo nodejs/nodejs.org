@@ -6,8 +6,10 @@
     overflow-x-hidden
     rounded-sm
     border
-    border-neutral-900
-    bg-neutral-950;
+    border-neutral-200
+    bg-white
+    dark:border-neutral-900
+    dark:bg-neutral-950;
 
   .content {
     @apply m-0
@@ -26,8 +28,9 @@
         p-0
         text-sm
         leading-snug
-        text-neutral-400
-        [counter-reset:line];
+        text-neutral-800
+        [counter-reset:line]
+        dark:text-neutral-400;
 
       & > [class='line'] {
         @apply relative
@@ -48,9 +51,10 @@
             mr-4
             w-4.5
             text-right
-            text-neutral-600
+            text-neutral-500
             [content:counter(line)]
-            [counter-increment:line];
+            [counter-increment:line]
+            dark:text-neutral-600;
         }
       }
 
@@ -74,14 +78,16 @@
       items-center
       justify-between
       border-t
-      border-t-neutral-900
+      border-t-neutral-200
       px-3
       py-2
       text-sm
-      font-medium;
+      font-medium
+      dark:border-t-neutral-900;
 
     & > .language {
-      @apply text-neutral-400;
+      @apply text-neutral-700
+        dark:text-neutral-400;
     }
 
     & > .action {
