@@ -14,7 +14,7 @@
       min-w-0
       p-4;
 
-    & > code {
+    code {
       @apply font-ibm-plex-mono
         font-regular
         scrollbar-thin
