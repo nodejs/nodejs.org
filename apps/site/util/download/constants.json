@@ -196,6 +196,16 @@
       },
       "url": "https://asdf-vm.com/guide/getting-started.html",
       "info": "layouts.download.codeBox.platformInfo.asdf"
+    },
+    {
+      "id": "ZEROINSTALL",
+      "icon": "ZeroInstall",
+      "name": "0install",
+      "compatibility": {
+        "os": ["WIN", "MAC", "LINUX"]
+      },
+      "url": "https://0install.net/",
+      "info": "layouts.download.codeBox.platformInfo.zeroinstall"
     }
   ],
   "packageManagers": [
