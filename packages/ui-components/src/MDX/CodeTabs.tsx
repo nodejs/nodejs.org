@@ -57,7 +57,11 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
       {...props}
     >
       {languages.map((_, index) => (
-        <TabsPrimitive.Content key={tabs[index].key} value={tabs[index].key}>
+        <TabsPrimitive.Content
+          forceMount
+          key={tabs[index].key}
+          value={tabs[index].key}
+        >
           {codes[index]}
         </TabsPrimitive.Content>
       ))}
