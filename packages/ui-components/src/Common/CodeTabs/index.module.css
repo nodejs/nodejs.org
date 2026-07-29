@@ -22,7 +22,7 @@
       @apply border-b
         border-b-transparent
         px-1
-        text-neutral-700
+        text-neutral-800
         dark:text-neutral-200;
 
       &[data-state='active'] {
@@ -38,14 +38,14 @@
         items-center
         gap-2
         text-center
-        text-neutral-700
+        text-neutral-800
         motion-safe:transition-colors
         lg:flex
         dark:text-neutral-200;
 
       & > .icon {
         @apply size-4
-          text-neutral-600
+          text-neutral-700
           dark:text-neutral-300;
       }
 

@@ -25,9 +25,9 @@ mock.module('shiki/themes/nord.mjs', {
   defaultExport: { name: 'nord', colors: { 'editor.background': '#2e3440' } },
 });
 
-mock.module('shiki/themes/github-light.mjs', {
+mock.module('shiki/themes/github-light-default.mjs', {
   defaultExport: {
-    name: 'github-light',
+    name: 'github-light-default',
     colors: { 'editor.background': '#fff' },
   },
 });

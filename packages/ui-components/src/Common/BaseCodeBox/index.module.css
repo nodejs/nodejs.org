@@ -51,7 +51,7 @@
             mr-4
             w-4.5
             text-right
-            text-neutral-500
+            text-neutral-700
             [content:counter(line)]
             [counter-increment:line]
             dark:text-neutral-600;
@@ -86,7 +86,7 @@
       dark:border-t-neutral-900;
 
     & > .language {
-      @apply text-neutral-700
+      @apply text-neutral-800
         dark:text-neutral-400;
     }
 

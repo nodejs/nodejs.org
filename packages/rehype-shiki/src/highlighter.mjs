@@ -1,5 +1,5 @@
 import { createHighlighterCoreSync, isSpecialLang } from '@shikijs/core';
-import shikiGitHubLightTheme from 'shiki/themes/github-light.mjs';
+import shikiGitHubLightTheme from 'shiki/themes/github-light-default.mjs';
 import shikiNordTheme from 'shiki/themes/nord.mjs';
 
 const DEFAULT_DARK_THEME = {
