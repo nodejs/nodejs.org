@@ -59,7 +59,7 @@
       }
     }
 
-    &[class*='no-line-numbers'] > code > [class='line'] {
+    &[class*='no-line-numbers'] code > [class='line'] {
       @apply pl-0;
 
       &:not(:empty:last-child)::after {
