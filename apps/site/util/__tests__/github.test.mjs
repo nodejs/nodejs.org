@@ -11,8 +11,8 @@ const { getGitHubAvatarUrl, createGitHubSlugger, getGitHubBlobUrl } =
 describe('gitHubUtils', () => {
   it('getGitHubAvatarUrl returns the correct URL', () => {
     assert.equal(
-      getGitHubAvatarUrl('octocat'),
-      'https://avatars.githubusercontent.com/octocat'
+      getGitHubAvatarUrl('583231'),
+      'https://avatars.githubusercontent.com/u/583231'
     );
   });
 
@@ -28,10 +28,24 @@ describe('gitHubUtils', () => {
   });
 
   describe('getGitHubAvatarUrl', () => {
-    it('should return a valid GitHub avatar URL', () => {
+    it('should return a valid GitHub avatar URL by id', () => {
       assert.equal(
-        getGitHubAvatarUrl('octocat'),
+        getGitHubAvatarUrl('583231'),
+        'https://avatars.githubusercontent.com/u/583231'
+      );
+    });
+
+    it('should return the legacy username-based URL when useLegacyUrl is true', () => {
+      assert.equal(
+        getGitHubAvatarUrl('octocat', true),
         'https://avatars.githubusercontent.com/octocat'
+      );
+    });
+
+    it('should use the id-based URL when useLegacyUrl is false', () => {
+      assert.equal(
+        getGitHubAvatarUrl('583231', false),
+        'https://avatars.githubusercontent.com/u/583231'
       );
     });
   });
