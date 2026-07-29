@@ -12,9 +12,9 @@ allowBuilds:
 
 catalog:
   '@types/node': ^24.10.1
-  '@types/react': ^19.2.15
+  '@types/react': ^19.2.17
   classnames: ~2.5.1
   cross-env: ^10.0.0
-  react: ^19.2.6
+  react: ^19.2.8
   tailwindcss: ~4.1.17
   typescript: 5.9.3
