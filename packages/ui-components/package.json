@@ -92,7 +92,7 @@
     "stylelint-order": "8.1.1",
     "stylelint-selector-bem-pattern": "4.0.1",
     "tailwindcss": "catalog:",
-    "tsx": "4.22.3",
+    "tsx": "4.23.1",
     "typescript": "catalog:"
   },
   "imports": {
