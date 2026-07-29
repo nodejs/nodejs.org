@@ -45,7 +45,7 @@
     "@orama/orama": "^3.1.18",
     "@radix-ui/react-tabs": "^1.1.13",
     "@radix-ui/react-tooltip": "^1.2.8",
-    "@tailwindcss/postcss": "~4.3.0",
+    "@tailwindcss/postcss": "~4.3.3",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@typescript/vfs": "^1.6.4",
