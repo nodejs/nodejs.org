@@ -1,10 +1,11 @@
 packages:
   - packages/*
   - apps/*
+  - platforms/*
 
 allowBuilds:
-  "@parcel/watcher": true
-  "@swc/core": true
+  '@parcel/watcher': true
+  '@swc/core': true
   esbuild: true
   sharp: true
   unrs-resolver: true
@@ -15,6 +16,8 @@ catalog:
   '@types/react': ^19.2.15
   classnames: ~2.5.1
   cross-env: ^10.0.0
+  # Running on the preview to incorporate https://github.com/vercel/next.js/pull/93308
+  next: 16.3.0-preview.9
   react: ^19.2.6
   tailwindcss: ~4.1.17
   typescript: 5.9.3

@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["esnext"],
+    "module": "esnext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "types": ["node"]
+  },
+  "include": ["**/*.ts"],
+  "exclude": [
+    "node_modules",
+    // The worker entrypoint is bundled by wrangler, not tsc. It imports
+    // apps/site/.open-next/worker.js, a build artifact that does not exist when
+    // `lint:types` runs, and type resolution of @cloudflare/workers-types has
+    // also been observed to crash the compiler here, so we skip type checking it.
+    "worker-entrypoint.ts"
+  ]
+}
