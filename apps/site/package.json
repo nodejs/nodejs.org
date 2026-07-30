@@ -2,7 +2,6 @@
   "name": "@node-core/website",
   "type": "module",
   "scripts": {
-    "prebuild": "node --run build:blog-data",
     "build": "cross-env NODE_NO_WARNINGS=1 next build",
     "build:blog-data": "cross-env NODE_NO_WARNINGS=1 node ./scripts/blog-data/index.mjs",
     "build:blog-data:watch": "node --watch --watch-path=pages/en/blog ./scripts/blog-data/index.mjs",
