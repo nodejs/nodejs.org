@@ -26,7 +26,7 @@
     "prepare": "husky",
     "prettier": "prettier \"**/*.{js,mjs,ts,tsx,md,mdx,json,yml,css}\" --check --cache --cache-strategy=content --cache-location=.prettiercache",
     "prettier:fix": "node --run prettier -- --write",
-    "release": "pnpm --filter './packages/*' --if-present run build && changeset publish",
+    "release": "pnpm --filter './packages/*' --if-present run build && pnpm publish -r --access=public",
     "scripts:release-post": "turbo scripts:release-post",
     "start": "turbo start",
     "storybook": "turbo storybook",
