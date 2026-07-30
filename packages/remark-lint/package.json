@@ -1,7 +1,7 @@
 {
   "name": "@node-core/remark-lint",
   "type": "module",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "exports": {
     ".": "./src/index.mjs",
     "./api": "./src/api.mjs",

@@ -1,6 +1,6 @@
 {
   "name": "@node-core/rehype-shiki",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "type": "module",
   "types": "./dist/index.d.mts",
   "exports": {
