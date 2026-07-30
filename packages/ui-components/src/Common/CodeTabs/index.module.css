@@ -1,6 +1,11 @@
 @reference "../../styles/index.css";
 
 .root {
+  /* `forceMount` keeps every panel in the DOM, so hide the inactive ones here */
+  > [role='tabpanel'][data-state='inactive'] {
+    @apply hidden;
+  }
+
   > [role='tabpanel'] > :first-child {
     @apply rounded-t-none;
   }
