@@ -18,6 +18,7 @@ const SignatureItem: FC<PropsWithChildren<SignatureItemProps>> = ({
   children,
 }) => (
   <div
+    data-kind={kind}
     className={classNames(styles.item, {
       [styles.return]: kind === 'return',
     })}
