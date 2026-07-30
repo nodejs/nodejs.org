@@ -14,7 +14,7 @@ For more details, refer to the [Wrangler documentation](https://developers.cloud
 
 Key configurations include:
 
-- `main`: Points to a custom worker entry point ([`site/cloudflare/worker-entrypoint.ts`](../apps/site/cloudflare/worker-entrypoint.ts)) that wraps the OpenNext-generated worker (see [Custom Worker Entry Point](#custom-worker-entry-point) and [Sentry](#sentry) below).
+- `main`: Points to a custom worker entry point ([`platforms/cloudflare/worker-entrypoint.ts`](../platforms/cloudflare/worker-entrypoint.ts)) that wraps the OpenNext-generated worker (see [Custom Worker Entry Point](#custom-worker-entry-point) and [Sentry](#sentry) below).
 - `account_id`: Specifies the Cloudflare account ID. This is not required for local previews but is necessary for deployments. You can obtain an account ID for free by signing up at [dash.cloudflare.com](https://dash.cloudflare.com/login).
   - This is set to `07be8d2fbc940503ca1be344714cb0d1`, which is the ID of a Cloudflare account controlled by Node.js.
 - `build`: Defines the build command to generate the Node.js filesystem polyfills required for the application to run on Cloudflare Workers. This uses the [`@flarelabs/wrangler-build-time-fs-assets-polyfilling`](https://github.com/flarelabs-net/wrangler-build-time-fs-assets-polyfilling) package.
@@ -49,15 +49,15 @@ Additionally, when deploying, an extra `CF_WORKERS_SCRIPTS_API_TOKEN` environmen
 
 ### Image loader
 
-When deployed on the Cloudflare network a custom image loader is required. We set such loader in the Next.js config file when the `OPEN_NEXT_CLOUDFLARE` environment variable is set (which indicates that we're building the application for the Cloudflare deployment).
+When deployed on the Cloudflare network a custom image loader is required. The Cloudflare platform's Next.js configuration fragment ([`platforms/cloudflare/next.config.mjs`](../platforms/cloudflare/next.config.mjs)) sets such loader when building for the Cloudflare deployment.
 
-The custom loader can be found at [`site/cloudflare/image-loader.ts`](../apps/site/cloudflare/image-loader.ts).
+The custom loader can be found at [`platforms/cloudflare/image-loader.ts`](../platforms/cloudflare/image-loader.ts).
 
 For more details on this see: https://developers.cloudflare.com/images/transform-images/integrate-with-frameworks/#global-loader
 
 ### Custom Worker Entry Point
 
-Instead of directly using the OpenNext-generated worker (`.open-next/worker.js`), the application uses a custom worker entry point at [`site/cloudflare/worker-entrypoint.ts`](../apps/site/cloudflare/worker-entrypoint.ts). This allows customizing the worker's behavior before requests are handled (currently used to integrate [Sentry](#sentry) error monitoring).
+Instead of directly using the OpenNext-generated worker (`.open-next/worker.js`), the application uses a custom worker entry point at [`platforms/cloudflare/worker-entrypoint.ts`](../platforms/cloudflare/worker-entrypoint.ts). This allows customizing the worker's behavior before requests are handled (currently used to integrate [Sentry](#sentry) error monitoring).
 
 The custom entry point imports the OpenNext-generated handler from `.open-next/worker.js` and re-exports the `DOQueueHandler` Durable Object needed by the application.
 
@@ -75,7 +75,8 @@ For more details, refer to the [Sentry Cloudflare guide](https://docs.sentry.io/
 
 ## Scripts
 
-Preview and deployment of the website targeting the Cloudflare network is implemented via the following two commands:
+Building, previewing, and deploying the website targeting the Cloudflare network is implemented via the following commands (all part of the [`@node-core/platform-cloudflare`](../platforms/cloudflare/package.json) package):
 
-- `pnpm cloudflare:preview` builds the website using the OpenNext Cloudflare adapter and runs the website locally in a server simulating the Cloudflare hosting (using the [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/))
-- `pnpm cloudflare:deploy` builds the website using the OpenNext Cloudflare adapter and deploys the website to the Cloudflare network (using the [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/))
+- `pnpm --filter=@node-core/platform-cloudflare build` builds the website using the OpenNext Cloudflare adapter
+- `pnpm --filter=@node-core/platform-cloudflare preview` runs a previously built worker locally in a server simulating the Cloudflare hosting (using the [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/))
+- `pnpm --filter=@node-core/platform-cloudflare run deploy` builds the website using the OpenNext Cloudflare adapter and deploys it to the Cloudflare network (using the [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/))

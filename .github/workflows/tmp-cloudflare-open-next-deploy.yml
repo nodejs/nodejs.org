@@ -52,17 +52,11 @@ jobs:
       - name: Install packages
         run: pnpm install --frozen-lockfile
 
-      - name: Build blog data
-        working-directory: apps/site
-        run: node --run build:blog-data
-
       - name: Build open-next site
-        working-directory: apps/site
-        run: node --run cloudflare:build:worker
+        run: node_modules/.bin/turbo build --filter=@node-core/platform-cloudflare --cache-dir=.turbo/cache
 
       - name: Deploy open-next site
-        working-directory: apps/site
-        run: node --run cloudflare:deploy
+        run: pnpm --filter=@node-core/platform-cloudflare run deploy
         env:
           CF_WORKERS_SCRIPTS_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

@@ -59,7 +59,7 @@ jobs:
 
       - name: Build Next.js
         # We want a ISR build on CI to ensure that regular Next.js builds work as expected.
-        run: node_modules/.bin/turbo build --cache-dir=.turbo/cache
+        run: node_modules/.bin/turbo build --filter=@node-core/website --cache-dir=.turbo/cache
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
           # this should be a last resort in case by any chances the build memory gets too high
@@ -76,7 +76,7 @@ jobs:
 
       - name: Build Next.js (Static Export)
         # We want to generate a static build, as it is a requirement of our website.
-        run: node_modules/.bin/turbo deploy --cache-dir=.turbo/cache
+        run: node_modules/.bin/turbo deploy --filter=@node-core/website --cache-dir=.turbo/cache
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
           # this should be a last resort in case by any chances the build memory gets too high

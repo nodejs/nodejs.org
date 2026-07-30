@@ -50,12 +50,11 @@ jobs:
         working-directory: apps/site
         run: node_modules/.bin/playwright install --with-deps
 
+      - name: Build open-next site
+        run: node_modules/.bin/turbo build --filter=@node-core/platform-cloudflare --cache-dir=.turbo/cache
+
       - name: Run Playwright tests
-        working-directory: apps/site
-        run: node --run playwright
-        env:
-          PLAYWRIGHT_RUN_CLOUDFLARE_PREVIEW: true
-          PLAYWRIGHT_BASE_URL: http://127.0.0.1:8787
+        run: pnpm --filter=@node-core/platform-cloudflare test:e2e
 
       - name: Upload Playwright test results
         if: always()
