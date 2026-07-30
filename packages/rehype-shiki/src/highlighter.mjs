@@ -1,12 +1,21 @@
 import { createHighlighterCoreSync, isSpecialLang } from '@shikijs/core';
+import shikiGitHubLightTheme from 'shiki/themes/github-light-default.mjs';
 import shikiNordTheme from 'shiki/themes/nord.mjs';
 
-const DEFAULT_THEME = {
+const DEFAULT_DARK_THEME = {
   // We are updating this color because the background color and comment text color
   // in the Codebox component do not comply with accessibility standards.
   // See: https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html
-  colorReplacements: { '#616e88': '#707e99' },
   ...shikiNordTheme,
+  colorReplacements: {
+    ...shikiNordTheme.colorReplacements,
+    '#616e88': '#707e99',
+  },
+};
+
+const DEFAULT_THEMES = {
+  light: shikiGitHubLightTheme,
+  dark: DEFAULT_DARK_THEME,
 };
 
 const FALLBACK_LANGUAGE = 'text';
@@ -42,12 +51,18 @@ export const getLanguageByName = (language, langs) => {
  * @returns {SyntaxHighlighter}
  */
 const createHighlighter = ({ coreOptions = {}, highlighterOptions = {} }) => {
+  const usesCustomTheme =
+    'theme' in highlighterOptions || 'themes' in highlighterOptions;
   const options = {
-    themes: [DEFAULT_THEME],
+    themes: Object.values(DEFAULT_THEMES),
     ...coreOptions,
   };
   const shiki = createHighlighterCoreSync(options);
-  const theme = options.themes[0];
+  const themeOptions = usesCustomTheme
+    ? {}
+    : coreOptions.themes
+      ? { theme: options.themes[0] }
+      : { themes: DEFAULT_THEMES, defaultColor: 'light' };
 
   const loadedLanguages = new Set(
     shiki.getLoadedLanguages().map(lang => lang.toLowerCase())
@@ -86,7 +101,7 @@ const createHighlighter = ({ coreOptions = {}, highlighterOptions = {} }) => {
     shiki
       .codeToHtml(code, {
         lang: resolveLanguage(lang),
-        theme,
+        ...themeOptions,
         meta,
         ...highlighterOptions,
       })
@@ -105,7 +120,7 @@ const createHighlighter = ({ coreOptions = {}, highlighterOptions = {} }) => {
   const highlightToHast = (code, lang, meta = {}) =>
     shiki.codeToHast(code, {
       lang: resolveLanguage(lang),
-      theme,
+      ...themeOptions,
       meta,
       ...highlighterOptions,
     });

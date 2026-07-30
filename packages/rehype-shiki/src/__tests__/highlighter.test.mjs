@@ -25,6 +25,13 @@ mock.module('shiki/themes/nord.mjs', {
   defaultExport: { name: 'nord', colors: { 'editor.background': '#2e3440' } },
 });
 
+mock.module('shiki/themes/github-light-default.mjs', {
+  defaultExport: {
+    name: 'github-light-default',
+    colors: { 'editor.background': '#fff' },
+  },
+});
+
 describe('createHighlighter', async () => {
   const { default: createHighlighter } = await import('../highlighter.mjs');
 
@@ -69,6 +76,15 @@ describe('createHighlighter', async () => {
 
       const [, options] = mockShiki.codeToHtml.mock.calls.at(-1).arguments;
       assert.strictEqual(options.lang, 'text');
+    });
+
+    it('emits light and dark syntax colors with light as the default', () => {
+      const highlighter = createHighlighter({});
+      highlighter.highlightToHtml('const x = 1;', 'javascript');
+
+      const [, options] = mockShiki.codeToHtml.mock.calls.at(-1).arguments;
+      assert.deepStrictEqual(Object.keys(options.themes), ['light', 'dark']);
+      assert.strictEqual(options.defaultColor, 'light');
     });
   });
 
