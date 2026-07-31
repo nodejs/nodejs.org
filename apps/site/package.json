@@ -91,7 +91,7 @@
     "tsx": "^4.22.3",
     "typescript": "catalog:",
     "typescript-eslint": "~8.65.0",
-    "user-agent-data-types": "0.4.2"
+    "user-agent-data-types": "0.4.3"
   },
   "peerDependencies": {
     "@node-core/platform-cloudflare": "workspace:*",
