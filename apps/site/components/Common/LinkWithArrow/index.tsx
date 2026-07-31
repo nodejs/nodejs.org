@@ -13,8 +13,7 @@ import type {
 import styles from './index.module.css';
 
 type LinkWithArrowProps =
-  | ComponentProps<typeof Link>
-  | ButtonHTMLAttributes<HTMLButtonElement>;
+  ComponentProps<typeof Link> | ButtonHTMLAttributes<HTMLButtonElement>;
 
 const LinkWithArrow: FC<PropsWithChildren<LinkWithArrowProps>> = ({
   children,

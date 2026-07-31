@@ -41,6 +41,9 @@ export default baseConfig.concat([
     processor: mdx.createRemarkProcessor({ lintCodeBlocks: true }),
     rules: {
       ...mdx.flat.rules,
+      // Components used in MDX are never imported; they are injected by our
+      // compiler from `mdx/components.mjs`, so they are never in lexical scope.
+      'no-undef': 'off',
       'no-irregular-whitespace': 'off',
       '@next/next/no-img-element': 'off',
       '@next/next/no-html-link-for-pages': ['error', 'apps/site/pages/'],
