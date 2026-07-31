@@ -4,4 +4,5 @@ export const CODE_LIKE_TYPES = new Set([
   'function',
   'ctor',
   'property',
+  'event',
 ]);
