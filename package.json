@@ -37,7 +37,7 @@
   "dependencies": {
     "husky": "9.1.7",
     "lint-staged": "17.2.0",
-    "turbo": "2.9.16"
+    "turbo": "2.10.6"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.7.0",
