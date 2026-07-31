@@ -23,7 +23,7 @@
     "@typescript/vfs": "^1.6.4",
     "twoslash": "^0.3.9",
     "typescript": "catalog:",
-    "wrangler": "^4.77.0"
+    "wrangler": "^4.114.0"
   },
   "peerDependencies": {
     "next": "catalog:"
