@@ -16,11 +16,6 @@ jobs:
     name: Auto-merge
     if: github.repository == 'nodejs/nodejs.org'
     runs-on: ubuntu-latest
-    permissions:
-      # Required to approve and merge pull requests
-      pull-requests: write
-      # Required to merge pull requests via merge queue
-      contents: write
 
     steps:
       - name: Harden Runner
@@ -31,3 +26,4 @@ jobs:
       - uses: nodejs/web-team/actions/auto-merge-prs@b087df186d25f8792fb85cc7794f68718726b8ee
         with:
           merge-method: queue
+          github-token: ${{ secrets.AUTO_MERGE_GITHUB_TOKEN }} # zizmor: ignore[secrets-outside-env]
