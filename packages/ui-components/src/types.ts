@@ -10,8 +10,7 @@ export type LogoVariant = 'default' | 'pride';
 export type TailwindSVG = SVGProps<SVGSVGElement> & { tw?: string };
 export type BlogPreviewType = 'announcements' | 'release' | 'vulnerability';
 export type LinkLike =
-  | JSXElementConstructor<AnchorHTMLAttributes<HTMLAnchorElement>>
-  | 'a';
+  JSXElementConstructor<AnchorHTMLAttributes<HTMLAnchorElement>> | 'a';
 
 export type FormattedMessage =
   | string
