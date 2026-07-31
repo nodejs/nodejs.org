@@ -11,10 +11,6 @@ const isTypeNode = node => {
     return QUERIES.normalizeTypes.test(node.value);
   }
 
-  if (node.type === 'html') {
-    return node.value.match(QUERIES.normalizeTypes)?.includes(node.value);
-  }
-
   return false;
 };
 
