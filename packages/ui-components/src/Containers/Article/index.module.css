@@ -7,8 +7,8 @@
     ml:grid-rows-[1fr]
     ml:overflow-visible
     ml:[grid-template-areas:'sidebar_main''sidebar_footer']
-    3xl:grid-cols-[1fr_--spacing(256)_1fr]
-    3xl:max-w-none
+    3xl:grid-cols-[--spacing(80)_1fr_--spacing(144)]
+    3xl:max-w-12xl
     mx-auto
     block
     w-full

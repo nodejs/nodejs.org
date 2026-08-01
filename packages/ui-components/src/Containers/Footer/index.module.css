@@ -13,6 +13,7 @@
 
   .innerContainer {
     @apply max-w-10xl
+      3xl:max-w-12xl
       mx-auto
       flex
       flex-col

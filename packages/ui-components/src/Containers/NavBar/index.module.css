@@ -11,6 +11,7 @@
 
   .innerContainer {
     @apply max-w-10xl
+      3xl:max-w-12xl
       xl:mx-auto
       xl:flex
       xl:h-16
