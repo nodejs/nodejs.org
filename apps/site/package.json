@@ -47,7 +47,7 @@
     "gray-matter": "~4.0.3",
     "mdast-util-to-string": "^4.0.0",
     "next": "catalog:",
-    "next-intl": "~4.13.0",
+    "next-intl": "~4.13.4",
     "next-themes": "~0.4.6",
     "postcss-calc": "~10.1.1",
     "react": "catalog:",
@@ -67,7 +67,7 @@
   },
   "devDependencies": {
     "@eslint-react/eslint-plugin": "~5.8.6",
-    "@next/eslint-plugin-next": "16.2.6",
+    "@next/eslint-plugin-next": "16.2.11",
     "@node-core/remark-lint": "workspace:*",
     "@orama/core": "^1.2.19",
     "@playwright/test": "^1.61.1",
