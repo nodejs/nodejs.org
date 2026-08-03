@@ -4,6 +4,10 @@ import { getAcronymFromString } from '#site/util/string';
 
 import type { AuthorProps } from '#site/types';
 
+// Extracts the GitHub username from an author's profile URL, since the numeric
+// `id` is only used to build a stable avatar URL and no longer holds the handle
+const getGitHubUsername = (website?: string) => website?.split('/').pop();
+
 export const mapAuthorToCardAuthors = (author: string) => {
   // Clears text in parentheses
   const cleanedAuthor = author.replace(/\s*\(.*?\)\s*/g, '').trim();
@@ -20,7 +24,8 @@ export const mapAuthorToCardAuthors = (author: string) => {
 export const getAuthorWithId = (usernames: Array<string>, hasUrl: boolean) => {
   const mapIdToAuthor = (username: string) => {
     const author = Object.values(authors).find(
-      ({ id }) => id.toLowerCase() === username.toLowerCase()
+      ({ website }) =>
+        getGitHubUsername(website)?.toLowerCase() === username.toLowerCase()
     );
 
     if (author) {
@@ -29,14 +34,14 @@ export const getAuthorWithId = (usernames: Array<string>, hasUrl: boolean) => {
       return {
         image: getGitHubAvatarUrl(id),
         name,
-        nickname: id,
+        nickname: getGitHubUsername(website) ?? name,
         fallback: getAcronymFromString(name),
         url: hasUrl ? website : undefined,
       };
     }
 
     return {
-      image: getGitHubAvatarUrl(username),
+      image: getGitHubAvatarUrl(username, true),
       nickname: username,
       fallback: getAcronymFromString(username),
       url: hasUrl ? `https://github.com/${username}` : undefined,
@@ -55,7 +60,7 @@ export const getAuthorWithName = (names: Array<string>, hasUrl: boolean) => {
         return {
           image: getGitHubAvatarUrl(id),
           name,
-          nickname: id,
+          nickname: getGitHubUsername(website) ?? name,
           fallback: getAcronymFromString(name),
           url: hasUrl ? website : undefined,
         };

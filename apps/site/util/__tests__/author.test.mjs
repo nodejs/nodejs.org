@@ -52,16 +52,27 @@ describe('mapAuthorToCardAuthors', () => {
 
 describe('getAuthorWithId', () => {
   it('should return author details when author is found', () => {
-    const result = getAuthorWithId(['nodejs'], true);
+    const result = getAuthorWithId(['release'], true);
     assert.deepEqual(result, [
       {
         name: 'Node.js Release Working Group',
-        nickname: 'nodejs',
+        nickname: 'release',
         fallback: 'NJRWG',
         url: 'https://github.com/nodejs/release',
-        image: 'https://avatars.githubusercontent.com/nodejs',
+        image: 'https://avatars.githubusercontent.com/u/9950313',
       },
     ]);
+  });
+
+  it('keeps working groups that share an id as distinct bylines', () => {
+    const [releasers] = getAuthorWithId(['release'], true);
+    const [tsc] = getAuthorWithId(['tsc'], true);
+
+    assert.equal(releasers.name, 'Node.js Release Working Group');
+    assert.equal(tsc.name, 'Node.js Technical Steering Committee');
+    // same org avatar, different bylines
+    assert.equal(releasers.image, tsc.image);
+    assert.notEqual(releasers.name, tsc.name);
   });
 
   it('returns objects with GitHub avatars', () => {
@@ -79,7 +90,7 @@ describe('getAuthorWithName', () => {
         nickname: 'nodejs',
         fallback: 'TNJP',
         url: 'https://github.com/nodejs',
-        image: 'https://avatars.githubusercontent.com/nodejs',
+        image: 'https://avatars.githubusercontent.com/u/9950313',
       },
     ]);
   });
