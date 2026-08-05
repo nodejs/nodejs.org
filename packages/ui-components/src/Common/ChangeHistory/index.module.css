@@ -32,7 +32,8 @@
     z-50
     mt-1
     max-h-80
-    w-52
+    w-[26rem]
+    max-w-[calc(100vw-2rem)]
     overflow-hidden
     rounded-sm
     border
@@ -45,7 +46,7 @@
 
 .dropdownContentInner {
   @apply max-h-80
-    w-52
+    w-full
     overflow-y-auto;
 }
 
