@@ -42,7 +42,6 @@ npx codemod run @nodejs/dns-lookup-options-coercion
 + await lookup("example.com", { family: 6, verbatim: false });
 ```
 
-
 ## `err-invalid-callback`
 
 In Node.js v18, the [DEP0159](https://nodejs.org/api/deprecations.html#DEP0159) deprecation was introduced, which deprecated the `ERR_INVALID_CALLBACK` error code in favor of `ERR_INVALID_ARG_TYPE`. This codemod will help you replace any references to the old error code with the new one.
