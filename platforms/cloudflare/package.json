@@ -19,7 +19,7 @@
   "dependencies": {
     "@flarelabs-net/wrangler-build-time-fs-assets-polyfilling": "^0.0.1",
     "@opennextjs/cloudflare": "^1.19.3",
-    "@sentry/cloudflare": "^10.49.0",
+    "@sentry/cloudflare": "^10.68.0",
     "@typescript/vfs": "^1.6.4",
     "twoslash": "^0.3.9",
     "typescript": "catalog:",
