@@ -20,7 +20,7 @@ This page provides a list of codemods to help you migrate your code from Node.js
 
 In Node.js v18, the [DEP0153](https://nodejs.org/api/deprecations.html#dep0153-dnslookup-and-dnspromiseslookup-options-type-coercion) deprecation was granted to end-of-life, which means that the `dns.lookup()` and `dnsPromises.lookup()` functions will no longer coerce option values to their proper types. This codemod will help you convert any literal option values to their proper types.
 
-The source code for this codemod can be found in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/dns-lookup-options-coercion).
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/dns-lookup-options-coercion).
 
 ```bash
 npx codemod run @nodejs/dns-lookup-options-coercion
