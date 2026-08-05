@@ -16,6 +16,33 @@ author: AugustinMauroy
 
 This page provides a list of codemods to help you migrate your code from Node.js v16 to v18.
 
+## `dns-lookup-options-coercion`
+
+In Node.js v18, the [DEP0153](https://nodejs.org/api/deprecations.html#dep0153-dnslookup-and-dnspromiseslookup-options-type-coercion) deprecation was granted to end-of-life, which means that the `dns.lookup()` and `dnsPromises.lookup()` functions will no longer coerce option values to their proper types. This codemod will help you convert any literal option values to their proper types.
+
+The source code for this codemod can be found in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/dns-lookup-options-coercion).
+
+```bash
+npx codemod run @nodejs/dns-lookup-options-coercion
+```
+
+### Examples:
+
+```diff
+  const dns = require("node:dns");
+
+- dns.lookup("example.com", { family: "4", all: 1 }, callback);
++ dns.lookup("example.com", { family: 4, all: true }, callback);
+```
+
+```diff
+  import { lookup } from "node:dns/promises";
+
+- await lookup("example.com", { family: "6", verbatim: 0 });
++ await lookup("example.com", { family: 6, verbatim: false });
+```
+
+
 ## `err-invalid-callback`
 
 In Node.js v18, the [DEP0159](https://nodejs.org/api/deprecations.html#DEP0159) deprecation was introduced, which deprecated the `ERR_INVALID_CALLBACK` error code in favor of `ERR_INVALID_ARG_TYPE`. This codemod will help you replace any references to the old error code with the new one.
@@ -28,7 +55,7 @@ You can find this codemod in the [Codemod Registry](https://app.codemod.com/regi
 npx codemod run @nodejs/err-invalid-callback
 ```
 
-### Example:
+### Examples:
 
 ```diff
   try {
