@@ -5,7 +5,11 @@ import { useTranslations } from 'next-intl';
 import { use, useEffect, useMemo } from 'react';
 
 import { ReleaseContext } from '#site/providers/releaseProvider';
-import { nextItem, INSTALL_METHODS, parseCompat } from '#site/util/download';
+import {
+  filterDropdownItems,
+  nextItem,
+  INSTALL_METHODS,
+} from '#site/util/download';
 
 import type { InstallationMethod } from '#site/types/release';
 import type { FC } from 'react';
@@ -16,7 +20,7 @@ const InstallationMethodDropdown: FC = () => {
 
   // We parse the compatibility of the dropdown items
   const parsedInstallMethods = useMemo(
-    () => parseCompat(INSTALL_METHODS, release),
+    () => filterDropdownItems(INSTALL_METHODS, release),
     // We only want to react on the change of the OS and Version
     // eslint-disable-next-line @eslint-react/exhaustive-deps
     [release.os, release.version]
