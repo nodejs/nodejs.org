@@ -74,6 +74,21 @@ export const parseCompat = <
 };
 
 /**
+ * Filters dropdown items by compatibility and explicit exclusions
+ */
+export const filterDropdownItems = <
+  K extends string,
+  T extends DownloadDropdownItem<K>,
+>(
+  items: Array<T>,
+  context: Types.ReleaseContextType,
+  exclude: Array<K> = []
+): Array<T> =>
+  parseCompat(items, context).filter(
+    ({ disabled, value }) => !disabled && !exclude.includes(value)
+  );
+
+/**
  * Creates an icon element for a component
  */
 const createIcon = (
