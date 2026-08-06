@@ -49,8 +49,8 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
   const sidebarRef = useRef<HTMLElement>(null);
   const sideNavigation = getSideNavigation(navKeys, context);
 
-  // Preserve sidebar scroll position across navigations
-  useScrollToElement('sidebar', sidebarRef);
+  // Preserve sidebar scroll position and keep the active item visible
+  useScrollToElement('sidebar', sidebarRef, pathname);
 
   const mappedSidebarItems =
     // If there's only a single navigation key, use its sub-items
