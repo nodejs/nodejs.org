@@ -1,0 +1,137 @@
+---
+date: '2026-08-06T00:00:00.000Z'
+category: migrations
+title: Mocha to Node.js Test Runner
+layout: blog-post
+author: Xstoudi
+---
+
+# Migrate from Mocha to the Node.js Test Runner
+
+This codemod helps migrate test suites from [Mocha](https://mochajs.org/) to the built-in [Node.js test runner](https://nodejs.org/api/test.html). It updates common Mocha globals, imports the equivalent APIs from `node:test`, and helps projects reduce their dependency on an external test framework.
+
+## Why doing this?
+
+- **Native Support**: The Node.js test runner is built into Node.js, so many projects can run tests without installing Mocha.
+- **Lower Maintenance**: Removing Mocha can reduce dependency updates and framework-specific configuration.
+- **Standard Assertions**: The migration pairs naturally with `node:assert/strict`, which is also available in Node.js.
+- **Built-in CLI**: Tests can be run with `node --test`, including support for filtering, watch mode, concurrency, and reporters.
+
+## Node.js Version Requirements
+
+- Node.js v18.0.0 or later (Node.js test runner is available but marked experimental)
+- Node.js v20.0.0 or later (Node.js test runner is stable)
+
+> If your package currently supports Node.js versions earlier than v18.0.0, you cannot migrate to the Node.js test runner without dropping support for those versions.
+> This requires bumping the major version of your package AND updating the engines field in your package.json to require Node.js >= v18.0.0.
+
+## Supported Transformations
+
+The codemod supports the most common Mocha testing APIs and converts them to their `node:test` equivalents:
+
+- `describe()`
+- `it()`
+- `before()`
+- `after()`
+- `beforeEach()`
+- `afterEach()`
+- `.skip()`
+- `.only()`
+
+It also inserts imports from `node:test` when a file relies on Mocha globals.
+
+It also convert `this.timeout(N)` to `{ timeout: N }` options.
+
+## Usage
+
+The source code for this codemod can be found in the [mocha-to-node-test-runner directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/mocha-to-node-test-runner).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/mocha-to-node-test-runner).
+
+```bash
+npx codemod @nodejs/mocha-to-node-test-runner
+```
+
+After running the codemod, update your test script to use the Node.js test runner:
+
+```diff
+{
+  "scripts": {
+-   "test": "mocha"
++   "test": "node --test"
+  }
+}
+```
+
+## Examples
+
+### Basic Test Suite
+
+```diff
++ import { describe, it } from 'node:test';
+  import assert from 'node:assert/strict';
+  import { sum } from './sum.js';
+
+  describe('sum', () => {
+    it('adds two numbers', () => {
+      assert.equal(sum(2, 3), 5);
+    });
+  });
+```
+
+### Lifecycle Hooks
+
+```diff
++ import { after, before, beforeEach, describe, it } from 'node:test';
+  import assert from 'node:assert/strict';
+  import { createServer } from './server.js';
+
+  describe('server', () => {
+    let server;
+
+    before(async () => {
+      server = await createServer();
+    });
+
+    beforeEach(() => {
+      server.reset();
+    });
+
+    after(async () => {
+      await server.close();
+    });
+
+    it('responds with health status', async () => {
+      const response = await server.inject('/health');
+
+      assert.equal(response.statusCode, 200);
+    });
+  });
+```
+
+### Skipped and Focused Tests
+
+```diff
++ import { describe, it } from 'node:test';
+  import assert from 'node:assert/strict';
+
+  describe('feature flags', () => {
+    it.skip('handles a disabled flag', () => {
+      assert.equal(isEnabled('new-flow'), false);
+    });
+
+    it.only('handles an enabled flag', () => {
+      assert.equal(isEnabled('stable-flow'), true);
+    });
+  });
+```
+
+## Unsupported APIs
+
+The codemod does not yet cover every Mocha feature. Projects that rely on custom reporters, root hook plugins, retries, `this.slow()`, or advanced Mocha configuration should review the transformed tests manually.
+
+Mocha and the Node.js test runner also differ in their execution model, CLI options, and reporter configuration. After running the codemod, run the full test suite and review any project-specific test setup.
+
+## Recognition
+
+We would like to thank the maintainers of [Mocha](https://mochajs.org/) for their long-standing work on JavaScript testing and their contributions to the ecosystem.
