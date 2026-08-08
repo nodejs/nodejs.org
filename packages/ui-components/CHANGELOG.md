@@ -1,5 +1,12 @@
 # @node-core/ui-components
 
+## 1.7.5
+
+### Patch Changes
+
+- [#9062](https://github.com/nodejs/nodejs.org/pull/9062) [`58e004e`](https://github.com/nodejs/nodejs.org/commit/58e004e8e1177cf1a13162008444d982433b79c2) Thanks [@avivkeller](https://github.com/avivkeller)! - Widen the article layout to 120rem on 3xl screens and give the extra space to the
+  metabar, so table of contents entries no longer wrap.
+
 ## 1.7.4
 
 ### Patch Changes
