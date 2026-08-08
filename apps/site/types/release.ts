@@ -3,7 +3,14 @@ import type { NodeRelease } from '#site/types/releases';
 import type { OperatingSystem, Platform } from '#site/types/userAgent';
 
 export type InstallationMethod =
-  'NVM' | 'FNM' | 'BREW' | 'DOCKER' | 'CHOCO' | 'N' | 'ASDF';
+  | 'NVM'
+  | 'FNM'
+  | 'BREW'
+  | 'DOCKER'
+  | 'CHOCO'
+  | 'N'
+  | 'ASDF'
+  | 'ZEROINSTALL';
 export type PackageManager = 'NPM' | 'YARN' | 'PNPM';
 
 // Items with a pipe/default value mean that they are auto inferred
