@@ -48,7 +48,6 @@
     a {
       @apply max-ml:inline-block
         max-ml:py-1
-        font-semibold
         text-neutral-900
         underline
         dark:text-white;
@@ -60,8 +59,7 @@
     }
 
     a.codeLink {
-      @apply font-ibm-plex-mono
-        font-medium;
+      @apply font-ibm-plex-mono;
     }
 
     ol {
