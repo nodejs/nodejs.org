@@ -253,11 +253,11 @@
       "destination": "/:locale/download/archive/current"
     },
     {
-      "": ":locale/blog/migrations/axios-to-fetch",
+      "source": "/:locale/blog/migrations/axios-to-fetch",
       "destination": "/learn/userland-migrations/axios-to-whatwg-fetch"
     },
     {
-      "source": ":locale/blog/migrations/chalk-to-styletext",
+      "source": "/:locale/blog/migrations/chalk-to-styletext",
       "destination": "/learn/userland-migrations/chalk-to-util-styletext"
     }
   ],
