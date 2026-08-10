@@ -41,8 +41,10 @@ main {
   h4,
   h5,
   h6 {
-    @apply font-semibold
+    @apply mt-4
+      font-semibold
       text-neutral-900
+      first:mt-0
       dark:text-white;
 
     &[id] a {
