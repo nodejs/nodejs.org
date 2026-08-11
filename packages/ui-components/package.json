@@ -97,17 +97,17 @@
   },
   "imports": {
     "#ui/*": {
-      "rolldown": [
-        "./dist/*",
-        "./dist/*.js",
-        "./dist/*/index.js"
-      ],
-      "default": [
+      "types": [
         "./src/*",
         "./src/*.tsx",
         "./src/*/index.tsx",
         "./src/*.ts",
         "./src/*/index.ts"
+      ],
+      "default": [
+        "./dist/*",
+        "./dist/*.js",
+        "./dist/*/index.js"
       ]
     }
   },
