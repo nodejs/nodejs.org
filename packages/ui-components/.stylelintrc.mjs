@@ -26,7 +26,9 @@ export default {
   plugins: [
     'stylelint-order',
     'stylelint-selector-bem-pattern',
-    '#ui/stylelint/one-utility-class-per-line.mjs',
+    // Stylelint resolves plugins with its own resolver, which cannot be told to
+    // prefer the `source` condition, so we point at the uncompiled source directly
+    './src/stylelint/one-utility-class-per-line.mjs',
   ],
   rules: {
     // Enforces Element Class Names to be camelCase

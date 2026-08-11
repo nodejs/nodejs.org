@@ -7,6 +7,14 @@ const config: StorybookConfig = {
   core: { disableTelemetry: true, disableWhatsNewNotifications: true },
   framework: '@storybook/react-webpack5',
   swc: () => ({ jsc: { transform: { react: { runtime: 'automatic' } } } }),
+  // Storybook renders the components straight from `src`, so `#ui/*` must
+  // resolve to the uncompiled sources rather than to the published `dist` output
+  webpackFinal: async config => {
+    config.resolve ??= {};
+    config.resolve.conditionNames = ['source', '...'];
+
+    return config;
+  },
   addons: [
     '@storybook/addon-webpack5-compiler-swc',
     '@storybook/addon-themes',
