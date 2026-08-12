@@ -16,7 +16,7 @@ author: AugustinMauroy, Richard Lau
 Missing codemods will be added over time. If you have specific needs.
 
   <a href="https://github.com/nodejs/userland-migrations/issues/239">
-    Read this issue to learn where we are in the process. And how to manually migrate your code.
+    Read this issue to learn where we are in the process and how to manually migrate your code.
   </a>
 </AlertBox>
 
@@ -114,6 +114,8 @@ This codemod transforms the usage of `dirent.path` to use `dirent.parentPath`.
 
 See [DEP0178](https://nodejs.org/api/deprecations.html#DEP0178).
 
+The source code for this codemod can be found in the [dirent-path-to-parent-path directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/dirent-path-to-parent-path).
+
 You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/dirent-path-to-parent-path).
 
 ```bash
@@ -169,7 +171,7 @@ npx codemod run @nodejs/fs-access-mode-constants
 + fs.access('/path/to/file', fs.constants.R_OK | fs.constants.W_OK, callback);
 ```
 
-### `fs-truncate-to-ftruncate`
+### `fs-truncate-fd-deprecation`
 
 The [`fs.truncate`](https://nodejs.org/api/fs.html#fs_fs_truncate_path_len_callback) function was deprecated ([DEP0081](https://nodejs.org/api/deprecations.html#DEP0081)) when used with a file descriptor. Use [`fs.ftruncate`](https://nodejs.org/api/fs.html#fs_fs_ftruncate_fd_len_callback) instead.
 
@@ -197,18 +199,18 @@ npx codemod run @nodejs/fs-truncate-fd-deprecation
   });
 ```
 
-### `http2-priority-removal`
+### `http2-priority-signaling`
 
 This recipe removes HTTP/2 priority-related options and methods since priority signaling has been deprecated.
 
 See [DEP0194](https://nodejs.org/api/deprecations.html#DEP0194).
 
-The source code for this codemod can be found in the [http2-priority-removal directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/http2-priority-removal).
+The source code for this codemod can be found in the [http2-priority-signaling directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/http2-priority-signaling).
 
-You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/http2-priority-removal).
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/http2-priority-signaling).
 
 ```bash
-npx codemod run @nodejs/http2-priority-removal
+npx codemod run @nodejs/http2-priority-signaling
 ```
 
 ## What this codemod does
@@ -241,7 +243,7 @@ const client = http2.connect("https://example.com");
 
 ### `process-assert-to-node-assert`
 
-In Node.js v23 the [DEP0100](https://nodejs.org/api/deprecations.html#DEP0100) deprecation was grantted to End of Life, and `process.assert` was removed in favor of using the `assert` module directly. This codemod will help you replace any references to `process.assert` with the appropriate import of the `assert` module and usage of `assert()`.
+In Node.js v23 the [DEP0100](https://nodejs.org/api/deprecations.html#DEP0100) deprecation reached End-of-Life, and `process.assert` was removed in favor of using the `assert` module directly. This codemod will help you replace any references to `process.assert` with the appropriate import of the `assert` module and usage of `assert()`.
 
 The source code for this codemod can be found in the [process-assert-to-node-assert directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/process-assert-to-node-assert).
 
@@ -261,7 +263,7 @@ npx codemod run @nodejs/process-assert-to-node-assert
 
 #### Additional Notes
 
-This codemod use [`fs` capability](https://docs.codemod.com/jssg/security) to read the `package.json` file and determine if the project is using ES modules or CommonJS. Based on this information, it adds the appropriate import statement for the `assert` module.
+This codemod uses the [`fs` capability](https://docs.codemod.com/jssg/security) to read the `package.json` file and determine if the project is using ES modules or CommonJS. Based on this information, it adds the appropriate import statement for the `assert` module.
 
 ### `tls-create-secure-pair-to-tls-socket`
 
