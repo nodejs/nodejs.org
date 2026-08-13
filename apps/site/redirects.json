@@ -259,6 +259,10 @@
     {
       "source": "/:locale/blog/migrations/chalk-to-styletext",
       "destination": "/learn/userland-migrations/chalk-to-util-styletext"
+    },
+    {
+      "source": "/code-and-learn-2026",
+      "destination": "https://code-and-learn.nodejs.harperfabric.com/"
     }
   ],
   "internal": []
