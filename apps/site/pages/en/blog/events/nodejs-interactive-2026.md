@@ -3,7 +3,7 @@ date: '2026-08-14T00:00:00Z'
 category: events
 title: 'Node.js Interactive 2026: A Recap'
 layout: blog-post
-author: avivkeller
+author: Aviv Keller
 ---
 
 # Node.js Interactive 2026: A Recap
