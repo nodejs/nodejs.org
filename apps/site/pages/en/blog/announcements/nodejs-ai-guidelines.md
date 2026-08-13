@@ -24,8 +24,6 @@ For that reason, pull requests containing AI-generated code that the author has 
 
 Pull requests must also not be opened by automated tools unless the project has approved that automation in advance. Approval can be requested through [nodejs/admin](https://github.com/nodejs/admin/issues), or through the usual review process when proposing a GitHub workflow.
 
-### Communication should still be human communication
-
 The guidance applies to communication as well as code. Contributors should not paste messages generated entirely by AI into pull requests, issues, or Node.js communication channels. Project discussions work best when participants share their own understanding and respond directly to one another.
 
 Before sharing claims made by AI tools, contributors must verify them against the relevant code, documentation, or specifications. Grammar and spell-checking tools remain welcome when they make a contributor's own message clearer and more concise.
