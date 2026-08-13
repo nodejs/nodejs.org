@@ -28,7 +28,7 @@ Pull requests must also not be opened by automated tools unless the project has 
 
 The guidance applies to communication as well as code. Contributors should not paste messages generated entirely by AI into pull requests, issues, or Node.js communication channels. Project discussions work best when participants share their own understanding and respond directly to one another.
 
-Claims produced by AI tools must be verified before being repeated. Wherever possible, contributors should link to the relevant code, documentation, or specification as the source of truth. Grammar and spell-checking tools remain welcome when they make a contributor's own message clearer and more concise.
+Before sharing claims made by AI tools, contributors must verify them against the relevant code, documentation, or specifications. Grammar and spell-checking tools remain welcome when they make a contributor's own message clearer and more concise.
 
 ## How does this affect contributors?
 
