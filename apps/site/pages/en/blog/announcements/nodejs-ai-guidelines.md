@@ -1,7 +1,7 @@
 ---
 date: '2026-08-18T19:00:00Z'
 category: announcements
-title: AI Can Assist, but Human Judgment Comes First in Node.js Contributions
+title: 'Node.js AI Guidelines: Tools Should Never Replace Human Judgment'
 layout: blog-post
 author: The Node.js Project
 ---
