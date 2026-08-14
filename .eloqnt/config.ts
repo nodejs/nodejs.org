@@ -1,4 +1,5 @@
 import { defineConfig } from '@eloqnt/cli';
+
 import localeConfig from '../packages/i18n/src/config.json' with { type: 'json' };
 
 export default defineConfig({
