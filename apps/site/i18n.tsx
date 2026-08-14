@@ -1,5 +1,6 @@
 import { availableLocaleCodes, defaultLocale } from '@node-core/website-i18n';
 import defaultMessages from '@node-core/website-i18n/locales/en.json';
+import { locale as getRootLocale } from 'next/root-params';
 import { getRequestConfig } from 'next-intl/server';
 
 import { deepMerge } from './util/objects';
@@ -25,9 +26,10 @@ const loadLocaleDictionary = async (locale: string) => {
 };
 
 // Provides `next-intl` configuration for RSC/SSR
-export default getRequestConfig(async ({ requestLocale }) => {
-  // This typically corresponds to the `[locale]` segment
-  let locale = await requestLocale;
+export default getRequestConfig(async params => {
+  // An explicit locale passed to an awaitable API like `getTranslations({ locale })`
+  // wins, otherwise we read the `[locale]` segment of the root layout
+  let locale = params.locale ?? (await getRootLocale());
 
   // Ensure that the incoming locale is valid
   if (!locale || !availableLocaleCodes.includes(locale)) {
