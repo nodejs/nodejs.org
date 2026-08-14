@@ -21,3 +21,7 @@ catalog:
   react: ^19.2.8
   tailwindcss: ~4.1.17
   typescript: 5.9.3
+
+minimumReleaseAgeExclude:
+  - '@eloqnt/cli@0.6.9'
+  - '@eloqnt/sdk@0.6.8'
