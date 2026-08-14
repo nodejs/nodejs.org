@@ -1,25 +1,13 @@
 import { defineConfig } from '@eloqnt/cli';
+import localeConfig from '../packages/i18n/src/config.json' with { type: 'json' };
 
 export default defineConfig({
-  srcPath: ['./apps/site', './packages/ui-components'],
+  srcPath: ['./apps/site'],
   messages: {
     path: './packages/i18n/src/locales',
-    locales: [
-      'en',
-      'es',
-      'fr',
-      'id',
-      'ja',
-      'ko',
-      'pt-br',
-      'pt',
-      'ro',
-      'ta',
-      'tr',
-      'uk',
-      'zh-cn',
-      'zh-tw',
-    ],
+    locales: localeConfig
+      .filter(locale => locale.enabled)
+      .map(locale => locale.code),
     sourceLocale: 'en',
     format: 'json',
   },
