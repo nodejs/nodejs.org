@@ -50,7 +50,7 @@ Darcy focused on another frequently overlooked part of the specification: build 
 
 ## More code needs stronger platforms
 
-While, AI coding tools can increase how quickly a team produces code, they do not change what makes that code safe to ship.
+While AI coding tools can increase how quickly a team produces code, they do not change what makes that code safe to ship.
 
 In **"Platform Thinking for the AI Era,"** [Bekah Suttner Cheek](https://bekah.io/), Staff Software Engineer at [Fastly](https://www.fastly.com/), argued that familiar platform fundamentals become more important as development speeds up: fast CI, meaningful tests, safe rollbacks, healthy codebase patterns, and clear paths from a local change to production.
 
