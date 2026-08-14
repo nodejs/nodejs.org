@@ -10,7 +10,7 @@ author: Aviv Keller
 
 More than a decade after [the first Node.js Interactive was announced](https://nodejs.org/en/blog/announcements/interactive-2015), the conference returned on August 12 and 13, 2026, as a dedicated experience inside [RenderATL](https://www.renderatl.com/node) and alongside [Atlanta Tech Week](https://atl.tech/).
 
-Across the [two-day speaker program](https://openjsf.org/blog/node-interactive-speakers-2026), attendees learned that the future of Node.js is more than it's extensive APIs. It also depends on the people who maintain critical infrastructure, the standards that keep runtimes interoperable, the platforms that make safe development easier, and the documentation and tests that turn new ideas into dependable software.
+Across the [two-day speaker program](https://openjsf.org/blog/node-interactive-speakers-2026), attendees learned that the future of Node.js is more than its extensive APIs. It also depends on the people who maintain critical infrastructure, the standards that keep runtimes interoperable, the platforms that make safe development easier, and the documentation and tests that turn new ideas into dependable software.
 
 Here are the themes that stood out and the takeaways we think every Node.js-er should know.
 
