@@ -27,9 +27,7 @@
           "about": "இதைப் பற்றி",
           "download": "பதிவிறக்கவும்",
           "docs": "ஆவணங்கள்",
-          "guides": "வழிகாட்டிகள்",
           "learn": "கற்க",
-          "security": "பாதுகாப்பு",
           "certification": "பாடப்பிரிவுகள்",
           "blog": "வலைப்பதிவு",
           "contribute": "பங்களியுங்கள்"
@@ -166,9 +164,7 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "nApiVersion": "N-API",
       "codename": "குறியீடு பெயர்",
-      "releaseDate": "வெளியிடப்பட்ட தேதி",
       "firstReleased": "முதலில் வெளியிடப்பட்டது",
       "lastUpdated": "கடைசியாகப் புதுப்பிக்கப்பட்டது",
       "status": "நிலை",
@@ -182,10 +178,7 @@
     "releaseModal": {
       "title": "Node.js v{version} ({codename})",
       "titleWithoutCodename": "Node.js v{version}",
-      "overview": "மேலும் விவரம்",
       "minorVersions": "சிறு பதிப்புகள்",
-      "releaseAnnouncement": "வெளியீட்டு அறிவிப்பு",
-      "unsupportedVersionWarning": "இந்தப் பதிப்பு பராமரிப்பில் இல்லை. தயவுசெய்து ஆதரிக்கப்படும் பதிப்பைப் பயன்படுத்தவும். <link>EOL ஆதரவைக் புரிந்துகொள்ளவும்.</link>",
       "ltsVersionFeaturesNotice": "புதிய அம்சங்களைச் சீக்கிரமே வேண்டுமா? <link>சமீபத்திய Node.js பதிப்பு</link> பயன்படுத்தி முயற்சிக்கவும்!"
     },
     "eolAlert": {
@@ -217,7 +210,6 @@
     "eolTable": {
       "version": "பதிப்பு",
       "codename": "குறியீடு பெயர்",
-      "releaseDate": "வெளியிடப்பட்டது",
       "lastUpdated": "கடைசியாகப் புதுப்பிக்கப்பட்டது",
       "vulnerabilities": "பாதுகாப்பு குறைபாடுகள்",
       "details": "விவரங்கள்",
@@ -230,7 +222,6 @@
       "npmVersion": "npm பதிப்பு",
       "v8Version": "V8 பதிப்பு",
       "actions": {
-        "release": "வெளியீடு",
         "changelog": "மாற்றப்பட்ட பதிவுகள்",
         "docs": "ஆவணங்கள்"
       }
@@ -246,8 +237,7 @@
     "common": {
       "alertBox": {
         "info": "தகவல்",
-        "warning": "எச்சரிக்கை",
-        "danger": "ஆபத்து"
+        "warning": "எச்சரிக்கை"
       },
       "breadcrumbs": {
         "navigateToHome": "முகப்பிற்கு செல்லவும்"
@@ -279,12 +269,10 @@
     "metabar": {
       "lastUpdated": "கடைசியாகப் புதுப்பிக்கப்பட்டது",
       "readingTime": "படிக்கும் நேரம்",
-      "addedIn": "சேர்க்கப்பட்டது",
       "author": "ஆசிரியர்",
       "authors": "ஆசிரியர்கள்",
       "contribute": "பங்களி",
       "contributeText": "இந்தப் பக்கத்தைத் திருத்து",
-      "viewAs": "இப்படியாகப் பார்",
       "tableOfContents": "உள்ளடக்கப் பட்டியல்",
       "metadata": "கட்டுரை மெட்டாடேட்டா"
     },
@@ -295,25 +283,7 @@
     },
     "search": {
       "searchPlaceholder": "எழுதத் தொடங்கு...",
-      "chatPlaceholder": "எதையும் கேளுங்கள்",
       "noResultsFoundFor": "இதற்கான முடிவுகள் இல்லை",
-      "suggestions": "பரிந்துரைகள்",
-      "seeAll": "அனைத்தையும் பார்க்கவும்",
-      "addMore": "மேலும் சேர்க்கவும்",
-      "clearChat": "Chat-யை அழிக்கவும்",
-      "errorMessage": "தேடும்போது பிழை ஏற்பட்டது. மீண்டும் முயற்சிக்கவும்.",
-      "disclaimer": "AI சுருக்கங்கள் சில நேரங்களில் தவறாக இருக்கலாம். தயவுசெய்து சரிபார்க்கவும்.",
-      "startYourSearch": "உங்கள் தேடலைத் தொடங்கவும்",
-      "initErrorSearch": "தேடல் சேவை தொடங்க முடியவில்லை",
-      "initErrorChat": "Chat சேவை தொடங்க முடியவில்லை",
-      "chatButtonLabel": "AI சுருக்கம் பெற",
-      "searchButtonLabel": "தேடல்",
-      "poweredBy": "Powered by",
-      "suggestionOne": "Node.js எப்படி நிறுவுவது?",
-      "suggestionTwo": "HTTP சர்வர் உருவாக்குவது எப்படி?",
-      "suggestionThree": "Node.js பதிப்பு மேம்படுத்துதல்",
-      "scrollToBottom": "கீழே செல்லவும்",
-      "closeChat": "Chat-யை மூடு",
       "keyboardShortcuts": {
         "select": "தேர்வு செய்ய",
         "navigate": "navigate செய்ய",
@@ -328,14 +298,6 @@
     }
   },
   "layouts": {
-    "blogPost": {
-      "author": {
-        "byLine": "{author, select, null {} other {{author} எழுதியது, }}"
-      }
-    },
-    "blogIndex": {
-      "categoryName": "{category, select, all {வலைப்பதிவு} other {{category} பதிவுகள்}}"
-    },
     "blog": {
       "title": "வலைப்பதிவு",
       "selectCategory": "பிரிவுகள்",
@@ -344,7 +306,6 @@
         "announcements": "அனைத்தும்",
         "release": "அனைத்தும்",
         "vulnerability": "பாதுகாப்பு பிரச்சினைகள்",
-        "advisory-board": "ஆலோசனை குழு",
         "community": "சமூகம்",
         "feature": "அம்சம்",
         "module": "மொடியூல்",
@@ -377,7 +338,6 @@
         "platform": "பிளாட்ஃபார்ம்",
         "os": "இயங்கு தளம்",
         "version": "பதிப்பு",
-        "installMethod": "நிறுவும் முறை",
         "packageManager": "பேக்கேஜ் மேலாளர்",
         "unknown": "தெரியவில்லை",
         "platformGroups": {
@@ -387,7 +347,6 @@
       },
       "codeBox": {
         "unsupportedVersionWarning": "இந்தப் பதிப்பு பராமரிப்பில் இல்லை. ஆதரிக்கப்படும் பதிப்பைப் பயன்படுத்தவும். <link>EOL ஆதரவு குறித்து அறிய</link>",
-        "ltsVersionFeaturesNotice": "புதிய அம்சங்களைச் சீக்கிரமே வேண்டுமா? <link>சமீபத்திய Node.js பதிப்பை</link> முயற்சிக்கவும்!",
         "communityPlatformInfo": "சமூகத்தின் சாப்ட்வேர் மூலம் வழங்கப்படும் Installation முறைகளுக்கு அவர்கள் தான் பொறுப்பு.",
         "externalSupportInfo": "பிரச்சினைகள் இருந்தால் <link>{platform} இணையதளத்தில்</link> பார்த்தறியவும்",
         "noScriptDetected": "இந்தப் பக்கத்திற்கு JavaScript தேவை. நீங்கள் நேரடியாக <link>பதிவிறக்க ஆவணக் காப்பகப் பக்கத்திற்குச்</link> சென்று ஜாவாஸ்கிரிப்ட் இல்லாமல் Node.js ஐ பதிவிறக்கம் செய்யலாம்.",
@@ -398,8 +357,7 @@
           "brew": "Homebrew என்பது macOS மற்றும் Linux இற்கான பேக்கேஜ் மேலாளர்.",
           "choco": "Chocolatey என்பது Windows இற்கான பேக்கேஜ் மேலாளர்.",
           "docker": "Docker என்பது containerization தளம்.",
-          "n": "\"n\" குறுக்கு-பிளாட்ஃபார்ம் Node பதிப்பு மேலாளர்.",
-          "volta": "\"Volta\" விரைந்து வேலை செய்யும் Node மேலாளர்."
+          "n": "\"n\" குறுக்கு-பிளாட்ஃபார்ம் Node பதிப்பு மேலாளர்."
         }
       }
     },

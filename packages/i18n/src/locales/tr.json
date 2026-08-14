@@ -14,9 +14,7 @@
           "about": "Hakkında",
           "download": "İndir",
           "docs": "Dokümanlar",
-          "guides": "Kılavuzlar",
           "learn": "Öğrenmek",
-          "security": "Güvenlik",
           "certification": "Sertifikasyon",
           "blog": "Blog"
         }
@@ -196,12 +194,10 @@
     "metabar": {
       "lastUpdated": "Son Güncelleme",
       "readingTime": "Okuma Süresi",
-      "addedIn": "Eklendi",
       "author": "Yazar",
       "authors": "Yazarlar",
       "contribute": "Katkıda bulunun",
       "contributeText": "Bu sayfayı düzenleyin",
-      "viewAs": "Olarak görüntüle",
       "tableOfContents": "İçindekiler"
     },
     "downloads": {
@@ -213,14 +209,8 @@
       "searchBox": {
         "placeholder": "Yazmaya başla..."
       },
-      "seeAll": {
-        "text": "Tüm {count} sonuçları görün"
-      },
       "searchError": {
         "text": "Arama sırasında bir hata oluştu. Lütfen daha sonra tekrar deneyin."
-      },
-      "poweredBy": {
-        "text": "Tarafından desteklenmektedir"
       },
       "noResults": {
         "text": "\"{query}\" için sonuç bulunamadı."
@@ -240,14 +230,6 @@
     }
   },
   "layouts": {
-    "blogPost": {
-      "author": {
-        "byLine": "{author, select, null {} other {{author} tarafından }}"
-      }
-    },
-    "blogIndex": {
-      "categoryName": "{category, select, all {Blog} other {{category} Blog Gönderileri}}"
-    },
     "blog": {
       "title": "Blog",
       "selectCategory": "Kategoriler",
@@ -256,7 +238,6 @@
         "announcements": "Duyurular",
         "release": "Sürümler",
         "vulnerability": "Güvenlik Açıkları",
-        "advisory-board": "Danışma Kurulu",
         "community": "Topluluk",
         "feature": "Özellik",
         "module": "Modül",

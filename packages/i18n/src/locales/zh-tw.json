@@ -18,9 +18,7 @@
           "about": "關於",
           "download": "下載",
           "docs": "文件",
-          "guides": "指南",
           "learn": "學習資源",
-          "security": "安全性",
           "certification": "認證",
           "blog": "部落格",
           "contribute": "貢獻"
@@ -148,9 +146,7 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "nApiVersion": "N-API",
       "codename": "代號",
-      "releaseDate": "發佈於",
       "firstReleased": "首次釋出於",
       "lastUpdated": "上次更新於",
       "status": "狀態",
@@ -159,16 +155,12 @@
     "releaseModal": {
       "title": "Node.js {version} ({codename})",
       "titleWithoutCodename": "Node.js {version}",
-      "overview": "概覽",
-      "minorVersions": "小版本",
-      "releaseAnnouncement": "發行公告",
-      "unsupportedVersionWarning": "此版本已不再維護。請使用現正支援的版本。"
+      "minorVersions": "小版本"
     },
     "minorReleasesTable": {
       "version": "版本",
       "links": "連結",
       "actions": {
-        "release": "發行版本",
         "changelog": "更新紀錄",
         "docs": "文件"
       }
@@ -188,8 +180,7 @@
     "common": {
       "alertBox": {
         "info": "資訊",
-        "warning": "警告",
-        "danger": "危險"
+        "warning": "警告"
       },
       "breadcrumbs": {
         "navigateToHome": "返回首頁"
@@ -223,12 +214,10 @@
     "metabar": {
       "lastUpdated": "最後更新",
       "readingTime": "閱讀時間",
-      "addedIn": "新增於",
       "author": "作者",
       "authors": "作者",
       "contribute": "貢獻",
       "contributeText": "編輯此頁面",
-      "viewAs": "檢視模式",
       "tableOfContents": "目錄"
     },
     "search": {
@@ -244,14 +233,6 @@
     }
   },
   "layouts": {
-    "blogPost": {
-      "author": {
-        "byLine": "{author, select, null {} other {By {author}, }}"
-      }
-    },
-    "blogIndex": {
-      "categoryName": "{category, select, all {Blog} other {{category} Blog Posts}}"
-    },
     "blog": {
       "title": "部落格",
       "selectCategory": "類別",
@@ -260,7 +241,6 @@
         "announcements": "公告",
         "release": "版本釋出",
         "vulnerability": "漏洞",
-        "advisory-board": "諮詢委員會",
         "community": "社群",
         "feature": "功能",
         "module": "模塊",
@@ -292,7 +272,6 @@
         "platform": "平台",
         "os": "作業系統",
         "version": "版本",
-        "installMethod": "安裝方式",
         "packageManager": "套件管理程式",
         "unknown": "未知",
         "platformGroups": {
@@ -312,8 +291,7 @@
           "brew": "Homebrew 是 macOS 及 Linux 的套件管理程式。",
           "choco": "Chocolatey 是 Windows 的套件管理程式。",
           "docker": "Docker 是一款容器化平台。",
-          "n": "「n」是跨平台的 Node.js 版本管理程式。",
-          "volta": "「Volta」是跨平台的 Node.js 版本管理程式。"
+          "n": "「n」是跨平台的 Node.js 版本管理程式。"
         }
       }
     },

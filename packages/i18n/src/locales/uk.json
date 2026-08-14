@@ -37,9 +37,7 @@
           "download": "Завантажити",
           "docs": "Документація",
           "betaDocs": "Бета-документація",
-          "guides": "Посібники",
           "learn": "Навчання",
-          "security": "Безпека",
           "certification": "Курси",
           "blog": "Блог",
           "contribute": "Долучитися"
@@ -71,9 +69,7 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "nApiVersion": "N-API",
       "codename": "Кодова назва",
-      "releaseDate": "Опубліковано",
       "firstReleased": "Уперше випущено",
       "lastUpdated": "Востаннє оновлено",
       "status": "Статус",
@@ -87,10 +83,7 @@
     "releaseModal": {
       "title": "Node.js v{version} ({codename})",
       "titleWithoutCodename": "Node.js v{version}",
-      "overview": "Огляд",
       "minorVersions": "Мінорні версії",
-      "releaseAnnouncement": "Оголошення релізу",
-      "unsupportedVersionWarning": "Ця версія більше не супроводжується. Будь ласка, використовуйте підтримувану версію. <link>Про кінець підтримки</link>.",
       "ltsVersionFeaturesNotice": "Бажаєте отримати нові функції швидше? Установіть <link>останню версію Node.js</link> та випробуйте останні покращення!"
     },
     "eolAlert": {
@@ -122,7 +115,6 @@
     "eolTable": {
       "version": "Версія",
       "codename": "Кодова назва",
-      "releaseDate": "Опубліковано",
       "lastUpdated": "Востаннє оновлено",
       "vulnerabilities": "Уразливості",
       "details": "Деталі",
@@ -135,7 +127,6 @@
       "npmVersion": "Версія npm",
       "v8Version": "Версія V8",
       "actions": {
-        "release": "Реліз",
         "changelog": "Список змін",
         "docs": "Документація"
       }
@@ -151,8 +142,7 @@
     "common": {
       "alertBox": {
         "info": "Інформація",
-        "warning": "Попередження",
-        "danger": "Небезпека"
+        "warning": "Попередження"
       },
       "breadcrumbs": {
         "navigateToHome": "До головної"
@@ -180,12 +170,10 @@
     "metabar": {
       "lastUpdated": "Востаннє оновлено",
       "readingTime": "Час на читання",
-      "addedIn": "Додано",
       "author": "Автор",
       "authors": "Автори",
       "contribute": "Долучитися",
       "contributeText": "Редагувати цю сторінку",
-      "viewAs": "Переглянути як",
       "tableOfContents": "Зміст",
       "metadata": "Метадані статті"
     },
@@ -197,25 +185,7 @@
     },
     "search": {
       "searchPlaceholder": "Уведіть щось...",
-      "chatPlaceholder": "Спитайте мене про щось",
       "noResultsFoundFor": "Не знайдено результатів для",
-      "suggestions": "Пропозиції",
-      "seeAll": "Показати все",
-      "addMore": "Додати ще",
-      "clearChat": "Очистити чат",
-      "errorMessage": "Виникла помилка під час пошуку. Спробуйте знову.",
-      "disclaimer": "ШІ може робити помилки. Перевіряйте отриману інформацію.",
-      "startYourSearch": "Почніть пошук",
-      "initErrorSearch": "Не вдалося ініціалізувати пошуковий сервіс",
-      "initErrorChat": "Не вдалося ініціалізувати сервіс чату",
-      "chatButtonLabel": "Отримати результати ШІ",
-      "searchButtonLabel": "Пошук",
-      "poweredBy": "За підтримки",
-      "suggestionOne": "Як установити Node.js?",
-      "suggestionTwo": "Як створити HTTP-сервер?",
-      "suggestionThree": "Оновлення версії Node.js",
-      "scrollToBottom": "Прогорнути донизу",
-      "closeChat": "Закрити чат",
       "keyboardShortcuts": {
         "select": ", щоб обрати",
         "navigate": ", щоб гортати",
@@ -230,14 +200,6 @@
     }
   },
   "layouts": {
-    "blogPost": {
-      "author": {
-        "byLine": "{author, select, null {} other {Від {author}, }}"
-      }
-    },
-    "blogIndex": {
-      "categoryName": "{category, select, all {Блог} other {Пости блогу {category}}}"
-    },
     "blog": {
       "title": "Блог",
       "selectCategory": "Категорії",
@@ -246,7 +208,6 @@
         "announcements": "Оголошення",
         "release": "Релізи",
         "vulnerability": "Уразливості",
-        "advisory-board": "Консультативний комітет",
         "community": "Спільнота",
         "feature": "Функціонал",
         "module": "Модулі",
@@ -279,7 +240,6 @@
         "platform": "Платформа",
         "os": "Операційна система",
         "version": "Версія",
-        "installMethod": "Метод установки",
         "packageManager": "Менеджер пакетів",
         "unknown": "Невідомо",
         "platformGroups": {
@@ -289,7 +249,6 @@
       },
       "codeBox": {
         "unsupportedVersionWarning": "Ця версія більше не супроводжується. Будь ласка, використовуйте підтримувану версію. <link>Про кінець підтримки</link>.",
-        "ltsVersionFeaturesNotice": "Бажаєте отримати нові функції швидше? Установіть <link>останню версію Node.js</link> та випробуйте останні покращення!",
         "communityPlatformInfo": "Методи установки, які включають ПЗ спільноти, підтримуються відповідними супроводжувачами.",
         "externalSupportInfo": "Якщо виявите проблеми, відвідайте <link>вебсайт {platform}</link>",
         "noScriptDetected": "Ця сторінка вимагає JavaScript. Завантажити Node.js без JavaScript можна, безпосередньо відвідавши <link>сторінку архівних завантажень</link>.",
@@ -301,8 +260,7 @@
           "choco": "Chocolatey — це менеджер пакетів для Windows.",
           "docker": "Docker — це платформа контейнеризації.",
           "n": "«n» — це кросплатформний менеджер версій Node.js.",
-          "asdf": "«asdf» — це кросплатформний менеджер версій, який підтримує багато мов.",
-          "volta": "«Volta» — це кросплатформний менеджер версій Node.js."
+          "asdf": "«asdf» — це кросплатформний менеджер версій, який підтримує багато мов."
         }
       }
     },

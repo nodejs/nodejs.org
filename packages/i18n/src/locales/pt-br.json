@@ -27,9 +27,7 @@
           "about": "Sobre",
           "download": "Baixar",
           "docs": "Documentação",
-          "guides": "Guias",
           "learn": "Aprenda",
-          "security": "Segurança",
           "certification": "Cursos",
           "blog": "Blog",
           "contribute": "Contribua"
@@ -166,9 +164,7 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "nApiVersion": "N-API",
       "codename": "Codinome",
-      "releaseDate": "Lançado em",
       "firstReleased": "Primeiro lançamento",
       "lastUpdated": "Última atualização",
       "status": "Status",
@@ -182,10 +178,7 @@
     "releaseModal": {
       "title": "Node.js v{version} ({codename})",
       "titleWithoutCodename": "Node.js v{version}",
-      "overview": "Visão Geral",
       "minorVersions": "Versões menores",
-      "releaseAnnouncement": "Anúncio do Lançamento",
-      "unsupportedVersionWarning": "Esta versão não está sendo mantida. Por favor, use uma versão com suporte. <link>Entenda o suporte EOL.</link>",
       "ltsVersionFeaturesNotice": "Quer novos recursos mais cedo? Obtenha a <link>versão mais recente do Node.js</link> e experimente as últimas melhorias!"
     },
     "eolAlert": {
@@ -217,7 +210,6 @@
     "eolTable": {
       "version": "Versão",
       "codename": "Codinome",
-      "releaseDate": "Lançado em",
       "lastUpdated": "Última atualização",
       "vulnerabilities": "Vulnerabilidades",
       "details": "Detalhes",
@@ -230,7 +222,6 @@
       "npmVersion": "Versão npm",
       "v8Version": "Versão V8",
       "actions": {
-        "release": "Lançamento",
         "changelog": "Changelog",
         "docs": "Documentação"
       }
@@ -246,8 +237,7 @@
     "common": {
       "alertBox": {
         "info": "Informação",
-        "warning": "Aviso",
-        "danger": "Perigo"
+        "warning": "Aviso"
       },
       "breadcrumbs": {
         "navigateToHome": "Navegar para a Página Inicial"
@@ -279,12 +269,10 @@
     "metabar": {
       "lastUpdated": "Última Atualização",
       "readingTime": "Tempo de Leitura",
-      "addedIn": "Adicionado Em",
       "author": "Autor",
       "authors": "Autores",
       "contribute": "Contribuir",
       "contributeText": "Editar esta página",
-      "viewAs": "Visualizar como",
       "tableOfContents": "Índice",
       "metadata": "Metadados do Artigo"
     },
@@ -295,25 +283,7 @@
     },
     "search": {
       "searchPlaceholder": "Comece a digitar...",
-      "chatPlaceholder": "Me pergunte qualquer coisa",
       "noResultsFoundFor": "Nenhum resultado encontrado para",
-      "suggestions": "Sugestões",
-      "seeAll": "Ver tudo",
-      "addMore": "Adicionar mais",
-      "clearChat": "Limpar chat",
-      "errorMessage": "Ocorreu um erro ao tentar pesquisar. Por favor, tente novamente.",
-      "disclaimer": "Resumos de IA podem cometer erros. Por favor, verifique as informações.",
-      "startYourSearch": "Inicie sua pesquisa",
-      "initErrorSearch": "Não foi possível inicializar o serviço de pesquisa",
-      "initErrorChat": "Não foi possível inicializar o serviço de chat",
-      "chatButtonLabel": "Obter um resumo de IA",
-      "searchButtonLabel": "Pesquisar",
-      "poweredBy": "Fornecido por",
-      "suggestionOne": "Como instalar Node.js?",
-      "suggestionTwo": "Como criar um servidor HTTP?",
-      "suggestionThree": "Atualizando a versão do Node.js",
-      "scrollToBottom": "Rolar para o final",
-      "closeChat": "Fechar chat",
       "keyboardShortcuts": {
         "select": "para selecionar",
         "navigate": "para navegar",
@@ -328,14 +298,6 @@
     }
   },
   "layouts": {
-    "blogPost": {
-      "author": {
-        "byLine": "{author, select, null {} other {Por {author}, }}"
-      }
-    },
-    "blogIndex": {
-      "categoryName": "{category, select, all {Blog} other {Posts do Blog de {category}}}"
-    },
     "blog": {
       "title": "Blog",
       "selectCategory": "Categorias",
@@ -344,7 +306,6 @@
         "announcements": "Anúncios",
         "release": "Lançamentos",
         "vulnerability": "Vulnerabilidades",
-        "advisory-board": "Conselho Consultivo",
         "community": "Comunidade",
         "feature": "Feature",
         "module": "Módulo",
@@ -377,7 +338,6 @@
         "platform": "Plataforma",
         "os": "Sistema Operacional",
         "version": "Versão",
-        "installMethod": "Método de Instalação",
         "packageManager": "Gerenciador de Pacotes",
         "unknown": "Desconhecido",
         "platformGroups": {
@@ -387,7 +347,6 @@
       },
       "codeBox": {
         "unsupportedVersionWarning": "Esta versão não está sendo mantida. Por favor, use uma versão com suporte. <link>Entenda o suporte EOL.</link>",
-        "ltsVersionFeaturesNotice": "Quer novos recursos mais cedo? Obtenha a <link>versão mais recente do Node.js</link> e experimente as últimas melhorias!",
         "communityPlatformInfo": "Métodos de instalação que envolvem software da comunidade são suportados pelas equipes que mantêm esse software.",
         "externalSupportInfo": "Se você encontrar algum problema, por favor visite <link>o site do {platform}</link>",
         "noScriptDetected": "Esta página requer JavaScript. Você pode baixar o Node.js sem JavaScript visitando diretamente a <link>página de arquivo de downloads</link>.",
@@ -398,8 +357,7 @@
           "brew": "Homebrew é um gerenciador de pacotes para macOS e Linux.",
           "choco": "Chocolatey é um gerenciador de pacotes para Windows.",
           "docker": "Docker é uma plataforma de conteinerização.",
-          "n": "\"n\" é um gerenciador de versões do Node.js multiplataforma.",
-          "volta": "\"Volta\" é um gerenciador de versões do Node.js multiplataforma."
+          "n": "\"n\" é um gerenciador de versões do Node.js multiplataforma."
         }
       }
     },

@@ -37,9 +37,7 @@
           "download": "ダウンロード",
           "docs": "ドキュメント",
           "betaDocs": "ベータ版ドキュメント",
-          "guides": "ガイド",
           "learn": "学ぶ",
-          "security": "セキュリティー",
           "certification": "コース",
           "blog": "ブログ",
           "contribute": "貢献"
@@ -71,9 +69,7 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "nApiVersion": "N-API",
       "codename": "コードネーム",
-      "releaseDate": "でリリース済み",
       "firstReleased": "最初のリリース",
       "lastUpdated": "最終更新日",
       "status": "ステータス",
@@ -87,10 +83,7 @@
     "releaseModal": {
       "title": "Node.js v{version} ({codename})",
       "titleWithoutCodename": "Node.js v{version}",
-      "overview": "概要",
       "minorVersions": "マイナーバージョン",
-      "releaseAnnouncement": "リリース",
-      "unsupportedVersionWarning": "このバージョンのメンテナンスは終了しています。現在サポートされているバージョンを利用してください。<link>EOLのサポートについて。</link>",
       "ltsVersionFeaturesNotice": "すぐに最新の機能を試したいですか？<link>最新バージョンのNode.js</link>を代わりにインストールして最新の機能を試してください！"
     },
     "eolAlert": {
@@ -122,7 +115,6 @@
     "eolTable": {
       "version": "バージョン",
       "codename": "コードネーム",
-      "releaseDate": "でリリース済み",
       "lastUpdated": "最終更新日",
       "vulnerabilities": "脆弱性",
       "details": "詳細",
@@ -135,7 +127,6 @@
       "npmVersion": "npmのバージョン",
       "v8Version": "V8のバージョン",
       "actions": {
-        "release": "リリース",
         "changelog": "変更履歴",
         "docs": "ドキュメント"
       }
@@ -151,8 +142,7 @@
     "common": {
       "alertBox": {
         "info": "補足",
-        "warning": "注意",
-        "danger": "警告"
+        "warning": "注意"
       },
       "breadcrumbs": {
         "navigateToHome": "ホームに移動する"
@@ -180,12 +170,10 @@
     "metabar": {
       "lastUpdated": "最終更新日",
       "readingTime": "所要時間",
-      "addedIn": "追加時期",
       "author": "著者",
       "authors": "著者",
       "contribute": "編集への協力",
       "contributeText": "このページを編集",
-      "viewAs": "表示方法",
       "tableOfContents": "目次",
       "metadata": "記事のメタデータ"
     },
@@ -197,25 +185,7 @@
     },
     "search": {
       "searchPlaceholder": "入力を開始...",
-      "chatPlaceholder": "なんでも聞いてください",
       "noResultsFoundFor": "該当する結果が見つかりませんでした",
-      "suggestions": "候補",
-      "seeAll": "すべて表示",
-      "addMore": "さらに追加",
-      "clearChat": "チャットを削除",
-      "errorMessage": "検索中にエラーが起こりました。もう一度試してください。",
-      "disclaimer": "AIの情報は間違っている可能性があります。正しい情報かどうか注意してください。",
-      "startYourSearch": "検索を開始",
-      "initErrorSearch": "検索サービスを開始できません",
-      "initErrorChat": "チャットサービスを開始できません",
-      "chatButtonLabel": "AIの情報を確認する",
-      "searchButtonLabel": "検索",
-      "poweredBy": "Powered by",
-      "suggestionOne": "Node.jsをインストールするには？",
-      "suggestionTwo": "HTTPサーバーを作成するには？",
-      "suggestionThree": "Node.jsのバージョンアップ",
-      "scrollToBottom": "最下部へスクロール",
-      "closeChat": "チャットを閉じる",
       "keyboardShortcuts": {
         "select": "選ぶ",
         "navigate": "移動",
@@ -230,14 +200,6 @@
     }
   },
   "layouts": {
-    "blogPost": {
-      "author": {
-        "byLine": "{author, select, null {} other {著者: {author}}}"
-      }
-    },
-    "blogIndex": {
-      "categoryName": "{category, select, all {ブログ} other {{category}ブログ記事}}"
-    },
     "blog": {
       "title": "ブログ",
       "selectCategory": "カテゴリー",
@@ -246,7 +208,6 @@
         "announcements": "お知らせ",
         "release": "リリース",
         "vulnerability": "脆弱性",
-        "advisory-board": "諮問委員会",
         "community": "コミュニティー",
         "feature": "機能",
         "module": "モジュール",
@@ -279,7 +240,6 @@
         "platform": "プラットフォーム",
         "os": "オペレーティングシステム",
         "version": "バージョン",
-        "installMethod": "インストール方法",
         "packageManager": "パッケージマネージャー",
         "unknown": "不明",
         "platformGroups": {
@@ -289,7 +249,6 @@
       },
       "codeBox": {
         "unsupportedVersionWarning": "このバージョンのメンテナンスは終了しています。現在サポートされているバージョンを利用してください。<link>EOLのサポートについて。</link>",
-        "ltsVersionFeaturesNotice": "すぐに最新の機能を試したいですか？<link>最新バージョンのNode.js</link>を代わりにインストールして最新の機能を試してください！",
         "communityPlatformInfo": "コミュニティーソフトウェアを含むインストール方法はそのソフトウェアを管理しているチームによってサポートされます。",
         "externalSupportInfo": "もし何らかの問題を見つけた場合は<link>{platform}のウェブサイト</link>を参照してください。",
         "noScriptDetected": "このページはJavaScriptが必要です。JavaScriptなしでも<link>アーカイブページ</link>から直接Node.jsをダウンロードできます。",
@@ -301,8 +260,7 @@
           "choco": "ChocolateyはWIndows用のパッケージマネージャーです。",
           "docker": "Dockerはコンテナー化に関するプラットフォームです。",
           "n": "\"n\"はクロスプラットフォームに対応したNode.jsのバージョンマネージャーです。",
-          "asdf": "「asdf」は数多くのプログラミング言語に対応したクロスプラットフォームのバージョン管理ツールです。",
-          "volta": "\"Volta\"はクロスプラットフォームに対応したNode.jsのバージョンマネージャーです。"
+          "asdf": "「asdf」は数多くのプログラミング言語に対応したクロスプラットフォームのバージョン管理ツールです。"
         }
       }
     },

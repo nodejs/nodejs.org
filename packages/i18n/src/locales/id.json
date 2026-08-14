@@ -22,9 +22,7 @@
           "about": "Tentang",
           "download": "Unduh",
           "docs": "Dokumentasi",
-          "guides": "Panduan",
           "learn": "Pelajari",
-          "security": "Keamanan",
           "certification": "Sertifikasi",
           "blog": "Artikel",
           "contribute": "Kontribusi"
@@ -160,9 +158,7 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "nApiVersion": "N-API",
       "codename": "Kode nama",
-      "releaseDate": "Dirilis pada",
       "firstReleased": "Perilisan Pertama",
       "lastUpdated": "Pembaruan Terakhir",
       "status": "Status",
@@ -176,10 +172,7 @@
     "releaseModal": {
       "title": "Node.js v{version} ({codename})",
       "titleWithoutCodename": "Node.js v{version}",
-      "overview": "Ringkasan",
       "minorVersions": "Versi minor",
-      "releaseAnnouncement": "Pengumuman Perilisan",
-      "unsupportedVersionWarning": "Versi ini sudah tidak dalam tahap pemeliharaan. Harap gunakan versi yang didukung. <link>Pahami dukungan EOL.</link>",
       "ltsVersionFeaturesNotice": "Ingin mencoba fitur baru lebih cepat? Dapatkan <link>versi Node.js terbaru</link> dan coba peningkatan terbarunya!"
     },
     "eolAlert": {
@@ -211,7 +204,6 @@
     "eolTable": {
       "version": "Versi",
       "codename": "Kode nama",
-      "releaseDate": "Dirilis pada",
       "lastUpdated": "Pembaruan Terakhir",
       "vulnerabilities": "Kerentanan",
       "details": "Rincian"
@@ -223,7 +215,6 @@
       "npmVersion": "versi npm",
       "v8Version": "V8 versi",
       "actions": {
-        "release": "Rilis",
         "changelog": "Log Perubahan",
         "docs": "Dokumentasi"
       }
@@ -243,8 +234,7 @@
     "common": {
       "alertBox": {
         "info": "Info",
-        "warning": "Peringatan",
-        "danger": "Bahaya"
+        "warning": "Peringatan"
       },
       "breadcrumbs": {
         "navigateToHome": "Navigasi ke Beranda"
@@ -279,35 +269,15 @@
     "metabar": {
       "lastUpdated": "Pembaruan Terakhir",
       "readingTime": "Waktu Membaca",
-      "addedIn": "Ditambahkan pada",
       "author": "Penulis",
       "authors": "Penulis",
       "contribute": "Kontribusi",
       "contributeText": "Sunting halaman ini",
-      "viewAs": "Tampilkan sebagai",
       "tableOfContents": "Daftar isi"
     },
     "search": {
       "searchPlaceholder": "Mulai mengetik...",
-      "chatPlaceholder": "Tanya saya apa saja",
       "noResultsFoundFor": "Tidak ada hasil ditemukan untuk",
-      "suggestions": "Saran",
-      "seeAll": "Lihat semua",
-      "addMore": "Tambahkan lebih banyak",
-      "clearChat": "Bersihkan obrolan",
-      "errorMessage": "Terjadi kesalahan saat melakukan pencarian. Silakan coba lagi.",
-      "disclaimer": "Ringkasan berbasis AI dapat mengandung kesalahan. Harap verifikasi informasi tersebut.",
-      "startYourSearch": "Mulai pencarian anda",
-      "initErrorSearch": "Tidak dapat memulai layanan pencarian",
-      "initErrorChat": "Tidak dapat memulai layanan obrolan",
-      "chatButtonLabel": "Dapatkan ringkasan AI",
-      "searchButtonLabel": "Pencarian",
-      "poweredBy": "Diberdayakan oleh",
-      "suggestionOne": "Instruksi Pemasangan Node.js?",
-      "suggestionTwo": "Bagaimana cara membuat server HTTP?",
-      "suggestionThree": "Meningkatkan versi Node.js",
-      "scrollToBottom": "Gulir ke bawah",
-      "closeChat": "Tutup obrolan",
       "keyboardShortcuts": {
         "select": "memilih",
         "navigate": "untuk menavigasi",
@@ -322,14 +292,6 @@
     }
   },
   "layouts": {
-    "blogPost": {
-      "author": {
-        "byLine": "{author, select, null {} other{Oleh {author}, }}"
-      }
-    },
-    "blogIndex": {
-      "categoryName": "{category, select, all {Artikel} other {{category} Postingan Artikel}}"
-    },
     "blog": {
       "title": "Artikel",
       "selectCategory": "Kategori",
@@ -338,7 +300,6 @@
         "announcements": "Pengumuman",
         "release": "Rilis",
         "vulnerability": "Kerentanan",
-        "advisory-board": "Dewan Penasihat",
         "community": "Komunitas",
         "feature": "Fitur",
         "module": "Modul",
@@ -371,7 +332,6 @@
         "platform": "Platform",
         "os": "Sistem Operasi",
         "version": "Versi",
-        "installMethod": "Cara pasang",
         "packageManager": "Manajer paket",
         "unknown": "Tak diketahui",
         "platformGroups": {
@@ -381,7 +341,6 @@
       },
       "codeBox": {
         "unsupportedVersionWarning": "Versi ini sudah tidak dalam tahap pemeliharaan. Harap gunakan versi yang saat ini didukung. <link>Pahami dukungan EOL.</link>",
-        "ltsVersionFeaturesNotice": "Ingin mencoba fitur baru lebih cepat? Dapatkan <link>versi Node.js terbaru</link> dan coba peningkatan terbarunya!",
         "communityPlatformInfo": "Metode instalasi yang melibatkan perangkat lunak komunitas didukung oleh tim yang memelihara perangkat lunak tersebut.",
         "externalSupportInfo": "Jika kamu mengalami masalah, silakan kunjungi situs web <link>{platform}</link>",
         "noScriptDetected": "Halaman ini memerlukan JavaScript.\nKamu tetap dapat mengunduh Node.js tanpa mengaktifkan JavaScript dengan langsung mengunjungi <link>halaman arsip unduhan</link>.",
@@ -392,8 +351,7 @@
           "brew": "Homebrew adalah manajer paket untuk macOS dan Linux.",
           "choco": "Chocolatey adalah manajer paket untuk Windows.",
           "docker": "Docker adalah platform kontainerisasi.",
-          "n": "\"n\" adalah manajer versi Node.js lintas-platform.",
-          "volta": "\"Volta\" adalah manajer versi Node.js lintas-platform."
+          "n": "\"n\" adalah manajer versi Node.js lintas-platform."
         }
       }
     },

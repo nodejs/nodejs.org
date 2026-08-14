@@ -22,9 +22,7 @@
           "about": "Despre",
           "download": "Descarcă",
           "docs": "Documentație",
-          "guides": "Ghiduri",
           "learn": "Învață",
-          "security": "Securitate",
           "certification": "Certificări",
           "blog": "Blog",
           "contribute": "Contribuie"
@@ -159,9 +157,7 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "nApiVersion": "N-API",
       "codename": "Nume de cod",
-      "releaseDate": "Lansat pe",
       "firstReleased": "Prima lansare",
       "lastUpdated": "Ultima actualizare",
       "status": "Stare",
@@ -175,10 +171,7 @@
     "releaseModal": {
       "title": "Node.js v{version} ({codename})",
       "titleWithoutCodename": "Node.js v{version}",
-      "overview": "Prezentare generală",
       "minorVersions": "Versiuni minore",
-      "releaseAnnouncement": "Anunț de lansare",
-      "unsupportedVersionWarning": "Această versiune nu mai este întreținută. Te rog să folosești o versiune acceptată în prezent. <link>Află mai multe despre suportul la sfârșitul ciclului de viață (EOL).</link>",
       "ltsVersionFeaturesNotice": "Vrei funcționalități noi mai devreme? Instalează <link>cea mai recentă versiune Node.js</link> și testează cele mai noi îmbunătățiri!"
     },
     "eolAlert": {
@@ -210,7 +203,6 @@
     "eolTable": {
       "version": "Versiune",
       "codename": "Nume de cod",
-      "releaseDate": "Lansat pe",
       "lastUpdated": "Ultima actualizare",
       "vulnerabilities": "Vulnerabilități",
       "details": "Detalii"
@@ -222,7 +214,6 @@
       "npmVersion": "Versiune npm",
       "v8Version": "Versiune V8",
       "actions": {
-        "release": "Lansare",
         "changelog": "Istoric de modificări",
         "docs": "Documentație"
       }
@@ -242,8 +233,7 @@
     "common": {
       "alertBox": {
         "info": "Informații",
-        "warning": "Avertizare",
-        "danger": "Pericol"
+        "warning": "Avertizare"
       },
       "breadcrumbs": {
         "navigateToHome": "Navighează la prima pagină"
@@ -278,29 +268,15 @@
     "metabar": {
       "lastUpdated": "Ultima actualizare",
       "readingTime": "Durată de citire",
-      "addedIn": "Adăugat în",
       "author": "Autor",
       "authors": "Autori",
       "contribute": "Contribuie",
       "contributeText": "Editează această pagină",
-      "viewAs": "Vezi ca",
       "tableOfContents": "Cuprins"
     },
     "search": {
       "searchPlaceholder": "Începe să tastezi...",
-      "chatPlaceholder": "Întreabă-mă orice",
-      "noResultsFoundFor": "Niciun rezultat găsit pentru",
-      "suggestions": "Sugestii",
-      "seeAll": "Vezi tot",
-      "addMore": "Adaugă mai multe",
-      "clearChat": "Golește discuția",
-      "errorMessage": "A apărut o eroare la încercarea de căutare. Te rog să încerci din nou.",
-      "disclaimer": "Rezumatele IA pot conține greșeli. Te rog să verifici informațiile.",
-      "startYourSearch": "Începe-ți căutarea",
-      "initErrorSearch": "Nu pot să inițializez serviciul de căutare",
-      "initErrorChat": "Nu pot să inițializez serviciul de discuții",
-      "chatButtonLabel": "Obține un rezumat IA",
-      "searchButtonLabel": "Caută"
+      "noResultsFoundFor": "Niciun rezultat găsit pentru"
     },
     "blog": {
       "blogHeader": {
@@ -310,14 +286,6 @@
     }
   },
   "layouts": {
-    "blogPost": {
-      "author": {
-        "byLine": "{author, select, null {} other {De {author}, }}"
-      }
-    },
-    "blogIndex": {
-      "categoryName": "{category, select, all {blog} other {{category} articole de blog}}"
-    },
     "blog": {
       "title": "Blog",
       "selectCategory": "Categorii",
@@ -326,7 +294,6 @@
         "announcements": "Anunțuri",
         "release": "Lansări",
         "vulnerability": "Vulnerabilități",
-        "advisory-board": "Consiliul consultativ",
         "community": "Comunitate",
         "feature": "Funcționalitate",
         "module": "Modul",
@@ -358,7 +325,6 @@
         "platform": "Platformă",
         "os": "Sistem de operare",
         "version": "Versiune",
-        "installMethod": "Metodă de instalare",
         "packageManager": "Manager de pachete",
         "unknown": "Necunoscut",
         "platformGroups": {
@@ -368,7 +334,6 @@
       },
       "codeBox": {
         "unsupportedVersionWarning": "Această versiune nu mai este întreținută. Te rog să utilizezi o versiune acceptată în prezent. <link>Află mai multe despre suportul EOL.</link>",
-        "ltsVersionFeaturesNotice": "Vrei funcționalități noi mai devreme? Ia <link>cea mai recentă versiune Node.js</link> și încearcă ultimele îmbunătățiri!",
         "communityPlatformInfo": "Metodele de instalare care implică software comunitar sunt acceptate de echipele care întrețin acel software.",
         "externalSupportInfo": "Dacă întâmpini orice problemă, te rog să vizitezi site-ul web <link>{platform}</link>",
         "noScriptDetected": "Această pagină necesită JavaScript. Poți descărca Node.js fără JavaScript, vizitând direct <link>pagina arhivei de descărcări</link>.",
@@ -379,8 +344,7 @@
           "brew": "Homebrew este un manager de pachete pentru macOS și Linux.",
           "choco": "Chocolatey este un manager de pachete pentru Windows.",
           "docker": "Docker este o platformă de containerizare.",
-          "n": "„n” este un manager de versiuni Node.js multiplatformă.",
-          "volta": "„Volta” este un manager de versiuni Node.js multiplatformă."
+          "n": "„n” este un manager de versiuni Node.js multiplatformă."
         }
       }
     },

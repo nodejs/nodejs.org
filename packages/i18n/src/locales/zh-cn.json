@@ -18,9 +18,7 @@
           "about": "关于",
           "download": "下载",
           "docs": "文档",
-          "guides": "指南",
           "learn": "学习",
-          "security": "安全",
           "certification": "认证",
           "blog": "博客",
           "contribute": "贡献"
@@ -146,10 +144,8 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "nApiVersion": "N-API",
       "npmVersion": "npm",
       "codename": "代号",
-      "releaseDate": "发布日期",
       "actions": {
         "changelog": "更新日志",
         "releases": "发行版",
@@ -163,8 +159,7 @@
     "common": {
       "alertBox": {
         "info": "提示",
-        "warning": "警告",
-        "danger": "危险"
+        "warning": "警告"
       },
       "breadcrumbs": {
         "navigateToHome": "导航到首页"
@@ -198,12 +193,10 @@
     "metabar": {
       "lastUpdated": "最后更新",
       "readingTime": "阅读时间",
-      "addedIn": "添加于",
       "author": "作者",
       "authors": "作者",
       "contribute": "贡献",
       "contributeText": "编辑此页",
-      "viewAs": "查看为",
       "tableOfContents": "目录"
     },
     "search": {
@@ -219,14 +212,6 @@
     }
   },
   "layouts": {
-    "blogPost": {
-      "author": {
-        "byLine": "{author, select, null {} other {By {author}, }}"
-      }
-    },
-    "blogIndex": {
-      "categoryName": "{category, select, all {Blog} other {{category} Blog Posts}}"
-    },
     "blog": {
       "title": "博客",
       "selectCategory": "分类",
@@ -235,7 +220,6 @@
         "announcements": "公告",
         "release": "版本发布",
         "vulnerability": "漏洞",
-        "advisory-board": "管理咨询",
         "community": "社区",
         "feature": "功能",
         "module": "模块",
@@ -267,7 +251,6 @@
         "platform": "平台",
         "os": "操作系统",
         "version": "版本",
-        "installMethod": "选择安装方法",
         "packageManager": "包管理器",
         "unknown": "未知",
         "platformGroups": {
@@ -287,8 +270,7 @@
           "brew": "Homebrew 是一款适用于 macOS 和 Linux 的软件包管理器。",
           "choco": "Chocolatey 是一款 Windows 软件包管理器。",
           "docker": "Docker 是一个容器化平台。",
-          "n": "\"n\" 是一个跨平台的 Node.js 版本管理器。",
-          "volta": "\"Volta\" 是一个跨平台的 Node.js 版本管理器。"
+          "n": "\"n\" 是一个跨平台的 Node.js 版本管理器。"
         }
       }
     },

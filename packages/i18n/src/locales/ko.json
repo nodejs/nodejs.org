@@ -15,9 +15,7 @@
           "about": "소개",
           "download": "다운로드",
           "docs": "문서",
-          "guides": "가이드",
           "learn": "학습",
-          "security": "보안",
           "certification": "인증",
           "blog": "블로그",
           "contribute": "기여하기"
@@ -139,10 +137,8 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "nApiVersion": "N-API",
       "npmVersion": "npm",
       "codename": "코드명",
-      "releaseDate": "출시일",
       "actions": {
         "changelog": "변경 내역",
         "releases": "릴리스",
@@ -156,8 +152,7 @@
     "common": {
       "alertBox": {
         "info": "정보",
-        "warning": "경고",
-        "danger": "위험"
+        "warning": "경고"
       },
       "breadcrumbs": {
         "navigateToHome": "홈으로 이동"
@@ -191,12 +186,10 @@
     "metabar": {
       "lastUpdated": "마지막 업데이트",
       "readingTime": "읽는 데 걸리는 시간",
-      "addedIn": "추가됨",
       "author": "저자",
       "authors": "저자들",
       "contribute": "기여하기",
       "contributeText": "이 페이지 수정",
-      "viewAs": "보기",
       "tableOfContents": "목차"
     },
     "search": {
@@ -212,14 +205,6 @@
     }
   },
   "layouts": {
-    "blogPost": {
-      "author": {
-        "byLine": "{author, select, null {} other {작성자: {author}, }}"
-      }
-    },
-    "blogIndex": {
-      "categoryName": "{category, select, all {블로그} other {{category} 블로그 게시물}}"
-    },
     "blog": {
       "title": "블로그",
       "selectCategory": "카테고리",
@@ -228,7 +213,6 @@
         "announcements": "공지사항",
         "release": "릴리스",
         "vulnerability": "취약점",
-        "advisory-board": "자문 위원회",
         "community": "커뮤니티",
         "feature": "기능",
         "module": "모듈",
@@ -260,7 +244,6 @@
         "platform": "플랫폼",
         "os": "운영 체제",
         "version": "버전",
-        "installMethod": "설치 방법",
         "packageManager": "패키지 관리자",
         "unknown": "알 수 없음",
         "platformGroups": {

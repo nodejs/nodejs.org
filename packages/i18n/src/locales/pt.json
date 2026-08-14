@@ -18,9 +18,7 @@
           "about": "Sobre",
           "download": "Descarregar",
           "docs": "Documentação",
-          "guides": "Guias",
           "learn": "Estudar",
-          "security": "Segurança",
           "certification": "Certificação",
           "blog": "Blogue",
           "contribute": "Colaborar"
@@ -145,10 +143,8 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "nApiVersion": "N-API",
       "npmVersion": "npm",
       "codename": "Nome de código",
-      "releaseDate": "Lançado em",
       "actions": {
         "changelog": "Registo de alterações",
         "releases": "Lançamentos",
@@ -162,8 +158,7 @@
     "common": {
       "alertBox": {
         "info": "Informação",
-        "warning": "Aviso",
-        "danger": "Perigo"
+        "warning": "Aviso"
       },
       "breadcrumbs": {
         "navigateToHome": "Navegar para a Página Inicial"
@@ -197,12 +192,10 @@
     "metabar": {
       "lastUpdated": "Última Atualização",
       "readingTime": "Duração da Leitura",
-      "addedIn": "Adicionado Em",
       "author": "Autor(a)",
       "authors": "Autores",
       "contribute": "Colaborar",
       "contributeText": "Editar esta página",
-      "viewAs": "Ver como",
       "tableOfContents": "Índice"
     },
     "search": {
@@ -218,14 +211,6 @@
     }
   },
   "layouts": {
-    "blogPost": {
-      "author": {
-        "byLine": "{author, select, null {} other {Por {author}, }}"
-      }
-    },
-    "blogIndex": {
-      "categoryName": "{category, select, all {Blog} other {Publicações do Blogue {category}}}"
-    },
     "blog": {
       "title": "Blogue",
       "selectCategory": "Categorias",
@@ -234,7 +219,6 @@
         "announcements": "Anúncios",
         "release": "Lançamentos",
         "vulnerability": "Vulnerabilidades",
-        "advisory-board": "Conselho Consultivo",
         "community": "Comunidade",
         "feature": "Funcionalidade",
         "module": "Módulo",
@@ -266,7 +250,6 @@
         "platform": "Plataforma",
         "os": "Sistema Operativo",
         "version": "Versão",
-        "installMethod": "Método de Instalação",
         "packageManager": "Gestor de Pacote",
         "unknown": "Desconhecido",
         "platformGroups": {
@@ -285,8 +268,7 @@
           "fnm": "\"fnm\" é um gestor de versão de Node.js multiplataforma.",
           "brew": "Homebrew é um gestor de pacote para macOS e Linux.",
           "choco": "Chocolatey é um gestor de pacote para Windows.",
-          "docker": "Docker é uma plataforma de contentorização.",
-          "volta": "\"Volta\" é um gestor de versão de Node.js multiplataforma."
+          "docker": "Docker é uma plataforma de contentorização."
         }
       }
     },
