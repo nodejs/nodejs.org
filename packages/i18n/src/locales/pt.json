@@ -5,7 +5,6 @@
         "links": {
           "trademarkPolicy": "Política da Marca Comercial",
           "privacyPolicy": "Política de Privacidade",
-          "versionSupport": "Suporte da Versão",
           "codeOfConduct": "Código de Conduta",
           "security": "Política de Segurança"
         }
@@ -26,101 +25,6 @@
       }
     },
     "navigation": {
-      "learn": {
-        "gettingStarted": {
-          "links": {
-            "gettingStarted": "Começar",
-            "introductionToNodejs": "Introdução ao Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Quanto JavaScript precisas de saber para usar o Node.js?",
-            "differencesBetweenNodejsAndTheBrowser": "Diferenças entre o Node.js e o Navegador",
-            "theV8JavascriptEngine": "O Motor de JavaScript V8",
-            "anIntroductionToTheNpmPackageManager": "Introdução ao gestor de pacotes npm",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) e além",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, a diferença entre o desenvolvimento e a produção",
-            "nodejsWithWebassembly": "Node.js com WebAssembly",
-            "debugging": "Depuração da Node.js",
-            "profiling": "Definição de Perfis de Aplicações de Node.js",
-            "fetch": "Obter dados com a Node.js",
-            "websocket": "Cliente de WebSocket com a Node.js",
-            "securityBestPractices": "Boas Práticas de Segurança"
-          }
-        },
-        "typescript": {
-          "links": {
-            "typescript": "TypeScript",
-            "introduction": "Introdução à TypeScript",
-            "transpile": "Executar o código da TypeScript utilizando a tradução de código",
-            "run": "Executar a TypeScript com uma executora",
-            "runNatively": "Executar a TypeScript Nativamente",
-            "publishingTSPackage": "Publicar um pacote de TypeScript"
-          }
-        },
-        "asynchronousWork": {
-          "links": {
-            "asynchronousWork": "Trabalho Assíncrono",
-            "asynchronousFlowControl": "Controlo do Fluxo Assíncrono",
-            "overviewOfBlockingVsNonBlocking": "Visão Geral de Bloqueante vs Não Bloqueante",
-            "javascriptAsynchronousProgrammingAndCallbacks": "Programação Assíncrona de JavaScript e Funções de Resposta",
-            "discoverJavascriptTimers": "Descobrir os Temporizadores da JavaScript",
-            "eventLoopTimersAndNexttick": "O Ciclo de Evento da Node.js",
-            "theNodejsEventEmitter": "O Emissor de Evento da Node.js",
-            "understandingProcessnexttick": "Entendendo o process.nextTick()",
-            "understandingSetimmediate": "Entendendo o setImmediate()",
-            "dontBlockTheEventLoop": "Não Bloqueie o Ciclo de Eventos"
-          }
-        },
-        "manipulatingFiles": {
-          "links": {
-            "manipulatingFiles": "Manipulando Ficheiros",
-            "nodejsFileStats": "Estatísticas de Ficheiro da Node.js",
-            "nodejsFilePaths": "Caminhos de Ficheiros no Node.js",
-            "workingWithFileDescriptorsInNodejs": "Trabalhar com os Descritores de Ficheiro na Node.js",
-            "readingFilesWithNodejs": "Ler Ficheiros com a Node.js",
-            "writingFilesWithNodejs": "Escrever Ficheiros com a Node.js",
-            "workingWithFoldersInNodejs": "Trabalhando com pastas no Node.js",
-            "workingWithDifferentFilesystems": "Como trabalhar com diferentes Sistemas de Ficheiros"
-          }
-        },
-        "commandLine": {
-          "links": {
-            "commandLine": "Linha de Comando",
-            "runNodejsScriptsFromTheCommandLine": "Execute scripts de Node.js através da linha de comandos",
-            "howToReadEnvironmentVariablesFromNodejs": "Como Ler Variáveis de Ambiente no Node.js",
-            "howToUseTheNodejsRepl": "Como Usar o REPL do Node.js",
-            "outputToTheCommandLineUsingNodejs": "Saída para a linha de comando usando o Node.js",
-            "acceptInputFromTheCommandLineInNodejs": "Aceitar entrada na linha de comando no Node.js"
-          }
-        },
-        "modules": {
-          "links": {
-            "modules": "Módulos",
-            "publishingAPackage": "Publicar um pacote",
-            "publishingNodeApiModules": "Como publicar um pacote da Node-API",
-            "anatomyOfAnHttpTransaction": "Anatomia de uma Transação do Protocolo de Hipertexto",
-            "abiStability": "Estabilidade da Interface Binária da Aplicação",
-            "howToUseStreams": "Como usar fluxos",
-            "backpressuringInStreams": "Contrapressão nas Correntes de Dados"
-          }
-        },
-        "diagnostics": {
-          "links": {
-            "diagnostics": "Diagnósticos",
-            "userJourney": "Jornada do Utilizador",
-            "memory": "Memória",
-            "liveDebugging": "Depuração em Direto",
-            "poorPerformance": "Desempenho Deficiente",
-            "flameGraphs": "Gráficos de Chamas"
-          }
-        },
-        "testRunner": {
-          "links": {
-            "testRunner": "Executor de Teste",
-            "introduction": "Descobrir o executor de teste da Node.js",
-            "usingTestRunner": "Usar o executor de teste da Node.js",
-            "mocking": "Simulação em Testes"
-          }
-        }
-      },
       "about": {
         "links": {
           "about": "Sobre a Node.js",
@@ -143,17 +47,7 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "npmVersion": "npm",
-      "codename": "Nome de código",
-      "actions": {
-        "changelog": "Registo de alterações",
-        "releases": "Lançamentos",
-        "docs": "Documentação"
-      }
-    },
-    "pagination": {
-      "next": "Próxima",
-      "previous": "Anterior"
+      "codename": "Nome de código"
     },
     "common": {
       "alertBox": {
@@ -163,17 +57,11 @@
       "breadcrumbs": {
         "navigateToHome": "Navegar para a Página Inicial"
       },
-      "crossLink": {
-        "previous": "Anterior",
-        "next": "Próximo"
-      },
       "codebox": {
         "copy": "Copiar para a área de transferência",
         "copied": "Copiado para a área de transferência!"
       },
       "pagination": {
-        "prev": "Anterior",
-        "prevAriaLabel": "Página anterior",
         "next": "Próximo",
         "nextAriaLabel": "Próxima página",
         "defaultLabel": "Paginação",
@@ -184,9 +72,6 @@
       },
       "languageDropdown": {
         "label": "Selecionar o idioma"
-      },
-      "themeToggle": {
-        "label": "Alternar Modo Escuro"
       }
     },
     "metabar": {
@@ -197,11 +82,6 @@
       "contribute": "Colaborar",
       "contributeText": "Editar esta página",
       "tableOfContents": "Índice"
-    },
-    "search": {
-      "searchBox": {
-        "placeholder": "Pesquisar..."
-      }
     },
     "blog": {
       "blogHeader": {

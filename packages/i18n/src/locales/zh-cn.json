@@ -5,7 +5,6 @@
         "links": {
           "trademarkPolicy": "商标政策",
           "privacyPolicy": "隐私政策",
-          "versionSupport": "版本支持",
           "codeOfConduct": "行为准则",
           "security": "安全政策"
         }
@@ -26,102 +25,6 @@
       }
     },
     "navigation": {
-      "learn": {
-        "gettingStarted": {
-          "links": {
-            "gettingStarted": "快速上手",
-            "introductionToNodejs": "Node.js 介绍",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "使用Node.js需要了解多少JavaScript？",
-            "differencesBetweenNodejsAndTheBrowser": "Node.js 与浏览器的区别",
-            "theV8JavascriptEngine": "JavaScript V8 引擎",
-            "anIntroductionToTheNpmPackageManager": "Npm 包管理器简介",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) 与未来",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js 在开发与生产环境中的区别",
-            "nodejsWithWebassembly": "使用WebAssembly的Node.js",
-            "debugging": "调试 Node.js",
-            "profiling": "分析 Node.js 应用程序",
-            "fetch": "使用 Node.js 获取数据",
-            "websocket": "使用 Node.js 的 WebSocket 客户端",
-            "securityBestPractices": "安全最佳实践"
-          }
-        },
-        "typescript": {
-          "links": {
-            "typescript": "TypeScript",
-            "introduction": "TypeScript 简介",
-            "transpile": "使用转译技术运行 TypeScript 代码",
-            "run": "使用运行程序运行 TypeScript",
-            "runNatively": "以原生方式运行 TypeScript",
-            "publishingTSPackage": "发布一个 TypeScript 包"
-          }
-        },
-        "asynchronousWork": {
-          "links": {
-            "asynchronousWork": "异步工作",
-            "asynchronousFlowControl": "异步流控制",
-            "overviewOfBlockingVsNonBlocking": "概述：阻塞与非阻塞",
-            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript 中的异步编程与回调",
-            "discoverJavascriptTimers": "了解 JavaScript 定时器",
-            "eventLoopTimersAndNexttick": "Node.js 事件循环",
-            "theNodejsEventEmitter": "Node.js 事件发射器",
-            "understandingProcessnexttick": "掌握 process.nextTick()",
-            "understandingSetimmediate": "掌握 setImmediate()",
-            "dontBlockTheEventLoop": "请勿阻塞事件循环"
-          }
-        },
-        "manipulatingFiles": {
-          "links": {
-            "manipulatingFiles": "文件操作",
-            "nodejsFileStats": "Node.js 中的文件状态",
-            "nodejsFilePaths": "Node.js 中的文件路径",
-            "workingWithFileDescriptorsInNodejs": "在 Node.js 中使用文件描述符",
-            "readingFilesWithNodejs": "使用 Node.js 读取文件",
-            "writingFilesWithNodejs": "使用 Node.js 写入文件",
-            "workingWithFoldersInNodejs": "在 Node.js 中处理文件夹",
-            "workingWithDifferentFilesystems": "如何使用不同的文件系统"
-          }
-        },
-        "commandLine": {
-          "links": {
-            "commandLine": "命令行",
-            "runNodejsScriptsFromTheCommandLine": "从命令行运行 Node.js 脚本",
-            "howToReadEnvironmentVariablesFromNodejs": "如何从 Node.js 中读取环境变量",
-            "howToUseTheNodejsRepl": "如何使用 Node.js REPL",
-            "outputToTheCommandLineUsingNodejs": "使用 Node.js 向命令行输出",
-            "acceptInputFromTheCommandLineInNodejs": "在 Node.js 中接受命令行输入"
-          }
-        },
-        "modules": {
-          "links": {
-            "modules": "模块",
-            "publishingAPackage": "发布包",
-            "publishingNodeApiModules": "如何发布一个 Node-API 包",
-            "anatomyOfAnHttpTransaction": "HTTP 事务剖析",
-            "abiStability": "ABI 稳定性",
-            "howToUseStreams": "如何使用流",
-            "backpressuringInStreams": "流处理中的反压机制"
-          }
-        },
-        "diagnostics": {
-          "links": {
-            "diagnostics": "诊断",
-            "userJourney": "用户旅程",
-            "memory": "内存",
-            "liveDebugging": "实时调试",
-            "poorPerformance": "性能分析",
-            "flameGraphs": "火焰图"
-          }
-        },
-        "testRunner": {
-          "links": {
-            "testRunner": "测试运行程序",
-            "introduction": "了解 Node.js 测试运行程序",
-            "usingTestRunner": "使用 Node.js 测试运行程序",
-            "mocking": "在测试中进行模拟",
-            "collectingCodeCoverage": "在 Node.js 中收集代码覆盖率"
-          }
-        }
-      },
       "about": {
         "links": {
           "about": "关于 Node.js",
@@ -144,17 +47,7 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "npmVersion": "npm",
-      "codename": "代号",
-      "actions": {
-        "changelog": "更新日志",
-        "releases": "发行版",
-        "docs": "文档"
-      }
-    },
-    "pagination": {
-      "next": "下一页",
-      "previous": "上一页"
+      "codename": "代号"
     },
     "common": {
       "alertBox": {
@@ -164,17 +57,11 @@
       "breadcrumbs": {
         "navigateToHome": "导航到首页"
       },
-      "crossLink": {
-        "previous": "上一个",
-        "next": "下一个"
-      },
       "codebox": {
         "copy": "复制到剪贴板",
         "copied": "已复制到剪贴板！"
       },
       "pagination": {
-        "prev": "上一页",
-        "prevAriaLabel": "上一页",
         "next": "下一页",
         "nextAriaLabel": "下一页",
         "defaultLabel": "分页",
@@ -185,9 +72,6 @@
       },
       "languageDropdown": {
         "label": "选择语言"
-      },
-      "themeToggle": {
-        "label": "切换深色模式"
       }
     },
     "metabar": {
@@ -198,11 +82,6 @@
       "contribute": "贡献",
       "contributeText": "编辑此页",
       "tableOfContents": "目录"
-    },
-    "search": {
-      "searchBox": {
-        "placeholder": "请开始输入..."
-      }
     },
     "blog": {
       "blogHeader": {

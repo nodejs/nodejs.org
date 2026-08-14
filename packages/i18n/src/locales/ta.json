@@ -35,111 +35,6 @@
       }
     },
     "navigation": {
-      "learn": {
-        "gettingStarted": {
-          "links": {
-            "gettingStarted": "தொடங்குதல்",
-            "introductionToNodejs": "Node.js அறிமுகம்",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Node.js பயன்படுத்த எவ்வளவு JavaScript தெரிந்திருக்க வேண்டும்?",
-            "differencesBetweenNodejsAndTheBrowser": "Node.js மற்றும் உலாவி இடையேயான வேறுபாடுகள்",
-            "theV8JavascriptEngine": "V8 JavaScript என்ஜின்",
-            "anIntroductionToTheNpmPackageManager": "npm தொகுப்பு மேலாளர் அறிமுகம்",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) மற்றும் அதற்குப் பிறகு",
-            "debugging": "Node.js பிழைத்திருத்தம்",
-            "fetch": "Node.js மூலம் தரவு பெறுதல்",
-            "websocket": "Node.js மூலம் WebSocket கிளையண்ட்",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js: வளர்ச்சி மற்றும் உற்பத்தி இடையிலான வேறுபாடு",
-            "profiling": "Node.js செயலி சுயவிவரப்படுத்தல்",
-            "nodejsWithWebassembly": "WebAssembly உடன் Node.js",
-            "securityBestPractices": "பாதுகாப்பு சிறந்த நடைமுறைகள்",
-            "userlandMigrations": "Userland மாற்றங்களின் அறிமுகம்"
-          }
-        },
-        "commandLine": {
-          "links": {
-            "commandLine": "கட்டளை வரி",
-            "runNodejsScriptsFromTheCommandLine": "கட்டளை வரிகளில் Node.js ஸ்கிரிப்டுகளை இயக்குதல்",
-            "howToUseTheNodejsRepl": "Node.js REPL பயன்படுத்துவது எப்படி",
-            "outputToTheCommandLineUsingNodejs": "Node.js மூலம் கமாண்டு லைனுக்கு வெளி எழுதுதல்",
-            "acceptInputFromTheCommandLineInNodejs": "Node.js இல் கட்டளை வரிகளிருந்து உள்ளீடு பெறுதல்",
-            "howToReadEnvironmentVariablesFromNodejs": "Node.js இலிருந்து என்வைரன்மென்ட் வேரியபிள்களை எப்படி படிப்பது"
-          }
-        },
-        "http": {
-          "links": {
-            "http": "HTTP",
-            "anatomyOfAnHttpTransaction": "HTTP பரிவர்த்தனையின் அமைப்பு",
-            "enterpriseNetworkConfiguration": "பெருநிறுவன வலையமைப்பு அமைப்பமைவு"
-          }
-        },
-        "manipulatingFiles": {
-          "links": {
-            "manipulatingFiles": "கோப்புகளை நிர்வகித்தல்",
-            "nodejsFileStats": "Node.js கோப்பு புள்ளிவிவரங்கள்",
-            "nodejsFilePaths": "Node.js கோப்புப் பாதைகள்",
-            "readingFilesWithNodejs": "Node.js மூலம் கோப்புகளைப் படித்தல்",
-            "writingFilesWithNodejs": "Node.js மூலம் கோப்புகளை எழுதுதல்",
-            "workingWithFileDescriptorsInNodejs": "Node.js இல் கோப்பு விவரிகளில் பணிபுரிதல்",
-            "workingWithFoldersInNodejs": "Node.js இல் கோப்புறைகளில் பணிபுரிதல்",
-            "workingWithDifferentFilesystems": "பல்வேறு கோப்பு முறைமைகளில் பணிபுரிவது எப்படி"
-          }
-        },
-        "asynchronousWork": {
-          "links": {
-            "asynchronousWork": "ஒத்திசைவற்ற நிரலாக்கம் செயல்",
-            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript இல் ஒத்திசைவற்ற நிரலாக்கம் மற்றும் திரும்ப அழைப்புச் செயல்பாடுகள்",
-            "asynchronousFlowControl": "ஒத்திசைவற்ற நிரலாக்கம் ஓட்டம் கட்டுப்பாடு",
-            "discoverPromisesInNodejs": "Node.js இல் Promises கண்டறிதல்",
-            "discoverJavascriptTimers": "JavaScript நேரக்கணக்கிகளை அறிதல்",
-            "overviewOfBlockingVsNonBlocking": "Blocking vs Non-Blocking - ஒரு முன்னோக்கு",
-            "eventLoopTimersAndNexttick": "Node.js நிகழ்வுச் சுழல்",
-            "theNodejsEventEmitter": "Node.js நிகழ்வு உமிழ்ப்பான்",
-            "understandingProcessnexttick": "process.nextTick() புரிதல்",
-            "understandingSetimmediate": "setImmediate() புரிதல்",
-            "dontBlockTheEventLoop": "Event Loop-ஐ தடுக்காதீர்கள்"
-          }
-        },
-        "typescript": {
-          "links": {
-            "typescript": "TypeScript",
-            "introduction": "TypeScript அறிமுகம்",
-            "runNatively": "TypeScript-ஐ நேரடியாக இயக்குதல்",
-            "transpile": "Transpilation மூலம் TypeScript இயக்குதல்",
-            "run": "Runner மூலம் TypeScript இயக்குதல்",
-            "publishingTSPackage": "TypeScript தொகுப்பு வெளியிடுதல்"
-          }
-        },
-        "modules": {
-          "links": {
-            "modules": "கூறுகள்",
-            "howToUseStreams": "ஸ்ட்ரீம்களைப் பயன்படுத்துவது எப்படி",
-            "backpressuringInStreams": "ஸ்ட்ரீம்களில் Backpressure",
-            "publishingAPackage": "தொகுப்பு வெளியிடுதல்",
-            "publishingNodeApiModules": "Node-API தொகுப்பு வெளியிடுவது எப்படி",
-            "abiStability": "ABI நிலைத்தன்மை"
-          }
-        },
-        "diagnostics": {
-          "links": {
-            "diagnostics": "ஆய்வு",
-            "userJourney": "பயனர் பயணம்",
-            "memory": "நினைவகம்",
-            "understandingAndTuningMemory": "நினைவகத்தை புரிந்து மாற்றம் செய்வது",
-            "liveDebugging": "நேரடி பிழைத்திருத்தம்",
-            "poorPerformance": "சராசரி செயல்திறன்",
-            "flameGraphs": "Flame Graphs"
-          }
-        },
-        "testRunner": {
-          "links": {
-            "testRunner": "டெஸ்ட் ரன்னர்",
-            "introduction": "Node.js டெஸ்ட் ரன்னர் அறிமுகம்",
-            "usingTestRunner": "Node.js டெஸ்ட் ரன்னர் பயன்படுத்துதல்",
-            "mocking": "டெஸ்ட்களில் Mocking",
-            "collectingCodeCoverage": "Node.js இல் Code Coverage சேகரித்தல்"
-          }
-        }
-      },
       "about": {
         "links": {
           "about": "Node.js பற்றி",
@@ -259,10 +154,6 @@
       },
       "languageDropdown": {
         "label": "மொழி தேர்வு"
-      },
-      "themeToggle": {
-        "light": "Switch to Light Mode",
-        "dark": "Switch to Dark Mode"
       },
       "skipToContent": "உள்ளடக்கத்திற்குச் செல்லவும்"
     },

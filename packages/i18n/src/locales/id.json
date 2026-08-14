@@ -3,7 +3,6 @@
     "containers": {
       "footer": {
         "links": {
-          "openJSFoundation": "OpenJS Foundation",
           "trademarkPolicy": "Kebijakan Merek Dagang",
           "privacyPolicy": "Kebijakan Privasi",
           "codeOfConduct": "Pedoman Perilaku",
@@ -30,110 +29,6 @@
       }
     },
     "navigation": {
-      "learn": {
-        "gettingStarted": {
-          "links": {
-            "gettingStarted": "Memulai",
-            "introductionToNodejs": "Pengantar Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Seberapa banyak JavaScript yang perlu kamu tahu untuk menggunakan Node.js?",
-            "differencesBetweenNodejsAndTheBrowser": "Perbedaan Node.js dengan Browser",
-            "theV8JavascriptEngine": "V8 JavaScript Engine",
-            "anIntroductionToTheNpmPackageManager": "Perkenalan package manager npm",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) dan seterusnya",
-            "debugging": "Men-debug Node.js",
-            "fetch": "Pengambilan data dengan Node.js",
-            "websocket": "Klien WebSocket dengan Node.js",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, perbedaan antara development dan production",
-            "profiling": "Profilisasi Aplikasi Node.js",
-            "nodejsWithWebassembly": "Node.js dengan WebAssembly",
-            "securityBestPractices": "Praktik Keamanan Terbaik",
-            "userlandMigrations": "Pengenalan Migrasi di Userland"
-          }
-        },
-        "commandLine": {
-          "links": {
-            "commandLine": "Baris Perintah",
-            "runNodejsScriptsFromTheCommandLine": "Menjalankan skrip Node.js dari baris perintah",
-            "howToUseTheNodejsRepl": "Cara menggunakan Node.js REPL",
-            "outputToTheCommandLineUsingNodejs": "Output ke baris perintah menggunakan Node.js",
-            "acceptInputFromTheCommandLineInNodejs": "Menerima input dari baris perintah di Node.js",
-            "howToReadEnvironmentVariablesFromNodejs": "Membaca environment variable dari Node.js"
-          }
-        },
-        "http": {
-          "links": {
-            "http": "HTTP",
-            "anatomyOfAnHttpTransaction": "Anatomi Transaksi HTTP"
-          }
-        },
-        "manipulatingFiles": {
-          "links": {
-            "manipulatingFiles": "Manipulasi File",
-            "nodejsFileStats": "Statistik berkas Node.js",
-            "nodejsFilePaths": "Path Berkas Node.js",
-            "readingFilesWithNodejs": "Membaca file dengan Node.js",
-            "writingFilesWithNodejs": "Menulis file dengan Node.js",
-            "workingWithFileDescriptorsInNodejs": "Bekerja dengan file descriptors di Node.js",
-            "workingWithFoldersInNodejs": "Bekerja dengan folder di Node.js",
-            "workingWithDifferentFilesystems": "Bekerja dengan Sistem file yang berbeda"
-          }
-        },
-        "asynchronousWork": {
-          "links": {
-            "asynchronousWork": "Pekerjaan Asinkron",
-            "javascriptAsynchronousProgrammingAndCallbacks": "Pemrograman dan Panggilan Balik Asinkron JavaScript",
-            "asynchronousFlowControl": "Pengendalian alur asinkron",
-            "discoverPromisesInNodejs": "Memahami Promise di Node.js",
-            "discoverJavascriptTimers": "Jelajahi Pengatur Waktu JavaScript",
-            "overviewOfBlockingVsNonBlocking": "Ringkasan Pemblokiran vs Non-Pemblokiran",
-            "eventLoopTimersAndNexttick": "Node.js Event Loop",
-            "theNodejsEventEmitter": "Node.js Event Emitter",
-            "understandingProcessnexttick": "Memahami process.nextTick()",
-            "understandingSetimmediate": "Memahami setImmediate()",
-            "dontBlockTheEventLoop": "Jangan blokir Event Loop"
-          }
-        },
-        "typescript": {
-          "links": {
-            "typescript": "TypeScript",
-            "introduction": "Pengantar TypeScript",
-            "runNatively": "Menjalankan TypeScript Secara Native",
-            "transpile": "Menjalankan kode TypeScript menggunakan transpilasi",
-            "run": "Menjalankan TypeScript dengan runner",
-            "publishingTSPackage": "Menerbitkan package TypeScript"
-          }
-        },
-        "modules": {
-          "links": {
-            "modules": "Module",
-            "howToUseStreams": "Cara menggunakan stream",
-            "backpressuringInStreams": "Backpressuring dalam aliran (streams)",
-            "publishingAPackage": "Menerbitkan Paket",
-            "publishingNodeApiModules": "Cara mempublikasikan paket Node-API",
-            "abiStability": "Stabilitas ABI"
-          }
-        },
-        "diagnostics": {
-          "links": {
-            "diagnostics": "Diagnostik",
-            "userJourney": "Jurnal Pengguna",
-            "memory": "Memori",
-            "understandingAndTuningMemory": "Pemahaman dan Penyetelan Memori",
-            "liveDebugging": "Pemecahan Masalah Langsung",
-            "poorPerformance": "Performa Buruk",
-            "flameGraphs": "Flame Graph"
-          }
-        },
-        "testRunner": {
-          "links": {
-            "testRunner": "Test Runner",
-            "introduction": "Jelajahi Node.js test runner",
-            "usingTestRunner": "Menggunakan Node.js's test runner",
-            "mocking": "Mengejek dalam pengujian",
-            "collectingCodeCoverage": "Pengumpulan cakupan kode di Node.js"
-          }
-        }
-      },
       "about": {
         "links": {
           "about": "Tentang Node.js",
@@ -227,10 +122,6 @@
       "npmVersion": "versi npm",
       "v8Version": "V8 versi"
     },
-    "pagination": {
-      "next": "Berikutnya",
-      "previous": "Sebelumnya"
-    },
     "common": {
       "alertBox": {
         "info": "Info",
@@ -239,17 +130,11 @@
       "breadcrumbs": {
         "navigateToHome": "Navigasi ke Beranda"
       },
-      "crossLink": {
-        "previous": "Sebelumnya",
-        "next": "Berikutnya"
-      },
       "codebox": {
         "copy": "Salin ke papan klip",
         "copied": "Disalin ke papan klip!"
       },
       "pagination": {
-        "prev": "Sebelumnya",
-        "prevAriaLabel": "Halaman Sebelumnya",
         "next": "Berikutnya",
         "nextAriaLabel": "Halaman selanjutnya",
         "defaultLabel": "Penyusunan Halaman",
@@ -260,10 +145,6 @@
       },
       "languageDropdown": {
         "label": "Pilih Bahasa"
-      },
-      "themeToggle": {
-        "light": "Beralih ke Mode Terang",
-        "dark": "Beralih ke Mode Gelap"
       }
     },
     "metabar": {

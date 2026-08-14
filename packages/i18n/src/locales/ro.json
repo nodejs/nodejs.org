@@ -3,7 +3,6 @@
     "containers": {
       "footer": {
         "links": {
-          "openJSFoundation": "Fundația OpenJS",
           "trademarkPolicy": "Politică de mărci comerciale",
           "privacyPolicy": "Politică de confidențialitate",
           "codeOfConduct": "Cod de conduită",
@@ -30,110 +29,6 @@
       }
     },
     "navigation": {
-      "learn": {
-        "gettingStarted": {
-          "links": {
-            "gettingStarted": "Începe",
-            "introductionToNodejs": "Introducere în Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Cât de mult JavaScript trebuie să știi pentru a utiliza Node.js?",
-            "differencesBetweenNodejsAndTheBrowser": "Diferențele dintre Node.js și navigator",
-            "theV8JavascriptEngine": "Motorul JavaScript V8",
-            "anIntroductionToTheNpmPackageManager": "O introducere în managerul de pachete npm",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) și versiuni ulterioare",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, diferența dintre dezvoltare și producție",
-            "nodejsWithWebassembly": "Node.js cu WebAssembly",
-            "debugging": "Depanare în Node.js",
-            "profiling": "Analiza performanței aplicațiilor Node.js",
-            "fetch": "Preluarea datelor cu Node.js",
-            "websocket": "Client WebSocket cu Node.js",
-            "securityBestPractices": "Cele mai bune practici pentru securitate"
-          }
-        },
-        "typescript": {
-          "links": {
-            "typescript": "TypeScript",
-            "introduction": "Introducere în TypeScript",
-            "transpile": "Executarea codului TypeScript folosind transpilarea",
-            "run": "Executarea TypeScript cu un executant",
-            "runNatively": "Executarea TypeScript în mod nativ",
-            "publishingTSPackage": "Publicarea unui pachet TypeScript"
-          }
-        },
-        "asynchronousWork": {
-          "links": {
-            "asynchronousWork": "Lucru asincron",
-            "asynchronousFlowControl": "Controlul fluxului asincron",
-            "discoverPromisesInNodejs": "Descoperă Promises în Node.js",
-            "overviewOfBlockingVsNonBlocking": "Prezentare generală a operațiunilor blocante vs non-blocante",
-            "javascriptAsynchronousProgrammingAndCallbacks": "Programare asincronă și apeluri-inverse în JavaScript",
-            "discoverJavascriptTimers": "Descoperă cronometrele JavaScript",
-            "eventLoopTimersAndNexttick": "Bucla de evenimente Node.js",
-            "theNodejsEventEmitter": "Emițătorul de evenimente Node.js",
-            "understandingProcessnexttick": "Cum funcționează process.nextTick()",
-            "understandingSetimmediate": "Cum funcționează setImmediate()",
-            "dontBlockTheEventLoop": "Nu bloca bucla de evenimente"
-          }
-        },
-        "manipulatingFiles": {
-          "links": {
-            "manipulatingFiles": "Manipularea fișierelor",
-            "nodejsFileStats": "Stările fișierelor Node.js",
-            "nodejsFilePaths": "Căile fișierelor Node.js",
-            "workingWithFileDescriptorsInNodejs": "Lucrul cu descriptori de fișiere în Node.js",
-            "readingFilesWithNodejs": "Citirea fișierelor cu Node.js",
-            "writingFilesWithNodejs": "Scrierea fișierelor cu Node.js",
-            "workingWithFoldersInNodejs": "Lucrul cu directoare în Node.js",
-            "workingWithDifferentFilesystems": "Cum să lucrezi cu diferite sisteme de fișiere"
-          }
-        },
-        "commandLine": {
-          "links": {
-            "commandLine": "Linie de comandă",
-            "runNodejsScriptsFromTheCommandLine": "Rulează scripturi Node.js din linia de comandă",
-            "howToReadEnvironmentVariablesFromNodejs": "Cum să citești variabilele de mediu din Node.js",
-            "howToUseTheNodejsRepl": "Cum se utilizează Node.js REPL",
-            "outputToTheCommandLineUsingNodejs": "Ieșirea în linia de comandă folosind Node.js",
-            "acceptInputFromTheCommandLineInNodejs": "Acceptarea intrării din linia de comandă în Node.js"
-          }
-        },
-        "migrations": {
-          "links": {
-            "migrations": "Migrații la nivel de utilizator",
-            "introduction": "Introducere în migrațiile la nivel de utilizator"
-          }
-        },
-        "modules": {
-          "links": {
-            "modules": "Module",
-            "publishingAPackage": "Publicarea unui pachet",
-            "publishingNodeApiModules": "Cum se publică un pachet Node-API",
-            "anatomyOfAnHttpTransaction": "Anatomia unei tranzacții HTTP",
-            "abiStability": "Stabilitatea ABI",
-            "howToUseStreams": "Cum se utilizează fluxurile",
-            "backpressuringInStreams": "Contrapresiunea în fluxuri"
-          }
-        },
-        "diagnostics": {
-          "links": {
-            "diagnostics": "Diagnosticare",
-            "userJourney": "Călătoria utilizatorului",
-            "understandingAndTuningMemory": "Înțelegerea și reglarea memoriei",
-            "memory": "Memorie",
-            "liveDebugging": "Depanare live",
-            "poorPerformance": "Performanță slabă",
-            "flameGraphs": "Grafice Flame"
-          }
-        },
-        "testRunner": {
-          "links": {
-            "testRunner": "Executant de teste",
-            "introduction": "Descoperă executantul de teste Node.js",
-            "usingTestRunner": "Utilizarea executantului de teste Node.js",
-            "mocking": "Simulare în teste",
-            "collectingCodeCoverage": "Colectarea acoperirii codului în Node.js"
-          }
-        }
-      },
       "about": {
         "links": {
           "about": "Despre Node.js",
@@ -226,10 +121,6 @@
       "npmVersion": "Versiune npm",
       "v8Version": "Versiune V8"
     },
-    "pagination": {
-      "next": "Înainte",
-      "previous": "Înapoi"
-    },
     "common": {
       "alertBox": {
         "info": "Informații",
@@ -238,17 +129,11 @@
       "breadcrumbs": {
         "navigateToHome": "Navighează la prima pagină"
       },
-      "crossLink": {
-        "previous": "Înapoi",
-        "next": "Înainte"
-      },
       "codebox": {
         "copy": "Copiază în clipbord",
         "copied": "Copiat în clipbord!"
       },
       "pagination": {
-        "prev": "Înapoi",
-        "prevAriaLabel": "Pagina anterioară",
         "next": "Înainte",
         "nextAriaLabel": "Pagina următoare",
         "defaultLabel": "Paginare",
@@ -259,10 +144,6 @@
       },
       "languageDropdown": {
         "label": "Alege limba"
-      },
-      "themeToggle": {
-        "light": "Schimbă la modul luminos",
-        "dark": "Schimbă la modul întunecat"
       }
     },
     "metabar": {

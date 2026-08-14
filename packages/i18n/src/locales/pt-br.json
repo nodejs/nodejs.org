@@ -35,111 +35,6 @@
       }
     },
     "navigation": {
-      "learn": {
-        "gettingStarted": {
-          "links": {
-            "gettingStarted": "Primeiros passos",
-            "introductionToNodejs": "Introdução ao Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Quanto de JavaScript você precisa entender para usar Node.js?",
-            "differencesBetweenNodejsAndTheBrowser": "Diferenças entre Node.js e o Navegador",
-            "theV8JavascriptEngine": "O Motor JavaScript V8",
-            "anIntroductionToTheNpmPackageManager": "Uma introdução ao gerenciador de pacotes npm",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) e além",
-            "debugging": "Depuração no Node.js",
-            "fetch": "Buscando dados com Node.js",
-            "websocket": "Cliente WebSocket com Node.js",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, a diferença entre desenvolvimento e produção",
-            "profiling": "Análise de Desempenho de Aplicações Node.js",
-            "nodejsWithWebassembly": "Node.js com WebAssembly",
-            "securityBestPractices": "Melhores Práticas de Segurança",
-            "userlandMigrations": "Introdução às Migrações Userland"
-          }
-        },
-        "commandLine": {
-          "links": {
-            "commandLine": "Linha de Comando",
-            "runNodejsScriptsFromTheCommandLine": "Execute scripts Node.js pela linha de comando",
-            "howToUseTheNodejsRepl": "Como usar o REPL do Node.js",
-            "outputToTheCommandLineUsingNodejs": "Saída para a linha de comando usando Node.js",
-            "acceptInputFromTheCommandLineInNodejs": "Aceitar entrada da linha de comando no Node.js",
-            "howToReadEnvironmentVariablesFromNodejs": "Como ler variáveis de ambiente no Node.js"
-          }
-        },
-        "http": {
-          "links": {
-            "http": "HTTP",
-            "anatomyOfAnHttpTransaction": "Anatomia de uma Transação HTTP",
-            "enterpriseNetworkConfiguration": "Configuração de Rede para Ambientes Enterprise"
-          }
-        },
-        "manipulatingFiles": {
-          "links": {
-            "manipulatingFiles": "Manipulando Arquivos",
-            "nodejsFileStats": "Estatísticas de arquivos no Node.js",
-            "nodejsFilePaths": "Caminhos de Arquivo no Node.js",
-            "readingFilesWithNodejs": "Lendo arquivos com Node.js",
-            "writingFilesWithNodejs": "Escrevendo arquivos com Node.js",
-            "workingWithFileDescriptorsInNodejs": "Trabalhando com descritores de arquivo no Node.js",
-            "workingWithFoldersInNodejs": "Trabalhando com pastas no Node.js",
-            "workingWithDifferentFilesystems": "Como trabalhar com Diferentes Sistemas de Arquivos"
-          }
-        },
-        "asynchronousWork": {
-          "links": {
-            "asynchronousWork": "Trabalho Assíncrono",
-            "javascriptAsynchronousProgrammingAndCallbacks": "Programação Assíncrona em JavaScript e Callbacks",
-            "asynchronousFlowControl": "Controle de fluxo assíncrono",
-            "discoverPromisesInNodejs": "Descubra Promises no Node.js",
-            "discoverJavascriptTimers": "Descubra os Temporizadores JavaScript",
-            "overviewOfBlockingVsNonBlocking": "Visão Geral de chamadas Bloqueante vs Não-Bloqueante",
-            "eventLoopTimersAndNexttick": "O Event Loop do Node.js",
-            "theNodejsEventEmitter": "O Event Emitter do Node.js",
-            "understandingProcessnexttick": "Entendendo process.nextTick()",
-            "understandingSetimmediate": "Entendendo setImmediate()",
-            "dontBlockTheEventLoop": "Não Bloqueie o Event Loop"
-          }
-        },
-        "typescript": {
-          "links": {
-            "typescript": "TypeScript",
-            "introduction": "Introdução ao TypeScript",
-            "runNatively": "Executando TypeScript Nativamente",
-            "transpile": "Executando código TypeScript usando transpilação",
-            "run": "Executando TypeScript com um executor",
-            "publishingTSPackage": "Publicando um pacote TypeScript"
-          }
-        },
-        "modules": {
-          "links": {
-            "modules": "Módulos",
-            "howToUseStreams": "Como usar streams",
-            "backpressuringInStreams": "Backpressuring em Streams",
-            "publishingAPackage": "Publicando um pacote",
-            "publishingNodeApiModules": "Como publicar um pacote Node-API",
-            "abiStability": "Estabilidade ABI"
-          }
-        },
-        "diagnostics": {
-          "links": {
-            "diagnostics": "Diagnósticos",
-            "userJourney": "Jornada do Usuário",
-            "memory": "Memória",
-            "understandingAndTuningMemory": "Entendendo e Ajustando Memória",
-            "liveDebugging": "Depuração ao Vivo",
-            "poorPerformance": "Desempenho Ruim",
-            "flameGraphs": "Gráficos de Chama"
-          }
-        },
-        "testRunner": {
-          "links": {
-            "testRunner": "Executor de Testes",
-            "introduction": "Descobrindo o executor de testes do Node.js",
-            "usingTestRunner": "Usando o executor de testes do Node.js",
-            "mocking": "Mocking em testes",
-            "collectingCodeCoverage": "Coletando cobertura de código no Node.js"
-          }
-        }
-      },
       "about": {
         "links": {
           "about": "Sobre o Node.js",
@@ -259,10 +154,6 @@
       },
       "languageDropdown": {
         "label": "Escolher Idioma"
-      },
-      "themeToggle": {
-        "light": "Mudar para Modo Claro",
-        "dark": "Mudar para Modo Escuro"
       },
       "skipToContent": "Ir direto ao conteúdo"
     },
