@@ -21,6 +21,7 @@
     "format": "turbo //#prettier:fix prettier:fix lint:fix",
     "lint": "turbo lint",
     "lint:fix": "turbo lint:fix",
+    "lint:i18n": "eloqnt lint",
     "lint:staged": "lint-staged",
     "lint:types": "turbo lint:types",
     "prepare": "husky",

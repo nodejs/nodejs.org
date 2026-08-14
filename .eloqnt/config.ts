@@ -14,11 +14,8 @@ export default defineConfig({
   lint: {
     overrides: [
       {
-        // These keys are built at runtime, so static analysis cannot see
-        // them being used: labels come from navigation.json and
-        // constants.json (e.g. t(link.text)), and the remaining keys are
-        // built from a template with a runtime value, e.g.
-        // t(`components.eolChip.severity.${severity}`).
+        // These keys are built at runtime, so static analysis cannot
+        // see which ones are in use.
         keys: [
           'components.containers.footer.links.*',
           'components.containers.navBar.links.*',

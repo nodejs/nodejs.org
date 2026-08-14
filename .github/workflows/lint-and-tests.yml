@@ -73,7 +73,7 @@ jobs:
         if: |
           (github.event_name == 'push' || github.event_name == 'merge_group') ||
           (github.event_name == 'pull_request' && github.event.pull_request.head.ref != 'chore/crowdin')
-        run: node_modules/.bin/turbo lint lint:types prettier --cache-dir=.turbo/cache
+        run: node_modules/.bin/turbo lint lint:types prettier //#lint:i18n --cache-dir=.turbo/cache
 
       - name: Save Lint Cache
         # We only want to save caches on `push` events or `pull_request_target` events
