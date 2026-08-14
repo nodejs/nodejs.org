@@ -277,7 +277,7 @@
         "platform": "Plataforma"
       },
       "codeBox": {
-        "unsupportedVersionWarning": "Esta versión está fuera de mantenimiento. Encuentre más información aquí:",
+        "unsupportedVersionWarning": "Esta versión está fuera de mantenimiento. Utilice una versión con soporte vigente. <link>Conozca el soporte EOL.</link>",
         "fnmEnvSetup": "configurar el entorno de fnm",
         "systemManagerWarning": "no es un manejador de paquetes de Node.js. Por favor, asegúrate de tener un {packageManager} instalado.",
         "communityWarning": "El proyecto Node.js no mantiene los gestores de paquetes ni sus scripts de instalación.",

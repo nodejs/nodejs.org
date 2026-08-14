@@ -285,7 +285,7 @@
         "externalSupportInfo": "若您遇到任何問題，請造訪 <link>{platform} 網站</link>",
         "noScriptDetected": "此網頁需要使用 JavaScript。您可以直接造訪 <link>發行網頁</link> 以下載 Node.js，無需 JavaScript。",
         "platformInfo": {
-          "default": "套件管理器與其安裝指令稿並非由 Node.js 專案維護。",
+          "default": "{platform}與其安裝指令稿並非由 Node.js 專案維護。",
           "nvm": "「nvm」是跨平台的 Node.js 版本管理程式。",
           "fnm": "「fnm」是跨平台的 Node.js 版本管理程式。",
           "brew": "Homebrew 是 macOS 及 Linux 的套件管理程式。",
