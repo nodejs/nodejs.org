@@ -1,18 +1,4 @@
-// Keep all imports at the top
-import cLanguage from 'shiki/langs/c.mjs';
-import coffeeScriptLanguage from 'shiki/langs/coffeescript.mjs';
-import cPlusPlusLanguage from 'shiki/langs/cpp.mjs';
-import diffLanguage from 'shiki/langs/diff.mjs';
-import dockerLanguage from 'shiki/langs/docker.mjs';
-import httpLanguage from 'shiki/langs/http.mjs';
-import iniLanguage from 'shiki/langs/ini.mjs';
-import javaScriptLanguage from 'shiki/langs/javascript.mjs';
-import jsonLanguage from 'shiki/langs/json.mjs';
-import powershellLanguage from 'shiki/langs/powershell.mjs';
-import shellScriptLanguage from 'shiki/langs/shellscript.mjs';
-import shellSessionLanguage from 'shiki/langs/shellsession.mjs';
-import typeScriptLanguage from 'shiki/langs/typescript.mjs';
-import yamlLanguage from 'shiki/langs/yaml.mjs';
+import { bundledLanguagesInfo } from 'shiki/langs';
 
 import createHighlighter, { getLanguageByName } from '#rs/highlighter.mjs';
 
@@ -37,7 +23,10 @@ async function getEngine({ wasm = false }) {
 
   const { createJavaScriptRegexEngine } =
     await import('@shikijs/engine-javascript');
-  return createJavaScriptRegexEngine();
+
+  // Not every bundled grammar compiles under the JavaScript engine,
+  // so skip the patterns it cannot handle instead of throwing.
+  return createJavaScriptRegexEngine({ forgiving: true });
 }
 
 /**
@@ -55,24 +44,13 @@ async function getTransformers({ twoslash = false, twoslashOptions }) {
   return transformers;
 }
 
+// Every language, since this is meant for SSR-ed highlighting :-)
 export const LANGS = [
-  ...cLanguage,
-  ...coffeeScriptLanguage,
-  ...cPlusPlusLanguage,
-  ...diffLanguage,
-  ...dockerLanguage,
-  ...httpLanguage,
-  ...iniLanguage,
-  {
-    ...javaScriptLanguage[0],
-    aliases: javaScriptLanguage[0].aliases.concat('cjs', 'mjs'),
-  },
-  ...jsonLanguage,
-  ...powershellLanguage,
-  ...shellScriptLanguage,
-  ...shellSessionLanguage,
-  ...typeScriptLanguage,
-  ...yamlLanguage,
+  ...new Set(
+    (
+      await Promise.all(bundledLanguagesInfo.map(language => language.import()))
+    ).flatMap(language => language.default)
+  ),
 ];
 
 export const getLanguageDisplayName = language =>
