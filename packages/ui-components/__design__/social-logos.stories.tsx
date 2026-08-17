@@ -1,20 +1,8 @@
-import {
-  Bluesky,
-  Discord,
-  GitHub,
-  LinkedIn,
-  Mastodon,
-  Slack,
-  X,
-} from '#ui/Icons/Social';
+import { Bluesky, Discord, GitHub, LinkedIn, Slack, X } from '#ui/Icons/Social';
 
 import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
-const socialIcons = [
-  [GitHub, Mastodon, LinkedIn],
-  [Slack, X, Bluesky],
-  [Discord],
-];
+const socialIcons = [[GitHub, LinkedIn], [Slack, X, Bluesky], [Discord]];
 
 export const SocialMediaLogos: StoryObj = {
   render: () => (

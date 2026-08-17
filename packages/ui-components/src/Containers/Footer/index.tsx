@@ -1,15 +1,7 @@
 import classNames from 'classnames';
 
 import NavItem from '#ui/Containers/NavBar/NavItem';
-import {
-  Bluesky,
-  Discord,
-  GitHub,
-  LinkedIn,
-  Mastodon,
-  Slack,
-  X,
-} from '#ui/Icons/Social';
+import { Bluesky, Discord, GitHub, LinkedIn, Slack, X } from '#ui/Icons/Social';
 
 import type { LinkLike } from '#ui/types';
 import type { FC, ReactNode, SVGProps } from 'react';
@@ -18,7 +10,6 @@ import styles from './index.module.css';
 
 const footerSocialIcons: Record<string, React.FC<SVGProps<SVGSVGElement>>> = {
   github: GitHub,
-  mastodon: Mastodon,
   twitter: X,
   slack: Slack,
   linkedin: LinkedIn,
