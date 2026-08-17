@@ -41,8 +41,10 @@ main {
   h4,
   h5,
   h6 {
-    @apply font-semibold
+    @apply mt-4
+      font-semibold
       text-neutral-900
+      first:mt-0
       dark:text-white;
 
     &[id] a {
@@ -92,6 +94,27 @@ main {
       dark:text-white;
   }
 
+  /*
+   * Fenced code blocks use a system monospace stack instead of IBM Plex Mono.
+   * Plex has no glyphs for the Unicode Box Drawing block (U+2500–U+257F) and
+   * Google Fonts never serves that block, so the box-drawing characters in
+   * ASCII-art diagrams (e.g. the URL table in url.md) fall back per-glyph to
+   * the OS default monospace. On Windows that is Consolas (0.55em) while Plex
+   * letters are 0.60em; the mismatched advance widths shear the diagram out of
+   * alignment. Rendering the whole block in one system font keeps every glyph
+   * the same width — the same stack nodejs.org and the legacy-html generator
+   * already use. See https://github.com/nodejs/doc-kit/issues/909.
+   *
+   * This only overrides the variable within `pre`, so inline code and the rest
+   * of the UI keep IBM Plex Mono. The variable keeps its name because the
+   * compiled @node-core/ui-components CSS reads `var(--font-ibm-plex-mono)`.
+   */
+  pre {
+    --font-ibm-plex-mono:
+      'SFMono-Regular', 'Menlo', 'Consolas', 'Liberation Mono', 'Courier New',
+      monospace;
+  }
+
   p {
     @apply text-neutral-900
       dark:text-white;
@@ -100,12 +123,12 @@ main {
   /* link that isn't inside a heading */
   a:not(h1 > a):not(h2 > a):not(h3 > a):not(h4 > a):not(h5 > a):not(h6 > a) {
     @apply max-ml:font-semibold
-      text-green-600
-      dark:text-green-400;
+      text-brand-600
+      dark:text-brand-400;
 
     &:hover {
-      @apply text-green-900
-        dark:text-green-200;
+      @apply text-brand-900
+        dark:text-brand-200;
     }
 
     &[role='button'] {

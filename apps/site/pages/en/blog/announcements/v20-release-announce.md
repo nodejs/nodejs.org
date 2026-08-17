@@ -157,7 +157,7 @@ node --experimental-sea-config sea-config.json
 
 This blob can now be injected into the binary.
 
-This change was made to allow the the possibility of embedding multiple co-existing resources into the SEA (Single Executable Apps) which opens up new use cases.
+This change was made to allow the possibility of embedding multiple co-existing resources into the SEA (Single Executable Apps) which opens up new use cases.
 
 Contributed by Joyee Cheung in [#47125](https://github.com/nodejs/node/pull/47125)
 

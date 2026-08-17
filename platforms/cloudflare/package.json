@@ -1,0 +1,41 @@
+{
+  "name": "@node-core/platform-cloudflare",
+  "private": true,
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodejs/nodejs.org",
+    "directory": "platforms/cloudflare"
+  },
+  "scripts": {
+    "prebuild": "node ./scripts/twoslash-fsmap/index.mjs",
+    "build": "cross-env NODE_OPTIONS=--conditions=cloudflare pnpm --filter=@node-core/website exec opennextjs-cloudflare build --openNextConfigPath ../../platforms/cloudflare/open-next.config.ts --config ../../platforms/cloudflare/wrangler.jsonc",
+    "predeploy": "node ./scripts/twoslash-fsmap/index.mjs",
+    "deploy": "cross-env NODE_OPTIONS=--conditions=cloudflare pnpm --filter=@node-core/website exec opennextjs-cloudflare deploy --openNextConfigPath ../../platforms/cloudflare/open-next.config.ts --config ../../platforms/cloudflare/wrangler.jsonc",
+    "preview": "pnpm --filter=@node-core/website exec wrangler dev --config ../../platforms/cloudflare/wrangler.jsonc",
+    "test:e2e": "cross-env NODE_OPTIONS=--conditions=cloudflare pnpm --filter=@node-core/website playwright",
+    "lint:types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@flarelabs-net/wrangler-build-time-fs-assets-polyfilling": "^0.0.1",
+    "@opennextjs/cloudflare": "^1.19.3",
+    "@sentry/cloudflare": "^10.68.0",
+    "@typescript/vfs": "^1.6.4",
+    "twoslash": "^0.3.9",
+    "typescript": "catalog:",
+    "wrangler": "^4.114.0"
+  },
+  "peerDependencies": {
+    "next": "catalog:"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260418.1",
+    "@playwright/test": "^1.61.1",
+    "@types/node": "catalog:",
+    "cross-env": "catalog:",
+    "next": "catalog:"
+  },
+  "engines": {
+    "node": "24.x"
+  }
+}

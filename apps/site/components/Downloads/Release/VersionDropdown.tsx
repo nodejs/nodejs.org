@@ -2,9 +2,10 @@
 
 import WithNoScriptSelect from '@node-core/ui-components/Common/Select/NoScriptSelect';
 import { useLocale, useTranslations } from 'next-intl';
-import { useContext } from 'react';
+import { use } from 'react';
 
 import { redirect, usePathname } from '#site/navigation';
+import { STATUS_KIND_MAP } from '#site/next.constants.mjs';
 import {
   ReleaseContext,
   ReleasesContext,
@@ -12,21 +13,9 @@ import {
 
 import type { FC } from 'react';
 
-const getDropDownStatus = (version: string, status: string) => {
-  if (status.endsWith('LTS')) {
-    return `${version} (LTS)`;
-  }
-
-  if (status === 'Current') {
-    return `${version} (Current)`;
-  }
-
-  return version;
-};
-
 const VersionDropdown: FC = () => {
-  const { releases } = useContext(ReleasesContext);
-  const { release, setVersion } = useContext(ReleaseContext);
+  const { releases } = use(ReleasesContext);
+  const { release, setVersion } = use(ReleaseContext);
   const t = useTranslations();
   const locale = useLocale();
   const pathname = usePathname();
@@ -38,7 +27,7 @@ const VersionDropdown: FC = () => {
       ({ versionWithPrefix }) => versionWithPrefix === version
     );
 
-    if (release?.isLts && pathname.includes('current')) {
+    if (release?.status === 'LTS' && pathname.includes('current')) {
       redirect({ href: '/download', locale });
       return;
     }
@@ -56,7 +45,8 @@ const VersionDropdown: FC = () => {
       ariaLabel={t('layouts.download.dropdown.version')}
       values={releases.map(({ status, versionWithPrefix }) => ({
         value: versionWithPrefix,
-        label: getDropDownStatus(versionWithPrefix, status),
+        label: versionWithPrefix,
+        badge: { label: status, kind: STATUS_KIND_MAP[status] },
       }))}
       defaultValue={release.versionWithPrefix}
       onChange={setVersionOrNavigate}

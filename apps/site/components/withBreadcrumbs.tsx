@@ -4,8 +4,9 @@ import Breadcrumbs from '@node-core/ui-components/Common/Breadcrumbs';
 import { useTranslations } from 'next-intl';
 
 import Link from '#site/components/Link';
-import { useClientContext, useMediaQuery } from '#site/hooks/client';
-import { useSiteNavigation } from '#site/hooks/generic';
+import useClientContext from '#site/hooks/useClientContext';
+import useMediaQuery from '#site/hooks/useMediaQuery';
+import useSiteNavigation from '#site/hooks/useSiteNavigation';
 import { dashToCamelCase } from '#site/util/string';
 
 import type { NavigationKeys } from '#site/types';

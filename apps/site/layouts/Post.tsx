@@ -1,12 +1,12 @@
 import Preview from '@node-core/ui-components/Common/Preview';
 
+import { getClientContext } from '#site/client-context';
 import EOLAlert from '#site/components/EOL/EOLAlert';
 import WithAvatarGroup from '#site/components/withAvatarGroup';
 import WithBlogCrossLinks from '#site/components/withBlogCrossLinks';
 import WithFooter from '#site/components/withFooter';
 import WithMetaBar from '#site/components/withMetaBar';
 import WithNavBar from '#site/components/withNavBar';
-import { useClientContext } from '#site/hooks/server';
 import { mapAuthorToCardAuthors } from '#site/util/author';
 import { mapBlogCategoryToPreviewType } from '#site/util/blog';
 
@@ -15,7 +15,7 @@ import type { FC, PropsWithChildren } from 'react';
 import styles from './layouts.module.css';
 
 const PostLayout: FC<PropsWithChildren> = ({ children }) => {
-  const { frontmatter } = useClientContext();
+  const { frontmatter } = getClientContext();
 
   const authors = mapAuthorToCardAuthors(frontmatter.author!);
 

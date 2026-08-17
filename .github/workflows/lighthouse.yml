@@ -1,5 +1,7 @@
 # Security Notes
-# This workflow uses `pull_request_target`, so will run against all PRs automatically (without approval), be careful with allowing any user-provided code to be run here
+# This Workflow runs in the untrusted `pull_request` context and therefore must not rely on any
+# repository secrets. It does not comment on the Pull Request itself; instead it uploads a
+# `pr-comment` artifact which the trusted `Leave Comment` Workflow posts once this Workflow completes.
 # Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
 # for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
 # REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
@@ -9,7 +11,7 @@
 name: Lighthouse
 
 on:
-  pull_request_target:
+  pull_request:
     branches:
       - main
     types:
@@ -23,95 +25,68 @@ defaults:
 permissions:
   contents: read
   actions: read
-  # This permission is required by `thollander/actions-comment-pull-request`
-  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 jobs:
-  get-vercel-preview:
+  lighthouse-ci:
     # We want to skip our lighthouse analysis on Dependabot PRs
     if: |
       startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
       github.event.label.name == 'github_actions:pull-request'
-    name: Get Vercel Preview
-    runs-on: ubuntu-latest
-    outputs:
-      deployment_found: ${{ steps.set_outputs.outputs.deployment_found }}
-      url: ${{ steps.set_outputs.outputs.url }}
-    steps:
-      - name: Capture Vercel Preview
-        id: check_deployment
-        uses: patrickedqvist/wait-for-vercel-preview@d7982701e6fcd3ae073bff929e408e004404d38d # v1.3.3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          max_timeout: 300 # timeout after 5 minutes
-          check_interval: 10 # check every 10 seconds
-        continue-on-error: true
-      - name: Set Outputs
-        if: always()
-        id: set_outputs
-        run: |
-          if [[ -z "${{ steps.check_deployment.outputs.url }}" ]]; then
-            echo "deployment_found=false" >> $GITHUB_OUTPUT
-          else
-            echo "deployment_found=true" >> $GITHUB_OUTPUT
-            echo "url=${{ steps.check_deployment.outputs.url }}" >> $GITHUB_OUTPUT
-          fi
-
-  lighthouse-ci:
-    needs: get-vercel-preview
-    if: needs.get-vercel-preview.outputs.deployment_found == 'true'
     name: Lighthouse Report
     runs-on: ubuntu-latest
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@e3f713f2d8f53843e71c69a996d56f51aa9adfb9 # v2.14.1
+        uses: step-security/harden-runner@bf7454d06d71f1098171f2acdf0cd4708d7b5920 # v2.20.0
         with:
           egress-policy: audit
 
-      - name: Git Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Capture Vercel Preview
+        id: deployment
+        uses: patrickedqvist/wait-for-vercel-preview@d7982701e6fcd3ae073bff929e408e004404d38d # v1.3.3
         with:
-          # Provides the Pull Request commit SHA or the GitHub merge group ref
-          ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || github.ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 300 # timeout after 5 minutes
+          check_interval: 10 # check every 10 seconds
 
-      - name: Add Comment to PR
-        # Signal that a lighthouse run is about to start
-        uses: thollander/actions-comment-pull-request@e2c37e53a7d2227b61585343765f73a9ca57eda9 # v3.0.0
+      - name: Git Checkout
+        # Only needed for the Lighthouse formatting script; no credentials are persisted.
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          message: |
-            Running Lighthouse audit...
-          # Used later to edit the existing comment
-          comment-tag: 'lighthouse_audit'
+          persist-credentials: false
 
       - name: Audit Preview URL with Lighthouse
         # Conduct the lighthouse audit
         id: lighthouse_audit
-        uses: treosh/lighthouse-ci-action@fcd65974f7c4c2bf0ee9d09b84d2489183c29726 # v12.6.1
+        uses: treosh/lighthouse-ci-action@3e7e23fb74242897f95c0ba9cabad3d0227b9b18 # v12.6.2
         with:
           # Defines the settings and assertions to audit
           configPath: './.lighthouserc.json'
           # These URLS capture critical pages / site functionality.
           urls: |
-            ${{ needs.get-vercel-preview.outputs.url }}/en
-            ${{ needs.get-vercel-preview.outputs.url }}/en/about
-            ${{ needs.get-vercel-preview.outputs.url }}/en/about/previous-releases
-            ${{ needs.get-vercel-preview.outputs.url }}/en/download
-            ${{ needs.get-vercel-preview.outputs.url }}/en/download/archive/current
-            ${{ needs.get-vercel-preview.outputs.url }}/en/blog
+            ${{ steps.deployment.outputs.url }}/en
+            ${{ steps.deployment.outputs.url }}/en/about
+            ${{ steps.deployment.outputs.url }}/en/about/previous-releases
+            ${{ steps.deployment.outputs.url }}/en/download
+            ${{ steps.deployment.outputs.url }}/en/download/archive/current
+            ${{ steps.deployment.outputs.url }}/en/blog
           uploadArtifacts: true # save results as a action artifacts
           temporaryPublicStorage: true # upload lighthouse report to the temporary storage
 
       - name: Format Lighthouse Score
         # Transform the audit results into a single, friendlier output
         id: format_lighthouse_score
-        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
           # using env as input to our script
           # see https://github.com/actions/github-script#use-env-as-input
           LIGHTHOUSE_RESULT: ${{ steps.lighthouse_audit.outputs.manifest }}
           LIGHTHOUSE_LINKS: ${{ steps.lighthouse_audit.outputs.links }}
-          VERCEL_PREVIEW_URL: ${{ needs.get-vercel-preview.outputs.url }}
+          VERCEL_PREVIEW_URL: ${{ steps.deployment.outputs.url }}
         with:
           # Run as a separate file so we do not have to inline all of our formatting logic.
           # See https://github.com/actions/github-script#run-a-separate-file for more info.
@@ -119,11 +94,16 @@ jobs:
             const { formatLighthouseResults } = await import('${{github.workspace}}/apps/site/scripts/lighthouse/index.mjs')
             await formatLighthouseResults({core})
 
-      - name: Add Comment to PR
-        # Replace the previous message with our formatted lighthouse results
-        uses: thollander/actions-comment-pull-request@e2c37e53a7d2227b61585343765f73a9ca57eda9 # v3.0.0
+      - name: Prepare Comment
+        env:
+          COMMENT: ${{ steps.format_lighthouse_score.outputs.comment }}
+        run: |
+          mkdir -p pr-comment
+          printf '%s' "$COMMENT" > pr-comment/comment.md
+          printf '%s' 'lighthouse_audit' > pr-comment/tag.txt
+
+      - name: Upload Comment
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          # Reference the previously created comment
-          comment-tag: 'lighthouse_audit'
-          message: |
-            ${{ steps.format_lighthouse_score.outputs.comment }}
+          name: pr-comment
+          path: pr-comment/

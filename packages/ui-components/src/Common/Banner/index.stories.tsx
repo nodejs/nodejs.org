@@ -26,4 +26,12 @@ export const Warning: Story = {
   },
 };
 
+export const Dismissible: Story = {
+  args: {
+    children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    type: 'default',
+    onClose: () => {},
+  },
+};
+
 export default { component: Banner } as Meta;

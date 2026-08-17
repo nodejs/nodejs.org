@@ -23,21 +23,23 @@ env:
 
 jobs:
   synchronize-with-crowdin:
+    name: Synchronize with Crowdin
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@e3f713f2d8f53843e71c69a996d56f51aa9adfb9 # v2.14.1
+        uses: step-security/harden-runner@bf7454d06d71f1098171f2acdf0cd4708d7b5920 # v2.20.0
         with:
           egress-policy: audit
 
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           token: ${{ secrets.CROWDIN_GITHUB_BOT_TOKEN }}
+          persist-credentials: false
 
         # see all the options at https://github.com/crowdin/github-action
       - name: Crowdin PR
-        uses: crowdin/github-action@b4b468cffefb50bdd99dd83e5d2eaeb63c880380 # v2.14.0
+        uses: crowdin/github-action@c7af9bc98b01694653031fef2a0dc6c7888ce9bc # v2.17.0
         with:
           # do not upload anything - this is a one-way operation download
           upload_sources: false
@@ -46,9 +48,9 @@ jobs:
           download_translations: true
           localization_branch_name: ${{ env.BRANCH_NAME }}
           create_pull_request: true
-          pull_request_title: '[automated]: crowdin sync'
+          pull_request_title: 'chore(i18n): sync translations from crowdin'
           pull_request_body: 'New Crowdin translations from the [Node.js Crowdin project](https://crowdin.com/project/nodejs-web)'
-          commit_message: 'chore: synced translations from crowdin'
+          commit_message: 'chore(i18n): sync translations from crowdin'
         env:
           GITHUB_TOKEN: ${{ secrets.CROWDIN_GITHUB_BOT_TOKEN }}
           # A numeric ID, found at https://crowdin.com/project/nodejs-web/tools/api
@@ -57,6 +59,7 @@ jobs:
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
 
   format_crowdin_pull_request:
+    name: Format Crowdin Pull Request
     needs: synchronize-with-crowdin
     runs-on: ubuntu-latest
 
@@ -74,7 +77,7 @@ jobs:
           fetch-depth: 2
 
       - name: Restore Lint Cache
-        uses: actions/cache/restore@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: |
             apps/site/.eslintmdcache
@@ -89,12 +92,17 @@ jobs:
             cache-lint-${{ hashFiles('pnpm-lock.yaml') }}-
             cache-lint-
 
-      - name: Patch version if the files changed
-        working-directory: packages/i18n
+      - name: Add changeset if the files changed
         run: |
           CHANGED_FILES=$(git diff --name-only HEAD^1 HEAD)
           if [ -n "$CHANGED_FILES" ]; then
-            pnpm version patch --no-git-tag-version
+            cat > .changeset/crowdin-translations.md <<'EOF'
+          ---
+          '@node-core/website-i18n': patch
+          ---
+
+          Update translations from Crowdin.
+          EOF
           fi
 
       - name: Run ESLint
@@ -105,14 +113,14 @@ jobs:
         run: node --run prettier:fix
 
       - name: Push Changes back to Pull Request
-        uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
+        uses: stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d # v7.2.0
         with:
           commit_options: '--no-verify --signoff'
-          commit_message: 'chore: automated format of translated files'
+          commit_message: 'chore(i18n): format translated files'
           branch: ${{ env.BRANCH_NAME }}
 
       - name: Save Lint Cache
-        uses: actions/cache/save@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: |
             apps/site/.eslintmdcache

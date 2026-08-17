@@ -5,7 +5,6 @@ import DefaultLayout from '#site/layouts/Default';
 import DownloadLayout from '#site/layouts/Download';
 import DownloadArchiveLayout from '#site/layouts/DownloadArchive';
 import GlowingBackdropLayout from '#site/layouts/GlowingBackdrop';
-import LearnLayout from '#site/layouts/Learn';
 import PostLayout from '#site/layouts/Post';
 
 import type { Layouts } from '#site/types';
@@ -14,7 +13,6 @@ import type { FC, PropsWithChildren } from 'react';
 const layouts = {
   about: AboutLayout,
   home: GlowingBackdropLayout,
-  learn: LearnLayout,
   page: DefaultLayout,
   'blog-post': PostLayout,
   'blog-category': BlogLayout,

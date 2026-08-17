@@ -152,7 +152,7 @@
       "name": "Brew",
       "compatibility": {
         "os": ["MAC", "LINUX"],
-        "releases": ["Current", "Active LTS", "Maintenance LTS"]
+        "releases": ["Current", "LTS"]
       },
       "url": "https://brew.sh/",
       "info": "layouts.download.codeBox.platformInfo.brew"
@@ -187,6 +187,15 @@
       },
       "url": "https://github.com/tj/n",
       "info": "layouts.download.codeBox.platformInfo.n"
+    },
+    {
+      "id": "ASDF",
+      "name": "asdf",
+      "compatibility": {
+        "os": ["MAC", "LINUX"]
+      },
+      "url": "https://asdf-vm.com/guide/getting-started.html",
+      "info": "layouts.download.codeBox.platformInfo.asdf"
     }
   ],
   "packageManagers": [
@@ -213,11 +222,5 @@
     "bitness": ["64", "32"],
     "architecture": ["arm", "x86"]
   },
-  "statusOrder": [
-    "Current",
-    "Active LTS",
-    "Maintenance LTS",
-    "End-of-life",
-    "Pending"
-  ]
+  "statusOrder": ["Current", "LTS", "EOL"]
 }

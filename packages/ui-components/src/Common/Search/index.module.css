@@ -1,0 +1,56 @@
+@reference "../../styles/index.css";
+
+.searchResultsContainer {
+  @apply flex
+    grow
+    flex-col
+    overflow-y-auto;
+}
+
+.footer {
+  @apply flex
+    items-baseline
+    justify-center
+    border-t
+    border-neutral-200
+    bg-neutral-100
+    p-4
+    lg:justify-between
+    lg:rounded-b-xl
+    dark:border-neutral-900
+    dark:bg-neutral-950;
+}
+
+.shortcutWrapper {
+  @apply hidden
+    items-center
+    gap-2
+    lg:flex;
+}
+
+.shortcutItem {
+  @apply flex
+    items-center
+    gap-2
+    text-xs
+    text-neutral-800
+    dark:text-neutral-600;
+}
+
+.shortcutKey {
+  @apply rounded-md
+    bg-neutral-200
+    p-1
+    font-mono
+    text-xs
+    dark:bg-neutral-900;
+
+  svg {
+    @apply size-4;
+  }
+}
+
+.shortcutLabel {
+  @apply text-neutral-800
+    dark:text-neutral-600;
+}

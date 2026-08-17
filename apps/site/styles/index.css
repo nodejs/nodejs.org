@@ -6,6 +6,17 @@
  * @see https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
 */
 
-@import '@node-core/ui-components/styles/index.css';
+@import 'tailwindcss';
+@import '@node-core/ui-components/src/styles/index.css';
 @import '@node-core/rehype-shiki/index.css';
-@import './locales.css';
+
+/**
+ * To enhance readability for Korean users, line spacing is increased,
+ * line breaks in the middle of words are prevented, and long words are
+ * managed to avoid disrupting the layout.
+ */
+html[lang='ko'] {
+  @apply leading-7
+    break-words
+    break-keep;
+}

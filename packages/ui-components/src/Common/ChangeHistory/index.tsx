@@ -39,12 +39,12 @@ const ChangeHistory: FC<ChangeHistoryProps> = ({
         aria-label={ariaLabel}
       >
         <div className={styles.dropdownContentInner}>
-          {changes.map((change, index) => {
+          {changes.map(change => {
             const MenuItem = change.url ? As : 'div';
 
             return (
               <MenuItem
-                key={index}
+                key={change.label}
                 className={styles.dropdownItem}
                 role="menuitem"
                 tabIndex={0}

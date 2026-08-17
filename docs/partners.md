@@ -49,9 +49,6 @@ The same randomization algorithm used on the homepage is applied here as well.
 
 ## Supporters
 
-> [!NOTE]
-> Donations made through GitHub Sponsors are not displayed yet; they will be added soon.
-
 Supporters are individuals and organizations that provide financial support to the Node.js project through OpenCollective and GitHub Sponsors. They are displayed on the Partner page, but not on the homepage or Downloads section.
 
 ## Partner Randomization Algorithm

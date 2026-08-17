@@ -1,7 +1,8 @@
 @reference "../../../../styles/index.css";
 
 .link {
-  @apply flex
+  @apply focus-visible:border-brand-600
+    flex
     items-center
     gap-4
     rounded-xl
@@ -15,7 +16,6 @@
     outline-none
     hover:bg-neutral-200
     focus:bg-neutral-200
-    focus-visible:border-green-600
     focus-visible:bg-transparent
     motion-safe:transition-colors
     dark:bg-zinc-950

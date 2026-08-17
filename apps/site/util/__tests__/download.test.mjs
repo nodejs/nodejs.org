@@ -144,3 +144,13 @@ describe('nextItem', () => {
     assert.equal(nextItem('valid', items), 'valid');
   });
 });
+
+describe('INSTALL_METHODS', () => {
+  it('should create icons only when an icon is configured', () => {
+    const nvmMethod = INSTALL_METHODS.find(method => method.value === 'NVM');
+    const asdfMethod = INSTALL_METHODS.find(method => method.value === 'ASDF');
+
+    assert.ok(nvmMethod?.iconImage);
+    assert.equal(asdfMethod?.iconImage, undefined);
+  });
+});

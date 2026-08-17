@@ -28,8 +28,7 @@ submissions.
 
 - **New researchers or researchers with [signal][Signal] >= 1.0**: You can continue reporting vulnerabilities through HackerOne as usual
 - **Those below the threshold**: You can still reach the security team through the
-  [OpenJS Foundation Slack](https://slack-invite.openjsf.org/). Contact us there to discuss potential
-  vulnerabilities
+  [OpenJS Foundation Slack](https://slack-invite.openjsf.org/) (channel: `#nodejs-security-wg` for help). Contact us directly using direct messages there to discuss potential vulnerabilities. You can find the users listed in [security release stewards](https://github.com/nodejs/node#security-release-stewards).
 
 ## About HackerOne Signal
 

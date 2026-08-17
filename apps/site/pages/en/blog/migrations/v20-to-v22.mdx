@@ -1,5 +1,5 @@
 ---
-date: '2025-10-28T00:02:00.000Z'
+date: '2025-10-28T00:03:00.000Z'
 category: migrations
 title: Node.js v20 to v22
 layout: blog-post
@@ -34,10 +34,49 @@ npx codemod run @nodejs/import-assertions-to-attributes
 
 ### Example:
 
-```js displayName="Before"
-import jsonData from './data.json' assert { type: 'json' };
+```diff
+- import data from './data.json' assert { type: 'json' };
++ import data from './data.json' with { type: 'json' };
 ```
 
-```js displayName="After"
-import jsonData from './data.json' with { type: 'json' };
+## `crypto-createcipheriv-migration`
+
+Migrates deprecated `crypto.createCipher()` / `crypto.createDecipher()` usage to the supported `crypto.createCipheriv()` / `crypto.createDecipheriv()` APIs with explicit key derivation and IV handling.
+
+Node.js removed `crypto.createCipher()` and `crypto.createDecipher()` in v22.0.0 ([DEP0106](https://nodejs.org/api/deprecations.html#DEP0106)). The legacy helpers derived keys with MD5 and no salt, and silently reused static IVs. This codemod replaces those calls with the modern, explicit APIs and scaffolds secure key derivation and IV management.
+
+The source code for this codemod can be found in the [crypto-createcipheriv-migration directory](https://github.com/nodejs/userland-migrations/tree/main/recipes/crypto-createcipheriv-migration).
+
+You can find this codemod in the [Codemod Registry](https://app.codemod.com/registry/@nodejs/crypto-createcipheriv-migration).
+
+```bash
+npx codemod run @nodejs/crypto-createcipheriv-migration
 ```
+
+### What it does
+
+- Replaces invocations of `createCipher()` / `createDecipher()` with `createCipheriv()` / `createDecipheriv()`.
+- Inserts scaffolding that derives keys with `crypto.scryptSync()` and generates random salts and IVs.
+- Reminds developers to persist salt + IV for decryption and to adjust key/IV lengths per algorithm.
+- Updates destructured imports to include the new helpers (`createCipheriv`, `createDecipheriv`, `randomBytes`, `scryptSync`).
+
+### Example
+
+```diff
+- const cipher = crypto.createCipher(algorithm, password);
++ const cipher = (() => {
++   const __dep0106Salt = crypto.randomBytes(16);
++   const __dep0106Key = crypto.scryptSync(password, __dep0106Salt, 32);
++   const __dep0106Iv = crypto.randomBytes(16);
++   // DEP0106: Persist __dep0106Salt and __dep0106Iv alongside the ciphertext so it can be decrypted later.
++   return crypto.createCipheriv(algorithm, __dep0106Key, __dep0106Iv);
++ })();
+```
+
+### Important notes
+
+- The codemod cannot guarantee algorithm-specific key/IV sizes. Review the generated `scryptSync` length and IV length defaults and adjust as needed.
+- Decryption snippets include placeholders (`Buffer.alloc(16)`) that must be replaced with the salt and IV stored during encryption.
+- If your project already wraps key derivation logic, you may prefer to adapt the generated scaffolding to call existing helpers.
+- The generated code is not backward-compatible and will be unable to decrypt data that was encrypted using `createCipher()`.
+- The use of scrypt is one possible choice for deriving a key from a password, but you may wish to use Argon2id or PBKDF2 instead.

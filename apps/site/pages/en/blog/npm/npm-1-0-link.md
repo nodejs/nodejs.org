@@ -42,6 +42,7 @@ _Also_, there’s a third use case that I didn’t really appreciate until I sta
 <!-- markdownlint-disable ol-prefix -->
 
 3. Globally install something, and use it in development in a bunch of projects, and then update them all at once so that they all use the latest version.
+
 <!-- markdownlint-enable ol-prefix -->
 
 Really, the second case above is a special-case of this third case.

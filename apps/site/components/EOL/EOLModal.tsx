@@ -1,6 +1,6 @@
 import { Modal, Title, Content } from '@node-core/ui-components/Common/Modal';
 import { useTranslations } from 'next-intl';
-import { useMemo } from 'react';
+import { useEffect } from 'react';
 
 import KnownSeveritySection from '#site/components/EOL/KnownSeveritySection';
 import UnknownSeveritySection from '#site/components/EOL/UnknownSeveritySection';
@@ -26,15 +26,16 @@ const EOLModal: FC<EOLModalProps> = ({
     ? t('components.eolModal.title', { version, codename })
     : t('components.eolModal.titleWithoutCodename', { version });
 
-  useMemo(
-    () =>
+  useEffect(
+    () => {
       vulnerabilities.sort(
         (a, b) =>
           SEVERITY_ORDER.indexOf(a.severity) -
           SEVERITY_ORDER.indexOf(b.severity)
-      ),
+      );
+    },
     // Only change when the vulnerabilities change
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line @eslint-react/exhaustive-deps
     [vulnerabilities.length]
   );
 

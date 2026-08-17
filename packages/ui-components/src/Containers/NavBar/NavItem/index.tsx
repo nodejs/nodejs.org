@@ -15,8 +15,10 @@ type NavItemProps = {
   type?: NavItemType;
   className?: string;
   target?: HTMLAttributeAnchorTarget | undefined;
+  accent?: boolean;
 
   pathname: string;
+  active?: boolean;
   as: LinkLike;
 };
 
@@ -26,12 +28,18 @@ const NavItem: FC<PropsWithChildren<NavItemProps>> = ({
   children,
   className,
   target,
+  accent,
   ...props
 }) => (
   <BaseActiveLink
     target={target}
     href={href}
-    className={classNames(styles.navItem, styles[type], className)}
+    className={classNames(
+      styles.navItem,
+      styles[type],
+      { [styles.accent]: accent },
+      className
+    )}
     activeClassName={styles.active}
     allowSubPath={href.startsWith('/')}
     {...props}

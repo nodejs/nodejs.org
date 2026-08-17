@@ -1,5 +1,5 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
-import { SearchRoot, ChatRoot, Modal } from '@orama/ui/components';
+import { SearchRoot, Modal } from '@orama/ui/components';
 
 import SearchInput from '#ui/Common/Search/Input';
 
@@ -40,18 +40,13 @@ const SearchModal: FC<PropsWithChildren<SearchModalProps>> = ({
         className={styles.modalWrapper}
       >
         <SearchRoot client={client}>
-          <ChatRoot client={client} askOptions={{ throttle_delay: 50 }}>
-            <Modal.Inner className={styles.modalInner}>
-              <Modal.Content className={styles.modalContent}>
-                <SearchInput
-                  placeholder={placeholder}
-                  ariaLabel={placeholder}
-                />
-                <Modal.Close className={styles.modalCloseButton} />
-                {children}
-              </Modal.Content>
-            </Modal.Inner>
-          </ChatRoot>
+          <Modal.Inner className={styles.modalInner}>
+            <Modal.Content className={styles.modalContent}>
+              <SearchInput placeholder={placeholder} ariaLabel={placeholder} />
+              <Modal.Close className={styles.modalCloseButton} />
+              {children}
+            </Modal.Content>
+          </Modal.Inner>
         </SearchRoot>
       </Modal.Wrapper>
     </Modal.Root>

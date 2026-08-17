@@ -14,20 +14,22 @@ on:
     paths:
       - packages/ui-components/**
       - .github/workflows/chromatic.yml
-  pull_request_target:
+  pull_request:
     branches:
       - main
     paths:
       - packages/ui-components/**
       - .github/workflows/chromatic.yml
-    types:
-      - labeled
   workflow_dispatch:
 
 defaults:
   run:
     # This ensures that the working directory is the root of the repository
     working-directory: ./
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name != 'push' }}
 
 permissions:
   contents: read
@@ -38,9 +40,8 @@ jobs:
     # We only need to run Storybook Builds and Storybook Visual Regression Tests within Pull Requests that actually
     # introduce changes to the Storybook. Hence, we skip running these on Crowdin PRs and Dependabot PRs
     if: |
-      github.event_name != 'pull_request_target' ||
+      github.event_name != 'pull_request' ||
       (
-        github.event.label.name == 'github_actions:pull-request' &&
         github.actor != 'dependabot[bot]' &&
         github.event.pull_request.head.ref != 'chore/crowdin'
       )
@@ -62,10 +63,10 @@ jobs:
       - name: Start Visual Regression Tests (Chromatic)
         # This assigns the Environment Deployment for Storybook
         id: chromatic-deploy
-        uses: chromaui/action@07791f8243f4cb2698bf4d00426baf4b2d1cb7e0 # v13.3.5
+        uses: chromaui/action@14cfaef73576e69f95f47f60058063f46ca38719 # v18.1.0
         with:
           workingDir: packages/ui-components
           buildScriptName: storybook:build
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          projectToken: ${{ vars.CHROMATIC_PROJECT_TOKEN }}
           exitOnceUploaded: true
           onlyChanged: true

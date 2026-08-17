@@ -63,10 +63,10 @@
   }
 
   &.success {
-    @apply bg-green-600;
+    @apply bg-brand-600;
 
     .title {
-      @apply bg-green-700;
+      @apply bg-brand-700;
     }
   }
 

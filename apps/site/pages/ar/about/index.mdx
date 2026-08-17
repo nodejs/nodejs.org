@@ -1,0 +1,120 @@
+---
+title: حول Node.js®
+layout: about
+---
+
+# حول Node.js®
+
+Node.js هي بيئة تشغيل JavaScript غير متزامنة ومعتمدة على الأحداث، ومصممة لبناء
+تطبيقات شبكية قابلة للتوسع. في مثال "hello world" التالي، يمكن التعامل مع
+عدد كبير من الاتصالات في الوقت نفسه. عند كل اتصال، يتم تشغيل الـ callback،
+لكن إذا لم يكن هناك عمل يجب تنفيذه، فستدخل Node.js في وضع الانتظار.
+
+```cjs
+const { createServer } = require('node:http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+```mjs
+import { createServer } from 'node:http';
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+يختلف هذا عن نموذج concurrency الأكثر شيوعًا اليوم، حيث يتم الاعتماد على OS threads.
+تعد الشبكات المبنية على threads أقل كفاءة نسبيًا، كما أنها صعبة الاستخدام. إضافة إلى ذلك،
+لا يحتاج مستخدمو Node.js إلى القلق من dead-locking للـ process، لأن Node.js لا تستخدم locks.
+تقريبًا لا توجد أي function في Node.js تنفذ I/O مباشرة، لذلك لا يتوقف الـ process إلا عند تنفيذ I/O
+باستخدام synchronous methods من مكتبة Node.js القياسية. وبما أن لا شيء يوقف التنفيذ،
+فإن بناء أنظمة قابلة للتوسع في Node.js يعد أمرًا منطقيًا وسهلًا نسبيًا.
+
+إذا كانت بعض هذه المصطلحات غير مألوفة لك، فهناك مقال كامل عن
+[Blocking vs. Non-Blocking](/learn/asynchronous-work/overview-of-blocking-vs-non-blocking).
+
+---
+
+تشبه Node.js في تصميمها أنظمة مثل
+[Event Machine](https://github.com/eventmachine/eventmachine) في Ruby و[Twisted](https://twisted.org/) في Python، وقد تأثرت بها. لكن Node.js تأخذ نموذج الأحداث إلى مستوى أبعد.
+فهي تقدم event loop كجزء من runtime بدلًا من تقديمها كمكتبة. في الأنظمة الأخرى،
+يوجد دائمًا blocking call لبدء event loop.
+عادةً يتم تعريف السلوك عبر callbacks في بداية السكربت، وفي النهاية يتم تشغيل server
+من خلال blocking call مثل `EventMachine::run()`.
+في Node.js، لا يوجد استدعاء خاص من نوع start-the-event-loop. تدخل Node.js ببساطة إلى event loop بعد تنفيذ السكربت المدخل.
+وتخرج Node.js من event loop عندما لا تبقى callbacks أخرى يجب تنفيذها. يشبه هذا السلوك
+JavaScript في المتصفح، حيث تكون event loop مخفية عن المستخدم.
+
+يعد HTTP جزءًا أساسيًا في Node.js، وقد صُمم مع مراعاة streaming وlow latency.
+وهذا يجعل Node.js مناسبة جدًا لتكون أساسًا لمكتبة أو framework للويب.
+
+كون Node.js مصممة بدون threads لا يعني أنك لا تستطيع الاستفادة من عدة cores في بيئتك.
+يمكن إنشاء child processes باستخدام API الخاصة بنا
+[`child_process.fork()`](https://nodejs.org/api/child_process.html)، وهي مصممة لتكون سهلة التواصل معها.
+وعلى الواجهة نفسها بُنيت وحدة [`cluster`](https://nodejs.org/api/cluster.html)،
+التي تسمح لك بمشاركة sockets بين processes لتفعيل load balancing
+على مستوى cores لديك.
+
+## موارد Node.js الرسمية
+
+لضمان الأصالة والأمان عند العمل مع Node.js، استخدم دائمًا المصادر الرسمية. تجنب الوثوق برسائل البريد،
+أو binaries، أو التنزيلات القادمة من مصادر غير رسمية.
+
+### نطاقات Node.js الرسمية
+
+لتنزيل Node.js binaries والوصول إلى التوثيق الرسمي، استخدم هذه النطاقات فقط:
+
+- [nodejs.org](https://nodejs.org)
+- [nodejs.dev](https://nodejs.dev) _(يعيد التوجيه إلى https://nodejs.org)_
+- [iojs.org](https://iojs.org) _(يعيد التوجيه إلى https://nodejs.org)_
+
+### npm packages الرسمية
+
+يحافظ فريق Node.js على npm package scopes الرسمية التالية:
+
+- [`@node-core`](https://npmjs.com/~node-core)
+- [`@pkgjs`](https://npmjs.com/~pkgjs)
+
+إضافة إلى ذلك، يحافظ فريق Node.js على packages منشورة عبر حساب npm
+[`nodejs-foundation`](https://npmjs.com/~nodejs-foundation)،
+مع أن packages أخرى مرتبطة بـ Node.js مثل [`undici`](https://www.npmjs.com/package/undici) قد تتم صيانتها أيضًا بواسطة مساهمين مرتبطين بالمشروع بشكل وثيق.
+
+استخدام packages من فريق Node.js يضمن أنك تعمل مع مكونات Node.js مدعومة رسميًا.
+
+### GitHub Organizations الرسمية
+
+تتم صيانة Node.js والمشاريع المرتبطة بها ضمن GitHub organizations الرسمية التالية:
+
+- [nodejs](https://github.com/nodejs)
+- [pkgjs](https://github.com/pkgjs)
+
+### قنوات التواصل الرسمية
+
+تتواصل Node.js وOpenJS Foundation عبر عدة قنوات رسمية وقنوات مدعومة من المجتمع. يمكنك العثور على التفاصيل حول
+كيفية المشاركة في صفحة [شارك معنا](https://nodejs.org/en/about/get-involved).
+
+### الإبلاغ عن مشاكل الموقع والتوقفات
+
+إذا واجهت مشاكل في موقع Node.js، فأبلغ عنها في [مستودع موقع Node.js](https://github.com/nodejs/nodejs.org/issues).
+وللحصول على تحديثات فورية حول الانقطاعات، زر [صفحة حالة Node.js](https://status.nodejs.org).

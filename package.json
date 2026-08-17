@@ -13,11 +13,10 @@
     "name": "Node.js Website Team and Contributors"
   },
   "scripts": {
-    "compile": "turbo compile",
-    "build": "turbo build",
-    "cloudflare:deploy": "turbo cloudflare:deploy",
-    "cloudflare:preview": "turbo cloudflare:preview",
-    "deploy": "turbo deploy",
+    "build": "turbo build --filter=@node-core/website",
+    "changeset": "changeset",
+    "changeset:version": "changeset version",
+    "deploy": "turbo deploy --filter=@node-core/website",
     "dev": "turbo dev",
     "format": "turbo //#prettier:fix prettier:fix lint:fix",
     "lint": "turbo lint",
@@ -27,6 +26,7 @@
     "prepare": "husky",
     "prettier": "prettier \"**/*.{js,mjs,ts,tsx,md,mdx,json,yml,css}\" --check --cache --cache-strategy=content --cache-location=.prettiercache",
     "prettier:fix": "node --run prettier -- --write",
+    "release": "pnpm --filter './packages/*' --if-present run build && pnpm publish -r --access=public",
     "scripts:release-post": "turbo scripts:release-post",
     "start": "turbo start",
     "storybook": "turbo storybook",
@@ -36,24 +36,26 @@
   },
   "dependencies": {
     "husky": "9.1.7",
-    "lint-staged": "16.2.7",
-    "turbo": "2.8.3"
+    "lint-staged": "17.2.0",
+    "turbo": "2.10.6"
   },
   "devDependencies": {
-    "@eslint/js": "~9.39.2",
-    "@reporters/github": "^1.12.0",
+    "@changesets/changelog-github": "^0.7.0",
+    "@changesets/cli": "^2.31.1",
+    "@eslint/js": "~10.0.1",
+    "@reporters/github": "^2.0.2",
     "@testing-library/react": "~16.3.2",
     "cross-env": "^10.1.0",
-    "eslint": "~9.39.2",
-    "eslint-import-resolver-typescript": "~4.4.4",
-    "eslint-plugin-import-x": "~4.16.1",
-    "globals": "^16.5.0",
-    "prettier": "3.8.1",
-    "prettier-plugin-tailwindcss": "0.7.2",
+    "eslint": "~10.8.0",
+    "eslint-import-resolver-typescript": "~4.4.5",
+    "eslint-plugin-import-x": "~4.17.1",
+    "globals": "^17.7.0",
+    "prettier": "3.9.6",
+    "prettier-plugin-tailwindcss": "0.8.1",
     "typescript": "catalog:",
-    "typescript-eslint": "~8.54.0"
+    "typescript-eslint": "~8.65.0"
   },
-  "packageManager": "pnpm@10.28.2",
+  "packageManager": "pnpm@11.18.0",
   "devEngines": {
     "runtime": {
       "name": "node",
@@ -62,7 +64,7 @@
     },
     "packageManager": {
       "name": "pnpm",
-      "version": "10.28.2",
+      "version": "11.18.0",
       "onFail": "error"
     }
   }

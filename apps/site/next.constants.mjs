@@ -6,15 +6,6 @@
 export const IS_DEV_ENV = process.env.NODE_ENV === 'development';
 
 /**
- * This is used for telling Next.js if the Website is deployed on Vercel
- *
- * Can be used for conditionally enabling features that we know are Vercel only
- *
- * @see https://vercel.com/docs/projects/environment-variables/system-environment-variables#VERCEL_ENV
- */
-export const VERCEL_ENV = process.env.VERCEL_ENV || undefined;
-
-/**
  * This is used for telling Next.js to do a Static Export Build of the Website
  *
  * This is used for static/without a Node.js server hosting, such as on our
@@ -39,19 +30,9 @@ export const ENABLE_STATIC_EXPORT_LOCALE =
 
 /**
  * This is used for any place that requires the full canonical URL path for the Node.js Website (and its deployment), such as for example, the Node.js RSS Feed.
- *
- * This variable can either come from the Vercel Deployment as `NEXT_PUBLIC_VERCEL_URL` or from the `NEXT_PUBLIC_BASE_URL` Environment Variable that is manually defined
- * by us if necessary. Otherwise it will fallback to the default Node.js Website URL.
- *
- * @TODO: We should get rid of needing to rely on `VERCEL_URL` for deployment URL.
- *
- * @see https://vercel.com/docs/concepts/projects/environment-variables/system-environment-variables#framework-environment-variables
  */
-export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
-  ? process.env.NEXT_PUBLIC_BASE_URL
-  : process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : 'https://nodejs.org';
+export const BASE_URL =
+  process.env.NEXT_PUBLIC_BASE_URL || 'https://nodejs.org';
 
 /**
  * This is used for any place that requires the Node.js distribution URL (which by default is nodejs.org/dist)
@@ -68,6 +49,14 @@ export const DIST_URL =
  */
 export const DOCS_URL =
   process.env.NEXT_PUBLIC_DOCS_URL || 'https://nodejs.org/docs/';
+
+/**
+ * This is used for any place that requires the Node.js Learn URL (which by default is nodejs.org/learn)
+ *
+ * Note that this is a custom Environment Variable that can be defined by us when necessary
+ */
+export const LEARN_URL =
+  process.env.NEXT_PUBLIC_LEARN_URL || 'https://nodejs.org/learn/';
 
 /**
  * Supports a manual override of the base path of the Website
@@ -107,6 +96,7 @@ export const THEME_STORAGE_KEY = 'theme';
  * @see https://github.com/nodejs/nodejs.org/issues/5813 for more context
  */
 export const EXTERNAL_LINKS_SITEMAP = [
+  'https://ai-coding-assistants-policy.openjsf.org/',
   'https://terms-of-use.openjsf.org/',
   'https://privacy-policy.openjsf.org/',
   'https://bylaws.openjsf.org/',
@@ -117,69 +107,12 @@ export const EXTERNAL_LINKS_SITEMAP = [
 ];
 
 /**
- * These are the default Orama Query Parameters that are used by the Website
- * @see https://docs.oramasearch.com/open-source/usage/search/introduction
- */
-export const DEFAULT_ORAMA_QUERY_PARAMS = {
-  limit: 25,
-  threshold: 0,
-  boost: {
-    pageSectionTitle: 4,
-    pageSectionContent: 2.5,
-    pageTitle: 1.5,
-  },
-};
-
-/**
- * The initial Orama Cloud chat suggestions visible in the empty state of the search box.
- */
-export const DEFAULT_ORAMA_SUGGESTIONS = [
-  'How to install Node.js?',
-  'How to create an HTTP server?',
-  'Upgrading Node.js version',
-];
-
-/**
- * The default batch size to use when syncing Orama Cloud
- */
-export const ORAMA_SYNC_BATCH_SIZE = 250;
-
-/**
- * The default Orama Cloud endpoint to use when searching with Orama Cloud.
- */
-export const ORAMA_CLOUD_ENDPOINT =
-  process.env.NEXT_PUBLIC_ORAMA_ENDPOINT ||
-  'https://cloud.orama.run/v1/indexes/nodejs-org-dev-hhqrzv';
-
-/**
- * The default Orama Cloud API Key to use when searching with Orama Cloud.
- * This is a public API key and can be shared publicly on the frontend.
- */
-export const ORAMA_CLOUD_READ_API_KEY =
-  process.env.NEXT_PUBLIC_NEW_ORAMA_API_KEY ||
-  'c1__KPYDQNEFr$nFgrTgFTVLHf8BuNf08COBqBUzk65AYJEmSsJONPsO$_cihl';
-
-/**
- * The default Orama Cloud Datasource ID to use when searching with Orama Cloud.
- */
-export const ORAMA_CLOUD_DATASOURCE_ID =
-  process.env.NEXT_PUBLIC_NEW_ORAMA_DATASOURCE_ID ||
-  '6044121f-53c3-46af-aaf0-f498e3c548f2';
-
-/**
- * The default Orama Cloud Project ID to use when initializing Orama Cloud.
- */
-export const ORAMA_CLOUD_PROJECT_ID =
-  process.env.NEXT_PUBLIC_NEW_ORAMA_PROJECT_ID ||
-  '2eac5680-790b-44b7-8640-359608f104bd';
-
-/**
  * A GitHub Access Token for accessing the GitHub API and not being rate-limited
  * The current token is registered on the "nodejs-vercel" GitHub Account.
  *
  * Note: This has no NEXT_PUBLIC prefix as it should not be exposed to the Browser.
  */
-export const GITHUB_API_KEY = process.env.NEXT_GITHUB_API_KEY || '';
+export const GITHUB_READ_API_KEY = process.env.NEXT_GITHUB_READ_API_KEY || '';
 
 /**
  * The resource we point people to when discussing internationalization efforts.
@@ -204,9 +137,15 @@ export const SEVERITY_KIND_MAP = {
 };
 
 /**
- * Which Node.js versions do we want to display vulnerabilities for?
+ * Maps Node.js version status to UI Badge kinds
+ *
+ * @type {Record<import('./types/releases').NodeReleaseStatus, import('@node-core/ui-components/Common/Badge').BadgeKind>}
  */
-export const EOL_VERSION_IDENTIFIER = 'End-of-life';
+export const STATUS_KIND_MAP = {
+  EOL: 'warning',
+  LTS: 'info',
+  Current: 'default',
+};
 
 /**
  * The location of the Node.js Security Working Group Vulnerabilities data.
@@ -219,3 +158,16 @@ export const VULNERABILITIES_URL =
  */
 export const OPENCOLLECTIVE_MEMBERS_URL =
   'https://opencollective.com/nodejs/members/all.json';
+
+/**
+ * The location of the GitHub GraphQL API
+ */
+export const GITHUB_GRAPHQL_URL = 'https://api.github.com/graphql';
+
+/**
+ * Orama DB URLs for the Learn and API sections of the website
+ */
+export const ORAMA_DB_URLS = {
+  [LEARN_URL.slice(0, -1)]: 'https://nodejs.org/learn/orama-db.json',
+  [`${DOCS_URL}latest/api`]: 'https://beta.docs.nodejs.org/orama-db.json',
+};

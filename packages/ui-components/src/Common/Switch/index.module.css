@@ -34,16 +34,16 @@
   }
 
   .input:focus-visible + .root {
-    @apply ring-2
-      ring-green-500
+    @apply ring-brand-500
+      dark:ring-brand-400
+      ring-2
       ring-offset-2
       ring-offset-neutral-100
-      dark:ring-green-400
       dark:ring-offset-neutral-900;
   }
 
   .input:checked + .root {
-    @apply bg-green-600;
+    @apply bg-brand-600;
   }
 
   .thumb {

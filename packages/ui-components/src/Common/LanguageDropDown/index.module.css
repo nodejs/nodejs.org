@@ -35,19 +35,19 @@
 }
 
 .dropDownItem {
-  @apply cursor-pointer
+  @apply data-[highlighted]:bg-brand-600
+    cursor-pointer
     px-2.5
     py-1.5
     text-sm
     font-medium
     text-neutral-800
     outline-hidden
-    data-[highlighted]:bg-green-600
     data-[highlighted]:text-white
     dark:text-white;
 }
 
 .currentDropDown {
-  @apply bg-green-600
+  @apply bg-brand-600
     text-white;
 }

@@ -7,6 +7,7 @@ export type ActiveLocalizedLinkProps = ComponentProps<LinkLike> & {
   activeClassName?: string;
   allowSubPath?: boolean;
   pathname?: string;
+  active?: boolean;
   as?: LinkLike;
 };
 
@@ -16,17 +17,21 @@ const BaseActiveLink: FC<ActiveLocalizedLinkProps> = ({
   className,
   href = '',
   pathname = '/',
+  active,
   as: Component = 'a',
   ...props
 }) => {
-  const finalClassName = classNames(className, {
-    [activeClassName]: allowSubPath
+  // NavBar sets `active` explicitly; if it's not passed we fall back to the path check.
+  const isActive =
+    active ??
+    (allowSubPath
       ? // When using allowSubPath we want only to check if
         // the current pathname starts with the utmost upper level
         // of an href (e.g. /docs/...)
         pathname.startsWith(`/${href.toString().split('/')[1]}`)
-      : href.toString() === pathname,
-  });
+      : href.toString() === pathname);
+
+  const finalClassName = classNames(className, { [activeClassName]: isActive });
 
   return <Component className={finalClassName} href={href} {...props} />;
 };

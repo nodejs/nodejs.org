@@ -17,7 +17,7 @@ apps/site/next.config.mjs @nodejs/web-infra
 apps/site/next.dynamic.mjs @nodejs/web-infra
 apps/site/middleware.ts @nodejs/web-infra
 apps/site/navigation.mjs @nodejs/web-infra
-apps/site/playwright.config.ts @nodejs/web-infra
+apps/site/playwright.config.mjs @nodejs/web-infra
 
 # Package Ecosystem
 package.json @nodejs/nodejs-website
@@ -27,34 +27,24 @@ turbo.json @nodejs/nodejs-website @nodejs/web-infra
 crowdin.yml @nodejs/web-infra
 apps/site/redirects.json @nodejs/web-infra
 apps/site/site.json @nodejs/web-infra
-apps/site/wrangler.jsonc @nodejs/web-infra
-apps/site/open-next.config.ts @nodejs/web-infra
-apps/site/redirects.json @nodejs/web-infra
+platforms @nodejs/web-infra
 
 # Critical Documents
 LICENSE @nodejs/tsc
 CONTRIBUTING.md @nodejs/nodejs-website @nodejs/web-infra
 docs @nodejs/nodejs-website @nodejs/web-infra
 SECURITY.md @nodejs/security-wg
+apps/site/public/.well-known/security.txt @nodejs/security-wg
 
 # Node.js Release Blog Posts
 apps/site/pages/en/blog/release @nodejs/releasers
 apps/site/pages/en/blog/announcements @nodejs/releasers
+apps/site/pages/en/blog/vulnerability @nodejs/releasers
 
-# The following users DO NOT have write access, and their review is requested
-# via a GitHub action.
-apps/site/pages/en/learn/diagnostics @nodejs/diagnostics
-
-apps/site/pages/en/learn/getting-started/security-best-practices.md @nodejs/security-wg
-
-apps/site/pages/en/learn/manipulating-files @nodejs/fs
-
-apps/site/pages/en/learn/test-runner @nodejs/test_runner
-
-apps/site/pages/en/learn/typescript @nodejs/typescript
-
+# Marketing
 apps/site/pages/en/about/partners.mdx @nodejs/marketing
 apps/site/pages/en/about/branding.mdx @nodejs/marketing
 
-apps/site/pages/en/learn/getting-started/userland-migrations.md @nodejs/userland-migrations
+# The following users DO NOT have write access, and their review is requested
+# via a GitHub action.
 apps/site/pages/en/blog/migrations @nodejs/userland-migrations

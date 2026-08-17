@@ -1,7 +1,6 @@
+import eslintReact from '@eslint-react/eslint-plugin';
 import next from '@next/eslint-plugin-next';
 import * as mdx from 'eslint-plugin-mdx';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
 
 import baseConfig from '../../eslint.config.js';
 
@@ -10,9 +9,8 @@ export default baseConfig.concat([
     ignores: ['pages/en/blog/**/*.{md,mdx}/**', 'public', 'next-env.d.ts'],
   },
 
-  react.configs.flat['jsx-runtime'],
-  reactHooks.configs.flat['recommended-latest'],
-  next.configs['core-web-vitals'],
+  eslintReact.configs['recommended-typescript'],
+  next.configs.recommended,
   mdx.flatCodeBlocks,
 
   // Type-checking
@@ -30,20 +28,6 @@ export default baseConfig.concat([
   },
 
   {
-    rules: {
-      'react/no-unescaped-entities': 'off',
-      'react/function-component-definition': [
-        'error',
-        {
-          namedComponents: 'arrow-function',
-          unnamedComponents: 'arrow-function',
-        },
-      ],
-    },
-    settings: { react: { version: 'detect' } },
-  },
-
-  {
     files: ['**/*.{md,mdx}/**'],
     rules: {
       '@typescript-eslint/no-require-imports': 'off',
@@ -51,10 +35,15 @@ export default baseConfig.concat([
   },
 
   {
+    // TODO: Enable validate-links for translations once their routes and
+    // anchors are kept in sync with the English content.
     ...mdx.flat,
     processor: mdx.createRemarkProcessor({ lintCodeBlocks: true }),
     rules: {
       ...mdx.flat.rules,
+      // Components used in MDX are never imported; they are injected by our
+      // compiler from `mdx/components.mjs`, so they are never in lexical scope.
+      'no-undef': 'off',
       'no-irregular-whitespace': 'off',
       '@next/next/no-img-element': 'off',
       '@next/next/no-html-link-for-pages': ['error', 'apps/site/pages/'],

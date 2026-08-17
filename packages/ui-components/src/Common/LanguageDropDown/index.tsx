@@ -35,15 +35,18 @@ const LanguageDropdown: FC<LanguageDropDownProps> = ({
           sideOffset={5}
         >
           <div>
-            {availableLanguages.map(({ name, code, localName }) => (
+            {availableLanguages.map(({ name, code, localName, hrefLang }) => (
               <DropdownMenu.Item
                 key={code}
-                onClick={() => onChange({ name, code, localName })}
+                aria-label={name}
+                onClick={() => onChange({ name, code, localName, hrefLang })}
                 className={classNames(styles.dropDownItem, {
                   [styles.currentDropDown]: code === currentLanguage,
                 })}
               >
-                {localName}
+                <span lang={hrefLang} aria-hidden="true">
+                  {localName}
+                </span>
               </DropdownMenu.Item>
             ))}
           </div>

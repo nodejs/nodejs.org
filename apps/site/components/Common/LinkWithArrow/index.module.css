@@ -9,8 +9,8 @@
 }
 
 .button {
-  @apply text-green-600
-    hover:text-green-900
-    dark:text-green-400
-    dark:hover:text-green-200;
+  @apply text-brand-600
+    hover:text-brand-900
+    dark:text-brand-400
+    dark:hover:text-brand-200;
 }

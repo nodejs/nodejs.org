@@ -27,8 +27,8 @@ const VulnerabilitiesTable: FC<{
         </tr>
       </thead>
       <tbody>
-        {vulnerabilities.map((vulnerability, i) => (
-          <tr key={i}>
+        {vulnerabilities.map(vulnerability => (
+          <tr key={vulnerability.url}>
             <td data-label={t('components.eolModal.table.cves')}>
               {vulnerability.cve.map(cveId => (
                 <div key={cveId}>

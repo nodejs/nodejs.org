@@ -10,13 +10,11 @@ import type { ComponentProps, FC } from 'react';
 import styles from './index.module.css';
 
 type SearchResultsWrapperProps = {
-  searchParams: Omit<ComponentProps<typeof Tabs>['searchParams'], 'term'>;
   onHit: ComponentProps<typeof SearchResults.GroupList>['children'];
   noResultsTitle: string;
 } & Omit<ComponentProps<typeof SearchResultsEmpty>, 'label'>;
 
 const SearchResultsWrapper: FC<SearchResultsWrapperProps> = ({
-  searchParams,
   onHit,
   noResultsTitle,
   ...props
@@ -30,7 +28,16 @@ const SearchResultsWrapper: FC<SearchResultsWrapperProps> = ({
       <SearchResults.Wrapper>
         <Tabs
           {...props}
-          searchParams={{ ...searchParams, term: searchTerm ?? '' }}
+          searchParams={{
+            term: searchTerm ?? '',
+            limit: 25,
+            threshold: 0,
+            boost: {
+              pageSectionTitle: 4,
+              pageSectionContent: 2.5,
+              pageTitle: 1.5,
+            },
+          }}
           selectedFacet={selectedFacet}
         />
         <SearchResultsSkeleton />

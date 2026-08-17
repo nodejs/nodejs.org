@@ -42,19 +42,19 @@
       }
 
       &[data-state='active'] {
-        @apply border-b-green-600
-          text-green-600
-          dark:border-b-green-400
-          dark:text-green-400;
+        @apply border-b-brand-600
+          text-brand-600
+          dark:border-b-brand-400
+          dark:text-brand-400;
 
         .tabExtension {
-          @apply border-green-400
-            text-green-400;
+          @apply border-brand-400
+            text-brand-400;
         }
 
         .tabSecondaryLabel {
-          @apply text-green-800
-            dark:text-green-600;
+          @apply text-brand-800
+            dark:text-brand-600;
         }
       }
     }

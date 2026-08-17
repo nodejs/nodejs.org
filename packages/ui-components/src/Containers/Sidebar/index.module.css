@@ -4,8 +4,8 @@
   @apply ml:max-w-xs
     ml:overflow-auto
     ml:border-r
+    ml:pb-10
     scrollbar-thin
-    ml:pb-[var(--header-height)]
     z-0
     flex
     w-full

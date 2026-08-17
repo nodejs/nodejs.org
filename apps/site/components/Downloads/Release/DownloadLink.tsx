@@ -1,6 +1,6 @@
 'use client';
 
-import { useContext } from 'react';
+import { use } from 'react';
 
 import DownloadLinkBase from '#site/components/Downloads/DownloadLink';
 import { ReleaseContext } from '#site/providers/releaseProvider';
@@ -14,7 +14,7 @@ const DownloadLink: FC<PropsWithChildren<DownloadLinkProps>> = ({
   kind = 'installer',
   children,
 }) => {
-  const { release } = useContext(ReleaseContext);
+  const { release } = use(ReleaseContext);
 
   return (
     <DownloadLinkBase release={release} kind={kind}>

@@ -8,8 +8,8 @@ import styles from './index.module.css';
 const SearchResultsSkeleton: FC = () => (
   <SearchResults.Loading>
     <div className={styles.skeletonWrapper}>
-      {[...Array(3)].map((_, index) => (
-        <div key={index} className={styles.skeletonItem}>
+      {['skeleton-1', 'skeleton-2', 'skeleton-3'].map(id => (
+        <div key={id} className={styles.skeletonItem}>
           <div
             className={classNames(styles.skeletonAnim, styles.skeletonAvatar)}
           />

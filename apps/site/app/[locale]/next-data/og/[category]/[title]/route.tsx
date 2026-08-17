@@ -35,7 +35,14 @@ export const GET = async (_: Request, props: StaticParams) => {
 
   return new ImageResponse(
     <div tw="relative flex items-center justify-center bg-black w-[1200px] h-[600px]">
-      <HexagonGrid style={{ background: gridBackground }} />
+      <HexagonGrid
+        style={{
+          background: gridBackground,
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+        }}
+      />
 
       <div tw="absolute mx-auto flex max-w-xl flex-col text-center text-3xl font-semibold text-white">
         <JsWhiteIcon width={71} height={80} tw="mx-auto" />

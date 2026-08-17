@@ -1,6 +1,6 @@
 {
   "name": "@node-core/rehype-shiki",
-  "version": "1.4.1",
+  "version": "1.4.3",
   "type": "module",
   "types": "./dist/index.d.mts",
   "exports": {
@@ -20,9 +20,8 @@
     "directory": "packages/rehype-shiki"
   },
   "scripts": {
-    "compile:ts": "tsc",
-    "compile": "node --run compile:ts",
-    "release": "node --run compile",
+    "build:ts": "tsc",
+    "build": "node --run build:ts",
     "lint": "node --run lint:js",
     "lint:fix": "node --run lint:js:fix",
     "lint:js": "eslint \"**/*.mjs\"",
@@ -32,13 +31,13 @@
     "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --experimental-test-module-mocks --test \"**/*.test.mjs\""
   },
   "dependencies": {
-    "@shikijs/core": "^3.22.0",
-    "@shikijs/engine-javascript": "^3.22.0",
-    "@shikijs/engine-oniguruma": "^3.22.0",
-    "@shikijs/twoslash": "^3.22.0",
+    "@shikijs/core": "^4.3.1",
+    "@shikijs/engine-javascript": "^4.3.1",
+    "@shikijs/engine-oniguruma": "^4.3.1",
+    "@shikijs/twoslash": "^4.3.1",
     "classnames": "catalog:",
     "hast-util-to-string": "^3.0.1",
-    "shiki": "~3.22.0",
+    "shiki": "~4.3.1",
     "typescript": "catalog:",
     "unist-util-visit": "^5.1.0"
   },

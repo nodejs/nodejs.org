@@ -7,6 +7,7 @@ import remarkLintUnorderedListMarkerStyle from 'remark-lint-unordered-list-marke
 import basePreset from './index.mjs';
 import duplicateStabilityNodes from './rules/duplicate-stability-nodes.mjs';
 import hashedSelfReference from './rules/hashed-self-reference.mjs';
+import invalidDeprecations from './rules/invalid-deprecations.mjs';
 import invalidTypeReference from './rules/invalid-type-reference.mjs';
 import orderedReferences from './rules/ordered-references.mjs';
 import requiredMetadata from './rules/required-metadata.mjs';
@@ -37,6 +38,7 @@ export default (options = {}) => ({
       orderedReferences,
       requiredMetadata,
       invalidTypeReference,
+      invalidDeprecations,
     ].map(plugin => [plugin, options]),
 
     // External Rules

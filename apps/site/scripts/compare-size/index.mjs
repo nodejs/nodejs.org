@@ -26,30 +26,41 @@ const formatPercent = (oldValue, newValue) => {
 };
 
 /**
- * Categorizes asset changes
+ * Categorizes route bundle size changes.
  */
-const categorizeChanges = (oldAssets, newAssets) => {
-  const oldMap = new Map(oldAssets.map(a => [a.name, a]));
-  const newMap = new Map(newAssets.map(a => [a.name, a]));
+const categorizeChanges = (oldRoutes, newRoutes) => {
+  const oldMap = new Map(oldRoutes.map(r => [r.route, r]));
+  const newMap = new Map(newRoutes.map(r => [r.route, r]));
   const changes = { added: [], removed: [], modified: [] };
 
-  for (const [name, oldAsset] of oldMap) {
-    const newAsset = newMap.get(name);
-    if (!newAsset) {
-      changes.removed.push({ name, size: oldAsset.size });
-    } else if (oldAsset.size !== newAsset.size) {
+  for (const [route, oldRoute] of oldMap) {
+    const newRoute = newMap.get(route);
+    if (!newRoute) {
+      changes.removed.push({
+        name: route,
+        size: oldRoute.firstLoadUncompressedJsBytes,
+      });
+    } else if (
+      oldRoute.firstLoadUncompressedJsBytes !==
+      newRoute.firstLoadUncompressedJsBytes
+    ) {
       changes.modified.push({
-        name,
-        oldSize: oldAsset.size,
-        newSize: newAsset.size,
-        delta: newAsset.size - oldAsset.size,
+        name: route,
+        oldSize: oldRoute.firstLoadUncompressedJsBytes,
+        newSize: newRoute.firstLoadUncompressedJsBytes,
+        delta:
+          newRoute.firstLoadUncompressedJsBytes -
+          oldRoute.firstLoadUncompressedJsBytes,
       });
     }
   }
 
-  for (const [name, newAsset] of newMap) {
-    if (!oldMap.has(name)) {
-      changes.added.push({ name, size: newAsset.size });
+  for (const [route, newRoute] of newMap) {
+    if (!oldMap.has(route)) {
+      changes.added.push({
+        name: route,
+        size: newRoute.firstLoadUncompressedJsBytes,
+      });
     }
   }
 
@@ -72,19 +83,25 @@ const tableSection = (title, items, columns, icon) => {
 };
 
 /**
- * Compares old and new assets and returns a markdown report
+ * Compares old and new route bundle stats and returns a markdown report
  */
-function reportDiff({ assets: oldAssets }, { assets: newAssets }) {
-  const changes = categorizeChanges(oldAssets, newAssets);
+function reportDiff(oldRoutes, newRoutes) {
+  const changes = categorizeChanges(oldRoutes, newRoutes);
 
-  const oldTotal = oldAssets.reduce((sum, a) => sum + a.size, 0);
-  const newTotal = newAssets.reduce((sum, a) => sum + a.size, 0);
+  const oldTotal = oldRoutes.reduce(
+    (sum, r) => sum + r.firstLoadUncompressedJsBytes,
+    0
+  );
+  const newTotal = newRoutes.reduce(
+    (sum, r) => sum + r.firstLoadUncompressedJsBytes,
+    0
+  );
   const totalDelta = newTotal - oldTotal;
 
   // Summary table
   let report = `## 📦 Build Size Comparison\n\n### Summary\n\n| Metric | Value |\n|--------|-------|\n`;
-  report += `| Old Total Size | ${formatBytes(oldTotal)} |\n`;
-  report += `| New Total Size | ${formatBytes(newTotal)} |\n`;
+  report += `| Old Total First Load JS | ${formatBytes(oldTotal)} |\n`;
+  report += `| New Total First Load JS | ${formatBytes(newTotal)} |\n`;
   report += `| Delta | ${formatBytes(totalDelta)} (${formatPercent(
     oldTotal,
     newTotal
@@ -98,34 +115,34 @@ function reportDiff({ assets: oldAssets }, { assets: newAssets }) {
   ) {
     report += `### Changes\n\n`;
 
-    // Asset tables
+    // Route tables
     report += tableSection(
-      'Added Assets',
+      'Added Routes',
       changes.added,
       [
-        { label: 'Name', format: a => `\`${a.name}\`` },
-        { label: 'Size', format: a => formatBytes(a.size) },
+        { label: 'Route', format: a => `\`${a.name}\`` },
+        { label: 'First Load JS', format: a => formatBytes(a.size) },
       ],
       '➕'
     );
 
     report += tableSection(
-      'Removed Assets',
+      'Removed Routes',
       changes.removed,
       [
-        { label: 'Name', format: a => `\`${a.name}\`` },
-        { label: 'Size', format: a => formatBytes(a.size) },
+        { label: 'Route', format: a => `\`${a.name}\`` },
+        { label: 'First Load JS', format: a => formatBytes(a.size) },
       ],
       '➖'
     );
 
     report += tableSection(
-      'Modified Assets',
+      'Modified Routes',
       changes.modified,
       [
-        { label: 'Name', format: a => `\`${a.name}\`` },
-        { label: 'Old Size', format: a => formatBytes(a.oldSize) },
-        { label: 'New Size', format: a => formatBytes(a.newSize) },
+        { label: 'Route', format: a => `\`${a.name}\`` },
+        { label: 'Old First Load JS', format: a => formatBytes(a.oldSize) },
+        { label: 'New First Load JS', format: a => formatBytes(a.newSize) },
         {
           label: 'Delta',
           format: a =>
@@ -142,11 +159,11 @@ function reportDiff({ assets: oldAssets }, { assets: newAssets }) {
 }
 
 export async function compare({ core }) {
-  const [oldAssets, newAssets] = await Promise.all([
+  const [oldRoutes, newRoutes] = await Promise.all([
     readFile(process.env.BASE_STATS_PATH).then(f => JSON.parse(f)),
     readFile(process.env.HEAD_STATS_PATH).then(f => JSON.parse(f)),
   ]);
 
-  const comment = reportDiff(oldAssets, newAssets);
+  const comment = reportDiff(oldRoutes, newRoutes);
   core.setOutput('comment', comment);
 }

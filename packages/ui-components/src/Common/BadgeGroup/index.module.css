@@ -25,20 +25,20 @@
   }
 
   &.default {
-    @apply border-green-200
-      bg-green-100
-      dark:border-green-700
+    @apply border-brand-200
+      bg-brand-100
+      dark:border-brand-700
       dark:bg-neutral-900;
 
     .icon {
-      @apply text-green-500
-        dark:text-green-300;
+      @apply text-brand-500
+        dark:text-brand-300;
     }
 
     .message,
     .message a:not(:hover) {
-      @apply text-green-700
-        dark:text-green-300;
+      @apply text-brand-700
+        dark:text-brand-300;
     }
   }
 

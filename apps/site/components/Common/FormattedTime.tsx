@@ -13,6 +13,8 @@ type FormattedTimeProps = {
 const FormattedTime: FC<FormattedTimeProps> = ({ date, format }) => {
   const formatter = useFormatter();
 
+  // "date" is deterministic
+
   const dateObject = new Date(date);
 
   return (

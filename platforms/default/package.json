@@ -1,0 +1,17 @@
+{
+  "name": "@node-core/platform-default",
+  "private": true,
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodejs/nodejs.org",
+    "directory": "platforms/default"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "next": "catalog:"
+  },
+  "engines": {
+    "node": "24.x"
+  }
+}

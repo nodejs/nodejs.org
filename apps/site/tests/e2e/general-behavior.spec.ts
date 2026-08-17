@@ -10,23 +10,20 @@ const locators = {
   mobileMenuToggleName:
     englishLocale.components.containers.navBar.controls.toggle,
   navLinksLocator: `[aria-label="${englishLocale.components.containers.navBar.controls.toggle}"] + div`,
+  // The Beta Docs link renders untranslated (English) across locales, so we
+  // match on its English label to skip it during translation checks.
+  betaDocsName: englishLocale.components.containers.navBar.links.betaDocs,
   // Global UI controls
   languageDropdownName: englishLocale.components.common.languageDropdown.label,
-  themeToggleAriaLabels: {
-    light: englishLocale.components.common.themeToggle.light,
-    dark: englishLocale.components.common.themeToggle.dark,
-  },
+  themeToggleName: englishLocale.components.header.buttons.theme,
+  themeDarkLabel: englishLocale.components.header.buttons.themeDarkMode,
+  themeLightLabel: englishLocale.components.header.buttons.themeLightMode,
 };
 
 const getTheme = (page: Page) =>
   page.evaluate(
     () => document.documentElement.dataset.theme as 'light' | 'dark'
   );
-
-const getCurrentAriaLabel = (theme: string) =>
-  theme === 'dark'
-    ? locators.themeToggleAriaLabels.light
-    : locators.themeToggleAriaLabels.dark;
 
 const openLanguageMenu = async (page: Page) => {
   const button = page.getByRole('button', {
@@ -61,8 +58,14 @@ const verifyTranslation = async (page: Page, locale: Locale | string) => {
 
   // Verify each navigation link text matches an expected translation
   for (const link of links) {
-    const linkText = await link.textContent();
-    expect(expectedTexts).toContain(linkText!.trim());
+    const linkText = (await link.textContent())!.trim();
+    // Skip the Beta Docs link: it renders untranslated (English) across
+    // locales and has no translation entry in most locale files, so it
+    // won't appear in `expectedTexts` for non-English locales (e.g. es).
+    if (linkText === locators.betaDocsName) {
+      continue;
+    }
+    expect(expectedTexts).toContain(linkText);
   }
 };
 
@@ -73,35 +76,50 @@ test.describe('Node.js Website', () => {
   });
 
   test.describe('Theme', () => {
-    test('should toggle between light/dark themes', async ({ page }) => {
+    test('should change to dark theme via dropdown', async ({ page }) => {
       const themeToggle = page.getByRole('button', {
-        name: /Switch to (Light|Dark) Mode/i,
+        name: locators.themeToggleName,
       });
 
-      const initialTheme = await getTheme(page);
-      const initialAriaLabel = getCurrentAriaLabel(initialTheme);
-      let currentAriaLabel = await themeToggle.getAttribute('aria-label');
-      expect(currentAriaLabel).toBe(initialAriaLabel);
+      await themeToggle.click();
+      await page
+        .getByRole('menuitem', { name: locators.themeDarkLabel })
+        .click();
+
+      expect(await getTheme(page)).toBe('dark');
+    });
+
+    test('should change to light theme via dropdown', async ({ page }) => {
+      const themeToggle = page.getByRole('button', {
+        name: locators.themeToggleName,
+      });
+
+      // Set dark first, then switch to light
+      await themeToggle.click();
+      await page
+        .getByRole('menuitem', { name: locators.themeDarkLabel })
+        .click();
 
       await themeToggle.click();
+      await page
+        .getByRole('menuitem', { name: locators.themeLightLabel })
+        .click();
 
-      const newTheme = await getTheme(page);
-      const newAriaLabel = getCurrentAriaLabel(newTheme);
-      currentAriaLabel = await themeToggle.getAttribute('aria-label');
-
-      expect(newTheme).not.toBe(initialTheme);
-      expect(currentAriaLabel).toBe(newAriaLabel);
+      expect(await getTheme(page)).toBe('light');
     });
 
     test('should persist theme across page navigation', async ({ page }) => {
       const themeToggle = page.getByRole('button', {
-        name: /Switch to (Light|Dark) Mode/i,
+        name: locators.themeToggleName,
       });
+
       await themeToggle.click();
-      const selectedTheme = await getTheme(page);
+      await page
+        .getByRole('menuitem', { name: locators.themeDarkLabel })
+        .click();
 
       await page.reload();
-      expect(await getTheme(page)).toBe(selectedTheme);
+      expect(await getTheme(page)).toBe('dark');
     });
 
     test('should respect system preference initially', async ({ browser }) => {

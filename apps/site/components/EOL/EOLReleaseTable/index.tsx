@@ -3,7 +3,6 @@ import { getTranslations } from 'next-intl/server';
 
 import provideReleaseData from '#site/next-data/providers/releaseData';
 import provideVulnerabilities from '#site/next-data/providers/vulnerabilities';
-import { EOL_VERSION_IDENTIFIER } from '#site/next.constants.mjs';
 
 import type { FC } from 'react';
 
@@ -15,9 +14,7 @@ const EOLReleaseTable: FC = async () => {
   const releaseData = await provideReleaseData();
   const vulnerabilities = await provideVulnerabilities();
 
-  const eolReleases = releaseData.filter(
-    release => release.status === EOL_VERSION_IDENTIFIER
-  );
+  const eolReleases = releaseData.filter(release => release.status === 'EOL');
 
   const t = await getTranslations();
 

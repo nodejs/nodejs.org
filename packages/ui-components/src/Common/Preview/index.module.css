@@ -21,7 +21,7 @@
     after:content-[''];
 
   &.announcements {
-    @apply after:from-green-700/90;
+    @apply after:from-brand-700/90;
   }
 
   &.release {

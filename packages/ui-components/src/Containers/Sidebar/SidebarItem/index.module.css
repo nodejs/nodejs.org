@@ -41,15 +41,15 @@
     }
 
     .icon {
-      @apply scale-110
-        text-green-600
-        dark:text-green-400;
+      @apply text-brand-600
+        dark:text-brand-400
+        scale-110;
     }
   }
 
   &.active {
     /* Full-width active background and readable text */
-    @apply bg-green-600
+    @apply bg-brand-600
       text-white;
 
     /* Remove pill background on the label; keep full-width bg on the item */
@@ -61,7 +61,7 @@
 
     /* Preserve active background on hover */
     &:hover {
-      @apply bg-green-600;
+      @apply bg-brand-600;
     }
   }
 }

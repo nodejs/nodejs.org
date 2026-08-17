@@ -12,6 +12,10 @@ package-lock.json
 apps/site/.next
 apps/site/build
 apps/site/public/blog-data.json
+apps/site/next-env.d.ts
+
+# Generated Build Artifacts
+platforms/cloudflare/generated
 
 # Test Runner
 junit.xml

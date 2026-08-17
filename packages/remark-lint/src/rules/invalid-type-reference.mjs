@@ -1,18 +1,30 @@
-import { transformTypeToReferenceLink } from '@nodejs/doc-kit/src/utils/parser/index.mjs';
-import createQueries from '@nodejs/doc-kit/src/utils/queries/index.mjs';
+import { transformTypeToReferenceLink } from '@node-core/doc-kit/src/generators/metadata/utils/transformers.mjs';
+import { QUERIES } from '@node-core/doc-kit/src/utils/queries/index.mjs';
 import { lintRule } from 'unified-lint-rule';
 import { visit } from 'unist-util-visit';
 
-const MATCH_RE = /\s\||\|\s/g;
-const REPLACE_RE = /\s*\|\s*/g;
+const MATCH_RE = /\s\||\| /g;
+const REPLACE_RE = /\s*\| */g;
+
+const isTypeNode = node => {
+  if (node.type === 'text') {
+    return QUERIES.normalizeTypes.test(node.value);
+  }
+
+  if (node.type === 'html') {
+    return node.value.match(QUERIES.normalizeTypes)?.includes(node.value);
+  }
+
+  return false;
+};
 
 /**
  * Ensures that all type references are valid
  * @type {import('unified-lint-rule').Rule<, import('../api.mjs').Options>}
  */
 const invalidTypeReference = (tree, vfile, { typeMap = {} }) => {
-  visit(tree, createQueries.UNIST.isTextWithType, node => {
-    const types = node.value.match(createQueries.QUERIES.normalizeTypes);
+  visit(tree, isTypeNode, node => {
+    const types = node.value.match(QUERIES.normalizeTypes);
 
     types.forEach(type => {
       // Ensure wrapped in {}
@@ -22,7 +34,9 @@ const invalidTypeReference = (tree, vfile, { typeMap = {} }) => {
           node
         );
 
-        node.value = node.value.replace(type, `{${type.slice(1, -1)}}`);
+        const newType = `{${type.slice(1, -1)}}`;
+        node.value = node.value.replace(type, newType);
+        type = newType;
       }
 
       // Fix spaces around |

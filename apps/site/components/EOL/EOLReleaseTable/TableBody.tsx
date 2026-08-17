@@ -34,7 +34,7 @@ const EOLReleaseTableBody: FC<EOLReleaseTableBodyProps> = ({
             </td>
 
             <td data-label="Date">
-              <FormattedTime date={release.releaseDate} />
+              <FormattedTime date={release.latestReleaseDate} />
             </td>
 
             <td>

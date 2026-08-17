@@ -28,13 +28,13 @@ const ReleaseOverview: FC<ReleaseOverviewProps> = ({ release }) => {
       <div className={styles.container}>
         <ReleaseOverviewItem
           Icon={CalendarIcon}
-          title={<FormattedTime date={release.currentStart} />}
+          title={<FormattedTime date={release.initialReleaseDate} />}
           subtitle={t('components.releaseOverview.firstReleased')}
         />
 
         <ReleaseOverviewItem
           Icon={ClockIcon}
-          title={<FormattedTime date={release.releaseDate} />}
+          title={<FormattedTime date={release.latestReleaseDate} />}
           subtitle={t('components.releaseOverview.lastUpdated')}
         />
 

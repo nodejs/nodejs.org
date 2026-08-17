@@ -23,6 +23,7 @@ const RICH_TRANSLATION_KEYS = [
   'foundationName',
   'trademarkPolicy',
   'trademarkList',
+  'aiCodingAssistantsPolicy',
   'termsOfUse',
   'privacyPolicy',
   'bylaws',

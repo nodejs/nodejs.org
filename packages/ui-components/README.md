@@ -17,7 +17,7 @@ compiled outputs and keep them updated while you work.
 ```bash
 # From nodejs.org/packages/ui-components
 pnpm install
-node --run compile:watch
+node --run build:watch
 
 # In another terminal, still in nodejs.org/packages/ui-components
 npm link
@@ -26,5 +26,5 @@ npm link
 npm link @node-core/ui-components
 ```
 
-The `compile:watch` script keeps `dist/` up to date so consumers resolve compiled
+The `build:watch` script keeps `dist/` up to date so consumers resolve compiled
 CSS and JavaScript instead of the raw Tailwind source.

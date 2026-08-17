@@ -3,4 +3,6 @@ export const CODE_LIKE_TYPES = new Set([
   'classMethod',
   'function',
   'ctor',
+  'property',
+  'event',
 ]);

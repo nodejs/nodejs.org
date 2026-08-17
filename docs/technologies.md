@@ -11,6 +11,7 @@ This document provides an overview of the technologies used in the Node.js websi
     - [PostCSS Plugins](#postcss-plugins)
   - [Content Management](#content-management)
     - [Content Processing Plugins](#content-processing-plugins)
+  - [Search](#search)
   - [UI Components](#ui-components)
     - [Why Radix UI?](#why-radix-ui)
   - [Internationalization](#internationalization)
@@ -90,6 +91,12 @@ We chose Next.js because it is:
 - `remark-headings`: Generates metadata for table of contents
 - `rehype-autolink-headings`: Automatic anchor links for headings
 - `rehype-slug`: Automatic ID generation for headings
+
+### Search
+
+- **[Orama](https://orama.com/)**: Local full-text search engine used for site search
+- Prebuilt Learn and API documentation indexes are fetched client-side and merged into a single local search database
+- Search remains self-contained in the site deployment without depending on Orama Cloud at runtime
 
 ### UI Components
 
@@ -286,15 +293,15 @@ Benefits:
 
 #### Multiple Build Targets
 
-- **`pnpm build`**: Production build for Vercel
+- **`pnpm build`**: Production build for the default platform
 - **`pnpm deploy`**: Export build for legacy servers
 - **`pnpm dev`**: Development server
 
 #### Vercel Integration
 
-- Automatic deployments for branches (excluding `dependabot/*` and `gh/*`)
-- Custom install script: `pnpm install --prod --frozen-lockfile`
-- Dependency management: Build-time dependencies must be in `dependencies`, not `devDependencies`
+- Automatic deployments for branches (ignoring automated branches)
+- Custom install + ignore scripts ([see `vercel.json`](../platforms/vercel/vercel.json))
+- Build-time dependencies must be in `dependencies`, not `devDependencies`
 - Sponsorship maintained by OpenJS Foundation
 
 ### Package Management

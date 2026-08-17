@@ -14,6 +14,7 @@ import * as OPENSSF from './OpenSSF';
 import * as RACKSPACE from './Rackspace';
 import * as SCALEWAY from './Scaleway';
 import * as SENTRY from './Sentry';
+import * as TUXCARE from './TuxCare';
 import * as VERCEL from './Vercel';
 import * as VLT from './Vlt';
 
@@ -34,6 +35,7 @@ export {
   RACKSPACE,
   SCALEWAY,
   SENTRY,
+  TUXCARE,
   VERCEL,
   VLT,
 };

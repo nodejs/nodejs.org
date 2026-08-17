@@ -19,13 +19,21 @@ defaults:
     # This ensures that the working directory is the root of the repository
     working-directory: ./
 
-permissions:
-  contents: write
-  pull-requests: write
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ inputs.version }}
+  cancel-in-progress: false
 
 jobs:
   create-post:
+    name: Create Release Blog Post
     runs-on: ubuntu-latest
+    permissions:
+      # Required to push the release branch
+      contents: write
+      # Required to create the pull request
+      pull-requests: write
 
     steps:
       - uses: nodejs/web-team/actions/setup-environment@9f3c83af227d721768d9dbb63009a47ed4f4282f

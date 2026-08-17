@@ -49,4 +49,42 @@ describe('ActiveLink', () => {
       'link active'
     );
   });
+
+  it('forces active class when active override is true regardless of pathname', async () => {
+    render(
+      <ActiveLink
+        className="link"
+        activeClassName="active"
+        href="/link"
+        pathname="/not-link"
+        active
+      >
+        Link
+      </ActiveLink>
+    );
+
+    assert.equal(
+      (await screen.findByText('Link')).getAttribute('class'),
+      'link active'
+    );
+  });
+
+  it('forces inactive when active override is false even when pathname matches', async () => {
+    render(
+      <ActiveLink
+        className="link"
+        activeClassName="active"
+        href="/link"
+        pathname="/link"
+        active={false}
+      >
+        Link
+      </ActiveLink>
+    );
+
+    assert.equal(
+      (await screen.findByText('Link')).getAttribute('class'),
+      'link'
+    );
+  });
 });

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "pnpm install --frozen-lockfile --filter=@node-core/website... --filter=@node-core/platform-vercel...",
+  "buildCommand": "turbo --filter=@node-core/website build",
+  "build": {
+    "env": {
+      "NODE_OPTIONS": "--conditions=vercel"
+    }
+  },
+  "outputDirectory": "../../apps/site/.next",
+  "ignoreCommand": "[[ \"$VERCEL_GIT_COMMIT_REF\" =~ \"^dependabot/.*\" || \"$VERCEL_GIT_COMMIT_REF\" =~ \"^gh-readonly-queue/.*\" ]]"
+}

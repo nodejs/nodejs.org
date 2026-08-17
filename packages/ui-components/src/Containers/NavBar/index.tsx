@@ -21,13 +21,26 @@ const navInteractionIcons = {
   close: <XMark className={styles.navInteractionIcon} />,
 };
 
+// Picks the longest nav link that prefixes the current path, so `/about` and `/about/sponsors` never highlight together.
+export const getActiveNavLink = (
+  navItems: Array<{ link: string }>,
+  pathname: string
+): string =>
+  navItems.reduce((longest, { link }) => {
+    const isMatch =
+      link.startsWith('/') &&
+      (pathname === link || pathname.startsWith(`${link}/`));
+    return isMatch && link.length > longest.length ? link : longest;
+  }, '');
+
 type NavbarProps = {
   navItems?: Array<{
     text: FormattedMessage;
     link: string;
     target?: HTMLAttributeAnchorTarget | undefined;
+    accent?: boolean;
   }>;
-  Logo: ElementType;
+  Logo?: ElementType;
   as: LinkLike;
   pathname: string;
   sidebarItemTogglerAriaLabel: string;
@@ -43,17 +56,21 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const activeLink = getActiveNavLink(navItems ?? [], pathname);
+
   return (
     <nav className={styles.container}>
       <div className={styles.innerContainer}>
         <div className={styles.nodeIconAndMobileItemsToggler}>
-          <Component
-            className={styles.nodeIconWrapper}
-            href="/"
-            aria-label="Home"
-          >
-            <Logo />
-          </Component>
+          {Logo && (
+            <Component
+              className={styles.nodeIconWrapper}
+              href="/"
+              aria-label="Home"
+            >
+              <Logo />
+            </Component>
+          )}
 
           <Label.Root
             className={styles.sidebarItemTogglerLabel}
@@ -73,17 +90,18 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
           aria-label={sidebarItemTogglerAriaLabel}
           tabIndex={-1}
         />
-
         <div className={classNames(styles.main, `hidden peer-checked:flex`)}>
-          {navItems && (
+          {navItems && navItems.length > 0 && (
             <div className={styles.navItems}>
-              {navItems.map(({ text, link, target }) => (
+              {navItems.map(({ text, link, target, accent }) => (
                 <NavItem
                   pathname={pathname}
+                  active={link === activeLink}
                   as={Component}
                   key={link}
                   href={link}
                   target={target}
+                  accent={accent}
                 >
                   {text}
                 </NavItem>

@@ -1,7 +1,7 @@
 import { ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/20/solid';
 
 import Button from '#ui/Common/BaseButton';
-import { useGetPageElements } from '#ui/Common/BasePagination/useGetPageElements';
+import { getPageElements } from '#ui/Common/BasePagination/getPageElements';
 
 import type { LinkLike } from '#ui/types';
 import type { FC } from 'react';
@@ -36,7 +36,7 @@ const BasePagination: FC<PaginationProps> = ({
   labels,
   getPageLabel,
 }) => {
-  const parsedPages = useGetPageElements(
+  const parsedPages = getPageElements(
     currentPage,
     pages,
     currentPageSiblingsCount,

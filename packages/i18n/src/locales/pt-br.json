@@ -2,11 +2,16 @@
   "components": {
     "containers": {
       "footer": {
+        "legal": "Copyright <foundationName>OpenJS Foundation</foundationName> e colaboradores do Node.js. Todos os direitos reservados. A <foundationName>OpenJS Foundation</foundationName> possui e utiliza marcas registradas. Para consultar a lista de marcas registradas da <foundationName>OpenJS Foundation</foundationName>, acesse nossa <trademarkPolicy>Política de Marcas Registradas</trademarkPolicy> e a <trademarkList>Lista de Marcas Registradas</trademarkList>. Marcas registradas e logotipos não indicados na <trademarkList>lista de marcas registradas da OpenJS Foundation</trademarkList> são marcas comerciais™ ou marcas registradas® de seus respectivos titulares. O uso dessas marcas não implica qualquer vínculo ou endosso porparte de seus titulares.",
         "links": {
-          "openJSFoundation": "Fundação OpenJS",
-          "trademarkPolicy": "Política de Marca Registrada",
+          "foundationName": "OpenJS Foundation",
+          "termsOfUse": "Termos de Uso",
           "privacyPolicy": "Política de Privacidade",
+          "bylaws": "Estatuto",
           "codeOfConduct": "Código de Conduta",
+          "trademarkPolicy": "Política de Marca Registrada",
+          "trademarkList": "Lista de Marcas Registradas",
+          "cookiePolicy": "Políticas de Cookies",
           "security": "Política de Segurança"
         },
         "releasePills": {
@@ -268,7 +273,8 @@
       "themeToggle": {
         "light": "Mudar para Modo Claro",
         "dark": "Mudar para Modo Escuro"
-      }
+      },
+      "skipToContent": "Ir direto ao conteúdo"
     },
     "metabar": {
       "lastUpdated": "Última Atualização",
@@ -279,7 +285,13 @@
       "contribute": "Contribuir",
       "contributeText": "Editar esta página",
       "viewAs": "Visualizar como",
-      "tableOfContents": "Índice"
+      "tableOfContents": "Índice",
+      "metadata": "Metadados do Artigo"
+    },
+    "banner": {
+      "default": "Anúncio",
+      "warning": "Alerta",
+      "error": "Erro"
     },
     "search": {
       "searchPlaceholder": "Comece a digitar...",

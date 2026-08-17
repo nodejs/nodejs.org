@@ -26,7 +26,7 @@ export default {
   plugins: [
     'stylelint-order',
     'stylelint-selector-bem-pattern',
-    '@node-core/ui-components/stylelint/one-utility-class-per-line.mjs',
+    '@node-core/ui-components/src/stylelint/one-utility-class-per-line.mjs',
   ],
   rules: {
     // Enforces Element Class Names to be camelCase

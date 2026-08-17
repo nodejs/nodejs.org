@@ -1,0 +1,31 @@
+@reference "../../../styles/index.css";
+
+.container {
+  @apply flex
+    flex-col
+    gap-3;
+}
+
+.title {
+  @apply text-base
+    font-semibold;
+}
+
+.root {
+  @apply mb-3
+    flex
+    flex-col
+    gap-4
+    rounded-sm
+    border
+    border-neutral-200
+    px-4
+    py-3
+    dark:border-neutral-900;
+
+  &:has(> [data-kind='return']:only-child) {
+    @apply border-0
+      px-0
+      py-0;
+  }
+}

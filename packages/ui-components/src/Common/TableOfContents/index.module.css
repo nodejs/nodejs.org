@@ -41,7 +41,6 @@
   .link {
     @apply inline-block
       text-sm
-      font-semibold
       text-neutral-900
       underline
       hover:text-neutral-700
@@ -50,8 +49,7 @@
   }
 
   .codeLink {
-    @apply font-ibm-plex-mono
-      font-medium;
+    @apply font-ibm-plex-mono;
   }
 
   .depthThree {

@@ -47,8 +47,10 @@ const transformCode = <T extends ReactElement<PropsWithChildren>>(
         const columns = line.split(' ');
 
         return [
+          // eslint-disable-next-line @eslint-react/no-array-index-key -- lines from split string have no stable ID
           <span key={lineIndex} className="line">
             {columns.map((column, columnIndex) => (
+              // eslint-disable-next-line @eslint-react/no-array-index-key -- columns from split string have no stable ID
               <Fragment key={columnIndex}>
                 <span>{column}</span>
                 {columnIndex < columns.length - 1 && <span> </span>}

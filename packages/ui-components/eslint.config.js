@@ -1,12 +1,10 @@
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
+import eslintReact from '@eslint-react/eslint-plugin';
 import storybook from 'eslint-plugin-storybook';
 
 import baseConfig from '../../eslint.config.js';
 
 export default baseConfig.concat([
-  react.configs.flat['jsx-runtime'],
-  reactHooks.configs.flat['recommended-latest'],
+  eslintReact.configs['recommended-typescript'],
   ...storybook.configs['flat/recommended'],
 
   // Type-checking
@@ -27,16 +25,6 @@ export default baseConfig.concat([
   {
     rules: {
       'storybook/no-renderer-packages': 'off',
-
-      'react/no-unescaped-entities': 'off',
-      'react/function-component-definition': [
-        'error',
-        {
-          namedComponents: 'arrow-function',
-          unnamedComponents: 'arrow-function',
-        },
-      ],
     },
-    settings: { react: { version: 'detect' } },
   },
 ]);

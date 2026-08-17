@@ -1,0 +1,56 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "main": "./worker-entrypoint.ts",
+  "name": "nodejs-website",
+  "compatibility_date": "2024-11-07",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "account_id": "07be8d2fbc940503ca1be344714cb0d1",
+  "minify": true,
+  "keep_names": false,
+  "assets": {
+    "directory": "../../apps/site/.open-next/assets",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "nodejs-website",
+    },
+  ],
+  "vars": {
+    // Variables needed for skew protection
+    // Also note that an appropriate CF_WORKERS_SCRIPTS_API_TOKEN secret
+    // needs to be set as well in the Cloudflare dashboard
+    "CF_WORKER_NAME": "nodejs-website",
+    "CF_PREVIEW_DOMAIN": "nodejsorg",
+    "CF_ACCOUNT_ID": "07be8d2fbc940503ca1be344714cb0d1",
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+  },
+  "build": {
+    // The polyfilled filesystem assets are read from (and written next to)
+    // the Next.js app, not this package.
+    "cwd": "../../apps/site",
+    "command": "wrangler-build-time-fs-assets-polyfilling --assets pages --assets snippets --assets-output-dir .open-next/assets",
+  },
+  "alias": {
+    "node:fs": "../../apps/site/.wrangler/fs-assets-polyfilling/polyfills/node/fs.ts",
+    "node:fs/promises": "../../apps/site/.wrangler/fs-assets-polyfilling/polyfills/node/fs/promises.ts",
+    "fs": "../../apps/site/.wrangler/fs-assets-polyfilling/polyfills/node/fs.ts",
+    "fs/promises": "../../apps/site/.wrangler/fs-assets-polyfilling/polyfills/node/fs/promises.ts",
+  },
+  "r2_buckets": [
+    {
+      "binding": "NEXT_INC_CACHE_R2_BUCKET",
+      "bucket_name": "next-cache-r2-for-open-next-website",
+    },
+  ],
+  "version_metadata": {
+    // CF_VERSION_METADATA used for sentry
+    // See: https://docs.sentry.io/platforms/javascript/guides/cloudflare/#release-configuration-optional
+    "binding": "CF_VERSION_METADATA",
+  },
+}
