@@ -5,7 +5,6 @@
         "links": {
           "trademarkPolicy": "商標政策",
           "privacyPolicy": "隱私政策",
-          "versionSupport": "版本支援",
           "codeOfConduct": "行為準則",
           "security": "安全性政策"
         }
@@ -18,9 +17,7 @@
           "about": "關於",
           "download": "下載",
           "docs": "文件",
-          "guides": "指南",
           "learn": "學習資源",
-          "security": "安全性",
           "certification": "認證",
           "blog": "部落格",
           "contribute": "貢獻"
@@ -28,104 +25,6 @@
       }
     },
     "navigation": {
-      "learn": {
-        "gettingStarted": {
-          "links": {
-            "gettingStarted": "開始入門",
-            "introductionToNodejs": "Node.js 介紹",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "使用 Node.js 前，需要掌握多少 JavaScript 知識？",
-            "differencesBetweenNodejsAndTheBrowser": "Node.js 與瀏覽器的差別",
-            "theV8JavascriptEngine": "JavaScript V8 引擎",
-            "anIntroductionToTheNpmPackageManager": "Npm 套件管理器介紹",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) 與更高的版本",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js 在開發與生產環境的差別",
-            "nodejsWithWebassembly": "Node.js 搭配 WebAssembly",
-            "debugging": "Node.js 除錯",
-            "profiling": "分析 Node.js 應用程式",
-            "fetch": "以 Node.js 獲取 (fetch) 資料",
-            "websocket": "Node.js WebSocket 用戶端",
-            "securityBestPractices": "安全最佳實踐"
-          }
-        },
-        "typescript": {
-          "links": {
-            "typescript": "TypeScript",
-            "introduction": "TypeScript 介紹",
-            "transpile": "透過翻譯執行 TypeScript 程式碼。",
-            "run": "透過執行器執行 TypeScript",
-            "runNatively": "原生執行 TypeScript",
-            "publishingTSPackage": "發佈 TypeScript 套件"
-          }
-        },
-        "asynchronousWork": {
-          "links": {
-            "asynchronousWork": "非同步工作",
-            "asynchronousFlowControl": "非同步流程控制",
-            "discoverPromisesInNodejs": "探索 Node.js 中的 Promise",
-            "overviewOfBlockingVsNonBlocking": "阻塞與非阻塞概述",
-            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript 中的非同步程式與回呼函式",
-            "discoverJavascriptTimers": "探索 JavaScript 計時器",
-            "eventLoopTimersAndNexttick": "Node.js 中的事件循環",
-            "theNodejsEventEmitter": "Node.js 中的事件發射器",
-            "understandingProcessnexttick": "理解 process.nextTick()",
-            "understandingSetimmediate": "理解 setImmediate()",
-            "dontBlockTheEventLoop": "請勿阻塞事件循環"
-          }
-        },
-        "manipulatingFiles": {
-          "links": {
-            "manipulatingFiles": "檔案操作",
-            "nodejsFileStats": "Node.js 中的檔案狀態",
-            "nodejsFilePaths": "Node.js 中的檔案路徑",
-            "workingWithFileDescriptorsInNodejs": "在 Node.js 中使用檔案描述符",
-            "readingFilesWithNodejs": "使用 Node.js 讀取檔案",
-            "writingFilesWithNodejs": "使用 Node.js 寫入檔案",
-            "workingWithFoldersInNodejs": "在 Node.js 中操作資料夾",
-            "workingWithDifferentFilesystems": "如何使用不同的檔案系統"
-          }
-        },
-        "commandLine": {
-          "links": {
-            "commandLine": "命令列",
-            "runNodejsScriptsFromTheCommandLine": "使用命令列執行 Node.js 指令稿",
-            "howToReadEnvironmentVariablesFromNodejs": "如何從 Node.js 中讀取環境變數",
-            "howToUseTheNodejsRepl": "如何使用 Node.js REPL",
-            "outputToTheCommandLineUsingNodejs": "使用 Node.js 輸出到命令列",
-            "acceptInputFromTheCommandLineInNodejs": "在 Node.js 中接受命令列輸入"
-          }
-        },
-        "modules": {
-          "links": {
-            "modules": "模塊",
-            "publishingAPackage": "發布套件",
-            "publishingNodeApiModules": "如何釋出 Node-API 套件",
-            "anatomyOfAnHttpTransaction": "HTTP 事務解析",
-            "abiStability": "ABI 穩定性",
-            "howToUseStreams": "如何使用串流",
-            "backpressuringInStreams": "串流中的背壓機制"
-          }
-        },
-        "diagnostics": {
-          "links": {
-            "diagnostics": "診斷訊息",
-            "userJourney": "使用者旅程",
-            "understandingAndTuningMemory": "深入瞭解並調教記憶體",
-            "memory": "記憶體",
-            "liveDebugging": "即時偵錯",
-            "poorPerformance": "低效能",
-            "flameGraphs": "火焰圖"
-          }
-        },
-        "testRunner": {
-          "links": {
-            "testRunner": "測試執行器",
-            "introduction": "探索 Node.js 中的測試執行器",
-            "usingTestRunner": "使用 Node.js 中的測試執行器",
-            "mocking": "在測試中模擬物件",
-            "collectingCodeCoverage": "在 Node.js 中搜集程式碼覆蓋率"
-          }
-        }
-      },
       "about": {
         "links": {
           "about": "關於 Node.js",
@@ -148,9 +47,7 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "nApiVersion": "N-API",
       "codename": "代號",
-      "releaseDate": "發佈於",
       "firstReleased": "首次釋出於",
       "lastUpdated": "上次更新於",
       "status": "狀態",
@@ -159,16 +56,12 @@
     "releaseModal": {
       "title": "Node.js {version} ({codename})",
       "titleWithoutCodename": "Node.js {version}",
-      "overview": "概覽",
-      "minorVersions": "小版本",
-      "releaseAnnouncement": "發行公告",
-      "unsupportedVersionWarning": "此版本已不再維護。請使用現正支援的版本。"
+      "minorVersions": "小版本"
     },
     "minorReleasesTable": {
       "version": "版本",
       "links": "連結",
       "actions": {
-        "release": "發行版本",
         "changelog": "更新紀錄",
         "docs": "文件"
       }
@@ -181,30 +74,19 @@
       "npmVersion": "npm 版本",
       "v8Version": "V8 版本"
     },
-    "pagination": {
-      "next": "下一頁",
-      "previous": "上一頁"
-    },
     "common": {
       "alertBox": {
         "info": "資訊",
-        "warning": "警告",
-        "danger": "危險"
+        "warning": "警告"
       },
       "breadcrumbs": {
         "navigateToHome": "返回首頁"
-      },
-      "crossLink": {
-        "previous": "上一頁",
-        "next": "下一頁"
       },
       "codebox": {
         "copy": "複製到剪貼簿",
         "copied": "已複製到剪貼簿！"
       },
       "pagination": {
-        "prev": "上一頁",
-        "prevAriaLabel": "上一頁",
         "next": "下一頁",
         "nextAriaLabel": "下一頁",
         "defaultLabel": "分頁",
@@ -215,26 +97,16 @@
       },
       "languageDropdown": {
         "label": "選擇語言"
-      },
-      "themeToggle": {
-        "label": "切換深色模式"
       }
     },
     "metabar": {
       "lastUpdated": "最後更新",
       "readingTime": "閱讀時間",
-      "addedIn": "新增於",
       "author": "作者",
       "authors": "作者",
       "contribute": "貢獻",
       "contributeText": "編輯此頁面",
-      "viewAs": "檢視模式",
       "tableOfContents": "目錄"
-    },
-    "search": {
-      "searchBox": {
-        "placeholder": "開始輸入…"
-      }
     },
     "blog": {
       "blogHeader": {
@@ -244,14 +116,6 @@
     }
   },
   "layouts": {
-    "blogPost": {
-      "author": {
-        "byLine": "{author, select, null {} other {By {author}, }}"
-      }
-    },
-    "blogIndex": {
-      "categoryName": "{category, select, all {Blog} other {{category} Blog Posts}}"
-    },
     "blog": {
       "title": "部落格",
       "selectCategory": "類別",
@@ -260,7 +124,6 @@
         "announcements": "公告",
         "release": "版本釋出",
         "vulnerability": "漏洞",
-        "advisory-board": "諮詢委員會",
         "community": "社群",
         "feature": "功能",
         "module": "模塊",
@@ -292,7 +155,6 @@
         "platform": "平台",
         "os": "作業系統",
         "version": "版本",
-        "installMethod": "安裝方式",
         "packageManager": "套件管理程式",
         "unknown": "未知",
         "platformGroups": {
@@ -306,14 +168,13 @@
         "externalSupportInfo": "若您遇到任何問題，請造訪 <link>{platform} 網站</link>",
         "noScriptDetected": "此網頁需要使用 JavaScript。您可以直接造訪 <link>發行網頁</link> 以下載 Node.js，無需 JavaScript。",
         "platformInfo": {
-          "default": "套件管理器與其安裝指令稿並非由 Node.js 專案維護。",
+          "default": "{platform}與其安裝指令稿並非由 Node.js 專案維護。",
           "nvm": "「nvm」是跨平台的 Node.js 版本管理程式。",
           "fnm": "「fnm」是跨平台的 Node.js 版本管理程式。",
           "brew": "Homebrew 是 macOS 及 Linux 的套件管理程式。",
           "choco": "Chocolatey 是 Windows 的套件管理程式。",
           "docker": "Docker 是一款容器化平台。",
-          "n": "「n」是跨平台的 Node.js 版本管理程式。",
-          "volta": "「Volta」是跨平台的 Node.js 版本管理程式。"
+          "n": "「n」是跨平台的 Node.js 版本管理程式。"
         }
       }
     },

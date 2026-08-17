@@ -37,9 +37,7 @@
           "download": "Download",
           "docs": "Docs",
           "betaDocs": "Beta Docs",
-          "guides": "Guides",
           "learn": "Learn",
-          "security": "Security",
           "certification": "Courses",
           "blog": "Blog",
           "contribute": "Contribute"
@@ -71,9 +69,7 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "nApiVersion": "N-API",
       "codename": "Codename",
-      "releaseDate": "Released at",
       "firstReleased": "First released",
       "lastUpdated": "Last updated",
       "status": "Status",
@@ -87,10 +83,7 @@
     "releaseModal": {
       "title": "Node.js v{version} ({codename})",
       "titleWithoutCodename": "Node.js v{version}",
-      "overview": "Overview",
       "minorVersions": "Minor versions",
-      "releaseAnnouncement": "Release Announcement",
-      "unsupportedVersionWarning": "This version is out of maintenance. Please use a supported version. <link>Understand EOL support.</link>",
       "ltsVersionFeaturesNotice": "Want new features sooner? Get the <link>latest Node.js version</link> instead and try the latest improvements!"
     },
     "eolAlert": {
@@ -122,7 +115,6 @@
     "eolTable": {
       "version": "Version",
       "codename": "Codename",
-      "releaseDate": "Released at",
       "lastUpdated": "Last updated",
       "vulnerabilities": "Vulnerabilities",
       "details": "Details",
@@ -135,7 +127,6 @@
       "npmVersion": "npm version",
       "v8Version": "V8 version",
       "actions": {
-        "release": "Release",
         "changelog": "Changelog",
         "docs": "Docs"
       }
@@ -151,8 +142,7 @@
     "common": {
       "alertBox": {
         "info": "Info",
-        "warning": "Warning",
-        "danger": "Danger"
+        "warning": "Warning"
       },
       "breadcrumbs": {
         "navigateToHome": "Navigate to Home"
@@ -180,12 +170,10 @@
     "metabar": {
       "lastUpdated": "Last Updated",
       "readingTime": "Reading Time",
-      "addedIn": "Added In",
       "author": "Author",
       "authors": "Authors",
       "contribute": "Contribute",
       "contributeText": "Edit this page",
-      "viewAs": "View as",
       "tableOfContents": "Table of Contents",
       "metadata": "Article metadata"
     },
@@ -197,25 +185,7 @@
     },
     "search": {
       "searchPlaceholder": "Start typing...",
-      "chatPlaceholder": "Ask me anything",
       "noResultsFoundFor": "No results found for",
-      "suggestions": "Suggestions",
-      "seeAll": "See all",
-      "addMore": "Add more",
-      "clearChat": "Clear chat",
-      "errorMessage": "An error occurred while trying to search. Please try again.",
-      "disclaimer": "AI summaries can make mistakes. Please verify the information.",
-      "startYourSearch": "Start your search",
-      "initErrorSearch": "Unable to initialize search service",
-      "initErrorChat": "Unable to initialize chat service",
-      "chatButtonLabel": "Get an AI summary",
-      "searchButtonLabel": "Search",
-      "poweredBy": "Powered by",
-      "suggestionOne": "How to install Node.js?",
-      "suggestionTwo": "How to create an HTTP server?",
-      "suggestionThree": "Upgrading Node.js version",
-      "scrollToBottom": "Scroll to bottom",
-      "closeChat": "Close chat",
       "keyboardShortcuts": {
         "select": "to select",
         "navigate": "to navigate",
@@ -230,14 +200,6 @@
     }
   },
   "layouts": {
-    "blogPost": {
-      "author": {
-        "byLine": "{author, select, null {} other {By {author}, }}"
-      }
-    },
-    "blogIndex": {
-      "categoryName": "{category, select, all {Blog} other {{category} Blog Posts}}"
-    },
     "blog": {
       "title": "Blog",
       "selectCategory": "Categories",
@@ -246,7 +208,6 @@
         "announcements": "Announcements",
         "release": "Releases",
         "vulnerability": "Vulnerabilities",
-        "advisory-board": "Advisory Board",
         "community": "Community",
         "feature": "Feature",
         "module": "Module",
@@ -279,7 +240,6 @@
         "platform": "Platform",
         "os": "Operating System",
         "version": "Version",
-        "installMethod": "Install Method",
         "packageManager": "Package Manager",
         "unknown": "Unknown",
         "platformGroups": {
@@ -289,7 +249,6 @@
       },
       "codeBox": {
         "unsupportedVersionWarning": "This version is out of maintenance. Please use a currently supported version. <link>Understand EOL support.</link>",
-        "ltsVersionFeaturesNotice": "Want new features sooner? Get the <link>latest Node.js version</link> instead and try the latest improvements!",
         "communityPlatformInfo": "Installation methods that involve community software are supported by the teams maintaining that software.",
         "externalSupportInfo": "If you encounter any issues please visit <link>{platform}'s website</link>",
         "noScriptDetected": "This page requires JavaScript. You can download Node.js without JavaScript by visiting the <link>downloads archive page</link> directly.",
@@ -301,8 +260,7 @@
           "choco": "Chocolatey is a package manager for Windows.",
           "docker": "Docker is a containerization platform.",
           "n": "\"n\" is a cross-platform Node.js version manager.",
-          "asdf": "\"asdf\" is a cross-platform version manager that supports multiple languages.",
-          "volta": "\"Volta\" is a cross-platform Node.js version manager."
+          "asdf": "\"asdf\" is a cross-platform version manager that supports multiple languages."
         }
       }
     },

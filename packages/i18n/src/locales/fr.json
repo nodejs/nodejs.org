@@ -36,9 +36,7 @@
           "about": "À propos",
           "download": "Téléchargement",
           "docs": "Docs",
-          "guides": "Guides",
           "learn": "Apprendre",
-          "security": "Sécurité",
           "certification": "Cours",
           "blog": "Blog",
           "contribute": "Contribuer"
@@ -70,9 +68,7 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "nApiVersion": "N-API",
       "codename": "Nom de code",
-      "releaseDate": "Publié le",
       "firstReleased": "Première publication",
       "lastUpdated": "Dernière mise à jour",
       "status": "Statut",
@@ -86,10 +82,7 @@
     "releaseModal": {
       "title": "Node.js v{version} ({codename})",
       "titleWithoutCodename": "Node.js v{version}",
-      "overview": "Vue d'ensemble",
       "minorVersions": "Versions mineures",
-      "releaseAnnouncement": "Annonce de publication",
-      "unsupportedVersionWarning": "Cette version ne fait plus l'objet d'une maintenance. Veuillez utiliser une version actuellement supportée. <link>Comprendre l'accompagnement de fin de vie.</link>",
       "ltsVersionFeaturesNotice": "Vous voulez de nouvelles fonctionnalités plus tôt ? Téléchargez la <link>dernière version de Node.js</link> à la place et essayez les dernières améliorations !"
     },
     "eolAlert": {
@@ -121,7 +114,6 @@
     "eolTable": {
       "version": "Version",
       "codename": "Nom de code",
-      "releaseDate": "Publié le",
       "lastUpdated": "Dernière mise à jour",
       "vulnerabilities": "Vulnérabilités",
       "details": "Détails",
@@ -134,7 +126,6 @@
       "npmVersion": "npm version",
       "v8Version": "Version V8",
       "actions": {
-        "release": "Versions",
         "changelog": "Journal de modifications",
         "docs": "Documents"
       }
@@ -150,8 +141,7 @@
     "common": {
       "alertBox": {
         "info": "Information",
-        "warning": "Avertissement",
-        "danger": "Danger"
+        "warning": "Avertissement"
       },
       "breadcrumbs": {
         "navigateToHome": "Naviguer à l'accueil"
@@ -179,12 +169,10 @@
     "metabar": {
       "lastUpdated": "Dernière Mise à jour",
       "readingTime": "Temps de Lecture",
-      "addedIn": "Ajouté dans",
       "author": "Auteur",
       "authors": "Auteurs",
       "contribute": "Contribuer",
       "contributeText": "Éditer cette page",
-      "viewAs": "Afficher en tant que",
       "tableOfContents": "Table des matières",
       "metadata": "Métadonnées de l'article"
     },
@@ -195,25 +183,7 @@
     },
     "search": {
       "searchPlaceholder": "Commencer à écrire...",
-      "chatPlaceholder": "Demande-moi n'importe quoi",
       "noResultsFoundFor": "Aucun résultat trouvé pour",
-      "suggestions": "Suggestions",
-      "seeAll": "Afficher tout",
-      "addMore": "Plus de détails",
-      "clearChat": "Effacer la conversation",
-      "errorMessage": "Une erreur s'est produite lors de la recherche. Veuillez réessayer.",
-      "disclaimer": "Les résumés d'IA peuvent contenir des erreurs. Veuillez vérifier les informations.",
-      "startYourSearch": "Commencez votre recherche",
-      "initErrorSearch": "Impossible d'initialiser le service de recherche",
-      "initErrorChat": "Impossible d'initialiser le service de chat",
-      "chatButtonLabel": "Obtenir un résumé de l'IA",
-      "searchButtonLabel": "Recherche",
-      "poweredBy": "Produit par",
-      "suggestionOne": "Comment installer Node.js?",
-      "suggestionTwo": "Comment créer un serveur HTTP ?",
-      "suggestionThree": "Mise à niveau de la version Node.js",
-      "scrollToBottom": "Défiler vers le bas",
-      "closeChat": "Fermer la discussion",
       "keyboardShortcuts": {
         "select": "sélectionner",
         "navigate": "naviguer",
@@ -228,14 +198,6 @@
     }
   },
   "layouts": {
-    "blogPost": {
-      "author": {
-        "byLine": "{author, select, null {} other {Par {author}, }}"
-      }
-    },
-    "blogIndex": {
-      "categoryName": "{category, select, all {Blog} other {{category} Blog posts}}"
-    },
     "blog": {
       "title": "Blog",
       "selectCategory": "Catégories",
@@ -244,7 +206,6 @@
         "announcements": "Annonces",
         "release": "Versions",
         "vulnerability": "Vulnérabilités",
-        "advisory-board": "Conseil consultatif",
         "community": "Communauté",
         "feature": "Fonctionalité",
         "module": "Module",
@@ -277,7 +238,6 @@
         "platform": "Plateforme",
         "os": "Système d'exploitation",
         "version": "Version",
-        "installMethod": "Méthode d'installation",
         "packageManager": "Gestionnaire de paquets",
         "unknown": "Inconnu",
         "platformGroups": {
@@ -287,7 +247,6 @@
       },
       "codeBox": {
         "unsupportedVersionWarning": "Cette version ne fait plus l'objet d'une maintenance. Veuillez utiliser une version actuellement supportée. <link>Comprendre l'accompagnement de fin de vie.</link>",
-        "ltsVersionFeaturesNotice": "Vous voulez de nouvelles fonctionnalités plus tôt ? Procurez-vous plutôt la <link>dernière version de Node.js</link> et essayez les dernières améliorations !",
         "communityPlatformInfo": "Les méthodes d'installation qui impliquent des logiciels communautaires sont soutenues par les équipes qui maintiennent ces logiciels.",
         "externalSupportInfo": "Si vous rencontrez des problèmes, veuillez consulter <link>le site web de {platform}</link>",
         "noScriptDetected": "Cette page nécessite JavaScript. Vous pouvez télécharger Node.js sans JavaScript en visitant directement la page <link>page de diffusion</link> directement.",
@@ -299,8 +258,7 @@
           "choco": "Chocolatey est un gestionnaire de paquets pour Windows.",
           "docker": "Docker est une plateforme de conteneurisation.",
           "n": "\"n\" est un gestionnaire de versions Node.js multiplateforme.",
-          "asdf": "\"asdf\" est un gestionnaire de versions multiplateforme qui prend en charge plusieurs langages.",
-          "volta": "\"Volta\" est un gestionnaire de versions Node.js multiplateforme."
+          "asdf": "\"asdf\" est un gestionnaire de versions multiplateforme qui prend en charge plusieurs langages."
         }
       }
     },

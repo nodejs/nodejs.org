@@ -2,6 +2,9 @@
   "$schema": "https://turbo.build/schema.json",
   "dangerouslyDisablePackageManagerCheck": true,
   "tasks": {
+    "//#lint:i18n": {
+      "inputs": [".eloqnt/**", "apps/site/**", "packages/i18n/src/**"]
+    },
     "//#prettier": {
       "outputs": [".prettiercache"]
     },

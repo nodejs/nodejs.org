@@ -36,9 +36,7 @@
           "about": "حول",
           "download": "تنزيل",
           "docs": "التوثيق",
-          "guides": "الأدلة",
           "learn": "تعلّم",
-          "security": "الأمان",
           "certification": "الدورات",
           "blog": "المدونة",
           "contribute": "المساهمة"
@@ -70,9 +68,7 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "nApiVersion": "N-API",
       "codename": "الاسم الرمزي",
-      "releaseDate": "تاريخ الإصدار",
       "firstReleased": "أول إصدار",
       "lastUpdated": "آخر تحديث",
       "status": "الحالة",
@@ -86,10 +82,7 @@
     "releaseModal": {
       "title": "Node.js v{version} ({codename})",
       "titleWithoutCodename": "Node.js v{version}",
-      "overview": "نظرة عامة",
       "minorVersions": "الإصدارات الفرعية",
-      "releaseAnnouncement": "إعلان الإصدار",
-      "unsupportedVersionWarning": "هذا الإصدار خارج مرحلة الصيانة. يرجى استخدام إصدار مدعوم. <link>تعرّف على دعم EOL.</link>",
       "ltsVersionFeaturesNotice": "هل تريد الميزات الجديدة في وقت أقرب؟ استخدم <link>أحدث إصدار من Node.js</link> بدلًا من ذلك وجرب أحدث التحسينات!"
     },
     "eolAlert": {
@@ -121,7 +114,6 @@
     "eolTable": {
       "version": "الإصدار",
       "codename": "الاسم الرمزي",
-      "releaseDate": "تاريخ الإصدار",
       "lastUpdated": "آخر تحديث",
       "vulnerabilities": "الثغرات",
       "details": "التفاصيل",
@@ -134,7 +126,6 @@
       "npmVersion": "إصدار npm",
       "v8Version": "إصدار V8",
       "actions": {
-        "release": "الإصدار",
         "changelog": "سجل التغييرات",
         "docs": "التوثيق"
       }
@@ -150,8 +141,7 @@
     "common": {
       "alertBox": {
         "info": "معلومة",
-        "warning": "تحذير",
-        "danger": "خطر"
+        "warning": "تحذير"
       },
       "breadcrumbs": {
         "navigateToHome": "الانتقال إلى الصفحة الرئيسية"
@@ -179,12 +169,10 @@
     "metabar": {
       "lastUpdated": "آخر تحديث",
       "readingTime": "مدة القراءة",
-      "addedIn": "أضيف في",
       "author": "المؤلف",
       "authors": "المؤلفون",
       "contribute": "المساهمة",
       "contributeText": "عدّل هذه الصفحة",
-      "viewAs": "عرض كـ",
       "tableOfContents": "جدول المحتويات",
       "metadata": "بيانات المقال"
     },
@@ -196,25 +184,7 @@
     },
     "search": {
       "searchPlaceholder": "ابدأ الكتابة...",
-      "chatPlaceholder": "اسألني عن أي شيء",
       "noResultsFoundFor": "لم يتم العثور على نتائج لـ",
-      "suggestions": "اقتراحات",
-      "seeAll": "عرض الكل",
-      "addMore": "إضافة المزيد",
-      "clearChat": "مسح المحادثة",
-      "errorMessage": "حدث خطأ أثناء محاولة البحث. يرجى المحاولة مرة أخرى.",
-      "disclaimer": "قد تخطئ ملخصات AI. يرجى التحقق من المعلومات.",
-      "startYourSearch": "ابدأ البحث",
-      "initErrorSearch": "تعذّر تهيئة خدمة البحث",
-      "initErrorChat": "تعذّر تهيئة خدمة الدردشة",
-      "chatButtonLabel": "الحصول على ملخص AI",
-      "searchButtonLabel": "بحث",
-      "poweredBy": "مدعوم من",
-      "suggestionOne": "كيف أثبّت Node.js؟",
-      "suggestionTwo": "كيف أنشئ خادم HTTP؟",
-      "suggestionThree": "ترقية إصدار Node.js",
-      "scrollToBottom": "التمرير إلى الأسفل",
-      "closeChat": "إغلاق الدردشة",
       "keyboardShortcuts": {
         "select": "للاختيار",
         "navigate": "للتنقل",
@@ -229,14 +199,6 @@
     }
   },
   "layouts": {
-    "blogPost": {
-      "author": {
-        "byLine": "{author, select, null {} other {بواسطة {author}، }}"
-      }
-    },
-    "blogIndex": {
-      "categoryName": "{category, select, all {المدونة} other {منشورات مدونة {category}}}"
-    },
     "blog": {
       "title": "المدونة",
       "selectCategory": "التصنيفات",
@@ -245,7 +207,6 @@
         "announcements": "الإعلانات",
         "release": "الإصدارات",
         "vulnerability": "الثغرات",
-        "advisory-board": "المجلس الاستشاري",
         "community": "المجتمع",
         "feature": "ميزة",
         "module": "الوحدات",
@@ -278,7 +239,6 @@
         "platform": "المنصة",
         "os": "نظام التشغيل",
         "version": "الإصدار",
-        "installMethod": "طريقة التثبيت",
         "packageManager": "مدير الحزم",
         "unknown": "غير معروف",
         "platformGroups": {
@@ -288,7 +248,6 @@
       },
       "codeBox": {
         "unsupportedVersionWarning": "هذا الإصدار خارج مرحلة الصيانة. يرجى استخدام إصدار مدعوم حاليًا. <link>تعرّف على دعم EOL.</link>",
-        "ltsVersionFeaturesNotice": "هل تريد الميزات الجديدة في وقت أقرب؟ استخدم <link>أحدث إصدار من Node.js</link> بدلًا من ذلك وجرب أحدث التحسينات!",
         "communityPlatformInfo": "طرق التثبيت التي تعتمد على برمجيات المجتمع تدعمها الفرق المسؤولة عن صيانة تلك البرمجيات.",
         "externalSupportInfo": "إذا واجهت أي مشاكل، يرجى زيارة <link>موقع {platform}</link>",
         "noScriptDetected": "تتطلب هذه الصفحة JavaScript. يمكنك تنزيل Node.js بدون JavaScript عبر زيارة <link>صفحة أرشيف التنزيلات</link> مباشرة.",
@@ -300,8 +259,7 @@
           "choco": "Chocolatey هو مدير حزم لـ Windows.",
           "docker": "Docker هو منصة للحاويات.",
           "n": "\"n\" هو مدير إصدارات Node.js متعدد المنصات.",
-          "asdf": "\"asdf\" هو مدير إصدارات يعمل على عدة أنظمة تشغيل ويدعم عدة لغات برمجية.",
-          "volta": "\"Volta\" هو مدير إصدارات Node.js متعدد المنصات."
+          "asdf": "\"asdf\" هو مدير إصدارات يعمل على عدة أنظمة تشغيل ويدعم عدة لغات برمجية."
         }
       }
     },

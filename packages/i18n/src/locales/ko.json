@@ -5,7 +5,6 @@
         "links": {
           "trademarkPolicy": "상표 정책",
           "privacyPolicy": "개인정보 처리방침",
-          "versionSupport": "버전 지원",
           "codeOfConduct": "행동 강령",
           "security": "보안 정책"
         }
@@ -15,9 +14,7 @@
           "about": "소개",
           "download": "다운로드",
           "docs": "문서",
-          "guides": "가이드",
           "learn": "학습",
-          "security": "보안",
           "certification": "인증",
           "blog": "블로그",
           "contribute": "기여하기"
@@ -25,98 +22,6 @@
       }
     },
     "navigation": {
-      "learn": {
-        "gettingStarted": {
-          "links": {
-            "gettingStarted": "시작하기",
-            "introductionToNodejs": "Node.js 소개",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Node.js를 사용하기 위해 얼마나 많은 JavaScript를 알아야 할까요?",
-            "differencesBetweenNodejsAndTheBrowser": "Node.js와 브라우저 간의 차이",
-            "theV8JavascriptEngine": "V8 JavaScript 엔진",
-            "anIntroductionToTheNpmPackageManager": "npm 패키지 관리자 소개",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) 및 이후",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, 개발과 프로덕션의 차이",
-            "nodejsWithWebassembly": "Node.js와 WebAssembly",
-            "debugging": "Node.js 디버깅",
-            "profiling": "Node.js 애플리케이션 프로파일링",
-            "securityBestPractices": "보안 모범 사례"
-          }
-        },
-        "typescript": {
-          "links": {
-            "typescript": "TypeScript",
-            "introduction": "TypeScript 소개",
-            "transpile": "트랜스파일을 통한 TypeScript 코드 실행하기",
-            "run": "러너로 TypeScript 실행하기",
-            "runNatively": "네이티브에서 TypeScript 실행하기"
-          }
-        },
-        "asynchronousWork": {
-          "links": {
-            "asynchronousWork": "비동기 작업",
-            "asynchronousFlowControl": "비동기 흐름 제어",
-            "overviewOfBlockingVsNonBlocking": "블로킹과 논블로킹 개요",
-            "javascriptAsynchronousProgrammingAndCallbacks": "JavaScript 비동기 프로그래밍 및 콜백",
-            "discoverJavascriptTimers": "JavaScript 타이머 알아보기",
-            "eventLoopTimersAndNexttick": "Node.js 이벤트 루프",
-            "theNodejsEventEmitter": "Node.js 이벤트 처리기",
-            "understandingProcessnexttick": "process.nextTick() 이해하기",
-            "understandingSetimmediate": "setImmediate() 이해하기",
-            "dontBlockTheEventLoop": "이벤트 루프를 차단하지 마세요"
-          }
-        },
-        "manipulatingFiles": {
-          "links": {
-            "manipulatingFiles": "파일 조작하기",
-            "nodejsFileStats": "Node.js 파일 상태",
-            "nodejsFilePaths": "Node.js 파일 경로",
-            "workingWithFileDescriptorsInNodejs": "Node.js에서 파일 디스크립터 사용하기",
-            "readingFilesWithNodejs": "Node.js로 파일 읽기",
-            "writingFilesWithNodejs": "Node.js로 파일 쓰기",
-            "workingWithFoldersInNodejs": "Node.js에서 폴더 작업하기",
-            "workingWithDifferentFilesystems": "다양한 파일 시스템으로 작업하는 방법"
-          }
-        },
-        "commandLine": {
-          "links": {
-            "commandLine": "명령 줄",
-            "runNodejsScriptsFromTheCommandLine": "명령 줄에서 Node.js 스크립트 실행하기",
-            "howToReadEnvironmentVariablesFromNodejs": "Node.js에서 환경 변수 읽기",
-            "howToUseTheNodejsRepl": "Node.js REPL 사용법",
-            "outputToTheCommandLineUsingNodejs": "Node.js로 명령 줄에 출력하기",
-            "acceptInputFromTheCommandLineInNodejs": "Node.js에서 명령 줄 입력 받기"
-          }
-        },
-        "modules": {
-          "links": {
-            "modules": "모듈",
-            "publishingAPackage": "패키지 배포하기",
-            "publishingNodeApiModules": "Node-API 패키지 배포하기",
-            "anatomyOfAnHttpTransaction": "HTTP 트랜잭션의 구조",
-            "abiStability": "ABI 안정성",
-            "howToUseStreams": "스트림 사용하는 방법",
-            "backpressuringInStreams": "스트림의 배압(Backpressure)"
-          }
-        },
-        "diagnostics": {
-          "links": {
-            "diagnostics": "진단",
-            "userJourney": "사용자 여정",
-            "memory": "메모리",
-            "liveDebugging": "실시간 디버깅",
-            "poorPerformance": "성능 저하",
-            "flameGraphs": "프레임 그래프"
-          }
-        },
-        "testRunner": {
-          "links": {
-            "testRunner": "테스트 러너",
-            "introduction": "Node.js 테스트 러너 알아보기",
-            "usingTestRunner": "Node.js의 테스트 러너 사용하기",
-            "mocking": "테스트에서 모킹하기"
-          }
-        }
-      },
       "about": {
         "links": {
           "about": "Node.js 소개",
@@ -139,40 +44,21 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "nApiVersion": "N-API",
-      "npmVersion": "npm",
-      "codename": "코드명",
-      "releaseDate": "출시일",
-      "actions": {
-        "changelog": "변경 내역",
-        "releases": "릴리스",
-        "docs": "문서"
-      }
-    },
-    "pagination": {
-      "next": "다음",
-      "previous": "이전"
+      "codename": "코드명"
     },
     "common": {
       "alertBox": {
         "info": "정보",
-        "warning": "경고",
-        "danger": "위험"
+        "warning": "경고"
       },
       "breadcrumbs": {
         "navigateToHome": "홈으로 이동"
-      },
-      "crossLink": {
-        "previous": "이전",
-        "next": "다음"
       },
       "codebox": {
         "copy": "클립보드에 복사",
         "copied": "클립보드에 복사됨!"
       },
       "pagination": {
-        "prev": "이전",
-        "prevAriaLabel": "이전 페이지",
         "next": "다음",
         "nextAriaLabel": "다음 페이지",
         "defaultLabel": "페이지네이션",
@@ -183,26 +69,16 @@
       },
       "languageDropdown": {
         "label": "언어 선택"
-      },
-      "themeToggle": {
-        "label": "다크 모드 전환"
       }
     },
     "metabar": {
       "lastUpdated": "마지막 업데이트",
       "readingTime": "읽는 데 걸리는 시간",
-      "addedIn": "추가됨",
       "author": "저자",
       "authors": "저자들",
       "contribute": "기여하기",
       "contributeText": "이 페이지 수정",
-      "viewAs": "보기",
       "tableOfContents": "목차"
-    },
-    "search": {
-      "searchBox": {
-        "placeholder": "검색어를 입력하세요..."
-      }
     },
     "blog": {
       "blogHeader": {
@@ -212,14 +88,6 @@
     }
   },
   "layouts": {
-    "blogPost": {
-      "author": {
-        "byLine": "{author, select, null {} other {작성자: {author}, }}"
-      }
-    },
-    "blogIndex": {
-      "categoryName": "{category, select, all {블로그} other {{category} 블로그 게시물}}"
-    },
     "blog": {
       "title": "블로그",
       "selectCategory": "카테고리",
@@ -228,7 +96,6 @@
         "announcements": "공지사항",
         "release": "릴리스",
         "vulnerability": "취약점",
-        "advisory-board": "자문 위원회",
         "community": "커뮤니티",
         "feature": "기능",
         "module": "모듈",
@@ -260,7 +127,6 @@
         "platform": "플랫폼",
         "os": "운영 체제",
         "version": "버전",
-        "installMethod": "설치 방법",
         "packageManager": "패키지 관리자",
         "unknown": "알 수 없음",
         "platformGroups": {

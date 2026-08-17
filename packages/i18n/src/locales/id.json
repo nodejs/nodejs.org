@@ -3,7 +3,6 @@
     "containers": {
       "footer": {
         "links": {
-          "openJSFoundation": "OpenJS Foundation",
           "trademarkPolicy": "Kebijakan Merek Dagang",
           "privacyPolicy": "Kebijakan Privasi",
           "codeOfConduct": "Pedoman Perilaku",
@@ -22,9 +21,7 @@
           "about": "Tentang",
           "download": "Unduh",
           "docs": "Dokumentasi",
-          "guides": "Panduan",
           "learn": "Pelajari",
-          "security": "Keamanan",
           "certification": "Sertifikasi",
           "blog": "Artikel",
           "contribute": "Kontribusi"
@@ -32,110 +29,6 @@
       }
     },
     "navigation": {
-      "learn": {
-        "gettingStarted": {
-          "links": {
-            "gettingStarted": "Memulai",
-            "introductionToNodejs": "Pengantar Node.js",
-            "howMuchJavascriptDoYouNeedToKnowToUseNodejs": "Seberapa banyak JavaScript yang perlu kamu tahu untuk menggunakan Node.js?",
-            "differencesBetweenNodejsAndTheBrowser": "Perbedaan Node.js dengan Browser",
-            "theV8JavascriptEngine": "V8 JavaScript Engine",
-            "anIntroductionToTheNpmPackageManager": "Perkenalan package manager npm",
-            "ecmascript2015Es6AndBeyond": "ECMAScript 2015 (ES6) dan seterusnya",
-            "debugging": "Men-debug Node.js",
-            "fetch": "Pengambilan data dengan Node.js",
-            "websocket": "Klien WebSocket dengan Node.js",
-            "nodejsTheDifferenceBetweenDevelopmentAndProduction": "Node.js, perbedaan antara development dan production",
-            "profiling": "Profilisasi Aplikasi Node.js",
-            "nodejsWithWebassembly": "Node.js dengan WebAssembly",
-            "securityBestPractices": "Praktik Keamanan Terbaik",
-            "userlandMigrations": "Pengenalan Migrasi di Userland"
-          }
-        },
-        "commandLine": {
-          "links": {
-            "commandLine": "Baris Perintah",
-            "runNodejsScriptsFromTheCommandLine": "Menjalankan skrip Node.js dari baris perintah",
-            "howToUseTheNodejsRepl": "Cara menggunakan Node.js REPL",
-            "outputToTheCommandLineUsingNodejs": "Output ke baris perintah menggunakan Node.js",
-            "acceptInputFromTheCommandLineInNodejs": "Menerima input dari baris perintah di Node.js",
-            "howToReadEnvironmentVariablesFromNodejs": "Membaca environment variable dari Node.js"
-          }
-        },
-        "http": {
-          "links": {
-            "http": "HTTP",
-            "anatomyOfAnHttpTransaction": "Anatomi Transaksi HTTP"
-          }
-        },
-        "manipulatingFiles": {
-          "links": {
-            "manipulatingFiles": "Manipulasi File",
-            "nodejsFileStats": "Statistik berkas Node.js",
-            "nodejsFilePaths": "Path Berkas Node.js",
-            "readingFilesWithNodejs": "Membaca file dengan Node.js",
-            "writingFilesWithNodejs": "Menulis file dengan Node.js",
-            "workingWithFileDescriptorsInNodejs": "Bekerja dengan file descriptors di Node.js",
-            "workingWithFoldersInNodejs": "Bekerja dengan folder di Node.js",
-            "workingWithDifferentFilesystems": "Bekerja dengan Sistem file yang berbeda"
-          }
-        },
-        "asynchronousWork": {
-          "links": {
-            "asynchronousWork": "Pekerjaan Asinkron",
-            "javascriptAsynchronousProgrammingAndCallbacks": "Pemrograman dan Panggilan Balik Asinkron JavaScript",
-            "asynchronousFlowControl": "Pengendalian alur asinkron",
-            "discoverPromisesInNodejs": "Memahami Promise di Node.js",
-            "discoverJavascriptTimers": "Jelajahi Pengatur Waktu JavaScript",
-            "overviewOfBlockingVsNonBlocking": "Ringkasan Pemblokiran vs Non-Pemblokiran",
-            "eventLoopTimersAndNexttick": "Node.js Event Loop",
-            "theNodejsEventEmitter": "Node.js Event Emitter",
-            "understandingProcessnexttick": "Memahami process.nextTick()",
-            "understandingSetimmediate": "Memahami setImmediate()",
-            "dontBlockTheEventLoop": "Jangan blokir Event Loop"
-          }
-        },
-        "typescript": {
-          "links": {
-            "typescript": "TypeScript",
-            "introduction": "Pengantar TypeScript",
-            "runNatively": "Menjalankan TypeScript Secara Native",
-            "transpile": "Menjalankan kode TypeScript menggunakan transpilasi",
-            "run": "Menjalankan TypeScript dengan runner",
-            "publishingTSPackage": "Menerbitkan package TypeScript"
-          }
-        },
-        "modules": {
-          "links": {
-            "modules": "Module",
-            "howToUseStreams": "Cara menggunakan stream",
-            "backpressuringInStreams": "Backpressuring dalam aliran (streams)",
-            "publishingAPackage": "Menerbitkan Paket",
-            "publishingNodeApiModules": "Cara mempublikasikan paket Node-API",
-            "abiStability": "Stabilitas ABI"
-          }
-        },
-        "diagnostics": {
-          "links": {
-            "diagnostics": "Diagnostik",
-            "userJourney": "Jurnal Pengguna",
-            "memory": "Memori",
-            "understandingAndTuningMemory": "Pemahaman dan Penyetelan Memori",
-            "liveDebugging": "Pemecahan Masalah Langsung",
-            "poorPerformance": "Performa Buruk",
-            "flameGraphs": "Flame Graph"
-          }
-        },
-        "testRunner": {
-          "links": {
-            "testRunner": "Test Runner",
-            "introduction": "Jelajahi Node.js test runner",
-            "usingTestRunner": "Menggunakan Node.js's test runner",
-            "mocking": "Mengejek dalam pengujian",
-            "collectingCodeCoverage": "Pengumpulan cakupan kode di Node.js"
-          }
-        }
-      },
       "about": {
         "links": {
           "about": "Tentang Node.js",
@@ -160,9 +53,7 @@
     },
     "downloadReleasesTable": {
       "version": "Node.js",
-      "nApiVersion": "N-API",
       "codename": "Kode nama",
-      "releaseDate": "Dirilis pada",
       "firstReleased": "Perilisan Pertama",
       "lastUpdated": "Pembaruan Terakhir",
       "status": "Status",
@@ -176,10 +67,7 @@
     "releaseModal": {
       "title": "Node.js v{version} ({codename})",
       "titleWithoutCodename": "Node.js v{version}",
-      "overview": "Ringkasan",
       "minorVersions": "Versi minor",
-      "releaseAnnouncement": "Pengumuman Perilisan",
-      "unsupportedVersionWarning": "Versi ini sudah tidak dalam tahap pemeliharaan. Harap gunakan versi yang didukung. <link>Pahami dukungan EOL.</link>",
       "ltsVersionFeaturesNotice": "Ingin mencoba fitur baru lebih cepat? Dapatkan <link>versi Node.js terbaru</link> dan coba peningkatan terbarunya!"
     },
     "eolAlert": {
@@ -211,7 +99,6 @@
     "eolTable": {
       "version": "Versi",
       "codename": "Kode nama",
-      "releaseDate": "Dirilis pada",
       "lastUpdated": "Pembaruan Terakhir",
       "vulnerabilities": "Kerentanan",
       "details": "Rincian"
@@ -223,7 +110,6 @@
       "npmVersion": "versi npm",
       "v8Version": "V8 versi",
       "actions": {
-        "release": "Rilis",
         "changelog": "Log Perubahan",
         "docs": "Dokumentasi"
       }
@@ -236,30 +122,19 @@
       "npmVersion": "versi npm",
       "v8Version": "V8 versi"
     },
-    "pagination": {
-      "next": "Berikutnya",
-      "previous": "Sebelumnya"
-    },
     "common": {
       "alertBox": {
         "info": "Info",
-        "warning": "Peringatan",
-        "danger": "Bahaya"
+        "warning": "Peringatan"
       },
       "breadcrumbs": {
         "navigateToHome": "Navigasi ke Beranda"
-      },
-      "crossLink": {
-        "previous": "Sebelumnya",
-        "next": "Berikutnya"
       },
       "codebox": {
         "copy": "Salin ke papan klip",
         "copied": "Disalin ke papan klip!"
       },
       "pagination": {
-        "prev": "Sebelumnya",
-        "prevAriaLabel": "Halaman Sebelumnya",
         "next": "Berikutnya",
         "nextAriaLabel": "Halaman selanjutnya",
         "defaultLabel": "Penyusunan Halaman",
@@ -270,44 +145,20 @@
       },
       "languageDropdown": {
         "label": "Pilih Bahasa"
-      },
-      "themeToggle": {
-        "light": "Beralih ke Mode Terang",
-        "dark": "Beralih ke Mode Gelap"
       }
     },
     "metabar": {
       "lastUpdated": "Pembaruan Terakhir",
       "readingTime": "Waktu Membaca",
-      "addedIn": "Ditambahkan pada",
       "author": "Penulis",
       "authors": "Penulis",
       "contribute": "Kontribusi",
       "contributeText": "Sunting halaman ini",
-      "viewAs": "Tampilkan sebagai",
       "tableOfContents": "Daftar isi"
     },
     "search": {
       "searchPlaceholder": "Mulai mengetik...",
-      "chatPlaceholder": "Tanya saya apa saja",
       "noResultsFoundFor": "Tidak ada hasil ditemukan untuk",
-      "suggestions": "Saran",
-      "seeAll": "Lihat semua",
-      "addMore": "Tambahkan lebih banyak",
-      "clearChat": "Bersihkan obrolan",
-      "errorMessage": "Terjadi kesalahan saat melakukan pencarian. Silakan coba lagi.",
-      "disclaimer": "Ringkasan berbasis AI dapat mengandung kesalahan. Harap verifikasi informasi tersebut.",
-      "startYourSearch": "Mulai pencarian anda",
-      "initErrorSearch": "Tidak dapat memulai layanan pencarian",
-      "initErrorChat": "Tidak dapat memulai layanan obrolan",
-      "chatButtonLabel": "Dapatkan ringkasan AI",
-      "searchButtonLabel": "Pencarian",
-      "poweredBy": "Diberdayakan oleh",
-      "suggestionOne": "Instruksi Pemasangan Node.js?",
-      "suggestionTwo": "Bagaimana cara membuat server HTTP?",
-      "suggestionThree": "Meningkatkan versi Node.js",
-      "scrollToBottom": "Gulir ke bawah",
-      "closeChat": "Tutup obrolan",
       "keyboardShortcuts": {
         "select": "memilih",
         "navigate": "untuk menavigasi",
@@ -322,14 +173,6 @@
     }
   },
   "layouts": {
-    "blogPost": {
-      "author": {
-        "byLine": "{author, select, null {} other{Oleh {author}, }}"
-      }
-    },
-    "blogIndex": {
-      "categoryName": "{category, select, all {Artikel} other {{category} Postingan Artikel}}"
-    },
     "blog": {
       "title": "Artikel",
       "selectCategory": "Kategori",
@@ -338,7 +181,6 @@
         "announcements": "Pengumuman",
         "release": "Rilis",
         "vulnerability": "Kerentanan",
-        "advisory-board": "Dewan Penasihat",
         "community": "Komunitas",
         "feature": "Fitur",
         "module": "Modul",
@@ -371,7 +213,6 @@
         "platform": "Platform",
         "os": "Sistem Operasi",
         "version": "Versi",
-        "installMethod": "Cara pasang",
         "packageManager": "Manajer paket",
         "unknown": "Tak diketahui",
         "platformGroups": {
@@ -381,7 +222,6 @@
       },
       "codeBox": {
         "unsupportedVersionWarning": "Versi ini sudah tidak dalam tahap pemeliharaan. Harap gunakan versi yang saat ini didukung. <link>Pahami dukungan EOL.</link>",
-        "ltsVersionFeaturesNotice": "Ingin mencoba fitur baru lebih cepat? Dapatkan <link>versi Node.js terbaru</link> dan coba peningkatan terbarunya!",
         "communityPlatformInfo": "Metode instalasi yang melibatkan perangkat lunak komunitas didukung oleh tim yang memelihara perangkat lunak tersebut.",
         "externalSupportInfo": "Jika kamu mengalami masalah, silakan kunjungi situs web <link>{platform}</link>",
         "noScriptDetected": "Halaman ini memerlukan JavaScript.\nKamu tetap dapat mengunduh Node.js tanpa mengaktifkan JavaScript dengan langsung mengunjungi <link>halaman arsip unduhan</link>.",
@@ -392,8 +232,7 @@
           "brew": "Homebrew adalah manajer paket untuk macOS dan Linux.",
           "choco": "Chocolatey adalah manajer paket untuk Windows.",
           "docker": "Docker adalah platform kontainerisasi.",
-          "n": "\"n\" adalah manajer versi Node.js lintas-platform.",
-          "volta": "\"Volta\" adalah manajer versi Node.js lintas-platform."
+          "n": "\"n\" adalah manajer versi Node.js lintas-platform."
         }
       }
     },
