@@ -37,12 +37,12 @@
   },
   "websiteBadges": {
     "index": {
-      "startDate": "2025-10-30T00:00:00.000Z",
-      "endDate": "2025-11-15T00:00:00.000Z",
+      "startDate": "2026-08-17T00:00:00.000Z",
+      "endDate": "2026-09-18T00:00:00.000Z",
       "kind": "default",
-      "title": "Discover",
-      "text": "New migration guides",
-      "link": "https://nodejs.org/en/blog/migrations"
+      "title": "Be Heard",
+      "text": "Take the Node.js User Survey 2026",
+      "link": "https://linuxfoundation.surveymonkey.com/r/nodejs-users-2026"
     }
   }
 }
