@@ -43,10 +43,10 @@ export const generateStaticParams = async () => {
 // finally it returns (if the locale and route are valid) the React Component with the relevant context
 // and attached context providers for rendering the current page
 const getPage: FC<PageParams> = async props => {
-  const { version, locale: routeLocale } = await props.params;
+  const { version } = await props.params;
 
   // Gets the current full pathname for a given path
-  const [locale, pathname] = basePage.getLocaleAndPath(version, routeLocale);
+  const [locale, pathname] = await basePage.getLocaleAndPath(version);
 
   if (version === 'current') {
     const releaseData = await provideReleaseData();

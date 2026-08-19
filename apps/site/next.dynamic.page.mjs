@@ -6,7 +6,7 @@ import {
   availableLocaleCodes,
 } from '@node-core/website-i18n';
 import { notFound, redirect } from 'next/navigation';
-import { setRequestLocale } from 'next-intl/server';
+import { locale as getRootLocale } from 'next/root-params';
 
 import { setClientContext } from '#site/client-context';
 import WithLayout from '#site/components/withLayout';
@@ -28,11 +28,13 @@ export const generateViewport = () => ({ ...PAGE_VIEWPORT });
  *
  * @see https://nextjs.org/docs/app/api-reference/functions/generate-metadata
  *
- * @param {{ params: Promise<{ path: Array<string>; locale: string }>, prefix?: string }} props
+ * @param {{ params: Promise<{ path: Array<string> }>, prefix?: string }} props
  * @returns {Promise<import('next').Metadata>} the metadata for the page
  */
 export const generateMetadata = async ({ params, prefix }) => {
-  const { path = [], locale = defaultLocale.code } = await params;
+  const { path = [] } = await params;
+
+  const locale = (await getRootLocale()) ?? defaultLocale.code;
 
   const pathname = dynamicRouter.getPathname(path);
 
@@ -46,15 +48,16 @@ export const generateMetadata = async ({ params, prefix }) => {
 /**
  * This method is used for retrieving the current locale and pathname from the request
  *
+ * The locale comes from the `[locale]` root param, so pages don't have to read it
+ * from their own `params` and hand it over.
+ *
  * @param {string|Array<string>} path
- * @param {string} locale
- * @returns {[string, string]} the locale and pathname for the request
+ * @returns {Promise<[string, string]>} the locale and pathname for the request
  */
-export const getLocaleAndPath = (path = [], locale = defaultLocale.code) => {
-  if (!availableLocaleCodes.includes(locale)) {
-    // Forces the current locale to be the Default Locale
-    setRequestLocale(defaultLocale.code);
+export const getLocaleAndPath = async (path = []) => {
+  const locale = (await getRootLocale()) ?? defaultLocale.code;
 
+  if (!availableLocaleCodes.includes(locale)) {
     if (!allLocaleCodes.includes(locale)) {
       // when the locale is not listed in the locales, return NotFound
       return notFound();
@@ -65,9 +68,6 @@ export const getLocaleAndPath = (path = [], locale = defaultLocale.code) => {
 
     return redirect(`/${defaultLocale.code}/${pathname}`);
   }
-
-  // Configures the current Locale to be the given Locale of the Request
-  setRequestLocale(locale);
 
   // Gets the current full pathname for a given path
   return [locale, dynamicRouter.getPathname(path)];
