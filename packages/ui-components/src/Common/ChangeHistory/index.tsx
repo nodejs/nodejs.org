@@ -2,13 +2,14 @@ import { ChevronDownIcon, ClockIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 
 import type { LinkLike } from '#ui/types';
-import type { FC, ComponentProps } from 'react';
+import type { FC, ComponentProps, ReactNode } from 'react';
 
 import styles from './index.module.css';
 
 export type HistoryChange = {
   versions: Array<string>;
   label: string;
+  content?: ReactNode;
   url?: string;
 };
 
@@ -51,7 +52,9 @@ const ChangeHistory: FC<ChangeHistoryProps> = ({
                 aria-label={`${change.label}: ${change.versions.join(', ')}`}
                 href={change.url}
               >
-                <div className={styles.dropdownLabel}>{change.label}</div>
+                <div className={styles.dropdownLabel}>
+                  {change.content ?? change.label}
+                </div>
                 <div className={styles.dropdownVersions}>
                   {change.versions.join(', ')}
                 </div>
