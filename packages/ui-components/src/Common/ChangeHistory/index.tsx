@@ -9,7 +9,7 @@ import styles from './index.module.css';
 export type HistoryChange = {
   versions: Array<string>;
   label: string;
-  content: ReactNode;
+  content?: ReactNode;
   url?: string;
 };
 
