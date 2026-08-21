@@ -14,11 +14,14 @@ describe('useScrollToElement', () => {
     navigationState = {};
 
     mockElement = {
+      clientHeight: 400,
       scrollTop: 0,
       scrollLeft: 0,
       scroll: mock.fn(),
       addEventListener: mock.fn(),
       removeEventListener: mock.fn(),
+      getBoundingClientRect: mock.fn(() => ({ top: 0 })),
+      querySelectorAll: mock.fn(() => []),
     };
 
     mockRef = { current: mockElement };
@@ -85,6 +88,59 @@ describe('useScrollToElement', () => {
     assert.deepEqual(mockElement.scroll.mock.calls[0].arguments, [
       { top: 1500, behavior: 'auto' },
     ]);
+  });
+
+  it('should center the active item when it is outside the viewport', () => {
+    const wrapper = ({ children }) => (
+      <NavigationStateContext.Provider value={navigationState}>
+        {children}
+      </NavigationStateContext.Provider>
+    );
+
+    const activeElement = {
+      origin: window.location.origin,
+      pathname: '/learn/diagnostics/memory',
+      offsetHeight: 40,
+      getBoundingClientRect: mock.fn(() => ({ top: 900 })),
+    };
+
+    mockElement.querySelectorAll = mock.fn(() => [activeElement]);
+
+    renderHook(
+      () =>
+        useScrollToElement('sidebar', mockRef, '/learn/diagnostics/memory'),
+      { wrapper }
+    );
+
+    assert.equal(mockElement.scroll.mock.callCount(), 1);
+    assert.deepEqual(mockElement.scroll.mock.calls[0].arguments, [
+      { top: 720, behavior: 'auto' },
+    ]);
+  });
+
+  it('should not scroll when the active item is already visible', () => {
+    const wrapper = ({ children }) => (
+      <NavigationStateContext.Provider value={navigationState}>
+        {children}
+      </NavigationStateContext.Provider>
+    );
+
+    const activeElement = {
+      origin: window.location.origin,
+      pathname: window.location.pathname,
+      offsetHeight: 40,
+      getBoundingClientRect: mock.fn(() => ({ top: 100 })),
+    };
+
+    mockElement.querySelectorAll = mock.fn(() => [activeElement]);
+
+    renderHook(
+      () =>
+        useScrollToElement('sidebar', mockRef, '/learn/diagnostics/memory'),
+      { wrapper }
+    );
+
+    assert.equal(mockElement.scroll.mock.callCount(), 0);
   });
 
   it('should persist and restore scroll position across navigation', async () => {
