@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
 import {
+  filterDropdownItems,
   parseCompat,
   nextItem,
   OPERATING_SYSTEMS,
@@ -131,6 +132,37 @@ describe('parseCompat', () => {
       });
       assert.ok(result[0].disabled);
     });
+  });
+});
+
+describe('filterDropdownItems', () => {
+  const releaseContext = {
+    os: 'LINUX',
+    installMethod: 'NVM',
+    platform: 'x64',
+    version: 'v24.0.0',
+    release: { status: 'LTS' },
+  };
+
+  it('should remove incompatible items', () => {
+    const result = filterDropdownItems(INSTALL_METHODS, releaseContext);
+
+    assert.ok(result.some(({ value }) => value === 'NVM'));
+    assert.ok(!result.some(({ value }) => value === 'CHOCO'));
+  });
+
+  it('should remove explicitly excluded items', () => {
+    const compatibleItems = filterDropdownItems(
+      OPERATING_SYSTEMS,
+      releaseContext
+    );
+    const result = filterDropdownItems(OPERATING_SYSTEMS, releaseContext, [
+      'AIX',
+    ]);
+
+    assert.ok(compatibleItems.some(({ value }) => value === 'AIX'));
+    assert.ok(result.some(({ value }) => value === 'LINUX'));
+    assert.ok(!result.some(({ value }) => value === 'AIX'));
   });
 });
 
