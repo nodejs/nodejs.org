@@ -1,5 +1,15 @@
 # @node-core/website-i18n
 
+## 1.1.35
+
+### Patch Changes
+
+- [#9104](https://github.com/nodejs/nodejs.org/pull/9104) [`f4d5761`](https://github.com/nodejs/nodejs.org/commit/f4d5761e08de40eff6eb5438f91aa11bc7ac722d) Thanks [@nodejs-crowdin](https://github.com/nodejs-crowdin)! - Update translations from Crowdin.
+
+- [#9106](https://github.com/nodejs/nodejs.org/pull/9106) [`707dd00`](https://github.com/nodejs/nodejs.org/commit/707dd009c36b9b9b58f27e7ba386628c27b3c525) Thanks [@amannn](https://github.com/amannn)! - Remove unused and superfluous message keys from all locales, and restore
+  dropped ICU arguments in the Spanish EOL warning and the Traditional Chinese
+  package-manager notice, as reported by `eloqnt lint`.
+
 ## 1.1.34
 
 ### Patch Changes
