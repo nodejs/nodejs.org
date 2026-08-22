@@ -1,0 +1,51 @@
+# Security Notes
+# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
+# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
+# REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
+# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+
+name: Pull Request Age Gate
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - labeled
+      - unlabeled
+  schedule:
+    # Hourly, so that open Pull Requests flip from red to green on their own
+    # once enough wall-clock time has passed, without needing a new commit
+    - cron: '0 * * * *'
+
+permissions: {}
+
+concurrency:
+  # Scheduled runs have no Pull Request in context and evaluate every open Pull
+  # Request, so they are keyed by run id to avoid cancelling one another
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  age-gate:
+    name: Age Gate
+    runs-on: ubuntu-latest
+    permissions:
+      # Required by `bmuenzenmeyer/pr-age-gate` to create/update the check run
+      checks: write
+      # Required by `bmuenzenmeyer/pr-age-gate` to read Pull Request metadata
+      pull-requests: read
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@bf7454d06d71f1098171f2acdf0cd4708d7b5920 # v2.20.0
+        with:
+          egress-policy: audit
+
+      - name: Check Pull Request Age
+        uses: bmuenzenmeyer/pr-age-gate@d4243cf80a6386863234c6fc6be01f19bf4a6bfc # v0.2.3
+        with:
+          min-hours: '48'
+          bypass-labels: fast-track
