@@ -1,5 +1,11 @@
 # @node-core/rehype-shiki
 
+## 1.5.0
+
+### Minor Changes
+
+- [#9102](https://github.com/nodejs/nodejs.org/pull/9102) [`ddc4de5`](https://github.com/nodejs/nodejs.org/commit/ddc4de58490a366c1c8baa78f5fc262d649dca4d) Thanks [@avivkeller](https://github.com/avivkeller)! - Add support for all Shiki languages when the `minimal` preset is not selected.
+
 ## 1.4.3
 
 ### Patch Changes

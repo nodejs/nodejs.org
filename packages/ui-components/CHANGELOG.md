@@ -1,5 +1,16 @@
 # @node-core/ui-components
 
+## 1.7.6
+
+### Patch Changes
+
+- [#9097](https://github.com/nodejs/nodejs.org/pull/9097) [`27ec25e`](https://github.com/nodejs/nodejs.org/commit/27ec25e2dcac8074e60443e6f8b2a73131e4b699) Thanks [@avivkeller](https://github.com/avivkeller)! - Resolve the `#ui/*` import alias to the compiled output by default, so consumers
+  of the published package no longer need to opt into a bundler-specific
+  `rolldown` resolution condition. The uncompiled sources stay reachable through
+  the new `source` condition, which this repository's own tooling opts into.
+
+- [#9115](https://github.com/nodejs/nodejs.org/pull/9115) [`e5ec412`](https://github.com/nodejs/nodejs.org/commit/e5ec412ed2c07f4543fdc4c838fca9b212c0e2e4) Thanks [@avivkeller](https://github.com/avivkeller)! - Allow the ChangeHistory component to accept a ReactNode as it's content
+
 ## 1.7.5
 
 ### Patch Changes
