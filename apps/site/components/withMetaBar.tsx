@@ -5,12 +5,15 @@ import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
 import { defaultLocale } from '@node-core/website-i18n';
 import { useFormatter, useLocale, useTranslations } from 'next-intl';
 
+import CollapsedSidebarRail from '#site/components/Common/CollapsedSidebarRail';
+import SidebarToggleButton from '#site/components/Common/SidebarToggleButton';
 import Link from '#site/components/Link';
 import WithAvatarGroup from '#site/components/withAvatarGroup';
 import useClientContext from '#site/hooks/useClientContext';
 import useMediaQuery from '#site/hooks/useMediaQuery';
 import { DEFAULT_DATE_FORMAT } from '#site/next.calendar.constants.mjs';
 import { TRANSLATION_URL } from '#site/next.constants.mjs';
+import { useSidebarState } from '#site/providers/sidebarStateProvider';
 import { getGitHubBlobUrl } from '#site/util/github';
 
 import type { FC } from 'react';
@@ -34,11 +37,47 @@ const WithMetaBar: FC = () => {
 
   const t = useTranslations();
   const locale = useLocale();
+  const { isRightSidebarCollapsed, toggleRightSidebar } = useSidebarState();
 
   // Since we cannot show the same number of avatars in Mobile / Tablet
   // resolution as we do on desktop and there is overflow, we are adjusting
   // the number of avatars manually for the resolutions below
   const isSmallerThanDesktop = useMediaQuery('(max-width: 1280px)');
+
+  // Check if there's any content to show in the metabar
+  const hasContent =
+    lastUpdated ||
+    readingTimeText ||
+    usernames.length > 0 ||
+    headings.length > 0;
+
+  // Always show collapsed rail when right sidebar is collapsed
+  if (isRightSidebarCollapsed) {
+    return (
+      <CollapsedSidebarRail side="right">
+        <SidebarToggleButton
+          side="right"
+          isCollapsed={isRightSidebarCollapsed}
+          onToggle={toggleRightSidebar}
+        />
+      </CollapsedSidebarRail>
+    );
+  }
+
+  // If no content, show empty metabar area with toggle button
+  if (!hasContent) {
+    return (
+      <div className="flex w-full flex-col border-l border-neutral-200 bg-white dark:border-neutral-900 dark:bg-neutral-950">
+        <div className="mb-6 flex justify-end pt-6 pr-2">
+          <SidebarToggleButton
+            side="right"
+            isCollapsed={isRightSidebarCollapsed}
+            onToggle={toggleRightSidebar}
+          />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <MetaBar
@@ -74,7 +113,15 @@ const WithMetaBar: FC = () => {
         ),
       }}
       headings={{ items: headings }}
-    />
+    >
+      <div className="mb-6 flex justify-end pr-2">
+        <SidebarToggleButton
+          side="right"
+          isCollapsed={isRightSidebarCollapsed}
+          onToggle={toggleRightSidebar}
+        />
+      </div>
+    </MetaBar>
   );
 };
 

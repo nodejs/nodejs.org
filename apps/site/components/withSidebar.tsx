@@ -4,11 +4,14 @@ import Sidebar from '@node-core/ui-components/Containers/Sidebar';
 import { useTranslations } from 'next-intl';
 import { useRef } from 'react';
 
+import CollapsedSidebarRail from '#site/components/Common/CollapsedSidebarRail';
+import SidebarToggleButton from '#site/components/Common/SidebarToggleButton';
 import Link from '#site/components/Link';
 import useClientContext from '#site/hooks/useClientContext';
 import useScrollToElement from '#site/hooks/useScrollToElement';
 import useSiteNavigation from '#site/hooks/useSiteNavigation';
 import { useRouter, usePathname } from '#site/navigation.mjs';
+import { useSidebarState } from '#site/providers/sidebarStateProvider';
 
 import type { FormattedMessage, NavigationKeys } from '#site/types';
 import type { RichTranslationValues } from 'next-intl';
@@ -48,6 +51,7 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
   const { frontmatter } = useClientContext();
   const sidebarRef = useRef<HTMLElement>(null);
   const sideNavigation = getSideNavigation(navKeys, context);
+  const { isLeftSidebarCollapsed, toggleLeftSidebar } = useSidebarState();
 
   // Preserve sidebar scroll position across navigations
   useScrollToElement('sidebar', sidebarRef);
@@ -62,6 +66,37 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
       })
     );
 
+  const hasNavigationContent =
+    mappedSidebarItems.length > 0 && navKeys.length > 0;
+
+  // Always show collapsed rail when sidebar is collapsed
+  if (isLeftSidebarCollapsed) {
+    return (
+      <CollapsedSidebarRail side="left">
+        <SidebarToggleButton
+          side="left"
+          isCollapsed={isLeftSidebarCollapsed}
+          onToggle={toggleLeftSidebar}
+        />
+      </CollapsedSidebarRail>
+    );
+  }
+
+  // If no navigation content, show empty sidebar with toggle button
+  if (!hasNavigationContent) {
+    return (
+      <div className="flex w-full flex-col border-r border-neutral-200 bg-white dark:border-neutral-900 dark:bg-neutral-950">
+        <div className="flex justify-end pt-6 pr-3">
+          <SidebarToggleButton
+            side="left"
+            isCollapsed={isLeftSidebarCollapsed}
+            onToggle={toggleLeftSidebar}
+          />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <Sidebar
       ref={sidebarRef}
@@ -72,7 +107,15 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
       onSelect={push}
       as={Link}
       {...props}
-    />
+    >
+      <div className="mb-6 flex justify-end pr-2">
+        <SidebarToggleButton
+          side="left"
+          isCollapsed={isLeftSidebarCollapsed}
+          onToggle={toggleLeftSidebar}
+        />
+      </div>
+    </Sidebar>
   );
 };
 
