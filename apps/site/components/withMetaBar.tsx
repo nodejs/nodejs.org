@@ -18,7 +18,9 @@ import { getGitHubBlobUrl } from '#site/util/github';
 
 import type { FC } from 'react';
 
-const WithMetaBar: FC = () => {
+const WithMetaBar: FC<{ disableToggle?: boolean }> = ({
+  disableToggle = false,
+}) => {
   const { headings, readingTime, frontmatter, filename } = useClientContext();
   const formatter = useFormatter();
   const lastUpdated = frontmatter.date
@@ -51,13 +53,13 @@ const WithMetaBar: FC = () => {
     usernames.length > 0 ||
     headings.length > 0;
 
-  // If no content, don't render metabar or controls at all
+  // If no content, render empty div to preserve grid structure
   if (!hasContent) {
-    return null;
+    return <div />;
   }
 
-  // Show collapsed rail when right sidebar is collapsed (only if there's content)
-  if (isRightSidebarCollapsed) {
+  // Show collapsed rail when right sidebar is collapsed and toggle is enabled
+  if (isRightSidebarCollapsed && !disableToggle) {
     return (
       <CollapsedSidebarRail side="right">
         <SidebarToggleButton
@@ -104,13 +106,15 @@ const WithMetaBar: FC = () => {
       }}
       headings={{ items: headings }}
     >
-      <div className="mb-6 flex justify-end pr-2">
-        <SidebarToggleButton
-          side="right"
-          isCollapsed={isRightSidebarCollapsed}
-          onToggle={toggleRightSidebar}
-        />
-      </div>
+      {!disableToggle && (
+        <div className="mb-1 flex justify-end pr-2">
+          <SidebarToggleButton
+            side="right"
+            isCollapsed={isRightSidebarCollapsed}
+            onToggle={toggleRightSidebar}
+          />
+        </div>
+      )}
     </MetaBar>
   );
 };

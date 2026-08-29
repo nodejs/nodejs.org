@@ -20,6 +20,7 @@ import type { FC } from 'react';
 type WithSidebarProps = {
   navKeys: Array<NavigationKeys>;
   context?: Record<string, RichTranslationValues>;
+  disableToggle?: boolean;
 };
 
 type MappedItem = {
@@ -43,7 +44,12 @@ const mapItem = ([, item]: [string, MappedItem]): SidebarMappedEntry => ({
   items: item.items ? item.items.map(mapItem) : [],
 });
 
-const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
+const WithSidebar: FC<WithSidebarProps> = ({
+  navKeys,
+  context,
+  disableToggle = false,
+  ...props
+}) => {
   const { getSideNavigation } = useSiteNavigation();
   const pathname = usePathname()!;
   const t = useTranslations();
@@ -69,13 +75,13 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
   const hasNavigationContent =
     mappedSidebarItems.length > 0 && navKeys.length > 0;
 
-  // If no navigation content, don't render sidebar or controls at all
+  // If no navigation content, render empty div to preserve grid structure
   if (!hasNavigationContent) {
-    return null;
+    return <div />;
   }
 
-  // Show collapsed rail when sidebar is collapsed (only if there's content)
-  if (isLeftSidebarCollapsed) {
+  // Show collapsed rail when sidebar is collapsed and toggle is enabled
+  if (isLeftSidebarCollapsed && !disableToggle) {
     return (
       <CollapsedSidebarRail side="left">
         <SidebarToggleButton
@@ -98,13 +104,15 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
       as={Link}
       {...props}
     >
-      <div className="mb-6 flex justify-end pr-2">
-        <SidebarToggleButton
-          side="left"
-          isCollapsed={isLeftSidebarCollapsed}
-          onToggle={toggleLeftSidebar}
-        />
-      </div>
+      {!disableToggle && (
+        <div className="mb-1 flex justify-end pr-2">
+          <SidebarToggleButton
+            side="left"
+            isCollapsed={isLeftSidebarCollapsed}
+            onToggle={toggleLeftSidebar}
+          />
+        </div>
+      )}
     </Sidebar>
   );
 };

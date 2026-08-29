@@ -5,6 +5,8 @@ import { useTranslations } from 'next-intl';
 
 import type { FC, ButtonHTMLAttributes } from 'react';
 
+import styles from './SidebarToggleButton.module.css';
+
 type SidebarToggleButtonProps = {
   side: 'left' | 'right';
   isCollapsed: boolean;
@@ -48,7 +50,7 @@ const SidebarToggleButton: FC<SidebarToggleButtonProps> = ({
       aria-label={label}
       aria-expanded={!isCollapsed}
       title={label}
-      className="flex size-8 items-center justify-center rounded-md border border-neutral-200 bg-white text-neutral-700 shadow-sm transition-all duration-200 ease-out hover:bg-neutral-50 hover:shadow-md focus:ring-2 focus:ring-neutral-400 focus:ring-offset-1 focus:outline-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:shadow-neutral-900/20 dark:hover:bg-neutral-700 dark:focus:ring-neutral-500"
+      className={styles.toggleButton}
       {...props}
     >
       {icon}

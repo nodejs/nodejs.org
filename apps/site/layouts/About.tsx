@@ -12,14 +12,14 @@ const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
     <WithNavBar />
 
     <ArticleWithSidebarState>
-      <WithSidebar navKeys={['about', 'getInvolved']} />
+      <WithSidebar navKeys={['about', 'getInvolved']} disableToggle />
 
       <div>
         <main id="main" tabIndex={-1}>
           {children}
         </main>
 
-        <WithMetaBar />
+        <WithMetaBar disableToggle />
       </div>
 
       <WithBreadcrumbs navKeys={['about', 'getInvolved']} />
