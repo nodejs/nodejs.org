@@ -51,7 +51,12 @@ const WithMetaBar: FC = () => {
     usernames.length > 0 ||
     headings.length > 0;
 
-  // Always show collapsed rail when right sidebar is collapsed
+  // If no content, don't render metabar or controls at all
+  if (!hasContent) {
+    return null;
+  }
+
+  // Show collapsed rail when right sidebar is collapsed (only if there's content)
   if (isRightSidebarCollapsed) {
     return (
       <CollapsedSidebarRail side="right">
@@ -61,21 +66,6 @@ const WithMetaBar: FC = () => {
           onToggle={toggleRightSidebar}
         />
       </CollapsedSidebarRail>
-    );
-  }
-
-  // If no content, show empty metabar area with toggle button
-  if (!hasContent) {
-    return (
-      <div className="flex w-full flex-col border-l border-neutral-200 bg-white dark:border-neutral-900 dark:bg-neutral-950">
-        <div className="mb-6 flex justify-end pt-6 pr-2">
-          <SidebarToggleButton
-            side="right"
-            isCollapsed={isRightSidebarCollapsed}
-            onToggle={toggleRightSidebar}
-          />
-        </div>
-      </div>
     );
   }
 

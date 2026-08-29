@@ -69,7 +69,12 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
   const hasNavigationContent =
     mappedSidebarItems.length > 0 && navKeys.length > 0;
 
-  // Always show collapsed rail when sidebar is collapsed
+  // If no navigation content, don't render sidebar or controls at all
+  if (!hasNavigationContent) {
+    return null;
+  }
+
+  // Show collapsed rail when sidebar is collapsed (only if there's content)
   if (isLeftSidebarCollapsed) {
     return (
       <CollapsedSidebarRail side="left">
@@ -79,21 +84,6 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
           onToggle={toggleLeftSidebar}
         />
       </CollapsedSidebarRail>
-    );
-  }
-
-  // If no navigation content, show empty sidebar with toggle button
-  if (!hasNavigationContent) {
-    return (
-      <div className="flex w-full flex-col border-r border-neutral-200 bg-white dark:border-neutral-900 dark:bg-neutral-950">
-        <div className="flex justify-end pt-6 pr-3">
-          <SidebarToggleButton
-            side="left"
-            isCollapsed={isLeftSidebarCollapsed}
-            onToggle={toggleLeftSidebar}
-          />
-        </div>
-      </div>
     );
   }
 
