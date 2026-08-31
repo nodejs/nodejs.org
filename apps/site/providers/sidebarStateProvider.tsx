@@ -70,10 +70,8 @@ export const SidebarStateProvider: FC<PropsWithChildren> = ({ children }) => {
 
     try {
       localStorage.setItem(SIDEBAR_STATE_KEY, JSON.stringify(sidebarState));
-    } catch {
-      // localStorage might be unavailable in private mode
-      // Silently fail - state will still work for current session
-    }
+      // eslint-disable-next-line no-empty
+    } catch {}
   }, [sidebarState]);
 
   const toggleLeftSidebar = useCallback(() => {

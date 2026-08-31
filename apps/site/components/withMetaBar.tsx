@@ -1,12 +1,12 @@
 'use client';
 
+import CollapsedSidebarRail from '@node-core/ui-components/Common/CollapsedSidebarRail';
+import SidebarToggleButton from '@node-core/ui-components/Common/SidebarToggleButton';
 import MetaBar from '@node-core/ui-components/Containers/MetaBar';
 import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
 import { defaultLocale } from '@node-core/website-i18n';
 import { useFormatter, useLocale, useTranslations } from 'next-intl';
 
-import CollapsedSidebarRail from '#site/components/Common/CollapsedSidebarRail';
-import SidebarToggleButton from '#site/components/Common/SidebarToggleButton';
 import Link from '#site/components/Link';
 import WithAvatarGroup from '#site/components/withAvatarGroup';
 import useClientContext from '#site/hooks/useClientContext';
@@ -66,6 +66,8 @@ const WithMetaBar: FC<{ disableToggle?: boolean }> = ({
           side="right"
           isCollapsed={isRightSidebarCollapsed}
           onToggle={toggleRightSidebar}
+          ariaLabel={t('components.common.sidebar.expandRightSidebar')}
+          title={t('components.common.sidebar.expandRightSidebar')}
         />
       </CollapsedSidebarRail>
     );
@@ -112,6 +114,16 @@ const WithMetaBar: FC<{ disableToggle?: boolean }> = ({
             side="right"
             isCollapsed={isRightSidebarCollapsed}
             onToggle={toggleRightSidebar}
+            ariaLabel={
+              isRightSidebarCollapsed
+                ? t('components.common.sidebar.expandRightSidebar')
+                : t('components.common.sidebar.collapseRightSidebar')
+            }
+            title={
+              isRightSidebarCollapsed
+                ? t('components.common.sidebar.expandRightSidebar')
+                : t('components.common.sidebar.collapseRightSidebar')
+            }
           />
         </div>
       )}

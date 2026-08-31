@@ -1,11 +1,11 @@
 'use client';
 
+import CollapsedSidebarRail from '@node-core/ui-components/Common/CollapsedSidebarRail';
+import SidebarToggleButton from '@node-core/ui-components/Common/SidebarToggleButton';
 import Sidebar from '@node-core/ui-components/Containers/Sidebar';
 import { useTranslations } from 'next-intl';
 import { useRef } from 'react';
 
-import CollapsedSidebarRail from '#site/components/Common/CollapsedSidebarRail';
-import SidebarToggleButton from '#site/components/Common/SidebarToggleButton';
 import Link from '#site/components/Link';
 import useClientContext from '#site/hooks/useClientContext';
 import useScrollToElement from '#site/hooks/useScrollToElement';
@@ -88,6 +88,8 @@ const WithSidebar: FC<WithSidebarProps> = ({
           side="left"
           isCollapsed={isLeftSidebarCollapsed}
           onToggle={toggleLeftSidebar}
+          ariaLabel={t('components.common.sidebar.expandLeftSidebar')}
+          title={t('components.common.sidebar.expandLeftSidebar')}
         />
       </CollapsedSidebarRail>
     );
@@ -110,6 +112,16 @@ const WithSidebar: FC<WithSidebarProps> = ({
             side="left"
             isCollapsed={isLeftSidebarCollapsed}
             onToggle={toggleLeftSidebar}
+            ariaLabel={
+              isLeftSidebarCollapsed
+                ? t('components.common.sidebar.expandLeftSidebar')
+                : t('components.common.sidebar.collapseLeftSidebar')
+            }
+            title={
+              isLeftSidebarCollapsed
+                ? t('components.common.sidebar.expandLeftSidebar')
+                : t('components.common.sidebar.collapseLeftSidebar')
+            }
           />
         </div>
       )}

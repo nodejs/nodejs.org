@@ -1,6 +1,6 @@
 @reference "../../styles/index.css";
 
-.toggleButton {
+.button {
   @apply flex
     size-8
     items-center
