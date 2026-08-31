@@ -1,8 +1,16 @@
+'use client';
+
 import { ChevronDownIcon, ClockIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
+import {
+  type FC,
+  type ComponentProps,
+  type ReactNode,
+  useRef,
+  useEffect,
+} from 'react';
 
 import type { LinkLike } from '#ui/types';
-import type { FC, ComponentProps, ReactNode } from 'react';
 
 import styles from './index.module.css';
 
@@ -26,45 +34,66 @@ const ChangeHistory: FC<ChangeHistoryProps> = ({
   as: As = 'a',
   'aria-label': ariaLabel = label,
   ...props
-}) => (
-  <div className={classNames('relative', 'inline-block', className)} {...props}>
-    <details className="group">
-      <summary className={styles.summary} role="button" aria-haspopup="menu">
-        <ClockIcon className="size-4" />
-        <span>{label}</span>
-        <ChevronDownIcon className="size-3 group-open:rotate-180 motion-safe:transition-transform" />
-      </summary>
-      <div
-        className={styles.dropdownContentWrapper}
-        role="menu"
-        aria-label={ariaLabel}
-      >
-        <div className={styles.dropdownContentInner}>
-          {changes.map(change => {
-            const MenuItem = change.url ? As : 'div';
+}) => {
+  const detailsRef = useRef<HTMLDetailsElement | null>(null);
 
-            return (
-              <MenuItem
-                key={change.label}
-                className={styles.dropdownItem}
-                role="menuitem"
-                tabIndex={0}
-                aria-label={`${change.label}: ${change.versions.join(', ')}`}
-                href={change.url}
-              >
-                <div className={styles.dropdownLabel}>
-                  {change.content ?? change.label}
-                </div>
-                <div className={styles.dropdownVersions}>
-                  {change.versions.join(', ')}
-                </div>
-              </MenuItem>
-            );
-          })}
+  useEffect(() => {
+    const handlePointerDown = (e: PointerEvent) => {
+      const details = detailsRef.current;
+      if (details && details.open && !details.contains(e.target as Node)) {
+        details.removeAttribute('open');
+      }
+    };
+
+    document.addEventListener('pointerdown', handlePointerDown);
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown);
+    };
+  }, []);
+
+  return (
+    <div
+      className={classNames('relative', 'inline-block', className)}
+      {...props}
+    >
+      <details ref={detailsRef} className="group">
+        <summary className={styles.summary} role="button" aria-haspopup="menu">
+          <ClockIcon className="size-4" />
+          <span>{label}</span>
+          <ChevronDownIcon className="size-3 group-open:rotate-180 motion-safe:transition-transform" />
+        </summary>
+        <div
+          className={styles.dropdownContentWrapper}
+          role="menu"
+          aria-label={ariaLabel}
+        >
+          <div className={styles.dropdownContentInner}>
+            {changes.map(change => {
+              const MenuItem = change.url ? As : 'div';
+
+              return (
+                <MenuItem
+                  key={change.label}
+                  className={styles.dropdownItem}
+                  role="menuitem"
+                  tabIndex={0}
+                  aria-label={`${change.label}: ${change.versions.join(', ')}`}
+                  href={change.url}
+                >
+                  <div className={styles.dropdownLabel}>
+                    {change.content ?? change.label}
+                  </div>
+                  <div className={styles.dropdownVersions}>
+                    {change.versions.join(', ')}
+                  </div>
+                </MenuItem>
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </details>
-  </div>
-);
+      </details>
+    </div>
+  );
+};
 
 export default ChangeHistory;
