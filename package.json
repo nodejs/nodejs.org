@@ -45,7 +45,7 @@
     "@changesets/cli": "^2.31.1",
     "@eloqnt/cli": "^0.6.9",
     "@eslint/js": "~10.0.1",
-    "@reporters/github": "^2.0.2",
+    "@reporters/github": "^2.1.2",
     "@testing-library/react": "~16.3.2",
     "cross-env": "^10.1.0",
     "eslint": "~10.8.0",
