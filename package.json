@@ -43,7 +43,7 @@
   "devDependencies": {
     "@changesets/changelog-github": "^0.7.0",
     "@changesets/cli": "^2.31.1",
-    "@eloqnt/cli": "^0.6.9",
+    "@eloqnt/cli": "^0.6.20",
     "@eslint/js": "~10.0.1",
     "@reporters/github": "^2.0.2",
     "@testing-library/react": "~16.3.2",
