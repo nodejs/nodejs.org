@@ -45,7 +45,7 @@ jobs:
           egress-policy: audit
 
       - name: Check Pull Request Age
-        uses: bmuenzenmeyer/pr-age-gate@d4243cf80a6386863234c6fc6be01f19bf4a6bfc # v0.2.3
+        uses: bmuenzenmeyer/pr-age-gate@d0c32038df019a8e66084dd55a646e93acc15bd4 # v1
         with:
           min-hours: '48'
           bypass-labels: fast-track
