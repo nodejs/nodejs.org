@@ -209,7 +209,7 @@ catalogs:
       specifier: ^24.10.1
       version: 24.10.1
     '@types/react':
-      specifier: ^19.2.17
+      specifier: ^19.2.18
       version: 19.2.18
     classnames:
       specifier: ~2.5.1
