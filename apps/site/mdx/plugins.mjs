@@ -4,6 +4,7 @@ import { shikiOptions } from '#platform/shiki.mjs';
 import rehypeShikiji from '@node-core/rehype-shiki/plugin';
 import remarkHeadings from '@vcarl/remark-headings';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeMermaid from 'rehype-mermaid';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import readingTime from 'remark-reading-time';
@@ -21,6 +22,9 @@ export const rehypePlugins = [
   rehypeSlug,
   // Automatically add anchor links to headings (H1, ...)
   [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+  // Transforms ```mermaid code blocks into renderable diagrams;
+  // must run before Shiki so they are not highlighted as plain code
+  [rehypeMermaid, { strategy: 'pre-mermaid' }],
   // Transforms sequential code elements into code tabs and
   // adds our syntax highlighter (Shikiji) to Codeboxes
   () => singletonShiki,

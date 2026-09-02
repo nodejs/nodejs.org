@@ -1,0 +1,17 @@
+.mermaid {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.fallback {
+  overflow-x: auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: rgb(0 0 0 / 0.05);
+}
