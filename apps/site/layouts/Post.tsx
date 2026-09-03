@@ -1,12 +1,14 @@
 import Preview from '@node-core/ui-components/Common/Preview';
 
 import { getClientContext } from '#site/client-context';
+import ContentLayoutWithSidebarState from '#site/components/Common/ContentLayoutWithSidebarState';
 import EOLAlert from '#site/components/EOL/EOLAlert';
 import WithAvatarGroup from '#site/components/withAvatarGroup';
 import WithBlogCrossLinks from '#site/components/withBlogCrossLinks';
 import WithFooter from '#site/components/withFooter';
 import WithMetaBar from '#site/components/withMetaBar';
 import WithNavBar from '#site/components/withNavBar';
+import WithSidebar from '#site/components/withSidebar';
 import { mapAuthorToCardAuthors } from '#site/util/author';
 import { mapBlogCategoryToPreviewType } from '#site/util/blog';
 
@@ -25,8 +27,8 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
     <>
       <WithNavBar />
 
-      <div className={styles.contentLayout}>
-        <div></div>
+      <ContentLayoutWithSidebarState className={styles.contentLayout}>
+        <WithSidebar navKeys={[]} />
 
         <div className={styles.postLayout}>
           <main id="main" tabIndex={-1}>
@@ -49,7 +51,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
         </div>
 
         <WithMetaBar />
-      </div>
+      </ContentLayoutWithSidebarState>
 
       <WithFooter />
     </>

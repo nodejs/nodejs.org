@@ -12,6 +12,9 @@
     mx-auto
     block
     w-full
+    motion-safe:transition-[grid-template-columns]
+    motion-safe:duration-200
+    motion-safe:ease-out
     xl:grid-cols-[--spacing(56)_1fr_--spacing(64)]
     xl:[grid-template-areas:'sidebar_main_metabar''sidebar_footer_metabar']
     2xl:grid-cols-[--spacing(72)_1fr_--spacing(72)];
@@ -71,4 +74,25 @@
       dark:border-t-neutral-900
       dark:bg-neutral-950;
   }
+}
+
+/* Article layout with collapsed sidebars */
+.articleLayout[data-left-sidebar-collapsed='true'] {
+  @apply ml:grid-cols-[--spacing(11)_1fr]
+    3xl:grid-cols-[--spacing(11)_1fr_--spacing(144)]
+    xl:grid-cols-[--spacing(11)_1fr_--spacing(64)]
+    2xl:grid-cols-[--spacing(11)_1fr_--spacing(72)];
+}
+
+.articleLayout[data-right-sidebar-collapsed='true'] {
+  @apply 3xl:grid-cols-[--spacing(80)_1fr_--spacing(11)]
+    xl:grid-cols-[--spacing(56)_1fr_--spacing(11)]
+    2xl:grid-cols-[--spacing(72)_1fr_--spacing(11)];
+}
+
+.articleLayout[data-left-sidebar-collapsed='true'][data-right-sidebar-collapsed='true'] {
+  @apply ml:grid-cols-[--spacing(11)_1fr_--spacing(11)]
+    3xl:grid-cols-[--spacing(11)_1fr_--spacing(11)]
+    xl:grid-cols-[--spacing(11)_1fr_--spacing(11)]
+    2xl:grid-cols-[--spacing(11)_1fr_--spacing(11)];
 }

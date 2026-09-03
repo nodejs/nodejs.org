@@ -1,0 +1,32 @@
+@reference "../../styles/index.css";
+
+.rail {
+  @apply flex
+    w-full
+    flex-col
+    bg-white
+    transition-all
+    duration-200
+    ease-out
+    dark:bg-neutral-950;
+
+  &.left {
+    @apply border-r
+      border-neutral-200
+      dark:border-neutral-900;
+  }
+
+  &.right {
+    @apply border-l
+      border-neutral-200
+      dark:border-neutral-900;
+  }
+}
+
+.container {
+  @apply flex
+    w-full
+    justify-center
+    px-3
+    pt-6;
+}

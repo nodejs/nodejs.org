@@ -1,5 +1,7 @@
 'use client';
 
+import CollapsedSidebarRail from '@node-core/ui-components/Common/CollapsedSidebarRail';
+import SidebarToggleButton from '@node-core/ui-components/Common/SidebarToggleButton';
 import MetaBar from '@node-core/ui-components/Containers/MetaBar';
 import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
 import { defaultLocale } from '@node-core/website-i18n';
@@ -11,11 +13,14 @@ import useClientContext from '#site/hooks/useClientContext';
 import useMediaQuery from '#site/hooks/useMediaQuery';
 import { DEFAULT_DATE_FORMAT } from '#site/next.calendar.constants.mjs';
 import { TRANSLATION_URL } from '#site/next.constants.mjs';
+import { useSidebarState } from '#site/providers/sidebarStateProvider';
 import { getGitHubBlobUrl } from '#site/util/github';
 
 import type { FC } from 'react';
 
-const WithMetaBar: FC = () => {
+const WithMetaBar: FC<{ disableToggle?: boolean }> = ({
+  disableToggle = false,
+}) => {
   const { headings, readingTime, frontmatter, filename } = useClientContext();
   const formatter = useFormatter();
   const lastUpdated = frontmatter.date
@@ -34,11 +39,39 @@ const WithMetaBar: FC = () => {
 
   const t = useTranslations();
   const locale = useLocale();
+  const { isRightSidebarCollapsed, toggleRightSidebar } = useSidebarState();
 
   // Since we cannot show the same number of avatars in Mobile / Tablet
   // resolution as we do on desktop and there is overflow, we are adjusting
   // the number of avatars manually for the resolutions below
   const isSmallerThanDesktop = useMediaQuery('(max-width: 1280px)');
+
+  // Check if there's any content to show in the metabar
+  const hasContent =
+    lastUpdated ||
+    readingTimeText ||
+    usernames.length > 0 ||
+    headings.length > 0;
+
+  // If no content, render empty div to preserve grid structure
+  if (!hasContent) {
+    return <div />;
+  }
+
+  // Show collapsed rail when right sidebar is collapsed and toggle is enabled
+  if (isRightSidebarCollapsed && !disableToggle) {
+    return (
+      <CollapsedSidebarRail side="right">
+        <SidebarToggleButton
+          side="right"
+          isCollapsed={isRightSidebarCollapsed}
+          onToggle={toggleRightSidebar}
+          ariaLabel={t('components.common.sidebar.expandRightSidebar')}
+          title={t('components.common.sidebar.expandRightSidebar')}
+        />
+      </CollapsedSidebarRail>
+    );
+  }
 
   return (
     <MetaBar
@@ -74,7 +107,27 @@ const WithMetaBar: FC = () => {
         ),
       }}
       headings={{ items: headings }}
-    />
+    >
+      {!disableToggle && (
+        <div className="mb-1 flex justify-end pr-2">
+          <SidebarToggleButton
+            side="right"
+            isCollapsed={isRightSidebarCollapsed}
+            onToggle={toggleRightSidebar}
+            ariaLabel={
+              isRightSidebarCollapsed
+                ? t('components.common.sidebar.expandRightSidebar')
+                : t('components.common.sidebar.collapseRightSidebar')
+            }
+            title={
+              isRightSidebarCollapsed
+                ? t('components.common.sidebar.expandRightSidebar')
+                : t('components.common.sidebar.collapseRightSidebar')
+            }
+          />
+        </div>
+      )}
+    </MetaBar>
   );
 };
 
