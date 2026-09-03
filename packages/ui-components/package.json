@@ -72,7 +72,7 @@
     "@storybook/addon-webpack5-compiler-swc": "~4.0.3",
     "@storybook/react-webpack5": "~10.5.4",
     "@tailwindcss/postcss": "~4.3.3",
-    "@testing-library/user-event": "~14.6.1",
+    "@testing-library/user-event": "~14.6.6",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "concurrently": "9.2.1",
@@ -92,7 +92,7 @@
     "stylelint-order": "8.1.1",
     "stylelint-selector-bem-pattern": "5.0.0",
     "tailwindcss": "catalog:",
-    "tsx": "4.23.1",
+    "tsx": "4.23.12",
     "typescript": "catalog:"
   },
   "imports": {
