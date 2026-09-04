@@ -85,6 +85,7 @@
     "postcss-calc": "~10.1.1",
     "postcss-cli": "^11.0.1",
     "postcss-loader": "8.2.1",
+    "react-dom": "^19.2.8",
     "storybook": "~10.5.4",
     "style-loader": "4.0.0",
     "stylelint": "17.14.1",

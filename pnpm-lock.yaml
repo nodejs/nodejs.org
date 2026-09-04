@@ -755,6 +755,9 @@ importers:
       postcss-loader:
         specifier: 8.2.1
         version: 8.2.1(postcss@8.5.25)(typescript@5.9.3)(webpack@5.109.2(@swc/core@1.15.40)(clean-css@5.3.3)(esbuild@0.28.1)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.25)(uglify-js@3.19.3))
+      react-dom:
+        specifier: ^19.2.8
+        version: 19.2.8(react@19.2.8)
       storybook:
         specifier: ~10.5.4
         version: 10.5.4(@types/react@19.2.18)(prettier@3.9.6)(react@19.2.8)

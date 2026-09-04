@@ -1,10 +1,7 @@
-import * as TabsPrimitive from '@radix-ui/react-tabs';
-
 import BaseCodeBox from '#ui/Common/BaseCodeBox';
 import CodeTabs from '#ui/Common/CodeTabs';
 
 import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
-import type { FC } from 'react';
 
 type Story = StoryObj<typeof CodeTabs>;
 type Meta = MetaObj<typeof CodeTabs>;
@@ -44,18 +41,14 @@ const boxProps = {
   buttonContent: '[Button Text]',
 };
 
-const TabsContent: FC = () => (
+const tabsContent = (
   <>
-    <TabsPrimitive.Content key="mjs" value="mjs">
-      <BaseCodeBox language="JavaScript (MJS)" {...boxProps}>
-        <code>{mjsContent}</code>
-      </BaseCodeBox>
-    </TabsPrimitive.Content>
-    <TabsPrimitive.Content key="cjs" value="cjs">
-      <BaseCodeBox language="JavaScript (CJS)" {...boxProps}>
-        <code>{cjsContent}</code>
-      </BaseCodeBox>
-    </TabsPrimitive.Content>
+    <BaseCodeBox language="JavaScript (MJS)" {...boxProps}>
+      <code>{mjsContent}</code>
+    </BaseCodeBox>
+    <BaseCodeBox language="JavaScript (CJS)" {...boxProps}>
+      <code>{cjsContent}</code>
+    </BaseCodeBox>
   </>
 );
 
@@ -70,10 +63,29 @@ export const WithExtension: Story = {
   },
 };
 
+export const WithGroupId: Story = {
+  args: {
+    groupId: 'hello-world',
+  },
+};
+
+export const ManyTabs: Story = {
+  args: {
+    groupId: 'many-tabs',
+    tabs: Array.from({ length: 12 }, (_, index) => ({
+      key: `example-${index}`,
+      label: `Example ${index + 1}`,
+    })),
+    children: Array.from({ length: 12 }, (_, index) => (
+      <pre key={index}>Example {index + 1} content</pre>
+    )),
+  },
+};
+
 export default {
   component: CodeTabs,
   args: {
-    children: <TabsContent />,
+    children: tabsContent,
     defaultValue: 'mjs',
     tabs: [
       { key: 'mjs', label: 'MJS' },

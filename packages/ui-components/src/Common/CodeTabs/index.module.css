@@ -1,17 +1,35 @@
 @reference "../../styles/index.css";
 
 .root {
-  /* `forceMount` keeps every panel in the DOM, so hide the inactive ones here */
-  > [role='tabpanel'][data-state='inactive'] {
+  @apply grid
+    max-w-full;
+
+  /*
+   * Panels stay in the DOM (copy buttons, no layout jump). Visibility is
+   * driven by CSS :target on the panel, not JavaScript.
+   * Default (no matching hash in this group): [data-default].
+   */
+  > .panel {
     @apply hidden;
+
+    scroll-margin-top: calc(var(--header-height) + var(--spacing, 0.25rem) * 6);
+
+    > :first-child {
+      @apply rounded-t-none;
+    }
   }
 
-  > [role='tabpanel'] > :first-child {
-    @apply rounded-t-none;
+  &:not(:has(> .panel:target)) > .panel[data-default],
+  > .panel:target {
+    @apply block;
   }
 
-  > div:nth-of-type(1) {
-    @apply flex
+  > .tabList {
+    @apply font-open-sans
+      scrollbar-thin
+      flex
+      gap-2
+      overflow-x-auto
       rounded-t
       border-x
       border-t
@@ -23,19 +41,86 @@
       dark:border-neutral-900
       dark:bg-neutral-950;
 
+    .triggers {
+      @apply flex
+        gap-2;
+    }
+
     .trigger {
       @apply border-b
         border-b-transparent
         px-1
+        pt-0
+        pb-2
+        text-sm
+        font-semibold
+        whitespace-nowrap
         text-neutral-800
+        no-underline
         dark:text-neutral-200;
 
-      &[data-state='active'] {
-        @apply border-b-brand-600
-          text-brand-700
-          dark:border-b-brand-400
-          dark:text-brand-400;
+      scroll-margin-top: calc(
+        var(--header-height) + var(--spacing, 0.25rem) * 6
+      );
+
+      &:focus-visible {
+        @apply outline-brand-600
+          rounded-xs
+          outline-2
+          outline-offset-2;
       }
+
+      &:is(:link, :visited):hover {
+        @apply text-neutral-800
+          dark:text-neutral-200;
+      }
+
+      .tabExtension {
+        @apply ml-1
+          rounded-xs
+          border
+          border-neutral-200
+          px-1
+          py-0
+          text-xs
+          font-normal
+          text-neutral-200;
+      }
+
+      .tabSecondaryLabel {
+        @apply pl-1
+          text-neutral-500
+          dark:text-neutral-800;
+      }
+    }
+
+    /* The enhancement mirrors the fragment in the accessible selected state. */
+    .trigger[aria-selected='true'] {
+      @apply border-b-brand-600
+        text-brand-700
+        dark:border-b-brand-400
+        dark:text-brand-400
+        no-underline;
+
+      .tabExtension {
+        @apply border-brand-400
+          text-brand-400;
+      }
+
+      .tabSecondaryLabel {
+        @apply text-brand-800
+          dark:text-brand-600;
+      }
+    }
+
+    .addons {
+      @apply ml-auto
+        border-b-2
+        border-b-transparent
+        px-1
+        pb-[11px]
+        text-sm
+        font-semibold;
     }
 
     .link {

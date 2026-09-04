@@ -1,4 +1,3 @@
-import * as TabsPrimitive from '@radix-ui/react-tabs';
 import { useMemo } from 'react';
 
 import CodeTabs from '#ui/Common/CodeTabs';
@@ -10,6 +9,12 @@ type MDXCodeTabsProps = {
   languages: string;
   displayNames?: string;
   defaultTab?: string;
+  /**
+   * Optional fragment prefix. Tab ids include the language key and tab index.
+   * When omitted, a unique per-instance prefix is used so multiple CodeTabs
+   * on one page do not collide.
+   */
+  groupId?: string;
 };
 
 const NAME_OVERRIDES: Record<string, string | undefined> = {
@@ -21,9 +26,10 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
   displayNames: rawDisplayNames,
   children: codes,
   defaultTab = '0',
+  groupId,
   ...props
 }) => {
-  const { tabs, languages } = useMemo(() => {
+  const { tabs } = useMemo(() => {
     const occurrences: Record<string, number> = {};
 
     const languages = rawLanguages.split('|');
@@ -47,24 +53,17 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
       };
     });
 
-    return { tabs, languages };
+    return { tabs };
   }, [rawLanguages, rawDisplayNames]);
 
   return (
     <CodeTabs
       tabs={tabs}
-      defaultValue={tabs[Number(defaultTab)].key}
+      defaultValue={tabs[Number(defaultTab)]?.key ?? tabs[0]?.key}
+      groupId={groupId}
       {...props}
     >
-      {languages.map((_, index) => (
-        <TabsPrimitive.Content
-          forceMount
-          key={tabs[index].key}
-          value={tabs[index].key}
-        >
-          {codes[index]}
-        </TabsPrimitive.Content>
-      ))}
+      {codes}
     </CodeTabs>
   );
 };
