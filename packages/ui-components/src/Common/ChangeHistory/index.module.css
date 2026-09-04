@@ -67,6 +67,10 @@
     @apply bg-brand-600
       text-white!;
   }
+
+  :where([data-theme='light'], [data-theme='light'] *) &:hover code {
+    color: var(--color-brand-900);
+  }
 }
 
 .dropdownLabel {
