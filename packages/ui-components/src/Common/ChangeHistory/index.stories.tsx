@@ -14,6 +14,11 @@ const SAMPLE_CHANGES = [
   {
     versions: ['v15.0.0', 'v14.17.0'],
     label: 'Added in v15.0.0, v14.17.0',
+    content: (
+      <>
+        Added in: <code>v15.0.0</code>, <code>v14.17.0</code>
+      </>
+    ),
     url: 'https://github.com/nodejs/node/pull/67890',
   },
   {
@@ -107,9 +112,13 @@ const LARGE_SAMPLE_CHANGES = [
 
 export const Default: Story = {
   render: args => (
-    <div className="right-0 flex justify-end">
-      <ChangeHistory {...args} />
-    </div>
+    // `main` reproduces the docs page context: markdown.css scopes inline
+    // `code` styles under `main`, which is what the hover fix interacts with /ui-components/src/styles/markdown.css:85
+    <main>
+      <div className="flex justify-end">
+        <ChangeHistory {...args} />
+      </div>
+    </main>
   ),
   args: {
     changes: SAMPLE_CHANGES,
@@ -118,9 +127,11 @@ export const Default: Story = {
 
 export const LargeHistory: Story = {
   render: args => (
-    <div className="right-0 flex justify-end">
-      <ChangeHistory {...args} />
-    </div>
+    <main>
+      <div className="flex justify-end">
+        <ChangeHistory {...args} />
+      </div>
+    </main>
   ),
   args: {
     changes: LARGE_SAMPLE_CHANGES,
