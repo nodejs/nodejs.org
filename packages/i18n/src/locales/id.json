@@ -1,11 +1,26 @@
 {
   "components": {
+    "header": {
+      "buttons": {
+        "theme": "Pilih tema",
+        "themeSystem": "Sistem",
+        "themeLightMode": "Terang",
+        "themeDarkMode": "Gelap"
+      }
+    },
     "containers": {
       "footer": {
+        "legal": "Hak cipta <foundationName>OpenJS Foundation</foundationName> dan kontributor Node.js. Hak cipta dilindungi. <foundationName>OpenJS Foundation</foundationName> telah mendaftarkan merek dagang dan menggunakan merek dagang. Untuk daftar hak dagang <foundationName>OpenJS Foundation</foundationName>, harap melihat <trademarkPolicy>Kebijakan Merek Dagang</trademarkPolicy> dan <trademarkList>Daftar Merek Dagang</trademarkList> kami. Merek dagang dan logo yang tidak tercantum dalam <trademarkList>daftar merek dagang OpenJS Foundation</trademarkList> merupakan merek dagang™ atau merek dagang terdaftar® dari pemiliknya masing-masing. Penggunaan hal tersebut tidak berarti adanya afiliasi dengan atau dukungan oleh mereka.",
         "links": {
-          "trademarkPolicy": "Kebijakan Merek Dagang",
+          "foundationName": "OpenJS Foundation",
+          "aiCodingAssistantsPolicy": "Kebijakan Asisten Pemrograman AI",
+          "termsOfUse": "Ketentuan Penggunaan",
           "privacyPolicy": "Kebijakan Privasi",
+          "bylaws": "Anggaran Rumah Tangga",
           "codeOfConduct": "Pedoman Perilaku",
+          "trademarkPolicy": "Kebijakan Merek Dagang",
+          "trademarkList": "Daftar Merek Dagang",
+          "cookiePolicy": "Kebijakan Cookie",
           "security": "Kebijakan Keamanan"
         },
         "releasePills": {
@@ -21,8 +36,9 @@
           "about": "Tentang",
           "download": "Unduh",
           "docs": "Dokumentasi",
+          "betaDocs": "Dokumentasi Beta",
           "learn": "Pelajari",
-          "certification": "Sertifikasi",
+          "certification": "Kursus",
           "blog": "Artikel",
           "contribute": "Kontribusi"
         }
@@ -101,7 +117,8 @@
       "codename": "Kode nama",
       "lastUpdated": "Pembaruan Terakhir",
       "vulnerabilities": "Kerentanan",
-      "details": "Rincian"
+      "details": "Rincian",
+      "hideNonLts": "Sembunyikan versi non-LTS"
     },
     "minorReleasesTable": {
       "version": "Versi",
@@ -135,6 +152,8 @@
         "copied": "Disalin ke papan klip!"
       },
       "pagination": {
+        "previous": "Sebelumnya",
+        "previousAriaLabel": "Halaman Sebelumnya",
         "next": "Berikutnya",
         "nextAriaLabel": "Halaman selanjutnya",
         "defaultLabel": "Penyusunan Halaman",
@@ -145,7 +164,8 @@
       },
       "languageDropdown": {
         "label": "Pilih Bahasa"
-      }
+      },
+      "skipToContent": "Loncat ke konten"
     },
     "metabar": {
       "lastUpdated": "Pembaruan Terakhir",
@@ -154,7 +174,14 @@
       "authors": "Penulis",
       "contribute": "Kontribusi",
       "contributeText": "Sunting halaman ini",
-      "tableOfContents": "Daftar isi"
+      "tableOfContents": "Daftar isi",
+      "metadata": "Artikel metadata"
+    },
+    "banner": {
+      "default": "Pengumuman",
+      "warning": "Pemberitahuan peringatan",
+      "error": "Pemberitahuan kesalahan",
+      "close": "Tutup banner"
     },
     "search": {
       "searchPlaceholder": "Mulai mengetik...",
@@ -232,7 +259,8 @@
           "brew": "Homebrew adalah manajer paket untuk macOS dan Linux.",
           "choco": "Chocolatey adalah manajer paket untuk Windows.",
           "docker": "Docker adalah platform kontainerisasi.",
-          "n": "\"n\" adalah manajer versi Node.js lintas-platform."
+          "n": "\"n\" adalah manajer versi Node.js lintas-platform.",
+          "asdf": "\"asdf\" adalah manajer versi lintas platform yang mendukung berbagai bahasa."
         }
       }
     },
