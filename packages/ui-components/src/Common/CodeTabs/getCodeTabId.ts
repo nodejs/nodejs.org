@@ -2,8 +2,8 @@
  * Builds stable, URL-safe HTML ids for CodeTabs triggers.
  *
  * Scheme:
- * - With `groupId`: `{slug(groupId)}-{slug(tabKey)}` (e.g. `install-js-0`)
- * - Without: `{slug(instancePrefix)}-{slug(tabKey)}` (e.g. `codetabs-r1-js-0`)
+ * The index keeps distinct keys unique even when their slugs are equal.
+ * The prefix is prepared by CodeTabs; preserve case in React-generated ids.
  *
  * `tabKey` is the tab's language/key (MDX already uses `${language}-${index}`).
  * `instancePrefix` is unique per CodeTabs on the page so identical language
@@ -23,6 +23,10 @@ export function slugifyIdSegment(value: string): string {
   return /^[a-z]/.test(slug) ? slug : `id-${slug}`;
 }
 
-export function getCodeTabId(prefix: string, tabKey: string): string {
-  return `${slugifyIdSegment(prefix)}-${slugifyIdSegment(tabKey)}`;
+export function getCodeTabId(
+  prefix: string,
+  tabKey: string,
+  index: number
+): string {
+  return `${prefix}-${slugifyIdSegment(tabKey)}-${index}`;
 }

@@ -69,6 +69,19 @@ export const WithGroupId: Story = {
   },
 };
 
+export const ManyTabs: Story = {
+  args: {
+    groupId: 'many-tabs',
+    tabs: Array.from({ length: 12 }, (_, index) => ({
+      key: `example-${index}`,
+      label: `Example ${index + 1}`,
+    })),
+    children: Array.from({ length: 12 }, (_, index) => (
+      <pre key={index}>Example {index + 1} content</pre>
+    )),
+  },
+};
+
 export default {
   component: CodeTabs,
   args: {

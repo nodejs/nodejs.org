@@ -1,11 +1,9 @@
 import { afterEach, describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
 
-import { render, screen } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { renderToString } from 'react-dom/server';
 
 import CodeTabs from '../index';
 
@@ -13,8 +11,11 @@ const tabs = [
   { key: 'mjs', label: 'MJS' },
   { key: 'cjs', label: 'CJS' },
 ];
-
-const Sut = ({ groupId, defaultValue = 'mjs', addons } = {}) => (
+const Sut = ({
+  groupId = 'hello-world',
+  defaultValue = 'mjs',
+  addons,
+} = {}) => (
   <CodeTabs
     tabs={tabs}
     defaultValue={defaultValue}
@@ -26,132 +27,187 @@ const Sut = ({ groupId, defaultValue = 'mjs', addons } = {}) => (
   </CodeTabs>
 );
 
-const resetHash = () => {
-  window.history.replaceState(null, '', '/');
-};
-
 describe('CodeTabs', () => {
-  afterEach(resetHash);
-
-  it('renders panel content for each tab', () => {
-    render(<Sut groupId="hello-world" />);
-
-    assert.ok(screen.getByText('mjs panel'));
-    assert.ok(screen.getByText('cjs panel'));
+  afterEach(() => {
+    window.history.replaceState(null, '', '/');
   });
 
-  it('assigns fragment ids and hrefs using groupId', () => {
-    render(<Sut groupId="hello-world" />);
-
-    const mjs = screen.getByRole('link', { name: 'MJS' });
-    const cjs = screen.getByRole('link', { name: 'CJS' });
-
-    assert.equal(mjs.id, 'hello-world-mjs');
-    assert.equal(mjs.getAttribute('href'), '#hello-world-mjs');
-    assert.equal(cjs.id, 'hello-world-cjs');
-    assert.equal(cjs.getAttribute('href'), '#hello-world-cjs');
-  });
-
-  it('marks the first tab as default when no hash is present', () => {
-    render(<Sut groupId="hello-world" />);
-
+  it('connects each tab to its labelled panel', () => {
+    render(<Sut />);
+    for (const tab of screen.getAllByRole('tab')) {
+      const panel = document.getElementById(tab.getAttribute('aria-controls'));
+      assert.equal(tab.getAttribute('href'), '#' + panel.id);
+      assert.equal(panel.getAttribute('aria-labelledby'), tab.id);
+      assert.equal(panel.getAttribute('role'), 'tabpanel');
+    }
     assert.equal(
-      screen.getByRole('link', { name: 'MJS' }).getAttribute('data-default'),
-      'true'
-    );
-    assert.equal(
-      screen.getByRole('link', { name: 'CJS' }).getAttribute('data-default'),
-      null
-    );
-  });
-
-  it('marks the requested default tab when defaultValue is set', () => {
-    render(<Sut groupId="hello-world" defaultValue="cjs" />);
-
-    assert.equal(
-      screen.getByRole('link', { name: 'CJS' }).getAttribute('data-default'),
-      'true'
-    );
-    assert.equal(
-      screen.getByRole('link', { name: 'MJS' }).getAttribute('data-default'),
-      null
-    );
-  });
-
-  it('selects the matching tab as :target on an initial deep link', () => {
-    window.history.replaceState(null, '', '/#hello-world-cjs');
-
-    render(<Sut groupId="hello-world" />);
-
-    const target = document.querySelector(':target');
-
-    assert.ok(target);
-    assert.equal(target.id, 'hello-world-cjs');
-    assert.equal(target, screen.getByRole('link', { name: 'CJS' }));
-  });
-
-  it('keeps the default tab when the hash does not match a tab', () => {
-    window.history.replaceState(null, '', '/#not-a-code-tab');
-
-    render(<Sut groupId="hello-world" />);
-
-    assert.equal(document.querySelector(':target'), null);
-    assert.equal(
-      screen.getByRole('link', { name: 'MJS' }).getAttribute('data-default'),
+      screen.getByRole('tab', { name: 'MJS' }).getAttribute('aria-selected'),
       'true'
     );
   });
 
-  it('updates the URL hash when a tab is clicked', async () => {
-    render(<Sut groupId="hello-world" />);
-
-    await userEvent.click(screen.getByRole('link', { name: 'CJS' }));
-
-    assert.equal(window.location.hash, '#hello-world-cjs');
-    assert.equal(document.querySelector(':target')?.id, 'hello-world-cjs');
+  it('unwraps nested fragments and arrays into separate panels', () => {
+    render(
+      <CodeTabs tabs={tabs}>
+        <>
+          {[<div key="mjs">mjs panel</div>]}
+          <>
+            <div>cjs panel</div>
+          </>
+        </>
+      </CodeTabs>
+    );
+    assert.deepEqual(
+      screen.getAllByRole('tabpanel').map(panel => panel.textContent),
+      ['mjs panel', 'cjs panel']
+    );
   });
 
-  it('navigates between tab hashes', async () => {
-    render(<Sut groupId="hello-world" />);
-
-    await userEvent.click(screen.getByRole('link', { name: 'CJS' }));
-    assert.equal(window.location.hash, '#hello-world-cjs');
-
-    await userEvent.click(screen.getByRole('link', { name: 'MJS' }));
-    assert.equal(window.location.hash, '#hello-world-mjs');
-    assert.equal(document.querySelector(':target')?.id, 'hello-world-mjs');
+  it('uses the requested default and falls back for an unknown hash', () => {
+    window.history.replaceState(null, '', '/#unrelated-heading');
+    render(<Sut defaultValue="cjs" />);
+    assert.equal(
+      screen.getByRole('tab', { name: 'CJS' }).getAttribute('aria-selected'),
+      'true'
+    );
   });
 
-  it('does not collide when multiple CodeTabs share languages', () => {
+  it('selects an initial deep link before any click', () => {
+    window.history.replaceState(null, '', '/#hello-world-cjs-1');
+    render(<Sut />);
+    assert.equal(
+      screen.getByRole('tab', { name: 'CJS' }).getAttribute('aria-selected'),
+      'true'
+    );
+    assert.equal(
+      document.querySelector(':target'),
+      screen.getByRole('tabpanel', { name: 'CJS' })
+    );
+  });
+
+  it('updates the URL and selected state on click', async () => {
+    render(<Sut />);
+    const cjs = screen.getByRole('tab', { name: 'CJS' });
+    await userEvent.click(cjs);
+    await waitFor(() =>
+      assert.equal(cjs.getAttribute('aria-selected'), 'true')
+    );
+    assert.equal(window.location.hash, '#hello-world-cjs-1');
+    assert.equal(cjs.tabIndex, 0);
+    assert.equal(screen.getByRole('tab', { name: 'MJS' }).tabIndex, -1);
+  });
+
+  it('supports arrow keys, wrapping, Home, End, and Space', async () => {
+    render(<Sut />);
+    const mjs = screen.getByRole('tab', { name: 'MJS' });
+    const cjs = screen.getByRole('tab', { name: 'CJS' });
+    mjs.focus();
+    for (const [key, expected] of [
+      ['{ArrowLeft}', cjs],
+      ['{ArrowRight}', mjs],
+      ['{End}', cjs],
+      ['{Home}', mjs],
+      [' ', mjs],
+    ]) {
+      await userEvent.keyboard(key);
+      await waitFor(() =>
+        assert.equal(expected.getAttribute('aria-selected'), 'true')
+      );
+      assert.equal(document.activeElement, expected);
+      assert.equal(window.location.hash, expected.getAttribute('href'));
+    }
+  });
+
+  it('tracks external hash changes and resets unrelated groups', async () => {
     render(
       <>
         <Sut />
-        <Sut />
+        <Sut groupId="other" />
       </>
     );
-
-    const links = screen.getAllByRole('link');
-    const ids = links.map(link => link.id).filter(Boolean);
-
-    assert.equal(ids.length, 4);
-    assert.equal(new Set(ids).size, ids.length);
-    assert.ok(ids.every(id => id.startsWith('codetabs-')));
-  });
-
-  it('renders addons in the tab list', () => {
-    render(<Sut groupId="hello-world" addons={<a href="/docs">addon</a>} />);
-
-    assert.ok(screen.getByRole('link', { name: 'addon' }).ownerDocument);
-  });
-
-  it('uses CSS :target to switch the active tab without JavaScript listeners', () => {
-    const css = readFileSync(
-      join(dirname(fileURLToPath(import.meta.url)), '../index.module.css'),
-      'utf8'
+    await act(async () => {
+      window.location.hash = 'hello-world-cjs-1';
+    });
+    await waitFor(() =>
+      assert.equal(
+        screen
+          .getAllByRole('tab', { name: 'CJS' })[0]
+          .getAttribute('aria-selected'),
+        'true'
+      )
     );
+    await act(async () => {
+      window.location.hash = 'other-cjs-1';
+    });
+    await waitFor(() => {
+      assert.equal(
+        screen
+          .getAllByRole('tab', { name: 'MJS' })[0]
+          .getAttribute('aria-selected'),
+        'true'
+      );
+      assert.equal(
+        screen
+          .getAllByRole('tab', { name: 'CJS' })[1]
+          .getAttribute('aria-selected'),
+        'true'
+      );
+    });
+  });
 
-    assert.match(css, /:target/);
-    assert.match(css, /:has\(\.trigger:target\)/);
-    assert.match(css, /\.trigger:target/);
+  it('keeps generated instance ids unique', () => {
+    const { container } = render(
+      <>
+        <Sut groupId={null} />
+        <Sut groupId={null} />
+      </>
+    );
+    const ids = [...container.querySelectorAll('[id]')].map(
+      element => element.id
+    );
+    assert.equal(new Set(ids).size, ids.length);
+  });
+
+  it('disambiguates tab keys with the same slug', () => {
+    render(
+      <CodeTabs
+        groupId="languages"
+        tabs={[
+          { key: 'c++', label: 'C++' },
+          { key: 'c#', label: 'C#' },
+          { key: 'C', label: 'C' },
+        ]}
+      >
+        {[
+          <pre key="cpp">cpp</pre>,
+          <pre key="cs">cs</pre>,
+          <pre key="c">c</pre>,
+        ]}
+      </CodeTabs>
+    );
+    assert.deepEqual(
+      screen.getAllByRole('tab').map(tab => tab.getAttribute('href')),
+      ['#languages-c-0', '#languages-c-1', '#languages-c-2']
+    );
+  });
+
+  it('keeps addons outside the tablist', () => {
+    render(<Sut addons={<a href="/docs">Documentation</a>} />);
+    assert.equal(
+      screen
+        .getByRole('tablist')
+        .contains(screen.getByRole('link', { name: 'Documentation' })),
+      false
+    );
+  });
+
+  it('server-renders native links and all panels without claiming enhanced tab semantics', () => {
+    const html = renderToString(<Sut />);
+    assert.match(html, /role="navigation"/);
+    assert.match(html, /href="#hello-world-cjs-1"/);
+    assert.match(html, /id="hello-world-cjs-1"/);
+    assert.match(html, /mjs panel/);
+    assert.match(html, /cjs panel/);
+    assert.doesNotMatch(html, /aria-selected|role="tab"/);
   });
 });

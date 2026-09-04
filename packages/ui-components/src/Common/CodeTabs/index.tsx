@@ -1,8 +1,12 @@
-import { Children, useId } from 'react';
+'use client';
+
+import { useId } from 'react';
 
 import type { FC, ReactNode } from 'react';
 
 import { getCodeTabId, slugifyIdSegment } from './getCodeTabId';
+import { getPanels } from './getPanels';
+import { useCodeTabNavigation } from './useCodeTabNavigation';
 
 import styles from './index.module.css';
 
@@ -19,7 +23,7 @@ type CodeTabsProps = {
   defaultValue?: string;
   /**
    * Optional id prefix for this group. When set, tab fragments are
-   * `{slug(groupId)}-{slug(tabKey)}`. When omitted, a per-instance prefix is
+   * `{slug(groupId)}-{slug(tabKey)}-{index}`. When omitted, a per-instance prefix is
    * used so multiple CodeTabs on one page cannot collide.
    */
   groupId?: string;
@@ -37,11 +41,9 @@ const CodeTabs: FC<CodeTabsProps> = ({
   const reactId = useId();
   const instancePrefix = groupId
     ? slugifyIdSegment(groupId)
-    : slugifyIdSegment(`codetabs-${reactId}`);
+    : `codetabs-${reactId.replace(/[^a-zA-Z0-9_-]/g, '')}`;
 
-  // Flatten fragments/arrays so each tab maps to one panel (MDX + stories).
-  // eslint-disable-next-line @eslint-react/no-children-to-array
-  const panels = Children.toArray(children);
+  const panels = getPanels(children);
   const hasExplicitDefault = tabs.some(
     tab => (tab.value ?? tab.key) === defaultValue
   );
@@ -51,42 +53,65 @@ const CodeTabs: FC<CodeTabsProps> = ({
 
   const items = tabs.map((tab, index) => {
     const tabKey = tab.value ?? tab.key;
-    const tabId = getCodeTabId(instancePrefix, tabKey);
+    const tabId = getCodeTabId(instancePrefix, tabKey, index);
     const isDefault = tabKey === defaultKey;
 
     return { tab, tabId, isDefault, panel: panels[index] };
   });
+  const { enhanced, activeIndex, linksRef, onClick, onKeyDown } =
+    useCodeTabNavigation(
+      items.map(item => item.tabId),
+      items.findIndex(item => item.isDefault)
+    );
 
   return (
     <div className={styles.root}>
-      <nav className={styles.tabList} aria-label="Code samples">
-        {items.map(({ tab, tabId, isDefault }) => (
-          <a
-            key={tab.key}
-            id={tabId}
-            href={`#${tabId}`}
-            className={styles.trigger}
-            data-default={isDefault ? 'true' : undefined}
-          >
-            {tab.label}
-            {tab.extension && (
-              <span className={styles.tabExtension}>{tab.extension}</span>
-            )}
-            {tab.secondaryLabel ? (
-              <span className={styles.tabSecondaryLabel}>
-                {tab.secondaryLabel}
-              </span>
-            ) : null}
-          </a>
-        ))}
+      <div className={styles.tabList}>
+        <div
+          className={styles.triggers}
+          role={enhanced ? 'tablist' : 'navigation'}
+          aria-label="Code samples"
+        >
+          {items.map(({ tab, tabId, isDefault }, index) => (
+            <a
+              key={tab.key}
+              id={`${tabId}-trigger`}
+              href={`#${tabId}`}
+              ref={element => {
+                linksRef.current[index] = element;
+              }}
+              role={enhanced ? 'tab' : undefined}
+              aria-controls={tabId}
+              aria-selected={enhanced ? activeIndex === index : undefined}
+              tabIndex={enhanced && activeIndex !== index ? -1 : 0}
+              onClick={event => onClick(event, index)}
+              onKeyDown={event => onKeyDown(event, index)}
+              className={styles.trigger}
+              data-default={isDefault ? 'true' : undefined}
+            >
+              {tab.label}
+              {tab.extension && (
+                <span className={styles.tabExtension}>{tab.extension}</span>
+              )}
+              {tab.secondaryLabel ? (
+                <span className={styles.tabSecondaryLabel}>
+                  {tab.secondaryLabel}
+                </span>
+              ) : null}
+            </a>
+          ))}
+        </div>
         {addons && <div className={styles.addons}>{addons}</div>}
-      </nav>
+      </div>
       {items.map(({ tab, tabId, isDefault, panel }) => (
         <div
           key={tab.key}
+          id={tabId}
           className={styles.panel}
+          role={enhanced ? 'tabpanel' : 'region'}
+          tabIndex={0}
           data-default={isDefault ? 'true' : undefined}
-          aria-labelledby={tabId}
+          aria-labelledby={`${tabId}-trigger`}
         >
           {panel}
         </div>

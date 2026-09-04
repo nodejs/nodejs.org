@@ -10,7 +10,7 @@ type MDXCodeTabsProps = {
   displayNames?: string;
   defaultTab?: string;
   /**
-   * Optional fragment prefix. Tab ids become `{slug(groupId)}-{language}-{index}`.
+   * Optional fragment prefix. Tab ids include the language key and tab index.
    * When omitted, a unique per-instance prefix is used so multiple CodeTabs
    * on one page do not collide.
    */

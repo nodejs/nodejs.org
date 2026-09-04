@@ -1,72 +1,61 @@
 import { afterEach, describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import MDXCodeTabs from '../CodeTabs';
 
-const resetHash = () => {
-  window.history.replaceState(null, '', '/');
-};
-
 describe('MDXCodeTabs', () => {
-  afterEach(resetHash);
+  afterEach(() => window.history.replaceState(null, '', '/'));
 
-  it('deep-links to a language tab via groupId', async () => {
+  it('deep-links to a language and associates its panel', async () => {
     render(
-      <MDXCodeTabs languages="js|cjs" groupId="install" defaultTab="0">
+      <MDXCodeTabs languages="js|cjs" groupId="install">
         <pre>js source</pre>
         <pre>cjs source</pre>
       </MDXCodeTabs>
     );
-
-    const js = screen.getByRole('link', { name: 'JS' });
-    const cjs = screen.getByRole('link', { name: 'CJS' });
-
-    assert.equal(js.id, 'install-js-0');
-    assert.equal(cjs.id, 'install-cjs-1');
-    assert.equal(js.getAttribute('data-default'), 'true');
-
+    const cjs = screen.getByRole('tab', { name: 'CJS' });
     await userEvent.click(cjs);
-
-    assert.equal(window.location.hash, '#install-cjs-1');
-    assert.equal(document.querySelector(':target')?.id, 'install-cjs-1');
-  });
-
-  it('keeps unique ids when multiple CodeTabs share languages', () => {
-    render(
-      <>
-        <MDXCodeTabs languages="js|cjs">
-          <pre>one js</pre>
-          <pre>one cjs</pre>
-        </MDXCodeTabs>
-        <MDXCodeTabs languages="js|cjs">
-          <pre>two js</pre>
-          <pre>two cjs</pre>
-        </MDXCodeTabs>
-      </>
+    await waitFor(() =>
+      assert.equal(cjs.getAttribute('aria-selected'), 'true')
     );
-
-    const ids = screen
-      .getAllByRole('link')
-      .map(link => link.id)
-      .filter(Boolean);
-
-    assert.equal(ids.length, 4);
-    assert.equal(new Set(ids).size, ids.length);
+    assert.equal(window.location.hash, cjs.getAttribute('href'));
+    assert.equal(document.querySelector(':target').textContent, 'cjs source');
   });
 
-  it('uses the defaultTab index when no hash is present', () => {
+  it('keeps repeated languages in a group distinct', () => {
     render(
-      <MDXCodeTabs languages="js|cjs" groupId="install" defaultTab="1">
-        <pre>js source</pre>
-        <pre>cjs source</pre>
+      <MDXCodeTabs languages="js|js" groupId="install">
+        <pre>first</pre>
+        <pre>second</pre>
       </MDXCodeTabs>
     );
+    const tabs = screen.getAllByRole('tab');
+    assert.notEqual(tabs[0].getAttribute('href'), tabs[1].getAttribute('href'));
+    assert.equal(tabs[1].textContent, 'JS (2)');
+  });
 
+  it('uses defaultTab and falls back for an invalid index', () => {
+    const { rerender } = render(
+      <MDXCodeTabs languages="js|cjs" defaultTab="1">
+        <pre>js</pre>
+        <pre>cjs</pre>
+      </MDXCodeTabs>
+    );
     assert.equal(
-      screen.getByRole('link', { name: 'CJS' }).getAttribute('data-default'),
+      screen.getByRole('tab', { name: 'CJS' }).getAttribute('aria-selected'),
+      'true'
+    );
+    rerender(
+      <MDXCodeTabs languages="js|cjs" defaultTab="bad">
+        <pre>js</pre>
+        <pre>cjs</pre>
+      </MDXCodeTabs>
+    );
+    assert.equal(
+      screen.getByRole('tab', { name: 'JS' }).getAttribute('aria-selected'),
       'true'
     );
   });
