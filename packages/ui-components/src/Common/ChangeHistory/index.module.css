@@ -68,8 +68,12 @@
       text-white!;
   }
 
-:where([data-theme='light'], [data-theme='light'] *) &:is(:hover, :focus-visible) code {
-  color: var(--color-brand-900);
+  /* Keep inline `code` readable in light theme, where hover/focus turns text white */
+  :where([data-theme='light'], [data-theme='light'] *)
+    &:is(:hover, :focus-visible)
+    code {
+    @apply text-brand-900;
+  }
 }
 
 .dropdownLabel {
