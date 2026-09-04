@@ -1,17 +1,43 @@
 @reference "../../styles/index.css";
 
 .root {
-  /* `forceMount` keeps every panel in the DOM, so hide the inactive ones here */
-  > [role='tabpanel'][data-state='inactive'] {
+  @apply grid
+    max-w-full;
+
+  /*
+   * Panels stay in the DOM (copy buttons, no layout jump). Visibility is
+   * driven by CSS :target on the tab trigger, not JavaScript.
+   * Default (no matching hash in this group): [data-default].
+   * Up to 10 tabs are wired via :nth-child; CodeTabs are typically 2–4.
+   */
+  > .panel {
     @apply hidden;
+
+    > :first-child {
+      @apply rounded-t-none;
+    }
   }
 
-  > [role='tabpanel'] > :first-child {
-    @apply rounded-t-none;
+  &:not(:has(.trigger:target)) > .panel[data-default],
+  &:has(.trigger:nth-child(1):target) > .panel:nth-child(2),
+  &:has(.trigger:nth-child(2):target) > .panel:nth-child(3),
+  &:has(.trigger:nth-child(3):target) > .panel:nth-child(4),
+  &:has(.trigger:nth-child(4):target) > .panel:nth-child(5),
+  &:has(.trigger:nth-child(5):target) > .panel:nth-child(6),
+  &:has(.trigger:nth-child(6):target) > .panel:nth-child(7),
+  &:has(.trigger:nth-child(7):target) > .panel:nth-child(8),
+  &:has(.trigger:nth-child(8):target) > .panel:nth-child(9),
+  &:has(.trigger:nth-child(9):target) > .panel:nth-child(10),
+  &:has(.trigger:nth-child(10):target) > .panel:nth-child(11) {
+    @apply block;
   }
 
-  > div:nth-of-type(1) {
-    @apply flex
+  > .tabList {
+    @apply font-open-sans
+      scrollbar-thin
+      flex
+      gap-2
+      overflow-x-auto
       rounded-t
       border-x
       border-t
@@ -27,15 +53,81 @@
       @apply border-b
         border-b-transparent
         px-1
+        pt-0
+        pb-2
+        text-sm
+        font-semibold
+        whitespace-nowrap
         text-neutral-800
+        no-underline
         dark:text-neutral-200;
 
-      &[data-state='active'] {
-        @apply border-b-brand-600
-          text-brand-700
-          dark:border-b-brand-400
-          dark:text-brand-400;
+      scroll-margin-top: calc(
+        var(--header-height) + var(--spacing, 0.25rem) * 6
+      );
+
+      &:focus-visible {
+        @apply outline-brand-600
+          rounded-xs
+          outline-2
+          outline-offset-2;
       }
+
+      &:is(:link, :visited):hover {
+        @apply text-neutral-800
+          dark:text-neutral-200;
+      }
+
+      .tabExtension {
+        @apply ml-1
+          rounded-xs
+          border
+          border-neutral-200
+          px-1
+          py-0
+          text-xs
+          font-normal
+          text-neutral-200;
+      }
+
+      .tabSecondaryLabel {
+        @apply pl-1
+          text-neutral-500
+          dark:text-neutral-800;
+      }
+    }
+
+    /*
+     * Active tab: the :target trigger, or the default trigger when this
+     * CodeTabs instance does not contain the current fragment.
+     */
+    &:not(:has(.trigger:target)) .trigger[data-default],
+    .trigger:target {
+      @apply border-b-brand-600
+        text-brand-700
+        dark:border-b-brand-400
+        dark:text-brand-400
+        no-underline;
+
+      .tabExtension {
+        @apply border-brand-400
+          text-brand-400;
+      }
+
+      .tabSecondaryLabel {
+        @apply text-brand-800
+          dark:text-brand-600;
+      }
+    }
+
+    .addons {
+      @apply ml-auto
+        border-b-2
+        border-b-transparent
+        px-1
+        pb-[11px]
+        text-sm
+        font-semibold;
     }
 
     .link {
