@@ -68,9 +68,8 @@
       text-white!;
   }
 
-  :where([data-theme='light'], [data-theme='light'] *) &:hover code {
-    color: var(--color-brand-900);
-  }
+:where([data-theme='light'], [data-theme='light'] *) &:is(:hover, :focus-visible) code {
+  color: var(--color-brand-900);
 }
 
 .dropdownLabel {
