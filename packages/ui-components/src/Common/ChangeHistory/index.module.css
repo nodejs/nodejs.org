@@ -67,6 +67,13 @@
     @apply bg-brand-600
       text-white!;
   }
+
+  /* Keep inline `code` readable in light theme, where hover/focus turns text white */
+  :where([data-theme='light'], [data-theme='light'] *)
+    &:is(:hover, :focus-visible)
+    code {
+    @apply text-brand-900;
+  }
 }
 
 .dropdownLabel {
