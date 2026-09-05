@@ -113,7 +113,7 @@ const LARGE_SAMPLE_CHANGES = [
 export const Default: Story = {
   render: args => (
     // `main` reproduces the docs page context: markdown.css scopes inline
-    // `code` styles under `main`, which is what the hover fix interacts with /ui-components/src/styles/markdown.css:85
+    // `code` styles under `main`, which is what the hover fix interacts with /ui-components/src/styles/markdown.css
     <main>
       <div className="flex justify-end">
         <ChangeHistory {...args} />
