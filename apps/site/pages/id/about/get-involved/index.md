@@ -18,7 +18,7 @@ Jika kamu tertarik untuk terlibat dengan komunitas Node.js, ada banyak cara untu
 
 Jika kamu ingin mempelajari lebih lanjut tentang Node.js, ada banyak sumber daya yang tersedia untuk mu.
 
-- [Materi belajar resmi](https://nodejs.org/en/learn/) Node.js.
+- [Materi belajar resmi](https://nodejs.org/learn/) Node.js.
 - [Dokumentasi referensi resmi API](https://nodejs.org/api/) Node.js.
 - [NodeSchool.io](https://nodeschool.io/) mengajarkan konsep Node.js melalui game baris perintah interaktif.
 - [Label Node.js di StackOverflow](https://stackoverflow.com/questions/tagged/node.js) berisi banyak utas dengan sumber daya yang bermanfaat.
