@@ -32,8 +32,9 @@
     z-50
     mt-1
     max-h-80
-    w-[26rem]
-    max-w-[calc(100vw-2rem)]
+    w-max
+    max-w-[min(26rem,calc(100vw-2rem))]
+    min-w-[12rem]
     overflow-hidden
     rounded-sm
     border
