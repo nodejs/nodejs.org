@@ -34,7 +34,7 @@
     max-h-80
     w-max
     max-w-[min(26rem,calc(100vw-2rem))]
-    min-w-[12rem]
+    min-w-[min(12rem,calc(100vw-2rem))]
     overflow-hidden
     rounded-sm
     border
