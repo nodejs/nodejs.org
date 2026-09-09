@@ -1,7 +1,7 @@
 'use client';
 
 import Sidebar from '@node-core/ui-components/Containers/Sidebar';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useRef } from 'react';
 
 import Link from '#site/components/Link';
@@ -43,6 +43,7 @@ const mapItem = ([, item]: [string, MappedItem]): SidebarMappedEntry => ({
 const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
   const { getSideNavigation } = useSiteNavigation();
   const pathname = usePathname()!;
+  const locale = useLocale();
   const t = useTranslations();
   const { push } = useRouter();
   const { frontmatter } = useClientContext();
@@ -53,41 +54,45 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
   useScrollToElement('sidebar', sidebarRef);
 
   useEffect(() => {
-    const aside = sidebarRef.current;
-    const active = [
-      ...(aside?.querySelectorAll<HTMLAnchorElement>('a[href]') ?? []),
-    ].find(link => new URL(link.href).pathname === window.location.pathname);
+    const scrollActiveIntoView = () => {
+      const aside = sidebarRef.current;
+      if (!aside) {
+        return;
+      }
 
-    if (!aside || !active) {
-      return;
-    }
+      const active = Array.from(
+        aside.querySelectorAll<HTMLAnchorElement>('a[href]')
+      ).find(link => link.pathname === window.location.pathname);
 
-    const offsetTop =
-      active.getBoundingClientRect().top -
-      aside.getBoundingClientRect().top +
-      aside.scrollTop;
-    const viewTop = aside.scrollTop;
-    const viewBottom = viewTop + aside.clientHeight;
+      if (!active) {
+        return;
+      }
 
-    if (offsetTop >= viewTop && offsetTop + active.offsetHeight <= viewBottom) {
-      return;
-    }
+      const asideBounds = aside.getBoundingClientRect();
+      const activeBounds = active.getBoundingClientRect();
 
-    aside.scrollTop = Math.max(
-      0,
-      offsetTop - aside.clientHeight / 2 + active.offsetHeight / 2
-    );
-  }, [pathname]);
+      const offsetTop = activeBounds.top - asideBounds.top + aside.scrollTop;
+      const viewTop = aside.scrollTop;
+      const viewBottom = viewTop + aside.clientHeight;
 
-  const mappedSidebarItems =
-    // If there's only a single navigation key, use its sub-items
-    // as our navigation.
-    (navKeys.length === 1 ? sideNavigation[0][1].items : sideNavigation).map(
-      ([, { label, items }]: [string, MappedItem]) => ({
-        groupName: label,
-        items: items ? items.map(mapItem) : [],
-      })
-    );
+      if (offsetTop < viewTop || offsetTop + active.offsetHeight > viewBottom) {
+        aside.scrollTop = Math.max(
+          0,
+          offsetTop - aside.clientHeight / 2 + active.offsetHeight / 2
+        );
+      }
+    };
+
+    const timer = setTimeout(scrollActiveIntoView, 100);
+    return () => clearTimeout(timer);
+  }, [pathname, locale]);
+
+  const mappedSidebarItems = (
+    navKeys.length === 1 ? sideNavigation[0][1].items : sideNavigation
+  ).map(([, { label, items }]: [string, MappedItem]) => ({
+    groupName: label,
+    items: items ? items.map(mapItem) : [],
+  }));
 
   return (
     <Sidebar
