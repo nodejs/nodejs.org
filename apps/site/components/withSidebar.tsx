@@ -2,7 +2,7 @@
 
 import Sidebar from '@node-core/ui-components/Containers/Sidebar';
 import { useTranslations } from 'next-intl';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import Link from '#site/components/Link';
 import useClientContext from '#site/hooks/useClientContext';
@@ -51,6 +51,33 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
 
   // Preserve sidebar scroll position across navigations
   useScrollToElement('sidebar', sidebarRef);
+
+  useEffect(() => {
+    const aside = sidebarRef.current;
+    const active = [
+      ...(aside?.querySelectorAll<HTMLAnchorElement>('a[href]') ?? []),
+    ].find(link => new URL(link.href).pathname === window.location.pathname);
+
+    if (!aside || !active) {
+      return;
+    }
+
+    const offsetTop =
+      active.getBoundingClientRect().top -
+      aside.getBoundingClientRect().top +
+      aside.scrollTop;
+    const viewTop = aside.scrollTop;
+    const viewBottom = viewTop + aside.clientHeight;
+
+    if (offsetTop >= viewTop && offsetTop + active.offsetHeight <= viewBottom) {
+      return;
+    }
+
+    aside.scrollTop = Math.max(
+      0,
+      offsetTop - aside.clientHeight / 2 + active.offsetHeight / 2
+    );
+  }, [pathname]);
 
   const mappedSidebarItems =
     // If there's only a single navigation key, use its sub-items
