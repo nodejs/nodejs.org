@@ -24,7 +24,6 @@ const nextConfig = {
       'https://bestpractices.coreinfrastructure.org/**',
       'https://raw.githubusercontent.com/nodejs/**',
       'https://user-images.githubusercontent.com/**',
-      'https://website-assets.oramasearch.com/**',
     ].map(url => new URL(url)),
   },
   serverExternalPackages: ['twoslash'],
