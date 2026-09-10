@@ -260,7 +260,8 @@
           "choco": "Chocolatey is a package manager for Windows.",
           "docker": "Docker is a containerization platform.",
           "n": "\"n\" is a cross-platform Node.js version manager.",
-          "asdf": "\"asdf\" is a cross-platform version manager that supports multiple languages."
+          "asdf": "\"asdf\" is a cross-platform version manager that supports multiple languages.",
+          "zeroinstall": "0install is a cross-platform decentralized package manager."
         }
       }
     },
