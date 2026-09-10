@@ -5,7 +5,7 @@ import { CODE_LIKE_TYPES } from '#ui/constants';
 
 import type { LinkLike } from '#ui/types';
 import type { Heading } from '@vcarl/remark-headings';
-import type { FC, HTMLAttributes } from 'react';
+import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';
 
@@ -19,11 +19,12 @@ type MetaBarProps = {
   heading: string;
 } & HTMLAttributes<HTMLElement>;
 
-const MetaBar: FC<MetaBarProps> = ({
+const MetaBar: FC<PropsWithChildren<MetaBarProps>> = ({
   items,
   headings,
   as: Component = 'a',
   heading,
+  children,
   ...props
 }) => {
   // The default depth of headings to display in the table of contents.
@@ -36,6 +37,7 @@ const MetaBar: FC<MetaBarProps> = ({
 
   return (
     <aside className={styles.wrapper} {...props}>
+      {children}
       <dl>
         {Object.entries(items)
           .filter(([, value]) => !!value)

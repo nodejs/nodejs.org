@@ -160,7 +160,11 @@
         "pageLabel": "Go to page {pageNumber}"
       },
       "sidebar": {
-        "title": "Change page"
+        "title": "Change page",
+        "expandLeftSidebar": "Expand left sidebar",
+        "collapseLeftSidebar": "Collapse left sidebar",
+        "expandRightSidebar": "Expand right sidebar",
+        "collapseRightSidebar": "Collapse right sidebar"
       },
       "languageDropdown": {
         "label": "Choose Language"
