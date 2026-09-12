@@ -1,6 +1,12 @@
 import classNames from 'classnames';
+import { useId } from 'react';
 
-import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
+import type {
+  CSSProperties,
+  FC,
+  HTMLAttributes,
+  PropsWithChildren,
+} from 'react';
 
 import styles from './index.module.css';
 
@@ -10,6 +16,7 @@ type BadgeSize = 'small' | 'medium';
 type BadgeProps = HTMLAttributes<HTMLSpanElement> & {
   size?: BadgeSize;
   kind?: BadgeKind;
+  'data-tooltip'?: string;
 };
 
 const Badge: FC<PropsWithChildren<BadgeProps>> = ({
@@ -18,22 +25,54 @@ const Badge: FC<PropsWithChildren<BadgeProps>> = ({
   className,
   children,
   ...props
-}) => (
-  <span
-    className={classNames(
-      styles.badge,
-      styles[kind],
-      styles[size],
-      {
-        [styles.circular]:
-          typeof children === 'string' && children.length === 1,
-      },
-      className
-    )}
-    {...props}
-  >
-    {children}
-  </span>
-);
+}) => {
+  const { style, ...rest } = props;
+  const tooltip = rest['data-tooltip'];
+  // A unique anchor name per badge: anchoring the tooltip to the badge keeps
+  // it out of reach of ancestor clipping (scrolling containers), which the
+  // global `[data-tooltip]` pseudo-element tooltip suffers from.
+  const tooltipAnchorId = useId();
+  const anchorName = `--badge-tooltip-${tooltipAnchorId.replace(
+    /[^a-zA-Z0-9]/g,
+    ''
+  )}`;
+
+  const badge = (
+    <span
+      className={classNames(
+        styles.badge,
+        styles[kind],
+        styles[size],
+        {
+          [styles.circular]:
+            typeof children === 'string' && children.length === 1,
+        },
+        className
+      )}
+      style={tooltip ? ({ anchorName, ...style } as CSSProperties) : style}
+      {...rest}
+    >
+      {children}
+    </span>
+  );
+
+  if (!tooltip) {
+    return badge;
+  }
+
+  return (
+    <>
+      {badge}
+
+      <span
+        role="tooltip"
+        className={styles.tooltip}
+        style={{ positionAnchor: anchorName } as CSSProperties}
+      >
+        {tooltip}
+      </span>
+    </>
+  );
+};
 
 export default Badge;

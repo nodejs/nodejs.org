@@ -54,3 +54,84 @@
     }
   }
 }
+
+/*
+ * Real tooltip element rendered as the next sibling of badges carrying
+ * `data-tooltip`. It stays hidden unless the browser supports CSS anchor
+ * positioning, in which case it replaces the global `[data-tooltip]`
+ * pseudo-element tooltip so it cannot be clipped by scrolling ancestors
+ * (see nodejs/doc-kit#938).
+ */
+.tooltip {
+  @apply pointer-events-none
+    z-10
+    w-max
+    max-w-64
+    rounded-md
+    border
+    border-neutral-200
+    bg-white
+    px-2.5
+    py-1.5
+    text-center
+    text-sm
+    font-medium
+    text-neutral-900
+    opacity-0
+    shadow-lg
+    transition-opacity
+    dark:border-neutral-900
+    dark:bg-neutral-950
+    dark:text-white;
+
+  display: none;
+
+  &::before {
+    @apply absolute
+      size-2
+      -translate-x-1/2
+      rotate-45
+      border
+      border-r-0
+      border-b-0
+      border-neutral-200
+      bg-white
+      content-[''];
+
+    left: 50%;
+    top: -5px;
+  }
+}
+
+/* Dark variants for the arrow must target the originating element through an
+   explicit ancestor selector: `dark:` utilities applied inside `&::before`
+   compile to an unmatchable pseudo-element compound selector. */
+[data-theme='dark'] .tooltip::before {
+  @apply border-neutral-900
+    bg-neutral-950;
+}
+
+@supports (anchor-name: --doc-kit-badge-tooltip) {
+  .badge[data-tooltip] {
+    &::after,
+    &::before {
+      @apply hidden;
+    }
+  }
+
+  .tooltip {
+    @apply block;
+
+    left: anchor(center);
+    margin-block-start: 0.5rem;
+    position: fixed;
+    position-anchor: var(--tooltip-anchor);
+    top: anchor(bottom);
+    translate: -50% 0;
+  }
+
+  .badge[data-tooltip]:focus-visible ~ .tooltip,
+  .badge[data-tooltip]:hover ~ .tooltip {
+    @apply opacity-100;
+  }
+}
