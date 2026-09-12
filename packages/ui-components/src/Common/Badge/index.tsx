@@ -30,15 +30,16 @@ const Badge: FC<PropsWithChildren<BadgeProps>> = ({
   const tooltip = rest['data-tooltip'];
   // A unique anchor name per badge: anchoring the tooltip to the badge keeps
   // it out of reach of ancestor clipping (scrolling containers), which the
-  // global `[data-tooltip]` pseudo-element tooltip suffers from.
-  const tooltipAnchorId = useId();
-  const anchorName = `--badge-tooltip-${tooltipAnchorId.replace(
-    /[^a-zA-Z0-9]/g,
-    ''
-  )}`;
+  // global `[data-tooltip]` pseudo-element tooltip suffers from. The same
+  // identifier also wires the `aria-describedby` relationship that exposes
+  // the stability text to assistive technologies.
+  const tooltipAnchorId = useId().replace(/[^a-zA-Z0-9]/g, '');
+  const anchorName = `--badge-tooltip-${tooltipAnchorId}`;
+  const tooltipId = `badge-tooltip-${tooltipAnchorId}`;
 
   const badge = (
     <span
+      aria-describedby={tooltip ? tooltipId : undefined}
       className={classNames(
         styles.badge,
         styles[kind],
@@ -65,6 +66,7 @@ const Badge: FC<PropsWithChildren<BadgeProps>> = ({
       {badge}
 
       <span
+        id={tooltipId}
         role="tooltip"
         className={styles.tooltip}
         style={{ positionAnchor: anchorName } as CSSProperties}

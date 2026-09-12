@@ -64,6 +64,7 @@
  */
 .tooltip {
   @apply pointer-events-none
+    invisible
     z-10
     w-max
     max-w-64
@@ -79,7 +80,7 @@
     text-neutral-900
     opacity-0
     shadow-lg
-    transition-opacity
+    transition-[opacity,visibility]
     dark:border-neutral-900
     dark:bg-neutral-950
     dark:text-white;
@@ -132,6 +133,7 @@
 
   .badge[data-tooltip]:focus-visible ~ .tooltip,
   .badge[data-tooltip]:hover ~ .tooltip {
-    @apply opacity-100;
+    @apply visible
+      opacity-100;
   }
 }

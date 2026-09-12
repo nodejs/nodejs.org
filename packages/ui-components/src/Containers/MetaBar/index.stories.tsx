@@ -188,6 +188,7 @@ export const TableOfContentsWithStabilityBadges: Story = {
       items: TOC_ENTRIES.map((entry, index) => {
         const badge = entry.stability ? (
           <Badge
+            aria-label={`Stability: ${entry.stability}`}
             className={entry.badgePosition === 'leading' ? 'mr-1' : 'ml-1'}
             data-tooltip={entry.stability}
             tabIndex={0}
