@@ -8,7 +8,7 @@ import { useHashContext } from '#ui/contexts/HashContext';
 import type { ComponentProps, FC } from 'react';
 
 type CodeTabsWithHashProps = Omit<ComponentProps<typeof CodeTabs>, 'tabs'> & {
-  tabs: Array<{ key: string; label: string; anchorId: string }>;
+  tabs: Array<{ key: string; label: string; id?: string }>;
 };
 
 const CodeTabsWithHash: FC<CodeTabsWithHashProps> = ({
@@ -22,7 +22,7 @@ const CodeTabsWithHash: FC<CodeTabsWithHashProps> = ({
 
   if (hash !== prevHash) {
     setPrevHash(hash);
-    const matched = tabs.find(t => t.anchorId === hash);
+    const matched = tabs.find(t => t.id === hash);
     if (matched && matched.key !== activeTab) {
       setActiveTab(matched.key);
     }
@@ -32,8 +32,8 @@ const CodeTabsWithHash: FC<CodeTabsWithHashProps> = ({
     (value: string) => {
       setActiveTab(value);
       const matched = tabs.find(t => t.key === value);
-      if (matched) {
-        setHash(matched.anchorId);
+      if (matched?.id) {
+        setHash(matched.id);
       }
     },
     [tabs, setHash]
