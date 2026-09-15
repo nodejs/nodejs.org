@@ -27,8 +27,6 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
   groupId,
   ...props
 }) => {
-  const prefix = groupId ?? 'tab';
-
   const { tabs, languages } = useMemo(() => {
     const occurrences: Record<string, number> = {};
 
@@ -49,16 +47,15 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
 
       return {
         key: `${language}-${index}`,
-        anchorId: `${prefix}-${language}-${index}`.replace(
-          /[^a-zA-Z0-9-_]/g,
-          '-'
-        ),
         label,
+        id:
+          groupId &&
+          `${groupId}-${language}-${index}`.replace(/[^a-zA-Z0-9-_]/g, '-'),
       };
     });
 
     return { tabs, languages };
-  }, [rawLanguages, rawDisplayNames, prefix]);
+  }, [rawLanguages, rawDisplayNames, groupId]);
 
   const Component = groupId ? CodeTabsWithHash : CodeTabs;
 
