@@ -29,6 +29,7 @@ const getSnapshot = () =>
 const getServerSnapshot = () => '';
 
 const useHash = () => {
+  // Works in both client and server environments, provides the initial value for the store during server rendering and hydration avoiding hydration mismatches
   const hash = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const setHash = (newHash: string) => {
