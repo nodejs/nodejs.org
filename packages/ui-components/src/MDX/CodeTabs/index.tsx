@@ -1,11 +1,11 @@
-'use client';
-
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import { useEffect, useId, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 
 import CodeTabs from '#ui/Common/CodeTabs';
 
 import type { FC, ReactElement } from 'react';
+
+import CodeTabsWithHash from './CodeTabsWithHash';
 
 type MDXCodeTabsProps = {
   children: Array<ReactElement<unknown>>;
@@ -27,8 +27,7 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
   groupId,
   ...props
 }) => {
-  const id = useId();
-  const prefix = groupId ? `tab-${groupId}` : `tab-${id}`;
+  const prefix = groupId ?? 'tab';
 
   const { tabs, languages } = useMemo(() => {
     const occurrences: Record<string, number> = {};
@@ -61,43 +60,12 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
     return { tabs, languages };
   }, [rawLanguages, rawDisplayNames, prefix]);
 
-  const [activeTab, setActiveTab] = useState(() => {
-    if (typeof window !== 'undefined' && window.location.hash) {
-      const hash = window.location.hash.slice(1);
-      const matched = tabs.find(t => t.anchorId === hash);
-      if (matched) {
-        return matched.key;
-      }
-    }
-    return tabs[Number(defaultTab)]?.key ?? tabs[0].key;
-  });
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.slice(1);
-      const matched = tabs.find(t => t.anchorId === hash);
-      if (matched) {
-        setActiveTab(matched.key);
-      }
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, [tabs]);
-
-  const handleValueChange = (value: string) => {
-    setActiveTab(value);
-    const matched = tabs.find(t => t.key === value);
-    if (matched) {
-      window.history.replaceState(null, '', `#${matched.anchorId}`);
-    }
-  };
+  const Component = groupId ? CodeTabsWithHash : CodeTabs;
 
   return (
-    <CodeTabs
+    <Component
       tabs={tabs}
-      value={activeTab}
-      onValueChange={handleValueChange}
+      defaultValue={tabs[Number(defaultTab)].key}
       {...props}
     >
       {languages.map((_, index) => (
@@ -109,7 +77,7 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
           {codes[index]}
         </TabsPrimitive.Content>
       ))}
-    </CodeTabs>
+    </Component>
   );
 };
 
