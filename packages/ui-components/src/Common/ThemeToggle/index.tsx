@@ -43,7 +43,7 @@ const ThemeToggle: FC<ThemeToggleProps> = ({
           className={styles.themeToggle}
           aria-label={ariaLabel}
         >
-          <TriggerIcon height="20" />
+          <TriggerIcon key={currentTheme} height="20" />
         </button>
       </DropdownMenu.Trigger>
 
