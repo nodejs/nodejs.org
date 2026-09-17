@@ -1,5 +1,4 @@
-import Article from '@node-core/ui-components/Containers/Article';
-
+import ArticleWithSidebarState from '#site/components/Common/ArticleWithSidebarState';
 import WithFooter from '#site/components/withFooter';
 import WithMetaBar from '#site/components/withMetaBar';
 import WithNavBar from '#site/components/withNavBar';
@@ -11,7 +10,7 @@ const ArticlePageLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <WithNavBar />
 
-    <Article>
+    <ArticleWithSidebarState>
       <WithSidebar navKeys={[]} />
 
       <div>
@@ -21,7 +20,7 @@ const ArticlePageLayout: FC<PropsWithChildren> = ({ children }) => (
 
         <WithMetaBar />
       </div>
-    </Article>
+    </ArticleWithSidebarState>
 
     <WithFooter />
   </>
