@@ -77,7 +77,7 @@ There were also a handful of other issues with the origin server pertaining to i
 
 All of these issues combined created for scenarios where the origin server wasn't touched unless necessary, including a period in which it had over _3 years of uptime_.
 These factors also contributed to incidents such as the one that occurred from [March 15th, 2023 to March 17th, 2023](/en/blog/announcements/node-js-march-17-incident), where the Node.js release assets were unavailable for 2 days due to the origin server being overloaded and improper caching rules.
-Between incidents like this and the daily outages that were occuring, users were being effected and were painfully aware of the unreliability of the infrastructure.
+Between incidents like this and the daily outages that were occurring, users were being affected and were painfully aware of the unreliability of the infrastructure.
 
 This needed to be fixed.
 
@@ -138,7 +138,7 @@ However, R2 doesn't support symlinks, meaning we needed to come up with a soluti
 Finally, we needed to meet the reliability goal.
 To do this, we implemented four things:
 
-1. Any request to R2 that fails is retried 3 times (in additon to the retries that Workers already performs).
+1. Any request to R2 that fails is retried 3 times (in addition to the retries that Workers already performs).
 2. A "fallback" system. Any request to R2 that fails all retries is rewritten to the old infrastructure.
 3. When an error does happen, it's recorded in [Sentry](https://sentry.io/welcome) and we're notified so we can take appropriate action.
 4. Slack alerts are in place for Sentry and for any critical point of failure in the Release Worker (ex/ deployment failure).
