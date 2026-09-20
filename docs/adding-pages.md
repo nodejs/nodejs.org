@@ -73,7 +73,7 @@ Available layouts are defined in `apps/site/layouts/`, and mapped in `components
 
 ### 4. Update Navigation (if needed)
 
-If your page should appear in the site navigation, update `app/site/navigation.json` as needed.
+If your page should appear in the site navigation, update `apps/site/navigation.json` as needed.
 
 ## Adding Learn Pages
 
@@ -92,7 +92,7 @@ apps/site/pages/en/learn/
 
 ### Update Learn Navigation
 
-Add your new article to `app/site/navigation.json`:
+Add your new article to `apps/site/navigation.json`:
 
 ```json
 {
