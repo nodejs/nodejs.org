@@ -109,7 +109,7 @@ This isn't the end for [`doc-kit`](https://github.com/nodejs/doc-kit/issues/594)
 
 ### The Redesigned JSON Generator
 
-A [redesigned JSON generator](https://github.com/nodejs/doc-kit/issues/594) would allow us to create a more deliberate, documented, and extensible representation of the Node.js API, particularly one that allows consumers to easily parse Node.js types, descriptions, and other details. We plan to work closely with the [`@types/node` maintainers](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node) to create a JSON format that allows consumers to learn all the same information available visually, in a more machine-readable format.
+A [redesigned JSON generator](https://github.com/nodejs/doc-kit/pull/1079) would allow us to create a more deliberate, documented, and extensible representation of the Node.js API, particularly one that allows consumers to easily parse Node.js types, descriptions, and other details. We plan to work closely with the [`@types/node` maintainers](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node) to create a JSON format that allows consumers to learn all the same information available visually, in a more machine-readable format.
 
 ### doc-kit In Other Projects
 
