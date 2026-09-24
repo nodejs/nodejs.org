@@ -5,5 +5,6 @@ import Homebrew from '#ui/Icons/InstallationMethod/Homebrew';
 import N from '#ui/Icons/InstallationMethod/N';
 import NVM from '#ui/Icons/InstallationMethod/NVM';
 import Volta from '#ui/Icons/InstallationMethod/Volta';
+import ZeroInstall from '#ui/Icons/InstallationMethod/ZeroInstall';
 
-export { Choco, Docker, FNM, Homebrew, N, NVM, Volta };
+export { Choco, Docker, FNM, Homebrew, N, NVM, Volta, ZeroInstall };
