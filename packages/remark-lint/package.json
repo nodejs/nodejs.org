@@ -2,10 +2,14 @@
   "name": "@node-core/remark-lint",
   "type": "module",
   "version": "1.4.1",
+  "description": "remark-lint presets and rules enforcing the Node.js documentation standards and the doc-kit Markdown specification",
   "exports": {
     ".": "./src/index.mjs",
     "./api": "./src/api.mjs",
-    "./rules/*": "./src/rules/*.mjs"
+    "./rules": "./src/rules/index.mjs",
+    "./rules/*": "./src/rules/*.mjs",
+    "./presets/*": "./src/presets/*.mjs",
+    "./package.json": "./package.json"
   },
   "repository": {
     "type": "git",
@@ -21,46 +25,37 @@
     "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --test \"**/*.test.mjs\""
   },
   "dependencies": {
-    "@node-core/doc-kit": "^1.2.0",
-    "mdast-util-to-string": "^4.0.0",
+    "@doc-kit/core": "^1.1.0",
+    "github-slugger": "^2.0.0",
     "remark-gfm": "^4.0.1",
-    "remark-lint-blockquote-indentation": "^4.0.1",
-    "remark-lint-checkbox-character-style": "^5.0.1",
-    "remark-lint-checkbox-content-indent": "^5.0.1",
-    "remark-lint-code-block-style": "^4.0.1",
     "remark-lint-definition-spacing": "^4.0.1",
     "remark-lint-fenced-code-flag": "^4.2.0",
-    "remark-lint-fenced-code-marker": "^4.0.1",
+    "remark-lint-file-extension": "^3.0.1",
     "remark-lint-final-definition": "^4.0.2",
-    "remark-lint-heading-style": "^4.0.1",
+    "remark-lint-first-heading-level": "^4.0.1",
     "remark-lint-maximum-line-length": "^4.1.1",
-    "remark-lint-no-consecutive-blank-lines": "^5.0.1",
+    "remark-lint-no-duplicate-definitions": "^4.0.1",
+    "remark-lint-no-file-name-articles": "^3.0.1",
     "remark-lint-no-file-name-consecutive-dashes": "^3.0.1",
     "remark-lint-no-file-name-outer-dashes": "^3.0.1",
-    "remark-lint-no-heading-indent": "^5.0.1",
-    "remark-lint-no-literal-urls": "^4.0.1",
     "remark-lint-no-multiple-toplevel-headings": "^4.0.1",
     "remark-lint-no-shell-dollars": "^4.0.1",
-    "remark-lint-no-table-indentation": "^5.0.1",
-    "remark-lint-no-tabs": "^4.0.1",
-    "remark-lint-no-trailing-spaces": "^5.0.0",
+    "remark-lint-no-shortcut-reference-image": "^4.0.1",
+    "remark-lint-no-shortcut-reference-link": "^4.0.1",
+    "remark-lint-no-undefined-references": "^5.0.2",
     "remark-lint-no-unused-definitions": "^4.0.2",
     "remark-lint-prohibited-strings": "^5.0.0",
-    "remark-lint-rule-style": "^4.0.1",
-    "remark-lint-strong-marker": "^4.0.1",
-    "remark-lint-table-cell-padding": "^5.1.1",
-    "remark-lint-table-pipes": "^5.0.1",
-    "remark-lint-unordered-list-marker-style": "^4.0.1",
-    "remark-preset-lint-recommended": "^7.0.1",
-    "semver": "^7.8.1",
+    "remark-message-control": "^8.0.0",
+    "remark-parse": "^11.0.0",
+    "semver": "^7.8.5",
+    "unified": "^11.0.5",
     "unified-lint-rule": "^3.0.1",
-    "unist-util-visit": "^5.1.0",
-    "yaml": "^2.8.4"
+    "yaml": "^2.9.1"
   },
   "devDependencies": {
     "cross-env": "catalog:",
     "dedent": "^1.7.2",
-    "remark-parse": "^11.0.0",
-    "unified": "^11.0.5"
+    "remark-stringify": "^11.0.0",
+    "vfile": "^6.0.3"
   }
 }
