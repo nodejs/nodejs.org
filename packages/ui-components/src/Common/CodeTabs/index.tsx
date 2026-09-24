@@ -6,7 +6,7 @@ import styles from './index.module.css';
 
 type CodeTabsProps = Pick<
   ComponentProps<typeof Tabs>,
-  'tabs' | 'defaultValue' | 'children' | 'addons'
+  'tabs' | 'defaultValue' | 'value' | 'onValueChange' | 'children' | 'addons'
 >;
 
 const CodeTabs: FC<CodeTabsProps> = ({ ...props }) => (
