@@ -188,6 +188,13 @@ catalogs:
     typescript:
       specifier: 5.9.3
       version: 5.9.3
+  peer-react19:
+    '@types/react':
+      specifier: ^19.0.0
+      version: 19.3.0
+    react:
+      specifier: ^19.0.0
+      version: 19.3.0
 
 importers:
 
@@ -650,9 +657,6 @@ importers:
       classnames:
         specifier: 'catalog:'
         version: 2.5.1
-      react:
-        specifier: 'catalog:'
-        version: 19.3.0
     devDependencies:
       '@eslint-react/eslint-plugin':
         specifier: ~5.8.6
@@ -685,7 +689,7 @@ importers:
         specifier: 'catalog:'
         version: 24.10.1
       '@types/react':
-        specifier: 'catalog:'
+        specifier: catalog:peer-react19
         version: 19.3.0
       concurrently:
         specifier: 9.2.1
@@ -717,6 +721,9 @@ importers:
       postcss-loader:
         specifier: 8.2.1
         version: 8.2.1(postcss@8.5.28)(typescript@5.9.3)(webpack@5.109.2(@swc/core@1.15.40(@swc/helpers@0.5.23))(clean-css@5.3.3)(esbuild@0.28.1)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.28)(uglify-js@3.19.3))
+      react:
+        specifier: catalog:peer-react19
+        version: 19.3.0
       storybook:
         specifier: ~10.6.0
         version: 10.6.0(@types/react@19.3.0)(prettier@3.9.6)(react@19.3.0)
