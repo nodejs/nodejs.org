@@ -1,5 +1,15 @@
 # @node-core/website-i18n
 
+## 2.0.0
+
+### Major Changes
+
+- [#9172](https://github.com/nodejs/nodejs.org/pull/9172) [`842e9ae`](https://github.com/nodejs/nodejs.org/commit/842e9aef477302e6d562c9a752c9b448488456d8) Thanks [@bmuenzenmeyer](https://github.com/bmuenzenmeyer)! - Remove translation key
+
+### Patch Changes
+
+- [#9143](https://github.com/nodejs/nodejs.org/pull/9143) [`99fbe72`](https://github.com/nodejs/nodejs.org/commit/99fbe7283d480c89d837fa7e87f11560ad99ac1e) Thanks [@nodejs-crowdin](https://github.com/nodejs-crowdin)! - Update translations from Crowdin.
+
 ## 1.1.35
 
 ### Patch Changes

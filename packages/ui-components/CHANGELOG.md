@@ -1,5 +1,11 @@
 # @node-core/ui-components
 
+## 1.7.7
+
+### Patch Changes
+
+- [#9148](https://github.com/nodejs/nodejs.org/pull/9148) [`f50e151`](https://github.com/nodejs/nodejs.org/commit/f50e151d9ca399e7dcff07c19cf177a6907cf9b3) Thanks [@Botato300](https://github.com/Botato300)! - Fix sidebar height
+
 ## 1.7.6
 
 ### Patch Changes
