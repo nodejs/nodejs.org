@@ -61,8 +61,7 @@
     "@radix-ui/react-tabs": "^1.1.18",
     "@radix-ui/react-tooltip": "^1.2.13",
     "@vcarl/remark-headings": "~0.1.0",
-    "classnames": "catalog:",
-    "react": "catalog:"
+    "classnames": "catalog:"
   },
   "devDependencies": {
     "@eslint-react/eslint-plugin": "~5.8.6",
@@ -74,7 +73,7 @@
     "@tailwindcss/postcss": "~4.3.3",
     "@testing-library/user-event": "~14.6.1",
     "@types/node": "catalog:",
-    "@types/react": "catalog:",
+    "@types/react": "catalog:peer-react19",
     "concurrently": "9.2.1",
     "cross-env": "catalog:",
     "css-loader": "7.1.4",
@@ -85,6 +84,7 @@
     "postcss-calc": "~10.1.1",
     "postcss-cli": "^11.0.1",
     "postcss-loader": "8.2.1",
+    "react": "catalog:peer-react19",
     "storybook": "~10.5.4",
     "style-loader": "4.0.0",
     "stylelint": "17.14.1",
@@ -94,6 +94,9 @@
     "tailwindcss": "catalog:",
     "tsx": "4.23.1",
     "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:peer-react19"
   },
   "imports": {
     "#ui/*": {
