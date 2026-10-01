@@ -5,14 +5,11 @@ import CodeTabs from '#ui/Common/CodeTabs';
 
 import type { FC, ReactElement } from 'react';
 
-import CodeTabsWithHash from './CodeTabsWithHash';
-
 type MDXCodeTabsProps = {
   children: Array<ReactElement<unknown>>;
   languages: string;
   displayNames?: string;
   defaultTab?: string;
-  groupId?: string;
 };
 
 const NAME_OVERRIDES: Record<string, string | undefined> = {
@@ -24,7 +21,6 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
   displayNames: rawDisplayNames,
   children: codes,
   defaultTab = '0',
-  groupId,
   ...props
 }) => {
   const { tabs, languages } = useMemo(() => {
@@ -48,19 +44,14 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
       return {
         key: `${language}-${index}`,
         label,
-        id:
-          groupId &&
-          `${groupId}-${language}-${index}`.replace(/[^a-zA-Z0-9-_]/g, '-'),
       };
     });
 
     return { tabs, languages };
-  }, [rawLanguages, rawDisplayNames, groupId]);
-
-  const Component = groupId ? CodeTabsWithHash : CodeTabs;
+  }, [rawLanguages, rawDisplayNames]);
 
   return (
-    <Component
+    <CodeTabs
       tabs={tabs}
       defaultValue={tabs[Number(defaultTab)].key}
       {...props}
@@ -74,7 +65,7 @@ const MDXCodeTabs: FC<MDXCodeTabsProps> = ({
           {codes[index]}
         </TabsPrimitive.Content>
       ))}
-    </Component>
+    </CodeTabs>
   );
 };
 
