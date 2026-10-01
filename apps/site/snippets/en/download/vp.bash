@@ -1,7 +1,7 @@
 # Download and install Vite+
 ${props.os === 'WIN' ?
-  'irm https://vite.plus/ps1 | iex' :
-  'curl -fsSL https://vite.plus | bash'
+  '$env:VP_NODE_MANAGER = "yes"\nirm https://vite.plus/ps1 | iex' :
+  'curl -fsSL https://vite.plus | VP_NODE_MANAGER=yes bash'
 }
 
 # In lieu of restarting the shell
