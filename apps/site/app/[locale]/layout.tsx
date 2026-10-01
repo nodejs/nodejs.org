@@ -6,6 +6,7 @@ import { getLocale } from 'next-intl/server';
 
 import BaseLayout from '#site/layouts/Base';
 import { IBM_PLEX_MONO, OPEN_SANS } from '#site/next.fonts';
+import { HashProvider } from '#site/providers/hashProvider';
 import { ThemeProvider } from '#site/providers/themeProvider';
 
 import type { FC, PropsWithChildren } from 'react';
@@ -29,9 +30,11 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
     >
       <body suppressHydrationWarning>
         <NextIntlClientProvider>
-          <ThemeProvider>
-            <BaseLayout>{children}</BaseLayout>
-          </ThemeProvider>
+          <HashProvider>
+            <ThemeProvider>
+              <BaseLayout>{children}</BaseLayout>
+            </ThemeProvider>
+          </HashProvider>
         </NextIntlClientProvider>
 
         <a
