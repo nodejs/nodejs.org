@@ -1,12 +1,13 @@
 {
   "plugins": [
     "remark-frontmatter",
-    "@node-core/remark-lint",
     [
-      "@node-core/remark-lint/rules/validate-links",
+      "@node-core/remark-lint",
       {
-        "ignoreFiles": ["pages/!(en)/**/*.{md,mdx}"],
-        "ignoreLinks": ["/learn", "/learn/**/*", "/static/**/*", "/feed/*"]
+        "link-targets": {
+          "ignoreFiles": ["pages/!(en)/**/*.{md,mdx}"],
+          "ignoreLinks": ["/learn", "/learn/**/*", "/static/**/*", "/feed/*"]
+        }
       }
     ]
   ]
