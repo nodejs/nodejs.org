@@ -275,8 +275,8 @@ importers:
         specifier: ~4.17.1
         version: 4.17.1(@typescript-eslint/utils@8.68.0(eslint@10.9.1(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@5.9.3))(eslint-import-resolver-node@0.3.9(supports-color@10.2.2))(eslint@10.9.1(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)
       globals:
-        specifier: ^17.7.0
-        version: 17.8.0
+        specifier: ^17.12.0
+        version: 17.12.0
       prettier:
         specifier: 3.9.6
         version: 3.9.6
@@ -6716,8 +6716,8 @@ packages:
     resolution: {integrity: sha512-awConJSVCHVGND6x3tmMaKcQvwXLhjdkmomy2W+Goaui8YPgYgXJZewhg3fWC+DlfqqQuWg8AwqjGTD2nAPVWg==}
     engines: {node: '>=6'}
 
-  globals@17.8.0:
-    resolution: {integrity: sha512-Zz/LMDZScFmkakeL2cTHzf+PbWKdpU3uclqkZT7TjDG58j5WPt0PpA+n9uPI24fZtlw07q0OtEi84K+umsRzqQ==}
+  globals@17.12.0:
+    resolution: {integrity: sha512-cezEd/DTyyht9cvSSURyygXPfy04GtWO/5e6ZPvH7fCtjKz9PYOmuawphw1Ctd1f6C+5JypXfGD7ahNMXvevBA==}
     engines: {node: '>=18'}
 
   globalthis@1.0.4:
@@ -11717,7 +11717,7 @@ snapshots:
       estree-util-visit: 2.0.0
       github-slugger: 2.0.0
       glob-parent: 6.0.2
-      globals: 17.8.0
+      globals: 17.12.0
       hast-util-to-string: 3.0.1
       hastscript: 9.0.1
       lightningcss-wasm: 1.32.0
@@ -16173,7 +16173,7 @@ snapshots:
       kind-of: 6.0.3
       which: 1.3.1
 
-  globals@17.8.0: {}
+  globals@17.12.0: {}
 
   globalthis@1.0.4:
     dependencies:
