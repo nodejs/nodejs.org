@@ -1,5 +1,4 @@
-import Article from '@node-core/ui-components/Containers/Article';
-
+import ArticleWithSidebarState from '#site/components/Common/ArticleWithSidebarState';
 import WithBreadcrumbs from '#site/components/withBreadcrumbs';
 import WithFooter from '#site/components/withFooter';
 import WithMetaBar from '#site/components/withMetaBar';
@@ -12,19 +11,19 @@ const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <WithNavBar />
 
-    <Article>
-      <WithSidebar navKeys={['about', 'getInvolved']} />
+    <ArticleWithSidebarState>
+      <WithSidebar navKeys={['about', 'getInvolved']} disableToggle />
 
       <div>
         <main id="main" tabIndex={-1}>
           {children}
         </main>
 
-        <WithMetaBar />
+        <WithMetaBar disableToggle />
       </div>
 
       <WithBreadcrumbs navKeys={['about', 'getInvolved']} />
-    </Article>
+    </ArticleWithSidebarState>
 
     <WithFooter />
   </>
