@@ -67,6 +67,7 @@ export default async function rehypeShikiji(options) {
       const codeTabsChildren = [];
 
       let defaultTab = '0';
+      let groupId;
       let currentIndex = index;
 
       while (isCodeBlock(parent?.children[currentIndex])) {
@@ -83,6 +84,11 @@ export default async function rehypeShikiji(options) {
 
         // Map the display names of each variant for the CodeTab
         displayNames.push(meta.displayName?.replaceAll('|', '') ?? '');
+
+        // Extract groupId if it exists
+        if (meta.groupId) {
+          groupId = meta.groupId;
+        }
 
         codeTabsChildren.push(parent?.children[currentIndex]);
 
@@ -102,12 +108,13 @@ export default async function rehypeShikiji(options) {
       if (codeTabsChildren.length >= 2) {
         const codeTabElement = {
           type: 'element',
-          tagName: 'CodeTabs',
+          tagName: groupId ? 'CodeTabsWithHash' : 'CodeTabs',
           children: codeTabsChildren,
           properties: {
             languages: languages.join('|'),
             displayNames: displayNames.join('|'),
             defaultTab,
+            groupId,
           },
         };
 
