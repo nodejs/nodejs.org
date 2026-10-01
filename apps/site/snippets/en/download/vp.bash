@@ -1,5 +1,9 @@
 # Download and install Vite+
-curl -fsSL https://vite.plus | bash
+# You'll need to restart the terminal to activate Vite+
+${props.os === 'WIN' ?
+  'irm https://vite.plus/ps1 | iex' :
+  'curl -fsSL https://vite.plus | bash'
+}
 
 # Download and install Node.js:
-vp env install ${props.release.major}
+vp env default ${props.release.version}
