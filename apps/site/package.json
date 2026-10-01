@@ -84,13 +84,13 @@
     "mdast-util-from-markdown": "^2.0.3",
     "nock": "^14.0.15",
     "remark-frontmatter": "^5.0.0",
-    "stylelint": "17.14.1",
+    "stylelint": "17.15.0",
     "stylelint-config-standard": "40.0.0",
     "stylelint-order": "8.1.1",
     "stylelint-selector-bem-pattern": "5.0.0",
     "tsx": "^4.23.1",
     "typescript": "catalog:",
-    "typescript-eslint": "~8.68.0",
+    "typescript-eslint": "~8.70.1",
     "user-agent-data-types": "0.4.3"
   },
   "peerDependencies": {
