@@ -4,6 +4,7 @@ import FNM from '#ui/Icons/InstallationMethod/FNM';
 import Homebrew from '#ui/Icons/InstallationMethod/Homebrew';
 import N from '#ui/Icons/InstallationMethod/N';
 import NVM from '#ui/Icons/InstallationMethod/NVM';
+import VitePlus from '#ui/Icons/InstallationMethod/VitePlus';
 import Volta from '#ui/Icons/InstallationMethod/Volta';
 
-export { Choco, Docker, FNM, Homebrew, N, NVM, Volta };
+export { Choco, Docker, FNM, Homebrew, N, NVM, VitePlus, Volta };
