@@ -82,7 +82,7 @@
     "handlebars": "4.7.9",
     "jsdom": "^29.1.1",
     "mdast-util-from-markdown": "^2.0.3",
-    "nock": "^14.0.15",
+    "nock": "^14.0.17",
     "remark-frontmatter": "^5.0.0",
     "stylelint": "17.14.1",
     "stylelint-config-standard": "40.0.0",
