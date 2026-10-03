@@ -21,13 +21,6 @@
     "categories": ["esp"]
   },
   {
-    "id": "DIGITALOCEAN",
-    "name": "DigitalOcean",
-    "href": "https://www.digitalocean.com",
-    "categories": ["infrastructure"],
-    "weight": 3
-  },
-  {
     "id": "MICROSOFT",
     "name": "Microsoft Azure",
     "href": "https://microsoft.com",
