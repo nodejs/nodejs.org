@@ -1,5 +1,19 @@
 # @node-core/ui-components
 
+## 1.8.0
+
+### Minor Changes
+
+- [#9182](https://github.com/nodejs/nodejs.org/pull/9182) [`e1be372`](https://github.com/nodejs/nodejs.org/commit/e1be37253152778efae4445e6d65c61371898ecd) Thanks [@liangmiQwQ](https://github.com/liangmiQwQ)! - Add the Vite+ installation method icon and description.
+
+### Patch Changes
+
+- [#9142](https://github.com/nodejs/nodejs.org/pull/9142) [`bece5aa`](https://github.com/nodejs/nodejs.org/commit/bece5aa8daa400136db3d6c194dfd37733f57832) Thanks [@btea](https://github.com/btea)! - In the light theme, the background color of items in the history change component that contain code elements is incorrect when hovering.
+
+- [#9177](https://github.com/nodejs/nodejs.org/pull/9177) [`c059a31`](https://github.com/nodejs/nodejs.org/commit/c059a31638452ab879553c8879b38121090457aa) Thanks [@dcavalcante](https://github.com/dcavalcante)! - Fix monospace box-drawing alignment on platforms without compatible system fonts
+
+- [#9148](https://github.com/nodejs/nodejs.org/pull/9148) [`f50e151`](https://github.com/nodejs/nodejs.org/commit/f50e151d9ca399e7dcff07c19cf177a6907cf9b3) Thanks [@Botato300](https://github.com/Botato300)! - Fix sidebar height
+
 ## 1.7.6
 
 ### Patch Changes
