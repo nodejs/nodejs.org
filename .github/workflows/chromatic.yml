@@ -67,6 +67,6 @@ jobs:
         with:
           workingDir: packages/ui-components
           buildScriptName: storybook:build
-          projectToken: ${{ vars.CHROMATIC_PROJECT_TOKEN }}
+          projectToken: chpt_a0652d8683e08c1
           exitOnceUploaded: true
           onlyChanged: true
