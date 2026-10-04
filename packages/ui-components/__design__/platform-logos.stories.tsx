@@ -4,6 +4,7 @@ import {
   NVM,
   Choco,
   N,
+  VitePlus,
   Volta,
 } from '#ui/Icons/InstallationMethod';
 import { Apple, Linux, Microsoft, AIX } from '#ui/Icons/OperatingSystem';
@@ -11,7 +12,7 @@ import { Apple, Linux, Microsoft, AIX } from '#ui/Icons/OperatingSystem';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react-webpack5';
 
 const osIcons = [Apple, Linux, Microsoft, AIX];
-const installMethodIcons = [Docker, Homebrew, NVM, Choco, N, Volta];
+const installMethodIcons = [Docker, Homebrew, NVM, Choco, N, VitePlus, Volta];
 
 export const PlatformLogos: StoryObj = {
   render: () => (
