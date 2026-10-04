@@ -4,6 +4,7 @@ import AlertBox from '@node-core/ui-components/Common/AlertBox';
 import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
 import Blockquote from '@node-core/ui-components/Common/Blockquote';
 import MDXCodeTabs from '@node-core/ui-components/MDX/CodeTabs';
+import CodeTabsWithHash from '@node-core/ui-components/MDX/CodeTabs/CodeTabsWithHash';
 import {
   MDXTooltip,
   MDXTooltipContent,
@@ -58,6 +59,7 @@ export default {
   AlertBox,
   // Renders MDX CodeTabs
   CodeTabs: MDXCodeTabs,
+  CodeTabsWithHash,
   // Renders Tooltips
   MDXTooltip,
   MDXTooltipContent,
