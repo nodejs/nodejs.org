@@ -38,7 +38,6 @@
           "docs": "Docs",
           "betaDocs": "Beta Docs",
           "learn": "Learn",
-          "certification": "Courses",
           "blog": "Blog",
           "contribute": "Contribute"
         }
@@ -260,7 +259,8 @@
           "choco": "Chocolatey is a package manager for Windows.",
           "docker": "Docker is a containerization platform.",
           "n": "\"n\" is a cross-platform Node.js version manager.",
-          "asdf": "\"asdf\" is a cross-platform version manager that supports multiple languages."
+          "asdf": "\"asdf\" is a cross-platform version manager that supports multiple languages.",
+          "vp": "\"Vite+\" is a unified toolchain for web development with Node.js version management."
         }
       }
     },

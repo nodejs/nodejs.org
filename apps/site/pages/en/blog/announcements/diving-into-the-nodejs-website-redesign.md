@@ -50,7 +50,7 @@ The [OpenJS Foundation](https://openjsf.org/) was kind enough to help fund our r
 
 Realizing the design as code was next, and an effort distributed across the world. A lot of emphasis was placed on sequential build-up of foundational design elements and structured component hierarchies. We built variants of components from day one and considered internationalization at the outset. This reduced rework and made any task accessible to a newcomer. We started building components in isolation via [Storybook](https://storybook.js.org/) and [Chromatic](https://www.chromatic.com/)'s hosted instance. Storybook was a great place to prototype, iterate on, and test components. We choose to use [Tailwind CSS](https://tailwindcss.com/), but with an emphasis on design tokens and applied CSS. This common language helped newcomers orient to our approach and translate the Figma.
 
-[Orama](https://docs.oramasearch.com/) search puts all the site's content at a user's fingertips. They index our static content and provide lightning-fast results of API content, learning material, blog posts, and more. The team there directly contributed this integration and continues to help us deliver a superb experience. It's already hard to imagine _not_ having this feature.
+[Orama](https://docs.orama.com/) search puts all the site's content at a user's fingertips. They index our static content and provide lightning-fast results of API content, learning material, blog posts, and more. The team there directly contributed this integration and continues to help us deliver a superb experience. It's already hard to imagine _not_ having this feature.
 
 The reach that Node.js enjoys in our communities is important to us. As such, the old site was internationalized to almost 20 languages. An unfortunate combination of events led us to reset all translations, however. This was a hard decision, but the right one given the circumstances. We're working with [Crowdin](https://crowdin.com/) to re-establish our efforts. This will include a careful parsing of the new MDX-based content. We're looking forward to the continual internalization in the coming months.
 
@@ -102,7 +102,7 @@ Many people and organizations have contributed in both big and small ways to rea
 - [Cloudflare](https://cloudflare.com) for providing the infrastructure that serves Node.js's Website, Node.js's CDN, and more.
 - [Crowdin](https://crowdin.com/) for providing a platform that allows us to localize the Node.js Website and collaborate with translators.
 - [Hayden Bleasel](https://haydenbleasel.com/) for his design work on the Node.js redesign.
-- [Orama](https://docs.oramasearch.com/) for providing a search platform that indexes our content and provides lightning-fast results.
+- [Orama](https://docs.orama.com/) for providing a search platform that indexes our content and provides lightning-fast results.
 - [Sentry](https://sentry.io/welcome/) for providing an open source license for their error reporting, monitoring, and diagnostic tools.
 - [Vercel](https://www.vercel.com/) for providing the infrastructure that serves and powers the Node.js Website
 - and lastly, the [OpenJS Foundation](https://openjsf.org/) for their support and guidance.
