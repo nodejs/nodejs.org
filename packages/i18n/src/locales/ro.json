@@ -206,11 +206,7 @@
         "os": "Sistem de operare",
         "version": "Versiune",
         "packageManager": "Manager de pachete",
-        "unknown": "Necunoscut",
-        "platformGroups": {
-          "official": "Recomandat (oficial)",
-          "unofficial": "Comunitate (neoficial)"
-        }
+        "unknown": "Necunoscut"
       },
       "codeBox": {
         "unsupportedVersionWarning": "Această versiune nu mai este întreținută. Te rog să utilizezi o versiune acceptată în prezent. <link>Află mai multe despre suportul EOL.</link>",
