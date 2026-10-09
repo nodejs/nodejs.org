@@ -242,8 +242,8 @@
         "packageManager": "Package Manager",
         "unknown": "Unknown",
         "platformGroups": {
-          "official": "Recommended (Official)",
-          "unofficial": "Community (Unofficial)"
+          "recommended": "Recommended",
+          "community": "Community"
         }
       },
       "codeBox": {
