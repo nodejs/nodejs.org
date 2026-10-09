@@ -208,8 +208,8 @@
         "packageManager": "Manager de pachete",
         "unknown": "Necunoscut",
         "platformGroups": {
-          "official": "Recomandat (oficial)",
-          "unofficial": "Comunitate (neoficial)"
+          "recommended": "Recomandat",
+          "community": "Comunitate"
         }
       },
       "codeBox": {

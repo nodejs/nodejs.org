@@ -242,8 +242,8 @@
         "packageManager": "パッケージマネージャー",
         "unknown": "不明",
         "platformGroups": {
-          "official": "推奨（公式）",
-          "unofficial": "コミュニティー（非公式）"
+          "recommended": "推奨",
+          "community": "コミュニティー"
         }
       },
       "codeBox": {

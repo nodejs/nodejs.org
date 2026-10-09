@@ -231,8 +231,8 @@
         "packageManager": "Gerenciador de Pacotes",
         "unknown": "Desconhecido",
         "platformGroups": {
-          "official": "Recomendado (Oficial)",
-          "unofficial": "Comunidade (Não Oficial)"
+          "recommended": "Recomendado",
+          "community": "Comunidade"
         }
       },
       "codeBox": {

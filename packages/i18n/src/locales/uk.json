@@ -242,8 +242,8 @@
         "packageManager": "Менеджер пакетів",
         "unknown": "Невідомо",
         "platformGroups": {
-          "official": "Рекомендовані (офіційні)",
-          "unofficial": "Спільнотні (неофіційні)"
+          "recommended": "Рекомендовані",
+          "community": "Спільнотні"
         }
       },
       "codeBox": {

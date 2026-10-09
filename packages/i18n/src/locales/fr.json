@@ -240,8 +240,8 @@
         "packageManager": "Gestionnaire de paquets",
         "unknown": "Inconnu",
         "platformGroups": {
-          "official": "Recommandé (officiel)",
-          "unofficial": "Communauté (non officielle)"
+          "recommended": "Recommandé",
+          "community": "Communauté"
         }
       },
       "codeBox": {

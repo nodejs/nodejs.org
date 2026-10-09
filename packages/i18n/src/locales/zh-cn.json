@@ -132,8 +132,8 @@
         "packageManager": "包管理器",
         "unknown": "未知",
         "platformGroups": {
-          "official": "推荐（官方）",
-          "unofficial": "社区（非官方）"
+          "recommended": "推荐",
+          "community": "社区"
         }
       },
       "codeBox": {
