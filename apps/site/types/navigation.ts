@@ -16,7 +16,6 @@ export type NavigationKeys =
   | 'about'
   | 'download'
   | 'docs'
-  | 'betaDocs'
   | 'getInvolved'
   | 'certification'
   | 'learn'
