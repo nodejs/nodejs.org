@@ -4,8 +4,6 @@ import classNames from 'classnames';
 import { toString } from 'hast-util-to-string';
 import { SKIP, visit } from 'unist-util-visit';
 
-import createHighlighter from '#rs/index.mjs';
-
 // This is what Remark will use as prefix within a <pre> className
 // to attribute the current language of the <pre> element
 const languagePrefix = 'language-';
@@ -57,8 +55,15 @@ function isCodeBlock(node) {
  * @param {import('#rs/index.mjs').HighlighterOptions & { highlighter: import('#rs/highlighter.mjs').SyntaxHighlighter }} options
  */
 export default async function rehypeShikiji(options) {
-  const highlighter =
-    options?.highlighter ?? (await createHighlighter(options));
+  let highlighter = options?.highlighter;
+
+  // Loaded only when no highlighter is given, as it imports every grammar
+  // Shiki bundles as soon as it's loaded
+  if (!highlighter) {
+    const { default: createHighlighter } = await import('#rs/index.mjs');
+
+    highlighter = await createHighlighter(options);
+  }
 
   return function (tree) {
     visit(tree, 'element', (_, index, parent) => {
