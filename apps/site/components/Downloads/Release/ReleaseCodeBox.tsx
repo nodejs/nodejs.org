@@ -67,19 +67,20 @@ const useSnippetProcessor = (
       context.release.major >= 25 &&
       snippets.find(({ name }) => name === 'corepack');
 
-    // Combine and parse snippets
-    const parsedContent = parseSnippet(
-      [
-        installMethodSnippet,
-        verifyNodeSnippet,
-        installCorepackSnippet,
-        packageManagerSnippet,
-      ]
-        .filter(Boolean)
-        .map(snippet => (snippet as DownloadSnippet).content)
-        .join('\n'),
-      context
-    );
+    // Parse snippets individually, skipping those that render empty
+    const parsedContent = [
+      installMethodSnippet,
+      verifyNodeSnippet,
+      installCorepackSnippet,
+      packageManagerSnippet,
+    ]
+      .filter(Boolean)
+      .map(snippet =>
+        parseSnippet((snippet as DownloadSnippet).content, context)
+      )
+      .map(content => content.trim())
+      .filter(Boolean)
+      .join('\n\n');
 
     // Convert to HTML using Shiki's highlighter
     // This is faster than JSX rendering as it avoids React runtime overhead

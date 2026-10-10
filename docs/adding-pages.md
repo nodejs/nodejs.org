@@ -11,15 +11,12 @@ This guide explains how to create new pages and content for the Node.js website.
   - [4. Update Navigation (if needed)](#4-update-navigation-if-needed)
 - [Adding Learn Pages](#adding-learn-pages)
   - [Learn Page Structure](#learn-page-structure)
-  - [Learn Page Frontmatter](#learn-page-frontmatter)
-    - [Frontmatter Fields](#frontmatter-fields)
   - [Update Learn Navigation](#update-learn-navigation)
   - [Add Translation Keys](#add-translation-keys)
 - [Content Guidelines](#content-guidelines)
   - [Markdown Features](#markdown-features)
   - [Code Blocks](#code-blocks)
   - [Multiple Code Tabs](#multiple-code-tabs)
-  - [Accessible Components](#accessible-components)
 - [File Organization](#file-organization)
   - [Content Structure](#content-structure)
   - [Asset Management](#asset-management)
@@ -73,7 +70,7 @@ Available layouts are defined in `apps/site/layouts/`, and mapped in `components
 
 ### 4. Update Navigation (if needed)
 
-If your page should appear in the site navigation, update `app/site/navigation.json` as needed.
+If your page should appear in the site navigation, update `apps/site/navigation.json` as needed.
 
 ## Adding Learn Pages
 
@@ -92,7 +89,7 @@ apps/site/pages/en/learn/
 
 ### Update Learn Navigation
 
-Add your new article to `app/site/navigation.json`:
+Add your new article to `apps/site/navigation.json`:
 
 ```json
 {

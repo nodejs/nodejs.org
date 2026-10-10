@@ -38,11 +38,11 @@
   "dependencies": {
     "husky": "9.1.7",
     "lint-staged": "17.3.0",
-    "turbo": "2.10.12"
+    "turbo": "2.11.3"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.7.0",
-    "@changesets/cli": "^3.0.1",
+    "@changesets/changelog-github": "^1.0.1",
+    "@changesets/cli": "^3.0.3",
     "@eloqnt/cli": "^0.6.20",
     "@eslint/js": "~10.0.1",
     "@reporters/github": "^2.0.2",
@@ -51,13 +51,13 @@
     "eslint": "~10.9.1",
     "eslint-import-resolver-typescript": "~4.4.5",
     "eslint-plugin-import-x": "~4.17.1",
-    "globals": "^17.7.0",
+    "globals": "^17.12.0",
     "prettier": "3.9.6",
     "prettier-plugin-tailwindcss": "0.8.1",
     "typescript": "catalog:",
     "typescript-eslint": "~8.68.0"
   },
-  "packageManager": "pnpm@11.25.0",
+  "packageManager": "pnpm@12.8.1",
   "devEngines": {
     "runtime": {
       "name": "node",
@@ -66,7 +66,7 @@
     },
     "packageManager": {
       "name": "pnpm",
-      "version": "11.25.0",
+      "version": "12.8.1",
       "onFail": "error"
     }
   }

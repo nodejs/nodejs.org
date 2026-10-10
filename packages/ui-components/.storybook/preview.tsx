@@ -12,11 +12,15 @@ const preview: Preview = {
     viewport: {
       options: STORYBOOK_SIZES,
     },
+    // Runs axe-core against every Story and reports WCAG violations in the
+    // Accessibility panel. 'todo' surfaces them as warnings instead of failures
+    // @see https://storybook.js.org/docs/writing-tests/accessibility-testing
+    a11y: { test: 'todo' },
   },
 
   decorators: [
     withThemeByDataAttribute<ReactRenderer>({
-      themes: { light: '', dark: 'dark' },
+      themes: { light: 'light', dark: 'dark' },
       defaultTheme: 'light',
       attributeName: 'data-theme',
     }),
