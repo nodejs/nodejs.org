@@ -266,5 +266,16 @@
       }
     },
     "logo": "Node.js logo"
+  },
+  "api": {
+    "lifecycle": {
+      "added": "Added in",
+      "deprecated": "Deprecated in",
+      "removed": "Removed in",
+      "introduced_in": "Introduced in"
+    },
+    "metadata": {
+      "sourceCode": "Source code"
+    }
   }
 }
