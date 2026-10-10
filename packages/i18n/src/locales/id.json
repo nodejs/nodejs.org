@@ -242,8 +242,8 @@
         "packageManager": "Manajer paket",
         "unknown": "Tak diketahui",
         "platformGroups": {
-          "official": "Direkomendasikan (Resmi)",
-          "unofficial": "Komunitas (Tidak Resmi)"
+          "recommended": "Direkomendasikan",
+          "community": "Komunitas"
         }
       },
       "codeBox": {

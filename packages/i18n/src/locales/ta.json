@@ -231,8 +231,8 @@
         "packageManager": "பேக்கேஜ் மேலாளர்",
         "unknown": "தெரியவில்லை",
         "platformGroups": {
-          "official": "பரிந்துரைக்கப்படும் (அதிகாரப்பூர்வமானது)",
-          "unofficial": "சமூகம் (அதிகாரப்பூர்வமற்றது)"
+          "recommended": "பரிந்துரைக்கப்படும்",
+          "community": "சமூகம்"
         }
       },
       "codeBox": {

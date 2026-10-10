@@ -23,15 +23,15 @@ const InstallationMethodDropdown: FC = () => {
   );
 
   // We group Platforms on the Platform Dropdown to provide the User
-  // understanding of what is recommended/official and what is not.
-  const grouppedMethods = useMemo(
+  // understanding of what is recommended and what is not.
+  const groupedMethods = useMemo(
     () => [
       {
-        label: t('layouts.download.dropdown.platformGroups.official'),
+        label: t('layouts.download.dropdown.platformGroups.recommended'),
         items: parsedInstallMethods.filter(({ recommended }) => recommended),
       },
       {
-        label: t('layouts.download.dropdown.platformGroups.unofficial'),
+        label: t('layouts.download.dropdown.platformGroups.community'),
         items: parsedInstallMethods.filter(({ recommended }) => !recommended),
       },
     ],
@@ -47,8 +47,8 @@ const InstallationMethodDropdown: FC = () => {
     if (release.os !== 'LOADING' && release.installMethod === '') {
       const installationMethod =
         // Sets either the utmost recommended platform or the first non-disabled one
-        // Note that the first item of groupped platforms is always the recommended one
-        nextItem<InstallationMethod | ''>('', grouppedMethods[0].items) ||
+        // Note that the first item of grouped platforms is always the recommended one
+        nextItem<InstallationMethod | ''>('', groupedMethods[0].items) ||
         nextItem<InstallationMethod | ''>('', parsedInstallMethods);
 
       // This will never return an empty string as there should always be an item
@@ -75,7 +75,7 @@ const InstallationMethodDropdown: FC = () => {
 
   return (
     <Select<InstallationMethod | ''>
-      values={grouppedMethods}
+      values={groupedMethods}
       value={release.installMethod}
       loading={release.os === 'LOADING' || release.installMethod === ''}
       ariaLabel={t('layouts.download.dropdown.platform')}

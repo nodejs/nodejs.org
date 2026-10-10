@@ -241,8 +241,8 @@
         "packageManager": "مدير الحزم",
         "unknown": "غير معروف",
         "platformGroups": {
-          "official": "موصى به (رسمي)",
-          "unofficial": "المجتمع (غير رسمي)"
+          "recommended": "موصى به",
+          "community": "المجتمع"
         }
       },
       "codeBox": {

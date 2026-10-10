@@ -157,8 +157,8 @@
         "packageManager": "套件管理程式",
         "unknown": "未知",
         "platformGroups": {
-          "official": "推薦（官方）",
-          "unofficial": "社群（非官方）"
+          "recommended": "推薦",
+          "community": "社群"
         }
       },
       "codeBox": {

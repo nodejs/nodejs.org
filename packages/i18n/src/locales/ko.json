@@ -129,8 +129,8 @@
         "packageManager": "패키지 관리자",
         "unknown": "알 수 없음",
         "platformGroups": {
-          "official": "권장됨 (공식)",
-          "unofficial": "커뮤니티 (비공식)"
+          "recommended": "권장됨",
+          "community": "커뮤니티"
         }
       },
       "codeBox": {
