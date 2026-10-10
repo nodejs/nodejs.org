@@ -129,7 +129,7 @@
       "icon": "NVM",
       "name": "nvm",
       "compatibility": {
-        "os": ["MAC", "LINUX", "OTHER"]
+        "os": ["MAC", "LINUX", "AIX", "OTHER"]
       },
       "recommended": true,
       "url": "https://github.com/nvm-sh/nvm",
