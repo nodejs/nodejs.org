@@ -204,7 +204,7 @@ We use a custom i18n solution because:
 
 #### Locale Detection and Routing
 
-- `next.middleware.js`: Handles browser locale detection and redirects
+- `proxy.ts`: Handles browser locale detection and redirects
 - Falls back to `/en` for unsupported locales
 - Provides seamless user experience across languages
 
