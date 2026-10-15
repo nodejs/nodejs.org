@@ -9,7 +9,7 @@ export const IS_DEV_ENV = process.env.NODE_ENV === 'development';
  * This is used for telling Next.js to do a Static Export Build of the Website
  *
  * This is used for static/without a Node.js server hosting, such as on our
- * legacy Website Build Environment on Node.js's DigitalOcean Droplet.
+ * legacy Website Build Environment on Node.js's VPS.
  *
  * Note that this is a manual Environment Variable defined by us during `npm run deploy`
  */
