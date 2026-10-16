@@ -1,2 +1,5 @@
-# Instalează Corepack:
-npm install -g corepack
+${props.installMethod === 'VP' ?
+  '' :
+  `# Instalează Corepack:
+npm install -g corepack`
+}
