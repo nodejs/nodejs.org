@@ -1,14 +1,69 @@
 'use strict';
 
 import nodevu from '@nodevu/core';
+import semVer from 'semver';
 
 import { fetchWithRetry } from '#site/next.fetch.mjs';
+
+const toNodevuRelease = ({ version, date, npm, v8, modules, lts }) => {
+  const { version: raw, major, minor, patch } = semVer.parse(version);
+
+  return {
+    semver: { raw, major, minor, patch, line: `v${major}` },
+    releaseDate: date,
+    modules: { version: modules },
+    dependencies: { npm, v8 },
+    lts: { isLts: !!lts },
+  };
+};
 
 /**
  * Filters Node.js release data to return only major releases with documented support.
  */
 export default async function getMajorNodeReleases() {
-  const nodevuData = await nodevu({ fetch: fetchWithRetry });
+  const preReleases = [];
+  let schedule = {};
+
+  // nodevu coerces versions (v27.0.0-alpha.0.0.0 becomes v27.0.0), hence
+  // pre-releases are removed before nodevu parses index.json and added back
+  const fetchWithoutPreReleases = async (url, options) => {
+    const data = await fetchWithRetry(url, options).then(r => r.json());
+
+    if (!Array.isArray(data)) {
+      schedule = data;
+
+      return Response.json(data);
+    }
+
+    preReleases.push(
+      ...data.filter(({ version }) => semVer.prerelease(version))
+    );
+
+    return Response.json(data.filter(r => !preReleases.includes(r)));
+  };
+
+  const releaseLines = await nodevu({ fetch: fetchWithoutPreReleases });
+
+  const preReleaseLines = {};
+
+  preReleases.forEach(release => {
+    const line = `v${semVer.major(release.version)}`;
+
+    if (!releaseLines[line] && !preReleaseLines[line]) {
+      const { codename, ...dates } = schedule[line] ?? {};
+
+      preReleaseLines[line] = {
+        releases: {},
+        support: schedule[line] && { codename, phases: { dates } },
+      };
+    }
+
+    const { releases } = releaseLines[line] ?? preReleaseLines[line];
+
+    releases[release.version] = toNodevuRelease(release);
+  });
+
+  const nodevuData = { ...preReleaseLines, ...releaseLines };
 
   return Object.entries(nodevuData).filter(([version, { support }]) => {
     // Filter out those without documented support

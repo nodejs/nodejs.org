@@ -59,7 +59,9 @@ export const parseCompat = <
         compatibility.installMethod.includes(installMethod),
       !compatibility.platform || compatibility.platform.includes(platform),
       !compatibility.semver ||
-        compatibility.semver.every(semver => satisfies(version, semver)),
+        compatibility.semver.every(semver =>
+          satisfies(version, semver, { includePrerelease: true })
+        ),
       !compatibility.releases ||
         compatibility.releases.includes(release.status),
     ];

@@ -26,6 +26,22 @@ const WithReleaseAlertBox: FC<WithReleaseAlertBoxProps> = ({ status }) => {
           })}
         </AlertBox>
       );
+    case 'Alpha':
+      return (
+        <AlertBox
+          title={t('components.common.alertBox.warning')}
+          level="warning"
+          size="small"
+        >
+          {t.rich('layouts.download.codeBox.alphaVersionWarning', {
+            link: text => (
+              <Link href="/blog/announcements/evolving-the-nodejs-release-schedule">
+                {text}
+              </Link>
+            ),
+          })}
+        </AlertBox>
+      );
     case 'LTS':
       return (
         <AlertBox
