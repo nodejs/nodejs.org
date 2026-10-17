@@ -1,5 +1,6 @@
 import semVer from 'semver';
 
+import { DIST_URL } from '#site/next.constants.mjs';
 import { OS_NOT_SUPPORTING_INSTALLERS, PLATFORMS } from '#site/util/download';
 import { getNodeDownloadUrl } from '#site/util/url';
 
@@ -13,8 +14,6 @@ import type {
   CompatibleArtifactOptions,
 } from '#site/types';
 import type { NodeRelease } from '#site/types/releases';
-
-import { DIST_URL } from '#site/next.constants';
 
 /**
  * Creates a download artifact from platform data
