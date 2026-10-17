@@ -60,6 +60,8 @@ export const parseCompat = <
       !compatibility.platform || compatibility.platform.includes(platform),
       !compatibility.semver ||
         compatibility.semver.every(semver => satisfies(version, semver)),
+      !compatibility.semverAny ||
+        compatibility.semverAny.some(semver => satisfies(version, semver)),
       !compatibility.releases ||
         compatibility.releases.includes(release.status),
     ];

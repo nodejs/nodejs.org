@@ -1,5 +1,6 @@
 import semVer from 'semver';
 
+import { DIST_URL } from '#site/next.constants.mjs';
 import { OS_NOT_SUPPORTING_INSTALLERS, PLATFORMS } from '#site/util/download';
 import { getNodeDownloadUrl } from '#site/util/url';
 
@@ -13,8 +14,6 @@ import type {
   CompatibleArtifactOptions,
 } from '#site/types';
 import type { NodeRelease } from '#site/types/releases';
-
-import { DIST_URL } from '#site/next.constants';
 
 /**
  * Creates a download artifact from platform data
@@ -58,15 +57,24 @@ const getCompatiblePlatforms = (
     return items
       .filter(({ compatibility }) => {
         // In the download constants file (apps/site/util/download/constants.json),
-        //  if no compatibility is defined as a semver, we treat it as supporting all
+        //  if no semver compatibility is defined, we treat it as supporting all
         //  versions by default.
-        if (!compatibility.semver) {
+        if (!compatibility.semver && !compatibility.semverAny) {
           return true;
         }
 
-        return compatibility.semver.every(version =>
-          semVer.satisfies(versionWithPrefix, version)
-        );
+        const satisfiesAll =
+          !compatibility.semver ||
+          compatibility.semver.every(version =>
+            semVer.satisfies(versionWithPrefix, version)
+          );
+        const satisfiesAny =
+          !compatibility.semverAny ||
+          compatibility.semverAny.some(version =>
+            semVer.satisfies(versionWithPrefix, version)
+          );
+
+        return satisfiesAll && satisfiesAny;
       })
       .map(platform => ({
         os,
