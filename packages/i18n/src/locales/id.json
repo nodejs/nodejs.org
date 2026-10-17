@@ -240,11 +240,7 @@
         "os": "Sistem Operasi",
         "version": "Versi",
         "packageManager": "Manajer paket",
-        "unknown": "Tak diketahui",
-        "platformGroups": {
-          "official": "Direkomendasikan (Resmi)",
-          "unofficial": "Komunitas (Tidak Resmi)"
-        }
+        "unknown": "Tak diketahui"
       },
       "codeBox": {
         "unsupportedVersionWarning": "Versi ini sudah tidak dalam tahap pemeliharaan. Harap gunakan versi yang saat ini didukung. <link>Pahami dukungan EOL.</link>",

@@ -23,30 +23,23 @@ Full details regarding the Node.js release schedule are available [on GitHub](ht
 
 <PreviousReleasesTable />
 
-## Official vs. Community Installation Methods
+## Recommended and community installation methods
 
-The Node.js website provides several non-interactive installation methods, including command-line interfaces (CLIs), operating system (OS) package managers (e.g., `brew`), and Node.js version managers (e.g., `nvm`).
+The Node.js website provides several non-interactive installation methods on the Downloads page, including command-line interfaces (CLIs), operating system (OS) package managers (e.g., `brew`), and Node.js version managers (e.g., `nvm`).
 
-To highlight and promote community contributions, the Node.js project introduced a revised Downloads page categorizing installation methods as either “Official” or “Community.” This provides users with increased flexibility and choice. To ensure clarity, we’ve defined criteria for each category.
+To highlight and promote community contributions, the Node.js project introduced a revised Downloads page categorizing installation methods as either “Recommended” or “Community.” This provides users with increased flexibility and choice, while keeping a short, curated list for those who want a straightforward starting point.
 
-### Official Installation Methods
+Anyone can propose a new installation method for the Downloads page. While the Node.js project makes the final call on what gets listed, proposals are evaluated against the criteria below.
 
-Installation methods designated as “Official” must meet the following requirements:
+“Recommended” methods are selected for their reliability and close alignment with official releases, and meet the following criteria (in addition to all “Community” criteria):
 
-| Requirements (Official Installation Methods)                                                                                     |
-| :------------------------------------------------------------------------------------------------------------------------------- |
-| New Node.js releases must be available simultaneously with the official release.                                                 |
-| Project maintainers must have a close relationship with the Node.js project, including direct communication channels.            |
-| Installation method must download official binaries bundled by the Node.js project.                                              |
-| Installation method must not build from source when pre-built binaries are available, nor should it alter the official binaries. |
+- “Recommended” methods make new Node.js releases available simultaneously with the official release.
+- “Recommended” methods use the official Node.js binaries without alteration, only building from source when pre-built binaries are not available.
+- “Recommended” methods allow developers to install and use multiple versions of Node.js on a system concurrently.
+- “Recommended” methods have a close relationship with the Node.js project, including direct communication channels.
 
-### Community Installation Methods
+“Community” methods are additional installation methods also available on the Downloads page, and meet the following criteria:
 
-Community installation methods included on the self-service download page (located at /download) must also adhere to a minimum set of criteria:
-
-- **Version Support:** Must support all currently supported, non-End-of-Life (EOL) Node.js versions.
-- **OS Compatibility:** Must function on at least one officially supported Operating System (OS).
-- **Broad OS Support:** Cannot be limited to a subset of OS distributions or versions.
-  - For example, an installation method claiming compatibility with “Windows” must function on “Windows 10”, “Windows 11”, and all their editions (including server versions).
-  - Similarly, an installation method claiming compatibility with “Linux” must be installable on all major Linux distributions, not just a specific subset. It cannot rely on distribution-specific package managers like `apt` or `dnf`.
-- **Free and Open Source:** Must be free to use and open source, must not be sold as a commercial product, and must not be a paid service.
+- “Community” methods must support all currently supported, non-End-of-Life (EOL) Node.js versions.
+- “Community” methods must function on at least one officially supported Operating System (OS), and must not be limited to a subset of OS distributions or versions.
+- “Community” methods must be free to use and open source, must not be sold as a commercial product, and must not be a paid service.
