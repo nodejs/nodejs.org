@@ -9,7 +9,7 @@ import {
   ReleasesProvider,
 } from '#site/providers/releaseProvider';
 
-import type { NodeRelease } from '../types';
+import type { NodeRelease, NodeReleaseStatus } from '../types';
 import type { FC, PropsWithChildren } from 'react';
 
 type WithDownloadSectionProps = PropsWithChildren<{
@@ -39,7 +39,11 @@ const WithDownloadSection: FC<WithDownloadSectionProps> = async ({
     .concat(localeSnippets);
 
   // Decides which initial release to use based on the current pathname
-  const initialRelease = pathname.endsWith('/current') ? 'Current' : 'LTS';
+  const initialRelease: Array<NodeReleaseStatus> = pathname.endsWith('/alpha')
+    ? ['Alpha', 'Current', 'LTS']
+    : pathname.endsWith('/current')
+      ? ['Current', 'LTS']
+      : ['LTS'];
 
   return (
     <WithNodeRelease status={initialRelease}>

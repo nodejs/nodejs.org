@@ -145,6 +145,7 @@ export const STATUS_KIND_MAP = {
   EOL: 'warning',
   LTS: 'info',
   Current: 'default',
+  Alpha: 'default',
 };
 
 /**

@@ -65,7 +65,9 @@ const getCompatiblePlatforms = (
         }
 
         return compatibility.semver.every(version =>
-          semVer.satisfies(versionWithPrefix, version)
+          semVer.satisfies(versionWithPrefix, version, {
+            includePrerelease: true,
+          })
         );
       })
       .map(platform => ({

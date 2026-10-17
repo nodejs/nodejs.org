@@ -130,6 +130,74 @@ describe('generateReleaseData', () => {
     assert.equal(result[0]?.status, 'Current');
   });
 
+  it('returns Alpha when release is not EOL and latest is a pre-release', async t => {
+    const result = await runWithNodevuData(t, '2026-11-01', {
+      27: {
+        releases: {
+          'v27.0.0-alpha.0.0.0': {
+            semver: { major: 27, raw: '27.0.0-alpha.0.0.0' },
+            dependencies: { npm: '11.6.0', v8: '14.6.0.0' },
+            lts: { isLts: false },
+            releaseDate: '2026-10-28',
+            modules: { version: '150' },
+          },
+        },
+        support: {
+          phases: {
+            dates: {
+              alpha: '2026-10-28',
+              start: '2027-04-22',
+              maintenance: '2027-10-20',
+              end: '2030-04-30',
+            },
+          },
+        },
+      },
+    });
+
+    assert.equal(result[0]?.status, 'Alpha');
+    assert.equal(result[0]?.versionWithPrefix, 'v27.0.0-alpha.0.0.0');
+  });
+
+  it('returns Current when latest is a stable release following pre-releases', async t => {
+    const result = await runWithNodevuData(t, '2027-04-22', {
+      27: {
+        releases: {
+          'v27.0.0': {
+            semver: { major: 27, raw: '27.0.0' },
+            dependencies: { npm: '11.6.0', v8: '14.6.0.0' },
+            lts: { isLts: false },
+            releaseDate: '2027-04-22',
+            modules: { version: '150' },
+          },
+          'v27.0.0-alpha.0.0.0': {
+            semver: { major: 27, raw: '27.0.0-alpha.0.0.0' },
+            dependencies: { npm: '11.6.0', v8: '14.6.0.0' },
+            lts: { isLts: false },
+            releaseDate: '2026-10-28',
+            modules: { version: '150' },
+          },
+        },
+        support: {
+          phases: {
+            dates: {
+              alpha: '2026-10-28',
+              start: '2027-04-22',
+              maintenance: '2027-10-20',
+              end: '2030-04-30',
+            },
+          },
+        },
+      },
+    });
+
+    assert.equal(result[0]?.status, 'Current');
+    assert.equal(
+      result[0]?.minorVersions[1]?.versionWithPrefix,
+      'v27.0.0-alpha.0.0.0'
+    );
+  });
+
   it('uses latest and earliest release dates for latestReleaseDate and initialReleaseDate', async t => {
     const result = await runWithNodevuData(t, '2026-04-14', {
       26: {

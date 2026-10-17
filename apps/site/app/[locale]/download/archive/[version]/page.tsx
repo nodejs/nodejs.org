@@ -51,7 +51,10 @@ const getPage: FC<PageParams> = async props => {
   if (version === 'current') {
     const releaseData = await provideReleaseData();
 
-    const release = releaseData.find(release => release.status === 'Current');
+    // There's no Current release while the next major is in its Alpha phase
+    const release =
+      releaseData.find(release => release.status === 'Current') ??
+      releaseData.find(release => release.status === 'LTS');
 
     redirect(`/${locale}/download/archive/${release?.versionWithPrefix}`);
   }

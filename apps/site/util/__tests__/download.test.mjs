@@ -115,6 +115,28 @@ describe('parseCompat', () => {
       assert.ok(result[0].disabled);
     });
 
+    it('should match semver constraints for pre-release versions', () => {
+      const items = [
+        {
+          value: 'testItem',
+          compatibility: { semver: ['>= 16.9.0'] },
+        },
+        {
+          value: 'testItem2',
+          compatibility: { semver: ['< 23.0.0'] },
+        },
+      ];
+      const result = parseCompat(items, {
+        os: 'MAC',
+        installMethod: '',
+        platform: 'x64',
+        version: 'v27.0.0-alpha.0.0.0',
+        release: { status: 'Alpha' },
+      });
+      assert.equal(result[0].disabled, false);
+      assert.ok(result[1].disabled);
+    });
+
     it('should disable items if release status is not supported', () => {
       const items = [
         {
