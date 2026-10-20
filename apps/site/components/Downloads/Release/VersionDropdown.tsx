@@ -4,7 +4,7 @@ import WithNoScriptSelect from '@node-core/ui-components/Common/Select/NoScriptS
 import { useLocale, useTranslations } from 'next-intl';
 import { use } from 'react';
 
-import { redirect, usePathname } from '#site/navigation';
+import { redirect, usePathname } from '#site/navigation.mjs';
 import { STATUS_KIND_MAP } from '#site/next.constants.mjs';
 import {
   ReleaseContext,
