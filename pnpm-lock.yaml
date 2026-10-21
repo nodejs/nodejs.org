@@ -276,8 +276,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/i18n
       '@nodevu/core':
-        specifier: 0.3.0
-        version: 0.3.0
+        specifier: 1.1.0
+        version: 1.1.0
       '@orama/orama':
         specifier: ^3.1.18
         version: 3.1.18
@@ -2570,8 +2570,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nodevu/core@0.3.0':
-    resolution: {integrity: sha512-kVJh6kQViCE8Qf1j7pc7yhUke2kKb1eZM+rqln+EytHqyOq+eZUEtfWbDk1vfWhgiknnAcFOhdVA5apT8rTejQ==}
+  '@nodevu/core@1.1.0':
+    resolution: {integrity: sha512-wb0p/vJNgIojZt738Qd3JRaCnAwShOKBIkIkmTbpNFJbjWj7iWVl7u4JZfVOBrSpJRiRaVFg49+3xQtBAHtGwA==}
 
   '@nodevu/parsefiles@0.0.3':
     resolution: {integrity: sha512-IjwkVqA2SlH8XweoAw7EJkeyPGk7gW9imlvhpywrKiPCLP1H0meG/blNAF5X38pirsmvhxPe/BCyywT7Exwuow==}
@@ -11776,7 +11776,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@nodevu/core@0.3.0':
+  '@nodevu/core@1.1.0':
     dependencies:
       '@nodevu/parsefiles': 0.0.3
       luxon: 3.6.1
