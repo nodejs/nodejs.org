@@ -1,7 +1,5 @@
 'use strict';
 
-import semVer from 'semver';
-
 import getMajorNodeReleases from './majorNodeReleases.mjs';
 
 // Gets the appropriate release status for each major release
@@ -16,7 +14,7 @@ const getNodeReleaseStatus = (latest, eol) => {
     return 'LTS';
   }
 
-  if (semVer.prerelease(latest.semver.raw)) {
+  if (latest.alpha.isAlpha) {
     return 'Alpha';
   }
 
