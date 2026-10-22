@@ -28,7 +28,7 @@ const VersionDropdown: FC = () => {
     );
 
     if (
-      release?.status === 'LTS' &&
+      (release?.status === 'LTS' || release?.status === 'EOL') &&
       (pathname.includes('current') || pathname.includes('alpha'))
     ) {
       redirect({ href: '/download', locale });

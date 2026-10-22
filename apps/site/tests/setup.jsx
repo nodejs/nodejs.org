@@ -8,6 +8,7 @@ import '../../../tests/setup.mjs';
 mock.module('next-intl', {
   namedExports: {
     useTranslations: () => key => key,
+    useLocale: () => 'en',
 
     useFormatter: () => {
       const formatWith = format => new Intl.DateTimeFormat('en-US', format);
