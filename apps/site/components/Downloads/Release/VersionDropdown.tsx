@@ -27,13 +27,21 @@ const VersionDropdown: FC = () => {
       ({ versionWithPrefix }) => versionWithPrefix === version
     );
 
-    if (release?.status === 'LTS' && pathname.includes('current')) {
+    if (
+      release?.status === 'LTS' &&
+      (pathname.includes('current') || pathname.includes('alpha'))
+    ) {
       redirect({ href: '/download', locale });
       return;
     }
 
     if (release?.status === 'Current' && !pathname.includes('current')) {
       redirect({ href: '/download/current', locale });
+      return;
+    }
+
+    if (release?.status === 'Alpha' && !pathname.includes('alpha')) {
+      redirect({ href: '/download/alpha', locale });
       return;
     }
 
