@@ -1,2 +1,5 @@
-# تحميل Corepack:
-npm install -g corepack
+${props.installMethod === 'VP' ?
+  '' :
+  `# تثبيت Corepack:
+npm install -g corepack`
+}

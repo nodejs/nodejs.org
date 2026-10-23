@@ -1,0 +1,45 @@
+---
+title: Lansări Node.js
+layout: about
+---
+
+# Lansări Node.js
+
+<EOLAlertBox />
+
+Versiunile majore de Node.js intră în stadiul de lansare _Current_ pentru șase luni, ceea ce le oferă autorilor de biblioteci timp să adauge suport pentru acestea.
+Din punct de vedere istoric (până la Node.js 26), versiunile cu număr impar (9, 11 etc.) nu mai beneficiază de suport după șase luni, iar versiunile cu număr par (10, 12 etc.) trec în stadiul _Active LTS_ și sunt pregătite pentru utilizare generală.
+Începând cu Node.js 27, ciclul de lansare va fi anual, iar fiecare versiune majoră va trece în stadiul _LTS_ după etapa _Current_ de șase luni (și încă șase luni în etapa _Alpha_).
+Stadiul de lansare _LTS_ înseamnă „suport pe termen lung”, ceea ce garantează, de obicei, că erorile critice vor fi remediate pe o perioadă totală de 30 de luni.
+Aplicațiile de producție ar trebui să utilizeze numai versiuni _Active LTS_ sau _Maintenance LTS_.
+
+## Programul de lansări
+
+![Lansări](https://raw.githubusercontent.com/nodejs/Release/main/schedule.svg?sanitize=true)
+
+Detaliile complete cu privire la programul de lansări Node.js sunt disponibile [pe GitHub](https://github.com/nodejs/release#release-schedule).
+
+## Cauți cea mai recentă lansare dintr-o ramură de versiune?
+
+<PreviousReleasesTable />
+
+## Metode de instalare recomandate și metode oferite de comunitate
+
+Site-ul web Node.js oferă mai multe metode de instalare neinteractive pe pagina Descărcări, inclusiv interfețe de linie de comandă (CLI), manageri de pachete ale sistemului de operare (OS) (de exemplu, `brew`) și manageri de versiuni Node.js (de exemplu, `nvm`).
+
+Pentru a evidenția și promova contribuțiile comunității, proiectul Node.js a introdus o pagină de descărcări revizuită, care clasifică metodele de instalare în categoriile „Recomandat” sau „Comunitate”. Acest lucru oferă utilizatorilor o mai mare flexibilitate și mai multe opțiuni, menținând în același timp o listă scurtă și selectată pentru cei care doresc un punct de plecare simplu și clar.
+
+Oricine poate propune o nouă metodă de instalare pentru pagina Descărcări. Deși proiectul Node.js are ultimul cuvânt în ceea ce privește elementele afișate, propunerile sunt evaluate pe baza criteriilor de mai jos.
+
+Metodele „recomandate” sunt selectate pentru fiabilitatea lor și alinierea strânsă cu versiunile oficiale și îndeplinesc următoarele criterii (în plus față de toate criteriile „Comunității”):
+
+- Metodele „recomandate” fac disponibile noile versiuni Node.js simultan cu lansarea oficială.
+- Metodele „recomandate” folosesc binarele oficiale Node.js fără modificare, construind numai din sursă atunci când binarele pre-construite nu sunt disponibile.
+- Metodele „recomandate” permit dezvoltatorilor să instaleze și să utilizeze mai multe versiuni de Node.js pe un sistem simultan.
+- Metodele „recomandate” au o relație strânsă cu proiectul Node.js, inclusiv canalele de comunicare directă.
+
+Metodele „comunității” sunt metode de instalare suplimentare disponibile și pe pagina Descărcări și îndeplinesc următoarele criterii:
+
+- Metodele „comunității” trebuie să accepte toate versiunile Node.js care nu sunt la sfârșitul vieții (EOL) acceptate în prezent.
+- Metodele „comunității” trebuie să funcționeze pe cel puțin un sistem de operare (SO) susținut oficial și nu trebuie să fie limitate la un subset de distribuții sau versiuni ale sistemului de operare.
+- Metodele „comunității” trebuie să se poată folosi gratuit și să fie open source, nu trebuie vândute ca produs comercial și nu trebuie să fie un serviciu plătit.
