@@ -197,21 +197,29 @@ The repository includes a `.vscode` directory with recommended settings that wil
 
 ### Import Organization
 
-Organize imports in this order:
+Import order is enforced by the `import-x/order` rule in [`eslint.config.js`](../eslint.config.js), so `pnpm lint:fix` will sort your imports for you. Imports are grouped in this order, with an empty line between groups and alphabetical order within each group:
 
 1. Node.js built-in modules
-2. External library imports (Including `@node-core/*`)
-3. Relative imports (`./*`, `../*`, `#specifier/`)
-4. Type-only imports at the end of each given section
+2. External library imports (Including `@node-core/*` and `#platform/*`)
+3. Internal imports using subpath specifiers (`#site/*`, `#ui/*`)
+4. Type-only imports, all together in one group no matter where they are imported from
+5. Relative imports (`./*`, `../*`)
+6. Relative CSS imports (`./*.css`, `../*.css`)
 
 ```tsx
 import { readFile } from 'node:fs/promises';
 
 import { SomeComponent } from '@node-core/ui-components/Common/SomeComponent';
+import { useTranslations } from 'next-intl';
+
+import { BASE_URL } from '#site/next.constants.mjs';
+
+import type { MyComponentProps } from './types';
 import type { FC } from 'react';
 
 import { myHook } from '../hooks/myHook';
-import type { MyComponentProps } from './types';
+
+import styles from './index.module.css';
 ```
 
 ## Documentation Standards
