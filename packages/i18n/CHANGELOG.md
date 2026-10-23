@@ -1,5 +1,13 @@
 # @node-core/website-i18n
 
+## 2.0.1
+
+### Patch Changes
+
+- [#9223](https://github.com/nodejs/nodejs.org/pull/9223) [`358cc10`](https://github.com/nodejs/nodejs.org/commit/358cc10e0157ceb28f7adef5331f1db6dc96ce79) Thanks [@RafaelGSS](https://github.com/RafaelGSS)! - Add the Alpha release warning.
+
+- [#9209](https://github.com/nodejs/nodejs.org/pull/9209) [`7c40136`](https://github.com/nodejs/nodejs.org/commit/7c4013636b069ec7580780f9dc0a0fac7c6ea14e) Thanks [@nodejs-crowdin](https://github.com/nodejs-crowdin)! - Update translations from Crowdin.
+
 ## 2.0.0
 
 ### Major Changes
