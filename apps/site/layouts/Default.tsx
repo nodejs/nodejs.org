@@ -1,5 +1,4 @@
-import Article from '@node-core/ui-components/Containers/Article';
-
+import ArticleWithSidebarState from '#site/components/Common/ArticleWithSidebarState';
 import WithFooter from '#site/components/withFooter';
 import WithNavBar from '#site/components/withNavBar';
 import WithSidebar from '#site/components/withSidebar';
@@ -10,7 +9,7 @@ const DefaultLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <WithNavBar />
 
-    <Article>
+    <ArticleWithSidebarState>
       <WithSidebar navKeys={[]} />
 
       <div>
@@ -18,7 +17,7 @@ const DefaultLayout: FC<PropsWithChildren> = ({ children }) => (
           {children}
         </main>
       </div>
-    </Article>
+    </ArticleWithSidebarState>
 
     <WithFooter />
   </>
