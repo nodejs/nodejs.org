@@ -23,3 +23,9 @@ export type SimpleLocaleConfig = {
   name: string;
   hrefLang: string;
 };
+
+export type Heading = {
+  depth: number;
+  value: string;
+  data?: { id?: string; type?: string } & Record<string, unknown>;
+};
