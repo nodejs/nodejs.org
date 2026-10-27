@@ -18,6 +18,7 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-webpack5-compiler-swc',
     '@storybook/addon-themes',
+    '@storybook/addon-a11y',
     {
       name: '@storybook/addon-styling-webpack',
       options: {

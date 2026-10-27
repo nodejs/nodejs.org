@@ -30,11 +30,6 @@
       "link": "https://github.com/nodejs/node/blob/main/CONTRIBUTING.md",
       "label": "components.containers.navBar.links.contribute",
       "target": "_blank"
-    },
-    "certification": {
-      "link": "https://training.linuxfoundation.org/openjs/",
-      "label": "components.containers.navBar.links.certification",
-      "target": "_blank"
     }
   },
   "footerLinks": [

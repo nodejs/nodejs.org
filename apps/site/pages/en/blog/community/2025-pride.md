@@ -24,7 +24,7 @@ Queer humans experience this for other parts of their identity. When we were you
 
 We grow older, and a boy finds they can't stop staring at how another boy moves. A girl touches her friend and starts burning inside. A young woman finds that dresses make her preferred activities more difficult, that her breasts feel malignant. We learned labels for these feelings: lesbian, gay, bisexual, transgender — LGBT.
 
-These labels are hard-won knowledge dating back decades, centuries, millenia. Regardless of your moral opinion on the matter, there are indisputable references to queer identity in literature, media, culture, religion, spirituality, dating back thousands of years. Its presence is inarguable.
+These labels are hard-won knowledge dating back decades, centuries, millennia. Regardless of your moral opinion on the matter, there are indisputable references to queer identity in literature, media, culture, religion, spirituality, dating back thousands of years. Its presence is inarguable.
 
 Even with this cultural legacy, some of us have learned through our lives that these labels too are insufficient. Like open source, we take what was known and build on it. New labels are created and spread through word of mouth, through writing and videos, through intimate conversations with our friends and partners. An academic publishes survey results; a TikTok creator's video resonates; a psychologist writes a bestselling book. As advancements in open source inform our profession, evolving language around queer identity informs our self image; indistinct visions gain clarity.
 

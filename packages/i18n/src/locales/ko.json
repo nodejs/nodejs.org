@@ -15,7 +15,6 @@
           "download": "다운로드",
           "docs": "문서",
           "learn": "학습",
-          "certification": "인증",
           "blog": "블로그",
           "contribute": "기여하기"
         }
@@ -128,11 +127,7 @@
         "os": "운영 체제",
         "version": "버전",
         "packageManager": "패키지 관리자",
-        "unknown": "알 수 없음",
-        "platformGroups": {
-          "official": "권장됨 (공식)",
-          "unofficial": "커뮤니티 (비공식)"
-        }
+        "unknown": "알 수 없음"
       },
       "codeBox": {
         "unsupportedVersionWarning": "이 버전은 유지 관리가 종료되었습니다. 현재 지원되는 버전을 사용하세요. <link>EOL 지원 이해하기</link>",

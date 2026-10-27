@@ -19,7 +19,7 @@
   > *:nth-child(1) {
     @apply ml:sticky
       ml:top-0
-      ml:h-svh
+      ml:h-[calc(100svh-var(--header-height))]
       ml:overflow-y-auto
       [grid-area:sidebar];
   }

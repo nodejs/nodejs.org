@@ -129,7 +129,7 @@
       "icon": "NVM",
       "name": "nvm",
       "compatibility": {
-        "os": ["MAC", "LINUX", "OTHER"]
+        "os": ["MAC", "LINUX", "AIX", "OTHER"]
       },
       "recommended": true,
       "url": "https://github.com/nvm-sh/nvm",
@@ -196,6 +196,26 @@
       },
       "url": "https://asdf-vm.com/guide/getting-started.html",
       "info": "layouts.download.codeBox.platformInfo.asdf"
+    },
+    {
+      "id": "VP",
+      "icon": "VitePlus",
+      "name": "Vite+",
+      "compatibility": {
+        "os": ["WIN", "MAC", "LINUX"]
+      },
+      "url": "https://viteplus.dev/",
+      "info": "layouts.download.codeBox.platformInfo.vp"
+    },
+    {
+      "id": "ZEROINSTALL",
+      "icon": "ZeroInstall",
+      "name": "0install",
+      "compatibility": {
+        "os": ["WIN", "MAC", "LINUX"]
+      },
+      "url": "https://0install.net/",
+      "info": "layouts.download.codeBox.platformInfo.zeroinstall"
     }
   ],
   "packageManagers": [
@@ -222,5 +242,5 @@
     "bitness": ["64", "32"],
     "architecture": ["arm", "x86"]
   },
-  "statusOrder": ["Current", "LTS", "EOL"]
+  "statusOrder": ["Alpha", "Current", "LTS", "EOL"]
 }

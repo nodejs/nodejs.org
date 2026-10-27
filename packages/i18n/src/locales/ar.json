@@ -37,7 +37,6 @@
           "download": "تنزيل",
           "docs": "التوثيق",
           "learn": "تعلّم",
-          "certification": "الدورات",
           "blog": "المدونة",
           "contribute": "المساهمة"
         }
@@ -240,11 +239,7 @@
         "os": "نظام التشغيل",
         "version": "الإصدار",
         "packageManager": "مدير الحزم",
-        "unknown": "غير معروف",
-        "platformGroups": {
-          "official": "موصى به (رسمي)",
-          "unofficial": "المجتمع (غير رسمي)"
-        }
+        "unknown": "غير معروف"
       },
       "codeBox": {
         "unsupportedVersionWarning": "هذا الإصدار خارج مرحلة الصيانة. يرجى استخدام إصدار مدعوم حاليًا. <link>تعرّف على دعم EOL.</link>",

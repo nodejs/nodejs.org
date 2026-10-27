@@ -38,7 +38,6 @@
           "docs": "ドキュメント",
           "betaDocs": "ベータ版ドキュメント",
           "learn": "学ぶ",
-          "certification": "コース",
           "blog": "ブログ",
           "contribute": "貢献"
         }
@@ -241,11 +240,7 @@
         "os": "オペレーティングシステム",
         "version": "バージョン",
         "packageManager": "パッケージマネージャー",
-        "unknown": "不明",
-        "platformGroups": {
-          "official": "推奨（公式）",
-          "unofficial": "コミュニティー（非公式）"
-        }
+        "unknown": "不明"
       },
       "codeBox": {
         "unsupportedVersionWarning": "このバージョンのメンテナンスは終了しています。現在サポートされているバージョンを利用してください。<link>EOLのサポートについて。</link>",

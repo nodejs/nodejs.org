@@ -95,15 +95,16 @@ main {
   }
 
   /*
-   * Fenced code blocks use a system monospace stack instead of IBM Plex Mono.
-   * Plex has no glyphs for the Unicode Box Drawing block (U+2500–U+257F) and
-   * Google Fonts never serves that block, so the box-drawing characters in
-   * ASCII-art diagrams (e.g. the URL table in url.md) fall back per-glyph to
-   * the OS default monospace. On Windows that is Consolas (0.55em) while Plex
-   * letters are 0.60em; the mismatched advance widths shear the diagram out of
-   * alignment. Rendering the whole block in one system font keeps every glyph
-   * the same width — the same stack nodejs.org and the legacy-html generator
-   * already use. See https://github.com/nodejs/doc-kit/issues/909.
+   * Fenced code blocks prefer a system monospace stack to keep ASCII-art
+   * diagrams on consistent font metrics. The IBM Plex Mono Latin webfont subset
+   * does not contain the Unicode Box Drawing block (U+2500–U+257F), so platforms
+   * whose system fonts also lack those glyphs may otherwise fall back per-glyph
+   * to a font with incompatible advance widths.
+   *
+   * IBM Plex Mono is kept before Courier New as a late fallback. Doc Kit
+   * provides a matching IBM Plex Mono box-drawing subset, allowing platforms
+   * such as Android to render the diagram with compatible metrics.
+   * See https://github.com/nodejs/doc-kit/issues/909.
    *
    * This only overrides the variable within `pre`, so inline code and the rest
    * of the UI keep IBM Plex Mono. The variable keeps its name because the
@@ -111,8 +112,8 @@ main {
    */
   pre {
     --font-ibm-plex-mono:
-      'SFMono-Regular', 'Menlo', 'Consolas', 'Liberation Mono', 'Courier New',
-      monospace;
+      'SFMono-Regular', 'Menlo', 'Consolas', 'Liberation Mono', 'IBM Plex Mono',
+      'Courier New', monospace;
   }
 
   p {

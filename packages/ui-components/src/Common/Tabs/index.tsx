@@ -7,6 +7,7 @@ import styles from './index.module.css';
 
 type Tab = {
   key: string;
+  id?: string;
   label: string;
   secondaryLabel?: string;
   value?: string;
@@ -34,6 +35,7 @@ const Tabs: FC<PropsWithChildren<TabsProps>> = ({
       {tabs.map(tab => (
         <TabsPrimitive.Trigger
           key={tab.key}
+          id={tab.id}
           value={tab.value ?? tab.key}
           className={classNames(styles.tabsTrigger, triggerClassName)}
         >

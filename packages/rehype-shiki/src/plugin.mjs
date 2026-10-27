@@ -4,8 +4,6 @@ import classNames from 'classnames';
 import { toString } from 'hast-util-to-string';
 import { SKIP, visit } from 'unist-util-visit';
 
-import createHighlighter from '#rs/index.mjs';
-
 // This is what Remark will use as prefix within a <pre> className
 // to attribute the current language of the <pre> element
 const languagePrefix = 'language-';
@@ -57,8 +55,15 @@ function isCodeBlock(node) {
  * @param {import('#rs/index.mjs').HighlighterOptions & { highlighter: import('#rs/highlighter.mjs').SyntaxHighlighter }} options
  */
 export default async function rehypeShikiji(options) {
-  const highlighter =
-    options?.highlighter ?? (await createHighlighter(options));
+  let highlighter = options?.highlighter;
+
+  // Loaded only when no highlighter is given, as it imports every grammar
+  // Shiki bundles as soon as it's loaded
+  if (!highlighter) {
+    const { default: createHighlighter } = await import('#rs/index.mjs');
+
+    highlighter = await createHighlighter(options);
+  }
 
   return function (tree) {
     visit(tree, 'element', (_, index, parent) => {
@@ -67,6 +72,7 @@ export default async function rehypeShikiji(options) {
       const codeTabsChildren = [];
 
       let defaultTab = '0';
+      let groupId;
       let currentIndex = index;
 
       while (isCodeBlock(parent?.children[currentIndex])) {
@@ -83,6 +89,11 @@ export default async function rehypeShikiji(options) {
 
         // Map the display names of each variant for the CodeTab
         displayNames.push(meta.displayName?.replaceAll('|', '') ?? '');
+
+        // Extract groupId if it exists
+        if (meta.groupId) {
+          groupId = meta.groupId;
+        }
 
         codeTabsChildren.push(parent?.children[currentIndex]);
 
@@ -102,12 +113,13 @@ export default async function rehypeShikiji(options) {
       if (codeTabsChildren.length >= 2) {
         const codeTabElement = {
           type: 'element',
-          tagName: 'CodeTabs',
+          tagName: groupId ? 'CodeTabsWithHash' : 'CodeTabs',
           children: codeTabsChildren,
           properties: {
             languages: languages.join('|'),
             displayNames: displayNames.join('|'),
             defaultTab,
+            groupId,
           },
         };
 

@@ -1,5 +1,11 @@
 # @node-core/rehype-shiki
 
+## 1.5.1
+
+### Patch Changes
+
+- [#9212](https://github.com/nodejs/nodejs.org/pull/9212) [`922aae3`](https://github.com/nodejs/nodejs.org/commit/922aae3b55e428fcdbfccfa15b6d3e4fece618fa) Thanks [@ovflowd](https://github.com/ovflowd)! - Only import every bundled grammar when the plugin isn't given a highlighter
+
 ## 1.5.0
 
 ### Minor Changes

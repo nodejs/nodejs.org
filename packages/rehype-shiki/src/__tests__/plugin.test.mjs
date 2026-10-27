@@ -1,5 +1,20 @@
 import assert from 'node:assert/strict';
+import { registerHooks } from 'node:module';
 import { describe, it, mock } from 'node:test';
+
+// The modules loaded from here on, to tell whether the default highlighter,
+// which imports every grammar Shiki bundles, was loaded
+const loaded = new Set();
+
+registerHooks({
+  load(url, context, nextLoad) {
+    loaded.add(new URL(url).pathname);
+
+    return nextLoad(url, context);
+  },
+});
+
+const defaultHighlighter = new URL('../index.mjs', import.meta.url).pathname;
 
 // Simplified mocks - only mock what's actually needed
 mock.module('../index.mjs', {
@@ -22,6 +37,15 @@ mock.module('unist-util-visit', {
 describe('rehypeShikiji', async () => {
   const { default: rehypeShikiji } = await import('../plugin.mjs');
   const mockTree = { type: 'root', children: [] };
+
+  // Runs first, as the cases after it load the default highlighter
+  it('only loads the default highlighter without a highlighter', async () => {
+    await rehypeShikiji({ highlighter: { highlightToHast: mock.fn() } });
+    assert.ok(!loaded.has(defaultHighlighter));
+
+    await rehypeShikiji();
+    assert.ok(loaded.has(defaultHighlighter));
+  });
 
   it('calls visit twice', async () => {
     mockVisit.mock.resetCalls();

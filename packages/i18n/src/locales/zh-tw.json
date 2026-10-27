@@ -18,7 +18,6 @@
           "download": "下載",
           "docs": "文件",
           "learn": "學習資源",
-          "certification": "認證",
           "blog": "部落格",
           "contribute": "貢獻"
         }
@@ -156,11 +155,7 @@
         "os": "作業系統",
         "version": "版本",
         "packageManager": "套件管理程式",
-        "unknown": "未知",
-        "platformGroups": {
-          "official": "推薦（官方）",
-          "unofficial": "社群（非官方）"
-        }
+        "unknown": "未知"
       },
       "codeBox": {
         "unsupportedVersionWarning": "此版本已不再維護，請改用現正支援的版本。<link>了解更新終止 (EOL) 支援</link>。",
