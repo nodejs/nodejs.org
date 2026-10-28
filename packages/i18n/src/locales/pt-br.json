@@ -229,11 +229,7 @@
         "os": "Sistema Operacional",
         "version": "Versão",
         "packageManager": "Gerenciador de Pacotes",
-        "unknown": "Desconhecido",
-        "platformGroups": {
-          "official": "Recomendado (Oficial)",
-          "unofficial": "Comunidade (Não Oficial)"
-        }
+        "unknown": "Desconhecido"
       },
       "codeBox": {
         "unsupportedVersionWarning": "Esta versão não está sendo mantida. Por favor, use uma versão com suporte. <link>Entenda o suporte EOL.</link>",

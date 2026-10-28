@@ -23,30 +23,23 @@ Detaliile complete cu privire la programul de lansări Node.js sunt disponibile 
 
 <PreviousReleasesTable />
 
-## Oficial vs. metodele de instalare ale comunității
+## Metode de instalare recomandate și metode oferite de comunitate
 
-Site-ul web Node.js oferă mai multe metode de instalare neinteractive, inclusiv interfețe din linia de comandă (CLI), manageri de pachete pentru sistemul de operare (OS) (de exemplu, `brew`) și manageri de versiuni Node.js (de exemplu, `nvm`).
+Site-ul web Node.js oferă mai multe metode de instalare neinteractive pe pagina Descărcări, inclusiv interfețe de linie de comandă (CLI), manageri de pachete ale sistemului de operare (OS) (de exemplu, `brew`) și manageri de versiuni Node.js (de exemplu, `nvm`).
 
-Pentru a evidenția și promova contribuțiile comunității, proiectul Node.js a introdus o pagină de descărcări revizuită, care clasifică metodele de instalare fie ca „Oficiale”, fie ca „Comunitate”. Aceasta oferă utilizatorilor o flexibilitate și o gamă mai mare de opțiuni. Pentru a asigura claritatea, am definit criterii pentru fiecare categorie.
+Pentru a evidenția și promova contribuțiile comunității, proiectul Node.js a introdus o pagină de descărcări revizuită, care clasifică metodele de instalare în categoriile „Recomandat” sau „Comunitate”. Acest lucru oferă utilizatorilor o mai mare flexibilitate și mai multe opțiuni, menținând în același timp o listă scurtă și selectată pentru cei care doresc un punct de plecare simplu și clar.
 
-### Metodele oficiale de instalare
+Oricine poate propune o nouă metodă de instalare pentru pagina Descărcări. Deși proiectul Node.js are ultimul cuvânt în ceea ce privește elementele afișate, propunerile sunt evaluate pe baza criteriilor de mai jos.
 
-Metodele de instalare desemnate ca „oficiale” trebuie să îndeplinească următoarele cerințe:
+Metodele „recomandate” sunt selectate pentru fiabilitatea lor și alinierea strânsă cu versiunile oficiale și îndeplinesc următoarele criterii (în plus față de toate criteriile „Comunității”):
 
-| Cerințe (metoda oficială de instalare)                                                                                                                         |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Noile versiuni Node.js trebuie să fie disponibile simultan cu lansarea oficială.                                                                               |
-| Responsabilii de întreținerea proiectului trebuie să aibă o relație strânsă cu proiectul Node.js, inclusiv pe canalele de comunicare directă.                  |
-| Metoda de instalare trebuie să descarce fișierele binare oficiale incluse în pachetul proiectului Node.js.                                                     |
-| Metoda de instalare nu trebuie să se compileze de la sursă atunci când sunt disponibile binare pre-compilate și nici nu trebuie să modifice binarele oficiale. |
+- Metodele „recomandate” fac disponibile noile versiuni Node.js simultan cu lansarea oficială.
+- Metodele „recomandate” folosesc binarele oficiale Node.js fără modificare, construind numai din sursă atunci când binarele pre-construite nu sunt disponibile.
+- Metodele „recomandate” permit dezvoltatorilor să instaleze și să utilizeze mai multe versiuni de Node.js pe un sistem simultan.
+- Metodele „recomandate” au o relație strânsă cu proiectul Node.js, inclusiv canalele de comunicare directă.
 
-### Metodele de instalare ale comunității
+Metodele „comunității” sunt metode de instalare suplimentare disponibile și pe pagina Descărcări și îndeplinesc următoarele criterii:
 
-Metodele de instalare oferite de comunitate și incluse pe pagina de descărcare cu autoservire (situată la /download) trebuie să respecte, de asemenea, un set minim de criterii:
-
-- **Compatibilitate versiune:** Trebuie să fie compatibile cu toate versiunile Node.js care nu sunt la sfârșitul perioadei de viață (EOL) și care sunt acceptate în prezent.
-- **Compatibilitate cu sistemul de operare:** Trebuie să funcționeze pe cel puțin un sistem de operare (OS) acceptat oficial.
-- **Suport extins pentru sisteme de operare:** Nu poate fi limitat la un subset de distribuții sau versiuni de sisteme de operare.
-  - De exemplu, o metodă de instalare care pretinde că este compatibilă cu „Windows” trebuie să funcționeze pe „Windows 10”, „Windows 11” și toate edițiile acestora (inclusiv versiunile de server).
-  - În mod similar, o metodă de instalare care pretinde compatibilitate cu „Linux” trebuie să poată fi instalată pe toate distribuțiile majore de Linux, nu doar pe un subset specific. Nu se poate baza pe manageri de pachete specifici distribuției, cum ar fi `apt` sau `dnf`.
-- **Gratuit și cu sursă deschisă:** Trebuie să fie gratuit și cu sursă deschisă, să nu fie vândut ca produs comercial și să nu fie un serviciu plătit.
+- Metodele „comunității” trebuie să accepte toate versiunile Node.js care nu sunt la sfârșitul vieții (EOL) acceptate în prezent.
+- Metodele „comunității” trebuie să funcționeze pe cel puțin un sistem de operare (SO) susținut oficial și nu trebuie să fie limitate la un subset de distribuții sau versiuni ale sistemului de operare.
+- Metodele „comunității” trebuie să se poată folosi gratuit și să fie open source, nu trebuie vândute ca produs comercial și nu trebuie să fie un serviciu plătit.

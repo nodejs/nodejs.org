@@ -242,12 +242,13 @@
         "packageManager": "Package Manager",
         "unknown": "Unknown",
         "platformGroups": {
-          "official": "Recommended (Official)",
-          "unofficial": "Community (Unofficial)"
+          "recommended": "Recommended",
+          "community": "Community"
         }
       },
       "codeBox": {
         "unsupportedVersionWarning": "This version is out of maintenance. Please use a currently supported version. <link>Understand EOL support.</link>",
+        "alphaVersionWarning": "Alpha releases are meant for early testing and are not intended for production use. Their APIs may change between releases. <link>Learn more about Alpha releases.</link>",
         "communityPlatformInfo": "Installation methods that involve community software are supported by the teams maintaining that software.",
         "externalSupportInfo": "If you encounter any issues please visit <link>{platform}'s website</link>",
         "noScriptDetected": "This page requires JavaScript. You can download Node.js without JavaScript by visiting the <link>downloads archive page</link> directly.",

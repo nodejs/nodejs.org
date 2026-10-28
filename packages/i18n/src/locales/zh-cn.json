@@ -130,11 +130,7 @@
         "os": "操作系统",
         "version": "版本",
         "packageManager": "包管理器",
-        "unknown": "未知",
-        "platformGroups": {
-          "official": "推荐（官方）",
-          "unofficial": "社区（非官方）"
-        }
+        "unknown": "未知"
       },
       "codeBox": {
         "unsupportedVersionWarning": "该版本已停止维护。请使用当前支持的版本。<link>了解 EOL.</link>",

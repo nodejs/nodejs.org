@@ -66,12 +66,16 @@ const getCompatiblePlatforms = (
         const satisfiesAll =
           !compatibility.semver ||
           compatibility.semver.every(version =>
-            semVer.satisfies(versionWithPrefix, version)
+            semVer.satisfies(versionWithPrefix, version, {
+              includePrerelease: true,
+            })
           );
         const satisfiesAny =
           !compatibility.semverAny ||
           compatibility.semverAny.some(version =>
-            semVer.satisfies(versionWithPrefix, version)
+            semVer.satisfies(versionWithPrefix, version, {
+              includePrerelease: true,
+            })
           );
 
         return satisfiesAll && satisfiesAny;

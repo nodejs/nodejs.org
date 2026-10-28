@@ -1,5 +1,11 @@
 # @node-core/ui-components
 
+## 1.8.1
+
+### Patch Changes
+
+- [#9235](https://github.com/nodejs/nodejs.org/pull/9235) [`d09eb7c`](https://github.com/nodejs/nodejs.org/commit/d09eb7c112c8272afd451229f10b26cf2e3d89d8) Thanks [@ovflowd](https://github.com/ovflowd)! - Stop installing `@vcarl/remark-headings` and `@orama/orama` at runtime. The `Heading` type now comes from `#ui/types`, and `@orama/orama` is only used by Storybook.
+
 ## 1.8.0
 
 ### Minor Changes

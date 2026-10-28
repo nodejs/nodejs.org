@@ -238,11 +238,7 @@
         "os": "Système d'exploitation",
         "version": "Version",
         "packageManager": "Gestionnaire de paquets",
-        "unknown": "Inconnu",
-        "platformGroups": {
-          "official": "Recommandé (officiel)",
-          "unofficial": "Communauté (non officielle)"
-        }
+        "unknown": "Inconnu"
       },
       "codeBox": {
         "unsupportedVersionWarning": "Cette version ne fait plus l'objet d'une maintenance. Veuillez utiliser une version actuellement supportée. <link>Comprendre l'accompagnement de fin de vie.</link>",

@@ -1,11 +1,26 @@
 {
   "components": {
+    "header": {
+      "buttons": {
+        "theme": "Selectează tema",
+        "themeSystem": "Sistem",
+        "themeLightMode": "Luminoasă",
+        "themeDarkMode": "Întunecată"
+      }
+    },
     "containers": {
       "footer": {
+        "legal": "Drepturi de autor ale <foundationName>Fundației OpenJS</foundationName> și contributorilor Node.js. Toate drepturile rezervate. <foundationName>Fundația OpenJS</foundationName> deține și folosește mărci comerciale înregistrate. Pentru o listă a mărcilor comerciale ale <foundationName>Fundației OpenJS</foundationName>, te rog să consulți <trademarkPolicy>Politica noastră privind mărcile comerciale</trademarkPolicy> și <trademarkList>Lista mărcilor comerciale</trademarkList>. Mărcile comerciale și siglele care nu sunt indicate în <trademarkList>lista de mărci comerciale ale Fundației OpenJS</trademarkList> sunt mărci comerciale™ sau mărci comerciale înregistrate® ale deținătorilor respectivi. Utilizarea acestora nu implică nicio afiliere cu sau aprobare din partea acestora.",
         "links": {
-          "trademarkPolicy": "Politică de mărci comerciale",
-          "privacyPolicy": "Politică de confidențialitate",
+          "foundationName": "Fundația OpenJS",
+          "aiCodingAssistantsPolicy": "Politica privind asistenții de programare bazați pe IA",
+          "termsOfUse": "Termeni de utilizare",
+          "privacyPolicy": "Politica de confidențialitate",
+          "bylaws": "Regulament intern",
           "codeOfConduct": "Cod de conduită",
+          "trademarkPolicy": "Politica de mărci comerciale",
+          "trademarkList": "Listă de mărci înregistrate",
+          "cookiePolicy": "Politica de cookie-uri",
           "security": "Politica de securitate"
         },
         "releasePills": {
@@ -21,6 +36,7 @@
           "about": "Despre",
           "download": "Descarcă",
           "docs": "Documentație",
+          "betaDocs": "Documentație beta",
           "learn": "Învață",
           "blog": "Blog",
           "contribute": "Contribuie"
@@ -36,6 +52,7 @@
           "governance": "Guvernarea proiectului",
           "releases": "Lansări Node.js",
           "security": "Raportare de securitate",
+          "partners": "Parteneri și susținători",
           "eol": "End-of-Life (EOL)"
         }
       },
@@ -69,7 +86,7 @@
       "ltsVersionFeaturesNotice": "Vrei funcționalități noi mai devreme? Instalează <link>cea mai recentă versiune Node.js</link> și testează cele mai noi îmbunătățiri!"
     },
     "eolAlert": {
-      "message": "Asistența comercială pentru versiunile care au depășit faza de întreținere LTS este disponibilă prin intermediul <link>partenerului nostru HeroDevs din cadrul Programului de sustenabilitate a ecosistemului OpenJS</link>"
+      "message": "Suportul comercial pentru versiunile trecute de faza de întreținere LTS este disponibil prin intermediul <link>programului de sustenabilitate a ecosistemului a partenerilor noștri OpenJS</link>"
     },
     "eolChip": {
       "severity": {
@@ -99,7 +116,8 @@
       "codename": "Nume de cod",
       "lastUpdated": "Ultima actualizare",
       "vulnerabilities": "Vulnerabilități",
-      "details": "Detalii"
+      "details": "Detalii",
+      "hideNonLts": "Ascunde versiunile non-LTS"
     },
     "minorReleasesTable": {
       "version": "Versiune",
@@ -133,6 +151,8 @@
         "copied": "Copiat în clipbord!"
       },
       "pagination": {
+        "previous": "Înapoi",
+        "previousAriaLabel": "Pagina anterioară",
         "next": "Înainte",
         "nextAriaLabel": "Pagina următoare",
         "defaultLabel": "Paginare",
@@ -143,7 +163,8 @@
       },
       "languageDropdown": {
         "label": "Alege limba"
-      }
+      },
+      "skipToContent": "Sari la conținut"
     },
     "metabar": {
       "lastUpdated": "Ultima actualizare",
@@ -152,15 +173,27 @@
       "authors": "Autori",
       "contribute": "Contribuie",
       "contributeText": "Editează această pagină",
-      "tableOfContents": "Cuprins"
+      "tableOfContents": "Cuprins",
+      "metadata": "Metadate articol"
+    },
+    "banner": {
+      "default": "Anunț",
+      "warning": "Notificare de avertizare",
+      "error": "Notificare de eroare",
+      "close": "Închide banner"
     },
     "search": {
       "searchPlaceholder": "Începe să tastezi...",
-      "noResultsFoundFor": "Niciun rezultat găsit pentru"
+      "noResultsFoundFor": "Niciun rezultat găsit pentru",
+      "keyboardShortcuts": {
+        "select": "pentru a selecta",
+        "navigate": "pentru a naviga",
+        "close": "pentru a închide"
+      }
     },
     "blog": {
       "blogHeader": {
-        "subtitle": "Cele mai recente știri, studii de caz, tutoriale și resurse Node.js.",
+        "subtitle": "Cele mai recente noutăți despre Node.js, ghiduri de migrare și rezumate ale evenimentelor",
         "rssLink": "Flux RSS"
       }
     }
@@ -182,6 +215,7 @@
         "video": "Video",
         "weekly": "Actualizări săptămânale",
         "wg": "Grupuri de lucru",
+        "migrations": "Ghiduri de migrare",
         "events": "Evenimente"
       }
     },
@@ -208,12 +242,13 @@
         "packageManager": "Manager de pachete",
         "unknown": "Necunoscut",
         "platformGroups": {
-          "official": "Recomandat (oficial)",
-          "unofficial": "Comunitate (neoficial)"
+          "recommended": "Recomandate",
+          "community": "Comunitate"
         }
       },
       "codeBox": {
         "unsupportedVersionWarning": "Această versiune nu mai este întreținută. Te rog să utilizezi o versiune acceptată în prezent. <link>Află mai multe despre suportul EOL.</link>",
+        "alphaVersionWarning": "Versiunile Alpha sunt destinate testării timpurii și nu sunt recomandate pentru utilizarea în producție. API-urile acestora pot suferi modificări între versiuni. <link>Află mai multe despre versiunile Alpha.</link>",
         "communityPlatformInfo": "Metodele de instalare care implică software comunitar sunt acceptate de echipele care întrețin acel software.",
         "externalSupportInfo": "Dacă întâmpini orice problemă, te rog să vizitezi site-ul web <link>{platform}</link>",
         "noScriptDetected": "Această pagină necesită JavaScript. Poți descărca Node.js fără JavaScript, vizitând direct <link>pagina arhivei de descărcări</link>.",
@@ -224,7 +259,10 @@
           "brew": "Homebrew este un manager de pachete pentru macOS și Linux.",
           "choco": "Chocolatey este un manager de pachete pentru Windows.",
           "docker": "Docker este o platformă de containerizare.",
-          "n": "„n” este un manager de versiuni Node.js multiplatformă."
+          "n": "„n” este un manager de versiuni Node.js multiplatformă.",
+          "asdf": "„asdf” este un manager de versiuni multiplatformă care acceptă mai multe limbi.",
+          "vp": "„Vite+” este un lanț de instrumente unificat pentru dezvoltarea web cu gestionarea versiunilor Node.js.",
+          "zeroinstall": "0install este un manager de pachete descentralizat și multiplatformă."
         }
       }
     },

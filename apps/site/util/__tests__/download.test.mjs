@@ -63,7 +63,9 @@ describe('parseCompat', () => {
       ['v24.19.0', true],
       ['v25.0.0', true],
       ['v26.8.0', false],
+      ['v26.9.0-alpha.1', false],
       ['v26.7.0', true],
+      ['v27.0.0-alpha.1', true],
       ['v27.0.0', true],
     ];
 
@@ -149,6 +151,28 @@ describe('parseCompat', () => {
       assert.ok(result[0].disabled);
     });
 
+    it('should match semver constraints for pre-release versions', () => {
+      const items = [
+        {
+          value: 'testItem',
+          compatibility: { semver: ['>= 16.9.0'] },
+        },
+        {
+          value: 'testItem2',
+          compatibility: { semver: ['< 23.0.0'] },
+        },
+      ];
+      const result = parseCompat(items, {
+        os: 'MAC',
+        installMethod: '',
+        platform: 'x64',
+        version: 'v27.0.0-alpha.0.0.0',
+        release: { status: 'Alpha' },
+      });
+      assert.equal(result[0].disabled, false);
+      assert.ok(result[1].disabled);
+    });
+
     it('should disable items if release status is not supported', () => {
       const items = [
         {
@@ -178,7 +202,9 @@ describe('buildReleaseArtifacts', () => {
       ['v24.19.0', false],
       ['v25.0.0', false],
       ['v26.8.0', true],
+      ['v26.9.0-alpha.1', true],
       ['v26.7.0', false],
+      ['v27.0.0-alpha.1', false],
       ['v27.0.0', false],
     ];
 

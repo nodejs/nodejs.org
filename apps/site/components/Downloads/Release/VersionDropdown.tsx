@@ -4,7 +4,7 @@ import WithNoScriptSelect from '@node-core/ui-components/Common/Select/NoScriptS
 import { useLocale, useTranslations } from 'next-intl';
 import { use } from 'react';
 
-import { redirect, usePathname } from '#site/navigation';
+import { redirect, usePathname } from '#site/navigation.mjs';
 import { STATUS_KIND_MAP } from '#site/next.constants.mjs';
 import {
   ReleaseContext,
@@ -27,13 +27,21 @@ const VersionDropdown: FC = () => {
       ({ versionWithPrefix }) => versionWithPrefix === version
     );
 
-    if (release?.status === 'LTS' && pathname.includes('current')) {
+    if (
+      (release?.status === 'LTS' || release?.status === 'EOL') &&
+      (pathname.includes('current') || pathname.includes('alpha'))
+    ) {
       redirect({ href: '/download', locale });
       return;
     }
 
     if (release?.status === 'Current' && !pathname.includes('current')) {
       redirect({ href: '/download/current', locale });
+      return;
+    }
+
+    if (release?.status === 'Alpha' && !pathname.includes('alpha')) {
+      redirect({ href: '/download/alpha', locale });
       return;
     }
 

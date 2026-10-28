@@ -242,12 +242,13 @@
         "packageManager": "パッケージマネージャー",
         "unknown": "不明",
         "platformGroups": {
-          "official": "推奨（公式）",
-          "unofficial": "コミュニティー（非公式）"
+          "recommended": "推奨",
+          "community": "コミュニティー"
         }
       },
       "codeBox": {
         "unsupportedVersionWarning": "このバージョンのメンテナンスは終了しています。現在サポートされているバージョンを利用してください。<link>EOLのサポートについて。</link>",
+        "alphaVersionWarning": "アルファ版は早期テストを目的としており、本番環境での利用は想定されていません。リリース間でAPIが変更される可能性があります。<link>アルファ版について詳しくはこちらをご覧ください。</link>",
         "communityPlatformInfo": "コミュニティーソフトウェアを含むインストール方法はそのソフトウェアを管理しているチームによってサポートされます。",
         "externalSupportInfo": "もし何らかの問題を見つけた場合は<link>{platform}のウェブサイト</link>を参照してください。",
         "noScriptDetected": "このページはJavaScriptが必要です。JavaScriptなしでも<link>アーカイブページ</link>から直接Node.jsをダウンロードできます。",
@@ -259,7 +260,9 @@
           "choco": "ChocolateyはWIndows用のパッケージマネージャーです。",
           "docker": "Dockerはコンテナー化に関するプラットフォームです。",
           "n": "\"n\"はクロスプラットフォームに対応したNode.jsのバージョンマネージャーです。",
-          "asdf": "「asdf」は数多くのプログラミング言語に対応したクロスプラットフォームのバージョン管理ツールです。"
+          "asdf": "「asdf」は数多くのプログラミング言語に対応したクロスプラットフォームのバージョン管理ツールです。",
+          "vp": "「Vite+」はNode.jsのバージョン管理を備えたウェブ開発のための統合ツールチェーンです。",
+          "zeroinstall": "0installはクロスプラットフォーム対応の分散型パッケージマネージャです。"
         }
       }
     },

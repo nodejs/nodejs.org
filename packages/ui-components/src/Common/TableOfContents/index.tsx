@@ -3,8 +3,7 @@ import classNames from 'classnames';
 
 import { CODE_LIKE_TYPES } from '#ui/constants';
 
-import type { LinkLike } from '#ui/types';
-import type { Heading } from '@vcarl/remark-headings';
+import type { Heading, LinkLike } from '#ui/types';
 import type { ComponentProps, FC } from 'react';
 
 import styles from './index.module.css';
