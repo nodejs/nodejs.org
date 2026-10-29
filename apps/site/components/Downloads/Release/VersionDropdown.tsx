@@ -66,10 +66,13 @@ const VersionDropdown: FC = () => {
   return (
     <WithNoScriptSelect
       ariaLabel={t('layouts.download.dropdown.version')}
-      values={releases.map(({ status, versionWithPrefix }) => ({
+      values={releases.map(({ status, isMaintenance, versionWithPrefix }) => ({
         value: versionWithPrefix,
         label: versionWithPrefix,
-        badge: { label: status, kind: STATUS_KIND_MAP[status] },
+        badge: {
+          label: status,
+          kind: isMaintenance ? 'neutral' : STATUS_KIND_MAP[status],
+        },
       }))}
       defaultValue={release.versionWithPrefix}
       onChange={setVersionOrNavigate}
