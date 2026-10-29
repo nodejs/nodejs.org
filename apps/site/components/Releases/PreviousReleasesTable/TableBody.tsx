@@ -68,6 +68,7 @@ const PreviousReleasesTableBody: FC<PreviousReleasesTableBodyProps> = ({
 
           <ReleaseModal
             release={release}
+            releases={releaseData}
             open={currentModal === release.version}
             onOpenChange={open => open || setCurrentModal(undefined)}
           />

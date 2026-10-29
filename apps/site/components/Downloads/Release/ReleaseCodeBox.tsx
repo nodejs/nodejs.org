@@ -115,7 +115,7 @@ const usePlatformInfo = (installMethod: string) => {
  * ReleaseCodeBox component displays installation instructions based on platform and context
  */
 const ReleaseCodeBox: FC = () => {
-  const { snippets } = use(ReleasesContext);
+  const { snippets, releases } = use(ReleasesContext);
   const context = use(ReleaseContext);
   const t = useTranslations();
 
@@ -149,7 +149,7 @@ const ReleaseCodeBox: FC = () => {
       </noscript>
 
       {/* Release status alert */}
-      <WithReleaseAlertBox status={context.release.status} />
+      <WithReleaseAlertBox release={context.release} releases={releases} />
 
       {/* Community platform notice */}
       {platformInfo.exists && !platformInfo.recommended && (
