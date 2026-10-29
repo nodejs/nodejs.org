@@ -10,9 +10,14 @@ import type { ComponentProps, FC } from 'react';
 
 type ReleaseModalProps = ComponentProps<typeof Modal> & {
   release: NodeRelease;
+  releases: Array<NodeRelease>;
 };
 
-const ReleaseModal: FC<ReleaseModalProps> = ({ release, ...props }) => {
+const ReleaseModal: FC<ReleaseModalProps> = ({
+  release,
+  releases,
+  ...props
+}) => {
   const t = useTranslations();
 
   const modalHeadingKey = release.codename
@@ -26,7 +31,7 @@ const ReleaseModal: FC<ReleaseModalProps> = ({ release, ...props }) => {
 
   return (
     <Modal {...props}>
-      <WithReleaseAlertBox status={release.status} />
+      <WithReleaseAlertBox release={release} releases={releases} />
 
       <Title>{modalHeading}</Title>
 
