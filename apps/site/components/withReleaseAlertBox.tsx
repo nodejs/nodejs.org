@@ -14,6 +14,18 @@ const WithReleaseAlertBox: FC<WithReleaseAlertBoxProps> = ({ status }) => {
   const t = useTranslations();
 
   switch (status) {
+    case 'Alpha':
+      return (
+        <AlertBox
+          title={t('components.common.alertBox.warning')}
+          level="warning"
+          size="small"
+        >
+          {t.rich('layouts.download.codeBox.alphaVersionWarning', {
+            link: text => <Link href="/download">{text}</Link>,
+          })}
+        </AlertBox>
+      );
     case 'EOL':
       return (
         <AlertBox

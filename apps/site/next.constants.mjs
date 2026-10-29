@@ -142,6 +142,7 @@ export const SEVERITY_KIND_MAP = {
  * @type {Record<import('./types/releases').NodeReleaseStatus, import('@node-core/ui-components/Common/Badge').BadgeKind>}
  */
 export const STATUS_KIND_MAP = {
+  Alpha: 'neutral',
   EOL: 'warning',
   LTS: 'info',
   Current: 'default',

@@ -130,6 +130,36 @@ describe('generateReleaseData', () => {
     assert.equal(result[0]?.status, 'Current');
   });
 
+  it('returns Alpha when release is not EOL and latest is flagged as Alpha', async t => {
+    const result = await runWithNodevuData(t, '2026-10-29', {
+      27: {
+        releases: {
+          '27.0.0-alpha.0.0.0': {
+            semver: { major: 27, raw: '27.0.0-alpha.0.0.0' },
+            dependencies: { npm: '11.20.0', v8: '14.7.0.0' },
+            lts: { isLts: false },
+            alpha: { isAlpha: true },
+            releaseDate: '2026-10-28',
+            modules: { version: '148' },
+          },
+        },
+        support: {
+          phases: {
+            dates: {
+              alpha: '2026-10-28',
+              start: '2027-04-22',
+              lts: '2027-10-20',
+              end: '2030-04-30',
+            },
+          },
+        },
+      },
+    });
+
+    assert.equal(result[0]?.status, 'Alpha');
+    assert.equal(result[0]?.versionWithPrefix, 'v27.0.0-alpha.0.0.0');
+  });
+
   it('uses latest and earliest release dates for latestReleaseDate and initialReleaseDate', async t => {
     const result = await runWithNodevuData(t, '2026-04-14', {
       26: {

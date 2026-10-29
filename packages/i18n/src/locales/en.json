@@ -247,6 +247,7 @@
         }
       },
       "codeBox": {
+        "alphaVersionWarning": "This is an Alpha release intended for testing and is not recommended for production use. Please use a <link>supported release</link> instead.",
         "unsupportedVersionWarning": "This version is out of maintenance. Please use a currently supported version. <link>Understand EOL support.</link>",
         "communityPlatformInfo": "Installation methods that involve community software are supported by the teams maintaining that software.",
         "externalSupportInfo": "If you encounter any issues please visit <link>{platform}'s website</link>",

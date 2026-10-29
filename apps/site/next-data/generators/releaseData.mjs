@@ -10,6 +10,10 @@ const getNodeReleaseStatus = (latest, eol) => {
     return 'EOL';
   }
 
+  if (latest.alpha?.isAlpha) {
+    return 'Alpha';
+  }
+
   if (latest.lts.isLts) {
     return 'LTS';
   }
