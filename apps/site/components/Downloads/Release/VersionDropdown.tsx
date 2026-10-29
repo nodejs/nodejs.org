@@ -2,7 +2,7 @@
 
 import WithNoScriptSelect from '@node-core/ui-components/Common/Select/NoScriptSelect';
 import { useLocale, useTranslations } from 'next-intl';
-import { use } from 'react';
+import { use, useEffect } from 'react';
 
 import { redirect, usePathname } from '#site/navigation.mjs';
 import { STATUS_KIND_MAP } from '#site/next.constants.mjs';
@@ -41,10 +41,13 @@ const VersionDropdown: FC = () => {
   };
 
   // Ensure the initial route is correct based on the release status.
-  const redirectPath = getRedirectPath(release.status);
-  if (redirectPath) {
-    redirect({ href: redirectPath, locale });
-  }
+  useEffect(() => {
+    const redirectPath = getRedirectPath(release.status);
+    if (redirectPath) {
+      redirect({ href: redirectPath, locale });
+    }
+    // eslint-disable-next-line @eslint-react/exhaustive-deps -- deps are correct on first render, and this should not run again.
+  }, []);
 
   // Handle setting the new version or navigating to the correct route based on status.
   const setVersionOrNavigate = (version: string) => {
