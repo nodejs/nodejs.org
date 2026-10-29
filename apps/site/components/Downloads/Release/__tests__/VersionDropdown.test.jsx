@@ -30,7 +30,7 @@ const statuses = [
   {
     status: 'EOL',
     path: '/download',
-    badgeKind: 'warning',
+    badgeKind: 'error',
     versions: ['v18.0.0', 'v16.0.0'],
   },
   {
@@ -48,7 +48,7 @@ const statuses = [
   {
     status: 'Alpha',
     path: '/download/alpha',
-    badgeKind: 'default',
+    badgeKind: 'warning',
     versions: ['v26.0.0-alpha.1', 'v26.0.0-alpha.2'],
   },
 ];
@@ -57,9 +57,9 @@ const releases = statuses.flatMap(({ status, versions }) =>
   versions.map(versionWithPrefix => ({ versionWithPrefix, status }))
 );
 
-const renderDropdown = (release = releases[0]) => {
+const renderDropdown = (release = releases[0], allReleases = releases) => {
   render(
-    <ReleasesContext value={{ releases, snippets: [] }}>
+    <ReleasesContext value={{ releases: allReleases, snippets: [] }}>
       <ReleaseContext value={{ release, setVersion }}>
         <VersionDropdown />
       </ReleaseContext>
@@ -135,4 +135,22 @@ describe('VersionDropdown', () => {
       }
     });
   }
+
+  it('provides the neutral badge for LTS versions in maintenance', () => {
+    const release = {
+      versionWithPrefix: 'v22.0.0',
+      status: 'LTS',
+      isMaintenance: true,
+    };
+
+    const { values } = renderDropdown(release, [release]);
+
+    assert.deepEqual(values, [
+      {
+        value: 'v22.0.0',
+        label: 'v22.0.0',
+        badge: { label: 'LTS', kind: 'neutral' },
+      },
+    ]);
+  });
 });

@@ -51,7 +51,14 @@ const PreviousReleasesTableBody: FC<PreviousReleasesTableBodyProps> = ({
             </td>
 
             <td data-label={t('components.downloadReleasesTable.status')}>
-              <Badge kind={STATUS_KIND_MAP[release.status]} size="small">
+              <Badge
+                kind={
+                  release.isMaintenance
+                    ? 'neutral'
+                    : STATUS_KIND_MAP[release.status]
+                }
+                size="small"
+              >
                 {release.status}
               </Badge>
             </td>

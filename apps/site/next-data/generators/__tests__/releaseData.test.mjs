@@ -102,6 +102,37 @@ describe('generateReleaseData', () => {
     });
 
     assert.equal(result[0]?.status, 'LTS');
+    assert.equal(result[0]?.isMaintenance, false);
+  });
+
+  it('flags LTS releases on or past their maintenance date', async t => {
+    const result = await runWithNodevuData(t, '2026-10-20', {
+      24: {
+        releases: {
+          '24.11.0': {
+            semver: { major: 24, raw: '24.11.0' },
+            dependencies: { npm: '11.6.1', v8: '13.6.233.10' },
+            lts: { isLts: true },
+            alpha: { isAlpha: false },
+            releaseDate: '2026-10-14',
+            modules: { version: '137' },
+          },
+        },
+        support: {
+          phases: {
+            dates: {
+              start: '2025-05-06',
+              lts: '2025-10-28',
+              maintenance: '2026-10-20',
+              end: '2028-04-30',
+            },
+          },
+        },
+      },
+    });
+
+    assert.equal(result[0]?.status, 'LTS');
+    assert.equal(result[0]?.isMaintenance, true);
   });
 
   it('returns Current when release is not EOL and LTS date has passed but latest is not LTS', async t => {
