@@ -4,7 +4,7 @@ layout: download-archive
 ---
 
 <WithDownloadArchive>
-  {({ binaries, installers, version, release, sources }) => (
+  {({ binaries, installers, version, release, releases, sources }) => (
     <>
       <h1>Node.js® பதிவிறக்கக் காப்பகம்</h1>
       <h2 className="flex items-center gap-2">
@@ -18,7 +18,7 @@ layout: download-archive
         {release.codename && ` (${release.codename})`}
       </h2>
 
-      <WithReleaseAlertBox status={release.status} />
+      <ReleaseAlertBox release={release} releases={releases} />
       <ReleaseOverview release={release} />
 
       <ul className='flex list-none flex-col gap-2 p-0 text-sm'>
@@ -37,7 +37,7 @@ layout: download-archive
       </ul>
 
       <h2>பிற வெளியீடுகள்</h2>
-      <WithReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
+      <ReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
 
       <h2>பைனரி பதிவிறக்கங்கள்</h2>
       <DownloadsTable source={binaries} />

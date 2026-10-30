@@ -2,9 +2,9 @@ import { useTranslations } from 'next-intl';
 
 import { getClientContext } from '#site/client-context';
 import BlogHeader from '#site/components/Blog/BlogHeader';
-import WithBlogCategories from '#site/components/withBlogCategories';
-import WithFooter from '#site/components/withFooter';
-import WithNavBar from '#site/components/withNavBar';
+import BlogCategories from '#site/components/BlogCategories';
+import Footer from '#site/components/Footer';
+import NavBar from '#site/components/NavBar';
 import { getBlogData } from '#site/util/blog';
 
 import type { BlogCategory } from '#site/types';
@@ -51,13 +51,13 @@ const BlogLayout: FC = () => {
 
   return (
     <>
-      <WithNavBar />
+      <NavBar />
 
       <div className={styles.blogLayout}>
         <main id="main" tabIndex={-1}>
           <BlogHeader category={blogData.category} />
 
-          <WithBlogCategories
+          <BlogCategories
             blogData={blogData}
             categories={mapCategoriesToTabs([
               'all',
@@ -71,7 +71,7 @@ const BlogLayout: FC = () => {
         </main>
       </div>
 
-      <WithFooter />
+      <Footer />
     </>
   );
 };

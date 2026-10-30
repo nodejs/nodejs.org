@@ -3,17 +3,18 @@ import { useTranslations } from 'next-intl';
 
 import Link from '#site/components/Link';
 
-import type { NodeReleaseStatus } from '#site/types';
+import type { NodeRelease } from '#site/types';
 import type { FC } from 'react';
 
-type WithReleaseAlertBoxProps = {
-  status: NodeReleaseStatus;
+type ReleaseAlertBoxProps = {
+  release: NodeRelease;
+  releases: Array<NodeRelease>;
 };
 
-const WithReleaseAlertBox: FC<WithReleaseAlertBoxProps> = ({ status }) => {
+const ReleaseAlertBox: FC<ReleaseAlertBoxProps> = ({ release, releases }) => {
   const t = useTranslations();
 
-  switch (status) {
+  switch (release.status) {
     case 'EOL':
       return (
         <AlertBox
@@ -42,21 +43,33 @@ const WithReleaseAlertBox: FC<WithReleaseAlertBoxProps> = ({ status }) => {
           })}
         </AlertBox>
       );
-    case 'LTS':
-      return (
-        <AlertBox
-          title={t('components.common.alertBox.info')}
-          level="success"
-          size="small"
-        >
-          {t.rich('components.releaseModal.ltsVersionFeaturesNotice', {
-            link: text => <Link href="/download/current">{text}</Link>,
-          })}
-        </AlertBox>
-      );
+    case 'LTS': {
+      const hasCurrent = releases.some(({ status }) => status === 'Current');
+      const hasAlpha = releases.some(({ status }) => status === 'Alpha');
+
+      if (hasCurrent || hasAlpha) {
+        return (
+          <AlertBox
+            title={t('components.common.alertBox.info')}
+            level="success"
+            size="small"
+          >
+            {t.rich('components.releaseModal.ltsVersionFeaturesNotice', {
+              link: text => (
+                <Link href={`/download/${hasCurrent ? 'current' : 'alpha'}`}>
+                  {text}
+                </Link>
+              ),
+            })}
+          </AlertBox>
+        );
+      }
+
+      return null;
+    }
     default:
       return null;
   }
 };
 
-export default WithReleaseAlertBox;
+export default ReleaseAlertBox;

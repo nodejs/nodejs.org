@@ -1,17 +1,17 @@
 import Article from '@node-core/ui-components/Containers/Article';
 
-import WithFooter from '#site/components/withFooter';
-import WithNavBar from '#site/components/withNavBar';
-import WithSidebar from '#site/components/withSidebar';
+import Footer from '#site/components/Footer';
+import NavBar from '#site/components/NavBar';
+import Sidebar from '#site/components/Sidebar';
 
 import type { FC, PropsWithChildren } from 'react';
 
 const DefaultLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
-    <WithNavBar />
+    <NavBar />
 
     <Article>
-      <WithSidebar navKeys={[]} />
+      <Sidebar navKeys={[]} />
 
       <div>
         <main id="main" tabIndex={-1}>
@@ -20,7 +20,7 @@ const DefaultLayout: FC<PropsWithChildren> = ({ children }) => (
       </div>
     </Article>
 
-    <WithFooter />
+    <Footer />
   </>
 );
 

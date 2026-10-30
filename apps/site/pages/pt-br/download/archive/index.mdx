@@ -4,7 +4,7 @@ layout: download-archive
 ---
 
 <WithDownloadArchive>
-  {({ binaries, installers, version, release, sources }) => (
+  {({ binaries, installers, version, release, releases, sources }) => (
     <>
       <h1>Arquivo de Download do Node.js®</h1>
 
@@ -19,7 +19,7 @@ layout: download-archive
         {release.codename && ` (${release.codename})`}
       </h2>
 
-      <WithReleaseAlertBox status={release.status} />
+      <ReleaseAlertBox release={release} releases={releases} />
 
       <ReleaseOverview release={release} />
 
@@ -42,7 +42,7 @@ layout: download-archive
       </ul>
 
       <h2>Outros lançamentos</h2>
-      <WithReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
+      <ReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
 
       <h2>Downloads dos Binários</h2>
       <DownloadsTable source={binaries} />

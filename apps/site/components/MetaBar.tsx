@@ -1,12 +1,12 @@
 'use client';
 
-import MetaBar from '@node-core/ui-components/Containers/MetaBar';
+import MetaBarContainer from '@node-core/ui-components/Containers/MetaBar';
 import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
 import { defaultLocale } from '@node-core/website-i18n';
 import { useFormatter, useLocale, useTranslations } from 'next-intl';
 
+import AvatarGroup from '#site/components/AvatarGroup';
 import Link from '#site/components/Link';
-import WithAvatarGroup from '#site/components/withAvatarGroup';
 import useClientContext from '#site/hooks/useClientContext';
 import useMediaQuery from '#site/hooks/useMediaQuery';
 import { DEFAULT_DATE_FORMAT } from '#site/next.calendar.constants.mjs';
@@ -15,7 +15,7 @@ import { getGitHubBlobUrl } from '#site/util/github';
 
 import type { FC } from 'react';
 
-const WithMetaBar: FC = () => {
+const MetaBar: FC = () => {
   const { headings, readingTime, frontmatter, filename } = useClientContext();
   const formatter = useFormatter();
   const lastUpdated = frontmatter.date
@@ -41,7 +41,7 @@ const WithMetaBar: FC = () => {
   const isSmallerThanDesktop = useMediaQuery('(max-width: 1280px)');
 
   return (
-    <MetaBar
+    <MetaBarContainer
       heading={t('components.metabar.tableOfContents')}
       as={Link}
       aria-label={t('components.metabar.metadata')}
@@ -52,7 +52,7 @@ const WithMetaBar: FC = () => {
           [t(
             `components.metabar.${usernames.length > 1 ? 'authors' : 'author'}`
           )]: (
-            <WithAvatarGroup
+            <AvatarGroup
               usernames={usernames}
               limit={isSmallerThanDesktop ? 5 : 8}
             />
@@ -78,4 +78,4 @@ const WithMetaBar: FC = () => {
   );
 };
 
-export default WithMetaBar;
+export default MetaBar;

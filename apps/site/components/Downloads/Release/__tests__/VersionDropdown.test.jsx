@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
 import { beforeEach, describe, it, mock } from 'node:test';
 
-import { render } from '@testing-library/react';
+import { act, render } from '@testing-library/react';
+import { useState } from 'react';
 
 import {
   ReleaseContext,
@@ -58,11 +59,27 @@ const releases = statuses.flatMap(({ status, versions }) =>
 );
 
 const renderDropdown = (release = releases[0]) => {
-  render(
-    <ReleasesContext value={{ releases, snippets: [] }}>
-      <ReleaseContext value={{ release, setVersion }}>
+  const Dropdown = () => {
+    const [version, updateVersion] = useState(release.versionWithPrefix);
+    setVersion.mock.mockImplementation(updateVersion);
+
+    return (
+      <ReleaseContext
+        value={{
+          release: releases.find(
+            candidate => candidate.versionWithPrefix === version
+          ),
+          setVersion,
+        }}
+      >
         <VersionDropdown />
       </ReleaseContext>
+    );
+  };
+
+  render(
+    <ReleasesContext value={{ releases, snippets: [] }}>
+      <Dropdown />
     </ReleasesContext>
   );
 
@@ -90,6 +107,7 @@ describe('VersionDropdown', () => {
 
         assert.equal(defaultValue, release.versionWithPrefix);
         assert.equal(ariaLabel, 'layouts.download.dropdown.version');
+        assert.equal(redirect.mock.callCount(), 0);
       });
 
       it(`provides the ${status} badge for each version`, () => {
@@ -109,16 +127,34 @@ describe('VersionDropdown', () => {
       });
 
       for (const target of statuses) {
+        it(`normalizes ${target.path} on load for ${status}`, () => {
+          pathname = target.path;
+
+          renderDropdown(release);
+
+          if (target.path !== path) {
+            assert.deepEqual(
+              redirect.mock.calls.map(call => call.arguments),
+              [[{ href: path, locale: 'en' }]]
+            );
+          } else {
+            assert.equal(redirect.mock.callCount(), 0);
+          }
+          assert.equal(setVersion.mock.callCount(), 0);
+        });
+
         const description =
           target.status === status ? `another ${status}` : target.status;
 
         it(`switches to ${description}`, () => {
           const { onChange } = renderDropdown(release);
+          redirect.mock.resetCalls();
+          setVersion.mock.resetCalls();
           const version = target.versions.find(
             candidate => candidate !== release.versionWithPrefix
           );
 
-          onChange(version);
+          act(() => onChange(version));
 
           if (target.path !== path) {
             assert.equal(redirect.mock.callCount(), 1);
@@ -126,10 +162,19 @@ describe('VersionDropdown', () => {
               { href: target.path, locale: 'en' },
             ]);
             assert.equal(setVersion.mock.callCount(), 0);
+            assert.equal(Select.mock.callCount(), 1);
+            assert.equal(
+              Select.mock.calls.at(-1).arguments[0].defaultValue,
+              release.versionWithPrefix
+            );
           } else {
             assert.equal(redirect.mock.callCount(), 0);
             assert.equal(setVersion.mock.callCount(), 1);
             assert.deepEqual(setVersion.mock.calls[0].arguments, [version]);
+            assert.equal(
+              Select.mock.calls.at(-1).arguments[0].defaultValue,
+              version
+            );
           }
         });
       }

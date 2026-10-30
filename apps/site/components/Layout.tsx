@@ -21,12 +21,12 @@ const layouts = {
   article: ArticlePageLayout,
 } satisfies Record<Layouts, FC>;
 
-type WithLayoutProps<L = Layouts> = PropsWithChildren<{ layout: L }>;
+type LayoutProps<L = Layouts> = PropsWithChildren<{ layout: L }>;
 
-const WithLayout: FC<WithLayoutProps<Layouts>> = ({ layout, children }) => {
+const Layout: FC<LayoutProps<Layouts>> = ({ layout, children }) => {
   const LayoutComponent = layouts[layout] ?? DefaultLayout;
 
   return <LayoutComponent>{children}</LayoutComponent>;
 };
 
-export default WithLayout;
+export default Layout;

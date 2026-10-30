@@ -12,11 +12,11 @@ import {
 import type { NodeRelease, NodeReleaseStatus } from '../types';
 import type { FC, PropsWithChildren } from 'react';
 
-type WithDownloadSectionProps = PropsWithChildren<{
+type DownloadSectionProps = PropsWithChildren<{
   releases: Array<NodeRelease>;
 }>;
 
-const WithDownloadSection: FC<WithDownloadSectionProps> = async ({
+const DownloadSection: FC<DownloadSectionProps> = async ({
   releases,
   children,
 }) => {
@@ -56,4 +56,4 @@ const WithDownloadSection: FC<WithDownloadSectionProps> = async ({
   );
 };
 
-export default WithDownloadSection;
+export default DownloadSection;
