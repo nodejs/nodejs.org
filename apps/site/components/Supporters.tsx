@@ -4,7 +4,7 @@ import type { FC, PropsWithChildren } from 'react';
 
 import SupportersList from './Common/Supporters';
 
-const WithSupporters: FC<PropsWithChildren> = async () => {
+const Supporters: FC<PropsWithChildren> = async () => {
   const supporters = await provideSupporters();
 
   return (
@@ -14,4 +14,4 @@ const WithSupporters: FC<PropsWithChildren> = async () => {
   );
 };
 
-export default WithSupporters;
+export default Supporters;

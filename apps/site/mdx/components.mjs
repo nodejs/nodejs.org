@@ -37,11 +37,11 @@ import MinorReleasesTable from '#site/components/Releases/MinorReleasesTable';
 import PreviousReleasesTable from '#site/components/Releases/PreviousReleasesTable';
 import ReleaseOverview from '#site/components/Releases/ReleaseOverview';
 import ReleaseSelect from '#site/components/ReleaseSelect';
+import Supporters from '#site/components/Supporters';
 import WebsiteBadge from '#site/components/WebsiteBadge';
 import WebsiteBanner from '#site/components/WebsiteBanner';
 import WithDownloadArchive from '#site/components/withDownloadArchive';
 import WithNodeRelease from '#site/components/withNodeRelease';
-import WithSupporters from '#site/components/withSupporters';
 import { ReleaseProvider } from '#site/providers/releaseProvider';
 
 /**
@@ -93,8 +93,8 @@ export default {
   ReleaseAlertBox,
   WebsiteBanner,
   WebsiteBadge,
-  // HOC for providing Backers Data
-  WithSupporters,
+  // Renders the list of supporters
+  Supporters,
   BadgeGroup,
   ReleaseOverview,
   MinorReleasesTable,
