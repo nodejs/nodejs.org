@@ -78,7 +78,7 @@ An open source project is only as good as its documentation. Allowing new contri
 - [DEPENDENCY_PINNING](https://github.com/nodejs/nodejs.org/blob/main/DEPENDENCY_PINNING.md)
 - [GOVERNANCE](https://github.com/nodejs/nodejs.org/blob/main/GOVERNANCE.md)
 - [README](https://github.com/nodejs/nodejs.org/blob/main/README.md)
-- [TRANSLATION](https://github.com/nodejs/nodejs.org/blob/main/TRANSLATION.md)
+- [TRANSLATION](https://github.com/nodejs/nodejs.org/blob/main/docs/translation.md)
 
 New code has a strong focus on inline code and configuration comments, separation of concerns, and clearly defined constants. The use of TypeScript throughout helps contributors understand the shape of data and the expected behavior of functions.
 
