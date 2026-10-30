@@ -42,7 +42,7 @@ layout: download-archive
       </ul>
 
       <h2>Outros lançamentos</h2>
-      <WithReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
+      <ReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
 
       <h2>Downloads dos Binários</h2>
       <DownloadsTable source={binaries} />

@@ -36,11 +36,11 @@ import ReleaseAlertBox from '#site/components/ReleaseAlertBox';
 import MinorReleasesTable from '#site/components/Releases/MinorReleasesTable';
 import PreviousReleasesTable from '#site/components/Releases/PreviousReleasesTable';
 import ReleaseOverview from '#site/components/Releases/ReleaseOverview';
+import ReleaseSelect from '#site/components/ReleaseSelect';
 import WebsiteBadge from '#site/components/WebsiteBadge';
 import WebsiteBanner from '#site/components/WebsiteBanner';
 import WithDownloadArchive from '#site/components/withDownloadArchive';
 import WithNodeRelease from '#site/components/withNodeRelease';
-import WithReleaseSelect from '#site/components/withReleaseSelect';
 import WithSupporters from '#site/components/withSupporters';
 import { ReleaseProvider } from '#site/providers/releaseProvider';
 
@@ -67,7 +67,7 @@ export default {
   // Renders a Download Button
   DownloadButton,
   // Renders a stateless Release Select Component
-  WithReleaseSelect,
+  ReleaseSelect,
   // Group of components that enable you to select versions for Node.js
   // releases and download selected versions. Uses `releaseProvider` as a provider
   Release: {

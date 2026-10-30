@@ -42,7 +42,7 @@ layout: download-archive
       </ul>
 
       <h2>其他版本</h2>
-      <WithReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
+      <ReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
 
       <h2>二进制文件</h2>
       <DownloadsTable source={binaries} />
