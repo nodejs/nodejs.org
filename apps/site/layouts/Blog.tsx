@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 
 import { getClientContext } from '#site/client-context';
 import BlogHeader from '#site/components/Blog/BlogHeader';
-import WithBlogCategories from '#site/components/withBlogCategories';
+import BlogCategories from '#site/components/BlogCategories';
 import WithFooter from '#site/components/withFooter';
 import WithNavBar from '#site/components/withNavBar';
 import { getBlogData } from '#site/util/blog';
@@ -57,7 +57,7 @@ const BlogLayout: FC = () => {
         <main id="main" tabIndex={-1}>
           <BlogHeader category={blogData.category} />
 
-          <WithBlogCategories
+          <BlogCategories
             blogData={blogData}
             categories={mapCategoriesToTabs([
               'all',

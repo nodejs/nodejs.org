@@ -8,7 +8,7 @@ import { mapAuthorToCardAuthors } from '#site/util/author';
 import type { BlogPostsRSC } from '#site/types';
 import type { ComponentProps, FC } from 'react';
 
-type WithBlogCategoriesProps = {
+type BlogCategoriesProps = {
   categories: ComponentProps<typeof LinkTabs>['tabs'];
   blogData: BlogPostsRSC & { category: string; page: number };
 };
@@ -18,10 +18,7 @@ const mapPaginationPages = (category: string, pages: number) =>
     url: `/blog/${category}/page/${page + 1}`,
   }));
 
-const WithBlogCategories: FC<WithBlogCategoriesProps> = ({
-  categories,
-  blogData,
-}) => {
+const BlogCategories: FC<BlogCategoriesProps> = ({ categories, blogData }) => {
   const t = useTranslations();
 
   return (
@@ -58,4 +55,4 @@ const WithBlogCategories: FC<WithBlogCategoriesProps> = ({
   );
 };
 
-export default WithBlogCategories;
+export default BlogCategories;
