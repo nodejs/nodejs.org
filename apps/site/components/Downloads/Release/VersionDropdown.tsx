@@ -23,11 +23,8 @@ const VersionDropdown: FC = () => {
 
   // Allows us to keep the route semantically correct to what the user should expect
   // from the /current and non /current routes.
-  const getRedirectPath = (status?: NodeReleaseStatus) => {
-    if (
-      (status === 'LTS' || status === 'EOL') &&
-      (pathname.includes('current') || pathname.includes('alpha'))
-    ) {
+  const getRedirectPath = (status: NodeReleaseStatus) => {
+    if (['LTS', 'EOL'].includes(status) && !pathname.endsWith('/download')) {
       return '/download';
     }
 
@@ -55,10 +52,12 @@ const VersionDropdown: FC = () => {
       ({ versionWithPrefix }) => versionWithPrefix === version
     );
 
-    const href = getRedirectPath(selectedRelease?.status);
-    if (href) {
-      redirect({ href, locale });
-      return;
+    if (selectedRelease) {
+      const href = getRedirectPath(selectedRelease.status);
+      if (href) {
+        redirect({ href, locale });
+        return;
+      }
     }
 
     setVersion(version);
