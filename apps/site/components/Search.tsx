@@ -73,7 +73,7 @@ export const useOrama = () => {
   }, []) as unknown as OramaCloud;
 };
 
-const WithSearch: FC = () => {
+const Search: FC = () => {
   const t = useTranslations();
   const client = useOrama();
 
@@ -89,4 +89,4 @@ const WithSearch: FC = () => {
   );
 };
 
-export default WithSearch;
+export default Search;
