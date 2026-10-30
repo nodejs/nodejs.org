@@ -9,7 +9,7 @@ import { notFound, redirect } from 'next/navigation';
 import { locale as getRootLocale } from 'next/root-params';
 
 import { setClientContext } from '#site/client-context';
-import WithLayout from '#site/components/withLayout';
+import Layout from '#site/components/Layout';
 import { PAGE_VIEWPORT } from '#site/next.dynamic.constants.mjs';
 import { dynamicRouter } from '#site/next.dynamic.mjs';
 import { MatterProvider } from '#site/providers/matterProvider';
@@ -121,7 +121,7 @@ export const renderPage = props => {
   // within a server-side context
   return (
     <MatterProvider {...props.context}>
-      <WithLayout layout={props.layout}>{props.content}</WithLayout>
+      <Layout layout={props.layout}>{props.content}</Layout>
     </MatterProvider>
   );
 };
