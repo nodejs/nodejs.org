@@ -1,6 +1,6 @@
 import Article from '@node-core/ui-components/Containers/Article';
 
-import WithBreadcrumbs from '#site/components/withBreadcrumbs';
+import Breadcrumbs from '#site/components/Breadcrumbs';
 import WithFooter from '#site/components/withFooter';
 import WithMetaBar from '#site/components/withMetaBar';
 import WithNavBar from '#site/components/withNavBar';
@@ -23,7 +23,7 @@ const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
         <WithMetaBar />
       </div>
 
-      <WithBreadcrumbs navKeys={['about', 'getInvolved']} />
+      <Breadcrumbs navKeys={['about', 'getInvolved']} />
     </Article>
 
     <WithFooter />
