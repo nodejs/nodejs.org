@@ -2,8 +2,8 @@ import Preview from '@node-core/ui-components/Common/Preview';
 
 import { getClientContext } from '#site/client-context';
 import AvatarGroup from '#site/components/AvatarGroup';
+import BlogCrossLinks from '#site/components/BlogCrossLinks';
 import EOLAlert from '#site/components/EOL/EOLAlert';
-import WithBlogCrossLinks from '#site/components/withBlogCrossLinks';
 import WithFooter from '#site/components/withFooter';
 import WithMetaBar from '#site/components/withMetaBar';
 import WithNavBar from '#site/components/withNavBar';
@@ -44,7 +44,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
 
             {children}
 
-            <WithBlogCrossLinks />
+            <BlogCrossLinks />
           </main>
         </div>
 
