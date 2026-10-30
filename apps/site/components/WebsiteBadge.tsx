@@ -1,4 +1,4 @@
-import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
+import BadgeGroupContainer from '@node-core/ui-components/Common/BadgeGroup';
 
 import Link from '#site/components/Link';
 import { siteConfig } from '#site/next.json.mjs';
@@ -6,12 +6,12 @@ import { dateIsBetween } from '#site/util/date';
 
 import type { FC } from 'react';
 
-const WithBadgeGroup: FC<{ section: string }> = ({ section }) => {
+const WebsiteBadge: FC<{ section: string }> = ({ section }) => {
   const badge = siteConfig.websiteBadges[section];
 
   if (badge && dateIsBetween(badge.startDate, badge.endDate)) {
     return (
-      <BadgeGroup
+      <BadgeGroupContainer
         as={Link}
         badgeText={badge.title}
         kind={badge.kind}
@@ -21,11 +21,11 @@ const WithBadgeGroup: FC<{ section: string }> = ({ section }) => {
         target={/^https?:/.test(badge.link) ? '_blank' : undefined}
       >
         {badge.text}
-      </BadgeGroup>
+      </BadgeGroupContainer>
     );
   }
 
   return null;
 };
 
-export default WithBadgeGroup;
+export default WebsiteBadge;

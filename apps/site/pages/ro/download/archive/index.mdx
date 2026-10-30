@@ -19,7 +19,7 @@ layout: download-archive
         {release.codename && ` (${release.codename})`}
       </h2>
 
-      <WithReleaseAlertBox release={release} releases={releases} />
+      <ReleaseAlertBox release={release} releases={releases} />
 
       <ReleaseOverview release={release} />
 
@@ -42,7 +42,7 @@ layout: download-archive
       </ul>
 
       <h2>Alte lansări</h2>
-      <WithReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
+      <ReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
 
       <h2>Descărcări binare</h2>
       <DownloadsTable source={binaries} />

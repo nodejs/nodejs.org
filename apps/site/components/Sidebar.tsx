@@ -1,6 +1,6 @@
 'use client';
 
-import Sidebar from '@node-core/ui-components/Containers/Sidebar';
+import SidebarContainer from '@node-core/ui-components/Containers/Sidebar';
 import { useTranslations } from 'next-intl';
 import { useRef } from 'react';
 
@@ -14,7 +14,7 @@ import type { FormattedMessage, NavigationKeys } from '#site/types';
 import type { RichTranslationValues } from 'next-intl';
 import type { FC } from 'react';
 
-type WithSidebarProps = {
+type SidebarProps = {
   navKeys: Array<NavigationKeys>;
   context?: Record<string, RichTranslationValues>;
 };
@@ -40,7 +40,7 @@ const mapItem = ([, item]: [string, MappedItem]): SidebarMappedEntry => ({
   items: item.items ? item.items.map(mapItem) : [],
 });
 
-const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
+const Sidebar: FC<SidebarProps> = ({ navKeys, context, ...props }) => {
   const { getSideNavigation } = useSiteNavigation();
   const pathname = usePathname()!;
   const t = useTranslations();
@@ -63,7 +63,7 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
     );
 
   return (
-    <Sidebar
+    <SidebarContainer
       ref={sidebarRef}
       groups={mappedSidebarItems}
       pathname={pathname}
@@ -76,4 +76,4 @@ const WithSidebar: FC<WithSidebarProps> = ({ navKeys, context, ...props }) => {
   );
 };
 
-export default WithSidebar;
+export default Sidebar;

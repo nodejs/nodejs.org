@@ -3,7 +3,7 @@
 import LanguageDropdown from '@node-core/ui-components/Common/LanguageDropDown';
 import Skeleton from '@node-core/ui-components/Common/Skeleton';
 import SkipToContentButton from '@node-core/ui-components/Common/SkipToContentButton';
-import NavBar from '@node-core/ui-components/Containers/NavBar';
+import NavBarContainer from '@node-core/ui-components/Containers/NavBar';
 // TODO(@AvivKeller): I don't like that we are importing styles from another module
 import styles from '@node-core/ui-components/Containers/NavBar/index.module.css';
 import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
@@ -13,9 +13,9 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 
 import Link from '#site/components/Link';
-import WithBanner from '#site/components/withBanner';
-import WithNodejsLogo from '#site/components/withNodejsLogo';
-import WithSearch from '#site/components/withSearch';
+import Search from '#site/components/Search';
+import SiteLogo from '#site/components/SiteLogo';
+import WebsiteBanner from '#site/components/WebsiteBanner';
 import useSiteNavigation from '#site/hooks/useSiteNavigation';
 import { useRouter, usePathname } from '#site/navigation.mjs';
 
@@ -33,7 +33,7 @@ const ThemeToggle = dynamic(
   }
 );
 
-const WithNavBar: FC = () => {
+const NavBar: FC = () => {
   const { navigationItems } = useSiteNavigation();
   const { theme, setTheme } = useTheme();
   const { replace } = useRouter();
@@ -51,9 +51,9 @@ const WithNavBar: FC = () => {
         {t('components.common.skipToContent')}
       </SkipToContentButton>
 
-      <WithBanner section="index" />
+      <WebsiteBanner section="index" />
 
-      <NavBar
+      <NavBarContainer
         navItems={navigationItems.map(
           ([, { label, link, target, accent }]) => ({
             link,
@@ -64,12 +64,12 @@ const WithNavBar: FC = () => {
         )}
         pathname={pathname}
         as={Link}
-        Logo={WithNodejsLogo}
+        Logo={SiteLogo}
         sidebarItemTogglerAriaLabel={t(
           'components.containers.navBar.controls.toggle'
         )}
       >
-        <WithSearch />
+        <Search />
 
         <ThemeToggle
           onChange={setTheme}
@@ -96,9 +96,9 @@ const WithNavBar: FC = () => {
         >
           <GitHubIcon />
         </Link>
-      </NavBar>
+      </NavBarContainer>
     </div>
   );
 };
 
-export default WithNavBar;
+export default NavBar;

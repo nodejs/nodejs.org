@@ -1,7 +1,7 @@
 'use client';
 
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
-import Banner from '@node-core/ui-components/Common/Banner';
+import BannerContainer from '@node-core/ui-components/Common/Banner';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 
@@ -13,7 +13,7 @@ import type { FC } from 'react';
 
 const STORAGE_KEY = 'banner-dismissal';
 
-const WithBanner: FC<{ section: string }> = ({ section }) => {
+const WebsiteBanner: FC<{ section: string }> = ({ section }) => {
   const banner = siteConfig.websiteBanners[section];
   const t = useTranslations();
 
@@ -35,7 +35,7 @@ const WithBanner: FC<{ section: string }> = ({ section }) => {
     };
 
     return (
-      <Banner
+      <BannerContainer
         type={banner.type}
         aria-label={t(`components.banner.${bannerType}`)}
         closeButtonAriaLabel={t('components.banner.close')}
@@ -47,11 +47,11 @@ const WithBanner: FC<{ section: string }> = ({ section }) => {
           banner.text
         )}
         {banner.link && <ArrowUpRightIcon />}
-      </Banner>
+      </BannerContainer>
     );
   }
 
   return null;
 };
 
-export default WithBanner;
+export default WebsiteBanner;

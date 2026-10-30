@@ -1,12 +1,12 @@
 import Preview from '@node-core/ui-components/Common/Preview';
 
 import { getClientContext } from '#site/client-context';
+import AvatarGroup from '#site/components/AvatarGroup';
+import BlogCrossLinks from '#site/components/BlogCrossLinks';
 import EOLAlert from '#site/components/EOL/EOLAlert';
-import WithAvatarGroup from '#site/components/withAvatarGroup';
-import WithBlogCrossLinks from '#site/components/withBlogCrossLinks';
-import WithFooter from '#site/components/withFooter';
-import WithMetaBar from '#site/components/withMetaBar';
-import WithNavBar from '#site/components/withNavBar';
+import Footer from '#site/components/Footer';
+import MetaBar from '#site/components/MetaBar';
+import NavBar from '#site/components/NavBar';
 import { mapAuthorToCardAuthors } from '#site/util/author';
 import { mapBlogCategoryToPreviewType } from '#site/util/blog';
 
@@ -23,7 +23,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <>
-      <WithNavBar />
+      <NavBar />
 
       <div className={styles.contentLayout}>
         <div></div>
@@ -35,7 +35,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
             <h1>{frontmatter.title}</h1>
 
             <section>
-              <WithAvatarGroup names={authors} size="medium" />
+              <AvatarGroup names={authors} size="medium" />
 
               <p>{authors.join(', ')}</p>
             </section>
@@ -44,14 +44,14 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
 
             {children}
 
-            <WithBlogCrossLinks />
+            <BlogCrossLinks />
           </main>
         </div>
 
-        <WithMetaBar />
+        <MetaBar />
       </div>
 
-      <WithFooter />
+      <Footer />
     </>
   );
 };

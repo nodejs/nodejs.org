@@ -5,7 +5,7 @@ import { getBlogData } from '#site/util/blog';
 import type { BlogCategory } from '#site/types';
 import type { FC } from 'react';
 
-const WithBlogCrossLinks: FC = () => {
+const BlogCrossLinks: FC = () => {
   const { pathname } = getClientContext();
 
   // Extracts from the static URL the components used for the Blog Post slug
@@ -48,4 +48,4 @@ const WithBlogCrossLinks: FC = () => {
   );
 };
 
-export default WithBlogCrossLinks;
+export default BlogCrossLinks;

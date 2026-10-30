@@ -31,7 +31,7 @@ const RICH_TRANSLATION_KEYS = [
   'cookiePolicy',
 ];
 
-const WithLegal: FC<LegalProps> = ({ footerLinks }) => {
+const FooterLegal: FC<LegalProps> = ({ footerLinks }) => {
   const t = useTranslations();
 
   /**
@@ -81,4 +81,4 @@ const WithLegal: FC<LegalProps> = ({ footerLinks }) => {
   );
 };
 
-export default WithLegal;
+export default FooterLegal;
