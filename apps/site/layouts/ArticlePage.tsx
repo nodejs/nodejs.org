@@ -1,7 +1,7 @@
 import Article from '@node-core/ui-components/Containers/Article';
 
 import WithFooter from '#site/components/withFooter';
-import WithMetaBar from '#site/components/withMetaBar';
+import MetaBar from '#site/components/MetaBar';
 import WithNavBar from '#site/components/withNavBar';
 import WithSidebar from '#site/components/withSidebar';
 
@@ -19,7 +19,7 @@ const ArticlePageLayout: FC<PropsWithChildren> = ({ children }) => (
           {children}
         </main>
 
-        <WithMetaBar />
+        <MetaBar />
       </div>
     </Article>
 

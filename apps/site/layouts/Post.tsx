@@ -5,7 +5,7 @@ import AvatarGroup from '#site/components/AvatarGroup';
 import BlogCrossLinks from '#site/components/BlogCrossLinks';
 import EOLAlert from '#site/components/EOL/EOLAlert';
 import WithFooter from '#site/components/withFooter';
-import WithMetaBar from '#site/components/withMetaBar';
+import MetaBar from '#site/components/MetaBar';
 import WithNavBar from '#site/components/withNavBar';
 import { mapAuthorToCardAuthors } from '#site/util/author';
 import { mapBlogCategoryToPreviewType } from '#site/util/blog';
@@ -48,7 +48,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
           </main>
         </div>
 
-        <WithMetaBar />
+        <MetaBar />
       </div>
 
       <WithFooter />
