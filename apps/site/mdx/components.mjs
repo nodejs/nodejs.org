@@ -35,7 +35,7 @@ import MDXImage from '#site/components/MDX/Image';
 import MinorReleasesTable from '#site/components/Releases/MinorReleasesTable';
 import PreviousReleasesTable from '#site/components/Releases/PreviousReleasesTable';
 import ReleaseOverview from '#site/components/Releases/ReleaseOverview';
-import WithBadgeGroup from '#site/components/withBadgeGroup';
+import WebsiteBadge from '#site/components/WebsiteBadge';
 import WithBanner from '#site/components/withBanner';
 import WithDownloadArchive from '#site/components/withDownloadArchive';
 import WithNodeRelease from '#site/components/withNodeRelease';
@@ -92,7 +92,7 @@ export default {
   WithNodeRelease,
   WithReleaseAlertBox,
   WithBanner,
-  WithBadgeGroup,
+  WebsiteBadge,
   // HOC for providing Backers Data
   WithSupporters,
   BadgeGroup,
