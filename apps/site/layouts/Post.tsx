@@ -6,7 +6,7 @@ import BlogCrossLinks from '#site/components/BlogCrossLinks';
 import EOLAlert from '#site/components/EOL/EOLAlert';
 import WithFooter from '#site/components/withFooter';
 import MetaBar from '#site/components/MetaBar';
-import WithNavBar from '#site/components/withNavBar';
+import NavBar from '#site/components/NavBar';
 import { mapAuthorToCardAuthors } from '#site/util/author';
 import { mapBlogCategoryToPreviewType } from '#site/util/blog';
 
@@ -23,7 +23,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <>
-      <WithNavBar />
+      <NavBar />
 
       <div className={styles.contentLayout}>
         <div></div>

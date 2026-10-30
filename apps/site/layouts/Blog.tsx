@@ -4,7 +4,7 @@ import { getClientContext } from '#site/client-context';
 import BlogHeader from '#site/components/Blog/BlogHeader';
 import BlogCategories from '#site/components/BlogCategories';
 import WithFooter from '#site/components/withFooter';
-import WithNavBar from '#site/components/withNavBar';
+import NavBar from '#site/components/NavBar';
 import { getBlogData } from '#site/util/blog';
 
 import type { BlogCategory } from '#site/types';
@@ -51,7 +51,7 @@ const BlogLayout: FC = () => {
 
   return (
     <>
-      <WithNavBar />
+      <NavBar />
 
       <div className={styles.blogLayout}>
         <main id="main" tabIndex={-1}>

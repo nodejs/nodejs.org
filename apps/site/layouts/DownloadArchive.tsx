@@ -1,5 +1,5 @@
 import WithFooter from '#site/components/withFooter';
-import WithNavBar from '#site/components/withNavBar';
+import NavBar from '#site/components/NavBar';
 
 import type { FC, PropsWithChildren } from 'react';
 
@@ -7,7 +7,7 @@ import styles from './layouts.module.css';
 
 const DownloadArchiveLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
-    <WithNavBar />
+    <NavBar />
 
     <div className={styles.downloadLayout}>
       <main id="main" tabIndex={-1}>
