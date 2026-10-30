@@ -14,7 +14,7 @@ import { useTheme } from 'next-themes';
 
 import Link from '#site/components/Link';
 import WebsiteBanner from '#site/components/WebsiteBanner';
-import WithNodejsLogo from '#site/components/withNodejsLogo';
+import SiteLogo from '#site/components/SiteLogo';
 import WithSearch from '#site/components/withSearch';
 import useSiteNavigation from '#site/hooks/useSiteNavigation';
 import { useRouter, usePathname } from '#site/navigation.mjs';
@@ -64,7 +64,7 @@ const WithNavBar: FC = () => {
         )}
         pathname={pathname}
         as={Link}
-        Logo={WithNodejsLogo}
+        Logo={SiteLogo}
         sidebarItemTogglerAriaLabel={t(
           'components.containers.navBar.controls.toggle'
         )}
