@@ -1,5 +1,5 @@
 import { getClientContext } from '#site/client-context';
-import WithDownloadSection from '#site/components/withDownloadSection';
+import DownloadSection from '#site/components/DownloadSection';
 import WithFooter from '#site/components/withFooter';
 import WithNavBar from '#site/components/withNavBar';
 import provideReleaseData from '#site/next-data/providers/releaseData';
@@ -21,9 +21,7 @@ const DownloadLayout: FC<PropsWithChildren> = async ({ children }) => {
         <main id="main" tabIndex={-1}>
           <h1>{frontmatter.title}</h1>
 
-          <WithDownloadSection releases={releases}>
-            {children}
-          </WithDownloadSection>
+          <DownloadSection releases={releases}>{children}</DownloadSection>
         </main>
       </div>
 
