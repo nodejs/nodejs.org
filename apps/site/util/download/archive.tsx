@@ -59,26 +59,15 @@ const getCompatiblePlatforms = (
         // In the download constants file (apps/site/util/download/constants.json),
         //  if no semver compatibility is defined, we treat it as supporting all
         //  versions by default.
-        if (!compatibility.semver && !compatibility.semverAny) {
+        if (!compatibility.semver) {
           return true;
         }
 
-        const satisfiesAll =
-          !compatibility.semver ||
-          compatibility.semver.every(version =>
-            semVer.satisfies(versionWithPrefix, version, {
-              includePrerelease: true,
-            })
-          );
-        const satisfiesAny =
-          !compatibility.semverAny ||
-          compatibility.semverAny.some(version =>
-            semVer.satisfies(versionWithPrefix, version, {
-              includePrerelease: true,
-            })
-          );
-
-        return satisfiesAll && satisfiesAny;
+        return compatibility.semver.every(version =>
+          semVer.satisfies(versionWithPrefix, version, {
+            includePrerelease: true,
+          })
+        );
       })
       .map(platform => ({
         os,

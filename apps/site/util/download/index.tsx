@@ -62,10 +62,6 @@ export const parseCompat = <
         compatibility.semver.every(semver =>
           satisfies(version, semver, { includePrerelease: true })
         ),
-      !compatibility.semverAny ||
-        compatibility.semverAny.some(semver =>
-          satisfies(version, semver, { includePrerelease: true })
-        ),
       !compatibility.releases ||
         compatibility.releases.includes(release.status),
     ];

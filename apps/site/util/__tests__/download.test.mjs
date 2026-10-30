@@ -64,6 +64,8 @@ describe('parseCompat', () => {
       ['v25.0.0', true],
       ['v26.8.0', false],
       ['v26.7.0', true],
+      ['v27.0.0', false],
+      ['v27.0.0-alpha.1', false],
     ];
 
     for (const [version, disabled] of cases) {
@@ -200,6 +202,8 @@ describe('buildReleaseArtifacts', () => {
       ['v25.0.0', false],
       ['v26.8.0', true],
       ['v26.7.0', false],
+      ['v27.0.0', true],
+      ['v27.0.0-alpha.1', true],
     ];
 
     for (const [version, shouldInclude] of cases) {

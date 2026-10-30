@@ -19,8 +19,6 @@ type DownloadCompatibility = {
   installMethod?: Array<string>;
   platform?: Array<Platform | ''>;
   semver?: Array<string>;
-  /** At least one range must match when this field is set. */
-  semverAny?: Array<string>;
   releases?: Array<NodeReleaseStatus>;
 };
 
