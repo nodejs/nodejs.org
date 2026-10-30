@@ -32,6 +32,7 @@ import Link from '#site/components/Link';
 import UpcomingMeetings from '#site/components/MDX/Calendar/UpcomingMeetings';
 import MDXCodeBox from '#site/components/MDX/CodeBox';
 import MDXImage from '#site/components/MDX/Image';
+import ReleaseAlertBox from '#site/components/ReleaseAlertBox';
 import MinorReleasesTable from '#site/components/Releases/MinorReleasesTable';
 import PreviousReleasesTable from '#site/components/Releases/PreviousReleasesTable';
 import ReleaseOverview from '#site/components/Releases/ReleaseOverview';
@@ -39,7 +40,6 @@ import WebsiteBadge from '#site/components/WebsiteBadge';
 import WebsiteBanner from '#site/components/WebsiteBanner';
 import WithDownloadArchive from '#site/components/withDownloadArchive';
 import WithNodeRelease from '#site/components/withNodeRelease';
-import WithReleaseAlertBox from '#site/components/withReleaseAlertBox';
 import WithReleaseSelect from '#site/components/withReleaseSelect';
 import WithSupporters from '#site/components/withSupporters';
 import { ReleaseProvider } from '#site/providers/releaseProvider';
@@ -90,7 +90,7 @@ export default {
   DownloadsTable,
   PreviousReleasesTable,
   WithNodeRelease,
-  WithReleaseAlertBox,
+  ReleaseAlertBox,
   WebsiteBanner,
   WebsiteBadge,
   // HOC for providing Backers Data

@@ -6,15 +6,12 @@ import Link from '#site/components/Link';
 import type { NodeRelease } from '#site/types';
 import type { FC } from 'react';
 
-type WithReleaseAlertBoxProps = {
+type ReleaseAlertBoxProps = {
   release: NodeRelease;
   releases: Array<NodeRelease>;
 };
 
-const WithReleaseAlertBox: FC<WithReleaseAlertBoxProps> = ({
-  release,
-  releases,
-}) => {
+const ReleaseAlertBox: FC<ReleaseAlertBoxProps> = ({ release, releases }) => {
   const t = useTranslations();
 
   switch (release.status) {
@@ -75,4 +72,4 @@ const WithReleaseAlertBox: FC<WithReleaseAlertBoxProps> = ({
   }
 };
 
-export default WithReleaseAlertBox;
+export default ReleaseAlertBox;
