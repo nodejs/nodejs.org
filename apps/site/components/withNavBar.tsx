@@ -13,7 +13,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 
 import Link from '#site/components/Link';
-import WithBanner from '#site/components/withBanner';
+import WebsiteBanner from '#site/components/WebsiteBanner';
 import WithNodejsLogo from '#site/components/withNodejsLogo';
 import WithSearch from '#site/components/withSearch';
 import useSiteNavigation from '#site/hooks/useSiteNavigation';
@@ -51,7 +51,7 @@ const WithNavBar: FC = () => {
         {t('components.common.skipToContent')}
       </SkipToContentButton>
 
-      <WithBanner section="index" />
+      <WebsiteBanner section="index" />
 
       <NavBar
         navItems={navigationItems.map(

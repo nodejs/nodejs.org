@@ -36,7 +36,7 @@ import MinorReleasesTable from '#site/components/Releases/MinorReleasesTable';
 import PreviousReleasesTable from '#site/components/Releases/PreviousReleasesTable';
 import ReleaseOverview from '#site/components/Releases/ReleaseOverview';
 import WebsiteBadge from '#site/components/WebsiteBadge';
-import WithBanner from '#site/components/withBanner';
+import WebsiteBanner from '#site/components/WebsiteBanner';
 import WithDownloadArchive from '#site/components/withDownloadArchive';
 import WithNodeRelease from '#site/components/withNodeRelease';
 import WithReleaseAlertBox from '#site/components/withReleaseAlertBox';
@@ -91,7 +91,7 @@ export default {
   PreviousReleasesTable,
   WithNodeRelease,
   WithReleaseAlertBox,
-  WithBanner,
+  WebsiteBanner,
   WebsiteBadge,
   // HOC for providing Backers Data
   WithSupporters,
