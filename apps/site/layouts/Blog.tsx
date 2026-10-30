@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { getClientContext } from '#site/client-context';
 import BlogHeader from '#site/components/Blog/BlogHeader';
 import BlogCategories from '#site/components/BlogCategories';
-import WithFooter from '#site/components/withFooter';
+import Footer from '#site/components/Footer';
 import NavBar from '#site/components/NavBar';
 import { getBlogData } from '#site/util/blog';
 
@@ -71,7 +71,7 @@ const BlogLayout: FC = () => {
         </main>
       </div>
 
-      <WithFooter />
+      <Footer />
     </>
   );
 };

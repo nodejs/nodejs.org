@@ -1,4 +1,4 @@
-import WithFooter from '#site/components/withFooter';
+import Footer from '#site/components/Footer';
 import NavBar from '#site/components/NavBar';
 
 import type { FC, PropsWithChildren } from 'react';
@@ -15,7 +15,7 @@ const DownloadArchiveLayout: FC<PropsWithChildren> = ({ children }) => (
       </main>
     </div>
 
-    <WithFooter />
+    <Footer />
   </>
 );
 

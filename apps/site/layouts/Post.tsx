@@ -4,7 +4,7 @@ import { getClientContext } from '#site/client-context';
 import AvatarGroup from '#site/components/AvatarGroup';
 import BlogCrossLinks from '#site/components/BlogCrossLinks';
 import EOLAlert from '#site/components/EOL/EOLAlert';
-import WithFooter from '#site/components/withFooter';
+import Footer from '#site/components/Footer';
 import MetaBar from '#site/components/MetaBar';
 import NavBar from '#site/components/NavBar';
 import { mapAuthorToCardAuthors } from '#site/util/author';
@@ -51,7 +51,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
         <MetaBar />
       </div>
 
-      <WithFooter />
+      <Footer />
     </>
   );
 };

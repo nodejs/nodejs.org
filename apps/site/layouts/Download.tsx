@@ -1,6 +1,6 @@
 import { getClientContext } from '#site/client-context';
 import DownloadSection from '#site/components/DownloadSection';
-import WithFooter from '#site/components/withFooter';
+import Footer from '#site/components/Footer';
 import NavBar from '#site/components/NavBar';
 import provideReleaseData from '#site/next-data/providers/releaseData';
 
@@ -25,7 +25,7 @@ const DownloadLayout: FC<PropsWithChildren> = async ({ children }) => {
         </main>
       </div>
 
-      <WithFooter />
+      <Footer />
     </>
   );
 };
