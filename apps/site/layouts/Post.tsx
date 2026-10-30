@@ -1,8 +1,8 @@
 import Preview from '@node-core/ui-components/Common/Preview';
 
 import { getClientContext } from '#site/client-context';
+import AvatarGroup from '#site/components/AvatarGroup';
 import EOLAlert from '#site/components/EOL/EOLAlert';
-import WithAvatarGroup from '#site/components/withAvatarGroup';
 import WithBlogCrossLinks from '#site/components/withBlogCrossLinks';
 import WithFooter from '#site/components/withFooter';
 import WithMetaBar from '#site/components/withMetaBar';
@@ -35,7 +35,7 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
             <h1>{frontmatter.title}</h1>
 
             <section>
-              <WithAvatarGroup names={authors} size="medium" />
+              <AvatarGroup names={authors} size="medium" />
 
               <p>{authors.join(', ')}</p>
             </section>

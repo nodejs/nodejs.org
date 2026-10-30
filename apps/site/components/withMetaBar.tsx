@@ -6,7 +6,7 @@ import { defaultLocale } from '@node-core/website-i18n';
 import { useFormatter, useLocale, useTranslations } from 'next-intl';
 
 import Link from '#site/components/Link';
-import WithAvatarGroup from '#site/components/withAvatarGroup';
+import AvatarGroup from '#site/components/AvatarGroup';
 import useClientContext from '#site/hooks/useClientContext';
 import useMediaQuery from '#site/hooks/useMediaQuery';
 import { DEFAULT_DATE_FORMAT } from '#site/next.calendar.constants.mjs';
@@ -52,7 +52,7 @@ const WithMetaBar: FC = () => {
           [t(
             `components.metabar.${usernames.length > 1 ? 'authors' : 'author'}`
           )]: (
-            <WithAvatarGroup
+            <AvatarGroup
               usernames={usernames}
               limit={isSmallerThanDesktop ? 5 : 8}
             />
