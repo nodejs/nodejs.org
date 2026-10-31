@@ -17,6 +17,10 @@ mock.module('@shikijs/core', {
   },
 });
 
+mock.module('../tokenization-cache.mjs', {
+  namedExports: { withTokenizationCache: shiki => shiki },
+});
+
 mock.module('@shikijs/engine-javascript', {
   namedExports: { createJavaScriptRegexEngine: () => ({}) },
 });

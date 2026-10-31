@@ -2,6 +2,8 @@ import { createHighlighterCoreSync, isSpecialLang } from '@shikijs/core';
 import shikiGitHubLightTheme from 'shiki/themes/github-light-default.mjs';
 import shikiNordTheme from 'shiki/themes/nord.mjs';
 
+import { withTokenizationCache } from '#rs/tokenization-cache.mjs';
+
 const DEFAULT_DARK_THEME = {
   // We are updating this color because the background color and comment text color
   // in the Codebox component do not comply with accessibility standards.
@@ -57,7 +59,7 @@ const createHighlighter = ({ coreOptions = {}, highlighterOptions = {} }) => {
     themes: Object.values(DEFAULT_THEMES),
     ...coreOptions,
   };
-  const shiki = createHighlighterCoreSync(options);
+  const shiki = withTokenizationCache(createHighlighterCoreSync(options));
   const themeOptions = usesCustomTheme
     ? {}
     : coreOptions.themes
