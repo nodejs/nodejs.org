@@ -26,7 +26,7 @@ const Footer: FC = () => {
   };
 
   const primary = (
-    <div className="flex flex-row gap-2">
+    <div className="flex flex-row flex-wrap justify-center gap-2">
       <WithNodeRelease status="LTS">
         {({ release }) => (
           <BadgeGroup
@@ -48,6 +48,19 @@ const Footer: FC = () => {
             href={`/blog/release/${release.versionWithPrefix}`}
           >
             {t('components.containers.footer.releasePills.latestRelease')}
+          </BadgeGroup>
+        )}
+      </WithNodeRelease>
+
+      <WithNodeRelease status="Alpha">
+        {({ release }) => (
+          <BadgeGroup
+            size="small"
+            kind="warning"
+            badgeText={release.versionWithPrefix}
+            href={`/blog/release/${release.versionWithPrefix}`}
+          >
+            {t('components.containers.footer.releasePills.latestAlpha')}
           </BadgeGroup>
         )}
       </WithNodeRelease>
