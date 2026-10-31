@@ -66,6 +66,13 @@
           "value": "x64"
         },
         {
+          "label": "x64 (musl)",
+          "value": "x64-musl",
+          "compatibility": {
+            "semver": [">=22.23.3 <23.0.0-0 || >=24.20.0 <25.0.0-0 || >=26.8.0"]
+          }
+        },
+        {
           "label": "ARMv7",
           "value": "armv7l",
           "compatibility": {
@@ -238,7 +245,16 @@
     }
   ],
   "userOptions": {
-    "platforms": ["arm64", "armv7l", "ppc64le", "ppc64", "s390x", "x64", "x86"],
+    "platforms": [
+      "arm64",
+      "armv7l",
+      "ppc64le",
+      "ppc64",
+      "s390x",
+      "x64",
+      "x64-musl",
+      "x86"
+    ],
     "bitness": ["64", "32"],
     "architecture": ["arm", "x86"]
   },

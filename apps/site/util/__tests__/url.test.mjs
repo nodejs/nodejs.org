@@ -100,6 +100,18 @@ describe('getNodeDownloadUrl', () => {
     );
   });
 
+  it('should return the x64 musl Linux binary URL', () => {
+    assert.equal(
+      getNodeDownloadUrl({
+        versionWithPrefix: 'v24.20.0',
+        os: 'LINUX',
+        platform: 'x64-musl',
+        kind: 'binary',
+      }),
+      'https://nodejs.org/dist/v24.20.0/node-v24.20.0-linux-x64-musl.tar.xz'
+    );
+  });
+
   describe('MAC', () => {
     it('should return .pkg link for installer', () => {
       const url = getNodeDownloadUrl({
