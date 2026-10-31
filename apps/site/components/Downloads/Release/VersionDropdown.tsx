@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { use, useEffect } from 'react';
 
 import { redirect, usePathname } from '#site/navigation.mjs';
-import { STATUS_KIND_MAP } from '#site/next.constants.mjs';
+import { STATUS_KIND_MAP, STATUS_ROUTE_MAP } from '#site/next.constants.mjs';
 import {
   ReleaseContext,
   ReleasesContext,
@@ -21,27 +21,18 @@ const VersionDropdown: FC = () => {
   const locale = useLocale();
   const pathname = usePathname();
 
-  // Allows us to keep the route semantically correct to what the user should expect
-  // from the /current and non /current routes.
-  const getRedirectPath = (status: NodeReleaseStatus) => {
-    if (['LTS', 'EOL'].includes(status) && !pathname.endsWith('/download')) {
-      return '/download';
-    }
+  // The route a status is presented on, unless we are already on it.
+  const getRouteChange = (status: NodeReleaseStatus) => {
+    const route = STATUS_ROUTE_MAP[status];
 
-    if (status === 'Current' && !pathname.includes('current')) {
-      return '/download/current';
-    }
-
-    if (status === 'Alpha' && !pathname.includes('alpha')) {
-      return '/download/alpha';
-    }
+    return route === pathname ? undefined : route;
   };
 
   // Ensure the initial route is correct based on the release status.
   useEffect(() => {
-    const redirectPath = getRedirectPath(release.status);
-    if (redirectPath) {
-      redirect({ href: redirectPath, locale });
+    const route = getRouteChange(release.status);
+    if (route) {
+      redirect({ href: route, locale });
     }
     // eslint-disable-next-line @eslint-react/exhaustive-deps -- deps are correct on first render, and this should not run again.
   }, []);
@@ -52,12 +43,10 @@ const VersionDropdown: FC = () => {
       ({ versionWithPrefix }) => versionWithPrefix === version
     );
 
-    if (selectedRelease) {
-      const href = getRedirectPath(selectedRelease.status);
-      if (href) {
-        redirect({ href, locale });
-        return;
-      }
+    const route = selectedRelease && getRouteChange(selectedRelease.status);
+    if (route) {
+      redirect({ href: route, locale });
+      return;
     }
 
     setVersion(version);
