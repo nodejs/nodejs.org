@@ -20,6 +20,15 @@ const DEFAULT_THEMES = {
   dark: DEFAULT_DARK_THEME,
 };
 
+// The default themes by name: Shiki prepares a theme object again for every
+// highlight, and only caches tokens for all the themes given by name
+const DEFAULT_THEME_OPTIONS = {
+  themes: Object.fromEntries(
+    Object.entries(DEFAULT_THEMES).map(([color, { name }]) => [color, name])
+  ),
+  defaultColor: 'light',
+};
+
 const FALLBACK_LANGUAGE = 'text';
 
 /**
@@ -64,7 +73,7 @@ const createHighlighter = ({ coreOptions = {}, highlighterOptions = {} }) => {
     ? {}
     : coreOptions.themes
       ? { theme: options.themes[0] }
-      : { themes: DEFAULT_THEMES, defaultColor: 'light' };
+      : DEFAULT_THEME_OPTIONS;
 
   const loadedLanguages = new Set(
     shiki.getLoadedLanguages().map(lang => lang.toLowerCase())

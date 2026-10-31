@@ -87,7 +87,10 @@ describe('createHighlighter', async () => {
       highlighter.highlightToHtml('const x = 1;', 'javascript');
 
       const [, options] = mockShiki.codeToHtml.mock.calls.at(-1).arguments;
-      assert.deepStrictEqual(Object.keys(options.themes), ['light', 'dark']);
+      assert.deepStrictEqual(options.themes, {
+        light: 'github-light-default',
+        dark: 'nord',
+      });
       assert.strictEqual(options.defaultColor, 'light');
     });
   });
