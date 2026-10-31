@@ -1,0 +1,31 @@
+{
+  "name": "@node-core/cloudflare-sentry-tail",
+  "description": "Cloudflare Tail Worker for Sentry",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodejs/nodejs.org",
+    "directory": "packages/cloudflare-sentry-tail"
+  },
+  "scripts": {
+    "lint": "node --run lint:js",
+    "lint:fix": "node --run lint:js:fix",
+    "lint:js": "eslint \"**/*.ts\"",
+    "lint:js:fix": "node --run lint:js -- --fix"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260422.1"
+  },
+  "dependencies": {
+    "@sentry/cloudflare": "^10.49.0"
+  }
+}
