@@ -15,7 +15,7 @@ import githubDark from 'shiki/themes/github-dark.mjs';
 import githubLight from 'shiki/themes/github-light-default.mjs';
 import nord from 'shiki/themes/nord.mjs';
 
-import { withTokenizationCache } from '../tokenization-cache.mjs';
+import { withTokenizationCache } from '../tokenizationCache.mjs';
 
 // Code that starts lines in states other than the first: open comments,
 // template literals and embedded languages, and lines repeated in a state
@@ -166,6 +166,35 @@ describe('withTokenizationCache', async () => {
 
     assert.equal(tokenizeLine.mock.callCount(), lines.length);
     assert.equal(tokenizeLine2.mock.callCount(), 0);
+  });
+
+  it('continues a highlight as Shiki does, from inside a comment or a template literal', () => {
+    const options = {
+      lang: 'javascript',
+      themes: { ...THEMES, dim: 'github-dark' },
+    };
+
+    const sample = SAMPLES.javascript.split('\n');
+
+    for (const at of [3, 7]) {
+      const start = sample.slice(0, at).join('\n');
+      const end = sample.slice(at).join('\n');
+
+      const { grammarState } = cached.codeToTokens(start, options);
+      const { grammarState: shikiState } = shiki.codeToTokens(start, options);
+
+      for (const method of [
+        'codeToHtml',
+        'codeToHast',
+        'codeToTokensWithThemes',
+      ]) {
+        assert.deepStrictEqual(
+          cached[method](end, { ...options, grammarState }),
+          shiki[method](end, { ...options, grammarState: shikiState }),
+          `${method} from line ${at}`
+        );
+      }
+    }
   });
 
   it('highlights as usual with theme objects, or a single theme', t => {

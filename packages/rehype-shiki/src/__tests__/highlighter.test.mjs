@@ -17,7 +17,7 @@ mock.module('@shikijs/core', {
   },
 });
 
-mock.module('../tokenization-cache.mjs', {
+mock.module('../tokenizationCache.mjs', {
   namedExports: { withTokenizationCache: shiki => shiki },
 });
 

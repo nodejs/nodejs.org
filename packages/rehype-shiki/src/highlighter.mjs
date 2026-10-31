@@ -2,7 +2,7 @@ import { createHighlighterCoreSync, isSpecialLang } from '@shikijs/core';
 import shikiGitHubLightTheme from 'shiki/themes/github-light-default.mjs';
 import shikiNordTheme from 'shiki/themes/nord.mjs';
 
-import { withTokenizationCache } from '#rs/tokenization-cache.mjs';
+import { withTokenizationCache } from '#rs/tokenizationCache.mjs';
 
 const DEFAULT_DARK_THEME = {
   // We are updating this color because the background color and comment text color

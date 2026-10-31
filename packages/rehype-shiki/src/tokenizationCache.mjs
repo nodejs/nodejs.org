@@ -6,25 +6,8 @@ import {
 } from '@shikijs/core';
 import { EncodedTokenMetadata } from 'shiki/textmate';
 
-/**
- * A vscode-textmate grammar, with the internals its tokens' styles are
- * computed from, which the interface Shiki types it with leaves out.
- *
- * @typedef {Object} Grammar
- * @property {string} name
- * @property {(line: string, stack: import('shiki/textmate').StateStack | null, timeLimit?: number) => import('shiki/textmate').ITokenizeLineResult} tokenizeLine
- * @property {(scopeName: string) => { languageId: number, tokenType: number }} getMetadataForScope
- * @property {{ getDefaults: () => Style, themeMatch: (scopePath: ScopePath) => Style | null }} themeProvider
- * @property {{ matchesAlways: boolean, matchesNever: boolean, match: (scopes: Array<string>) => boolean } | null} balancedBracketSelectors
- * @property {{ getDefaultAttributes: () => { languageId: number, tokenType: number } }} _basicScopeAttributesProvider
- * @property {Array<unknown>} [_tokenTypeMatchers]
- *
- * @typedef {{ fontStyle: number, foregroundId: number, backgroundId: number }} Style
- * @typedef {{ scopeName: string, parent: ScopePath | null }} ScopePath
- */
-
 // The metadata of each path of scopes, by grammar and theme
-/** @type {WeakMap<Grammar, WeakMap<object, Map<string, number>>>} */
+/** @type {WeakMap<object, WeakMap<object, Map<string, number>>>} */
 const metadataCache = new WeakMap();
 
 /**
@@ -53,7 +36,8 @@ const getOrSet = (map, key, create) => {
  * over them (`AttributedScopeStack`), and whether it holds balanced brackets
  * (`LineTokens.produceFromScopes`).
  *
- * @param {Grammar} grammar
+ * @param {any} grammar - A vscode-textmate grammar, whose internals this reads:
+ * Shiki types it without them, and vscode-textmate keeps them private
  * @param {Array<string>} scopes
  * @returns {number}
  */
@@ -72,7 +56,6 @@ const computeMetadata = (grammar, scopes) => {
     defaults.backgroundId
   );
 
-  /** @type {ScopePath | null} */
   let path = null;
 
   for (const scopeName of scopes) {
@@ -116,7 +99,7 @@ const computeMetadata = (grammar, scopes) => {
  */
 const createCachingPrimitive = primitive => {
   // Each line's tokens, by grammar, then by the state the line starts in
-  /** @type {Map<Grammar, Map<unknown, Map<string, import('shiki/textmate').ITokenizeLineResult>>>} */
+  /** @type {Map<object, Map<unknown, Map<string, import('shiki/textmate').ITokenizeLineResult>>>} */
   const lines = new Map();
 
   /** @type {object} */
@@ -134,19 +117,17 @@ const createCachingPrimitive = primitive => {
     },
 
     getLanguage(name) {
-      const language = primitive.getLanguage(name);
-      const grammar = /** @type {Grammar} */ (
-        /** @type {unknown} */ (language)
-      );
+      /** @type {any} */
+      const grammar = primitive.getLanguage(name);
 
       if (
         !grammar._basicScopeAttributesProvider ||
         grammar._tokenTypeMatchers?.length !== 0
       ) {
-        return language;
+        return grammar;
       }
 
-      return /** @type {any} */ ({
+      return {
         name: grammar.name,
 
         tokenizeLine: grammar.tokenizeLine.bind(grammar),
@@ -183,7 +164,7 @@ const createCachingPrimitive = primitive => {
 
           return { tokens: Uint32Array.from(binary), ruleStack, stoppedEarly };
         },
-      });
+      };
     },
   };
 };
