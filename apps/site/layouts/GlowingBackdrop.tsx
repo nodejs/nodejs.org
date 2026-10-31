@@ -1,8 +1,8 @@
 import GlowingBackdrop from '@node-core/ui-components/Common/GlowingBackdrop';
 import classNames from 'classnames';
 
-import WithFooter from '#site/components/withFooter';
-import WithNavBar from '#site/components/withNavBar';
+import Footer from '#site/components/Footer';
+import NavBar from '#site/components/NavBar';
 
 import type { FC, PropsWithChildren } from 'react';
 
@@ -16,7 +16,7 @@ const GlowingBackdropLayout: FC<
   PropsWithChildren<GlowingBackdropLayoutProps>
 > = ({ kind = 'home', children }) => (
   <>
-    <WithNavBar />
+    <NavBar />
 
     <div className={styles.centeredLayout}>
       <GlowingBackdrop />
@@ -32,7 +32,7 @@ const GlowingBackdropLayout: FC<
       </main>
     </div>
 
-    <WithFooter />
+    <Footer />
   </>
 );
 

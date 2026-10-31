@@ -66,7 +66,7 @@ In cases where content has been syndicated from another source, you should also 
 
 ### 3. Choose the Appropriate Layout
 
-Available layouts are defined in `apps/site/layouts/`, and mapped in `components/withLayout`.
+Available layouts are defined in `apps/site/layouts/`, and mapped in `components/Layout`.
 
 ### 4. Update Navigation (if needed)
 
@@ -279,7 +279,7 @@ This tutorial will guide you through...
 To create a custom layout:
 
 1. Add your layout component to `apps/site/layouts/`
-2. Update the layout mapping in `apps/site/components/withLayout.tsx`
+2. Update the layout mapping in `apps/site/components/Layout.tsx`
 3. Document the layout purpose and usage
 
 ### Dynamic Content

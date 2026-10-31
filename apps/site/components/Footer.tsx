@@ -1,5 +1,5 @@
 import BadgeGroup from '@node-core/ui-components/Common/BadgeGroup';
-import Footer from '@node-core/ui-components/Containers/Footer';
+import FooterContainer from '@node-core/ui-components/Containers/Footer';
 import { useTranslations } from 'next-intl';
 
 import { getClientContext } from '#site/client-context';
@@ -8,10 +8,10 @@ import { siteNavigation } from '#site/next.json.mjs';
 
 import type { FC } from 'react';
 
-import WithLegal from './withLegal';
+import FooterLegal from './FooterLegal';
 import WithNodeRelease from './withNodeRelease';
 
-const WithFooter: FC = () => {
+const Footer: FC = () => {
   const t = useTranslations();
   const { pathname } = getClientContext();
 
@@ -54,10 +54,10 @@ const WithFooter: FC = () => {
     </div>
   );
 
-  const legal = <WithLegal footerLinks={navigation.footerLinks} />;
+  const legal = <FooterLegal footerLinks={navigation.footerLinks} />;
 
   return (
-    <Footer
+    <FooterContainer
       navigation={navigation}
       as={Link}
       pathname={pathname}
@@ -66,4 +66,4 @@ const WithFooter: FC = () => {
   );
 };
 
-export default WithFooter;
+export default Footer;

@@ -1,6 +1,6 @@
 'use client';
 
-import Breadcrumbs from '@node-core/ui-components/Common/Breadcrumbs';
+import BreadcrumbsContainer from '@node-core/ui-components/Common/Breadcrumbs';
 import { useTranslations } from 'next-intl';
 
 import Link from '#site/components/Link';
@@ -13,11 +13,11 @@ import type { NavigationKeys } from '#site/types';
 import type { BreadcrumbLink } from '@node-core/ui-components/Common/Breadcrumbs';
 import type { FC } from 'react';
 
-type WithBreadcrumbsProps = {
+type BreadcrumbsProps = {
   navKeys?: Array<NavigationKeys>;
 };
 
-const WithBreadcrumbs: FC<WithBreadcrumbsProps> = ({ navKeys = [] }) => {
+const Breadcrumbs: FC<BreadcrumbsProps> = ({ navKeys = [] }) => {
   const { getSideNavigation } = useSiteNavigation();
   const t = useTranslations();
   const { pathname } = useClientContext();
@@ -64,7 +64,7 @@ const WithBreadcrumbs: FC<WithBreadcrumbsProps> = ({ navKeys = [] }) => {
   };
 
   return (
-    <Breadcrumbs
+    <BreadcrumbsContainer
       links={getBreadcrumbs()}
       maxLength={maxLength}
       as={Link}
@@ -73,4 +73,4 @@ const WithBreadcrumbs: FC<WithBreadcrumbsProps> = ({ navKeys = [] }) => {
   );
 };
 
-export default WithBreadcrumbs;
+export default Breadcrumbs;

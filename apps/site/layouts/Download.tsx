@@ -1,7 +1,7 @@
 import { getClientContext } from '#site/client-context';
-import WithDownloadSection from '#site/components/withDownloadSection';
-import WithFooter from '#site/components/withFooter';
-import WithNavBar from '#site/components/withNavBar';
+import DownloadSection from '#site/components/DownloadSection';
+import Footer from '#site/components/Footer';
+import NavBar from '#site/components/NavBar';
 import provideReleaseData from '#site/next-data/providers/releaseData';
 
 import type { FC, PropsWithChildren } from 'react';
@@ -15,19 +15,17 @@ const DownloadLayout: FC<PropsWithChildren> = async ({ children }) => {
 
   return (
     <>
-      <WithNavBar />
+      <NavBar />
 
       <div className={styles.downloadLayout}>
         <main id="main" tabIndex={-1}>
           <h1>{frontmatter.title}</h1>
 
-          <WithDownloadSection releases={releases}>
-            {children}
-          </WithDownloadSection>
+          <DownloadSection releases={releases}>{children}</DownloadSection>
         </main>
       </div>
 
-      <WithFooter />
+      <Footer />
     </>
   );
 };

@@ -1,0 +1,48 @@
+---
+title: End-Of-Life
+layout: about
+description: Află ce înseamnă sfârșitul ciclului de viață (EOL) Node.js, ce înseamnă pentru securitate, instrumente și conformitate, plus detalii despre versiunea EOL și opțiunile de asistență comercială.
+---
+
+# End-Of-Life (EOL)
+
+## De ce și cum versiunile Node.js ajung la sfârșitul duratei de viață (End-Of-Life)
+
+Versiunile majore de Node.js sunt lansate, corectate și declarate End-Of-Life conform unui program previzibil. Deoarece nu este fezabil să fie menținute toate liniile de versiuni la nesfârșit, după o perioadă planificată de mentenanță, o linie majoră de versiune Node.js nu va mai fi întreținută de proiect.
+
+<div className="flex flex-col items-start gap-4 xl:flex-row xl:items-center">
+  <Button kind="primary" href="/download" className="flex-1">
+    <span>Actualizează la ultima versiune Node.js® LTS</span>
+  </Button>
+  <span>sau</span>
+  <Button as="a" kind="warning" href="#commercial-support" className="flex-1">
+    <span>Obține suport de securitate pentru versiunile EOL (End-Of-Life)</span>
+  </Button>
+</div>
+
+[Vezi programul de lansări Node.js](/about/previous-releases/).
+
+## Ce se întâmplă atunci când o linie de versiuni ajunge la EOL
+
+Când o versiune ajunge la sfârșitul duratei de viață, înseamnă că nu va mai primi actualizări, inclusiv corecții de securitate. Acest lucru poate lăsa aplicațiile care rulează pe aceste versiuni vulnerabile la probleme de securitate și erori care nu vor fi niciodată remediate.
+
+- **Fără remedieri de vulnerabilități**: când noile versiuni de securitate dezvăluie probleme și remedieri în liniile majore mai noi, chiar dacă aceeași vulnerabilitate afectează liniile de lansare EOL, nu vor exista versiuni noi pentru acestea. Utilizatorii care se agață încă de liniile de lansare EOL și folosesc căile de cod afectate vor fi imediat vulnerabili la atacurile care exploatează aceste vulnerabilități dezvăluite.
+- **Ruperea lanțului de instrumente**: este posibil ca versiunile EOL să nu se mai conecteze în mod dinamic la versiuni mai noi ale bibliotecilor partajate de care depind, blocând sau întrerupând actualizările sistemului.
+- **Derivarea ecosistemului**: Multe pachete populare pentru utilizatori renunță la suportul pentru lansările EOL Node.js de-a lungul timpului. Când o aplicație se agață de pachete învechite, poate suferi de și mai multe vulnerabilități și erori neremediate, îndepărtându-se și mai mult de norma ecosistemului.
+- **Semnale de alarmă privind conformitatea**: Multe audituri din domeniu interzic utilizarea mediilor de execuție care nu beneficiază de mentenanță.
+
+## Versiuni EOL
+
+<EOLReleaseTable />
+
+## Suport comercial
+
+În ciuda dezavantajelor evidente ale utilizării versiunilor EOL, în practică, organizațiile se confruntă cu constrângeri care împiedică actualizările imediate, cum ar fi bazele de cod vechi, cerințele de conformitate sau lanțurile complexe de dependență. Prin [Programul de sustenabilitate a ecosistemului Fundației OpenJS](https://openjsf.org/blog/ecosystem-sustainability-program), Node.js este susținut de HeroDevs, NodeSource și TuxCare pentru a furniza servicii comerciale pentru remedieri de securitate.
+
+HeroDevs oferă [Suport fără sfârșit (NES)](https://nodejs.org/esp/herodevs) pentru versiunile Node.js care au depășit etapa oficială de mentenanță. Aceasta include remedieri de securitate, asistență privind conformitatea și suport tehnic, pentru a asigura continuitatea în timp ce îți planifici strategia de actualizare.
+
+NodeSource oferă evaluări de actualizare la nivel comercial și asistență cu experți pentru a moderniza în siguranță aplicațiile Node.js care încă rulează pe versiunile EOL. [Programul de actualizări](https://nodesource.com/products/nodejs-upgrade) ghidat oferă o analiză aprofundată a riscurilor, identifică blocjele migrației și oferă o foaie de parcurs personalizată pentru a-ți simplifica călătoria de actualizare.
+
+[Suportul pe tot parcursul ciclului de viață (ELS)](https://tuxcare.com/endless-lifecycle-support/) de la TuxCare îți oferă remediere continuă de securitate pentru versiunile Node.js la sfârșitul vieții. Remedierile de securitate sunt portate înapoi din amonte, testate pentru integritate și regresie, semnate, susținute de SLA și livrate prin managerii de pachete existenți.
+
+Utilizarea versiunilor EOL prin suport comercial ar trebui să fie privită ca o soluție temporară – scopul ar trebui să fie întotdeauna actualizarea la versiuni acceptate activ.

@@ -36,12 +36,12 @@ const groupReleasesByStatus = (releases: Array<NodeRelease>) => {
   }));
 };
 
-type WithReleaseSelectProps = Omit<
+type ReleaseSelectProps = Omit<
   ComponentProps<typeof StatelessSelect>,
   'values' | 'as'
 >;
 
-const WithReleaseSelect: FC<WithReleaseSelectProps> = async ({ ...props }) => {
+const ReleaseSelect: FC<ReleaseSelectProps> = async ({ ...props }) => {
   const releaseData = await provideReleaseData();
   const navigation = groupReleasesByStatus(releaseData);
 
@@ -56,4 +56,4 @@ const WithReleaseSelect: FC<WithReleaseSelectProps> = async ({ ...props }) => {
   );
 };
 
-export default WithReleaseSelect;
+export default ReleaseSelect;

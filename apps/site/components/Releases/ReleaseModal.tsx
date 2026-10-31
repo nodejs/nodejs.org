@@ -1,18 +1,23 @@
 import { Modal, Title, Content } from '@node-core/ui-components/Common/Modal';
 import { useTranslations } from 'next-intl';
 
+import ReleaseAlertBox from '#site/components/ReleaseAlertBox';
 import MinorReleasesTable from '#site/components/Releases/MinorReleasesTable';
 import ReleaseOverview from '#site/components/Releases/ReleaseOverview';
-import WithReleaseAlertBox from '#site/components/withReleaseAlertBox';
 
 import type { NodeRelease } from '#site/types';
 import type { ComponentProps, FC } from 'react';
 
 type ReleaseModalProps = ComponentProps<typeof Modal> & {
   release: NodeRelease;
+  releases: Array<NodeRelease>;
 };
 
-const ReleaseModal: FC<ReleaseModalProps> = ({ release, ...props }) => {
+const ReleaseModal: FC<ReleaseModalProps> = ({
+  release,
+  releases,
+  ...props
+}) => {
   const t = useTranslations();
 
   const modalHeadingKey = release.codename
@@ -26,7 +31,7 @@ const ReleaseModal: FC<ReleaseModalProps> = ({ release, ...props }) => {
 
   return (
     <Modal {...props}>
-      <WithReleaseAlertBox status={release.status} />
+      <ReleaseAlertBox release={release} releases={releases} />
 
       <Title>{modalHeading}</Title>
 
