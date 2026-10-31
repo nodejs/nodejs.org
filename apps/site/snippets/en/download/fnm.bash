@@ -7,8 +7,8 @@ ${props.os === 'WIN' ?
 # In lieu of restarting the shell
 ${props.os === 'WIN' ?
   'fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression' :
-  'eval "$(fnm env)"'
+  'export PATH="$HOME/.local/share/fnm:$PATH"\neval "$(fnm env)"'
 }
 
 # Download and install Node.js:
-fnm install ${props.release.major}
+fnm install --use ${props.release.major}
