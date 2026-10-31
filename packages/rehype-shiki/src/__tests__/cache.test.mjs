@@ -15,7 +15,7 @@ import githubDark from 'shiki/themes/github-dark.mjs';
 import githubLight from 'shiki/themes/github-light-default.mjs';
 import nord from 'shiki/themes/nord.mjs';
 
-import { withTokenizationCache } from '../tokenizationCache.mjs';
+import { withTokenizationCache } from '../cache.mjs';
 
 // Code that starts lines in states other than the first: open comments,
 // template literals and embedded languages, and lines repeated in a state
