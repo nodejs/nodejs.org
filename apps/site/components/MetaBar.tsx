@@ -6,6 +6,7 @@ import { defaultLocale } from '@node-core/website-i18n';
 import { useFormatter, useLocale, useTranslations } from 'next-intl';
 
 import AvatarGroup from '#site/components/AvatarGroup';
+import CarbonSidebar from '#site/components/CarbonAds/Sidebar';
 import Link from '#site/components/Link';
 import useClientContext from '#site/hooks/useClientContext';
 import useMediaQuery from '#site/hooks/useMediaQuery';
@@ -74,6 +75,7 @@ const MetaBar: FC = () => {
         ),
       }}
       headings={{ items: headings }}
+      footer={<CarbonSidebar />}
     />
   );
 };

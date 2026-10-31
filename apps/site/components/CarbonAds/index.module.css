@@ -1,0 +1,112 @@
+@reference "../../styles/index.css";
+
+.topBar,
+.sideBar {
+  @apply relative
+    bg-(--ad-bg)
+    text-(color:--ad-text)
+    dark:bg-(--ad-bg-dark)
+    dark:text-(color:--ad-text-dark);
+
+  & a {
+    @apply text-inherit
+      no-underline;
+  }
+}
+
+.badge {
+  @apply shrink-0
+    rounded-sm
+    border
+    border-current
+    px-1.5
+    text-xs
+    leading-4
+    opacity-70
+    hover:opacity-100;
+}
+
+.topBar {
+  @apply mb-4
+    flex
+    items-center
+    gap-3
+    rounded-md
+    px-4
+    py-2
+    text-sm;
+}
+
+.topBarLink {
+  @apply flex
+    flex-1
+    items-center
+    gap-3;
+}
+
+.logo {
+  @apply size-8
+    shrink-0
+    rounded-sm;
+}
+
+.cta {
+  @apply hidden
+    shrink-0
+    rounded-md
+    bg-(--ad-cta-bg)
+    px-3
+    py-1
+    text-xs
+    font-semibold
+    whitespace-nowrap
+    text-(color:--ad-cta-text)
+    sm:block
+    dark:bg-(--ad-cta-bg-dark)
+    dark:text-(color:--ad-cta-text-dark);
+}
+
+.sideBar {
+  @apply w-44
+    overflow-hidden
+    rounded-lg;
+}
+
+.sideBarLink {
+  @apply flex
+    flex-col;
+}
+
+.image {
+  @apply aspect-square
+    w-full
+    object-cover;
+}
+
+.sideBarBody {
+  @apply flex
+    flex-col
+    items-start
+    gap-1
+    p-3.5
+    text-xs;
+}
+
+.sideBarCta {
+  @apply mt-2
+    rounded-full
+    border
+    border-current
+    px-3
+    py-1
+    font-semibold;
+}
+
+.overlay {
+  @apply absolute
+    top-2
+    right-2
+    border-transparent
+    bg-neutral-950/50
+    text-white;
+}
