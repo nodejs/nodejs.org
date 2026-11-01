@@ -1,4 +1,4 @@
-import { QUERIES } from '@node-core/doc-kit/src/utils/queries/index.mjs';
+import { QUERIES } from '@doc-kit/core/src/utils/queries/index.mjs';
 import { lintRule } from 'unified-lint-rule';
 import { visit } from 'unist-util-visit';
 
