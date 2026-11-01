@@ -42,7 +42,7 @@
     "@vcarl/remark-headings": "~0.1.0",
     "classnames": "catalog:",
     "cross-env": "catalog:",
-    "feed": "~5.2.0",
+    "feed": "~6.0.0",
     "github-slugger": "~2.0.0",
     "gray-matter": "~4.0.3",
     "mdast-util-to-string": "^4.0.0",
