@@ -63,7 +63,7 @@
     "react": "catalog:"
   },
   "devDependencies": {
-    "@eslint-react/eslint-plugin": "~5.8.6",
+    "@eslint-react/eslint-plugin": "~5.28.8",
     "@orama/core": "^1.2.19",
     "@orama/orama": "^3.1.18",
     "@storybook/addon-a11y": "~10.6.3",
