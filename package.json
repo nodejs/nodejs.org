@@ -55,7 +55,7 @@
     "prettier": "3.9.10",
     "prettier-plugin-tailwindcss": "0.8.1",
     "typescript": "catalog:",
-    "typescript-eslint": "~8.71.2"
+    "typescript-eslint": "~8.72.0"
   },
   "packageManager": "pnpm@12.8.1",
   "devEngines": {
