@@ -75,7 +75,7 @@
     "@testing-library/user-event": "~14.6.8",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
-    "concurrently": "9.2.1",
+    "concurrently": "10.0.6",
     "cross-env": "catalog:",
     "css-loader": "7.1.4",
     "eslint-plugin-react": "7.37.5",
