@@ -2,6 +2,8 @@ import { createHighlighterCoreSync, isSpecialLang } from '@shikijs/core';
 import shikiGitHubLightTheme from 'shiki/themes/github-light-default.mjs';
 import shikiNordTheme from 'shiki/themes/nord.mjs';
 
+import { withTokenizationCache } from '#rs/cache.mjs';
+
 const DEFAULT_DARK_THEME = {
   // We are updating this color because the background color and comment text color
   // in the Codebox component do not comply with accessibility standards.
@@ -16,6 +18,15 @@ const DEFAULT_DARK_THEME = {
 const DEFAULT_THEMES = {
   light: shikiGitHubLightTheme,
   dark: DEFAULT_DARK_THEME,
+};
+
+// The default themes by name: Shiki prepares a theme object again for every
+// highlight, and only caches tokens for all the themes given by name
+const DEFAULT_THEME_OPTIONS = {
+  themes: Object.fromEntries(
+    Object.entries(DEFAULT_THEMES).map(([color, { name }]) => [color, name])
+  ),
+  defaultColor: 'light',
 };
 
 const FALLBACK_LANGUAGE = 'text';
@@ -57,12 +68,12 @@ const createHighlighter = ({ coreOptions = {}, highlighterOptions = {} }) => {
     themes: Object.values(DEFAULT_THEMES),
     ...coreOptions,
   };
-  const shiki = createHighlighterCoreSync(options);
+  const shiki = withTokenizationCache(createHighlighterCoreSync(options));
   const themeOptions = usesCustomTheme
     ? {}
     : coreOptions.themes
       ? { theme: options.themes[0] }
-      : { themes: DEFAULT_THEMES, defaultColor: 'light' };
+      : DEFAULT_THEME_OPTIONS;
 
   const loadedLanguages = new Set(
     shiki.getLoadedLanguages().map(lang => lang.toLowerCase())

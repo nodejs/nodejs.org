@@ -17,6 +17,10 @@ mock.module('@shikijs/core', {
   },
 });
 
+mock.module('../cache.mjs', {
+  namedExports: { withTokenizationCache: shiki => shiki },
+});
+
 mock.module('@shikijs/engine-javascript', {
   namedExports: { createJavaScriptRegexEngine: () => ({}) },
 });
@@ -83,7 +87,10 @@ describe('createHighlighter', async () => {
       highlighter.highlightToHtml('const x = 1;', 'javascript');
 
       const [, options] = mockShiki.codeToHtml.mock.calls.at(-1).arguments;
-      assert.deepStrictEqual(Object.keys(options.themes), ['light', 'dark']);
+      assert.deepStrictEqual(options.themes, {
+        light: 'github-light-default',
+        dark: 'nord',
+      });
       assert.strictEqual(options.defaultColor, 'light');
     });
   });
