@@ -29,7 +29,7 @@
     "next": "catalog:"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20260418.1",
+    "@cloudflare/workers-types": "^5.20261025.1",
     "@playwright/test": "^1.64.1",
     "@types/node": "catalog:",
     "cross-env": "catalog:",
