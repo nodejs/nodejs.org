@@ -20,7 +20,7 @@
     "@flarelabs-net/wrangler-build-time-fs-assets-polyfilling": "^0.0.1",
     "@opennextjs/cloudflare": "^1.20.2",
     "@sentry/cloudflare": "^11.9.0",
-    "@typescript/vfs": "^1.6.4",
+    "@typescript/vfs": "^1.6.5",
     "twoslash": "^0.3.9",
     "typescript": "catalog:",
     "wrangler": "^4.114.0"
