@@ -149,6 +149,18 @@ export const STATUS_KIND_MAP = {
 };
 
 /**
+ * The download route on which each release status is presented
+ *
+ * @type {Record<import('./types/releases').NodeReleaseStatus, string>}
+ */
+export const STATUS_ROUTE_MAP = {
+  EOL: '/download',
+  LTS: '/download',
+  Current: '/download/current',
+  Alpha: '/download/alpha',
+};
+
+/**
  * The location of the Node.js Security Working Group Vulnerabilities data.
  */
 export const VULNERABILITIES_URL =
