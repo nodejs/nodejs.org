@@ -39,6 +39,28 @@ const value = {invalid};
     expected: [],
   },
   {
+    name: 'ignores HTML comments and tags',
+    input: `<!--introduced_in=v0.10.0-->
+
+<a id="module_builtins" href="module.html#builtins"></a>`,
+    expected: [],
+  },
+  {
+    name: 'array reference',
+    input: 'Takes a {string[]}.',
+    expected: [],
+  },
+  {
+    name: 'module-qualified reference',
+    input: 'Returns a {vm.Module}.',
+    expected: [],
+  },
+  {
+    name: 'union with one resolvable member',
+    input: 'This is a {Unknown|number}.',
+    expected: [],
+  },
+  {
     name: 'multiple references',
     input: 'Psst, are you a {string | boolean}',
     expected: [
