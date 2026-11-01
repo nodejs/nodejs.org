@@ -12,7 +12,7 @@ allowBuilds:
   workerd: true
 
 catalog:
-  '@types/node': ^24.10.1
+  '@types/node': ^24.19.2
   '@types/react': ^19.3.0
   classnames: ~2.5.1
   cross-env: ^10.0.0
