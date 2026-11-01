@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20260418.1",
-    "@playwright/test": "^1.61.1",
+    "@playwright/test": "^1.64.1",
     "@types/node": "catalog:",
     "cross-env": "catalog:",
     "next": "catalog:"

@@ -70,7 +70,7 @@
     "@next/eslint-plugin-next": "16.4.3",
     "@node-core/remark-lint": "workspace:*",
     "@orama/core": "^1.2.19",
-    "@playwright/test": "^1.61.1",
+    "@playwright/test": "^1.64.1",
     "@testing-library/user-event": "~14.6.8",
     "@types/mdast": "^4.0.4",
     "@types/mdx": "^2.0.14",
