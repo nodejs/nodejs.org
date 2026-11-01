@@ -210,8 +210,8 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
       '@eloqnt/cli':
-        specifier: ^0.6.20
-        version: 0.6.20(@swc/helpers@0.5.23)
+        specifier: ^0.6.33
+        version: 0.6.33(@swc/helpers@0.5.23)
       '@eslint/js':
         specifier: ~10.0.1
         version: 10.0.1(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))
@@ -1419,8 +1419,8 @@ packages:
     peerDependencies:
       '@noble/ciphers': ^1.0.0
 
-  '@eloqnt/cli@0.6.20':
-    resolution: {integrity: sha512-mU1Wq1htScIGY6nWxs+2T/e7PRKChYBTtW15FKx870FYQKddWZPRXOCCjxogvEdAWlyVDAMKgZ3mwJfoWWn+9w==}
+  '@eloqnt/cli@0.6.33':
+    resolution: {integrity: sha512-4O5Eb7ebLJn0N1vLkKMHUeCWkpwlrFFTvA/hwhRgPJzNv74+UpiAH+26dbaUw1qktzjrvavJ7UyKChDDSa/unA==}
     hasBin: true
 
   '@eloqnt/config@0.1.0':
@@ -1435,8 +1435,8 @@ packages:
   '@eloqnt/format-po@0.1.1':
     resolution: {integrity: sha512-aLtmIoqXGEaeTT0RcsLN8sZ3aIrsT/c/dVs28zrLhDjO3+vA3KNP+r98N0xq8w/k36+/GIUt4uZNbqcA71GVWw==}
 
-  '@eloqnt/sdk@0.6.18':
-    resolution: {integrity: sha512-IaLcUWbjAqdFtL2ay6KrUcfSLqjK3r3pDeJlCt0q6Mp72Ir+H/9mDk0QJ85A84556sdRCNgherOG+VaGO7PrRg==}
+  '@eloqnt/sdk@0.6.31':
+    resolution: {integrity: sha512-QDMxjApRJ3B9GcDzd36P0kaSmcGwKwFMkzjt2TH4jr3JnAPMJIlT4FnxTfoTDeYyRr/LWN6vvZ4r/rBWfuXHqw==}
 
   '@emnapi/core@1.10.0':
     resolution: {integrity: sha512-yq6OkJ4p82CAfPl0u9mQebQHKPJkY7WrIuk205cTYnYe+k2Z8YBh11FrbRG/H6ihirqcacOgl2BIO8oyMQLeXw==}
@@ -7322,9 +7322,6 @@ packages:
   neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
 
-  next-intl-swc-plugin-extractor@0.0.0-canary-0f7ee4c:
-    resolution: {integrity: sha512-jcdIXOMlKYSmvlJWBJUP4+MT8ZysogOTeEyivzDrMZnz4+Bpex7NwyEgyLH2Jzh4PjcP2rvH4r7WzzztaoM1lQ==}
-
   next-intl-swc-plugin-extractor@4.14.9:
     resolution: {integrity: sha512-8jAkmDwQJo6RDavBHm9QRl1YTn2WXf+rI4SVhMaZxZcxopnwZic6fKTXOoNIo3kzC+a6vJySkOkXmHTVFLAYtg==}
 
@@ -10333,10 +10330,10 @@ snapshots:
     dependencies:
       '@noble/ciphers': 1.3.0
 
-  '@eloqnt/cli@0.6.20(@swc/helpers@0.5.23)':
+  '@eloqnt/cli@0.6.33(@swc/helpers@0.5.23)':
     dependencies:
       '@clack/prompts': 1.7.0
-      '@eloqnt/sdk': 0.6.18(@swc/helpers@0.5.23)
+      '@eloqnt/sdk': 0.6.31(@swc/helpers@0.5.23)
       citty: 0.1.6
       open: 11.0.1
       picocolors: 1.1.1
@@ -10356,17 +10353,19 @@ snapshots:
       '@eloqnt/config': 0.1.1
       po-parser: 2.2.0
 
-  '@eloqnt/sdk@0.6.18(@swc/helpers@0.5.23)':
+  '@eloqnt/sdk@0.6.31(@swc/helpers@0.5.23)':
     dependencies:
+      '@eloqnt/config': 0.1.1
+      '@eloqnt/format-json': 0.1.0
+      '@eloqnt/format-po': 0.1.1
       '@formatjs/icu-messageformat-parser': 3.5.17
       '@swc/core': 1.16.1(@swc/helpers@0.5.23)
       ai: 7.0.79(zod@4.4.3)
       jiti: 2.7.0
       magic-string: 0.30.21
-      next-intl-swc-plugin-extractor: 0.0.0-canary-0f7ee4c
-      po-parser: 2.2.0
+      next-intl-swc-plugin-extractor: 4.14.9
       tinyglobby: 0.2.17
-      yaml: 2.9.0
+      yaml: 2.9.1
       zod: 4.4.3
     transitivePeerDependencies:
       - '@swc/helpers'
@@ -16960,8 +16959,6 @@ snapshots:
       content-type: 2.1.0
 
   neo-async@2.6.2: {}
-
-  next-intl-swc-plugin-extractor@0.0.0-canary-0f7ee4c: {}
 
   next-intl-swc-plugin-extractor@4.14.9: {}
 
