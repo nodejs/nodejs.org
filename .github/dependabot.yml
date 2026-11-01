@@ -13,6 +13,12 @@ updates:
       prefix: chore(deps)
     cooldown:
       default-days: 7
+    groups:
+      # Fallback group for all minor/patch updates
+      actions:
+        update-types:
+          - patch
+          - minor
     open-pull-requests-limit: 10
 
   - package-ecosystem: npm
@@ -100,6 +106,17 @@ updates:
           - next
           - next-*
           - turbo
+      # Fallback groups for all other minor/patch updates
+      production:
+        dependency-type: production
+        update-types:
+          - patch
+          - minor
+      development:
+        dependency-type: development
+        update-types:
+          - patch
+          - minor
     ignore:
       - dependency-name: '@types/node'
         update-types: ['version-update:semver-major']
@@ -108,4 +125,4 @@ updates:
         versions: ['>=0.300.0']
       - dependency-name: '@opentelemetry/sdk-logs'
         versions: ['>=0.300.0']
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 20
