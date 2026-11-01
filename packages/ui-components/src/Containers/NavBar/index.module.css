@@ -56,7 +56,7 @@
     }
 
     /* Swap the toggler's icon while the menu is open */
-    .sidebarItemToggler:checked ~ .nodeIconAndMobileItemsToggler {
+    &:has(.sidebarItemToggler:checked) {
       .showIcon {
         @apply hidden;
       }

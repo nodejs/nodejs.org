@@ -53,15 +53,6 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
   return (
     <nav className={styles.container}>
       <div className={styles.innerContainer}>
-        {/* Precedes the menu and its toggler, which follow it through CSS */}
-        <input
-          className={classNames('peer', styles.sidebarItemToggler)}
-          id="sidebarItemToggler"
-          type="checkbox"
-          aria-label={sidebarItemTogglerAriaLabel}
-          tabIndex={-1}
-        />
-
         <div className={styles.nodeIconAndMobileItemsToggler}>
           {Logo && (
             <Component
@@ -91,6 +82,13 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
           </Label.Root>
         </div>
 
+        <input
+          className={classNames('peer', styles.sidebarItemToggler)}
+          id="sidebarItemToggler"
+          type="checkbox"
+          aria-label={sidebarItemTogglerAriaLabel}
+          tabIndex={-1}
+        />
         <div className={classNames(styles.main, `hidden peer-checked:flex`)}>
           {navItems && navItems.length > 0 && (
             <div className={styles.navItems}>
