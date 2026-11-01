@@ -51,6 +51,21 @@
       @apply size-6;
     }
 
+    .closeIcon {
+      @apply hidden;
+    }
+
+    /* Swap the toggler's icon while the menu is open */
+    .sidebarItemToggler:checked ~ .nodeIconAndMobileItemsToggler {
+      .showIcon {
+        @apply hidden;
+      }
+
+      .closeIcon {
+        @apply block;
+      }
+    }
+
     .sidebarItemToggler {
       @apply absolute
         right-4

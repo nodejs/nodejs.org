@@ -4,7 +4,7 @@ import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
 import { useEffect, use, useMemo, useState } from 'react';
 
-import useClientContext from '#site/hooks/useClientContext';
+import { DetectedOSContext } from '#site/providers/detectedOSProvider';
 import { ReleaseContext } from '#site/providers/releaseProvider';
 import { PLATFORMS, nextItem, parseCompat } from '#site/util/download';
 import { getUserPlatform } from '#site/util/userAgent';
@@ -13,14 +13,13 @@ import type { Platform } from '#site/types/userAgent';
 import type { FC } from 'react';
 
 const PlatformDropdown: FC = () => {
-  const { architecture, bitness } = useClientContext();
+  const { architecture, bitness } = use(DetectedOSContext);
 
   const release = use(ReleaseContext);
 
   const t = useTranslations();
 
-  // Compute the platform during render so it's available to both `useEffect` calls below in the same cycle
-  // (avoiding race conditions when architecture detection and OS detection arrive in the same batch)
+  // The detected platform, which the provider selects once it is known
   const currentPlatform =
     architecture && bitness ? getUserPlatform(architecture, bitness) : null;
 
@@ -28,19 +27,6 @@ const PlatformDropdown: FC = () => {
   // When true the OS/version effect will respect their choice instead of
   // resetting to the auto-detected value.
   const [userHasSelectedPlatform, setUserHasSelectedPlatform] = useState(false);
-
-  useEffect(
-    () => {
-      if (currentPlatform) {
-        // eslint-disable-next-line @eslint-react/set-state-in-effect
-        setUserHasSelectedPlatform(false);
-        release.setPlatform(currentPlatform);
-      }
-    },
-    // Only react on the change of the Client Context Architecture and Bitness
-    // eslint-disable-next-line @eslint-react/exhaustive-deps
-    [architecture, bitness]
-  );
 
   // We parse the compatibility of the dropdown items
   const parsedPlatforms = useMemo(

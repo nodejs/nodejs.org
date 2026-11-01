@@ -14,7 +14,4 @@ export const assignClientContext = <T extends ClientSharedServerContext>(
       words: 0,
     },
     filename: props.filename ?? '',
-    os: props.os ?? 'OTHER',
-    architecture: props.architecture ?? 'x64',
-    bitness: props.bitness ?? 64,
   }) as T;

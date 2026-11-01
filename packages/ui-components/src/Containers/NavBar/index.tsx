@@ -2,7 +2,6 @@ import Hamburger from '@heroicons/react/24/solid/Bars3Icon';
 import XMark from '@heroicons/react/24/solid/XMarkIcon';
 import * as Label from '@radix-ui/react-label';
 import classNames from 'classnames';
-import { useState } from 'react';
 
 import NavItem from '#ui/Containers/NavBar/NavItem';
 
@@ -15,11 +14,6 @@ import type {
 } from 'react';
 
 import styles from './index.module.css';
-
-const navInteractionIcons = {
-  show: <Hamburger className={styles.navInteractionIcon} />,
-  close: <XMark className={styles.navInteractionIcon} />,
-};
 
 // Picks the longest nav link that prefixes the current path, so `/about` and `/about/sponsors` never highlight together.
 export const getActiveNavLink = (
@@ -54,13 +48,20 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
   pathname,
   sidebarItemTogglerAriaLabel,
 }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const activeLink = getActiveNavLink(navItems ?? [], pathname);
 
   return (
     <nav className={styles.container}>
       <div className={styles.innerContainer}>
+        {/* Precedes the menu and its toggler, which follow it through CSS */}
+        <input
+          className={classNames('peer', styles.sidebarItemToggler)}
+          id="sidebarItemToggler"
+          type="checkbox"
+          aria-label={sidebarItemTogglerAriaLabel}
+          tabIndex={-1}
+        />
+
         <div className={styles.nodeIconAndMobileItemsToggler}>
           {Logo && (
             <Component
@@ -78,18 +79,18 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
             role="button"
             aria-label={sidebarItemTogglerAriaLabel}
           >
-            {navInteractionIcons[isMenuOpen ? 'close' : 'show']}
+            <Hamburger
+              className={classNames(styles.navInteractionIcon, styles.showIcon)}
+            />
+            <XMark
+              className={classNames(
+                styles.navInteractionIcon,
+                styles.closeIcon
+              )}
+            />
           </Label.Root>
         </div>
 
-        <input
-          className={classNames('peer', styles.sidebarItemToggler)}
-          id="sidebarItemToggler"
-          type="checkbox"
-          onChange={e => setIsMenuOpen(() => e.target.checked)}
-          aria-label={sidebarItemTogglerAriaLabel}
-          tabIndex={-1}
-        />
         <div className={classNames(styles.main, `hidden peer-checked:flex`)}>
           {navItems && navItems.length > 0 && (
             <div className={styles.navItems}>

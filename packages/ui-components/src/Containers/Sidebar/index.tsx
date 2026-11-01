@@ -1,34 +1,11 @@
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
-
+import SidebarCollapsible from '#ui/Containers/Sidebar/SidebarCollapsible';
 import SidebarGroup from '#ui/Containers/Sidebar/SidebarGroup';
+import { findActiveItem } from '#ui/Containers/Sidebar/utils';
 
-import type { FormattedMessage, LinkLike } from '#ui/types';
+import type { LinkLike } from '#ui/types';
 import type { ComponentProps, FC, PropsWithChildren, RefObject } from 'react';
 
 import styles from './index.module.css';
-
-type SidebarItemType = {
-  label: FormattedMessage;
-  link: string;
-  items?: Array<SidebarItemType>;
-};
-
-const findLabel = (
-  items: Array<SidebarItemType>,
-  pathname?: string
-): FormattedMessage | undefined => {
-  for (const item of items) {
-    if (item.link === pathname) {
-      return item.label;
-    }
-
-    const label = item.items && findLabel(item.items, pathname);
-
-    if (label) {
-      return label;
-    }
-  }
-};
 
 type SidebarProps = {
   groups: Array<
@@ -38,7 +15,7 @@ type SidebarProps = {
   title: string;
   as?: LinkLike;
   placeholder?: string;
-  ref: RefObject<HTMLElement | null>;
+  ref?: RefObject<HTMLElement | null>;
 };
 
 const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
@@ -50,8 +27,8 @@ const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
   placeholder,
   ...props
 }) => {
-  const currentLabel = findLabel(
-    groups.flatMap(({ items }) => items as Array<SidebarItemType>),
+  const currentItem = findActiveItem(
+    groups.flatMap(({ items }) => items),
     pathname
   );
 
@@ -62,12 +39,10 @@ const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
       {groups.length > 0 && (
         // On mobile, the navigation collapses behind a disclosure. On larger
         // screens, the disclosure is always expanded and its summary hidden.
-        <details className={styles.navigation}>
-          <summary className={styles.summary}>
-            <span>{currentLabel ?? placeholder ?? title}</span>
-            <ChevronDownIcon className={styles.chevron} />
-          </summary>
-
+        <SidebarCollapsible
+          summary={currentItem?.label ?? placeholder ?? title}
+          className={styles.navigation}
+        >
           <div className={styles.groups}>
             {groups.map(({ groupName, items }) => (
               <SidebarGroup
@@ -79,7 +54,7 @@ const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
               />
             ))}
           </div>
-        </details>
+        </SidebarCollapsible>
       )}
     </aside>
   );
