@@ -1,4 +1,5 @@
-import WithNoScriptSelect from '#ui/Common/Select/NoScriptSelect';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
+
 import SidebarGroup from '#ui/Containers/Sidebar/SidebarGroup';
 
 import type { FormattedMessage, LinkLike } from '#ui/types';
@@ -12,12 +13,21 @@ type SidebarItemType = {
   items?: Array<SidebarItemType>;
 };
 
-const flattenItems = (
-  items: Array<SidebarItemType>
-): Array<SidebarItemType> => {
-  return items.flatMap((item: SidebarItemType) =>
-    item.items && item.items.length ? flattenItems(item.items) : [item]
-  );
+const findLabel = (
+  items: Array<SidebarItemType>,
+  pathname?: string
+): FormattedMessage | undefined => {
+  for (const item of items) {
+    if (item.link === pathname) {
+      return item.label;
+    }
+
+    const label = item.items && findLabel(item.items, pathname);
+
+    if (label) {
+      return label;
+    }
+  }
 };
 
 type SidebarProps = {
@@ -26,7 +36,6 @@ type SidebarProps = {
   >;
   pathname?: string;
   title: string;
-  onSelect: (value: string) => void;
   as?: LinkLike;
   placeholder?: string;
   ref: RefObject<HTMLElement | null>;
@@ -36,49 +45,42 @@ const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
   groups,
   pathname,
   title,
-  onSelect,
   as,
   children,
   placeholder,
   ...props
 }) => {
-  const selectItems = groups.map(({ items, groupName }) => ({
-    label: groupName,
-    items: flattenItems(items as Array<SidebarItemType>).map(
-      ({ label, link }) => ({ value: link, label })
-    ),
-  }));
-
-  const currentItem = selectItems
-    .flatMap(item => item.items)
-    .find(item => pathname === item.value);
+  const currentLabel = findLabel(
+    groups.flatMap(({ items }) => items as Array<SidebarItemType>),
+    pathname
+  );
 
   return (
     <aside {...props} className={styles.wrapper}>
       {children}
 
-      {selectItems.length > 0 && (
-        <WithNoScriptSelect
-          label={title}
-          values={selectItems}
-          defaultValue={currentItem?.value}
-          placeholder={placeholder}
-          onChange={onSelect}
-          className={styles.mobileSelect}
-          as={as}
-        />
-      )}
+      {groups.length > 0 && (
+        // On mobile, the navigation collapses behind a disclosure. On larger
+        // screens, the disclosure is always expanded and its summary hidden.
+        <details className={styles.navigation}>
+          <summary className={styles.summary}>
+            <span>{currentLabel ?? placeholder ?? title}</span>
+            <ChevronDownIcon className={styles.chevron} />
+          </summary>
 
-      {groups.map(({ groupName, items }) => (
-        <SidebarGroup
-          key={groupName.toString()}
-          groupName={groupName}
-          items={items}
-          pathname={pathname}
-          as={as}
-          className={styles.navigation}
-        />
-      ))}
+          <div className={styles.groups}>
+            {groups.map(({ groupName, items }) => (
+              <SidebarGroup
+                key={groupName.toString()}
+                groupName={groupName}
+                items={items}
+                pathname={pathname}
+                as={as}
+              />
+            ))}
+          </div>
+        </details>
+      )}
     </aside>
   );
 };

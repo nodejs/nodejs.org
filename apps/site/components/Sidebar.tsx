@@ -8,7 +8,7 @@ import Link from '#site/components/Link';
 import useClientContext from '#site/hooks/useClientContext';
 import useScrollToElement from '#site/hooks/useScrollToElement';
 import useSiteNavigation from '#site/hooks/useSiteNavigation';
-import { useRouter, usePathname } from '#site/navigation.mjs';
+import { usePathname } from '#site/navigation.mjs';
 
 import type { FormattedMessage, NavigationKeys } from '#site/types';
 import type { RichTranslationValues } from 'next-intl';
@@ -44,7 +44,6 @@ const Sidebar: FC<SidebarProps> = ({ navKeys, context, ...props }) => {
   const { getSideNavigation } = useSiteNavigation();
   const pathname = usePathname()!;
   const t = useTranslations();
-  const { push } = useRouter();
   const { frontmatter } = useClientContext();
   const sidebarRef = useRef<HTMLElement>(null);
   const sideNavigation = getSideNavigation(navKeys, context);
@@ -69,7 +68,6 @@ const Sidebar: FC<SidebarProps> = ({ navKeys, context, ...props }) => {
       pathname={pathname}
       title={t('components.common.sidebar.title')}
       placeholder={frontmatter?.title}
-      onSelect={push}
       as={Link}
       {...props}
     />

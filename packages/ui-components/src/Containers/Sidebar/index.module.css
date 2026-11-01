@@ -21,13 +21,77 @@
     dark:bg-neutral-950;
 
   .navigation {
-    @apply ml:flex
-      hidden;
+    @apply ml:rounded-none
+      ml:border-0
+      ml:bg-transparent
+      ml:shadow-none
+      w-full
+      rounded-sm
+      border
+      border-neutral-300
+      bg-white
+      shadow-xs
+      dark:border-neutral-800
+      dark:bg-neutral-950;
+
+    /* The disclosure only applies on mobile; larger screens always show the navigation */
+    @variant ml {
+      &::details-content {
+        content-visibility: visible;
+        display: block;
+      }
+    }
   }
 
-  .mobileSelect {
+  .summary {
     @apply ml:hidden
       flex
-      w-full;
+      cursor-pointer
+      items-center
+      justify-between
+      gap-2
+      px-3.5
+      py-2.5
+      text-base
+      font-medium
+      text-neutral-900
+      select-none
+      dark:text-white;
+
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    .chevron {
+      @apply size-5
+        shrink-0
+        text-neutral-600
+        motion-safe:transition-transform
+        dark:text-neutral-400;
+    }
+  }
+
+  .navigation[open] > .summary {
+    @apply border-b
+      border-neutral-200
+      dark:border-neutral-800;
+
+    .chevron {
+      @apply rotate-180;
+    }
+  }
+
+  .groups {
+    @apply ml:max-h-none
+      ml:overflow-visible
+      ml:p-0
+      flex
+      max-h-[60vh]
+      flex-col
+      gap-8
+      overflow-y-auto
+      p-2;
   }
 }
