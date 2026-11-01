@@ -72,7 +72,7 @@
     "@storybook/addon-webpack5-compiler-swc": "~4.0.3",
     "@storybook/react-webpack5": "~10.6.3",
     "@tailwindcss/postcss": "~4.3.3",
-    "@testing-library/user-event": "~14.6.7",
+    "@testing-library/user-event": "~14.6.8",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "concurrently": "9.2.1",

@@ -71,7 +71,7 @@
     "@node-core/remark-lint": "workspace:*",
     "@orama/core": "^1.2.19",
     "@playwright/test": "^1.61.1",
-    "@testing-library/user-event": "~14.6.7",
+    "@testing-library/user-event": "~14.6.8",
     "@types/mdast": "^4.0.4",
     "@types/mdx": "^2.0.14",
     "@types/semver": "~7.8.0",
