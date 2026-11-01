@@ -4,7 +4,7 @@ import { Fragment, useMemo } from 'react';
 import { CODE_LIKE_TYPES } from '#ui/constants';
 
 import type { Heading, LinkLike } from '#ui/types';
-import type { FC, HTMLAttributes } from 'react';
+import type { FC, HTMLAttributes, ReactNode } from 'react';
 
 import styles from './index.module.css';
 
@@ -16,6 +16,7 @@ type MetaBarProps = {
   };
   as?: LinkLike;
   heading: string;
+  footer?: ReactNode;
 } & HTMLAttributes<HTMLElement>;
 
 const MetaBar: FC<MetaBarProps> = ({
@@ -23,6 +24,7 @@ const MetaBar: FC<MetaBarProps> = ({
   headings,
   as: Component = 'a',
   heading,
+  footer,
   ...props
 }) => {
   // The default depth of headings to display in the table of contents.
@@ -74,6 +76,8 @@ const MetaBar: FC<MetaBarProps> = ({
           </>
         )}
       </dl>
+
+      {footer}
     </aside>
   );
 };

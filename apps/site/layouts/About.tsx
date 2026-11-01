@@ -1,6 +1,7 @@
 import Article from '@node-core/ui-components/Containers/Article';
 
 import Breadcrumbs from '#site/components/Breadcrumbs';
+import CarbonTopBar from '#site/components/CarbonAds/TopBar';
 import Footer from '#site/components/Footer';
 import MetaBar from '#site/components/MetaBar';
 import NavBar from '#site/components/NavBar';
@@ -17,6 +18,8 @@ const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
 
       <div>
         <main id="main" tabIndex={-1}>
+          <CarbonTopBar />
+
           {children}
         </main>
 
