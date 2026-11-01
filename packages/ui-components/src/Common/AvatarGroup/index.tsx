@@ -7,6 +7,7 @@ import Avatar from '#ui/Common/AvatarGroup/Avatar';
 import avatarstyles from '#ui/Common/AvatarGroup/Avatar/index.module.css';
 import AvatarOverlay from '#ui/Common/AvatarGroup/Overlay';
 import Tooltip from '#ui/Common/Tooltip';
+import useMediaQuery from '#ui/hooks/useMediaQuery';
 
 import type { AvatarProps } from '#ui/Common/AvatarGroup/Avatar';
 import type { LinkLike } from '#ui/types';
@@ -14,9 +15,13 @@ import type { FC } from 'react';
 
 import styles from './index.module.css';
 
+const COMPACT_MEDIA_QUERY = '(max-width: 1280px)';
+
 type AvatarGroupProps = {
   avatars: Array<AvatarProps>;
   limit?: number;
+  /** The limit on compact screens (below `xl`), when it differs from `limit` */
+  compactLimit?: number;
   isExpandable?: boolean;
   size?: AvatarProps['size'];
   container?: HTMLElement;
@@ -25,13 +30,17 @@ type AvatarGroupProps = {
 
 const AvatarGroup: FC<AvatarGroupProps> = ({
   avatars,
-  limit = 10,
+  limit: fullLimit = 10,
+  compactLimit = fullLimit,
   isExpandable = true,
   size = 'small',
   container,
   as,
 }) => {
   const [showMore, setShowMore] = useState(false);
+
+  const isCompact = useMediaQuery(COMPACT_MEDIA_QUERY);
+  const limit = isCompact ? compactLimit : fullLimit;
 
   const renderAvatars = useMemo(
     () => avatars.slice(0, showMore ? avatars.length : limit),

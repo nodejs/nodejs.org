@@ -1,25 +1,26 @@
 import { CloudArrowDownIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 
-import { getClientContext } from '#site/client-context';
 import Button from '#site/components/Common/Button';
 import { getNodeDownloadUrl } from '#site/util/url';
-import { getUserPlatform } from '#site/util/userAgent';
 
 import type { NodeRelease } from '#site/types';
+import type { DownloadOptions } from '#site/util/url';
 import type { FC, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';
 
-type DownloadButtonProps = { release: NodeRelease };
+type DownloadButtonProps = { release: NodeRelease } & Pick<
+  DownloadOptions,
+  'os' | 'platform'
+>;
 
 const DownloadButton: FC<PropsWithChildren<DownloadButtonProps>> = ({
   release: { versionWithPrefix },
+  os,
+  platform,
   children,
 }) => {
-  const { os, bitness, architecture } = getClientContext();
-
-  const platform = getUserPlatform(architecture, bitness);
   const downloadLink = getNodeDownloadUrl({ versionWithPrefix, os, platform });
 
   return (
