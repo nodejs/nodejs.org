@@ -103,4 +103,9 @@ updates:
     ignore:
       - dependency-name: '@types/node'
         update-types: ['version-update:semver-major']
+      # @vercel/otel 2.x peers on these packages at <0.300.0
+      - dependency-name: '@opentelemetry/instrumentation'
+        versions: ['>=0.300.0']
+      - dependency-name: '@opentelemetry/sdk-logs'
+        versions: ['>=0.300.0']
     open-pull-requests-limit: 10
