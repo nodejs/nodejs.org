@@ -77,7 +77,7 @@
     "@types/react": "catalog:",
     "concurrently": "10.0.6",
     "cross-env": "catalog:",
-    "css-loader": "7.1.4",
+    "css-loader": "7.1.5",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "7.1.1",
     "eslint-plugin-storybook": "10.3.3",
