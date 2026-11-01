@@ -492,7 +492,7 @@ importers:
     dependencies:
       '@node-core/doc-kit':
         specifier: ^1.2.0
-        version: 1.2.0(@orama/core@1.2.19)(@types/react@19.3.0)(jiti@2.7.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
+        version: 1.2.0(@orama/core@1.2.19)(@types/react@19.3.0)(jiti@2.7.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)(tsx@4.23.15)
       mdast-util-to-string:
         specifier: ^4.0.0
         version: 4.0.0
@@ -709,8 +709,8 @@ importers:
         specifier: ~11.2.3
         version: 11.2.3(postcss@8.5.31)
       postcss-cli:
-        specifier: ^11.0.1
-        version: 11.0.1(jiti@2.7.0)(postcss@8.5.31)(tsx@4.23.15)
+        specifier: ^12.0.0
+        version: 12.0.0(jiti@2.7.0)(postcss@8.5.31)(tsx@4.23.15)(yaml@2.9.1)
       postcss-loader:
         specifier: 8.2.1
         version: 8.2.1(postcss@8.5.31)(typescript@5.9.3)(webpack@5.109.2(@swc/core@1.15.40(@swc/helpers@0.5.23))(clean-css@5.3.3)(esbuild@0.28.1)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.31)(uglify-js@3.19.3))
@@ -5106,6 +5106,10 @@ packages:
     resolution: {integrity: sha512-Qgzu8kfBvo+cA4962jnP1KkS6Dop5NS6g7R5LFYJr4b8Ub94PPQXUksCw9PvXoeXPRRddRNC5C1JQUR2SMGtnA==}
     engines: {node: '>= 14.16.0'}
 
+  chokidar@5.0.0:
+    resolution: {integrity: sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw==}
+    engines: {node: '>= 20.19.0'}
+
   chrome-trace-event@1.0.4:
     resolution: {integrity: sha512-rNjApaLzuwaOTjCiT8lSDdGN1APCiqkChLMJxJPWLunPAt5fy8xgU9/jNOchV84wfIxrA0lRQB7oCT8jrn/wrQ==}
     engines: {node: '>=6.0'}
@@ -7461,6 +7465,13 @@ packages:
     peerDependencies:
       postcss: ^8.0.0
 
+  postcss-cli@12.0.0:
+    resolution: {integrity: sha512-57J2u1NuXuqGXftaK9JFEr/J3vtLzWpdN+RHs8GeeKUlvX7PU18VQJA57t0Rzf4CmbSfQApCwJIPrSFanQu5tQ==}
+    engines: {node: '>=22'}
+    hasBin: true
+    peerDependencies:
+      postcss: ^8.0.0
+
   postcss-load-config@5.1.0:
     resolution: {integrity: sha512-G5AJ+IX0aD0dygOE0yFZQ/huFFMSNneyfp0e3/bT05a8OfPC5FUoZRPfGijUdGOJNMewJiwzcHJXFafFzeKFVA==}
     engines: {node: '>= 18'}
@@ -7474,6 +7485,24 @@ packages:
       postcss:
         optional: true
       tsx:
+        optional: true
+
+  postcss-load-config@6.0.1:
+    resolution: {integrity: sha512-oPtTM4oerL+UXmx+93ytZVN82RrlY/wPUV8IeDxFrzIjXOLF1pN+EmKPLbubvKHT2HC20xXsCAH2Z+CKV6Oz/g==}
+    engines: {node: '>= 18'}
+    peerDependencies:
+      jiti: '>=1.21.0'
+      postcss: '>=8.0.9'
+      tsx: ^4.8.1
+      yaml: ^2.4.2
+    peerDependenciesMeta:
+      jiti:
+        optional: true
+      postcss:
+        optional: true
+      tsx:
+        optional: true
+      yaml:
         optional: true
 
   postcss-loader@8.2.1:
@@ -7797,6 +7826,10 @@ packages:
   readdirp@4.1.2:
     resolution: {integrity: sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg==}
     engines: {node: '>= 14.18.0'}
+
+  readdirp@5.1.1:
+    resolution: {integrity: sha512-Kko+Y5XQ6fM+Ce3dq3m9YGxnacYZYl9cA1wZjaF3Vbry2L3i1qVg8+CAgNPsXRArPMUMCaOR7oa9Nqntc43JKA==}
+    engines: {node: '>= 20.19.0'}
 
   reading-time@1.5.0:
     resolution: {integrity: sha512-onYyVhBNr4CmAxFsKS7bz+uTLRakypIe4R+5A824vBSkQy/hB3fZepoVEf8OVAxzLvK+H/jm9TzpI3ETSm64Kg==}
@@ -10921,13 +10954,13 @@ snapshots:
 
   '@noble/hashes@1.8.0': {}
 
-  '@node-core/doc-kit@1.2.0(@orama/core@1.2.19)(@types/react@19.3.0)(jiti@2.7.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)':
+  '@node-core/doc-kit@1.2.0(@orama/core@1.2.19)(@types/react@19.3.0)(jiti@2.7.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)(tsx@4.23.15)':
     dependencies:
       '@actions/core': 3.0.1
       '@heroicons/react': 2.2.0(react@19.3.1)
       '@minify-html/wasm': 0.18.1
       '@node-core/rehype-shiki': 1.4.1(supports-color@10.2.2)
-      '@node-core/ui-components': 1.6.3(jiti@2.7.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(supports-color@10.2.2)
+      '@node-core/ui-components': 1.6.3(jiti@2.7.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(supports-color@10.2.2)(tsx@4.23.15)
       '@orama/orama': 3.1.18
       '@orama/ui': 1.5.4(@orama/core@1.2.19)(@types/react@19.3.0)(react@19.3.1)(supports-color@10.2.2)
       '@rollup/plugin-virtual': 3.0.2
@@ -10995,7 +11028,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@node-core/ui-components@1.6.3(jiti@2.7.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(supports-color@10.2.2)':
+  '@node-core/ui-components@1.6.3(jiti@2.7.0)(postcss@8.5.31)(react-dom@19.3.1(react@19.3.1))(supports-color@10.2.2)(tsx@4.23.15)':
     dependencies:
       '@heroicons/react': 2.2.0(react@19.2.8)
       '@orama/core': 1.2.19
@@ -14003,6 +14036,10 @@ snapshots:
   chokidar@4.0.3:
     dependencies:
       readdirp: 4.1.2
+
+  chokidar@5.0.0:
+    dependencies:
+      readdirp: 5.1.1
 
   chrome-trace-event@1.0.4: {}
 
@@ -17034,6 +17071,24 @@ snapshots:
       - jiti
       - tsx
 
+  postcss-cli@12.0.0(jiti@2.7.0)(postcss@8.5.31)(tsx@4.23.15)(yaml@2.9.1):
+    dependencies:
+      chokidar: 5.0.0
+      dependency-graph: 1.0.0
+      picocolors: 1.1.1
+      postcss: 8.5.31
+      postcss-load-config: 6.0.1(jiti@2.7.0)(postcss@8.5.31)(tsx@4.23.15)(yaml@2.9.1)
+      postcss-reporter: 7.1.0(postcss@8.5.31)
+      pretty-hrtime: 1.0.3
+      read-cache: 1.0.0
+      slash: 5.1.0
+      tinyglobby: 0.2.17
+      yargs: 18.2.0
+    transitivePeerDependencies:
+      - jiti
+      - tsx
+      - yaml
+
   postcss-load-config@5.1.0(jiti@2.7.0)(postcss@8.5.31)(tsx@4.23.15):
     dependencies:
       lilconfig: 3.1.3
@@ -17042,6 +17097,15 @@ snapshots:
       jiti: 2.7.0
       postcss: 8.5.31
       tsx: 4.23.15
+
+  postcss-load-config@6.0.1(jiti@2.7.0)(postcss@8.5.31)(tsx@4.23.15)(yaml@2.9.1):
+    dependencies:
+      lilconfig: 3.1.3
+    optionalDependencies:
+      jiti: 2.7.0
+      postcss: 8.5.31
+      tsx: 4.23.15
+      yaml: 2.9.1
 
   postcss-loader@8.2.1(postcss@8.5.31)(typescript@5.9.3)(webpack@5.109.2(@swc/core@1.15.40(@swc/helpers@0.5.23))(clean-css@5.3.3)(esbuild@0.28.1)(html-minifier-terser@6.1.0)(lightningcss@1.32.0)(postcss@8.5.31)(uglify-js@3.19.3)):
     dependencies:
@@ -17358,6 +17422,8 @@ snapshots:
       picomatch: 2.3.2
 
   readdirp@4.1.2: {}
+
+  readdirp@5.1.1: {}
 
   reading-time@1.5.0: {}
 
