@@ -102,7 +102,17 @@ const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
         {transformCode(children as ReactElement<PropsWithChildren>, language)}
       </pre>
 
-      {!language || hideFooter || (
+      {hideFooter ? (
+        <BaseButton
+          as={as}
+          className={styles.ghostAction}
+          kind="neutral"
+          onClick={handleCopy}
+        >
+          <ButtonIcon className="size-4" />
+          {copied ? copiedButtonLabel : copyButtonLabel}
+        </BaseButton>
+      ) : !language ? null : (
         <div className={styles.footer}>
           <span className={styles.language}>{language}</span>
 
