@@ -25,7 +25,7 @@ Math.sumPrecise([0.1, 0.2, 0.3]); // 0.6
 
 #### `Intl.Locale.prototype.variants`
 
-The new [`Intl.Locale.prototype.variants`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/variants) method provides access to the variants of a locale.
+The new [`Intl.Locale.prototype.variants`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/variants) getter provides access to the variants of a locale.
 
 ```js
 new Intl.Locale('sl-rozaj-biske').variants; // 'biske-rozaj'
@@ -133,7 +133,7 @@ In Node.js 27, more fatal V8 errors are now handled by Node.js's fatal error han
 
 ### Changes to Promises and async/await
 
-When the callback passed to [**`Promise.try`**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/try) returns a promise, `Promise.try` now returns that promise directly, see [ecma262#3883](https://github.com/tc39/ecma262/pull/3883).
+When the callback passed to [**`Promise.try`**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/try) returns a promise whose `constructor` is `Promise` in the same realm, `Promise.try` now returns that promise directly, see [ecma262#3883](https://github.com/tc39/ecma262/pull/3883).
 
 ```js
 const promise = Promise.resolve(1);
@@ -142,14 +142,30 @@ Promise.try(() => promise) === promise;
 // v27: true
 ```
 
-There are also a few edge cases that have been fixed:
+When ESM with top-level `await` are evaluated, V8 no longer calls `Promise.prototype.then()` in a way that looks up `constructor` and `Symbol.species` on the promise, as the specification requires.
 
-- When ESM with top-level `await` are evaluated, V8 no longer calls `Promise.prototype.then()` in a way that looks up `constructor` and `Symbol.species` on the promise, as the specification requires.
-- Re-entrant `Atomics.wait` on the same thread now throws `TypeError` instead of crashing the process. This should only happen when a debugger evaluates code on a blocked worker.
+### Changes to Atomics
+
+Re-entrant `Atomics.wait` on the same thread now throws `TypeError` instead of crashing the process. This should only happen when a debugger evaluates code on a blocked worker.
+
+`Atomics.notify()`, `Atomics.wait()` and `Atomics.waitAsync()` now [read the length of the typed array before coercing the index](https://chromium-review.googlesource.com/c/v8/v8/+/8268285), as the specification requires. If the coercion leads to a growth of the buffer, an index that is originally out of bounds still results in `RangeError`.
+
+```js
+const buffer = new SharedArrayBuffer(0, { maxByteLength: 4 });
+const array = new Int32Array(buffer);
+Atomics.notify(array, {
+  valueOf() {
+    buffer.grow(4);
+    return 0;
+  },
+});
+// v26: 0
+// v27: RangeError: Invalid atomic access index
+```
 
 ### Changes to Iterator helpers
 
-[`take()` and `drop()` with a limit above 2^53-1 throw `RangeError` and close the iterator](https://github.com/tc39/ecma262/pull/3776).
+Passing a finite limit above `2^53-1` to `take()` and `drop()` [leads to `RangeError` and closes the iterator](https://github.com/tc39/ecma262/pull/3776). An `Infinity` limit is still valid.
 
 ```js
 [1, 2]
@@ -160,7 +176,7 @@ There are also a few edge cases that have been fixed:
 // v27: RangeError: 9007199254740992 must be positive
 ```
 
-`AsyncIterator.prototype[Symbol.asyncDispose]` now calls `return()` with no arguments instead of one `undefined` argument, as the [explicit resource management proposal specifies](https://github.com/tc39/proposal-explicit-resource-management).
+`AsyncIterator.prototype[Symbol.asyncDispose]` now calls `return()` with no arguments instead of an `undefined` argument, as the [explicit resource management proposal specifies](https://github.com/tc39/proposal-explicit-resource-management).
 
 ```js
 const iterator = {
@@ -207,7 +223,7 @@ Negative [lookahead](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 
 ### Changes to Typed arrays
 
-`TypedArray.prototype.subarray()`, when called on a typed array subclass over a resizable ArrayBuffer, now only passes the buffer and the byte offset to the subclass constructor, and omits the third undefined `length`, as the specification requires, so the new view also follows the length of the buffer.
+`TypedArray.prototype.subarray()`, when called on a length-tracking typed array subclass over a resizable ArrayBuffer without an `end` argument, now only passes the buffer and the byte offset to the subclass constructor. It omits the third `undefined` length argument, as the specification requires. This allows the new view to follow the length of the buffer.
 
 ```js
 const calls = [];
@@ -248,7 +264,9 @@ bytes.set([1], -1);
 `await` and `return` inside [static class initialization blocks](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Static_initialization_blocks) after instance members are now a `SyntaxError`.
 
 ```js
-class A { static { return; } }         // SyntaxError in both versions
+// SyntaxError in both versions
+class A { static { return; } }
+
 class B { x = 1; static { return; } }
 // v26: parses
 // v27: SyntaxError
@@ -325,16 +343,18 @@ The [`v8.cachedDataVersionTag()`](https://nodejs.org/api/v8.html#v8cacheddataver
 
 ## V8-related memory changes in Node.js 27
 
-- **The default heap size limit is now larger on machines with 4 GB-15 GB of RAM**. When `--max-old-space-size` is not specified, the default maximum heap size is [half of physical memory/cgroup memory limit clamped between 256 MB and 4 GB](https://chromium-review.googlesource.com/c/v8/v8/+/7735918). Previously this was half of physical memory capped at 2 GB, or if the machine has at least 15 GB of RAM it's capped at 4 GB. On an 8 GB machine, the default limit is now 4 GB instead of 2 GB, and on a 6 GB machine it's now 3 GB instead of 2 GB. Applications that relied on the old default to restrict the amount of memory used should set `--max-old-space-size` explicitly.
+- **The default old-generation size limit is now larger on machines with 4 GB-15 GB of RAM**. When the heap size limit is not specified, the default maximum old-generation size is [half of physical memory/cgroup memory limit clamped between 256 MB and 4 GB](https://chromium-review.googlesource.com/c/v8/v8/+/7735918). Previously this was half of physical memory capped at 2 GB, or if the machine has at least 15 GB of RAM it's capped at 4 GB. On an 8 GB machine, the default old-generation limit is now 4 GB instead of 2 GB, and on a 6 GB machine it's now 3 GB instead of 2 GB. Applications that relied on the old default to restrict the amount of memory used should set `--max-old-space-size` explicitly.
 - **Memory held by Buffers and ArrayBuffers [is now counted in V8's global allocation limit](https://chromium-review.googlesource.com/c/v8/v8/+/7608161).** This changes when garbage collection gets scheduled for applications that allocate a lot of buffers outside the JavaScript heap.
-- **Unused bytecode is now flushed based on time instead of garbage collection count.** The bytecode of a function used to be dropped after it had not run for several major garbage collections. It is now dropped after it has not run for 3 minutes, and is recompiled on the next call. This can change the memory usage pattern of applications with a lot of rarely used code.
+- **Unused bytecode is now flushed based on time instead of garbage collection count.** The bytecode of a function used to be dropped after it had not run for several major garbage collections. It can now be dropped during major garbage collection after it has not run for about 3 minutes, and is recompiled on the next call. This can change the memory usage pattern of applications with a lot of rarely used code.
 - **Each native object now uses more memory**: each JavaScript object that wraps a native resource, such as a socket, file handle, stream, hash or blob, may use about 16 bytes more on the JavaScript heap and about 50 bytes more outside the heap.
-- [**Each isolate now uses ~90 KB more memory**](https://chromium-review.googlesource.com/c/v8/v8/+/7666718), which increases the memory footprint for applications that create many worker threads.
+- [**Each isolate now uses more memory for property lookup caches**](https://chromium-review.googlesource.com/c/v8/v8/+/7666718). In the official Node.js release, each isolate uses about 180 KB more memory. This increases the memory footprint for applications that create many worker threads.
 - **The garbage collection pauses are now shorter in some worst cases**, [reduced from ~45 ms to ~10 ms](https://chromium-review.googlesource.com/c/v8/v8/+/7611758) in V8's benchmarks.
-- **Creating an `Error` is now cheaper** because the stack frame details are only computed when `error.stack` is read.
-- **There are now fewer full garbage collections at startup.** The heap may grow to [32 MB](https://chromium-review.googlesource.com/c/v8/v8/+/8006508) before the first full collection.
+- **Creating an `Error` can now use less memory** because the stack frame details are [only computed when `error.stack` is read](https://chromium-review.googlesource.com/c/v8/v8/+/7673818).
+- **There can now be fewer full garbage collections at startup.** The default initial old-generation allocation limit is now [32 MB](https://chromium-review.googlesource.com/c/v8/v8/+/8006508), which may delay the first full GC, depending on the workload and memory pressure.
 
 ## V8 performance changes in Node.js 27
+
+The performance impact described here can vary depending on platform, workload and build configurations. The numbers referenced below are only relevant to the benchmarks mentioned.
 
 - **Array**
   - `Array.prototype.flat()` is [faster on large arrays](https://chromium-review.googlesource.com/c/v8/v8/+/7526287).
@@ -351,26 +371,29 @@ The [`v8.cachedDataVersionTag()`](https://nodejs.org/api/v8.html#v8cacheddataver
   - Reading properties from objects with many properties or deleted properties is [~10% faster on richards](https://chromium-review.googlesource.com/c/v8/v8/+/7679198) and [~20% faster on espree-wtb from JetStream3](https://chromium-review.googlesource.com/c/v8/v8/+/7785916).
   - Code that reads the same property from different object shapes with the same layout, e.g. instances of different classes with the same fields, [remain fast for longer](https://chromium-review.googlesource.com/c/v8/v8/+/8411367) before falling back to the slower lookup.
   - A regression that made objects created for mocking libraries [slower](https://github.com/vitest-dev/vitest/issues/9492) to write [has been fixed](https://chromium-review.googlesource.com/c/v8/v8/+/8397811).
+  - Rest destructuring without excluded properties, e.g. `const { ...rest } = obj`, is now [faster](https://chromium-review.googlesource.com/c/v8/v8/+/8288124).
 - **Async/promises**
-  - awaiting a promise that is already settled is [faster](https://chromium-review.googlesource.com/c/v8/v8/+/7655405) and [allocates less](https://chromium-review.googlesource.com/c/v8/v8/+/8004613).
+  - Awaiting a promise that is already fulfilled is [faster](https://chromium-review.googlesource.com/c/v8/v8/+/7655405) and [allocates less](https://chromium-review.googlesource.com/c/v8/v8/+/8004613).
   - Async generators are [+6% faster for async-fs on JetStream3](https://chromium-review.googlesource.com/c/v8/v8/+/7687450).
   - Async functions that call themselves recursively [get optimized sooner](https://chromium-review.googlesource.com/c/v8/v8/+/7761796).
 - **RegExp**
   - Regexps are [compiled to machine code when used for the first time](https://chromium-review.googlesource.com/c/v8/v8/+/8018824) instead of after a warmup. Regexps that are run many times can be faster in execution, but regexps that are created and run only once may be slower due to the compilation cost.
   - V8 [no longer turns off regexp optimization after enough regexps had been compiled](https://chromium-review.googlesource.com/c/v8/v8/+/7743527).
-  - Splits on the same string by the same regexp are now [cached](https://chromium-review.googlesource.com/c/v8/v8/+/8173963).
+  - Splits on the same string by the same regexp can now be [cached](https://chromium-review.googlesource.com/c/v8/v8/+/8173963).
   - Regexp literals are [no longer re-validated when a function is compiled lazily](https://chromium-review.googlesource.com/c/v8/v8/+/7665887), +6% for prismjs-startup-es6 on JetStream3.
 - **JSON**
   - `JSON.parse` is now faster on certain inputs, for example [inputs that contain a lot of strings](https://chromium-review.googlesource.com/c/v8/v8/+/7688511) and on [arrays of objects that share the same shape](https://chromium-review.googlesource.com/c/v8/v8/+/8064949).
 - **Math and BigInt**
   - Due to the use of LLVM's libm, some `Math` functions may have different performance characteristics compared to previous versions. The impact varies depending on the platform and the specific function.
   - `Math.random()` [is now better optimized](https://chromium-review.googlesource.com/c/v8/v8/+/7813495).
-  - Repeated modulo division of BigInt by the same divisor is [25% on JetStream3's bigint-noble-ed25519](https://chromium-review.googlesource.com/c/v8/v8/+/7626739), and [even faster for the primes used by most elliptic curves](https://chromium-review.googlesource.com/c/v8/v8/+/8174846). This may be interesting for pure JavaScript cryptography libraries based on BigInt.
+  - Repeated modulo division of BigInt by the same divisor is [25% faster on bigint-noble-ed25519 from JetStream3](https://chromium-review.googlesource.com/c/v8/v8/+/7626739), and [even faster for the primes used by most elliptic curves](https://chromium-review.googlesource.com/c/v8/v8/+/8174846). This may be interesting for pure JavaScript cryptography libraries based on BigInt.
 - **Modules and scripts**
   - Source text scanning has been optimized to be [~3.5% faster for code-load](https://chromium-review.googlesource.com/c/v8/v8/+/7928227) Octane.
   - Resolution of names in ESMs with many imports and exports, e.g. bundled ESM chunks [is now faster](https://chromium-review.googlesource.com/c/v8/v8/+/8259941).
 - **Maglev**
   - Many improvements have been made to V8's [Maglev optimizing compiler](https://v8.dev/blog/maglev), resulting in better performance for various JavaScript patterns e.g. [+6% for air on JetStream3](https://chromium-review.googlesource.com/c/v8/v8/+/8192917), [+5% for lazy-collections on JetStream3](https://chromium-review.googlesource.com/c/v8/v8/+/8380204).
+  - Iteration over `Map` and `Set` can now be [faster](https://chromium-review.googlesource.com/c/v8/v8/+/8255490).
+  - More `DataView` accessors can now be [inlined](https://chromium-review.googlesource.com/c/v8/v8/+/8314709).
 
 ## V8 WebAssembly changes in Node.js 27
 
@@ -378,6 +401,7 @@ The [`v8.cachedDataVersionTag()`](https://nodejs.org/api/v8.html#v8cacheddataver
 - `WebAssembly.Function` behind `--experimental-wasm-type-reflection` from [the type reflection proposal](https://github.com/WebAssembly/js-types) was removed.
 - `--experimental-wasm-<name>` flags are now renamed `--wasm-<name>`. The old names are no longer accepted.
 - `--wasm-lazy-validation` was removed. Invalid functions are now always reported when a module is compiled and this can no longer be disabled.
+- `--wasm-async-compilation` was [removed](https://chromium-review.googlesource.com/c/v8/v8/+/7960065), which means there's no longer a `--no-wasm-async-compilation` that makes the asynchronous compilation API synchronous.
 - `--experimental-wasm-exnref`, `--experimental-wasm-branch-hinting` and `--experimental-wasm-rab-integration` have been removed, as the features they enabled are now always on.
 - The `memory.copy` and `memory.fill` instructions, which are typically used in compiled code for `memcpy` and `memset`, are [now inlined in optimized code](https://chromium-review.googlesource.com/c/v8/v8/+/7879404) instead of calling into the runtime, resulting in a ~12% speedup on a bulk memory benchmark.
 - Calling exported functions that take or return several reference types is [about twice as fast on a microbenchmark](https://chromium-review.googlesource.com/c/v8/v8/+/8303815).
@@ -391,18 +415,19 @@ The [`v8.cachedDataVersionTag()`](https://nodejs.org/api/v8.html#v8cacheddataver
 Heap snapshots now include more detailed information about the JavaScript heap. **Taking a snapshot can take about twice as long and the file is about twice as large**.
 
 - **Heap snapshots now include internal objects and numeric values.** The `exposeInternals` and `exposeNumericValues` options of `v8.writeHeapSnapshot()` and `v8.getHeapSnapshot()` are ignored and considered always true. This may also increase the size of the snapshots taken.
-- **Heap snapshots now contain the full source of every loaded script** instead of only the first 1024 characters. They also include new `scopes`, `scope_context_vars` and `scope_uses` sections that describe which variables each scope uses. Newer DevTools use the scope data to find unused captured variables.
+- **Heap snapshots now contain the full source of scripts** instead of only the first 1024 characters. They also include new `scopes`, `scope_context_vars` and `scope_uses` sections that describe the variables in the scopes. Newer versions of DevTools use these data to find unused captured variables. This can expose more application code and secrets embedded in source, and as usual, heap snapshots should be treated as sensitive data.
 - The global object and the global proxy are now named `global [JSGlobalObject]` and `global [JSGlobalProxy]` instead of `global (global)` and `global (global*)`. Tools that parse the older names from the heap snapshots should be updated.
 
 ### CPU and heap profiles
 
 - Function names and URLs are now escaped correctly in profiles serialized as JSON.
 - `perf inject` can now see inlined frames from other scripts instead of `[unknown]` when using `--perf-prof`.
-- Profile retrieval can be faster by [about 30%](https://chromium-review.googlesource.com/c/v8/v8/+/8449311) due to more efficient use of strings.
+- Sampling heap profile retrieval can be faster by [about 30%](https://chromium-review.googlesource.com/c/v8/v8/+/8449311) in local benchmarks due to more efficient use of strings.
 
 ### Inspector and debugging
 
 - `Debugger.setInstrumentationBreakpoint` now works for Node.js CommonJS modules.
+- **Support for live editing via the inspector has been fully removed.** [`Debugger.setScriptSource`](https://chromium-review.googlesource.com/c/v8/v8/+/8238091) now always fails with "setScriptSource functionality no longer available". This feature was previously deprecated and put behind the `--inspector-live-edit` flag, it has now been completely removed.
 - New protocol capabilities:
   - `Debugger.evaluateOnCallFrame` accepts a `scopeNumber` to evaluate in an outer scope.
   - Scopes now report an experimental `empty` flag.
@@ -438,6 +463,7 @@ Heap snapshots now include more detailed information about the JavaScript heap. 
 - `--js-atomics-pause`
 - `--js-regexp-duplicate-named-groups`
 - `--js-regexp-modifiers`
+- `--bytecode-old-age`
 - `--flush-code-based-on-time`
 - `--detailed-error-stack-trace`
 - `--heap-profiler-show-hidden-objects`
@@ -448,3 +474,4 @@ Heap snapshots now include more detailed information about the JavaScript heap. 
 - `--max-fast-properties`
 - `--validate-asm`
 - `--wasm-lazy-validation`
+- `--wasm-async-compilation`
