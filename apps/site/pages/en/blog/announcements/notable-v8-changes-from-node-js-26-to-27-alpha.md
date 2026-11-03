@@ -264,7 +264,9 @@ bytes.set([1], -1);
 ```js
 // SyntaxError in both versions
 class A { static { return; } }
+```
 
+```js
 class B { x = 1; static { return; } }
 // v26: parses
 // v27: SyntaxError
