@@ -55,4 +55,4 @@ There is no Content Security Policy on the Website at the moment. If one is adde
 
 ## Testing
 
-There are no unit tests for the integration yet. When testing manually, avoid clicking real ads repeatedly; prefer intercepting `https://srv.carbonads.net/ads/*.json` with fixtures (e.g. in Playwright or the browser's developer tools).
+End-to-end tests live in `apps/site/tests/e2e/carbon-ads.spec.ts`, and impression accounting is unit tested in `apps/site/hooks/__tests__/useCarbonAd.test.jsx`. When testing manually, avoid clicking real ads repeatedly; prefer intercepting `https://srv.carbonads.net/ads/*.json` with fixtures (e.g. in Playwright or the browser's developer tools).
