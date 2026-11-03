@@ -469,13 +469,13 @@ Heap snapshots now include more detailed information about the JavaScript heap. 
 
 ### Renamed
 
-| Old                                         | New                                            |
-| ------------------------------------------- | ---------------------------------------------- |
-| `--experimental-wasm-<name>`                | `--wasm-<name>`                                |
-| `--experimental-wasm-simd-opt` (arm64 only) | [`--future-wasm-simd-opt`](https://chromium-review.googlesource.com/c/v8/v8/+/7993156) |
+| Old                                         | New                                                                                                   |
+| ------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `--experimental-wasm-<name>`                | `--wasm-<name>`                                                                                       |
+| `--experimental-wasm-simd-opt` (arm64 only) | [`--future-wasm-simd-opt`](https://chromium-review.googlesource.com/c/v8/v8/+/7993156)                |
 | `--abort-on-contradictory-flags`            | [`--flag-processing-mode=abort-on-error`](https://chromium-review.googlesource.com/c/v8/v8/+/7761985) |
-| `--exit-on-contradictory-flags`             | `--flag-processing-mode=exit-on-error`         |
-| `--allow-overwriting-for-next-flag`         | `--flag-processing-mode=ignore-contradictions` |
+| `--exit-on-contradictory-flags`             | `--flag-processing-mode=exit-on-error`                                                                |
+| `--allow-overwriting-for-next-flag`         | `--flag-processing-mode=ignore-contradictions`                                                        |
 
 ### Removed
 
