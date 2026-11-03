@@ -133,7 +133,7 @@ In Node.js 27, more fatal V8 errors are now handled by Node.js's fatal error han
 
 ### Changes to Promises and async/await
 
-When the callback passed to [**`Promise.try`**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/try) returns a promise whose `constructor` is `Promise` in the same realm, `Promise.try` now returns that promise directly, see [ecma262#3883](https://github.com/tc39/ecma262/pull/3883).
+When the callback passed to [`Promise.try`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/try) returns a promise whose `constructor` is `Promise` in the same realm, `Promise.try` now returns that promise directly, see [ecma262#3883](https://github.com/tc39/ecma262/pull/3883).
 
 ```js
 const promise = Promise.resolve(1);
