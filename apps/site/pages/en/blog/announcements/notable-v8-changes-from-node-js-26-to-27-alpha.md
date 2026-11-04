@@ -131,7 +131,7 @@ typeof Object.create(err).stack; // No longer looks up the prototype chain
 
 ### Changes to Promises and async/await
 
-When an [ES module with top-level `await`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#top_level_await) is evaluated, V8 [no longer calls](https://chromium-review.googlesource.com/c/v8/v8/+/7822979) `Promise.prototype.then()` in a way that looks up `constructor` and `Symbol.species` on the promise, as the specification requires.
+When an [ES module with top-level `await`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#top_level_await) is evaluated, as the specification requires, V8 [no longer calls](https://chromium-review.googlesource.com/c/v8/v8/+/7822979) `Promise.prototype.then()` in a way that looks up `constructor` and `Symbol.species` on the promise.
 
 When the callback passed to [`Promise.try`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/try) returns a promise whose `constructor` is `Promise` in the same realm, `Promise.try` [now returns that promise directly](https://chromium-review.googlesource.com/c/v8/v8/+/8251141), see [ecma262#3883](https://github.com/tc39/ecma262/pull/3883).
 
