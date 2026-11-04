@@ -5,4 +5,4 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.41.0/install.sh | bash
 \. "$HOME/.nvm/nvm.sh"
 
 # Download and install Node.js:
-nvm install ${props.release.major}
+nvm install ${props.release.status === 'Alpha' ? '--only=alpha ' : ''}${props.release.major}
