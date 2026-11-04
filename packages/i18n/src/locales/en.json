@@ -256,6 +256,7 @@
         "platformInfo": {
           "default": "{platform} and their installation scripts are not maintained by the Node.js project.",
           "nvm": "\"nvm\" is a cross-platform Node.js version manager.",
+          "nvmWindows": "\"nvm-windows\" is a Node.js version manager dedicated to Windows.",
           "fnm": "\"fnm\" is a cross-platform Node.js version manager.",
           "brew": "Homebrew is a package manager for macOS and Linux.",
           "choco": "Chocolatey is a package manager for Windows.",
