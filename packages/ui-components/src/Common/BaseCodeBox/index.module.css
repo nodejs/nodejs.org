@@ -74,7 +74,7 @@
     }
 
     &[class*='no-footer'] {
-      @apply pr-24;
+      @apply pr-12;
     }
   }
 
@@ -83,10 +83,7 @@
       top-2
       right-2
       z-10
-      px-2.5
-      py-1
-      text-xs
-      font-medium
+      p-1.5
       opacity-0
       transition-opacity
       duration-150;

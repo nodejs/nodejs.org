@@ -1,13 +1,30 @@
-import { describe, it } from 'node:test';
+import { afterEach, beforeEach, describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { render, fireEvent, screen } from '@testing-library/react';
 
 import BaseCodeBox from '../index';
 
-navigator.clipboard = { writeText: () => Promise.resolve() };
-
 describe('BaseCodeBox', () => {
+  let originalClipboard;
+
+  beforeEach(() => {
+    originalClipboard = navigator.clipboard;
+    Object.defineProperty(navigator, 'clipboard', {
+      value: { writeText: () => Promise.resolve() },
+      writable: true,
+      configurable: true,
+    });
+  });
+
+  afterEach(() => {
+    Object.defineProperty(navigator, 'clipboard', {
+      value: originalClipboard,
+      writable: true,
+      configurable: true,
+    });
+  });
+
   it('renders code box with language and footer copy button by default', () => {
     render(
       <BaseCodeBox
@@ -38,10 +55,10 @@ describe('BaseCodeBox', () => {
     // Language in footer toolbar should NOT be rendered
     assert.strictEqual(screen.queryByText('bash'), null);
 
-    // Ghost copy button should be rendered
-    const button = screen.getByRole('button');
+    // Ghost copy button should be rendered with accessible label and no visible text
+    const button = screen.getByRole('button', { name: 'Copy code' });
     assert.ok(button);
-    assert.ok(screen.getByText('Copy code'));
+    assert.strictEqual(screen.queryByText('Copy code'), null);
   });
 
   it('copies code content when ghost copy button is clicked', async t => {
@@ -58,10 +75,11 @@ describe('BaseCodeBox', () => {
       </BaseCodeBox>
     );
 
-    const button = screen.getByRole('button');
+    const button = screen.getByRole('button', { name: 'Copy code' });
     fireEvent.click(button);
 
-    assert.ok(await screen.findByText('Copied!'));
+    const copiedButton = await screen.findByRole('button', { name: 'Copied!' });
+    assert.ok(copiedButton);
     assert.strictEqual(navigator.clipboard.writeText.mock.callCount(), 1);
   });
 });
