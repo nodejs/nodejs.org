@@ -7403,8 +7403,8 @@ packages:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
 
-  piscina@5.1.4:
-    resolution: {integrity: sha512-7uU4ZnKeQq22t9AsmHGD2w4OYQGonwFnTypDypaWi7Qr2EvQIFVtG8J5D/3bE7W123Wdc9+v4CZDu5hJXVCtBg==}
+  piscina@5.3.2:
+    resolution: {integrity: sha512-vv7l/mM7B9WgrhDaudIqv1x6v4LOBRYYmpWGdWushhpbCmVHp11sUB2v4hj1CAeTGXVxuZFz6xOU1RalAiPKfQ==}
     engines: {node: '>=20.x'}
 
   pkg-dir@4.2.0:
@@ -10966,7 +10966,7 @@ snapshots:
       hastscript: 9.0.1
       lightningcss-wasm: 1.32.0
       mdast-util-slice-markdown: 2.0.1
-      piscina: 5.1.4
+      piscina: 5.3.2
       preact: 10.29.0
       preact-render-to-string: 6.6.7(preact@10.29.0)
       reading-time: 1.5.0
@@ -16996,7 +16996,7 @@ snapshots:
 
   pify@2.3.0: {}
 
-  piscina@5.1.4:
+  piscina@5.3.2:
     optionalDependencies:
       '@napi-rs/nice': 1.1.1
 
