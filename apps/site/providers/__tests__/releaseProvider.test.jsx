@@ -43,3 +43,34 @@ describe('ReleaseProvider', () => {
     assert.ok(getByText('Child Provider'));
   });
 });
+
+describe('ReleaseProvider with a detected OS', () => {
+  it('selects the detected OS and platform', async () => {
+    const { DetectedOSContext } =
+      await import('#site/providers/detectedOSProvider');
+    const { ReleaseContext } = await import('#site/providers/releaseProvider');
+    const { use } = await import('react');
+
+    const Selection = () => {
+      const { os, platform } = use(ReleaseContext);
+
+      return <span>{`${os}/${platform}`}</span>;
+    };
+
+    const initialRelease = { versionWithPrefix: 'v14.17.0' };
+
+    const { findByText } = render(
+      <DetectedOSContext
+        value={{ os: 'MAC', architecture: 'arm', bitness: '64' }}
+      >
+        <ReleasesProvider releases={[initialRelease]} snippets={[]}>
+          <ReleaseProvider initialRelease={initialRelease}>
+            <Selection />
+          </ReleaseProvider>
+        </ReleasesProvider>
+      </DetectedOSContext>
+    );
+
+    assert.ok(await findByText('MAC/arm64'));
+  });
+});

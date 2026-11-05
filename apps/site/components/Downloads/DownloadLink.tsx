@@ -1,22 +1,22 @@
-import { getClientContext } from '#site/client-context';
 import LinkWithArrow from '#site/components/Common/LinkWithArrow';
 import { getNodeDownloadUrl } from '#site/util/url';
-import { getUserPlatform } from '#site/util/userAgent';
 
 import type { DownloadKind, NodeRelease } from '#site/types';
+import type { DownloadOptions } from '#site/util/url';
 import type { FC, PropsWithChildren } from 'react';
 
-type DownloadLinkProps = { release: NodeRelease; kind?: DownloadKind };
+type DownloadLinkProps = { release: NodeRelease; kind?: DownloadKind } & Pick<
+  DownloadOptions,
+  'os' | 'platform'
+>;
 
 const DownloadLink: FC<PropsWithChildren<DownloadLinkProps>> = ({
   release: { versionWithPrefix },
   kind = 'installer',
+  os,
+  platform,
   children,
 }) => {
-  const { os, bitness, architecture } = getClientContext();
-
-  const platform = getUserPlatform(architecture, bitness);
-
   const downloadLink = getNodeDownloadUrl({
     versionWithPrefix,
     os,

@@ -1,49 +1,27 @@
-'use client';
-
 import LanguageDropdown from '@node-core/ui-components/Common/LanguageDropDown';
-import Skeleton from '@node-core/ui-components/Common/Skeleton';
 import SkipToContentButton from '@node-core/ui-components/Common/SkipToContentButton';
 import NavBarContainer from '@node-core/ui-components/Containers/NavBar';
 // TODO(@AvivKeller): I don't like that we are importing styles from another module
 import styles from '@node-core/ui-components/Containers/NavBar/index.module.css';
 import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
 import { availableLocales } from '@node-core/website-i18n';
-import dynamic from 'next/dynamic';
-import { useLocale, useTranslations } from 'next-intl';
-import { useTheme } from 'next-themes';
+import { getLocale, getTranslations } from 'next-intl/server';
 
+import { getClientContext } from '#site/client-context';
 import Link from '#site/components/Link';
 import Search from '#site/components/Search';
 import SiteLogo from '#site/components/SiteLogo';
 import WebsiteBanner from '#site/components/WebsiteBanner';
-import useSiteNavigation from '#site/hooks/useSiteNavigation';
-import { useRouter, usePathname } from '#site/navigation.mjs';
+import { getTopNavigation } from '#site/util/navigation';
 
-import type { Theme } from '@node-core/ui-components/Common/ThemeToggle';
-import type { SimpleLocaleConfig } from '@node-core/ui-components/types';
 import type { FC } from 'react';
 
-const ThemeToggle = dynamic(
-  () => import('@node-core/ui-components/Common/ThemeToggle'),
-  {
-    ssr: false,
-    loading: () => (
-      <Skeleton className={styles.themeToggleSkeleton} loading={true} />
-    ),
-  }
-);
+import ThemeToggle from './ThemeToggle';
 
-const NavBar: FC = () => {
-  const { navigationItems } = useSiteNavigation();
-  const { theme, setTheme } = useTheme();
-  const { replace } = useRouter();
-  const pathname = usePathname();
-  const t = useTranslations();
-
-  const locale = useLocale();
-
-  const changeLanguage = (locale: SimpleLocaleConfig) =>
-    replace(pathname!, { locale: locale.code });
+const NavBar: FC = async () => {
+  const t = await getTranslations();
+  const locale = await getLocale();
+  const { pathname } = getClientContext();
 
   return (
     <div>
@@ -54,8 +32,8 @@ const NavBar: FC = () => {
       <WebsiteBanner section="index" />
 
       <NavBarContainer
-        navItems={navigationItems.map(
-          ([, { label, link, target, accent }]) => ({
+        navItems={getTopNavigation(t).map(
+          ({ label, link, target, accent }) => ({
             link,
             text: label,
             target,
@@ -72,8 +50,6 @@ const NavBar: FC = () => {
         <Search />
 
         <ThemeToggle
-          onChange={setTheme}
-          currentTheme={(theme as Theme) ?? 'system'}
           ariaLabel={t('components.header.buttons.theme')}
           themeLabels={{
             system: t('components.header.buttons.themeSystem'),
@@ -83,7 +59,8 @@ const NavBar: FC = () => {
         />
 
         <LanguageDropdown
-          onChange={changeLanguage}
+          href={pathname}
+          as={Link}
           availableLanguages={availableLocales}
           currentLanguage={locale}
           ariaLabel={t('components.common.languageDropdown.label')}

@@ -14,9 +14,6 @@ const mockContext = {
     words: 200,
   },
   filename: 'sample-file.md',
-  os: 'OTHER',
-  architecture: 'x64',
-  bitness: 64,
 };
 
 describe('assignClientContext', () => {

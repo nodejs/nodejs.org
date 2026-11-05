@@ -2,10 +2,12 @@
 
 import { createContext, use, useEffect, useMemo, useReducer } from 'react';
 
+import { DetectedOSContext } from '#site/providers/detectedOSProvider';
 import reducer, {
   getActions,
   releaseState,
 } from '#site/reducers/releaseReducer';
+import { getUserPlatform } from '#site/util/userAgent';
 
 import type { NodeRelease } from '#site/types';
 import type * as Types from '#site/types/release';
@@ -33,6 +35,7 @@ export const ReleaseProvider: FC<
 > = ({ children, initialRelease }) => {
   const { releases } = use(ReleasesContext);
   const parentProvider = use(ReleaseContext);
+  const { os, architecture, bitness } = use(DetectedOSContext);
 
   const [state, dispatch] = useReducer(reducer, {
     ...releaseState,
@@ -43,6 +46,19 @@ export const ReleaseProvider: FC<
   });
 
   const actions = useMemo(() => getActions(dispatch), [dispatch]);
+
+  // The detected OS and platform seed the selection once they are known
+  useEffect(() => {
+    if (os !== 'LOADING') {
+      actions.setOS(os);
+    }
+  }, [actions, os]);
+
+  useEffect(() => {
+    if (architecture && bitness) {
+      actions.setPlatform(getUserPlatform(architecture, bitness));
+    }
+  }, [actions, architecture, bitness]);
 
   useEffect(() => {
     // This allows us to nest one Release Provider unto another (whenever possible)

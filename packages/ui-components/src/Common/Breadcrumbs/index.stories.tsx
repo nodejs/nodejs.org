@@ -71,6 +71,15 @@ export const Truncate: Story = {
   },
 };
 
+export const TruncateOnMobile: Story = {
+  args: {
+    ...Truncate.args,
+    maxLength: 4,
+    mobileMaxLength: 2,
+  },
+  globals: { viewport: { value: 'small' } },
+};
+
 export const HiddenHome: Story = {
   args: {
     hideHome: true,

@@ -27,47 +27,33 @@
       w-full
       flex-col
       gap-1;
-  }
 
-  .summary {
-    @apply flex
-      cursor-pointer
-      items-center
-      justify-between
-      rounded-md
-      px-2
-      py-1
-      text-sm
-      font-semibold
-      text-neutral-800
-      select-none
-      hover:bg-neutral-100
-      dark:text-neutral-200
-      hover:dark:bg-neutral-900;
+    > summary {
+      @apply rounded-md
+        px-2
+        py-1
+        text-sm
+        font-semibold
+        text-neutral-800
+        hover:bg-neutral-100
+        dark:text-neutral-200
+        hover:dark:bg-neutral-900;
 
-    list-style: none;
-
-    &::-webkit-details-marker {
-      display: none;
+      svg {
+        @apply size-3
+          text-neutral-500
+          dark:text-neutral-200;
+      }
     }
 
-    .chevron {
-      @apply size-3
-        shrink-0
-        text-neutral-500
-        motion-safe:transition-transform
-        dark:text-neutral-200;
-    }
-  }
-
-  .subGroup[open] > .summary {
-    @apply text-brand-600
-      dark:text-brand-400;
-
-    .chevron {
+    &[open] > summary {
       @apply text-brand-600
-        dark:text-brand-400
-        rotate-180;
+        dark:text-brand-400;
+
+      svg {
+        @apply text-brand-600
+          dark:text-brand-400;
+      }
     }
   }
 
