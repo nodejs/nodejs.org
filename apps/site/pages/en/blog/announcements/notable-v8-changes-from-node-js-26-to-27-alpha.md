@@ -1,5 +1,5 @@
 ---
-date: '2026-11-02T12:00:00.000Z'
+date: '2026-11-05T12:00:00.000Z'
 category: announcements
 title: Notable V8 changes from Node.js 26 to 27 (Alpha)
 layout: blog-post
