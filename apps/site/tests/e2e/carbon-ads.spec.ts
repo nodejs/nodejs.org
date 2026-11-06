@@ -98,4 +98,30 @@ test.describe('Carbon Ads', () => {
 
     expect(requests).toEqual([`/ads/${zones.top}.json`]);
   });
+
+  test('should request the Sidebar from each layout breakpoint', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1000, height: 800 });
+
+    const requests = await mockAds(page);
+
+    // Between `ml` and `xl`, only blog posts have a right-hand column
+    await page.goto('/en/about');
+    await expect(adLinks(page)).toHaveCount(1);
+
+    expect(requests).toEqual([`/ads/${zones.top}.json`]);
+
+    requests.length = 0;
+
+    await page.goto(
+      '/en/blog/announcements/diving-into-the-nodejs-website-redesign'
+    );
+    await expect(adLinks(page)).toHaveCount(2);
+
+    expect(requests.sort()).toEqual([
+      `/ads/${zones.sidebar}.json`,
+      `/ads/${zones.top}.json`,
+    ]);
+  });
 });

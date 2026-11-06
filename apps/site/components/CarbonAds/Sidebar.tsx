@@ -3,13 +3,22 @@
 import classNames from 'classnames';
 
 import useCarbonAd, { adColors } from '#site/hooks/useCarbonAd';
+import useClientContext from '#site/hooks/useClientContext';
 
 import type { FC } from 'react';
 
 import styles from './index.module.css';
 
 const CarbonSidebar: FC = () => {
-  const { ad, ref } = useCarbonAd('CWBI6KJU', '(min-width: 1280px)');
+  const { frontmatter } = useClientContext();
+
+  // Must match where each layout's grid gives the MetaBar a right-hand column
+  const media =
+    frontmatter.layout === 'blog-post'
+      ? '(min-width: 896px)'
+      : '(min-width: 1280px)';
+
+  const { ad, ref } = useCarbonAd('CWBI6KJU', media);
 
   if (!ad) {
     return null;

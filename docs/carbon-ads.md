@@ -7,12 +7,12 @@ The Website shows [Carbon Ads](https://www.carbonads.net/) through the OpenJS Fo
 | Format  | Zone key   | Where                                                       |
 | ------- | ---------- | ----------------------------------------------------------- |
 | Banner  | `CWBI6KJY` | Full width, above page content, on the layouts listed below |
-| Sidebar | `CWBI6KJU` | Below the table of contents, from the `xl` breakpoint       |
+| Sidebar | `CWBI6KJU` | Below the table of contents, from the breakpoints below     |
 
 | Layout                   | Banner | Sidebar                   |
 | ------------------------ | ------ | ------------------------- |
 | `about`, `article`       | Yes    | From the `xl` breakpoint  |
-| `blog-post`              | Yes    | From the `xl` breakpoint  |
+| `blog-post`              | Yes    | From the `ml` breakpoint  |
 | `blog-category`          | Yes    | No (no right-hand column) |
 | `download`               | **No** | **No**                    |
 | `download-archive`       | **No** | **No**                    |
@@ -21,7 +21,7 @@ The Website shows [Carbon Ads](https://www.carbonads.net/) through the OpenJS Fo
 
 The homepage never renders any ad markup, reserves no space and makes no ad requests. Layouts opt in explicitly through `<CarbonTopBar />` before their main content. The Sidebar is rendered inside `<MetaBar />` (`apps/site/components/MetaBar.tsx`), so every layout that uses it shows the Sidebar.
 
-On narrower screens the Sidebar is neither shown nor requested (the Top Bar covers those views). Its breakpoint is hard-coded as `(min-width: 1280px)` in `apps/site/components/CarbonAds/Sidebar.tsx` and must match the layout grids. Resizing the window back above the breakpoint requests a new Sidebar ad, which records another impression.
+On narrower screens the Sidebar is neither shown nor requested (the Top Bar covers those views). Its breakpoints are hard-coded in `apps/site/components/CarbonAds/Sidebar.tsx`, as `(min-width: 896px)` for `blog-post` and `(min-width: 1280px)` for other layouts, and must match the layout grids. Resizing the window back above the breakpoint requests a new Sidebar ad, which records another impression.
 
 Learn (`/learn`) and the API docs (`/api`, `/docs`) are separate applications and are not affected by this integration.
 
