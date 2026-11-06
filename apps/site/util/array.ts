@@ -12,8 +12,8 @@ export const shuffle = async <T>(
   for (let i = shuffled.length - 1; i > 0; i--) {
     // Use hash bytes to generate deterministic "random" index
     const hashIndex = (i + seed) % 32;
-    // Normalize to 0-1
-    const randomValue = hash[hashIndex] / 255;
+    // Normalize to [0, 1), since a value of 1 would put `j` out of bounds
+    const randomValue = hash[hashIndex] / 256;
 
     const j = Math.floor(randomValue * (i + 1));
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
