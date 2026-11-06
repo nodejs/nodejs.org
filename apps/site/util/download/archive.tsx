@@ -57,7 +57,7 @@ const getCompatiblePlatforms = (
     return items
       .filter(({ compatibility }) => {
         // In the download constants file (apps/site/util/download/constants.json),
-        //  if no compatibility is defined as a semver, we treat it as supporting all
+        //  if no semver compatibility is defined, we treat it as supporting all
         //  versions by default.
         if (!compatibility.semver) {
           return true;

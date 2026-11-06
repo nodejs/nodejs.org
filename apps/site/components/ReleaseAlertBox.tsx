@@ -19,7 +19,7 @@ const ReleaseAlertBox: FC<ReleaseAlertBoxProps> = ({ release, releases }) => {
       return (
         <AlertBox
           title={t('components.common.alertBox.warning')}
-          level="warning"
+          level="danger"
           size="small"
         >
           {t.rich('layouts.download.codeBox.unsupportedVersionWarning', {

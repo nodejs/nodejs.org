@@ -1,5 +1,13 @@
 # @node-core/website-i18n
 
+## 2.0.2
+
+### Patch Changes
+
+- [#9249](https://github.com/nodejs/nodejs.org/pull/9249) [`4e6624a`](https://github.com/nodejs/nodejs.org/commit/4e6624ac134d0edac01c32d37a7cbf253cc90116) Thanks [@nodejs-crowdin](https://github.com/nodejs-crowdin)! - Update translations from Crowdin.
+
+- [#9246](https://github.com/nodejs/nodejs.org/pull/9246) [`d30a2f9`](https://github.com/nodejs/nodejs.org/commit/d30a2f98fa008df930e6805d7029db028bfc2fc8) Thanks [@ovflowd](https://github.com/ovflowd)! - Add the Latest Alpha footer pill label.
+
 ## 2.0.1
 
 ### Patch Changes

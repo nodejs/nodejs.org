@@ -1,22 +1,43 @@
-import { transformTypeToReferenceLink } from '@node-core/doc-kit/src/generators/metadata/utils/transformers.mjs';
-import { QUERIES } from '@node-core/doc-kit/src/utils/queries/index.mjs';
+import { resolveTypeReference } from '@doc-kit/core/src/generators/metadata/utils/transformers.mjs';
 import { lintRule } from 'unified-lint-rule';
 import { visit } from 'unist-util-visit';
 
+const TYPE_RE = /(\{|<)(?! )[^<({})>]+(?! )(\}|>)/g;
+// Excludes HTML comments, closing tags and tags with attributes
+const HTML_TYPE_RE = /^<[^\s!/=]+>$/;
 const MATCH_RE = /\s\||\| /g;
 const REPLACE_RE = /\s*\| */g;
 
 const isTypeNode = node => {
   if (node.type === 'text') {
-    return QUERIES.normalizeTypes.test(node.value);
+    return TYPE_RE.test(node.value);
   }
 
   if (node.type === 'html') {
-    return node.value.match(QUERIES.normalizeTypes)?.includes(node.value);
+    return (
+      HTML_TYPE_RE.test(node.value) &&
+      node.value.match(TYPE_RE)?.includes(node.value)
+    );
   }
 
   return false;
 };
+
+/**
+ * Whether at least one member of a `{type}` reference links somewhere
+ * @param {string} type
+ * @param {Record<string, string>} typeMap
+ * @returns {boolean}
+ */
+const isResolvable = (type, typeMap) =>
+  type
+    .slice(1, -1)
+    .split('|')
+    .some(piece => {
+      const name = piece.trim().replace(/\[\]$/, '');
+
+      return name.length > 0 && resolveTypeReference(name, typeMap) !== '';
+    });
 
 /**
  * Ensures that all type references are valid
@@ -24,7 +45,7 @@ const isTypeNode = node => {
  */
 const invalidTypeReference = (tree, vfile, { typeMap = {} }) => {
   visit(tree, isTypeNode, node => {
-    const types = node.value.match(QUERIES.normalizeTypes);
+    const types = node.value.match(TYPE_RE);
 
     types.forEach(type => {
       // Ensure wrapped in {}
@@ -50,7 +71,7 @@ const invalidTypeReference = (tree, vfile, { typeMap = {} }) => {
         node.value = node.value.replace(type, normalized);
       }
 
-      if (transformTypeToReferenceLink(type, typeMap) === type) {
+      if (!isResolvable(type, typeMap)) {
         vfile.message(`Invalid type reference: ${type}`, node);
       }
     });

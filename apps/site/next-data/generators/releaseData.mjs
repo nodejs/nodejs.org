@@ -35,11 +35,10 @@ const generateReleaseData = async () => {
     const latestVersion = versions[0];
     const initialVersion = versions[versions.length - 1];
 
+    const { maintenance, end } = major.support.phases.dates;
+
     // Get the major release status based on our Release Schedule
-    const status = getNodeReleaseStatus(
-      latestVersion,
-      major.support.phases.dates.end
-    );
+    const status = getNodeReleaseStatus(latestVersion, end);
 
     const minorVersions = Object.entries(major.releases).map(([, release]) => ({
       modules: release.modules.version || '',
@@ -52,6 +51,7 @@ const generateReleaseData = async () => {
 
     return {
       status,
+      isMaintenance: status === 'LTS' && new Date() >= new Date(maintenance),
       major: latestVersion.semver.major,
       version: latestVersion.semver.raw,
       versionWithPrefix: `v${latestVersion.semver.raw}`,

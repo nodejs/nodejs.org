@@ -31,7 +31,7 @@ const statuses = [
   {
     status: 'EOL',
     path: '/download',
-    badgeKind: 'warning',
+    badgeKind: 'error',
     versions: ['v18.0.0', 'v16.0.0'],
   },
   {
@@ -49,7 +49,7 @@ const statuses = [
   {
     status: 'Alpha',
     path: '/download/alpha',
-    badgeKind: 'default',
+    badgeKind: 'warning',
     versions: ['v26.0.0-alpha.1', 'v26.0.0-alpha.2'],
   },
 ];
@@ -58,7 +58,7 @@ const releases = statuses.flatMap(({ status, versions }) =>
   versions.map(versionWithPrefix => ({ versionWithPrefix, status }))
 );
 
-const renderDropdown = (release = releases[0]) => {
+const renderDropdown = (release = releases[0], allReleases = releases) => {
   const Dropdown = () => {
     const [version, updateVersion] = useState(release.versionWithPrefix);
     setVersion.mock.mockImplementation(updateVersion);
@@ -66,7 +66,7 @@ const renderDropdown = (release = releases[0]) => {
     return (
       <ReleaseContext
         value={{
-          release: releases.find(
+          release: allReleases.find(
             candidate => candidate.versionWithPrefix === version
           ),
           setVersion,
@@ -78,7 +78,7 @@ const renderDropdown = (release = releases[0]) => {
   };
 
   render(
-    <ReleasesContext value={{ releases, snippets: [] }}>
+    <ReleasesContext value={{ releases: allReleases, snippets: [] }}>
       <Dropdown />
     </ReleasesContext>
   );
@@ -180,4 +180,22 @@ describe('VersionDropdown', () => {
       }
     });
   }
+
+  it('provides the neutral badge for LTS versions in maintenance', () => {
+    const release = {
+      versionWithPrefix: 'v22.0.0',
+      status: 'LTS',
+      isMaintenance: true,
+    };
+
+    const { values } = renderDropdown(release, [release]);
+
+    assert.deepEqual(values, [
+      {
+        value: 'v22.0.0',
+        label: 'v22.0.0',
+        badge: { label: 'LTS', kind: 'neutral' },
+      },
+    ]);
+  });
 });

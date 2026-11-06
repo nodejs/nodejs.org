@@ -23,5 +23,6 @@ export type MinorVersion = {
 export type NodeRelease = {
   versionWithPrefix: string;
   status: NodeReleaseStatus;
+  isMaintenance: boolean;
   minorVersions: Array<MinorVersion>;
 } & NodeReleaseSource;
