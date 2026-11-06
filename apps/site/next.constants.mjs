@@ -172,3 +172,14 @@ export const ORAMA_DB_URLS = {
   [LEARN_URL.slice(0, -1)]: 'https://nodejs.org/learn/orama-db.json',
   [`${DOCS_URL}latest/api`]: 'https://beta.docs.nodejs.org/orama-db.json',
 };
+
+/**
+ * The Carbon Ads JSON API endpoint (suffixed with `{zone}.json`)
+ */
+export const CARBON_ADS_URL = 'https://srv.carbonads.net/ads/';
+
+/**
+ * Whether Carbon Ads should count impressions (production only)
+ */
+export const CARBON_ADS_COUNT_IMPRESSIONS =
+  process.env.NEXT_PUBLIC_CARBON_ADS_PRODUCTION === 'true';

@@ -60,4 +60,27 @@ describe('MetaBar', () => {
     const h6Element = queryByText('Heading Level 6');
     assert.ok(!h6Element?.ownerDocument);
   });
+
+  it('renders an optional footer after the metadata list', () => {
+    const { container, getByText } = render(
+      <MetaBar
+        heading="Table of Contents"
+        items={{ Author: 'Node.js' }}
+        footer={<p>Footer content</p>}
+      />
+    );
+
+    const footer = getByText('Footer content');
+
+    assert.equal(container.querySelector('dl').contains(footer), false);
+    assert.equal(container.querySelector('aside').contains(footer), true);
+  });
+
+  it('renders no footer by default', () => {
+    const { container } = render(
+      <MetaBar heading="Table of Contents" items={{ Author: 'Node.js' }} />
+    );
+
+    assert.equal(container.querySelector('aside').children.length, 1);
+  });
 });
