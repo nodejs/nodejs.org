@@ -11,6 +11,8 @@ const { default: useCarbonAd } = await import('#site/hooks/useCarbonAd');
 
 const ad = {
   company: 'Company',
+  description: 'Description',
+  callToAction: 'Learn more',
   statlink: 'https://srv.buysellads.com/ads/click/x/1',
   statview: 'https://srv.buysellads.com/ads/view/x/1',
 };
@@ -138,6 +140,52 @@ describe('useCarbonAd', () => {
       await flush();
 
       assert.equal(container.textContent, 'false:undefined');
+    });
+  });
+
+  describe('validation', () => {
+    const ValidationProbe = () => {
+      const { ad } = useCarbonAd('CWBI6KJY');
+
+      return <div>{ad ? 'ad' : 'no ad'}</div>;
+    };
+
+    const renderWith = async creative => {
+      globalThis.fetch.mock.mockImplementation(async () => ({
+        ok: true,
+        json: async () => ({ ads: [creative] }),
+      }));
+
+      const { container } = render(<ValidationProbe />);
+      await flush();
+
+      return container.textContent;
+    };
+
+    it('accepts an ad without a title', async () => {
+      assert.equal(await renderWith(ad), 'ad');
+    });
+
+    it('accepts an ad with a title', async () => {
+      assert.equal(await renderWith({ ...ad, title: 'Title' }), 'ad');
+    });
+
+    for (const field of ['statlink', 'description', 'callToAction']) {
+      it(`rejects a missing ${field}`, async () => {
+        assert.equal(await renderWith({ ...ad, [field]: undefined }), 'no ad');
+      });
+
+      it(`rejects a non-string ${field}`, async () => {
+        assert.equal(await renderWith({ ...ad, [field]: { a: 1 } }), 'no ad');
+      });
+    }
+
+    it('rejects a non-string title', async () => {
+      assert.equal(await renderWith({ ...ad, title: { a: 1 } }), 'no ad');
+    });
+
+    it('rejects an empty creative', async () => {
+      assert.equal(await renderWith({}), 'no ad');
     });
   });
 

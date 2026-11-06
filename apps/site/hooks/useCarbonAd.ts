@@ -25,6 +25,12 @@ export const adColors = (ad: CarbonAd) =>
     '--ad-cta-text-dark': ad.ctaTextColorDark ?? ad.ctaTextColor,
   }) as CSSProperties;
 
+// The response is untrusted, and rendering a non-string would crash the page
+const isValidAd = (ad?: Record<string, unknown>) =>
+  [ad?.statlink, ad?.description, ad?.callToAction].every(
+    field => field && typeof field === 'string'
+  ) && typeof (ad?.title ?? '') === 'string';
+
 const useCarbonAd = (zone: string, media?: string) => {
   const [ad, setAd] = useState<CarbonAd | null>(null);
   const [loading, setLoading] = useState(true);
@@ -47,7 +53,7 @@ const useCarbonAd = (zone: string, media?: string) => {
 
     fetch(url, { signal: controller.signal })
       .then(response => (response.ok ? response.json() : null))
-      .then(data => data?.ads?.[0]?.statlink && setAd(data.ads[0]))
+      .then(data => isValidAd(data?.ads?.[0]) && setAd(data.ads[0]))
       .catch(() => {})
       .finally(() => {
         if (!controller.signal.aborted) {
