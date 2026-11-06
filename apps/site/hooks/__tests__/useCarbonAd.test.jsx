@@ -90,6 +90,57 @@ describe('useCarbonAd', () => {
     assert.equal(requests[0].searchParams.get('ignore'), 'yes');
   });
 
+  describe('loading', () => {
+    const LoadingProbe = () => {
+      const { ad, loading } = useCarbonAd('CWBI6KJY');
+
+      return <div>{`${loading}:${ad?.company}`}</div>;
+    };
+
+    const respondWith = implementation => {
+      globalThis.fetch.mock.mockImplementation(implementation);
+    };
+
+    it('is true until the ad has loaded', async () => {
+      const { container } = render(<LoadingProbe />);
+
+      assert.equal(container.textContent, 'true:undefined');
+
+      await flush();
+
+      assert.equal(container.textContent, 'false:Company');
+    });
+
+    it('is false after an empty response', async () => {
+      respondWith(async () => ({ ok: true, json: async () => ({ ads: [] }) }));
+
+      const { container } = render(<LoadingProbe />);
+      await flush();
+
+      assert.equal(container.textContent, 'false:undefined');
+    });
+
+    it('is false after an error response', async () => {
+      respondWith(async () => ({ ok: false }));
+
+      const { container } = render(<LoadingProbe />);
+      await flush();
+
+      assert.equal(container.textContent, 'false:undefined');
+    });
+
+    it('is false after a failed request', async () => {
+      respondWith(async () => {
+        throw new TypeError('Failed to fetch');
+      });
+
+      const { container } = render(<LoadingProbe />);
+      await flush();
+
+      assert.equal(container.textContent, 'false:undefined');
+    });
+  });
+
   it('sends the view beacon after the ad was at least 50% visible for one second', async t => {
     await renderAd(t);
 

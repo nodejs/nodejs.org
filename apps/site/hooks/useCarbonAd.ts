@@ -27,6 +27,7 @@ export const adColors = (ad: CarbonAd) =>
 
 const useCarbonAd = (zone: string, media?: string) => {
   const [ad, setAd] = useState<CarbonAd | null>(null);
+  const [loading, setLoading] = useState(true);
   const ref = useRef<HTMLElement>(null);
   // Layouts persist across navigations, so refetch per page
   const pathname = usePathname();
@@ -47,11 +48,17 @@ const useCarbonAd = (zone: string, media?: string) => {
     fetch(url, { signal: controller.signal })
       .then(response => (response.ok ? response.json() : null))
       .then(data => data?.ads?.[0]?.statlink && setAd(data.ads[0]))
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => {
+        if (!controller.signal.aborted) {
+          setLoading(false);
+        }
+      });
 
     return () => {
       controller.abort();
       setAd(null);
+      setLoading(true);
     };
   }, [zone, matches, pathname]);
 
@@ -84,7 +91,7 @@ const useCarbonAd = (zone: string, media?: string) => {
     };
   }, [ad]);
 
-  return { ad, ref };
+  return { ad, loading, ref };
 };
 
 export default useCarbonAd;

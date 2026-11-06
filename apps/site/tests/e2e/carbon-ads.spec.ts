@@ -124,4 +124,40 @@ test.describe('Carbon Ads', () => {
       `/ads/${zones.top}.json`,
     ]);
   });
+
+  for (const path of [
+    '/en/about',
+    '/en/blog/announcements/diving-into-the-nodejs-website-redesign',
+  ]) {
+    test(`should not shift ${path} when the Top Bar loads`, async ({
+      page,
+    }) => {
+      await mockAds(page);
+
+      let respond = () => {};
+      const response = new Promise<void>(resolve => (respond = resolve));
+
+      await page.route(
+        `https://srv.carbonads.net/ads/${zones.top}.json*`,
+        async route => {
+          await response;
+          await route.fallback();
+        }
+      );
+
+      await page.goto(path);
+
+      // Only the position matters: the heading's size can change as fonts load
+      const heading = page.locator('main h1').first();
+      const before = await heading.boundingBox();
+
+      respond();
+
+      await expect(adLinks(page)).toHaveCount(2);
+
+      const after = await heading.boundingBox();
+
+      expect(after?.y).toBe(before?.y);
+    });
+  }
 });
