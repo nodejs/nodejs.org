@@ -6,7 +6,7 @@ layout: download-archive
 <WithDownloadArchive>
   {({ binaries, installers, version, release, releases, sources }) => (
     <>
-      <h1>أرشيف تحميلات Node.js®</h1>
+      <h1>أرشيف تنزيلات Node.js®</h1>
 
       <h2 className="flex items-center gap-2">
         <img
@@ -25,18 +25,18 @@ layout: download-archive
 
       <ul className='flex list-none flex-col gap-2 p-0 text-sm'>
         <li>
-          اقرأ <LinkWithArrow href={`https://github.com/nodejs/node/releases/tag/${version}`}>سجل التغييرات (changelog)</LinkWithArrow> أو <Link href={`/blog/release/${version}`}>المقالة</Link> الخاصة بهذا الإصدار.
+          اطّلع على <LinkWithArrow href={`https://github.com/nodejs/node/releases/tag/${version}`}>سجل التغييرات</LinkWithArrow> أو <Link href={`/blog/release/${version}`}>مقالة المدونة</Link> الخاصة بهذا الإصدار.
         </li>
         <li>
-          تعرّف أكثر على <Link href="/about/previous-releases">إصدارات Node.js</Link>، بما في ذلك جدول الإصدارات وحالة دعم LTS.
-        </li>
-
-        <li>
-          ملفات <LinkWithArrow href={sources.shasum}>SHASUMS الموقعة</LinkWithArrow> للتحقق من ملفات الإصدار. كيفية <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">التحقق</LinkWithArrow> من ملفات SHASUMS الموقعة.
+          تعرّف على المزيد حول <Link href="/about/previous-releases">إصدارات Node.js</Link>، بما في ذلك جدول الإصدارات وحالة الدعم طويل الأمد (LTS).
         </li>
 
         <li>
-          تحميل ملف <LinkWithArrow href={sources.tarball}>الكود المصدري لـ Node.js {version}</LinkWithArrow> كمستند tarball موقّع.
+          <LinkWithArrow href={sources.shasum}>ملفات SHASUMS الموقّعة</LinkWithArrow> الخاصة بملفات الإصدار. تعرّف على كيفية <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">التحقق من</LinkWithArrow> ملفات SHASUMS الموقّعة.
+        </li>
+
+        <li>
+          نزّل <LinkWithArrow href={sources.tarball} >الشيفرة المصدرية لـ Node.js {version}</LinkWithArrow> في ملف tarball موقّع.
         </li>
 
       </ul>
@@ -44,16 +44,16 @@ layout: download-archive
       <h2>إصدارات أخرى</h2>
       <ReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
 
-      <h2>تحميل Binary</h2>
+      <h2>تنزيل الملفات الثنائية</h2>
       <DownloadsTable source={binaries} />
 
-      <h2>حزم التثبيت (Installers)</h2>
+      <h2>حزم التثبيت</h2>
       <DownloadsTable source={installers} />
 
-      <h2>الإصدارات الفرعية (Minor versions)</h2>
+      <h2>الإصدارات الثانوية</h2>
       <MinorReleasesTable releases={release.minorVersions} />
     </>
 
-)}
+  )}
 
 </WithDownloadArchive>

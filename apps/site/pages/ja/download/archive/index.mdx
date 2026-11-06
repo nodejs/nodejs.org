@@ -6,7 +6,7 @@ layout: download-archive
 <WithDownloadArchive>
   {({ binaries, installers, version, release, releases, sources }) => (
     <>
-      <h1>Node.js®ダウンロードアーカイブ</h1>
+      <h1>Node.js®アーカイブダウンロード</h1>
 
       <h2 className="flex items-center gap-2">
         <img
@@ -28,11 +28,11 @@ layout: download-archive
           このバージョンの<LinkWithArrow href={`https://github.com/nodejs/node/releases/tag/${version}`}>変更点</LinkWithArrow>や<Link href={`/blog/release/${version}`}>ブログ記事</Link>を確認できます。
         </li>
         <li>
-          リリーススケジュールやLTSの情報などさらに詳しい内容は<Link href="/about/previous-releases">Node.jsリリース</Link>で確認できます。
+          リリーススケジュールやLTSの情報は<Link href="/about/previous-releases">Node.jsリリース</Link>で確認できます。
         </li>
 
         <li>
-          リリースファイルの<LinkWithArrow href={sources.shasum}>署名済みSHASUMS</LinkWithArrow>と、署名済みSHASUMSの<LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">検証</LinkWithArrow>について確認できます。
+          リリースファイルの<LinkWithArrow href={sources.shasum}>署名済みSHASUMS</LinkWithArrow>と、署名済みSHASUMSの<LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">検証方法</LinkWithArrow>を確認できます。
         </li>
 
         <li>
@@ -44,16 +44,16 @@ layout: download-archive
       <h2>その他のリリース</h2>
       <ReleaseSelect placeholder={version} defaultValue={`/download/archive/${version}`} className="w-64"/>
 
-      <h2>バイナリーのダウンロード</h2>
+      <h2>バイナリー</h2>
       <DownloadsTable source={binaries} />
 
-      <h2>インストーラーパッケージ</h2>
+      <h2>インストーラー</h2>
       <DownloadsTable source={installers} />
 
       <h2>マイナーバージョン</h2>
       <MinorReleasesTable releases={release.minorVersions} />
     </>
 
-)}
+  )}
 
 </WithDownloadArchive>
