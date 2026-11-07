@@ -4,5 +4,11 @@ ${props.os === 'WIN' ?
   'curl -o- https://fnm.vercel.app/install | bash'
 }
 
+# シェルを再起動する代わりに実行する
+${props.os === 'WIN' ?
+  'fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression' :
+  'export PATH="$HOME/.local/share/fnm:$PATH"\neval "$(fnm env)"'
+}
+
 # Node.jsをダウンロードしてインストールする：
-fnm install ${props.release.major}
+fnm install --use ${props.release.major}

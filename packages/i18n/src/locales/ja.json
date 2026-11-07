@@ -25,7 +25,8 @@
         },
         "releasePills": {
           "latestLTS": "LTS版",
-          "latestRelease": "最新版"
+          "latestRelease": "最新版",
+          "latestAlpha": "最新のアルファ版"
         }
       },
       "navBar": {
