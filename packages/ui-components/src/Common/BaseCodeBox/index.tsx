@@ -3,6 +3,7 @@
 import {
   DocumentDuplicateIcon,
   CodeBracketIcon,
+  CheckIcon,
 } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import { Fragment, isValidElement, useRef } from 'react';
@@ -88,9 +89,12 @@ const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
 
   const handleCopy = () => copy(containerRef.current?.textContent);
 
-  const ButtonIcon = copied ? DocumentDuplicateIcon : CodeBracketIcon;
+  const FooterButtonIcon = copied ? DocumentDuplicateIcon : CodeBracketIcon;
 
   const hideFooter = className?.includes('no-footer');
+
+  const activeLabel = copied ? copiedButtonLabel : copyButtonLabel;
+  const ghostLabel = typeof activeLabel === 'string' ? activeLabel : undefined;
 
   return (
     <div className={styles.root}>
@@ -102,7 +106,25 @@ const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
         {transformCode(children as ReactElement<PropsWithChildren>, language)}
       </pre>
 
-      {!language || hideFooter || (
+      {hideFooter && (
+        <BaseButton
+          as={as}
+          className={styles.ghostAction}
+          kind="neutral"
+          size="small"
+          aria-label={ghostLabel}
+          title={ghostLabel}
+          onClick={handleCopy}
+        >
+          {copied ? (
+            <CheckIcon className="size-4" />
+          ) : (
+            <DocumentDuplicateIcon className="size-4" />
+          )}
+        </BaseButton>
+      )}
+
+      {!hideFooter && Boolean(language) && (
         <div className={styles.footer}>
           <span className={styles.language}>{language}</span>
 
@@ -112,7 +134,7 @@ const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
             kind="neutral"
             onClick={handleCopy}
           >
-            <ButtonIcon className="size-4" />
+            <FooterButtonIcon className="size-4" />
             {copied ? copiedButtonLabel : copyButtonLabel}
           </BaseButton>
         </div>
