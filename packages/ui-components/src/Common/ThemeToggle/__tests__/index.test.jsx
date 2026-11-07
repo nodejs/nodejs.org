@@ -104,4 +104,40 @@ describe('ThemeToggle', () => {
 
     assert.equal(selected, 'system');
   });
+
+  it('renders the footer slot when provided', async () => {
+    render(
+      <ThemeToggle
+        ariaLabel="Select theme"
+        currentTheme="system"
+        themeLabels={defaultLabels}
+        footer={<span>Use ⌘+L for Light, ⌘+D for Dark</span>}
+      />
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: 'Select theme' }));
+
+    assert.ok(
+      screen.getByText('Use ⌘+L for Light, ⌘+D for Dark'),
+      'footer content should be rendered inside the dropdown'
+    );
+  });
+
+  it('does not render a footer separator when no footer is provided', async () => {
+    render(
+      <ThemeToggle
+        ariaLabel="Select theme"
+        currentTheme="system"
+        themeLabels={defaultLabels}
+      />
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: 'Select theme' }));
+
+    assert.equal(
+      document.querySelector('[class*="dropDownFooter"]'),
+      null,
+      'footer element should not exist without the footer prop'
+    );
+  });
 });

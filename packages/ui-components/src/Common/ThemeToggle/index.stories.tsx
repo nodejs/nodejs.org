@@ -34,4 +34,14 @@ export const DarkSelected: Story = {
   },
 };
 
+export const WithFooter: Story = {
+  args: {
+    ariaLabel: 'Select theme',
+    currentTheme: 'system',
+    themeLabels: defaultLabels,
+    onChange: () => {},
+    footer: <span>⌘+L Light · ⌘+D Dark</span>,
+  },
+};
+
 export default { component: ThemeToggle } as Meta;
