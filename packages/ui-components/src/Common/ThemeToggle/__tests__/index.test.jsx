@@ -121,6 +121,17 @@ describe('ThemeToggle', () => {
       screen.getByText('Use ⌘+L for Light, ⌘+D for Dark'),
       'footer content should be rendered inside the dropdown'
     );
+
+    const footerId = screen.getByRole('menu').getAttribute('aria-describedby');
+    assert.ok(
+      footerId,
+      'menu content should reference the footer via aria-describedby'
+    );
+    assert.equal(
+      document.getElementById(footerId)?.textContent,
+      'Use ⌘+L for Light, ⌘+D for Dark',
+      'aria-describedby should point to the footer element'
+    );
   });
 
   it('does not render a footer separator when no footer is provided', async () => {
@@ -138,6 +149,11 @@ describe('ThemeToggle', () => {
       document.querySelector('[class*="dropDownFooter"]'),
       null,
       'footer element should not exist without the footer prop'
+    );
+    assert.equal(
+      screen.getByRole('menu').getAttribute('aria-describedby'),
+      null,
+      'menu content should not reference a footer without the footer prop'
     );
   });
 });
