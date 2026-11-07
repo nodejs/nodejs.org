@@ -1,5 +1,11 @@
 # @node-core/website-i18n
 
+## 2.0.3
+
+### Patch Changes
+
+- [#9319](https://github.com/nodejs/nodejs.org/pull/9319) [`539a141`](https://github.com/nodejs/nodejs.org/commit/539a14195a8403470e1a8ec31edc58d23086827a) Thanks [@nodejs-crowdin](https://github.com/nodejs-crowdin)! - Update translations from Crowdin.
+
 ## 2.0.2
 
 ### Patch Changes
