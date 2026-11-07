@@ -5,8 +5,9 @@ import {
 } from '@heroicons/react/24/outline';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import classNames from 'classnames';
+import { useId } from 'react';
 
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import styles from './index.module.css';
 
@@ -17,6 +18,7 @@ type ThemeToggleProps = {
   currentTheme?: Theme;
   ariaLabel?: string;
   themeLabels?: { system: string; light: string; dark: string };
+  footer?: ReactNode;
 };
 
 const themeIcons: Record<Theme, typeof SunIcon> = {
@@ -32,7 +34,9 @@ const ThemeToggle: FC<ThemeToggleProps> = ({
   currentTheme = 'system',
   ariaLabel = 'Select theme',
   themeLabels = { system: 'System', light: 'Light', dark: 'Dark' },
+  footer,
 }) => {
+  const footerId = useId();
   const TriggerIcon = themeIcons[currentTheme];
 
   return (
@@ -52,6 +56,7 @@ const ThemeToggle: FC<ThemeToggleProps> = ({
           align="end"
           className={styles.dropDownContent}
           sideOffset={5}
+          aria-describedby={footer ? footerId : undefined}
         >
           {themes.map(theme => {
             const Icon = themeIcons[theme];
@@ -68,6 +73,11 @@ const ThemeToggle: FC<ThemeToggleProps> = ({
               </DropdownMenu.Item>
             );
           })}
+          {footer ? (
+            <div id={footerId} className={styles.dropDownFooter}>
+              {footer}
+            </div>
+          ) : null}
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
