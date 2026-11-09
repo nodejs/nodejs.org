@@ -4,6 +4,8 @@ import classNames from 'classnames';
 import type { LinkLike } from '#ui/types';
 import type { FC, ComponentProps, ReactNode } from 'react';
 
+import { ChangeHistoryDetails } from './Details';
+
 import styles from './index.module.css';
 
 export type HistoryChange = {
@@ -28,7 +30,7 @@ const ChangeHistory: FC<ChangeHistoryProps> = ({
   ...props
 }) => (
   <div className={classNames('relative', 'inline-block', className)} {...props}>
-    <details className="group">
+    <ChangeHistoryDetails className="group">
       <summary className={styles.summary} role="button" aria-haspopup="menu">
         <ClockIcon className="size-4" />
         <span>{label}</span>
@@ -63,7 +65,7 @@ const ChangeHistory: FC<ChangeHistoryProps> = ({
           })}
         </div>
       </div>
-    </details>
+    </ChangeHistoryDetails>
   </div>
 );
 
