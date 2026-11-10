@@ -28,9 +28,9 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2026-11-03T23:00:00.000Z",
-      "endDate": "2026-11-12T23:00:00.000Z",
-      "text": "New security releases to be made available Wednesday, November 11, 2026",
+      "startDate": "2026-11-11T00:00:00.000Z",
+      "endDate": "2026-11-18T00:00:00.000Z",
+      "text": "November Security Release is available",
       "link": "https://nodejs.org/en/blog/vulnerability/november-2026-security-releases",
       "type": "warning"
     }
