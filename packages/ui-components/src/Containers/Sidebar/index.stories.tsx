@@ -76,10 +76,58 @@ const args = {
     },
   ],
   title: 'Sidebar',
-  onSelect: console.log,
   pathname: '/item1',
 };
 
 export const Default: Story = { args };
+
+export const Nested: Story = {
+  args: {
+    title: 'Sidebar',
+    pathname: '/fs/promises/read-file',
+    groups: [
+      {
+        groupName: 'API',
+        items: [
+          { link: '/assert', label: 'Assert' },
+          {
+            link: '/fs',
+            label: 'File system',
+            items: [
+              { link: '/fs', label: 'File system' },
+              {
+                link: '/fs/promises',
+                label: 'Promises API',
+                items: [
+                  { link: '/fs/promises', label: 'Promises API' },
+                  { link: '/fs/promises/read-file', label: 'readFile' },
+                  { link: '/fs/promises/write-file', label: 'writeFile' },
+                ],
+              },
+              { link: '/fs/callback', label: 'Callback API' },
+            ],
+          },
+          { link: '/http', label: 'HTTP' },
+        ],
+      },
+    ],
+  },
+};
+
+// Mirrors large documentation sites (e.g. webpack's), which have thousands of pages
+export const LargeSite: Story = {
+  args: {
+    title: 'Sidebar',
+    pathname: '/section-10/page-25',
+    groups: Array.from({ length: 20 }, (_, section) => ({
+      groupName: `Section ${section + 1}`,
+      items: Array.from({ length: 50 }, (_, page) => ({
+        link: `/section-${section + 1}/page-${page + 1}`,
+        label: `Page ${page + 1}`,
+      })),
+    })),
+  },
+  globals: { viewport: { value: 'small' } },
+};
 
 export default { component: Sidebar } as Meta;

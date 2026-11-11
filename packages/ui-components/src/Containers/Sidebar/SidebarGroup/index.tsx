@@ -1,19 +1,14 @@
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 
+import SidebarCollapsible from '#ui/Containers/Sidebar/SidebarCollapsible';
 import SidebarItem from '#ui/Containers/Sidebar/SidebarItem';
+import { findActiveItem } from '#ui/Containers/Sidebar/utils';
 
+import type { SidebarItemType } from '#ui/Containers/Sidebar/utils';
 import type { FormattedMessage, LinkLike } from '#ui/types';
-import type { ComponentProps, FC } from 'react';
+import type { FC } from 'react';
 
 import styles from './index.module.css';
-
-type SidebarItemType = Omit<
-  ComponentProps<typeof SidebarItem>,
-  'as' | 'pathname'
-> & {
-  items?: Array<SidebarItemType>;
-};
 
 type SidebarGroupProps = {
   groupName: FormattedMessage;
@@ -23,17 +18,6 @@ type SidebarGroupProps = {
   className?: string;
 };
 
-const hasActivePath = (
-  items: Array<SidebarItemType>,
-  pathname?: string
-): boolean => {
-  return items.some(
-    item =>
-      item.link === pathname ||
-      (item.items && hasActivePath(item.items, pathname))
-  );
-};
-
 const renderItems = (
   items: Array<SidebarItemType>,
   props: { as?: LinkLike },
@@ -41,21 +25,24 @@ const renderItems = (
 ) => {
   return items.map(({ label, link, items: subItems }) => {
     if (subItems && subItems.length > 0) {
-      const isOpen = link === pathname || hasActivePath(subItems, pathname);
+      const isOpen =
+        link === pathname || findActiveItem(subItems, pathname) !== undefined;
+
       return (
         <li key={link}>
-          <details className={styles.subGroup} open={isOpen}>
-            <summary className={styles.summary}>
-              {label}
-              <ChevronDownIcon className={styles.chevron} />
-            </summary>
+          <SidebarCollapsible
+            summary={label}
+            open={isOpen}
+            className={styles.subGroup}
+          >
             <ul className={styles.subItemList}>
               {renderItems(subItems, props, pathname)}
             </ul>
-          </details>
+          </SidebarCollapsible>
         </li>
       );
     }
+
     return (
       <SidebarItem
         key={link}

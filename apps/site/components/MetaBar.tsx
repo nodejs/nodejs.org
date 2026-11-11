@@ -1,28 +1,28 @@
-'use client';
-
 import MetaBarContainer from '@node-core/ui-components/Containers/MetaBar';
 import GitHubIcon from '@node-core/ui-components/Icons/Social/GitHub';
 import { defaultLocale } from '@node-core/website-i18n';
-import { useFormatter, useLocale, useTranslations } from 'next-intl';
+import { getFormatter, getLocale, getTranslations } from 'next-intl/server';
 
+import { getClientContext } from '#site/client-context';
 import AvatarGroup from '#site/components/AvatarGroup';
 import Link from '#site/components/Link';
-import useClientContext from '#site/hooks/useClientContext';
-import useMediaQuery from '#site/hooks/useMediaQuery';
 import { DEFAULT_DATE_FORMAT } from '#site/next.calendar.constants.mjs';
 import { TRANSLATION_URL } from '#site/next.constants.mjs';
 import { getGitHubBlobUrl } from '#site/util/github';
 
 import type { FC } from 'react';
 
-const MetaBar: FC = () => {
-  const { headings, readingTime, frontmatter, filename } = useClientContext();
-  const formatter = useFormatter();
-  const lastUpdated = frontmatter.date
-    ? // "frontmatter.date" is deterministic
+const MetaBar: FC = async () => {
+  const { headings, readingTime, frontmatter, filename } = getClientContext();
 
-      formatter.dateTime(new Date(frontmatter.date), DEFAULT_DATE_FORMAT)
+  const t = await getTranslations();
+  const locale = await getLocale();
+  const formatter = await getFormatter();
+
+  const lastUpdated = frontmatter.date
+    ? formatter.dateTime(new Date(frontmatter.date), DEFAULT_DATE_FORMAT)
     : undefined;
+
   const readingTimeText = formatter.number(readingTime.minutes, {
     style: 'unit',
     unit: 'minute',
@@ -31,14 +31,6 @@ const MetaBar: FC = () => {
 
   const usernames =
     frontmatter.authors?.split(',').map(author => author.trim()) ?? [];
-
-  const t = useTranslations();
-  const locale = useLocale();
-
-  // Since we cannot show the same number of avatars in Mobile / Tablet
-  // resolution as we do on desktop and there is overflow, we are adjusting
-  // the number of avatars manually for the resolutions below
-  const isSmallerThanDesktop = useMediaQuery('(max-width: 1280px)');
 
   return (
     <MetaBarContainer
@@ -51,12 +43,7 @@ const MetaBar: FC = () => {
         ...(usernames.length && {
           [t(
             `components.metabar.${usernames.length > 1 ? 'authors' : 'author'}`
-          )]: (
-            <AvatarGroup
-              usernames={usernames}
-              limit={isSmallerThanDesktop ? 5 : 8}
-            />
-          ),
+          )]: <AvatarGroup usernames={usernames} limit={8} compactLimit={5} />,
         }),
         [t('components.metabar.contribute')]: (
           <>
