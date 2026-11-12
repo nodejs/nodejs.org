@@ -1,7 +1,8 @@
 @reference "../../styles/index.css";
 
 .root {
-  @apply w-full
+  @apply relative
+    w-full
     max-w-full
     overflow-x-hidden
     rounded-sm
@@ -71,6 +72,35 @@
           [counter-reset:none];
       }
     }
+
+    &[class*='no-footer'] {
+      @apply pr-12;
+    }
+  }
+
+  & > .ghostAction {
+    @apply absolute
+      top-2
+      right-2
+      z-10
+      p-1.5
+      opacity-0
+      transition-opacity
+      duration-150;
+
+    > svg {
+      @apply size-4;
+    }
+
+    &:focus,
+    &:focus-visible {
+      @apply opacity-100;
+    }
+  }
+
+  &:hover > .ghostAction,
+  &:focus-within > .ghostAction {
+    @apply opacity-100;
   }
 
   & > .footer {
