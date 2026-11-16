@@ -170,7 +170,7 @@
       "name": "Chocolatey",
       "compatibility": {
         "os": ["WIN"],
-        "releases": ["Current", "LTS"]
+        "releases": ["Current", "LTS", "EOL"]
       },
       "url": "https://chocolatey.org/",
       "info": "layouts.download.codeBox.platformInfo.choco"
