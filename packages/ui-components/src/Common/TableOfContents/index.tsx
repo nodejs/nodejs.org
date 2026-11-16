@@ -40,8 +40,8 @@ const TableOfContents: FC<TableOfContentsProps> = ({
         <ChevronRightIcon className={styles.icon} /> {summaryTitle}
       </summary>
       <ul className={styles.list}>
-        {filteredHeadings.map((head, index) => (
-          <li key={head.data?.id ?? index}>
+        {filteredHeadings.map(head => (
+          <li key={head.data?.id ?? `${head.depth}:${head.value}`}>
             <Component
               href={head.data?.id && `#${head.data.id}`}
               className={classNames(styles.link, depthClasses[head.depth], {
