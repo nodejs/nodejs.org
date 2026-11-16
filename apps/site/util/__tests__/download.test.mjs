@@ -248,6 +248,7 @@ describe('INSTALL_METHODS', () => {
       ['v27.0.0-alpha.0.1.0', 'Alpha', true],
       ['v26.13.0', 'Current', false],
       ['v24.13.0', 'LTS', false],
+      ['v18.20.0', 'EOL', false],
     ];
 
     for (const [version, status, disabled] of cases) {
