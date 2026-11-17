@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import { getClientContext } from '#site/client-context';
 import BlogHeader from '#site/components/Blog/BlogHeader';
 import BlogCategories from '#site/components/BlogCategories';
+import CarbonTopBar from '#site/components/CarbonAds/TopBar';
 import Footer from '#site/components/Footer';
 import NavBar from '#site/components/NavBar';
 import { getBlogData } from '#site/util/blog';
@@ -55,6 +56,8 @@ const BlogLayout: FC = () => {
 
       <div className={styles.blogLayout}>
         <main id="main" tabIndex={-1}>
+          <CarbonTopBar />
+
           <BlogHeader category={blogData.category} />
 
           <BlogCategories
