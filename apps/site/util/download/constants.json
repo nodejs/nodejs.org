@@ -169,7 +169,8 @@
       "icon": "Choco",
       "name": "Chocolatey",
       "compatibility": {
-        "os": ["WIN"]
+        "os": ["WIN"],
+        "releases": ["Current", "LTS", "EOL"]
       },
       "url": "https://chocolatey.org/",
       "info": "layouts.download.codeBox.platformInfo.choco"

@@ -239,4 +239,27 @@ describe('INSTALL_METHODS', () => {
     assert.ok(nvmMethod?.iconImage);
     assert.equal(asdfMethod?.iconImage, undefined);
   });
+
+  it('should disable Chocolatey for Alpha releases only', () => {
+    const choco = INSTALL_METHODS.find(method => method.value === 'CHOCO');
+    assert.ok(choco);
+
+    const cases = [
+      ['v27.0.0-alpha.0.1.0', 'Alpha', true],
+      ['v26.13.0', 'Current', false],
+      ['v24.13.0', 'LTS', false],
+      ['v18.20.0', 'EOL', false],
+    ];
+
+    for (const [version, status, disabled] of cases) {
+      const [method] = parseCompat([choco], {
+        os: 'WIN',
+        installMethod: 'CHOCO',
+        platform: 'x64',
+        version,
+        release: { status },
+      });
+      assert.equal(method.disabled, disabled, `Chocolatey with ${status}`);
+    }
+  });
 });
