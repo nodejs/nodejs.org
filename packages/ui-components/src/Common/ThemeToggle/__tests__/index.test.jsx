@@ -104,4 +104,56 @@ describe('ThemeToggle', () => {
 
     assert.equal(selected, 'system');
   });
+
+  it('renders the footer slot when provided', async () => {
+    render(
+      <ThemeToggle
+        ariaLabel="Select theme"
+        currentTheme="system"
+        themeLabels={defaultLabels}
+        footer={<span>Use ⌘+L for Light, ⌘+D for Dark</span>}
+      />
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: 'Select theme' }));
+
+    assert.ok(
+      screen.getByText('Use ⌘+L for Light, ⌘+D for Dark'),
+      'footer content should be rendered inside the dropdown'
+    );
+
+    const footerId = screen.getByRole('menu').getAttribute('aria-describedby');
+    assert.ok(
+      footerId,
+      'menu content should reference the footer via aria-describedby'
+    );
+    assert.equal(
+      document.getElementById(footerId)?.textContent,
+      'Use ⌘+L for Light, ⌘+D for Dark',
+      'aria-describedby should point to the footer element'
+    );
+  });
+
+  it('does not render a footer separator when no footer is provided', async () => {
+    render(
+      <ThemeToggle
+        ariaLabel="Select theme"
+        currentTheme="system"
+        themeLabels={defaultLabels}
+      />
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: 'Select theme' }));
+
+    assert.equal(
+      document.querySelector('[class*="dropDownFooter"]'),
+      null,
+      'footer element should not exist without the footer prop'
+    );
+    assert.equal(
+      screen.getByRole('menu').getAttribute('aria-describedby'),
+      null,
+      'menu content should not reference a footer without the footer prop'
+    );
+  });
 });

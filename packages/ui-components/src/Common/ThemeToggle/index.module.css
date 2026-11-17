@@ -47,3 +47,14 @@
   @apply bg-brand-600
     text-white;
 }
+
+.dropDownFooter {
+  @apply border-t
+    border-neutral-200
+    px-2.5
+    py-1.5
+    text-xs
+    text-neutral-500
+    dark:border-neutral-800
+    dark:text-neutral-400;
+}
