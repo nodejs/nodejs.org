@@ -8,7 +8,7 @@
     "directory": "platforms/default"
   },
   "devDependencies": {
-    "@playwright/test": "^1.65.1",
+    "@playwright/test": "catalog:",
     "next": "catalog:"
   },
   "engines": {
