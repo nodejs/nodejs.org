@@ -89,9 +89,12 @@
     }
   }
 
+  /* Expands a grid with a single `min-h-0` row from nothing, ending at the element's own spacing */
   @keyframes fade-and-slide-down {
     from {
       grid-template-rows: 0fr;
+      margin-bottom: 0;
+      min-height: 0;
       opacity: 0;
       padding-block: 0;
       transform: translateY(-100%);
@@ -99,9 +102,6 @@
 
     to {
       grid-template-rows: 1fr;
-      opacity: 1;
-      padding-block: calc(var(--spacing, 0.25rem) * 3);
-      transform: translateY(0);
     }
   }
 }

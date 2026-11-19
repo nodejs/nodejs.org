@@ -31,7 +31,7 @@ Learn (`/learn`) and the API docs (`/api`, `/docs`) are separate applications an
 - `apps/site/components/CarbonAds/TopBar.tsx` and `apps/site/components/CarbonAds/Sidebar.tsx` render each format. Neither reserves space while loading. When there is no ad (empty response, invalid data, network error or ad blocker) nothing is shown.
 - The ad request itself records the impression. The `statview` beacon is sent once per page view after at least 50% of the ad was visible for one continuous second. Clicks go through `statlink`.
 
-Once an ad is available, the Top Bar expands, fades and slides in with the announcement banner's timing, taking up no space until the animation starts.
+Once an ad is available, the Top Bar uses the announcement banner's `animate-fade-and-slide-down` animation to fade and slide in.
 
 ## Staging and production
 

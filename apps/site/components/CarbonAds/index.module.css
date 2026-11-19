@@ -27,7 +27,8 @@
 }
 
 .topBar {
-  @apply mb-4
+  @apply animate-fade-and-slide-down
+    mb-4
     flex
     items-center
     gap-3
@@ -37,24 +38,6 @@
     py-2
     text-sm
     lg:min-h-14;
-
-  animation: top-bar-enter 300ms ease-out 400ms backwards;
-}
-
-/* Collapsed until it animates in, so it takes up no space before then */
-@keyframes top-bar-enter {
-  from {
-    margin-bottom: 0;
-    max-height: 0;
-    min-height: 0;
-    opacity: 0;
-    padding-block: 0;
-    transform: translateY(-100%);
-  }
-
-  to {
-    max-height: 10rem;
-  }
 }
 
 .topBarLink {
