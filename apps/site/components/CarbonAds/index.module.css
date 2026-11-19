@@ -36,8 +36,14 @@
     px-4
     py-2
     text-sm
+    [--fade-and-slide-down-offset:var(--main-gap)]
     motion-reduce:animate-none
     lg:min-h-14;
+
+  /* Until it animates in, it also cancels the parent's gap, and the margin it adds to a following heading */
+  &:first-child:has(+ :is(h1, h2, h3, h4, h5, h6)) {
+    @apply [--fade-and-slide-down-offset:calc(var(--main-gap)+--spacing(4))];
+  }
 }
 
 .topBarContent {

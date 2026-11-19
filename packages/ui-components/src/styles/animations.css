@@ -89,11 +89,12 @@
     }
   }
 
-  /* Expands a grid with a single `min-h-0` row from nothing, ending at the element's own spacing */
+  /* Expands a grid with a single `min-h-0` row from nothing, ending at the element's own spacing.
+   * `--fade-and-slide-down-offset` also collapses any space around it, such as the parent's gap */
   @keyframes fade-and-slide-down {
     from {
       grid-template-rows: 0fr;
-      margin-bottom: 0;
+      margin-bottom: calc(-1 * var(--fade-and-slide-down-offset, 0px));
       min-height: 0;
       opacity: 0;
       padding-block: 0;
