@@ -8,7 +8,8 @@
     grid-rows-1
     px-8
     py-3
-    text-sm;
+    text-sm
+    motion-reduce:animate-none;
 
   &,
   a {
