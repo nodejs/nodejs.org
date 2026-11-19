@@ -31,23 +31,29 @@
     flex
     items-center
     gap-3
+    overflow-hidden
     rounded-md
     px-4
     py-2
     text-sm
     lg:min-h-14;
+
+  animation: top-bar-enter 300ms ease-out 400ms backwards;
 }
 
-/* Matches the banner's minimum height, so that it doesn't shift the page when it loads */
-.topBarPlaceholder {
-  @apply mb-4
-    hidden
-    lg:block
-    lg:h-14;
+/* Collapsed until it animates in, so it takes up no space before then */
+@keyframes top-bar-enter {
+  from {
+    margin-bottom: 0;
+    max-height: 0;
+    min-height: 0;
+    opacity: 0;
+    padding-block: 0;
+    transform: translateY(-100%);
+  }
 
-  /* While hidden, it still stops the next heading from matching `first:mt-0` in markdown.css */
-  & + :is(h1, h2, h3, h4, h5, h6) {
-    @apply max-lg:mt-0;
+  to {
+    max-height: 10rem;
   }
 }
 

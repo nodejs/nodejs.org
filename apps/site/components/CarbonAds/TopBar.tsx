@@ -7,12 +7,10 @@ import type { FC } from 'react';
 import styles from './index.module.css';
 
 const CarbonTopBar: FC = () => {
-  const { ad, loading, ref } = useCarbonAd('CWBI6KJY');
+  const { ad, ref } = useCarbonAd('CWBI6KJY');
 
   if (!ad) {
-    return loading ? (
-      <aside aria-hidden="true" className={styles.topBarPlaceholder} />
-    ) : null;
+    return null;
   }
 
   return (
