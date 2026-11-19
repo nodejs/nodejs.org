@@ -12,6 +12,7 @@ allowBuilds:
   workerd: true
 
 catalog:
+  '@playwright/test': ^1.65.1
   '@types/node': ^24.19.2
   '@types/react': ^19.3.0
   classnames: ~2.5.1
