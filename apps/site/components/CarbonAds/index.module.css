@@ -29,9 +29,8 @@
 .topBar {
   @apply animate-fade-and-slide-down
     mb-4
-    flex
-    items-center
-    gap-3
+    grid
+    grid-rows-1
     overflow-hidden
     rounded-md
     px-4
@@ -39,6 +38,13 @@
     text-sm
     motion-reduce:animate-none
     lg:min-h-14;
+}
+
+.topBarContent {
+  @apply flex
+    min-h-0
+    items-center
+    gap-3;
 }
 
 .topBarLink {
