@@ -14,10 +14,15 @@ const DownloadLink: FC<PropsWithChildren<DownloadLinkProps>> = ({
   kind = 'installer',
   children,
 }) => {
-  const { release } = use(ReleaseContext);
+  const { release, os, platform } = use(ReleaseContext);
 
   return (
-    <DownloadLinkBase release={release} kind={kind}>
+    <DownloadLinkBase
+      release={release}
+      kind={kind}
+      os={os}
+      platform={platform || undefined}
+    >
       {children}
     </DownloadLinkBase>
   );

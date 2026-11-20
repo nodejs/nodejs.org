@@ -1,0 +1,28 @@
+@reference "../../../styles/index.css";
+
+/*
+ * These rules stay at single-class specificity so that the callers' rules
+ * (`.caller > summary`, `.caller > summary svg`) take precedence.
+ */
+.summary {
+  @apply flex
+    cursor-pointer
+    items-center
+    justify-between
+    select-none;
+
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.chevron {
+  @apply shrink-0
+    motion-safe:transition-transform;
+}
+
+.collapsible[open] > .summary .chevron {
+  @apply rotate-180;
+}

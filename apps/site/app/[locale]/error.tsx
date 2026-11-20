@@ -1,9 +1,10 @@
 'use client';
 
+import GlowingBackdrop from '@node-core/ui-components/Common/GlowingBackdrop';
 import { useTranslations } from 'next-intl';
 
 import Button from '#site/components/Common/Button';
-import GlowingBackdropLayout from '#site/layouts/GlowingBackdrop';
+import styles from '#site/layouts/layouts.module.css';
 
 import type { FC } from 'react';
 
@@ -11,19 +12,23 @@ const ErrorPage: FC<{ error: Error }> = () => {
   const t = useTranslations();
 
   return (
-    <GlowingBackdropLayout kind="default">
-      <span>500</span>
+    <div className={styles.centeredLayout}>
+      <GlowingBackdrop />
 
-      <h1 className="special -mt-4 text-center">
-        {t('layouts.error.internalServerError.title')}
-      </h1>
+      <main id="main" tabIndex={-1}>
+        <span>500</span>
 
-      <p className="-mt-4 max-w-sm text-center text-lg">
-        {t('layouts.error.internalServerError.description')}
-      </p>
+        <h1 className="special -mt-4 text-center">
+          {t('layouts.error.internalServerError.title')}
+        </h1>
 
-      <Button href="/">{t('layouts.error.backToHome')}</Button>
-    </GlowingBackdropLayout>
+        <p className="-mt-4 max-w-sm text-center text-lg">
+          {t('layouts.error.internalServerError.description')}
+        </p>
+
+        <Button href="/">{t('layouts.error.backToHome')}</Button>
+      </main>
+    </div>
   );
 };
 

@@ -53,3 +53,32 @@ describe('AvatarGroup', () => {
     assert.ok(hideMoreButton.ownerDocument);
   });
 });
+
+describe('AvatarGroup on compact screens', () => {
+  const noop = () => {};
+
+  it('applies the compact limit when the compact media query matches', () => {
+    const { matchMedia } = window;
+
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: query => ({
+        matches: true,
+        media: query,
+        addEventListener: noop,
+        removeEventListener: noop,
+      }),
+    });
+
+    const { getByText } = render(
+      <AvatarGroup avatars={avatars} limit={8} compactLimit={5} />
+    );
+
+    assert.ok(getByText(`+${names.length - 5}`).ownerDocument);
+
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: matchMedia,
+    });
+  });
+});

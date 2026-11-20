@@ -53,4 +53,13 @@ export const InSmallContainer: Story = {
   args: { ...defaultProps, limit: 5 },
 };
 
+export const WithCompactLimit: Story = {
+  args: {
+    ...defaultProps,
+    limit: 8,
+    compactLimit: 5,
+  },
+  globals: { viewport: { value: 'small' } },
+};
+
 export default { component: AvatarGroup } as Meta;

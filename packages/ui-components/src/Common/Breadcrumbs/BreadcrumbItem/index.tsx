@@ -8,6 +8,10 @@ import styles from './index.module.css';
 type BreadcrumbItemProps = {
   disableMicrodata?: boolean;
   hidden?: boolean;
+  /** Hidden below the `sm` breakpoint only */
+  hiddenOnMobile?: boolean;
+  /** Shown below the `sm` breakpoint only */
+  mobileOnly?: boolean;
   hideSeparator?: boolean;
   position?: number;
 } & ComponentProps<'li'>;
@@ -16,6 +20,8 @@ const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
   disableMicrodata,
   children,
   hidden = false,
+  hiddenOnMobile = false,
+  mobileOnly = false,
   hideSeparator = false,
   position,
   ...props
@@ -27,7 +33,11 @@ const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
     itemType={!disableMicrodata ? 'https://schema.org/ListItem' : undefined}
     className={classNames(
       styles.item,
-      { [styles.visuallyHidden]: hidden },
+      {
+        [styles.visuallyHidden]: hidden,
+        [styles.hiddenOnMobile]: hiddenOnMobile,
+        [styles.mobileOnly]: mobileOnly,
+      },
       props.className
     )}
     aria-hidden={hidden ? 'true' : undefined}

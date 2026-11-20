@@ -18,7 +18,7 @@ export const getNodeApiUrl = (version: string) => {
     : `${DIST_URL}${version}/docs/api/`;
 };
 
-type DownloadOptions = {
+export type DownloadOptions = {
   /** The Node.js version string, must include the 'v' prefix (e.g., 'v20.12.2'). */
   versionWithPrefix: string;
   /** The target operating system. Defaults to 'LOADING'. */

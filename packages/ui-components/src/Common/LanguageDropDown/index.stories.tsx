@@ -7,6 +7,7 @@ type Meta = MetaObj<typeof LanguageDropDown>;
 
 export const Default: Story = {
   args: {
+    href: '/about',
     availableLanguages: [
       { name: 'English', code: 'en', localName: 'English', hrefLang: 'en-GB' },
       { name: 'French', code: 'fr', localName: 'Français', hrefLang: 'fr' },

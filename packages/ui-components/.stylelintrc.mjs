@@ -8,6 +8,7 @@ const CUSTOM_AT_RULES = [
   'utility',
   'theme',
   'custom-variant',
+  'variant',
   'screen',
   'source',
   'tailwind',

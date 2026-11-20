@@ -4,6 +4,7 @@ import { getLocale } from 'next-intl/server';
 import { getClientContext } from '#site/client-context';
 import WithNodeRelease from '#site/components/withNodeRelease';
 import provideDownloadSnippets from '#site/next-data/providers/downloadSnippets';
+import { DetectedOSProvider } from '#site/providers/detectedOSProvider';
 import {
   ReleaseProvider,
   ReleasesProvider,
@@ -48,9 +49,13 @@ const DownloadSection: FC<DownloadSectionProps> = async ({
   return (
     <WithNodeRelease status={initialRelease}>
       {({ release }) => (
-        <ReleasesProvider releases={releases} snippets={memoizedSnippets}>
-          <ReleaseProvider initialRelease={release}>{children}</ReleaseProvider>
-        </ReleasesProvider>
+        <DetectedOSProvider>
+          <ReleasesProvider releases={releases} snippets={memoizedSnippets}>
+            <ReleaseProvider initialRelease={release}>
+              {children}
+            </ReleaseProvider>
+          </ReleasesProvider>
+        </DetectedOSProvider>
       )}
     </WithNodeRelease>
   );
