@@ -7,12 +7,10 @@ import type { FC } from 'react';
 import styles from './index.module.css';
 
 const CarbonTopBar: FC = () => {
-  const { ad, loading, ref } = useCarbonAd('CWBI6KJY');
+  const { ad, ref } = useCarbonAd('CWBI6KJY');
 
   if (!ad) {
-    return loading ? (
-      <aside aria-hidden="true" className={styles.topBarPlaceholder} />
-    ) : null;
+    return null;
   }
 
   return (
@@ -22,21 +20,23 @@ const CarbonTopBar: FC = () => {
       style={adColors(ad)}
       aria-label="Advertisement"
     >
-      <a
-        href={ad.statlink}
-        target="_blank"
-        rel="sponsored noopener"
-        className={styles.topBarLink}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={ad.image} alt={ad.company} className={styles.logo} />
-        <span>{ad.description}</span>
-        <span className={styles.cta}>{ad.callToAction}</span>
-      </a>
+      <div className={styles.topBarContent}>
+        <a
+          href={ad.statlink}
+          target="_blank"
+          rel="sponsored noopener"
+          className={styles.topBarLink}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={ad.image} alt={ad.company} className={styles.logo} />
+          <span>{ad.description}</span>
+          <span className={styles.cta}>{ad.callToAction}</span>
+        </a>
 
-      <a href={ad.ad_via_link} className={styles.badge}>
-        Ad
-      </a>
+        <a href={ad.ad_via_link} className={styles.badge}>
+          Ad
+        </a>
+      </div>
     </aside>
   );
 };

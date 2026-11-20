@@ -129,7 +129,7 @@ test.describe('Carbon Ads', () => {
     '/en/about',
     '/en/blog/announcements/diving-into-the-nodejs-website-redesign',
   ]) {
-    test(`should not shift ${path} when the Top Bar loads`, async ({
+    test(`should only render the Top Bar on ${path} once an ad is available`, async ({
       page,
     }) => {
       await mockAds(page);
@@ -147,17 +147,14 @@ test.describe('Carbon Ads', () => {
 
       await page.goto(path);
 
-      // Only the position matters: the heading's size can change as fonts load
-      const heading = page.locator('main h1').first();
-      const before = await heading.boundingBox();
+      const topBar = page.locator('main > aside');
+      await expect(topBar).toHaveCount(0);
 
       respond();
 
       await expect(adLinks(page)).toHaveCount(2);
 
-      const after = await heading.boundingBox();
-
-      expect(after?.y).toBe(before?.y);
+      await expect(topBar).toHaveCount(1);
     });
   }
 });

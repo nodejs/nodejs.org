@@ -28,8 +28,10 @@ Learn (`/learn`) and the API docs (`/api`, `/docs`) are separate applications an
 ## How it works
 
 - `apps/site/hooks/useCarbonAd.ts` requests the ad for the current page view and sends its view beacon. A page view changes with the pathname or locale (not with hashes or query strings), so a revisited page always gets a fresh ad.
-- `apps/site/components/CarbonAds/TopBar.tsx` and `apps/site/components/CarbonAds/Sidebar.tsx` render each format. From the `lg` breakpoint, the Top Bar reserves its minimum height while loading, so one- and two-line creatives don't shift the page; longer ones can still shift it slightly. Narrower screens reserve no space, because the height varies too much with the creative's length, and neither does the Sidebar, because it is the last item in its column. When there is no ad (empty response, invalid data, network error or ad blocker) nothing is shown, and any reserved space collapses.
+- `apps/site/components/CarbonAds/TopBar.tsx` and `apps/site/components/CarbonAds/Sidebar.tsx` render each format. Neither reserves space while loading. When there is no ad (empty response, invalid data, network error or ad blocker) nothing is shown.
 - The ad request itself records the impression. The `statview` beacon is sent once per page view after at least 50% of the ad was visible for one continuous second. Clicks go through `statlink`.
+
+Once an ad is available, the Top Bar uses the announcement banner's `animate-fade-and-slide-down` animation to expand, fade and slide in. It takes up no space until then, including the parent's gap (from the `--main-gap` variable on `main`) and the margin it adds to a following heading. Visitors who prefer reduced motion see it immediately, without the animation.
 
 ## Staging and production
 
