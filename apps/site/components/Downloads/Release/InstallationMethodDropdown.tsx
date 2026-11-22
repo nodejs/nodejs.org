@@ -58,13 +58,16 @@ const InstallationMethodDropdown: FC = () => {
     // eslint-disable-next-line @eslint-react/exhaustive-deps
   }, [parsedInstallMethods, release.installMethod, release.os]);
 
-  // We set the Platform to the next available platform when the current
-  // one is not valid anymore due to OS or Version changes
+  // We select the first available method in display order when the current
+  // one is not valid anymore due to OS or Version changes.
   useEffect(
     () => {
       if (release.os !== 'LOADING' && release.installMethod !== '') {
         release.setInstallMethod(
-          nextItem(release.installMethod, parsedInstallMethods)
+          nextItem(
+            release.installMethod,
+            groupedMethods.flatMap(({ items }) => items)
+          )
         );
       }
     },
