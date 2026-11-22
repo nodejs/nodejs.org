@@ -1,8 +1,13 @@
 @reference "../../styles/index.css";
 
 .container {
-  @apply border-neutral-200
+  @apply sticky
+    top-0
+    z-50
+    border-neutral-200
     bg-white
+    xl:static
+    xl:z-auto
     xl:h-16
     xl:border-b
     xl:px-8
@@ -12,6 +17,7 @@
   .innerContainer {
     @apply max-w-10xl
       3xl:max-w-12xl
+      relative
       xl:mx-auto
       xl:flex
       xl:h-16
@@ -62,13 +68,32 @@
     }
 
     .main {
-      @apply flex-1
+      @apply fixed
+        top-[var(--header-height)]
+        right-0
+        left-0
+        z-50
+        max-h-[calc(100dvh-var(--header-height))]
+        flex-1
         flex-col
         gap-4
+        overflow-y-auto
+        overscroll-contain
+        bg-white
+        xl:relative
+        xl:top-auto
+        xl:right-auto
+        xl:bottom-auto
+        xl:left-auto
         xl:flex
+        xl:max-h-none
         xl:flex-row
         xl:items-center
-        xl:justify-between;
+        xl:justify-between
+        xl:overflow-visible
+        xl:bg-transparent
+        dark:bg-neutral-950
+        xl:dark:bg-transparent;
     }
 
     .navItems {

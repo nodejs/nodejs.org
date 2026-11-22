@@ -2,7 +2,7 @@ import Hamburger from '@heroicons/react/24/solid/Bars3Icon';
 import XMark from '@heroicons/react/24/solid/XMarkIcon';
 import * as Label from '@radix-ui/react-label';
 import classNames from 'classnames';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import NavItem from '#ui/Containers/NavBar/NavItem';
 
@@ -57,6 +57,41 @@ const NavBar: FC<PropsWithChildren<NavbarProps>> = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const activeLink = getActiveNavLink(navItems ?? [], pathname);
+
+  useEffect(() => {
+    if (!isMenuOpen || window.matchMedia('(min-width: 1280px)').matches) {
+      return;
+    }
+
+    const scrollPosition = window.scrollY;
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+    const { body } = document;
+    const previousStyles = {
+      position: body.style.position,
+      top: body.style.top,
+      width: body.style.width,
+      overflow: body.style.overflow,
+      paddingRight: body.style.paddingRight,
+    };
+
+    body.style.position = 'fixed';
+    body.style.top = `-${scrollPosition}px`;
+    body.style.width = '100%';
+    body.style.overflow = 'hidden';
+    if (scrollbarWidth > 0) {
+      body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+
+    return () => {
+      body.style.position = previousStyles.position;
+      body.style.top = previousStyles.top;
+      body.style.width = previousStyles.width;
+      body.style.overflow = previousStyles.overflow;
+      body.style.paddingRight = previousStyles.paddingRight;
+      window.scrollTo(0, scrollPosition);
+    };
+  }, [isMenuOpen]);
 
   return (
     <nav className={styles.container}>

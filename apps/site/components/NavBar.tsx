@@ -46,7 +46,7 @@ const NavBar: FC = () => {
     replace(pathname!, { locale: locale.code });
 
   return (
-    <div>
+    <>
       <SkipToContentButton>
         {t('components.common.skipToContent')}
       </SkipToContentButton>
@@ -97,7 +97,7 @@ const NavBar: FC = () => {
           <GitHubIcon />
         </Link>
       </NavBarContainer>
-    </div>
+    </>
   );
 };
 

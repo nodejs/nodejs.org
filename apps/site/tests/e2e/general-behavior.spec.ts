@@ -164,12 +164,55 @@ test.describe('Node.js Website', () => {
       const navLinks = page.locator(locators.navLinksLocator);
 
       // Toggle menu open and verify it's visible
+      const contentBefore = await page.locator('main').boundingBox();
       await mobileToggle.click();
       await expect(navLinks.first()).toBeVisible();
+      const contentAfter = await page.locator('main').boundingBox();
+      expect(contentAfter?.y).toBe(contentBefore?.y);
+      const menuBounds = await page
+        .locator(locators.navLinksLocator)
+        .boundingBox();
+      const availableHeight = await page.evaluate(
+        () =>
+          window.innerHeight -
+          parseFloat(
+            getComputedStyle(document.documentElement).getPropertyValue(
+              '--header-height'
+            )
+          )
+      );
+      expect(menuBounds?.height).toBeLessThan(availableHeight);
 
       // Toggle menu closed and verify it's hidden
       await mobileToggle.click();
       await expect(navLinks.first()).not.toBeVisible();
+    });
+
+    test('should keep the mobile menu accessible after scrolling', async ({
+      page,
+    }) => {
+      await page.setViewportSize({ width: 375, height: 667 });
+      await page.goto('/en/download');
+
+      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+      await expect
+        .poll(() => page.evaluate(() => window.scrollY))
+        .toBeGreaterThan(0);
+
+      const mobileToggle = page.getByRole('button', {
+        name: locators.mobileMenuToggleName,
+      });
+      await expect(mobileToggle).toBeInViewport();
+
+      await mobileToggle.click();
+
+      await expect(page.locator(locators.navLinksLocator)).toBeVisible();
+
+      await mobileToggle.click();
+      await expect(page.locator(locators.navLinksLocator)).not.toBeVisible();
+      await expect
+        .poll(() => page.evaluate(() => window.scrollY))
+        .toBeGreaterThan(0);
     });
   });
 });
