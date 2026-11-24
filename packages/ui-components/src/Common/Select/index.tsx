@@ -86,8 +86,7 @@ const Select = <T extends string>({
     return mappedValues.map(({ label, items }) => (
       <SelectPrimitive.Group
         key={
-          label?.toString() ??
-          JSON.stringify(items.map(({ value }) => value))
+          label?.toString() ?? JSON.stringify(items.map(({ value }) => value))
         }
       >
         {label && (
