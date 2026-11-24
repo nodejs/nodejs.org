@@ -3,6 +3,7 @@ import Preview from '@node-core/ui-components/Common/Preview';
 import { getClientContext } from '#site/client-context';
 import AvatarGroup from '#site/components/AvatarGroup';
 import BlogCrossLinks from '#site/components/BlogCrossLinks';
+import CarbonTopBar from '#site/components/CarbonAds/TopBar';
 import EOLAlert from '#site/components/EOL/EOLAlert';
 import Footer from '#site/components/Footer';
 import MetaBar from '#site/components/MetaBar';
@@ -31,6 +32,8 @@ const PostLayout: FC<PropsWithChildren> = ({ children }) => {
         <div className={styles.postLayout}>
           <main id="main" tabIndex={-1}>
             {type === 'vulnerability' && <EOLAlert />}
+
+            <CarbonTopBar />
 
             <h1>{frontmatter.title}</h1>
 
