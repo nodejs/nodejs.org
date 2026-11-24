@@ -27,4 +27,14 @@ export const Default: Story = {
   },
 };
 
+export const NoFooter: Story = {
+  args: {
+    language: 'bash',
+    className: 'no-footer',
+    copyButtonLabel: 'Copy code',
+    copiedButtonLabel: 'Copied!',
+    children: <code>node --no-deprecation app.js</code>,
+  },
+};
+
 export default { component: BaseCodeBox } as Meta;
