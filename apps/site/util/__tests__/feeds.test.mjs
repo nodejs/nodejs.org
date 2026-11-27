@@ -15,6 +15,7 @@ describe('generateWebsiteFeeds', () => {
         {
           slug: '/post-1',
           title: 'Post 1',
+          author: 'Jane Doe',
           date: '2025-04-18',
           categories: ['all'],
         },
@@ -40,7 +41,10 @@ describe('generateWebsiteFeeds', () => {
         guid: `${blogData.posts[0].slug}?${date.getTime()}`,
         date,
         link: `${base}${blogData.posts[0].slug}`,
+        author: [{ name: blogData.posts[0].author }],
       },
     ]);
+
+    assert.match(blogFeed.rss2(), /<author>Jane Doe<\/author>/);
   });
 });
