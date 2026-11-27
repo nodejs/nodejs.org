@@ -1,9 +1,11 @@
+/* The gap is a variable, so that children can account for it */
 main {
-  @apply max-ml:gap-4
+  @apply max-ml:[--main-gap:--spacing(4)]
     flex
     w-full
     flex-col
-    gap-6;
+    gap-(--main-gap)
+    [--main-gap:--spacing(6)];
 
   hr {
     @apply w-full
