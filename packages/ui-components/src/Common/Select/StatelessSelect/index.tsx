@@ -93,9 +93,12 @@ const StatelessSelect = <T extends string>({
         <div
           className={classNames(styles.dropdown, { [styles.inline]: inline })}
         >
-          {mappedValues.map(({ label: groupLabel, items }, groupKey) => (
+          {mappedValues.map(({ label: groupLabel, items }) => (
             <div
-              key={groupLabel?.toString() ?? groupKey}
+              key={
+                groupLabel?.toString() ??
+                JSON.stringify(items.map(({ value }) => value))
+              }
               className={styles.group}
             >
               {groupLabel && (

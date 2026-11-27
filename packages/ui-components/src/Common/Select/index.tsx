@@ -83,8 +83,12 @@ const Select = <T extends string>({
   );
 
   const memoizedMappedValues = useMemo(() => {
-    return mappedValues.map(({ label, items }, key) => (
-      <SelectPrimitive.Group key={label?.toString() ?? key}>
+    return mappedValues.map(({ label, items }) => (
+      <SelectPrimitive.Group
+        key={
+          label?.toString() ?? JSON.stringify(items.map(({ value }) => value))
+        }
+      >
         {label && (
           <SelectPrimitive.Label
             className={classNames(styles.item, styles.label)}
