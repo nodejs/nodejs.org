@@ -1,5 +1,21 @@
 # @node-core/ui-components
 
+## 1.9.0
+
+### Minor Changes
+
+- [#9250](https://github.com/nodejs/nodejs.org/pull/9250) [`ed83104`](https://github.com/nodejs/nodejs.org/commit/ed83104d71cbe966922f0b9e87cb9b5ecf5b4c15) Thanks [@mcollina](https://github.com/mcollina)! - Adds a footer slot to the metabar
+
+- [#9323](https://github.com/nodejs/nodejs.org/pull/9323) [`d73b195`](https://github.com/nodejs/nodejs.org/commit/d73b195a3c47c5a2bd0566171796ce6abd15c8cd) Thanks [@btea](https://github.com/btea)! - Add an optional `footer` prop to `ThemeToggle` that renders custom content (e.g. keyboard shortcut hints) at the bottom of the dropdown, below the theme options.
+
+### Patch Changes
+
+- [#9343](https://github.com/nodejs/nodejs.org/pull/9343) [`1375ec7`](https://github.com/nodejs/nodejs.org/commit/1375ec79c72993e6e54a1a7e7368b713597fa525) Thanks [@MattIPv4](https://github.com/MattIPv4)! - Skip the `Banner` animation for visitors who prefer reduced motion.
+
+- [#9343](https://github.com/nodejs/nodejs.org/pull/9343) [`1375ec7`](https://github.com/nodejs/nodejs.org/commit/1375ec79c72993e6e54a1a7e7368b713597fa525) Thanks [@MattIPv4](https://github.com/MattIPv4)! - `animate-fade-and-slide-down` now ends at the element's own padding, and also collapses its minimum height and bottom margin.
+
+- [#9343](https://github.com/nodejs/nodejs.org/pull/9343) [`1375ec7`](https://github.com/nodejs/nodejs.org/commit/1375ec79c72993e6e54a1a7e7368b713597fa525) Thanks [@MattIPv4](https://github.com/MattIPv4)! - Expose the `main` gap as `--main-gap`, and let `animate-fade-and-slide-down` collapse surrounding space via `--fade-and-slide-down-offset`.
+
 ## 1.8.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@node-core/website-i18n",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "type": "module",
   "exports": {
     "./*": [
